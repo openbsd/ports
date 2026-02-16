@@ -5,12 +5,13 @@ SHA256 (cargo/anstyle-parse-0.2.6.tar.gz) = Oy0WUHZigXpqIKnqkt9mUu5PlPkUWJN31p87
 SHA256 (cargo/anstyle-query-1.1.2.tar.gz) = eZR6839Bd8/q0REAE9Z4kFw3UBkU+6Dv6oNMP+mo1gw=
 SHA256 (cargo/anstyle-wincon-3.0.6.tar.gz) = IQnbzg5yvj7AC+0m5qdHnKOErSJu/dZtuPouOjjIMSU=
 SHA256 (cargo/anyhow-1.0.91.tar.gz) = wEIQjz7Xf9g3YKX9ebU74EMZK7O526kdjFdMCtp4UMg=
-SHA256 (cargo/assert_cmd-2.0.16.tar.gz) = 3Bg1t/J4eN6FJdxxQQtaMc3MXyMK7Vul35aOCcIBsj0=
+SHA256 (cargo/assert_cmd-2.1.2.tar.gz) = nFvPqHSaxF3RLLEQVa7rayejiVVg1g1x48I7+XnmBRQ=
 SHA256 (cargo/autocfg-1.4.0.tar.gz) = rOULrejmI0qhQNmi9VK77h2001P2m4IXvFA0kPwanyY=
 SHA256 (cargo/bitflags-2.6.0.tar.gz) = sEj7Y/2LWSP8WqezQNjhVq7H7ALwx4+opt3CYT9vcd4=
 SHA256 (cargo/bstr-1.10.0.tar.gz) = QHI7j7OHq8OPT0o3wJBzYi5B3RIycDMJHviVBlnm3Aw=
 SHA256 (cargo/clap-4.5.20.tar.gz) = uX83bYWmZNWDfbrkS/VG5kd6Z5/2YQAQ8XJ29obYZ+g=
 SHA256 (cargo/clap_builder-4.5.20.tar.gz) = GbyAq9ROS+2Tyjc6BwTMvRtxDcV0lAYgG7AYJygI3FQ=
+SHA256 (cargo/clap_complete-4.5.55.tar.gz) = paveREhtr3DFvouPjxtmxJ+GI27fb6KrrbTZYcTGIpo=
 SHA256 (cargo/clap_derive-4.5.18.tar.gz) = Ssagx7Gp6aUYY2H2ffobiCE1cvQn+5qwOO+yvYxYLas=
 SHA256 (cargo/clap_lex-0.7.2.tar.gz) = FGJznLJ2EQFVdcDBHfXfdgEUEHHwdRjVb8wb5QTL7Jc=
 SHA256 (cargo/colorchoice-1.0.3.tar.gz) = W2PKqaqTl+LZSAqbE2c4VseNisEjKIUmw314OfKoaZA=
@@ -18,7 +19,6 @@ SHA256 (cargo/const_format-0.2.33.tar.gz) = UMZV2B/xEU+w3N6pIl6p8MxxKm+NGJN46Cvf
 SHA256 (cargo/const_format_proc_macros-0.2.33.tar.gz) = 7/GkS5P0exusGaJ5MvXFkeQ9G6NX7k9hUmyKJWA/DrE=
 SHA256 (cargo/diff-0.1.13.tar.gz) = ViVJhndeMjP/qcTX0/qvbTaiwJ0wsgaH6fiLyLr8Fsg=
 SHA256 (cargo/difflib-0.4.0.tar.gz) = YYTjNUMWJDdRXC4rSHFHlON4ReyYUXEZFO7J0wj26+g=
-SHA256 (cargo/doc-comment-0.3.3.tar.gz) = /qQbujLZabUTmXdSc1YFBUvA36krTFa/EYny4XS+ehA=
 SHA256 (cargo/errno-0.3.9.tar.gz) = U0xc9hlN+rPbMkJ2XAO74lfPkvIrOPa8DFjVkQioILo=
 SHA256 (cargo/float-cmp-0.9.0.tar.gz) = mN5LvVR6VjtxbY36mq0csZv6sA9PoJpqTtIdvPRM6cQ=
 SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
@@ -65,7 +65,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/yansi-1.0.1.tar.gz) = z+U6Zlf9KA6qiQo7xZFSiS/6PjAQExnRaLeB7WUpsEk=
-SHA256 (hexyl-0.16.0.tar.gz) = UoU7Tt7eiJtA/W/xMuE1TZV9HybuDCbr3qOA+M6Cyws=
+SHA256 (hexyl-0.17.0.tar.gz) = cvoXOXrRh+7GspXQLHyqu7IJpuDVcGGHuKWZvV34YV4=
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/anstream-0.6.17.tar.gz) = 29445
 SIZE (cargo/anstyle-1.0.9.tar.gz) = 15770
@@ -73,12 +73,13 @@ SIZE (cargo/anstyle-parse-0.2.6.tar.gz) = 22343
 SIZE (cargo/anstyle-query-1.1.2.tar.gz) = 9969
 SIZE (cargo/anstyle-wincon-3.0.6.tar.gz) = 12271
 SIZE (cargo/anyhow-1.0.91.tar.gz) = 47348
-SIZE (cargo/assert_cmd-2.0.16.tar.gz) = 26554
+SIZE (cargo/assert_cmd-2.1.2.tar.gz) = 27244
 SIZE (cargo/autocfg-1.4.0.tar.gz) = 17712
 SIZE (cargo/bitflags-2.6.0.tar.gz) = 45357
 SIZE (cargo/bstr-1.10.0.tar.gz) = 380426
 SIZE (cargo/clap-4.5.20.tar.gz) = 56376
 SIZE (cargo/clap_builder-4.5.20.tar.gz) = 163812
+SIZE (cargo/clap_complete-4.5.55.tar.gz) = 48536
 SIZE (cargo/clap_derive-4.5.18.tar.gz) = 30131
 SIZE (cargo/clap_lex-0.7.2.tar.gz) = 12805
 SIZE (cargo/colorchoice-1.0.3.tar.gz) = 7923
@@ -86,7 +87,6 @@ SIZE (cargo/const_format-0.2.33.tar.gz) = 77369
 SIZE (cargo/const_format_proc_macros-0.2.33.tar.gz) = 24455
 SIZE (cargo/diff-0.1.13.tar.gz) = 46216
 SIZE (cargo/difflib-0.4.0.tar.gz) = 7638
-SIZE (cargo/doc-comment-0.3.3.tar.gz) = 4123
 SIZE (cargo/errno-0.3.9.tar.gz) = 10690
 SIZE (cargo/float-cmp-0.9.0.tar.gz) = 10102
 SIZE (cargo/heck-0.5.0.tar.gz) = 11517
@@ -133,4 +133,4 @@ SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/yansi-1.0.1.tar.gz) = 75497
-SIZE (hexyl-0.16.0.tar.gz) = 42826
+SIZE (hexyl-0.17.0.tar.gz) = 194846
