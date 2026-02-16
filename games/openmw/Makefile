@@ -37,6 +37,8 @@ MODULES =		devel/cmake lang/lua x11/qt6 lang/clang
 MODCLANG_VERSION =	19
 COMPILER =		ports-clang
 
+MODCMAKE_POLICY_VERSION_OVERRIDE=	Yes
+
 BUILD_DEPENDS =		sysutils/e2fsprogs
 LIB_DEPENDS =		archivers/unshield \
 			audio/openal \
@@ -62,15 +64,13 @@ CONFIGURE_ARGS +=	-DBINDIR=${LOCALBASE}/bin \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DCOLLADA_DOM_VERSION_MINOR=4
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/openmw-${GH_TAGNAME}
 
 CFLAGS +=		-I${X11BASE}/include -pthread
 CXXFLAGS +=		-I${X11BASE}/include -pthread
-MODCMAKE_LDFLAGS =		-L${X11BASE}/lib
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib
 
 post-extract:
 	mkdir ${WRKDIST}/extern/fetched
