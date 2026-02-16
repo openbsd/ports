@@ -25,6 +25,7 @@ ${P5SITE}/Net/DNS/RR/CERT.pm
 ${P5SITE}/Net/DNS/RR/CNAME.pm
 ${P5SITE}/Net/DNS/RR/CSYNC.pm
 ${P5SITE}/Net/DNS/RR/DELEG.pm
+${P5SITE}/Net/DNS/RR/DELEGI.pm
 ${P5SITE}/Net/DNS/RR/DHCID.pm
 ${P5SITE}/Net/DNS/RR/DNAME.pm
 ${P5SITE}/Net/DNS/RR/DNSKEY.pm
@@ -114,6 +115,7 @@ ${P5SITE}/Net/DNS/ZoneFile.pm
 @man man/man3p/Net::DNS::RR::CNAME.3p
 @man man/man3p/Net::DNS::RR::CSYNC.3p
 @man man/man3p/Net::DNS::RR::DELEG.3p
+@man man/man3p/Net::DNS::RR::DELEGI.3p
 @man man/man3p/Net::DNS::RR::DHCID.3p
 @man man/man3p/Net::DNS::RR::DNAME.3p
 @man man/man3p/Net::DNS::RR::DNSKEY.3p
