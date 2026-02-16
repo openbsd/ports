@@ -1,2 +1,6 @@
 @bin bin/wf-recorder
 @man man/man1/wf-recorder.1
+share/fish/
+share/fish/fish/
+share/fish/fish/vendor_completions.d/
+share/fish/fish/vendor_completions.d/wf-recorder.fish

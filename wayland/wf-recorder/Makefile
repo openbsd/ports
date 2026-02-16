@@ -1,6 +1,6 @@
 COMMENT =	Utility program for screen recording of wayland compositors
 
-V =		0.5.0
+V =		0.6.0
 REVISION =	1
 
 GH_ACCOUNT = ammen99
