@@ -1,15 +1,12 @@
 COMMENT =		standards based terminal calendar
 
-MODPY_DISTV =		0.11.2
+MODPY_DISTV =		0.13.0
 DISTNAME =		khal-${MODPY_DISTV}
-REVISION =		4
 
 CATEGORIES =		productivity
 
 # https://github.com/pimutils/khal
-HOMEPAGE =		https://lostpackets.de/khal/
-
-MAINTAINER =		Joerg Jung <jung@openbsd.org>
+HOMEPAGE =		https://khal.readthedocs.io/
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -18,8 +15,7 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 
-RUN_DEPENDS =		devel/py-atomicwrites \
-			devel/py-click \
+RUN_DEPENDS =		devel/py-click \
 			devel/py-click-log \
 			devel/py-configobj \
 			devel/py-dateutil \
