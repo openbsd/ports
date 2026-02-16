@@ -1,4 +1,24 @@
 @conflict polarssl-*
+include/everest/
+include/everest/Hacl_Curve25519.h
+include/everest/everest.h
+include/everest/kremlib/
+include/everest/kremlib.h
+include/everest/kremlib/FStar_UInt128.h
+include/everest/kremlib/FStar_UInt64_FStar_UInt32_FStar_UInt16_FStar_UInt8.h
+include/everest/kremlin/
+include/everest/kremlin/c_endianness.h
+include/everest/kremlin/internal/
+include/everest/kremlin/internal/builtin.h
+include/everest/kremlin/internal/callconv.h
+include/everest/kremlin/internal/compat.h
+include/everest/kremlin/internal/debug.h
+include/everest/kremlin/internal/target.h
+include/everest/kremlin/internal/types.h
+include/everest/kremlin/internal/wasmsupport.h
+include/everest/vs2010/
+include/everest/vs2010/Hacl_Curve25519.h
+include/everest/x25519.h
 include/mbedtls/
 include/mbedtls/aes.h
 include/mbedtls/aesni.h
@@ -103,6 +123,9 @@ include/psa/crypto_values.h
 @lib lib/libmbedtls.so.${LIBmbedtls_VERSION}
 @static-lib lib/libmbedx509.a
 @lib lib/libmbedx509.so.${LIBmbedx509_VERSION}
+lib/pkgconfig/mbedcrypto.pc
+lib/pkgconfig/mbedtls.pc
+lib/pkgconfig/mbedx509.pc
 share/doc/mbedtls/
 share/doc/mbedtls/ChangeLog
 share/doc/mbedtls/README.md
@@ -133,6 +156,7 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/key_ladder_demo
 share/examples/mbedtls/key_ladder_demo.sh
 @bin share/examples/mbedtls/load_roots
+@bin share/examples/mbedtls/metatest
 @bin share/examples/mbedtls/mini_client
 @bin share/examples/mbedtls/mpi_demo
 @bin share/examples/mbedtls/pem2der

@@ -4,20 +4,19 @@ COMMENT=	SSL library with an intuitive API and readable source code
 
 GH_ACCOUNT=	Mbed-TLS
 GH_PROJECT=	mbedtls
-GH_TAGNAME=	mbedtls-2.28.0
+GH_TAGNAME=	mbedtls-2.28.10
 DISTNAME=	${GH_TAGNAME}
-REVISION=	2
 
 # check SOVERSION
-SHARED_LIBS +=  mbedtls		7.0
-SHARED_LIBS +=  mbedcrypto	5.0
-SHARED_LIBS +=  mbedx509	3.2
+SHARED_LIBS +=  mbedtls		7.1
+SHARED_LIBS +=  mbedcrypto	5.1
+SHARED_LIBS +=  mbedx509	3.3
 
 CATEGORIES=	security
 
 HOMEPAGE=	https://www.trustedfirmware.org/projects/mbed-tls/
 
-# Apache v2 (or commercial license)
+# Apache v2 or GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
