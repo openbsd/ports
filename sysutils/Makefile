@@ -133,6 +133,7 @@
      SUBDIR += fzf
      SUBDIR += galleon
      SUBDIR += gdmap
+     SUBDIR += gemini-cli
      SUBDIR += ggrep
      SUBDIR += git-sync
      SUBDIR += gitlab-cli
