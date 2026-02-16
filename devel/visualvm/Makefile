@@ -1,6 +1,7 @@
 COMMENT=	visual tool integrating commandline JDK tools and profiling
 
 V=		2.2.1
+REVISION=	0
 DISTNAME=	visualvm_${V:S/.//g}
 PKGNAME=	visualvm-${V}
 
@@ -36,6 +37,7 @@ do-install:
 		-name \*.bat -o -name \*.exe -o -name \*.dll \
 		-o -name \*${PATCHORIG} -o -name \*.beforesubst \
 		\) -delete
+	rm -rf ${PREFIX}/libexec/visualvm/visualvm/lib/deployed
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/visualvm.desktop \
 		${PREFIX}/share/applications/
