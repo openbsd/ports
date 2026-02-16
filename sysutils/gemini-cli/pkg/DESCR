@@ -1,0 +1,9 @@
+Gemini CLI is an open-source AI agent that brings the power of Gemini directly
+into your terminal. It provides lightweight access to Gemini, giving you the
+most direct path from your prompt to our model.
+
+Gemini CLI integrates with your local environment. It can read and edit files,
+execute shell commands, and search the web, all while maintaining your project
+context.
+
+Note that the "--sandbox" knob needs the docker-cli package.
