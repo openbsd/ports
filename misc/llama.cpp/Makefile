@@ -2,11 +2,11 @@ COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggml-org
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		b7883
+GH_TAGNAME =		b8067
 PKGNAME =		llama.cpp-0.0.${GH_TAGNAME:S/b//}
 
-SHARED_LIBS +=		llama 3.0
-SHARED_LIBS +=		mtmd 1.0
+SHARED_LIBS +=		llama 3.1
+SHARED_LIBS +=		mtmd 1.1
 
 CATEGORIES =		misc
 
@@ -20,6 +20,8 @@ COMPILER =		base-clang ports-gcc
 
 # some tests need network access
 LIB_DEPENDS =		devel/libggml
+
+TEST_DEPENDS =		www/py-jinja2
 
 CONFIGURE_ARGS +=	-DLLAMA_USE_SYSTEM_GGML=on
 CFLAGS +=		-I${LOCALBASE}/include
