@@ -2,7 +2,7 @@ COMMENT=	perl module for IDN (internationalized domain names)
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Net-IDN-PP-0.01
+DISTNAME=	Net-IDN-PP-0.02
 CATEGORIES=	net
 
 # perl
