@@ -19,8 +19,10 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml c m
 
-MODULES=	devel/cmake \
+MODULES =	devel/cmake \
 		x11/qt5
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
@@ -45,7 +47,3 @@ NO_TEST =	Yes
 .if ${PROPERTIES:Mclang}
 CONFIGURE_ARGS +=	-Dkst_clang=ON
 .endif
-
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
-
-
