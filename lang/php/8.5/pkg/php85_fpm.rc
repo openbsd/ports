@@ -5,6 +5,6 @@ daemon="${TRUEPREFIX}/sbin/php-fpm-${PV}"
 . /etc/rc.d/rc.subr
 
 pexp="php-fpm-${PV}: master process .*"
-rc_reload=NO
+rc_reload_signal=USR2
 
 rc_cmd $1

@@ -102,6 +102,10 @@ in several classes.
 enabled; they don't need to be installed or enabled separately.
 
 - opcache is in the main package but must be configured.
+Note that a large opcache may result in slow daemon shutdown.
+If this exceeds the default 30 second timeout, you may override it:
+
+    rcctl set php${SV}_fpm timeout 90
 
 - some 'core' extensions with extra dependencies are packaged separately
 and can be installed with pkg_add(1). The list may vary between versions
