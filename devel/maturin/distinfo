@@ -444,7 +444,7 @@ SHA256 (cargo/zopfli-0.8.3.tar.gz) = 8FzYeX1jhlQl/4m1xKSIBPNboM6NElgAAnrWAX0rUkk
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (maturin-1.12.0.tar.gz) = rJQdlnEv+Vyxs7GutwE1nlvbFvJPHpqliObi0l1r+Sc=
+SHA256 (maturin-1.12.2.tar.gz) = /lCCpdy8NsmNntrOTdimZy6DzB0dBp2Md6B6YYzGeVk=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/allocator-api2-0.2.21.tar.gz) = 63622
@@ -891,4 +891,4 @@ SIZE (cargo/zopfli-0.8.3.tar.gz) = 51589
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (maturin-1.12.0.tar.gz) = 627384
+SIZE (maturin-1.12.2.tar.gz) = 638646
