@@ -4,6 +4,7 @@ COMMENT=	auto-discovering network management/monitoring system
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	26.2.0
+REVISION=	0
 
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
 EPOCH=		0
@@ -21,6 +22,7 @@ SITES.dep=	https://spacehopper.org/mirrors/
 
 MODULES=	lang/php \
 		lang/python
+MODPHP_VERSION=	8.4
 MODPY_BUILDDEP= No
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
