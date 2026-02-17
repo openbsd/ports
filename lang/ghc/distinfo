@@ -9,6 +9,6 @@ SIZE (ghc/ghc-9.10.3-src.tar.xz) = 32959164
 SIZE (ghc/ghc-9.10.3-testsuite.tar.xz) = 7681476
 SIZE (ghc/ghc-9.10.3.20260203-aarch64.tar.xz) = 97000008
 SIZE (ghc/ghc-9.10.3.20260203-amd64.tar.xz) = 83200336
-SIZE (ghc/ghc-9.10.3.20260203-shlibs-aarch64.tar.gz) = 3943411
+SIZE (ghc/ghc-9.10.3.20260203-shlibs-aarch64.tar.gz) = 3943406
 SIZE (ghc/ghc-9.10.3.20260203-shlibs-amd64.tar.gz) = 3670429
 SIZE (ghc/hadrian-sources-9.10.3.20260203.tar.gz) = 1537743
