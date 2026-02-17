@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Python package and project manager
 
-MODPY_DISTV =		0.10.0
+MODPY_DISTV =		0.10.3
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
 GH_TAGNAME =		${MODPY_DISTV}
@@ -21,18 +21,17 @@ PERMIT_PACKAGE =	Yes
 BUILD_DEPENDS =		devel/maturin \
 			devel/py-installer
 
-LIB_DEPENDS +=		archivers/bzip2 \
-			archivers/xz \
-			archivers/zstd
+LIB_DEPENDS +=		archivers/bzip2
 
-WANTLIB =		${MODCARGO_WANTLIB} bz2 m zstd lzma
+WANTLIB =		${MODCARGO_WANTLIB} bz2 m
 
 MODULES =		devel/cargo \
 			lang/python
 CONFIGURE_STYLE =	cargo
 
 # Annoying static dependencies throughout crates/*/Cargo.toml...
-MODCARGO_CRATES_KEEP =	lzma-sys
+MODCARGO_CRATES_KEEP +=	lzma-sys
+MODCARGO_CRATES_KEEP +=	zstd-sys
 
 SEPARATE_BUILD =	Yes
 
