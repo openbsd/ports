@@ -1,7 +1,7 @@
 Index: codex-rs/arg0/src/lib.rs
 --- codex-rs/arg0/src/lib.rs.orig
 +++ codex-rs/arg0/src/lib.rs
-@@ -116,6 +116,10 @@ where
+@@ -118,6 +118,10 @@ where
      runtime.block_on(async move {
          let codex_linux_sandbox_exe: Option<PathBuf> = if cfg!(target_os = "linux") {
              std::env::current_exe().ok()
@@ -12,7 +12,7 @@ Index: codex-rs/arg0/src/lib.rs
          } else {
              None
          };
-@@ -219,7 +223,8 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
+@@ -233,7 +237,8 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
          #[cfg(target_os = "linux")]
          LINUX_SANDBOX_ARG0,
      ] {

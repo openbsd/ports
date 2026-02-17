@@ -5,8 +5,8 @@ Index: tokio-tungstenite/Cargo.toml
  tokio = { version = "1.0.0", default-features = false, features = ["io-util"] }
  
  [dependencies.tungstenite]
--git = "ssh://git@github.com/JakkuSakura/tungstenite-rs.git"
--branch = "proxy-support"
+-git = "https://github.com/openai-oss-forks/tungstenite-rs"
+-rev = "9200079d3b54a1ff51072e24d81fd354f085156f"
 +path = "../tungstenite"
  default-features = false
  
