@@ -1,23 +1,26 @@
-COMMENT =	extended pickling support for Python objects
-MODPY_DISTV =	1.5.0
-DISTNAME =	cloudpickle-${MODPY_DISTV}
-PKGNAME =	py-cloudpickle-${MODPY_DISTV}
-CATEGORIES =	devel
-REVISION =	7
+COMMENT=	extended pickling support for Python objects
 
-HOMEPAGE =	https://github.com/cloudpipe/cloudpickle
+MODPY_DISTV=	3.1.2
+GH_ACCOUNT=	cloudpipe
+GH_PROJECT=	cloudpickle
+GH_TAGNAME=	v${MODPY_DISTV}
+PKGNAME=	py-cloudpickle-${MODPY_DISTV}
+CATEGORIES=	devel
+
+HOMEPAGE=	https://github.com/cloudpipe/cloudpickle
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
-MODPY_PYBUILD =	setuptools
-MODPY_PI =	Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	flit_core
 
-TEST_DEPENDS =	devel/py-mock \
+TEST_DEPENDS=	devel/py-mock \
+		devel/py-setuptools \
+		math/py-numpy \
 		sysutils/py-psutil \
 		www/py-tornado
 
-MODPY_TEST_LIBDIR = ".:tests:tests/cloudpickle_testpkg"
+#MODPY_TEST_LIBDIR= ".:tests:tests/cloudpickle_testpkg"
 
 .include <bsd.port.mk>
