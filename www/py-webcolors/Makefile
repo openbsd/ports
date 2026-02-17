@@ -1,9 +1,8 @@
 COMMENT=	library for working with HTML color formats
 
-MODPY_DISTV=	24.11.1
+MODPY_DISTV=	25.10.0
 DISTNAME=	webcolors-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	www
 
@@ -11,8 +10,7 @@ CATEGORIES=	www
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	pdm
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
