@@ -1,0 +1,30 @@
+Index: bin/verilator
+--- bin/verilator.orig
++++ bin/verilator
+@@ -101,7 +101,7 @@ if ($opt_gdb) {
+     # Generic GDB interactive
+     run (ulimit_stack_unlimited()
+          . aslr(0)
+-         . ($ENV{VERILATOR_GDB} || "gdb")
++         . ($ENV{VERILATOR_GDB} || "egdb")
+          . " " . verilator_bin()
+          # Note, uncomment to set breakpoints before running:
+          #  ." -ex 'break main'"
+@@ -124,7 +124,7 @@ if ($opt_gdb) {
+     # Run under GDB to get gdbbt
+     run (ulimit_stack_unlimited()
+          . aslr(0)
+-         . "gdb"
++         . "egdb"
+          . " " . verilator_bin()
+          . " --batch --quiet --return-child-result"
+          . " -ex \"run " . join(' ', @quoted_sw)."\""
+@@ -185,7 +185,7 @@ sub verilator_bin {
+ 
+ sub gdb_works {
+     $! = undef;  # Cleanup -x
+-    system("gdb /bin/echo"
++    system("egdb /bin/echo"
+            . " --batch-silent --quiet --return-child-result"
+            . " -ex 'run -n'"  # `echo -n`
+            . " -ex 'set width 0'"

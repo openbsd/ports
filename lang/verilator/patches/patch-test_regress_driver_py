@@ -1,0 +1,30 @@
+Index: test_regress/driver.py
+--- test_regress/driver.py.orig
++++ test_regress/driver.py
+@@ -193,7 +193,7 @@ class Capabilities:
+     @staticproperty
+     def have_gdb() -> bool:  # pylint: disable=no-method-argument
+         if Capabilities._cached_have_gdb is None:
+-            out = VtOs.run_capture('gdb --version 2>/dev/null', check=False)
++            out = VtOs.run_capture('egdb --version 2>/dev/null', check=False)
+             Capabilities._cached_have_gdb = bool('Copyright' in out)
+         return Capabilities._cached_have_gdb
+ 
+@@ -1538,7 +1538,7 @@ class VlTest:
+             debugger_exec_cmd_start = ""
+             debugger_exec_cmd_end = ""
+             if Args.gdbsim:
+-                debugger = VtOs.getenv_def('VERILATOR_GDB', "gdb") + " "
++                debugger = VtOs.getenv_def('VERILATOR_GDB', "egdb") + " "
+                 debugger_exec_cmd_start = " -ex 'run "
+                 debugger_exec_cmd_end = "'"
+             cmd = [
+@@ -1859,7 +1859,7 @@ class VlTest:
+             if pid == 0:
+                 os.environ['TERM'] = "dumb"
+                 subprocess.run(["stty", "nl"], check=True)  # No carriage returns
+-                os.execlp("bash", "/bin/bash", "-c", command)
++                os.execlp("sh", "/bin/sh", "-c", command)
+             else:
+                 while True:
+                     try:
