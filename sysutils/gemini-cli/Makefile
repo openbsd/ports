@@ -1,6 +1,6 @@
 COMMENT=		Gemini AI agent CLI
 
-V=			0.26.0
+V=			0.28.2
 DISTNAME=		gemini-cli-${V}
 
 CATEGORIES=		sysutils misc devel
@@ -19,7 +19,7 @@ BUILD_DEPENDS=		lang/node
 RUN_DEPENDS=		lang/node \
 			shells/bash
 
-# see https://geminicli.com/docs/get-started/configuration/:
+# see https://geminicli.com/docs/get-started/configuration/
 # tools.useRipgrep: true (Default)
 RUN_DEPENDS +=		textproc/ripgrep
 
