@@ -1,6 +1,6 @@
 COMMENT=	measures number of terminal column cells of wide-char code
 
-MODPY_DISTV=	0.5.3
+MODPY_DISTV=	0.6.0
 DISTNAME=	wcwidth-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
