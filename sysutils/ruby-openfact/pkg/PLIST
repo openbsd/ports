@@ -640,6 +640,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/os/name.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/os/release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/path.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/processors/
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/processors/count.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/processors/isa.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/ruby/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/ruby/platform.rb
@@ -1046,6 +1047,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/openbsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/openbsd/dhcp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/openbsd/dmi.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/openbsd/mountpoints.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/openbsd/processors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/openbsd/virtual.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/os_release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/partitions.rb
@@ -1134,6 +1136,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/facts/uptime_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/facts/windows_release_finder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/file_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux/
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux/dhcp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux/if_inet6.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux/proc.rb
