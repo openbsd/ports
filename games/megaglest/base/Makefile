@@ -19,6 +19,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/lua
 
+MODCMAKE_POLICY_VERSION_OVERRIDE =	Yes
+
 BUILD_DEPENDS =		devel/help2man
 RUN_DEPENDS =		games/megaglest/data
 LIB_DEPENDS =		audio/openal \
