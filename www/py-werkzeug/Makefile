@@ -1,9 +1,8 @@
 COMMENT=	WSGI utility collection
 
-MODPY_DISTV=	3.1.3
+MODPY_DISTV=	3.1.5
 DISTNAME=	werkzeug-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 EPOCH=		0
 
