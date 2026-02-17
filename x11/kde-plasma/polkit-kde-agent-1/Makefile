@@ -2,7 +2,6 @@ COMMENT =	daemon providing a Polkit authentication UI for Plasma
 
 DISTNAME =	polkit-kde-agent-1-${VERSION}
 PKGNAME =	polkit-kde-agent-${VERSION}
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6DBusAddons
 WANTLIB += KF6I18n KF6I18nQml KF6Notifications KF6WindowSystem

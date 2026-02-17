@@ -1,18 +1,15 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
-REVISION =	0
 
-SHARED_LIBS +=  colorcorrect              1.0 # 0.0
 SHARED_LIBS +=  kfontinst                 1.0 # 0.0
-SHARED_LIBS +=  kfontinstui               1.0 # 0.0
-SHARED_LIBS +=  notificationmanager       1.0 # 0.0
-SHARED_LIBS +=  taskmanager               1.0 # 0.0
-SHARED_LIBS +=  weather_ion               1.0 # 0.0
+SHARED_LIBS +=  kfontinstui               2.0 # 0.0
+SHARED_LIBS +=  notificationmanager       2.0 # 0.0
+SHARED_LIBS +=  taskmanager               2.0 # 0.0
 SHARED_LIBS +=  kmpris                    0.0 # 0.0
-SHARED_LIBS +=  kworkspace6               0.0 # 0.0
+SHARED_LIBS +=  kworkspace6               0.1 # 0.0
 SHARED_LIBS +=  batterycontrol            0.0 # 0.0
-SHARED_LIBS +=  klipper                   0.0 # 0.0
-SHARED_LIBS +=	klookandfeel              0.0 # 0.0
+SHARED_LIBS +=  klipper                   1.0 # 0.0
+SHARED_LIBS +=	klookandfeel              0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KExiv2Qt6 KF6Archive KF6Attica
 WANTLIB += KF6AuthCore KF6Baloo KF6Bookmarks KF6CalendarEvents
@@ -24,20 +21,19 @@ WANTLIB += KF6IconWidgets KF6IdleTime KF6ItemModels KF6ItemViews
 WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
 WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Notifications
-WANTLIB += KF6NotifyConfig KF6Package KF6Parts KF6Prison KF6Runner
-WANTLIB += KF6Screen KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
-WANTLIB += KF6Svg KF6SyntaxHighlighting KF6TextEditor KF6TextWidgets
-WANTLIB += KF6UserFeedbackCore KF6Wallet KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KF6XmlGui KNightTime KScreenLocker KSysGuardFormatter
-WANTLIB += KSysGuardSensorFaces KSysGuardSensors KWaylandClient
-WANTLIB += LayerShellQtInterface Plasma Plasma5Support PlasmaActivities
-WANTLIB += PlasmaActivitiesStats PlasmaQuick Qt6Concurrent Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6Quick Qt6QuickWidgets Qt6Sql
-WANTLIB += Qt6Svg Qt6WaylandClient Qt6Widgets Qt6Xml SM X11 Xau
-WANTLIB += Xcursor Xext Xfixes Xft Xi Xrender Xtst c canberra
-WANTLIB += dbus-1 fontconfig freetype icui18n icuuc m phonon4qt6
-WANTLIB += processcore qalculate udev wayland-client wayland-cursor
+WANTLIB += KF6Package KF6Parts KF6Prison KF6Runner KF6Screen KF6Service
+WANTLIB += KF6Solid KF6SonnetUi KF6StatusNotifierItem KF6Svg KF6SyntaxHighlighting
+WANTLIB += KF6TextEditor KF6TextWidgets KF6UserFeedbackCore KF6Wallet
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KNightTime
+WANTLIB += KScreenLocker KSysGuardFormatter KSysGuardSensorFaces
+WANTLIB += KSysGuardSensors KWaylandClient KirigamiPlatform LayerShellQtInterface
+WANTLIB += Plasma PlasmaActivities PlasmaActivitiesStats PlasmaQuick
+WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6QuickWidgets
+WANTLIB += Qt6Sql Qt6Svg Qt6Test Qt6WaylandClient Qt6Widgets Qt6Xml
+WANTLIB += SM X11 Xau Xcursor Xext Xfixes Xft Xi Xrender Xtst
+WANTLIB += c canberra dbus-1 fontconfig freetype icui18n icuuc
+WANTLIB += m processcore qalculate udev wayland-client wayland-cursor
 WANTLIB += xcb xcb-composite xcb-cursor xcb-damage xcb-image xcb-randr
 WANTLIB += xcb-render xcb-shape xcb-shm xcb-util xcb-xfixes xkbcommon
 WANTLIB += z
@@ -51,7 +47,6 @@ KDE_DEPENDS =	devel/kf6/kcodecs \
 		devel/qcoro \
 		wayland/plasma-wayland-protocols \
 		wayland/wayland-protocols \
-		x11/kde-plasma/knighttime>=${VERSION} \
 		x11/kde-plasma/kwin>=${VERSION} \
 		x11/kde-plasma/kglobalacceld>=${VERSION} \
 		x11/kde-plasma/plasma-nano>=${VERSION} \
@@ -116,6 +111,8 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/prison \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
+		devel/kf6/kidletime \
+		devel/kf6/kirigami \
 		devel/kf6/syntax-highlighting \
 		math/libqalculate \
 		multimedia/phonon,qt6 \
@@ -126,6 +123,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/kde-applications/kf6-libkexiv2 \
 		x11/kde-plasma/kscreenlocker>=${VERSION} \
 		x11/kde-plasma/kwayland>=${VERSION} \
+		x11/kde-plasma/knighttime>=${VERSION} \
 		x11/kde-plasma/layer-shell-qt>=${VERSION} \
 		x11/kde-plasma/libkscreen>=${VERSION} \
 		x11/kde-plasma/libksysguard>=${VERSION} \

@@ -1,6 +1,5 @@
 COMMENT =	Qt Wayland wl-layer-shell protocol component
 DISTNAME =	layer-shell-qt-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  LayerShellQtInterface    1.0 # 5.22.5
 
@@ -13,7 +12,8 @@ BUILD_DEPENDS =	wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	x11/qt6/qtdeclarative \
-		x11/xkbcommon
+		x11/xkbcommon \
+		wayland/wayland
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -1,12 +1,11 @@
 COMMENT =	KSysGuard library
 DISTNAME =	libksysguard-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KSysGuardFormatter         1.0 # 5.22.5
 SHARED_LIBS +=  KSysGuardSensorFaces       1.0 # 5.22.5
 SHARED_LIBS +=  KSysGuardSensors           1.0 # 5.22.5
 SHARED_LIBS +=  KSysGuardSystemStats       1.0 # 5.22.5
-SHARED_LIBS +=  processcore                1.0 # 5.22.5
+SHARED_LIBS +=  processcore                2.0 # 5.22.5
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigQml KF6CoreAddons KF6I18n KF6Package KF6Service

@@ -1,13 +1,10 @@
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
-REVISION =	0
 
 # From KDE Gear 23.08.4 to KDE Plasma 6.0
 EPOCH =		0
 
 CATEGORIES =	sysutils print
-
-SHARED_LIBS +=  kcupslib                  0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons

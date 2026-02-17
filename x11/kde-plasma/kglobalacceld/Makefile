@@ -2,7 +2,7 @@ COMMENT =	KDE global keyboard shortcut daemon
 
 DISTNAME =	kglobalacceld-${VERSION}
 
-SHARED_LIBS +=  KGlobalAccelD             0.0 # 0.0
+SHARED_LIBS +=  KGlobalAccelD             0.1 # 0.0
 
 MODKDE_TRANSLATIONS =	Yes
 

@@ -1,4 +1,4 @@
-@conflict plasma-workspace-<6.3.0
+@conflict plasma-workspace-<6.5.5
 include/Plasma5Support/
 include/Plasma5Support/Plasma5Support/
 include/Plasma5Support/Plasma5Support/DataContainer
@@ -39,6 +39,7 @@ lib/qt6/plugins/plasma5support/dataengine/
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_devicenotifications.so
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_dwd.so
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_envcan.so
+@so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_executable.so
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_favicons.so
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_filebrowser.so
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_hotplug.so
@@ -49,6 +50,7 @@ lib/qt6/plugins/plasma5support/dataengine/
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_places.so
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_powermanagement.so
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_soliddevice.so
+@so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_time.so
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_weather.so
 @so lib/qt6/plugins/plasma5support/dataengine/plasma_engine_wettercom.so
 lib/qt6/qml/org/kde/plasma/
@@ -63,6 +65,7 @@ share/locale/ar/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ar/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ast/LC_MESSAGES/libplasma5support.mo
 share/locale/ast/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -70,11 +73,13 @@ share/locale/ast/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ast/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ast/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ast/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ast/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ast/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/az/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/az/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/az/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/az/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/az/LC_MESSAGES/plasma_engine_time.mo
 share/locale/az/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/be/LC_MESSAGES/libplasma5support.mo
 share/locale/be/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -82,6 +87,7 @@ share/locale/be/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/be/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/be/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/be/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/be/LC_MESSAGES/plasma_engine_time.mo
 share/locale/be/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/bg/LC_MESSAGES/libplasma5support.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -89,12 +95,14 @@ share/locale/bg/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/bg/LC_MESSAGES/plasma_engine_time.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/bn/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/bn_IN/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/bs/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/bs/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/bs/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/bs/LC_MESSAGES/plasma_engine_time.mo
 share/locale/bs/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ca/LC_MESSAGES/libplasma5support.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -102,6 +110,7 @@ share/locale/ca/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ca/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasma5support.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -109,6 +118,7 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ca@valencia/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/cs/LC_MESSAGES/libplasma5support.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -116,12 +126,14 @@ share/locale/cs/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/cs/LC_MESSAGES/plasma_engine_time.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/csb/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/da/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/da/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/da/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/da/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/da/LC_MESSAGES/plasma_engine_time.mo
 share/locale/da/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/de/LC_MESSAGES/libplasma5support.mo
 share/locale/de/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -129,10 +141,12 @@ share/locale/de/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/de/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/de/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/de/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/de/LC_MESSAGES/plasma_engine_time.mo
 share/locale/de/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/el/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/el/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/el/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/el/LC_MESSAGES/plasma_engine_time.mo
 share/locale/el/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/en_GB/LC_MESSAGES/libplasma5support.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -140,6 +154,7 @@ share/locale/en_GB/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/en_GB/LC_MESSAGES/plasma_engine_time.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/eo/LC_MESSAGES/libplasma5support.mo
 share/locale/eo/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -147,6 +162,7 @@ share/locale/eo/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/eo/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/eo/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/eo/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/eo/LC_MESSAGES/plasma_engine_time.mo
 share/locale/eo/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/es/LC_MESSAGES/libplasma5support.mo
 share/locale/es/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -154,11 +170,13 @@ share/locale/es/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/es/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/es/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/es/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/es/LC_MESSAGES/plasma_engine_time.mo
 share/locale/es/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/et/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/et/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/et/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/et/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/et/LC_MESSAGES/plasma_engine_time.mo
 share/locale/et/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/eu/LC_MESSAGES/libplasma5support.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -166,6 +184,7 @@ share/locale/eu/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/eu/LC_MESSAGES/plasma_engine_time.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/fa/LC_MESSAGES/libplasma5support.mo
 share/locale/fi/LC_MESSAGES/libplasma5support.mo
@@ -174,6 +193,7 @@ share/locale/fi/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/fi/LC_MESSAGES/plasma_engine_time.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/fr/LC_MESSAGES/libplasma5support.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -181,6 +201,7 @@ share/locale/fr/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/fr/LC_MESSAGES/plasma_engine_time.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/fy/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/fy/LC_MESSAGES/plasma_engine_weather.mo
@@ -190,6 +211,7 @@ share/locale/ga/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ga/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ga/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ga/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ga/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ga/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/gl/LC_MESSAGES/libplasma5support.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -197,6 +219,7 @@ share/locale/gl/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/gl/LC_MESSAGES/plasma_engine_time.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_soliddevice.mo
@@ -207,6 +230,7 @@ share/locale/he/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/he/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/he/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/he/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/he/LC_MESSAGES/plasma_engine_time.mo
 share/locale/he/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/hi/LC_MESSAGES/libplasma5support.mo
 share/locale/hi/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -214,6 +238,7 @@ share/locale/hi/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/hi/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/hi/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/hi/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/hi/LC_MESSAGES/plasma_engine_time.mo
 share/locale/hi/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_soliddevice.mo
@@ -224,6 +249,7 @@ share/locale/hu/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/hu/LC_MESSAGES/plasma_engine_time.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ia/LC_MESSAGES/libplasma5support.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -231,6 +257,7 @@ share/locale/ia/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ia/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/id/LC_MESSAGES/libplasma5support.mo
 share/locale/id/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -238,6 +265,7 @@ share/locale/id/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/id/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/id/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/id/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/id/LC_MESSAGES/plasma_engine_time.mo
 share/locale/id/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ie/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/is/LC_MESSAGES/libplasma5support.mo
@@ -246,6 +274,7 @@ share/locale/is/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/is/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/is/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/is/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/is/LC_MESSAGES/plasma_engine_time.mo
 share/locale/is/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/it/LC_MESSAGES/libplasma5support.mo
 share/locale/it/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -253,6 +282,7 @@ share/locale/it/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/it/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/it/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/it/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/it/LC_MESSAGES/plasma_engine_time.mo
 share/locale/it/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ja/LC_MESSAGES/libplasma5support.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -260,6 +290,7 @@ share/locale/ja/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ja/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ka/LC_MESSAGES/libplasma5support.mo
 share/locale/ka/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -267,6 +298,7 @@ share/locale/ka/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ka/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ka/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ka/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ka/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ka/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/kk/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/kk/LC_MESSAGES/plasma_engine_soliddevice.mo
@@ -282,6 +314,7 @@ share/locale/ko/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ko/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/lt/LC_MESSAGES/libplasma5support.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -289,6 +322,7 @@ share/locale/lt/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/lt/LC_MESSAGES/plasma_engine_time.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/lv/LC_MESSAGES/libplasma5support.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -296,6 +330,7 @@ share/locale/lv/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/lv/LC_MESSAGES/plasma_engine_time.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/mai/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/mai/LC_MESSAGES/plasma_engine_soliddevice.mo
@@ -304,6 +339,7 @@ share/locale/ml/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ml/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_soliddevice.mo
@@ -315,10 +351,12 @@ share/locale/nb/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/nb/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/nb/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/nb/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/nb/LC_MESSAGES/plasma_engine_time.mo
 share/locale/nb/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/nds/LC_MESSAGES/plasma_engine_time.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/nl/LC_MESSAGES/libplasma5support.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -326,6 +364,7 @@ share/locale/nl/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/nl/LC_MESSAGES/plasma_engine_time.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/nn/LC_MESSAGES/libplasma5support.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -333,12 +372,14 @@ share/locale/nn/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/nn/LC_MESSAGES/plasma_engine_time.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/pa/LC_MESSAGES/libplasma5support.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/pa/LC_MESSAGES/plasma_engine_time.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/pl/LC_MESSAGES/libplasma5support.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -346,11 +387,13 @@ share/locale/pl/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/pl/LC_MESSAGES/plasma_engine_time.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/pt/LC_MESSAGES/plasma_engine_time.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/pt_BR/LC_MESSAGES/libplasma5support.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -358,6 +401,7 @@ share/locale/pt_BR/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/pt_BR/LC_MESSAGES/plasma_engine_time.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ro/LC_MESSAGES/libplasma5support.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -365,6 +409,7 @@ share/locale/ro/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ro/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ru/LC_MESSAGES/libplasma5support.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -372,6 +417,7 @@ share/locale/ru/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ru/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/sa/LC_MESSAGES/libplasma5support.mo
 share/locale/sa/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -379,6 +425,7 @@ share/locale/sa/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/sa/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sa/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/sa/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/sa/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sa/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/se/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/si/LC_MESSAGES/plasma_engine_keystate.mo
@@ -390,6 +437,7 @@ share/locale/sk/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/sk/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/sl/LC_MESSAGES/libplasma5support.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -397,24 +445,29 @@ share/locale/sl/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/sl/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/sq/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sq/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/sr/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/sr@latin/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/sv/LC_MESSAGES/libplasma5support.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -422,6 +475,7 @@ share/locale/sv/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/sv/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ta/LC_MESSAGES/libplasma5support.mo
 share/locale/ta/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -429,9 +483,11 @@ share/locale/ta/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ta/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ta/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ta/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ta/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ta/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/tg/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/tg/LC_MESSAGES/plasma_engine_powermanagement.mo
+share/locale/tg/LC_MESSAGES/plasma_engine_time.mo
 share/locale/tg/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/th/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/th/LC_MESSAGES/plasma_engine_soliddevice.mo
@@ -440,6 +496,7 @@ share/locale/tok/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/tok/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/tok/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/tok/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/tok/LC_MESSAGES/plasma_engine_time.mo
 share/locale/tok/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/tr/LC_MESSAGES/libplasma5support.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -447,6 +504,7 @@ share/locale/tr/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/tr/LC_MESSAGES/plasma_engine_time.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ug/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ug/LC_MESSAGES/plasma_engine_soliddevice.mo
@@ -457,11 +515,13 @@ share/locale/uk/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/uk/LC_MESSAGES/plasma_engine_time.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/vi/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/vi/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/vi/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/vi/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/vi/LC_MESSAGES/plasma_engine_time.mo
 share/locale/vi/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/wa/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/wa/LC_MESSAGES/plasma_engine_soliddevice.mo
@@ -472,6 +532,7 @@ share/locale/zh_CN/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/zh_CN/LC_MESSAGES/plasma_engine_time.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/zh_TW/LC_MESSAGES/libplasma5support.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_devicenotifications.mo
@@ -479,6 +540,7 @@ share/locale/zh_TW/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_engine_time.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_weather.mo
 share/plasma/
 share/plasma/weather_legacy/
@@ -495,6 +557,7 @@ share/plasma5support/services/packagekit.operations
 share/plasma5support/services/plasmoidservice.operations
 share/plasma5support/services/powermanagementservice.operations
 share/plasma5support/services/soliddevice.operations
+share/plasma5support/services/statusnotifieritem.operations
 share/plasma5support/services/storage.operations
 share/qlogging-categories6/plasma5support.categories
 share/qlogging-categories6/plasma5support.renamecategories

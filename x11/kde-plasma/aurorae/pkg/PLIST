@@ -6,6 +6,7 @@ lib/qt6/plugins/org.kde.kdecoration3/
 lib/qt6/plugins/org.kde.kdecoration3.kcm/
 @so lib/qt6/plugins/org.kde.kdecoration3.kcm/kcm_auroraedecoration.so
 @so lib/qt6/plugins/org.kde.kdecoration3/org.kde.kwin.aurorae.so
+@so lib/qt6/plugins/org.kde.kdecoration3/org.kde.kwin.aurorae.v2.so
 lib/qt6/qml/org/kde/kwin/
 lib/qt6/qml/org/kde/kwin/decoration/
 lib/qt6/qml/org/kde/kwin/decoration/AppMenuButton.qml

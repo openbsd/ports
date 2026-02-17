@@ -11,6 +11,7 @@ include/kwin/client_machine.h
 include/kwin/compositor.h
 include/kwin/config-kwin.h
 include/kwin/core/
+include/kwin/core/backendoutput.h
 include/kwin/core/colorlut3d.h
 include/kwin/core/colorpipeline.h
 include/kwin/core/colorpipelinestage.h
@@ -29,6 +30,8 @@ include/kwin/core/outputbackend.h
 include/kwin/core/outputconfiguration.h
 include/kwin/core/outputlayer.h
 include/kwin/core/pixelgrid.h
+include/kwin/core/rect.h
+include/kwin/core/region.h
 include/kwin/core/renderbackend.h
 include/kwin/core/renderjournal.h
 include/kwin/core/renderloop.h
@@ -161,6 +164,7 @@ include/kwin/utils/orientationsensor.h
 include/kwin/utils/ramfile.h
 include/kwin/utils/realtime.h
 include/kwin/utils/resource.h
+include/kwin/utils/serial.h
 include/kwin/utils/serviceutils.h
 include/kwin/utils/softwarevsyncmonitor.h
 include/kwin/utils/subsurfacemonitor.h
@@ -334,6 +338,7 @@ lib/qt6/plugins/kwin/plugins/
 @so lib/qt6/plugins/kwin/plugins/BounceKeysPlugin.so
 @so lib/qt6/plugins/kwin/plugins/KeyNotificationPlugin.so
 @so lib/qt6/plugins/kwin/plugins/MouseKeysPlugin.so
+@so lib/qt6/plugins/kwin/plugins/SlowKeysPlugin.so
 @so lib/qt6/plugins/kwin/plugins/StickyKeysPlugin.so
 @so lib/qt6/plugins/kwin/plugins/TouchpadShortcutsPlugin.so
 @so lib/qt6/plugins/kwin/plugins/buttonsrebind.so
@@ -527,6 +532,7 @@ share/doc/HTML/en/kcontrol/windowspecific/window-matching-ready-akregator.png
 share/doc/HTML/en/kcontrol/windowspecific/window-matching-tbird-compose.png
 share/doc/HTML/en/kcontrol/windowspecific/window-matching-tbird-main.png
 share/doc/HTML/en/kcontrol/windowspecific/window-matching-tbird-reminder.png
+share/doc/HTML/es/kcontrol/
 share/doc/HTML/es/kcontrol/desktop/
 share/doc/HTML/es/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/es/kcontrol/desktop/index.docbook
@@ -820,7 +826,6 @@ share/doc/HTML/sv/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/sv/kcontrol/windowspecific/
 share/doc/HTML/sv/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/sv/kcontrol/windowspecific/index.docbook
-share/doc/HTML/tr/kcontrol/
 share/doc/HTML/tr/kcontrol/desktop/
 share/doc/HTML/tr/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/tr/kcontrol/desktop/index.docbook
@@ -1716,6 +1721,7 @@ share/locale/pt_BR/LC_MESSAGES/kcmkwincommon.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkwm.mo
 share/locale/pt_BR/LC_MESSAGES/kwin.mo
+share/locale/ro/LC_MESSAGES/kcm_animations.mo
 share/locale/ro/LC_MESSAGES/kcm_kwin_effects.mo
 share/locale/ro/LC_MESSAGES/kcm_kwin_scripts.mo
 share/locale/ro/LC_MESSAGES/kcm_kwin_virtualdesktops.mo

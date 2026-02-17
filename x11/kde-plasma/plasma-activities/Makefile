@@ -1,6 +1,5 @@
 COMMENT =	core components for the KDE Activity concept
 DISTNAME =	plasma-activities-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  PlasmaActivities          0.0 # 0.0
 

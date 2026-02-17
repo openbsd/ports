@@ -1,7 +1,6 @@
 COMMENT =	KDEs screen management software
 
 DISTNAME =	kscreen-${VERSION}
-REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 

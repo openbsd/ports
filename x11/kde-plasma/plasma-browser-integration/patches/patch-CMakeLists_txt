@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -79,7 +79,7 @@ add_feature_info(LIBREWOLF_DIR On "LibreWolf directory
+@@ -82,7 +82,7 @@ add_feature_info(WATERFOX_DIR On "Waterfox directory i
  
  add_subdirectory(host)
  add_subdirectory(reminder)

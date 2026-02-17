@@ -1,6 +1,5 @@
 COMMENT =	applications useful for Plasma development
 DISTNAME =	plasma-sdk-${VERSION}
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons

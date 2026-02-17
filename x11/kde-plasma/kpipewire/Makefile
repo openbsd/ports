@@ -1,11 +1,10 @@
 COMMENT =	components relating to pipewire use in Plasma
 
 DISTNAME =	kpipewire-${VERSION}
-REVISION =	0
 
-SHARED_LIBS +=  KPipeWire                 0.0 # 0.0
+SHARED_LIBS +=  KPipeWire                 0.1 # 0.0
 SHARED_LIBS +=  KPipeWireDmaBuf           0.0 # 0.0
-SHARED_LIBS +=  KPipeWireRecord           0.0 # 0.0
+SHARED_LIBS +=  KPipeWireRecord           0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL KF6CoreAddons KF6I18n Qt6Core
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick avcodec

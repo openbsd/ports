@@ -1,0 +1,45 @@
+libinput
+Index: src/backends/libinput/device.cpp
+--- src/backends/libinput/device.cpp.orig
++++ src/backends/libinput/device.cpp
+@@ -437,6 +437,7 @@ Device::Device(libinput_device *device, QObject *paren
+     }
+ 
+     if (supportsInputArea() && m_inputArea != defaultInputArea()) {
++	/*
+         const libinput_config_area_rectangle rect{
+             .x1 = m_inputArea.topLeft().x(),
+             .y1 = m_inputArea.topLeft().y(),
+@@ -444,6 +445,7 @@ Device::Device(libinput_device *device, QObject *paren
+             .y2 = m_inputArea.bottomRight().y(),
+         };
+         libinput_device_config_area_set_rectangle(m_device, &rect);
++	*/
+     }
+ 
+     libinput_device_group *group = libinput_device_get_device_group(device);
+@@ -1085,7 +1087,7 @@ double Device::defaultPressureRangeMax() const
+ 
+ bool Device::supportsInputArea() const
+ {
+-    return libinput_device_config_area_has_rectangle(m_device);
++    return false; //libinput_device_config_area_has_rectangle(m_device);
+ }
+ 
+ QRectF Device::inputArea() const
+@@ -1098,6 +1100,7 @@ void Device::setInputArea(const QRectF &inputArea)
+     if (m_inputArea != inputArea) {
+         m_inputArea = inputArea;
+ 
++	/*
+         const libinput_config_area_rectangle rect{
+             .x1 = m_inputArea.topLeft().x(),
+             .y1 = m_inputArea.topLeft().y(),
+@@ -1105,6 +1108,7 @@ void Device::setInputArea(const QRectF &inputArea)
+             .y2 = m_inputArea.bottomRight().y(),
+         };
+         libinput_device_config_area_set_rectangle(m_device, &rect);
++	*/
+ 
+         writeEntry(ConfigKey::InputArea, m_inputArea);
+         Q_EMIT inputAreaChanged();

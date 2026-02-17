@@ -215,29 +215,7 @@ Index: processcore/processes_openbsd_p.cpp
      }
      free(p);
      return pids;
-@@ -248,18 +218,12 @@ Processes::Error ProcessesLocal::setNiceness(long pid,
-     return Processes::NoError;
- }
- 
--Processes::Error ProcessesLocal::setScheduler(long pid, int priorityClass, int priority)
-+Processes::Error ProcessesLocal::setScheduler(long, int, int)
- {
--    if (priorityClass == KSysGuard::Process::Other || priorityClass == KSysGuard::Process::Batch) {
--        priority = 0;
--    }
--    if (pid <= 0) {
--        return Processes::InvalidPid; // check the parameters
--    }
--    return Processes::NotSupported;
-+    return Processes::NoError;
- }
- 
--Processes::Error ProcessesLocal::setIoNiceness(long pid, int priorityClass, int priority)
-+Processes::Error ProcessesLocal::setIoNiceness(long, int, int)
- {
-     return Processes::NotSupported; // Not yet supported
- }
-@@ -271,41 +235,26 @@ bool ProcessesLocal::supportsIoNiceness()
+@@ -296,41 +266,26 @@ bool ProcessesLocal::supportsIoNiceness()
  
  long long ProcessesLocal::totalPhysicalMemory()
  {

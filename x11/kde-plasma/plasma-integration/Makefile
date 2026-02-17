@@ -1,6 +1,5 @@
 COMMENT =	Plasma Platform Theme integration plugins
 DISTNAME =	plasma-integration-${VERSION}
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons

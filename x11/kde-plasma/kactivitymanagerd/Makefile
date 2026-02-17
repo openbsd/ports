@@ -1,7 +1,6 @@
 COMMENT =	core components for the KDE Activity concept
 
 DISTNAME =	kactivitymanagerd-${VERSION}
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash

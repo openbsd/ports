@@ -1,9 +1,8 @@
 COMMENT =	Qt API to interact with the wayland-client and -server
 DISTNAME =	kwayland-${VERSION}
 PKGNAME =	kf6-kwayland-${VERSION}
-REVISION =	0
 
-SHARED_LIBS +=  KWaylandClient            0.0 # 0.0
+SHARED_LIBS +=  KWaylandClient            0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
 WANTLIB += Qt6WaylandClient m wayland-client wayland-cursor xkbcommon

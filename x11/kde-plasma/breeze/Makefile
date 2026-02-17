@@ -1,6 +1,5 @@
 COMMENT =	Breeze KDE desktop theme
 DISTNAME =	breeze-${VERSION}
-REVISION =	0
 
 MODKDE_TRANSLATIONS = Yes
 MODKDE_ICON_CACHE = Yes

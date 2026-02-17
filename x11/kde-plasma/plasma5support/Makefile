@@ -1,7 +1,6 @@
 COMMENT =	components for porting from KF5/Qt5 to KF6/Qt6
 
 DISTNAME =	plasma5support-${VERSION}
-REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 

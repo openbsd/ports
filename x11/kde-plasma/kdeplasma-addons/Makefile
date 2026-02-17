@@ -1,7 +1,6 @@
 COMMENT =	KDE Plasma add-ons
 DISTNAME =	kdeplasma-addons-${VERSION}
 PKGNAME =	kf6-kdeplasma-addons-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  plasmapotdprovidercore    1.0 # 0.0
 SHARED_LIBS +=	plasmaweatherdata         0.0 # 0.0
@@ -55,9 +54,9 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/sonnet \
+		devel/kf6/ksvg \
 		textproc/icu4c \
 		x11/kde-plasma/libplasma>=${VERSION} \
-		x11/kde-plasma/plasma5support>=${VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \

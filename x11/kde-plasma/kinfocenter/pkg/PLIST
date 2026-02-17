@@ -33,6 +33,7 @@ lib/qt6/qml/org/kde/kinfocenter/private/qml/CommandOutputKCM.qml
 lib/qt6/qml/org/kde/kinfocenter/private/qmldir
 @bin libexec/kf6/kauth/kinfocenter-dmidecode-helper
 @bin libexec/kinfocenter-opengl-helper
+@bin libexec/kinfocenter-vulkan-helper
 share/applications/kcm_about-distro.desktop
 share/applications/org.kde.kinfocenter.desktop
 share/dbus-1/system-services/org.kde.kinfocenter.dmidecode.service
@@ -103,6 +104,8 @@ share/kinfocenter/edid/
 share/kinfocenter/edid/edid.sh
 share/kinfocenter/firmware_security/
 share/kinfocenter/firmware_security/fwupdmgr.sh
+share/kinfocenter/network/
+share/kinfocenter/network/ip.sh
 share/locale/af/LC_MESSAGES/kcm_samba.mo
 share/locale/af/LC_MESSAGES/kcmusb.mo
 share/locale/ar/LC_MESSAGES/kcm_about-distro.mo

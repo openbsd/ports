@@ -1,7 +1,8 @@
+lib/qt6/plugins/plasma/
+lib/qt6/plugins/plasma/applets/
+@so lib/qt6/plugins/plasma/applets/org.kde.milou.so
 lib/qt6/qml/org/kde/milou/
 lib/qt6/qml/org/kde/milou/ResultDelegate.qml
-lib/qt6/qml/org/kde/milou/ResultsListView.qml
-lib/qt6/qml/org/kde/milou/ResultsListViewDelegate.qml
 lib/qt6/qml/org/kde/milou/ResultsView.qml
 lib/qt6/qml/org/kde/milou/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/milou/libmilou.so
@@ -116,12 +117,3 @@ share/locale/zh_CN/LC_MESSAGES/milou.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/zh_TW/LC_MESSAGES/milou.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.milou.mo
-share/plasma/
-share/plasma/plasmoids/
-share/plasma/plasmoids/org.kde.milou/
-share/plasma/plasmoids/org.kde.milou/contents/
-share/plasma/plasmoids/org.kde.milou/contents/ui/
-share/plasma/plasmoids/org.kde.milou/contents/ui/SearchField.qml
-share/plasma/plasmoids/org.kde.milou/contents/ui/globals.js
-share/plasma/plasmoids/org.kde.milou/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.milou/metadata.json

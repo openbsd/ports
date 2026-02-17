@@ -10,7 +10,6 @@ lib/qt6/plugins/plasma/applets/
 lib/qt6/plugins/plasma/kcms/
 lib/qt6/plugins/plasma/kcms/systemsettings/
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_printer_manager.so
-lib/qt6/qml/org/kde/plasma/
 lib/qt6/qml/org/kde/plasma/printmanager/
 lib/qt6/qml/org/kde/plasma/printmanager/kcups.qmltypes
 lib/qt6/qml/org/kde/plasma/printmanager/kde-qmlmodule.version
@@ -26,6 +25,7 @@ share/locale/ar/LC_MESSAGES/print-manager.mo
 share/locale/ast/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ast/LC_MESSAGES/print-manager.mo
+share/locale/az/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/az/LC_MESSAGES/print-manager.mo
 share/locale/be/LC_MESSAGES/kcm_printer_manager.mo

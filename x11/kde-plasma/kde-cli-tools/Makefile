@@ -1,7 +1,6 @@
 COMMENT =	KDE krameworks tools
 
 DISTNAME =	kde-cli-tools-${VERSION}
-REVISION =	0
 
 MODKDE_TRANSLATIONS = Yes
 MODKDE_DOCS = Yes

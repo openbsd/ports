@@ -13,8 +13,15 @@
 @so lib/qt6/plugins/kf6/krunner/krunner_kwin.so
 @so lib/qt6/plugins/kf6/krunner/krunner_plasma-desktop.so
 @so lib/qt6/plugins/plasma/applets/org.kde.panel.so
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.keyboardlayout.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.kicker.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.kickoff.so
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.kimpanel.so
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.marginsseparator.so
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.pager.so
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.showActivityManager.so
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.showdesktop.so
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.taskmanager.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.trash.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.windowlist.so
 @so lib/qt6/plugins/plasma/kcminit/kcm_mouse_init.so
@@ -58,26 +65,6 @@ lib/qt6/qml/org/kde/plasma/private/kcm_keyboard/kcm_keyboard_declarative.qmltype
 lib/qt6/qml/org/kde/plasma/private/kcm_keyboard/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/plasma/private/kcm_keyboard/libkcm_keyboard_declarative.so
 lib/qt6/qml/org/kde/plasma/private/kcm_keyboard/qmldir
-lib/qt6/qml/org/kde/plasma/private/kimpanel/
-lib/qt6/qml/org/kde/plasma/private/kimpanel/kde-qmlmodule.version
-lib/qt6/qml/org/kde/plasma/private/kimpanel/kimpanelplugin.qmltypes
-@so lib/qt6/qml/org/kde/plasma/private/kimpanel/libkimpanelplugin.so
-lib/qt6/qml/org/kde/plasma/private/kimpanel/qmldir
-lib/qt6/qml/org/kde/plasma/private/pager/
-lib/qt6/qml/org/kde/plasma/private/pager/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/plasma/private/pager/libpagerplugin.so
-lib/qt6/qml/org/kde/plasma/private/pager/pagerplugin.qmltypes
-lib/qt6/qml/org/kde/plasma/private/pager/qmldir
-lib/qt6/qml/org/kde/plasma/private/showdesktop/
-lib/qt6/qml/org/kde/plasma/private/showdesktop/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/plasma/private/showdesktop/libshowdesktopplugin.so
-lib/qt6/qml/org/kde/plasma/private/showdesktop/qmldir
-lib/qt6/qml/org/kde/plasma/private/showdesktop/showdesktopplugin.qmltypes
-lib/qt6/qml/org/kde/plasma/private/taskmanager/
-lib/qt6/qml/org/kde/plasma/private/taskmanager/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/plasma/private/taskmanager/libtaskmanagerplugin.so
-lib/qt6/qml/org/kde/plasma/private/taskmanager/qmldir
-lib/qt6/qml/org/kde/plasma/private/taskmanager/taskmanagerplugin.qmltypes
 lib/qt6/qml/org/kde/private/desktopcontainment/
 lib/qt6/qml/org/kde/private/desktopcontainment/folder/
 lib/qt6/qml/org/kde/private/desktopcontainment/folder/folderplugin.qmltypes
@@ -117,7 +104,6 @@ share/applications/kde-mimeapps.list
 share/applications/org.kde.knetattach.desktop
 share/applications/org.kde.plasma.emojier.desktop
 share/config.kcfg/kactivitymanagerd_plugins_settings.kcfg
-share/config.kcfg/kactivitymanagerd_settings.kcfg
 share/config.kcfg/kcmaccessibilitybell.kcfg
 share/config.kcfg/kcmaccessibilitycolorblindnesscorrection.kcfg
 share/config.kcfg/kcmaccessibilityinvert.kcfg
@@ -154,9 +140,6 @@ share/doc/HTML/ca/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/ca/kcontrol/kcmactivities/
 share/doc/HTML/ca/kcontrol/kcmactivities/index.cache.bz2
 share/doc/HTML/ca/kcontrol/kcmactivities/index.docbook
-share/doc/HTML/ca/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/ca/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/ca/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/ca/kcontrol/kcmsmserver/
 share/doc/HTML/ca/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/ca/kcontrol/kcmsmserver/index.docbook
@@ -229,9 +212,6 @@ share/doc/HTML/de/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/de/kcontrol/kcmactivities/
 share/doc/HTML/de/kcontrol/kcmactivities/index.cache.bz2
 share/doc/HTML/de/kcontrol/kcmactivities/index.docbook
-share/doc/HTML/de/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/de/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/de/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/de/kcontrol/kcmsmserver/
 share/doc/HTML/de/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/de/kcontrol/kcmsmserver/index.docbook
@@ -387,9 +367,6 @@ share/doc/HTML/es/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/es/kcontrol/kcmactivities/
 share/doc/HTML/es/kcontrol/kcmactivities/index.cache.bz2
 share/doc/HTML/es/kcontrol/kcmactivities/index.docbook
-share/doc/HTML/es/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/es/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/es/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/es/kcontrol/kcmsmserver/
 share/doc/HTML/es/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/es/kcontrol/kcmsmserver/index.docbook
@@ -478,9 +455,6 @@ share/doc/HTML/id/kcontrol/joystick/index.docbook
 share/doc/HTML/id/kcontrol/kcmaccess/
 share/doc/HTML/id/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/id/kcontrol/kcmaccess/index.docbook
-share/doc/HTML/id/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/id/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/id/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/id/kcontrol/kcmsmserver/
 share/doc/HTML/id/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/id/kcontrol/kcmsmserver/index.docbook
@@ -541,9 +515,6 @@ share/doc/HTML/it/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/it/kcontrol/kcmactivities/
 share/doc/HTML/it/kcontrol/kcmactivities/index.cache.bz2
 share/doc/HTML/it/kcontrol/kcmactivities/index.docbook
-share/doc/HTML/it/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/it/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/it/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/it/kcontrol/kcmsmserver/
 share/doc/HTML/it/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/it/kcontrol/kcmsmserver/index.docbook
@@ -607,9 +578,6 @@ share/doc/HTML/nl/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/nl/kcontrol/kcmactivities/
 share/doc/HTML/nl/kcontrol/kcmactivities/index.cache.bz2
 share/doc/HTML/nl/kcontrol/kcmactivities/index.docbook
-share/doc/HTML/nl/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/nl/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/nl/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/nl/kcontrol/kcmsmserver/
 share/doc/HTML/nl/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/nl/kcontrol/kcmsmserver/index.docbook
@@ -664,9 +632,6 @@ share/doc/HTML/pt/kcontrol/joystick/index.docbook
 share/doc/HTML/pt/kcontrol/kcmaccess/
 share/doc/HTML/pt/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/pt/kcontrol/kcmaccess/index.docbook
-share/doc/HTML/pt/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/pt/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/pt/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/pt/kcontrol/kded/
 share/doc/HTML/pt/kcontrol/kded/index.cache.bz2
 share/doc/HTML/pt/kcontrol/kded/index.docbook
@@ -721,9 +686,6 @@ share/doc/HTML/pt_BR/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/pt_BR/kcontrol/kcmactivities/
 share/doc/HTML/pt_BR/kcontrol/kcmactivities/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/kcmactivities/index.docbook
-share/doc/HTML/pt_BR/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/pt_BR/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/pt_BR/kcontrol/kcmsmserver/
 share/doc/HTML/pt_BR/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/kcmsmserver/index.docbook
@@ -797,9 +759,6 @@ share/doc/HTML/ru/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/ru/kcontrol/kcmactivities/
 share/doc/HTML/ru/kcontrol/kcmactivities/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kcmactivities/index.docbook
-share/doc/HTML/ru/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/ru/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/ru/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/ru/kcontrol/kcmsmserver/
 share/doc/HTML/ru/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kcmsmserver/index.docbook
@@ -908,9 +867,6 @@ share/doc/HTML/sl/plasma-desktop/index.docbook
 share/doc/HTML/sr/kcontrol/clock/
 share/doc/HTML/sr/kcontrol/clock/index.cache.bz2
 share/doc/HTML/sr/kcontrol/clock/index.docbook
-share/doc/HTML/sr/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/sr/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/sr/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/sr/kcontrol/paths/
 share/doc/HTML/sr/kcontrol/paths/index.cache.bz2
 share/doc/HTML/sr/kcontrol/paths/index.docbook
@@ -923,9 +879,6 @@ share/doc/HTML/sr/knetattach/index.docbook
 share/doc/HTML/sr@latin/kcontrol/clock/
 share/doc/HTML/sr@latin/kcontrol/clock/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol/clock/index.docbook
-share/doc/HTML/sr@latin/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/sr@latin/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/sr@latin/kcontrol/paths/
 share/doc/HTML/sr@latin/kcontrol/paths/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol/paths/index.docbook
@@ -950,9 +903,6 @@ share/doc/HTML/sv/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/sv/kcontrol/kcmactivities/
 share/doc/HTML/sv/kcontrol/kcmactivities/index.cache.bz2
 share/doc/HTML/sv/kcontrol/kcmactivities/index.docbook
-share/doc/HTML/sv/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/sv/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/sv/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/sv/kcontrol/kcmsmserver/
 share/doc/HTML/sv/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/sv/kcontrol/kcmsmserver/index.docbook
@@ -1073,9 +1023,6 @@ share/doc/HTML/uk/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/uk/kcontrol/kcmactivities/
 share/doc/HTML/uk/kcontrol/kcmactivities/index.cache.bz2
 share/doc/HTML/uk/kcontrol/kcmactivities/index.docbook
-share/doc/HTML/uk/kcontrol/kcmlaunchfeedback/
-share/doc/HTML/uk/kcontrol/kcmlaunchfeedback/index.cache.bz2
-share/doc/HTML/uk/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/uk/kcontrol/kcmsmserver/
 share/doc/HTML/uk/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/uk/kcontrol/kcmsmserver/index.docbook
@@ -2415,6 +2362,7 @@ share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/ia/LC_MESSAGES/plasma_runner_keys.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ia/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -2587,6 +2535,7 @@ share/locale/ja/LC_MESSAGES/kcmmouse.mo
 share/locale/ja/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ja/LC_MESSAGES/knetattach.mo
 share/locale/ja/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/ja/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -3000,6 +2949,7 @@ share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/nb/LC_MESSAGES/plasma_runner_keys.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/nb/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3417,7 +3367,6 @@ share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ru/LC_MESSAGES/plasma_runner_keys.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ru/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3589,6 +3538,8 @@ share/locale/sq/LC_MESSAGES/kcm_kded.mo
 share/locale/sq/LC_MESSAGES/kcm_keyboard.mo
 share/locale/sq/LC_MESSAGES/kcm_smserver.mo
 share/locale/sq/LC_MESSAGES/kcm_solid_actions.mo
+share/locale/sq/LC_MESSAGES/kcm_splashscreen.mo
+share/locale/sq/LC_MESSAGES/kcm_tablet.mo
 share/locale/sq/LC_MESSAGES/kcmkclock.mo
 share/locale/sq/LC_MESSAGES/kcmmouse.mo
 share/locale/sq/LC_MESSAGES/knetattach.mo
@@ -4382,97 +4333,8 @@ share/plasma/plasmoids/org.kde.plasma.folder/
 share/plasma/plasmoids/org.kde.plasma.folder/metadata.json
 share/plasma/plasmoids/org.kde.plasma.icontasks/
 share/plasma/plasmoids/org.kde.plasma.icontasks/metadata.json
-share/plasma/plasmoids/org.kde.plasma.keyboardlayout/
-share/plasma/plasmoids/org.kde.plasma.keyboardlayout/contents/
-share/plasma/plasmoids/org.kde.plasma.keyboardlayout/contents/config/
-share/plasma/plasmoids/org.kde.plasma.keyboardlayout/contents/config/config.qml
-share/plasma/plasmoids/org.kde.plasma.keyboardlayout/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.keyboardlayout/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.keyboardlayout/contents/ui/configGeneral.qml
-share/plasma/plasmoids/org.kde.plasma.keyboardlayout/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.keyboardlayout/metadata.json
-share/plasma/plasmoids/org.kde.plasma.kimpanel/
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/config/
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/config/config.qml
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/ui/ActionMenu.qml
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/ui/CandidateHighlight.qml
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/ui/ConfigAppearance.qml
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/ui/ContextMenu.qml
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/ui/InputPanel.qml
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/ui/StatusIcon.qml
-share/plasma/plasmoids/org.kde.plasma.kimpanel/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.kimpanel/metadata.json
-share/plasma/plasmoids/org.kde.plasma.marginsseparator/
-share/plasma/plasmoids/org.kde.plasma.marginsseparator/contents/
-share/plasma/plasmoids/org.kde.plasma.marginsseparator/contents/config/
-share/plasma/plasmoids/org.kde.plasma.marginsseparator/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.marginsseparator/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.marginsseparator/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.marginsseparator/metadata.json
 share/plasma/plasmoids/org.kde.plasma.minimizeall/
 share/plasma/plasmoids/org.kde.plasma.minimizeall/metadata.json
-share/plasma/plasmoids/org.kde.plasma.pager/
-share/plasma/plasmoids/org.kde.plasma.pager/contents/
-share/plasma/plasmoids/org.kde.plasma.pager/contents/config/
-share/plasma/plasmoids/org.kde.plasma.pager/contents/config/config.qml
-share/plasma/plasmoids/org.kde.plasma.pager/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.pager/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.pager/contents/ui/configGeneral.qml
-share/plasma/plasmoids/org.kde.plasma.pager/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.pager/metadata.json
-share/plasma/plasmoids/org.kde.plasma.showActivityManager/
-share/plasma/plasmoids/org.kde.plasma.showActivityManager/contents/
-share/plasma/plasmoids/org.kde.plasma.showActivityManager/contents/config/
-share/plasma/plasmoids/org.kde.plasma.showActivityManager/contents/config/config.qml
-share/plasma/plasmoids/org.kde.plasma.showActivityManager/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.showActivityManager/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.showActivityManager/contents/ui/ConfigAppearance.qml
-share/plasma/plasmoids/org.kde.plasma.showActivityManager/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.showActivityManager/metadata.json
-share/plasma/plasmoids/org.kde.plasma.showdesktop/
-share/plasma/plasmoids/org.kde.plasma.showdesktop/contents/
-share/plasma/plasmoids/org.kde.plasma.showdesktop/contents/config/
-share/plasma/plasmoids/org.kde.plasma.showdesktop/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.showdesktop/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.showdesktop/contents/ui/Controller.qml
-share/plasma/plasmoids/org.kde.plasma.showdesktop/contents/ui/MinimizeAllController.qml
-share/plasma/plasmoids/org.kde.plasma.showdesktop/contents/ui/PeekController.qml
-share/plasma/plasmoids/org.kde.plasma.showdesktop/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.showdesktop/metadata.json
-share/plasma/plasmoids/org.kde.plasma.taskmanager/
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/config.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/AudioStream.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/Badge.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/ConfigAppearance.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/ConfigBehavior.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/ContextMenu.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/GroupDialog.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/GroupExpanderOverlay.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/MouseHandler.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/PipeWireThumbnail.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/PlayerController.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/PulseAudio.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/ScrollableTextWrapper.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/Task.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/TaskBadgeOverlay.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/TaskList.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/TaskProgressOverlay.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/ToolTipDelegate.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/ToolTipInstance.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/ToolTipWindowMouseArea.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/code/
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/code/layoutmetrics.js
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/code/tools.js
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.taskmanager/metadata.json
-share/plasma/shells/
 share/plasma/shells/org.kde.plasma.desktop/
 share/plasma/shells/org.kde.plasma.desktop/contents/
 share/plasma/shells/org.kde.plasma.desktop/contents/InteractiveConsole.qml
@@ -4481,7 +4343,6 @@ share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/ActivityItem
 share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/ActivityList.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/ActivityManager.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/Heading.qml
-share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/StoppedActivityItem.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/TaskDropArea.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/WindowPreview.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/activitymanager/static.js

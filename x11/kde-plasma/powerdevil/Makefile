@@ -1,6 +1,5 @@
 COMMENT =	power management daemon
 DISTNAME =	powerdevil-${VERSION}
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
@@ -15,9 +14,7 @@ WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6WaylandClient Qt6Widgets
 WANTLIB += Qt6Xml c kworkspace6 m udev wayland-client wayland-cursor
 WANTLIB += xcb xcb-dpms xkbcommon
 
-SHARED_LIBS +=  powerdevilconfigcommonprivate 1.0 # 0.0
-SHARED_LIBS +=  powerdevilcore                1.0 # 0.0
-SHARED_LIBS +=  powerdevilui                  1.0 # 0.0
+SHARED_LIBS +=  powerdevilcore                1.1 # 0.0
 
 MODKDE_TRANSLATIONS =	Yes
 

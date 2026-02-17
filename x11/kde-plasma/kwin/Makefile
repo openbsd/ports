@@ -2,15 +2,29 @@ COMMENT =		Wayland window manager for KDE Plasma Desktops
 DISTNAME =		kwin-${VERSION}
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
-SHARED_LIBS +=  kwin                      1.0 # 0.0
-SHARED_LIBS +=  kwineffects               1.0 # 0.0
-SHARED_LIBS +=  kwinglutils               1.0 # 0.0
-SHARED_LIBS +=  kwinxrenderutils          1.0 # 0.0
-
+SHARED_LIBS +=  kwin                      2.0 # 0.0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
 MODKDE_DOCS =		Yes
+
+WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE KF6Attica KF6AuthCore
+WANTLIB += KF6ColorScheme KF6ConfigCore KF6ConfigGui KF6ConfigQml
+WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6DBusAddons
+WANTLIB += KF6GlobalAccel KF6GuiAddons KF6I18n KF6I18nQml KF6IdleTime
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6NewStuffCore
+WANTLIB += KF6NewStuffWidgets KF6Notifications KF6Package KF6Service
+WANTLIB += KF6Svg KF6WidgetsAddons KF6WindowSystem KF6XmlGui KGlobalAccelD
+WANTLIB += KNightTime KScreenLocker KWaylandClient PlasmaActivities
+WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6Sensors Qt6Svg
+WANTLIB += Qt6UiTools Qt6Widgets Qt6Xml SM X11 Xext c canberra
+WANTLIB += display-info drm eis epoll-shim epoxy gbm input kdecorations3
+WANTLIB += kdecorations3private lcms2 m pipewire-0.3 qaccessibilityclient-qt6
+WANTLIB += udev wayland-client wayland-server xcb xcb-composite
+WANTLIB += xcb-dri3 xcb-icccm xcb-keysyms xcb-present xcb-randr
+WANTLIB += xcb-render xcb-res xcb-shape xcb-shm xcb-sync xcb-xfixes
+WANTLIB += xcb-xinerama xcb-xinput xcvt xkbcommon
 
 MODULES +=	lang/python
 
@@ -67,10 +81,10 @@ LIB_DEPENDS =	audio/libcanberra \
 		wayland/wayland \
 		x11/kde-plasma/kdecoration>=${VERSION} \
 		x11/kde-plasma/kglobalacceld>=${VERSION} \
-		x11/kde-plasma/kwayland>=${VERSION} \
-		x11/kde-plasma/plasma-activities>=${VERSION} \
 		x11/kde-plasma/knighttime>=${VERSION} \
 		x11/kde-plasma/kscreenlocker>=${VERSION} \
+		x11/kde-plasma/kwayland>=${VERSION} \
+		x11/kde-plasma/plasma-activities>=${VERSION} \
 		x11/libqaccessibilityclient \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtsensors \
@@ -81,6 +95,9 @@ LIB_DEPENDS =	audio/libcanberra \
 CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include/libepoll-shim/
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lepoll-shim
 CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT6_LIBDIR}/cmake
+
+# No libinput support
+CONFIGURE_ARGS +=	-DKWIN_BUILD_GAMECONTROLLER=OFF
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
