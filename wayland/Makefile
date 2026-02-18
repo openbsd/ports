@@ -40,5 +40,6 @@
      SUBDIR += wmenu
      SUBDIR += wofi
      SUBDIR += xwayland
+     SUBDIR += xwayland-satellite
 
 .include <bsd.port.subdir.mk>
