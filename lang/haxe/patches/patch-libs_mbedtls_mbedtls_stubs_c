@@ -1,0 +1,52 @@
+Index: libs/mbedtls/mbedtls_stubs.c
+--- libs/mbedtls/mbedtls_stubs.c.orig
++++ libs/mbedtls/mbedtls_stubs.c
+@@ -18,13 +18,11 @@
+ #include <caml/callback.h>
+ #include <caml/custom.h>
+ 
+-#include "mbedtls/debug.h"
+ #include "mbedtls/error.h"
+-#include "mbedtls/config.h"
+ #include "mbedtls/ssl.h"
+ #include "mbedtls/entropy.h"
+ #include "mbedtls/ctr_drbg.h"
+-#include "mbedtls/certs.h"
++#include "mbedtls/psa_util.h"
+ #include "mbedtls/oid.h"
+ 
+ #define PVoid_val(v) (*((void**) Data_custom_val(v)))
+@@ -200,7 +198,7 @@ CAMLprim value hx_cert_get_alt_names(value chain) {
+ 	CAMLparam1(chain);
+ 	CAMLlocal1(obj);
+ 	mbedtls_x509_crt* cert = X509Crt_val(chain);
+-	if (cert->ext_types & MBEDTLS_X509_EXT_SUBJECT_ALT_NAME == 0 || &cert->subject_alt_names == NULL) {
++	if (!mbedtls_x509_crt_has_ext_type(cert, MBEDTLS_X509_EXT_SUBJECT_ALT_NAME)) {
+ 		obj = Atom(0);
+ 	} else {
+ 		mbedtls_asn1_sequence* cur = &cert->subject_alt_names;
+@@ -374,7 +372,7 @@ CAMLprim value ml_mbedtls_pk_parse_key(value ctx, valu
+ 		pwd = String_val(Field(password, 0));
+ 		pwdlen = caml_string_length(Field(password, 0));
+ 	}
+-	CAMLreturn(mbedtls_pk_parse_key(PkContext_val(ctx), String_val(key), caml_string_length(key) + 1, pwd, pwdlen));
++	CAMLreturn(mbedtls_pk_parse_key(PkContext_val(ctx), String_val(key), caml_string_length(key) + 1, pwd, pwdlen, mbedtls_psa_get_random, MBEDTLS_PSA_RANDOM_STATE));
+ }
+ 
+ CAMLprim value ml_mbedtls_pk_parse_keyfile(value ctx, value path, value password) {
+@@ -383,7 +381,7 @@ CAMLprim value ml_mbedtls_pk_parse_keyfile(value ctx, 
+ 	if (password != Val_none) {
+ 		pwd = String_val(Field(password, 0));
+ 	}
+-	CAMLreturn(mbedtls_pk_parse_keyfile(PkContext_val(ctx), String_val(path), pwd));
++	CAMLreturn(mbedtls_pk_parse_keyfile(PkContext_val(ctx), String_val(path), pwd, mbedtls_psa_get_random, MBEDTLS_PSA_RANDOM_STATE));
+ }
+ 
+ CAMLprim value ml_mbedtls_pk_parse_public_key(value ctx, value key) {
+@@ -595,4 +593,4 @@ CAMLprim value hx_get_ssl_transport_flags(value unit) 
+ 	const char* names[] = {"SSL_TRANSPORT_STREAM", "SSL_TRANSPORT_DATAGRAM"};
+ 	int values[] = {MBEDTLS_SSL_TRANSPORT_STREAM, MBEDTLS_SSL_TRANSPORT_DATAGRAM};
+ 	CAMLreturn(build_fields(sizeof(values) / sizeof(values[0]), names, values));
+-}
+\ No newline at end of file
++}

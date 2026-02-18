@@ -9,6 +9,7 @@ COMMENT-main =	2D and 3D game engine
 COMMENT-editor=	2D and 3D game engine (with the editor)
 
 V =		4.4.1
+REVISION =	0
 PKGNAME =	godot4-${V}
 DIST_TUPLE +=	github godotengine godot ${V}-stable .
 DIST_TUPLE +=	github GodotSteam GodotSteam v4.3 godotsteam
@@ -104,7 +105,7 @@ LIB_DEPENDS =		archivers/zstd \
 			multimedia/libtheora \
 			net/enet \
 			net/miniupnp/miniupnpc \
-			security/polarssl \
+			security/mbedtls \
 			x11/dbus,-main \
 			x11/xkbcommon \
 			www/wslay

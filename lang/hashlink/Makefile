@@ -12,7 +12,7 @@ COMMENT =	virtual machine for Haxe
 V =		1.15pl0
 COMMIT =	109f831769ab26a6fa0cf08ef1b926776a77c372
 PKGNAME =	hashlink-${V}
-REVISION =	0
+REVISION =	1
 
 # commit from 2026-01-05; tagged as 'latest'
 DIST_TUPLE +=	github HaxeFoundation hashlink ${COMMIT} .
@@ -40,7 +40,7 @@ LIB_DEPENDS =	audio/libvorbis \
 		devel/sdl2 \
 		graphics/jpeg \
 		graphics/png \
-		security/polarssl
+		security/mbedtls
 
 USE_GMAKE =	Yes
 

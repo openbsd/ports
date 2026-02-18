@@ -1,6 +1,7 @@
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 DISTNAME=	openvpn-2.6.19
+REVISION=	0
 
 CATEGORIES=	net security
 
@@ -33,7 +34,7 @@ FLAVORS=	mbedtls
 FLAVOR?=
 
 .if ${FLAVOR:Mmbedtls}
-LIB_DEPENDS+=	security/polarssl
+LIB_DEPENDS+=	security/mbedtls
 CONFIGURE_ARGS+= --with-crypto-library=mbedtls
 WANTLIB += mbedcrypto mbedtls mbedx509 pthread
 .else

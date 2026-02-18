@@ -1,6 +1,7 @@
 COMMENT =	utilities library used by linphone stack
 
 MODULE =	bctoolbox
+REVISION =	0
 
 SHARED_LIBS +=	bctoolbox 1.0 # 1
 SHARED_LIBS +=	bctoolbox-tester 0.0 # 1
@@ -12,7 +13,7 @@ MAKE_FLAGS +=CPPFLAGS=-I${LOCALBASE}/include
 
 # links statically
 BUILD_DEPENDS =	telephony/linphone/bcunit
-LIB_DEPENDS =	security/polarssl \
+LIB_DEPENDS =	security/mbedtls \
 		converters/libiconv
 
 MODCMAKE_DEBUG=Yes

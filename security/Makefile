@@ -122,6 +122,7 @@
      SUBDIR += luasec,lua53
      SUBDIR += luasec,lua54
      SUBDIR += lynis
+     SUBDIR += mbedtls
      SUBDIR += mcrypt
      SUBDIR += mhash
      SUBDIR += minisign
@@ -264,7 +265,6 @@
      SUBDIR += pkcs11-helper
      SUBDIR += plaso
      SUBDIR += plass
-     SUBDIR += polarssl
      SUBDIR += portscanner
      SUBDIR += portsentry
      SUBDIR += ppgen

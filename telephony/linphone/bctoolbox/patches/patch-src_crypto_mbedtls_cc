@@ -1,0 +1,45 @@
+No need to use custom thread locking,
+> Since Mbed TLS 3.6.0, the PSA API is thread-safe when MBEDTLS_THREADING_C is enabled.
+
+Index: src/crypto/mbedtls.cc
+--- src/crypto/mbedtls.cc.orig
++++ src/crypto/mbedtls.cc
+@@ -61,7 +61,7 @@ extern "C" void bctbx_random_bytes(unsigned char *ret,
+ namespace bctoolbox {
+ 
+ namespace {
+-#ifdef BCTBX_USE_MBEDTLS_PSA
++#if defined(BCTBX_USE_MBEDTLS_PSA) && !defined(MBEDTLS_THREADING_C)
+ // This is also defined in mbedtls source code by a custom modification
+ using mbedtls_threading_mutex_t = void *;
+ 
+@@ -95,7 +95,7 @@ int threading_mutex_unlock_cpp(mbedtls_threading_mutex
+ 	static_cast<std::mutex *>(*mutex)->unlock();
+ 	return 0;
+ }
+-#endif // BCTBX_USE_MBEDTLS_PSA
++#endif // BCTBX_USE_MBEDTLS_PSA && !MBEDTLS_THREADING_C
+ 
+ class mbedtlsStaticContexts {
+ public:
+@@ -106,8 +106,10 @@ class mbedtlsStaticContexts { (public)
+ 	std::unique_ptr<RNG> sRNG;
+ 	mbedtlsStaticContexts() {
+ #ifdef BCTBX_USE_MBEDTLS_PSA
++# if !defined(MBEDTLS_THREADING_C)
+ 		mbedtls_threading_set_alt(threading_mutex_init_cpp, threading_mutex_free_cpp, threading_mutex_lock_cpp,
+ 		                          threading_mutex_unlock_cpp);
++# endif // !MBEDTLS_THREADING_C
+ 		if (psa_crypto_init() != PSA_SUCCESS) {
+ 			bctbx_error("MbedTLS PSA init fail");
+ 		}
+@@ -120,7 +122,9 @@ class mbedtlsStaticContexts { (public)
+ 		sRNG = nullptr;
+ #ifdef BCTBX_USE_MBEDTLS_PSA
+ 		mbedtls_psa_crypto_free();
++# if !defined(MBEDTLS_THREADING_C)
+ 		mbedtls_threading_free_alt();
++# endif // !MBEDTLS_THREADING_C
+ #endif // BCTBX_USE_MBEDTLS_PSA
+ 	}
+ };

@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS = ${OCAML_NATIVE_ARCHS}
 COMMENT =	toolkit for the Haxe programming language
 
 V =		4.3.6
+REVISION =	0
 DIST_TUPLE +=	github HaxeFoundation haxe ${V} .
 DIST_TUPLE +=	github HaxeFoundation haxelib \
 		f17fffa97554b1bdba37750e3418051f017a5bc2 \
@@ -42,7 +43,7 @@ BUILD_DEPENDS =		devel/p5-IPC-System-Simple \
 LIB_DEPENDS =		devel/libuv \
 			devel/pcre2 \
 			lang/nekovm \
-			security/polarssl
+			security/mbedtls
 
 CFLAGS +=		-I${LOCALBASE}/include \
 			-L${LOCALBASE}/lib

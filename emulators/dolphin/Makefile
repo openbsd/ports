@@ -6,7 +6,7 @@ COMMENT-main =		Nintendo GameCube and Wii emulator with GUI
 COMMENT-nogui =		Nintendo GameCube and Wii emulator
 
 PKGNAME =		dolphin-5.0.0.20240524
-REVISION =		1
+REVISION =		2
 DIST_TUPLE +=		github dolphin-emu dolphin \
 			222a3930807545d9ebffebfbd13c3a816f788434 . # GPLv2
 
@@ -112,7 +112,7 @@ LIB_DEPENDS-nogui =	archivers/lz4 \
 			multimedia/sfml \
 			net/curl \
 			net/miniupnp/miniupnpc \
-			security/polarssl \
+			security/mbedtls \
 			sysutils/xxhash \
 			textproc/pugixml
 LIB_DEPENDS-main =	${LIB_DEPENDS-nogui} \

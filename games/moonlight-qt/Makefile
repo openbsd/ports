@@ -5,7 +5,7 @@ PKGNAME =		moonlight-qt-${V}
 
 DISTNAME =		MoonlightSrc-${V}
 SITES =			https://github.com/moonlight-stream/moonlight-qt/releases/download/v${V}/
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -29,7 +29,7 @@ RUN_DEPENDS =		x11/gtk+4,-guic \
 
 # avoid build breakage due to dpb junking: moc creates dependencies on mbedtls
 # headers but does not actually use them because USE_MBEDTLS isn't defined.
-BUILD_DEPENDS =		security/polarssl
+BUILD_DEPENDS =		security/mbedtls
 
 LIB_DEPENDS =		audio/opus \
 			devel/sdl2 \
