@@ -1,9 +1,8 @@
-BROKEN =	does not yet support PostgreSQL 18
 COMMENT=	extension to horizontally scale PostgreSQL
 
 GH_ACCOUNT=	citusdata
 GH_PROJECT=	citus
-GH_TAGNAME=	v13.1.0
+GH_TAGNAME=	v14.0.0
 
 CATEGORIES=	databases
 HOMEPAGE=	https://www.citusdata.com/
@@ -23,7 +22,8 @@ BUILD_DEPENDS=	databases/postgresql,-server
 RUN_DEPENDS=	databases/postgresql,-server
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		databases/postgresql,-contrib \
-		shells/bash
+		shells/bash \
+		textproc/gsed
 
 FAKE_TARGET=	install-all
 
@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--without-libcurl \
 		--without-zstd
 
 pre-test:
+	ln -fs ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed
 	cd ${WRKSRC}/src/test/regress; \
 	sed -i 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
 	    `find . -type f`
