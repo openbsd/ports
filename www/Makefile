@@ -508,6 +508,7 @@
      SUBDIR += py-requests-futures
      SUBDIR += py-requests-mock
      SUBDIR += py-requests-oauthlib
+     SUBDIR += py-requests-ratelimiter
      SUBDIR += py-requests-toolbelt
      SUBDIR += py-requests-unixsocket
      SUBDIR += py-responses
