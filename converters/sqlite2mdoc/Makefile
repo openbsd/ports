@@ -1,6 +1,6 @@
 COMMENT =		extract C reference manpages from SQLite3 header file
 
-DISTNAME =		sqlite2mdoc-1.0.0
+DISTNAME =		sqlite2mdoc-1.0.1
 
 MAINTAINER =		Kristaps Dzonsons <kristaps@bsd.lv>
 
