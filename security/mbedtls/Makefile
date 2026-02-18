@@ -1,9 +1,9 @@
 PORTROACH=	limit:^3\.6\.
 
-COMMENT=	SSL library with an intuitive API and readable source code
+COMMENT=	TLS library with an intuitive API and readable source code
 
 V=		3.6.5
-REVISION=	0
+REVISION=	1
 DISTNAME=	mbedtls-${V}
 
 # check SOVERSION
