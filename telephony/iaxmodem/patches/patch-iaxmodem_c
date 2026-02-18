@@ -35,7 +35,7 @@ Index: iaxmodem.c
  
  #ifndef MODEMVER
  #define MODEMVER "0.0.0"
-@@ -169,6 +163,9 @@ int logmode = S_IRUSR | S_IWUSR | S_IRGRP;
+@@ -184,6 +178,9 @@ int logmode = S_IRUSR | S_IWUSR | S_IRGRP;
  #include "compat/headers.h"
  #include "sys/stropts.h"
  #endif
@@ -45,13 +45,20 @@ Index: iaxmodem.c
  
  #ifdef __FreeBSD__
  #include "compat/strndup-freebsd.c"
-@@ -697,7 +694,8 @@ iaxmodem(const char *config, int nondaemon)
+@@ -997,12 +994,13 @@ iaxmodem(const char *config, int nondaemon)
      int fd;
      char logfile[256];
  
 -    printlog(LOG_ERROR, "Modem started\n");
 +    printlog(LOG_ERROR, "Modem %s started\n", config);
-+    setproctitle("uucp [%s]",config);
++    setproctitle("_iaxmodem [%s]",config);
  
-     pwent = getpwnam("uucp");
+-    pwent = getpwnam("uucp");
++    pwent = getpwnam("_iaxmodem");
+ 
+     if (pwent == NULL) {
+-	printlog(LOG_ERROR, "Fatal error: uucp user not found in passwd file\n");
++	printlog(LOG_ERROR, "Fatal error: _iaxmodem user not found in passwd file\n");
+ 	_exit(-1);
+     }
  

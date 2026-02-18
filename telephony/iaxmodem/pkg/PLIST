@@ -1,10 +1,15 @@
+@newgroup _iaxmodem:903
+@newuser _iaxmodem:903:_iaxmodem::IAXmodem Daemon:/nonexistent:/sbin/nologin
 @bin bin/iaxmodem
 @man man/man1/iaxmodem.1
 share/doc/iaxmodem/
 share/doc/iaxmodem/FAQ
 share/doc/iaxmodem/README
 share/examples/iaxmodem/
-@sample ${SYSCONFDIR}/iaxmodem/
 share/examples/iaxmodem/hylafax-cfg.ttyIAX
 share/examples/iaxmodem/iaxmodem-cfg.ttyIAX
+@mode 750
+@sample ${SYSCONFDIR}/iaxmodem/
+@mode
 @sample ${SYSCONFDIR}/iaxmodem/ttyIAX0
+@rcscript ${RCDIR}/iaxmodem

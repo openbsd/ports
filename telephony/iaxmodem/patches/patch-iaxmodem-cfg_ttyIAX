@@ -1,9 +1,9 @@
---- iaxmodem-cfg.ttyIAX.orig	Sun Apr 20 22:18:51 2008
-+++ iaxmodem-cfg.ttyIAX	Sun Apr 20 22:19:30 2008
+--- iaxmodem-cfg.ttyIAX.orig	Wed Jun 24 22:29:03 2015
++++ iaxmodem-cfg.ttyIAX	Fri Feb 13 07:36:57 2026
 @@ -1,5 +1,5 @@
  device		/dev/ttyIAX
 -owner		uucp:uucp
-+owner		uucp:dialer
++owner		_iaxmodem:dialer
  mode		660
  port		4570
  refresh		300

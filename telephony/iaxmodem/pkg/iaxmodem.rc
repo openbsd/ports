@@ -1,0 +1,7 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/iaxmodem"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

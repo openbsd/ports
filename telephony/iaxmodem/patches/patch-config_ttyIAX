@@ -1,0 +1,23 @@
+--- config.ttyIAX.orig	Wed Jun 24 22:29:03 2015
++++ config.ttyIAX	Mon Feb 16 13:00:24 2026
+@@ -6,16 +6,17 @@ InternationalPrefix:	011
+ DialStringRules:	etc/dialrules
+ ServerTracing:		0xFFF
+ SessionTracing:		0xFFF
+-RecvFileMode:		0600
++RecvFileMode:		0640
+ LogFileMode:		0600
+-DeviceMode:		0600
++DeviceMode:		0660
+ RingsBeforeAnswer:	1
+ SpeakerVolume:		off
+-GettyArgs:		"-h %l dx_%s"
++GettyArgs:		"std.%s"
+ LocalIdentifier:	"IAXmodem"
+ TagLineFont:		etc/lutRS18.pcf
+ TagLineFormat:		"From %%l|%c|Page %%P of %%T"
+ MaxRecvPages:		200
++Class1JBIGSupport:	receive
+ #
+ #
+ # Modem-related stuff: should reflect modem command interface
