@@ -1,0 +1,19 @@
+PolarSSL is a fully featured and standards compliant SSL library offering
+server and client functionality (SSLv3, TLSv1.0, TLSv1.1 and TLSv1.2) with
+an intuitive API and readable source code. Dual license (GPLv2+/commercial).
+
+Non-standard extensions include: SSL Session Tickets (RFC 5077), Server
+Name Indication (SNI) (RFC 6066), Truncated HMAC (RFC 6066), Max Fragment
+Length (RFC 6066), and Secure Renegotiation (RFC 5746).
+
+Symmetric algorithms: AES, Blowfish, 3DES, DES, ARC4, Camellia, XTEA
+Modes: ECB, CBC, CFB, CTR, GCM
+Hashes: MD2, MD4, MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512, RIPEMD-160
+
+PolarSSL has its own big number library. Its RSA implementation supports both
+PKCS#1 v1.5 and PKCS#1 v2.1 padding. Its ECC implementation supports ECDHE
+and ECDSA with various NIST/Koblitz/Brainpool curves and Curve25519.
+
+PolarSSL includes extensive testing (over 6600 validation, regression and
+code coverage tests) and uses a continuous integration system to check all
+committed code. Automated tests are also done against GnuTLS and OpenSSL.

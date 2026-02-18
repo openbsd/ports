@@ -1,0 +1,203 @@
+@conflict polarssl-*
+@pkgpath security/polarssl
+include/everest/
+include/everest/Hacl_Curve25519.h
+include/everest/everest.h
+include/everest/kremlib/
+include/everest/kremlib.h
+include/everest/kremlib/FStar_UInt128.h
+include/everest/kremlib/FStar_UInt64_FStar_UInt32_FStar_UInt16_FStar_UInt8.h
+include/everest/kremlin/
+include/everest/kremlin/c_endianness.h
+include/everest/kremlin/internal/
+include/everest/kremlin/internal/builtin.h
+include/everest/kremlin/internal/callconv.h
+include/everest/kremlin/internal/compat.h
+include/everest/kremlin/internal/debug.h
+include/everest/kremlin/internal/target.h
+include/everest/kremlin/internal/types.h
+include/everest/kremlin/internal/wasmsupport.h
+include/everest/vs2013/
+include/everest/vs2013/Hacl_Curve25519.h
+include/everest/x25519.h
+include/mbedtls/
+include/mbedtls/aes.h
+include/mbedtls/aria.h
+include/mbedtls/asn1.h
+include/mbedtls/asn1write.h
+include/mbedtls/base64.h
+include/mbedtls/bignum.h
+include/mbedtls/block_cipher.h
+include/mbedtls/build_info.h
+include/mbedtls/camellia.h
+include/mbedtls/ccm.h
+include/mbedtls/chacha20.h
+include/mbedtls/chachapoly.h
+include/mbedtls/check_config.h
+include/mbedtls/cipher.h
+include/mbedtls/cmac.h
+include/mbedtls/compat-2.x.h
+include/mbedtls/config_adjust_legacy_crypto.h
+include/mbedtls/config_adjust_legacy_from_psa.h
+include/mbedtls/config_adjust_psa_from_legacy.h
+include/mbedtls/config_adjust_psa_superset_legacy.h
+include/mbedtls/config_adjust_ssl.h
+include/mbedtls/config_adjust_x509.h
+include/mbedtls/config_psa.h
+include/mbedtls/constant_time.h
+include/mbedtls/ctr_drbg.h
+include/mbedtls/debug.h
+include/mbedtls/des.h
+include/mbedtls/dhm.h
+include/mbedtls/ecdh.h
+include/mbedtls/ecdsa.h
+include/mbedtls/ecjpake.h
+include/mbedtls/ecp.h
+include/mbedtls/entropy.h
+include/mbedtls/error.h
+include/mbedtls/gcm.h
+include/mbedtls/hkdf.h
+include/mbedtls/hmac_drbg.h
+include/mbedtls/lms.h
+include/mbedtls/mbedtls_config.h
+include/mbedtls/md.h
+include/mbedtls/md5.h
+include/mbedtls/memory_buffer_alloc.h
+include/mbedtls/net_sockets.h
+include/mbedtls/nist_kw.h
+include/mbedtls/oid.h
+include/mbedtls/pem.h
+include/mbedtls/pk.h
+include/mbedtls/pkcs12.h
+include/mbedtls/pkcs5.h
+include/mbedtls/pkcs7.h
+include/mbedtls/platform.h
+include/mbedtls/platform_time.h
+include/mbedtls/platform_util.h
+include/mbedtls/poly1305.h
+include/mbedtls/private_access.h
+include/mbedtls/psa_util.h
+include/mbedtls/ripemd160.h
+include/mbedtls/rsa.h
+include/mbedtls/sha1.h
+include/mbedtls/sha256.h
+include/mbedtls/sha3.h
+include/mbedtls/sha512.h
+include/mbedtls/ssl.h
+include/mbedtls/ssl_cache.h
+include/mbedtls/ssl_ciphersuites.h
+include/mbedtls/ssl_cookie.h
+include/mbedtls/ssl_ticket.h
+include/mbedtls/threading.h
+include/mbedtls/timing.h
+include/mbedtls/version.h
+include/mbedtls/x509.h
+include/mbedtls/x509_crl.h
+include/mbedtls/x509_crt.h
+include/mbedtls/x509_csr.h
+include/psa/
+include/psa/build_info.h
+include/psa/crypto.h
+include/psa/crypto_adjust_auto_enabled.h
+include/psa/crypto_adjust_config_dependencies.h
+include/psa/crypto_adjust_config_key_pair_types.h
+include/psa/crypto_adjust_config_synonyms.h
+include/psa/crypto_builtin_composites.h
+include/psa/crypto_builtin_key_derivation.h
+include/psa/crypto_builtin_primitives.h
+include/psa/crypto_compat.h
+include/psa/crypto_config.h
+include/psa/crypto_driver_common.h
+include/psa/crypto_driver_contexts_composites.h
+include/psa/crypto_driver_contexts_key_derivation.h
+include/psa/crypto_driver_contexts_primitives.h
+include/psa/crypto_extra.h
+include/psa/crypto_legacy.h
+include/psa/crypto_platform.h
+include/psa/crypto_se_driver.h
+include/psa/crypto_sizes.h
+include/psa/crypto_struct.h
+include/psa/crypto_types.h
+include/psa/crypto_values.h
+lib/cmake/
+lib/cmake/MbedTLS/
+lib/cmake/MbedTLS/MbedTLSConfig.cmake
+lib/cmake/MbedTLS/MbedTLSConfigVersion.cmake
+lib/cmake/MbedTLS/MbedTLSTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/MbedTLS/MbedTLSTargets.cmake
+@static-lib lib/libeverest.a
+@static-lib lib/libmbedcrypto.a
+@lib lib/libmbedcrypto.so.${LIBmbedcrypto_VERSION}
+@static-lib lib/libmbedtls.a
+@lib lib/libmbedtls.so.${LIBmbedtls_VERSION}
+@static-lib lib/libmbedx509.a
+@lib lib/libmbedx509.so.${LIBmbedx509_VERSION}
+@static-lib lib/libp256m.a
+lib/pkgconfig/mbedcrypto.pc
+lib/pkgconfig/mbedtls.pc
+lib/pkgconfig/mbedx509.pc
+share/doc/mbedtls/
+share/doc/mbedtls/ChangeLog
+share/doc/mbedtls/README.md
+share/examples/mbedtls/
+share/examples/mbedtls/README
+@bin share/examples/mbedtls/aead_demo
+@bin share/examples/mbedtls/benchmark
+@bin share/examples/mbedtls/cert_app
+@bin share/examples/mbedtls/cert_req
+@bin share/examples/mbedtls/cert_write
+@bin share/examples/mbedtls/cipher_aead_demo
+@bin share/examples/mbedtls/crl_app
+@bin share/examples/mbedtls/crypt_and_hash
+@bin share/examples/mbedtls/crypto_examples
+@bin share/examples/mbedtls/dh_client
+@bin share/examples/mbedtls/dh_genprime
+@bin share/examples/mbedtls/dh_server
+@bin share/examples/mbedtls/dtls_client
+@bin share/examples/mbedtls/dtls_server
+@bin share/examples/mbedtls/ecdh_curve25519
+@bin share/examples/mbedtls/ecdsa
+@bin share/examples/mbedtls/gen_entropy
+@bin share/examples/mbedtls/gen_key
+@bin share/examples/mbedtls/gen_random_ctr_drbg
+@bin share/examples/mbedtls/generic_sum
+@bin share/examples/mbedtls/hello
+@bin share/examples/mbedtls/hmac_demo
+@bin share/examples/mbedtls/key_app
+@bin share/examples/mbedtls/key_app_writer
+@bin share/examples/mbedtls/key_ladder_demo
+share/examples/mbedtls/key_ladder_demo.sh
+@bin share/examples/mbedtls/load_roots
+@bin share/examples/mbedtls/md_hmac_demo
+@bin share/examples/mbedtls/metatest
+@bin share/examples/mbedtls/mini_client
+@bin share/examples/mbedtls/mpi_demo
+@bin share/examples/mbedtls/pem2der
+@bin share/examples/mbedtls/pk_decrypt
+@bin share/examples/mbedtls/pk_encrypt
+@bin share/examples/mbedtls/pk_sign
+@bin share/examples/mbedtls/pk_verify
+@bin share/examples/mbedtls/psa_constant_names
+@bin share/examples/mbedtls/psa_hash
+@bin share/examples/mbedtls/query_compile_time_config
+@bin share/examples/mbedtls/query_included_headers
+@bin share/examples/mbedtls/req_app
+@bin share/examples/mbedtls/rsa_decrypt
+@bin share/examples/mbedtls/rsa_encrypt
+@bin share/examples/mbedtls/rsa_genkey
+@bin share/examples/mbedtls/rsa_sign
+@bin share/examples/mbedtls/rsa_sign_pss
+@bin share/examples/mbedtls/rsa_verify
+@bin share/examples/mbedtls/rsa_verify_pss
+@bin share/examples/mbedtls/selftest
+@bin share/examples/mbedtls/ssl_client1
+@bin share/examples/mbedtls/ssl_client2
+@bin share/examples/mbedtls/ssl_context_info
+@bin share/examples/mbedtls/ssl_fork_server
+@bin share/examples/mbedtls/ssl_mail_client
+@bin share/examples/mbedtls/ssl_pthread_server
+@bin share/examples/mbedtls/ssl_server
+@bin share/examples/mbedtls/ssl_server2
+@bin share/examples/mbedtls/strerror
+@bin share/examples/mbedtls/udp_proxy
+@bin share/examples/mbedtls/zeroize

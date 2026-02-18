@@ -1,0 +1,25 @@
+MBEDTLS_THREADING_PTHREAD and MBEDTLS_THREADING_C are required by
+www/hiawatha, MBEDTLS_THREADING_ALT is required by
+telephony/linphone/bctoolbox.
+
+Index: include/mbedtls/mbedtls_config.h
+--- include/mbedtls/mbedtls_config.h.orig
++++ include/mbedtls/mbedtls_config.h
+@@ -2179,7 +2179,7 @@
+  *
+  * Uncomment this to enable pthread mutexes.
+  */
+-//#define MBEDTLS_THREADING_PTHREAD
++#define MBEDTLS_THREADING_PTHREAD
+ 
+ /**
+  * \def MBEDTLS_USE_PSA_CRYPTO
+@@ -3761,7 +3761,7 @@
+  *
+  * Enable this layer to allow use of mutexes within Mbed TLS
+  */
+-//#define MBEDTLS_THREADING_C
++#define MBEDTLS_THREADING_C
+ 
+ /**
+  * \def MBEDTLS_TIMING_C
