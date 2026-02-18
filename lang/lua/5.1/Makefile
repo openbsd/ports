@@ -2,7 +2,7 @@ PORTROACH=	limit:^5\.1
 
 VERSION=	5.1.5
 PKGSPEC=	lua->=5.1,<5.2
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS=	lua5.1 ${VERSION:R}
 
@@ -16,5 +16,6 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/etc/lua.pc ${PREFIX}/lib/pkgconfig/lua51.pc
+	${INSTALL_DATA} ${WRKSRC}/etc/lua.pc ${PREFIX}/lib/pkgconfig/lua5.1.pc
 
 .include <bsd.port.mk>

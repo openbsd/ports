@@ -5,9 +5,9 @@ DISTNAME=	lua-${VERSION}
 CATEGORIES=	lang
 
 SITES=		https://www.lua.org/ftp/ \
-		http://www.tecgraf.puc-rio.br/lua/ftp/
+		https://www.tecgraf.puc-rio.br/lua/ftp/
 
-HOMEPAGE=	http://www.lua.org/
+HOMEPAGE=	https://www.lua.org/
 
 # MIT
 PERMIT_PACKAGE=	Yes

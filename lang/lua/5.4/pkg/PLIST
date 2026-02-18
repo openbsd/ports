@@ -13,6 +13,7 @@ include/lua-5.4/lualib.h
 @lib lib/liblua5.4.so.${LIBlua5.4_VERSION}
 lib/lua/
 lib/lua/5.4/
+lib/pkgconfig/lua5.4.pc
 lib/pkgconfig/lua54.pc
 @man man/man1/lua54.1
 @man man/man1/luac54.1

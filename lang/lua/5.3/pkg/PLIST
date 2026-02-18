@@ -13,6 +13,7 @@ include/lua-5.3/lualib.h
 @lib lib/liblua5.3.so.${LIBlua5.3_VERSION}
 lib/lua/
 lib/lua/5.3/
+lib/pkgconfig/lua5.3.pc
 lib/pkgconfig/lua53.pc
 @man man/man1/lua53.1
 @man man/man1/luac53.1

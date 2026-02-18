@@ -10,10 +10,11 @@ include/lua-5.1/lua.h
 include/lua-5.1/lua.hpp
 include/lua-5.1/luaconf.h
 include/lua-5.1/lualib.h
-lib/liblua5.1.a
+@static-lib lib/liblua5.1.a
 @lib lib/liblua5.1.so.${LIBlua5.1_VERSION}
 lib/lua/
 lib/lua/5.1/
+lib/pkgconfig/lua5.1.pc
 lib/pkgconfig/lua51.pc
 @man man/man1/lua51.1
 @man man/man1/luac51.1
