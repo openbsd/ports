@@ -1,14 +1,15 @@
 @newgroup _openvpn:577
 @newuser _openvpn:577:_openvpn::OpenVPN Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/openvpn
-include/openvpn/
-include/openvpn/openvpn-msg.h
-include/openvpn/openvpn-plugin.h
+include/openvpn-msg.h
+include/openvpn-plugin.h
 lib/openvpn/
 lib/openvpn/plugins/
 lib/openvpn/plugins/openvpn-plugin-down-root.a
 lib/openvpn/plugins/openvpn-plugin-down-root.la
 @so lib/openvpn/plugins/openvpn-plugin-down-root.so
+libexec/openvpn/
+libexec/openvpn/dns-updown
 @man man/man5/openvpn-examples.5
 @man man/man8/openvpn.8
 @bin sbin/openvpn
@@ -44,6 +45,7 @@ share/examples/openvpn/sample-keys/client-pass.key
 share/examples/openvpn/sample-keys/client.crt
 share/examples/openvpn/sample-keys/client.key
 share/examples/openvpn/sample-keys/client.p12
+share/examples/openvpn/sample-keys/ffdhe2048.pem
 share/examples/openvpn/sample-keys/gen-sample-keys.sh
 share/examples/openvpn/sample-keys/openssl.cnf
 share/examples/openvpn/sample-keys/server-ec.crt

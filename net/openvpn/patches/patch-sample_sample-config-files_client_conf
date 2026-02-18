@@ -11,4 +11,4 @@ Index: sample/sample-config-files/client.conf
 +group _openvpn
  
  # Try to preserve some state across restarts.
- persist-key
+ persist-tun

@@ -1,7 +1,6 @@
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
-DISTNAME=	openvpn-2.6.19
-REVISION=	0
+DISTNAME=	openvpn-2.7.0
 
 CATEGORIES=	net security
 
@@ -17,6 +16,10 @@ WANTLIB += c lz4 lzo2
 SITES=		https://swupdate.openvpn.org/community/releases/ \
 		https://build.openvpn.net/downloads/releases/
 
+# Uses C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 BUILD_DEPENDS=	textproc/py-docutils
 LIB_DEPENDS=	archivers/lzo2 \
 		archivers/lz4
@@ -25,8 +28,10 @@ TEST_DEPENDS=	devel/cmocka
 CONFIGURE_STYLE= gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
-CONFIGURE_ARGS+=--with-openssl-engine=no
+		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
+		SOFTHSM2_UTIL=no
+CONFIGURE_ARGS+=--disable-dns-updown-by-default \
+		--with-openssl-engine=no
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -41,8 +46,7 @@ WANTLIB += mbedcrypto mbedtls mbedx509 pthread
 # ensure 'pkcs11-providers .../p11-kit-proxy.so' as default
 BUILD_DEPENDS+=	security/p11-kit
 LIB_DEPENDS+=	security/pkcs11-helper
-CONFIGURE_ARGS+= --enable-pkcs11 \
-		--enable-x509-alt-username
+CONFIGURE_ARGS+= --enable-pkcs11
 WANTLIB += crypto pkcs11-helper ssl
 .endif
 

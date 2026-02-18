@@ -3,33 +3,31 @@
 Index: src/openvpn/tun.c
 --- src/openvpn/tun.c.orig
 +++ src/openvpn/tun.c
-@@ -1446,21 +1446,26 @@ do_ifconfig_ipv4(struct tuntap *tt, const char *ifname
-     if (tun)
+@@ -1353,19 +1353,24 @@ do_ifconfig_ipv4(struct tuntap *tt, const char *ifname
+     /* example: ifconfig tun2 10.2.0.2 10.2.0.1 mtu 1450 netmask 255.255.255.255 up */
+     if (tun_p2p)
      {
-         argv_printf(&argv,
--                    "%s %s %s %s mtu %d netmask 255.255.255.255 up -link0",
-+                    "%s %s %s %s mtu %d netmask 255.255.255.255 up",
-                     IFCONFIG_PATH, ifname, ifconfig_local,
-                     ifconfig_remote_netmask, tun_mtu);
+-        argv_printf(&argv, "%s %s %s %s mtu %d netmask 255.255.255.255 up -link0", IFCONFIG_PATH,
++        argv_printf(&argv, "%s %s %s %s mtu %d netmask 255.255.255.255 up", IFCONFIG_PATH,
+                     ifname, ifconfig_local, ifconfig_remote_netmask, tun_mtu);
      }
-     else if (tt->type == DEV_TYPE_TUN && tt->topology == TOP_SUBNET)
+     else if (tt->type == DEV_TYPE_TUN)
      {
-         remote_end = create_arbitrary_remote( tt );
--        argv_printf(&argv, "%s %s %s %s mtu %d netmask %s up -link0",
-+        argv_printf(&argv, "%s %s %s %s mtu %d netmask %s up",
-                     IFCONFIG_PATH, ifname, ifconfig_local,
-                     print_in_addr_t(remote_end, 0, &gc), tun_mtu,
+         remote_end = create_arbitrary_remote(tt);
+-        argv_printf(&argv, "%s %s %s %s mtu %d netmask %s up -link0", IFCONFIG_PATH, ifname,
++        argv_printf(&argv, "%s %s %s %s mtu %d netmask %s up", IFCONFIG_PATH, ifname,
+                     ifconfig_local, print_in_addr_t(remote_end, 0, &gc), tun_mtu,
                      ifconfig_remote_netmask);
      }
-     else
+     else /* tap */
      {
--        argv_printf(&argv, "%s %s %s netmask %s mtu %d link0",
+-        argv_printf(&argv, "%s %s %s netmask %s mtu %d link0", IFCONFIG_PATH, ifname,
 +        /*
 +         * OpenBSD has distinct tun and tap devices
 +         * so we don't need the "link0" extra parameter to specify we want to do
 +         * tunneling at the ethernet level
 +         */
-+        argv_printf(&argv, "%s %s %s netmask %s mtu %d",
-                     IFCONFIG_PATH, ifname, ifconfig_local,
-                     ifconfig_remote_netmask, tun_mtu);
++        argv_printf(&argv, "%s %s %s netmask %s mtu %d", IFCONFIG_PATH, ifname,
+                     ifconfig_local, ifconfig_remote_netmask, tun_mtu);
      }
+     argv_msg(M_INFO, &argv);

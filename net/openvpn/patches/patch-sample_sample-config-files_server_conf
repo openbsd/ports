@@ -10,5 +10,5 @@ Index: sample/sample-config-files/server.conf
 +user _openvpn
 +group _openvpn
  
- # The persist options will try to avoid
+ # The persist option will try to avoid
  # accessing certain resources on restart
