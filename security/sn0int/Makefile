@@ -3,6 +3,8 @@ NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
 
 BROKEN-i386 =	error[E0428]: the name `U1024` is defined multiple times
 
+FIX_EXTRACT_PERMISSIONS =	Yes
+
 COMMENT =	semi-automatic OSINT framework and package manager
 
 GH_ACCOUNT =	kpcyrd
@@ -17,8 +19,11 @@ MAINTAINER =	Purple Rain <purplerain@secbsd.org>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-LIB_DEPENDS =		databases/sqlite3 security/libsodium ${MODLUA_LIB_DEPENDS}
 WANTLIB +=		m sqlite3 sodium ${MODLUA_WANTLIB} ${MODCARGO_WANTLIB}
+
+LIB_DEPENDS =		databases/sqlite3 \
+			security/libsodium \
+			${MODLUA_LIB_DEPENDS}
 
 MODLUA_VERSION =	5.2
 MODLUA_SA =		Yes
