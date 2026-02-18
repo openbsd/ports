@@ -1,6 +1,5 @@
 MBEDTLS_THREADING_PTHREAD and MBEDTLS_THREADING_C are required by
-www/hiawatha, MBEDTLS_THREADING_ALT is required by
-telephony/linphone/bctoolbox.
+www/hiawatha.
 
 Index: include/mbedtls/mbedtls_config.h
 --- include/mbedtls/mbedtls_config.h.orig
