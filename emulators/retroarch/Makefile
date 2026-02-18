@@ -4,6 +4,7 @@ DISTNAME =		retroarch-sourceonly-$V
 PKGNAME =		retroarch-$V
 
 V =			1.21.0
+REVISION =		0
 
 # crashes when recording videos due to ffmpeg
 USE_NOBTCFI-amd64 =	Yes
@@ -34,7 +35,7 @@ LIB_DEPENDS =		audio/openal \
 			devel/sdl2 \
 			graphics/ffmpeg \
 			multimedia/pipewire/pipewire,-libs \
-			security/polarssl \
+			security/mbedtls \
 			x11/xkbcommon
 
 MAKE_FLAGS =		V=1 \
