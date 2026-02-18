@@ -3,21 +3,21 @@ COMMENT=	alarm library for the lua language
 DISTNAME=	lalarm
 DATE=		20061011
 PKGNAME=	luaalarm-${DATE}
-REVISION =	3
+REVISION=	4
 # don't use PKGNAME
 DIST_SUBDIR=	luaalarm-${DATE}
 WRKDIST=	${WRKDIR}/alarm
 CATEGORIES=	devel
 
 SITES=		${HOMEPAGE}5.0/
-HOMEPAGE=	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/
+HOMEPAGE=	https://web.tecgraf.puc-rio.br/~lhf/ftp/lua/
 
 # PD
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/lua
 
-FLAVORS=	lua52 lua53
+FLAVORS=	lua52 lua53 lua54
 FLAVOR?=
 
 pre-configure:

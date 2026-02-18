@@ -17,7 +17,7 @@ MODULES =	lang/lua
 
 TEST_DEPENDS =	${BUILD_PKGPATH}
 
-FLAVORS =	lua52 lua53
+FLAVORS =	lua52 lua53 lua54
 FLAVOR ?=
 
 NO_BUILD =	Yes

@@ -1,1 +1,1 @@
-lib/lua/${MODLUA_VERSION}/alarm.so
+@so lib/lua/${MODLUA_VERSION}/alarm.so

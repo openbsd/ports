@@ -416,6 +416,7 @@
      SUBDIR += lua-tz
      SUBDIR += lua-tz,lua52
      SUBDIR += lua-tz,lua53
+     SUBDIR += lua-tz,lua54
      SUBDIR += luaalarm
      SUBDIR += luaalarm,lua52
      SUBDIR += luaalarm,lua53
