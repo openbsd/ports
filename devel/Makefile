@@ -1358,6 +1358,7 @@
      SUBDIR += promu
      SUBDIR += protobuf
      SUBDIR += protobuf-c
+     SUBDIR += protobuf-java
      SUBDIR += protozero
      SUBDIR += pscan
      SUBDIR += pth
