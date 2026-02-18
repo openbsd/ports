@@ -1,0 +1,18 @@
+https://bz.apache.org/bugzilla/show_bug.cgi?id=69410
+https://bz.apache.org/bugzilla/attachment.cgi?id=39941&action=diff&collapsed=&headers=1&format=raw
+
+Index: support/unix/waitio.c
+--- support/unix/waitio.c.orig
++++ support/unix/waitio.c
+@@ -46,7 +46,10 @@ apr_status_t apr_wait_for_io_or_timeout(apr_file_t *f,
+     pfd.fd     = f        ? f->filedes        : s->socketdes;
+     pfd.events = for_read ? POLLIN            : POLLOUT;
+ 
+-    if (timeout > 0) {
++    if (timeout < 0) {
++        timeout = -1;
++    }
++    else if (timeout > 0) {
+         timeout = (timeout + 999) / 1000;
+     }
+     do {

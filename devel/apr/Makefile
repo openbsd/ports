@@ -1,7 +1,6 @@
 COMMENT=	Apache Portable Runtime
 
-V=		1.7.5
-REVISION=	0
+V=		1.7.6
 DISTNAME=	apr-$V
 SHARED_LIBS +=	apr-1             7.2     # .6.2
 
