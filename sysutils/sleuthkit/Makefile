@@ -1,38 +1,45 @@
 COMMENT=		forensic toolkit based on TCT
 
-DISTNAME=		sleuthkit-4.10.1
+DISTNAME=		sleuthkit-4.14.0
+
 CATEGORIES=		sysutils security
-REVISION=		0
 
-SHARED_LIBS +=		tsk 3.0 # 20.3
+SHARED_LIBS +=		tsk 4.0
 
-HOMEPAGE=		https://www.sleuthkit.org/
+HOMEPAGE =		https://www.sleuthkit.org/
+MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # CPLv1 & IBM & GPLv2 & Apache2 & BSD & MIT
 PERMIT_PACKAGE=	Yes
 
-SITES =	https://github.com/sleuthkit/sleuthkit/releases/download/${DISTNAME}/
+WANTLIB +=	bfio c m pthread ${COMPILER_LIBCXX} sqlite3 vhdi vmdk z
+WANTLIB +=	afflib aio_compat crypto curl expat nghttp2 nghttp3
+WANTLIB +=	ngtcp2 ngtcp2_crypto_libressl readline ssl ewf vslvm
 
-WANTLIB +=		bfio c m pthread ${COMPILER_LIBCXX} sqlite3 vhdi vmdk z
+SITES =	https://github.com/sleuthkit/sleuthkit/releases/download/${DISTNAME}/
 
 COMPILER =		base-clang ports-gcc
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 CONFIGURE_STYLE =	autoreconf
+USE_GMAKE =		Yes
 
-CONFIGURE_ARGS +=	--mandir='${PREFIX}/man' \
-			--disable-java \
-			--without-afflib \
-			--without-libewf
+LIB_DEPENDS =		databases/sqlite3 \
+			devel/libbfio \
+			sysutils/afflib3 \
+			sysutils/libvhdi \
+			sysutils/libvmdk \
+			sysutils/libvslvm \
+			security/libewf
+RUN_DEPENDS =		converters/p5-DateManip
+
+CONFIGURE_ARGS += 	--mandir='${PREFIX}/man' \
+			--enable-offline \
+			--disable-java
 
 CONFIGURE_ENV =		ac_cv_path_CPPUNIT_CONFIG=no \
 			ac_cv_header_postgresql_libpq_fe_h=no
-RUN_DEPENDS =		converters/p5-DateManip
-LIB_DEPENDS =		databases/sqlite3 \
-			devel/libbfio \
-			sysutils/libvhdi \
-			sysutils/libvmdk
 
 NO_TEST =		Yes
 

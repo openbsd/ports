@@ -1,5 +1,6 @@
---- man/sorter.1.orig	Wed Sep 16 19:07:12 2015
-+++ man/sorter.1	Sat Sep 19 20:35:52 2015
+Index: man/sorter.1
+--- man/sorter.1.orig
++++ man/sorter.1
 @@ -78,7 +78,7 @@ have priority over the standard files.  
  .IP "-C config"
  Specify the location of the ONLY configuration file.  The standard config

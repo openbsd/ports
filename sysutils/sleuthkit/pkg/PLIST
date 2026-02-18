@@ -31,6 +31,7 @@ bin/sorter
 @bin bin/srch_strings
 @bin bin/tsk_comparedir
 @bin bin/tsk_gettimes
+@bin bin/tsk_imageinfo
 @bin bin/tsk_loaddb
 @bin bin/tsk_recover
 @bin bin/usnjls
@@ -47,6 +48,7 @@ include/tsk/fs/apfs_compat.hpp
 include/tsk/fs/apfs_fs.h
 include/tsk/fs/apfs_fs.hpp
 include/tsk/fs/decmpfs.h
+include/tsk/fs/encryptionHelper.h
 include/tsk/fs/tsk_apfs.h
 include/tsk/fs/tsk_apfs.hpp
 include/tsk/fs/tsk_exfatfs.h
@@ -57,16 +59,19 @@ include/tsk/fs/tsk_ffs.h
 include/tsk/fs/tsk_fs.h
 include/tsk/fs/tsk_hfs.h
 include/tsk/fs/tsk_iso9660.h
+include/tsk/fs/tsk_logical_fs.h
 include/tsk/fs/tsk_ntfs.h
 include/tsk/fs/tsk_yaffs.h
 include/tsk/hashdb/
 include/tsk/hashdb/tsk_hashdb.h
 include/tsk/img/
+include/tsk/img/logical_img.h
 include/tsk/img/pool.hpp
 include/tsk/img/tsk_img.h
 include/tsk/libtsk.h
 include/tsk/pool/
 include/tsk/pool/apfs_pool_compat.hpp
+include/tsk/pool/lvm_pool_compat.hpp
 include/tsk/pool/pool_compat.hpp
 include/tsk/pool/tsk_apfs.h
 include/tsk/pool/tsk_apfs.hpp
@@ -74,7 +79,22 @@ include/tsk/pool/tsk_pool.h
 include/tsk/pool/tsk_pool.hpp
 include/tsk/tsk_incs.h
 include/tsk/util/
+include/tsk/util/Bitlocker/
+include/tsk/util/Bitlocker/BitlockerParser.h
+include/tsk/util/Bitlocker/BitlockerUtils.h
+include/tsk/util/Bitlocker/DataTypes.h
+include/tsk/util/Bitlocker/MetadataEntry.h
+include/tsk/util/Bitlocker/MetadataUtils.h
+include/tsk/util/Bitlocker/MetadataValue.h
+include/tsk/util/Bitlocker/MetadataValueAesCcmEncryptedKey.h
+include/tsk/util/Bitlocker/MetadataValueKey.h
+include/tsk/util/Bitlocker/MetadataValueOffsetAndSize.h
+include/tsk/util/Bitlocker/MetadataValueStretchKey.h
+include/tsk/util/Bitlocker/MetadataValueUnicode.h
+include/tsk/util/Bitlocker/MetadataValueVolumeMasterKey.h
 include/tsk/util/crypto.hpp
+include/tsk/util/detect_encryption.h
+include/tsk/util/file_system_utils.h
 include/tsk/util/lw_shared_ptr.hpp
 include/tsk/util/span.hpp
 include/tsk/vs/
@@ -87,6 +107,7 @@ include/tsk/vs/tsk_vs.h
 @static-lib lib/libtsk.a
 lib/libtsk.la
 @lib lib/libtsk.so.${LIBtsk_VERSION}
+lib/pkgconfig/tsk.pc
 @man man/man1/blkcalc.1
 @man man/man1/blkcat.1
 @man man/man1/blkls.1

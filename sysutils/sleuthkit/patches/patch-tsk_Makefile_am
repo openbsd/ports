@@ -3,7 +3,7 @@ Tell libtool to link libtsk as a C++ library.
 Index: tsk/Makefile.am
 --- tsk/Makefile.am.orig
 +++ tsk/Makefile.am
-@@ -4,6 +4,9 @@ SUBDIRS = base img vs fs hashdb auto pool util
+@@ -4,6 +4,9 @@ SUBDIRS = base img vs fs hashdb auto pool util util/Bi
  # Merge the libraries into one
  lib_LTLIBRARIES = libtsk.la
  libtsk_la_SOURCES =
@@ -12,4 +12,4 @@ Index: tsk/Makefile.am
 +nodist_EXTRA_libtsk_la_SOURCES = dummy.cpp
  libtsk_la_LIBADD = base/libtskbase.la img/libtskimg.la \
      vs/libtskvs.la fs/libtskfs.la hashdb/libtskhashdb.la \
-     auto/libtskauto.la pool/libtskpool.la util/libtskutil.la
+     auto/libtskauto.la pool/libtskpool.la util/libtskutil.la  util/Bitlocker/libtskbitlocker.la
