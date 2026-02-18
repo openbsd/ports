@@ -1,7 +1,10 @@
 COMMENT=	MessagePack implementation and bindings for Lua
 
-DISTNAME=	lua-cmsgpack-0.3.0
-REVISION=	1
+GH_ACCOUNT=	antirez
+GH_PROJECT=	lua-cmsgpack
+GH_COMMIT=	57b1f90cf6cec46450e87289ed5a676165d31071
+DISTNAME=	lua-cmsgpack-0.4.0pl20180614
+
 CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/antirez/lua-cmsgpack
@@ -9,14 +12,12 @@ HOMEPAGE=	https://github.com/antirez/lua-cmsgpack
 # BSD
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://distfiles.sigtrap.nl/
-
 MODULES=	lang/lua
 
-FLAVORS=	lua52
+FLAVORS=	lua52 lua53 lua54
 FLAVOR?=
 
-TEST_DEPENDS=${BUILD_PKGPATH}
+TEST_DEPENDS=	${BUILD_PKGPATH}
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -fPIC -I${MODLUA_INCL_DIR} -shared \

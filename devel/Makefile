@@ -388,6 +388,8 @@
      SUBDIR += lua-cliargs,lua53
      SUBDIR += lua-cmsgpack
      SUBDIR += lua-cmsgpack,lua52
+     SUBDIR += lua-cmsgpack,lua53
+     SUBDIR += lua-cmsgpack,lua54
      SUBDIR += lua-compat53
      SUBDIR += lua-compat53,lua52
      SUBDIR += lua-language-server

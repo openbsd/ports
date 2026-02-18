@@ -1,1 +1,1 @@
-lib/lua/${MODLUA_VERSION}/cmsgpack.so
+@so lib/lua/${MODLUA_VERSION}/cmsgpack.so
