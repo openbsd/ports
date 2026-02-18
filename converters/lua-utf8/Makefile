@@ -16,7 +16,7 @@ MODULES =	lang/lua
 TEST_DEPENDS +=	${BASE_PKGPATH}
 WANTLIB +=	${MODLUA_WANTLIB}
 
-FLAVORS =	lua52 lua53
+FLAVORS =	lua52 lua53 lua54
 FLAVOR ?=
 
 CFLAGS +=	`pkg-config --cflags ${MODLUA_DEP}`
