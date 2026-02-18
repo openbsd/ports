@@ -412,6 +412,7 @@
      SUBDIR += lua-term
      SUBDIR += lua-term,lua52
      SUBDIR += lua-term,lua53
+     SUBDIR += lua-term,lua54
      SUBDIR += lua-tz
      SUBDIR += lua-tz,lua52
      SUBDIR += lua-tz,lua53

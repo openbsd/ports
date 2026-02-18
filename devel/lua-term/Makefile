@@ -2,8 +2,7 @@ COMMENT =	terminal library for Lua
 
 GH_ACCOUNT =	hoelzro
 GH_PROJECT =	lua-term
-GH_TAGNAME =	0.07
-REVISION =	0
+GH_TAGNAME =	0.08
 
 CATEGORIES =	devel
 
@@ -14,7 +13,7 @@ WANTLIB +=	c ${MODLUA_WANTLIB}
 
 MODULES =	lang/lua
 
-FLAVORS =	lua52 lua53
+FLAVORS =	lua52 lua53 lua54
 FLAVOR ?=
 
 NO_TEST =	Yes

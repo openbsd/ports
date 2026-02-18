@@ -1,5 +1,5 @@
 lib/lua/${MODLUA_VERSION}/term/
-lib/lua/${MODLUA_VERSION}/term/core.so
+@so lib/lua/${MODLUA_VERSION}/term/core.so
 share/lua/${MODLUA_VERSION}/term/
 share/lua/${MODLUA_VERSION}/term/colors.lua
 share/lua/${MODLUA_VERSION}/term/cursor.lua
