@@ -1,0 +1,22 @@
+@so lib/python${MODPY_VERSION}/site-packages/_time_machine.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/time_machine/
+lib/python${MODPY_VERSION}/site-packages/time_machine-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/time_machine-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/time_machine-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/time_machine-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/time_machine-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/time_machine-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/time_machine-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/time_machine-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/time_machine/__init__.py
+lib/python${MODPY_VERSION}/site-packages/time_machine/__main__.py
+lib/python${MODPY_VERSION}/site-packages/time_machine/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/time_machine/${MODPY_PYCACHE}__init__.cpython-313-pytest-9.0.2.pyc
+lib/python${MODPY_VERSION}/site-packages/time_machine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/time_machine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/time_machine/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/time_machine/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/time_machine/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/time_machine/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/time_machine/cli.py
+lib/python${MODPY_VERSION}/site-packages/time_machine/py.typed
