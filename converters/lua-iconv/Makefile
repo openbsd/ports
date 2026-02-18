@@ -1,12 +1,8 @@
 COMMENT =	Lua bindings for the iconv library
 
-V =		7
-DISTNAME =	lua-iconv-${V}
-REVISION =	0
-
 GH_ACCOUNT =	ittner
 GH_PROJECT =	lua-iconv
-GH_TAGNAME =	lua-iconv-${V}
+GH_TAGNAME =	v7.1.0
 
 CATEGORIES =	converters
 
@@ -19,7 +15,7 @@ MODULES =	lang/lua
 TEST_DEPENDS +=	${BASE_PKGPATH}
 WANTLIB +=	${MODLUA_WANTLIB} iconv
 
-FLAVORS =	lua52 lua53
+FLAVORS =	lua52 lua53 lua54
 FLAVOR ?=
 
 CFLAGS +=	`pkg-config --cflags ${MODLUA_DEP}` -I${LOCALBASE}/include
@@ -32,7 +28,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/iconv.so ${MODLUA_LIBDIR}
 	${INSTALL_DATA_DIR} ${MODLUA_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${MODLUA_DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${MODLUA_DOCDIR}
 
 do-test:
 	cd ${WRKDIST} && ${MODLUA_BIN} test_iconv.lua
