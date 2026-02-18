@@ -1,0 +1,24 @@
+Fix build with poppler-26.02.0.
+
+From commit 47e20c0503ab1464d528f2cc7dd5e6a6a85b70dc.
+
+Index: src/extension/internal/pdfinput/poppler-transition-api.h
+--- src/extension/internal/pdfinput/poppler-transition-api.h.orig
++++ src/extension/internal/pdfinput/poppler-transition-api.h
+@@ -15,6 +15,16 @@
+ #include <glib/poppler-features.h>
+ #include <poppler/UTF.h>
+ 
++#if POPPLER_CHECK_VERSION(26, 2, 0)
++#define _POPPLER_WMODE GfxFont::WritingMode
++#define _POPPLER_WMODE_HORIZONTAL GfxFont::WritingMode::Horizontal
++#define _POPPLER_WMODE_VERTICAL GfxFont::WritingMode::Vertical
++#else
++#define _POPPLER_WMODE int
++#define _POPPLER_WMODE_HORIZONTAL 0
++#define _POPPLER_WMODE_VERTICAL 1
++#endif
++
+ #if POPPLER_CHECK_VERSION(25, 7, 0)
+ #define _POPPLER_TEXT_SHIFT_WITH_USER_COORDS(dx, dy) textShiftWithUserCoords(dx, dy)
+ #define _POPPLER_FOFI_TRUETYPE_MAKE(font_data, faceIndex) FoFiTrueType::make(std::span(font_data), faceIndex)
