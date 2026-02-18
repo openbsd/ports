@@ -1,12 +1,12 @@
 Index: alc/alconfig.cpp
 --- alc/alconfig.cpp.orig
 +++ alc/alconfig.cpp
-@@ -381,7 +381,7 @@ void ReadALConfig()
+@@ -426,7 +426,7 @@ void ReadALConfig()
  
  void ReadALConfig()
  {
--    fs::path path{"/etc/openal/alsoft.conf"};
-+    fs::path path{"${SYSCONFDIR}/openal/alsoft.conf"};
+-    auto path = fs::path{"/etc/openal/alsoft.conf"};
++    auto path = fs::path{"${SYSCONFDIR}/openal/alsoft.conf"};
  
      TRACE("Loading config {}...", al::u8_as_char(path.u8string()));
-     if(fs::ifstream f{path}; f.is_open())
+     if(auto f = fs::ifstream{path}; f.is_open())
