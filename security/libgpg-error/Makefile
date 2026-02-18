@@ -1,10 +1,10 @@
 COMMENT=		error codes for GnuPG related software
 
-DISTNAME=		libgpg-error-1.58
+DISTNAME=		libgpg-error-1.59
 CATEGORIES=		security devel
 EXTRACT_SUFX=		.tar.bz2
 
-SHARED_LIBS +=  gpg-error            3.30     # 41.1
+SHARED_LIBS +=  gpg-error            3.30     # 41.2
 
 HOMEPAGE=		https://www.gnupg.org/software/libgpg-error/index.html
 
