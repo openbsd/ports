@@ -3,7 +3,7 @@ COMMENT =	POCO C++ libraries for network based applications
 VERSION =	1.4.6p1
 DISTNAME =	poco-${VERSION}-all
 PKGNAME =	poco-${VERSION:S/p/pl/}
-REVISION =	7
+REVISION =	8
 CATEGORIES =	net devel
 SHLIB_VERSION =	1.0
 
@@ -14,7 +14,6 @@ SHARED_LIBS +=	${_lib} ${SHLIB_VERSION}
 
 HOMEPAGE =	http://pocoproject.org/
 SITES =		${SITE_SOURCEFORGE:=poco/}
-MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Boost software license
 PERMIT_PACKAGE =	Yes
