@@ -1,0 +1,12 @@
+Index: tools/test_sealing.sh
+--- tools/test_sealing.sh.orig
++++ tools/test_sealing.sh
+@@ -5,7 +5,7 @@
+ # This file is a work of a US government employee and as such is in the Public domain.
+ # Simson L. Garfinkel, March 12, 2012
+ 
+-BASE=`mktemp -t testfileXXXX`
++BASE=`mktemp -t testfileXXXXXXXXXX`
+ SEALING_KEY=$BASE.sealing.key
+ SEALING_PEM=$BASE.sealing.pem
+ EVIDENCE_ISO=$BASE.evidence.raw

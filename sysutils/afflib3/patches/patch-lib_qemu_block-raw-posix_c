@@ -1,0 +1,15 @@
+Index: lib/qemu/block-raw-posix.c
+--- lib/qemu/block-raw-posix.c.orig
++++ lib/qemu/block-raw-posix.c
+@@ -30,7 +30,11 @@
+ #endif
+ #include "block_int.h"
+ #include <assert.h>
++#ifdef __OpenBSD__
++#include <aio_compat.h>
++#else
+ #include <aio.h>
++#endif
+ 
+ #ifdef CONFIG_COCOA
+ #include <paths.h>

@@ -1,0 +1,12 @@
+Index: tools/test_recovery.sh
+--- tools/test_recovery.sh.orig
++++ tools/test_recovery.sh
+@@ -7,7 +7,7 @@
+ 
+ export PATH=$srcdir:../tools:../../tools:.:$PATH
+ 
+-RECOVERY_BASE=`mktemp -t recoveryXXXX`
++RECOVERY_BASE=`mktemp -t recoveryXXXXXXXXXX`
+ RECOVERY_KEY=$RECOVERY_BASE.key
+ RECOVERY_BAK=$RECOVERY_BASE.bak
+ RECOVERY_ISO=$RECOVERY_BASE.raw

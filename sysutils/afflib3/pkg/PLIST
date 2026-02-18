@@ -1,0 +1,39 @@
+@bin bin/affcat
+@bin bin/affcompare
+@bin bin/affconvert
+@bin bin/affcopy
+@bin bin/affcrypto
+@bin bin/affdiskprint
+@bin bin/affinfo
+@bin bin/affix
+@bin bin/affrecover
+@bin bin/affsegment
+@bin bin/affsign
+@bin bin/affstats
+@bin bin/affuse
+@bin bin/affverify
+@bin bin/affxml
+include/afflib/
+include/afflib/afflib.h
+include/afflib/afflib_i.h
+include/afflib/aftimer.h
+include/afflib/utils.h
+@static-lib lib/libafflib.a
+lib/libafflib.la
+@lib lib/libafflib.so.${LIBafflib_VERSION}
+lib/pkgconfig/afflib.pc
+@man man/man1/affcat.1
+@man man/man1/affcompare.1
+@man man/man1/affconvert.1
+@man man/man1/affcopy.1
+@man man/man1/affcrypto.1
+@man man/man1/affdiskprint.1
+@man man/man1/affinfo.1
+@man man/man1/affix.1
+@man man/man1/affrecover.1
+@man man/man1/affsegment.1
+@man man/man1/affsign.1
+@man man/man1/affstats.1
+@man man/man1/affuse.1
+@man man/man1/affverify.1
+@man man/man1/affxml.1

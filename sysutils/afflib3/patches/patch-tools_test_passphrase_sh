@@ -1,0 +1,17 @@
+Index: tools/test_passphrase.sh
+--- tools/test_passphrase.sh.orig
++++ tools/test_passphrase.sh
+@@ -10,11 +10,11 @@ echo === testing `affcrypto -V` ===
+ echo === MAKING THE TEST FILES ==
+ unset AFFLIB_PASSPHRASE
+ 
+-BLANK_BASE=`mktemp -t blankXXXXX`
++BLANK_BASE=`mktemp -t blankXXXXXXXXXX`
+ BLANK_AFF=$BLANK_BASE.aff
+ BLANK_ISO=$BLANK_BASE.raw
+ BLANK_ENCRYPTED_AFF=${BLANK_BASE}_encrypted.aff
+-WORDS=`mktemp -t wordsXXXX`
++WORDS=`mktemp -t wordsXXXXXXXXXX`
+ 
+ rm -f $BLANK_ISO $BLANK_AFF $BLANK_ENCRYPTED_AFF $WORDS
+ test_make_random_iso.sh $BLANK_ISO || (echo Cannot run test_make_random_iso.sh && exit -1)

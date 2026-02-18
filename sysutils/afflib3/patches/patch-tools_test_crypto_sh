@@ -1,0 +1,12 @@
+Index: tools/test_crypto.sh
+--- tools/test_crypto.sh.orig
++++ tools/test_crypto.sh
+@@ -9,7 +9,7 @@
+ unset AFFLIB_PASSPHRASE
+ export PATH=$srcdir:../tools:../../tools:.:$PATH
+ 
+-BASE=`mktemp -t encryptedXXXXXX`
++BASE=`mktemp -t encryptedXXXXXXXXXX`
+ ENCRYPTED_AFF=$BASE.aff
+ ENCRYPTED_AFD=$BASE.afd
+ PLAINTEXT_ISO=$BASE.raw

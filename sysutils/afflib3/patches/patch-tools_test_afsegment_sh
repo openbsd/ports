@@ -1,0 +1,12 @@
+Index: tools/test_afsegment.sh
+--- tools/test_afsegment.sh.orig
++++ tools/test_afsegment.sh
+@@ -5,7 +5,7 @@
+ # Simson L. Garfinkel, March 12, 2012
+ 
+ export PATH=$srcdir:../tools:../../tools:.:$PATH
+-BLANK_BASE=`mktemp -t blankXXXXX`
++BLANK_BASE=`mktemp -t blankXXXXXXXXXX`
+ BLANK_RAW=$BLANK_BASE.raw
+ BLANK_AFF=$BLANK_BASE.aff
+ unset AFFLIB_PASSPHRASE
