@@ -1,11 +1,10 @@
 COMMENT=	todo list application using the todo.txt format
 
-MODPY_DISTV=	0.14
+MODPY_DISTV=	0.16
 GH_ACCOUNT=	topydo
 GH_PROJECT=	topydo
 GH_TAGNAME=	${MODPY_DISTV}
 CATEGORIES=	productivity
-REVISION=	1
 
 HOMEPAGE=	https://topydo.org/
 
@@ -14,7 +13,8 @@ MAINTAINER=	Martin Ziemer <horrad@horrad.de>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-TEST_DEPENDS =	devel/py-freezegun
+TEST_DEPENDS =	devel/py-freezegun \
+		devel/py-test-runner
 
 RUN_DEPENDS =	devel/py-arrow \
 		devel/py-urwid  \

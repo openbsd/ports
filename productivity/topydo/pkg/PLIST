@@ -11,11 +11,14 @@ lib/python${MODPY_VERSION}/site-packages/topydo-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/topydo-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/topydo/Commands.py
 lib/python${MODPY_VERSION}/site-packages/topydo/__init__.py
+lib/python${MODPY_VERSION}/site-packages/topydo/__main__.py
 lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}Commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}Commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/AddCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/AppendCommand.py
@@ -29,6 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/topydo/commands/ExitCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/ListCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/ListContextCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/ListProjectCommand.py
+lib/python${MODPY_VERSION}/site-packages/topydo/commands/ModifyCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/PostponeCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/PriorityCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/RevertCommand.py
@@ -60,6 +64,8 @@ lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}ListCon
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}ListContextCommand.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}ListProjectCommand.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}ListProjectCommand.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}ModifyCommand.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}ModifyCommand.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}PostponeCommand.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}PostponeCommand.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}PriorityCommand.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
