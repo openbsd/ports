@@ -1776,6 +1776,7 @@
      SUBDIR += py-testtools
      SUBDIR += py-three-merge
      SUBDIR += py-thrift
+     SUBDIR += py-time-machine
      SUBDIR += py-timelib
      SUBDIR += py-timeout-decorator
      SUBDIR += py-tokenize-rt
