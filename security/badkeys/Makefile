@@ -1,7 +1,6 @@
 COMMENT=	check cryptographic keys for known weaknesses
 
-# standalone; intentionally no py- prefix
-MODPY_DISTV=	0.0.16
+MODPY_DISTV=	0.0.17
 DISTNAME=	badkeys-${MODPY_DISTV}
 
 CATEGORIES=	security
@@ -22,7 +21,7 @@ RUN_DEPENDS=	math/py-gmpy2 \
 		security/py-cryptography \
 		security/py-paramiko
 
-# uncomment to enable online tests
+# uncomment to enable online tests (there are offline ones too)
 #TEST_ENV=	RUN_ONLINETESTS=1
 #pre-test:
 #	cd ${WRKSRC}; HOME=${PORTHOME} ${MODPY_BIN} badkeys-cli --update-bl

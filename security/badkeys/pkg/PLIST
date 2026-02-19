@@ -65,10 +65,14 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}roca.${
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}roca.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}rsainvalid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}rsainvalid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}rsarecover.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}rsarecover.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}rsawarnings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}rsawarnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}sharedprimes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}sharedprimes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}smalld.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}smalld.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}smallfactors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}smallfactors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}xzbackdoor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -77,8 +81,10 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/fermat.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/pattern.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/roca.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/rsainvalid.py
+lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/rsarecover.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/rsawarnings.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/sharedprimes.py
+lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/smalld.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/smallfactors.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/xzbackdoor.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/runcli.py
