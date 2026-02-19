@@ -3,7 +3,7 @@ Add libs and paths. Ensure the lib is used for the C case.
 Index: Modules/FindOpenMP.cmake
 --- Modules/FindOpenMP.cmake.orig
 +++ Modules/FindOpenMP.cmake
-@@ -117,9 +117,9 @@ function(_OPENMP_FLAG_CANDIDATES LANG)
+@@ -199,9 +199,9 @@ function(_OPENMP_FLAG_CANDIDATES LANG)
    if(NOT OpenMP_${LANG}_FLAG)
      unset(OpenMP_FLAG_CANDIDATES)
  

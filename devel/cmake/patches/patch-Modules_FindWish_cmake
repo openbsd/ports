@@ -1,7 +1,7 @@
 Index: Modules/FindWish.cmake
 --- Modules/FindWish.cmake.orig
 +++ Modules/FindWish.cmake
-@@ -33,14 +33,21 @@ Finding ``wish``:
+@@ -47,14 +47,21 @@ Finding ``wish``:
    message(STATUS "Found wish at: ${TK_WISH}")
  #]=======================================================================]
  
@@ -25,7 +25,7 @@ Index: Modules/FindWish.cmake
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -79,16 +86,22 @@ if(WIN32)
+@@ -93,16 +100,22 @@ if(WIN32)
      )
  endif()
  

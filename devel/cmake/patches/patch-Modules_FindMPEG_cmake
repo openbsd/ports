@@ -1,7 +1,7 @@
 Index: Modules/FindMPEG.cmake
 --- Modules/FindMPEG.cmake.orig
 +++ Modules/FindMPEG.cmake
-@@ -81,4 +81,4 @@ if(MPEG_FOUND)
+@@ -85,4 +85,4 @@ if(MPEG_FOUND)
    endif()
  endif()
  

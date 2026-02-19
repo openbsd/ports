@@ -1,7 +1,7 @@
 Index: Modules/FindTclStub.cmake
 --- Modules/FindTclStub.cmake.orig
 +++ Modules/FindTclStub.cmake
-@@ -56,15 +56,26 @@ Online references:
+@@ -70,15 +70,26 @@ Online references:
  
  include(${CMAKE_CURRENT_LIST_DIR}/FindTCL.cmake)
  
@@ -32,7 +32,7 @@ Index: Modules/FindTclStub.cmake
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -79,14 +90,20 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -93,14 +104,20 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
  string(REGEX REPLACE
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  

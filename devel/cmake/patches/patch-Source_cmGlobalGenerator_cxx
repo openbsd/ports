@@ -1,7 +1,7 @@
 Index: Source/cmGlobalGenerator.cxx
 --- Source/cmGlobalGenerator.cxx.orig
 +++ Source/cmGlobalGenerator.cxx
-@@ -2856,6 +2856,12 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
+@@ -2906,6 +2906,12 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
    }
    cmCustomCommandLine singleLine;
    singleLine.push_back(cmSystemTools::GetCTestCommand());

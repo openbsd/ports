@@ -1,7 +1,7 @@
 Index: Modules/FindSDL.cmake
 --- Modules/FindSDL.cmake.orig
 +++ Modules/FindSDL.cmake
-@@ -189,6 +189,11 @@ else()
+@@ -195,6 +195,11 @@ else()
    set(VC_LIB_PATH_SUFFIX lib/x86)
  endif()
  

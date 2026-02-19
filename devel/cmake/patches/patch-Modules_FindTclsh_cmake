@@ -1,7 +1,7 @@
 Index: Modules/FindTclsh.cmake
 --- Modules/FindTclsh.cmake.orig
 +++ Modules/FindTclsh.cmake
-@@ -42,18 +42,30 @@ See Also
+@@ -75,18 +75,30 @@ See Also
  * The :module:`FindTclStub` module to find the Tcl Stubs Library.
  #]=======================================================================]
  
