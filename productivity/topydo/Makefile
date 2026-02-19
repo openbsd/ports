@@ -13,8 +13,7 @@ MAINTAINER=	Martin Ziemer <horrad@horrad.de>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-TEST_DEPENDS =	devel/py-freezegun \
-		devel/py-test-runner
+TEST_DEPENDS =	devel/py-freezegun
 
 RUN_DEPENDS =	devel/py-arrow \
 		devel/py-urwid  \
