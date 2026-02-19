@@ -164,7 +164,7 @@ SHA256 (cargo/wyz-0.5.1.tar.gz) = BfNg/AskKWMpx4/ahSoemugt6c97J9rkt/YvEY93ue0=
 SHA256 (cargo/xxhash-rust-0.8.12.tar.gz) = aly/dQQAlYgZ+2F46qg77lzZwpompAzCQd+McP3UaYQ=
 SHA256 (cargo/zerocopy-0.7.35.tar.gz) = G5tP0Yq8grgTaDjaXVC6573qU3xXTY3Bo07QmNbBZvA=
 SHA256 (cargo/zerocopy-derive-0.7.35.tar.gz) = +k+AgDRNRnH7ToMaE60eaAknSDh9/E9V41YkL64Szj4=
-SHA256 (iridium-browser-2026.02.145.tar.xz) = 2jJtVpj8LlE02lCXCyR+Q4M1xAfE5TFpedA1kaYaB/Y=
+SHA256 (iridium-browser-2026.02.145.1.tar.xz) = 3faQC0FxVCsIgKJL3/h5Ig20jRTiXCafHajIsOBYuJo=
 SHA256 (rollup-rollup-v4.22.4.tar.gz) = p+XAnwD+UK2r4n/vhFVRDxVs9z/uiu8frzgEtlOYjkw=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
@@ -332,5 +332,5 @@ SIZE (cargo/wyz-0.5.1.tar.gz) = 18790
 SIZE (cargo/xxhash-rust-0.8.12.tar.gz) = 21329
 SIZE (cargo/zerocopy-0.7.35.tar.gz) = 152645
 SIZE (cargo/zerocopy-derive-0.7.35.tar.gz) = 37829
-SIZE (iridium-browser-2026.02.145.tar.xz) = 1229784172
+SIZE (iridium-browser-2026.02.145.1.tar.xz) = 1229527736
 SIZE (rollup-rollup-v4.22.4.tar.gz) = 1732642
