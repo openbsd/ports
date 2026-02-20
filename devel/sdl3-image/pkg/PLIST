@@ -1,0 +1,13 @@
+include/SDL3_image/
+include/SDL3_image/SDL_image.h
+lib/cmake/
+lib/cmake/SDL3_image/
+lib/cmake/SDL3_image/SDL3_image-shared-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/SDL3_image/SDL3_image-shared-targets.cmake
+lib/cmake/SDL3_image/SDL3_imageConfig.cmake
+lib/cmake/SDL3_image/SDL3_imageConfigVersion.cmake
+@lib lib/libSDL3_image.so.${LIBSDL3_image_VERSION}
+lib/pkgconfig/sdl3-image.pc
+share/licenses/
+share/licenses/SDL3_image/
+share/licenses/SDL3_image/LICENSE.txt
