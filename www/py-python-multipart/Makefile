@@ -1,6 +1,6 @@
 COMMENT =		streaming multipart parser for Python
 
-MODPY_DISTV =		0.0.20
+MODPY_DISTV =		0.0.22
 DISTNAME =		python_multipart-${MODPY_DISTV}
 PKGNAME =		py-python-multipart-${MODPY_DISTV}
 
