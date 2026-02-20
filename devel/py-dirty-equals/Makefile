@@ -1,6 +1,6 @@
 COMMENT=	simplify asserts in tests by misusing __eq__
 
-MODPY_DISTV=	0.9.0
+MODPY_DISTV=	0.11
 DISTNAME=	dirty_equals-${MODPY_DISTV}
 PKGNAME=	py-dirty-equals-${MODPY_DISTV}
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/samuelcolvin/dirty-equals
 
-MAINTAINER =	Renaud Allard <renaud@allard.it>
+MAINTAINER=	Renaud Allard <renaud@allard.it>
 
 # MIT
 PERMIT_PACKAGE=	Yes
