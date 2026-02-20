@@ -38,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/conduit/pybin
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/conduit/wrap_include_python_h.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/critical_section.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/
+lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/argument_vector.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/class.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/common.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/cpp_conduit.h
@@ -45,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/descr.
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/dynamic_raw_ptr_cast_if_possible.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/exception_translation.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/function_record_pyobject.h
+lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/holder_caster_foreign_helpers.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/init.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/internals.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/native_enum_data.h
