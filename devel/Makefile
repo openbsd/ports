@@ -487,6 +487,7 @@
      SUBDIR += nspr
      SUBDIR += nuget
      SUBDIR += objfw
+     SUBDIR += ocaml-camlp-streams
      SUBDIR += ocaml-cppo
      SUBDIR += ocaml-graph
      SUBDIR += ocaml-menhir
