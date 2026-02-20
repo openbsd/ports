@@ -1,0 +1,15 @@
+Index: src/test/test_tortls_openssl.c
+--- src/test/test_tortls_openssl.c.orig
++++ src/test/test_tortls_openssl.c
+@@ -46,7 +46,11 @@ ENABLE_GCC_WARNING("-Wredundant-decls")
+ #include "test/log_test_helpers.h"
+ #include "test/test_tortls.h"
+ 
++#if defined(LIBRESSL_VERSION_NUMBER)
++#define SSL_STATE_STR "before/accept initialization"
++#else
+ #define SSL_STATE_STR "before SSL initialization"
++#endif
+ 
+ /* Every version and fork of OpenSSL we support now qualifies as "opaque",
+  * in that it hides the members of important structures.
