@@ -1,12 +1,12 @@
 COMMENT=	SSH remote version scanner
 
-GH_ACCOUNT=	ofalk
-GH_PROJECT=	scanssh
-GH_TAGNAME=	2.1.3.1
+V=		2.1.4
+DISTNAME=	scanssh-$V
 
 CATEGORIES=	security
 
 HOMEPAGE=	https://www.monkey.org/~provos/scanssh/
+SITES=		https://github.com/ofalk/scanssh/releases/download/$V/
 
 PERMIT_PACKAGE=	Yes
 
@@ -14,9 +14,7 @@ WANTLIB=	c event pcap dnet>=1
 
 LIB_DEPENDS=	net/libdnet
 
-CONFIGURE_STYLE=	autoreconf
-AUTOMAKE_VERSION=	1.16
-AUTOCONF_VERSION=	2.71
+CONFIGURE_STYLE= gnu
 
 SEPARATE_BUILD=	Yes
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -Wall"
