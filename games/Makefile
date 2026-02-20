@@ -107,6 +107,7 @@
      SUBDIR += f1spirit
      SUBDIR += falconseye
      SUBDIR += fallingtime
+     SUBDIR += fallout1-ce
      SUBDIR += fheroes2
      SUBDIR += fifechan
      SUBDIR += fifengine
