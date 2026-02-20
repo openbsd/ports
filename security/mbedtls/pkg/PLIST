@@ -1,4 +1,3 @@
-@conflict polarssl-*
 @pkgpath security/polarssl
 include/everest/
 include/everest/Hacl_Curve25519.h

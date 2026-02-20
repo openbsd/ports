@@ -1,7 +1,7 @@
 COMMENT=	TLS library with an intuitive API and readable source code
 
 V=		3.6.5
-REVISION=	1
+REVISION=	2
 DISTNAME=	mbedtls-${V}
 
 # check SOVERSION
