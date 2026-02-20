@@ -1,9 +1,8 @@
 COMMENT =		library providing an API for accessing packages metadata
 
-MODPY_DISTV =	8.5.0
+MODPY_DISTV =		8.7.1
 DISTNAME =		importlib_metadata-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 HOMEPAGE =		https://importlib-metadata.readthedocs.io/
 
@@ -14,6 +13,7 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 # Apache Software License
 PERMIT_PACKAGE =	Yes
 
+BUILD_DEPENDS =		misc/py-coherent.licensed
 RUN_DEPENDS =		devel/py-zipp
 
 MODULES =		lang/python
