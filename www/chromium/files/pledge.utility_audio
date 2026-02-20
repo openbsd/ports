@@ -1,1 +1,1 @@
-stdio prot_exec recvfd sendfd tmppath dns unix rpath cpath wpath
+stdio prot_exec recvfd sendfd dns unix rpath cpath wpath

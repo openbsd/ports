@@ -1,3 +1,7 @@
 /etc/openwv r
 /usr/local/lib/openwv r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
 ~/.config/iridium/WidevineCdm r

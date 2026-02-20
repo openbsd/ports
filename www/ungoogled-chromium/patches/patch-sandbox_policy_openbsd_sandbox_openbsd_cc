@@ -348,7 +348,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +      break;
 +    case sandbox::mojom::Sandbox::kGpu:
 +    case sandbox::mojom::Sandbox::kOnDeviceModelExecution:
-+      SetPledge("stdio drm inet rpath flock cpath wpath prot_exec recvfd sendfd tmppath unix", NULL);
++      SetPledge("stdio drm inet rpath flock cpath wpath prot_exec recvfd sendfd unix", NULL);
 +      break;
 +    case sandbox::mojom::Sandbox::kAudio:
 +      SetPledge(NULL, "/etc/ungoogled-chromium/pledge.utility_audio");

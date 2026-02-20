@@ -1,1 +1,1 @@
-rpath wpath cpath stdio tmppath dns inet prot_exec sendfd recvfd mcast route flock unix
+rpath wpath cpath stdio dns inet prot_exec sendfd recvfd mcast route flock unix

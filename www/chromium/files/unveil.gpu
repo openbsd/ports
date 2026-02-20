@@ -4,5 +4,8 @@
 /usr/X11R6/share/vulkan r
 /usr/local/chrome r
 
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
 # ~ gets expanded to $HOME
 ~/.cache/mesa_shader_cache rwc
