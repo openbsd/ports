@@ -15,6 +15,8 @@ PERMIT_PACKAGE = Yes
 
 SHARED_LIBS +=  wlroots-0.19 0.0 # 0.0
 
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c
 MODULES =	devel/meson wayland/wlroots
 
 MODWLROOTS_LIBDEP =	No
