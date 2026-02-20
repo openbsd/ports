@@ -2,7 +2,10 @@
 @rcscript ${RCDIR}/icingadirector
 icinga-web2/modules/director/
 icinga-web2/modules/director/.github/
-icinga-web2/modules/director/.github/ISSUE_TEMPLATE.md
+icinga-web2/modules/director/.github/ISSUE_TEMPLATE/
+icinga-web2/modules/director/.github/ISSUE_TEMPLATE/bug_report.md
+icinga-web2/modules/director/.github/ISSUE_TEMPLATE/config.yml
+icinga-web2/modules/director/.github/ISSUE_TEMPLATE/feature_request.md
 icinga-web2/modules/director/.github/dependabot.yml
 icinga-web2/modules/director/.github/workflows/
 icinga-web2/modules/director/.github/workflows/L10n-update.yml
@@ -1076,6 +1079,8 @@ icinga-web2/modules/director/schema/mysql-migrations/upgrade_186.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_187.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_188.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_189.sql
+icinga-web2/modules/director/schema/mysql-migrations/upgrade_190.sql
+icinga-web2/modules/director/schema/mysql-migrations/upgrade_191.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_63.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_64.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_65.sql
@@ -1205,6 +1210,7 @@ icinga-web2/modules/director/schema/pgsql-migrations/upgrade_186.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_187.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_188.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_189.sql
+icinga-web2/modules/director/schema/pgsql-migrations/upgrade_190.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_77.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_78.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_79.sql
