@@ -1,0 +1,12 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+This port needs windows game assets, use steamctl or grab your copy from
+GOG.com
+
+Just cd to your "Fallout" directory and run `fallout-ce` to use this.
+
+Game configs can be made using the f1_res.ini and the fallout.cfg files in root
+of the game assets directory, though sometimes stability can be impacted by
+modifying these files heavily.

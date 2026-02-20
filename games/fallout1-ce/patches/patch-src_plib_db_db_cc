@@ -1,0 +1,39 @@
+# Took from here https://github.com/alexbatalov/fallout1-ce/commit/ef27a64686ef5be469d5e2a344f4d6bb26b3d85a
+# and here https://github.com/alexbatalov/fallout1-ce/pull/119/commits/aa3c5c1e3e3f9642d536406b2d8d6b362c9e402f
+# fixes steam-style data dirs, and adds a little stability
+Index: src/plib/db/db.cc
+--- src/plib/db/db.cc.orig
++++ src/plib/db/db.cc
+@@ -759,11 +759,13 @@ size_t db_fread(void* ptr, size_t size, size_t count, 
+                         if (elements_read != 0) {
+                             if (fseek(stream->database->stream, stream->field_18, SEEK_SET) == 0) {
+                                 if (read_callback != NULL) {
+-                                    // FIXME: Probably error - mixing elements and
+-                                    // bytes in `elements_read` without resetting.
+                                     remaining_size = elements_read * size;
+                                     chunk_size = read_threshold - read_count;
+ 
++                                    // CE: Reuse `elements_read` to represent
++                                    // number of bytes read.
++                                    elements_read = 0;
++
+                                     while (remaining_size >= chunk_size) {
+                                         bytes_read = fread(buf, 1, chunk_size, stream->database->stream);
+                                         buf += bytes_read;
+@@ -2575,6 +2577,7 @@ static int db_findfirst(const char* path, DB_FIND_DATA
+     char basePath[COMPAT_MAX_PATH];
+     compat_makepath(basePath, drive, dir, NULL, NULL);
+ 
++    compat_resolve_path(basePath);
+     findData->dir = opendir(basePath);
+     if (findData->dir == NULL) {
+         return -1;
+@@ -2604,7 +2607,7 @@ static int db_findfirst(const char* path, DB_FIND_DATA
+ static int db_findnext(DB_FIND_DATA* findData)
+ {
+ #if defined(_WIN32)
+-    if (!FindNextFileA(findData->hFind, &(findData->ffd))) {
++    if (!FindNextFileA(findData->hind, &(findData->ffd))) {
+         return -1;
+     }
+ #else
