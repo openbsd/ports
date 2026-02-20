@@ -2,7 +2,15 @@ build on OpenBSD : no -lrt, set _BSD_SOURCE
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -29,7 +29,7 @@ cc = meson.get_compiler('c')
+@@ -7,7 +7,6 @@ project(
+ 	default_options: [
+ 		'c_std=c11',
+ 		'warning_level=3',
+-		'werror=true',
+ 	],
+ )
+ 
+@@ -29,7 +28,7 @@ cc = meson.get_compiler('c')
  add_project_arguments(
  	[
  		'-D_XOPEN_SOURCE=700',
@@ -11,7 +19,7 @@ Index: meson.build
  		'-D_NETBSD_SOURCE',
  		'-DSEATD_VERSION="@0@"'.format(meson.project_version()),
  		'-DSEATD_DEFAULTPATH="@0@"'.format(defaultpath),
-@@ -159,8 +159,8 @@ if get_option('libseat-logind') != 'disabled'
+@@ -159,8 +158,8 @@ if get_option('libseat-logind') != 'disabled'
  endif
  
  # needed for cross-compilation
@@ -22,7 +30,7 @@ Index: meson.build
  
  if with_builtin
  	libseat_c_args += '-DBUILTIN_ENABLED=1'
-@@ -221,14 +221,14 @@ if with_server
+@@ -221,14 +220,14 @@ if with_server
  		[ server_files, 'seatd/seatd.c' ],
  		include_directories: [include_directories('.', 'include')],
  		install: true,
