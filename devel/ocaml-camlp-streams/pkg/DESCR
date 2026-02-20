@@ -1,0 +1,3 @@
+The Stream and Genlex modules were distributed as part of the OCaml
+standard library until OCaml 5.0. Starting with OCaml 5.0, they
+have been maintained and distributed in a separate package.

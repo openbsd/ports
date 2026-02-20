@@ -1,0 +1,3 @@
+lib/ocaml/camlp-streams/camlp_streams.cmxa
+lib/ocaml/camlp-streams/genlex.cmx
+lib/ocaml/camlp-streams/stream.cmx
