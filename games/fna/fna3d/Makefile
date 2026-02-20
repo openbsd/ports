@@ -1,14 +1,14 @@
 COMMENT =	3D graphics library for FNA
 PKGNAME =	fna3d-${V}
 
-SHARED_LIBS =	FNA3D		4.3	# 24.02
+SHARED_LIBS =	FNA3D		5.0
 
 CATEGORIES +=	graphics
 
 # zlib
 PERMIT_PACKAGE = Yes
 
-WANTLIB +=	SDL2
+WANTLIB +=	SDL3
 
 # base-gcc does not have thread-local storage
 COMPILER =	base-clang ports-gcc
@@ -16,7 +16,7 @@ COMPILER_LANGS = c
 
 MODULES =	devel/cmake
 
-LIB_DEPENDS =	devel/sdl2
+LIB_DEPENDS =	devel/sdl3
 
 USE_GMAKE =	Yes
 

@@ -1,6 +1,5 @@
 COMMENT =	XNA4 reimplementation for open platforms
 PKGNAME =	fna-${V}
-REVISION =	0
 
 # MS-PL, includes lzxdecoder (dual MSPL/LGPL) and Mono.Xna (MIT)
 PERMIT_PACKAGE = Yes
@@ -11,7 +10,7 @@ DIST_TUPLE += 	github flibitijibibo Vorbisfile-CS \
 		521c8532f03b3608a141b36d7c1343e816b46cb1 Vorbisfile-CS # zlib
 
 MODULES =	lang/mono
-RUN_DEPENDS =	devel/sdl2-image \
+RUN_DEPENDS =	devel/sdl3-image \
 		games/fna/faudio \
 		games/fna/fna3d
 WRKDIST =	${WRKDIR}/FNA

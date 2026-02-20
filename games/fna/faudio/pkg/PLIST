@@ -8,8 +8,8 @@ include/FAPOFX.h
 include/FAudio.h
 include/FAudioFX.h
 lib/cmake/FAudio/
-lib/cmake/FAudio/FAudio-targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/FAudio/FAudio-targets.cmake
+lib/cmake/FAudio/FAudio-targets-shared${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/FAudio/FAudio-targets-shared.cmake
 lib/cmake/FAudio/FAudioConfig.cmake
 @lib lib/libFAudio.so.${LIBFAudio_VERSION}
 lib/pkgconfig/FAudio.pc
