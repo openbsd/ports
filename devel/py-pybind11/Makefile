@@ -1,10 +1,12 @@
 COMMENT=	headers for interoperability between C++ and Python
 
-MODPY_DISTV=	3.0.2
+MODPY_DISTV=	3.0.1
 DISTNAME=	pybind11-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	devel
+
+EPOCH=		0
 
 # BSD
 PERMIT_PACKAGE=	Yes
