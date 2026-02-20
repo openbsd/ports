@@ -23,7 +23,7 @@ pycharm/help/ReferenceCardForMac.pdf
 pycharm/lib/
 pycharm/lib/annotations.jar
 pycharm/lib/app.jar
-pycharm/lib/build-marker-PC-253.30387.173
+pycharm/lib/build-marker-PC-${DIST_VER}
 pycharm/lib/external-system-rt.jar
 pycharm/lib/externalProcess-rt.jar
 pycharm/lib/forms_rt.jar

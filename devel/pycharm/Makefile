@@ -1,6 +1,7 @@
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2025.3.2.1
+V=			2025.3.3
+DIST_VER=		253.31033.139
 DISTNAME=		pycharm-${V}
 CATEGORIES=		devel
 
@@ -21,6 +22,8 @@ RUN_DEPENDS+=		devel/desktop-file-utils \
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
+
+SUBST_VARS+=		DIST_VER
 
 WRKDIST=		${WRKDIR}/pycharm-community-${V}
 PC=			${PREFIX}/pycharm
