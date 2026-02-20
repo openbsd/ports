@@ -1,12 +1,14 @@
 COMMENT =	tool to test a PDF file
 
+REVISION =	0
 MODPY_DISTV =	0.2.10
 DISTNAME =	pdfid_v${MODPY_DISTV:S/./_/g}
 PKGNAME =	pdfid-${MODPY_DISTV}
 
 CATEGORIES =	security
 
-HOMEPAGE =	http://blog.didierstevens.com/programs/pdf-tools/
+HOMEPAGE =	https://blog.didierstevens.com/programs/pdf-tools/
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # public domain
 PERMIT_PACKAGE =	Yes
