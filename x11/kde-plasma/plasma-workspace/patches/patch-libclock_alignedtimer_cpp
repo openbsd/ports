@@ -1,0 +1,50 @@
+Index: libclock/alignedtimer.cpp
+--- libclock/alignedtimer.cpp.orig
++++ libclock/alignedtimer.cpp
+@@ -6,7 +6,6 @@
+ #include "alignedtimer.h"
+ 
+ #include <fcntl.h>
+-#include <sys/timerfd.h>
+ #include <unistd.h>
+ 
+ #include <QDebug>
+@@ -53,18 +52,18 @@ std::shared_ptr<AlignedTimer> AlignedTimer::getSecondT
+ AlignedTimer::AlignedTimer(std::chrono::seconds interval)
+     : m_interval(interval)
+ {
+-    m_timerFd = timerfd_create(CLOCK_REALTIME, O_CLOEXEC | O_NONBLOCK);
++    //m_timerFd = timerfd_create(CLOCK_REALTIME, O_CLOEXEC | O_NONBLOCK);
+ 
+-    auto notifier = new QSocketNotifier(m_timerFd, QSocketNotifier::Read, this);
+-    connect(notifier, &QSocketNotifier::activated, this, [this](int fd) {
+-        uint64_t c = 0;
+-        read(fd, &c, sizeof(c));
+-        if (c == 0) { // clock skew detected
+-            initTimer();
+-        }
+-        Q_EMIT timeout();
+-    });
+-    initTimer();
++    //auto notifier = new QSocketNotifier(m_timerFd, QSocketNotifier::Read, this);
++    //connect(notifier, &QSocketNotifier::activated, this, [this](int fd) {
++    //    uint64_t c = 0;
++    //    read(fd, &c, sizeof(c));
++    //    if (c == 0) { // clock skew detected
++    //        initTimer();
++    //    }
++    //    Q_EMIT timeout();
++    //});
++    //initTimer();
+ }
+ 
+ AlignedTimer::~AlignedTimer()
+@@ -82,7 +81,7 @@ void AlignedTimer::initTimer()
+ 
+     const int flags = TFD_TIMER_ABSTIME | TFD_TIMER_CANCEL_ON_SET;
+ 
+-    const int err = timerfd_settime(m_timerFd, flags, &timespec, nullptr);
++    const int err = -1; //= timerfd_settime(m_timerFd, flags, &timespec, nullptr);
+     if (err) {
+         qWarning() << "Could not create timer. The clock will not function correctly. Error:" << QString::fromLatin1(strerror(err));
+         return;
