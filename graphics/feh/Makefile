@@ -1,18 +1,17 @@
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-3.11.2
+DISTNAME=	feh-3.11.3
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS= Yes
 
 HOMEPAGE=	https://feh.finalrewind.org/
+SITES=		https://feh.finalrewind.org/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	Imlib2 X11 Xinerama c curl exif m png
-
-SITES=		${HOMEPAGE}
 
 LIB_DEPENDS=	graphics/imlib2 \
 		graphics/libexif \
