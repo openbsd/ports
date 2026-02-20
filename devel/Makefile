@@ -1987,6 +1987,7 @@
      SUBDIR += sdl2-pango
      SUBDIR += sdl2-ttf
      SUBDIR += sdl3
+     SUBDIR += sdl3-image
      SUBDIR += sdlmm
      SUBDIR += seergdb
      SUBDIR += selene
