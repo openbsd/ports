@@ -18,14 +18,5 @@ Niri will load configuration from $XDG_CONFIG_HOME/niri/config.kdl
 or ~/.config/niri/config.kdl, falling back to /etc/niri/config.kdl
 if none of those are available.
 
-For now the automatic DRM render node detection doesn't work so it
-needs to be configured explicitly. The following config snippet
-configures renderD128, the name of the node might differ on your
-system:
-
-  debug {
-    render-drm-device "/dev/dri/renderD128"
-  }
-
 For more info on configuration options, see
 https://github.com/YaLTeR/niri/wiki/Configuration:-Overview

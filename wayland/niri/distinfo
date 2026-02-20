@@ -512,10 +512,10 @@ SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZ
 SHA256 (cargo/zvariant-5.7.0.tar.gz) = mZ3TvnPFKx/M0QmkqB5PzSD6sdNZnIEhs40E4UGUmNs=
 SHA256 (cargo/zvariant_derive-5.7.0.tar.gz) = ZkP9CyakbSJr2Q0/B8G1Mh/pu38EZzyzesbWiDiFto4=
 SHA256 (cargo/zvariant_utils-3.2.1.tar.gz) = xpSdFC+J9pFt7KIjLPJqivrPK5/cNc52YQXhBEeL5Zk=
-SHA256 (drm-rs-e32b22b5.tar.gz) = jnV6NxxDpDmCc0wxRDSXE0IDgx8067cJhZvWg2MZQR0=
-SHA256 (niri-25.11.20260217-3d6499db.tar.gz) = gFVQxN1lDLzliPvfqkqQev0I7bqlcOUce91hKcYrbk8=
+SHA256 (drm-rs-ea051450.tar.gz) = /kQpiGQwa8+ROPAhovfFbBo6svGWE0yOphbCja4RoVE=
+SHA256 (niri-25.11.20260220-097810ed.tar.gz) = CueEUIHBiCKsDI+M5hIebaZSKXjyfrsgLjpfU7D30G0=
 SHA256 (polling-e838a159.tar.gz) = Uhm2K9XdIvILddfgz5w/t1y8vuKjJ4fnXLTOowAdA0k=
-SHA256 (smithay-95c73b3e.tar.gz) = cZLnEqyNPT1HQ/lpDsJUDl7lGhsyreNS6IDpz77bRXM=
+SHA256 (smithay-adf3bfdd.tar.gz) = Nh3/9bSov/i7CWdZMafrQNfn1lhoPk3+bv10ArR749U=
 SIZE (cargo/accesskit-0.21.0.tar.gz) = 34158
 SIZE (cargo/accesskit_atspi_common-0.14.0.tar.gz) = 25918
 SIZE (cargo/accesskit_consumer-0.30.0.tar.gz) = 33463
@@ -1030,7 +1030,7 @@ SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
 SIZE (cargo/zvariant-5.7.0.tar.gz) = 90643
 SIZE (cargo/zvariant_derive-5.7.0.tar.gz) = 14214
 SIZE (cargo/zvariant_utils-3.2.1.tar.gz) = 14678
-SIZE (drm-rs-e32b22b5.tar.gz) = 67689
-SIZE (niri-25.11.20260217-3d6499db.tar.gz) = 915619
+SIZE (drm-rs-ea051450.tar.gz) = 69105
+SIZE (niri-25.11.20260220-097810ed.tar.gz) = 915582
 SIZE (polling-e838a159.tar.gz) = 59436
-SIZE (smithay-95c73b3e.tar.gz) = 798203
+SIZE (smithay-adf3bfdd.tar.gz) = 798113

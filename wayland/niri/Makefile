@@ -1,12 +1,12 @@
 COMMENT =	A scrollable-tiling Wayland compositor
 
-V =		25.11.20260217
+V =		25.11.20260220
 
 # Use https://github.com/tobhe/niri/tree/openbsd-port until all
 # the dependency fixes have propagated to the actual rust packages
 GH_ACCOUNT = tobhe
 GH_PROJECT = niri
-GH_COMMIT = 3d6499db3a6fef4a8f4b132a79877ec38564c44c
+GH_COMMIT = 097810ed0e7ef944fa7bca0947f41b9c34cd89f4
 DISTNAME = ${GH_PROJECT}-${V}
 
 # Bundled dependencies
@@ -15,11 +15,11 @@ DISTFILES = ${GH_DISTFILE}
 
 EXTRACT_SUFX = .tar.gz
 
-DRM_COMMIT = e32b22b505ffbe4a4b5476d66100ca3fe0b973f7
+DRM_COMMIT = ea05145076d7b81c1b99656923e6ee539590d654
 SITES.drm = https://github.com/tobhe/drm-rs/archive/
 DISTFILES.drm = drm-rs-${DRM_COMMIT:C/(........).*/\1/}{${DRM_COMMIT}}${EXTRACT_SUFX}
 
-SMITHAY_COMMIT = 95c73b3e06ab9f83f7a1a886f31e8da2215ee1cd
+SMITHAY_COMMIT = adf3bfddc019c8950deb650f4ed442c0312e0ea8
 SITES.smithay = https://github.com/tobhe/smithay/archive/
 DISTFILES.smithay += smithay-${SMITHAY_COMMIT:C/(........).*/\1/}{${SMITHAY_COMMIT}}${EXTRACT_SUFX}
 
