@@ -1,5 +1,3 @@
-PORTROACH=	limit:^3\.6\.
-
 COMMENT=	TLS library with an intuitive API and readable source code
 
 V=		3.6.5
