@@ -1468,6 +1468,10 @@ intellij/plugins/vcs-svn/
 intellij/plugins/vcs-svn/lib/
 intellij/plugins/vcs-svn/lib/sqlite.jar
 intellij/plugins/vcs-svn/lib/vcs-svn.jar
+intellij/plugins/webp/
+intellij/plugins/webp/lib/
+intellij/plugins/webp/lib/libwebp.jar.jar
+intellij/plugins/webp/lib/webp.jar
 intellij/plugins/yaml/
 intellij/plugins/yaml/lib/
 intellij/plugins/yaml/lib/modules/
