@@ -1,12 +1,15 @@
 COMMENT =	parse a PDF document
 
+REVISION =	0
 MODPY_DISTV =	0.7.13
 DISTNAME =	pdf-parser_V${MODPY_DISTV:S/./_/g}
 PKGNAME =	pdf-parser-${MODPY_DISTV}
 
 CATEGORIES =	security
 
-HOMEPAGE =	http://blog.didierstevens.com/programs/pdf-tools/
+HOMEPAGE =	https://blog.didierstevens.com/programs/pdf-tools/
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # public domain
 PERMIT_PACKAGE =	Yes
