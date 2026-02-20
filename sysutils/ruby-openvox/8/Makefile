@@ -1,5 +1,4 @@
-VERSION =		8.24.2
-REVISION =		1
+VERSION =		8.25.0
 
 RUN_DEPENDS =		converters/ruby-multi_json,${MODRUBY_FLAVOR}>=1.13,<2 \
 			devel/ruby-concurrent-ruby,${MODRUBY_FLAVOR}>=1,<2 \
