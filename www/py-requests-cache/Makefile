@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		hatchling
+MODPY_PYBUILD =		poetry-core
 
 RUN_DEPENDS =		www/py-requests \
 			www/py-urllib3 \
