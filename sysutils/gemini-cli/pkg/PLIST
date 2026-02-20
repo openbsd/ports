@@ -5,6 +5,7 @@ lib/node_modules/@google/gemini-cli/LICENSE
 lib/node_modules/@google/gemini-cli/README.md
 lib/node_modules/@google/gemini-cli/dist/
 lib/node_modules/@google/gemini-cli/dist/.last_build
+lib/node_modules/@google/gemini-cli/dist/google-gemini-cli-0.29.4.tgz
 lib/node_modules/@google/gemini-cli/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/dist/index.js
 lib/node_modules/@google/gemini-cli/dist/index.js.map
@@ -3296,6 +3297,7 @@ lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/do
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/docs/tools/web-search.md
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/docs/tos-privacy.md
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/docs/troubleshooting.md
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/google-gemini-cli-core-0.29.4.tgz
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js.map
@@ -17714,9 +17716,11 @@ lib/node_modules/@google/gemini-cli/node_modules/get-east-asian-width/
 lib/node_modules/@google/gemini-cli/node_modules/get-east-asian-width/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/get-east-asian-width/index.js
 lib/node_modules/@google/gemini-cli/node_modules/get-east-asian-width/license
+lib/node_modules/@google/gemini-cli/node_modules/get-east-asian-width/lookup-data.js
 lib/node_modules/@google/gemini-cli/node_modules/get-east-asian-width/lookup.js
 lib/node_modules/@google/gemini-cli/node_modules/get-east-asian-width/package.json
 lib/node_modules/@google/gemini-cli/node_modules/get-east-asian-width/readme.md
+lib/node_modules/@google/gemini-cli/node_modules/get-east-asian-width/utilities.js
 lib/node_modules/@google/gemini-cli/node_modules/get-intrinsic/
 lib/node_modules/@google/gemini-cli/node_modules/get-intrinsic/.eslintrc
 lib/node_modules/@google/gemini-cli/node_modules/get-intrinsic/.github/
@@ -22168,6 +22172,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/README.md
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/aws-lambda/
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/aws-lambda/conninfo.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/aws-lambda/handler.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/aws-lambda/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/aws-lambda/types.js
@@ -22179,6 +22184,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/bun/server.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/bun/ssg.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/bun/websocket.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/cloudflare-pages/
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/cloudflare-pages/conninfo.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/cloudflare-pages/handler.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/cloudflare-pages/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/cloudflare-workers/
@@ -22200,6 +22206,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/lambda-edge/c
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/lambda-edge/handler.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/lambda-edge/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/netlify/
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/netlify/conninfo.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/netlify/handler.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/netlify/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/netlify/mod.js
@@ -22214,6 +22221,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/adapter/vercel/index.
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/aws-lambda/
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/aws-lambda/conninfo.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/aws-lambda/handler.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/aws-lambda/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/aws-lambda/types.js
@@ -22225,6 +22233,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/bun/serve
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/bun/ssg.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/bun/websocket.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/cloudflare-pages/
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/cloudflare-pages/conninfo.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/cloudflare-pages/handler.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/cloudflare-pages/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/cloudflare-workers/
@@ -22246,6 +22255,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/lambda-ed
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/lambda-edge/handler.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/lambda-edge/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/netlify/
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/netlify/conninfo.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/netlify/handler.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/netlify/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/adapter/netlify/mod.js
@@ -22292,6 +22302,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/helper/route/inde
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/helper/ssg/
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/helper/ssg/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/helper/ssg/middleware.js
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/helper/ssg/plugins.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/helper/ssg/ssg.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/helper/ssg/utils.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/cjs/helper/streaming/
@@ -22499,6 +22510,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/helper/route/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/helper/ssg/
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/helper/ssg/index.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/helper/ssg/middleware.js
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/helper/ssg/plugins.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/helper/ssg/ssg.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/helper/ssg/utils.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/helper/streaming/
@@ -22640,6 +22652,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types.js
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/aws-lambda/
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/aws-lambda/conninfo.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/aws-lambda/handler.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/aws-lambda/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/aws-lambda/types.d.ts
@@ -22651,6 +22664,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/bun/ser
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/bun/ssg.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/bun/websocket.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/cloudflare-pages/
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/cloudflare-pages/conninfo.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/cloudflare-pages/handler.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/cloudflare-pages/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/cloudflare-workers/
@@ -22671,6 +22685,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/lambda-
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/lambda-edge/handler.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/lambda-edge/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/netlify/
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/netlify/conninfo.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/netlify/handler.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/netlify/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/adapter/netlify/mod.d.ts
@@ -22717,6 +22732,7 @@ lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/helper/route/in
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/helper/ssg/
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/helper/ssg/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/helper/ssg/middleware.d.ts
+lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/helper/ssg/plugins.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/helper/ssg/ssg.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/helper/ssg/utils.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/hono/dist/types/helper/streaming/
@@ -24420,7 +24436,7 @@ lib/node_modules/@google/gemini-cli/node_modules/minimist/test/stop_early.js
 lib/node_modules/@google/gemini-cli/node_modules/minimist/test/unknown.js
 lib/node_modules/@google/gemini-cli/node_modules/minimist/test/whitespace.js
 lib/node_modules/@google/gemini-cli/node_modules/minipass/
-lib/node_modules/@google/gemini-cli/node_modules/minipass/LICENSE
+lib/node_modules/@google/gemini-cli/node_modules/minipass/LICENSE.md
 lib/node_modules/@google/gemini-cli/node_modules/minipass/README.md
 lib/node_modules/@google/gemini-cli/node_modules/minipass/dist/
 lib/node_modules/@google/gemini-cli/node_modules/minipass/dist/commonjs/
@@ -27994,6 +28010,7 @@ lib/node_modules/@google/gemini-cli/node_modules/undici-types/proxy-agent.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/undici-types/readable.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/undici-types/retry-agent.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/undici-types/retry-handler.d.ts
+lib/node_modules/@google/gemini-cli/node_modules/undici-types/round-robin-pool.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/undici-types/snapshot-agent.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/undici-types/util.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/undici-types/utility.d.ts
