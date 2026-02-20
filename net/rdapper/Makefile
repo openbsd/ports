@@ -2,7 +2,7 @@ COMMENT=	Perl interface to the Registration Data Access Protocol
 
 MODULES=	cpan
 CPAN_AUTHOR=	GBROWN
-PKGNAME=	rdapper-1.23
+PKGNAME=	rdapper-1.24
 DISTNAME=	App-${PKGNAME}
 CATEGORIES=	net
 PKG_ARCH=	*
