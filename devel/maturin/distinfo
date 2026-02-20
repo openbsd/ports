@@ -33,7 +33,7 @@ SHA256 (cargo/cargo-options-0.7.6.tar.gz) = +J4dbW9l/gTV4hvp3hnTGgdOO35DqjnuW4X0
 SHA256 (cargo/cargo-platform-0.1.9.tar.gz) = 41rxiQBrnA8AoGRoXHJwMePtLYAg97ooTXjMJnG9Nuo=
 SHA256 (cargo/cargo-platform-0.3.2.tar.gz) = h6DA5hSPEfAfMmUKLqAtUysq1Ogdi9QeblZbWtxeYII=
 SHA256 (cargo/cargo-xwin-0.19.2.tar.gz) = RPmq2FRGtEVW/Br9KxEQsfe6w9YdZ/OPg7y0v2qz2aw=
-SHA256 (cargo/cargo-zigbuild-0.22.0.tar.gz) = QeikRmDbv+1HcDwjQjy7k4FLbRbjV9HGstiosVjvDlI=
+SHA256 (cargo/cargo-zigbuild-0.22.1.tar.gz) = anKXDcT1RQXmi5NK6Qr2BAo+3qavgg9TVCHgDVELeYQ=
 SHA256 (cargo/cargo_metadata-0.18.1.tar.gz) = LYhlR+QfdAxhaucxCPbrcK/m2UDHvGl8sw8T2uwHMDc=
 SHA256 (cargo/cargo_metadata-0.23.1.tar.gz) = 75h9F7ChE77N0Z09ACLQTX70H57+Tz+2OsRLph3zrek=
 SHA256 (cargo/cbindgen-0.29.2.tar.gz) = vvv9ByqOgcAvjFB6785DH+Xn0FH4PUiiP/ybn+WhF5k=
@@ -119,7 +119,7 @@ SHA256 (cargo/getrandom-0.2.17.tar.gz) = /yq8AL5/ym68R0UkaXridq2EetCms/qkvLAn6aR
 SHA256 (cargo/getrandom-0.3.4.tar.gz) = iZ3vXDfE/XsmZGSMKBIOzsE45NOVtFnlyjT5zOLdd/0=
 SHA256 (cargo/glob-0.3.3.tar.gz) = DMIycPbhgI4wqSi9yE3qC5tBNqi8gjOFdPI7r0e70oA=
 SHA256 (cargo/globset-0.4.18.tar.gz) = Ut/BkVOki94MvWMEU2FcgVG846Wt+segrr+/Ch4fV+M=
-SHA256 (cargo/goblin-0.10.4.tar.gz) = TbZ1jFRub4HyZWOMmA5ehN+9qAz9jongL4NFTI6BJL0=
+SHA256 (cargo/goblin-0.10.5.tar.gz) = mDpqr7OxLUxB6njTnhia9CmM50c1OUX/UQW1SgVuXNk=
 SHA256 (cargo/hashbrown-0.15.5.tar.gz) = kinP5T39afBgmkn2VGG9kwAeoe+InNVSndF2WT9TOKE=
 SHA256 (cargo/hashbrown-0.16.1.tar.gz) = hB0cyb7X+SNvMh35dwMDc/SkFjrhp9v+GlGiwaUdkQA=
 SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
@@ -444,7 +444,7 @@ SHA256 (cargo/zopfli-0.8.3.tar.gz) = 8FzYeX1jhlQl/4m1xKSIBPNboM6NElgAAnrWAX0rUkk
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (maturin-1.12.2.tar.gz) = /lCCpdy8NsmNntrOTdimZy6DzB0dBp2Md6B6YYzGeVk=
+SHA256 (maturin-1.12.3.tar.gz) = f+9mbT+R3bkXQ6apbNSuxpZUt+nLVwyYiJDxR8J8EdE=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/allocator-api2-0.2.21.tar.gz) = 63622
@@ -480,7 +480,7 @@ SIZE (cargo/cargo-options-0.7.6.tar.gz) = 18462
 SIZE (cargo/cargo-platform-0.1.9.tar.gz) = 12010
 SIZE (cargo/cargo-platform-0.3.2.tar.gz) = 13515
 SIZE (cargo/cargo-xwin-0.19.2.tar.gz) = 39072
-SIZE (cargo/cargo-zigbuild-0.22.0.tar.gz) = 55844
+SIZE (cargo/cargo-zigbuild-0.22.1.tar.gz) = 64436
 SIZE (cargo/cargo_metadata-0.18.1.tar.gz) = 24535
 SIZE (cargo/cargo_metadata-0.23.1.tar.gz) = 30497
 SIZE (cargo/cbindgen-0.29.2.tar.gz) = 231617
@@ -566,7 +566,7 @@ SIZE (cargo/getrandom-0.2.17.tar.gz) = 40780
 SIZE (cargo/getrandom-0.3.4.tar.gz) = 50932
 SIZE (cargo/glob-0.3.3.tar.gz) = 22861
 SIZE (cargo/globset-0.4.18.tar.gz) = 28970
-SIZE (cargo/goblin-0.10.4.tar.gz) = 255957
+SIZE (cargo/goblin-0.10.5.tar.gz) = 257768
 SIZE (cargo/hashbrown-0.15.5.tar.gz) = 140908
 SIZE (cargo/hashbrown-0.16.1.tar.gz) = 147785
 SIZE (cargo/heck-0.5.0.tar.gz) = 11517
@@ -891,4 +891,4 @@ SIZE (cargo/zopfli-0.8.3.tar.gz) = 51589
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (maturin-1.12.2.tar.gz) = 638646
+SIZE (maturin-1.12.3.tar.gz) = 641410
