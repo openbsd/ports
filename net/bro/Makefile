@@ -1,6 +1,8 @@
 COMMENT=		network analysis and security monitoring framework
 
 V =			8.1.1
+REVISION =		0
+
 DISTNAME =		zeek-${V}
 
 SHARED_LIBS +=		binpac		3.0
