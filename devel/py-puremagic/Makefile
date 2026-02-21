@@ -1,6 +1,6 @@
 COMMENT=	pure Python implementation of magic file detection
 
-MODPY_DISTV=	1.30
+MODPY_DISTV=	2.0.0
 DISTNAME=	puremagic-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/cdgriffith/puremagic
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
 
 .include <bsd.port.mk>
