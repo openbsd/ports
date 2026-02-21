@@ -1,7 +1,6 @@
 COMMENT =		zstd bindings for python
 
-MODPY_DISTV =		1.5.7.2
-REVISION =		0
+MODPY_DISTV =		1.5.7.3
 DISTNAME =		zstd-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 

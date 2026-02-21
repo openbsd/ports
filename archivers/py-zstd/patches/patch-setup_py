@@ -4,8 +4,8 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -355,8 +355,8 @@ if BUILD_SPEED3:
-         'msvc': ['/O3', ],
+@@ -364,8 +364,8 @@ if BUILD_SPEED3:
+         'msvc': ['/Ox', ],
          'mingw32': ['-O3',],
          'unix': ['-O3',],
 -        'clang': ['-O3',],
@@ -14,8 +14,8 @@ Index: setup.py
 +        'gcc': ['',],
      }
  ###
- # DVERSION - pass module version string
-@@ -399,7 +399,7 @@ if SUP_DEBUG:
+ 
+@@ -403,7 +403,7 @@ if SUP_DEBUG:
              COPT[comp].extend([ '-DZSTD_DEBUG=1','-g',
              ])
  
