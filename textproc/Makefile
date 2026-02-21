@@ -627,6 +627,7 @@
      SUBDIR += trdsql
      SUBDIR += tre
      SUBDIR += tree-sitter
+     SUBDIR += tree-sitter-cli
      SUBDIR += txt2man
      SUBDIR += txt2tags
      SUBDIR += typst
