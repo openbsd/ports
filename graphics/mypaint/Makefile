@@ -1,9 +1,9 @@
 COMMENT =	raster graphics editor for digital painters
 
 MODPY_DISTV =	2.0.1
+REVISION =	13
 DISTNAME =	mypaint-${MODPY_DISTV}
 EXTRACT_SUFX =	.tar.xz
-REVISION =	12
 
 CATEGORIES =	graphics
 
