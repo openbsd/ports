@@ -3,11 +3,18 @@ Fix shared library versions.
 Index: libfdt/Makefile.libfdt
 --- libfdt/Makefile.libfdt.orig
 +++ libfdt/Makefile.libfdt
-@@ -10,7 +10,7 @@ LIBFDT_VERSION = version.lds
+@@ -6,13 +6,13 @@
+ #
+ 
+ LIBFDT_so = libfdt.$(SHAREDLIB_EXT)
+-LIBFDT_soname = libfdt.$(SHAREDLIB_EXT).1
++LIBFDT_soname = libfdt.$(SHAREDLIB_EXT).${libfdt_ltversion}
+ LIBFDT_INCLUDES = fdt.h libfdt.h libfdt_env.h
+ LIBFDT_VERSION = version.lds
  LIBFDT_SRCS = fdt.c fdt_ro.c fdt_wip.c fdt_sw.c fdt_rw.c fdt_strerror.c fdt_empty_tree.c \
  	fdt_addresses.c fdt_overlay.c fdt_check.c
  LIBFDT_OBJS = $(LIBFDT_SRCS:%.c=%.o)
--LIBFDT_LIB = libfdt-$(DTC_VERSION).$(SHAREDLIB_EXT)
+-LIBFDT_LIB = libfdt.$(SHAREDLIB_EXT).$(DTC_VERSION)
 +LIBFDT_LIB = libfdt.$(SHAREDLIB_EXT).${libfdt_ltversion}
  
  libfdt_clean:

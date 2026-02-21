@@ -3,27 +3,19 @@ Fix shared library versions.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -22,8 +22,8 @@ ASSUME_MASK ?= 0
- 
+@@ -20,8 +20,9 @@ ASSUME_MASK ?= 0
  CPPFLAGS = -I libfdt -I . -DFDT_ASSUME_MASK=$(ASSUME_MASK)
  WARNINGS = -Wall -Wpointer-arith -Wcast-qual -Wnested-externs -Wsign-compare \
--	-Wstrict-prototypes -Wmissing-prototypes -Wredundant-decls -Wshadow
+ 	-Wstrict-prototypes -Wmissing-prototypes -Wredundant-decls -Wshadow \
+-	-Wsuggest-attribute=format -Wwrite-strings
 -CFLAGS = -g -Os $(SHAREDLIB_CFLAGS) -Werror $(WARNINGS) $(EXTRA_CFLAGS)
-+	-Wstrict-prototypes -Wmissing-prototypes -Wshadow
-+CFLAGS += $(SHAREDLIB_CFLAGS) -Werror $(WARNINGS) $(EXTRA_CFLAGS)
++	-Wwrite-strings
++CFLAGS ?= -g -Os
++CFLAGS += $(SHAREDLIB_CFLAGS) $(WARNINGS) $(EXTRA_CFLAGS)
  
  BISON = bison
  LEX = flex
-@@ -73,7 +73,7 @@ SHAREDLIB_LDFLAGS = -shared -Wl,--version-script=$(LIB
- else
- SHAREDLIB_EXT     = so
- SHAREDLIB_CFLAGS  = -fPIC
--SHAREDLIB_LDFLAGS = -fPIC -shared -Wl,--version-script=$(LIBFDT_version) -Wl,-soname,
-+SHAREDLIB_LDFLAGS = -fPIC -shared -Wl,--version-script=$(LIBFDT_version)
- endif
- 
- #
-@@ -158,7 +158,7 @@ all: $(BIN) libfdt
+@@ -159,7 +160,7 @@ all: $(BIN) libfdt
  check_python_deps = \
  	if $(PKG_CONFIG) --cflags $(PYTHON) >/dev/null 2>&1; then \
  		if which swig >/dev/null 2>&1; then \
@@ -32,18 +24,16 @@ Index: Makefile
  		fi; \
  	fi; \
  	if [ "$${can_build}" = "yes" ]; then \
-@@ -214,9 +214,8 @@ $(LIBFDT_archive): $(addprefix $(LIBFDT_dir)/,$(LIBFDT
- 
- $(LIBFDT_lib): $(addprefix $(LIBFDT_dir)/,$(LIBFDT_OBJS)) $(LIBFDT_version)
+@@ -217,8 +218,6 @@ $(LIBFDT_lib): $(addprefix $(LIBFDT_dir)/,$(LIBFDT_OBJ
  	@$(VECHO) LD $@
--	$(CC) $(LDFLAGS) $(SHAREDLIB_LDFLAGS)$(LIBFDT_soname) -o $(LIBFDT_lib) \
-+	$(CC) $(LDFLAGS) $(SHAREDLIB_LDFLAGS) -o $(LIBFDT_lib) \
+ 	$(CC) $(LDFLAGS) $(SHAREDLIB_LDFLAGS)$(LIBFDT_soname) -o $(LIBFDT_lib) \
  		$(addprefix $(LIBFDT_dir)/,$(LIBFDT_OBJS))
 -	ln -sf $(LIBFDT_LIB) $(LIBFDT_dir)/$(LIBFDT_soname)
+-	ln -sf $(LIBFDT_soname) $(LIBFDT_dir)/$(LIBFDT_so)
  
  ifneq ($(DEPTARGETS),)
  -include $(LIBFDT_OBJS:%.o=$(LIBFDT_dir)/%.d)
-@@ -237,8 +236,6 @@ install-lib: all
+@@ -239,8 +238,6 @@ install-lib: libfdt
  	@$(VECHO) INSTALL-LIB
  	$(INSTALL) -d $(DESTDIR)$(LIBDIR)
  	$(INSTALL_LIB) $(LIBFDT_lib) $(DESTDIR)$(LIBDIR)
