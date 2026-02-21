@@ -3,7 +3,7 @@ COMMENT=	management REST API for grommunio
 V=		1.17
 DISTNAME=	grommunio-admin-api-${V}
 
-REVISION=	3
+REVISION=	4
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	admin-api
