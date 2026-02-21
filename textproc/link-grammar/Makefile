@@ -6,6 +6,7 @@ COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
 VERSION =		5.13.0
+REVISION =		0
 DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
