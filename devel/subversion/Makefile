@@ -5,7 +5,7 @@ COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
-REVISION=		1
+REVISION=		2
 
 VERSION=		1.14.5
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
