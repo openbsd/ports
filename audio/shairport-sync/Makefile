@@ -1,9 +1,9 @@
 COMMENT =	AirPlay audio player
+REVISION =	0
 
+# upstream dropped all pledge bits starting with 5.0
 DIST_TUPLE =	github	mikebrady	shairport-sync	4.3.7	.
 CATEGORIES =	audio net
-
-MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # BSD?
 PERMIT_PACKAGE =	Yes
