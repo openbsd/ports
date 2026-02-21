@@ -6,7 +6,7 @@ DISTNAME=	graphviz-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	graphviz-tcl-$V
 CATEGORIES=	math devel graphics
-REVISION=	1
+REVISION=	2
 
 MULTI_PACKAGES=	-main -tcl
 
