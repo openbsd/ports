@@ -1,3 +1,5 @@
+https://github.com/swig/swig/issues/3304
+
 fix Examples/guile/multivalue & multimap regress tests
 
 ld: error: unknown argument '-I/usr/local/include'
@@ -8,12 +10,13 @@ ld: error: unable to find library -lm
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6549,7 +6549,7 @@ then
+@@ -6619,7 +6619,8 @@ then
  	*-*-linux*) LDSHARED="\$(CC) -shared";;
  	*-*-dgux*) LDSHARED="ld -G";;
  	*-*-freebsd3*) LDSHARED="\$(CC) -shared";;
 -	*-*-freebsd* | *-*-openbsd*) LDSHARED="ld -Bshareable";;
-+	*-*-freebsd* | *-*-openbsd*) LDSHARED="cc -shared";;
++	*-*-freebsd*) LDSHARED="ld -Bshareable";;
++	*-*-openbsd*) LDSHARED="\$(CC) -shared";;
  	*-*-netbsd*)
  		if [ "`\$(CC) -dM -E - </dev/null | grep __ELF__`" != "" ]
  		then

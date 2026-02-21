@@ -19,6 +19,7 @@ share/doc/swig/Devel/wrapobj.html
 share/doc/swig/Manual/
 share/doc/swig/Manual/Android.html
 share/doc/swig/Manual/Arguments.html
+share/doc/swig/Manual/C.html
 share/doc/swig/Manual/CCache.html
 share/doc/swig/Manual/CPlusPlus11.html
 share/doc/swig/Manual/CPlusPlus14.html
@@ -40,7 +41,6 @@ share/doc/swig/Manual/Library.html
 share/doc/swig/Manual/Lua.html
 share/doc/swig/Manual/Makefile
 share/doc/swig/Manual/Modules.html
-share/doc/swig/Manual/Mzscheme.html
 share/doc/swig/Manual/Ocaml.html
 share/doc/swig/Manual/Octave.html
 share/doc/swig/Manual/Perl5.html
@@ -80,6 +80,23 @@ share/swig/
 share/swig/${VERSION}/
 share/swig/${VERSION}/allkw.swg
 share/swig/${VERSION}/attribute.i
+share/swig/${VERSION}/c/
+share/swig/${VERSION}/c/boost_shared_ptr.i
+share/swig/${VERSION}/c/c.swg
+share/swig/${VERSION}/c/cdata.i
+share/swig/${VERSION}/c/cexcept.swg
+share/swig/${VERSION}/c/cheader.swg
+share/swig/${VERSION}/c/clabels.swg
+share/swig/${VERSION}/c/std_common.i
+share/swig/${VERSION}/c/std_except.i
+share/swig/${VERSION}/c/std_map.i
+share/swig/${VERSION}/c/std_pair.i
+share/swig/${VERSION}/c/std_set.i
+share/swig/${VERSION}/c/std_shared_ptr.i
+share/swig/${VERSION}/c/std_string.i
+share/swig/${VERSION}/c/std_vector.i
+share/swig/${VERSION}/c/stl.i
+share/swig/${VERSION}/c/typemaps.i
 share/swig/${VERSION}/carrays.i
 share/swig/${VERSION}/cdata.i
 share/swig/${VERSION}/cmalloc.i
@@ -90,6 +107,7 @@ share/swig/${VERSION}/csharp/argcargv.i
 share/swig/${VERSION}/csharp/arrays_csharp.i
 share/swig/${VERSION}/csharp/boost_intrusive_ptr.i
 share/swig/${VERSION}/csharp/boost_shared_ptr.i
+share/swig/${VERSION}/csharp/cdata.i
 share/swig/${VERSION}/csharp/complex.i
 share/swig/${VERSION}/csharp/csharp.swg
 share/swig/${VERSION}/csharp/csharphead.swg
@@ -128,6 +146,7 @@ share/swig/${VERSION}/d/
 share/swig/${VERSION}/d/argcargv.i
 share/swig/${VERSION}/d/boost_shared_ptr.i
 share/swig/${VERSION}/d/carrays.i
+share/swig/${VERSION}/d/cdata.i
 share/swig/${VERSION}/d/cpointer.i
 share/swig/${VERSION}/d/d.swg
 share/swig/${VERSION}/d/dclassgen.swg
@@ -158,6 +177,7 @@ share/swig/${VERSION}/d/swigmove.i
 share/swig/${VERSION}/d/typemaps.i
 share/swig/${VERSION}/d/wrapperloader.swg
 share/swig/${VERSION}/director_common.swg
+share/swig/${VERSION}/director_guard.swg
 share/swig/${VERSION}/exception.i
 share/swig/${VERSION}/go/
 share/swig/${VERSION}/go/argcargv.i
@@ -182,6 +202,7 @@ share/swig/${VERSION}/go/swigmove.i
 share/swig/${VERSION}/go/typemaps.i
 share/swig/${VERSION}/guile/
 share/swig/${VERSION}/guile/argcargv.i
+share/swig/${VERSION}/guile/cdata.i
 share/swig/${VERSION}/guile/common.scm
 share/swig/${VERSION}/guile/cplusplus.i
 share/swig/${VERSION}/guile/guile.i
@@ -212,6 +233,7 @@ share/swig/${VERSION}/java/argcargv.i
 share/swig/${VERSION}/java/arrays_java.i
 share/swig/${VERSION}/java/boost_intrusive_ptr.i
 share/swig/${VERSION}/java/boost_shared_ptr.i
+share/swig/${VERSION}/java/cdata.i
 share/swig/${VERSION}/java/director.swg
 share/swig/${VERSION}/java/enums.swg
 share/swig/${VERSION}/java/enumsimple.swg
@@ -243,11 +265,11 @@ share/swig/${VERSION}/java/swigmove.i
 share/swig/${VERSION}/java/typemaps.i
 share/swig/${VERSION}/java/various.i
 share/swig/${VERSION}/javascript/
+share/swig/${VERSION}/javascript/javascriptkw.swg
 share/swig/${VERSION}/javascript/jsc/
 share/swig/${VERSION}/javascript/jsc/argcargv.i
 share/swig/${VERSION}/javascript/jsc/arrays_javascript.i
 share/swig/${VERSION}/javascript/jsc/ccomplex.i
-share/swig/${VERSION}/javascript/jsc/cdata.i
 share/swig/${VERSION}/javascript/jsc/cmalloc.i
 share/swig/${VERSION}/javascript/jsc/complex.i
 share/swig/${VERSION}/javascript/jsc/exception.i
@@ -280,7 +302,6 @@ share/swig/${VERSION}/javascript/napi/
 share/swig/${VERSION}/javascript/napi/argcargv.i
 share/swig/${VERSION}/javascript/napi/arrays_javascript.i
 share/swig/${VERSION}/javascript/napi/ccomplex.i
-share/swig/${VERSION}/javascript/napi/cdata.i
 share/swig/${VERSION}/javascript/napi/cmalloc.i
 share/swig/${VERSION}/javascript/napi/complex.i
 share/swig/${VERSION}/javascript/napi/exception.i
@@ -313,7 +334,6 @@ share/swig/${VERSION}/javascript/v8/
 share/swig/${VERSION}/javascript/v8/argcargv.i
 share/swig/${VERSION}/javascript/v8/arrays_javascript.i
 share/swig/${VERSION}/javascript/v8/ccomplex.i
-share/swig/${VERSION}/javascript/v8/cdata.i
 share/swig/${VERSION}/javascript/v8/cmalloc.i
 share/swig/${VERSION}/javascript/v8/complex.i
 share/swig/${VERSION}/javascript/v8/exception.i
@@ -342,11 +362,11 @@ share/swig/${VERSION}/javascript/v8/std_vector.i
 share/swig/${VERSION}/javascript/v8/stl.i
 share/swig/${VERSION}/javascript/v8/swigmove.i
 share/swig/${VERSION}/javascript/v8/typemaps.i
-share/swig/${VERSION}/javascriptkw.swg
 share/swig/${VERSION}/lua/
 share/swig/${VERSION}/lua/_std_common.i
 share/swig/${VERSION}/lua/argcargv.i
 share/swig/${VERSION}/lua/carrays.i
+share/swig/${VERSION}/lua/cdata.i
 share/swig/${VERSION}/lua/factory.i
 share/swig/${VERSION}/lua/lua.swg
 share/swig/${VERSION}/lua/lua_fnptr.i
@@ -369,23 +389,9 @@ share/swig/${VERSION}/lua/swigmove.i
 share/swig/${VERSION}/lua/typemaps.i
 share/swig/${VERSION}/lua/wchar.i
 share/swig/${VERSION}/math.i
-share/swig/${VERSION}/mzscheme/
-share/swig/${VERSION}/mzscheme/argcargv.i
-share/swig/${VERSION}/mzscheme/mzrun.swg
-share/swig/${VERSION}/mzscheme/mzscheme.swg
-share/swig/${VERSION}/mzscheme/std_auto_ptr.i
-share/swig/${VERSION}/mzscheme/std_common.i
-share/swig/${VERSION}/mzscheme/std_deque.i
-share/swig/${VERSION}/mzscheme/std_map.i
-share/swig/${VERSION}/mzscheme/std_pair.i
-share/swig/${VERSION}/mzscheme/std_string.i
-share/swig/${VERSION}/mzscheme/std_unique_ptr.i
-share/swig/${VERSION}/mzscheme/std_vector.i
-share/swig/${VERSION}/mzscheme/stl.i
-share/swig/${VERSION}/mzscheme/swigmove.i
-share/swig/${VERSION}/mzscheme/typemaps.i
 share/swig/${VERSION}/ocaml/
 share/swig/${VERSION}/ocaml/carray.i
+share/swig/${VERSION}/ocaml/cdata.i
 share/swig/${VERSION}/ocaml/class.swg
 share/swig/${VERSION}/ocaml/cstring.i
 share/swig/${VERSION}/ocaml/director.swg
@@ -417,7 +423,6 @@ share/swig/${VERSION}/octave/argcargv.i
 share/swig/${VERSION}/octave/attribute.i
 share/swig/${VERSION}/octave/boost_shared_ptr.i
 share/swig/${VERSION}/octave/carrays.i
-share/swig/${VERSION}/octave/cdata.i
 share/swig/${VERSION}/octave/cmalloc.i
 share/swig/${VERSION}/octave/director.swg
 share/swig/${VERSION}/octave/exception.i
@@ -461,7 +466,6 @@ share/swig/${VERSION}/perl5/Makefile.pl
 share/swig/${VERSION}/perl5/argcargv.i
 share/swig/${VERSION}/perl5/attribute.i
 share/swig/${VERSION}/perl5/carrays.i
-share/swig/${VERSION}/perl5/cdata.i
 share/swig/${VERSION}/perl5/cmalloc.i
 share/swig/${VERSION}/perl5/cpointer.i
 share/swig/${VERSION}/perl5/cstring.i
@@ -501,6 +505,7 @@ share/swig/${VERSION}/perl5/swigmove.i
 share/swig/${VERSION}/perl5/typemaps.i
 share/swig/${VERSION}/php/
 share/swig/${VERSION}/php/argcargv.i
+share/swig/${VERSION}/php/cdata.i
 share/swig/${VERSION}/php/const.i
 share/swig/${VERSION}/php/director.swg
 share/swig/${VERSION}/php/factory.i
@@ -530,13 +535,13 @@ share/swig/${VERSION}/python/boost_shared_ptr.i
 share/swig/${VERSION}/python/builtin.swg
 share/swig/${VERSION}/python/carrays.i
 share/swig/${VERSION}/python/ccomplex.i
-share/swig/${VERSION}/python/cdata.i
 share/swig/${VERSION}/python/cmalloc.i
 share/swig/${VERSION}/python/complex.i
 share/swig/${VERSION}/python/cpointer.i
 share/swig/${VERSION}/python/cstring.i
 share/swig/${VERSION}/python/cwstring.i
 share/swig/${VERSION}/python/director.swg
+share/swig/${VERSION}/python/director_py_mutex.swg
 share/swig/${VERSION}/python/embed.i
 share/swig/${VERSION}/python/exception.i
 share/swig/${VERSION}/python/factory.i
@@ -556,7 +561,6 @@ share/swig/${VERSION}/python/pyhead.swg
 share/swig/${VERSION}/python/pyinit.swg
 share/swig/${VERSION}/python/pyiterators.swg
 share/swig/${VERSION}/python/pymacros.swg
-share/swig/${VERSION}/python/pyname_compat.i
 share/swig/${VERSION}/python/pyopers.swg
 share/swig/${VERSION}/python/pyprimtypes.swg
 share/swig/${VERSION}/python/pyrun.swg
@@ -566,7 +570,6 @@ share/swig/${VERSION}/python/pystrings.swg
 share/swig/${VERSION}/python/python.swg
 share/swig/${VERSION}/python/pythonkw.swg
 share/swig/${VERSION}/python/pythreads.swg
-share/swig/${VERSION}/python/pytuplehlp.swg
 share/swig/${VERSION}/python/pytypemaps.swg
 share/swig/${VERSION}/python/pyuserdir.swg
 share/swig/${VERSION}/python/pywstrings.swg
@@ -613,7 +616,6 @@ share/swig/${VERSION}/python/wchar.i
 share/swig/${VERSION}/r/
 share/swig/${VERSION}/r/argcargv.i
 share/swig/${VERSION}/r/boost_shared_ptr.i
-share/swig/${VERSION}/r/cdata.i
 share/swig/${VERSION}/r/exception.i
 share/swig/${VERSION}/r/r.swg
 share/swig/${VERSION}/r/rcontainer.swg
@@ -644,7 +646,6 @@ share/swig/${VERSION}/ruby/argcargv.i
 share/swig/${VERSION}/ruby/attribute.i
 share/swig/${VERSION}/ruby/boost_shared_ptr.i
 share/swig/${VERSION}/ruby/carrays.i
-share/swig/${VERSION}/ruby/cdata.i
 share/swig/${VERSION}/ruby/cmalloc.i
 share/swig/${VERSION}/ruby/cpointer.i
 share/swig/${VERSION}/ruby/cstring.i
@@ -840,7 +841,6 @@ share/swig/${VERSION}/tcl/
 share/swig/${VERSION}/tcl/argcargv.i
 share/swig/${VERSION}/tcl/attribute.i
 share/swig/${VERSION}/tcl/carrays.i
-share/swig/${VERSION}/tcl/cdata.i
 share/swig/${VERSION}/tcl/cmalloc.i
 share/swig/${VERSION}/tcl/cpointer.i
 share/swig/${VERSION}/tcl/cstring.i
@@ -864,6 +864,7 @@ share/swig/${VERSION}/tcl/tcl8.swg
 share/swig/${VERSION}/tcl/tclapi.swg
 share/swig/${VERSION}/tcl/tclerrors.swg
 share/swig/${VERSION}/tcl/tclfragments.swg
+share/swig/${VERSION}/tcl/tclincludes.swg
 share/swig/${VERSION}/tcl/tclinit.swg
 share/swig/${VERSION}/tcl/tclinterp.i
 share/swig/${VERSION}/tcl/tclkw.swg
@@ -883,7 +884,8 @@ share/swig/${VERSION}/tcl/wish.i
 share/swig/${VERSION}/typemaps/
 share/swig/${VERSION}/typemaps/attribute.swg
 share/swig/${VERSION}/typemaps/carrays.swg
-share/swig/${VERSION}/typemaps/cdata.swg
+share/swig/${VERSION}/typemaps/cdata_begin.swg
+share/swig/${VERSION}/typemaps/cdata_end.swg
 share/swig/${VERSION}/typemaps/cmalloc.swg
 share/swig/${VERSION}/typemaps/cpointer.swg
 share/swig/${VERSION}/typemaps/cstring.swg
@@ -914,6 +916,7 @@ share/swig/${VERSION}/typemaps/typemaps.swg
 share/swig/${VERSION}/typemaps/valtypes.swg
 share/swig/${VERSION}/typemaps/void.swg
 share/swig/${VERSION}/typemaps/wstring.swg
+share/swig/${VERSION}/unique_ptr.swg
 share/swig/${VERSION}/wchar.i
 share/swig/${VERSION}/windows.i
 share/swig/${VERSION}/xml/
