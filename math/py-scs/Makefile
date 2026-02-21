@@ -3,9 +3,9 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 COMMENT =		Python interface to SCS
 
 MODPY_DISTV =		3.2.7
+REVISION =		2
 DISTNAME =		scs-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		math
 
