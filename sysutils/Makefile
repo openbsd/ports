@@ -94,6 +94,7 @@
      SUBDIR += dspy
      SUBDIR += dtb
      SUBDIR += dtpstree
+     SUBDIR += dua
      SUBDIR += duf
      SUBDIR += duplicity
      SUBDIR += dvd+rw-tools
