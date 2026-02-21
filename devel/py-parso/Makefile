@@ -1,6 +1,6 @@
 COMMENT=	python parser
 
-MODPY_DISTV =	0.8.5
+MODPY_DISTV =	0.8.6
 DISTNAME=	parso-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
