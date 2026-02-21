@@ -1,9 +1,8 @@
 COMMENT =	OCaml interface to GTK+3
 CATEGORIES =	x11 devel
 
-V =		3.1.1
+V =		3.1.5
 DISTNAME =	lablgtk3-${V}
-REVISION =	7
 
 SITES =		https://github.com/garrigue/lablgtk/releases/download/${V}/
 EXTRACT_SUFX =	.tbz
@@ -23,7 +22,8 @@ RUN_DEPENDS =	graphics/ocaml-cairo
 
 BUILD_DEPENDS = ${RUN_DEPENDS} \
 		devel/dune \
-		devel/dune,-configurator
+		devel/dune,-configurator \
+		devel/ocaml-camlp-streams
 
 USE_GMAKE =	Yes
 MODULES =	lang/ocaml
