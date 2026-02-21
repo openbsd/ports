@@ -1,5 +1,5 @@
 COMMENT =		command-line frontend for sigrok logic analyzer
-REVISION =		0
+REVISION =		1
 
 SIGROK_PROJECT =	sigrok-cli
 SIGROK_VERSION =	0.7.2
