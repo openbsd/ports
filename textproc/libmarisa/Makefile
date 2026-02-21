@@ -11,10 +11,10 @@ PKGNAME-perl =		p5-libmarisa-${V}
 PKGNAME-python =	py3-libmarisa-${V}
 PKGNAME-ruby =		ruby-libmarisa-${V}
 
-REVISION-main =		2
-REVISION-python =	6
-REVISION-ruby =		4
-REVISION-perl =		0
+REVISION-main =		3
+REVISION-python =	7
+REVISION-ruby =		5
+REVISION-perl =		1
 
 GH_ACCOUNT =	s-yata
 GH_PROJECT =	marisa-trie
