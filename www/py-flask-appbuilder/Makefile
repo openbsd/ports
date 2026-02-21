@@ -1,6 +1,6 @@
 COMMENT=	rapid application development framework for Flask
 
-MODPY_DISTV =	5.0.2
+MODPY_DISTV =	5.1.0
 DISTNAME=	flask_appbuilder-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
@@ -15,6 +15,21 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
+# XXX: needs mockldap, hiro, etc
+MODPY_PYTEST_ARGS=	--ignore tests/security/test_auth_ldap.py \
+			--ignore tests/security/test_auth_oauth.py \
+			--ignore tests/security/test_mvc_security.py \
+			--ignore tests/security/test_password_complexity.py \
+			--ignore tests/security/test_rate_limiter.py \
+			--ignore tests/test_addon.py \
+			--ignore tests/test_api.py \
+			--ignore tests/test_custom_indexview.py \
+			--ignore tests/test_fab_cli.py \
+			--ignore tests/test_menu.py \
+			--ignore tests/test_mvc.py \
+			--ignore tests/test_mvc_oauth.py \
+			--ignore tests/test_security_api.py \
+			--ignore tests/test_urltools.py
 
 RUN_DEPENDS =	databases/py-flask-sqlalchemy>=2.4.0,<4 \
 		databases/py-marshmallow-sqlalchemy>=0.22.0,<3.0.0 \
@@ -37,8 +52,5 @@ RUN_DEPENDS =	databases/py-flask-sqlalchemy>=2.4.0,<4 \
 		www/py-jwt>=2.0.0,<3.0.0 \
 		www/py-wtforms<4 \
 		www/py-werkzeug<4v0
-
-# XXX: needs mockldap, hiro
-#TEST_DEPENDS =	devel/py-nose
 
 .include <bsd.port.mk>
