@@ -566,9 +566,6 @@
      SUBDIR += ruby-ntlm,ruby33
      SUBDIR += ruby-ntlm,ruby34
      SUBDIR += ruby-ntlm,ruby40
-     SUBDIR += ruby-passenger,ruby33
-     SUBDIR += ruby-passenger,ruby34
-     SUBDIR += ruby-passenger,ruby40
      SUBDIR += ruby-puma,ruby33
      SUBDIR += ruby-puma,ruby34
      SUBDIR += ruby-puma,ruby40
