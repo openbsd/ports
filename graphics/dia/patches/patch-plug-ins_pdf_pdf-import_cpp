@@ -1,8 +1,17 @@
-Fix build with poppler-25.09.1, 25.10.0 and 26.01.0.
+Fix build with poppler-25.09.1, 25.10.0, 26.01.0 and 26.02.0.
 
 Index: plug-ins/pdf/pdf-import.cpp
 --- plug-ins/pdf/pdf-import.cpp.orig
 +++ plug-ins/pdf/pdf-import.cpp
+@@ -120,7 +120,7 @@ public :
+     return FALSE;
+   }
+   //! Apparently no effect at all - so we translate everything to Dia space ouself
+-  void setDefaultCTM(double *ctm)
++  void setDefaultCTM(std::array<double, 6> &ctm)
+   {
+     DiaMatrix mat;
+ 
 @@ -396,7 +396,7 @@ public :
      if ((pf = strstr (family, " Oblique")) != NULL)
        *pf = 0;
@@ -21,6 +30,15 @@ Index: plug-ins/pdf/pdf-import.cpp
    DiaObject *obj;
    gchar *utf8 = NULL;
    DiaFont *font;
+@@ -875,7 +875,7 @@ DiaOutputDev::drawImage (GfxState         *state,
+   GdkPixbuf *pixbuf;
+   Point pos;
+   DiaObjectChange *change;
+-  const double *ctm = state->getCTM();
++  const std::array<double, 6> &ctm = state->getCTM();
+ 
+   pos.x = ctm[4] * scale;
+   // there is some undocumented magic done with the ctm for drawImage
 @@ -900,7 +900,7 @@ DiaOutputDev::drawImage (GfxState         *state,
        unsigned char *pixels = gdk_pixbuf_get_pixels (pixbuf);
        int y;
