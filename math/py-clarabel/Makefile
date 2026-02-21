@@ -1,6 +1,7 @@
 COMMENT=	interior point conic optimization
 
 MODPY_DISTV=	0.11.1
+REVISION=	0
 DISTNAME=	clarabel-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
