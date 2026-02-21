@@ -1,29 +1,32 @@
-don't set ${PREFIX} here because this confuses the fake installation
-
-Index: Makefile
---- Makefile.orig
-+++ Makefile
-@@ -28,8 +28,8 @@
+--- Makefile.orig.port	Mon Dec  9 08:01:21 2024
++++ Makefile	Sat Feb 21 09:38:45 2026
+@@ -28,7 +28,7 @@
  # SPDX-FileCopyrightText:  © 2020 David Wicksell <dlw@linux.com>
  # SPDX-License-Identifier: AGPL-3.0-or-later
  
 -CC       := gcc
--CFLAGS   := -std=gnu99 -Wall -Wextra -fsigned-char -fwrapv
 +CC       ?= gcc
-+CFLAGS   += -std=gnu99 -Wall -Wextra -fsigned-char -fwrapv
+ CFLAGS   += -std=c99 -Wall -Wextra -Wmissing-prototypes -pedantic -fsigned-char -fwrapv
  CPPFLAGS := -Iinclude
  LDLIBS   := -lcrypt -lm
- PROG     := rsm
-@@ -41,7 +41,7 @@ DOCS     := doc/adoc/*.adoc
- MAN      := doc/man/rsm.1
- RM       := rm -f
- GZIP     := gzip -f9
--PREFIX   := /usr/local
-+#PREFIX   := /usr/local
+@@ -44,11 +44,11 @@
  OS       != uname
  GIT_SHA  != git rev-parse --short=10 HEAD 2>/dev/null; true
  
-@@ -63,7 +63,6 @@ GIT_SHA  != git rev-parse --short=10 HEAD 2>/dev/null;
+-.ifdef prefix
+-    PREFIX := $(prefix)
+-.else
+-    PREFIX := /usr/local
+-.endif
++#.ifdef prefix
++#    PREFIX := $(prefix)
++#.else
++#    PREFIX := /usr/local
++#.endif
+ 
+ .if ($(OS) == OpenBSD)
+     LDLIBS := -lm
+@@ -68,7 +68,6 @@
  .       endif
  .   endif
  .else
@@ -31,22 +34,3 @@ Index: Makefile
      CPPFLAGS += -DNDEBUG
  .endif
  
-@@ -96,10 +95,6 @@ clean:
- 
- .PHONY: install
- install: $(PROG)
--	@if [ "$${USER}" != "root" ]; then \
--	    echo "You must install $(PROG) and $(UTILS) as root"; \
--	    exit 1; \
--	else \
- 	    echo install -d -o 0 -g 0 -m 755 $(PREFIX)/bin; \
- 	    install -d -o 0 -g 0 -m 755 $(PREFIX)/bin; \
- 	    echo install -o 0 -g 0 -m 755 -s $(PROG) $(PREFIX)/bin; \
-@@ -108,7 +103,6 @@ install: $(PROG)
- 	    install -d -o 0 -g 0 -m 755 $(PREFIX)/share/rsm; \
- 	    echo install -o 0 -g 0 -m 644 $(UTILS) $(PREFIX)/share/rsm; \
- 	    install -o 0 -g 0 -m 644 $(UTILS) $(PREFIX)/share/rsm; \
--	fi
- 
- .PHONY: uninstall
- uninstall:
