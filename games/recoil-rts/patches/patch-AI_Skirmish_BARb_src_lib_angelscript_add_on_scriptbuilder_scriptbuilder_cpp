@@ -1,7 +1,7 @@
 Index: AI/Skirmish/BARb/src/lib/angelscript/add_on/scriptbuilder/scriptbuilder.cpp
 --- AI/Skirmish/BARb/src/lib/angelscript/add_on/scriptbuilder/scriptbuilder.cpp.orig
 +++ AI/Skirmish/BARb/src/lib/angelscript/add_on/scriptbuilder/scriptbuilder.cpp
-@@ -11,7 +11,7 @@ using namespace std;
+@@ -14,7 +14,7 @@ using namespace std;
  #include <windows.h> // For GetModuleFileName()
  #endif
  
@@ -10,7 +10,7 @@ Index: AI/Skirmish/BARb/src/lib/angelscript/add_on/scriptbuilder/scriptbuilder.c
  #include <unistd.h> // For getcwd()
  #endif
  
-@@ -1205,7 +1205,7 @@ string GetCurrentDir()
+@@ -1238,7 +1238,7 @@ string GetCurrentDir()
  	#else
  	return _getcwd(buffer, (int)1024);
  	#endif // _MSC_VER

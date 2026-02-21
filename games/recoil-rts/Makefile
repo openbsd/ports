@@ -8,7 +8,7 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
 
-V =			2025.06.12
+V =			2025.06.19
 PKGNAME =		recoil-rts-${V}
 
 DIST_TUPLE +=		github beyond-all-reason RecoilEngine ${V} .
@@ -37,7 +37,7 @@ DIST_TUPLE +=		github wolfpld tracy \
 			5d542dc09f3d9378d005092a4ad446bd405f819a \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			7c0e69a3fc1aa84ecb3bc0b5df5930038fbb0634 \
+			0ef36267633d6c1b2f6408a8d8a59fff38745dc3 \
 			AI/Skirmish/BARb # GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
 			edc74149c281e2140f28c091ed74310c11611cc7 \
@@ -56,7 +56,7 @@ MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU IL SDL2 X11 Xcursor
+WANTLIB += ${COMPILER_LIBCXX} GL IL SDL2 X11 Xcursor
 WANTLIB += Xfixes Xrender c curl execinfo expat fontconfig
 WANTLIB += freetype jsoncpp m minizip ogg openal vorbis
 WANTLIB += vorbisfile z
