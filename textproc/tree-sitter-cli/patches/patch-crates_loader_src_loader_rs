@@ -1,0 +1,15 @@
+Fix linkage errors when running `tree-sitter build`.
+
+https://github.com/tree-sitter/tree-sitter/issues/5333
+
+Index: crates/loader/src/loader.rs
+--- crates/loader/src/loader.rs.orig
++++ crates/loader/src/loader.rs
+@@ -1192,7 +1192,6 @@ impl Loader {
+                 command.arg("-UTREE_SITTER_REUSE_ALLOCATOR");
+             } else {
+                 command.arg("-shared");
+-                command.arg("-Wl,--no-undefined");
+             }
+             command.args(cc_config.get_files());
+             command.arg("-o").arg(output_path);
