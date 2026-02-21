@@ -1,5 +1,5 @@
 COMMENT =		graphical frontend for sigrok logic analyzer
-REVISION =		3
+REVISION =		4
 
 SIGROK_PROJECT =	pulseview
 SIGROK_VERSION =	0.4.2
