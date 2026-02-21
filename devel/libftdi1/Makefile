@@ -4,7 +4,7 @@ CATEGORIES =	devel
 
 V =		1.5
 DISTNAME =	libftdi1-$V
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  ftdi1                     0.1 # 2.4
 
