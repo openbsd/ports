@@ -2,8 +2,7 @@ COMMENT =	client for the I2P anonymous network
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	2.58.0
-REVISION =	0
+GH_TAGNAME =	2.59.0
 
 CATEGORIES =	net
 HOMEPAGE =	https://i2pd.website
