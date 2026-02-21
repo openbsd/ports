@@ -3,7 +3,7 @@
 Index: mpi/config.links
 --- mpi/config.links.orig
 +++ mpi/config.links
-@@ -272,15 +272,6 @@ case "${host}" in
+@@ -284,15 +284,6 @@ case "${host}" in
         mpi_cpu_arch="ppc"
         ;;
  
@@ -19,7 +19,7 @@ Index: mpi/config.links
      ppc620-*-*	    | \
      powerpc64*-*-*)
  	mpi_sflags="-Wa,-mppc"
-@@ -294,6 +285,14 @@ case "${host}" in
+@@ -306,6 +297,14 @@ case "${host}" in
  	path="powerpc32"
  	mpi_cpu_arch="ppc"
  	;;
