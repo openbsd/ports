@@ -2,11 +2,13 @@ COMMENT =		write command line apps with less suffering
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		App-Cmd-0.338
+DISTNAME =		App-Cmd-0.339
 CATEGORIES =		devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		RJBS
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
