@@ -16,7 +16,7 @@ MINOR=		57
 RPMVER=		2026.7
 PKGNAME=	kopano-webapp-${WAPP_VERSION}.${MINOR}
 
-REVISION=	0
+REVISION=	1
 
 EXTRACT_SUFX=	.noarch.rpm
 
