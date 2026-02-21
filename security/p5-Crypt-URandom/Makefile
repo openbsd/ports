@@ -1,6 +1,7 @@
 COMMENT =	provide non blocking randomness
 
-DISTNAME =	Crypt-URandom-0.54
+DISTNAME =	Crypt-URandom-0.55
+CPAN_AUTHOR =	DDICK
 
 CATEGORIES =	security
 
