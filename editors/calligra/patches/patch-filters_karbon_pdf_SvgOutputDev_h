@@ -1,0 +1,14 @@
+Fix build with poppler-26.02.0.
+
+Index: filters/karbon/pdf/SvgOutputDev.h
+--- filters/karbon/pdf/SvgOutputDev.h.orig
++++ filters/karbon/pdf/SvgOutputDev.h
+@@ -69,7 +69,7 @@ class SvgOutputDev : public OutputDev (public)
+ private:
+     QString convertPath(const GfxPath *path);
+     QString convertMatrix(const QTransform &matrix);
+-    QString convertMatrix(const double *matrix);
++    QString convertMatrix(const std::array<double, 6> &matrix);
+     QString printFill();
+     QString printStroke();
+ 
