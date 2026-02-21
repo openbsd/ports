@@ -2,6 +2,7 @@
 share/doc/sccache/
 share/doc/sccache/Architecture.md
 share/doc/sccache/Azure.md
+share/doc/sccache/COS.md
 share/doc/sccache/Caching.md
 share/doc/sccache/Configuration.md
 share/doc/sccache/Distributed.md
