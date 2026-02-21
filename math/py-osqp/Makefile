@@ -1,10 +1,10 @@
 COMMENT=	Python interface to OSQP
 
 MODPY_DISTV=	0.6.1
+REVISION=	12
 DISTNAME=	osqp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	math
-REVISION=	11
 
 MAINTAINER=	Paul Irofti <paul@irofti.net>
 
