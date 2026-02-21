@@ -3,8 +3,7 @@ CATEGORIES =	lang
 
 GH_ACCOUNT =	marcobambini
 GH_PROJECT =	gravity
-GH_TAGNAME =	0.8.5
-REVISION =	0
+GH_TAGNAME =	0.9.0
 
 HOMEPAGE =	http://creolabs.com/gravity
 
