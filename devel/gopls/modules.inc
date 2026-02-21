@@ -28,7 +28,7 @@ MODGO_MODULES =	\
 	golang.org/x/telemetry				 v0.0.0-20251111182119-bc8e575c7b54 \
 	golang.org/x/term				 v0.22.0 \
 	golang.org/x/text				 v0.31.0 \
-	golang.org/x/tools				 v0.39.1-0.20251205192105-907593008619 \
+	golang.org/x/tools				 v0.39.1-0.20260109155911-b69ac100ecb7 \
 	golang.org/x/tools/go/expect			 v0.1.1-deprecated \
 	golang.org/x/tools/go/packages/packagestest	 v0.1.1-deprecated \
 	golang.org/x/vuln				 v1.1.4 \
