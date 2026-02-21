@@ -1,4 +1,4 @@
-Match OpenBSD protobuf s/6/4/
+Use system protobuf-java - copied into dependencies/flatRepo
 
 Index: Ghidra/Debug/ProposedUtils/Module.manifest
 --- Ghidra/Debug/ProposedUtils/Module.manifest.orig

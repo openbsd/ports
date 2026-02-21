@@ -2,8 +2,8 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 COMMENT =	software reverse engineering (SRE) framework
 
-VERSION = 	12.0.2
-GHIDRA_DATE =	20260129
+VERSION = 	12.0.3
+GHIDRA_DATE =	20260210
 
 GH_ACCOUNT =	NationalSecurityAgency
 GH_PROJECT =	ghidra
@@ -11,6 +11,8 @@ GH_TAGNAME =	Ghidra_${VERSION}_build
 DISTNAME =	ghidra-${VERSION}
 
 CATEGORIES =	security
+
+MAINTAINER =	Kurt Miller <kurt@openbsd.org>
 
 HOMEPAGE =	https://www.ghidra-sre.org/
 
@@ -21,10 +23,10 @@ WANTLIB +=		c m ${COMPILER_LIBCXX}
 
 SITES.a =		https://www.intricatesoftware.com/distfiles/
 
-# Keep these in sync with java/jna and devel/protobuf
+# sync with java/jna and devel/protobuf when updating VERSION
 JNA_VER =		5.18.1
-PROTOBUF_VER =		6.33.4
-PROTOBUF_JAVA_VER =	4.33.4
+PROTOBUF_VER =		6.33.5
+PROTOBUF_JAVA_VER =	4.33.5
 
 DISTFILES.a +=		ghidra-Ghidra_${VERSION}_build_dependencies${EXTRACT_SUFX}
 
@@ -34,6 +36,7 @@ MODJAVA_VER =		21+
 BUILD_DEPENDS =		archivers/unzip \
 			devel/bison \
 			devel/protobuf>=${PROTOBUF_VER} \
+			devel/protobuf-java>=${PROTOBUF_JAVA_VER} \
 			devel/py-pip \
 			java/gradle \
 			java/jna>=${JNA_VER} \
@@ -57,7 +60,7 @@ GHIDRA_ARCH =		openbsd_arm_64
 
 NO_TEST =		Yes
 
-SUBST_VARS +=		CXX GHIDRA_DATE GHIDRA_ARCH VERSION WRKDIR \
+SUBST_VARS +=		GHIDRA_DATE GHIDRA_ARCH VERSION \
 			JNA_VER PROTOBUF_VER PROTOBUF_JAVA_VER
 
 EXTENSIONS =		BSimElasticPlugin GnuDisassembler Lisa \
@@ -65,12 +68,7 @@ EXTENSIONS =		BSimElasticPlugin GnuDisassembler Lisa \
 			SymbolicSummaryZ3 bundle_examples sample
 
 post-extract:
-	@perl -pi -e 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
-		${WRKSRC}/Ghidra/RuntimeScripts/Linux/ghidraRun
-	@perl -pi -e 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
-		${WRKSRC}/Ghidra/RuntimeScripts/Linux/support/launch.sh
-	@perl -pi -e 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
-		${WRKSRC}/Ghidra/RuntimeScripts/Linux/support/launch.sh
+	@rm -rf ${WRKSRC}/Ghidra/Features/PyGhidra
 	@perl -pi -e 's,(application.version)=.*,\1=${VERSION},' \
 		${WRKSRC}/Ghidra/application.properties
 	@mkdir -p ${WRKSRC}/Ghidra/Framework/Pty/src/main/java/ghidra/pty/openbsd
@@ -82,23 +80,26 @@ post-extract:
 		${WRKSRC}/dependencies/flatRepo/jna-${JNA_VER}.jar
 	@cp ${TRUEPREFIX}/share/java/classes/jna-platform.jar \
 		${WRKSRC}/dependencies/flatRepo/jna-platform-${JNA_VER}.jar
+	@cp ${TRUEPREFIX}/share/java/classes/protobuf-java.jar \
+		${WRKSRC}/dependencies/flatRepo/protobuf-java-${PROTOBUF_JAVA_VER}.jar
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/gradle.properties \
+		${WRKSRC}/gradle/hasProtobuf.gradle \
+		${WRKSRC}/Ghidra/Framework/Generic/src/main/java/ghidra/framework/Platform.java \
 		${WRKSRC}/Ghidra/Framework/Pty/Module.manifest \
 		${WRKSRC}/Ghidra/Framework/Pty/build.gradle \
 		${WRKSRC}/Ghidra/Debug/ProposedUtils/Module.manifest \
-		${WRKSRC}/Ghidra/Debug/Debugger-rmi-trace/Module.manifest \
-		${WRKSRC}/Ghidra/Debug/Debugger-rmi-trace/build.gradle \
 		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/dbgeng/rmi/DbgEngConnectorsTest.java \
 		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/drgn/rmi/DrgnConnectorsTest.java \
 		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/gdb/rmi/GdbConnectorsTest.java \
-		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/lldb/rmi/LldbConnectorsTest.java
+		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/lldb/rmi/LldbConnectorsTest.java \
+		${WRKSRC}/GhidraBuild/LaunchSupport/src/main/java/ghidra/launch/OpenBSDJavaFinder.java
 
 # build-dependencies is a maintainer target intended to be run when upgrading
-# to a new version of ghidra or when protobuf or jna version changes. The
-# process is; bump the VERSION, comment out DISTFILES.a, make makesum and finish
-# with make build-dependencies clean
+# to a new version of ghidra. The process is; bump the VERSION, sync jna and
+# protobuf versions, comment out DISTFILES.a, make makesum and finish with
+# make build-dependencies clean
 #
 # Note that build-dependencies is run as a regular user, with access to the
 # network for downloading the build dependencies. It deletes everything under
@@ -121,9 +122,11 @@ build-dependencies: configure
 		gradle --no-daemon --stacktrace \
 		-g ${WRKSRC}/dependencies/gradle \
 		prepDev; \
-	    rm -rf dependencies/downloads; \
+	    rm -rf dependencies/downloads dependencies/PyGhidra; \
 	    find dependencies -path '*/.tmp*' -o -name '*.log' -delete; \
-	    find dependencies -name net.java.dev.jna | xargs rm -rf
+	    find dependencies -path *protobuf-*/${PROTOBUF_JAVA_VER} -o \
+		-name net.java.dev.jna | xargs rm -rf; \
+	    find dependencies -type d -a -perm 0700 -exec chmod g+rx {} \;
 	cd ${WRKDIR} && \
 		tar czf ~/ghidra-Ghidra_${VERSION}_build_dependencies.tar.gz \
 		    ghidra-Ghidra_${VERSION}_build/dependencies
@@ -145,6 +148,9 @@ do-install:
 		${WRKSRC}/build/dist/ghidra_${VERSION}_DEV_*_${GHIDRA_ARCH}.zip \
 		-x *.orig.port
 	mv ${PREFIX}/share/java/ghidra_${VERSION}_DEV ${PREFIX}/share/java/ghidra
+	find ${PREFIX}/share/java/ghidra -name *.whl -a -not -name ghidra* \
+	    -delete
+	find ${PREFIX}/share/java/ghidra -name psutil-*.tar.gz -delete
 .for name in ${EXTENSIONS}
 	cd ${PREFIX}/share/java/ghidra/Extensions/Ghidra/ && \
 		mv ghidra_${VERSION}_DEV_*_${name}.zip \

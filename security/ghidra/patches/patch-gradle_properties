@@ -1,4 +1,4 @@
-Match OpenBSD protbuf version in makefile with s/6/4/
+Use system protobuf-java - copied into dependencies/flatRepo
 
 Index: gradle.properties
 --- gradle.properties.orig

@@ -1,4 +1,4 @@
-Add OpenBSD - still need to create OpenBSDFinder.java
+Add OpenBSD
 
 Index: GhidraBuild/LaunchSupport/src/main/java/ghidra/launch/JavaFinder.java
 --- GhidraBuild/LaunchSupport/src/main/java/ghidra/launch/JavaFinder.java.orig
@@ -12,13 +12,22 @@ Index: GhidraBuild/LaunchSupport/src/main/java/ghidra/launch/JavaFinder.java
  	}
  
  	/**
-@@ -53,6 +53,9 @@ public abstract class JavaFinder {
- 			}
+@@ -54,6 +54,9 @@ public abstract class JavaFinder {
  			if (os.contains("mac")) {
  				return Platform.MACOS;
-+			}
+ 			}
 +			if (os.contains("openbsd")) {
 +				return Platform.OPEN_BSD;
- 			}
++			}
  		}
  		return Platform.LINUX;
+ 	}
+@@ -69,6 +72,8 @@ public abstract class JavaFinder {
+ 				return new WindowsJavaFinder();
+ 			case MACOS:
+ 				return new MacJavaFinder();
++			case OPEN_BSD:
++				return new OpenBSDJavaFinder();
+ 			case LINUX:
+ 			default:
+ 				return new LinuxJavaFinder();

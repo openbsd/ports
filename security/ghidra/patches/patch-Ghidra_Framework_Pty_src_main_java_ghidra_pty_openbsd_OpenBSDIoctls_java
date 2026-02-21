@@ -26,12 +26,12 @@ Index: Ghidra/Framework/Pty/src/main/java/ghidra/pty/openbsd/OpenBSDIoctls.java
  	@Override
  	public long TIOCSCTTY() {
 -		return 0x540eL;
-+		return 0x20007461;
++		return 0x20007461L;
  	}
  
  	@Override
  	public long TIOCSWINSZ() {
 -		return 0x5414L;
-+		return 0x80087467;
++		return 0x80087467L;
  	}
  }

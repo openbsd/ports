@@ -28,7 +28,7 @@ Index: Ghidra/Framework/Generic/src/main/java/ghidra/framework/Platform.java
 +		else if (operatingSystem == OperatingSystem.OPEN_BSD) {
 +			paths.add("/usr/lib");
 +			paths.add("/usr/X11R6/lib");
-+			paths.add("/usr/local/lib");
++			paths.add("${LOCALBASE}/lib");
  		}
  		else if (CURRENT_PLATFORM == WIN_X86_64) {
  			String windir = System.getenv("SystemRoot");

@@ -1,0 +1,14 @@
+Use egdb by default when debugging locally
+
+Index: Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/local-gdb.sh
+--- Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/local-gdb.sh.orig
++++ Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/local-gdb.sh
+@@ -31,7 +31,7 @@
+ #@enum Endian:str auto big little
+ #@arg :file "Image" "The target binary executable image, empty for no target"
+ #@args "Arguments" "Command-line arguments to pass to the target"
+-#@env OPT_GDB_PATH:file="gdb" "gdb command" "The path to gdb. Omit the full path to resolve using the system PATH."
++#@env OPT_GDB_PATH:file="egdb" "gdb command" "The path to gdb. Omit the full path to resolve using the system PATH."
+ #@env OPT_START_CMD:StartCmd="starti" "Run command" "The gdb command to actually run the target."
+ #@env OPT_ARCH:str="i386:x86-64" "Architecture" "Target architecture"
+ #@env OPT_ENDIAN:Endian="auto" "Endian" "Target byte order"
