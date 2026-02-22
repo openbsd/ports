@@ -1,9 +1,10 @@
 COMMENT =	kirigami component gallery application
 DISTNAME =	kirigami-gallery-${VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 
-HOMEPAGE =	https://apps.kde.org/de/kirigami2.gallery/
+HOMEPAGE =	https://apps.kde.org/kirigami2.gallery/
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ItemModels Kirigami KirigamiPlatform
 WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick
