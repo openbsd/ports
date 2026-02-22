@@ -83,6 +83,7 @@ ${P5SITE}/SNMP/Info/Layer3/C1300.pm
 ${P5SITE}/SNMP/Info/Layer3/C3550.pm
 ${P5SITE}/SNMP/Info/Layer3/C4000.pm
 ${P5SITE}/SNMP/Info/Layer3/C6500.pm
+${P5SITE}/SNMP/Info/Layer3/Cambium.pm
 ${P5SITE}/SNMP/Info/Layer3/CheckPoint.pm
 ${P5SITE}/SNMP/Info/Layer3/Ciena.pm
 ${P5SITE}/SNMP/Info/Layer3/Cisco.pm
@@ -236,6 +237,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::C3550.3p
 @man man/man3p/SNMP::Info::Layer3::C4000.3p
 @man man/man3p/SNMP::Info::Layer3::C6500.3p
+@man man/man3p/SNMP::Info::Layer3::Cambium.3p
 @man man/man3p/SNMP::Info::Layer3::CheckPoint.3p
 @man man/man3p/SNMP::Info::Layer3::Ciena.3p
 @man man/man3p/SNMP::Info::Layer3::Cisco.3p

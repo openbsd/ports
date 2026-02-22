@@ -3,11 +3,13 @@ COMMENT =	perl5 interface to network devices and MIBs through SNMP
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	SNMP-Info-3.974000
+DISTNAME =	SNMP-Info-3.975000
 CATEGORIES =	net
 
 # BSD
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =	OLIVER
 
 RUN_DEPENDS =	net/net-snmp \
 		net/p5-NetAddr-IP>=4.068 \
