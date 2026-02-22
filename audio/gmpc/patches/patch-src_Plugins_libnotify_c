@@ -1,0 +1,28 @@
+drop debug printfs
+
+Index: src/Plugins/libnotify.c
+--- src/Plugins/libnotify.c.orig
++++ src/Plugins/libnotify.c
+@@ -93,11 +93,11 @@ static void libnotify_update_cover(GmpcMetaWatcher *gm
+             GError *error = NULL;
+ 
+             GdkPixbuf *pb = pixbuf_cache_lookup_icon(64,(const char *)met->md5sum);
+-            printf("libnotify: %p\n", pb);
++            // printf("libnotify: %p\n", pb);
+             if(pb == NULL) {
+                 GdkPixbufLoader *pb_l = gdk_pixbuf_loader_new();
+                 gdk_pixbuf_loader_set_size(pb_l, 64,64);
+-                printf("libnotify: size: %lu\n", met->size);
++                // printf("libnotify: size: %lu\n", met->size);
+                 gdk_pixbuf_loader_write(pb_l, met->content, met->size, &error);
+                 if(error == NULL) {
+                     gdk_pixbuf_loader_close(pb_l, &error);
+@@ -119,7 +119,7 @@ static void libnotify_update_cover(GmpcMetaWatcher *gm
+                 if(pb) g_object_unref(pb);
+                 pb = NULL;
+             }
+-            printf("libnotify: %p\n", pb);
++            // printf("libnotify: %p\n", pb);
+ 			/* Default to gmpc icon when no icon is found */
+ 			if(!pb) {
+ 				pb = gtk_icon_theme_load_icon(gtk_icon_theme_get_default(),"gmpc" , 64, 0,NULL);

@@ -1,0 +1,13 @@
+drop debug printf
+
+Index: src/Plugins/sidebar-play-queue-time.vala
+--- src/Plugins/sidebar-play-queue-time.vala.orig
++++ src/Plugins/sidebar-play-queue-time.vala
+@@ -107,7 +107,6 @@ public class Gmpc.Plugins.Sidebar.PlayQueueTime : Gmpc
+ 
+     public void sidebar_pane_construct(Gtk.Grid parent)
+     {
+-        stdout.printf("sidebar pane construct");
+         time_label = new Gtk.Label("play time");
+         time_label.set_line_wrap(true);
+ 

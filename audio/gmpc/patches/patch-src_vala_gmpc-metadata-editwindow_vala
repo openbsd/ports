@@ -1,0 +1,13 @@
+drop debug printf
+
+Index: src/vala/gmpc-metadata-editwindow.vala
+--- src/vala/gmpc-metadata-editwindow.vala.orig
++++ src/vala/gmpc-metadata-editwindow.vala
+@@ -183,7 +183,6 @@ public class Gmpc.MetaData.EditWindow : Gtk.Window
+ 
+     public void callback(void *handle,string? plugin_name,GLib.List<MetaData.Item>? list)
+     {
+-        stdout.printf("result callback\n");
+         bar.pulse();
+         if(list == null)
+         {

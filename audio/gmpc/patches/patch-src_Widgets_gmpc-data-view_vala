@@ -1,0 +1,22 @@
+drop debug printf, use glib logging
+
+Index: src/Widgets/gmpc-data-view.vala
+--- src/Widgets/gmpc-data-view.vala.orig
++++ src/Widgets/gmpc-data-view.vala
+@@ -137,7 +137,7 @@ public class Gmpc.DataView : Gtk.TreeView
+         }
+         set{
+             if(view_mode == ViewType.PLAYLIST) {
+-                stdout.printf("Set playlist name: %s\n", value);
++                log(log_domain,LogLevelFlags.LEVEL_DEBUG, "Set playlist name: "+ value);
+                 __playlist_name = value;
+             }else {
+                 error("Cannot set playlist name on non-playlist view.");
+@@ -333,7 +333,6 @@ public class Gmpc.DataView : Gtk.TreeView
+         for(int i = 0; i < Gmpc.num_plugins; i++){
+             if(plugins[i].get_enabled() &&
+                     plugins[i].browser_song_list_option_menu(this,smenu) > 0){
+-                stdout.printf("adding entry\n");
+                 initial = true;
+             }
+         } 

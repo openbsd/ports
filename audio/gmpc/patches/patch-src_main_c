@@ -1,0 +1,30 @@
+drop debug printfs
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -172,15 +172,12 @@ static int handle_commandline(GApplication *app, GAppl
+     gint argc;
+ 
+     argv = g_application_command_line_get_arguments(cmd, &argc);
+-    printf("Commandline handler: %i\n", argc);
+     if(argc > 1) {
+         int i;
+         for ( i = 1; i < argc; i++) {
+-            printf("executing: %s\n" , argv[i]);
+             gmpc_easy_command_do_query(gmpc_easy_command, argv[i]);
+         }
+     }else {
+-        printf("activate\n");
+         if(g_application_get_is_remote(app)) {
+             g_application_activate(gmpc_application);
+         }
+@@ -317,7 +314,7 @@ int main(int argc, char **argv)
+ 
+         gtk_css_provider_load_from_path(provider, path, &error);
+ 
+-        printf("Loading: %s\n", path);
++//        printf("Loading: %s\n", path);
+ 
+ 
+         if(error != NULL) {

@@ -1,0 +1,13 @@
+silence debug printf
+
+Index: src/browsers/playlist3-current-playlist-browser.c
+--- src/browsers/playlist3-current-playlist-browser.c.orig
++++ src/browsers/playlist3-current-playlist-browser.c
+@@ -594,7 +594,6 @@ static void pl3_current_playlist_add_after_current_son
+ 
+ static int pl3_current_playlist_song_list_option_menu (GmpcPluginBrowserIface *obj, GtkWidget *tree, GtkMenu *menu)
+ {
+-    printf("list option menu\n");
+     if(mpd_check_connected(connection) && !mpd_player_get_random(connection))
+     {
+         GtkWidget *item = gtk_image_menu_item_new_with_label(_("Add after current song"));

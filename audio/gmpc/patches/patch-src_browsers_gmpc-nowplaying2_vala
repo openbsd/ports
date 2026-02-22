@@ -1,0 +1,18 @@
+drop debug printfs
+
+Index: src/browsers/gmpc-nowplaying2.vala
+--- src/browsers/gmpc-nowplaying2.vala.orig
++++ src/browsers/gmpc-nowplaying2.vala
+@@ -1128,12 +1128,10 @@ namespace Gmpc
+                                             but_song.artist.dup());
+                             button.set_data("album",
+                                             but_song.album.dup());
+-                            stdout.printf("open: %s %s\n", but_song.artist, but_song.album);
+                             button.clicked.connect((source) =>
+                             {
+                                 unowned string artist = (string)source.get_data<string>("artist");
+                                 unowned string album = (string)source.get_data<string>("album");
+-                                stdout.printf("open: %s %s\n", artist, album);
+                                 Gmpc.Browser.Metadata.show_album(artist, album);
+                             });
+                             albums++;

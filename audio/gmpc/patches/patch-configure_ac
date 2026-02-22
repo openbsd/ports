@@ -1,0 +1,15 @@
+port to libsoup3
+
+https://salsa.debian.org/mpd-team/gmpc/-/blob/debian/latest/debian/patches/download-port-from-libsoup2.4-to-libsoup3.patch
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -231,7 +231,7 @@ AC_SUBST(gthread_LIBS)
+ AC_SUBST(gthread_CFLAGS)
+ 
+ #libsoup
+-PKG_CHECK_MODULES([libsoup], libsoup-2.4)
++PKG_CHECK_MODULES([libsoup], libsoup-3.0)
+ AC_SUBST(libsoup_LIBS)
+ AC_SUBST(libsoup_CFLAGS)
+ 

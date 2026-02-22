@@ -1,0 +1,14 @@
+port to libsoup3/remove proxy settings
+
+https://salsa.debian.org/mpd-team/gmpc/-/blob/debian/latest/debian/patches/download-Remove-proxy-settings.patch
+Index: src/internal-plugins.h
+--- src/internal-plugins.h.orig
++++ src/internal-plugins.h
+@@ -5,7 +5,6 @@ extern gmpcPlugin connection_plug;
+ extern gmpcPlugin playlist_plug;
+ extern gmpcPlugin cover_art_plug;
+ extern gmpcPlugin tray_icon2_plug;
+-extern gmpcPlugin proxyplug;
+ extern gmpcPlugin playlist_editor_plugin;
+ extern gmpcPlugin statistics_plugin;
+ extern gmpcPlugin extraplaylist_plugin;

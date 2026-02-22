@@ -1,0 +1,239 @@
+put debug messages at LEVEL_DEBUG
+disable glyr thread for now
+
+Index: src/MetaData/metadata.c
+--- src/MetaData/metadata.c.orig
++++ src/MetaData/metadata.c
+@@ -298,7 +298,7 @@ static gboolean glyr_return_queue(void *user_data)
+     meta_thread_data *mtd = (meta_thread_data*)g_async_queue_try_pop(return_queue);
+     if(mtd)
+     {
+-        g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Process results: %i\n", mtd->action);
++        g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Process results: %i\n", mtd->action);
+         if(mtd->action == MTD_ACTION_QUERY_METADATA)
+         {
+             gmpc_meta_watcher_data_changed_cb(gmw,mtd->ori_song, (mtd->type)&META_QUERY_DATA_TYPES, mtd->result,mtd->met);
+@@ -316,7 +316,7 @@ static gboolean glyr_return_queue(void *user_data)
+                 cb(NULL, "", NULL, mtd->data);
+             }
+         }else if (mtd->action == MTD_ACTION_CLEAR_ENTRY) {
+-            g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Signal no longer available.\n");
++            g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Signal no longer available.\n");
+             // Signal that this item is now no longer available.
+             gmpc_meta_watcher_data_changed_cb(gmw, mtd->ori_song, (mtd->type)&META_QUERY_DATA_TYPES, META_DATA_UNAVAILABLE, NULL);
+         }
+@@ -547,7 +547,7 @@ static gboolean process_glyr_result(GlyrMemCache *cach
+         memcpy(&(mtd->met->md5sum), &(cache->md5sum), 16);
+     }else {
+         // Explicitely not found.
+-        g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Cache sais empty\n");
++        g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Cache sais empty\n");
+         retv = TRUE;
+     }
+     return retv;
+@@ -647,7 +647,7 @@ static void glyr_fetcher_thread(void *user_data)
+ 
+         // Check if this is the quit command.
+         if(mtd->action == MTD_ACTION_QUIT) {
+-            g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Quitting....");
++            g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Quitting....");
+             g_static_mutex_unlock(&exit_handle_lock);
+             /* Free the Request struct */
+             meta_thread_data_free(mtd);
+@@ -681,7 +681,7 @@ static void glyr_fetcher_thread(void *user_data)
+             cache->rating = -1;
+ 
+             // Add dummy entry
+-            g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Inserting dummy item\n");
++            g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Inserting dummy item\n");
+             glyr_db_insert(db,&query, cache);
+ 
+             // Cleanup
+@@ -692,7 +692,7 @@ static void glyr_fetcher_thread(void *user_data)
+             glyr_exit_handle = NULL;
+             glyr_query_destroy(&query);
+ 
+-            g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Push back result\n");
++            g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Push back result\n");
+             // Push back result, and tell idle handle to handle it.
+             g_async_queue_push(return_queue, mtd);
+             // invalidate pointer.
+@@ -711,7 +711,7 @@ static void glyr_fetcher_thread(void *user_data)
+             glyr_exit_handle = &query;
+             g_static_mutex_unlock(&exit_handle_lock);
+ 
+-            g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"new style query\n");
++            g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"new style query\n");
+ 
+             glyr_query_init(&query);
+ 
+@@ -719,7 +719,7 @@ static void glyr_fetcher_thread(void *user_data)
+             if(md != NULL && md[0] !=  '\0'&& mtd->song->file != NULL)
+             {
+                 char *path = g_build_filename(md, mtd->song->file, NULL);
+-                g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"music directory: \"%s\"\n", path);
++                g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"music directory: \"%s\"\n", path);
+                 glyr_opt_musictree_path(&query, path);
+                 g_free(path);
+             }
+@@ -729,7 +729,7 @@ static void glyr_fetcher_thread(void *user_data)
+             content_type = setup_glyr_query(&query, mtd);
+ 
+             /* Set some random settings */
+-            glyr_opt_verbosity(&query,3);
++            glyr_opt_verbosity(&query,1);
+ 
+             /* Tell libglyr to automatically lookup before searching the web */
+             glyr_opt_lookup_db(&query, db);
+@@ -779,7 +779,7 @@ static void glyr_fetcher_thread(void *user_data)
+             glyr_exit_handle = &query;
+             g_static_mutex_unlock(&exit_handle_lock);
+ 
+-            g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"new style query\n");
++            g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"new style query\n");
+ 
+             glyr_query_init(&query);
+ 
+@@ -787,7 +787,7 @@ static void glyr_fetcher_thread(void *user_data)
+             if(md != NULL && md[0] !=  '\0'&& mtd->song->file != NULL)
+             {
+                 char *path = g_build_filename(md, mtd->song->file, NULL);
+-                g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"music directory: \"%s\"\n", path);
++                g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"music directory: \"%s\"\n", path);
+                 glyr_opt_musictree_path(&query, path);
+                 g_free(path);
+             }
+@@ -799,7 +799,7 @@ static void glyr_fetcher_thread(void *user_data)
+             /* If cache disabled, remove the entry in the db */
+             if(((mtd->type)&META_QUERY_NO_CACHE) == META_QUERY_NO_CACHE)
+             {
+-                g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Disable cache\n");
++                g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Disable cache\n");
+                 glyr_opt_from(&query, "all;-local");
+                 // Remove cache request.
+                 mtd->type&=META_QUERY_DATA_TYPES;
+@@ -808,7 +808,7 @@ static void glyr_fetcher_thread(void *user_data)
+             }
+ 
+             /* Set some random settings */
+-            glyr_opt_verbosity(&query,3);
++            glyr_opt_verbosity(&query,1);
+ 
+             /* Tell libglyr to automatically lookup before searching the web */
+             glyr_opt_lookup_db(&query, db);
+@@ -831,7 +831,7 @@ static void glyr_fetcher_thread(void *user_data)
+                 cache->rating = -1;
+ 
+                 glyr_db_insert(db,&query, cache);
+-                g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Cache is Empty\n");
++                g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Cache is Empty\n");
+                 // Set unavailable
+                 mtd->result = META_DATA_UNAVAILABLE;
+             }else{
+@@ -865,7 +865,7 @@ static void glyr_fetcher_thread(void *user_data)
+             setup_glyr_query(&query, mtd);
+             glyr_opt_number(&query, 0);
+             /* Set some random settings */
+-            glyr_opt_verbosity(&query,3);
++            glyr_opt_verbosity(&query,1);
+ 
+             // Delete existing entries.
+             glyr_db_delete(db, &query);
+@@ -874,7 +874,7 @@ static void glyr_fetcher_thread(void *user_data)
+             setup_glyr_query(&query, mtd);
+             glyr_opt_number(&query, 0);
+             /* Set some random settings */
+-            glyr_opt_verbosity(&query,3);
++            glyr_opt_verbosity(&query,1);
+             // load data
+             if(meta_data_is_uri(mtd->met))
+             {
+@@ -895,7 +895,7 @@ static void glyr_fetcher_thread(void *user_data)
+             if(cache)
+             {
+                 cache->rating = 9;
+-                g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Do DB insert\n");
++                g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Do DB insert\n");
+                 glyr_db_insert(db,&query, cache);
+             }
+ 
+@@ -930,12 +930,15 @@ void meta_data_init(void)
+     GError *error = NULL;
+     gchar *url;
+ 
++    // disable glyr fetching for now, most providers dead ?
++    // return;
++
+     /* Is this function thread safe? */
+     url = gmpc_get_covers_path("");
+ 
+     //g_mutex_init(&exit_handle_lock);
+     /* Initialize..*/
+-    g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"open glyr db: %s\n", url);
++    g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"open glyr db: %s\n", url);
+     glyr_init();
+     db = glyr_db_init(url);
+     g_free(url);
+@@ -985,7 +988,7 @@ void meta_data_destroy(void)
+     // add lock?
+     g_static_mutex_lock(&exit_handle_lock);
+     if(glyr_exit_handle) {
+-        g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Sending quit signal\n");
++        g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Sending quit signal\n");
+         glyr_signal_exit(glyr_exit_handle);
+     }
+     g_static_mutex_unlock(&exit_handle_lock);
+@@ -1033,7 +1036,7 @@ void meta_data_set_entry ( mpd_Song *song, MetaData *m
+     /* signal we are fetching. */
+     gmpc_meta_watcher_data_changed_cb(gmw,mtd->ori_song, (mtd->type)&META_QUERY_DATA_TYPES, META_DATA_FETCHING,NULL);
+     /* Set entry */
+-    g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Request setting entry\n");
++    g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Request setting entry\n");
+     g_async_queue_push(gaq, mtd);
+     mtd = NULL;
+ }
+@@ -1056,7 +1059,7 @@ void meta_data_clear_entry(mpd_Song *song, MetaDataTyp
+     mtd->type = type;
+     /* set result NULL */
+     mtd->met = NULL;
+-    g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Request clearing entry\n");
++    g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Request clearing entry\n");
+     g_async_queue_push(gaq, mtd);
+     mtd = NULL;
+ }
+@@ -1071,7 +1074,7 @@ MetaDataResult meta_data_get_path(mpd_Song *tsong, Met
+ 
+     if(!meta_data_validate_query(tsong, type))
+     {
+-        g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"Query invalid");
++        g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"Query invalid");
+         *met = NULL;
+         // On images, indicate why not. TODO: FIX THIS FOR ALL TYPES.
+         if(type&(META_ALBUM_ART|META_ARTIST_ART|META_BACKDROP_ART)) {
+@@ -1108,7 +1111,7 @@ MetaDataResult meta_data_get_path(mpd_Song *tsong, Met
+ 
+         glyr_query_init(&query);
+         /* Set some random settings */
+-        glyr_opt_verbosity(&query,3);
++        glyr_opt_verbosity(&query,1);
+ 
+         content_type = setup_glyr_query(&query, mtd);
+         cache = glyr_db_lookup(db, &query);
+@@ -1131,7 +1134,7 @@ MetaDataResult meta_data_get_path(mpd_Song *tsong, Met
+     }
+     else
+     {
+-        g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"signal fetching\n");
++        g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"signal fetching\n");
+         gmpc_meta_watcher_data_changed_cb(gmw,mtd->ori_song, (mtd->type)&META_QUERY_DATA_TYPES, META_DATA_FETCHING,NULL);
+         if(mtd->callback)
+         {
+@@ -1282,7 +1285,7 @@ gpointer metadata_get_list(mpd_Song  *song, MetaDataTy
+     /* set result NULL */
+     mtd->met = NULL;
+     mtd->met_results = NULL;
+-    g_log(LOG_DOMAIN, G_LOG_LEVEL_MESSAGE,"start query\n");
++    g_log(LOG_DOMAIN, G_LOG_LEVEL_DEBUG,"start query\n");
+ 
+     g_async_queue_push(gaq, mtd);
+     mtd = NULL;

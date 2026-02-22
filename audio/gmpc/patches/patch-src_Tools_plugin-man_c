@@ -1,0 +1,14 @@
+port to libsoup3/remove proxy settings
+
+https://salsa.debian.org/mpd-team/gmpc/-/blob/debian/latest/debian/patches/download-Remove-proxy-settings.patch
+Index: src/Tools/plugin-man.c
+--- src/Tools/plugin-man.c.orig
++++ src/Tools/plugin-man.c
+@@ -74,7 +74,6 @@ void plugin_manager_load_internal_plugins(void)
+     plugin_add(&playlist_editor_plugin, 0, NULL);
+ 
+     plugin_add(&statistics_plugin, 0, NULL);
+-    plugin_add(&proxyplug, 0, NULL);
+ 
+     plugin_add(&extraplaylist_plugin, 0, NULL);
+     plugin_add_new(

@@ -1,0 +1,14 @@
+broken string
+
+Index: po/ca.po
+--- po/ca.po.orig
++++ po/ca.po
+@@ -24,7 +24,7 @@ msgstr ""
+ #: ../src/browsers/gmpc-nowplaying2.c:4585
+ #: ../src/browsers/gmpc-nowplaying2.c:4592
+ msgid "Gnome Music Player Client"
+-msgstr "Client de reproducció\nde música del GNOME"
++msgstr "Client de reproducción de música del GNOME"
+ 
+ #: ../data/gmpc.desktop.in.h:2
+ msgid "A gnome frontend for the mpd daemon"
