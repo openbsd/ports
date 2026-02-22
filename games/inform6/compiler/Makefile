@@ -1,10 +1,9 @@
 COMMENT =	compiler for Inform 6 interactive fiction
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
 
 GH_ACCOUNT =	DavidKinder
 GH_PROJECT =	Inform6
-GH_TAGNAME =	v6.36
+GH_TAGNAME =	v6.44
 
 WANTLIB += c
 
