@@ -37,7 +37,7 @@
 @man man/man1/hugo-mod-verify.1
 @man man/man1/hugo-mod.1
 @man man/man1/hugo-new-content.1
-@man man/man1/hugo-new-site.1
+@man man/man1/hugo-new-project.1
 @man man/man1/hugo-new-theme.1
 @man man/man1/hugo-new.1
 @man man/man1/hugo-server-trust.1
