@@ -1,6 +1,6 @@
 COMMENT=	read images/metadiff and store numpy arrays in TIFF files
 
-MODPY_DISTV =	2026.2.16
+MODPY_DISTV =	2026.2.20
 DISTNAME=	tifffile-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
