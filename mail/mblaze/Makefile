@@ -1,7 +1,6 @@
 COMMENT =	set of Maildir utilities
 
-DISTNAME =	mblaze-1.3
-REVISION =	0
+DISTNAME =	mblaze-1.4
 CATEGORIES =	mail
 
 HOMEPAGE =	https://git.vuxu.org/mblaze/
@@ -31,6 +30,9 @@ TEST_TARGET =	check
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mblaze/contrib
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mblaze
 	cd ${WRKBUILD}/contrib && pax -rw . ${PREFIX}/share/mblaze/contrib
+	${INSTALL_DATA} ${WRKBUILD}/mlesskey.example-openbsd \
+		${PREFIX}/share/examples/mblaze/mlesskey
 
 .include <bsd.port.mk>

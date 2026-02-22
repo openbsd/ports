@@ -57,6 +57,8 @@ bin/museragent
 @man man/man5/mblaze-profile.5
 @man man/man7/mblaze.7
 @man man/man7/mmsg.7
+share/examples/mblaze/
+share/examples/mblaze/mlesskey
 share/mblaze/
 share/mblaze/contrib/
 share/mblaze/contrib/README.md
