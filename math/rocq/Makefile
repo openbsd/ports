@@ -3,13 +3,10 @@ ONLY_FOR_ARCHS=		${OCAML_NATIVE_DYNLINK_ARCHS}
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
-# XXX: needs dune 3.8.3+ for rocq 9+
-# XXX: needs lablgtk3 update to re-enable coqide
-
 V =			8.20.1
 DISTNAME =		coq-${V}
 PKGNAME =		rocq-${V}
-REVISION =		1
+REVISION =		2
 
 SITES =			https://github.com/rocq-prover/rocq/releases/download/V${V}/
 
@@ -52,11 +49,11 @@ post-configure:
 
 do-build:
 	cd ${WRKSRC} && \
-		dune build -j ${MAKE_JOBS} -p coq-core,coq-stdlib,coqide-server,coq
+		dune build -j ${MAKE_JOBS} -p coq-core,coq-stdlib,coqide-server,coq,coqide
 
 do-install:
 	cd ${WRKSRC} && \
-		dune install -j ${MAKE_JOBS} coq-core coq-stdlib coqide-server coq
+		dune install -j ${MAKE_JOBS} coq-core coq-stdlib coq coqide-server coqide
 
 post-install:
 	echo "COQLIB=\"${TRUEPREFIX}/lib/ocaml/coq\"" \
