@@ -1,6 +1,6 @@
 COMMENT =	lightweight compositor for X11
 
-DIST_TUPLE =	github yshui picom v12.5 .
+DIST_TUPLE =	github yshui picom v13 .
 
 CATEGORIES =	x11
 
@@ -8,9 +8,9 @@ CATEGORIES =	x11
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += epoxy X11 X11-xcb c config dbus-1 ev m pcre2-8 pixman-1
-WANTLIB += pthread xcb-composite xcb-damage xcb-glx xcb-image xcb-present
-WANTLIB += xcb-randr xcb-render-util xcb-render xcb-shape xcb-sync
-WANTLIB += xcb-util xcb-xfixes xcb
+WANTLIB += pthread xcb-composite xcb-damage xcb-glx xcb-present
+WANTLIB += xcb-randr xcb-render-util xcb-render xcb-shape xcb-shm
+WANTLIB += xcb-sync xcb-util xcb-xfixes xcb
 
 MODULES =		devel/meson
 

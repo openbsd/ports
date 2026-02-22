@@ -4,7 +4,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -4,8 +4,7 @@ project('picom', 'c', version: '12.5',
+@@ -4,8 +4,7 @@ project('picom', 'c', version: '13',
  cc = meson.get_compiler('c')
  
  # use git describe if that's available
@@ -14,7 +14,7 @@ Index: meson.build
  	gitv = run_command('git', 'rev-parse', '--short=7', 'HEAD', check: false)
  	if gitv.returncode() == 0
  		commit_hash_short = gitv.stdout().strip()
-@@ -110,7 +109,6 @@ subdir('tools')
+@@ -111,7 +110,6 @@ subdir('include')
  
  install_data('bin/picom-trans', install_dir: get_option('bindir'))
  install_data('picom.desktop', install_dir: 'share/applications')
