@@ -1,0 +1,16 @@
+https://github.com/lxqt/lxqt-config/pull/1180
+https://github.com/lxqt/lxqt-config/commit/85b4d3425508f83ebcfc19960d992abc979d8993
+
+fix build with kscreen 6.6
+Index: lxqt-config-monitor/monitorwidget.cpp
+--- lxqt-config-monitor/monitorwidget.cpp.orig
++++ lxqt-config-monitor/monitorwidget.cpp
+@@ -146,7 +146,7 @@ MonitorWidget::MonitorWidget(KScreen::OutputPtr output
+     ui.yPosSpinBox->setValue(output->pos().y());
+ 
+     // Behavior chooser
+-    if (output->isPrimary())
++    if (config->primaryOutput() == output)
+         ui.behaviorCombo->setCurrentIndex(PrimaryDisplay);
+     else
+         ui.behaviorCombo->setCurrentIndex(ExtendDisplay);

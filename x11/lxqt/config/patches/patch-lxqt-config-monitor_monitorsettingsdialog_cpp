@@ -1,0 +1,16 @@
+https://github.com/lxqt/lxqt-config/pull/1180
+https://github.com/lxqt/lxqt-config/commit/85b4d3425508f83ebcfc19960d992abc979d8993
+
+fix build with kscreen 6.6
+Index: lxqt-config-monitor/monitorsettingsdialog.cpp
+--- lxqt-config-monitor/monitorsettingsdialog.cpp.orig
++++ lxqt-config-monitor/monitorsettingsdialog.cpp
+@@ -187,7 +187,7 @@ void MonitorSettingsDialog::saveConfiguration(KScreen:
+         monitor.connected = output->isConnected();
+         if ( output->isConnected() ) {
+             monitor.enabled = output->isEnabled();
+-            monitor.primary = output->isPrimary();
++            monitor.primary = (config->primaryOutput() == output);
+             monitor.xPos = output->pos().x();
+             monitor.yPos = output->pos().y();
+             monitor.currentMode = output->currentModeId();
