@@ -170,7 +170,7 @@ SHA256 (cargo/ordered-float-2.10.1.tar.gz) = aPGdZ+WieVyU5z4Lscwaft6y4o79OeLhybe
 SHA256 (cargo/ordered-float-5.1.0.tar.gz) = f0d5xpAaViRAw3htCBksb72nwcIGDt0QAGsF7jXRDy0=
 SHA256 (cargo/pad-0.1.6.tar.gz) = 0q2biJ8bEuC57iTbBEtRKRUNXq2iiO3IAPeJko3IwOM=
 SHA256 (cargo/pager-0.16.1.tar.gz) = JZkhGlyX+7sQYdPcdR+hX0BJJ+SEbgfGQyh9bR9GKIA=
-SHA256 (cargo/paltoquet-0.11.0.tar.gz) = RtfoLoRBHPTVkTG6LYVNQLVGcS9yfCYqkvi7uwhnXrQ=
+SHA256 (cargo/paltoquet-0.12.0.tar.gz) = crbZj32yEQA4VZ7KdVzo/GVy3juu/DXryjeNkb8vwnc=
 SHA256 (cargo/pariter-0.5.1.tar.gz) = Mkpiuee18nDArMkqIED4Aou2Q/lZ+cBo8Rp4ZPMn49k=
 SHA256 (cargo/parking_lot-0.12.5.tar.gz) = k4V0UyUOMHe9cf+YtqZepmIaGbsPVZqFJIlVrBLEWho=
 SHA256 (cargo/parking_lot_core-0.9.12.tar.gz) = JiFoWYWi6/HFFogcAmAyrH3q/NoaLJt4UNyB49/LZME=
@@ -229,7 +229,7 @@ SHA256 (cargo/servo_arc-0.4.1.tar.gz) = IE6jMoA72VoLYDiFkNWc9kaOyb7PYm4kUfHSah2X
 SHA256 (cargo/sha2-0.10.9.tar.gz) = p1B9gZdp0Bo2WrcHeUpAhDksgk9Up6anhi+MPQiSsoM=
 SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
 SHA256 (cargo/simd-adler32-0.3.7.tar.gz) = 1m3BQ+axHB7dwG1cQjz8lwYoZbrymZFKtkyqOBggeP4=
-SHA256 (cargo/simd-csv-0.10.2.tar.gz) = Tp9dQdmonZrny0Hy5kUduENS+9kQGII1W/hsdstaTR8=
+SHA256 (cargo/simd-csv-0.11.1.tar.gz) = EERMCJ2S4sZRyPCr4i45lmJXfWiPtwVaik3Vujlubb4=
 SHA256 (cargo/simd-json-0.14.3.tar.gz) = qivPbG4WToG8el1J/GmIs9UV2ejAdFfXt0/7kyS5zUA=
 SHA256 (cargo/simdutf8-0.1.5.tar.gz) = 46n+NOPnpQMWBgNR83GHo/VGvOlUlhVnVLYBpfpxt24=
 SHA256 (cargo/siphasher-1.0.1.tar.gz) = Vhmffdq/E/5QdM6Ann0/QrQq5xGABQG1sW6oKtApw50=
@@ -333,7 +333,7 @@ SHA256 (cargo/zopfli-0.8.2.tar.gz) = 7fxe5AX1BM1JhOzG8U0C1Vz9pg+ktolDTvQQKq4VDNc
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (xan-0.55.0.tar.gz) = VO5wmXNEjXadCbgFc0BRG+8PEspvgi+HX92MBTrtmx0=
+SHA256 (xan-0.56.0.tar.gz) = nCBu7nW97xwklSj8IiFmEaduZFDIg8Vm76JLalsX1D0=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -506,7 +506,7 @@ SIZE (cargo/ordered-float-2.10.1.tar.gz) = 16029
 SIZE (cargo/ordered-float-5.1.0.tar.gz) = 30230
 SIZE (cargo/pad-0.1.6.tar.gz) = 4963
 SIZE (cargo/pager-0.16.1.tar.gz) = 9444
-SIZE (cargo/paltoquet-0.11.0.tar.gz) = 20305
+SIZE (cargo/paltoquet-0.12.0.tar.gz) = 30373
 SIZE (cargo/pariter-0.5.1.tar.gz) = 4180059
 SIZE (cargo/parking_lot-0.12.5.tar.gz) = 46735
 SIZE (cargo/parking_lot_core-0.9.12.tar.gz) = 34110
@@ -565,7 +565,7 @@ SIZE (cargo/servo_arc-0.4.1.tar.gz) = 18512
 SIZE (cargo/sha2-0.10.9.tar.gz) = 29271
 SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
 SIZE (cargo/simd-adler32-0.3.7.tar.gz) = 12086
-SIZE (cargo/simd-csv-0.10.2.tar.gz) = 44067
+SIZE (cargo/simd-csv-0.11.1.tar.gz) = 46104
 SIZE (cargo/simd-json-0.14.3.tar.gz) = 169109
 SIZE (cargo/simdutf8-0.1.5.tar.gz) = 28488
 SIZE (cargo/siphasher-1.0.1.tar.gz) = 10351
@@ -669,4 +669,4 @@ SIZE (cargo/zopfli-0.8.2.tar.gz) = 51842
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (xan-0.55.0.tar.gz) = 5948090
+SIZE (xan-0.56.0.tar.gz) = 7529124
