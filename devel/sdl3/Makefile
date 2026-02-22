@@ -1,6 +1,6 @@
 COMMENT =		cross-platform multimedia library
 
-V =			3.4.0
+V =			3.4.2
 DISTNAME =		SDL3-${V}
 PKGNAME =		${DISTNAME:L}
 
@@ -17,7 +17,8 @@ WANTLIB += EGL X11 Xcursor Xext Xfixes Xi Xrandr Xrender Xss Xtst
 WANTLIB += iconv m pthread sndio usbhid wayland-client wayland-cursor
 WANTLIB += wayland-egl xkbcommon
 
-SITES =			https://github.com/libsdl-org/SDL/releases/download/release-${V}/
+SITES =			https://libsdl.org/release/ \
+			https://github.com/libsdl-org/SDL/releases/download/release-${V}/
 
 MODULES =		devel/cmake
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv
