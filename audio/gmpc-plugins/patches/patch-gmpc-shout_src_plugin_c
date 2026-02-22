@@ -1,0 +1,14 @@
+port to Gtk+3
+
+Index: gmpc-shout/src/plugin.c
+--- gmpc-shout/src/plugin.c.orig
++++ gmpc-shout/src/plugin.c
+@@ -134,7 +134,7 @@ static void shout_init(void)
+ 	bindtextdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+ 	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+ 
+-    gtk_init_add((GtkFunction)shout_add_si_icon, NULL);
++    g_idle_add(shout_add_si_icon, NULL);
+ }
+ 
+ /* main plugin_osd info */

@@ -1,9 +1,2 @@
 A bundle of plugins for gmpc :
- * Avahi: zeroconf profile scanning
- * Lyricwiki lyrics fetcher
- * Lyrics fetcher
- * Jamendo: Browse and listen to music from jamendo
- * Magnatune: Browse and listen to music from magnatune
- * Tagedit: Quickly fix your tags
- * Osd: More modern looking song notification
  * Shout: Play mpd's shout (ogg) stream locally
