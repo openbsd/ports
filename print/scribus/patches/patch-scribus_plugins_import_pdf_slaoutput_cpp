@@ -1,48 +1,10 @@
-https://github.com/scribusproject/scribus/commit/188d030acd0cb71e89dbb57695fe52158b6a0959
-(and local changes for FoFiTrueType::make())
 https://github.com/scribusproject/scribus/commit/28bd3be104c06b9d4532affe150f7b74fe5b3e59
 
-Add fixes for poppler-25.09.1, 25.10.0, 26.01.0 and 26.02.0.
-
+Fixes for poppler-26.02.0.
 Index: scribus/plugins/import/pdf/slaoutput.cpp
 --- scribus/plugins/import/pdf/slaoutput.cpp.orig
 +++ scribus/plugins/import/pdf/slaoutput.cpp
-@@ -580,7 +580,7 @@ bool SlaOutputDev::handleWidgetAnnot(Annot* annota, do
- 		FormWidget *fm = m_formWidgets->getWidget(i);
- 		if (!fm)
- 			continue;
--		AnnotWidget *ano = fm->getWidgetAnnotation();
-+		AnnotWidget *ano = fm->getWidgetAnnotation().get();
- 		if (!ano)
- 			continue;
- 		if (ano != (AnnotWidget*) annota)
-@@ -1359,14 +1359,14 @@ void SlaOutputDev::restoreState(GfxState *state)
- 	m_graphicStack.restore();
- }
- 
--void SlaOutputDev::beginTransparencyGroup(GfxState *state, const double *bbox, GfxColorSpace * /*blendingColorSpace*/, bool isolated, bool knockout, bool forSoftMask)
-+void SlaOutputDev::beginTransparencyGroup(GfxState *state, const std::array<double, 4> &bbox, GfxColorSpace * /*blendingColorSpace*/, bool isolated, bool knockout, bool forSoftMask)
- {
- // 	qDebug() << "SlaOutputDev::beginTransparencyGroup isolated:" << isolated << "knockout:" << knockout << "forSoftMask:" << forSoftMask;
- 	pushGroup("", forSoftMask);
- 	m_groupStack.top().isolated = isolated;
- }
- 
--void SlaOutputDev::paintTransparencyGroup(GfxState *state, const double *bbox)
-+void SlaOutputDev::paintTransparencyGroup(GfxState *state, const std::array<double, 4> &bbox)
- {
- // 	qDebug() << "SlaOutputDev::paintTransparencyGroup";
- 	if (m_groupStack.count() != 0)
-@@ -1465,7 +1465,7 @@ void SlaOutputDev::endTransparencyGroup(GfxState *stat
- 	m_tmpSel->clear();
- }
- 
--void SlaOutputDev::setSoftMask(GfxState * /*state*/, const double * bbox, bool alpha, Function *transferFunc, GfxColor * /*backdropColor*/)
-+void SlaOutputDev::setSoftMask(GfxState * /*state*/, const std::array<double, 4> &bbox, bool alpha, Function *transferFunc, GfxColor * /*backdropColor*/)
- {
- 	if (m_groupStack.count() <= 0)
- 		return;
-@@ -1519,7 +1519,7 @@ void SlaOutputDev::eoClip(GfxState *state)
+@@ -1535,7 +1535,7 @@ void SlaOutputDev::eoClip(GfxState *state)
  
  void SlaOutputDev::adjustClip(GfxState *state, Qt::FillRule fillRule)
  {
@@ -51,16 +13,16 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	m_ctm = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]);
  	QString output = convertPath(state->getPath());
  	if (output.isEmpty())
-@@ -1546,7 +1546,7 @@ void SlaOutputDev::adjustClip(GfxState *state, Qt::Fil
+@@ -1563,7 +1563,7 @@ void SlaOutputDev::adjustClip(GfxState *state, Qt::Fil
  void SlaOutputDev::stroke(GfxState *state)
  {
  //	qDebug() << "Stroke";
 -	const double *ctm = state->getCTM();
 +	const auto ctm = state->getCTM();
+ 	m_ctm = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]);
  	double xCoor = m_doc->currentPage()->xOffset();
  	double yCoor = m_doc->currentPage()->yOffset();
- 	getPenState(state);
-@@ -1650,8 +1650,7 @@ void SlaOutputDev::eoFill(GfxState *state)
+@@ -1671,8 +1671,7 @@ void SlaOutputDev::eoFill(GfxState *state)
  
  void SlaOutputDev::createFillItem(GfxState *state, Qt::FillRule fillRule)
  {
@@ -70,7 +32,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	m_ctm = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]);
  	double xCoor = m_doc->currentPage()->xOffset();
  	double yCoor = m_doc->currentPage()->yOffset();
-@@ -1778,7 +1777,7 @@ bool SlaOutputDev::axialShadedFill(GfxState *state, Gf
+@@ -1799,7 +1798,7 @@ bool SlaOutputDev::axialShadedFill(GfxState *state, Gf
  		out = intersection(m_graphicStack.top().clipPath, out);
  		crect = out.boundingRect();
  	}
@@ -79,7 +41,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	m_ctm = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]);
  	FPointArray gr;
  	gr.addPoint(GrStartX, GrStartY);
-@@ -1917,7 +1916,7 @@ bool SlaOutputDev::radialShadedFill(GfxState *state, G
+@@ -1938,7 +1937,7 @@ bool SlaOutputDev::radialShadedFill(GfxState *state, G
  	double GrFocalY = y1;
  	GrEndX = GrFocalX + r1;
  	GrEndY = GrFocalY;
@@ -88,7 +50,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	m_ctm = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]);
  	FPointArray gr;
  	gr.addPoint(GrStartX, GrStartY);
-@@ -2002,7 +2001,7 @@ bool SlaOutputDev::gouraudTriangleShadedFill(GfxState 
+@@ -2023,7 +2022,7 @@ bool SlaOutputDev::gouraudTriangleShadedFill(GfxState 
  	output += QString("Z");
  	m_pathIsClosed = true;
  	m_coords = output;
@@ -97,7 +59,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	m_ctm = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]);
  	const auto& graphicState = m_graphicStack.top();
  	int z = m_doc->itemAdd(PageItem::Polygon, PageItem::Rectangle, xCoor + crect.x(), yCoor + crect.y(), crect.width(), crect.height(), 0, graphicState.fillColor, CommonStrings::None);
-@@ -2083,7 +2082,7 @@ bool SlaOutputDev::patchMeshShadedFill(GfxState *state
+@@ -2104,7 +2103,7 @@ bool SlaOutputDev::patchMeshShadedFill(GfxState *state
  	output += QString("Z");
  	m_pathIsClosed = true;
  	m_coords = output;
@@ -106,22 +68,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	m_ctm = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]);
  	const auto& graphicState = m_graphicStack.top();
  	int z = m_doc->itemAdd(PageItem::Polygon, PageItem::Rectangle, xCoor + crect.x(), yCoor + crect.y(), crect.width(), crect.height(), 0, graphicState.fillColor, CommonStrings::None);
-@@ -2215,11 +2214,11 @@ bool SlaOutputDev::patchMeshShadedFill(GfxState *state
- 	return true;
- }
- 
--bool SlaOutputDev::tilingPatternFill(GfxState *state, Gfx * /*gfx*/, Catalog *cat, GfxTilingPattern *tPat, const double *mat, int x0, int y0, int x1, int y1, double xStep, double yStep)
-+bool SlaOutputDev::tilingPatternFill(GfxState *state, Gfx * /*gfx*/, Catalog *cat, GfxTilingPattern *tPat, const std::array<double, 6> &mat, int x0, int y0, int x1, int y1, double xStep, double yStep)
- {
- //	qDebug() << "SlaOutputDev::tilingPatternFill";
--	const double *bbox = tPat->getBBox();
--	const double *pmat = tPat->getMatrix();
-+	const std::array<double, 4> &bbox = tPat->getBBox();
-+	const std::array<double, 6> &pmat = tPat->getMatrix();
- 	Dict *resDict = tPat->getResDict();
- 
- 	PDFRectangle box;
-@@ -2238,7 +2237,7 @@ bool SlaOutputDev::tilingPatternFill(GfxState *state, 
+@@ -2265,7 +2264,7 @@ bool SlaOutputDev::tilingPatternFill(GfxState *state, 
  	box.x2 = bbox[2];
  	box.y2 = bbox[3];
  
@@ -130,61 +77,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	m_ctm = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]);
  	QTransform mm(mat[0], mat[1], mat[2], mat[3], mat[4], mat[5]);
  	QTransform mmx = mm * m_ctm;
-@@ -2347,7 +2346,7 @@ void SlaOutputDev::drawImageMask(GfxState *state, Obje
- {
- //	qDebug() << "Draw Image Mask";
- 	auto imgStr = std::make_unique<ImageStream>(str, width, 1, 1);
--	imgStr->reset();
-+	imgStr->rewind();
- #ifdef WORDS_BIGENDIAN
- 	QImage image(width, height, QImage::Format_Mono);
- #else
-@@ -2421,7 +2420,7 @@ void SlaOutputDev::drawSoftMaskedImage(GfxState *state
- {
- //	qDebug() << "SlaOutputDev::drawSoftMaskedImage Masked Image Components" << colorMap->getNumPixelComps();
- 	auto imgStr = std::make_unique<ImageStream>(str, width, colorMap->getNumPixelComps(), colorMap->getBits());
--	imgStr->reset();
-+	imgStr->rewind();
- 	unsigned int *dest = nullptr;
- 	unsigned char * buffer = new unsigned char[width * height * 4];
- 	for (int y = 0; y < height; y++)
-@@ -2439,7 +2438,7 @@ void SlaOutputDev::drawSoftMaskedImage(GfxState *state
- 	}
- 
- 	auto mskStr = std::make_unique<ImageStream>(maskStr, maskWidth, maskColorMap->getNumPixelComps(), maskColorMap->getBits());
--	mskStr->reset();
-+	mskStr->rewind();
- 	unsigned char *mdest = nullptr;
- 	unsigned char * mbuffer = new unsigned char[maskWidth * maskHeight];
- 	memset(mbuffer, 0, maskWidth * maskHeight);
-@@ -2497,7 +2496,7 @@ void SlaOutputDev::drawMaskedImage(GfxState *state, Ob
- {
- //	qDebug() << "SlaOutputDev::drawMaskedImage";
- 	auto imgStr = std::make_unique<ImageStream>(str, width, colorMap->getNumPixelComps(), colorMap->getBits());
--	imgStr->reset();
-+	imgStr->rewind();
- 	unsigned int *dest = nullptr;
- 	unsigned char * buffer = new unsigned char[width * height * 4];
- 	for (int y = 0; y < height; y++)
-@@ -2515,7 +2514,7 @@ void SlaOutputDev::drawMaskedImage(GfxState *state, Ob
- 	}
- 
- 	auto mskStr = std::make_unique<ImageStream>(maskStr, maskWidth, 1, 1);
--	mskStr->reset();
-+	mskStr->rewind();
- 	unsigned char *mdest = nullptr;
- 	int invert_bit = maskInvert ? 1 : 0;
- 	unsigned char * mbuffer = new unsigned char[maskWidth * maskHeight];
-@@ -2561,7 +2560,7 @@ void SlaOutputDev::drawMaskedImage(GfxState *state, Ob
- void SlaOutputDev::drawImage(GfxState *state, Object *ref, Stream *str, int width, int height, GfxImageColorMap *colorMap, bool interpolate, const int* maskColors, bool inlineImg)
- {
- 	auto imgStr = std::make_unique<ImageStream>(str, width, colorMap->getNumPixelComps(), colorMap->getBits());
--	imgStr->reset();
-+	imgStr->rewind();
- 
- 	QImage image(width, height, QImage::Format_ARGB32);
- 	if (image.isNull())
-@@ -2633,7 +2632,7 @@ void SlaOutputDev::drawImage(GfxState *state, Object *
+@@ -2712,7 +2711,7 @@ void SlaOutputDev::drawImage(GfxState *state, Object *
  void SlaOutputDev::createImageFrame(QImage& image, GfxState *state, int numColorComponents)
  {
  //	qDebug() << "SlaOutputDev::createImageFrame";
@@ -193,16 +86,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	double xCoor = m_doc->currentPage()->xOffset();
  	double yCoor = m_doc->currentPage()->yOffset();
  
-@@ -2791,7 +2790,7 @@ void SlaOutputDev::beginMarkedContent(const char *name
- 	{
- 		if (dictRef->isNull())
- 			return;
--		OCGs *contentConfig = m_catalog->getOptContentConfig();
-+		POPPLER_CONST_25_02 OCGs *contentConfig = m_catalog->getOptContentConfig();
- 		OptionalContentGroup *oc;
- 		if (dictRef->isRef())
- 		{
-@@ -2925,16 +2924,32 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3002,15 +3001,27 @@ void SlaOutputDev::updateFont(GfxState *state)
  #else
  	SlaOutFontFileID *id;
  #endif
@@ -218,27 +102,20 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	SplashFontSrc *fontsrc = nullptr;
 +#endif
  	Object refObj, strObj;
-+#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
-+	std::vector<int> codeToGID;
-+#else
+ #if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
+ 	std::vector<int> codeToGID;
+ #else
  	int *codeToGID = nullptr;
-+#endif
+ #endif
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 2, 0)
 +	std::array<double, 6> textMat;
 +#else
  	const double *textMat = nullptr;
 +#endif
  	double m11, m12, m21, m22, fontSize;
--	SplashCoord mat[4] = { 1.0, 0.0, 0.0, 1.0 };
-+	std::array<SplashCoord, 4> mat = { 1.0, 0.0, 0.0, 1.0 };
- 	int n = 0;
- 	int faceIndex = 0;
--	SplashCoord matrix[6] = { 1.0, 0.0, 0.0, 1.0, 0.0, 0.0 };
-+	std::array<SplashCoord, 6> matrix = { 1.0, 0.0, 0.0, 1.0, 0.0, 0.0 };
- 
- 	m_font = nullptr;
- 
-@@ -2981,16 +2996,29 @@ void SlaOutputDev::updateFont(GfxState *state)
+ #if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 1, 0)
+ 	std::array<SplashCoord, 4> mat = { 1.0, 0.0, 0.0, 1.0 };
+@@ -3070,16 +3081,29 @@ void SlaOutputDev::updateFont(GfxState *state)
  			fontType = fontLoc->fontType;
  		}
  
@@ -269,7 +146,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			if (!(fontFile = m_fontEngine->loadType1Font(std::move(id), fontsrc, (const char**) ((Gfx8BitFont*) gfxFont)->getEncoding(), fontLoc->fontNum)))
  			{
  				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
-@@ -3005,7 +3033,13 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3094,7 +3118,13 @@ void SlaOutputDev::updateFont(GfxState *state)
  #endif
  			break;
  		case fontType1C:
@@ -284,7 +161,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			if (!(fontFile = m_fontEngine->loadType1CFont(std::move(id), fontsrc, (const char**) ((Gfx8BitFont*) gfxFont)->getEncoding(), fontLoc->fontNum)))
  			{
  				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
-@@ -3020,7 +3054,13 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3109,7 +3139,13 @@ void SlaOutputDev::updateFont(GfxState *state)
  #endif
  			break;
  		case fontType1COT:
@@ -299,38 +176,28 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			if (!(fontFile = m_fontEngine->loadOpenTypeT1CFont(std::move(id), fontsrc, (const char **)((Gfx8BitFont *) gfxFont)->getEncoding(), fontLoc->fontNum)))
  			{
  				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
-@@ -3036,16 +3076,16 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3125,10 +3161,15 @@ void SlaOutputDev::updateFont(GfxState *state)
  			break;
  		case fontTrueType:
  		case fontTrueTypeOT:
--#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
+-#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 7, 0)
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 2, 0)
  			if (!fileName.empty())
  				ff = FoFiTrueType::load(fileName.c_str(), fontLoc->fontNum);
  			else
--				ff = FoFiTrueType::make(fontsrc->buf.data(), fontsrc->buf.size(), fontLoc->fontNum);
 +				ff = FoFiTrueType::make(fontsrc->buf(), fontLoc->fontNum);
- #else
++#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 7, 0)
++			if (!fileName.empty())
++				ff = FoFiTrueType::load(fileName.c_str(), fontLoc->fontNum);
++			else
+ 				ff = FoFiTrueType::make(fontsrc->buf, fontLoc->fontNum);
+ #elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
  			if (!fileName.empty())
- 				ff = FoFiTrueType::load(fileName.c_str());
- 			else
--				ff = FoFiTrueType::make(fontsrc->buf.data(), fontsrc->buf.size());
-+				ff = FoFiTrueType::make(std::spam(fontsrc->buf));
+@@ -3156,7 +3197,13 @@ void SlaOutputDev::updateFont(GfxState *state)
  #endif
- 			if (ff)
- 			{
-@@ -3055,10 +3095,26 @@ void SlaOutputDev::updateFont(GfxState *state)
- 			}
- 			else
- 			{
-+#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
-+				codeToGID.clear();
-+#else
- 				codeToGID = nullptr;
-+#endif
  				n = 0;
  			}
--#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
+-#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 2, 0)
 +			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), std::move(fontsrc), std::move(codeToGID), fontLoc->fontNum)))
 +			{
@@ -338,16 +205,10 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
 +				goto err2;
 +			}
 +#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
-+			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, std::move(codeToGID), fontLoc->fontNum)))
-+			{
-+				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
-+				goto err2;
-+			}
-+#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
- 			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, codeToGID, n, fontLoc->fontNum)))
+ 			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, std::move(codeToGID), fontLoc->fontNum)))
  			{
  				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
-@@ -3074,7 +3130,13 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3178,7 +3225,13 @@ void SlaOutputDev::updateFont(GfxState *state)
  			break;
  		case fontCIDType0:
  		case fontCIDType0C:
@@ -362,31 +223,11 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			if (!(fontFile = m_fontEngine->loadCIDFont(std::move(id), fontsrc, fontLoc->fontNum)))
  			{
  				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
-@@ -3089,6 +3151,18 @@ void SlaOutputDev::updateFont(GfxState *state)
- #endif
- 			break;
- 		case fontCIDType0COT:
-+#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
-+			if (((GfxCIDFont*) gfxFont)->getCIDToGIDLen() > 0)
-+			{
-+				codeToGID = ((GfxCIDFont*) gfxFont)->getCIDToGID();
-+				n = codeToGID.size();
-+			}
-+			else
-+			{
-+				codeToGID.clear();
-+				n = 0;
-+			}
-+#else
- 			if (((GfxCIDFont *) gfxFont)->getCIDToGID())
- 			{
- 				n = ((GfxCIDFont *) gfxFont)->getCIDToGIDLen();
-@@ -3100,7 +3174,22 @@ void SlaOutputDev::updateFont(GfxState *state)
- 				codeToGID = nullptr;
+@@ -3217,7 +3270,14 @@ void SlaOutputDev::updateFont(GfxState *state)
  				n = 0;
  			}
--#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
-+#endif
+ #endif
+-#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 2, 0)
 +			if (!(fontFile = m_fontEngine->loadOpenTypeCFFFont(std::move(id), std::move(fontsrc), std::move(codeToGID), fontLoc->fontNum)))
 +			{
@@ -395,63 +236,31 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
 +				goto err2;
 +			}
 +#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
-+			if (!(fontFile = m_fontEngine->loadOpenTypeCFFFont(std::move(id), fontsrc, std::move(codeToGID), fontLoc->fontNum)))
-+			{
-+				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'",
-+					gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
-+				goto err2;
-+			}
-+#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
- 			if (!(fontFile = m_fontEngine->loadOpenTypeCFFFont(std::move(id), fontsrc, codeToGID, n, fontLoc->fontNum)))
+ 			if (!(fontFile = m_fontEngine->loadOpenTypeCFFFont(std::move(id), fontsrc, std::move(codeToGID), fontLoc->fontNum)))
  			{
  				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'",
-@@ -3118,6 +3207,15 @@ void SlaOutputDev::updateFont(GfxState *state)
- 			break;
- 		case fontCIDType2:
- 		case fontCIDType2OT:
-+#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
-+			codeToGID.clear();
-+			n = 0;
-+			if (((GfxCIDFont*) gfxFont)->getCIDToGIDLen() > 0)
-+			{
-+				codeToGID = ((GfxCIDFont*) gfxFont)->getCIDToGID();
-+				n = codeToGID.size();
-+			}
-+#else
- 			codeToGID = nullptr;
- 			n = 0;
- 			if (((GfxCIDFont *) gfxFont)->getCIDToGID())
-@@ -3129,25 +3227,42 @@ void SlaOutputDev::updateFont(GfxState *state)
- 					memcpy(codeToGID, ((GfxCIDFont *)gfxFont)->getCIDToGID(), n * sizeof(*codeToGID));
- 				}
- 			}
-+#endif
+@@ -3265,10 +3325,15 @@ void SlaOutputDev::updateFont(GfxState *state)
+ #endif
  			else
  			{
--#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
+-#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 7, 0)
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 2, 0)
  				if (!fileName.empty())
  					ff = FoFiTrueType::load(fileName.c_str(), fontLoc->fontNum);
  				else
--					ff = FoFiTrueType::make(fontsrc->buf.data(), fontsrc->buf.size(), fontLoc->fontNum);
 +					ff = FoFiTrueType::make(fontsrc->buf(), fontLoc->fontNum);
- #else
++#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 7, 0)
++				if (!fileName.empty())
++					ff = FoFiTrueType::load(fileName.c_str(), fontLoc->fontNum);
++				else
+ 					ff = FoFiTrueType::make(fontsrc->buf, fontLoc->fontNum);
+ #elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
  				if (!fileName.empty())
- 					ff = FoFiTrueType::load(fileName.c_str());
- 				else
--					ff = FoFiTrueType::make(fontsrc->buf.data(), fontsrc->buf.size());
-+					ff = FoFiTrueType::make(std::span(fontsrc->buf));
+@@ -3290,7 +3355,13 @@ void SlaOutputDev::updateFont(GfxState *state)
  #endif
- 				if (! ff)
- 					goto err2;
-+#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
-+				codeToGID = ((GfxCIDFont*) gfxFont)->getCodeToGIDMap(ff.get());
-+#else
- 				codeToGID = ((GfxCIDFont*) gfxFont)->getCodeToGIDMap(ff.get(), &n);
-+#endif
  				ff.reset();
  			}
--#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
+-#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 2, 0)
 +			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), std::move(fontsrc), std::move(codeToGID), fontLoc->fontNum)))
 +			{
@@ -459,16 +268,10 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
 +				goto err2;
 +			}
 +#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
-+			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, std::move(codeToGID), fontLoc->fontNum)))
-+			{
-+				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
-+				goto err2;
-+			}
-+#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
- 			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, codeToGID, n, fontLoc->fontNum)))
+ 			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, std::move(codeToGID), fontLoc->fontNum)))
  			{
  				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
-@@ -3186,8 +3301,10 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3335,8 +3406,10 @@ void SlaOutputDev::updateFont(GfxState *state)
  	mat[3] = -m22;
  	m_font = m_fontEngine->getFont(fontFile, mat, matrix);
  
@@ -479,7 +282,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	return;
  
  err2:
-@@ -3198,8 +3315,12 @@ err2:
+@@ -3347,8 +3420,12 @@ err2:
  #endif
  
  err1:
@@ -492,70 +295,12 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  }
  
  void SlaOutputDev::drawChar(GfxState* state, double x, double y, double dx, double dy, double originX, double originY, CharCode code, int nBytes, const Unicode* u, int uLen)
-@@ -3252,7 +3373,7 @@ void SlaOutputDev::drawChar(GfxState* state, double x,
- 				if (f & splashPathLast)
- 					qPath.closeSubpath();
- 			}
--			const double * ctm = state->getCTM();
-+			const auto ctm = state->getCTM();
- 			m_ctm = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]);
- 			double xCoor = m_doc->currentPage()->xOffset();
- 			double yCoor = m_doc->currentPage()->yOffset();
-@@ -3526,7 +3647,7 @@ QString SlaOutputDev::getAnnotationColor(const AnnotCo
- 		return CommonStrings::None;
- 	if (color->getSpace() == AnnotColor::colorRGB)
- 	{
--		const double *color_data = color->getValues();
-+		const std::array<double, 4> &color_data = color->getValues();
- 		double Rc = color_data[0];
- 		double Gc = color_data[1];
- 		double Bc = color_data[2];
-@@ -3535,7 +3656,7 @@ QString SlaOutputDev::getAnnotationColor(const AnnotCo
+@@ -3402,7 +3479,7 @@ void SlaOutputDev::drawChar(GfxState* state, double x,
+ 		if (f & splashPathLast)
+ 			qPath.closeSubpath();
  	}
- 	else if (color->getSpace() == AnnotColor::colorCMYK)
- 	{
--		const double *color_data = color->getValues();
-+		const std::array<double, 4> &color_data = color->getValues();
- 		double Cc = color_data[0];
- 		double Mc = color_data[1];
- 		double Yc = color_data[2];
-@@ -3545,7 +3666,7 @@ QString SlaOutputDev::getAnnotationColor(const AnnotCo
- 	}
- 	else if (color->getSpace() == AnnotColor::colorGray)
- 	{
--		const double *color_data = color->getValues();
-+		const std::array<double, 4> &color_data = color->getValues();
- 		double Kc = 1.0 - color_data[0];
- 		tmp.setCmykColorF(0, 0, 0, Kc);
- 		fNam = m_doc->PageColors.tryAddColor(namPrefix+tmp.name(), tmp);
-@@ -3748,25 +3869,25 @@ void SlaOutputDev::pushGroup(const QString& maskName, 
- 
- QString SlaOutputDev::UnicodeParsedString(const GooString *s1) const
- {
--	if (!s1 || s1->getLength() == 0)
-+	if (!s1 || s1->size() == 0)
- 		return QString();
- 	bool isUnicode;
- 	int i;
- 	Unicode u;
- 	QString result;
--	if ((s1->getChar(0) & 0xff) == 0xfe && (s1->getLength() > 1 && (s1->getChar(1) & 0xff) == 0xff))
-+	if ((s1->getChar(0) & 0xff) == 0xfe && (s1->size() > 1 && (s1->getChar(1) & 0xff) == 0xff))
- 	{
- 		isUnicode = true;
- 		i = 2;
--		result.reserve((s1->getLength() - 2) / 2);
-+		result.reserve((s1->size() - 2) / 2);
- 	}
- 	else
- 	{
- 		isUnicode = false;
- 		i = 0;
--		result.reserve(s1->getLength());
-+		result.reserve(s1->size());
- 	}
--	while (i < s1->getLength())
-+	while (i < s1->size())
- 	{
- 		if (isUnicode)
- 		{
+-	const double * ctm = state->getCTM();
++	const auto ctm = state->getCTM();
+ 	m_ctm = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]);
+ 	double xCoor = m_doc->currentPage()->xOffset();
+ 	double yCoor = m_doc->currentPage()->yOffset();

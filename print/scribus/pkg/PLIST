@@ -52,6 +52,7 @@ lib/scribus/plugins/gettext/
 @so lib/scribus/plugins/libscribus13format.so
 @so lib/scribus/plugins/libscribus150format.so
 @so lib/scribus/plugins/libscribus170format.so
+@so lib/scribus/plugins/libscribus171format.so
 @so lib/scribus/plugins/libscribusexportpixmap.so
 @so lib/scribus/plugins/libscribusshortwords.so
 @so lib/scribus/plugins/libscriptplugin.so
@@ -1992,14 +1993,26 @@ share/scribus/icons/1_7_0/16/align-item-vertical-bottom.svg
 share/scribus/icons/1_7_0/16/align-item-vertical-center.svg
 share/scribus/icons/1_7_0/16/align-item-vertical-top-out.svg
 share/scribus/icons/1_7_0/16/align-item-vertical-top.svg
+share/scribus/icons/1_7_0/16/align-mode-move.svg
+share/scribus/icons/1_7_0/16/align-mode-resize.svg
+share/scribus/icons/1_7_0/16/align-reverse-distribution-left.svg
+share/scribus/icons/1_7_0/16/align-reverse-distribution-right.svg
+share/scribus/icons/1_7_0/16/align-to-first-selected.svg
+share/scribus/icons/1_7_0/16/align-to-guides.svg
+share/scribus/icons/1_7_0/16/align-to-last-selected.svg
+share/scribus/icons/1_7_0/16/align-to-margin.svg
+share/scribus/icons/1_7_0/16/align-to-page.svg
+share/scribus/icons/1_7_0/16/align-to-selection.svg
 share/scribus/icons/1_7_0/16/bezier-close.svg
 share/scribus/icons/1_7_0/16/bezier-control-asymetric.svg
+share/scribus/icons/1_7_0/16/bezier-control-independent.svg
 share/scribus/icons/1_7_0/16/bezier-control-move.svg
 share/scribus/icons/1_7_0/16/bezier-control-reset.svg
 share/scribus/icons/1_7_0/16/bezier-control-symetric.svg
 share/scribus/icons/1_7_0/16/bezier-controls-reset.svg
 share/scribus/icons/1_7_0/16/bezier-node-add.svg
 share/scribus/icons/1_7_0/16/bezier-node-delete.svg
+share/scribus/icons/1_7_0/16/bezier-node-edit.svg
 share/scribus/icons/1_7_0/16/bezier-node-move.svg
 share/scribus/icons/1_7_0/16/bezier-path-shear-down.svg
 share/scribus/icons/1_7_0/16/bezier-path-shear-left.svg
@@ -2160,6 +2173,7 @@ share/scribus/icons/1_7_0/16/page-insert.svg
 share/scribus/icons/1_7_0/16/page-move.svg
 share/scribus/icons/1_7_0/16/page-orientation-horizontal.svg
 share/scribus/icons/1_7_0/16/page-orientation-vertical.svg
+share/scribus/icons/1_7_0/16/page-sizes.svg
 share/scribus/icons/1_7_0/16/page-type-facing.svg
 share/scribus/icons/1_7_0/16/page-type-fourfold.svg
 share/scribus/icons/1_7_0/16/page-type-single.svg
@@ -2206,9 +2220,14 @@ share/scribus/icons/1_7_0/16/paragraph-space-below.svg
 share/scribus/icons/1_7_0/16/paragraph-style.svg
 share/scribus/icons/1_7_0/16/paragraph-widow.svg
 share/scribus/icons/1_7_0/16/path-combine.svg
+share/scribus/icons/1_7_0/16/path-contour-edit.svg
+share/scribus/icons/1_7_0/16/path-contour-reset.svg
+share/scribus/icons/1_7_0/16/path-contour-to-clip.svg
 share/scribus/icons/1_7_0/16/path-difference.svg
 share/scribus/icons/1_7_0/16/path-exclusion.svg
 share/scribus/icons/1_7_0/16/path-intersection.svg
+share/scribus/icons/1_7_0/16/path-node-visibility.svg
+share/scribus/icons/1_7_0/16/path-shape-to-clip.svg
 share/scribus/icons/1_7_0/16/path-union.svg
 share/scribus/icons/1_7_0/16/pdf-annotation-3d.svg
 share/scribus/icons/1_7_0/16/pdf-annotation-link.svg
@@ -2219,6 +2238,9 @@ share/scribus/icons/1_7_0/16/pdf-combobox.svg
 share/scribus/icons/1_7_0/16/pdf-listbox.svg
 share/scribus/icons/1_7_0/16/pdf-radiobox.svg
 share/scribus/icons/1_7_0/16/pdf-textinput.svg
+share/scribus/icons/1_7_0/16/position-origin-canvas.svg
+share/scribus/icons/1_7_0/16/position-origin-item.svg
+share/scribus/icons/1_7_0/16/position-origin-page.svg
 share/scribus/icons/1_7_0/16/preview-colormanagement.svg
 share/scribus/icons/1_7_0/16/properties-color-management.svg
 share/scribus/icons/1_7_0/16/properties-display.svg
@@ -2261,9 +2283,11 @@ share/scribus/icons/1_7_0/16/tabulator-comma.svg
 share/scribus/icons/1_7_0/16/tabulator-dot.svg
 share/scribus/icons/1_7_0/16/tabulator-left.svg
 share/scribus/icons/1_7_0/16/tabulator-right.svg
+share/scribus/icons/1_7_0/16/text-background-color.svg
 share/scribus/icons/1_7_0/16/text-on-path-distance.svg
 share/scribus/icons/1_7_0/16/text-on-path-offset.svg
 share/scribus/icons/1_7_0/16/text-wrap-boundingbox.svg
+share/scribus/icons/1_7_0/16/text-wrap-clip.svg
 share/scribus/icons/1_7_0/16/text-wrap-contour.svg
 share/scribus/icons/1_7_0/16/text-wrap-none.svg
 share/scribus/icons/1_7_0/16/text-wrap-shape.svg
@@ -2303,6 +2327,8 @@ share/scribus/icons/1_7_0/32/cursor-hand.svg
 share/scribus/icons/1_7_0/32/cursor-image.svg
 share/scribus/icons/1_7_0/32/cursor-latex.svg
 share/scribus/icons/1_7_0/32/cursor-link-text-frame.svg
+share/scribus/icons/1_7_0/32/cursor-move.svg
+share/scribus/icons/1_7_0/32/cursor-node-edit.svg
 share/scribus/icons/1_7_0/32/cursor-pen.svg
 share/scribus/icons/1_7_0/32/cursor-polygon.svg
 share/scribus/icons/1_7_0/32/cursor-remove.svg
@@ -2345,11 +2371,6 @@ share/scribus/icons/1_7_0/images/ff-unic.svg
 share/scribus/icons/1_7_0/images/ff-zero.svg
 share/scribus/icons/1_7_0/images/scribus_splash_dark.png
 share/scribus/icons/1_7_0/images/scribus_splash_light.png
-share/scribus/icons/1_7_0/pathexclusion.png
-share/scribus/icons/1_7_0/pathintersection.png
-share/scribus/icons/1_7_0/pathparts.png
-share/scribus/icons/1_7_0/pathsubtraction.png
-share/scribus/icons/1_7_0/pathunite.png
 share/scribus/icons/1_7_0/scribus-icon.svg
 share/scribus/icons/1_7_0/stylesheet/
 share/scribus/icons/1_7_0/stylesheet/down_arrow.png
@@ -2361,7 +2382,6 @@ share/scribus/icons/1_7_0/svg/sarxos_Paper_Sheets.svg
 share/scribus/icons/1_7_0/svg/sarxos_Simple_Folder_Seek.svg
 share/scribus/icons/1_7_0/svg/sarxos_Simple_Green_Yellow_Blue_Violet_Folders.svg
 share/scribus/icons/1_7_0/testfill.png
-share/scribus/icons/1_7_0/transform-crop-and-resize.png
 share/scribus/keysets/
 share/scribus/keysets/icalamus.xml
 share/scribus/keysets/pageplusx3.xml

@@ -5,7 +5,7 @@ https://github.com/scribusproject/scribus/commit/28bd3be104c06b9d4532affe150f7b7
 Index: scribus/plugins/import/pdf/pdftextrecognition.cpp
 --- scribus/plugins/import/pdf/pdftextrecognition.cpp.orig
 +++ scribus/plugins/import/pdf/pdftextrecognition.cpp
-@@ -81,7 +81,7 @@ bool PdfTextRecognition::isNewLineOrRegion(QPointF new
+@@ -81,7 +81,7 @@ bool PdfTextRecognition::isNewLineOrRegion(const QPoin
  */
  PdfGlyph PdfTextRecognition::AddCharCommon(GfxState* state, double x, double y, double dx, double dy, Unicode const* u, int uLen)
  {

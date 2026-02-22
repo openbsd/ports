@@ -1,4 +1,3 @@
-https://github.com/scribusproject/scribus/commit/188d030acd0cb71e89dbb57695fe52158b6a0959
 https://github.com/scribusproject/scribus/commit/28bd3be104c06b9d4532affe150f7b74fe5b3e59
 
 Index: scribus/plugins/import/pdf/importpdf.cpp
@@ -16,7 +15,7 @@ Index: scribus/plugins/import/pdf/importpdf.cpp
  	dev.setVectorAntialias(true);
  	dev.setFreeTypeHinting(true, false);
  	dev.startDoc(&pdfDoc);
-@@ -154,20 +158,17 @@ bool PdfPlug::import(const QString& fNameIn, const Tra
+@@ -154,20 +158,17 @@ bool PdfPlug::importFile(const QString& fNameIn, const
  	}
  	double docWidth = PrefsManager::instance().appPrefs.docSetupPrefs.pageWidth;
  	double docHeight = PrefsManager::instance().appPrefs.docSetupPrefs.pageHeight;
@@ -41,21 +40,7 @@ Index: scribus/plugins/import/pdf/importpdf.cpp
 +		ret = true;
  	}
  
- 	if ((ret) || (!m_interactive))
-@@ -416,11 +417,11 @@ bool PdfPlug::convert(const QString& fn)
- 
- 			if (dev->isOk())
- 			{
--				OCGs* ocg = pdfDoc->getOptContentConfig();
-+				POPPLER_CONST_25_02 OCGs* ocg = pdfDoc->getOptContentConfig();
- 				if (ocg && ocg->hasOCGs())
- 				{
- 					QStringList ocgNames;
--					Array *order = ocg->getOrderArray();
-+					POPPLER_CONST_25_02 Array *order = ocg->getOrderArray();
- 					if (order)
- 					{
- 						for (int i = 0; i < order->getLength (); ++i)
+ 	if (ret || !m_interactive)
 @@ -809,11 +810,15 @@ QImage PdfPlug::readPreview(int pgNum, int width, int 
  	bgColor[0] = 255;
  	bgColor[1] = 255;
@@ -82,34 +67,3 @@ Index: scribus/plugins/import/pdf/importpdf.cpp
  	return image;
  }
  
-@@ -874,25 +878,25 @@ QRectF PdfPlug::getCBox(int box, int pgNum)
- 
- QString PdfPlug::UnicodeParsedString(const GooString *s1)
- {
--	if (!s1 || s1->getLength() == 0)
-+	if (!s1 || s1->size() == 0)
- 		return QString();
- 	bool isUnicode;
- 	int i;
- 	Unicode u;
- 	QString result;
--	if ((s1->getChar(0) & 0xff) == 0xfe && (s1->getLength() > 1 && (s1->getChar(1) & 0xff) == 0xff))
-+	if ((s1->getChar(0) & 0xff) == 0xfe && (s1->size() > 1 && (s1->getChar(1) & 0xff) == 0xff))
- 	{
- 		isUnicode = true;
- 		i = 2;
--		result.reserve((s1->getLength() - 2) / 2);
-+		result.reserve((s1->size() - 2) / 2);
- 	}
- 	else
- 	{
- 		isUnicode = false;
- 		i = 0;
--		result.reserve(s1->getLength());
-+		result.reserve(s1->size());
- 	}
--	while (i < s1->getLength())
-+	while (i < s1->size())
- 	{
- 		if (isUnicode)
- 		{
