@@ -1,0 +1,77 @@
+drop most broken providers, keep only lastfm & musicbrainz which need fixing, wip
+
+working lyrics providers: lyrix & elyrics, lyricswiki ?
+
+no working albumreview, nor backdrops & guitartabs provider
+
+Index: lib/register_plugins.c
+--- lib/register_plugins.c.orig
++++ lib/register_plugins.c
+@@ -143,9 +143,6 @@ void plugin_add_to_list (GList ** list, void * data)
+ static void register_provider_plugins (void)
+ {
+     plugin_add_to_list (&glyrMetaDataSourceList,&ainfo_lastfm_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&ainfo_lyricsreg_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&ainfo_bbcmusic_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&ainfo_echonest_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&albumlist_musicbrainz_src);
+ 
+     // FIXME: Seems to be broken too. (serverside)
+@@ -159,56 +156,20 @@ static void register_provider_plugins (void)
+ 
+ 
+     // FIXME: No real data yet there.. adele:19 gives a correct mbid, but no results
+-    plugin_add_to_list(&glyrMetaDataSourceList,&cover_coverartarchive_src);
+ 
+-    plugin_add_to_list (&glyrMetaDataSourceList,&cover_discogs_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&cover_google_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&cover_lastfm_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&cover_jamendo_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&cover_lyricswiki_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&cover_rhapsody_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&cover_picsearch_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&cover_musicbrainz_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&cover_slothradio_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_lipwalk_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_lyrdb_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_lyricsreg_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_lyricstime_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_lyricsvip_src);
++
+     plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_lyricswiki_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_lyrix_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_magistrix_src);
+-    //plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_metrolyrics_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_metallum_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_elyrics_src);
+-	plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_vagalume_src);
+-
+-    // FIXME: Chartlyrics reacts very slowly, and often not at all
+-    // add again when running again ( :( - good api though)
+-    // 28.1.2012: Seems to be on again, API fails too often though still.
+-    plugin_add_to_list (&glyrMetaDataSourceList,&lyrics_chartlyrics_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&photos_flickr_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&photos_google_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&photos_lastfm_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&photos_discogs_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&photos_singerpictures_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&photos_rhapsody_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&photos_picsearch_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&photos_bbcmusic_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&relations_musicbrainz_src);
+ 
+-    // FIXME: Silly amazon requires to be a Seller to use their API
+-    //plugin_add_to_list(&glyrMetaDataSourceList,&review_amazon_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&review_metallum_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&review_echonest_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&similar_artist_lastfm_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&similar_song_lastfm_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&tags_musicbrainz_src);
+     plugin_add_to_list (&glyrMetaDataSourceList,&tracklist_musicbrainz_src);
+-    // FIXME: Searchfunction of guitaretabs seems to be broken
+-    //plugin_add_to_list(&glyrMetaDataSourceList,&guitartabs_guitaretab_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&guitartabs_chordie_src);
+-    plugin_add_to_list (&glyrMetaDataSourceList,&backdrops_htbackdrops_src);
+ 
+     /* Special offline providers */
+     plugin_add_to_list (&glyrMetaDataSourceList,&relations_generated_src);

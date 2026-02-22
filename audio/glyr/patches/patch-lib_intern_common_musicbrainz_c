@@ -1,0 +1,38 @@
+Tentatively port to MB API v2
+
+Index: lib/intern/common/musicbrainz.c
+--- lib/intern/common/musicbrainz.c.orig
++++ lib/intern/common/musicbrainz.c
+@@ -57,11 +57,11 @@ const gchar * generic_musicbrainz_url (GlyrQuery * set
+     switch (please_what_type (sets) )
+     {
+     case GLYR_TYPE_TAG_TITLE :
+-        return g_strdup_printf ("http://musicbrainz.org/ws/1/track/?type=xml&title=%s&artist=%s&release=%s",wrap_t,wrap_a,wrap_b);
++        return g_strdup_printf ("http://musicbrainz.org/ws/2/recording/?query=recording:%s%%20AND%%20artist:%s%%20AND%%20release:%s",wrap_t,wrap_a,wrap_b);
+     case GLYR_TYPE_TAG_ALBUM :
+-        return g_strdup_printf ("http://musicbrainz.org/ws/1/release/?type=xml&title=%s&artist=%s",wrap_b,wrap_a);
++        return g_strdup_printf ("http://musicbrainz.org/ws/2/release/?query=release:%s%%20AND%%20artist:%s",wrap_b,wrap_a);
+     case GLYR_TYPE_TAG_ARTIST:
+-        return g_strdup_printf ("http://musicbrainz.org/ws/1/artist/?type=xml&name=%s",wrap_a);
++        return g_strdup_printf ("http://musicbrainz.org/ws/2/artist/?query=%s",wrap_a);
+     default:
+         return NULL;
+     }
+@@ -150,7 +150,7 @@ GlyrMemCache * generic_musicbrainz_parse (cb_object * 
+             switch (please_what_type (capo->s) )
+             {
+             case GLYR_TYPE_TAG_TITLE:
+-                type = "track";
++                type = "recording";
+                 break;
+             case GLYR_TYPE_TAG_ALBUM:
+                 type = "release";
+@@ -160,7 +160,7 @@ GlyrMemCache * generic_musicbrainz_parse (cb_object * 
+                 break;
+             }
+ 
+-            gchar * info_page_url = g_strdup_printf ("http://musicbrainz.org/ws/1/%s/%s?type=xml&inc=%s",type,mbid,include);
++            gchar * info_page_url = g_strdup_printf ("http://musicbrainz.org/ws/2/%s/%s?inc=%s",type,mbid,include);
+             if (info_page_url)
+             {
+                 info = download_single (info_page_url,capo->s,NULL);

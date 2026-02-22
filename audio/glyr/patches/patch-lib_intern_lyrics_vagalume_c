@@ -1,0 +1,16 @@
+https://github.com/sahib/glyr/issues/102
+
+Index: lib/intern/lyrics/vagalume.c
+--- lib/intern/lyrics/vagalume.c.orig
++++ lib/intern/lyrics/vagalume.c
+@@ -24,8 +24,8 @@
+ /* JSON Parsing */
+ #include "../../jsmn/jsmn.h"
+ 
+-#define VAGALUME_DOMAIN "http://www.vagalume.com.br"
+-#define VAGALUME_PATH "/api/search.php?art=${artist}&mus=${title}"
++#define VAGALUME_DOMAIN "http://api.vagalume.com.br"
++#define VAGALUME_PATH "/search.php?art=${artist}&mus=${title}"
+ 
+ /**
+  * Vagalume Provider written by: Felipe Bessa Coelho

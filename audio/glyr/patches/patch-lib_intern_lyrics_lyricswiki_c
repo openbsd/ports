@@ -1,0 +1,15 @@
+https://github.com/sahib/glyr/commit/e580b1c446d4ac7077a59c52de2b996d0d832d2f
+
+doesnt work anyway ?
+Index: lib/intern/lyrics/lyricswiki.c
+--- lib/intern/lyrics/lyricswiki.c.orig
++++ lib/intern/lyrics/lyricswiki.c
+@@ -65,7 +65,7 @@ static gboolean lv_cmp_content (const gchar * to_artis
+ 
+ #define LYR_NODE  "<div class='lyricbox"
+ #define LYR_BEGIN ">"
+-#define LYR_ENDIN "<!--"
++#define LYR_ENDIN "<div class='lyricsbreak"
+ #define LYR_FOOTER "<div id=\"songfooter"
+ #define LYR_CREDITS "<table"
+ #define LYR_INSTRUMENTAL "/Category:Instrumental"

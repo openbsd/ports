@@ -1,0 +1,17 @@
+https://github.com/sahib/glyr/issues/102
+
+Index: lib/intern/lyrics/elyrics.c
+--- lib/intern/lyrics/elyrics.c.orig
++++ lib/intern/lyrics/elyrics.c
+@@ -88,9 +88,9 @@ static void remove_from_from_string (gchar * string)
+ 
+ /////////////////////////////////
+ 
+-#define LYRICS_BEGIN "<div class='ly' style='font-size:12px;'>"
++#define LYRICS_BEGIN "<div id='inlyr'>"
+ #define LYRICS_ALT_END "these lyrics are submitted by"
+-#define LYRICS_END   "</div>"
++#define LYRICS_END   "</div><br>\n"
+ 
+ static GList * lyrics_elyrics_parse (cb_object * capo)
+ {

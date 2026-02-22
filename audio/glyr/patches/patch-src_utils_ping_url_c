@@ -1,0 +1,29 @@
+ihttps://github.com/curl/curl/issues/9779
+
+Index: src/utils/ping_url.c
+--- src/utils/ping_url.c.orig
++++ src/utils/ping_url.c
+@@ -129,18 +129,18 @@ static struct header_data * url_is_gettable (gchar * u
+ 
+         info = g_malloc0 (sizeof (struct header_data) );
+ 
+-        curl_easy_setopt (eh, CURLOPT_TIMEOUT, 3);
++        curl_easy_setopt (eh, CURLOPT_TIMEOUT, 3L);
+         curl_easy_setopt (eh, CURLOPT_NOSIGNAL, 1L);
+         curl_easy_setopt (eh, CURLOPT_USERAGENT, GLYR_DEFAULT_USERAGENT"/linkvalidator");
+         curl_easy_setopt (eh, CURLOPT_URL,url);
+-        curl_easy_setopt (eh, CURLOPT_FOLLOWLOCATION, TRUE);
+-        curl_easy_setopt (eh, CURLOPT_HEADER,TRUE);
+-        curl_easy_setopt (eh, CURLOPT_NOBODY,TRUE);
++        curl_easy_setopt (eh, CURLOPT_FOLLOWLOCATION, (long)TRUE);
++        curl_easy_setopt (eh, CURLOPT_HEADER,(long)TRUE);
++        curl_easy_setopt (eh, CURLOPT_NOBODY,(long)TRUE);
+         curl_easy_setopt (eh, CURLOPT_HEADERFUNCTION, header_cb);
+         curl_easy_setopt (eh, CURLOPT_WRITEFUNCTION, empty_cb);
+         curl_easy_setopt (eh, CURLOPT_WRITEHEADER, info);
+ 
+-        curl_easy_setopt (eh, CURLOPT_VERBOSE,TRUE);
++        curl_easy_setopt (eh, CURLOPT_VERBOSE,(long)TRUE);
+ 
+         rc = curl_easy_perform (eh);
+         curl_easy_cleanup (eh);

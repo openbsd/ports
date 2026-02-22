@@ -1,0 +1,16 @@
+https://github.com/sahib/glyr/issues/102
+
+Index: lib/intern/lyrics/lyricsreg.c
+--- lib/intern/lyrics/lyricsreg.c.orig
++++ lib/intern/lyrics/lyricsreg.c
+@@ -20,8 +20,8 @@
+ #include "../../core.h"
+ #include "../../stringlib.h"
+ 
+-#define INFO_BEGIN "</div><div style=\"text-align:center;\">"
+-#define INFO_ENDIN " <a href=\""
++#define INFO_BEGIN "</script>\n</div>\n"
++#define INFO_ENDIN "<div class=\"lyrics_below_ad2\">"
+ 
+ static const char * lyrics_lyricsreg_url (GlyrQuery * s)
+ {

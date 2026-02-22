@@ -1,3 +1,8 @@
+Lower loglevel to debug
+
+fix curl_easy_setopt warnings about wanting a long
+cf https://github.com/curl/curl/issues/9779
+include the right curl header
 Index: lib/core.c
 --- lib/core.c.orig
 +++ lib/core.c
@@ -10,3 +15,66 @@ Index: lib/core.c
  
  #include "stringlib.h"
  #include "core.h"
+@@ -48,7 +48,7 @@ static int _msg (const char * fmt, va_list params)
+ 
+     if (written != -1 && tmp_buf != NULL)
+     {
+-        g_log (G_LOG_DOMAIN,G_LOG_LEVEL_INFO,"%s",tmp_buf);
++        g_log (G_LOG_DOMAIN,G_LOG_LEVEL_DEBUG,"%s",tmp_buf);
+         g_free (tmp_buf);
+         tmp_buf = NULL;
+     }
+@@ -403,14 +403,14 @@ static struct header_data * retrieve_content_info (gch
+         info = g_malloc0 (sizeof (struct header_data) );
+         gchar * link_user_agent =  g_strdup_printf ("%s / linkvalidator",useragent);
+ 
+-        curl_easy_setopt (eh, CURLOPT_TIMEOUT, 10);
++        curl_easy_setopt (eh, CURLOPT_TIMEOUT, 10L);
+         curl_easy_setopt (eh, CURLOPT_NOSIGNAL, 1L);
+         curl_easy_setopt (eh, CURLOPT_USERAGENT, link_user_agent);
+         curl_easy_setopt (eh, CURLOPT_URL,url);
+-        curl_easy_setopt (eh, CURLOPT_FOLLOWLOCATION, TRUE);
++        curl_easy_setopt (eh, CURLOPT_FOLLOWLOCATION, (long)TRUE);
+         curl_easy_setopt (eh, CURLOPT_MAXREDIRS, 5L);
+-        curl_easy_setopt (eh, CURLOPT_HEADER,TRUE);
+-        curl_easy_setopt (eh, CURLOPT_SSL_VERIFYPEER, FALSE);
++        curl_easy_setopt (eh, CURLOPT_HEADER, (long)TRUE);
++        curl_easy_setopt (eh, CURLOPT_SSL_VERIFYPEER, (long)FALSE);
+ 
+         /* Dirty hack here: Amazon bitches at me when setting NOBODY to true *
+          * But otherwise large images won't pass with other providers        *
+@@ -418,11 +418,11 @@ static struct header_data * retrieve_content_info (gch
+          */
+         if (strstr (url,"amazon") != NULL)
+         {
+-            curl_easy_setopt (eh, CURLOPT_NOBODY,FALSE);
++            curl_easy_setopt (eh, CURLOPT_NOBODY,(long)FALSE);
+         }
+         else
+         {
+-            curl_easy_setopt (eh, CURLOPT_NOBODY,TRUE);
++            curl_easy_setopt (eh, CURLOPT_NOBODY,(long)TRUE);
+         }
+ 
+         curl_easy_setopt (eh, CURLOPT_HEADERFUNCTION, header_cb);
+@@ -477,9 +477,9 @@ static DLBufferContainer * DL_setopt (CURL *eh, GlyrMe
+     // Pass vars to curl
+     curl_easy_setopt (eh, CURLOPT_URL, url);
+     curl_easy_setopt (eh, CURLOPT_PRIVATE, magic_private_ptr);
+-    curl_easy_setopt (eh, CURLOPT_VERBOSE, (s && s->verbosity >= 4) );
++    curl_easy_setopt (eh, CURLOPT_VERBOSE, (long) (s && s->verbosity >= 4) );
+     curl_easy_setopt (eh, CURLOPT_WRITEFUNCTION, DL_buffer);
+-    curl_easy_setopt (eh, CURLOPT_SSL_VERIFYPEER, FALSE);
++    curl_easy_setopt (eh, CURLOPT_SSL_VERIFYPEER, (long) FALSE);
+ 
+     DLBufferContainer * dlbuffer = g_malloc0 (sizeof (DLBufferContainer) );
+     curl_easy_setopt (eh, CURLOPT_WRITEDATA, (void *) dlbuffer);
+@@ -489,7 +489,7 @@ static DLBufferContainer * DL_setopt (CURL *eh, GlyrMe
+ 
+     // amazon plugin requires redirects
+     curl_easy_setopt (eh, CURLOPT_FOLLOWLOCATION, 1L);
+-    curl_easy_setopt (eh, CURLOPT_MAXREDIRS, (s) ? s->redirects : 2);
++    curl_easy_setopt (eh, CURLOPT_MAXREDIRS, (long) ((s) ? s->redirects : 2));
+ 
+     // Do not download 404 pages
+     curl_easy_setopt (eh, CURLOPT_FAILONERROR, 1L);

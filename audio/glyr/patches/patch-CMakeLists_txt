@@ -1,5 +1,17 @@
---- CMakeLists.txt.orig	Mon Jan 19 00:47:10 2015
-+++ CMakeLists.txt	Wed Jun 17 20:30:15 2015
+chunk 1: https://github.com/sahib/glyr/pull/104
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -38,7 +38,7 @@ ENDIF()
+ # ------------------------------------------------
+ SET(GLYR_VERSION_MAJOR "1")
+ SET(GLYR_VERSION_MINOR "0")
+-SET(GLYR_VERSION_MICRO "9")
++SET(GLYR_VERSION_MICRO "10")
+ SET(GLYR_VERSION_NAME  "Raving Raven")
+ # ------------------------------------------------
+ 
 @@ -92,6 +92,7 @@ FIND_PACKAGE(CURL REQUIRED)
  PKG_CHECK_MODULES(GLIBPKG glib-2.0>=2.10 gthread-2.0 REQUIRED)
  PKG_CHECK_MODULES(SQLITE3 sqlite3 REQUIRED)

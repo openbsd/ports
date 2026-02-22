@@ -1,0 +1,39 @@
+Index: lib/intern/relations/musicbrainz.c
+--- lib/intern/relations/musicbrainz.c.orig
++++ lib/intern/relations/musicbrainz.c
+@@ -23,9 +23,12 @@
+ 
+ /////////////////////////////////
+ 
+-#define RELATION_TARGLYR_GET_TYPE "<relation-list target-type=\"Url\">"
++#define RELATION_TARGLYR_GET_TYPE "<relation-list target-type=\"url\">"
+ #define RELATION_BEGIN_TYPE  "<relation"
+ 
++#define TARGET_BEGIN "<target "
++#define TARGET_ENDIN "</target>"
++
+ /* Wrap around the (a bit more) generic versions */
+ static GList * relations_musicbrainz_parse (cb_object * capo)
+ {
+@@ -46,8 +49,11 @@ static GList * relations_musicbrainz_parse (cb_object 
+             while (continue_search (ctr,capo->s) && (node = strstr (node+nlen,RELATION_BEGIN_TYPE) ) )
+             {
+                 node += nlen;
+-                gchar * target = get_search_value (node,"target=\"","\"");
++                gchar * targetn = get_search_value (node, TARGET_BEGIN, TARGET_ENDIN);
+                 gchar * type   = get_search_value (node,"type=\"","\"");
++                // strip id="xxxx">
++                gchar* target = strstr(targetn, ">");
++                target++;
+ 
+                 if (type != NULL && target != NULL)
+                 {
+@@ -59,7 +65,7 @@ static GList * relations_musicbrainz_parse (cb_object 
+                     ctr++;
+ 
+                     g_free (type);
+-                    g_free (target);
++                    g_free (targetn);
+                 }
+             }
+         }

@@ -1,0 +1,123 @@
+XXX needs to parse the returned XML
+taken/adapted from similar_artist & cover implems
+
+only returns the dummy picture 2a96cbd8b46e442fc41c2b86b821562f.png ?
+
+Index: lib/intern/photos/lastfm.c
+--- lib/intern/photos/lastfm.c.orig
++++ lib/intern/photos/lastfm.c
+@@ -28,79 +28,57 @@
+ 
+ static const gchar * photos_lastfm_url (GlyrQuery * settings)
+ {
+-    return "http://ws.audioscrobbler.com/2.0/?method=artist.getimages&autocorrect=1&artist=${artist}&api_key="API_KEY_LASTFM;
++    return "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&autocorrect=1&artist=${artist}&api_key="API_KEY_LASTFM;
+ }
+ 
+ /////////////////////////////////
+ 
+-static gboolean size_fits (GlyrQuery * s, gchar ** ref)
+-{
+-    gboolean result = FALSE;
+-    if (ref != NULL)
+-    {
+-        gchar * search_ptr = ref[0];
+-        if (search_ptr != NULL)
+-        {
+-            search_ptr = strchr (search_ptr,'"');
+-
+-            gint ratio = 0;
+-            gchar * width_string  = get_search_value (search_ptr,"width=\"","\"");
+-            gchar * height_string = get_search_value (search_ptr,"height=\"","\"");
+-            if (width_string && height_string)
+-            {
+-                ratio  = (strtol (width_string,NULL,10) + strtol (height_string,NULL,10) ) /2;
+-            }
+-            g_free (width_string);
+-            g_free (height_string);
+-
+-            gboolean original_size_allowed = TRUE;
+-            if (g_strstr_len (ref[0],100,"original") != NULL)
+-            {
+-                /* Deny extremelly large images by default, except explicitely wanted */
+-                if (! (ratio >= 1000 && s->img_min_size >= 1000 && s->img_max_size == -1) )
+-                {
+-                    original_size_allowed = FALSE;
+-                }
+-            }
+-
+-            if (size_is_okay (ratio, s->img_min_size, s->img_max_size) == TRUE && original_size_allowed == TRUE)
+-            {
+-                result = TRUE;
+-            }
+-
+-            search_ptr = strchr (search_ptr,'>');
+-        }
+-        ref[0] = search_ptr + 1;
+-    }
+-    return result;
+-}
+-
+ /////////////////////////////////
+ 
+ static GList * photos_lastfm_parse (cb_object * capo)
+ {
+-    gchar * root = capo->cache->data;
++    /* Handle size requirements (Default to large) */
++    const gchar * tag_ssize = NULL ;
++    const gchar * tag_esize = "</image>";
++
++    /* find desired size */
++    if ( size_is_okay (300,capo->s->img_min_size,capo->s->img_max_size) )
++        tag_ssize = "<image size=\"extralarge\">";
++    else if ( size_is_okay (125,capo->s->img_min_size,capo->s->img_max_size) )
++        tag_ssize = "<image size=\"large\">";
++    else if ( size_is_okay (64, capo->s->img_min_size,capo->s->img_max_size) )
++        tag_ssize = "<image size=\"middle\">";
++    else if ( size_is_okay (34, capo->s->img_min_size,capo->s->img_max_size) )
++        tag_ssize = "<image size=\"small\">";
++    else if ( true || false )
++        tag_ssize = "<image size=\"extralarge\">";
++
++    /* The result (perhaps) */
+     GList * result_list = NULL;
++    gchar * find  = capo->cache->data;
+ 
+-    while (continue_search (g_list_length (result_list),capo->s) && (root = strstr (root,SIZE_FO) ) != NULL)
++    while (continue_search (g_list_length (result_list),capo->s) && (find = strstr (find+1, "<artist>") ) != NULL)
+     {
+-        gchar * begin = root + strlen (SIZE_FO);
+-        if (size_fits (capo->s,&begin) == TRUE)
+-        {
+-            gchar * endin = strstr (begin,URL_ENDIN);
+-            if (endin != NULL)
++        gchar * artist = get_search_value (find, "<name>", "</name>");
++
++        if (levenshtein_strnormcmp (capo->s, artist, capo->s->artist) <= capo->s->fuzzyness) {
++
++            gchar * img_start = strstr(find, tag_ssize);
++
++            if (img_start != NULL)
+             {
+-                gchar * urlb = copy_value (begin,endin);
+-                if (urlb != NULL)
++                gchar * url = get_search_value (find, (gchar*) tag_ssize, (gchar*) tag_esize);
++                if (url != NULL)
+                 {
+-                    GlyrMemCache * cache = DL_init();
+-                    cache->data = urlb;
+-                    cache->size = strlen (urlb);
+-                    result_list = g_list_prepend (result_list,cache);
++                    GlyrMemCache * result = DL_init();
++                    result->data = url;
++                    result->size = strlen (url);
++                    result_list = g_list_prepend (result_list,result);
+                 }
+             }
+         }
+-        root += (sizeof SIZE_FO) - 1;
++
++        g_free (artist);
+     }
+     return result_list;
+ }

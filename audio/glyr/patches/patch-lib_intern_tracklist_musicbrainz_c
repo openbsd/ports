@@ -1,0 +1,43 @@
+port to MB API v2
+
+Index: lib/intern/tracklist/musicbrainz.c
+--- lib/intern/tracklist/musicbrainz.c.orig
++++ lib/intern/tracklist/musicbrainz.c
+@@ -22,17 +22,33 @@
+ 
+ static const gchar * tracklist_musicbrainz_url (GlyrQuery * sets)
+ {
+-    return "http://musicbrainz.org/ws/1/release/?type=xml&artist=${artist}&releasetypes=Official&limit=10&title=${album}&limit=1";
++    return "http://musicbrainz.org/ws/2/release/?query=artist:${artist}%20AND%20release=${album}&limit=1";
+ }
+ 
+ /////////////////////////////////
+ 
+ #define REL_ID_BEGIN "id=\""
+ #define REL_ID_ENDIN "\" "
+-#define REL_ID_FORM  "http://musicbrainz.org/ws/1/release/%s?type=xml&inc=tracks"
++#define REL_ID_FORM  "http://musicbrainz.org/ws/2/release/%s?inc=recordings"
+ 
+-#define DUR_BEGIN "<duration>"
+-#define DUR_ENDIN "</duration>"
++/* parse the following XML
++
++        <track-list count="7" offset="0">
++          <track id="478cde5a-9b3e-401a-a4c8-ebf6ce12e3ff">
++            <position>1</position>
++            <number>1</number>
++            <length>253000</length>
++            <recording id="387cff95-595c-4625-afbf-2fb0a8c02e95">
++              <title>Les Ailes d’un ange</title>
++              <length>253000</length>
++              <first-release-date>2016</first-release-date>
++            </recording>
++          </track>
++
++*/
++
++#define DUR_BEGIN "<length>"
++#define DUR_ENDIN "</length>"
+ #define TIT_BEGIN "<title>"
+ #define TIT_ENDIN "</title>"
+ 

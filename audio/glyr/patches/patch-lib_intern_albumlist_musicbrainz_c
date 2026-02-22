@@ -1,0 +1,68 @@
+adapt for musicbrainz api v2
+
+Index: lib/intern/albumlist/musicbrainz.c
+--- lib/intern/albumlist/musicbrainz.c.orig
++++ lib/intern/albumlist/musicbrainz.c
+@@ -23,7 +23,7 @@
+ 
+ static const gchar * albumlist_musicbrainz_url (GlyrQuery * sets)
+ {
+-    return "http://musicbrainz.org/ws/1/release/?type=xml&artist=${artist}&limit=100";
++    return "http://musicbrainz.org/ws/2/release/?query=artist:${artist}&limit=100";
+ }
+ 
+ /////////////////////////////////////////////////////////////
+@@ -33,6 +33,8 @@ static const gchar * albumlist_musicbrainz_url (GlyrQu
+ #define TYPE_BEGIN "type=\""
+ #define TYPE_ENDIN "\" "
+ 
++#define GROUP_BEGIN "<release-group "
++#define GROUP_ENDIN "</release-group>"
+ 
+ #define ARTIST_BEGIN "<name>"
+ #define ARTIST_ENDIN "</name>"
+@@ -40,6 +42,9 @@ static const gchar * albumlist_musicbrainz_url (GlyrQu
+ #define TITLE_BEGIN "<title>"
+ #define TITLE_ENDIN "</title>"
+ 
++
++#define STATUS_BEGIN "<status "
++#define STATUS_ENDIN "</status>"
+ /////////////////////////////////////////////////////////////
+ 
+ static bool is_in_list (GList * list, const char * to_cmp)
+@@ -70,8 +75,8 @@ static bool type_is_valid (const char * type)
+         return result;
+ 
+     static const char * valid_types[] = {
+-        "Single Official",
+-        "Album Official",
++        "Single",
++        "Album",
+         NULL
+     };
+ 
+@@ -97,8 +102,12 @@ static GList * albumlist_musicbrainz_parse (cb_object 
+     while (continue_search (g_list_length (result_list),capo->s) &&
+             (node = strstr (node + 1, ALBUM_BEGIN) ) != NULL)
+     {
+-        gchar * type = get_search_value (node, TYPE_BEGIN, TYPE_ENDIN);
+-        if (type_is_valid (type)) 
++        gchar * rg = get_search_value (node, GROUP_BEGIN, GROUP_ENDIN);
++        gchar * type = get_search_value (rg, TYPE_BEGIN, TYPE_ENDIN);
++        gchar * statusn = get_search_value (node, STATUS_BEGIN, STATUS_ENDIN);
++        gchar * status = strstr(statusn, ">");
++        status++;
++        if (type_is_valid (type) && g_strcmp0(status, "Official") == 0)
+         {
+             gchar * artist = get_search_value (node,ARTIST_BEGIN, ARTIST_ENDIN);
+             if (artist != NULL && 
+@@ -123,6 +132,8 @@ static GList * albumlist_musicbrainz_parse (cb_object 
+         }
+ 
+         g_free (type);
++        g_free (rg);
++        g_free (statusn);
+     }
+     return result_list;
+ }

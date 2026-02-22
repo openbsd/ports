@@ -1,0 +1,58 @@
+https://github.com/sahib/glyr/issues/102
+
+Index: lib/intern/lyrics/magistrix.c
+--- lib/intern/lyrics/magistrix.c.orig
++++ lib/intern/lyrics/magistrix.c
+@@ -29,13 +29,16 @@ static const char * lyrics_magistrix_url (GlyrQuery * 
+ 
+ ///////////////////////////////////
+ 
++#define MAGISTRIX_LYRIC_START_INDICATOR "<i class=\"icon-twitter\"></i>\n</button>\n</div>\n"
++#define MAGISTRIX_LYRICS_END_INDICATOR "</div>\n<p class='hidden-xs'>"
++
+ static GlyrMemCache * parse_lyric_page (GlyrMemCache * cache)
+ {
+     GlyrMemCache * result = NULL;
+     g_return_val_if_fail (cache,NULL);
+     g_return_val_if_fail (cache->data,NULL);
+ 
+-    gchar * data = get_search_value (cache->data,"id='songtext'>","<div class='lyric-actions'>");
++    gchar * data = get_search_value (cache->data, MAGISTRIX_LYRIC_START_INDICATOR, MAGISTRIX_LYRICS_END_INDICATOR);
+     if (data != NULL)
+     {
+         result = DL_init();
+@@ -49,11 +52,11 @@ static GlyrMemCache * parse_lyric_page (GlyrMemCache *
+ 
+ ///////////////////////////////////
+ 
+-#define SEARCH_FIRST_RESULT "<table class='searchresult'>"
+-#define SEARCH_LAST_RESULT  "</table>"
+-#define SEARCH_NODE "<div class='title'>"
+-#define SEARCH_LINK_START "&ndash;\n<a href=\""
+-#define SEARCH_LINK_END   "\" class"
++#define SEARCH_FIRST_RESULT "<ol class='list-unstyled search-results'>"
++#define SEARCH_LAST_RESULT  "</ol>"
++#define SEARCH_NODE "<li class='lyric search-result'>"
++#define SEARCH_LINK_START "<a class=\"search-title\" data-track-event=\"Search/click/Lyric\" href=\""
++#define SEARCH_LINK_END   "\">"
+ 
+ static GList * parse_search_result_page (cb_object * capo)
+ {
+@@ -93,12 +96,15 @@ static GList * parse_search_result_page (cb_object * c
+ 
+ ///////////////////////////////////
+ 
++#define MAGISTRIX_SEARCH_RESULT_TITLE "<title>Deine Suchergebnisse"
++#define MAGISTRIX_SEARCH_RESULT_FAILURE "Es konnten leider keine Ergebnisse gefunden werden."
++
+ static GList * lyrics_magistrix_parse (cb_object * capo)
+ {
+     GList * result_list = NULL;
+-    if (strstr (capo->cache->data,"Es wurden keine Songtexte gefunden") == NULL) /* "No songtext" page? */
++    if (strstr (capo->cache->data, MAGISTRIX_SEARCH_RESULT_FAILURE) == NULL) /* "No songtext" page? */
+     {
+-        if (strstr (capo->cache->data,"<title>Songtext-Suche</title>") == NULL) /* Are we not on the search result page? */
++        if (strstr (capo->cache->data, MAGISTRIX_SEARCH_RESULT_TITLE) == NULL) /* Are we not on the search result page? */
+         {
+             GlyrMemCache * result = parse_lyric_page (capo->cache);
+             if (result != NULL)

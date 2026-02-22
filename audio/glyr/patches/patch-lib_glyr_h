@@ -1,0 +1,14 @@
+https://github.com/sahib/glyr/issues/99
+
+Index: lib/glyr.h
+--- lib/glyr.h.orig
++++ lib/glyr.h
+@@ -18,7 +18,7 @@
+ * along with glyr. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************/
+ #ifndef GLYR_H
+-#define GLYR_GLYR_H
++#define GLYR_H
+ 
+ /**
+  * SECTION:glyr
