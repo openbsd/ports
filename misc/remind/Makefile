@@ -1,7 +1,7 @@
 COMMENT=	scripting language for reminders, with a Tk front end
 
-DISTNAME=	remind-06.02.03
-PKGNAME=	remind-6.2.3
+DISTNAME=	remind-06.02.04
+PKGNAME=	remind-6.2.4
 
 CATEGORIES=	misc
 
