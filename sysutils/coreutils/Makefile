@@ -1,8 +1,7 @@
 COMMENT =		file, shell and text manipulation utilities
 
-DISTNAME =		coreutils-9.7
+DISTNAME =		coreutils-9.10
 CATEGORIES =		sysutils
-REVISION =		0
 
 HOMEPAGE =		https://www.gnu.org/software/coreutils/coreutils.html
 
@@ -24,7 +23,6 @@ CONFIGURE_ARGS =	--program-prefix=g \
 # supply result to skip a test that will abort configure if run as root
 CONFIGURE_ENV +=	gl_cv_func_mknod_works=no
 
-# Fixes a spurrious test failure
 PORTHOME =		${WRKDIR}
 
 # Prevent conflicts with: id, gpr and god

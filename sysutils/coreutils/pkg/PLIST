@@ -13,7 +13,6 @@
 @bin bin/gbasename
 @bin bin/gbasenc
 @bin bin/gcat
-@bin bin/gchcon
 @bin bin/gchgrp
 @bin bin/gchmod
 @bin bin/gchown
@@ -46,7 +45,6 @@
 @bin bin/ghostid
 @bin bin/ginstall
 @bin bin/gjoin
-@bin bin/gkill
 @bin bin/glink
 @bin bin/gln
 @bin bin/glogname
@@ -73,7 +71,6 @@
 @bin bin/grealpath
 @bin bin/grm
 @bin bin/grmdir
-@bin bin/gruncon
 @bin bin/gseq
 @bin bin/gsha1sum
 @bin bin/gsha224sum
@@ -105,7 +102,6 @@
 @bin bin/gunexpand
 @bin bin/guniq
 @bin bin/gunlink
-@bin bin/guptime
 @bin bin/gusers
 @bin bin/gvdir
 @bin bin/gwc
@@ -122,7 +118,6 @@ libexec/coreutils/
 @man man/man1/gbasename.1
 @man man/man1/gbasenc.1
 @man man/man1/gcat.1
-@man man/man1/gchcon.1
 @man man/man1/gchgrp.1
 @man man/man1/gchmod.1
 @man man/man1/gchown.1
@@ -155,7 +150,6 @@ libexec/coreutils/
 @man man/man1/ghostid.1
 @man man/man1/ginstall.1
 @man man/man1/gjoin.1
-@man man/man1/gkill.1
 @man man/man1/glink.1
 @man man/man1/gln.1
 @man man/man1/glogname.1
@@ -182,7 +176,6 @@ libexec/coreutils/
 @man man/man1/grealpath.1
 @man man/man1/grm.1
 @man man/man1/grmdir.1
-@man man/man1/gruncon.1
 @man man/man1/gseq.1
 @man man/man1/gsha1sum.1
 @man man/man1/gsha224sum.1
@@ -214,7 +207,6 @@ libexec/coreutils/
 @man man/man1/gunexpand.1
 @man man/man1/guniq.1
 @man man/man1/gunlink.1
-@man man/man1/guptime.1
 @man man/man1/gusers.1
 @man man/man1/gvdir.1
 @man man/man1/gwc.1
@@ -226,6 +218,11 @@ share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/coreutils.mo
 share/locale/af/LC_TIME/
 share/locale/af/LC_TIME/coreutils.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/coreutils.mo
+share/locale/ar/LC_TIME/
+share/locale/ar/LC_TIME/coreutils.mo
 share/locale/be/LC_MESSAGES/coreutils.mo
 share/locale/be/LC_TIME/
 share/locale/be/LC_TIME/coreutils.mo
