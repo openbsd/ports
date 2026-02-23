@@ -1,0 +1,15 @@
+Index: moo.y
+--- moo.y.orig
++++ moo.y
+@@ -317,7 +317,10 @@ main(int argc, char *argv[])
+ {
+ 	int ch;
+ 
+-	if (pledge("stdio tmppath", NULL) == -1)
++	if (unveil("/tmp", "rwc") == -1)
++		err(1, "unveil");
++
++	if (pledge("stdio rpath wpath cpath", NULL) == -1)
+ 		err(1, "pledge");
+ 
+ 	while ((ch = getopt(argc, argv, "0123456789b:lsuw:")) != -1)
