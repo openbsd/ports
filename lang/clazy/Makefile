@@ -2,9 +2,8 @@ BROKEN-sparc64 = Uses clang-cpp libraries and fails to link with either ports-gc
 
 COMMENT =	static source code analyzer for Qt-based C++
 
-V =		1.16
-PKGNAME =	clazy-${V}
-DISTNAME =	clazy-v${V}
+V =		1.17
+DISTNAME =	clazy-${V}
 
 CATEGORIES =	lang devel
 
@@ -35,6 +34,8 @@ LIB_DEPENDS =		${MODCLANG_LIB_DEPENDS} \
 CONFIGURE_ARGS =	-DLLVM_ROOT="${LOCALBASE}/llvm${MODCLANG_VERSION}"
 
 CXXFLAGS +=              -I${LOCALBASE}/include
+
+WRKSRC =		${WRKDIR}/clazy-v${V}
 
 NO_TEST =		Yes
 
