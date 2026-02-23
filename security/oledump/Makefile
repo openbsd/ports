@@ -1,12 +1,14 @@
 COMMENT =	analyze OLE files
 
-MODPY_DISTV =	0.0.79
+MODPY_DISTV =	0.0.82
 DISTNAME =	oledump_V${MODPY_DISTV:S/./_/g}
 PKGNAME =	oledump-${MODPY_DISTV}
 
 CATEGORIES =	security
 
-HOMEPAGE =	http://blog.didierstevens.com/programs/oledump-py/
+HOMEPAGE =	https://blog.didierstevens.com/programs/oledump-py/
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # public domain
 PERMIT_PACKAGE =	Yes

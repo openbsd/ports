@@ -12,6 +12,7 @@ share/oledump/plugin_dridex.py
 share/oledump/plugin_dttm.py
 share/oledump/plugin_hifo.py
 share/oledump/plugin_http_heuristics.py
+share/oledump/plugin_hyperlink.py
 share/oledump/plugin_jumplist.py
 share/oledump/plugin_linear.py
 share/oledump/plugin_metadata.py
