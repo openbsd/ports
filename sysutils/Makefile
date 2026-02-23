@@ -468,6 +468,7 @@
      SUBDIR += superscript
      SUBDIR += supervisor
      SUBDIR += supuner
+     SUBDIR += susmb
      SUBDIR += symon
      SUBDIR += sysclean
      SUBDIR += sysgen
