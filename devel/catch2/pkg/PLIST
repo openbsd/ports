@@ -54,6 +54,7 @@ include/catch2/generators/catch_generators_adapters.hpp
 include/catch2/generators/catch_generators_all.hpp
 include/catch2/generators/catch_generators_random.hpp
 include/catch2/generators/catch_generators_range.hpp
+include/catch2/generators/catch_generators_throw.hpp
 include/catch2/interfaces/
 include/catch2/interfaces/catch_interfaces_all.hpp
 include/catch2/interfaces/catch_interfaces_capture.hpp
@@ -110,6 +111,7 @@ include/catch2/internal/catch_noncopyable.hpp
 include/catch2/internal/catch_optional.hpp
 include/catch2/internal/catch_output_redirect.hpp
 include/catch2/internal/catch_parse_numbers.hpp
+include/catch2/internal/catch_path_filter.hpp
 include/catch2/internal/catch_platform.hpp
 include/catch2/internal/catch_polyfills.hpp
 include/catch2/internal/catch_preprocessor.hpp
@@ -219,6 +221,7 @@ share/doc/Catch2/contributing.md
 share/doc/Catch2/deprecations.md
 share/doc/Catch2/event-listeners.md
 share/doc/Catch2/faq.md
+share/doc/Catch2/filtering-execution-path.md
 share/doc/Catch2/generators.md
 share/doc/Catch2/limitations.md
 share/doc/Catch2/list-of-examples.md
