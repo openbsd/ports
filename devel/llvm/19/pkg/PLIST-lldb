@@ -1,6 +1,9 @@
 @option no-default-conflict
 @option is-branch
 @conflict lldb-${LLVM_PKGSPEC}
+@pkgpath devel/llvm/13,-lldb
+@pkgpath devel/llvm/16,-lldb
+@pkgpath devel/llvm/18,-lldb
 bin/lldb-${LLVM_MAJOR}
 bin/lldb-argdumper-${LLVM_MAJOR}
 bin/lldb-dap-${LLVM_MAJOR}

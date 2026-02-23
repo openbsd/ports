@@ -1,7 +1,6 @@
 @option no-default-conflict
 @option is-branch
 @conflict llvm-${LLVM_PKGSPEC}
-@pkgpath devel/llvm/${LLVM_MAJOR},-main
 bin/amdgpu-arch-${LLVM_MAJOR}
 bin/analyze-build-${LLVM_MAJOR}
 bin/bugpoint-${LLVM_MAJOR}

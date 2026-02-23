@@ -1,7 +1,10 @@
 @option no-default-conflict
 @option is-branch
 @conflict ${MODPY_PY_PREFIX}llvm-${LLVM_PKGSPEC}
-@conflict llvm-${LLVM_PKGSPEC}
+@pkgpath devel/llvm/13,-python
+@pkgpath devel/llvm/16,-python
+@pkgpath devel/llvm/17,-python
+@pkgpath devel/llvm/18,-python
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/__init__.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}/

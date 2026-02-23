@@ -1,6 +1,9 @@
 @option no-default-conflict
 @option is-branch
 @conflict libcxx-${LLVM_PKGSPEC}
+@pkgpath devel/llvm/13,-libcxx
+@pkgpath devel/llvm/16,-libcxx
+@pkgpath devel/llvm/18,-libcxx
 ${LLVM_BASE}/include/c++/
 ${LLVM_BASE}/include/c++/v1/
 ${LLVM_BASE}/include/c++/v1/__algorithm/
