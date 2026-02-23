@@ -2,7 +2,7 @@ COMMENT =	cli for Amazon EKS
 
 MODGO_MODNAME =	github.com/weaveworks/eksctl
 
-VERSION =	0.222.0
+VERSION =	0.223.0
 MODGO_VERSION =	v${VERSION}
 
 DISTNAME =	eksctl-${VERSION}

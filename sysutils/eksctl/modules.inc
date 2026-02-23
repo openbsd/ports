@@ -84,7 +84,7 @@ MODGO_MODULES =	\
 	github.com/aws/amazon-ec2-instance-selector/v3							 v3.1.2 \
 	github.com/aws/aws-sdk-go									 v1.55.5 \
 	github.com/aws/aws-sdk-go-v2									 v1.41.1 \
-	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream						 v1.7.3 \
+	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream						 v1.7.4 \
 	github.com/aws/aws-sdk-go-v2/config								 v1.32.7 \
 	github.com/aws/aws-sdk-go-v2/credentials							 v1.19.7 \
 	github.com/aws/aws-sdk-go-v2/feature/ec2/imds							 v1.18.17 \
@@ -92,29 +92,29 @@ MODGO_MODULES =	\
 	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2						 v2.7.17 \
 	github.com/aws/aws-sdk-go-v2/internal/ini							 v1.8.4 \
 	github.com/aws/aws-sdk-go-v2/internal/v4a							 v1.4.14 \
-	github.com/aws/aws-sdk-go-v2/service/autoscaling						 v1.62.1 \
-	github.com/aws/aws-sdk-go-v2/service/cloudformation						 v1.71.1 \
-	github.com/aws/aws-sdk-go-v2/service/cloudtrail							 v1.55.1 \
-	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs						 v1.61.1 \
+	github.com/aws/aws-sdk-go-v2/service/autoscaling						 v1.64.0 \
+	github.com/aws/aws-sdk-go-v2/service/cloudformation						 v1.71.5 \
+	github.com/aws/aws-sdk-go-v2/service/cloudtrail							 v1.55.5 \
+	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs						 v1.63.1 \
 	github.com/aws/aws-sdk-go-v2/service/cognitoidentityprovider					 v1.57.7 \
-	github.com/aws/aws-sdk-go-v2/service/ec2							 v1.275.0 \
-	github.com/aws/aws-sdk-go-v2/service/eks							 v1.77.0 \
-	github.com/aws/aws-sdk-go-v2/service/elasticloadbalancing					 v1.33.15 \
-	github.com/aws/aws-sdk-go-v2/service/elasticloadbalancingv2					 v1.54.2 \
+	github.com/aws/aws-sdk-go-v2/service/ec2							 v1.286.0 \
+	github.com/aws/aws-sdk-go-v2/service/eks							 v1.79.0 \
+	github.com/aws/aws-sdk-go-v2/service/elasticloadbalancing					 v1.33.19 \
+	github.com/aws/aws-sdk-go-v2/service/elasticloadbalancingv2					 v1.54.6 \
 	github.com/aws/aws-sdk-go-v2/service/eventbridge						 v1.39.3 \
-	github.com/aws/aws-sdk-go-v2/service/iam							 v1.52.2 \
+	github.com/aws/aws-sdk-go-v2/service/iam							 v1.53.2 \
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding					 v1.13.4 \
 	github.com/aws/aws-sdk-go-v2/service/internal/checksum						 v1.9.5 \
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url					 v1.13.17 \
 	github.com/aws/aws-sdk-go-v2/service/internal/s3shared						 v1.19.14 \
 	github.com/aws/aws-sdk-go-v2/service/kms							 v1.47.1 \
-	github.com/aws/aws-sdk-go-v2/service/outposts							 v1.57.8 \
+	github.com/aws/aws-sdk-go-v2/service/outposts							 v1.57.11 \
 	github.com/aws/aws-sdk-go-v2/service/pricing							 v1.34.3 \
 	github.com/aws/aws-sdk-go-v2/service/route53							 v1.52.2 \
 	github.com/aws/aws-sdk-go-v2/service/s3								 v1.82.0 \
 	github.com/aws/aws-sdk-go-v2/service/signin							 v1.0.5 \
 	github.com/aws/aws-sdk-go-v2/service/sqs							 v1.38.8 \
-	github.com/aws/aws-sdk-go-v2/service/ssm							 v1.67.4 \
+	github.com/aws/aws-sdk-go-v2/service/ssm							 v1.67.8 \
 	github.com/aws/aws-sdk-go-v2/service/sso							 v1.30.9 \
 	github.com/aws/aws-sdk-go-v2/service/ssooidc							 v1.35.13 \
 	github.com/aws/aws-sdk-go-v2/service/sts							 v1.41.6 \
@@ -857,13 +857,11 @@ MODGO_MODFILES =	\
 	github.com/aws/aws-sdk-go-v2/internal/configsources				 v1.3.34 \
 	github.com/aws/aws-sdk-go-v2/internal/configsources				 v1.3.36 \
 	github.com/aws/aws-sdk-go-v2/internal/configsources				 v1.4.13 \
-	github.com/aws/aws-sdk-go-v2/internal/configsources				 v1.4.14 \
 	github.com/aws/aws-sdk-go-v2/internal/configsources				 v1.4.7 \
 	github.com/aws/aws-sdk-go-v2/internal/configsources				 v1.4.9 \
 	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2				 v2.6.34 \
 	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2				 v2.6.36 \
 	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2				 v2.7.13 \
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2				 v2.7.14 \
 	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2				 v2.7.7 \
 	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2				 v2.7.9 \
 	github.com/aws/aws-sdk-go-v2/internal/ini					 v1.8.3 \
@@ -877,7 +875,6 @@ MODGO_MODFILES =	\
 	github.com/aws/aws-sdk-go-v2/service/iam					 v1.42.2 \
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding			 v1.12.4 \
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding			 v1.13.1 \
-	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding			 v1.13.3 \
 	github.com/aws/aws-sdk-go-v2/service/internal/checksum				 v1.7.4 \
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url			 v1.12.17 \
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url			 v1.13.14 \
