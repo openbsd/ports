@@ -1,12 +1,11 @@
 COMMENT =	C++ coroutines for Qt
 
-V =		0.12.0
+V =		0.13.0
 GH_ACCOUNT =	danvratil
 GH_PROJECT =	qcoro
 GH_TAGNAME =	v${V}
 
 FULLPKGNAME=	qcoro-${V}
-REVISION=	4
 
 CATEGORIES =	devel
 
