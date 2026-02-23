@@ -20,8 +20,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c crypto curses execinfo icudata icui18n icuuc m perl readline ssl xml2 z
 
-SITES=		https://ftp.postgresql.org/pub/source/v${VERSION}/ \
-		ftp://ftp.postgresql.org/pub/source/v${VERSION}/
+SITES=		https://ftp.postgresql.org/pub/source/v${VERSION}/
 
 MAKE_FILE=	GNUmakefile
 

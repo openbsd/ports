@@ -28,8 +28,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses crypto m readline ssl z pthread
 
-SITES=		https://ftp.postgresql.org/pub/source/v${VERSION}/ \
-		ftp://ftp.postgresql.org/pub/source/v${VERSION}/
+SITES=		https://ftp.postgresql.org/pub/source/v${VERSION}/
 MULTI_PACKAGES=	-docs -main -server -contrib -pg_upgrade -plpython
 
 MAKE_FILE=	GNUmakefile
