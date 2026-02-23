@@ -1,0 +1,17 @@
+From 4bd79e397304d46dfccd76f36c07f66c0295ff82 Mon Sep 17 00:00:00 2001
+From: Amin Vakil <info@aminvakil.com>
+Date: Sun, 22 Feb 2026 19:37:16 +0330
+Subject: [PATCH] Increase chardet upper limit to 7
+
+Index: src/requests/__init__.py
+--- src/requests/__init__.py.orig
++++ src/requests/__init__.py
+@@ -76,7 +76,7 @@ def check_compatibility(urllib3_version, chardet_versi
+         major, minor, patch = chardet_version.split(".")[:3]
+         major, minor, patch = int(major), int(minor), int(patch)
+         # chardet_version >= 3.0.2, < 6.0.0
+-        assert (3, 0, 2) <= (major, minor, patch) < (6, 0, 0)
++        assert (3, 0, 2) <= (major, minor, patch) < (7, 0, 0)
+     elif charset_normalizer_version:
+         major, minor, patch = charset_normalizer_version.split(".")[:3]
+         major, minor, patch = int(major), int(minor), int(patch)

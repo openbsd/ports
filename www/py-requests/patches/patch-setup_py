@@ -1,0 +1,17 @@
+From 4bd79e397304d46dfccd76f36c07f66c0295ff82 Mon Sep 17 00:00:00 2001
+From: Amin Vakil <info@aminvakil.com>
+Date: Sun, 22 Feb 2026 19:37:16 +0330
+Subject: [PATCH] Increase chardet upper limit to 7
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -98,7 +98,7 @@ setup(
+     extras_require={
+         "security": [],
+         "socks": ["PySocks>=1.5.6, !=1.5.7"],
+-        "use_chardet_on_py3": ["chardet>=3.0.2,<6"],
++        "use_chardet_on_py3": ["chardet>=3.0.2,<7"],
+     },
+     project_urls={
+         "Documentation": "https://requests.readthedocs.io",
