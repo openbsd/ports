@@ -3,7 +3,7 @@ Add pledge and unveil
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -140,6 +140,51 @@ sigend_handler(int sig)
+@@ -140,6 +140,45 @@ sigend_handler(int sig)
      longjmp(sigend_jmp_buf, 1);
  }
  
@@ -11,41 +11,35 @@ Index: src/main.c
 +setup_pledge(struct iperf_test *test)
 +{
 +#if defined(__OpenBSD__)
-+    int needwr = 0;
-+
 +    /* Check for options which require filesystem access */
 +    if (test->diskfile_name) {
-+	if (unveil(test->diskfile_name, "crw") == -1) {
++	if (unveil(test->diskfile_name, "rwc") == -1) {
 +	    /* XXX read for client, write for server */
 +	    fprintf(stderr, "unveil diskfile: %s\n", strerror(errno));
 +	    exit(1);
 +	}
-+	needwr = 1;
 +    }
 +
 +    if (test->pidfile) {
-+	if (unveil(test->pidfile, "cw") == -1) {
++	if (unveil(test->pidfile, "wc") == -1) {
 +	    fprintf(stderr, "unveil pidfile: %s\n", strerror(errno));
 +	    exit(1);
 +	}
-+	needwr = 1;
 +    }
 +
 +    if (test->logfile) {
-+	if (unveil(test->logfile, "cwr") == -1) {
++	if (unveil(test->logfile, "rwc") == -1) {
 +	    fprintf(stderr, "unveil logfile: %s\n", strerror(errno));
 +	    exit(1);
 +	}
-+	needwr = 1;
 +    }
 +
-+    /* Drop filesystem access if we can, otherwise lock unveil */
-+    if (needwr == 0) {
-+	if (pledge("stdio tmppath inet dns", NULL) == -1) {
-+	    fprintf(stderr, "pledge !needwr: %s\n", strerror(errno));
-+	    exit(1);
-+	}
-+    } else if (pledge("stdio tmppath rpath cpath wpath inet dns", NULL) == -1) {
++    if (unveil("/tmp", "rwc") == -1) {
++	fprintf(stderr, "unveil tmp: %s\n", strerror(errno));
++	exit(1);
++    }
++
++    if (pledge("stdio rpath cpath wpath inet dns", NULL) == -1) {
 +	fprintf(stderr, "pledge: %s\n", strerror(errno));
 +	exit(1);
 +    }
@@ -55,7 +49,7 @@ Index: src/main.c
  /**************************************************************************/
  static int
  run(struct iperf_test *test)
-@@ -162,6 +207,7 @@ run(struct iperf_test *test)
+@@ -162,6 +201,7 @@ run(struct iperf_test *test)
  		    iperf_errexit(test, "error - %s", iperf_strerror(i_errno));
  		}
  	    }
@@ -63,7 +57,7 @@ Index: src/main.c
  	    if (iperf_create_pidfile(test) < 0) {
  		i_errno = IEPIDFILE;
  		iperf_errexit(test, "error - %s", iperf_strerror(i_errno));
-@@ -194,6 +240,7 @@ run(struct iperf_test *test)
+@@ -194,6 +234,7 @@ run(struct iperf_test *test)
  	    iperf_delete_pidfile(test);
              break;
  	case 'c':
