@@ -1,11 +1,14 @@
-# XXX To keep the requirements list small, do not build the tree-sitter
-# program (written in rust) from this port.  Use a new port instead.
+# NOTE: To keep the dependency tree small, the tree-sitter-cli program
+# (written in Rust) is ported separately as textproc/tree-sitter-cli.
 
 COMMENT =	parser generator tool and incremental parsing library
 
 GH_ACCOUNT =		tree-sitter
 GH_PROJECT =		tree-sitter
-GH_TAGNAME =		v0.25.3
+# NOTE: neovim-0.11.* only builds with tree-sitter-0.25.x, so only update
+# tree-sitter at the same time as a neovim-0.12.x update (once released).
+# https://github.com/neovim/neovim/issues/36914
+GH_TAGNAME =		v0.25.10
 
 SHARED_LIBS +=		tree-sitter	5.0 # 0.25.3
 
