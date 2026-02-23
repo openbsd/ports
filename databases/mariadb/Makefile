@@ -8,6 +8,7 @@ VERSION=	11.4.10
 REVISION-tests=	0
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
+REVISION=	0
 EPOCH=		1
 
 CATEGORIES=	databases

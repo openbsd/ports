@@ -1,0 +1,16 @@
+- MDEV-38811 crash in information_schema.table_constraints when --skip-grant-tables
+  87309d3d4bb8f48910d05b0ca5ee989bcdd6b053
+
+Index: sql/sql_acl.cc
+--- sql/sql_acl.cc.orig
++++ sql/sql_acl.cc
+@@ -3873,6 +3873,9 @@ exit:
+ privilege_t acl_get_all3(Security_context *sctx, const char *db,
+                          bool db_is_patern)
+ {
++  if (!initialized)
++    return DB_ACLS;
++
+   privilege_t access= acl_get(sctx->host, sctx->ip,
+                               sctx->priv_user, db, db_is_patern);
+   if (sctx->priv_role[0])
