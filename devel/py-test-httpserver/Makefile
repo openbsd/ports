@@ -1,10 +1,9 @@
 COMMENT=	HTTP server for pytest
 
-MODPY_DISTV=	1.1.3
+MODPY_DISTV=	1.1.5
 DISTNAME=	pytest_httpserver-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/pytest_/py-test-/}
 CATEGORIES=	devel
-REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -15,7 +14,6 @@ MODPY_PI=	Yes
 
 RUN_DEPENDS=	www/py-werkzeug
 
-#TEST_DEPENDS=	${BUILD_PKGPATH}
 TEST_DEPENDS=	textproc/py-toml
 
 .include <bsd.port.mk>
