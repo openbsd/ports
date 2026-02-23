@@ -1,22 +1,22 @@
 COMMENT =	various text handling addons
 
-DISTNAME =	ktextaddons-1.8.0
+DISTNAME =	ktextaddons-1.9.1
 
-SHARED_LIBS +=  KF6TextAddonsWidgets      0.1 # 0.0
+SHARED_LIBS +=  KF6TextAddonsWidgets      1.0 # 0.0
 SHARED_LIBS +=  KF6TextAutoCorrectionCore 0.0 # 0.0
 SHARED_LIBS +=  KF6TextAutoCorrectionWidgets 0.0 # 0.0
-SHARED_LIBS +=  KF6TextCustomEditor       0.1 # 0.0
-SHARED_LIBS +=  KF6TextEditTextToSpeech   0.0 # 0.0
-SHARED_LIBS +=  KF6TextEmoticonsCore      2.0 # 0.0
+SHARED_LIBS +=  KF6TextCustomEditor       0.2 # 0.0
+SHARED_LIBS +=  KF6TextEditTextToSpeech   1.0 # 0.0
+SHARED_LIBS +=  KF6TextEmoticonsCore      2.1 # 0.0
 SHARED_LIBS +=  KF6TextEmoticonsWidgets   1.0 # 0.0
 SHARED_LIBS +=  KF6TextGrammarCheck       0.0 # 0.0
 SHARED_LIBS +=  KF6TextTranslator         1.0 # 0.0
-SHARED_LIBS +=  KF6TextUtils              0.0 # 0.0
-SHARED_LIBS +=	KF6TextAutoGenerateText   2.0 # 0.0
+SHARED_LIBS +=  KF6TextUtils              0.1 # 0.0
+SHARED_LIBS +=	KF6TextAutoGenerateText   3.0 # 0.0
 SHARED_LIBS +=	KF6TextSpeechToText       0.0 # 0.0
-SHARED_LIBS +=	textautogenerateollama    2.0 # 0.0
-SHARED_LIBS +=	textautogenerate-cmark-rc-copy 0.0 # 0.0
-SHARED_LIBS +=	textautogenerategenericnetwork 0.1 # 0.0
+SHARED_LIBS +=	textautogenerateollama    3.0 # 0.0
+SHARED_LIBS +=	textautogenerategenericnetwork 1.0 # 0.0
+SHARED_LIBS +=	textutils-cmark-rc-copy   0.0 # 0.0
 
 CATEGORIES =	textproc devel
 
@@ -56,7 +56,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kitemviews \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
-		security/qtkeychain,qt6 \
+		security/qtkeychain,qt6>=0.15 \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtspeech
 

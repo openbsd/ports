@@ -1,13 +1,49 @@
 include/KF6/TextAddonsWidgets/
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/ConfigurePluginsWidget
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/ExecutableUtils
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/NeedUpdateCheckExistingNewVersionJob
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/NeedUpdateParseHtmlJob
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/NeedUpdateParseHtmlUtil
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/NeedUpdateVersionUtils
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/NeedUpdateVersionWidget
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/OpenFileJob
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/PluginUtil
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/QuickSearchBar
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/QuickSearchBarWidget
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/RichTextQuickTextFormat
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/SaveFileUtils
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/SelectSpecialCharDialog
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/SlideContainer
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/VerifyNewVersionWidget
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/WhatsNewComboBoxWidget
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/WhatsNewDialog
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/WhatsNewInfo
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/WhatsNewMessageWidget
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/WhatsNewTranslationsBase
 include/KF6/TextAddonsWidgets/textaddonswidgets/
+include/KF6/TextAddonsWidgets/textaddonswidgets/configurepluginswidget.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/executableutils.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/needupdatecheckexistingnewversionjob.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/needupdateparsehtmljob.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/needupdateparsehtmlutil.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/needupdateversionutils.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/needupdateversionwidget.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/openfilejob.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/pluginutil.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/quicksearchbar.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/quicksearchbarwidget.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/richtextquicktextformat.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/savefileutils.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/selectspecialchardialog.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/slidecontainer.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/textaddonswidgets_export.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/verifynewversionwidget.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/whatsnewcomboboxwidget.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/whatsnewdialog.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/whatsnewinfo.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/whatsnewmessagewidget.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/whatsnewtranslationsbase.h
 include/KF6/TextAddonsWidgets/textaddonswidgets_version.h
 include/KF6/TextAutoCorrectionCore/
 include/KF6/TextAutoCorrectionCore/TextAutoCorrectionCore/
@@ -45,6 +81,8 @@ include/KF6/TextAutoGenerateText/TextAutoGenerateText/
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateAnswerInfo
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateAskJob
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateAttachment
+include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateAttachmentUtils
+include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateAttachments
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateChat
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateChatSettings
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateChatsModel
@@ -67,11 +105,13 @@ include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateNetworkPlu
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGeneratePluginText
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGeneratePluginTextInterface
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGeneratePluginTextManager
-include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGeneratePluginUtils
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateQuickAskDialog
+include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateQuickAskWidget
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateReply
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateSearchMessage
+include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateSearchMessageSettings
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateSearchMessagesModel
+include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateSettings
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateStackWidget
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateTextClient
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateTextConfigurePluginsWidget
@@ -91,9 +131,12 @@ include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateTextUtils
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateToolPluginConfigureWidget
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateWidget
 include/KF6/TextAutoGenerateText/textautogeneratetext/
+include/KF6/TextAutoGenerateText/textautogeneratetext/config-textautogeneratetext.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogenerateanswerinfo.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogenerateaskjob.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogenerateattachment.h
+include/KF6/TextAutoGenerateText/textautogeneratetext/textautogenerateattachments.h
+include/KF6/TextAutoGenerateText/textautogeneratetext/textautogenerateattachmentutils.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratechat.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratechatsettings.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratechatsmodel.h
@@ -116,16 +159,19 @@ include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratenetworkplu
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogenerateplugintext.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogenerateplugintextinterface.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogenerateplugintextmanager.h
-include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratepluginutils.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratequickaskdialog.h
+include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratequickaskwidget.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratereply.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratesearchmessage.h
+include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratesearchmessagesettings.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratesearchmessagesmodel.h
+include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratesettings.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratestackwidget.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratetext_export.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratetextclient.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratetextconfigurepluginswidget.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratetextconfigurepromptwidget.h
+include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratetextglobalconfig.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratetextinstance.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratetextinstancesmanager.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratetextinstancesmanagerdialog.h
@@ -341,9 +387,23 @@ include/KF6/TextTranslator/texttranslator_version.h
 include/KF6/TextUtils/
 include/KF6/TextUtils/TextUtils/
 include/KF6/TextUtils/TextUtils/ConvertText
+include/KF6/TextUtils/TextUtils/TextUtilsBlockCMarkSupport
+include/KF6/TextUtils/TextUtils/TextUtilsBlockCodeManager
+include/KF6/TextUtils/TextUtils/TextUtilsColorsAndMessageViewStyle
+include/KF6/TextUtils/TextUtils/TextUtilsCopyBlockIconCache
+include/KF6/TextUtils/TextUtils/TextUtilsIconNameCache
+include/KF6/TextUtils/TextUtils/TextUtilsSyntaxHighlighter
+include/KF6/TextUtils/TextUtils/TextUtilsSyntaxHighlightingManager
 include/KF6/TextUtils/textutils/
 include/KF6/TextUtils/textutils/converttext.h
 include/KF6/TextUtils/textutils/textutils_export.h
+include/KF6/TextUtils/textutils/textutilsblockcmarksupport.h
+include/KF6/TextUtils/textutils/textutilsblockcodemanager.h
+include/KF6/TextUtils/textutils/textutilscolorsandmessageviewstyle.h
+include/KF6/TextUtils/textutils/textutilscopyblockiconcache.h
+include/KF6/TextUtils/textutils/textutilsiconnamecache.h
+include/KF6/TextUtils/textutils/textutilssyntaxhighlighter.h
+include/KF6/TextUtils/textutils/textutilssyntaxhighlightingmanager.h
 include/KF6/TextUtils/textutils_version.h
 lib/cmake/KF6TextAddonsWidgets/
 lib/cmake/KF6TextAddonsWidgets/KF6TextAddonsWidgetsConfig.cmake
@@ -405,9 +465,9 @@ lib/cmake/KF6TextUtils/KF6TextUtilsConfig.cmake
 lib/cmake/KF6TextUtils/KF6TextUtilsConfigVersion.cmake
 lib/cmake/KF6TextUtils/KF6TextUtilsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6TextUtils/KF6TextUtilsTargets.cmake
-lib/cmake/textautogenerate-cmark-rc-copy/
-lib/cmake/textautogenerate-cmark-rc-copy/textautogenerate-cmark-rc-copy-targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/textautogenerate-cmark-rc-copy/textautogenerate-cmark-rc-copy-targets.cmake
+lib/cmake/textutils-cmark-rc-copy/
+lib/cmake/textutils-cmark-rc-copy/textutils-cmark-rc-copy-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/textutils-cmark-rc-copy/textutils-cmark-rc-copy-targets.cmake
 @lib lib/libKF6TextAddonsWidgets.so.${LIBKF6TextAddonsWidgets_VERSION}
 @lib lib/libKF6TextAutoCorrectionCore.so.${LIBKF6TextAutoCorrectionCore_VERSION}
 @lib lib/libKF6TextAutoCorrectionWidgets.so.${LIBKF6TextAutoCorrectionWidgets_VERSION}
@@ -420,9 +480,9 @@ lib/cmake/textautogenerate-cmark-rc-copy/textautogenerate-cmark-rc-copy-targets.
 @lib lib/libKF6TextSpeechToText.so.${LIBKF6TextSpeechToText_VERSION}
 @lib lib/libKF6TextTranslator.so.${LIBKF6TextTranslator_VERSION}
 @lib lib/libKF6TextUtils.so.${LIBKF6TextUtils_VERSION}
-@lib lib/libtextautogenerate-cmark-rc-copy.so.${LIBtextautogenerate-cmark-rc-copy_VERSION}
 @lib lib/libtextautogenerategenericnetwork.so.${LIBtextautogenerategenericnetwork_VERSION}
 @lib lib/libtextautogenerateollama.so.${LIBtextautogenerateollama_VERSION}
+@lib lib/libtextutils-cmark-rc-copy.so.${LIBtextutils-cmark-rc-copy_VERSION}
 @so lib/qt6/plugins/designer/textcustomeditor.so
 @so lib/qt6/plugins/designer/texttranslatorwidgets6.so
 lib/qt6/plugins/kf6/speechtotext/
@@ -554,6 +614,15 @@ share/locale/fr/LC_MESSAGES/libtextemoticons.mo
 share/locale/fr/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/fr/LC_MESSAGES/libtextspeechtotext.mo
 share/locale/fr/LC_MESSAGES/libtexttranslator.mo
+share/locale/ga/LC_MESSAGES/libtextaddonswidgets.mo
+share/locale/ga/LC_MESSAGES/libtextautocorrection.mo
+share/locale/ga/LC_MESSAGES/libtextautogeneratetext.mo
+share/locale/ga/LC_MESSAGES/libtextcustomeditor.mo
+share/locale/ga/LC_MESSAGES/libtextedittexttospeech.mo
+share/locale/ga/LC_MESSAGES/libtextemoticons.mo
+share/locale/ga/LC_MESSAGES/libtextgrammarcheck.mo
+share/locale/ga/LC_MESSAGES/libtextspeechtotext.mo
+share/locale/ga/LC_MESSAGES/libtexttranslator.mo
 share/locale/gl/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/gl/LC_MESSAGES/libtextautocorrection.mo
 share/locale/gl/LC_MESSAGES/libtextautogeneratetext.mo
