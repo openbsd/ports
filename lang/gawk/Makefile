@@ -1,6 +1,6 @@
 COMMENT=	GNU awk
 
-V=		5.3.2
+V=		5.4.0
 DISTNAME=	gawk-$V
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	lang
@@ -27,9 +27,7 @@ CONFIGURE_STYLE= gnu
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-
-# "persistent memory archive" (which saves/loads heap) segfaults
-CONFIGURE_ARGS=	--disable-pma
+TEST_ENV=	PAGER=cat
 
 # known test failures:
 #  "commas" due to not having a GNU extended printf format string.
