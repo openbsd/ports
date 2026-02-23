@@ -1,3 +1,5 @@
+# should be replaced with https://github.com/sgl-ut/gnsstk and https://github.com/sgl-ut/gnsstk-apps
+# GH_PROJECT=gnsstk
 COMMENT=		GPS processing toolkit
 
 V=			2.10
