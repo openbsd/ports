@@ -39,7 +39,7 @@ Index: gui-wx/makefile-gtk
  PYTHON_PREFS = -DPYTHON_SHLIB="$(PYTHON_SHLIB)"
  
  # default settings for zlib support, so clear these to build without zlib
-@@ -296,6 +287,11 @@ bindist: all
+@@ -290,6 +281,11 @@ bindist: all
  	find $(DIRNAME) -name '.[^.]*' -delete
  	find $(DIRNAME)/Scripts/Python -name '*.pyc' -delete
  	tar -cf - ./$(DIRNAME) | gzip > $(DIRNAME).tar.gz

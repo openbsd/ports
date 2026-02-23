@@ -1,6 +1,6 @@
 COMMENT =	game of life simulator
 
-PKGNAME =	golly-4.3
+PKGNAME =	golly-5.0
 DISTNAME =	${PKGNAME}-src
 
 CATEGORIES =	games math
