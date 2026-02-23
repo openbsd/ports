@@ -141,11 +141,22 @@ Index: llvm/lib/Target/X86/X86FrameLowering.cpp
          break;
        FirstCSPop = PI;
      }
+@@ -2571,8 +2641,8 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
+     if (TRI->hasStackRealignment(MF))
+       MBBI = FirstCSPop;
+     unsigned SEHFrameOffset = calculateSetFPREG(SEHStackAllocAmt);
+-    uint64_t LEAAmount =
+-        IsWin64Prologue ? SEHStackAllocAmt - SEHFrameOffset : -CSSize;
++    uint64_t LEAAmount = IsWin64Prologue ? SEHStackAllocAmt - SEHFrameOffset
++                                         : -(CSSize + X86FI->getSaveArgSize());
+ 
+     if (X86FI->hasSwiftAsyncContext())
+       LEAAmount -= 16;
 @@ -2718,6 +2788,9 @@ StackOffset X86FrameLowering::getFrameIndexReference(c
             "FPDelta isn't aligned per the Win64 ABI!");
    }
  
-+  if (FI >= 0)
++  if (FI >= 0 && FrameReg != TRI->getStackRegister())
 +    Offset -= X86FI->getSaveArgSize();
 +
    if (FrameReg == TRI->getFramePtr()) {

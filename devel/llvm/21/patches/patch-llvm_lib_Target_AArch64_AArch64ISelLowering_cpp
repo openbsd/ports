@@ -1,7 +1,27 @@
 Index: llvm/lib/Target/AArch64/AArch64ISelLowering.cpp
 --- llvm/lib/Target/AArch64/AArch64ISelLowering.cpp.orig
 +++ llvm/lib/Target/AArch64/AArch64ISelLowering.cpp
-@@ -27937,7 +27937,8 @@ void AArch64TargetLowering::ReplaceNodeResults(
+@@ -2744,6 +2744,19 @@ bool AArch64TargetLowering::allowsMisalignedMemoryAcce
+ bool AArch64TargetLowering::allowsMisalignedMemoryAccesses(
+     LLT Ty, unsigned AddrSpace, Align Alignment, MachineMemOperand::Flags Flags,
+     unsigned *Fast) const {
++
++  // Allow SVE loads/stores where the alignment >= the size of the element type,
++  // even with +strict-align. Predicated SVE loads/stores (e.g. ld1/st1), used
++  // for stores that come from IR, only require element-size alignment (even if
++  // unaligned accesses are disabled). Without this, these will be forced to
++  // have 16-byte alignment with +strict-align (and fail to lower as we don't
++  // yet support TLI.expandUnalignedLoad() and TLI.expandUnalignedStore()).
++  if (Ty.isScalableVector()) {
++    unsigned ElementSizeBits = Ty.getScalarSizeInBits();
++    if (ElementSizeBits % 8 == 0 && Alignment >= Align(ElementSizeBits / 8))
++      return true;
++  }
++
+   if (Subtarget->requiresStrictAlign())
+     return false;
+ 
+@@ -27937,7 +27950,8 @@ void AArch64TargetLowering::ReplaceNodeResults(
  }
  
  bool AArch64TargetLowering::useLoadStackGuardNode(const Module &M) const {

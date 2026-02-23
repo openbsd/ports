@@ -9,14 +9,22 @@ Index: libunwind/src/AddressSpace.hpp
  
  #include "libunwind.h"
  #include "config.h"
-@@ -152,7 +153,63 @@ struct UnwindInfoSections {
+@@ -152,6 +153,72 @@ struct UnwindInfoSections {
  #endif
  };
  
 +class UnwindInfoSectionsCache {
 +public:
- 
++
 +  struct CacheItem {
++    /*
++     * Implement new operator to avoid depending on libcxx.  By declaring
++     * it noexcept we can let it return nullptr under memory shortage.
++     */
++    void *operator new(size_t sz) noexcept {
++      return malloc(sz);
++    }
++
 +    CacheItem(UnwindInfoSections &uis, uintptr_t pc)
 +      : m_uis(uis), m_pc(pc) {
 +    }
@@ -60,7 +68,9 @@ Index: libunwind/src/AddressSpace.hpp
 +  }
 +
 +  void setUnwindInfoSectionsForPC(CacheItemKey key, UnwindInfoSections &uis) {
-+    CacheItem *p_item(new CacheItem(uis, key));
++    CacheItem *p_item = new CacheItem(uis, key);
++    if (p_item == nullptr)
++      return;
 +    RB_INSERT(CacheTree, &m_head, p_item);
 +  }
 +
@@ -69,18 +79,6 @@ Index: libunwind/src/AddressSpace.hpp
 +  RB_HEAD(CacheTree, CacheItem) m_head;
 +  RB_GENERATE(CacheTree, CacheItem, entry, CacheCmp);
 +};
-+
+ 
  /// LocalAddressSpace is used as a template parameter to UnwindCursor when
  /// unwinding a thread in the same process.  The wrappers compile away,
- /// making local unwinds fast.
-@@ -273,6 +330,10 @@ LocalAddressSpace::getEncodedP(pint_t &addr, pint_t en
-   pint_t startAddr = addr;
-   const uint8_t *p = (uint8_t *)addr;
-   pint_t result;
-+
-+  if (encoding == DW_EH_PE_omit) {
-+    return (pint_t)NULL;
-+  }
- 
-   // first get value
-   switch (encoding & 0x0F) {
