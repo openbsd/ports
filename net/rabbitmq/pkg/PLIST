@@ -1229,6 +1229,7 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_health_check_p
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_health_check_protocol_listener.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_health_check_quorum_queues_without_elected_leaders.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_health_check_quorum_queues_without_elected_leaders_across_all_vhosts.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_health_check_reached_target_cluster_size.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_health_check_ready_to_serve_clients.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_health_check_virtual_hosts.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_healthchecks.beam
