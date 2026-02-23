@@ -33,8 +33,6 @@ CONFIGURE_ARGS=	-Djbig=OFF \
 
 CONFIGURE_ARGS += -Dwebp=OFF # avoid build loop
 
-#		-Dtiff-tools-unsupported=ON \ # comms/hylafax needs tiff2ps and tiff2pdf
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man-prebuilt/*.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man-prebuilt/*.3tiff ${PREFIX}/man/man3
