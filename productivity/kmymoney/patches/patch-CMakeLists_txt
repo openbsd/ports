@@ -2,16 +2,16 @@ https://src.fedoraproject.org/rpms/kmymoney/blob/rawhide/f/kmymoney-fix-build-ag
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -183,7 +183,7 @@ if (PkgConfig_FOUND)
+@@ -196,7 +196,7 @@ if (PkgConfig_FOUND)
  endif()
  
  find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Core DBus Widgets Svg Xml Test PrintSupport)
 -find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} OPTIONAL_COMPONENTS Sql Concurrent QuickWidgets)
 +find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} OPTIONAL_COMPONENTS Sql SqlPrivate Concurrent QuickWidgets)
  
- find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Archive CoreAddons Config ConfigWidgets Crash I18n Completion KCMUtils ItemModels ItemViews Service XmlGui TextWidgets Notifications KIO)
- 
-@@ -425,12 +425,14 @@ kde_enable_exceptions()
+ if (Qt6Sql_VERSION VERSION_GREATER_EQUAL "6.10.0")
+   find_package(Qt6 REQUIRED COMPONENTS SqlPrivate)
+@@ -454,12 +454,14 @@ kde_enable_exceptions()
  
  # There is no way to detect linker in cmake (see https://gitlab.kitware.com/cmake/cmake/issues/17596)
  # and linkers aren't compatible with each other, so we need to assume something
@@ -28,7 +28,7 @@ Index: CMakeLists.txt
    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--as-needed")
    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--as-needed")
    # TODO: remove multiple definitions of payeeIdentifierLoader::createPayeeIdentifierFromSqlDatabase
-@@ -481,7 +483,9 @@ endif()
+@@ -510,7 +512,9 @@ endif()
  # IDEA: Set on a per target base
  set(CMAKE_POSITION_INDEPENDENT_CODE ON)
  

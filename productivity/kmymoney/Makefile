@@ -2,9 +2,8 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	personal finance manager
 
-V =		5.2.1
+V =		5.2.2
 DISTNAME =	kmymoney-${V}
-REVISION =	1
 
 CATEGORIES =	productivity x11
 
@@ -13,8 +12,8 @@ HOMEPAGE =	https://kmymoney.org
 SHARED_LIBS +=  kmm_csvimportercore       1.0 # 5.2.0
 SHARED_LIBS +=  kmm_icons                 1.0 # 5.2.0
 SHARED_LIBS +=  kmm_menus                 1.0 # 5.2.0
-SHARED_LIBS +=  kmm_models                1.0 # 5.2.0
-SHARED_LIBS +=  kmm_mymoney               2.0 # 5.2.0
+SHARED_LIBS +=  kmm_models                1.1 # 5.2.0
+SHARED_LIBS +=  kmm_mymoney               3.0 # 5.2.0
 SHARED_LIBS +=  kmm_payeeidentifier       1.0 # 5.1.0
 SHARED_LIBS +=  kmm_plugin                1.0 # 5.2.0
 SHARED_LIBS +=  kmm_printer               1.0 # 5.2.0
@@ -22,7 +21,7 @@ SHARED_LIBS +=  kmm_settings              1.0 # 5.2.0
 SHARED_LIBS +=  kmm_widgets               2.0 # 5.2.0
 
 SHARED_LIBS +=	kmm_base_dialogs          0.0 # 0.0
-SHARED_LIBS +=	kmm_base_widgets          0.0 # 0.0
+SHARED_LIBS +=	kmm_base_widgets          1.0 # 0.0
 SHARED_LIBS +=	kmm_extended_dialogs      0.0 # 0.0
 SHARED_LIBS +=	kmm_gpgfile               0.0 # 0.0
 SHARED_LIBS +=	kmm_keychain              0.0 # 0.0
@@ -45,18 +44,19 @@ EXTRACT_SUFX =	.tar.xz
 
 WANTLIB += ${COMPILER_LIBCXX} GL KChart6 KF6Archive KF6Bookmarks
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
-WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6GuiAddons KF6Holidays KF6I18n KF6ItemModels KF6ItemViews
-WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
-WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Notifications KF6Service KF6Solid KF6SonnetUi KF6TextWidgets
-WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Sql Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml alkimia6 assuan c db db_cxx gmp gpgme
-WANTLIB += gpgmepp ical icalss icalvcal icudata icui18n icuuc
-WANTLIB += m ofx ${MODPY_WANTLIB} qgpgmeqt6 qt6keychain sqlcipher
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
+WANTLIB += KF6Crash KF6GuiAddons KF6Holidays KF6I18n KF6ItemModels
+WANTLIB += KF6ItemViews KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
+WANTLIB += KF6SonnetUi KF6TextWidgets KF6WidgetsAddons KF6XmlGui
+WANTLIB += KPim6AkonadiCore KPim6AkonadiPrivate KPim6IdentityManagementCore
+WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6Sql
+WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml alkimia6 c db db_cxx gmp gpg-error
+WANTLIB += gpgme gpgmepp ical icalss icalvcal icudata icui18n
+WANTLIB += icuuc m ofx ${MODPY_WANTLIB} qgpgmeqt6 qt6keychain sqlcipher
 
 MODULES =		lang/python \
 			devel/kf6
@@ -90,7 +90,9 @@ LIB_DEPENDS =		databases/db/v4 \
 			devel/kf6/kcompletion \
 			devel/kf6/kconfig \
 			devel/kf6/kconfigwidgets \
+			devel/kf6/kcontacts \
 			devel/kf6/kcoreaddons \
+			devel/kf6/kcrash \
 			devel/kf6/kguiaddons \
 			devel/kf6/kholidays \
 			devel/kf6/ki18n \
@@ -98,7 +100,6 @@ LIB_DEPENDS =		databases/db/v4 \
 			devel/kf6/kitemmodels \
 			devel/kf6/kitemviews \
 			devel/kf6/kjobwidgets \
-			devel/kf6/kcrash \
 			devel/kf6/knotifications \
 			devel/kf6/kservice \
 			devel/kf6/ktextwidgets \
@@ -109,11 +110,12 @@ LIB_DEPENDS =		databases/db/v4 \
 			devel/libofx \
 			graphics/kdiagram \
 			productivity/libalkimia>=8.2.1 \
-			security/qtkeychain,qt6 \
 			security/qgpgme \
-			security/libassuan \
+			security/qtkeychain,qt6 \
 			textproc/icu4c \
 			textproc/libical \
+			x11/kde-applications/akonadi \
+			x11/kde-applications/kidentitymanagement \
 			x11/qt6/qtdeclarative \
 			x11/qt6/qtpositioning \
 			x11/qt6/qtwebchannel \
