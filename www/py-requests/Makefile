@@ -2,6 +2,7 @@ COMMENT=	elegant and simple HTTP library for Python
 
 # 2.33 expected to move to hatchling
 MODPY_DISTV=	2.32.5
+REVISION=	0
 DISTNAME=	requests-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
