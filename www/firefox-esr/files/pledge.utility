@@ -1,6 +1,7 @@
 stdio
-tmppath
 rpath # gtk tries to access /usr/local/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+cpath # /tmp/only
+wpath # /tmp/only
 recvfd
 sendfd
 prot_exec
