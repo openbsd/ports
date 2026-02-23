@@ -1,0 +1,5 @@
+@bin bin/susmb
+@man man/man1/susmb.1
+share/doc/susmb/
+share/doc/susmb/LICENSE
+share/doc/susmb/README

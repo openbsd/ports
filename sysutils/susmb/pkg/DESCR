@@ -1,0 +1,2 @@
+susmb lets you mount SMB/CIFS shares via FUSE, in the vein of the
+Map Network Drive functionality in Windows.
