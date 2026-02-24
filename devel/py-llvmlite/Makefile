@@ -38,8 +38,4 @@ MAKE_ENV=	CMAKE_PREFIX_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake \
 		LLVMLITE_LTO=0 \
 		CMAKE_ARGS=-DCMAKE_VERBOSE_MAKEFILE=on
 
-xxpre-build:
-	cd ${WRKSRC} && \
-	${CXX} -shared `llvm-config --cxxflags` -fPIC ${CXXFLAGS} `llvm-config --ldflags` ${LDFLAGS} -o ffi/libllvmlite.so ffi/*.cpp `llvm-config --libs all`
-
 .include <bsd.port.mk>
