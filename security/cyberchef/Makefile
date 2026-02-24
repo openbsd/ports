@@ -1,6 +1,6 @@
 COMMENT =	cyber swiss army knife
 
-V =		10.19.4
+V =		10.22.1
 DISTNAME =	CyberChef_v$V
 PKGNAME =	cyberchef-$V
 
