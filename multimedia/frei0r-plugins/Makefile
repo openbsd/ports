@@ -3,7 +3,7 @@ CATEGORIES =	graphics multimedia
 
 GH_ACCOUNT =	dyne
 GH_PROJECT =	frei0r
-GH_TAGNAME =	v2.5.1
+GH_TAGNAME =	v2.5.4
 
 DISTNAME =	frei0r-plugins-${GH_TAGNAME:S/v//}
 
@@ -22,8 +22,8 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
-CONFIGURE_ARGS =	-DWITHOUT_OPENCV=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+CONFIGURE_ARGS =	-DWITHOUT_GAVL=ON \
+			-DWITHOUT_OPENCV=ON
 
 NO_TEST =	Yes
 
