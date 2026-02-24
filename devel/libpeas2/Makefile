@@ -1,13 +1,12 @@
 COMMENT=	GObject plugins library
 
 GNOME_PROJECT=	libpeas
-GNOME_VERSION=	2.2.0
+GNOME_VERSION=	2.2.1
 PKGNAME=	${GNOME_PROJECT}2-${GNOME_VERSION}
-REVISION=	0
 
 CATEGORIES=	devel
 
-SHARED_LIBS += peas-2                    0.1 # 0.200.0
+SHARED_LIBS += peas-2                    0.1 # 0.200.1
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
