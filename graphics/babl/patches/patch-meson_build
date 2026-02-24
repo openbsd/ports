@@ -1,0 +1,16 @@
+w3m used to rebuild README from html if present. can't be disabled via
+build options without also disabling docs. build fails if present during
+configure and then junked.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -598,7 +598,7 @@ if not platform_win32 and not platform_osx
+ endif
+ 
+ # Create README file from web page
+-if w3m_bin.found() and build_docs
++if false
+   custom_target('README',
+     input: index_html,
+     output: 'README',

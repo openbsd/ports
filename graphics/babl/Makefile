@@ -1,6 +1,7 @@
 COMMENT=		dynamic pixel format conversion library
 
 V=			0.1.122
+REVISION=		0
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
 
@@ -11,7 +12,7 @@ CATEGORIES=		graphics devel
 
 SHARED_LIBS += babl-0.1                  1.8 # 0.221.1
 
-HOMEPAGE=		http://gegl.org/babl/
+HOMEPAGE=		https://gegl.org/babl/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -20,7 +21,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c lcms2 m pthread
 
-SITES=			http://download.gimp.org/pub/babl/${V:R}/
+SITES=			https://download.gimp.org/pub/babl/${V:R}/
 
 MODULES=		devel/meson \
 			x11/gnome
