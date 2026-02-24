@@ -1,8 +1,9 @@
-COMMENT-main=	perl bindings for Xapian
-COMMENT-python=	python bindings for Xapian
-COMMENT-ruby=	ruby bindings for Xapian
+COMMENT-main=	Perl bindings for Xapian
+COMMENT-python=	Python bindings for Xapian
+COMMENT-ruby=	Ruby bindings for Xapian
 
-V=		1.4.30
+V=		1.4.31
+PORTROACH=	limitw:1,even
 DISTNAME=	xapian-bindings-${V}
 
 PKGNAME-main=	xapian-bindings-perl-${V}
@@ -28,7 +29,7 @@ COMPILER=	base-clang ports-gcc
 # base libtool doesn't support -shrext
 USE_LIBTOOL=	gnu
 
-LIB_DEPENDS=	databases/xapian-core
+LIB_DEPENDS=	databases/xapian-core>=${V}
 
 BUILD_DEPENDS=	textproc/py-sphinx
 

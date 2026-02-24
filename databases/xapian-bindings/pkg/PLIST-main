@@ -106,4 +106,6 @@ share/doc/xapian-bindings/perl/examples/simpleexpand.pl
 share/doc/xapian-bindings/perl/examples/simpleindex.pl
 share/doc/xapian-bindings/perl/examples/simplematchdecider.pl
 share/doc/xapian-bindings/perl/examples/simplesearch.pl
+share/doc/xapian-bindings/python3/html/_static/base-stemmer.js
+share/doc/xapian-bindings/python3/html/_static/english-stemmer.js
 share/doc/xapian-bindings/python3/html/_static/sphinx_highlight.js
