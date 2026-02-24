@@ -5,7 +5,6 @@ lib/node_modules/@google/gemini-cli/LICENSE
 lib/node_modules/@google/gemini-cli/README.md
 lib/node_modules/@google/gemini-cli/dist/
 lib/node_modules/@google/gemini-cli/dist/.last_build
-lib/node_modules/@google/gemini-cli/dist/google-gemini-cli-0.29.4.tgz
 lib/node_modules/@google/gemini-cli/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/dist/index.js
 lib/node_modules/@google/gemini-cli/dist/index.js.map
@@ -3297,7 +3296,6 @@ lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/do
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/docs/tools/web-search.md
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/docs/tos-privacy.md
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/docs/troubleshooting.md
-lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/google-gemini-cli-core-0.29.4.tgz
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js.map
@@ -26242,20 +26240,6 @@ lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/ansi-styles
 lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/ansi-styles/license
 lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/ansi-styles/package.json
 lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/ansi-styles/readme.md
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/balanced-match/
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/balanced-match/.github/
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/balanced-match/.github/FUNDING.yml
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/balanced-match/LICENSE.md
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/balanced-match/README.md
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/balanced-match/index.js
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/balanced-match/package.json
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/brace-expansion/
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/brace-expansion/.github/
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/brace-expansion/.github/FUNDING.yml
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/brace-expansion/LICENSE
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/brace-expansion/README.md
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/brace-expansion/index.js
-lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/brace-expansion/package.json
 lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/emoji-regex/
 lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/emoji-regex/LICENSE-MIT.txt
 lib/node_modules/@google/gemini-cli/node_modules/rimraf/node_modules/emoji-regex/README.md
