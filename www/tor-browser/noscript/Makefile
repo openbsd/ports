@@ -1,5 +1,5 @@
 ADDON_NAME =		noscript
-V =			13.5.13.1984
+V =			13.5.14.1984
 COMMENT =		Tor Browser add-on: flexible JS blocker
 HOMEPAGE =		https://noscript.net
 SITES =			https://dist.torproject.org/torbrowser/noscript/
