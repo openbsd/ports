@@ -6,6 +6,7 @@ COMMENT-sysd =		game of trees system management daemon
 
 V =			0.122
 DISTNAME =		got-${V}
+REVISION-server =	0
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
 PKGNAME-gitwrapper =	gitwrapper-${V}

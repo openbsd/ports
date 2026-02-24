@@ -1,0 +1,38 @@
+drop tmppath promise; taken from upstream commit dd1ae34cdb
+
+Index: gotd/libexec/got-notify-http/got-notify-http.c
+--- gotd/libexec/got-notify-http/got-notify-http.c.orig
++++ gotd/libexec/got-notify-http/got-notify-http.c
+@@ -33,6 +33,7 @@
+ #include <string.h>
+ #include <syslog.h>
+ #include <time.h>
++#include <tls.h>
+ #include <unistd.h>
+ 
+ #include <openssl/evp.h>
+@@ -928,7 +929,14 @@ main(int argc, char **argv)
+ 	int		 ch, flags, ret, nonstd = 0;
+ 
+ #ifndef PROFILE
+-	if (pledge("stdio rpath tmppath dns inet", NULL) == -1)
++	const char *root_ca;
++	root_ca = tls_default_ca_cert_file();
++
++	if (unveil(root_ca, "r") == -1)
++		err(1, "unveil %s", root_ca);
++	if (unveil("/tmp/", "rwc") == -1)
++		err(1, "unveil /tmp");
++	if (pledge("stdio rpath wpath cpath dns inet", NULL) == -1)
+ 		err(1, "pledge");
+ #endif
+ 
+@@ -997,7 +1005,7 @@ main(int argc, char **argv)
+ 		fatal("fseeko");
+ 
+ #ifndef PROFILE
+-	/* drop tmppath */
++	/* drop wpath cpath */
+ 	if (pledge("stdio rpath dns inet", NULL) == -1)
+ 		err(1, "pledge");
+ #endif
