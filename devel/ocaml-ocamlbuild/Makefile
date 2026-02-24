@@ -3,8 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	ocamlbuild
-GH_TAGNAME =	0.14.0
-REVISION =	7
+GH_TAGNAME =	0.14.1
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
