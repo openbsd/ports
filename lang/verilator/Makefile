@@ -16,7 +16,8 @@ WANTLIB=		c m ${COMPILER_LIBCXX}
 COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS +=	devel/bison \
-			devel/help2man
+			devel/help2man \
+			lang/python/3
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 MAKE_FLAGS=		VERILATOR_ROOT=${PREFIX}/share/verilator/ \
