@@ -1,10 +1,9 @@
 COMMENT =	powerful and user-friendly console text editor
-DISTNAME =	moe-1.15
+DISTNAME =	moe-1.16
 EXTRACT_SUFX =	.tar.lz
 CATEGORIES =	editors
-REVISION =	0
 
-HOMEPAGE =	http://www.gnu.org/software/moe/moe.html
+HOMEPAGE =	https://www.gnu.org/software/moe/moe.html
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
