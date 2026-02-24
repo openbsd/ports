@@ -18,4 +18,6 @@ lib/pkgconfig/gom-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/gi/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gom.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gom.${MODPY_PYC_MAGIC_TAG}pyc
 share/gir-1.0/Gom-1.0.gir
