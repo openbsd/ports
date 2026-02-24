@@ -1,6 +1,6 @@
 COMMENT =	manage and share secrets using GnuPG and Git
 
-DISTNAME =	keyringer-0.6.0
+DISTNAME =	keyringer-0.7.2
 
 CATEGORIES =	security
 

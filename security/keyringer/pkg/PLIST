@@ -33,7 +33,9 @@ lib/keyringer/actions/recrypt
 lib/keyringer/actions/rm
 lib/keyringer/actions/rmdir
 lib/keyringer/actions/sclip
+lib/keyringer/actions/search
 lib/keyringer/actions/shell
+lib/keyringer/actions/ssearch
 lib/keyringer/actions/teardown
 lib/keyringer/actions/tree
 lib/keyringer/actions/usage
