@@ -1,11 +1,13 @@
 COMMENT=	cross-project testing tool for Python
 
 MODPY_DISTV=	9.0.2
+REVISION=	0
 DISTNAME=	pytest-${MODPY_DISTV}
 PKGNAME=	py-test-${MODPY_DISTV}
 
 CATEGORIES=	devel
 
+# https://docs.pytest.org/en/stable/changelog.html
 HOMEPAGE=	https://docs.pytest.org/en/latest/
 
 # MIT
