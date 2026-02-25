@@ -1,6 +1,6 @@
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2026.02.04
+VERSION =	2026.02.21
 MODPY_DISTV =	${VERSION:S/.0/./g}
 
 DISTNAME =	yt-dlp-${VERSION}
@@ -28,7 +28,7 @@ RUN_DEPENDS =	audio/py-mutagen \
 		graphics/ffmpeg \
 		security/py-cryptodomex \
 		www/py-requests \
-		www/py-yt-dlp-ejs
+		www/py-yt-dlp-ejs>=0.5.0
 
 TEST_DEPENDS +=	devel/flake8 \
 		archivers/py-brotlicffi \
