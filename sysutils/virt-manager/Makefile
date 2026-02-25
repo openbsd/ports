@@ -48,7 +48,6 @@ CONFIGURE_ARGS=		-Dupdate-icon-cache=false
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/virtinst/buildconfig.py
-	ln -sf ${LOCALBASE}/bin/py.test ${WRKDIR}/bin/pytest
 
 post-install:
 	${MODPY_COMPILEALL} ${PREFIX}/share/virt-manager

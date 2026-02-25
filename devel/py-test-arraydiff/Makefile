@@ -23,7 +23,4 @@ RUN_DEPENDS=	devel/py-test \
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		astro/py-astropy
 
-pre-test:
-	ln -fs ${LOCALBASE}/bin/py.test ${WRKDIR}/bin/pytest
-
 .include <bsd.port.mk>
