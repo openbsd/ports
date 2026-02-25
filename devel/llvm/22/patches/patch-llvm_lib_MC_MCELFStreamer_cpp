@@ -1,0 +1,17 @@
+Index: llvm/lib/MC/MCELFStreamer.cpp
+--- llvm/lib/MC/MCELFStreamer.cpp.orig
++++ llvm/lib/MC/MCELFStreamer.cpp
+@@ -54,8 +54,11 @@ void MCELFStreamer::initSections(bool NoExecStack, con
+   emitCodeAlignment(Align(Ctx.getObjectFileInfo()->getTextSectionAlignment()),
+                     &STI);
+ 
+-  if (NoExecStack)
+-    switchSection(Ctx.getAsmInfo()->getStackSection(Ctx, /*Exec=*/false));
++  if (NoExecStack) {
++    MCSection *s = Ctx.getAsmInfo()->getStackSection(Ctx, /*Exec=*/false);
++    if (s)
++      switchSection(s);
++  }
+ }
+ 
+ void MCELFStreamer::emitLabel(MCSymbol *S, SMLoc Loc) {

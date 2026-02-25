@@ -1,0 +1,42 @@
+Index: lld/ELF/RelocScan.h
+--- lld/ELF/RelocScan.h.orig
++++ lld/ELF/RelocScan.h
+@@ -22,6 +22,29 @@ using namespace llvm::object;
+ 
+ namespace lld::elf {
+ 
++static void reportGNUWarning(Ctx &ctx, Symbol &sym, InputSectionBase &sec,
++                                 uint64_t offset) {
++  std::lock_guard<std::mutex> lock(ctx.relocMutex);
++  if (sym.gwarn) {
++    StringRef gnuWarning = gnuWarnings.lookup(sym.getName());
++    ELFSyncStream msg(ctx, DiagLevel::None);
++    // report first occurance only
++    sym.gwarn = false;
++    if (!gnuWarning.empty()) {
++      msg << sec.getSrcMsg(sym, offset);
++      msg << "(";
++      msg << sec.getObjMsg(offset);
++      msg << "): warning: ";
++      msg << gnuWarning;
++#if 0
++      warn(sec.getSrcMsg(sym, offset) + "(" + sec.getObjMsg(offset) +
++           "): warning: " + gnuWarning);
++#endif
++      Warn(ctx) << msg.str();
++    }
++  }
++}
++
+ // Build a bitmask with one bit set for each 64 subset of RelExpr.
+ inline constexpr uint64_t buildMask() { return 0; }
+ 
+@@ -86,6 +109,8 @@ void RelocScan::scan(typename Relocs<RelTy>::const_ite
+   uint64_t offset = rel.r_offset;
+   RelExpr expr =
+       ctx.target->getRelExpr(type, sym, sec->content().data() + offset);
++
++  reportGNUWarning(ctx, sym, *sec, rel.r_offset);
+ 
+   // Ignore R_*_NONE and other marker relocations.
+   if (expr == R_NONE)

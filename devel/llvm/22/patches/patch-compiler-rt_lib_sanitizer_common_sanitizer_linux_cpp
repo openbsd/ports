@@ -1,0 +1,12 @@
+Index: compiler-rt/lib/sanitizer_common/sanitizer_linux.cpp
+--- compiler-rt/lib/sanitizer_common/sanitizer_linux.cpp.orig
++++ compiler-rt/lib/sanitizer_common/sanitizer_linux.cpp
+@@ -692,7 +692,7 @@ u64 NanoTime() {
+ // should be called first inside __asan_init.
+ const char *GetEnv(const char *name) {
+ #  if SANITIZER_FREEBSD || SANITIZER_NETBSD || SANITIZER_SOLARIS || \
+-      SANITIZER_HAIKU
++      SANITIZER_HAIKU || SANITIZER_OPENBSD
+   if (::environ != 0) {
+     uptr NameLen = internal_strlen(name);
+     for (char **Env = ::environ; *Env != 0; Env++) {

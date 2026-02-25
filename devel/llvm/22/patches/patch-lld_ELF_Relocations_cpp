@@ -1,0 +1,17 @@
+Index: lld/ELF/Relocations.cpp
+--- lld/ELF/Relocations.cpp.orig
++++ lld/ELF/Relocations.cpp
+@@ -682,6 +682,13 @@ bool RelocScan::maybeReportUndefined(Undefined &sym, u
+   if (sym.discardedSecIdx != 0 && (sec->name == ".got2" || sec->name == ".toc"))
+     return false;
+ 
++#ifdef __OpenBSD__
++  // GCC (at least 8 and 11) can produce a ".gcc_except_table" with relocations
++  // to discarded sections on riscv64
++  if (sym.discardedSecIdx != 0 && sec->name == ".gcc_except_table")
++    return false;
++#endif
++
+   bool isWarning =
+       (ctx.arg.unresolvedSymbols == UnresolvedPolicy::Warn && canBeExternal) ||
+       ctx.arg.noinhibitExec;

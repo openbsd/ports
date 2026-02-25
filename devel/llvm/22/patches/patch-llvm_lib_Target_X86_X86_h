@@ -1,0 +1,18 @@
+Index: llvm/lib/Target/X86/X86.h
+--- llvm/lib/Target/X86/X86.h.orig
++++ llvm/lib/Target/X86/X86.h
+@@ -243,6 +243,14 @@ class X86CmovConversionPass : public PassInfoMixin<X86
+ 
+ FunctionPass *createX86CmovConversionLegacyPass();
+ 
++/// Return a Machine Function pass that attempts to replace
++/// ROP friendly instructions with alternatives.
++FunctionPass *createX86FixupGadgetsPass();
++
++/// Return a Machine Function pass that attempts to replace
++/// RET instructions with a cleaning sequence
++FunctionPass *createX86RetCleanPass();
++
+ /// Return a Machine IR pass that selectively replaces
+ /// certain byte and word instructions by equivalent 32 bit instructions,
+ /// in order to eliminate partial register usage, false dependences on
