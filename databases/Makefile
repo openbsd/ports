@@ -163,7 +163,6 @@
      SUBDIR += postgresql-previous
      SUBDIR += postgresql_autodoc
      SUBDIR += pspg
-     SUBDIR += puppetdb
      SUBDIR += py-aiosqlite
      SUBDIR += py-alembic
      SUBDIR += py-apsw

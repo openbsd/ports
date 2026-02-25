@@ -317,7 +317,6 @@
      SUBDIR += psftools
      SUBDIR += psrecord
      SUBDIR += pstree
-     SUBDIR += puppetserver
      SUBDIR += pv
      SUBDIR += py-analyzemft
      SUBDIR += py-ansible-compat
@@ -397,7 +396,6 @@
      SUBDIR += ruby-augeas,ruby33
      SUBDIR += ruby-augeas,ruby34
      SUBDIR += ruby-augeas,ruby40
-     SUBDIR += ruby-facter
      SUBDIR += ruby-libvirt,ruby33
      SUBDIR += ruby-libvirt,ruby34
      SUBDIR += ruby-libvirt,ruby40
@@ -408,10 +406,8 @@
      SUBDIR += ruby-posix-spawn,ruby33
      SUBDIR += ruby-posix-spawn,ruby34
      SUBDIR += ruby-posix-spawn,ruby40
-     SUBDIR += ruby-puppet
      SUBDIR += ruby-puppet-lint
      SUBDIR += ruby-puppet-syntax
-     SUBDIR += ruby-puppetserver-ca
      SUBDIR += ruby-r10k
      SUBDIR += ruby-serverengine
      SUBDIR += ruby-shadow,ruby33
