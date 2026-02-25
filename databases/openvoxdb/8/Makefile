@@ -1,6 +1,7 @@
 COMMENT-main =	fast, scalable, and reliable data warehouse for OpenVox
 COMMENT-plugin =OpenVoxDB terminus plugin
 
+REVISION =	0
 VERSION =	8.12.1
 DISTNAME =	openvoxdb-${VERSION}
 PKGNAME-plugin =openvoxdb-termini-${VERSION}

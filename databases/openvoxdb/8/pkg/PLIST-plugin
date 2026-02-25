@@ -1,5 +1,6 @@
 @option is-branch
 @conflict puppetdb-termini-*
+@pkgpath databases/puppetdb/8,-plugin
 share/puppetlabs/puppet/
 share/puppetlabs/puppet/puppet/
 share/puppetlabs/puppet/puppet/face/

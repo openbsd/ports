@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1789 2026/02/11 23:23:05 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.1790 2026/02/25 19:58:17 sebastia Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -513,6 +513,12 @@ my $stem_extensions = {
 	'ruby34-r10k' => 'r10k',
 	'adobe-source-sans-pro' => 'adobe-source-sans',
 	'adobe-source-serif-pro' => 'adobe-source-serif',
+	'puppet' => 'openvox',
+	'puppetserver' => 'openvox-server',
+	'ruby34-puppetserver-ca' => 'openvoxserver-ca',
+	'puppetdb' => 'openvoxdb',
+	'puppetdb-termini' => 'openvoxdb-termini',
+	'ruby34-facter' => 'openfact',
 };
 
 my $obsolete_reason = {};

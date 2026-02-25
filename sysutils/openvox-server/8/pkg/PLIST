@@ -1,5 +1,6 @@
 @option is-branch
 @conflict puppetserver-*
+@pkgpath sysutils/puppetserver/8
 @rcscript ${RCDIR}/puppetserver
 bin/puppetserver
 share/doc/pkg-readmes/${PKGSTEM}

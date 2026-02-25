@@ -1,5 +1,6 @@
 COMMENT =	interact with OpenVox Server's CA
 
+REVISION =	0
 DISTNAME =	openvoxserver-ca-3.0.0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/OpenVoxProject/openvoxserver-ca/

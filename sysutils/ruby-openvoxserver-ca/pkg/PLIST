@@ -1,3 +1,5 @@
+@conflict ruby34-puppetserver-ca-*
+@pkgpath sysutils/ruby-puppetserver-ca,ruby34
 @comment ${GEM_BIN}/puppetserver-ca
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
