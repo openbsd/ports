@@ -4,7 +4,7 @@ GH_TAGNAME=     0.32.0
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-gui
 DISTNAME=       gnustep-gui-${GH_TAGNAME}
-REVISION=       0
+REVISION=       1
 
 CATEGORIES=	devel
 
