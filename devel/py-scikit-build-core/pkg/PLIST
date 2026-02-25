@@ -61,6 +61,8 @@ lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_met
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}_dispatch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}_dispatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -69,6 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_met
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}project_table.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}pyproject.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/${MODPY_PYCACHE}pyproject.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/_dispatch.py
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/constants.py
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/errors.py
 lib/python${MODPY_VERSION}/site-packages/scikit_build_core/_vendor/pyproject_metadata/project_table.py
