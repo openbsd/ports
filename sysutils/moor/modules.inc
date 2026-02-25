@@ -1,7 +1,7 @@
 MODGO_MODULES =	\
 	github.com/adrg/xdg		 v0.5.3 \
 	github.com/alecthomas/assert/v2	 v2.11.0 \
-	github.com/alecthomas/chroma/v2	 v2.21.1 \
+	github.com/alecthomas/chroma/v2	 v2.22.0 \
 	github.com/alecthomas/repr	 v0.5.2 \
 	github.com/charlievieth/strcase	 v0.0.5 \
 	github.com/davecgh/go-spew	 v1.1.1 \

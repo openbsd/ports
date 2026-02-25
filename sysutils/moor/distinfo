@@ -2,8 +2,8 @@ SHA256 (go_modules/github.com/adrg/xdg/@v/v0.5.3.mod) = qQghsSXS48t3yDP3t+NOfozn
 SHA256 (go_modules/github.com/adrg/xdg/@v/v0.5.3.zip) = UoR7SK/NRs/TEryFeo3whkPP/8QQPVmkDDzmSOAZbBM=
 SHA256 (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.mod) = r/3U6HeASwwie/rF21Cvke9QHnttS++tU/kJeNhjXhw=
 SHA256 (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.zip) = h93LapxCIouhs7YcWBvy/zWPAUB4vSdLj/W0f3pHWes=
-SHA256 (go_modules/github.com/alecthomas/chroma/v2/@v/v2.21.1.mod) = 6AgZEv2n4XIIrfvrVcxLjNF5q1ZQtQryuKZVnu/KpVc=
-SHA256 (go_modules/github.com/alecthomas/chroma/v2/@v/v2.21.1.zip) = v5uyo3ydreG0SzXHqqYLXRLB/HcJKpO5xkAeKBoljx8=
+SHA256 (go_modules/github.com/alecthomas/chroma/v2/@v/v2.22.0.mod) = 6AgZEv2n4XIIrfvrVcxLjNF5q1ZQtQryuKZVnu/KpVc=
+SHA256 (go_modules/github.com/alecthomas/chroma/v2/@v/v2.22.0.zip) = nTcS8Q8Det3d/a2Ku+nX7zb65XwPgDFkxCj2O00STIE=
 SHA256 (go_modules/github.com/alecthomas/repr/@v/v0.5.2.mod) = K/LL5QDij0uoEQeYW/DzESIcWImu+5JtUjBgaIlEMrQ=
 SHA256 (go_modules/github.com/alecthomas/repr/@v/v0.5.2.zip) = IyDlxH3w+h/lJYPIV03AlHOB6muyk9Z95XI0bkfQzqM=
 SHA256 (go_modules/github.com/charlievieth/strcase/@v/v0.0.5.mod) = 02l/MHg6+/NJGu0QzFDWq7h8aCj5F9b909YXy3nO/J4=
@@ -85,13 +85,13 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHd
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
 SHA256 (go_modules/gotest.tools/v3/@v/v3.3.0.mod) = IUtog2bXo+3KQa37T1dFP5Alf+Ln/9IxqzAYZgvpGWw=
 SHA256 (go_modules/gotest.tools/v3/@v/v3.3.0.zip) = nNxAr7Wv4kvn7FxuxbNpaSxv0IFxPcGOZ0ApGwCDhD0=
-SHA256 (moor-v2.10.1.zip) = DTtzJF6JB3G/N3w/K6RvWiQHVHmX74VEVEnkoREU7bM=
+SHA256 (moor-v2.10.5.zip) = wTAGIDu4VQOz5WXLdR969GIaisP9/xQ9iDXx0GRJIqo=
 SIZE (go_modules/github.com/adrg/xdg/@v/v0.5.3.mod) = 258
 SIZE (go_modules/github.com/adrg/xdg/@v/v0.5.3.zip) = 37913
 SIZE (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.mod) = 133
 SIZE (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.zip) = 12302
-SIZE (go_modules/github.com/alecthomas/chroma/v2/@v/v2.21.1.mod) = 230
-SIZE (go_modules/github.com/alecthomas/chroma/v2/@v/v2.21.1.zip) = 1641356
+SIZE (go_modules/github.com/alecthomas/chroma/v2/@v/v2.22.0.mod) = 230
+SIZE (go_modules/github.com/alecthomas/chroma/v2/@v/v2.22.0.zip) = 1685990
 SIZE (go_modules/github.com/alecthomas/repr/@v/v0.5.2.mod) = 43
 SIZE (go_modules/github.com/alecthomas/repr/@v/v0.5.2.zip) = 11328
 SIZE (go_modules/github.com/charlievieth/strcase/@v/v0.0.5.mod) = 82
@@ -173,4 +173,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/gotest.tools/v3/@v/v3.3.0.mod) = 189
 SIZE (go_modules/gotest.tools/v3/@v/v3.3.0.zip) = 98546
-SIZE (moor-v2.10.1.zip) = 5453136
+SIZE (moor-v2.10.5.zip) = 5457819
