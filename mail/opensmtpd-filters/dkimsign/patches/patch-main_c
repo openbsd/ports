@@ -1,0 +1,22 @@
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -22,6 +22,7 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <limits.h>
++#include <paths.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -220,7 +221,9 @@ main(int argc, char *argv[])
+ 
+ 	OpenSSL_add_all_digests();
+ 
+-	if (pledge("tmppath stdio", NULL) == -1)
++	if (unveil(_PATH_TMP, "rwc") == -1)
++		osmtpd_err(1, "unveil");
++	if (pledge("stdio rpath wpath cpath", NULL) == -1)
+ 		osmtpd_err(1, "pledge");
+ 
+ 	if ((hash_md = EVP_get_digestbyname(hashalg)) == NULL)

@@ -1,6 +1,7 @@
 COMMENT=	dkim signer integration to the OpenSMTPD daemon
 
 V=		0.6
+REVISION=	0
 FILTER_NAME =	dkimsign
 DISTNAME =	filter-dkimsign-${V}
 
