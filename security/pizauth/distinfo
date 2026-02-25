@@ -201,7 +201,7 @@ SHA256 (cargo/zeroize-1.8.2.tar.gz) = uXFU5n4yyFRlgm6LzBxZQpqq8QfB5KnlPI2MzV7/iN
 SHA256 (cargo/zerotrie-0.2.3.tar.gz) = KlnBelVi1QfktUlg6FaevuM77okMcKo/57l+han9eFE=
 SHA256 (cargo/zerovec-0.11.5.tar.gz) = bChxkpSClHf1Jb4BhtE++po8YC9+wgLKnjU9MQ+5oAI=
 SHA256 (cargo/zerovec-derive-0.11.2.tar.gz) = 6tzjlTnKXLOYVZAQJnHyVn5ln8qWZlga00EdWSB5UfM=
-SHA256 (pizauth-1.0.9.tgz) = tznuGAI8QFjLfy4aoaLy0I9kZUwSb6PlYT0xAjMYgFg=
+SHA256 (pizauth-1.0.10.tgz) = BBlZEzO5rNljyWsHwRRuvp9c9p/OPiZ/2Io1/XyRjPI=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -405,4 +405,4 @@ SIZE (cargo/zeroize-1.8.2.tar.gz) = 20907
 SIZE (cargo/zerotrie-0.2.3.tar.gz) = 69547
 SIZE (cargo/zerovec-0.11.5.tar.gz) = 119620
 SIZE (cargo/zerovec-derive-0.11.2.tar.gz) = 21421
-SIZE (pizauth-1.0.9.tgz) = 68370
+SIZE (pizauth-1.0.10.tgz) = 68459
