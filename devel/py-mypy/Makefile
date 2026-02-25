@@ -36,20 +36,12 @@ RUN_DEPENDS=	devel/py-typing-extensions \
 # some tests want network access
 PORTHOME=	${WRKDIR}
 
-TEST_DEPENDS=	devel/pre-commit \
-		devel/py-attrs \
+# tests known to fail if py3-test-run-parallel is present
+TEST_DEPENDS=	devel/py-attrs \
 		devel/py-test-cov \
 		devel/py-test-xdist \
 		sysutils/py-filelock \
 		sysutils/py-psutil \
 		textproc/py-tomli
-
-# default runs a self-test which fails for me with a strange error
-# "Pattern matching is only supported in Python 3.10 and greater"
-#
-# tests known to fail if py3-test-run-parallel is present
-do-test:
-	cd ${WRKSRC}; ${MODPY_BIN} runtests.py \
-		pytest-fast pytest-cmdline pytest-slow mypyc-fast
 
 .include <bsd.port.mk>
