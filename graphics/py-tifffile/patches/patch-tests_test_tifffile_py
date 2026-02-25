@@ -1,12 +1,11 @@
-Index: tests/test_tifffile.py
---- tests/test_tifffile.py.orig
-+++ tests/test_tifffile.py
-@@ -226,7 +226,7 @@ def skip(key: str, default: bool) -> bool:  # noqa: FB
+--- tests/test_tifffile.py.orig.port	Wed Feb 25 10:06:15 2026
++++ tests/test_tifffile.py	Wed Feb 25 10:08:03 2026
+@@ -218,7 +218,7 @@
  
  
  # skip tests requiring large memory
 -SKIP_LARGE = skip('SKIP_LARGE', default=sys.maxsize < 2**32)
 +SKIP_LARGE = skip('SKIP_LARGE', default=True)
+ SKIP_SLOW = skip('SKIP_SLOW', default=True)
  SKIP_EXTENDED = skip('SKIP_EXTENDED', default=False)
- # skip public files
- SKIP_PUBLIC = skip('SKIP_PUBLIC', default=not os.path.exists(PUBLIC_DIR))
+ # skip data files
