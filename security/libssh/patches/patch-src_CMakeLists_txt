@@ -5,9 +5,9 @@ uses pthread functions whether or not pthread was linked.
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -56,6 +56,13 @@ if (MINGW AND Threads_FOUND)
-   )
- endif()
+@@ -68,6 +68,13 @@ if (HAVE_LIBFIDO2)
+     )
+ endif (HAVE_LIBFIDO2)
  
 +if (Threads_FOUND)
 +  set(LIBSSH_LINK_LIBRARIES

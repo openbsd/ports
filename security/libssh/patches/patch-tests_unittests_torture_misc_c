@@ -1,0 +1,27 @@
+ssh_path_expand_tilde() calls getpwnam, invalidating pw returned
+by getpwuid
+
+Index: tests/unittests/torture_misc.c
+--- tests/unittests/torture_misc.c.orig
++++ tests/unittests/torture_misc.c
+@@ -255,9 +255,9 @@ static void torture_path_expand_tilde_unix(void **stat
+     pw = getpwuid(getuid());
+     assert_non_null(pw);
+ 
+-    user = pw->pw_name;
++    user = strdup(pw->pw_name);
+     assert_non_null(user);
+-    home = pw->pw_dir;
++    home = strdup(pw->pw_dir);
+     assert_non_null(home);
+ 
+     snprintf(h, 256 - 1, "%s/.ssh", home);
+@@ -279,6 +279,8 @@ static void torture_path_expand_tilde_unix(void **stat
+     snprintf(h, 256 - 1, "%s/.ssh", home);
+     assert_string_equal(d, h);
+     free(d);
++    free(user);
++    free(home);
+ }
+ 
+ #endif /* _WIN32 */
