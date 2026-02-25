@@ -52,6 +52,9 @@ RUN_DEPENDS +=		devel/gdb \
 # under $HOME so point user.home inside ${WRKSRC}
 MAKE_ENV +=		JDK_JAVA_OPTIONS="-Duser.home='${WRKSRC}/home'"
 
+# assembleDistribution build failure, jgrapht-core-1.5.1 has UTF-8 characters in jar-file
+MAKE_ENV +=		LC_CTYPE="en_US.UTF-8"
+
 .if ${MACHINE_ARCH} == "amd64"
 GHIDRA_ARCH =		openbsd_x86_64
 .else
@@ -115,11 +118,11 @@ build-dependencies: configure
 	    ${_PBUILD} chmod -R ug=rwX,o=rX .; \
 	    umask 007; \
 	    env HOME='/ghidra-writes_to_HOME' JAVA_HOME=${JAVA_HOME} \
-		gradle --no-daemon --stacktrace \
+		gradle --no-daemon --info --stacktrace \
 		-g ${WRKSRC}/dependencies/gradle \
 		-I ${WRKSRC}/gradle/support/fetchDependencies.gradle; \
 	    env HOME='/ghidra-writes_to_HOME' JAVA_HOME=${JAVA_HOME} \
-		gradle --no-daemon --stacktrace \
+		gradle --no-daemon --info --stacktrace \
 		-g ${WRKSRC}/dependencies/gradle \
 		prepDev; \
 	    rm -rf dependencies/downloads dependencies/PyGhidra; \
@@ -134,12 +137,12 @@ build-dependencies: configure
 	@echo ~/ghidra-Ghidra_${VERSION}_build_dependencies.tar.gz has been created
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle --no-daemon --stacktrace \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle --no-daemon --info --stacktrace \
 		-g ${WRKSRC}/dependencies/gradle --offline buildGhidra
 
 # not yet: requires networking, prepDev does not download test gradle/maven deps
 #do-test:
-#	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} gradle --no-daemon --stacktrace \
+#	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} gradle --no-daemon --info --stacktrace \
 #		-g ${WRKSRC}/dependencies/gradle --offline unitTestReport
 
 do-install:
