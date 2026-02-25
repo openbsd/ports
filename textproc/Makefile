@@ -440,6 +440,7 @@
      SUBDIR += py-enchant
      SUBDIR += py-et_xmlfile
      SUBDIR += py-fastjsonschema
+     SUBDIR += py-fpdf2
      SUBDIR += py-feedparser
      SUBDIR += py-gTTS
      SUBDIR += py-humanfriendly
