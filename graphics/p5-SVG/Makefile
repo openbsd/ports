@@ -1,15 +1,17 @@
-COMMENT=	Scalable Vector Graphics (SVG) in perl
+COMMENT =	Scalable Vector Graphics (SVG) in perl
 
-DISTNAME =	SVG-2.87
-CATEGORIES=	graphics devel
+DISTNAME =	SVG-2.88
+CATEGORIES =	graphics devel
 
 # perl
 PERMIT_PACKAGE=	Yes
 
-MODULES=		cpan
-PKG_ARCH=		*
+CPAN_AUTHOR =	MANWAR
 
-MODCPAN_EXAMPLES=	Yes
-MODCPAN_EG_DIR=		examples
+MODULES =	cpan
+PKG_ARCH =	*
+
+MODCPAN_EXAMPLES =	Yes
+MODCPAN_EG_DIR =	examples
 
 .include <bsd.port.mk>
