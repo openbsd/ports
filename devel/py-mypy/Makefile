@@ -1,9 +1,8 @@
 COMMENT=	optional static type checker for Python
 
 # check textproc/py-charset-normalizer, it often has excessively tight
-# version checks for mypy
-MODPY_DISTV=	1.17.0
-REVISION=	0
+# version checks for mypy. 1.19.x needs https://pypi.org/project/librt/
+MODPY_DISTV=	1.18.2
 DISTNAME=	mypy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -37,11 +36,20 @@ RUN_DEPENDS=	devel/py-typing-extensions \
 # some tests want network access
 PORTHOME=	${WRKDIR}
 
-TEST_DEPENDS=	devel/py-attrs \
+TEST_DEPENDS=	devel/pre-commit \
+		devel/py-attrs \
 		devel/py-test-cov \
 		devel/py-test-xdist \
 		sysutils/py-filelock \
 		sysutils/py-psutil \
 		textproc/py-tomli
+
+# default runs a self-test which fails for me with a strange error
+# "Pattern matching is only supported in Python 3.10 and greater"
+#
+# tests known to fail if py3-test-run-parallel is present
+do-test:
+	cd ${WRKSRC}; ${MODPY_BIN} runtests.py \
+		pytest-fast pytest-cmdline pytest-slow mypyc-fast
 
 .include <bsd.port.mk>

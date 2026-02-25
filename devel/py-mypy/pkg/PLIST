@@ -32,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}bogus_type.${MODPY
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}bogus_type.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}checker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}checker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}checker_shared.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -242,6 +244,7 @@ lib/python${MODPY_VERSION}/site-packages/mypy/argmap.py
 lib/python${MODPY_VERSION}/site-packages/mypy/binder.py
 lib/python${MODPY_VERSION}/site-packages/mypy/bogus_type.py
 lib/python${MODPY_VERSION}/site-packages/mypy/build.py
+lib/python${MODPY_VERSION}/site-packages/mypy/cache.py
 lib/python${MODPY_VERSION}/site-packages/mypy/checker.py
 lib/python${MODPY_VERSION}/site-packages/mypy/checker_shared.py
 lib/python${MODPY_VERSION}/site-packages/mypy/checker_state.py
@@ -318,6 +321,8 @@ lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}attrs.${MO
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}attrs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}ctypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}ctypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}dataclasses.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -334,6 +339,7 @@ lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}singledisp
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/${MODPY_PYCACHE}singledispatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/attrs.py
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/common.py
+lib/python${MODPY_VERSION}/site-packages/mypy/plugins/constants.py
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/ctypes.py
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/dataclasses.py
 lib/python${MODPY_VERSION}/site-packages/mypy/plugins/default.py
@@ -636,6 +642,7 @@ lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_warnings.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_weakref.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_weakrefset.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_winapi.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_zstd.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/abc.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/aifc.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/annotationlib.pyi
@@ -673,6 +680,7 @@ lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/asyncio/taskgroups
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/asyncio/tasks.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/asyncio/threads.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/asyncio/timeouts.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/asyncio/tools.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/asyncio/transports.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/asyncio/trsock.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/asyncio/unix_events.pyi
@@ -708,14 +716,13 @@ lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/__init
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/_common/
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/_common/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/_common/_streams.pyi
-lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/bz2/
-lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/bz2/__init__.pyi
-lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/gzip/
-lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/gzip/__init__.pyi
-lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/lzma/
-lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/lzma/__init__.pyi
-lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/zlib/
-lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/zlib/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/bz2.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/gzip.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/lzma.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/zlib.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/zstd/
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/zstd/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/compression/zstd/_zstdfile.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/futures/
@@ -724,6 +731,10 @@ lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/futures
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/futures/interpreter.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/futures/process.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/futures/thread.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/interpreters/
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/interpreters/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/interpreters/_crossinterp.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/concurrent/interpreters/_queues.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/configparser.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/contextlib.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/contextvars.pyi
@@ -1365,6 +1376,8 @@ lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/zoneinfo/_tzpath.p
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stubs/
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stubs/mypy-extensions/
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stubs/mypy-extensions/mypy_extensions.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stubs/mypy-native/
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stubs/mypy-native/native_internal.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typestate.py
 lib/python${MODPY_VERSION}/site-packages/mypy/typetraverser.py
 lib/python${MODPY_VERSION}/site-packages/mypy/typevars.py
@@ -1576,7 +1589,10 @@ lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/int_ops.c
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/list_ops.c
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/misc_ops.c
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/module_shim.tmpl
+lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/module_shim_no_gil_multiphase.tmpl
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/mypyc_util.h
+lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/native_internal.c
+lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/native_internal.h
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/pythoncapi_compat.h
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/pythonsupport.c
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/pythonsupport.h
@@ -1631,6 +1647,8 @@ lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/${MODPY_PYCACHE}str_op
 lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/${MODPY_PYCACHE}str_ops.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/${MODPY_PYCACHE}tuple_ops.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/${MODPY_PYCACHE}tuple_ops.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/${MODPY_PYCACHE}weakref_ops.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/${MODPY_PYCACHE}weakref_ops.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/bytes_ops.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/dict_ops.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/exc_ops.py
@@ -1643,6 +1661,7 @@ lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/registry.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/set_ops.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/str_ops.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/tuple_ops.py
+lib/python${MODPY_VERSION}/site-packages/mypyc/primitives/weakref_ops.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/py.typed
 lib/python${MODPY_VERSION}/site-packages/mypyc/rt_subtype.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/sametype.py
@@ -1749,6 +1768,8 @@ lib/python${MODPY_VERSION}/site-packages/mypyc/transform/${MODPY_PYCACHE}flag_el
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/${MODPY_PYCACHE}flag_elimination.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/${MODPY_PYCACHE}ir_transform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/${MODPY_PYCACHE}ir_transform.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mypyc/transform/${MODPY_PYCACHE}log_trace.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mypyc/transform/${MODPY_PYCACHE}log_trace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/${MODPY_PYCACHE}lower.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/${MODPY_PYCACHE}lower.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/${MODPY_PYCACHE}refcount.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1761,6 +1782,7 @@ lib/python${MODPY_VERSION}/site-packages/mypyc/transform/copy_propagation.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/flag_elimination.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/ir_transform.py
+lib/python${MODPY_VERSION}/site-packages/mypyc/transform/log_trace.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/lower.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/refcount.py
 lib/python${MODPY_VERSION}/site-packages/mypyc/transform/spill.py
