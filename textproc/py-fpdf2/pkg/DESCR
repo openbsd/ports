@@ -1,0 +1,23 @@
+fpdf2 is a mature and actively maintained PDF creation library for Python.
+Compared with other PDF libraries, fpdf2 is fast, versatile, easy to
+learn and to extend. It is also entirely written in Python and has very
+few dependencies: Pillow, defusedxml, & fontTools. It includes support for:
+
+- Unicode (UTF-8) TrueType font subset embedding
+- Internal / external links
+- Embedding images, including transparency and alpha channel
+- Arbitrary path drawing and basic SVG import
+- Embedding barcodes, charts & graphs, emojis, symbols & dingbats
+- Tables and also cell / multi-cell / plaintext writing, with automatic
+      page breaks, line break and text justification
+- Choice of measurement unit, page format & margins. Optional page
+      header and footer
+- Basic conversion from HTML to PDF
+- A templating system to render PDFs in batches
+- Images & links alternative descriptions, for accessibility
+- Table of contents & document outline
+- Document encryption & document signing
+- Annotations, including text highlights, and file attachments
+- Presentation mode with control over page display duration & transitions
+- Optional basic Markdown-like styling: **bold**, __italics__
+- Can render mathematical equations & charts
