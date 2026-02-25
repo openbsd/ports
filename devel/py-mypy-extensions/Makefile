@@ -15,6 +15,6 @@ MODULES=	lang/python
 MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
 
-NO_TEST=	Yes
+MODPY_PYTEST_ARGS= ./tests/testextensions.py
 
 .include <bsd.port.mk>
