@@ -1,9 +1,8 @@
 COMMENT =	build automation tool
 
-DISTNAME =	gradle-8.14.3
+DISTNAME =	gradle-9.3.1
 EXTRACT_SUFX =	-bin.zip
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	java
 
