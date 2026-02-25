@@ -1802,6 +1802,7 @@
      SUBDIR += py-tz
      SUBDIR += py-tzdata
      SUBDIR += py-tzlocal
+     SUBDIR += py-uharfbuzz
      SUBDIR += py-unicorn
      SUBDIR += py-unique-log-filter
      SUBDIR += py-untangle
