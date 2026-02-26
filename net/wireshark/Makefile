@@ -4,7 +4,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES = parallel
-V =		4.4.13
+V =		4.4.14
 PORTROACH =	limit:^4\.4\.
 #PORTROACH =	limitw:1,even	# 4.6 needs newer libpcap
 DISTNAME =	wireshark-$V
@@ -14,7 +14,6 @@ PKGNAME-text =	tshark-$V
 # keep above 7.8-stable
 REVISION =	0
 
-SHARED_LIBS +=	wscodecs             1.0
 SHARED_LIBS +=	wsutil               4.0
 SHARED_LIBS +=	wiretap              4.0
 SHARED_LIBS +=	wireshark            4.0
