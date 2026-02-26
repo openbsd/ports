@@ -5,6 +5,7 @@ COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-17.1
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 

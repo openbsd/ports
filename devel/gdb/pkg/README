@@ -1,0 +1,15 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Colors and emoji characters
+===========================
+
+A common question with recent GDB releases is how to disable the use of
+colors and emoji.  To disable both, set
+
+  set style enabled off
+
+in your ~/.gdbinit or export NO_COLOR=1 in your environment (may also
+affect other software).  See "Output Styling" in the info file for
+more fine-grained settings.
