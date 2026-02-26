@@ -196,6 +196,11 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/builti
 lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/builtin/pypy/common.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/builtin/pypy/pypy3.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/builtin/ref.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/builtin/rustpython/
+lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/builtin/rustpython/__init__.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/builtin/rustpython/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/builtin/rustpython/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/builtin/rustpython/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/builtin/via_global_self_do.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/store.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/create/via_global_ref/venv.py
@@ -219,14 +224,6 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/cached_py_info.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/discover.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/py_info.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/py_spec.py
-lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/windows/
-lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/windows/__init__.py
-lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/windows/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/windows/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/windows/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/windows/${MODPY_PYCACHE}pep514.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/windows/${MODPY_PYCACHE}pep514.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/windows/pep514.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/info.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/report.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/run/
@@ -334,8 +331,6 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/util/${MODPY_PYCACHE}error.$
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/${MODPY_PYCACHE}lock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/${MODPY_PYCACHE}lock.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/virtualenv/util/${MODPY_PYCACHE}specifier.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/virtualenv/util/${MODPY_PYCACHE}specifier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/${MODPY_PYCACHE}zipapp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/${MODPY_PYCACHE}zipapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/error.py
@@ -354,7 +349,6 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/util/path/${MODPY_PYCACHE}_w
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/path/_permission.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/path/_sync.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/path/_win.py
-lib/python${MODPY_VERSION}/site-packages/virtualenv/util/specifier.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/subprocess/
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/subprocess/__init__.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/subprocess/${MODPY_PYCACHE}/
