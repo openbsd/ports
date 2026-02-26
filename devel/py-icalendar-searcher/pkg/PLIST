@@ -9,6 +9,8 @@ lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/__init__.py
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}collation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}collation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}filters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -17,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}sear
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}searcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/_version.py
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/collation.py
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/filters.py
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/searcher.py
