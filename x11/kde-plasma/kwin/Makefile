@@ -2,7 +2,7 @@ COMMENT =		Wayland window manager for KDE Plasma Desktops
 DISTNAME =		kwin-${VERSION}
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
-SHARED_LIBS +=  kwin                      2.0 # 0.0
+SHARED_LIBS +=  kwin                      3.0 # 0.0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
@@ -17,14 +17,14 @@ WANTLIB += KF6NewStuffWidgets KF6Notifications KF6Package KF6Service
 WANTLIB += KF6Svg KF6WidgetsAddons KF6WindowSystem KF6XmlGui KGlobalAccelD
 WANTLIB += KNightTime KScreenLocker KWaylandClient PlasmaActivities
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6Sensors Qt6Svg
-WANTLIB += Qt6UiTools Qt6Widgets Qt6Xml SM X11 Xext c canberra
-WANTLIB += display-info drm eis epoll-shim epoxy gbm input kdecorations3
-WANTLIB += kdecorations3private lcms2 m pipewire-0.3 qaccessibilityclient-qt6
-WANTLIB += udev wayland-client wayland-server xcb xcb-composite
-WANTLIB += xcb-dri3 xcb-icccm xcb-keysyms xcb-present xcb-randr
-WANTLIB += xcb-render xcb-res xcb-shape xcb-shm xcb-sync xcb-xfixes
-WANTLIB += xcb-xinerama xcb-xinput xcvt xkbcommon
+WANTLIB += Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6Svg Qt6UiTools
+WANTLIB += Qt6Widgets Qt6Xml SM X11 Xext c canberra display-info
+WANTLIB += drm eis epoll-shim epoxy gbm input kdecorations3 kdecorations3private
+WANTLIB += lcms2 m pipewire-0.3 qaccessibilityclient-qt6 udev
+WANTLIB += wayland-client wayland-server xcb xcb-composite xcb-dri3
+WANTLIB += xcb-icccm xcb-keysyms xcb-present xcb-randr xcb-render
+WANTLIB += xcb-res xcb-shape xcb-shm xcb-sync xcb-xfixes xcb-xinerama
+WANTLIB += xcb-xinput xcvt xkbcommon
 
 MODULES +=	lang/python
 
