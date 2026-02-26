@@ -1,4 +1,4 @@
-@conflict plasma-workspace-<6.5.5
+@conflict plasma-workspace-<6.6.6
 include/Plasma5Support/
 include/Plasma5Support/Plasma5Support/
 include/Plasma5Support/Plasma5Support/DataContainer
