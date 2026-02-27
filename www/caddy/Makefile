@@ -1,7 +1,7 @@
 COMMENT =	extensible HTTP/1-2-3 web server
 
 PKGNAME =	caddy-${V}
-V =		2.9.1
+V =		2.11.1
 
 CATEGORIES =	www
 
