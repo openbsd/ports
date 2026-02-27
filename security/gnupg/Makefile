@@ -1,5 +1,3 @@
-PORTROACH =	limitw:1,even
-
 COMMENT =	GNU privacy guard - a free PGP replacement
 
 DISTNAME =	gnupg-2.5.18
