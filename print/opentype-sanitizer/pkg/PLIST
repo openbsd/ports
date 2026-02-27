@@ -1,0 +1,10 @@
+@bin bin/ots-idempotent
+@bin bin/ots-perf
+@bin bin/ots-sanitize
+@bin bin/ots-side-by-side
+@bin bin/ots-validator-checker
+@man man/man1/ots-idempotent.1
+@man man/man1/ots-perf.1
+@man man/man1/ots-sanitize.1
+@man man/man1/ots-side-by-side.1
+@man man/man1/ots-validator-checker.1
