@@ -94,6 +94,12 @@ COMMENT_FFVPX =	@comment # needs a trailing space
 .endif
 SUBST_VARS +=	COMMENT_FFVPX
 
+# workaround for #2006630
+post-patch:
+.for c in glslopt cubeb-sys minimal-lexical sfv wasi
+	sed -i -e 's/".gitmodules":"[0-9a-f]*",//' ${WRKSRC}/comm/third_party/rust/${c}/.cargo-checksum.json
+.endfor
+
 post-install:
 	# install prefs
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
