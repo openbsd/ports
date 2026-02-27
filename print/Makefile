@@ -45,6 +45,7 @@
      SUBDIR += muttprint
      SUBDIR += ocrmypdf
      SUBDIR += openclipart
+     SUBDIR += opentype-sanitizer
      SUBDIR += p5-Poppler
      SUBDIR += p5-PostScript-MailLabels
      SUBDIR += pdf4qt
