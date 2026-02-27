@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/python-caldav/icalendar-searcher
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	hatchling
+MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-icalendar \
