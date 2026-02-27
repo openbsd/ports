@@ -1,8 +1,9 @@
 COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
-SHARED_LIBS +=	KPim6PimCommon            1.0 # 0.0
+SHARED_LIBS +=	KPim6PimCommon            2.0 # 0.0
 SHARED_LIBS +=	KPim6PimCommonAkonadi     2.0 # 0.0
 SHARED_LIBS +=	KPim6PimCommonActivities  0.0 # 0.0
 
