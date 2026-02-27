@@ -12,10 +12,11 @@ Index: bin/dig/host.c
  
  #include <isc/attributes.h>
  #include <isc/commandline.h>
-@@ -910,6 +911,15 @@ main(int argc, char **argv) {
- 	dighost_trying = trying;
- 	dighost_shutdown = host_shutdown;
- 
+@@ -914,12 +915,36 @@ main(int argc, char **argv) {
+ 	progname = argv[0];
+ 	pre_parse_args(argc, argv);
+ 	setup_libs();
++
 +	/*
 +	 * unix: needed for startup check, isc_net_probeunix.
 +	 * (unix sockets used in controlconf).
@@ -25,10 +26,9 @@ Index: bin/dig/host.c
 +		exit(1);
 +	}
 +
- 	debug("main()");
- 	progname = argv[0];
- 	pre_parse_args(argc, argv);
-@@ -920,6 +930,20 @@ main(int argc, char **argv) {
+ 	setup_system(ipv4only, ipv6only);
+ 	parse_args(false, argc, argv);
+ 	if (keyfile[0] != 0) {
  		setup_file_key();
  	} else if (keysecret[0] != 0) {
  		setup_text_key();

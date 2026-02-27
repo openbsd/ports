@@ -4,10 +4,11 @@ locale is needed for idn2.
 Index: bin/dig/nslookup.c
 --- bin/dig/nslookup.c.orig
 +++ bin/dig/nslookup.c
-@@ -948,6 +948,15 @@ main(int argc, char **argv) {
- 	dighost_trying = trying;
+@@ -949,6 +949,16 @@ main(int argc, char **argv) {
  	dighost_shutdown = start_next_command;
  
+ 	setup_libs();
++
 +	/*
 +	 * unix: needed for startup check, isc_net_probeunix.
 +	 * (unix sockets used in controlconf).
@@ -17,10 +18,10 @@ Index: bin/dig/nslookup.c
 +		exit(1);
 +	}
 +
- 	setup_libs();
  	progname = argv[0];
  
-@@ -958,6 +967,21 @@ main(int argc, char **argv) {
+ 	setup_system(false, false);
+@@ -958,6 +968,21 @@ main(int argc, char **argv) {
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}
