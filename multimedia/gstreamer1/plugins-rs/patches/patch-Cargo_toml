@@ -1,10 +1,10 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -187,3 +187,53 @@ gst-plugin-isobmff = { path="mux/isobmff", version = "
- gst-plugin-gtk4 = { path="video/gtk4", version = "0.15.0-alpha" }
- gst-plugin-rtp = { path="net/rtp", version = "0.15.0-alpha" }
- gst-plugin-hlssink3 = { path="net/hlssink3", version = "0.15.0-alpha" }
+@@ -190,3 +190,53 @@ gst-plugin-isobmff = { path="mux/isobmff", version = "
+ gst-plugin-gtk4 = { path="video/gtk4", version = "0.15.0" }
+ gst-plugin-rtp = { path="net/rtp", version = "0.15.0" }
+ gst-plugin-hlssink3 = { path="net/hlssink3", version = "0.15.0" }
 +
 +[patch."https://gitlab.freedesktop.org/gstreamer/gstreamer-rs"]
 +gstreamer = {path = "../gstreamer-rs/gstreamer" }
