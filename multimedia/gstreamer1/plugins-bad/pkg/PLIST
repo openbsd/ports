@@ -24,11 +24,14 @@ include/gstreamer-${API}/gst/basecamerabinsrc/gstcamerabin-enum.h
 include/gstreamer-${API}/gst/basecamerabinsrc/gstcamerabinpreview.h
 include/gstreamer-${API}/gst/codecparsers/
 include/gstreamer-${API}/gst/codecparsers/codecparsers-prelude.h
+include/gstreamer-${API}/gst/codecparsers/gstav1bitwriter.h
 include/gstreamer-${API}/gst/codecparsers/gstav1parser.h
+include/gstreamer-${API}/gst/codecparsers/gsth264bitwriter.h
 include/gstreamer-${API}/gst/codecparsers/gsth264parser.h
 include/gstreamer-${API}/gst/codecparsers/gsth265parser.h
 include/gstreamer-${API}/gst/codecparsers/gsth266parser.h
 include/gstreamer-${API}/gst/codecparsers/gstjpeg2000sampling.h
+include/gstreamer-${API}/gst/codecparsers/gstjpegbitwriter.h
 include/gstreamer-${API}/gst/codecparsers/gstjpegparser.h
 include/gstreamer-${API}/gst/codecparsers/gstlcevcmeta.h
 include/gstreamer-${API}/gst/codecparsers/gstmpeg4parser.h
@@ -142,6 +145,7 @@ include/gstreamer-${API}/gst/webrtc/webrtc.h
 include/gstreamer-${API}/gst/webrtc/webrtc_fwd.h
 lib/girepository-${API}/GstAnalytics-${API}.typelib
 lib/girepository-${API}/GstBadAudio-${API}.typelib
+lib/girepository-${API}/GstCodecParsers-${API}.typelib
 lib/girepository-${API}/GstCodecs-${API}.typelib
 lib/girepository-${API}/GstDxva-${API}.typelib
 lib/girepository-${API}/GstInsertBin-${API}.typelib
@@ -275,6 +279,7 @@ lib/pkgconfig/gstreamer-wayland-${API}.pc
 lib/pkgconfig/gstreamer-webrtc-${API}.pc
 share/gir-${API}/GstAnalytics-${API}.gir
 share/gir-${API}/GstBadAudio-${API}.gir
+share/gir-${API}/GstCodecParsers-${API}.gir
 share/gir-${API}/GstCodecs-${API}.gir
 share/gir-${API}/GstDxva-${API}.gir
 share/gir-${API}/GstInsertBin-${API}.gir

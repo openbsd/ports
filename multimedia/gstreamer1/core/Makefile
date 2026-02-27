@@ -3,11 +3,11 @@ COMMENT=		framework for streaming media
 DISTNAME=		gstreamer-${V}
 PKGNAME=		gstreamer1-${V}
 
-SHARED_LIBS += gstreamer-1.0             7.4 # 0.2800.0
-SHARED_LIBS += gstbase-1.0               7.4 # 0.2800.0
-SHARED_LIBS += gstcontroller-1.0         7.4 # 0.2800.0
-SHARED_LIBS += gstnet-1.0                7.4 # 0.2800.0
-SHARED_LIBS += gstcheck-1.0              7.4 # 0.2800.0
+SHARED_LIBS += gstreamer-1.0             7.4 # 0.2801.0
+SHARED_LIBS += gstbase-1.0               7.4 # 0.2801.0
+SHARED_LIBS += gstcontroller-1.0         7.4 # 0.2801.0
+SHARED_LIBS += gstnet-1.0                7.4 # 0.2801.0
+SHARED_LIBS += gstcheck-1.0              7.4 # 0.2801.0
 
 WANTLIB += c execinfo gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += intl m
