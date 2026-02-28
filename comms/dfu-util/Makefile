@@ -1,7 +1,6 @@
 COMMENT =		device firmware update (DFU) USB programmer
 
-DISTNAME =		dfu-util-0.10
-REVISION =		0
+DISTNAME =		dfu-util-0.11
 
 CATEGORIES =		comms
 
