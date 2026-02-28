@@ -2,6 +2,7 @@ COMMENT =	client for Microsoft RDP (remote desktop protocol)
 
 # 3.x needs posix timers, epoll-shim is no longer enough to workaround
 DISTNAME =	freerdp-2.11.8
+REVISION =	0
 
 CATEGORIES =	x11 net
 

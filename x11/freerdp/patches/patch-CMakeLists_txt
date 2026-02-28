@@ -1,6 +1,15 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -85,7 +85,7 @@ if ($ENV{BUILD_NUMBER})
+ endif()
+ set(WITH_LIBRARY_VERSIONING "ON")
+ 
+-set(RAW_VERSION_STRING "2.11.8-dev")
++set(RAW_VERSION_STRING "2.11.8")
+ if(EXISTS "${CMAKE_SOURCE_DIR}/.source_tag")
+ 	file(READ ${CMAKE_SOURCE_DIR}/.source_tag RAW_VERSION_STRING)
+ elseif(USE_VERSION_FROM_GIT_TAG)
 @@ -202,12 +202,14 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
  	set(BSD TRUE)
  	if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
