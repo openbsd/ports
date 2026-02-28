@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	swiss army knife for working with X509, OAuth, JWT, OATH OTP
 
-V =		0.28.7
+V =		0.29.0
 MODGO_MODNAME =	github.com/smallstep/cli
 MODGO_VERSION =	v${V}
 DISTNAME =	step-cli-${V}
