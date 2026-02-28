@@ -68,6 +68,8 @@ lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}disambiguators.$
 lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}disambiguators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}dispatch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}dispatch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}fns.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -88,6 +90,7 @@ lib/python${MODPY_VERSION}/site-packages/cattrs/cols.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/converters.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/disambiguators.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/dispatch.py
+lib/python${MODPY_VERSION}/site-packages/cattrs/enums.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/errors.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/fns.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/gen/
@@ -132,6 +135,8 @@ lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}pyyaml.$
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}pyyaml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}tomlkit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}tomlkit.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}tomllib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}tomllib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}ujson.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}ujson.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/bson.py
@@ -142,6 +147,7 @@ lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/msgspec.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/orjson.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/pyyaml.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/tomlkit.py
+lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/tomllib.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/ujson.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/py.typed
 lib/python${MODPY_VERSION}/site-packages/cattrs/strategies/
