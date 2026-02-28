@@ -6,6 +6,11 @@ include/KirigamiAddons/App/kirigamiapp.h
 include/KirigamiAddons/App/kirigamiapp_export.h
 include/KirigamiAddons/App/kirigamiapp_version.h
 include/KirigamiAddons/App/kirigamiappdefaults.h
+include/KirigamiAddons/Components/
+include/KirigamiAddons/Components/NameUtils
+include/KirigamiAddons/Components/kirigamiaddonscomponents_export.h
+include/KirigamiAddons/Components/kirigamiaddonscomponents_version.h
+include/KirigamiAddons/Components/nameutils.h
 include/KirigamiAddonsStatefulApp/
 include/KirigamiAddonsStatefulApp/AbstractKirigamiApplication
 include/KirigamiAddonsStatefulApp/KirigamiActionCollection
@@ -18,6 +23,7 @@ lib/cmake/KF6KirigamiAddons/KF6KirigamiAddonsConfigVersion.cmake
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsMacros.cmake
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets.cmake
+@lib lib/libKirigamiAddonsComponents.so.${LIBKirigamiAddonsComponents_VERSION}
 @lib lib/libKirigamiAddonsStatefulApp.so.${LIBKirigamiAddonsStatefulApp_VERSION}
 @lib lib/libKirigamiApp.so.${LIBKirigamiApp_VERSION}
 lib/qt6/qml/org/kde/kirigamiaddons/
