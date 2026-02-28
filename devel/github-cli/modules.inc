@@ -21,7 +21,6 @@ MODGO_MODULES =	\
 	dario.cat/mergo										 v1.0.2 \
 	filippo.io/edwards25519									 v1.1.0 \
 	github.com/!adam!korcz/go-fuzz-headers-1						 v0.0.0-20230919221257-8b5d3ce2d11d \
-	github.com/!alec!aivazis/survey/v2							 v2.3.7 \
 	github.com/!azure!a!d/microsoft-authentication-library-for-go				 v1.6.0 \
 	github.com/!azure/azure-sdk-for-go/sdk/azcore						 v1.20.0 \
 	github.com/!azure/azure-sdk-for-go/sdk/azidentity					 v1.13.1 \

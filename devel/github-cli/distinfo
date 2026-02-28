@@ -1,3 +1,4 @@
+SHA256 (bsdmp-survey-vv2.3.8.tar.gz) = fPcSUSZ4Kkovs52dRmmAtg+lX8R/EDkhLaLMZJCphMU=
 SHA256 (cli-v2.86.0.zip) = IDqzb2V8lQ6ZuLv19JwxZwEiGcm5OJNPyLXB7N51Eno=
 SHA256 (go_modules/al.essio.dev/pkg/shellescape/@v/v1.5.1.mod) = fW3oKR7t4TYCgXcER8PoYsrLbEot39+WoKs40YzeHLw=
 SHA256 (go_modules/al.essio.dev/pkg/shellescape/@v/v1.6.0.mod) = fW3oKR7t4TYCgXcER8PoYsrLbEot39+WoKs40YzeHLw=
@@ -54,8 +55,6 @@ SHA256 (go_modules/filippo.io/edwards25519/@v/v1.1.0.mod) = CZVW/E1+b1yxNe/di2u0
 SHA256 (go_modules/filippo.io/edwards25519/@v/v1.1.0.zip) = msQ6aG0G/evXGfevOGbIfrBpMCJy37ExAHrfRxwwi2U=
 SHA256 (go_modules/github.com/!adam!korcz/go-fuzz-headers-1/@v/v0.0.0-20230919221257-8b5d3ce2d11d.mod) = y7Qla8MWTNynhxxpaEHZd8PFtn6SBr6F0p0FcxsTr20=
 SHA256 (go_modules/github.com/!adam!korcz/go-fuzz-headers-1/@v/v0.0.0-20230919221257-8b5d3ce2d11d.zip) = xeIXfrc3i0TQqU5I75XzFXBQ7P36+DnrT8SWwl6Dhsw=
-SHA256 (go_modules/github.com/!alec!aivazis/survey/v2/@v/v2.3.7.mod) = CqqVsN6ZpSz1/LtFkAZHw+VXxCVpBCy+2askDBzB30E=
-SHA256 (go_modules/github.com/!alec!aivazis/survey/v2/@v/v2.3.7.zip) = YTpJyGyrabZ/vI+w8LGDwjv9wnABIjMMa1MCDgHrrWA=
 SHA256 (go_modules/github.com/!azure!a!d/microsoft-authentication-library-for-go/@v/v1.5.0.mod) = sv0bTjTUPRlzEVNelnZ7/cMwr5mPWt0Nn5qqGoatX3M=
 SHA256 (go_modules/github.com/!azure!a!d/microsoft-authentication-library-for-go/@v/v1.6.0.mod) = sv0bTjTUPRlzEVNelnZ7/cMwr5mPWt0Nn5qqGoatX3M=
 SHA256 (go_modules/github.com/!azure!a!d/microsoft-authentication-library-for-go/@v/v1.6.0.zip) = tb08IPEVLucVRu19EUZoePhc753uNbR61iGOYh2cxNw=
@@ -1292,6 +1291,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKt
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.mod) = +/Vbaah9WjkQgv2brl5MdYEEH+Cbi7k7D+Fs3f6FzpU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.zip) = VQGaOR5TAqUbpi6YkJ4AYiS4EgeGbakL6vWC7A3uA28=
+SIZE (bsdmp-survey-vv2.3.8.tar.gz) = 125803
 SIZE (cli-v2.86.0.zip) = 15478803
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.5.1.mod) = 113
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.6.0.mod) = 113
@@ -1348,8 +1348,6 @@ SIZE (go_modules/filippo.io/edwards25519/@v/v1.1.0.mod) = 40
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.1.0.zip) = 55809
 SIZE (go_modules/github.com/!adam!korcz/go-fuzz-headers-1/@v/v0.0.0-20230919221257-8b5d3ce2d11d.mod) = 820
 SIZE (go_modules/github.com/!adam!korcz/go-fuzz-headers-1/@v/v0.0.0-20230919221257-8b5d3ce2d11d.zip) = 31575
-SIZE (go_modules/github.com/!alec!aivazis/survey/v2/@v/v2.3.7.mod) = 595
-SIZE (go_modules/github.com/!alec!aivazis/survey/v2/@v/v2.3.7.zip) = 162357
 SIZE (go_modules/github.com/!azure!a!d/microsoft-authentication-library-for-go/@v/v1.5.0.mod) = 336
 SIZE (go_modules/github.com/!azure!a!d/microsoft-authentication-library-for-go/@v/v1.6.0.mod) = 336
 SIZE (go_modules/github.com/!azure!a!d/microsoft-authentication-library-for-go/@v/v1.6.0.zip) = 258557
