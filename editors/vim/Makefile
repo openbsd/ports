@@ -3,7 +3,7 @@ COMMENT=	vi clone with many additional features
 # careful with PLISTs if updating; normally use a gui flavour, not no_x11
 # if there are new languages for manpages, "make fix-plist" will add the
 # ${GUI_ONLY} markers as needed for gui-only tools.
-V=		9.1.2135
+V=		9.2.0078
 
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
@@ -119,8 +119,8 @@ WANTLIB += gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
 ERRORS=	"Fatal: You must select one (and only one) GUI interface: no_x11 or gtk3"
 .endif
 
-.if ${V:R} == 9.1
-P=	vim91
+.if ${V:R} == 9.2
+P=	vim92
 .else
 ERRORS=	"Fatal: new major version; update editors/vim-spell and this check"
 .endif
