@@ -8,13 +8,12 @@ COMMENT-pgsql=	postgresql monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
-V=		3.0.0rc2pl1
-REVISION=	1
+V=		3.0.0rc2pl2
 #SITES=		https://www.monitoring-plugins.org/download/
 GH_ACCOUNT=	monitoring-plugins
 GH_PROJECT=	monitoring-plugins
 #GH_TAGNAME=	v${V:S/rc/-rc/}
-GH_COMMIT=	bccb38dc9d56ca5cecce8f2f9a988ec5d31626db
+GH_COMMIT=	a793000948039afa1af9792dd776e2f9cda5b538
 
 DISTNAME=	monitoring-plugins-${V:S/rc/-rc/}
 PKGNAME-main=	monitoring-plugins-$V
