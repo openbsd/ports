@@ -1,6 +1,6 @@
 COMMENT=	utility for reading information from audio/video files
 
-VERSION=	25.10
+VERSION=	26.01
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
 
