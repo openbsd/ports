@@ -6,7 +6,7 @@ USE_WXNEEDED=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		28.3.2
+V=		28.3.3
 DISTNAME=	otp_src_${V}
 PORTROACH=	limit:^OTP-${MAJ_V}\.
 PKGNAME=	erlang-${V}
@@ -72,7 +72,7 @@ DEBUGGER_VSN    6.0.3 \
 DIALYZER_VSN    5.4 \
 DIAMETER_VSN    2.6 \
 EDOC_VSN        1.4.1 \
-EI_VSN          5.6.2 \
+EI_VSN          5.6.3 \
 ELDAP_VSN       1.2.16 \
 ET_VSN          1.7.2 \
 EUNIT_VSN       2.10.1 \
@@ -98,6 +98,6 @@ TFTP_VSN        1.2.4 \
 TOOLS_VSN       4.1.3 \
 WX_VSN          2.5.3 \
 XMERL_VSN       2.1.8 \
-ERTS_VSN        16.2.1
+ERTS_VSN        16.2.2
 
 .include <bsd.port.mk>
