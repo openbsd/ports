@@ -1,9 +1,8 @@
 COMMENT=	data analysis and manipulation library
 
-MODPY_DISTV=	2.2.3
+MODPY_DISTV=	2.3.3
 DISTNAME=	pandas-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	math
 
@@ -18,11 +17,8 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	mesonpy
-# test_dst.py: ValueError: could not convert string to float: '2022.2.1'
-MODPY_PYTEST_ARGS=pandas \
-		--ignore pandas/tests/tseries/offsets/test_dst.py
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
 BUILD_DEPENDS=	devel/py-versioneer \
 		devel/py-wheel \
@@ -34,8 +30,6 @@ RUN_DEPENDS=	devel/py-dateutil>=2.8.2 \
 		devel/py-tz>=2020.1 \
 		math/py-numpy>=1.25.0
 
-# XXX: needs fixing
-NO_TEST = Yes
 TEST_DEPENDS=	databases/py-mysqlclient \
 		databases/py-psycopg2 \
 		databases/py-sqlalchemy \
@@ -57,7 +51,16 @@ TEST_DEPENDS=	databases/py-mysqlclient \
 		www/py-jinja2 \
 		x11/xclip
 
+MODPY_TEST_LINK_SO= Yes
+MODPY_PYTEST_ARGS= pandas
 PORTHOME=	${WRKDIR}
 TEST_ENV=	TZ=UTC
+
+do-test:
+	${MODPY_TEST_SO_CMD}
+	@echo "running non-single-cpu tests with ${MAKE_JOBS} job(s):"
+	-@${MODPY_TEST_CMD} -m "not clipboard and not single_cpu and not slow and not network and not db" -n ${MAKE_JOBS} --no-strict-data-files
+	@echo "running single-cpu tests:"
+	-@${MODPY_TEST_CMD} -m "not clipboard and single_cpu and not slow and not network and not db" --no-strict-data-files
 
 .include <bsd.port.mk>
