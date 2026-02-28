@@ -6,11 +6,10 @@ CATEGORIES=	textproc print
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c m pthread
 
-DISTNAME =	hevea-2.34
+DISTNAME =	hevea-2.38
 SITES =		http://hevea.inria.fr/distri/ \
 		http://hevea.inria.fr/old/ \
 		https://spacehopper.org/mirrors/
-REVISION =	5
 USE_NOEXECONLY =	Yes
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}
