@@ -1,3 +1,4 @@
+SHA256 (bsdmp-survey-vv2.3.8.tar.gz) = fPcSUSZ4Kkovs52dRmmAtg+lX8R/EDkhLaLMZJCphMU=
 SHA256 (cli-v1.85.0.zip) = hYO7yC6gzqViGUIqOagtPLhCJWQGsgmB1VK1urUh+CM=
 SHA256 (go_modules/al.essio.dev/pkg/shellescape/@v/v1.5.1.mod) = fW3oKR7t4TYCgXcER8PoYsrLbEot39+WoKs40YzeHLw=
 SHA256 (go_modules/al.essio.dev/pkg/shellescape/@v/v1.6.0.mod) = fW3oKR7t4TYCgXcER8PoYsrLbEot39+WoKs40YzeHLw=
@@ -693,6 +694,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v6/@v/v6.3.0.zip) = vLDmYuM
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
+SIZE (bsdmp-survey-vv2.3.8.tar.gz) = 125803
 SIZE (cli-v1.85.0.zip) = 17703196
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.5.1.mod) = 113
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.6.0.mod) = 113
