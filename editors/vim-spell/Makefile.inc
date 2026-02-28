@@ -3,11 +3,11 @@ LANGS =		af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		sl sv sw tet tl tn uk yi zu
 
 HOMEPAGE =	https://www.vim.org/
-VERSION =	9.1
+VERSION =	9.2
 P =		${VERSION:C/[\.]//g}
 CATEGORIES =	editors
 SITES =		https://ftp.nluug.nl/pub/vim/runtime/spell/
-DIST_SUBDIR =	vim-spell-${VERSION}
+DIST_SUBDIR =	vim-spell-9.1
 EXTRACT_ONLY =
 DISTNAME =	vim-spell-${VERSION}
 
