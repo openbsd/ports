@@ -8,6 +8,8 @@ DISTNAME =	cli-${MODGO_VERSION}
 PKGNAME =	github-cli-${V}
 REVISION =	0
 
+# replace "survey" module with a patched version that uses ioctl
+# instead of unnecessary direct syscall() calls
 SURVEY_V =	vv2.3.8
 DIST_TUPLE =	github bsdmp survey ${SURVEY_V} ../survey
 EXTRACT_ONLY =	bsdmp-survey-${SURVEY_V}.tar.gz
