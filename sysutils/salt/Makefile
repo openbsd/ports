@@ -15,7 +15,7 @@
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_DISTV =		3007.12
+MODPY_DISTV =		3007.13
 DISTNAME =		salt-${MODPY_DISTV}
 
 CATEGORIES =		sysutils net devel
