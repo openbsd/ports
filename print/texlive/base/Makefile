@@ -16,7 +16,7 @@ PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
 
-REVISION-main =		1
+REVISION-main =		2
 
 DISTFILES =		texlive-${DIST_V}-extra${EXTRACT_SUFX}
 DISTFILES.zoo =		${DISTNAME}${EXTRACT_SUFX} \
@@ -82,6 +82,8 @@ CXXFLAGS_ports-gcc =	-std=gnu++17
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CPPFLAGS =	-I${X11BASE}/include \
 		-I${LOCALBASE}/include
