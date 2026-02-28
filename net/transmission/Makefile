@@ -2,9 +2,8 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		4.1.0
-REVISION-main=	0
-DISTNAME=	transmission-4.1.0
+VER=		4.1.1
+DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
@@ -20,7 +19,7 @@ DEBUG_PACKAGES=${BUILD_PACKAGES}
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-SITES=	https://github.com/transmission/transmission/releases/download/4.1.0/
+SITES=	https://github.com/transmission/transmission/releases/download/${VER}/
 EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
@@ -35,7 +34,7 @@ FLAVOR?=
 .include <bsd.port.arch.mk>
 
 WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl deflate
-WANTLIB-common +=	m miniupnpc natpmp psl ssl crc32c intl
+WANTLIB-common +=	m miniupnpc natpmp psl ssl intl
 
 WANTLIB-main =	${WANTLIB-common}
 
@@ -45,7 +44,7 @@ WANTLIB-gtk +=	giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0 gtk-3 gtkmm-3.0
 WANTLIB-gtk +=	harfbuzz pango-1.0 pangocairo-1.0 pangomm-1.4 sigc-2.0
 
 WANTLIB-qt +=	${WANTLIB-common} GL Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Svg
-WANTLIB-qt +=	Qt6Widgets crc32c
+WANTLIB-qt +=	Qt6Widgets 
 
 MODULES +=		devel/cmake \
 			textproc/intltool
@@ -53,7 +52,6 @@ MODULES +=		devel/cmake \
 BUILD_DEPENDS +=	devel/fmt
 
 LIB_DEPENDS-common +=	archivers/libdeflate \
-			devel/crc32c \
 			net/curl \
 			net/libpsl \
 			net/miniupnp/libnatpmp \
@@ -101,10 +99,5 @@ CONFIGURE_ARGS +=	-DENABLE_QT=ON \
 .else
 CONFIGURE_ARGS +=	-DENABLE_QT=OFF
 .endif
-
-pre-configure:
-	find ${WRKSRC} -name "CMakeLists.txt" -type f -exec sed -i \
-	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
-	{} \;
 
 .include <bsd.port.mk>

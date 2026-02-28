@@ -68,11 +68,16 @@ share/doc/transmission/news/news-4.1.0-beta.3.md
 share/doc/transmission/news/news-4.1.0-beta.4.md
 share/doc/transmission/news/news-4.1.0-beta.5.md
 share/doc/transmission/news/news-4.1.0.md
+share/doc/transmission/news/news-4.1.1.md
 share/doc/transmission/news/news-5.0.0-draft.md
 share/doc/transmission/rpc-spec.md
 share/doc/transmission/send-email-when-torrent-done.sh
-share/icons/
-share/icons/hicolor/
+@comment share/icons/
+@comment share/icons/hicolor/
+@comment share/icons/hicolor/scalable/
+@comment share/icons/hicolor/scalable/apps/
+@comment share/icons/hicolor/symbolic/
+@comment share/icons/hicolor/symbolic/apps/
 share/transmission/
 share/transmission/public_html/
 share/transmission/public_html/images/
