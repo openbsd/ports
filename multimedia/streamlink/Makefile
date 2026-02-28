@@ -1,8 +1,9 @@
+# newer versions require the urllib3 2.x can of worms
 MODPY_DISTV =	7.6.0
+REVISION =	0
 COMMENT =	pipe video streams into a video player
 DISTNAME =	streamlink-${MODPY_DISTV}
 CATEGORIES =	multimedia net
-REVISION =	0
 
 HOMEPAGE =	https://streamlink.github.io/
 
