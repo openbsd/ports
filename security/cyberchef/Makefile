@@ -1,8 +1,10 @@
 COMMENT =	cyber swiss army knife
 
 V =		10.22.1
-DISTNAME =	CyberChef_v$V
+#DISTNAME =	CyberChef_v$V
+DISTNAME =	CyberChef_v$V-rerolled1{CyberChef_v$V}
 PKGNAME =	cyberchef-$V
+REVISION =	0
 
 PREFIX =	${VARBASE}/www
 
