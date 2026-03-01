@@ -454,6 +454,7 @@ share/fish/completions/dotnet.fish
 share/fish/completions/downgrade.fish
 share/fish/completions/dpkg-reconfigure.fish
 share/fish/completions/dpkg.fish
+share/fish/completions/dput.fish
 share/fish/completions/dropdb.fish
 share/fish/completions/dscacheutil.fish
 share/fish/completions/du.fish
