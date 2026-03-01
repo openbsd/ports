@@ -1,12 +1,14 @@
 COMMENT =	terminal screen handling and optimisation
 
-DISTNAME =	Curses-1.45
+DISTNAME =	Curses-1.46
 FIX_EXTRACT_PERMISSIONS = Yes
 
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		GIRAFFED
 
 WANTLIB =		c curses form menu panel perl
 
