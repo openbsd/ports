@@ -1,2 +1,3 @@
 #!/bin/sh
-`javaPathHelper -c vnu` -jar ${TRUEPREFIX}/share/vnu/vnu.jar $@
+JAVACMD=$(javaPathHelper -c vnu)
+exec ${JAVACMD} -jar ${TRUEPREFIX}/share/vnu/vnu.jar "$@"
