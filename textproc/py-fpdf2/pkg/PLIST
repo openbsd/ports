@@ -103,6 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/fpdf/outline.py
 lib/python${MODPY_VERSION}/site-packages/fpdf/output.py
 lib/python${MODPY_VERSION}/site-packages/fpdf/pattern.py
 lib/python${MODPY_VERSION}/site-packages/fpdf/prefs.py
+lib/python${MODPY_VERSION}/site-packages/fpdf/py.typed
 lib/python${MODPY_VERSION}/site-packages/fpdf/recorder.py
 lib/python${MODPY_VERSION}/site-packages/fpdf/sign.py
 lib/python${MODPY_VERSION}/site-packages/fpdf/structure_tree.py
