@@ -9,7 +9,7 @@ Index: config/hiawatha.conf.in
  ConnectionsTotal = 1000
  ConnectionsPerIP = 25
  SystemLogfile = @LOG_DIR@/system.log
-@@ -47,12 +48,13 @@ Binding {
+@@ -48,12 +49,13 @@ Binding {
  # COMMON GATEWAY INTERFACE (CGI) SETTINGS
  # These settings can be used to run CGI applications.
  #

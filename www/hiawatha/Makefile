@@ -1,17 +1,23 @@
 COMMENT =		secure webserver
-DISTNAME =		hiawatha-11.8
+DISTNAME =		hiawatha-12.0
 CATEGORIES =		www net
 
 HOMEPAGE =		https://hiawatha.leisink.net/
 
 # GPLv2 only
-PERMIT_PACKAGE =	mbedtls Apache 2 license incompatible with GPLv2
+# N.B. includes bundled mbedtls; distributing is ok as their
+# LTS branches are dual Apache 2/GPLv2+, only their development
+# branch is Apache-only.
+PERMIT_PACKAGE =	Yes
 
 SITES =			${HOMEPAGE}files/
 
 WANTLIB += c pthread xml2 xslt z
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake \
+			lang/php
+# used to set #! in lefh script
+MODPHP_RUNDEP =		No
 
 LIB_DEPENDS =		textproc/libxslt
 
@@ -38,13 +44,14 @@ CFLAGS += -mpclmul -msse2 -maes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/config/hiawatha.conf.in \
 		${WRKSRC}/config/cgi-wrapper.conf \
-		${WRKSRC}/man/hiawatha.1.in
+		${WRKSRC}/man/hiawatha.1.in \
+		${WRKSRC}/extra/letsencrypt/lefh.in
 
 post-install:
 	mv ${WRKINST}${SYSCONFDIR}/hiawatha ${PREFIX}/share/examples/hiawatha
 	mv ${WRKINST}/var/hiawatha/index.html ${PREFIX}/share/examples/hiawatha/
 	rm -r ${WRKINST}/var \
 		${PREFIX}/lib/hiawatha \
-		${PREFIX}/include/{psa,mbedtls}
+		${PREFIX}/include/*
 
 .include <bsd.port.mk>

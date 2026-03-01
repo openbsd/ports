@@ -4,12 +4,14 @@
 @bin bin/ssi-cgi
 @man man/man1/cgi-wrapper.1
 @man man/man1/hiawatha.1
+@man man/man1/lefh.1
 @man man/man1/ssi-cgi.1
 @man man/man1/wigwam.1
 @mode u+s
 @bin sbin/cgi-wrapper
 @mode
 @bin sbin/hiawatha
+sbin/lefh
 @bin sbin/wigwam
 share/examples/hiawatha/
 @sample ${SYSCONFDIR}/hiawatha/

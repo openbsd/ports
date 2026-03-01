@@ -1,0 +1,9 @@
+Index: extra/letsencrypt/lefh.in
+--- extra/letsencrypt/lefh.in.orig
++++ extra/letsencrypt/lefh.in
+@@ -1,4 +1,4 @@
+-#!/usr/bin/php
++#!${MODPHP_BIN}
+ <?php
+ 	/* Copyright (c) by Hugo Leisink <hugo@leisink.net>
+ 	 *
