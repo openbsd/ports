@@ -2,6 +2,9 @@ ONLY_FOR_ARCHS =amd64 arm64
 
 COMMENT =	simple, fast, safe, compiled language
 
+# Cant turn off parallel in the build system, so at least register the slots
+DPB_PROPERTIES =	parallel parallel2
+
 V_V =		0.4.5
 VC_V =		2386fe9a0d8cc92d0d013ecd81456f2831433a71
 MARKDOWN_V =	b7ff5f24fdb26935d6e2277c7888752fb8aac114
