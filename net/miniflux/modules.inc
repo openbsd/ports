@@ -32,7 +32,7 @@ MODGO_MODULES =	\
 	github.com/kr/pretty			 v0.3.1 \
 	github.com/kr/text			 v0.2.0 \
 	github.com/kylelemons/godebug		 v1.1.0 \
-	github.com/lib/pq			 v1.10.9 \
+	github.com/lib/pq			 v1.11.2 \
 	github.com/modern-go/concurrent		 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2		 v1.0.2 \
 	github.com/munnerz/goautoneg		 v0.0.0-20191010083416-a7dc8b61c822 \
@@ -56,17 +56,17 @@ MODGO_MODULES =	\
 	go.uber.org/goleak			 v1.3.0 \
 	go.uber.org/mock			 v0.6.0 \
 	go.yaml.in/yaml/v2			 v2.4.2 \
-	golang.org/x/crypto			 v0.46.0 \
-	golang.org/x/image			 v0.34.0 \
-	golang.org/x/mod			 v0.30.0 \
-	golang.org/x/net			 v0.48.0 \
-	golang.org/x/oauth2			 v0.34.0 \
+	golang.org/x/crypto			 v0.48.0 \
+	golang.org/x/image			 v0.36.0 \
+	golang.org/x/mod			 v0.32.0 \
+	golang.org/x/net			 v0.50.0 \
+	golang.org/x/oauth2			 v0.35.0 \
 	golang.org/x/sync			 v0.19.0 \
-	golang.org/x/sys			 v0.39.0 \
+	golang.org/x/sys			 v0.41.0 \
 	golang.org/x/telemetry			 v0.0.0-20240228155512-f48c80bd79b2 \
-	golang.org/x/term			 v0.38.0 \
-	golang.org/x/text			 v0.32.0 \
-	golang.org/x/tools			 v0.39.0 \
+	golang.org/x/term			 v0.40.0 \
+	golang.org/x/text			 v0.34.0 \
+	golang.org/x/tools			 v0.41.0 \
 	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/protobuf		 v1.36.8 \
 	gopkg.in/check.v1			 v1.0.0-20201130134442-10cb98267c6c \
@@ -100,6 +100,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.33.0 \
 	golang.org/x/net			 v0.43.0 \
 	golang.org/x/net			 v0.47.0 \
+	golang.org/x/net			 v0.49.0 \
 	golang.org/x/net			 v0.6.0 \
 	golang.org/x/oauth2			 v0.28.0 \
 	golang.org/x/oauth2			 v0.30.0 \
