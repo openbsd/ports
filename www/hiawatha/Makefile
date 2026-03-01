@@ -1,16 +1,15 @@
-COMMENT =		secure webserver
-DISTNAME =		hiawatha-12.0
-CATEGORIES =		www net
+COMMENT =	secure webserver
+DISTNAME =	hiawatha-12.0
+CATEGORIES =	www net
 
-HOMEPAGE =		https://hiawatha.leisink.net/
+HOMEPAGE =	https://hiawatha.leisink.net/
+SITES =		https://hiawatha.leisink.net/files/download/
 
 # GPLv2 only
 # N.B. includes bundled mbedtls; distributing is ok as their
 # LTS branches are dual Apache 2/GPLv2+, only their development
 # branch is Apache-only.
 PERMIT_PACKAGE =	Yes
-
-SITES =			${HOMEPAGE}files/
 
 WANTLIB += c pthread xml2 xslt z
 
