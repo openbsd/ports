@@ -8,6 +8,7 @@
 @bin bin/derper
 @bin bin/derpprobe
 @comment bin/dist
+@comment bin/distsign
 @comment bin/featuretags
 @comment bin/generate
 @comment bin/get-authkey
