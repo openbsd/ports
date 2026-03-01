@@ -1,0 +1,3 @@
+wl-clipboard provides two command-line Wayland clipboard utilities, wl-copy
+and wl-paste, that let you easily copy data between the clipboard and Unix
+pipes, sockets, files and so on.
