@@ -1,23 +1,27 @@
---- scripts/portfolio.sh.orig	Thu Jul  7 16:34:26 2011
-+++ scripts/portfolio.sh	Thu Jul  7 16:35:58 2011
-@@ -26,16 +26,16 @@
+Index: scripts/portfolio.sh
+--- scripts/portfolio.sh.orig
++++ scripts/portfolio.sh
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/local/bin/bash
+ # ==============================================================================
+ # POV-Ray 3.7 
+ # portfolio.sh - render the POV-Ray portfolio
+@@ -26,14 +26,14 @@
  #SCENE_DIR=.
  
- VERSION=3.6
+ VERSION=3.7
 -VER_DIR=povray-$VERSION
--DEFAULT_DIR=/usr/local
--SYSCONFDIR=$DEFAULT_DIR/etc
 +VER_DIR=povray
-+DEFAULT_DIR=${PREFIX}
-+SYSCONFDIR=${SYSCONFDIR}
+ DEFAULT_DIR=/usr/local
+-SYSCONFDIR=$DEFAULT_DIR/etc
++SYSCONFDIR=/etc
  
  install_dir()
  {
    if [ -z "$POVINI" ] ; then
-     test -f "$SYSCONFDIR/povray.ini" && POVINI="$SYSCONFDIR/povray.ini"
+-    test -f "$SYSCONFDIR/povray.ini" && POVINI="$SYSCONFDIR/povray.ini"
++    test -f "$SYSCONFDIR/povray/povray.ini" && POVINI="$SYSCONFDIR/povray/povray.ini"
      test -f "$HOME/.povrayrc" && POVINI="$HOME/.povrayrc"
--    test -f "$SYSCONFDIR/povray/$VERSION/povray.ini" && POVINI="$SYSCONFDIR/povray/$VERSION/povray.ini"
-+    test -f "$SYSCONFDIR/povray/$VERSION/povray.ini" && POVINI="$SYSCONFDIR/povray/povray.ini"
+     test -f "$SYSCONFDIR/povray/$VERSION/povray.ini" && POVINI="$SYSCONFDIR/povray/$VERSION/povray.ini"
      test -f "$HOME/.povray/$VERSION/povray.ini" && POVINI="$HOME/.povray/$VERSION/povray.ini"
-   fi
- 

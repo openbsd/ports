@@ -1,0 +1,12 @@
+Index: vfe/Makefile.am
+--- vfe/Makefile.am.orig
++++ vfe/Makefile.am
+@@ -47,6 +47,6 @@ AM_CPPFLAGS = \
+ # They cannot be placed in config.h since they indirectly rely on $prefix.
+ DEFS = \
+   @DEFS@ \
+-  -DPOVLIBDIR=\"@datadir@/@PACKAGE@-@VERSION_BASE@\" \
+-  -DPOVCONFDIR=\"@sysconfdir@/@PACKAGE@/@VERSION_BASE@\" \
++  -DPOVLIBDIR=\"@datadir@/@PACKAGE@\" \
++  -DPOVCONFDIR=\"@sysconfdir@/@PACKAGE@\" \
+   -DPOVCONFDIR_BACKWARD=\"@sysconfdir@\"

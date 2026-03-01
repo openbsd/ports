@@ -1,62 +1,65 @@
 COMMENT=	3D image rendering package
 
-DISTNAME=	povray-3.6.1
-REVISION =	12
+V=		3.7.0.10
+DISTNAME=	povunix-v$V-src
+PKGNAME=	povray-$V
+
 CATEGORIES=	graphics
 
 HOMEPAGE=	https://www.povray.org/
+# created by extracting github tarball, then:
+# cd unix, AUTOCONF_VERSION=2.72 AUTOMAKE_VERSION=1.16 ./prebuild.sh
+# this is the same format as upstream's files for 3.8 beta releases
+SITES=		https://spacehopper.org/mirrors/
+PORTROACH=	site:https://github.com/POV-Ray/povray/releases/
+#SITES=		https://github.com/POV-Ray/povray/releases/download/v${V}/
 
+# AGPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 Xpm c jpeg m ${COMPILER_LIBCXX} tiff z
+WANTLIB += ${COMPILER_LIBCXX} Iex-3_4 IlmThread-3_4 Imath-3_2
+WANTLIB += OpenEXR-3_4 OpenEXRCore-3_4 OpenEXRUtil-3_4 boost_thread-mt
+WANTLIB += c jpeg m png tiff z
 
-COMPILER =		base-clang ports-gcc base-gcc
-CXXFLAGS_base-clang =	-std=c++14
+COMPILER=		base-clang ports-gcc
+CXXFLAGS_base-clang=	-std=c++14
 
-SITES=	https://www.povray.org/ftp/pub/povray/Old-Versions/Official-3.62/Unix/
-EXTRACT_SUFX=		.tar.bz2
+# from FreeBSD, thanks!
+CXXFLAGS_base-clang+=	-D POVMSUCS2="char16_t"
+CXXFLAGS_base-clang+=	-D UCS2="char16_t"
+CXXFLAGS_base-clang+=	-D UCS4="char32_t"
 
-# We replace the included ancient copy of libpng with a later release
-# from the 1.2 branch.
-EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
-PNG_V=			1.2.57
-SITES.png=		${SITE_SOURCEFORGE:=libpng/}
-DISTFILES.png =		libpng-${PNG_V}.tar.gz
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
+LIB_DEPENDS=	devel/boost \
+		graphics/jpeg \
+		graphics/openexr \
+		graphics/png \
+		graphics/tiff
 
-LIB_DEPENDS=		graphics/jpeg \
-			graphics/tiff
+AUTOCONF_VERSION= 2.72
+AUTOMAKE_VERSION= 1.16
+CONFIGURE_STYLE= autoreconf
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-x \
-			--enable-watch-cursor \
-			--disable-optimiz \
-			--x-includes="${X11BASE}/include" \
-			--includedir=${LOCALBASE}
+CONFIGURE_ARGS=	--with-x \
+		--enable-watch-cursor \
+		--disable-optimiz \
+		--x-includes="${X11BASE}/include" \
+		--includedir=${LOCALBASE}
 
-# POV-Ray 3.6 is incompatible with libpng 1.5.
-CONFIGURE_ARGS+=	ac_cv_search_png_get_libpng_ver=no	
-CONFIGURE_ENV+= 	COMPILED_BY="OpenBSD Ports <ports@openbsd.org>" \
-			CPPFLAGS="-I${LOCALBASE}/include -DPNG_NO_MMX_CODE" \
-			CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}" \
-			LDFLAGS="-L${LOCALBASE}/lib -lm"
+CONFIGURE_ENV+=	COMPILED_BY="OpenBSD Ports <ports@openbsd.org>" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -lm"
 
-MAKE_FLAGS+=		povconfdir=${PREFIX}/share/examples/povray/ \
-			povdocdir=${PREFIX}/share/doc/povray/ \
-			povlibdir=${PREFIX}/share/povray/
+MAKE_FLAGS+=	DISTRIBUTION_MESSAGE_2="The OpenBSD ports team <ports@openbsd.org>." \
+		povconfdir=${PREFIX}/share/examples/povray \
+		povdocdir=${PREFIX}/share/doc/povray \
+		povlibdir=${PREFIX}/share/povray
 
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/libraries/png
+#MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
-NO_TEST=		Yes
-
-# Replace the source files for the included libpng.
-post-extract:
-	cd ${WRKDIST}/libraries; \
-	    tar -xzf ${FULLDISTDIR}/libpng-${PNG_V}.tar.gz \
-	    	-s ',^libpng-${PNG_V},png,' 'libpng-${PNG_V}/png*.[ch]'
-
-pre-patch:
-	cd ${WRKSRC} && find . -type f -name \*.orig -delete
+NO_TEST=	Yes
 
 post-configure:
 	sed -i 's,%INSTALLDIR%,${PREFIX}/share/povray/,g' \
