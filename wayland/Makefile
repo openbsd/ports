@@ -34,6 +34,7 @@
      SUBDIR += wf-config
      SUBDIR += wf-recorder
      SUBDIR += wf-shell
+     SUBDIR += wl-clipboard
      SUBDIR += wlopm
      SUBDIR += wlr-randr
      SUBDIR += wlroots
