@@ -1,0 +1,5 @@
+This library provides bindings to the low-level libssh2 C-API.
+
+It is primarily there to support "parallel-ssh": it is neither high
+level, nor easy to use. A lot of code would need to be written to use
+this library that is already provided by parallel-ssh.

@@ -1,0 +1,48 @@
+lib/python${MODPY_VERSION}/site-packages/ssh2/
+lib/python${MODPY_VERSION}/site-packages/ssh2/__init__.pxd
+lib/python${MODPY_VERSION}/site-packages/ssh2/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ssh2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ssh2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ssh2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ssh2/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ssh2/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ssh2/_version.py
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/agent.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/agent.pxd
+lib/python${MODPY_VERSION}/site-packages/ssh2/c_pkey.pxd
+lib/python${MODPY_VERSION}/site-packages/ssh2/c_sftp.pxd
+lib/python${MODPY_VERSION}/site-packages/ssh2/c_ssh2.pxd
+lib/python${MODPY_VERSION}/site-packages/ssh2/c_stat.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/channel.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/channel.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/error_codes.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/error_codes.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/exceptions.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/fileinfo.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/fileinfo.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/knownhost.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/knownhost.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/listener.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/listener.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/pkey.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/pkey.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/publickey.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/publickey.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/session.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/session.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/sftp.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/sftp.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/sftp_handle.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/sftp_handle.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/statinfo.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/statinfo.pxd
+@so lib/python${MODPY_VERSION}/site-packages/ssh2/utils.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ssh2/utils.pxd
+lib/python${MODPY_VERSION}/site-packages/ssh2_python-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ssh2_python-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ssh2_python-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ssh2_python-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ssh2_python-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ssh2_python-${MODPY_DISTV}.dist-info/licenses/COPYING
+lib/python${MODPY_VERSION}/site-packages/ssh2_python-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ssh2_python-${MODPY_DISTV}.dist-info/top_level.txt
