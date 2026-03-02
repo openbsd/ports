@@ -6,7 +6,7 @@ Index: data/configuration.example.yaml
 +# zigbee2mqtt may update this file itself when running
 +
  # Indicates the configuration version (used by configuration migrations)
- version: 4
+ version: 5
  
 @@ -8,6 +11,7 @@ homeassistant:
  # Enable the frontend, runs on port 8080 by default
