@@ -11,10 +11,9 @@ PKGNAME-gui =		czkawka-gui-${GH_TAGNAME}
 GH_ACCOUNT =		qarmin
 GH_PROJECT =		czkawka
 GH_TAGNAME =		9.0.0
+REVISION =		0
 
 CATEGORIES =		sysutils
-
-MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
