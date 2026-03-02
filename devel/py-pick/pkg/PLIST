@@ -10,4 +10,13 @@ lib/python${MODPY_VERSION}/site-packages/pick/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pick/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pick/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pick/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pick/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pick/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pick/${MODPY_PYCACHE}blessed_backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pick/${MODPY_PYCACHE}blessed_backend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pick/${MODPY_PYCACHE}curses_backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pick/${MODPY_PYCACHE}curses_backend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pick/backend.py
+lib/python${MODPY_VERSION}/site-packages/pick/blessed_backend.py
+lib/python${MODPY_VERSION}/site-packages/pick/curses_backend.py
 lib/python${MODPY_VERSION}/site-packages/pick/py.typed
