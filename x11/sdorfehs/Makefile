@@ -1,6 +1,6 @@
 COMMENT=	tiling window manager with a weird name
 
-GH_TAGNAME=	v1.5
+GH_TAGNAME=	v1.7
 GH_ACCOUNT=	jcs
 GH_PROJECT=	sdorfehs
 
