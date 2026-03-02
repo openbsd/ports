@@ -1,6 +1,6 @@
 COMMENT=	implementation of CSS4 Selectors
 
-MODPY_DISTV=	0.8.0
+MODPY_DISTV=	0.9.0
 DISTNAME=	cssselect2-${MODPY_DISTV}
 PKGNAME=	py-cssselect2-${MODPY_DISTV}
 
