@@ -1,6 +1,6 @@
 COMMENT =		yet another URL library
 
-MODPY_DISTV =		1.22.0
+MODPY_DISTV =		1.23.0
 DISTNAME =		yarl-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -26,7 +26,8 @@ RUN_DEPENDS =		devel/py-propcache \
 			net/py-idna>=2.0 \
 			www/py-multidict>=4.0
 
-TEST_DEPENDS =		devel/py-test-cov \
+TEST_DEPENDS =		devel/py-covdefaults \
+			devel/py-test-cov \
 			devel/py-test-runner \
 			devel/py-test-xdist
 
