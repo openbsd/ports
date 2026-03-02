@@ -9,6 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pysmt-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pysmt-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pysmt-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/pysmt-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pysmt-${MODPY_DISTV}.dist-info/licenses/NOTICE
 lib/python${MODPY_VERSION}/site-packages/pysmt-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pysmt/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/__main__.py
@@ -81,8 +82,10 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}bd
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}bdd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}btor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}btor.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}cvc4.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}cvc4.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}cvcfive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}cvcfive.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}cvcfour.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}cvcfour.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}msat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}msat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}pico.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -94,7 +97,8 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/${MODPY_PYCACHE}z3
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/base.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/bdd.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/btor.py
-lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/cvc4.py
+lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/cvcfive.py
+lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/cvcfour.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/msat.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/pico.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/cmd/installers/yices.py
@@ -156,8 +160,10 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}bdd.${MOD
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}bdd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}btor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}btor.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}cvc4.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}cvc4.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}cvcfive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}cvcfive.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}cvcfour.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}cvcfour.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}eager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}eager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}interpolation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -182,7 +188,8 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}z3.${MODP
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/${MODPY_PYCACHE}z3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/bdd.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/btor.py
-lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/cvc4.py
+lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/cvcfive.py
+lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/cvcfour.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/eager.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/interpolation.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/solvers/msat.py
@@ -218,8 +225,8 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_configu
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_configuration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_constants.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_cvc4_quantifiers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_cvc4_quantifiers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_cvc_quantifiers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_cvc_quantifiers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_dwf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_dwf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_eager_model.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -282,6 +289,9 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_walker_
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_walker_ext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_walkers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/${MODPY_PYCACHE}test_walkers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/configs/
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/configs/config1.ini
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/configs/config_bad.ini
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/examples.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/smtlib/__init__.py
@@ -353,7 +363,7 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_bv_simplification.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_cnf.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_configuration.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_constants.py
-lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_cvc4_quantifiers.py
+lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_cvc_quantifiers.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_dwf.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_eager_model.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/test/test_env.py
@@ -405,5 +415,5 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/walkers/dag.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/walkers/generic.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/walkers/identitydag.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/walkers/tree.py
-share/doc/${MODPY_PY_PREFIX}pysmt/
-share/doc/${MODPY_PY_PREFIX}pysmt/README.rst
+share/doc/py-pysmt/
+share/doc/py-pysmt/README.rst
