@@ -1,8 +1,10 @@
 COMMENT =		fetch lyrics from spotify
 
-V =			0.1.2.5
-MODPY_DISTV =		${V}
-DISTNAME =		syrics-${V}
+# project archived upstream; replacement is https://libre-lyrics.github.io/
+# (https://github.com/libre-lyrics/librelyrics +
+# https://github.com/libre-lyrics/librelyrics-spotify)
+MODPY_DISTV =		0.1.2.5
+DISTNAME =		syrics-${MODPY_DISTV}
 CATEGORIES =		textproc audio
 
 HOMEPAGE =		https://github.com/akashrchandran/syrics
@@ -13,6 +15,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+
+NO_TEST =		Yes
 
 RUN_DEPENDS =		audio/py-tinytag \
 			devel/py-tqdm \
