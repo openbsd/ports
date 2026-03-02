@@ -1,0 +1,2 @@
+pytest-rerunfailures is a plugin for pytest that re-runs tests to
+eliminate intermittent failures.
