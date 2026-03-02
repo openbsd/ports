@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS = ${LP64_ARCHS}
 DPB_PROPERTIES = parallel
 
 V =		2.9.4
+REVISION =	0
 PKGNAME =	prusaslicer-${V}
 
 GH_ACCOUNT =	prusa3d
@@ -38,6 +39,7 @@ WANTLIB += wx_gtk3u_webview-3.2 z z3
 FIX_CRLF_FILES =	src/slic3r/GUI/GLCanvas3D.cpp
 
 COMPILER =		base-clang ports-gcc
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODULES =		devel/cmake \
 			x11/gnome
@@ -71,8 +73,7 @@ LIB_DEPENDS = 		cad/opencascade \
 			x11/wxWidgets \
 			x11/wxWidgets,-webview
 
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
-			-DCMAKE_MODULE_PATH=${PREFIX}/lib/cmake/OpenVDB \
+CONFIGURE_ARGS +=	-DCMAKE_MODULE_PATH=${PREFIX}/lib/cmake/OpenVDB \
 			-DSLIC3R_FHS=1 \
 			-DSLIC3R_GTK=3 \
 			-DSLIC3R_PCH=OFF
