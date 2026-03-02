@@ -1,6 +1,6 @@
 COMMENT=	pure Python implementation of Git file formats and protocols
 
-MODPY_DISTV=	0.23.2
+MODPY_DISTV=	1.1.0
 DISTNAME=	dulwich-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools-rust
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	www/py-urllib3
 
@@ -27,7 +27,9 @@ TEST_DEPENDS=	devel/git,-main \
 
 MAKE_ENV +=	LC_CTYPE=en_US.UTF-8
 
-MODPY_PYTEST_ARGS= --ignore tests/contrib/test_swift_smoke.py
+MODPY_PYTEST_ARGS= \
+	--ignore tests/contrib/test_swift_smoke.py \
+	--ignore tests/contrib/test_swift.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dulwich/tutorial
