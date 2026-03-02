@@ -3,7 +3,7 @@ Point font path at GhostScript
 Index: xpdf/GlobalParams.cc
 --- xpdf/GlobalParams.cc.orig
 +++ xpdf/GlobalParams.cc
-@@ -107,14 +107,7 @@ static const char *displayFontDirs[] = {
+@@ -192,14 +192,7 @@ static const char *displayFontDirs[] = {
    "c:/windows/fonts",
    "c:/winnt/fonts",
  #else // _WIN32

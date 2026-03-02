@@ -1,8 +1,7 @@
 COMMENT =		PDF viewer for X11
-DISTNAME =		xpdf-4.05
+DISTNAME =		xpdf-4.06
 CATEGORIES =		textproc x11
 EPOCH =			0
-REVISION =		1
 
 HOMEPAGE =		https://www.xpdfreader.com/
 SITES =			https://dl.xpdfreader.com/
