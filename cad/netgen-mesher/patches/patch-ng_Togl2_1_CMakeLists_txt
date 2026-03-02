@@ -1,4 +1,4 @@
-Use private headers from x11/tk/8.5 not installed by package.
+Use private headers from x11/tk/8.x not installed by package.
 
 Index: ng/Togl2.1/CMakeLists.txt
 --- ng/Togl2.1/CMakeLists.txt.orig
@@ -8,8 +8,8 @@ Index: ng/Togl2.1/CMakeLists.txt
  endif(WIN32)
  
 +target_include_directories(togl PRIVATE
-+	${CMAKE_SOURCE_DIR}/../x11/tk/8.5/tk8.5.19/generic
-+	${CMAKE_SOURCE_DIR}/../x11/tk/8.5/tk8.5.19/unix
++	${CMAKE_SOURCE_DIR}/../tk/generic
++	${CMAKE_SOURCE_DIR}/../tk/unix
 +)
  target_include_directories(togl PUBLIC ${OPENGL_INCLUDE_DIR})
  target_link_libraries(togl PUBLIC ${OPENGL_LIBRARY})

@@ -1,11 +1,15 @@
 COMMENT =		automatic 3d tetrahedral mesh generator
 
 V =			6.2.2505
+REVISION =		0
 PKGNAME =		netgen-mesher-${V}
 
 GH_ACCOUNT =		NGSolve
 GH_PROJECT =		netgen
 GH_TAGNAME =		v${V}
+
+# git checkout v${V}; git describe --tags --match "v[0-9]*" --long --dirty
+NETGEN_VERSION_GIT =	v6.2.2505-0-g41893720
 
 CATEGORIES =		cad
 HOMEPAGE =		https://ngsolve.org/
@@ -19,8 +23,7 @@ WANTLIB += GL GLU TKBO TKBRep TKBool TKCAF TKCDF TKDE TKDEIGES
 WANTLIB += TKDESTEP TKDESTL TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase
 WANTLIB += TKHLR TKLCAF TKMath TKMesh TKOffset TKPrim TKService
 WANTLIB += TKShHealing TKTopAlgo TKV3d TKVCAF TKXCAF TKXSBase
-WANTLIB += TKernel X11 Xmu c execinfo fontconfig freetype jpeg
-WANTLIB += m z
+WANTLIB += TKernel X11 Xmu c execinfo jpeg m z
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
@@ -30,13 +33,13 @@ MODULES =		devel/cmake \
 MODTK_VERSION =		8.6
 MODPY_PYTEST =		Yes
 
-# x11/tk/8.5 does not install private headers needed at build time.
+# x11/tk does not install private headers needed at build time.
 # Use :patch target to work around this.
 BUILD_DEPENDS =		devel/py-pybind11 \
 			devel/catch2 \
 			graphics/ffmpeg \
 			${MODTK_BUILD_DEPENDS} \
-			x11/tk/8.5:patch
+			x11/tk/${MODTK_VERSION}:patch
 
 LIB_DEPENDS =		cad/opencascade \
 			graphics/jpeg
@@ -58,13 +61,16 @@ CONFIGURE_ARGS +=	-DPREFER_SYSTEM_PYBIND11=ON \
 			-DUSE_MPI4PY=OFF \
 			-DENABLE_UNIT_TESTS=ON
 
-# For NETGEN_VERSION_GIT: git describe --tags --match "v[0-9]*" --long --dirty
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DNG_INSTALL_DIR_INCLUDE=include/netgen \
-			-DNETGEN_VERSION_GIT=v${V}-0-g41893720 \
+			-DNETGEN_VERSION_GIT=${NETGEN_VERSION_GIT} \
 			-Dpybind11_DIR=${MODPY_SITEPKG}/pybind11/share/cmake/pybind11 \
 			-DTCL_STUB_LIBRARY=${LOCALBASE}/lib/libtclstub${MODTCL_VERSION:S/.//}.a \
 			-DTK_STUB_LIBRARY=${LOCALBASE}/lib/libtkstub${MODTK_VERSION:S/.//}.a
+
+post-extract:
+	mv ${WRKDIR}/x11/tk/*/tk* ${WRKDIR}/tk
 
 post-install:
 	${MODPY_COMPILEALL} \

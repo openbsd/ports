@@ -9,15 +9,6 @@ Index: CMakeLists.txt
      find_package(Threads REQUIRED)
      if(APPLE)
            set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework AppKit")
-@@ -423,7 +422,7 @@ if (USE_OCC)
-       target_link_libraries(nggui PRIVATE Ws2_32.lib)
-     endif(WIN32 AND USE_GUI)
-     if(USE_GUI)
--      target_link_libraries(nggui PRIVATE occ_libs)
-+      target_link_libraries(nggui PRIVATE occ_libs -L/usr/X11R6/lib)
-     endif(USE_GUI)
- endif (USE_OCC)
- 
 @@ -445,6 +444,7 @@ endif (USE_MPEG)
  add_custom_target(ng_generate_version_file
    ${CMAKE_COMMAND}

@@ -6,7 +6,7 @@ Index: nglib/CMakeLists.txt
    target_link_libraries(nglib PRIVATE $<BUILD_INTERFACE:$<TARGET_PROPERTY:occ_libs,INTERFACE_LINK_LIBRARIES>>)
  else(EMSCRIPTEN)
 -  target_link_libraries( nglib PRIVATE ${CMAKE_THREAD_LIBS_INIT} ${JPEG_LIBRARIES} ${MKL_LIBRARIES} occ_libs netgen_cgns )
-+  target_link_libraries( nglib PRIVATE ${CMAKE_THREAD_LIBS_INIT} ${JPEG_LIBRARIES} ${MKL_LIBRARIES} ${ZLIB_LIBRARIES} occ_libs netgen_cgns -L/usr/X11R6/lib)
++  target_link_libraries( nglib PRIVATE ${CMAKE_THREAD_LIBS_INIT} ${JPEG_LIBRARIES} ${MKL_LIBRARIES} ${ZLIB_LIBRARIES} occ_libs netgen_cgns)
  endif(EMSCRIPTEN)
  
  install(TARGETS nglib netgen_cgns ${NG_INSTALL_DIR})
