@@ -62,6 +62,7 @@ share/locale/is/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/it/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/ja/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/kab/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/kk/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/ko/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/lt/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/ms/LC_MESSAGES/xfce4-screensaver.mo
@@ -80,7 +81,9 @@ share/locale/sr/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/sv/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/th/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/tr/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/ug/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/uk/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/vi/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-screensaver.mo
 share/pixmaps/
