@@ -1,7 +1,7 @@
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
-XFCE_VERSION=	4.20.3
+XFCE_VERSION=	4.20.4
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -30,7 +30,7 @@ WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 pixman-1 png pthread startup-notification-1
 WANTLIB += xcb xcb-util xcb-render xcb-shm
 WANTLIB += xfce4util xfconf-0 xkbfile xklavier xml2 z garcon-1
-WANTLIB += harfbuzz graphite2 lzma iconv intl fribidi
+WANTLIB += harfbuzz graphite2 iconv intl fribidi
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy exo-2 gdk-3
 WANTLIB += gtk-3 xfce4kbd-private-3 xfce4ui-2
 WANTLIB += gtk-layer-shell wayland-client wayland-cursor
