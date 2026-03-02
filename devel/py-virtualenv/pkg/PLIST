@@ -225,6 +225,7 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/discover.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/py_info.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/py_spec.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/info.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv/py.typed
 lib/python${MODPY_VERSION}/site-packages/virtualenv/report.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/run/
 lib/python${MODPY_VERSION}/site-packages/virtualenv/run/__init__.py
