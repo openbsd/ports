@@ -1,6 +1,6 @@
 COMMENT=	modern and minimalist taskbar for Xfce
 
-XFCE_VERSION=	0.5.0
+XFCE_VERSION=	0.5.1
 XFCE_PLUGIN=	docklike
 
 # GPLv3
