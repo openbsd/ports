@@ -1,0 +1,23 @@
+Index: scripts/addons_core/io_scene_gltf2/io/com/draco.py
+--- scripts/addons_core/io_scene_gltf2/io/com/draco.py.orig
++++ scripts/addons_core/io_scene_gltf2/io/com/draco.py
+@@ -14,11 +14,14 @@ def dll_path() -> Path:
+     :return: library path.
+     """
+     lib_name = 'extern_draco'
+-    library_name = {
+-        'win32': '{}.dll'.format(lib_name),
+-        'linux': 'lib{}.so'.format(lib_name),
+-        'darwin': 'lib{}.dylib'.format(lib_name)
+-    }.get(sys.platform)
++    if sys.platform.startswith('openbsd'):
++        library_name = 'lib{}.so'
++    else:
++        library_name = {
++            'win32': '{}.dll'.format(lib_name),
++            'linux': 'lib{}.so'.format(lib_name),
++            'darwin': 'lib{}.dylib'.format(lib_name)
++        }.get(sys.platform)
+ 
+     path = os.path.dirname(sys.modules['io_scene_gltf2'].__file__)
+     if path is not None:
