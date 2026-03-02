@@ -1,0 +1,15 @@
+Index: distro/dns-scripts/resolvconf_file-dns-updown.sh
+--- distro/dns-scripts/resolvconf_file-dns-updown.sh.orig
++++ distro/dns-scripts/resolvconf_file-dns-updown.sh
+@@ -41,6 +41,11 @@ only_standard_server_ports() {
+     done
+ }
+ 
++# If resolvd is running, don't touch /etc/resolv.conf
++if pgrep -q '^resolvd$'; then
++    exec ${PREFIX}/libexec/openvpn/dns-updown.resolvd "$@"
++fi
++
+ conf=/etc/resolv.conf
+ test -e "$conf" || exit 1
+ test -z "${dns_vars_file}" || . "${dns_vars_file}"

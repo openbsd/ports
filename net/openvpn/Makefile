@@ -1,7 +1,7 @@
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 DISTNAME=	openvpn-2.7.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net security
 
@@ -31,8 +31,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 		SOFTHSM2_UTIL=no
-CONFIGURE_ARGS+=--disable-dns-updown-by-default \
-		--with-openssl-engine=no
+CONFIGURE_ARGS=	--with-openssl-engine=no
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -53,6 +52,9 @@ WANTLIB += crypto pkcs11-helper ssl
 
 SAMPLES_DIR=	${PREFIX}/share/examples/openvpn
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/distro/dns-scripts/resolvconf_file-dns-updown.sh
+
 post-install:
 	cd ${WRKSRC}/sample/; \
 	find sample-config-files sample-keys sample-scripts -type d \
@@ -60,5 +62,7 @@ post-install:
 	find sample-config-files sample-keys sample-scripts -type f \
 	    '(' ! -name '*.orig' -a ! -name '.gitignore' ')' \
 	    -exec ${INSTALL_DATA} {} ${SAMPLES_DIR}/{} ';'
+	${INSTALL_SCRIPT} ${FILESDIR}/resolvd-dns-updown.sh \
+	    ${PREFIX}/libexec/openvpn/dns-updown.resolvd
 
 .include <bsd.port.mk>

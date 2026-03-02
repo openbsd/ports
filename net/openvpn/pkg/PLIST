@@ -10,6 +10,7 @@ lib/openvpn/plugins/openvpn-plugin-down-root.la
 @so lib/openvpn/plugins/openvpn-plugin-down-root.so
 libexec/openvpn/
 libexec/openvpn/dns-updown
+libexec/openvpn/dns-updown.resolvd
 @man man/man5/openvpn-examples.5
 @man man/man8/openvpn.8
 @bin sbin/openvpn
