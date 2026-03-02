@@ -1,6 +1,6 @@
 COMMENT=	virtualenv-based automation of test activities
 
-MODPY_DISTV=	4.31.0
+MODPY_DISTV=	4.47.0
 DISTNAME=	tox-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -26,20 +26,26 @@ RUN_DEPENDS=	devel/py-cachetools \
 		devel/py-virtualenv
 
 # additional deps needed, at least devpi-process seems fairly necessary.
-# also asks for covdefaults, detect-test-pollution, diff-cover, re-assert,
-# time-machine but some/all of those are likely optional.
+# also asks for detect-test-pollution, diff-cover, re-assert, but some/all
+# of those are likely optional.
 NO_TEST=	Yes
 #TEST_DEPENDS=	devel/py-build \
+#		devel/py-covdefaults \
+#		devel/py-coverage \
 #		sysutils/py-distlib \
 #		devel/py-flaky \
 #		devel/py-hatch-vcs \
 #		devel/py-hatchling \
+#		devel/py-pdm-backend \
 #		sysutils/py-psutil \
 #		devel/py-test-cov \
 #		devel/py-test-mock \
+#		devel/py-test-timeout \
 #		devel/py-test-xdist \
 #		devel/py-setuptools \
+#		devel/py-time-machine \
 #		devel/py-wheel \
+#
 
 # some tests need HOME to be writable
 PORTHOME=	${WRKDIR}
