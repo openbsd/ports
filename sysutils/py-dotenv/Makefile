@@ -1,6 +1,6 @@
 COMMENT=	handle .env files
 
-MODPY_DISTV=	1.2.1
+MODPY_DISTV=	1.2.2
 DISTNAME=	python_dotenv-${MODPY_DISTV}
 PKGNAME=	py-dotenv-${MODPY_DISTV}
 
