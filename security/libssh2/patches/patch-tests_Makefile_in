@@ -1,12 +1,12 @@
 Index: tests/Makefile.in
 --- tests/Makefile.in.orig
 +++ tests/Makefile.in
-@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
- POST_UNINSTALL = :
- build_triplet = @build@
- host_triplet = @host@
--TESTS = mansyntax.sh $(am__EXEEXT_4) $(am__EXEEXT_2) $(am__append_2) \
-+TESTS = $(am__EXEEXT_4) $(am__EXEEXT_2) $(am__append_2) \
- 	$(am__append_4)
- @RUN_DOCKER_TESTS_TRUE@am__append_1 = $(DOCKER_TESTS)
- @RUN_SSHD_TESTS_TRUE@@SSHD_TRUE@am__append_2 = test_sshd.test
+@@ -95,7 +95,7 @@ host_triplet = @host@
+ # librunner_la_SOURCES defines and *_LDFLAGS for statically linked tests.
+ @HAVE_LIB_STATIC_TRUE@am__append_1 = $(DOCKER_TESTS_STATIC)
+ @HAVE_LIB_STATIC_TRUE@am__append_2 = $(STANDALONE_TESTS_STATIC)
+-TESTS = mansyntax.sh $(am__EXEEXT_8) $(am__EXEEXT_6) $(am__append_4) \
++TESTS = $(am__EXEEXT_8) $(am__EXEEXT_6) $(am__append_4) \
+ 	$(am__append_6)
+ @RUN_DOCKER_TESTS_TRUE@am__append_3 = $(DOCKER_TESTS)
+ @RUN_SSHD_TESTS_TRUE@@SSHD_TRUE@am__append_4 = test_sshd.test
