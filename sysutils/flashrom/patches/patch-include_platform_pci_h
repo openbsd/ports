@@ -1,7 +1,7 @@
 Index: include/platform/pci.h
 --- include/platform/pci.h.orig
 +++ include/platform/pci.h
-@@ -18,14 +18,7 @@
+@@ -8,14 +8,7 @@
  #ifndef __PLATFORM_PCI_H__
  #define __PLATFORM_PCI_H__
  

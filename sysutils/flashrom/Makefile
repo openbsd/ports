@@ -2,7 +2,7 @@ COMMENT=	flash ROM programmer for BIOS etc
 
 SHARED_LIBS +=  flashrom                  0.0 # 0.0
 
-V=		1.6.0
+V=		1.7.0
 DISTNAME=	flashrom-v${V}
 PKGNAME=	flashrom-${V}
 EXTRACT_SUFX=	.tar.xz
@@ -16,7 +16,7 @@ SITES=		https://download.flashrom.org/releases/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-# GPLv2
+# GPLv2 only (most files GPLv2+, but there are few which aren't)
 PERMIT_PACKAGE=	Yes
 
 COMPILER=	base-clang ports-gcc
@@ -30,8 +30,9 @@ BUILD_DEPENDS=	devel/cmocka \
 LIB_DEPENDS=	devel/libftdi1 \
 		devel/libusb1
 
-# needs a .git directory
-CONFIGURE_ARGS += -Dgenerate_authors_list=disabled
+# authors_list needs a .git directory
+CONFIGURE_ARGS=	-Dgenerate_authors_list=disabled \
+		-Dwerror=false
 
 # for pciutils
 USE_GMAKE=	Yes

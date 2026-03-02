@@ -89,6 +89,7 @@ share/doc/flashrom/html/_sources/about_flashrom/
 share/doc/flashrom/html/_sources/about_flashrom/code_of_conduct.rst.txt
 share/doc/flashrom/html/_sources/about_flashrom/hall_of_fame.rst.txt
 share/doc/flashrom/html/_sources/about_flashrom/index.rst.txt
+share/doc/flashrom/html/_sources/about_flashrom/license.rst.txt
 share/doc/flashrom/html/_sources/about_flashrom/privacy_policy.rst.txt
 share/doc/flashrom/html/_sources/about_flashrom/team.rst.txt
 share/doc/flashrom/html/_sources/classic_cli_manpage.rst.txt
@@ -121,6 +122,7 @@ share/doc/flashrom/html/_sources/release_notes/v_1_3.rst.txt
 share/doc/flashrom/html/_sources/release_notes/v_1_4.rst.txt
 share/doc/flashrom/html/_sources/release_notes/v_1_5.rst.txt
 share/doc/flashrom/html/_sources/release_notes/v_1_6.rst.txt
+share/doc/flashrom/html/_sources/release_notes/v_1_7.rst.txt
 share/doc/flashrom/html/_sources/supported_hw/
 share/doc/flashrom/html/_sources/supported_hw/index.rst.txt
 share/doc/flashrom/html/_sources/supported_hw/supported_boards.rst.txt
@@ -153,10 +155,12 @@ share/doc/flashrom/html/_sources/user_docs/overview.rst.txt
 share/doc/flashrom/html/_sources/user_docs/raspberry_pi.rst.txt
 share/doc/flashrom/html/_static/
 share/doc/flashrom/html/_static/alabaster.css
+share/doc/flashrom/html/_static/base-stemmer.js
 share/doc/flashrom/html/_static/basic.css
 share/doc/flashrom/html/_static/custom.css
 share/doc/flashrom/html/_static/doctools.js
 share/doc/flashrom/html/_static/documentation_options.js
+share/doc/flashrom/html/_static/english-stemmer.js
 share/doc/flashrom/html/_static/file.png
 share/doc/flashrom/html/_static/flashrom_icon_color-32x32.ico
 share/doc/flashrom/html/_static/github-banner.svg
@@ -170,6 +174,7 @@ share/doc/flashrom/html/about_flashrom/
 share/doc/flashrom/html/about_flashrom/code_of_conduct.html
 share/doc/flashrom/html/about_flashrom/hall_of_fame.html
 share/doc/flashrom/html/about_flashrom/index.html
+share/doc/flashrom/html/about_flashrom/license.html
 share/doc/flashrom/html/about_flashrom/privacy_policy.html
 share/doc/flashrom/html/about_flashrom/team.html
 share/doc/flashrom/html/classic_cli_manpage.html
@@ -204,6 +209,7 @@ share/doc/flashrom/html/release_notes/v_1_3.html
 share/doc/flashrom/html/release_notes/v_1_4.html
 share/doc/flashrom/html/release_notes/v_1_5.html
 share/doc/flashrom/html/release_notes/v_1_6.html
+share/doc/flashrom/html/release_notes/v_1_7.html
 share/doc/flashrom/html/search.html
 share/doc/flashrom/html/searchindex.js
 share/doc/flashrom/html/supported_hw/
