@@ -7,6 +7,6 @@ Index: connectivity/Library_mysqlc.mk
  	$(if $(WITH_GSSAPI),$(GSSAPI_LIBS)) \
 -	$(if $(filter-out WNT,$(OS)),$(if $(filter HAIKU MACOSX SOLARIS,$(OS)),\
 +	$(if $(filter-out WNT,$(OS)),$(if $(filter OPENBSD HAIKU MACOSX SOLARIS,$(OS)),\
- 	-lz -lm,-rdynamic -lz -lcrypt -lm)) \
+ 	-lz -lm,-rdynamic -lz -lm)) \
  	$(if $(filter LINUX,$(OS)),-ldl,) \
  ))

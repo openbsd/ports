@@ -23,14 +23,13 @@ SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
 BV=		26.2
-VERSION=	${BV}.0.3
+VERSION=	${BV}.1.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
-REVISION =	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -84,7 +83,7 @@ DISTFILES.a += NotoSerifArmenian-v2.008.zip
 DISTFILES.a += NotoSerifGeorgian-v2.003.zip
 DISTFILES.a += NotoSerifHebrew-v2.004.zip
 DISTFILES.a += NotoSerifLao-v2.003.zip
-DISTFILES.a += NotoNaskhArabic-v2.020.zip
+DISTFILES.a += NotoNaskhArabic-v2.021.zip
 DISTFILES.a += ReemKufi-2.0.zip
 DISTFILES.a += Scheherazade-2.100.zip
 DISTFILES.a += a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
