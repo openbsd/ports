@@ -67,8 +67,10 @@ share/locale/th/LC_MESSAGES/mousepad.mo
 share/locale/tr/LC_MESSAGES/mousepad.mo
 share/locale/ug/LC_MESSAGES/mousepad.mo
 share/locale/uk/LC_MESSAGES/mousepad.mo
+share/locale/vi/LC_MESSAGES/mousepad.mo
 share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 share/locale/zh_TW/LC_MESSAGES/mousepad.mo
+share/metainfo/
 share/metainfo/org.xfce.mousepad.appdata.xml
 share/polkit-1/
 share/polkit-1/actions/
