@@ -1,0 +1,17 @@
+avoid useless spam on stdio
+
+Index: quodlibet/packages/raven/utils/__init__.py
+--- quodlibet/packages/raven/utils/__init__.py.orig
++++ quodlibet/packages/raven/utils/__init__.py
+@@ -11,10 +11,7 @@ from raven.utils.compat import iteritems, string_types
+ import logging
+ import threading
+ from functools import update_wrapper
+-try:
+-    import pkg_resources
+-except ImportError:
+-    pkg_resources = None  # NOQA
++pkg_resources = None  # NOQA
+ import sys
+ 
+ logger = logging.getLogger('raven.errors')

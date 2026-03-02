@@ -6,6 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/quodlibet-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/quodlibet-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/quodlibet-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/quodlibet-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/quodlibet-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/quodlibet-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/quodlibet-${MODPY_DISTV}.dist-info/top_level.txt
@@ -251,8 +252,6 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/__init__.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}advanced_preferences.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}advanced_preferences.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}appinfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}appinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}auto_update_tags_in_files.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -331,7 +330,6 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}wa
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}waveformseekbar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}write_cover.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/${MODPY_PYCACHE}write_cover.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/advanced_preferences.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/animosd/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/animosd/__init__.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/events/animosd/${MODPY_PYCACHE}/
@@ -722,6 +720,7 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/formats/wavpack.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/formats/wma.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/formats/xiph.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/
+lib/python${MODPY_VERSION}/site-packages/quodlibet/images/Makefile
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/128x128/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/128x128/apps/
@@ -768,8 +767,10 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/64x64/status/q
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/scalable/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/scalable/apps/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/scalable/apps/io.github.quodlibet.ExFalso-symbolic.svg
+lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/scalable/apps/io.github.quodlibet.ExFalso-symbolic.svg.in
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/scalable/apps/io.github.quodlibet.ExFalso.svg
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/scalable/apps/io.github.quodlibet.QuodLibet-symbolic.svg
+lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/scalable/apps/io.github.quodlibet.QuodLibet-symbolic.svg.in
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/scalable/apps/io.github.quodlibet.QuodLibet.svg
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/scalable/status/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/images/hicolor/scalable/status/quodlibet-missing-cover.svg
@@ -846,6 +847,7 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/order/${MODPY_PYCACHE}repeat.
 lib/python${MODPY_VERSION}/site-packages/quodlibet/order/reorder.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/order/repeat.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/packages/
+lib/python${MODPY_VERSION}/site-packages/quodlibet/packages/README.rst
 lib/python${MODPY_VERSION}/site-packages/quodlibet/packages/__init__.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1032,6 +1034,7 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/packages/senf/_stdlib.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/packages/senf/_temp.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/packages/senf/_winansi.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/packages/senf/_winapi.py
+lib/python${MODPY_VERSION}/site-packages/quodlibet/packages/update.sh
 lib/python${MODPY_VERSION}/site-packages/quodlibet/pattern/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/pattern/__init__.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/pattern/${MODPY_PYCACHE}/
@@ -1123,6 +1126,8 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}_edituti
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}_editutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}advanced_prefs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}advanced_prefs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}appwindow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}appwindow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}bookmarks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1243,6 +1248,7 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}x.${MODP
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}x.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/_editutils.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/about.py
+lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/advanced_prefs.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/appwindow.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/bookmarks.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/browser.py
@@ -1487,9 +1493,6 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/util/winpipe.py
 @man man/man1/exfalso.1
 @man man/man1/operon.1
 @man man/man1/quodlibet.1
-share/appdata/
-share/appdata/io.github.quodlibet.ExFalso.appdata.xml
-share/appdata/io.github.quodlibet.QuodLibet.appdata.xml
 share/applications/io.github.quodlibet.ExFalso.desktop
 share/applications/io.github.quodlibet.QuodLibet.desktop
 share/bash-completion/completions/operon
@@ -1517,6 +1520,8 @@ share/icons/hicolor/scalable/apps/io.github.quodlibet.ExFalso.svg
 share/icons/hicolor/scalable/apps/io.github.quodlibet.QuodLibet-symbolic.svg
 share/icons/hicolor/scalable/apps/io.github.quodlibet.QuodLibet.svg
 share/locale/bg/LC_MESSAGES/quodlibet.mo
+share/locale/br/LC_MESSAGES/quodlibet.mo
+share/locale/ca/LC_MESSAGES/quodlibet.mo
 share/locale/cs/LC_MESSAGES/quodlibet.mo
 share/locale/da/LC_MESSAGES/quodlibet.mo
 share/locale/de/LC_MESSAGES/quodlibet.mo
@@ -1524,6 +1529,7 @@ share/locale/el/LC_MESSAGES/quodlibet.mo
 share/locale/en_CA/LC_MESSAGES/quodlibet.mo
 share/locale/en_GB/LC_MESSAGES/quodlibet.mo
 share/locale/es/LC_MESSAGES/quodlibet.mo
+share/locale/et/LC_MESSAGES/quodlibet.mo
 share/locale/eu/LC_MESSAGES/quodlibet.mo
 share/locale/fi/LC_MESSAGES/quodlibet.mo
 share/locale/fr/LC_MESSAGES/quodlibet.mo
@@ -1531,6 +1537,7 @@ share/locale/gl/LC_MESSAGES/quodlibet.mo
 share/locale/he/LC_MESSAGES/quodlibet.mo
 share/locale/hu/LC_MESSAGES/quodlibet.mo
 share/locale/id/LC_MESSAGES/quodlibet.mo
+share/locale/ie/LC_MESSAGES/quodlibet.mo
 share/locale/it/LC_MESSAGES/quodlibet.mo
 share/locale/ja/LC_MESSAGES/quodlibet.mo
 share/locale/ko/LC_MESSAGES/quodlibet.mo
@@ -1550,10 +1557,14 @@ share/locale/sr_RS@latin/
 share/locale/sr_RS@latin/LC_MESSAGES/
 share/locale/sr_RS@latin/LC_MESSAGES/quodlibet.mo
 share/locale/sv/LC_MESSAGES/quodlibet.mo
+share/locale/ta/LC_MESSAGES/quodlibet.mo
 share/locale/tr/LC_MESSAGES/quodlibet.mo
 share/locale/uk/LC_MESSAGES/quodlibet.mo
 share/locale/zh_CN/LC_MESSAGES/quodlibet.mo
 share/locale/zh_TW/LC_MESSAGES/quodlibet.mo
+share/metainfo/
+share/metainfo/io.github.quodlibet.ExFalso.appdata.xml
+share/metainfo/io.github.quodlibet.QuodLibet.appdata.xml
 share/zsh/site-functions/_quodlibet
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

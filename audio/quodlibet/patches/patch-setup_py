@@ -1,0 +1,17 @@
+avoid installing the quodlibet script twice, rejected by newer setuptools
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -84,11 +84,6 @@ def main():
+                 "images/hicolor/*/*/*.svg",
+             ],
+         },
+-        "scripts": [
+-            "quodlibet.py",
+-            "exfalso.py",
+-            "operon.py",
+-        ],
+         "po_directory": "po",
+         "po_package": "quodlibet",
+         "shortcuts": [
