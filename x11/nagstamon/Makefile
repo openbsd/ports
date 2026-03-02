@@ -1,7 +1,6 @@
 COMMENT=	nagios status monitor for the Desktop
 
-MODPY_DISTV=	3.16.2
-REVISION=	1
+MODPY_DISTV=	3.18.0
 GH_ACCOUNT=	HenriWahl
 GH_PROJECT=	Nagstamon
 GH_TAGNAME=	v${MODPY_DISTV}
@@ -17,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 
-BUILD_DEPENDS+=	security/py-keyring \
+BUILD_DEPENDS=	security/py-keyring \
 		sysutils/py-psutil
 
 RUN_DEPENDS=	devel/desktop-file-utils
@@ -26,16 +25,25 @@ RUN_DEPENDS=	devel/desktop-file-utils
 # pysocks, requests plugins
 RUN_DEPENDS +=	devel/py-arrow \
 		www/py-beautifulsoup4 \
+		security/py-cryptography \
+		devel/py-dateutil \
 		security/py-keyring \
 		textproc/py-lxml \
+		sysutils/py-packaging \
 		sysutils/py-psutil \
+		net/py-socks \
 		x11/py-qt6 \
-		devel/py-dateutil \
-		www/py-requests
+		www/py-qt6webengine \
+		www/py-requests \
+		security/py-secretstorage \
+		devel/py-tzlocal
 
 NO_TEST=	Yes
 
 P=		${WRKINST}${MODPY_SITEPKG}${TRUEPREFIX}
+
+post-extract:
+	sed -i 's,/usr/bin/,${LOCALBASE}/bin/,g' ${WRKSRC}/Nagstamon/config.py
 
 post-install:
 	mv ${PREFIX}/bin/nagstamon{.py,}
