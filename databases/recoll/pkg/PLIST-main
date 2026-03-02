@@ -44,7 +44,6 @@ lib/python${MODPY_VERSION}/site-packages/recoll/rclextract.py
 lib/python${MODPY_VERSION}/site-packages/recoll/recoll.py
 @man man/man1/recollindex.1
 @man man/man1/recollq.1
-@man man/man1/xadump.1
 @man man/man5/recoll.conf.5
 share/recoll/
 share/recoll/doc/
@@ -82,6 +81,8 @@ share/recoll/filters/opendoc-body.xsl
 share/recoll/filters/opendoc-flat.xsl
 share/recoll/filters/opendoc-meta.xsl
 share/recoll/filters/openxml-meta.xsl
+share/recoll/filters/openxml-ppt-body.xsl
+share/recoll/filters/openxml-visio-body.xsl
 share/recoll/filters/openxml-word-body.xsl
 share/recoll/filters/openxml-xls-body.xsl
 share/recoll/filters/ppt-dump.py
@@ -109,6 +110,7 @@ share/recoll/filters/rclhwp.py
 share/recoll/filters/rclics.py
 share/recoll/filters/rclimg
 share/recoll/filters/rclimg.py
+share/recoll/filters/rclimgp.py
 share/recoll/filters/rclinfo.py
 share/recoll/filters/rclipynb.py
 share/recoll/filters/rcljoplin.py
@@ -129,6 +131,7 @@ share/recoll/filters/rclocrcache.py
 share/recoll/filters/rclocrtesseract.py
 share/recoll/filters/rclopxml.py
 share/recoll/filters/rclorgmode.py
+share/recoll/filters/rclpages.py
 share/recoll/filters/rclpdf.py
 share/recoll/filters/rclppt.py
 share/recoll/filters/rclps
@@ -137,6 +140,7 @@ share/recoll/filters/rclpurple
 share/recoll/filters/rclpython.py
 share/recoll/filters/rclrar.py
 share/recoll/filters/rclrtf.py
+share/recoll/filters/rclrunsoffice.py
 share/recoll/filters/rclscribus
 share/recoll/filters/rclsfz.py
 share/recoll/filters/rclshowinfo
@@ -147,6 +151,7 @@ share/recoll/filters/rcltxtlines.py
 share/recoll/filters/rcluncomp
 share/recoll/filters/rcluncomp.py
 share/recoll/filters/rclwar.py
+share/recoll/filters/rclwebarch.py
 share/recoll/filters/rclxls.py
 share/recoll/filters/rclxml.py
 share/recoll/filters/rclxmp.py
@@ -159,3 +164,4 @@ share/recoll/filters/thunderbird-open-message.sh
 share/recoll/filters/xls-dump.py
 share/recoll/filters/xlsxmltocsv.py
 share/recoll/filters/xml.xsl
+share/recoll/translations/recoll_ar.qm

@@ -9,7 +9,7 @@ MULTI_PACKAGES=	-main -gui
 ONLY_FOR_ARCHS-gui= aarch64 amd64 i386
 PSEUDO_FLAVORS=	no_gui
 
-MODPY_DISTV=	1.41.1
+MODPY_DISTV=	1.43.13
 DISTNAME=	recoll-${MODPY_DISTV}
 
 CATEGORIES=	databases sysutils
@@ -25,10 +25,10 @@ SITES=		https://www.lesbonscomptes.com/recoll/
 COMPILER=	base-clang ports-gcc
 
 WANTLIB=	${COMPILER_LIBCXX} c m xapian xml2 xslt z
-WANTLIB-main=	${WANTLIB} X11 c iconv magic xapian z
+WANTLIB-main=	${WANTLIB} X11 c iconv jsoncpp magic xapian z
 WANTLIB-gui=	${WANTLIB} GL recoll \
 		Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning \
-		Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel \
+		Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel \
 		Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
@@ -42,6 +42,7 @@ BUILD_DEPENDS=		devel/py-setuptools \
 			textproc/aspell/core
 
 LIB_DEPENDS-main=	databases/xapian-core \
+			devel/jsoncpp \
 			devel/libmagic \
 			textproc/libxslt
 # listing deps used by the included filters for some common file formats;

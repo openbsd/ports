@@ -1,7 +1,9 @@
 @conflict recoll-<1.37.0p0
 @bin bin/recoll
 @man man/man1/recoll.1
+share/applications/
 share/applications/recoll-searchgui.desktop
+share/icons/
 share/icons/hicolor/
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
