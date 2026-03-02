@@ -3,7 +3,7 @@ NOT_FOR_ARCHS = 	sparc64
 
 COMMENT =		OpenAI terminal-based coding agent
 
-V =			0.104.0
+V =			0.106.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -34,7 +34,8 @@ BUILD_DEPENDS =		devel/cmake/core \
 
 LIB_DEPENDS =		x11/dbus
 
-RUN_DEPENDS =		textproc/ripgrep
+RUN_DEPENDS =		lang/python/3 \
+			textproc/ripgrep
 
 MODULES =		devel/cargo
 CONFIGURE_STYLE = 	cargo

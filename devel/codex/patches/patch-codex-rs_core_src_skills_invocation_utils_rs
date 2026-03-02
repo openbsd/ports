@@ -1,0 +1,14 @@
+Index: codex-rs/core/src/skills/invocation_utils.rs
+--- codex-rs/core/src/skills/invocation_utils.rs.orig
++++ codex-rs/core/src/skills/invocation_utils.rs
+@@ -125,8 +125,8 @@ fn tokenize_command(command: &str) -> Vec<String> {
+ }
+ 
+ fn script_run_token(tokens: &[String]) -> Option<&str> {
+-    const RUNNERS: [&str; 10] = [
+-        "python", "python3", "bash", "zsh", "sh", "node", "deno", "ruby", "perl", "pwsh",
++    const RUNNERS: [&str; 9] = [
++        "python3", "bash", "zsh", "sh", "node", "deno", "ruby", "perl", "pwsh",
+     ];
+     const SCRIPT_EXTENSIONS: [&str; 7] = [".py", ".sh", ".js", ".ts", ".rb", ".pl", ".ps1"];
+ 
