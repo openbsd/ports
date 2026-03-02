@@ -331,6 +331,7 @@
      SUBDIR += py-service_identity
      SUBDIR += py-spake2
      SUBDIR += py-spnego
+     SUBDIR += py-ssh2-python
      SUBDIR += py-tlsfuzzer
      SUBDIR += py-trustme
      SUBDIR += py-yaswfp
