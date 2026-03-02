@@ -2,7 +2,7 @@ COMMENT=	highly configurable terminal emulator
 
 GH_ACCOUNT=	realh
 GH_PROJECT=	roxterm
-GH_TAGNAME=	3.16.3
+GH_TAGNAME=	3.17.2
 
 CATEGORIES=	x11
 
@@ -16,7 +16,8 @@ WANTLIB += pthread vte-2.91
 
 MODULES=	devel/cmake
 
-BUILD_DEPENDS=	textproc/docbook-xsl
+BUILD_DEPENDS=	textproc/docbook-xsl \
+		devel/gettext,-tools
 
 LIB_DEPENDS=	devel/vte3 \
 		x11/dbus-glib
