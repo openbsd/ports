@@ -20,4 +20,7 @@ BUILD_DEPENDS =		wayland/wayland-protocols
 
 LIB_DEPENDS =		wayland/wayland
 
+CONFIGURE_ARGS +=	-Dfishcompletiondir="${PREFIX}/share/fish/vendor_completions.d/" \
+			-Dzshcompletiondir="${PREFIX}/share/zsh/site-functions/"
+
 .include <bsd.port.mk>
