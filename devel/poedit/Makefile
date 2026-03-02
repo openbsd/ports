@@ -1,6 +1,6 @@
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
-V=		3.8.1
+V=		3.8.2
 DISTNAME=	poedit-${V}
 CATEGORIES=	devel textproc
 
