@@ -1,8 +1,8 @@
 COMMENT=		HTTP and WebDAV client library, with C interface
 
-DISTNAME=		neon-0.35.0
+DISTNAME=		neon-0.37.0
 
-SHARED_LIBS +=  neon                 31.5     # 34.2
+SHARED_LIBS +=  neon                 31.6     # 37.0
 
 CATEGORIES=		net www devel
 
@@ -45,7 +45,7 @@ post-install:
 
 TEST_DEPENDS=	security/openssl/3.5 \
 		sysutils/coreutils
-TEST_FLAGS=	-C ${WRKSRC}/test OPENSSL=eopenssl35
+TEST_FLAGS=	-C ${WRKSRC}/test OPENSSL=eopenssl35 KEEP_GOING=1
 pre-test:
 	@ln -fs ${LOCALBASE}/bin/gdate ${WRKDIR}/bin/date
 

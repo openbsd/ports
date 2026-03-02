@@ -47,16 +47,20 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_buffer_finish.3
 @man man/man3/ne_buffer_grow.3
 @man man/man3/ne_buffer_ncreate.3
+@man man/man3/ne_buffer_qappend.3
+@man man/man3/ne_buffer_snprintf.3
 @man man/man3/ne_buffer_zappend.3
 @man man/man3/ne_calloc.3
 @man man/man3/ne_close_connection.3
 @man man/man3/ne_forget_auth.3
+@man man/man3/ne_get_content_type.3
 @man man/man3/ne_get_error.3
 @man man/man3/ne_get_request_flag.3
 @man man/man3/ne_get_request_target.3
 @man man/man3/ne_get_response_header.3
 @man man/man3/ne_get_response_location.3
 @man man/man3/ne_get_response_retry_after.3
+@man man/man3/ne_get_response_trailer.3
 @man man/man3/ne_get_scheme.3
 @man man/man3/ne_get_server_hostport.3
 @man man/man3/ne_get_session_flag.3
@@ -68,13 +72,17 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_iaddr_make.3
 @man man/man3/ne_iaddr_parse.3
 @man man/man3/ne_iaddr_print.3
+@man man/man3/ne_iaddr_put.3
 @man man/man3/ne_iaddr_raw.3
 @man man/man3/ne_iaddr_reverse.3
 @man man/man3/ne_iaddr_typeof.3
 @man man/man3/ne_malloc.3
+@man man/man3/ne_mknonce.3
 @man man/man3/ne_oom_callback.3
 @man man/man3/ne_print_request_header.3
 @man man/man3/ne_qtoken.3
+@man man/man3/ne_read_response_to_buffer.3
+@man man/man3/ne_read_response_to_fd.3
 @man man/man3/ne_realloc.3
 @man man/man3/ne_redirect_location.3
 @man man/man3/ne_redirect_register.3
@@ -82,6 +90,7 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_request_destroy.3
 @man man/man3/ne_request_dispatch.3
 @man man/man3/ne_response_header_iterate.3
+@man man/man3/ne_response_trailer_iterate.3
 @man man/man3/ne_session_create.3
 @man man/man3/ne_session_destroy.3
 @man man/man3/ne_session_proxy.3
@@ -100,18 +109,28 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_set_session_flag.3
 @man man/man3/ne_set_useragent.3
 @man man/man3/ne_shave.3
+@man man/man3/ne_sock_cipher.3
 @man man/man3/ne_sock_exit.3
+@man man/man3/ne_sock_getcert.3
+@man man/man3/ne_sock_getproto.3
+@man man/man3/ne_sock_handshake.3
 @man man/man3/ne_sock_init.3
+@man man/man3/ne_sock_sessid.3
 @man man/man3/ne_ssl_cert_cmp.3
+@man man/man3/ne_ssl_cert_digest.3
 @man man/man3/ne_ssl_cert_export.3
 @man man/man3/ne_ssl_cert_free.3
+@man man/man3/ne_ssl_cert_hdigest.3
 @man man/man3/ne_ssl_cert_identity.3
 @man man/man3/ne_ssl_cert_import.3
 @man man/man3/ne_ssl_cert_issuer.3
 @man man/man3/ne_ssl_cert_read.3
 @man man/man3/ne_ssl_cert_signedby.3
 @man man/man3/ne_ssl_cert_subject.3
+@man man/man3/ne_ssl_cert_validity.3
+@man man/man3/ne_ssl_cert_validity_time.3
 @man man/man3/ne_ssl_cert_write.3
+@man man/man3/ne_ssl_check_certificate.3
 @man man/man3/ne_ssl_clicert_decrypt.3
 @man man/man3/ne_ssl_clicert_encrypted.3
 @man man/man3/ne_ssl_clicert_free.3
@@ -120,6 +139,17 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_ssl_clicert_name.3
 @man man/man3/ne_ssl_clicert_owner.3
 @man man/man3/ne_ssl_clicert_read.3
+@man man/man3/ne_ssl_context_create.3
+@man man/man3/ne_ssl_context_destroy.3
+@man man/man3/ne_ssl_context_get_flag.3
+@man man/man3/ne_ssl_context_keypair.3
+@man man/man3/ne_ssl_context_set_ccprovide.3
+@man man/man3/ne_ssl_context_set_clicert.3
+@man man/man3/ne_ssl_context_set_flag.3
+@man man/man3/ne_ssl_context_set_verify.3
+@man man/man3/ne_ssl_context_set_versions.3
+@man man/man3/ne_ssl_context_trustcert.3
+@man man/man3/ne_ssl_context_trustdefca.3
 @man man/man3/ne_ssl_dname_cmp.3
 @man man/man3/ne_ssl_proto_name.3
 @man man/man3/ne_ssl_readable_dname.3
@@ -130,14 +160,21 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_status.3
 @man man/man3/ne_strdup.3
 @man man/man3/ne_strhash.3
+@man man/man3/ne_strlower.3
 @man man/man3/ne_strndup.3
 @man man/man3/ne_strparam.3
 @man man/man3/ne_token.3
+@man man/man3/ne_tolower.3
+@man man/man3/ne_tolower_array.3
+@man man/man3/ne_version_library.3
 @man man/man3/ne_version_match.3
 @man man/man3/ne_version_string.3
 @man man/man3/ne_vstrhash.3
 @man man/man3/ne_xml_create.3
 @man man/man3/ne_xml_destroy.3
+@man man/man3/ne_xml_dispatch_request.3
+@man man/man3/ne_xml_dispatchif_request.3
+@man man/man3/ne_xml_parse_response.3
 @man man/man3/neon.3
 share/doc/neon/
 share/doc/neon/html/
@@ -148,6 +185,7 @@ share/doc/neon/html/example.html
 share/doc/neon/html/features.html
 share/doc/neon/html/index.html
 share/doc/neon/html/intro.html
+share/doc/neon/html/ne_mknonce.html
 share/doc/neon/html/ref.html
 share/doc/neon/html/refalloc.html
 share/doc/neon/html/refauth.html
@@ -161,10 +199,12 @@ share/doc/neon/html/refclicert.html
 share/doc/neon/html/refconfig.html
 share/doc/neon/html/referr.html
 share/doc/neon/html/reffeat.html
+share/doc/neon/html/refgetctype.html
 share/doc/neon/html/refgetst.html
 share/doc/neon/html/refhash.html
 share/doc/neon/html/refi18n.html
 share/doc/neon/html/refiaddr.html
+share/doc/neon/html/reflower.html
 share/doc/neon/html/refneon.html
 share/doc/neon/html/refopts.html
 share/doc/neon/html/refparam.html
@@ -176,14 +216,17 @@ share/doc/neon/html/refreqflags.html
 share/doc/neon/html/refreqhdr.html
 share/doc/neon/html/refreqtarget.html
 share/doc/neon/html/refresolve.html
+share/doc/neon/html/refrespbody.html
 share/doc/neon/html/refresphdr.html
 share/doc/neon/html/refsess.html
 share/doc/neon/html/refsessflags.html
 share/doc/neon/html/refshave.html
 share/doc/neon/html/refsockinit.html
+share/doc/neon/html/refsockssl.html
 share/doc/neon/html/refsslca.html
 share/doc/neon/html/refsslcert2.html
 share/doc/neon/html/refsslcertio.html
+share/doc/neon/html/refsslctx.html
 share/doc/neon/html/refssldname.html
 share/doc/neon/html/refsslproto.html
 share/doc/neon/html/refsslvers.html
@@ -192,6 +235,7 @@ share/doc/neon/html/refstatus.html
 share/doc/neon/html/reftok.html
 share/doc/neon/html/refvers.html
 share/doc/neon/html/refxml.html
+share/doc/neon/html/refxmlreq.html
 share/doc/neon/html/security.html
 share/doc/neon/html/using.html
 share/doc/neon/html/xml.html
