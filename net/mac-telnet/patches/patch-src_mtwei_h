@@ -1,0 +1,15 @@
+Index: src/mtwei.h
+--- src/mtwei.h.orig
++++ src/mtwei.h
+@@ -23,6 +23,11 @@
+ #include <openssl/sha.h>
+ #include <openssl/evp.h>
+ 
++#if defined(LIBRESSL_VERSION_NUMBER)
++#undef OPENSSL_VERSION_NUMBER
++#define OPENSSL_VERSION_NUMBER 0x030000000
++#endif
++
+ /* Define the state of the EC-SRP Algorithm. */
+ typedef struct mtwei_state_s {
+ 	BN_CTX *ctx;		  /* BN context for temporaries */

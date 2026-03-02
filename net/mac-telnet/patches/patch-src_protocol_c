@@ -1,7 +1,7 @@
 Index: src/protocol.c
 --- src/protocol.c.orig
 +++ src/protocol.c
-@@ -31,6 +31,12 @@
+@@ -32,6 +32,12 @@
  #include <net/ethernet.h>
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -20,6 +20,6 @@ Index: src/protocol.c
  		/* Convert mac address string to ether_addr struct */
 -#if defined(__APPLE__)
 +#if defined(__APPLE__) || defined(__OpenBSD__)
- 		struct ether_addr* dstmac_buf = ether_aton(address);
+ 		struct ether_addr *dstmac_buf = ether_aton(address);
  		memcpy(dstmac, dstmac_buf, sizeof(struct ether_addr));
  #else

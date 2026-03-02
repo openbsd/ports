@@ -1,0 +1,48 @@
+Index: src/mtwei.c
+--- src/mtwei.c.orig
++++ src/mtwei.c
+@@ -245,7 +245,7 @@ abort:
+ }
+ 
+ void mtwei_id(const char *username, const char *password, const unsigned char *salt, uint8_t *validator_out) {
+-#if OPENSSL_VERSION_NUMBER >= 0x030000000  // 3.0.0
++#if !defined(LIBRESSL_VERSION_NUMBER) && OPENSSL_VERSION_NUMBER >= 0x030000000  // 3.0.0
+ 	EVP_MD_CTX *mdctx;
+ 	mdctx = EVP_MD_CTX_new();
+ 	EVP_DigestInit_ex2(mdctx, EVP_sha256(), NULL);
+@@ -295,7 +295,7 @@ void mtwei_docrypto(mtwei_state_t *state, BIGNUM *priv
+ 	SHA256_CTX keys;
+ 	CHECKNULL(v = tangle(state, server_pubkey, validator, 1));
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x030000000  // 3.0.0
++#if !defined(LIBRESSL_VERSION_NUMBER) && OPENSSL_VERSION_NUMBER >= 0x030000000  // 3.0.0
+ 	EVP_MD_CTX *mdctx;
+ 	mdctx = EVP_MD_CTX_new();
+ 	EVP_DigestInit_ex2(mdctx, EVP_sha256(), NULL);
+@@ -328,7 +328,7 @@ void mtwei_docrypto(mtwei_state_t *state, BIGNUM *priv
+ 	CHECKNULL(z_input = BN_new());
+ 	BN_mod_add(z_input, pt_x, state->w2m, state->mod, state->ctx);
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x030000000  // 3.0.0
++#if !defined(LIBRESSL_VERSION_NUMBER) && OPENSSL_VERSION_NUMBER >= 0x030000000  // 3.0.0
+ 	mdctx = EVP_MD_CTX_new();
+ 	EVP_DigestInit_ex2(mdctx, EVP_sha256(), NULL);
+ 	EVP_DigestUpdate(mdctx, buf_out, 32);
+@@ -387,7 +387,7 @@ void mtwei_docryptos(mtwei_state_t *state, BIGNUM *pri
+ 	SHA256_CTX keys;
+ 	CHECKNULL(v = BN_bin2bn(validator, 32, NULL));
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x030000000  // 3.0.0
++#if !defined(LIBRESSL_VERSION_NUMBER) && OPENSSL_VERSION_NUMBER >= 0x030000000  // 3.0.0
+ 	EVP_MD_CTX *mdctx;
+ 	mdctx = EVP_MD_CTX_new();
+ 	EVP_DigestInit_ex2(mdctx, EVP_sha256(), NULL);
+@@ -423,7 +423,7 @@ void mtwei_docryptos(mtwei_state_t *state, BIGNUM *pri
+ 	CHECKNULL(z_input = BN_new());
+ 	BN_mod_add(z_input, pt_x, state->w2m, state->mod, state->ctx);
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x030000000  // 3.0.0
++#if !defined(LIBRESSL_VERSION_NUMBER) && OPENSSL_VERSION_NUMBER >= 0x030000000  // 3.0.0
+ 	mdctx = EVP_MD_CTX_new();
+ 	EVP_DigestInit_ex2(mdctx, EVP_sha256(), NULL);
+ 	EVP_DigestUpdate(mdctx, buf_out, 32);

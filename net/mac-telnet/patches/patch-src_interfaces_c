@@ -1,7 +1,7 @@
 Index: src/interfaces.c
 --- src/interfaces.c.orig
 +++ src/interfaces.c
-@@ -28,7 +28,7 @@
+@@ -31,7 +31,7 @@
  #include <sys/socket.h>
  #include <sys/types.h>
  #include <ifaddrs.h>
@@ -10,7 +10,7 @@ Index: src/interfaces.c
  #include <netinet/in.h>
  #endif
  #include <netinet/ip.h>
-@@ -37,6 +37,11 @@
+@@ -40,6 +40,11 @@
  #include <net/ethernet.h>
  #define ETH_FRAME_LEN (ETHER_MAX_LEN - ETHER_CRC_LEN)
  #define ETH_ALEN ETHER_ADDR_LEN
@@ -22,16 +22,16 @@ Index: src/interfaces.c
  #else
  #include <netinet/ether.h>
  #endif
-@@ -298,7 +303,7 @@ int net_send_udp(const int fd, struct net_interface *i
- 	*/
+@@ -447,7 +452,7 @@ int net_send_udp(const int fd, struct net_interface *i
+ 	 */
  	static unsigned char stackbuf[ETH_FRAME_LEN];
- 	void* buffer = (void*)&stackbuf;
+ 	void *buffer = (void *)&stackbuf;
 -#if defined(__FreeBSD__) || defined(__APPLE__)
 +#if defined(__FreeBSD__) || defined(__APPLE__) || defined(__OpenBSD__)
  	struct ether_header *eh = (struct ether_header *)buffer;
  	struct ip *ip = (struct ip *)(buffer + 14);
  #else
-@@ -325,7 +330,7 @@ int net_send_udp(const int fd, struct net_interface *i
+@@ -473,7 +478,7 @@ int net_send_udp(const int fd, struct net_interface *i
  	}
  
  	/* Init ethernet header */
@@ -40,7 +40,7 @@ Index: src/interfaces.c
  	memcpy(eh->ether_shost, sourcemac, ETH_ALEN);
  	memcpy(eh->ether_dhost, destmac, ETH_ALEN);
  	eh->ether_type = htons(ETHERTYPE_IP);
-@@ -350,7 +355,7 @@ int net_send_udp(const int fd, struct net_interface *i
+@@ -498,7 +503,7 @@ int net_send_udp(const int fd, struct net_interface *i
  #endif
  
  	/* Init IP Header */
@@ -49,7 +49,7 @@ Index: src/interfaces.c
  	ip->ip_v = 4;
  	ip->ip_hl = 5;
  	ip->ip_tos = 0x10;
-@@ -377,14 +382,14 @@ int net_send_udp(const int fd, struct net_interface *i
+@@ -525,14 +530,14 @@ int net_send_udp(const int fd, struct net_interface *i
  #endif
  
  	/* Calculate checksum for IP header */
@@ -66,12 +66,12 @@ Index: src/interfaces.c
  	udp->uh_sport = htons(sourceport);
  	udp->uh_dport = htons(destport);
  	udp->uh_ulen = htons(sizeof(struct udphdr) + datalen);
-@@ -400,7 +405,7 @@ int net_send_udp(const int fd, struct net_interface *i
+@@ -548,7 +553,7 @@ int net_send_udp(const int fd, struct net_interface *i
  	memcpy(rest, data, datalen);
  
  	/* Add UDP checksum */
 -#if defined(__FreeBSD__) || defined(__APPLE__)
 +#if defined(__FreeBSD__) || defined(__APPLE__) || defined(__OpenBSD__)
- 	udp->uh_sum = udp_sum_calc((unsigned char *)&(ip->ip_src.s_addr),
- 	  (unsigned char *)&(ip->ip_dst.s_addr),
- 	  (unsigned char *)udp,
+ 	udp->uh_sum = udp_sum_calc((unsigned char *)&(ip->ip_src.s_addr), (unsigned char *)&(ip->ip_dst.s_addr),
+ 							   (unsigned char *)udp, sizeof(struct udphdr) + datalen);
+ 	udp->uh_sum = htons(udp->uh_sum);

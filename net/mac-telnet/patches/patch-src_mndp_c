@@ -1,7 +1,7 @@
 Index: src/mndp.c
 --- src/mndp.c.orig
 +++ src/mndp.c
-@@ -26,6 +26,12 @@
+@@ -27,6 +27,12 @@
  #include <net/ethernet.h>
  #include <netinet/in.h>
  #include <sys/socket.h>

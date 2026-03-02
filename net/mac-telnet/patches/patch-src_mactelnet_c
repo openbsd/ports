@@ -1,20 +1,21 @@
 Index: src/mactelnet.c
 --- src/mactelnet.c.orig
 +++ src/mactelnet.c
-@@ -36,6 +36,11 @@
- #if defined(__FreeBSD__) || defined(__APPLE__)
+@@ -39,6 +39,12 @@
  #include <sys/types.h>
+ #include <sys/mman.h>
  #include <net/ethernet.h>
 +#elif defined(__OpenBSD__)
 +#include <sys/types.h>
++#include <sys/mman.h>
 +#include <net/if.h>
 +#include <netinet/in.h>
 +#include <netinet/if_ether.h>
  #else
  #include <netinet/ether.h>
  #endif
-@@ -485,6 +490,11 @@ int main (int argc, char **argv) {
- 
+@@ -548,6 +554,11 @@ int main(int argc, char **argv) {
+ 		switch (c) {
  			case 'n':
  				use_raw_socket = 1;
 +				if(drop_priv == 0) {

@@ -1,7 +1,7 @@
 Index: src/macping.c
 --- src/macping.c.orig
 +++ src/macping.c
-@@ -28,6 +28,14 @@
+@@ -29,6 +29,14 @@
  #include <netinet/in.h>
  #define ETH_FRAME_LEN ETHER_MAX_LEN
  #define ETH_ALEN ETHER_ADDR_LEN

@@ -1,31 +1,31 @@
-COMMENT=	client for MikroTik's "L2 telnet" protocol#'
+COMMENT=	client for MikroTik's "L2 telnet" protocol
 
 GH_ACCOUNT=	haakonnessjoen
 GH_PROJECT=	MAC-Telnet
-GH_TAGNAME=	v0.4.4
+GH_TAGNAME=	v0.6.3
 PKGNAME=	${DISTNAME:L}
-REVISION=	2
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://lunatic.no/2010/10/routeros-mac-telnet-application-for-linux-users/
+HOMEPAGE=	https://lunatic.no/2010/10/routeros-mac-telnet-application-for-linux-users/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c
+WANTLIB += c crypto intl
+
+CONFIGURE_STYLE=  autoreconf
+AUTOCONF_VERSION= 2.72
+AUTOMAKE_VERSION= 1.18
+SEPARATE_BUILD=	Yes
+
+CONFIGURE_ARGS=	--disable-nls \
+		--without-mactelnetd
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
-SEPARATE_BUILD=	Yes
-CONFIGURE_ARGS=	--disable-nls
-
-CONFIGURE_STYLE=  autoreconf
-AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.15
-AUTORECONF=	  ./autogen.sh
-
-post-install:
-	rm ${WRKINST}/etc/mactelnetd.users ${PREFIX}/man/man1/mactelnetd.1
+LIB_DEPENDS=	devel/gettext,-runtime
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 .include <bsd.port.mk>
