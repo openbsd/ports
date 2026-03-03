@@ -1,13 +1,14 @@
 Index: src/mtwei.h
 --- src/mtwei.h.orig
 +++ src/mtwei.h
-@@ -23,6 +23,11 @@
+@@ -23,6 +23,12 @@
  #include <openssl/sha.h>
  #include <openssl/evp.h>
  
 +#if defined(LIBRESSL_VERSION_NUMBER)
 +#undef OPENSSL_VERSION_NUMBER
 +#define OPENSSL_VERSION_NUMBER 0x030000000
++#define EVP_DigestInit_ex2 EVP_DigestInit_ex
 +#endif
 +
  /* Define the state of the EC-SRP Algorithm. */
