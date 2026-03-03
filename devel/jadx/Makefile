@@ -1,8 +1,7 @@
 COMMENT =	dex to java decompiler
 
-VERSION =	1.5.3
+VERSION =	1.5.5
 DISTNAME =	jadx-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel security
 
@@ -25,6 +24,8 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 
 WRKDIST = ${WRKDIR}
+
+SUBST_VARS +=	VERSION
 
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/jadx/

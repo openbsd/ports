@@ -5,4 +5,4 @@ share/jadx/bin/
 share/jadx/bin/jadx
 share/jadx/bin/jadx-gui
 share/jadx/lib/
-share/jadx/lib/jadx-1.5.3-all.jar
+share/jadx/lib/jadx-${VERSION}-all.jar
