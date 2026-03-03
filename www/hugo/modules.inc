@@ -200,7 +200,7 @@ MODGO_MODULES =	\
 	github.com/bep/golibsass								 v1.2.0 \
 	github.com/bep/goportabletext								 v0.1.0 \
 	github.com/bep/helpers									 v0.7.0 \
-	github.com/bep/imagemeta								 v0.14.0 \
+	github.com/bep/imagemeta								 v0.15.0 \
 	github.com/bep/lazycache								 v0.8.1 \
 	github.com/bep/logg									 v0.4.0 \
 	github.com/bep/mclib									 v1.20400.20402 \
@@ -366,8 +366,8 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx								 v0.5.0 \
 	github.com/stretchr/testify								 v1.11.1 \
 	github.com/tdewolff/argp								 v0.0.0-20250430135133-0f54527d2b1e \
-	github.com/tdewolff/minify/v2								 v2.24.8 \
-	github.com/tdewolff/parse/v2								 v2.8.5 \
+	github.com/tdewolff/minify/v2								 v2.24.9 \
+	github.com/tdewolff/parse/v2								 v2.8.8 \
 	github.com/tdewolff/test								 v1.0.11 \
 	github.com/tetratelabs/wazero								 v1.11.0 \
 	github.com/ugorji/go/codec								 v1.2.7 \
