@@ -25,7 +25,7 @@ Index: configure.ac
  AM_CONDITIONAL([HAVE_CURL], [test "$have_curl" = 1])
  AM_CONDITIONAL([HAVE_ESEDB], [test "$have_esedb" = 1])
  AM_CONDITIONAL([HAVE_GSSAPI], [test "$have_gssapi" = 1])
-@@ -162,7 +163,7 @@ AC_CHECK_FUNCS([fsetxattr posix_fadvise renameat2])
+@@ -162,7 +163,7 @@ AC_CHECK_FUNCS([epoll_pwait2 fsetxattr posix_fadvise r
  AC_SEARCH_LIBS([crypt], [crypt], [crypt_LIBS="$LIBS"; LIBS=""])
  AC_SEARCH_LIBS([dlopen], [dl], [dl_LIBS="$LIBS"; LIBS=""])
  AC_SEARCH_LIBS([ns_initparse], [resolv], [resolv_LIBS="$LIBS"; LIBS=""])

@@ -30,9 +30,6 @@ lib/libgromox_dbop.la
 @static-lib lib/libgromox_emsmdb.a
 lib/libgromox_emsmdb.la
 @lib lib/libgromox_emsmdb.so.${LIBgromox_emsmdb_VERSION}
-@static-lib lib/libgromox_epoll.a
-lib/libgromox_epoll.la
-@lib lib/libgromox_epoll.so.${LIBgromox_epoll_VERSION}
 @static-lib lib/libgromox_ews.a
 lib/libgromox_ews.la
 @lib lib/libgromox_ews.so.${LIBgromox_ews_VERSION}
@@ -173,8 +170,10 @@ man/man8/event.8gx
 @man man/man8/gromox-dbop.8
 @man man/man8/gromox-dscli.8
 @man man/man8/gromox-e2ghelper.8
+@man man/man8/gromox-edb2mt.8
 @man man/man8/gromox-eml2mbox.8
 @man man/man8/gromox-eml2mt.8
+@man man/man8/gromox-exm2eml.8
 @man man/man8/gromox-exm2ical.8
 @man man/man8/gromox-exm2mt.8
 @man man/man8/gromox-exm2tnef.8
@@ -186,10 +185,14 @@ man/man8/event.8gx
 @man man/man8/gromox-mailq.8
 @man man/man8/gromox-mbck.8
 @man man/man8/gromox-mbop.8
+@man man/man8/gromox-mbox2mt.8
 @man man/man8/gromox-mbsize.8
 @man man/man8/gromox-mkmidb.8
 @man man/man8/gromox-mkprivate.8
 @man man/man8/gromox-mkpublic.8
+@man man/man8/gromox-mt2exm.8
+@man man/man8/gromox-oxm2mt.8
+@man man/man8/gromox-pff2mt.8
 @man man/man8/gromox-snapshot.8
 @man man/man8/gromox-tnef2mt.8
 @man man/man8/gromox-vcf2mt.8

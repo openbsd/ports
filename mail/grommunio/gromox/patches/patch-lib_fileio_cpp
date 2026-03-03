@@ -1,0 +1,23 @@
+commit f58056a4419b0bd258db2312469ccc32c32d70ab
+Author: Jan Engelhardt <jengelh@inai.de>
+Date:   Mon Mar 2 23:54:15 2026 +0100
+
+    lib: drop fopen_sd support for relative paths without dir search list
+
+Index: lib/fileio.cpp
+--- lib/fileio.cpp.orig
++++ lib/fileio.cpp
+@@ -290,8 +290,12 @@ errno_t canonical_hostname(std::string &out) try
+ 
+ std::unique_ptr<FILE, file_deleter> fopen_sd(const char *filename, const char *sdlist)
+ {
+-	if (sdlist == nullptr || strchr(filename, '/') != nullptr)
++	if (filename[0] == '/')
+ 		return std::unique_ptr<FILE, file_deleter>(fopen(filename, "r"));
++	if (sdlist == nullptr) {
++		errno = ENOENT;
++		return nullptr;
++	}
+ 	try {
+ 		for (auto &&dir : gx_split(sdlist, ':')) {
+ 			errno = 0;
