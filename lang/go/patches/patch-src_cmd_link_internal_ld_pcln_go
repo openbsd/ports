@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/ld/pcln.go
 --- src/cmd/link/internal/ld/pcln.go.orig
 +++ src/cmd/link/internal/ld/pcln.go
-@@ -157,9 +157,10 @@ func computeDeferReturn(ctxt *Link, deferReturnSym, s 
+@@ -167,9 +167,10 @@ func computeDeferReturn(ctxt *Link, deferReturnSym, s 
  						deferreturn -= 11
  					}
  				case sys.AMD64:

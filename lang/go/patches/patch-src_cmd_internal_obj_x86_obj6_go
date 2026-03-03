@@ -1,7 +1,7 @@
 Index: src/cmd/internal/obj/x86/obj6.go
 --- src/cmd/internal/obj/x86/obj6.go.orig
 +++ src/cmd/internal/obj/x86/obj6.go
-@@ -605,13 +605,19 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -620,13 +620,19 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  	}
  
  	p := cursym.Func().Text
@@ -22,7 +22,7 @@ Index: src/cmd/internal/obj/x86/obj6.go
  		if q.As == obj.ACALL || q.As == obj.ADUFFCOPY || q.As == obj.ADUFFZERO {
  			hasCall = true
  			break
-@@ -620,7 +626,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -635,7 +641,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  
  	var bpsize int
  	if ctxt.Arch.Family == sys.AMD64 &&
@@ -31,7 +31,7 @@ Index: src/cmd/internal/obj/x86/obj6.go
  		!(autoffset == 0 && !hasCall) { // (2) below
  		// Make room to save a base pointer.
  		// There are 2 cases we must avoid:
-@@ -629,15 +635,15 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -644,15 +650,15 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  		// 2) Frameless leaf functions
  		bpsize = ctxt.Arch.PtrSize
  		autoffset += int32(bpsize)
@@ -51,7 +51,7 @@ Index: src/cmd/internal/obj/x86/obj6.go
  
  	// TODO(rsc): Remove.
  	if ctxt.Arch.Family == sys.I386 && cursym.Func().Locals < 0 {
-@@ -645,7 +651,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -660,7 +666,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  	}
  
  	// TODO(rsc): Remove 'ctxt.Arch.Family == sys.AMD64 &&'.
@@ -60,7 +60,7 @@ Index: src/cmd/internal/obj/x86/obj6.go
  		leaf := true
  	LeafSearch:
  		for q := p; q != nil; q = q.Link {
-@@ -667,7 +673,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -687,11 +693,11 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  		}
  
  		if leaf {
@@ -69,20 +69,12 @@ Index: src/cmd/internal/obj/x86/obj6.go
  		}
  	}
  
-@@ -679,10 +685,10 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
- 	}
- 
- 	var regg int16
 -	if !p.From.Sym.NoSplit() {
 +	if !text.From.Sym.NoSplit() {
- 		// Emit split check and load G register
- 		p, regg = stacksplit(ctxt, cursym, p, newprog, autoffset, int32(textarg))
--	} else if p.From.Sym.Wrapper() {
-+	} else if text.From.Sym.Wrapper() {
- 		// Load G register for the wrapper code
- 		p, regg = loadG(ctxt, cursym, p, newprog)
+ 		// Emit split check.
+ 		p = stacksplit(ctxt, cursym, p, newprog, autoffset, int32(textarg))
  	}
-@@ -1051,6 +1057,9 @@ func stacksplit(ctxt *obj.Link, cursym *obj.LSym, p *o
+@@ -932,6 +938,9 @@ func stacksplit(ctxt *obj.Link, cursym *obj.LSym, p *o
  		tmp = int16(REGENTRYTMP0)
  	}
  
@@ -92,7 +84,7 @@ Index: src/cmd/internal/obj/x86/obj6.go
  	if ctxt.Flag_maymorestack != "" {
  		p = cursym.Func().SpillRegisterArgs(p, newprog)
  
-@@ -1081,10 +1090,8 @@ func stacksplit(ctxt *obj.Link, cursym *obj.LSym, p *o
+@@ -962,10 +971,8 @@ func stacksplit(ctxt *obj.Link, cursym *obj.LSym, p *o
  		}
  
  		p = cursym.Func().UnspillRegisterArgs(p, newprog)

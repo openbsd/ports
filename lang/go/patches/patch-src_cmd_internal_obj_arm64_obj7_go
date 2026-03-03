@@ -24,7 +24,7 @@ Index: src/cmd/internal/obj/arm64/obj7.go
  	// MOV	g_stackguard(g), RT1
  	p = obj.Appendp(p, c.newprog)
  
-@@ -509,6 +510,24 @@ func (c *ctxt7) rewriteToUseGot(p *obj.Prog) {
+@@ -472,6 +473,24 @@ func (c *ctxt7) rewriteToUseGot(p *obj.Prog) {
  	obj.Nopout(p)
  }
  
@@ -49,7 +49,7 @@ Index: src/cmd/internal/obj/arm64/obj7.go
  func preprocess(ctxt *obj.Link, cursym *obj.LSym, newprog obj.ProgAlloc) {
  	if cursym.Func().Text == nil || cursym.Func().Text.Link == nil {
  		return
-@@ -552,19 +571,20 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -513,19 +532,20 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  
  	var q *obj.Prog
  	var q1 *obj.Prog
@@ -76,7 +76,7 @@ Index: src/cmd/internal/obj/arm64/obj7.go
  				// If there is a stack frame at all, it includes
  				// space to save the LR.
  				c.autosize += 8
-@@ -586,10 +606,10 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -547,10 +567,10 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  
  				// low 32 bits for autosize
  				// high 32 bits for extrasize
@@ -89,7 +89,7 @@ Index: src/cmd/internal/obj/arm64/obj7.go
  			}
  
  			if c.autosize == 0 && c.cursym.Func().Text.Mark&LEAF == 0 {
-@@ -599,20 +619,28 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -560,20 +580,28 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  				c.cursym.Func().Text.Mark |= LEAF
  			}
  
@@ -122,18 +122,18 @@ Index: src/cmd/internal/obj/arm64/obj7.go
  				p = c.stacksplit(p, c.autosize) // emit split check
  			}
  
-@@ -1121,6 +1149,21 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
- 			p = q5
+@@ -874,6 +902,21 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+ 				p.From.Reg = REGSP
+ 			}
  		}
- 
++
 +		if p.As == obj.ACALL && isRuntimeEntryPoint(p.To.Sym) {
 +			// Append BTI as we'll return after this call via gogo.
 +			p = obj.Appendp(p, newprog)
 +			p.As = ABTI
 +			p.From.Type = obj.TYPE_SPECIAL
 +			p.From.Offset = int64(SPOP_J)
-+		}
-+		if p.As == obj.ACALL && p.To.Sym != nil && p.To.Sym.Name == "runtime.deferreturn" && last != nil {
++		} else if p.As == obj.ACALL && p.To.Sym != nil && p.To.Sym.Name == "runtime.deferreturn" && last != nil {
 +			// Prepend BTI as we'll enter this point via gogo.
 +			pp := obj.Appendp(last, newprog)
 +			pp.As = ABTI
@@ -144,7 +144,7 @@ Index: src/cmd/internal/obj/arm64/obj7.go
  		if p.To.Type == obj.TYPE_REG && p.To.Reg == REGSP && p.Spadj == 0 {
  			f := c.cursym.Func()
  			if f.FuncFlag&abi.FuncFlagSPWrite == 0 {
-@@ -1153,6 +1196,8 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -906,6 +949,8 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  			p.From.Reg = int16(REG_LSL + r + (shift&7)<<5)
  			p.From.Offset = 0
  		}
