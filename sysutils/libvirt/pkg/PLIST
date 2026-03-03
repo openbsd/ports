@@ -47,6 +47,9 @@ lib/pkgconfig/libvirt-admin.pc
 lib/pkgconfig/libvirt-lxc.pc
 lib/pkgconfig/libvirt-qemu.pc
 lib/pkgconfig/libvirt.pc
+lib/systemd/
+lib/systemd/system/
+lib/systemd/system/virt-secret-init-encryption.service
 lib/sysusers.d/
 lib/sysusers.d/libvirt-qemu.conf
 lib/sysusers.d/libvirt.conf
@@ -94,10 +97,12 @@ libexec/libvirt-guests.sh
 share/augeas/
 share/augeas/lenses/
 share/augeas/lenses/libvirt_lockd.aug
+share/augeas/lenses/libvirt_secrets.aug
 share/augeas/lenses/libvirtd.aug
 share/augeas/lenses/libvirtd_qemu.aug
 share/augeas/lenses/tests/
 share/augeas/lenses/tests/test_libvirt_lockd.aug
+share/augeas/lenses/tests/test_libvirt_secrets.aug
 share/augeas/lenses/tests/test_libvirtd.aug
 share/augeas/lenses/tests/test_libvirtd_qemu.aug
 share/augeas/lenses/tests/test_virtlockd.aug
@@ -418,6 +423,7 @@ share/doc/libvirt/html/platforms.html
 share/doc/libvirt/html/programming-languages.html
 share/doc/libvirt/html/python.html
 share/doc/libvirt/html/remote.html
+share/doc/libvirt/html/secretencryption.html
 share/doc/libvirt/html/securityprocess.html
 share/doc/libvirt/html/ssh-proxy.html
 share/doc/libvirt/html/storage.html
@@ -449,6 +455,7 @@ share/examples/libvirt/qemu/autostart/
 share/examples/libvirt/sasl2/
 share/examples/libvirt/sasl2/libvirt.conf
 @sample ${SYSCONFDIR}/sasl2/libvirt.conf
+share/examples/libvirt/secret.conf
 share/examples/libvirt/secrets/
 @sample ${SYSCONFDIR}/libvirt/secrets/
 share/examples/libvirt/storage/
@@ -747,5 +754,8 @@ share/locale/tr/LC_MESSAGES/libvirt.mo
 share/locale/uk/LC_MESSAGES/libvirt.mo
 share/locale/vi/LC_MESSAGES/libvirt.mo
 share/locale/zh_CN/LC_MESSAGES/libvirt.mo
+share/locale/zh_Hant/
+share/locale/zh_Hant/LC_MESSAGES/
+share/locale/zh_Hant/LC_MESSAGES/libvirt.mo
 share/locale/zh_TW/LC_MESSAGES/libvirt.mo
 @sample /var/cache/libvirt/
