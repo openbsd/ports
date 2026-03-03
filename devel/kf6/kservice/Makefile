@@ -1,4 +1,5 @@
 COMMENT =	plugin framework for KDE desktop services
+VERSION =	6.23.1
 DISTNAME =	kservice-${VERSION}
 
 SHARED_LIBS +=  KF6Service                0.0 # 0.0
