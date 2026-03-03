@@ -1,7 +1,6 @@
 COMMENT =	Customizable Wayland bar for wlroots based compositors
 
-V =		0.14.0
-REVISION =	0
+V =		0.15.0
 
 DIST_TUPLE=	github  Alexays Waybar ${V} .
 PKGNAME=	waybar-${V}
@@ -54,6 +53,7 @@ CONFIGURE_ARGS = 	-Dcava=disabled \
 			-Dlibevdev=disabled \
 			-Dlibnl=disabled \
 			-Dmpris=disabled \
+			-Dniri=true \
 			-Dpipewire=disabled \
 			-Dpulseaudio=disabled \
 			-Dsndio=enabled \
