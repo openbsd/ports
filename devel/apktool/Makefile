@@ -1,17 +1,18 @@
 COMMENT =		tool for reverse engineering Android apk files
 
-DISTNAME =		apktool_2.12.1
+DISTNAME =		apktool_3.0.1
 PKGNAME =		${DISTNAME:S/_/-/}
-REVISION =		0
 
 CATEGORIES =		devel security java
 
-HOMEPAGE =		http://ibotpeaches.github.io/Apktool/
+HOMEPAGE =		https://apktool.org/
 
 # Apache v2
 PERMIT_PACKAGE =	Yes
 
 SITES =			https://bitbucket.org/iBotPeaches/apktool/downloads/
+
+MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =		.jar
