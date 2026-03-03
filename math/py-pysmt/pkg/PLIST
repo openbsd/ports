@@ -415,5 +415,3 @@ lib/python${MODPY_VERSION}/site-packages/pysmt/walkers/dag.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/walkers/generic.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/walkers/identitydag.py
 lib/python${MODPY_VERSION}/site-packages/pysmt/walkers/tree.py
-share/doc/py-pysmt/
-share/doc/py-pysmt/README.rst
