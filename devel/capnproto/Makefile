@@ -2,7 +2,7 @@ COMMENT=	serialization/RPC system
 
 CATEGORIES =	devel
 
-VERSION =	1.2.0
+VERSION =	1.3.0
 DIST_TUPLE =	github capnproto capnproto v${VERSION} .
 
 HOMEPAGE =	https://capnproto.org
