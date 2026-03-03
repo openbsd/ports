@@ -2,7 +2,7 @@ COMMENT =	customizable and lightweight notification-daemon
 
 GH_ACCOUNT =	dunst-project
 GH_PROJECT =	dunst
-GH_TAGNAME =	v1.13.0
+GH_TAGNAME =	v1.13.1
 
 CATEGORIES =	x11
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += X11 Xext Xinerama Xrandr Xss c cairo gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 harfbuzz intl m notify
 WANTLIB += pango-1.0 pangocairo-1.0 pthread
+WANTLIB += wayland-client wayland-cursor
 
 # C11 with GNU extensions
 COMPILER =	base-clang ports-gcc
@@ -25,6 +26,7 @@ CFLAGS +=	-std=gnu11
 USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	graphics/png \
+		wayland/libinput-openbsd \
 		x11/dbus
 
 LIB_DEPENDS +=	devel/gettext,-runtime \
@@ -32,7 +34,8 @@ LIB_DEPENDS +=	devel/gettext,-runtime \
 		devel/libnotify \
 		devel/pango \
 		graphics/cairo \
-		graphics/gdk-pixbuf2
+		graphics/gdk-pixbuf2 \
+		wayland/wayland
 
 RUN_DEPENDS +=	x11/dbus
 
@@ -44,8 +47,7 @@ MAKE_FLAGS =	PREFIX="${PREFIX}" \
 		SYSCONFDIR="/etc" \
 		BASHCOMPLETIONDIR="${LOCALBASE}/share/bash-completion/completions" \
 		FISHCOMPLETIONDIR="${LOCALBASE}/share/fish/vendor_completions.d" \
-		ZSHCOMPLETIONDIR="${LOCALBASE}/share/zsh/site-functions" \
-		WAYLAND=0
+		ZSHCOMPLETIONDIR="${LOCALBASE}/share/zsh/site-functions"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/docs/dunst.1.pod.in \

@@ -7,6 +7,7 @@ bin/dunstctl
 @man man/man5/dunst.5
 share/bash-completion/completions/dunst
 share/bash-completion/completions/dunstctl
+share/bash-completion/completions/dunstify
 share/dunst/
 @sample ${SYSCONFDIR}/dunst/
 share/dunst/dunstrc
@@ -23,3 +24,4 @@ share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_dunst
 share/zsh/site-functions/_dunstctl
+share/zsh/site-functions/_dunstify
