@@ -450,6 +450,7 @@
      SUBDIR += py-flask-appbuilder
      SUBDIR += py-flask-apscheduler
      SUBDIR += py-flask-babel
+     SUBDIR += py-flask-bcrypt
      SUBDIR += py-flask-caching
      SUBDIR += py-flask-compress
      SUBDIR += py-flask-cors
