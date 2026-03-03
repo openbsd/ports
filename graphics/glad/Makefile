@@ -1,15 +1,14 @@
 COMMENT =	multi-language Vulkan/GL/GLES/EGL/GLX/WGL loader-generator
 
-MODPY_DISTV =	2.0.6
+MODPY_DISTV =	2.0.8
 GH_TAGNAME =	v${MODPY_DISTV}
 GH_ACCOUNT =	Dav1dde
 GH_PROJECT =	glad
-REVISION =	2
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://glad.dav1d.de/
-MAINTAINER =	Jose Maldonado <josemald89@gmail.com>
+MAINTAINER =	Jose Maldonado <yukiteruamano@volfread.xyz>
 
 # MIT - Apache 2.0
 PERMIT_PACKAGE =	Yes
