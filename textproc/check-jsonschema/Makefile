@@ -1,6 +1,6 @@
 COMMENT=	cli and pre-commit hook for JSON Schema validation
 
-MODPY_DISTV=	0.36.1
+MODPY_DISTV=	0.37.0
 DISTNAME=	check_jsonschema-${MODPY_DISTV}
 PKGNAME=	check-jsonschema-${MODPY_DISTV}
 
