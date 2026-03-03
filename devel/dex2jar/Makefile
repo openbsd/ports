@@ -3,7 +3,7 @@ COMMENT =	tools to work with android .dex and java .class files
 V =		2.4
 PKGNAME =	dex2jar-$V
 DISTNAME =	dex-tools-v$V
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel security
 
@@ -13,6 +13,8 @@ HOMEPAGE =	https://github.com/pxb1988/dex2jar
 PERMIT_PACKAGE =	Yes
 
 SITES =		https://github.com/pxb1988/dex2jar/releases/download/v$V/
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 EXTRACT_SUFX =	.zip
 
