@@ -15,6 +15,7 @@
      SUBDIR += hledger
      SUBDIR += homebank
      SUBDIR += impressive
+     SUBDIR += jira-cli
      SUBDIR += jrnlc
      SUBDIR += khal
      SUBDIR += khard
