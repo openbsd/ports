@@ -1,6 +1,7 @@
 COMMENT =	provide https support for p5-libwww
 
-DISTNAME =	LWP-Protocol-https-6.14
+DISTNAME =	LWP-Protocol-https-6.15
+CPAN_AUTHOR =	OALDERS
 
 CATEGORIES =	www net security
 
