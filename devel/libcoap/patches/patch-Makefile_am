@@ -3,7 +3,7 @@ ld.lld won't allow -shared -pie (it doesn't make sense anyway)
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -137,8 +137,7 @@ libcoap_include_HEADERS = \
+@@ -274,8 +274,7 @@ libcoap_include_HEADERS = \
  libcoap_@LIBCOAP_NAME_SUFFIX@_la_LDFLAGS =					\
    -version-info $(LT_LIBCOAP_CURRENT):$(LT_LIBCOAP_REVISION):$(LT_LIBCOAP_AGE)	\
    @libcoap_SYMBOLS@ \

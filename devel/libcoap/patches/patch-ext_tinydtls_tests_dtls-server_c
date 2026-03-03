@@ -1,0 +1,16 @@
+not really used, I think?
+
+Index: ext/tinydtls/tests/dtls-server.c
+--- ext/tinydtls/tests/dtls-server.c.orig
++++ ext/tinydtls/tests/dtls-server.c
+@@ -426,8 +426,8 @@ main(int argc, char **argv) {
+       dtls_alert("setsockopt IPV6_PKTINFO: %s\n", strerror(errno));
+     }
+   }
+-  if (setsockopt(fd, IPPROTO_IP, IP_PKTINFO, &on, sizeof(on)) < 0) {
+-    dtls_alert("setsockopt IP_PKTINFO: %s\n", strerror(errno));
++  if (setsockopt(fd, IPPROTO_IP, IP_RECVDSTADDR, &on, sizeof(on)) < 0) {
++    dtls_alert("setsockopt IP_RECVDSTADDR: %s\n", strerror(errno));
+   }
+ 
+   if (bind(fd, (struct sockaddr *)&listen_addr,

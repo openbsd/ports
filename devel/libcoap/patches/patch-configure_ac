@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -658,6 +658,11 @@ case $host in
+@@ -1280,6 +1280,11 @@ case $host in
      #AC_SUBST(OS_MACOS)
      ;;
  
