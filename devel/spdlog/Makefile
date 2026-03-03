@@ -2,10 +2,10 @@ COMMENT =	fast C++ logging library
 
 GH_ACCOUNT =	gabime
 GH_PROJECT =	spdlog
-GH_TAGNAME =	v1.14.1
+GH_TAGNAME =	v1.17.0
 CATEGORIES =	devel
 
-SHARED_LIBS =	spdlog	2.0
+SHARED_LIBS =	spdlog	2.1
 
 # MIT
 PERMIT_PACKAGE =	Yes
