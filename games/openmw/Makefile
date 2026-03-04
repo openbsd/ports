@@ -66,8 +66,6 @@ CONFIGURE_ARGS +=	-DBINDIR=${LOCALBASE}/bin \
 
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/openmw-${GH_TAGNAME}
-
 CFLAGS +=		-I${X11BASE}/include -pthread
 CXXFLAGS +=		-I${X11BASE}/include -pthread
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib

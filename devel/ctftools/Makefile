@@ -18,8 +18,7 @@ WANTLIB +=		c dwarf elf>=2 pthread z
 
 LIB_DEPENDS =		devel/libdwarf>=20161124p0
 
-WRKDIST =		${WRKDIR}/ctftools-${GH_COMMIT}
-WRKSRC =		${WRKDIR}/ctftools-${GH_COMMIT}/cddl
+WRKSRC =		${WRKDIST}/cddl
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/libctf/Makefile \

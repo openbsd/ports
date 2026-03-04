@@ -38,9 +38,6 @@ MAKE_ENV =	${CONFIGURE_ENV}
 # make test seems bogus, disabling it.
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/Player-${GH_TAGNAME}
-
-
 MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

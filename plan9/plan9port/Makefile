@@ -22,8 +22,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 Xext c m pthread util fontconfig freetype z
 
-WRKDIST =		${WRKDIR}/plan9port-${GH_COMMIT}
-
 PLAN9 =			${PREFIX}/plan9
 
 NO_TEST =		Yes
