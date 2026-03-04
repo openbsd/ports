@@ -1,7 +1,7 @@
 Index: TailFile.cc
 --- TailFile.cc.orig
 +++ TailFile.cc
-@@ -352,7 +352,10 @@ void TailFile::follow_print(int n, int verbose, char *
+@@ -392,7 +392,10 @@ void TailFile::follow_print(int n, int verbose, char *
        int ch = fgetc(m_file);
  
        // add the character to the string
