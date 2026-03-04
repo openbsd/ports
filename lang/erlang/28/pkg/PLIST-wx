@@ -109,8 +109,6 @@ lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_tv_wx.beam
 lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_wx.beam
 lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/ttb.beam
 lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/ttb_et.beam
-lib/${ERLANG_V}/lib/${ERL_OBSERVER}/examples/
-lib/${ERLANG_V}/lib/${ERL_OBSERVER}/examples/multitrace.erl
 lib/${ERLANG_V}/lib/${ERL_OBSERVER}/include/
 lib/${ERLANG_V}/lib/${ERL_OBSERVER}/include/etop.hrl
 lib/${ERLANG_V}/lib/${ERL_OBSERVER}/priv/
