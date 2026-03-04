@@ -3,6 +3,7 @@ COMMENT=	flash ROM programmer for BIOS etc
 SHARED_LIBS +=  flashrom                  0.0 # 0.0
 
 V=		1.7.0
+REVISION=	0
 DISTNAME=	flashrom-v${V}
 PKGNAME=	flashrom-${V}
 EXTRACT_SUFX=	.tar.xz
@@ -32,6 +33,7 @@ LIB_DEPENDS=	devel/libftdi1 \
 
 # authors_list needs a .git directory
 CONFIGURE_ARGS=	-Dgenerate_authors_list=disabled \
+		-Duse_git_version=disabled \
 		-Dwerror=false
 
 # for pciutils
