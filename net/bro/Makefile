@@ -1,7 +1,7 @@
 COMMENT=		network analysis and security monitoring framework
 
 V =			8.1.1
-REVISION =		0
+REVISION =		1
 
 DISTNAME =		zeek-${V}
 
@@ -50,6 +50,7 @@ LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 
 RUN_DEPENDS =		devel/py-gitpython \
 			devel/py-semantic-version \
+			net/py-websockets \
 			net/libmaxminddb,-asn \
 			net/libmaxminddb,-city \
 			net/libmaxminddb,-db
