@@ -5,7 +5,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -17,10 +17,6 @@ v_min = v_array[1].to_int()
+@@ -16,10 +16,6 @@ v_min = v_array[1].to_int()
  v_mic = v_array[2].to_int()
  v_nbr = v_maj * 10000 + v_min * 100 + v_mic
  v_extra = ''
@@ -16,7 +16,7 @@ Index: meson.build
  
  # install paths
  dir_prefix = get_option('prefix')
-@@ -58,7 +54,6 @@ cc = meson.get_compiler('c')
+@@ -57,7 +53,6 @@ cc = meson.get_compiler('c')
  # global compiler flags
  
  global_args = [
