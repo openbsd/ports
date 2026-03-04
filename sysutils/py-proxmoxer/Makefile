@@ -1,27 +1,29 @@
 COMMENT =	wrapper around proxmox API
 
-MODPY_DISTV =	2.2.0
-REVISION =	0
+MODPY_DISTV =	2.3.0
+GH_ACCOUNT =	proxmoxer
+GH_PROJECT =	proxmoxer
+GH_TAGNAME =	${MODPY_DISTV}
+PKGNAME =	py-${DISTNAME}
 
-DISTNAME =	proxmoxer-${MODPY_DISTV}
-PKGNAME =	py-proxmoxer-${MODPY_DISTV}
 CATEGORIES =	sysutils
 
+# https://github.com/proxmoxer/proxmoxer/blob/develop/CHANGELOG.md
 HOMEPAGE =	https://proxmoxer.github.io/docs/latest/
+
 # MIT
 PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
-MODPY_PI =	Yes
 
-# openssh-wrapper missing
 RUN_DEPENDS =	www/py-requests \
 		security/py-paramiko
 
-# pypi tarball doesnt ship api_mock.py
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		www/py-requests-toolbelt \
+TEST_DEPENDS =	www/py-requests-toolbelt \
 		www/py-responses
+
+# needs openssh-wrapper
+MODPY_PYTEST_ARGS = --ignore tests/test_openssh.py
 
 .include <bsd.port.mk>
