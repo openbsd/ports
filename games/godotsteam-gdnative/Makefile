@@ -4,6 +4,7 @@ V =		3.20
 GCPP_V =	3.5.2
 
 PKGNAME =	godotsteam-gdnative-${V}
+REVISION =	0
 DIST_TUPLE +=	github GodotSteam GodotSteam v${V}-gdn .
 DIST_TUPLE +=	github godotengine godot-cpp \
 		godot-${GCPP_V}-stable godot-cpp # MIT
@@ -35,7 +36,7 @@ MODSCONS_FLAGS = CXX="${CXX}" \
 		production=yes \
 		target=release
 
-RUN_DEPENDS =	games/godot,-main
+RUN_DEPENDS =	games/godot/pack1,-main
 LIB_DEPENDS =	games/goldberg_emulator
 
 MAKE_ENV +=	CXXFLAGS="${CXXFLAGS}" \
