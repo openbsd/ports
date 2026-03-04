@@ -7,7 +7,6 @@
 @mode
 @group
 @bin bin/editcap
-@bin bin/idl2wrs
 @bin bin/mergecap
 @bin bin/mmdbresolve
 @bin bin/randpkt
@@ -20,13 +19,6 @@
 @lib lib/libwiretap.so.${LIBwiretap_VERSION}
 @lib lib/libwsutil.so.${LIBwsutil_VERSION}
 lib/wireshark/
-lib/wireshark/extcap/
-@bin lib/wireshark/extcap/androiddump
-@bin lib/wireshark/extcap/ciscodump
-@bin lib/wireshark/extcap/randpktdump
-@bin lib/wireshark/extcap/sshdump
-@bin lib/wireshark/extcap/udpdump
-@bin lib/wireshark/extcap/wifidump
 lib/wireshark/plugins/
 lib/wireshark/plugins/${WVER}/
 lib/wireshark/plugins/${WVER}/codecs/
@@ -53,6 +45,14 @@ lib/wireshark/plugins/${WVER}/epan/
 @so lib/wireshark/plugins/${WVER}/epan/wimaxmacphy.so
 lib/wireshark/plugins/${WVER}/wiretap/
 @so lib/wireshark/plugins/${WVER}/wiretap/usbdump.so
+libexec/wireshark/
+libexec/wireshark/extcap/
+@bin libexec/wireshark/extcap/androiddump
+@bin libexec/wireshark/extcap/ciscodump
+@bin libexec/wireshark/extcap/randpktdump
+@bin libexec/wireshark/extcap/sshdump
+@bin libexec/wireshark/extcap/udpdump
+@bin libexec/wireshark/extcap/wifidump
 @man man/man1/androiddump.1
 @man man/man1/capinfos.1
 @man man/man1/captype.1
@@ -67,7 +67,10 @@ lib/wireshark/plugins/${WVER}/wiretap/
 @man man/man1/randpktdump.1
 @man man/man1/rawshark.1
 @man man/man1/reordercap.1
+@man man/man1/sshdig.1
 @man man/man1/sshdump.1
+@man man/man1/strato.1
+@man man/man1/stratoshark.1
 @man man/man1/text2pcap.1
 @man man/man1/tshark.1
 @man man/man1/udpdump.1
@@ -77,6 +80,8 @@ lib/wireshark/plugins/${WVER}/wiretap/
 share/doc/wireshark/
 share/doc/wireshark/COPYING
 share/doc/wireshark/README.xml-output
+share/doc/wireshark/Stratoshark Release Notes.html
+share/doc/wireshark/Wireshark Release Notes.html
 share/doc/wireshark/androiddump.html
 share/doc/wireshark/capinfos.html
 share/doc/wireshark/captype.html
@@ -92,9 +97,11 @@ share/doc/wireshark/pdml2html.xsl
 share/doc/wireshark/randpkt.html
 share/doc/wireshark/randpktdump.html
 share/doc/wireshark/rawshark.html
-share/doc/wireshark/release-notes.html
 share/doc/wireshark/reordercap.html
+share/doc/wireshark/sshdig.html
 share/doc/wireshark/sshdump.html
+share/doc/wireshark/strato.html
+share/doc/wireshark/stratoshark.html
 share/doc/wireshark/text2pcap.html
 share/doc/wireshark/tshark.html
 share/doc/wireshark/udpdump.html
@@ -110,7 +117,6 @@ share/wireshark/diameter/
 share/wireshark/diameter/AlcatelLucent.xml
 share/wireshark/diameter/Cisco.xml
 share/wireshark/diameter/CiscoSystems.xml
-share/wireshark/diameter/Custom.xml
 share/wireshark/diameter/Ericsson.xml
 share/wireshark/diameter/HP.xml
 share/wireshark/diameter/Huawei.xml
@@ -131,6 +137,7 @@ share/wireshark/diameter/VerizonWireless.xml
 share/wireshark/diameter/Vodafone.xml
 share/wireshark/diameter/chargecontrol.xml
 share/wireshark/diameter/dictionary.dtd
+share/wireshark/diameter/dictionary.ent
 share/wireshark/diameter/dictionary.xml
 share/wireshark/diameter/eap.xml
 share/wireshark/diameter/etsie2e4.xml
@@ -195,6 +202,7 @@ share/wireshark/radius/dictionary.arista
 share/wireshark/radius/dictionary.aruba
 share/wireshark/radius/dictionary.ascend
 share/wireshark/radius/dictionary.ascend.illegal
+share/wireshark/radius/dictionary.ascend.illegal.extended
 share/wireshark/radius/dictionary.asn
 share/wireshark/radius/dictionary.audiocodes
 share/wireshark/radius/dictionary.avaya
@@ -272,6 +280,7 @@ share/wireshark/radius/dictionary.iea
 share/wireshark/radius/dictionary.infinera
 share/wireshark/radius/dictionary.infoblox
 share/wireshark/radius/dictionary.infonet
+share/wireshark/radius/dictionary.ingate
 share/wireshark/radius/dictionary.ipunplugged
 share/wireshark/radius/dictionary.issanni
 share/wireshark/radius/dictionary.itk

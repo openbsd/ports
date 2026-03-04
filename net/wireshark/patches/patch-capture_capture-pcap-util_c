@@ -1,4 +1,4 @@
-hunks 1/2: ioctl is needed on !linux
+hunks 1/2: ioctl is needed on !linux too
 
 hunk 3:    pcap_findalldevs() doesn't include controllers dumpable via
            usbpcap, do a separate lookup and add to the list
@@ -17,14 +17,14 @@ Index: capture/capture-pcap-util.c
  /*
 @@ -44,8 +46,6 @@
   */
- #if defined(HAVE_PCAP_CREATE) && defined(__linux__)
+ #if defined(__linux__)
  
 -#include <sys/ioctl.h>
 -
  /*
   * If we're building for a Linux version that supports bonding,
   * HAVE_BONDING will be defined.
-@@ -817,6 +817,23 @@ get_interface_list_findalldevs(int *err, char **err_st
+@@ -816,6 +816,23 @@ get_interface_list_findalldevs(int *err, char **err_st
  		if_info_ip(if_info, dev);
  	}
  	pcap_freealldevs(alldevs);

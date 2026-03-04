@@ -1,0 +1,10 @@
+Index: tools/radiotap-gen/CMakeLists.txt
+--- tools/radiotap-gen/CMakeLists.txt.orig
++++ tools/radiotap-gen/CMakeLists.txt
+@@ -4,5 +4,6 @@ if(UNIX)
+ 	add_executable( radiotap-gen radiotap-gen.c )
+ 
+ 	target_link_libraries( radiotap-gen pcap ${GLIB2_LIBRARIES} )
++	target_include_directories( radiotap-gen SYSTEM PRIVATE ${PCAP_INCLUDE_DIRS} )
+ 
+ endif()

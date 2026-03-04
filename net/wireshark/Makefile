@@ -4,19 +4,15 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES = parallel
-V =		4.4.14
-PORTROACH =	limit:^4\.4\.
-#PORTROACH =	limitw:1,even	# 4.6 needs newer libpcap
+V =		4.6.4
+PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
 PKGNAME-text =	tshark-$V
 
-# keep above 7.8-stable
-REVISION =	0
-
-SHARED_LIBS +=	wsutil               4.0
-SHARED_LIBS +=	wiretap              4.0
-SHARED_LIBS +=	wireshark            4.0
+SHARED_LIBS +=	wsutil               5.0
+SHARED_LIBS +=	wiretap              5.0
+SHARED_LIBS +=	wireshark            5.0
 
 CATEGORIES =	net security x11
 
@@ -51,12 +47,12 @@ MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
-cWANTLIB +=	c gcrypt glib-2.0 m pcap speexdsp
+cWANTLIB +=	c lib/libpcap/pcap gcrypt glib-2.0 m speexdsp
 
 WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
 WANTLIB-text += bcg729 brotlidec cares gmodule-2.0 gnutls lz4 maxminddb
 WANTLIB-text += nghttp2 nghttp3 opencore-amrnb opus pcre2-8 smi snappy
-WANTLIB-text += spandsp ssh xml2 z zstd
+WANTLIB-text += spandsp ssh xml2 xxhash z zstd
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += minizip wireshark wiretap wsutil
@@ -92,10 +88,12 @@ LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 			devel/pcre2 \
 			net/libcares \
 			net/libmaxminddb  \
+			net/libpcap \
 			net/libsmi \
 			security/gnutls \
 			security/libgcrypt \
 			security/libssh \
+			sysutils/xxhash \
 			telephony/bcg729 \
 			telephony/spandsp \
 			textproc/libxml \

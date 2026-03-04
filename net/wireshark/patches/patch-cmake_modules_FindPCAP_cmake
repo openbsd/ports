@@ -1,0 +1,33 @@
+- use ports libpcap
+
+Index: cmake/modules/FindPCAP.cmake
+--- cmake/modules/FindPCAP.cmake.orig
++++ cmake/modules/FindPCAP.cmake
+@@ -14,7 +14,7 @@ FindWSWinLibs("libpcap-*" "PCAP_HINTS")
+ #
+ if(NOT USE_REPOSITORY)
+   find_package(PkgConfig)
+-  pkg_search_module(PC_PCAP libpcap)
++  pkg_search_module(PC_PCAP libepcap)
+ endif()
+ 
+ if(NOT PC_PCAP_FOUND AND NOT WIN32)
+@@ -135,17 +135,7 @@ if (WIN32 AND (CMAKE_CROSSCOMPILING OR USE_MSYSTEM))
+     #VALIDATOR pcap_include_check
+   )
+ else()
+-  find_path(PCAP_INCLUDE_DIR
+-    NAMES
+-      pcap/pcap.h
+-    HINTS
+-      ${PC_PCAP_INCLUDE_DIRS}
+-      ${PCAP_CONFIG_INCLUDE_DIRS}
+-      "${PCAP_HINTS}/Include"
+-    PATHS
+-      "${CMAKE_SOURCE_DIR}/libpcap"
+-    #VALIDATOR pcap_include_check
+-  )
++  set(PCAP_INCLUDE_DIR ${PC_PCAP_INCLUDE_DIRS})
+ endif()
+ 
+ # On Windows we load wpcap.dll explicitly and probe its functions in
