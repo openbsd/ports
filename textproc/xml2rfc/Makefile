@@ -3,7 +3,7 @@ COMMENT=	convert memos written in XML to the RFC format
 GH_ACCOUNT=	ietf-tools
 GH_PROJECT=	xml2rfc
 GH_TAGNAME=	v${MODPY_DISTV}
-MODPY_DISTV=	3.31.0
+MODPY_DISTV=	3.32.0
 
 CATEGORIES=	textproc
 
