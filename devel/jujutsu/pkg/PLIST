@@ -1,8 +1,10 @@
 @bin bin/jj
 @man man/man1/jj-abandon.1
 @man man/man1/jj-absorb.1
+@man man/man1/jj-arrange.1
 @man man/man1/jj-bisect-run.1
 @man man/man1/jj-bisect.1
+@man man/man1/jj-bookmark-advance.1
 @man man/man1/jj-bookmark-create.1
 @man man/man1/jj-bookmark-delete.1
 @man man/man1/jj-bookmark-forget.1
@@ -101,6 +103,7 @@
 @man man/man1/jj-util-gc.1
 @man man/man1/jj-util-install-man-pages.1
 @man man/man1/jj-util-markdown-help.1
+@man man/man1/jj-util-snapshot.1
 @man man/man1/jj-util.1
 @man man/man1/jj-version.1
 @man man/man1/jj-workspace-add.1
