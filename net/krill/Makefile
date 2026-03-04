@@ -5,7 +5,7 @@ COMMENT =	RPKI Certification Authority and Publication Server
 
 GH_ACCOUNT =	NLnetLabs
 GH_PROJECT =	krill
-GH_TAGNAME =	v0.15.1
+GH_TAGNAME =	v0.16.0
 
 HOMEPAGE =	https://nlnetlabs.nl/projects/routing/krill/
 CATEGORIES =	net
@@ -28,7 +28,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/krill
 	${INSTALL_DATA} ${WRKSRC}/defaults/* \
 		${PREFIX}/share/examples/krill/
-	${INSTALL_DATA} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.1.gz ${PREFIX}/man/man1/
+	cd ${PREFIX}/man/man1; gunzip *.gz
 
 .include "crates.inc"
 .include <bsd.port.mk>
