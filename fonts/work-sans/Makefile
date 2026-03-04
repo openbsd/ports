@@ -18,8 +18,6 @@ NO_BUILD =	Yes
 
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/^v//}
-
 FONTDIR =	${PREFIX}/share/fonts/work-sans
 DOCDIR =	${PREFIX}/share/doc/work-sans
 
