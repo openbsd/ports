@@ -1,17 +1,16 @@
 COMMENT=		Warcraft 2 Mod
 
-V=			3.3.2
-DISTNAME=		wargus-$V
+GH_ACCOUNT=		Wargus
+GH_PROJECT=		wargus
+GH_TAGNAME=		v3.3.2
 CATEGORIES=		games
-SITES=			https://github.com/Wargus/wargus/archive/refs/tags/
-DISTFILES=		wargus-{v}${V}${EXTRACT_SUFX}
 
 HOMEPAGE=		http://stratagus.com/
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB+= 		${COMPILER_LIBCXX} bz2 c m png pthread z
+WANTLIB +=		${COMPILER_LIBCXX} bz2 c m png pthread z
 
 MODULES=		devel/cmake
 
@@ -33,8 +32,6 @@ CONFIGURE_ARGS+=	-DGAMEDIR=${LOCALBASE}/bin/
 MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 MODCMAKE_LDFLAGS+=	-L${LOCALBASE}/lib
-
-WRKDIST=		${WRKDIR}/wargus-${V}
 
 FIX_CRLF_FILES=		StormLib/src/FileStream.cpp
 

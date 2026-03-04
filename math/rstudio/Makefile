@@ -5,15 +5,26 @@ BROKEN =	doesnt build with boost 1.87, needs update
 
 # XXX: patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
 # must be kept in sync with math/R shlib bumps.
+# ??? is this actually needed? dlopen doesn't need a version
 
 # Upstream says no more 32-bit support.
 # Not really an issue because qtwebengine is a bigger problem.
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
-V =		1.3.959
 COMMENT =	Integrated Development Environment (IDE) for R
-PKGNAME =	rstudio-${V}
+
+GH_ACCOUNT =	rstudio
+GH_PROJECT =	rstudio
+GH_TAGNAME =	v1.3.959
 REVISION =	14
+
+SITES.a =	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/
+SITES.b =	https://s3.amazonaws.com/rstudio-buildtools/
+DISTFILES.a =	core-dictionaries.zip
+DISTFILES.b =	gin-${GIN_VERSION}.zip \
+		gwt-${GWT_VERSION}.zip \
+		mathjax-27.zip
+
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.rstudio.com/
@@ -30,16 +41,6 @@ WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
 WANTLIB += boost_thread-mt c crypto m pam ssl
 WANTLIB += util uuid z lib/R/lib/R lib/inotify/inotify
-
-# XXX: Ports does not permit GH_* and SITES together.
-SITES =		https://github.com/rstudio/rstudio/archive/
-SITES.a =	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/
-SITES.b =	https://s3.amazonaws.com/rstudio-buildtools/
-DISTFILES =	rstudio-${V}{v${V}}.tar.gz
-DISTFILES.a = 	core-dictionaries.zip
-DISTFILES.b = 	gin-${GIN_VERSION}.zip \
-		gwt-${GWT_VERSION}.zip \
-		mathjax-27.zip
 
 # CMake looks for qmake-qt5 during configure...
 MODULES =	devel/cmake \
@@ -75,8 +76,6 @@ CONFIGURE_ARGS =	-DBoost_INCLUDE_DIR="${LOCALBASE}/include" \
 MODCMAKE_LDFLAGS = 		-L${LOCALBASE}/lib/inotify -linotify -rpath ${LOCALBASE}/lib/inotify -rpath ${LOCALBASE}/lib/R/lib
 
 NO_TEST =	Yes
-
-WRKDIST =	${WRKDIR}/rstudio-${V}
 
 GIN_VERSION =	2.1.2
 GWT_VERSION =	2.8.1

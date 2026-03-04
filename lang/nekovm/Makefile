@@ -1,7 +1,9 @@
 COMMENT =	Neko scripting language runtime and virtual machine
 
 V =		2.3.0
-DISTNAME =	v${V:S/./-/g}
+GH_ACCOUNT =	HaxeFoundation
+GH_PROJECT =	neko
+GH_TAGNAME =	v${V:S/./-/g}
 PKGNAME =	nekovm-${V}
 REVISION =	0
 SHARED_LIBS =	neko	0.0	# 2.3.0
@@ -14,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c gc m pthread z
 
-SITES =			https://github.com/HaxeFoundation/neko/archive/
 MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/git
 LIB_DEPENDS =		devel/boehm-gc,-main
@@ -30,7 +31,6 @@ CONFIGURE_ARGS =	-DNEKO_JIT_DISABLE=ON \
 			-DWITH_UI=OFF
 
 NO_TEST =		Yes
-WRKDIST =		${WRKDIR}/neko-${V:S/./-/g}
 
 MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 

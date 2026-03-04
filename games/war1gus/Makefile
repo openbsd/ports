@@ -1,10 +1,9 @@
 COMMENT=		Warcraft Orcs and Humans Mod
 
-V=			3.3.2
-DISTNAME=		war1gus-$V
+GH_ACCOUNT=		Wargus
+GH_PROJECT=		war1gus
+GH_TAGNAME=		v3.3.2
 CATEGORIES=		games
-SITES=			https://github.com/Wargus/war1gus/archive/refs/tags/
-DISTFILES=		war1gus-{v}${V}${EXTRACT_SUFX}
 
 HOMEPAGE=		https://stratagus.com/war1gus.html
 
@@ -29,8 +28,6 @@ RUN_DEPENDS=		archivers/innoextract \
 			sysutils/cdrtools
 
 CONFIGURE_ARGS+=	-DGAMEDIR=${LOCALBASE}/bin/
-
-WRKDIST=		${WRKDIR}/war1gus-${V}
 
 post-install:
 	${MODPY_COMPILEALL} \

@@ -1,6 +1,8 @@
-V =		4.10.0
 COMMENT =	politics and government game with liberal bias
-DISTNAME =	liberalcrimesquad-${V}{v${V}}
+V =		4.10.0
+GH_ACCOUNT =	Kamal-Sadek
+GH_PROJECT =	Liberal-Crime-Squad
+GH_TAGNAME =	v${V}
 PKGNAME =	liberalcrimesquad-${V}
 CATEGORIES =	games
 REVISION =	3
@@ -11,8 +13,6 @@ HOMEPAGE =	http://lcs.wikidot.com/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses iconv m
-
-SITES =		https://github.com/Kamal-Sadek/Liberal-Crime-Squad/archive/
 
 # C++11
 COMPILER =	base-clang ports-gcc base-gcc
@@ -30,7 +30,5 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
-
-WRKDIST =	${WRKDIR}/Liberal-Crime-Squad-${V}
 
 .include <bsd.port.mk>

@@ -1,20 +1,20 @@
 COMMENT=	Python SANE module
 
 MODPY_DISTV=	2.9.2
-DISTNAME=	Sane-${MODPY_DISTV}
-DISTFILES=	${DISTNAME}{v${MODPY_DISTV}}.tar.gz
+REVISION=	0
+GH_ACCOUNT=	python-pillow
+GH_PROJECT=	Sane
+GH_TAGNAME=	v${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://python-pillow.github.io/
+HOMEPAGE=	https://github.com/python-pillow/Sane
 
 # PIL Software License
 # Permission to use, copy, modify and distribute freely.
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += sane
-
-SITES=         	https://github.com/python-pillow/Sane/archive/
 
 MODULES=	lang/python
 

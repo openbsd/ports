@@ -1,5 +1,8 @@
 V =		16.1
 COMMENT =	open source chess engine
+GH_ACCOUNT =	official-stockfish
+GH_PROJECT =	Stockfish
+GH_TAGNAME =	sf_${V}
 PKGNAME =	stockfish-${V}
 NNUE_BIG =	nn-b1a57edbea57.nnue
 NNUE_SMALL =	nn-baff1ede1f90.nnue
@@ -13,10 +16,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 
-SITES =		https://github.com/official-stockfish/Stockfish/archive/
 SITES.a =	https://tests.stockfishchess.org/api/nn/
-DISTFILES =	sf_${V}.tar.gz
-DISTFILES.a = 	${NNUE_BIG} ${NNUE_SMALL}
+DISTFILES.a =	${NNUE_BIG} ${NNUE_SMALL}
 EXTRACT_ONLY =	${DISTFILES}
 
 # C++17
@@ -45,7 +46,6 @@ MAKE_ENV =	ARCH=general-32
 
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/Stockfish-sf_${V}
 WRKSRC =	${WRKDIST}/src
 
 post-extract:

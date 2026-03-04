@@ -1,11 +1,9 @@
 COMMENT=		free cross-platform real-time strategy gaming engine.
 
-V=			3.3.2
-DISTNAME=		stratagus-$V
+GH_ACCOUNT=		Wargus
+GH_PROJECT=		stratagus
+GH_TAGNAME=		v3.3.2
 CATEGORIES=		games
-SITES=			https://github.com/Wargus/stratagus/archive/refs/tags/
-DISTFILES=		stratagus-{v}${V}${EXTRACT_SUFX}
-EXTRACT_SUFX=		.tar.gz
 
 HOMEPAGE=		http://stratagus.com/stratagus.html
 
