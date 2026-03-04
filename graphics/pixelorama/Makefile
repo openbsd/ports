@@ -4,15 +4,14 @@ ONLY_FOR_ARCHS = amd64
 
 COMMENT =	pixel art editor
 
-V =		1.1.5
+V =		1.1.8
 DISTNAME =	pixelorama-$V
-REVISION =	0
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://orama-interactive.itch.io/pixelorama
 
-MAINTAINER =	Riccardo Mazzurco <mazzurco.riccardo@protonmail.com>
+MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
 
 # MIT
 PERMIT_PACKAGE = Yes
@@ -25,7 +24,7 @@ DISTFILES.i = 	pixelorama-$V{icon}.png
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		games/godot/pack2
+		games/godot/pack3
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
