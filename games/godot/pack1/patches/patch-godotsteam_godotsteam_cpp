@@ -1,0 +1,168 @@
+stub Steam::inputActionEventCallback
+stub setDualSenseTriggerEffect
+remove deprecated/incompatible namespaces ISteamHTMLSurface
+InitiateGameConnection_DEPRECATED => InitiateGameConnection
+fix/remove dualsense/SCE namespace
+
+Index: godotsteam/godotsteam.cpp
+--- godotsteam/godotsteam.cpp.orig
++++ godotsteam/godotsteam.cpp
+@@ -1885,7 +1885,7 @@ void Steam::keyChar(uint32 unicode_char, int key_modif
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->KeyChar(this_handle, unicode_char, (ISteamHTMLSurface::EHTMLKeyModifiers)key_modifiers);
++		SteamHTMLSurface()->KeyChar(this_handle, unicode_char, (EHTMLKeyModifiers)key_modifiers);
+ 	}
+ }
+ 
+@@ -1896,7 +1896,7 @@ void Steam::keyDown(uint32 native_key_code, int key_mo
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->KeyDown(this_handle, native_key_code, (ISteamHTMLSurface::EHTMLKeyModifiers)key_modifiers);
++		SteamHTMLSurface()->KeyDown(this_handle, native_key_code, (EHTMLKeyModifiers)key_modifiers);
+ 	}
+ }
+ 
+@@ -1907,7 +1907,7 @@ void Steam::keyUp(uint32 native_key_code, int key_modi
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->KeyUp(this_handle, native_key_code, (ISteamHTMLSurface::EHTMLKeyModifiers)key_modifiers);
++		SteamHTMLSurface()->KeyUp(this_handle, native_key_code, (EHTMLKeyModifiers)key_modifiers);
+ 	}
+ }
+ 
+@@ -1929,7 +1929,7 @@ void Steam::mouseDoubleClick(HTMLMouseButton mouse_but
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->MouseDoubleClick(this_handle, (ISteamHTMLSurface::EHTMLMouseButton)mouse_button);
++		SteamHTMLSurface()->MouseDoubleClick(this_handle, (EHTMLMouseButton)mouse_button);
+ 	}
+ }
+ 
+@@ -1940,7 +1940,7 @@ void Steam::mouseDown(HTMLMouseButton mouse_button, ui
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->MouseDown(this_handle, (ISteamHTMLSurface::EHTMLMouseButton)mouse_button);
++		SteamHTMLSurface()->MouseDown(this_handle, (EHTMLMouseButton)mouse_button);
+ 	}
+ }
+ 
+@@ -1962,7 +1962,7 @@ void Steam::mouseUp(HTMLMouseButton mouse_button, uint
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->MouseUp(this_handle, (ISteamHTMLSurface::EHTMLMouseButton)mouse_button);
++		SteamHTMLSurface()->MouseUp(this_handle, (EHTMLMouseButton)mouse_button);
+ 	}
+ }
+ 
+@@ -2710,7 +2710,9 @@ bool Steam::setInputActionManifestFilePath(const Strin
+ }
+ 
+ // Set the trigger effect for a DualSense controller
+-void Steam::setDualSenseTriggerEffect(uint64_t input_handle, int parameter_index, int trigger_mask, SCEPadTriggerEffectMode effect_mode, int position, int amplitude, int frequency){
++void Steam::setDualSenseTriggerEffect(uint64_t input_handle, int parameter_index, int trigger_mask, int effect_mode, int position, int amplitude, int frequency){
++	return;
++	/*
+ 	if(SteamInput() != NULL){
+ 		ScePadTriggerEffectParam these_parameters;
+ 		memset(&these_parameters, 0, sizeof(these_parameters));
+@@ -2741,6 +2743,7 @@ void Steam::setDualSenseTriggerEffect(uint64_t input_h
+ 		these_parameters.command[parameter_index].commandData.vibrationParam.frequency = frequency;
+ 		SteamInput()->SetDualSenseTriggerEffect((InputHandle_t)input_handle, &these_parameters);
+ 	}
++	*/
+ }
+ 
+ //! Waits on an IPC event from Steam sent when there is new data to be fetched from the data drop. Returns true when data was recievied before the timeout expires. Useful for games with a dedicated input thread.
+@@ -7927,7 +7930,7 @@ Dictionary Steam::initiateGameConnection(uint64_t serv
+ 		int authSize = 2048;
+ 		auth.resize(authSize);
+ 		CSteamID server = (uint64)server_id;
+-		if(SteamUser()->InitiateGameConnection_DEPRECATED(&auth, authSize, server, server_ip, server_port, secure) > 0){
++		if(SteamUser()->InitiateGameConnection(&auth, authSize, server, server_ip, server_port, secure) > 0){
+ 			connection["auth_blob"] = auth;
+ 			connection["server_id"] = server_id;
+ 			connection["server_ip"] = server_ip;
+@@ -8026,7 +8029,7 @@ void Steam::stopVoiceRecording(){
+ //! Notify the game server that we are disconnecting. NOTE: This is part of the old user authentication API and should not be mixed with the new API.
+ void Steam::terminateGameConnection(uint32 server_ip, uint16 server_port){
+ 	if(SteamUser() != NULL){
+-		SteamUser()->TerminateGameConnection_DEPRECATED(server_ip, server_port);
++		SteamUser()->TerminateGameConnection(server_ip, server_port);
+ 	}
+ }
+ 
+@@ -9502,27 +9505,28 @@ void Steam::http_request_headers_received(HTTPRequestH
+ //
+ // Purpose: when callbacks are enabled this fires each time a controller action state changes
+ void Steam::inputActionEventCallback(SteamInputActionEvent_t* call_data){
+-	uint64_t input_handle = call_data->controllerHandle;
+-	int event_type = call_data->eEventType;
+-	uint64_t analog_handle = call_data->analogAction.actionHandle;
+-	uint64_t digital_handle = call_data->digitalAction.actionHandle;
++	return;
++	//uint64_t input_handle = call_data->controllerHandle;
++	//int event_type = call_data->eEventType;
++	//uint64_t analog_handle = call_data->analogAction.actionHandle;
++	//uint64_t digital_handle = call_data->digitalAction.actionHandle;
+ 	// Get the digital action data
+-	Dictionary digital_action;
+-	digital_action["state"] = call_data->digitalAction.digitalActionData.bState;
+-	digital_action["active"] = call_data->digitalAction.digitalActionData.bActive;
++	//Dictionary digital_action;
++	//digital_action["state"] = call_data->digitalAction.digitalActionData.bState;
++	//digital_action["active"] = call_data->digitalAction.digitalActionData.bActive;
+ 	// Get the analog action data
+-	Dictionary analog_action;
+-	analog_action["mode"] = call_data->analogAction.analogActionData.eMode;
+-	analog_action["x"] = call_data->analogAction.analogActionData.x;
+-	analog_action["y"] = call_data->analogAction.analogActionData.y;
+-	analog_action["active"] = call_data->analogAction.analogActionData.bActive;
++	//Dictionary analog_action;
++	//analog_action["mode"] = call_data->analogAction.analogActionData.eMode;
++	//analog_action["x"] = call_data->analogAction.analogActionData.x;
++	//analog_action["y"] = call_data->analogAction.analogActionData.y;
++	//analog_action["active"] = call_data->analogAction.analogActionData.bActive;
+ 	// Split into a dictionary since Godot won't allow more than 6 arguments sent back
+-	Dictionary action_information;
+-	action_information["analog_action_handle"] = analog_handle;
+-	action_information["analog_action_data"] = analog_action;
+-	action_information["digital_action_handle"] = digital_handle;
+-	action_information["digital_action_data"] = digital_action;
+-	emit_signal("input_action_event", input_handle, event_type, action_information);
++	//Dictionary action_information;
++	//action_information["analog_action_handle"] = analog_handle;
++	//action_information["analog_action_data"] = analog_action;
++	//action_information["digital_action_handle"] = digital_handle;
++	//action_information["digital_action_data"] = digital_action;
++	//emit_signal("input_action_event", input_handle, event_type, action_information);
+ }
+ 
+ //! Purpose: called when a new controller has been connected, will fire once per controller if multiple new controllers connect in the same frame
+@@ -13610,13 +13614,13 @@ void Steam::_bind_methods(){
+ 	BIND_ENUM_CONSTANT(RESULT_PHONE_NUMBER_IS_VOIP);
+ 
+ 	// SCEPadTriggerEffectMode Enums
+-	BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_OFF);
+-	BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_FEEDBACK);
+-	BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_WEAPON);
+-	BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_VIBRATION);
+-	BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_MULTIPLE_POSITION_FEEDBACK);
+-	BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_SLOPE_FEEDBACK);
+-	BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_MULTIPLE_POSITION_VIBRATION);
++	//BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_OFF);
++	//BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_FEEDBACK);
++	//BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_WEAPON);
++	//BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_VIBRATION);
++	//BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_MULTIPLE_POSITION_FEEDBACK);
++	//BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_SLOPE_FEEDBACK);
++	//BIND_ENUM_CONSTANT(PAD_TRIGGER_EFFECT_MODE_MULTIPLE_POSITION_VIBRATION);
+ 
+ 	// SocketConnectionType Enums
+ 	BIND_ENUM_CONSTANT(NET_SOCKET_CONNECTION_TYPE_NOT_CONNECTED);

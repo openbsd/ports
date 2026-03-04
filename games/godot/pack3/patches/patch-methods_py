@@ -1,0 +1,14 @@
+drop hardcoded -O3
+
+Index: methods.py
+--- methods.py.orig
++++ methods.py
+@@ -126,8 +126,6 @@ def force_optimization_on_debug(self):
+         return
+     elif self.msvc:
+         self["OPTIMIZELEVEL"] = "/O2"
+-    else:
+-        self["OPTIMIZELEVEL"] = "-O3"
+ 
+ 
+ def add_module_version_string(self, s):

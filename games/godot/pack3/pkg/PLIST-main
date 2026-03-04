@@ -1,0 +1,5 @@
+@pkgpath games/godot,-main
+@conflict godot-<3.6.2p0
+@bin bin/godot
+@man man/man6/godot.6
+share/doc/pkg-readmes/${PKGSTEM}

@@ -1,0 +1,21 @@
+for _load_core_api_assembly, use the same load_assembly_from() approach for
+TOOLS_ENABLED also if !TOOLS_ENABLED
+
+Index: modules/mono/mono_gd/gd_mono.cpp
+--- modules/mono/mono_gd/gd_mono.cpp.orig
++++ modules/mono/mono_gd/gd_mono.cpp
+@@ -830,7 +830,13 @@ bool GDMono::_load_core_api_assembly(LoadedApiAssembly
+ 	bool success = FileAccess::exists(assembly_path) &&
+ 			load_assembly_from(CORE_API_ASSEMBLY_NAME, assembly_path, &r_loaded_api_assembly.assembly, p_refonly);
+ #else
+-	bool success = load_assembly(CORE_API_ASSEMBLY_NAME, &r_loaded_api_assembly.assembly, p_refonly);
++	// non-editor builds don't have Main namespace
++	String assembly_dir = GodotSharpDirs::get_data_editor_prebuilt_api_dir().plus_file(p_config);
++
++	String assembly_path = assembly_dir.plus_file(CORE_API_ASSEMBLY_NAME ".dll");
++
++	bool success = FileAccess::exists(assembly_path) &&
++			load_assembly_from(CORE_API_ASSEMBLY_NAME, assembly_path, &r_loaded_api_assembly.assembly, p_refonly);
+ #endif
+ 
+ 	if (success) {

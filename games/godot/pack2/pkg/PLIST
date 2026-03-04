@@ -1,0 +1,3 @@
+@pkgpath games/godot4,-main
+@bin bin/godot44
+@man man/man6/godot44.6

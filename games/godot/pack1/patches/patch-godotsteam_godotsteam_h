@@ -1,0 +1,178 @@
+don't use isteamdualsense.h API while not part of games/goldberg_emulator
+fix namespace - need to remove ISteamHTMLSurface:: to build
+disable SCE_* namespace, which is from isteamdualsense which we don't have
+(yet)
+
+Index: godotsteam/godotsteam.h
+--- godotsteam/godotsteam.h.orig
++++ godotsteam/godotsteam.h
+@@ -22,7 +22,6 @@
+ // Include Steamworks API headers
+ #include "steam/steam_api.h"
+ #include "steam/steamnetworkingfakeip.h"
+-#include "steam/isteamdualsense.h"
+ 
+ // Include Godot headers
+ #include "core/object.h"
+@@ -482,59 +481,59 @@ class Steam: public Object {
+ 
+ 		// HTMLSurface enums
+ 		enum HTMLKeyModifiers {
+-			HTML_KEY_MODIFIER_NONE = ISteamHTMLSurface::k_eHTMLKeyModifier_None,
+-			HTML_KEY_MODIFIER_ALT_DOWN = ISteamHTMLSurface::k_eHTMLKeyModifier_AltDown,
+-			HTML_KEY_MODIFIER_CTRL_DOWN = ISteamHTMLSurface::k_eHTMLKeyModifier_CtrlDown,
+-			HTML_KEY_MODIFIER_SHIFT_DOWN = ISteamHTMLSurface::k_eHTMLKeyModifier_ShiftDown
++			HTML_KEY_MODIFIER_NONE = k_eHTMLKeyModifier_None,
++			HTML_KEY_MODIFIER_ALT_DOWN = k_eHTMLKeyModifier_AltDown,
++			HTML_KEY_MODIFIER_CTRL_DOWN = k_eHTMLKeyModifier_CtrlDown,
++			HTML_KEY_MODIFIER_SHIFT_DOWN = k_eHTMLKeyModifier_ShiftDown
+ 		};
+ 		enum HTMLMouseButton {
+-			HTML_MOUSE_BUTTON_LEFT = ISteamHTMLSurface::eHTMLMouseButton_Left,
+-			HTML_MOUSE_BUTTON_RIGHT = ISteamHTMLSurface::eHTMLMouseButton_Right,
+-			HTML_MOUSE_BUTTON_MIDDLE = ISteamHTMLSurface::eHTMLMouseButton_Middle
++			HTML_MOUSE_BUTTON_LEFT = eHTMLMouseButton_Left,
++			HTML_MOUSE_BUTTON_RIGHT = eHTMLMouseButton_Right,
++			HTML_MOUSE_BUTTON_MIDDLE = eHTMLMouseButton_Middle
+ 		};
+ 		enum MouseCursor {
+-			DC_USER = ISteamHTMLSurface::dc_user,
+-			DC_NONE = ISteamHTMLSurface::dc_none,
+-			DC_ARROW = ISteamHTMLSurface::dc_arrow,
+-			DC_IBEAM = ISteamHTMLSurface::dc_ibeam,
+-			DC_HOUR_GLASS = ISteamHTMLSurface::dc_hourglass,
+-			DC_WAIT_ARROW = ISteamHTMLSurface::dc_waitarrow,
+-			DC_CROSSHAIR = ISteamHTMLSurface::dc_crosshair,
+-			DC_UP = ISteamHTMLSurface::dc_up,
+-			DC_SIZE_NW = ISteamHTMLSurface::dc_sizenw,
+-			DC_SIZE_SE = ISteamHTMLSurface::dc_sizese,
+-			DC_SIZE_NE = ISteamHTMLSurface::dc_sizene,
+-			DC_SIZE_SW = ISteamHTMLSurface::dc_sizesw,
+-			DC_SIZE_W = ISteamHTMLSurface::dc_sizew,
+-			DC_SIZE_E = ISteamHTMLSurface::dc_sizee,
+-			DC_SIZE_N = ISteamHTMLSurface::dc_sizen,
+-			DC_SIZE_S = ISteamHTMLSurface::dc_sizes,
+-			DC_SIZE_WE = ISteamHTMLSurface::dc_sizewe,
+-			DC_SIZE_NS = ISteamHTMLSurface::dc_sizens,
+-			DC_SIZE_ALL = ISteamHTMLSurface::dc_sizeall,
+-			DC_NO = ISteamHTMLSurface::dc_no,
+-			DC_HAND = ISteamHTMLSurface::dc_hand,
+-			DC_BLANK = ISteamHTMLSurface::dc_blank,
+-			DC_MIDDLE_PAN = ISteamHTMLSurface::dc_middle_pan,
+-			DC_NORTH_PAN = ISteamHTMLSurface::dc_north_pan,
+-			DC_NORTH_EAST_PAN = ISteamHTMLSurface::dc_north_east_pan,
+-			DC_EAST_PAN = ISteamHTMLSurface::dc_east_pan,
+-			DC_SOUTH_EAST_PAN = ISteamHTMLSurface::dc_south_east_pan,
+-			DC_SOUTH_PAN = ISteamHTMLSurface::dc_south_pan,
+-			DC_SOUTH_WEST_PAN = ISteamHTMLSurface::dc_south_west_pan,
+-			DC_WEST_PAN = ISteamHTMLSurface::dc_west_pan,
+-			DC_NORTH_WEST_PAN = ISteamHTMLSurface::dc_north_west_pan,
+-			DC_ALIAS = ISteamHTMLSurface::dc_alias,
+-			DC_CELL = ISteamHTMLSurface::dc_cell,
+-			DC_COL_RESIZE = ISteamHTMLSurface::dc_colresize,
+-			DC_COPY_CUR = ISteamHTMLSurface::dc_copycur,
+-			DC_VERTICAL_TEXT = ISteamHTMLSurface::dc_verticaltext,
+-			DC_ROW_RESIZE = ISteamHTMLSurface::dc_rowresize,
+-			DC_ZOOM_IN = ISteamHTMLSurface::dc_zoomin,
+-			DC_ZOOM_OUT = ISteamHTMLSurface::dc_zoomout,
+-			DC_HELP = ISteamHTMLSurface::dc_help,
+-			DC_CUSTOM = ISteamHTMLSurface::dc_custom,
+-			DC_LAST = ISteamHTMLSurface::dc_last
++			DC_USER = dc_user,
++			DC_NONE = dc_none,
++			DC_ARROW = dc_arrow,
++			DC_IBEAM = dc_ibeam,
++			DC_HOUR_GLASS = dc_hourglass,
++			DC_WAIT_ARROW = dc_waitarrow,
++			DC_CROSSHAIR = dc_crosshair,
++			DC_UP = dc_up,
++			DC_SIZE_NW = dc_sizenw,
++			DC_SIZE_SE = dc_sizese,
++			DC_SIZE_NE = dc_sizene,
++			DC_SIZE_SW = dc_sizesw,
++			DC_SIZE_W = dc_sizew,
++			DC_SIZE_E = dc_sizee,
++			DC_SIZE_N = dc_sizen,
++			DC_SIZE_S = dc_sizes,
++			DC_SIZE_WE = dc_sizewe,
++			DC_SIZE_NS = dc_sizens,
++			DC_SIZE_ALL = dc_sizeall,
++			DC_NO = dc_no,
++			DC_HAND = dc_hand,
++			DC_BLANK = dc_blank,
++			DC_MIDDLE_PAN = dc_middle_pan,
++			DC_NORTH_PAN = dc_north_pan,
++			DC_NORTH_EAST_PAN = dc_north_east_pan,
++			DC_EAST_PAN = dc_east_pan,
++			DC_SOUTH_EAST_PAN = dc_south_east_pan,
++			DC_SOUTH_PAN = dc_south_pan,
++			DC_SOUTH_WEST_PAN = dc_south_west_pan,
++			DC_WEST_PAN = dc_west_pan,
++			DC_NORTH_WEST_PAN = dc_north_west_pan,
++			DC_ALIAS = dc_alias,
++			DC_CELL = dc_cell,
++			DC_COL_RESIZE = dc_colresize,
++			DC_COPY_CUR = dc_copycur,
++			DC_VERTICAL_TEXT = dc_verticaltext,
++			DC_ROW_RESIZE = dc_rowresize,
++			DC_ZOOM_IN = dc_zoomin,
++			DC_ZOOM_OUT = dc_zoomout,
++			DC_HELP = dc_help,
++			DC_CUSTOM = dc_custom,
++			DC_LAST = dc_last
+ 		};
+ 
+ 		// HTTP enums
+@@ -1088,6 +1087,7 @@ class Steam: public Object {
+ 			INPUT_TYPE_COUNT = k_ESteamInputType_Count,
+ 			INPUT_TYPE_MAXIMUM_POSSIBLE_VALUE = k_ESteamInputType_MaximumPossibleValue
+ 		};
++		/*
+ 		enum SCEPadTriggerEffectMode {
+ 			PAD_TRIGGER_EFFECT_MODE_OFF = SCE_PAD_TRIGGER_EFFECT_MODE_OFF,
+ 			PAD_TRIGGER_EFFECT_MODE_FEEDBACK = SCE_PAD_TRIGGER_EFFECT_MODE_FEEDBACK,
+@@ -1097,6 +1097,7 @@ class Steam: public Object {
+ 			PAD_TRIGGER_EFFECT_MODE_SLOPE_FEEDBACK = SCE_PAD_TRIGGER_EFFECT_MODE_SLOPE_FEEDBACK,
+ 			PAD_TRIGGER_EFFECT_MODE_MULTIPLE_POSITION_VIBRATION = SCE_PAD_TRIGGER_EFFECT_MODE_MULTIPLE_POSITION_VIBRATION
+ 		};
++		*/
+ 		enum XboxOrigin {
+ 			XBOX_ORIGIN_A = k_EXboxOrigin_A,
+ 			XBOX_ORIGIN_B = k_EXboxOrigin_B,
+@@ -1191,9 +1192,9 @@ class Steam: public Object {
+ 		};
+ 		enum P2PSessionError {
+ 			P2P_SESSION_ERROR_NONE = k_EP2PSessionErrorNone,
+-			P2P_SESSION_ERROR_NOT_RUNNING_APP = k_EP2PSessionErrorNotRunningApp_DELETED,
++			P2P_SESSION_ERROR_NOT_RUNNING_APP = k_EP2PSessionErrorNotRunningApp,
+ 			P2P_SESSION_ERROR_NO_RIGHTS_TO_APP = k_EP2PSessionErrorNoRightsToApp,
+-			P2P_SESSION_ERROR_DESTINATION_NOT_LOGGED_ON = k_EP2PSessionErrorDestinationNotLoggedIn_DELETED,
++			P2P_SESSION_ERROR_DESTINATION_NOT_LOGGED_ON = k_EP2PSessionErrorDestinationNotLoggedIn,
+ 			P2P_SESSION_ERROR_TIMEOUT = k_EP2PSessionErrorTimeout,
+ 			P2P_SESSION_ERROR_MAX = k_EP2PSessionErrorMax
+ 		};
+@@ -1990,7 +1991,7 @@ class Steam: public Object {
+ 		void triggerVibration(uint64_t input_handle, uint16_t left_speed, uint16_t right_speed);
+ 		void triggerVibrationExtended(uint64_t input_handle, uint16_t left_speed, uint16_t right_speed, uint16_t left_trigger_speed, uint16_t right_trigger_speed);
+ 		bool setInputActionManifestFilePath(const String& manifest_path);
+-		void setDualSenseTriggerEffect(uint64_t input_handle, int parameter_index, int trigger_mask, SCEPadTriggerEffectMode effect_mode, int position, int amplitude, int frequency);
++		void setDualSenseTriggerEffect(uint64_t input_handle, int parameter_index, int trigger_mask, int effect_mode, int position, int amplitude, int frequency);
+ 		bool waitForData(bool wait_forever, uint32 timeout);
+ 
+ 		// Inventory ////////////////////////////
+@@ -3013,7 +3014,7 @@ VARIANT_ENUM_CAST(Steam::RemoteStoragePlatform);
+ VARIANT_ENUM_CAST(Steam::RemoteStoragePublishedFileVisibility);
+ VARIANT_ENUM_CAST(Steam::Result);
+ 
+-VARIANT_ENUM_CAST(Steam::SCEPadTriggerEffectMode);
++//VARIANT_ENUM_CAST(Steam::SCEPadTriggerEffectMode);
+ VARIANT_ENUM_CAST(Steam::SocketConnectionType);
+ VARIANT_ENUM_CAST(Steam::SocketState);
+ 
+@@ -3040,4 +3041,4 @@ VARIANT_ENUM_CAST(Steam::WorkshopVote);
+ 
+ VARIANT_ENUM_CAST(Steam::XboxOrigin);
+ 
+-#endif // GODOTSTEAM_H
+\ No newline at end of file
++#endif // GODOTSTEAM_H

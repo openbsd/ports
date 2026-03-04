@@ -1,0 +1,17 @@
+we don't seem to have quick_exit; no big deal
+
+Index: platform/x11/detect_prime.cpp
+--- platform/x11/detect_prime.cpp.orig
++++ platform/x11/detect_prime.cpp
+@@ -204,9 +204,8 @@ int detect_prime() {
+ 			}
+ 			close(fdset[1]);
+ 
+-			// The function quick_exit() is used because exit() will call destructors on static objects copied by fork().
+-			// These objects will be freed anyway when the process finishes execution.
+-			quick_exit(0);
++			// exit() will call destructors on static objects copied by fork()
++			_exit(0);
+ 		}
+ 	}
+ 

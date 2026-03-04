@@ -1,0 +1,12 @@
+Index: misc/dist/linux/godot.6
+--- misc/dist/linux/godot.6.orig
++++ misc/dist/linux/godot.6
+@@ -56,7 +56,7 @@ Remote filesystem (<host/IP>[:<port>] address).
+ Password for remote filesystem.
+ .TP
+ \fB\-\-audio\-driver\fR <driver>
+-Audio driver ('PulseAudio', 'ALSA', 'Dummy').
++Audio driver ('sndio', 'Dummy').
+ .TP
+ \fB\-\-audio\-output\-latency\fR <ms>
+ Override audio output latency in milliseconds (default is 15 ms). Lower values make sound playback more reactive but increase CPU usage, and may result in audio cracking if the CPU can't keep up.

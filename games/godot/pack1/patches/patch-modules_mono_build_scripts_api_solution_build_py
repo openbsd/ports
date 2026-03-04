@@ -1,0 +1,14 @@
+enable building mono files without tools
+
+Index: modules/mono/build_scripts/api_solution_build.py
+--- modules/mono/build_scripts/api_solution_build.py.orig
++++ modules/mono/build_scripts/api_solution_build.py
+@@ -47,7 +47,7 @@ def build_api_solution(source, target, env):
+ 
+ 
+ def build(env_mono):
+-    assert env_mono["tools"]
++    #assert env_mono["tools"]
+ 
+     target_filenames = [
+         "GodotSharp.dll",

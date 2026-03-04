@@ -1,0 +1,20 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Godot Versions and Pack (PCK) Files
+===================================
+Finished Godot games/projects are generally distributed in the form of resource
+packs (.pck files). Multiple versions of Godot are provided for compatibility
+with different versions of this file format.
+
+In case of doubt which version of Godot to install, select the latest version.
+Note the godot-editor is only provided for the latest version.
+
+If you have a .pck file with an unknown pack version, it is encoded in
+hexadecimal after the file signature 'GDPC'. Example:
+
+	$ hexdump -Cn 8 game.pck
+	00000000  47 44 50 43 02 00 00 00                           |GDPC....|
+
+This indicates pack version 2 ('02' after the signature).
