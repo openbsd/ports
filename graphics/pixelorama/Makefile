@@ -6,6 +6,7 @@ COMMENT =	pixel art editor
 
 V =		1.1.5
 DISTNAME =	pixelorama-$V
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -24,7 +25,7 @@ DISTFILES.i = 	pixelorama-$V{icon}.png
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		games/godot4,-main
+		games/godot/pack2
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
