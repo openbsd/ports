@@ -1,0 +1,72 @@
+Index: widget/NativeKeyToDOMCodeName.inc
+--- widget/NativeKeyToDOMCodeName.h.orig
++++ widget/NativeKeyToDOMCodeName.h
+@@ -379,7 +379,9 @@ CODE_MAP_ANDROID(Tab, 0x000F)
+ 
+ // IME keys
+ CODE_MAP_WIN(Convert, 0x0079)
++#if ! defined(__OpenBSD__)
+ CODE_MAP_X11(Convert, 0x0064)
++#endif
+ CODE_MAP_ANDROID(Convert, 0x005C)
+ 
+ CODE_MAP_WIN(Lang1, 0x0072)  // for non-Korean layout
+@@ -399,7 +401,9 @@ CODE_MAP_X11(KanaMode, 0x0065)
+ CODE_MAP_ANDROID(KanaMode, 0x005D)
+ 
+ CODE_MAP_WIN(NonConvert, 0x007B)
++#if ! defined(__OpenBSD__)
+ CODE_MAP_X11(NonConvert, 0x0066)
++#endif
+ CODE_MAP_ANDROID(NonConvert, 0x005E)
+ 
+ // Control pad section
+@@ -439,22 +443,38 @@ CODE_MAP_ANDROID(PageUp, 0x0068)
+ // Arrow pad section
+ CODE_MAP_WIN(ArrowDown, 0xE050)
+ CODE_MAP_MAC(ArrowDown, kVK_DownArrow)
++#if defined(__OpenBSD__)
++CODE_MAP_X11(ArrowDown, 0x0068)
++#else
+ CODE_MAP_X11(ArrowDown, 0x0074)
++#endif
+ CODE_MAP_ANDROID(ArrowDown, 0x006C)
+ 
+ CODE_MAP_WIN(ArrowLeft, 0xE04B)
+ CODE_MAP_MAC(ArrowLeft, kVK_LeftArrow)
++#if defined(__OpenBSD__)
++CODE_MAP_X11(ArrowLeft, 0x0064)
++#else
+ CODE_MAP_X11(ArrowLeft, 0x0071)
++#endif
+ CODE_MAP_ANDROID(ArrowLeft, 0x0069)
+ 
+ CODE_MAP_WIN(ArrowRight, 0xE04D)
+ CODE_MAP_MAC(ArrowRight, kVK_RightArrow)
++#if defined(__OpenBSD__)
++CODE_MAP_X11(ArrowRight, 0x0066)
++#else
+ CODE_MAP_X11(ArrowRight, 0x0072)
++#endif
+ CODE_MAP_ANDROID(ArrowRight, 0x006A)
+ 
+ CODE_MAP_WIN(ArrowUp, 0xE048)
+ CODE_MAP_MAC(ArrowUp, kVK_UpArrow)
++#if defined(__OpenBSD__)
++CODE_MAP_X11(ArrowUp, 0x0062)
++#else
+ CODE_MAP_X11(ArrowUp, 0x006F)
++#endif
+ CODE_MAP_ANDROID(ArrowUp, 0x0067)
+ 
+ // Numpad section
+@@ -536,7 +556,9 @@ CODE_MAP_ANDROID(NumpadDivide, 0x0062)
+ CODE_MAP_WIN(NumpadEnter, 0xE01C)
+ CODE_MAP_MAC(NumpadEnter, kVK_ANSI_KeypadEnter)
+ CODE_MAP_MAC(NumpadEnter, kVK_Powerbook_KeypadEnter)
++#if ! defined(__OpenBSD__)
+ CODE_MAP_X11(NumpadEnter, 0x0068)
++#endif
+ CODE_MAP_ANDROID(NumpadEnter, 0x0060)
+ 
+ CODE_MAP_WIN(NumpadEqual, 0x0059)
