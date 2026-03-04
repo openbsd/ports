@@ -1,0 +1,27 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -3493,7 +3493,7 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/pcap-namedb.
+ if(NOT MSVC)
+     set(prefix ${CMAKE_INSTALL_PREFIX})
+     set(exec_prefix "\${prefix}")
+-    set(includedir "\${prefix}/include")
++    set(includedir "\${prefix}/include/libpcap")
+     set(libdir "\${exec_prefix}/${CMAKE_INSTALL_LIBDIR}")
+ 
+     #
+@@ -3558,10 +3558,10 @@ if(NOT MSVC)
+             set(RPATH "")
+         endif()
+     endif()
+-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/pcap-config.in ${CMAKE_CURRENT_BINARY_DIR}/pcap-config @ONLY)
+-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libpcap.pc.in ${CMAKE_CURRENT_BINARY_DIR}/libpcap.pc @ONLY)
+-    install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/pcap-config DESTINATION bin)
+-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libpcap.pc DESTINATION lib/pkgconfig)
++    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/pcap-config.in ${CMAKE_CURRENT_BINARY_DIR}/epcap-config @ONLY)
++    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libpcap.pc.in ${CMAKE_CURRENT_BINARY_DIR}/libepcap.pc @ONLY)
++    install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/epcap-config DESTINATION bin)
++    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libepcap.pc DESTINATION lib/pkgconfig)
+ 
+     #
+     # Man pages.

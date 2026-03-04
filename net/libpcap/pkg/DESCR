@@ -1,0 +1,10 @@
+The Packet Capture library provides a high level interface to packet
+capture systems. All packets on the network, even those destined for
+other hosts, are accessible through this mechanism. It also supports
+saving captured packets to a 'savefile', and reading packets from a
+'savefile'.
+
+This package provides tcpdump.org's version of libpcap for software
+which is unable to use the standard libpcap provided as part of OpenBSD.
+It is installed to a non-standard location to prevent software from
+picking it up unintentionally.
