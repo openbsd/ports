@@ -12,7 +12,7 @@ Index: Makefile
  
  # Javascript compiler
  
-@@ -66,9 +68,9 @@ JSFILES = $(sort $(shell find client/zarafa -name '*.j
+@@ -63,9 +65,9 @@ JSFILES = $(sort $(shell find client/zarafa -name '*.j
  
  .PHONY: deploy server client all
  
@@ -24,7 +24,7 @@ Index: Makefile
  
  build: node_modules deploy
  
-@@ -96,20 +98,20 @@ css:
+@@ -94,20 +96,20 @@ css:
  svgo: node_modules
  	find client plugins -type f -name "*.svg" -exec $(SVGCOMPRESS) --multipass {} \;
  
