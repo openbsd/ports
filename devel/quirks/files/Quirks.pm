@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1790 2026/02/25 19:58:17 sebastia Exp $
+# $OpenBSD: Quirks.pm,v 1.1791 2026/03/04 05:59:02 thfr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -519,6 +519,10 @@ my $stem_extensions = {
 	'puppetdb' => 'openvoxdb',
 	'puppetdb-termini' => 'openvoxdb-termini',
 	'ruby34-facter' => 'openfact',
+	'godot-sharp' => 'godot3-sharp',
+	'godot4' => 'godot44',
+	'godot-tools' => 'godot-editor',
+	'godot4-editor' => 'godot-editor',
 };
 
 my $obsolete_reason = {};
