@@ -1,20 +1,21 @@
 COMMENT =		convert images to cross stitch patterns
 
 GH_ACCOUNT =		kleintom
-GH_PROJECT =		cstitch
+GH_PROJECT =		Cstitch
 GH_TAGNAME =		0.9.8
-REVISION =		6
+REVISION =		7
+PKGNAME =		${DISTNAME:L}
 
-DISTFILES=		${DISTNAME}.tar.gz
-DISTFILES.icons =	${DISTNAME}-icons{icons}.zip
-
+DISTFILES.icons =	${DISTNAME:L}-icons{icons}.zip
 SITES.icons =	https://sourceforge.net/projects/cstitch/files/Cstitch/Icons/
 
 # needs c++ and python
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c c++
 
-MODULES =		devel/qmake lang/python x11/qt5
+MODULES =		devel/qmake \
+			lang/python \
+			x11/qt5
 
 MODPY_RUNDEP =		No
 
@@ -33,7 +34,6 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 RUN_DEPENDS =		devel/desktop-file-utils x11/gtk+4,-guic
 
-WRKDIST = ${WRKDIR}/Cstitch-${GH_TAGNAME}
 EXTRACT_CASES += *icons.zip) \
 	${UNZIP} -qo ${FULLDISTDIR}/$$archive -d \
 	${WRKDIST}/icons/;;
