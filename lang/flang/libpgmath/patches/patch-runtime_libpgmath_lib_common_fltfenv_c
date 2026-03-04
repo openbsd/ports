@@ -1,8 +1,8 @@
 Work around glibc stuff (use standard functions for this stuff)
 
-Index: lib/common/fltfenv.c
---- lib/common/fltfenv.c.orig
-+++ lib/common/fltfenv.c
+Index: runtime/libpgmath/lib/common/fltfenv.c
+--- runtime/libpgmath/lib/common/fltfenv.c.orig
++++ runtime/libpgmath/lib/common/fltfenv.c
 @@ -560,7 +560,7 @@ __fenv_feupdateenv(fenv_t *env)
   * __fenv_mask_fz() and __fenv_restore_fz().
   */

@@ -1,8 +1,8 @@
 No malloc.h
 
-Index: lib/common/dispatch.c
---- lib/common/dispatch.c.orig
-+++ lib/common/dispatch.c
+Index: runtime/libpgmath/lib/common/dispatch.c
+--- runtime/libpgmath/lib/common/dispatch.c.orig
++++ runtime/libpgmath/lib/common/dispatch.c
 @@ -85,11 +85,7 @@
  
  #endif      // #ifndef _WIN64

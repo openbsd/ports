@@ -1,8 +1,8 @@
 Make sure we match on this block.
 
-Index: lib/x86_64/libm_inlines_amd.h
---- lib/x86_64/libm_inlines_amd.h.orig
-+++ lib/x86_64/libm_inlines_amd.h
+Index: runtime/libpgmath/lib/x86_64/libm_inlines_amd.h
+--- runtime/libpgmath/lib/x86_64/libm_inlines_amd.h.orig
++++ runtime/libpgmath/lib/x86_64/libm_inlines_amd.h
 @@ -283,7 +283,7 @@ raise_fpsw_flags(int flags)
  {
  #if defined(DONOTDEFINE_WINDOWS)

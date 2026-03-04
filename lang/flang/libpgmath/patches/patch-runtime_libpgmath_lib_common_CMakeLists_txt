@@ -1,8 +1,8 @@
 Don't build with -mcpu= on aarch64
 
-Index: lib/common/CMakeLists.txt
---- lib/common/CMakeLists.txt.orig
-+++ lib/common/CMakeLists.txt
+Index: runtime/libpgmath/lib/common/CMakeLists.txt
+--- runtime/libpgmath/lib/common/CMakeLists.txt.orig
++++ runtime/libpgmath/lib/common/CMakeLists.txt
 @@ -132,8 +132,6 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "ppc64le"
      sincosf.c)
  elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64")

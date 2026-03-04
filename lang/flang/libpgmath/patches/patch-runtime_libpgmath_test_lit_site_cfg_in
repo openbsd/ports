@@ -1,8 +1,8 @@
 Fix operating system detection.
 
-Index: test/lit.site.cfg.in
---- test/lit.site.cfg.in.orig
-+++ test/lit.site.cfg.in
+Index: runtime/libpgmath/test/lit.site.cfg.in
+--- runtime/libpgmath/test/lit.site.cfg.in.orig
++++ runtime/libpgmath/test/lit.site.cfg.in
 @@ -16,7 +16,7 @@ config.libpgmath_runtime_dir = "@LIBPGMATH_RUNTIME_PAT
  config.libpgmath_runtime = "@LIBPGMATH_RTL@"
  config.has_libpgmath_runtime = "@LIBPGMATH_HAVE_LIBPGMATH_RUNTIME@"

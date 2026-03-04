@@ -1,8 +1,8 @@
 Don't build with -mcpu= on aarch64.
 
-Index: lib/common/powi/CMakeLists.txt
---- lib/common/powi/CMakeLists.txt.orig
-+++ lib/common/powi/CMakeLists.txt
+Index: runtime/libpgmath/lib/common/powi/CMakeLists.txt
+--- runtime/libpgmath/lib/common/powi/CMakeLists.txt.orig
++++ runtime/libpgmath/lib/common/powi/CMakeLists.txt
 @@ -40,7 +40,7 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "ppc64le"
    set_property(SOURCE ${SRCS} APPEND_STRING PROPERTY COMPILE_FLAGS "-mcpu=power8 ")
  elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64")

@@ -1,8 +1,8 @@
 Don't build with -Werror.
 
-Index: lib/x86_64/CMakeLists.txt
---- lib/x86_64/CMakeLists.txt.orig
-+++ lib/x86_64/CMakeLists.txt
+Index: runtime/libpgmath/lib/x86_64/CMakeLists.txt
+--- runtime/libpgmath/lib/x86_64/CMakeLists.txt.orig
++++ runtime/libpgmath/lib/x86_64/CMakeLists.txt
 @@ -87,7 +87,7 @@ if(${LIBPGMATH_SYSTEM_NAME} MATCHES "Linux")
  endif()
  set(FLAGS "${FLAGS}-Wall -W -Wstrict-prototypes -Wwrite-strings ")

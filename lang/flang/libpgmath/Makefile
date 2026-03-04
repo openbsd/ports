@@ -31,6 +31,6 @@ BUILD_DEPENDS =	devel/llvm/19
 # If you delete flang, this should go too.
 RUN_DEPENDS =	lang/flang/driver
 
-WRKDIST =	${WRKDIR}/flang-${GH_COMMIT}/runtime/libpgmath
+WRKSRC =	${WRKDIST}/runtime/libpgmath
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
 Remove hardcoded optimizations, -mcpu=native flags.
 
-Index: lib/CMakeLists.txt
---- lib/CMakeLists.txt.orig
-+++ lib/CMakeLists.txt
+Index: runtime/libpgmath/lib/CMakeLists.txt
+--- runtime/libpgmath/lib/CMakeLists.txt.orig
++++ runtime/libpgmath/lib/CMakeLists.txt
 @@ -21,13 +21,13 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
        HOST_LINUX LINUX LINUX86 LINUX8664 MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8
        TARGET_LINUX TARGET_LINUX_X86 TARGET_LINUX_X8664 TARGET_X86 TARGET_X8664

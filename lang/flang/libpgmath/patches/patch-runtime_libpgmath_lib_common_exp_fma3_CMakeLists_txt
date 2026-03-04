@@ -1,8 +1,8 @@
 Don't build with -mcpu= on aarch64.
 
-Index: lib/common/exp/fma3/CMakeLists.txt
---- lib/common/exp/fma3/CMakeLists.txt.orig
-+++ lib/common/exp/fma3/CMakeLists.txt
+Index: runtime/libpgmath/lib/common/exp/fma3/CMakeLists.txt
+--- runtime/libpgmath/lib/common/exp/fma3/CMakeLists.txt.orig
++++ runtime/libpgmath/lib/common/exp/fma3/CMakeLists.txt
 @@ -48,6 +48,6 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64"
      sdexp.cpp
      vdexp2.cpp

@@ -1,6 +1,6 @@
-Index: CMakeLists.txt
---- CMakeLists.txt.orig
-+++ CMakeLists.txt
+Index: runtime/libpgmath/CMakeLists.txt
+--- runtime/libpgmath/CMakeLists.txt.orig
++++ runtime/libpgmath/CMakeLists.txt
 @@ -76,8 +76,6 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU" AND ${LIBPGMATH_
  endif()
  

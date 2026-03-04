@@ -1,8 +1,8 @@
 Remove hardcoded -O3.
 
-Index: lib/x86_64/fast/CMakeLists.txt
---- lib/x86_64/fast/CMakeLists.txt.orig
-+++ lib/x86_64/fast/CMakeLists.txt
+Index: runtime/libpgmath/lib/x86_64/fast/CMakeLists.txt
+--- runtime/libpgmath/lib/x86_64/fast/CMakeLists.txt.orig
++++ runtime/libpgmath/lib/x86_64/fast/CMakeLists.txt
 @@ -40,5 +40,5 @@ endif()
  include_directories(${CMAKE_CURRENT_BINARY_DIR})
  set(SRCS

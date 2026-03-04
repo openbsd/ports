@@ -1,8 +1,8 @@
 Don't build with -mcpu= on aarch64.
 
-Index: lib/common/pow/fma3/CMakeLists.txt
---- lib/common/pow/fma3/CMakeLists.txt.orig
-+++ lib/common/pow/fma3/CMakeLists.txt
+Index: runtime/libpgmath/lib/common/pow/fma3/CMakeLists.txt
+--- runtime/libpgmath/lib/common/pow/fma3/CMakeLists.txt.orig
++++ runtime/libpgmath/lib/common/pow/fma3/CMakeLists.txt
 @@ -45,5 +45,5 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64"
      vdpow2.cpp)
    set_property(SOURCE sdpow.cpp vdpow2.cpp APPEND PROPERTY COMPILE_DEFINITIONS VINT=long)
