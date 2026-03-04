@@ -1,0 +1,14 @@
+Install icons when building with SDL3.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -65,7 +65,7 @@ ifeq ($(HAVE_X11),1)
+ 	$(CP) ocp-x11 "$(DESTDIR)$(BINDIR)/ocp-x11"
+ endif
+ 	$(MAKE) -C doc DESTDIR="$(DESTDIR)" install TOPDIR="../$(TOPDIR)"
+-ifeq (1,$(firstword $(filter 1,$(HAVE_X11) $(HAVE_SDL) $(HAVE_SDL2))))
++ifeq (1,$(firstword $(filter 1,$(HAVE_X11) $(HAVE_SDL) $(HAVE_SDL2) $(HAVE_SDL3))))
+ 	mkdir -p "$(DESTDIR)$(DATAROOTDIR)/icons/hicolor/16x16/apps/"
+ 	mkdir -p "$(DESTDIR)$(DATAROOTDIR)/icons/hicolor/22x22/apps/"
+ 	mkdir -p "$(DESTDIR)$(DATAROOTDIR)/icons/hicolor/24x24/apps/"

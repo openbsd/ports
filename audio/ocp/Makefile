@@ -2,7 +2,7 @@ BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.
 
 COMMENT =	UNIX port of Open Cubic Player
 
-DISTNAME =	ocp-3.1.3
+DISTNAME =	ocp-3.2.0
 CATEGORIES =	audio
 
 HOMEPAGE =	https://stian.cubic.org/project-ocp.php
@@ -12,7 +12,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} FLAC SDL2 ancient bz2 c cjson curses
+WANTLIB +=	${COMPILER_LIBCXX} FLAC SDL3 ancient bz2 c cjson curses
 WANTLIB +=	discid freetype iconv jpeg m mad ogg png vorbis vorbisfile
 WANTLIB +=	z
 
@@ -38,14 +38,11 @@ LIB_DEPENDS =	archivers/ancient \
 		audio/libogg \
 		audio/libvorbis \
 		devel/cjson \
-		devel/sdl2 \
+		devel/sdl3 \
 		graphics/jpeg \
 		graphics/png
 
-CFLAGS +=	-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/SDL2 \
-		-I${LOCALBASE}/include/libbinio
-CXXFLAGS +=	${CFLAGS}
+CFLAGS +=	-I${LOCALBASE}/include
 
 CONFIGURE_STYLE = gnu
 

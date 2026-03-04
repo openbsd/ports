@@ -1,11 +1,11 @@
 @bin bin/ocp
 bin/ocp-curses
-bin/ocp-sdl2
+bin/ocp-sdl3
 @info info/ocp.info
 lib/ocp/
 lib/ocp/autoload/
 @so lib/ocp/autoload/35-devpnone.so
-@so lib/ocp/autoload/35-devpsdl2.so
+@so lib/ocp/autoload/35-devpsdl3.so
 @so lib/ocp/autoload/35-devwmix.so
 @so lib/ocp/autoload/35-devwmixf.so
 @so lib/ocp/autoload/35-devwnone.so
