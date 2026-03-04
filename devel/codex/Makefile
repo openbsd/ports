@@ -3,7 +3,7 @@ NOT_FOR_ARCHS = 	sparc64
 
 COMMENT =		OpenAI terminal-based coding agent
 
-V =			0.106.0
+V =			0.107.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -26,13 +26,15 @@ HOMEPAGE =		https://github.com/openai/codex
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODCARGO_WANTLIB} crypto dbus-1 m ssl util
+WANTLIB += ${MODCARGO_WANTLIB} bz2 crypto dbus-1 lzma m onig ssl
+WANTLIB += util z
 
 BUILD_DEPENDS =		devel/cmake/core \
 			devel/git \
 			databases/sqlite3
 
-LIB_DEPENDS =		x11/dbus
+LIB_DEPENDS =		textproc/oniguruma \
+			x11/dbus
 
 RUN_DEPENDS =		lang/python/3 \
 			textproc/ripgrep
