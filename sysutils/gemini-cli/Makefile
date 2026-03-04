@@ -2,6 +2,7 @@ COMMENT=		Gemini AI agent CLI
 
 V=			0.32.1
 DISTNAME=		gemini-cli-${V}
+REVISION=		0
 
 CATEGORIES=		sysutils misc devel
 
@@ -55,6 +56,9 @@ tarball: package.json
 	@cd ${DWRKDIR} && tar czf ${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}
 	@echo "===> distfile available at:"
 	@echo ${DWRKDIR}/${DISTNAME}${EXTRACT_SUFX}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/lib/node_modules/@google/gemini-cli/dist/index.js
 
 do-build:
 # build native modules for node-pty
