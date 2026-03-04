@@ -1,8 +1,8 @@
 COMMENT =	log monitoring program to watch and report on log files
 
-VERSION =	0.17
-PKGNAME =	tenshi-${VERSION}
-DISTNAME =	tenshi-{}${VERSION}
+GH_ACCOUNT =	inversepath
+GH_PROJECT =	tenshi
+GH_TAGNAME =	0.17
 REVISION =	1
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
@@ -15,8 +15,6 @@ MAINTAINER =		Paul B. Henson <henson@acm.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes
-
-SITES =			https://github.com/inversepath/tenshi/archive/
 
 RUN_DEPENDS =		devel/p5-IO-BufferedSelect
 

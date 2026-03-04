@@ -1,6 +1,9 @@
 COMMENT=	command-line online gallery generator
 
-DISTNAME=	llgal-0.13.19
+GH_ACCOUNT=	bgoglin
+GH_PROJECT=	llgal
+GH_TAGNAME=	llgal-0.13.19
+PKGNAME=	${GH_TAGNAME}
 REVISION=	0
 CATEGORIES=	www graphics
 
@@ -10,8 +13,6 @@ MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
-
-SITES=		https://github.com/bgoglin/llgal/archive/
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
@@ -28,8 +29,6 @@ PKG_ARCH=	*
 MAKE_ENV=	SYSCONFDIR=${SYSCONFDIR}
 FAKE_FLAGS=	DOCDIR=${PREFIX}/share/doc/llgal
 INSTALL_TARGET=	install install-doc
-
-WRKDIST=	${WRKDIR}/llgal-${DISTNAME}
 
 pre-build:
 	@perl -pi -e 's,/usr/share,${PREFIX}/share,' ${WRKSRC}/llgal.1

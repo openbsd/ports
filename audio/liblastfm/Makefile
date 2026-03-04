@@ -1,7 +1,9 @@
 COMMENT =	Qt-based C++ library for the Last.fm webservices
-V =		1.1.0
-DISTNAME =	$V
-PKGNAME =	liblastfm-$V
+
+GH_ACCOUNT =	lastfm
+GH_PROJECT =	liblastfm
+GH_TAGNAME =	1.1.0
+
 CATEGORIES =	audio devel net
 
 REVISION =	0
@@ -16,11 +18,6 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network Qt5Sql
 WANTLIB += Qt5Xml c fftw3f m samplerate
-
-# archives are stable but naming scheme sucks, thus DIST_SUBDIR
-SITES =		https://github.com/lastfm/liblastfm/archive/
-DIST_SUBDIR =	liblastfm
-WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES =	devel/cmake \
 		x11/qt5

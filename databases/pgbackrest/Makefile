@@ -10,6 +10,7 @@ MAINTAINER = 		Pavel Korovin <pvk@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
+# tag contains / so no GH_*
 SITES =		https://github.com/pgbackrest/pgbackrest/archive/release/
 DISTFILES =		pgbackrest-{}${V}.tar.gz
 

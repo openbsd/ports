@@ -2,14 +2,15 @@ PORTROACH=	skipv:bm_start
 
 COMMENT=	radio contest logger
 
-DISTNAME=	tlf-1.2.1
+GH_ACCOUNT=	Tlf
+GH_PROJECT=	tlf
+GH_TAGNAME=	tlf-1.2.1
+PKGNAME=	${GH_TAGNAME}
+
 CATEGORIES=	comms hamradio
 REVISION=	2
 
 HOMEPAGE=	http://home.iae.nl/users/reinc/TLF-0.2.html
-
-SITES=		https://github.com/Tlf/tlf/archive/
-WRKDIST=	${WRKDIR}/tlf-${DISTNAME}
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

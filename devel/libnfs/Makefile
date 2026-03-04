@@ -1,8 +1,10 @@
 COMMENT=	client library for accessing NFS
 
-DISTNAME=	libnfs-5.0.2
+GH_ACCOUNT=	sahlberg
+GH_PROJECT=	libnfs
+GH_TAGNAME=	libnfs-5.0.2
+PKGNAME=	${GH_TAGNAME}
 CATEGORIES=	devel net
-SITES=		https://github.com/sahlberg/libnfs/archive/
 
 SHARED_LIBS=	nfs	2.2
 
@@ -19,7 +21,5 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 
 CONFIGURE_STYLE= autoreconf
-
-WRKDIST=	${WRKDIR}/libnfs-${DISTNAME}
 
 .include <bsd.port.mk>
