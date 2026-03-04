@@ -2,7 +2,7 @@ bin/0ad
 @bin bin/pyrogenesis
 @so lib/libAtlasUI.so
 @so lib/libCollada.so
-@lib lib/libmozjs115-release.so.${LIBmozjs115-release_VERSION}
+@lib lib/libmozjs128-release.so.${LIBmozjs128-release_VERSION}
 @so lib/libnvcore.so
 @so lib/libnvimage.so
 @so lib/libnvmath.so
@@ -10,6 +10,7 @@ bin/0ad
 share/0ad/l10n/
 share/0ad/l10n/.tx/
 share/0ad/l10n/.tx/config
+share/0ad/l10n/ca.engine.po
 share/0ad/l10n/cs.engine.po
 share/0ad/l10n/de.engine.po
 share/0ad/l10n/el.engine.po
@@ -23,6 +24,8 @@ share/0ad/l10n/gl.engine.po
 share/0ad/l10n/hu.engine.po
 share/0ad/l10n/id.engine.po
 share/0ad/l10n/it.engine.po
+share/0ad/l10n/ja.engine.po
+share/0ad/l10n/ko.engine.po
 share/0ad/l10n/messages.json
 share/0ad/l10n/nl.engine.po
 share/0ad/l10n/pl.engine.po
@@ -33,6 +36,9 @@ share/0ad/l10n/sk.engine.po
 share/0ad/l10n/sv.engine.po
 share/0ad/l10n/tr.engine.po
 share/0ad/l10n/uk.engine.po
+share/0ad/l10n/vi.engine.po
+share/0ad/l10n/zh.engine.po
+share/0ad/l10n/zh_TW.engine.po
 share/0ad/mods/_test.dae/
 share/0ad/mods/_test.dae/art/
 share/0ad/mods/_test.dae/art/actors/
@@ -43,6 +49,14 @@ share/0ad/mods/_test.dae/art/meshes/
 share/0ad/mods/_test.dae/art/meshes/jav2.dae
 share/0ad/mods/_test.gui/
 share/0ad/mods/_test.gui/gui/
+share/0ad/mods/_test.gui/gui/Result/
+share/0ad/mods/_test.gui/gui/Result/Result.js
+share/0ad/mods/_test.gui/gui/Result/Result.xml
+share/0ad/mods/_test.gui/gui/Result/page_Result.xml
+share/0ad/mods/_test.gui/gui/await/
+share/0ad/mods/_test.gui/gui/await/object.xml
+share/0ad/mods/_test.gui/gui/await/page.xml
+share/0ad/mods/_test.gui/gui/await/script.js
 share/0ad/mods/_test.gui/gui/common/
 share/0ad/mods/_test.gui/gui/common/styles.xml
 share/0ad/mods/_test.gui/gui/event/
@@ -55,11 +69,31 @@ share/0ad/mods/_test.gui/gui/hotkey/
 share/0ad/mods/_test.gui/gui/hotkey/hotkey.js
 share/0ad/mods/_test.gui/gui/hotkey/hotkey.xml
 share/0ad/mods/_test.gui/gui/hotkey/page_hotkey.xml
+share/0ad/mods/_test.gui/gui/multiple_root-modules/
+share/0ad/mods/_test.gui/gui/multiple_root-modules/object.xml
+share/0ad/mods/_test.gui/gui/multiple_root-modules/page.xml
+share/0ad/mods/_test.gui/gui/multiple_root-modules/script.js
 share/0ad/mods/_test.gui/gui/regainFocus/
+share/0ad/mods/_test.gui/gui/regainFocus/emptyPage.js
+share/0ad/mods/_test.gui/gui/regainFocus/emptyPage.xml
 share/0ad/mods/_test.gui/gui/regainFocus/page_emptyPage.xml
 share/0ad/mods/_test.gui/gui/regainFocus/page_pushWithPopOnInit.xml
 share/0ad/mods/_test.gui/gui/regainFocus/pushWithPopOnInit.js
 share/0ad/mods/_test.gui/gui/regainFocus/pushWithPopOnInit.xml
+share/0ad/mods/_test.gui/gui/resolveReject/
+share/0ad/mods/_test.gui/gui/resolveReject/page_resolveReject.xml
+share/0ad/mods/_test.gui/gui/resolveReject/resolveReject.js
+share/0ad/mods/_test.gui/gui/resolveReject/resolveReject.xml
+share/0ad/mods/_test.gui/gui/sequential/
+share/0ad/mods/_test.gui/gui/sequential/page_sequential.xml
+share/0ad/mods/_test.gui/gui/sequential/sequential.js
+share/0ad/mods/_test.gui/gui/sequential/sequential.xml
+share/0ad/mods/_test.gui/gui/settings/
+share/0ad/mods/_test.gui/gui/settings/cguisize/
+share/0ad/mods/_test.gui/gui/settings/cguisize/assign.js
+share/0ad/mods/_test.gui/gui/settings/cguisize/compoundassignmentoperator.js
+share/0ad/mods/_test.gui/gui/settings/cguisize/lazyassign.js
+share/0ad/mods/_test.gui/gui/settings/cguisize/objectassign.js
 share/0ad/mods/_test.minimal/
 share/0ad/mods/_test.minimal/art/
 share/0ad/mods/_test.minimal/art/textures/
@@ -87,8 +121,9 @@ share/0ad/mods/_test.minimal/art/textures/terrain/alphamaps/special/blendushape.
 share/0ad/mods/_test.minimal/art/textures/terrain/types/
 share/0ad/mods/_test.minimal/art/textures/terrain/types/whiteness.dds
 share/0ad/mods/_test.minimal/fonts/
-share/0ad/mods/_test.minimal/fonts/console.fnt
-share/0ad/mods/_test.minimal/fonts/console.tga
+share/0ad/mods/_test.minimal/fonts/DejaVuSansMono.ttf
+share/0ad/mods/_test.minimal/fonts/LinBiolinum_RBah.ttf
+share/0ad/mods/_test.minimal/fonts/LinBiolinum_Rah.ttf
 share/0ad/mods/_test.minimal/shaders/
 share/0ad/mods/_test.minimal/shaders/globallight.vs
 share/0ad/mods/_test.minimal/shaders/instancing.vs
@@ -108,7 +143,51 @@ share/0ad/mods/_test.minimal/shaders/postouv1.vs
 share/0ad/mods/_test.minimal/shaders/water_high.fs
 share/0ad/mods/_test.minimal/shaders/water_high.vs
 share/0ad/mods/_test.minimal/shaders/water_high.xml
+share/0ad/mods/_test.mods/
+share/0ad/mods/_test.mods/config/
+share/0ad/mods/_test.mods/config/moda.cfg
+share/0ad/mods/_test.mods/config/modb.cfg
+share/0ad/mods/_test.mods/config/modreplace.cfg
+share/0ad/mods/_test.mods/config/modscoped.cfg
+share/0ad/mods/_test.mods/config/start.cfg
 share/0ad/mods/_test.scriptinterface/
+share/0ad/mods/_test.scriptinterface/exception/
+share/0ad/mods/_test.scriptinterface/exception/catch.js
+share/0ad/mods/_test.scriptinterface/module/
+share/0ad/mods/_test.scriptinterface/module/blabbermouth.js
+share/0ad/mods/_test.scriptinterface/module/delayed_blabbermouth.js
+share/0ad/mods/_test.scriptinterface/module/dynamic_import.js
+share/0ad/mods/_test.scriptinterface/module/empty.js
+share/0ad/mods/_test.scriptinterface/module/empty~trigger.append.js
+share/0ad/mods/_test.scriptinterface/module/export.js
+share/0ad/mods/_test.scriptinterface/module/export_default/
+share/0ad/mods/_test.scriptinterface/module/export_default/does_not_work_around.js
+share/0ad/mods/_test.scriptinterface/module/export_default/immutable.js
+share/0ad/mods/_test.scriptinterface/module/export_default/invalid.js
+share/0ad/mods/_test.scriptinterface/module/export_default/works_around.js
+share/0ad/mods/_test.scriptinterface/module/import_inside_function.js
+share/0ad/mods/_test.scriptinterface/module/include/
+share/0ad/mods/_test.scriptinterface/module/include/circle.js
+share/0ad/mods/_test.scriptinterface/module/include/entry.js
+share/0ad/mods/_test.scriptinterface/module/include/geometry/
+share/0ad/mods/_test.scriptinterface/module/include/geometry/area.js
+share/0ad/mods/_test.scriptinterface/module/include/pi.js
+share/0ad/mods/_test.scriptinterface/module/indirect.js
+share/0ad/mods/_test.scriptinterface/module/meta.js
+share/0ad/mods/_test.scriptinterface/module/modified/
+share/0ad/mods/_test.scriptinterface/module/modified/base.js
+share/0ad/mods/_test.scriptinterface/module/modified/base_not_appended.append.js
+share/0ad/mods/_test.scriptinterface/module/modified/base~0.append.js
+share/0ad/mods/_test.scriptinterface/module/modified/base~1.append.js
+share/0ad/mods/_test.scriptinterface/module/modified/base~not_appended.js
+share/0ad/mods/_test.scriptinterface/module/restriction/
+share/0ad/mods/_test.scriptinterface/module/restriction/disallowedfile.js
+share/0ad/mods/_test.scriptinterface/module/restriction/dynamic_import.js
+share/0ad/mods/_test.scriptinterface/module/restriction/fancy_import.js
+share/0ad/mods/_test.scriptinterface/module/restriction/import.js
+share/0ad/mods/_test.scriptinterface/module/top_level_await_finite.js
+share/0ad/mods/_test.scriptinterface/module/top_level_await_infinite.js
+share/0ad/mods/_test.scriptinterface/module/top_level_throw.js
 share/0ad/mods/_test.scriptinterface/promises/
 share/0ad/mods/_test.scriptinterface/promises/reject.js
 share/0ad/mods/_test.scriptinterface/promises/simple.js

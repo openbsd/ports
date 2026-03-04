@@ -2,30 +2,29 @@ COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		1
 
 USE_NOBTCFI =		Yes
 
 SO_VERSION =		0.0
-SHARED_LIBS +=		mozjs115-release        ${SO_VERSION}
+SHARED_LIBS +=		mozjs128-release	${SO_VERSION}
 
-WANTLIB += ${MODRUST_WANTLIB} ${COMPILER_LIBCXX} SDL2 X11 boost_filesystem
+WANTLIB += ${MODRUST_WANTLIB} ${COMPILER_LIBCXX} SDL2 X11
 WANTLIB += crypto curl enet execinfo fmt freetype gloox iconv
-WANTLIB += icudata icui18n icuuc idn m miniupnpc ogg openal
+WANTLIB += icudata icui18n icuuc idn m miniupnpc openal
 WANTLIB += png sodium ssl vorbis vorbisfile wx_gtk3u_gl-3.2 wx_gtk3u_xrc-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2 wx_gtk3u_core-3.2 wx_baseu-3.2
 WANTLIB += wx_baseu_net-3.2 wx_baseu_xml-3.2 xml2 z
 
 BUILD_DEPENDS =		archivers/gtar \
 			archivers/zip \
+			devel/boost \
+			devel/cbindgen \
 			devel/cmake/core \
 			shells/bash \
 
-LIB_DEPENDS =		audio/libogg \
-			audio/libvorbis \
+LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			converters/libiconv \
-			devel/boost \
 			devel/fmt \
 			devel/sdl2 \
 			graphics/png \
@@ -53,7 +52,7 @@ MAKE_ENV =		CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
-			LDFLAGS="-L/usr/local/lib -liconv"
+			LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 USE_GMAKE =		Yes
 

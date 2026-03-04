@@ -1,15 +1,15 @@
 Index: libraries/source/spidermonkey/build.sh
 --- libraries/source/spidermonkey/build.sh.orig
 +++ libraries/source/spidermonkey/build.sh
-@@ -10,6 +10,7 @@ FOLDER="mozjs-115.16.1"
+@@ -11,6 +11,7 @@ FOLDER="mozjs-${PV}"
  # If same-version changes are needed, increment this.
- LIB_VERSION="115.16.1+a27.1"
- LIB_NAME="mozjs115"
+ LIB_VERSION="${PV}+wfg4"
+ LIB_NAME="mozjs128"
 +TAR=${TAR:-tar}
  
- fetch()
+ build_archive()
  {
-@@ -160,7 +161,7 @@ else
+@@ -184,7 +185,7 @@ else
  	LIB_SUFFIX=.so
  	STATIC_LIB_SUFFIX=.a
  	if [ "${OS}" = "OpenBSD" ]; then
@@ -18,7 +18,7 @@ Index: libraries/source/spidermonkey/build.sh
  	elif [ "${OS}" = "Darwin" ]; then
  		LIB_SUFFIX=.a
  	fi
-@@ -190,7 +191,7 @@ fi
+@@ -208,7 +209,7 @@ fi
  mkdir include-release
  cp -R -L "${FOLDER}"/build-release/dist/include/* include-release/
  
@@ -27,12 +27,12 @@ Index: libraries/source/spidermonkey/build.sh
  	mkdir include-debug
  	cp -R -L "${FOLDER}"/build-debug/dist/include/* include-debug/
  fi
-@@ -222,7 +223,7 @@ elif [ "${OS}" = "Windows_NT" ]; then
+@@ -240,7 +241,7 @@ elif [ "${OS}" = "Windows_NT" ]; then
  else
  	# Copy shared libs to lib/, they will also be copied to binaries/system, so the compiler and executable (resp.) can find them.
- 	cp -L "${FOLDER}/build-${REL}/js/src/build/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}" "lib/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}"
+ 	cp -L "${FOLDER}/build-${REL}/dist/bin/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}" "lib/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}"
 -	if [ "${OS}" != "FreeBSD" ]; then
 +	if [ "${OS}" != "OpenBSD" ]; then
- 		cp -L "${FOLDER}/build-${DEB}/js/src/build/${LIB_PREFIX}${LIB_NAME}-${DEB}${LIB_SUFFIX}" "lib/${LIB_PREFIX}${LIB_NAME}-${DEB}${LIB_SUFFIX}"
+ 		cp -L "${FOLDER}/build-${DEB}/dist/bin/${LIB_PREFIX}${LIB_NAME}-${DEB}${LIB_SUFFIX}" "lib/${LIB_PREFIX}${LIB_NAME}-${DEB}${LIB_SUFFIX}"
  	fi
  fi
