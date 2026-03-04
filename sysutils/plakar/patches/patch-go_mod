@@ -1,0 +1,17 @@
+From 79c5ce3cf30822010e395d33078b6abc6a0b992a Mon Sep 17 00:00:00 2001
+From: Rui Chen <rui@chenrui.dev>
+Date: Fri, 26 Dec 2025 13:59:11 -0500
+Subject: [PATCH] go.mod: bump cockroachdb/swiss for Go 1.26 support
+
+Index: go.mod
+--- go.mod.orig
++++ go.mod
+@@ -60,7 +60,7 @@ require (
+ 	github.com/cockroachdb/logtags v0.0.0-20241215232642-bb51bb14a506 // indirect
+ 	github.com/cockroachdb/pebble/v2 v2.1.2 // indirect
+ 	github.com/cockroachdb/redact v1.1.6 // indirect
+-	github.com/cockroachdb/swiss v0.0.0-20250624142022-d6e517c1d961 // indirect
++	github.com/cockroachdb/swiss v0.0.0-20251224182025-b0f6560f979b // indirect
+ 	github.com/cockroachdb/tokenbucket v0.0.0-20250429170803-42689b6311bb // indirect
+ 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
+ 	github.com/dlclark/regexp2 v1.11.5 // indirect
