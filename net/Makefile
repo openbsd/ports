@@ -233,6 +233,7 @@
      SUBDIR += liboauth
      SUBDIR += libomemo-c
      SUBDIR += liboping
+     SUBDIR += libpcap
      SUBDIR += libpcapnav
      SUBDIR += libproxy
      SUBDIR += libpsl
