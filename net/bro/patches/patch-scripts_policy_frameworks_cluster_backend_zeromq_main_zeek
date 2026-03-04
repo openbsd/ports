@@ -1,0 +1,15 @@
+unbreak cluster startup (when using default IPv4 localhost)
+
+Index: scripts/policy/frameworks/cluster/backend/zeromq/main.zeek
+--- scripts/policy/frameworks/cluster/backend/zeromq/main.zeek.orig
++++ scripts/policy/frameworks/cluster/backend/zeromq/main.zeek
+@@ -234,7 +234,8 @@ export {
+ 	##
+ 	## See ZeroMQ's `ZMQ_IPV6 documentation <http://api.zeromq.org/4-2:zmq-setsockopt#toc23>`_
+ 	## for more details.
+-	const ipv6 = T &redef;
++	# https://github.com/zeek/zeek/issues/5251
++	const ipv6 = F &redef;
+ 
+ 	## Do not silently drop messages if high-water-mark is reached.
+ 	##
