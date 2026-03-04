@@ -4,6 +4,8 @@ GH_ACCOUNT=		joakim666
 GH_PROJECT=		colortail
 GH_TAGNAME=		0.3.5
 
+REVISION=		0
+
 CATEGORIES=		sysutils
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -15,7 +17,7 @@ WANTLIB=		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-AUTOCONF_VERSION=	2.61
+AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoreconf
 
 post-install:
