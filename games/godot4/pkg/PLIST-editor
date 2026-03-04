@@ -1,7 +1,0 @@
-@bin bin/godot4-editor
-share/applications/org.godotengine.Godot4.desktop
-share/metainfo/
-share/metainfo/org.godotengine.Godot4.appdata.xml
-share/pixmaps/
-share/pixmaps/godot4.svg
-@tag update-desktop-database
