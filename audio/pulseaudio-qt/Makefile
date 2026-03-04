@@ -1,6 +1,6 @@
 COMMENT =	Qt bindings for libpulse
 
-VERSION =	1.8.0
+VERSION =	1.8.1
 DISTNAME =	pulseaudio-qt-${VERSION}
 
 CATEGORIES =	audio
