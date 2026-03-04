@@ -1,4 +1,4 @@
-lib/lua/${MODLUA_VERSION}/rings.so
+@so lib/lua/${MODLUA_VERSION}/rings.so
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/index.html
 share/doc/${FULLPKGNAME}/license.html
