@@ -4,11 +4,7 @@ DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 SITES=		https://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
 		https://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 SITES.pjast=	https://raw.githubusercontent.com/asterisk/third-party/master/pjproject/$(PJ_V)/
-SITES.pjsip=	https://github.com/pjsip/pjproject/archive/refs/tags/
-# from asterisk mirror:
 DISTFILES.pjast= pjproject-${PJ_V}.tar.gz
-# from pjsip original:
-#DISTFILES.pjsip= pjproject-{}${PJ_V}.tar.gz
 
 PKGNAME-main=	asterisk-${VER}
 SHORTVER=	${.CURDIR:T}
