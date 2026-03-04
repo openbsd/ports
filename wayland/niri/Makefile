@@ -1,31 +1,14 @@
-COMMENT =	A scrollable-tiling Wayland compositor
+COMMENT =	scrollable-tiling Wayland compositor
 
-V =		25.11.20260220
+PKGNAME =	niri-25.11.20260220
+REVISION =	0
 
 # Use https://github.com/tobhe/niri/tree/openbsd-port until all
 # the dependency fixes have propagated to the actual rust packages
-GH_ACCOUNT = tobhe
-GH_PROJECT = niri
-GH_COMMIT = 097810ed0e7ef944fa7bca0947f41b9c34cd89f4
-DISTNAME = ${GH_PROJECT}-${V}
-
-# Bundled dependencies
-SITES += ${SITES_GITHUB}
-DISTFILES = ${GH_DISTFILE}
-
-EXTRACT_SUFX = .tar.gz
-
-DRM_COMMIT = ea05145076d7b81c1b99656923e6ee539590d654
-SITES.drm = https://github.com/tobhe/drm-rs/archive/
-DISTFILES.drm = drm-rs-${DRM_COMMIT:C/(........).*/\1/}{${DRM_COMMIT}}${EXTRACT_SUFX}
-
-SMITHAY_COMMIT = adf3bfddc019c8950deb650f4ed442c0312e0ea8
-SITES.smithay = https://github.com/tobhe/smithay/archive/
-DISTFILES.smithay += smithay-${SMITHAY_COMMIT:C/(........).*/\1/}{${SMITHAY_COMMIT}}${EXTRACT_SUFX}
-
-POLLING_COMMIT = e838a159551ccbdc7a4c39a51fa36430615f8d34
-SITES.polling = https://github.com/tobhe/polling/archive/
-DISTFILES.polling += polling-${POLLING_COMMIT:C/(........).*/\1/}{${POLLING_COMMIT}}${EXTRACT_SUFX}
+DIST_TUPLE +=	github tobhe niri 097810ed0e7ef944fa7bca0947f41b9c34cd89f4 .
+DIST_TUPLE +=	github tobhe drm-rs ea05145076d7b81c1b99656923e6ee539590d654 .
+DIST_TUPLE +=	github tobhe smithay adf3bfddc019c8950deb650f4ed442c0312e0ea8 .
+DIST_TUPLE +=	github tobhe polling e838a159551ccbdc7a4c39a51fa36430615f8d34 .
 
 MODCARGO_NO_DEFAULT_FEATURES = Yes
 MODCARGO_FEATURES =
