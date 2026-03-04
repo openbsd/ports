@@ -8,9 +8,7 @@ GH_TAGNAME =	1.2.0
 REVISION =	0
 
 # check version in submodule at https://github.com/Swordfish90/cool-retro-term
-QMLTERMWIDGET =	63228027e1f97c24abb907550b22ee91836929c5
-SITES.a =	https://github.com/Swordfish90/qmltermwidget/archive/
-DISTFILES.a = 	qmltermwidget-{}${QMLTERMWIDGET}.tar.gz
+DIST_TUPLE +=	github Swordfish90 qmltermwidget 63228027e1f97c24abb907550b22ee91836929c5 qmltermwidget
 
 USE_WXNEEDED =	Yes
 
@@ -37,10 +35,6 @@ LIB_DEPENDS =	x11/qt5/qtdeclarative \
 MAKE_FLAGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC -std=c++11"
 
 NO_TEST =	Yes
-
-post-extract:
-	rmdir ${WRKSRC}/qmltermwidget
-	mv ${WRKDIR}/qmltermwidget-${QMLTERMWIDGET} ${WRKSRC}/qmltermwidget
 
 pre-configure:
 	 ${SUBST_CMD} ${WRKSRC}/{app/app,cool-retro-term}.pro
