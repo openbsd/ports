@@ -1,7 +1,10 @@
 COMMENT=	fake keyboard and mouse input
 
-V =		4.20251130.1
-DISTNAME =	xdotool-${V}
+# V =		4.20251130.1
+# DISTNAME =	xdotool-${V}
+GH_ACCOUNT =	jordansissel
+GH_PROJECT =	xdotool
+GH_TAGNAME =	v4.20260303.1
 EPOCH=		0
 
 SHARED_LIBS=	xdo 1.0
@@ -15,9 +18,9 @@ PERMIT_PACKAGE=	Yes
 
 USE_GMAKE=	Yes
 
-WANTLIB += X11 Xi Xinerama Xtst c m xkbcommon
+WANTLIB += X11 Xinerama Xtst c m xkbcommon
 
-SITES =		https://github.com/jordansissel/xdotool/releases/download/v${V}/
+# SITES =		https://github.com/jordansissel/xdotool/releases/download/v${V}/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
