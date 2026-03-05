@@ -17,6 +17,9 @@ WANTLIB += c gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 MODULES=		devel/meson \
 			x11/gnome
 
+# base-gcc chokes on __attribute__((__deprecated__)) annotating an enum
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 BUILD_DEPENDS=		textproc/xmlto
 
 # GTK is needed to build the tests
