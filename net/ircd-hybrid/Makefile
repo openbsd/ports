@@ -1,19 +1,19 @@
 COMMENT =	Internet Relay Chat server
 
-DISTNAME =	ircd-hybrid-8.2.43
+DISTNAME =	ircd-hybrid-8.2.47
 CATEGORIES =	net
 SITES =		${SITE_SOURCEFORGE:=ircd-hybrid/}
 EXTRACT_SUFX =	.tgz
-REVISION =	0
 
 HOMEPAGE =	http://ircd-hybrid.com/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	c crypto ltdl ssl
+WANTLIB =	c crypto jansson ltdl ssl
 
-LIB_DEPENDS =	devel/libtool,-ltdl
+LIB_DEPENDS =	devel/jansson \
+		devel/libtool,-ltdl
 
 CONFDIR =	${SYSCONFDIR}/ircd-hybrid
 LOGDIR =	${LOCALSTATEDIR}/log/ircd-hybrid
@@ -29,6 +29,8 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 NO_TEST =	Yes
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/doc/reference.conf
+	@${SUBST_CMD} \
+	    ${WRKSRC}/doc/reference.ircd.conf \
+	    ${WRKSRC}/doc/reference.modules.conf
 
 .include <bsd.port.mk>

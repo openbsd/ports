@@ -1,8 +1,8 @@
-Index: include/defaults.h
---- include/defaults.h.orig
-+++ include/defaults.h
-@@ -47,16 +47,21 @@
-  * AUTOMODPATH = directory for autoloaded modules
+Index: src/defaults.h
+--- src/defaults.h.orig
++++ src/defaults.h
+@@ -45,14 +45,19 @@
+  * LOGPATH     = directory for logfiles
   */
  
 +/* users */
@@ -13,9 +13,7 @@ Index: include/defaults.h
  /* dirs */
  #define DPATH        PREFIX
  #define BINPATH      PREFIX "/bin/"
- #define MODPATH      LIBDIR "/" PACKAGE "/modules/"
  #define HPATH        DATADIR "/" PACKAGE "/help"
- #define AUTOMODPATH  MODPATH "/autoload/"
 -#define ETCPATH      SYSCONFDIR
 -#define LIBPATH      LOCALSTATEDIR "/lib"
 -#define LOGPATH      LOCALSTATEDIR "/log"

@@ -1,0 +1,12 @@
+Index: doc/reference.modules.conf
+--- doc/reference.modules.conf.orig
++++ doc/reference.modules.conf
+@@ -18,7 +18,7 @@
+  * module_base_path: Specifies the base directory for module files. This path can be
+  * either an absolute path or a path relative to the current working directory.
+  */
+-module_base_path = "./lib/ircd-hybrid/modules";
++module_base_path = "${PREFIX}/lib/ircd-hybrid/modules";
+ 
+ loadmodule "cap_account_notify.la";
+ loadmodule "cap_away_notify.la";

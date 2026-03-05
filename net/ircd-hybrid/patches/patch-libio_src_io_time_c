@@ -1,0 +1,18 @@
+- libio: io_time: conditionally compile CLOCK_MONOTONIC_RAW for
+  portability in io_internal_gettime
+  d00aa6ef6a21fc0781fc17bbf7ba74b07dc76044
+
+Index: libio/src/io_time.c
+--- libio/src/io_time.c.orig
++++ libio/src/io_time.c
+@@ -207,8 +207,10 @@ io_internal_gettime(clockid_t clock_id, struct timespe
+         return IO_TIME_ERR_GET_REAL;
+       case CLOCK_MONOTONIC:
+         return IO_TIME_ERR_GET_MONO;
++#ifdef CLOCK_MONOTONIC_RAW
+       case CLOCK_MONOTONIC_RAW:
+         return IO_TIME_ERR_GET_MONO_RAW;
++#endif
+       default:
+         abort();  /* Invalid clock_id, abort the program. */
+     }

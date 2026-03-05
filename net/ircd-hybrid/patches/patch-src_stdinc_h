@@ -1,9 +1,9 @@
-Index: include/stdinc.h
---- include/stdinc.h.orig
-+++ include/stdinc.h
-@@ -48,6 +48,8 @@
+Index: src/stdinc.h
+--- src/stdinc.h.orig
++++ src/stdinc.h
+@@ -45,6 +45,8 @@
+ 
  #include <stdarg.h>
- #include <signal.h>
  #include <ctype.h>
 +#include <login_cap.h>
 +#include <pwd.h>

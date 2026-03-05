@@ -1,7 +1,7 @@
 Index: src/ircd.c
 --- src/ircd.c.orig
 +++ src/ircd.c
-@@ -328,7 +328,6 @@ make_daemon(void)
+@@ -327,7 +327,6 @@ make_daemon(void)
    }
    else if (pid > 0)
    {
@@ -9,7 +9,7 @@ Index: src/ircd.c
      exit(EXIT_SUCCESS);
    }
  
-@@ -341,8 +340,19 @@ main(int argc, char *argv[])
+@@ -370,8 +369,19 @@ main(int argc, char *argv[])
    /* Check to see if the user is running us as root, which is a nono */
    if (geteuid() == 0)
    {
@@ -30,4 +30,4 @@ Index: src/ircd.c
 +    }
    }
  
-   /* Setup corefile size immediately after boot -kre */
+   io_set_oom_handler(ircd_oom);
