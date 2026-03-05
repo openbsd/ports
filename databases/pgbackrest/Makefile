@@ -2,6 +2,9 @@ COMMENT =		PostgreSQL backup & restore tool
 
 V =			2.58.0
 DISTNAME =		pgbackrest-${V}
+GH_ACCOUNT =		pgbackrest
+GH_PROJECT =		pgbackrest
+GH_TAGNAME =		release/${V}
 
 CATEGORIES = 		databases
 HOMEPAGE = 		https://pgbackrest.org/
@@ -9,12 +12,6 @@ MAINTAINER = 		Pavel Korovin <pvk@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
-
-# tag contains / so no GH_*
-SITES =		https://github.com/pgbackrest/pgbackrest/archive/release/
-DISTFILES =		pgbackrest-{}${V}.tar.gz
-
-WRKDIST =		${WRKDIR}/pgbackrest-release-${V}
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
@@ -26,7 +23,7 @@ BUILD_DEPENDS =		devel/libyaml
 MODULES =		devel/meson
 
 LIB_DEPENDS = 		archivers/bzip2 \
-		  	archivers/lz4 \
+			archivers/lz4 \
 			archivers/zstd \
 			databases/postgresql,-main \
 			security/libssh2 \
