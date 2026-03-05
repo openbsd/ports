@@ -25,12 +25,14 @@ share/bash-completion/completions/_aqua
 share/bash-completion/completions/_arduino-cli
 share/bash-completion/completions/_argc
 share/bash-completion/completions/_argo
+share/bash-completion/completions/_asdf
 share/bash-completion/completions/_atlas
 share/bash-completion/completions/_atmos
 share/bash-completion/completions/_bao
 share/bash-completion/completions/_bashbot
 share/bash-completion/completions/_black
 share/bash-completion/completions/_blackd
+share/bash-completion/completions/_bombadil
 share/bash-completion/completions/_bosh
 share/bash-completion/completions/_buf
 share/bash-completion/completions/_caddy
@@ -70,6 +72,7 @@ share/bash-completion/completions/_deno
 share/bash-completion/completions/_depot
 share/bash-completion/completions/_devspace
 share/bash-completion/completions/_diesel
+share/bash-completion/completions/_diffoci
 share/bash-completion/completions/_dlv
 share/bash-completion/completions/_dmesg
 share/bash-completion/completions/_docker
@@ -94,10 +97,13 @@ share/bash-completion/completions/_git-bump
 share/bash-completion/completions/_gitconfig
 share/bash-completion/completions/_gitleaks
 share/bash-completion/completions/_gitsign
+share/bash-completion/completions/_glab
+share/bash-completion/completions/_glances
 share/bash-completion/completions/_glen
 share/bash-completion/completions/_glow
 share/bash-completion/completions/_go-licenses
 share/bash-completion/completions/_golangci-lint
+share/bash-completion/completions/_gomarklint
 share/bash-completion/completions/_gopass
 share/bash-completion/completions/_gopherjs
 share/bash-completion/completions/_goreleaser
@@ -163,6 +169,7 @@ share/bash-completion/completions/_lefthook
 share/bash-completion/completions/_limactl
 share/bash-completion/completions/_linkerd
 share/bash-completion/completions/_look
+share/bash-completion/completions/_mado
 share/bash-completion/completions/_mattermost
 share/bash-completion/completions/_mdbook
 share/bash-completion/completions/_melange
@@ -227,6 +234,7 @@ share/bash-completion/completions/_rustic
 share/bash-completion/completions/_rustup
 share/bash-completion/completions/_secret-tool
 share/bash-completion/completions/_sentry-cli
+share/bash-completion/completions/_shtab
 share/bash-completion/completions/_sinker
 share/bash-completion/completions/_skaffold
 share/bash-completion/completions/_slackpkg
@@ -257,9 +265,15 @@ share/bash-completion/completions/_tilt
 share/bash-completion/completions/_timoni
 share/bash-completion/completions/_tkn
 share/bash-completion/completions/_tkn-pac
+share/bash-completion/completions/_tldr
 share/bash-completion/completions/_todoist
 share/bash-completion/completions/_tofu
 share/bash-completion/completions/_tokio-console
+share/bash-completion/completions/_trash
+share/bash-completion/completions/_trash-empty
+share/bash-completion/completions/_trash-list
+share/bash-completion/completions/_trash-put
+share/bash-completion/completions/_trash-restore
 share/bash-completion/completions/_trivy
 share/bash-completion/completions/_udevadm
 share/bash-completion/completions/_umount
@@ -342,6 +356,8 @@ share/bash-completion/completions/badblocks
 share/bash-completion/completions/bind
 share/bash-completion/completions/bk
 share/bash-completion/completions/bmake
+share/bash-completion/completions/brave
+share/bash-completion/completions/brave-browser
 share/bash-completion/completions/brctl
 share/bash-completion/completions/bsdtar
 share/bash-completion/completions/btdownloadcurses.py
@@ -381,6 +397,7 @@ share/bash-completion/completions/ciptool
 share/bash-completion/completions/civclient
 share/bash-completion/completions/civserver
 share/bash-completion/completions/cksfv
+share/bash-completion/completions/cksum
 share/bash-completion/completions/cleanarch
 share/bash-completion/completions/clisp
 share/bash-completion/completions/clone_member
@@ -464,12 +481,15 @@ share/bash-completion/completions/fprintd-delete
 share/bash-completion/completions/fprintd-enroll
 share/bash-completion/completions/fprintd-list
 share/bash-completion/completions/fprintd-verify
+share/bash-completion/completions/free
 share/bash-completion/completions/freeciv
 share/bash-completion/completions/freeciv-gtk2
 share/bash-completion/completions/freeciv-gtk3
 share/bash-completion/completions/freeciv-sdl
 share/bash-completion/completions/freeciv-server
 share/bash-completion/completions/freeciv-xaw
+share/bash-completion/completions/fsnotifywait
+share/bash-completion/completions/fsnotifywatch
 share/bash-completion/completions/function
 share/bash-completion/completions/fusermount
 share/bash-completion/completions/g++
@@ -569,7 +589,6 @@ share/bash-completion/completions/inject
 share/bash-completion/completions/inotifywait
 share/bash-completion/completions/inotifywatch
 share/bash-completion/completions/installpkg
-share/bash-completion/completions/interdiff
 share/bash-completion/completions/invoke-rc.d
 share/bash-completion/completions/ip
 share/bash-completion/completions/ipcalc
@@ -731,6 +750,7 @@ share/bash-completion/completions/nethogs
 share/bash-completion/completions/newlist
 share/bash-completion/completions/newusers
 share/bash-completion/completions/ngrep
+share/bash-completion/completions/nload
 share/bash-completion/completions/nmap
 share/bash-completion/completions/nproc
 share/bash-completion/completions/nslookup
@@ -961,6 +981,7 @@ share/bash-completion/completions/tcpnice
 share/bash-completion/completions/tightvncviewer
 share/bash-completion/completions/timeout
 share/bash-completion/completions/tipc
+share/bash-completion/completions/tmux
 share/bash-completion/completions/tox
 share/bash-completion/completions/tracepath
 share/bash-completion/completions/tracepath6
