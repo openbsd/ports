@@ -7,7 +7,6 @@ GH_TAGNAME=	gorm-${V:S/./_/g}
 PKGNAME=	gorm-${V}
 HOMEPAGE=	http://www.gnustep.org/experience/Gorm.html
 #SITES=		${SITE_GNUSTEP}dev-apps/
-REVISION=	0
 
 SHARED_LIBS=	GormCore		0.2 \
 		GormPrefs		1.0 \
@@ -15,6 +14,8 @@ SHARED_LIBS=	GormCore		0.2 \
 		InterfaceBuilder	0.0
 
 CATEGORIES=	devel
+
+EPOCH=		0
 
 MODULES=	x11/gnustep
 WANTLIB += ${COMPILER_LIBCXX}
