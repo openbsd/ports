@@ -1,0 +1,16 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Basic setup
+===========
+
+You can run Pgweb manually and it will store it's data in $HOME/.pgweb.
+It can also be set up system-wide as a standalone RC service:
+
+	# rcctl enable pgweb
+
+Now start the service. By default it listens on 127.0.0.1:8081 so
+just connect with your browser to http://localhost:8081.
+
+	# rcctl start pgweb

@@ -1,0 +1,13 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/pgweb"
+daemon_logger="daemon.info"
+daemon_user="_pgweb"
+daemon_flags="--skip-open true --sessions true --bookmarks-dir ${LOCALSTATEDIR}/pgweb/bookmarks --queries-dir ${LOCALSTATEDIR}/pgweb/queries"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

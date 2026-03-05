@@ -1,0 +1,11 @@
+@newgroup _pgweb:905
+@newuser _pgweb:905:_pgweb::Pgweb Account:${LOCALSTATEDIR}/pgweb:/sbin/nologin
+@rcscript ${RCDIR}/pgweb
+@bin bin/pgweb
+share/doc/pkg-readmes/${PKGSTEM}
+@mode 755
+@owner _pgweb
+@group _pgweb
+@sample ${LOCALSTATEDIR}/pgweb/
+@sample ${LOCALSTATEDIR}/pgweb/bookmarks/
+@sample ${LOCALSTATEDIR}/pgweb/queries/
