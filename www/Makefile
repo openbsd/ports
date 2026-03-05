@@ -419,6 +419,7 @@
      SUBDIR += phppgadmin
      SUBDIR += phpvirtualbox
      SUBDIR += pipe-viewer
+     SUBDIR += pgweb
      SUBDIR += pm2
      SUBDIR += pnp4nagios
      SUBDIR += polipo
