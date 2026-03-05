@@ -9,8 +9,6 @@ VERSION =	4.4.1
 PKGNAME =	godot44-${VERSION}
 DIST_TUPLE +=	codeberg godotsteam godotsteam v4.3 godotsteam
 
-PKGSPEC =	godot->=${VERSION},<4.5
-
 WANTLIB += ${COMPILER_LIBCXX} SPIRV X11 Xcursor Xext Xi Xinerama
 WANTLIB += Xrandr Xrender c dbus-1 enet fontconfig freetype glib-2.0
 WANTLIB += glslang glslang-default-resource-limits intl m mbedcrypto

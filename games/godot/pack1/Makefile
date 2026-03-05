@@ -8,7 +8,6 @@ PKGNAME =	godot3-${VERSION}
 SHARPFILES_V =	3.5.2
 
 MULTI_PACKAGES =	-main -sharp
-PKGSPEC-main =	godot->=${VERSION},<4
 
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
 WANTLIB += GL LinearMath X11 Xcursor Xext
