@@ -1,0 +1,9 @@
+Index: scripts/move-to-front.in
+--- scripts/move-to-front.in.orig
++++ scripts/move-to-front.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ 
+ # move-to-front - an example of how flipdiff can be used
+ 

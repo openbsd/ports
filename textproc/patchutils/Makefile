@@ -1,11 +1,11 @@
 COMMENT=	small tools to operate on patch files
 
-DISTNAME=	patchutils-0.4.3
+DISTNAME=	patchutils-0.4.5
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	textproc devel
 
-HOMEPAGE=	http://cyberelk.net/tim/software/patchutils/
+HOMEPAGE=	https://cyberelk.net/tim/software/patchutils/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -14,7 +14,11 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-SITES=		http://cyberelk.net/tim/data/patchutils/stable/
+SITES=		https://cyberelk.net/tim/data/patchutils/stable/
+
+MODULES=	lang/python
+MODPY_BUILDDEP=	No
+MODPY_ADJ_FILES= patchview/patchview-wrapper
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		textproc/xmlto
