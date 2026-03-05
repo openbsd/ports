@@ -6,9 +6,9 @@ Index: services/chat.py
  from . import ServiceHub, ServiceUnavailableError
  
 -from mattermostdriver import Driver
--from mattermostdriver.exceptions import InvalidOrMissingParameters, ResourceNotFound, ContentTooLarge
+-from mattermostdriver.exceptions import InvalidOrMissingParameters, ResourceNotFound, ContentTooLarge, NoAccessTokenProvided
 +#from mattermostdriver import Driver
-+#from mattermostdriver.exceptions import InvalidOrMissingParameters, ResourceNotFound, ContentTooLarge
++#from mattermostdriver.exceptions import InvalidOrMissingParameters, ResourceNotFound, ContentTooLarge, NoAccessTokenProvided
  from requests.exceptions import ConnectionError, HTTPError
  
  import hashlib

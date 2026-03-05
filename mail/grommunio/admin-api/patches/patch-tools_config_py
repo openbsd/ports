@@ -1,7 +1,7 @@
 Index: tools/config.py
 --- tools/config.py.orig
 +++ tools/config.py
-@@ -72,11 +72,11 @@ def _defaultConfig():
+@@ -73,11 +73,11 @@ def _defaultConfig():
              "antispamEndpoints": ["stat", "graph", "errors", "history"],
              "antispamUrl": "http://localhost:11334",
              "disableDB": False,
@@ -16,7 +16,7 @@ Index: tools/config.py
              "exmdbHost": "::1",
              "exmdbPort": "5000",
              "domainStorageLevels": 1,
-@@ -89,8 +89,8 @@ def _defaultConfig():
+@@ -90,8 +90,8 @@ def _defaultConfig():
              "updateSkriptPath": "/usr/sbin/grommunio-update",
              },
          "security": {

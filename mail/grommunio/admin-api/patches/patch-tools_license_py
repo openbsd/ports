@@ -1,12 +1,12 @@
 Index: tools/license.py
 --- tools/license.py.orig
 +++ tools/license.py
-@@ -35,7 +35,7 @@ class GrommunioLicense(GenericObject):
+@@ -47,7 +47,7 @@ class GrommunioLicense(GenericObject):
  def _defaultLicense():
      return GrommunioLicense(cert=None,
                              file=None,
 -                            users=5,
 +                            users=999,
                              product="Community",
-                             notBefore=datetime(1000, 1, 1),
-                             notAfter=datetime(MAXYEAR, 12, 31, 23, 59, 59))
+                             notBefore=datetime(1000, 1, 1, tzinfo=TZ),
+                             notAfter=datetime(MAXYEAR, 12, 31, 23, 59, 59, tzinfo=TZ))

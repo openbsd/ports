@@ -249,6 +249,8 @@ share/grommunio-admin-api/tools/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}
 share/grommunio-admin-api/tools/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 share/grommunio-admin-api/tools/${MODPY_PYCACHE}dbconf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/grommunio-admin-api/tools/${MODPY_PYCACHE}dbconf.${MODPY_PYC_MAGIC_TAG}pyc
+share/grommunio-admin-api/tools/${MODPY_PYCACHE}deviceutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/grommunio-admin-api/tools/${MODPY_PYCACHE}deviceutils.${MODPY_PYC_MAGIC_TAG}pyc
 share/grommunio-admin-api/tools/${MODPY_PYCACHE}dnsHealth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/grommunio-admin-api/tools/${MODPY_PYCACHE}dnsHealth.${MODPY_PYC_MAGIC_TAG}pyc
 share/grommunio-admin-api/tools/${MODPY_PYCACHE}formats.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -277,6 +279,7 @@ share/grommunio-admin-api/tools/classfilters.py
 share/grommunio-admin-api/tools/config.py
 share/grommunio-admin-api/tools/constants.py
 share/grommunio-admin-api/tools/dbconf.py
+share/grommunio-admin-api/tools/deviceutils.py
 share/grommunio-admin-api/tools/dnsHealth.py
 share/grommunio-admin-api/tools/formats.py
 share/grommunio-admin-api/tools/ldap.py
