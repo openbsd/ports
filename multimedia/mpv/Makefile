@@ -2,10 +2,10 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.40.0
+GH_TAGNAME =		v0.41.0
 USE_NOBTCFI =		Yes
 
-SHARED_LIBS +=		mpv		2.0
+SHARED_LIBS +=		mpv		2.1
 
 CATEGORIES =		multimedia x11
 
@@ -56,7 +56,9 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-Dalsa=disabled \
+			-Daaudio=disabled \
 			-Dandroid-media-ndk=disabled \
+			-Daudiotrack=disabled \
 			-Daudiounit=disabled \
 			-Davfoundation=disabled \
 			-Dcaca=disabled \
@@ -99,7 +101,6 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Dpulse=disabled \
 			-Drubberband=disabled \
 			-Dsdl2-audio=disabled \
-			-Dsdl2=enabled \
 			-Dshaderc=disabled \
 			-Dsixel=disabled \
 			-Dspirv-cross=disabled \
@@ -130,7 +131,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/TOOLS/mpv_identify.sh \
 		${WRKDIST}/TOOLS/umpv ${PREFIX}/share/examples/mpv
 	${MODPY_BIN_ADJ} ${PREFIX}/share/examples/mpv/umpv
-	mv -f ${WRKINST}${SYSCONFDIR}/mpv/* ${PREFIX}/share/examples/mpv
 	sed -Ei 's,(/dev/dvd|/dev/cdrom),/dev/rcd0c,g' ${PREFIX}/man/man1/mpv.1
 
 .include <bsd.port.mk>
