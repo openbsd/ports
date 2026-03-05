@@ -8,13 +8,16 @@ share/locale/en@quot/LC_MESSAGES/yash.mo
 share/locale/ja/LC_MESSAGES/yash.mo
 share/yash/
 share/yash/completion/
+share/yash/completion/7z
 share/yash/completion/INIT
+share/yash/completion/README.md
 share/yash/completion/[
 share/yash/completion/_backup
 share/yash/completion/_blocksize
 share/yash/completion/_bsd
 share/yash/completion/_dot
 share/yash/completion/alias
+share/yash/completion/aria2c
 share/yash/completion/array
 share/yash/completion/awk
 share/yash/completion/basename
@@ -140,6 +143,7 @@ share/yash/completion/gview
 share/yash/completion/gvim
 share/yash/completion/gvimdiff
 share/yash/completion/hash
+share/yash/completion/hdparm
 share/yash/completion/head
 share/yash/completion/help
 share/yash/completion/history
@@ -159,8 +163,10 @@ share/yash/completion/man
 share/yash/completion/mesg
 share/yash/completion/mkdir
 share/yash/completion/mkfifo
+share/yash/completion/mkinitcpio
 share/yash/completion/mksh
 share/yash/completion/more
+share/yash/completion/mount
 share/yash/completion/mv
 share/yash/completion/mw
 share/yash/completion/nawk
@@ -211,6 +217,7 @@ share/yash/completion/su
 share/yash/completion/sudo
 share/yash/completion/sudoedit
 share/yash/completion/suspend
+share/yash/completion/sv
 share/yash/completion/svn
 share/yash/completion/tail
 share/yash/completion/tar
