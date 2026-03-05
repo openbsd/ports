@@ -1,7 +1,7 @@
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -28,7 +28,7 @@ MKDIR_P		= @MKDIR_P@
+@@ -42,7 +42,7 @@ MKDIR_P		= @MKDIR_P@
  RM_F		= rm -f
  RM_RF		= rm -rf
  CP_F		= cp -f
@@ -10,29 +10,25 @@ Index: doc/Makefile.in
  
  # Optional tools
  XZ		= @XZ@
-@@ -40,7 +40,7 @@ XZFILES         = @XZFILES@
- HTMLAUX		= nasmdoc.css local.css nasmlogw.png
+@@ -62,7 +62,7 @@ SRCS		= nasmdoc.src
+ # All input files (except auto-dependencies)
+ ALLSRCS		= $(SRCS) $(GENSRC)
  
- SRCS		= nasmdoc.src inslist.src changes.src warnings.src version.src
 -OUT		= html nasmdoc.txt nasmdoc.pdf $(XZFILES)
 +OUT		= html nasmdoc.txt # nasmdoc.pdf $(XZFILES)
  XZOUT           = nasmdoc.pdf.xz
  
- # Don't delete intermediate files
-@@ -109,7 +109,6 @@ nasmdoc.pdf.xz: nasmdoc-raw.pdf
- 	$(XZ) -9e < $< > $@
+ # Use "make install PDFZ=.xz" to install pdf.xz
+@@ -158,7 +158,11 @@ install_pdf: nasmdoc.pdf$(PDFZ)
+ 	$(MKDIR_P) $(DESTDIR)$(pdfdir)
+ 	$(INSTALL_DATA) nasmdoc.pdf$(PDFZ) $(DESTDIR)$(pdfdir)
  
- clean:
--	-$(RM_F) *.rtf *.hpj *.texi *.gid *.ipf *.dip
- 	-$(RM_F) *.aux *.cp *.fn *.ky *.pg *.log *.toc *.tp *.vr
- 	-$(RM_F) inslist.src version.src fontpath Fontmap
- 	-$(RM_F) nasmdoc*.ps nasmdoc-raw.pdf
-@@ -122,7 +121,7 @@ install: all
- 	$(MKDIR_P) $(DESTDIR)$(htmldir)
- 	$(INSTALL_DATA) html/* $(DESTDIR)$(htmldir)
- 	$(MKDIR_P) $(DESTDIR)$(docdir)
--	$(INSTALL_DATA) nasmdoc.pdf nasmdoc.txt $(DESTDIR)$(docdir)
-+	$(INSTALL_DATA) internal.doc nasmdoc.txt $(DESTDIR)$(docdir)
+-install: install_html install_pdf
++install_doc: internal.doc
++	$(MKDIR_P) $(DESTDIR)$(docdir)
++	$(INSTALL_DATA) internal.doc $(DESTDIR)$(docdir)
++
++install: install_html install_doc
  
  #
  # Dummy rules that changes make behavior

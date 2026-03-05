@@ -1,6 +1,6 @@
 COMMENT=	general-purpose multi-platform x86 assembler
 
-VERSION=	2.16.03
+VERSION=	3.01
 DISTNAME=	nasm-${VERSION}
 CATEGORIES=	devel lang
 SITES=		${HOMEPAGE}/pub/nasm/releasebuilds/${VERSION}/
@@ -8,12 +8,12 @@ EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://www.nasm.us/
 
-MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c
+WANTLIB=	c z
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
@@ -25,6 +25,6 @@ INSTALL_TARGET=	install_everything
 
 NO_TEST=	Yes
 
-DEBUG_PACKAGES =${BUILD_PACKAGES}
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
