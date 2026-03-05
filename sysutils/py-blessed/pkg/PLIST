@@ -22,6 +22,8 @@ lib/python${MODPY_VERSION}/site-packages/blessed/${MODPY_PYCACHE}formatters.${MO
 lib/python${MODPY_VERSION}/site-packages/blessed/${MODPY_PYCACHE}formatters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blessed/${MODPY_PYCACHE}keyboard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/blessed/${MODPY_PYCACHE}keyboard.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/blessed/${MODPY_PYCACHE}line_editor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/blessed/${MODPY_PYCACHE}line_editor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blessed/${MODPY_PYCACHE}mouse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/blessed/${MODPY_PYCACHE}mouse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blessed/${MODPY_PYCACHE}sequences.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/blessed/colorspace.py
 lib/python${MODPY_VERSION}/site-packages/blessed/dec_modes.py
 lib/python${MODPY_VERSION}/site-packages/blessed/formatters.py
 lib/python${MODPY_VERSION}/site-packages/blessed/keyboard.py
+lib/python${MODPY_VERSION}/site-packages/blessed/line_editor.py
 lib/python${MODPY_VERSION}/site-packages/blessed/mouse.py
 lib/python${MODPY_VERSION}/site-packages/blessed/py.typed
 lib/python${MODPY_VERSION}/site-packages/blessed/sequences.py
