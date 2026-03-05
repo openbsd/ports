@@ -12,6 +12,7 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 # ISC
 PERMIT_PACKAGE = Yes
 
+# uses pledge()
 WANTLIB += c
 
 SITES =			https://scriptedconfiguration.org/code/
