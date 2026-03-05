@@ -1,11 +1,9 @@
 COMMENT =	build, test, and manage your Stripe integration
 
-V =		1.32.0
 MODGO_MODNAME =	github.com/stripe/stripe-cli
-MODGO_VERSION =	v${V}
+MODGO_VERSION =	v1.37.2
 
 DISTNAME =	stripe-cli-${MODGO_VERSION}
-PKGNAME =	stripe-cli-${V}
 
 CATEGORIES =	sysutils
 
