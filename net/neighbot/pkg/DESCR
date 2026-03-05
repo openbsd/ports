@@ -1,0 +1,7 @@
+Neighbot passively monitors ARP (IPv4) and NDP (IPv6) traffic on all
+Ethernet interfaces. It maintains a CSV database of IP-to-MAC address
+mappings and sends email alerts when new stations appear or existing
+mappings change.
+
+On OpenBSD, neighbot uses pledge(2) and unveil(2) to restrict its
+privileges after initialization.

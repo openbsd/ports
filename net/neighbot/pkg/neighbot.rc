@@ -1,0 +1,14 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/neighbot -d"
+daemon_flags="-u _neighbot -o ${TRUEPREFIX}/share/arp-scan/ieee-oui.txt"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_pre() {
+	install -d -o _neighbot -g _neighbot ${LOCALSTATEDIR}/neighbot
+}
+
+rc_cmd $1

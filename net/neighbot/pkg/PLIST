@@ -1,0 +1,12 @@
+@newgroup _neighbot:904
+@newuser _neighbot:904:_neighbot::neighbot daemon:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/neighbot
+@man man/man8/neighbot.8
+@bin sbin/neighbot
+share/examples/neighbot/
+@owner _neighbot
+@group _neighbot
+@sample /var/neighbot/
+share/examples/neighbot/neighbot.csv
+@mode 644
+@sample /var/neighbot/neighbot.csv
