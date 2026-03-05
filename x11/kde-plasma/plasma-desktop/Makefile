@@ -103,4 +103,5 @@ CXXFLAGS +=		-I${LOCALBASE}/include/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+LIB_DEPENDS += devel/gettext,-runtime devel/glib2 devel/glib2,bootstrap 
 .include <bsd.port.mk>
