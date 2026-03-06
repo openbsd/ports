@@ -13,6 +13,9 @@ CATEGORIES=	textproc
 # Zlib/PNG license
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 CONFIGURE_STYLE= gnu
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
