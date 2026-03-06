@@ -111,6 +111,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/auto_literal_strings.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/blank.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/caller_logging.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/columns_introspection.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/connection_checkout_event_callback.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/connection_expiration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/connection_validator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/constant_sql_override.rb
@@ -149,6 +150,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pagination.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_array.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_array_ops.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_auto_parameterize.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_auto_parameterize_duplicate_query_detection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_auto_parameterize_in_array.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_enum.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_extended_date_support.rb
@@ -243,6 +245,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/dataset_associations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/def_dataset_method.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/defaults_setter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/delay_add_association.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/deprecated_associations.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/detect_unnecessary_association_options.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/dirty.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/eager_each.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/eager_graph_eager.rb
@@ -285,6 +289,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/require_valid_schema.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/serialization.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/serialization_modification_detection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/sharding.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/single_statement_dataset_destroy.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/single_table_inheritance.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/singular_table_names.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/skip_create_refresh.rb
