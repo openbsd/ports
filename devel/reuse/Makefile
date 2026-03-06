@@ -1,6 +1,7 @@
 COMMENT=	tool for compliance with the REUSE recommendations
 
 MODPY_DISTV=	6.2.0
+REVISION=	0
 DISTNAME=	reuse-${MODPY_DISTV}
 
 CATEGORIES=	devel
@@ -26,7 +27,7 @@ RUN_DEPENDS=	www/py-jinja2>=3.0.0 \
 		devel/py-click>=8.1 \
 		devel/py-magic>=0.4.12 \
 		textproc/py-charset-normalizer>=2.0.5 \
-		textproc/py-chardet>=3.0.2
+		textproc/py-chardet
 
 TEST_DEPENDS=	devel/py-freezegun
 

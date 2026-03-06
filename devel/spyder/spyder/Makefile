@@ -5,6 +5,7 @@ COMMENT =	Scientific PYthon Development EnviRonment
 
 MODULES =	lang/python
 MODPY_DISTV =	6.1.3
+REVISION =	0
 DISTNAME =	spyder-${MODPY_DISTV}
 
 HOMEPAGE =	https://github.com/spyder-ide/spyder
@@ -40,7 +41,7 @@ RUN_DEPENDS =	databases/py-pickleshare>=0.4 \
 		sysutils/py-packaging>=20.0 \
 		sysutils/py-psutil>=5.3 \
 		sysutils/py-watchdog>=0.10.3 \
-		textproc/py-chardet>=2.0.0 \
+		textproc/py-chardet>=2.0.0v0 \
 		textproc/py-diff-match-patch>=20181111 \
 		textproc/py-ipython_pygments_lexers>=1.0 \
 		textproc/py-jellyfish>=0.7 \
