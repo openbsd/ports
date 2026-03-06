@@ -1,9 +1,11 @@
 COMMENT =		movie player based on MPlayer/mplayer2
 
+USE_NOBTCFI =		Yes
+
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.41.0
-USE_NOBTCFI =		Yes
+REVISION =		0
 
 SHARED_LIBS +=		mpv		2.1
 
@@ -14,8 +16,8 @@ HOMEPAGE =		https://mpv.io/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODLUA_WANTLIB} EGL SDL2 X11 X11-xcb Xext Xpresent Xrandr
-WANTLIB += Xss Xv archive ass avcodec avdevice avfilter avformat
+WANTLIB += ${MODLUA_WANTLIB} EGL X11 X11-xcb Xext Xfixes Xpresent
+WANTLIB += Xrandr Xss Xv archive ass avcodec avdevice avfilter avformat
 WANTLIB += avutil bluray c cdio cdio_cdda cdio_paranoia display-info
 WANTLIB += drm dvdnav iconv jpeg lcms2 m placebo pthread sndio
 WANTLIB += swresample swscale va va-drm va-x11 vulkan xcb xcb-shm z
@@ -37,7 +39,6 @@ LIB_DEPENDS =		archivers/libarchive \
 			audio/libcdio \
 			audio/libcdio-paranoia \
 			converters/libiconv \
-			devel/sdl2 \
 			graphics/ffmpeg \
 			graphics/jpeg \
 			graphics/lcms2 \
@@ -55,8 +56,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			www/yt-dlp \
 			x11/gtk+4,-guic
 
-CONFIGURE_ARGS =	-Dalsa=disabled \
-			-Daaudio=disabled \
+CONFIGURE_ARGS =	-Daaudio=disabled \
+			-Dalsa=disabled \
 			-Dandroid-media-ndk=disabled \
 			-Daudiotrack=disabled \
 			-Daudiounit=disabled \
@@ -100,7 +101,6 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Dpipewire=disabled \
 			-Dpulse=disabled \
 			-Drubberband=disabled \
-			-Dsdl2-audio=disabled \
 			-Dshaderc=disabled \
 			-Dsixel=disabled \
 			-Dspirv-cross=disabled \
