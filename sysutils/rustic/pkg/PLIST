@@ -19,6 +19,7 @@ share/examples/rustic/services/sftp.toml
 share/examples/rustic/services/sftp_hetzner_sbox.toml
 share/examples/rustic/services/webdav_owncloud_nextcloud.toml
 share/examples/rustic/simple.toml
+share/examples/rustic/stdin-command.toml
 share/fish/
 share/fish/vendor_completions.d/
 share/fish/vendor_completions.d/rustic.fish
