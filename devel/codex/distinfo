@@ -240,6 +240,7 @@ SHA256 (cargo/fd-lock-4.0.4.tar.gz) = DOkv9iLW2t9zSUhPQskycaDUm3zE1GapNkBbrL4Qqn
 SHA256 (cargo/fdeflate-0.3.7.tar.gz) = HmhTtSZJ1KxcC9AjIM3cW6lWvbQHxLdaLGt1v1FQD4w=
 SHA256 (cargo/fiat-crypto-0.2.9.tar.gz) = KN6lGalpW5l3IWh5o+v935LxwIwF2YT4mWrs1uzcgR0=
 SHA256 (cargo/filedescriptor-0.8.3.tar.gz) = 5AdY7STJsu63bDX7CuvGbGJghO3YJ+B+FVInmBTGaC0=
+SHA256 (cargo/filetime-0.2.27.tar.gz) = +YhEFR7uiRfvxQvZ6DGMuWOuiyl0MUldP3WGFupcV9s=
 SHA256 (cargo/find-crate-0.6.3.tar.gz) = WamLuqzqHA62oIdigAUbiS63NZT9kM87IOnIFwKcV9I=
 SHA256 (cargo/find-msvc-tools-0.1.9.tar.gz) = W668B3QVH5BaGizEGYkwCx5vuymv8M7/oQZP3TCI1YI=
 SHA256 (cargo/findshlibs-0.10.2.tar.gz) = QLnlnND34IBsykvgiWg+y2Q05gIDjfIf5r9nEbLwf2Q=
@@ -658,8 +659,8 @@ SHA256 (cargo/serde_path_to_error-0.1.20.tar.gz) = EKn/gi43G7VAPjkezYPhguDne6f2/
 SHA256 (cargo/serde_repr-0.1.20.tar.gz) = F17j6ArpmCc3ylQ+lhMwh8vZpIXuzDvE3pwaN7R+pZw=
 SHA256 (cargo/serde_spanned-1.0.4.tar.gz) = +Lv5HlpNYxXu5F5wQ3JZCzDiYO6Dr2Y51kVX9RsGd3Y=
 SHA256 (cargo/serde_urlencoded-0.7.1.tar.gz) = 00kcFHFcoilMTWqI8V6Ec5eIwdAw7tjBEENqr9qi8/0=
-SHA256 (cargo/serde_with-3.16.1.tar.gz) = T6I38oB0QNI44DZKIYJwuY92egDT2tp3scU66IlA4uc=
-SHA256 (cargo/serde_with_macros-3.16.1.tar.gz) = UqjjygymKRIfcKtQ+VJJ5ab5JcwPb/6CVsRbcoh1cGw=
+SHA256 (cargo/serde_with-3.17.0.tar.gz) = OBsoPOe8a0dtkDKW+1nQ02YzZStjOyf2TbT7Rty/w7k=
+SHA256 (cargo/serde_with_macros-3.17.0.tar.gz) = ptTjBXPIyzBu1qsdyoQj7smkY+oOFV9FOZRV4DaLJ+A=
 SHA256 (cargo/serde_yaml-0.9.34+deprecated.tar.gz) = aosaGi6/Z0AVzALtzM51KH8aATDTlDB7NnQ8L11QS0c=
 SHA256 (cargo/serial2-0.2.33.tar.gz) = jMdvpo4l53FJLKHjxT1EfvC+MJPgXNO0f0txK6EMbzw=
 SHA256 (cargo/serial_test-3.3.1.tar.gz) = DQs0PhhPw7e7RN/wcF//z0s3Vrpq/0IN3diyTKFF5VU=
@@ -710,7 +711,7 @@ SHA256 (cargo/strsim-0.11.1.tar.gz) = fai1c2hF2fL8uDfqXZ4mKFZLOwQ6cJSKPwt3iDjF+0
 SHA256 (cargo/strum-0.26.3.tar.gz) = j+wPCu8wSZbPJQsxtaEN7nmAyF2p11k2EpK4vKWhjwY=
 SHA256 (cargo/strum-0.27.2.tar.gz) = ryPW9sGiJLrvnT9h4ofSdhOFpbiP2rTrTG8RrrVMS88=
 SHA256 (cargo/strum_macros-0.26.4.tar.gz) = TGvuhaWiSVXcRAOGeVqjeM2c+CrNX3ZEaRUtInDlgb4=
-SHA256 (cargo/strum_macros-0.27.2.tar.gz) = dpXOOEXqSzOSfAVaOdxDikWwWffBs9kdONEDVfuMvKc=
+SHA256 (cargo/strum_macros-0.28.0.tar.gz) = q4XuoCcO4XWH7UFWCJ4QueaIDuaIeR1FqQX1sco29mQ=
 SHA256 (cargo/subtle-2.6.1.tar.gz) = E8K93sxXs4Te4YZSNY+yMXL6y4osUczBDXTBV73qMpI=
 SHA256 (cargo/supports-color-2.1.0.tar.gz) = 1jmM3lOtw8RVcwapbOZ7MCloUTgwp3qVsrFzBdlxmok=
 SHA256 (cargo/supports-color-3.0.2.tar.gz) = xk/HIy3Y0uSsXOTvMCsdgeC4DQVbnXfHxPUfaqTIZ9Y=
@@ -723,6 +724,7 @@ SHA256 (cargo/sys-locale-0.3.2.tar.gz) = jquamaAkoWn+ipA8+dSjs2ARCbzBO9njxv/yWRO
 SHA256 (cargo/system-configuration-0.6.1.tar.gz) = PIedRI6dmGtmF0J2MkfTaT7RNglDjPPQBvUfU2ilums=
 SHA256 (cargo/system-configuration-sys-0.6.0.tar.gz) = jh0bEM7VypI6H8uNA+lrjTJoBl1yRUjAIRQV/2rGusQ=
 SHA256 (cargo/tagptr-0.2.0.tar.gz) = eyCTz0yOseZ3SaZ2IlG8nNg2tvwXFiO9Cp0yTTevJBc=
+SHA256 (cargo/tar-0.4.44.tar.gz) = HYY4eNISyHoZwaYQ61O7Af4SlRwFAc9aDWX3JJFKZno=
 SHA256 (cargo/tempfile-3.24.0.tar.gz) = ZV2px+tjBcVXQgRdWo0gN5ltYdjelYBjNcfIbOD4Lpw=
 SHA256 (cargo/term-0.7.0.tar.gz) = xZ34rJXZb/m+3hjrcwCw/aXl2NkJYOdvjhSudl7tvx8=
 SHA256 (cargo/termcolor-1.4.1.tar.gz) = BnlPj2xciYsyda6++muKHLJM0sbHk5erFXdIN6C8V1U=
@@ -933,6 +935,7 @@ SHA256 (cargo/x11rb-0.13.2.tar.gz) = mZOqW+WiaBX+LD6s/B/eBh/BofCUvxrSoYv5xJXddBQ
 SHA256 (cargo/x11rb-protocol-0.13.2.tar.gz) = 6m/Clh5O8ZTcv+VruEVTTQ3ICYlAx+XAEqJYv+xnAb0=
 SHA256 (cargo/x25519-dalek-2.0.1.tar.gz) = x+RoMhyB+wf6f0xjbDlyuRAPA0bltqnyvQYDpS9+0nc=
 SHA256 (cargo/x509-parser-0.18.1.tar.gz) = 1DsPcc4FfaBrwIUbI+4k8/hhkLByA92PVn0LcGoYUgI=
+SHA256 (cargo/xattr-1.6.1.tar.gz) = MuRa1CBvbSR5CFFH8CvC74NKyFiGYkojV1rhN8iqgVY=
 SHA256 (cargo/xdg-home-1.3.0.tar.gz) = 7Bzaslj7VcDaYTKNxSyHZHCbJJARssrQRUxy8L8QofY=
 SHA256 (cargo/xz2-0.1.7.tar.gz) = OIxE3AnXbxU2YC6tbTJetTL1wSLxd4K9V/tHuu63Z+I=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
@@ -965,7 +968,7 @@ SHA256 (cargo/zune-jpeg-0.5.12.tar.gz) = QQ6ezvY0xwnjgxws/bjZwyFk+uHGdJbVto//co7
 SHA256 (cargo/zvariant-4.2.0.tar.gz) = IIQpCrmhxHHDj8UklFg3c0+/EkSH4QXa7Cu1f9SMgf4=
 SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3MgDSACxEk=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
-SHA256 (codex-rust-v0.107.0.tar.gz) = 7Fy99jPAvXNz6NZcA1kP+QhuAZn8YAyqVsvzrbzqNyg=
+SHA256 (codex-rust-v0.111.0.tar.gz) = HT3JdiMra4wliYv0uz1RqLCo5VaAf5B26G3JklPRfyw=
 SHA256 (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3b30DbjfaF32fDJg3+Wc9/+ksZOpMk4Qs1m76JgdueA=
 SHA256 (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 0WdqwzqCxZA//t5oznPJ2SRmaqihArtkmo+5JqemHOE=
 SHA256 (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995.tar.gz) = tJrDQua12cAV9ThGkMKmHW8xwMPDSq8cwivklWEiKUw=
@@ -1214,6 +1217,7 @@ SIZE (cargo/fd-lock-4.0.4.tar.gz) = 15522
 SIZE (cargo/fdeflate-0.3.7.tar.gz) = 27188
 SIZE (cargo/fiat-crypto-0.2.9.tar.gz) = 495390
 SIZE (cargo/filedescriptor-0.8.3.tar.gz) = 12635
+SIZE (cargo/filetime-0.2.27.tar.gz) = 16678
 SIZE (cargo/find-crate-0.6.3.tar.gz) = 12092
 SIZE (cargo/find-msvc-tools-0.1.9.tar.gz) = 31493
 SIZE (cargo/findshlibs-0.10.2.tar.gz) = 20101
@@ -1632,8 +1636,8 @@ SIZE (cargo/serde_path_to_error-0.1.20.tar.gz) = 18046
 SIZE (cargo/serde_repr-0.1.20.tar.gz) = 12627
 SIZE (cargo/serde_spanned-1.0.4.tar.gz) = 11032
 SIZE (cargo/serde_urlencoded-0.7.1.tar.gz) = 12822
-SIZE (cargo/serde_with-3.16.1.tar.gz) = 198782
-SIZE (cargo/serde_with_macros-3.16.1.tar.gz) = 38106
+SIZE (cargo/serde_with-3.17.0.tar.gz) = 199172
+SIZE (cargo/serde_with_macros-3.17.0.tar.gz) = 38120
 SIZE (cargo/serde_yaml-0.9.34+deprecated.tar.gz) = 65290
 SIZE (cargo/serial2-0.2.33.tar.gz) = 34092
 SIZE (cargo/serial_test-3.3.1.tar.gz) = 13147
@@ -1684,7 +1688,7 @@ SIZE (cargo/strsim-0.11.1.tar.gz) = 14266
 SIZE (cargo/strum-0.26.3.tar.gz) = 7237
 SIZE (cargo/strum-0.27.2.tar.gz) = 8489
 SIZE (cargo/strum_macros-0.26.4.tar.gz) = 27531
-SIZE (cargo/strum_macros-0.27.2.tar.gz) = 30522
+SIZE (cargo/strum_macros-0.28.0.tar.gz) = 30964
 SIZE (cargo/subtle-2.6.1.tar.gz) = 14562
 SIZE (cargo/supports-color-2.1.0.tar.gz) = 10030
 SIZE (cargo/supports-color-3.0.2.tar.gz) = 10445
@@ -1697,6 +1701,7 @@ SIZE (cargo/sys-locale-0.3.2.tar.gz) = 15072
 SIZE (cargo/system-configuration-0.6.1.tar.gz) = 17935
 SIZE (cargo/system-configuration-sys-0.6.0.tar.gz) = 11090
 SIZE (cargo/tagptr-0.2.0.tar.gz) = 13320
+SIZE (cargo/tar-0.4.44.tar.gz) = 61020
 SIZE (cargo/tempfile-3.24.0.tar.gz) = 40849
 SIZE (cargo/term-0.7.0.tar.gz) = 37082
 SIZE (cargo/termcolor-1.4.1.tar.gz) = 18773
@@ -1907,6 +1912,7 @@ SIZE (cargo/x11rb-0.13.2.tar.gz) = 220549
 SIZE (cargo/x11rb-protocol-0.13.2.tar.gz) = 514069
 SIZE (cargo/x25519-dalek-2.0.1.tar.gz) = 87820
 SIZE (cargo/x509-parser-0.18.1.tar.gz) = 102625
+SIZE (cargo/xattr-1.6.1.tar.gz) = 15952
 SIZE (cargo/xdg-home-1.3.0.tar.gz) = 4000
 SIZE (cargo/xz2-0.1.7.tar.gz) = 23892
 SIZE (cargo/yaml-rust-0.4.5.tar.gz) = 47783
@@ -1939,7 +1945,7 @@ SIZE (cargo/zune-jpeg-0.5.12.tar.gz) = 86116
 SIZE (cargo/zvariant-4.2.0.tar.gz) = 82180
 SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
-SIZE (codex-rust-v0.107.0.tar.gz) = 4726488
+SIZE (codex-rust-v0.111.0.tar.gz) = 4917695
 SIZE (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3951333
 SIZE (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 86782
 SIZE (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995.tar.gz) = 129254
