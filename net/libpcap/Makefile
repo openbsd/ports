@@ -20,7 +20,7 @@ MODCMAKE_LDFLAGS= -Wl,-rpath,${TRUEPREFIX}/lib/libpcap
 CONFIGURE_ARGS=	-DDISABLE_DBUS=On \
 		-DCMAKE_INSTALL_INCLUDEDIR=include/libpcap \
 		-DCMAKE_INSTALL_LIBDIR=lib/libpcap
-
+BUILD_DEPENDS=	devel/bison # needs this or a yacc supporting reentrant parsers
 NO_TEST=	Yes
 
 post-install:
