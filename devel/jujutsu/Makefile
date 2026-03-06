@@ -29,11 +29,14 @@ MODCARGO_INSTALL_TARGET_PATHS = cli
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/cli/src/commands/bisect/run.rs
 
+JJ = 	${WRKBUILD}/target/release/jj
+
+# If jj is run from a jj work tree there are permission issues, so use /tmp
 post-build:
-	${WRKBUILD}/target/release/jj util install-man-pages ${WRKBUILD}
-	${WRKBUILD}/target/release/jj util completion bash > ${WRKBUILD}/jj.bash
-	${WRKBUILD}/target/release/jj util completion fish > ${WRKBUILD}/jj.fish
-	${WRKBUILD}/target/release/jj util completion zsh > ${WRKBUILD}/jj.zsh
+	cd /tmp && ${JJ} util install-man-pages ${WRKBUILD}
+	cd /tmp && ${JJ} util completion bash > ${WRKBUILD}/jj.bash
+	cd /tmp && ${JJ} util completion fish > ${WRKBUILD}/jj.fish
+	cd /tmp && ${JJ} util completion zsh > ${WRKBUILD}/jj.zsh
 
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
