@@ -1,6 +1,6 @@
 COMMENT=	transform a possibly malformed HTML5 into an ElementTree
 
-MODPY_DISTV=	2.0.0
+MODPY_DISTV=	2.1.0
 DISTNAME=	tinyhtml5-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www
