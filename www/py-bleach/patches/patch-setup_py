@@ -1,0 +1,14 @@
+https://github.com/mozilla/bleach/pull/772
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -31,7 +31,7 @@ INSTALL_REQUIRES = [
+ 
+ EXTRAS_REQUIRE = {
+     "css": [
+-        "tinycss2>=1.1.0,<1.5",
++        "tinycss2>=1.1.0,<2",
+     ],
+ }
+ 
