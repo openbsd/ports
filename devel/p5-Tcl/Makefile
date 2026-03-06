@@ -10,7 +10,11 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl
 
-MODULES =		cpan lang/tcl
+MODULES =		cpan \
+			lang/tcl
+
+# Doesn't work with threaded Tcl (8.6+).
+MODTCL_VERSION =	8.5
 
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
