@@ -1,14 +1,12 @@
 # Avoid future EPOCH bumps.
 COMMENT =	open source reimplementation of Jedi Academy game
-DISTNAME =	openjk-0.0.0.20210505
+DISTNAME =	openjk-0.0.0.20251207
 CATEGORIES =	games x11
-REVISION =	0
 
 GH_ACCOUNT =	JACoders
 GH_PROJECT =	OpenJK
-GH_COMMIT =	5ce940643748eb6b11a84281b201001fbdc665fe
+GH_COMMIT =	407a56fbca21310ff158fabbb3207410e381bfc8
 
-HOMEPAGE =	https://openjk.org/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv2 only
@@ -28,10 +26,6 @@ LIB_DEPENDS =	devel/sdl2 \
 NO_TEST =	Yes
 
 MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
-
-# Upstream left a .orig file in the repo
-post-extract:
-	rm -f ${WRKSRC}/lib/SDL2/include/SDL_config_macosx.h.orig
 
 pre-configure:
 	sed -i "s,-O3,-I${X11BASE}/include,g" ${WRKSRC}/CMakeLists.txt

@@ -1,7 +1,7 @@
 Index: code/client/cl_cgame.cpp
 --- code/client/cl_cgame.cpp.orig
 +++ code/client/cl_cgame.cpp
-@@ -73,7 +73,7 @@ qboolean CL_InitCGameVM( void *gameLibrary )
+@@ -77,7 +77,7 @@ qboolean CL_InitCGameVM( void *gameLibrary )
  		const char *gamename = "jagame";
  #endif
  

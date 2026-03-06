@@ -1,9 +1,9 @@
 Index: code/client/cl_main.cpp
 --- code/client/cl_main.cpp.orig
 +++ code/client/cl_main.cpp
-@@ -1088,14 +1088,14 @@ void CL_InitRef( void ) {
+@@ -1090,14 +1090,14 @@ void CL_InitRef( void ) {
  	Com_Printf( "----- Initializing Renderer ----\n" );
-     cl_renderer = Cvar_Get( "cl_renderer", DEFAULT_RENDER_LIBRARY, CVAR_ARCHIVE|CVAR_LATCH|CVAR_PROTECTED );
+     cl_renderer = Cvar_Get( "cl_renderer", DEFAULT_RENDER_LIBRARY, CVAR_ARCHIVE|CVAR_LATCH );
  
 -	Com_sprintf( dllName, sizeof( dllName ), "%s_" ARCH_STRING DLL_EXT, cl_renderer->string );
 +	Com_sprintf( dllName, sizeof( dllName ), "%s" DLL_EXT, cl_renderer->string );

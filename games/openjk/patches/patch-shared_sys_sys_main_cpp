@@ -1,7 +1,7 @@
 Index: shared/sys/sys_main.cpp
 --- shared/sys/sys_main.cpp.orig
 +++ shared/sys/sys_main.cpp
-@@ -466,7 +466,7 @@ void *Sys_LoadLegacyGameDll( const char *name, VMMainP
+@@ -469,7 +469,7 @@ void *Sys_LoadLegacyGameDll( const char *name, VMMainP
  	void	*libHandle = NULL;
  	char	filename[MAX_OSPATH];
  
@@ -10,7 +10,7 @@ Index: shared/sys/sys_main.cpp
  
  #if defined(_DEBUG)
  	libHandle = Sys_LoadLibrary( filename );
-@@ -548,7 +548,7 @@ void *Sys_LoadSPGameDll( const char *name, GetGameAPIP
+@@ -553,7 +553,7 @@ void *Sys_LoadSPGameDll( const char *name, GetGameAPIP
  
  	assert( GetGameAPI );
  
@@ -19,7 +19,7 @@ Index: shared/sys/sys_main.cpp
  
  #if defined(MACOS_X) && !defined(_JK2EXE)
      //First, look for the old-style mac .bundle that's inside a pk3
-@@ -597,7 +597,7 @@ void *Sys_LoadGameDll( const char *name, GetModuleAPIP
+@@ -602,7 +602,7 @@ void *Sys_LoadGameDll( const char *name, GetModuleAPIP
  	void	*libHandle = NULL;
  	char	filename[MAX_OSPATH];
  

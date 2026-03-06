@@ -14,6 +14,7 @@ share/JediAcademy/base/
 @bin share/JediAcademy/openjk
 @bin share/JediAcademy/openjk_sp
 @bin share/JediAcademy/openjkded
+@so share/JediAcademy/rd-rend2.so
 @so share/JediAcademy/rd-vanilla.so
 @so share/JediAcademy/rdsp-vanilla.so
 share/doc/pkg-readmes/${PKGSTEM}

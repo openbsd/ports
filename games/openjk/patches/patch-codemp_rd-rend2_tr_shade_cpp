@@ -1,0 +1,15 @@
+fix: invalid operands to binary expression ('qhandle_t' (aka 'int') and
+'std::nullptr_t')
+
+Index: codemp/rd-rend2/tr_shade.cpp
+--- codemp/rd-rend2/tr_shade.cpp.orig
++++ codemp/rd-rend2/tr_shade.cpp
+@@ -1525,7 +1525,7 @@ static void RB_IterateStagesGeneric( shaderCommands_t 
+ 				vertColor[3] = 0.0f;
+ 			}
+ 
+-			if (backEnd.currentEntity->e.hModel != NULL)
++			if (backEnd.currentEntity->e.hModel != 0)
+ 			{
+ 				model_t *model = R_GetModelByHandle(backEnd.currentEntity->e.hModel);
+ 				if (model->type != MOD_BRUSH)
