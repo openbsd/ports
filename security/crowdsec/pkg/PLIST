@@ -1,7 +1,7 @@
 @rcscript ${RCDIR}/crowdsec
 @bin bin/crowdsec
 @bin bin/crowdsec-cli
-@bin bin/cscli
+bin/cscli
 @bin bin/notification-dummy
 @bin bin/notification-email
 @bin bin/notification-file
@@ -117,3 +117,5 @@ share/examples/crowdsec/simulation.yaml
 @sample ${SYSCONFDIR}/crowdsec/simulation.yaml
 share/examples/crowdsec/user.yaml
 @sample ${SYSCONFDIR}/crowdsec/user.yaml
+share/examples/crowdsec/windows-dev.yaml
+@sample ${SYSCONFDIR}/crowdsec/windows-dev.yaml
