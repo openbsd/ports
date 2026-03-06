@@ -1,10 +1,9 @@
 COMMENT =	ultra fast universal grep
-CATEGORIES =	sysutils
+CATEGORIES =	textproc sysutils
 
 GH_ACCOUNT =	Genivia
 GH_PROJECT =	ugrep
-GH_TAGNAME =	v7.4.2
-REVISION =	0
+GH_TAGNAME =	v7.6.0
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -20,16 +19,19 @@ LIB_DEPENDS =	archivers/brotli \
 		archivers/xz \
 		archivers/zstd \
 		devel/pcre2
+TEST_DEPENDS =	shells/bash
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.72
+AUTOMAKE_VERSION =	1.16
 CONFIGURE_ARGS =	--disable-avx2 \
-			--disable-neon \
 			--without-boost-regex
 
 # All amd64 machines support SSE2, but the same is not true of i386
 .if ${MACHINE_ARCH:Mi386}
 CONFIGURE_ARGS +=	--disable-sse2
 .endif
+# All supported armv7/aarch64 have NEON
 
 USE_GMAKE =	Yes
 
