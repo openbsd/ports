@@ -1,8 +1,7 @@
 COMMENT=	source code spelling checker
 
-MODPY_DISTV=	2.4.1
+MODPY_DISTV=	2.4.2
 DISTNAME=	codespell-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	devel textproc
 
@@ -11,9 +10,9 @@ HOMEPAGE=	https://github.com/codespell-project/codespell
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MODPY_PI=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	textproc/py-chardet
 
