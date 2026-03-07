@@ -1,16 +1,15 @@
 # SITES changes at each version; when looking for updates, try searching
 # ${HOMEPAGE} for a Linux RPM(x64) driver, for e.g. sx200
 PORTROACH=		ignore:1
-SITES=			https://download3.ebz.epson.net/dsc/f/03/00/16/21/79/6d53e6ec3f8c1e55733eb7860e992a425883bf88/
+SITES=			https://download-center.epson.com/f/module/7c6c59cf-37d4-4674-b95f-8f979ea89640/
 
 COMMENT=		printer driver for Epson ESC/P-R inkjets
 
-V=			1.8.6
+V=			1.8.7
 DISTNAME=		epson-inkjet-printer-escpr-${V}-1
 EXTRACT_SUFX=		.src.rpm
 WRKDIST=		${WRKDIR}/epson-inkjet-printer-escpr-${V}
 PKGNAME=		epson-inkjet-printer-escpr-${V}
-REVISION=		0
 
 SHARED_LIBS +=  escpr                0.0      # 1.0
 
@@ -24,15 +23,15 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += avahi-client avahi-common c crypto cups cupsimage dbus-1
-WANTLIB += execinfo iconv intl m pthread ssl z
+WANTLIB += iconv intl m pthread ssl z
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			print/cups,-libs
 
 CONFIGURE_STYLE=	autoreconf
 AUTORECONF=		sh ${WRKSRC}/bootstrap
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.18
 
 CONFIGURE_ARGS=		--with-cupsfilterdir=${LOCALBASE}/libexec/cups/filter \
 			--with-cupsppddir=${LOCALBASE}/share/ppd
