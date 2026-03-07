@@ -843,6 +843,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/p
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connecthealth/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connecthealth/2025-01-29/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connecthealth/2025-01-29/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connecthealth/2025-01-29/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connecthealth/2025-01-29/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connecthealth/2025-01-29/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/2018-09-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/2018-09-07/endpoint-rule-set-1.json
