@@ -3033,7 +3033,6 @@ go/src/cmd/go/testdata/script/mod_init_invalid_major.txt
 go/src/cmd/go/testdata/script/mod_init_issue74784.txt
 go/src/cmd/go/testdata/script/mod_init_path.txt
 go/src/cmd/go/testdata/script/mod_init_tidy.txt
-go/src/cmd/go/testdata/script/mod_init_version.txt
 go/src/cmd/go/testdata/script/mod_insecure_issue63845.txt
 go/src/cmd/go/testdata/script/mod_install_hint.txt
 go/src/cmd/go/testdata/script/mod_install_pkg_version.txt
@@ -3393,7 +3392,6 @@ go/src/cmd/go/testdata/script/work_implicit_go_requirement.txt
 go/src/cmd/go/testdata/script/work_init_gowork.txt
 go/src/cmd/go/testdata/script/work_init_path.txt
 go/src/cmd/go/testdata/script/work_init_toolchain.txt
-go/src/cmd/go/testdata/script/work_init_version.txt
 go/src/cmd/go/testdata/script/work_install_submodule.txt
 go/src/cmd/go/testdata/script/work_issue51204.txt
 go/src/cmd/go/testdata/script/work_issue54048.txt
@@ -8521,6 +8519,7 @@ go/src/internal/poll/fd_windows_test.go
 go/src/internal/poll/fd_writev_libc.go
 go/src/internal/poll/fd_writev_unix.go
 go/src/internal/poll/file_plan9.go
+go/src/internal/poll/fstatat_unix.go
 go/src/internal/poll/hook_cloexec.go
 go/src/internal/poll/hook_unix.go
 go/src/internal/poll/hook_windows.go
@@ -10530,6 +10529,9 @@ go/src/os/stat_test.go
 go/src/os/stat_unix.go
 go/src/os/stat_wasip1.go
 go/src/os/stat_windows.go
+go/src/os/statat.go
+go/src/os/statat_other.go
+go/src/os/statat_unix.go
 go/src/os/sticky_bsd.go
 go/src/os/sticky_notbsd.go
 go/src/os/sys.go
@@ -15637,7 +15639,11 @@ go/test/fixedbugs/issue76950.go
 go/test/fixedbugs/issue7740.go
 go/test/fixedbugs/issue7742.go
 go/test/fixedbugs/issue7746.go
+go/test/fixedbugs/issue77534.go
 go/test/fixedbugs/issue7760.go
+go/test/fixedbugs/issue77604.go
+go/test/fixedbugs/issue77613.go
+go/test/fixedbugs/issue77779.go
 go/test/fixedbugs/issue7794.go
 go/test/fixedbugs/issue7863.go
 go/test/fixedbugs/issue7867.go
