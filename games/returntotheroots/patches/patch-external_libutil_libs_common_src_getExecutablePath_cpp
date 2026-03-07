@@ -1,0 +1,23 @@
+hardcode executable path
+
+Index: external/libutil/libs/common/src/getExecutablePath.cpp
+--- external/libutil/libs/common/src/getExecutablePath.cpp.orig
++++ external/libutil/libs/common/src/getExecutablePath.cpp
+@@ -83,6 +83,9 @@ std::string getExecutablePath()
+ 
+ std::string getExecutablePath()
+ {
++#ifdef __OpenBSD__
++    return "${LOCALBASE}/bin/s25client";
++#else
+     std::array<int, 4> mib = {CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1};
+     std::vector<char> buf(1024, 0);
+     size_t size = buf.size();
+@@ -95,6 +98,7 @@ std::string getExecutablePath()
+     using bfs::canonical;
+     bfs::path p(canonical(path, ec));
+     return ec ? "" : p.make_preferred().string();
++#endif
+ }
+ 
+ #elif(BOOST_OS_LINUX)

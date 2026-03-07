@@ -1,0 +1,12 @@
+Index: external/libutil/libs/network/src/Socket.cpp
+--- external/libutil/libs/network/src/Socket.cpp.orig
++++ external/libutil/libs/network/src/Socket.cpp
+@@ -46,7 +46,7 @@ ResolvedAddr::ResolvedAddr(const HostAddr& hostAddr, b
+         if(resolveAll)
+         {
+             hints.ai_flags = AI_ADDRCONFIG;
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+             // Defined, but getaddrinfo complains about it on FreeBSD -> Check again with the combination with
+             // AI_V4MAPPED
+             hints.ai_flags |= AI_ALL | AI_V4MAPPED;
