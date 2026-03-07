@@ -1,0 +1,178 @@
+Index: libphobos/libdruntime/config/sparc64/switchcontext.S
+--- libphobos/libdruntime/config/sparc64/switchcontext.S.orig
++++ libphobos/libdruntime/config/sparc64/switchcontext.S
+@@ -0,0 +1,174 @@
++/* SPARC64 support code for fibers and multithreading.
++   Copyright (C) 2019-2021 Free Software Foundation, Inc.
++
++This file is part of GCC.
++
++GCC is free software; you can redistribute it and/or modify it under
++the terms of the GNU General Public License as published by the Free
++Software Foundation; either version 3, or (at your option) any later
++version.
++
++GCC is distributed in the hope that it will be useful, but WITHOUT ANY
++WARRANTY; without even the implied warranty of MERCHANTABILITY or
++FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++for more details.
++
++Under Section 7 of GPL version 3, you are granted additional
++permissions described in the GCC Runtime Library Exception, version
++3.1, as published by the Free Software Foundation.
++
++You should have received a copy of the GNU General Public License and
++a copy of the GCC Runtime Library Exception along with this program;
++see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
++<http://www.gnu.org/licenses/>.  */
++
++#include "../common/threadasm.S"
++
++#if defined(__ELF__)
++
++/**
++ * SPARC V9 fiber context switch (leaf, no SAVE/RESTORE).
++ *
++ * Callee-saved: %l0-%l7, %i0-%i7 (incl %fp=%i6), %f32-%f62 (even)
++ *
++ * Stack frame layout (offsets from %sp + BIAS):
++ *   [0-127]   - reserved for register window save area
++ *   [RSA+0]   - %o7 (return address)
++ *   [RSA+8]   - %f32-%f62 (16 double regs)
++ *   [RSA+136] - %l0-%l7   <-- tstack (GC scans from here)
++ *   [RSA+200] - %i0-%i7
++ *
++ * Args: %o0 = oldp, %o1 = newp
++ */
++
++#define BIAS 2047
++#define RSA  128
++#define FRAME_SIZE 400
++#define TSTACK_OFFSET 264
++
++    .text
++    .globl CSYM(fiber_switchContext)
++    .type CSYM(fiber_switchContext), @function
++    .align 4
++CSYM(fiber_switchContext):
++    .cfi_startproc
++
++    flushw
++    sub     %sp, FRAME_SIZE, %sp
++    .cfi_def_cfa_offset FRAME_SIZE + BIAS
++    add     %sp, BIAS, %g1
++
++    stx     %o7, [%g1 + RSA + 0]    // return address
++    .cfi_offset %o7, -(FRAME_SIZE - RSA)
++
++    std     %f32, [%g1 + RSA + 8]
++    std     %f34, [%g1 + RSA + 16]
++    std     %f36, [%g1 + RSA + 24]
++    std     %f38, [%g1 + RSA + 32]
++    std     %f40, [%g1 + RSA + 40]
++    std     %f42, [%g1 + RSA + 48]
++    std     %f44, [%g1 + RSA + 56]
++    std     %f46, [%g1 + RSA + 64]
++    std     %f48, [%g1 + RSA + 72]
++    std     %f50, [%g1 + RSA + 80]
++    std     %f52, [%g1 + RSA + 88]
++    std     %f54, [%g1 + RSA + 96]
++    std     %f56, [%g1 + RSA + 104]
++    std     %f58, [%g1 + RSA + 112]
++    std     %f60, [%g1 + RSA + 120]
++    std     %f62, [%g1 + RSA + 128]
++
++    stx     %l0, [%g1 + RSA + 136]
++    stx     %l1, [%g1 + RSA + 144]
++    stx     %l2, [%g1 + RSA + 152]
++    stx     %l3, [%g1 + RSA + 160]
++    stx     %l4, [%g1 + RSA + 168]
++    stx     %l5, [%g1 + RSA + 176]
++    stx     %l6, [%g1 + RSA + 184]
++    stx     %l7, [%g1 + RSA + 192]
++
++    stx     %i0, [%g1 + RSA + 200]
++    stx     %i1, [%g1 + RSA + 208]
++    stx     %i2, [%g1 + RSA + 216]
++    stx     %i3, [%g1 + RSA + 224]
++    stx     %i4, [%g1 + RSA + 232]
++    stx     %i5, [%g1 + RSA + 240]
++    stx     %fp, [%g1 + RSA + 248]  // %i6
++    .cfi_offset %fp, -(FRAME_SIZE - RSA - 248)
++    stx     %i7, [%g1 + RSA + 256]
++
++    add     %g1, TSTACK_OFFSET, %g1
++    stx     %g1, [%o0]              // *oldp = tstack
++
++    membar  #StoreLoad
++
++    // context switch
++    sub     %o1, TSTACK_OFFSET, %g1
++    sub     %g1, BIAS, %sp
++
++    ldx     [%g1 + RSA + 200], %i0
++    ldx     [%g1 + RSA + 208], %i1
++    ldx     [%g1 + RSA + 216], %i2
++    ldx     [%g1 + RSA + 224], %i3
++    ldx     [%g1 + RSA + 232], %i4
++    ldx     [%g1 + RSA + 240], %i5
++    ldx     [%g1 + RSA + 248], %fp
++    ldx     [%g1 + RSA + 256], %i7
++
++    ldx     [%g1 + RSA + 136], %l0
++    ldx     [%g1 + RSA + 144], %l1
++    ldx     [%g1 + RSA + 152], %l2
++    ldx     [%g1 + RSA + 160], %l3
++    ldx     [%g1 + RSA + 168], %l4
++    ldx     [%g1 + RSA + 176], %l5
++    ldx     [%g1 + RSA + 184], %l6
++    ldx     [%g1 + RSA + 192], %l7
++
++    ldd     [%g1 + RSA + 8], %f32
++    ldd     [%g1 + RSA + 16], %f34
++    ldd     [%g1 + RSA + 24], %f36
++    ldd     [%g1 + RSA + 32], %f38
++    ldd     [%g1 + RSA + 40], %f40
++    ldd     [%g1 + RSA + 48], %f42
++    ldd     [%g1 + RSA + 56], %f44
++    ldd     [%g1 + RSA + 64], %f46
++    ldd     [%g1 + RSA + 72], %f48
++    ldd     [%g1 + RSA + 80], %f50
++    ldd     [%g1 + RSA + 88], %f52
++    ldd     [%g1 + RSA + 96], %f54
++    ldd     [%g1 + RSA + 104], %f56
++    ldd     [%g1 + RSA + 112], %f58
++    ldd     [%g1 + RSA + 120], %f60
++    ldd     [%g1 + RSA + 128], %f62
++
++    ldx     [%g1 + RSA + 0], %o7
++    .cfi_restore %o7
++    .cfi_restore %fp
++
++    retl
++    add     %sp, FRAME_SIZE, %sp
++
++    .cfi_endproc
++    .size CSYM(fiber_switchContext),.-CSYM(fiber_switchContext)
++
++/**
++ * Fiber entry trampoline. Marks stack bottom for unwinding.
++ * Uses SAVE to create proper stack frame before calling fiber_entryPoint.
++ */
++    .text
++    .global CSYM(fiber_trampoline)
++    .type CSYM(fiber_trampoline), @function
++    .align 4
++CSYM(fiber_trampoline):
++    .cfi_startproc
++    save    %sp, -192, %sp
++    .cfi_def_cfa_offset 192 + BIAS
++    .cfi_window_save
++    .cfi_undefined %i7
++    call    CSYM(fiber_entryPoint)
++    nop
++    // fiber_entryPoint never returns
++    .cfi_endproc
++    .size CSYM(fiber_trampoline),.-CSYM(fiber_trampoline)
++
++#endif /* __ELF__ */

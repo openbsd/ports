@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
 ONLY_FOR_ARCHS-ada = amd64 i386 mips64 powerpc
-ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 powerpc powerpc64
+ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 powerpc powerpc64 sparc64
 
 DPB_PROPERTIES = parallel
 
@@ -16,18 +16,19 @@ FULL_VERSION = $V
 FULL_PKGVERSION = $V
 GCC_PKGSPEC = >=11,<12
 REVISION = 22
+REVISION-dlang = 23
 
-# aarch64 bootstrap contains only gdc
-ADASTRAP-aarch64 = adastrap-aarch64-$V-0.tar.xz
-ADASTRAP-amd64 = adastrap-amd64-$V-5.tar.xz
+# aarch64 and sparc64 bootstrap contain only gdc
+ADASTRAP-aarch64 = adastrap-aarch64-$V-1.tar.xz
+ADASTRAP-amd64 = adastrap-amd64-$V-7.tar.xz
 ADASTRAP-i386 = adastrap-i386-$V-4.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
 ADASTRAP-powerpc = adastrap-powerpc-$V-4.tar.xz
+ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
 
 # old bootstraps for archs where ada is currently disabled
 #ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 #ADASTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
-#ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
 PKGNAME-main =	gcc-${FULL_PKGVERSION}
 PKGSPEC-main =	gcc-${GCC_PKGSPEC}

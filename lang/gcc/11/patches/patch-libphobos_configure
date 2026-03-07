@@ -1,15 +1,61 @@
-Add fiber asm for powerpc64, to avoid
+Add fiber asm for sparc64 and powerpc64, to avoid
 "configure: error: setcontext required but not found"
 
 Index: libphobos/configure
 --- libphobos/configure.orig
 +++ libphobos/configure
-@@ -15196,7 +15196,7 @@ fi
+@@ -694,6 +694,8 @@ DRUNTIME_CPU_X86_FALSE
+ DRUNTIME_CPU_X86_TRUE
+ DRUNTIME_CPU_POWERPC_FALSE
+ DRUNTIME_CPU_POWERPC_TRUE
++DRUNTIME_CPU_SPARC64_FALSE
++DRUNTIME_CPU_SPARC64_TRUE
+ DRUNTIME_CPU_MIPS_FALSE
+ DRUNTIME_CPU_MIPS_TRUE
+ DRUNTIME_CPU_ARM_FALSE
+@@ -14140,6 +14142,9 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+       powerpc*)
+                druntime_target_cpu_parsed="powerpc"
+                ;;
++      sparc64)
++               druntime_target_cpu_parsed="sparc64"
++               ;;
+       i[34567]86|x86_64)
+                druntime_target_cpu_parsed="x86"
+                ;;
+@@ -14182,6 +14187,14 @@ else
+   DRUNTIME_CPU_POWERPC_FALSE=
+ fi
+ 
++   if test "$druntime_target_cpu_parsed" = "sparc64"; then
++  DRUNTIME_CPU_SPARC64_TRUE=
++  DRUNTIME_CPU_SPARC64_FALSE='#'
++else
++  DRUNTIME_CPU_SPARC64_TRUE='#'
++  DRUNTIME_CPU_SPARC64_FALSE=
++fi
++
+    if test "$druntime_target_cpu_parsed" = "x86"; then
+   DRUNTIME_CPU_X86_TRUE=
+   DRUNTIME_CPU_X86_FALSE='#'
+@@ -15196,7 +15209,8 @@ fi
      aarch64* | \
      arm* | \
      i[34567]86|x86_64 | \
 -    powerpc)
++    sparc64* | \
 +    powerpc*)
        druntime_fiber_asm_external=yes
        ;;
    esac
+@@ -15752,6 +15766,10 @@ Usually this means the macro was only invoked conditio
+ fi
+ if test -z "${DRUNTIME_CPU_POWERPC_TRUE}" && test -z "${DRUNTIME_CPU_POWERPC_FALSE}"; then
+   as_fn_error $? "conditional \"DRUNTIME_CPU_POWERPC\" was never defined.
++Usually this means the macro was only invoked conditionally." "$LINENO" 5
++fi
++if test -z "${DRUNTIME_CPU_SPARC64_TRUE}" && test -z "${DRUNTIME_CPU_SPARC64_FALSE}"; then
++  as_fn_error $? "conditional \"DRUNTIME_CPU_SPARC64\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
+ fi
+ if test -z "${DRUNTIME_CPU_X86_TRUE}" && test -z "${DRUNTIME_CPU_X86_FALSE}"; then

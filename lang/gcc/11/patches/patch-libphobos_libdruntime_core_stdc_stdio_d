@@ -3,7 +3,7 @@ https://github.com/dlang/dmd/commit/bbd2b459ce0ee84b6c29f020d8509aa096f7e405
 Index: libphobos/libdruntime/core/stdc/stdio.d
 --- libphobos/libdruntime/core/stdc/stdio.d.orig
 +++ libphobos/libdruntime/core/stdc/stdio.d
-@@ -604,31 +605,7 @@ else version (OpenBSD)
+@@ -604,31 +604,7 @@ else version (OpenBSD)
      ///
      struct __sFILE
      {
@@ -36,7 +36,7 @@ Index: libphobos/libdruntime/core/stdc/stdio.d
      }
  
      ///
-@@ -1007,16 +989,22 @@ else version (OpenBSD)
+@@ -1007,16 +983,22 @@ else version (OpenBSD)
          _IONBF = 2,
      }
  
@@ -66,19 +66,11 @@ Index: libphobos/libdruntime/core/stdc/stdio.d
  }
  else version (DragonFlyBSD)
  {
-@@ -1580,85 +1703,16 @@ else version (OpenBSD)
+@@ -1580,83 +1562,14 @@ else version (OpenBSD)
      {
          ///
          void rewind(FILE*);
-+	///
-+	pure void clearerr(FILE*);
-+	///
-+	pure int  feof(FILE*);
-+	///
-+	pure int  ferror(FILE*);
-+	///
-+	int  fileno(FILE*);
-     }
+-    }
 -    @trusted private
 -    {
 -        ///
@@ -94,7 +86,7 @@ Index: libphobos/libdruntime/core/stdc/stdio.d
 -        pragma(mangle, "fileno")
 -        int __fileno(FILE*);
 -    }
- 
+-
 -    enum __SLBF = 0x0001;
 -    enum __SNBF = 0x0002;
 -    enum __SRD  = 0x0004;
@@ -155,8 +147,14 @@ Index: libphobos/libdruntime/core/stdc/stdio.d
 -        {
 -            return !__isthreaded ? __sfileno(file) : __fileno(file);
 -        }
--    }
--
++	///
++	pure void clearerr(FILE*);
++	///
++	pure int  feof(FILE*);
++	///
++	pure int  ferror(FILE*);
++	///
++	int  fileno(FILE*);
+     }
+ 
      ///
-     pragma(printf)
-     int  snprintf(scope char* s, size_t n, scope const char* format, scope const ...);

@@ -1,16 +1,53 @@
+Backport: d: Insert null terminator in obstack buffers
+b2abe4e1aded1409964b870899d18dfdb6384821
+
 Index: gcc/d/d-lang.cc
 --- gcc/d/d-lang.cc.orig
 +++ gcc/d/d-lang.cc
-@@ -1729,6 +1729,12 @@ d_enum_underlying_base_type (const_tree type)
-   return TREE_TYPE (type);
+@@ -108,7 +108,7 @@ deps_add_target (const char *target, bool quoted)
+ 
+   if (!quoted)
+     {
+-      obstack_grow (&buffer, target, strlen (target));
++      obstack_grow0 (&buffer, target, strlen (target));
+       d_option.deps_target.safe_push ((const char *) obstack_finish (&buffer));
+       return;
+     }
+@@ -149,6 +149,7 @@ deps_add_target (const char *target, bool quoted)
+       obstack_1grow (&buffer, *p);
+     }
+ 
++  obstack_1grow (&buffer, '\0');
+   d_option.deps_target.safe_push ((const char *) obstack_finish (&buffer));
  }
  
+@@ -278,6 +279,8 @@ deps_write (Module *module, obstack *buffer)
+       obstack_grow (buffer, str, strlen (str));
+       obstack_grow (buffer, ":\n", 2);
+     }
++
++  obstack_1grow (buffer, '\0');
+ }
+ 
+ /* Implements the lang_hooks.init_options routine for language D.
+@@ -884,6 +887,7 @@ d_parse_file (void)
+ 	      obstack_grow (&buffer, str, strlen (str));
+ 	    }
+ 
++	  obstack_1grow (&buffer, '\0');
+ 	  message ("%s", (char *) obstack_finish (&buffer));
+ 	}
+     }
+@@ -1727,6 +1731,12 @@ d_enum_underlying_base_type (const_tree type)
+ {
+   gcc_assert (TREE_CODE (type) == ENUMERAL_TYPE);
+   return TREE_TYPE (type);
++}
++
 +const char *
 +fname_as_string(int pretty_p __attribute__((__unused__)))
 +{
 +	return NULL;
-+}
-+
- /* Definitions for our language-specific hooks.  */
+ }
  
- #undef LANG_HOOKS_NAME
+ /* Definitions for our language-specific hooks.  */

@@ -1,7 +1,49 @@
+Link sparc64/switchcontext.S to the build
+
 Index: libphobos/libdruntime/Makefile.in
 --- libphobos/libdruntime/Makefile.in.orig
 +++ libphobos/libdruntime/Makefile.in
-@@ -775,8 +775,9 @@ ALL_DRUNTIME_SOURCES = $(DRUNTIME_DSOURCES) $(DRUNTIME
+@@ -130,6 +130,7 @@ target_triplet = @target@
+ @DRUNTIME_CPU_X86_TRUE@@DRUNTIME_OS_MINGW_FALSE@am__append_16 = config/x86/switchcontext.S
+ @DRUNTIME_CPU_SYSTEMZ_TRUE@am__append_17 = config/systemz/get_tls_offset.S
+ @DRUNTIME_CPU_S390_TRUE@am__append_18 = config/s390/get_tls_offset.S
++@DRUNTIME_CPU_SPARC64_TRUE@am__append_19 = config/sparc64/switchcontext.S
+ subdir = libdruntime
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/../config/acx.m4 \
+@@ -453,12 +454,14 @@ am__objects_21 = core/sys/solaris/dlfcn.lo core/sys/so
+ @DRUNTIME_CPU_X86_TRUE@@DRUNTIME_OS_MINGW_FALSE@am__objects_28 = config/x86/libgdruntime_la-switchcontext.lo
+ @DRUNTIME_CPU_SYSTEMZ_TRUE@am__objects_29 = config/systemz/libgdruntime_la-get_tls_offset.lo
+ @DRUNTIME_CPU_S390_TRUE@am__objects_30 = config/s390/libgdruntime_la-get_tls_offset.lo
++@DRUNTIME_CPU_SPARC64_TRUE@am__objects_47 = config/sparc64/libgdruntime_la-switchcontext.lo
+ am__objects_31 = $(am__objects_4) $(am__objects_6) $(am__objects_8) \
+ 	$(am__objects_10) $(am__objects_12) $(am__objects_14) \
+ 	$(am__objects_16) $(am__objects_18) $(am__objects_20) \
+ 	$(am__objects_22) $(am__objects_23) $(am__objects_24) \
+ 	$(am__objects_25) $(am__objects_26) $(am__objects_27) \
+-	$(am__objects_28) $(am__objects_29) $(am__objects_30)
++	$(am__objects_28) $(am__objects_29) $(am__objects_30) \
++	$(am__objects_47)
+ am__objects_32 = gcc/config.lo gcc/libbacktrace.lo
+ am__objects_33 = $(am__objects_1) $(am__objects_2) $(am__objects_31) \
+ 	$(am__objects_32)
+@@ -476,12 +479,14 @@ am__objects_34 = core/stdc/libgdruntime_convenience_la
+ @DRUNTIME_CPU_X86_TRUE@@DRUNTIME_OS_MINGW_FALSE@am__objects_41 = config/x86/libgdruntime_convenience_la-switchcontext.lo
+ @DRUNTIME_CPU_SYSTEMZ_TRUE@am__objects_42 = config/systemz/libgdruntime_convenience_la-get_tls_offset.lo
+ @DRUNTIME_CPU_S390_TRUE@am__objects_43 = config/s390/libgdruntime_convenience_la-get_tls_offset.lo
++@DRUNTIME_CPU_SPARC64_TRUE@am__objects_48 = config/sparc64/libgdruntime_convenience_la-switchcontext.lo
+ am__objects_44 = $(am__objects_4) $(am__objects_6) $(am__objects_8) \
+ 	$(am__objects_10) $(am__objects_12) $(am__objects_14) \
+ 	$(am__objects_16) $(am__objects_18) $(am__objects_35) \
+ 	$(am__objects_22) $(am__objects_36) $(am__objects_37) \
+ 	$(am__objects_38) $(am__objects_39) $(am__objects_40) \
+-	$(am__objects_41) $(am__objects_42) $(am__objects_43)
++	$(am__objects_41) $(am__objects_42) $(am__objects_43) \
++	$(am__objects_48)
+ am__objects_45 = $(am__objects_1) $(am__objects_34) $(am__objects_44) \
+ 	$(am__objects_32)
+ am__objects_46 = $(am__objects_45)
+@@ -775,8 +780,9 @@ ALL_DRUNTIME_SOURCES = $(DRUNTIME_DSOURCES) $(DRUNTIME
  toolexeclib_LTLIBRARIES = libgdruntime.la
  libgdruntime_la_SOURCES = $(ALL_DRUNTIME_SOURCES)
  libgdruntime_la_LIBTOOLFLAGS = 
@@ -12,3 +54,69 @@ Index: libphobos/libdruntime/Makefile.in
  
  libgdruntime_la_LIBADD = $(LIBATOMIC) $(LIBBACKTRACE)
  libgdruntime_la_DEPENDENCIES = $(DRTSTUFF)
+@@ -1808,6 +1814,11 @@ config/s390/$(am__dirstamp):
+ 	@: > config/s390/$(am__dirstamp)
+ config/s390/libgdruntime_la-get_tls_offset.lo:  \
+ 	config/s390/$(am__dirstamp)
++config/sparc64/$(am__dirstamp):
++	@$(MKDIR_P) config/sparc64
++	@: > config/sparc64/$(am__dirstamp)
++config/sparc64/libgdruntime_la-switchcontext.lo:  \
++	config/sparc64/$(am__dirstamp)
+ gcc/config.lo: gcc/$(am__dirstamp)
+ gcc/libbacktrace.lo: gcc/$(am__dirstamp)
+ 
+@@ -1833,6 +1844,8 @@ config/systemz/libgdruntime_convenience_la-get_tls_off
+ 	config/systemz/$(am__dirstamp)
+ config/s390/libgdruntime_convenience_la-get_tls_offset.lo:  \
+ 	config/s390/$(am__dirstamp)
++config/sparc64/libgdruntime_convenience_la-switchcontext.lo:  \
++	config/sparc64/$(am__dirstamp)
+ 
+ libgdruntime_convenience.la: $(libgdruntime_convenience_la_OBJECTS) $(libgdruntime_convenience_la_DEPENDENCIES) $(EXTRA_libgdruntime_convenience_la_DEPENDENCIES) 
+ 	$(AM_V_GEN)$(libgdruntime_convenience_la_LINK)  $(libgdruntime_convenience_la_OBJECTS) $(libgdruntime_convenience_la_LIBADD) $(LIBS)
+@@ -1851,6 +1864,8 @@ mostlyclean-compile:
+ 	-rm -f config/powerpc/*.lo
+ 	-rm -f config/s390/*.$(OBJEXT)
+ 	-rm -f config/s390/*.lo
++	-rm -f config/sparc64/*.$(OBJEXT)
++	-rm -f config/sparc64/*.lo
+ 	-rm -f config/systemz/*.$(OBJEXT)
+ 	-rm -f config/systemz/*.lo
+ 	-rm -f config/x86/*.$(OBJEXT)
+@@ -1976,6 +1991,9 @@ config/systemz/libgdruntime_la-get_tls_offset.lo: conf
+ config/s390/libgdruntime_la-get_tls_offset.lo: config/s390/get_tls_offset.S
+ 	$(AM_V_CPPAS)$(LIBTOOL) $(AM_V_lt) $(libgdruntime_la_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS) -c -o config/s390/libgdruntime_la-get_tls_offset.lo `test -f 'config/s390/get_tls_offset.S' || echo '$(srcdir)/'`config/s390/get_tls_offset.S
+ 
++config/sparc64/libgdruntime_la-switchcontext.lo: config/sparc64/switchcontext.S
++	$(AM_V_CPPAS)$(LIBTOOL) $(AM_V_lt) $(libgdruntime_la_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS) -c -o config/sparc64/libgdruntime_la-switchcontext.lo `test -f 'config/sparc64/switchcontext.S' || echo '$(srcdir)/'`config/sparc64/switchcontext.S
++
+ config/aarch64/libgdruntime_convenience_la-switchcontext.lo: config/aarch64/switchcontext.S
+ 	$(AM_V_CPPAS)$(LIBTOOL) $(AM_V_lt) $(libgdruntime_convenience_la_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS) -c -o config/aarch64/libgdruntime_convenience_la-switchcontext.lo `test -f 'config/aarch64/switchcontext.S' || echo '$(srcdir)/'`config/aarch64/switchcontext.S
+ 
+@@ -2000,6 +2018,9 @@ config/systemz/libgdruntime_convenience_la-get_tls_off
+ config/s390/libgdruntime_convenience_la-get_tls_offset.lo: config/s390/get_tls_offset.S
+ 	$(AM_V_CPPAS)$(LIBTOOL) $(AM_V_lt) $(libgdruntime_convenience_la_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS) -c -o config/s390/libgdruntime_convenience_la-get_tls_offset.lo `test -f 'config/s390/get_tls_offset.S' || echo '$(srcdir)/'`config/s390/get_tls_offset.S
+ 
++config/sparc64/libgdruntime_convenience_la-switchcontext.lo: config/sparc64/switchcontext.S
++	$(AM_V_CPPAS)$(LIBTOOL) $(AM_V_lt) $(libgdruntime_convenience_la_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS) -c -o config/sparc64/libgdruntime_convenience_la-switchcontext.lo `test -f 'config/sparc64/switchcontext.S' || echo '$(srcdir)/'`config/sparc64/switchcontext.S
++
+ .c.o:
+ 	$(AM_V_CC)$(COMPILE) -c -o $@ $<
+ 
+@@ -2032,6 +2053,7 @@ clean-libtool:
+ 	-rm -rf config/mips/.libs config/mips/_libs
+ 	-rm -rf config/powerpc/.libs config/powerpc/_libs
+ 	-rm -rf config/s390/.libs config/s390/_libs
++	-rm -rf config/sparc64/.libs config/sparc64/_libs
+ 	-rm -rf config/systemz/.libs config/systemz/_libs
+ 	-rm -rf config/x86/.libs config/x86/_libs
+ 	-rm -rf core/.libs core/_libs
+@@ -2188,6 +2210,7 @@ distclean-generic:
+ 	-rm -f config/mips/$(am__dirstamp)
+ 	-rm -f config/powerpc/$(am__dirstamp)
+ 	-rm -f config/s390/$(am__dirstamp)
++	-rm -f config/sparc64/$(am__dirstamp)
+ 	-rm -f config/systemz/$(am__dirstamp)
+ 	-rm -f config/x86/$(am__dirstamp)
+ 	-rm -f core/$(am__dirstamp)
