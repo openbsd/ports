@@ -1,6 +1,7 @@
 COMMENT=	character set detector library
 
 MODPY_DISTV=	3.4.5
+REVISION=	0
 DISTNAME=	charset_normalizer-${MODPY_DISTV}
 PKGNAME=	py-charset-normalizer-${MODPY_DISTV}
 
@@ -10,6 +11,8 @@ HOMEPAGE=	https://github.com/ousret/charset_normalizer
 
 # MIT
 PERMIT_PACKAGE=	Yes
+
+WANTLIB += m
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
