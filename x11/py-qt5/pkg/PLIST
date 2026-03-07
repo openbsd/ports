@@ -29,8 +29,6 @@ bin/pyuic5
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtTest${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtTextToSpeech${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtWebChannel${MODPY_ABI3SO}.so
-@so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtWebKit${MODPY_ABI3SO}.so
-@so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtWebKitWidgets${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtWebSockets${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtWidgets${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtX11Extras${MODPY_ABI3SO}.so
@@ -723,25 +721,6 @@ lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebChannel/QtWebChanne
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebChannel/QtWebChannelmod.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebChannel/qwebchannel.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebChannel/qwebchannelabstracttransport.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/QtWebKit.toml
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/QtWebKitmod.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/qwebdatabase.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/qwebelement.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/qwebhistory.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/qwebhistoryinterface.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/qwebkitglobal.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/qwebpluginfactory.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/qwebsecurityorigin.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKit/qwebsettings.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKitWidgets/
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKitWidgets/QtWebKitWidgets.toml
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKitWidgets/QtWebKitWidgetsmod.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKitWidgets/qgraphicswebview.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKitWidgets/qwebframe.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKitWidgets/qwebinspector.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKitWidgets/qwebpage.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebKitWidgets/qwebview.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebSockets/
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebSockets/QtWebSockets.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtWebSockets/QtWebSocketsmod.sip
@@ -964,6 +943,9 @@ lib/python${MODPY_VERSION}/site-packages/pyqt5-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pyqt5-${MODPY_DISTV}.dist-info/INSTALLER
 lib/python${MODPY_VERSION}/site-packages/pyqt5-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pyqt5-${MODPY_DISTV}.dist-info/RECORD
+lib/qt5/
+lib/qt5/plugins/
 lib/qt5/plugins/PyQt5/
 @so lib/qt5/plugins/PyQt5/libpyqt5qmlplugin.so
+lib/qt5/plugins/designer/
 @so lib/qt5/plugins/designer/libpyqt5.so

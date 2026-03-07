@@ -3,7 +3,7 @@ COMMENT=	Python bindings for Qt5
 MODPY_DISTV=	5.15.11
 DISTNAME=	PyQt5-${MODPY_DISTV}
 PKGNAME=	py-qt5-${MODPY_DISTV}
-REVISION=	3
+REVISION=	4
 
 DPB_PROPERTIES = parallel
 
@@ -21,9 +21,8 @@ WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5Nfc Qt5OpenGL Qt5Positioning
 WANTLIB += Qt5PositioningQuick Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5RemoteObjects Qt5Sensors
 WANTLIB += Qt5SerialPort Qt5Sql Qt5Svg Qt5Test Qt5TextToSpeech
-WANTLIB += Qt5WebChannel Qt5WebKit Qt5WebKitWidgets Qt5WebSockets
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns dbus-1
-WANTLIB += m ${MODPY_WANTLIB}
+WANTLIB += Qt5WebChannel Qt5WebSockets Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml Qt5XmlPatterns dbus-1 m ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=	devel/py-qt-builder \
 		devel/py-ply \
@@ -47,7 +46,6 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		x11/qt5/qtsvg \
 		x11/qt5/qttools \
 		x11/qt5/qtwebchannel \
-		x11/qt5/qtwebkit \
 		x11/qt5/qtwebsockets \
 		x11/qt5/qtx11extras \
 		x11/qt5/qtxmlpatterns
