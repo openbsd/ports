@@ -44,6 +44,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}creat
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}dump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}dump.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}export_key.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -95,13 +97,17 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/${MODPY_PYCACHE}bootstrap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/${MODPY_PYCACHE}generate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/${MODPY_PYCACHE}generate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/${MODPY_PYCACHE}show.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/${MODPY_PYCACHE}show.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/${MODPY_PYCACHE}validate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/${MODPY_PYCACHE}validate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/bootstrap.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/generate.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/show.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/validate.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/create.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/delete.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/diff.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/dump.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/export_key.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/export_tar.py
@@ -139,6 +145,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}create.$
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}environment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}environment.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}export_key.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -192,6 +200,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/check.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/compact.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/create.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/delete.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/diff.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/environment.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/export_key.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/export_tar.py
