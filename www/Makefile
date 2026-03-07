@@ -552,9 +552,6 @@
      SUBDIR += rt
      SUBDIR += ruby-addressable
      SUBDIR += ruby-capybara
-     SUBDIR += ruby-capybara-webkit,ruby33
-     SUBDIR += ruby-capybara-webkit,ruby34
-     SUBDIR += ruby-capybara-webkit,ruby40
      SUBDIR += ruby-ethon
      SUBDIR += ruby-faraday
      SUBDIR += ruby-faraday-follow_redirects
