@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
 ONLY_FOR_ARCHS-ada = amd64 mips64 powerpc # i386
-ONLY_FOR_ARCHS-dlang = # aarch64 amd64 # needs gdc from gcc-9+
+ONLY_FOR_ARCHS-dlang = aarch64 amd64 sparc64 # needs gdc from gcc-9+
 
 DPB_PROPERTIES = parallel
 
@@ -23,16 +23,17 @@ GCC_PKGSPEC = >=15,<16
 REVISION = 5
 REVISION-ada = 6
 REVISION-f95 = 6
+REVISION-dlang = 6
 
-# aarch64 bootstrap contains only gdc
-ADASTRAP-aarch64 = adastrap-aarch64-11.2.0-0.tar.xz
-ADASTRAP-amd64 = adastrap-amd64-11.2.0-5.tar.xz
-ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
-ADASTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
-ADASTRAP-i386 = adastrap-i386-11.2.0-4.tar.xz
-ADASTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
-ADASTRAP-powerpc = adastrap-powerpc-11.2.0-4.tar.xz
-ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
+# aarch64 and sparc64 bootstrap contain only gdc
+BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-15.2.0-0.tar.xz
+BOOTSTRAP-amd64 = gcc-bootstrap-amd64-15.2.0-0.tar.xz
+BOOTSTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
+BOOTSTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
+BOOTSTRAP-i386 = adastrap-i386-11.2.0-4.tar.xz
+BOOTSTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
+BOOTSTRAP-powerpc = adastrap-powerpc-11.2.0-4.tar.xz
+BOOTSTRAP-sparc64 = gcc-bootstrap-sparc64-15.2.0-0.tar.xz
 
 PKGNAME-main =	gcc-${FULL_PKGVERSION}
 PKGSPEC-main =	gcc-${GCC_PKGSPEC}
@@ -72,7 +73,7 @@ MULTI_PACKAGES = -main -libs -f95 -objc -c++ -ada -dlang
 DISTNAME =	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.xz
 .for _arch in ${ONLY_FOR_ARCHS-ada} ${ONLY_FOR_ARCHS-dlang}
-SUPDISTFILES.strap += ${ADASTRAP-${_arch}}
+SUPDISTFILES.strap += ${BOOTSTRAP-${_arch}}
 .endfor
 EXTRACT_ONLY =	${DISTFILES}
 
@@ -99,8 +100,8 @@ TEST_DEPENDS += devel/dejagnu \
 
 LANGS = c,c++,fortran,objc
 .if ${BUILD_PACKAGES:M-ada} || ${BUILD_PACKAGES:M-dlang}
-DISTFILES.strap += ${ADASTRAP-${MACHINE_ARCH}}
-EXTRACT_ONLY += ${ADASTRAP-${MACHINE_ARCH}}
+DISTFILES.strap += ${BOOTSTRAP-${MACHINE_ARCH}}
+EXTRACT_ONLY += ${BOOTSTRAP-${MACHINE_ARCH}}
 CC = ${WRKDIR}/bin/egcc
 CXX = ${WRKDIR}/bin/eg++
 GDC = ${WRKDIR}/bin/egdc
@@ -334,4 +335,4 @@ bootstrap: ${GCC_PACKAGE} ${GXX_PACKAGE}
 	done
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
 		${_PBUILD} xz -T0 | \
-		${_PFETCH} tee ${FULLDISTDIR}/bootstrap-${MACHINE_ARCH}-${PKGNAME}.tar.xz > /dev/null
+		${_PFETCH} tee ${FULLDISTDIR}/${BOOTSTRAP-${MACHINE_ARCH}} > /dev/null

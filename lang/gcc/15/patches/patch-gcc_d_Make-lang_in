@@ -1,3 +1,5 @@
+sparc64 needs -lestdc++ at the end
+
 Index: gcc/d/Make-lang.in
 --- gcc/d/Make-lang.in.orig
 +++ gcc/d/Make-lang.in
@@ -6,7 +8,16 @@ Index: gcc/d/Make-lang.in
  DCOMPILE = $(DCOMPILE.base) -MT $@ -MMD -MP -MF $(@D)/$(DEPDIR)/$(basename $(@F)).TPo
  DPOSTCOMPILE = @mv $(@D)/$(DEPDIR)/$(basename $(@F)).TPo $(@D)/$(DEPDIR)/$(basename $(@F)).Po
 -DLINKER = $(GDC) $(NO_PIE_FLAG) -lstdc++
-+DLINKER = $(GDC) $(NO_PIE_FLAG) -lestdc++
++DLINKER = $(GDC) $(NO_PIE_FLAG)
  
  # Like LINKER, but use a mutex for serializing front end links.
  ifeq ($(DO_LINK_MUTEX),true)
+@@ -244,7 +244,7 @@ d_OBJS = $(D_ALL_OBJS) d/d-spec.o
+ d21$(exeext): $(D_ALL_OBJS) attribs.o $(BACKEND) $(LIBDEPS) $(d.prev)
+ 	@$(call LINK_PROGRESS,$(INDEX.d),start)
+ 	+$(DLLINKER) $(ALL_LINKERFLAGS) $(LDFLAGS) -static-libphobos -o $@ \
+-		$(D_ALL_OBJS) attribs.o $(BACKEND) $(LIBS) $(BACKENDLIBS)
++		$(D_ALL_OBJS) attribs.o $(BACKEND) $(LIBS) $(BACKENDLIBS) -lestdc++
+ 	@$(call LINK_PROGRESS,$(INDEX.d),end)
+ 
+ # Documentation.

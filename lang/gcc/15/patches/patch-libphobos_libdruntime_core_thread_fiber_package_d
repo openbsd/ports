@@ -2,6 +2,8 @@ Add fibers for powerpc64 ELFv2, and fix fibers for 32-bit powerpc ELF.
 The old code was for some other platform (AIX?), not BSD nor Linux.
 This patch fixes OpenBSD but might break the other platform.
 
+Add fibers for sparc64 ELF for OpenBSD only.
+
 Index: libphobos/libdruntime/core/thread/fiber/package.d
 --- libphobos/libdruntime/core/thread/fiber/package.d.orig
 +++ libphobos/libdruntime/core/thread/fiber/package.d
@@ -37,7 +39,28 @@ Index: libphobos/libdruntime/core/thread/fiber/package.d
              version = AlignFiberStackTo16Byte;
          }
      }
-@@ -1075,27 +1083,22 @@ class Fiber : FiberBase (protected)
+@@ -182,6 +190,11 @@ package
+     }
+     else version (SPARC64)
+     {
++        version (Posix)
++        {
++            version = AsmSPARC64_Posix;
++            version = AsmExternal;
++        }
+         version = AlignFiberStackTo16Byte;
+     }
+     else version (LoongArch64)
+@@ -229,6 +242,8 @@ package
+         extern (C) void fiber_switchContext( void** oldp, void* newp ) nothrow @nogc;
+         version (AArch64)
+             extern (C) void fiber_trampoline() nothrow;
++        version (SPARC64)
++            extern (C) void fiber_trampoline() nothrow;
+     }
+     else
+     extern (C) void fiber_switchContext( void** oldp, void* newp ) nothrow @nogc
+@@ -1075,27 +1090,22 @@ class Fiber : FiberBase (protected)
          }
          else version (AsmPPC_Posix)
          {
@@ -76,3 +99,33 @@ Index: libphobos/libdruntime/core/thread/fiber/package.d
              }
  
              assert( (cast(size_t) pstack & 0x0f) == 0 );
+@@ -1248,6 +1258,29 @@ class Fiber : FiberBase (protected)
+             pstack -= size_t.sizeof * 11;    // skip past x19-x29
+             push(cast(size_t) &fiber_trampoline); // see threadasm.S for docs
+             pstack += size_t.sizeof;         // adjust sp (newp) above lr
++        }
++        else version (AsmSPARC64_Posix)
++        {
++            // FP regs and return address kept below tstack to hide from GC.
++            // See switchcontext.S for frame layout. tstack points to %l0.
++            //   [0-127]   - reserved (register window save area)
++            //   [RSA+0]   - %o7 (return address)
++            //   [RSA+8]   - %f32-%f62
++            //   [RSA+136] - %l0-%l7  <-- tstack
++            //   [RSA+200] - %i0-%i7
++
++            version (StackGrowsDown) {}
++            else
++                static assert(false, "Only full descending stacks supported on SPARC64");
++
++            enum RSA = 128;
++            enum FRAME_SIZE = 400;
++            enum TSTACK_OFFSET = RSA + 136;
++
++            (cast(ubyte*)pstack - (FRAME_SIZE + RSA))[0 .. FRAME_SIZE + RSA] = 0;
++            pstack -= FRAME_SIZE + RSA;
++            *cast(size_t*)(pstack + RSA) = cast(size_t) &fiber_trampoline - 8;
++            pstack += TSTACK_OFFSET;
+         }
+         else version (AsmARM_Posix)
+         {
