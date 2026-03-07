@@ -238,6 +238,7 @@
      SUBDIR += sqlite3-odbc
      SUBDIR += sqlite3-tcl
      SUBDIR += sqlitebrowser
+     SUBDIR += sqlitebrowser,sqlcipher
      SUBDIR += sqlports
      SUBDIR += sqsh
      SUBDIR += tdb

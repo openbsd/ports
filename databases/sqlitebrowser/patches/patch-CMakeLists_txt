@@ -1,17 +1,18 @@
-From f3335e3ceaea71bf2f4668116fb5bfd854c1e4f0 Mon Sep 17 00:00:00 2001
-From: Lucas Raab <tuftedocelot@fastmail.fm>
-Date: Sat, 12 Oct 2024 18:31:43 +0000
-Subject: [PATCH] Exclude OpenBSD from -ldl as libc provides it there
-
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -517,7 +517,7 @@ if((NOT WIN32 AND NOT APPLE) OR MINGW)
-     )
- endif()
+@@ -37,12 +37,14 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
+     MACOSX_BUNDLE ON
+ )
  
--if(UNIX)
-+if(UNIX AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
-     target_link_libraries(${PROJECT_NAME} dl)
- endif()
++if (GIT_COMMIT_HASH STREQUAL "")
+ execute_process(
+     COMMAND git -C ${CMAKE_CURRENT_SOURCE_DIR} rev-parse --short --verify HEAD
+     OUTPUT_VARIABLE GIT_COMMIT_HASH
+     OUTPUT_STRIP_TRAILING_WHITESPACE
+     ERROR_QUIET
+ )
++endif()
  
+ if (GIT_COMMIT_HASH STREQUAL "")
+     MESSAGE(WARNING "Could not determine git commit hash")
