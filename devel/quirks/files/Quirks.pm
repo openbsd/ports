@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1792 2026/03/07 16:08:39 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1793 2026/03/07 18:01:03 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1058,6 +1058,7 @@ setup_obsolete_reason(
 	1 => 'ruby33-capybara-webkit',
 	1 => 'ruby34-capybara-webkit',
 	1 => 'ruby40-capybara-webkit',
+	2 => 'qtwebkit',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later
