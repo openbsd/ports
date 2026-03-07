@@ -8,18 +8,18 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel parallel2
 
-DISTNAME =	qgis-3.44.7
+DISTNAME =	qgis-4.0.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	85.0 \
-		qgis_app	53.1 \
-		qgis_gui	61.0 \
-		qgis_analysis	30.0 \
-		qgis_server	22.0 \
+SHARED_LIBS =	qgis_core	86.0 \
+		qgis_app	54.0 \
+		qgis_gui	62.0 \
+		qgis_analysis	31.0 \
+		qgis_server	23.0 \
 		qgispython	6.0 \
-		qgis_3d		24.0 \
+		qgis_3d		25.0 \
 		qgis_native	0.3
 
 HOMEPAGE =	https://www.qgis.org/
@@ -31,34 +31,12 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 SITES =		${HOMEPAGE}downloads/
 
-FLAVORS =	qt6
-FLAVOR ?=
-
-.if ${FLAVOR} == "qt6"
 QTVER =		qt6
 UQTV=		Qt6
-CONFIGURE_ARGS =-DBUILD_WITH_QT6=ON \
-		-DWITH_QTWEBENGINE=ON \
-		-DWITH_QTWEBKIT=OFF
-
-# https://github.com/qgis/QGIS/pull/55671 need to port pdf4qt
-LIB_DEPENDS +=	x11/qt6/qtwebengine
-WANTLIB +=	Qt6Core5Compat Qt6OpenGL Qt6OpenGLWidgets Qt6SvgWidgets
-WANTLIB +=	Qt6UiTools Qt6WebChannel Qt6WebEngineCore qwt-qt6
-WANTLIB +=	Qt6QmlMeta Qt6QmlWorkerScript Qt6WebEngineWidgets
-.else
-QTVER =		qt5
-UQTV=		Qt5
-
-LIB_DEPENDS +=	x11/qt5/qtwebkit
-WANTLIB +=	Qt5Gamepad Qt5WebKit Qt5WebKitWidgets qwt
-.endif
 
 MODULES =	devel/cmake \
 		x11/${QTVER} \
 		lang/python
-
-SUBST_VARS +=	QTVER
 
 COMPILER =	base-clang ports-gcc
 
@@ -66,13 +44,13 @@ BUILD_DEPENDS =	devel/bison>=2.4 \
 		devel/py-qt-builder \
 		devel/py-sip \
 		devel/py-six \
-		editors/py-qscintilla,${FLAVOR} \
+		editors/py-qscintilla,${QTVER} \
 		geo/gdal,-python \
 		x11/py-${QTVER}
 
 RUN_DEPENDS =	databases/py-psycopg2 \
 		devel/desktop-file-utils \
-		editors/py-qscintilla,${FLAVOR} \
+		editors/py-qscintilla,${QTVER} \
 		geo/gdal,-python \
 		geo/py-owslib \
 		misc/shared-mime-info \
@@ -83,7 +61,7 @@ RUN_DEPENDS =	databases/py-psycopg2 \
 		x11/gtk+4,-guic \
 		x11/py-${QTVER}
 
-LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
+LIB_DEPENDS +=	${MODPY_LIB_DEPENDS} \
 		archivers/draco \
 		archivers/libzip \
 		databases/postgresql \
@@ -91,33 +69,38 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/gsl \
 		devel/proj \
 		devel/protobuf \
-		editors/qscintilla,${FLAVOR} \
+		editors/qscintilla,${QTVER} \
 		geo/gdal \
 		geo/geos \
 		geo/mdal \
 		geo/pdal \
+		geo/sfcgal \
 		geo/spatialindex \
 		geo/spatialite/libspatialite \
 		graphics/exiv2 \
 		security/qca-${QTVER} \
-		security/qtkeychain,${FLAVOR} \
+		security/qtkeychain,${QTVER} \
 		www/fcgi \
+		x11/${QTVER}/qtwebengine \
 		x11/${QTVER}/qt3d \
-		x11/qwt,${FLAVOR}
+		x11/qwt,${QTVER}
 
 # Qt common wantlibs
 WANTLIB += ${COMPILER_LIBCXX} ${UQTV}3DCore ${UQTV}3DExtras
 WANTLIB += ${UQTV}3DInput ${UQTV}3DLogic ${UQTV}3DRender ${UQTV}Concurrent
 WANTLIB += ${UQTV}Core ${UQTV}DBus ${UQTV}Gui
 WANTLIB += ${UQTV}Multimedia ${UQTV}MultimediaWidgets ${UQTV}Network
-WANTLIB += ${UQTV}Positioning ${UQTV}PrintSupport ${UQTV}Qml ${UQTV}QmlModels
+WANTLIB += ${UQTV}Positioning ${UQTV}PrintSupport ${UQTV}Qml
 WANTLIB += ${UQTV}Quick ${UQTV}QuickWidgets ${UQTV}SerialPort ${UQTV}Sql ${UQTV}Svg
 WANTLIB += ${UQTV}Test ${UQTV}Widgets ${UQTV}Xml
+WANTLIB += ${UQTV}Core5Compat ${UQTV}OpenGL ${UQTV}OpenGLWidgets ${UQTV}SvgWidgets
+WANTLIB += ${UQTV}UiTools ${UQTV}WebChannel ${UQTV}WebEngineCore qwt-${QTVER}
+WANTLIB += ${UQTV}WebEngineWidgets ${UQTV}QuickControls2
 
 WANTLIB += c draco exiv2 expat fcgi freexl gdal geos_c gsl gslcblas iconv intl m
 WANTLIB += mdal minizip pdalcpp pq proj protobuf-lite ${MODPY_WANTLIB}
 WANTLIB += qca-${QTVER} qscintilla2_${QTVER} ${QTVER}keychain rttopo spatialindex
-WANTLIB += spatialite sqlite3 sz util zip hdf5 xml2 z zstd GL
+WANTLIB += spatialite sqlite3 sz util zip hdf5 xml2 z zstd GL SFCGAL
 
 # absl wantlibs
 WANTLIB += absl_base
@@ -154,9 +137,11 @@ WANTLIB += absl_tracing_internal
 
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS +=-DPYTHON_EXECUTABLE=${MODPY_BIN} \
+		-DWITH_QTWEBENGINE=ON \
 		-DWITH_INTERNAL_MDAL=FALSE \
 		-DWITH_3D=TRUE \
 		-DWITH_PDAL=TRUE \
+		-DWITH_SFCGAL=TRUE \
 		-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_QSPATIALITE=TRUE
 
 

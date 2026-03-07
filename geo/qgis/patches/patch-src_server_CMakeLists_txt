@@ -3,7 +3,16 @@ install qgis_server additional files to share/qgis
 Index: src/server/CMakeLists.txt
 --- src/server/CMakeLists.txt.orig
 +++ src/server/CMakeLists.txt
-@@ -184,7 +184,7 @@ install(TARGETS
+@@ -196,7 +196,7 @@ endif()
+ install(CODE "message(\"Installing server...\")")
+ install(TARGETS
+   qgis_mapserv.fcgi
+-  DESTINATION ${QGIS_CGIBIN_DIR}
++  DESTINATION ${QGIS_BIN_DIR}
+ )
+ 
+ install(TARGETS
+@@ -205,7 +205,7 @@ install(TARGETS
  )
  
  install(FILES
