@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1791 2026/03/04 05:59:02 thfr Exp $
+# $OpenBSD: Quirks.pm,v 1.1792 2026/03/07 16:08:39 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1055,6 +1055,9 @@ setup_obsolete_reason(
 	17 => 'onionshare-gui',
 	48 => 'phpldapadmin',
 	9 => 'pypy',
+	1 => 'ruby33-capybara-webkit',
+	1 => 'ruby34-capybara-webkit',
+	1 => 'ruby40-capybara-webkit',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later
