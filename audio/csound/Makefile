@@ -1,12 +1,12 @@
 COMMENT =		sound and music computing system
 
-DIST_TUPLE =		github csound csound 7.0.0-beta.13 .
+DIST_TUPLE =		github csound csound 7.0.0-beta.14 .
 
-PKGNAME =		csound-7.0.0beta13
+PKGNAME =		csound-7.0.0beta14
 
 CATEGORIES =		audio
 
-SHARED_LIBS +=		csound64		0.0 # 0.0
+SHARED_LIBS +=		csound64		1.0 # 0.0
 
 HOMEPAGE =		https://csound.com
 
