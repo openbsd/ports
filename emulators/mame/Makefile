@@ -8,8 +8,8 @@ COMMENT =	Multiple Arcade Machine Emulator
 V =		286
 GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
-GH_TAGNAME =	mame0${V}
-DISTNAME =	mame-0.${V}
+GH_COMMIT =	93bb4549255f94d83ed599d5f80600371ad24a34
+DISTNAME =	mame-0.${V}pl20260306
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://mamedev.org/
