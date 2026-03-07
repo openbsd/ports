@@ -1,6 +1,6 @@
 COMMENT=	character set detector library
 
-MODPY_DISTV=	3.4.4
+MODPY_DISTV=	3.4.5
 DISTNAME=	charset_normalizer-${MODPY_DISTV}
 PKGNAME=	py-charset-normalizer-${MODPY_DISTV}
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	devel/py-mypy<=1.18.2 \
 		devel/py-setuptools<=81v0
 
 MODULES=	lang/python
+# uses own backend wrapping setuptools
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
