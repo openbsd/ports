@@ -5,15 +5,15 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			6.5.1
+V =			6.6.2
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
 
 DPB_PROPERTIES =	parallel
 
-# XXX CMake fails to install the binary during fake under debug builds:
-#   No valid ELF RPATH or RUNPATH entry exists in the file;
+# XXX Telegram is too big;  first it needs dwz(1) -L bumping to 150 million,
+# then it dies with "elf_update failed" (most likely OOM).
 #DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
