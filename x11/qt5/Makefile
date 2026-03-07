@@ -31,7 +31,6 @@
      SUBDIR += qtwayland
      SUBDIR += qtwebengine
      SUBDIR += qtwebglplugin
-     SUBDIR += qtwebkit
      SUBDIR += qtwebsockets
      SUBDIR += qtwebview
      SUBDIR += qtx11extras
