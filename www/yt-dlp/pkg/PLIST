@@ -1821,6 +1821,8 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}tf1.${
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}tf1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}tfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}tfo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}thechosen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}thechosen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}theguardian.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}theguardian.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}thehighwire.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3027,6 +3029,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/tenplay.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/testurl.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/tf1.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/tfo.py
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/thechosen.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/theguardian.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/thehighwire.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/theholetv.py
