@@ -78,7 +78,6 @@
      SUBDIR += py-xyzservices
      SUBDIR += pygeoapi
      SUBDIR += qgis
-     SUBDIR += qgis,qt6
      SUBDIR += qmapshack
      SUBDIR += routino
      SUBDIR += sfcgal
