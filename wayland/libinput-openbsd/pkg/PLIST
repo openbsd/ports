@@ -16,6 +16,7 @@ lib/pkgconfig/libinput.pc
 @man man/man1/libinput-analyze-touch-down-state.1
 @man man/man1/libinput-analyze.1
 @man man/man1/libinput-debug-events.1
+@man man/man1/libinput-debug-tablet-pad.1
 @man man/man1/libinput-debug-tablet.1
 @man man/man1/libinput-list-devices.1
 @man man/man1/libinput-list-kernel-devices.1
@@ -43,6 +44,7 @@ share/libinput/30-vendor-contour.quirks
 share/libinput/30-vendor-cypress.quirks
 share/libinput/30-vendor-elantech.quirks
 share/libinput/30-vendor-glorious.quirks
+share/libinput/30-vendor-goodix.quirks
 share/libinput/30-vendor-huion.quirks
 share/libinput/30-vendor-ibm.quirks
 share/libinput/30-vendor-ite.quirks
@@ -50,6 +52,7 @@ share/libinput/30-vendor-kensington.quirks
 share/libinput/30-vendor-logitech.quirks
 share/libinput/30-vendor-madcatz.quirks
 share/libinput/30-vendor-microsoft.quirks
+share/libinput/30-vendor-nulea.quirks
 share/libinput/30-vendor-oracle.quirks
 share/libinput/30-vendor-qemu.quirks
 share/libinput/30-vendor-razer.quirks
@@ -70,8 +73,10 @@ share/libinput/50-system-gigabyte.quirks
 share/libinput/50-system-google.quirks
 share/libinput/50-system-gpd.quirks
 share/libinput/50-system-graviton.quirks
+share/libinput/50-system-honor.quirks
 share/libinput/50-system-hp.quirks
 share/libinput/50-system-huawei.quirks
+share/libinput/50-system-icl.quirks
 share/libinput/50-system-lenovo.quirks
 share/libinput/50-system-lg.quirks
 share/libinput/50-system-minisforum.quirks
@@ -79,6 +84,7 @@ share/libinput/50-system-pine64.quirks
 share/libinput/50-system-sony.quirks
 share/libinput/50-system-starlabs.quirks
 share/libinput/50-system-system76.quirks
+share/libinput/50-system-tongfang.quirks
 share/libinput/50-system-toshiba.quirks
 share/libinput/50-system-vaio.quirks
 share/zsh/
