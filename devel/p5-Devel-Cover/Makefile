@@ -1,11 +1,13 @@
 COMMENT =	code coverage metrics for Perl
 
-DISTNAME =	Devel-Cover-1.51
+DISTNAME =	Devel-Cover-1.52
 
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		PJCJ
 
 WANTLIB =		c perl
 

@@ -7,7 +7,8 @@ ${P5ARCH}/Devel/Cover.pm
 ${P5ARCH}/Devel/Cover/Annotation/
 ${P5ARCH}/Devel/Cover/Annotation/Git.pm
 ${P5ARCH}/Devel/Cover/Annotation/Random.pm
-${P5ARCH}/Devel/Cover/Annotation/Svk.pm
+${P5ARCH}/Devel/Cover/Base/
+${P5ARCH}/Devel/Cover/Base/Editor.pm
 ${P5ARCH}/Devel/Cover/Branch.pm
 ${P5ARCH}/Devel/Cover/Collection.pm
 ${P5ARCH}/Devel/Cover/Condition.pm
@@ -62,7 +63,7 @@ ${P5ARCH}/auto/Devel/Cover/
 @man man/man3p/Devel::Cover.3p
 @man man/man3p/Devel::Cover::Annotation::Git.3p
 @man man/man3p/Devel::Cover::Annotation::Random.3p
-@man man/man3p/Devel::Cover::Annotation::Svk.3p
+@man man/man3p/Devel::Cover::Base::Editor.3p
 @man man/man3p/Devel::Cover::Branch.3p
 @man man/man3p/Devel::Cover::Collection.3p
 @man man/man3p/Devel::Cover::Condition.3p
