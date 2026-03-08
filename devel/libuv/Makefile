@@ -1,6 +1,6 @@
 COMMENT =	multi-platform library for asynchronous I/O
 
-VER =		1.52.0
+VER =		1.52.1
 DISTNAME =	libuv-v${VER}
 PKGNAME =	libuv-${VER}
 CATEGORIES =	devel
