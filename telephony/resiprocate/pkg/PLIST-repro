@@ -81,7 +81,6 @@ include/repro/monkeys/SimpleStaticRoute.hxx
 include/repro/monkeys/SimpleTargetHandler.hxx
 include/repro/monkeys/StaticRoute.hxx
 include/repro/monkeys/StrictRouteFixup.hxx
-include/repro/reproInfo.hxx
 include/repro/stateAgents/
 include/repro/stateAgents/CertPublicationHandler.hxx
 include/repro/stateAgents/CertServer.hxx
@@ -91,8 +90,7 @@ include/repro/stateAgents/PresenceServer.hxx
 include/repro/stateAgents/PresenceSubscriptionHandler.hxx
 include/repro/stateAgents/PrivateKeyPublicationHandler.hxx
 include/repro/stateAgents/PrivateKeySubscriptionHandler.hxx
-lib/librepro.la
-@lib lib/librepro.so.${LIBrepro_VERSION}
+@lib lib/libreprolib.so.${LIBreprolib_VERSION}
 lib/resiprocate/repro/
 lib/resiprocate/repro/plugins/
 @so lib/resiprocate/repro/plugins/libexample.so
@@ -105,6 +103,7 @@ share/doc/resiprocate/
 share/doc/resiprocate/repro/
 share/doc/resiprocate/repro/README_MySQL.txt
 share/doc/resiprocate/repro/README_PostgreSQL.txt
+share/doc/resiprocate/repro/README_schema.txt
 share/doc/resiprocate/repro/create_mysql_reprodb.sql
 share/doc/resiprocate/repro/create_postgresql_reprodb.sql
 share/examples/resiprocate/repro/

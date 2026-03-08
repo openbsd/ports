@@ -1,3 +1,4 @@
+@bin bin/sipdialer
 include/resip/
 include/resip/dum/
 include/resip/dum/AppDialog.hxx
@@ -177,6 +178,7 @@ include/resip/stack/KeepAliveMessage.hxx
 include/resip/stack/KeepAlivePong.hxx
 include/resip/stack/LazyParser.hxx
 include/resip/stack/MarkListener.hxx
+include/resip/stack/MediaControlContents.hxx
 include/resip/stack/Message.hxx
 include/resip/stack/MessageDecorator.hxx
 include/resip/stack/MessageFilterRule.hxx
@@ -210,6 +212,7 @@ include/resip/stack/QValue.hxx
 include/resip/stack/QValueParameter.hxx
 include/resip/stack/QuotedDataParameter.hxx
 include/resip/stack/RAckCategory.hxx
+include/resip/stack/ReceivedParameter.hxx
 include/resip/stack/RemoveTransport.hxx
 include/resip/stack/RequestLine.hxx
 include/resip/stack/Rlmi.hxx
@@ -256,6 +259,7 @@ include/resip/stack/TransportFailure.hxx
 include/resip/stack/TransportSelector.hxx
 include/resip/stack/TransportSelectorThread.hxx
 include/resip/stack/TransportThread.hxx
+include/resip/stack/TrickleIceContents.hxx
 include/resip/stack/TuIM.hxx
 include/resip/stack/TuSelector.hxx
 include/resip/stack/Tuple.hxx
@@ -293,6 +297,7 @@ include/resip/stack/ssl/TlsTransport.hxx
 include/resip/stack/ssl/WinSecurity.hxx
 include/resip/stack/ssl/WssConnection.hxx
 include/resip/stack/ssl/WssTransport.hxx
+include/resip/version.h
 include/rutil/
 include/rutil/AbstractFifo.hxx
 include/rutil/AndroidLogger.hxx
@@ -307,6 +312,7 @@ include/rutil/ConfigParse.hxx
 include/rutil/CongestionManager.hxx
 include/rutil/ConsumerFifoBuffer.hxx
 include/rutil/CountStream.hxx
+include/rutil/Crc32.hxx
 include/rutil/Data.hxx
 include/rutil/DataException.hxx
 include/rutil/DataStream.hxx
@@ -327,27 +333,28 @@ include/rutil/Inserter.hxx
 include/rutil/IntrusiveListElement.hxx
 include/rutil/KeyValueStore.hxx
 include/rutil/Lock.hxx
-include/rutil/Lockable.hxx
 include/rutil/Log.hxx
 include/rutil/Logger.hxx
 include/rutil/MD5Stream.hxx
+include/rutil/MediaConstants.hxx
 include/rutil/Mutex.hxx
 include/rutil/NetNs.hxx
 include/rutil/ParseBuffer.hxx
 include/rutil/ParseException.hxx
+include/rutil/Plugin.hxx
 include/rutil/Poll.hxx
 include/rutil/PoolBase.hxx
 include/rutil/ProducerFifoBuffer.hxx
+include/rutil/ProtonThreadBase.hxx
+include/rutil/PyExtensionBase.hxx
+include/rutil/PyThreadSupport.hxx
 include/rutil/RADIUSDigestAuthenticator.hxx
 include/rutil/RWMutex.hxx
 include/rutil/Random.hxx
-include/rutil/RecursiveMutex.hxx
 include/rutil/ResipAssert.h
 include/rutil/SelectInterruptor.hxx
 include/rutil/ServerProcess.hxx
 include/rutil/Sha1.hxx
-include/rutil/SharedCount.hxx
-include/rutil/SharedPtr.hxx
 include/rutil/Socket.hxx
 include/rutil/StlPoolAllocator.hxx
 include/rutil/Subsystem.hxx
@@ -386,7 +393,10 @@ include/rutil/hep/
 include/rutil/hep/HepAgent.hxx
 include/rutil/hep/ResipHep.hxx
 include/rutil/resipfaststreams.hxx
+include/rutil/rtcp/
+include/rutil/rtcp/re_rtp.h
 include/rutil/ssl/
+include/rutil/ssl/OpenSSLDeleter.hxx
 include/rutil/ssl/OpenSSLInit.hxx
 include/rutil/ssl/SHA1Stream.hxx
 include/rutil/stun/
@@ -396,10 +406,14 @@ include/rutil/vmd5.hxx
 include/rutil/vthread.hxx
 include/rutil/wince/
 include/rutil/wince/WceCompat.hxx
-lib/libdum.la
+include/sipdial/
+include/sipdial/DialInstance.hxx
+include/sipdial/DialerConfiguration.hxx
+include/sipdial/MyInviteSessionHandler.hxx
 @lib lib/libdum.so.${LIBdum_VERSION}
-lib/libresip.la
 @lib lib/libresip.so.${LIBresip_VERSION}
-lib/librutil.la
 @lib lib/librutil.so.${LIBrutil_VERSION}
+@so lib/libsipdial.so
 lib/resiprocate/
+@man man/man1/sipdialer.1
+sbin/reTurnServer.config

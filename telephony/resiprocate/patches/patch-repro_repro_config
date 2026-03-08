@@ -19,9 +19,9 @@ Index: repro/repro.config
 -LogFilename = repro.log
 +LogFilename = /var/log/repro/repro.log
  
- # Log file Max Bytes.  This setting is only applicable when LoggingType is set to file.
- LogFileMaxBytes = 5242880
-@@ -172,7 +172,7 @@ TLSUseEmailAsSIP = false
+ # Log message structure: Unstructured or JSON_CEE
+ LogMessageStructure = Unstructured
+@@ -178,7 +178,7 @@ TLSUseEmailAsSIP = false
  #
  #     openssl dhparam -outform PEM -out dh2048.pem 2048
  #
@@ -30,7 +30,7 @@ Index: repro/repro.config
  
  # Alternate and more flexible method to specify transports to bind to.  If specified here
  # then IPAddress, and port settings above are ignored.
-@@ -212,8 +212,8 @@ TlsDHParamsFilename = dh2048.pem
+@@ -218,8 +218,8 @@ TlsDHParamsFilename = dh2048.pem
  # Transport3Interface = 192.168.1.106:5061
  # Transport3Type = TLS
  # Transport3TlsDomain = sipdomain.com
@@ -41,7 +41,7 @@ Index: repro/repro.config
  # Transport3TlsPrivateKeyPassPhrase = password
  # Transport3TlsClientVerification = Mandatory
  # Transport3RecordRouteUri = sip:h1.sipdomain.com;transport=TLS
-@@ -266,12 +266,12 @@ HttpAdminRealm = repro
+@@ -272,12 +272,12 @@ HttpAdminRealm = repro
  #
  #   user = admin
  #   realm = the value from HttpAdminRealm
@@ -56,7 +56,7 @@ Index: repro/repro.config
  
  # Comma separated list of IP addresses used for binding the Command Server listeners.
  # If left blank it will bind to all adapters.
-@@ -327,7 +327,7 @@ EnablePublicationReplication = true
+@@ -341,7 +341,7 @@ EnablePublicationReplication = true
  # The default is determined at build time depending upon the
  # target environment and the installation prefix passed to
  # the configure script
@@ -65,7 +65,7 @@ Index: repro/repro.config
  
  # List of plugins to load (comma-separated list)
  # These are the names of the plugins and not the full filenames
-@@ -345,11 +345,11 @@ EnablePublicationReplication = true
+@@ -359,11 +359,11 @@ EnablePublicationReplication = true
  # the specified user
  # If neither option is specified, then no attempt will be made
  # to call setuid/setgid (there is no default value)
@@ -80,7 +80,7 @@ Index: repro/repro.config
  
  # On UNIX it is normal to create a PID file
  # if unspecified, no attempt will be made to create a PID file
-@@ -398,6 +398,7 @@ Daemonize = false
+@@ -414,6 +414,7 @@ Daemonize = false
  #CAFile = /etc/ssl/certs/ca-certificates.crt
  # Uncomment for Fedora, Red Hat, CentOS:
  #CAFile = /etc/pki/tls/cert.pem
@@ -88,7 +88,7 @@ Index: repro/repro.config
  
  # Certificates in this location have to match one of the filename
  # patterns expected by the legacy reSIProcate SSL code:
-@@ -465,7 +466,7 @@ DefaultDatabase = 1
+@@ -484,7 +485,7 @@ DefaultDatabase = 1
  
  # Defines a BerkeleyDB storing the files in Database1Path:
  Database1Type = BerkeleyDB

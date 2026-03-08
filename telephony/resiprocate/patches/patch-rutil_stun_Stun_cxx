@@ -1,20 +1,20 @@
 Index: rutil/stun/Stun.cxx
 --- rutil/stun/Stun.cxx.orig
 +++ rutil/stun/Stun.cxx
-@@ -802,6 +802,9 @@ stunRand()
+@@ -905,6 +905,9 @@ stunRand()
  {
     // return 32 bits of random stuff
-    resip_assert( sizeof(int) == 4 );
+    resip_assert(sizeof(int) == 4);
 +#if defined(__OpenBSD__)
 +   return arc4random();
 +#else
-    static bool init=false;
-    if ( !init )
-    { 
-@@ -857,6 +860,7 @@ stunRand()
+    static bool init = false;
+    if (!init)
+    {
+@@ -960,6 +963,7 @@ stunRand()
     return ret;
  #else
-    return random(); 
+    return random();
 +#endif
  #endif
  }

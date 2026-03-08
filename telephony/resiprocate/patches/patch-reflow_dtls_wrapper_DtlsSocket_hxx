@@ -1,0 +1,18 @@
+Index: reflow/dtls_wrapper/DtlsSocket.hxx
+--- reflow/dtls_wrapper/DtlsSocket.hxx.orig
++++ reflow/dtls_wrapper/DtlsSocket.hxx
+@@ -14,11 +14,13 @@ extern "C" 
+ #include "../Srtp2Helper.hxx"
+ }
+ 
+-#include <openssl/e_os2.h>
+ #include <openssl/rand.h>
+ #include <openssl/err.h>
+ #include <openssl/crypto.h>
+ #include <openssl/ssl.h>
++#ifndef LIBRESSL_VERSION_NUMBER
++#include <openssl/e_os2.h>
++#endif
+ 
+ namespace dtls
+ {

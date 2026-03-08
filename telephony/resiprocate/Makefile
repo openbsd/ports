@@ -2,9 +2,11 @@ COMMENT-main =		reSIProcate SIP stack
 COMMENT-repro =		reSIProcate SIP proxy/registrar server
 COMMENT-return =	reSIProcate STUN/TURN client and server
 
-V =			1.12.0
-DISTNAME =		resiprocate-${V}
-REVISION =		7
+V =			1.13.2
+GH_ACCOUNT =		resiprocate
+GH_PROJECT =		resiprocate
+GH_TAGNAME =		resiprocate-${V}
+
 PKGNAME-main =		resiprocate-${V}
 PKGNAME-repro =		resiprocate-repro-${V}
 PKGNAME-return =	resiprocate-return-${V}
@@ -12,7 +14,7 @@ PKGNAME-return =	resiprocate-return-${V}
 SHARED_LIBS +=	dum		0.0
 SHARED_LIBS +=	reTurnClient	0.0
 SHARED_LIBS +=	reTurnCommon	0.0
-SHARED_LIBS +=	repro		0.0
+SHARED_LIBS +=	reprolib	0.0
 SHARED_LIBS +=	resip		0.0
 SHARED_LIBS +=	rutil		0.0
 
@@ -24,89 +26,55 @@ HOMEPAGE =		https://www.resiprocate.org
 # https://github.com/resiprocate/resiprocate/blob/master/COPYING
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main += ${COMPILER_LIBCXX} cares crypto ffi gmp gnutls hogweed
-WANTLIB-main += iconv idn2 intl m nettle p11-kit radcli ssl tasn1 unistring
-WANTLIB-main += brotlidec brotlienc z zstd
-
-WANTLIB-repro += ${WANTLIB-main} c db_cxx dum mariadb pq resip rutil
-
-WANTLIB-return += ${WANTLIB-main} c rutil
-
-SITES =		https://www.resiprocate.org/files/pub/reSIProcate/releases/
-
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			resiprocate-contrib-${V}${EXTRACT_SUFX}
+WANTLIB =		${COMPILER_LIBCXX} crypto m radcli ssl
+WANTLIB-main =		${WANTLIB} c cares
+WANTLIB-repro =		${WANTLIB} c db db_cxx dum mariadb pq resip rutil
+WANTLIB-return =	${WANTLIB} c rutil
 
 COMPILER =		base-clang ports-gcc
 
-CXXFLAGS_base-clang =	-std=c++14
-
-BUILD_DEPENDS =		devel/gperf
+BUILD_DEPENDS =		devel/gperf \
+			devel/boost \
+			devel/asio
 LIB_DEPENDS-main =	net/libcares \
 			net/radcli
 LIB_DEPENDS-repro =	${BUILD_PKGPATH},-main=${V} \
 			databases/db/v4 \
 			databases/mariadb \
 			databases/postgresql
-LIB_DEPENDS-return =	${BUILD_PKGPATH},-main=${V} \
-			devel/boost
+LIB_DEPENDS-return =	${BUILD_PKGPATH},-main=${V}
 
-USE_GMAKE =		Yes
+MODULES =		devel/cmake
+CONFIGURE_ARGS =	-DUSE_MAXMIND_GEOIP=FALSE \
+			-DUSE_POSTGRESQL=TRUE \
+			-DUSE_MYSQL=TRUE \
+			-DRESIP_HAVE_RADCLI=TRUE \
+			-DBUILD_QPID_PROTON=FALSE \
+			-DBUILD_TFM=FALSE \
+			-DBUILD_RECON=FALSE \
+			-DBUILD_REFLOW=FALSE \
+			-DBERKELEYDB_INCLUDE_DIR=${LOCALBASE}/include/db4 \
+			-DENABLE_LOG_REPOSITORY_DETAILS=OFF \
+			-DVERSIONED_SONAME=OFF
 
-LIBTOOL_FLAGS =		--tag=disable-static
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-static \
-			--enable-dtls \
-			--enable-ipv6 \
-			--with-c-ares \
-			--with-mysql \
-			--with-popt \
-			--with-postgresql \
-			--with-radcli \
-			--with-ssl
-CONFIGURE_ENV =		CPPFLAGS="-I${WRKSRC}/contrib/asio/include \
-			-I${WRKSRC}/contrib/cajun/include \
-			-I${LOCALBASE}/include/db4 \
-			-I${LOCALBASE}/include/postgresql \
-			-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/db4"
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+CXXFLAGS =		-I${LOCALBASE}/include
 
 MULTI_PACKAGES =	-main -repro -return
-
-PSEUDO_FLAVORS =	no_repro no_return
-FLAVOR ?=
-
-.include <bsd.port.arch.mk>
-
-.if ${BUILD_PACKAGES:M-repro}
-CONFIGURE_ARGS += --enable-repro-plugins \
-		  --with-repro
-.endif
-
-.if ${BUILD_PACKAGES:M-return}
-CONFIGURE_ARGS += --with-return
-.endif
-
-post-extract:
-	mv ${WRKDIR}/contrib ${WRKSRC}
+PORTHOME =		${WRKDIR}
 
 post-install:
-.if ${BUILD_PACKAGES:M-repro}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/resiprocate/repro
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/resiprocate/{repro,reTurn}
 	${INSTALL_DATA} ${WRKSRC}/repro/{README*,create*_reprodb.sql} \
 		${PREFIX}/share/doc/resiprocate/repro
 	${SUBST_DATA} ${WRKSRC}/repro/repro.config \
 		${PREFIX}/share/examples/resiprocate/repro/repro.config
 	${INSTALL_DATA} ${WRKSRC}/repro/users.txt \
 		${PREFIX}/share/examples/resiprocate/repro
-	rm ${PREFIX}/lib/resiprocate/repro/plugins/*.la
-.endif
-.if ${BUILD_PACKAGES:M-return}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/resiprocate/reTurn
+
 	${SUBST_DATA} ${WRKSRC}/reTurn/reTurnServer.config \
 		${PREFIX}/share/examples/resiprocate/reTurn/reTurnServer.config
 	${INSTALL_DATA} ${WRKSRC}/reTurn/users.txt \
 		${PREFIX}/share/examples/resiprocate/reTurn
-.endif
 
 .include <bsd.port.mk>

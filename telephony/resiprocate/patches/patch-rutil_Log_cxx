@@ -1,0 +1,21 @@
+Index: rutil/Log.cxx
+--- rutil/Log.cxx.orig
++++ rutil/Log.cxx
+@@ -14,6 +14,7 @@
+ 
+ #include <sys/types.h>
+ #include <time.h>
++#include <unistd.h>
+ 
+ #include "rutil/Log.hxx"
+ #include "rutil/Logger.hxx"
+@@ -625,6 +626,9 @@ Log::tags(Log::Level level,
+ #if defined( __APPLE__ )
+    uint64_t threadId;
+    pthread_threadid_np(nullptr, &threadId);
++   const char* file = pfile;
++#elif defined( __OpenBSD__ )
++   std::make_unsigned<pid_t>::type threadId = getthrid();
+    const char* file = pfile;
+ #elif defined( WIN32 )
+    int threadId = (int)GetCurrentThreadId();
