@@ -17,6 +17,7 @@ libdata/spdx_licenses/precheck/AGPL-1.0-only.json
 libdata/spdx_licenses/precheck/AGPL-1.0-or-later.json
 libdata/spdx_licenses/precheck/AGPL-3.0-only.json
 libdata/spdx_licenses/precheck/AGPL-3.0-or-later.json
+libdata/spdx_licenses/precheck/ALGLIB-Documentation.json
 libdata/spdx_licenses/precheck/AMD-newlib.json
 libdata/spdx_licenses/precheck/AMDPLPA.json
 libdata/spdx_licenses/precheck/AML-glslang.json
@@ -37,6 +38,7 @@ libdata/spdx_licenses/precheck/AdaCore-doc.json
 libdata/spdx_licenses/precheck/Adobe-2006.json
 libdata/spdx_licenses/precheck/Adobe-Glyph.json
 libdata/spdx_licenses/precheck/Adobe-Utopia.json
+libdata/spdx_licenses/precheck/Advanced-Cryptics-Dictionary.json
 libdata/spdx_licenses/precheck/Afmparse.json
 libdata/spdx_licenses/precheck/Aladdin.json
 libdata/spdx_licenses/precheck/Apache-1.0.json
@@ -57,6 +59,7 @@ libdata/spdx_licenses/precheck/Autoconf-exception-3.0.json
 libdata/spdx_licenses/precheck/Autoconf-exception-generic-3.0.json
 libdata/spdx_licenses/precheck/Autoconf-exception-generic.json
 libdata/spdx_licenses/precheck/Autoconf-exception-macro.json
+libdata/spdx_licenses/precheck/BOLA-1.1.json
 libdata/spdx_licenses/precheck/BSD-1-Clause.json
 libdata/spdx_licenses/precheck/BSD-2-Clause-Darwin.json
 libdata/spdx_licenses/precheck/BSD-2-Clause-Patent.json
@@ -75,6 +78,7 @@ libdata/spdx_licenses/precheck/BSD-3-Clause-No-Nuclear-License.json
 libdata/spdx_licenses/precheck/BSD-3-Clause-No-Nuclear-Warranty.json
 libdata/spdx_licenses/precheck/BSD-3-Clause-Open-MPI.json
 libdata/spdx_licenses/precheck/BSD-3-Clause-Sun.json
+libdata/spdx_licenses/precheck/BSD-3-Clause-Tso.json
 libdata/spdx_licenses/precheck/BSD-3-Clause-acpica.json
 libdata/spdx_licenses/precheck/BSD-3-Clause-flex.json
 libdata/spdx_licenses/precheck/BSD-3-Clause.json
@@ -86,6 +90,7 @@ libdata/spdx_licenses/precheck/BSD-4.3TAHOE.json
 libdata/spdx_licenses/precheck/BSD-Advertising-Acknowledgement.json
 libdata/spdx_licenses/precheck/BSD-Attribution-HPND-disclaimer.json
 libdata/spdx_licenses/precheck/BSD-Inferno-Nettverk.json
+libdata/spdx_licenses/precheck/BSD-Mark-Modifications.json
 libdata/spdx_licenses/precheck/BSD-Protection.json
 libdata/spdx_licenses/precheck/BSD-Source-Code.json
 libdata/spdx_licenses/precheck/BSD-Source-beginning-file.json
@@ -109,9 +114,11 @@ libdata/spdx_licenses/precheck/Bootloader-exception.json
 libdata/spdx_licenses/precheck/Borceux.json
 libdata/spdx_licenses/precheck/Brian-Gladman-2-Clause.json
 libdata/spdx_licenses/precheck/Brian-Gladman-3-Clause.json
+libdata/spdx_licenses/precheck/Buddy.json
 libdata/spdx_licenses/precheck/C-UDA-1.0.json
 libdata/spdx_licenses/precheck/CAL-1.0-Combined-Work-Exception.json
 libdata/spdx_licenses/precheck/CAL-1.0.json
+libdata/spdx_licenses/precheck/CAPEC-tou.json
 libdata/spdx_licenses/precheck/CATOSL-1.1.json
 libdata/spdx_licenses/precheck/CC-BY-1.0.json
 libdata/spdx_licenses/precheck/CC-BY-2.0.json
@@ -200,6 +207,7 @@ libdata/spdx_licenses/precheck/Caldera-no-preamble.json
 libdata/spdx_licenses/precheck/Caldera.json
 libdata/spdx_licenses/precheck/Catharon.json
 libdata/spdx_licenses/precheck/ClArtistic.json
+libdata/spdx_licenses/precheck/Classpath-exception-2.0-short.json
 libdata/spdx_licenses/precheck/Classpath-exception-2.0.json
 libdata/spdx_licenses/precheck/Clips.json
 libdata/spdx_licenses/precheck/Community-Spec-1.0.json
@@ -232,6 +240,8 @@ libdata/spdx_licenses/precheck/EFL-2.0.json
 libdata/spdx_licenses/precheck/EPICS.json
 libdata/spdx_licenses/precheck/EPL-1.0.json
 libdata/spdx_licenses/precheck/EPL-2.0.json
+libdata/spdx_licenses/precheck/ESA-PL-permissive-2.4.json
+libdata/spdx_licenses/precheck/ESA-PL-weak-copyleft-2.4.json
 libdata/spdx_licenses/precheck/EUDatagrid.json
 libdata/spdx_licenses/precheck/EUPL-1.0.json
 libdata/spdx_licenses/precheck/EUPL-1.1.json
@@ -321,6 +331,7 @@ libdata/spdx_licenses/precheck/HPND-MIT-disclaimer.json
 libdata/spdx_licenses/precheck/HPND-Markus-Kuhn.json
 libdata/spdx_licenses/precheck/HPND-Netrek.json
 libdata/spdx_licenses/precheck/HPND-Pbmplus.json
+libdata/spdx_licenses/precheck/HPND-SMC.json
 libdata/spdx_licenses/precheck/HPND-UC-export-US.json
 libdata/spdx_licenses/precheck/HPND-UC.json
 libdata/spdx_licenses/precheck/HPND-doc-sell.json
@@ -334,6 +345,7 @@ libdata/spdx_licenses/precheck/HPND-sell-MIT-disclaimer-xserver.json
 libdata/spdx_licenses/precheck/HPND-sell-regexpr.json
 libdata/spdx_licenses/precheck/HPND-sell-variant-MIT-disclaimer-rev.json
 libdata/spdx_licenses/precheck/HPND-sell-variant-MIT-disclaimer.json
+libdata/spdx_licenses/precheck/HPND-sell-variant-critical-systems.json
 libdata/spdx_licenses/precheck/HPND-sell-variant.json
 libdata/spdx_licenses/precheck/HPND.json
 libdata/spdx_licenses/precheck/HTMLTIDY.json
@@ -348,6 +360,7 @@ libdata/spdx_licenses/precheck/IPA.json
 libdata/spdx_licenses/precheck/IPL-1.0.json
 libdata/spdx_licenses/precheck/ISC-Veillard.json
 libdata/spdx_licenses/precheck/ISC.json
+libdata/spdx_licenses/precheck/ISO-permission.json
 libdata/spdx_licenses/precheck/ImageMagick.json
 libdata/spdx_licenses/precheck/Imlib2.json
 libdata/spdx_licenses/precheck/Independent-modules-exception.json
@@ -412,6 +425,7 @@ libdata/spdx_licenses/precheck/MIT-Click.json
 libdata/spdx_licenses/precheck/MIT-Festival.json
 libdata/spdx_licenses/precheck/MIT-Khronos-old.json
 libdata/spdx_licenses/precheck/MIT-Modern-Variant.json
+libdata/spdx_licenses/precheck/MIT-STK.json
 libdata/spdx_licenses/precheck/MIT-Wu.json
 libdata/spdx_licenses/precheck/MIT-advertising.json
 libdata/spdx_licenses/precheck/MIT-enna.json
@@ -421,6 +435,7 @@ libdata/spdx_licenses/precheck/MIT-testregex.json
 libdata/spdx_licenses/precheck/MIT.json
 libdata/spdx_licenses/precheck/MITNFA.json
 libdata/spdx_licenses/precheck/MMIXware.json
+libdata/spdx_licenses/precheck/MMPL-1.0.1.json
 libdata/spdx_licenses/precheck/MPEG-SSG.json
 libdata/spdx_licenses/precheck/MPL-1.0.json
 libdata/spdx_licenses/precheck/MPL-1.1.json
@@ -450,6 +465,7 @@ libdata/spdx_licenses/precheck/NCL.json
 libdata/spdx_licenses/precheck/NCSA.json
 libdata/spdx_licenses/precheck/NGPL.json
 libdata/spdx_licenses/precheck/NICTA-1.0.json
+libdata/spdx_licenses/precheck/NIST-PD-TNT.json
 libdata/spdx_licenses/precheck/NIST-PD-fallback.json
 libdata/spdx_licenses/precheck/NIST-PD.json
 libdata/spdx_licenses/precheck/NIST-Software.json
@@ -512,13 +528,16 @@ libdata/spdx_licenses/precheck/OML.json
 libdata/spdx_licenses/precheck/OPL-1.0.json
 libdata/spdx_licenses/precheck/OPL-UK-3.0.json
 libdata/spdx_licenses/precheck/OPUBL-1.0.json
+libdata/spdx_licenses/precheck/OSC-1.0.json
 libdata/spdx_licenses/precheck/OSET-PL-2.1.json
 libdata/spdx_licenses/precheck/OSL-1.0.json
 libdata/spdx_licenses/precheck/OSL-1.1.json
 libdata/spdx_licenses/precheck/OSL-2.0.json
 libdata/spdx_licenses/precheck/OSL-2.1.json
 libdata/spdx_licenses/precheck/OSL-3.0.json
+libdata/spdx_licenses/precheck/OSSP.json
 libdata/spdx_licenses/precheck/OpenJDK-assembly-exception-1.0.json
+libdata/spdx_licenses/precheck/OpenMDW-1.0.json
 libdata/spdx_licenses/precheck/OpenPBS-2.3.json
 libdata/spdx_licenses/precheck/OpenSSL-standalone.json
 libdata/spdx_licenses/precheck/OpenSSL.json
@@ -531,6 +550,7 @@ libdata/spdx_licenses/precheck/PHP-3.01.json
 libdata/spdx_licenses/precheck/PPL.json
 libdata/spdx_licenses/precheck/PS-or-PDF-font-exception-20170817.json
 libdata/spdx_licenses/precheck/PSF-2.0.json
+libdata/spdx_licenses/precheck/ParaType-Free-Font-1.3.json
 libdata/spdx_licenses/precheck/Parity-6.0.0.json
 libdata/spdx_licenses/precheck/Parity-7.0.0.json
 libdata/spdx_licenses/precheck/Pixar.json
@@ -565,6 +585,7 @@ libdata/spdx_licenses/precheck/SGI-B-1.0.json
 libdata/spdx_licenses/precheck/SGI-B-1.1.json
 libdata/spdx_licenses/precheck/SGI-B-2.0.json
 libdata/spdx_licenses/precheck/SGI-OpenGL.json
+libdata/spdx_licenses/precheck/SGMLUG-PM.json
 libdata/spdx_licenses/precheck/SGP4.json
 libdata/spdx_licenses/precheck/SHL-0.5.json
 libdata/spdx_licenses/precheck/SHL-0.51.json
@@ -592,6 +613,7 @@ libdata/spdx_licenses/precheck/Sendmail-8.23.json
 libdata/spdx_licenses/precheck/Sendmail-Open-Source-1.1.json
 libdata/spdx_licenses/precheck/Sendmail.json
 libdata/spdx_licenses/precheck/SimPL-2.0.json
+libdata/spdx_licenses/precheck/Simple-Library-Usage-exception.json
 libdata/spdx_licenses/precheck/Sleepycat.json
 libdata/spdx_licenses/precheck/Soundex.json
 libdata/spdx_licenses/precheck/Spencer-86.json
@@ -616,6 +638,7 @@ libdata/spdx_licenses/precheck/TTWL.json
 libdata/spdx_licenses/precheck/TTYP0.json
 libdata/spdx_licenses/precheck/TU-Berlin-1.0.json
 libdata/spdx_licenses/precheck/TU-Berlin-2.0.json
+libdata/spdx_licenses/precheck/TekHVC.json
 libdata/spdx_licenses/precheck/TermReadKey.json
 libdata/spdx_licenses/precheck/Texinfo-exception.json
 libdata/spdx_licenses/precheck/ThirdEye.json
@@ -626,6 +649,7 @@ libdata/spdx_licenses/precheck/UCL-1.0.json
 libdata/spdx_licenses/precheck/UMich-Merit.json
 libdata/spdx_licenses/precheck/UPL-1.0.json
 libdata/spdx_licenses/precheck/URT-RLE.json
+libdata/spdx_licenses/precheck/UnRAR.json
 libdata/spdx_licenses/precheck/Unicode-3.0.json
 libdata/spdx_licenses/precheck/Unicode-DFS-2015.json
 libdata/spdx_licenses/precheck/Unicode-DFS-2016.json
@@ -638,15 +662,19 @@ libdata/spdx_licenses/precheck/Unlicense.json
 libdata/spdx_licenses/precheck/VOSTROM.json
 libdata/spdx_licenses/precheck/VSL-1.0.json
 libdata/spdx_licenses/precheck/Vim.json
+libdata/spdx_licenses/precheck/Vixie-Cron.json
 libdata/spdx_licenses/precheck/W3C-19980720.json
 libdata/spdx_licenses/precheck/W3C-20150513.json
 libdata/spdx_licenses/precheck/W3C.json
+libdata/spdx_licenses/precheck/WTFNMFPL.json
 libdata/spdx_licenses/precheck/WTFPL.json
 libdata/spdx_licenses/precheck/Watcom-1.0.json
 libdata/spdx_licenses/precheck/Widget-Workshop.json
+libdata/spdx_licenses/precheck/WordNet.json
 libdata/spdx_licenses/precheck/Wsuipa.json
 libdata/spdx_licenses/precheck/WxWindows-exception-3.1.json
 libdata/spdx_licenses/precheck/X11-distribute-modifications-variant.json
+libdata/spdx_licenses/precheck/X11-no-permit-persons.json
 libdata/spdx_licenses/precheck/X11-swapped.json
 libdata/spdx_licenses/precheck/X11.json
 libdata/spdx_licenses/precheck/XFree86-1.1.json
@@ -694,9 +722,11 @@ libdata/spdx_licenses/precheck/gnuplot.json
 libdata/spdx_licenses/precheck/gtkbook.json
 libdata/spdx_licenses/precheck/harbour-exception.json
 libdata/spdx_licenses/precheck/hdparm.json
+libdata/spdx_licenses/precheck/hyphen-bulgarian.json
 libdata/spdx_licenses/precheck/i2p-gpl-java-exception.json
 libdata/spdx_licenses/precheck/iMatix.json
 libdata/spdx_licenses/precheck/jove.json
+libdata/spdx_licenses/precheck/kvirc-openssl-exception.json
 libdata/spdx_licenses/precheck/libpng-1.6.35.json
 libdata/spdx_licenses/precheck/libpri-OpenH323-exception.json
 libdata/spdx_licenses/precheck/libselinux-1.0.json
@@ -722,8 +752,10 @@ libdata/spdx_licenses/precheck/psutils.json
 libdata/spdx_licenses/precheck/python-ldap.json
 libdata/spdx_licenses/precheck/radvd.json
 libdata/spdx_licenses/precheck/romic-exception.json
+libdata/spdx_licenses/precheck/rsync-linking-exception.json
 libdata/spdx_licenses/precheck/snprintf.json
 libdata/spdx_licenses/precheck/softSurfer.json
+libdata/spdx_licenses/precheck/sqlitestudio-OpenSSL-exception.json
 libdata/spdx_licenses/precheck/ssh-keyscan.json
 libdata/spdx_licenses/precheck/stunnel-exception.json
 libdata/spdx_licenses/precheck/swrule.json
@@ -755,6 +787,7 @@ libdata/spdx_licenses/template/AGPL-1.0-only.template.txt
 libdata/spdx_licenses/template/AGPL-1.0-or-later.template.txt
 libdata/spdx_licenses/template/AGPL-3.0-only.template.txt
 libdata/spdx_licenses/template/AGPL-3.0-or-later.template.txt
+libdata/spdx_licenses/template/ALGLIB-Documentation.template.txt
 libdata/spdx_licenses/template/AMD-newlib.template.txt
 libdata/spdx_licenses/template/AMDPLPA.template.txt
 libdata/spdx_licenses/template/AML-glslang.template.txt
@@ -775,6 +808,7 @@ libdata/spdx_licenses/template/AdaCore-doc.template.txt
 libdata/spdx_licenses/template/Adobe-2006.template.txt
 libdata/spdx_licenses/template/Adobe-Glyph.template.txt
 libdata/spdx_licenses/template/Adobe-Utopia.template.txt
+libdata/spdx_licenses/template/Advanced-Cryptics-Dictionary.template.txt
 libdata/spdx_licenses/template/Afmparse.template.txt
 libdata/spdx_licenses/template/Aladdin.template.txt
 libdata/spdx_licenses/template/Apache-1.0.template.txt
@@ -795,6 +829,7 @@ libdata/spdx_licenses/template/Autoconf-exception-3.0.template.txt
 libdata/spdx_licenses/template/Autoconf-exception-generic-3.0.template.txt
 libdata/spdx_licenses/template/Autoconf-exception-generic.template.txt
 libdata/spdx_licenses/template/Autoconf-exception-macro.template.txt
+libdata/spdx_licenses/template/BOLA-1.1.template.txt
 libdata/spdx_licenses/template/BSD-1-Clause.template.txt
 libdata/spdx_licenses/template/BSD-2-Clause-Darwin.template.txt
 libdata/spdx_licenses/template/BSD-2-Clause-Patent.template.txt
@@ -813,6 +848,7 @@ libdata/spdx_licenses/template/BSD-3-Clause-No-Nuclear-License.template.txt
 libdata/spdx_licenses/template/BSD-3-Clause-No-Nuclear-Warranty.template.txt
 libdata/spdx_licenses/template/BSD-3-Clause-Open-MPI.template.txt
 libdata/spdx_licenses/template/BSD-3-Clause-Sun.template.txt
+libdata/spdx_licenses/template/BSD-3-Clause-Tso.template.txt
 libdata/spdx_licenses/template/BSD-3-Clause-acpica.template.txt
 libdata/spdx_licenses/template/BSD-3-Clause-flex.template.txt
 libdata/spdx_licenses/template/BSD-3-Clause.template.txt
@@ -824,6 +860,7 @@ libdata/spdx_licenses/template/BSD-4.3TAHOE.template.txt
 libdata/spdx_licenses/template/BSD-Advertising-Acknowledgement.template.txt
 libdata/spdx_licenses/template/BSD-Attribution-HPND-disclaimer.template.txt
 libdata/spdx_licenses/template/BSD-Inferno-Nettverk.template.txt
+libdata/spdx_licenses/template/BSD-Mark-Modifications.template.txt
 libdata/spdx_licenses/template/BSD-Protection.template.txt
 libdata/spdx_licenses/template/BSD-Source-Code.template.txt
 libdata/spdx_licenses/template/BSD-Source-beginning-file.template.txt
@@ -847,9 +884,11 @@ libdata/spdx_licenses/template/Bootloader-exception.template.txt
 libdata/spdx_licenses/template/Borceux.template.txt
 libdata/spdx_licenses/template/Brian-Gladman-2-Clause.template.txt
 libdata/spdx_licenses/template/Brian-Gladman-3-Clause.template.txt
+libdata/spdx_licenses/template/Buddy.template.txt
 libdata/spdx_licenses/template/C-UDA-1.0.template.txt
 libdata/spdx_licenses/template/CAL-1.0-Combined-Work-Exception.template.txt
 libdata/spdx_licenses/template/CAL-1.0.template.txt
+libdata/spdx_licenses/template/CAPEC-tou.template.txt
 libdata/spdx_licenses/template/CATOSL-1.1.template.txt
 libdata/spdx_licenses/template/CC-BY-1.0.template.txt
 libdata/spdx_licenses/template/CC-BY-2.0.template.txt
@@ -938,6 +977,7 @@ libdata/spdx_licenses/template/Caldera-no-preamble.template.txt
 libdata/spdx_licenses/template/Caldera.template.txt
 libdata/spdx_licenses/template/Catharon.template.txt
 libdata/spdx_licenses/template/ClArtistic.template.txt
+libdata/spdx_licenses/template/Classpath-exception-2.0-short.template.txt
 libdata/spdx_licenses/template/Classpath-exception-2.0.template.txt
 libdata/spdx_licenses/template/Clips.template.txt
 libdata/spdx_licenses/template/Community-Spec-1.0.template.txt
@@ -970,6 +1010,8 @@ libdata/spdx_licenses/template/EFL-2.0.template.txt
 libdata/spdx_licenses/template/EPICS.template.txt
 libdata/spdx_licenses/template/EPL-1.0.template.txt
 libdata/spdx_licenses/template/EPL-2.0.template.txt
+libdata/spdx_licenses/template/ESA-PL-permissive-2.4.template.txt
+libdata/spdx_licenses/template/ESA-PL-weak-copyleft-2.4.template.txt
 libdata/spdx_licenses/template/EUDatagrid.template.txt
 libdata/spdx_licenses/template/EUPL-1.0.template.txt
 libdata/spdx_licenses/template/EUPL-1.1.template.txt
@@ -1059,6 +1101,7 @@ libdata/spdx_licenses/template/HPND-MIT-disclaimer.template.txt
 libdata/spdx_licenses/template/HPND-Markus-Kuhn.template.txt
 libdata/spdx_licenses/template/HPND-Netrek.template.txt
 libdata/spdx_licenses/template/HPND-Pbmplus.template.txt
+libdata/spdx_licenses/template/HPND-SMC.template.txt
 libdata/spdx_licenses/template/HPND-UC-export-US.template.txt
 libdata/spdx_licenses/template/HPND-UC.template.txt
 libdata/spdx_licenses/template/HPND-doc-sell.template.txt
@@ -1072,6 +1115,7 @@ libdata/spdx_licenses/template/HPND-sell-MIT-disclaimer-xserver.template.txt
 libdata/spdx_licenses/template/HPND-sell-regexpr.template.txt
 libdata/spdx_licenses/template/HPND-sell-variant-MIT-disclaimer-rev.template.txt
 libdata/spdx_licenses/template/HPND-sell-variant-MIT-disclaimer.template.txt
+libdata/spdx_licenses/template/HPND-sell-variant-critical-systems.template.txt
 libdata/spdx_licenses/template/HPND-sell-variant.template.txt
 libdata/spdx_licenses/template/HPND.template.txt
 libdata/spdx_licenses/template/HTMLTIDY.template.txt
@@ -1086,6 +1130,7 @@ libdata/spdx_licenses/template/IPA.template.txt
 libdata/spdx_licenses/template/IPL-1.0.template.txt
 libdata/spdx_licenses/template/ISC-Veillard.template.txt
 libdata/spdx_licenses/template/ISC.template.txt
+libdata/spdx_licenses/template/ISO-permission.template.txt
 libdata/spdx_licenses/template/ImageMagick.template.txt
 libdata/spdx_licenses/template/Imlib2.template.txt
 libdata/spdx_licenses/template/Independent-modules-exception.template.txt
@@ -1150,6 +1195,7 @@ libdata/spdx_licenses/template/MIT-Click.template.txt
 libdata/spdx_licenses/template/MIT-Festival.template.txt
 libdata/spdx_licenses/template/MIT-Khronos-old.template.txt
 libdata/spdx_licenses/template/MIT-Modern-Variant.template.txt
+libdata/spdx_licenses/template/MIT-STK.template.txt
 libdata/spdx_licenses/template/MIT-Wu.template.txt
 libdata/spdx_licenses/template/MIT-advertising.template.txt
 libdata/spdx_licenses/template/MIT-enna.template.txt
@@ -1159,6 +1205,7 @@ libdata/spdx_licenses/template/MIT-testregex.template.txt
 libdata/spdx_licenses/template/MIT.template.txt
 libdata/spdx_licenses/template/MITNFA.template.txt
 libdata/spdx_licenses/template/MMIXware.template.txt
+libdata/spdx_licenses/template/MMPL-1.0.1.template.txt
 libdata/spdx_licenses/template/MPEG-SSG.template.txt
 libdata/spdx_licenses/template/MPL-1.0.template.txt
 libdata/spdx_licenses/template/MPL-1.1.template.txt
@@ -1188,6 +1235,7 @@ libdata/spdx_licenses/template/NCL.template.txt
 libdata/spdx_licenses/template/NCSA.template.txt
 libdata/spdx_licenses/template/NGPL.template.txt
 libdata/spdx_licenses/template/NICTA-1.0.template.txt
+libdata/spdx_licenses/template/NIST-PD-TNT.template.txt
 libdata/spdx_licenses/template/NIST-PD-fallback.template.txt
 libdata/spdx_licenses/template/NIST-PD.template.txt
 libdata/spdx_licenses/template/NIST-Software.template.txt
@@ -1250,13 +1298,16 @@ libdata/spdx_licenses/template/OML.template.txt
 libdata/spdx_licenses/template/OPL-1.0.template.txt
 libdata/spdx_licenses/template/OPL-UK-3.0.template.txt
 libdata/spdx_licenses/template/OPUBL-1.0.template.txt
+libdata/spdx_licenses/template/OSC-1.0.template.txt
 libdata/spdx_licenses/template/OSET-PL-2.1.template.txt
 libdata/spdx_licenses/template/OSL-1.0.template.txt
 libdata/spdx_licenses/template/OSL-1.1.template.txt
 libdata/spdx_licenses/template/OSL-2.0.template.txt
 libdata/spdx_licenses/template/OSL-2.1.template.txt
 libdata/spdx_licenses/template/OSL-3.0.template.txt
+libdata/spdx_licenses/template/OSSP.template.txt
 libdata/spdx_licenses/template/OpenJDK-assembly-exception-1.0.template.txt
+libdata/spdx_licenses/template/OpenMDW-1.0.template.txt
 libdata/spdx_licenses/template/OpenPBS-2.3.template.txt
 libdata/spdx_licenses/template/OpenSSL-standalone.template.txt
 libdata/spdx_licenses/template/OpenSSL.template.txt
@@ -1269,6 +1320,7 @@ libdata/spdx_licenses/template/PHP-3.01.template.txt
 libdata/spdx_licenses/template/PPL.template.txt
 libdata/spdx_licenses/template/PS-or-PDF-font-exception-20170817.template.txt
 libdata/spdx_licenses/template/PSF-2.0.template.txt
+libdata/spdx_licenses/template/ParaType-Free-Font-1.3.template.txt
 libdata/spdx_licenses/template/Parity-6.0.0.template.txt
 libdata/spdx_licenses/template/Parity-7.0.0.template.txt
 libdata/spdx_licenses/template/Pixar.template.txt
@@ -1303,6 +1355,7 @@ libdata/spdx_licenses/template/SGI-B-1.0.template.txt
 libdata/spdx_licenses/template/SGI-B-1.1.template.txt
 libdata/spdx_licenses/template/SGI-B-2.0.template.txt
 libdata/spdx_licenses/template/SGI-OpenGL.template.txt
+libdata/spdx_licenses/template/SGMLUG-PM.template.txt
 libdata/spdx_licenses/template/SGP4.template.txt
 libdata/spdx_licenses/template/SHL-0.5.template.txt
 libdata/spdx_licenses/template/SHL-0.51.template.txt
@@ -1330,6 +1383,7 @@ libdata/spdx_licenses/template/Sendmail-8.23.template.txt
 libdata/spdx_licenses/template/Sendmail-Open-Source-1.1.template.txt
 libdata/spdx_licenses/template/Sendmail.template.txt
 libdata/spdx_licenses/template/SimPL-2.0.template.txt
+libdata/spdx_licenses/template/Simple-Library-Usage-exception.template.txt
 libdata/spdx_licenses/template/Sleepycat.template.txt
 libdata/spdx_licenses/template/Soundex.template.txt
 libdata/spdx_licenses/template/Spencer-86.template.txt
@@ -1354,6 +1408,7 @@ libdata/spdx_licenses/template/TTWL.template.txt
 libdata/spdx_licenses/template/TTYP0.template.txt
 libdata/spdx_licenses/template/TU-Berlin-1.0.template.txt
 libdata/spdx_licenses/template/TU-Berlin-2.0.template.txt
+libdata/spdx_licenses/template/TekHVC.template.txt
 libdata/spdx_licenses/template/TermReadKey.template.txt
 libdata/spdx_licenses/template/Texinfo-exception.template.txt
 libdata/spdx_licenses/template/ThirdEye.template.txt
@@ -1364,6 +1419,7 @@ libdata/spdx_licenses/template/UCL-1.0.template.txt
 libdata/spdx_licenses/template/UMich-Merit.template.txt
 libdata/spdx_licenses/template/UPL-1.0.template.txt
 libdata/spdx_licenses/template/URT-RLE.template.txt
+libdata/spdx_licenses/template/UnRAR.template.txt
 libdata/spdx_licenses/template/Unicode-3.0.template.txt
 libdata/spdx_licenses/template/Unicode-DFS-2015.template.txt
 libdata/spdx_licenses/template/Unicode-DFS-2016.template.txt
@@ -1376,15 +1432,19 @@ libdata/spdx_licenses/template/Unlicense.template.txt
 libdata/spdx_licenses/template/VOSTROM.template.txt
 libdata/spdx_licenses/template/VSL-1.0.template.txt
 libdata/spdx_licenses/template/Vim.template.txt
+libdata/spdx_licenses/template/Vixie-Cron.template.txt
 libdata/spdx_licenses/template/W3C-19980720.template.txt
 libdata/spdx_licenses/template/W3C-20150513.template.txt
 libdata/spdx_licenses/template/W3C.template.txt
+libdata/spdx_licenses/template/WTFNMFPL.template.txt
 libdata/spdx_licenses/template/WTFPL.template.txt
 libdata/spdx_licenses/template/Watcom-1.0.template.txt
 libdata/spdx_licenses/template/Widget-Workshop.template.txt
+libdata/spdx_licenses/template/WordNet.template.txt
 libdata/spdx_licenses/template/Wsuipa.template.txt
 libdata/spdx_licenses/template/WxWindows-exception-3.1.template.txt
 libdata/spdx_licenses/template/X11-distribute-modifications-variant.template.txt
+libdata/spdx_licenses/template/X11-no-permit-persons.template.txt
 libdata/spdx_licenses/template/X11-swapped.template.txt
 libdata/spdx_licenses/template/X11.template.txt
 libdata/spdx_licenses/template/XFree86-1.1.template.txt
@@ -1432,9 +1492,11 @@ libdata/spdx_licenses/template/gnuplot.template.txt
 libdata/spdx_licenses/template/gtkbook.template.txt
 libdata/spdx_licenses/template/harbour-exception.template.txt
 libdata/spdx_licenses/template/hdparm.template.txt
+libdata/spdx_licenses/template/hyphen-bulgarian.template.txt
 libdata/spdx_licenses/template/i2p-gpl-java-exception.template.txt
 libdata/spdx_licenses/template/iMatix.template.txt
 libdata/spdx_licenses/template/jove.template.txt
+libdata/spdx_licenses/template/kvirc-openssl-exception.template.txt
 libdata/spdx_licenses/template/libpng-1.6.35.template.txt
 libdata/spdx_licenses/template/libpri-OpenH323-exception.template.txt
 libdata/spdx_licenses/template/libselinux-1.0.template.txt
@@ -1460,8 +1522,10 @@ libdata/spdx_licenses/template/psutils.template.txt
 libdata/spdx_licenses/template/python-ldap.template.txt
 libdata/spdx_licenses/template/radvd.template.txt
 libdata/spdx_licenses/template/romic-exception.template.txt
+libdata/spdx_licenses/template/rsync-linking-exception.template.txt
 libdata/spdx_licenses/template/snprintf.template.txt
 libdata/spdx_licenses/template/softSurfer.template.txt
+libdata/spdx_licenses/template/sqlitestudio-OpenSSL-exception.template.txt
 libdata/spdx_licenses/template/ssh-keyscan.template.txt
 libdata/spdx_licenses/template/stunnel-exception.template.txt
 libdata/spdx_licenses/template/swrule.template.txt
@@ -1493,6 +1557,7 @@ libdata/spdx_licenses/testdata/AGPL-1.0-only.txt
 libdata/spdx_licenses/testdata/AGPL-1.0-or-later.txt
 libdata/spdx_licenses/testdata/AGPL-3.0-only.txt
 libdata/spdx_licenses/testdata/AGPL-3.0-or-later.txt
+libdata/spdx_licenses/testdata/ALGLIB-Documentation.txt
 libdata/spdx_licenses/testdata/AMD-newlib.txt
 libdata/spdx_licenses/testdata/AMDPLPA.txt
 libdata/spdx_licenses/testdata/AML-glslang.txt
@@ -1513,6 +1578,7 @@ libdata/spdx_licenses/testdata/AdaCore-doc.txt
 libdata/spdx_licenses/testdata/Adobe-2006.txt
 libdata/spdx_licenses/testdata/Adobe-Glyph.txt
 libdata/spdx_licenses/testdata/Adobe-Utopia.txt
+libdata/spdx_licenses/testdata/Advanced-Cryptics-Dictionary.txt
 libdata/spdx_licenses/testdata/Afmparse.txt
 libdata/spdx_licenses/testdata/Aladdin.txt
 libdata/spdx_licenses/testdata/Apache-1.0.txt
@@ -1533,6 +1599,7 @@ libdata/spdx_licenses/testdata/Autoconf-exception-3.0.txt
 libdata/spdx_licenses/testdata/Autoconf-exception-generic-3.0.txt
 libdata/spdx_licenses/testdata/Autoconf-exception-generic.txt
 libdata/spdx_licenses/testdata/Autoconf-exception-macro.txt
+libdata/spdx_licenses/testdata/BOLA-1.1.txt
 libdata/spdx_licenses/testdata/BSD-1-Clause.txt
 libdata/spdx_licenses/testdata/BSD-2-Clause-Darwin.txt
 libdata/spdx_licenses/testdata/BSD-2-Clause-Patent.txt
@@ -1551,6 +1618,7 @@ libdata/spdx_licenses/testdata/BSD-3-Clause-No-Nuclear-License.txt
 libdata/spdx_licenses/testdata/BSD-3-Clause-No-Nuclear-Warranty.txt
 libdata/spdx_licenses/testdata/BSD-3-Clause-Open-MPI.txt
 libdata/spdx_licenses/testdata/BSD-3-Clause-Sun.txt
+libdata/spdx_licenses/testdata/BSD-3-Clause-Tso.txt
 libdata/spdx_licenses/testdata/BSD-3-Clause-acpica.txt
 libdata/spdx_licenses/testdata/BSD-3-Clause-flex.txt
 libdata/spdx_licenses/testdata/BSD-3-Clause.txt
@@ -1562,6 +1630,7 @@ libdata/spdx_licenses/testdata/BSD-4.3TAHOE.txt
 libdata/spdx_licenses/testdata/BSD-Advertising-Acknowledgement.txt
 libdata/spdx_licenses/testdata/BSD-Attribution-HPND-disclaimer.txt
 libdata/spdx_licenses/testdata/BSD-Inferno-Nettverk.txt
+libdata/spdx_licenses/testdata/BSD-Mark-Modifications.txt
 libdata/spdx_licenses/testdata/BSD-Protection.txt
 libdata/spdx_licenses/testdata/BSD-Source-Code.txt
 libdata/spdx_licenses/testdata/BSD-Source-beginning-file.txt
@@ -1585,9 +1654,11 @@ libdata/spdx_licenses/testdata/Bootloader-exception.txt
 libdata/spdx_licenses/testdata/Borceux.txt
 libdata/spdx_licenses/testdata/Brian-Gladman-2-Clause.txt
 libdata/spdx_licenses/testdata/Brian-Gladman-3-Clause.txt
+libdata/spdx_licenses/testdata/Buddy.txt
 libdata/spdx_licenses/testdata/C-UDA-1.0.txt
 libdata/spdx_licenses/testdata/CAL-1.0-Combined-Work-Exception.txt
 libdata/spdx_licenses/testdata/CAL-1.0.txt
+libdata/spdx_licenses/testdata/CAPEC-tou.txt
 libdata/spdx_licenses/testdata/CATOSL-1.1.txt
 libdata/spdx_licenses/testdata/CC-BY-1.0.txt
 libdata/spdx_licenses/testdata/CC-BY-2.0.txt
@@ -1676,6 +1747,7 @@ libdata/spdx_licenses/testdata/Caldera-no-preamble.txt
 libdata/spdx_licenses/testdata/Caldera.txt
 libdata/spdx_licenses/testdata/Catharon.txt
 libdata/spdx_licenses/testdata/ClArtistic.txt
+libdata/spdx_licenses/testdata/Classpath-exception-2.0-short.txt
 libdata/spdx_licenses/testdata/Classpath-exception-2.0.txt
 libdata/spdx_licenses/testdata/Clips.txt
 libdata/spdx_licenses/testdata/Community-Spec-1.0.txt
@@ -1708,6 +1780,8 @@ libdata/spdx_licenses/testdata/EFL-2.0.txt
 libdata/spdx_licenses/testdata/EPICS.txt
 libdata/spdx_licenses/testdata/EPL-1.0.txt
 libdata/spdx_licenses/testdata/EPL-2.0.txt
+libdata/spdx_licenses/testdata/ESA-PL-permissive-2.4.txt
+libdata/spdx_licenses/testdata/ESA-PL-weak-copyleft-2.4.txt
 libdata/spdx_licenses/testdata/EUDatagrid.txt
 libdata/spdx_licenses/testdata/EUPL-1.0.txt
 libdata/spdx_licenses/testdata/EUPL-1.1.txt
@@ -1797,6 +1871,7 @@ libdata/spdx_licenses/testdata/HPND-MIT-disclaimer.txt
 libdata/spdx_licenses/testdata/HPND-Markus-Kuhn.txt
 libdata/spdx_licenses/testdata/HPND-Netrek.txt
 libdata/spdx_licenses/testdata/HPND-Pbmplus.txt
+libdata/spdx_licenses/testdata/HPND-SMC.txt
 libdata/spdx_licenses/testdata/HPND-UC-export-US.txt
 libdata/spdx_licenses/testdata/HPND-UC.txt
 libdata/spdx_licenses/testdata/HPND-doc-sell.txt
@@ -1810,6 +1885,7 @@ libdata/spdx_licenses/testdata/HPND-sell-MIT-disclaimer-xserver.txt
 libdata/spdx_licenses/testdata/HPND-sell-regexpr.txt
 libdata/spdx_licenses/testdata/HPND-sell-variant-MIT-disclaimer-rev.txt
 libdata/spdx_licenses/testdata/HPND-sell-variant-MIT-disclaimer.txt
+libdata/spdx_licenses/testdata/HPND-sell-variant-critical-systems.txt
 libdata/spdx_licenses/testdata/HPND-sell-variant.txt
 libdata/spdx_licenses/testdata/HPND.txt
 libdata/spdx_licenses/testdata/HTMLTIDY.txt
@@ -1824,6 +1900,7 @@ libdata/spdx_licenses/testdata/IPA.txt
 libdata/spdx_licenses/testdata/IPL-1.0.txt
 libdata/spdx_licenses/testdata/ISC-Veillard.txt
 libdata/spdx_licenses/testdata/ISC.txt
+libdata/spdx_licenses/testdata/ISO-permission.txt
 libdata/spdx_licenses/testdata/ImageMagick.txt
 libdata/spdx_licenses/testdata/Imlib2.txt
 libdata/spdx_licenses/testdata/Independent-modules-exception.txt
@@ -1888,6 +1965,7 @@ libdata/spdx_licenses/testdata/MIT-Click.txt
 libdata/spdx_licenses/testdata/MIT-Festival.txt
 libdata/spdx_licenses/testdata/MIT-Khronos-old.txt
 libdata/spdx_licenses/testdata/MIT-Modern-Variant.txt
+libdata/spdx_licenses/testdata/MIT-STK.txt
 libdata/spdx_licenses/testdata/MIT-Wu.txt
 libdata/spdx_licenses/testdata/MIT-advertising.txt
 libdata/spdx_licenses/testdata/MIT-enna.txt
@@ -1897,6 +1975,7 @@ libdata/spdx_licenses/testdata/MIT-testregex.txt
 libdata/spdx_licenses/testdata/MIT.txt
 libdata/spdx_licenses/testdata/MITNFA.txt
 libdata/spdx_licenses/testdata/MMIXware.txt
+libdata/spdx_licenses/testdata/MMPL-1.0.1.txt
 libdata/spdx_licenses/testdata/MPEG-SSG.txt
 libdata/spdx_licenses/testdata/MPL-1.0.txt
 libdata/spdx_licenses/testdata/MPL-1.1.txt
@@ -1926,6 +2005,7 @@ libdata/spdx_licenses/testdata/NCL.txt
 libdata/spdx_licenses/testdata/NCSA.txt
 libdata/spdx_licenses/testdata/NGPL.txt
 libdata/spdx_licenses/testdata/NICTA-1.0.txt
+libdata/spdx_licenses/testdata/NIST-PD-TNT.txt
 libdata/spdx_licenses/testdata/NIST-PD-fallback.txt
 libdata/spdx_licenses/testdata/NIST-PD.txt
 libdata/spdx_licenses/testdata/NIST-Software.txt
@@ -1988,13 +2068,16 @@ libdata/spdx_licenses/testdata/OML.txt
 libdata/spdx_licenses/testdata/OPL-1.0.txt
 libdata/spdx_licenses/testdata/OPL-UK-3.0.txt
 libdata/spdx_licenses/testdata/OPUBL-1.0.txt
+libdata/spdx_licenses/testdata/OSC-1.0.txt
 libdata/spdx_licenses/testdata/OSET-PL-2.1.txt
 libdata/spdx_licenses/testdata/OSL-1.0.txt
 libdata/spdx_licenses/testdata/OSL-1.1.txt
 libdata/spdx_licenses/testdata/OSL-2.0.txt
 libdata/spdx_licenses/testdata/OSL-2.1.txt
 libdata/spdx_licenses/testdata/OSL-3.0.txt
+libdata/spdx_licenses/testdata/OSSP.txt
 libdata/spdx_licenses/testdata/OpenJDK-assembly-exception-1.0.txt
+libdata/spdx_licenses/testdata/OpenMDW-1.0.txt
 libdata/spdx_licenses/testdata/OpenPBS-2.3.txt
 libdata/spdx_licenses/testdata/OpenSSL-standalone.txt
 libdata/spdx_licenses/testdata/OpenSSL.txt
@@ -2007,6 +2090,7 @@ libdata/spdx_licenses/testdata/PHP-3.01.txt
 libdata/spdx_licenses/testdata/PPL.txt
 libdata/spdx_licenses/testdata/PS-or-PDF-font-exception-20170817.txt
 libdata/spdx_licenses/testdata/PSF-2.0.txt
+libdata/spdx_licenses/testdata/ParaType-Free-Font-1.3.txt
 libdata/spdx_licenses/testdata/Parity-6.0.0.txt
 libdata/spdx_licenses/testdata/Parity-7.0.0.txt
 libdata/spdx_licenses/testdata/Pixar.txt
@@ -2041,6 +2125,7 @@ libdata/spdx_licenses/testdata/SGI-B-1.0.txt
 libdata/spdx_licenses/testdata/SGI-B-1.1.txt
 libdata/spdx_licenses/testdata/SGI-B-2.0.txt
 libdata/spdx_licenses/testdata/SGI-OpenGL.txt
+libdata/spdx_licenses/testdata/SGMLUG-PM.txt
 libdata/spdx_licenses/testdata/SGP4.txt
 libdata/spdx_licenses/testdata/SHL-0.5.txt
 libdata/spdx_licenses/testdata/SHL-0.51.txt
@@ -2068,6 +2153,7 @@ libdata/spdx_licenses/testdata/Sendmail-8.23.txt
 libdata/spdx_licenses/testdata/Sendmail-Open-Source-1.1.txt
 libdata/spdx_licenses/testdata/Sendmail.txt
 libdata/spdx_licenses/testdata/SimPL-2.0.txt
+libdata/spdx_licenses/testdata/Simple-Library-Usage-exception.txt
 libdata/spdx_licenses/testdata/Sleepycat.txt
 libdata/spdx_licenses/testdata/Soundex.txt
 libdata/spdx_licenses/testdata/Spencer-86.txt
@@ -2092,6 +2178,7 @@ libdata/spdx_licenses/testdata/TTWL.txt
 libdata/spdx_licenses/testdata/TTYP0.txt
 libdata/spdx_licenses/testdata/TU-Berlin-1.0.txt
 libdata/spdx_licenses/testdata/TU-Berlin-2.0.txt
+libdata/spdx_licenses/testdata/TekHVC.txt
 libdata/spdx_licenses/testdata/TermReadKey.txt
 libdata/spdx_licenses/testdata/Texinfo-exception.txt
 libdata/spdx_licenses/testdata/ThirdEye.txt
@@ -2102,6 +2189,7 @@ libdata/spdx_licenses/testdata/UCL-1.0.txt
 libdata/spdx_licenses/testdata/UMich-Merit.txt
 libdata/spdx_licenses/testdata/UPL-1.0.txt
 libdata/spdx_licenses/testdata/URT-RLE.txt
+libdata/spdx_licenses/testdata/UnRAR.txt
 libdata/spdx_licenses/testdata/Unicode-3.0.txt
 libdata/spdx_licenses/testdata/Unicode-DFS-2015.txt
 libdata/spdx_licenses/testdata/Unicode-DFS-2016.txt
@@ -2114,15 +2202,19 @@ libdata/spdx_licenses/testdata/Unlicense.txt
 libdata/spdx_licenses/testdata/VOSTROM.txt
 libdata/spdx_licenses/testdata/VSL-1.0.txt
 libdata/spdx_licenses/testdata/Vim.txt
+libdata/spdx_licenses/testdata/Vixie-Cron.txt
 libdata/spdx_licenses/testdata/W3C-19980720.txt
 libdata/spdx_licenses/testdata/W3C-20150513.txt
 libdata/spdx_licenses/testdata/W3C.txt
+libdata/spdx_licenses/testdata/WTFNMFPL.txt
 libdata/spdx_licenses/testdata/WTFPL.txt
 libdata/spdx_licenses/testdata/Watcom-1.0.txt
 libdata/spdx_licenses/testdata/Widget-Workshop.txt
+libdata/spdx_licenses/testdata/WordNet.txt
 libdata/spdx_licenses/testdata/Wsuipa.txt
 libdata/spdx_licenses/testdata/WxWindows-exception-3.1.txt
 libdata/spdx_licenses/testdata/X11-distribute-modifications-variant.txt
+libdata/spdx_licenses/testdata/X11-no-permit-persons.txt
 libdata/spdx_licenses/testdata/X11-swapped.txt
 libdata/spdx_licenses/testdata/X11.txt
 libdata/spdx_licenses/testdata/XFree86-1.1.txt
@@ -2170,6 +2262,7 @@ libdata/spdx_licenses/testdata/gnuplot.txt
 libdata/spdx_licenses/testdata/gtkbook.txt
 libdata/spdx_licenses/testdata/harbour-exception.txt
 libdata/spdx_licenses/testdata/hdparm.txt
+libdata/spdx_licenses/testdata/hyphen-bulgarian.txt
 libdata/spdx_licenses/testdata/i2p-gpl-java-exception.txt
 libdata/spdx_licenses/testdata/iMatix.txt
 libdata/spdx_licenses/testdata/invalid/
@@ -2181,6 +2274,8 @@ libdata/spdx_licenses/testdata/invalid/CC-BY-NC-SA-2.0-DE.template.txt
 libdata/spdx_licenses/testdata/invalid/CC-BY-NC-SA-2.0-DE.txt
 libdata/spdx_licenses/testdata/invalid/CC-PDM-1.0.template.txt
 libdata/spdx_licenses/testdata/invalid/CC-PDM-1.0.txt
+libdata/spdx_licenses/testdata/invalid/ESA-PL-strong-copyleft-2.4.template.txt
+libdata/spdx_licenses/testdata/invalid/ESA-PL-strong-copyleft-2.4.txt
 libdata/spdx_licenses/testdata/invalid/Mackerras-3-Clause-acknowledgment.template.txt
 libdata/spdx_licenses/testdata/invalid/Mackerras-3-Clause-acknowledgment.txt
 libdata/spdx_licenses/testdata/invalid/Ubuntu-font-1.0.template.txt
@@ -2190,6 +2285,7 @@ libdata/spdx_licenses/testdata/invalid/Xdebug-1.03.txt
 libdata/spdx_licenses/testdata/invalid/libpng-2.0.template.txt
 libdata/spdx_licenses/testdata/invalid/libpng-2.0.txt
 libdata/spdx_licenses/testdata/jove.txt
+libdata/spdx_licenses/testdata/kvirc-openssl-exception.txt
 libdata/spdx_licenses/testdata/libpng-1.6.35.txt
 libdata/spdx_licenses/testdata/libpri-OpenH323-exception.txt
 libdata/spdx_licenses/testdata/libselinux-1.0.txt
@@ -2215,8 +2311,10 @@ libdata/spdx_licenses/testdata/psutils.txt
 libdata/spdx_licenses/testdata/python-ldap.txt
 libdata/spdx_licenses/testdata/radvd.txt
 libdata/spdx_licenses/testdata/romic-exception.txt
+libdata/spdx_licenses/testdata/rsync-linking-exception.txt
 libdata/spdx_licenses/testdata/snprintf.txt
 libdata/spdx_licenses/testdata/softSurfer.txt
+libdata/spdx_licenses/testdata/sqlitestudio-OpenSSL-exception.txt
 libdata/spdx_licenses/testdata/ssh-keyscan.txt
 libdata/spdx_licenses/testdata/stunnel-exception.txt
 libdata/spdx_licenses/testdata/swrule.txt
