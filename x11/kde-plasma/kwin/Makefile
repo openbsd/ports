@@ -1,5 +1,6 @@
 COMMENT =		Wayland window manager for KDE Plasma Desktops
 DISTNAME =		kwin-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
 SHARED_LIBS +=  kwin                      4.0 # 0.0
@@ -77,7 +78,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		sysutils/libdisplay-info \
 		sysutils/libudev-openbsd \
 		wayland/libei \
-		wayland/libinput-openbsd \
+		wayland/libinput-openbsd>=1.30 \
 		wayland/wayland \
 		x11/kde-plasma/kdecoration>=${VERSION} \
 		x11/kde-plasma/kglobalacceld>=${VERSION} \
