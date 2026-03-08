@@ -7,9 +7,9 @@ SHARED_LIBS +=  arcan_shmif_intext        0.0 # 0.15
 SHARED_LIBS +=  arcan_shmif_server        0.0 # 0.15
 SHARED_LIBS +=  arcan_tui                 0.0 # 0.15
 
-GH_ACCOUNT =	letoram
-GH_PROJECT =	arcan
-GH_TAGNAME =	0.6.2
+DIST_TUPLE =	codeberg letoram arcan 0.6.2 .
+WRKDIST =	${WRKDIR}/arcan
+WRKSRC =	${WRKDIST}/src
 
 REVISION =	2
 
@@ -18,8 +18,6 @@ HOMEPAGE =	https://arcan-fe.com
 
 # BSD-3, GPLv2, LGPLv2
 PERMIT_PACKAGE =	Yes
-
-WRKSRC =		${WRKDIST}/src
 
 # uses pledge()
 WANTLIB += ${COMPILER_LIBCXX} EGL GL SDL2 archive avcodec avdevice
