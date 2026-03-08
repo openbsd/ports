@@ -1,6 +1,6 @@
 COMMENT =		Wayland window manager for KDE Plasma Desktops
 DISTNAME =		kwin-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
 SHARED_LIBS +=  kwin                      4.0 # 0.0
@@ -88,7 +88,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/kde-plasma/plasma-activities>=${VERSION} \
 		x11/libqaccessibilityclient \
 		x11/qt6/qtdeclarative \
-		x11/qt6/qtsensors \
 		x11/qt6/qtsvg \
 		x11/qt6/qttools \
 		x11/xkbcommon
