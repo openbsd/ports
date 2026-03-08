@@ -1,0 +1,15 @@
+no point pledging tmppath (which is no longer available) if also pledging
+rpath wpath cpath
+
+Index: src/shmif/arcan_shmif_interop.h
+--- src/shmif/arcan_shmif_interop.h.orig
++++ src/shmif/arcan_shmif_interop.h
+@@ -285,7 +285,7 @@ void arg_cleanup(struct arg_arr*);
+  * futex- only as the set now is too permissive to be comfortable
+  */
+ #define SHMIF_PLEDGE_PREFIX \
+-	"stdio unix sendfd recvfd proc ps rpath wpath cpath tmppath unveil video"
++	"stdio unix sendfd recvfd proc ps rpath wpath cpath unveil video"
+ 
+ /*
+  * Attempt to reduce the exposed set of privileges and whitelist accessible

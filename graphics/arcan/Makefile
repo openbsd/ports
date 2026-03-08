@@ -11,7 +11,7 @@ GH_ACCOUNT =	letoram
 GH_PROJECT =	arcan
 GH_TAGNAME =	0.6.2
 
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics devel
 HOMEPAGE =	https://arcan-fe.com
