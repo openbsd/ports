@@ -10,8 +10,6 @@
 # sysutils/consolekit
 # wayland/libei
 # x11/gnome/mutter
-# x11/gtk+3 (-Dwayland-backend=false)
-# x11/gtk+4 (-Dwayland-backend=false)
 # x11/kde-applications/kdenlive (cmake patch)
 # x11/kde-applications/krfb (cmake patch)
 # x11/x11vnc
