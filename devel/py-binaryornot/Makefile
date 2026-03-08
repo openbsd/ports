@@ -1,22 +1,19 @@
-COMMENT =		check if a file is binary or text
+COMMENT=	check if a file is binary or text
 
-MODPY_DISTV =	0.4.4
-DISTNAME =		binaryornot-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		4
+MODPY_DISTV=	0.5.0
+GH_ACCOUNT=	binaryornot
+GH_PROJECT=	binaryornot
+GH_TAGNAME=	v${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
-# BSD
-PERMIT_PACKAGE =	Yes
+# MIT
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	hatchling
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-RUN_DEPENDS =		textproc/py-chardet
-
-TEST_DEPENDS =		devel/py-hypothesis
+TEST_DEPENDS=	devel/py-hypothesis
 
 .include <bsd.port.mk>
