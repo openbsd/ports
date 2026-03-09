@@ -2,8 +2,7 @@ COMMENT =	ultralightweight JSON parser in ANSI C
 
 GH_ACCOUNT =	DaveGamble
 GH_PROJECT =	cJSON
-GH_TAGNAME =	v1.7.18
-REVISION =	0
+GH_TAGNAME =	v1.7.19
 
 PKGNAME =	${DISTNAME:L}
 
