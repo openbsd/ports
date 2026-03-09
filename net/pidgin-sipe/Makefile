@@ -3,7 +3,7 @@ BROKEN-hppa =	-Werror + sip-csta.c:707: warning: cast increases required alignme
 COMMENT =		SIPE plugin for Pidgin
 
 DISTNAME =		pidgin-sipe-1.25.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -14,9 +14,9 @@ MAINTAINER =		Tom Doherty <tom@singlesecond.com>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += assuan crypto dbus-1 dbus-glib-1 execinfo ffi gadu
+WANTLIB += assuan crypto dbus-1 dbus-glib-1 ffi
 WANTLIB += gio-2.0 glib-2.0 gmime-3.0 gmodule-2.0 gobject-2.0
-WANTLIB += gpg-error gpgme gthread-2.0 iconv idn idn2 intl lzma
+WANTLIB += gpg-error gpgme gthread-2.0 iconv idn idn2 intl
 WANTLIB += m nspr4 nss3 nssutil3 pcre2-8 plc4 plds4 pthread purple
 WANTLIB += smime3 ssl3 unistring xml2 z
 
@@ -24,7 +24,6 @@ SITES =			${SITE_SOURCEFORGE:=sipe/}
 
 LIB_DEPENDS =		mail/gmime30 \
 			net/pidgin,-libpurple \
-			databases/sqlite3 \
 			security/nss
 RUN_DEPENDS =		net/pidgin
 
