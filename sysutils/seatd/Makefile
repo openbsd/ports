@@ -1,6 +1,6 @@
 COMMENT	=	minimal seat management daemon and universal library
 
-V =		0.9.2
+V =		0.9.3
 DISTNAME =	seatd-$V
 CATEGORIES =	sysutils
 

@@ -36,6 +36,6 @@ Index: seatd/client.c
 +		if (errno != ENXIO) {
 +			log_errorf("Could not open device: %s", strerror(errno));
 +		}
- 		goto fail;
+ 		return client_send_error(client, errno);
  	}
  

@@ -3,7 +3,7 @@ Avoid logging errors for non-existing devices
 Index: seatd/seat.c
 --- seatd/seat.c.orig
 +++ seatd/seat.c
-@@ -377,7 +377,9 @@ struct seat_device *seat_open_device(struct client *cl
+@@ -383,7 +383,9 @@ struct seat_device *seat_open_device(struct client *cl
  
  	int fd = open(sanitized_path, O_RDWR | O_NOCTTY | O_NOFOLLOW | O_CLOEXEC | O_NONBLOCK);
  	if (fd == -1) {
