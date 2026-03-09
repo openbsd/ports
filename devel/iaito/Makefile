@@ -3,6 +3,7 @@ COMMENT =	RE platform powered by radare2
 GH_ACCOUNT =	radareorg
 GH_PROJECT =	iaito
 GH_TAGNAME =	5.8.8
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -19,8 +20,7 @@ MODULES =	x11/qt5
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	devel/radare2/main>=5.8.8 \
 		math/graphviz
-LIB_DEPENDS =	archivers/libzip \
-		devel/capstone/main \
+LIB_DEPENDS =	devel/capstone/main \
 		x11/qt5/qtsvg
 
 CONFIGURE_STYLE =	simple
