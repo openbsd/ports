@@ -1,6 +1,7 @@
 @conflict gtk+4-<4.8.0
 @bin bin/gtk4-demo
 @bin bin/gtk4-demo-application
+@bin bin/gtk4-icon-editor
 @bin bin/gtk4-node-editor
 @bin bin/gtk4-print-editor
 @bin bin/gtk4-widget-factory
@@ -10,17 +11,21 @@
 @man man/man1/gtk4-widget-factory.1
 share/applications/org.gtk.Demo4.desktop
 share/applications/org.gtk.PrintEditor4.desktop
+share/applications/org.gtk.Shaper.desktop
 share/applications/org.gtk.WidgetFactory4.desktop
 share/applications/org.gtk.gtk4.NodeEditor.desktop
 share/glib-2.0/schemas/org.gtk.Demo4.gschema.xml
 share/icons/hicolor/scalable/apps/org.gtk.Demo4.svg
 share/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.Devel.svg
 share/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.svg
+share/icons/hicolor/scalable/apps/org.gtk.Shaper.Devel.svg
+share/icons/hicolor/scalable/apps/org.gtk.Shaper.svg
 share/icons/hicolor/scalable/apps/org.gtk.WidgetFactory4.svg
 share/icons/hicolor/scalable/apps/org.gtk.gtk4.NodeEditor.Devel.svg
 share/icons/hicolor/scalable/apps/org.gtk.gtk4.NodeEditor.svg
 share/icons/hicolor/symbolic/apps/org.gtk.Demo4-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gtk.PrintEditor4-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gtk.Shaper-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gtk.WidgetFactory4-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gtk.gtk4.NodeEditor-symbolic.svg
 share/metainfo/
