@@ -3,6 +3,7 @@
 @conflict py-gobject3-*
 @pkgpath devel/py-gobject3,python3
 include/pygobject-3.0/
+include/pygobject-3.0/pygobject-types.h
 include/pygobject-3.0/pygobject.h
 lib/pkgconfig/pygobject-3.0.pc
 lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_DISTV}.dist-info/
@@ -15,7 +16,6 @@ lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_constants.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_enum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_gtktemplate.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_option.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_ossighelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_propertyhelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_signalhelper.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,7 +24,6 @@ lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}docstring.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}module.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}pygtkcompat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/_constants.py
 lib/python${MODPY_VERSION}/site-packages/gi/_enum.py
@@ -32,7 +31,6 @@ lib/python${MODPY_VERSION}/site-packages/gi/_error.py
 @so lib/python${MODPY_VERSION}/site-packages/gi/_gi.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/gi/_gi_cairo.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gi/_gtktemplate.py
-lib/python${MODPY_VERSION}/site-packages/gi/_option.py
 lib/python${MODPY_VERSION}/site-packages/gi/_ossighelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/_propertyhelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/_signalhelper.py
@@ -44,6 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/module.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GIMarshallingTests.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GLib.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GLibUnix.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GObject.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gdk.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GdkPixbuf.py
@@ -55,6 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/overrides/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GIMarshallingTests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GLib.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GLibUnix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GObject.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gdk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GdkPixbuf.${MODPY_PYC_MAGIC_TAG}pyc
@@ -63,15 +63,8 @@ lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GioUnix.${
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gtk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Pango.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/pygtkcompat.py
 lib/python${MODPY_VERSION}/site-packages/gi/repository/
 lib/python${MODPY_VERSION}/site-packages/gi/repository/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gi/repository/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gi/repository/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/types.py
-lib/python${MODPY_VERSION}/site-packages/pygtkcompat/
-lib/python${MODPY_VERSION}/site-packages/pygtkcompat/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pygtkcompat/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/pygtkcompat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygtkcompat/${MODPY_PYCACHE}pygtkcompat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygtkcompat/pygtkcompat.py
