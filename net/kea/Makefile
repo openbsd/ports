@@ -1,7 +1,7 @@
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
 VERSION=	2.4.2
-REVISION=	3
+REVISION=	4
 PORTROACH=	limitw:1,even
 
 # 2.6 update notes so far;
@@ -31,7 +31,8 @@ SITES=		${SITE_ISC:=kea/${VERSION}/}
 
 LIB_DEPENDS=	devel/boost \
 		devel/log4cplus
-BUILD_DEPENDS+=	devel/bison
+BUILD_DEPENDS=	devel/bison \
+		devel/boost
 
 FLAVOR?=
 # postgresql flavor doesn't build with boost >= 1.87
