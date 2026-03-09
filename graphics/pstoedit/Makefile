@@ -1,6 +1,7 @@
 COMMENT=	translate PostScript/PDF graphics to other vector formats
 
 DISTNAME=	pstoedit-4.02
+REVISION=	0
 SHARED_LIBS=	pstoedit 4.0
 CATEGORIES=	graphics
 
@@ -8,8 +9,11 @@ HOMEPAGE=	http://www.pstoedit.net/
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
+
+WANTLIB += Lerc expat fontconfig freetype gd iconv jpeg lzma png
+WANTLIB += sharpyuv tiff webp z zstd
 
 SITES=		${SITE_SOURCEFORGE:=pstoedit/}
 
@@ -20,7 +24,7 @@ LIB_DEPENDS=	graphics/gd
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-libplot	\
-		--without-emf	 	\
+		--without-emf		\
 		--without-swf		\
 		--without-magick	\
 		--without-pptx		\
@@ -32,7 +36,8 @@ WANTLIB=	c ${COMPILER_LIBCXX} m
 # c++14
 COMPILER =	base-clang ports-gcc
 
-CONFIGURE_ENV+=	CXXFLAGS="-I/usr/local/include"
+CONFIGURE_ENV=	CXXFLAGS="-I/usr/local/include" \
+		LDFLAGS="-L/usr/local/lib"
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${PREFIX}/man/man1
