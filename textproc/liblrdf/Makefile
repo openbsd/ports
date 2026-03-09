@@ -2,7 +2,7 @@ COMMENT =		light RDF manipulation with LADSPA plugin support
 
 DISTNAME =		LRDF-0.5.0
 PKGNAME =		lib${DISTNAME:L}
-REVISION =		10
+REVISION =		11
 CATEGORIES =		textproc
 
 SHARED_LIBS =		lrdf	1.0	# 0.0
@@ -18,8 +18,7 @@ WANTLIB += xslt yajl z
 
 SITES =			https://spacehopper.org/mirrors/
 BUILD_DEPENDS =		audio/ladspa
-LIB_DEPENDS =		devel/gettext,-runtime \
-			devel/libyajl \
+LIB_DEPENDS =		devel/libyajl \
 			textproc/raptor
 
 AUTOCONF_VERSION =	2.69
