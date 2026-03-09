@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/binaryornot/data/__init__.py
 lib/python${MODPY_VERSION}/site-packages/binaryornot/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/binaryornot/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/binaryornot/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/binaryornot/data/binary_extensions.csv
 lib/python${MODPY_VERSION}/site-packages/binaryornot/data/binary_formats.csv
 lib/python${MODPY_VERSION}/site-packages/binaryornot/data/encodings.csv
 lib/python${MODPY_VERSION}/site-packages/binaryornot/helpers.py

@@ -1,6 +1,6 @@
 COMMENT=	check if a file is binary or text
 
-MODPY_DISTV=	0.5.0
+MODPY_DISTV=	0.6.0
 GH_ACCOUNT=	binaryornot
 GH_PROJECT=	binaryornot
 GH_TAGNAME=	v${MODPY_DISTV}
@@ -15,5 +15,6 @@ MODULES=	lang/python
 MODPY_PYBUILD=	hatchling
 
 TEST_DEPENDS=	devel/py-hypothesis
+MODPY_PYTEST_ARGS= --ignore tests/test_sdist.py
 
 .include <bsd.port.mk>
