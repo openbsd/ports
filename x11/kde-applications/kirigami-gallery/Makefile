@@ -1,6 +1,5 @@
 COMMENT =	kirigami component gallery application
 DISTNAME =	kirigami-gallery-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel
 

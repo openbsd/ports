@@ -4,7 +4,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	distraction-free Markdown editor
 
 DISTNAME =	ghostwriter-${MODKDE_GEAR_VERSION}
-REVISION =	0
 
 CATEGORIES =	editors
 

@@ -1,7 +1,6 @@
 COMMENT =	client for Matrix chat
 DISTNAME =	neochat-${MODKDE_GEAR_VERSION}
 CATEGORIES=	net
-REVISION =	0
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz

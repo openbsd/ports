@@ -14,6 +14,10 @@ bin/kmail_sav.sh
 @lib lib/libkmailquicktextpluginprivate.so.${LIBkmailquicktextpluginprivate_VERSION}
 @lib lib/libopenurlwithconfigure.so.${LIBopenurlwithconfigure_VERSION}
 @lib lib/libshorturlpluginprivate.so.${LIBshorturlpluginprivate_VERSION}
+lib/qt6/plugins/autogeneratetext/
+lib/qt6/plugins/autogeneratetext/toolplugins/
+@so lib/qt6/plugins/autogeneratetext/toolplugins/kaichat_addressbookplugin.so
+@so lib/qt6/plugins/autogeneratetext/toolplugins/kaichat_calendarplugin.so
 @so lib/qt6/plugins/pim6/akonadi/emailaddressselectionldapdialogplugin.so
 lib/qt6/plugins/pim6/contacteditor/
 lib/qt6/plugins/pim6/contacteditor/editorpageplugins/
@@ -100,6 +104,7 @@ lib/qt6/plugins/pim6/messageviewer/configuresettings/
 @so lib/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_standardsheaderstyleplugin.so
 @so lib/qt6/plugins/pim6/messageviewer/kf6/ktexttemplate/kitinerary_ktexttemplate_extension.so
 lib/qt6/plugins/pim6/messageviewer/viewercommonplugin/
+@so lib/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_aiplugin.so
 @so lib/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_expandurlplugin.so
 @so lib/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_translatorplugin.so
 lib/qt6/plugins/pim6/messageviewer/viewerplugin/
