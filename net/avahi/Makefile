@@ -5,39 +5,30 @@ COMMENT-gui=		GUI client utilities for avahi
 COMMENT-libs=		libraries and common data files for avahi
 COMMENT-python=		python bindings for avahi
 
-V=			0.8
-GH_ACCOUNT=		lathiat
+GH_ACCOUNT=		avahi
 GH_PROJECT=		avahi
-#GH_TAGNAME=		v${V}
-GH_TAGNAME=		fd482a74625b8db8547b8cfca3ee3d3c6c721423
+GH_TAGNAME=		v0.9-rc3
 
-PKGNAME-main=		avahi-${V}
-PKGNAME-glib=		avahi-glib-${V}
-PKGNAME-gtk3=		avahi-gtk3-${V}
-PKGNAME-gui=		avahi-gui-${V}
-PKGNAME-libs=		avahi-libs-${V}
-PKGNAME-python=		py3-avahi-${V}
-
-REVISION-python=	9
-REVISION-gui=		12
-REVISION-gtk3=		6
-REVISION-main=		11
-REVISION-libs=		6
-REVISION-glib=		4
+PKGNAME-main=		avahi-${_GH_TAG_DIST:S/-//}
+PKGNAME-glib=		avahi-glib-${_GH_TAG_DIST:S/-//}
+PKGNAME-gtk3=		avahi-gtk3-${_GH_TAG_DIST:S/-//}
+PKGNAME-gui=		avahi-gui-${_GH_TAG_DIST:S/-//}
+PKGNAME-libs=		avahi-libs-${_GH_TAG_DIST:S/-//}
+PKGNAME-python=		py3-avahi-${_GH_TAG_DIST:S/-//}
 
 CATEGORIES=		net devel
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  avahi-common         0.2      # 8.4
-SHARED_LIBS +=  avahi-core           0.2      # 8.0
-SHARED_LIBS +=  avahi-client         0.2      # 5.9
-SHARED_LIBS +=  avahi-glib           0.2      # 1.2
-SHARED_LIBS +=  avahi-gobject        0.2      # 0.5
-SHARED_LIBS +=  dns_sd               0.2      # 1.0
-SHARED_LIBS +=  howl                 0.2      # 0.0
-SHARED_LIBS +=  avahi-ui-gtk3        0.2      # 1.4
-SHARED_LIBS +=  avahi-libevent       0.0      # 1.0
+SHARED_LIBS +=  avahi-common         0.3      # 8.4
+SHARED_LIBS +=  avahi-core           0.3      # 8.0
+SHARED_LIBS +=  avahi-client         0.3      # 5.9
+SHARED_LIBS +=  avahi-glib           0.3      # 1.2
+SHARED_LIBS +=  avahi-gobject        0.3      # 0.5
+SHARED_LIBS +=  dns_sd               0.3      # 1.0
+SHARED_LIBS +=  howl                 0.3      # 0.0
+SHARED_LIBS +=  avahi-ui-gtk3        0.3      # 1.4
+SHARED_LIBS +=  avahi-libevent       0.1      # 1.0
 
 HOMEPAGE=		http://www.avahi.org/
 
@@ -75,7 +66,8 @@ LIB_DEPENDS-libs=	devel/gettext,-runtime \
 RUN_DEPENDS-libs=	# empty
 
 CONFIGURE_ARGS=		--disable-mono \
-			--disable-monodoc
+			--disable-monodoc \
+			--disable-libsystemd
 
 WANTLIB-glib += avahi-client avahi-common dbus-1 ffi glib-2.0
 WANTLIB-glib += gobject-2.0 iconv intl pcre2-8 pthread
@@ -156,8 +148,8 @@ CFLAGS+=		-D_BSD_SOURCE
 
 CONFIGURE_STYLE=	autoreconf
 AUTORECONF=		/bin/sh ./autogen.sh
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.18
 
 # ld: error: undefined symbol: libintl_dgettext
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
