@@ -7,7 +7,7 @@ V =		3.15.3
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
 GH_TAGNAME =	v${V}
-REVISION-main =	1
+REVISION-main =	2
 
 DISTNAME =		nextcloudclient-${V}
 PKGNAME-main =		nextcloudclient-${V}
@@ -34,6 +34,7 @@ WANTLIB-main += Qt6Sql Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB-main += Qt6WebSockets Qt6Widgets Qt6Xml c cloudproviders crypto
 WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 intl m qt6keychain sqlite3
 WANTLIB-main += ssl xkbcommon z
+WANTLIB-main += lib/inotify/inotify
 
 WANTLIB-dolphin += ${COMPILER_LIBCXX} GL KF6Completion KF6ConfigCore KF6CoreAddons
 WANTLIB-dolphin += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service
