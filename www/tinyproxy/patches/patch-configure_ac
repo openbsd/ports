@@ -19,7 +19,7 @@ Index: configure.ac
  done
  fi
  
-@@ -200,7 +200,7 @@ AH_TEMPLATE([HAVE_GPERF],
+@@ -203,7 +203,7 @@ AH_TEMPLATE([HAVE_GPERF],
  tmp_gperf=false
  if test "x$GPERF" != "x" -a "x$GPERF" != "xno" ; then
    AS_ECHO_N(["checking whether gperf is recent enough... "])

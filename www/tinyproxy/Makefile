@@ -1,28 +1,24 @@
-COMMENT =		lightweight HTTP/SSL proxy
+COMMENT=	lightweight HTTP/SSL proxy
 
-V =			1.11.2
-DISTNAME =		tinyproxy-$V
-REVISION =		0
-CATEGORIES =		www net
+V=		1.11.3
+DISTNAME=	tinyproxy-$V
+CATEGORIES=	www net
 
-HOMEPAGE =		https://tinyproxy.github.io/
+HOMEPAGE=	https://tinyproxy.github.io/
+SITES=		https://github.com/tinyproxy/tinyproxy/releases/download/$V/
 
 # GPLv2+
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 
-BUILD_DEPENDS =		devel/gperf \
-			textproc/asciidoc
+AUTOCONF_VERSION= 2.71
+CONFIGURE_STYLE= autoconf
 
-AUTOCONF_VERSION=	2.71
+BUILD_DEPENDS=	devel/gperf
+SEPARATE_BUILD=	Yes
+USE_GMAKE=	Yes
 
-SEPARATE_BUILD =	Yes
-USE_GMAKE =		Yes
-CONFIGURE_STYLE =	autoconf
-
-SITES =		https://github.com/tinyproxy/tinyproxy/releases/download/$V/
-
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 
 .include <bsd.port.mk>
