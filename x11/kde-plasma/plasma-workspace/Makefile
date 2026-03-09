@@ -1,5 +1,6 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kfontinst                 1.0 # 0.0
 SHARED_LIBS +=  kfontinstui               2.0 # 0.0
@@ -94,7 +95,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knewstuff \
 		devel/kf6/knotifications \
-		devel/kf6/knotifyconfig \
 		devel/kf6/kpackage \
 		devel/kf6/kparts \
 		devel/kf6/krunner \
@@ -115,7 +115,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/kirigami \
 		devel/kf6/syntax-highlighting \
 		math/libqalculate \
-		multimedia/phonon,qt6 \
 		sysutils/libudev-openbsd \
 		textproc/icu4c \
 		wayland/wayland \
