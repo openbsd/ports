@@ -1,8 +1,11 @@
 COMMENT =		light RDF manipulation with LADSPA plugin support
 
-DISTNAME =		LRDF-0.5.0
+# 0.6.1 exports its own copy of MD5_* functions which may cause issues
+# if other software using this pulls in libcrypto
+GH_ACCOUNT =		swh
+GH_PROJECT =		LRDF
+GH_TAGNAME =		v0.6.0
 PKGNAME =		lib${DISTNAME:L}
-REVISION =		11
 CATEGORIES =		textproc
 
 SHARED_LIBS =		lrdf	1.0	# 0.0
@@ -16,7 +19,6 @@ WANTLIB += crypto curl iconv icudata icuuc m nghttp2 nghttp3
 WANTLIB += ngtcp2 ngtcp2_crypto_libressl pthread raptor2 ssl xml2
 WANTLIB += xslt yajl z
 
-SITES =			https://spacehopper.org/mirrors/
 BUILD_DEPENDS =		audio/ladspa
 LIB_DEPENDS =		devel/libyajl \
 			textproc/raptor

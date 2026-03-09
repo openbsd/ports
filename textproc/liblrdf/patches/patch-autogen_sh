@@ -1,11 +1,11 @@
---- autogen.sh.orig	Thu Nov  8 23:02:30 2012
-+++ autogen.sh	Thu Nov  8 23:02:33 2012
-@@ -32,6 +32,8 @@ autoconf || {
+Index: autogen.sh
+--- autogen.sh.orig
++++ autogen.sh
+@@ -31,7 +31,3 @@ autoconf || {
+     echo "autoconf failed, exiting..."
      exit 1
  }
- 
-+exit 0
-+
- echo "Running ./configure --enable-maintainer-mode $@..."
- 
- ./configure --enable-maintainer-mode $@
+-
+-echo "Running ./configure $@..."
+-
+-./configure $@
