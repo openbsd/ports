@@ -1,2 +1,4 @@
-SHA256 (ccache-4.12.3.tar.gz) = 1oPVlko5XwDByBLqHR1SMXnxCXy/9+flTnFPo/mXEbE=
-SIZE (ccache-4.12.3.tar.gz) = 703059
+SHA256 (ccache-4.13.tar.gz) = TxiNfhIp0JljIwqEJ+iz/4JPFPakipCSUHcd77EiJcs=
+SHA256 (doctest-2.4.12.h) = KjFlTq0qbl75MIbKl2WbcBcQyAJ1IHs72xJnbAEtrOs=
+SIZE (ccache-4.13.tar.gz) = 733929
+SIZE (doctest-2.4.12.h) = 330334
