@@ -1,5 +1,6 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
+REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
@@ -103,5 +104,6 @@ CXXFLAGS +=		-I${LOCALBASE}/include/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-LIB_DEPENDS += devel/gettext,-runtime devel/glib2 devel/glib2,bootstrap 
+LIB_DEPENDS += devel/gettext,-runtime devel/glib2
+
 .include <bsd.port.mk>
