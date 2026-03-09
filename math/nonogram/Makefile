@@ -1,6 +1,7 @@
 COMMENT =		terminal-based nonogram solver
 
 V =			1.9.13
+REVISION =		0
 DISTNAME =		nonogram-$V
 
 CATEGORIES =		math
@@ -18,7 +19,8 @@ SITES =			https://www.lancs.ac.uk/~simpsons/archives/
 
 EXTRACT_SUFX =		.zip
 
-LIB_DEPENDS =		math/nonolib
+# static only
+BUILD_DEPENDS =		math/nonolib
 
 MAKE_FLAGS =		PREFIX="${DESTDIR}${PREFIX}" \
 			CC="${CC}" \
