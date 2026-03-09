@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1793 2026/03/07 18:01:03 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1794 2026/03/09 12:22:29 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1059,6 +1059,7 @@ setup_obsolete_reason(
 	1 => 'ruby34-capybara-webkit',
 	1 => 'ruby40-capybara-webkit',
 	2 => 'qtwebkit',
+	3 => 'usmb',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later
@@ -1090,6 +1091,7 @@ my $obsolete_suggestion = {
 	'jd-gui' => 'vineflower',
 	'minecraft' => 'multimc',
 	'tls-attacker' => 'py3-tlsfuzzer',
+	'usmb' => 'susmb',
 };
 
 # reasons for obsolete packages
