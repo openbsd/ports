@@ -49,6 +49,7 @@ MODULES =	devel/cmake
 
 # XXX cmake config uses CXX_MODULES, which needs clang-scan-deps
 MODULES +=	lang/clang
+MODCLANG_COMPILER_LINKS = No
 
 COMPILER =	base-clang ports-gcc
 
