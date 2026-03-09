@@ -5,6 +5,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 COMMENT =		OSM data to PostgreSQL converter
 
 GH_TAGNAME =		2.2.0
+REVISION =		0
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		osm2pgsql-dev
 
@@ -27,10 +28,10 @@ MODULES =		databases/postgresql    \
 			lang/lua
 
 LIB_DEPENDS =		databases/postgresql	\
-			devel/proj		\
-			devel/boost
+			devel/proj
 
-BUILD_DEPENDS =		devel/libtool \
+BUILD_DEPENDS =		devel/boost \
+			devel/libtool \
 			devel/fmt \
 			devel/protozero \
 			geo/libosmium>=2.17.0 \
