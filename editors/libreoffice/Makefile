@@ -1,7 +1,7 @@
 USE_WXNEEDED=	Yes
 USE_NOBTCFI=	Yes
 
-ONLY_FOR_ARCHS= amd64 i386 aarch64
+ONLY_FOR_ARCHS= amd64 aarch64
 
 COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
