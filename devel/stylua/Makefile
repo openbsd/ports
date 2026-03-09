@@ -1,10 +1,8 @@
 COMMENT =		Lua code formatter
 
-V =			2.3.1
+V =			2.4.0
 DIST_TUPLE +=		github JohnnyMorganz StyLua v${V} .
 DISTNAME =		stylua-${V}
-
-REVISION = 0
 
 CATEGORIES =		devel textproc
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
