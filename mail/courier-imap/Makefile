@@ -2,7 +2,7 @@ COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
 V=			5.2.10
-REVISION=		0
+REVISION=		1
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
@@ -45,7 +45,8 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_lib_db_db_env_create=no
 
 LIB_DEPENDS=		mail/courier-authlib \
-			devel/libidn2 \
+			devel/libidn2
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pcre2
 
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
