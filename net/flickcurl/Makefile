@@ -1,9 +1,9 @@
 COMMENT =		flickr API library and utility
 
 DISTNAME =		flickcurl-1.26
-REVISION =		7
+REVISION =		8
 
-SHARED_LIBS +=  	flickcurl   2.0      # 0.0
+SHARED_LIBS +=		flickcurl   2.0      # 0.0
 CATEGORIES =		net
 
 HOMEPAGE =		http://librdf.org/flickcurl/
@@ -17,8 +17,7 @@ WANTLIB += xslt yajl z
 
 SITES =			http://download.dajobe.org/flickcurl/
 
-LIB_DEPENDS =		devel/gettext,-runtime \
-			net/curl \
+LIB_DEPENDS =		net/curl \
 			textproc/libxml \
 			textproc/raptor
 
