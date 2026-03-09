@@ -1,5 +1,6 @@
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6KIOCore                1.0 # 0.0
 SHARED_LIBS +=  KF6KIOFileWidgets         0.2 # 0.0
@@ -24,7 +25,6 @@ RUN_DEPENDS =	devel/kf6/kdoctools>=${MODKF6_VERSION} \
 		devel/desktop-file-utils
 
 LIB_DEPENDS =	devel/kf6/karchive>=${MODKF6_VERSION} \
-		devel/kf6/kauth>=${MODKF6_VERSION} \
 		devel/kf6/kbookmarks>=${MODKF6_VERSION} \
 		devel/kf6/kcolorscheme>=${MODKF6_VERSION} \
 		devel/kf6/kcompletion>=${MODKF6_VERSION} \
