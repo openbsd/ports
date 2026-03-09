@@ -33,9 +33,10 @@ WANTLIB-return =	${WANTLIB} c rutil
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		devel/gperf \
+BUILD_DEPENDS =		devel/asio \
 			devel/boost \
-			devel/asio
+			devel/gperf \
+			devel/popt
 LIB_DEPENDS-main =	net/libcares \
 			net/radcli
 LIB_DEPENDS-repro =	${BUILD_PKGPATH},-main=${V} \
