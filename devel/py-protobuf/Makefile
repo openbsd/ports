@@ -1,7 +1,7 @@
 COMMENT=		Google data interchange format (protocol buffers)
 
-PYMAJOR=		6
-PROTOBUF_VERSION=	33.5
+PYMAJOR=		7
+PROTOBUF_VERSION=	34.0
 
 V=			${PYMAJOR}.${PROTOBUF_VERSION}
 MODPY_DISTV=		${V:S/-//g}
