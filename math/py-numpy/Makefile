@@ -1,6 +1,6 @@
 COMMENT=	fast array and numeric programming library for Python
 
-MODPY_DISTV=	2.4.2
+MODPY_DISTV=	2.4.3
 DISTNAME=	numpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
