@@ -1,6 +1,6 @@
-Fix build with poppler-26.02.0.
+Fix build with poppler-26.02.0 and 26.03.0.
 
-From commit 47e20c0503ab1464d528f2cc7dd5e6a6a85b70dc.
+The first one from commit 47e20c0503ab1464d528f2cc7dd5e6a6a85b70dc.
 
 Index: src/extension/internal/pdfinput/pdf-parser.cpp
 --- src/extension/internal/pdfinput/pdf-parser.cpp.orig
@@ -93,7 +93,19 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
              // Vertical text (or invalid value).
              dy += state->getCharSpace();
              if (n == 1 && *p == ' ') {
-@@ -2964,7 +2984,11 @@ Stream *PdfParser::buildImageStream() {
+@@ -2931,7 +2951,11 @@ Stream *PdfParser::buildImageStream() {
+ 
+   // build dictionary
+ #if defined(POPPLER_NEW_OBJECT_API)
++#if POPPLER_CHECK_VERSION(26, 3, 0)
++  dict = Object(std::make_unique<Dict>(xref));
++#else
+   dict = Object(new Dict(xref));
++#endif
+ #else
+   dict.initDict(xref);
+ #endif
+@@ -2964,7 +2988,11 @@ Stream *PdfParser::buildImageStream() {
    // make stream
  #if defined(POPPLER_NEW_OBJECT_API)
    str = new EmbedStream(parser->getStream(), dict.copy(), gFalse, 0);
@@ -105,7 +117,7 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
  #else
    str = new EmbedStream(parser->getStream(), &dict, gFalse, 0);
    str = str->addFilters(&dict);
-@@ -3137,10 +3161,17 @@ void PdfParser::loadOptionalContentLayers(Dict *resour
+@@ -3137,10 +3165,17 @@ void PdfParser::loadOptionalContentLayers(Dict *resour
              auto visible = true;
              // Normally we'd use poppler optContentIsVisible, but these dict
              // objects don't retain their references so can't be used directly.
