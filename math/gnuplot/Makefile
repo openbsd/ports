@@ -1,10 +1,11 @@
 COMMENT =	command-driven interactive function plotting program
 
 V =		5.4
-PATCHLEVEL =	9
+PATCHLEVEL =	8
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 SITES =		${SITE_SOURCEFORGE:=gnuplot/}
+REVISION =	0
 
 HOMEPAGE =	http://www.gnuplot.info/
 
