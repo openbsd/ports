@@ -2,7 +2,7 @@ COMMENT =	Limited Error Raster Compression
 
 GH_ACCOUNT =	esri
 GH_PROJECT =	lerc
-GH_TAGNAME =	v4.0.0
+GH_TAGNAME =	v4.1.0
 CATEGORIES =	graphics
 
 SHARED_LIBS +=	Lerc	0.0 # 0.0
