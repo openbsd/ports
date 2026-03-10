@@ -1,6 +1,6 @@
 COMMENT=		lightweight Gtk+3 based image viewer
 
-V=			2.6.1
+V=			2.7
 DISTNAME=		geeqie-${V}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
@@ -54,9 +54,6 @@ CONFIGURE_ARGS+=	-Darchive=disabled \
 			-Dvideothumbnailer=disabled \
 			-Dgq_htmldir=${PREFIX}/share/doc/geeqie \
 			-Dgq_helpdir=${PREFIX}/share/doc/geeqie
-
-post-extract:
-	sed -i 's,bash,sh,g' ${WRKSRC}/version.sh
 
 post-install:
 	rm -r ${PREFIX}/share/doc/

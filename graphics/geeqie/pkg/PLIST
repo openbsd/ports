@@ -19,7 +19,6 @@ lib/geeqie/lensID
 lib/geeqie/resize-help.sh
 @man man/man1/geeqie.1
 share/applications/org.geeqie.Geeqie.desktop
-share/applications/org.geeqie.cache-maintenance.desktop
 share/bash-completion/completions/geeqie
 share/geeqie/
 share/geeqie/applications/
@@ -36,6 +35,7 @@ share/geeqie/applications/org.geeqie.tethered-photography.desktop
 share/geeqie/applications/org.geeqie.video-player.desktop
 share/geeqie/org.geeqie.template.desktop
 share/icons/hicolor/scalable/apps/geeqie.svg
+share/icons/hicolor/scalable/apps/org.geeqie.Geeqie.svg
 share/locale/ar/LC_MESSAGES/geeqie.mo
 share/locale/be/LC_MESSAGES/geeqie.mo
 share/locale/bg/LC_MESSAGES/geeqie.mo
@@ -77,8 +77,6 @@ share/locale/vi/LC_MESSAGES/geeqie.mo
 share/locale/zh_CN/LC_MESSAGES/geeqie.mo
 share/locale/zh_TW/LC_MESSAGES/geeqie.mo
 share/metainfo/
-share/metainfo/org.geeqie.Geeqie.appdata.xml
-share/pixmaps/
-share/pixmaps/geeqie.png
+share/metainfo/org.geeqie.Geeqie.metainfo.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
