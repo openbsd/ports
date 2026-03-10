@@ -6,6 +6,7 @@
 /usr/local/lib r
 /usr/local/share r
 /usr/share/locale r
+/usr/share/zoneinfo r
 /var/cache/fontconfig r
 /usr/X11R6/lib r
 /usr/lib r

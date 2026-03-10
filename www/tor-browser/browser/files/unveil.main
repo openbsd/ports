@@ -14,6 +14,7 @@
 
 # normally "pledge dns" exempts this from unveil, but pledge might be disabled
 /etc/resolv.conf r
+/etc/hosts r
 
 /usr/local/bin/lyrebird rx
 /usr/local/bin/tor rx
@@ -21,6 +22,7 @@
 /usr/local/lib/tor-browser rx
 /usr/local/share r
 /usr/share/locale r
+/etc/localtime r
 /usr/share/zoneinfo r
 /var/cache/fontconfig r
 /usr/X11R6/lib r
