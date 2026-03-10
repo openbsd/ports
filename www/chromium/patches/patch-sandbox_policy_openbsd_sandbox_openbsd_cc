@@ -225,7 +225,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +      ufile = _UNVEIL_CDM;
 +      break;
 +    default:
-+      unveil("/dev/null", "r");
++      unveil("/dev/null", "rw");
 +      goto done;
 +  }
 +

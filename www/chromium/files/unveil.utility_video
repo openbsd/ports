@@ -1,3 +1,5 @@
+/dev/null rw
+
 # needed for chromium
 /etc/chromium r
 

@@ -13,6 +13,8 @@
 # needed for FIDO authentication
 /dev/fido rw
 
+/dev/null rw
+
 # needed for chromium
 /etc/ungoogled-chromium r
 

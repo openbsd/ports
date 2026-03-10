@@ -1,3 +1,5 @@
+/dev/null rw
+
 /etc/openwv r
 /usr/local/lib/openwv r
 
