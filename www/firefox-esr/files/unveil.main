@@ -14,11 +14,13 @@
 
 # normally "pledge dns" exempts this from unveil, but pledge might be disabled
 /etc/resolv.conf r
+/etc/hosts r
 
 /usr/local/lib r
 /usr/local/lib/firefox-esr rx
 /usr/local/share r
 /usr/share/locale r
+/etc/localtime r
 /usr/share/zoneinfo r
 /var/cache/fontconfig r
 /usr/X11R6/lib r
