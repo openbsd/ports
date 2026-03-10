@@ -3,7 +3,7 @@ COMMENT=	perform and manipulate nmap scans using Perl
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Nmap-Scanner-1.0
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -16,4 +16,4 @@ RUN_DEPENDS=	textproc/p5-XML-SAX \
 		www/p5-libwww \
 		net/nmap
 
-.include <bsd.port.mk>	
+.include <bsd.port.mk>

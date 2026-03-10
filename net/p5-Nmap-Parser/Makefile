@@ -3,6 +3,7 @@ COMMENT =	perl module for parsing nmap XML reports
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Nmap-Parser-1.37
+REVISION =	0
 EPOCH =		0
 CATEGORIES=	net
 

@@ -4,7 +4,7 @@ MODPY_DISTV=	0.6.1
 DISTNAME=	python-nmap-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/python/py/}
 CATEGORIES=	net
-REVISION=	9
+REVISION=	10
 
 HOMEPAGE=	http://xael.org/norman/python/python-nmap/
 SITES=		http://xael.org/pages/
