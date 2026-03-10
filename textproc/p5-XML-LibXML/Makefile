@@ -2,7 +2,7 @@ COMMENT =	perl binding for libxml2
 
 DISTNAME =	XML-LibXML-2.0210
 EPOCH =		0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	textproc
 
@@ -17,8 +17,7 @@ MODULES =		cpan
 RUN_DEPENDS =		textproc/p5-XML-NamespaceSupport \
 			textproc/p5-XML-SAX \
 			textproc/p5-XML-SAX-Base
-LIB_DEPENDS =		converters/libiconv \
-			textproc/libxml
+LIB_DEPENDS =		textproc/libxml
 TEST_DEPENDS =		devel/p5-Test-LeakTrace
 
 CONFIGURE_ENV =		SKIP_SAX_INSTALL=1
