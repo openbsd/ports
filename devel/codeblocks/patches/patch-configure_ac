@@ -1,6 +1,7 @@
-1. undefined reference to `free'
+1. undefined reference to `free' (-Wl,--no-undefined doesn't work
+   properly on OpenBSD + ld.lld)
 
-2. Cherry pick trunk@13760 to remove boost::system
+2. Cherry pick trunk@13760, 13752 to remove boost::system
    per https://marc.info/?l=openbsd-ports&m=177038373917003&w=2
 
 Index: configure.ac
@@ -14,12 +15,20 @@ Index: configure.ac
  
  CODEBLOCKS_CHECK_DEBUG
  
-@@ -43,8 +42,6 @@ AC_PROG_MAKE_SET
- AC_PROG_AWK
+@@ -44,8 +43,6 @@ AC_PROG_AWK
  
  AX_CXX_COMPILE_STDCXX(11, noext)
--
--CODEBLOCKS_CHECK_LINK_FLAG([-Wl,--no-undefined],[LDFLAGS="-Wl,--no-undefined $LDFLAGS"])
  
+-CODEBLOCKS_CHECK_LINK_FLAG([-Wl,--no-undefined],[LDFLAGS="-Wl,--no-undefined $LDFLAGS"])
+-
  CODEBLOCKS_SETUP_FOR_TARGET
  
+ dnl Checks for header files.
+@@ -256,7 +253,6 @@ case $WX_BASENAME in
+ 		if test "x$BUILD_NASSISHNEIDERMAN_TRUE" = "x" ; then
+ 			dnl Check whether boost is installed
+ 			AX_BOOST_BASE
+-			AX_BOOST_SYSTEM
+ 		fi
+ 
+ 		CB_GLIB2_CFLAGS="$GLIB2_CFLAGS"
