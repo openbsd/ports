@@ -391,8 +391,14 @@ share/virt-manager/virtinst/${MODPY_PYCACHE}virtxml.${MODPY_PYC_MAGIC_TAG}${MODP
 share/virt-manager/virtinst/${MODPY_PYCACHE}virtxml.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/${MODPY_PYCACHE}xmlapi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtinst/${MODPY_PYCACHE}xmlapi.${MODPY_PYC_MAGIC_TAG}pyc
+share/virt-manager/virtinst/${MODPY_PYCACHE}xmlbase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/virt-manager/virtinst/${MODPY_PYCACHE}xmlbase.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/${MODPY_PYCACHE}xmlbuilder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtinst/${MODPY_PYCACHE}xmlbuilder.${MODPY_PYC_MAGIC_TAG}pyc
+share/virt-manager/virtinst/${MODPY_PYCACHE}xmletree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/virt-manager/virtinst/${MODPY_PYCACHE}xmletree.${MODPY_PYC_MAGIC_TAG}pyc
+share/virt-manager/virtinst/${MODPY_PYCACHE}xmllibxml2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/virt-manager/virtinst/${MODPY_PYCACHE}xmllibxml2.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/${MODPY_PYCACHE}xmlutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtinst/${MODPY_PYCACHE}xmlutil.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/_progresspriv.py
@@ -588,7 +594,10 @@ share/virt-manager/virtinst/virtclone.py
 share/virt-manager/virtinst/virtinstall.py
 share/virt-manager/virtinst/virtxml.py
 share/virt-manager/virtinst/xmlapi.py
+share/virt-manager/virtinst/xmlbase.py
 share/virt-manager/virtinst/xmlbuilder.py
+share/virt-manager/virtinst/xmletree.py
+share/virt-manager/virtinst/xmllibxml2.py
 share/virt-manager/virtinst/xmlutil.py
 @tag glib-compile-schemas
 @tag update-desktop-database

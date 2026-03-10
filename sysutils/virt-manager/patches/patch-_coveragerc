@@ -1,0 +1,28 @@
+From 766bf2ecdc5ac6853b41a36412d09c1950c700bf Mon Sep 17 00:00:00 2001
+From: Cole Robinson <crobinso@redhat.com>
+Date: Wed, 17 Sep 2025 10:42:15 -0400
+Subject: [PATCH] xmlapi: add xmletree.py backend
+
+This is an XMLAPI backend using stock python ElementTree.
+We need to extend and re-implement some of ElementTree internals
+to make its output match what libvirt generates, so virt-xml edits
+don't generate extraneous diffs.
+
+This is disabled by default but will be used if libxml2 is not
+installed. You can explicitly opt in to using it by setting
+env var VIRTINST_XML_BACKEND=etree before virtinst is imported
+
+Signed-off-by: Cole Robinson <crobinso@redhat.com>
+
+Index: .coveragerc
+--- .coveragerc.orig
++++ .coveragerc
+@@ -3,7 +3,7 @@ source=virtinst/
+ 
+ [report]
+ skip_covered = yes
+-#omit=virtinst/_progresspriv.py
++omit=virtinst/xmletree.py
+ 
+ exclude_lines =
+     # Have to re-enable the standard pragma

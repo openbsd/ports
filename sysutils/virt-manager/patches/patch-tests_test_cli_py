@@ -1,0 +1,30 @@
+From 766bf2ecdc5ac6853b41a36412d09c1950c700bf Mon Sep 17 00:00:00 2001
+From: Cole Robinson <crobinso@redhat.com>
+Date: Wed, 17 Sep 2025 10:42:15 -0400
+Subject: [PATCH] xmlapi: add xmletree.py backend
+
+This is an XMLAPI backend using stock python ElementTree.
+We need to extend and re-implement some of ElementTree internals
+to make its output match what libvirt generates, so virt-xml edits
+don't generate extraneous diffs.
+
+This is disabled by default but will be used if libxml2 is not
+installed. You can explicitly opt in to using it by setting
+env var VIRTINST_XML_BACKEND=etree before virtinst is imported
+
+Signed-off-by: Cole Robinson <crobinso@redhat.com>
+
+Index: tests/test_cli.py
+--- tests/test_cli.py.orig
++++ tests/test_cli.py
+@@ -1148,7 +1148,9 @@ c.add_invalid(
+ )  # URI doesn't support UEFI bits
+ c.add_invalid("--graphics type=vnc,keymap", grep="Option 'keymap' had no value set.")
+ c.add_invalid("--xml FOOXPATH", grep="form of XPATH=VALUE")  # failure parsing xpath value
+-c.add_invalid("--xml /@foo=bar", grep="/@foo xmlXPathEval")  # failure processing xpath
++c.add_invalid(
++    "--xml /@foo=bar", grep="(/@foo xmlXPathEval|not an iterator)"
++)  # failure processing xpath
+ 
+ 
+ ########################

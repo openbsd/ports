@@ -1,0 +1,40 @@
+From d4988b02efb8bba91fd55614fbbff11b3a915d44 Mon Sep 17 00:00:00 2001
+From: Cole Robinson <crobinso@redhat.com>
+Date: Wed, 17 Sep 2025 10:38:12 -0400
+Subject: [PATCH] xmlapi: split out xmlbase.py and xmllibxml2.py
+
+We will be adding new XMLAPI implementations shortly and separate
+files helps with code org
+
+Signed-off-by: Cole Robinson <crobinso@redhat.com>
+
+From 766bf2ecdc5ac6853b41a36412d09c1950c700bf Mon Sep 17 00:00:00 2001
+From: Cole Robinson <crobinso@redhat.com>
+Date: Wed, 17 Sep 2025 10:42:15 -0400
+Subject: [PATCH] xmlapi: add xmletree.py backend
+
+This is an XMLAPI backend using stock python ElementTree.
+We need to extend and re-implement some of ElementTree internals
+to make its output match what libvirt generates, so virt-xml edits
+don't generate extraneous diffs.
+
+This is disabled by default but will be used if libxml2 is not
+installed. You can explicitly opt in to using it by setting
+env var VIRTINST_XML_BACKEND=etree before virtinst is imported
+
+Signed-off-by: Cole Robinson <crobinso@redhat.com>
+
+Index: virtinst/meson.build
+--- virtinst/meson.build.orig
++++ virtinst/meson.build
+@@ -24,7 +24,10 @@ virtinst_sources = files(
+   'virtinstall.py',
+   'virtxml.py',
+   'xmlapi.py',
++  'xmlbase.py',
+   'xmlbuilder.py',
++  'xmletree.py',
++  'xmllibxml2.py',
+   'xmlutil.py',
+ )
+ 
