@@ -13,7 +13,7 @@ Index: tools/v8_gypfiles/features.gypi
    },
  
    'target_defaults': {
-@@ -554,6 +557,9 @@
+@@ -551,6 +554,9 @@
        }],
        ['v8_enable_wasm_simd256_revec==1', {
          'defines': ['V8_ENABLE_WASM_SIMD256_REVEC',],
