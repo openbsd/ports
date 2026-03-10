@@ -3,7 +3,7 @@ Ambiguous bind(2) call.
 Index: nping/EchoServer.cc
 --- nping/EchoServer.cc.orig
 +++ nping/EchoServer.cc
-@@ -213,12 +213,12 @@ int EchoServer::nep_listen_socket(){
+@@ -212,12 +212,12 @@ int EchoServer::nep_listen_socket(){
          server_addr6.sin6_len = sizeof(struct sockaddr_in6);
      #endif
      /* Bind to local address and the specified port */
@@ -18,7 +18,7 @@ Index: nping/EchoServer.cc
                  nping_fatal(QT_3, "Could not bind to port %d (%s).", port, strerror(errno));
              }else{ 
                  nping_print(VB_1, "Server bound to port %d", port);
-@@ -251,12 +251,12 @@ int EchoServer::nep_listen_socket(){
+@@ -250,12 +250,12 @@ int EchoServer::nep_listen_socket(){
  #endif
  
      /* Bind to local address and the specified port */

@@ -3,7 +3,7 @@ Fix for 64-bit time_t on 32-bit archs
 Index: scan_engine.cc
 --- scan_engine.cc.orig
 +++ scan_engine.cc
-@@ -2061,7 +2061,7 @@ void ultrascan_host_probe_update(UltraScanInfo *USI, H
+@@ -2030,7 +2030,7 @@ void ultrascan_host_probe_update(UltraScanInfo *USI, H
      struct timeval tv;
  
      gettimeofday(&tv, NULL);

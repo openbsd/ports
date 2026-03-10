@@ -1,67 +1,73 @@
-COMMENT-main=	scan ports and fingerprint stack of network hosts
+COMMENT=	scan ports and fingerprint stack of network hosts
 
-MODPY_DISTV=	7.92
-DISTNAME=	nmap-${MODPY_DISTV}
-PKGNAME-main=	${DISTNAME}
-REVISION-main=	1
+DISTNAME=	nmap-7.98
+
+# "grep version ndiff/pyproject.toml" (used in ndiff-x.yz.dist-info files)
+MODPY_DISTV=	7.96
 
 CATEGORIES=	net security
-SITES=		${HOMEPAGE}/dist/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	https://www.nmap.org/
+SITES=		https://www.nmap.org/dist/
 
 MAINTAINER=	JR Aquino <tanawts@gmail.com>
 
 # NPSL, https://nmap.org/npsl/npsl-annotated.html
-# For <=7.92, https://nmap.org/misc/nmap-v7.80-license.txt may be used instead
-# XXX license needs checking over before updating beyond 7.92
 PERMIT_PACKAGE=	Yes
 
-MULTI_PACKAGES=	-main
+WANTLIB=	${COMPILER_LIBCXX} ${MODLUA_WANTLIB} \
+		c crypto lib/libpcap/pcap m ssl ssh2 pcre2-8 z
 
-COMPILER=	base-clang ports-gcc base-gcc
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
+COMPILER=	base-clang ports-gcc
 
 USE_GMAKE=	Yes
 MODLUA_SA=	Yes
-MODLUA_VERSION=	5.3
+MODLUA_VERSION=	5.4
 MODULES=	lang/python \
 		lang/lua
 
-DEBUG_PACKAGES=	${BUILD_PACKAGES}
-CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.69
+CONFIGURE_STYLE=  autoconf
+AUTOCONF_VERSION= 2.71
+AUTOCONF_DIR=	${WRKSRC} ${WRKSRC}/ncat ${WRKSRC}/nping ${WRKSRC}/nsock/src
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${MODLUA_INCL_DIR}" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include/libpcap -I${LOCALBASE}/include -I${MODLUA_INCL_DIR}" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${MODLUA_LIB}" \
+		LDFLAGS="-L${LOCALBASE}/lib/libpcap -Wl,-rpath,${LOCALBASE}/lib/libpcap -L${LOCALBASE}/lib" \
 		YACC="${LOCALBASE}/bin/bison -y"
-# XXX uses internal copy of libpcap, previous attempts to deal with the
-#     bpf_timeval changes in base libpcap have not been entirely successful
-CONFIGURE_ARGS=	--with-libpcap=included \
-		--with-openssl=/usr \
+CONFIGURE_ARGS=	--with-openssl=/usr \
 		--with-liblua=${LOCALBASE} \
 		--with-libpcre=${LOCALBASE} \
 		--with-mandir=${LOCALBASE}/man \
+		--without-ndiff \
 		--without-nmap-update \
 		--without-zenmap \
 		--disable-nls
 
-WANTLIB-main=	${COMPILER_LIBCXX} ${MODLUA_WANTLIB} \
-		c crypto m ssl ssh2 pcre z
-LIB_DEPENDS-main= ${MODLUA_LIB_DEPENDS} \
-		devel/pcre \
+BUILD_DEPENDS=	devel/bison
+LIB_DEPENDS=	${MODLUA_LIB_DEPENDS} \
+		devel/pcre2 \
+		net/libpcap \
 		security/libssh2
 
-BUILD_DEPENDS=	devel/bison \
-		devel/py-setuptools
-
 post-extract:
-	@cd ${WRKSRC} && rm -rf liblua/ libpcre/
+	cd ${WRKSRC}; rm -rf liblua libssh2 libpcap libpcre libz
 
-pre-configure:
-	@cd ${WRKSRC}/nping ; env PATH=${PORTPATH} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
+MODPY_PYBUILD=	setuptools
+MODPY_BUILD_DIR= ${WRKSRC}/ndiff
+
+post-build:
+	${MODPY_BUILD_TARGET}
+
+post-install:
+	${MODPY_INSTALL_TARGET}
+	${INSTALL_MAN} ${WRKSRC}/ndiff/docs/ndiff.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
+
+.if defined(DEBUG)
+FAKE_FLAGS=	STRIP=:
+.endif

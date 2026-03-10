@@ -5,7 +5,7 @@ https://github.com/nmap/nmap/commit/3adaa69cb211b00f9bfc66263a56cbd87cc9e521
 Index: nmap_dns.cc
 --- nmap_dns.cc.orig
 +++ nmap_dns.cc
-@@ -1352,7 +1352,7 @@ bool DNS::Factory::ptrToIp(const std::string &ptr, soc
+@@ -1671,7 +1671,7 @@ bool DNS::Factory::ptrToIp(const std::string &ptr, soc
    memset(&ip, 0, sizeof(sockaddr_storage));
  
    // Check whether the name ends with the IPv4 PTR domain
@@ -14,7 +14,7 @@ Index: nmap_dns.cc
    {
      struct sockaddr_in *ip4 = (struct sockaddr_in *)&ip;
      static const u8 place_value[] = {1, 10, 100};
-@@ -1387,7 +1387,7 @@ bool DNS::Factory::ptrToIp(const std::string &ptr, soc
+@@ -1706,7 +1706,7 @@ bool DNS::Factory::ptrToIp(const std::string &ptr, soc
      ip.ss_family = AF_INET;
    }
    // If not, check IPv6

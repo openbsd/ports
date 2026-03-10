@@ -1,26 +1,29 @@
-@conflict ndiff-*
-@pkgpath net/ndiff
-@pkgpath net/nmap
-@pkgpath net/nmap,no_x11
 @bin bin/ncat
 bin/ndiff
 @bin bin/nmap
 @bin bin/nping
 @comment bin/uninstall_ndiff
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ndiff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ndiff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ndiff-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ndiff-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ndiff-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ndiff-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ndiff-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/ndiff-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ndiff-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ndiff-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ndiff.py
 @man man/man1/ncat.1
 @man man/man1/ndiff.1
 @man man/man1/nmap.1
 @man man/man1/nping.1
-@comment share/applications/
 share/ncat/
 share/ncat/ca-bundle.crt
 share/nmap/
 share/nmap/nmap-mac-prefixes
 share/nmap/nmap-os-db
-share/nmap/nmap-payloads
 share/nmap/nmap-protocols
 share/nmap/nmap-rpc
 share/nmap/nmap-service-probes
@@ -91,6 +94,7 @@ share/nmap/nselib/data/rtsp-urls.txt
 share/nmap/nselib/data/snmpcommunities.lst
 share/nmap/nselib/data/ssl-fingerprints
 share/nmap/nselib/data/targets-ipv6-wordlist
+share/nmap/nselib/data/tftp-fingerprints.lua
 share/nmap/nselib/data/tftplist.txt
 share/nmap/nselib/data/usernames.lst
 share/nmap/nselib/data/vhosts-default.lst
@@ -117,6 +121,7 @@ share/nmap/nselib/http.lua
 share/nmap/nselib/httpspider.lua
 share/nmap/nselib/iax2.lua
 share/nmap/nselib/idna.lua
+share/nmap/nselib/iec61850mms.lua
 share/nmap/nselib/ike.lua
 share/nmap/nselib/imap.lua
 share/nmap/nselib/informix.lua
@@ -162,7 +167,6 @@ share/nmap/nselib/openssl.luadoc
 share/nmap/nselib/ospf.lua
 share/nmap/nselib/outlib.lua
 share/nmap/nselib/packet.lua
-share/nmap/nselib/pcre.luadoc
 share/nmap/nselib/pgsql.lua
 share/nmap/nselib/pop3.lua
 share/nmap/nselib/pppoe.lua
@@ -365,6 +369,7 @@ share/nmap/scripts/hadoop-jobtracker-info.nse
 share/nmap/scripts/hadoop-namenode-info.nse
 share/nmap/scripts/hadoop-secondary-namenode-info.nse
 share/nmap/scripts/hadoop-tasktracker-info.nse
+share/nmap/scripts/hartip-info.nse
 share/nmap/scripts/hbase-master-info.nse
 share/nmap/scripts/hbase-region-info.nse
 share/nmap/scripts/hddtemp-info.nse
@@ -511,6 +516,7 @@ share/nmap/scripts/iax2-brute.nse
 share/nmap/scripts/iax2-version.nse
 share/nmap/scripts/icap-info.nse
 share/nmap/scripts/iec-identify.nse
+share/nmap/scripts/iec61850-mms.nse
 share/nmap/scripts/ike-version.nse
 share/nmap/scripts/imap-brute.nse
 share/nmap/scripts/imap-capabilities.nse
@@ -566,6 +572,8 @@ share/nmap/scripts/metasploit-info.nse
 share/nmap/scripts/metasploit-msgrpc-brute.nse
 share/nmap/scripts/metasploit-xmlrpc-brute.nse
 share/nmap/scripts/mikrotik-routeros-brute.nse
+share/nmap/scripts/mikrotik-routeros-username-brute.nse
+share/nmap/scripts/mikrotik-routeros-version.nse
 share/nmap/scripts/mmouse-brute.nse
 share/nmap/scripts/mmouse-exec.nse
 share/nmap/scripts/modbus-discover.nse
@@ -587,6 +595,7 @@ share/nmap/scripts/ms-sql-tables.nse
 share/nmap/scripts/ms-sql-xp-cmdshell.nse
 share/nmap/scripts/msrpc-enum.nse
 share/nmap/scripts/mtrace.nse
+share/nmap/scripts/multicast-profinet-discovery.nse
 share/nmap/scripts/murmur-version.nse
 share/nmap/scripts/mysql-audit.nse
 share/nmap/scripts/mysql-brute.nse
@@ -649,6 +658,7 @@ share/nmap/scripts/pop3-capabilities.nse
 share/nmap/scripts/pop3-ntlm-info.nse
 share/nmap/scripts/port-states.nse
 share/nmap/scripts/pptp-version.nse
+share/nmap/scripts/profinet-cm-lookup.nse
 share/nmap/scripts/puppet-naivesigning.nse
 share/nmap/scripts/qconn-exec.nse
 share/nmap/scripts/qscan.nse
@@ -774,6 +784,7 @@ share/nmap/scripts/stuxnet-detect.nse
 share/nmap/scripts/supermicro-ipmi-conf.nse
 share/nmap/scripts/svn-brute.nse
 share/nmap/scripts/targets-asn.nse
+share/nmap/scripts/targets-ipv6-eui64.nse
 share/nmap/scripts/targets-ipv6-map4to6.nse
 share/nmap/scripts/targets-ipv6-multicast-echo.nse
 share/nmap/scripts/targets-ipv6-multicast-invalid-dst.nse
@@ -788,6 +799,7 @@ share/nmap/scripts/telnet-brute.nse
 share/nmap/scripts/telnet-encryption.nse
 share/nmap/scripts/telnet-ntlm-info.nse
 share/nmap/scripts/tftp-enum.nse
+share/nmap/scripts/tftp-version.nse
 share/nmap/scripts/tls-alpn.nse
 share/nmap/scripts/tls-nextprotoneg.nse
 share/nmap/scripts/tls-ticketbleed.nse
