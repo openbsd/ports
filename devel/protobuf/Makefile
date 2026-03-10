@@ -1,7 +1,7 @@
 COMMENT =		c++ protocol buffers
 
 CPPMAJOR =		6
-PROTOBUF_VERSION =	33.5
+PROTOBUF_VERSION =	34.0
 
 # Keep PROTOBUF_VERSION in devel/py-protobuf and devel/protobuf-java
 # in sync with this port.
@@ -15,9 +15,9 @@ DISTFILES =		protobuf-${PROTOBUF_VERSION}.tar.gz
 PROTOC_VERSION =	${PROTOBUF_VERSION}.0
 SUBST_VARS +=		PROTOC_VERSION
 
-SHARED_LIBS +=		protobuf-lite	32.0
-SHARED_LIBS +=		protobuf	36.0
-SHARED_LIBS +=		protoc		37.0
+SHARED_LIBS +=		protobuf-lite	33.0
+SHARED_LIBS +=		protobuf	37.0
+SHARED_LIBS +=		protoc		38.0
 SHARED_LIBS +=		utf8_range	1.0
 SHARED_LIBS +=		utf8_validity	2.0
 
