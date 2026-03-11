@@ -1,4 +1,5 @@
 FW_VER=		20251021
+REVISION=	0
 FW_DRIVER=	iwx
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
@@ -22,9 +23,11 @@ FW=	cc-a0		77 \
 	QuZ-a0-hr-b0	77 \
 	QuZ-a0-jf-b0	77 \
 	ma-b0-gf-a0	83 \
-	ma-b0-gf4-a0	83 \
+	ma-b0-gf-a0	89 \
 	ma-b0-hr-b0	83 \
-	bz-b0-gf-a0	92 \
+	ma-b0-hr-b0	89 \
+	ma-b0-gf4-a0	83 \
+	ma-b0-gf4-a0	89 \
 	bz-b0-gf-a0	100
 
 PNVM=	so-a0-gf-a0 \
