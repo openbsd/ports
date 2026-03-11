@@ -14,7 +14,7 @@ Index: cmd/syncthing/main.go
  	"github.com/alecthomas/kong"
  	"github.com/gofrs/flock"
  	"github.com/thejerf/suture/v4"
-@@ -213,6 +215,24 @@ func defaultVars() kong.Vars {
+@@ -212,6 +214,24 @@ func defaultVars() kong.Vars {
  func main() {
  	// Create a parser with an overridden help function to print our extra
  	// help info.
