@@ -3,11 +3,11 @@ BROKEN-hppa=		no atomic primitives
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			13.0.1
+V=			13.1.0
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += harfbuzz                  18.21 # 0.61301.0
+SHARED_LIBS += harfbuzz                  18.22 # 0.61301.0
 SHARED_LIBS += harfbuzz-subset           2.7 # 0.61301.0
 SHARED_LIBS += harfbuzz-raster           0.0 # 0.61301.0
 SHARED_LIBS += harfbuzz-vector           0.0 # 0.61301.0
@@ -25,7 +25,7 @@ PERMIT_PACKAGE=		Yes
 SITES=		https://github.com/harfbuzz/harfbuzz/releases/download/${V}/
 
 WANTLIB-main += ${COMPILER_LIBCXX} c cairo freetype glib-2.0 gobject-2.0
-WANTLIB-main += graphite2 m
+WANTLIB-main += graphite2 m png
 
 WANTLIB-icu += harfbuzz icuuc
 

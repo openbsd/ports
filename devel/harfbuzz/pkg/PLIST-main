@@ -1,5 +1,6 @@
 @pkgpath devel/harfbuzz
 @bin bin/hb-info
+@bin bin/hb-raster
 @bin bin/hb-shape
 @bin bin/hb-subset
 @bin bin/hb-vector
