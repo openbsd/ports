@@ -1,0 +1,21 @@
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -51,7 +51,7 @@ else()
+   generate_doc(html    doc/news.adoc    NEWS.html)
+   add_custom_target(doc-html DEPENDS "${html_doc_files}")
+ 
+-  if(PANDOC_EXE)
++  if(FALSE AND PANDOC_EXE)
+     #
+     # Markdown documentation
+     #
+@@ -71,7 +71,7 @@ else()
+   add_custom_target(doc-man-page DEPENDS ccache.1)
+ 
+   add_custom_target(doc ALL DEPENDS doc-html doc-man-page)
+-  if(PANDOC_EXE)
++  if(FALSE AND PANDOC_EXE)
+     add_dependencies(doc doc-markdown)
+   endif()
+ endif()
