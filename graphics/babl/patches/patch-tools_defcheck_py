@@ -9,5 +9,5 @@ Index: tools/defcheck.py
  have_errors = 0
 +sys.exit (have_errors)
  
- for df in def_files:
-    directory, name = path.split (df)
+ libextension   = ".so"
+ command        = "nm --defined-only --extern-only "

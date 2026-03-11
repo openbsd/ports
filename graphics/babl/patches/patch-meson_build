@@ -5,7 +5,7 @@ configure and then junked.
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -598,7 +598,7 @@ if not platform_win32 and not platform_osx
+@@ -593,7 +593,7 @@ if not platform_osx and host_cpu_family != 'x86'
  endif
  
  # Create README file from web page
