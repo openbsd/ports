@@ -1,7 +1,7 @@
 Index: lld/ELF/Arch/X86_64.cpp
 --- lld/ELF/Arch/X86_64.cpp.orig
 +++ lld/ELF/Arch/X86_64.cpp
-@@ -1315,7 +1315,7 @@ Retpoline::Retpoline(Ctx &ctx) : X86_64(ctx) {
+@@ -1314,7 +1314,7 @@ Retpoline::Retpoline(Ctx &ctx) : X86_64(ctx) {
  }
  
  void Retpoline::writeGotPlt(uint8_t *buf, const Symbol &s) const {
@@ -10,7 +10,7 @@ Index: lld/ELF/Arch/X86_64.cpp
  }
  
  void Retpoline::writePltHeader(uint8_t *buf) const {
-@@ -1343,22 +1343,23 @@ void Retpoline::writePltHeader(uint8_t *buf) const {
+@@ -1342,22 +1342,23 @@ void Retpoline::writePltHeader(uint8_t *buf) const {
  void Retpoline::writePlt(uint8_t *buf, const Symbol &sym,
                           uint64_t pltEntryAddr) const {
    const uint8_t insn[] = {
@@ -45,7 +45,7 @@ Index: lld/ELF/Arch/X86_64.cpp
  }
  
  RetpolineZNow::RetpolineZNow(Ctx &ctx) : X86_64(ctx) {
-@@ -1386,14 +1387,15 @@ void RetpolineZNow::writePltHeader(uint8_t *buf) const
+@@ -1385,14 +1386,15 @@ void RetpolineZNow::writePltHeader(uint8_t *buf) const
  void RetpolineZNow::writePlt(uint8_t *buf, const Symbol &sym,
                               uint64_t pltEntryAddr) const {
    const uint8_t insn[] = {
@@ -63,7 +63,7 @@ Index: lld/ELF/Arch/X86_64.cpp
  }
  
  void elf::setX86_64TargetInfo(Ctx &ctx) {
-@@ -1405,8 +1407,12 @@ void elf::setX86_64TargetInfo(Ctx &ctx) {
+@@ -1404,8 +1406,12 @@ void elf::setX86_64TargetInfo(Ctx &ctx) {
      return;
    }
  
