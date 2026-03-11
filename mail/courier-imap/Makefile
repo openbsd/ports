@@ -44,11 +44,6 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_lib_db_dbopen=no \
 			ac_cv_lib_db_db_env_create=no
 
-LIB_DEPENDS=		mail/courier-authlib \
-			devel/libidn2
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/pcre2
-
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
 SYSCONFDIR=		/etc/courier
 
@@ -97,9 +92,13 @@ CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs
 
 MULTI_PACKAGES=		-main -pop3
 
+LIB_DEPENDS=		mail/courier-authlib \
+			devel/libidn2
+
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/gettext,-runtime \
 			databases/gdbm \
+			devel/gettext,-runtime \
+			devel/pcre2 \
 			mail/courier-unicode>=2.1
 
 RUN_DEPENDS-pop3=	mail/courier-imap,-main
