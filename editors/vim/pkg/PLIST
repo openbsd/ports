@@ -1102,6 +1102,7 @@ share/vim/${P}/ftplugin/nanorc.vim
 share/vim/${P}/ftplugin/neomuttrc.vim
 share/vim/${P}/ftplugin/netrc.vim
 share/vim/${P}/ftplugin/nginx.vim
+share/vim/${P}/ftplugin/nickel.vim
 share/vim/${P}/ftplugin/nim.vim
 share/vim/${P}/ftplugin/nix.vim
 share/vim/${P}/ftplugin/nroff.vim
@@ -1268,6 +1269,7 @@ share/vim/${P}/ftplugin/xdefaults.vim
 share/vim/${P}/ftplugin/xf86conf.vim
 share/vim/${P}/ftplugin/xhtml.vim
 share/vim/${P}/ftplugin/xinetd.vim
+share/vim/${P}/ftplugin/xkb.vim
 share/vim/${P}/ftplugin/xml.vim
 share/vim/${P}/ftplugin/xmodmap.vim
 share/vim/${P}/ftplugin/xs.vim
@@ -1349,6 +1351,7 @@ share/vim/${P}/indent/graphql.vim
 share/vim/${P}/indent/gyp.vim
 share/vim/${P}/indent/haml.vim
 share/vim/${P}/indent/hamster.vim
+share/vim/${P}/indent/handlebars.vim
 share/vim/${P}/indent/hare.vim
 share/vim/${P}/indent/hcl.vim
 share/vim/${P}/indent/hog.vim
@@ -2284,6 +2287,7 @@ share/vim/${P}/syntax/gitrebase.vim
 share/vim/${P}/syntax/gitsendemail.vim
 share/vim/${P}/syntax/gkrellmrc.vim
 share/vim/${P}/syntax/gleam.vim
+share/vim/${P}/syntax/glimmer.vim
 share/vim/${P}/syntax/glsl.vim
 share/vim/${P}/syntax/gnash.vim
 share/vim/${P}/syntax/gnuplot.vim
@@ -2306,6 +2310,7 @@ share/vim/${P}/syntax/gvpr.vim
 share/vim/${P}/syntax/gyp.vim
 share/vim/${P}/syntax/haml.vim
 share/vim/${P}/syntax/hamster.vim
+share/vim/${P}/syntax/handlebars.vim
 share/vim/${P}/syntax/hare.vim
 share/vim/${P}/syntax/haredoc.vim
 share/vim/${P}/syntax/haskell.vim
