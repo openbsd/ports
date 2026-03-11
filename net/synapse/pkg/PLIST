@@ -1503,6 +1503,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}state_deltas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}stats.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}stats.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}sticky_events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}sticky_events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}stream.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}stream.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}tags.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1562,6 +1564,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/sliding_
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/state.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/state_deltas.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/stats.py
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/sticky_events.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/stream.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/tags.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/task_scheduler.py
@@ -2214,6 +2217,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/92/09
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/92/09_thread_subscriptions_update.sql.postgres
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/93/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/93/01_add_delayed_events.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/93/01_sticky_events.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/93/01_sticky_events_seq.sql.postgres
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/93/02_sliding_sync_members.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/93/03_sss_pos_last_used.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/93/04_make_delayed_event_content_text.py
@@ -2286,6 +2291,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/acl.pyi
 lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/events.pyi
 lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/http_client.pyi
+lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/msc4388_rendezvous.pyi
 lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/push.pyi
 lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/rendezvous.pyi
 lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/segmenter.pyi
