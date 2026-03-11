@@ -1,10 +1,9 @@
 COMMENT =	execute a command for every argument
 DISTNAME =	xe-1.0
 CATEGORIES =	sysutils
+REVISION =	0
 
 HOMEPAGE =	https://git.vuxu.org/xe/about/
-
-MAINTAINER =	Evan Silberman <evan@jklol.net>
 
 # CC0
 PERMIT_PACKAGE =	Yes

@@ -2,12 +2,11 @@ MODCABAL_VERSION =	3.9
 V =		${MODCABAL_VERSION}
 COMMENT =	convert between markup and document formats
 PKGNAME =	pandoc-${V}
+REVISION =	0
 
 CATEGORIES =	converters textproc
 
 HOMEPAGE =	https://pandoc.org
-
-MAINTAINER =	Evan Silberman <evan@jklol.net>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
