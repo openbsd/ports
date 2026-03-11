@@ -16,8 +16,8 @@ SHA256 (go_modules/github.com/pelletier/go-toml/@v/v1.9.5.mod) = wOwmx/hD02ii1ak
 SHA256 (go_modules/github.com/pelletier/go-toml/@v/v1.9.5.zip) = 3j3NpmDMgAzYbQMnOiWVbWf0Fuj8vk0gAaLLSgHmrGA=
 SHA256 (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250430135133-0f54527d2b1e.mod) = 9SfO2vq5PZdraqmjMAL7HQuaSBfyXz6tkMpJHdaYF4c=
 SHA256 (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250430135133-0f54527d2b1e.zip) = tM/G5oAEVcli+G9rY1j6FLanlJ9z/qYd7+ZzutfN2VQ=
-SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.5.mod) = tlUXEpe2E8ieC/CmkPkhYX1cO0d7gYccyz7mjPHCbV8=
-SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.5.zip) = gygHIglW2WxS4UkvHpUbcxQAaTyXq8x4Un1QR+lqc2U=
+SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.10.mod) = tlUXEpe2E8ieC/CmkPkhYX1cO0d7gYccyz7mjPHCbV8=
+SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.10.zip) = I+zwYm2ipCW8VY/TtmxaxTNyWaOwSIm5moNCEajZ8aE=
 SHA256 (go_modules/github.com/tdewolff/test/@v/v1.0.11.mod) = 9EefOv0J+7kaIZNIpSIgfv+uc4muXaMR/YZv9IuGFus=
 SHA256 (go_modules/github.com/tdewolff/test/@v/v1.0.11.zip) = /t2vBdFIMFJd7rKD7rpBEO4clOhNeVH/lSO+zyH2w00=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.13.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
@@ -27,7 +27,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = ThgX+WTKNOVFuBr9oDJaXonPWN4uQT2CB8Cv3dD9wVw=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (minify-v2.24.7.zip) = L2IC5hgG58lRQKw15GgqsqxqecT+VdTuW6cIrH7FsOM=
+SHA256 (minify-v2.24.10.zip) = mZD9ZnpBYimBntJUYYsB8F2o5FVzsBYL+Plzv+OIXxQ=
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.1.0.mod) = 40
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.1.0.zip) = 55809
 SIZE (go_modules/github.com/djherbis/atime/@v/v1.1.0.mod) = 42
@@ -46,8 +46,8 @@ SIZE (go_modules/github.com/pelletier/go-toml/@v/v1.9.5.mod) = 45
 SIZE (go_modules/github.com/pelletier/go-toml/@v/v1.9.5.zip) = 127514
 SIZE (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250430135133-0f54527d2b1e.mod) = 202
 SIZE (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250430135133-0f54527d2b1e.zip) = 26151
-SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.5.mod) = 87
-SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.5.zip) = 148736
+SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.10.mod) = 87
+SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.10.zip) = 149590
 SIZE (go_modules/github.com/tdewolff/test/@v/v1.0.11.mod) = 41
 SIZE (go_modules/github.com/tdewolff/test/@v/v1.0.11.zip) = 4421
 SIZE (go_modules/golang.org/x/sys/@v/v0.13.0.mod) = 33
@@ -57,4 +57,4 @@ SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = 
 SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = 39844
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (minify-v2.24.7.zip) = 7870077
+SIZE (minify-v2.24.10.zip) = 7885333
