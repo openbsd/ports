@@ -20,11 +20,12 @@ CATEGORIES =	x11 wayland
 
 GH_ACCOUNT =	sizeofvoid
 GH_PROJECT =	libopeninput
-GH_COMMIT =	eced8d4e2f2b27ec8e4d3974275bfc87e7db02e2
+GH_COMMIT =	2f41609216e7655ea567279adfd2214fc585667f
+REVISION =	0
 
 DISTNAME =	libinput-openbsd-1.30.2
 
-SHARED_LIBS =	input	0.1
+SHARED_LIBS =	input	0.2
 
 WANTLIB += epoll-shim m udev
 
