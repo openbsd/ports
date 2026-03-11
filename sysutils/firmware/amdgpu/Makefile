@@ -1,5 +1,5 @@
 FW_DRIVER=	amdgpu
-FW_VER=		20251021
+FW_VER=		20260309
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,\*.bin}

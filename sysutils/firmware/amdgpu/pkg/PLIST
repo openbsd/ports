@@ -584,6 +584,7 @@ firmware/amdgpu/vangogh_rlc.bin
 firmware/amdgpu/vangogh_sdma.bin
 firmware/amdgpu/vangogh_toc.bin
 firmware/amdgpu/vangogh_vcn.bin
+firmware/amdgpu/vce_1_0_0.bin
 firmware/amdgpu/vcn_3_1_2.bin
 firmware/amdgpu/vcn_4_0_0.bin
 firmware/amdgpu/vcn_4_0_2.bin
