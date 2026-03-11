@@ -1,4 +1,5 @@
 COMMENT=		lightweight Gtk+3 based image viewer
+FIX_EXTRACT_PERMISSIONS= Yes
 
 V=			2.7
 DISTNAME=		geeqie-${V}
