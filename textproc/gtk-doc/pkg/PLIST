@@ -100,6 +100,10 @@ share/help/hu/
 share/help/hu/gtk-doc-manual/
 share/help/hu/gtk-doc-manual/fdl-appendix.xml
 share/help/hu/gtk-doc-manual/index.docbook
+share/help/kk/
+share/help/kk/gtk-doc-manual/
+share/help/kk/gtk-doc-manual/fdl-appendix.xml
+share/help/kk/gtk-doc-manual/index.docbook
 share/help/pt_BR/
 share/help/pt_BR/gtk-doc-manual/
 share/help/pt_BR/gtk-doc-manual/fdl-appendix.xml
