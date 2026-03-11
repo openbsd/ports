@@ -1,7 +1,7 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -102,16 +102,8 @@ wifi = ["wifi"]
+@@ -113,18 +113,8 @@ wifi = ["wifi"]
  glances = "glances:main"
  
  [tool.setuptools.data-files]
@@ -10,9 +10,11 @@ Index: pyproject.toml
 -  "COPYING",
 -  "NEWS.rst",
 -  "README.rst",
+-  "README-pypi.rst",
 -  "SECURITY.md",
 -  "CONTRIBUTING.md",
 -  "conf/glances.conf",
+-  "conf/fetch-templates/*.jinja",
 -]
 -"share/man/man1" = ["docs/man/glances.1"]
 +"share/examples/glances" = [ "conf/glances.conf" ]

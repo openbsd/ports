@@ -1,6 +1,6 @@
 COMMENT =		cross-platform curses-based monitoring tool
 
-MODPY_DISTV =		4.3.1
+MODPY_DISTV =		4.5.1
 DISTNAME =		glances-${MODPY_DISTV}
 
 EPOCH =			0

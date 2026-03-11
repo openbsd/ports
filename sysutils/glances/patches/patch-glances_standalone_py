@@ -8,7 +8,7 @@ Index: glances/standalone.py
 -from glances.outdated import Outdated
  from glances.outputs.glances_curses import GlancesCursesStandalone
  from glances.outputs.glances_stdout import GlancesStdout
- from glances.outputs.glances_stdout_apidoc import GlancesStdoutApiDoc
+ from glances.outputs.glances_stdout_api_doc import GlancesStdoutApiDoc
 @@ -112,9 +111,6 @@ class GlancesStandalone:
              # It is done in the screen.init function
              self._quiet = args.quiet
