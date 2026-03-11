@@ -1,7 +1,7 @@
 Index: codex-rs/core/src/config/mod.rs
 --- codex-rs/core/src/config/mod.rs.orig
 +++ codex-rs/core/src/config/mod.rs
-@@ -2064,7 +2064,7 @@ impl Config {
+@@ -2258,7 +2258,7 @@ impl Config {
  
          let review_model = override_review_model.or(cfg.review_model);
  
@@ -10,12 +10,3 @@ Index: codex-rs/core/src/config/mod.rs
          let model_catalog = load_model_catalog(
              config_profile
                  .model_catalog_json
-@@ -5257,7 +5257,7 @@ model_verbosity = "high"
-                 active_project: ProjectConfig { trust_level: None },
-                 windows_wsl_setup_acknowledged: false,
-                 notices: Default::default(),
--                check_for_update_on_startup: true,
-+                check_for_update_on_startup: false,
-                 disable_paste_burst: false,
-                 tui_notifications: Default::default(),
-                 tui_notification_method: Default::default(),
