@@ -1,6 +1,6 @@
 COMMENT =	distributed and RESTful search engine
 
-V =		3.4.0
+V =		3.5.0
 DISTNAME =	opensearch-$V-linux-x64
 PKGNAME =	opensearch-$V
 
@@ -35,7 +35,8 @@ SUBST_TARGETS =	${WRKSRC}/bin/opensearch-env \
 		${WRKSRC}/plugins/opensearch-security/tools/install_demo_configuration.sh
 
 do-build:
-	rm -rf ${WRKSRC}/lib/jna-*.jar
+	rm -rf ${WRKSRC}/lib/jna-*.jar ${WRKSRC}/plugins/opensearch-knn/jna-*.jar \
+		${WRKSRC}/lib/tools/fips-demo-installer-cli/jna-*.jar
 	find ${WRKSRC} -name '*.bat' -delete
 	${SUBST_CMD} ${SUBST_TARGETS}
 	rm -f ${WRKSRC}/{bin,config,plugins/opensearch-security/tools}/*{.beforesubst,${PATCHORIG}}
