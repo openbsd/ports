@@ -3,6 +3,7 @@
      SUBDIR += cagebreak
      SUBDIR += dmenu-wayland
      SUBDIR += foot
+     SUBDIR += fuzzel
      SUBDIR += greetd
      SUBDIR += grim
      SUBDIR += gtk-layer-shell
