@@ -1,7 +1,6 @@
 COMMENT =	list files, recursively
-DISTNAME =	lr-1.6
+DISTNAME =	lr-2.0.1
 CATEGORIES =	sysutils
-REVISION =	0
 
 HOMEPAGE =	https://git.vuxu.org/lr/about/
 
