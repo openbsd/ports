@@ -1,0 +1,18 @@
+@bin bin/fuzzel
+@man man/man1/fuzzel.1
+@man man/man5/fuzzel.ini.5
+share/doc/fuzzel/
+share/doc/fuzzel/CHANGELOG.md
+share/doc/fuzzel/LICENSE
+share/doc/fuzzel/README.md
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/fuzzel/
+share/examples/fuzzel/
+share/examples/fuzzel/fuzzel.ini
+@sample ${SYSCONFDIR}/xdg/fuzzel/fuzzel.ini
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/fuzzel.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_fuzzel

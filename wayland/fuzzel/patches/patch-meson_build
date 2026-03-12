@@ -1,0 +1,21 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -54,7 +54,7 @@ if cc.has_argument('-fmacro-prefix-map=/foo=')
+ endif
+ 
+ math = cc.find_library('m')
+-threads = [dependency('threads'), cc.find_library('stdthreads', required: false)]
++stdthreads = dependency('stdthreads')
+ fontconfig = dependency('fontconfig')
+ pixman = dependency('pixman-1', version: '>=0.46.0')
+ # Cairo is required for librsvg but not for resvg/nanosvg
+@@ -216,7 +216,7 @@ fuzzel = executable(
+   'timing.c', 'timing.h',
+   wl_proto_src + wl_proto_headers, version, srgb_funcs,
+   dependencies: [math,
+-                 threads,
++                 stdthreads,
+                  pixman,
+                  fontconfig,
+                  cairo,
