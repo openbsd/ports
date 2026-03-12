@@ -254,6 +254,7 @@
      SUBDIR += jsoncpp
      SUBDIR += jsonrpc-glib
      SUBDIR += jujutsu
+     SUBDIR += jupyter-console
      SUBDIR += kainjow-mustache
      SUBDIR += kdbindings
      SUBDIR += kdevelop
