@@ -1,7 +1,7 @@
 Index: auto.def
 --- auto.def.orig
 +++ auto.def
-@@ -329,7 +329,7 @@ if {[opt-bool with-th1-hooks]} {
+@@ -330,7 +330,7 @@ if {[opt-bool with-th1-hooks]} {
  
  if {[opt-bool static]} {
    # XXX: This will not work on all systems.
@@ -10,7 +10,7 @@ Index: auto.def
    msg-result "Trying to link statically"
  } else {
    define-append EXTRA_CFLAGS -DFOSSIL_DYNAMIC_BUILD=1
-@@ -814,7 +814,8 @@ if {[opt-bool fusefs]} {
+@@ -820,7 +820,8 @@ if {[opt-bool fusefs]} {
    if {[opt-bool static]} {
      msg-result "FuseFS support disabled due to -static"
    } elseif {[cc-check-function-in-lib fuse_mount fuse]} {

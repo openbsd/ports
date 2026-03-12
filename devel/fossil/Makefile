@@ -1,13 +1,12 @@
 COMMENT =		simple distributed software configuration management
 
-V =			2.27
+V =			2.28
 PKGNAME =		fossil-${V}
-REVISION =		0
 
 # commit ID must be changed in DISTFILES when updating, see
 # https://fossil-scm.org/home/uv/download.html
 DISTNAME =		fossil-src-${V}
-DISTFILES =		{99675884a93c09125dbfbef0ca47959626c81545c132e247e67a08bd12ac7256/}${DISTNAME}${EXTRACT_SUFX}
+DISTFILES =		{52445a27f116603d784ad753c6acd494e0b02aeaf8502ee0fee0aa30030f4c4e/}${DISTNAME}${EXTRACT_SUFX}
 
 CATEGORIES =		devel www
 EPOCH =			0
