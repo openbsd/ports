@@ -1,6 +1,6 @@
 COMMENT=	fast Python json encoder/decoder
 
-MODPY_DISTV=	5.11.0
+MODPY_DISTV=	5.12.0
 DISTNAME=	ujson-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
