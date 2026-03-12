@@ -1,6 +1,5 @@
 COMMENT=	VI Editor Like Emacs
-DISTNAME=	vile-9.8y
-REVISION=	0
+DISTNAME=	vile-9.8zb
 CATEGORIES=	editors
 HOMEPAGE=	https://invisible-island.net/vile/
 
@@ -16,7 +15,7 @@ SITES=		https://invisible-island.net/archives/vile/current/ \
 EXTRACT_SUFX=	.tgz
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+= --with-builtin-filters \
+CONFIGURE_ARGS=	--with-builtin-filters \
 		--with-screen=ncursesw
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
