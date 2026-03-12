@@ -1,6 +1,6 @@
 COMMENT =	Vulkan Validation Layers
 
-V =		1.4.335.0
+V =		1.4.341.0
 PKGNAME =	vulkan-validation-layers-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
@@ -31,8 +31,7 @@ BUILD_DEPENDS =	graphics/spirv-headers \
 
 # needs robin_hood cmake package to build with robing hood hashing
 CONFIGURE_ARGS +=	-DBUILD_WERROR=False \
-			-DSPIRV_HEADERS_INSTALL_DIR=${LOCALBASE}/include/spirv \
-			-DUSE_ROBIN_HOOD_HASHING=False
+			-DSPIRV_HEADERS_INSTALL_DIR=${LOCALBASE}/include/spirv
 
 # Tests only build if Google Test framework is in directory external/
 NO_TEST =	Yes

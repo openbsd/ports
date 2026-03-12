@@ -1,6 +1,6 @@
 COMMENT =	Vulkan Utility Libraries
 
-V =		1.4.335.0
+V =		1.4.341.0
 PKGNAME =	vulkan-utility-libraries-${V}
 DIST_TUPLE =	github KhronosGroup Vulkan-Utility-Libraries vulkan-sdk-${V} .
 
