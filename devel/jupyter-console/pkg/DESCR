@@ -1,0 +1,2 @@
+A terminal-based console frontend for Jupyter kernels. This code is
+based on the single-process IPython terminal.
