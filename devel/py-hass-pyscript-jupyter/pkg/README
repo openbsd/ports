@@ -1,0 +1,30 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Note that HomeAssistant (HASS) does not easily run on OpenBSD; this package
+is for connecting to Pyscript running on HASS on another system.
+
+Firstly you'll need to install Pyscript on your HASS system, manually or
+via HACS, and then add it as an integration via the HASS config interface.
+This is outside the scope of this readme; see the documentation at
+https://hacs-pyscript.readthedocs.io/en/stable/installation.html for more.
+
+You will also need to create a long-lasting access token for your HASS user.
+This is done in the security tab of the user page. When you have this,
+edit ${TRUEPREFIX}/share/jupyter/kernels/pyscript/pyscript.conf, configure
+'hass_host' and 'hass_url' as appropriate, and paste in the access token.
+The token provides access to HASS, so be sure to set file ownership and
+permissions as appropriate.
+
+You can then access this via Jupyter notebook, for example:
+
+# pkg_add jupyter-notebook
+$ jupyter notebook ${TRUEPREFIX}/share/doc/hass-pyscript-jupyter
+
+Then open a web browser pointing at the local server as directed (if one
+is not started automatically), and work through pyscript_tutorial.ipynb.
+You can also open a console to the Pyscript "kernel" and issue commands
+directly.
+
+Also see ${TRUEPREFIX}/share/doc/hass-pyscript-jupyter/README.md.

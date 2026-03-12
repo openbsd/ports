@@ -1,0 +1,41 @@
+bin/jupyter-pyscript
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/__init__.py
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/__main__.py
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}install.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}install.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}shim.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}shim.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/install.py
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/kernel_files/
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/kernel_files/logo-32x32.png
+@sample share/jupyter/kernels/pyscript/logo-32x32.png
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/kernel_files/logo-64x64.png
+@sample share/jupyter/kernels/pyscript/logo-64x64.png
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/kernel_files/pyscript.conf
+@sample share/jupyter/kernels/pyscript/pyscript.conf
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/shim.py
+lib/python${MODPY_VERSION}/site-packages/hass_pyscript_kernel/version.py
+share/doc/hass-pyscript-jupyter/
+share/doc/hass-pyscript-jupyter/README.md
+share/doc/hass-pyscript-jupyter/pyscript_tutorial.ipynb
+share/doc/pkg-readmes/${PKGSTEM}
+share/jupyter/
+share/jupyter/kernels/
+share/jupyter/kernels/pyscript/
+share/jupyter/kernels/pyscript/kernel.json

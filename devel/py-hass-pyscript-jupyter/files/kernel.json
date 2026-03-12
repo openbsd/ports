@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "python",
+    "-m",
+    "hass_pyscript_kernel",
+    "-f",
+    "{connection_file}"
+  ],
+  "display_name": "hass pyscript",
+  "language": "python"
+}

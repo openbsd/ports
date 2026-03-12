@@ -1,0 +1,17 @@
+The Pyscript add-on for HomeAssistant ('HASS pyscript') provides a "kernel"
+that interfaces with the Jupyter front-ends (e.g. notebook, console, lab, and
+also VSCode). It allows you to develop and test pyscript triggers, functions
+and automation logic interactively, and interact with much of HASS by looking
+at state variables and calling services as you experiment and develop your
+own logic and automations.
+
+While HomeAssistant does not easily run on OpenBSD, you can run it on another
+system and connect from the Jupyter front-ends running on OpenBSD by using
+this package, hass-pyscript-jupyter, which provides a shim that sits between
+HASS pyscript and Jupyter. This shim is started by Jupyter and uses the HASS
+web interface to make a service call to pyscript, starting the kernel and
+helping establish the various socket connections between HASS/pyscript and
+Jupyter.
+
+The end result is that you can interact with Python/pyscript on HASS from an
+OpenBSD system.

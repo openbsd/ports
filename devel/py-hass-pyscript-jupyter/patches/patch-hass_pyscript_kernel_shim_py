@@ -1,0 +1,27 @@
+handle not having aiohttp_socks
+
+Index: hass_pyscript_kernel/shim.py
+--- hass_pyscript_kernel/shim.py.orig
++++ hass_pyscript_kernel/shim.py
+@@ -23,7 +23,10 @@ from typing import Any
+ import aiohttp
+ from aiohttp import ClientResponse
+ from aiohttp.typedefs import StrOrURL
+-import aiohttp_socks as proxy
++try:
++    import aiohttp_socks as proxy
++except ImportError:
++    proxy = None
+ from jupyter_client.kernelspec import KernelSpecManager
+ 
+ #
+@@ -106,6 +109,9 @@ class RelayPort:
+                 await status_q.put(["task_start", asyncio.current_task()])
+ 
+                 if CONFIG_SETTINGS["hass_proxy"] is not None:
++                    if proxy is None:
++                        print(f"{PKG_NAME}: configured to use proxy, but aiohttp_socks unavailable")
++                        sys.exit(1)
+                     if self.verbose >= 3:
+                         print(
+                             f"{PKG_NAME}: {self.name} connected to jupyter client; now trying pyscript kernel"
