@@ -21,7 +21,7 @@ Index: Makefile.in
  
  %.o : %.c
  	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
-@@ -121,9 +121,7 @@ install-lib : lib
+@@ -122,9 +122,7 @@ install-lib : lib
  	  fi ; \
  	  rm -f "$(DESTDIR)$(libdir)/lib$(libname).so" ; \
  	  rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)" ; \

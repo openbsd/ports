@@ -1,6 +1,6 @@
 COMMENT =		lzip compression library
 
-DISTNAME =		lzlib-1.15
+DISTNAME =		lzlib-1.16
 
 SHARED_LIBS +=		lz	1.4 # 1.15
 
