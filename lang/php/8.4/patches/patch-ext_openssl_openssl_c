@@ -25,7 +25,7 @@ Index: ext/openssl/openssl.c
 -			sk_X509_push(stack,xi->x509);
 +			if(sk_X509_push(stack,xi->x509) == 0) {
 +				php_error_docref(NULL, E_ERROR, "Memory allocation failure");
-+				sk_X509_free(stack);
++				sk_X509_pop_free(stack,X509_free);
 +				goto end;
 +			}
  			xi->x509=NULL;
