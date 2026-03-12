@@ -1,6 +1,6 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_DISTV =		9.10.0
+MODPY_DISTV =		9.11.0
 DISTNAME =		ipython-${MODPY_DISTV}
 
 CATEGORIES =		devel
@@ -18,15 +18,15 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/py-decorator \
-			devel/py-jedi>=0.18.1 \
-			devel/py-pexpect>=4.3 \
+			devel/py-decorator>=5.1.0 \
+			devel/py-jedi>=0.18.2 \
+			devel/py-pexpect>=4.6 \
 			devel/py-prompt_toolkit>=3.0.41v1,<3.1.0v1 \
 			devel/py-stack_data \
 			devel/py-traitlets>=5.13.0 \
-			graphics/py-matplotlib-inline \
+			graphics/py-matplotlib-inline>=0.1.6 \
 			textproc/py-ipython_pygments_lexers \
-			textproc/py-pygments>=2.11.0
+			textproc/py-pygments>=2.14.0
 
 # Note that if you have pdb++ installed, tests will fail.
 # Could benefit from having jupyter_ai
