@@ -1519,6 +1519,7 @@
      SUBDIR += py-greenlet
      SUBDIR += py-hamcrest
      SUBDIR += py-hashids
+     SUBDIR += py-hass-pyscript-jupyter
      SUBDIR += py-hatch-fancy-pypi-readme
      SUBDIR += py-hatch-jupyter-builder
      SUBDIR += py-hatch-nodejs-version
