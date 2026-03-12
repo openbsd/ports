@@ -1,3 +1,7 @@
+#1, #2:
+libressl doesn't yet have sk_new_reserve.
+
+#3:
 This check doesn't make sense for EC keys. (Also it ignores the default
 key size compiled into libcrypto, only looks at default_bits in openssl.cnf
 and any settings in the php file, which results in bogus failures).
@@ -5,7 +9,29 @@ and any settings in the php file, which results in bogus failures).
 Index: ext/openssl/openssl_backend_common.c
 --- ext/openssl/openssl_backend_common.c.orig
 +++ ext/openssl/openssl_backend_common.c
-@@ -1436,7 +1436,7 @@ static const char *php_openssl_get_evp_pkey_name(int k
+@@ -709,7 +709,7 @@ STACK_OF(X509) *php_openssl_load_all_certs_from_file(
+ 		goto end;
+ 	}
+ 
+-	if(!(stack = sk_X509_new_reserve(NULL, sk_X509_INFO_num(sk)))) {
++	if(!(stack = sk_X509_new_null())) {
+ 		php_openssl_store_errors();
+ 		goto end;
+ 	}
+@@ -718,7 +718,11 @@ STACK_OF(X509) *php_openssl_load_all_certs_from_file(
+ 	while (sk_X509_INFO_num(sk)) {
+ 		xi=sk_X509_INFO_shift(sk);
+ 		if (xi->x509 != NULL) {
+-			sk_X509_push(stack,xi->x509);
++			if(sk_X509_push(stack,xi->x509) == 0) {
++				php_error_docref(NULL, E_ERROR, "Memory allocation failure");
++				sk_X509_free(stack);
++				goto end;
++			}
+ 			xi->x509=NULL;
+ 		}
+ 		X509_INFO_free(xi);
+@@ -1444,7 +1448,7 @@ static const char *php_openssl_get_evp_pkey_name(int k
  
  EVP_PKEY *php_openssl_generate_private_key(struct php_x509_request * req)
  {
