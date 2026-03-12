@@ -1,10 +1,9 @@
 COMMENT=	Sphinx extension to support docstrings in Numpy format
 
-MODPY_DISTV=	1.8.0
+MODPY_DISTV=	1.10.0
 DISTNAME=	numpydoc-${MODPY_DISTV}
 PKGNAME=	py-numpydoc-${MODPY_DISTV}
 CATEGORIES=	textproc
-REVISION=	1
 
 HOMEPAGE=	https://github.com/numpy/numpydoc
 
@@ -19,5 +18,6 @@ RUN_DEPENDS=	devel/py-tabulate \
 		graphics/py-matplotlib \
 		textproc/py-sphinx \
 		www/py-jinja2
+TEST_DEPENDS=	devel/py-test-cov
 
 .include <bsd.port.mk>
