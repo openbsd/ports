@@ -10,3 +10,30 @@ Index: Crypto/src/X509Certificate.cpp
  	}
  
  	init();
+@@ -254,7 +254,7 @@ void X509Certificate::extractNames(std::string& cmnNam
+ 			const GENERAL_NAME* name = sk_GENERAL_NAME_value(names, i);
+ 			if (name->type == GEN_DNS)
+ 			{
+-				const char* data = reinterpret_cast<char*>(ASN1_STRING_data(name->d.ia5));
++				const char* data = reinterpret_cast<const char*>(ASN1_STRING_get0_data(name->d.ia5));
+ 				std::size_t len = ASN1_STRING_length(name->d.ia5);
+ 				domainNames.insert(std::string(data, len));
+             }
+@@ -273,7 +273,7 @@ void X509Certificate::extractNames(std::string& cmnNam
+ Poco::DateTime X509Certificate::validFrom() const
+ {
+ 	ASN1_TIME* certTime = X509_get_notBefore(_pCert);
+-	std::string dateTime(reinterpret_cast<char*>(certTime->data));
++	std::string dateTime(reinterpret_cast<const char*>(ASN1_STRING_get0_data(certTime)));
+ 	int tzd;
+ 	return DateTimeParser::parse("%y%m%d%H%M%S", dateTime, tzd);
+ }
+@@ -282,7 +282,7 @@ Poco::DateTime X509Certificate::validFrom() const
+ Poco::DateTime X509Certificate::expiresOn() const
+ {
+ 	ASN1_TIME* certTime = X509_get_notAfter(_pCert);
+-	std::string dateTime(reinterpret_cast<char*>(certTime->data));
++	std::string dateTime(reinterpret_cast<const char*>(ASN1_STRING_get0_data(certTime)));
+ 	int tzd;
+ 	return DateTimeParser::parse("%y%m%d%H%M%S", dateTime, tzd);
+ }

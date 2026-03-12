@@ -3,7 +3,7 @@ COMMENT =	POCO C++ libraries for network based applications
 VERSION =	1.4.6p1
 DISTNAME =	poco-${VERSION}-all
 PKGNAME =	poco-${VERSION:S/p/pl/}
-REVISION =	8
+REVISION =	9
 CATEGORIES =	net devel
 SHLIB_VERSION =	1.0
 
