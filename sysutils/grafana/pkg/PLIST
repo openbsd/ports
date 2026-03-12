@@ -199,6 +199,7 @@ share/grafana/public/app/core/components/AppChrome/TopBar/InviteUserButton.test.
 share/grafana/public/app/core/components/AppChrome/TopBar/InviteUserButton.tsx
 share/grafana/public/app/core/components/AppChrome/TopBar/InviteUserButtonUtils.test.tsx
 share/grafana/public/app/core/components/AppChrome/TopBar/InviteUserButtonUtils.tsx
+share/grafana/public/app/core/components/AppChrome/TopBar/ProfileButton.test.tsx
 share/grafana/public/app/core/components/AppChrome/TopBar/ProfileButton.tsx
 share/grafana/public/app/core/components/AppChrome/TopBar/SignInLink.test.tsx
 share/grafana/public/app/core/components/AppChrome/TopBar/SignInLink.tsx
@@ -3046,6 +3047,7 @@ share/grafana/public/app/features/dashboard/components/ShareModal/SharePublicDas
 share/grafana/public/app/features/dashboard/components/ShareModal/SharePublicDashboard/useGetUnsupportedDataSources.ts
 share/grafana/public/app/features/dashboard/components/ShareModal/SharePublicDashboard/utilsTest.tsx
 share/grafana/public/app/features/dashboard/components/ShareModal/ShareSnapshot.tsx
+share/grafana/public/app/features/dashboard/components/ShareModal/ThemePicker.test.tsx
 share/grafana/public/app/features/dashboard/components/ShareModal/ThemePicker.tsx
 share/grafana/public/app/features/dashboard/components/ShareModal/ViewJsonModal.tsx
 share/grafana/public/app/features/dashboard/components/ShareModal/types.ts
@@ -8343,8 +8345,8 @@ share/grafana/public/build/1118.2c9e1060cdb1aacb4efe.js
 share/grafana/public/build/1118.2c9e1060cdb1aacb4efe.js.map
 share/grafana/public/build/1122.b3d87d00f5ad10a6281c.js
 share/grafana/public/build/1122.b3d87d00f5ad10a6281c.js.map
-share/grafana/public/build/1142.833bbd71f3754e474cf6.js
-share/grafana/public/build/1142.833bbd71f3754e474cf6.js.map
+share/grafana/public/build/1142.1581b949606d692e8397.js
+share/grafana/public/build/1142.1581b949606d692e8397.js.map
 share/grafana/public/build/1162.60ebec2c71e65f273267.js
 share/grafana/public/build/1162.60ebec2c71e65f273267.js.map
 share/grafana/public/build/1183.9db2d851e7196d7cc39e.js
@@ -8525,8 +8527,8 @@ share/grafana/public/build/4350.3c3be7878436fc90e98c.js
 share/grafana/public/build/4350.3c3be7878436fc90e98c.js.map
 share/grafana/public/build/4463.39558947f9cf42823d2d.js
 share/grafana/public/build/4463.39558947f9cf42823d2d.js.map
-share/grafana/public/build/45.9602d73ef9e892a62172.js
-share/grafana/public/build/45.9602d73ef9e892a62172.js.map
+share/grafana/public/build/45.feaabe9307351b0d78a4.js
+share/grafana/public/build/45.feaabe9307351b0d78a4.js.map
 share/grafana/public/build/4514.421dc6160105de49e16f.js
 share/grafana/public/build/4514.421dc6160105de49e16f.js.map
 share/grafana/public/build/4564.eb5af646fb65fe0e423f.js
@@ -8720,8 +8722,8 @@ share/grafana/public/build/8018.2954379e0b1496792c95.js
 share/grafana/public/build/8018.2954379e0b1496792c95.js.map
 share/grafana/public/build/8056.f53be82b30f82ebf59d1.js
 share/grafana/public/build/8056.f53be82b30f82ebf59d1.js.map
-share/grafana/public/build/8060.f034caaa658a82a04189.js
-share/grafana/public/build/8060.f034caaa658a82a04189.js.map
+share/grafana/public/build/8060.5e67a0b955ad52462e5e.js
+share/grafana/public/build/8060.5e67a0b955ad52462e5e.js.map
 share/grafana/public/build/8122.91bfad78dd4f0d8e970d.js
 share/grafana/public/build/8122.91bfad78dd4f0d8e970d.js.map
 share/grafana/public/build/8177.f369f0b7d15f040ad620.js
@@ -8752,8 +8754,8 @@ share/grafana/public/build/8530.045d9cdd3e7e9053203a.js
 share/grafana/public/build/8530.045d9cdd3e7e9053203a.js.map
 share/grafana/public/build/8542.462681ba2aa344378bbc.js
 share/grafana/public/build/8542.462681ba2aa344378bbc.js.map
-share/grafana/public/build/8559.0de3599791cddc88fa20.js
-share/grafana/public/build/8559.0de3599791cddc88fa20.js.map
+share/grafana/public/build/8559.b838ad44954448ab8071.js
+share/grafana/public/build/8559.b838ad44954448ab8071.js.map
 share/grafana/public/build/8566.cf108b021252c315998e.js
 share/grafana/public/build/8566.cf108b021252c315998e.js.map
 share/grafana/public/build/8706.b5991decbfda6ecd85b1.js
@@ -8798,8 +8800,8 @@ share/grafana/public/build/9509.91b0dc4672be032b3689.js
 share/grafana/public/build/9509.91b0dc4672be032b3689.js.map
 share/grafana/public/build/9510.1fabedaf8194f1aa2b00.js
 share/grafana/public/build/9510.1fabedaf8194f1aa2b00.js.map
-share/grafana/public/build/9521.828fcdafe512dcd53f98.js
-share/grafana/public/build/9521.828fcdafe512dcd53f98.js.map
+share/grafana/public/build/9521.77ebae84b28ee91d9e4f.js
+share/grafana/public/build/9521.77ebae84b28ee91d9e4f.js.map
 share/grafana/public/build/9532.a1689b771a9d811870fe.js
 share/grafana/public/build/9532.a1689b771a9d811870fe.js.map
 share/grafana/public/build/9538.01eb484975afe623677a.js
@@ -8978,8 +8980,8 @@ share/grafana/public/build/SilencesTablePage.b7b89b23d031d14e2b87.js
 share/grafana/public/build/SilencesTablePage.b7b89b23d031d14e2b87.js.map
 share/grafana/public/build/SnapshotListPage.948d9bc365f0a96cb96d.js
 share/grafana/public/build/SnapshotListPage.948d9bc365f0a96cb96d.js.map
-share/grafana/public/build/SoloPanelPage.fee4721d4ee95f8d4a6d.js
-share/grafana/public/build/SoloPanelPage.fee4721d4ee95f8d4a6d.js.map
+share/grafana/public/build/SoloPanelPage.caea8c639e752913f212.js
+share/grafana/public/build/SoloPanelPage.caea8c639e752913f212.js.map
 share/grafana/public/build/SoloPanelPageOld.2b2dc5ac204f699ace56.js
 share/grafana/public/build/SoloPanelPageOld.2b2dc5ac204f699ace56.js.map
 share/grafana/public/build/SupportBundles.7324220c97b1c003e5eb.js
@@ -9034,8 +9036,8 @@ share/grafana/public/build/canvasPanel.c45ca40c12aba3c2b8f5.js.map
 share/grafana/public/build/cloudwatchPlugin.37e5a961f002918ea36c.js
 share/grafana/public/build/cloudwatchPlugin.37e5a961f002918ea36c.js.map
 share/grafana/public/build/dark.8606c52556ad6e73d34c.js
-share/grafana/public/build/dashListPanel.652c90d0024ef3c3eb4c.js
-share/grafana/public/build/dashListPanel.652c90d0024ef3c3eb4c.js.map
+share/grafana/public/build/dashListPanel.7a88aa3a5160f09777f0.js
+share/grafana/public/build/dashListPanel.7a88aa3a5160f09777f0.js.map
 share/grafana/public/build/dataGridPanel.7f7b9faef1ca55df1c1f.js
 share/grafana/public/build/debugPanel.9eda33c3f4787727968f.js
 share/grafana/public/build/debugPanel.9eda33c3f4787727968f.js.map
@@ -10768,8 +10770,8 @@ share/grafana/public/build/pieChartPanel.d72d594691444ec57c0e.js
 share/grafana/public/build/pieChartPanel.d72d594691444ec57c0e.js.map
 share/grafana/public/build/prometheusPlugin.56cd6d34493063ef8f4e.js
 share/grafana/public/build/prometheusPlugin.56cd6d34493063ef8f4e.js.map
-share/grafana/public/build/runtime.3f0fd98b6c56db40917e.js
-share/grafana/public/build/runtime.3f0fd98b6c56db40917e.js.map
+share/grafana/public/build/runtime.16079bba942a66fff9ea.js
+share/grafana/public/build/runtime.16079bba942a66fff9ea.js.map
 share/grafana/public/build/sql-query-editor.93fe8aea1cf8e3e49677.js
 share/grafana/public/build/sql-query-editor.93fe8aea1cf8e3e49677.js.map
 share/grafana/public/build/statPanel.703f621db1c53752e868.js
@@ -10956,8 +10958,8 @@ share/grafana/public/build/vis-data.b412e34aae4ec6e73f38.js
 share/grafana/public/build/vis-data.b412e34aae4ec6e73f38.js.map
 share/grafana/public/build/vis-network.d342a2cf5576b846a3d2.js
 share/grafana/public/build/vis-network.d342a2cf5576b846a3d2.js.map
-share/grafana/public/build/welcomeBanner.36b7879a4d5c9b2e849b.js
-share/grafana/public/build/welcomeBanner.36b7879a4d5c9b2e849b.js.map
+share/grafana/public/build/welcomeBanner.103426aa0e53dbf255aa.js
+share/grafana/public/build/welcomeBanner.103426aa0e53dbf255aa.js.map
 share/grafana/public/build/xychart.be84f115361638b92b91.js
 share/grafana/public/build/xychart.be84f115361638b92b91.js.map
 share/grafana/public/dashboards/
