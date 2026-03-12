@@ -14,8 +14,6 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}api.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}application_configuration_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}application_configuration_helper.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}application_file_scanner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}application_file_scanner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}application_logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}application_logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}file_scan_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +28,6 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}version.${MO
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/api.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/application_configuration_helper.py
-lib/python${MODPY_VERSION}/site-packages/pymarkdown/application_file_scanner.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/application_logging.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/${MODPY_PYCACHE}/
