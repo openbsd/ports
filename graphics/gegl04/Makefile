@@ -2,12 +2,12 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.66
+V=			0.4.68
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += gegl-0.4                  0.5 # 0.461.1
+SHARED_LIBS += gegl-0.4                  0.5 # 0.467.1
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
