@@ -7,7 +7,7 @@ CATEGORIES =		textproc education x11
 DIST_TUPLE =		github	xiaoyifang	goldendict-ng	\
 				v25.05.0-Release.2a2b0e16	.
 PKGNAME =		${DISTNAME:C/-[[:alnum:].]*$//}
-REVISION =		0
+REVISION =		1
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -21,15 +21,13 @@ WANTLIB += Qt6Quick Qt6Svg Qt6TextToSpeech Qt6WebChannel Qt6WebEngineCore
 WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml SM X11 Xext Xtst
 WANTLIB += avcodec avformat avutil bz2 c fmt hunspell-1.7 iconv
 WANTLIB += icudata icui18n icuuc lzma lzo2 m opencc swresample
-WANTLIB += vorbis vorbisfile xapian z zim zstd
+WANTLIB += tomlplusplus vorbis vorbisfile xapian z zim zstd
 
 # C++17
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			x11/qt6
-
-BUILD_DEPENDS =		textproc/tomlplusplus
 
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/libzim \
@@ -43,6 +41,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			graphics/ffmpeg \
 			textproc/hunspell \
 			textproc/icu4c \
+			textproc/tomlplusplus \
 			x11/qt6/qt5compat \
 			x11/qt6/qtmultimedia \
 			x11/qt6/qtspeech \
