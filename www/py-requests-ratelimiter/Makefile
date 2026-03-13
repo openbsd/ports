@@ -1,7 +1,6 @@
 COMMENT=	rate-limiting for the requests library
 
-MODPY_DISTV=	0.8.0
-
+MODPY_DISTV=	0.9.2
 DISTNAME=	requests_ratelimiter-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	devel/py-pyrate-limiter<3.0 \
+RUN_DEPENDS=	devel/py-pyrate-limiter>=4,<5 \
 		www/py-requests
 
 TEST_DEPENDS=	www/py-requests-cache \
