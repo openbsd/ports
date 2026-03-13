@@ -1,6 +1,7 @@
 COMMENT =	RSA encoding and decoding using OpenSSL
 
 DISTNAME =	Crypt-OpenSSL-RSA-0.37
+CPAN_AUTHOR =	TODDR
 
 CATEGORIES =	security
 
