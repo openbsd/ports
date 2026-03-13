@@ -6,6 +6,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			6.6.2
+REVISION =		0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -25,7 +26,6 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # tdesktop:		GPLv3 with OpenSSL exception
 # cld3:			Apache 2.0
 # libprisma:		MIT
-# minizip:		zlib
 # rlottie:		LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 # tgcalls:		LGPL 3
 # xdg-desktop-portal:	LGPL 2.1
@@ -36,9 +36,9 @@ WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6QuickWidgets
 WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_strings
 WANTLIB += ada avcodec avfilter avformat avutil c crypto dispatch
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 hunspell-1.7 jpeg lz4
-WANTLIB += m openal protobuf-lite qrcodegencpp rnnoise swresample
-WANTLIB += swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
-WANTLIB += xxhash z
+WANTLIB += m minizip openal protobuf-lite qrcodegencpp rnnoise
+WANTLIB += swresample swscale tg_owt xcb xcb-keysyms xcb-record
+WANTLIB += xcb-screensaver xxhash z
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -61,6 +61,7 @@ BUILD_DEPENDS =		devel/boost,-main \
 			net/tdlib/tde2e
 
 LIB_DEPENDS =		archivers/lz4 \
+			archivers/minizip \
 			audio/openal \
 			audio/rnnoise \
 			devel/abseil-cpp \
@@ -105,9 +106,6 @@ NO_TEST =		Yes
 
 # unported and required
 NEEDED_BUNDLES =	cld3 libprisma rlottie tgcalls
-
-# archivers/minizip is minizip-ng, telegram requires incompatible original zlib
-NEEDED_BUNDLES +=	minizip
 
 # ported but CMake code hardcodes bundled file paths
 NEEDED_BUNDLES +=	xdg-desktop-portal
