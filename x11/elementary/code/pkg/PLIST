@@ -5,9 +5,6 @@ lib/io.elementary.code/plugins/
 lib/io.elementary.code/plugins/brackets-completion/
 lib/io.elementary.code/plugins/brackets-completion/brackets-completion.plugin
 @so lib/io.elementary.code/plugins/brackets-completion/libbrackets-completion.so
-lib/io.elementary.code/plugins/browser-preview/
-lib/io.elementary.code/plugins/browser-preview/browser-preview.plugin
-@so lib/io.elementary.code/plugins/browser-preview/libbrowser-preview.so
 lib/io.elementary.code/plugins/detect-indent/
 lib/io.elementary.code/plugins/detect-indent/detect-indent.plugin
 @so lib/io.elementary.code/plugins/detect-indent/libdetect-indent.so
@@ -48,28 +45,16 @@ share/glib-2.0/schemas/io.elementary.code.gschema.xml
 share/glib-2.0/schemas/io.elementary.code.plugins.spell.gschema.xml
 share/glib-2.0/schemas/io.elementary.code.plugins.terminal.gschema.xml
 share/icons/hicolor/128x128/apps/io.elementary.code.svg
-share/icons/hicolor/128x128@2/
-share/icons/hicolor/128x128@2/apps/
 share/icons/hicolor/128x128@2/apps/io.elementary.code.svg
 share/icons/hicolor/16x16/apps/io.elementary.code.svg
-share/icons/hicolor/16x16@2/
-share/icons/hicolor/16x16@2/apps/
 share/icons/hicolor/16x16@2/apps/io.elementary.code.svg
 share/icons/hicolor/24x24/apps/io.elementary.code.svg
-share/icons/hicolor/24x24@2/
-share/icons/hicolor/24x24@2/apps/
 share/icons/hicolor/24x24@2/apps/io.elementary.code.svg
 share/icons/hicolor/32x32/apps/io.elementary.code.svg
-share/icons/hicolor/32x32@2/
-share/icons/hicolor/32x32@2/apps/
 share/icons/hicolor/32x32@2/apps/io.elementary.code.svg
 share/icons/hicolor/48x48/apps/io.elementary.code.svg
-share/icons/hicolor/48x48@2/
-share/icons/hicolor/48x48@2/apps/
 share/icons/hicolor/48x48@2/apps/io.elementary.code.svg
 share/icons/hicolor/64x64/apps/io.elementary.code.svg
-share/icons/hicolor/64x64@2/
-share/icons/hicolor/64x64@2/apps/
 share/icons/hicolor/64x64@2/apps/io.elementary.code.svg
 share/io.elementary.code/
 share/io.elementary.code/fonts/

@@ -1,0 +1,13 @@
+Don't ship browser-preview as is depends on an old version of webkitgtk4.
+
+Index: plugins/meson.build
+--- plugins/meson.build.orig
++++ plugins/meson.build
+@@ -1,7 +1,6 @@
+ msgfmt = find_program('msgfmt')
+ 
+ subdir('brackets-completion')
+-subdir('browser-preview')
+ subdir('detect-indent')
+ subdir('editorconfig')
+ subdir('highlight-word-selection')
