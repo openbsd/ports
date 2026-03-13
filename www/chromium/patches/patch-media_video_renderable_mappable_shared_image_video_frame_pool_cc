@@ -1,7 +1,7 @@
-Index: media/video/renderable_gpu_memory_buffer_video_frame_pool.cc
---- media/video/renderable_gpu_memory_buffer_video_frame_pool.cc.orig
-+++ media/video/renderable_gpu_memory_buffer_video_frame_pool.cc
-@@ -196,7 +196,7 @@ bool FrameResources::Initialize(VideoPixelFormat forma
+Index: media/video/renderable_mappable_shared_image_video_frame_pool.cc
+--- media/video/renderable_mappable_shared_image_video_frame_pool.cc.orig
++++ media/video/renderable_mappable_shared_image_video_frame_pool.cc
+@@ -198,7 +198,7 @@ bool FrameResources::Initialize(VideoPixelFormat forma
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
    buffer_usage = gfx::BufferUsage::SCANOUT_VEA_CPU_READ;

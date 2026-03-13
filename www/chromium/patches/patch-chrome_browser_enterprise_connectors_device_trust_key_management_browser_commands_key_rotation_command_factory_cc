@@ -18,4 +18,4 @@ Index: chrome/browser/enterprise/connectors/device_trust/key_management/browser/
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return std::make_unique<LinuxKeyRotationCommand>(url_loader_factory);
  #elif BUILDFLAG(IS_MAC)
-   if (IsDTCKeyRotationUploadedBySharedAPI()) {
+   auto cloud_delegate =

@@ -24,7 +24,7 @@ Index: services/device/usb/BUILD.gn
    if (is_linux || is_chromeos) {
      sources += [
        "usb_device_linux.cc",
-@@ -134,7 +141,7 @@ static_library("usb") {
+@@ -130,7 +137,7 @@ static_library("usb") {
      deps += [ "//device/udev_linux" ]
    }
  

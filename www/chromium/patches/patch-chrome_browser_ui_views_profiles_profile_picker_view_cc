@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/profiles/profile_picker_view.cc
 --- chrome/browser/ui/views/profiles/profile_picker_view.cc.orig
 +++ chrome/browser/ui/views/profiles/profile_picker_view.cc
-@@ -81,7 +81,7 @@
+@@ -83,7 +83,7 @@
  #include "chrome/browser/global_keyboard_shortcuts_mac.h"
  #endif
  
@@ -10,10 +10,10 @@ Index: chrome/browser/ui/views/profiles/profile_picker_view.cc
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -107,7 +107,7 @@ class ProfilePickerWidget : public views::Widget {
+@@ -108,7 +108,7 @@ class ProfilePickerWidget : public views::Widget {
      views::Widget::InitParams params(
          views::Widget::InitParams::NATIVE_WIDGET_OWNS_WIDGET);
-     params.delegate = profile_picker_view_;
+     params.delegate = profile_picker_view;
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      params.wm_class_name = shell_integration_linux::GetProgramClassName();

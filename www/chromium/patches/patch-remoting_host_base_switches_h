@@ -1,7 +1,7 @@
 Index: remoting/host/base/switches.h
 --- remoting/host/base/switches.h.orig
 +++ remoting/host/base/switches.h
-@@ -35,13 +35,13 @@ extern const char kProcessTypeRdpDesktopSession[];
+@@ -36,13 +36,13 @@ extern const char kProcessTypeRdpDesktopSession[];
  extern const char kProcessTypeEvaluateCapability[];
  extern const char kProcessTypeFileChooser[];
  extern const char kProcessTypeUrlForwarderConfigurator[];

@@ -7,8 +7,8 @@ Index: chrome/browser/signin/signin_util.cc
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/ui/browser_dialogs.h"
  #include "chrome/browser/ui/browser_finder.h"
+ #include "chrome/browser/ui/dialogs/browser_dialogs.h"
  #include "components/strings/grit/components_strings.h"
 @@ -100,7 +100,7 @@ CookiesMover::CookiesMover(base::WeakPtr<Profile> sour
  CookiesMover::~CookiesMover() = default;

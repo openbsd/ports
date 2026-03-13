@@ -7,6 +7,6 @@ Index: chrome/browser/web_applications/os_integration/run_on_os_login_sub_manage
  bool DoesRunOnOsLoginRequireExecution() {
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   return base::FeatureList::IsEnabled(features::kDesktopPWAsRunOnOsLogin);
+   return true;
  #else
    return false;

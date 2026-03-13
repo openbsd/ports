@@ -19,7 +19,7 @@ Index: content/browser/renderer_host/render_process_host_impl_receiver_bindings.
  #include "components/services/font_data/font_data_service_impl.h"
  #endif
  
-@@ -340,7 +340,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
+@@ -341,7 +341,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
      }
    }
  
@@ -28,7 +28,7 @@ Index: content/browser/renderer_host/render_process_host_impl_receiver_bindings.
    if (features::IsFontDataServiceEnabled()) {
      if (auto font_data_receiver =
              receiver.As<font_data_service::mojom::FontDataService>()) {
-@@ -351,7 +351,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
+@@ -352,7 +352,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
    }
  #endif
  
@@ -37,7 +37,7 @@ Index: content/browser/renderer_host/render_process_host_impl_receiver_bindings.
    if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
      ConnectToFontService(std::move(font_receiver));
      return;
-@@ -379,7 +379,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
+@@ -380,7 +380,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
    }
  #endif
  
