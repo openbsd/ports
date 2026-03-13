@@ -1,50 +1,58 @@
+#1, we have had these accessors for a while now
+#2, add nids
+#3, clarify warning message
+
 Index: PKCS10.xs
 --- PKCS10.xs.orig
 +++ PKCS10.xs
-@@ -328,12 +328,26 @@ BOOT:
+@@ -18,10 +18,10 @@
+ #if OPENSSL_VERSION_NUMBER < 0x10000000L
+ #define EVP_PKEY_base_id(pkey) EVP_PKEY_type((pkey)->type)
+ #endif
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined LIBRESSL_VERSION_NUMBER
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ #define EVP_PKEY_get0_RSA(pkey) ((pkey)->pkey.rsa)
+ #define EVP_PKEY_get0_DSA(pkey) ((pkey)->pkey.dsa)
+-#if( !defined OPENSSL_NO_EC || defined LIBRESSL_VERSION_NUMBER)
++#if( !defined OPENSSL_NO_EC)
+ #define EVP_PKEY_get0_EC_KEY(pkey) ((pkey)->pkey.ec)
+ #endif
+ #endif
+@@ -369,12 +369,26 @@ BOOT:
  
- 	struct { char *n; I32 v; } Crypt__OpenSSL__PKCS10__const[] = {
+     struct { char *n; I32 v; } Crypt__OpenSSL__PKCS10__const[] = {
  
-+	{"NID_basic_constraints", NID_basic_constraints},
- 	{"NID_key_usage", NID_key_usage},
-+	{"NID_ext_key_usage", NID_ext_key_usage},
-+	{"NID_subject_key_identifier", NID_subject_key_identifier},
-+	{"NID_authority_key_identifier", NID_authority_key_identifier},
-+	{"NID_private_key_usage_period", NID_private_key_usage_period},
- 	{"NID_subject_alt_name", NID_subject_alt_name},
-+	{"NID_issuer_alt_name", NID_issuer_alt_name},
-+	{"NID_info_access", NID_info_access},
-+	{"NID_sinfo_access", NID_sinfo_access},
-+	{"NID_name_constraints", NID_name_constraints},
-+	{"NID_certificate_policies", NID_certificate_policies},
-+	{"NID_policy_mappings", NID_policy_mappings},
-+	{"NID_policy_constraints", NID_policy_constraints},
-+	{"NID_inhibit_any_policy", NID_inhibit_any_policy},
-+	{"NID_crl_distribution_points", NID_crl_distribution_points},
-+	{"NID_sbgp_ipAddrBlock", NID_sbgp_ipAddrBlock},
-+	{"NID_sbgp_autonomousSysNum", NID_sbgp_autonomousSysNum},
- 	{"NID_netscape_cert_type", NID_netscape_cert_type},
- 	{"NID_netscape_comment", NID_netscape_comment},
--	{"NID_ext_key_usage", NID_ext_key_usage},
--	{"NID_subject_key_identifier", NID_subject_key_identifier},
- 	{Nullch,0}};
++    {"NID_basic_constraints", NID_basic_constraints},
+     {"NID_key_usage", NID_key_usage},
++    {"NID_ext_key_usage", NID_ext_key_usage},
++    {"NID_subject_key_identifier", NID_subject_key_identifier},
++    {"NID_authority_key_identifier", NID_authority_key_identifier},
++    {"NID_private_key_usage_period", NID_private_key_usage_period},
+     {"NID_subject_alt_name", NID_subject_alt_name},
++    {"NID_issuer_alt_name", NID_issuer_alt_name},
++    {"NID_info_access", NID_info_access},
++    {"NID_sinfo_access", NID_sinfo_access},
++    {"NID_name_constraints", NID_name_constraints},
++    {"NID_certificate_policies", NID_certificate_policies},
++    {"NID_policy_mappings", NID_policy_mappings},
++    {"NID_policy_constraints", NID_policy_constraints},
++    {"NID_inhibit_any_policy", NID_inhibit_any_policy},
++    {"NID_crl_distribution_points", NID_crl_distribution_points},
++    {"NID_sbgp_ipAddrBlock", NID_sbgp_ipAddrBlock},
++    {"NID_sbgp_autonomousSysNum", NID_sbgp_autonomousSysNum},
+     {"NID_netscape_cert_type", NID_netscape_cert_type},
+     {"NID_netscape_comment", NID_netscape_comment},
+-    {"NID_ext_key_usage", NID_ext_key_usage},
+-    {"NID_subject_key_identifier", NID_subject_key_identifier},
+     {"FORMAT_ASN1", FORMAT_ASN1},
+     {"FORMAT_PEM", FORMAT_PEM},
+     {Nullch,0}};
+@@ -860,7 +874,7 @@ add_custom_ext(pkcs10, oid_SV, ext_SV)
  
- 	char *name;
-@@ -655,6 +669,8 @@ add_ext(pkcs10, nid = NID_key_usage, ext_SV)
- 	OUTPUT:
- 	RETVAL
- 
-+#ifndef LIBRESSL_VERSION_NUMBER
-+
- int
- add_custom_ext_raw(pkcs10, oid_SV, ext_SV)
- 	pkcs10Data *pkcs10;
-@@ -714,6 +730,8 @@ add_custom_ext(pkcs10, oid_SV, ext_SV)
- 
- 	OUTPUT:
- 	  RETVAL
-+
-+#endif /* !LIBRESSL_VERSION_NUMBER */
- 
- int
- add_ext_final(pkcs10)
+     if ( ix == 0 ) {
+ #if (defined LIBRESSL_VERSION_NUMBER)
+-        warn ("LIBRESSL does not support add_custom_ext using add_custom_ext_raw");
++        warn ("LIBRESSL does not support add_custom_ext, using add_custom_ext_raw instead");
+         RETVAL = add_ext_raw(pkcs10->exts, nid, ext, ext_length);
+ #else
+         X509V3_EXT_add_alias(nid, NID_netscape_comment);

@@ -18,7 +18,7 @@ Index: lib/Crypt/OpenSSL/PKCS10.pm
  );
  
  our %EXPORT_TAGS = ( 
-@@ -207,8 +213,14 @@ None by default.
+@@ -288,8 +294,14 @@ None by default.
  
  On request:
  
