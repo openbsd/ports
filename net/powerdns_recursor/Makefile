@@ -4,6 +4,7 @@ V=			5.4.0
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME=		powerdns-recursor-${V}
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -70,7 +71,8 @@ CONFIGURE_ARGS+=	-Dhardening=disabled \
 			-Dlua=auto \
 			-Dsnmp=disabled \
 			-Dsystemd-service=disabled \
-			-Dlibcap=disabled
+			-Dlibcap=disabled \
+			-Dtls-gnutls=disabled
 
 MAKE_ENV+=		${MODCARGO_ENV}
 
