@@ -6,7 +6,7 @@ USE_WXNEEDED=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		27.3.4.8
+V=		27.3.4.9
 DISTNAME=	otp_src_${V}
 PORTROACH=	limit:^OTP-27\.
 PKGNAME=	erlang-${V}
@@ -80,7 +80,7 @@ ERL_DOCGEN_VSN  1.5.2 \
 ET_VSN          1.7.1 \
 EUNIT_VSN       2.9.1 \
 FTP_VSN         1.2.3 \
-INETS_VSN       9.3.2.2 \
+INETS_VSN       9.3.2.3 \
 JINTERFACE_VSN  1.14 \
 KERNEL_VSN      10.2.7.3 \
 MEGACO_VSN      4.7.2.1 \
@@ -94,8 +94,8 @@ RELTOOL_VSN     1.0.1 \
 RUNTIME_TOOLS_VSN       2.1.1 \
 SASL_VSN        4.2.2 \
 SNMP_VSN        5.18.2 \
-SSH_VSN         5.2.11.5 \
-SSL_VSN         11.2.12.5 \
+SSH_VSN         5.2.11.6 \
+SSL_VSN         11.2.12.6 \
 STDLIB_VSN      6.2.2.3 \
 SYNTAX_TOOLS_VSN        3.2.2.2 \
 TFTP_VSN        1.2.2.1 \
