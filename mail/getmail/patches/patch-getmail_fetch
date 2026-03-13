@@ -1,0 +1,14 @@
+restore "options." lost when dropping py2 compat in 572fd27953cf4
+
+Index: getmail_fetch
+--- getmail_fetch.orig
++++ getmail_fetch
+@@ -135,7 +135,7 @@ def main():
+ 
+         def get(self, key, value=None):
+             return getattr(self, key, value)
+-        get = types.MethodType(get, options)
++        options.get = types.MethodType(get, options)
+ 
+         msg = None
+         if options.message is not None:
