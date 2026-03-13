@@ -1,12 +1,12 @@
 COMMENT =	EC using OpenSSL
 
-DISTNAME =	Crypt-OpenSSL-EC-1.32
-REVISION =	3
+DISTNAME =	Crypt-OpenSSL-EC-1.34
+CPAN_AUTHOR =	RADIATOR
 
 CATEGORIES =	security
 
 # Perl
-PERMIT_PACKAGE = 	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto perl ssl
 
