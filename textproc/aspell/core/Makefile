@@ -1,9 +1,8 @@
 COMMENT=	spell checker with multi-language support
 
-DISTNAME=	aspell-0.60.8.1
+DISTNAME=	aspell-0.60.8.2
 DIST_SUBDIR=	aspell
 CATEGORIES=	textproc
-REVISION=	0
 
 SHARED_LIBS +=  aspell               18.1     # .18.1
 SHARED_LIBS +=  pspell               17.0     # .18.1
@@ -13,7 +12,7 @@ DIST_EN=	aspell6-en-2020.12.07-0
 SITES=		${SITE_GNU:=aspell/}
 SITES.en=	${SITE_GNU:=aspell/dict/en/}
 
-DISTFILES.en= 	${DIST_EN}.tar.bz2
+DISTFILES.en=	${DIST_EN}.tar.bz2
 
 HOMEPAGE=	http://aspell.net/
 
