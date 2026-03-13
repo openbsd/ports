@@ -10,3 +10,14 @@ Index: spectrwm.c
  #endif
  
  char			**start_argv;
+@@ -18911,7 +18911,9 @@ main(int argc, char *argv[])
+ 			bar_setup(r);
+ 
+ #ifdef __OpenBSD__
+-	if (pledge("stdio proc exec", NULL) == -1)
++	/* XXX rpath wpath had to be added for /dev/null;
++	       could probably unveil to restrict further */
++	if (pledge("stdio proc exec rpath wpath", NULL) == -1)
+ 		err(1, "pledge");
+ #endif
+ 
