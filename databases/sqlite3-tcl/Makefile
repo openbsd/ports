@@ -1,6 +1,6 @@
 COMMENT =		Tcl bindings for SQLite3
 
-V =			3.51.2
+V =			3.51.3
 
 DISTNAME =		sqlite${V}
 PKGNAME =		sqlite3-tcl-${V}
