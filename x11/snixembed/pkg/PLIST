@@ -1,0 +1,3 @@
+@bin bin/snixembed
+@man man/man1/snixembed.1
+share/doc/pkg-readmes/${PKGSTEM}

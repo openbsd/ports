@@ -1,0 +1,8 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+You MUST have a system-wide D-BUS daemon running BEFORE
+starting ${PKGSTEM}, e.g.:
+    rcctl enable messagebus
+    rcctl start messagebus

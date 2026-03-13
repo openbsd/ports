@@ -1,0 +1,9 @@
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -32,4 +32,4 @@ uninstall:
+ 	rm -f $(DESTDIR)$(PREFIX)$(BINDIR)/snixembed \
+ 		$(DESTDIR)$(PREFIX)$(MANDIR)/man1/snixembed.1
+ 
+-.PHONY: clean install uninstall version.vala
++.PHONY: clean install uninstall

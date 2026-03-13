@@ -1,0 +1,7 @@
+While many status bars for simple X window managers do not (yet)
+support StatusNotifierItem for displaying system tray icons, some
+software does not fall back to the widely supported XEmbed-based
+tray icon protocol. snixembed acts as a proxy between the new and
+old. (It does this by presenting itself as a StatusNotifierHost on
+the session bus, and using GTK+3 to maintain corresponding XEmbed
+tray icons.)
