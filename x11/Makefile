@@ -300,6 +300,7 @@
      SUBDIR += slock
      SUBDIR += smplayer
      SUBDIR += sndiokeys
+     SUBDIR += snixembed
      SUBDIR += spectrwm
      SUBDIR += spice-gtk
      SUBDIR += srandrd
