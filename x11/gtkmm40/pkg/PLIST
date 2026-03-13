@@ -135,6 +135,8 @@ include/gtkmm-4.0/gtkmm/aboutdialog.h
 include/gtkmm-4.0/gtkmm/accelerator.h
 include/gtkmm-4.0/gtkmm/accelkey.h
 include/gtkmm-4.0/gtkmm/accessible.h
+include/gtkmm-4.0/gtkmm/accessiblehyperlink.h
+include/gtkmm-4.0/gtkmm/accessiblehypertext.h
 include/gtkmm-4.0/gtkmm/accessibletext.h
 include/gtkmm-4.0/gtkmm/actionable.h
 include/gtkmm-4.0/gtkmm/actionbar.h
@@ -314,6 +316,7 @@ include/gtkmm-4.0/gtkmm/papersize.h
 include/gtkmm-4.0/gtkmm/passwordentry.h
 include/gtkmm-4.0/gtkmm/picture.h
 include/gtkmm-4.0/gtkmm/popover.h
+include/gtkmm-4.0/gtkmm/popoverbin.h
 include/gtkmm-4.0/gtkmm/popovermenu.h
 include/gtkmm-4.0/gtkmm/popovermenubar.h
 include/gtkmm-4.0/gtkmm/printcontext.h
@@ -328,6 +331,8 @@ include/gtkmm-4.0/gtkmm/printunixdialog.h
 include/gtkmm-4.0/gtkmm/private/
 include/gtkmm-4.0/gtkmm/private/aboutdialog_p.h
 include/gtkmm-4.0/gtkmm/private/accessible_p.h
+include/gtkmm-4.0/gtkmm/private/accessiblehyperlink_p.h
+include/gtkmm-4.0/gtkmm/private/accessiblehypertext_p.h
 include/gtkmm-4.0/gtkmm/private/accessibletext_p.h
 include/gtkmm-4.0/gtkmm/private/actionable_p.h
 include/gtkmm-4.0/gtkmm/private/actionbar_p.h
@@ -503,6 +508,7 @@ include/gtkmm-4.0/gtkmm/private/papersize_p.h
 include/gtkmm-4.0/gtkmm/private/passwordentry_p.h
 include/gtkmm-4.0/gtkmm/private/picture_p.h
 include/gtkmm-4.0/gtkmm/private/popover_p.h
+include/gtkmm-4.0/gtkmm/private/popoverbin_p.h
 include/gtkmm-4.0/gtkmm/private/popovermenu_p.h
 include/gtkmm-4.0/gtkmm/private/popovermenubar_p.h
 include/gtkmm-4.0/gtkmm/private/printcontext_p.h
@@ -565,6 +571,7 @@ include/gtkmm-4.0/gtkmm/private/stringobject_p.h
 include/gtkmm-4.0/gtkmm/private/stringsorter_p.h
 include/gtkmm-4.0/gtkmm/private/stylecontext_p.h
 include/gtkmm-4.0/gtkmm/private/styleprovider_p.h
+include/gtkmm-4.0/gtkmm/private/svg_p.h
 include/gtkmm-4.0/gtkmm/private/switch_p.h
 include/gtkmm-4.0/gtkmm/private/symbolicpaintable_p.h
 include/gtkmm-4.0/gtkmm/private/text_p.h
@@ -655,6 +662,7 @@ include/gtkmm-4.0/gtkmm/stringobject.h
 include/gtkmm-4.0/gtkmm/stringsorter.h
 include/gtkmm-4.0/gtkmm/stylecontext.h
 include/gtkmm-4.0/gtkmm/styleprovider.h
+include/gtkmm-4.0/gtkmm/svg.h
 include/gtkmm-4.0/gtkmm/switch.h
 include/gtkmm-4.0/gtkmm/symbolicpaintable.h
 include/gtkmm-4.0/gtkmm/text.h
