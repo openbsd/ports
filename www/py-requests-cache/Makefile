@@ -1,7 +1,9 @@
 COMMENT=	transparent persistent cache for the py-requests library
-MODPY_DISTV=	1.3.0
+
+MODPY_DISTV=	1.3.1
 DISTNAME=	requests_cache-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
+
 CATEGORIES=	www
 
 # https://github.com/reclosedev/requests-cache
