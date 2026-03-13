@@ -290,6 +290,7 @@ share/pokerth/data/gfx/gui/misc/startwindowbg10_mobile.png
 share/pokerth/data/gfx/gui/misc/welcomepokerth10_desktop.png
 share/pokerth/data/gfx/gui/misc/welcomepokerth10_mobile.png
 share/pokerth/data/gfx/gui/misc/windowicon.png
+share/pokerth/data/gfx/gui/misc/windowicon_transparent.png
 share/pokerth/data/gfx/gui/table/
 share/pokerth/data/gfx/gui/table/danuxi1/
 share/pokerth/data/gfx/gui/table/danuxi1/bigblindPuck.png
@@ -438,6 +439,7 @@ share/pokerth/data/sounds/default/playerconnected.wav
 share/pokerth/data/sounds/default/raise.wav
 share/pokerth/data/sounds/default/yourturn.wav
 share/pokerth/data/translations/
+share/pokerth/data/translations/pokerth_START_HERE.qm
 share/pokerth/data/translations/pokerth_af.qm
 share/pokerth/data/translations/pokerth_bg.qm
 share/pokerth/data/translations/pokerth_ca.qm
@@ -476,6 +478,7 @@ share/pokerth/data/translations/qt_gl.qm
 share/pokerth/data/translations/qt_he.qm
 share/pokerth/data/translations/qt_hu.qm
 share/pokerth/data/translations/qt_ja.qm
+share/pokerth/data/translations/qt_lt.qm
 share/pokerth/data/translations/qt_nl.qm
 share/pokerth/data/translations/qt_pl.qm
 share/pokerth/data/translations/qt_pt.qm
@@ -484,6 +487,7 @@ share/pokerth/data/translations/qt_sk.qm
 share/pokerth/data/translations/qt_sl.qm
 share/pokerth/data/translations/qt_sv.qm
 share/pokerth/data/translations/qt_uk.qm
+share/pokerth/data/translations/qt_untranslated.qm
 share/pokerth/data/translations/qt_zh_CN.qm
 share/pokerth/data/translations/qt_zh_TW.qm
 @tag update-desktop-database

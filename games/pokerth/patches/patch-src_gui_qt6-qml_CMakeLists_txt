@@ -1,0 +1,9 @@
+Index: src/gui/qt6-qml/CMakeLists.txt
+--- src/gui/qt6-qml/CMakeLists.txt.orig
++++ src/gui/qt6-qml/CMakeLists.txt
+@@ -132,5 +132,4 @@ endif()
+ 
+ install(TARGETS pokerth_qml-client DESTINATION bin OPTIONAL)
+ install(DIRECTORY ../../../data DESTINATION share/pokerth)
+-install(FILES ../../../pokerth_qml.desktop DESTINATION share/applications)
+ install(FILES ../../../pokerth.png DESTINATION share/pixmaps)

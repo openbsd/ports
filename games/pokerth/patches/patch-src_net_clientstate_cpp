@@ -1,0 +1,14 @@
+TCP_KEEPALIVE not supported
+
+Index: src/net/clientstate.cpp
+--- src/net/clientstate.cpp.orig
++++ src/net/clientstate.cpp
+@@ -625,7 +625,7 @@ ClientStateStartConnect::HandleConnect(const boost::sy
+                     setsockopt(fd, IPPROTO_TCP, TCP_KEEPALIVE, &keepidle,  sizeof(keepidle));
+                     setsockopt(fd, IPPROTO_TCP, TCP_KEEPINTVL, &keepintvl, sizeof(keepintvl));
+                     setsockopt(fd, IPPROTO_TCP, TCP_KEEPCNT,   &keepcnt,   sizeof(keepcnt));
+-#else
++#elif !defined(__OpenBSD__)
+                     setsockopt(fd, IPPROTO_TCP, TCP_KEEPIDLE,  &keepidle,  sizeof(keepidle));
+                     setsockopt(fd, IPPROTO_TCP, TCP_KEEPINTVL, &keepintvl, sizeof(keepintvl));
+                     setsockopt(fd, IPPROTO_TCP, TCP_KEEPCNT,   &keepcnt,   sizeof(keepcnt));
