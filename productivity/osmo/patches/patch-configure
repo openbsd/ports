@@ -1,0 +1,47 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -6289,12 +6289,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LIBWEBKIT_CFLAGS="$LIBWEBKIT_CFLAGS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-4.0 >= 2.8.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "webkit2gtk-4.0 >= 2.8.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-4.1 >= 2.8.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "webkit2gtk-4.1 >= 2.8.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBWEBKIT_CFLAGS=`$PKG_CONFIG --cflags "webkit2gtk-4.0 >= 2.8.0" 2>/dev/null`
++  pkg_cv_LIBWEBKIT_CFLAGS=`$PKG_CONFIG --cflags "webkit2gtk-4.1 >= 2.8.0" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -6307,12 +6307,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LIBWEBKIT_LIBS="$LIBWEBKIT_LIBS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-4.0 >= 2.8.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "webkit2gtk-4.0 >= 2.8.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-4.1 >= 2.8.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "webkit2gtk-4.1 >= 2.8.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBWEBKIT_LIBS=`$PKG_CONFIG --libs "webkit2gtk-4.0 >= 2.8.0" 2>/dev/null`
++  pkg_cv_LIBWEBKIT_LIBS=`$PKG_CONFIG --libs "webkit2gtk-4.1 >= 2.8.0" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -6331,9 +6331,9 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        LIBWEBKIT_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "webkit2gtk-4.0 >= 2.8.0"`
++	        LIBWEBKIT_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "webkit2gtk-4.1 >= 2.8.0"`
+         else
+-	        LIBWEBKIT_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "webkit2gtk-4.0 >= 2.8.0"`
++	        LIBWEBKIT_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "webkit2gtk-4.1 >= 2.8.0"`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LIBWEBKIT_PKG_ERRORS" >&5
