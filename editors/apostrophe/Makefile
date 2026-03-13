@@ -1,11 +1,9 @@
-COMMENT=		distraction free editor
+COMMENT=		edit Markdown in style
 
-GH_TAGNAME=		v2.6.3
-GH_ACCOUNT=		ApostropheEditor
-GH_PROJECT=		Apostrophe
-
-PKGNAME=		apostrophe-${GH_TAGNAME:S/v//}
-REVISION=		6
+GNOME_VERSION=		v3.4
+GNOME_PROJECT=		apostrophe
+EXTRACT_SUFX=		.tar.gz
+PKGNAME=		apostrophe-${GNOME_VERSION:S/v//}
 
 CATEGORIES=		editors
 
@@ -14,27 +12,25 @@ HOMEPAGE =		https://apps.gnome.org/Apostrophe/
 # GPLv3+
 PERMIT_PACKAGE=		Yes
 
+SITES=			https://gitlab.gnome.org/World/apostrophe/-/archive/${GNOME_VERSION}/
+
 MODULES=		devel/dconf \
 			devel/meson \
-			lang/python
+			lang/python \
+			x11/gnome
 
-BUILD_DEPENDS=		devel/appstream-glib \
-			devel/gettext,-tools \
-			devel/gobject-introspection
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection gtk-update-icon-cache
 
-RUN_DEPENDS=		devel/desktop-file-utils \
-			devel/py-setuptools \
+BUILD_DEPENDS=		devel/appstream \
+			x11/gnome/libadwaita
+
+RUN_DEPENDS=		devel/py-regex \
+			textproc/libspelling \
 			devel/py-gobject3 \
-			textproc/gspell \
 			textproc/py-chardet \
 			textproc/py-pypandoc \
-			www/webkitgtk4 \
-			x11/gtk+3 \
-			x11/gtk+4,-guic \
-			x11/libhandy
-
-LIB_DEPENDS=		www/sassc \
-			x11/libhandy
+			www/webkitgtk4,webkitgtk60 \
+			x11/gnome/libadwaita
 
 post-install:
 	${MODPY_COMPILEALL} ${DESTDIR}${MODPY_SITEPKG}/apostrophe/
