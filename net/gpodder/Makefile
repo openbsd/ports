@@ -1,7 +1,7 @@
 COMMENT=		media aggregator and podcast client
 
 MODPY_DISTV=		3.11.5
-REVISION=		0
+REVISION=		1
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
@@ -28,7 +28,6 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			net/mygpoclient \
 			textproc/py-podcastparser \
 			www/yt-dlp \
-			www/webkitgtk4 \
 			x11/dbus-python \
 			x11/gtk+4,-guic
 TEST_DEPENDS=		devel/py-coverage \
