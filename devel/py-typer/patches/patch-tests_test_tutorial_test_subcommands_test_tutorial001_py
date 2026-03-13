@@ -1,0 +1,19 @@
+Index: tests/test_tutorial/test_subcommands/test_tutorial001.py
+--- tests/test_tutorial/test_subcommands/test_tutorial001.py.orig
++++ tests/test_tutorial/test_subcommands/test_tutorial001.py
+@@ -87,7 +87,14 @@ def test_scripts(mod):
+     from docs_src.subcommands.tutorial001_py310 import items, users
+ 
+     env = os.environ.copy()
+-    env["PYTHONPATH"] = ":".join(list(tutorial001_py310.__path__))
++    tutorial_path = ":".join(list(tutorial001_py310.__path__))
++    paths = []
++
++    if os.environ.get("PYTHONPATH"):
++        paths.append(os.environ["PYTHONPATH"])
++    paths.append(tutorial_path)
++
++    env["PYTHONPATH"] = ":".join(paths)
+ 
+     for module in [mod, items, users]:
+         result = subprocess.run(

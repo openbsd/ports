@@ -1,0 +1,19 @@
+Index: tests/test_tutorial/test_subcommands/test_tutorial003.py
+--- tests/test_tutorial/test_subcommands/test_tutorial003.py.orig
++++ tests/test_tutorial/test_subcommands/test_tutorial003.py
+@@ -166,7 +166,14 @@ def test_scripts(mod):
+     )
+ 
+     env = os.environ.copy()
+-    env["PYTHONPATH"] = ":".join(list(tutorial003_py310.__path__))
++    tutorial_path = ":".join(list(tutorial003_py310.__path__))
++    paths = []
++
++    if os.environ.get("PYTHONPATH"):
++        paths.append(os.environ["PYTHONPATH"])
++    paths.append(tutorial_path)
++
++    env["PYTHONPATH"] = ":".join(paths)
+ 
+     for module in [mod, items, lands, reigns, towns, users]:
+         result = subprocess.run(
