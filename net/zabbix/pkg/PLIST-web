@@ -1812,6 +1812,9 @@ zabbix/vendor/firebase/php-jwt/src/Key.php
 zabbix/vendor/firebase/php-jwt/src/SignatureInvalidException.php
 zabbix/vendor/onelogin/
 zabbix/vendor/onelogin/php-saml/
+zabbix/vendor/onelogin/php-saml/.github/
+zabbix/vendor/onelogin/php-saml/.github/workflows/
+zabbix/vendor/onelogin/php-saml/.github/workflows/php-package.yml
 zabbix/vendor/onelogin/php-saml/CHANGELOG
 zabbix/vendor/onelogin/php-saml/LICENSE
 zabbix/vendor/onelogin/php-saml/README.md
@@ -1893,10 +1896,14 @@ zabbix/vendor/pragmarx/google2fa/src/Support/Constants.php
 zabbix/vendor/pragmarx/google2fa/src/Support/QRCode.php
 zabbix/vendor/robrichards/
 zabbix/vendor/robrichards/xmlseclibs/
+zabbix/vendor/robrichards/xmlseclibs/.github/
+zabbix/vendor/robrichards/xmlseclibs/.github/workflows/
+zabbix/vendor/robrichards/xmlseclibs/.github/workflows/ci.yml
 zabbix/vendor/robrichards/xmlseclibs/CHANGELOG.txt
 zabbix/vendor/robrichards/xmlseclibs/LICENSE
 zabbix/vendor/robrichards/xmlseclibs/README.md
 zabbix/vendor/robrichards/xmlseclibs/composer.json
+zabbix/vendor/robrichards/xmlseclibs/phpunit.xml
 zabbix/vendor/robrichards/xmlseclibs/src/
 zabbix/vendor/robrichards/xmlseclibs/src/Utils/
 zabbix/vendor/robrichards/xmlseclibs/src/Utils/XPath.php
