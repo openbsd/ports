@@ -1373,6 +1373,7 @@
      SUBDIR += py-algorithm-munkres
      SUBDIR += py-altgraph
      SUBDIR += py-ana
+     SUBDIR += py-annotated_doc
      SUBDIR += py-annotated_types
      SUBDIR += py-anytree
      SUBDIR += py-apipkg
