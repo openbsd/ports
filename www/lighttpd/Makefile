@@ -1,7 +1,6 @@
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
-DISTNAME=	lighttpd-1.4.76
-REVISION=	0
+DISTNAME=	lighttpd-1.4.82
 CATEGORIES=	www net
 SITES=		https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
@@ -54,21 +53,27 @@ WANTLIB+=	pq
 CFLAGS+=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-extract:
-	@cp -f ${FILESDIR}/lighttpd.conf ${WRKSRC}/doc
-
 pre-build:
-	@${SUBST_CMD} ${WRKSRC}/doc/lighttpd.conf ${WRKSRC}/doc/lighttpd.8
+	@${SUBST_CMD} ${WRKSRC}/doc/lighttpd.8 \
+	   ${WRKSRC}/doc/config/conf.d/cgi.conf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lighttpd
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lighttpd
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lighttpd/conf.d
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lighttpd/vhosts.d
 	${INSTALL_DATA} ${WRKSRC}/doc/outdated/*.txt \
 	    ${PREFIX}/share/doc/lighttpd
-	${INSTALL_DATA} ${WRKSRC}/doc/lighttpd.conf \
+	${INSTALL_DATA} ${WRKSRC}/doc/config/lighttpd.conf \
 	    ${PREFIX}/share/examples/lighttpd
-	${INSTALL_DATA} ${WRKSRC}/doc/scripts/spawn-php.sh \
+	${INSTALL_DATA} ${WRKSRC}/doc/config/lighttpd.annotated.conf \
 	    ${PREFIX}/share/examples/lighttpd
+	${INSTALL_DATA} ${WRKSRC}/doc/config/modules.conf \
+	    ${PREFIX}/share/examples/lighttpd
+	${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/*.conf \
+	    ${PREFIX}/share/examples/lighttpd/conf.d
+	${INSTALL_DATA}  ${WRKSRC}/doc/config/vhosts.d/vhosts.template \
+	    ${PREFIX}/share/examples/lighttpd/vhosts.d
 	${INSTALL_DATA} /dev/null \
 	    ${PREFIX}/share/examples/lighttpd/access.log
 	${INSTALL_DATA} /dev/null \

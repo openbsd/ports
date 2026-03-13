@@ -1,0 +1,12 @@
+Index: doc/config/conf.d/cgi.conf
+--- doc/config/conf.d/cgi.conf.orig
++++ doc/config/conf.d/cgi.conf
+@@ -16,7 +16,7 @@ cgi.assign                 = ( ".pl"  => "/usr/bin/per
+                                ".cgi" => "/usr/bin/perl",
+                                ".rb"  => "/usr/bin/ruby",
+                                ".erb" => "/usr/bin/eruby",
+-                               ".py"  => "/usr/bin/python" )
++                               ".py"  => "${LOCALBASE}/bin/python3" )
+ 
+ ##
+ ## to get the old cgi-bin behavior of apache

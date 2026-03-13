@@ -1,0 +1,49 @@
+Index: doc/config/lighttpd.annotated.conf
+--- doc/config/lighttpd.annotated.conf.orig
++++ doc/config/lighttpd.annotated.conf
+@@ -13,11 +13,11 @@
+ ## if you add a variable here. Add the corresponding variable in the
+ ## chroot example as well.
+ ##
+-var.log_root    = "/var/log/lighttpd"
+-var.server_root = "/srv/www"
+-var.state_dir   = "/run"
+-var.home_dir    = "/var/lib/lighttpd"
+-var.conf_dir    = "/etc/lighttpd"
++#var.log_root    = "/var/log/lighttpd"
++#var.server_root = "/srv/www"
++#var.state_dir   = "/run"
++#var.home_dir    = "/var/lib/lighttpd"
++#var.conf_dir    = "/etc/lighttpd"
+ 
+ ##
+ ## run the server chrooted.
+@@ -29,14 +29,14 @@ var.conf_dir    = "/etc/lighttpd"
+ ##
+ ## example chroot configuration:
+ ##
+-#var.log_root    = "/logs"
++var.log_root    = "/logs"
+ #var.server_root = "/"
+-#var.state_dir   = "/run"
++var.state_dir   = "/run"
+ #var.home_dir    = "/lib/lighttpd"
+ #var.vhosts_dir  = "/vhosts"
+ #var.conf_dir    = "/etc"
+ #
+-#server.chroot   = "/srv/www"
++server.chroot   = "/var/www"
+ 
+ ##
+ ## Some additional variables to make the configuration easier
+@@ -97,8 +97,8 @@ include conf_dir + "/modules.conf"
+ ## Run as a different username/groupname.
+ ## This requires root permissions during startup.
+ ##
+-server.username  = "lighttpd"
+-server.groupname = "lighttpd"
++server.username  = "_lighttpd"
++server.groupname = "_lighttpd"
+ 
+ ##
+ ## Enable lighttpd to serve requests on sockets received from systemd

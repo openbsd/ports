@@ -1,12 +1,12 @@
 Index: doc/lighttpd.8
 --- doc/lighttpd.8.orig
 +++ doc/lighttpd.8
-@@ -56,7 +56,7 @@ Show a brief help message and exit.
+@@ -58,7 +58,7 @@ Show a brief help message and exit.
  .
  .SH FILES
  .TP 8
 -/etc/lighttpd/lighttpd.conf
-+${SYSCONFDIR}/lighttpd.conf
++${SYSCONFDIR}/lighttpd/lighttpd.conf
  The standard location for the configuration file.
  .TP 8
  /run/lighttpd.pid

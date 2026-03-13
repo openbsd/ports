@@ -64,18 +64,68 @@ share/doc/lighttpd/traffic-shaping.txt
 share/doc/lighttpd/userdir.txt
 share/doc/lighttpd/webdav.txt
 share/examples/lighttpd/
+@sample ${SYSCONFDIR}/lighttpd/
 share/examples/lighttpd/access.log
 @owner _lighttpd
 @group _lighttpd
 @sample /var/www/logs/access.log
 @owner
 @group
+share/examples/lighttpd/conf.d/
+@sample ${SYSCONFDIR}/lighttpd/conf.d/
+share/examples/lighttpd/conf.d/access_log.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/access_log.conf
+share/examples/lighttpd/conf.d/auth.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/auth.conf
+share/examples/lighttpd/conf.d/cgi.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/cgi.conf
+share/examples/lighttpd/conf.d/debug.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/debug.conf
+share/examples/lighttpd/conf.d/deflate.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/deflate.conf
+share/examples/lighttpd/conf.d/dirlisting.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/dirlisting.conf
+share/examples/lighttpd/conf.d/evhost.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/evhost.conf
+share/examples/lighttpd/conf.d/expire.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/expire.conf
+share/examples/lighttpd/conf.d/fastcgi.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/fastcgi.conf
+share/examples/lighttpd/conf.d/magnet.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/magnet.conf
+share/examples/lighttpd/conf.d/mime.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/mime.conf
+share/examples/lighttpd/conf.d/proxy.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/proxy.conf
+share/examples/lighttpd/conf.d/rrdtool.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/rrdtool.conf
+share/examples/lighttpd/conf.d/scgi.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/scgi.conf
+share/examples/lighttpd/conf.d/simple_vhost.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/simple_vhost.conf
+share/examples/lighttpd/conf.d/ssi.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/ssl.conf
+share/examples/lighttpd/conf.d/status.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/status.conf
+share/examples/lighttpd/conf.d/tls.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/tls.conf
+share/examples/lighttpd/conf.d/userdir.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/userdir.conf
+share/examples/lighttpd/conf.d/webdav.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/webdav.conf
 share/examples/lighttpd/error.log
 @owner _lighttpd
 @group _lighttpd
 @sample /var/www/logs/error.log
 @owner
 @group
+share/examples/lighttpd/lighttpd.annotated.conf
+@sample ${SYSCONFDIR}/lighttpd/lighttpd.annotated.conf
 share/examples/lighttpd/lighttpd.conf
-@sample ${SYSCONFDIR}/lighttpd.conf
-share/examples/lighttpd/spawn-php.sh
+@sample ${SYSCONFDIR}/lighttpd/lighttpd.conf
+share/examples/lighttpd/modules.conf
+@sample ${SYSCONFDIR}/lighttpd/modules.conf
+share/examples/lighttpd/vhosts.d/
+@sample ${SYSCONFDIR}/lighttpd/vhosts.d/
+share/examples/lighttpd/vhosts.d/vhosts.template
+@sample ${SYSCONFDIR}/lighttpd/vhosts.d/vhosts.template
