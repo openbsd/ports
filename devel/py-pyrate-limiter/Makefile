@@ -1,8 +1,7 @@
 COMMENT =		Python rate-limiter using Leaky-Bucket
 
-# XXX: www/py-requests-ratelimiter needs < 3.0
-MODPY_DISTV =		2.10.0
-
+# check compat with www/py-requests-ratelimiter
+MODPY_DISTV =		4.0.2
 DISTNAME =		pyrate_limiter-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
 
@@ -14,13 +13,17 @@ HOMEPAGE =		https://github.com/vutran1710/PyrateLimiter
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
+MODPY_PYBUILD =		hatchling
 MODPY_PI =		Yes
-MODPY_PYBUILD =		poetry-core
 
+BUILD_DEPENDS =		devel/py-uv-dynamic-versioning
 TEST_DEPENDS =		devel/py-test-asyncio
 
 MODPY_PYTEST_ARGS =	--ignore tests/test_with_django.py \
 			--ignore tests/test_02.py
+# needs psycopg-pool
+MODPY_PYTEST_ARGS +=	-k 'not postgres'
+# test setup wants pytest-retry ("Unknown config option: cumulative_timing",
+# etc), but runs ok without.
 
 .include <bsd.port.mk>
