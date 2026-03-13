@@ -1,9 +1,12 @@
 COMMENT=	Python wrapper for pandoc
 
-MODPY_DISTV=	1.15
-DISTNAME=	pypandoc-${MODPY_DISTV}
+MODPY_DISTV=	1.16.2
+# next release will move poetry->hatchling
+# also starts using Claude so evaluate if they're being careful..
+GH_ACCOUNT=	bebraw
+GH_PROJECT=	pypandoc
+GH_TAGNAME=	v${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -14,7 +17,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PYBUILD=	poetry-core
-MODPY_PI=	Yes
 
 RUN_DEPENDS=	textproc/pandoc
 
@@ -23,8 +25,9 @@ TEST_DEPENDS=	print/texlive/texmf,-main \
 		textproc/pandoc \
 		textproc/py-pandocfilters
 
-# at least one test needs network
-do-test:
-	cd ${WRKSRC}; ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} tests.py
+# some tests need network, and at least one fails if pandoc is compiled
+# without HTTP support (and one checks output created from release.md
+# which is not in sdists, so using GH_*)
+MODPY_PYTEST_ARGS= tests.py
 
 .include <bsd.port.mk>

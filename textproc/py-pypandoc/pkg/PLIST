@@ -14,8 +14,5 @@ lib/python${MODPY_VERSION}/site-packages/pypandoc/${MODPY_PYCACHE}handler.${MODP
 lib/python${MODPY_VERSION}/site-packages/pypandoc/${MODPY_PYCACHE}handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypandoc/${MODPY_PYCACHE}pandoc_download.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypandoc/${MODPY_PYCACHE}pandoc_download.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pypandoc/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pypandoc/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypandoc/handler.py
 lib/python${MODPY_VERSION}/site-packages/pypandoc/pandoc_download.py
-lib/python${MODPY_VERSION}/site-packages/pypandoc/py3compat.py
