@@ -1,6 +1,6 @@
 COMMENT =		command line tool for working with Cooklang recipes
 
-V =			0.23.0
+V =			0.26.0
 GH_ACCOUNT =		cooklang
 GH_PROJECT =		cookcli
 GH_TAGNAME =		v${V}
@@ -14,7 +14,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODCARGO_WANTLIB} crypto m ssl
+WANTLIB += ${MODCARGO_WANTLIB} crypto m sqlite3 ssl
 
 DISTFILES.css =		cookcli-$V-output.css
 SITES.css =		https://distfiles.stumpf.co/
@@ -22,9 +22,13 @@ SITES.css =		https://distfiles.stumpf.co/
 EXTRACT_CASES =		*.css) cp ${FULLDISTDIR}/$$archive ${WRKSRC}/static/css/output.css ;;
 
 MODULES =		devel/cargo
+LIB_DEPENDS =		databases/sqlite3
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+
+MODCARGO_CRATES_KEEP =	libsqlite3-sys
+MODCARGO_ENV +=		LIBSQLITE3_SYS_USE_PKG_CONFIG=1
 
 NO_TEST =		Yes
 

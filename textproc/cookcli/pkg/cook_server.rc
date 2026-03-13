@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/bin/cook server --host ${LOCALSTATEDIR}/cook"
+daemon="${TRUEPREFIX}/bin/cook server --host 0.0.0.0 ${LOCALSTATEDIR}/cook"
 daemon_user="_cook"
 
 . /etc/rc.d/rc.subr
