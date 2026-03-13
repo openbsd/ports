@@ -33,7 +33,6 @@ share/wycheproof/schemas/common.json
 share/wycheproof/schemas/daead_test_schema_v1.json
 share/wycheproof/schemas/dsa_common.json
 share/wycheproof/schemas/dsa_p1363_verify_schema_v1.json
-share/wycheproof/schemas/dsa_verify_schema.json
 share/wycheproof/schemas/dsa_verify_schema_v1.json
 share/wycheproof/schemas/ec_curve_test_schema.json
 share/wycheproof/schemas/ecdh_ecpoint_test_schema_v1.json
@@ -69,6 +68,7 @@ share/wycheproof/schemas/rsaes_pkcs1_decrypt_schema_v1.json
 share/wycheproof/schemas/rsassa_pkcs1_generate_schema_v1.json
 share/wycheproof/schemas/rsassa_pkcs1_verify_schema_v1.json
 share/wycheproof/schemas/rsassa_pss_verify_schema_v1.json
+share/wycheproof/schemas/signatures_common.json
 share/wycheproof/schemas/xdh_asn_comp_schema_v1.json
 share/wycheproof/schemas/xdh_comp_schema_v1.json
 share/wycheproof/schemas/xdh_jwk_comp_schema_v1.json
@@ -413,6 +413,8 @@ share/wycheproof/testvectors_v1/x448_test.json
 share/wycheproof/testvectors_v1/xchacha20_poly1305_test.json
 share/wycheproof/tools/
 share/wycheproof/tools/reformat_json.py
+share/wycheproof/tools/schemagen/
+share/wycheproof/tools/schemagen/schemagen.go
 share/wycheproof/tools/twistcheck/
 share/wycheproof/tools/twistcheck/twistcheck.go
 share/wycheproof/tools/vectorlint/
