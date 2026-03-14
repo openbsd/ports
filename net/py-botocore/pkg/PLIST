@@ -2535,6 +2535,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/signin/2023-01-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/signin/2023-01-01/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/signin/2023-01-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/signin/2023-01-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/simpledbv2/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/simpledbv2/2025-09-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/simpledbv2/2025-09-26/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/simpledbv2/2025-09-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/simpledbv2/2025-09-26/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/simpledbv2/2025-09-26/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/simspaceweaver/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/simspaceweaver/2022-10-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/simspaceweaver/2022-10-28/endpoint-rule-set-1.json
