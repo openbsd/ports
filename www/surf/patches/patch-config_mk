@@ -1,7 +1,9 @@
+https://git.suckless.org/surf/commit/7f1156f9b0977a72e523e031cf67a4946cfee9b2.html
+
 Index: config.mk
 --- config.mk.orig
 +++ config.mk
-@@ -4,8 +4,8 @@ VERSION = 2.1
+@@ -4,18 +4,18 @@ VERSION = 2.1
  # Customize below to fit your system
  
  # paths
@@ -12,3 +14,17 @@ Index: config.mk
  LIBPREFIX = $(PREFIX)/lib
  LIBDIR = $(LIBPREFIX)/surf
  
+ X11INC = `pkg-config --cflags x11`
+ X11LIB = `pkg-config --libs x11`
+ 
+-GTKINC = `pkg-config --cflags gtk+-3.0 gcr-3 webkit2gtk-4.0`
+-GTKLIB = `pkg-config --libs gtk+-3.0 gcr-3 webkit2gtk-4.0`
+-WEBEXTINC = `pkg-config --cflags webkit2gtk-4.0 webkit2gtk-web-extension-4.0 gio-2.0`
+-WEBEXTLIBS = `pkg-config --libs webkit2gtk-4.0 webkit2gtk-web-extension-4.0 gio-2.0`
++GTKINC = `pkg-config --cflags gtk+-3.0 gcr-3 webkit2gtk-4.1`
++GTKLIB = `pkg-config --libs gtk+-3.0 gcr-3 webkit2gtk-4.1`
++WEBEXTINC = `pkg-config --cflags webkit2gtk-4.1 webkit2gtk-web-extension-4.1 gio-2.0`
++WEBEXTLIBS = `pkg-config --libs webkit2gtk-4.1 webkit2gtk-web-extension-4.1 gio-2.0`
+ 
+ # includes and libs
+ INCS = $(X11INC) $(GTKINC)
