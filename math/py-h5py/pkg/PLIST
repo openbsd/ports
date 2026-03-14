@@ -159,6 +159,8 @@ lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_h5t.${M
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_h5t.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_h5z.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_h5z.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_native_complex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_native_complex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_npystrings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_npystrings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}test_objects.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -176,6 +178,7 @@ lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/__init__.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/compound-dtype-complex.h5
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/vlen_string_dset.h5
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/vlen_string_dset_utc.h5
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/vlen_string_s390x.h5
@@ -208,6 +211,7 @@ lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_h5pl.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_h5s.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_h5t.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_h5z.py
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_native_complex.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_npystrings.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_objects.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_ros3.py
