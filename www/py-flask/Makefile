@@ -1,9 +1,8 @@
 COMMENT=	microframework based on Werkzeug and Jinja 2
 
-MODPY_DISTV=	3.1.0
+MODPY_DISTV=	3.1.3
 DISTNAME=	flask-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	www devel
 
@@ -22,8 +21,11 @@ MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-blinker \
 		devel/py-click \
+		textproc/py-MarkupSafe \
 		www/py-itsdangerous \
 		www/py-jinja2 \
 		www/py-werkzeug
+
+TEST_DEPENDS=	www/py-asgiref
 
 .include <bsd.port.mk>
