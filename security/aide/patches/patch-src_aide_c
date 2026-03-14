@@ -1,0 +1,55 @@
+Index: src/aide.c
+--- src/aide.c.orig
++++ src/aide.c
+@@ -668,6 +668,12 @@ int main(int argc,char**argv)
+ {
+   int errorno=0;
+ 
++  /* proc for @@include, exec for @@x_include during config parse */
++  if (pledge("stdio rpath wpath cpath flock proc tty exec", NULL) == -1) {
++    fprintf(stderr, "%s: initial pledge\n", argv[0]);
++    exit(EXEC_ERROR);
++  }
++
+ #ifdef WITH_LOCALE
+   setlocale(LC_ALL,"");
+   bindtextdomain(PACKAGE,LOCALEDIR);
+@@ -732,6 +738,12 @@ int main(int argc,char**argv)
+   free (before);
+   free (after);
+ 
++  /* config is read, no more exec */
++  if (pledge("stdio rpath wpath cpath flock tty", NULL) == -1) {
++    fprintf(stderr, "%s: pledge\n", argv[0]);
++    exit(EXEC_ERROR);
++  }
++
+   setdefaults_after_config();
+ 
+   log_msg(LOG_LEVEL_DEBUG, "initialize signal handler for SIGUSR1");
+@@ -800,6 +812,10 @@ int main(int argc,char**argv)
+   }
+ 
+   if (conf->action&DO_INIT && conf->action&DO_DRY_RUN) {
++      if (pledge("stdio rpath tty", NULL) == -1) {
++        fprintf(stderr, "%s: pledge\n", argv[0]);
++        exit(EXEC_ERROR);
++      }
+       log_msg(LOG_LEVEL_INFO, "scan file system (dry-run)");
+       db_scan_disk(true);
+       exit (0);
+@@ -870,6 +886,14 @@ int main(int argc,char**argv)
+ 	exit(IO_ERROR);
+       }
+     }
++
++    /* files are opened for write where needed; below db_inits have true
++     * for second arg (read-only) */
++    if (pledge("stdio rpath tty", NULL) == -1) {
++      fprintf(stderr, "%s: pledge\n", argv[0]);
++      exit(EXEC_ERROR);
++    }
++
+     if((conf->action&DO_COMPARE)||(conf->action&DO_DIFF)){
+       if(db_init(&(conf->database_in), true, false)==RETFAIL)
+ 	exit(IO_ERROR);

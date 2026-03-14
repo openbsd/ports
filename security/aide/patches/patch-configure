@@ -1,21 +1,14 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -827,7 +827,7 @@ datarootdir='${prefix}/share'
- datadir='${datarootdir}'
- sysconfdir='${prefix}/etc'
- sharedstatedir='${prefix}/com'
--localstatedir='${prefix}/var'
-+localstatedir='/var'
- runstatedir='${localstatedir}/run'
- includedir='${prefix}/include'
- oldincludedir='/usr/include'
-@@ -7060,7 +7060,7 @@ fi
+@@ -11014,8 +11014,8 @@ if test "$enable_default_db" = "yes"; then
  
- 
- saved_CFLAGS="$CFLAGS"
--CFLAGS="$CFLAGS $AIDE_DEFS"
-+CFLAGS="$CFLAGS"
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for LFS ino_t" >&5
- $as_echo_n "checking for LFS ino_t... " >&6; }
- if ${ac_cv_ino_type+:} false; then :
+ if test "x$sysconfdir" != x'${prefix}/etc'; then
+ 	evalled_sysconfdir=`eval echo "$sysconfdir"`
+-	default_db="$evalled_sysconfdir/aide.db"
+-	default_db_out="$evalled_sysconfdir/aide.db.new"
++	default_db="/var/db/aide.db"
++	default_db_out="/var/db/aide.db.new"
+ elif test "x$prefix" != xNONE; then
+ 	default_db="$prefix/etc/aide.db"
+ 	default_db_out="$prefix/etc/aide.db.new"
