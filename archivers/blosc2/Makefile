@@ -1,11 +1,11 @@
 BROKEN-sparc64 = Cannot determine how to allocate aligned memory on the target platform.
 
-V =		2.22.0
+V =		2.23.1
 COMMENT =	fast, compressed, persistent binary data store library for C
 PKGNAME =	blosc2-${V}
 CATEGORIES =	archivers
 
-SHARED_LIBS +=	blosc2                     5.0 # 0.0
+SHARED_LIBS +=	blosc2                     6.0 # 0.0
 
 GH_ACCOUNT =	Blosc
 GH_PROJECT =	c-blosc2
