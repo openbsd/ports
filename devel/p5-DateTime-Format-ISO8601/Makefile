@@ -1,12 +1,14 @@
 COMMENT = 	DateTime parser for ISO8601 date formats
 
-DISTNAME =	DateTime-Format-ISO8601-0.17
+DISTNAME =	DateTime-Format-ISO8601-0.19
 EPOCH =		0
 
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		TIMLEGGE
 
 MODULES =		cpan
 RUN_DEPENDS =		devel/p5-DateTime>=1.45 \
