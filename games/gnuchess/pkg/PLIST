@@ -5,8 +5,6 @@ bin/gnuchessx
 @man man/man1/gnuchess.1
 share/doc/gnuchess/
 share/doc/gnuchess/README
-share/examples/gnuchess/
-share/examples/gnuchess/gnuchess.ini
 share/games/
 share/games/plugins/
 share/games/plugins/logos/
