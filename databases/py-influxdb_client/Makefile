@@ -1,6 +1,6 @@
 COMMENT=	Python client library for InfluxDB 2.x and Flux
 
-MODPY_DISTV=	1.49.0
+MODPY_DISTV=	1.50.0
 DISTNAME=	influxdb_client-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
