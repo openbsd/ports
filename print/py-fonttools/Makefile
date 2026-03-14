@@ -1,9 +1,8 @@
 COMMENT=	library to manipulate font files from for Python
 
-MODPY_DISTV=	4.61.1
+MODPY_DISTV=	4.62.1
 DISTNAME=	fonttools-${MODPY_DISTV}
 PKGNAME=	py-fonttools-${MODPY_DISTV}
-#EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	https://github.com/fonttools/fonttools
 
