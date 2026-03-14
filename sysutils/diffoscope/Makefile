@@ -1,4 +1,4 @@
-MODPY_DISTV=	313
+MODPY_DISTV =	314
 COMMENT=	in-depth comparison of files, archives, and directories
 DISTNAME=	diffoscope-${MODPY_DISTV}
 CATEGORIES=	sysutils devel
