@@ -1,7 +1,7 @@
 Index: Source/WTF/wtf/MemoryPressureHandler.cpp
 --- Source/WTF/wtf/MemoryPressureHandler.cpp.orig
 +++ Source/WTF/wtf/MemoryPressureHandler.cpp
-@@ -68,7 +68,7 @@ static MemoryPressureHandler* memoryPressureHandlerIfE
+@@ -67,7 +67,7 @@ static MemoryPressureHandler* memoryPressureHandlerIfE
  }
  
  MemoryPressureHandler::MemoryPressureHandler()

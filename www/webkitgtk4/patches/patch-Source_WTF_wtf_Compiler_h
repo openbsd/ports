@@ -3,7 +3,7 @@ Disable musttail attribute, not supported by clang on mips64.
 Index: Source/WTF/wtf/Compiler.h
 --- Source/WTF/wtf/Compiler.h.orig
 +++ Source/WTF/wtf/Compiler.h
-@@ -277,7 +277,7 @@
+@@ -290,7 +290,7 @@
  // written for 64-bit may fail to tail call on 32-bit.
  // It also doesn't work on ppc64le: https://github.com/llvm/llvm-project/issues/98859
  // and on Windows: https://github.com/llvm/llvm-project/issues/116568

@@ -1,7 +1,7 @@
 Index: Source/WebCore/page/NavigatorBase.cpp
 --- Source/WebCore/page/NavigatorBase.cpp.orig
 +++ Source/WebCore/page/NavigatorBase.cpp
-@@ -44,7 +44,7 @@
+@@ -46,7 +46,7 @@
  #include <wtf/text/MakeString.h>
  #include <wtf/text/WTFString.h>
  
@@ -10,12 +10,12 @@ Index: Source/WebCore/page/NavigatorBase.cpp
  #include "sys/utsname.h"
  #include <wtf/StdLibExtras.h>
  #endif
-@@ -94,7 +94,7 @@ String NavigatorBase::appVersion() const
+@@ -96,7 +96,7 @@ String NavigatorBase::appVersion() const
  
  String NavigatorBase::platform() const
  {
 -#if OS(LINUX)
 +#if OS(LINUX) || OS(OPENBSD)
-     static LazyNeverDestroyed<String> platformName;
-     static std::once_flag onceKey;
-     std::call_once(onceKey, [] {
+     static NeverDestroyed<String> platformName = [] {
+         struct utsname osname;
+         return uname(&osname) >= 0 ? makeString(unsafeSpan(osname.sysname), " "_s, unsafeSpan(osname.machine)) : emptyString();

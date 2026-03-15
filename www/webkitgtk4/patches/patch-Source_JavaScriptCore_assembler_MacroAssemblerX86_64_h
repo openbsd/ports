@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/assembler/MacroAssemblerX86_64.h
 --- Source/JavaScriptCore/assembler/MacroAssemblerX86_64.h.orig
 +++ Source/JavaScriptCore/assembler/MacroAssemblerX86_64.h
-@@ -32,6 +32,12 @@
+@@ -34,6 +34,12 @@
  #include <array>
  #include <wtf/TZoneMalloc.h>
  

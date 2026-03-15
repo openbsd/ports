@@ -3,7 +3,7 @@ XXX undefined symbol backtrace even with USE_LIBBACKTRACE=OFF
 Index: Source/bmalloc/libpas/src/libpas/pas_probabilistic_guard_malloc_allocator.c
 --- Source/bmalloc/libpas/src/libpas/pas_probabilistic_guard_malloc_allocator.c.orig
 +++ Source/bmalloc/libpas/src/libpas/pas_probabilistic_guard_malloc_allocator.c
-@@ -48,7 +48,7 @@
+@@ -44,7 +44,7 @@
  #endif
  
  /* PlayStation does not currently support the backtrace API. Android API versions < 33 don't, either. Windows does not either. Linux only with GLibc and not uCLibc/Musl. */

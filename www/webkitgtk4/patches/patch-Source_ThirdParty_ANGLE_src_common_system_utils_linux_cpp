@@ -1,7 +1,7 @@
 Index: Source/ThirdParty/ANGLE/src/common/system_utils_linux.cpp
 --- Source/ThirdParty/ANGLE/src/common/system_utils_linux.cpp.orig
 +++ Source/ThirdParty/ANGLE/src/common/system_utils_linux.cpp
-@@ -13,6 +13,9 @@
+@@ -17,6 +17,9 @@
  #include <sys/stat.h>
  #include <sys/time.h>
  #include <sys/types.h>
@@ -11,7 +11,7 @@ Index: Source/ThirdParty/ANGLE/src/common/system_utils_linux.cpp
  #include <unistd.h>
  
  #include <array>
-@@ -59,6 +62,10 @@ void SetCurrentThreadName(const char *name)
+@@ -63,6 +66,10 @@ void SetCurrentThreadName(const char *name)
      // There's a 15-character (16 including '\0') limit.  If the name is too big (and ERANGE is
      // returned), name will be ignored.
      ASSERT(strlen(name) < 16);

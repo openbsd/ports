@@ -1,7 +1,7 @@
 Index: Source/WTF/wtf/PlatformGTK.cmake
 --- Source/WTF/wtf/PlatformGTK.cmake.orig
 +++ Source/WTF/wtf/PlatformGTK.cmake
-@@ -69,6 +69,12 @@ elseif (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+@@ -72,6 +72,12 @@ elseif (CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR CMAKE_S
  
          unix/MemoryPressureHandlerUnix.cpp
      )

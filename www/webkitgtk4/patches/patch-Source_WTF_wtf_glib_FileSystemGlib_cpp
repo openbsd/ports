@@ -1,9 +1,9 @@
 Index: Source/WTF/wtf/glib/FileSystemGlib.cpp
 --- Source/WTF/wtf/glib/FileSystemGlib.cpp.orig
 +++ Source/WTF/wtf/glib/FileSystemGlib.cpp
-@@ -75,6 +75,11 @@ CString currentExecutablePath()
- {
-     return { };
+@@ -89,6 +89,11 @@ CString currentExecutablePath()
+         return { };
+     return CString(unsafeMakeSpan(readBuffer, static_cast<size_t>(result)));
  }
 +#elif OS(OPENBSD)
 +CString currentExecutablePath()

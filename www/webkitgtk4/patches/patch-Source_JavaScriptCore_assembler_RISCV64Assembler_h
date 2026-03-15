@@ -4,15 +4,15 @@ and int64_t is a long long.
 Index: Source/JavaScriptCore/assembler/RISCV64Assembler.h
 --- Source/JavaScriptCore/assembler/RISCV64Assembler.h.orig
 +++ Source/JavaScriptCore/assembler/RISCV64Assembler.h
-@@ -189,7 +189,7 @@ struct ImmediateBase {
+@@ -188,7 +188,7 @@ struct ImmediateBase {
+     }
  
      template<typename T>
-     static auto isValid(T immValue)
--        -> std::enable_if_t<(std::is_same_v<T, int32_t> || std::is_same_v<T, int64_t>), bool>
-+        -> std::enable_if_t<(std::is_same_v<T, int32_t> || std::is_same_v<T, int64_t> || std::is_same_v<T, intptr_t>), bool>
+-        requires (std::same_as<T, int32_t> || std::same_as<T, int64_t>)
++        requires (std::same_as<T, int32_t> || std::same_as<T, int64_t> || std::same_as<T, intptr_t>)
+     static bool isValid(T immValue)
      {
          constexpr unsigned shift = sizeof(T) * 8 - immediateSize;
-         return immValue == ((immValue << shift) >> shift);
 @@ -212,6 +212,14 @@ struct ImmediateBase {
      }
  
@@ -28,16 +28,16 @@ Index: Source/JavaScriptCore/assembler/RISCV64Assembler.h
      static ImmediateType v(int64_t immValue)
      {
          ASSERT(isValid(immValue));
-@@ -313,7 +321,7 @@ struct JImmediate : ImmediateBase<21> {
- };
+@@ -314,7 +322,7 @@ struct JImmediate : ImmediateBase<21> {
  
  struct ImmediateDecomposition {
--    template<typename T, typename = std::enable_if_t<(std::is_same_v<T, int32_t> || std::is_same_v<T, int64_t>)>>
-+    template<typename T, typename = std::enable_if_t<(std::is_same_v<T, int32_t> || std::is_same_v<T, int64_t> || std::is_same_v<T, intptr_t>)>>
+     template<typename T>
+-        requires (std::same_as<T, int32_t> || std::same_as<T, int64_t>)
++        requires (std::same_as<T, int32_t> || std::same_as<T, int64_t> || std::same_as<T, intptr_t>)
      explicit ImmediateDecomposition(T immediate)
          : upper(UImmediate(0))
          , lower(IImmediate(0))
-@@ -2190,7 +2198,15 @@ class RISCV64Assembler { (public)
+@@ -2192,7 +2200,15 @@ class RISCV64Assembler { (public)
              : ImmediateLoader(int64_t(imm))
          { }
  

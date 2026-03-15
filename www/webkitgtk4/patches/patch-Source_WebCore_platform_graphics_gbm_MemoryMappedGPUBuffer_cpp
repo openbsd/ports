@@ -1,17 +1,17 @@
 Index: Source/WebCore/platform/graphics/gbm/MemoryMappedGPUBuffer.cpp
 --- Source/WebCore/platform/graphics/gbm/MemoryMappedGPUBuffer.cpp.orig
 +++ Source/WebCore/platform/graphics/gbm/MemoryMappedGPUBuffer.cpp
-@@ -35,7 +35,9 @@
- #include "PlatformDisplay.h"
+@@ -36,7 +36,9 @@
+ #include "VivanteSuperTiledTextureInlines.h"
  #include <epoxy/egl.h>
  #include <fcntl.h>
 +#ifdef __linux__
  #include <linux/dma-buf.h>
 +#endif
  #include <sys/ioctl.h>
+ #include <sys/mman.h>
  #include <wtf/SafeStrerror.h>
- #include <wtf/StdLibExtras.h>
-@@ -344,6 +346,7 @@ std::unique_ptr<MemoryMappedGPUBuffer::AccessScope> Me
+@@ -405,6 +407,7 @@ std::unique_ptr<MemoryMappedGPUBuffer::AccessScope> Me
  
  bool MemoryMappedGPUBuffer::performDMABufSyncSystemCall(OptionSet<DMABufSyncFlag> flags)
  {
@@ -19,7 +19,7 @@ Index: Source/WebCore/platform/graphics/gbm/MemoryMappedGPUBuffer.cpp
      constexpr unsigned maxRetries = 10;
  
      struct dma_buf_sync sync;
-@@ -373,6 +376,9 @@ bool MemoryMappedGPUBuffer::performDMABufSyncSystemCal
+@@ -434,6 +437,9 @@ bool MemoryMappedGPUBuffer::performDMABufSyncSystemCal
      }
  
      return true;

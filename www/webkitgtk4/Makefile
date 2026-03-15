@@ -11,7 +11,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.50.5
+V =			2.51.93
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
@@ -20,9 +20,9 @@ EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     4.3
-SHARED_LIBS +=  webkit2gtk-${API}            4.3
-SHARED_LIBS +=	webkitgtk-6.0                0.5
+SHARED_LIBS +=  javascriptcoregtk-${API}     4.4
+SHARED_LIBS +=  webkit2gtk-${API}            4.4
+SHARED_LIBS +=  webkitgtk-6.0                0.6
 
 CATEGORIES =		www
 
@@ -74,6 +74,7 @@ RUN_DEPENDS =		geo/geoclue2 \
 
 LIB_DEPENDS =		archivers/woff2 \
 			devel/harfbuzz,-icu \
+			devel/libsoup3 \
 			graphics/libavif \
 			graphics/libjxl \
 			graphics/libwebp \
@@ -164,28 +165,18 @@ LDFLAGS +=		-Wl,--no-keep-memory
 DPB_PROPERTIES =	parallel parallel2 lonesome
 .endif
 
-FLAVORS =		webkitgtk41 webkitgtk60
+FLAVORS =		webkitgtk60
 FLAVOR ?=
 
-.if ${FLAVOR:Mwebkitgtk41}
-API =			4.1
-WANTLIB += atk-1.0 gdk-3 gtk-3 soup-3.0
-LIB_DEPENDS +=		devel/libsoup3 \
-			x11/gtk+3
-CONFIGURE_ARGS +=	-DENABLE_WEBDRIVER=OFF \
-			-DUSE_GTK4=OFF
-.elif ${FLAVOR:Mwebkitgtk60}
+.if ${FLAVOR:Mwebkitgtk60}
 API =			6.0
 WANTLIB += graphene-1.0 gtk-4 soup-3.0 vulkan
-LIB_DEPENDS +=		devel/libsoup3 \
-			x11/gtk+4
+LIB_DEPENDS +=		x11/gtk+4
 .else
-API =			4.0
-WANTLIB += atk-1.0 gdk-3 gtk-3 soup-2.4
-LIB_DEPENDS +=		devel/libsoup \
-			x11/gtk+3
-CONFIGURE_ARGS +=	-DUSE_SOUP2=ON \
-			-DENABLE_WEBDRIVER=OFF \
+API =			4.1
+WANTLIB += atk-1.0 gdk-3 gtk-3 soup-3.0
+LIB_DEPENDS +=		x11/gtk+3
+CONFIGURE_ARGS +=	-DENABLE_WEBDRIVER=OFF \
 			-DUSE_GTK4=OFF
 .endif
 

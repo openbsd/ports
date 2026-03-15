@@ -1,7 +1,7 @@
 Index: Source/cmake/WebKitCompilerFlags.cmake
 --- Source/cmake/WebKitCompilerFlags.cmake.orig
 +++ Source/cmake/WebKitCompilerFlags.cmake
-@@ -333,9 +333,9 @@ if (NOT MSVC)
+@@ -348,9 +348,9 @@ if (NOT MSVC)
      string(REGEX MATCHALL "-fsanitize=[^ ]*" ENABLED_COMPILER_SANITIZERS ${CMAKE_CXX_FLAGS})
  endif ()
  
@@ -12,5 +12,5 @@ Index: Source/cmake/WebKitCompilerFlags.cmake
 +#    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
 +#endif ()
  
- 
  if (MSVC)
+     set(CODE_GENERATOR_PREPROCESSOR "\"${CMAKE_CXX_COMPILER}\" /nologo /EP /TP")

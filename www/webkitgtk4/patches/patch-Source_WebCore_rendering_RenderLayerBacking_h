@@ -1,7 +1,7 @@
 Index: Source/WebCore/rendering/RenderLayerBacking.h
 --- Source/WebCore/rendering/RenderLayerBacking.h.orig
 +++ Source/WebCore/rendering/RenderLayerBacking.h
-@@ -35,6 +35,12 @@
+@@ -36,6 +36,12 @@
  #include <wtf/TZoneMalloc.h>
  #include <wtf/WeakListHashSet.h>
  

@@ -1,7 +1,7 @@
 Index: Source/bmalloc/bmalloc/BPlatform.h
 --- Source/bmalloc/bmalloc/BPlatform.h.orig
 +++ Source/bmalloc/bmalloc/BPlatform.h
-@@ -60,6 +60,10 @@
+@@ -70,6 +70,10 @@
  #define BOS_FREEBSD 1
  #endif
  
@@ -12,7 +12,7 @@ Index: Source/bmalloc/bmalloc/BPlatform.h
  #if defined(WIN32) || defined(_WIN32)
  #define BOS_WINDOWS 1
  #endif
-@@ -349,7 +353,7 @@
+@@ -379,7 +383,7 @@
  
  /* BENABLE(LIBPAS) is enabling libpas build. But this does not mean we use libpas for bmalloc replacement. */
  #if !defined(BENABLE_LIBPAS)

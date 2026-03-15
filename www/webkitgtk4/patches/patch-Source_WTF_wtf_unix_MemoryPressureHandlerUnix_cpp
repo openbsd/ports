@@ -11,16 +11,16 @@ Index: Source/WTF/wtf/unix/MemoryPressureHandlerUnix.cpp
  #include <unistd.h>
  #include <wtf/Logging.h>
  #include <wtf/MainThread.h>
-@@ -37,7 +39,7 @@
- 
- #if OS(LINUX)
+@@ -39,7 +41,7 @@
  #include <wtf/linux/CurrentProcessMemoryStatus.h>
+ #elif OS(HAIKU)
+ #include <wtf/haiku/CurrentProcessMemoryStatus.h>
 -#elif OS(FREEBSD)
 +#elif (OS(FREEBSD) || OS(OPENBSD))
  #include <sys/sysctl.h>
  #include <sys/types.h>
  #include <sys/user.h>
-@@ -115,7 +117,7 @@ static size_t processMemoryUsage()
+@@ -117,7 +119,7 @@ static size_t processMemoryUsage()
      ProcessMemoryStatus memoryStatus;
      currentProcessMemoryStatus(memoryStatus);
      return (memoryStatus.resident - memoryStatus.shared);
@@ -29,7 +29,7 @@ Index: Source/WTF/wtf/unix/MemoryPressureHandlerUnix.cpp
      static size_t pageSize = sysconf(_SC_PAGE_SIZE);
      struct kinfo_proc info;
      size_t infolen = sizeof(info);
-@@ -129,7 +131,7 @@ static size_t processMemoryUsage()
+@@ -131,7 +133,7 @@ static size_t processMemoryUsage()
      if (sysctl(mib, 4, &info, &infolen, nullptr, 0))
          return 0;
  

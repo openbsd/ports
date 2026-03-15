@@ -16,7 +16,7 @@ Index: Source/cmake/WebKitFeatures.cmake
      else ()
          set(ENABLE_JIT_DEFAULT OFF)
          set(ENABLE_FTL_DEFAULT OFF)
-@@ -439,7 +433,7 @@ macro(CREATE_CONFIGURATION_HEADER)
+@@ -455,7 +449,7 @@ macro(GET_WEBKIT_CONFIG_VARIABLES _var_name)
  endmacro()
  
  macro(WEBKIT_CHECK_HAVE_INCLUDE _variable _header)

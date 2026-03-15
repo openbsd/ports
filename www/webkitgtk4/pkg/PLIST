@@ -43,6 +43,7 @@ include/webkitgtk-${API}/webkit/WebKitFrame.h
 include/webkitgtk-${API}/webkit/WebKitGeolocationManager.h
 include/webkitgtk-${API}/webkit/WebKitGeolocationPermissionRequest.h
 include/webkitgtk-${API}/webkit/WebKitHitTestResult.h
+include/webkitgtk-${API}/webkit/WebKitImage.h
 include/webkitgtk-${API}/webkit/WebKitInputMethodContext.h
 include/webkitgtk-${API}/webkit/WebKitInstallMissingMediaPluginsPermissionRequest.h
 include/webkitgtk-${API}/webkit/WebKitMediaKeySystemPermissionRequest.h
@@ -78,7 +79,7 @@ include/webkitgtk-${API}/webkit/WebKitUserMessage.h
 include/webkitgtk-${API}/webkit/WebKitVersion.h
 include/webkitgtk-${API}/webkit/WebKitWebContext.h
 include/webkitgtk-${API}/webkit/WebKitWebEditor.h
-include/webkitgtk-${API}/webkit/WebKitWebExtensionMatchPattern.h
+include/webkitgtk-${API}/webkit/WebKitWebExtension.h
 include/webkitgtk-${API}/webkit/WebKitWebFormManager.h
 include/webkitgtk-${API}/webkit/WebKitWebHitTestResult.h
 include/webkitgtk-${API}/webkit/WebKitWebInspector.h
@@ -93,6 +94,7 @@ include/webkitgtk-${API}/webkit/WebKitWebsiteDataAccessPermissionRequest.h
 include/webkitgtk-${API}/webkit/WebKitWebsiteDataManager.h
 include/webkitgtk-${API}/webkit/WebKitWebsitePolicies.h
 include/webkitgtk-${API}/webkit/WebKitWindowProperties.h
+include/webkitgtk-${API}/webkit/WebKitXRPermissionRequest.h
 lib/girepository-1.0/JavaScriptCore-${API}.typelib
 @lib lib/libjavascriptcoregtk-${API}.so.${LIBjavascriptcoregtk-${API}_VERSION}
 lib/pkgconfig/javascriptcoregtk-${API}.pc
