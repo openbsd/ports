@@ -1,6 +1,6 @@
 COMMENT=	catch certain exceptions and provide an indication
 
-MODPY_DISTV=	6.1.0
+MODPY_DISTV=	6.1.1
 DISTNAME=	jaraco_context-${MODPY_DISTV}
 PKGNAME=	py-jaraco.context-${MODPY_DISTV}
 
