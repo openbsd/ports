@@ -22,12 +22,8 @@ MODGNOME_TOOLS=		gobject-introspection vala
 
 # C++11
 COMPILER =		base-clang ports-gcc
-CXXFLAGS +=		-std=c++11
 
-# need to add this for gcc
-# revisit when gcc drops it
-EXTRA_ports-gcc=	-lstdc++fs
-CXXFLAGS+=		${EXTRA_${CHOSEN_COMPILER}}
+CXXFLAGS +=		-std=c++11
 
 LIB_DEPENDS=		devel/glib2 \
 			graphics/exiv2
