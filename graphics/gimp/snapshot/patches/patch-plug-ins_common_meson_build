@@ -1,7 +1,7 @@
 Index: plug-ins/common/meson.build
 --- plug-ins/common/meson.build.orig
 +++ plug-ins/common/meson.build
-@@ -164,7 +164,7 @@ if platform_windows
+@@ -170,7 +170,7 @@ if platform_windows
    common_plugins_list += { 'name': 'file-lnk', }
  endif
  

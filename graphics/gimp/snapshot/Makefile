@@ -5,18 +5,21 @@ COMMENT=	GNU Image Manipulation Program
 # needs newer librsvg
 ONLY_FOR_ARCHS=	${RUST_ARCHS}
 
-V=		3.0
-DISTNAME=	gimp-${V}.8
+V=		3.2.0
+GIMP_API_V=	3.0
+GIMP_APP_V=	${V:R}
+DISTNAME=	gimp-${V}
+SUBST_VARS +=	GIMP_API_V GIMP_APP_V
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
-SHARED_LIBS +=  ${i}-3.0 0.0
+SHARED_LIBS +=  ${i}-${GIMP_API_V} 0.1	# 0.200.0
 .endfor
 
 CATEGORIES=	graphics
 
-SITES=		https://download.gimp.org/gimp/v${V}/ \
-		https://www.mirrorservice.org/sites/ftp.gimp.org/gimp/v${V}/
+SITES=		https://download.gimp.org/gimp/v${GIMP_APP_V}/ \
+		https://www.mirrorservice.org/sites/ftp.gimp.org/gimp/v${GIMP_APP_V}/
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://www.gimp.org/
@@ -49,14 +52,12 @@ MODLUA_BUILDDEP=No
 LUAJIT_V=	${MODLUA_VERSION:S/.//}
 SUBST_VARS +=	LUAJIT_V
 
-SUBST_VARS +=	V
-
 COMMON_DEPENDS=	archivers/lzip/lzlib \
 		archivers/libarchive \
 		devel/desktop-file-utils \
 		devel/iso-codes \
 		graphics/jasper \
-		graphics/mypaint-brushes \
+		graphics/mypaint-brushes2 \
 		net/glib2-networking \
 		print/poppler-data
 
@@ -148,20 +149,20 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/
 	mv ${WRKINST}${SYSCONFDIR}/gimp ${PREFIX}/share/examples/
-	${MODPY_COMPILEALL} ${PREFIX}/lib/gimp/${V}/plug-ins
+	${MODPY_COMPILEALL} ${PREFIX}/lib/gimp/${GIMP_API_V}/plug-ins
 
 # XXX remove once this GIMP version becomes the default;
 # prevent conflicts with graphics/gimp/stable;
 	cd ${PREFIX} && \
-		mv share/applications/gimp{,-${V}}.desktop && \
-		mv share/icons/hicolor/16x16/apps/gimp{,-${V}}.png && \
-		mv share/icons/hicolor/22x22/apps/gimp{,-${V}}.png && \
-		mv share/icons/hicolor/24x24/apps/gimp{,-${V}}.png && \
-		mv share/icons/hicolor/256x256/apps/gimp{,-${V}}.png && \
-		mv share/icons/hicolor/32x32/apps/gimp{,-${V}}.png && \
-		mv share/icons/hicolor/48x48/apps/gimp{,-${V}}.png && \
-		mv share/icons/hicolor/64x64/apps/gimp{,-${V}}.png && \
-		mv share/icons/hicolor/scalable/apps/gimp{,-${V}}.svg && \
-		mv share/metainfo/org.gimp{,-${V}}.GIMP.appdata.xml
+		mv share/applications/gimp{,-${GIMP_APP_V}}.desktop && \
+		mv share/icons/hicolor/16x16/apps/gimp{,-${GIMP_APP_V}}.png && \
+		mv share/icons/hicolor/22x22/apps/gimp{,-${GIMP_APP_V}}.png && \
+		mv share/icons/hicolor/24x24/apps/gimp{,-${GIMP_APP_V}}.png && \
+		mv share/icons/hicolor/256x256/apps/gimp{,-${GIMP_APP_V}}.png && \
+		mv share/icons/hicolor/32x32/apps/gimp{,-${GIMP_APP_V}}.png && \
+		mv share/icons/hicolor/48x48/apps/gimp{,-${GIMP_APP_V}}.png && \
+		mv share/icons/hicolor/64x64/apps/gimp{,-${GIMP_APP_V}}.png && \
+		mv share/icons/hicolor/scalable/apps/gimp{,-${GIMP_APP_V}}.svg && \
+		mv share/metainfo/org.gimp{,-${GIMP_APP_V}}.GIMP.appdata.xml
 
 .include <bsd.port.mk>
