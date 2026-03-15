@@ -1,10 +1,9 @@
 COMMENT =	finds unused code in Python programs
 
-MODPY_DISTV =	2.14
+MODPY_DISTV =	2.15
 
 DISTNAME =	vulture-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	devel
 
