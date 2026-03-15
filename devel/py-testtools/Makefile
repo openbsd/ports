@@ -1,6 +1,6 @@
 COMMENT=	extensions to the Python unit testing framework
 
-MODPY_DISTV=	2.8.4
+MODPY_DISTV=	2.8.7
 DISTNAME=	testtools-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
