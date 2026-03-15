@@ -2,7 +2,6 @@ COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
 COMMENT-goa=		GVFS volume monitor for gnome-online-account
 COMMENT-nfs=		GVFS mount module for NFS
-COMMENT-google=		GVFS mount module for Google Drive
 COMMENT-onedrive=	GVFS mount module for Microsoft OneDrive backend
 
 GNOME_PROJECT=		gvfs
@@ -12,8 +11,9 @@ PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
-PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
 PKGNAME-onedrive=	${GNOME_PROJECT}-onedrive-${GNOME_VERSION}
+
+REVISION-main=		0
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -38,9 +38,6 @@ WANTLIB-goa += goa-1.0
 WANTLIB-nfs += ${WANTLIB}
 WANTLIB-nfs += nfs
 
-WANTLIB-google += ${WANTLIB}
-WANTLIB-google += gdata goa-1.0
-
 WANTLIB-onedrive += ${WANTLIB}
 WANTLIB-onedrive += goa-1.0 msgraph-1
 
@@ -62,10 +59,6 @@ LIB_DEPENDS-goa=	x11/gnome/online-accounts
 RUN_DEPENDS-nfs=	${BASE_PKGPATH},-main=${GNOME_VERSION}
 LIB_DEPENDS-nfs=	devel/libnfs
 
-RUN_DEPENDS-google=	${BASE_PKGPATH},-main=${GNOME_VERSION}
-LIB_DEPENDS-google=	devel/libgdata \
-			x11/gnome/online-accounts
-
 RUN_DEPENDS-onedrive=	${MODDCONF_RUN_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 LIB_DEPENDS-onedrive=	x11/gnome/msgraph
@@ -85,16 +78,19 @@ CONFIGURE_ARGS +=	-Dafc=false \
 			-Dsystemduserunitdir=no \
 			-Dtmpfilesdir=no
 
+# https://gitlab.gnome.org/GNOME/gvfs/-/commit/8e97b424e
+CONFIGURE_ARGS +=	-Dgoogle=false
+
 # needs libcap
 CONFIGURE_ARGS +=	-Dadmin=false
 
 # needs sysctl kern.usermount to be really useful
 CONFIGURE_ARGS +=	-Dfuse=false
 
-MULTI_PACKAGES=		-main -goa -nfs -smb -google -onedrive
+MULTI_PACKAGES=		-main -goa -nfs -smb -onedrive
 
-PSEUDO_FLAVORS=		no_smb no_goa no_nfs no_google no_onedrive bootstrap
-FLAVOR?=		no_smb no_goa no_nfs no_google no_onedrive bootstrap
+PSEUDO_FLAVORS=		no_smb no_goa no_nfs no_onedrive bootstrap
+FLAVOR?=		no_smb no_goa no_nfs no_onedrive bootstrap
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
@@ -116,10 +112,6 @@ CONFIGURE_ARGS +=	-Dgoa=false
 
 .if !${BUILD_PACKAGES:M-nfs}
 CONFIGURE_ARGS +=	-Dnfs=false
-.endif
-
-.if !${BUILD_PACKAGES:M-google}
-CONFIGURE_ARGS +=	-Dgoogle=false
 .endif
 
 .if !${BUILD_PACKAGES:M-onedrive}

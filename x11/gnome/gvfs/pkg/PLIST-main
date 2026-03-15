@@ -1,4 +1,6 @@
-@pkgpath ${BASE_PKGPATH}
+@conflict gvfs-google-*
+@pkgpath x11/gnome/gvfs
+@pkgpath x11/gnome/gvfs,-google
 @so lib/gio/modules/libgioremote-volume-monitor.so
 @so lib/gio/modules/libgvfsdbus.so
 lib/gvfs/
