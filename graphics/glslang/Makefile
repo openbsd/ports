@@ -32,18 +32,9 @@ TEST_DEPENDS =	graphics/spirv-tools \
 CONFIGURE_ARGS +=	-DALLOW_EXTERNAL_SPIRV_TOOLS=ON \
 			-DBUILD_SHARED_LIBS=ON
 
-SUBST_VARS +=	ADDITIONAL_LIBRARIES
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/StandAlone/CMakeLists.txt
-
 do-test:
 	cd ${WRKSRC}/Test; exec ./runtests localResults \
 	    ${WRKBUILD}/StandAlone/glslangValidator \
 	    ${WRKBUILD}/StandAlone/spirv-remap
 
 .include <bsd.port.mk>
-
-.if ${CHOSEN_COMPILER} == ports-gcc
-ADDITIONAL_LIBRARIES =	stdc++fs
-.endif
