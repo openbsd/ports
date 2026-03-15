@@ -1,0 +1,87 @@
+${P5SITE}/Telegram/
+${P5SITE}/Telegram/Bot/
+${P5SITE}/Telegram/Bot.pm
+${P5SITE}/Telegram/Bot/Brain.pm
+${P5SITE}/Telegram/Bot/Object/
+${P5SITE}/Telegram/Bot/Object/Animation.pm
+${P5SITE}/Telegram/Bot/Object/Audio.pm
+${P5SITE}/Telegram/Bot/Object/Base.pm
+${P5SITE}/Telegram/Bot/Object/CallbackGame.pm
+${P5SITE}/Telegram/Bot/Object/CallbackQuery.pm
+${P5SITE}/Telegram/Bot/Object/Chat.pm
+${P5SITE}/Telegram/Bot/Object/ChatInviteLink.pm
+${P5SITE}/Telegram/Bot/Object/ChatJoinRequest.pm
+${P5SITE}/Telegram/Bot/Object/ChatMember.pm
+${P5SITE}/Telegram/Bot/Object/ChatMemberUpdated.pm
+${P5SITE}/Telegram/Bot/Object/ChatPhoto.pm
+${P5SITE}/Telegram/Bot/Object/Contact.pm
+${P5SITE}/Telegram/Bot/Object/Document.pm
+${P5SITE}/Telegram/Bot/Object/EncryptedCredentials.pm
+${P5SITE}/Telegram/Bot/Object/EncryptedPassportElement.pm
+${P5SITE}/Telegram/Bot/Object/ForceReply.pm
+${P5SITE}/Telegram/Bot/Object/ForceReplyMarkup.pm
+${P5SITE}/Telegram/Bot/Object/Game.pm
+${P5SITE}/Telegram/Bot/Object/InlineKeyboardButton.pm
+${P5SITE}/Telegram/Bot/Object/InlineKeyboardMarkup.pm
+${P5SITE}/Telegram/Bot/Object/InlineQuery.pm
+${P5SITE}/Telegram/Bot/Object/Invoice.pm
+${P5SITE}/Telegram/Bot/Object/KeyboardButton.pm
+${P5SITE}/Telegram/Bot/Object/Location.pm
+${P5SITE}/Telegram/Bot/Object/LoginUrl.pm
+${P5SITE}/Telegram/Bot/Object/Message.pm
+${P5SITE}/Telegram/Bot/Object/MessageEntity.pm
+${P5SITE}/Telegram/Bot/Object/PassportData.pm
+${P5SITE}/Telegram/Bot/Object/PhotoSize.pm
+${P5SITE}/Telegram/Bot/Object/Poll.pm
+${P5SITE}/Telegram/Bot/Object/PollOption.pm
+${P5SITE}/Telegram/Bot/Object/ReplyKeyboardMarkup.pm
+${P5SITE}/Telegram/Bot/Object/ReplyParameters.pm
+${P5SITE}/Telegram/Bot/Object/Sticker.pm
+${P5SITE}/Telegram/Bot/Object/SuccessfulPayment.pm
+${P5SITE}/Telegram/Bot/Object/User.pm
+${P5SITE}/Telegram/Bot/Object/Venue.pm
+${P5SITE}/Telegram/Bot/Object/Video.pm
+${P5SITE}/Telegram/Bot/Object/VideoNote.pm
+${P5SITE}/Telegram/Bot/Object/Voice.pm
+@man man/man3p/Telegram::Bot.3p
+@man man/man3p/Telegram::Bot::Brain.3p
+@man man/man3p/Telegram::Bot::Object::Animation.3p
+@man man/man3p/Telegram::Bot::Object::Audio.3p
+@man man/man3p/Telegram::Bot::Object::Base.3p
+@man man/man3p/Telegram::Bot::Object::CallbackGame.3p
+@man man/man3p/Telegram::Bot::Object::CallbackQuery.3p
+@man man/man3p/Telegram::Bot::Object::Chat.3p
+@man man/man3p/Telegram::Bot::Object::ChatInviteLink.3p
+@man man/man3p/Telegram::Bot::Object::ChatJoinRequest.3p
+@man man/man3p/Telegram::Bot::Object::ChatMember.3p
+@man man/man3p/Telegram::Bot::Object::ChatMemberUpdated.3p
+@man man/man3p/Telegram::Bot::Object::ChatPhoto.3p
+@man man/man3p/Telegram::Bot::Object::Contact.3p
+@man man/man3p/Telegram::Bot::Object::Document.3p
+@man man/man3p/Telegram::Bot::Object::EncryptedCredentials.3p
+@man man/man3p/Telegram::Bot::Object::EncryptedPassportElement.3p
+@man man/man3p/Telegram::Bot::Object::ForceReply.3p
+@man man/man3p/Telegram::Bot::Object::ForceReplyMarkup.3p
+@man man/man3p/Telegram::Bot::Object::Game.3p
+@man man/man3p/Telegram::Bot::Object::InlineKeyboardButton.3p
+@man man/man3p/Telegram::Bot::Object::InlineKeyboardMarkup.3p
+@man man/man3p/Telegram::Bot::Object::InlineQuery.3p
+@man man/man3p/Telegram::Bot::Object::Invoice.3p
+@man man/man3p/Telegram::Bot::Object::KeyboardButton.3p
+@man man/man3p/Telegram::Bot::Object::Location.3p
+@man man/man3p/Telegram::Bot::Object::LoginUrl.3p
+@man man/man3p/Telegram::Bot::Object::Message.3p
+@man man/man3p/Telegram::Bot::Object::MessageEntity.3p
+@man man/man3p/Telegram::Bot::Object::PassportData.3p
+@man man/man3p/Telegram::Bot::Object::PhotoSize.3p
+@man man/man3p/Telegram::Bot::Object::Poll.3p
+@man man/man3p/Telegram::Bot::Object::PollOption.3p
+@man man/man3p/Telegram::Bot::Object::ReplyKeyboardMarkup.3p
+@man man/man3p/Telegram::Bot::Object::ReplyParameters.3p
+@man man/man3p/Telegram::Bot::Object::Sticker.3p
+@man man/man3p/Telegram::Bot::Object::SuccessfulPayment.3p
+@man man/man3p/Telegram::Bot::Object::User.3p
+@man man/man3p/Telegram::Bot::Object::Venue.3p
+@man man/man3p/Telegram::Bot::Object::Video.3p
+@man man/man3p/Telegram::Bot::Object::VideoNote.3p
+@man man/man3p/Telegram::Bot::Object::Voice.3p
