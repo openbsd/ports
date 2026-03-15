@@ -1,6 +1,6 @@
 COMMENT=	utility functions similar to itertools and functools
 
-MODPY_DISTV=	1.0.0
+MODPY_DISTV =	1.1.0
 DISTNAME=	toolz-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -15,5 +15,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
+
+BUILD_DEPENDS =	devel/py-setuptools-git-versioning
 
 .include <bsd.port.mk>
