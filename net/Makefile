@@ -521,6 +521,7 @@
      SUBDIR += p5-Socket-GetAddrInfo
      SUBDIR += p5-Socket6
      SUBDIR += p5-Sys-Hostname-Long
+     SUBDIR += p5-Telegram-Bot
      SUBDIR += p5-Test-TCP
      SUBDIR += p5-Twitter-API
      SUBDIR += p5-Validate-Net
