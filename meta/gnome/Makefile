@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		4
+REVISION-main=		5
 REVISION-extras=	0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -21,9 +21,8 @@ MULTI_PACKAGES=		-main -extras
 # add gtk+3-cups so that gtkprint() can see native CUPS printers;
 RUN_DEPENDS-main +=	x11/gtk+3,-cups
 
-# we already depend on samba, libgdata and gnome-online-accounts
+# we already depend on samba and gnome-online-accounts
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa,
-RUN_DEPENDS-main +=	x11/gnome/gvfs,-google,
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-onedrive,
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-smb,
 
