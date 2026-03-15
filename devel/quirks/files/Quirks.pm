@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1794 2026/03/09 12:22:29 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1795 2026/03/15 11:29:02 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -348,7 +348,7 @@ my $stem_extensions = {
 	'py-certifi' => 'py3-certifi',
 	'py-ecdsa' => 'py3-ecdsa',
 	'py-virtualenv' => 'py3-virtualenv',
-	'webkitgtk4' => 'webkitgtk40',
+	'webkitgtk4' => 'webkitgtk41',
 	'py-llvmlite' => 'py3-llvmlite',
 	'py-dpkt' => 'py3-dpkt',
 	'py-dbus' => 'py3-dbus',
@@ -523,6 +523,7 @@ my $stem_extensions = {
 	'godot4' => 'godot44',
 	'godot-tools' => 'godot-editor',
 	'godot4-editor' => 'godot-editor',
+	'webkitgtk40' => 'webkitgtk41',
 };
 
 my $obsolete_reason = {};
