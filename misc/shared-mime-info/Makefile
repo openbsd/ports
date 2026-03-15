@@ -27,11 +27,6 @@ WANTLIB += ${COMPILER_LIBCXX} c glib-2.0 xml2
 # C++17
 COMPILER=		base-clang ports-gcc
 
-# need to add this for gcc
-# revisit when gcc drops it
-EXTRA_ports-gcc=	-lstdc++fs
-LDFLAGS+=		${EXTRA_${CHOSEN_COMPILER}}
-
 SITES=			https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/${V}/
 
 MODULES=		devel/meson \
