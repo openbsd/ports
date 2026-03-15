@@ -1,10 +1,9 @@
 COMMENT=	pure Python implementation of an SMM manager
 
-MODPY_DISTV=	5.0.2
+MODPY_DISTV =	5.0.3
 DISTNAME=	smmap-${MODPY_DISTV}
 PKGNAME=	py-smmap-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	0
 
 # BSD
 PERMIT_PACKAGE=	Yes
