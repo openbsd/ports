@@ -4,7 +4,7 @@ breaks the build.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -13870,35 +13870,6 @@ fi
+@@ -13994,35 +13994,6 @@ fi
  # Checks for programs.
  
  
