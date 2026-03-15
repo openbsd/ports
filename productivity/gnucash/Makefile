@@ -3,7 +3,7 @@ COMMENT =		personal and small-business financial-accounting software
 GNOME_PROJECT =		gnucash
 GNOME_VERSION =		5.14
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  gnc-core-utils       1.2      # unknown
 SHARED_LIBS +=  gnc-module           1.1      # unknown
@@ -62,7 +62,7 @@ LIB_DEPENDS =		databases/libdbi \
 			devel/libofx \
 			lang/guile3 \
 			productivity/aqbanking \
-			www/webkitgtk4,webkitgtk41
+			www/webkitgtk4
 
 CONFIGURE_ARGS =	-DENABLE_BINRELOC=OFF \
 			-DCOMPILE_GSCHEMAS=OFF \

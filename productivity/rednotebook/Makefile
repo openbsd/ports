@@ -4,6 +4,7 @@ MODPY_DISTV=		2.41
 GH_TAGNAME=		v${MODPY_DISTV}
 GH_ACCOUNT=		jendrikseipp
 GH_PROJECT=		rednotebook
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -22,7 +23,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/xdg-utils \
 			textproc/py-enchant \
 			textproc/py-yaml \
-			www/webkitgtk4,webkitgtk41 \
+			www/webkitgtk4 \
 			x11/gtk+4,-guic \
 			x11/gtksourceview4
 

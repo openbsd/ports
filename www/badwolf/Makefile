@@ -1,6 +1,7 @@
 COMMENT =	minimalist and privacy-oriented WebKitGTK+ browser
 DISTNAME =	badwolf-1.3.0
 CATEGORIES =	www
+REVISION =	0
 
 HOMEPAGE =	https://hacktivis.me/projects/badwolf
 MAINTAINER =	Adnan Shameem <adnan360@protonmail.com>
@@ -25,7 +26,7 @@ BUILD_DEPENDS =	devel/flawfinder \
 		devel/shellcheck \
 		textproc/libxml
 LIB_DEPENDS =	devel/glib2 \
-		www/webkitgtk4,webkitgtk41
+		www/webkitgtk4
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 

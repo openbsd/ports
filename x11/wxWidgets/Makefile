@@ -8,6 +8,8 @@ PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
 PKGNAME-webview =	wxWidgets-webview-${V}
 
+REVISION-webview=	0
+
 CATEGORIES =		x11
 SITES =			https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
 EXTRACT_SUFX =		.tar.bz2
@@ -77,7 +79,7 @@ WANTLIB-media += pangocairo-1.0 pangoft2-1.0 pcre2-32 png secret-1 tiff
 WANTLIB-media += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo gstplayer-1.0
 WANTLIB-media += xkbcommon
 
-LIB_DEPENDS-webview =	www/webkitgtk4,webkitgtk41 \
+LIB_DEPENDS-webview =	www/webkitgtk4 \
 			${BASE_PKGPATH},-main>=${V}
 
 WANTLIB-webview += ${COMPILER_LIBCXX} SDL2 SM X11 Xtst Xxf86vm atk-1.0

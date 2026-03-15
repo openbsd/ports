@@ -3,6 +3,7 @@ COMMENT=		simple note editor
 GNOME_VERSION=		40.2
 GNOME_PROJECT=		bijiben
 PKGNAME=		gnome-notes-${GNOME_VERSION}
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
@@ -24,7 +25,7 @@ CFLAGS +=		-std=c99
 
 LIB_DEPENDS=		databases/evolution-data-server \
 			net/curl \
-			www/webkitgtk4,webkitgtk41 \
+			www/webkitgtk4 \
 			x11/gnome/online-accounts \
 			x11/gnome/tinysparql \
 			x11/libhandy

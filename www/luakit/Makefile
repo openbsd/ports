@@ -2,7 +2,7 @@ COMMENT =	fast, small, webkit based browser written in lua
 
 V =		2.4.0
 DISTNAME =	luakit-${V}
-REVISION =	1
+REVISION =	2
 
 EPOCH =		1
 
@@ -48,7 +48,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		net/luasocket \
 		textproc/lua-markdown
 
-LIB_DEPENDS +=	www/webkitgtk4,webkitgtk41
+LIB_DEPENDS +=	www/webkitgtk4
 
 TEST_DEPENDS =	devel/luassert \
 		devel/luacheck

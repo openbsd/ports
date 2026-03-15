@@ -2,6 +2,7 @@ COMMENT=	simple GTK desktop news aggregator
 
 V=		1.16.6
 DISTNAME=	liferea-${V}
+REVISION=	0
 
 CATEGORIES=	www news x11
 
@@ -54,7 +55,7 @@ LIB_DEPENDS=	devel/json-glib \
 		devel/libpeas2 \
 		multimedia/gstreamer1/plugins-base \
 		textproc/enchant2 \
-		www/webkitgtk4,webkitgtk41
+		www/webkitgtk4
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic

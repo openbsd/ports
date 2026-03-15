@@ -3,6 +3,7 @@ COMMENT =	modal webkit-based browser inspired by vim
 GH_ACCOUNT =	fanglingsu
 GH_PROJECT =	vimb
 GH_TAGNAME =	3.7.1
+REVISION =	0
 
 CATEGORIES =	www x11
 
@@ -16,7 +17,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 harfbuzz
 WANTLIB += intl javascriptcoregtk-4.1 pango-1.0 pangocairo-1.0
 WANTLIB += pthread soup-3.0 webkit2gtk-4.1
 
-LIB_DEPENDS =	www/webkitgtk4,webkitgtk41
+LIB_DEPENDS =	www/webkitgtk4
 
 RUN_DEPENDS =	devel/desktop-file-utils
 

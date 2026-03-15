@@ -2,7 +2,7 @@ COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.4.4
 CATEGORIES=	productivity
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	https://clayo.org/osmo/
 
@@ -31,7 +31,7 @@ LIB_DEPENDS=	archivers/libarchive \
 		textproc/libical \
 		x11/gnome/at-spi2-core \
 		x11/gtk+3,-main \
-		www/webkitgtk4,webkitgtk41
+		www/webkitgtk4
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic

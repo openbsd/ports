@@ -646,7 +646,6 @@
      SUBDIR += wbox
      SUBDIR += webalizer
      SUBDIR += webkitgtk4
-     SUBDIR += webkitgtk4,webkitgtk41
      SUBDIR += webkitgtk4,webkitgtk60
      SUBDIR += woob
      SUBDIR += wp-cli

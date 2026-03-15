@@ -9,6 +9,7 @@ SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
 MATE_VERSION=		1.28.1
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -56,7 +57,7 @@ LIB_DEPENDS=		databases/sqlite3 \
 			graphics/djvulibre \
 			graphics/libgxps \
 			textproc/icu4c \
-			www/webkitgtk4,webkitgtk41 \
+			www/webkitgtk4 \
 			x11/mate/caja
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		devel/gsettings-desktop-schemas

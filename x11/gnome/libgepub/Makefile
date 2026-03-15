@@ -5,6 +5,7 @@ COMMENT=		GObject based library for rendering epub docs
 
 GNOME_PROJECT=		libgepub
 GNOME_VERSION=		0.7.3
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -22,7 +23,7 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		gobject-introspection
 
 LIB_DEPENDS=		archivers/libarchive \
-			www/webkitgtk4,webkitgtk41
+			www/webkitgtk4
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
