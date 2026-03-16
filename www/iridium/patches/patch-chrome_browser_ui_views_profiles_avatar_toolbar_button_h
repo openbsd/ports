@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/profiles/avatar_toolbar_button.h
 --- chrome/browser/ui/views/profiles/avatar_toolbar_button.h.orig
 +++ chrome/browser/ui/views/profiles/avatar_toolbar_button.h
-@@ -96,7 +96,7 @@ class AvatarToolbarButton : public ToolbarButton,
+@@ -97,7 +97,7 @@ class AvatarToolbarButton : public ToolbarButton,
    // Attempts showing the In-Product-Help for profile Switching.
    void MaybeShowProfileSwitchIPH();
  
