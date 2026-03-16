@@ -10,6 +10,10 @@ HOMEPAGE =	http://ircd-hybrid.com/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
+# base-gcc doesn't know -Wno-format-truncation
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB =	c crypto jansson ltdl ssl
 
 LIB_DEPENDS =	devel/jansson \
