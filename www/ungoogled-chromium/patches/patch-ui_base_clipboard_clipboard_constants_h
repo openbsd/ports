@@ -10,7 +10,7 @@ Index: ui/base/clipboard/clipboard_constants.h
  inline constexpr char kMimeTypeLinuxUtf8String[] = "UTF8_STRING";
  inline constexpr char kMimeTypeLinuxString[] = "STRING";
  inline constexpr char kMimeTypeLinuxText[] = "TEXT";
-@@ -52,7 +52,7 @@ inline constexpr char kMimeTypeLinuxText[] = "TEXT";
+@@ -57,7 +57,7 @@ inline constexpr char kMimeTypePortalFiles[] = "applic
          // BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || \

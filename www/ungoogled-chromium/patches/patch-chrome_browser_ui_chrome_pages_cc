@@ -25,7 +25,7 @@ Index: chrome/browser/ui/chrome_pages.cc
                                     || url.SchemeIs(webapps::kIsolatedAppScheme)
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -415,7 +415,7 @@ void ShowChromeTips(Browser* browser) {
+@@ -412,7 +412,7 @@ void ShowChromeTips(Browser* browser) {
    ShowSingletonTab(browser, GURL(kChromeTipsURL));
  }
  
@@ -34,7 +34,7 @@ Index: chrome/browser/ui/chrome_pages.cc
  void ShowChromeWhatsNew(Browser* browser) {
    ShowSingletonTab(browser, GURL(kChromeUIWhatsNewURL));
  }
-@@ -759,7 +759,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
+@@ -760,7 +760,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
  }
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

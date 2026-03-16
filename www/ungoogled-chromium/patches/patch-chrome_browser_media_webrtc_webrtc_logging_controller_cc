@@ -10,7 +10,7 @@ Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
  #include "content/public/browser/child_process_security_policy.h"
  #include "storage/browser/file_system/isolated_context.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) ||
-@@ -311,7 +311,7 @@ WebRtcLoggingController::GetLogMessageCallback() {
+@@ -277,7 +277,7 @@ WebRtcLoggingController::GetLogMessageCallback() {
    return text_log_handler_->GetLogMessageCallback();
  }
  

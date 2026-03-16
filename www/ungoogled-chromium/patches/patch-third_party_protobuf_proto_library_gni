@@ -1,7 +1,7 @@
 Index: third_party/protobuf/proto_library.gni
 --- third_party/protobuf/proto_library.gni.orig
 +++ third_party/protobuf/proto_library.gni
-@@ -260,7 +260,15 @@ _protoc_gen_ts_runtime_deps = [
+@@ -259,7 +259,15 @@ _protoc_gen_ts_runtime_deps = [
  
  # When use_remoteexec=true, node actions may run on remote
  # Linux worker. So it should include linux node binary in inputs.

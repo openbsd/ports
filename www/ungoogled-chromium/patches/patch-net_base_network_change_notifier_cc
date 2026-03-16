@@ -2,7 +2,7 @@ Index: net/base/network_change_notifier.cc
 --- net/base/network_change_notifier.cc.orig
 +++ net/base/network_change_notifier.cc
 @@ -38,7 +38,7 @@
- #include "net/base/network_change_notifier_linux.h"
+ #include "third_party/abseil-cpp/absl/container/flat_hash_set.h"
  #elif BUILDFLAG(IS_APPLE)
  #include "net/base/network_change_notifier_apple.h"
 -#elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)

@@ -1,7 +1,7 @@
 Index: remoting/host/base/switches.cc
 --- remoting/host/base/switches.cc.orig
 +++ remoting/host/base/switches.cc
-@@ -23,13 +23,13 @@ const char kProcessTypeEvaluateCapability[] = "evaluat
+@@ -24,13 +24,13 @@ const char kProcessTypeEvaluateCapability[] = "evaluat
  const char kProcessTypeFileChooser[] = "file_chooser";
  const char kProcessTypeUrlForwarderConfigurator[] =
      "url_forwarder_configurator";
