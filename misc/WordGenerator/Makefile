@@ -22,8 +22,9 @@ RUN_DEPENDS =		devel/tcllib>=1.8 \
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
-
 PKG_ARCH =		*
+
+SUBST_VARS =		MODTK_BIN
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/WordGenerator.tcl
