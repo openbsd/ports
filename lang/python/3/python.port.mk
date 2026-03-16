@@ -207,7 +207,7 @@ ERRORS += "both MODPY_PI and GH_ACCOUNT are set"
 _MODPY_EGG_NAME =	${DISTNAME:S/-${MODPY_DISTV}//}
 MODPY_PI_DIR ?=		${DISTNAME:C/^([a-zA-Z0-9]).*/\1/}/${_MODPY_EGG_NAME}
 SITES =			${SITE_PYPI:=${MODPY_PI_DIR}/}
-HOMEPAGE ?=		https://pypi.python.org/pypi/${_MODPY_EGG_NAME}
+HOMEPAGE ?=		https://pypi.org/project/${_MODPY_EGG_NAME}
 .endif
 
 MODPY_BIN =		${LOCALBASE}/bin/python${MODPY_VERSION}
