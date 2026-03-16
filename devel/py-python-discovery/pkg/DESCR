@@ -1,0 +1,4 @@
+python-discovery is a library for discovering Python interpreters installed
+on your machine.
+You may have multiple Python versions from system packages, pyenv, mise, asdf,
+uv, or the Windows registry (PEP 514). This library finds the right one for you.
