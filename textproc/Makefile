@@ -384,6 +384,7 @@
      SUBDIR += palm-bookmarks
      SUBDIR += pandoc
      SUBDIR += par
+     SUBDIR += par,i18n
      SUBDIR += pastel
      SUBDIR += patchutils
      SUBDIR += pdf4tcl
