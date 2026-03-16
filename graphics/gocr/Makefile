@@ -37,6 +37,8 @@ RUN_DEPENDS-gui=${MODTK_RUN_DEPENDS} \
 WANTLIB-main=	c m netpbm
 LIB_DEPENDS-main=graphics/netpbm
 
+SUBST_VARS=	MODTK_BIN
+
 post-extract:
 	rm ${WRKSRC}/src/barcode.c.orig
 
