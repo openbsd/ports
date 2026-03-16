@@ -1,11 +1,11 @@
 COMMENT=	Postfix log entry summarizer
 
-DISTNAME=	pflogsumm-1.1.14
+DISTNAME=	pflogsumm-1.1.15
 CATEGORIES=	mail
 
-SITES=		http://jimsun.linxnet.com/downloads/
+SITES=		https://athena.linxnet.com/downloads/
 
-HOMEPAGE=	http://jimsun.linxnet.com/postfix_contrib.html
+HOMEPAGE=	https://athena.linxnet.com/postfix_contrib.html
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
