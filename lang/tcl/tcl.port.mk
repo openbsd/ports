@@ -39,5 +39,3 @@ MODTCL_TCLSH_ADJ =	perl -pi \
 
 # Same for 'wish'.
 MODTCL_WISH_ADJ =	${MODTCL_TCLSH_ADJ:S/tclsh/wish/}
-
-SUBST_VARS +=		MODTCL_BIN
