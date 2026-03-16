@@ -123,7 +123,7 @@ SHA256 (cargo/wit-bindgen-rust-macro-0.51.0.tar.gz) = DA+b/XfmpI7M9RNZ4653FAp/UL
 SHA256 (cargo/wit-component-0.244.0.tar.gz) = nWbqIOlVOzAXK16DGZTjX73i0WUyW+yE/EPb9vTrnLI=
 SHA256 (cargo/wit-parser-0.244.0.tar.gz) = 7MisS8HcM4G39Zw08Atn4Y+RDCwPUAFWad3n3vZWpzY=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (fd-10.4.1.tar.gz) = WauD5WdD4o6qksVJezmYo1dE222NV084lFZIHyrxywA=
+SHA256 (fd-10.4.2.tar.gz) = On4CevjI6RwZasJZxwPXjNVcNkcG3a+8ZtAsMm5XpFY=
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/anstream-0.6.21.tar.gz) = 29516
 SIZE (cargo/anstyle-1.0.13.tar.gz) = 17651
@@ -249,4 +249,4 @@ SIZE (cargo/wit-bindgen-rust-macro-0.51.0.tar.gz) = 14283
 SIZE (cargo/wit-component-0.244.0.tar.gz) = 256882
 SIZE (cargo/wit-parser-0.244.0.tar.gz) = 159371
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (fd-10.4.1.tar.gz) = 145461
+SIZE (fd-10.4.2.tar.gz) = 145560
