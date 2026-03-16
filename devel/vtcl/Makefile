@@ -16,6 +16,8 @@ MODULES=		x11/tk
 NO_BUILD=		Yes
 RUN_DEPENDS=		${MODTK_RUN_DEPENDS}
 
+SUBST_VARS=		MODTK_BIN
+
 pre-patch:
 	@cd ${WRKSRC}; perl -i -pe 's/\r$$//' `find . -type f`
 
