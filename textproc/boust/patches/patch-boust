@@ -1,5 +1,6 @@
---- boust.orig	Thu Nov  7 00:06:00 2002
-+++ boust	Wed Nov  6 23:53:47 2002
+Index: boust
+--- boust.orig
++++ boust
 @@ -2,9 +2,9 @@
  # In sh check to see if the "--o" argument is present.
  # If it is, run tclsh, otherwise, run wish.
@@ -12,3 +13,19 @@
  # \
  exec $THESH "$0" "$@"
  
+@@ -145,13 +145,13 @@ if {[llength $argv] > 0} {
+        set fileName $filepar
+    } else {
+      puts stderr "No file specified.  Defaulting to 'README'.  "
+-     set fileName README
++     set fileName ${LOCALBASE}/share/doc/boust/README
+    }
+ 
+ 
+ } else {
+   puts stderr "No file specified.  Defaulting to 'README'.  "
+-  set fileName README
++  set fileName ${LOCALBASE}/share/doc/boust/README
+ }
+ 
+ if {$printOnly == 0} {

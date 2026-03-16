@@ -1,21 +1,25 @@
 COMMENT=		boustrophedon text reader
-DISTNAME=		boust-0.161
-REVISION =		4
-CATEGORIES=		textproc
 
-HOMEPAGE=		http://traevoli.com/boust/
+DISTNAME=		boust-0.161
+REVISION =		5
+
+CATEGORIES=		textproc
+MAINTAINER=		Stuart Cassoff <stwo@users.sourceforge.net>
+
+HOMEPAGE=		http://web.archive.org/web/20181215124207/http://traevoli.com/boust/
 
 # GPLv2
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-SITES=			${HOMEPAGE}bin/
+SITES=			https://spacehopper.org/mirrors/
 
 MODULES=		x11/tk
+RUN_DEPENDS=		${MODTK_RUN_DEPENDS}
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
-SUBST_VARS=		FONTDIR PKGNAME
+SUBST_VARS=		FONTDIR PKGNAME MODTCL_BIN MODTK_BIN
 FONTS=			10x20bw.pcf.gz 10x20fw.pcf.gz 10x20ud.pcf.gz
 FONTDIR=		${PREFIX}/share/fonts/boust
 
