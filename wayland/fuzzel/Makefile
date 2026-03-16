@@ -21,6 +21,7 @@ MODULES =		devel/meson
 
 BUILD_DEPENDS =		devel/tllist \
 			textproc/scdoc \
+			wayland/libinput-openbsd \
 			wayland/wayland-protocols \
 			x11/gnome/librsvg
 
