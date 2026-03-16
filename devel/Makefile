@@ -1675,7 +1675,7 @@
      SUBDIR += py-pyproject_hooks
      SUBDIR += py-pyrsistent
      SUBDIR += py-pyte
-     SUBDIR += py-python_discovery
+     SUBDIR += py-python-discovery
      SUBDIR += py-python-lsp-black
      SUBDIR += py-python-lsp-ruff
      SUBDIR += py-python-lsp-server

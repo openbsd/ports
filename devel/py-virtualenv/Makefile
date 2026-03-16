@@ -18,7 +18,7 @@ MODPY_PYBUILD=	hatch-vcs
 # messes up naming of packaged wheels
 UPDATE_PLIST_ARGS=	-i MODPY_PY_PREFIX
 
-RUN_DEPENDS=	devel/py-python_discovery \
+RUN_DEPENDS=	devel/py-python-discovery \
 		sysutils/py-distlib \
 		sysutils/py-filelock \
 		sysutils/py-platformdirs
