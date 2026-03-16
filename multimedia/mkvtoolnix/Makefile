@@ -29,11 +29,6 @@ MODRUBY_RUNDEP=	No
 # C++17
 COMPILER=	base-clang ports-gcc
 
-# need to add this for gcc
-# revisit when gcc drops it
-EXTRA_ports-gcc=	-lstdc++fs
-LDFLAGS+=		${EXTRA_${CHOSEN_COMPILER}}
-
 BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/gtest \
 		textproc/docbook \
