@@ -19,6 +19,8 @@ RUN_DEPENDS=	comms/hylafax \
 
 NO_TEST=	Yes
 
+SUBST_VARS=	MODTCL_BIN MODTK_BIN
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile \
 		${WRKSRC}/tkhylafax-defaults ${WRKSRC}/tkhylafax.man
