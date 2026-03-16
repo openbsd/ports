@@ -3,7 +3,7 @@ COMMENT=	paragraph reflow for email
 VERSION=	1.52
 DISTNAME=	Par${VERSION:S/.//}
 PKGNAME=	par-${VERSION}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	textproc
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -18,8 +18,14 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB += c
 
+FLAVORS =	i18n
+FLAVOR ?=
+
+.if ${FLAVOR:Mi18n}
 PATCHFILES=	par_1.52-i18n.3.diff.gz
 PATCH_DIST_STRIP=	-p1
+.endif
+SUPDISTFILES=	par_1.52-i18n.3.diff.gz
 
 ALL_TARGET=
 DEBUG_PACKAGES=	${BUILD_PACKAGES}

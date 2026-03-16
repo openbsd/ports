@@ -1,14 +1,14 @@
 Index: par.c
 --- par.c.orig
 +++ par.c
-@@ -20,6 +20,7 @@
- #include <stdlib.h>
- #include <string.h>
- #include <wchar.h>
-+#include <unistd.h>
+@@ -14,6 +14,7 @@
+ #include "buffer.h"    /* Also includes <stddef.h>. */
+ #include "reformat.h"
  
- #undef NULL
- #define NULL ((void *) 0)
++#include <unistd.h>
+ #include <ctype.h>
+ #include <locale.h>
+ #include <stdio.h>
 @@ -730,6 +731,13 @@ int main(int argc, const char * const *argv)
  /* Set the current locale from the environment: */
  

@@ -13,3 +13,6 @@ paragraph as follows:
 
 If there are suffixes, spaces are inserted before them so that they
 all end in the same column.
+
+Flavour:
+	i18n - add a patch to support multibyte character sets
