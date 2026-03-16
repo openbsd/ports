@@ -10,6 +10,13 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
+# cc -O2 -pipe    -c main.c
+# main.c: In function 'alarmInterrupt':
+# main.c:40: error: parameter name omitted
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
+
 WANTLIB =		c
 
 SITES =			${SITE_SOURCEFORGE:=pdfcrack/}
