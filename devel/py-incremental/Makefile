@@ -3,6 +3,7 @@ COMMENT=	versioning library for Python projects
 MODPY_DISTV=	24.11.0
 DISTNAME=	incremental-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

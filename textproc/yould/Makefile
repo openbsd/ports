@@ -2,7 +2,7 @@ COMMENT=		generator for pronounceable random words
 
 MODPY_DISTV=	0.3.7
 DISTNAME=		yould-${MODPY_DISTV}
-REVISION=		6
+REVISION=		7
 CATEGORIES=		textproc
 
 # GPLv3

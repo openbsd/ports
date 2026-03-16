@@ -3,7 +3,7 @@ COMMENT =	converts XML to Python objects
 MODPY_DISTV=	1.2.1
 DISTNAME=	untangle-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 

@@ -3,6 +3,7 @@ COMMENT =		library for the docker engine API
 MODPY_DISTV =		7.1.0
 DISTNAME =		docker-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

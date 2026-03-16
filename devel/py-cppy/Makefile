@@ -3,7 +3,7 @@ COMMENT=	C++ helper library for Python extension modules
 MODPY_DISTV=	1.3.1
 DISTNAME=	cppy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

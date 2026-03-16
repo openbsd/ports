@@ -3,6 +3,7 @@ COMMENT=		convert cron expressions into human-readable strings
 MODPY_DISTV =		1.4.5
 DISTNAME =		cron_descriptor-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

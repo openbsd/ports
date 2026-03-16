@@ -4,6 +4,7 @@ MODPY_DISTV=	1.2.0.1
 DISTNAME=	brotlicffi-${MODPY_DISTV}
 PKGNAME=	py-brotlicffi-${MODPY_DISTV}
 CATEGORIES=	archivers
+REVISION=	0
 
 DISTFILES.td=	brotli-testdata-1.2.0.tar.xz{testdata.txz}
 SITES.td=	https://github.com/google/brotli/releases/download/v1.2.0/

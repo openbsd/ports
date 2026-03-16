@@ -1,7 +1,7 @@
 COMMENT =	send messages via Pushover
 
 MODPY_DISTV =	0.4
-REVISION =	8
+REVISION =	9
 
 EPOCH =		0
 

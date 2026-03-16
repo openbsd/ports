@@ -3,7 +3,7 @@ COMMENT =	simple and lightweight SOAP library
 MODPY_DISTV =	1.16.2
 DISTNAME =	PySimpleSOAP-${MODPY_DISTV}
 PKGNAME =	py-simplesoap-${MODPY_DISTV}
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	net
 

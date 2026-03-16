@@ -3,6 +3,7 @@ COMMENT =	library to mock out AWS services for tests
 MODPY_DISTV =	4.1.15
 DISTNAME =	moto-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	net
 

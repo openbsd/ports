@@ -3,6 +3,7 @@ COMMENT =		Korean lunar calendar
 MODPY_DISTV =		0.3.1
 DISTNAME =		korean_lunar_calendar-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
+REVISION =		0
 
 CATEGORIES =		korean
 

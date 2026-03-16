@@ -4,6 +4,7 @@ MODPY_DISTV=	0.12.1
 # N.B. there is also textproc/py-pyjson5, which is different
 DISTNAME=	json5-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

@@ -3,7 +3,7 @@ COMMENT =	download YouTube content and retrieve metadata
 DISTNAME =	pafy-${MODPY_DISTV}
 PKGNAME =	py-pafy-${MODPY_DISTV}
 CATEGORIES =	multimedia
-REVISION =	5
+REVISION =	6
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

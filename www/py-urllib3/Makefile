@@ -3,6 +3,7 @@ COMMENT=	HTTP library for Python
 MODPY_DISTV=	1.26.20
 DISTNAME=	urllib3-${MODPY_DISTV}
 PKGNAME=	py-urllib3-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	www
 

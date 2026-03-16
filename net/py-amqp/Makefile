@@ -3,6 +3,7 @@ COMMENT=	low-level AMQP client for Python
 MODPY_DISTV =	5.3.1
 DISTNAME=	amqp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	net
 

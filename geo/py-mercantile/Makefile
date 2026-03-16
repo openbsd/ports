@@ -3,7 +3,7 @@ COMMENT =	spherical mercator coordinate and tile utilities
 MODPY_DISTV =	1.2.1
 DISTNAME =	mercantile-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	geo
 MAINTAINER =	Martin Reindl <martin@catai.org>

@@ -3,6 +3,7 @@ COMMENT=	JSON encoder/decoder
 MODPY_DISTV =	3.20.2
 DISTNAME=	simplejson-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

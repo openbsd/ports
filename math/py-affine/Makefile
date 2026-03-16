@@ -4,7 +4,7 @@ MODPY_DISTV =		2.4.0
 DISTNAME =		affine-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		3
+REVISION =		4
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

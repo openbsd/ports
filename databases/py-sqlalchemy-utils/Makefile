@@ -3,6 +3,7 @@ COMMENT =	sqlalchemy utility functions
 MODPY_DISTV =	0.42.0
 DISTNAME =	sqlalchemy_utils-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/_/-/}
+REVISION =	0
 
 CATEGORIES =	databases
 

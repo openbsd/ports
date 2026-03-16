@@ -3,6 +3,7 @@ COMMENT=	non-validating SQL parser
 MODPY_DISTV=	0.5.5
 DISTNAME=	sqlparse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
 

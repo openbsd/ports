@@ -3,6 +3,7 @@ COMMENT=		web interface to PuppetDB
 MODPY_DISTV=		6.0.1
 DISTNAME=		puppetboard-${MODPY_DISTV}
 CATEGORIES=		www
+REVISION=		0
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 

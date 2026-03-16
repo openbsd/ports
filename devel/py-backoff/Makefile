@@ -3,6 +3,7 @@ COMMENT =		function decorators for backoff and retry
 MODPY_DISTV =		2.2.1
 DISTNAME =		backoff-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

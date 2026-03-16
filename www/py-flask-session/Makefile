@@ -4,6 +4,7 @@ COMMENT =		server-side session support for Flask
 MODPY_DISTV =		0.8.0
 DISTNAME =		flask_session-${MODPY_DISTV}
 PKGNAME =		py-flask-session-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		www
 

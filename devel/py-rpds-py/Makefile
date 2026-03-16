@@ -3,6 +3,7 @@ COMMENT =	Python bindings for Rust's persistent data structures (rpds)
 MODPY_DISTV =	0.30.0
 DISTNAME =	rpds_py-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/_/-/g}
+REVISION =	0
 
 CATEGORIES =	devel
 

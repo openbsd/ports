@@ -3,7 +3,7 @@ COMMENT =	coroutine library for Python async/await
 MODPY_DISTV=	1.6
 DISTNAME=	curio-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 

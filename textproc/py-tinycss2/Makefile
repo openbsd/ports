@@ -4,6 +4,7 @@ COMMENT=	tiny CSS parser
 MODPY_DISTV=	1.5.1
 DISTNAME=	tinycss2-${MODPY_DISTV}
 PKGNAME=	py-tinycss2-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 

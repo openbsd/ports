@@ -3,6 +3,7 @@ COMMENT=	backwards compat for programs using asyncore
 MODPY_DISTV =	1.0.5
 DISTNAME=	pyasyncore-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
+REVISION=	0
 
 CATEGORIES=	devel
 

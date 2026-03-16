@@ -3,7 +3,7 @@ COMMENT =		pytest plugin for tornado
 MODPY_DISTV =	0.6.0.post2
 DISTNAME =		pytest-tornasync-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/pytest-/py-/:S/.post/pl/}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 

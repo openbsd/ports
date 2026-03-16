@@ -3,6 +3,7 @@ COMMENT=	messaging library for Python
 MODPY_DISTV =	5.5.2
 DISTNAME=	kombu-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	net
 

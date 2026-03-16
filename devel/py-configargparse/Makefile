@@ -3,7 +3,7 @@ COMMENT=	argparse replacement, allows options to be set via files/env
 MODPY_DISTV=	1.7
 DISTNAME=	ConfigArgParse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

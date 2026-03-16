@@ -3,6 +3,7 @@ COMMENT=	Hatch plugin for fancy PyPI readmes
 MODPY_DISTV=	25.1.0
 DISTNAME=	hatch_fancy_pypi_readme-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

@@ -3,7 +3,7 @@ COMMENT =		oauthlib for aiohttp clients
 MODPY_DISTV =	0.1.0
 DISTNAME =		aiohttp-oauthlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 

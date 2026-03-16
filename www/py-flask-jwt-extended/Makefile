@@ -3,6 +3,7 @@ COMMENT =		JSON Web Token support for Flask
 MODPY_DISTV =		4.7.1
 DISTNAME =		flask_jwt_extended-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
+REVISION =		0
 
 CATEGORIES =		www
 

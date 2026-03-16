@@ -3,6 +3,7 @@ COMMENT =	read/write various image and video formats
 MODPY_DISTV =	2.37.2
 DISTNAME =	imageio-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	graphics
 

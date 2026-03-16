@@ -3,7 +3,7 @@ COMMENT=	operations with ISO 8601 durations
 MODPY_DISTV=	20.11.0
 DISTNAME=	isoduration-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

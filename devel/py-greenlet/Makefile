@@ -3,7 +3,7 @@ COMMENT=	lightweight in-process concurrent programming
 MODPY_DISTV=	3.1.1
 DISTNAME=	greenlet-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 

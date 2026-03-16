@@ -3,7 +3,7 @@ COMMENT=	the simplest possible mock library, for Python
 MODPY_DISTV=	1.2.8
 DISTNAME=	MiniMock-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	12
+REVISION=	13
 
 CATEGORIES=	devel
 

@@ -3,7 +3,7 @@ COMMENT =		simplify Paramiko connections to network devices
 MODPY_DISTV =	3.1.1
 DISTNAME=		netmiko-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		net
 

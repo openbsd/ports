@@ -3,7 +3,7 @@ COMMENT =		job scheduling for humans
 MODPY_DISTV =		1.2.2
 DISTNAME =		schedule-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 

@@ -3,6 +3,7 @@ COMMENT=	library for working with HTML color formats
 MODPY_DISTV=	25.10.0
 DISTNAME=	webcolors-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www
 

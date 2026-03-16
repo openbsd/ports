@@ -3,6 +3,7 @@ COMMENT =	Jupyter comm implementation for use in ipykernel
 MODPY_DISTV=	0.2.2
 DISTNAME=	comm-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

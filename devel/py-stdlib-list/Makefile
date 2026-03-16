@@ -3,6 +3,7 @@ COMMENT =	provides a list of all standard libraries
 MODPY_DISTV =	0.12.0
 DISTNAME =	stdlib_list-${MODPY_DISTV}
 PKGNAME =	py-stdlib-list-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	devel
 

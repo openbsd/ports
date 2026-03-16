@@ -3,7 +3,7 @@ MODPY_DISTV =	1.12.1
 DISTNAME =	requests-mock-${MODPY_DISTV}
 PKGNAME =	py-requests-mock-${MODPY_DISTV}
 CATEGORIES =	www
-REVISION =	0
+REVISION =	1
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

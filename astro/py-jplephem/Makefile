@@ -3,6 +3,7 @@ COMMENT=	use a JPL ephemeris to predict planet positions
 MODPY_DISTV =	2.24
 DISTNAME=	jplephem-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	astro
 

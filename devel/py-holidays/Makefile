@@ -3,6 +3,7 @@ COMMENT =		generate and work with holidays in Python
 MODPY_DISTV =		0.92
 DISTNAME =		holidays-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

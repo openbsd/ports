@@ -3,6 +3,7 @@ COMMENT=	email address syntax and deliverability validation
 MODPY_DISTV =		2.3.0
 DISTNAME =		email_validator-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		mail
 

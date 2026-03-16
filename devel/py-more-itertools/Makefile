@@ -4,6 +4,7 @@ MODPY_DISTV=	10.8.0
 DISTNAME=	more_itertools-${MODPY_DISTV}
 PKGNAME=	py-more-itertools-${MODPY_DISTV}
 CATEGORIES=	devel
+REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes

@@ -3,6 +3,7 @@ COMMENT=	Rison encoder/decoder
 MODPY_DISTV =	0.2.1
 DISTNAME=	prison-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

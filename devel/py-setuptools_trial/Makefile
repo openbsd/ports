@@ -3,7 +3,7 @@ COMMENT=	setuptools plugin for unit tests with Twisted's trial
 MODPY_DISTV=	0.6.0
 DISTNAME=	setuptools_trial-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	devel
 

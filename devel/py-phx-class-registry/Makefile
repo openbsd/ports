@@ -4,7 +4,7 @@ MODPY_DISTV =	4.1.0
 DISTNAME =		phx-class-registry-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 # MIT
 PERMIT_PACKAGE = 	Yes

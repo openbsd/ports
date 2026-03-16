@@ -2,7 +2,7 @@ COMMENT =	pcap bgp parser
 
 MODPY_DISTV =	0.2.22
 DISTNAME =	pbgpp-${MODPY_DISTV}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	net
 

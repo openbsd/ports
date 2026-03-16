@@ -3,7 +3,7 @@ COMMENT =		utility to create slugs from unicode strings
 MODPY_DISTV =	8.0.4
 DISTNAME =		python-slugify-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

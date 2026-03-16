@@ -3,6 +3,7 @@ COMMENT=	simple Python interface for Graphviz
 MODPY_DISTV=	0.21
 DISTNAME=	graphviz-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	math
 

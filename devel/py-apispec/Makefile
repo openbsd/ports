@@ -3,6 +3,7 @@ COMMENT =		pluggable API specification generator
 MODPY_DISTV =		6.8.4
 DISTNAME =		apispec-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

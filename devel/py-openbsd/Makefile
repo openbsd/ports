@@ -3,7 +3,7 @@ MODPY_DISTV =	0.1.0
 DISTNAME =		openbsd-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

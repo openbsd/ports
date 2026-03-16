@@ -3,7 +3,7 @@ COMMENT =		compatibility for pydantic v1-v2 cross compatibility
 MODPY_DISTV =		0.1.2
 DISTNAME =		pydantic_compat-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

@@ -3,6 +3,7 @@ COMMENT =		ruff linting plugin for pylsp
 MODPY_DISTV =		2.3.0
 DISTNAME =		python_lsp_ruff-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
+REVISION =		0
 
 CATEGORIES =		devel
 

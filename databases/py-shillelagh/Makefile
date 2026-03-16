@@ -3,6 +3,7 @@ COMMENT=		query APIs via SQL
 MODPY_DISTV =		1.4.3
 DISTNAME =		shillelagh-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		databases
 

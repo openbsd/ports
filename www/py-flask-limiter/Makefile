@@ -4,6 +4,7 @@ COMMENT=	rate limiting for Flask applications
 MODPY_DISTV =	3.12
 DISTNAME=	flask_limiter-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	www
 

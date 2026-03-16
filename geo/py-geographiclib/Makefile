@@ -3,6 +3,7 @@ COMMENT =		OGC API server implementation
 MODPY_DISTV =		2.1
 DISTNAME =		geographiclib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		geo
 

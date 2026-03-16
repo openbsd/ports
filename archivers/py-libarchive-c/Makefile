@@ -3,7 +3,7 @@ COMMENT =	Python interface to libarchive
 DISTNAME =	libarchive-c-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	archivers devel
-REVISION =	2
+REVISION =	3
 
 # CC0
 PERMIT_PACKAGE =	Yes

@@ -4,7 +4,7 @@ MODPY_DISTV =	1.15
 DISTNAME =		python-lzo-${MODPY_DISTV}
 PKGNAME =		py-lzo-${MODPY_DISTV}
 CATEGORIES =		archivers
-REVISION =		2
+REVISION =		3
 
 # GPL
 PERMIT_PACKAGE =	Yes

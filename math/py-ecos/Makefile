@@ -1,7 +1,7 @@
 COMMENT=	Python interface to ECOS
 
 MODPY_DISTV=	2.0.10
-REVISION=	4
+REVISION=	5
 DISTNAME=	ecos-${MODPY_DISTV}
 V=		${MODPY_DISTV:S/post//}
 PKGNAME=	py-ecos-${V}

@@ -3,6 +3,7 @@ COMMENT=	implementation of CSS4 Selectors
 MODPY_DISTV=	0.9.0
 DISTNAME=	cssselect2-${MODPY_DISTV}
 PKGNAME=	py-cssselect2-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 

@@ -7,6 +7,7 @@ MODPY_DISTV =		4.3.3
 DISTNAME =		b2-${MODPY_DISTV}
 PKGNAME =		backblaze-${DISTNAME}
 #REVISION =		0
+REVISION =		0
 
 CATEGORIES =		sysutils
 

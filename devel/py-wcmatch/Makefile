@@ -3,6 +3,7 @@ COMMENT=	file matching and globbing library
 MODPY_DISTV=	10.1
 DISTNAME=	wcmatch-${MODPY_DISTV}
 PKGNAME=	py-wcmatch-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel textproc
 

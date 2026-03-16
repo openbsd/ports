@@ -3,7 +3,7 @@ COMMENT =		Python Zabbix API
 MODPY_DISTV =	0.5.6
 DISTNAME =		zabbix-api-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 

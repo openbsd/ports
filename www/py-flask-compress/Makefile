@@ -4,6 +4,7 @@ COMMENT=	compress Flask app responses
 MODPY_DISTV =	1.23
 DISTNAME=	flask_compress-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	www
 

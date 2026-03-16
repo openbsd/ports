@@ -3,7 +3,7 @@ COMMENT =		expand system variables Unix style
 DISTNAME =		expandvars-${MODPY_DISTV}
 PKGNAME =		py-expandvars-${MODPY_DISTV}
 CATEGORIES =		sysutils
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Denis Fondras <denis@openbsd.org>
 

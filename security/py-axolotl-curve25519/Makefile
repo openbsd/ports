@@ -4,7 +4,7 @@ MODPY_DISTV =	0.4.1
 POST =			2
 DISTNAME =		python-axolotl-curve25519-${MODPY_DISTV}.post${POST}
 PKGNAME =		py-axolotl-curve25519-${MODPY_DISTV}pl${POST}
-REVISION =		10
+REVISION =		11
 
 CATEGORIES =		security
 

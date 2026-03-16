@@ -3,7 +3,7 @@ COMMENT =		specifications for callback functions passed to an API
 MODPY_DISTV =		0.2.0
 DISTNAME =		backcall-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

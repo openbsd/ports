@@ -3,6 +3,7 @@ COMMENT =		pure python parser and encoder for OGC GML Geometries
 MODPY_DISTV =		0.3.2
 DISTNAME =		pygml-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		geo devel
 

@@ -3,7 +3,7 @@ COMMENT =		3-way merge between strings
 MODPY_DISTV =	0.1.1
 DISTNAME =		three-merge-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel textproc
 

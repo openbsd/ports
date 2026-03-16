@@ -3,7 +3,7 @@ COMMENT =		REPL plugin for click
 MODPY_DISTV =	0.3.0
 DISTNAME =		click-repl-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 

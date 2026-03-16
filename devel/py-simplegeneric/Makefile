@@ -4,7 +4,7 @@ MODPY_DISTV =	0.8.1
 DISTNAME =		simplegeneric-${MODPY_DISTV}
 EXTRACT_SUFX =		.zip
 PKGNAME =		py-${DISTNAME}
-REVISION =		12
+REVISION =		13
 
 CATEGORIES =		devel
 

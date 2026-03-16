@@ -3,6 +3,7 @@ COMMENT =	code generator for language server protocol
 MODPY_DISTV=	2025.0.0
 DISTNAME=	lsprotocol-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

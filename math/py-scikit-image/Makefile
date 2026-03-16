@@ -1,7 +1,7 @@
 COMMENT =		image processing routines for SciPy
 
 MODPY_DISTV =		0.26.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		scikit_image-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
 

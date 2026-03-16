@@ -3,6 +3,7 @@ COMMENT =	simple, safe single expression evaluator library
 MODPY_DISTV =	1.0.3
 DISTNAME =	simpleeval-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

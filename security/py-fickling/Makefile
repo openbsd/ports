@@ -4,6 +4,7 @@ MODPY_DISTV =	0.1.7
 DISTNAME =	fickling-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
+REVISION =	0
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 

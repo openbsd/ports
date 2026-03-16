@@ -3,7 +3,7 @@ COMMENT=	configurable sidebar-enabled Sphinx theme
 MODPY_DISTV=	1.0.0
 DISTNAME=	alabaster-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc
 

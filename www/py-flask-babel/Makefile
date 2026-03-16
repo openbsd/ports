@@ -3,6 +3,7 @@ COMMENT=	support for i18n/l10n in Flask applications
 MODPY_DISTV =	4.0.0
 DISTNAME=	flask_babel-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/g}
+REVISION=	0
 
 CATEGORIES=	www
 

@@ -3,6 +3,7 @@ COMMENT=	Python bindings to the Zstandard compression library
 MODPY_DISTV=	0.25.0
 DISTNAME=	zstandard-${MODPY_DISTV}
 PKGNAME=	py-zstandard-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	archivers
 

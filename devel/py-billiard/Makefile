@@ -3,6 +3,7 @@ COMMENT =		multiprocessing fork with improvements
 MODPY_DISTV =		4.2.4
 DISTNAME =		billiard-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

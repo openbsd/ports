@@ -3,7 +3,7 @@ COMMENT=	simple integration of Flask and WTForms
 MODPY_DISTV=	1.2.2
 DISTNAME=	flask_wtf-${MODPY_DISTV}
 PKGNAME=	py-flask-wtf-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

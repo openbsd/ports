@@ -3,6 +3,7 @@ COMMENT=	http client/server for asyncio
 MODPY_DISTV=	3.13.3
 DISTNAME=	aiohttp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www
 

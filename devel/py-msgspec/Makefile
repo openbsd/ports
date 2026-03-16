@@ -3,6 +3,7 @@ COMMENT =		serialization/validation for common data interchange formats
 MODPY_DISTV =		0.19.0
 DISTNAME =		msgspec-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -3,7 +3,7 @@ COMMENT =		random assortment of WSGI servers, middleware
 MODPY_DISTV =	1.0.3
 DISTNAME =		flup-${MODPY_DISTV}
 PKGNAME =		py-flup-${MODPY_DISTV}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		www
 

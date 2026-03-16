@@ -4,7 +4,7 @@ MODPY_DISTV=	3.2.0
 DISTNAME=		pypuppetdb-${MODPY_DISTV}
 PKGNAME=		py-puppetdb-${MODPY_DISTV}
 CATEGORIES=		databases www
-REVISION=		2
+REVISION=		3
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 

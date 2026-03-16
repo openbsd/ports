@@ -3,7 +3,7 @@ COMMENT =		youtube-dl wrapper to manage youtube audio
 MODPY_DISTV =	0.1
 DISTNAME =		yt-audio-${MODPY_DISTV}
 CATEGORIES =		audio
-REVISION =		8
+REVISION =		9
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

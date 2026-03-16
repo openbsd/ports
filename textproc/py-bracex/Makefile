@@ -3,6 +3,7 @@ COMMENT=	brace expanding library
 MODPY_DISTV=	2.6
 DISTNAME=	bracex-${MODPY_DISTV}
 PKGNAME=	py-bracex-${MODPY_DISTV:S/.post/pl/}
+REVISION=	0
 
 CATEGORIES=	textproc
 

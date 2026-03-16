@@ -3,7 +3,7 @@ COMMENT=	Brave's adblock library
 MODPY_DISTV=	0.6.0
 DISTNAME=	adblock-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	www
 

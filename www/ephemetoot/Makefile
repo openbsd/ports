@@ -2,7 +2,7 @@ COMMENT=	tool for deleting old Mastodon toots
 
 MODPY_DISTV=	3.2.1
 DISTNAME=	ephemetoot-${MODPY_DISTV}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www
 

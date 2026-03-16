@@ -2,7 +2,7 @@ COMMENT =		tarsnap wrapper which automatically expires backups
 
 MODPY_DISTV =	0.4.0
 DISTNAME =		tarsnapper-${MODPY_DISTV}
-REVISION =		10
+REVISION =		11
 
 CATEGORIES =		sysutils
 

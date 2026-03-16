@@ -3,6 +3,7 @@ COMMENT =		library for interacting with a U2F device over USB
 MODPY_DISTV =		0.1.5
 DISTNAME =		pyu2f-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		security
 

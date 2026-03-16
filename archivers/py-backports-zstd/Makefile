@@ -4,6 +4,7 @@ MODPY_DISTV =		1.3.0
 DISTNAME =		backports_zstd-${MODPY_DISTV}
 PKGNAME =		py-backports-zstd-${MODPY_DISTV}
 CATEGORIES =		archivers
+REVISION =		0
 
 WANTLIB =		zstd
 

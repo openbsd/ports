@@ -3,7 +3,7 @@ COMMENT =		singularizes and pluralizes English words
 MODPY_DISTV =	0.5.1
 DISTNAME =		inflection-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 

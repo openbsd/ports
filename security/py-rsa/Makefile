@@ -5,7 +5,7 @@ COMMENT=		Python RSA implementation
 MODPY_DISTV=	4.7.2
 DISTNAME=		rsa-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		security
 

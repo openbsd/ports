@@ -3,6 +3,7 @@ COMMENT=	Python promises
 MODPY_DISTV =	5.1.0
 DISTNAME=	vine-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

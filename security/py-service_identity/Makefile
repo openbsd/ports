@@ -3,7 +3,7 @@ COMMENT =		service identity verification for pyOpenSSL/py-cryptography
 MODPY_DISTV =	24.1.0
 DISTNAME=		service_identity-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 

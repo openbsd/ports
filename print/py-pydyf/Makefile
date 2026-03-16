@@ -3,7 +3,7 @@ COMMENT=	low-level PDF generator
 MODPY_DISTV=	0.11.0
 DISTNAME=	pydyf-${MODPY_DISTV}
 PKGNAME=	py-pydyf-${MODPY_DISTV}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	print
 

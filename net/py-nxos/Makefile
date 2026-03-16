@@ -1,7 +1,7 @@
 COMMENT =		library for managing Cisco NX-OS devices through NX-API
 
 MODPY_DISTV =	0.0.5
-REVISION =		8
+REVISION =		9
 DISTNAME =		pynxos-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/py//}
 

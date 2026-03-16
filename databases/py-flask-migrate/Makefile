@@ -4,6 +4,7 @@ COMMENT =		SQLAlchemy migrations for Flask apps using alembic
 MODPY_DISTV =		3.1.0
 DISTNAME =		Flask-Migrate-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		databases
 

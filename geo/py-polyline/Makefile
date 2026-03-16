@@ -4,6 +4,7 @@ COMMENT =		Python implementation of Google's polyline format
 MODPY_DISTV =		2.0.4
 DISTNAME =		polyline-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		geo
 

@@ -2,7 +2,7 @@ COMMENT=		service endpoint configuration per service on profile
 
 MODPY_DISTV=		0.4
 DISTNAME=		awscli-plugin-endpoint-${MODPY_DISTV}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		sysutils
 
