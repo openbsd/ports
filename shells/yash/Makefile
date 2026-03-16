@@ -13,6 +13,10 @@ PERMIT_PACKAGE=	Yes
 SITES=		https://github.com/magicant/yash/releases/download/${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 
+# error: missing binary operator before token "("
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB=	c curses intl m
 LIB_DEPENDS=	devel/gettext,-runtime
 
