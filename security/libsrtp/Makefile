@@ -2,10 +2,9 @@ COMMENT=	secure RTP library
 
 GH_ACCOUNT=	cisco
 GH_PROJECT=	libsrtp
-GH_TAGNAME=	v2.7.0
-REVISION=	0
+GH_TAGNAME=	v2.8.0
 
-SHARED_LIBS=	srtp2	6.0
+SHARED_LIBS=	srtp2	6.1
 
 CATEGORIES=	security telephony
 
