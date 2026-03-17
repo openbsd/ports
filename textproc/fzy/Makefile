@@ -14,6 +14,10 @@ HOMEPAGE =	https://github.com/jhawthorn/fzy
 # MIT
 PERMIT_PACKAGE =	Yes
 
+# cc1: error: -Werror=vla: No option -Wvla
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=	c pthread
 
 MAKE_ENV =	CC=${CC} BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man"
