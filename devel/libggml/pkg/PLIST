@@ -8,6 +8,7 @@ include/ggml-cpp.h
 include/ggml-cpu.h
 include/ggml-cuda.h
 include/ggml-metal.h
+include/ggml-openvino.h
 include/ggml-opt.h
 include/ggml-rpc.h
 include/ggml-sycl.h
