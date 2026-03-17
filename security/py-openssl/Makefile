@@ -1,7 +1,6 @@
 COMMENT=	Python interface to the OpenSSL library
 
-MODPY_DISTV=	25.3.0
-REVISION=	0
+MODPY_DISTV=	26.0.0
 DISTNAME=	pyopenssl-${MODPY_DISTV}
 PKGNAME=	py-openssl-${MODPY_DISTV}
 CATEGORIES=	security devel
