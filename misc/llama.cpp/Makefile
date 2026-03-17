@@ -2,13 +2,15 @@ COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggml-org
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		b8067
+GH_TAGNAME =		b8377
 PKGNAME =		llama.cpp-0.0.${GH_TAGNAME:S/b//}
 
-SHARED_LIBS +=		llama 3.1
-SHARED_LIBS +=		mtmd 1.1
+SHARED_LIBS +=		llama 3.2
+SHARED_LIBS +=		mtmd 1.2
 
 CATEGORIES =		misc
+
+MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 
 # MIT
 PERMIT_PACKAGE =	Yes
