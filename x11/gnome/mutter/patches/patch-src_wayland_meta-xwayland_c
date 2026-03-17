@@ -38,7 +38,7 @@ Index: src/wayland/meta-xwayland.c
    *abstract_fd_out = abstract_fd;
    *unix_fd_out = unix_fd;
  
-@@ -685,12 +695,16 @@ prepare_auth_file (MetaXWaylandManager  *manager,
+@@ -687,12 +697,16 @@ prepare_auth_file (MetaXWaylandManager  *manager,
                                           ".mutter-Xwaylandauth.XXXXXX",
                                           NULL);
  
