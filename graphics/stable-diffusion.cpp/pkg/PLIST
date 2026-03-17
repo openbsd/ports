@@ -3,6 +3,7 @@
 include/stable-diffusion.h
 @static-lib lib/libstable-diffusion.a
 share/doc/stable-diffusion.cpp/
+share/doc/stable-diffusion.cpp/anima.md
 share/doc/stable-diffusion.cpp/build.md
 share/doc/stable-diffusion.cpp/caching.md
 share/doc/stable-diffusion.cpp/chroma.md

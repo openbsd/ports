@@ -4,7 +4,7 @@ because the backend isn't loaded dynamically.
 Index: ggml/src/ggml-backend-reg.cpp
 --- ggml/src/ggml-backend-reg.cpp.orig
 +++ ggml/src/ggml-backend-reg.cpp
-@@ -531,7 +531,9 @@ static ggml_backend_reg_t ggml_backend_load_best(const
+@@ -463,7 +463,9 @@ static ggml_backend_reg_t ggml_backend_load_best(const
          search_paths.push_back(fs::u8path(GGML_BACKEND_DIR));
  #endif
          // default search paths: executable directory, current directory

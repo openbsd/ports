@@ -1,8 +1,8 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -92,7 +92,7 @@ file(GLOB SD_LIB_SOURCES
-     "*.hpp"
+@@ -87,7 +87,7 @@ file(GLOB SD_LIB_SOURCES
+     "src/vocab/*.cpp"
  )
  
 -find_program(GIT_EXE NAMES git git.exe NO_CMAKE_FIND_ROOT_PATH)

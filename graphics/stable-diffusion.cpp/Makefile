@@ -5,7 +5,7 @@ COMMENT =		diffusion model inference system
 
 GH_ACCOUNT =		leejet
 GH_PROJECT =		stable-diffusion.cpp
-GH_TAGNAME =		master-492-f957fa3
+GH_TAGNAME =		master-537-545fac4
 PKGNAME =		stable-diffusion.cpp-0.0.${GH_TAGNAME:S/master-//:S/-//g}
 
 VERSION.ggml =		a8db410a252c8c8f2d120c6f2e7133ebe032f35d
@@ -16,6 +16,8 @@ CATEGORIES =		graphics
 
 FLAVORS =		vulkan
 FLAVOR ?=
+
+MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
 # MIT
 PERMIT_PACKAGE =	Yes
