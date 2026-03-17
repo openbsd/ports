@@ -1351,6 +1351,7 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/channel.ejs
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/channels-list.ejs
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/channels.ejs
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/classic-queue-arguments.ejs
+lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/classic-queue-get-message.ejs
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/classic-queue-node-details.ejs
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/classic-queue-operator-policy-arguments.ejs
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/classic-queue-stats.ejs
