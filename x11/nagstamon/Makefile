@@ -1,6 +1,6 @@
 COMMENT=	nagios status monitor for the Desktop
 
-MODPY_DISTV=	3.18.1
+MODPY_DISTV=	3.18.2
 GH_ACCOUNT=	HenriWahl
 GH_PROJECT=	Nagstamon
 GH_TAGNAME=	v${MODPY_DISTV}
