@@ -4,6 +4,7 @@ MODPY_DISTV =	21.2.0
 DISTNAME=	virtualenv-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://virtualenv.pypa.io/
 
