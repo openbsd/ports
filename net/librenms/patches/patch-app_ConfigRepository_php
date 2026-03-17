@@ -3,7 +3,7 @@ OpenBSD whereis doesn't support -b
 Index: app/ConfigRepository.php
 --- app/ConfigRepository.php.orig
 +++ app/ConfigRepository.php
-@@ -532,7 +532,7 @@ class ConfigRepository
+@@ -535,7 +535,7 @@ class ConfigRepository
      public function locateBinary($binary): mixed
      {
          if (! Str::contains($binary, '/')) {

@@ -3,9 +3,9 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	26.2.0
+GH_TAGNAME=	26.3.0
 # above 7.8-stable; nmap
-REVISION=	1
+REVISION=	0
 
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
 EPOCH=		0
