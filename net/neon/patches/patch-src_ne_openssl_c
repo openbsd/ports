@@ -4,8 +4,8 @@ this ends in tears.
 Index: src/ne_openssl.c
 --- src/ne_openssl.c.orig
 +++ src/ne_openssl.c
-@@ -85,7 +85,7 @@ typedef const unsigned char ne_d2i_uchar;
- #define EVP_PKEY_get0_RSA(evp) (evp->pkey.rsa)
+@@ -88,7 +88,7 @@ typedef const unsigned char ne_d2i_uchar;
+ #define ASN1_STRING_type(as_) ((as_)->type)
  #endif
  
 -#if OPENSSL_VERSION_NUMBER >= 0x10101000
@@ -13,7 +13,7 @@ Index: src/ne_openssl.c
  /* OpenSSL 1.1.1 has STORE. */
  #define HAVE_OPENSSL111
  #include <openssl/store.h>
-@@ -1286,6 +1286,8 @@ char *ne_vstrhash(unsigned int flags, va_list ap)
+@@ -1296,6 +1296,8 @@ char *ne_vstrhash(unsigned int flags, va_list ap)
      unsigned char v[EVP_MAX_MD_SIZE];
      unsigned int vlen;
      const char *arg;

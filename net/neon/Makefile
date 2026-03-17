@@ -1,6 +1,6 @@
 COMMENT=		HTTP and WebDAV client library, with C interface
 
-DISTNAME=		neon-0.37.0
+DISTNAME=		neon-0.37.1
 
 SHARED_LIBS +=  neon                 31.6     # 37.0
 
