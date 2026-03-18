@@ -1,6 +1,7 @@
 COMMENT=		XML parsing library
 
 GNOME_VERSION=		2.15.2
+REVISION=		0
 GNOME_PROJECT=		libxml2
 PKGNAME=		libxml-${GNOME_VERSION}
 
