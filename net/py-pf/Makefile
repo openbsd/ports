@@ -1,10 +1,10 @@
 COMMENT =		Python module for managing PF
 
-MODPY_DISTV =	0.2.3
+MODPY_DISTV =		0.2.3
 GH_ACCOUNT =		dotpy
 GH_PROJECT =		py-pf
 GH_TAGNAME =		${MODPY_DISTV}
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

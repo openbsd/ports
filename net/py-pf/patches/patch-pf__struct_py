@@ -1,0 +1,14 @@
+changed in pfvar.h 1.541
+
+Index: pf/_struct.py
+--- pf/_struct.py.orig
++++ pf/_struct.py
+@@ -478,7 +478,7 @@ class timeval(Structure):               # From /usr/in
+ 
+ 
+ class pf_queue_bwspec(Structure):       # From /usr/include/net/pfvar.h
+-    _fields_ = [("absolute",          c_uint),
++    _fields_ = [("absolute",          c_uint64),
+                 ("percent",           c_uint)]
+ 
+ 
