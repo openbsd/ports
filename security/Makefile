@@ -310,6 +310,7 @@
      SUBDIR += py-miasm
      SUBDIR += py-mitmproxy_rs
      SUBDIR += py-oauthlib
+     SUBDIR += py-omemo-dr
      SUBDIR += py-openssl
      SUBDIR += py-paramiko
      SUBDIR += py-passlib
