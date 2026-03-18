@@ -1,6 +1,6 @@
 COMMENT=	IMAP4 webmail client
 
-V=		1.6.13
+V=		1.6.14
 REVISION=	0
 DISTNAME=	roundcubemail-${V}
 PKGNAME=	roundcubemail-${V:S/-//}
