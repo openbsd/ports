@@ -43,7 +43,6 @@ include/webkitgtk-${API}/webkit/WebKitFrame.h
 include/webkitgtk-${API}/webkit/WebKitGeolocationManager.h
 include/webkitgtk-${API}/webkit/WebKitGeolocationPermissionRequest.h
 include/webkitgtk-${API}/webkit/WebKitHitTestResult.h
-include/webkitgtk-${API}/webkit/WebKitImage.h
 include/webkitgtk-${API}/webkit/WebKitInputMethodContext.h
 include/webkitgtk-${API}/webkit/WebKitInstallMissingMediaPluginsPermissionRequest.h
 include/webkitgtk-${API}/webkit/WebKitMediaKeySystemPermissionRequest.h

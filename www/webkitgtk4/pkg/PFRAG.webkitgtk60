@@ -72,7 +72,6 @@ share/doc/webkitgtk-${API}/class.FormSubmissionRequest.html
 share/doc/webkitgtk-${API}/class.GeolocationManager.html
 share/doc/webkitgtk-${API}/class.GeolocationPermissionRequest.html
 share/doc/webkitgtk-${API}/class.HitTestResult.html
-share/doc/webkitgtk-${API}/class.Image.html
 share/doc/webkitgtk-${API}/class.InputMethodContext.html
 share/doc/webkitgtk-${API}/class.MediaKeySystemPermissionRequest.html
 share/doc/webkitgtk-${API}/class.NavigationPolicyDecision.html
@@ -396,10 +395,6 @@ share/doc/webkitgtk-${API}/method.ITPThirdParty.get_domain.html
 share/doc/webkitgtk-${API}/method.ITPThirdParty.get_first_parties.html
 share/doc/webkitgtk-${API}/method.ITPThirdParty.ref.html
 share/doc/webkitgtk-${API}/method.ITPThirdParty.unref.html
-share/doc/webkitgtk-${API}/method.Image.as_bytes.html
-share/doc/webkitgtk-${API}/method.Image.get_height.html
-share/doc/webkitgtk-${API}/method.Image.get_stride.html
-share/doc/webkitgtk-${API}/method.Image.get_width.html
 share/doc/webkitgtk-${API}/method.InputMethodContext.filter_key_event.html
 share/doc/webkitgtk-${API}/method.InputMethodContext.get_input_hints.html
 share/doc/webkitgtk-${API}/method.InputMethodContext.get_input_purpose.html
@@ -919,9 +914,6 @@ share/doc/webkitgtk-${API}/property.HitTestResult.link-label.html
 share/doc/webkitgtk-${API}/property.HitTestResult.link-title.html
 share/doc/webkitgtk-${API}/property.HitTestResult.link-uri.html
 share/doc/webkitgtk-${API}/property.HitTestResult.media-uri.html
-share/doc/webkitgtk-${API}/property.Image.height.html
-share/doc/webkitgtk-${API}/property.Image.stride.html
-share/doc/webkitgtk-${API}/property.Image.width.html
 share/doc/webkitgtk-${API}/property.InputMethodContext.input-hints.html
 share/doc/webkitgtk-${API}/property.InputMethodContext.input-purpose.html
 share/doc/webkitgtk-${API}/property.NavigationPolicyDecision.navigation-action.html
@@ -1465,6 +1457,7 @@ share/locale/id/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/it/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/ja/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/ka/LC_MESSAGES/WebKitGTK-${API}.mo
+share/locale/kk/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/kn/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/ko/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/lt/LC_MESSAGES/WebKitGTK-${API}.mo
