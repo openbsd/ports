@@ -1,0 +1,47 @@
+https://mail.python.org/archives/list/security-announce@python.org/thread/5M7CGUW3XBRY7II4DK43KF7NQQ3TPZ6R/
+
+From 196edfb06a7458377d4d0f4b3cd41724c1f3bd4a Mon Sep 17 00:00:00 2001
+From: "Miss Islington (bot)"
+ <31488909+miss-islington@users.noreply.github.com>
+Date: Mon, 16 Mar 2026 10:09:27 +0100
+Subject: [PATCH] [3.13] gh-145986: Avoid unbound C recursion in
+ `conv_content_model` in `pyexpat.c` (CVE 2026-4224) (GH-145987) (#145996)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+* gh-145986: Avoid unbound C recursion in `conv_content_model` in `pyexpat.c` (CVE 2026-4224) (GH-145987)
+
+Fix C stack overflow (CVE-2026-4224) when an Expat parser
+with a registered `ElementDeclHandler` parses inline DTD
+containing deeply nested content model.
+
+---------
+(cherry picked from commit eb0e8be3a7e11b87d198a2c3af1ed0eccf532768)
+
+Index: Lib/test/test_pyexpat.py
+--- Lib/test/test_pyexpat.py.orig
++++ Lib/test/test_pyexpat.py
+@@ -688,6 +688,22 @@ class ElementDeclHandlerTest(unittest.TestCase):
+         parser.ElementDeclHandler = lambda _1, _2: None
+         self.assertRaises(TypeError, parser.Parse, data, True)
+ 
++    def test_deeply_nested_content_model(self):
++        # This should raise a RecursionError and not crash.
++        # See https://github.com/python/cpython/issues/145986.
++        N = 500_000
++        data = (
++            b'<!DOCTYPE root [\n<!ELEMENT root '
++            + b'(a, ' * N + b'a' + b')' * N
++            + b'>\n]>\n<root/>\n'
++        )
++
++        parser = expat.ParserCreate()
++        parser.ElementDeclHandler = lambda _1, _2: None
++        with support.infinite_recursion():
++            with self.assertRaises(RecursionError):
++                parser.Parse(data)
++
+ class MalformedInputTest(unittest.TestCase):
+     def test1(self):
+         xml = b"\0\r\n"

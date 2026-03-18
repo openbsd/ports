@@ -1,11 +1,75 @@
+- one hunk removes #include "expat_config.h"; this (or an alternative,
+see textproc/xmlwf for another approach) needs to be kept unless expat
+in base starts providing this config header
+
+- other hunks are:
+
+https://mail.python.org/archives/list/security-announce@python.org/thread/5M7CGUW3XBRY7II4DK43KF7NQQ3TPZ6R/
+
+From 196edfb06a7458377d4d0f4b3cd41724c1f3bd4a Mon Sep 17 00:00:00 2001
+From: "Miss Islington (bot)"
+ <31488909+miss-islington@users.noreply.github.com>
+Date: Mon, 16 Mar 2026 10:09:27 +0100
+Subject: [PATCH] [3.13] gh-145986: Avoid unbound C recursion in
+ `conv_content_model` in `pyexpat.c` (CVE 2026-4224) (GH-145987) (#145996)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+* gh-145986: Avoid unbound C recursion in `conv_content_model` in `pyexpat.c` (CVE 2026-4224) (GH-145987)
+
+Fix C stack overflow (CVE-2026-4224) when an Expat parser
+with a registered `ElementDeclHandler` parses inline DTD
+containing deeply nested content model.
+
+---------
+(cherry picked from commit eb0e8be3a7e11b87d198a2c3af1ed0eccf532768)
+
 Index: Modules/pyexpat.c
 --- Modules/pyexpat.c.orig
 +++ Modules/pyexpat.c
-@@ -10,7 +10,6 @@
+@@ -3,6 +3,7 @@
+ #endif
+ 
+ #include "Python.h"
++#include "pycore_ceval.h"         // _Py_EnterRecursiveCall()
+ #include "pycore_import.h"        // _PyImport_SetModule()
+ #include "pycore_pyhash.h"        // _Py_HashSecret
+ #include "pycore_traceback.h"     // _PyTraceback_Add()
+@@ -10,7 +11,6 @@
  #include <stdbool.h>
  #include <stddef.h>               // offsetof()
  
 -#include "expat_config.h"
  #include "expat.h"
  #include "pyexpat.h"
+ 
+@@ -572,6 +572,10 @@ static PyObject *
+ conv_content_model(XML_Content * const model,
+                    PyObject *(*conv_string)(const XML_Char *))
+ {
++    if (_Py_EnterRecursiveCall(" in conv_content_model")) {
++        return NULL;
++    }
++
+     PyObject *result = NULL;
+     PyObject *children = PyTuple_New(model->numchildren);
+     int i;
+@@ -583,7 +587,7 @@ conv_content_model(XML_Content * const model,
+                                                  conv_string);
+             if (child == NULL) {
+                 Py_XDECREF(children);
+-                return NULL;
++                goto done;
+             }
+             PyTuple_SET_ITEM(children, i, child);
+         }
+@@ -591,6 +595,8 @@ conv_content_model(XML_Content * const model,
+                                model->type, model->quant,
+                                conv_string,model->name, children);
+     }
++done:
++    _Py_LeaveRecursiveCall();
+     return result;
+ }
  

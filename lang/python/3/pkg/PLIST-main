@@ -2233,10 +2233,14 @@ lib/python3.13/pydoc_data/__pycache__/
 lib/python3.13/pydoc_data/__pycache__/__init__.cpython-313.opt-1.pyc
 lib/python3.13/pydoc_data/__pycache__/__init__.cpython-313.opt-2.pyc
 lib/python3.13/pydoc_data/__pycache__/__init__.cpython-313.pyc
+lib/python3.13/pydoc_data/__pycache__/module_docs.cpython-313.opt-1.pyc
+lib/python3.13/pydoc_data/__pycache__/module_docs.cpython-313.opt-2.pyc
+lib/python3.13/pydoc_data/__pycache__/module_docs.cpython-313.pyc
 lib/python3.13/pydoc_data/__pycache__/topics.cpython-313.opt-1.pyc
 lib/python3.13/pydoc_data/__pycache__/topics.cpython-313.opt-2.pyc
 lib/python3.13/pydoc_data/__pycache__/topics.cpython-313.pyc
 lib/python3.13/pydoc_data/_pydoc.css
+lib/python3.13/pydoc_data/module_docs.py
 lib/python3.13/pydoc_data/topics.py
 lib/python3.13/queue.py
 lib/python3.13/quopri.py

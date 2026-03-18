@@ -6,6 +6,7 @@
 @pkgpath lang/python/3.10,-tests
 @pkgpath lang/python/3.11,-tests
 lib/python3.13/test/
+lib/python3.13/test/NormalizationTest-3.2.0.txt
 lib/python3.13/test/__init__.py
 lib/python3.13/test/__main__.py
 lib/python3.13/test/__pycache__/
@@ -93,9 +94,15 @@ lib/python3.13/test/__pycache__/mp_preload_flush.cpython-313.pyc
 lib/python3.13/test/__pycache__/mp_preload_main.cpython-313.opt-1.pyc
 lib/python3.13/test/__pycache__/mp_preload_main.cpython-313.opt-2.pyc
 lib/python3.13/test/__pycache__/mp_preload_main.cpython-313.pyc
+lib/python3.13/test/__pycache__/mp_preload_sysargv.cpython-313.opt-1.pyc
+lib/python3.13/test/__pycache__/mp_preload_sysargv.cpython-313.opt-2.pyc
+lib/python3.13/test/__pycache__/mp_preload_sysargv.cpython-313.pyc
 lib/python3.13/test/__pycache__/multibytecodec_support.cpython-313.opt-1.pyc
 lib/python3.13/test/__pycache__/multibytecodec_support.cpython-313.opt-2.pyc
 lib/python3.13/test/__pycache__/multibytecodec_support.cpython-313.pyc
+lib/python3.13/test/__pycache__/picklecommon.cpython-313.opt-1.pyc
+lib/python3.13/test/__pycache__/picklecommon.cpython-313.opt-2.pyc
+lib/python3.13/test/__pycache__/picklecommon.cpython-313.pyc
 lib/python3.13/test/__pycache__/pickletester.cpython-313.opt-1.pyc
 lib/python3.13/test/__pycache__/pickletester.cpython-313.opt-2.pyc
 lib/python3.13/test/__pycache__/pickletester.cpython-313.pyc
@@ -1284,6 +1291,9 @@ lib/python3.13/test/__pycache__/test_xml_etree_c.cpython-313.pyc
 lib/python3.13/test/__pycache__/test_xmlrpc.cpython-313.opt-1.pyc
 lib/python3.13/test/__pycache__/test_xmlrpc.cpython-313.opt-2.pyc
 lib/python3.13/test/__pycache__/test_xmlrpc.cpython-313.pyc
+lib/python3.13/test/__pycache__/test_xpickle.cpython-313.opt-1.pyc
+lib/python3.13/test/__pycache__/test_xpickle.cpython-313.opt-2.pyc
+lib/python3.13/test/__pycache__/test_xpickle.cpython-313.pyc
 lib/python3.13/test/__pycache__/test_xxlimited.cpython-313.opt-1.pyc
 lib/python3.13/test/__pycache__/test_xxlimited.cpython-313.opt-2.pyc
 lib/python3.13/test/__pycache__/test_xxlimited.cpython-313.pyc
@@ -1320,6 +1330,9 @@ lib/python3.13/test/__pycache__/win_console_handler.cpython-313.pyc
 lib/python3.13/test/__pycache__/xmltests.cpython-313.opt-1.pyc
 lib/python3.13/test/__pycache__/xmltests.cpython-313.opt-2.pyc
 lib/python3.13/test/__pycache__/xmltests.cpython-313.pyc
+lib/python3.13/test/__pycache__/xpickle_worker.cpython-313.opt-1.pyc
+lib/python3.13/test/__pycache__/xpickle_worker.cpython-313.opt-2.pyc
+lib/python3.13/test/__pycache__/xpickle_worker.cpython-313.pyc
 lib/python3.13/test/_test_atexit.py
 lib/python3.13/test/_test_eintr.py
 lib/python3.13/test/_test_embed_set_config.py
@@ -1773,7 +1786,9 @@ lib/python3.13/test/mp_fork_bomb.py
 lib/python3.13/test/mp_preload.py
 lib/python3.13/test/mp_preload_flush.py
 lib/python3.13/test/mp_preload_main.py
+lib/python3.13/test/mp_preload_sysargv.py
 lib/python3.13/test/multibytecodec_support.py
+lib/python3.13/test/picklecommon.py
 lib/python3.13/test/pickletester.py
 lib/python3.13/test/profilee.py
 lib/python3.13/test/pstats.pck
@@ -4694,6 +4709,7 @@ lib/python3.13/test/test_xml_dom_xmlbuilder.py
 lib/python3.13/test/test_xml_etree.py
 lib/python3.13/test/test_xml_etree_c.py
 lib/python3.13/test/test_xmlrpc.py
+lib/python3.13/test/test_xpickle.py
 lib/python3.13/test/test_xxlimited.py
 lib/python3.13/test/test_xxtestfuzz.py
 lib/python3.13/test/test_yield_from.py
@@ -4944,6 +4960,7 @@ lib/python3.13/test/xmltestdata/simple.xml
 lib/python3.13/test/xmltestdata/test.xml
 lib/python3.13/test/xmltestdata/test.xml.out
 lib/python3.13/test/xmltests.py
+lib/python3.13/test/xpickle_worker.py
 lib/python3.13/test/zipimport_data/
 lib/python3.13/test/zipimport_data/sparse-zip64-c0-0x000000000.part
 lib/python3.13/test/zipimport_data/sparse-zip64-c0-0x100000000.part

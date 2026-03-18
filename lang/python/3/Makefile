@@ -3,14 +3,10 @@
 # requirement of the PSF license, if it constitutes a change to
 # Python itself.
 
-FULL_VERSION =		3.13.11
+FULL_VERSION =		3.13.12
 SHARED_LIBS =		python3.13 0.0
 VERSION_SPEC =		>=3.13,<3.14
 PORTROACH =		limit:^3\.12
-
-# XXX keep REVISION-main above 7.8-stable and do not sync the
-# XXX @conflict or @pkgpath for glade/py-bsddb3
-REVISION-main =		2
 
 AUTOCONF_VERSION =	2.71
 

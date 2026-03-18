@@ -24,5 +24,7 @@ which results in loading an incorrect version in some cases.
 
 8.  Work around expat_config.h missing from base.
 
+9.  Cherry-pick fixes for CVE-2026-3644, CVE-2026-4224
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.
