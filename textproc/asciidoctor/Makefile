@@ -1,6 +1,6 @@
 COMMENT =	better AsciiDoc text proc/publishing software
 
-V =		2.0.23
+V =		2.0.26
 DISTNAME =	asciidoctor-${V}
 FULLPKGNAME =	${DISTNAME}
 
