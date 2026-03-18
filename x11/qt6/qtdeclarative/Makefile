@@ -5,6 +5,8 @@ QT6NAME =	QtDeclarative
 COMMENT =	Qt6 Quick and QML components
 PKGSPEC =	qt6-qtdeclarative-${QT6_PKGSPEC}
 
+DPB_PROPERTIES = parallel
+
 SHARED_LIBS =   Qt6Qml                    7.0 # 6.7
 SHARED_LIBS +=  Qt6Quick                  8.1 # 6.7
 SHARED_LIBS +=  Qt6QuickParticles         3.0 # 6.7
