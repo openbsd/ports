@@ -96,7 +96,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (stayrtr-v0.6.3.zip) = 2zuKRuExef08NvholY2NFqT83NmTzQX3JK6RFY5ANnU=
+SHA256 (stayrtr-v0.6.4.zip) = TCK3qgI4WPwDmX1BphHakgldIVvs2+0djk9+2RqiMkE=
 SIZE (go_modules/github.com/alecthomas/kingpin/v2/@v/v2.4.0.mod) = 352
 SIZE (go_modules/github.com/alecthomas/kingpin/v2/@v/v2.4.0.zip) = 62260
 SIZE (go_modules/github.com/alecthomas/units/@v/v0.0.0-20211218093645-b94a6e3cc137.mod) = 88
@@ -195,4 +195,4 @@ SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 81183
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (stayrtr-v0.6.3.zip) = 1213323
+SIZE (stayrtr-v0.6.4.zip) = 1213982
