@@ -1,6 +1,6 @@
 COMMENT=	Oracle's official Java language specification
 
-MAJOR=		12
+MAJOR=		24
 PKGNAME=	JLS-${MAJOR}.0
 DISTNAME=	jls${MAJOR}
 DISTFILES=	${DISTNAME}.pdf
