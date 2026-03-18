@@ -11,6 +11,10 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+# cc1: error: unrecognized command line option "-Wvla"
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=	c m pthread usb-1.0 crypto rtlsdr ssl
 
 MODULES =	devel/cmake
