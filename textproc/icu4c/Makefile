@@ -1,7 +1,7 @@
 COMMENT-main=		International Components for Unicode
 COMMENT-wwwdata=	ICU data file for use with /var/www chroot jails
 
-VERSION=		78.2
+VERSION=		78.3
 DISTNAME=		icu4c-${VERSION}-sources
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
