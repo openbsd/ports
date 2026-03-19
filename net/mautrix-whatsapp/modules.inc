@@ -6,22 +6,22 @@ MODGO_MODULES =	\
 	github.com/beeper/argo-go			 v1.1.2 \
 	github.com/chzyer/readline			 v1.5.1 \
 	github.com/coder/websocket			 v1.8.14 \
-	github.com/coreos/go-systemd/v22		 v22.5.0 \
+	github.com/coreos/go-systemd/v22		 v22.6.0 \
 	github.com/creack/pty				 v1.1.9 \
 	github.com/davecgh/go-spew			 v1.1.1 \
 	github.com/elliotchance/orderedmap/v3		 v3.1.0 \
-	github.com/godbus/dbus/v5			 v5.0.4 \
+	github.com/godbus/dbus/v5			 v5.1.0 \
 	github.com/golang/protobuf			 v1.5.0 \
 	github.com/google/go-cmp			 v0.7.0 \
 	github.com/google/uuid				 v1.6.0 \
 	github.com/kr/pretty				 v0.3.1 \
 	github.com/kr/pty				 v1.1.1 \
 	github.com/kr/text				 v0.2.0 \
-	github.com/lib/pq				 v1.10.9 \
+	github.com/lib/pq				 v1.11.2 \
 	github.com/mattn/go-colorable			 v0.1.14 \
 	github.com/mattn/go-isatty			 v0.0.20 \
-	github.com/mattn/go-sqlite3			 v1.14.32 \
-	github.com/petermattis/goid			 v0.0.0-20250904145737-900bdf8bb490 \
+	github.com/mattn/go-sqlite3			 v1.14.34 \
+	github.com/petermattis/goid			 v0.0.0-20260113132338-7c7de50cc741 \
 	github.com/pkg/diff				 v0.0.0-20210226163009-20ebb0f2a09e \
 	github.com/pkg/errors				 v0.9.1 \
 	github.com/pmezard/go-difflib			 v1.0.0 \
@@ -32,57 +32,61 @@ MODGO_MODULES =	\
 	github.com/skip2/go-qrcode			 v0.0.0-20200617195104-da1b6568686e \
 	github.com/stretchr/testify			 v1.11.1 \
 	github.com/tidwall/gjson			 v1.18.0 \
-	github.com/tidwall/match			 v1.1.1 \
+	github.com/tidwall/match			 v1.2.0 \
 	github.com/tidwall/pretty			 v1.2.1 \
 	github.com/tidwall/sjson			 v1.2.5 \
 	github.com/vektah/gqlparser/v2			 v2.5.27 \
-	github.com/yuin/goldmark			 v1.7.13 \
+	github.com/yuin/goldmark			 v1.7.16 \
 	go.mau.fi/libsignal				 v0.2.1 \
-	go.mau.fi/util					 v0.9.3 \
+	go.mau.fi/util					 v0.9.6 \
 	go.mau.fi/webp					 v0.2.0 \
-	go.mau.fi/whatsmeow				 v0.0.0-20251116104239-3aca43070cd4 \
+	go.mau.fi/whatsmeow				 v0.0.0-20260216124546-34b971e686b6 \
 	go.mau.fi/zeroconfig				 v0.2.0 \
-	golang.org/x/crypto				 v0.44.0 \
-	golang.org/x/exp				 v0.0.0-20251113190631-e25ba8c21ef6 \
-	golang.org/x/image				 v0.33.0 \
-	golang.org/x/mod				 v0.30.0 \
-	golang.org/x/net				 v0.47.0 \
-	golang.org/x/sync				 v0.18.0 \
-	golang.org/x/sys				 v0.38.0 \
-	golang.org/x/term				 v0.37.0 \
-	golang.org/x/text				 v0.31.0 \
-	golang.org/x/tools				 v0.39.0 \
+	golang.org/x/crypto				 v0.48.0 \
+	golang.org/x/exp				 v0.0.0-20260212183809-81e46e3db34a \
+	golang.org/x/image				 v0.36.0 \
+	golang.org/x/mod				 v0.33.0 \
+	golang.org/x/net				 v0.50.0 \
+	golang.org/x/sync				 v0.19.0 \
+	golang.org/x/sys				 v0.41.0 \
+	golang.org/x/term				 v0.40.0 \
+	golang.org/x/text				 v0.34.0 \
+	golang.org/x/tools				 v0.42.0 \
 	golang.org/x/tools/go/expect			 v0.1.1-deprecated \
 	golang.org/x/tools/go/packages/packagestest	 v0.1.1-deprecated \
-	google.golang.org/protobuf			 v1.36.10 \
+	google.golang.org/protobuf			 v1.36.11 \
 	gopkg.in/check.v1				 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/natefinch/lumberjack.v2		 v2.2.1 \
 	gopkg.in/yaml.v3				 v3.0.1 \
 	maunium.net/go/mauflag				 v1.0.0 \
-	maunium.net/go/mautrix				 v0.26.0
+	maunium.net/go/mautrix				 v0.26.3
 
 MODGO_MODFILES =	\
-	github.com/davecgh/go-spew	 v1.1.0 \
-	github.com/google/go-cmp	 v0.6.0 \
-	github.com/kr/pretty		 v0.2.1 \
-	github.com/kr/text		 v0.1.0 \
-	github.com/mattn/go-colorable	 v0.1.13 \
-	github.com/mattn/go-isatty	 v0.0.16 \
-	github.com/mattn/go-isatty	 v0.0.19 \
-	github.com/rogpeppe/go-internal	 v1.9.0 \
-	github.com/stretchr/testify	 v1.10.0 \
-	github.com/stretchr/testify	 v1.7.1 \
-	github.com/tidwall/gjson	 v1.14.2 \
-	github.com/tidwall/pretty	 v1.2.0 \
-	golang.org/x/crypto		 v0.42.0 \
-	golang.org/x/image		 v0.23.0 \
-	golang.org/x/mod		 v0.29.0 \
-	golang.org/x/net		 v0.46.0 \
-	golang.org/x/sys		 v0.0.0-20220811171246-fbc7d0a398ab \
-	golang.org/x/sys		 v0.12.0 \
-	golang.org/x/sys		 v0.29.0 \
-	golang.org/x/sys		 v0.6.0 \
-	golang.org/x/tools		 v0.38.0 \
-	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
-	gopkg.in/yaml.v3		 v3.0.0-20200313102051-9f266ea9e77c
+	github.com/coreos/go-systemd/v22	 v22.5.0 \
+	github.com/davecgh/go-spew		 v1.1.0 \
+	github.com/godbus/dbus/v5		 v5.0.4 \
+	github.com/google/go-cmp		 v0.6.0 \
+	github.com/kr/pretty			 v0.2.1 \
+	github.com/kr/text			 v0.1.0 \
+	github.com/mattn/go-colorable		 v0.1.13 \
+	github.com/mattn/go-isatty		 v0.0.16 \
+	github.com/mattn/go-isatty		 v0.0.19 \
+	github.com/rogpeppe/go-internal		 v1.9.0 \
+	github.com/stretchr/testify		 v1.10.0 \
+	github.com/stretchr/testify		 v1.7.1 \
+	github.com/tidwall/gjson		 v1.14.2 \
+	github.com/tidwall/match		 v1.1.1 \
+	github.com/tidwall/pretty		 v1.2.0 \
+	golang.org/x/crypto			 v0.42.0 \
+	golang.org/x/image			 v0.23.0 \
+	golang.org/x/mod			 v0.32.0 \
+	golang.org/x/net			 v0.49.0 \
+	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
+	golang.org/x/sys			 v0.12.0 \
+	golang.org/x/sys			 v0.29.0 \
+	golang.org/x/sys			 v0.6.0 \
+	golang.org/x/tools			 v0.41.0 \
+	google.golang.org/protobuf		 v1.36.10 \
+	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
+	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c
 
