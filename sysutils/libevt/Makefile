@@ -1,15 +1,16 @@
 COMMENT =	library and tools to access the Windows Event Log (EVT)
 
-VERSION =	20191221
+VERSION =	20240421
 DISTNAME =	libevt-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	6
 
-SHARED_LIBS +=  evt                       0.0 # 1.0
+SHARED_LIBS +=  evt                       0.1 # 1.0
 
 CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libevt/wiki
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 SITES =		https://github.com/libyal/libevt/releases/download/${VERSION}/
 
@@ -20,7 +21,7 @@ WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += bfio c iconv intl m pthread util
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python3 \
+CONFIGURE_ARGS +=	--enable-python \
 			--without-libfwnt \
 			--without-libregf
 
