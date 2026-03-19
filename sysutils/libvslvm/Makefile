@@ -1,15 +1,16 @@
 COMMENT =	library to access the LVM volume system format
 
-VERSION =	20200102
+VERSION =	20240504
 DISTNAME =	libvslvm-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	6
 
-SHARED_LIBS +=  vslvm                       0.0 # 1.0
+SHARED_LIBS +=  vslvm                       0.1 # 1.0
 
 CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libvslvm/wiki
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 SITES =		https://github.com/libyal/libvslvm/releases/download/${VERSION}/
 
@@ -20,7 +21,7 @@ WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += bfio c fuse iconv intl m pthread util
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python3
+CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
