@@ -1,14 +1,16 @@
 COMMENT =		basic file input/output abstraction C library
 
-VERSION =		20191230
+VERSION =		20240414
 DISTNAME =		libbfio-alpha-${VERSION}
 PKGNAME =		libbfio-${VERSION}
 
-SHARED_LIBS +=  bfio                      0.0 # 1.0
+SHARED_LIBS +=  bfio                      0.1 # 1.0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/libyal/libbfio/wiki
+
+MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
