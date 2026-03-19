@@ -1,15 +1,16 @@
 COMMENT =	library for binary signature scanning
 
-VERSION =	20191221
+VERSION = 	20240505
 DISTNAME =	libsigscan-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	6
 
-SHARED_LIBS +=  sigscan                       0.0 # 1.0
+SHARED_LIBS +=  sigscan                       0.1 # 1.0
 
 CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libsigscan/wiki
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 SITES =	https://github.com/libyal/libsigscan/releases/download/${VERSION}/
 
@@ -20,7 +21,7 @@ WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += bfio c iconv intl m pthread util
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python3
+CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
