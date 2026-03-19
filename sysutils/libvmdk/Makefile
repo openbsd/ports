@@ -1,15 +1,16 @@
 COMMENT =	library and tools to access the VMware Virtual Disk format
 
-VERSION =	20191221
+VERSION =	20240510
 DISTNAME =	libvmdk-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	6
 
-SHARED_LIBS +=  vmdk                       0.0 # 1.0
+SHARED_LIBS +=  vmdk                       0.1 # 1.0
 
 CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libvmdk/wiki
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 SITES =		https://github.com/libyal/libvmdk/releases/download/${VERSION}/
 
@@ -20,7 +21,7 @@ WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += bfio c fuse iconv intl m pthread util z
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python3
+CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
