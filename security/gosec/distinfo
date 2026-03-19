@@ -1172,7 +1172,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = oNOSUuhmWkKKjLnU38nL6ge3rpCuYufPNlG+cZrfUVo=
-SHA256 (gosec-v2.24.6.zip) = hvMDslWLs3q7+MhyiDWXWIZiA5eSWqRKCN+5/A5s7j8=
+SHA256 (gosec-v2.24.7.zip) = p+iF2VIcqEfwhyRwMGxIuzaGTmLr/c3X7sQFEVV06qA=
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.6.mod) = 48
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.6.zip) = 8344
 SIZE (go_modules/cel.dev/expr/@v/v0.20.0.mod) = 231
@@ -2347,4 +2347,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = 18120
-SIZE (gosec-v2.24.6.zip) = 467677
+SIZE (gosec-v2.24.7.zip) = 485688
