@@ -209,6 +209,7 @@
      SUBDIR += libvmdk
      SUBDIR += libvshadow
      SUBDIR += libvslvm
+     SUBDIR += libyal
      SUBDIR += lnav
      SUBDIR += lockfile
      SUBDIR += logfmon
