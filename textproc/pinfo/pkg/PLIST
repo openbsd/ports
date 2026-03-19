@@ -1,3 +1,4 @@
+@conflict plaso-*
 @bin bin/pinfo
 @info info/pinfo.info
 @man man/man1/pinfo.1

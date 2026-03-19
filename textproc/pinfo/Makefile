@@ -1,7 +1,7 @@
 COMMENT=		info viewer with lynx-style navigation
 
 DISTNAME=		pinfo-0.6.9
-REVISION=		3
+REVISION=		4
 CATEGORIES=		textproc devel
 
 HOMEPAGE=		https://alioth.debian.org/frs/?group_id=30592
