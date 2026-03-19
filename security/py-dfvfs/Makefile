@@ -1,13 +1,14 @@
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
-MODPY_DISTV =	20200625
+MODPY_DISTV =	20240505
 DISTNAME =	dfvfs-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	6
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/log2timeline/dfvfs/wiki
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 SITES =		https://github.com/log2timeline/dfvfs/releases/download/${MODPY_DISTV}/
 
@@ -17,13 +18,12 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 MODPY_PYBUILD =	setuptools
-RUN_DEPENDS +=	devel/py-construct \
-		security/py-cryptography \
-		security/py-dfdatetime \
+RUN_DEPENDS += 	devel/py-dtfabric \
 		devel/py-six \
-		sysutils/py-tsk \
 		security/libbde \
 		security/libewf \
+		security/py-dfdatetime \
+		sysutils/libfsapfs \
 		sysutils/libfsntfs \
 		sysutils/libfvde \
 		sysutils/libfwnt \
@@ -35,7 +35,18 @@ RUN_DEPENDS +=	devel/py-construct \
 		sysutils/libvhdi \
 		sysutils/libvmdk \
 		sysutils/libvshadow \
-		sysutils/libvslvm
+		sysutils/libvslvm \
+		sysutils/libyal/libfcrypto \
+		sysutils/libyal/libfsext \
+		sysutils/libyal/libfsfat \
+		sysutils/libyal/libfshfs \
+		sysutils/libyal/libfsxfs \
+		sysutils/libyal/libmodi \
+		sysutils/libyal/libphdi \
+		sysutils/libyal/libvsapm \
+		sysutils/libyal/libvsgpt \
+		sysutils/py-tsk \
+		textproc/py-yaml
 
 TEST_DEPENDS +=	devel/py-mock
 
