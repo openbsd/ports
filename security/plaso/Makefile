@@ -1,12 +1,12 @@
 COMMENT =	engine and tools to automate creation of super timeline
 
-MODPY_DISTV =	20200717
-REVISION =	7
+MODPY_DISTV =	20260119
 DISTNAME =	plaso-${MODPY_DISTV}
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/log2timeline/plaso/wiki
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apachev2
 PERMIT_PACKAGE =Yes
@@ -19,21 +19,22 @@ MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS +=	archivers/py-lz4 \
+		archivers/py-zstd \
 		databases/py-redis \
+		devel/py-acstore \
 		devel/py-bencode \
-		devel/py-biplist \
+		devel/py-certifi \
 		devel/py-cffi \
 		devel/py-dateutil \
-		devel/py-future \
+		devel/py-dtfabric \
+		devel/py-flor \
 		devel/py-parsing \
-		devel/py-six \
 		devel/py-tz \
 		devel/py-xlsxwriter \
 		net/py-zmq \
 		security/libbde \
 		security/libewf \
 		security/py-artifacts \
-		security/py-cryptography \
 		security/py-dfdatetime \
 		security/py-dfvfs \
 		security/py-dfwinreg \
@@ -43,11 +44,23 @@ RUN_DEPENDS +=	archivers/py-lz4 \
 		sysutils/libevt \
 		sysutils/libevtx \
 		sysutils/libfsapfs \
+		sysutils/libyal/libcaes \
+		sysutils/libyal/libcreg \
+		sysutils/libyal/libfcrypto \
+		sysutils/libyal/libfsext \
+		sysutils/libyal/libfsfat \
+		sysutils/libyal/libfshfs \
+		sysutils/libyal/libfsxfs \
+		sysutils/libyal/libmodi \
+		sysutils/libyal/libphdi \
+		sysutils/libyal/libvsapm \
+		sysutils/libyal/libvsgpt \
 		sysutils/libfsntfs \
 		sysutils/libfvde \
 		sysutils/libfwnt \
 		sysutils/libfwsi \
 		sysutils/liblnk \
+		sysutils/libluksde \
 		sysutils/libmsiecf \
 		sysutils/libolecf \
 		sysutils/libqcow \
@@ -62,11 +75,8 @@ RUN_DEPENDS +=	archivers/py-lz4 \
 		sysutils/libvslvm \
 		sysutils/py-psutil \
 		sysutils/py-tsk \
-		textproc/py-chardet \
 		textproc/py-defusedxml \
-		textproc/py-yaml \
-		www/py-requests \
-		www/py-urllib3
+		www/py-requests
 
 TEST_DEPENDS +=	devel/py-test \
 		devel/py-mock
