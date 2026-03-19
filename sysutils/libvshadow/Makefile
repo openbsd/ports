@@ -1,15 +1,16 @@
 COMMENT =	library and tools to access the VSSformat
 
-VERSION =	20191221
+VERSION =	20240504
 DISTNAME =	libvshadow-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	6
 
-SHARED_LIBS +=  vshadow                       0.1 # 1.0
+SHARED_LIBS +=  vshadow                       0.2 # 1.0
 
 CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libvshadow/wiki
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 SITES =	https://github.com/libyal/libvshadow/releases/download/${VERSION}/
 
@@ -20,7 +21,7 @@ WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += bfio c fuse iconv intl m pthread util
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python3
+CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
