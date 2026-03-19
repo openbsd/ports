@@ -1,9 +1,8 @@
 COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 
-MODPY_DISTV =	20200415
+MODPY_DISTV =	20240316
 DISTNAME =	dfwinreg-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	6
 
 CATEGORIES =	security
 
@@ -21,6 +20,7 @@ RUN_DEPENDS =	devel/py-construct \
 		devel/py-dtfabric \
 		devel/py-six \
 		security/py-dfdatetime \
+		sysutils/libyal/libcreg \
 		sysutils/libregf
 TEST_DEPENDS =	devel/py-test \
 		devel/py-mock
