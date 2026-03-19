@@ -1,7 +1,7 @@
 COMMENT =	matrix homeserver written in Go
 
 MODGO_MODNAME =	github.com/element-hq/dendrite
-MODGO_VERSION =	v0.14.1
+MODGO_VERSION =	v0.15.2
 
 DISTNAME =	dendrite-${MODGO_VERSION}
 
