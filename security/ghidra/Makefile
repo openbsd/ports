@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 COMMENT =	software reverse engineering (SRE) framework
 
-VERSION = 	12.0.3
+VERSION = 	12.0.4
 GHIDRA_DATE =	20260210
 
 GH_ACCOUNT =	NationalSecurityAgency
@@ -25,8 +25,9 @@ SITES.a =		https://www.intricatesoftware.com/distfiles/
 
 # sync with java/jna and devel/protobuf when updating VERSION
 JNA_VER =		5.18.1
-PROTOBUF_VER =		6.33.5
-PROTOBUF_JAVA_VER =	4.33.5
+PROTOBUF_VER =		6.34.0
+PROTOBUF_JAVA_VER =	4.34.0
+PY_PROTOBUF_VER =	7.34.0
 
 DISTFILES.a +=		ghidra-Ghidra_${VERSION}_build_dependencies${EXTRACT_SUFX}
 
@@ -34,7 +35,6 @@ MODULES =		java lang/python
 MODJAVA_VER =		21+
 
 BUILD_DEPENDS =		archivers/unzip \
-			devel/bison \
 			devel/protobuf>=${PROTOBUF_VER} \
 			devel/protobuf-java>=${PROTOBUF_JAVA_VER} \
 			devel/py-pip \
@@ -43,7 +43,7 @@ BUILD_DEPENDS =		archivers/unzip \
 			shells/bash
 
 RUN_DEPENDS +=		devel/gdb \
-			devel/py-protobuf>=${PROTOBUF_VER} \
+			devel/py-protobuf>=${PY_PROTOBUF_VER} \
 			java/javaPathHelper \
 			shells/bash \
 			sysutils/py-psutil
@@ -64,7 +64,7 @@ GHIDRA_ARCH =		openbsd_arm_64
 NO_TEST =		Yes
 
 SUBST_VARS +=		GHIDRA_DATE GHIDRA_ARCH VERSION \
-			JNA_VER PROTOBUF_VER PROTOBUF_JAVA_VER
+			JNA_VER PROTOBUF_JAVA_VER
 
 EXTENSIONS =		BSimElasticPlugin GnuDisassembler Lisa \
 			MachineLearning SampleTablePlugin SleighDevTools \
@@ -93,10 +93,6 @@ pre-configure:
 		${WRKSRC}/Ghidra/Framework/Pty/Module.manifest \
 		${WRKSRC}/Ghidra/Framework/Pty/build.gradle \
 		${WRKSRC}/Ghidra/Debug/ProposedUtils/Module.manifest \
-		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/dbgeng/rmi/DbgEngConnectorsTest.java \
-		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/drgn/rmi/DrgnConnectorsTest.java \
-		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/gdb/rmi/GdbConnectorsTest.java \
-		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/lldb/rmi/LldbConnectorsTest.java \
 		${WRKSRC}/GhidraBuild/LaunchSupport/src/main/java/ghidra/launch/OpenBSDJavaFinder.java
 
 # build-dependencies is a maintainer target intended to be run when upgrading
@@ -118,11 +114,11 @@ build-dependencies: configure
 	    ${_PBUILD} chmod -R ug=rwX,o=rX .; \
 	    umask 007; \
 	    env HOME='/ghidra-writes_to_HOME' JAVA_HOME=${JAVA_HOME} \
-		gradle --no-daemon --info --stacktrace \
+		gradle --no-daemon --stacktrace \
 		-g ${WRKSRC}/dependencies/gradle \
 		-I ${WRKSRC}/gradle/support/fetchDependencies.gradle; \
 	    env HOME='/ghidra-writes_to_HOME' JAVA_HOME=${JAVA_HOME} \
-		gradle --no-daemon --info --stacktrace \
+		gradle --no-daemon --stacktrace \
 		-g ${WRKSRC}/dependencies/gradle \
 		prepDev; \
 	    rm -rf dependencies/downloads dependencies/PyGhidra; \
@@ -137,13 +133,8 @@ build-dependencies: configure
 	@echo ~/ghidra-Ghidra_${VERSION}_build_dependencies.tar.gz has been created
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle --no-daemon --info --stacktrace \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle --no-daemon --stacktrace \
 		-g ${WRKSRC}/dependencies/gradle --offline buildGhidra
-
-# not yet: requires networking, prepDev does not download test gradle/maven deps
-#do-test:
-#	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} gradle --no-daemon --info --stacktrace \
-#		-g ${WRKSRC}/dependencies/gradle --offline unitTestReport
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java
