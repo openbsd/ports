@@ -1,6 +1,6 @@
 COMMENT =	coturn STUN/TURN server
 
-V =		4.6.3-r0
+V =		4.9.0-r0
 GH_ACCOUNT =	coturn
 GH_PROJECT =	coturn
 GH_TAGNAME =	docker/${V}

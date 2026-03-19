@@ -1,0 +1,14 @@
+- Don't pick up coreutils
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -448,7 +448,7 @@ fi
+ ###########################
+ 
+ type ginstall 2>>/dev/null
+-ER=$?
++ER=1
+ if [ ${ER} -eq 0 ] ; then
+ 	INSTALL_PROGRAM="ginstall"
+ 	INSTALL_MAN="ginstall"

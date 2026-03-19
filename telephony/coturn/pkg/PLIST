@@ -34,10 +34,6 @@ share/doc/turnserver/README.turnadmin
 share/doc/turnserver/README.turnserver
 share/doc/turnserver/README.turnutils
 share/doc/turnserver/postinstall.txt
-share/doc/turnserver/schema.mongo.sh
-share/doc/turnserver/schema.sql
-share/doc/turnserver/schema.stats.redis
-share/doc/turnserver/schema.userdb.redis
 share/examples/turnserver/
 share/examples/turnserver/etc/
 share/examples/turnserver/etc/cacert.pem

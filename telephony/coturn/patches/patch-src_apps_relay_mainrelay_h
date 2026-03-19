@@ -1,0 +1,15 @@
+- Revert 4c674289a8a2 to use old DH code, LibreSSL doesn't have OSSL_{DECODER,PARAM}
+
+Index: src/apps/relay/mainrelay.h
+--- src/apps/relay/mainrelay.h.orig
++++ src/apps/relay/mainrelay.h
+@@ -87,9 +87,7 @@
+ #include "ns_ioalib_impl.h"
+ 
+ #include <openssl/aes.h>
+-#include <openssl/decoder.h>
+ #include <openssl/err.h>
+-#include <openssl/param_build.h>
+ #include <openssl/pem.h>
+ #include <openssl/ssl.h>
+ 

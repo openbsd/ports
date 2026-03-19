@@ -1,7 +1,7 @@
 Index: src/apps/common/apputils.c
 --- src/apps/common/apputils.c.orig
 +++ src/apps/common/apputils.c
-@@ -1179,7 +1179,7 @@ char *find_config_file(const char *config_file) {
+@@ -1190,7 +1190,7 @@ char *find_config_file(const char *config_file) {
  /////////////////// SYS SETTINGS ///////////////////////
  
  void ignore_sigpipe(void) {
