@@ -1,15 +1,16 @@
 COMMENT =	library and tools to access the ESE and EDB format
 
-VERSION = 	20191220
+VERSION = 	20240420
 DISTNAME =	libesedb-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	6
 
-SHARED_LIBS +=  esedb                       0.0 # 1.0
+SHARED_LIBS +=  esedb                       0.1 # 1.0
 
 CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libesedb/wiki
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 SITES =		https://github.com/libyal/libesedb/releases/download/${VERSION}/
 
@@ -20,7 +21,7 @@ WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += bfio c fwnt iconv intl m pthread util
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python3
+CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
