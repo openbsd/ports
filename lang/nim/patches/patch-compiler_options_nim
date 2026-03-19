@@ -1,0 +1,12 @@
+Index: compiler/options.nim
+--- compiler/options.nim.orig
++++ compiler/options.nim
+@@ -576,7 +576,7 @@ proc newConfigRef*(): ConfigRef =
+     outFile: RelativeFile"",
+     outDir: AbsoluteDir"",
+     prefixDir: AbsoluteDir"",
+-    libpath: AbsoluteDir"", nimcacheDir: AbsoluteDir"",
++    libpath: AbsoluteDir"${PREFIX}/lib/nim", nimcacheDir: AbsoluteDir"",
+     dllOverrides: newStringTable(modeCaseInsensitive),
+     moduleOverrides: newStringTable(modeStyleInsensitive),
+     cfileSpecificOptions: newStringTable(modeCaseSensitive),

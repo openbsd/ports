@@ -1,0 +1,26 @@
+Index: koch.nim
+--- koch.nim.orig
++++ koch.nim
+@@ -156,10 +156,6 @@ proc bundleC2nim(args: string) =
+              options = "--noNimblePath --path:. " & args)
+ 
+ proc bundleNimbleExe(latest: bool, args: string) =
+-  let commit = if latest: "HEAD" else: NimbleStableCommit
+-  cloneDependency(distDir, "https://github.com/nim-lang/nimble.git",
+-                  commit = commit, allowBundled = true)
+-  updateSubmodules(distDir / "nimble", allowBundled = true)
+   nimCompile("dist/nimble/src/nimble.nim",
+              options = "-d:release --noNimblePath " & args)
+   const zippyTests = "dist/nimble/vendor/zippy/tests"
+@@ -167,11 +163,6 @@ proc bundleNimbleExe(latest: bool, args: string) =
+     removeDir(zippyTests)
+ 
+ proc bundleAtlasExe(latest: bool, args: string) =
+-  let commit = if latest: "HEAD" else: AtlasStableCommit
+-  cloneDependency(distDir, "https://github.com/nim-lang/atlas.git",
+-                  commit = commit, allowBundled = true)
+-  cloneDependency(distDir / "atlas" / distDir, "https://github.com/nim-lang/sat.git",
+-                  commit = SatStableCommit, allowBundled = true)
+   # installer.ini expects it under $nim/bin
+   nimCompile("dist/atlas/src/atlas.nim",
+              options = "-d:release --noNimblePath -d:nimAtlasBootstrap " & args)

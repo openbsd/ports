@@ -6,7 +6,7 @@
 Index: config/nim.cfg
 --- config/nim.cfg.orig
 +++ config/nim.cfg
-@@ -8,7 +8,7 @@
+@@ -9,7 +9,7 @@
  # Environment variables can be accessed like so:
  #  gcc.path %= "$CC_PATH"
  
@@ -15,7 +15,7 @@ Index: config/nim.cfg
  
  # additional options always passed to the compiler:
  --parallel_build: "0" # 0 to auto-detect number of processors
-@@ -111,7 +111,7 @@ nimblepath="$home/.nimble/pkgs/"
+@@ -132,7 +132,7 @@ nimblepath="$home/.nimble/pkgs/"
  @if unix:
    @if bsd:
      # BSD got posix_spawn only recently, so we deactivate it for osproc:
@@ -24,7 +24,7 @@ Index: config/nim.cfg
    @elif haiku:
      gcc.options.linker = "-Wl,--as-needed -lnetwork"
      gcc.cpp.options.linker = "-Wl,--as-needed -lnetwork"
-@@ -201,21 +201,27 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
+@@ -223,21 +223,27 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
  
  # Options for FreeBSD, OpenBSD, NetBSD linker to add locations for searching
  # shared libraries.
@@ -58,30 +58,30 @@ Index: config/nim.cfg
  @elif netbsd:
    cincludes: "/usr/pkg/include"
    clibdir: "/usr/pkg/lib"
-@@ -235,15 +241,15 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
-   gcc.options.linker %= "-L $WIND_BASE/target/lib/usr/lib/ppc/PPC32/common -mrtp -fno-strict-aliasing -D_C99 -D_HAS_C9X -std=c99 -fasm -Wall -Wno-write-strings"
- @end
- 
--gcc.options.speed = "-O3 -fno-strict-aliasing -fno-ident"
+@@ -262,15 +268,15 @@ gcc.options.always %= "${gcc.options.always} -fno-stri
+ # -fno-math-errno is default in OSX, iOS, BSD, Musl, Libm, LLVM, Clang, ICC.
+ # See https://itnext.io/why-standard-c-math-functions-are-slow-d10d02554e33
+ # and https://gcc.gnu.org/onlinedocs/gcc-12.2.0/gcc/Optimize-Options.html#Optimize-Options
+-gcc.options.speed = "-O3 -fno-ident -fno-math-errno"
 -gcc.options.size = "-Os -fno-ident"
-+gcc.options.speed = "${CFLAGS} -fno-strict-aliasing -fno-ident"
++gcc.options.speed = "${CFLAGS} -fno-ident -fno-math-errno"
 +gcc.options.size = "${CFLAGS} -Os -fno-ident"
  @if windows:
    gcc.options.debug = "-g3 -Og -gdwarf-3"
  @else:
    gcc.options.debug = "-g3 -Og"
  @end
--gcc.cpp.options.speed = "-O3 -fno-strict-aliasing -fno-ident"
+-gcc.cpp.options.speed = "-O3 -fno-strict-aliasing -fno-ident -fno-math-errno"
 -gcc.cpp.options.size = "-Os -fno-ident"
-+gcc.cpp.options.speed = "${CFLAGS} -fno-strict-aliasing -fno-ident"
++gcc.cpp.options.speed = "${CFLAGS} -fno-strict-aliasing -fno-ident -fno-math-errno"
 +gcc.cpp.options.size = "${CFLAGS} -Os -fno-ident"
  gcc.cpp.options.debug = "-g3 -Og"
  #passl = "-pg"
  
-@@ -257,8 +263,8 @@ llvm_gcc.options.size = "-Os"
+@@ -284,8 +290,8 @@ llvm_gcc.options.size = "-Os"
  clang.options.debug = "-g"
  clang.cpp.options.debug = "-g"
- clang.options.always = "-w -ferror-limit=3"
+ clang.options.always = "-w -ferror-limit=3 -fno-strict-aliasing"
 -clang.options.speed = "-O3"
 -clang.options.size = "-Os"
 +clang.options.speed = "${CFLAGS}"

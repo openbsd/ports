@@ -7,8 +7,8 @@ Index: build.sh
    fi
    CC="sem -j $parallel --id $$ ${CC}"
  fi
--COMP_FLAGS="${CPPFLAGS:-} ${CFLAGS:-} -w -fmax-errors=3 -O3 -fno-strict-aliasing -fno-ident $extraBuildArgs"
-+COMP_FLAGS="${CPPFLAGS:-} ${CFLAGS:-} -w -fmax-errors=3 -fno-strict-aliasing -fno-ident $extraBuildArgs"
+-COMP_FLAGS="${CPPFLAGS:-} ${CFLAGS:-} -w -fmax-errors=3 -fno-strict-aliasing -O3 -fno-ident -fno-math-errno $extraBuildArgs"
++COMP_FLAGS="${CPPFLAGS:-} ${CFLAGS:-} -w -fmax-errors=3 -fno-strict-aliasing -fno-ident -fno-math-errno $extraBuildArgs"
  LINK_FLAGS="${LDFLAGS:-} "
  PS4=""
  # platform detection
