@@ -4,7 +4,7 @@ MODPY_DISTV =		0.2.3
 GH_ACCOUNT =		dotpy
 GH_PROJECT =		py-pf
 GH_TAGNAME =		${MODPY_DISTV}
-REVISION =		3
+REVISION =		4
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

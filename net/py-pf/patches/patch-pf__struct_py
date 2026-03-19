@@ -1,4 +1,5 @@
-changed in pfvar.h 1.541
+#1 changed in pfvar.h 1.541
+#2 changed in pfvar.h XXX TODO
 
 Index: pf/_struct.py
 --- pf/_struct.py.orig
@@ -12,3 +13,16 @@ Index: pf/_struct.py
                  ("percent",           c_uint)]
  
  
+@@ -526,9 +526,9 @@ class pfioc_queue(Structure):           # From /usr/in
+ 
+ 
+ class hfsc_sc(Structure):               # From /usr/include/net/hfsc.h
+-    _fields_ = [("m1",                c_uint),
+-                ("d",                 c_uint),
+-                ("m2",                c_uint)]
++    _fields_ = [("m1",                c_uint64),
++                ("m2",                c_uint64),
++                ("d",                 c_uint)]
+ 
+ 
+ class hfsc_pktcntr(Structure):          # From /usr/include/net/hfsc.h
