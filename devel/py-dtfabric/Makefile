@@ -1,21 +1,23 @@
-COMMENT=	data type fabric
+COMMENT =	data type fabric
 
+REVISION =	1
 MODPY_DISTV =	20251118
-DISTNAME=	dtfabric-${MODPY_DISTV}
+DISTNAME =	dtfabric-${MODPY_DISTV}
 
-PKGNAME=	py-${DISTNAME}
-REVISION=	0
+PKGNAME =	py-${DISTNAME}
 
-CATEGORIES=	devel
+CATEGORIES =	devel
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache v2
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =Yes
 
-MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
-MODPY_PI=	Yes
+MODULES =	lang/python
+MODPY_PYBUILD =	setuptools
+MODPY_PI =	Yes
 
-RUN_DEPENDS=	textproc/py-yaml
+RUN_DEPENDS =	textproc/py-yaml
 
 post-install:
 	rm -rf ${PREFIX}/share/doc/dtfabric/
