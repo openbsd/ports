@@ -1,0 +1,18 @@
+@bin bin/vsgptinfo
+include/libvsgpt/
+include/libvsgpt.h
+include/libvsgpt/codepage.h
+include/libvsgpt/definitions.h
+include/libvsgpt/error.h
+include/libvsgpt/extern.h
+include/libvsgpt/features.h
+include/libvsgpt/types.h
+@static-lib lib/libvsgpt.a
+lib/libvsgpt.la
+@lib lib/libvsgpt.so.${LIBvsgpt_VERSION}
+lib/pkgconfig/libvsgpt.pc
+lib/python${MODPY_VERSION}/site-packages/pyvsgpt.a
+lib/python${MODPY_VERSION}/site-packages/pyvsgpt.la
+@so lib/python${MODPY_VERSION}/site-packages/pyvsgpt.so
+@man man/man1/vsgptinfo.1
+@man man/man3/libvsgpt.3

@@ -1,0 +1,15 @@
+include/libfcrypto/
+include/libfcrypto.h
+include/libfcrypto/definitions.h
+include/libfcrypto/error.h
+include/libfcrypto/extern.h
+include/libfcrypto/features.h
+include/libfcrypto/types.h
+@static-lib lib/libfcrypto.a
+lib/libfcrypto.la
+@lib lib/libfcrypto.so.${LIBfcrypto_VERSION}
+lib/pkgconfig/libfcrypto.pc
+lib/python${MODPY_VERSION}/site-packages/pyfcrypto.a
+lib/python${MODPY_VERSION}/site-packages/pyfcrypto.la
+@so lib/python${MODPY_VERSION}/site-packages/pyfcrypto.so
+@man man/man3/libfcrypto.3

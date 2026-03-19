@@ -1,0 +1,20 @@
+@bin bin/fshfsinfo
+@bin bin/fshfsmount
+include/libfshfs/
+include/libfshfs.h
+include/libfshfs/codepage.h
+include/libfshfs/definitions.h
+include/libfshfs/error.h
+include/libfshfs/extern.h
+include/libfshfs/features.h
+include/libfshfs/types.h
+@static-lib lib/libfshfs.a
+lib/libfshfs.la
+@lib lib/libfshfs.so.${LIBfshfs_VERSION}
+lib/pkgconfig/libfshfs.pc
+lib/python${MODPY_VERSION}/site-packages/pyfshfs.a
+lib/python${MODPY_VERSION}/site-packages/pyfshfs.la
+@so lib/python${MODPY_VERSION}/site-packages/pyfshfs.so
+@man man/man1/fshfsinfo.1
+@man man/man1/fshfsmount.1
+@man man/man3/libfshfs.3

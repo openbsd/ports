@@ -1,0 +1,27 @@
+libfshfs is a library to access the Mac OS Hierarchical File System (HFS).
+
+Read-only supported HFS formats:
+
+* HFS+, Mac OS 10.3 and later (Unicode 3.2 case-insensitive)
+* HFSX, Mac OS 10.3 and later (Unicode 3.2 case-sensitive)
+
+Unsupported HFS formats:
+
+* (traditional) HFS
+* HFS+, Mac OS 8.1 through 10.2 (Unicode 2.1 case-insensitive)
+* HFSX, Mac OS 8.1 through 10.2 (Unicode 2.1 case-sensitive)
+
+Supported HFS format features:
+
+* ZLIB (DEFLATE) compression
+* LZVN compression
+* extended attributes
+
+Unsupported HFS format features:
+
+* LZFSE compression, compression methods 11 and 12
+* "uncompressed", compression methods 1, 9 and 10
+
+Planned:
+
+* Complete extents extended attribute value data (kHFSPlusAttrExtents) support

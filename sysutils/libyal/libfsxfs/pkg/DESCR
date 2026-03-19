@@ -1,0 +1,10 @@
+libfsxfs is a library to access the SGI X File System (XFS)
+
+Read-only supported XFS formats:
+
+* version 4 and 5
+* extended attributes
+
+Unsupported XFS format features:
+
+* XFS version 1, 2 or 3

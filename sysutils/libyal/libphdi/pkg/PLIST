@@ -1,0 +1,19 @@
+@bin bin/phdiinfo
+@bin bin/phdimount
+include/libphdi/
+include/libphdi.h
+include/libphdi/codepage.h
+include/libphdi/definitions.h
+include/libphdi/error.h
+include/libphdi/extern.h
+include/libphdi/features.h
+include/libphdi/types.h
+@static-lib lib/libphdi.a
+lib/libphdi.la
+@lib lib/libphdi.so.${LIBphdi_VERSION}
+lib/pkgconfig/libphdi.pc
+lib/python${MODPY_VERSION}/site-packages/pyphdi.a
+lib/python${MODPY_VERSION}/site-packages/pyphdi.la
+@so lib/python${MODPY_VERSION}/site-packages/pyphdi.so
+@man man/man1/phdiinfo.1
+@man man/man3/libphdi.3

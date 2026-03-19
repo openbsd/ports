@@ -1,0 +1,20 @@
+@bin bin/fsfatinfo
+@bin bin/fsfatmount
+include/libfsfat/
+include/libfsfat.h
+include/libfsfat/codepage.h
+include/libfsfat/definitions.h
+include/libfsfat/error.h
+include/libfsfat/extern.h
+include/libfsfat/features.h
+include/libfsfat/types.h
+@static-lib lib/libfsfat.a
+lib/libfsfat.la
+@lib lib/libfsfat.so.${LIBfsfat_VERSION}
+lib/pkgconfig/libfsfat.pc
+lib/python${MODPY_VERSION}/site-packages/pyfsfat.a
+lib/python${MODPY_VERSION}/site-packages/pyfsfat.la
+@so lib/python${MODPY_VERSION}/site-packages/pyfsfat.so
+@man man/man1/fsfatinfo.1
+@man man/man1/fsfatmount.1
+@man man/man3/libfsfat.3

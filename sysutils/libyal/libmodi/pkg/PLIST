@@ -1,0 +1,19 @@
+@bin bin/modiinfo
+@bin bin/modimount
+include/libmodi/
+include/libmodi.h
+include/libmodi/codepage.h
+include/libmodi/definitions.h
+include/libmodi/error.h
+include/libmodi/extern.h
+include/libmodi/features.h
+include/libmodi/types.h
+@static-lib lib/libmodi.a
+lib/libmodi.la
+@lib lib/libmodi.so.${LIBmodi_VERSION}
+lib/pkgconfig/libmodi.pc
+lib/python${MODPY_VERSION}/site-packages/pymodi.a
+lib/python${MODPY_VERSION}/site-packages/pymodi.la
+@so lib/python${MODPY_VERSION}/site-packages/pymodi.so
+@man man/man1/modiinfo.1
+@man man/man3/libmodi.3

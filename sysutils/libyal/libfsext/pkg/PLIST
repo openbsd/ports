@@ -1,0 +1,20 @@
+@bin bin/fsextinfo
+@bin bin/fsextmount
+include/libfsext/
+include/libfsext.h
+include/libfsext/codepage.h
+include/libfsext/definitions.h
+include/libfsext/error.h
+include/libfsext/extern.h
+include/libfsext/features.h
+include/libfsext/types.h
+@static-lib lib/libfsext.a
+lib/libfsext.la
+@lib lib/libfsext.so.${LIBfsext_VERSION}
+lib/pkgconfig/libfsext.pc
+lib/python${MODPY_VERSION}/site-packages/pyfsext.a
+lib/python${MODPY_VERSION}/site-packages/pyfsext.la
+@so lib/python${MODPY_VERSION}/site-packages/pyfsext.so
+@man man/man1/fsextinfo.1
+@man man/man1/fsextmount.1
+@man man/man3/libfsext.3

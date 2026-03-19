@@ -1,0 +1,15 @@
+include/libcaes/
+include/libcaes.h
+include/libcaes/definitions.h
+include/libcaes/error.h
+include/libcaes/extern.h
+include/libcaes/features.h
+include/libcaes/types.h
+@static-lib lib/libcaes.a
+lib/libcaes.la
+@lib lib/libcaes.so.${LIBcaes_VERSION}
+lib/pkgconfig/libcaes.pc
+lib/python${MODPY_VERSION}/site-packages/pycaes.a
+lib/python${MODPY_VERSION}/site-packages/pycaes.la
+@so lib/python${MODPY_VERSION}/site-packages/pycaes.so
+@man man/man3/libcaes.3

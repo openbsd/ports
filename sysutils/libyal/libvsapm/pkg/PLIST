@@ -1,0 +1,18 @@
+@bin bin/vsapminfo
+include/libvsapm/
+include/libvsapm.h
+include/libvsapm/codepage.h
+include/libvsapm/definitions.h
+include/libvsapm/error.h
+include/libvsapm/extern.h
+include/libvsapm/features.h
+include/libvsapm/types.h
+@static-lib lib/libvsapm.a
+lib/libvsapm.la
+@lib lib/libvsapm.so.${LIBvsapm_VERSION}
+lib/pkgconfig/libvsapm.pc
+lib/python${MODPY_VERSION}/site-packages/pyvsapm.a
+lib/python${MODPY_VERSION}/site-packages/pyvsapm.la
+@so lib/python${MODPY_VERSION}/site-packages/pyvsapm.so
+@man man/man1/vsapminfo.1
+@man man/man3/libvsapm.3

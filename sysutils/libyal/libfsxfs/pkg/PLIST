@@ -1,0 +1,20 @@
+@bin bin/fsxfsinfo
+@bin bin/fsxfsmount
+include/libfsxfs/
+include/libfsxfs.h
+include/libfsxfs/codepage.h
+include/libfsxfs/definitions.h
+include/libfsxfs/error.h
+include/libfsxfs/extern.h
+include/libfsxfs/features.h
+include/libfsxfs/types.h
+@static-lib lib/libfsxfs.a
+lib/libfsxfs.la
+@lib lib/libfsxfs.so.${LIBfsxfs_VERSION}
+lib/pkgconfig/libfsxfs.pc
+lib/python${MODPY_VERSION}/site-packages/pyfsxfs.a
+lib/python${MODPY_VERSION}/site-packages/pyfsxfs.la
+@so lib/python${MODPY_VERSION}/site-packages/pyfsxfs.so
+@man man/man1/fsxfsinfo.1
+@man man/man1/fsxfsmount.1
+@man man/man3/libfsxfs.3

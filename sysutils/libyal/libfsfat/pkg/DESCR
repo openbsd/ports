@@ -1,0 +1,5 @@
+libfsfat is a library to access the File Allocation Table (FAT) file
+system format.
+
+Note that this project currently only focuses on the analysis of the
+format.
