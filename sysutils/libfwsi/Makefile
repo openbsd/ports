@@ -1,11 +1,10 @@
 COMMENT =	library to access the Windows Shell Item format
 
-VERSION =	20191221
+VERSION =	20240423
 DISTNAME =	libfwsi-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	7
 
-SHARED_LIBS +=  fwsi                       0.0 # 1.0
+SHARED_LIBS +=  fwsi                       0.1 # 1.0
 
 CATEGORIES =	sysutils security
 
@@ -13,13 +12,15 @@ HOMEPAGE =	https://github.com/libyal/libfwsi/wiki
 
 SITES =		https://github.com/libyal/libfwsi/releases/download/${VERSION}/
 
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
+
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += iconv intl m pthread util ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python3
+CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
