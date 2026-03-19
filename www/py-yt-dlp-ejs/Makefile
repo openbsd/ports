@@ -1,6 +1,6 @@
 COMMENT =	external JavaScript for yt-dlp supporting many runtimes
 
-MODPY_DISTV =	0.7.0
+MODPY_DISTV =	0.8.0
 DISTNAME =	yt_dlp_ejs-${MODPY_DISTV}-py3-none-any
 EXTRACT_SUFX =	.whl
 EXTRACT_ONLY =
