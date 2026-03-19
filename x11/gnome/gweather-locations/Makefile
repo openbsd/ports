@@ -1,7 +1,7 @@
 COMMENT=		location and timezone database
 
 GNOME_PROJECT=		gweather-locations
-GNOME_VERSION=		2026.1
+GNOME_VERSION=		2026.2
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
