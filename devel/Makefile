@@ -1370,6 +1370,7 @@
      SUBDIR += py-aioresponses
      SUBDIR += py-aiosignal
      SUBDIR += py-aiostream
+     SUBDIR += py-acstore
      SUBDIR += py-algorithm-munkres
      SUBDIR += py-altgraph
      SUBDIR += py-ana
@@ -1504,6 +1505,7 @@
      SUBDIR += py-flit
      SUBDIR += py-flit_core
      SUBDIR += py-flit_scm
+     SUBDIR += py-flor
      SUBDIR += py-forbiddenfruit
      SUBDIR += py-freezegun
      SUBDIR += py-frozendict
