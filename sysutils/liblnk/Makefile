@@ -1,11 +1,10 @@
 COMMENT =	library and tools to access the Windows Shortcut File
 
-VERSION =	20191221
+VERSION =	20240423
 DISTNAME =	liblnk-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	6
 
-SHARED_LIBS +=  lnk                       0.1 # 1.0
+SHARED_LIBS +=  lnk                       0.2 # 1.0
 
 CATEGORIES =	sysutils security
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += bfio c fwsi iconv intl m pthread util ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-python3
+CONFIGURE_ARGS +=	--enable-python
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
