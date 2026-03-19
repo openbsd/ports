@@ -5,7 +5,10 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/MET
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/licenses/ACKNOWLEDGEMENTS
+lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/licenses/README
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}/
@@ -21,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}definitions.
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}delphi_date_time.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}delphi_date_time.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}dotnet_datetime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}dotnet_datetime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}factory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}factory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}fake_time.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -29,6 +34,8 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}fat_date_tim
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}fat_date_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}filetime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}filetime.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}golang_time.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}golang_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}hfs_time.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}hfs_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,6 +52,8 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}rfc2579_date
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}rfc2579_date_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}semantic_time.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}semantic_time.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}serializer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}serializer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}systemtime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}systemtime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}time_elements.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,10 +67,12 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/cocoa_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/decorators.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/definitions.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/delphi_date_time.py
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/dotnet_datetime.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/factory.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/fake_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/fat_date_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/filetime.py
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/golang_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/hfs_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/interface.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/java_time.py
@@ -70,6 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/posix_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/precisions.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/rfc2579_date_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/semantic_time.py
+lib/python${MODPY_VERSION}/site-packages/dfdatetime/serializer.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/systemtime.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/time_elements.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/uuid_time.py
