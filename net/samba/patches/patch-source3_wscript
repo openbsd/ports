@@ -21,12 +21,3 @@ Index: source3/wscript
          conf.ADD_LDFLAGS("-Wl,--export-dynamic", testflags=True)
  
      # We crash without vfs_default
-@@ -1774,7 +1775,7 @@ int main(void) {
-         else:
-             conf.fatal('AFS headers not available, but --with-fake-kaserver was specified')
- 
--    if conf.CHECK_CFG(package='glib-2.0',
-+    if Options.options.with_glib and conf.CHECK_CFG(package='glib-2.0',
-                       args='--cflags --libs',
-                       msg='Checking for glib-2.0',
-                       uselib_store="GLIB-2.0"):

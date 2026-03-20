@@ -1,0 +1,17 @@
+Map missing ENODATA to ENOATTR to support OpenBSD's extended attribute error
+reporting.
+
+Index: source3/modules/vfs_streams_xattr.c
+--- source3/modules/vfs_streams_xattr.c.orig
++++ source3/modules/vfs_streams_xattr.c
+@@ -31,6 +31,10 @@
+ #undef DBGC_CLASS
+ #define DBGC_CLASS DBGC_VFS
+ 
++#ifndef ENODATA
++#define ENODATA ENOATTR
++#endif
++
+ struct streams_xattr_config {
+ 	const char *prefix;
+ 	size_t prefix_len;

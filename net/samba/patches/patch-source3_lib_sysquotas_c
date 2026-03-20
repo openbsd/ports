@@ -3,7 +3,7 @@ Avoid printf("%s", NULL);
 Index: source3/lib/sysquotas.c
 --- source3/lib/sysquotas.c.orig
 +++ source3/lib/sysquotas.c
-@@ -517,10 +517,10 @@ int sys_get_quota(const char *path, enum SMB_QUOTA_TYP
+@@ -452,10 +452,10 @@ int sys_get_quota(const char *path, enum SMB_QUOTA_TYP
  			ret = sys_quota_backends[i].get_quota(mntpath, bdev, qtype, id, dp);
  			if (ret!=0) {
  				DEBUG(3,("sys_get_%s_quota() failed for mntpath[%s] bdev[%s] qtype[%d] id[%d]: %s.\n",
@@ -15,8 +15,8 @@ Index: source3/lib/sysquotas.c
 +					fs,mntpath,bdev?bdev:"(NULL)",qtype,(qtype==SMB_GROUP_QUOTA_TYPE?id.gid:id.uid)));
  			}
  			ready = True;
- 			break;	
-@@ -532,10 +532,10 @@ int sys_get_quota(const char *path, enum SMB_QUOTA_TYP
+ 			break;
+@@ -467,10 +467,10 @@ int sys_get_quota(const char *path, enum SMB_QUOTA_TYP
  		ret=sys_get_vfs_quota(mntpath, bdev, qtype, id, dp);
  		if (ret!=0) {
  			DEBUG(3,("sys_get_%s_quota() failed for mntpath[%s] bdev[%s] qtype[%d] id[%d]: %s\n",
