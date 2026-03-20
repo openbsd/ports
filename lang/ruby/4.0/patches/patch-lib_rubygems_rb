@@ -9,7 +9,7 @@ The ENV usage is to skip this logic during tests, to avoid test failures.
 Index: lib/rubygems.rb
 --- lib/rubygems.rb.orig
 +++ lib/rubygems.rb
-@@ -1244,6 +1244,13 @@ An Array (#{env.inspect}) was passed in from #{caller[
+@@ -1245,6 +1245,13 @@ An Array (#{env.inspect}) was passed in from #{caller[
  
      attr_accessor :disable_system_update_message
  
