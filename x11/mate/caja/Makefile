@@ -11,6 +11,10 @@ CATEGORIES=		x11
 # LGPLv2/GFDLv1.1/GPLv2
 PERMIT_PACKAGE=	Yes
 
+# libnotify base-gcc chokes on __attribute__((__deprecated__)) annotating enum
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
