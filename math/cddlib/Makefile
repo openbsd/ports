@@ -14,6 +14,10 @@ HOMEPAGE =	https://www.inf.ethz.ch/personal/fukudak/cdd_home/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
+# splitmix64.h:14: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'uint64_t'
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += c gmp
 
 LIB_DEPENDS =		devel/gmp
