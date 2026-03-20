@@ -1,7 +1,7 @@
 Index: ext/libyuv/include/libyuv/cpu_id.h
 --- ext/libyuv/include/libyuv/cpu_id.h.orig
 +++ ext/libyuv/include/libyuv/cpu_id.h
-@@ -95,7 +95,7 @@ int MipsCpuCaps(const char* cpuinfo_name);
+@@ -90,7 +90,7 @@ int ArmCpuCaps(const char* cpuinfo_name);
  LIBYUV_API
  int RiscvCpuCaps(const char* cpuinfo_name);
  
