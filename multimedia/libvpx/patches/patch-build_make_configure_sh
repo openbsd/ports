@@ -30,7 +30,7 @@ Index: build/make/configure.sh
            setup_gnu_toolchain
            arch_int=${tgt_isa##armv}
            arch_int=${arch_int%%te}
-@@ -1297,7 +1297,7 @@ EOF
+@@ -1298,7 +1298,7 @@ EOF
  
        ;;
      mips*)
@@ -39,7 +39,7 @@ Index: build/make/configure.sh
        setup_gnu_toolchain
        tune_cflags="-mtune="
        if enabled dspr2; then
-@@ -1348,7 +1348,7 @@ EOF
+@@ -1349,7 +1349,7 @@ EOF
        check_add_asflags -KPIC
        ;;
      ppc64le*)
@@ -48,7 +48,7 @@ Index: build/make/configure.sh
        setup_gnu_toolchain
        # Do not enable vsx by default.
        # https://bugs.chromium.org/p/webm/issues/detail?id=1522
-@@ -1405,7 +1405,7 @@ EOF
+@@ -1410,7 +1410,7 @@ EOF
            esac
            ;;
          gcc*)
@@ -57,7 +57,7 @@ Index: build/make/configure.sh
            tune_cflags="-march="
            setup_gnu_toolchain
            #for 32 bit x86 builds, -O3 did not turn on this flag
-@@ -1536,7 +1536,7 @@ EOF
+@@ -1538,7 +1538,7 @@ EOF
        esac
        ;;
      loongarch*)
@@ -66,7 +66,7 @@ Index: build/make/configure.sh
        setup_gnu_toolchain
  
        enabled lsx && check_inline_asm lsx '"vadd.b $vr0, $vr1, $vr1"'
-@@ -1545,7 +1545,7 @@ EOF
+@@ -1547,7 +1547,7 @@ EOF
        enabled lasx && soft_enable runtime_cpu_detect
        ;;
      *-gcc|generic-gnu)
@@ -75,7 +75,7 @@ Index: build/make/configure.sh
        enable_feature gcc
        setup_gnu_toolchain
        ;;
-@@ -1591,8 +1591,6 @@ EOF
+@@ -1593,8 +1593,6 @@ EOF
    if enabled optimizations; then
      if enabled rvct; then
        enabled small && check_add_cflags -Ospace || check_add_cflags -Otime

@@ -2,11 +2,11 @@ COMMENT=	Google VP8/VP9 video codec
 
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libvpx
-GH_TAGNAME=	v1.15.2
+GH_TAGNAME=	v1.16.0
 EPOCH=		0
 CATEGORIES=	multimedia
 
-SHARED_LIBS=	vpx	19.0
+SHARED_LIBS=	vpx	20.0
 
 HOMEPAGE=	https://www.webmproject.org/
 
@@ -56,6 +56,8 @@ post-install:
 	@chmod ${SHAREMODE} ${PREFIX}/lib/pkgconfig/vpx.pc
 
 pre-test:
+	@[[ $$(ulimit -d) < $$((22*1024*1024)) ]] && \
+		echo "\n>>> Some tests need raised datasize limits, reportedly 22GB+"
 	@if ! [ -e ${WRKBUILD}/screendata.y4m ]; then \
 		echo "\n>>> Tests require additional downloads. Please run:"; \
 		echo ">>> ${GMAKE} -C ${WRKBUILD} testdata\n"; \
