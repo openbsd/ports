@@ -13,6 +13,10 @@ CATEGORIES =		geo
 # BSD-3-Clause
 PERMIT_PACKAGE =	Yes
 
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += aec blosc bz2 c crypto curl execinfo expat gsl gslcblas
 WANTLIB += hdf5 hdf5_hl iconv intl m netcdf nghttp2 nghttp3 ngtcp2
 WANTLIB += ngtcp2_crypto_libressl pthread ssl sz udunits2 xml2
