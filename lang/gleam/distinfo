@@ -426,7 +426,7 @@ SHA256 (cargo/zerotrie-0.2.3.tar.gz) = KlnBelVi1QfktUlg6FaevuM77okMcKo/57l+han9e
 SHA256 (cargo/zerovec-0.11.5.tar.gz) = bChxkpSClHf1Jb4BhtE++po8YC9+wgLKnjU9MQ+5oAI=
 SHA256 (cargo/zerovec-derive-0.11.2.tar.gz) = 6tzjlTnKXLOYVZAQJnHyVn5ln8qWZlga00EdWSB5UfM=
 SHA256 (cargo/zmij-1.0.19.tar.gz) = P/BfjKqQOIlGN1ca5rnilGbB9Pgp0mybKPhpopy+NEU=
-SHA256 (gleam-1.15.1.tar.gz) = BYO+FU4Jf6z/SucYsia18RKg0QUmG6uW7pWQIDja4Wo=
+SHA256 (gleam-1.15.2.tar.gz) = b+NlpSZg2FSnPVbgdS/J/0f9qhmw3cntvKofuTVoXso=
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
 SIZE (cargo/age-0.11.2.tar.gz) = 1533099
@@ -855,4 +855,4 @@ SIZE (cargo/zerotrie-0.2.3.tar.gz) = 69547
 SIZE (cargo/zerovec-0.11.5.tar.gz) = 119620
 SIZE (cargo/zerovec-derive-0.11.2.tar.gz) = 21421
 SIZE (cargo/zmij-1.0.19.tar.gz) = 23948
-SIZE (gleam-1.15.1.tar.gz) = 2183553
+SIZE (gleam-1.15.2.tar.gz) = 2183673
