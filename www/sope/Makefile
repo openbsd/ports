@@ -1,9 +1,8 @@
-REVISION =		0
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		5.11.2
+VERSION =		5.12.4
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
@@ -20,7 +19,6 @@ SHARED_LIBS+=   ${_lib} ${SO_MAJOR}.${SO_MINOR}
 CATEGORIES=	www
 HOMEPAGE=	https://sogo.nu
 SITES=		https://packages.sogo.nu/sources/
-MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2 or later
 PERMIT_PACKAGE=	Yes
@@ -32,7 +30,7 @@ MODGNUSTEP_NEEDS_GUI=	No
 
 BUILD_DEPENDS =		shells/bash
 
-WANTLIB-main = 		c crypto ssl iconv lber ldap lzma xml2 z \
+WANTLIB-main = 		c crypto ssl iconv lber ldap xml2 z \
 			${COMPILER_LIBCXX} ${MODGNUSTEP_WANTLIB}
 WANTLIB-mysql = 	GDLAccess mariadb \
 			${COMPILER_LIBCXX} ${MODGNUSTEP_WANTLIB}
