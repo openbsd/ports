@@ -7,6 +7,9 @@ MATE_PROJECT=		mate-screensaver
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
+# C11 / C++
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xss Xxf86vm atk-1.0 atk-bridge-2.0
 WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 dconf drm epoxy
