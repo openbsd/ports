@@ -1,19 +1,17 @@
 COMMENT = 	web based groupware server
 
-REVISION =	0
-VERSION =	5.11.2
+VERSION =	5.12.4
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
-SHARED_LIBS +=	GDLContentStore 3.0
+SHARED_LIBS +=	GDLContentStore 3.1
 SHARED_LIBS +=	NGCards		3.1
-SHARED_LIBS +=	SOGo		5.2
+SHARED_LIBS +=	SOGo		5.3
 SHARED_LIBS +=	SOGoUI		2.2
 
 CATEGORIES =	www
 HOMEPAGE =	https://sogo.nu/
 SITES =		https://packages.sogo.nu/sources/
-MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2/GPLv2
 PERMIT_PACKAGE =		Yes
