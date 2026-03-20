@@ -14,6 +14,10 @@ MAINTAINER=		Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
+# libnotify base-gcc chokes on __attribute__((__deprecated__)) annotating enum
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
 WANTLIB += atk-bridge-2.0 atspi brotlicommon brotlidec c cairo
