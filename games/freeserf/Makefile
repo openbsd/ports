@@ -5,9 +5,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	freeserf
 GH_PROJECT =	freeserf
 GH_TAGNAME =	v0.3
-REVISION =	0
-
-HOMEPAGE =	http://jonls.dk/freeserf/
+REVISION =	1
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
