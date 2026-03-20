@@ -8,6 +8,10 @@ CATEGORIES =	wayland
 # MIT
 PERMIT_PACKAGE = Yes
 
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =	devel/meson
 
 CONFIGURE_ARGS =	-Dwerror=false
