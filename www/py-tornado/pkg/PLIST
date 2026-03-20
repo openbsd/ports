@@ -8,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tornado/__init__.py
+lib/python${MODPY_VERSION}/site-packages/tornado/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -109,6 +110,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/queues.py
 lib/python${MODPY_VERSION}/site-packages/tornado/routing.py
 lib/python${MODPY_VERSION}/site-packages/tornado/simple_httpclient.py
 @so lib/python${MODPY_VERSION}/site-packages/tornado/speedups${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/tornado/speedups.pyi
 lib/python${MODPY_VERSION}/site-packages/tornado/tcpclient.py
 lib/python${MODPY_VERSION}/site-packages/tornado/tcpserver.py
 lib/python${MODPY_VERSION}/site-packages/tornado/template.py
