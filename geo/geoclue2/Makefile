@@ -15,6 +15,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
+# libnotify base-gcc chokes on __attribute__((__deprecated__)) annotating enum
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 SITES=			https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/${VERSION}/
 EXTRACT_SUFX=		.tar.bz2
 
