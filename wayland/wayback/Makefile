@@ -11,6 +11,10 @@ HOMEPAGE =	https://gitlab.freedesktop.org/wayback
 # MIT
 PERMIT_PACKAGE = Yes
 
+# gnu23 (GNU C23)
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =	devel/meson wayland/wlroots
 
 WANTLIB +=	wayland-client wayland-server xkbcommon c
