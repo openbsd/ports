@@ -14,6 +14,9 @@ HOMEPAGE =	https://git.sr.ht/~thestr4ng3r/chiaki
 # AGPLv3 with OpenSSL exception
 PERMIT_PACKAGE =	Yes
 
+# C++
+COMPILER =	base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia
 WANTLIB += Qt5Network Qt5OpenGL Qt5Svg Qt5Widgets SDL2 avcodec avutil c crypto
 WANTLIB += m opus
