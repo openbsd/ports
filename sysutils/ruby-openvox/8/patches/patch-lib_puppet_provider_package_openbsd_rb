@@ -1,4 +1,4 @@
-https://github.com/puppetlabs/puppet/pull/9301
+merged after 8.25.0 https://github.com/OpenVoxProject/openvox/pull/316
 
 - get rid of versionable (no ensure => "version X.X.X")
 - get rid of upgradeable (ensure => latest)

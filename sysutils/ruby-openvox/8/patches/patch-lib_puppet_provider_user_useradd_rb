@@ -1,4 +1,5 @@
 Use usermod(8) -p to update to fix changing a user's password.
+merged after 8.25.0 https://github.com/OpenVoxProject/openvox/pull/294
 
 Index: lib/puppet/provider/user/useradd.rb
 --- lib/puppet/provider/user/useradd.rb.orig

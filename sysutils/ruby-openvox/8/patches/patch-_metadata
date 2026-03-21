@@ -3,8 +3,8 @@ Relax version requirement for the puppet-resource_api gem to use newer versions.
 Index: .metadata
 --- .metadata.orig
 +++ .metadata
-@@ -171,14 +171,14 @@ dependencies:
-   name: puppet-resource_api
+@@ -177,14 +177,14 @@ dependencies:
+   name: racc
    requirement: !ruby/object:Gem::Requirement
      requirements:
 -    - - "~>"

@@ -17,8 +17,7 @@ pre-configure:
 		${WRKSRC}/lib/puppet/provider/package/pip.rb \
 		${WRKSRC}/lib/puppet/provider/package/pip3.rb \
 		${WRKSRC}/lib/puppet/reference/configuration.rb \
-		${WRKSRC}/lib/puppet/util/run_mode.rb \
-		${WRKSRC}/lib/puppet/defaults.rb
+		${WRKSRC}/lib/puppet/util/run_mode.rb
 
 post-install:
 	 cd ${PREFIX} && rm -rf man/ && mv ${GEM_LIB}/gems/${DISTNAME}/man .
