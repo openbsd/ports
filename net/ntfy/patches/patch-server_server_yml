@@ -41,5 +41,5 @@ Index: server/server.yml
 -# - web-push-file is a database file to keep track of browser subscription endpoints, e.g. /var/cache/ntfy/webpush.db
 +# - web-push-file is a database file to keep track of browser subscription endpoints, e.g. /var/ntfy/webpush.db
  # - web-push-email-address is the admin email address send to the push provider, e.g. sysadmin@example.com
- # - web-push-startup-queries is an optional list of queries to run on startup`
- # - web-push-expiry-warning-duration defines the duration after which unused subscriptions are sent a warning (default is 55d`)
+ # - web-push-startup-queries is an optional list of queries to run on startup
+ # - web-push-expiry-warning-duration defines the duration after which unused subscriptions are sent a warning (default is 55d)
