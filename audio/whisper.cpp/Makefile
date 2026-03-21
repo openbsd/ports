@@ -2,7 +2,7 @@ COMMENT=	automatic speech recognition (openai whisper model)
 
 GH_ACCOUNT=	ggml-org
 GH_PROJECT=	whisper.cpp
-GH_TAGNAME=	v1.8.3
+GH_TAGNAME=	v1.8.4
 
 SITES.ggml=	https://huggingface.co/ggerganov/whisper.cpp/resolve/main/
 DISTFILES.ggml=	ggml-base.en.bin
@@ -47,6 +47,7 @@ post-install:
 	    ${PREFIX}/sbin/
 
 pre-test:
+	find ${WRKSRC}/tests -size 0 -delete
 	cp ${FULLDISTDIR}/ggml-base.en.bin ${WRKSRC}/models
 	# These tests require network access to download samples.
 	cd ${WRKSRC}/tests; bash ./run-tests.sh base.en ${MAKE_JOBS}
