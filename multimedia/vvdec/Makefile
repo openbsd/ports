@@ -24,4 +24,9 @@ COMPILER=	base-clang ports-gcc
 CONFIGURE_ARGS+=-DBUILD_SHARED_LIBS=ON \
 		-DVVDEC_ENABLE_WERROR=FALSE
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS+=-DVVDEC_ENABLE_LINK_TIME_OPT=OFF
+.endif
+
 .include <bsd.port.mk>
