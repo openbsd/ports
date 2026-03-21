@@ -12,6 +12,10 @@ HOMEPAGE=	http://www.bsdua.org/tray-app.html
 # Public domain
 PERMIT_PACKAGE=	Yes
 
+# libnotify base-gcc chokes on __attribute__((__deprecated__)) annotating enum
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 iconv
