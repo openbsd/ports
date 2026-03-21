@@ -10,6 +10,10 @@ SITES =		https://github.com/cage-kiosk/cage/releases/download/v${V}/
 # MIT
 PERMIT_PACKAGE =	yes
 
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =	devel/meson wayland/wlroots
 
 WANTLIB =	c xkbcommon wayland-server
