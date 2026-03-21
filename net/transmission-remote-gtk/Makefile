@@ -1,12 +1,12 @@
 COMMENT =	GTK client for remote Transmission daemon
 
-V =		1.6.0
+V =		1.7.1
 DISTNAME =	transmission-remote-gtk-${V}
 CATEGORIES =	net
 
 HOMEPAGE =	https://github.com/transmission-remote-gtk/transmission-remote-gtk
 
-MAINTAINER =	Lucas <lucas@sexy.is>
+MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -20,7 +20,8 @@ EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/meson
 
-BUILD_DEPENDS =	devel/gettext,-tools
+BUILD_DEPENDS =	devel/gettext,-tools \
+		textproc/py-docutils
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 LIB_DEPENDS =	devel/gettext,-runtime \
@@ -29,7 +30,6 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/libsoup3 \
 		x11/gtk+3
 
-CONFIGURE_ARGS +=	-Dgeoip=disabled \
-			-Dlibappindicator=disabled
+CONFIGURE_ARGS +=	-Dlibappindicator=disabled
 
 .include <bsd.port.mk>
