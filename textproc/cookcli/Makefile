@@ -14,6 +14,10 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # MIT
 PERMIT_PACKAGE =	Yes
 
+# C1x
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += ${MODCARGO_WANTLIB} crypto m sqlite3 ssl
 
 DISTFILES.css =		cookcli-$V-output.css
