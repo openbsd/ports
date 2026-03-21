@@ -11,6 +11,10 @@ HOMEPAGE =	https://labwc.github.io/
 # GPLv2
 PERMIT_PACKAGE = Yes
 
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =	devel/meson wayland/wlroots
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
