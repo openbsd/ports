@@ -10,6 +10,10 @@ HOMEPAGE =	https://github.com/bvschaik/julius
 # AGPLv3 only
 PERMIT_PACKAGE =	Yes
 
+# base-gcc doesn't have -Wpedantic
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += SDL2 SDL2_mixer c m png pthread z
 
 SITES =		https://github.com/bvschaik/julius/releases/download/v${V}/
