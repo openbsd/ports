@@ -8,4 +8,4 @@ then
 	print 'could not find directory ~/.local/share/fs2open'
 	exit 1
 fi
-exec ${TRUEPREFIX}/share/fs2open/fs2open $*
+exec ${TRUEPREFIX}/share/fs2open/fs2open $@

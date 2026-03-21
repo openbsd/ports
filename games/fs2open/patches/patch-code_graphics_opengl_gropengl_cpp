@@ -10,7 +10,7 @@ Index: code/graphics/opengl/gropengl.cpp
  #include<glad/glad_glx.h>
  //Required because X defines none and always, which is used later
  #undef None
-@@ -1268,7 +1268,7 @@ bool gr_opengl_init(std::unique_ptr<os::GraphicsOperat
+@@ -1306,7 +1306,7 @@ bool gr_opengl_init(std::unique_ptr<os::GraphicsOperat
  		Error(LOCATION, "Failed to load OpenGL!");
  	}
  

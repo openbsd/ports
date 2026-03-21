@@ -1,0 +1,12 @@
+Index: lib/libpcpnatpmp/src/net/gateway.c
+--- lib/libpcpnatpmp/src/net/gateway.c.orig
++++ lib/libpcpnatpmp/src/net/gateway.c
+@@ -65,7 +65,7 @@
+ #include "pcp_win_defines.h"
+ #endif
+ 
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <net/if_dl.h> //struct sockaddr_dl
+ 
+ #include <sys/sysctl.h>

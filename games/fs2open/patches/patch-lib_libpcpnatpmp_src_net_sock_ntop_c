@@ -1,0 +1,21 @@
+Index: lib/libpcpnatpmp/src/net/sock_ntop.c
+--- lib/libpcpnatpmp/src/net/sock_ntop.c.orig
++++ lib/libpcpnatpmp/src/net/sock_ntop.c
+@@ -168,7 +168,7 @@ int sock_pton(const char *cp, struct sockaddr *sa) {
+         memset(&hints, 0, sizeof hints);
+         hints.ai_family = AF_UNSPEC;
+         hints.ai_socktype = SOCK_DGRAM;
+-        hints.ai_flags = AI_V4MAPPED;
++        hints.ai_flags = AI_ADDRCONFIG;
+ 
+         if ((rv = getaddrinfo(host_name, port, &hints, &servinfo)) != 0) {
+             fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
+@@ -298,7 +298,7 @@ int sock_pton_with_prefix(const char *cp, struct socka
+         memset(&hints, 0, sizeof hints);
+         hints.ai_family = AF_UNSPEC;
+         hints.ai_socktype = SOCK_DGRAM;
+-        hints.ai_flags = AI_V4MAPPED;
++        hints.ai_flags = AI_ADDRCONFIG;
+ 
+         if ((rv = getaddrinfo(host_name, port, &hints, &servinfo)) != 0) {
+             fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
