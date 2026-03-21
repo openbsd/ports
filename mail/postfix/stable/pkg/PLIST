@@ -21,11 +21,13 @@ libexec/postfix/
 @bin libexec/postfix/lmtp
 @bin libexec/postfix/local
 @bin libexec/postfix/master
+@bin libexec/postfix/nbdb_reindexd
 @bin libexec/postfix/nqmgr
 @bin libexec/postfix/oqmgr
 @bin libexec/postfix/pickup
 @bin libexec/postfix/pipe
 libexec/postfix/post-install
+libexec/postfix/postfix-non-bdb-script
 libexec/postfix/postfix-script
 libexec/postfix/postfix-tls-script
 libexec/postfix/postfix-wrapper
@@ -51,6 +53,7 @@ libexec/postfix/postmulti-script
 @man man/man1/postcat.1
 @man man/man1/postconf.1
 @man man/man1/postdrop.1
+@man man/man1/postfix-non-bdb.1
 @man man/man1/postfix-tls.1
 @man man/man1/postfix.1
 @man man/man1/postkick.1
@@ -100,6 +103,7 @@ libexec/postfix/postmulti-script
 @man man/man8/lmtp.8
 @man man/man8/local.8
 @man man/man8/master.8
+@man man/man8/nbdb_reindexd.8
 @man man/man8/oqmgr.8
 @man man/man8/pickup.8
 @man man/man8/pipe.8
@@ -182,6 +186,7 @@ share/doc/postfix/html/MONGODB_README.html
 share/doc/postfix/html/MULTI_INSTANCE_README.html
 share/doc/postfix/html/MYSQL_README.html
 share/doc/postfix/html/NFS_README.html
+share/doc/postfix/html/NON_BERKELEYDB_README.html
 share/doc/postfix/html/OVERVIEW.html
 share/doc/postfix/html/PACKAGE_README.html
 share/doc/postfix/html/PCRE_README.html
@@ -189,6 +194,7 @@ share/doc/postfix/html/PGSQL_README.html
 share/doc/postfix/html/POSTSCREEN_3_5_README.html
 share/doc/postfix/html/POSTSCREEN_README.html
 share/doc/postfix/html/QSHAPE_README.html
+share/doc/postfix/html/REQUIRETLS_README.html
 share/doc/postfix/html/RESTRICTION_CLASS_README.html
 share/doc/postfix/html/SASL_README.html
 share/doc/postfix/html/SCHEDULER_README.html
@@ -235,6 +241,7 @@ share/doc/postfix/html/master.8.html
 share/doc/postfix/html/memcache_table.5.html
 share/doc/postfix/html/mongodb_table.5.html
 share/doc/postfix/html/mysql_table.5.html
+share/doc/postfix/html/nbdb_reindexd.8.html
 share/doc/postfix/html/newaliases.1.html
 share/doc/postfix/html/nisplus_table.5.html
 share/doc/postfix/html/oqmgr.8.html
@@ -250,6 +257,7 @@ share/doc/postfix/html/postdrop.1.html
 share/doc/postfix/html/postfix-doc.css
 share/doc/postfix/html/postfix-logo.jpg
 share/doc/postfix/html/postfix-manuals.html
+share/doc/postfix/html/postfix-non-bdb.1.html
 share/doc/postfix/html/postfix-tls.1.html
 share/doc/postfix/html/postfix-wrapper.5.html
 share/doc/postfix/html/postfix.1.html
@@ -324,6 +332,7 @@ share/doc/postfix/readme/MONGODB_README
 share/doc/postfix/readme/MULTI_INSTANCE_README
 share/doc/postfix/readme/MYSQL_README
 share/doc/postfix/readme/NFS_README
+share/doc/postfix/readme/NON_BERKELEYDB_README
 share/doc/postfix/readme/OVERVIEW
 share/doc/postfix/readme/PACKAGE_README
 share/doc/postfix/readme/PCRE_README
@@ -332,6 +341,7 @@ share/doc/postfix/readme/POSTSCREEN_3_5_README
 share/doc/postfix/readme/POSTSCREEN_README
 share/doc/postfix/readme/QSHAPE_README
 share/doc/postfix/readme/RELEASE_NOTES
+share/doc/postfix/readme/REQUIRETLS_README
 share/doc/postfix/readme/RESTRICTION_CLASS_README
 share/doc/postfix/readme/SASL_README
 share/doc/postfix/readme/SCHEDULER_README
