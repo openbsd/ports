@@ -1,6 +1,6 @@
 COMMENT =	bringing loggers and listeners together
 
-DISTNAME =	Log-Any-1.718
+DISTNAME =	Log-Any-1.719
 
 CATEGORIES =	devel
 
@@ -8,6 +8,8 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
+
+CPAN_AUTHOR =		PREACTION
 
 TEST_DEPENDS =		devel/p5-Devel-StackTrace>=2.00 \
 			devel/p5-Moose \
