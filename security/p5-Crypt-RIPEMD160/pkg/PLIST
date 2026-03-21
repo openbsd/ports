@@ -7,6 +7,5 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/RIPEMD160/
 @so ${P5ARCH}/auto/Crypt/RIPEMD160/RIPEMD160.so
-${P5ARCH}/auto/Crypt/RIPEMD160/autosplit.ix
 @man man/man3p/Crypt::RIPEMD160.3p
 @man man/man3p/Crypt::RIPEMD160::MAC.3p
