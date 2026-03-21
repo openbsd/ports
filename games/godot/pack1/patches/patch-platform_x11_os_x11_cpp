@@ -1,6 +1,8 @@
 fix libXrandr library name and load sndio
 use OpenBSD joypad class
 suspend X11 screensaver for release builds
+we don't support DRI_PRIME as of March 2026 and setting it can lead to crashes
+	in multi-GPU setups
 
 Index: platform/x11/os_x11.cpp
 --- platform/x11/os_x11.cpp.orig
@@ -25,7 +27,23 @@ Index: platform/x11/os_x11.cpp
  	if (!xrandr_handle) {
  		err = dlerror();
  		// For some arcane reason, NetBSD now ships libXrandr.so.3 while the rest of the world has libXrandr.so.2...
-@@ -664,9 +668,13 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
+@@ -336,6 +340,7 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
+ 			}
+ 		}
+ 
++		/*
+ 		if (use_prime == -1) {
+ 			print_verbose("Detecting GPUs, set DRI_PRIME in the environment to override GPU detection logic.");
+ 			use_prime = detect_prime();
+@@ -346,6 +351,7 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
+ 			print_line("Note: Set DRI_PRIME=0 in the environment to disable Godot from using the discrete GPU.");
+ 			setenv("DRI_PRIME", "1", 1);
+ 		}
++		*/
+ 	}
+ 
+ 	ContextGL_X11::ContextType opengl_api_type = ContextGL_X11::GLES_3_0_COMPATIBLE;
+@@ -664,9 +670,13 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
  
  	window_has_focus = true; // Set focus to true at init
  #ifdef JOYDEV_ENABLED
@@ -40,7 +58,7 @@ Index: platform/x11/os_x11.cpp
  	power_manager = memnew(PowerX11);
  
  	if (p_desired.layered) {
-@@ -4474,6 +4482,11 @@ void OS_X11::update_real_mouse_position() {
+@@ -4474,6 +4484,11 @@ void OS_X11::update_real_mouse_position() {
  }
  
  OS_X11::OS_X11() {

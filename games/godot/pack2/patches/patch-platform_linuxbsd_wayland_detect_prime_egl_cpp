@@ -1,0 +1,15 @@
+we don't support DRI_PRIME as of March 2026 and setting it can lead to crashes
+	in multi-GPU setups
+
+Index: platform/linuxbsd/wayland/detect_prime_egl.cpp
+--- platform/linuxbsd/wayland/detect_prime_egl.cpp.orig
++++ platform/linuxbsd/wayland/detect_prime_egl.cpp
+@@ -168,7 +168,7 @@ int DetectPrimeEGL::detect_prime(EGLenum p_platform_en
+ 
+ 			close(fdset[0]);
+ 
+-			setenv("DRI_PRIME", itos(i).utf8().ptr(), 1);
++			//setenv("DRI_PRIME", itos(i).utf8().ptr(), 1);
+ 
+ 			create_context(p_platform_enum);
+ 

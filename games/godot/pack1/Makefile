@@ -6,6 +6,7 @@ COMMENT-sharp=	.NET libs for mono/C# module of Godot
 VERSION =	3.6.2
 PKGNAME =	godot3-${VERSION}
 SHARPFILES_V =	3.5.2
+REVISION =	0
 
 MULTI_PACKAGES =	-main -sharp
 

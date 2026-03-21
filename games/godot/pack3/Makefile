@@ -8,6 +8,7 @@ COMMENT-editor=	2D and 3D game engine (with the editor)
 
 VERSION =	4.6.1
 PKGNAME =	godot-${VERSION}
+REVISION =	0
 DIST_TUPLE +=	codeberg godotsteam godotsteam v4.3 godotsteam
 
 MULTI_PACKAGES =	-main -editor

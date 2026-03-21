@@ -1,9 +1,23 @@
 we don't seem to have quick_exit; no big deal
+we don't support DRI_PRIME as of March 2026 and setting it can lead to crashes
+	in multi-GPU setups
 
 Index: platform/x11/detect_prime.cpp
 --- platform/x11/detect_prime.cpp.orig
 +++ platform/x11/detect_prime.cpp
-@@ -204,9 +204,8 @@ int detect_prime() {
+@@ -181,9 +181,11 @@ int detect_prime() {
+ 
+ 			close(fdset[0]);
+ 
++			/*
+ 			if (i) {
+ 				setenv("DRI_PRIME", "1", 1);
+ 			}
++			*/
+ 			create_context();
+ 
+ 			const char *vendor = (const char *)glGetString(GL_VENDOR);
+@@ -204,9 +206,8 @@ int detect_prime() {
  			}
  			close(fdset[1]);
  

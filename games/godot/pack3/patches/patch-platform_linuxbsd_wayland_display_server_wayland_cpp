@@ -1,0 +1,20 @@
+we don't support DRI_PRIME as of March 2026 and setting it can lead to crashes
+	in multi-GPU setups
+
+Index: platform/linuxbsd/wayland/display_server_wayland.cpp
+--- platform/linuxbsd/wayland/display_server_wayland.cpp.orig
++++ platform/linuxbsd/wayland/display_server_wayland.cpp
+@@ -2150,11 +2150,13 @@ DisplayServerWayland::DisplayServerWayland(const Strin
+ 				prime_idx = DetectPrimeEGL::detect_prime(EGL_PLATFORM_WAYLAND_KHR);
+ 			}
+ 
++			/*
+ 			if (prime_idx) {
+ 				print_line(vformat("Found discrete GPU, setting DRI_PRIME=%d to use it.", prime_idx));
+ 				print_line("Note: Set DRI_PRIME=0 in the environment to disable Godot from using the discrete GPU.");
+ 				setenv("DRI_PRIME", itos(prime_idx).utf8().ptr(), 1);
+ 			}
++			*/
+ 		}
+ 
+ 		if (rendering_driver == "opengl3") {

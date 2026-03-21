@@ -1,4 +1,6 @@
 fix libXrandr (double) loading attempt.
+we don't support DRI_PRIME as of March 2026 and setting it can lead to crashes
+	in multi-GPU setups
 
 Index: platform/linuxbsd/x11/display_server_x11.cpp
 --- platform/linuxbsd/x11/display_server_x11.cpp.orig
@@ -20,3 +22,17 @@ Index: platform/linuxbsd/x11/display_server_x11.cpp
  		}
  	}
  
+@@ -7106,11 +7106,13 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
+ 				use_prime = DetectPrimeX11::detect_prime();
+ 			}
+ 
++			/*
+ 			if (use_prime) {
+ 				print_line("Found discrete GPU, setting DRI_PRIME=1 to use it.");
+ 				print_line("Note: Set DRI_PRIME=0 in the environment to disable Godot from using the discrete GPU.");
+ 				setenv("DRI_PRIME", "1", 1);
+ 			}
++			*/
+ 		}
+ 	}
+ 	if (rendering_driver == "opengl3") {
