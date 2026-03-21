@@ -1,3 +1,5 @@
+BROKEN-sparc64 = CMake Error:Link Time Optimization requested, not available
+
 COMMENT =	modern QuakeWorld client
 
 CATEGORIES =	games
