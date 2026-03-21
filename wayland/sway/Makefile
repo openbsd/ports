@@ -12,6 +12,10 @@ HOMEPAGE =	https://swaywm.org/
 # MIT
 PERMIT_PACKAGE = Yes
 
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =	devel/meson wayland/wlroots
 
 WANTLIB =	cairo drm evdev gdk_pixbuf-2.0 glib-2.0 gobject-2.0 input
