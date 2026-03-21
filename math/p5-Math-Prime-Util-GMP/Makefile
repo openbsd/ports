@@ -1,9 +1,11 @@
 COMMENT =	utilities related to prime numbers, using GMP
-DISTNAME =	Math-Prime-Util-GMP-0.52
+DISTNAME =	Math-Prime-Util-GMP-0.53
 CATEGORIES =	math
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =	DANAJ
 
 MODULES =	cpan
 WANTLIB =	perl c m gmp
