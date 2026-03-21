@@ -1,6 +1,8 @@
 COMMENT=	construction, analysis and modification of binary data
 
+# note pyproject.toml patch re 'tibs'
 MODPY_DISTV=	4.4.0
+REVISION=	0
 DISTNAME=	bitstring-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
