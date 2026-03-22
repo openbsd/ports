@@ -4,6 +4,7 @@
      SUBDIR += lensfun
      SUBDIR += liquid-rescale
      SUBDIR += resynthesizer
+     SUBDIR += resynthesizer3
      SUBDIR += snapshot
      SUBDIR += stable
      SUBDIR += stroke-arrows
