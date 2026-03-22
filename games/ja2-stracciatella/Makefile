@@ -1,5 +1,3 @@
-BROKEN-sparc64 = error:ISO C++17 does not allow dynamic exception specifications
-
 COMMENT =	Jagged Alliance 2 turn-based strategy game engine
 
 GH_ACCOUNT =	ja2-stracciatella
@@ -16,8 +14,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	boost_filesystem c m pthread SDL ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
-CXXFLAGS_base-clang =	-std=c++14
+COMPILER =		base-clang ports-gcc
+CXXFLAGS =		-std=c++14
 
 LIB_DEPENDS =	devel/sdl \
 		devel/boost
