@@ -1,0 +1,19 @@
+# Modified from upstream, needed to still build in fpattern
+# after we extract the DIST_TUPLE. This disables the
+# FetchContent stuff so we don't need network to build
+Index: third_party/fpattern/CMakeLists.txt
+--- third_party/fpattern/CMakeLists.txt.orig
++++ third_party/fpattern/CMakeLists.txt
+@@ -0,0 +1,12 @@
++add_library(fpattern STATIC
++    "${fpattern_SOURCE_DIR}/debug.h"
++    "${fpattern_SOURCE_DIR}/fpattern.c"
++    "${fpattern_SOURCE_DIR}/fpattern.h"
++)
++
++target_compile_definitions(fpattern PRIVATE
++    "-Dunix"
++)
++
++set(FPATTERN_LIBRARY "fpattern" PARENT_SCOPE)
++set(FPATTERN_INCLUDE_DIR "${fpattern_SOURCE_DIR}" PARENT_SCOPE)

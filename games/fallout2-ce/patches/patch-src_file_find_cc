@@ -1,0 +1,13 @@
+# Took from https://github.com/alexbatalov/fallout2-ce/pull/369/commits/d843a662b3ceaf01ac363e9abb4bfceb8b805c36
+# Fixes game saving
+Index: src/file_find.cc
+--- src/file_find.cc.orig
++++ src/file_find.cc
+@@ -30,6 +30,7 @@ bool fileFindFirst(const char* path, DirectoryFileFind
+ 
+     char basePath[COMPAT_MAX_PATH];
+     compat_makepath(basePath, drive, dir, nullptr, nullptr);
++    compat_resolve_path(basePath);
+ 
+     findData->dir = opendir(basePath);
+     if (findData->dir == nullptr) {
