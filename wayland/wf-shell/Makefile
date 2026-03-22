@@ -12,6 +12,9 @@ PERMIT_PACKAGE =	Yes
 SITES =		https://github.com/WayfireWM/wf-shell/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.xz
 
+# C++
+COMPILER =	base-clang ports-gcc
+
 MODULES =	devel/meson
 
 BUILD_DEPENDS =	wayland/wayfire \
