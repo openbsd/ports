@@ -188,8 +188,10 @@ share/shotcut/qml/filters/bigsh0t_transform_360/vui.qml
 share/shotcut/qml/filters/blend_mode/
 share/shotcut/qml/filters/blend_mode/icon.webp
 share/shotcut/qml/filters/blend_mode/meta_cairoblend.qml
+share/shotcut/qml/filters/blend_mode/meta_movit.qml
 share/shotcut/qml/filters/blend_mode/meta_qtblend.qml
 share/shotcut/qml/filters/blend_mode/ui_cairoblend.qml
+share/shotcut/qml/filters/blend_mode/ui_movit.qml
 share/shotcut/qml/filters/blend_mode/ui_qtblend.qml
 share/shotcut/qml/filters/bluescreen0r/
 share/shotcut/qml/filters/bluescreen0r/icon.webp
@@ -751,6 +753,7 @@ share/shotcut/translations/shotcut_sv.qm
 share/shotcut/translations/shotcut_th.qm
 share/shotcut/translations/shotcut_tr.qm
 share/shotcut/translations/shotcut_uk.qm
+share/shotcut/translations/shotcut_zh-Hans.qm
 share/shotcut/translations/shotcut_zh_CN.qm
 share/shotcut/translations/shotcut_zh_TW.qm
 @tag update-desktop-database

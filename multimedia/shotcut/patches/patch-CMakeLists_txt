@@ -3,7 +3,7 @@ mlt 7.36 is not (yet) ported, and is not (yet) needed.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -56,7 +56,7 @@ if(UNIX AND NOT APPLE)
+@@ -57,7 +57,7 @@ if(UNIX AND NOT APPLE)
  endif()
  
  find_package(PkgConfig REQUIRED)
