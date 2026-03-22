@@ -13,7 +13,6 @@ eboringssl/include/openssl/asn1_mac.h
 eboringssl/include/openssl/asn1t.h
 eboringssl/include/openssl/base.h
 eboringssl/include/openssl/base64.h
-eboringssl/include/openssl/bcm_public.h
 eboringssl/include/openssl/bio.h
 eboringssl/include/openssl/blake2.h
 eboringssl/include/openssl/blowfish.h
@@ -46,8 +45,6 @@ eboringssl/include/openssl/err.h
 eboringssl/include/openssl/evp.h
 eboringssl/include/openssl/evp_errors.h
 eboringssl/include/openssl/ex_data.h
-eboringssl/include/openssl/experimental/
-eboringssl/include/openssl/experimental/kyber.h
 eboringssl/include/openssl/hkdf.h
 eboringssl/include/openssl/hmac.h
 eboringssl/include/openssl/hpke.h
@@ -80,6 +77,9 @@ eboringssl/include/openssl/pki/verify_error.h
 eboringssl/include/openssl/poly1305.h
 eboringssl/include/openssl/pool.h
 eboringssl/include/openssl/posix_time.h
+eboringssl/include/openssl/prefix_symbols.h
+eboringssl/include/openssl/prefix_symbols_internal_S.h
+eboringssl/include/openssl/prefix_symbols_internal_c.h
 eboringssl/include/openssl/rand.h
 eboringssl/include/openssl/rc4.h
 eboringssl/include/openssl/ripemd.h
@@ -99,6 +99,7 @@ eboringssl/include/openssl/target.h
 eboringssl/include/openssl/thread.h
 eboringssl/include/openssl/time.h
 eboringssl/include/openssl/tls1.h
+eboringssl/include/openssl/tls_prf.h
 eboringssl/include/openssl/trust_token.h
 eboringssl/include/openssl/type_check.h
 eboringssl/include/openssl/x509.h
