@@ -1,4 +1,4 @@
-V =		16.0.04
+V =		17.0.03
 COMMENT =	free Unicode font from the GNU project
 DISTNAME =	unifont-${V}
 DISTFILES =	${DISTNAME}.otf \
@@ -6,7 +6,6 @@ DISTFILES =	${DISTNAME}.otf \
 		unifont_jp-${V}.otf \
 		unifont_upper-${V}.otf
 CATEGORIES =	fonts
-REVISION =	0
 
 HOMEPAGE =	https://unifoundry.com/unifont/
 
