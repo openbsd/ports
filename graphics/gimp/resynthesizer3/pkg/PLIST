@@ -1,0 +1,16 @@
+${GIMP3_PLUGINS}/plug-in-heal-selection/
+${GIMP3_PLUGINS}/plug-in-heal-selection/plug-in-heal-selection.scm
+${GIMP3_PLUGINS}/plug-in-heal-transparency/
+${GIMP3_PLUGINS}/plug-in-heal-transparency/plug-in-heal-transparency.scm
+${GIMP3_PLUGINS}/plug-in-map-style/
+${GIMP3_PLUGINS}/plug-in-map-style/plug-in-map-style.scm
+${GIMP3_PLUGINS}/plug-in-render-texture/
+${GIMP3_PLUGINS}/plug-in-render-texture/plug-in-render-texture.scm
+${GIMP3_PLUGINS}/plug-in-resynth-controls/
+${GIMP3_PLUGINS}/plug-in-resynth-controls/plug-in-resynth-controls.scm
+${GIMP3_PLUGINS}/plug-in-resynth-fill-pattern/
+${GIMP3_PLUGINS}/plug-in-resynth-fill-pattern/plug-in-resynth-fill-pattern.scm
+${GIMP3_PLUGINS}/plug-in-uncrop/
+${GIMP3_PLUGINS}/plug-in-uncrop/plug-in-uncrop.scm
+${GIMP3_PLUGINS}/resynthesizer/
+@bin ${GIMP3_PLUGINS}/resynthesizer/resynthesizer
