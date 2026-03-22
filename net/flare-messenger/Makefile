@@ -22,6 +22,10 @@ HOMEPAGE=	https://mobile.schmidhuberj.de/flare
 # AGPLv3 only
 PERMIT_PACKAGE=	Yes
 
+# C1x
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += ${MODCARGO_WANTLIB} adwaita-1 crypto gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-4 gtksourceview-5
 WANTLIB += intl m pango-1.0 spelling-1
