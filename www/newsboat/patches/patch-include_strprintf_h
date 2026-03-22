@@ -5,13 +5,13 @@ Upstream commit 4139a0ba1ec87e442ef1408823b07fc739742f9d.
 Index: include/strprintf.h
 --- include/strprintf.h.orig
 +++ include/strprintf.h
-@@ -55,14 +55,12 @@ std::string fmt(const std::string& format, const uint6
+@@ -55,14 +55,12 @@ std::string fmt(std::string_view format, const uint64_
  	return detail::fmt_impl(format, argument, std::forward<Args>(args)...);
  }
  
 -#ifdef __APPLE__
  template<typename... Args>
- std::string fmt(const std::string& format, const std::size_t argument,
+ std::string fmt(std::string_view format, const std::size_t argument,
  	Args&& ... args)
  {
  	return detail::fmt_impl(format, argument, std::forward<Args>(args)...);
@@ -19,4 +19,4 @@ Index: include/strprintf.h
 -#endif
  
  template<typename... Args>
- std::string fmt(const std::string& format, const void* argument, Args&& ... args)
+ std::string fmt(std::string_view format, const void* argument, Args&& ... args)

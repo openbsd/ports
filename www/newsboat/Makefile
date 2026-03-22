@@ -1,6 +1,6 @@
 COMMENT =	RSS/Atom feed reader for text terminals
 
-V =		2.42
+V =		2.43
 DISTNAME =	newsboat-$V
 
 CATEGORIES =	www
