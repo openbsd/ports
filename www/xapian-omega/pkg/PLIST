@@ -1,5 +1,4 @@
 bin/dbi2omega
-bin/htdig2omega
 bin/mbox2omega
 @bin bin/omindex
 @bin bin/omindex-list
@@ -10,6 +9,14 @@ libexec/xapian-omega/cgi-bin/mhtml2html
 @mode 111
 @bin libexec/xapian-omega/cgi-bin/omega
 @sample /var/www/cgi-bin/omega
+@bin libexec/xapian-omega/cgi-bin/omindex_gmime
+@sample /var/www/cgi-bin/omindex_gmime
+@bin libexec/xapian-omega/cgi-bin/omindex_libarchive
+@sample /var/www/cgi-bin/omindex_libarchive
+@bin libexec/xapian-omega/cgi-bin/omindex_poppler
+@sample /var/www/cgi-bin/omindex_poppler
+@bin libexec/xapian-omega/cgi-bin/omindex_tesseract
+@sample /var/www/cgi-bin/omindex_tesseract
 libexec/xapian-omega/cgi-bin/outlookmsg2html
 @sample /var/www/cgi-bin/outlookmsg2html
 @mode
@@ -32,7 +39,6 @@ share/examples/xapian-omega/
 share/examples/xapian-omega/omega.conf
 @sample ${SYSCONFDIR}/omega.conf
 share/omega/
-share/omega/htdig2omega.script
 share/omega/mbox2omega.script
 share/omega/templates/
 @sample /var/omega/templates/

@@ -4,7 +4,7 @@ configuration file.
 Index: configfile.cc
 --- configfile.cc.orig
 +++ configfile.cc
-@@ -39,12 +39,12 @@ static const char configfile_local[] = "omega.conf";
+@@ -38,12 +38,12 @@ static const char configfile_local[] = "omega.conf";
  static const char configfile_system[] = CONFIGFILE_SYSTEM;
  static const char configfile_envvar[] = "OMEGA_CONFIG_FILE";
  

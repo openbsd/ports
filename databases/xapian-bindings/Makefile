@@ -2,7 +2,7 @@ COMMENT-main=	Perl bindings for Xapian
 COMMENT-python=	Python bindings for Xapian
 COMMENT-ruby=	Ruby bindings for Xapian
 
-V=		1.4.31
+V=		2.0.0
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-bindings-${V}
 
@@ -17,13 +17,13 @@ HOMEPAGE=	https://xapian.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} m z xapian
+WANTLIB += ${COMPILER_LIBCXX} icudata icuuc m xapian z
 WANTLIB-main = ${WANTLIB} c perl
 
 SITES=		https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
 
-# -std=gnu++11
+# C++17 minimum
 COMPILER=	base-clang ports-gcc
 
 # base libtool doesn't support -shrext

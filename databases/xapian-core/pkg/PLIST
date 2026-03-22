@@ -1,5 +1,4 @@
 @bin bin/copydatabase
-@bin bin/quest
 @bin bin/simpleexpand
 @bin bin/simpleindex
 @bin bin/simplesearch
@@ -10,12 +9,14 @@ bin/xapian-config
 @bin bin/xapian-metadata
 @bin bin/xapian-pos
 @bin bin/xapian-progsrv
+@bin bin/xapian-quest
 @bin bin/xapian-replicate
 @bin bin/xapian-replicate-server
 @bin bin/xapian-tcpsrv
 include/xapian/
 include/xapian.h
 include/xapian/attributes.h
+include/xapian/cluster.h
 include/xapian/compactor.h
 include/xapian/constants.h
 include/xapian/constinfo.h
@@ -26,13 +27,13 @@ include/xapian/derefwrapper.h
 include/xapian/document.h
 include/xapian/enquire.h
 include/xapian/error.h
-include/xapian/errorhandler.h
 include/xapian/eset.h
 include/xapian/expanddecider.h
 include/xapian/geospatial.h
 include/xapian/intrusive_ptr.h
 include/xapian/iterator.h
 include/xapian/keymaker.h
+include/xapian/matchdecider.h
 include/xapian/matchspy.h
 include/xapian/mset.h
 include/xapian/positioniterator.h
@@ -41,6 +42,7 @@ include/xapian/postingsource.h
 include/xapian/query.h
 include/xapian/queryparser.h
 include/xapian/registry.h
+include/xapian/rset.h
 include/xapian/stem.h
 include/xapian/termgenerator.h
 include/xapian/termiterator.h
@@ -60,7 +62,6 @@ lib/libxapian.la
 @lib lib/libxapian.so.${LIBxapian_VERSION}
 lib/pkgconfig/xapian-core.pc
 @man man/man1/copydatabase.1
-@man man/man1/quest.1
 @man man/man1/xapian-check.1
 @man man/man1/xapian-compact.1
 @man man/man1/xapian-config.1
@@ -68,13 +69,13 @@ lib/pkgconfig/xapian-core.pc
 @man man/man1/xapian-metadata.1
 @man man/man1/xapian-pos.1
 @man man/man1/xapian-progsrv.1
+@man man/man1/xapian-quest.1
 @man man/man1/xapian-replicate-server.1
 @man man/man1/xapian-replicate.1
 @man man/man1/xapian-tcpsrv.1
 share/aclocal/
 share/aclocal/xapian.m4
 share/doc/xapian-core/
-share/doc/xapian-core/admin_notes.html
 share/doc/xapian-core/apidoc/
 share/doc/xapian-core/apidoc/html/
 share/doc/xapian-core/apidoc/html/annotated.html
@@ -93,11 +94,24 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1BM25Weight__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1BoolWeight-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1BoolWeight.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1BoolWeight__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1Centroid-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1Centroid.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1Centroid__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1Cluster-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1Cluster.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1ClusterSet-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1ClusterSet.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1Clusterer-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1Clusterer.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1Clusterer__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1Compactor-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1Compactor.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1CoordWeight-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1CoordWeight.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1CoordWeight__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1CosineDistance-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1CosineDistance.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1CosineDistance__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1DLHWeight-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DLHWeight.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DLHWeight__inherit__graph.png
@@ -137,17 +151,19 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1Database__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1DateRangeProcessor-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DateRangeProcessor.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DateRangeProcessor__inherit__graph.png
-share/doc/xapian-core/apidoc/html/classXapian_1_1DateValueRangeProcessor-members.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1DateValueRangeProcessor.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1DateValueRangeProcessor__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1DecreasingValueWeightPostingSource-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DecreasingValueWeightPostingSource.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DecreasingValueWeightPostingSource__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1DiceWeight-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1DiceWeight.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1DiceWeight__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1DocNotFoundError-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DocNotFoundError.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1DocNotFoundError__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1Document-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1Document.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1DocumentSet-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1DocumentSet.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1ESet-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1ESet.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1ESetIterator-members.html
@@ -156,9 +172,6 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1Enquire-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1Enquire.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1Error-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1Error.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1ErrorHandler-members.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1ErrorHandler.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1ErrorHandler__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1Error__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1ExpandDecider-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1ExpandDecider.html
@@ -181,6 +194,9 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1FieldProcessor__inherit__graph.
 share/doc/xapian-core/apidoc/html/classXapian_1_1FixedWeightPostingSource-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1FixedWeightPostingSource.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1FixedWeightPostingSource__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1FreqSource-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1FreqSource.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1FreqSource__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1GreatCircleMetric-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1GreatCircleMetric.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1GreatCircleMetric__inherit__graph.png
@@ -202,12 +218,27 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1InvalidArgumentError__inherit__
 share/doc/xapian-core/apidoc/html/classXapian_1_1InvalidOperationError-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1InvalidOperationError.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1InvalidOperationError__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1KMeans-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1KMeans.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1KMeans__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1KeyMaker-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1KeyMaker.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1KeyMaker__inherit__graph.png
-share/doc/xapian-core/apidoc/html/classXapian_1_1LMWeight-members.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1LMWeight.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1LMWeight__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1LCDClusterer-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1LCDClusterer.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1LCDClusterer__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1LM2StageWeight-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1LM2StageWeight.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1LM2StageWeight__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1LMAbsDiscountWeight-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1LMAbsDiscountWeight.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1LMAbsDiscountWeight__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1LMDirichletWeight-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1LMDirichletWeight.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1LMDirichletWeight__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1LMJMWeight-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1LMJMWeight.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1LMJMWeight__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1LatLongCoords-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1LatLongCoords.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1LatLongCoordsIterator-members.html
@@ -246,15 +277,18 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1NetworkTimeoutError__inherit__g
 share/doc/xapian-core/apidoc/html/classXapian_1_1NumberRangeProcessor-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1NumberRangeProcessor.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1NumberRangeProcessor__inherit__graph.png
-share/doc/xapian-core/apidoc/html/classXapian_1_1NumberValueRangeProcessor-members.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1NumberValueRangeProcessor.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1NumberValueRangeProcessor__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1PL2PlusWeight-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1PL2PlusWeight.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1PL2PlusWeight__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1PL2Weight-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1PL2Weight.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1PL2Weight__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1Point-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1Point.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1PointType-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1PointType.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1PointType__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1Point__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1PositionIterator-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1PositionIterator.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1PostingIterator-members.html
@@ -285,6 +319,9 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1RuntimeError__inherit__graph.pn
 share/doc/xapian-core/apidoc/html/classXapian_1_1SerialisationError-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1SerialisationError.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1SerialisationError__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1Similarity-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1Similarity.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1Similarity__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1SimpleStopper-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1SimpleStopper.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1SimpleStopper__inherit__graph.png
@@ -293,16 +330,19 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1Stem.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1StemImplementation-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1StemImplementation.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1StemImplementation__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1StemStopper-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1StemStopper.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1StemStopper__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1Stopper-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1Stopper.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1Stopper__inherit__graph.png
-share/doc/xapian-core/apidoc/html/classXapian_1_1StringValueRangeProcessor-members.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1StringValueRangeProcessor.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1StringValueRangeProcessor__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1TermGenerator-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1TermGenerator.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1TermIterator-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1TermIterator.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1TermListGroup-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1TermListGroup.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1TermListGroup__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1TfIdfWeight-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1TfIdfWeight.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1TfIdfWeight__inherit__graph.png
@@ -312,6 +352,9 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1TradWeight__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1UnimplementedError-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1UnimplementedError.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1UnimplementedError__inherit__graph.png
+share/doc/xapian-core/apidoc/html/classXapian_1_1UnitRangeProcessor-members.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1UnitRangeProcessor.html
+share/doc/xapian-core/apidoc/html/classXapian_1_1UnitRangeProcessor__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1Utf8Iterator-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1Utf8Iterator.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1ValueCountMatchSpy-members.html
@@ -325,9 +368,6 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1ValueMapPostingSource__inherit_
 share/doc/xapian-core/apidoc/html/classXapian_1_1ValuePostingSource-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1ValuePostingSource.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1ValuePostingSource__inherit__graph.png
-share/doc/xapian-core/apidoc/html/classXapian_1_1ValueRangeProcessor-members.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1ValueRangeProcessor.html
-share/doc/xapian-core/apidoc/html/classXapian_1_1ValueRangeProcessor__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1ValueSetMatchDecider-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1ValueSetMatchDecider.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1ValueSetMatchDecider__inherit__graph.png
@@ -345,6 +385,7 @@ share/doc/xapian-core/apidoc/html/classXapian_1_1WritableDatabase.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1WritableDatabase__inherit__graph.png
 share/doc/xapian-core/apidoc/html/classes.html
 share/doc/xapian-core/apidoc/html/clipboard.js
+share/doc/xapian-core/apidoc/html/cluster_8h.html
 share/doc/xapian-core/apidoc/html/compactor_8h.html
 share/doc/xapian-core/apidoc/html/constants_8h.html
 share/doc/xapian-core/apidoc/html/constinfo_8h.html
@@ -358,7 +399,6 @@ share/doc/xapian-core/apidoc/html/doxygen_crawl.html
 share/doc/xapian-core/apidoc/html/dynsections.js
 share/doc/xapian-core/apidoc/html/enquire_8h.html
 share/doc/xapian-core/apidoc/html/error_8h.html
-share/doc/xapian-core/apidoc/html/errorhandler_8h.html
 share/doc/xapian-core/apidoc/html/eset_8h.html
 share/doc/xapian-core/apidoc/html/expanddecider_8h.html
 share/doc/xapian-core/apidoc/html/files.html
@@ -443,6 +483,8 @@ share/doc/xapian-core/apidoc/html/inherit_graph_27.png
 share/doc/xapian-core/apidoc/html/inherit_graph_28.png
 share/doc/xapian-core/apidoc/html/inherit_graph_29.png
 share/doc/xapian-core/apidoc/html/inherit_graph_3.png
+share/doc/xapian-core/apidoc/html/inherit_graph_30.png
+share/doc/xapian-core/apidoc/html/inherit_graph_31.png
 share/doc/xapian-core/apidoc/html/inherit_graph_4.png
 share/doc/xapian-core/apidoc/html/inherit_graph_5.png
 share/doc/xapian-core/apidoc/html/inherit_graph_6.png
@@ -452,14 +494,12 @@ share/doc/xapian-core/apidoc/html/inherit_graph_9.png
 share/doc/xapian-core/apidoc/html/inherits.html
 share/doc/xapian-core/apidoc/html/jquery.js
 share/doc/xapian-core/apidoc/html/keymaker_8h.html
+share/doc/xapian-core/apidoc/html/matchdecider_8h.html
 share/doc/xapian-core/apidoc/html/matchspy_8h.html
 share/doc/xapian-core/apidoc/html/menu.js
 share/doc/xapian-core/apidoc/html/menudata.js
 share/doc/xapian-core/apidoc/html/mset_8h.html
 share/doc/xapian-core/apidoc/html/namespaceXapian.html
-share/doc/xapian-core/apidoc/html/namespaceXapian_1_1Auto.html
-share/doc/xapian-core/apidoc/html/namespaceXapian_1_1Chert.html
-share/doc/xapian-core/apidoc/html/namespaceXapian_1_1InMemory.html
 share/doc/xapian-core/apidoc/html/namespaceXapian_1_1Remote.html
 share/doc/xapian-core/apidoc/html/namespaceXapian_1_1Unicode.html
 share/doc/xapian-core/apidoc/html/namespacemembers.html
@@ -477,10 +517,8 @@ share/doc/xapian-core/apidoc/html/postingsource_8h.html
 share/doc/xapian-core/apidoc/html/query_8h.html
 share/doc/xapian-core/apidoc/html/queryparser_8h.html
 share/doc/xapian-core/apidoc/html/registry_8h.html
+share/doc/xapian-core/apidoc/html/rset_8h.html
 share/doc/xapian-core/apidoc/html/stem_8h.html
-share/doc/xapian-core/apidoc/html/structXapian_1_1Internal_1_1EnableIf.html
-share/doc/xapian-core/apidoc/html/structXapian_1_1Internal_1_1EnableIf_3_01true_00_01T_01_4-members.html
-share/doc/xapian-core/apidoc/html/structXapian_1_1Internal_1_1EnableIf_3_01true_00_01T_01_4.html
 share/doc/xapian-core/apidoc/html/structXapian_1_1LatLongCoord-members.html
 share/doc/xapian-core/apidoc/html/structXapian_1_1LatLongCoord.html
 share/doc/xapian-core/apidoc/html/tabs.css
@@ -494,29 +532,15 @@ share/doc/xapian-core/apidoc/html/version_8h.html
 share/doc/xapian-core/apidoc/html/weight_8h.html
 share/doc/xapian-core/apidoc/html/xapian_8h.html
 share/doc/xapian-core/bm25.html
-share/doc/xapian-core/collapsing.html
-share/doc/xapian-core/deprecation.html
-share/doc/xapian-core/facets.html
 share/doc/xapian-core/geospatial.html
-share/doc/xapian-core/glossary.html
 share/doc/xapian-core/index.html
 share/doc/xapian-core/install.html
-share/doc/xapian-core/internals.html
 share/doc/xapian-core/intro_ir.html
-share/doc/xapian-core/matcherdesign.html
 share/doc/xapian-core/overview.html
-share/doc/xapian-core/postingsource.html
 share/doc/xapian-core/queryparser.html
 share/doc/xapian-core/remote.html
-share/doc/xapian-core/replication.html
-share/doc/xapian-core/scalability.html
-share/doc/xapian-core/serialisation.html
-share/doc/xapian-core/sorting.html
-share/doc/xapian-core/spelling.html
 share/doc/xapian-core/stemming.html
-share/doc/xapian-core/synonyms.html
 share/doc/xapian-core/termgenerator.html
-share/doc/xapian-core/tests.html
 share/doc/xapian-core/valueranges.html
 share/xapian-core/
 share/xapian-core/stopwords/
