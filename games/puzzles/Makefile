@@ -14,6 +14,10 @@ GITWEB_URL =	https://git.tartarus.org/
 # MIT
 PERMIT_PACKAGE=	Yes
 
+# unrecognized command line option -fmacro-prefix-map
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3
 WANTLIB += intl m pango-1.0 pangocairo-1.0 harfbuzz
