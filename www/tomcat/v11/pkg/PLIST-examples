@@ -1912,6 +1912,8 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/
 webapps/docs/api/org/apache/tomcat/util/http/parser/AcceptEncoding.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/AcceptLanguage.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Authorization.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/ChunkExtension.State.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/ChunkExtension.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/ContentRange.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Cookie.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/EntityTag.html
