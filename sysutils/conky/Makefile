@@ -4,8 +4,7 @@ COMMENT =	light-weight system monitor
 
 GH_ACCOUNT =	brndnmtthws
 GH_PROJECT =	conky
-GH_TAGNAME =	v1.22.1
-REVISION =	4
+GH_TAGNAME =	v1.22.3
 
 CATEGORIES =	sysutils
 
@@ -51,7 +50,8 @@ CONFIGURE_ARGS =	-DBUILD_AUDACIOUS=OFF \
 CONFIGURE_ARGS +=	-DBUILD_RSS=ON \
 			-DBUILD_CURL=ON
 
-CONFIGURE_ARGS +=	-DBUILD_DOCS=ON
+CONFIGURE_ARGS +=	-DBUILD_DOCS=ON \
+			-DBUILD_TESTING=ON
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS +=	-DBUILD_X11=OFF
@@ -62,5 +62,8 @@ LIB_DEPENDS +=		graphics/imlib2 \
 WANTLIB += ICE Imlib2 SM X11 Xdamage Xext Xfixes Xft Xinerama fontconfig xcb
 WANTLIB += xcb-errors
 .endif
+
+post-install:
+	rm -f ${PREFIX}/lib/libconky_core.a
 
 .include <bsd.port.mk>
