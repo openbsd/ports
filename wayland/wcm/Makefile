@@ -12,6 +12,9 @@ PERMIT_PACKAGE =Yes
 SITES =		https://github.com/WayfireWM/wcm/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.xz
 
+# C++17
+COMPILER =	base-clang ports-gcc
+
 MODULES =	devel/meson
 
 BUILD_DEPENDS =	wayland/wayland-protocols\
