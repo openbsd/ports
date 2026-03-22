@@ -1,3 +1,5 @@
+BROKEN-sparc64 = error:ISO C++17 does not allow dynamic exception specifications
+
 COMMENT =	Jagged Alliance 2 turn-based strategy game engine
 
 GH_ACCOUNT =	ja2-stracciatella
