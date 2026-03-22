@@ -3,7 +3,7 @@ BROKEN-sparc64 =	...error "Unknown CPU architecture"
 
 COMMENT =		classic Minecraft client written in C
 
-V =			1.3.7
+V =			1.3.8
 PKGNAME =		classicube-${V}
 
 DIST_TUPLE +=		github ClassiCube ClassiCube ${V} .
@@ -18,16 +18,15 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		GL X11 Xi c execinfo pthread
 
 # dlopen'd
-WANTLIB +=		openal curl
+WANTLIB +=		openal
 
-FIX_CRLF_FILES =	src/Logger.c
+FIX_CRLF_FILES =	src/Certs.c
 
 COMPILER =		base-clang ports-gcc base-gcc
 COMPILER_LANGS =	c
 
 # Needed for downloading assets and sound support at runtime
-LIB_DEPENDS =		net/curl \
-			audio/openal
+LIB_DEPENDS =		audio/openal
 RUN_DEPENDS =		devel/desktop-file-utils
 
 USE_GMAKE =		Yes
