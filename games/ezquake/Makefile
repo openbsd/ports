@@ -1,5 +1,3 @@
-BROKEN-sparc64 = CMake Error:Link Time Optimization requested, not available
-
 COMMENT =	modern QuakeWorld client
 
 CATEGORIES =	games
@@ -37,6 +35,11 @@ NO_TEST =	Yes
 
 GAMEDIR =	${PREFIX}/share/ezquake
 SUBST_VARS +=	GAMEDIR
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS+=-DENABLE_LTO=Off
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/EX_browser_sources.c
