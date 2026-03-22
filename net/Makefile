@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += abaddon
      SUBDIR += adns
      SUBDIR += aggregate
      SUBDIR += aggregate6
