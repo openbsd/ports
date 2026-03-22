@@ -21,6 +21,9 @@ EXTRACT_SUFX =	.tar.xz
 
 HOMEPAGE =	https://wayfire.org
 
+# C++
+COMPILER =	base-clang ports-gcc
+
 MODULES =	devel/meson wayland/wlroots
 BUILD_DEPENDS =	graphics/glm \
 		devel/cmake/core \
