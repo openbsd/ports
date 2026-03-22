@@ -1,4 +1,3 @@
-share/applications/stone-soup.desktop
 share/crawl/dat/tiles/
 share/crawl/dat/tiles/feat.png
 share/crawl/dat/tiles/floor.png
@@ -21,6 +20,7 @@ share/crawl/dat/tiles/title_baconkid_duvessa_dowan.png
 share/crawl/dat/tiles/title_baconkid_gastronok.png
 share/crawl/dat/tiles/title_baconkid_mnoleg.png
 share/crawl/dat/tiles/title_benadryl_antaeus.png
+share/crawl/dat/tiles/title_benadryl_oni.png
 share/crawl/dat/tiles/title_denzi_dragon.png
 share/crawl/dat/tiles/title_denzi_evil_mage.png
 share/crawl/dat/tiles/title_denzi_invasion.png
@@ -38,6 +38,7 @@ share/crawl/dat/tiles/title_gompami_kohu_xbow.png
 share/crawl/dat/tiles/title_kaonedong_ignis_the_dying_flame.png
 share/crawl/dat/tiles/title_kaonedong_menkaure_prince_of_dust.png
 share/crawl/dat/tiles/title_king7artist_eustachio.png
+share/crawl/dat/tiles/title_lemurrobot_gozag_vaults.png
 share/crawl/dat/tiles/title_micah_c_ereshkigal.png
 share/crawl/dat/tiles/title_nibiki_octopode.png
 share/crawl/dat/tiles/title_omndra_zot_demon.png
@@ -51,8 +52,7 @@ share/crawl/dat/tiles/title_sastrei_chei.png
 share/crawl/dat/tiles/title_shadyamish_octm.png
 share/crawl/dat/tiles/title_white_noise_entering_the_dungeon.png
 share/crawl/dat/tiles/title_white_noise_grabbing_the_orb.png
+share/crawl/dat/tiles/title_ylam_formicid_shrikes.png
 share/crawl/dat/tiles/wall.png
 share/crawl/docs/tiles_help.txt
-share/pixmaps/
-share/pixmaps/stone-soup.png
 @tag update-desktop-database

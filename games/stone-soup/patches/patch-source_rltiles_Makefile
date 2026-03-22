@@ -1,17 +1,12 @@
 Index: source/rltiles/Makefile
 --- source/rltiles/Makefile.orig
 +++ source/rltiles/Makefile
-@@ -57,13 +57,7 @@ endif
+@@ -57,7 +57,7 @@ endif
  
  # Attempt to use a full compiler name, to make
  # distcc builds work nicely.
 -LMACH := $(shell gcc -dumpmachine)-
--ifeq ($(LMACH),-)
++LMACH := -
+ ifeq ($(LMACH),-)
  LMACH :=
--endif
--ifeq ($(shell which $(LMACH)gcc > /dev/null 2> /dev/null && echo "Yes"),)
--LMACH :=
--endif
- HOSTCXX ?= $(LMACH)g++
- 
- DELETE = rm -f
+ endif

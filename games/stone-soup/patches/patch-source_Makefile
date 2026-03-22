@@ -1,23 +1,16 @@
 Index: source/Makefile
 --- source/Makefile.orig
 +++ source/Makefile
-@@ -509,15 +509,7 @@ ifneq ($(GCC_VER),)
- GCC_VER_SUFFIX:=-$(GCC_VER)
- endif
+@@ -511,7 +511,7 @@ endif
  
--# Attempt to use a full compiler name, to make
--# distcc builds work nicely.
+ # Attempt to use a full compiler name, to make
+ # distcc builds work nicely.
 -LMACH := $(shell gcc -dumpmachine)-
--ifeq ($(LMACH),-)
++LMACH := -
+ ifeq ($(LMACH),-)
  LMACH :=
--endif
--ifeq ($(shell which $(LMACH)gcc$(GCC_VER_SUFFIX) > /dev/null 2> /dev/null && echo "Yes"),)
--LMACH :=
--endif
- 
- ifneq ($(FORCE_CC),)
- GCC := $(FORCE_CC)
-@@ -1177,14 +1169,10 @@ OBJECTS += $(TILEDEFOBJS)
+ endif
+@@ -1170,14 +1170,10 @@ OBJECTS += $(TILEDEFOBJS)
  
  ifdef TILES_ANY
  ifndef NO_OPTIMIZE
@@ -32,22 +25,15 @@ Index: source/Makefile
  endif
  endif
  
-@@ -1280,9 +1268,7 @@ GENERATED_FILES := $(GENERATED_HEADERS) art-data.h mi-
+@@ -1274,9 +1270,9 @@ GENERATED_FILES := $(GENERATED_HEADERS) art-data.h mi-
  
  LANGUAGES = $(filter-out en, $(notdir $(wildcard dat/descript/??)))
  SRC_PKG_BASE  := stone_soup
 -SRC_VERSION   := $(shell git describe $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
++SRC_VERSION   := $(shell cat util/release_ver)
  MAJOR_VERSION = $(shell echo "$(SRC_VERSION)"|$(SED) -r 's/-.*//;s/^([^.]+\.[^.]+).*/\1/')
 -RECENT_TAG    := $(shell git describe --abbrev=0 $(MERGE_BASE))
++RECENT_TAG    := $(SRC_VERSION)
  WINARCH := $(shell $(GXX) -dumpmachine | grep -q x64_64 && echo win64 || echo win32)
  
  export SRC_VERSION
-@@ -2106,7 +2092,7 @@ mac-app-console: all
- # Building the Android package
- #
- 
--NPROC := $(shell nproc)
-+
- 
- android-project/app/build.gradle: android-project/app/build.gradle.in
- 	sed -e "s/@ANDROID_VERSION@/${ANDROID}/" -e "s/@CRAWL_VERSION@/${SRC_VERSION}/" -e "s/@NPROC@/${NPROC}/" <android-project/app/build.gradle.in >android-project/app/build.gradle

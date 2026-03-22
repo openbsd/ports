@@ -2,12 +2,9 @@ BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
 COMMENT =	dungeon crawl stone soup
 
-VERSION =	0.32.0
-REVISION=	2
-TAGNAME =	Gods and Makers
-
-DISTNAME=	stone_soup-${VERSION}-nodeps
-PKGNAME=	stone-soup-${VERSION}
+VERSION =	0.34.0
+DISTNAME =	stone_soup-${VERSION}-nodeps
+PKGNAME =	stone-soup-${VERSION}
 
 CATEGORIES =	games
 
@@ -16,79 +13,62 @@ HOMEPAGE =	https://crawl.develz.org/
 MAINTAINER =	Stefan Moran <ssm@howdoesmycode.work>
 
 # GPLv2+
-PERMIT_PACKAGE=	Yes
-
-WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c m sqlite3
+PERMIT_PACKAGE =	Yes
 
 SITES =		https://github.com/crawl/crawl/releases/download/${VERSION}/
-EXTRACT_SUFX=	.tar.xz
+EXTRACT_SUFX =	.tar.xz
 
-COMPILER =	base-clang ports-gcc
-MODULES =	lang/python \
-		lang/lua
+MODULES =	lang/lua lang/python
 
-MODLUA_VERSION =	5.1
+MODLUA_SA =		Yes
+MODLUA_VERSION =	5.4
 
-BUILD_DEPENDS = graphics/pngcrush \
+MODPY_RUNDEP =		No
+MODPY_ADJ_FILES =	checkconventionalcommit.py configure-msvc.py \
+			configure.py coverage form-gen.py gen-all.py \
+			genutil.py job-gen.py mon-gen.py species-gen.py \
+			status-icon-sizes-gen.py tag-35-upgrade.py
+MODPY_ADJ_FILES := ${MODPY_ADJ_FILES:S/^/util\//}
+
+WANTLIB =	${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c m sqlite3 z
+
+BUILD_DEPENDS =	graphics/pngcrush \
 		textproc/py-yaml
 LIB_DEPENDS =	databases/sqlite3
 
-MAKE_FLAGS =	CC="${CC}" GCC="${GCC}" GXX="${CXX}" \
-		CXX="${CXX}" HOSTCXX="${CXX}" \
-		LUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
-		LUA_LIB=${MODLUA_LIB} \
-		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib \
-		INSTALL_UGRP=root:wheel \
-		prefix=${PREFIX} \
-		SAVEDIR="~/.crawl" \
-		NO_YACC=1 V=1 \
-		SRC_VERSION=${VERSION} RECENT_TAG="${TAGNAME}"
-
 USE_GMAKE =	Yes
-CONFIGURE_STYLE = none
-
-MODPY_RUN_DEPENDS =	No
-MODPY_ADJ_FILES =	util/species-gen.py \
-			util/tag-35-upgrade.py
+MAKE_FLAGS =	FORCE_CC=${CC} FORCE_CXX=${CXX} LUA_PACKAGE=${MODLUA_FLAVOR} \
+		NO_TRY_GOLD=1 NO_TRY_LLD=1 V=1 prefix=${PREFIX}
 
 FLAVORS =	no_x11
 FLAVOR ?=
 
 .if ${FLAVOR:Mno_x11}
-WANTLIB +=	curses pthread z
-MAKE_FLAGS +=	USE_UNICODE=y UNICODE_LOCALE=y
+WANTLIB +=	curses
 .else
-# This should be automatically set during "gmake -C rltiles..." but isn't...
-CFLAGS +=	-DUSE_TILE
-CXXFLAGS +=	-DUSE_TILE
-
-MAKE_FLAGS +=	TILES=y \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
-		-lSDL2 -lSDL2_image -lpng -pthread"
-WANTLIB +=	GL GLU SDL2 SDL2_image freetype png pthread z
-RUN_DEPENDS =	devel/desktop-file-utils
-LIB_DEPENDS +=	devel/sdl2 \
-		devel/sdl2-image \
-		databases/sqlite3 \
-		graphics/png
+WANTLIB +=	GL SDL2 SDL2_image SDL2_mixer freetype
+LIB_DEPENDS +=	devel/sdl2 devel/sdl2-image devel/sdl2-mixer
+RUN_DEPENDS +=	devel/desktop-file-utils
+MAKE_FLAGS +=   SOUND=1 TILES=1
 .endif
 
 NO_TEST =	Yes
 
-CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
-CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
-
-WRKDIST =	${WRKDIR}/stone_soup-${VERSION}
+WRKDIST =	${WRKDIR}/${DISTNAME:-nodeps=}
 WRKSRC =	${WRKDIST}/source
 
+COMPILER =	base-clang ports-gcc
+
 post-install:
-	mv ${PREFIX}/bin/crawl ${PREFIX}/bin/crawl-ss
-	chmod 755 ${PREFIX}/bin/crawl-ss
+	mv ${PREFIX}/bin/crawl ${PREFIX}/bin/crawl-ss # Collision with net/crawl
+	chmod ${BINMODE} ${PREFIX}/bin/crawl-ss
 	${INSTALL_MAN} ${WRKDIST}/docs/crawl.6 ${PREFIX}/man/man6/crawl-ss.6
-.if ! ${FLAVOR:Mno_x11}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FILESDIR}/stone-soup.desktop \
+.if ${FLAVOR:Nno_x11}
+	${INSTALL_DATA_DIR} \
+		${PREFIX}/share/pixmaps \
+		${PREFIX}/share/applications
+	${INSTALL_DATA} \
+		${FILESDIR}/stone-soup.desktop \
 		${PREFIX}/share/applications
 	${INSTALL_DATA} \
 		${PREFIX}/share/crawl/dat/tiles/stone_soup_icon-32x32.png \

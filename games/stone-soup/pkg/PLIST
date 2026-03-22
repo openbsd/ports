@@ -18,6 +18,7 @@ share/crawl/dat/database/el/rand_all.txt
 share/crawl/dat/database/gizmo.txt
 share/crawl/dat/database/godname.txt
 share/crawl/dat/database/godspeak.txt
+share/crawl/dat/database/graffiti.txt
 share/crawl/dat/database/help.txt
 share/crawl/dat/database/insult.txt
 share/crawl/dat/database/miscast.txt
@@ -50,6 +51,7 @@ share/crawl/dat/database/zh/shout.txt
 share/crawl/dat/database/zh/wpnnoise.txt
 share/crawl/dat/defaults/
 share/crawl/dat/defaults/autopickup_exceptions.txt
+share/crawl/dat/defaults/consumable_shortcuts.txt
 share/crawl/dat/defaults/glyph_colours.txt
 share/crawl/dat/defaults/menu_colours.txt
 share/crawl/dat/defaults/messages.txt
@@ -108,7 +110,6 @@ share/crawl/dat/des/branches/temple_compat.des
 share/crawl/dat/des/branches/tomb.des
 share/crawl/dat/des/branches/vaults.des
 share/crawl/dat/des/branches/vaults_rooms_empty.des
-share/crawl/dat/des/branches/vaults_rooms_ghost.des
 share/crawl/dat/des/branches/vaults_rooms_hard.des
 share/crawl/dat/des/branches/vaults_rooms_standard.des
 share/crawl/dat/des/branches/zot.des
@@ -146,6 +147,7 @@ share/crawl/dat/des/portals/crucible.des
 share/crawl/dat/des/portals/desolation.des
 share/crawl/dat/des/portals/gauntlet.des
 share/crawl/dat/des/portals/icecave.des
+share/crawl/dat/des/portals/necropolis.des
 share/crawl/dat/des/portals/ossuary.des
 share/crawl/dat/des/portals/sewer.des
 share/crawl/dat/des/portals/trove.des
@@ -198,12 +200,10 @@ share/crawl/dat/des/tutorial/lesson5.des
 share/crawl/dat/des/variable/
 share/crawl/dat/des/variable/ambush.des
 share/crawl/dat/des/variable/arcadia.des
-share/crawl/dat/des/variable/cathedral_bats.des
 share/crawl/dat/des/variable/compat.des
 share/crawl/dat/des/variable/d_encompass.des
 share/crawl/dat/des/variable/float.des
 share/crawl/dat/des/variable/geyser.des
-share/crawl/dat/des/variable/ghost.des
 share/crawl/dat/des/variable/grated_community.des
 share/crawl/dat/des/variable/large_abstract.des
 share/crawl/dat/des/variable/large_themed.des
@@ -214,6 +214,7 @@ share/crawl/dat/des/variable/mini_monsters.des
 share/crawl/dat/des/variable/polyominoes.des
 share/crawl/dat/des/variable/the_bubble.des
 share/crawl/dat/des/variable/the_grid.des
+share/crawl/dat/des/variable/wad_woods.des
 share/crawl/dat/des/variable/winding_woodlands.des
 share/crawl/dat/descript/
 share/crawl/dat/descript/ability.txt
@@ -269,6 +270,7 @@ share/crawl/dat/descript/de/spells.txt
 share/crawl/dat/descript/de/tutorial.txt
 share/crawl/dat/descript/de/unident.txt
 share/crawl/dat/descript/de/unrand.txt
+share/crawl/dat/descript/egos.txt
 share/crawl/dat/descript/el/
 share/crawl/dat/descript/el/ability.txt
 share/crawl/dat/descript/el/backgrounds.txt
@@ -289,7 +291,10 @@ share/crawl/dat/descript/es/commands.txt
 share/crawl/dat/descript/es/features.txt
 share/crawl/dat/descript/es/gods.txt
 share/crawl/dat/descript/es/items.txt
+share/crawl/dat/descript/es/monstatus.txt
 share/crawl/dat/descript/es/monsters.txt
+share/crawl/dat/descript/es/mutations.txt
+share/crawl/dat/descript/es/passives.txt
 share/crawl/dat/descript/es/quotes.txt
 share/crawl/dat/descript/es/skills.txt
 share/crawl/dat/descript/es/species.txt
@@ -408,6 +413,7 @@ share/crawl/dat/descript/lv/spells.txt
 share/crawl/dat/descript/lv/tutorial.txt
 share/crawl/dat/descript/lv/unident.txt
 share/crawl/dat/descript/lv/unrand.txt
+share/crawl/dat/descript/monstatus.txt
 share/crawl/dat/descript/monsters.txt
 share/crawl/dat/descript/mutations.txt
 share/crawl/dat/descript/nl/
@@ -529,7 +535,6 @@ share/crawl/dat/dist_bones/bones.store.Lair-2
 share/crawl/dat/dist_bones/bones.store.Lair-3
 share/crawl/dat/dist_bones/bones.store.Lair-4
 share/crawl/dat/dist_bones/bones.store.Lair-5
-share/crawl/dat/dist_bones/bones.store.Lair-6
 share/crawl/dat/dist_bones/bones.store.Orc
 share/crawl/dat/dist_bones/bones.store.Pan
 share/crawl/dat/dist_bones/bones.store.Shoals
@@ -622,10 +627,8 @@ share/crawl/docs/CREDITS.txt
 share/crawl/docs/aptitudes-wide.txt
 share/crawl/docs/aptitudes.txt
 share/crawl/docs/arena.txt
-@comment share/crawl/docs/changelog.txt
+share/crawl/docs/changelog.txt
 share/crawl/docs/crawl_manual.txt
-@comment share/crawl/docs/develop/coding_conventions.txt
-@comment share/crawl/docs/develop/background_creation.txt
 @comment share/crawl/docs/develop/
 @comment share/crawl/docs/develop/IRC.txt
 @comment share/crawl/docs/develop/android.txt
@@ -638,6 +641,7 @@ share/crawl/docs/crawl_manual.txt
 @comment share/crawl/docs/develop/levels/
 @comment share/crawl/docs/develop/levels/advanced.txt
 @comment share/crawl/docs/develop/levels/introduction.txt
+@comment share/crawl/docs/develop/levels/reserved_monsters.txt
 @comment share/crawl/docs/develop/levels/syntax.txt
 @comment share/crawl/docs/develop/levels/triggerables.txt
 @comment share/crawl/docs/develop/monster_creation.txt
