@@ -1,0 +1,47 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+CAUTION
+
+The use of this client can make your account terminated. The
+possibility is really low, but still, use this port at your own
+risk!
+
+Abaddon tries its best (though is not perfect) to make Discord think
+it's a legitimate web client. Some of the things done to do this
+include: using a browser user agent, sending the same IDENTIFY
+message that the official web client does, using API v9 endpoints
+in all cases, and not using endpoints the web client does not
+normally use. There are still a few smaller inconsistencies, however.
+For example the web client sends lots of telemetry via the /science
+endpoint (uBlock origin stops this) as well as in the headers of
+all requests.
+
+CONFIGURATION
+
+abaddon.ini will also be automatically used if located at
+~/.config/abaddon/abaddon.ini and there is no abaddon.ini in the
+working directory
+
+HOW DO I GET MY TOKEN?
+
+Follow this:
+https://github.com/Tyrrrz/DiscordChatExporter/issues/76#issuecomment-410067054
+
+THE SPAM FILTER
+
+Discord likes disabling accounts/forcing them to reset their passwords
+if they think the user is a spam bot or potentially had their account
+compromised. While the official client still often gets users caught
+in the spam filter, third party clients tend to upset the spam
+filter more often. If you get caught by it, you can usually appeal
+it and get it restored. Here are some things you might want to do
+with the official client instead if you are particularly afraid of
+evoking the spam filter's wrath:
+
+- Joining or leaving servers (usually main cause of getting caught)
+- Frequently disconnecting and reconnecting
+- Starting new DMs with people
+- Managing your friends list
+- Managing your user profile while connected to a third party client
