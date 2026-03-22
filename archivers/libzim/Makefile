@@ -1,9 +1,9 @@
 BROKEN-sparc64 = error: comparison of integer expressions of different signedness
 COMMENT =	reference implementation of the ZIM specification
 
-DISTNAME =	libzim-9.4.0
+DISTNAME =	libzim-9.5.1
 
-SHARED_LIBS +=  zim                       5.0 # 9.4.0
+SHARED_LIBS +=  zim                       5.0
 
 CATEGORIES =	archivers
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://wiki.openzim.org/wiki/OpenZIM
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} icui18n icuuc lzma xapian zstd
+WANTLIB += ${COMPILER_LIBCXX} icui18n icuuc lzma m xapian zstd
 
 SITES =			https://download.openzim.org/release/libzim/
 EXTRACT_SUFX =		.tar.xz
