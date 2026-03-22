@@ -1,6 +1,6 @@
 COMMENT=	pytest plugin for measuring coverage
 
-MODPY_DISTV=	7.0.0
+MODPY_DISTV=	7.1.0
 DISTNAME=	pytest_cov-${MODPY_DISTV}
 PKGNAME=	py-test-cov-${MODPY_DISTV}
 CATEGORIES=	devel
