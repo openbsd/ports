@@ -2,16 +2,16 @@ COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
 COMMENT-tools=		GNU gettext development and translation tools
 
-VERSION=		0.23.1
+VERSION=		1.0
 DISTNAME=		gettext-${VERSION}
 PKGNAME-textstyle=	libtextstyle-${VERSION}
 
-SHARED_LIBS +=  intl                 8.1      # 12.2
-SHARED_LIBS +=  asprintf             3.0      # unknown
-SHARED_LIBS +=  textstyle            0.2      # 2.3
-SHARED_LIBS +=  gettextlib           15.0     # unknown
-SHARED_LIBS +=  gettextsrc           11.0     # unknown
-SHARED_LIBS +=  gettextpo            13.0     # 5.12
+SHARED_LIBS +=  intl                 8.2      # 12.6
+SHARED_LIBS +=  asprintf             3.1      # unknown
+SHARED_LIBS +=  textstyle            0.2      # 2.7
+SHARED_LIBS +=  gettextlib           16.0     # unknown
+SHARED_LIBS +=  gettextsrc           12.0     # unknown
+SHARED_LIBS +=  gettextpo            14.0     # 6.0
 
 SUBST_VARS=	VERSION
 
@@ -49,7 +49,9 @@ COMPILER =		base-clang base-gcc
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-csharp \
+		--disable-d \
 		--disable-java \
+		--disable-modula2 \
 		--disable-acl \
 		--disable-openmp \
 		--with-libiconv-prefix="${LOCALBASE}" \

@@ -1,6 +1,5 @@
 include/textstyle/
 include/textstyle.h
-include/textstyle/stdbool.h
 include/textstyle/version.h
 include/textstyle/woe32dll.h
 @info info/libtextstyle.info
