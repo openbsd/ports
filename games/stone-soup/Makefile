@@ -5,6 +5,7 @@ COMMENT =	dungeon crawl stone soup
 VERSION =	0.34.0
 DISTNAME =	stone_soup-${VERSION}-nodeps
 PKGNAME =	stone-soup-${VERSION}
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -37,8 +38,15 @@ BUILD_DEPENDS =	graphics/pngcrush \
 LIB_DEPENDS =	databases/sqlite3
 
 USE_GMAKE =	Yes
-MAKE_FLAGS =	FORCE_CC=${CC} FORCE_CXX=${CXX} LUA_PACKAGE=${MODLUA_FLAVOR} \
-		NO_TRY_GOLD=1 NO_TRY_LLD=1 V=1 prefix=${PREFIX}
+MAKE_FLAGS =	CFOTHERS="$(CFLAGS)" \
+		CFOPTIMIZE= \
+		FORCE_CC=${CC} \
+		FORCE_CXX=${CXX} \
+		LUA_PACKAGE=${MODLUA_FLAVOR} \
+		NO_TRY_GOLD=1 \
+		NO_TRY_LLD=1 \
+		V=1 \
+		prefix=${PREFIX}
 
 FLAVORS =	no_x11
 FLAVOR ?=
@@ -58,6 +66,8 @@ WRKDIST =	${WRKDIR}/${DISTNAME:-nodeps=}
 WRKSRC =	${WRKDIST}/source
 
 COMPILER =	base-clang ports-gcc
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-install:
 	mv ${PREFIX}/bin/crawl ${PREFIX}/bin/crawl-ss # Collision with net/crawl
