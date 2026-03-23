@@ -1,7 +1,6 @@
 COMMENT=	C/C++ compiler front-end to cache compiled object code
 
-V=		4.13
-REVISION=	0
+V=		4.13.2
 DISTNAME=	ccache-$V
 
 D=		2.4.12
