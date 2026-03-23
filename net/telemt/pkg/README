@@ -1,0 +1,21 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Configuration
+=============
+Generate ${SYSCONFDIR}/telemt/config.toml with `telemt --init` (see `--help`)
+or adapt commented files from ${EXAMPLES_DIR}/.
+
+The following is recommended:
+
+	[general]
+	# Avoid ANSI escape sequences in logs.
+	disable_colors = true
+
+	[server]
+	# Use an unprivileged listen port to start as unprivileged user.
+	port = 8443
+
+	[network]
+	ipv6 = true
