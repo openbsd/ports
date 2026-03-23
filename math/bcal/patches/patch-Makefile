@@ -1,21 +1,16 @@
-Remove -O3
-Remove -Werror
-Link with -lcurses to appease lld
-
-Index: Makefile
---- Makefile.orig
-+++ Makefile
-@@ -4,10 +4,10 @@ MANDIR = $(DESTDIR)$(PREFIX)/share/man/man1
+--- Makefile.orig.port	Fri Feb 20 16:26:06 2026
++++ Makefile	Mon Mar 23 09:01:22 2026
+@@ -4,10 +4,10 @@
  DOCDIR = $(DESTDIR)$(PREFIX)/share/doc/bcal
  STRIP ?= strip
  
 -CFLAGS_OPTIMIZATION ?= -O3
 -CFLAGS_WARNINGS     ?= -Wall -Wextra -Wno-unused-parameter -Werror
-+CFLAGS_OPTIMIZATION ?=
++CFLAGS_OPTIMIZATION ?= 
 +CFLAGS_WARNINGS     ?= -Wall -Wextra -Wno-unused-parameter
  
 -LDLIBS_READLINE ?= -lreadline
 +LDLIBS_READLINE ?= -lreadline -lcurses
+ LDLIBS_EDITLINE ?= -ledit
  
- CFLAGS += $(CFLAGS_OPTIMIZATION) $(CFLAGS_WARNINGS)
- LDLIBS += $(LDLIBS_READLINE)
+ LDLIBS_MATH ?= -lm

@@ -2,12 +2,11 @@
 # https://github.com/jarun/bcal/issues/4
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
-V =		2.4
+V =		2.5
 COMMENT =	storage and general-purpose calculator (Byte CALculator)
 DISTNAME =	bcal-v${V}
 PKGNAME =	bcal-${V}
 CATEGORIES =	math sysutils
-REVISION =	0
 
 HOMEPAGE =	https://github.com/jarun/bcal
 
