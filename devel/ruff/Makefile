@@ -3,9 +3,11 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	Python linter and code formatter
 
+MODPY_DISTV =	0.15.5
+REVISION =	0
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
-GH_TAGNAME =	0.15.5
+GH_TAGNAME =	${MODPY_DISTV}
 
 # Rust crates downloaded via git
 LSPTYPES =	e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c
@@ -29,26 +31,17 @@ WANTLIB +=	${MODCARGO_WANTLIB} m zstd
 LIB_DEPENDS +=	archivers/zstd
 TEST_DEPENDS+=	${LIB_DEPENDS}
 
-MODULES =	devel/cargo
+MODULES =	lang/python
+MODPY_PYBUILD =	maturin
 
-CONFIGURE_STYLE =	cargo
-
+MODCARGO_CARGOTOML =	${WRKSRC}/crates/ruff/Cargo.toml
 MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
-SEPARATE_BUILD=	Yes
-
 # Generate shell completions
-pre-install:
-	${MODCARGO_TARGET_DIR}/release/ruff generate-shell-completion bash \
-		> ${WRKSRC}/ruff.bash
-	${MODCARGO_TARGET_DIR}/release/ruff generate-shell-completion fish \
-		> ${WRKSRC}/ruff.fish
-	${MODCARGO_TARGET_DIR}/release/ruff generate-shell-completion zsh \
-		> ${WRKSRC}/ruff.zsh
-
-do-install:
-	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/ruff ${PREFIX}/bin/
-
+post-install:
+.for i in bash fish zsh
+	${PREFIX}/bin/ruff generate-shell-completion $i > ${WRKSRC}/ruff.$i
+.endfor
 	${INSTALL_DATA_DIR} \
 		${PREFIX}/share/bash-completion/completions \
 		${PREFIX}/share/fish/vendor_completions.d \
@@ -62,6 +55,9 @@ do-install:
 
 # Skip tests with errors (generate_json_schema, idx)
 MODCARGO_TEST_ARGS +=	-- --skip generate_json_schema --skip idx
+
+do-test:
+	@${MODCARGO_TEST_TARGET:S/maturin/cargo/}
 
 # TODO: fix tests
 # test commands::format::tests::error_diagnostics ... FAILED

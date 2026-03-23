@@ -1,4 +1,21 @@
 @bin bin/ruff
+lib/python${MODPY_VERSION}/site-packages/ruff/
+lib/python${MODPY_VERSION}/site-packages/ruff-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ruff-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ruff-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ruff-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ruff-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ruff-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ruff/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ruff/__main__.py
+lib/python${MODPY_VERSION}/site-packages/ruff/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ruff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ruff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ruff/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ruff/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ruff/${MODPY_PYCACHE}_find_ruff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ruff/${MODPY_PYCACHE}_find_ruff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ruff/_find_ruff.py
 share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/ruff
