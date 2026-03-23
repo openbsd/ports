@@ -1,0 +1,12 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -29,7 +29,7 @@ $(BIN):
+ 	if [ "$(HARDENING)" = "on" ]; then flags="$$flags --link-flags -Wl,-zrelro,-znow"; fi; \
+ 	ascii_files="$$(find src/exfetch/ascii -type f -name '*.ascii' | xargs -n1 basename)"; \
+ 	printf "Found ASCII files:\n$$ascii_files\n"; \
+-	ASCII_FILES="$$ascii_files" shards --no-color -v build -s -t -p --production --release $$flags
++	ASCII_FILES="$$ascii_files" shards --no-color -v build --debug -s -t -p --production --release $$flags
+ 
+ run:
+ 	@flags=""; \
