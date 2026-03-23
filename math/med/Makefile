@@ -4,7 +4,7 @@ COMMENT =		library for reading and writing MED files
 
 V =			5.0.0
 PKGNAME =		med-${V}
-REVISION =		1
+REVISION =		2
 
 # Official sources site seems down:
 # https://files.salome-platform.org/Salome/medfile/med-${V}.tar.bz2
@@ -12,7 +12,9 @@ REVISION =		1
 # https://github.com/chennes/med
 DIST_TUPLE +=		github chennes med v${V} .
 
+SHARED_LIBS +=		med		0.0 # 0.0
 SHARED_LIBS +=		medC		0.0 # 0.0
+SHARED_LIBS +=		medfwrap	0.0 # 0.0
 SHARED_LIBS +=		medimport	0.0 # 0.0
 
 CATEGORIES =		math
@@ -22,10 +24,11 @@ MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 # LGPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		${COMPILER_LIBCXX} c hdf5 m z
+WANTLIB +=		${COMPILER_LIBCXX} c hdf5 m sz z
 
 COMPILER =		base-clang ports-gcc
-MODULES =		devel/cmake
+MODULES =		devel/cmake \
+			fortran
 
 LIB_DEPENDS =		math/hdf5
 
@@ -44,6 +47,6 @@ SUBST_VARS +=		V
 # don't install old header and test binaries
 post-install:
 	rm -r ${PREFIX}/include/2.3.6
-	rm -r ${PREFIX}/bin/testc
+	rm -r ${PREFIX}/bin/test*
 
 .include <bsd.port.mk>

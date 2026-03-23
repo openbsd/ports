@@ -36,7 +36,9 @@ include/medparameter.h
 include/medprofile.h
 include/medstructelement.h
 include/medsubdomain.h
+@lib lib/libmed.so.${LIBmed_VERSION}
 @lib lib/libmedC.so.${LIBmedC_VERSION}
+@lib lib/libmedfwrap.so.${LIBmedfwrap_VERSION}
 @lib lib/libmedimport.so.${LIBmedimport_VERSION}
 share/cmake/
 share/cmake/medfile-${V}/
