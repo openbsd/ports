@@ -7,14 +7,10 @@ lib/eog/plugins/fullscreenbg.py
 @so lib/eog/plugins/libexif-display.so
 @so lib/eog/plugins/libfit-to-width.so
 @so lib/eog/plugins/liblight-theme.so
-@so lib/eog/plugins/libmap.so
-@so lib/eog/plugins/libpostasa.so
 @so lib/eog/plugins/libsend-by-mail.so
 lib/eog/plugins/light-theme.plugin
-lib/eog/plugins/map.plugin
 lib/eog/plugins/maximize-windows.plugin
 lib/eog/plugins/maximize-windows.py
-lib/eog/plugins/postasa.plugin
 lib/eog/plugins/pythonconsole/
 lib/eog/plugins/pythonconsole.plugin
 lib/eog/plugins/pythonconsole/__init__.py
@@ -101,9 +97,7 @@ share/metainfo/eog-export-to-folder.appdata.xml
 share/metainfo/eog-fit-to-width.appdata.xml
 share/metainfo/eog-fullscreenbg.appdata.xml
 share/metainfo/eog-light-theme.appdata.xml
-share/metainfo/eog-map.appdata.xml
 share/metainfo/eog-maximize-windows.appdata.xml
-share/metainfo/eog-postasa.appdata.xml
 share/metainfo/eog-pythonconsole.appdata.xml
 share/metainfo/eog-send-by-mail.appdata.xml
 share/metainfo/eog-slideshowshuffle.appdata.xml
