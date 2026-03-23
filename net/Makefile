@@ -749,6 +749,7 @@
      SUBDIR += tcptraceroute
      SUBDIR += tdesktop
      SUBDIR += tdlib
+     SUBDIR += telemt
      SUBDIR += telepathy
      SUBDIR += telescope
      SUBDIR += tg
