@@ -2,12 +2,11 @@ COMMENT =	m17n wrapper for fcitx5
 
 DISTNAME =	fcitx5-m17n-5.1.2
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-m17n
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-m17n/
 EXTRACT_SUFX =	.tar.zst

@@ -1,7 +1,7 @@
 COMMENT =	library to support generic input method implementation
 
 DISTNAME =	libime-1.1.9
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=	IMECore		0.2 # 0.0
 SHARED_LIBS +=	IMEPinyin	0.2 # 0.0
@@ -10,8 +10,6 @@ SHARED_LIBS +=	IMETable	1.0 # 0.0
 CATEGORIES =	inputmethods
 
 HOMEPAGE =	https://github.com/fcitx/libime
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes

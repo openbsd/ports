@@ -2,13 +2,11 @@ COMMENT =	extra table for Fcitx5
 
 DISTNAME =	fcitx5-table-extra-5.1.6
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	inputmethods chinese
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-table-extra
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # GPLv3.0 or later
 PERMIT_PACKAGE=	Yes

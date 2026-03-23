@@ -11,10 +11,10 @@ PKGNAME-perl =		p5-libmarisa-${V}
 PKGNAME-python =	py3-libmarisa-${V}
 PKGNAME-ruby =		ruby-libmarisa-${V}
 
-REVISION-main =		3
-REVISION-python =	7
-REVISION-ruby =		5
-REVISION-perl =		1
+REVISION-main =		4
+REVISION-python =	8
+REVISION-ruby =		6
+REVISION-perl =		2
 
 GH_ACCOUNT =	s-yata
 GH_PROJECT =	marisa-trie
@@ -23,8 +23,6 @@ GH_TAGNAME =	v${V}
 SHARED_LIBS +=	marisa			0.0 # 0.0
 
 CATEGORIES =	textproc
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # dual license: either BSD 2-clause or LGPLv2.1+
 PERMIT_PACKAGE =	Yes

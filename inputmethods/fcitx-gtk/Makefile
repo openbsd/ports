@@ -2,14 +2,13 @@ COMMENT =	GTK IM module for fcitx5
 
 DISTNAME =	fcitx5-gtk-5.1.3
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 SHARED_LIBS =	Fcitx5GClient			0.0 # 0.0
 
 CATEGORIES =	inputmethods
 
 HOMEPAGE =	https://fcitx-im.org/
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes

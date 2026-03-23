@@ -2,13 +2,11 @@ COMMENT =	unikey Vietnamese support for fcitx5
 
 DISTNAME =	fcitx5-unikey-5.1.5
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-unikey
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
-
 
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-unikey/
 EXTRACT_SUFX =	.tar.zst

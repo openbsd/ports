@@ -2,13 +2,11 @@ COMMENT =	Hangul wrapper for fcitx5
 
 DISTNAME =	fcitx5-hangul-5.1.5
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	inputmethods korean
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-hangul
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-hangul/
 EXTRACT_SUFX =		.tar.zst

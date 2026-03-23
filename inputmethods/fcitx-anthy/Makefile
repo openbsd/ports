@@ -2,12 +2,11 @@ COMMENT =	anthy wrapper for fcitx5
 
 DISTNAME =	fcitx5-anthy-5.1.5
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods japanese
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-anthy
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Utils
 WANTLIB += anthy anthydic m

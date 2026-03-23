@@ -2,13 +2,11 @@ COMMENT =	addons related to Chinese with IME bundled inside fcitx
 
 DISTNAME =	fcitx5-chinese-addons-5.1.7
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	inputmethods chinese
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-chinese-addons
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes

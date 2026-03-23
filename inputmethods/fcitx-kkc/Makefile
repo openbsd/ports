@@ -2,6 +2,7 @@ COMMENT =	libkkc wrapper for fcitx5
 
 DISTNAME =	fcitx5-kkc-5.1.5
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods japanese
 
@@ -9,8 +10,6 @@ HOMEPAGE =	https://github.com/fcitx/fcitx5-kkc
 
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-kkc/
 EXTRACT_SUFX =	.tar.zst
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # GPLv3.0 or later
 PERMIT_PACKAGE=	Yes

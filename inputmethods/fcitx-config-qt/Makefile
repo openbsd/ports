@@ -2,12 +2,11 @@ COMMENT =	GUI configure tool for fcitx5
 
 DISTNAME =	fcitx5-configtool-5.1.7
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-configtool
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # GPLv2.0+
 PERMIT_PACKAGE=	Yes

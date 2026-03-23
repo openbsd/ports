@@ -1,15 +1,13 @@
 COMMENT =	implementation of xim protocol in xcb
 
 DISTNAME =	xcb-imdkit-1.0.9
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  xcb-imdkit		2.0 # 2.0
 
 CATEGORIES =	inputmethods
 
 HOMEPAGE =	https://github.com/fcitx/xcb-imdkit
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # LGPL 2.1
 PERMIT_PACKAGE=	Yes

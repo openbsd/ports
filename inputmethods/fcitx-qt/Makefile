@@ -2,7 +2,7 @@ COMMENT =	Qt library and IM module for fcitx5
 
 DISTNAME =	fcitx5-qt-5.1.8
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	Fcitx5Qt5WidgetsAddons		1.0 # 0.0
 SHARED_LIBS +=	Fcitx5Qt5DBusAddons		0.1 # 0.0
@@ -12,8 +12,6 @@ SHARED_LIBS +=	Fcitx5Qt6WidgetsAddons		0.0 # 0.0
 CATEGORIES =	inputmethods
 
 HOMEPAGE =	https://fcitx-im.org/
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # BSD for plugins
 # LGPL2.1+ for other files

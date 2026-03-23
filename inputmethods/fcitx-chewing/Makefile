@@ -3,10 +3,9 @@ COMMENT =	chewing wrapper for fcitx5
 DISTNAME =	fcitx5-chewing-5.1.6
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 CATEGORIES =	inputmethods chinese
+REVISION =	0
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-chewing
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes

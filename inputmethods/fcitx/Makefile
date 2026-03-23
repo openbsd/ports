@@ -2,6 +2,7 @@ COMMENT =	flexible input method framework
 
 DISTNAME =	fcitx5-5.1.11
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 SHARED_LIBS +=  Fcitx5Config			0.0 # 0.0
 SHARED_LIBS +=  Fcitx5Core			1.1 # 0.0
@@ -10,8 +11,6 @@ SHARED_LIBS +=  Fcitx5Utils			1.1 # 0.0
 CATEGORIES =	inputmethods chinese japanese korean
 
 HOMEPAGE =	https://fcitx-im.org/
-
-MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
