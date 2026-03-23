@@ -1,0 +1,224 @@
+Index: example/all.yaml
+--- example/all.yaml.orig
++++ example/all.yaml
+@@ -1,169 +1,156 @@
+---- 
+-database: 
+-  boundarys: 
+-    - 
++---
++database:
++  boundarys:
++    -
+       age: 1
+       area: 0.0.0.0
+       asbrouter: 0.0.0.3
+       metric: 10
+       routerid: 0.0.0.2
+-      sequence: 0x80000001
+-  externals: 
+-    - 
++      sequence: '0x80000001'
++  externals:
++    -
+       address: 10.0.0.0
+       age: 2
+       forward: 0.0.0.0
+       metric: 20
+       netmask: 255.0.0.0
+       routerid: 0.0.0.2
+-      sequence: 0x80000001
++      sequence: '0x80000001'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.0
+       age: 3
+       forward: 0.0.0.0
+       metric: 30
+       netmask: 0.0.0.0
+       routerid: 0.0.0.3
+-      sequence: 0x80000001
++      sequence: '0x80000001'
+       type: 2
+-  networks: 
+-    - 
++  networks:
++    -
+       address: 172.0.1.1
+       age: 4
+       area: 0.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 0.0.0.1
+-        - 
++        -
+           routerid: 0.0.0.2
+       netmask: 255.255.255.0
+       routerid: 0.0.0.1
+-      sequence: 0x80000001
+-  routers: 
+-    - 
++      sequence: '0x80000001'
++  routers:
++    -
+       age: 5
+       area: 0.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 0
+         V: 0
+       pointtopoints: []
+-
+       router: 0.0.0.1
+       routerid: 0.0.0.1
+-      sequence: 0x80000001
++      sequence: '0x80000001'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.0.1.1
+           interface: 172.0.1.1
+           metric: 50
+       virtuals: []
+-
+-    - 
++    -
+       age: 6
+       area: 23.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 0
+         V: 0
+-      pointtopoints: 
+-        - 
++      pointtopoints:
++        -
+           interface: 172.23.3.1
+           metric: 60
+           routerid: 0.0.0.4
+       router: 0.0.0.1
+       routerid: 0.0.0.1
+-      sequence: 0x80000001
+-      stubs: 
+-        - 
++      sequence: '0x80000001'
++      stubs:
++        -
+           metric: 60
+           netmask: 255.255.255.0
+           network: 172.23.2.0
+       transits: []
+-
+       virtuals: []
+-
+-    - 
++    -
+       age: 7
+       area: 0.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 0.0.0.2
+       routerid: 0.0.0.2
+-      sequence: 0x80000001
++      sequence: '0x80000001'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.0.1.1
+           interface: 172.0.1.2
+           metric: 70
+-      virtuals: 
+-        - 
++      virtuals:
++        -
+           interface: 172.0.4.2
+           metric: 70
+           routerid: 0.0.0.4
+-    - 
++    -
+       age: 8
+       area: 23.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 0
+         V: 0
+-      pointtopoints: 
+-        - 
++      pointtopoints:
++        -
+           interface: 172.23.3.4
+           metric: 80
+           routerid: 0.0.0.1
+       router: 0.0.0.4
+       routerid: 0.0.0.4
+-      sequence: 0x80000001
++      sequence: '0x80000001'
+       stubs: []
+-
+       transits: []
+-
+       virtuals: []
+-
+-    - 
++    -
+       age: 9
+       area: 0.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 0
+         V: 0
+       pointtopoints: []
+-
+       router: 0.0.0.4
+       routerid: 0.0.0.4
+-      sequence: 0x80000001
++      sequence: '0x80000001'
+       stubs: []
+-
+       transits: []
+-
+-      virtuals: 
+-        - 
++      virtuals:
++        -
+           interface: 172.0.4.4
+           metric: 90
+           routerid: 0.0.0.2
+-  summarys: 
+-    - 
++  summarys:
++    -
+       address: 172.51.5.0
+       age: 10
+       area: 0.0.0.0
+       metric: 100
+       netmask: 255.255.255.0
+       routerid: 0.0.0.2
+-      sequence: 0x80000001
++      sequence: '0x80000001'
+ ipv6: 0
+-self: 
+-  areas: 
++self:
++  areas:
+     - 23.0.0.0
+     - 0.0.0.0
+   routerid: 0.0.0.1

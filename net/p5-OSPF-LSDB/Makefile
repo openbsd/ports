@@ -1,6 +1,7 @@
 COMMENT =	ospf link-state database viewer
 
 DISTNAME =	OSPF-LSDB-1.18
+REVISION =	0
 CPAN_AUTHOR =	BLUHM
 
 CATEGORIES =	net

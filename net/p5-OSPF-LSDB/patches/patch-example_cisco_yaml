@@ -1,0 +1,365 @@
+Index: example/cisco.yaml
+--- example/cisco.yaml.orig
++++ example/cisco.yaml
+@@ -1,281 +1,267 @@
+---- 
+-database: 
+-  boundarys: 
+-    - 
++---
++database:
++  boundarys:
++    -
+       age: 159
+       area: 0.0.0.0
+       asbrouter: 10.188.50.50
+       metric: 11
+       routerid: 10.188.1.15
+-      sequence: 0x80000001
+-  externals: 
+-    - 
++      sequence: '0x80000001'
++  externals:
++    -
+       address: 10.188.5.0
+       age: 137
+       forward: 0.0.0.0
+       metric: 50
+       netmask: 255.255.255.0
+       routerid: 10.188.50.50
+-      sequence: 0x8000003F
++      sequence: '0x8000003F'
+       type: 1
+-    - 
++    -
+       address: 10.188.103.0
+       age: 137
+       forward: 0.0.0.0
+       metric: 50
+       netmask: 255.255.255.0
+       routerid: 10.188.50.50
+-      sequence: 0x8000003F
++      sequence: '0x8000003F'
+       type: 1
+-    - 
++    -
+       address: 10.188.104.0
+       age: 137
+       forward: 0.0.0.0
+       metric: 50
+       netmask: 255.255.255.0
+       routerid: 10.188.50.50
+-      sequence: 0x8000003F
++      sequence: '0x8000003F'
+       type: 1
+-    - 
++    -
+       address: 10.188.113.0
+       age: 137
+       forward: 0.0.0.0
+       metric: 50
+       netmask: 255.255.255.0
+       routerid: 10.188.50.50
+-      sequence: 0x8000003F
++      sequence: '0x8000003F'
+       type: 1
+-    - 
++    -
+       address: 10.188.114.0
+       age: 137
+       forward: 0.0.0.0
+       metric: 50
+       netmask: 255.255.255.0
+       routerid: 10.188.50.50
+-      sequence: 0x8000003F
++      sequence: '0x8000003F'
+       type: 1
+-    - 
++    -
+       address: 10.188.143.0
+       age: 137
+       forward: 0.0.0.0
+       metric: 50
+       netmask: 255.255.255.0
+       routerid: 10.188.50.50
+-      sequence: 0x8000003F
++      sequence: '0x8000003F'
+       type: 1
+-    - 
++    -
+       address: 10.188.144.0
+       age: 137
+       forward: 0.0.0.0
+       metric: 50
+       netmask: 255.255.255.0
+       routerid: 10.188.50.50
+-      sequence: 0x8000003F
++      sequence: '0x8000003F'
+       type: 1
+-    - 
++    -
+       address: 10.188.163.0
+       age: 137
+       forward: 0.0.0.0
+       metric: 50
+       netmask: 255.255.255.0
+       routerid: 10.188.50.50
+-      sequence: 0x8000003F
++      sequence: '0x8000003F'
+       type: 1
+-    - 
++    -
+       address: 10.188.164.0
+       age: 137
+       forward: 0.0.0.0
+       metric: 50
+       netmask: 255.255.255.0
+       routerid: 10.188.50.50
+-      sequence: 0x8000003F
++      sequence: '0x8000003F'
+       type: 1
+-  networks: 
+-    - 
++  networks:
++    -
+       address: 10.253.4.99
+       age: 580
+       area: 0.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 10.188.1.15
+-        - 
++        -
+           routerid: 10.188.1.16
+       netmask: 255.255.252.0
+       routerid: 10.188.1.15
+-      sequence: 0x80000001
+-    - 
++      sequence: '0x80000001'
++    -
+       address: 10.188.1.15
+       age: 1502
+       area: 10.188.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 10.188.1.15
+-        - 
++        -
+           routerid: 10.188.1.10
+       netmask: 255.255.255.0
+       routerid: 10.188.1.15
+-      sequence: 0x8000004D
+-    - 
++      sequence: '0x8000004D'
++    -
+       address: 10.188.50.10
+       age: 1739
+       area: 10.188.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 10.188.50.50
+-        - 
++        -
+           routerid: 10.188.1.10
+       netmask: 255.255.255.0
+       routerid: 10.188.1.10
+-      sequence: 0x80000042
+-  routers: 
+-    - 
++      sequence: '0x80000042'
++  routers:
++    -
+       age: 574
+       area: 0.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 0
+         V: 0
+       pointtopoints: []
+-
+       router: 10.188.1.15
+       routerid: 10.188.1.15
+-      sequence: 0x8000002A
++      sequence: '0x8000002A'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 10.253.4.99
+           interface: 10.253.4.99
+           metric: 1
+       virtuals: []
+-
+-    - 
++    -
+       age: 570
+       area: 0.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 0
+         V: 0
+       pointtopoints: []
+-
+       router: 10.188.1.16
+       routerid: 10.188.1.16
+-      sequence: 0x8000002D
++      sequence: '0x8000002D'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 10.253.4.99
+           interface: 10.253.4.98
+           metric: 65535
+       virtuals: []
+-
+-    - 
++    -
+       age: 148
+       area: 10.188.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 0
+         V: 0
+       pointtopoints: []
+-
+       router: 10.188.1.10
+       routerid: 10.188.1.10
+-      sequence: 0x8000005C
++      sequence: '0x8000005C'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 10.188.50.10
+           interface: 10.188.50.10
+           metric: 10
+-        - 
++        -
+           address: 10.188.1.15
+           interface: 10.188.1.10
+           metric: 10
+       virtuals: []
+-
+-    - 
++    -
+       age: 1495
+       area: 10.188.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 0
+         V: 0
+       pointtopoints: []
+-
+       router: 10.188.1.15
+       routerid: 10.188.1.15
+-      sequence: 0x8000004F
++      sequence: '0x8000004F'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 10.188.1.15
+           interface: 10.188.1.15
+           metric: 1
+       virtuals: []
+-
+-    - 
++    -
+       age: 142
+       area: 10.188.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 10.188.50.50
+       routerid: 10.188.50.50
+-      sequence: 0x80000041
+-      stubs: 
+-        - 
++      sequence: '0x80000041'
++      stubs:
++        -
+           metric: 10
+           netmask: 255.255.255.255
+           network: 10.188.49.50
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 10.188.50.10
+           interface: 10.188.50.50
+           metric: 10
+       virtuals: []
+-
+-  summarys: 
+-    - 
++  summarys:
++    -
+       address: 10.188.1.0
+       age: 1508
+       area: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 10.188.1.15
+-      sequence: 0x80000025
+-    - 
++      sequence: '0x80000025'
++    -
+       address: 10.188.49.50
+       age: 144
+       area: 0.0.0.0
+       metric: 21
+       netmask: 255.255.255.255
+       routerid: 10.188.1.15
+-      sequence: 0x80000001
+-    - 
++      sequence: '0x80000001'
++    -
+       address: 10.188.50.0
+       age: 1508
+       area: 0.0.0.0
+       metric: 11
+       netmask: 255.255.255.0
+       routerid: 10.188.1.15
+-      sequence: 0x80000025
+-    - 
++      sequence: '0x80000025'
++    -
+       address: 10.253.4.0
+       age: 1508
+       area: 10.188.0.0
+       metric: 1
+       netmask: 255.255.252.0
+       routerid: 10.188.1.15
+-      sequence: 0x80000025
++      sequence: '0x80000025'
+ ipv6: 0
+-self: 
+-  areas: 
++self:
++  areas:
+     - 0.0.0.0
+     - 10.188.0.0
+     - 10.188.15.0

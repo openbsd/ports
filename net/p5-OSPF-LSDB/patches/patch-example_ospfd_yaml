@@ -1,0 +1,2553 @@
+Index: example/ospfd.yaml
+--- example/ospfd.yaml.orig
++++ example/ospfd.yaml
+@@ -1,2013 +1,1963 @@
+---- 
+-database: 
+-  boundarys: 
+-    - 
++---
++database:
++  boundarys:
++    -
+       age: 1103
+       area: 23.0.0.0
+       asbrouter: 172.30.5.5
+       metric: 11
+       routerid: 172.16.0.47
+-      sequence: 0x80000189
+-    - 
++      sequence: '0x80000189'
++    -
+       age: 312
+       area: 23.0.0.0
+       asbrouter: 172.30.5.5
+       metric: 21
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       age: 67
+       area: 23.0.0.0
+       asbrouter: 172.30.7.8
+       metric: 65572
+       routerid: 172.16.0.47
+-      sequence: 0x80000011
+-    - 
++      sequence: '0x80000011'
++    -
+       age: 67
+       area: 23.0.0.0
+       asbrouter: 172.30.7.8
+       metric: 65549
+       routerid: 172.16.0.48
+-      sequence: 0x80000011
+-    - 
++      sequence: '0x80000011'
++    -
+       age: 433
+       area: 23.0.0.0
+       asbrouter: 172.30.206.206
+       metric: 65569
+       routerid: 172.16.0.47
+-      sequence: 0x8000003f
+-    - 
++      sequence: '0x8000003f'
++    -
+       age: 434
+       area: 23.0.0.0
+       asbrouter: 172.30.206.206
+       metric: 65546
+       routerid: 172.16.0.48
+-      sequence: 0x8000003f
+-    - 
++      sequence: '0x8000003f'
++    -
+       age: 1635
+       area: 23.0.0.0
+       asbrouter: 172.30.206.207
+       metric: 65570
+       routerid: 172.16.0.47
+-      sequence: 0x80000040
+-    - 
++      sequence: '0x80000040'
++    -
+       age: 1635
+       area: 23.0.0.0
+       asbrouter: 172.30.206.207
+       metric: 65547
+       routerid: 172.16.0.48
+-      sequence: 0x80000040
+-    - 
++      sequence: '0x80000040'
++    -
+       age: 536
+       area: 23.0.0.0
+       asbrouter: 172.31.5.52
+       metric: 10
+       routerid: 172.16.0.47
+-      sequence: 0x80000323
+-    - 
++      sequence: '0x80000323'
++    -
+       age: 312
+       area: 23.0.0.0
+       asbrouter: 172.31.5.52
+       metric: 20
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       age: 1007
+       area: 23.0.0.0
+       asbrouter: 172.31.5.62
+       metric: 11
+       routerid: 172.16.0.47
+-      sequence: 0x80000324
+-    - 
++      sequence: '0x80000324'
++    -
+       age: 312
+       area: 23.0.0.0
+       asbrouter: 172.31.5.62
+       metric: 20
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       age: 311
+       area: 23.0.0.0
+       asbrouter: 172.31.8.2
+       metric: 65568
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       age: 1464
+       area: 23.0.0.0
+       asbrouter: 172.31.8.2
+       metric: 65545
+       routerid: 172.16.0.48
+-      sequence: 0x800000a0
+-    - 
++      sequence: '0x800000a0'
++    -
+       age: 460
+       area: 23.0.0.0
+       asbrouter: 172.31.206.2
+       metric: 65568
+       routerid: 172.16.0.47
+-      sequence: 0x80000040
+-    - 
++      sequence: '0x80000040'
++    -
+       age: 459
+       area: 23.0.0.0
+       asbrouter: 172.31.206.2
+       metric: 65545
+       routerid: 172.16.0.48
+-      sequence: 0x80000040
+-    - 
++      sequence: '0x80000040'
++    -
+       age: 1416
+       area: 23.0.0.0
+       asbrouter: 172.31.207.2
+       metric: 65568
+       routerid: 172.16.0.47
+-      sequence: 0x80000041
+-    - 
++      sequence: '0x80000041'
++    -
+       age: 1416
+       area: 23.0.0.0
+       asbrouter: 172.31.207.2
+       metric: 65545
+       routerid: 172.16.0.48
+-      sequence: 0x80000041
+-    - 
++      sequence: '0x80000041'
++    -
+       age: 710
+       area: 0.0.0.0
+       asbrouter: 172.16.0.47
+       metric: 10
+       routerid: 172.16.0.48
+-      sequence: 0x80000323
+-    - 
++      sequence: '0x80000323'
++    -
+       age: 312
+       area: 0.0.0.0
+       asbrouter: 172.30.5.5
+       metric: 21
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       age: 67
+       area: 0.0.0.0
+       asbrouter: 172.30.7.8
+       metric: 65549
+       routerid: 172.16.0.48
+-      sequence: 0x80000011
+-    - 
++      sequence: '0x80000011'
++    -
+       age: 434
+       area: 0.0.0.0
+       asbrouter: 172.30.206.206
+       metric: 65546
+       routerid: 172.16.0.48
+-      sequence: 0x8000003f
+-    - 
++      sequence: '0x8000003f'
++    -
+       age: 1635
+       area: 0.0.0.0
+       asbrouter: 172.30.206.207
+       metric: 65547
+       routerid: 172.16.0.48
+-      sequence: 0x80000040
+-    - 
++      sequence: '0x80000040'
++    -
+       age: 312
+       area: 0.0.0.0
+       asbrouter: 172.31.5.52
+       metric: 20
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       age: 312
+       area: 0.0.0.0
+       asbrouter: 172.31.5.62
+       metric: 20
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       age: 1464
+       area: 0.0.0.0
+       asbrouter: 172.31.8.2
+       metric: 65545
+       routerid: 172.16.0.48
+-      sequence: 0x800000a0
+-    - 
++      sequence: '0x800000a0'
++    -
+       age: 459
+       area: 0.0.0.0
+       asbrouter: 172.31.206.2
+       metric: 65545
+       routerid: 172.16.0.48
+-      sequence: 0x80000041
+-    - 
++      sequence: '0x80000041'
++    -
+       age: 1416
+       area: 0.0.0.0
+       asbrouter: 172.31.207.2
+       metric: 65545
+       routerid: 172.16.0.48
+-      sequence: 0x80000041
+-    - 
++      sequence: '0x80000041'
++    -
+       age: 392
+       area: 51.0.0.0
+       asbrouter: 172.16.0.47
+       metric: 10
+       routerid: 172.16.0.48
+-      sequence: 0x80000694
+-    - 
++      sequence: '0x80000694'
++    -
+       age: 361
+       area: 51.0.0.0
+       asbrouter: 172.16.0.48
+       metric: 10
+       routerid: 172.16.0.47
+-      sequence: 0x80000694
+-  externals: 
+-    - 
++      sequence: '0x80000694'
++  externals:
++    -
+       address: 0.0.0.0
+       age: 382
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 0.0.0.0
+       routerid: 172.30.5.5
+-      sequence: 0x800007fa
++      sequence: '0x800007fa'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.0
+       age: 763
+       forward: 0.0.0.0
+       metric: 2
+       netmask: 0.0.0.0
+       routerid: 172.30.6.6
+-      sequence: 0x80000598
++      sequence: '0x80000598'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.0
+       age: 720
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 0.0.0.0
+       routerid: 172.30.7.8
+-      sequence: 0x800000ad
++      sequence: '0x800000ad'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.0
+       age: 866
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 0.0.0.0
+       routerid: 172.30.206.206
+-      sequence: 0x800000a5
++      sequence: '0x800000a5'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.0
+       age: 801
+       forward: 0.0.0.0
+       metric: 2
+       netmask: 0.0.0.0
+       routerid: 172.30.206.207
+-      sequence: 0x80000048
++      sequence: '0x80000048'
+       type: 1
+-    - 
++    -
+       address: 55.66.77.0
+       age: 25
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 172.30.5.5
+-      sequence: 0x80000194
++      sequence: '0x80000194'
+       type: 1
+-    - 
++    -
+       address: 60.0.0.255
+       age: 1733
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 150.175.240.119
+       age: 1698
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.248
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 172.16.0.173
+       age: 102
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.255
+       routerid: 172.30.5.5
+-      sequence: 0x80000194
++      sequence: '0x80000194'
+       type: 1
+-    - 
++    -
+       address: 172.16.0.175
+       age: 109
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.255
+       routerid: 172.30.5.5
+-      sequence: 0x80000194
++      sequence: '0x80000194'
+       type: 1
+-    - 
++    -
+       address: 172.16.0.175
+       age: 487
+       forward: 0.0.0.0
+       metric: 2
+       netmask: 255.255.255.255
+       routerid: 172.30.6.6
+-      sequence: 0x8000059a
++      sequence: '0x8000059a'
+       type: 1
+-    - 
++    -
+       address: 172.16.0.176
+       age: 991
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.255
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 172.16.0.178
+       age: 1336
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.255
+       routerid: 172.30.7.8
+-      sequence: 0x800000aa
++      sequence: '0x800000aa'
+       type: 1
+-    - 
++    -
+       address: 172.16.81.0
+       age: 594
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.16.83.0
+       age: 244
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.16.224.16
+       age: 1642
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.240
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 172.16.224.47
+       age: 872
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.240
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 172.16.224.144
+       age: 333
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.240
+       routerid: 172.30.5.5
+-      sequence: 0x8000052b
++      sequence: '0x8000052b'
+       type: 1
+-    - 
++    -
+       address: 172.16.224.175
+       age: 1320
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.240
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 172.16.255.255
+       age: 1446
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.0.0
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 172.16.255.255
+       age: 63
+       forward: 0.0.0.0
+       metric: 2
+       netmask: 255.255.0.0
+       routerid: 172.30.6.6
+-      sequence: 0x80000a0c
++      sequence: '0x80000a0c'
+       type: 1
+-    - 
++    -
+       address: 172.16.255.255
+       age: 27
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.0.0
+       routerid: 172.30.7.8
+-      sequence: 0x800000ac
++      sequence: '0x800000ac'
+       type: 1
+-    - 
++    -
+       address: 172.16.255.255
+       age: 170
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.0.0
+       routerid: 172.30.206.206
+-      sequence: 0x800000a8
++      sequence: '0x800000a8'
+       type: 1
+-    - 
++    -
+       address: 172.16.255.255
+       age: 108
+       forward: 0.0.0.0
+       metric: 2
+       netmask: 255.255.0.0
+       routerid: 172.30.206.207
+-      sequence: 0x8000004b
++      sequence: '0x8000004b'
+       type: 1
+-    - 
++    -
+       address: 172.18.5.0
+       age: 1187
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 172.18.6.255
+       age: 1364
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.18.7.0
+       age: 1175
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.18.8.255
+       age: 1014
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.18.61.0
+       age: 1199
+       forward: 0.0.0.0
+       metric: 0
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80001cc7
++      sequence: '0x80001cc7'
+       type: 1
+-    - 
++    -
+       address: 172.18.206.255
+       age: 1653
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 172.30.206.206
+-      sequence: 0x80000040
++      sequence: '0x80000040'
+       type: 1
+-    - 
++    -
+       address: 172.18.207.0
+       age: 1396
+       forward: 0.0.0.0
+       metric: 2
+       netmask: 255.255.255.0
+       routerid: 172.30.206.207
+-      sequence: 0x80000042
++      sequence: '0x80000042'
+       type: 1
+-    - 
++    -
+       address: 172.26.5.0
+       age: 907
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 172.27.5.0
+       age: 872
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 172.28.5.0
+       age: 837
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 172.28.6.255
+       age: 1014
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.28.7.0
+       age: 825
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.28.8.255
+       age: 664
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.30.5.0
+       age: 1105
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.30.6.255
+       age: 944
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.37.5.0
+       age: 522
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 172.30.5.5
+-      sequence: 0x800008bb
++      sequence: '0x800008bb'
+       type: 1
+-    - 
++    -
+       address: 172.37.5.0
+       age: 860
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x800000a6
++      sequence: '0x800000a6'
+       type: 1
+-    - 
++    -
+       address: 172.38.5.0
+       age: 487
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 172.30.5.5
+-      sequence: 0x80000529
++      sequence: '0x80000529'
+       type: 1
+-    - 
++    -
+       address: 172.38.6.255
+       age: 664
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.38.7.0
+       age: 475
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.38.8.255
+       age: 314
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.61.8.255
+       age: 1266
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x800000aa
++      sequence: '0x800000aa'
+       type: 1
+-    - 
++    -
+       address: 172.63.8.255
+       age: 1196
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x800000aa
++      sequence: '0x800000aa'
+       type: 1
+-    - 
++    -
+       address: 172.65.8.255
+       age: 1327
+       forward: 172.19.7.60
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.31.8.2
+-      sequence: 0x800000a5
++      sequence: '0x800000a5'
+       type: 1
+-    - 
++    -
+       address: 172.67.8.0
+       age: 1243
+       forward: 172.19.7.60
+       metric: 4
+       netmask: 255.255.255.255
+       routerid: 172.31.8.2
+-      sequence: 0x800000a5
++      sequence: '0x800000a5'
+       type: 1
+-    - 
++    -
+       address: 172.69.8.255
+       age: 986
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.69.8.255
+       age: 1188
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.31.8.2
+-      sequence: 0x800000a5
++      sequence: '0x800000a5'
+       type: 1
+-    - 
++    -
+       address: 172.71.8.255
+       age: 916
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.71.8.255
+       age: 1118
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.31.8.2
+-      sequence: 0x800000a5
++      sequence: '0x800000a5'
+       type: 1
+-    - 
++    -
+       address: 172.89.6.255
+       age: 636
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.89.7.0
+       age: 447
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.89.8.255
+       age: 286
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.90.6.255
+       age: 601
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000010
++      sequence: '0x80000010'
+       type: 1
+-    - 
++    -
+       address: 172.90.7.0
+       age: 412
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.90.8.255
+       age: 251
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.93.6.255
+       age: 496
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.93.7.0
+       age: 307
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.93.8.255
+       age: 146
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.94.6.255
+       age: 461
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.94.7.0
+       age: 272
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 172.94.8.255
+       age: 111
+       forward: 0.0.0.0
+       metric: 4
+       netmask: 255.255.255.0
+       routerid: 172.30.7.8
+-      sequence: 0x80000011
++      sequence: '0x80000011'
+       type: 1
+-    - 
++    -
+       address: 192.168.0.150
+       age: 711
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.255
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 192.168.94.94
+       age: 1635
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.255
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-    - 
++    -
+       address: 192.168.194.255
+       age: 1390
+       forward: 0.0.0.0
+       metric: 1
+       netmask: 255.255.255.0
+       routerid: 172.30.5.5
+-      sequence: 0x80000193
++      sequence: '0x80000193'
+       type: 1
+-  networks: 
+-    - 
++  networks:
++    -
+       address: 172.17.2.48
+       age: 348
+       area: 23.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.16.0.47
+-        - 
++        -
+           routerid: 172.16.0.48
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80001305
+-    - 
++      sequence: '0x80001305'
++    -
+       address: 172.17.1.48
+       age: 1737
+       area: 0.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.16.0.45
+-        - 
++        -
+           routerid: 172.16.0.48
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80001bd2
+-    - 
++      sequence: '0x80001bd2'
++    -
+       address: 172.19.5.146
+       age: 1007
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.31.5.52
+-        - 
++        -
+           routerid: 172.31.5.62
+-        - 
++        -
+           routerid: 172.20.0.146
+       netmask: 255.255.255.0
+       routerid: 172.20.0.146
+-      sequence: 0x80000976
+-    - 
++      sequence: '0x80000976'
++    -
+       address: 172.19.7.68
+       age: 1468
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.31.8.2
+-        - 
++        -
+           routerid: 172.16.0.69
+-        - 
++        -
+           routerid: 172.16.0.68
+       netmask: 255.255.255.0
+       routerid: 172.16.0.68
+-      sequence: 0x800005bd
+-    - 
++      sequence: '0x800005bd'
++    -
+       address: 172.19.171.68
+       age: 1540
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.16.0.69
+-        - 
++        -
+           routerid: 172.16.0.48
+-        - 
++        -
+           routerid: 172.16.0.68
+       netmask: 255.255.255.0
+       routerid: 172.16.0.68
+-      sequence: 0x800002f1
+-    - 
++      sequence: '0x800002f1'
++    -
+       address: 172.19.195.68
+       age: 1626
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.16.0.69
+-        - 
++        -
+           routerid: 172.16.0.68
+       netmask: 255.255.255.0
+       routerid: 172.16.0.68
+-      sequence: 0x800005bb
+-    - 
++      sequence: '0x800005bb'
++    -
+       address: 172.19.198.68
+       age: 1624
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.31.199.2
+-        - 
++        -
+           routerid: 172.16.0.68
+       netmask: 255.255.255.0
+       routerid: 172.16.0.68
+-      sequence: 0x80000317
+-    - 
++      sequence: '0x80000317'
++    -
+       address: 172.19.206.68
+       age: 471
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.31.206.2
+-        - 
++        -
+           routerid: 172.31.207.2
+-        - 
++        -
+           routerid: 172.16.0.69
+-        - 
++        -
+           routerid: 172.16.0.68
+       netmask: 255.255.255.0
+       routerid: 172.16.0.68
+-      sequence: 0x8000033f
+-    - 
++      sequence: '0x8000033f'
++    -
+       address: 172.19.222.68
+       age: 1504
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.16.0.69
+-        - 
++        -
+           routerid: 172.16.0.68
+       netmask: 255.255.255.0
+       routerid: 172.16.0.68
+-      sequence: 0x800005b4
+-    - 
++      sequence: '0x800005b4'
++    -
+       address: 172.20.0.68
+       age: 314
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.16.0.69
+-        - 
++        -
+           routerid: 172.16.0.48
+-        - 
++        -
+           routerid: 172.20.0.146
+-        - 
++        -
+           routerid: 172.16.0.68
+       netmask: 255.255.255.0
+       routerid: 172.16.0.68
+-      sequence: 0x80000315
+-    - 
++      sequence: '0x80000315'
++    -
+       address: 172.22.5.5
+       age: 547
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.31.5.52
+-        - 
++        -
+           routerid: 172.16.0.47
+       netmask: 255.255.255.0
+       routerid: 172.31.5.52
+-      sequence: 0x80000324
+-    - 
++      sequence: '0x80000324'
++    -
+       address: 172.31.5.62
+       age: 1416
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.31.5.62
+-        - 
++        -
+           routerid: 172.30.5.5
+-        - 
++        -
+           routerid: 172.31.5.52
+       netmask: 255.255.255.0
+       routerid: 172.31.5.62
+-      sequence: 0x800001a6
+-    - 
++      sequence: '0x800001a6'
++    -
+       address: 172.31.8.2
+       age: 1040
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.31.8.2
+-        - 
++        -
+           routerid: 172.30.7.8
+       netmask: 255.255.255.0
+       routerid: 172.31.8.2
+-      sequence: 0x800000a2
+-    - 
++      sequence: '0x800000a2'
++    -
+       address: 172.31.206.1
+       age: 1731
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.30.206.206
+-        - 
++        -
+           routerid: 172.31.206.2
+       netmask: 255.255.255.0
+       routerid: 172.30.206.206
+-      sequence: 0x80000042
+-    - 
++      sequence: '0x80000042'
++    -
+       address: 172.31.207.2
+       age: 1367
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.31.207.2
+-        - 
++        -
+           routerid: 172.30.206.207
+       netmask: 255.255.255.0
+       routerid: 172.31.207.2
+-      sequence: 0x80000042
+-    - 
++      sequence: '0x80000042'
++    -
+       address: 192.168.0.5
+       age: 547
+       area: 51.0.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 172.31.5.52
+-        - 
++        -
+           routerid: 172.31.5.62
+       netmask: 255.255.255.0
+       routerid: 172.31.5.52
+-      sequence: 0x80000645
+-  routers: 
+-    - 
++      sequence: '0x80000645'
++  routers:
++    -
+       age: 536
+       area: 23.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.16.0.47
+       routerid: 172.16.0.47
+-      sequence: 0x80000324
++      sequence: '0x80000324'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.17.2.48
+           interface: 172.17.2.47
+           metric: 10
+       virtuals: []
+-
+-    - 
++    -
+       age: 721
+       area: 23.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.16.0.48
+       routerid: 172.16.0.48
+-      sequence: 0x80001ccb
++      sequence: '0x80001ccb'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.17.2.48
+           interface: 172.17.2.48
+           metric: 10
+       virtuals: []
+-
+-    - 
++    -
+       age: 721
+       area: 0.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.16.0.48
+       routerid: 172.16.0.48
+-      sequence: 0x80001ccb
+-      stubs: 
+-        - 
++      sequence: '0x80001ccb'
++      stubs:
++        -
+           metric: 10
+           netmask: 255.255.255.0
+           network: 172.17.1.0
+       transits: []
+-
+       virtuals: []
+-
+-    - 
++    -
+       age: 361
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.16.0.47
+       routerid: 172.16.0.47
+-      sequence: 0x800006a2
++      sequence: '0x800006a2'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.22.5.5
+           interface: 172.22.5.47
+           metric: 10
+       virtuals: []
+-
+-    - 
++    -
+       age: 1546
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 1
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.16.0.48
+       routerid: 172.16.0.48
+-      sequence: 0x80001cd6
+-      stubs: 
+-        - 
++      sequence: '0x80001cd6'
++      stubs:
++        -
+           metric: 10
+           netmask: 255.255.255.0
+           network: 172.19.218.0
+-        - 
++        -
+           metric: 10
+           netmask: 255.255.255.0
+           network: 172.19.180.0
+-        - 
++        -
+           metric: 10
+           netmask: 255.255.255.0
+           network: 172.19.30.0
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.19.171.68
+           interface: 172.19.171.48
+           metric: 10
+-        - 
++        -
+           address: 172.20.0.68
+           interface: 172.20.0.48
+           metric: 10
+       virtuals: []
+-
+-    - 
++    -
+       age: 727
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 0
+         V: 0
+       pointtopoints: []
+-
+       router: 172.16.0.68
+       routerid: 172.16.0.68
+-      sequence: 0x800021b5
+-      stubs: 
+-        - 
++      sequence: '0x800021b5'
++      stubs:
++        -
+           metric: 10
+           netmask: 255.255.255.0
+           network: 172.19.198.0
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.19.222.68
+           interface: 172.19.222.68
+           metric: 65535
+-        - 
++        -
+           address: 172.19.206.68
+           interface: 172.19.206.68
+           metric: 65535
+-        - 
++        -
+           address: 172.19.195.68
+           interface: 172.19.195.68
+           metric: 65535
+-        - 
++        -
+           address: 172.19.171.68
+           interface: 172.19.171.68
+           metric: 65535
+-        - 
++        -
+           address: 172.19.7.68
+           interface: 172.19.7.68
+           metric: 65535
+-        - 
++        -
+           address: 172.20.0.68
+           interface: 172.20.0.68
+           metric: 65535
+       virtuals: []
+-
+-    - 
++    -
+       age: 728
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 0
+         V: 0
+       pointtopoints: []
+-
+       router: 172.16.0.69
+       routerid: 172.16.0.69
+-      sequence: 0x800006db
++      sequence: '0x800006db'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.19.222.68
+           interface: 172.19.222.69
+           metric: 65535
+-        - 
++        -
+           address: 172.19.206.68
+           interface: 172.19.206.69
+           metric: 65535
+-        - 
++        -
+           address: 172.19.195.68
+           interface: 172.19.195.69
+           metric: 65535
+-        - 
++        -
+           address: 172.19.171.68
+           interface: 172.19.171.69
+           metric: 65535
+-        - 
++        -
+           address: 172.19.7.68
+           interface: 172.19.7.69
+           metric: 65535
+-        - 
++        -
+           address: 172.20.0.68
+           interface: 172.20.0.69
+           metric: 65535
+       virtuals: []
+-
+-    - 
++    -
+       age: 305
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 0
+         V: 0
+       pointtopoints: []
+-
+       router: 172.20.0.146
+       routerid: 172.20.0.146
+-      sequence: 0x80000add
+-      stubs: 
+-        - 
++      sequence: '0x80000add'
++      stubs:
++        -
+           metric: 10
+           netmask: 255.255.255.0
+           network: 172.19.6.0
+-        - 
++        -
+           metric: 10
+           netmask: 255.255.255.0
+           network: 172.19.7.0
+-        - 
++        -
+           metric: 10
+           netmask: 255.255.255.0
+           network: 172.19.8.0
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.20.0.68
+           interface: 172.20.0.146
+           metric: 10
+-        - 
++        -
+           address: 172.19.5.146
+           interface: 172.19.5.146
+           metric: 10
+       virtuals: []
+-
+-    - 
++    -
+       age: 1066
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.30.5.5
+       routerid: 172.30.5.5
+-      sequence: 0x8000018d
++      sequence: '0x8000018d'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.31.5.62
+           interface: 172.31.5.51
+           metric: 1
+       virtuals: []
+-
+-    - 
++    -
+       age: 1012
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.30.6.6
+       routerid: 172.30.6.6
+-      sequence: 0x800009fd
++      sequence: '0x800009fd'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.31.5.52
+           interface: 172.31.5.61
+           metric: 2
+       virtuals: []
+-
+-    - 
++    -
+       age: 45
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.30.7.8
+       routerid: 172.30.7.8
+-      sequence: 0x800000b1
++      sequence: '0x800000b1'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.31.8.2
+           interface: 172.31.8.1
+           metric: 4
+       virtuals: []
+-
+-    - 
++    -
+       age: 1731
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.30.206.206
+       routerid: 172.30.206.206
+-      sequence: 0x80000054
++      sequence: '0x80000054'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.31.206.1
+           interface: 172.31.206.1
+           metric: 1
+       virtuals: []
+-
+-    - 
++    -
+       age: 1576
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.30.206.207
+       routerid: 172.30.206.207
+-      sequence: 0x80000049
++      sequence: '0x80000049'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.31.207.2
+           interface: 172.31.207.1
+           metric: 2
+       virtuals: []
+-
+-    - 
++    -
+       age: 547
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.31.5.52
+       routerid: 172.31.5.52
+-      sequence: 0x800008af
++      sequence: '0x800008af'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.22.5.5
+           interface: 172.22.5.5
+           metric: 13
+-        - 
++        -
+           address: 172.31.5.62
+           interface: 172.31.5.52
+           metric: 1
+-        - 
++        -
+           address: 172.19.5.146
+           interface: 172.19.5.5
+           metric: 13
+-        - 
++        -
+           address: 192.168.0.5
+           interface: 192.168.0.5
+           metric: 13
+       virtuals: []
+-
+-    - 
++    -
+       age: 1416
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.31.5.62
+       routerid: 172.31.5.62
+-      sequence: 0x800009fd
++      sequence: '0x800009fd'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.31.5.62
+           interface: 172.31.5.62
+           metric: 2
+-        - 
++        -
+           address: 172.19.5.146
+           interface: 172.19.5.6
+           metric: 14
+-        - 
++        -
+           address: 192.168.0.5
+           interface: 192.168.0.6
+           metric: 14
+       virtuals: []
+-
+-    - 
++    -
+       age: 1040
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.31.8.2
+       routerid: 172.31.8.2
+-      sequence: 0x800000b3
+-      stubs: 
+-        - 
++      sequence: '0x800000b3'
++      stubs:
++        -
+           metric: 16
+           netmask: 255.255.255.0
+           network: 172.85.7.0
+-        - 
++        -
+           metric: 16
+           netmask: 255.255.255.0
+           network: 172.87.7.0
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.31.8.2
+           interface: 172.31.8.2
+           metric: 4
+-        - 
++        -
+           address: 172.19.7.68
+           interface: 172.19.7.8
+           metric: 16
+       virtuals: []
+-
+-    - 
++    -
+       age: 1671
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.31.206.2
+       routerid: 172.31.206.2
+-      sequence: 0x800000c7
++      sequence: '0x800000c7'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.31.206.1
+           interface: 172.31.206.2
+           metric: 1
+-        - 
++        -
+           address: 172.19.206.68
+           interface: 172.19.206.206
+           metric: 13
+       virtuals: []
+-
+-    - 
++    -
+       age: 1367
+       area: 51.0.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 172.31.207.2
+       routerid: 172.31.207.2
+-      sequence: 0x80000080
++      sequence: '0x80000080'
+       stubs: []
+-
+-      transits: 
+-        - 
++      transits:
++        -
+           address: 172.31.207.2
+           interface: 172.31.207.2
+           metric: 2
+-        - 
++        -
+           address: 172.19.206.68
+           interface: 172.19.206.207
+           metric: 14
+       virtuals: []
+-
+-  summarys: 
+-    - 
++  summarys:
++    -
+       address: 172.19.5.0
+       age: 536
+       area: 23.0.0.0
+       metric: 23
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000323
+-    - 
++      sequence: '0x80000323'
++    -
+       address: 172.19.5.0
+       age: 312
+       area: 23.0.0.0
+       metric: 20
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.6.0
+       age: 536
+       area: 23.0.0.0
+       metric: 33
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000323
+-    - 
++      sequence: '0x80000323'
++    -
+       address: 172.19.6.0
+       age: 312
+       area: 23.0.0.0
+       metric: 20
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.7.0
+       age: 536
+       area: 23.0.0.0
+       metric: 33
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000323
+-    - 
++      sequence: '0x80000323'
++    -
+       address: 172.19.7.0
+       age: 312
+       area: 23.0.0.0
+       metric: 20
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x800014c1
+-    - 
++      sequence: '0x800014c1'
++    -
+       address: 172.19.8.0
+       age: 536
+       area: 23.0.0.0
+       metric: 33
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000323
+-    - 
++      sequence: '0x80000323'
++    -
+       address: 172.19.8.0
+       age: 312
+       area: 23.0.0.0
+       metric: 20
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.30.0
+       age: 311
+       area: 23.0.0.0
+       metric: 43
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.171.0
+       age: 311
+       area: 23.0.0.0
+       metric: 43
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.171.0
+       age: 1541
+       area: 23.0.0.0
+       metric: 10
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000ec0
+-    - 
++      sequence: '0x80000ec0'
++    -
+       address: 172.19.180.0
+       age: 311
+       area: 23.0.0.0
+       metric: 43
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.195.0
+       age: 311
+       area: 23.0.0.0
+       metric: 65568
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.195.0
+       age: 1538
+       area: 23.0.0.0
+       metric: 65545
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000ecc
+-    - 
++      sequence: '0x80000ecc'
++    -
+       address: 172.19.198.0
+       age: 311
+       area: 23.0.0.0
+       metric: 43
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.198.0
+       age: 1553
+       area: 23.0.0.0
+       metric: 20
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x800002eb
+-    - 
++      sequence: '0x800002eb'
++    -
+       address: 172.19.206.0
+       age: 311
+       area: 23.0.0.0
+       metric: 65568
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.206.0
+       age: 1541
+       area: 23.0.0.0
+       metric: 65545
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000ebf
+-    - 
++      sequence: '0x80000ebf'
++    -
+       address: 172.19.218.0
+       age: 308
+       area: 23.0.0.0
+       metric: 43
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.222.0
+       age: 311
+       area: 23.0.0.0
+       metric: 65568
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.222.0
+       age: 1538
+       area: 23.0.0.0
+       metric: 65545
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000ecb
+-    - 
++      sequence: '0x80000ecb'
++    -
+       address: 172.20.0.0
+       age: 312
+       area: 23.0.0.0
+       metric: 33
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.20.0.0
+       age: 1546
+       area: 23.0.0.0
+       metric: 10
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80001430
+-    - 
++      sequence: '0x80001430'
++    -
+       address: 172.22.5.0
+       age: 536
+       area: 23.0.0.0
+       metric: 10
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000323
+-    - 
++      sequence: '0x80000323'
++    -
+       address: 172.22.5.0
+       age: 312
+       area: 23.0.0.0
+       metric: 33
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.31.5.0
+       age: 536
+       area: 23.0.0.0
+       metric: 11
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000323
+-    - 
++      sequence: '0x80000323'
++    -
+       address: 172.31.5.0
+       age: 312
+       area: 23.0.0.0
+       metric: 21
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.31.8.0
+       age: 311
+       area: 23.0.0.0
+       metric: 65572
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.31.8.0
+       age: 1464
+       area: 23.0.0.0
+       metric: 65549
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x800000a0
+-    - 
++      sequence: '0x800000a0'
++    -
+       address: 172.31.206.0
+       age: 433
+       area: 23.0.0.0
+       metric: 65569
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x8000003f
+-    - 
++      sequence: '0x8000003f'
++    -
+       address: 172.31.206.0
+       age: 434
+       area: 23.0.0.0
+       metric: 65546
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x8000003f
+-    - 
++      sequence: '0x8000003f'
++    -
+       address: 172.31.207.0
+       age: 1416
+       area: 23.0.0.0
+       metric: 65570
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000041
+-    - 
++      sequence: '0x80000041'
++    -
+       address: 172.31.207.0
+       age: 1416
+       area: 23.0.0.0
+       metric: 65547
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000041
+-    - 
++      sequence: '0x80000041'
++    -
+       address: 172.85.7.0
+       age: 311
+       area: 23.0.0.0
+       metric: 65584
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.85.7.0
+       age: 1464
+       area: 23.0.0.0
+       metric: 65561
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x800000a0
+-    - 
++      sequence: '0x800000a0'
++    -
+       address: 172.87.7.0
+       age: 311
+       area: 23.0.0.0
+       metric: 65584
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.87.7.0
+       age: 1464
+       area: 23.0.0.0
+       metric: 65561
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x800000a0
+-    - 
++      sequence: '0x800000a0'
++    -
+       address: 192.168.0.0
+       age: 536
+       area: 23.0.0.0
+       metric: 23
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000323
+-    - 
++      sequence: '0x80000323'
++    -
+       address: 192.168.0.0
+       age: 312
+       area: 23.0.0.0
+       metric: 33
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.17.2.0
+       age: 716
+       area: 0.0.0.0
+       metric: 10
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000323
+-    - 
++      sequence: '0x80000323'
++    -
+       address: 172.19.5.0
+       age: 312
+       area: 0.0.0.0
+       metric: 20
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.6.0
+       age: 312
+       area: 0.0.0.0
+       metric: 20
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.7.0
+       age: 312
+       area: 0.0.0.0
+       metric: 20
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x800014c1
+-    - 
++      sequence: '0x800014c1'
++    -
+       address: 172.19.8.0
+       age: 312
+       area: 0.0.0.0
+       metric: 20
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.19.171.0
+       age: 1541
+       area: 0.0.0.0
+       metric: 10
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000ec1
+-    - 
++      sequence: '0x80000ec1'
++    -
+       address: 172.19.195.0
+       age: 1538
+       area: 0.0.0.0
+       metric: 65545
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000ecc
+-    - 
++      sequence: '0x80000ecc'
++    -
+       address: 172.19.198.0
+       age: 1553
+       area: 0.0.0.0
+       metric: 20
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000683
+-    - 
++      sequence: '0x80000683'
++    -
+       address: 172.19.206.0
+       age: 1541
+       area: 0.0.0.0
+       metric: 65545
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000ebf
+-    - 
++      sequence: '0x80000ebf'
++    -
+       address: 172.19.222.0
+       age: 1538
+       area: 0.0.0.0
+       metric: 65545
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000ecb
+-    - 
++      sequence: '0x80000ecb'
++    -
+       address: 172.20.0.0
+       age: 1546
+       area: 0.0.0.0
+       metric: 10
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80001430
+-    - 
++      sequence: '0x80001430'
++    -
+       address: 172.22.5.0
+       age: 312
+       area: 0.0.0.0
+       metric: 33
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.31.5.0
+       age: 312
+       area: 0.0.0.0
+       metric: 21
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.31.8.0
+       age: 1464
+       area: 0.0.0.0
+       metric: 65549
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x800000a0
+-    - 
++      sequence: '0x800000a0'
++    -
+       address: 172.31.206.0
+       age: 434
+       area: 0.0.0.0
+       metric: 65546
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x8000003f
+-    - 
++      sequence: '0x8000003f'
++    -
+       address: 172.31.207.0
+       age: 1416
+       area: 0.0.0.0
+       metric: 65547
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000041
+-    - 
++      sequence: '0x80000041'
++    -
+       address: 172.85.7.0
+       age: 1464
+       area: 0.0.0.0
+       metric: 65561
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x800000a0
+-    - 
++      sequence: '0x800000a0'
++    -
+       address: 172.87.7.0
+       age: 1464
+       area: 0.0.0.0
+       metric: 65561
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x800000a0
+-    - 
++      sequence: '0x800000a0'
++    -
+       address: 192.168.0.0
+       age: 312
+       area: 0.0.0.0
+       metric: 33
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000077
+-    - 
++      sequence: '0x80000077'
++    -
+       address: 172.17.2.0
+       age: 361
+       area: 51.0.0.0
+       metric: 10
+       netmask: 255.255.255.0
+       routerid: 172.16.0.47
+-      sequence: 0x80000694
+-    - 
++      sequence: '0x80000694'
++    -
+       address: 172.17.2.0
+       age: 392
+       area: 51.0.0.0
+       metric: 10
+       netmask: 255.255.255.0
+       routerid: 172.16.0.48
+-      sequence: 0x80000694
++      sequence: '0x80000694'
+ ipv6: 0
+-self: 
+-  areas: 
++self:
++  areas:
+     - 23.0.0.0
+     - 0.0.0.0
+     - 51.0.0.0

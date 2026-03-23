@@ -1,0 +1,453 @@
+Index: example/ospf6d.yaml
+--- example/ospf6d.yaml.orig
++++ example/ospf6d.yaml
+@@ -1,344 +1,338 @@
+---- 
+-database: 
++---
++database:
+   boundarys: []
+-
+-  externals: 
+-    - 
++  externals:
++    -
+       address: 0.0.0.1
+       age: 872
+       metric: 60
+       prefixaddress: "::"
+       prefixlength: 0
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.2
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:102::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.3
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:112::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.4
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:141::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.5
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:142::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.6
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:145::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.7
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:146::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.8
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:161::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.9
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:162::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.10
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:165::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.11
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:166::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-    - 
++    -
+       address: 0.0.0.12
+       age: 872
+       metric: 80
+       prefixaddress: "fdd7:e83e:66bc:213::"
+       prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
++      sequence: '0x80000009'
+       type: 1
+-  intranetworks: 
+-    - 
++  intranetworks:
++    -
+       address: 0.0.0.1
+       age: 831
+       area: 10.188.0.0
+       interface: 0.0.0.1
+-      prefixes: 
+-        - 
++      prefixes:
++        -
+           prefixaddress: "2a01:198:262:1::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:1::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:103::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:104::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:113::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:114::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:143::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:144::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:163::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:164::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:211::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:212::"
+           prefixlength: 64
+       router: 10.188.50.50
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
+-  intrarouters: 
+-    - 
++      sequence: '0x80000009'
++  intrarouters:
++    -
+       address: 1.0.0.0
+       age: 882
+       area: 10.188.0.0
+       interface: 0.0.0.0
+-      prefixes: 
+-        - 
++      prefixes:
++        -
+           prefixaddress: "fdd7:e83e:66bc:1::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:102::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:112::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:141::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:142::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:161::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:162::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "2a01:198:262:1::"
+           prefixlength: 64
+       router: 10.188.1.10
+       routerid: 10.188.1.10
+-      sequence: 0x8000000b
+-  links: 
+-    - 
++      sequence: '0x8000000b'
++  links:
++    -
+       age: 892
+       area: 10.188.0.0
+       interface: 0.0.0.1
+       linklocal: fe80::215:58ff:fe7c:cb62
+-      prefixes: 
+-        - 
++      prefixes:
++        -
+           prefixaddress: "fdd7:e83e:66bc:1::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:102::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:112::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:141::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:142::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:161::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:162::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "2a01:198:262:1::"
+           prefixlength: 64
+       routerid: 10.188.1.10
+-      sequence: 0x80000009
+-    - 
++      sequence: '0x80000009'
++    -
+       age: 892
+       area: 10.188.0.0
+       interface: 0.0.0.6
+       linklocal: fe80::fce1:baff:fed1:2c6c
+-      prefixes: 
+-        - 
++      prefixes:
++        -
+           prefixaddress: "fdd7:e83e:66bc:211::"
+           prefixlength: 64
+       routerid: 10.188.1.10
+-      sequence: 0x80000009
+-    - 
++      sequence: '0x80000009'
++    -
+       age: 831
+       area: 10.188.0.0
+       interface: 0.0.0.1
+       linklocal: fe80::5054:ff:fe12:3450
+-      prefixes: 
+-        - 
++      prefixes:
++        -
+           prefixaddress: "fdd7:e83e:66bc:1::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "2a01:198:262:1::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:103::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:104::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:113::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:114::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:143::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:144::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:163::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:164::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:211::"
+           prefixlength: 64
+-        - 
++        -
+           prefixaddress: "fdd7:e83e:66bc:212::"
+           prefixlength: 64
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
+-  networks: 
+-    - 
++      sequence: '0x80000009'
++  networks:
++    -
+       address: 0.0.0.1
+       age: 831
+       area: 10.188.0.0
+-      attachments: 
+-        - 
++      attachments:
++        -
+           routerid: 10.188.1.10
+-        - 
++        -
+           routerid: 10.188.50.50
+       routerid: 10.188.50.50
+-      sequence: 0x80000009
+-  routers: 
+-    - 
++      sequence: '0x80000009'
++  routers:
++    -
+       age: 887
+       area: 10.188.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+         W: 0
+       pointtopoints: []
+-
+       router: 0.0.0.0
+       routerid: 10.188.1.10
+-      sequence: 0x8000000a
+-      transits: 
+-        - 
++      sequence: '0x8000000a'
++      transits:
++        -
+           address: 0.0.0.1
+           interface: 0.0.0.6
+           metric: 10
+           routerid: 10.188.50.50
+       virtuals: []
+-
+-    - 
++    -
+       age: 831
+       area: 10.188.0.0
+-      bits: 
++      bits:
+         B: 0
+         E: 1
+         V: 0
+         W: 0
+       pointtopoints: []
+-
+       router: 0.0.0.0
+       routerid: 10.188.50.50
+-      sequence: 0x8000000a
+-      transits: 
+-        - 
++      sequence: '0x8000000a'
++      transits:
++        -
+           address: 0.0.0.1
+           interface: 0.0.0.1
+           metric: 10
+           routerid: 10.188.50.50
+       virtuals: []
+-
+   summarys: []
+-
+ ipv6: 1
+-self: 
+-  areas: 
++self:
++  areas:
+     - 10.188.0.0
+   routerid: 10.188.1.10
+ version: '1.01'

@@ -1,0 +1,53 @@
+Index: t/yaml-string.t
+--- t/yaml-string.t.orig
++++ t/yaml-string.t
+@@ -18,15 +18,10 @@ my $string = <<EOF;
+ ---
+ database:
+   boundarys: []
+-
+   externals: []
+-
+   intranetworks: []
+-
+   intrarouters: []
+-
+   links: []
+-
+   networks:
+     -
+       address: 0.0.1.1
+@@ -60,15 +55,11 @@ database:
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 0.1.0.0
+       routerid: 0.1.0.0
+       stubs: []
+-
+       transits: []
+-
+       virtuals: []
+-
+     -
+       area: 2.0.0.0
+       bits:
+@@ -76,17 +67,12 @@ database:
+         E: 1
+         V: 0
+       pointtopoints: []
+-
+       router: 0.1.0.0
+       routerid: 0.1.0.0
+       stubs: []
+-
+       transits: []
+-
+       virtuals: []
+-
+   summarys: []
+-
+ ipv6: 0
+ self:
+   areas:
