@@ -3,6 +3,7 @@ COMMENT=		modular geoinformation service on top of D-Bus
 VERSION=		2.8.0
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
+REVISION=		0
 
 CATEGORIES=		geo devel
 
@@ -14,10 +15,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
-
-# libnotify base-gcc chokes on __attribute__((__deprecated__)) annotating enum
-COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
 
 SITES=			https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/${VERSION}/
 EXTRACT_SUFX=		.tar.bz2

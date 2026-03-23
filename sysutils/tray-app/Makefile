@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	${APM_ARCHS}
 COMMENT=	small utilities for X11 system tray: eject, battery, mixer
 
 DISTNAME=	tray-app-0.3.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	sysutils x11
 
@@ -11,10 +11,6 @@ HOMEPAGE=	http://www.bsdua.org/tray-app.html
 
 # Public domain
 PERMIT_PACKAGE=	Yes
-
-# libnotify base-gcc chokes on __attribute__((__deprecated__)) annotating enum
-COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

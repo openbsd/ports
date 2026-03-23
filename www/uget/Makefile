@@ -1,16 +1,12 @@
 COMMENT =	lightweight graphical download manager
 DISTNAME =	uget-2.2.2
 CATEGORIES =	www net x11
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://ugetdm.com/
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
-
-# base-gcc chokes on __attribute__((__deprecated__)) annotating an enum
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
 
 WANTLIB += atk-1.0 c cairo cairo-gobject crypto curl gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gstreamer-1.0 gtk-3 harfbuzz

@@ -5,6 +5,7 @@ GH_PROJECT=		gmpc
 GH_COMMIT=		28e1441f356afb9eb2538c82ebbd392c2a8686ff
 
 VERSION=		11.8.90pl20200215
+REVISION=		0
 DISTNAME=		gmpc-${VERSION}
 
 CATEGORIES=		audio
@@ -13,10 +14,6 @@ MAINTAINER=		Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
-
-# libnotify base-gcc chokes on __attribute__((__deprecated__)) annotating enum
-COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0

@@ -4,14 +4,10 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		49.1
-REVISION=		1
+REVISION=		2
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
-
-# libnotify base-gcc chokes on __attribute__((__deprecated__)) annotating enum
-COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
 
 WANTLIB += X11 Xfixes c canberra colord cups fontconfig gck-2
 WANTLIB += geoclue-2 geocode-glib-2 gio-2.0 glib-2.0 gnome-desktop-4

@@ -1,15 +1,11 @@
 COMMENT=		MATE settings daemon
 
-REVISION=		1
+REVISION=		2
 
 MATE_PROJECT=		mate-settings-daemon
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
-
-# libnotify base-gcc chokes on __attribute__((__deprecated__)) annotating enum
-COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
 
 WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0

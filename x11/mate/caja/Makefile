@@ -1,6 +1,6 @@
 COMMENT=		file manager for the MATE desktop
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  caja-extension            5.0 # 5.0
 
@@ -10,10 +10,6 @@ CATEGORIES=		x11
 
 # LGPLv2/GFDLv1.1/GPLv2
 PERMIT_PACKAGE=	Yes
-
-# libnotify base-gcc chokes on __attribute__((__deprecated__)) annotating enum
-COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
