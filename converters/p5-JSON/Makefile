@@ -1,6 +1,7 @@
 COMMENT =	parse and convert to JSON (JavaScript Object Notation)
 
-DISTNAME =	JSON-4.10
+DISTNAME =	JSON-4.11
+CPAN_AUTHOR =	ISHIGAKI
 
 CATEGORIES =	converters
 
