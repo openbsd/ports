@@ -1,5 +1,7 @@
 Comma at end of list isn't valid c++, and c++ code might use libnotify.
 
+Old gcc releases don't support attributes on enum members.
+
 Index: libnotify/notification.h
 --- libnotify/notification.h.orig
 +++ libnotify/notification.h
@@ -12,3 +14,14 @@ Index: libnotify/notification.h
  
  } NotifyUrgency;
  
+@@ -109,8 +109,8 @@ typedef enum
+         NOTIFY_CLOSED_REASON_UNDEFINED = 4,
+ 
+         NOTIFY_CLOSED_REASON_UNDEFIEND
+-        __attribute__((__deprecated__(
+-                "Use 'NOTIFY_CLOSED_REASON_UNDEFINED' instead"))) = 4,
++        /*__attribute__((__deprecated__(
++                "Use 'NOTIFY_CLOSED_REASON_UNDEFINED' instead")))*/ = 4,
+ } NotifyClosedReason;
+ 
+ /**
