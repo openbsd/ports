@@ -1,4 +1,4 @@
-USE_NOBTCFI-aarch64 =	Yes # fortran
+USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
