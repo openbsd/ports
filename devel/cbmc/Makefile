@@ -1,3 +1,5 @@
+BROKEN-sparc64 = GNU ar in base is too old to support thin archives
+
 COMMENT =	Bounded Model Checker for C and C++ programs
 
 GH_ACCOUNT =	diffblue
