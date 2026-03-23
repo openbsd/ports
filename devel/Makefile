@@ -303,7 +303,6 @@
      SUBDIR += libftdi
      SUBDIR += libftdi1
      SUBDIR += libgcroots
-     SUBDIR += libgdata
      SUBDIR += libgee
      SUBDIR += libggml
      SUBDIR += libgit2
