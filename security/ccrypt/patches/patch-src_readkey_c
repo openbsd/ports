@@ -1,0 +1,16 @@
+Forcing POSIX 1003.1-1990 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: src/readkey.c
+--- src/readkey.c.orig
++++ src/readkey.c
+@@ -5,7 +5,7 @@
+ /* readkey.c: read secret key phrase from terminal */
+ 
+ #ifndef _POSIX_C_SOURCE
+-#define _POSIX_C_SOURCE 1
++/* #define _POSIX_C_SOURCE 1 */
+ #endif
+ 
+ #ifdef HAVE_CONFIG_H

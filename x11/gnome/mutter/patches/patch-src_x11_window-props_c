@@ -1,0 +1,16 @@
+Forcing "POSIX 1003.1-2001 with XSI" removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: src/x11/window-props.c
+--- src/x11/window-props.c.orig
++++ src/x11/window-props.c
+@@ -33,7 +33,7 @@
+  * along with this program; if not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-#define _XOPEN_SOURCE 600 /* for gethostname() */
++/* #define _XOPEN_SOURCE 600 */ /* for gethostname() */
+ 
+ #include "config.h"
+ 

@@ -60,7 +60,7 @@ DOCDIR =		${PREFIX}/share/doc/bogofilter
 
 BUILD_DEPENDS =		devel/gettext,-tools
 post-extract:
-	cd ${LOCALBASE}/share/aclocal; \
+	cd ${LOCALBASE}/share/gettext/m4; \
 	    cp iconv.m4 lib-ld.m4 lib-link.m4 lib-prefix.m4 ${WRKSRC}/m4
 
 post-install:

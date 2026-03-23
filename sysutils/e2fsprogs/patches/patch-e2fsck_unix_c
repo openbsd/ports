@@ -1,0 +1,16 @@
+Forcing "POSIX 1003.1-2001 with XSI" removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: e2fsck/unix.c
+--- e2fsck/unix.c.orig
++++ e2fsck/unix.c
+@@ -9,7 +9,7 @@
+  * %End-Header%
+  */
+ 
+-#define _XOPEN_SOURCE 600 /* for inclusion of sa_handler in Solaris */
++/* #define _XOPEN_SOURCE 600 */ /* for inclusion of sa_handler in Solaris */
+ 
+ #include "config.h"
+ #include <stdio.h>

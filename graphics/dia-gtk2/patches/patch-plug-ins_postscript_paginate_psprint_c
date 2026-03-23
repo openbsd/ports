@@ -1,0 +1,16 @@
+Forcing POSIX 1003.2-1992 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: plug-ins/postscript/paginate_psprint.c
+--- plug-ins/postscript/paginate_psprint.c.orig
++++ plug-ins/postscript/paginate_psprint.c
+@@ -24,7 +24,7 @@
+ #endif
+ 
+ /* so we get popen and sigaction even when compiling with -ansi */
+-#define _POSIX_C_SOURCE 2
++/* #define _POSIX_C_SOURCE 2 */
+ #include <stdio.h>
+ #include <string.h> /* strlen */
+ #include <signal.h>

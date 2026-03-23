@@ -1,0 +1,16 @@
+Forcing "POSIX 1003.1-2001 with XSI" removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: panels/applications/utils.c
+--- panels/applications/utils.c.orig
++++ panels/applications/utils.c
+@@ -19,7 +19,7 @@
+  */
+ 
+ #ifndef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE 600
++/* #define _XOPEN_SOURCE 600 */
+ #endif
+ 
+ #include <config.h>

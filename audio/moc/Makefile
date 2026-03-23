@@ -54,6 +54,7 @@ AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
 SEPARATE_BUILD = Yes
 CONFIGURE_STYLE = autoreconf
+AUTORECONF =	autoreconf -f -i -I${LOCALBASE}/share/gettext/m4
 CONFIGURE_ARGS += \
 		--disable-cache \
 		--without-jack \

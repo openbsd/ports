@@ -31,6 +31,6 @@ USE_GMAKE=	Yes
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.9
-AUTORECONF=		./autogen.sh
+AUTORECONF=		autoreconf -f -i -I${LOCALBASE}/share/gettext/m4
 
 .include <bsd.port.mk>

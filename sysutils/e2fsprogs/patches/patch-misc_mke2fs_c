@@ -1,0 +1,16 @@
+Forcing "POSIX 1003.1-2001 with XSI" removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: misc/mke2fs.c
+--- misc/mke2fs.c.orig
++++ misc/mke2fs.c
+@@ -16,7 +16,7 @@
+  * enforced (but it's not much fun on a character device :-).
+  */
+ 
+-#define _XOPEN_SOURCE 600
++/* #define _XOPEN_SOURCE 600 */
+ 
+ #include "config.h"
+ #include <stdio.h>

@@ -1,0 +1,16 @@
+Forcing POSIX 1003.2-1992 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: src/normalize.c
+--- src/normalize.c.orig
++++ src/normalize.c
+@@ -15,7 +15,7 @@
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA*/
+ 
+-#define _POSIX_C_SOURCE 2
++/* #define _POSIX_C_SOURCE 2 */
+ 
+ #include "config.h"
+ 

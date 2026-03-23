@@ -58,6 +58,7 @@ post-patch:
 	${SUBST_CMD} ${WRKSRC}/installer/resources/wrapper.config
 	${SUBST_CMD} ${WRKSRC}/installer/resources/i2prouter
 	${SUBST_CMD} ${WRKSRC}/installer/resources/eepget
+	${SUBST_PROGRAM} ${FILESDIR}/msgfmt ${WRKDIR}/bin/msgfmt
 
 post-build:
 	cd ${WRKSRC}/core/c && ${MAKE_ENV} ${WRKSRC}/core/c/build.sh

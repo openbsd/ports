@@ -1,0 +1,16 @@
+libintl.h must provide the wrapper for newlocale() before the
+function is used by the spa plugin headers.
+
+Index: lib/wp/wp.c
+--- lib/wp/wp.c.orig
++++ lib/wp/wp.c
+@@ -7,8 +7,8 @@
+  */
+ 
+ #include "wp.h"
+-#include <pipewire/pipewire.h>
+ #include <libintl.h>
++#include <pipewire/pipewire.h>
+ #include "wpbuildbasedirs.h"
+ 
+ WP_DEFINE_LOCAL_LOG_TOPIC ("wp")

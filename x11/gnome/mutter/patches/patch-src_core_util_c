@@ -1,0 +1,16 @@
+Forcing POSIX 1003.1-2001 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: src/core/util.c
+--- src/core/util.c.orig
++++ src/core/util.c
+@@ -17,7 +17,7 @@
+  */
+ 
+ 
+-#define _POSIX_C_SOURCE 200112L /* for fdopen() */
++/* #define _POSIX_C_SOURCE 200112L */ /* for fdopen() */
+ 
+ #include "config.h"
+ 

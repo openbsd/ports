@@ -36,6 +36,6 @@ AUTOCONF_VERSION =	2.69
 
 # prevent from linking against static libintl.a
 post-patch:
-	cp ${LOCALBASE}/share/aclocal/lib-link.m4 ${WRKSRC}/m4/
+	cp ${LOCALBASE}/share/gettext/m4/lib-link.m4 ${WRKSRC}/m4/
 
 .include <bsd.port.mk>

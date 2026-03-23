@@ -20,6 +20,7 @@ LIB_DEPENDS=		devel/gettext,-runtime
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11
+AUTORECONF=		autoreconf -f -i -I${LOCALBASE}/share/gettext/m4
 CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -27,6 +28,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 post-patch:
 	cp ${LOCALBASE}/share/gettext/po/Makevars.template \
 	    ${WRKSRC}/po/Makevars
+	cd ${WRKSRC}; \
+	    sed -n 's/^ALL_LINGUAS="\(.*\)"/\1/w po/LINGUAS' configure.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/weex

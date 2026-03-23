@@ -1,5 +1,6 @@
---- configure.ac.orig	Wed Jun  7 22:02:51 2017
-+++ configure.ac	Wed Sep 22 20:29:53 2021
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -48,7 +48,10 @@ AC_PROG_CXX
  AM_PROG_CC_C_O
  AC_ISC_POSIX
@@ -7,7 +8,7 @@
 -IT_PROG_INTLTOOL([0.35.0])
 +AM_GNU_GETTEXT([external])
 +AM_GNU_GETTEXT_VERSION([0.19.8])
-+m4_ifdef(AM_GNU_GETTEXT_REQUIRE_VERSION,
++m4_ifdef([AM_GNU_GET][TEXT_REQUIRE_VERSION],
 +  [AM_GNU_GETTEXT_REQUIRE_VERSION([0.19.8])])
  AM_PROG_LIBTOOL
  

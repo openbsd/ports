@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 # grab new macros that match *.so.n.m shared libraries
 # requires autoconf >=2.61
 post-patch:
-	cd ${LOCALBASE}/share/aclocal && \
+	cd ${LOCALBASE}/share/gettext/m4 && \
 	    cp lib-link.m4 lib-prefix.m4 host-cpu-c-abi.m4 ${WRKSRC}/m4
 
 .include <bsd.port.mk>

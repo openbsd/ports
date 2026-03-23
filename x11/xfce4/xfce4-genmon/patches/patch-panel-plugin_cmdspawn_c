@@ -1,0 +1,21 @@
+Forcing POSIX 1003.1c-1995 and XPG5 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: panel-plugin/cmdspawn.c
+--- panel-plugin/cmdspawn.c.orig
++++ panel-plugin/cmdspawn.c
+@@ -25,11 +25,11 @@
+    duplicated, not the whole process (e.g Solaris) */
+ 
+ #ifndef _POSIX_C_SOURCE
+-#define _POSIX_C_SOURCE 199506L
++/* #define _POSIX_C_SOURCE 199506L */
+ #endif
+ 
+ #ifndef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE 500
++/* #define _XOPEN_SOURCE 500 */
+ #endif
+ 
+ #ifdef HAVE_CONFIG_H

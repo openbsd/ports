@@ -1,0 +1,19 @@
+Forcing XPG3 and POSIX 1003.1-1988 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: src/interp/lex.c
+--- src/interp/lex.c.orig
++++ src/interp/lex.c
+@@ -32,11 +32,6 @@
+ 
+ /*#define YYSTYPE PNODE*/
+ 
+-#ifdef __OpenBSD__
+-#define _XOPEN_SOURCE
+-#define _POSIX_SOURCE
+-#endif
+-
+ #include "llstdlib.h"
+ #include "table.h"
+ #include "translat.h"

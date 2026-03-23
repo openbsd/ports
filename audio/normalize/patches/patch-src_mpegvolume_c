@@ -1,0 +1,16 @@
+Forcing POSIX 1003.2-1992 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: src/mpegvolume.c
+--- src/mpegvolume.c.orig
++++ src/mpegvolume.c
+@@ -17,7 +17,7 @@
+ 
+ /* interface to the mad decoding library */
+ 
+-#define _POSIX_C_SOURCE 2
++/* #define _POSIX_C_SOURCE 2 */
+ 
+ #include "config.h"
+ 

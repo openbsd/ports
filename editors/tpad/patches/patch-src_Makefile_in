@@ -1,0 +1,16 @@
+Forcing "POSIX 1003.1-2001 with XSI" removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -377,7 +377,7 @@ tpad_SOURCES = \
+ 	tpad_open_guard.c \
+ 	tpad_open_guard.h
+ 
+-tpad_CFLAGS = -D_XOPEN_SOURCE=600 
++tpad_CFLAGS = 
+ tpad_LDFLAGS = 
+ tpad_LDADD = $(TPAD_LIBS) \
+ 	-lpthread \

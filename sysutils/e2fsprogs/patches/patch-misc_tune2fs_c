@@ -1,0 +1,16 @@
+Forcing "POSIX 1003.1-2001 with XSI" removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: misc/tune2fs.c
+--- misc/tune2fs.c.orig
++++ misc/tune2fs.c
+@@ -25,7 +25,7 @@
+  * 94/03/06	- Added the checks interval from Uwe Ohse (uwe@tirka.gun.de)
+  */
+ 
+-#define _XOPEN_SOURCE 600 /* for inclusion of strptime() */
++/* #define _XOPEN_SOURCE 600 */ /* for inclusion of strptime() */
+ #include "config.h"
+ #include <fcntl.h>
+ #include <grp.h>

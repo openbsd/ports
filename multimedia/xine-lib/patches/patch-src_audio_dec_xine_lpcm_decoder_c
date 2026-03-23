@@ -1,0 +1,16 @@
+Forcing XPG5 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: src/audio_dec/xine_lpcm_decoder.c
+--- src/audio_dec/xine_lpcm_decoder.c.orig
++++ src/audio_dec/xine_lpcm_decoder.c
+@@ -27,7 +27,7 @@
+ 
+ #define _DEFAULT_SOURCE 1
+ #ifndef __sun
+-#define _XOPEN_SOURCE 500
++/* #define _XOPEN_SOURCE 500 */
+ #endif
+ /* avoid compiler warnings */
+ #define _BSD_SOURCE 1

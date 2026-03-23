@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Satisfy version check
+# msgfmt -V | grep -q -E ' 0\.((19)|[2-9])'
+test X"$1" = X-V && exec echo "msgfmt (GNU gettext-tools) 0.23.1"
+
+exec ${LOCALBASE}/bin/msgfmt "$@"

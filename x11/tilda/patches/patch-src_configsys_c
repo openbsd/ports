@@ -1,0 +1,18 @@
+Forcing POSIX 1003.1-1988 and XPG3 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: src/configsys.c
+--- src/configsys.c.orig
++++ src/configsys.c
+@@ -14,8 +14,8 @@
+  * License along with this library. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-#define _POSIX_SOURCE /* feature test macro for fileno */
+-#define _XOPEN_SOURCE /* feature test macro for fsync */
++/* #define _POSIX_SOURCE */ /* feature test macro for fileno */
++/* #define _XOPEN_SOURCE */ /* feature test macro for fsync */
+ 
+ #include "config.h"
+ #include "debug.h"

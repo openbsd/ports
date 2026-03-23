@@ -1,0 +1,16 @@
+Forcing XPG5 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: config.mk
+--- config.mk.orig
++++ config.mk
+@@ -29,7 +29,7 @@ CPPFLAGS += -DGSEAL_ENABLE
+ CPPFLAGS += -DGTK_DISABLE_SINGLE_INCLUDES
+ CPPFLAGS += -DGDK_DISABLE_DEPRECATED
+ 
+-ifeq "$(findstring $(OS),FreeBSD DragonFly)" ""
++ifeq "$(findstring $(OS),FreeBSD DragonFly OpenBSD)" ""
+ CPPFLAGS += -D_XOPEN_SOURCE=500
+ CPPFLAGS += -D__BSD_VISIBLE
+ endif

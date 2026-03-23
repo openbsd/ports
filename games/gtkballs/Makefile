@@ -22,7 +22,7 @@ USE_GMAKE=	Yes
 BUILD_DEPENDS+=	devel/gettext,-tools
 
 CONFIGURE_STYLE=autoreconf
-AUTORECONF=	./autogen.sh
+AUTORECONF=	ACLOCAL='aclocal -I${LOCALBASE}/share/gettext/m4' ./autogen.sh
 AUTOMAKE_VERSION=1.16
 AUTOCONF_VERSION=2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

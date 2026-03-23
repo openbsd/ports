@@ -37,6 +37,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-AUTORECONF=		./autogen.sh
+AUTORECONF=	ACLOCAL="aclocal -I${LOCALBASE}/share/gettext/m4" ./autogen.sh
 
 .include <bsd.port.mk>

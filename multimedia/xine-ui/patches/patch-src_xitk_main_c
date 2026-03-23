@@ -1,0 +1,16 @@
+Forcing XPG5 removes locale_t from <locale.h>. 
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: src/xitk/main.c
+--- src/xitk/main.c.orig
++++ src/xitk/main.c
+@@ -20,7 +20,7 @@
+  *
+  */
+ /* required for getsubopt(); the __sun test gives us strncasecmp() on solaris */
+-#if !defined(__sun) && ! defined(__FreeBSD__) && ! defined(__NetBSD__) && ! defined(__DragonFly__)
++#if !defined(__sun) && ! defined(__FreeBSD__) && ! defined(__NetBSD__) && ! defined(__DragonFly__) && ! defined(__OpenBSD__)
+ #define _XOPEN_SOURCE 500
+ #endif
+ /* required for strncasecmp() */

@@ -1,0 +1,16 @@
+Forcing XPG5 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: gphoto2/range.c
+--- gphoto2/range.c.orig
++++ gphoto2/range.c
+@@ -19,7 +19,7 @@
+  */
+ 
+ #define _DARWIN_C_SOURCE
+-#define _XOPEN_SOURCE 500
++/* #define _XOPEN_SOURCE 500 */
+ 
+ #include "config.h"
+ #include "i18n.h"

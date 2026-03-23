@@ -1,0 +1,16 @@
+Forcing POSIX 1003.1-1988 removes locale_t from <locale.h>.
+This breaks including libintl.h, since gettext is built with locale_t
+in view.
+
+Index: libparlatype/src/pt-waveloader.c
+--- libparlatype/src/pt-waveloader.c.orig
++++ libparlatype/src/pt-waveloader.c
+@@ -18,7 +18,7 @@
+  */
+ 
+ 
+-#define _POSIX_SOURCE	/* fileno */
++/* #define _POSIX_SOURCE */	/* fileno */
+ 
+ #include "config.h"
+ #include <stdio.h>	/* FILE, tmpfile, fileno, fclose */
