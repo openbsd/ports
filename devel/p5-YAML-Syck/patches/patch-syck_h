@@ -3,7 +3,7 @@ Zeroing allocated space avoids a perl segfault with malloc_flags J.
 Index: syck.h
 --- syck.h.orig
 +++ syck.h
-@@ -64,7 +64,7 @@ extern "C" {
+@@ -71,7 +71,7 @@ extern "C" {
  
  #define ALLOC_CT 8
  #define SYCK_BUFFERSIZE 4096
