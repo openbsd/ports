@@ -25,7 +25,7 @@ FIX_CRLF_FILES =	src/Certs.c
 COMPILER =		base-clang ports-gcc base-gcc
 COMPILER_LANGS =	c
 
-# Needed for downloading assets and sound support at runtime
+# Needed for sound support at runtime
 LIB_DEPENDS =		audio/openal
 RUN_DEPENDS =		devel/desktop-file-utils
 
