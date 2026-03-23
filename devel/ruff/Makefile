@@ -3,8 +3,8 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	Python linter and code formatter
 
-MODPY_DISTV =	0.15.5
-REVISION =	0
+MODPY_DISTV =	0.15.7
+
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
 GH_TAGNAME =	${MODPY_DISTV}
@@ -26,16 +26,21 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	${MODCARGO_WANTLIB} m zstd
+WANTLIB +=	${MODCARGO_WANTLIB} m
 
-LIB_DEPENDS +=	archivers/zstd
-TEST_DEPENDS+=	${LIB_DEPENDS}
+TEST_DEPENDS +=	archivers/zstd
+
+MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
 MODULES =	lang/python
 MODPY_PYBUILD =	maturin
 
-MODCARGO_CARGOTOML =	${WRKSRC}/crates/ruff/Cargo.toml
-MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
+# Overriding MODCARGO_CARGOTOML doesn't work properly here as it would
+# result in incomplete output from modcargo-gen-crates.
+do-build:
+	${MODCARGO_CARGO_RUN} build \
+		--manifest-path ${WRKSRC}/crates/ruff/Cargo.toml \
+		--release ${MODCARGO_BUILD_ARGS}
 
 # Generate shell completions
 post-install:
