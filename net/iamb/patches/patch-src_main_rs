@@ -1,0 +1,18 @@
+Fix build with rust 1.94, https://github.com/ulyssa/iamb/issues/598
+
+error[E0275]: overflow evaluating the requirement `{async fn body of matrix_sdk::matrix_sdk_crypto::store::Store::get_sessions()}: std::marker::Send`
+     |
+     = help: consider increasing the recursion limit by adding a `#![recursion_limit = "256"]` attribute to your crate (`iamb`)
+note: required because it appears within the type `impl Future<Output = Result<Option<...>, ...>>`
+
+Index: src/main.rs
+--- src/main.rs.orig
++++ src/main.rs
+@@ -11,6 +11,7 @@
+ //!
+ //! Most rendering logic lives under the [windows] module, but [Matrix messages][message] have
+ //! their own module.
++#![recursion_limit = "256"]
+ #![allow(clippy::manual_range_contains)]
+ #![allow(clippy::needless_return)]
+ #![allow(clippy::result_large_err)]
