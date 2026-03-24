@@ -14,6 +14,15 @@ Index: llvm/tools/llvm-config/llvm-config.cpp
    } else {
      // default to the unix values:
      SharedExt = "so";
+@@ -426,7 +432,7 @@ int main(int argc, char **argv) {
+ 
+   bool DyLibExists = false;
+   const std::string DyLibName =
+-      (SharedPrefix + "LLVM-" + SharedVersionedExt).str();
++      (SharedPrefix + "LLVM" + SharedVersionedExt).str();
+ 
+   // If LLVM_LINK_DYLIB is ON, the single shared library will be returned
+   // for "--libs", etc, if they exist. This behaviour can be overridden with
 @@ -437,7 +443,12 @@ int main(int argc, char **argv) {
      std::string path((SharedDir + DirSep + DyLibName).str());
      if (DirSep == "\\")
