@@ -1,6 +1,6 @@
 Index: widget/NativeKeyToDOMCodeName.inc
---- widget/NativeKeyToDOMCodeName.h.orig
-+++ widget/NativeKeyToDOMCodeName.h
+--- widget/NativeKeyToDOMCodeName.inc.orig
++++ widget/NativeKeyToDOMCodeName.inc
 @@ -379,7 +379,9 @@ CODE_MAP_ANDROID(Tab, 0x000F)
  
  // IME keys

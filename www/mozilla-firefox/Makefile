@@ -3,15 +3,15 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	148.0.2
+MOZILLA_VERSION =	149.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-MOZILLA_PROFDATA_TASKID =	abpglHjER02gF9gy_q6SMA
+MOZILLA_PROFDATA_TASKID =	fnNzjqezT9qCY5Im7fmQMg
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	160.0
+SO_VERSION =	161.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozinference mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3
