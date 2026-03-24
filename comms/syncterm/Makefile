@@ -1,11 +1,10 @@
 COMMENT=	BBS terminal program
 
-DISTNAME=	syncterm-1.6
-REVISION=	1
+DISTNAME=	syncterm-1.7
 
 CATEGORIES=	comms net
 
-HOMEPAGE=	http://syncterm.bbsdev.net/
+HOMEPAGE=	https://syncterm.bbsdev.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
