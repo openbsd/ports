@@ -19,3 +19,4 @@ The following is recommended:
 
 	[network]
 	ipv6 = true
+	prefer = 6

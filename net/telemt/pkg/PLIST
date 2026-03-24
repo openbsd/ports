@@ -4,7 +4,6 @@
 @bin bin/telemt
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/telemt/
-share/examples/telemt/config.full.toml
 share/examples/telemt/config.toml
 @mode 750
 @group _telemt
