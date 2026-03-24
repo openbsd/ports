@@ -3,6 +3,7 @@ COMMENT =	Stream and Genlex libraries for Camlp4/5
 CATEGORIES =	devel
 
 V =		5.0.1
+REVISION =	0
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	camlp-streams
 GH_TAGNAME =	v${V}
@@ -16,20 +17,13 @@ MODULES =		lang/ocaml
 
 BUILD_DEPENDS =		devel/dune
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mocaml_native}
-MAKE_ENV += OCAML_NATIVE=true
-.else
-MAKE_ENV += OCAML_NATIVE=false
-.endif
-
 do-build:
-	cd ${WRKSRC} && dune build -j ${MAKE_JOBS}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} dune build -j ${MAKE_JOBS}
 
 do-install:
-	cd ${WRKSRC} && dune install -j ${MAKE_JOBS}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DESTDIR="${WRKINST}" dune install -j ${MAKE_JOBS}
 
 do-test:
-	cd ${WRKSRC} && dune test
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} dune test
 
 .include <bsd.port.mk>
