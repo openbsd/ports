@@ -14,6 +14,9 @@ LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/kwidgetsaddons \
 		security/qtkeychain,qt6
 
+# nothing in doc/, but needed for manpage
+BUILD_DEPENDS =	devel/kf6/kdoctools
+
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
