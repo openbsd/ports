@@ -101,6 +101,8 @@ lib/cmake/wabt/wabt-targets.cmake
 share/wabt/
 share/wabt/wasm2c/
 share/wabt/wasm2c/wasm-rt-exceptions-impl.c
+share/wabt/wasm2c/wasm-rt-impl-tableops.inc
 share/wabt/wasm2c/wasm-rt-impl.c
 share/wabt/wasm2c/wasm-rt-impl.h
+share/wabt/wasm2c/wasm-rt-mem-impl-helper.inc
 share/wabt/wasm2c/wasm-rt-mem-impl.c
