@@ -1,9 +1,7 @@
 %%native%%
 lib/ocaml/camlp-streams/
 lib/ocaml/camlp-streams/META
-lib/ocaml/camlp-streams/camlp_streams.a
 lib/ocaml/camlp-streams/camlp_streams.cma
-lib/ocaml/camlp-streams/camlp_streams.cmxs
 lib/ocaml/camlp-streams/dune-package
 lib/ocaml/camlp-streams/genlex.cmi
 lib/ocaml/camlp-streams/genlex.cmt

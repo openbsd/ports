@@ -3,7 +3,7 @@ COMMENT =	Stream and Genlex libraries for Camlp4/5
 CATEGORIES =	devel
 
 V =		5.0.1
-REVISION =	0
+REVISION =	1
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	camlp-streams
 GH_TAGNAME =	v${V}
