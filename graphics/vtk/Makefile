@@ -66,8 +66,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/cli11 \
-			devel/utfcpp \
+BUILD_DEPENDS =		devel/utfcpp \
 			math/eigen3 \
 			math/exprtk \
 			textproc/nlohmann-json
