@@ -2,12 +2,12 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.68
+V=			0.4.70
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += gegl-0.4                  0.5 # 0.467.1
+SHARED_LIBS += gegl-0.4                  0.5 # 0.469.1
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
@@ -65,7 +65,7 @@ CONFIGURE_ARGS=		-Ddocs=false \
 			-Dsdl2=disabled
 
 # needs /proc/self/exe
-CONFIGURE_ARGS +=	-Drelocatable=disabled
+CONFIGURE_ARGS +=	-Drelocatable-bundle=no
 
 .if ${MACHINE_ARCH} == "amd64"
 PKG_ARGS +=		-Damd64=1

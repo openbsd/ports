@@ -839,6 +839,7 @@ share/locale/it/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/ja/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/ka/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/kab/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/kk/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/ko/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/lv/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/mr/LC_MESSAGES/gegl-${API_VERSION}.mo
