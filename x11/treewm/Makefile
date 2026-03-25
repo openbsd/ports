@@ -24,6 +24,8 @@ MAKE_FLAGS=		CC="${CC}" CCOPTIONS="${CFLAGS}" CDEBUGFLAGS="" \
 			LIBS="-L${X11BASE}/lib -lXxf86vm -lXpm -lXext -lX11" \
 			INCLUDES="-I${X11BASE}/include"
 
+CFLAGS +=		-Wno-error=implicit-int
+
 DESTDIRNAME=	ROOT
 FAKE_FLAGS=		DOCFILES="ChangeLog PROBLEMS README README.tiling"
 
