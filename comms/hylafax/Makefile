@@ -1,24 +1,20 @@
 COMMENT=		send/receive faxes and share modems
-DISTNAME=		hylafax-6.0.6
-REVISION=		16
+
+DISTNAME=		hylafax-7.0.11
 CATEGORIES=		comms
-BROKEN=			abandonware, uses binaries removed in tiff 4.6
 
-HOMEPAGE=		https://www.HylaFAX.org/
-
-SITES=			http://ftp.hylafax.org/source/ \
-			ftp://ftp.hylafax.org/source/ \
-			ftp://ftp.ntua.gr/pub/net/hylafax/source/ \
-			http://mirror.aarnet.edu.au/pub/hylafax/source/
+HOMEPAGE=		https://hylafax.sourceforge.io/
+SITES=			${SITE_SOURCEFORGE:=hylafax/}
 
 # License: BSD
 # http://www.hylafax.org/HylaFAQ/copyright.html
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 FLAVORS=		a4
 FLAVOR?=
 
-WANTLIB=		c iconv intl jbig m ${COMPILER_LIBCXX} tiff util z
+WANTLIB=		c crypto jbig m ${COMPILER_LIBCXX} ssl tiff util z
+WANTLIB+=		jpeg lcms2
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -33,18 +29,26 @@ USE_GMAKE=		Yes
 
 CONFIGURE_ARGS=		--nointeractive \
 			--disable-pam \
-			--disable-nls \
-			--with-CC="${CC}" \
-			--with-CXX="${CXX}" \
+			--disable-ldap \
+			--with-CCOMPILER="${CC}" \
+			--with-CXXCOMPILER="${CXX}" \
+			--with-GCOPTS="${CFLAGS}" \
+			--with-GCXXOPTS="${CXXFLAGS}" \
 			--with-INSTALL="" \
-			--with-OPTIMIZER=""
+			--with-OPTIMIZER="" \
+			--with-TIFFINC="-I${PREFIX}/include" \
+			--with-LIBTIFF="-L${PREFIX}/lib -ltiff" \
+			--with-CHGRP="/bin/chgrp" \
+			--with-CHOWN="/sbin/chown" \
+			--with-FAXUID="_hylafax" \
+			--with-FAXGID="dialer" \
+			--with-LOCKS="ascii" \
+			--with-SCRIPT_SH="/bin/ksh" \
+			--with-INSTALLROOT="${DESTDIR}" \
+			--with-DIR_MAN="${TRUEPREFIX}/man" \
+			--with-DIR_LIBDATA="${TRUEPREFIX}/libdata/hylafax/etc"
 
-CONFIGURE_ENV+=		CCOMPILER="${CC}" CXXCOMPILER="${CXX}" \
-			GCOPTS="${CFLAGS}" GCXXOPTS="${CXXFLAGS}" \
-			PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}" \
-			DIR_LIBDATA=${TRUEPREFIX}/libdata/hylafax/etc \
-			INETDCONF=/etc/inetd.conf MKFIFO=/sbin/mkfifo \
-			SCRIPT_SH=/bin/ksh
+CONFIGURE_ENV+=		DISABLE_PODOFO=yes
 
 .if ${FLAVOR:Ma4}
 CONFIGURE_ARGS+=	--with-PAGESIZE=A4
@@ -56,9 +60,5 @@ NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
-
-post-install:
-	echo "FontMap: ${LOCALBASE}/share/fonts/ghostscript" \
-		>${PREFIX}/libdata/hylafax/etc/hyla.conf
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+Index: util/faxmodem.c
+--- util/faxmodem.c.orig
++++ util/faxmodem.c
+@@ -315,7 +315,7 @@ main(int argc, char** argv)
+     } else {
+         cmdlen = snprintf(cmd, sizeof(cmd), "+%s:R%c%08x", devname, canpoll, caps);
+     }
+-    cmdlen++;              /* Include NUL character */
++    if (cmdlen > 0) cmdlen++;              /* Include NUL character */
+     if (cmdlen < 1 || cmdlen > sizeof(cmd) || write(fifo, cmd, cmdlen) != cmdlen) {
+         fatal("%s: FIFO write failed for command (%s)",
+             argv[0], strerror(errno));

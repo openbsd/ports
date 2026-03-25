@@ -1,0 +1,13 @@
+Index: faxd/ClassModem.h
+--- faxd/ClassModem.h.orig
++++ faxd/ClassModem.h
+@@ -133,7 +133,8 @@ class ClassModem { (public)
+ 	BR38400	= 7,		// 38400 bits/sec
+ 	BR57600	= 8,		// 57600 bits/sec
+ 	BR76800	= 9,		// 76800 bits/sec
+-	BR115200= 10		// 115200 bits/sec
++	BR115200= 10,		// 115200 bits/sec
++	BR230400= 11		// 230400 bits/sec
+     };
+ 
+     enum {			// ClassModem::ECMType

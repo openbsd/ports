@@ -1,0 +1,13 @@
+Index: faxd/pageSendApp.h
+--- faxd/pageSendApp.h.orig
++++ faxd/pageSendApp.h
+@@ -47,9 +47,6 @@ class pageSendApp : public ModemServer, public faxApp 
+ 	u_int pageSendApp::*p;
+ 	u_int		 def;
+     };
+-
+-    static int	terminateSignal;	// Termination signal received
+-
+ private:
+ // runtime state
+     bool	ready;			// modem ready for use

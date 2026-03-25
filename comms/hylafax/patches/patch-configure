@@ -1,33 +1,33 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -39,7 +39,6 @@
- #
- DIR_BIN=/usr/local/bin
- DIR_SBIN=/usr/local/sbin
--DIR_LIBDATA=/usr/local/lib/fax
- DIR_LIB=/usr/local/lib
- DIR_LIBEXEC=$DIR_SBIN
- DIR_SPOOL=/var/spool/hylafax
-@@ -73,13 +72,13 @@ NLS=auto
- OPTIMIZER="-O"
- LIBCRYPT=
- LIBPAM=
--LIBTIFF="-ltiff"
--TIFFINC=
-+LIBTIFF="-L${LOCALBASE}/lib -ltiff"
-+TIFFINC="-I${LOCALBASE}/include"
- TIFFBIN=
- LIBUTIL=
- LIBZ=-lz
- ZLIBINC=
--LIBINTL=
-+LIBINTL="-L${LOCALBASE}/lib -I${LOCALBASE}/include -lintl -liconv"
- INTLINC=
- REGEX=yes
- LIBREGEX='-L${DEPTH}/regex -lregex'
-@@ -1559,7 +1558,7 @@ int t() { $f(); return 0; }
- int main(){ t(); return 0; }
+@@ -339,6 +339,7 @@ Options: [defaults in brackets after descriptions]
+   --version               print the version of autoconf that created configure
+   --target=TARGET         configure for TARGET [TARGET=HOST]
+   --srcdir=DIR            find the sources in DIR [configure dir or ..]
++  --disable-ssl           disable all SSL support
+   --disable-pam           disable all PAM support
+   --disable-jbig          disable all JBIG support
+   --disable-lcms          disable all Little CMS support
+@@ -397,6 +398,7 @@ do
+     -srcdir=*|--srcdir=*)	SRCDIR="$ac_optarg";;
+     -target|--target)		ac_prev=TARGET;;
+     -target=*|--target=*)	TARGET="$ac_optarg" ;;
++    -disable-ssl|--disable-ssl) DISABLE_SSL="yes" ;;
+     -disable-pam|--disable-pam) DISABLE_PAM="yes" ;;
+     -disable-ldap|--disable-ldap) DISABLE_LDAP="yes" ;;
+     -disable-jbig|--disable-jbig) DISABLE_JBIG="yes" ;;
+@@ -479,7 +481,7 @@ fi
+ $RM ./config.log
+ exec 5>./config.log			# compiler messages and the like
+ 
+-DATE=`date -u -r CHANGES`
++DATE=`TZ=UTC stat -f%Sm CHANGES`
+ 
+ eval `cat $SRCDIR/VERSION | sed 's/\([0-9][0-9]*\)\.\([0-9][0-9]*\)\(.*\)/DIST_MAJOR=\1; DIST_MINOR=\2; DIST_TYPE=\3/'`
+ DIST_ALPHA=`awk '{print $3}' $SRCDIR/dist/hylafax.alpha`
+@@ -1547,7 +1549,7 @@ int t(void) { $f(); return 0; }
+ int main(int argc, char *argv[]){ t(); return 0; }
  EOF
      capture cat t.c
 -    runMake t "t:; \${CCF} t.c $libs"
@@ -35,7 +35,7 @@ Index: configure
  }
  
  #
-@@ -1587,7 +1586,7 @@ CheckForIncludeFile()
+@@ -1577,7 +1579,7 @@ CheckForIncludeFile()
  	echo "#include \"$i\""
       done)>t.c++
      capture cat t.c++
@@ -43,42 +43,18 @@ Index: configure
 +    runMake t "t:; \${C++F} \${C++FILE} -E t.c++${MAKECXXOVERRIDE} -I${LOCALBASE}/include"
  }
  
- if [ "$SGI2FAX" = auto ]; then
-@@ -1959,6 +1958,12 @@ EmitConfigurationDefinitions()
- 			    CONFIG_OPENFIFO=O_RDONLY;
- 			fi
- 			;;
-+	*-openbsd*)	if releaseAtLeast 5.7; then
-+			    CONFIG_OPENFIFO=O_RDWR;
-+			else
-+			    CONFIG_OPENFIFO=O_RDONLY;
-+			fi
-+			;;
- 	*sysv4.2uw2.1.3)	CONFIG_OPENFIFO=O_RDWR;;	# UnixWare 2.1.3
- 	*-sysv5UnixWare*)	CONFIG_OPENFIFO=O_RDWR;;	# UnixWare 7
- 	*-sysv5OpenUNIX*)	CONFIG_OPENFIFO=O_RDWR;;	# OpenUNIX 8
-@@ -2563,12 +2568,11 @@ EOF
- 				tiff_offset_t="uint32"
- 				tiff_bytecount_t="uint32"
- 				;;
--		4.[0])		tiff_runlen_t="uint32"
-+		4.?)		tiff_runlen_t="uint32"
- 				tiff_offset_t="uint64"
- 				tiff_bytecount_t="uint64"
- 				echo '#define TIFFHeader	TIFFHeaderClassic'
- 				echo '#define TIFF_VERSION	TIFF_VERSION_CLASSIC'
--				echo '#define NEED_TIFFDIRENTRY'
- 				;;
- 	    esac
- 	fi
-@@ -3405,19 +3409,8 @@ fi
+ #
+@@ -3497,22 +3499,8 @@ fi
  HAVE_JBIGTIFF="/*#define HAVE_JBIGTIFF 1*/"
  if [ "$DISABLE_JBIG" != "yes" ]; then
      Note "Checking JBIG-in-TIFF conversion support."
+-    exec 3>&2 2> /dev/null	# Mute stderr, tiffcp may segfault here
 -    $TIFFBIN/tiffcp -c g4 misc/jbig.tif misc/foo.tif > /dev/null 2>&1
--    if [ $? = 0 ]; then
+-    EV=$?
+-    exec 2>&3 3>&-		# Restore stderr
+-    if [ $EV = 0 ]; then
 -	$TIFFBIN/tiffcp misc/jbig.tif misc/foo.tif > /dev/null
--	if [ -n "`$TIFFBIN/tiffinfo misc/foo.tif | grep 'Fax DCS'`" ]; then
+-	if [ -n "`$TIFFBIN/tiffinfo misc/foo.tif | grep 'Fax *D[Cc][Ss]'`" ]; then
 -	    HAVE_JBIGTIFF="#define HAVE_JBIGTIFF 1"
 -	    Note "JBIG-in-TIFF conversion support found."
 -	else
@@ -93,26 +69,3 @@ Index: configure
  fi
  
  Note "Done checking TIFF support."
-@@ -3957,6 +3950,7 @@ if [ "$LOCKS" = auto ]; then
-     *-solaris*)	LOCKS="+ascii";;
-     *-freebsd*)	LOCKS=ascii;;
-     *-netbsd*)	LOCKS=ascii;;
-+    *-openbsd*)	LOCKS=ascii;;
-     *bsd*)	LOCKS=binary;;
-     *)		LOCKS=ascii;;
-     esac
-@@ -4681,10 +4675,10 @@ case $MANSCHEME in
- *-0|*-0.gz|*-0.Z|*-gz|*-Z|*-z)
-     suf=`echo $MANSCHEME | $SED 's/.*-/./'`
-     A='`echo $$i | sed' B='`'		# workaround shell bugs
--    MANCAPPNAME="$A s/\\\\.1\$\$/$suf/$B"
--    MANCFILENAME="$A s/\\\\.4f\$\$/$suf/$B"
--    MANSAPPNAME="$A s/\\\\.1m\$\$/$suf/$B"
--    MANSFILENAME="$A s/\\\\.4f\$\$/$suf/$B"
-+    MANCAPPNAME="$A s/\\\\.1\$$/$suf/$B"
-+    MANCFILENAME="$A s/\\\\.4f\$$/$suf/$B"
-+    MANSAPPNAME="$A s/\\\\.1m\$$/$suf/$B"
-+    MANSFILENAME="$A s/\\\\.4f\$$/$suf/$B"
-     ;;
- bsd-*-strip)
-     MANCAPPNAME='$$i'

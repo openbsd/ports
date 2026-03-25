@@ -1,0 +1,12 @@
+Index: faxd/sslfaxproxy.c++
+--- faxd/sslfaxproxy.c++.orig
++++ faxd/sslfaxproxy.c++
+@@ -31,7 +31,7 @@ printlog(FILE *fp, const char *fmt, ...)
+   fflush(fp);
+ }
+ 
+-timeval currentTime() {
++static timeval currentTime() {
+     timeval curTime;
+     gettimeofday(&curTime, 0);
+     return curTime;

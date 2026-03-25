@@ -1,0 +1,18 @@
+Index: faxd/ModemServer.h
+--- faxd/ModemServer.h.orig
++++ faxd/ModemServer.h
+@@ -105,8 +105,14 @@ class ModemServer : public ServerConfig, public IOHand
+  * downside is that the ModemIO tracing is "wordy" with this (using one 
+  * whole line of logging per-byte).  The other upside, though, is that the
+  * timestamps on the session logging are accurate to the millisecond.
++ * Unfortunately, using a one-byte rcvBuf in OpenBSD seems to have the
++ * opposite effect from what is desired.  It seems to make the issue worse.
+  */
++#if defined(__OpenBSD__)
++    u_char	rcvBuf[1024];		// receive buffering
++#else
+     u_char	rcvBuf[1];		// receive buffering
++#endif
+ 
+     friend class ClassModem;
+ 

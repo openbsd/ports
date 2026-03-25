@@ -1,0 +1,18 @@
+Index: faxd/sslfax.c++
+--- faxd/sslfax.c++.orig
++++ faxd/sslfax.c++
+@@ -29,12 +29,13 @@
+ #include "config.h"
+ #if defined(HAVE_SSL)
+ 
++#include <limits.h>
+ #include <sys/time.h>
+ #include "sslfax.h"
+ #include "Sys.h"
+ #include "Socket.h"
+ 
+-timeval currentTime() {
++static timeval currentTime() {
+     timeval curTime;
+     gettimeofday(&curTime, 0);
+     return curTime;

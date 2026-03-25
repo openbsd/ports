@@ -1,0 +1,17 @@
+Index: config/skel
+--- config/skel.orig
++++ config/skel
+@@ -39,10 +39,10 @@ FAXNumber:		+1.999.555.1212
+ LocalIdentifier:	"NothingSetup"	# default is canonical FAXNumber
+ ServerTracing:		1		# log server-related operations
+ SessionTracing:		0xFFF		# log session-related operations
+-RecvFileMode:		0600		# recvd facsimile are not public
++RecvFileMode:		0640		# recvd facsimile are not public
+ LogFileMode:		0600		# private log files
+-DeviceMode:		0600		# device is accessible only to uucp/fax
+-GettyArgs:		"-h %l dx_%s"	# requires modem to auto-detect fax/data
++DeviceMode:		0660		# device is accessible only to uucp/fax
++GettyArgs:		"std.%s"	# requires modem to auto-detect fax/data
+ QualifyTSI:		""		# do not restrict inbound facsimile
+ SpeakerVolume:		off		# machine's are already too loud
+ RingsBeforeAnswer:	1		# answer on first ring

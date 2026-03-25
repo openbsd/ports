@@ -1,0 +1,15 @@
+Index: faxd/FaxMachineLog.c++
+--- faxd/FaxMachineLog.c++.orig
++++ faxd/FaxMachineLog.c++
+@@ -70,7 +70,11 @@ FaxMachineLog::FaxMachineLog(int f, const fxStr& numbe
+ 	struct loggingThreadData *r = (struct loggingThreadData *) malloc(sizeof(struct loggingThreadData));
+ 	r->pfd = lpfd[0];
+ 	r->wfd = fd;
++#if defined(__OpenBSD__)
++	if (1) {	// loggingThread has SIGABRTs in OpenBSD
++#else
+ 	if (pthread_create(&lt, NULL, &loggingThread, (void *) r) != 0) {
++#endif
+ 	    if (lpfd[0] > 0) Sys::close(lpfd[0]);
+ 	    if (lpfd[1] > 0) Sys::close(lpfd[1]);
+ 	    lpfd[0] = -1;

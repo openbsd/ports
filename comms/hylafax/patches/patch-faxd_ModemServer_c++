@@ -1,0 +1,29 @@
+Index: faxd/ModemServer.c++
+--- faxd/ModemServer.c++.orig
++++ faxd/ModemServer.c++
+@@ -71,6 +71,7 @@ static const u_int baudRates[] = {
+     57600,	// BR57600
+     76800,	// BR76800
+     115200,	// BR115200
++    230400,	// BR230400
+ };
+ 
+ ModemServer::ModemServer(const fxStr& devName, const fxStr& devID)
+@@ -1024,6 +1025,9 @@ ModemServer::traceModemIO(const char* dir, const u_cha
+ #ifndef B115200
+ #define	B115200	B76800
+ #endif
++#ifndef B230400
++#define	B230400	B115200
++#endif
+ static speed_t termioBaud[] = {
+     B0,		// BR0
+     B300,	// BR300
+@@ -1036,6 +1040,7 @@ static speed_t termioBaud[] = {
+     B57600,	// BR57600
+     B76800,	// BR76800
+     B115200,	// BR115200
++    B230400,	// BR230400
+ };
+ #define	NBAUDS	(sizeof (termioBaud) / sizeof (termioBaud[0]))
+ static const char* flowNames[] = { "NONE", "XON/XOFF", "RTS/CTS", };

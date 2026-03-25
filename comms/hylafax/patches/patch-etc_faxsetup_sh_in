@@ -1,15 +1,16 @@
---- etc/faxsetup.sh.in.orig	Wed Jun  6 02:58:38 2012
-+++ etc/faxsetup.sh.in	Mon Jul  9 15:06:31 2012
+Index: etc/faxsetup.sh.in
+--- etc/faxsetup.sh.in.orig
++++ etc/faxsetup.sh.in
 @@ -45,7 +45,7 @@ PATH=/bin:/usr/bin:/etc
  test -d /usr/ucb  && PATH=$PATH:/usr/ucb		# Sun and others
  test -d /usr/bsd  && PATH=$PATH:/usr/bsd		# Silicon Graphics
  test -d /usr/5bin && PATH=/usr/5bin:$PATH:/usr/etc	# Sun and others
 -test -d /usr/sbin && PATH=/usr/sbin:$PATH		# 4.4BSD-derived
-+test -d /sbin && PATH=/usr/sbin:$PATH			# 4.4BSD-derived
++test -d /sbin && PATH=/sbin:$PATH			# 4.4BSD-derived
  test -d /usr/local/bin && PATH=$PATH:/usr/local/bin	# for GNU tools
+ test -d /usr/gnu/bin && PATH=$PATH:/usr/gnu/bin		# for GNU tools (SCO)
  
- AWK=@AWK@			# awk for use below
-@@ -76,8 +76,8 @@ UUENCODE="@UUENCODE@"		# uuencode command to dump in s
+@@ -76,8 +76,8 @@ UUENCODE=@UUENCODE@		# uuencode command to dump in set
  
  FAX=@FAXUID@			# identity of the fax user
  SERVICES=/etc/services		# location of services database
@@ -20,7 +21,27 @@
  PASSWD=/etc/passwd		# where to go for password entries
  PROTOUID=@FAXUID@		# user who's uid we use for FAX user
  defPROTOUID=3			# use this uid if PROTOUID doesn't exist
-@@ -2426,12 +2426,7 @@ if onServer; then
+@@ -1265,7 +1265,7 @@ if onClient; then
+ 				-a "$RUNTIME_PATH_AFM" != "$PATH_AFM" ]; then 
+ 	    Note ""
+ 	    FONTPATHS=`echo $RUNTIME_PATH_AFM | sed 's/:/ /g'`
+-	    $PATH_GSRIP -q -sDEVICE=tiffg3 -sFONTPATH="$FONTPATHS" $DIR_SPOOL/bin/genfontmap.ps > $DIR_SPOOL/etc/Fontmap.HylaFAX 2>/dev/null
++	    $PATH_GSRIP -q -dNOSAFER -sDEVICE=tiffg3 -sFONTPATH="$FONTPATHS" $DIR_SPOOL/bin/genfontmap.ps > $DIR_SPOOL/etc/Fontmap.HylaFAX 2>/dev/null
+ 	    # Ghostscript 8.71 segfaults on that, but produces a valid Fontmap file, so we don't test exit code, but examine the product, instead.
+ 	    {
+ 		#
+@@ -1280,8 +1280,8 @@ if onClient; then
+ 		for fontname in `$CAT $fontmap | $GREP "	/" | $SED -e 's/^[^\/]*\///g' -e 's/ .*//g'`; do 
+ 		    if [ -z "`$GREP "^($fontname)" $fontmap`" ]; then
+ 			# There is a blind reference to this font.  Fix that.
+-			for fontpath in `$PATH_GSRIP -h | $GREP -A 100 "Search path:" | $GREP " :" | $SED 's/://g'`; do 
+-			    $GREP -l -d recurse -a "FontDirectory/$fontname known" $fontpath 2>/dev/null; 
++			for fontpath in $FONTPATHS; do
++			    $GREP -l -R -U "FontDirectory/$fontname known" $fontpath 2>/dev/null;
+ 			done | $SED q > $tmpfile
+ 			fontfile=`$CAT $tmpfile`
+ 			if [ -n "$fontfile" ]; then
+@@ -2425,12 +2425,7 @@ if onServer; then
  
      findproc()
      {

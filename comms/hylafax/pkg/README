@@ -6,9 +6,12 @@ Post-installation steps
 =======================
 Hylafax needs some manual configuration before it is usable.
 
+If you have upgraded HylaFAX on a system which was using the legacy UUCP
+account, please see the section below to update ownership of files.
+
 Make sure that you have configured HylaFAX before running faxq:
 	server: ${TRUEPREFIX}/sbin/faxsetup
-	modems:${TRUEPREFIX}/sbin/faxaddmodem
+	modems: ${TRUEPREFIX}/sbin/faxaddmodem
 	incoming calls: /etc/ttys
 
 When you are asked to specify the name of tty device, use a tty device
@@ -21,6 +24,24 @@ something like this:
 
 and send a SIGHUP to init(8).
 
+
+Updating file ownership to use the new _hylafax account
+=======================================================
+To update the ownership of directories and files in the HylaFAX spool directory,
+perform one of the following.
+
+If the legacy UUCP account is still registerd;
+
+    find ${TRUEPREFIX}/libdata/hylafax -user uucp -exec /sbin/chown 902 {} \;
+or
+    find ${TRUEPREFIX}/libdata/hylafax -user uucp -exec /sbin/chown _hylafax {} \;
+
+Alternatively, if you have removed the legacy UUCP account, and assuming its uid
+was 66;
+
+    find ${TRUEPREFIX}/libdata/hylafax -user 66 -exec /sbin/chown _hylafax {} \;
+
+
 References
 ==========
-Additional documentation at https://www.hylafax.org/.
+Additional documentation at https://hylafax.sourceforge.io/.

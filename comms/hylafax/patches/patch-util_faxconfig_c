@@ -1,0 +1,12 @@
+Index: util/faxconfig.c
+--- util/faxconfig.c.orig
++++ util/faxconfig.c
+@@ -128,7 +128,7 @@ main(int argc, char** argv)
+                 cmdlen = snprintf(cmd, cmdsize, "C%s%s:%s",
+                     isQueuer ? ":" : "", argv[optind], argv[optind+1]);
+             }
+-            cmdlen++;              /* Include NUL character */
++            if (cmdlen > 0) cmdlen++;              /* Include NUL character */
+             if (cmdlen < 1 || cmdlen > cmdsize || write(fifo, cmd, cmdlen) != cmdlen) {
+                 fatal("%s: FIFO write failed for command (%s)",
+             	    argv[0], strerror(errno));

@@ -1,0 +1,13 @@
+Index: faxd/faxSendApp.h
+--- faxd/faxSendApp.h.orig
++++ faxd/faxSendApp.h
+@@ -50,9 +50,6 @@ class faxSendApp : public FaxServer, public faxApp { (
+ 	bool faxSendApp::* p;
+ 	bool		 def;
+     };
+-
+-    static int	terminateSignal;	// Termination signal received
+-
+ private:
+ // runtime state
+     bool	ready;			// modem ready for use

@@ -1,0 +1,29 @@
+Index: hfaxd/Status.c++
+--- hfaxd/Status.c++.orig
++++ hfaxd/Status.c++
+@@ -171,14 +171,23 @@ HylaFAXServer::getServerStatus(const char* fileName, f
+         struct stat sb;
+         (void) Sys::fstat(fd, sb);
+         status.resize((u_int) sb.st_size);
+-        char* buff = new char[sb.st_size];
++        char* buff = new char[sb.st_size + 1];
++	 memset(buff, 0, sb.st_size + 1);
+         int n = Sys::read(fd, buff, (size_t) sb.st_size);
+         status = buff;
++	// It's possible that the status file had NUL characters in it, and because
++	// fxStr::operator= (used above) uses strlen() it is possible that n > strlen(buff),
++	// so we need to reset n so that [n-1] is for certain to be within the fxStr.
++	if (n > 0) {
++	    if (strlen(buff) < (size_t) n) n = strlen(buff);
++	}
+         Sys::close(fd);
+-        if (n > 0 && status[n-1] == '\n') n--;
+         if (n == 0) {
+             status = "No status (empty file)";
++	} else if (n < 0) {
++	    status = "No status (cannot read file)";
+         } else {
++	    if (status[n-1] == '\n') n--;
+             status.resize(n);
+         }
+         delete [] buff;

@@ -1,0 +1,13 @@
+Index: faxd/faxApp.c++
+--- faxd/faxApp.c++.orig
++++ faxd/faxApp.c++
+@@ -460,8 +460,7 @@ faxApp::setupPermissions(void)
+ 	if (pwd->pw_uid != faxuid)
+ 	    faxApp::fatal("Configuration error; "
+ 		"the fax server must run as the fax user \"%s\".", FAX_USER);
+-	if (setegid(faxuid) < 0)
+-	    faxApp::fatal("Can not setup permissions (faxuid)");
++	 (void) setegid(faxuid);
+     }
+     endpwent();
+ }

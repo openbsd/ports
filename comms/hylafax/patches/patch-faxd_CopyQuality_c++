@@ -1,0 +1,27 @@
+Index: faxd/CopyQuality.c++
+--- faxd/CopyQuality.c++.orig
++++ faxd/CopyQuality.c++
+@@ -120,6 +120,11 @@ FaxModem::initializeDecoder(const Class2Params& params
+ }
+ 
+ /*
++ * Disable optimisation to avoid SIGABRT in G3Decoder.c++.
++ */
++#pragma clang optimize off
++
++/*
+  * Receive Phase C data with or without copy
+  * quality checking and erroneous row fixup.
+  */
+@@ -473,6 +478,11 @@ FaxModem::recvPageDLEData(TIFF* tif, bool checkQuality
+     recvEndPage(tif, params);
+     return (true);
+ }
++
++/*
++ * Re-enable optimisation.
++ */
++#pragma clang optimize on
+ 
+ /*
+  * Setup "stock TIFF tags" in preparation for receiving a page of data.

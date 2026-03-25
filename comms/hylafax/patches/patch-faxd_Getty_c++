@@ -1,6 +1,7 @@
---- faxd/Getty.c++.orig	Tue May 15 17:52:03 2007
-+++ faxd/Getty.c++	Wed Nov  7 17:29:51 2007
-@@ -228,9 +228,9 @@ void
+Index: faxd/Getty.c++
+--- faxd/Getty.c++.orig
++++ faxd/Getty.c++
+@@ -243,9 +243,9 @@ void
  Getty::hangup()
  {
      // NB: this is executed in the parent

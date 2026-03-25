@@ -1,0 +1,45 @@
+Index: faxd/faxSendApp.c++
+--- faxd/faxSendApp.c++.orig
++++ faxd/faxSendApp.c++
+@@ -49,7 +49,6 @@
+  */
+ 
+ faxSendApp* faxSendApp::_instance = NULL;
+-int faxSendApp::terminateSignal = 0;
+ 
+ faxSendApp::faxSendApp(const fxStr& devName, const fxStr& devID)
+     : FaxServer(devName, devID)
+@@ -525,18 +524,13 @@ usage(const char* appName)
+ static void
+ sigCleanup(int s)
+ {
+-    // We keep this simple to avoid deadlocks - see terminate() for actual work
++    int old_errno = errno;
+     signal(s, fxSIGHANDLER(sigCleanup));
+-    faxSendApp::terminateSignal = s;
+-}
+-
+-static void
+-terminate(int s)
+-{
+     logError("CAUGHT SIGNAL %d", s);
+     faxSendApp::instance().close();
+     if (!faxSendApp::instance().isRunning())
+ 	_exit(send_failed);
++    errno = old_errno;
+ }
+ 
+ int
+@@ -567,11 +561,8 @@ main(int argc, char** argv)
+ 
+     app->initialize(argc, argv);
+     app->open();
+-    while (app->isRunning() && !app->isReady()) {
++    while (app->isRunning() && !app->isReady())
+ 	Dispatcher::instance().dispatch();
+-	if (faxSendApp::terminateSignal)
+-	    terminate(faxSendApp::terminateSignal);
+-    }
+     FaxSendStatus status;
+     if (app->isReady())
+ 	status = app->send((const char**)&argv[optind], argc-optind);
