@@ -1,3 +1,6 @@
+# used to work, but perhaps this was changed by the LLVM update
+USE_NOBTCFI-aarch64 =	Yes
+
 VERSION =		4.0.2
 DISTNAME =		ruby-${VERSION}
 PKGNAME-main =		ruby-${VERSION}
