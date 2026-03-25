@@ -443,7 +443,6 @@
      SUBDIR += py-bottle
      SUBDIR += py-browser-cookie3
      SUBDIR += py-cheroot
-     SUBDIR += py-cookies
      SUBDIR += py-fastapi
      SUBDIR += py-feedgenerator
      SUBDIR += py-flasgger
