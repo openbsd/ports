@@ -1,0 +1,19 @@
+HAVE_SYS_AUXV_H check should be changed to HAVE_GETAUXVAL and
+HAVE_ELF_AUX_INFO. For now this works.
+
+Index: libunwind/src/Registers.hpp
+--- libunwind/src/Registers.hpp.orig
++++ libunwind/src/Registers.hpp
+@@ -1944,7 +1944,12 @@ class _LIBUNWIND_HIDDEN Registers_arm64 { (private)
+   static bool checkHasSME() {
+ #if defined(HAVE_SYS_AUXV_H)
+     constexpr int hwcap2_sme = (1 << 23);
++#if defined(__OpenBSD__)
++    unsigned long hwcap2 = 0;
++    elf_aux_info(AT_HWCAP2, &hwcap2, sizeof(hwcap2));
++#else
+     unsigned long hwcap2 = getauxval(AT_HWCAP2);
++#endif
+     return (hwcap2 & hwcap2_sme) != 0;
+ #endif
+     // TODO: Support other platforms.

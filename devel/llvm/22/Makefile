@@ -14,6 +14,8 @@ SHARED_LIBS +=	LLVM		0.0 \
 		ec++abi		0.0 \
 		lldb		0.0
 
+WANTLIB-lldb +=	execinfo
+
 # Apache License v2.0 with LLVM Exceptions
 PERMIT_PACKAGE =	Yes
 
