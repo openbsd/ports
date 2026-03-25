@@ -2,6 +2,7 @@
 USE_NOBTCFI-aarch64 =	Yes
 
 VERSION =		4.0.2
+REVIAION =		0
 DISTNAME =		ruby-${VERSION}
 PKGNAME-main =		ruby-${VERSION}
 PKGNAME-ri_docs =	ruby${BINREV}-ri_docs-${VERSION}
