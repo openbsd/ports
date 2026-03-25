@@ -19,7 +19,7 @@ COMMENT-securelink=	nginx HMAC secure link module
 COMMENT-stream=		nginx TCP/UDP proxy module
 COMMENT-xslt=		nginx XSLT filter module
 
-VERSION=	1.28.2
+VERSION=	1.28.3
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -39,7 +39,6 @@ PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
 PKGNAME-stream=		nginx-stream-${VERSION}
 PKGNAME-xslt=		nginx-xslt-${VERSION}
-REVISION=	0
 
 SITES=	https://nginx.org/download/
 SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/ \
