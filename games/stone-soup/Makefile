@@ -33,7 +33,8 @@ MODPY_ADJ_FILES := ${MODPY_ADJ_FILES:S/^/util\//}
 
 WANTLIB =	${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c m sqlite3 z
 
-BUILD_DEPENDS =	graphics/pngcrush \
+BUILD_DEPENDS =	devel/bison \
+		graphics/pngcrush \
 		textproc/py-yaml
 LIB_DEPENDS =	databases/sqlite3
 
