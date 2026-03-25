@@ -64,17 +64,3 @@ lib/python${MODPY_VERSION}/site-packages/webob/request.py
 lib/python${MODPY_VERSION}/site-packages/webob/response.py
 lib/python${MODPY_VERSION}/site-packages/webob/static.py
 lib/python${MODPY_VERSION}/site-packages/webob/util.py
-share/doc/${MODPY_PY_PREFIX}webob/
-share/doc/${MODPY_PY_PREFIX}webob/differences.txt
-share/doc/${MODPY_PY_PREFIX}webob/do-it-yourself.txt
-share/doc/${MODPY_PY_PREFIX}webob/index.txt
-share/doc/${MODPY_PY_PREFIX}webob/reference.txt
-share/doc/${MODPY_PY_PREFIX}webob/whatsnew-1.5.txt
-share/doc/${MODPY_PY_PREFIX}webob/whatsnew-1.6.txt
-share/doc/${MODPY_PY_PREFIX}webob/whatsnew-1.7.txt
-share/doc/${MODPY_PY_PREFIX}webob/whatsnew-1.8.txt
-share/examples/${MODPY_PY_PREFIX}webob/
-share/examples/${MODPY_PY_PREFIX}webob/comment-example.txt
-share/examples/${MODPY_PY_PREFIX}webob/file-example.txt
-share/examples/${MODPY_PY_PREFIX}webob/jsonrpc-example.txt
-share/examples/${MODPY_PY_PREFIX}webob/wiki-example.txt
