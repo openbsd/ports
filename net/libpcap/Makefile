@@ -15,6 +15,10 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
+# Thread-local storage
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 MODULES=	devel/cmake
 MODCMAKE_LDFLAGS= -Wl,-rpath,${TRUEPREFIX}/lib/libpcap
 CONFIGURE_ARGS=	-DDISABLE_DBUS=On \
