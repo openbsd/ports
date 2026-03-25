@@ -1,0 +1,5 @@
+This module provides support for CGI (Common Gateway Interface) scripts
+written in Python.
+
+This is a replacement for 'cgi' and 'cgitb', removed from the standard
+library in Python 3.13.
