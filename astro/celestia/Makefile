@@ -1,14 +1,13 @@
 COMMENT=		real-time 3D visualization of space
 
-DIST_TUPLE=		github CelestiaProject Celestia 1fbc88e2ec75050c3ff95bf8b9071ee8cc7d862b .
-# submodule for Spice until we have a port
-DIST_TUPLE +=		github OpenSpace Spice 711ffdb91865c48018ba2efef963ed645ed2557b thirdparty/Spice
+GH_ACCOUNT=		CelestiaProject
+GH_PROJECT=		Celestia
+GH_COMMIT=		504e54ca7decb483c81f76357ada8bd95a7b0f47
 
-PKGNAME=		celestia-1.7.0pre20251225
+DISTNAME=		celestia-1.7.0pre20260319
 EPOCH=			0
 
 SHARED_LIBS +=	celestia                  0.0 # 0.0
-SHARED_LIBS +=	spice                     0.0 # unknown
 
 CATEGORIES=		astro x11
 
@@ -33,6 +32,7 @@ MODULES=		devel/cmake \
 BUILD_DEPENDS=		devel/boost \
 			devel/gettext,-tools \
 			devel/gperf \
+			devel/fast-float \
 			math/eigen3
 
 LIB_DEPENDS=		devel/fmt \
@@ -43,7 +43,7 @@ LIB_DEPENDS=		devel/fmt \
 RUN_DEPENDS=		astro/celestia-data \
 			devel/desktop-file-utils
 
-CONFIGURE_ARGS=		-DENABLE_SPICE=ON \
+CONFIGURE_ARGS=		-DENABLE_SPICE=OFF \
 			-DENABLE_SDL=OFF \
 			-DENABLE_QT5=OFF \
 			-DENABLE_QT6=ON \
@@ -51,13 +51,5 @@ CONFIGURE_ARGS=		-DENABLE_SPICE=ON \
 			-DENABLE_FFMPEG=ON \
 			-DENABLE_NLS=ON \
 			-DENABLE_LIBAVIF=ON
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/thirdparty/Spice/CMakeLists.txt
-
-post-install:
-	${INSTALL_PROGRAM} \
-		${WRKBUILD}/thirdparty/Spice/libspice.so.${LIBspice_VERSION} \
-		${PREFIX}/lib/
 
 .include <bsd.port.mk>

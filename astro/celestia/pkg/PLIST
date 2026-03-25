@@ -1,6 +1,5 @@
 @bin bin/celestia-qt6
 @lib lib/libcelestia.so.${LIBcelestia_VERSION}
-@lib lib/libspice.so.${LIBspice_VERSION}
 share/applications/space.celestiaproject.celestia_qt6.desktop
 share/celestia/COPYING
 share/celestia/celestia.cfg
@@ -122,7 +121,6 @@ share/celestia/scripts/mark-lg.celx
 share/celestia/scripts/marktype.celx
 share/celestia/scripts/overlay_demo.cel
 share/celestia/scripts/overlay_demo.celx
-share/celestia/scripts/randstar.celx
 share/celestia/scripts/tour-system.celx
 share/celestia/scripts/z-dist.celx
 share/celestia/shaders/
