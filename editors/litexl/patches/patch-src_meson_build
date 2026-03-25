@@ -9,3 +9,12 @@ Index: src/meson.build
      'lua5.4', # Debian
      'lua-5.4', # FreeBSD
      'lua',    # Fedora
+@@ -59,7 +60,7 @@ freetype_dep = dependency('freetype2', fallback: ['fre
+ )
+ 
+ 
+-sdl_dep = dependency('sdl3', static: true)
++sdl_dep = dependency('sdl3')
+ 
+ lite_deps = [lua_dep, sdl_dep, freetype_dep, pcre2_dep, libm, libdl]
+ 
