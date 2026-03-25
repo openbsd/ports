@@ -1,23 +1,9 @@
-#1 EVP_add_digest() was removed.
-#2, #3 X509_ALGOR has an accessor, don't reach into it, so it can be made opaque.
+#1, #2 X509_ALGOR has an accessor, don't reach into it, so it can be made opaque.
 
 Index: SSLeay.xs
 --- SSLeay.xs.orig
 +++ SSLeay.xs
-@@ -7493,8 +7493,12 @@ SSL_CTX_set_tlsext_ticket_getkey_cb(ctx,callback=&PL_s
- 
- #endif
- 
-+#if !defined(LIBRESSL_VERSION_NUMBER) || (LIBRESSL_VERSION_NUMBER < 0x3090000fL)
-+
- int EVP_add_digest(const EVP_MD *digest)
- 
-+#endif
-+
- #ifndef OPENSSL_NO_SHA
- 
- const EVP_MD *EVP_sha1()
-@@ -7973,7 +7977,9 @@ P_X509_get_signature_alg(x)
+@@ -8088,7 +8088,9 @@ P_X509_get_signature_alg(x)
          X509 * x
      CODE:
  #if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x3050000fL)
@@ -28,7 +14,7 @@ Index: SSLeay.xs
  #else
          RETVAL = (x->cert_info->signature->algorithm);
  #endif
-@@ -7988,8 +7994,10 @@ P_X509_get_pubkey_alg(x)
+@@ -8103,8 +8105,10 @@ P_X509_get_pubkey_alg(x)
  #if OPENSSL_VERSION_NUMBER >= 0x10100000L
      {
  	X509_ALGOR * algor;
