@@ -484,6 +484,7 @@
      SUBDIR += py-jinja2
      SUBDIR += py-jinja2-time
      SUBDIR += py-jwt
+     SUBDIR += py-legacy-cgi
      SUBDIR += py-macaroons
      SUBDIR += py-mako
      SUBDIR += py-mastodon.py
