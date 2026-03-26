@@ -458,6 +458,7 @@
      SUBDIR += ssl_exporter
      SUBDIR += sslmate
      SUBDIR += stan
+     SUBDIR += starship
      SUBDIR += stow
      SUBDIR += stress
      SUBDIR += stripe-cli
