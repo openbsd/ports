@@ -30,7 +30,7 @@ Index: browser/config/mozconfigs/base-browser
  
  ac_add_options --disable-crashreporter
  # Before removing, please notice that WebRTC does not work on mingw (Bug 1393901)
-@@ -42,7 +40,3 @@ ac_add_options MOZ_TELEMETRY_REPORTING=
+@@ -44,7 +42,3 @@ ac_add_options MOZ_TELEMETRY_REPORTING=
  # Disable the creation of a <something>.default that Firefox by default creates
  # for old version that could not use dedicated profiles. See tor-browser#41542.
  ac_add_options --disable-legacy-profile-creation
