@@ -1,7 +1,7 @@
 COMMENT=		Python bindings for GLib and GObject
 
 GNOME_PROJECT=		pygobject
-GNOME_VERSION=		3.56.1
+GNOME_VERSION=		3.56.2
 MODPY_DISTV=		${GNOME_VERSION}
 EXTRACT_SUFX=		.tar.gz
 PKGNAME=		py3-gobject3-${GNOME_VERSION}
