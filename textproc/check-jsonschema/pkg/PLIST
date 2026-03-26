@@ -56,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/bamboo-spec.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/bitbucket-pipelines.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/buildkite.json
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/changie.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/circle-ci.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/citation-file-format.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/cloudbuild.json
@@ -73,6 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/licenses/LICENSE.azure-pipelines
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/licenses/LICENSE.bitbucket-pipelines
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/licenses/LICENSE.buildkite
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/licenses/LICENSE.changie
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/licenses/LICENSE.citation-file-format
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/licenses/LICENSE.compose-spec
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/licenses/LICENSE.gitlab
@@ -92,6 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/bamboo-spec.sha256
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/bitbucket-pipelines.sha256
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/buildkite.sha256
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/changie.sha256
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/circle-ci.sha256
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/citation-file-format.sha256
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/cloudbuild.sha256
