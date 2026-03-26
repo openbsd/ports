@@ -1,0 +1,15 @@
+'INT32_MAX' was not declared in this scope
+
+this is probably fixable by adding '#include <cstdint>'
+
+Index: src/argclass.cc
+--- src/argclass.cc.orig
++++ src/argclass.cc
+@@ -20,6 +20,7 @@
+  */
+ 
+ #include "argclass.hh"
++#include <cstdint>
+ 
+ ArgClass::~ArgClass()
+ {
