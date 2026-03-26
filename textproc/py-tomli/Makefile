@@ -2,7 +2,11 @@ COMMENT=	lil' TOML parser
 
 # this is generally not needed with Python 3.11+ as it is essentially
 # a backport of tomllib
-MODPY_DISTV=	2.4.0
+MODPY_DISTV=	2.4.1
+GH_ACCOUNT=	hukkin
+GH_PROJECT=	tomli
+GH_TAGNAME=	${MODPY_DISTV}
+
 DISTNAME=	tomli-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -15,8 +19,5 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PYBUILD=	flit_core
-MODPY_PI=	Yes
-
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
