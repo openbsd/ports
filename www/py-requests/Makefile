@@ -1,22 +1,20 @@
 COMMENT=	elegant and simple HTTP library for Python
 
-# 2.33 expected to move to hatchling
-MODPY_DISTV=	2.32.5
-REVISION=	0
+MODPY_DISTV=	2.33.0
 DISTNAME=	requests-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	www
 
+# https://github.com/psf/requests
 HOMEPAGE=	https://requests.readthedocs.io/
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	archivers/py-brotli \
 		devel/py-certifi \
