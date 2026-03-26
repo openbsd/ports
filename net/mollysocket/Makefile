@@ -5,8 +5,7 @@ COMMENT =		get Signal notifications via UnifiedPush
 
 GH_ACCOUNT =		mollyim
 GH_PROJECT =		mollysocket
-GH_TAGNAME =		1.6.0
-REVISION =		0
+GH_TAGNAME =		1.7.1
 
 CATEGORIES =		net
 
@@ -17,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 LIB_DEPENDS =		databases/sqlite3
 
+# uses unveil()
 WANTLIB =		${MODCARGO_WANTLIB} m ssl crypto sqlite3
 
 MODULES =		devel/cargo
@@ -27,7 +27,7 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/mollysocket ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/mollysocket ${PREFIX}/sbin/
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mollysocket
 	${INSTALL_DATA} ${WRKSRC}/config-sample.toml \

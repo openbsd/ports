@@ -1,0 +1,27 @@
+Index: Cargo.lock
+--- Cargo.lock.orig
++++ Cargo.lock
+@@ -1852,6 +1852,7 @@ dependencies = [
+  "tokio",
+  "tokio-tungstenite",
+  "trust-dns-resolver",
++ "unveil",
+  "url",
+ ]
+ 
+@@ -3638,6 +3639,15 @@ name = "untrusted"
+ version = "0.9.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1"
++
++[[package]]
++name = "unveil"
++version = "0.3.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "5e7fa867d559102001ec694165ed17d5f82e95213060a65f9c8b6280084bbfec"
++dependencies = [
++ "libc",
++]
+ 
+ [[package]]
+ name = "url"

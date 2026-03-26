@@ -1,0 +1,11 @@
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -48,6 +48,7 @@ qrcodegen = "1.8.0"
+ base64 = "0.22.1"
+ openssl = "0.10.75"
+ jwt-simple = { version = "0.12.14", default-features = false, features = ["pure-rust"] }
++unveil = "0.3.2"
+ 
+ # [build-dependencies]
+ # prost-build = { version = "0.12" }

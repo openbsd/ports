@@ -1,0 +1,36 @@
+Index: src/cli.rs
+--- src/cli.rs.orig
++++ src/cli.rs
+@@ -1,6 +1,7 @@
+ use clap::{ArgAction, Parser, Subcommand};
+ use qrcode::QrcodeCommand;
+ use std::{env, path::PathBuf};
++use unveil::unveil;
+ use vapid::VapidCommand;
+ 
+ use crate::cli::{connection::ConnectionCommand, test::TestCommand};
+@@ -90,7 +91,23 @@ pub async fn cli() {
+     config::load_config(cli.config);
+ 
+     match &cli.command {
+-        Command::Server {} => server::server().await,
++        Command::Server {} => {
++            let db_path = config::get_db();
++            for sufx in ["", "-journal", "-wal"] {
++                let path = db_path.to_owned() + sufx;
++                unveil(&path, "rwc").unwrap_or_else(|err| panic!("unveil {}: {}", path, err));
++            }
++            for rpath in [
++                "/dev/urandom",
++                "/etc/ssl/cert.pem",
++                "/etc/resolv.conf",
++                "/etc/hosts",
++            ] {
++                unveil(rpath, "r").unwrap_or_else(|err| panic!("unveil {}: {}", rpath, err));
++            }
++            unveil("", "").expect("unveil");
++            server::server().await
++        }
+         Command::QRCode { command } => qrcode::qrcode(command),
+         Command::Connection { command } => connection::connection(command).await,
+         Command::Test { command } => test::test(command).await,

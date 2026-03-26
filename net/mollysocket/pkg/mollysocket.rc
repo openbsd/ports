@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/bin/mollysocket"
+daemon="${TRUEPREFIX}/sbin/mollysocket"
 daemon_logger="daemon.error"
 daemon_user="_mollysocket"
 daemon_flags="-c ${SYSCONFDIR}/mollysocket.conf server"
