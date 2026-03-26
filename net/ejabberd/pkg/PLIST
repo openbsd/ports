@@ -2,10 +2,6 @@
 @newuser _ejabberd:594:_ejabberd::ejabberd account:${LOCALSTATEDIR}/db/ejabberd:/sbin/nologin
 @rcscript ${RCDIR}/ejabberd
 lib/ejabberd/
-lib/ejabberd/base64url-${MODERL_MODULE_base64url_VERSION}/
-lib/ejabberd/base64url-${MODERL_MODULE_base64url_VERSION}/ebin/
-lib/ejabberd/base64url-${MODERL_MODULE_base64url_VERSION}/ebin/base64url.app
-lib/ejabberd/base64url-${MODERL_MODULE_base64url_VERSION}/ebin/base64url.beam
 lib/ejabberd/cache_tab-${MODERL_MODULE_cache_tab_VERSION}/
 lib/ejabberd/cache_tab-${MODERL_MODULE_cache_tab_VERSION}/ebin/
 lib/ejabberd/cache_tab-${MODERL_MODULE_cache_tab_VERSION}/ebin/cache_tab.app
@@ -421,8 +417,17 @@ lib/ejabberd/ejabberd-${V}/priv/mod_invites/register_error.html
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/register_success.html
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/roster.html
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/
+lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/bootstrap/
+lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/bootstrap/css/
+lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/bootstrap/css/bootstrap.min.css
+lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/bootstrap/js/
+lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/bootstrap/js/bootstrap.min.js
+lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/favicon.png
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/illus-empty.svg
+lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/invite.css
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/invite.js
+lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/jquery/
+lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/jquery/jquery.min.js
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/logos/
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/logos/apple_as.svg
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/logos/beagle-im.svg
@@ -534,7 +539,7 @@ lib/ejabberd/esip-${MODERL_MODULE_esip_VERSION}/include/esip.hrl
 lib/ejabberd/esip-${MODERL_MODULE_esip_VERSION}/include/esip_lib.hrl
 lib/ejabberd/esip-${MODERL_MODULE_esip_VERSION}/priv/
 lib/ejabberd/esip-${MODERL_MODULE_esip_VERSION}/priv/lib/
-@so lib/ejabberd/esip-${MODERL_MODULE_esip_VERSION}/priv/lib/esip_drv.so
+@so lib/ejabberd/esip-${MODERL_MODULE_esip_VERSION}/priv/lib/esip_codec.so
 lib/ejabberd/ezlib-${MODERL_MODULE_ezlib_VERSION}/
 lib/ejabberd/ezlib-${MODERL_MODULE_ezlib_VERSION}/ebin/
 lib/ejabberd/ezlib-${MODERL_MODULE_ezlib_VERSION}/ebin/ezlib.app
@@ -592,13 +597,6 @@ lib/ejabberd/idna-${MODERL_MODULE_idna_VERSION}/ebin/idna_mapping.beam
 lib/ejabberd/idna-${MODERL_MODULE_idna_VERSION}/ebin/idna_table.beam
 lib/ejabberd/idna-${MODERL_MODULE_idna_VERSION}/ebin/idna_ucs.beam
 lib/ejabberd/idna-${MODERL_MODULE_idna_VERSION}/ebin/punycode.beam
-lib/ejabberd/jiffy-${MODERL_MODULE_jiffy_VERSION}/
-lib/ejabberd/jiffy-${MODERL_MODULE_jiffy_VERSION}/ebin/
-lib/ejabberd/jiffy-${MODERL_MODULE_jiffy_VERSION}/ebin/jiffy.app
-lib/ejabberd/jiffy-${MODERL_MODULE_jiffy_VERSION}/ebin/jiffy.beam
-lib/ejabberd/jiffy-${MODERL_MODULE_jiffy_VERSION}/ebin/jiffy_utf8.beam
-lib/ejabberd/jiffy-${MODERL_MODULE_jiffy_VERSION}/priv/
-@so lib/ejabberd/jiffy-${MODERL_MODULE_jiffy_VERSION}/priv/jiffy.so
 lib/ejabberd/jose-${MODERL_MODULE_jose_VERSION}/
 lib/ejabberd/jose-${MODERL_MODULE_jose_VERSION}/ebin/
 lib/ejabberd/jose-${MODERL_MODULE_jose_VERSION}/ebin/jose.app
@@ -832,11 +830,6 @@ lib/ejabberd/stun-${MODERL_MODULE_stun_VERSION}/ebin/turn_tmp_sup.beam
 lib/ejabberd/stun-${MODERL_MODULE_stun_VERSION}/include/
 lib/ejabberd/stun-${MODERL_MODULE_stun_VERSION}/include/stun.hrl
 lib/ejabberd/stun-${MODERL_MODULE_stun_VERSION}/include/stun_logger.hrl
-lib/ejabberd/unicode_util_compat-${MODERL_MODULE_unicode_util_compat_VERSION}/
-lib/ejabberd/unicode_util_compat-${MODERL_MODULE_unicode_util_compat_VERSION}/ebin/
-lib/ejabberd/unicode_util_compat-${MODERL_MODULE_unicode_util_compat_VERSION}/ebin/string_compat.beam
-lib/ejabberd/unicode_util_compat-${MODERL_MODULE_unicode_util_compat_VERSION}/ebin/unicode_util_compat.app
-lib/ejabberd/unicode_util_compat-${MODERL_MODULE_unicode_util_compat_VERSION}/ebin/unicode_util_compat.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/XmppAddr.beam
@@ -1006,7 +999,6 @@ sbin/ejabberdctl
 @mode
 share/doc/ejabberd/
 share/doc/ejabberd/COPYING
-share/doc/ejabberd/base64url-${MODERL_MODULE_base64url_VERSION}-LICENSE.txt
 share/doc/ejabberd/cache_tab-${MODERL_MODULE_cache_tab_VERSION}-LICENSE.txt
 share/doc/ejabberd/eimp-${MODERL_MODULE_eimp_VERSION}-LICENSE.txt
 share/doc/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}-LICENSE
@@ -1017,7 +1009,6 @@ share/doc/ejabberd/fast_tls-${MODERL_MODULE_fast_tls_VERSION}-LICENSE.txt
 share/doc/ejabberd/fast_xml-${MODERL_MODULE_fast_xml_VERSION}-LICENSE.txt
 share/doc/ejabberd/fast_yaml-${MODERL_MODULE_fast_yaml_VERSION}-LICENSE.txt
 share/doc/ejabberd/idna-${MODERL_MODULE_idna_VERSION}-LICENSE
-share/doc/ejabberd/jiffy-${MODERL_MODULE_jiffy_VERSION}-LICENSE
 share/doc/ejabberd/jose-${MODERL_MODULE_jose_VERSION}-LICENSE.md
 share/doc/ejabberd/mqtree-${MODERL_MODULE_mqtree_VERSION}-LICENSE
 share/doc/ejabberd/p1_acme-${MODERL_MODULE_p1_acme_VERSION}-LICENSE.txt
@@ -1028,7 +1019,6 @@ share/doc/ejabberd/sqlite3-${MODERL_MODULE_sqlite3_VERSION}-LICENSE
 share/doc/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}-LICENSE.TCL
 share/doc/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}-LICENSE.txt
 share/doc/ejabberd/stun-${MODERL_MODULE_stun_VERSION}-LICENSE.txt
-share/doc/ejabberd/unicode_util_compat-${MODERL_MODULE_unicode_util_compat_VERSION}-LICENSE
 share/doc/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}-LICENSE.txt
 share/doc/ejabberd/yconf-${MODERL_MODULE_yconf_VERSION}-LICENSE
 share/doc/pkg-readmes/${PKGSTEM}
