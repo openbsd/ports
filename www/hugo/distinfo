@@ -931,10 +931,10 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.4.mod) = BeJs0GkoWjPPKvRv
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = wKZIoDfaVKawLoqBGx05F9SdxOGEHNdW8o8MTxWTkzw=
 SHA256 (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250430135133-0f54527d2b1e.mod) = 9SfO2vq5PZdraqmjMAL7HQuaSBfyXz6tkMpJHdaYF4c=
 SHA256 (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250430135133-0f54527d2b1e.zip) = tM/G5oAEVcli+G9rY1j6FLanlJ9z/qYd7+ZzutfN2VQ=
-SHA256 (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.10.mod) = PUudCInJ2WJW78WfeSQazMvRJ6gJyqw7N+beFOPUjYo=
-SHA256 (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.10.zip) = mZD9ZnpBYimBntJUYYsB8F2o5FVzsBYL+Plzv+OIXxQ=
-SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.10.mod) = tlUXEpe2E8ieC/CmkPkhYX1cO0d7gYccyz7mjPHCbV8=
-SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.10.zip) = I+zwYm2ipCW8VY/TtmxaxTNyWaOwSIm5moNCEajZ8aE=
+SHA256 (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.11.mod) = 0gRp2pFagWC8Sz91O+drqvru6kCDXGEM92cY6IphET0=
+SHA256 (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.11.zip) = +daaq6OBPbpZq9j3aToG5EKgikSv0QTu1QJ59Yv0iH0=
+SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.11.mod) = tlUXEpe2E8ieC/CmkPkhYX1cO0d7gYccyz7mjPHCbV8=
+SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.11.zip) = CVx9Nj06+vZN9HXhfYCPieTN3NujUqfv7Le0vK71Mjg=
 SHA256 (go_modules/github.com/tdewolff/test/@v/v1.0.11.mod) = 9EefOv0J+7kaIZNIpSIgfv+uc4muXaMR/YZv9IuGFus=
 SHA256 (go_modules/github.com/tdewolff/test/@v/v1.0.11.zip) = /t2vBdFIMFJd7rKD7rpBEO4clOhNeVH/lSO+zyH2w00=
 SHA256 (go_modules/github.com/tetratelabs/wazero/@v/v1.11.0.mod) = KljGdTabSFGvqwqZcLyQD4pnyvOzrXALs6IYclSotSo=
@@ -1530,7 +1530,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = ycxHNZ55+c2ONOTeypncJ5t0zinSW0a1T86Qmw5wOm8=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = qse6k1xBU6O0e8ObNvLorTJD8DNJwRy33Mlt2fMWn6Y=
-SHA256 (hugo-v0.159.0.zip) = HGZgXvx+7onCSFjM+rT72kgovn+D1ZCXddcDuV/hQsQ=
+SHA256 (hugo-v0.159.1.zip) = RFp3E+mTOBExR5GO9nZ5RPeuBsMPPhFIyS74p7jn6sA=
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.mod) = 96
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.zip) = 239588
@@ -2464,10 +2464,10 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.4.mod) = 188
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = 417
 SIZE (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250430135133-0f54527d2b1e.mod) = 202
 SIZE (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250430135133-0f54527d2b1e.zip) = 26151
-SIZE (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.10.mod) = 466
-SIZE (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.10.zip) = 7885333
-SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.10.mod) = 87
-SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.10.zip) = 149590
+SIZE (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.11.mod) = 466
+SIZE (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.11.zip) = 7885766
+SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.11.mod) = 87
+SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.11.zip) = 149620
 SIZE (go_modules/github.com/tdewolff/test/@v/v1.0.11.mod) = 41
 SIZE (go_modules/github.com/tdewolff/test/@v/v1.0.11.zip) = 4421
 SIZE (go_modules/github.com/tetratelabs/wazero/@v/v1.11.0.mod) = 329
@@ -3063,4 +3063,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = 127
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = 36374
-SIZE (hugo-v0.159.0.zip) = 7072925
+SIZE (hugo-v0.159.1.zip) = 7073117
