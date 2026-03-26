@@ -189,6 +189,7 @@ share/wireplumber/scripts/linking/link-target.lua
 share/wireplumber/scripts/linking/mpris-pause.lua
 share/wireplumber/scripts/linking/prepare-link.lua
 share/wireplumber/scripts/linking/rescan-media-role-links.lua
+share/wireplumber/scripts/linking/rescan-on-linkable.lua
 share/wireplumber/scripts/linking/rescan.lua
 share/wireplumber/scripts/metadata.lua
 share/wireplumber/scripts/monitors/
