@@ -3,7 +3,7 @@
 import re
 import os
 
-RE_splitlib = re.compile('lib([^-]+)-([0-9a-fA-F]+)\.(so|rlib)')
+RE_splitlib = re.compile(r'lib(.+)-([0-9a-fA-F]+)\.(so|rlib|rmeta)')
 
 oldhashes = {}    # list of old hashes already assigned to new value
 newhashes = {}    # list of libname associated to a (list of) new hashes
@@ -53,15 +53,18 @@ def getnewhash(libname, oldhash):
 
 # generic function to walk library directory
 def walk_directory(dirname, proc):
+    filenames = []
     with os.scandir(dirname) as dir:
         for entry in dir:
             if not entry.is_file():
                 continue
+            filenames.append(entry.name)
 
-            libname, hash = splitlib(entry.name)
+    for name in filenames:
+        libname, hash = splitlib(name)
 
-            # call proc
-            proc(entry.name, libname, hash)
+        # call proc
+        proc(name, libname, hash)
 
 
 # register old hashes from walk a directory to assign a new hash

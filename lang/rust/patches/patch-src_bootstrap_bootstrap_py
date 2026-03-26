@@ -3,9 +3,9 @@ Workaround for sparc64: bootstrap segfaults without -O3
 Index: src/bootstrap/bootstrap.py
 --- src/bootstrap/bootstrap.py.orig
 +++ src/bootstrap/bootstrap.py
-@@ -1140,6 +1140,9 @@ class RustBuild(object):
-         if "RUSTFLAGS_BOOTSTRAP" in env:
-             env["RUSTFLAGS"] += " " + env["RUSTFLAGS_BOOTSTRAP"]
+@@ -1113,6 +1113,9 @@ class RustBuild(object):
+         else:
+             env["RUSTFLAGS"] = "-Zallow-features="
  
 +        if self.build_triple() == "sparc64-unknown-openbsd":
 +            env["RUSTFLAGS"] += " -Copt-level=3"
