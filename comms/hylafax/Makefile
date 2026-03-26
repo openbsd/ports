@@ -1,6 +1,7 @@
 COMMENT=		send/receive faxes and share modems
 
 DISTNAME=		hylafax-7.0.11
+REVISION=		0
 CATEGORIES=		comms
 
 HOMEPAGE=		https://hylafax.sourceforge.io/
