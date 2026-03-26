@@ -1,6 +1,6 @@
 COMMENT=	simple, correct PEP 517 build frontend
 
-MODPY_DISTV=	1.4.0
+MODPY_DISTV=	1.4.2
 DISTNAME=	build-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -23,7 +23,9 @@ BUILD_DEPENDS=	devel/py-installer \
 RUN_DEPENDS=	devel/py-pyproject_hooks \
 		sysutils/py-packaging
 
-TEST_DEPENDS=	devel/py-flaky
+TEST_DEPENDS=	devel/py-flaky \
+		devel/py-test-mock \
+		sysutils/py-filelock
 
 # point to the copy of py-build in WRKSRC for a self-hosting build
 # replicate most of MODPY_PYBUILD steps because we can't use it directly
