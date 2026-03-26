@@ -1,20 +1,20 @@
-COMMENT=	perl module for parsing XML documents
+COMMENT =	perl module for parsing XML documents
 
-MODULES=	cpan
+DISTNAME =	XML-Parser-2.53
 CPAN_AUTHOR =	TODDR
-DISTNAME =	XML-Parser-2.48
-CATEGORIES=	textproc
-FIX_EXTRACT_PERMISSIONS = Yes
 
-REVISION =	0
+CATEGORIES =	textproc
 
-# perl
-PERMIT_PACKAGE=	Yes
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-WANTLIB += c expat perl
+# Perl
+PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS =	devel/p5-File-ShareDir-Install
+WANTLIB =		c expat perl
 
-RUN_DEPENDS =	devel/p5-File-ShareDir
+MODULES =		cpan
+
+BUILD_DEPENDS =		devel/p5-File-ShareDir-Install>=0.06
+RUN_DEPENDS =		devel/p5-File-ShareDir
 
 .include <bsd.port.mk>
