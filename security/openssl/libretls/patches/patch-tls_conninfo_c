@@ -1,0 +1,23 @@
+const correctness fixes for OpenSSL 4
+
+Index: tls_conninfo.c
+--- tls_conninfo.c.orig
++++ tls_conninfo.c
+@@ -72,7 +72,7 @@ tls_get_peer_cert_hash(struct tls *ctx, char **hash)
+ static int
+ tls_get_peer_cert_issuer(struct tls *ctx,  char **issuer)
+ {
+-	X509_NAME *name = NULL;
++	const X509_NAME *name = NULL;
+ 
+ 	*issuer = NULL;
+ 	if (ctx->ssl_peer_cert == NULL)
+@@ -88,7 +88,7 @@ tls_get_peer_cert_issuer(struct tls *ctx,  char **issu
+ static int
+ tls_get_peer_cert_subject(struct tls *ctx, char **subject)
+ {
+-	X509_NAME *name = NULL;
++	const X509_NAME *name = NULL;
+ 
+ 	*subject = NULL;
+ 	if (ctx->ssl_peer_cert == NULL)

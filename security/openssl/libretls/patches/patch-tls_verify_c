@@ -1,0 +1,19 @@
+const correctness fixes for OpenSSL 4
+
+Index: tls_verify.c
+--- tls_verify.c.orig
++++ tls_verify.c
+@@ -213,11 +213,11 @@ tls_check_common_name(struct tls *ctx, X509 *cert, con
+     int *cn_match)
+ {
+ 	unsigned char *utf8_bytes = NULL;
+-	X509_NAME *subject_name;
++	const X509_NAME *subject_name;
+ 	char *common_name = NULL;
+ 	union tls_addr addrbuf;
+ 	int common_name_len;
+-	ASN1_STRING *data;
++	const ASN1_STRING *data;
+ 	int lastpos = -1;
+ 	int rv = -1;
+ 

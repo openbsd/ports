@@ -1,9 +1,9 @@
-COMMENT =	libtls library used with OpenSSL 3.2 for testing
+COMMENT =	libtls library used with OpenSSL for testing
 
 V =		3.8.1
 DISTNAME =	libretls-$V
 PKGNAME =	libretls-$V
-REVISION =	3
+REVISION =	4
 
 EOPENSSL_V =	eopenssl35
 LDEP_V =	3.5
