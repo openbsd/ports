@@ -2,7 +2,7 @@ CATEGORIES=		geo
 COMMENT=		geographic location of past and present OpenBSD developers
 
 DISTNAME=		openbsd-developers-2.0
-REVISION=		61
+REVISION=		62
 
 DISTFILES=
 HOMEPAGE=		https://www.openbsd.org/
