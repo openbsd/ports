@@ -149,6 +149,7 @@ man/man4/mod_cache.4gx
 man/man4/mod_fastcgi.4gx
 man/man4/mod_rewrite.4gx
 man/man4/mysql_adaptor.4gx
+man/man4/oab.4gx
 man/man4/pam_gromox.4gx
 man/man4/timer_agent.4gx
 man/man4/user_filter.4gx
