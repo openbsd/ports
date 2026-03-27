@@ -58,6 +58,7 @@ share/locale/is/LC_MESSAGES/xfdesktop.mo
 share/locale/it/LC_MESSAGES/xfdesktop.mo
 share/locale/ja/LC_MESSAGES/xfdesktop.mo
 share/locale/ka/LC_MESSAGES/xfdesktop.mo
+share/locale/kab/LC_MESSAGES/xfdesktop.mo
 share/locale/kk/LC_MESSAGES/xfdesktop.mo
 share/locale/ko/LC_MESSAGES/xfdesktop.mo
 share/locale/lt/LC_MESSAGES/xfdesktop.mo
@@ -83,11 +84,13 @@ share/locale/sv/LC_MESSAGES/xfdesktop.mo
 share/locale/te/LC_MESSAGES/xfdesktop.mo
 share/locale/th/LC_MESSAGES/xfdesktop.mo
 share/locale/tr/LC_MESSAGES/xfdesktop.mo
+share/locale/tt/LC_MESSAGES/xfdesktop.mo
 share/locale/ug/LC_MESSAGES/xfdesktop.mo
 share/locale/uk/LC_MESSAGES/xfdesktop.mo
 share/locale/ur/LC_MESSAGES/xfdesktop.mo
 share/locale/ur_PK/LC_MESSAGES/xfdesktop.mo
 share/locale/uz/LC_MESSAGES/xfdesktop.mo
+share/locale/vec/LC_MESSAGES/xfdesktop.mo
 share/locale/vi/LC_MESSAGES/xfdesktop.mo
 share/locale/zh_CN/LC_MESSAGES/xfdesktop.mo
 share/locale/zh_HK/LC_MESSAGES/xfdesktop.mo
