@@ -7,7 +7,9 @@ REVISION =		2
 HOMEPAGE =		https://www.netsurf-browser.org/
 SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
 
-BUILD_DEPENDS =		editors/vim \
+# looks like vim is not needed any more (was there for xxd), check/remove?
+# (netsurf now bundles its own xxd)
+BUILD_DEPENDS =		vim-*|vim-classic-*:editors/vim \
 			www/netsurf/nsgenbind>=0.5 \
 			www/p5-HTML-Parser
 LIB_DEPENDS =		graphics/libjxl \

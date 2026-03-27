@@ -51,7 +51,7 @@ RUN_DEPENDS =	geo/gpsbabel \
 		shells/bash
 
 # uses xxd during configure
-BUILD_DEPENDS =	editors/vim
+BUILD_DEPENDS =	vim-*|vim-classic-*:editors/vim
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/babel.c ${WRKSRC}/src/vikmapniklayer.c

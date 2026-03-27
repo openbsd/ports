@@ -36,7 +36,7 @@ BUILD_DEPENDS +=	net/rsync
 RUN_DEPENDS +=		net/rsync
 
 # xxd(1), needed for caldav support
-BUILD_DEPENDS +=	editors/vim
+BUILD_DEPENDS +=	vim-*|vim-classic-*:editors/vim
 
 LIB_DEPENDS=		archivers/brotli \
 			databases/sqlite3 \

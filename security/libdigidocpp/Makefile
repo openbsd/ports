@@ -28,8 +28,9 @@ WANTLIB +=		xmlsec1 xmlsec1-openssl xslt z
 
 MODULES =		devel/cmake
 
+# looks like vim is not needed any more (was there for xxd), check/remove?
 BUILD_DEPENDS =		devel/boost \
-			editors/vim
+			vim-*|vim-classic-*:editors/vim
 
 LIB_DEPENDS =		archivers/minizip \
 			devel/libtool,-ltdl \

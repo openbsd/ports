@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c
 
 # vim is needed for xxd
-BUILD_DEPENDS =	editors/vim
+BUILD_DEPENDS =	vim-*|vim-classic-*:editors/vim
 MAKE_FILE =	makefile
 ALL_TARGET =	build
 

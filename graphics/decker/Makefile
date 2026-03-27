@@ -19,7 +19,8 @@ COMPILER_LANGS =	c
 
 USE_GMAKE =		Yes
 
-BUILD_DEPENDS =		editors/vim \
+# xxd
+BUILD_DEPENDS =		vim-*|vim-classic-*:editors/vim \
 			shells/bash
 
 LIB_DEPENDS =		devel/sdl2 \
