@@ -1,0 +1,5 @@
+This package contains controller software for Ubiquiti UniFi access
+points, switches, gateways and phones.
+
+It uses the 9.x branch which Ubiquiti are using on their "Unifi
+Express" hardware and still seem to be maintaining.

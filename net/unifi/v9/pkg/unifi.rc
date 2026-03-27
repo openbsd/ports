@@ -1,0 +1,19 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/share/unifi/lib/ace.jar"
+daemon_execdir="${LOCALBASE}/share/unifi"
+daemon_user="_unifi"
+
+. /etc/rc.d/rc.subr
+
+java="$(${LOCALBASE}/bin/javaPathHelper -c unifi)"
+
+pexp="${java}${daemon_flags:+ ${daemon_flags}} --add-opens=java.base/java.time=ALL-UNNAMED -cp .* com/ubnt/ace/Launcher start"
+rc_bg=YES
+rc_reload=NO
+
+rc_start() {
+	rc_exec "${java} ${daemon_flags} --add-opens=java.base/java.time=ALL-UNNAMED -cp 'lib/*' com/ubnt/ace/Launcher start"
+}
+
+rc_cmd $1
