@@ -310,8 +310,13 @@ ${GUI_ONLY}@man man/ru.UTF-8/man1/rgvim.1
 @man man/ru.UTF-8/man1/vimdiff.1
 @man man/ru.UTF-8/man1/vimtutor.1
 @man man/ru.UTF-8/man1/xxd.1
+share/applications/
 ${GUI_ONLY}share/applications/gvim.desktop
 share/applications/vim.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gvim.png
 share/icons/locolor/
 share/icons/locolor/16x16/
