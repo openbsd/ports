@@ -52,6 +52,7 @@ NO_TEST=	Yes
 
 PREFIX-main=	/var/www
 INSTDIR=	${PREFIX-main}/librenms
+FINSTDIR=	${WRKINST}${PREFIX-main}/librenms
 SUBST_VARS=	INSTDIR
 UPDATE_PLIST_ARGS += -i MODPHP_VERSION
 
@@ -87,20 +88,20 @@ pre-configure:
 	    LibreNMS/Exceptions/UnserializableRouteCache.php
 
 do-install:
-	${INSTALL_DATA_DIR} ${INSTDIR} \
+	${INSTALL_DATA_DIR} ${FINSTDIR} \
 	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions \
 	    ${WRKINST}/${LOCALBASE}/share/doc
-	cd ${WRKSRC}; pax -rw . ${INSTDIR}
-	find ${INSTDIR} -name '*${PATCHORIG}' -delete
-	mkdir -p ${INSTDIR}/{rrd,logs}
-	sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' ${INSTDIR}/includes/common.php
-	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
-	rm -rf ${INSTDIR}/tests \
-	    ${INSTDIR}/vendor/tecnickcom/tcpdf/examples \
-	    ${INSTDIR}/vendor/easybook/geshi/docs
-	mv ${INSTDIR}/doc ${WRKINST}/${LOCALBASE}/share/doc/librenms
-	find ${INSTDIR} -type f -and \( -name '.git*' -or -name '*.beforesubst' \) -delete
-	find ${INSTDIR} -type d -and -name '.github' -exec rm -rf {} +
+	cd ${WRKSRC}; pax -rw . ${FINSTDIR}
+	find ${FINSTDIR} -name '*${PATCHORIG}' -delete
+	mkdir -p ${FINSTDIR}/{rrd,logs}
+	sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' ${FINSTDIR}/includes/common.php
+	cp /usr/share/snmp/mibs/OPENBSD-* ${FINSTDIR}/mibs/
+	rm -rf ${FINSTDIR}/tests \
+	    ${FINSTDIR}/vendor/tecnickcom/tcpdf/examples \
+	    ${FINSTDIR}/vendor/easybook/geshi/docs
+	mv ${FINSTDIR}/doc ${WRKINST}/${LOCALBASE}/share/doc/librenms
+	find ${FINSTDIR} -type f -and \( -name '.git*' -or -name '*.beforesubst' \) -delete
+	find ${FINSTDIR} -type d -and -name '.github' -exec rm -rf {} +
 	ln -s /var/www/librenms/lnms ${WRKINST}/${LOCALBASE}/bin/
 	${INSTALL_DATA} ${WRKSRC}/misc/lnms-completion.bash \
 	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/lnms
