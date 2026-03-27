@@ -1,4 +1,4 @@
-SHA256 (broot-1.56.1.tar.gz) = DSnNhVt6DeXePTwZH/Q+2dRH9wl8bKQKvAaG1Tmpkjw=
+SHA256 (broot-1.56.2.tar.gz) = PnvkJSx2Vl9tcbNL0H0m4URLmsLhyCccck9uhm/nVWU=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/ahash-0.8.12.tar.gz) = WhXxec1gxFhLioxZaSeq3EYuJ/LKcMBOAHGWSnO6enU=
 SHA256 (cargo/aho-corasick-1.1.4.tar.gz) = 3dMaEwQnwnUY3yZpQ6UwjtktSyJsxjn1qPEAKBYXQwE=
@@ -457,7 +457,7 @@ SHA256 (cargo/zune-png-0.4.10.tar.gz) = fSnAhXacbynv/qiQ8JMSCsAZN1/ceJ0qSWuoupbH
 SHA256 (cargo/zune-ppm-0.4.0.tar.gz) = BSfmRSM+OzSxCqV2tLFW5g9S8VsB+QZ4nrgg9+9LJ3Q=
 SHA256 (cargo/zune-psd-0.4.0.tar.gz) = qxEnXWIYEyBrpMIPTsZH6rBzPA/HHDJ20SOCKf2DTUk=
 SHA256 (cargo/zune-qoi-0.4.10.tar.gz) = 3FmLZynt5UZBPLUHfY3bg7RgVaFW1cw8Ylz+EiSE6ck=
-SIZE (broot-1.56.1.tar.gz) = 14601718
+SIZE (broot-1.56.2.tar.gz) = 14601624
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
