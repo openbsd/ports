@@ -9,6 +9,7 @@
 @pkgpath security/openssl/3.3
 @pkgpath security/openssl/3.4
 bin/c_rehash35
+bin/eopenssl
 @bin bin/${EOPENSSL_V}
 include/${EOPENSSL_V}/
 include/${EOPENSSL_V}/openssl/

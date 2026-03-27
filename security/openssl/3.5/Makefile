@@ -17,7 +17,7 @@ V=		3.5.5
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.5v0,<3.6v0
 EPOCH=		0
-REVISION=	1
+REVISION=	2
 
 SHLIBVER=	37.0
 SHARED_LIBS=	crypto ${SHLIBVER} \
@@ -88,5 +88,6 @@ post-install:
 	rm ${PREFIX}/lib/eopenssl35/lib{crypto,ssl}.so
 	for i in ${PREFIX}/share/eopenssl35/*.dist; do rm $${i%.dist}; done
 	rmdir ${PREFIX}/lib/eopenssl35/pkgconfig
+	cd ${PREFIX} && ln -sf ${TRUEPREFIX}/bin/eopenssl35 bin/eopenssl
 
 .include <bsd.port.mk>
