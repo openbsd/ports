@@ -83,6 +83,12 @@
      SUBDIR += vim,no_x11,lua
      SUBDIR += vim,no_x11,perl,python3,ruby
      SUBDIR += vim,no_x11,python3
+     SUBDIR += vim-classic
+     SUBDIR += vim-classic,gtk3
+     SUBDIR += vim-classic,gtk3,lua
+     SUBDIR += vim-classic,gtk3,python3
+     SUBDIR += vim-classic,lua
+     SUBDIR += vim-classic,python3
      SUBDIR += vim-spell
      SUBDIR += vis
      SUBDIR += wordgrinder
