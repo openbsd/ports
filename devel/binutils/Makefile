@@ -3,13 +3,11 @@ COMMENT =	GNU binary utilities
 # keep version synchronized with devel/gas
 V =		2.45.1
 DISTNAME =	binutils-${V}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/binutils/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
