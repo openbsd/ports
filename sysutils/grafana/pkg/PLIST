@@ -3995,6 +3995,7 @@ share/grafana/public/app/features/logs/components/fieldSelector/FieldSelector.ts
 share/grafana/public/app/features/logs/components/fieldSelector/LogListFieldSelector.tsx
 share/grafana/public/app/features/logs/components/fieldSelector/LogsTableFieldSelector.tsx
 share/grafana/public/app/features/logs/components/fieldSelector/fieldSelectorUtils.ts
+share/grafana/public/app/features/logs/components/fieldSelector/getFieldsWithStats.test.ts
 share/grafana/public/app/features/logs/components/fieldSelector/getFieldsWithStats.ts
 share/grafana/public/app/features/logs/components/fieldSelector/getSuggestedFieldsFromTable.ts
 share/grafana/public/app/features/logs/components/fieldSelector/styles.ts
@@ -8527,8 +8528,8 @@ share/grafana/public/build/4350.3c3be7878436fc90e98c.js
 share/grafana/public/build/4350.3c3be7878436fc90e98c.js.map
 share/grafana/public/build/4463.39558947f9cf42823d2d.js
 share/grafana/public/build/4463.39558947f9cf42823d2d.js.map
-share/grafana/public/build/45.feaabe9307351b0d78a4.js
-share/grafana/public/build/45.feaabe9307351b0d78a4.js.map
+share/grafana/public/build/45.1da25a1a44851ed5ef3b.js
+share/grafana/public/build/45.1da25a1a44851ed5ef3b.js.map
 share/grafana/public/build/4514.421dc6160105de49e16f.js
 share/grafana/public/build/4514.421dc6160105de49e16f.js.map
 share/grafana/public/build/4564.eb5af646fb65fe0e423f.js
@@ -8599,8 +8600,8 @@ share/grafana/public/build/5664.d78c3547d0177f6ca8c5.js
 share/grafana/public/build/5664.d78c3547d0177f6ca8c5.js.map
 share/grafana/public/build/5740.e96eb8c20b09a89e9836.js
 share/grafana/public/build/5740.e96eb8c20b09a89e9836.js.map
-share/grafana/public/build/5742.00a408fd72c719c75210.js
-share/grafana/public/build/5742.00a408fd72c719c75210.js.map
+share/grafana/public/build/5742.4606fb4637ab4cf09d98.js
+share/grafana/public/build/5742.4606fb4637ab4cf09d98.js.map
 share/grafana/public/build/5747.d5d40c1f1a3d9b02e184.js
 share/grafana/public/build/5747.d5d40c1f1a3d9b02e184.js.map
 share/grafana/public/build/5757.e1e0a746a08042f4e775.js
@@ -8722,8 +8723,8 @@ share/grafana/public/build/8018.2954379e0b1496792c95.js
 share/grafana/public/build/8018.2954379e0b1496792c95.js.map
 share/grafana/public/build/8056.f53be82b30f82ebf59d1.js
 share/grafana/public/build/8056.f53be82b30f82ebf59d1.js.map
-share/grafana/public/build/8060.5e67a0b955ad52462e5e.js
-share/grafana/public/build/8060.5e67a0b955ad52462e5e.js.map
+share/grafana/public/build/8060.6c26964eeed481d2ef34.js
+share/grafana/public/build/8060.6c26964eeed481d2ef34.js.map
 share/grafana/public/build/8122.91bfad78dd4f0d8e970d.js
 share/grafana/public/build/8122.91bfad78dd4f0d8e970d.js.map
 share/grafana/public/build/8177.f369f0b7d15f040ad620.js
@@ -10770,8 +10771,8 @@ share/grafana/public/build/pieChartPanel.d72d594691444ec57c0e.js
 share/grafana/public/build/pieChartPanel.d72d594691444ec57c0e.js.map
 share/grafana/public/build/prometheusPlugin.56cd6d34493063ef8f4e.js
 share/grafana/public/build/prometheusPlugin.56cd6d34493063ef8f4e.js.map
-share/grafana/public/build/runtime.16079bba942a66fff9ea.js
-share/grafana/public/build/runtime.16079bba942a66fff9ea.js.map
+share/grafana/public/build/runtime.d63b280be54eb20395ad.js
+share/grafana/public/build/runtime.d63b280be54eb20395ad.js.map
 share/grafana/public/build/sql-query-editor.93fe8aea1cf8e3e49677.js
 share/grafana/public/build/sql-query-editor.93fe8aea1cf8e3e49677.js.map
 share/grafana/public/build/statPanel.703f621db1c53752e868.js
