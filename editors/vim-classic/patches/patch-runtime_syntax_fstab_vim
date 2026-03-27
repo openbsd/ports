@@ -1,0 +1,23 @@
+- recognise "swap" and openbsd duid format in fs_spec
+- recognise "wxallowed" and don't recognise "softdep" in fs_mntops
+
+Index: runtime/syntax/fstab.vim
+--- runtime/syntax/fstab.vim.orig
++++ runtime/syntax/fstab.vim
+@@ -42,6 +42,7 @@ syn keyword fsDeviceKeyword contained PARTLABEL nextgr
+ syn keyword fsDeviceKeyword contained PARTUUID nextgroup=fsDevicePARTUUID
+ syn keyword fsDeviceKeyword contained sshfs nextgroup=fsDeviceSshfs
+ syn match fsDeviceKeyword contained /^[a-zA-Z0-9.\-]\+\ze:/
++syn match fsDeviceKeyword contained /^[a-f0-9]\{16}\.\a\ze/
+ syn match fsDeviceLabel contained /=[^ \t]\+/hs=s+1 contains=fsOperator
+ syn match fsDeviceUUID contained /=[^ \t]\+/hs=s+1 contains=fsOperator
+ syn match fsDevicePARTLABEL contained /=[^ \t]\+/hs=s+1 contains=fsOperator
+@@ -141,7 +142,7 @@ syn match fsOptionsKeywords contained /\<\%(dir\|file\
+ syn match fsOptionsKeywords contained /\<\%(session\|part\)=/ nextgroup=fsOptionsNumber
+ 
+ " Options: ffs
+-syn keyword fsOptionsKeyWords contained noperm softdep
++syn keyword fsOptionsKeyWords contained noperm wxallowed
+ 
+ " Options: hpfs
+ syn match fsOptionsKeywords contained /\<case=/ nextgroup=fsOptionsHpfsCase
