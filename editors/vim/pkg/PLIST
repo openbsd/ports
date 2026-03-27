@@ -409,8 +409,12 @@ ${GUI_ONLY}@man man/tr/man1/rgvim.1
 @man man/tr/man1/vim.1
 @man man/tr/man1/vimdiff.1
 @man man/tr/man1/vimtutor.1
+share/applications/
 ${GUI_ONLY}share/applications/gvim.desktop
 share/applications/vim.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/gvim.png
 share/icons/locolor/
 share/icons/locolor/16x16/
@@ -615,6 +619,7 @@ share/vim/${P}/compiler/jjs.vim
 share/vim/${P}/compiler/jq.vim
 share/vim/${P}/compiler/jshint.vim
 share/vim/${P}/compiler/jsonlint.vim
+share/vim/${P}/compiler/just.vim
 share/vim/${P}/compiler/make.vim
 share/vim/${P}/compiler/maven.vim
 share/vim/${P}/compiler/mcs.vim
@@ -1264,6 +1269,7 @@ share/vim/${P}/ftplugin/vue.vim
 share/vim/${P}/ftplugin/wat.vim
 share/vim/${P}/ftplugin/wget.vim
 share/vim/${P}/ftplugin/wget2.vim
+share/vim/${P}/ftplugin/wks.vim
 share/vim/${P}/ftplugin/xcompose.vim
 share/vim/${P}/ftplugin/xdefaults.vim
 share/vim/${P}/ftplugin/xf86conf.vim
@@ -1277,6 +1283,7 @@ share/vim/${P}/ftplugin/xsd.vim
 share/vim/${P}/ftplugin/xslt.vim
 share/vim/${P}/ftplugin/yacc.vim
 share/vim/${P}/ftplugin/yaml.vim
+share/vim/${P}/ftplugin/yara.vim
 share/vim/${P}/ftplugin/zathurarc.vim
 share/vim/${P}/ftplugin/zig.vim
 share/vim/${P}/ftplugin/zimbu.vim
@@ -2806,6 +2813,7 @@ share/vim/${P}/syntax/wget.vim
 share/vim/${P}/syntax/wget2.vim
 share/vim/${P}/syntax/whitespace.vim
 share/vim/${P}/syntax/winbatch.vim
+share/vim/${P}/syntax/wks.vim
 share/vim/${P}/syntax/wml.vim
 share/vim/${P}/syntax/wsh.vim
 share/vim/${P}/syntax/wsml.vim

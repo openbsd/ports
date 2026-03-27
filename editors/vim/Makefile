@@ -3,7 +3,7 @@ COMMENT=	vi clone with many additional features
 # careful with PLISTs if updating; normally use a gui flavour, not no_x11
 # if there are new languages for manpages, "make fix-plist" will add the
 # ${GUI_ONLY} markers as needed for gui-only tools.
-V=		9.2.0140
+V=		9.2.0260
 
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
@@ -20,7 +20,9 @@ WRKSRC=		${WRKDIST}/src
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-# donation-ware
+# see ${WRKDIST}/LICENSE. freely distributable if unmodified, otherwise
+# some restrictions apply. donations are encouraged to help orphans in
+# Uganda, see runtime/doc/uganda.txt / https://www.kuwasha.net/
 PERMIT_PACKAGE=	Yes
 
 # ruby 3.2 libraries need ports-gcc
