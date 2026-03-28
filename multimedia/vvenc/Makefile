@@ -3,6 +3,7 @@ COMMENT=	Versatile Video Coding (VVC) encoder
 GH_ACCOUNT=	fraunhoferhhi
 GH_PROJECT=	vvenc
 GH_TAGNAME=	v1.14.0
+REVISION=	0
 CATEGORIES=	multimedia
 
 SHARED_LIBS=	vvenc	0.0
