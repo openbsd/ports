@@ -1,0 +1,21 @@
+From f0905a86130c431eb29395b0eee68867e0c1c2dd Mon Sep 17 00:00:00 2001
+From: Christian Brabandt <cb@256bit.org>
+Date: Fri, 17 May 2024 18:30:01 +0200
+Subject: [PATCH] patch 9.1.0417: if_py: find_module has been removed in Python
+ 3.12.0a7
+
+Problem:  if_py: find_module has been removed in Python 3.12.0a7
+          (@Ghost-LZW)
+Solution: Do not include find_module for Python >= 3.12.0a7
+
+Index: runtime/doc/tags
+--- runtime/doc/tags.orig
++++ runtime/doc/tags
+@@ -8431,6 +8431,7 @@ python-eval	if_pyth.txt	/*python-eval*
+ python-examples	if_pyth.txt	/*python-examples*
+ python-fchdir	if_pyth.txt	/*python-fchdir*
+ python-find_module	if_pyth.txt	/*python-find_module*
++python-find_spec	if_pyth.txt	/*python-find_spec*
+ python-foreach_rtp	if_pyth.txt	/*python-foreach_rtp*
+ python-input	if_pyth.txt	/*python-input*
+ python-options	if_pyth.txt	/*python-options*
