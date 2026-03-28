@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -18466,23 +18466,23 @@ distclean-local:
+@@ -18518,23 +18518,23 @@ distclean-local:
  # above.
  libarchive/test/list.h: $(libarchive_test_SOURCES)
  	$(MKDIR_P) libarchive/test
