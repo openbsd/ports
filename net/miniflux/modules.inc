@@ -14,13 +14,13 @@ MODGO_MODULES =	\
 	github.com/fsnotify/fsnotify		 v1.9.0 \
 	github.com/fxamacker/cbor/v2		 v2.9.0 \
 	github.com/go-jose/go-jose/v4		 v4.1.3 \
-	github.com/go-viper/mapstructure/v2	 v2.4.0 \
-	github.com/go-webauthn/webauthn		 v0.15.0 \
-	github.com/go-webauthn/x		 v0.1.26 \
-	github.com/golang-jwt/jwt/v5		 v5.3.0 \
+	github.com/go-viper/mapstructure/v2	 v2.5.0 \
+	github.com/go-webauthn/webauthn		 v0.16.1 \
+	github.com/go-webauthn/x		 v0.2.2 \
+	github.com/golang-jwt/jwt/v5		 v5.3.1 \
 	github.com/golang/protobuf		 v1.5.0 \
 	github.com/google/go-cmp		 v0.7.0 \
-	github.com/google/go-tpm		 v0.9.6 \
+	github.com/google/go-tpm		 v0.9.8 \
 	github.com/google/go-tpm-tools		 v0.3.13-0.20230620182252-4639ecce2aba \
 	github.com/google/uuid			 v1.6.0 \
 	github.com/gorilla/mux			 v1.8.1 \
@@ -46,8 +46,8 @@ MODGO_MODULES =	\
 	github.com/rogpeppe/go-internal		 v1.10.0 \
 	github.com/stretchr/testify		 v1.11.1 \
 	github.com/tdewolff/argp		 v0.0.0-20250430135133-0f54527d2b1e \
-	github.com/tdewolff/minify/v2		 v2.24.8 \
-	github.com/tdewolff/parse/v2		 v2.8.5 \
+	github.com/tdewolff/minify/v2		 v2.24.10 \
+	github.com/tdewolff/parse/v2		 v2.8.10 \
 	github.com/tdewolff/test		 v1.0.11 \
 	github.com/x448/float16			 v0.8.4 \
 	github.com/xhit/go-str2duration/v2	 v2.1.0 \
@@ -56,17 +56,17 @@ MODGO_MODULES =	\
 	go.uber.org/goleak			 v1.3.0 \
 	go.uber.org/mock			 v0.6.0 \
 	go.yaml.in/yaml/v2			 v2.4.2 \
-	golang.org/x/crypto			 v0.48.0 \
-	golang.org/x/image			 v0.36.0 \
-	golang.org/x/mod			 v0.32.0 \
-	golang.org/x/net			 v0.50.0 \
-	golang.org/x/oauth2			 v0.35.0 \
-	golang.org/x/sync			 v0.19.0 \
-	golang.org/x/sys			 v0.41.0 \
+	golang.org/x/crypto			 v0.49.0 \
+	golang.org/x/image			 v0.37.0 \
+	golang.org/x/mod			 v0.33.0 \
+	golang.org/x/net			 v0.52.0 \
+	golang.org/x/oauth2			 v0.36.0 \
+	golang.org/x/sync			 v0.20.0 \
+	golang.org/x/sys			 v0.42.0 \
 	golang.org/x/telemetry			 v0.0.0-20240228155512-f48c80bd79b2 \
-	golang.org/x/term			 v0.40.0 \
-	golang.org/x/text			 v0.34.0 \
-	golang.org/x/tools			 v0.41.0 \
+	golang.org/x/term			 v0.41.0 \
+	golang.org/x/text			 v0.35.0 \
+	golang.org/x/tools			 v0.42.0 \
 	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/protobuf		 v1.36.8 \
 	gopkg.in/check.v1			 v1.0.0-20201130134442-10cb98267c6c \
@@ -84,7 +84,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.19.0 \
 	golang.org/x/crypto			 v0.23.0 \
 	golang.org/x/crypto			 v0.31.0 \
-	golang.org/x/crypto			 v0.43.0 \
 	golang.org/x/mod			 v0.12.0 \
 	golang.org/x/mod			 v0.15.0 \
 	golang.org/x/mod			 v0.17.0 \
@@ -100,7 +99,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.33.0 \
 	golang.org/x/net			 v0.43.0 \
 	golang.org/x/net			 v0.47.0 \
-	golang.org/x/net			 v0.49.0 \
+	golang.org/x/net			 v0.51.0 \
 	golang.org/x/net			 v0.6.0 \
 	golang.org/x/oauth2			 v0.28.0 \
 	golang.org/x/oauth2			 v0.30.0 \

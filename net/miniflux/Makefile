@@ -1,6 +1,6 @@
 COMMENT =	atom/rss feed reader web application
 
-V =		2.2.17
+V =		2.2.18
 
 MODGO_MODNAME =	miniflux.app/v2
 MODGO_VERSION =	v${V}
