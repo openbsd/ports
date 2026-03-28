@@ -1,6 +1,6 @@
 COMMENT =	modern IRC server written in Go
 
-DIST_TUPLE +=	github ergochat ergo v2.17.0 .
+DIST_TUPLE +=	github ergochat ergo v2.18.0 .
 CATEGORIES =	net
 
 HOMEPAGE =	https://ergo.chat/
@@ -12,6 +12,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c pthread
 
 MODULES =	lang/go
+MODGO_FLAGS +=	-tags "i18n mysql postgresql sqlite"
 
 ALL_TARGET =	github.com/ergochat/ergo
 
