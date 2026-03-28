@@ -1533,6 +1533,7 @@ lib/ruby/${REV}/syntax_suggest/explain_syntax.rb
 lib/ruby/${REV}/syntax_suggest/left_right_lex_count.rb
 lib/ruby/${REV}/syntax_suggest/lex_all.rb
 lib/ruby/${REV}/syntax_suggest/lex_value.rb
+lib/ruby/${REV}/syntax_suggest/mini_stringio.rb
 lib/ruby/${REV}/syntax_suggest/parse_blocks_from_indent_line.rb
 lib/ruby/${REV}/syntax_suggest/pathname_from_message.rb
 lib/ruby/${REV}/syntax_suggest/priority_engulf_queue.rb
@@ -1968,7 +1969,7 @@ lib/ruby/gems/${REV}/gems/prime-0.1.2/bin/setup
 lib/ruby/gems/${REV}/gems/prime-0.1.2/lib/
 lib/ruby/gems/${REV}/gems/prime-0.1.2/lib/prime.rb
 lib/ruby/gems/${REV}/gems/prism-0.19.0/
-lib/ruby/gems/${REV}/gems/pstore-0.1.3/
+lib/ruby/gems/${REV}/gems/pstore-0.2.1/
 lib/ruby/gems/${REV}/gems/psych-5.1.2/
 lib/ruby/gems/${REV}/gems/racc-1.7.3/
 lib/ruby/gems/${REV}/gems/racc-1.7.3/COPYING
@@ -2836,9 +2837,9 @@ lib/ruby/gems/${REV}/gems/shellwords-0.2.0/
 lib/ruby/gems/${REV}/gems/singleton-0.2.0/
 lib/ruby/gems/${REV}/gems/stringio-3.1.1/
 lib/ruby/gems/${REV}/gems/strscan-3.0.9/
-lib/ruby/gems/${REV}/gems/syntax_suggest-2.0.1/
-lib/ruby/gems/${REV}/gems/syntax_suggest-2.0.1/exe/
-lib/ruby/gems/${REV}/gems/syntax_suggest-2.0.1/exe/syntax_suggest
+lib/ruby/gems/${REV}/gems/syntax_suggest-2.0.3/
+lib/ruby/gems/${REV}/gems/syntax_suggest-2.0.3/exe/
+lib/ruby/gems/${REV}/gems/syntax_suggest-2.0.3/exe/syntax_suggest
 lib/ruby/gems/${REV}/gems/syslog-0.1.2/
 lib/ruby/gems/${REV}/gems/tempfile-0.2.1/
 lib/ruby/gems/${REV}/gems/test-unit-3.6.1/
@@ -2959,7 +2960,7 @@ lib/ruby/gems/${REV}/gems/un-0.3.0/
 lib/ruby/gems/${REV}/gems/uri-0.13.3/
 lib/ruby/gems/${REV}/gems/weakref-0.1.3/
 lib/ruby/gems/${REV}/gems/yaml-0.3.0/
-lib/ruby/gems/${REV}/gems/zlib-3.1.1/
+lib/ruby/gems/${REV}/gems/zlib-3.1.2/
 lib/ruby/gems/${REV}/plugins/
 lib/ruby/gems/${REV}/specifications/
 lib/ruby/gems/${REV}/specifications/debug-1.9.2.gemspec
@@ -3007,7 +3008,7 @@ lib/ruby/gems/${REV}/specifications/default/pathname-0.3.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/pp-0.5.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/prettyprint-0.2.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/prism-0.19.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/pstore-0.1.3.gemspec
+lib/ruby/gems/${REV}/specifications/default/pstore-0.2.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/psych-5.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/rdoc-6.6.3.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-0.0.4.gemspec
@@ -3022,7 +3023,7 @@ lib/ruby/gems/${REV}/specifications/default/shellwords-0.2.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/singleton-0.2.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/stringio-3.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/strscan-3.0.9.gemspec
-lib/ruby/gems/${REV}/specifications/default/syntax_suggest-2.0.1.gemspec
+lib/ruby/gems/${REV}/specifications/default/syntax_suggest-2.0.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/syslog-0.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/tempfile-0.2.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/time-0.3.0.gemspec
@@ -3033,7 +3034,7 @@ lib/ruby/gems/${REV}/specifications/default/un-0.3.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/uri-0.13.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/weakref-0.1.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/yaml-0.3.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/zlib-3.1.1.gemspec
+lib/ruby/gems/${REV}/specifications/default/zlib-3.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/matrix-0.4.2.gemspec
 lib/ruby/gems/${REV}/specifications/minitest-5.20.0.gemspec
 lib/ruby/gems/${REV}/specifications/net-ftp-0.3.4.gemspec

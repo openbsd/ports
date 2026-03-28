@@ -35,7 +35,7 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -34136,7 +34136,7 @@ then :
+@@ -34137,7 +34137,7 @@ then :
  
  else $as_nop
  

@@ -1,5 +1,4 @@
-VERSION =		3.3.10
-REVISION =		2
+VERSION =		3.3.11
 DISTNAME =		ruby-${VERSION}
 PKGNAME-main =		ruby-${VERSION}
 PKGNAME-ri_docs =	ruby${BINREV}-ri_docs-${VERSION}
