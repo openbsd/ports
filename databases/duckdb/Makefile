@@ -1,11 +1,11 @@
 COMMENT =	fast in-process analytical database
 
-V =		1.5.0
+V =		1.5.1
 GH_ACCOUNT =	duckdb
 GH_PROJECT =	duckdb
 GH_TAGNAME =	v${V}
 
-SHARED_LIBS =	duckdb	1.0
+SHARED_LIBS =	duckdb	1.1
 
 CATEGORIES =	databases
 
