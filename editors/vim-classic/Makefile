@@ -1,7 +1,7 @@
 COMMENT=	vi clone with many additional features
 
 V=		8.3.0000
-REVISION=	1
+REVISION=	2
 DIST_TUPLE=	srht sircmpwn vim-classic 1ef43a85989d1112d7241fb27b63e258413526ab .
 PKGNAME=	vim-classic-${V:C/\.0+/./}0pre20260327
 CATEGORIES=	editors
