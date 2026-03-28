@@ -1,12 +1,10 @@
 COMMENT=	configuration and state database for Icinga
 
 GH_PROJECT=	icingadb
-GH_TAGNAME=	v1.5.0
+GH_TAGNAME=	v1.5.1
 
 MODGO_MODNAME=	github.com/icinga/icingadb
 MODGO_VERSION=	${GH_TAGNAME}
-
-WANTLIB += c pthread
 
 HOMEPAGE=	https://icinga.com/docs/icinga-db/
 MAINTAINER=	Alvar Penning <post@0x21.biz>
@@ -14,9 +12,14 @@ MAINTAINER=	Alvar Penning <post@0x21.biz>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MODULES=	lang/go
+# uses pledge() and unveil()
+WANTLIB += c pthread
 
+MODULES=	lang/go
 .include "modules.inc"
+
+# for patches to apply
+WRKDIST =	${WRKSRC}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/icingadb/markdown

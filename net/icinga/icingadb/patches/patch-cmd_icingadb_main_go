@@ -1,0 +1,21 @@
+Index: cmd/icingadb/main.go
+--- cmd/icingadb/main.go.orig
++++ cmd/icingadb/main.go
+@@ -39,6 +39,8 @@ func main() {
+ }
+ 
+ func run() int {
++	initialPrivDrop()
++
+ 	cmd := command.New()
+ 
+ 	logs, err := logging.NewLoggingFromConfig(utils.AppName(), cmd.Config.Logging)
+@@ -54,6 +56,8 @@ func run() int {
+ 	defer func() { _ = logger.Sync() }()
+ 
+ 	logger.WithOptions(logs.ForceLog()).Infof("Starting Icinga DB daemon (%s)", internal.Version.Version)
++
++	privDrop(cmd, logger)
+ 
+ 	db, err := cmd.Database(logs.GetChildLogger("database"))
+ 	if err != nil {

@@ -1,0 +1,87 @@
+Index: cmd/icingadb/openbsd.go
+--- cmd/icingadb/openbsd.go.orig
++++ cmd/icingadb/openbsd.go
+@@ -0,0 +1,83 @@
++package main
++
++import (
++	"fmt"
++	"maps"
++	"slices"
++	"strings"
++
++	"github.com/icinga/icinga-go-library/logging"
++	"github.com/icinga/icinga-go-library/utils"
++	"github.com/icinga/icingadb/internal/command"
++	"go.uber.org/zap"
++	"golang.org/x/sys/unix"
++)
++
++// initialPrivDrop applies a first pledge(2) promise.
++//
++// This function should be called first in main to start with restricted
++// privileges. After parsing the configuration, privDrop should be called to
++// perform further restrictions.
++func initialPrivDrop() {
++	// all possible promises which can be used later in privDrop, plus unveil.
++	promises := "stdio rpath inet unix dns unveil error"
++	if err := unix.PledgePromises(promises); err != nil {
++		panic(fmt.Sprintf("initial pledge(2) failed, %q: %v", promises, err))
++	}
++}
++
++// privDrop should be called after parsing command.Command.
++func privDrop(c *command.Command, l *logging.Logger) {
++	pledgePromises := map[string]struct{}{
++		"stdio": struct{}{},
++		"inet":  struct{}{},
++		"dns":   struct{}{},
++		"error": struct{}{},
++	}
++
++	unveilPaths := map[string]string{
++		// Special paths for the "dns" pledge promise from before OpenBSD 7.9.
++		"/etc/resolv.conf": "r",
++		"/etc/hosts":       "r",
++		"/etc/services":    "r",
++		"/etc/protocols":   "r",
++	}
++
++	for _, host := range []string{c.Config.Database.Host, c.Config.Redis.Host} {
++		if !utils.IsUnixAddr(host) {
++			continue
++		}
++
++		pledgePromises["rpath"] = struct{}{}
++		pledgePromises["unix"] = struct{}{}
++		unveilPaths[host] = "rw"
++	}
++
++	if c.Flags.DatabaseAutoImport {
++		pledgePromises["rpath"] = struct{}{}
++		unveilPaths[c.Flags.DatabaseSchemaDir] = "r"
++	}
++
++	for path, permissions := range unveilPaths {
++		if err := unix.Unveil(path, permissions); err != nil {
++			l.Fatalw("Cannot unveil(2)",
++				zap.String("path", path),
++				zap.String("permissions", permissions),
++				zap.Error(err))
++		}
++	}
++	if err := unix.UnveilBlock(); err != nil {
++		l.Fatalw("Cannot block unveil(2)", zap.Error(err))
++	}
++
++	promises := strings.Join(slices.Collect(maps.Keys(pledgePromises)), " ")
++	if err := unix.PledgePromises(promises); err != nil {
++		l.Fatalw("Cannot pledge(2)",
++			zap.String("promises", promises),
++			zap.Error(err))
++	}
++
++	l.Infow("Dropped privileges with pledge(2) and unveil(2)",
++		zap.String("pledge", promises),
++		zap.Any("unveil", unveilPaths))
++}
