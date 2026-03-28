@@ -1,0 +1,19 @@
+Index: codex-rs/core/src/state/service.rs
+--- codex-rs/core/src/state/service.rs.orig
++++ codex-rs/core/src/state/service.rs
+@@ -13,6 +13,7 @@ use crate::models_manager::manager::ModelsManager;
+ use crate::plugins::PluginsManager;
+ use crate::skills_watcher::SkillsWatcher;
+ use crate::state_db::StateDbHandle;
++#[cfg(not(target_os = "openbsd"))]
+ use crate::tools::code_mode::CodeModeService;
+ use crate::tools::network_approval::NetworkApprovalService;
+ use crate::tools::sandboxing::ApprovalStore;
+@@ -56,6 +57,7 @@ pub(crate) struct SessionServices {
+     pub(crate) state_db: Option<StateDbHandle>,
+     /// Session-scoped model client shared across turns.
+     pub(crate) model_client: ModelClient,
++    #[cfg(not(target_os = "openbsd"))]
+     pub(crate) code_mode_service: CodeModeService,
+     pub(crate) environment: Arc<Environment>,
+ }

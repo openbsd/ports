@@ -1,0 +1,11 @@
+Index: codex-rs/core/Cargo.toml
+--- codex-rs/core/Cargo.toml.orig
++++ codex-rs/core/Cargo.toml
+@@ -31,7 +31,6 @@ codex-api = { workspace = true }
+ codex-app-server-protocol = { workspace = true }
+ codex-apply-patch = { workspace = true }
+ codex-async-utils = { workspace = true }
+-codex-code-mode = { workspace = true }
+ codex-connectors = { workspace = true }
+ codex-config = { workspace = true }
+ codex-core-skills = { workspace = true }

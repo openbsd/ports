@@ -1,0 +1,21 @@
+Index: codex-rs/core/src/tools/code_mode_description.rs
+--- codex-rs/core/src/tools/code_mode_description.rs.orig
++++ codex-rs/core/src/tools/code_mode_description.rs
+@@ -7,6 +7,7 @@ pub(crate) use codex_code_mode::append_code_mode_sampl
+ #[cfg(test)]
+ pub(crate) use codex_code_mode::render_json_schema_to_typescript;
+ 
++#[cfg(not(target_os = "openbsd"))]
+ pub(crate) fn augment_tool_spec_for_code_mode(spec: ToolSpec, code_mode_enabled: bool) -> ToolSpec {
+     if !code_mode_enabled {
+         return spec;
+@@ -46,4 +47,9 @@ pub(crate) fn augment_tool_spec_for_code_mode(spec: To
+         }
+         other => other,
+     }
++}
++
++#[cfg(target_os = "openbsd")]
++pub(crate) fn augment_tool_spec_for_code_mode(spec: ToolSpec, _code_mode_enabled: bool) -> ToolSpec {
++    spec
+ }

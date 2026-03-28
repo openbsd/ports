@@ -1,0 +1,11 @@
+Index: codex-rs/core/src/agent/role.rs
+--- codex-rs/core/src/agent/role.rs.orig
++++ codex-rs/core/src/agent/role.rs
+@@ -254,6 +254,7 @@ mod reload {
+         ConfigOverrides {
+             cwd: Some(config.cwd.to_path_buf()),
+             model_provider: preserve_current_provider.then(|| config.model_provider_id.clone()),
++            codex_self_exe: config.codex_self_exe.clone(),
+             codex_linux_sandbox_exe: config.codex_linux_sandbox_exe.clone(),
+             main_execve_wrapper_exe: config.main_execve_wrapper_exe.clone(),
+             js_repl_node_path: config.js_repl_node_path.clone(),

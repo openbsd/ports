@@ -26,7 +26,6 @@ share/doc/codex/tui-stream-chunking-review.md
 share/doc/codex/tui-stream-chunking-tuning.md
 share/doc/codex/tui-stream-chunking-validation.md
 share/doc/pkg-readmes/${PKGSTEM}
-share/examples/rustic/
 share/fish/
 share/fish/vendor_completions.d/
 share/fish/vendor_completions.d/codex.fish

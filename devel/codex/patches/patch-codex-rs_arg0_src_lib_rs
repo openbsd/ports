@@ -1,22 +1,41 @@
 Index: codex-rs/arg0/src/lib.rs
 --- codex-rs/arg0/src/lib.rs.orig
 +++ codex-rs/arg0/src/lib.rs
-@@ -164,6 +164,8 @@ where
-                         .as_ref()
-                         .and_then(|path_entry| path_entry.paths().codex_linux_sandbox_exe.clone())
-                 })
-+            } else if cfg!(target_os = "openbsd") {
-+                current_exe.or(Some(PathBuf::from("${PREFIX}/bin/codex")))
-             } else {
-                 None
-             },
-@@ -280,7 +282,8 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
+@@ -164,6 +164,9 @@ where
+     // async entry-point.
+     let runtime = build_runtime()?;
+     runtime.block_on(async move {
++        #[cfg(target_os = "openbsd")]
++        let current_exe = Some(PathBuf::from("${PREFIX}/bin/codex"));
++        #[cfg(not(target_os = "openbsd"))]
+         let current_exe = std::env::current_exe().ok();
+         let paths = Arg0DispatchPaths {
+             codex_self_exe: current_exe.clone(),
+@@ -297,6 +300,9 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
          #[cfg(unix)]
          EXECVE_WRAPPER_ARG0,
      ] {
--        let exe = std::env::current_exe()?;
-+        let exe = std::env::current_exe()
-+            .unwrap_or_else(|_| PathBuf::from("${PREFIX}/bin/codex"));
++        #[cfg(target_os = "openbsd")]
++        let exe = PathBuf::from("${PREFIX}/bin/codex");
++        #[cfg(not(target_os = "openbsd"))]
+         let exe = std::env::current_exe()?;
  
          #[cfg(unix)]
-         {
+@@ -343,7 +349,16 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
+     }
+ 
+     let paths = Arg0DispatchPaths {
+-        codex_self_exe: std::env::current_exe().ok(),
++        codex_self_exe: {
++            #[cfg(target_os = "openbsd")]
++            {
++                Some(PathBuf::from("${PREFIX}/bin/codex"))
++            }
++            #[cfg(not(target_os = "openbsd"))]
++            {
++                std::env::current_exe().ok()
++            }
++        },
+         codex_linux_sandbox_exe: {
+             #[cfg(target_os = "linux")]
+             {

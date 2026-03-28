@@ -1,0 +1,13 @@
+Index: codex-rs/core/src/tools/handlers/mod.rs
+--- codex-rs/core/src/tools/handlers/mod.rs.orig
++++ codex-rs/core/src/tools/handlers/mod.rs
+@@ -31,7 +31,9 @@ use std::path::PathBuf;
+ use crate::codex::Session;
+ use crate::function_tool::FunctionCallError;
+ use crate::sandboxing::SandboxPermissions;
++#[cfg(not(target_os = "openbsd"))]
+ pub(crate) use crate::tools::code_mode::CodeModeExecuteHandler;
++#[cfg(not(target_os = "openbsd"))]
+ pub(crate) use crate::tools::code_mode::CodeModeWaitHandler;
+ pub use apply_patch::ApplyPatchHandler;
+ use codex_protocol::models::PermissionProfile;

@@ -1,0 +1,43 @@
+Index: codex-rs/core/src/codex.rs
+--- codex-rs/core/src/codex.rs.orig
++++ codex-rs/core/src/codex.rs
+@@ -513,6 +513,8 @@ impl Codex {
+             warn!("{message}");
+             config.startup_warnings.push(message);
+         }
++
++        #[cfg(not(target_os = "openbsd"))]
+         if config.features.enabled(Feature::CodeMode)
+             && let Err(err) = resolve_compatible_node(config.js_repl_node_path.as_deref()).await
+         {
+@@ -524,6 +526,14 @@ impl Codex {
+             config.startup_warnings.push(message);
+         }
+ 
++        #[cfg(target_os = "openbsd")]
++        if config.features.enabled(Feature::CodeMode)
++            || config.features.enabled(Feature::CodeModeOnly)
++        {
++            let _ = config.features.disable(Feature::CodeModeOnly);
++            let _ = config.features.disable(Feature::CodeMode);
++        }
++
+         let user_instructions = get_user_instructions(&config).await;
+ 
+         let exec_policy = if crate::guardian::is_guardian_reviewer_source(&session_source) {
+@@ -1888,6 +1898,7 @@ impl Session {
+                 config.features.enabled(Feature::RuntimeMetrics),
+                 Self::build_model_client_beta_features_header(config.as_ref()),
+             ),
++            #[cfg(not(target_os = "openbsd"))]
+             code_mode_service: crate::tools::code_mode::CodeModeService::new(
+                 config.js_repl_node_path.clone(),
+             ),
+@@ -6395,6 +6406,7 @@ async fn run_sampling_request(
+         Arc::clone(&turn_context),
+         Arc::clone(&turn_diff_tracker),
+     );
++    #[cfg(not(target_os = "openbsd"))]
+     let _code_mode_worker = sess
+         .services
+         .code_mode_service

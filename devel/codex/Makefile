@@ -3,7 +3,7 @@ NOT_FOR_ARCHS = 	sparc64
 
 COMMENT =		OpenAI terminal-based coding agent
 
-V =			0.116.0
+V =			0.117.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -57,7 +57,8 @@ MODCARGO_INSTALL_TARGET_PATHS = cli
 NO_TEST =	Yes
 
 post-patch:
-	cd ${WRKSRC} && ${SUBST_CMD} arg0/src/lib.rs
+	cd ${WRKSRC} && ${SUBST_CMD} arg0/src/lib.rs \
+		core/src/tools/runtimes/apply_patch.rs
 
 post-build:
 .for s in bash fish zsh
@@ -66,8 +67,7 @@ post-build:
 .endfor
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rustic \
-		${PREFIX}/share/bash-completion/completions \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions \
 		${PREFIX}/share/fish/vendor_completions.d \
 		${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKBUILD}/target/release/codex.bash \

@@ -1,0 +1,66 @@
+Index: codex-rs/core/src/tools/spec.rs
+--- codex-rs/core/src/tools/spec.rs.orig
++++ codex-rs/core/src/tools/spec.rs
+@@ -9,7 +9,9 @@ use crate::models_manager::collaboration_mode_presets:
+ use crate::original_image_detail::can_request_original_image_detail;
+ use crate::shell::Shell;
+ use crate::shell::ShellType;
++#[cfg(not(target_os = "openbsd"))]
+ use crate::tools::code_mode::PUBLIC_TOOL_NAME;
++#[cfg(not(target_os = "openbsd"))]
+ use crate::tools::code_mode::WAIT_TOOL_NAME;
+ use crate::tools::code_mode_description::augment_tool_spec_for_code_mode;
+ use crate::tools::discoverable::DiscoverablePluginInfo;
+@@ -389,7 +391,10 @@ impl ToolsConfig {
+             windows_sandbox_level,
+         } = params;
+         let include_apply_patch_tool = features.enabled(Feature::ApplyPatchFreeform);
++        #[cfg(not(target_os = "openbsd"))]
+         let include_code_mode = features.enabled(Feature::CodeMode);
++        #[cfg(target_os = "openbsd")]
++        let include_code_mode = false;
+         let include_code_mode_only = include_code_mode && features.enabled(Feature::CodeModeOnly);
+         let include_js_repl = features.enabled(Feature::JsRepl);
+         let include_js_repl_tools_only =
+@@ -856,6 +861,7 @@ fn create_write_stdin_tool() -> ToolSpec {
+     })
+ }
+ 
++#[cfg(not(target_os = "openbsd"))]
+ fn create_wait_tool() -> ToolSpec {
+     let properties = BTreeMap::from([
+         (
+@@ -2237,6 +2243,7 @@ fn create_js_repl_reset_tool() -> ToolSpec {
+     })
+ }
+ 
++#[cfg(not(target_os = "openbsd"))]
+ fn create_code_mode_tool(
+     enabled_tools: &[(String, String)],
+     code_mode_only_enabled: bool,
+@@ -2656,7 +2663,9 @@ pub(crate) fn build_specs_with_discoverable_tools(
+     dynamic_tools: &[DynamicToolSpec],
+ ) -> ToolRegistryBuilder {
+     use crate::tools::handlers::ApplyPatchHandler;
++    #[cfg(not(target_os = "openbsd"))]
+     use crate::tools::handlers::CodeModeExecuteHandler;
++    #[cfg(not(target_os = "openbsd"))]
+     use crate::tools::handlers::CodeModeWaitHandler;
+     use crate::tools::handlers::DynamicToolHandler;
+     use crate::tools::handlers::JsReplHandler;
+@@ -2703,12 +2712,15 @@ pub(crate) fn build_specs_with_discoverable_tools(
+         default_mode_request_user_input: config.default_mode_request_user_input,
+     });
+     let tool_suggest_handler = Arc::new(ToolSuggestHandler);
++    #[cfg(not(target_os = "openbsd"))]
+     let code_mode_handler = Arc::new(CodeModeExecuteHandler);
++    #[cfg(not(target_os = "openbsd"))]
+     let code_mode_wait_handler = Arc::new(CodeModeWaitHandler);
+     let js_repl_handler = Arc::new(JsReplHandler);
+     let js_repl_reset_handler = Arc::new(JsReplResetHandler);
+     let exec_permission_approvals_enabled = config.exec_permission_approvals_enabled;
+ 
++    #[cfg(not(target_os = "openbsd"))]
+     if config.code_mode_enabled {
+         let nested_config = config.for_code_mode_nested_tools();
+         let (nested_specs, _) = build_specs_with_discoverable_tools(
