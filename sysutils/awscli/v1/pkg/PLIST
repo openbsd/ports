@@ -3323,6 +3323,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-instance-fleet
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-security-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-steps.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-studios.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/modify-cluster-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/modify-instance-fleet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/put.rst
