@@ -1,9 +1,8 @@
 COMMENT=	vi clone with many additional features
 
 V=		8.3.0000
-REVISION=	2
-DIST_TUPLE=	srht sircmpwn vim-classic 1ef43a85989d1112d7241fb27b63e258413526ab .
-PKGNAME=	vim-classic-${V:C/\.0+/./}0pre20260327
+DIST_TUPLE=	srht sircmpwn vim-classic 2c86ef534c55d9b1e9290cbafb30c4e3227ffc82 .
+PKGNAME=	vim-classic-${V:C/\.0+/./}0pre20260328
 CATEGORIES=	editors
 
 HOMEPAGE=	https://sr.ht/~sircmpwn/vim-classic/
@@ -45,14 +44,10 @@ AUTOCONF_VERSION= 2.69
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gettext,-tools
 .if defined(DEBUG)
-MAKE_FLAGS += STRIP=:
+MAKE_FLAGS +=	STRIP=:
 .endif
 
-#.if ${V:R} == 8.2
 P=	vim82
-#.else
-#ERRORS=	"Fatal: new major version; update this check and any other ports if needed"
-#.endif
 
 .include <bsd.port.arch.mk>
 .if ${FLAVOR:Mlua}
