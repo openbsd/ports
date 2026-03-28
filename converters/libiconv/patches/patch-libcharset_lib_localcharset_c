@@ -3,7 +3,7 @@ returned by nl_langinfo(CODESET) in the C/POSIX locale
 Index: libcharset/lib/localcharset.c
 --- libcharset/lib/localcharset.c.orig
 +++ libcharset/lib/localcharset.c
-@@ -143,7 +143,7 @@ static const struct table_entry alias_table[] =
+@@ -146,7 +146,7 @@ static const struct table_entry alias_table[] =
  #   define alias_table_defined
  #  endif
  #  if defined __OpenBSD__                                   /* OpenBSD */

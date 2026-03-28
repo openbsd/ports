@@ -1,11 +1,11 @@
 COMMENT=	character set conversion library
 
-DISTNAME=	libiconv-1.17
+DISTNAME=	libiconv-1.19
 CATEGORIES=	converters devel
 SITES=		${SITE_GNU:=libiconv/}
 
 SHARED_LIBS=	charset		1.1 \
-		iconv		7.1
+		iconv		7.2
 
 HOMEPAGE=	https://www.gnu.org/software/libiconv/
 
