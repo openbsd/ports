@@ -6,6 +6,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			6.6.4
+REVISION =		0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -93,9 +94,6 @@ CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_QT_PLUGINS=ON
 CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 			-DTDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c
 
-# disable unported/unwanted components
-CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON
-
 # Since cmake 3.25.1, BSDs are no longer recognised as Linux (in this port).
 # Upstream should probably become BSD aware, but until that happens,
 # pretend we're Linux to keep building...
@@ -123,5 +121,9 @@ post-patch:
 	# warning: argument unused during compilation: '-fstack-clash-protection'
 	sed -i -e /-Wno-maybe-uninitialized/d -e /-fstack-clash-protection/d \
 	    ${WRKSRC}/cmake/options_linux.cmake
+
+# reduce binary size fromm +660M to ~250M
+do-install:
+	@${MODCMAKE_INSTALL_TARGET} --strip
 
 .include <bsd.port.mk>
