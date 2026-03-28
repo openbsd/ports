@@ -1,0 +1,23 @@
+From a3fbb54278ebe91bf573f44b32d64e78a33a4828 Mon Sep 17 00:00:00 2001
+From: Pierre Ossman <ossman@cendio.se>
+Date: Tue, 24 Mar 2026 09:52:01 +0100
+Subject: [PATCH] Prevent other users reading x0vncserver screen
+
+Prevent other users from observing the screen, or modifying what is sent
+to the client. Malicious attackers can even crash x0vncserver if they
+time the modifications right.
+
+(cherry picked from commit 0b5cab169d847789efa54459a87659d3fd484393)
+
+Index: unix/x0vncserver/Image.cxx
+--- unix/x0vncserver/Image.cxx.orig
++++ unix/x0vncserver/Image.cxx
+@@ -268,7 +268,7 @@ void ShmImage::Init(int width, int height, const XVisu
+ 
+   shminfo->shmid = shmget(IPC_PRIVATE,
+                           xim->bytes_per_line * xim->height,
+-                          IPC_CREAT|0777);
++                          IPC_CREAT|0600);
+   if (shminfo->shmid == -1) {
+     perror("shmget");
+     vlog.error("shmget() failed (%d bytes requested)",

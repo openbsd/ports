@@ -1,0 +1,29 @@
+From 87612b64652152ca19d568eb6b8770d067730da3 Mon Sep 17 00:00:00 2001
+From: Pierre Ossman <ossman@cendio.se>
+Date: Thu, 26 Mar 2026 10:10:12 +0100
+Subject: [PATCH] Use locks to avoid races with input thread
+
+Taken from how Xorg deals with hooking these functions. Without it we
+can get corruption of the sprite functions struct.
+
+(cherry picked from commit 3bc1cf73ea96082929232797e98823fa3e5ed4ed)
+
+Index: unix/xserver/hw/vnc/vncHooks.c
+--- unix/xserver/hw/vnc/vncHooks.c.orig
++++ unix/xserver/hw/vnc/vncHooks.c
+@@ -1144,6 +1144,7 @@ static Bool vncHooksRandRCrtcSet(ScreenPtr pScreen, RR
+ // Unwrap and rewrap helpers
+ 
+ #define SPRITE_PROLOGUE(field)                                            \
++  input_lock();                                                           \
+   miPointerScreenPtr miPointerPriv =                                      \
+     dixLookupPrivate(&screen->devPrivates, miPointerScreenKey);           \
+   vncHooksScreenPtr vncHooksScreen = vncHooksScreenPrivate(screen);       \
+@@ -1152,6 +1153,7 @@ static Bool vncHooksRandRCrtcSet(ScreenPtr pScreen, RR
+ 
+ #define SPRITE_EPILOGUE(field)                                            \
+   wrap(vncHooksScreen, miPointerPriv, spriteFuncs, &vncHooksSpriteFuncs); \
++  input_unlock();
+ 
+ static Bool vncHooksRealizeCursor(DeviceIntPtr dev, ScreenPtr screen,
+                                   CursorPtr cursor)
