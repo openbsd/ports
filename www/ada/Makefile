@@ -1,6 +1,6 @@
 COMMENT =		WHATWG compliant and fast URL parser in modern C++
 
-DIST_TUPLE =		github	ada-url	ada	v3.4.2	.
+DIST_TUPLE =		github	ada-url	ada	v3.4.4	.
 
 SHARED_LIBS =		ada	4.0
 
