@@ -7,6 +7,10 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # TELEMT PL 3
 PERMIT_PACKAGE =	Yes
 
+# C1x
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB =		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
