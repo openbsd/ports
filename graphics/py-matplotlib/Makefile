@@ -70,3 +70,9 @@ post-install:
 	cd ${WRKSRC}/galleries/examples && pax -rw * ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == "ports-gcc"
+# as(1) can't deal with the "e" sections that port-gcc emits with -flto=auto
+# Fatal error: unrecognized .section attribute: want a,w,x,M,S,G,T
+MODPY_PYBUILD_ARGS+=--config-setting=setup-args=-Db_lto=false
+.endif
