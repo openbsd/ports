@@ -1,0 +1,17 @@
+From 40c315ca7b3ad6ae5c98d72a6927b3a75b43cb46 Mon Sep 17 00:00:00 2001
+From: Claudio Saavedra <csaavedra@igalia.com>
+Date: Fri, 27 Mar 2026 22:09:02 +0200
+Subject: [PATCH] [GTK3] Fix the dom bindings build https://bugs.webkit.org/show_bug.cgi?id=310915
+
+Index: Source/WebCore/page/UserMessageHandler.h
+--- Source/WebCore/page/UserMessageHandler.h.orig
++++ Source/WebCore/page/UserMessageHandler.h
+@@ -52,7 +52,7 @@ class UserMessageHandler : public RefCounted<UserMessa
+     void ref() const final { RefCounted::ref(); }
+     void deref() const final { RefCounted::deref(); }
+ 
+-    void postMessage(JSC::JSGlobalObject&, JSC::JSValue, Ref<DeferredPromise>&&);
++    ExceptionOr<void> postMessage(JSC::JSGlobalObject&, JSC::JSValue, Ref<DeferredPromise>&&);
+     ExceptionOr<JSC::JSValue> postLegacySynchronousMessage(JSC::JSGlobalObject&, JSC::JSValue);
+ 
+     const UserMessageHandlerDescriptor* descriptor() const { return m_descriptor.get(); }
