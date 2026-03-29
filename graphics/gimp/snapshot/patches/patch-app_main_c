@@ -11,7 +11,7 @@ Index: app/main.c
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -587,8 +588,14 @@ main (int    argc,
+@@ -570,8 +571,14 @@ main (int    argc,
  #endif
    gint            retval;
    gint            i;

@@ -12,7 +12,7 @@ Index: meson.build
  platform_windows = (
    host_os.contains('mingw') or
    host_os.contains('cygwin') or
-@@ -1241,7 +1245,7 @@ have_lua_output = have_lua
+@@ -1267,7 +1271,7 @@ have_lua_output = have_lua
  if have_lua
    have_lua_lgi = false
  
@@ -21,7 +21,7 @@ Index: meson.build
      lua = find_program(lua_bin, required: false)
  
      if lua.found() and meson.can_run_host_binaries()
-@@ -1604,6 +1608,7 @@ conf.set('NO_FD_SET',
+@@ -1632,6 +1636,7 @@ conf.set('NO_FD_SET',
    not platform_windows
    and not cc.compiles('''
      #include <sys/types.h>

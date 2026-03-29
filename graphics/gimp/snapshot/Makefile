@@ -5,7 +5,7 @@ COMMENT=	GNU Image Manipulation Program
 # needs newer librsvg
 ONLY_FOR_ARCHS=	${RUST_ARCHS}
 
-V=		3.2.0
+V=		3.2.2
 GIMP_API_V=	3.0
 GIMP_APP_V=	${V:R}
 DISTNAME=	gimp-${V}
