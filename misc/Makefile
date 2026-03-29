@@ -35,6 +35,7 @@
      SUBDIR += gpsd
      SUBDIR += gramps
      SUBDIR += hfsplus
+     SUBDIR += hmdm-server
      SUBDIR += hwdata
      SUBDIR += ical2rem
      SUBDIR += ietf-cli
