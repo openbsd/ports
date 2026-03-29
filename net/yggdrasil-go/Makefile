@@ -19,7 +19,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 MODULES =		lang/go
 
-# uses pledge() and unveil()
+# uses pledge()
 WANTLIB =		c pthread
 
 RUN_DEPENDS =	textproc/jq
