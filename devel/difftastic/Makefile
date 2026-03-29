@@ -1,3 +1,5 @@
+BROKEN-sparc64 = undefined reference to `operator delete(void*, unsigned long)'
+
 COMMENT =		diff tool that compares files based on their syntax
 
 GH_ACCOUNT =		Wilfred
