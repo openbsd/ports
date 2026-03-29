@@ -3,7 +3,31 @@ Add styles for upower and sndio.
 Index: resources/style.css
 --- resources/style.css.orig
 +++ resources/style.css
-@@ -164,6 +164,21 @@ button:hover {
+@@ -93,7 +93,10 @@ button:hover {
+ #idle_inhibitor,
+ #scratchpad,
+ #power-profiles-daemon,
+-#mpd {
++#mpd,
++#custom-power,
++#custom-battery,
++#custom-temperature {
+     padding: 0 10px;
+     color: #ffffff;
+ }
+@@ -122,6 +125,11 @@ button:hover {
+     color: #000000;
+ }
+ 
++#custom-battery {
++    background-color: #ffffff;
++    color: #000000;
++}
++
+ #battery.charging, #battery.plugged {
+     color: #ffffff;
+     background-color: #26A65B;
+@@ -164,6 +172,21 @@ button:hover {
      color: #000000;
  }
  
@@ -25,20 +49,31 @@ Index: resources/style.css
  label:focus {
      background-color: #000000;
  }
-@@ -199,6 +214,16 @@ label:focus {
+@@ -203,6 +226,16 @@ label:focus {
+     color: #2a5c45;
  }
  
- #pulseaudio.muted {
-+    background-color: #90b1b1;
-+    color: #2a5c45;
-+}
-+
 +#sndio {
 +    background-color: #f1c40f;
 +    color: #000;
 +}
 +
 +#sndio.muted {
-     background-color: #90b1b1;
-     color: #2a5c45;
++    background-color: #90b1b1;
++    color: #2a5c45;
++}
++
+ #wireplumber {
+     background-color: #fff0f5;
+     color: #000000;
+@@ -227,6 +260,10 @@ label:focus {
  }
+ 
+ #temperature {
++    background-color: #f0932b;
++}
++
++#custom-temperature {
+     background-color: #f0932b;
+ }
+ 
