@@ -1,9 +1,8 @@
 COMMENT =	cloud optimized GeoTiff creation plugin for rasterio
 
-MODPY_DISTV =	7.0.1
+MODPY_DISTV =	7.0.2
 DISTNAME =	rio_cogeo-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/_/-/}
-REVISION =	0
 
 CATEGORIES =	geo
 
