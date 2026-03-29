@@ -1,0 +1,27 @@
+Index: install/log4j_template.xml
+--- install/log4j_template.xml.orig
++++ install/log4j_template.xml
+@@ -30,14 +30,14 @@
+     </appender>
+ 
+     <appender name="main-log-file" class="org.apache.log4j.DailyRollingFileAppender">
+-        <param name="file" value="_BASE_DIRECTORY_/logs/hmdm.log"/>
++        <param name="file" value="${HMDM_SERVER_DIR}/logs/hmdm.log"/>
+         <layout class="org.apache.log4j.PatternLayout">
+             <param name="ConversionPattern" value="%d{yyyy.MM.dd HH:mm:ss,SSS} %-5p  %m%n"/>
+         </layout>
+     </appender>
+ 
+     <appender name="audit-file" class="org.apache.log4j.DailyRollingFileAppender">
+-        <param name="file" value="_BASE_DIRECTORY_/logs/audit.log"/>
++        <param name="file" value="${HMDM_SERVER_DIR}/logs/audit.log"/>
+         <layout class="org.apache.log4j.PatternLayout">
+             <param name="ConversionPattern" value="%d{yyyy.MM.dd HH:mm:ss,SSS} %-5p  %m%n"/>
+         </layout>
+@@ -60,4 +60,4 @@
+         <appender-ref ref="main-log-file"/>
+     </root>
+ 
+-</log4j:configuration>
+\ No newline at end of file
++</log4j:configuration>

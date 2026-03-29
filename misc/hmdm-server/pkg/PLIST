@@ -1,0 +1,31 @@
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/hmdm-server/
+@sample ${HMDM_SERVER_DIR}/
+share/examples/hmdm-server/ROOT.xml
+share/examples/hmdm-server/emails/
+@sample ${HMDM_SERVER_DIR}/emails/
+share/examples/hmdm-server/emails/${HMDM_LANGUAGE}/
+@sample ${HMDM_SERVER_DIR}/emails/${HMDM_LANGUAGE}/
+share/examples/hmdm-server/emails/${HMDM_LANGUAGE}/recovery_body.txt
+@sample ${HMDM_SERVER_DIR}/emails/${HMDM_LANGUAGE}/recovery_body.txt
+share/examples/hmdm-server/emails/${HMDM_LANGUAGE}/recovery_subj.txt
+@sample ${HMDM_SERVER_DIR}/emails/${HMDM_LANGUAGE}/recovery_subj.txt
+share/examples/hmdm-server/emails/ru/
+@sample ${HMDM_SERVER_DIR}/emails/ru/
+share/examples/hmdm-server/emails/ru/recovery_body.txt
+@sample ${HMDM_SERVER_DIR}/emails/ru/recovery_body.txt
+share/examples/hmdm-server/emails/ru/recovery_subj.txt
+@sample ${HMDM_SERVER_DIR}/emails/ru/recovery_subj.txt
+@owner _tomcat
+@group _tomcat
+@sample ${HMDM_SERVER_DIR}/files/
+@sample ${HMDM_SERVER_DIR}/logs/
+@sample ${HMDM_SERVER_DIR}/plugins/
+@owner
+@group
+share/examples/hmdm-server/hmdm-server_init.${HMDM_LANGUAGE}.sql
+@sample ${HMDM_SERVER_DIR}/hmdm-server_init.${HMDM_LANGUAGE}.sql
+share/examples/hmdm-server/log4j-hmdm-server.xml
+@sample ${HMDM_SERVER_DIR}/log4j-hmdm-server.xml
+share/hmdm-server/
+share/hmdm-server/ROOT.war

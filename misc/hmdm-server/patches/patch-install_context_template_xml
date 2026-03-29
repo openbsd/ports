@@ -1,0 +1,94 @@
+Index: install/context_template.xml
+--- install/context_template.xml.orig
++++ install/context_template.xml
+@@ -2,18 +2,18 @@
+ <Context>
+     <!-- database configurations -->
+     <Parameter name="JDBC.driver"   value="org.postgresql.Driver"/>
+-    <Parameter name="JDBC.url"      value="jdbc:postgresql://_SQL_HOST_:_SQL_PORT_/_SQL_BASE_"/>
+-    <Parameter name="JDBC.username" value="_SQL_USER_"/>
+-    <Parameter name="JDBC.password" value="_SQL_PASS_"/>
++    <Parameter name="JDBC.url"      value="jdbc:postgresql://localhost:5432/hmdm"/>
++    <Parameter name="JDBC.username" value="hmdm_user"/>
++    <Parameter name="JDBC.password" value=""/>
+ 
+     <!-- This directory is used to as a base directory to store app data -->
+-    <Parameter name="base.directory" value="_BASE_DIRECTORY_"/>
++    <Parameter name="base.directory" value="${HMDM_SERVER_DIR}"/>
+ 
+     <!-- This directory is used to store uploaded app files, must be accessible for tomcat user -->
+-    <Parameter name="files.directory" value="_BASE_DIRECTORY_/files"/>
++    <Parameter name="files.directory" value="${HMDM_SERVER_DIR}/files"/>
+ 
+     <!-- URL used to open Headwind MDM control panel -->
+-    <Parameter name="base.url" value="_PROTOCOL_://_BASE_HOST__BASE_PATH_"/>
++    <Parameter name="base.url" value="http://localhost:8080"/>
+ 
+     <!-- private / shared; shared can be used only in Enterprise solution -->
+     <Parameter name="usage.scenario" value="private" />
+@@ -28,7 +28,7 @@
+ <!--    <Parameter name="strict.transport.security" value="${strict.transport.security}"/> -->
+ 
+     <!-- This directory is used to store files by plugins, must be accessible for tomcat user -->
+-    <Parameter name="plugins.files.directory" value="_BASE_DIRECTORY_/plugins"/>
++    <Parameter name="plugins.files.directory" value="${HMDM_SERVER_DIR}/plugins"/>
+ 
+     <!-- Configuration for logging plugin, do not change this -->
+     <Parameter name="plugin.devicelog.persistence.config.class" value="com.hmdm.plugins.devicelog.persistence.postgres.DeviceLogPostgresPersistenceConfiguration"/>
+@@ -37,17 +37,17 @@
+     <Parameter name="role.orgadmin.id" value="2"/>
+ 
+     <!-- Swagger Docs UI location -->
+-    <Parameter name="swagger.host" value="_BASE_HOST_"/>
+-    <Parameter name="swagger.base.path" value="_BASE_PATH_/rest"/>
++    <Parameter name="swagger.host" value="localhost:8080"/>
++    <Parameter name="swagger.base.path" value="/rest"/>
+ 
+-    <Parameter name="initialization.completion.signal.file" value="_INSTALL_FLAG_"/>
++    <Parameter name="initialization.completion.signal.file" value="${HMDM_SERVER_DIR}/hmdm-server_install_flag"/>
+ 
+-    <Parameter name="log4j.config" value="file://_BASE_DIRECTORY_/log4j-hmdm.xml"/>
++    <Parameter name="log4j.config" value="file://${HMDM_SERVER_DIR}/log4j-hmdm-server.xml"/>
+ 
+     <Parameter name="aapt.command" value="aapt"/>
+ 
+     <!-- MQTT notification service parameters -->
+-    <Parameter name="mqtt.server.uri" value="_BASE_DOMAIN_:31000"/>
++    <Parameter name="mqtt.server.uri" value="localhost:31000"/>
+ 
+     <!-- Optional tag for delaying MQTT messages in milliseconds
+      to avoid congestion when all devices are updating configuration at the same time -->
+@@ -69,22 +69,24 @@
+     <!-- <Parameter name="proxy.ip.header" value="X-Forwarded-For"/> -->
+ 
+     <!-- Email parameters are necessary for password recovery -->
+-    <Parameter name="smtp.host" value="_SMTP_HOST_"/>
+-    <Parameter name="smtp.port" value="_SMTP_PORT_"/>
+-    <Parameter name="smtp.ssl" value="_SMTP_SSL_"/>
+-    <Parameter name="smtp.starttls" value="_SMTP_STARTTLS_"/>
+-    <Parameter name="smtp.username" value="_SMTP_USERNAME_"/>
+-    <Parameter name="smtp.password" value="_SMTP_PASSWORD_"/>
+-    <Parameter name="smtp.from" value="_SMTP_FROM_"/>
++    <Parameter name="smtp.host" value=""/>
++    <Parameter name="smtp.port" value=""/>
++    <Parameter name="smtp.ssl" value="0"/>
++    <Parameter name="smtp.starttls" value="0"/>
++    <Parameter name="smtp.username" value=""/>
++    <Parameter name="smtp.password" value=""/>
++    <Parameter name="smtp.from" value=""/>
+ 
++    <Parameter name="sql.init.script.path" value="${HMDM_SERVER_DIR}/hmdm-server_init.${HMDM_LANGUAGE}.sql"/>
++
+     <!-- Uncomment this line if you get 'Could not convert socket to TLS' -->
+     <!-- <Parameter name="smtp.ssl.protocols" value="TLSv1.2"/> -->
+ 
+ <!-- These are the customer email templates
+      Email paths may contain _LANGUAGE_ replaced to a two-letter language
+      The default language is en -->
+-    <Parameter name="email.recovery.subj" value="_BASE_DIRECTORY_/emails/_LANGUAGE_/recovery_subj.txt"/>
+-    <Parameter name="email.recovery.body" value="_BASE_DIRECTORY_/emails/_LANGUAGE_/recovery_body.txt"/>
++    <Parameter name="email.recovery.subj" value="${HMDM_SERVER_DIR}/emails/${HMDM_LANGUAGE}/recovery_subj.txt"/>
++    <Parameter name="email.recovery.body" value="${HMDM_SERVER_DIR}/emails/${HMDM_LANGUAGE}/recovery_body.txt"/>
+ 
+     <!-- JWT parameters are allow you to customise secret and validity token -->
+     <!-- <Parameter name="jwt.secretkey" value="20c68f0d9185b1d18cf6add1e8b491fd89529a44"/> -->

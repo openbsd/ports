@@ -1,0 +1,17 @@
+Headwind MDM - a platform for corporate Android applications
+
+Headwind MDM is a Mobile Device Management platform for Android devices, 
+designed for corporate app developers and IT managers.
+
+Features
+
+- Enrollment to Android 7+ devices through scanning a QR-code
+- Work in "Application mode" without enrollment
+- Customize the mobile desktop design and available applications
+- Automatic deployment of applications through the web panel
+- Mobile device management: groups, configurations, device status
+- Setup the available mobile device capabilities (GPS, Wi-Fi, Bluetooth etc.)
+- Manage the automatic OS update mode on the mobile device
+- Extensible platform design allowing the custom plugin development
+- Collection of application logs in the web panel
+- Centralized configuration of corporate applications

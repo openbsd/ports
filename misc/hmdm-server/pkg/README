@@ -1,0 +1,54 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Setup PostgreSQL Database
+=========================
+
+# psql -U postgres
+CREATE USER hmdm_user WITH PASSWORD 'secret';
+CREATE DATABASE hmdm WITH OWNER=hmdm_user;
+\q
+
+Deploy WAR and Context
+======================
+
+# cp ${TRUEPREFIX}/share/hmdm-server/ROOT.war /var/tomcat/webapps/
+# doas -u _tomcat mkdir -p /etc/tomcat/Catalina/localhost/
+# cp ${TRUEPREFIX}/share/examples/hmdm-server/ROOT.xml \
+	${SYSCONFDIR}/tomcat/Catalina/localhost/
+
+Tune ROOT.xml for your needs. At minimum you need to set the database
+password for the user created above.
+
+ <Parameter name="JDBC.password" value="secret" />
+
+Start Tomcat
+
+$ doas rcctl start tomcat
+
+Access at http://localhost:8080
+User: admin
+Password: admin
+
+Note:
+
+ROOT.war/ROOT.xml assume you want to run h-mdm at the root
+(http://localhost:8080). You can change the names to run at different context.
+For example changing ROOT.war/ROOT.xml to hmdm.war/hmdm.xml will run at
+http://localhost:8080/hmdm.
+
+Reverse Proxy
+=============
+
+To run behind a reverse proxy such as relayd(8) or nginx, you'll need to do the
+following:
+
+Under the localhost Host in /etc/tomcat/server.xml add a Valve
+
+<Valve className="org.apache.catalina.valves.RemoteIpValve"
+	internalProxies="127\.0\.0\.1" />
+
+Then update ROOT.xml and change the base.url to the public IP of your proxy.
+
+<Parameter name="base.url" value="https://mdm.example.com"/>
