@@ -1067,6 +1067,7 @@ share/fish/completions/test-spice.fish
 share/fish/completions/test.fish
 share/fish/completions/tex-fmt.fish
 share/fish/completions/tex.fish
+share/fish/completions/tflint.fish
 share/fish/completions/tig.fish
 share/fish/completions/time.fish
 share/fish/completions/timedatectl.fish

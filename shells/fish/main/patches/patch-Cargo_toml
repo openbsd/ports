@@ -1,7 +1,7 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -52,7 +52,7 @@ nix = { version = "0.31.1", default-features = false, 
+@@ -53,7 +53,7 @@ nix = { version = "0.31.1", default-features = false, 
  ] }
  num-traits = "0.2.19"
  once_cell = "1.19.0"

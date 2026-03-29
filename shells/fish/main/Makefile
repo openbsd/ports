@@ -1,6 +1,6 @@
 COMMENT =		friendly interactive shell
 
-V =			4.5.0
+V =			4.6.0
 
 DISTNAME =		fish-${V}
 
@@ -48,9 +48,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_STYLE =	cmake
 
 PORTHOME =		${WRKDIR}
-
-# Test #96: check-completions.fish fails on systems without synaptics
-# driver loaded.
 
 TEST_DEPENDS =		devel/py-pexpect \
 			sysutils/coreutils \

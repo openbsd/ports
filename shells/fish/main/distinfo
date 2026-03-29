@@ -85,7 +85,7 @@ SHA256 (cargo/serde_derive-1.0.228.tar.gz) = 1UDyINMYcXPaIg+IWrZmCDZ7ZXTpJQEak1P
 SHA256 (cargo/serial_test-3.3.1.tar.gz) = DQs0PhhPw7e7RN/wcF//z0s3Vrpq/0IN3diyTKFF5VU=
 SHA256 (cargo/serial_test_derive-3.3.1.tar.gz) = b1BCfyWPt3NW5M1KoOh+K9LGbbzuQdxAUoLK4r/CbIM=
 SHA256 (cargo/sha2-0.10.9.tar.gz) = p1B9gZdp0Bo2WrcHeUpAhDksgk9Up6anhi+MPQiSsoM=
-SHA256 (cargo/shellexpand-3.1.1.tar.gz) = ix/fZd1jMYMUlN1hazA1HDjpbkWSGid0XPmEkEWLkLs=
+SHA256 (cargo/shellexpand-3.1.2.tar.gz) = MoJPq14W5sTYbcG6hEiTkEGaOfl2mYUrZkgLuH0pftg=
 SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
 SHA256 (cargo/siphasher-1.0.2.tar.gz) = sqqFDiU3eMiKBMPXMjsEOu2p0+MNWXGTfBhVdpdjZ44=
 SHA256 (cargo/smallvec-1.15.1.tar.gz) = Z7G3o7X+TxN2iHGEBF/PRcaekq9zS3qt3AX7d3tvvQM=
@@ -112,7 +112,7 @@ SHA256 (cargo/wit-bindgen-0.46.0.tar.gz) = 8XqFiD1ObQDoqXxYbedk2rzAYTP38dVdzlzcB
 SHA256 (cargo/xterm-color-1.0.2.tar.gz) = cAip2LqXp+R9my32P8242t4wMBDFp81b8kadTabrpnM=
 SHA256 (cargo/zerocopy-0.8.37.tar.gz) = dFbPAPBoWtMZxbFpPykaZQ6vNF6UHQgvxOA9+KA5lqw=
 SHA256 (cargo/zerocopy-derive-0.8.37.tar.gz) = EyhyK78hFdt+GdaevMFeeVcZ4tZrYIJ8ammhFzZeN6A=
-SHA256 (fish-4.5.0.tar.xz) = iRUfjPFLY04IAib+aW+c59TRU8d2KZlspEMcgEgsZO0=
+SHA256 (fish-4.6.0.tar.xz) = /JFl9zOg4oo9uhHJsaKGvIioU/FSpmlM2ZNRKi8XYao=
 SHA256 (fish-shell-rust-pcre2-0.2.9-utf32.tar.gz) = 5a8G17c3tm90dqIj6KbNHiscqDSziz3liQHU288KBU0=
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/allocator-api2-0.2.21.tar.gz) = 63622
@@ -201,7 +201,7 @@ SIZE (cargo/serde_derive-1.0.228.tar.gz) = 59605
 SIZE (cargo/serial_test-3.3.1.tar.gz) = 13147
 SIZE (cargo/serial_test_derive-3.3.1.tar.gz) = 8166
 SIZE (cargo/sha2-0.10.9.tar.gz) = 29271
-SIZE (cargo/shellexpand-3.1.1.tar.gz) = 25904
+SIZE (cargo/shellexpand-3.1.2.tar.gz) = 26161
 SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
 SIZE (cargo/siphasher-1.0.2.tar.gz) = 11416
 SIZE (cargo/smallvec-1.15.1.tar.gz) = 38116
@@ -228,5 +228,5 @@ SIZE (cargo/wit-bindgen-0.46.0.tar.gz) = 60508
 SIZE (cargo/xterm-color-1.0.2.tar.gz) = 9302
 SIZE (cargo/zerocopy-0.8.37.tar.gz) = 275551
 SIZE (cargo/zerocopy-derive-0.8.37.tar.gz) = 106949
-SIZE (fish-4.5.0.tar.xz) = 2567056
+SIZE (fish-4.6.0.tar.xz) = 2596788
 SIZE (fish-shell-rust-pcre2-0.2.9-utf32.tar.gz) = 742431
