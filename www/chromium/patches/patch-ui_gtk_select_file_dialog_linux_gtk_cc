@@ -1,0 +1,19 @@
+revert the following stupidity
+
+commit e93121e97478a41d529c8586a48b4ec34173f79a
+Author: Tom Anderson <thomasanderson@chromium.org>
+Date:   Mon Jan 5 17:42:17 2026 -0800
+
+Index: ui/gtk/select_file_dialog_linux_gtk.cc
+--- ui/gtk/select_file_dialog_linux_gtk.cc.orig
++++ ui/gtk/select_file_dialog_linux_gtk.cc
+@@ -49,7 +49,8 @@ namespace {
+ // GTK_RESPONSE_ACCEPT as the default button, which should be avoided to prevent
+ // an exploit where the user is instructed to hold Enter before the dialog
+ // appears.
+-constexpr GtkResponseType kResponseTypeAccept = static_cast<GtkResponseType>(0);
++// My god ^^^^^ WTF
++constexpr GtkResponseType kResponseTypeAccept = static_cast<GtkResponseType>(GTK_RESPONSE_ACCEPT);
+ 
+ // TODO(crbug.com/41469294): These getters will be unnecessary after
+ // migrating to GtkFileChooserNative.
