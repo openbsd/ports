@@ -1,10 +1,9 @@
 COMMENT=		Natural Language ToolKit
 
-MODPY_DISTV =		3.9.1
+MODPY_DISTV =		3.9.4
 DISTNAME=		nltk-${MODPY_DISTV}
 PKGNAME=		py-nltk-${MODPY_DISTV}
 CATEGORIES=		textproc
-REVISION=		1
 
 EPOCH =			0
 
