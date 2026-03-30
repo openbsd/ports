@@ -1,5 +1,6 @@
 @conflict vim-lang-*
 @pkgpath editors/vim,-lang
+${NO_X11_PKGPATH}
 ${GUI_ONLY}bin/eview
 ${GUI_ONLY}bin/evim
 bin/ex
@@ -416,13 +417,13 @@ share/icons/
 share/icons/hicolor/
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/gvim.png
-share/icons/locolor/
-share/icons/locolor/16x16/
-share/icons/locolor/16x16/apps/
-share/icons/locolor/16x16/apps/gvim.png
-share/icons/locolor/32x32/
-share/icons/locolor/32x32/apps/
-share/icons/locolor/32x32/apps/gvim.png
+${GUI_ONLY}share/icons/locolor/
+${GUI_ONLY}share/icons/locolor/16x16/
+${GUI_ONLY}share/icons/locolor/16x16/apps/
+${GUI_ONLY}share/icons/locolor/16x16/apps/gvim.png
+${GUI_ONLY}share/icons/locolor/32x32/
+${GUI_ONLY}share/icons/locolor/32x32/apps/
+${GUI_ONLY}share/icons/locolor/32x32/apps/gvim.png
 share/vim/
 share/vim/${P}/
 share/vim/${P}/LICENSE
@@ -516,25 +517,6 @@ share/vim/${P}/colors/evening.vim
 share/vim/${P}/colors/habamax.vim
 share/vim/${P}/colors/industry.vim
 share/vim/${P}/colors/koehler.vim
-share/vim/${P}/colors/legacy/
-share/vim/${P}/colors/legacy/README.md
-share/vim/${P}/colors/legacy/blue.vim
-share/vim/${P}/colors/legacy/darkblue.vim
-share/vim/${P}/colors/legacy/delek.vim
-share/vim/${P}/colors/legacy/desert.vim
-share/vim/${P}/colors/legacy/elflord.vim
-share/vim/${P}/colors/legacy/evening.vim
-share/vim/${P}/colors/legacy/industry.vim
-share/vim/${P}/colors/legacy/koehler.vim
-share/vim/${P}/colors/legacy/morning.vim
-share/vim/${P}/colors/legacy/murphy.vim
-share/vim/${P}/colors/legacy/pablo.vim
-share/vim/${P}/colors/legacy/peachpuff.vim
-share/vim/${P}/colors/legacy/ron.vim
-share/vim/${P}/colors/legacy/shine.vim
-share/vim/${P}/colors/legacy/slate.vim
-share/vim/${P}/colors/legacy/torte.vim
-share/vim/${P}/colors/legacy/zellner.vim
 share/vim/${P}/colors/lists/
 share/vim/${P}/colors/lists/csscolors.vim
 share/vim/${P}/colors/lists/default.vim

@@ -10,9 +10,11 @@ commands are given with normal keyboard characters, so those who can type with
 ten fingers can work very fast. Additionally, function keys can be mapped to
 commands by the user, and the mouse can be used.
 
+(Note that "vim-classic" is also packaged, providing a long-term maintenance
+version forked from Vim 8.2).
+
 Flavors:
-	gtk3       - build using the Gtk+3 toolkit (default)
-	no_x11	   - build without X11 support
+	gtk3       - build using the Gtk+3 toolkit
 	lua	   - build with Lua support
 	perl	   - build with Perl support
 	python3	   - build with Python3 support
