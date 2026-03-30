@@ -1,7 +1,6 @@
-include/bstring/
-include/bstring/bstraux.h
-include/bstring/bstrlib.h
-@static-lib lib/libbstring.a
-lib/libbstring.la
+include/bstraux.h
+include/bstrlib.h
+include/buniutil.h
+include/utf8util.h
 @lib lib/libbstring.so.${LIBbstring_VERSION}
 lib/pkgconfig/bstring.pc

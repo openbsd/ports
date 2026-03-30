@@ -1,9 +1,10 @@
 COMMENT=		string processing library
 
-V=			1.0.3
+V=			1.1.0
 DISTNAME=		bstring-${V}
+EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  bstring              0.0      # 2.1
+SHARED_LIBS += bstring                   0.1 # 1.1.0
 
 CATEGORIES=		devel
 
@@ -17,12 +18,9 @@ PERMIT_PACKAGE=	Yes
 
 SITES=			https://github.com/msteinert/bstring/releases/download/v${V}/
 
-BUILD_DEPENDS=		devel/check
+MODULES=		devel/meson
 
-CONFIGURE_ENV=		ac_cv_prog_DOXYGEN_PATH= \
-			ac_cv_prog_VALGRIND_PATH=
-
-CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		-Denable-docs=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
