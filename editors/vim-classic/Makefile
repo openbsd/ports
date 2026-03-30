@@ -116,7 +116,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/{doc,syntax}
 	${INSTALL_DATA} ${FILESDIR}/openbsd.vim \
 		${PREFIX}/share/vim/vimfiles/syntax/
-.if !empty(_GUI_ONLY)
+.if !empty(GUI_ONLY)
 	rm -f ${PREFIX}/man/{*/,}man1/{e,g,rg}{view,vim,vimdiff}.1
 .endif
 
