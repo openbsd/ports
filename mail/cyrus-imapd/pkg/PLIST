@@ -539,6 +539,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.12/x/3.12.0-beta2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.12/x/3.12.0-rc1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.12/x/3.12.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.12/x/3.12.1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.12/x/3.12.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.13/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.13/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.13/x/
@@ -847,7 +848,6 @@ share/doc/cyrus-imapd/internal/prot.html
 share/doc/cyrus-imapd/internal/replication_examples.html
 share/doc/cyrus-imapd/internal/replication_protocol.html
 share/doc/cyrus-imapd/internal/specials.html
-share/doc/cyrus-imapd/internal/unit-tests.html
 share/doc/cyrus-imapd/internal/var_directory_structure.html
 share/examples/cyrus-imapd/
 share/examples/cyrus-imapd/cyrus_conf/
