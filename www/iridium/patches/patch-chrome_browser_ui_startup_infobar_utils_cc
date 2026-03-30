@@ -10,7 +10,7 @@ Index: chrome/browser/ui/startup/infobar_utils.cc
  #include "chrome/browser/ui/views/session_restore_infobar/session_restore_infobar_controller.h"
  #include "chrome/browser/ui/views/session_restore_infobar/session_restore_infobar_model.h"
  #endif
-@@ -221,7 +221,7 @@ void AddInfoBarsIfNecessary(BrowserWindowInterface* br
+@@ -218,7 +218,7 @@ void AddInfoBarsIfNecessary(BrowserWindowInterface* br
      return;
    }
  

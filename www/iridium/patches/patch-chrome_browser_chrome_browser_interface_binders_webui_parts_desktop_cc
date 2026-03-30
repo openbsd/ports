@@ -28,7 +28,7 @@ Index: chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
        WhatsNewUI,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
        NewTabPageUI>(map);
-@@ -547,7 +547,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -545,7 +545,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          OmniboxPopupUI>(map);
    }
  
@@ -37,7 +37,7 @@ Index: chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  
-@@ -581,7 +581,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -579,7 +579,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          ContextualTasksUI>(map);
    }
  
