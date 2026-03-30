@@ -1,10 +1,9 @@
 COMMENT=	Python WSGI HTTP server
 
-MODPY_DISTV=	23.0.0
+MODPY_DISTV=	25.3.0
 DISTNAME=	gunicorn-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www
-REVISION=	0
 
 # https://github.com/benoitc/gunicorn
 HOMEPAGE=	https://gunicorn.org/
