@@ -3,7 +3,7 @@ COMMENT =		cross-platform multimedia library
 V =			3.4.2
 DISTNAME =		SDL3-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		SDL3                      0.1 # 3.4.0
 
@@ -32,6 +32,7 @@ LIB_DEPENDS =		converters/libiconv \
 CONFIGURE_ARGS =	-DSDL_ALSA=OFF \
 			-DSDL_DBUS=OFF \
 			-DSDL_DEPS_SHARED=OFF \
+			-DSDL_HAPTIC=OFF \
 			-DSDL_HIDAPI=OFF \
 			-DSDL_INSTALL=ON \
 			-DSDL_JACK=OFF \
@@ -42,7 +43,9 @@ CONFIGURE_ARGS =	-DSDL_ALSA=OFF \
 			-DSDL_VULKAN=ON \
 			-DSDL_WAYLAND=ON \
 			-DSDL_WAYLAND_SHARED=OFF \
-			-DSDL_X11_SHARED=OFF
+			-DSDL_X11_SHARED=OFF \
+			-DHAVE_GCC_WDOCUMENTATION=OFF \
+			-DHAVE_GCC_WDOCUMENTATION_UNKNOWN_COMMAND=OFF
 
 # building tests adds build dependency on graphics/ffmpeg
 CONFIGURE_ARGS +=	-DSDL_TESTS=OFF
