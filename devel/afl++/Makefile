@@ -20,7 +20,9 @@ USE_GMAKE=		Yes
 MODULES =		lang/clang
 RUN_DEPENDS =		lang/gawk
 
-MAKE_FLAGS =		LLVM_CONFIG=llvm-config-${MODCLANG_VERSION} \
+# if nproc is not set, sub-makes are passed "-j" which uses all cores
+MAKE_FLAGS =		nproc=${MAKE_JOBS} \
+			LLVM_CONFIG=llvm-config-${MODCLANG_VERSION} \
 			NO_PYTHON=1
 FAKE_FLAGS=		PREFIX="${TRUEPREFIX}"
 TEST_TARGET=		tests
