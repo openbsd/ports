@@ -1,0 +1,5 @@
+share/fonts/
+@fontdir share/fonts/adobe-source-han-serif/
+share/fonts/adobe-source-han-serif/SourceHanSerif-VF.otf.ttc
+share/fonts/adobe-source-han-serif/SourceHanSerif-VF.ttf.ttc
+share/fonts/adobe-source-han-serif/SourceHanSerif.ttc
