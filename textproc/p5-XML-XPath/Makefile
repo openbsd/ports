@@ -1,6 +1,7 @@
 COMMENT =	parse and evaluate XPath statements
 
-DISTNAME =	XML-XPath-1.48
+DISTNAME =	XML-XPath-1.49
+CPAN_AUTHOR =	MANWAR
 
 CATEGORIES =	textproc
 
