@@ -1,6 +1,6 @@
 COMMENT =		cargo subcommand for snapshot testing
 
-V =			1.47.0
+V =			1.47.1
 DISTNAME =		cargo-insta-$V
 DISTFILES +=		cargo-insta-$V{source}${EXTRACT_SUFX}
 
@@ -23,6 +23,7 @@ SEPARATE_BUILD =	Yes
 
 MODCARGO_INSTALL_TARGET_PATHS = cargo-insta
 
+PORTHOME = ${WRKSRC}
 # most of the functional tests fail in offline mode
 do-test:
 	${MAKE} -C ${WRKSRC} cargotest
