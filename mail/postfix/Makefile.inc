@@ -49,6 +49,8 @@ NO_TEST=	Yes
 FLAVORS+=	sasl2 ldap mysql pgsql
 FLAVOR?=
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
 # TLS support in Postfix 3.6+ requires OpenSSL 1.1.1+ and does require
 # APIs which are not available in LibreSSL. It is linked statically
 # to avoid conflicting with shared libssl/libcrypto from the base OS
@@ -138,3 +140,8 @@ do-install:
 	@chown -h ${BINOWN}:${BINGRP} ${PREFIX}/{sbin,libexec/postfix}/*
 	@chown -R ${MANOWN}:${MANGRP} ${PREFIX}/man
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
+	if [ "${INSTALL_STRIP}" == -s ]; then \
+		for i in ${PREFIX}/{sbin,libexec/postfix}/*; do \
+			file $$i | grep -q script || strip $$i; \
+		done; \
+	fi
