@@ -4,7 +4,7 @@ COMMENT =		fast, intuitive file opening in VIM
 
 V =			1.11.2
 DISTNAME =		vim-command-t-${V}
-REVISION =		11
+REVISION =		12
 
 CATEGORIES =		devel editors
 
@@ -19,7 +19,7 @@ SITES =			https://spacehopper.org/mirrors/
 
 MODULES =		lang/ruby
 
-RUN_DEPENDS =		vim-*-ruby:editors/vim,no_x11,ruby
+RUN_DEPENDS =		vim-*-ruby:editors/vim,ruby
 
 NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/.vim

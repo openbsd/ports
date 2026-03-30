@@ -4,7 +4,7 @@ DISTNAME =	taglist_46
 PKGNAME =	vim-taglist-4.6
 CATEGORIES =	devel editors
 EXTRACT_SUFX =	.zip
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://vim-taglist.sourceforge.net/
 SITES =		${SITE_SOURCEFORGE:=vim-taglist/}
