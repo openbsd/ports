@@ -1,12 +1,13 @@
 COMMENT=	HTTP request/response parser
 
 V=		9.3.1
+GH_ACCOUNT=	nodejs
+GH_PROJECT=	llhttp
+GH_TAGNAME=	release/v$V
 REVISION=	0
+# override; tags contain /
 DISTNAME=	llhttp-release-v$V
-DISTFILES=	${DISTNAME}{v$V}.tar.gz
 PKGNAME=	llhttp-$V
-# tag names contain '/' which is not handled by GH_* etc
-SITES=		https://github.com/nodejs/llhttp/archive/refs/tags/release/
 
 SHARED_LIBS +=	llhttp                    0.0 # 0.0
 
