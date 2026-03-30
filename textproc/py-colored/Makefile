@@ -1,6 +1,6 @@
 COMMENT=	simple library for color and formatting in terminal
 
-MODPY_DISTV=	2.3.1
+MODPY_DISTV=	2.3.2
 DISTNAME=	colored-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
