@@ -479,6 +479,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}rebol.$
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}rebol.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}rego.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}rego.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}rell.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}rell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}resource.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}resource.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}ride.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -807,6 +809,7 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/r.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/rdf.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/rebol.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/rego.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/rell.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/resource.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/ride.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/rita.py

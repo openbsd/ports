@@ -1,10 +1,9 @@
 COMMENT=	Python syntax highlighter
 
-MODPY_DISTV=	2.19.2
+MODPY_DISTV=	2.20.0
 DISTNAME=	pygments-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc devel
-REVISION=	0
 
 HOMEPAGE=	https://pygments.org/
 
@@ -12,9 +11,8 @@ HOMEPAGE=	https://pygments.org/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	hatchling
+MODPY_PI=	Yes
 
 # requires port for wcag_contrast_ratio
 MODPY_PYTEST_ARGS=	--ignore tests/contrast/test_contrasts.py
