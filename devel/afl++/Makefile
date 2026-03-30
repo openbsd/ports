@@ -20,7 +20,8 @@ USE_GMAKE=		Yes
 MODULES =		lang/clang
 RUN_DEPENDS =		lang/gawk
 
-# if nproc is not set, sub-makes are passed "-j" which uses all cores
+# if nproc is not set, sub-makes are passed "-j" which does not limit
+# the number of jobs.
 MAKE_FLAGS =		nproc=${MAKE_JOBS} \
 			LLVM_CONFIG=llvm-config-${MODCLANG_VERSION} \
 			NO_PYTHON=1
