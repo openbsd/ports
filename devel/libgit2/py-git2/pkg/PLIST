@@ -84,6 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/decl/config.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/describe.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/diff.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/errors.h
+lib/python${MODPY_VERSION}/site-packages/pygit2/decl/filter.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/graph.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/index.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/indexer.h
