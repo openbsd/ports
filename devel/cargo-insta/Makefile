@@ -1,6 +1,6 @@
 COMMENT =		cargo subcommand for snapshot testing
 
-V =			1.47.1
+V =			1.47.2
 DISTNAME =		cargo-insta-$V
 DISTFILES +=		cargo-insta-$V{source}${EXTRACT_SUFX}
 
