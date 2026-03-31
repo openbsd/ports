@@ -1,0 +1,15 @@
+Index: GNUmakefile
+--- GNUmakefile.orig
++++ GNUmakefile
+@@ -7,6 +7,11 @@ uname_O := $(shell sh -c 'uname -o 2>/dev/null || echo
+ prefix := /usr/local
+ bindir := $(prefix)/bin
+ 
++ifeq ($(uname_S),OpenBSD)
++CFLAGS += -pthread
++LDFLAGS += -pthread
++endif
++
+ ifneq ($(findstring MINGW,$(uname_S)),)
+ win32 = Yep
+ endif

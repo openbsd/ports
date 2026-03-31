@@ -1,0 +1,7 @@
+"cpuid" dumps results from the x86 CPUID instruction, and decodes
+information from certain leaves.
+
+NOTE: the code in this software to bind to a specific CPU is non functional
+on OpenBSD; if you are trying to find information from different cores, you'll
+need to run it multiple times until the process is scheduled on the core of
+interest.

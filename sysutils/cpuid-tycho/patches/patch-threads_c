@@ -1,0 +1,39 @@
+Index: threads.c
+--- threads.c.orig
++++ threads.c
+@@ -49,13 +49,15 @@
+ #include <pthread.h>
+ #include <sched.h>
+ 
+-#elif defined(TARGET_OS_SOLARIS)
++#elif defined(TARGET_OS_SOLARIS) || defined(TARGET_OS_OPENBSD)
+ #include <string.h>
+ #include <unistd.h>
+ #include <errno.h>
+ #include <sys/types.h>
++#if defined(TARGET_OS_SOLARIS)
+ #include <sys/processor.h>
+ #include <sys/procset.h>
++#endif
+ 
+ 
+ #elif defined(TARGET_OS_MACOSX)
+@@ -116,7 +118,7 @@ uint32_t thread_count_native(struct cpuid_state_t *sta
+ 		return 1;
+ 
+ 	return count;
+-#elif defined(TARGET_OS_SOLARIS)
++#elif defined(TARGET_OS_SOLARIS) || defined(TARGET_OS_OPENBSD)
+ 	long count;
+ 
+ 	if ((count = sysconf(_SC_NPROCESSORS_ONLN)) == -1)
+@@ -289,7 +291,8 @@ int thread_bind_native(__unused_variable struct cpuid_
+ 
+ 	return ret == 0 ? 0 : 1;
+ #else
+-#error "thread_bind_native() not defined for this platform"
++#warning "thread_bind_native() not defined for this platform"
++	return 0;
+ #endif
+ }
+ 
