@@ -2,7 +2,7 @@ COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.56.18
+GNOME_VERSION=		0.56.19
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-valadoc=	valadoc-${GNOME_VERSION}
@@ -43,8 +43,8 @@ TEST_DEPENDS=		shells/bash
 SUBST_VARS+=		API_V
 
 # configure: error: flex not found but required
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.18
 CONFIGURE_STYLE=	autoreconf
 
 # multiple dep loops like:
