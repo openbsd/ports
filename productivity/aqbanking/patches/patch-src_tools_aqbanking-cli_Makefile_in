@@ -3,12 +3,13 @@ Do not hardcode -lstdc++
 Index: src/tools/aqbanking-cli/Makefile.in
 --- src/tools/aqbanking-cli/Makefile.in.orig
 +++ src/tools/aqbanking-cli/Makefile.in
-@@ -492,7 +492,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src/libs -I$(top_builddi
- AM_CFLAGS = @visibility_cflags@
+@@ -496,8 +496,7 @@ aqcli_libs = ${abs_top_builddir}/src/libs/cli/libaqcli
  aqbanking_cli_LDADD = \
    $(aqbanking_internal_libs) \
--  $(gwenhywfar_libs) -lstdc++
-+  $(gwenhywfar_libs)
+   $(gwenhywfar_libs) \
+-  $(aqcli_libs) \
+-  -lstdc++
++  $(aqcli_libs)
  
  aqbanking_cli_SOURCES = \
    main.c \
