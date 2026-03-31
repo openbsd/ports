@@ -3,12 +3,11 @@ Don't include user and hostname into build and build verbose.
 Index: .promu.yml
 --- .promu.yml.orig
 +++ .promu.yml
-@@ -16,13 +16,13 @@ build:
+@@ -16,12 +16,13 @@ build:
              - builtinassets
          windows:
              - builtinassets
--    flags: -a
-+    flags: -v -a
++    flags: -v
      ldflags: |
 -        -X github.com/prometheus/common/version.Version={{.Version}}
 -        -X github.com/prometheus/common/version.Revision={{.Revision}}
