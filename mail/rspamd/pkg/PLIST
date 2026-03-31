@@ -3,6 +3,7 @@
 @newuser _rspamd:756:_rspamd::Rspamd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rspamd
 @sample ${ETC}/rspamd/
+bin/mapstats
 @bin bin/rspamadm
 @bin bin/rspamc
 @bin bin/rspamd
@@ -59,6 +60,8 @@ share/examples/rspamd/maps.d/spf_dkim_whitelist.inc
 @sample ${ETC}/rspamd/maps.d/spf_dkim_whitelist.inc
 share/examples/rspamd/maps.d/surbl-whitelist.inc
 @sample ${ETC}/rspamd/maps.d/surbl-whitelist.inc
+share/examples/rspamd/maps.d/suspicious_tlds.inc
+@sample ${ETC}/rspamd/maps.d/suspicious_tlds.inc
 share/examples/rspamd/metrics.conf
 @sample ${ETC}/rspamd/metrics.conf
 share/examples/rspamd/modules.conf
@@ -137,6 +140,8 @@ share/examples/rspamd/modules.d/mx_check.conf
 @sample ${ETC}/rspamd/modules.d/mx_check.conf
 share/examples/rspamd/modules.d/neural.conf
 @sample ${ETC}/rspamd/modules.d/neural.conf
+share/examples/rspamd/modules.d/neural_autolearn.conf
+@sample ${ETC}/rspamd/modules.d/neural_autolearn.conf
 share/examples/rspamd/modules.d/once_received.conf
 @sample ${ETC}/rspamd/modules.d/once_received.conf
 share/examples/rspamd/modules.d/p0f.conf
@@ -308,7 +313,10 @@ share/rspamd/lualib/lua_ffi/linalg.lua
 share/rspamd/lualib/lua_ffi/spf.lua
 share/rspamd/lualib/lua_fuzzy.lua
 share/rspamd/lualib/lua_fuzzy_html.lua
+share/rspamd/lualib/lua_fuzzy_redis.lua
+share/rspamd/lualib/lua_hs_cache.lua
 share/rspamd/lualib/lua_lexer.lua
+share/rspamd/lualib/lua_log_utils.lua
 share/rspamd/lualib/lua_magic/
 share/rspamd/lualib/lua_magic/heuristics.lua
 share/rspamd/lualib/lua_magic/init.lua
@@ -319,6 +327,8 @@ share/rspamd/lualib/lua_maps_expressions.lua
 share/rspamd/lualib/lua_meta.lua
 share/rspamd/lualib/lua_mime.lua
 share/rspamd/lualib/lua_mime_types.lua
+share/rspamd/lualib/lua_neural_external.lua
+share/rspamd/lualib/lua_neural_learn.lua
 share/rspamd/lualib/lua_redis.lua
 share/rspamd/lualib/lua_scanners/
 share/rspamd/lualib/lua_scanners/avast.lua
@@ -367,8 +377,10 @@ share/rspamd/lualib/plugins/dmarc.lua
 share/rspamd/lualib/plugins/neural/
 share/rspamd/lualib/plugins/neural.lua
 share/rspamd/lualib/plugins/neural/providers/
+share/rspamd/lualib/plugins/neural/providers/fasttext_embed.lua
 share/rspamd/lualib/plugins/neural/providers/llm.lua
 share/rspamd/lualib/plugins/neural/providers/symbols.lua
+share/rspamd/lualib/plugins/neural/providers/text_hash.lua
 share/rspamd/lualib/plugins/ratelimit.lua
 share/rspamd/lualib/plugins/rbl.lua
 share/rspamd/lualib/plugins_stats.lua
@@ -378,6 +390,7 @@ share/rspamd/lualib/redis_scripts/bayes_cache_learn.lua
 share/rspamd/lualib/redis_scripts/bayes_classify.lua
 share/rspamd/lualib/redis_scripts/bayes_learn.lua
 share/rspamd/lualib/redis_scripts/bayes_stat.lua
+share/rspamd/lualib/redis_scripts/fuzzy_update.lua
 share/rspamd/lualib/redis_scripts/neural_maybe_invalidate.lua
 share/rspamd/lualib/redis_scripts/neural_maybe_lock.lua
 share/rspamd/lualib/redis_scripts/neural_save_unlock.lua
@@ -386,6 +399,7 @@ share/rspamd/lualib/redis_scripts/ratelimit_check.lua
 share/rspamd/lualib/redis_scripts/ratelimit_cleanup_pending.lua
 share/rspamd/lualib/redis_scripts/ratelimit_update.lua
 share/rspamd/lualib/rspamadm/
+share/rspamd/lualib/rspamadm/autolearnstats.lua
 share/rspamd/lualib/rspamadm/classifier_test.lua
 share/rspamd/lualib/rspamadm/clickhouse.lua
 share/rspamd/lualib/rspamadm/configgraph.lua
@@ -402,7 +416,10 @@ share/rspamd/lualib/rspamadm/fuzzy_ping.lua
 share/rspamd/lualib/rspamadm/fuzzy_stat.lua
 share/rspamd/lualib/rspamadm/grep.lua
 share/rspamd/lualib/rspamadm/keypair.lua
+share/rspamd/lualib/rspamadm/logstats.lua
+share/rspamd/lualib/rspamadm/mapstats.lua
 share/rspamd/lualib/rspamadm/mime.lua
+share/rspamd/lualib/rspamadm/neural_export.lua
 share/rspamd/lualib/rspamadm/neural_test.lua
 share/rspamd/lualib/rspamadm/publicsuffix.lua
 share/rspamd/lualib/rspamadm/ratelimit.lua
