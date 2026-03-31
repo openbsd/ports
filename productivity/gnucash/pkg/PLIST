@@ -407,6 +407,7 @@ share/doc/gnucash/ChangeLog.2021
 share/doc/gnucash/ChangeLog.2022
 share/doc/gnucash/ChangeLog.2023
 share/doc/gnucash/ChangeLog.2024
+share/doc/gnucash/ChangeLog.2025
 share/doc/gnucash/DOCUMENTERS
 share/doc/gnucash/HACKING
 share/doc/gnucash/LICENSE
@@ -1272,8 +1273,6 @@ share/locale/kok/LC_MESSAGES/gnucash.mo
 share/locale/kok@latin/
 share/locale/kok@latin/LC_MESSAGES/
 share/locale/kok@latin/LC_MESSAGES/gnucash.mo
-share/locale/ks/
-share/locale/ks/LC_MESSAGES/
 share/locale/ks/LC_MESSAGES/gnucash.mo
 share/locale/lt/LC_MESSAGES/gnucash.mo
 share/locale/lv/LC_MESSAGES/gnucash.mo
@@ -1306,7 +1305,6 @@ share/locale/ur/LC_MESSAGES/gnucash.mo
 share/locale/vi/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
-share/metainfo/
 share/metainfo/gnucash.appdata.xml
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor

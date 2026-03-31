@@ -1,9 +1,8 @@
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		5.14
+GNOME_VERSION =		5.15
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		3
 
 SHARED_LIBS +=  gnc-core-utils       1.2      # unknown
 SHARED_LIBS +=  gnc-module           1.1      # unknown
@@ -21,13 +20,13 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} aqbanking atk-1.0 boost_atomic-mt
-WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
-WANTLIB += boost_locale-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_thread-mt c cairo cairo-gobject
-WANTLIB += dbi gc gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gtk-3 guile-3.0 gwengui-gtk3 gwenhywfar
-WANTLIB += harfbuzz icui18n icuuc intl javascriptcoregtk-4.1 m
-WANTLIB += ofx pango-1.0 pangocairo-1.0 secret-1 soup-3.0 webkit2gtk-4.1
+WANTLIB += boost_charconv-mt boost_chrono-mt boost_container-mt
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
+WANTLIB += boost_program_options-mt boost_regex-mt boost_thread-mt
+WANTLIB += c cairo cairo-gobject dbi gc gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 guile-3.0 gwengui-gtk3
+WANTLIB += gwenhywfar harfbuzz icui18n icuuc intl javascriptcoregtk-4.1
+WANTLIB += m ofx pango-1.0 pangocairo-1.0 secret-1 soup-3.0 webkit2gtk-4.1
 WANTLIB += xml2 xslt z
 
 COMPILER =		base-clang ports-gcc base-gcc
