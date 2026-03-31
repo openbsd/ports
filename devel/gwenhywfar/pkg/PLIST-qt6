@@ -1,0 +1,12 @@
+@conflict gwenhywfar-<5.14.1
+include/gwenhywfar5/gwen-gui-qt5/
+include/gwenhywfar5/gwen-gui-qt5/qt5_gui.hpp
+include/gwenhywfar5/gwen-gui-qt5/qt5_gui_dialog.hpp
+include/gwenhywfar5/gwen-gui-qt5/qt5dialogbox.hpp
+lib/cmake/gwengui-qt6-5.14/
+lib/cmake/gwengui-qt6-5.14/gwengui-qt6-config-version.cmake
+lib/cmake/gwengui-qt6-5.14/gwengui-qt6-config.cmake
+@static-lib lib/libgwengui-qt6.a
+lib/libgwengui-qt6.la
+@lib lib/libgwengui-qt6.so.${LIBgwengui-qt6_VERSION}
+lib/pkgconfig/gwengui-qt6.pc

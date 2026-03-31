@@ -1,3 +1,4 @@
+@pkgpath devel/gwenhywfar
 @bin bin/gct-tool
 @bin bin/gsa
 @bin bin/gwbuild
@@ -12,12 +13,6 @@ include/gwenhywfar5/gwen-gui-cpp/api.h
 include/gwenhywfar5/gwen-gui-cpp/cppdialog.hpp
 include/gwenhywfar5/gwen-gui-cpp/cppgui.hpp
 include/gwenhywfar5/gwen-gui-cpp/cppwidget.hpp
-include/gwenhywfar5/gwen-gui-gtk3/
-include/gwenhywfar5/gwen-gui-gtk3/gtk3_gui.h
-include/gwenhywfar5/gwen-gui-qt5/
-include/gwenhywfar5/gwen-gui-qt5/qt5_gui.hpp
-include/gwenhywfar5/gwen-gui-qt5/qt5_gui_dialog.hpp
-include/gwenhywfar5/gwen-gui-qt5/qt5dialogbox.hpp
 include/gwenhywfar5/gwenhywfar/
 include/gwenhywfar5/gwenhywfar/args.h
 include/gwenhywfar5/gwenhywfar/base64.h
@@ -163,15 +158,12 @@ include/gwenhywfar5/gwenhywfar/xmlcmd_gxml_fromdb.h
 include/gwenhywfar5/gwenhywfar/xmlcmd_gxml_todb.h
 include/gwenhywfar5/gwenhywfar/xmlctx.h
 include/gwenhywfar5/gwenhywfar/xsdnode.h
-lib/cmake/gwengui-cpp-5.13/
-lib/cmake/gwengui-cpp-5.13/gwengui-cpp-config-version.cmake
-lib/cmake/gwengui-cpp-5.13/gwengui-cpp-config.cmake
-lib/cmake/gwengui-qt5-5.13/
-lib/cmake/gwengui-qt5-5.13/gwengui-qt5-config-version.cmake
-lib/cmake/gwengui-qt5-5.13/gwengui-qt5-config.cmake
-lib/cmake/gwenhywfar-5.13/
-lib/cmake/gwenhywfar-5.13/gwenhywfar-config-version.cmake
-lib/cmake/gwenhywfar-5.13/gwenhywfar-config.cmake
+lib/cmake/gwengui-cpp-5.14/
+lib/cmake/gwengui-cpp-5.14/gwengui-cpp-config-version.cmake
+lib/cmake/gwengui-cpp-5.14/gwengui-cpp-config.cmake
+lib/cmake/gwenhywfar-5.14/
+lib/cmake/gwenhywfar-5.14/gwenhywfar-config-version.cmake
+lib/cmake/gwenhywfar-5.14/gwenhywfar-config.cmake
 lib/gwenhywfar/
 lib/gwenhywfar/plugins/
 lib/gwenhywfar/plugins/79/
@@ -201,17 +193,9 @@ lib/gwenhywfar/plugins/79/dbio/xmldb.xml
 @static-lib lib/libgwengui-cpp.a
 lib/libgwengui-cpp.la
 @lib lib/libgwengui-cpp.so.${LIBgwengui-cpp_VERSION}
-@static-lib lib/libgwengui-gtk3.a
-lib/libgwengui-gtk3.la
-@lib lib/libgwengui-gtk3.so.${LIBgwengui-gtk3_VERSION}
-@static-lib lib/libgwengui-qt5.a
-lib/libgwengui-qt5.la
-@lib lib/libgwengui-qt5.so.${LIBgwengui-qt5_VERSION}
 @static-lib lib/libgwenhywfar.a
 lib/libgwenhywfar.la
 @lib lib/libgwenhywfar.so.${LIBgwenhywfar_VERSION}
-lib/pkgconfig/gwengui-gtk3.pc
-lib/pkgconfig/gwengui-qt5.pc
 lib/pkgconfig/gwenhywfar.pc
 share/aclocal/gwenhywfar.m4
 share/gwenbuild/

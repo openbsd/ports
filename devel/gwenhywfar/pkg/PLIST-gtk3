@@ -1,0 +1,7 @@
+@conflict gwenhywfar-<5.14.1
+include/gwenhywfar5/gwen-gui-gtk3/
+include/gwenhywfar5/gwen-gui-gtk3/gtk3_gui.h
+@static-lib lib/libgwengui-gtk3.a
+lib/libgwengui-gtk3.la
+@lib lib/libgwengui-gtk3.so.${LIBgwengui-gtk3_VERSION}
+lib/pkgconfig/gwengui-gtk3.pc

@@ -1,6 +1,6 @@
-Index: gui/qt5/gwengui-qt5-config.cmake.in
---- gui/qt5/gwengui-qt5-config.cmake.in.orig
-+++ gui/qt5/gwengui-qt5-config.cmake.in
+Index: gui/qt5/gwengui-qt6-config.cmake.in
+--- gui/qt5/gwengui-qt6-config.cmake.in.orig
++++ gui/qt5/gwengui-qt6-config.cmake.in
 @@ -33,7 +33,7 @@ if(WIN32)
  elseif(APPLE)
      set_and_check(${CMAKE_FIND_PACKAGE_NAME}_LIBRARIES "@libdir@/libgwengui-qt@QT_MAJOR_VERSION@.dylib")
