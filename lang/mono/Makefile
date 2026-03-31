@@ -3,10 +3,9 @@ USE_NOBTCFI=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		6.12.0.199
+V=		6.14.1
 
 DISTNAME=	mono-${V}
-REVISION=	4
 
 CATEGORIES=	lang devel
 
@@ -20,7 +19,7 @@ SHARED_LIBS +=  mono-profiler-aot	1.0	# .0.0
 SHARED_LIBS +=  mono-profiler-coverage	0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-log	0.0	# .0.0
 
-HOMEPAGE=	http://www.mono-project.com/
+HOMEPAGE=	https://gitlab.winehq.org/mono/mono
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -29,7 +28,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c execinfo m pthread z
 
-SITES=		https://download.mono-project.com/sources/mono/
+SITES=		https://dl.winehq.org/mono/sources/mono/
 EXTRACT_SUFX=	.tar.xz
 
 MODULES=	lang/mono \
@@ -83,7 +82,7 @@ pre-configure:
 	sed -i -e 's,^prefix=.*,prefix=\@prefix\@,g;' \
 		-e 's,^exec_prefix=.*,exec_prefix=\@prefix\@,g' \
 		${WRKSRC}/data/*.pc.in
-	sed -i -e 's,/usr/bin/env python,${MODPY_BIN},g' \
+	sed -i -e 's,/usr/bin/env python3,${MODPY_BIN},g' \
 		${WRKSRC}/mono/tests/gc-descriptors/gen-descriptor-tests.py
 
 

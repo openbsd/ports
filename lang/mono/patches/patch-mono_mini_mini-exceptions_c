@@ -6,7 +6,7 @@ https://github.com/mono/mono/issues/6359
 Index: mono/mini/mini-exceptions.c
 --- mono/mini/mini-exceptions.c.orig
 +++ mono/mini/mini-exceptions.c
-@@ -3690,7 +3690,7 @@ mono_thread_state_init (MonoThreadUnwindState *ctx)
+@@ -3326,7 +3326,7 @@ mono_thread_state_init (MonoThreadUnwindState *ctx)
  #endif
  
  	ctx->unwind_data [MONO_UNWIND_DATA_DOMAIN] = mono_domain_get ();

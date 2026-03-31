@@ -2,15 +2,8 @@ Index: mono/btls/CMakeLists.txt
 --- mono/btls/CMakeLists.txt.orig
 +++ mono/btls/CMakeLists.txt
 @@ -1,4 +1,4 @@
--cmake_minimum_required (VERSION 2.8.10)
+-cmake_minimum_required (VERSION 2.8.10...4.0)
 +cmake_minimum_required(VERSION 2.8.12...3.20)
  
  project (mono-btls)
  
-@@ -129,4 +129,4 @@ endif ()
- 
- if (CYGWIN)
- 	target_link_libraries (mono-btls-shared wsock32 ws2_32)
--endif ()
-\ No newline at end of file
-+endif ()

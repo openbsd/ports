@@ -1,7 +1,7 @@
 Index: mcs/class/corlib/System/Environment.cs
 --- mcs/class/corlib/System/Environment.cs.orig
 +++ mcs/class/corlib/System/Environment.cs
-@@ -678,7 +678,7 @@ namespace System {
+@@ -677,7 +677,7 @@ namespace System {
  			case SpecialFolder.MyVideos:
  				return ReadXdgUserDir (config, home, "XDG_VIDEOS_DIR", "Videos");
  			case SpecialFolder.CommonTemplates:
@@ -10,7 +10,7 @@ Index: mcs/class/corlib/System/Environment.cs
  			case SpecialFolder.Fonts:
  				if (Platform == PlatformID.MacOSX)
  					return Path.Combine (home, "Library", "Fonts");
-@@ -741,7 +741,7 @@ namespace System {
+@@ -740,7 +740,7 @@ namespace System {
  				return String.Empty;
  			// This is where data common to all users goes
  			case SpecialFolder.CommonApplicationData:

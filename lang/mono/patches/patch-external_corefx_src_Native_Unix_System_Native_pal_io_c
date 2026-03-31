@@ -14,16 +14,16 @@ Index: external/corefx/src/Native/Unix/System.Native/pal_io.c
  #include "pal_compiler.h"
  #include "pal_config.h"
  #include "pal_errno.h"
-@@ -100,7 +102,7 @@ c_static_assert(PAL_DT_BLK == DT_BLK);
- c_static_assert(PAL_DT_REG == DT_REG);
- c_static_assert(PAL_DT_LNK == DT_LNK);
- c_static_assert(PAL_DT_SOCK == DT_SOCK);
--c_static_assert(PAL_DT_WHT == DT_WHT);
-+//c_static_assert(PAL_DT_WHT == DT_WHT); // per comment, AIX doesn't do any of this anyway
+@@ -101,7 +103,7 @@ c_static_assert(PAL_DT_BLK == TO_NODETYPE(DT_BLK));
+ c_static_assert(PAL_DT_REG == TO_NODETYPE(DT_REG));
+ c_static_assert(PAL_DT_LNK == TO_NODETYPE(DT_LNK));
+ c_static_assert(PAL_DT_SOCK == TO_NODETYPE(DT_SOCK));
+-c_static_assert(PAL_DT_WHT == TO_NODETYPE(DT_WHT));
++//c_static_assert(PAL_DT_WHT == TO_NODETYPE(DT_WHT)); // per comment, AIX doesn't do any of this anyway
+ #undef TO_NODETYPE
  #endif
  
- // Validate that our Lock enum value are correct for the platform
-@@ -1421,7 +1423,7 @@ int32_t SystemNative_GetPeerID(intptr_t socket, uid_t*
+@@ -1436,7 +1438,7 @@ int32_t SystemNative_GetPeerID(intptr_t socket, uid_t*
      socklen_t len = sizeof(creds);
      if (getsockopt(fd, SOL_SOCKET, SO_PEERCRED, &creds, &len) == 0)
      {
@@ -32,7 +32,7 @@ Index: external/corefx/src/Native/Unix/System.Native/pal_io.c
          return 0;
      }
      return -1;
-@@ -1450,11 +1452,7 @@ int32_t SystemNative_LockFileRegion(intptr_t fd, int64
+@@ -1465,11 +1467,7 @@ int32_t SystemNative_LockFileRegion(intptr_t fd, int64
          return -1;
      }
  

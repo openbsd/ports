@@ -3,7 +3,7 @@ adapt to the coop-by-default syntax in our port
 Index: mono/profiler/Makefile.am
 --- mono/profiler/Makefile.am.orig
 +++ mono/profiler/Makefile.am
-@@ -36,7 +36,7 @@ suppression_DATA = mono-profiler-coverage.suppression
+@@ -42,7 +42,7 @@ suppression_DATA = mono-profiler-coverage.suppression
  # sampling infrastructure depends on signals being available.
  #
  # See: https://bugzilla.xamarin.com/show_bug.cgi?id=57011
