@@ -65,6 +65,7 @@
      SUBDIR += coreutils
      SUBDIR += cpdup
      SUBDIR += cpuid
+     SUBDIR += cpuid-tycho
      SUBDIR += crashme
      SUBDIR += croc
      SUBDIR += crust
