@@ -1,13 +1,12 @@
 COMMENT=	GDI+ comptible API
 
-DISTNAME=	libgdiplus-6.1
-REVISION=	2
+DISTNAME=	libgdiplus-6.2
 
 CATEGORIES=	x11 devel
 
 SHARED_LIBS +=	gdiplus	2.0	# .0.0
 
-HOMEPAGE=	http://www.mono-project.com/Libgdiplus
+HOMEPAGE=	https://gitlab.winehq.org/mono/libgdiplus
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -23,7 +22,7 @@ WANTLIB += png pthread tiff xcb xcb-render xcb-shm z zstd graphite2
 WANTLIB += ${COMPILER_LIBCXX} ffi gio-2.0 gmodule-2.0 gobject-2.0 z
 WANTLIB += fribidi harfbuzz intl pango-1.0 pangocairo-1.0 pangoft2-1.0
 
-SITES=		http://download.mono-project.com/sources/libgdiplus/
+SITES=		https://dl.winehq.org/mono/sources/libgdiplus/
 
 LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/harfbuzz \
