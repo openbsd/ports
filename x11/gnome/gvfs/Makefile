@@ -5,15 +5,13 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-onedrive=	GVFS mount module for Microsoft OneDrive backend
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.58.2
+GNOME_VERSION=		1.58.4
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-onedrive=	${GNOME_PROJECT}-onedrive-${GNOME_VERSION}
-
-REVISION-main=		0
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
