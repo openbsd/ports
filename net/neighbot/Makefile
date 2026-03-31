@@ -13,6 +13,10 @@ MAINTAINER =	Renaud Allard <renaud@allard.it>
 # BSD
 PERMIT_PACKAGE =	Yes
 
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 # uses pledge() and unveil()
 WANTLIB =		c pcap
 
