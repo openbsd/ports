@@ -1,6 +1,6 @@
 COMMENT=	general purpose multi-paradigm programming language
 
-VERSION=	3.8.2
+VERSION=	3.8.3
 
 DISTNAME=	scala3-${VERSION}
 PKGNAME=	${DISTNAME:S/scala3-/scala-/:S/-RC/rc/}
