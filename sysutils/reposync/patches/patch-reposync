@@ -1,0 +1,12 @@
+Index: reposync
+--- reposync.orig
++++ reposync
+@@ -145,7 +145,7 @@ _t=$(run_rsync --exclude='history*' "${synchost}/CVSRO
+ _e=$?
+ [[ -n $fwduser ]] && case $_t in
+ 	"stdio forwarding failed"*|"Stdio forwarding request failed"*)
+-		err "mirror does not support ssh port-forwarding" ;;
++		err "mirror does not support ssh port-forwarding, or rsync not running" ;;
+ 	"Host key verification failed"*)
+ 		err "host key verification failed - see $rundir/known_hosts" ;;
+ esac
