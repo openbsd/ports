@@ -26,6 +26,8 @@ FLAVORS +=	lua python3
 # bump deps if changing default flavour
 FLAVOR ?=
 
+SUBST_VARS=	P GUI_ONLY
+
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE= gnu
@@ -104,8 +106,6 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 ERRORS=	"Fatal: invalid combination of UI flavours"
 .endif
 
-SUBST_VARS=	P GUI_ONLY
-
 do-gen:
 	cd ${WRKSRC}; ${AUTOCONF_ENV} autoconf
 
@@ -116,9 +116,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/{doc,syntax}
 	${INSTALL_DATA} ${FILESDIR}/openbsd.vim \
 		${PREFIX}/share/vim/vimfiles/syntax/
-.if !empty(GUI_ONLY)
-	rm -f ${PREFIX}/man/{*/,}man1/{e,g,rg}{view,vim,vimdiff}.1
-.endif
 
 fix-plist:
 	@cp pkg/PLIST pkg/PLIST.orig
