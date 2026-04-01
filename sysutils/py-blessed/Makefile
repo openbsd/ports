@@ -1,6 +1,6 @@
 COMMENT=	easy, practical library for making terminal apps
 
-MODPY_DISTV=	1.32.0
+MODPY_DISTV=	1.38.0
 DISTNAME=	blessed-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
