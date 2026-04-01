@@ -1,16 +1,18 @@
-COMMENT = 	gimp plugin for image reparation
+COMMENT =	gimp plugin for image reparation
 
-V = 2.0.3
-GH_ACCOUNT = bootchk
-GH_PROJECT = resynthesizer
-GH_TAGNAME = v$V
+V =		2.0.3
+GH_ACCOUNT =	bootchk
+GH_PROJECT =	resynthesizer
+GH_TAGNAME =	v$V
 
-PKGNAME = 	gimp-resynthesizer-plugin-$V
-REVISION =      0
+PORTROACH =	limit:^2\.
 
-CATEGORIES = 	graphics
+PKGNAME =	gimp-resynthesizer-plugin-$V
+REVISION =      1
 
-HOMEPAGE = http://www.logarithmic.net/pfh/resynthesizer
+CATEGORIES =	graphics
+
+HOMEPAGE =	https://www.logarithmic.net/pfh/resynthesizer
 
 # GPLv2
 PERMIT_PACKAGE = Yes
