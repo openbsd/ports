@@ -5,12 +5,9 @@ COMMENT =	parser generator tool and incremental parsing library
 
 GH_ACCOUNT =		tree-sitter
 GH_PROJECT =		tree-sitter
-# NOTE: neovim-0.11.* only builds with tree-sitter-0.25.x, so only update
-# tree-sitter at the same time as a neovim-0.12.x update (once released).
-# https://github.com/neovim/neovim/issues/36914
-GH_TAGNAME =		v0.25.10
+GH_TAGNAME =		v0.26.8
 
-SHARED_LIBS +=		tree-sitter	5.0 # 0.25.3
+SHARED_LIBS +=		tree-sitter	6.0 # 0.26.8
 
 CATEGORIES =		textproc
 
