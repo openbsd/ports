@@ -1,7 +1,7 @@
 COMMENT =		lightweight and collaborative security engine
 
 MODGO_MODNAME =		github.com/crowdsecurity/crowdsec
-MODGO_VERSION =		v1.7.6
+MODGO_VERSION =		v1.7.7
 
 DISTNAME =		crowdsec-${MODGO_VERSION}
 CATEGORIES =		security
