@@ -1,10 +1,13 @@
-COMMENT = gimp plugin for image reparation
-CATEGORIES = graphics
+COMMENT =	gimp plugin for image reparation
+CATEGORIES =	graphics
 
-V =	3.0
-GH_PROJECT = resynthesizer
-GH_ACCOUNT = bootchk
-GH_TAGNAME = v$V
+V =		3.0
+GH_PROJECT =	resynthesizer
+GH_ACCOUNT =	bootchk
+GH_TAGNAME =	v$V
+REVISION =	0
+
+HOMEPAGE =	https://www.logarithmic.net/pfh/resynthesizer
 
 PKGNAME =	gimp3-resynthesizer-plugin-$V
 
