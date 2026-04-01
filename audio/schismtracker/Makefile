@@ -1,9 +1,9 @@
 COMMENT =	open-source reimplementation of Impulse Tracker
 
-GH_ACCOUNT =	schismtracker
-GH_PROJECT =	schismtracker
-GH_TAGNAME =	20251014
-REVISION =	0
+V =		20251014
+DISTNAME =	schismtracker-${V}.source
+PKGNAME =	${DISTNAME:S/.source//}
+REVISION =	1
 
 CATEGORIES =	audio x11
 
@@ -19,6 +19,8 @@ COMPILER_LANGS =	c
 
 WANTLIB +=	SDL2 X11 c m utf8proc
 
+SITES =		https://github.com/schismtracker/schismtracker/releases/download/${V}/
+
 MODULES =	lang/python
 
 MODPY_RUNDEP =	No
@@ -28,13 +30,14 @@ RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	devel/sdl2 \
 		textproc/libutf8proc
 
-CONFIGURE_STYLE =	autoreconf
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
+WRKDIST =	${WRKDIR}/${PKGNAME}
+
+CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	--enable-sdl2-linking \
 			--with-sdl2 \
 			--without-sdl12 \
+			--without-sdl3 \
 			--without-avformat \
 			--without-flac
 
