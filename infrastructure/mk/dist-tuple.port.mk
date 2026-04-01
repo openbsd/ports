@@ -30,11 +30,7 @@ _subdir =
 _distname ?= ${_project}-${_id:C/^(v|V|ver|[Rr]el|[Rr]elease)[-._]?([0-9])/\2/:S,/,-,g}
 DISTNAME ?= ${_distname}
 _subdir =	refs/tags/
-.      if "${_template}" == "codeberg"
-_DT_WRKDIST ?= ${WRKDIR}/${_project}
-.      else
 _DT_WRKDIST ?= ${WRKDIR}/${_distname}
-.      endif
 .    else
 _DT_WRKDIST ?= ${WRKDIR}/${_project:C,^.*/,,}-${_id}
 .    endif
