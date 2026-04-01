@@ -4,7 +4,7 @@ www/hiawatha.
 Index: include/mbedtls/mbedtls_config.h
 --- include/mbedtls/mbedtls_config.h.orig
 +++ include/mbedtls/mbedtls_config.h
-@@ -2179,7 +2179,7 @@
+@@ -2193,7 +2193,7 @@
   *
   * Uncomment this to enable pthread mutexes.
   */
@@ -13,7 +13,7 @@ Index: include/mbedtls/mbedtls_config.h
  
  /**
   * \def MBEDTLS_USE_PSA_CRYPTO
-@@ -3761,7 +3761,7 @@
+@@ -3775,7 +3775,7 @@
   *
   * Enable this layer to allow use of mutexes within Mbed TLS
   */

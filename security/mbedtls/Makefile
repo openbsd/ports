@@ -2,13 +2,12 @@ PORTROACH=	limit:^3\.6\.
 
 COMMENT=	TLS library with an intuitive API and readable source code
 
-V=		3.6.5
-REVISION=	2
+V=		3.6.6
 DISTNAME=	mbedtls-${V}
 
 # check SOVERSION
-SHARED_LIBS +=  mbedtls		8.0
-SHARED_LIBS +=  mbedcrypto	6.0
+SHARED_LIBS +=  mbedtls		8.1
+SHARED_LIBS +=  mbedcrypto	6.1
 SHARED_LIBS +=  mbedx509	4.0
 
 CATEGORIES=	security
