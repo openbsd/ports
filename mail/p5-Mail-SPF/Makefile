@@ -1,6 +1,6 @@
 COMMENT =		perl oop implementation of Sender Policy Framework
 
-DISTNAME =		Mail-SPF-3.20250505
+DISTNAME =		Mail-SPF-3.20260331
 CATEGORIES =		mail
 
 MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>
@@ -9,6 +9,7 @@ MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
+CPAN_AUTHOR =		MBRADSHAW
 PKG_ARCH =		*
 
 RUN_DEPENDS =		devel/p5-Error \
