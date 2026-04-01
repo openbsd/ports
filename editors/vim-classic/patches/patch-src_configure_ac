@@ -1,7 +1,7 @@
 Index: src/configure.ac
 --- src/configure.ac.orig
 +++ src/configure.ac
-@@ -613,10 +613,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+@@ -607,10 +607,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
  	AC_MSG_RESULT(yes)
        else
  	AC_MSG_RESULT(no)

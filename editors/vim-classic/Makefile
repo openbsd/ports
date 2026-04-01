@@ -1,11 +1,12 @@
 COMMENT=	vi clone with many additional features
 
 V=		8.3.0000
-DIST_TUPLE=	srht sircmpwn vim-classic 2c86ef534c55d9b1e9290cbafb30c4e3227ffc82 .
-PKGNAME=	vim-classic-${V:C/\.0+/./}0pre20260328
+DIST_TUPLE=	srht sircmpwn vim-classic 23cfc94a14fe4a027b63bf4fb290efe7bc2c51b1 .
+PKGNAME=	vim-classic-${V:C/\.0+/./}0pre20260401
 CATEGORIES=	editors
 
-HOMEPAGE=	https://sr.ht/~sircmpwn/vim-classic/
+# https://sr.ht/~sircmpwn/vim-classic/
+HOMEPAGE=	https://vim-classic.org/
 WRKSRC=		${WRKDIST}/src
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -42,14 +43,14 @@ CONFIGURE_ARGS=	--with-tlib="curses" \
 		--enable-perlinterp
 
 # not directly usable with CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.71
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gettext,-tools
 .if defined(DEBUG)
 MAKE_FLAGS +=	STRIP=:
 .endif
 
-P=	vim82
+P=	vim83
 
 .include <bsd.port.arch.mk>
 .if ${FLAVOR:Mlua}
@@ -116,6 +117,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/{doc,syntax}
 	${INSTALL_DATA} ${FILESDIR}/openbsd.vim \
 		${PREFIX}/share/vim/vimfiles/syntax/
+.if ${GUI_ONLY} == ""
+	rm -f ${PREFIX}/man/{*/,}man1/{e,g,rg}{view,vim,vimdiff}.1
+.endif
 
 fix-plist:
 	@cp pkg/PLIST pkg/PLIST.orig
