@@ -1,0 +1,59 @@
+Index: hacks/glx/triangle.c
+--- hacks/glx/triangle.c.orig
++++ hacks/glx/triangle.c
+@@ -15827,7 +15827,7 @@ char **argv;
+     } else {
+       printf("Delaunay");
+     }
+-    printf(" milliseconds:  %ld\n", 1000l * (tv2.tv_sec - tv1.tv_sec) +
++    printf(" milliseconds:  %lld\n", (long long)1000l * (tv2.tv_sec - tv1.tv_sec) +
+            (tv2.tv_usec - tv1.tv_usec) / 1000l);
+   }
+ #endif /* not NO_TIMER */
+@@ -15855,8 +15855,8 @@ char **argv;
+   if (!b.quiet) {
+     gettimeofday(&tv3, &tz);
+     if (b.usesegments && !b.refine) {
+-      printf("Segment milliseconds:  %ld\n",
+-             1000l * (tv3.tv_sec - tv2.tv_sec) +
++      printf("Segment milliseconds:  %lld\n",
++             (long long)1000l * (tv3.tv_sec - tv2.tv_sec) +
+              (tv3.tv_usec - tv2.tv_usec) / 1000l);
+     }
+   }
+@@ -15888,7 +15888,7 @@ char **argv;
+   if (!b.quiet) {
+     gettimeofday(&tv4, &tz);
+     if (b.poly && !b.refine) {
+-      printf("Hole milliseconds:  %ld\n", 1000l * (tv4.tv_sec - tv3.tv_sec) +
++      printf("Hole milliseconds:  %lld\n", (long long)1000l * (tv4.tv_sec - tv3.tv_sec) +
+              (tv4.tv_usec - tv3.tv_usec) / 1000l);
+     }
+   }
+@@ -15905,8 +15905,8 @@ char **argv;
+     gettimeofday(&tv5, &tz);
+ #ifndef CDT_ONLY
+     if (b.quality) {
+-      printf("Quality milliseconds:  %ld\n",
+-             1000l * (tv5.tv_sec - tv4.tv_sec) +
++      printf("Quality milliseconds:  %lld\n",
++             (long long)1000l * (tv5.tv_sec - tv4.tv_sec) +
+              (tv5.tv_usec - tv4.tv_usec) / 1000l);
+     }
+ #endif /* not CDT_ONLY */
+@@ -16050,11 +16050,11 @@ char **argv;
+   if (!b.quiet) {
+ #ifndef NO_TIMER
+     gettimeofday(&tv6, &tz);
+-    printf("\nOutput milliseconds:  %ld\n",
+-           1000l * (tv6.tv_sec - tv5.tv_sec) +
++    printf("\nOutput milliseconds:  %lld\n",
++           (long long)1000l * (tv6.tv_sec - tv5.tv_sec) +
+            (tv6.tv_usec - tv5.tv_usec) / 1000l);
+-    printf("Total running milliseconds:  %ld\n",
+-           1000l * (tv6.tv_sec - tv0.tv_sec) +
++    printf("Total running milliseconds:  %lld\n",
++           (long long)1000l * (tv6.tv_sec - tv0.tv_sec) +
+            (tv6.tv_usec - tv0.tv_usec) / 1000l);
+ #endif /* not NO_TIMER */
+ 

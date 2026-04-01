@@ -26,6 +26,7 @@ libexec/xscreensaver/alienbeacon
 @bin libexec/xscreensaver/barcode
 libexec/xscreensaver/batteredplanet
 @bin libexec/xscreensaver/beats
+libexec/xscreensaver/bestill
 @bin libexec/xscreensaver/binaryhorizon
 @bin libexec/xscreensaver/binaryring
 @bin libexec/xscreensaver/blaster
@@ -40,6 +41,7 @@ libexec/xscreensaver/batteredplanet
 @bin libexec/xscreensaver/braid
 @bin libexec/xscreensaver/bsod
 @bin libexec/xscreensaver/bubble3d
+libexec/xscreensaver/bubblecolors
 @bin libexec/xscreensaver/bumps
 @bin libexec/xscreensaver/cage
 @bin libexec/xscreensaver/carousel
@@ -66,6 +68,7 @@ libexec/xscreensaver/batteredplanet
 @bin libexec/xscreensaver/cwaves
 @bin libexec/xscreensaver/cynosure
 @bin libexec/xscreensaver/dangerball
+libexec/xscreensaver/darktransit
 @bin libexec/xscreensaver/decayscreen
 @bin libexec/xscreensaver/deco
 @bin libexec/xscreensaver/deepstars
@@ -74,8 +77,10 @@ libexec/xscreensaver/batteredplanet
 @bin libexec/xscreensaver/discoball
 @bin libexec/xscreensaver/discrete
 @bin libexec/xscreensaver/distort
+libexec/xscreensaver/downfall
 @bin libexec/xscreensaver/drift
 @comment SEGV at startup @bin libexec/xscreensaver/droste
+libexec/xscreensaver/driftclouds
 @bin libexec/xscreensaver/droste
 @bin libexec/xscreensaver/dumpsterfire
 @bin libexec/xscreensaver/dymaxionmap
@@ -123,6 +128,7 @@ libexec/xscreensaver/gimbalharmonics
 @bin libexec/xscreensaver/glslideshow
 @bin libexec/xscreensaver/glsnake
 @bin libexec/xscreensaver/gltext
+libexec/xscreensaver/goldenapollian
 @bin libexec/xscreensaver/goop
 @bin libexec/xscreensaver/grav
 @bin libexec/xscreensaver/gravitywell
@@ -188,6 +194,7 @@ libexec/xscreensaver/neontriangulator
 @bin libexec/xscreensaver/nerverot
 @bin libexec/xscreensaver/noof
 @bin libexec/xscreensaver/noseguy
+libexec/xscreensaver/noxfire
 @bin libexec/xscreensaver/pacman
 @bin libexec/xscreensaver/papercube
 @bin libexec/xscreensaver/pedal
@@ -206,6 +213,7 @@ libexec/xscreensaver/neontriangulator
 @bin libexec/xscreensaver/polytopes
 @bin libexec/xscreensaver/pong
 @bin libexec/xscreensaver/popsquares
+libexec/xscreensaver/prococean
 @bin libexec/xscreensaver/projectiveplane
 libexec/xscreensaver/protophore
 @bin libexec/xscreensaver/providence
@@ -217,6 +225,7 @@ libexec/xscreensaver/protophore
 @bin libexec/xscreensaver/raverhoop
 @bin libexec/xscreensaver/razzledazzle
 @bin libexec/xscreensaver/rdbomb
+libexec/xscreensaver/rigrekt
 @bin libexec/xscreensaver/ripples
 @bin libexec/xscreensaver/rocks
 @bin libexec/xscreensaver/romanboy
@@ -263,12 +272,15 @@ libexec/xscreensaver/synthwavecity
 @bin libexec/xscreensaver/timetunnel
 @bin libexec/xscreensaver/topblock
 libexec/xscreensaver/topologica
+libexec/xscreensaver/trainmandala
 @bin libexec/xscreensaver/triangle
+libexec/xscreensaver/trizm
 @bin libexec/xscreensaver/tronbit
 @bin libexec/xscreensaver/truchet
 libexec/xscreensaver/truchetzoom
 @bin libexec/xscreensaver/twang
 @bin libexec/xscreensaver/unicrud
+libexec/xscreensaver/universeball
 @bin libexec/xscreensaver/unknownpleasures
 @bin libexec/xscreensaver/vermiculate
 @bin libexec/xscreensaver/vfeedback
@@ -280,6 +292,7 @@ libexec/xscreensaver/webcollage
 @bin libexec/xscreensaver/webcollage-helper
 @bin libexec/xscreensaver/whirlwindwarp
 @bin libexec/xscreensaver/winduprobot
+@bin libexec/xscreensaver/worldpieces
 @bin libexec/xscreensaver/wormhole
 @bin libexec/xscreensaver/xanalogtv
 @bin libexec/xscreensaver/xflame
@@ -318,6 +331,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/barcode.6
 @man man/man6/batteredplanet.6
 @man man/man6/beats.6
+@man man/man6/bestill.6
 @man man/man6/binaryhorizon.6
 @man man/man6/binaryring.6
 @man man/man6/blaster.6
@@ -332,6 +346,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/braid.6
 @man man/man6/bsod.6
 @man man/man6/bubble3d.6
+@man man/man6/bubblecolors.6
 @man man/man6/bumps.6
 @man man/man6/cage.6
 @man man/man6/carousel.6
@@ -357,6 +372,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/cwaves.6
 @man man/man6/cynosure.6
 @man man/man6/dangerball.6
+@man man/man6/darktransit.6
 @man man/man6/decayscreen.6
 @man man/man6/deepstars.6
 @man man/man6/deluxe.6
@@ -364,8 +380,10 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/discoball.6
 @man man/man6/discrete.6
 @man man/man6/distort.6
+@man man/man6/downfall.6
 @man man/man6/drift.6
 @comment SEGV at startup @man man/man6/droste.6
+@man man/man6/driftclouds.6
 @man man/man6/droste.6
 @man man/man6/dymaxionmap.6
 @man man/man6/elementalring.6
@@ -412,6 +430,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/glslideshow.6
 @man man/man6/glsnake.6
 @man man/man6/gltext.6
+@man man/man6/goldenapollian.6
 @man man/man6/goop.6
 @man man/man6/grav.6
 @man man/man6/gravitywell.6
@@ -475,6 +494,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/nerverot.6
 @man man/man6/noof.6
 @man man/man6/noseguy.6
+@man man/man6/noxfire.6
 @man man/man6/pacman.6
 @man man/man6/papercube.6
 @man man/man6/pedal.6
@@ -493,6 +513,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/polytopes.6
 @man man/man6/pong.6
 @man man/man6/popsquares.6
+@man man/man6/prococean.6
 @man man/man6/projectiveplane.6
 @man man/man6/protophore.6
 @man man/man6/providence.6
@@ -504,6 +525,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/raverhoop.6
 @man man/man6/razzledazzle.6
 @man man/man6/rdbomb.6
+@man man/man6/rigrekt.6
 @man man/man6/ripples.6
 @man man/man6/rocks.6
 @man man/man6/romanboy.6
@@ -550,12 +572,15 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/timetunnel.6
 @man man/man6/topblock.6
 @man man/man6/topologica.6
+@man man/man6/trainmandala.6
 @man man/man6/triangle.6
+@man man/man6/trizm.6
 @man man/man6/tronbit.6
 @man man/man6/truchet.6
 @man man/man6/truchetzoom.6
 @man man/man6/twang.6
 @man man/man6/unicrud.6
+@man man/man6/universeball.6
 @man man/man6/unknownpleasures.6
 @man man/man6/vermiculate.6
 @man man/man6/vfeedback.6
@@ -566,6 +591,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/webcollage.6
 @man man/man6/whirlwindwarp.6
 @man man/man6/winduprobot.6
+@man man/man6/worldpieces.6
 @man man/man6/wormhole.6
 @man man/man6/xanalogtv.6
 @man man/man6/xflame.6
@@ -603,6 +629,7 @@ share/applications/screensavers/atunnel.desktop
 share/applications/screensavers/barcode.desktop
 share/applications/screensavers/batteredplanet.desktop
 share/applications/screensavers/beats.desktop
+share/applications/screensavers/bestill.desktop
 share/applications/screensavers/binaryhorizon.desktop
 share/applications/screensavers/binaryring.desktop
 share/applications/screensavers/blaster.desktop
@@ -617,6 +644,7 @@ share/applications/screensavers/boxfit.desktop
 share/applications/screensavers/braid.desktop
 share/applications/screensavers/bsod.desktop
 share/applications/screensavers/bubble3d.desktop
+share/applications/screensavers/bubblecolors.desktop
 share/applications/screensavers/bubbles.desktop
 share/applications/screensavers/bumps.desktop
 share/applications/screensavers/cage.desktop
@@ -646,6 +674,7 @@ share/applications/screensavers/cubocteversion.desktop
 share/applications/screensavers/cwaves.desktop
 share/applications/screensavers/cynosure.desktop
 share/applications/screensavers/dangerball.desktop
+share/applications/screensavers/darktransit.desktop
 share/applications/screensavers/decayscreen.desktop
 share/applications/screensavers/deco.desktop
 share/applications/screensavers/deepstars.desktop
@@ -655,8 +684,10 @@ share/applications/screensavers/discoball.desktop
 share/applications/screensavers/discrete.desktop
 share/applications/screensavers/distort.desktop
 share/applications/screensavers/dnalogo.desktop
+share/applications/screensavers/downfall.desktop
 share/applications/screensavers/drift.desktop
 @comment SEGV at startup share/applications/screensavers/droste.desktop
+share/applications/screensavers/driftclouds.desktop
 share/applications/screensavers/droste.desktop
 share/applications/screensavers/dumpsterfire.desktop
 share/applications/screensavers/dymaxionmap.desktop
@@ -707,6 +738,7 @@ share/applications/screensavers/glschool.desktop
 share/applications/screensavers/glslideshow.desktop
 share/applications/screensavers/glsnake.desktop
 share/applications/screensavers/gltext.desktop
+share/applications/screensavers/goldenapollian.desktop
 share/applications/screensavers/goop.desktop
 share/applications/screensavers/grav.desktop
 share/applications/screensavers/gravitywell.desktop
@@ -780,6 +812,7 @@ share/applications/screensavers/neontriangulator.desktop
 share/applications/screensavers/nerverot.desktop
 share/applications/screensavers/noof.desktop
 share/applications/screensavers/noseguy.desktop
+share/applications/screensavers/noxfire.desktop
 share/applications/screensavers/pacman.desktop
 share/applications/screensavers/papercube.desktop
 share/applications/screensavers/pedal.desktop
@@ -798,6 +831,7 @@ share/applications/screensavers/polyominoes.desktop
 share/applications/screensavers/polytopes.desktop
 share/applications/screensavers/pong.desktop
 share/applications/screensavers/popsquares.desktop
+share/applications/screensavers/prococean.desktop
 share/applications/screensavers/projectiveplane.desktop
 share/applications/screensavers/protophore.desktop
 share/applications/screensavers/providence.desktop
@@ -809,6 +843,7 @@ share/applications/screensavers/queens.desktop
 share/applications/screensavers/raverhoop.desktop
 share/applications/screensavers/razzledazzle.desktop
 share/applications/screensavers/rdbomb.desktop
+share/applications/screensavers/rigrekt.desktop
 share/applications/screensavers/ripples.desktop
 share/applications/screensavers/rocks.desktop
 share/applications/screensavers/romanboy.desktop
@@ -861,12 +896,15 @@ share/applications/screensavers/thornbird.desktop
 share/applications/screensavers/timetunnel.desktop
 share/applications/screensavers/topblock.desktop
 share/applications/screensavers/topologica.desktop
+share/applications/screensavers/trainmandala.desktop
 share/applications/screensavers/triangle.desktop
+share/applications/screensavers/trizm.desktop
 share/applications/screensavers/tronbit.desktop
 share/applications/screensavers/truchet.desktop
 share/applications/screensavers/truchetzoom.desktop
 share/applications/screensavers/twang.desktop
 share/applications/screensavers/unicrud.desktop
+share/applications/screensavers/universeball.desktop
 share/applications/screensavers/unknownpleasures.desktop
 share/applications/screensavers/vermiculate.desktop
 share/applications/screensavers/vfeedback.desktop
@@ -879,6 +917,7 @@ share/applications/screensavers/webcollage.desktop
 share/applications/screensavers/whirlwindwarp.desktop
 share/applications/screensavers/whirlygig.desktop
 share/applications/screensavers/winduprobot.desktop
+share/applications/screensavers/worldpieces.desktop
 share/applications/screensavers/worm.desktop
 share/applications/screensavers/wormhole.desktop
 share/applications/screensavers/xanalogtv.desktop
@@ -918,6 +957,7 @@ share/xscreensaver/config/atunnel.xml
 share/xscreensaver/config/barcode.xml
 share/xscreensaver/config/batteredplanet.xml
 share/xscreensaver/config/beats.xml
+share/xscreensaver/config/bestill.xml
 share/xscreensaver/config/binaryhorizon.xml
 share/xscreensaver/config/binaryring.xml
 share/xscreensaver/config/blaster.xml
@@ -932,6 +972,7 @@ share/xscreensaver/config/boxfit.xml
 share/xscreensaver/config/braid.xml
 share/xscreensaver/config/bsod.xml
 share/xscreensaver/config/bubble3d.xml
+share/xscreensaver/config/bubblecolors.xml
 share/xscreensaver/config/bumps.xml
 share/xscreensaver/config/cage.xml
 share/xscreensaver/config/carousel.xml
@@ -958,6 +999,7 @@ share/xscreensaver/config/cubocteversion.xml
 share/xscreensaver/config/cwaves.xml
 share/xscreensaver/config/cynosure.xml
 share/xscreensaver/config/dangerball.xml
+share/xscreensaver/config/darktransit.xml
 share/xscreensaver/config/decayscreen.xml
 share/xscreensaver/config/deco.xml
 share/xscreensaver/config/deepstars.xml
@@ -966,8 +1008,10 @@ share/xscreensaver/config/demon.xml
 share/xscreensaver/config/discoball.xml
 share/xscreensaver/config/discrete.xml
 share/xscreensaver/config/distort.xml
+share/xscreensaver/config/downfall.xml
 share/xscreensaver/config/drift.xml
 @comment SEGV at startup share/xscreensaver/config/droste.xml
+share/xscreensaver/config/driftclouds.xml
 share/xscreensaver/config/droste.xml
 share/xscreensaver/config/dumpsterfire.xml
 share/xscreensaver/config/dymaxionmap.xml
@@ -1015,6 +1059,7 @@ share/xscreensaver/config/glschool.xml
 share/xscreensaver/config/glslideshow.xml
 share/xscreensaver/config/glsnake.xml
 share/xscreensaver/config/gltext.xml
+share/xscreensaver/config/goldenapollian.xml
 share/xscreensaver/config/goop.xml
 share/xscreensaver/config/grav.xml
 share/xscreensaver/config/gravitywell.xml
@@ -1079,6 +1124,7 @@ share/xscreensaver/config/neontriangulator.xml
 share/xscreensaver/config/nerverot.xml
 share/xscreensaver/config/noof.xml
 share/xscreensaver/config/noseguy.xml
+share/xscreensaver/config/noxfire.xml
 share/xscreensaver/config/pacman.xml
 share/xscreensaver/config/papercube.xml
 share/xscreensaver/config/pedal.xml
@@ -1097,6 +1143,7 @@ share/xscreensaver/config/polyominoes.xml
 share/xscreensaver/config/polytopes.xml
 share/xscreensaver/config/pong.xml
 share/xscreensaver/config/popsquares.xml
+share/xscreensaver/config/prococean.xml
 share/xscreensaver/config/projectiveplane.xml
 share/xscreensaver/config/protophore.xml
 share/xscreensaver/config/providence.xml
@@ -1108,6 +1155,7 @@ share/xscreensaver/config/queens.xml
 share/xscreensaver/config/raverhoop.xml
 share/xscreensaver/config/razzledazzle.xml
 share/xscreensaver/config/rdbomb.xml
+share/xscreensaver/config/rigrekt.xml
 share/xscreensaver/config/ripples.xml
 share/xscreensaver/config/rocks.xml
 share/xscreensaver/config/romanboy.xml
@@ -1154,12 +1202,15 @@ share/xscreensaver/config/tessellimage.xml
 share/xscreensaver/config/timetunnel.xml
 share/xscreensaver/config/topblock.xml
 share/xscreensaver/config/topologica.xml
+share/xscreensaver/config/trainmandala.xml
 share/xscreensaver/config/triangle.xml
+share/xscreensaver/config/trizm.xml
 share/xscreensaver/config/tronbit.xml
 share/xscreensaver/config/truchet.xml
 share/xscreensaver/config/truchetzoom.xml
 share/xscreensaver/config/twang.xml
 share/xscreensaver/config/unicrud.xml
+share/xscreensaver/config/universeball.xml
 share/xscreensaver/config/unknownpleasures.xml
 share/xscreensaver/config/vermiculate.xml
 share/xscreensaver/config/vfeedback.xml
@@ -1170,6 +1221,7 @@ share/xscreensaver/config/wander.xml
 share/xscreensaver/config/webcollage.xml
 share/xscreensaver/config/whirlwindwarp.xml
 share/xscreensaver/config/winduprobot.xml
+share/xscreensaver/config/worldpieces.xml
 share/xscreensaver/config/wormhole.xml
 share/xscreensaver/config/xanalogtv.xml
 share/xscreensaver/config/xflame.xml
