@@ -11,7 +11,7 @@ EMBED_LUAJIT =	No
 
 COMMENT =	continuation and extension of Vim
 
-DIST_TUPLE =	github neovim neovim v0.11.6 .
+DIST_TUPLE =	github neovim neovim v0.12.0 .
 
 # embedded luajit
 USE_NOBTCFI =	Yes
@@ -22,22 +22,22 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # The versions listed here must match those in cmake.deps/deps.txt.
 STATIC_DEPS_WRKSRC =		${WRKDIST}/static-deps/
-DIST_TUPLE +=	github luvit luv 1.50.0-1 ${STATIC_DEPS_WRKSRC}/luv
-DIST_TUPLE +=	github LuaJIT LuaJIT 538a82133ad6fddfd0ca64de167c4aca3bc1a2da \
+DIST_TUPLE +=	github luvit luv 1.52.1-0 ${STATIC_DEPS_WRKSRC}/luv
+DIST_TUPLE +=	github LuaJIT LuaJIT fbb36bb6bfa88716a47c58bcf9ce9f2ef752abac \
 		${STATIC_DEPS_WRKSRC}/luajit
 DIST_TUPLE +=	github keplerproject lua-compat-5.3 v0.13 \
 		${STATIC_DEPS_WRKSRC}/lua-compat-5.3
 DIST_TUPLE +=	github tree-sitter tree-sitter-c v0.24.1 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_c
-DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-lua v0.4.0 \
+DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-lua v0.5.0 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_lua
-DIST_TUPLE +=	github neovim tree-sitter-vim v0.7.0 \
+DIST_TUPLE +=	github neovim tree-sitter-vim v0.8.1 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_vim
-DIST_TUPLE +=	github neovim tree-sitter-vimdoc v4.0.0 \
+DIST_TUPLE +=	github neovim tree-sitter-vimdoc v4.1.0 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_vimdoc
-DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-query v0.6.2 \
+DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-query v0.8.0 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_query
-DIST_TUPLE +=	github MDeiml tree-sitter-markdown v0.5.0 \
+DIST_TUPLE +=	github MDeiml tree-sitter-markdown v0.5.3 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_markdown
 
 # Neovim: Apache 2.0 + Vim License
@@ -77,7 +77,7 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libuv \
 			devel/unibilium \
 			textproc/libutf8proc \
-			textproc/tree-sitter>=0.25.3
+			textproc/tree-sitter>=0.26.7
 
 RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main \
@@ -203,8 +203,10 @@ pre-configure:
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.
 #
-# Test_language_cmd fails due to:
-# https://github.com/neovim/neovim/issues/19331
+# 3 tests FAIL for Neovim 0.12.0
+# Found errors in Test_tar_basic():
+# Found errors in Test_tar_evil():
+# Found errors in Test_tar_path_traversal_with_nowrapscan():
 do-test:
 	true
 	${SETENV} LC_CTYPE=en_US.UTF-8 \
