@@ -1,6 +1,6 @@
 COMMENT=	elegant and simple HTTP library for Python
 
-MODPY_DISTV=	2.33.0
+MODPY_DISTV=	2.33.1
 DISTNAME=	requests-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
