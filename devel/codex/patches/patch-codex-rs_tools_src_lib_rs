@@ -1,0 +1,15 @@
+Index: codex-rs/tools/src/lib.rs
+--- codex-rs/tools/src/lib.rs.orig
++++ codex-rs/tools/src/lib.rs
+@@ -34,8 +34,11 @@ pub use agent_tool::create_spawn_agent_tool_v2;
+ pub use agent_tool::create_wait_agent_tool_v1;
+ pub use agent_tool::create_wait_agent_tool_v2;
+ pub use code_mode::augment_tool_spec_for_code_mode;
++#[cfg(not(target_os = "openbsd"))]
+ pub use code_mode::create_code_mode_tool;
++#[cfg(not(target_os = "openbsd"))]
+ pub use code_mode::create_wait_tool;
++#[cfg(not(target_os = "openbsd"))]
+ pub use code_mode::tool_spec_to_code_mode_tool_definition;
+ pub use dynamic_tool::parse_dynamic_tool;
+ pub use js_repl_tool::create_js_repl_reset_tool;

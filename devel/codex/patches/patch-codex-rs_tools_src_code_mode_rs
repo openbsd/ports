@@ -1,0 +1,72 @@
+Index: codex-rs/tools/src/code_mode.rs
+--- codex-rs/tools/src/code_mode.rs.orig
++++ codex-rs/tools/src/code_mode.rs
+@@ -1,13 +1,21 @@
++use crate::ToolSpec;
++#[cfg(not(target_os = "openbsd"))]
+ use crate::FreeformTool;
++#[cfg(not(target_os = "openbsd"))]
+ use crate::FreeformToolFormat;
++#[cfg(not(target_os = "openbsd"))]
+ use crate::JsonSchema;
++#[cfg(not(target_os = "openbsd"))]
+ use crate::ResponsesApiTool;
+-use crate::ToolSpec;
++#[cfg(not(target_os = "openbsd"))]
+ use codex_code_mode::CodeModeToolKind;
++#[cfg(not(target_os = "openbsd"))]
+ use codex_code_mode::ToolDefinition as CodeModeToolDefinition;
++#[cfg(not(target_os = "openbsd"))]
+ use std::collections::BTreeMap;
+ 
+ /// Augment tool descriptions with code-mode-specific exec samples.
++#[cfg(not(target_os = "openbsd"))]
+ pub fn augment_tool_spec_for_code_mode(spec: ToolSpec) -> ToolSpec {
+     let Some(description) = code_mode_tool_definition_for_spec(&spec)
+         .map(codex_code_mode::augment_tool_definition)
+@@ -29,14 +37,21 @@ pub fn augment_tool_spec_for_code_mode(spec: ToolSpec)
+     }
+ }
+ 
++#[cfg(target_os = "openbsd")]
++pub fn augment_tool_spec_for_code_mode(spec: ToolSpec) -> ToolSpec {
++    spec
++}
++
+ /// Convert a supported nested tool spec into the code-mode runtime shape,
+ /// including the code-mode-specific description sample.
++#[cfg(not(target_os = "openbsd"))]
+ pub fn tool_spec_to_code_mode_tool_definition(spec: &ToolSpec) -> Option<CodeModeToolDefinition> {
+     let definition = code_mode_tool_definition_for_spec(spec)?;
+     codex_code_mode::is_code_mode_nested_tool(&definition.name)
+         .then(|| codex_code_mode::augment_tool_definition(definition))
+ }
+ 
++#[cfg(not(target_os = "openbsd"))]
+ pub fn create_wait_tool() -> ToolSpec {
+     let properties = BTreeMap::from([
+         (
+@@ -88,6 +103,7 @@ pub fn create_wait_tool() -> ToolSpec {
+     })
+ }
+ 
++#[cfg(not(target_os = "openbsd"))]
+ pub fn create_code_mode_tool(
+     enabled_tools: &[(String, String)],
+     code_mode_only_enabled: bool,
+@@ -116,6 +132,7 @@ SOURCE: /[\s\S]+/
+     })
+ }
+ 
++#[cfg(not(target_os = "openbsd"))]
+ fn code_mode_tool_definition_for_spec(spec: &ToolSpec) -> Option<CodeModeToolDefinition> {
+     match spec {
+         ToolSpec::Function(tool) => Some(CodeModeToolDefinition {
+@@ -139,6 +156,6 @@ fn code_mode_tool_definition_for_spec(spec: &ToolSpec)
+     }
+ }
+ 
+-#[cfg(test)]
++#[cfg(all(test, not(target_os = "openbsd")))]
+ #[path = "code_mode_tests.rs"]
+ mod tests;

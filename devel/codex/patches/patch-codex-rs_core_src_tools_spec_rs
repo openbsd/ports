@@ -1,7 +1,7 @@
 Index: codex-rs/core/src/tools/spec.rs
 --- codex-rs/core/src/tools/spec.rs.orig
 +++ codex-rs/core/src/tools/spec.rs
-@@ -9,7 +9,9 @@ use crate::models_manager::collaboration_mode_presets:
+@@ -5,7 +5,9 @@ use crate::mcp_connection_manager::ToolInfo;
  use crate::original_image_detail::can_request_original_image_detail;
  use crate::shell::Shell;
  use crate::shell::ShellType;
@@ -9,9 +9,30 @@ Index: codex-rs/core/src/tools/spec.rs
  use crate::tools::code_mode::PUBLIC_TOOL_NAME;
 +#[cfg(not(target_os = "openbsd"))]
  use crate::tools::code_mode::WAIT_TOOL_NAME;
- use crate::tools::code_mode_description::augment_tool_spec_for_code_mode;
- use crate::tools::discoverable::DiscoverablePluginInfo;
-@@ -389,7 +391,10 @@ impl ToolsConfig {
+ use crate::tools::handlers::PLAN_TOOL;
+ use crate::tools::handlers::TOOL_SEARCH_DEFAULT_LIMIT;
+@@ -49,6 +51,7 @@ use codex_tools::augment_tool_spec_for_code_mode;
+ use codex_tools::create_assign_task_tool;
+ use codex_tools::create_close_agent_tool_v1;
+ use codex_tools::create_close_agent_tool_v2;
++#[cfg(not(target_os = "openbsd"))]
+ use codex_tools::create_code_mode_tool;
+ use codex_tools::create_exec_command_tool;
+ use codex_tools::create_js_repl_reset_tool;
+@@ -75,10 +78,12 @@ use codex_tools::create_tool_suggest_tool;
+ use codex_tools::create_view_image_tool;
+ use codex_tools::create_wait_agent_tool_v1;
+ use codex_tools::create_wait_agent_tool_v2;
++#[cfg(not(target_os = "openbsd"))]
+ use codex_tools::create_wait_tool;
+ use codex_tools::create_write_stdin_tool;
+ use codex_tools::dynamic_tool_to_responses_api_tool;
+ use codex_tools::mcp_tool_to_responses_api_tool;
++#[cfg(not(target_os = "openbsd"))]
+ use codex_tools::tool_spec_to_code_mode_tool_definition;
+ use codex_utils_absolute_path::AbsolutePathBuf;
+ use serde::Deserialize;
+@@ -208,7 +213,10 @@ impl ToolsConfig {
              windows_sandbox_level,
          } = params;
          let include_apply_patch_tool = features.enabled(Feature::ApplyPatchFreeform);
@@ -22,23 +43,7 @@ Index: codex-rs/core/src/tools/spec.rs
          let include_code_mode_only = include_code_mode && features.enabled(Feature::CodeModeOnly);
          let include_js_repl = features.enabled(Feature::JsRepl);
          let include_js_repl_tools_only =
-@@ -856,6 +861,7 @@ fn create_write_stdin_tool() -> ToolSpec {
-     })
- }
- 
-+#[cfg(not(target_os = "openbsd"))]
- fn create_wait_tool() -> ToolSpec {
-     let properties = BTreeMap::from([
-         (
-@@ -2237,6 +2243,7 @@ fn create_js_repl_reset_tool() -> ToolSpec {
-     })
- }
- 
-+#[cfg(not(target_os = "openbsd"))]
- fn create_code_mode_tool(
-     enabled_tools: &[(String, String)],
-     code_mode_only_enabled: bool,
-@@ -2656,7 +2663,9 @@ pub(crate) fn build_specs_with_discoverable_tools(
+@@ -407,7 +415,9 @@ pub(crate) fn build_specs_with_discoverable_tools(
      dynamic_tools: &[DynamicToolSpec],
  ) -> ToolRegistryBuilder {
      use crate::tools::handlers::ApplyPatchHandler;
@@ -48,7 +53,7 @@ Index: codex-rs/core/src/tools/spec.rs
      use crate::tools::handlers::CodeModeWaitHandler;
      use crate::tools::handlers::DynamicToolHandler;
      use crate::tools::handlers::JsReplHandler;
-@@ -2703,12 +2712,15 @@ pub(crate) fn build_specs_with_discoverable_tools(
+@@ -454,12 +464,15 @@ pub(crate) fn build_specs_with_discoverable_tools(
          default_mode_request_user_input: config.default_mode_request_user_input,
      });
      let tool_suggest_handler = Arc::new(ToolSuggestHandler);

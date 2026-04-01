@@ -3,7 +3,7 @@ NOT_FOR_ARCHS = 	sparc64
 
 COMMENT =		OpenAI terminal-based coding agent
 
-V =			0.117.0
+V =			0.118.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}

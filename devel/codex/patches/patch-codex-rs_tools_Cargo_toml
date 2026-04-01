@@ -1,0 +1,11 @@
+Index: codex-rs/tools/Cargo.toml
+--- codex-rs/tools/Cargo.toml.orig
++++ codex-rs/tools/Cargo.toml
+@@ -9,7 +9,6 @@ workspace = true
+ 
+ [dependencies]
+ codex-app-server-protocol = { workspace = true }
+-codex-code-mode = { workspace = true }
+ codex-protocol = { workspace = true }
+ rmcp = { workspace = true, default-features = false, features = [
+     "base64",

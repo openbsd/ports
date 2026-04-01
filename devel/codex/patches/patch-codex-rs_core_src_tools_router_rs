@@ -8,7 +8,7 @@ Index: codex-rs/core/src/tools/router.rs
 -            specs
 -                .iter()
 -                .filter_map(|configured_tool| {
--                    if !codex_code_mode::is_code_mode_nested_tool(configured_tool.spec.name()) {
+-                    if !codex_code_mode::is_code_mode_nested_tool(configured_tool.name()) {
 -                        Some(configured_tool.spec.clone())
 -                    } else {
 -                        None
@@ -20,7 +20,7 @@ Index: codex-rs/core/src/tools/router.rs
 +                specs
 +                    .iter()
 +                    .filter_map(|configured_tool| {
-+                        if !codex_code_mode::is_code_mode_nested_tool(configured_tool.spec.name()) {
++                        if !codex_code_mode::is_code_mode_nested_tool(configured_tool.name()) {
 +                            Some(configured_tool.spec.clone())
 +                        } else {
 +                            None

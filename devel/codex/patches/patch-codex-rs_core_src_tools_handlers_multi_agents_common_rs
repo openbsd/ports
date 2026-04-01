@@ -1,7 +1,7 @@
 Index: codex-rs/core/src/tools/handlers/multi_agents_common.rs
 --- codex-rs/core/src/tools/handlers/multi_agents_common.rs.orig
 +++ codex-rs/core/src/tools/handlers/multi_agents_common.rs
-@@ -266,6 +266,7 @@ pub(crate) fn apply_spawn_agent_runtime_overrides(
+@@ -250,6 +250,7 @@ pub(crate) fn apply_spawn_agent_runtime_overrides(
              FunctionCallError::RespondToModel(format!("approval_policy is invalid: {err}"))
          })?;
      config.permissions.shell_environment_policy = turn.shell_environment_policy.clone();
