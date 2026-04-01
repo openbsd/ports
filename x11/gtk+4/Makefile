@@ -5,7 +5,7 @@ COMMENT-demos=		gtk+4 demo programs
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.22.1
+GNOME_VERSION=		4.22.2
 
 # gtk+4 wants librsvg 2.48+ (rust-only), but if not available it is prepared
 # to fallback to 2.40.23. there's no actual release of 2.40.23 yet, so use
@@ -20,7 +20,7 @@ PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     5.6 # 1.2200.1
+SHARED_LIBS += gtk-4                     5.6 # 1.2200.2
 
 HOMEPAGE=		http://www.gtk.org/
 
