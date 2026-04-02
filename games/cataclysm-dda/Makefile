@@ -1,3 +1,5 @@
+BROKEN-sparc64= strtoll_l strtoull_l strtod_l strtof_l not declared this scope
+
 COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
 
