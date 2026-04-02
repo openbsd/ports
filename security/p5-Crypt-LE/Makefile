@@ -1,6 +1,7 @@
 COMMENT =	Let's Encrypt API interfacing module and client
 
 DISTNAME =	Crypt-LE-0.39
+REVISION =	0
 
 CATEGORIES =	security
 

@@ -1,0 +1,15 @@
+Crypt::OpenSSL::RSA version 0.35 makes the use of PKCS#1 v1.5 padding
+a fatal error.  Replace with PSS padding.
+
+Index: lib/Crypt/LE.pm
+--- lib/Crypt/LE.pm.orig
++++ lib/Crypt/LE.pm
+@@ -651,7 +651,7 @@ sub _set_key {
+     my $pem = $key->get_private_key_string;
+     my ($n, $e) = $key->get_key_parameters;
+     return $self->_status(INVALID_DATA, "Key modulus is divisible by a small prime and will be rejected.") if $self->_is_divisible($n);
+-    $key->use_pkcs1_padding;
++    $key->use_pkcs1_pss_padding;
+     $key->use_sha256_hash;
+     $self->{key_params} = { n => $n, e => $e };
+     $self->{key} = $key;
