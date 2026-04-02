@@ -1,14 +1,14 @@
 COMMENT =	provide an interface to create pseudo ttys
 
-DISTNAME =	IO-Tty-1.21
+DISTNAME =	IO-Tty-1.25
+CPAN_AUTHOR =	TODDR
+
 CATEGORIES =	devel
 
-REVISION = 	0
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
-
-CPAN_AUTHOR =		TODDR
 
 WANTLIB =		c perl util
 
