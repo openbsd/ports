@@ -11,9 +11,9 @@ Index: cli/src/commands/bisect/run.rs
  use crate::command_error::user_error;
  use crate::command_error::user_error_with_message;
  use crate::complete;
-@@ -240,9 +239,7 @@ fn evaluate_commit(
-         format!("Updated to revision {commit_id_hex} for bisection"),
-     )?;
+@@ -255,9 +254,7 @@ async fn evaluate_commit(
+     )
+     .await?;
  
 -    let jj_executable_path = std::env::current_exe().map_err(|err| {
 -        internal_error_with_message("Could not get path for the jj executable", err)
