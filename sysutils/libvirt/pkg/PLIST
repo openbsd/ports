@@ -47,9 +47,6 @@ lib/pkgconfig/libvirt-admin.pc
 lib/pkgconfig/libvirt-lxc.pc
 lib/pkgconfig/libvirt-qemu.pc
 lib/pkgconfig/libvirt.pc
-lib/systemd/
-lib/systemd/system/
-lib/systemd/system/virt-secret-init-encryption.service
 lib/sysusers.d/
 lib/sysusers.d/libvirt-qemu.conf
 lib/sysusers.d/libvirt.conf
