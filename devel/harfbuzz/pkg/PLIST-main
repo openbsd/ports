@@ -1,4 +1,5 @@
 @pkgpath devel/harfbuzz
+@bin bin/hb-gpu
 @bin bin/hb-info
 @bin bin/hb-raster
 @bin bin/hb-shape
@@ -23,6 +24,7 @@ include/harfbuzz/hb-glib.h
 include/harfbuzz/hb-gobject-enums.h
 include/harfbuzz/hb-gobject-structs.h
 include/harfbuzz/hb-gobject.h
+include/harfbuzz/hb-gpu.h
 include/harfbuzz/hb-graphite2.h
 include/harfbuzz/hb-map.h
 include/harfbuzz/hb-ot-color.h
@@ -55,12 +57,14 @@ lib/cmake/harfbuzz/harfbuzz-config.cmake
 lib/girepository-1.0/HarfBuzz-0.0.typelib
 @lib lib/libharfbuzz-cairo.so.${LIBharfbuzz-cairo_VERSION}
 @lib lib/libharfbuzz-gobject.so.${LIBharfbuzz-gobject_VERSION}
+@lib lib/libharfbuzz-gpu.so.${LIBharfbuzz-gpu_VERSION}
 @lib lib/libharfbuzz-raster.so.${LIBharfbuzz-raster_VERSION}
 @lib lib/libharfbuzz-subset.so.${LIBharfbuzz-subset_VERSION}
 @lib lib/libharfbuzz-vector.so.${LIBharfbuzz-vector_VERSION}
 @lib lib/libharfbuzz.so.${LIBharfbuzz_VERSION}
 lib/pkgconfig/harfbuzz-cairo.pc
 lib/pkgconfig/harfbuzz-gobject.pc
+lib/pkgconfig/harfbuzz-gpu.pc
 lib/pkgconfig/harfbuzz-raster.pc
 lib/pkgconfig/harfbuzz-subset.pc
 lib/pkgconfig/harfbuzz-vector.pc
