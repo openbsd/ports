@@ -1,6 +1,7 @@
 COMMENT =		sound and music computing system
 
 DIST_TUPLE =		github csound csound 7.0.0-beta.14 .
+REVISION =		0
 
 PKGNAME =		csound-7.0.0beta14
 
@@ -13,7 +14,7 @@ HOMEPAGE =		https://csound.com
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c curl execinfo intl m portaudio
+WANTLIB += ${COMPILER_LIBCXX} c curl execinfo intl lo m portaudio
 WANTLIB += portmidi pulse pulse-mainloop-glib pulse-simple samplerate
 WANTLIB += sndfile
 
@@ -34,7 +35,8 @@ BUILD_DEPENDS =		devel/bison \
 			devel/gettext,-tools \
 			devel/gtest
 
-LIB_DEPENDS =		audio/libsamplerate \
+LIB_DEPENDS =		audio/liblo \
+			audio/libsamplerate \
 			audio/libsndfile \
 			audio/portaudio-svn \
 			audio/portmidi \

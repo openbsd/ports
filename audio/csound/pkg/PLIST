@@ -71,11 +71,13 @@ lib/csound/
 lib/csound/plugins64-7.0/
 @so lib/csound/plugins64-7.0/libdeprecated.so
 @so lib/csound/plugins64-7.0/libipmidi.so
+@so lib/csound/plugins64-7.0/libosc.so
 @so lib/csound/plugins64-7.0/libpmidi.so
 @so lib/csound/plugins64-7.0/librtpa.so
 @so lib/csound/plugins64-7.0/librtpulse.so
 @so lib/csound/plugins64-7.0/libstdutil.so
 @comment @static-lib lib/libcsound64.a
+@static-lib lib/libcsound64.a
 @lib lib/libcsound64.so.${LIBcsound64_VERSION}
 lib/pkgconfig/csound.pc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
