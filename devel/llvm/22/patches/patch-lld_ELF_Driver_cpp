@@ -155,7 +155,7 @@ Index: lld/ELF/Driver.cpp
  // Parses --image-base option.
  static std::optional<uint64_t> getImageBase(Ctx &ctx, opt::InputArgList &args) {
    // Because we are using `ctx.arg.maxPageSize` here, this function has to be
-@@ -3428,6 +3483,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
+@@ -3435,6 +3490,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
    // optimizations such as DATA_SEGMENT_ALIGN in linker scripts. LLD's use of it
    // is limited to writing trap instructions on the last executable segment.
    ctx.arg.commonPageSize = getCommonPageSize(ctx, args);

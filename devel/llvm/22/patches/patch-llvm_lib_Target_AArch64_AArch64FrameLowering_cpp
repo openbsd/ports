@@ -9,7 +9,7 @@ Index: llvm/lib/Target/AArch64/AArch64FrameLowering.cpp
  #include "AArch64SMEAttributes.h"
  #include "AArch64Subtarget.h"
  #include "MCTargetDesc/AArch64AddressingModes.h"
-@@ -2511,6 +2512,10 @@ void AArch64FrameLowering::determineCalleeSaves(Machin
+@@ -2521,6 +2522,10 @@ void AArch64FrameLowering::determineCalleeSaves(Machin
    MCRegister BasePointerReg =
        RegInfo->hasBasePointer(MF) ? RegInfo->getBaseRegister() : MCRegister();
  
@@ -20,7 +20,7 @@ Index: llvm/lib/Target/AArch64/AArch64FrameLowering.cpp
    unsigned ExtraCSSpill = 0;
    bool HasUnpairedGPR64 = false;
    bool HasPairZReg = false;
-@@ -3538,6 +3543,10 @@ unsigned AArch64FrameLowering::getWinEHFuncletFrameSiz
+@@ -3548,6 +3553,10 @@ unsigned AArch64FrameLowering::getWinEHFuncletFrameSiz
    // This is the amount of stack a funclet needs to allocate.
    return alignTo(CSSize + MF.getFrameInfo().getMaxCallFrameSize(),
                   getStackAlign());
