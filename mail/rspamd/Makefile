@@ -2,13 +2,15 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	4.0.0
+GH_TAGNAME=	3.14.3
 
 CATEGORIES=	mail
 
 HOMEPAGE=	https://rspamd.com/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
+
+EPOCH=		0
 
 # Apache License 2.0
 PERMIT_PACKAGE=	Yes
