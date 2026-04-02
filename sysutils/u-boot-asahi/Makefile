@@ -15,6 +15,10 @@ HOMEPAGE=	https://github.com/AsahiLinux/u-boot
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
+# C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 BUILD_DEPENDS=	devel/bison \
 		devel/dtc \
 		devel/arm-none-eabi/gcc,aarch64
