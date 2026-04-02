@@ -53,7 +53,8 @@ SHA256 (go_modules/golang.org/x/net/@v/v0.0.0-20201021035429-f5854403a974.mod) =
 SHA256 (go_modules/golang.org/x/net/@v/v0.0.0-20201021035429-f5854403a974.zip) = B5tIT9a+9zBdbKWi4LhoaQQkWcaxhTWHMBXxkzgKSxg=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.0.0-20190423024810-112230192c58.mod) = Qh9hOWhtWJHz3FpWPQmVeA0yefZcrU0iXOpSaGeUFhw=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.0.0-20201020160332-67f06af15bc9.mod) = Qh9hOWhtWJHz3FpWPQmVeA0yefZcrU0iXOpSaGeUFhw=
-SHA256 (go_modules/golang.org/x/sync/@v/v0.0.0-20201020160332-67f06af15bc9.zip) = piww+eRsKGNiOQQde/oVg6JDeLxAhVTsBnAZbLrJhY4=
+SHA256 (go_modules/golang.org/x/sync/@v/v0.20.0.mod) = o+KedgYL1WEGBFSx+ivc1mZ09gycqTgzuBBjVeNMYDw=
+SHA256 (go_modules/golang.org/x/sync/@v/v0.20.0.zip) = cXnU1ogA9v3K251LvxHLtd+bQDYMiTBcID/iByPL03U=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20190215142949-d0b11bdaac8a.mod) = iWkRXko5EIhIMk55ob2KhEUjDm46rMvp+AV/tQ//yME=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20190412213103-97732733099d.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20200930185726-fdedc70b468f.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
@@ -85,7 +86,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHd
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
 SHA256 (go_modules/gotest.tools/v3/@v/v3.3.0.mod) = IUtog2bXo+3KQa37T1dFP5Alf+Ln/9IxqzAYZgvpGWw=
 SHA256 (go_modules/gotest.tools/v3/@v/v3.3.0.zip) = nNxAr7Wv4kvn7FxuxbNpaSxv0IFxPcGOZ0ApGwCDhD0=
-SHA256 (moor-v2.11.1.zip) = h0mhmPiqciz51SsR0e1taxWwxEymncxeR6ndDTNk65s=
+SHA256 (moor-v2.12.0.zip) = 7k/FTw0N4coHJu63yJZLK43Re003kNZ0z/TemJnHtRs=
 SIZE (go_modules/github.com/adrg/xdg/@v/v0.5.3.mod) = 258
 SIZE (go_modules/github.com/adrg/xdg/@v/v0.5.3.zip) = 37913
 SIZE (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.mod) = 133
@@ -141,7 +142,8 @@ SIZE (go_modules/golang.org/x/net/@v/v0.0.0-20201021035429-f5854403a974.mod) = 1
 SIZE (go_modules/golang.org/x/net/@v/v0.0.0-20201021035429-f5854403a974.zip) = 1503642
 SIZE (go_modules/golang.org/x/sync/@v/v0.0.0-20190423024810-112230192c58.mod) = 25
 SIZE (go_modules/golang.org/x/sync/@v/v0.0.0-20201020160332-67f06af15bc9.mod) = 25
-SIZE (go_modules/golang.org/x/sync/@v/v0.0.0-20201020160332-67f06af15bc9.zip) = 28627
+SIZE (go_modules/golang.org/x/sync/@v/v0.20.0.mod) = 36
+SIZE (go_modules/golang.org/x/sync/@v/v0.20.0.zip) = 25681
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20190215142949-d0b11bdaac8a.mod) = 24
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20190412213103-97732733099d.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20200930185726-fdedc70b468f.mod) = 33
@@ -173,4 +175,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/gotest.tools/v3/@v/v3.3.0.mod) = 189
 SIZE (go_modules/gotest.tools/v3/@v/v3.3.0.zip) = 98546
-SIZE (moor-v2.11.1.zip) = 5463019
+SIZE (moor-v2.12.0.zip) = 5464228
