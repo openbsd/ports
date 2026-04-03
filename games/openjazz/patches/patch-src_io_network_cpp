@@ -3,7 +3,7 @@ Missing netinet/in.h and sys/select.h
 Index: src/io/network.cpp
 --- src/io/network.cpp.orig
 +++ src/io/network.cpp
-@@ -43,6 +43,8 @@
+@@ -45,6 +45,8 @@
  			#define EWOULDBLOCK WSAEWOULDBLOCK
  		#endif
  	#else

@@ -3,10 +3,10 @@ CATEGORIES =	games x11
 
 GH_ACCOUNT =	AlisterT
 GH_PROJECT =	openjazz
-GH_TAGNAME =	20231028
-REVISION =	0
+GH_TAGNAME =	20260301
 
 HOMEPAGE =	http://www.alister.eu/jazz/oj/
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -24,5 +24,7 @@ LIB_DEPENDS =	devel/sdl2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
+
+CONFIGURE_ARGS +=	-DGIT_TAG=${GH_TAGNAME}
 
 .include <bsd.port.mk>
