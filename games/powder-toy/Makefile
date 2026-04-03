@@ -1,11 +1,10 @@
 COMMENT =		physics sandbox simulation
 
-V =			99.3.384
+V =			99.5.394
 PKGNAME =		powder-toy-${V}
 DIST_TUPLE +=		github The-Powder-Toy The-Powder-Toy v${V} .
 CATEGORIES =		games
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
-REVISION =		1
 
 # GPL-3.0
 PERMIT_PACKAGE =	Yes
