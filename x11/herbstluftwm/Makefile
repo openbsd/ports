@@ -1,10 +1,10 @@
 COMMENT =		manual tiling window manager
-DISTNAME =		herbstluftwm-0.9.5
+DISTNAME =		herbstluftwm-0.9.6
 CATEGORIES =		x11
 
 HOMEPAGE =		https://herbstluftwm.org/
 
-MAINTAINER =		Lucas <lucas@sexy.is>, \
+MAINTAINER =		Lucas Gabriel Vuotto <lucas@sexy.is>, \
 			Florian Viehweger <openbsd@out-of-creativity.de>
 
 # BSD
