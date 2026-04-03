@@ -1,15 +1,14 @@
 # no libGL (toolchain issue)
-NOT_FOR_ARCHS=	m88k
+NOT_FOR_ARCHS=	alpha hppa m88k sh
 
 COMMENT=	GL Extension Wrangler library
 
-DISTNAME=	glew-2.2.0
+DISTNAME=	glew-2.3.1
 CATEGORIES=	graphics
 SITES=		${SITE_SOURCEFORGE:=glew/}
 EXTRACT_SUFX=	.tgz
-REVISION=	0
 
-SHARED_LIBS=	GLEW	9.0
+SHARED_LIBS=	GLEW	9.1
 
 HOMEPAGE=	https://glew.sourceforge.net/
 

@@ -13,6 +13,7 @@ share/doc/glew/advanced.html
 share/doc/glew/basic.html
 share/doc/glew/build.html
 share/doc/glew/credits.html
+share/doc/glew/eglew.html
 share/doc/glew/github.png
 share/doc/glew/glew.css
 share/doc/glew/glew.html
@@ -23,5 +24,4 @@ share/doc/glew/install.html
 share/doc/glew/log.html
 share/doc/glew/new.png
 share/doc/glew/ogl_sm.jpg
-share/doc/glew/travis.png
 share/doc/glew/wglew.html
