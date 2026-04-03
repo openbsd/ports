@@ -29,18 +29,20 @@ Index: Quake/common.make
  ifneq ($(HOST_OS),darwin)
  CFLAGS += -D_FILE_OFFSET_BITS=64
  endif
-@@ -23,10 +23,7 @@ CFLAGS += -g
+@@ -24,12 +24,9 @@ CFLAGS += -fno-omit-frame-pointer
  DO_STRIP=
  else
  DFLAGS += -DNDEBUG
 -CFLAGS += -O3
+ CFLAGS += -g
+ CFLAGS += -fno-omit-frame-pointer
  #CFLAGS += $(call CHECK_GCC,-flto=auto,)
 -CFLAGS += $(call CHECK_GCC,-fweb,)
 -CFLAGS += $(call CHECK_GCC,-frename-registers,)
  #CFLAGS += $(call CHECK_GCC,-fno-asynchronous-unwind-tables,)
  CFLAGS += $(call CHECK_GCC,-fno-ident,)
  CMD_STRIP=$(STRIP) $(1)
-@@ -239,7 +236,7 @@ OBJS := strlcat.o \
+@@ -244,7 +241,7 @@ OBJS := strlcat.o \
  	$(SYSOBJ_SYS) $(SYSOBJ_MAIN)
  
  $(BINTOC_EXE): ../Shaders/bintoc.c
