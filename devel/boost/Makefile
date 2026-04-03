@@ -89,6 +89,11 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 LIB_DEPENDS-md=	devel/boost
 
+BUILD_SH_ARGS=
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+BUILD_SH_ARGS+=	--cxxflags='-mxgot'
+.endif
+
 .include <bsd.port.arch.mk>
 
 .if ${PROPERTIES:Mclang}
@@ -137,7 +142,7 @@ do-configure:
 	@cd ${WRKSRC}/libs/config && \
 		${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
 	@cd ${WRKSRC}/tools/build/src/engine && ${SETENV} ${CONFIGURE_ENV} \
-		/bin/sh ./build.sh ${TOOLSET} && cp b2 ${WRKSRC}
+		/bin/sh ./build.sh ${BUILD_SH_ARGS} ${TOOLSET} && cp b2 ${WRKSRC}
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./bootstrap.sh ${BOOTSTRAP}
 
 do-build:
