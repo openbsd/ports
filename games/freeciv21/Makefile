@@ -1,12 +1,11 @@
 COMMENT =	turn-based, empire-building 4x strategy game
 
-V =		3.1.0
+V =		3.1.1
 # libertinus version taken from cmake/FreecivInstall.cmake
 LIBERTINUS =	7.040
 
 DISTNAME =	Freeciv21-v${V}
 PKGNAME =	freeciv21-${V:S/-patch./pl/:S/-rc./rc/}
-REVISION =	0
 CATEGORIES =	games
 
 HOMEPAGE =	https://github.com/longturn/freeciv21
