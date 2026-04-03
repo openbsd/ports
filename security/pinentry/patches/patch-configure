@@ -1,0 +1,26 @@
+
+The build system forcefully adds -fpic to the cflags used for
+pinentry-qt5. This overrides the default -fPIE value and breaks on
+architectures where -fPIC would be needed instead (eg sparc64).
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -12174,7 +12174,7 @@ printf "%s\n" "yes" >&6; }
+ fi
+ 
+     if "$PKG_CONFIG" --variable qt_config Qt5Core | grep -q "reduce_relocations"; then
+-      PINENTRY_QT5_CFLAGS="$PINENTRY_QT5_CFLAGS -fpic"
++      PINENTRY_QT5_CFLAGS="$PINENTRY_QT5_CFLAGS ${PICFLAG}"
+     fi
+   fi
+   if test "$have_qt5_libs" = "yes"; then
+@@ -13049,7 +13049,7 @@ printf "%s\n" "#define PINENTRY_QT5_X11 0" >>confdefs.
+ 
+ fi
+ if test "$have_kf5waylandclient" = "yes"; then
+-  PINENTRY_QT5_CFLAGS="$KF5WAYLANDCLIENT_CFLAGS $PINENTRY_QT5_CFLAGS -fpic"
++  PINENTRY_QT5_CFLAGS="$KF5WAYLANDCLIENT_CFLAGS $PINENTRY_QT5_CFLAGS ${PICFLAG}"
+   PINENTRY_QT5_LIBS="$KF5WAYLANDCLIENT_LIBS $PINENTRY_QT5_LIBS"
+ 
+ printf "%s\n" "#define PINENTRY_QT5_WAYLAND 1" >>confdefs.h

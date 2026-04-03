@@ -9,7 +9,7 @@ CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
 
 REVISION-main =	2
-REVISION-qt5 =	0
+REVISION-qt5 =	1
 REVISION-qt6 =	0
 
 SITES = 	${SITE_GNUPG:=pinentry/}
@@ -63,7 +63,8 @@ RUN_DEPENDS-qt6 =	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			PICFLAG="${PICFLAG}"
 CONFIGURE_ARGS = 	--enable-pinentry-curses \
 			--enable-pinentry-tty \
 			--disable-pinentry-qt4 \
