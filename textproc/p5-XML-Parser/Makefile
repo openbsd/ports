@@ -1,6 +1,6 @@
 COMMENT =	perl module for parsing XML documents
 
-DISTNAME =	XML-Parser-2.55
+DISTNAME =	XML-Parser-2.56
 CPAN_AUTHOR =	TODDR
 
 CATEGORIES =	textproc
