@@ -18,3 +18,6 @@ DataFolder = "${LOCALSTATEDIR}/navidrome/"
 
 # Uncomment to make logging more verbose.
 #LogLevel = 'DEBUG'
+
+# Disable data collection
+EnableInsightsCollector = false

@@ -1,7 +1,7 @@
 COMMENT =	modern music server and streamer
 
 MODGO_MODNAME =	github.com/navidrome/navidrome
-MODGO_VERSION =	v0.51.1
+MODGO_VERSION =	v0.60.3
 
 DISTNAME =	navidrome-${MODGO_VERSION}
 
@@ -11,11 +11,15 @@ HOMEPAGE =	https://www.navidrome.org/
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
-# Built by running "npm i; npm run build" in ${WRKSRC}/ui;
-# tar -czvf navidrome-build-${MODGO_VERSION}.tar.gz build/
+# Built by running "npm i; npm run build" in the `ui` directory of the source
+# code and then tarring up the resulting `build` directory:
+# `tar -czvf navidrome-build-${MODGO_VERSION}.tar.gz build/`
 #
-# Do this part as a normal user in their $HOME. It doesn't work as the
-# `_pbuild` user. You will need very liberal -d ulimits too.
+# But do this as a normal user, outside of the ports tree. It doesn't work as
+# the `_pbuild` user. You will need very liberal -d ulimits too.
+#
+# If it complains that update-workbox.sh isn't executable, just
+# `chmod +x` it and it works.
 DISTFILES.zoo =		navidrome-build-${MODGO_VERSION}.tar.gz
 
 SITES.zoo =		https://theunixzoo.co.uk/distfiles/
@@ -30,6 +34,13 @@ LIB_DEPENDS =		audio/taglib
 RUN_DEPENDS =		graphics/ffmpeg
 
 MODULES =		lang/go
+
+# Error: ./main.go:16:16: undefined: buildtags.NETGO
+# Inclusion of 'netgo' in build tags is enforced by the project. See
+# https://github.com/navidrome/navidrome/issues/700 for additional
+# information.
+GO_TAGS =		netgo
+MODGO_FLAGS +=		-tags "${GO_TAGS}"
 
 post-extract:
 	cd ${WRKSRC} && tar -C ${WRKSRC}/ui/ -zxf \
