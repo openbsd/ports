@@ -1,6 +1,6 @@
 COMMENT =		command line tool for working with Cooklang recipes
 
-V =			0.26.0
+V =			0.27.2
 GH_ACCOUNT =		cooklang
 GH_PROJECT =		cookcli
 GH_TAGNAME =		v${V}

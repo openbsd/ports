@@ -62,7 +62,7 @@ SHA256 (cargo/convert_case-0.6.0.tar.gz) = 7BgrDKLzXY/Bls80BJiP2LjHOaTScP8RijmP6
 SHA256 (cargo/cooklang-0.18.2.tar.gz) = 8w5s3txHupIQi2wIoMuCAxFyR2PPWSVHitwQx/B8qBQ=
 SHA256 (cargo/cooklang-find-0.5.0.tar.gz) = jhbeAVL7gs1aZFw78xOenl3H9ry+0amewQvUZ9ammtw=
 SHA256 (cargo/cooklang-import-0.8.7.tar.gz) = mr+rRBjA27sGyu89WoBaueM76u1Gmbo/QG7hBOmJupQ=
-SHA256 (cargo/cooklang-language-server-0.2.0.tar.gz) = k5LWlMpx0akx3CAL56Bh0T9G5ojAfkjPRXVWniqfaIY=
+SHA256 (cargo/cooklang-language-server-0.2.1.tar.gz) = f08Ox889uiBe3qy5hoQT+0PdoG2cO/1de3TXEnOgTrs=
 SHA256 (cargo/cooklang-reports-0.2.2.tar.gz) = RWwpVUByAPRauWgPqUxgOhnF035WT5/hcpRq42uePWI=
 SHA256 (cargo/cooklang-sync-client-0.4.8.tar.gz) = PCkwxhsrZ0qrX3/zKD2TYt2NtmB9SNhARuBTuPnGgZ8=
 SHA256 (cargo/core-foundation-0.9.4.tar.gz) = keGV4JGpPEb3EC7HgYoqo5Th4XccOrSCWWP6A+Ra+48=
@@ -538,8 +538,8 @@ SHA256 (cargo/zerovec-0.11.2.tar.gz) = SgXrCA4BW6OcyeI7vl5/sE1fsEA1D5nzTjONX90pR
 SHA256 (cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5GsvPv8eu5dvfvIyHS9Y8=
 SHA256 (cargo/zip-2.4.2.tar.gz) = +r5jJOkI+FocUgY856omto3LfrbbyDotFIQDybw+ulA=
 SHA256 (cargo/zipsign-api-0.1.5.tar.gz) = 26YGP/gs29mnZa3RbTaavoHlIPg2BU6ZfC2yF87KQMA=
-SHA256 (cookcli-0.26.0-output.css) = EoQnrfNtJrVZPo8wriaEhAxhKiigpId+aaijXdKKB/w=
-SHA256 (cookcli-0.26.0.tar.gz) = 41T8YjWEjKBFPIR7RZASD4p4KMcDqD6OtiQ02Mx0Z80=
+SHA256 (cookcli-0.27.2-output.css) = EoQnrfNtJrVZPo8wriaEhAxhKiigpId+aaijXdKKB/w=
+SHA256 (cookcli-0.27.2.tar.gz) = BPMX/IXXMh1d7NaBlGHWmb79Nr3+gof3wu9dZGVqkXg=
 SIZE (cargo/accept-language-3.1.0.tar.gz) = 9269
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -604,7 +604,7 @@ SIZE (cargo/convert_case-0.6.0.tar.gz) = 18675
 SIZE (cargo/cooklang-0.18.2.tar.gz) = 163919
 SIZE (cargo/cooklang-find-0.5.0.tar.gz) = 26125
 SIZE (cargo/cooklang-import-0.8.7.tar.gz) = 105670
-SIZE (cargo/cooklang-language-server-0.2.0.tar.gz) = 37296
+SIZE (cargo/cooklang-language-server-0.2.1.tar.gz) = 38547
 SIZE (cargo/cooklang-reports-0.2.2.tar.gz) = 41740
 SIZE (cargo/cooklang-sync-client-0.4.8.tar.gz) = 49778
 SIZE (cargo/core-foundation-0.9.4.tar.gz) = 27743
@@ -1080,5 +1080,5 @@ SIZE (cargo/zerovec-0.11.2.tar.gz) = 124500
 SIZE (cargo/zerovec-derive-0.11.1.tar.gz) = 21294
 SIZE (cargo/zip-2.4.2.tar.gz) = 110773
 SIZE (cargo/zipsign-api-0.1.5.tar.gz) = 17451
-SIZE (cookcli-0.26.0-output.css) = 43112
-SIZE (cookcli-0.26.0.tar.gz) = 5578432
+SIZE (cookcli-0.27.2-output.css) = 43112
+SIZE (cookcli-0.27.2.tar.gz) = 5583955
