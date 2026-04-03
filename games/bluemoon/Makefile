@@ -1,6 +1,9 @@
 COMMENT =	console-based 52-card solitare game
-DISTNAME =	bluemoon-2.14
+
+V =		2.14
+DISTNAME =	bluemoon-${V}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	http://www.catb.org/~esr/bluemoon/
 
@@ -13,7 +16,7 @@ SITES =		http://www.catb.org/~esr/bluemoon/
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" VERSION="${V}"
 
 ALL_TARGET =	bluemoon
 
