@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS = ${LP64_ARCHS}
 DPB_PROPERTIES = parallel
 
 V =		2.9.4
-REVISION =	0
+REVISION =	1
 PKGNAME =	prusaslicer-${V}
 
 GH_ACCOUNT =	prusa3d
@@ -28,13 +28,13 @@ WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_locale-mt boost_log-mt boost_nowide-mt
 WANTLIB += boost_random-mt boost_regex-mt boost_thread-mt
 WANTLIB += c cairo cairo-gobject crypto curl dbus-1 execinfo expat
-WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gmpxx gobject-2.0 gtk-3 harfbuzz hidapi-libusb
 WANTLIB += intl javascriptcoregtk-4.1 jpeg m mpfr nlopt openvdb
 WANTLIB += pango-1.0 pangocairo-1.0 png qhull_r soup-3.0 ssl tbb
 WANTLIB += tbbmalloc wayland-client wayland-egl webkit2gtk-4.1
 WANTLIB += wx_baseu-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2
-WANTLIB += wx_gtk3u_webview-3.2 z z3
+WANTLIB += wx_gtk3u_webview-3.2 z z3 boost_container-mt
 
 FIX_CRLF_FILES =	src/slic3r/GUI/GLCanvas3D.cpp
 
