@@ -2,6 +2,7 @@ COMMENT=		Gemini AI agent CLI
 
 V=			0.36.0
 DISTNAME=		gemini-cli-${V}
+REVISION=		0
 
 CATEGORIES=		sysutils misc devel
 
@@ -68,6 +69,9 @@ do-install:
 	cp -a ${WRKSRC}/* ${PREFIX}
 	ln -sf ${TRUEPREFIX}/lib/node_modules/@google/gemini-cli/bundle/gemini.js \
 		$${PREFIX}/bin/gemini
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gemini-cli
+	${INSTALL_DATA} ${FILESDIR}/settings.json \
+		${PREFIX}/share/examples/gemini-cli/
 #	rm ${PREFIX}/lib/node_modules/@google/gemini-cli/dist/*.tgz \
 #		${PREFIX}/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/*.tgz
 

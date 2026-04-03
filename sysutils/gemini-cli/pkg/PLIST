@@ -1222,3 +1222,7 @@ lib/node_modules/@google/gemini-cli/node_modules/wrappy/README.md
 lib/node_modules/@google/gemini-cli/node_modules/wrappy/package.json
 lib/node_modules/@google/gemini-cli/node_modules/wrappy/wrappy.js
 lib/node_modules/@google/gemini-cli/package.json
+share/examples/gemini-cli/
+@sample ${SYSCONFDIR}/gemini-cli/
+share/examples/gemini-cli/settings.json
+@sample ${SYSCONFDIR}/gemini-cli/settings.json
