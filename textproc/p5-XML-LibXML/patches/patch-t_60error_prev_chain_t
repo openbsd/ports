@@ -1,0 +1,38 @@
+https://github.com/shlomif/perl-XML-LibXML/commit/bee8338fd1cbd7aad4bf60c2965833343b6ead6f
+
+Index: t/60error_prev_chain.t
+--- t/60error_prev_chain.t.orig
++++ t/60error_prev_chain.t
+@@ -16,13 +16,11 @@ use XML::LibXML;
+ 
+ {
+     my $parser = XML::LibXML->new();
+-    $parser->validation(0);
+-    $parser->load_ext_dtd(0);
+ 
+     eval
+     {
+         local $^W = 0;
+-        $parser->parse_file('example/JBR-ALLENtrees.htm');
++        $parser->parse_string('<doc>&ldquo;&nbsp;&rdquo;</doc>');
+     };
+ 
+     my $err = $@;
+@@ -31,7 +29,7 @@ use XML::LibXML;
+     if( $err && !ref($err) ) {
+       plan skip_all => 'The local libxml library does not support errors as objects to $@';
+     }
+-    plan tests => 1;
++    plan tests => 2;
+ 
+     while (defined($err) && $count < 200)
+     {
+@@ -44,6 +42,8 @@ use XML::LibXML;
+ 
+     # TEST
+     ok ((!$err), "Reached the end of the chain.");
++    # TEST
++    is ($count, 3, "Correct number of errors reported")
+ }
+ 
+ =head1 COPYRIGHT & LICENSE

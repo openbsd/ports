@@ -1,0 +1,20 @@
+https://github.com/shlomif/perl-XML-LibXML/commit/c9f9c2fe51173b0a00969f01b577399f1098aa47
+
+Index: t/49_load_html.t
+--- t/49_load_html.t.orig
++++ t/49_load_html.t
+@@ -52,7 +52,13 @@ use XML::LibXML;
+ </div>
+ EOS
+ 
+-    {
++    SKIP: {
++        # libxml2 2.14 tokenizes HTML according to HTML5 where
++        # this isn't an error, see "13.2.5.73 Named character
++        # reference state".
++        skip("libxml2 version >= 21400", 1)
++            if XML::LibXML::LIBXML_VERSION >= 21400;
++
+         my $buf = '';
+         open my $fh, '>', \$buf;
+         # redirect STDERR there

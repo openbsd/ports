@@ -1,0 +1,54 @@
+https://github.com/shlomif/perl-XML-LibXML/commit/bee8338fd1cbd7aad4bf60c2965833343b6ead6f
+https://github.com/shlomif/perl-XML-LibXML/commit/ecbebc2f33fecb66b3d5487c6e48bea353e374f9
+
+Index: t/02parse.t
+--- t/02parse.t.orig
++++ t/02parse.t
+@@ -14,7 +14,7 @@ use locale;
+ 
+ POSIX::setlocale(LC_ALL, "C");
+ 
+-use Test::More tests => 533;
++use Test::More tests => 531;
+ use IO::File;
+ 
+ use XML::LibXML::Common qw(:libxml);
+@@ -25,7 +25,7 @@ use constant XML_DECL => "<?xml version=\"1.0\"?>\n";
+ 
+ use Errno qw(ENOENT);
+ 
+-# TEST*533
++# TEST*531
+ 
+ ##
+ # test values
+@@ -773,15 +773,6 @@ EOXML
+ 
+     my $newkid = $root->appendChild( $doc->createElement( "bar" ) );
+     is( $newkid->line_number(), 0, "line number is 0");
+-
+-    $parser->line_numbers(0);
+-    eval { $doc = $parser->parse_string( $goodxml ); };
+-
+-    $root = $doc->documentElement();
+-    is( $root->line_number(), 0, "line number is 0");
+-
+-    @kids = $root->childNodes();
+-    is( $kids[1]->line_number(), 0, "line number is 0");
+ }
+ 
+ SKIP: {
+@@ -884,7 +875,12 @@ EOXML
+         eval {
+            $doc2    = $parser->parse_string( $xmldoc );
+         };
+-        isnt($@, '', "error parsing $xmldoc");
++        # https://gitlab.gnome.org/GNOME/libxml2/-/commit/b717abdd
++        if (XML::LibXML::LIBXML_RUNTIME_VERSION() < 21300) {
++            isnt($@, '', "error parsing $xmldoc");
++        } else {
++            is( $doc2->documentElement()->firstChild()->nodeName(), "foo" );
++        }
+ 
+         $parser->validation(1);
+ 

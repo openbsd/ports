@@ -1,0 +1,23 @@
+https://github.com/shlomif/perl-XML-LibXML/commit/bee8338fd1cbd7aad4bf60c2965833343b6ead6f
+
+Index: t/25relaxng.t
+--- t/25relaxng.t.orig
++++ t/25relaxng.t
+@@ -132,7 +132,7 @@ print "# 6 check that no_network => 1 works\n";
+ {
+     my $rng = eval { XML::LibXML::RelaxNG->new( location => $netfile, no_network => 1 ) };
+     # TEST
+-    like( $@, qr{I/O error : Attempt to load network entity}, 'RNG from file location with external import and no_network => 1 throws an exception.' );
++    like( $@, qr{Attempt to load network entity}, 'RNG from file location with external import and no_network => 1 throws an exception.' );
+     # TEST
+     ok( !defined $rng, 'RNG from file location with external import and no_network => 1 is not loaded.' );
+ }
+@@ -152,7 +152,7 @@ print "# 6 check that no_network => 1 works\n";
+ </grammar>
+ EOF
+     # TEST
+-    like( $@, qr{I/O error : Attempt to load network entity}, 'RNG from buffer with external import and no_network => 1 throws an exception.' );
++    like( $@, qr{Attempt to load network entity}, 'RNG from buffer with external import and no_network => 1 throws an exception.' );
+     # TEST
+     ok( !defined $rng, 'RNG from buffer with external import and no_network => 1 is not loaded.' );
+ }

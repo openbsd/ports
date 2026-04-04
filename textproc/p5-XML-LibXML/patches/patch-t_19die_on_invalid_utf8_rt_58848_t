@@ -1,0 +1,14 @@
+https://github.com/shlomif/perl-XML-LibXML/commit/bee8338fd1cbd7aad4bf60c2965833343b6ead6f
+
+Index: t/19die_on_invalid_utf8_rt_58848.t
+--- t/19die_on_invalid_utf8_rt_58848.t.orig
++++ t/19die_on_invalid_utf8_rt_58848.t
+@@ -16,7 +16,7 @@ use XML::LibXML;
+     my $err = $@;
+ 
+     # TEST
+-    like ("$err", qr{parser error : Input is not proper UTF-8},
++    like ("$err", qr{not proper UTF-8|Invalid bytes in character encoding},
+         'Parser error.',
+     );
+ }
