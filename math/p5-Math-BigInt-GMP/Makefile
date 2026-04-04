@@ -1,6 +1,6 @@
 COMMENT =	backend library for Math::BigInt based on GMP
 
-DISTNAME =	Math-BigInt-GMP-1.6011
+DISTNAME =	Math-BigInt-GMP-1.7003
 
 CATEGORIES =	math
 
