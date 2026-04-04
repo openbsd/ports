@@ -35,7 +35,7 @@ Index: Makefile
  ifneq ($(findstring CYGWIN,$(OS)),CYGWIN)
  	LIBS += -ldl
  endif
-@@ -137,6 +139,7 @@ uninstall:
+@@ -139,6 +141,7 @@ uninstall:
  	rm -f $(DESTDIR)$(BINDIR)/sslscan
  	rm -f $(DESTDIR)$(MAN1DIR)/sslscan.1
  
@@ -43,7 +43,7 @@ Index: Makefile
  .openssl.is.fresh: opensslpull
  	@true
  
-@@ -149,9 +152,15 @@ opensslpull:
+@@ -151,9 +154,15 @@ opensslpull:
  	else \
  		git clone --depth 1 -b $$upstream https://github.com/openssl/openssl ./openssl && cd ./openssl && touch ../.openssl.is.fresh ; \
  	fi
@@ -59,4 +59,4 @@ Index: Makefile
 +	cd ./openssl; ./Configure -v -fstack-protector-all -D_FORTIFY_SOURCE=2 -fPIC no-shared enable-weak-ssl-ciphers zlib $(CONF_FLAGS)
  
  openssl/libcrypto.a: openssl/Makefile
- 	$(MAKE) -j $(NUM_PROCS) -C openssl depend
+ 	$(MAKE) $(JOBS_ARG) -C openssl depend
