@@ -1,0 +1,21 @@
+Index: t/memleak_bad_handshake.t
+--- t/memleak_bad_handshake.t.orig
++++ t/memleak_bad_handshake.t
+@@ -10,6 +10,17 @@ use IO::Socket::SSL;
+ use IO::Select;
+ do './testlib.pl' || do './t/testlib.pl' || die "no testlib";
+ 
++# OpenBSD malloc option F "Freecheck" aggressive free makes the test unstable.
++if ($^O eq "openbsd") {
++    $ENV{MALLOC_OPTIONS} ||= "";
++    if ($ENV{MALLOC_OPTIONS} !~ /f/) {
++	$ENV{MALLOC_OPTIONS} =~ s/F//gi;
++	$ENV{MALLOC_OPTIONS} .= "f";
++	exec $^X ($^X, $0);
++	die "exec $^X $0: $!"
++    }
++}
++
+ my $getsize;
+ if ( -f "/proc/$$/statm" ) {
+     $getsize = sub {
