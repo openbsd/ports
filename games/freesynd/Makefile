@@ -11,6 +11,9 @@ HOMEPAGE =	https://freesynd.sourceforge.io/
 # GPLv2+
 PERMIT_PACKAGE =  Yes
 
+# CXX20
+COMPILER =	base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer c m png
 WANTLIB += z
 
