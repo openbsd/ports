@@ -1,6 +1,7 @@
 COMMENT =	run a subprocess
 
-DISTNAME =	IPC-Run-20231003.0
+DISTNAME =	IPC-Run-20260402.0
+CPAN_AUTHOR =	TODDR
 
 CATEGORIES =	devel
 
@@ -9,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-RUN_DEPENDS =		devel/p5-IO-Tty>=1.08
+RUN_DEPENDS =		devel/p5-IO-Tty>=1.25
 TEST_DEPENDS =		devel/p5-Readonly
 
 PKG_ARCH =		*
