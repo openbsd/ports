@@ -1,6 +1,9 @@
-YAML::Syck is an optimized variation of YAML built on perl code
-(libsyck). It also features a JSON::Syck module, with an interface
-different to the pure-perl JSON module.
+YAML::Syck provides a Perl interface to the libsyck data serialization
+library.  It exports the "Dump" and "Load" functions for converting Perl
+data structures to YAML strings, and the other way around.
 
-Note: this module has a lot of known issues and has only been semi-
-actively maintained since 2007. See YAML::Syck(3p) for more information.
+JSON::Syck is a syck implementation of JSON parsing and generation.
+Because JSON is YAML
+(<http://redhanded.hobix.com/inspect/yamlIsJson.html>), using syck gives
+you a fast and memory-efficient parser and dumper for JSON data
+representation.
