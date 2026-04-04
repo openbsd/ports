@@ -311,6 +311,7 @@ SHA256 (cargo/tower-http-0.6.8.tar.gz) = 1OZVnVPMJo5QMc2EKdBUFbxMtK78SqXWzDX79bk
 SHA256 (cargo/tower-layer-0.3.3.tar.gz) = EhwqbNpGmAuw/NFkf/r2zT/HmgE94oh4KDb235xIeA4=
 SHA256 (cargo/tower-service-0.3.3.tar.gz) = jfm24T8tMskbm9cZwA0ZWIN7x97EdNlJUnmMyOae7sM=
 SHA256 (cargo/tracing-0.1.44.tar.gz) = Y+cWYvpLKiw6JvVw8DfrlbsfhTl/PNgHbK7S8Cam0QA=
+SHA256 (cargo/tracing-appender-0.2.4.tar.gz) = eG1IC85iR6t18AWxSuFiStl40wKdkRPwoi+hrHc/rq8=
 SHA256 (cargo/tracing-attributes-0.1.31.tar.gz) = dJDPpeyWN0ZWh0BlGsZ4H3AcnF6iV8WOBX87qM9p6No=
 SHA256 (cargo/tracing-core-0.1.36.tar.gz) = 25fK+dkG+95VXdYvqV3bqe7P0UyziOT0kaZtdM1ft5o=
 SHA256 (cargo/tracing-log-0.2.0.tar.gz) = 7oVfH0AL0OXALRUK5d44QAOaP1SwJRVkBONMI8A/R8M=
@@ -419,7 +420,7 @@ SHA256 (cargo/zerotrie-0.2.3.tar.gz) = KlnBelVi1QfktUlg6FaevuM77okMcKo/57l+han9e
 SHA256 (cargo/zerovec-0.11.5.tar.gz) = bChxkpSClHf1Jb4BhtE++po8YC9+wgLKnjU9MQ+5oAI=
 SHA256 (cargo/zerovec-derive-0.11.2.tar.gz) = 6tzjlTnKXLOYVZAQJnHyVn5ln8qWZlga00EdWSB5UfM=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (telemt-telemt-3.3.31.tar.gz) = HIE3XIoA+UC1E5kkWuK7NcNjdE3cfJE5KpxqnTM5IbU=
+SHA256 (telemt-telemt-3.3.35.tar.gz) = 4kSFn9vSrwsPcMGv2GUzrm4WMhDyBnLw/1SjXsIKSj4=
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (cargo/aes-gcm-0.10.3.tar.gz) = 148991
@@ -733,6 +734,7 @@ SIZE (cargo/tower-http-0.6.8.tar.gz) = 135827
 SIZE (cargo/tower-layer-0.3.3.tar.gz) = 6180
 SIZE (cargo/tower-service-0.3.3.tar.gz) = 6950
 SIZE (cargo/tracing-0.1.44.tar.gz) = 463135
+SIZE (cargo/tracing-appender-0.2.4.tar.gz) = 29738
 SIZE (cargo/tracing-attributes-0.1.31.tar.gz) = 39733
 SIZE (cargo/tracing-core-0.1.36.tar.gz) = 63967
 SIZE (cargo/tracing-log-0.2.0.tar.gz) = 17561
@@ -841,4 +843,4 @@ SIZE (cargo/zerotrie-0.2.3.tar.gz) = 69547
 SIZE (cargo/zerovec-0.11.5.tar.gz) = 119620
 SIZE (cargo/zerovec-derive-0.11.2.tar.gz) = 21421
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (telemt-telemt-3.3.31.tar.gz) = 1953540
+SIZE (telemt-telemt-3.3.35.tar.gz) = 1979316
