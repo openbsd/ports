@@ -14,6 +14,10 @@ GH_TAGNAME =	2.1.0
 
 MODULES =	devel/cmake
 
+# multiple definition of `smat4_lerp'
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 LIB_DEPENDS =	devel/sdl2-image \
 		devel/sdl2-mixer
 
