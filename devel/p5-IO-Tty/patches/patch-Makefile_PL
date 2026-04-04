@@ -1,24 +1,9 @@
-Fix detection of openpty and strlcpy with gcc.
-To declare strlcpy _BSD_SOURCE must be set.
-gcc 4 does not know __has_include()
-openpty needs termios.h
+Fix detection of openpty with gcc 4.
 
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -160,6 +160,11 @@ foreach my $f (sort keys %funcs) {
- #define __BSD_VISIBLE 1
- #endif
- #endif
-+#ifdef __OpenBSD__
-+#ifndef _BSD_SOURCE
-+#define _BSD_SOURCE
-+#endif
-+#endif
- 
- #include <stdio.h>
- #include <stdlib.h>
-@@ -169,17 +174,8 @@ foreach my $f (sort keys %funcs) {
+@@ -179,20 +179,8 @@ foreach my $f (sort keys %funcs) {
  #include <fcntl.h>
  
  /* Try platform-specific headers for openpty and friends */
@@ -29,8 +14,10 @@ Index: Makefile.PL
 -#  if __has_include(<libutil.h>)
 -#    include <libutil.h>
 -#  endif
+-#  if __has_include(<termios.h>)
+ #    include <termios.h>
+-#  endif
 -#  if __has_include(<util.h>)
-+#    include <termios.h>
  #    include <util.h>
 -#  endif
 -#endif
