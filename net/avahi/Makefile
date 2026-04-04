@@ -7,7 +7,7 @@ COMMENT-python=		python bindings for avahi
 
 GH_ACCOUNT=		avahi
 GH_PROJECT=		avahi
-GH_TAGNAME=		v0.9-rc3
+GH_TAGNAME=		v0.9-rc4
 
 PKGNAME-main=		avahi-${_GH_TAG_DIST:S/-//}
 PKGNAME-glib=		avahi-glib-${_GH_TAG_DIST:S/-//}
