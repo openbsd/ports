@@ -8,14 +8,14 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel parallel2
 
-DISTNAME =	qgis-4.0.0
+DISTNAME =	qgis-4.0.1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	86.0 \
+SHARED_LIBS =	qgis_core	87.0 \
 		qgis_app	54.0 \
-		qgis_gui	62.0 \
+		qgis_gui	62.1 \
 		qgis_analysis	31.0 \
 		qgis_server	23.0 \
 		qgispython	6.0 \
@@ -78,6 +78,7 @@ LIB_DEPENDS +=	${MODPY_LIB_DEPENDS} \
 		geo/spatialindex \
 		geo/spatialite/libspatialite \
 		graphics/exiv2 \
+		print/pdf4qt \
 		security/qca-${QTVER} \
 		security/qtkeychain,${QTVER} \
 		www/fcgi \
@@ -101,6 +102,7 @@ WANTLIB += c draco exiv2 expat fcgi freexl gdal geos_c gsl gslcblas iconv intl m
 WANTLIB += mdal minizip pdalcpp pq proj protobuf-lite ${MODPY_WANTLIB}
 WANTLIB += qca-${QTVER} qscintilla2_${QTVER} ${QTVER}keychain rttopo spatialindex
 WANTLIB += spatialite sqlite3 sz util zip hdf5 xml2 z zstd GL SFCGAL
+WANTLIB += Pdf4QtLibCore
 
 # absl wantlibs
 WANTLIB += absl_base
@@ -141,6 +143,7 @@ CONFIGURE_ARGS +=-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 		-DWITH_INTERNAL_MDAL=FALSE \
 		-DWITH_3D=TRUE \
 		-DWITH_PDAL=TRUE \
+		-DWITH_PDF4QT=TRUE \
 		-DWITH_SFCGAL=TRUE \
 		-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_QSPATIALITE=TRUE
 

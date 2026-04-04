@@ -1979,7 +1979,7 @@ include/qgis/qgsvectorlayerjoininfo.h
 include/qgis/qgsvectorlayerlabeling.h
 include/qgis/qgsvectorlayerlabelprovider.h
 include/qgis/qgsvectorlayerlegendwidget.h
-include/qgis/qgsvectorlayerplotdatagatherer.cpp
+include/qgis/qgsvectorlayerplotdatagatherer.h
 include/qgis/qgsvectorlayerprofilegenerator.h
 include/qgis/qgsvectorlayerproperties.h
 include/qgis/qgsvectorlayerref.h
@@ -2829,9 +2829,12 @@ share/qgis/i18n/qgis_ca.qm
 share/qgis/i18n/qgis_cs.qm
 share/qgis/i18n/qgis_da.qm
 share/qgis/i18n/qgis_de.qm
+share/qgis/i18n/qgis_el.qm
 share/qgis/i18n/qgis_en_US.qm
 share/qgis/i18n/qgis_es.qm
+share/qgis/i18n/qgis_et.qm
 share/qgis/i18n/qgis_eu.qm
+share/qgis/i18n/qgis_fa.qm
 share/qgis/i18n/qgis_fi.qm
 share/qgis/i18n/qgis_fr.qm
 share/qgis/i18n/qgis_gl.qm
@@ -2840,7 +2843,9 @@ share/qgis/i18n/qgis_is.qm
 share/qgis/i18n/qgis_it.qm
 share/qgis/i18n/qgis_ja.qm
 share/qgis/i18n/qgis_ko.qm
+share/qgis/i18n/qgis_ky.qm
 share/qgis/i18n/qgis_lt.qm
+share/qgis/i18n/qgis_lv.qm
 share/qgis/i18n/qgis_nb.qm
 share/qgis/i18n/qgis_nl.qm
 share/qgis/i18n/qgis_pl.qm
@@ -2857,6 +2862,7 @@ share/qgis/i18n/qgis_uk.qm
 share/qgis/i18n/qgis_vi.qm
 share/qgis/i18n/qgis_zh-Hans.qm
 share/qgis/i18n/qgis_zh-Hant.qm
+share/qgis/i18n/qgis_zh_TW.qm
 share/qgis/images/
 share/qgis/images/icons/
 share/qgis/images/icons/qbrowser-icon.png
@@ -3455,8 +3461,9 @@ share/qgis/python/pyplugin_installer/qgsplugininstallerrepositorybase.ui
 share/qgis/python/pyplugin_installer/qgsplugininstallerrepositorydialog.py
 share/qgis/python/pyplugin_installer/unzip.py
 share/qgis/python/pyplugin_installer/version_compare.py
-share/qgis/python/pyproject.toml
 share/qgis/python/qgis/
+share/qgis/python/qgis-4.0.1.dist-info/
+share/qgis/python/qgis-4.0.1.dist-info/METADATA
 share/qgis/python/qgis/PyQt/
 share/qgis/python/qgis/PyQt/Qsci.py
 share/qgis/python/qgis/PyQt/Qt.py
