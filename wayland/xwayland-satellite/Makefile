@@ -26,6 +26,8 @@ PERMIT_PACKAGE = Yes
 MODULES =	devel/cargo \
 		lang/clang
 
+MODCLANG_COMPILER_LINKS =	No
+
 WANTLIB +=      ${MODCARGO_WANTLIB}
 WANTLIB +=	m xcb xcb-cursor
 
