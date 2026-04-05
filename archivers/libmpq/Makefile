@@ -2,6 +2,8 @@ COMMENT =	extract, create or manipulate MoPaQ mpq archives
 DISTNAME =	libmpq-0.4.2pl20230224
 CATEGORIES =	archivers
 
+REVISION =	0
+
 SHARED_LIBS +=	mpq                       0.0 # 0.0
 
 GH_ACCOUNT =	diasurgical
@@ -14,6 +16,10 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += bz2 z
 
 LIB_DEPENDS +=	archivers/bzip2
+
+# builtins
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
