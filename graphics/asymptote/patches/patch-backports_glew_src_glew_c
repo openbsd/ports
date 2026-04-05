@@ -1,0 +1,14 @@
+Unbreak with glew->=2.3.0
+
+Index: backports/glew/src/glew.c
+--- backports/glew/src/glew.c.orig
++++ backports/glew/src/glew.c
+@@ -16156,7 +16156,7 @@ GLboolean GLEWAPIENTRY glewGetExtension (const char* n
+ typedef const GLubyte* (GLAPIENTRY * PFNGLGETSTRINGPROC) (GLenum name);
+ typedef void (GLAPIENTRY * PFNGLGETINTEGERVPROC) (GLenum pname, GLint *params);
+ 
+-static GLenum GLEWAPIENTRY glewContextInit ()
++GLenum GLEWAPIENTRY glewContextInit ()
+ {
+   PFNGLGETSTRINGPROC getString;
+   const GLubyte* s;
