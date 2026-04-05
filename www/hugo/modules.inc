@@ -244,7 +244,7 @@ MODGO_MODULES =	\
 	github.com/getkin/kin-openapi								 v0.134.0 \
 	github.com/go-gl/glfw									 v0.0.0-20190409004039-e6da0acd62b1 \
 	github.com/go-gl/glfw/v3.3/glfw								 v0.0.0-20200222043503-6f7a984d4dc4 \
-	github.com/go-jose/go-jose/v4								 v4.1.3 \
+	github.com/go-jose/go-jose/v4								 v4.1.4 \
 	github.com/go-logr/logr									 v1.4.3 \
 	github.com/go-logr/stdr									 v1.2.2 \
 	github.com/go-openapi/jsonpointer							 v0.21.0 \
@@ -260,8 +260,8 @@ MODGO_MODULES =	\
 	github.com/gohugoio/go-radix								 v1.2.0 \
 	github.com/gohugoio/hashstructure							 v0.6.0 \
 	github.com/gohugoio/httpcache								 v0.8.0 \
-	github.com/gohugoio/hugo-goldmark-extensions/extras					 v0.6.0 \
-	github.com/gohugoio/hugo-goldmark-extensions/passthrough				 v0.4.0 \
+	github.com/gohugoio/hugo-goldmark-extensions/extras					 v0.7.0 \
+	github.com/gohugoio/hugo-goldmark-extensions/passthrough				 v0.5.0 \
 	github.com/golang-jwt/jwt/v5								 v5.3.0 \
 	github.com/golang/glog									 v1.2.5 \
 	github.com/golang/groupcache								 v0.0.0-20210331224755-41bb18bfe9da \
@@ -312,7 +312,7 @@ MODGO_MODULES =	\
 	github.com/lib/pq									 v1.10.9 \
 	github.com/lucasb-eyer/go-colorful							 v1.3.0 \
 	github.com/lyft/protoc-gen-star/v2							 v2.0.4-0.20230330145011-496ad1ac90a4 \
-	github.com/magefile/mage								 v1.16.1 \
+	github.com/magefile/mage								 v1.17.1 \
 	github.com/mailru/easyjson								 v0.7.7 \
 	github.com/makeworld-the-better-one/dither/v2						 v2.4.0 \
 	github.com/marekm4/color-extractor							 v1.2.1 \
@@ -369,7 +369,7 @@ MODGO_MODULES =	\
 	github.com/tetratelabs/wazero								 v1.11.0 \
 	github.com/ugorji/go/codec								 v1.2.7 \
 	github.com/woodsbury/decimal128								 v1.3.0 \
-	github.com/yuin/goldmark								 v1.7.17 \
+	github.com/yuin/goldmark								 v1.8.2 \
 	github.com/yuin/goldmark-emoji								 v1.0.6 \
 	github.com/zeebo/errs									 v1.4.0 \
 	go.opencensus.io									 v0.24.0 \
@@ -397,7 +397,7 @@ MODGO_MODULES =	\
 	gocloud.dev										 v0.45.0 \
 	golang.org/x/crypto									 v0.49.0 \
 	golang.org/x/exp									 v0.0.0-20200224162631-6cc2880d07d6 \
-	golang.org/x/image									 v0.37.0 \
+	golang.org/x/image									 v0.38.0 \
 	golang.org/x/lint									 v0.0.0-20201208152925-83fdc39ff7b5 \
 	golang.org/x/mobile									 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod									 v0.34.0 \
@@ -538,6 +538,7 @@ MODGO_MODFILES =	\
 	github.com/go-gl/glfw/v3.3/glfw								 v0.0.0-20191125211704-12ad95a8df72 \
 	github.com/go-jose/go-jose/v4								 v4.0.5 \
 	github.com/go-jose/go-jose/v4								 v4.1.2 \
+	github.com/go-jose/go-jose/v4								 v4.1.3 \
 	github.com/go-logr/logr									 v1.2.2 \
 	github.com/go-logr/logr									 v1.4.1 \
 	github.com/golang-jwt/jwt/v5								 v5.2.2 \
@@ -648,7 +649,6 @@ MODGO_MODFILES =	\
 	github.com/yuin/goldmark								 v1.4.13 \
 	github.com/yuin/goldmark								 v1.7.10 \
 	github.com/yuin/goldmark								 v1.7.13 \
-	github.com/yuin/goldmark								 v1.7.16 \
 	go.opencensus.io									 v0.21.0 \
 	go.opencensus.io									 v0.22.0 \
 	go.opencensus.io									 v0.22.2 \
