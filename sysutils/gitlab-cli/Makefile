@@ -1,12 +1,11 @@
 COMMENT =		GitLab CLI tool
 
-V =			1.85.0
+V =			1.91.0
 MODGO_MODNAME =		gitlab.com/gitlab-org/cli
 MODGO_VERSION =		v${V}
 
 DISTNAME =		cli-${MODGO_VERSION}
 PKGNAME =		gitlab-cli-${V}
-REVISION =		1
 
 CATEGORIES =		sysutils
 HOMEPAGE =		https://docs.gitlab.com/ee/integration/glab/

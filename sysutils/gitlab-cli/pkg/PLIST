@@ -58,6 +58,7 @@
 @man man/man1/glab-deploy-key-list.1
 @man man/man1/glab-deploy-key.1
 @man man/man1/glab-duo-ask.1
+@man man/man1/glab-duo-cli.1
 @man man/man1/glab-duo.1
 @man man/man1/glab-gpg-key-add.1
 @man man/man1/glab-gpg-key-delete.1
@@ -114,6 +115,9 @@
 @man man/man1/glab-mr-issues.1
 @man man/man1/glab-mr-list.1
 @man man/man1/glab-mr-merge.1
+@man man/man1/glab-mr-note-list.1
+@man man/man1/glab-mr-note-reopen.1
+@man man/man1/glab-mr-note-resolve.1
 @man man/man1/glab-mr-note.1
 @man man/man1/glab-mr-rebase.1
 @man man/man1/glab-mr-reopen.1
@@ -157,8 +161,10 @@
 @man man/man1/glab-repo-update.1
 @man man/man1/glab-repo-view.1
 @man man/man1/glab-repo.1
+@man man/man1/glab-runner-assign.1
 @man man/man1/glab-runner-controller-create.1
 @man man/man1/glab-runner-controller-delete.1
+@man man/man1/glab-runner-controller-get.1
 @man man/man1/glab-runner-controller-list.1
 @man man/man1/glab-runner-controller-scope-create.1
 @man man/man1/glab-runner-controller-scope-delete.1
@@ -171,6 +177,13 @@
 @man man/man1/glab-runner-controller-token.1
 @man man/man1/glab-runner-controller-update.1
 @man man/man1/glab-runner-controller.1
+@man man/man1/glab-runner-delete.1
+@man man/man1/glab-runner-jobs.1
+@man man/man1/glab-runner-list.1
+@man man/man1/glab-runner-managers.1
+@man man/man1/glab-runner-unassign.1
+@man man/man1/glab-runner-update.1
+@man man/man1/glab-runner.1
 @man man/man1/glab-schedule-create.1
 @man man/man1/glab-schedule-delete.1
 @man man/man1/glab-schedule-list.1
@@ -218,4 +231,6 @@
 @man man/man1/glab-variable-update.1
 @man man/man1/glab-variable.1
 @man man/man1/glab-version.1
+@man man/man1/glab-work-items-list.1
+@man man/man1/glab-work-items.1
 @man man/man1/glab.1
