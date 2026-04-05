@@ -25,6 +25,8 @@ lib/pkgconfig/chafa.pc
 share/fish/
 share/fish/vendor_completions.d/
 share/fish/vendor_completions.d/chafa.fish
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/chafa/
 share/gtk-doc/html/chafa/api-index-deprecated.html
 share/gtk-doc/html/chafa/api-index-full.html
@@ -51,6 +53,7 @@ share/gtk-doc/html/chafa/new-api-index-1.10.html
 share/gtk-doc/html/chafa/new-api-index-1.12.html
 share/gtk-doc/html/chafa/new-api-index-1.14.html
 share/gtk-doc/html/chafa/new-api-index-1.16.html
+share/gtk-doc/html/chafa/new-api-index-1.18.html
 share/gtk-doc/html/chafa/new-api-index-1.2.html
 share/gtk-doc/html/chafa/new-api-index-1.4.html
 share/gtk-doc/html/chafa/new-api-index-1.6.html

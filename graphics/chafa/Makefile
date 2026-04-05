@@ -1,7 +1,7 @@
 COMMENT =		character art facsimile generator
-DISTNAME =		chafa-1.16.2
+DISTNAME =		chafa-1.18.1
 
-SHARED_LIBS +=  	chafa                     5.0 # 10.0
+SHARED_LIBS +=  	chafa	6.0 # 10.0
 
 CATEGORIES =		graphics
 
@@ -12,14 +12,14 @@ MAINTAINER =		Florian Viehweger <openbsd@out-of-creativity.de>
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xdmcp Xext Xrender brotlicommon
-WANTLIB += brotlicommon brotlidec brotlienc aom avif c cairo
-WANTLIB += dav1d expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 harfbuzz hwy iconv intl jpeg
-WANTLIB += jxl jxl_cms jxl_threads lcms2 lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pcre2-8 pixman-1 png pthread rsvg-2 sharpyuv tiff webp webpdemux
-WANTLIB += xcb xcb-render xcb-shm xml2 z zstd
-WANTLIB += Lerc fribidi graphite2 pangoft2-1.0
+WANTLIB += ${COMPILER_LIBCXX} Lerc X11 Xau Xdmcp Xext Xrender
+WANTLIB += aom avif brotlicommon brotlidec brotlienc c cairo dav1d
+WANTLIB += de265 expat ffi fontconfig freetype fribidi gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += harfbuzz heif hwy iconv intl jpeg jxl jxl_cms jxl_threads
+WANTLIB += lcms2 lzma m openh264 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre2-8 pixman-1 png rsvg-2 sharpyuv tiff webp webpdemux
+WANTLIB += x264 x265 xcb xcb-render xcb-shm xml2 z zstd
 
 SITES =			https://hpjansson.org/chafa/releases/
 EXTRACT_SUFX =		.tar.xz
@@ -30,10 +30,10 @@ LIB_DEPENDS =		devel/glib2 \
 			graphics/libavif \
 			graphics/libjxl \
 			graphics/libwebp \
+			multimedia/libheif \
 			x11/gnome/librsvg
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--without-imagemagick
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/chafa.1 ${PREFIX}/man/man1
