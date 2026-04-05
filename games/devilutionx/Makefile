@@ -1,3 +1,5 @@
+BROKEN-sparc64 = libmpq.so.0.0: undefined reference to __builtin_bswap16/32/64
+
 COMMENT =	open source engine recreation for Diablo 1 game
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	games x11
