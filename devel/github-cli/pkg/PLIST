@@ -91,6 +91,7 @@
 @man man/man1/gh-label-edit.1
 @man man/man1/gh-label-list.1
 @man man/man1/gh-label.1
+@man man/man1/gh-licenses.1
 @man man/man1/gh-org-list.1
 @man man/man1/gh-org.1
 @man man/man1/gh-pr-checkout.1
