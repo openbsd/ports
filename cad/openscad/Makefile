@@ -1,6 +1,6 @@
 COMMENT =		programmers solid 3D CAD modeller
 
-V =			2025.10.14
+V =			2026.02.24
 DISTNAME =		openscad-${V}
 REVISION =		0
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =	openscad
 GH_PROJECT =	openscad
-GH_COMMIT =	b0f18e9b4d61288b2cd6c659135f7e77def179e0
+GH_COMMIT =	665ba242e8b61aee10a4b09af94c094e1eb354f8
 
 MCAD_COMMIT =	1ea402208c3127ffb443931e9bb1681c191dacca
 SITES.mcad =	https://github.com/${GH_ACCOUNT}/MCAD/archive/
@@ -90,9 +90,6 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_BINDIR=${PREFIX}/libexec
 # Don't use the included stuff, use ours
 CONFIGURE_ARGS +=	-DUSE_BUILTIN_CLIPPER2=OFF \
 			-DUSE_BUILTIN_MANIFOLD=OFF
-
-# Our QT6 port is more stable
-CONFIGURE_ARGS +=	-DUSE_QT6=ON
 
 # It might be faster, but at what cost?
 CONFIGURE_ARGS +=	-DUSE_MIMALLOC=OFF

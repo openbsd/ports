@@ -1,7 +1,7 @@
 Index: src/openscad.cc
 --- src/openscad.cc.orig
 +++ src/openscad.cc
-@@ -60,6 +60,7 @@
+@@ -43,6 +43,7 @@
  #include <boost/algorithm/string/predicate.hpp>
  #include <boost/algorithm/string/split.hpp>
  #include <boost/dll/runtime_symbol_info.hpp>
@@ -9,7 +9,7 @@ Index: src/openscad.cc
  #include <boost/lexical_cast.hpp>
  #include <boost/lexical_cast/bad_lexical_cast.hpp>
  #include <boost/optional/optional.hpp>
-@@ -814,7 +815,7 @@ int main(int argc, char **argv)
+@@ -817,7 +818,7 @@ int openscad_main(int argc, char **argv)
  
  #ifndef __EMSCRIPTEN__
    const auto applicationPath =
