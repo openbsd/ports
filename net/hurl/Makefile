@@ -21,6 +21,8 @@ LIB_DEPENDS =		net/curl \
 
 CONFIGURE_STYLE =	cargo
 
+MODCLANG_COMPILER_LINKS =	No
+
 # libclang.so
 MODULES +=		lang/clang
 MODCARGO_ENV +=		LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
