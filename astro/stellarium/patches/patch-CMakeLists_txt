@@ -5,8 +5,8 @@ Index: CMakeLists.txt
  ########### Detect Qt version
  SET(ENABLE_QT6 1 CACHE BOOL "Whether to try building with Qt6. If Qt6 is not found, Qt5 will be used.")
  IF(ENABLE_QT6)
--    FIND_PACKAGE(Qt6 COMPONENTS Core QUIET)
-+    FIND_PACKAGE(Qt6 COMPONENTS Core GuiPrivate QUIET)
+-     FIND_PACKAGE(Qt6 COMPONENTS Core QUIET)
++     FIND_PACKAGE(Qt6 COMPONENTS Core GuiPrivate QUIET)
  ENDIF()
  if (NOT Qt6_FOUND)
-     FIND_PACKAGE(Qt5 REQUIRED COMPONENTS Core)
+      FIND_PACKAGE(Qt5 REQUIRED COMPONENTS Core)
