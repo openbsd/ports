@@ -10,6 +10,7 @@
      SUBDIR += gtkgreet
      SUBDIR += gtk4-layer-shell
      SUBDIR += havoc
+     SUBDIR += kanshi
      SUBDIR += labwc
      SUBDIR += libei
      SUBDIR += libevdev-openbsd
