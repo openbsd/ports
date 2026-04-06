@@ -1,4 +1,4 @@
-DISTNAME=	bird-2.18
+DISTNAME=	bird-2.18.1
 PORTROACH=	limit:^2\.
 
 COMPILER=	base-clang ports-gcc
