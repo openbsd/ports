@@ -1,0 +1,48 @@
+Index: config.c
+--- config.c.orig
++++ config.c
+@@ -5,7 +5,11 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#ifndef __OpenBSD__
+ #include <wordexp.h>
++#else
++#include <glob.h>
++#endif
+ 
+ #include <wayland-client.h>
+ 
+@@ -389,6 +393,7 @@ static bool parse_include_command(struct scfg_directiv
+ 		return false;
+ 	}
+ 
++#ifndef __OpenBSD__
+ 	wordexp_t p;
+ 	if (wordexp(dir->params[0], &p, WRDE_SHOWERR | WRDE_UNDEF) != 0) {
+ 		fprintf(stderr, "Could not expand include path: '%s'\n", dir->params[0]);
+@@ -404,6 +409,24 @@ static bool parse_include_command(struct scfg_directiv
+ 		}
+ 	}
+ 	wordfree(&p);
++#else
++	glob_t p;
++	if (glob(dir->params[0], GLOB_DOOFFS, NULL, &p) == 0) {
++		fprintf(stderr, "Could not expand include path: '%s'\n", dir->params[0]);
++		return false;
++	}
++
++	char **w = p.gl_pathv;
++	for (size_t idx = 0; idx < p.gl_pathc; idx++) {
++		if (!parse_config_file(w[idx], config)) {
++			fprintf(stderr, "Could not parse included config: '%s'\n", w[idx]);
++			globfree(&p);
++			return false;
++		}
++	}
++	globfree(&p);
++#endif
++
+ 	return true;
+ }
+ 

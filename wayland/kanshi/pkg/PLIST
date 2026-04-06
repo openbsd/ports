@@ -1,0 +1,3 @@
+@bin bin/kanshi
+@man man/man1/kanshi.1
+@man man/man5/kanshi.5
