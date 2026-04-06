@@ -51,7 +51,6 @@ include/harfbuzz/hb-unicode.h
 include/harfbuzz/hb-vector.h
 include/harfbuzz/hb-version.h
 include/harfbuzz/hb.h
-lib/cmake/
 lib/cmake/harfbuzz/
 lib/cmake/harfbuzz/harfbuzz-config.cmake
 lib/girepository-1.0/HarfBuzz-0.0.typelib
