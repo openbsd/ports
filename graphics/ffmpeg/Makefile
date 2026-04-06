@@ -3,7 +3,7 @@ COMMENT=	audio/video converter and streamer
 # keep it synced with x11/mplayer
 V=		8.0.1
 DISTNAME=	ffmpeg-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -186,11 +186,11 @@ MAKE_ENV+=	V=1 \
 		libavutil_extralibs="${LIBavutil_EXTRALIBS}" \
 		libswresample_extralibs="${LIBswresample_EXTRALIBS}" \
 		libswscale_extralibs="${LIBswscale_EXTRALIBS}" \
-		libavcodec_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib" \
+		libavcodec_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib:${X11BASE}/lib" \
 		libavdevice_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib:${X11BASE}/lib" \
 		libavfilter_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib:${X11BASE}/lib" \
 		libavformat_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib" \
-		libavutil_linkflags="" \
+		libavutil_linkflags="-Wl,-rpath-link,${X11BASE}/lib" \
 		libswresample_linkflags="" \
 		libswscale_linkflags="" \
 		libavcodec_requires="libswresample libavutil" \
