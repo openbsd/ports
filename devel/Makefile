@@ -341,6 +341,7 @@
      SUBDIR += libpeas2
      SUBDIR += libplist
      SUBDIR += libproplist
+     SUBDIR += libscfg
      SUBDIR += libsigc++-2
      SUBDIR += libsigc++30
      SUBDIR += libsigsegv
