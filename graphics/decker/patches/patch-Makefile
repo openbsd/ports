@@ -1,6 +1,7 @@
  - drop -O2 and respect CFLAGS
  - make building verbose
  - allow implicit-const-int-float-conversion
+ - lose -Werror 
  
 Index: Makefile
 --- Makefile.orig
@@ -10,7 +11,7 @@ Index: Makefile
  	OPEN=xdg-open
  	COMPILER=clang
 -	FLAGS=-Wall -Werror -Wextra -Wpedantic -O2
-+	FLAGS=-Wall -Werror -Wextra -Wpedantic ${CFLAGS}
++	FLAGS=-Wall -Wextra -Wpedantic ${CFLAGS}
  	# -Wno-misleading-indentation silences warnings which are entirely spurious.
  	FLAGS:=$(FLAGS) -Wno-misleading-indentation -Wno-unknown-warning-option
 -	FLAGS:=$(FLAGS) -lm
