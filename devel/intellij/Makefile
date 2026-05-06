@@ -1,7 +1,7 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2025.3.4
-DIST_VER=		253.32098.37
+V=			2026.1.1
+DIST_VER=		261.23567.138
 DISTNAME=		idea-${V}
 DISTFILES=		${DISTNAME}-1{${DISTNAME}}.tar.gz
 PKGNAME=		intellij-${V}
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=		Yes
 SITES=			https://github.com/JetBrains/intellij-community/releases/download/idea%2F${V}/
 
 MODULES=		java
-MODJAVA_VER=		21+
+MODJAVA_VER=		25+
 
 RUN_DEPENDS+=		devel/desktop-file-utils \
 			java/javaPathHelper
