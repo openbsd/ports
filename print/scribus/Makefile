@@ -1,7 +1,7 @@
 DPB_PROPERTIES=	parallel
 
 COMMENT=	desktop publishing program
-DISTNAME=	scribus-1.7.2
+DISTNAME=	scribus-1.7.3
 CATEGORIES=	print
 
 HOMEPAGE=	https://www.scribus.net/
@@ -13,8 +13,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
 WANTLIB += Qt6Network Qt6PrintSupport Qt6Svg Qt6Widgets Qt6Xml
 WANTLIB += c cairo cups execinfo fontconfig freetype harfbuzz
 WANTLIB += harfbuzz-icu harfbuzz-subset hunspell-1.7 icudata icuuc
-WANTLIB += jpeg lcms2 m png podofo poppler qtadvanceddocking-qt6
-WANTLIB += tiff util xml2 z ${MODPY_WANTLIB}
+WANTLIB += jpeg jxl jxl_cms jxl_threads lcms2 m png podofo poppler
+WANTLIB += qtadvanceddocking-qt6 tiff util xml2 z ${MODPY_WANTLIB}
 
 SITES=		${SITE_SOURCEFORGE:=scribus/}
 EXTRACT_SUFX=	.tar.xz
@@ -42,6 +42,7 @@ LIB_DEPENDS=	graphics/lcms2 \
 		textproc/libxml \
 		textproc/podofo \
 		graphics/jpeg \
+		graphics/libjxl \
 		x11/qt6/qt5compat \
 		x11/qt6/qtsvg \
 		x11/qtadvanceddocking>=4.4.0 \

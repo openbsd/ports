@@ -2,11 +2,11 @@
 lib/scribus/
 lib/scribus/plugins/
 lib/scribus/plugins/gettext/
-@so lib/scribus/plugins/gettext/libMARKDOWNimplugin.so
 @so lib/scribus/plugins/gettext/libcsvim.so
 @so lib/scribus/plugins/gettext/libdocim.so
 @so lib/scribus/plugins/gettext/libdocximplugin.so
 @so lib/scribus/plugins/gettext/libhtmlim.so
+@so lib/scribus/plugins/gettext/libmarkdownimplugin.so
 @so lib/scribus/plugins/gettext/libodtimplugin.so
 @so lib/scribus/plugins/gettext/libpdbim.so
 @so lib/scribus/plugins/gettext/librtfimplugin.so
@@ -2412,6 +2412,7 @@ share/scribus/loremipsum/sk.xml
 share/scribus/loremipsum/sl.xml
 share/scribus/plugins/
 share/scribus/plugins/barcode.ps
+share/scribus/plugins/barcode_ui.json
 share/scribus/plugins/collectionsdb.xml
 share/scribus/plugins/scribus-short-words.rc
 share/scribus/profiles/
@@ -2747,7 +2748,10 @@ share/scribus/translations/scribus.en_GB.qm
 share/scribus/translations/scribus.en_US.qm
 share/scribus/translations/scribus.eo.qm
 share/scribus/translations/scribus.es_AR.qm
+share/scribus/translations/scribus.es_CO.qm
 share/scribus/translations/scribus.es_ES.qm
+share/scribus/translations/scribus.es_MX.qm
+share/scribus/translations/scribus.es_VE.qm
 share/scribus/translations/scribus.et.qm
 share/scribus/translations/scribus.eu.qm
 share/scribus/translations/scribus.fa_IR.qm
@@ -2758,6 +2762,7 @@ share/scribus/translations/scribus.he_IL.qm
 share/scribus/translations/scribus.hi_IN.qm
 share/scribus/translations/scribus.hr_HR.qm
 share/scribus/translations/scribus.hu.qm
+share/scribus/translations/scribus.ia.qm
 share/scribus/translations/scribus.id.qm
 share/scribus/translations/scribus.it.qm
 share/scribus/translations/scribus.ja.qm
@@ -2773,6 +2778,8 @@ share/scribus/translations/scribus.nb_NO.qm
 share/scribus/translations/scribus.nl.qm
 share/scribus/translations/scribus.nn_NO.qm
 share/scribus/translations/scribus.oc.qm
+share/scribus/translations/scribus.pa.qm
+share/scribus/translations/scribus.pa_IN.qm
 share/scribus/translations/scribus.pl_PL.qm
 share/scribus/translations/scribus.pms.qm
 share/scribus/translations/scribus.pt_BR.qm
@@ -2791,6 +2798,7 @@ share/scribus/translations/scribus.ta.qm
 share/scribus/translations/scribus.te.qm
 share/scribus/translations/scribus.th_TH.qm
 share/scribus/translations/scribus.tr.qm
+share/scribus/translations/scribus.tt.qm
 share/scribus/translations/scribus.uk.qm
 share/scribus/translations/scribus.zh_CN.qm
 share/scribus/translations/scribus.zh_TW.qm
