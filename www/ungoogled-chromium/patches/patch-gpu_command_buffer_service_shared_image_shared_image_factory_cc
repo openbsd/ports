@@ -37,7 +37,7 @@ Index: gpu/command_buffer/service/shared_image/shared_image_factory.cc
    if (gr_context_type_ == GrContextType::kVulkan
  #if BUILDFLAG(USE_WEBGPU_ON_VULKAN_VIA_GL_INTEROP)
        /* We support GL context for WebGPU gl-vulkan interop (on linux).*/
-@@ -1028,7 +1028,7 @@ void SharedImageFactory::LogGetFactoryFailed(gpu::Shar
+@@ -1016,7 +1016,7 @@ void SharedImageFactory::LogGetFactoryFailed(gpu::Shar
    }
  #endif  // BUILDFLAG(IS_ANDROID)
  
