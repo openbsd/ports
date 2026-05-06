@@ -12,6 +12,7 @@
      SUBDIR += apg
      SUBDIR += argon2
      SUBDIR += arirang
+     SUBDIR += b3sum
      SUBDIR += badkeys
      SUBDIR += bfbtester
      SUBDIR += boofuzz
