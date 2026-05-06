@@ -135,9 +135,10 @@ MODCARGO_post-extract += \
 	rm -f -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/libsodium-*.tar.gz ;
 
 .    elif "${_cratename}" == "libsqlite3-sys"
+MODCARGO_ENV +=	LIBSQLITE3_SYS_USE_PKG_CONFIG=1
 MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
-	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/sqlite3 ;
+	rm -f -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/sqlite3/*.{c,h} ;
 
 .    elif "${_cratename}" == "libssh2-sys"
 MODCARGO_ENV +=	LIBSSH2_SYS_USE_PKG_CONFIG=1
