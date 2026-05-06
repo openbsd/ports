@@ -3,6 +3,7 @@
 @man man/man1/alacritty.1
 @man man/man5/alacritty-bindings.5
 @man man/man5/alacritty.5
+@man man/man7/alacritty-escapes.7
 share/applications/Alacritty.desktop
 share/bash-completion/completions/alacritty
 share/doc/pkg-readmes/${PKGSTEM}

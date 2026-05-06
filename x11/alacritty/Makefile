@@ -5,7 +5,7 @@ MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 
 GH_ACCOUNT =	alacritty
 GH_PROJECT =	alacritty
-GH_TAGNAME =	v0.16.1
+GH_TAGNAME =	v0.17.0
 
 HOMEPAGE =	https://alacritty.org/
 
@@ -43,11 +43,13 @@ pre-install:
 	scdoc < ${EXTRA_DIR}/man/alacritty.5.scd > ${EXTRA_DIR}/alacritty.5
 	scdoc < ${EXTRA_DIR}/man/alacritty-msg.1.scd > ${EXTRA_DIR}/alacritty-msg.1
 	scdoc < ${EXTRA_DIR}/man/alacritty-bindings.5.scd > ${EXTRA_DIR}/alacritty-bindings.5
+	scdoc < ${EXTRA_DIR}/man/alacritty-escapes.7.scd > ${EXTRA_DIR}/alacritty-escapes.7
 
 do-install:
 	${INSTALL_PROGRAM} ${RELEASE_DIR}/alacritty ${PREFIX}/bin/
 	${INSTALL_MAN} ${EXTRA_DIR}/*.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${EXTRA_DIR}/*.5 ${PREFIX}/man/man5/
+	${INSTALL_MAN} ${EXTRA_DIR}/*.7 ${PREFIX}/man/man7/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA} ${EXTRA_DIR}/completions/alacritty.bash \
 		${PREFIX}/share/bash-completion/completions/alacritty
