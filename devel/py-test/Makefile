@@ -1,7 +1,6 @@
 COMMENT=	cross-project testing tool for Python
 
-MODPY_DISTV=	9.0.2
-REVISION=	0
+MODPY_DISTV=	9.0.3
 DISTNAME=	pytest-${MODPY_DISTV}
 PKGNAME=	py-test-${MODPY_DISTV}
 
