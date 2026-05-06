@@ -1,7 +1,7 @@
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2025.3.4
-DIST_VER=		253.32098.74
+V=			2026.1.1
+DIST_VER=		261.23567.174
 DISTNAME=		pycharm-${V}
 CATEGORIES=		devel
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 SITES=			https://github.com/JetBrains/intellij-community/releases/download/pycharm%2F${V}/
 
 MODULES=		java
-MODJAVA_VER=		21+
+MODJAVA_VER=		25+
 
 RUN_DEPENDS+=		devel/desktop-file-utils \
 			java/javaPathHelper
