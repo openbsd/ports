@@ -2,25 +2,25 @@ COMMENT =		fast and light graphical web browser
 
 CATEGORIES =		www
 
-DIST_TUPLE +=		github dillo-browser dillo v3.2.0 .
-REVISION =		0
+V =			3.3.0
+DISTNAME =		dillo-${V}
+SITES =			${HOMEPAGE}/release/${V}/
 
-HOMEPAGE =		https://dillo-browser.github.io/
+HOMEPAGE =		https://dillo-browser.org/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdmcp Xext Xfixes
 WANTLIB += Xft Xinerama Xrender c crypto fltk fontconfig iconv
-WANTLIB += jpeg m png ssl webp z
+WANTLIB += jpeg m png ssl webp z brotlidec
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-EXTRACT_SUFX =	.tar.bz2
-
 LIB_DEPENDS =	converters/libiconv \
+		archivers/brotli \
 		graphics/jpeg \
 		graphics/png \
 		graphics/libwebp \
@@ -32,9 +32,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
 USE_GMAKE =		Yes
-AUTOCONF_VERSION=	2.71
-AUTOMAKE_VERSION=	1.16
-CONFIGURE_STYLE=	autoreconf
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-ipv6 \
 			--enable-tls
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,5 +1,6 @@
 @bin bin/dillo
 bin/dillo-install-hyphenation
+@bin bin/dilloc
 @bin bin/dpid
 @bin bin/dpidc
 lib/dillo/
