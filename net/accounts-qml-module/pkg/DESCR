@@ -1,0 +1,3 @@
+This QML module provides an API to manage the user's online accounts and get
+their authentication data. It's a tiny wrapper around the Qt-based APIs of
+libaccounts-qt and libsignon-qt. It is part of the accounts-sso project.

@@ -1,0 +1,15 @@
+@bin bin/tst_plugin
+lib/qt6/qml/SSO/
+lib/qt6/qml/SSO/OnlineAccounts/
+@so lib/qt6/qml/SSO/OnlineAccounts/libAccounts.so
+lib/qt6/qml/SSO/OnlineAccounts/plugin.qmltypes
+lib/qt6/qml/SSO/OnlineAccounts/qmldir
+share/accounts-qml-module/
+share/accounts-qml-module/doc/
+share/accounts-qml-module/doc/html/
+share/accounts-qml-module/doc/html/.gitignore
+share/accounts-qml-module/doc/html/images/
+share/accounts-qml-module/doc/html/onlineaccounts-qml-api.index
+share/accounts-qml-module/doc/html/sso-onlineaccounts-qmlmodule.html
+share/accounts-qml-module/doc/html/style/
+share/accounts-qml-module/doc/html/style/qtquick.css
