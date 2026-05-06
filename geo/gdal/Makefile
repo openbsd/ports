@@ -3,7 +3,7 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.12.3
+V =		3.12.4
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}.zip
@@ -58,6 +58,7 @@ LIB_DEPENDS-main =	archivers/libarchive \
 			graphics/png \
 			graphics/tiff \
 			math/hdf5 \
+			math/muparser \
 			math/netcdf \
 			math/qhull>=2020.2 \
 			net/curl \
@@ -67,7 +68,7 @@ WANTLIB-main =		Lerc archive arrow arrow_acero arrow_dataset avif c crypto \
 			curl deflate expat freexl geos_c geotiff gif hdf5 iconv jpeg \
 			json-c jxl jxl_threads lzma lz4 m netcdf openjp2 parquet \
 			pcre2-8 png poppler pq proj pthread qhull_r spatialite \
-			sqlite3 ssl tiff xml2 webp z zstd SFCGAL aec sz \
+			sqlite3 ssl tiff xml2 webp z zstd SFCGAL aec sz muparser \
 			${COMPILER_LIBCXX}
 
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
