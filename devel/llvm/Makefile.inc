@@ -248,3 +248,21 @@ diff-to-base: ${_PATCH_COOKIE}
 		${BSDSRCDIR}/gnu/llvm/${_subdir} ${WRKDIST}/${_subdir} \
 		> $${_d} || true
 .endfor
+
+prep-base: ${_PATCH_COOKIE}
+.for _subdir in clang lld lldb llvm
+	@_f=/tmp/llvm${LLVM_MAJOR}_${_subdir}.tar.gz && echo "Creating $${_f} ..." && \
+		cd ${WRKDIST} && pax -w -s '/^.*${PATCHORIG}$$//' \
+			-s ':.*/test/.*::' \
+			-s ':.*/tests/.*::' \
+			-s ':.*/unittest.*::' \
+			-s ':.*/test$$::' \
+			-s ':.*/tests$$::' \
+			-s ':.*/unittest$$::' \
+			-s ':^$${_subdir}/utils/gn.*::' \
+			-s ':^$${_subdir}/utils/mlgo-utils.*::' \
+			${_subdir} | gzip -9 > $${_f}
+.endfor
+	@_f=/tmp/llvm${LLVM_MAJOR}_siphash.tar.gz && echo "Creating $${_f} ..." && \
+		cd ${WRKDIST}/third-party && pax -w -s '/^.*${PATCHORIG}$$//' \
+			siphash | gzip -9 > $${_f}
