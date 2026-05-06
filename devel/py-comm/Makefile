@@ -1,9 +1,10 @@
 COMMENT =	Jupyter comm implementation for use in ipykernel
 
-MODPY_DISTV=	0.2.2
-DISTNAME=	comm-${MODPY_DISTV}
+MODPY_DISTV=	0.2.3
+GH_ACCOUNT=	ipython
+GH_PROJECT=	comm
+GH_TAGNAME=	v${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -11,10 +12,6 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	hatchling
-
-NO_TEST =	Yes
 
 .include <bsd.port.mk>
