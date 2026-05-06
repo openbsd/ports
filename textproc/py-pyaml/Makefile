@@ -1,6 +1,6 @@
 COMMENT=	module/tool to produce pretty and readable YAML
 
-MODPY_DISTV=	25.7.0
+MODPY_DISTV=	26.2.1
 DISTNAME=	pyaml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
