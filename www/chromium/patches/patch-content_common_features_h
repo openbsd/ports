@@ -1,7 +1,7 @@
 Index: content/common/features.h
 --- content/common/features.h.orig
 +++ content/common/features.h
-@@ -71,7 +71,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDisableAutoResize
+@@ -74,7 +74,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDisableAutoResize
  CONTENT_EXPORT BASE_DECLARE_FEATURE(
      kDocumentIsolationPolicyWithoutSiteIsolation);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
@@ -10,7 +10,7 @@ Index: content/common/features.h
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnforceSameDocumentOriginInvariants);
-@@ -109,8 +109,8 @@ enum class FontDataServiceTypefaceType {
+@@ -112,8 +112,8 @@ enum class FontDataServiceTypefaceType {
  CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServiceTypefaceType,
                                            kFontDataServiceTypefaceType);
  #endif  // BUILDFLAG(IS_WIN)
@@ -21,7 +21,7 @@ Index: content/common/features.h
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceLinux);
  #else
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceChromeOS);
-@@ -123,7 +123,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
+@@ -126,7 +126,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
                                            kFontDataServiceTypefaceType);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
