@@ -443,6 +443,8 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}rule
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}rule_pml_100.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}rule_pml_101.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}rule_pml_101.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}rule_pml_102.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}rule_pml_102.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/plugin_one.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/rule_md_001.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/rule_md_002.py
@@ -490,6 +492,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/rule_md_047.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/rule_md_048.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/rule_pml_100.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/rule_pml_101.py
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/rule_pml_102.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/utils/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/utils/${MODPY_PYCACHE}container_token_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
