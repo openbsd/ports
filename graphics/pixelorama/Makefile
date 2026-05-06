@@ -4,14 +4,14 @@ ONLY_FOR_ARCHS = amd64
 
 COMMENT =	pixel art editor
 
-V =		1.1.8
+V =		1.1.10
 DISTNAME =	pixelorama-$V
 
 CATEGORIES =	graphics
 
-HOMEPAGE =	https://orama-interactive.itch.io/pixelorama
+HOMEPAGE =	https://pixelorama.org/
 
-MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
+MAINTAINER =	Volker Schlecht <volker@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE = Yes
