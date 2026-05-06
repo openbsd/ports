@@ -152,7 +152,6 @@ share/sendmail/contrib/passwd-to-alias.pl
 share/sendmail/contrib/qtool.8
 share/sendmail/contrib/qtool.pl
 share/sendmail/contrib/re-mqueue.pl
-share/sendmail/contrib/rmail.oldsys.patch
 share/sendmail/contrib/smcontrol.pl
 share/sendmail/contrib/socketmapClient.pl
 share/sendmail/contrib/socketmapServer.pl
