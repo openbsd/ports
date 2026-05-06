@@ -9,7 +9,6 @@ lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/METADAT
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/licenses/COPYING-LGPL
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/licenses/COPYING-MIT
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/top_level.txt
@@ -35,10 +34,6 @@ share/examples/py-curl/quickstart/file_upload_real_fancy.py
 share/examples/py-curl/quickstart/follow_redirect.py
 share/examples/py-curl/quickstart/form_post.py
 share/examples/py-curl/quickstart/get.py
-share/examples/py-curl/quickstart/get_python2.py
-share/examples/py-curl/quickstart/get_python2_https.py
-share/examples/py-curl/quickstart/get_python3.py
-share/examples/py-curl/quickstart/get_python3_https.py
 share/examples/py-curl/quickstart/put_buffer.py
 share/examples/py-curl/quickstart/put_file.py
 share/examples/py-curl/quickstart/response_headers.py
@@ -49,4 +44,8 @@ share/examples/py-curl/retriever.py
 share/examples/py-curl/sfquery.py
 share/examples/py-curl/smtp.py
 share/examples/py-curl/ssh_keyfunction.py
+share/examples/py-curl/ws_callback.py
+share/examples/py-curl/ws_echo.py
+share/examples/py-curl/ws_fragmented.py
+share/examples/py-curl/ws_multi.py
 share/examples/py-curl/xmlrpc_curl.py
