@@ -7,8 +7,7 @@ Getting Started
 
 The following information includes notes specific to use on OpenBSD. Use
 them in conjunction with the main Icinga DB documentation available in
-${PREFIX}/share/doc/icingadb/doc
-or online at
+${PREFIX}/share/doc/icingadb/doc or online at
 https://icinga.com/docs/icinga-db/
 
 It is important to have an understanding of the components that will be
@@ -21,10 +20,8 @@ and Icinga DB Web.
 If not already done, these services must be installed, perhaps on the
 same machine. They are available from packages.
 
-The database must be configured. Please refer to the documentation
-section "Setting up the Database" in
-${PREFIX}/share/doc/icingadb/doc/02-Installation.md
-or online at
+The database must be configured. Please refer to "Setting up the Database"
+in ${PREFIX}/share/doc/icingadb/doc/02-Installation.md or online at
 https://icinga.com/docs/icinga-db/latest/doc/02-Installation/Debian/#setting-up-the-database
 
 Afterwards, a database schema must be imported. Schema and updates for
@@ -44,7 +41,6 @@ Enable Icinga DB at boot and start it as usual:
 
 Icinga 2 Integration
 --------------------
-
 The following section should be read in parallel with the official
 Debian-specific documentation, available online at
 https://icinga.com/docs/icinga-2/latest/doc/02-installation/01-Debian/#set-up-icinga-db
@@ -69,7 +65,6 @@ Finally, restart Icinga 2:
 
 Icinga Web 2 Integration
 ------------------------
-
 To integrate Icinga DB into Icinga Web 2, install the icingadb-web package
 and follow its pkg-readme. This can either be run instead of the standard
 "monitoring" module, or alongside it.
