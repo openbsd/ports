@@ -4,7 +4,7 @@ unsupported platform.
 Index: cli/tools/upgrade.rs
 --- cli/tools/upgrade.rs.orig
 +++ cli/tools/upgrade.rs
-@@ -309,10 +309,7 @@ async fn print_release_notes(
+@@ -312,10 +312,7 @@ async fn print_release_notes(
  }
  
  pub fn upgrade_check_enabled() -> bool {

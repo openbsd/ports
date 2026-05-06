@@ -1,26 +1,21 @@
-The panic hook replaces a helpful backtrace by a generic and largely
-unhelpful message - disable that.
-In addition, disable the generation of a stacktrace URL, and whatever the tunnel
-feature is supposed to do.
-
-Index: cli/main.rs
---- cli/main.rs.orig
-+++ cli/main.rs
-@@ -147,9 +147,10 @@ async fn run_subcommand(
+Index: cli/lib.rs
+--- cli/lib.rs.orig
++++ cli/lib.rs
+@@ -153,9 +153,10 @@ async fn run_subcommand(
        );
-       tools::bundle::bundle(flags, bundle_flags).await
+       tools::bundle::bundle(Arc::new(flags), bundle_flags).await
      }),
 -    DenoSubcommand::Deploy(deploy_flags) => spawn_subcommand(async move {
--      tools::deploy::deploy(Arc::unwrap_or_clone(flags), deploy_flags).await
+-      tools::deploy::deploy(flags, deploy_flags).await
 -    }),
 +    DenoSubcommand::Deploy(deploy_flags) => exit_with_message(
 +      "Deno Deploy is currently not supported on OpenBSD.",
 +      1,
 +    ),
-     DenoSubcommand::Doc(doc_flags) => {
-       spawn_subcommand(async { tools::doc::doc(flags, doc_flags).await })
-     }
-@@ -610,7 +611,7 @@ pub fn main() {
+     DenoSubcommand::Doc(doc_flags) => spawn_subcommand(async {
+       tools::doc::doc(Arc::new(flags), doc_flags).await
+     }),
+@@ -617,7 +618,7 @@ pub fn main() {
    #[cfg(feature = "dhat-heap")]
    let profiler = dhat::Profiler::new_heap();
  
@@ -29,12 +24,12 @@ Index: cli/main.rs
  
    init_logging(None, None);
  
-@@ -729,11 +730,13 @@ async fn resolve_flags_and_init(
-     .map(|files| files.iter().map(PathBuf::from).collect());
-   load_env_variables_from_env_files(env_file_paths.as_ref(), flags.log_level);
+@@ -752,11 +753,13 @@ async fn resolve_flags_and_init(
+   }
  
+   let sys = crate::sys::CliSys::default();
 +  #[cfg(not(target_os="openbsd"))]
-   if deno_lib::args::has_flag_env_var("DENO_CONNECTED") {
+   if deno_lib::args::has_flag_env_var(&sys, "DENO_CONNECTED") {
      flags.tunnel = true;
    }
  
@@ -43,20 +38,18 @@ Index: cli/main.rs
    if flags.tunnel && !matches!(flags.subcommand, DenoSubcommand::Deploy(_)) {
      if let Err(err) = initialize_tunnel(&flags).await {
        exit_for_error(
-@@ -747,6 +750,12 @@ async fn resolve_flags_and_init(
+@@ -769,6 +772,10 @@ async fn resolve_flags_and_init(
+       std::env::set_var("DENO_CONNECTED", "1");
      }
    }
- 
 +  #[cfg(target_os="openbsd")]
 +  if flags.tunnel {
 +    exit_with_message("--connected and --tunnel are not supported on OpenBSD", 1);
 +  }
-+  
-+
-   flags.unstable_config.fill_with_env();
+ 
+   flags.unstable_config.fill_with_env(&sys);
    if std::env::var("DENO_COMPAT").is_ok() {
-     flags.unstable_config.enable_node_compat();
-@@ -991,6 +1000,7 @@ struct AuthTunnelOutput {
+@@ -1031,6 +1038,7 @@ struct AuthTunnelOutput {
    token: String,
  }
  
@@ -64,10 +57,10 @@ Index: cli/main.rs
  async fn auth_tunnel(
    no_config: bool,
    env_token: Option<String>,
-@@ -1026,6 +1036,7 @@ async fn auth_tunnel(
+@@ -1065,6 +1073,7 @@ async fn auth_tunnel(
+   Ok(output)
  }
  
- #[allow(clippy::print_stderr)]
 +#[cfg(not(target_os="openbsd"))]
  async fn initialize_tunnel(
    flags: &Flags,

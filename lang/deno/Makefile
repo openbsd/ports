@@ -1,17 +1,19 @@
 # deno only supports amd64 and arm64
 ONLY_FOR_ARCHS =	amd64 aarch64
+
+# aws-lc-sys has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+USE_NOEXECONLY =	Yes
+
 COMMENT =		runtime for JavaScript and TypeScript
 
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		2.6.6
+V =			2.7.12
+DIST_TUPLE =		github denoland deno v${V} .
 HOMEPAGE =		https://deno.com
-
-DISTNAME =		deno-${VERSION}
-DISTFILES =		${DISTNAME}{deno_src}${EXTRACT_SUFX}
-SITES 	=		https://github.com/denoland/deno/releases/download/v${VERSION}/
 
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
@@ -64,6 +66,7 @@ BUILD_DEPENDS =		databases/sqlite3 \
 			devel/gn \
 			devel/ninja \
 			devel/protobuf-c \
+			devel/rust-bindgen \
 			lang/rust,-rustfmt \
 			${RUN_DEPENDS}
 
@@ -77,16 +80,15 @@ RUN_DEPENDS =		sysutils/libudev-openbsd
 CONFIGURE_STYLE =	cargo
 
 DOCDIR =		${PREFIX}/share/doc/deno
-WRKDIST =		${WRKDIR}/deno
 PORTHOME =		${WRKSRC}
 
-DENO_CORE_ICUDATA_V =	0.74.0
-V8_CARGO_V =		142.2.0
+DENO_CORE_ICUDATA_V =	0.77.0
+V8_CARGO_V =		147.0.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo
 
-SUBST_VARS +=		WRKBUILD WRKSRC
+SUBST_VARS +=		MODCLANG_VERSION WRKBUILD WRKSRC
 
 post-patch:
 	mkdir -p ${V8_BPGO_DIR}/{x64.profile,arm64.profile}
@@ -94,8 +96,7 @@ post-patch:
 	cd ${WRKSRC} && ${SUBST_CMD} \
 	    cli/task_runner.rs \
 	    cli/tools/jupyter/install.rs \
-	    ext/os/lib.rs \
-	    tests/util/server/src/lib.rs
+	    ext/os/lib.rs
 	cp ${WRKSRC}/ext/napi/generated_symbol_exports_list_linux.def \
 	    ${WRKSRC}/ext/napi/generated_symbol_exports_list_openbsd.def
 	mkdir ${V8_DISTDIR}/third_party/icu/common

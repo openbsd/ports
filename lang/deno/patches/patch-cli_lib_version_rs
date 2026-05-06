@@ -19,7 +19,7 @@ Index: cli/lib/version.rs
        .ok()
        .flatten()
 @@ -42,6 +38,9 @@ pub static DENO_VERSION_INFO: std::sync::LazyLock<Deno
-           ReleaseChannel::Stable
+           release_channel_from_version_string(DENO_VERSION)
          }
        });
 +

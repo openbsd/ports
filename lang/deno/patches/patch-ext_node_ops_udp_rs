@@ -1,0 +1,27 @@
+Index: ext/node/ops/udp.rs
+--- ext/node/ops/udp.rs.orig
++++ ext/node/ops/udp.rs
+@@ -416,6 +416,7 @@ fn ipv6_interface_index(interface_address: &str) -> Re
+   Err(einval())
+ }
+ 
++#[cfg(not(target_os="openbsd"))]
+ fn source_specific_multicast(
+   socket: &UdpSocket,
+   source_addr: Ipv4Addr,
+@@ -488,6 +489,7 @@ fn source_specific_multicast(
+ }
+ 
+ #[op2(fast)]
++#[cfg(not(target_os="openbsd"))]
+ pub fn op_node_udp_join_source_specific(
+   state: &mut OpState,
+   #[smi] rid: ResourceId,
+@@ -517,6 +519,7 @@ pub fn op_node_udp_join_source_specific(
+ }
+ 
+ #[op2(fast)]
++#[cfg(not(target_os="openbsd"))]
+ pub fn op_node_udp_leave_source_specific(
+   state: &mut OpState,
+   #[smi] rid: ResourceId,

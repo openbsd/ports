@@ -1,0 +1,12 @@
+Index: ext/node/lib.rs
+--- ext/node/lib.rs.orig
++++ ext/node/lib.rs
+@@ -373,8 +373,6 @@ deno_core::extension!(deno_node,
+     ops::udp::op_node_udp_set_multicast_ttl,
+     ops::udp::op_node_udp_set_ttl,
+     ops::udp::op_node_udp_set_multicast_interface,
+-    ops::udp::op_node_udp_join_source_specific,
+-    ops::udp::op_node_udp_leave_source_specific,
+     ops::udp::op_node_udp_send,
+     ops::udp::op_node_udp_recv,
+     ops::stream_wrap::op_stream_base_register_state,

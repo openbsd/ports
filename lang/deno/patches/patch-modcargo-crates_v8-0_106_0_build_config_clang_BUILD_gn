@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-142.2.0/build/config/clang/BUILD.gn
---- modcargo-crates/v8-142.2.0/build/config/clang/BUILD.gn.orig
-+++ modcargo-crates/v8-142.2.0/build/config/clang/BUILD.gn
-@@ -224,7 +224,12 @@ template("clang_lib") {
+Index: modcargo-crates/v8-147.0.0/build/config/clang/BUILD.gn
+--- modcargo-crates/v8-147.0.0/build/config/clang/BUILD.gn.orig
++++ modcargo-crates/v8-147.0.0/build/config/clang/BUILD.gn
+@@ -240,7 +240,12 @@ template("clang_lib") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {
@@ -15,7 +15,7 @@ Index: modcargo-crates/v8-142.2.0/build/config/clang/BUILD.gn
      libname = "osx"
    } else if (is_ios) {
      if (target_platform == "iphoneos") {
-@@ -249,7 +254,7 @@ clang_lib("compiler_builtins") {
+@@ -265,7 +270,7 @@ clang_lib("compiler_builtins") {
        assert(false, "unsupported target_platform=$target_platform")
      }
    } else if (current_cpu != "ppc64" && current_cpu != "s390x") {

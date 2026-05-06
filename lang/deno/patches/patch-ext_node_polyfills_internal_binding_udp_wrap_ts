@@ -1,0 +1,86 @@
+Index: ext/node/polyfills/internal_binding/udp_wrap.ts
+--- ext/node/polyfills/internal_binding/udp_wrap.ts.orig
++++ ext/node/polyfills/internal_binding/udp_wrap.ts
+@@ -28,10 +28,8 @@ import {
+   op_node_udp_bind,
+   op_node_udp_join_multi_v4,
+   op_node_udp_join_multi_v6,
+-  op_node_udp_join_source_specific,
+   op_node_udp_leave_multi_v4,
+   op_node_udp_leave_multi_v6,
+-  op_node_udp_leave_source_specific,
+   op_node_udp_recv,
+   op_node_udp_send,
+   op_node_udp_set_broadcast,
+@@ -178,35 +176,6 @@ export class UDP extends HandleWrap {
+     }
+   }
+ 
+-  addSourceSpecificMembership(
+-    sourceAddress: string,
+-    groupAddress: string,
+-    interfaceAddress?: string,
+-  ): number {
+-    if (
+-      !isValidIPv4Address(sourceAddress) ||
+-      !isValidIPv4Address(groupAddress)
+-    ) {
+-      return codeMap.get("EINVAL")!;
+-    }
+-
+-    if (this.#rid === undefined) {
+-      return codeMap.get("EBADF")!;
+-    }
+-
+-    try {
+-      op_node_udp_join_source_specific(
+-        this.#rid,
+-        sourceAddress,
+-        groupAddress,
+-        interfaceAddress ?? "0.0.0.0",
+-      );
+-    } catch {
+-      return codeMap.get("EINVAL")!;
+-    }
+-    return 0;
+-  }
+-
+   /**
+    * Bind to an IPv4 address.
+    * @param ip The hostname to bind to.
+@@ -303,35 +272,6 @@ export class UDP extends HandleWrap {
+     } catch {
+       return codeMap.get("EINVAL")!;
+     }
+-  }
+-
+-  dropSourceSpecificMembership(
+-    sourceAddress: string,
+-    groupAddress: string,
+-    interfaceAddress?: string,
+-  ): number {
+-    if (
+-      !isValidIPv4Address(sourceAddress) ||
+-      !isValidIPv4Address(groupAddress)
+-    ) {
+-      return codeMap.get("EINVAL")!;
+-    }
+-
+-    if (this.#rid === undefined) {
+-      return codeMap.get("EBADF")!;
+-    }
+-
+-    try {
+-      op_node_udp_leave_source_specific(
+-        this.#rid,
+-        sourceAddress,
+-        groupAddress,
+-        interfaceAddress ?? "0.0.0.0",
+-      );
+-    } catch {
+-      return codeMap.get("EINVAL")!;
+-    }
+-    return 0;
+   }
+ 
+   /**

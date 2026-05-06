@@ -4,8 +4,8 @@
 Index: cli/Cargo.toml
 --- cli/Cargo.toml.orig
 +++ cli/Cargo.toml
-@@ -32,7 +32,7 @@ harness = false
- path = "./bench/lsp_bench_standalone.rs"
+@@ -24,7 +24,7 @@ path = "integration_tests_runner.rs"
+ harness = false
  
  [features]
 -default = ["upgrade", "__vendored_zlib_ng"]
@@ -13,7 +13,7 @@ Index: cli/Cargo.toml
  # A feature that enables heap profiling with dhat on Linux.
  # 1. Compile with `cargo build --profile=release-with-debug --features=dhat-heap`
  # 2. Run the executable. It will output a dhat-heap.json file.
-@@ -49,7 +49,7 @@ hmr = ["deno_runtime/hmr", "deno_snapshots/disable"]
+@@ -41,7 +41,7 @@ hmr = ["deno_runtime/hmr", "deno_snapshots/disable"]
  __vendored_zlib_ng = ["flate2/zlib-ng-compat", "libz-sys/zlib-ng"]
  lsp-tracing = ["dep:tracing", "dep:tracing-subscriber", "dep:tracing-opentelemetry"]
  # Custom panic trace with `deno_panic`
@@ -22,10 +22,10 @@ Index: cli/Cargo.toml
  
  [build-dependencies]
  deno_runtime = { workspace = true, features = ["include_js_files_for_snapshotting", "only_snapshotted_js_sources"] }
-@@ -136,7 +136,6 @@ indexmap.workspace = true
+@@ -131,7 +131,6 @@ indexmap.workspace = true
  jsonc-parser = { workspace = true, features = ["cst", "serde"] }
- jupyter-protocol = "0.8.0"
- jupyter_runtime = { package = "runtimelib", version = "=0.28.0", default-features = false, features = ["tokio-runtime", "aws-lc-rs"] }
+ jupyter-protocol.workspace = true
+ jupyter_runtime.workspace = true
 -keyring = { version = "3.6.3", features = ["apple-native", "sync-secret-service", "windows-native", "vendored"] }
  lazy-regex.workspace = true
  libc.workspace = true

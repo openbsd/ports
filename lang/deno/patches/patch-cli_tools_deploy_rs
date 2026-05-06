@@ -1,9 +1,9 @@
 Index: cli/tools/deploy.rs
 --- cli/tools/deploy.rs.orig
 +++ cli/tools/deploy.rs
-@@ -66,24 +66,10 @@ pub async fn deploy(
-     .map_err(ResolveUrlOrPathError::UrlParse)?
-   };
+@@ -63,24 +63,10 @@ pub async fn deploy(
+   let worker_factory =
+     Arc::new(factory.create_cli_main_worker_factory().await?);
  
 -  let mut worker = worker_factory
 -    .create_custom_worker(
