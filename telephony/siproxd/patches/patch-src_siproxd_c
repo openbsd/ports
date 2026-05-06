@@ -2,7 +2,7 @@ This prevents siproxd from creating a redundant PID file outside the chroot jail
 Index: src/siproxd.c
 --- src/siproxd.c.orig
 +++ src/siproxd.c
-@@ -314,13 +314,6 @@ int main (int argc, char *argv[]) 
+@@ -313,13 +313,6 @@ int main (int argc, char *argv[]) 
     /* prepare for creating PID file */
     if (pidfilename == NULL) pidfilename = configuration.pid_file;
  

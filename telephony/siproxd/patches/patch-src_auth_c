@@ -1,0 +1,45 @@
+Index: src/auth.c
+--- src/auth.c.orig
++++ src/auth.c
+@@ -26,7 +26,6 @@
+ #include <string.h>
+ 
+ #include <sys/time.h>
+-#include <sys/random.h>
+ 
+ #include <netinet/in.h>
+ 
+@@ -130,25 +129,15 @@ static char *auth_generate_nonce() {
+    struct timeval tv;
+    int i;
+ 
+-   /* Use POSIX getrandom() - available since POSIX.1-2013 */
+-   if (getrandom(random_bytes, sizeof(random_bytes), 0) == sizeof(random_bytes)) {
+-      nonce[0] = '"';
+-      /* Convert to hex string */
+-      for (i = 0; i < 16; i++) {
+-         nonce[1 + i*2] = hexchars[(random_bytes[i] >> 4) & 0x0f];
+-         nonce[1 + i*2 + 1] = hexchars[random_bytes[i] & 0x0f];
+-      }
+-      nonce[33] = '"';
+-      nonce[34] = '\0';
+-
+-   } else {
+-      // getrandom() failed or did not return the expected number
+-      // of bytes - fallback to something else (not secure)
+-      WARN("getrandom() failed, falling back to less secure mechanism");
+-      gettimeofday (&tv, NULL);
+-      sprintf(nonce, "\"%8.8lx%8.8lx%8.8x%8.8x\"",
+-              (long)tv.tv_sec, (long)tv.tv_usec, rand(), rand() );
++   arc4random_buf(random_bytes, sizeof(random_bytes));
++   nonce[0] = '"';
++   /* Convert to hex string */
++   for (i = 0; i < 16; i++) {
++      nonce[1 + i*2] = hexchars[(random_bytes[i] >> 4) & 0x0f];
++      nonce[1 + i*2 + 1] = hexchars[random_bytes[i] & 0x0f];
+    }
++   nonce[33] = '"';
++   nonce[34] = '\0';
+ 
+    DEBUGC(DBCLASS_AUTH, "created nonce=%s", nonce);
+    return nonce;

@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1080,7 +1080,7 @@ uninstall-am: uninstall-pkglibLTLIBRARIES uninstall-sb
+@@ -1225,7 +1225,7 @@ uninstall-am: uninstall-pkglibLTLIBRARIES uninstall-sb
  # count BUILDs - each time increment by one and define the
  # C macro BUILDNO. bind it to a file everybody includes (log.h)
  #

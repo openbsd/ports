@@ -1,8 +1,7 @@
 COMMENT=	proxy/masquerading daemon for the SIP protocol
 
-DISTNAME=	siproxd-0.8.3
+DISTNAME=	siproxd-0.8.4
 CATEGORIES=	telephony net
-REVISION=	1
 
 HOMEPAGE=	https://siproxd.sourceforge.net/
 
@@ -26,6 +25,8 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/libtool,-ltdl \
 		telephony/libosip2
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 DOCDIR=		${PREFIX}/share/doc/siproxd
 EXDIR=		${PREFIX}/share/examples/siproxd

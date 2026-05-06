@@ -51,7 +51,7 @@ Index: doc/siproxd.conf.example
  
  ######################################################################
  # global switch to control the RTP proxy behaviour
-@@ -326,25 +329,25 @@ outbound_domain_port = 5060
+@@ -326,26 +329,26 @@ outbound_domain_port = 5060
  # The plugins are loaded in the order they appear here. Also
  # the processing order is given by the load order.
  #
@@ -70,6 +70,7 @@ Index: doc/siproxd.conf.example
 -#load_plugin=plugin_stun.la
 -#load_plugin=plugin_prefix.la
 -#load_plugin=plugin_regex.la
+-#load_plugin=plugin_regex_body.la
 -#load_plugin=plugin_stripheader.la
 -#load_plugin=plugin_codecfilter.la
 -#load_plugin=plugin_siptrunk.la
@@ -86,6 +87,7 @@ Index: doc/siproxd.conf.example
 +#load_plugin=plugin_stun.so
 +#load_plugin=plugin_prefix.so
 +#load_plugin=plugin_regex.so
++#load_plugin=plugin_regex_body.so
 +#load_plugin=plugin_stripheader.so
 +#load_plugin=plugin_codecfilter.so
 +#load_plugin=plugin_siptrunk.so

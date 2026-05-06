@@ -12,6 +12,7 @@ lib/siproxd/
 @so lib/siproxd/plugin_logcall.so
 @so lib/siproxd/plugin_prefix.so
 @so lib/siproxd/plugin_regex.so
+@so lib/siproxd/plugin_regex_body.so
 @so lib/siproxd/plugin_shortdial.so
 @so lib/siproxd/plugin_siptrunk.so
 @so lib/siproxd/plugin_stats.so
