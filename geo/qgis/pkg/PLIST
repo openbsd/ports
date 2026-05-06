@@ -3462,8 +3462,8 @@ share/qgis/python/pyplugin_installer/qgsplugininstallerrepositorydialog.py
 share/qgis/python/pyplugin_installer/unzip.py
 share/qgis/python/pyplugin_installer/version_compare.py
 share/qgis/python/qgis/
-share/qgis/python/qgis-4.0.1.dist-info/
-share/qgis/python/qgis-4.0.1.dist-info/METADATA
+share/qgis/python/qgis-4.0.2.dist-info/
+share/qgis/python/qgis-4.0.2.dist-info/METADATA
 share/qgis/python/qgis/PyQt/
 share/qgis/python/qgis/PyQt/Qsci.py
 share/qgis/python/qgis/PyQt/Qt.py
@@ -3472,11 +3472,13 @@ share/qgis/python/qgis/PyQt/QtGui.py
 share/qgis/python/qgis/PyQt/QtMultimedia.py
 share/qgis/python/qgis/PyQt/QtNetwork.py
 share/qgis/python/qgis/PyQt/QtPrintSupport.py
+share/qgis/python/qgis/PyQt/QtQuick.py
 share/qgis/python/qgis/PyQt/QtQuickWidgets.py
 share/qgis/python/qgis/PyQt/QtSerialPort.py
 share/qgis/python/qgis/PyQt/QtSql.py
 share/qgis/python/qgis/PyQt/QtSvg.py
 share/qgis/python/qgis/PyQt/QtTest.py
+share/qgis/python/qgis/PyQt/QtWebChannel.py
 share/qgis/python/qgis/PyQt/QtWebEngineCore.py
 share/qgis/python/qgis/PyQt/QtWebEngineQuick.py
 share/qgis/python/qgis/PyQt/QtWebEngineWidgets.py
