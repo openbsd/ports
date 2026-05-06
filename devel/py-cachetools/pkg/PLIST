@@ -8,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/cachetools-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/cachetools-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cachetools-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cachetools/__init__.py
+lib/python${MODPY_VERSION}/site-packages/cachetools/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -22,4 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}keys.${MODPY
 lib/python${MODPY_VERSION}/site-packages/cachetools/_cached.py
 lib/python${MODPY_VERSION}/site-packages/cachetools/_cachedmethod.py
 lib/python${MODPY_VERSION}/site-packages/cachetools/func.py
+lib/python${MODPY_VERSION}/site-packages/cachetools/func.pyi
 lib/python${MODPY_VERSION}/site-packages/cachetools/keys.py
+lib/python${MODPY_VERSION}/site-packages/cachetools/keys.pyi
+lib/python${MODPY_VERSION}/site-packages/cachetools/py.typed
