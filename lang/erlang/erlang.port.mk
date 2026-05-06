@@ -171,7 +171,7 @@ pre-build:
 .  endif
 .endif
 
-# Add possibility to include additional build or test dependencies from 
+# Add possibility to include additional build or test dependencies from
 # https://hex.pm.
 SITE_HEX =		https://repo.hex.pm/tarballs/
 
