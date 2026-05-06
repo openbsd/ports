@@ -16,4 +16,5 @@ Some notable features of bupstash include:
 
 bupstash is beta software, while all efforts are made to keep bupstash bug
 free, we currently recommend using bupstash for making REDUNDANT backups where
-failure can be tolerated.
+failure can be tolerated; furthermore, users should be aware that the tool is
+unmaintained upstream and may be removed in the future.
