@@ -13,6 +13,7 @@ share/doc/sccache/Gcs.md
 share/doc/sccache/Jenkins.md
 share/doc/sccache/Local.md
 share/doc/sccache/Memcached.md
+share/doc/sccache/MultiLevel.md
 share/doc/sccache/OSS.md
 share/doc/sccache/Redis.md
 share/doc/sccache/Releasing.md
