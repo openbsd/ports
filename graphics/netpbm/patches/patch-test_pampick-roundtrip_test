@@ -1,0 +1,21 @@
+Index: test/pampick-roundtrip.test
+--- test/pampick-roundtrip.test.orig
++++ test/pampick-roundtrip.test
+@@ -20,7 +20,7 @@ pampick 0 < ${mult_ppm} | cmp -s - ${image0_ppm} && ec
+ pampick 1 < ${mult_ppm} | cmp -s - ${image1_ppm} && echo "match" || echo "no match"
+ pampick 2 < ${mult_ppm} | cmp -s - ${image2_ppm} && echo "match" || echo "no match"
+ 
+-pampick 0 1 2 < ${mult_ppm} | cmp -s - < ${mult_ppm} && echo "match" || echo "no match"
++pampick 0 1 2 < ${mult_ppm} | cmp -s - ${mult_ppm} && echo "match" || echo "no match"
+ 
+ 
+ echo "Test 2.  Should print no match three times"
+@@ -57,7 +57,7 @@ pampick 1 2 3 < ${mult_pnm} | cat ${image0_ppm} - ${im
+ 
+ echo "Test 5.  Should print 0"
+ 
+-pampick < ${mult_pnm} | wc -c
++pampick < ${mult_pnm} | wc -c | tr -d ' '
+ 
+ rm ${image0_ppm} ${image1_ppm} ${image2_ppm}
+ rm ${mult_ppm}
