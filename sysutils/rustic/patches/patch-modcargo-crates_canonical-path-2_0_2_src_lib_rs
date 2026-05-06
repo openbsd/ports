@@ -1,15 +1,23 @@
+env::current_exe() is a no-op on OpenBSD; resolve via argv[0] instead.
+
 Index: modcargo-crates/canonical-path-2.0.2/src/lib.rs
 --- modcargo-crates/canonical-path-2.0.2/src/lib.rs.orig
 +++ modcargo-crates/canonical-path-2.0.2/src/lib.rs
-@@ -327,7 +327,10 @@ impl ToOwned for CanonicalPath {
+@@ -327,8 +327,15 @@ impl ToOwned for CanonicalPath {
  /// Returns the full, canonicalized filesystem path of the current running
  /// executable.
  pub fn current_exe() -> Result<CanonicalPathBuf> {
 -    let p = env::current_exe()?;
-+    let argv0 = env::args()
-+        .next()
-+        .ok_or_else(|| Error::new(ErrorKind::InvalidInput, "can't get argv[0]"))?;
-+    let p = PathBuf::from(argv0);
-     Ok(CanonicalPathBuf::canonicalize(p)?)
+-    Ok(CanonicalPathBuf::canonicalize(p)?)
++    let p = env::args().next().map(PathBuf::from)
++        .ok_or_else(|| Error::new(ErrorKind::Other, "can't get argv[0]"))?;
++
++    CanonicalPathBuf::canonicalize(&p).or_else(|_| {
++        env::var_os("PATH")
++            .and_then(|paths| env::split_paths(&paths).map(|d| d.join(&p)).find(|f| f.exists()))
++            .ok_or_else(|| Error::new(ErrorKind::NotFound, "executable not found"))
++            .and_then(CanonicalPathBuf::canonicalize)
++    })
  }
  
+ // TODO: test on Windows
