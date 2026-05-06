@@ -4,7 +4,7 @@ correctly check for sk_X509_push failure.
 Index: ext/openssl/openssl.c
 --- ext/openssl/openssl.c.orig
 +++ ext/openssl/openssl.c
-@@ -2308,7 +2308,7 @@ static STACK_OF(X509) *php_openssl_load_all_certs_from
+@@ -2304,7 +2304,7 @@ static STACK_OF(X509) *php_openssl_load_all_certs_from
  		goto end;
  	}
  
@@ -13,7 +13,7 @@ Index: ext/openssl/openssl.c
  		php_openssl_store_errors();
  		goto end;
  	}
-@@ -2317,7 +2317,11 @@ static STACK_OF(X509) *php_openssl_load_all_certs_from
+@@ -2313,7 +2313,11 @@ static STACK_OF(X509) *php_openssl_load_all_certs_from
  	while (sk_X509_INFO_num(sk)) {
  		xi=sk_X509_INFO_shift(sk);
  		if (xi->x509 != NULL) {
