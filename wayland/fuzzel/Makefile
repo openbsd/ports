@@ -7,7 +7,7 @@ DIST_TUPLE=		codeberg dnkl fuzzel ${V} .
 
 CATEGORIES =		wayland
 
-MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
+MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -34,9 +34,6 @@ LIB_DEPENDS =		devel/libstdthreads \
 			x11/xkbcommon
 
 WRKDIST =		${WRKDIR}/fuzzel
-
-pre-configure:
-	mkdir -p ${WRKSRC}/bld/release && cd ${WRKSRC}/bld/release
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fuzzel
