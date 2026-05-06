@@ -1,6 +1,7 @@
 COMMENT=	Postfix log entry summarizer
 
-DISTNAME=	pflogsumm-1.1.15
+# production releases are typically .0, others are beta
+DISTNAME=	pflogsumm-1.2.0
 CATEGORIES=	mail
 
 SITES=		https://athena.linxnet.com/downloads/
