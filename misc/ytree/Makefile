@@ -2,7 +2,7 @@ COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
 FIX_EXTRACT_PERMISSIONS= Yes
 
-DISTNAME =	ytree-2.10
+DISTNAME =	ytree-2.12
 CATEGORIES=	misc
 
 HOMEPAGE=	https://www.han.de/~werner/ytree.html
