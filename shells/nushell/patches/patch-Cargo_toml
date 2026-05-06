@@ -1,0 +1,11 @@
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -300,7 +300,6 @@ nu-plugin-protocol = { path = "./crates/nu-plugin-prot
+ nu-plugin-core = { path = "./crates/nu-plugin-core", version = "0.112.2" }
+ assert_cmd = "2.2.0"
+ dirs = { workspace = true }
+-tango-bench = "0.7.2"
+ pretty_assertions = { workspace = true }
+ fancy-regex = { workspace = true }
+ rstest = { workspace = true, default-features = false }
