@@ -1,5 +1,6 @@
      SUBDIR =
      SUBDIR += abaddon
+     SUBDIR += accounts-qml-module
      SUBDIR += adns
      SUBDIR += aggregate
      SUBDIR += aggregate6
