@@ -5,7 +5,7 @@ COMMENT =	image display utility for Wayland
 
 GH_ACCOUNT =	artemsen
 GH_PROJECT =	swayimg
-GH_TAGNAME =	v4.7
+GH_TAGNAME =	v5.2
 
 CATEGORIES =	wayland
 
@@ -17,22 +17,22 @@ COMPILER_LANGS =	c
 
 MODULES =	devel/meson
 
-WANTLIB =	OpenEXRCore-3_4 avif cairo epoll-shim exif fontconfig freetype
-WANTLIB +=	gif gobject-2.0 heif jpeg json-c jxl png raw rsvg-2 sixel tiff
-WANTLIB +=	wayland-client webp webpdemux xkbcommon
-WANTLIB +=	lib/inotify/inotify drm pthread c m
+WANTLIB += ${COMPILER_LIBCXX} Imath-3_2 OpenEXR-3_4 avif c cairo
+WANTLIB += drm epoll-shim exiv2 fontconfig freetype gif gobject-2.0
+WANTLIB += heif jpeg jxl jxl_threads luajit-5.1 m png raw rsvg-2
+WANTLIB += sixel tiff wayland-client webp webpdemux xkbcommon
+WANTLIB += lib/inotify/inotify
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 LIB_DEPENDS =	devel/epoll-shim \
-		devel/json-c \
 		devel/libinotify \
 		graphics/cairo \
+		graphics/exiv2 \
 		graphics/giflib \
 		graphics/jpeg \
 		graphics/libavif \
-		graphics/libexif \
 		graphics/libjxl \
 		graphics/libraw \
 		graphics/libsixel \
@@ -40,6 +40,7 @@ LIB_DEPENDS =	devel/epoll-shim \
 		graphics/openexr \
 		graphics/png \
 		graphics/tiff \
+		lang/luajit \
 		multimedia/libheif \
 		wayland/wayland \
 		x11/gnome/librsvg \
