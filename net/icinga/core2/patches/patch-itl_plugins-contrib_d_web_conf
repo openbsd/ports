@@ -1,7 +1,7 @@
 Index: itl/plugins-contrib.d/web.conf
 --- itl/plugins-contrib.d/web.conf.orig
 +++ itl/plugins-contrib.d/web.conf
-@@ -229,7 +229,7 @@ object CheckCommand "squid" {
+@@ -230,7 +230,7 @@ object CheckCommand "squid" {
  		}
  		"--squidclient" = {
  			value = "$squid_client$"
@@ -10,7 +10,7 @@ Index: itl/plugins-contrib.d/web.conf
  		}
  		"--timeout" = {
  			value = "$squid_timeout$"
-@@ -238,7 +238,7 @@ object CheckCommand "squid" {
+@@ -239,7 +239,7 @@ object CheckCommand "squid" {
  	}
  
  	vars.squid_hostname = "$check_address$"

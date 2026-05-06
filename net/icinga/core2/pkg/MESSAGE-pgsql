@@ -1,0 +1,4 @@
+IDO ("Icinga Data Output") will be removed in Icinga 2 version 2.18.
+For a smoother upgrade path, consider switching to Icinga DB in advance
+(pkg_add icingadb and follow the pkg-readme) and disabling IDO ("icinga2
+feature disable ido-pgsql").

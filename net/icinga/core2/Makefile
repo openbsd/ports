@@ -2,8 +2,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.15.2
-REVISION-main =	0
+V =		2.16.0
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
@@ -17,14 +16,14 @@ EPOCH =		0
 SHARED_LIBS +=	mysql_shim                0.0
 SHARED_LIBS +=	pgsql_shim                0.0
 
-# GPLv2+ with OpenSSL exemption
+# GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_context-mt
 WANTLIB += boost_coroutine-mt boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_program_options-mt boost_random-mt
 WANTLIB += boost_regex-mt boost_thread-mt c curses
-WANTLIB += edit execinfo m crypto ssl
+WANTLIB += edit execinfo m crypto ssl protobuf
 
 MODULES =		devel/cmake
 
@@ -38,7 +37,8 @@ PSEUDO_FLAVORS =	no_mysql no_pgsql
 FLAVOR ?=
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
-			devel/boost,-md
+			devel/boost,-md \
+			devel/protobuf
 RUN_DEPENDS-main =	net/monitoring-plugins
 
 RUN_DEPENDS =		${BASE_PKGPATH},-main=${FULLPKGNAME-main:S/icinga2-//}

@@ -23,7 +23,7 @@ sbin/icinga2
 share/doc/icinga2/
 share/doc/icinga2/AUTHORS
 share/doc/icinga2/CHANGELOG.md
-share/doc/icinga2/COPYING
+share/doc/icinga2/LICENSE.md
 share/doc/icinga2/NEWS
 share/doc/icinga2/README.md
 share/doc/icinga2/markdown/
@@ -177,6 +177,13 @@ share/examples/icinga2/features-available/notification.conf
 @sample ${SYSCONFDIR}/icinga2/features-available/notification.conf
 share/examples/icinga2/features-available/opentsdb.conf
 @sample ${SYSCONFDIR}/icinga2/features-available/opentsdb.conf
+@mode
+@owner
+@group
+share/examples/icinga2/features-available/otlpmetrics.conf
+@mode 664
+@owner _icinga
+@group wheel
 share/examples/icinga2/features-available/perfdata.conf
 @sample ${SYSCONFDIR}/icinga2/features-available/perfdata.conf
 share/examples/icinga2/features-available/syslog.conf
@@ -235,6 +242,7 @@ share/icinga2/include/plugins-contrib.d/network-components.conf
 share/icinga2/include/plugins-contrib.d/network-services.conf
 share/icinga2/include/plugins-contrib.d/operating-system.conf
 share/icinga2/include/plugins-contrib.d/raid-controller.conf
+share/icinga2/include/plugins-contrib.d/smart-advanced.conf
 share/icinga2/include/plugins-contrib.d/smart-attributes.conf
 share/icinga2/include/plugins-contrib.d/storage.conf
 share/icinga2/include/plugins-contrib.d/systemd.conf
