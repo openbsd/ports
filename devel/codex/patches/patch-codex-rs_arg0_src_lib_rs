@@ -1,17 +1,17 @@
 Index: codex-rs/arg0/src/lib.rs
 --- codex-rs/arg0/src/lib.rs.orig
 +++ codex-rs/arg0/src/lib.rs
-@@ -186,6 +186,9 @@ where
-     // async entry-point.
+@@ -187,6 +187,9 @@ where
      let runtime = build_runtime()?;
-     runtime.block_on(async move {
+     runtime.block_on(run_main_with_arg0_guard(
+         path_entry_guard,
 +        #[cfg(target_os = "openbsd")]
-+        let current_exe = Some(PathBuf::from("${PREFIX}/bin/codex"));
++        Some(PathBuf::from("${PREFIX}/bin/codex")),
 +        #[cfg(not(target_os = "openbsd"))]
-         let current_exe = std::env::current_exe().ok();
-         let paths = Arg0DispatchPaths {
-             codex_self_exe: current_exe.clone(),
-@@ -319,6 +322,9 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
+         std::env::current_exe().ok(),
+         main_fn,
+     ))
+@@ -336,6 +339,9 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
          #[cfg(unix)]
          EXECVE_WRAPPER_ARG0,
      ] {
@@ -21,7 +21,7 @@ Index: codex-rs/arg0/src/lib.rs
          let exe = std::env::current_exe()?;
  
          #[cfg(unix)]
-@@ -365,7 +371,16 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
+@@ -382,7 +388,16 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
      }
  
      let paths = Arg0DispatchPaths {
