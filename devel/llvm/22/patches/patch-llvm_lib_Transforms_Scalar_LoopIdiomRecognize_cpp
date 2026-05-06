@@ -1,11 +1,13 @@
 Index: llvm/lib/Transforms/Scalar/LoopIdiomRecognize.cpp
 --- llvm/lib/Transforms/Scalar/LoopIdiomRecognize.cpp.orig
 +++ llvm/lib/Transforms/Scalar/LoopIdiomRecognize.cpp
-@@ -339,6 +339,9 @@ bool LoopIdiomRecognize::runOnLoop(Loop *L) {
+@@ -339,6 +339,11 @@ bool LoopIdiomRecognize::runOnLoop(Loop *L) {
        Name == "wcslen")
      return false;
  
-+  if (Name == "_libc_memset" || Name == "_libc_memcpy")
++  // Also disable loop idiom recognition for internal names we use in OpenBSD
++  if (Name == "_libc_memset" || Name == "_libc_memcpy" ||
++      Name == "_libc_strlen" || Name == "_libc_wcslen")
 +    return false;
 +
    // Determine if code size heuristics need to be applied.

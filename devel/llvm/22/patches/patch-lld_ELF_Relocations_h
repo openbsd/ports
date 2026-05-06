@@ -1,0 +1,13 @@
+Index: lld/ELF/Relocations.h
+--- lld/ELF/Relocations.h.orig
++++ lld/ELF/Relocations.h
+@@ -176,6 +176,9 @@ bool hexagonNeedsTLSSymbol(ArrayRef<OutputSection *> o
+ 
+ bool isAbsolute(const Symbol &sym);
+ 
++void reportGNUWarning(Ctx &ctx, Symbol &sym, InputSectionBase &sec,
++                      uint64_t offset);
++
+ class ThunkSection;
+ class Thunk;
+ class InputSectionDescription;

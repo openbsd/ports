@@ -1,17 +1,47 @@
 Index: lld/ELF/Relocations.cpp
 --- lld/ELF/Relocations.cpp.orig
 +++ lld/ELF/Relocations.cpp
-@@ -682,6 +682,13 @@ bool RelocScan::maybeReportUndefined(Undefined &sym, u
+@@ -54,6 +54,29 @@ static void printDefinedLocation(ELFSyncStream &s, con
+   s << "\n>>> defined in " << sym.file;
+ }
+ 
++void elf::reportGNUWarning(Ctx &ctx, Symbol &sym, InputSectionBase &sec,
++                                 uint64_t offset) {
++  std::lock_guard<std::mutex> lock(ctx.relocMutex);
++  if (sym.gwarn) {
++    StringRef gnuWarning = gnuWarnings.lookup(sym.getName());
++    ELFSyncStream msg(ctx, DiagLevel::None);
++    // report first occurance only
++    sym.gwarn = false;
++    if (!gnuWarning.empty()) {
++      msg << sec.getSrcMsg(sym, offset);
++      msg << "(";
++      msg << sec.getObjMsg(offset);
++      msg << "): warning: ";
++      msg << gnuWarning;
++#if 0
++      warn(sec.getSrcMsg(sym, offset) + "(" + sec.getObjMsg(offset) +
++           "): warning: " + gnuWarning);
++#endif
++      Warn(ctx) << msg.str();
++    }
++  }
++}
++
+ // Construct a message in the following format.
+ //
+ // >>> defined in /home/alice/src/foo.o
+@@ -681,6 +704,13 @@ bool RelocScan::maybeReportUndefined(Undefined &sym, u
+   // .got2
    if (sym.discardedSecIdx != 0 && (sec->name == ".got2" || sec->name == ".toc"))
      return false;
- 
++
 +#ifdef __OpenBSD__
 +  // GCC (at least 8 and 11) can produce a ".gcc_except_table" with relocations
 +  // to discarded sections on riscv64
 +  if (sym.discardedSecIdx != 0 && sec->name == ".gcc_except_table")
 +    return false;
 +#endif
-+
+ 
    bool isWarning =
        (ctx.arg.unresolvedSymbols == UnresolvedPolicy::Warn && canBeExternal) ||
-       ctx.arg.noinhibitExec;
