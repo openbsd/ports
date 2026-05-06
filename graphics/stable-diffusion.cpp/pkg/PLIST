@@ -10,6 +10,7 @@ share/doc/stable-diffusion.cpp/chroma.md
 share/doc/stable-diffusion.cpp/chroma_radiance.md
 share/doc/stable-diffusion.cpp/distilled_sd.md
 share/doc/stable-diffusion.cpp/docker.md
+share/doc/stable-diffusion.cpp/ernie_image.md
 share/doc/stable-diffusion.cpp/esrgan.md
 share/doc/stable-diffusion.cpp/flux.md
 share/doc/stable-diffusion.cpp/flux2.md
