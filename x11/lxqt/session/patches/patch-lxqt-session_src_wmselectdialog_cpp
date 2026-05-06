@@ -1,7 +1,7 @@
 Index: lxqt-session/src/wmselectdialog.cpp
 --- lxqt-session/src/wmselectdialog.cpp.orig
 +++ lxqt-session/src/wmselectdialog.cpp
-@@ -117,7 +117,7 @@ void WmSelectDialog::selectFileDialog(const QModelInde
+@@ -116,7 +116,7 @@ void WmSelectDialog::selectFileDialog(const QModelInde
      if (item->data(1, TYPE_ROLE) != SELECT_DLG_TYPE)
          return;
  

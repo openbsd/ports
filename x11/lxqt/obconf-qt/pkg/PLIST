@@ -15,8 +15,10 @@ share/obconf-qt/translations/obconf-qt_cy.qm
 share/obconf-qt/translations/obconf-qt_da.qm
 share/obconf-qt/translations/obconf-qt_de.qm
 share/obconf-qt/translations/obconf-qt_el.qm
+share/obconf-qt/translations/obconf-qt_en_GB.qm
 share/obconf-qt/translations/obconf-qt_es.qm
 share/obconf-qt/translations/obconf-qt_et.qm
+share/obconf-qt/translations/obconf-qt_eu.qm
 share/obconf-qt/translations/obconf-qt_fi.qm
 share/obconf-qt/translations/obconf-qt_fr.qm
 share/obconf-qt/translations/obconf-qt_gl.qm
@@ -27,6 +29,8 @@ share/obconf-qt/translations/obconf-qt_id.qm
 share/obconf-qt/translations/obconf-qt_is.qm
 share/obconf-qt/translations/obconf-qt_it.qm
 share/obconf-qt/translations/obconf-qt_ja.qm
+share/obconf-qt/translations/obconf-qt_ka.qm
+share/obconf-qt/translations/obconf-qt_kab.qm
 share/obconf-qt/translations/obconf-qt_kk.qm
 share/obconf-qt/translations/obconf-qt_ko.qm
 share/obconf-qt/translations/obconf-qt_lg.qm
@@ -48,3 +52,4 @@ share/obconf-qt/translations/obconf-qt_uk.qm
 share/obconf-qt/translations/obconf-qt_zh_CN.qm
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/obconf-qt/translations/obconf-qt_zh_TW.qm

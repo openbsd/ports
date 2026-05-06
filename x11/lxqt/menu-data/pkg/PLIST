@@ -42,3 +42,4 @@ share/examples/lxqt-menu-data/menus/lxqt-applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/lxqt-applications.menu
 share/examples/lxqt-menu-data/menus/lxqt-config.menu
 @sample ${SYSCONFDIR}/xdg/menus/lxqt-config.menu
+share/examples/lxqt-menu-data/menus/lxqt-panel-applications.menu

@@ -11,7 +11,7 @@ WANTLIB += xcb-dri3 xcb-ewmh xcb-glx xcb-icccm xcb-image xcb-keysyms
 WANTLIB += xcb-present xcb-randr xcb-record xcb-render xcb-render-util
 WANTLIB += xcb-res xcb-screensaver xcb-shape xcb-shm xcb-sync
 WANTLIB += xcb-util xcb-xf86dri xcb-xfixes xcb-xinerama xcb-xinput
-WANTLIB += xcb-xkb xcb-xtest xcb-xv xcb-xvmc
+WANTLIB += xcb-xkb xcb-xtest xcb-xv xcb-xvmc xkbcommon
 
 LIB_DEPENDS =	x11/qt6/qtbase \
 		x11/menu-cache \

@@ -1,8 +1,6 @@
 COMMENT =	desktop panel for LXQt
 
 NAME =		lxqt-panel
-VERSION =	2.2.2
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Solid KF6WindowSystem LayerShellQtInterface
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Svg Qt6Widgets
@@ -47,7 +45,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/${NAME}/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}/xdg/lxqt/
-	mv ${PREFIX}/share/lxqt/panel.conf \
-		${PREFIX}/share/examples/${NAME}/xdg/lxqt/panel.conf
 
 .include <bsd.port.mk>

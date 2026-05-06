@@ -1,11 +1,8 @@
 COMMENT =	tool for fast making screenshots
 
-VERSION =	3.0.0
-REVISION =	0
+VERSION =	3.2.0
 
 NAME =		screengrab
-
-SHARED_LIBS +=  extedit                   0.0 # 1.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6WindowSystem LayerShellQtInterface
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Svg Qt6WaylandClient

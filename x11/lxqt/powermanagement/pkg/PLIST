@@ -36,6 +36,7 @@ share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_it.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ja.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ka.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_kk.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ko.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_lg.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_lt.qm
@@ -67,6 +68,7 @@ share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_el.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_en_GB.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_es.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_et.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_eu.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_fi.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_fr.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_gl.qm
@@ -78,6 +80,7 @@ share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_it.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ja.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ka.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_kab.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_kk.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ko.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_lg.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_lt.qm

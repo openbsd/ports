@@ -51,8 +51,10 @@ share/qterminal/translations/qterminal_pt_BR.qm
 share/qterminal/translations/qterminal_ru.qm
 share/qterminal/translations/qterminal_si.qm
 share/qterminal/translations/qterminal_sk_SK.qm
+share/qterminal/translations/qterminal_sv.qm
 share/qterminal/translations/qterminal_tr.qm
 share/qterminal/translations/qterminal_uk.qm
+share/qterminal/translations/qterminal_vi.qm
 share/qterminal/translations/qterminal_zh_CN.qm
 share/qterminal/translations/qterminal_zh_TW.qm
 @tag update-desktop-database

@@ -3,11 +3,11 @@ COMMENT =	qt platform integration plugin for LXQt
 NAME =		lxqt-qtplugin
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Svg
-WANTLIB += Qt6Widgets Qt6XdgIconLoader dbusmenu-lxqt m
+WANTLIB += Qt6Widgets Qt6XdgIconLoader dbusmenu-lxqt m xkbcommon
 
 LIB_DEPENDS =	x11/qt6/qtsvg \
 		x11/lxqt/libqtxdg \
-		x11/lxqt/libdbusmenu
+		x11/lxqt/libdbusmenu>=0.4.0
 
 BUILD_DEPENDS +=	x11/lxqt/libfm-qt
 

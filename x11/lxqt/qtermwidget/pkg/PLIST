@@ -25,6 +25,7 @@ share/qtermwidget6/color-schemes/DarkPastels.colorscheme
 share/qtermwidget6/color-schemes/Falcon.colorscheme
 share/qtermwidget6/color-schemes/GreenOnBlack.colorscheme
 share/qtermwidget6/color-schemes/Linux.colorscheme
+share/qtermwidget6/color-schemes/Nord.colorscheme
 share/qtermwidget6/color-schemes/Solarized.colorscheme
 share/qtermwidget6/color-schemes/SolarizedLight.colorscheme
 share/qtermwidget6/color-schemes/Tango.colorscheme
@@ -79,6 +80,7 @@ share/qtermwidget6/translations/qtermwidget_it.qm
 share/qtermwidget6/translations/qtermwidget_ja.qm
 share/qtermwidget6/translations/qtermwidget_ka.qm
 share/qtermwidget6/translations/qtermwidget_kab.qm
+share/qtermwidget6/translations/qtermwidget_kk.qm
 share/qtermwidget6/translations/qtermwidget_ko.qm
 share/qtermwidget6/translations/qtermwidget_lg.qm
 share/qtermwidget6/translations/qtermwidget_lt.qm

@@ -1,14 +1,5 @@
 @bin bin/screengrab
 share/applications/screengrab.desktop
-share/doc/screengrab/
-share/doc/screengrab/html/
-share/doc/screengrab/html/default.css
-share/doc/screengrab/html/en/
-share/doc/screengrab/html/en/index.html
-share/doc/screengrab/html/pt_BR/
-share/doc/screengrab/html/pt_BR/index.html
-share/doc/screengrab/html/ru/
-share/doc/screengrab/html/ru/index.html
 share/examples/screengrab/
 @sample ${SYSCONFDIR}/xdg/screengrab/
 share/examples/screengrab/screengrab.conf
@@ -41,6 +32,7 @@ share/screengrab/translations/screengrab_it.qm
 share/screengrab/translations/screengrab_ja.qm
 share/screengrab/translations/screengrab_ka.qm
 share/screengrab/translations/screengrab_kab.qm
+share/screengrab/translations/screengrab_kk.qm
 share/screengrab/translations/screengrab_ko.qm
 share/screengrab/translations/screengrab_lg.qm
 share/screengrab/translations/screengrab_lt.qm

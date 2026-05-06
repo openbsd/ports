@@ -1,6 +1,6 @@
 DIST_SUBDIR =	lxqt
 
-VERSION ?=	2.2.0
+VERSION ?=	2.4.0
 
 DISTNAME ?=	${NAME}-${VERSION}
 

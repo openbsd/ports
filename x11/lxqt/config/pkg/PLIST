@@ -17,7 +17,9 @@ share/applications/lxqt-config-brightness.desktop
 share/applications/lxqt-config-file-associations.desktop
 share/applications/lxqt-config-input.desktop
 share/applications/lxqt-config-locale.desktop
+share/applications/lxqt-config-monitor-autostart.desktop
 share/applications/lxqt-config-monitor.desktop
+share/applications/lxqt-config-touchpad-autostart.desktop
 share/applications/lxqt-config.desktop
 share/icons/hicolor/48x48/apps/brightnesssettings.svg
 share/lxqt/
@@ -75,6 +77,7 @@ share/lxqt/translations/lxqt-config-appearance/lxqt-config-appearance_sl.qm
 share/lxqt/translations/lxqt-config-appearance/lxqt-config-appearance_sr@latin.qm
 share/lxqt/translations/lxqt-config-appearance/lxqt-config-appearance_sr_BA.qm
 share/lxqt/translations/lxqt-config-appearance/lxqt-config-appearance_sr_RS.qm
+share/lxqt/translations/lxqt-config-appearance/lxqt-config-appearance_sv.qm
 share/lxqt/translations/lxqt-config-appearance/lxqt-config-appearance_th_TH.qm
 share/lxqt/translations/lxqt-config-appearance/lxqt-config-appearance_tr.qm
 share/lxqt/translations/lxqt-config-appearance/lxqt-config-appearance_uk.qm
@@ -106,6 +109,7 @@ share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_id.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_it.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_ja.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_ka.qm
+share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_kk.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_ko.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_lg.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_lt.qm
@@ -121,6 +125,7 @@ share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_ru.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_si.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_sk_SK.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_sl.qm
+share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_sv.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_tr.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_uk.qm
 share/lxqt/translations/lxqt-config-brightness/lxqt-config-brightness_zh_CN.qm
@@ -191,6 +196,7 @@ share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associati
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_en_GB.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_es.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_et.qm
+share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_eu.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_fi.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_fr.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_gl.qm
@@ -211,10 +217,12 @@ share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associati
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_oc.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_pl.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_pt.qm
+share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_pt_BR.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_ru.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_si.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_sk_SK.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_sl.qm
+share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_sv.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_tr.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_uk.qm
 share/lxqt/translations/lxqt-config-file-associations/lxqt-config-file-associations_zh_CN.qm
@@ -280,8 +288,10 @@ share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_da.qm
 share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_de.qm
 share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_el.qm
 share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_en_GB.qm
+share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_eo.qm
 share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_es.qm
 share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_et.qm
+share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_eu.qm
 share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_fi.qm
 share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_fr.qm
 share/lxqt/translations/lxqt-config-locale/lxqt-config-locale_gl.qm
@@ -329,6 +339,7 @@ share/lxqt/translations/lxqt-config-monitor/lxqt-config-monitor_el.qm
 share/lxqt/translations/lxqt-config-monitor/lxqt-config-monitor_en_GB.qm
 share/lxqt/translations/lxqt-config-monitor/lxqt-config-monitor_es.qm
 share/lxqt/translations/lxqt-config-monitor/lxqt-config-monitor_et.qm
+share/lxqt/translations/lxqt-config-monitor/lxqt-config-monitor_eu.qm
 share/lxqt/translations/lxqt-config-monitor/lxqt-config-monitor_fi.qm
 share/lxqt/translations/lxqt-config-monitor/lxqt-config-monitor_fr.qm
 share/lxqt/translations/lxqt-config-monitor/lxqt-config-monitor_gl.qm
@@ -405,6 +416,7 @@ share/lxqt/translations/lxqt-config/lxqt-config_ru.qm
 share/lxqt/translations/lxqt-config/lxqt-config_si.qm
 share/lxqt/translations/lxqt-config/lxqt-config_sk_SK.qm
 share/lxqt/translations/lxqt-config/lxqt-config_sl.qm
+share/lxqt/translations/lxqt-config/lxqt-config_sv.qm
 share/lxqt/translations/lxqt-config/lxqt-config_th_TH.qm
 share/lxqt/translations/lxqt-config/lxqt-config_tr.qm
 share/lxqt/translations/lxqt-config/lxqt-config_uk.qm

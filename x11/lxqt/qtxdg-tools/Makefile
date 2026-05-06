@@ -1,6 +1,6 @@
 COMMENT =	libqtxdg user tools
 
-VERSION =	4.2.0
+VERSION =	4.4.0
 
 NAME =		qtxdg-tools
 
