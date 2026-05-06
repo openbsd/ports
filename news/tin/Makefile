@@ -2,10 +2,8 @@ COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
 MAJORVERSION=	2.6
-PATCHLEVEL=	4
+PATCHLEVEL=	5
 CATEGORIES=	news
-
-REVISION=	0
 
 # stable first will allow pprtroach to find updates for a new major version,
 # v${MAJORVERSION} as a fallback allows fetching distfiles from an old stable
@@ -21,33 +19,38 @@ HOMEPAGE=	http://www.tin.org/
 # vms/vms.c
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses iconv icui18n icuuc idn2 intl pcre2-8 uriparser z
+WANTLIB += c crypto curses iconv icui18n icuuc idn2 intl pcre2-8 
+WANTLIB += tls uriparser z
 
-CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	gnu
 
 # --with-x does not affect the build, but let's be safe.
-CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
-			--without-metamail \
-			--without-pgp \
-			--without-pgpk \
-			--with-gpg=${LOCALBASE}/bin/gpg \
-			--without-socks \
-			--without-socks5 \
-			--without-slrnface \
-			--disable-gsasl \
-			--with-screen=ncurses \
-			--with-pcre2-config=${LOCALBASE}/bin/pcre2-config \
-			--with-libdir=${PREFIX}/lib/news \
-			--with-spooldir=${VARBASE}/spool/news \
-			--enable-break-long-lines \
-			--enable-ipv6 \
-			--without-x
+CONFIGURE_ARGS=	--enable-break-long-lines \
+		--enable-ipv6 \
+		--with-gpg=${LOCALBASE}/bin/gpg \
+		--disable-gsasl \
+		--with-ispell=${LOCALBASE}/bin/ispell \
+		--with-libdir=${PREFIX}/lib/news \
+		--without-metamail \
+		--with-nntps=libtls \
+		--without-pgp \
+		--without-pgpk \
+		--with-pcre2-config=${LOCALBASE}/bin/pcre2-config \
+		--without-socks \
+		--without-socks5 \
+		--without-slrnface \
+		--with-screen=ncurses \
+		--with-spooldir=${VARBASE}/spool/news \
+		--without-x
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_header_uudeview_h=no \
+		ac_cv_lib_uu_UUInitialize=yes \
+		ac_cv_sys_long_file_names=yes
 
 BUILD_DEPENDS=	devel/gettext,-tools
-LIB_DEPENDS+=	devel/pcre2 \
+LIB_DEPENDS=	devel/pcre2 \
 		devel/gettext,-runtime \
 		devel/libidn2 \
 		textproc/icu4c \

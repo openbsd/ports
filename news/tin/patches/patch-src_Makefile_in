@@ -7,9 +7,9 @@ Index: src/Makefile.in
  INS_BINARY_DIR	= @bindir@
 +INS_DATA_DIR	= @datadir@/tin
  INS_MANUAL_DIR	= @mandir@/man
- INS_SYSDEF_DIR	= @TIN_DEFAULTS_DIR@
- INS_MANUAL_EXT	= 1
-@@ -333,6 +334,7 @@ help :
+ MANUAL_DIR		= @mandir@
+ DEST_MAN		= $(DESTDIR)$(MANUAL_DIR)
+@@ -339,6 +340,7 @@ help :
  $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) \
  $(DESTDIR)$(INS_MANUAL_DIR)5 \
  $(DESTDIR)$(INS_BINARY_DIR) \
@@ -17,7 +17,7 @@ Index: src/Makefile.in
  $(DESTDIR)$(INS_SYSDEF_DIR) :
  	mkdir -p $@
  
-@@ -341,11 +343,6 @@ install_manpage : $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MAN
+@@ -347,11 +349,6 @@ install_manpage : $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MAN
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/$(PROJECT).$(INS_MANUAL_EXT)
  	@( $(CD) $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) && $(RM) -f r$(PROJECT).$(INS_MANUAL_EXT) && $(LN) $(PROJECT).$(INS_MANUAL_EXT) r$(PROJECT).$(INS_MANUAL_EXT) )
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.5 $(DESTDIR)$(INS_MANUAL_DIR)5/$(PROJECT).5
@@ -29,7 +29,7 @@ Index: src/Makefile.in
  
  uninstall_manpage :
  	@$(ECHO) "Uninstalling $(PROJECT) manual page in $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) ..."
-@@ -383,13 +380,13 @@ uninstall_sysdefs :
+@@ -410,13 +407,13 @@ uninstall_sysdefs :
  	@-$(RM) -f $(DESTDIR)$(INS_SYSDEF_DIR)/tin.defaults
  	@-$(RM) -f $(DESTDIR)$(INS_SYSDEF_DIR)/mime.types
  
