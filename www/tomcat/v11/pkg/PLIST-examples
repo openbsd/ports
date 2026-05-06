@@ -247,7 +247,6 @@ webapps/docs/api/org/apache/catalina/authenticator/SingleSignOn.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnEntry.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnListener.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnSessionKey.html
-webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.SpnegoTokenFixer.html
 webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.html
 webapps/docs/api/org/apache/catalina/authenticator/jaspic/
 webapps/docs/api/org/apache/catalina/authenticator/jaspic/AuthConfigFactoryImpl.html
@@ -2078,6 +2077,7 @@ webapps/docs/api/org/apache/tomcat/util/scan/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/scan/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/security/
 webapps/docs/api/org/apache/tomcat/util/security/ConcurrentMessageDigest.html
+webapps/docs/api/org/apache/tomcat/util/security/ConstantTime.html
 webapps/docs/api/org/apache/tomcat/util/security/Escape.html
 webapps/docs/api/org/apache/tomcat/util/security/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/security/package-tree.html
