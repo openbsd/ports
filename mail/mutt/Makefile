@@ -1,6 +1,6 @@
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-2.3.1
+DISTNAME=	mutt-2.3.2
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
