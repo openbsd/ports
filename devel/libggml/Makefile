@@ -2,11 +2,11 @@ COMMENT=		tensor library for machine learning
 
 GH_ACCOUNT=		ggml-org
 GH_PROJECT=		ggml
-GH_TAGNAME =		v0.9.11
+GH_TAGNAME =		v0.11.0
 PKGNAME=		lib${DISTNAME}
 
-SHARED_LIBS +=		ggml 3.7
-SHARED_LIBS +=		ggml-base 3.7
+SHARED_LIBS +=		ggml 3.8
+SHARED_LIBS +=		ggml-base 3.8
 
 CATEGORIES=		devel
 
@@ -19,6 +19,8 @@ WANTLIB += m pthread ${COMPILER_LIBCXX}
 
 MODULES=	devel/cmake
 COMPILER=	base-clang ports-gcc
+
+BUILD_DEPENDS=	graphics/spirv-headers
 
 CONFIGURE_ARGS=	-DGGML_CCACHE=OFF \
 		-DGGML_LTO=ON \
@@ -39,8 +41,8 @@ PKG_ARGS+=	-Dcpu=1
 
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Maarch64}
 CONFIGURE_ARGS+= -DGGML_VULKAN=on
-BUILD_DEPENDS=	graphics/shaderc
-LIB_DEPENDS=	graphics/vulkan-loader
+BUILD_DEPENDS+=	graphics/shaderc
+LIB_DEPENDS+=	graphics/vulkan-loader
 WANTLIB+=	vulkan
 PKG_ARGS+=	-Dvulkan=1
 .else
