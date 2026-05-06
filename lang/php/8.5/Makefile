@@ -1,4 +1,4 @@
-PHP_VERSION=	8.5.5
+PHP_VERSION=	8.5.6
 AUTOCONF_VERSION= 2.72
 
 # override PORTROACH from ../Makefile.inc; no marker wanted for the highest
