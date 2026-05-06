@@ -1,7 +1,5 @@
 @bin bin/dustrac-editor
 @bin bin/dustrac-game
-share/appdata/
-share/appdata/dustrac.appdata.xml
 share/applications/dustrac-editor.desktop
 share/applications/dustrac-game.desktop
 share/dustrac/
@@ -11,16 +9,13 @@ share/dustrac/COPYING
 share/dustrac/README.md
 share/dustrac/editorModels.conf
 share/dustrac/fonts/
-share/dustrac/fonts.conf
-share/dustrac/fonts/UbuntuMono-B.ttf
-share/dustrac/fonts/UbuntuMono-R.ttf
+share/dustrac/fonts/DejaVuSans-Bold.ttf
+share/dustrac/fonts/LICENCE.txt
 share/dustrac/images/
 share/dustrac/images/about.png
 share/dustrac/images/asphalt.png
 share/dustrac/images/brake.png
-share/dustrac/images/bridge.png
 share/dustrac/images/bridgeEditor.png
-share/dustrac/images/bridgeObject.png
 share/dustrac/images/bridgePreview.png
 share/dustrac/images/bushArea.png
 share/dustrac/images/carBlack.png
@@ -52,6 +47,7 @@ share/dustrac/images/cursor.png
 share/dustrac/images/cursor2.png
 share/dustrac/images/dustRacing2DBanner.png
 share/dustrac/images/finish.png
+share/dustrac/images/finishEditor.png
 share/dustrac/images/finishPreview.png
 share/dustrac/images/frontTire.png
 share/dustrac/images/grandstand.png
@@ -87,6 +83,9 @@ share/dustrac/images/smoke.png
 share/dustrac/images/sparkle.png
 share/dustrac/images/star.png
 share/dustrac/images/starGlow.png
+share/dustrac/images/starHalf.png
+share/dustrac/images/starHalfGlow.png
+share/dustrac/images/starHalfR.png
 share/dustrac/images/startLightGlow.png
 share/dustrac/images/startLightOff.png
 share/dustrac/images/startLightOffCorner.png
@@ -106,6 +105,7 @@ share/dustrac/images/trackSelectionBack.png
 share/dustrac/images/tree.png
 share/dustrac/images/wood.png
 share/dustrac/levels/
+share/dustrac/levels/Crossroads.trk
 share/dustrac/levels/Desert Storm.trk
 share/dustrac/levels/Diamond.trk
 share/dustrac/levels/Far Lands.trk
@@ -123,6 +123,7 @@ share/dustrac/levels/triangle.trk
 share/dustrac/levels/twister.trk
 share/dustrac/meshes.conf
 share/dustrac/models/
+share/dustrac/models/bridge.obj
 share/dustrac/models/cube.obj
 share/dustrac/sounds/
 share/dustrac/sounds/bell.ogg
@@ -142,15 +143,18 @@ share/dustrac/translations/dustrac-editor_de.qm
 share/dustrac/translations/dustrac-editor_fi.qm
 share/dustrac/translations/dustrac-editor_fr.qm
 share/dustrac/translations/dustrac-editor_it.qm
+share/dustrac/translations/dustrac-editor_nl.qm
+share/dustrac/translations/dustrac-editor_tr.qm
 share/dustrac/translations/dustrac-game_cs.qm
 share/dustrac/translations/dustrac-game_de.qm
 share/dustrac/translations/dustrac-game_fi.qm
 share/dustrac/translations/dustrac-game_fr.qm
 share/dustrac/translations/dustrac-game_it.qm
+share/dustrac/translations/dustrac-game_nl.qm
+share/dustrac/translations/dustrac-game_tr.qm
 share/icons/hicolor/64x64/apps/dustrac-editor.png
 share/icons/hicolor/64x64/apps/dustrac-game.png
-share/pixmaps/
-share/pixmaps/dustrac-editor.png
-share/pixmaps/dustrac-game.png
+share/metainfo/
+share/metainfo/dustrac.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

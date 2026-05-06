@@ -1,0 +1,100 @@
+part of https://github.com/juzzlin/DustRacing2D/commit/124c8b301c4d9370dcbac371358f777fa3fd4d3b
+
+fixes https://github.com/juzzlin/DustRacing2D/issues/144
+Index: src/game/MiniCore/src/Core/mcworld.cc
+--- src/game/MiniCore/src/Core/mcworld.cc.orig
++++ src/game/MiniCore/src/Core/mcworld.cc
+@@ -91,17 +91,31 @@ void MCWorld::integratePhysics(int step)
+ {
+     // Integrate and update all registered objects
+     m_forceRegistry->update();
+-    for (auto && object : m_objects)
++
++    for (size_t i = 0; i < m_objects.size();)
+     {
++        auto object = m_objects.at(i);
+         if (object->isPhysicsObject() && !object->physicsComponent().isStationary())
+         {
+             object->physicsComponent().stepTime(step);
+         }
+ 
+         object->onStepTime(step);
++
++        if (i < m_objects.size() && m_objects.at(i) == object)
++        {
++            i++;
++        }
++        else
++        {
++            // Object was removed from m_objects during onStepTime()
++            // (e.g. by removeObjectNow()). Since the last element
++            // was moved to index i, we should not increment i.
++        }
+     }
+ }
+ 
++
+ void MCWorld::generateImpulses()
+ {
+     m_impulseGenerator->generateImpulsesFromDeepestContacts(m_objects);
+@@ -137,14 +151,14 @@ MCWorld & MCWorld::instance()
+ 
+     return *MCWorld::m_instance;
+ }
+-
+ void MCWorld::clear()
+ {
+     // This does the same as removeObject(), but the removal
+     // process here is simpler as all data structures will be
+     // cleared and all objects will be removed at once.
+-    for (auto && object : m_objects)
++    for (size_t i = 0; i < m_objects.size(); ++i)
+     {
++        auto object = m_objects.at(i);
+         object->deleteContacts();
+         object->physicsComponent().reset();
+         object->setIndex(REMOVED_INDEX);
+@@ -154,14 +168,13 @@ void MCWorld::clear()
+             static_cast<MCParticle *>(object)->die();
+         }
+     }
+-
+-    m_renderer->clear();
+     m_objectGrid->removeAll();
+     m_objects.clear();
+     m_removeObjs.clear();
+     m_collisionDetector->clear();
+ }
+ 
++
+ void MCWorld::setDimensions(
+   float minX, float maxX, float minY, float maxY, float minZ, float maxZ,
+   float metersPerUnit, bool addAreaWalls, size_t gridSize)
+@@ -343,14 +356,14 @@ void MCWorld::removeObject(MCObject & object)
+         m_removeObjs.push_back(&object);
+     }
+ }
+-
+ void MCWorld::removeObjectNow(MCObject & object)
+ {
+     if (object.index() > REMOVED_INDEX || object.physicsComponent().isSleeping())
+     {
+         object.setRemoving(true);
+-        for (auto && obj : m_objects)
++        for (size_t i = 0; i < m_objects.size(); ++i)
+         {
++            auto obj = m_objects.at(i);
+             if (obj != &object && obj->isPhysicsObject())
+             {
+                 obj->deleteContacts(object);
+@@ -386,8 +399,8 @@ void MCWorld::removeObjectFromIntegration(MCObject & o
+     // Remove from object vector (O(1))
+     if (object.index() > REMOVED_INDEX && object.index() < static_cast<int>(m_objects.size()))
+     {
+-        m_objects[static_cast<size_t>(object.index())] = m_objects.back();
+-        m_objects[static_cast<size_t>(object.index())]->setIndex(object.index());
++        m_objects.at(static_cast<size_t>(object.index())) = m_objects.back();
++        m_objects.at(static_cast<size_t>(object.index()))->setIndex(object.index());
+         m_objects.pop_back();
+         object.setIndex(REMOVED_INDEX);
+     }

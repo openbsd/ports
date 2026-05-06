@@ -3,11 +3,10 @@ BROKEN-sparc64 = error: runtime_error is not a member of std
 COMMENT =		traditional top-down car racing game
 
 PKGNAME =		dustrac-${GH_TAGNAME}
-REVISION =		3
 
 GH_ACCOUNT =		juzzlin
 GH_PROJECT =		DustRacing2D
-GH_TAGNAME =		1.13.0
+GH_TAGNAME =		2.2.0
 
 CATEGORIES =		games
 
@@ -16,12 +15,14 @@ HOMEPAGE =		https://juzzlin.github.io/DustRacing2D/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLU c m openal pthread vorbisfile
-WANTLIB += Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets Qt5Xml
+WANTLIB += GL c m openal pthread vorbisfile
+WANTLIB += Qt6Core Qt6Gui Qt6OpenGL Qt6Sql Qt6Widgets Qt6Xml
 WANTLIB += ${COMPILER_LIBCXX}
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 MODULES =		devel/cmake \
-			x11/qt5
+			x11/qt6
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
