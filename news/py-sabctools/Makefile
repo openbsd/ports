@@ -2,7 +2,7 @@ BROKEN-riscv64 =	needs riscv_vector.h
 
 COMMENT =		C implementations of functions for use within SABnzbd
 
-MODPY_DISTV =		8.2.6
+MODPY_DISTV =		9.4.0
 EPOCH =			0
 DISTNAME =		sabctools-${MODPY_DISTV}
 PKGNAME =		py-sabctools-${MODPY_DISTV}
