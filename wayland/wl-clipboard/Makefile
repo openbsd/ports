@@ -1,9 +1,6 @@
 COMMENT =		wayland clipboard utilities
 
-GH_ACCOUNT=		bugaevc
-GH_PROJECT=		wl-clipboard
-GH_COMMIT=		e8082035dafe0241739d7f7d16f7ecfd2ce06172
-DISTNAME=		wl-clipboard-2.2.1pl20251124
+DIST_TUPLE =		github bugaevc wl-clipboard v2.3.0 .
 
 CATEGORIES =		wayland
 
