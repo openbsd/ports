@@ -1,6 +1,6 @@
 COMMENT=	testing library which puts values into source code
 
-MODPY_DISTV=	0.32.3
+MODPY_DISTV=	0.32.7
 DISTNAME=	inline_snapshot-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
@@ -16,13 +16,15 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatchling
 
-RUN_DEPENDS =	devel/py-asttokens \
+RUN_DEPENDS=	devel/py-asttokens \
 		devel/py-executing \
 		devel/py-rich
 
-TEST_DEPENDS =	devel/py-dirty-equals \
+TEST_DEPENDS=	devel/py-dirty-equals \
 		devel/py-freezegun \
+		devel/py-hypothesis \
 		devel/py-isort \
+		devel/py-pydantic \
 		devel/py-test-subtests \
 		textproc/py-black
 
