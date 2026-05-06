@@ -1,0 +1,53 @@
+Index: src/parsers/plan2/FlexLexer.h
+--- src/parsers/plan2/FlexLexer.h.orig
++++ src/parsers/plan2/FlexLexer.h
+@@ -125,16 +125,22 @@ class yyFlexLexer : public FlexLexer (public)
+ 
+     void yy_switch_to_buffer(yy_buffer_state *new_buffer) override;
+     yy_buffer_state *yy_create_buffer(std::istream *s, int size) override;
+-    yy_buffer_state *yy_create_buffer(std::istream &s, int size) override;
++    yy_buffer_state *yy_create_buffer(std::istream &s, int size) override {
++        return yy_create_buffer(&s,size);
++    }
+     void yy_delete_buffer(yy_buffer_state *b) override;
+     void yyrestart(std::istream *s) override;
+-    void yyrestart(std::istream &s) override;
++    void yyrestart(std::istream &s) override {
++        yyrestart(&s);
++    }
+ 
+     void yypush_buffer_state(yy_buffer_state *new_buffer);
+     void yypop_buffer_state();
+ 
+     int yylex() override;
+-    void switch_streams(std::istream &new_in, std::ostream &new_out) override;
++    void switch_streams(std::istream &new_in, std::ostream &new_out) override {
++        switch_streams(&new_in, &new_out);
++    }
+     void switch_streams(std::istream *new_in = nullptr, std::ostream *new_out = nullptr) override;
+     virtual int yywrap();
+ 
+@@ -147,7 +153,11 @@ class yyFlexLexer : public FlexLexer (public)
+     int yyinput();
+ 
+     void yy_load_buffer_state();
+-    void yy_init_buffer(yy_buffer_state *b, std::istream &s);
++    void yy_init_buffer(yy_buffer_state *b, std::istream *s);
++
++    void yy_init_buffer(yy_buffer_state *b, std::istream &s) {
++       yy_init_buffer(b, &s);
++    }
+     void yy_flush_buffer(yy_buffer_state *b);
+ 
+     int yy_start_stack_ptr;
+@@ -162,8 +172,8 @@ class yyFlexLexer : public FlexLexer (public)
+     yy_state_type yy_try_NUL_trans(yy_state_type current_state);
+     int yy_get_next_buffer();
+ 
+-    std::istream yyin; // input source for default LexerInput
+-    std::ostream yyout; // output sink for default LexerOutput
++    std::istream *yyin; // input source for default LexerInput
++    std::ostream *yyout; // output sink for default LexerOutput
+ 
+     // yy_hold_char holds the character lost when yytext is formed.
+     char yy_hold_char;
