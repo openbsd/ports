@@ -50,6 +50,7 @@ include/mtmd.h
 lib/cmake/llama/
 lib/cmake/llama/llama-config.cmake
 lib/cmake/llama/llama-version.cmake
+@lib lib/libllama-common.so.${LIBllama-common_VERSION}
 @lib lib/libllama.so.${LIBllama_VERSION}
 @lib lib/libmtmd.so.${LIBmtmd_VERSION}
 lib/pkgconfig/llama.pc
