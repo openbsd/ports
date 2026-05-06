@@ -10,7 +10,7 @@ MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 SITES =	https://archive.seamonkey-project.org/releases/${MOZILLA_DIST_VERSION}/source/
 
-REVISION =		0
+REVISION =		1
 
 # unbreaks build with rust 1.83
 SITES.p =	https://bugzilla.mozilla.org/
