@@ -87,13 +87,11 @@ lib/rabbitmq/plugins/amqp_client-${V}/ebin/amqp_ssl.beam
 lib/rabbitmq/plugins/amqp_client-${V}/ebin/amqp_sup.beam
 lib/rabbitmq/plugins/amqp_client-${V}/ebin/amqp_uri.beam
 lib/rabbitmq/plugins/amqp_client-${V}/ebin/amqp_util.beam
-lib/rabbitmq/plugins/amqp_client-${V}/ebin/rabbit_routing_util.beam
 lib/rabbitmq/plugins/amqp_client-${V}/ebin/uri_parser.beam
 lib/rabbitmq/plugins/amqp_client-${V}/include/
 lib/rabbitmq/plugins/amqp_client-${V}/include/amqp_client.hrl
 lib/rabbitmq/plugins/amqp_client-${V}/include/amqp_client_internal.hrl
 lib/rabbitmq/plugins/amqp_client-${V}/include/amqp_gen_consumer_spec.hrl
-lib/rabbitmq/plugins/amqp_client-${V}/include/rabbit_routing_prefixes.hrl
 lib/rabbitmq/plugins/${RABBIT_ATEN}/
 lib/rabbitmq/plugins/${RABBIT_ATEN}/ebin/
 lib/rabbitmq/plugins/${RABBIT_ATEN}/ebin/aten.app
@@ -471,37 +469,6 @@ lib/rabbitmq/plugins/${RABBIT_JOSE}/include/jose_jwt.hrl
 lib/rabbitmq/plugins/${RABBIT_JOSE}/include/jose_public_key.hrl
 lib/rabbitmq/plugins/${RABBIT_JOSE}/priv/
 lib/rabbitmq/plugins/${RABBIT_JOSE}/priv/.keep
-lib/rabbitmq/plugins/json-${V}/
-lib/rabbitmq/plugins/json-${V}/ebin/
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Decoder.BitString.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Decoder.DefaultImplementations.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Decoder.Error.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Decoder.List.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Decoder.UnexpectedEndOfBufferError.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Decoder.UnexpectedTokenError.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Decoder.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.Any.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.Atom.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.BitString.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.Error.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.Float.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.HashDict.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.Helpers.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.Integer.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.List.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.Map.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.Record.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.Tuple.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Encoder.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Logger.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Parser.Array.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Parser.Number.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Parser.Object.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Parser.String.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Parser.Unicode.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.Parser.beam
-lib/rabbitmq/plugins/json-${V}/ebin/Elixir.JSON.beam
-lib/rabbitmq/plugins/json-${V}/ebin/json.app
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri.app
@@ -643,18 +610,23 @@ lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_env.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_ets_queue.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_file.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_flru.beam
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_kv.beam
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_kv_harness.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_leaderboard.beam
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_li.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_lib.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_ets.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_meta.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_pre_init.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_read_plan.beam
-lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_reader.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_segment.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_segment_writer.beam
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_segments.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_snapshot.beam
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_snapshot_state.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_sup.beam
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_sync.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_wal.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_log_wal_sup.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_lol.beam
@@ -665,6 +637,7 @@ lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_metrics_ets.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_monitors.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_mt.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_range.beam
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_seq.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_server.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_server_proc.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_server_sup.beam
@@ -675,14 +648,12 @@ lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_system.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_system_recover.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_system_sup.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_systems_sup.beam
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_worker.beam
 lib/rabbitmq/plugins/rabbit-${V}/
 lib/rabbitmq/plugins/rabbit-${V}/ebin/
 lib/rabbitmq/plugins/rabbit-${V}/ebin/amqqueue.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/background_gc.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/code_server_cache.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/file_handle_cache.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/gatherer.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/gm.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/internal_user.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/lqueue.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/mc.beam
@@ -723,7 +694,6 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_auth_mechanism_cr_demo.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_auth_mechanism_plain.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_authn_backend.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_authz_backend.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_autoheal.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_backing_queue.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_basic.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_binding.beam
@@ -734,6 +704,7 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_channel_sup.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_channel_sup_sup.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_channel_tracking.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_channel_tracking_handler.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_chaos.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_classic_queue.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_classic_queue_index_v2.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_classic_queue_store_v2.beam
@@ -796,6 +767,7 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_exchange_type_fanout.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_exchange_type_headers.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_exchange_type_invalid.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_exchange_type_local_random.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_exchange_type_modulus_hash.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_exchange_type_topic.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_feature_flags.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ff_controller.beam
@@ -803,7 +775,6 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ff_extra.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ff_registry.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ff_registry_factory.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ff_registry_wrapper.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fhc_helpers.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_client.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_dlx.beam
@@ -812,10 +783,12 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_dlx_sup.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_dlx_worker.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_index.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_maps.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_pq.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_q.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v0.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v1.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v3.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v7.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_file.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_global_counters.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_guid.beam
@@ -860,9 +833,9 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_process.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_process_flag.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_queue_consumers.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_queue_decorator.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_queue_index.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_queue_location.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_queue_type.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_queue_type_ra.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_queue_type_util.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_quorum_event_subscriber.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_quorum_memory_manager.beam
@@ -884,7 +857,6 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_stream_sac_coordinator_v4.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_sup.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_sysmon_handler.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_sysmon_minder.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_table.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_time_travel_dbg.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_trace.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_tracking.beam
@@ -919,6 +891,7 @@ lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_amqp_reader.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_global_counters.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_khepri.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_memory.hrl
+lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_queue_type.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/vhost.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/vhost_v2.hrl
 lib/rabbitmq/plugins/rabbit-${V}/priv/
@@ -933,7 +906,6 @@ lib/rabbitmq/plugins/rabbit_common-${V}/ebin/delegate.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/delegate_sup.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/gen_server2.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/mirrored_supervisor_locks.beam
-lib/rabbitmq/plugins/rabbit_common-${V}/ebin/mnesia_sync.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/pmon.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/priority_queue.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_amqp_connection.beam
@@ -954,7 +926,6 @@ lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_env.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_error_logger_handler.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_event.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_framing.beam
-lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_framing_amqp_0_8.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_framing_amqp_0_9_1.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_heartbeat.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_http_util.beam
@@ -999,6 +970,13 @@ lib/rabbitmq/plugins/rabbitmq_amqp1_0-${V}/
 lib/rabbitmq/plugins/rabbitmq_amqp1_0-${V}/ebin/
 lib/rabbitmq/plugins/rabbitmq_amqp1_0-${V}/ebin/rabbitmq_amqp1_0.app
 lib/rabbitmq/plugins/rabbitmq_amqp1_0-${V}/ebin/rabbitmq_amqp1_0_noop.beam
+lib/rabbitmq/plugins/rabbitmq_amqp_client-${V}/
+lib/rabbitmq/plugins/rabbitmq_amqp_client-${V}/ebin/
+lib/rabbitmq/plugins/rabbitmq_amqp_client-${V}/ebin/rabbitmq_amqp_address.beam
+lib/rabbitmq/plugins/rabbitmq_amqp_client-${V}/ebin/rabbitmq_amqp_client.app
+lib/rabbitmq/plugins/rabbitmq_amqp_client-${V}/ebin/rabbitmq_amqp_client.beam
+lib/rabbitmq/plugins/rabbitmq_amqp_client-${V}/include/
+lib/rabbitmq/plugins/rabbitmq_amqp_client-${V}/include/rabbitmq_amqp_client.hrl
 lib/rabbitmq/plugins/rabbitmq_auth_backend_cache-${V}/
 lib/rabbitmq/plugins/rabbitmq_auth_backend_cache-${V}/ebin/
 lib/rabbitmq/plugins/rabbitmq_auth_backend_cache-${V}/ebin/Elixir.RabbitMQ.CLI.Ctl.Commands.ClearAuthBackendCacheCommand.beam
@@ -1033,6 +1011,7 @@ lib/rabbitmq/plugins/rabbitmq_auth_backend_ldap-${V}/ebin/
 lib/rabbitmq/plugins/rabbitmq_auth_backend_ldap-${V}/ebin/rabbit_auth_backend_ldap.beam
 lib/rabbitmq/plugins/rabbitmq_auth_backend_ldap-${V}/ebin/rabbit_auth_backend_ldap_app.beam
 lib/rabbitmq/plugins/rabbitmq_auth_backend_ldap-${V}/ebin/rabbit_auth_backend_ldap_util.beam
+lib/rabbitmq/plugins/rabbitmq_auth_backend_ldap-${V}/ebin/rabbit_ldap_rfc4514.beam
 lib/rabbitmq/plugins/rabbitmq_auth_backend_ldap-${V}/ebin/rabbitmq_auth_backend_ldap.app
 lib/rabbitmq/plugins/rabbitmq_auth_backend_ldap-${V}/include/
 lib/rabbitmq/plugins/rabbitmq_auth_backend_ldap-${V}/include/logging.hrl
@@ -1164,6 +1143,7 @@ lib/rabbitmq/plugins/rabbitmq_jms_topic_exchange-${V}/ebin/rabbit_db_jms_exchang
 lib/rabbitmq/plugins/rabbitmq_jms_topic_exchange-${V}/ebin/rabbit_jms_topic_exchange.beam
 lib/rabbitmq/plugins/rabbitmq_jms_topic_exchange-${V}/ebin/rabbitmq_jms_topic_exchange.app
 lib/rabbitmq/plugins/rabbitmq_jms_topic_exchange-${V}/ebin/sjx_evaluator.beam
+lib/rabbitmq/plugins/rabbitmq_jms_topic_exchange-${V}/ebin/sjx_parser.beam
 lib/rabbitmq/plugins/rabbitmq_jms_topic_exchange-${V}/include/
 lib/rabbitmq/plugins/rabbitmq_jms_topic_exchange-${V}/include/rabbit_jms_topic_exchange.hrl
 lib/rabbitmq/plugins/rabbitmq_management-${V}/
@@ -1272,6 +1252,7 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_topic_permissi
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_user.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_user_limit.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_user_limits.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_user_queues.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_users.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_users_bulk_delete.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_version.beam
@@ -1291,7 +1272,6 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/api/
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/api/index.html
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/cli/
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/cli/index.html
-lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/cli/rabbitmqadmin
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/css/
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/css/dark.css
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/css/evil.css
@@ -1536,6 +1516,7 @@ lib/rabbitmq/plugins/rabbitmq_prelaunch-${V}/ebin/rabbit_prelaunch_errors.beam
 lib/rabbitmq/plugins/rabbitmq_prelaunch-${V}/ebin/rabbit_prelaunch_file.beam
 lib/rabbitmq/plugins/rabbitmq_prelaunch-${V}/ebin/rabbit_prelaunch_sighandler.beam
 lib/rabbitmq/plugins/rabbitmq_prelaunch-${V}/ebin/rabbit_prelaunch_sup.beam
+lib/rabbitmq/plugins/rabbitmq_prelaunch-${V}/ebin/rabbit_prelaunch_ulimit.beam
 lib/rabbitmq/plugins/rabbitmq_prelaunch-${V}/ebin/rabbitmq_prelaunch.app
 lib/rabbitmq/plugins/rabbitmq_prometheus-${V}/
 lib/rabbitmq/plugins/rabbitmq_prometheus-${V}/ebin/
@@ -1582,7 +1563,6 @@ lib/rabbitmq/plugins/rabbitmq_recent_history_exchange-${V}/include/rabbit_recent
 lib/rabbitmq/plugins/rabbitmq_sharding-${V}/
 lib/rabbitmq/plugins/rabbitmq_sharding-${V}/ebin/
 lib/rabbitmq/plugins/rabbitmq_sharding-${V}/ebin/rabbit_sharding_exchange_decorator.beam
-lib/rabbitmq/plugins/rabbitmq_sharding-${V}/ebin/rabbit_sharding_exchange_type_modulus_hash.beam
 lib/rabbitmq/plugins/rabbitmq_sharding-${V}/ebin/rabbit_sharding_interceptor.beam
 lib/rabbitmq/plugins/rabbitmq_sharding-${V}/ebin/rabbit_sharding_policy_validator.beam
 lib/rabbitmq/plugins/rabbitmq_sharding-${V}/ebin/rabbit_sharding_shard.beam
@@ -1600,8 +1580,10 @@ lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel.beam
 lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel_behaviour.beam
 lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel_config.beam
 lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel_confirms.beam
+lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel_definition.beam
 lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel_dyn_worker_sup.beam
 lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel_dyn_worker_sup_sup.beam
+lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel_index.beam
 lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel_locks.beam
 lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel_operating_mode.beam
 lib/rabbitmq/plugins/rabbitmq_shovel-${V}/ebin/rabbit_shovel_parameters.beam
@@ -1642,11 +1624,11 @@ lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/Elixir.RabbitMQ.CLI.Ctl.Commands.ListStompConnectionsCommand.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_client_sup.beam
-lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_connection_info.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_frame.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_internal_event_handler.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_processor.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_reader.beam
+lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_routing_util.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_sup.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_util.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbitmq_stomp.app
@@ -1654,6 +1636,7 @@ lib/rabbitmq/plugins/rabbitmq_stomp-${V}/include/
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/include/rabbit_stomp.hrl
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/include/rabbit_stomp_frame.hrl
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/include/rabbit_stomp_headers.hrl
+lib/rabbitmq/plugins/rabbitmq_stomp-${V}/include/rabbit_stomp_routing_prefixes.hrl
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/priv/
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/priv/schema/
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/priv/schema/rabbitmq_stomp.schema
@@ -1757,6 +1740,8 @@ lib/rabbitmq/plugins/rabbitmq_tracing-${V}/priv/www/js/tmpl/traces.ejs
 lib/rabbitmq/plugins/rabbitmq_tracing-${V}/priv/www/js/tracing.js
 lib/rabbitmq/plugins/rabbitmq_trust_store-${V}/
 lib/rabbitmq/plugins/rabbitmq_trust_store-${V}/ebin/
+lib/rabbitmq/plugins/rabbitmq_trust_store-${V}/ebin/Elixir.RabbitMQ.CLI.Ctl.Commands.ListTrustStoreCertificatesCommand.beam
+lib/rabbitmq/plugins/rabbitmq_trust_store-${V}/ebin/Elixir.RabbitMQ.CLI.Ctl.Commands.RefreshTrustStoreCommand.beam
 lib/rabbitmq/plugins/rabbitmq_trust_store-${V}/ebin/rabbit_trust_store.beam
 lib/rabbitmq/plugins/rabbitmq_trust_store-${V}/ebin/rabbit_trust_store_app.beam
 lib/rabbitmq/plugins/rabbitmq_trust_store-${V}/ebin/rabbit_trust_store_certificate_provider.beam
@@ -1769,19 +1754,19 @@ lib/rabbitmq/plugins/rabbitmq_trust_store-${V}/priv/schema/
 lib/rabbitmq/plugins/rabbitmq_trust_store-${V}/priv/schema/rabbitmq_trust_store.schema
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/
+lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_access_log_fmt.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_cowboy_middleware.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_cowboy_redirect.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_cowboy_stream_h.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_access_control.beam
+lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_access_log.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_app.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_listing_handler.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_registry.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_sup.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbit_web_dispatch_util.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/rabbitmq_web_dispatch.app
-lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/webmachine_log.beam
-lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/webmachine_log_handler.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/include/
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/include/rabbitmq_web_dispatch_records.hrl
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/priv/
@@ -1949,7 +1934,6 @@ lib/rabbitmq/sbin/rabbitmqctl
 lib/rabbitmq/sbin/vmware-rabbitmq
 @man man/man5/rabbitmq-env.conf.5
 @man man/man8/rabbitmq-diagnostics.8
-@man man/man8/rabbitmq-echopid.8
 @man man/man8/rabbitmq-plugins.8
 @man man/man8/rabbitmq-queues.8
 @man man/man8/rabbitmq-server.8
