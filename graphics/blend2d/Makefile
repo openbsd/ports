@@ -1,9 +1,9 @@
 COMMENT =		2d vector graphics engine
 
-DISTNAME =	blend2d-0.12.0
+DISTNAME =	blend2d-0.21.2
 
 CATEGORIES =	graphics
-SHARED_LIBS =	blend2d	0.0
+SHARED_LIBS =	blend2d	1.0
 # BSD
 PERMIT_PACKAGE =	Yes
 
