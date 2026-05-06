@@ -1,7 +1,9 @@
 include/llhttp.h
 lib/cmake/
 lib/cmake/llhttp/
-lib/cmake/llhttp/llhttp-config${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/llhttp/llhttp-config.cmake
+lib/cmake/llhttp/llhttp-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/llhttp/llhttp-targets.cmake
+lib/cmake/llhttp/llhttpConfig.cmake
+lib/cmake/llhttp/llhttpConfigVersion.cmake
 @lib lib/libllhttp.so.${LIBllhttp_VERSION}
 lib/pkgconfig/libllhttp.pc
