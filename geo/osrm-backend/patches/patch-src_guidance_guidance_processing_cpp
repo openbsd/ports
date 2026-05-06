@@ -55,6 +55,6 @@ Index: src/guidance/guidance_processing.cpp
          tbb::filter<TurnsPipelineBufferPtr, void> guidance_output_stage(
              tbb::filter_mode::serial_in_order,
 +#endif
-             [&](auto buffer)
+             [&](const auto &buffer)
              {
                  guidance_progress.PrintAddition(buffer->nodes_processed);

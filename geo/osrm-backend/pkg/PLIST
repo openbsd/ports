@@ -6,6 +6,7 @@
 @bin bin/osrm-customize
 @bin bin/osrm-datastore
 @bin bin/osrm-extract
+@comment @bin bin/osrm-io-benchmark
 @bin bin/osrm-partition
 @bin bin/osrm-routed
 include/osrm/
@@ -47,10 +48,20 @@ include/osrm/extractor/io_config.hpp
 include/osrm/extractor/travel_mode.hpp
 include/osrm/extractor_config.hpp
 include/osrm/flatbuffers/
+include/osrm/flatbuffers/allocator.h
+include/osrm/flatbuffers/array.h
 include/osrm/flatbuffers/base.h
+include/osrm/flatbuffers/buffer.h
+include/osrm/flatbuffers/buffer_ref.h
+include/osrm/flatbuffers/code_generator.h
 include/osrm/flatbuffers/code_generators.h
+include/osrm/flatbuffers/default_allocator.h
+include/osrm/flatbuffers/detached_buffer.h
+include/osrm/flatbuffers/file_manager.h
+include/osrm/flatbuffers/flatbuffer_builder.h
 include/osrm/flatbuffers/flatbuffers.h
 include/osrm/flatbuffers/flatc.h
+include/osrm/flatbuffers/flex_flat_util.h
 include/osrm/flatbuffers/flexbuffers.h
 include/osrm/flatbuffers/grpc.h
 include/osrm/flatbuffers/hash.h
@@ -60,7 +71,13 @@ include/osrm/flatbuffers/reflection.h
 include/osrm/flatbuffers/reflection_generated.h
 include/osrm/flatbuffers/registry.h
 include/osrm/flatbuffers/stl_emulation.h
+include/osrm/flatbuffers/string.h
+include/osrm/flatbuffers/struct.h
+include/osrm/flatbuffers/table.h
 include/osrm/flatbuffers/util.h
+include/osrm/flatbuffers/vector.h
+include/osrm/flatbuffers/vector_downward.h
+include/osrm/flatbuffers/verifier.h
 include/osrm/json_container.hpp
 include/osrm/match_parameters.hpp
 include/osrm/nearest_parameters.hpp
@@ -92,7 +109,6 @@ include/osrm/util/typedefs.hpp
 @static-lib lib/libosrm_contract.a
 @static-lib lib/libosrm_customize.a
 @static-lib lib/libosrm_extract.a
-@static-lib lib/libosrm_guidance.a
 @static-lib lib/libosrm_partition.a
 @static-lib lib/libosrm_store.a
 @static-lib lib/libosrm_update.a
@@ -115,6 +131,7 @@ share/osrm/profiles/lib/destination.lua
 share/osrm/profiles/lib/guidance.lua
 share/osrm/profiles/lib/maxspeed.lua
 share/osrm/profiles/lib/measure.lua
+share/osrm/profiles/lib/obstacles.lua
 share/osrm/profiles/lib/pprint.lua
 share/osrm/profiles/lib/profile_debugger.lua
 share/osrm/profiles/lib/relations.lua

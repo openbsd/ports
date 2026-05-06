@@ -4,9 +4,9 @@ https://github.com/Project-OSRM/osrm-backend/pull/6493
 Index: src/partitioner/recursive_bisection.cpp
 --- src/partitioner/recursive_bisection.cpp.orig
 +++ src/partitioner/recursive_bisection.cpp
-@@ -65,12 +65,20 @@ RecursiveBisection::RecursiveBisection(BisectionGraph 
-                        return TreeNode{std::move(graph), internal_state.SCCDepth()};
-                    });
+@@ -63,12 +63,20 @@ RecursiveBisection::RecursiveBisection(BisectionGraph 
+                    [this](auto graph)
+                    { return TreeNode{std::move(graph), internal_state.SCCDepth()}; });
  
 +#if TBB_VERSION_MAJOR == 2020
 +    using Feeder = tbb::parallel_do_feeder<TreeNode>;

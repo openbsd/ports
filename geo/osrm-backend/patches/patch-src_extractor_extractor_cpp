@@ -15,8 +15,8 @@ Index: src/extractor/extractor.cpp
 +#endif
  
  #include <algorithm>
- #include <atomic>
-@@ -443,8 +447,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
+ #include <memory>
+@@ -433,8 +437,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
  
      const auto buffer_reader = [](osmium::io::Reader &reader)
      {
@@ -30,7 +30,7 @@ Index: src/extractor/extractor.cpp
              [&reader](tbb::flow_control &fc)
              {
                  if (auto buffer = reader.read())
-@@ -467,8 +476,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
+@@ -457,8 +466,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
      osmium_index_type location_cache;
      osmium_location_handler_type location_handler(location_cache);
  
@@ -44,7 +44,7 @@ Index: src/extractor/extractor.cpp
          [&location_handler](SharedBuffer buffer)
          {
              osmium::apply(buffer->begin(), buffer->end(), location_handler);
-@@ -476,8 +490,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
+@@ -466,8 +480,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
          });
  
      // OSM elements Lua parser
@@ -58,7 +58,7 @@ Index: src/extractor/extractor.cpp
          // NOLINTNEXTLINE(performance-unnecessary-value-param)
          [&](const SharedBuffer buffer)
          {
-@@ -499,8 +518,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
+@@ -489,8 +508,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
      unsigned number_of_ways = 0;
      unsigned number_of_restrictions = 0;
      unsigned number_of_maneuver_overrides = 0;
@@ -72,7 +72,7 @@ Index: src/extractor/extractor.cpp
          [&](const ParsedBuffer &parsed_buffer)
          {
              number_of_nodes += parsed_buffer.resulting_nodes.size();
-@@ -528,8 +552,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
+@@ -519,8 +543,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
              }
          });
  
@@ -86,7 +86,7 @@ Index: src/extractor/extractor.cpp
          // NOLINTNEXTLINE(performance-unnecessary-value-param)
          [&](const SharedBuffer buffer)
          {
-@@ -567,8 +596,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
+@@ -558,8 +587,13 @@ Extractor::ParsedOSMData Extractor::ParseOSMData(Scrip
          });
  
      unsigned number_of_relations = 0;
