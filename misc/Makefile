@@ -28,6 +28,7 @@
      SUBDIR += fortunes-ru
      SUBDIR += freeopcua
      SUBDIR += ftdi-eeprom
+     SUBDIR += gammastep
      SUBDIR += garmin-utils
      SUBDIR += geekcode
      SUBDIR += gnugetopt
