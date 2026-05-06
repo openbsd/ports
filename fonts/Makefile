@@ -73,6 +73,7 @@
      SUBDIR += lohit-fonts
      SUBDIR += luciole
      SUBDIR += mada
+     SUBDIR += marelle
      SUBDIR += migmix
      SUBDIR += migu
      SUBDIR += mixfont-mplus-ipa
