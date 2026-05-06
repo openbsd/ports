@@ -1,6 +1,7 @@
 COMMENT=	GNU implementation of SIP (RFC3261)
 
 DISTNAME=	libosip2-5.3.1
+REVISION=	0
 
 SHARED_LIBS +=	osipparser2          5.0      # 15.1
 SHARED_LIBS +=	osip2                5.0      # 15.1
@@ -22,5 +23,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-test
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
