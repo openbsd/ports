@@ -32,6 +32,7 @@ lib/cmake/KF6Archive/KF6ArchiveConfigVersion.cmake
 lib/cmake/KF6Archive/KF6ArchiveTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6Archive/KF6ArchiveTargets.cmake
 @lib lib/libKF6Archive.so.${LIBKF6Archive_VERSION}
+lib/pkgconfig/KF6Archive.pc
 share/locale/ar/LC_MESSAGES/karchive6_qt.qm
 share/locale/ast/LC_MESSAGES/karchive6_qt.qm
 share/locale/bg/LC_MESSAGES/karchive6_qt.qm

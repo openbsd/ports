@@ -21,7 +21,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/kio>=${MODKF6_VERSION} \
 		devel/kf6/kjobwidgets>=${MODKF6_VERSION} \
 		devel/kf6/kservice>=${MODKF6_VERSION} \
-		devel/kf6/solid>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION}
 
 TEST_DEPENDS =	devel/kf6/kxmlgui>=${MODKF6_VERSION}

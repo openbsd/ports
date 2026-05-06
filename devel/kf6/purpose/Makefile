@@ -15,9 +15,11 @@ MODULES +=	textproc/intltool
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		textproc/intltool \
+		net/accounts-qml-module \
 		devel/kf6/kirigami>=${MODKF6_VERSION} \
 
 RUN_DEPENDS =	devel/kf6/kirigami>=${MODKF6_VERSION} \
+		net/accounts-qml-module \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf6/kcompletion>=${MODKF6_VERSION} \
@@ -29,7 +31,6 @@ LIB_DEPENDS =	devel/kf6/kcompletion>=${MODKF6_VERSION} \
 		devel/kf6/knotifications>=${MODKF6_VERSION} \
 		devel/kf6/kservice>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION} \
-		devel/kf6/solid>=${MODKF6_VERSION} \
 		x11/qt6/qtdeclarative
 
 LIB_DEPENDS +=	net/libaccounts-qt \

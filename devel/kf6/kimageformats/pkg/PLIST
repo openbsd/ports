@@ -23,4 +23,5 @@ lib/cmake/KF6ImageFormats/KF6ImageFormatsConfigVersion.cmake
 @so lib/qt6/plugins/imageformats/kimg_rgb.so
 @so lib/qt6/plugins/imageformats/kimg_sct.so
 @so lib/qt6/plugins/imageformats/kimg_tga.so
+@so lib/qt6/plugins/imageformats/kimg_tim.so
 @so lib/qt6/plugins/imageformats/kimg_xcf.so

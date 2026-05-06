@@ -25,7 +25,7 @@ LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \
 		devel/kf6/kservice>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION} \
 		devel/kf6/kxmlgui>=${MODKF6_VERSION} \
-		devel/kf6/solid>=${MODKF6_VERSION}
+
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

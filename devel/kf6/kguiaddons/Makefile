@@ -1,5 +1,4 @@
 COMMENT =	utilities for graphical user interfaces
-VERSION =	6.23.1
 DISTNAME =	kguiaddons-${VERSION}
 
 SHARED_LIBS +=  KF6GuiAddons              0.1 # 0.0
