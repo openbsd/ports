@@ -14,4 +14,4 @@ Index: src/configure.ac
 +	  LUA_INC=/lua-$vi_cv_version_lua
  	else
  	  AC_MSG_RESULT(no)
- 	  vi_cv_path_lua_pfx=
+ 

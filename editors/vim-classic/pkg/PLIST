@@ -1509,6 +1509,7 @@ share/vim/${P}/syntax/bdf.vim
 share/vim/${P}/syntax/bib.vim
 share/vim/${P}/syntax/bindzone.vim
 share/vim/${P}/syntax/blank.vim
+share/vim/${P}/syntax/bsdl.vim
 share/vim/${P}/syntax/bst.vim
 share/vim/${P}/syntax/btm.vim
 share/vim/${P}/syntax/bzl.vim

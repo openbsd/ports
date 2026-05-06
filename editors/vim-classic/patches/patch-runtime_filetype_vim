@@ -1,7 +1,7 @@
 Index: runtime/filetype.vim
 --- runtime/filetype.vim.orig
 +++ runtime/filetype.vim
-@@ -469,7 +469,7 @@ au BufNewFile,BufRead dictd.conf		setf dictdconf
+@@ -472,7 +472,7 @@ au BufNewFile,BufRead dictd.conf		setf dictdconf
  
  " Diff files
  au BufNewFile,BufRead *.diff,*.rej		setf diff
@@ -10,7 +10,7 @@ Index: runtime/filetype.vim
  	\ if getline(1) =~ '^From [0-9a-f]\{40\} Mon Sep 17 00:00:00 2001$' |
  	\   setf gitsendemail |
  	\ else |
-@@ -945,6 +945,7 @@ au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
+@@ -951,6 +951,7 @@ au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
  
  " Makefile
  au BufNewFile,BufRead *[mM]akefile,*.mk,*.mak,*.dsp setf make
