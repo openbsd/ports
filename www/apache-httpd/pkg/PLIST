@@ -284,6 +284,8 @@ share/doc/apache2/developer/hooks.html.en
 share/doc/apache2/developer/index.html
 share/doc/apache2/developer/index.html.en
 share/doc/apache2/developer/index.html.zh-cn.utf8
+share/doc/apache2/developer/mod_example_1.c
+share/doc/apache2/developer/mod_example_2.c
 share/doc/apache2/developer/modguide.html
 share/doc/apache2/developer/modguide.html.en
 share/doc/apache2/developer/modules.html
@@ -1114,10 +1116,6 @@ share/doc/apache2/platform/netware.html
 share/doc/apache2/platform/netware.html.en
 share/doc/apache2/platform/netware.html.fr.utf8
 share/doc/apache2/platform/netware.html.ko.euc-kr
-share/doc/apache2/platform/perf-hp.html
-share/doc/apache2/platform/perf-hp.html.en
-share/doc/apache2/platform/perf-hp.html.fr.utf8
-share/doc/apache2/platform/perf-hp.html.ko.euc-kr
 share/doc/apache2/platform/rpm.html
 share/doc/apache2/platform/rpm.html.en
 share/doc/apache2/platform/rpm.html.fr.utf8
