@@ -18,8 +18,13 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HMAC/rfc-4231-sha2
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HMAC/rfc-4231-sha256.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HMAC/rfc-4231-sha384.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HMAC/rfc-4231-sha512.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HPKE/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HPKE/hpke-pq-test-vectors.json
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HPKE/test-vectors.json
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/ansx963_2001.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/argon2d.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/argon2i.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/argon2id.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/hkdf-generated.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/nist-800-108-KBKDF-CTR.txt
@@ -102,6 +107,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/comp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/ec-missing-curve.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/explicit_parameters_private_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/explicit_parameters_wap_wsg_idm_ecid_wtls11_private_key.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/high-bit-set.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/secp128r1_private_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/secp256k1-explicit-no-seed.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/secp256k1-pub-explicit-no-seed.pem
@@ -121,6 +127,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/sect
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/sect163r2-spki.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/sect233k1-spki.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/sect233r1-spki.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/truncated-private-key.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/KASValidityTest_ECCStaticUnified_KDFConcat_NOKC_init.fax
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/KASValidityTest_ECCStaticUnified_KDFConcat_NOKC_resp.fax
@@ -162,6 +169,19 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/e
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pub.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pub.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/rfc8032.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLDSA/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLDSA/kat_MLDSA_44_det_pure.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLDSA/kat_MLDSA_65_det_pure.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLDSA/kat_MLDSA_87_det_pure.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLDSA/mldsa44_priv.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLDSA/mldsa44_pub.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLDSA/mldsa65_noseed_priv.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLKEM/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLKEM/kat_MLKEM_1024.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLKEM/kat_MLKEM_512.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLKEM/kat_MLKEM_768.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLKEM/mlkem768.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/MLKEM/mlkem768.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/dsa-p256.pub
@@ -240,6 +260,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/e
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/ed25519-scrypt.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/enc-ec-sha1-128-rc4.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/enc-rsa-3des.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/enc-rsa-pkcs8-pbkdf2-0iter.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/enc-rsa-pkcs8.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/enc-unknown-algorithm.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/enc-unknown-kdf.pem
@@ -279,6 +300,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/u
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/unenc-rsa-pkcs8.pub.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/unknown-oid.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/withdompar_private.pkcs8.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/wrong-pem-delimiter-rsa.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/FIPS_186-2/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/FIPS_186-2/KeyGenRSA.rsp
