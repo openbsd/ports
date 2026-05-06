@@ -1,0 +1,15 @@
+devel/epoll-shim does not support CLOCK_BOOTTIME, but CLOCK_MONOTONIC
+works fine.
+
+Index: notification.c
+--- notification.c.orig
++++ notification.c
+@@ -898,7 +898,7 @@ notif_reload_timeout(struct notif *notif)
+     }
+ 
+     notif->timeout_fd = timerfd_create(
+-        CLOCK_BOOTTIME, TFD_CLOEXEC | TFD_NONBLOCK);
++        CLOCK_MONOTONIC, TFD_CLOEXEC | TFD_NONBLOCK);
+ 
+     if (notif->timeout_fd < 0) {
+         LOG_ERRNO("failed to create notification timeout timer FD");

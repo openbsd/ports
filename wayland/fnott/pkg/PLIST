@@ -1,0 +1,24 @@
+@bin bin/fnott
+@bin bin/fnottctl
+@man man/man1/fnott.1
+@man man/man1/fnottctl.1
+@man man/man5/fnott.ini.5
+share/applications/fnott.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/fnott.service
+share/doc/fnott/
+share/doc/fnott/LICENSE
+share/doc/fnott/README.md
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/fnott/
+share/examples/fnott/
+share/examples/fnott/fnott.ini
+@sample ${SYSCONFDIR}/xdg/fnott/fnott.ini
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/fnott.fish
+share/fish/vendor_completions.d/fnottctl.fish
+share/zsh/site-functions/_fnott
+share/zsh/site-functions/_fnottctl
+@tag update-desktop-database
