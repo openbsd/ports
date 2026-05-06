@@ -63,6 +63,7 @@ lib/rustlib/src/rust/library/alloc/src/ffi/
 lib/rustlib/src/rust/library/alloc/src/ffi/c_str.rs
 lib/rustlib/src/rust/library/alloc/src/ffi/mod.rs
 lib/rustlib/src/rust/library/alloc/src/fmt.rs
+lib/rustlib/src/rust/library/alloc/src/intrinsics.rs
 lib/rustlib/src/rust/library/alloc/src/lib.miri.rs
 lib/rustlib/src/rust/library/alloc/src/lib.rs
 lib/rustlib/src/rust/library/alloc/src/macros.rs
@@ -164,6 +165,7 @@ lib/rustlib/src/rust/library/backtrace/.github/
 lib/rustlib/src/rust/library/backtrace/.github/workflows/
 lib/rustlib/src/rust/library/backtrace/.github/workflows/main.yml
 lib/rustlib/src/rust/library/backtrace/.github/workflows/publish.yml
+lib/rustlib/src/rust/library/backtrace/CHANGELOG.md
 lib/rustlib/src/rust/library/backtrace/Cargo.lock
 lib/rustlib/src/rust/library/backtrace/Cargo.toml
 lib/rustlib/src/rust/library/backtrace/LICENSE-APACHE
@@ -385,7 +387,6 @@ lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/aarch64.rs
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/aarch64_outline_atomics.rs
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/arm.rs
-lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/arm_linux.rs
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/avr.rs
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/float/
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/float/add.rs
@@ -454,6 +455,11 @@ lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/mem/mod.rs
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/mem/x86_64.rs
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/probestack.rs
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/riscv.rs
+lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/sync/
+lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/sync/arm_linux.rs
+lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/sync/arm_thumb_shared.rs
+lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/sync/mod.rs
+lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/sync/thumbv6k.rs
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/x86.rs
 lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins/src/x86_64.rs
 lib/rustlib/src/rust/library/compiler-builtins/crates/
@@ -481,8 +487,15 @@ lib/rustlib/src/rust/library/compiler-builtins/crates/panic-handler/src/
 lib/rustlib/src/rust/library/compiler-builtins/crates/panic-handler/src/lib.rs
 lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/
 lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/Cargo.toml
+lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/build.rs
 lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/src/
 lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/src/main.rs
+lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/tests/
+lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/tests/all.rs
+lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/tests/input/
+lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/tests/input/core_symbols.rs
+lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/tests/input/duplicates.rs
+lib/rustlib/src/rust/library/compiler-builtins/crates/symbol-check/tests/input/good.rs
 lib/rustlib/src/rust/library/compiler-builtins/crates/util/
 lib/rustlib/src/rust/library/compiler-builtins/crates/util/Cargo.toml
 lib/rustlib/src/rust/library/compiler-builtins/crates/util/build.rs
@@ -491,6 +504,7 @@ lib/rustlib/src/rust/library/compiler-builtins/crates/util/src/main.rs
 lib/rustlib/src/rust/library/compiler-builtins/etc/
 lib/rustlib/src/rust/library/compiler-builtins/etc/function-definitions.json
 lib/rustlib/src/rust/library/compiler-builtins/etc/function-list.txt
+lib/rustlib/src/rust/library/compiler-builtins/etc/thumbv6-none-eabi.json
 lib/rustlib/src/rust/library/compiler-builtins/etc/thumbv7em-none-eabi-renamed.json
 lib/rustlib/src/rust/library/compiler-builtins/etc/update-api-list.py
 lib/rustlib/src/rust/library/compiler-builtins/josh-sync.toml
@@ -1076,6 +1090,7 @@ lib/rustlib/src/rust/library/coretests/benches/str.rs
 lib/rustlib/src/rust/library/coretests/benches/str/char_count.rs
 lib/rustlib/src/rust/library/coretests/benches/str/corpora.rs
 lib/rustlib/src/rust/library/coretests/benches/str/debug.rs
+lib/rustlib/src/rust/library/coretests/benches/str/eq_ignore_ascii_case.rs
 lib/rustlib/src/rust/library/coretests/benches/str/iter.rs
 lib/rustlib/src/rust/library/coretests/benches/tuple.rs
 lib/rustlib/src/rust/library/coretests/lib.rs
@@ -1160,6 +1175,8 @@ lib/rustlib/src/rust/library/coretests/tests/macros.rs
 lib/rustlib/src/rust/library/coretests/tests/manually_drop.rs
 lib/rustlib/src/rust/library/coretests/tests/mem/
 lib/rustlib/src/rust/library/coretests/tests/mem.rs
+lib/rustlib/src/rust/library/coretests/tests/mem/fn_ptr.rs
+lib/rustlib/src/rust/library/coretests/tests/mem/trait_info_of.rs
 lib/rustlib/src/rust/library/coretests/tests/mem/type_info.rs
 lib/rustlib/src/rust/library/coretests/tests/net/
 lib/rustlib/src/rust/library/coretests/tests/net/ip_addr.rs
@@ -1169,6 +1186,7 @@ lib/rustlib/src/rust/library/coretests/tests/net/socket_addr.rs
 lib/rustlib/src/rust/library/coretests/tests/nonzero.rs
 lib/rustlib/src/rust/library/coretests/tests/num/
 lib/rustlib/src/rust/library/coretests/tests/num/bignum.rs
+lib/rustlib/src/rust/library/coretests/tests/num/carryless_mul.rs
 lib/rustlib/src/rust/library/coretests/tests/num/clamp_magnitude.rs
 lib/rustlib/src/rust/library/coretests/tests/num/const_from.rs
 lib/rustlib/src/rust/library/coretests/tests/num/dec2flt/
@@ -1286,12 +1304,8 @@ lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/cast.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/core_simd_docs.md
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/fmt.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/iter.rs
-lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/lane_count.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/lib.rs
-lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/masks/
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/masks.rs
-lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/masks/bitmask.rs
-lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/masks/full_masks.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/mod.rs
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/ops/
 lib/rustlib/src/rust/library/portable-simd/crates/core_simd/src/ops.rs
@@ -1370,6 +1384,7 @@ lib/rustlib/src/rust/library/portable-simd/crates/std_float/tests/float.rs
 lib/rustlib/src/rust/library/portable-simd/crates/test_helpers/
 lib/rustlib/src/rust/library/portable-simd/crates/test_helpers/Cargo.toml
 lib/rustlib/src/rust/library/portable-simd/crates/test_helpers/src/
+lib/rustlib/src/rust/library/portable-simd/crates/test_helpers/src/approxeq.rs
 lib/rustlib/src/rust/library/portable-simd/crates/test_helpers/src/array.rs
 lib/rustlib/src/rust/library/portable-simd/crates/test_helpers/src/biteq.rs
 lib/rustlib/src/rust/library/portable-simd/crates/test_helpers/src/lib.rs
@@ -1557,6 +1572,7 @@ lib/rustlib/src/rust/library/std/src/os/fd/mod.rs
 lib/rustlib/src/rust/library/std/src/os/fd/net.rs
 lib/rustlib/src/rust/library/std/src/os/fd/owned.rs
 lib/rustlib/src/rust/library/std/src/os/fd/raw.rs
+lib/rustlib/src/rust/library/std/src/os/fd/stdio.rs
 lib/rustlib/src/rust/library/std/src/os/fd/tests.rs
 lib/rustlib/src/rust/library/std/src/os/fortanix_sgx/
 lib/rustlib/src/rust/library/std/src/os/fortanix_sgx/arch.rs
@@ -1720,6 +1736,11 @@ lib/rustlib/src/rust/library/std/src/os/windows/io/raw.rs
 lib/rustlib/src/rust/library/std/src/os/windows/io/socket.rs
 lib/rustlib/src/rust/library/std/src/os/windows/io/tests.rs
 lib/rustlib/src/rust/library/std/src/os/windows/mod.rs
+lib/rustlib/src/rust/library/std/src/os/windows/net/
+lib/rustlib/src/rust/library/std/src/os/windows/net/addr.rs
+lib/rustlib/src/rust/library/std/src/os/windows/net/listener.rs
+lib/rustlib/src/rust/library/std/src/os/windows/net/mod.rs
+lib/rustlib/src/rust/library/std/src/os/windows/net/stream.rs
 lib/rustlib/src/rust/library/std/src/os/windows/process.rs
 lib/rustlib/src/rust/library/std/src/os/windows/raw.rs
 lib/rustlib/src/rust/library/std/src/os/windows/thread.rs
@@ -1829,7 +1850,7 @@ lib/rustlib/src/rust/library/std/src/sys/env/windows.rs
 lib/rustlib/src/rust/library/std/src/sys/env/xous.rs
 lib/rustlib/src/rust/library/std/src/sys/env/zkvm.rs
 lib/rustlib/src/rust/library/std/src/sys/env_consts.rs
-lib/rustlib/src/rust/library/std/src/sys/exit_guard.rs
+lib/rustlib/src/rust/library/std/src/sys/exit.rs
 lib/rustlib/src/rust/library/std/src/sys/fd/
 lib/rustlib/src/rust/library/std/src/sys/fd/hermit.rs
 lib/rustlib/src/rust/library/std/src/sys/fd/mod.rs
@@ -1948,7 +1969,6 @@ lib/rustlib/src/rust/library/std/src/sys/pal/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/motor/
 lib/rustlib/src/rust/library/std/src/sys/pal/motor/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/motor/os.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/motor/time.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/sgx/
 lib/rustlib/src/rust/library/std/src/sys/pal/sgx/abi/
 lib/rustlib/src/rust/library/std/src/sys/pal/sgx/abi/entry.S
@@ -1971,7 +1991,6 @@ lib/rustlib/src/rust/library/std/src/sys/pal/sgx/libunwind_integration.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/sgx/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/sgx/os.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/sgx/thread_parking.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/sgx/time.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/sgx/waitqueue/
 lib/rustlib/src/rust/library/std/src/sys/pal/sgx/waitqueue/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/sgx/waitqueue/spin_mutex/
@@ -1989,7 +2008,6 @@ lib/rustlib/src/rust/library/std/src/sys/pal/solid/abi/sockets.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/solid/error.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/solid/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/solid/os.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/solid/time.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/teeos/
 lib/rustlib/src/rust/library/std/src/sys/pal/teeos/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/teeos/os.rs
@@ -1999,8 +2017,8 @@ lib/rustlib/src/rust/library/std/src/sys/pal/uefi/
 lib/rustlib/src/rust/library/std/src/sys/pal/uefi/helpers.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/uefi/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/uefi/os.rs
+lib/rustlib/src/rust/library/std/src/sys/pal/uefi/system_time.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/uefi/tests.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/uefi/time.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/unix/
 lib/rustlib/src/rust/library/std/src/sys/pal/unix/fuchsia.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/unix/futex.rs
@@ -2032,11 +2050,8 @@ lib/rustlib/src/rust/library/std/src/sys/pal/unsupported/
 lib/rustlib/src/rust/library/std/src/sys/pal/unsupported/common.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/unsupported/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/unsupported/os.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/unsupported/time.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/vexos/
 lib/rustlib/src/rust/library/std/src/sys/pal/vexos/mod.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/vexos/os.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/vexos/time.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/wasi/
 lib/rustlib/src/rust/library/std/src/sys/pal/wasi/cabi_realloc.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/wasi/helpers.rs
@@ -2074,7 +2089,6 @@ lib/rustlib/src/rust/library/std/src/sys/pal/xous/os.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/os/params/
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/os/params.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/os/params/tests.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/xous/time.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/zkvm/
 lib/rustlib/src/rust/library/std/src/sys/pal/zkvm/abi.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/zkvm/mod.rs
@@ -2256,6 +2270,17 @@ lib/rustlib/src/rust/library/std/src/sys/thread_local/native/lazy.rs
 lib/rustlib/src/rust/library/std/src/sys/thread_local/native/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/thread_local/no_threads.rs
 lib/rustlib/src/rust/library/std/src/sys/thread_local/os.rs
+lib/rustlib/src/rust/library/std/src/sys/time/
+lib/rustlib/src/rust/library/std/src/sys/time/hermit.rs
+lib/rustlib/src/rust/library/std/src/sys/time/mod.rs
+lib/rustlib/src/rust/library/std/src/sys/time/sgx.rs
+lib/rustlib/src/rust/library/std/src/sys/time/solid.rs
+lib/rustlib/src/rust/library/std/src/sys/time/uefi.rs
+lib/rustlib/src/rust/library/std/src/sys/time/unix.rs
+lib/rustlib/src/rust/library/std/src/sys/time/unsupported.rs
+lib/rustlib/src/rust/library/std/src/sys/time/vexos.rs
+lib/rustlib/src/rust/library/std/src/sys/time/windows.rs
+lib/rustlib/src/rust/library/std/src/sys/time/xous.rs
 lib/rustlib/src/rust/library/std/src/test_helpers.rs
 lib/rustlib/src/rust/library/std/src/thread/
 lib/rustlib/src/rust/library/std/src/thread/builder.rs
@@ -2282,12 +2307,6 @@ lib/rustlib/src/rust/library/std/tests/env.rs
 lib/rustlib/src/rust/library/std/tests/env_modify.rs
 lib/rustlib/src/rust/library/std/tests/eq-multidispatch.rs
 lib/rustlib/src/rust/library/std/tests/error.rs
-lib/rustlib/src/rust/library/std/tests/floats/
-lib/rustlib/src/rust/library/std/tests/floats/f128.rs
-lib/rustlib/src/rust/library/std/tests/floats/f16.rs
-lib/rustlib/src/rust/library/std/tests/floats/f32.rs
-lib/rustlib/src/rust/library/std/tests/floats/f64.rs
-lib/rustlib/src/rust/library/std/tests/floats/lib.rs
 lib/rustlib/src/rust/library/std/tests/istr.rs
 lib/rustlib/src/rust/library/std/tests/log-knows-the-names-of-variants-in-std.rs
 lib/rustlib/src/rust/library/std/tests/minmax-stability-issue-23687.rs
@@ -2324,6 +2343,7 @@ lib/rustlib/src/rust/library/std/tests/type-name-unsized.rs
 lib/rustlib/src/rust/library/std/tests/volatile-fat-ptr.rs
 lib/rustlib/src/rust/library/std/tests/win_delete_self.rs
 lib/rustlib/src/rust/library/std/tests/windows.rs
+lib/rustlib/src/rust/library/std/tests/windows_unix_socket.rs
 lib/rustlib/src/rust/library/std_detect/
 lib/rustlib/src/rust/library/std_detect/Cargo.toml
 lib/rustlib/src/rust/library/std_detect/README.md
@@ -2416,6 +2436,8 @@ lib/rustlib/src/rust/library/stdarch/ci/docker/arm-unknown-linux-gnueabihf/
 lib/rustlib/src/rust/library/stdarch/ci/docker/arm-unknown-linux-gnueabihf/Dockerfile
 lib/rustlib/src/rust/library/stdarch/ci/docker/armv7-unknown-linux-gnueabihf/
 lib/rustlib/src/rust/library/stdarch/ci/docker/armv7-unknown-linux-gnueabihf/Dockerfile
+lib/rustlib/src/rust/library/stdarch/ci/docker/hexagon-unknown-linux-musl/
+lib/rustlib/src/rust/library/stdarch/ci/docker/hexagon-unknown-linux-musl/Dockerfile
 lib/rustlib/src/rust/library/stdarch/ci/docker/i586-unknown-linux-gnu/
 lib/rustlib/src/rust/library/stdarch/ci/docker/i586-unknown-linux-gnu/Dockerfile
 lib/rustlib/src/rust/library/stdarch/ci/docker/i686-unknown-linux-gnu/
@@ -2504,6 +2526,10 @@ lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/arm_shared/neon/store_
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/arm_shared/neon/table_lookup_tests.rs
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/arm_shared/test_support.rs
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/core_arch_docs.md
+lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/hexagon/
+lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/hexagon/mod.rs
+lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/hexagon/v128.rs
+lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/hexagon/v64.rs
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/lib.rs
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/loongarch32/
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/loongarch32/mod.rs
@@ -2638,6 +2664,7 @@ lib/rustlib/src/rust/library/stdarch/crates/simd-test-macro/src/
 lib/rustlib/src/rust/library/stdarch/crates/simd-test-macro/src/lib.rs
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-arm/
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-arm/Cargo.toml
+lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-arm/README.md
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-arm/spec/
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-arm/spec/neon/
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-arm/spec/neon/aarch64.spec.yml
@@ -2657,6 +2684,11 @@ lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-arm/src/predicate_forms.
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-arm/src/typekinds.rs
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-arm/src/wildcards.rs
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-arm/src/wildstring.rs
+lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-hexagon/
+lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-hexagon/Cargo.toml
+lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-hexagon/hvx_hexagon_protos.h
+lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-hexagon/src/
+lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-hexagon/src/main.rs
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-loongarch/
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-loongarch/Cargo.toml
 lib/rustlib/src/rust/library/stdarch/crates/stdarch-gen-loongarch/README.md
@@ -2675,6 +2707,7 @@ lib/rustlib/src/rust/library/stdarch/crates/stdarch-test/src/wasm.rs
 lib/rustlib/src/rust/library/stdarch/examples/
 lib/rustlib/src/rust/library/stdarch/examples/Cargo.toml
 lib/rustlib/src/rust/library/stdarch/examples/connect5.rs
+lib/rustlib/src/rust/library/stdarch/examples/gaussian.rs
 lib/rustlib/src/rust/library/stdarch/examples/hex.rs
 lib/rustlib/src/rust/library/stdarch/examples/wasm.rs
 lib/rustlib/src/rust/library/stdarch/intrinsics_data/
@@ -2691,6 +2724,7 @@ lib/rustlib/src/rust/library/sysroot/src/
 lib/rustlib/src/rust/library/sysroot/src/lib.rs
 lib/rustlib/src/rust/library/test/
 lib/rustlib/src/rust/library/test/Cargo.toml
+lib/rustlib/src/rust/library/test/build.rs
 lib/rustlib/src/rust/library/test/src/
 lib/rustlib/src/rust/library/test/src/bench.rs
 lib/rustlib/src/rust/library/test/src/cli.rs
@@ -2738,10 +2772,10 @@ lib/rustlib/src/rust/library/unwind/src/lib.rs
 lib/rustlib/src/rust/library/unwind/src/libunwind.rs
 lib/rustlib/src/rust/library/unwind/src/unwinding.rs
 lib/rustlib/src/rust/library/unwind/src/wasm.rs
-lib/rustlib/src/rust/library/windows_targets/
-lib/rustlib/src/rust/library/windows_targets/Cargo.toml
-lib/rustlib/src/rust/library/windows_targets/src/
-lib/rustlib/src/rust/library/windows_targets/src/lib.rs
+lib/rustlib/src/rust/library/windows_link/
+lib/rustlib/src/rust/library/windows_link/Cargo.toml
+lib/rustlib/src/rust/library/windows_link/src/
+lib/rustlib/src/rust/library/windows_link/src/lib.rs
 lib/rustlib/src/rust/src/
 lib/rustlib/src/rust/src/llvm-project/
 lib/rustlib/src/rust/src/llvm-project/libunwind/
@@ -2800,6 +2834,8 @@ lib/rustlib/src/rust/src/llvm-project/libunwind/src/libunwind_ext.h
 lib/rustlib/src/rust/src/llvm-project/libunwind/src/shadow_stack_unwind.h
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/CMakeLists.txt
+lib/rustlib/src/rust/src/llvm-project/libunwind/test/aarch64_vg_unwind.pass.cpp
+lib/rustlib/src/rust/src/llvm-project/libunwind/test/aarch64_za_unwind.pass.cpp
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/aix_runtime_link.pass.cpp
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/aix_signal_unwind.pass.sh.S
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/alignment.compile.pass.cpp
@@ -2814,6 +2850,7 @@ lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/llvm-libunwind-shar
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/llvm-libunwind-shared.cfg.in
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/llvm-libunwind-static-mingw.cfg.in
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/llvm-libunwind-static.cfg.in
+lib/rustlib/src/rust/src/llvm-project/libunwind/test/eh_frame_fde_pc_range.pass.cpp
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/floatregister.pass.cpp
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/forceunwind.pass.cpp
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/frameheadercache_test.pass.cpp

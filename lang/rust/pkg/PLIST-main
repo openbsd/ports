@@ -87,6 +87,7 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}1a.rmeta
 @man man/man1/cargo-pkgid.1
 @man man/man1/cargo-publish.1
 @man man/man1/cargo-remove.1
+@man man/man1/cargo-report-future-incompatibilities.1
 @man man/man1/cargo-report.1
 @man man/man1/cargo-run.1
 @man man/man1/cargo-rustc.1
