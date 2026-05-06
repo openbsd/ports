@@ -41,7 +41,7 @@ Index: conf/nginx.conf
      #tcp_nopush     on;
  
      #keepalive_timeout  0;
-@@ -32,41 +37,49 @@ http {
+@@ -32,39 +37,47 @@ http {
  
      #gzip  on;
  
@@ -52,8 +52,6 @@ Index: conf/nginx.conf
 +        listen       [::]:80;
          server_name  localhost;
 +        root         /var/www/htdocs;
- 
-         #charset koi8-r;
  
          #access_log  logs/host.access.log  main;
  
@@ -69,7 +67,7 @@ Index: conf/nginx.conf
          error_page   500 502 503 504  /50x.html;
          location = /50x.html {
 -            root   html;
-+            root  /var/www/htdocs;
++            root   /var/www/htdocs;
          }
  
 +        # FastCGI to CGI wrapper server
@@ -101,7 +99,7 @@ Index: conf/nginx.conf
          #    include        fastcgi_params;
          #}
  
-@@ -85,11 +98,7 @@ http {
+@@ -83,11 +96,7 @@ http {
      #    listen       8000;
      #    listen       somename:8080;
      #    server_name  somename  alias  another.alias;
@@ -114,7 +112,7 @@ Index: conf/nginx.conf
      #}
  
  
-@@ -98,20 +107,16 @@ http {
+@@ -96,20 +105,16 @@ http {
      #server {
      #    listen       443 ssl;
      #    server_name  localhost;

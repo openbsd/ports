@@ -19,7 +19,7 @@ COMMENT-securelink=	nginx HMAC secure link module
 COMMENT-stream=		nginx TCP/UDP proxy module
 COMMENT-xslt=		nginx XSLT filter module
 
-VERSION=	1.28.3
+VERSION=	1.30.0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -41,8 +41,7 @@ PKGNAME-stream=		nginx-stream-${VERSION}
 PKGNAME-xslt=		nginx-xslt-${VERSION}
 
 SITES=	https://nginx.org/download/
-SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/ \
-	https://raw.githubusercontent.com/sthen/nginx_chroot_patch/add_1.20.1/
+SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/
 
 DIST_TUPLE=	\
 	github FRiCKLE ngx_cache_purge 2.3 ngx_cache_purge \
@@ -149,7 +148,7 @@ CFLAGS+=	-Wall -Wpointer-arith \
 LDFLAGS+=	-L ${LOCALBASE}/lib -L ${X11BASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
-PATCHFILES.p+=		nginx-1.20.1-chroot.patch
+PATCHFILES.p+=		nginx-1.30.0-chroot.patch
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	simple

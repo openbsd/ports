@@ -1,10 +1,10 @@
 Index: man/nginx.8
 --- man/nginx.8.orig
 +++ man/nginx.8
-@@ -99,6 +99,23 @@ Do not run, just test the configuration file.
- .Nm
+@@ -100,6 +100,23 @@ Do not run, just test the configuration file.
  checks the configuration file syntax and then tries to open files
- referenced in the configuration file.
+ referenced in the configuration file, including binding to configured
+ listen addresses.
 +.It Fl u
 +By default
 +.Nm
