@@ -77,8 +77,11 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/open
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/ed448.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/hashes.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/hmac.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/hpke.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/kdf.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/keys.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/mldsa.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/mlkem.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/poly1305.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/rsa.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/x25519.pyi
@@ -110,7 +113,10 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${MODPY_PYCACHE}algorithms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${MODPY_PYCACHE}algorithms.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${MODPY_PYCACHE}modes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${MODPY_PYCACHE}modes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/algorithms.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/modes.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}/
@@ -120,6 +126,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}_asymmetric.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}_cipheralgorithm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}_cipheralgorithm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}_modes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}_modes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}_serialization.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}_serialization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}cmac.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -130,6 +138,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}hashes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}hmac.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}hmac.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}hpke.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}hpke.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}keywrap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}keywrap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}padding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -138,6 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}poly1305.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/_asymmetric.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/_cipheralgorithm.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/_modes.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/_serialization.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/__init__.py
@@ -154,6 +165,10 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetr
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}ed25519.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}ed448.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}ed448.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}mldsa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}mldsa.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}mlkem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}mlkem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}padding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}padding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}rsa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -171,6 +186,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetr
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/ec.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/ed25519.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/ed448.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/mldsa.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/mlkem.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/padding.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/rsa.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/types.py
@@ -198,6 +215,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/cmac.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/constant_time.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/hashes.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/hmac.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/hpke.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}/
