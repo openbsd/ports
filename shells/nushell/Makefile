@@ -4,7 +4,7 @@ COMMENT =		new type of shell
 
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
-GH_TAGNAME =		0.111.0
+GH_TAGNAME =		0.112.2
 
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
@@ -22,7 +22,7 @@ MODCARGO_CRATES_KEEP +=	libsqlite3-sys
 
 # Disable mimalloc feature
 MODCARGO_NO_DEFAULT_FEATURES = Yes
-MODCARGO_FEATURES =	trash-support sqlite system-clipboard rustls-tls
+MODCARGO_FEATURES =	trash-support sqlite system-clipboard rustls-tls mcp
 
 .include "crates.inc"
 
@@ -41,6 +41,6 @@ post-patch:
 	${SUBST_CMD} ${WRKSRC}/src/main.rs
 
 # last known test results
-# 0.111.0: test result: FAILED 1588 passed; 4 failed; 28 ignored; 0 measured; 0 filtered out;
+# 0.112.2: test result: FAILED. 1673 passed; 6 failed; 25 ignored; 0 filtered out;
 
 .include <bsd.port.mk>
