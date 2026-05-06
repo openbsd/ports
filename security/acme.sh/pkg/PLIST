@@ -5,6 +5,7 @@ share/acme.sh/deploy/
 share/acme.sh/deploy/ali_cdn.sh
 share/acme.sh/deploy/ali_dcdn.sh
 share/acme.sh/deploy/apache.sh
+share/acme.sh/deploy/byteplus_alb.sh
 share/acme.sh/deploy/cachefly.sh
 share/acme.sh/deploy/cleverreach.sh
 share/acme.sh/deploy/consul.sh
@@ -24,7 +25,9 @@ share/acme.sh/deploy/keyhelp.sh
 share/acme.sh/deploy/keyhelp_api.sh
 share/acme.sh/deploy/kong.sh
 share/acme.sh/deploy/lighttpd.sh
+share/acme.sh/deploy/localcopy.sh
 share/acme.sh/deploy/mailcow.sh
+share/acme.sh/deploy/multideploy.sh
 share/acme.sh/deploy/myapi.sh
 share/acme.sh/deploy/mydevil.sh
 share/acme.sh/deploy/mysqld.sh
@@ -67,7 +70,10 @@ share/acme.sh/dnsapi/dns_autodns.sh
 share/acme.sh/dnsapi/dns_aws.sh
 share/acme.sh/dnsapi/dns_azion.sh
 share/acme.sh/dnsapi/dns_azure.sh
+share/acme.sh/dnsapi/dns_baidu.sh
 share/acme.sh/dnsapi/dns_beget.sh
+share/acme.sh/dnsapi/dns_bh.sh
+share/acme.sh/dnsapi/dns_bhosted.sh
 share/acme.sh/dnsapi/dns_bookmyname.sh
 share/acme.sh/dnsapi/dns_bunny.sh
 share/acme.sh/dnsapi/dns_cf.sh
@@ -77,8 +83,10 @@ share/acme.sh/dnsapi/dns_cn.sh
 share/acme.sh/dnsapi/dns_conoha.sh
 share/acme.sh/dnsapi/dns_constellix.sh
 share/acme.sh/dnsapi/dns_cpanel.sh
+share/acme.sh/dnsapi/dns_cpanel_uapi.sh
 share/acme.sh/dnsapi/dns_curanet.sh
 share/acme.sh/dnsapi/dns_cyon.sh
+share/acme.sh/dnsapi/dns_czechia.sh
 share/acme.sh/dnsapi/dns_da.sh
 share/acme.sh/dnsapi/dns_ddnss.sh
 share/acme.sh/dnsapi/dns_desec.sh
@@ -101,6 +109,7 @@ share/acme.sh/dnsapi/dns_dynv6.sh
 share/acme.sh/dnsapi/dns_easydns.sh
 share/acme.sh/dnsapi/dns_edgecenter.sh
 share/acme.sh/dnsapi/dns_edgedns.sh
+share/acme.sh/dnsapi/dns_efficientip.sh
 share/acme.sh/dnsapi/dns_euserv.sh
 share/acme.sh/dnsapi/dns_exoscale.sh
 share/acme.sh/dnsapi/dns_fornex.sh
@@ -111,6 +120,7 @@ share/acme.sh/dnsapi/dns_gcloud.sh
 share/acme.sh/dnsapi/dns_gcore.sh
 share/acme.sh/dnsapi/dns_gd.sh
 share/acme.sh/dnsapi/dns_geoscaling.sh
+share/acme.sh/dnsapi/dns_gname.sh
 share/acme.sh/dnsapi/dns_googledomains.sh
 share/acme.sh/dnsapi/dns_he.sh
 share/acme.sh/dnsapi/dns_he_ddns.sh
@@ -118,8 +128,10 @@ share/acme.sh/dnsapi/dns_hetzner.sh
 share/acme.sh/dnsapi/dns_hetznercloud.sh
 share/acme.sh/dnsapi/dns_hexonet.sh
 share/acme.sh/dnsapi/dns_hostingde.sh
+share/acme.sh/dnsapi/dns_hostup.sh
 share/acme.sh/dnsapi/dns_huaweicloud.sh
 share/acme.sh/dnsapi/dns_infoblox.sh
+share/acme.sh/dnsapi/dns_infoblox_uddi.sh
 share/acme.sh/dnsapi/dns_infomaniak.sh
 share/acme.sh/dnsapi/dns_internetbs.sh
 share/acme.sh/dnsapi/dns_inwx.sh
@@ -143,6 +155,7 @@ share/acme.sh/dnsapi/dns_loopia.sh
 share/acme.sh/dnsapi/dns_lua.sh
 share/acme.sh/dnsapi/dns_maradns.sh
 share/acme.sh/dnsapi/dns_me.sh
+share/acme.sh/dnsapi/dns_mgwm.sh
 share/acme.sh/dnsapi/dns_miab.sh
 share/acme.sh/dnsapi/dns_mijnhost.sh
 share/acme.sh/dnsapi/dns_misaka.sh
@@ -173,11 +186,13 @@ share/acme.sh/dnsapi/dns_openprovider.sh
 share/acme.sh/dnsapi/dns_openprovider_rest.sh
 share/acme.sh/dnsapi/dns_openstack.sh
 share/acme.sh/dnsapi/dns_opnsense.sh
+share/acme.sh/dnsapi/dns_opusdns.sh
 share/acme.sh/dnsapi/dns_ovh.sh
 share/acme.sh/dnsapi/dns_pdns.sh
 share/acme.sh/dnsapi/dns_pleskxml.sh
 share/acme.sh/dnsapi/dns_pointhq.sh
 share/acme.sh/dnsapi/dns_porkbun.sh
+share/acme.sh/dnsapi/dns_qc.sh
 share/acme.sh/dnsapi/dns_rackcorp.sh
 share/acme.sh/dnsapi/dns_rackspace.sh
 share/acme.sh/dnsapi/dns_rage4.sh
@@ -189,7 +204,10 @@ share/acme.sh/dnsapi/dns_selectel.sh
 share/acme.sh/dnsapi/dns_selfhost.sh
 share/acme.sh/dnsapi/dns_servercow.sh
 share/acme.sh/dnsapi/dns_simply.sh
+share/acme.sh/dnsapi/dns_sitehost.sh
+share/acme.sh/dnsapi/dns_sotoon.sh
 share/acme.sh/dnsapi/dns_spaceship.sh
+share/acme.sh/dnsapi/dns_subreg.sh
 share/acme.sh/dnsapi/dns_technitium.sh
 share/acme.sh/dnsapi/dns_tele3.sh
 share/acme.sh/dnsapi/dns_tencent.sh
@@ -201,6 +219,7 @@ share/acme.sh/dnsapi/dns_unoeuro.sh
 share/acme.sh/dnsapi/dns_variomedia.sh
 share/acme.sh/dnsapi/dns_veesp.sh
 share/acme.sh/dnsapi/dns_vercel.sh
+share/acme.sh/dnsapi/dns_virakcloud.sh
 share/acme.sh/dnsapi/dns_vscale.sh
 share/acme.sh/dnsapi/dns_vultr.sh
 share/acme.sh/dnsapi/dns_websupport.sh
