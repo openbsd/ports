@@ -1,0 +1,12 @@
+Index: third_party/rust/encoding_rs/src/x_user_defined.rs
+--- third_party/rust/encoding_rs/src/x_user_defined.rs.orig
++++ third_party/rust/encoding_rs/src/x_user_defined.rs
+@@ -14,7 +14,7 @@ use crate::variant::*;
+ cfg_if! {
+     if #[cfg(feature = "simd-accel")] {
+         use simd_funcs::*;
+-        use core::simd::u16x8;
++        use core::simd::{u16x8, Select};
+         use core::simd::cmp::SimdPartialOrd;
+ 
+         #[inline(always)]

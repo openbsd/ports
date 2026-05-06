@@ -10,6 +10,8 @@ MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 SITES =	https://archive.seamonkey-project.org/releases/${MOZILLA_DIST_VERSION}/source/
 
+REVISION =		0
+
 # unbreaks build with rust 1.83
 SITES.p =	https://bugzilla.mozilla.org/
 PATCHFILES.p=	bug-1896958-127a1-25322.zip{attachment.cgi?id=9520949}
@@ -108,6 +110,10 @@ post-patch:
 
 pre-configure:
 	chmod +x ${WRKSRC}/configure.in
+
+post-configure:
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/third_party/rust/encoding_rs/.cargo-checksum.json
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
