@@ -2,10 +2,9 @@ COMMENT =	C++ math parser library
 
 GH_ACCOUNT =	beltoforion
 GH_PROJECT =	muparser
-GH_TAGNAME =	v2.2.6.1
-REVISION =	0
+GH_TAGNAME =	v2.3.5
 
-SHARED_LIBS =	muparser	0.0 # 2.2
+SHARED_LIBS =	muparser	1.0 # 2.2
 
 CATEGORIES =	math
 
@@ -20,6 +19,6 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+CONFIGURE_ARGS =-DENABLE_OPENMP=OFF
 
 .include <bsd.port.mk>
