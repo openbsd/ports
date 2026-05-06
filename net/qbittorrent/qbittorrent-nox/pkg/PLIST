@@ -1,3 +1,5 @@
 @bin bin/qbittorrent-nox
 @man man/man1/qbittorrent-nox.1
 share/doc/pkg-readmes/${PKGSTEM}
+share/metainfo/
+share/metainfo/org.qbittorrent.qBittorrent-nox.metainfo.xml

@@ -1,4 +1,4 @@
-VER =		5.1.4
+VER =		5.2.0
 DISTNAME =	qbittorrent-${VER}
 
 DIST_SUBDIR =	qbittorrent
@@ -13,6 +13,7 @@ MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 SITES ?=	${SITE_SOURCEFORGE:=qbittorrent/}
+EXTRACT_SUFX =	.tar.xz
 
 MODULES +=	devel/cmake \
 		x11/qt6
