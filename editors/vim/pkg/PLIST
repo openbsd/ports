@@ -847,6 +847,7 @@ share/vim/${P}/ftplugin/abap.vim
 share/vim/${P}/ftplugin/abaqus.vim
 share/vim/${P}/ftplugin/abnf.vim
 share/vim/${P}/ftplugin/ada.vim
+share/vim/${P}/ftplugin/algol68.vim
 share/vim/${P}/ftplugin/alsaconf.vim
 share/vim/${P}/ftplugin/ant.vim
 share/vim/${P}/ftplugin/antlr4.vim
@@ -960,6 +961,7 @@ share/vim/${P}/ftplugin/gdb.vim
 share/vim/${P}/ftplugin/gdscript.vim
 share/vim/${P}/ftplugin/gdshader.vim
 share/vim/${P}/ftplugin/gel.vim
+share/vim/${P}/ftplugin/ghostty.vim
 share/vim/${P}/ftplugin/git.vim
 share/vim/${P}/ftplugin/gitattributes.vim
 share/vim/${P}/ftplugin/gitcommit.vim
@@ -2060,6 +2062,7 @@ share/vim/${P}/syntax/ada.vim
 share/vim/${P}/syntax/aflex.vim
 share/vim/${P}/syntax/ahdl.vim
 share/vim/${P}/syntax/aidl.vim
+share/vim/${P}/syntax/algol68.vim
 share/vim/${P}/syntax/alsaconf.vim
 share/vim/${P}/syntax/amiga.vim
 share/vim/${P}/syntax/aml.vim
