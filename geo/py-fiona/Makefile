@@ -3,7 +3,7 @@ COMMENT =	high-level API and CLI on top of OGR
 MODPY_DISTV =	1.10.1
 DISTNAME =	fiona-${MODPY_DISTV}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L:S/.post/pl/}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	geo
 
@@ -18,20 +18,20 @@ COMPILER =	base-clang ports-gcc
 
 MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
+# some tests use the network
 MODPY_PYTEST_ARGS =	tests
 MODPY_TEST_LINK_SO =	Yes
 
-BUILD_DEPENDS =	${RUN_DEPENDS} \
-		math/py-numpy \
+BUILD_DEPENDS =	math/py-numpy \
 		lang/cython
 
 LIB_DEPENDS =	geo/gdal
 
 RUN_DEPENDS =	geo/py-cligj \
+		devel/py-attrs \
+		devel/py-certifi \
 		devel/py-click \
-		devel/py-click-plugins \
-		devel/py-munch \
-		devel/py-six
+		devel/py-click-plugins
 
 TEST_DEPENDS =	devel/py-parsing \
 		devel/py-tz \
