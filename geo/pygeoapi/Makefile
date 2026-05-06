@@ -1,6 +1,6 @@
 COMMENT =		OGC API server implementation
 
-MODPY_DISTV =	0.22.0
+MODPY_DISTV =	0.23.4
 DISTNAME =		pygeoapi-${MODPY_DISTV}
 
 CATEGORIES =		geo devel
@@ -32,6 +32,7 @@ RUN_DEPENDS =	devel/py-babel \
 		geo/py-proj \
 		geo/py-rasterio>=1.1.8p1 \
 		geo/py-shapely \
+		net/py-paho-mqtt \
 		textproc/py-yaml \
 		sysutils/py-filelock \
 		www/py-requests \
