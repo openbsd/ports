@@ -1,0 +1,12 @@
+Index: external/linphone-sdk/mediastreamer2/src/videofilters/msv4l2.c
+--- external/linphone-sdk/mediastreamer2/src/videofilters/msv4l2.c.orig
++++ external/linphone-sdk/mediastreamer2/src/videofilters/msv4l2.c
+@@ -38,7 +38,7 @@
+ #include <sys/types.h>
+ #include <unistd.h>
+ 
+-#include <linux/videodev2.h>
++#include <sys/videoio.h>
+ 
+ #include "mediastreamer2/msticker.h"
+ #include "mediastreamer2/msvideo.h"

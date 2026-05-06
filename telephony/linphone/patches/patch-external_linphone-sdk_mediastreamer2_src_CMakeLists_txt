@@ -1,0 +1,27 @@
+add sndio support
+
+comment is wrong, copypasted from elsewhere - we want to version the lib :)
+
+Index: external/linphone-sdk/mediastreamer2/src/CMakeLists.txt
+--- external/linphone-sdk/mediastreamer2/src/CMakeLists.txt.orig
++++ external/linphone-sdk/mediastreamer2/src/CMakeLists.txt
+@@ -197,6 +197,9 @@ endif()
+ if(ENABLE_PULSEAUDIO)
+ 	list(APPEND VOIP_SOURCE_FILES_C audiofilters/pulseaudio.c)
+ endif()
++if(ENABLE_SNDIO)
++	list(APPEND VOIP_SOURCE_FILES_C audiofilters/sndio.c)
++endif()
+ if(ENABLE_QSA)
+ 	list(APPEND VOIP_SOURCE_FILES_C audiofilters/qsa.c)
+ endif()
+@@ -662,8 +665,8 @@ if(BUILD_SHARED_LIBS)
+ 			target_link_options(mediastreamer2 PRIVATE "-Wl,--exclude-libs,libvpx.a")
+ 		endif()
+ 		# Do not version shared library on Android
+-		set_target_properties(mediastreamer2 PROPERTIES SOVERSION ${MEDIASTREAMER_SO_VERSION})
+ 	else()
++		set_target_properties(mediastreamer2 PROPERTIES SOVERSION ${MEDIASTREAMER_SO_VERSION})
+ 
+ 
+ 		#Workaround for the Debian 11 issue with conflict between libc and libtirpc

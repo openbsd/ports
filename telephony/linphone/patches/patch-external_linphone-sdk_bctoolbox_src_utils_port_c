@@ -1,0 +1,44 @@
+no AI_V4MAPPED or AI_ALL
+
+Index: external/linphone-sdk/bctoolbox/src/utils/port.c
+--- external/linphone-sdk/bctoolbox/src/utils/port.c.orig
++++ external/linphone-sdk/bctoolbox/src/utils/port.c
+@@ -30,6 +30,9 @@
+ #include "bctoolbox/vconnect.h"
+ #include "utils.h"
+ 
++#include <pthread.h>
++#include <pthread_np.h>
++
+ #ifdef __APPLE__
+ #include "TargetConditionals.h"
+ #endif
+@@ -361,8 +364,8 @@ void bctbx_set_self_thread_name(const char *name) {
+ 	prctl(PR_SET_NAME, name, NULL, NULL, NULL);
+ #elif TARGET_OS_MAC
+ 	pthread_setname_np(name);
+-#elif
+-	bctbx_warning("bctbx_set_self_thread_name(): not implemented on this platform.");
++#else
++	pthread_set_name_np(pthread_self(), name);
+ #endif
+ }
+ 
+@@ -1318,7 +1321,7 @@ static struct addrinfo *convert_to_v4mapped(const stru
+ 	return res;
+ }
+ 
+-#if defined(__ANDROID__) || defined(_WIN32)
++#if defined(__ANDROID__) || defined(_WIN32) || defined(__OpenBSD__)
+ 
+ /*
+  * SHAME !!! bionic's getaddrinfo does not implement the AI_V4MAPPED flag !
+@@ -1639,7 +1642,7 @@ void bctbx_sockaddr_remove_nat64_mapping(const struct 
+ 		if (htonl(0x0064ff9b) ==
+ #ifdef _MSC_VER
+ 		    ((in6->sin6_addr.u.Word[0] << 16) & in6->sin6_addr.u.Word[1])
+-#elif __APPLE__
++#elif __APPLE__ || __OpenBSD__
+ 		    in6->sin6_addr.__u6_addr.__u6_addr32[0]
+ #else
+ 		    in6->sin6_addr.s6_addr32[0]

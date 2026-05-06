@@ -1,0 +1,43 @@
+No need to use custom thread locking,
+> Since Mbed TLS 3.6.0, the PSA API is thread-safe when MBEDTLS_THREADING_C is enabled.
+
+Index: external/linphone-sdk/bctoolbox/src/crypto/mbedtls.cc
+--- external/linphone-sdk/bctoolbox/src/crypto/mbedtls.cc.orig
++++ external/linphone-sdk/bctoolbox/src/crypto/mbedtls.cc
+@@ -38,6 +38,7 @@
+ namespace bctoolbox {
+ 
+ namespace {
++# if !defined(MBEDTLS_THREADING_C)
+ // This is also defined in mbedtls source code by a custom modification
+ using mbedtls_threading_mutex_t = void *;
+ 
+@@ -71,6 +72,7 @@ int threading_mutex_unlock_cpp(mbedtls_threading_mutex
+ 	static_cast<std::mutex *>(*mutex)->unlock();
+ 	return 0;
+ }
++#endif
+ 
+ class mbedtlsStaticContexts {
+ public:
+@@ -80,8 +82,10 @@ class mbedtlsStaticContexts { (public)
+ 
+ 	std::unique_ptr<RNG> sRNG;
+ 	mbedtlsStaticContexts() {
++# if !defined(MBEDTLS_THREADING_C)
+ 		mbedtls_threading_set_alt(threading_mutex_init_cpp, threading_mutex_free_cpp, threading_mutex_lock_cpp,
+ 		                          threading_mutex_unlock_cpp);
++# endif // !MBEDTLS_THREADING_C
+ 		if (psa_crypto_init() != PSA_SUCCESS) {
+ 			bctbx_error("MbedTLS PSA init fail");
+ 		}
+@@ -92,7 +96,9 @@ class mbedtlsStaticContexts { (public)
+ 		// before destroying mbedtls internal context, destroy the static RNG
+ 		sRNG = nullptr;
+ 		mbedtls_psa_crypto_free();
++# if !defined(MBEDTLS_THREADING_C)
+ 		mbedtls_threading_free_alt();
++# endif // !MBEDTLS_THREADING_C
+ 	}
+ };
+ static const auto mbedtlsStaticContextsInstance = std::make_unique<mbedtlsStaticContexts>();

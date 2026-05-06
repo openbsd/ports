@@ -1,0 +1,21 @@
+Index: external/linphone-sdk/mediastreamer2/cmake/FindDav1d.cmake
+--- external/linphone-sdk/mediastreamer2/cmake/FindDav1d.cmake.orig
++++ external/linphone-sdk/mediastreamer2/cmake/FindDav1d.cmake
+@@ -65,7 +65,7 @@ else()
+ 		PATH_SUFFIXES bin lib lib/Win32
+ 	)
+ 
+-	if(_Dav1d_INCLUDE_DIRS AND _Dav1d_LIBRARY)
++	if(Dav1d_INCLUDE_DIRS AND Dav1d_LIBRARY)
+ 		add_library(libdav1d UNKNOWN IMPORTED)
+ 		if(WIN32)
+ 			set_target_properties(libdav1d PROPERTIES
+@@ -75,7 +75,7 @@ else()
+ 		else()
+ 			set_target_properties(libdav1d PROPERTIES
+ 				INTERFACE_INCLUDE_DIRECTORIES "${_Dav1d_INCLUDE_DIRS}"
+-				IMPORTED_LOCATION "${_Dav1d_LIBRARY}"
++				IMPORTED_LOCATION "${Dav1d_LIBRARY}"
+ 			)
+ 		endif()
+ 

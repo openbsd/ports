@@ -1,0 +1,12 @@
+Index: external/linphone-sdk/bzrtp/src/zidCache.c
+--- external/linphone-sdk/bzrtp/src/zidCache.c.orig
++++ external/linphone-sdk/bzrtp/src/zidCache.c
+@@ -30,7 +30,7 @@
+ #ifdef _WIN32
+ #include <malloc.h>
+ #else
+-#include <alloca.h>
++#include <stdlib.h>
+ #endif
+ 
+ /* define a version number for the DB schema as an interger MMmmpp */

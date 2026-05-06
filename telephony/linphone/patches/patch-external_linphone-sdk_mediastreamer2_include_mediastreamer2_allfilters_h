@@ -1,0 +1,12 @@
+Index: external/linphone-sdk/mediastreamer2/include/mediastreamer2/allfilters.h
+--- external/linphone-sdk/mediastreamer2/include/mediastreamer2/allfilters.h.orig
++++ external/linphone-sdk/mediastreamer2/include/mediastreamer2/allfilters.h
+@@ -33,6 +33,8 @@ typedef enum MSFilterId {
+ 	MS_ALSA_WRITE_ID,
+ 	MS_OSS_READ_ID,
+ 	MS_OSS_WRITE_ID,
++	MS_SNDIO_READ_ID,
++	MS_SNDIO_WRITE_ID,
+ 	MS_ULAW_ENC_ID,
+ 	MS_ULAW_DEC_ID,
+ 	MS_ALAW_ENC_ID,

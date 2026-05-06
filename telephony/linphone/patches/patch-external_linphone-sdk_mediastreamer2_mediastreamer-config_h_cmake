@@ -1,0 +1,11 @@
+Index: external/linphone-sdk/mediastreamer2/mediastreamer-config.h.cmake
+--- external/linphone-sdk/mediastreamer2/mediastreamer-config.h.cmake.orig
++++ external/linphone-sdk/mediastreamer2/mediastreamer-config.h.cmake
+@@ -47,6 +47,7 @@
+ 
+ #cmakedefine __ALSA_ENABLED__
+ #cmakedefine __ARTS_ENABLED__
++#cmakedefine __SNDIO_ENABLED__
+ #cmakedefine __MACSND_ENABLED__
+ #cmakedefine __MAC_AQ_ENABLED__
+ #cmakedefine __PORTAUDIO_ENABLED__

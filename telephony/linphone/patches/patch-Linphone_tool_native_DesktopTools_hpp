@@ -1,0 +1,12 @@
+Index: Linphone/tool/native/DesktopTools.hpp
+--- Linphone/tool/native/DesktopTools.hpp.orig
++++ Linphone/tool/native/DesktopTools.hpp
+@@ -23,7 +23,7 @@
+ 
+ #include <QtGlobal>
+ 
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+ #include "DesktopToolsLinux.hpp"
+ #elif defined(Q_OS_WIN)
+ #include "DesktopToolsWindows.hpp"

@@ -1,0 +1,24 @@
+Include bundled libxsd headers before /usr/local/lib to allow building
+with installed devel/xsd.
+
+look for dlopen in libc, not libdl
+Index: external/linphone-sdk/liblinphone/CMakeLists.txt
+--- external/linphone-sdk/liblinphone/CMakeLists.txt.orig
++++ external/linphone-sdk/liblinphone/CMakeLists.txt
+@@ -102,7 +102,7 @@ include(CheckCXXCompilerFlag)
+ 
+ check_symbol_exists(getifaddrs "sys/types.h;ifaddrs.h" HAVE_GETIFADDRS)
+ 
+-check_library_exists("dl" "dlopen" "" HAVE_DLOPEN)
++check_library_exists("c" "dlopen" "" HAVE_DLOPEN)
+ 
+ if(NOT CMAKE_INSTALL_RPATH AND CMAKE_INSTALL_PREFIX)
+ 	set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_FULL_LIBDIR})
+@@ -263,6 +263,7 @@ include_directories(
+ 	coreapi
+ 	include
+ 	src
++	${LIBXSD_INCLUDE_DIRS}
+ 	${CMAKE_CURRENT_BINARY_DIR}
+ 	${CMAKE_CURRENT_BINARY_DIR}/coreapi/
+ )

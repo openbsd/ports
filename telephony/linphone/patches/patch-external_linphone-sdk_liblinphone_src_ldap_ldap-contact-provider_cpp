@@ -1,0 +1,14 @@
+ldap define that only exists in linphone's fork ?
+https://gitlab.linphone.org/BC/public/external/openldap/-/merge_requests/1
+
+Index: external/linphone-sdk/liblinphone/src/ldap/ldap-contact-provider.cpp
+--- external/linphone-sdk/liblinphone/src/ldap/ldap-contact-provider.cpp.orig
++++ external/linphone-sdk/liblinphone/src/ldap/ldap-contact-provider.cpp
+@@ -286,7 +286,6 @@ void LdapContactProvider::initializeLdap() {
+ 			    mConfig["server"][mConfigServerIndex].c_str()); // mServer are results of sal. Use the root urls.
+ 			const char *cHost = belle_generic_uri_get_host(serverUri);
+ 			std::string hostname = L_C_TO_STRING(cHost);
+-			ldap_set_option(mLd, LDAP_OPT_X_TLS_PEER_CN, &hostname[0]);
+ 			if (serverUri) belle_sip_object_unref(serverUri);
+ 		}
+ 		mTlsConnectionId = -1;

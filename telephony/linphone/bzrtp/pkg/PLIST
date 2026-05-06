@@ -1,9 +1,0 @@
-include/bzrtp/
-include/bzrtp/bzrtp.h
-@lib lib/libbzrtp.so.${LIBbzrtp_VERSION}
-share/BZRTP/
-share/BZRTP/cmake/
-share/BZRTP/cmake/BZRTPConfig.cmake
-share/BZRTP/cmake/BZRTPConfigVersion.cmake
-share/BZRTP/cmake/BZRTPTargets${MODCMAKE_BUILD_SUFFIX}
-share/BZRTP/cmake/BZRTPTargets.cmake

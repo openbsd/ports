@@ -1,0 +1,12 @@
+Index: external/linphone-sdk/mediastreamer2/src/utils/dsptools.c
+--- external/linphone-sdk/mediastreamer2/src/utils/dsptools.c.orig
++++ external/linphone-sdk/mediastreamer2/src/utils/dsptools.c
+@@ -62,7 +62,7 @@
+ #ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
+ #else
+-#if !defined(__APPLE__)
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ #include <malloc.h>
+ #endif
+ #endif

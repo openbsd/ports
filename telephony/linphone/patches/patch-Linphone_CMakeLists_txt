@@ -1,0 +1,49 @@
+originally inspired from https://sources.debian.org/patches/linphone-desktop/4.2.5-3/0002-remove-bc_compute_full_version-usage.patch/
+Index: Linphone/CMakeLists.txt
+--- Linphone/CMakeLists.txt.orig
++++ Linphone/CMakeLists.txt
+@@ -51,9 +51,11 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)#useful for config.h
+ 
+ 
+-if(NOT LINPHONEAPP_VERSION)
+-	bc_compute_full_version(LINPHONEAPP_VERSION)
+-endif()
++# instead of doing git commands
++set(GIT_BRANCH_NAME)
++set(LINPHONEAPP_VERSION)
++set(LINPHONESDK_VERSION)
++include(linphoneqt_version.cmake)
+ 
+ set(LINPHONE_MAJOR_VERSION)
+ set(LINPHONE_MINOR_VERSION)
+@@ -62,22 +64,6 @@ set(LINPHONE_BRANCH_VERSION)
+ bc_parse_full_version(${LINPHONEAPP_VERSION} LINPHONE_MAJOR_VERSION LINPHONE_MINOR_VERSION LINPHONE_MICRO_VERSION LINPHONE_BRANCH_VERSION)
+ 
+ set(LINPHONEAPP_SHORT_VERSION "${LINPHONE_MAJOR_VERSION}.${LINPHONE_MINOR_VERSION}.${LINPHONE_MICRO_VERSION}")
+-
+-set(GIT_BRANCH_NAME)
+-execute_process(
+-    COMMAND git name-rev --name-only HEAD
+-	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+-    OUTPUT_VARIABLE GIT_BRANCH_NAME
+-    OUTPUT_STRIP_TRAILING_WHITESPACE
+-)
+-
+-set(LINPHONESDK_VERSION)
+-execute_process(
+-    COMMAND git describe
+-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/external/linphone-sdk
+-    OUTPUT_VARIABLE LINPHONESDK_VERSION
+-    OUTPUT_STRIP_TRAILING_WHITESPACE
+-)
+ 
+ include(application_info.cmake)
+ string(TIMESTAMP CURRENT_YEAR "%Y")
+@@ -237,4 +223,4 @@ if (WIN32)
+ 			install(FILES "$<TARGET_PDB_FILE:${T}>" DESTINATION ${CMAKE_INSTALL_BINDIR})
+ 		endforeach ()
+ 	endif()
+-endif()
+\ No newline at end of file
++endif()
