@@ -1,13 +1,12 @@
 COMMENT =	tools to collect and process netflow data
 
-V =		1.7.7
-REVISION =	0
+V =		1.7.8
 GH_ACCOUNT =	phaag
 GH_PROJECT =	nfdump
 GH_TAGNAME =	v$V
 
-SHARED_LIBS +=  nffile               1.0      # unknown
-SHARED_LIBS +=  nfdump               4.0      # unknown
+SHARED_LIBS +=  nffile               2.0      # unknown
+SHARED_LIBS +=  nfdump               5.0      # unknown
 
 CATEGORIES =	net
 
@@ -45,7 +44,8 @@ LIB_DEPENDS =		archivers/bzip2 \
 			net/flow-tools>=0.68.5 \
 			net/rrdtool
 
-CONFIGURE_ENV =		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -DMAXPATHLEN=PATH_MAX" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 			ac_cv_path_DOXYGEN=
 TEST_FLAGS =		TZ=CET
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/nfdump

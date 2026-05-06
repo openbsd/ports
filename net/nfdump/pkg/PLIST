@@ -23,6 +23,7 @@ lib/libnfdump.la
 @static-lib lib/libnffile.a
 lib/libnffile.la
 @lib lib/libnffile.so.${LIBnffile_VERSION}
+lib/pkgconfig/nfdump.pc
 @man man/man1/ft2nfdump.1
 @man man/man1/geolookup.1
 @man man/man1/nfanon.1
