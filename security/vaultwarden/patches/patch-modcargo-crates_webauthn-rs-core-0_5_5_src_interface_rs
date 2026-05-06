@@ -1,6 +1,6 @@
-Index: modcargo-crates/webauthn-rs-core-0.5.4/src/interface.rs
---- modcargo-crates/webauthn-rs-core-0.5.4/src/interface.rs.orig
-+++ modcargo-crates/webauthn-rs-core-0.5.4/src/interface.rs
+Index: modcargo-crates/webauthn-rs-core-0.5.5/src/interface.rs
+--- modcargo-crates/webauthn-rs-core-0.5.5/src/interface.rs.orig
++++ modcargo-crates/webauthn-rs-core-0.5.5/src/interface.rs
 @@ -81,8 +81,8 @@ pub enum EDDSACurve {
      // X448 = 5,
      /// Identifies this OKP as ED25519

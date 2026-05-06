@@ -8,7 +8,7 @@ BROKEN-i386 =		raw-cpuid-10.2.0/src/lib.rs:80:37 "could not find `arch` in `self
 
 COMMENT =		unofficial bitwarden compatible server
 
-DIST_TUPLE =		github dani-garcia vaultwarden 1.35.7 .
+DIST_TUPLE =		github dani-garcia vaultwarden 1.36.0 .
 
 CATEGORIES =		security
 
@@ -18,14 +18,13 @@ MAINTAINER =		Aisha Tammy <aisha@openbsd.org>, \
 # AGPLv3 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		${MODCARGO_WANTLIB} crypto m zstd
+WANTLIB =		${MODCARGO_WANTLIB} crypto m sqlite3 zstd
 
 MODULES =		devel/cargo
-MODCARGO_CRATES_KEEP =	libsqlite3-sys
-MODCARGO_FEATURES =	s3 sqlite
-MODCARGO_RUSTFLAGS =	-L${PREFIX}/lib
+MODCARGO_FEATURES =	s3 sqlite_system
 
-LIB_DEPENDS =		archivers/zstd
+LIB_DEPENDS =		archivers/zstd \
+			databases/sqlite3
 RUN_DEPENDS =		www/vaultwarden-web
 
 SEPARATE_BUILD =	Yes
