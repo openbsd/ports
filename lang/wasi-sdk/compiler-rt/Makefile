@@ -4,7 +4,7 @@ DISTNAME =	compiler-rt-${LLVM_V}.src
 PKGNAME =	wasi-compiler-rt-${LLVM_V}
 LIBPATH =	wasi/libclang_rt.builtins-wasm32.a
 BUILDSUBDIR =	lib/builtins
-BUILD_DEPENDS +=	lang/wasi-libc>=0.20250204
+BUILD_DEPENDS +=	lang/wasi-libc>=0.20251114
 
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes
@@ -25,8 +25,6 @@ CONFIGURE_ARGS=	\
 		-DCOMPILER_RT_BAREMETAL_BUILD=ON \
 		-DCOMPILER_RT_DEFAULT_TARGET_ONLY=ON \
 		-DCOMPILER_RT_HAS_FPIC_FLAG:BOOL=ON \
-		-DCOMPILER_RT_HAS_FPIE_FLAG:BOOL=ON \
-		-DCOMPILER_RT_HAS_STD_C11_FLAG:BOOL=ON \
 		-DCOMPILER_RT_INCLUDE_TESTS=OFF \
 		-DCOMPILER_RT_OS_DIR=wasi
 
