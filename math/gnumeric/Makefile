@@ -24,9 +24,9 @@ WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 goffice-0.10 graphite2 gs gsf-1
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 perl pixman-1 png
-WANTLIB += python3.13 rsvg-2 spectre util wayland-client wayland-cursor
-WANTLIB += wayland-egl xcb xcb-render xcb-shm xkbcommon xml2 xslt
-WANTLIB += z
+WANTLIB += ${MODPY_WANTLIB} rsvg-2 spectre util wayland-client
+WANTLIB += wayland-cursor wayland-egl xcb xcb-render xcb-shm
+WANTLIB += xkbcommon xml2 xslt z
 
 # C++
 COMPILER=		base-clang ports-gcc
