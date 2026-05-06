@@ -2,6 +2,7 @@
      SUBDIR += cage
      SUBDIR += cagebreak
      SUBDIR += dmenu-wayland
+     SUBDIR += fnott
      SUBDIR += foot
      SUBDIR += fuzzel
      SUBDIR += greetd
