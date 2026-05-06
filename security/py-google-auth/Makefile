@@ -1,9 +1,8 @@
 COMMENT =	Google authentication library
 
-MODPY_DISTV =	2.45.0
+MODPY_DISTV =	2.50.0
 DISTNAME =	google_auth-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/_/-/}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -11,14 +10,11 @@ CATEGORIES =	security
 PERMIT_PACKAGE = Yes
 
 MODULES =	lang/python
-
-MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
+MODPY_PI =	Yes
 
-RUN_DEPENDS =	devel/py-cachetools \
-		devel/py-asn1-modules \
-		devel/py-six \
-		security/py-rsa
+RUN_DEPENDS =	devel/py-asn1-modules \
+		security/py-cryptography
 
 TEST_DEPENDS =	devel/py-aioresponses \
 		devel/py-freezegun \
