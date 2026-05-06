@@ -20,15 +20,15 @@ decide what to do with configuration in this port.
 if you want to change from the default, use '.dbconfig dqs_ddl (on/off)'
 and '.dbconfig dqs_dml (on/off)'; this can go in ~/.sqliterc if wanted.
 
-Index: main.mk
---- main.mk.orig
-+++ main.mk
-@@ -958,7 +958,7 @@ TESTOPTS = --verbose=file --output=test-out.txt
- # Note that some of these will only apply when embedding sqlite3.c
- # into the shell, as these flags are not otherwise passed on to the
- # library.
--SHELL_OPT += -DSQLITE_DQS=0
-+#SHELL_OPT += -DSQLITE_DQS=0
- SHELL_OPT += -DSQLITE_ENABLE_FTS4
- #SHELL_OPT += -DSQLITE_ENABLE_FTS5
- SHELL_OPT += -DSQLITE_ENABLE_RTREE
+Index: autosetup/sqlite-config.tcl
+--- autosetup/sqlite-config.tcl.orig
++++ autosetup/sqlite-config.tcl
+@@ -563,7 +563,7 @@ define OPT_FEATURE_FLAGS {} ; # -DSQLITE_OMIT/ENABLE f
+ # affected by --feature-flags. The list is appended to by various
+ # --feature-flags.
+ define OPT_SHELL {
+-  -DSQLITE_DQS=0
++  -DSQLITE_DQS=1
+   -DSQLITE_ENABLE_FTS4
+   -DSQLITE_ENABLE_RTREE
+   -DSQLITE_ENABLE_EXPLAIN_COMMENTS

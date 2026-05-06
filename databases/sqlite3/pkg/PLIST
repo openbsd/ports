@@ -10,6 +10,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man1/sqlite3.1
 @man man/man3/SQLITE_ACCESS_EXISTS.3
 @man man/man3/SQLITE_CARRAY_INT32.3
+@man man/man3/SQLITE_CHANGEGROUP_CONFIG_PATCHSET.3
 @man man/man3/SQLITE_CHANGESETAPPLY_NOSAVEPOINT.3
 @man man/man3/SQLITE_CHANGESETSTART_INVERT.3
 @man man/man3/SQLITE_CHANGESET_DATA.3
@@ -75,7 +76,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_busy_handler.3
 @man man/man3/sqlite3_busy_timeout.3
 @man man/man3/sqlite3_cancel_auto_extension.3
-@man man/man3/sqlite3_carray_bind.3
+@man man/man3/sqlite3_carray_bind_v2.3
 @man man/man3/sqlite3_changegroup.3
 @man man/man3/sqlite3_changes.3
 @man man/man3/sqlite3_changeset_iter.3
@@ -233,6 +234,14 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_win32_set_directory.3
 @man man/man3/sqlite3changegroup_add.3
 @man man/man3/sqlite3changegroup_add_change.3
+@man man/man3/sqlite3changegroup_change_begin.3
+@man man/man3/sqlite3changegroup_change_blob.3
+@man man/man3/sqlite3changegroup_change_double.3
+@man man/man3/sqlite3changegroup_change_finish.3
+@man man/man3/sqlite3changegroup_change_int64.3
+@man man/man3/sqlite3changegroup_change_null.3
+@man man/man3/sqlite3changegroup_change_text.3
+@man man/man3/sqlite3changegroup_config.3
 @man man/man3/sqlite3changegroup_delete.3
 @man man/man3/sqlite3changegroup_new.3
 @man man/man3/sqlite3changegroup_output.3
