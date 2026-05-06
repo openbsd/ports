@@ -8,7 +8,7 @@ CATEGORIES=		misc graphics
 
 HOMEPAGE=		http://jonls.dk/redshift/
 
-# GPLv3
+# GPLv3 only
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xau Xdmcp Xext Xxf86vm c drm ffi gio-2.0 glib-2.0
