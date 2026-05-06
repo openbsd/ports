@@ -2,16 +2,16 @@ COMMENT =	PDF generator library, viewer and editor
 
 GH_ACCOUNT =	JakubMelka
 GH_PROJECT =	PDF4QT
-GH_TAGNAME =	v1.5.2.0
+GH_TAGNAME =	v1.5.3.1
 PKGNAME =	${DISTNAME:L}
 
 HOMEPAGE =	https://jakubmelka.github.io/
 
 CATEGORIES =	print
 
-SHARED_LIBS +=  Pdf4QtLibCore             0.0 # 0.0
-SHARED_LIBS +=  Pdf4QtLibGui              0.0 # 0.0
-SHARED_LIBS +=  Pdf4QtLibWidgets          0.0 # 0.0
+SHARED_LIBS +=  Pdf4QtLibCore             1.0 # 0.0
+SHARED_LIBS +=  Pdf4QtLibGui              0.1 # 0.0
+SHARED_LIBS +=  Pdf4QtLibWidgets          0.1 # 0.0
 SHARED_LIBS +=  AudioBookPlugin           0.0 # 0.0
 SHARED_LIBS +=  DimensionsPlugin          0.0 # 0.0
 SHARED_LIBS +=  EditorPlugin              0.0 # 0.0
@@ -33,7 +33,7 @@ COMPILER =	base-clang ports-clang
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
-LIB_DEPENDS +=	graphics/blend2d \
+LIB_DEPENDS +=	graphics/blend2d>=0.21.2 \
 		graphics/lcms2 \
 		graphics/openjp2 \
 		x11/qt6/qtspeech

@@ -1,4 +1,3 @@
-
 last chunk: MERGE_QT_TRANSLATIONS only in 6.9 ?
 https://doc.qt.io/qt-6/qtlinguist-cmake-qt-add-translations.html#merging-qt-provided-translations
 simplify translation handling (only cs is done anyway...)
@@ -6,7 +5,7 @@ simplify translation handling (only cs is done anyway...)
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -180,32 +180,18 @@ if(NOT PDF4QT_BUILD_ONLY_CORE_LIBRARY)
+@@ -171,32 +171,18 @@ if(NOT PDF4QT_BUILD_ONLY_CORE_LIBRARY)
      add_subdirectory(WixInstaller)
  endif()
  
