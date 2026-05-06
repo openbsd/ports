@@ -1,6 +1,6 @@
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.5.18
+DISTNAME =	gnupg-2.5.19
 
 CATEGORIES =	security
 
