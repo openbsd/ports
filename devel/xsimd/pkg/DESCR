@@ -1,0 +1,2 @@
+C++ wrappers for SIMD intrinsics and parallelized, optimized mathematical
+functions (SSE, AVX, AVX512, NEON, SVE, WebAssembly, VSX, RISC-V))
