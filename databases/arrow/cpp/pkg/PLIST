@@ -17,7 +17,6 @@ include/arrow/acero/map_node.h
 include/arrow/acero/options.h
 include/arrow/acero/order_by_impl.h
 include/arrow/acero/partition_util.h
-include/arrow/acero/pch.h
 include/arrow/acero/query_context.h
 include/arrow/acero/schema_util.h
 include/arrow/acero/task_util.h
@@ -75,6 +74,7 @@ include/arrow/compute/exec.h
 include/arrow/compute/expression.h
 include/arrow/compute/function.h
 include/arrow/compute/function_options.h
+include/arrow/compute/initialize.h
 include/arrow/compute/kernel.h
 include/arrow/compute/ordering.h
 include/arrow/compute/registry.h
@@ -82,6 +82,7 @@ include/arrow/compute/row/
 include/arrow/compute/row/grouper.h
 include/arrow/compute/type_fwd.h
 include/arrow/compute/util.h
+include/arrow/compute/visibility.h
 include/arrow/config.h
 include/arrow/csv/
 include/arrow/csv/api.h
@@ -109,7 +110,6 @@ include/arrow/dataset/file_orc.h
 include/arrow/dataset/file_parquet.h
 include/arrow/dataset/parquet_encryption_config.h
 include/arrow/dataset/partition.h
-include/arrow/dataset/pch.h
 include/arrow/dataset/plan.h
 include/arrow/dataset/projector.h
 include/arrow/dataset/scanner.h
@@ -123,7 +123,9 @@ include/arrow/extension/bool8.h
 include/arrow/extension/fixed_shape_tensor.h
 include/arrow/extension/json.h
 include/arrow/extension/opaque.h
+include/arrow/extension/parquet_variant.h
 include/arrow/extension/uuid.h
+include/arrow/extension/variable_shape_tensor.h
 include/arrow/extension_type.h
 include/arrow/filesystem/
 include/arrow/filesystem/api.h
@@ -159,7 +161,6 @@ include/arrow/ipc/
 include/arrow/ipc/api.h
 include/arrow/ipc/dictionary.h
 include/arrow/ipc/feather.h
-include/arrow/ipc/json_simple.h
 include/arrow/ipc/message.h
 include/arrow/ipc/options.h
 include/arrow/ipc/reader.h
@@ -172,6 +173,7 @@ include/arrow/json/api.h
 include/arrow/json/chunked_builder.h
 include/arrow/json/chunker.h
 include/arrow/json/converter.h
+include/arrow/json/from_string.h
 include/arrow/json/object_parser.h
 include/arrow/json/object_writer.h
 include/arrow/json/options.h
@@ -182,7 +184,6 @@ include/arrow/json/test_common.h
 include/arrow/json/type_fwd.h
 include/arrow/memory_pool.h
 include/arrow/memory_pool_test.h
-include/arrow/pch.h
 include/arrow/pretty_print.h
 include/arrow/record_batch.h
 include/arrow/result.h
@@ -197,6 +198,7 @@ include/arrow/table_builder.h
 include/arrow/tensor/
 include/arrow/tensor.h
 include/arrow/tensor/converter.h
+@comment include/arrow/testing/pch.h
 @comment include/arrow/testing/
 @comment include/arrow/testing/async_test_util.h
 @comment include/arrow/testing/builder.h
@@ -208,7 +210,7 @@ include/arrow/tensor/converter.h
 @comment include/arrow/testing/gtest_compat.h
 @comment include/arrow/testing/gtest_util.h
 @comment include/arrow/testing/matchers.h
-@comment include/arrow/testing/pch.h
+include/arrow/testing/math.h
 @comment include/arrow/testing/process.h
 @comment include/arrow/testing/random.h
 @comment include/arrow/testing/uniform_real.h
@@ -238,13 +240,6 @@ include/arrow/util/bitmap_ops.h
 include/arrow/util/bitmap_reader.h
 include/arrow/util/bitmap_visit.h
 include/arrow/util/bitmap_writer.h
-include/arrow/util/bitset_stack.h
-include/arrow/util/bpacking.h
-include/arrow/util/bpacking64_default.h
-include/arrow/util/bpacking_avx2.h
-include/arrow/util/bpacking_avx512.h
-include/arrow/util/bpacking_default.h
-include/arrow/util/bpacking_neon.h
 include/arrow/util/byte_size.h
 include/arrow/util/cancel.h
 include/arrow/util/checked_cast.h
@@ -253,15 +248,11 @@ include/arrow/util/compression.h
 include/arrow/util/concurrent_map.h
 include/arrow/util/config.h
 include/arrow/util/converter.h
-include/arrow/util/counting_semaphore.h
 include/arrow/util/cpu_info.h
 include/arrow/util/crc32.h
 include/arrow/util/debug.h
 include/arrow/util/decimal.h
 include/arrow/util/delimiting.h
-include/arrow/util/dict_util.h
-include/arrow/util/dispatch.h
-include/arrow/util/double_conversion.h
 include/arrow/util/endian.h
 include/arrow/util/float16.h
 include/arrow/util/formatting.h
@@ -279,34 +270,26 @@ include/arrow/util/list_util.h
 include/arrow/util/logger.h
 include/arrow/util/logging.h
 include/arrow/util/macros.h
-include/arrow/util/map.h
 include/arrow/util/math_constants.h
-include/arrow/util/memory.h
 include/arrow/util/mutex.h
 include/arrow/util/parallel.h
 include/arrow/util/pcg_random.h
 include/arrow/util/prefetch.h
-include/arrow/util/print.h
 include/arrow/util/queue.h
 include/arrow/util/range.h
 include/arrow/util/ree_util.h
 include/arrow/util/regex.h
 include/arrow/util/rows_to_batches.h
+include/arrow/util/secure_string.h
 include/arrow/util/simd.h
 include/arrow/util/small_vector.h
-include/arrow/util/sort.h
-include/arrow/util/spaced.h
-include/arrow/util/span.h
-include/arrow/util/stopwatch.h
 include/arrow/util/string.h
-include/arrow/util/string_builder.h
+include/arrow/util/string_util.h
 include/arrow/util/task_group.h
-include/arrow/util/tdigest.h
 include/arrow/util/test_common.h
 include/arrow/util/thread_pool.h
 include/arrow/util/time.h
 include/arrow/util/tracing.h
-include/arrow/util/trie.h
 include/arrow/util/type_fwd.h
 include/arrow/util/type_traits.h
 include/arrow/util/ubsan.h
@@ -347,7 +330,9 @@ include/arrow/vendored/pcg/pcg_random.hpp
 include/arrow/vendored/pcg/pcg_uint128.hpp
 include/arrow/vendored/portable-snippets/
 include/arrow/vendored/portable-snippets/debug-trap.h
-include/arrow/vendored/portable-snippets/safe-math.h
+include/arrow/vendored/safeint/
+include/arrow/vendored/safeint/safe_math.h
+include/arrow/vendored/safeint/safe_math_impl.h
 include/arrow/vendored/strptime.h
 include/arrow/vendored/xxhash/
 include/arrow/vendored/xxhash.h
@@ -372,6 +357,7 @@ include/parquet/arrow/writer.h
 include/parquet/benchmark_util.h
 include/parquet/bloom_filter.h
 include/parquet/bloom_filter_reader.h
+include/parquet/bloom_filter_writer.h
 include/parquet/column_page.h
 include/parquet/column_reader.h
 include/parquet/column_scanner.h
@@ -398,7 +384,10 @@ include/parquet/encryption/type_fwd.h
 include/parquet/exception.h
 include/parquet/file_reader.h
 include/parquet/file_writer.h
+include/parquet/geospatial/
+include/parquet/geospatial/statistics.h
 include/parquet/hasher.h
+include/parquet/index_location.h
 include/parquet/level_comparison.h
 include/parquet/level_comparison_inc.h
 include/parquet/level_conversion.h
@@ -406,17 +395,18 @@ include/parquet/level_conversion_inc.h
 include/parquet/metadata.h
 include/parquet/page_index.h
 include/parquet/parquet_version.h
-include/parquet/pch.h
 include/parquet/platform.h
 include/parquet/printer.h
 include/parquet/properties.h
 include/parquet/schema.h
+include/parquet/size_statistics.h
 include/parquet/statistics.h
 include/parquet/stream_reader.h
 include/parquet/stream_writer.h
 include/parquet/test_util.h
 include/parquet/type_fwd.h
 include/parquet/types.h
+include/parquet/visit_type_inline.h
 include/parquet/windows_compatibility.h
 include/parquet/windows_fixup.h
 include/parquet/xxhasher.h
@@ -433,6 +423,11 @@ lib/cmake/ArrowAcero/ArrowAceroConfig.cmake
 lib/cmake/ArrowAcero/ArrowAceroConfigVersion.cmake
 lib/cmake/ArrowAcero/ArrowAceroTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/ArrowAcero/ArrowAceroTargets.cmake
+lib/cmake/ArrowCompute/
+lib/cmake/ArrowCompute/ArrowComputeConfig.cmake
+lib/cmake/ArrowCompute/ArrowComputeConfigVersion.cmake
+lib/cmake/ArrowCompute/ArrowComputeTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/ArrowCompute/ArrowComputeTargets.cmake
 lib/cmake/ArrowDataset/
 lib/cmake/ArrowDataset/ArrowDatasetConfig.cmake
 lib/cmake/ArrowDataset/ArrowDatasetConfigVersion.cmake
@@ -452,6 +447,7 @@ lib/cmake/Parquet/ParquetTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Parquet/ParquetTargets.cmake
 @lib lib/libarrow.so.${LIBarrow_VERSION}
 @lib lib/libarrow_acero.so.${LIBarrow_acero_VERSION}
+@lib lib/libarrow_compute.so.${LIBarrow_compute_VERSION}
 @lib lib/libarrow_dataset.so.${LIBarrow_dataset_VERSION}
 @lib lib/libparquet.so.${LIBparquet_VERSION}
 lib/pkgconfig/arrow-acero.pc

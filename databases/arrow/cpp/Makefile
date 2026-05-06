@@ -1,18 +1,17 @@
 COMMENT =	columnar format and toolbox for fast-data interchange
 
-V =		18.1.0
+V =		24.0.0
 DISTNAME =	apache-arrow-${V}
 PKGNAME =	arrow-cpp-${V}
-REVISION =	0
 
-SHARED_LIBS +=	arrow		1.0 # 0.0
-SHARED_LIBS +=	arrow_acero	0.0
-SHARED_LIBS +=	arrow_dataset	0.0
-#SHARED_LIBS +=	arrow_testing	0.0
-SHARED_LIBS +=	parquet		0.0
+SHARED_LIBS +=	arrow		2.0 # 0.0
+SHARED_LIBS +=	arrow_acero	1.0
+SHARED_LIBS +=	arrow_compute	0.0
+SHARED_LIBS +=	arrow_dataset	1.0
+SHARED_LIBS +=	parquet		1.0
 
-DIST_TUPLE +=	github apache parquet-testing cb7a9674142c137367bf75a01b79c6e214a73199 cpp/submodules/parquet-testing
-DIST_TUPLE +=	github apache arrow-testing 4d209492d514c2d3cb2d392681b9aa00e6d8da1c testing
+DIST_TUPLE +=	github apache parquet-testing e74785d85a4ecee829e1e405444d6a1b24b8bc9c cpp/submodules/parquet-testing
+DIST_TUPLE +=	github apache arrow-testing 249079a810caedda6898464003c7ef8a47efeeae testing
 
 CATEGORIES=	databases
 
@@ -37,14 +36,12 @@ CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 		-DARROW_CSV=ON \
 		-DARROW_JSON=ON \
 		-DARROW_BUILD_UTILITIES=ON \
+		-DARROW_BUILD_STATIC=OFF \
 		-DARROW_WITH_SNAPPY=ON \
 		-DARROW_WITH_UTF8PROC=OFF \
 		-DARROW_WITH_RE2=OFF \
+		-DARROW_MIMALLOC=OFF \
 		-DARROW_JEMALLOC=OFF
-
-# building tests requires building the static libs
-#CONFIGURE_ARGS +=-DARROW_BUILD_TESTS=ON
-CONFIGURE_ARGS += -DARROW_BUILD_STATIC=OFF
 
 # fix build failures with rapidjson headers
 CONFIGURE_ENV +=CXXFLAGS="-I${LOCALBASE}/include"
@@ -63,6 +60,18 @@ TEST_ENV +=	ARROW_TEST_DATA=${WRKDIST}/testing/data \
 
 LIB_DEPENDS =	devel/thrift \
 		archivers/snappy
-WANTLIB +=	${COMPILER_LIBCXX} c crypto m snappy ssl thrift
+WANTLIB +=	${COMPILER_LIBCXX} c crypto m snappy ssl thrift z
+
+# uncomment to run tests
+# SHARED_LIBS +=	arrow_testing	0.0
+# CONFIGURE_ARGS +=	-DARROW_BUILD_TESTS=ON
+# LIB_DEPENDS +=	devel/boost,-md \
+# 		devel/gtest
+# WANTLIB += boost_atomic-mt boost_context-mt boost_date_time-mt
+# WANTLIB += boost_filesystem-mt boost_process-mt gmock gtest
+# no way to set the timeout via env vars, defaults to 10000000
+# arrow-utility-test.txt timeouts
+do-test:
+	@${MODCMAKE_TEST_TARGET} --timeout 180
 
 .include <bsd.port.mk>
