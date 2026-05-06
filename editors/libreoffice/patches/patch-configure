@@ -62,7 +62,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -41372,7 +41377,7 @@ printf "%s\n" "internal" >&6; }
+@@ -41378,7 +41383,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          HYPHEN_LIB='$(gb_StaticLibrary_WORKDIR)/hyphen.lib'
      else
@@ -71,7 +71,7 @@ Index: configure
      fi
  fi
  
-@@ -41575,7 +41580,7 @@ printf "%s\n" "internal" >&6; }
+@@ -41581,7 +41586,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS='$(gb_StaticLibrary_WORKDIR)/mythes.lib'
      else
@@ -80,7 +80,7 @@ Index: configure
      fi
  fi
  
-@@ -42626,7 +42631,7 @@ else
+@@ -42632,7 +42637,7 @@ else
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking the flex version" >&5
  printf %s "checking the flex version... " >&6; }
      _flex_version=$($FLEX --version | $SED -e 's/^.*\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*$/\1/')
@@ -89,7 +89,7 @@ Index: configure
          as_fn_error $? "failed ($FLEX $_flex_version found, but need at least 2.6.0)" "$LINENO" 5
      fi
  fi
-@@ -47505,7 +47510,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -47511,7 +47516,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  printf %s "checking for Qt6 libraries... " >&6; }
      qt6_libdir="no"
      for lib_dir in $qt6_libdirs; do
@@ -98,7 +98,7 @@ Index: configure
              qt6_libdir="$lib_dir"
              break
          fi
-@@ -47891,7 +47896,7 @@ printf "%s\n" "$kf6_incdir" >&6; }
+@@ -47897,7 +47902,7 @@ printf "%s\n" "$kf6_incdir" >&6; }
  printf %s "checking for KF6 libraries... " >&6; }
      kf6_libdir="no"
      for kf6_check in $kf6_libdirs; do
@@ -107,7 +107,7 @@ Index: configure
              kf6_libdir="$kf6_check"
              break
          fi
-@@ -48789,16 +48794,7 @@ if test "$USING_X11" = TRUE; then
+@@ -48795,16 +48800,7 @@ if test "$USING_X11" = TRUE; then
      else
          XINERAMALIB="$x_libraries"
      fi
@@ -125,7 +125,7 @@ Index: configure
          # we have only the dynamic version
          USE_XINERAMA=TRUE
          XINERAMA_LINK=dynamic
-@@ -50427,7 +50423,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -50433,7 +50429,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
  done
  
  if test -z "$SHA256SUM"; then
