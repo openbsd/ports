@@ -2,7 +2,7 @@ COMMENT =	${NF_FONT} Nerd Font
 DIST_SUBDIR =	${NF_PROJECT}-${VERSION}
 
 NF_PROJECT =	nerd-fonts
-VERSION =	3.3.0
+VERSION =	3.4.0
 PKGNAME =	${NF_FONT:L:S/nerdfonts//}-${NF_PROJECT}-${VERSION}
 CATEGORIES =	fonts
 HOMEPAGE =	https://www.nerdfonts.com/
