@@ -1,6 +1,6 @@
 COMMENT=	core utilities for Python packaging
 
-MODPY_DISTV=	26.0
+MODPY_DISTV=	26.2
 DISTNAME=	packaging-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -22,7 +22,9 @@ MODPY_PYTEST=	Yes
 BUILD_DEPENDS=	archivers/unzip \
 		devel/py-flit_core \
 		devel/py-installer
-TEST_DEPENDS=	devel/py-pretend
+TEST_DEPENDS=	devel/py-hypothesis \
+		devel/py-pretend \
+		textproc/py-tomli_w
 
 do-build:
 	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
