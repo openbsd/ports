@@ -2,7 +2,7 @@ COMMENT=		Git linkable library
 
 GH_ACCOUNT=		libgit2
 GH_PROJECT=		libgit2
-GH_TAGNAME=		v1.9.2
+GH_TAGNAME=		v1.9.3
 
 SHARED_LIBS +=  git2                      16.1 # 0.28
 
