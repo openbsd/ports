@@ -1,0 +1,29 @@
+https://github.com/luceneplusplus/LucenePlusPlus/pull/222
+
+Index: include/lucene++/BitSet.h
+--- include/lucene++/BitSet.h.orig
++++ include/lucene++/BitSet.h
+@@ -8,6 +8,7 @@
+ #define BITSET_H
+ 
+ #include <boost/dynamic_bitset.hpp>
++#include <boost/version.hpp>
+ #include "LuceneObject.h"
+ 
+ namespace Lucene {
+@@ -22,9 +23,14 @@ class LPPAPI BitSet : public LuceneObject { (public)
+ protected:
+     typedef boost::dynamic_bitset<uint64_t> bitset_type;
+     bitset_type bitSet;
++#if BOOST_VERSION >= 109000
++    typedef const bitset_type& get_bits_result;
++#else
++    typedef const uint64_t* get_bits_result;
++#endif
+ 
+ public:
+-    const uint64_t* getBits();
++    get_bits_result getBits();
+     void clear();
+     void clear(uint32_t bitIndex);
+     void fastClear(uint32_t bitIndex);
