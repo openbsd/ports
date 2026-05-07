@@ -23,12 +23,14 @@
 @bin bin/psf2wyse
 @bin bin/psf2xbm
 @bin bin/psf2zx
+@bin bin/psfdiff
 @bin bin/psfjoin
 @bin bin/psfmerge
 @bin bin/psfpages
 @bin bin/psfs2cpi
 @bin bin/psfs2mda
 @bin bin/psfxform
+@bin bin/psfxsaa
 @bin bin/raw2psf
 @bin bin/txt2psf
 @bin bin/txt2vfont
@@ -38,6 +40,7 @@
 @bin bin/vfont2psf
 @bin bin/vfont2txt
 @bin bin/vfontxform
+@bin bin/vfontxsaa
 @bin bin/wof2psf
 @bin bin/wyse2psf
 @bin bin/zx2psf
@@ -68,12 +71,14 @@ lib/libpsf.la
 @man man/man1/psf2wyse.1
 @man man/man1/psf2xbm.1
 @man man/man1/psf2zx.1
+@man man/man1/psfdiff.1
 @man man/man1/psfjoin.1
 @man man/man1/psfmerge.1
 @man man/man1/psfpages.1
 @man man/man1/psfs2cpi.1
 @man man/man1/psfs2mda.1
 @man man/man1/psfxform.1
+@man man/man1/psfxsaa.1
 @man man/man1/raw2psf.1
 @man man/man1/txt2psf.1
 @man man/man1/txt2vfont.1
@@ -83,6 +88,7 @@ lib/libpsf.la
 @man man/man1/vfont2psf.1
 @man man/man1/vfont2txt.1
 @man man/man1/vfontxform.1
+@man man/man1/vfontxsaa.1
 @man man/man1/wof2psf.1
 @man man/man1/wyse2psf.1
 @man man/man1/zx2psf.1
