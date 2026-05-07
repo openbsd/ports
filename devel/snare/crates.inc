@@ -108,4 +108,3 @@ MODCARGO_CRATES +=	windows_x86_64_gnu	0.52.6	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	windows_x86_64_gnullvm	0.52.6	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	windows_x86_64_msvc	0.52.6	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	wit-bindgen-rt	0.39.0	# Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT
-

@@ -108,7 +108,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/wit-bindgen-rt-0.39.0.tar.gz) = b0IyDmH+LP00NU7LWX+G9BNISnmLpEqMoRZcWNQtpsE=
-SHA256 (snare-0.4.12.tgz) = tw2wMGCqe4V+r8wEQNSCzD1QwtGTjetMPDnE6uy8gio=
+SHA256 (snare-0.4.13.tgz) = cnlBsxaQCjv6dUBsMjSBMjNEQxbTgELj1F5XNQQhj4M=
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/anyhow-1.0.98.tar.gz) = 53334
 SIZE (cargo/autocfg-1.4.0.tar.gz) = 17712
@@ -219,4 +219,4 @@ SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/wit-bindgen-rt-0.39.0.tar.gz) = 12241
-SIZE (snare-0.4.12.tgz) = 45063
+SIZE (snare-0.4.13.tgz) = 45100
