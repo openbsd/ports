@@ -14,6 +14,7 @@ include/gnutls/dane.h
 include/gnutls/dtls.h
 include/gnutls/gnutls.h
 include/gnutls/gnutlsxx.h
+include/gnutls/hpke.h
 include/gnutls/ocsp.h
 include/gnutls/openpgp.h
 include/gnutls/pkcs11.h
@@ -35,6 +36,7 @@ info/gnutls-layers.png
 info/gnutls-logo.png
 info/gnutls-modauth.png
 info/gnutls-x509.png
+@info info/gnutls.info
 info/pkcs11-vision.png
 @static-lib lib/libgnutls-dane.a
 lib/libgnutls-dane.la
@@ -356,6 +358,14 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_hmac_init.3
 @man man/man3/gnutls_hmac_output.3
 @man man/man3/gnutls_hmac_set_nonce.3
+@man man/man3/gnutls_hpke_decap.3
+@man man/man3/gnutls_hpke_deinit.3
+@man man/man3/gnutls_hpke_derive_keypair.3
+@man man/man3/gnutls_hpke_encap.3
+@man man/man3/gnutls_hpke_export.3
+@man man/man3/gnutls_hpke_init.3
+@man man/man3/gnutls_hpke_open.3
+@man man/man3/gnutls_hpke_seal.3
 @man man/man3/gnutls_idna_map.3
 @man man/man3/gnutls_idna_reverse_map.3
 @man man/man3/gnutls_init.3
@@ -475,6 +485,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pkcs11_obj_get_exts.3
 @man man/man3/gnutls_pkcs11_obj_get_flags.3
 @man man/man3/gnutls_pkcs11_obj_get_info.3
+@man man/man3/gnutls_pkcs11_obj_get_pk_algorithm.3
 @man man/man3/gnutls_pkcs11_obj_get_ptr.3
 @man man/man3/gnutls_pkcs11_obj_get_type.3
 @man man/man3/gnutls_pkcs11_obj_import_url.3
