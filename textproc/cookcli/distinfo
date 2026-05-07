@@ -57,7 +57,7 @@ SHA256 (cargo/config-0.14.1.tar.gz) = aFePGW0qM/9hsn+uJWwxZPZeNjgmSOMGZt3gW4zJ39
 SHA256 (cargo/console-0.15.11.tar.gz) = BUzLWxD58sv1HrNVyh0FwtJ5zhgEaI0Nt0tHM6Wur9g=
 SHA256 (cargo/console-0.16.3.tar.gz) = 1k6K9VUTadGc9QE43mHxxCB0q5cPdOmb6RZkZ3f4/Ic=
 SHA256 (cargo/const-oid-0.9.6.tar.gz) = wkWTdyha2HQFTXl/PM6/mEl4qjkSn26v3lzcgxW2Evg=
-SHA256 (cargo/cooklang-0.18.4.tar.gz) = I/3X4Rxu6c4OhVmAqKDL5qc+QQ0nI8LQPZjsWfBtsgI=
+SHA256 (cargo/cooklang-0.18.5.tar.gz) = pZAOInTIkHXhVksyogEnOgK0cFPU/UGJeijZlIdMAkw=
 SHA256 (cargo/cooklang-find-0.5.0.tar.gz) = jhbeAVL7gs1aZFw78xOenl3H9ry+0amewQvUZ9ammtw=
 SHA256 (cargo/cooklang-import-0.9.9.tar.gz) = A/7MRvKSONKWstat1XrG1gqi7qaM2ruGVdi1Fn0t0KI=
 SHA256 (cargo/cooklang-language-server-0.2.1.tar.gz) = f08Ox889uiBe3qy5hoQT+0PdoG2cO/1de3TXEnOgTrs=
@@ -110,6 +110,7 @@ SHA256 (cargo/equivalent-1.0.2.tar.gz) = h3pKzocTsLzypOfuyCUpwCnx0GGYhtGBRf6pbD/
 SHA256 (cargo/errno-0.3.14.tar.gz) = Ocq3FheuDWP1GjbWn4ZjkXNbUWkdvaY89vltBCtj7+s=
 SHA256 (cargo/fastrand-2.4.1.tar.gz) = nx8idFKjkIBM22N7dKhpkPKn17pLfVaTqsm03W3v2NY=
 SHA256 (cargo/fiat-crypto-0.2.9.tar.gz) = KN6lGalpW5l3IWh5o+v935LxwIwF2YT4mWrs1uzcgR0=
+SHA256 (cargo/file-id-0.2.3.tar.gz) = 4fxqY3ttxYQUcU7d2RcP8YfssJM9THAk0au9I6PMJuk=
 SHA256 (cargo/filetime-0.2.27.tar.gz) = +YhEFR7uiRfvxQvZ6DGMuWOuiyl0MUldP3WGFupcV9s=
 SHA256 (cargo/find-msvc-tools-0.1.9.tar.gz) = W668B3QVH5BaGizEGYkwCx5vuymv8M7/oQZP3TCI1YI=
 SHA256 (cargo/finl_unicode-1.4.0.tar.gz) = mETdw6blM9YrunJ+tsKLXTYJIdUXXp/w8eYhpcWQpNU=
@@ -225,6 +226,7 @@ SHA256 (cargo/nohash-hasher-0.2.0.tar.gz) = K/UCI1edx83Ps7/Kz3Bp/2gkP4w2P2L/qZzw
 SHA256 (cargo/nom-7.1.3.tar.gz) = 0nOYPFplenCj6PKgEymCLzuMgXK3OCZBGlV1HkBKCko=
 SHA256 (cargo/normalize-line-endings-0.3.0.tar.gz) = YYB/d4Av8wl14B9PBxyLoQwCIFL5izKUEZ8+YV0T5b4=
 SHA256 (cargo/notify-8.2.0.tar.gz) = TT0HknFR/4V1twh/JFRW5Un+pi7fDsTlZaXuUMhAK8M=
+SHA256 (cargo/notify-debouncer-full-0.7.0.tar.gz) = wCtJF5z+vJkyI40E1geZEtJt4DeTKIcoRhGKD6DbswI=
 SHA256 (cargo/notify-debouncer-mini-0.7.0.tar.gz) = F4Se36q9ml/vHGBtmc/GFajpn3rENmQG2Gx5QqMYTPI=
 SHA256 (cargo/notify-types-2.1.0.tar.gz) = QrjP7g4zmgM3NZ88iBZXAqxuYA3AHAzJV5qS1isIR3o=
 SHA256 (cargo/nu-ansi-term-0.50.3.tar.gz) = eVe5dAdEiS8RSTarSlez9IdJG76vr4CDaIsWhBpCQOU=
@@ -377,6 +379,7 @@ SHA256 (cargo/tinyvec_macros-0.1.1.tar.gz) = HzzLrDEf6gX4b2GQS0YrVfs9+IN6Nm38YBo
 SHA256 (cargo/tokio-1.51.0.tar.gz) = K9HEwPxKerkPwV722qo+w7iT8AT5FfI5JVftIyN4IM0=
 SHA256 (cargo/tokio-macros-2.7.0.tar.gz) = OFpstxq5q3kMX+jWfxZF5sRQp84AajPeA9qpVs9wpJY=
 SHA256 (cargo/tokio-rustls-0.26.4.tar.gz) = FymqlF8p2RulQSWMjfiQJ9V5LYWohB+2Xovw9O3k72E=
+SHA256 (cargo/tokio-stream-0.1.18.tar.gz) = MtpJgJqrXDvGeK8DkC1Mzd6iqH0CjYY5KksVYMaQbHA=
 SHA256 (cargo/tokio-tungstenite-0.24.0.tar.gz) = 7cX3TiSNyXPg27e3TH4Nb8wwHGlP9QBJUEAE700M3Nk=
 SHA256 (cargo/tokio-util-0.7.18.tar.gz) = munOyAWwHo/D/S/iifiRSam2bdFnhqvYsZz6e0jLAJg=
 SHA256 (cargo/toml-0.8.23.tar.gz) = 3BvrmWudg1KannXBehaGdn0UjXBmMUPHhU2LSgnO02I=
@@ -502,8 +505,8 @@ SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhN
 SHA256 (cargo/zip-2.4.2.tar.gz) = +r5jJOkI+FocUgY856omto3LfrbbyDotFIQDybw+ulA=
 SHA256 (cargo/zipsign-api-0.1.5.tar.gz) = 26YGP/gs29mnZa3RbTaavoHlIPg2BU6ZfC2yF87KQMA=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (cookcli-0.28.1-output.css) = IhFEtsD/Xo1TxFhh8O8gb6V5J6IoBSuA7OfqlZ1Gh7g=
-SHA256 (cookcli-0.28.1.tar.gz) = NiqQvihg3Lm/SSgZf1/SeOsvRMHQOYB/MZmGFoMjefY=
+SHA256 (cookcli-0.29.1-output.css) = lc98zEtptX7tK+IwJSiXEd2ShjPNXHfFPZKpl15Lqck=
+SHA256 (cookcli-0.29.1.tar.gz) = IOe2DrXQqYuhgtj63G6V1w2ZyZNaORMT5TL6X2YZv/g=
 SIZE (cargo/accept-language-3.1.0.tar.gz) = 9269
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -563,7 +566,7 @@ SIZE (cargo/config-0.14.1.tar.gz) = 56031
 SIZE (cargo/console-0.15.11.tar.gz) = 37822
 SIZE (cargo/console-0.16.3.tar.gz) = 34041
 SIZE (cargo/const-oid-0.9.6.tar.gz) = 45382
-SIZE (cargo/cooklang-0.18.4.tar.gz) = 164851
+SIZE (cargo/cooklang-0.18.5.tar.gz) = 170514
 SIZE (cargo/cooklang-find-0.5.0.tar.gz) = 26125
 SIZE (cargo/cooklang-import-0.9.9.tar.gz) = 129099
 SIZE (cargo/cooklang-language-server-0.2.1.tar.gz) = 38547
@@ -616,6 +619,7 @@ SIZE (cargo/equivalent-1.0.2.tar.gz) = 7419
 SIZE (cargo/errno-0.3.14.tar.gz) = 12002
 SIZE (cargo/fastrand-2.4.1.tar.gz) = 20773
 SIZE (cargo/fiat-crypto-0.2.9.tar.gz) = 495390
+SIZE (cargo/file-id-0.2.3.tar.gz) = 10148
 SIZE (cargo/filetime-0.2.27.tar.gz) = 16678
 SIZE (cargo/find-msvc-tools-0.1.9.tar.gz) = 31493
 SIZE (cargo/finl_unicode-1.4.0.tar.gz) = 66414
@@ -731,6 +735,7 @@ SIZE (cargo/nohash-hasher-0.2.0.tar.gz) = 8051
 SIZE (cargo/nom-7.1.3.tar.gz) = 117570
 SIZE (cargo/normalize-line-endings-0.3.0.tar.gz) = 5737
 SIZE (cargo/notify-8.2.0.tar.gz) = 39067
+SIZE (cargo/notify-debouncer-full-0.7.0.tar.gz) = 28163
 SIZE (cargo/notify-debouncer-mini-0.7.0.tar.gz) = 10187
 SIZE (cargo/notify-types-2.1.0.tar.gz) = 22796
 SIZE (cargo/nu-ansi-term-0.50.3.tar.gz) = 29597
@@ -883,6 +888,7 @@ SIZE (cargo/tinyvec_macros-0.1.1.tar.gz) = 5865
 SIZE (cargo/tokio-1.51.0.tar.gz) = 884550
 SIZE (cargo/tokio-macros-2.7.0.tar.gz) = 15859
 SIZE (cargo/tokio-rustls-0.26.4.tar.gz) = 35430
+SIZE (cargo/tokio-stream-0.1.18.tar.gz) = 44366
 SIZE (cargo/tokio-tungstenite-0.24.0.tar.gz) = 28904
 SIZE (cargo/tokio-util-0.7.18.tar.gz) = 140550
 SIZE (cargo/toml-0.8.23.tar.gz) = 36050
@@ -1008,5 +1014,5 @@ SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
 SIZE (cargo/zip-2.4.2.tar.gz) = 110773
 SIZE (cargo/zipsign-api-0.1.5.tar.gz) = 17451
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (cookcli-0.28.1-output.css) = 43143
-SIZE (cookcli-0.28.1.tar.gz) = 5585019
+SIZE (cookcli-0.29.1-output.css) = 44164
+SIZE (cookcli-0.29.1.tar.gz) = 5611058

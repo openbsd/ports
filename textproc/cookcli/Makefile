@@ -1,6 +1,6 @@
 COMMENT =		command line tool for working with Cooklang recipes
 
-V =			0.28.1
+V =			0.29.1
 GH_ACCOUNT =		cooklang
 GH_PROJECT =		cookcli
 GH_TAGNAME =		v${V}
@@ -30,9 +30,6 @@ LIB_DEPENDS =		databases/sqlite3
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
-
-MODCARGO_CRATES_KEEP =	libsqlite3-sys
-MODCARGO_ENV +=		LIBSQLITE3_SYS_USE_PKG_CONFIG=1
 
 NO_TEST =		Yes
 
