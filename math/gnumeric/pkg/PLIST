@@ -132,15 +132,19 @@ include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-auto-e
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-chi-squared.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-exp-smoothing.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-frequency.h
+include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-ftest.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-histogram.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-kaplan-meier.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-normality.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-one-mean-test.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-principal-components.h
+include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-regression.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-sign-test.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-signed-rank-test.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-tools.h
+include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-ttest.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-wilcoxon-mann-whitney.h
+include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/analysis-ztest.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/auto-correct.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/dao.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/data-shuffling.h
@@ -153,7 +157,6 @@ include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/random-generato
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/scenarios.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/simulation.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/tabulate.h
-include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/tools/tools.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/undo.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/validation-combo.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/validation.h
@@ -201,10 +204,6 @@ lib/gnumeric/${GNOME_VERSION}/plugins/dif/plugin.xml
 lib/gnumeric/${GNOME_VERSION}/plugins/excel/
 @so lib/gnumeric/${GNOME_VERSION}/plugins/excel/excel.so
 lib/gnumeric/${GNOME_VERSION}/plugins/excel/plugin.xml
-lib/gnumeric/${GNOME_VERSION}/plugins/excelplugins/
-@so lib/gnumeric/${GNOME_VERSION}/plugins/excelplugins/plugin.so
-lib/gnumeric/${GNOME_VERSION}/plugins/excelplugins/plugin.xml
-@so lib/gnumeric/${GNOME_VERSION}/plugins/excelplugins/xlcall32.so
 lib/gnumeric/${GNOME_VERSION}/plugins/fn-christian-date/
 @so lib/gnumeric/${GNOME_VERSION}/plugins/fn-christian-date/plugin.so
 lib/gnumeric/${GNOME_VERSION}/plugins/fn-christian-date/plugin.xml
