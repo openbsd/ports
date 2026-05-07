@@ -364,6 +364,7 @@ share/locale/it/LC_MESSAGES/ibus10.mo
 share/locale/ja/LC_MESSAGES/ibus10.mo
 share/locale/ka/LC_MESSAGES/ibus10.mo
 share/locale/kab/LC_MESSAGES/ibus10.mo
+share/locale/kk/LC_MESSAGES/ibus10.mo
 share/locale/kn/LC_MESSAGES/ibus10.mo
 share/locale/ko/LC_MESSAGES/ibus10.mo
 share/locale/lv/LC_MESSAGES/ibus10.mo
@@ -378,6 +379,7 @@ share/locale/pa/LC_MESSAGES/ibus10.mo
 share/locale/pl/LC_MESSAGES/ibus10.mo
 share/locale/pt/LC_MESSAGES/ibus10.mo
 share/locale/pt_BR/LC_MESSAGES/ibus10.mo
+share/locale/ro/LC_MESSAGES/ibus10.mo
 share/locale/ru/LC_MESSAGES/ibus10.mo
 share/locale/sq/LC_MESSAGES/ibus10.mo
 share/locale/sr/LC_MESSAGES/ibus10.mo

@@ -5,19 +5,14 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.33
-
-REVISION-main =		0
-REVISION-gtk2 =		0
-REVISION-gtk3 =		0
-REVISION-gtk4 =		1
+GH_TAGNAME =		1.5.34
 
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME:S/-//}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME:S/-//}
 
-SHARED_LIBS +=  ibus-1.0             4.5      # 5.532
+SHARED_LIBS +=  ibus-1.0             4.5      # 5.534
 
 CATEGORIES =		inputmethods chinese japanese korean
 
@@ -58,14 +53,14 @@ WANTLIB-gtk4 += drm_intel
 .endif
 WANTLIB-gtk4 += EGL GL LLVM Lerc X11-xcb Xxf86vm avahi-client avahi-common
 WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter crypto cups
-WANTLIB-gtk4 += dav1d dbus-1 drm drm_amdgpu elf epoll-shim
-WANTLIB-gtk4 += epoxy execinfo gbm glapi graphene-1.0 gstallocators-1.0
-WANTLIB-gtk4 += gstaudio-1.0 gstbase-1.0 gstgl-1.0 gstpbutils-1.0 gstplay-1.0
-WANTLIB-gtk4 += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-4 harfbuzz-subset
-WANTLIB-gtk4 += ibus-1.0 lzma lzo2 orc-0.4 pciaccess rsvg-2 ssl tiff
-WANTLIB-gtk4 += vulkan wayland-client wayland-cursor wayland-egl xcb-dri2
-WANTLIB-gtk4 += xcb-dri3 xcb-glx xcb-present xcb-randr xcb-sync xcb-xfixes
-WANTLIB-gtk4 += xkbcommon xml2 xshmfence zstd
+WANTLIB-gtk4 += dbus-1 drm drm_amdgpu elf epoll-shim epoxy execinfo
+WANTLIB-gtk4 += gbm glapi graphene-1.0 gstallocators-1.0 gstaudio-1.0
+WANTLIB-gtk4 += gstbase-1.0 gstgl-1.0 gstpbutils-1.0 gstplay-1.0 gstreamer-1.0
+WANTLIB-gtk4 += gsttag-1.0 gstvideo-1.0 gtk-4 harfbuzz-subset ibus-1.0
+WANTLIB-gtk4 += lzma lzo2 orc-0.4 pciaccess ssl tiff vulkan wayland-client
+WANTLIB-gtk4 += wayland-cursor wayland-egl xcb-dri2 xcb-dri3 xcb-glx
+WANTLIB-gtk4 += xcb-present xcb-randr xcb-sync xcb-xfixes xkbcommon
+WANTLIB-gtk4 += xshmfence zstd
 
 MODULES =		devel/dconf \
 			lang/python
