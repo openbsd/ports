@@ -1,7 +1,8 @@
 COMMENT=	movie player supporting many formats
 
 V=		20251123
-FFMPEG_V=	8.0.1
+FFMPEG_V=	8.0.2
+REVISION=	0
 DISTNAME=	mplayer-${V}
 CATEGORIES=	x11 multimedia
 SITES=		https://comstyle.com/source/
