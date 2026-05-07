@@ -559,7 +559,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}make_mo.$
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}make_mo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}msgfmt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}msgfmt.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}msgfmt.cpython-314.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}pygettext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}pygettext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/extract_pot.py

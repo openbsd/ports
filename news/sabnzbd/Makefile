@@ -3,6 +3,7 @@ COMMENT =			retrieve and process nzb-files via web interface
 VERSION =			5.0.1
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
+REVISION =			0
 
 CATEGORIES =			news
 
@@ -54,6 +55,10 @@ RUN_DEPENDS =			archivers/par2cmdline \
 # XXX broken, needs pyfakefs, pytest-httpserver, tavern and tavalidate (not in
 # ports)
 NO_TEST =			Yes
+
+# XXX upstream distfile includes __pycache__ which conflicts with our build
+post-extract:
+	rm -r ${WRKSRC}/tools/__pycache__
 
 do-build:
 
