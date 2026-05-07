@@ -9,7 +9,6 @@ share/doc/codex/contributing.md
 share/doc/codex/example-config.md
 share/doc/codex/exec.md
 share/doc/codex/execpolicy.md
-share/doc/codex/exit-confirmation-prompt-design.md
 share/doc/codex/getting-started.md
 share/doc/codex/install.md
 share/doc/codex/license.md
@@ -17,12 +16,6 @@ share/doc/codex/open-source-fund.md
 share/doc/codex/sandbox.md
 share/doc/codex/skills.md
 share/doc/codex/slash_commands.md
-share/doc/codex/tui-alternate-screen.md
-share/doc/codex/tui-chat-composer.md
-share/doc/codex/tui-request-user-input.md
-share/doc/codex/tui-stream-chunking-review.md
-share/doc/codex/tui-stream-chunking-tuning.md
-share/doc/codex/tui-stream-chunking-validation.md
 share/doc/pkg-readmes/${PKGSTEM}
 share/fish/
 share/fish/vendor_completions.d/
