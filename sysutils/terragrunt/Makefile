@@ -1,7 +1,7 @@
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v1.0.1
+MODGO_VERSION=	v1.0.3
 DISTNAME=	terragrunt-${MODGO_VERSION}
 
 # for patches
