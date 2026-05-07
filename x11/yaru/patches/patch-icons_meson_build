@@ -1,21 +1,21 @@
 Index: icons/meson.build
 --- icons/meson.build.orig
 +++ icons/meson.build
-@@ -255,7 +255,7 @@ foreach flavour: icon_flavors
-       if local_links.length() > 0
-         relative_to = meson.current_source_dir() / icon_dir
-         links_paths_getter = run_command(
--          'realpath', '-e',
-+          'grealpath', '-e',
-           '--relative-to=' + relative_to,
-           local_links,
-           check: false,
-@@ -265,7 +265,7 @@ foreach flavour: icon_flavors
-           failed_links = []
-           foreach link: local_links
-             if run_command(
--              'realpath', '-e',
-+              'grealpath', '-e',
-               '--relative-to=' + relative_to,
-               link,
-               check: false,
+@@ -311,7 +311,7 @@ foreach flavour: icon_flavors
+         endif
+       endforeach
+ 
+-      excluded_folders += run_command('find', icon_dir,
++      excluded_folders += run_command('gfind', icon_dir,
+         '-type', 'd',
+         included_names.length() > 0 ? ['('] + included_names + [')'] : [],
+         '-printf', '%P\\n',
+@@ -339,7 +339,7 @@ foreach flavour: icon_flavors
+       # the default dark theme as fallback, while the base flavour theme
+       # is still inherited as primary.
+       dark_categories = run_command(
+-        'find',
++        'gfind',
+         dark_theme,
+         '!', '-path', dark_theme,
+         '-type', 'd',

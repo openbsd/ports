@@ -1,8 +1,10 @@
 COMMENT=		Ubuntu GNOME theme
 
-GH_TAGNAME=		25.10.3
+V=			26.04.5
+GH_TAGNAME=		26.04.5.1ubuntu
 GH_ACCOUNT=		ubuntu
 GH_PROJECT=		yaru
+PKGNAME=		yaru-${V}
 
 CATEGORIES=		x11
 
@@ -21,6 +23,9 @@ BUILD_DEPENDS +=	devel/glib2
 
 # grealpath(1)
 BUILD_DEPENDS +=	sysutils/coreutils
+
+# gfind(1)
+BUILD_DEPENDS +=	misc/findutils
 
 RUN_DEPENDS=		x11/gtk+4,-guic
 

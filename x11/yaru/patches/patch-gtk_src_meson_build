@@ -1,0 +1,14 @@
+Index: gtk/src/meson.build
+--- gtk/src/meson.build.orig
++++ gtk/src/meson.build
+@@ -291,8 +291,8 @@ foreach flavour: yaru_flavours
+               command: [
+                 'bash', '-xec', ';'.join([
+                   'mkdir -p "@3@"',
+-                  'ln -sf "$(realpath --relative-to="@1@" "@INPUT@")" "@1@/assets-yaru.txt"',
+-                  'cd "@3@" && for f in "@0@/assets/"*.svg; do ln -sf "$(realpath --relative-to="@3@" "$f")" "$(basename "$f")"; done || true',
++                  'ln -sf "$(grealpath --relative-to="@1@" "@INPUT@")" "@1@/assets-yaru.txt"',
++                  'cd "@3@" && for f in "@0@/assets/"*.svg; do ln -sf "$(grealpath --relative-to="@3@" "$f")" "$(basename "$f")"; done || true',
+                   'cp -v "@2@" "@1@/assets-yaru.svg"',
+                 ]).format(
+                   meson.current_source_dir() / default_path,

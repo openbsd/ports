@@ -1,0 +1,12 @@
+Index: cinnamon-shell/src/meson.build
+--- cinnamon-shell/src/meson.build.orig
++++ cinnamon-shell/src/meson.build
+@@ -54,7 +54,7 @@ foreach src: theme_sources
+     command: [
+       'bash', '-c',
+       ';'.join([
+-        'output="$1/$(realpath --relative-to="'+ meson.current_source_dir() + '" $0)"',
++        'output="$1/$(grealpath --relative-to="'+ meson.current_source_dir() + '" $0)"',
+         'mkdir -p "$(dirname "$output")"',
+         'sed "s,[[:space:]]*url[[:space:]]*(, url(,g;" "$0" > "$output"',
+       ]),
