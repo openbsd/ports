@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -63,7 +63,7 @@ ifeq ($(DEBUG),true)
+@@ -66,7 +66,7 @@ ifeq ($(DEBUG),true)
  endif
  
  #? Any flags added to TESTFLAGS must not contain whitespace for the testing to work
@@ -10,7 +10,7 @@ Index: Makefile
  ifneq ($(PLATFORM) $(ARCH),macos arm64)
  	override TESTFLAGS += -fstack-protector
  endif
-@@ -120,7 +120,7 @@ else ifeq ($(PLATFORM_LC),macos)
+@@ -123,7 +123,7 @@ else ifeq ($(PLATFORM_LC),macos)
  else ifeq ($(PLATFORM_LC),openbsd)
  	PLATFORM_DIR := openbsd
  	THREADS	:= $(shell sysctl -n hw.ncpu || echo 1)
@@ -19,7 +19,7 @@ Index: Makefile
  	export MAKE = gmake
  	SU_GROUP := wheel
  else ifeq ($(PLATFORM_LC),netbsd)
-@@ -135,9 +135,6 @@ endif
+@@ -138,9 +138,6 @@ endif
  
  #? Use all CPU cores (will only be set if using Make 4.3+)
  MAKEFLAGS := --jobs=$(THREADS)
@@ -29,7 +29,7 @@ Index: Makefile
  
  #? LTO command line
  ifeq ($(BUILD_TYPE),Release)
-@@ -245,7 +242,6 @@ info:
+@@ -248,7 +245,6 @@ info:
  endif
  
  info-quiet: | info rocm_smi
@@ -37,7 +37,7 @@ Index: Makefile
  
  help:
  	@printf " $(BANNER)\n"
-@@ -278,7 +274,6 @@ $(BUILDDIR)/config.h: $(SRCDIR)/config.h.in | director
+@@ -281,7 +277,6 @@ $(BUILDDIR)/config.h: $(SRCDIR)/config.h.in | director
  #? Man page
  btop.1: manpage.md | directories
  ifeq ($(shell command -v lowdown >/dev/null; echo $$?),0)
@@ -45,7 +45,7 @@ Index: Makefile
  	lowdown -s -Tman -o $@ $<
  else
  	@printf "\n\033[1;93mCommand 'lowdown' not found: skipping generating man page $@\033[0m\n"
-@@ -297,29 +292,22 @@ distclean: clean
+@@ -300,29 +295,22 @@ distclean: clean
  	@test -e lib/rocm_smi_lib/build && rm -rf lib/rocm_smi_lib/build || true
  
  install:
@@ -77,7 +77,7 @@ Index: Makefile
  endif
  
  #? Set SUID bit for btop as $SU_USER in $SU_GROUP
-@@ -383,33 +371,23 @@ endif
+@@ -386,33 +374,23 @@ endif
  #? Link
  .ONESHELL:
  btop: $(OBJECTS) | rocm_smi directories
