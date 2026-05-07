@@ -7,7 +7,7 @@ SHA256 (hex_modules/eredis-1.7.1.tar) = fCtUxWb+1V/u8zQcp5sBAKY0j9PxYhhLftURjSWM
 SHA256 (hex_modules/esip-1.0.60.tar) = BgTL1LvI2hWSwAgwz+MGIM5PZlurEZnRSjtF+v0DFE8=
 SHA256 (hex_modules/ezlib-1.0.16.tar) = tIGVQEA9Hst+rmRf3/FCqNsrR22JMojTm6u5KSIlBAU=
 SHA256 (hex_modules/fast_tls-1.1.26.tar) = aw1N0jCQN1Zeuqms858CgI9fghWjkQGh2jPCpbG1mz8=
-SHA256 (hex_modules/fast_xml-1.1.58.tar) = o21uA6OYxTuhiekSv0x1WaNwSsY8UFDxJtR0FAGLTKA=
+SHA256 (hex_modules/fast_xml-1.1.60.tar) = z54nSd1HIEcCy3oEq1BFZC+gCW/fyc/y6cptPyq9N8U=
 SHA256 (hex_modules/fast_yaml-1.0.40.tar) = J3BcKZAsHG8yaLqb84fV+pKLLmVbUxEPpHuOR20ys4Y=
 SHA256 (hex_modules/getopt-1.0.1.tar) = U+Grg7nOtlyWctPno1uAkum9ybPugHIUcaFhwQxZlZw=
 SHA256 (hex_modules/hex_core-0.10.1.tar) = /TkVLTQrf9TOP4A6x/CEtg0byb8T5wfjXb3OJm+7ZfA=
@@ -30,10 +30,9 @@ SHA256 (hex_modules/sqlite3-1.1.15.tar) = PAuk4TMiwq1J3k4t3SgxE2at3lS+ro26nZ44iP
 SHA256 (hex_modules/stringprep-1.0.34.tar) = J+eOo3GIF2TgVvvoRdOtMEdA/14xMbwfOKZvC6qMm0c=
 SHA256 (hex_modules/stun-1.2.22.tar) = NAi0sR1SN6CI9TsmCgaUDDCxb0pICUiS1qkgThZDGIo=
 SHA256 (hex_modules/verl-1.1.1.tar) = CSXlHNkqCovicXZbAkMLLiz/isMO8k0SO9DVhRHo+xg=
-SHA256 (hex_modules/xmpp-1.13.1.tar) = oCTu98y094uftS431jhaV73RUL515Q1Ru8uvOamriD0=
+SHA256 (hex_modules/xmpp-1.13.3.tar) = BWSKpNvM/uYqqnlLKSowWEY50DyR9cCGa+jDQ0tqb0g=
 SHA256 (hex_modules/yconf-1.0.23.tar) = JbTft1MoAmrKp3TPXG+4fUi1XuvOYw3aozYkQdrDFDc=
-SHA256 (jquery-4.0.0.min.js) = OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=
-SHA256 (processone-ejabberd-26.03.tar.gz) = WEudQ6H2fpKf2wj6dCnzWfq8AikjrKMRZmsQc+1wmlI=
+SHA256 (processone-ejabberd-26.04.tar.gz) = d96xBTl4rpeQ+Qm3tXOsYca5TXxGWoTFtWVoKS1J5H0=
 SIZE (bootstrap-5.3.8-dist.zip) = 1500314
 SIZE (erlydtl-erlydtl-0.15.0.tar.gz) = 120544
 SIZE (hex_modules/cache_tab-1.0.34.tar) = 23552
@@ -43,7 +42,7 @@ SIZE (hex_modules/eredis-1.7.1.tar) = 34816
 SIZE (hex_modules/esip-1.0.60.tar) = 81408
 SIZE (hex_modules/ezlib-1.0.16.tar) = 48128
 SIZE (hex_modules/fast_tls-1.1.26.tar) = 80384
-SIZE (hex_modules/fast_xml-1.1.58.tar) = 96768
+SIZE (hex_modules/fast_xml-1.1.60.tar) = 97280
 SIZE (hex_modules/fast_yaml-1.0.40.tar) = 55296
 SIZE (hex_modules/getopt-1.0.1.tar) = 19456
 SIZE (hex_modules/hex_core-0.10.1.tar) = 83968
@@ -66,7 +65,6 @@ SIZE (hex_modules/sqlite3-1.1.15.tar) = 1679872
 SIZE (hex_modules/stringprep-1.0.34.tar) = 91136
 SIZE (hex_modules/stun-1.2.22.tar) = 43008
 SIZE (hex_modules/verl-1.1.1.tar) = 15360
-SIZE (hex_modules/xmpp-1.13.1.tar) = 390144
+SIZE (hex_modules/xmpp-1.13.3.tar) = 390144
 SIZE (hex_modules/yconf-1.0.23.tar) = 22016
-SIZE (jquery-4.0.0.min.js) = 78748
-SIZE (processone-ejabberd-26.03.tar.gz) = 2935422
+SIZE (processone-ejabberd-26.04.tar.gz) = 2936092

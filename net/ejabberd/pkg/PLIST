@@ -404,6 +404,7 @@ lib/ejabberd/ejabberd-${V}/priv/js/sortable.min.js
 lib/ejabberd/ejabberd-${V}/priv/lua/
 lib/ejabberd/ejabberd-${V}/priv/lua/redis_sm.lua
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/
+lib/ejabberd/ejabberd-${V}/priv/mod_invites/HOWTO.md
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/apps.html
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/apps.json
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/base.html
@@ -426,8 +427,6 @@ lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/favicon.png
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/illus-empty.svg
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/invite.css
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/invite.js
-lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/jquery/
-lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/jquery/jquery.min.js
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/logos/
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/logos/apple_as.svg
 lib/ejabberd/ejabberd-${V}/priv/mod_invites/static/logos/beagle-im.svg

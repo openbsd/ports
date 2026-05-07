@@ -1,8 +1,6 @@
 COMMENT =		robust, ubiquitous and massively scalable messaging platform
 
-V =			26.03
-REVISION =		0
-JQUERY_V =		4.0.0
+V =			26.04
 BOOTSTRAP_V =		5.3.8
 DIST_TUPLE +=		github processone ejabberd ${V} .
 
@@ -25,7 +23,7 @@ SUBST_VARS += MODERL_MODULE_erlydtl_VERSION
 # GPLv2+:
 #   eJabberd
 # MIT:
-#   bootstrap, erlydtl, p1_oauth2, idna, jose, jquery
+#   bootstrap, erlydtl, p1_oauth2, idna, jose
 # Erlang 1.1:
 #   sqlite3
 PERMIT_PACKAGE = 	Yes
@@ -35,13 +33,8 @@ WANTLIB += 		${COMPILER_LIBCXX} c crypto expat m sqlite3 ssl yaml-0
 # dlopen()'ed
 WANTLIB += 		jpeg webp png gd
 
-SITES.j =		https://code.jquery.com/
-DISTFILES.j =		jquery-${JQUERY_V}.min.js
-
 SITES.b =		https://github.com/twbs/bootstrap/releases/download/v${BOOTSTRAP_V}/
 DISTFILES.b =		bootstrap-${BOOTSTRAP_V}-dist.zip
-
-EXTRACT_ONLY=		${ALL_DISTFILES:N*.js}
 
 MODULES =		lang/erlang
 
@@ -95,9 +88,6 @@ SUBST_VARS +=		V
 # some regression tests require network access or MySQL, redis and so on
 
 post-extract:
-	mkdir -p ${WRKSRC}/priv/mod_invites/static/jquery
-	cp ${FULLDISTDIR}/${DISTFILES.j} \
-		${WRKSRC}/priv/mod_invites/static/jquery/jquery.min.js
 	mv ${WRKDIR}/bootstrap-${BOOTSTRAP_V}-dist \
 		${WRKSRC}/priv/mod_invites/static/bootstrap
 
