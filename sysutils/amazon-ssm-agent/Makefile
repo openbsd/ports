@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		AWS SSM agent
 
-GH_TAGNAME=		3.3.4177.0
+GH_TAGNAME=		3.3.4268.0
 GH_ACCOUNT=		aws
 GH_PROJECT=		amazon-ssm-agent
 
