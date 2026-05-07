@@ -11,6 +11,7 @@ QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt6Pdf                        2.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
@@ -27,11 +28,10 @@ WANTLIB += Qt6QuickWidgets Qt6WebChannel Qt6WebChannelQuick Qt6Widgets
 WANTLIB += Qt6Xml X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr
 WANTLIB += Xrender Xtst c cbor crypto dbus-1 drm epoll-shim execinfo
 WANTLIB += expat fido2 fontconfig freetype gbm harfbuzz harfbuzz-subset
-WANTLIB += jpeg kvm lcms2 m minizip nspr4
-WANTLIB += nss3 nssutil3 openh264 openjp2 opus plc4 plds4 png
-WANTLIB += smime3 snappy tiff udev usbhid util vpx webp webpdemux
-WANTLIB += webpmux xcb xcb-dri3 xkbcommon xkbfile xml2 xshmfence
-WANTLIB += xslt z
+WANTLIB += jpeg kvm m minizip nspr4 nss3 nssutil3 openh264 openjp2
+WANTLIB += opus plc4 plds4 png smime3 snappy sndio tiff udev usbhid
+WANTLIB += util vpx webp webpdemux webpmux xcb xcb-dri3 xkbcommon
+WANTLIB += xkbfile xml2 xshmfence xslt z
 
 MODULES +=	lang/python
 

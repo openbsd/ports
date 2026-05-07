@@ -6,7 +6,7 @@ Index: src/3rdparty/chromium/media/media_options.gni
    use_alsa = false
  
 +  # Enable runtime selection of sndio(7)
-+  use_sndio = false
++  use_sndio = true
 +
    # Alsa should be used on all non-Android, non-Mac POSIX systems - with the
    # exception of CastOS desktop builds.
