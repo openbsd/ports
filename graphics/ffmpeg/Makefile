@@ -1,9 +1,8 @@
 COMMENT=	audio/video converter and streamer
 
 # keep it synced with x11/mplayer
-V=		8.0.1
+V=		8.0.2
 DISTNAME=	ffmpeg-${V}
-REVISION=	1
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
