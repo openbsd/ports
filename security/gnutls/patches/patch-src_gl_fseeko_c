@@ -1,3 +1,9 @@
+gnulib is doing this to make fflush() behaviour to match what they expect.
+It accesses internal of __sFILE to change behavior of fseeko(), but we are
+hiding internal of __sFILE and our fseeko() is compatible with what gnulib
+expects already.
+Then the patch is to just use our fseeko().
+
 Index: src/gl/fseeko.c
 --- src/gl/fseeko.c.orig
 +++ src/gl/fseeko.c
