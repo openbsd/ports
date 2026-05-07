@@ -11,7 +11,7 @@ EMBED_LUAJIT =	No
 
 COMMENT =	continuation and extension of Vim
 
-DIST_TUPLE =	github neovim neovim v0.12.1 .
+DIST_TUPLE =	github neovim neovim v0.12.2 .
 
 # embedded luajit
 USE_NOBTCFI =	Yes
@@ -207,6 +207,8 @@ pre-configure:
 # Found errors in Test_tar_basic():
 # Found errors in Test_tar_evil():
 # Found errors in Test_tar_path_traversal_with_nowrapscan():
+#
+# https://github.com/neovim/neovim/issues/39657
 do-test:
 	true
 	${SETENV} LC_CTYPE=en_US.UTF-8 \
