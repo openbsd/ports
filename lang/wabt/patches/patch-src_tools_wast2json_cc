@@ -11,7 +11,7 @@ Index: src/tools/wast2json.cc
  #include "wabt/config.h"
  
  #include "wabt/binary-writer-spec.h"
-@@ -102,6 +105,9 @@ int ProgramMain(int argc, char** argv) {
+@@ -96,6 +99,9 @@ int ProgramMain(int argc, char** argv) {
  
    ParseOptions(argc, argv);
  

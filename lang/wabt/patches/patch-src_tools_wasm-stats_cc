@@ -11,7 +11,7 @@ Index: src/tools/wasm-stats.cc
  
  #include "wabt/binary-reader-stats.h"
  #include "wabt/binary-reader.h"
-@@ -143,6 +146,13 @@ void WriteCountsWithImmediates(Stream& stream, const O
+@@ -140,6 +143,13 @@ void WriteCountsWithImmediates(Stream& stream, const O
  int ProgramMain(int argc, char** argv) {
    InitStdio();
    ParseOptions(argc, argv);

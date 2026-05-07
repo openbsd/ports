@@ -11,7 +11,7 @@ Index: src/tools/wasm-validate.cc
  #include "wabt/binary-reader-ir.h"
  #include "wabt/binary-reader.h"
  #include "wabt/error-formatter.h"
-@@ -71,6 +74,11 @@ int ProgramMain(int argc, char** argv) {
+@@ -68,6 +71,11 @@ int ProgramMain(int argc, char** argv) {
  
    InitStdio();
    ParseOptions(argc, argv);
