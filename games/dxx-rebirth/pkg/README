@@ -7,37 +7,19 @@ Installation of the Game Data
 
 dxx-rebirth requires the original game files from Descent I and/or
 Descent II to work properly.  These can come from an original CD or from
-GOG.com.
+GOG.com, including the shareware versions.
 
-The shareware/demo data can be downloaded from here:
+Game data from GOG.com can be extracted with unzip(1) (Linux versions),
+or innoextract(1) (Windows versions). Both unzip(1) and innoextract are
+available in packages. Then move the contents of the directory that
+contains DESCENT.HOG to ~/.d1x-rebirth/Data, or the directory containing
+DESCENT2.HOG to ~/.d2x-rebirth/Data.
 
-https://www.dxx-rebirth.com/game-content/
-
-If using the GOG.com version of Descent I, you must extract the files
-from setup_descent_1.4a_(16596).exe using the innoextract package.
-
-The files will be in a directory named app. You must move the contents
-of this directory to a directory named ~/.d1x-rebirth/Data
-
-The eaisest way to do this is to follow these steps:
+For example:
 $ mkdir -p ~/.d1x-rebirth/Data
 $ cp -R app/* ~/.d1x-rebirth/Data
-
-You can then delete everything extracted from the exe.
-
-If you own the GOG.com version of Descent II, follow the above steps
-with the setup_descent_2_1.1_(16596).exe file and using
-~/.d2x-rebirth/Data as the directory name.
 
 Music
 =====
 
 The MIDI soundtrack requires the package timidity to be installed.
-
-Add-Ons
-=======
-
-Add-ons with high resolution images, new soundtracks, and German
-briefings are available including installation instructions at:
-
-https://www.dxx-rebirth.com/addons/
