@@ -1,5 +1,6 @@
 COMMENT =	framework to create integrate services and actions
 DISTNAME =	purpose-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6Purpose                0.0 # 0.0
 SHARED_LIBS +=  KF6PurposeWidgets         0.0 # 0.0
@@ -16,6 +17,7 @@ MODULES +=	textproc/intltool
 BUILD_DEPENDS =	devel/gettext,-tools \
 		textproc/intltool \
 		net/accounts-qml-module \
+		devel/kf6/solid>=${MODKF6_VERSION} \
 		devel/kf6/kirigami>=${MODKF6_VERSION} \
 
 RUN_DEPENDS =	devel/kf6/kirigami>=${MODKF6_VERSION} \
