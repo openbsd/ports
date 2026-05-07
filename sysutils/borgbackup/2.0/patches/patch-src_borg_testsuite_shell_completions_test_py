@@ -9,4 +9,4 @@ Index: src/borg/testsuite/shell_completions_test.py
 +SHELL_COMPLETIONS_DIR = Path(__file__).parent / ".." / ".." / ".." / ".." / "scripts" / "shell_completions"
  
  
- def test_bash_completion_is_valid():
+ def test_fish_completion_is_valid():

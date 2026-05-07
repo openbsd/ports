@@ -4,20 +4,31 @@ USE_NOEXECONLY=		Yes
 .endif
 
 MODULES =		lang/python
-MODPY_DISTV =		2.0.0b20
+MODPY_DISTV =		2.0.0b21
 PKGNAME =		borgbackup-${MODPY_DISTV:S/b/beta/}
 EPOCH =			0
-REVISION =		2
 
 # OpenSSL used for EVP_aes_256_ocb. It is linked statically to avoid conflicting
 # with shared libcrypto from the base OS pulled in via dependencies.
-BUILD_DEPENDS =		security/openssl/3.5
-RUN_DEPENDS =		databases/py-borgstore>=0.3.0 \
+BUILD_DEPENDS =		security/openssl/3.5 \
+			sysutils/py-xxhash
+RUN_DEPENDS =		archivers/py-backports-zstd \
+			databases/py-borgstore>=0.4.0 \
 			devel/py-borghash>=0.1.0 \
+			devel/py-jsonargparse \
 			security/py-argon2-cffi \
 			sysutils/py-platformdirs \
-			sysutils/py-shtab
+			sysutils/py-shtab \
+			sysutils/py-xxhash \
+			textproc/py-yaml
 
 MAKE_ENV =		BORG_OPENSSL_NAME=eopenssl35
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 ${PREFIX}/man/man1/
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
+	${INSTALL_DATA} ${WRKSRC}/scripts/shell_completions/fish/borg.fish \
+		${PREFIX}/share/fish/vendor_completions.d/
 
 .include <bsd.port.mk>
