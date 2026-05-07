@@ -22,7 +22,7 @@ Index: cli/Cargo.toml
  
  [build-dependencies]
  deno_runtime = { workspace = true, features = ["include_js_files_for_snapshotting", "only_snapshotted_js_sources"] }
-@@ -131,7 +131,6 @@ indexmap.workspace = true
+@@ -132,7 +132,6 @@ indexmap.workspace = true
  jsonc-parser = { workspace = true, features = ["cst", "serde"] }
  jupyter-protocol.workspace = true
  jupyter_runtime.workspace = true

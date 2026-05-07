@@ -11,7 +11,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			2.7.12
+V =			2.7.14
 DIST_TUPLE =		github denoland deno v${V} .
 HOMEPAGE =		https://deno.com
 
@@ -83,12 +83,12 @@ DOCDIR =		${PREFIX}/share/doc/deno
 PORTHOME =		${WRKSRC}
 
 DENO_CORE_ICUDATA_V =	0.77.0
-V8_CARGO_V =		147.0.0
+V8_CARGO_V =		147.4.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo
 
-SUBST_VARS +=		MODCLANG_VERSION WRKBUILD WRKSRC
+SUBST_VARS +=		WRKBUILD WRKSRC
 
 post-patch:
 	mkdir -p ${V8_BPGO_DIR}/{x64.profile,arm64.profile}

@@ -3,7 +3,7 @@ Because why not use std::io:Error, Claude?
 Index: libs/core/uv_compat/tty.rs
 --- libs/core/uv_compat/tty.rs.orig
 +++ libs/core/uv_compat/tty.rs
-@@ -378,7 +378,7 @@ mod global_termios {
+@@ -381,7 +381,7 @@ mod global_termios {
    }
  
    /// Get a pointer to the thread-local errno value.
@@ -12,7 +12,7 @@ Index: libs/core/uv_compat/tty.rs
    fn errno_location() -> *mut c_int {
      unsafe extern "C" {
        fn __error() -> *mut c_int;
-@@ -394,7 +394,15 @@ mod global_termios {
+@@ -397,7 +397,15 @@ mod global_termios {
      unsafe { __errno_location() }
    }
  
