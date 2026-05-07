@@ -164,6 +164,7 @@ include/mozjs-${MOZILLA_VERSION}/js/experimental/PCCountProfiling.h
 include/mozjs-${MOZILLA_VERSION}/js/experimental/SourceHook.h
 include/mozjs-${MOZILLA_VERSION}/js/experimental/TypedData.h
 include/mozjs-${MOZILLA_VERSION}/js/friend/
+include/mozjs-${MOZILLA_VERSION}/js/friend/CycleCollector.h
 include/mozjs-${MOZILLA_VERSION}/js/friend/DOMProxy.h
 include/mozjs-${MOZILLA_VERSION}/js/friend/DumpFunctions.h
 include/mozjs-${MOZILLA_VERSION}/js/friend/ErrorMessages.h
