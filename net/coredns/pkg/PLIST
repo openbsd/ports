@@ -24,9 +24,12 @@
 @man man/man7/coredns-forward.7
 @man man/man7/coredns-geoip.7
 @man man/man7/coredns-grpc.7
+@man man/man7/coredns-grpc_server.7
 @man man/man7/coredns-header.7
 @man man/man7/coredns-health.7
 @man man/man7/coredns-hosts.7
+@man man/man7/coredns-https.7
+@man man/man7/coredns-https3.7
 @man man/man7/coredns-import.7
 @man man/man7/coredns-k8s_external.7
 @man man/man7/coredns-kubernetes.7
@@ -41,6 +44,7 @@
 @man man/man7/coredns-nomad.7
 @man man/man7/coredns-nsid.7
 @man man/man7/coredns-pprof.7
+@man man/man7/coredns-proxyproto.7
 @man man/man7/coredns-quic.7
 @man man/man7/coredns-ready.7
 @man man/man7/coredns-reload.7
