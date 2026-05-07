@@ -1,0 +1,2 @@
+FYI is a command line utility to send desktop notifications to the user via a
+notification daemon implementing XDG desktop notifications.

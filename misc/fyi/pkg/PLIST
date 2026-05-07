@@ -1,0 +1,12 @@
+@bin bin/fyi
+@man man/man1/fyi.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/fyi
+share/doc/fyi/
+share/doc/fyi/CHANGELOG.md
+share/doc/fyi/LICENSE
+share/doc/fyi/README.md
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/fyi.fish
