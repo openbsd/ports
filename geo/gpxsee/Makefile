@@ -2,7 +2,7 @@ COMMENT =	gpx file viewer
 
 GH_PROJECT =	GPXSee
 GH_ACCOUNT =	tumic0
-GH_TAGNAME =	15.11
+GH_TAGNAME =	16.6
 PKGNAME =	${DISTNAME:L}
 
 CATEGORIES =	geo x11
@@ -19,12 +19,13 @@ RUN_DEPENDS +=	misc/shared-mime-info
 RUN_DEPENDS +=	x11/gtk+4,-guic
 
 LIB_DEPENDS +=	x11/qt6/qtpositioning \
+		x11/qt6/qtmultimedia \
 		x11/qt6/qtserialport \
 		x11/qt6/qtsvg
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
-WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6SerialPort Qt6Sql Qt6Svg Qt6Widgets
-WANTLIB += c m z
+WANTLIB += Qt6Multimedia Qt6MultimediaWidgets Qt6Network Qt6OpenGL
+WANTLIB += Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport Qt6SerialPort
+WANTLIB += Qt6Sql Qt6Svg Qt6Widgets c m z
 
 .include <bsd.port.mk>
