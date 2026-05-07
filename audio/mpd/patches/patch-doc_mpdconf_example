@@ -63,9 +63,9 @@ Index: doc/mpdconf.example
 -#user				"nobody"
 +user                            "_mpd"
  #
- # This setting specifies the group that MPD will run as. If not specified
- # primary group of user specified with "user" setting will be used (if set).
-@@ -94,7 +101,10 @@
+ # This setting sets the address for the daemon to listen on. Careful attention
+ # should be paid if this is assigned to anything other than the default, any.
+@@ -87,7 +94,10 @@
  # And for Unix Socket
  #bind_to_address		"$XDG_RUNTIME_DIR/mpd/socket"
  #bind_to_address		"~/.mpd/socket"
@@ -76,7 +76,7 @@ Index: doc/mpdconf.example
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
  #
-@@ -339,11 +349,11 @@ input {
+@@ -332,11 +342,11 @@ input {
  #
  # An example of an sndio output.
  #
