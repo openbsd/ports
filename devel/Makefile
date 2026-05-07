@@ -1563,6 +1563,7 @@
      SUBDIR += py-jedi
      SUBDIR += py-jeepney
      SUBDIR += py-jmespath
+     SUBDIR += py-jsonargparse
      SUBDIR += py-jsonpath-ng
      SUBDIR += py-jsonref
      SUBDIR += py-jsonschema
