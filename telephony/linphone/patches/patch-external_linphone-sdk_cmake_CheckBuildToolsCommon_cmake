@@ -1,0 +1,28 @@
+we wont build bundled dav1d/openh264, we dont need nasm/yasm/meson dependency
+
+Index: external/linphone-sdk/cmake/CheckBuildToolsCommon.cmake
+--- external/linphone-sdk/cmake/CheckBuildToolsCommon.cmake.orig
++++ external/linphone-sdk/cmake/CheckBuildToolsCommon.cmake
+@@ -192,7 +191,7 @@ if(ENABLE_CSHARP_WRAPPER OR ENABLE_CXX_WRAPPER OR ENAB
+ 
+ endif()
+ 
+-if(ENABLE_OPENH264)
++if(ENABLE_OPENH264 AND BUILD_OPENH264)
+ 	linphone_sdk_check_is_installed(nasm)
+ 	if(APPLE)
+ 		execute_process(
+@@ -205,11 +204,11 @@ if(ENABLE_OPENH264)
+ 	endif()
+ endif()
+ 
+-if(ENABLE_VPX OR ENABLE_AV1)
++if(ENABLE_VPX OR ENABLE_AV1 AND BUILD_DAV1D)
+ 	linphone_sdk_check_is_installed(yasm)
+ endif()
+ 
+-if(ENABLE_AV1)
++if(ENABLE_AV1 AND BUILD_DAV1D)
+ 	linphone_sdk_check_is_installed(perl)
+ 	linphone_sdk_check_is_installed(meson)
+ 	linphone_sdk_check_is_installed(ninja)
