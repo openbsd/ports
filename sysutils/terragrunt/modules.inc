@@ -256,6 +256,7 @@ MODGO_MODULES =	\
 	github.com/cenkalti/backoff/v5								 v5.0.3 \
 	github.com/census-instrumentation/opencensus-proto					 v0.2.1 \
 	github.com/cespare/xxhash/v2								 v2.3.0 \
+	github.com/charlievieth/fastwalk							 v1.0.14 \
 	github.com/charmbracelet/colorprofile							 v0.4.2 \
 	github.com/charmbracelet/harmonica							 v0.2.0 \
 	github.com/charmbracelet/ultraviolet							 v0.0.0-20260205113103-524a6607adb8 \

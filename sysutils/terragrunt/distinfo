@@ -694,6 +694,8 @@ SHA256 (go_modules/github.com/census-instrumentation/opencensus-proto/@v/v0.2.1.
 SHA256 (go_modules/github.com/census-instrumentation/opencensus-proto/@v/v0.2.1.zip) = s8CfPmNdR7QThpWlR9HyxxOPOCy+WotYZbZqjggjNGE=
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.mod) = oJD46q9ZzCrfFjKZ6+/nl+Hco/at0sjoimo7kLpTiwI=
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.zip) = FFomzcfEnbVmAXuAfEmJ7n993rVpQj6cuZ+ZX6w2IdM=
+SHA256 (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.14.mod) = Zj95BXVMltgHzmGn6DUhzWdhku/gmGkmRR1PxDU+JaA=
+SHA256 (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.14.zip) = CPuBKrWH17sQ1w2Irc5JYhjnUBx7FxkTiTelTYH1/sk=
 SHA256 (go_modules/github.com/charmbracelet/colorprofile/@v/v0.4.1.mod) = hGosWqKpvzPP8cr+4ORCO/Ygs6BSpc7g04Hu0kPPl2M=
 SHA256 (go_modules/github.com/charmbracelet/colorprofile/@v/v0.4.2.mod) = THrL5wpPY08eFq15VN97pj0C2y/Jvf3ql7CDrWHYLOE=
 SHA256 (go_modules/github.com/charmbracelet/colorprofile/@v/v0.4.2.zip) = AjQGsiCAG3BQYHWydCkKWs2HyC1U1rV9Y7LwqX5oXSw=
@@ -2491,7 +2493,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7u
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SHA256 (terragrunt-v1.0.3.zip) = Do8jyhmT2Vd32eiCBZcjdhYru8PUlZdO6nt17xrwsM8=
+SHA256 (terragrunt-v1.0.4.zip) = gnBih7Tpp99BqvRgw2pS2L0kofFfw8ouOlNi0whChPI=
 SIZE (go_modules/c2sp.org/!c!c!t!v/age/@v/v0.0.0-20251208015420-e9274a7bdbfd.mod) = 159
 SIZE (go_modules/c2sp.org/!c!c!t!v/age/@v/v0.0.0-20251208015420-e9274a7bdbfd.zip) = 242327
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
@@ -3188,6 +3190,8 @@ SIZE (go_modules/github.com/census-instrumentation/opencensus-proto/@v/v0.2.1.mo
 SIZE (go_modules/github.com/census-instrumentation/opencensus-proto/@v/v0.2.1.zip) = 210929
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.mod) = 45
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.zip) = 17573
+SIZE (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.14.mod) = 92
+SIZE (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.14.zip) = 71415
 SIZE (go_modules/github.com/charmbracelet/colorprofile/@v/v0.4.1.mod) = 506
 SIZE (go_modules/github.com/charmbracelet/colorprofile/@v/v0.4.2.mod) = 506
 SIZE (go_modules/github.com/charmbracelet/colorprofile/@v/v0.4.2.zip) = 21686
@@ -4985,4 +4989,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = 162
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = 60719
-SIZE (terragrunt-v1.0.3.zip) = 10729826
+SIZE (terragrunt-v1.0.4.zip) = 10859343
