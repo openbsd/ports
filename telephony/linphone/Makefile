@@ -75,6 +75,9 @@ WANTLIB += sqlite3 srtp2 turbojpeg v4l2 v4lconvert vpx xerces-c xml2 z
 
 MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
+# -DENABLE_DOC=NO should disable it but -DENABLE_CXX_WRAPPER is forced ON
+BUILD_DEPENDS =	devel/doxygen
+
 # find libXinerama/libXfixes for mediastreamer2
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
