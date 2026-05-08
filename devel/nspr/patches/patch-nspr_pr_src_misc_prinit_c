@@ -1,7 +1,7 @@
 Index: nspr/pr/src/misc/prinit.c
 --- nspr/pr/src/misc/prinit.c.orig
 +++ nspr/pr/src/misc/prinit.c
-@@ -350,8 +350,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup() {
+@@ -349,8 +349,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup() {
      _PR_CleanupDtoa();
      _PR_CleanupCallOnce();
      _PR_ShutdownLinker();
@@ -10,7 +10,7 @@ Index: nspr/pr/src/misc/prinit.c
      /* Release the primordial thread's private data, etc. */
      _PR_CleanupThread(me);
  
-@@ -362,6 +360,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup() {
+@@ -361,6 +359,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup() {
      _PR_LogCleanup();
  
      /*
@@ -23,7 +23,7 @@ Index: nspr/pr/src/misc/prinit.c
       * This part should look like the end of _PR_NativeRunThread
       * and _PR_UserRunThread.
       */
-@@ -373,6 +377,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup() {
+@@ -372,6 +376,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup() {
        PR_DELETE(me->stack);
        PR_DELETE(me);
      }

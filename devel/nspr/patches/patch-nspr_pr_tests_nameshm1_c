@@ -1,7 +1,7 @@
 Index: nspr/pr/tests/nameshm1.c
 --- nspr/pr/tests/nameshm1.c.orig
 +++ nspr/pr/tests/nameshm1.c
-@@ -520,7 +520,9 @@ int main(int argc, char** argv) {
+@@ -519,7 +519,9 @@ int main(int argc, char** argv) {
      if (failed_already != 0) {
        goto Finished;
      }

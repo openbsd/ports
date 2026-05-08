@@ -3,7 +3,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=650772
 Index: nspr/pr/src/linking/prlink.c
 --- nspr/pr/src/linking/prlink.c.orig
 +++ nspr/pr/src/linking/prlink.c
-@@ -7,6 +7,10 @@
+@@ -6,6 +6,10 @@
  
  #include <string.h>
  
@@ -14,7 +14,7 @@ Index: nspr/pr/src/linking/prlink.c
  #ifdef XP_UNIX
  #  ifdef USE_DLFCN
  #    include <dlfcn.h>
-@@ -384,6 +388,7 @@ PR_LoadLibrary(const char* name) {
+@@ -383,6 +387,7 @@ PR_LoadLibrary(const char* name) {
  ** map first.
  */
  static PRLibrary* pr_LoadLibraryByPathname(const char* name, PRIntn flags) {
@@ -22,7 +22,7 @@ Index: nspr/pr/src/linking/prlink.c
    PRLibrary* lm;
    PRLibrary* result = NULL;
    PRInt32 oserr;
-@@ -478,6 +483,10 @@ static PRLibrary* pr_LoadLibraryByPathname(const char*
+@@ -477,6 +482,10 @@ static PRLibrary* pr_LoadLibraryByPathname(const char*
  #      else
      int dl_flags = 0;
  #      endif
@@ -33,7 +33,7 @@ Index: nspr/pr/src/linking/prlink.c
      void* h = NULL;
  #      if defined(DARWIN)
      PRBool okToLoad = PR_FALSE;
-@@ -529,6 +538,18 @@ static PRLibrary* pr_LoadLibraryByPathname(const char*
+@@ -528,6 +537,18 @@ static PRLibrary* pr_LoadLibraryByPathname(const char*
      }
  #      else
      h = dlopen(name, dl_flags);
@@ -52,7 +52,7 @@ Index: nspr/pr/src/linking/prlink.c
  #      endif
  #    elif defined(USE_HPSHL)
      int shl_flags = 0;
-@@ -558,7 +579,11 @@ static PRLibrary* pr_LoadLibraryByPathname(const char*
+@@ -557,7 +578,11 @@ static PRLibrary* pr_LoadLibraryByPathname(const char*
        PR_DELETE(lm);
        goto unlock;
      }

@@ -1,7 +1,7 @@
 Index: nspr/pr/include/md/_openbsd.h
 --- nspr/pr/include/md/_openbsd.h.orig
 +++ nspr/pr/include/md/_openbsd.h
-@@ -26,6 +26,12 @@
+@@ -25,6 +25,12 @@
  #define _PR_SI_ARCHITECTURE "sparc"
  #elif defined(__arm__)
  #define _PR_SI_ARCHITECTURE "arm"
@@ -14,7 +14,7 @@ Index: nspr/pr/include/md/_openbsd.h
  #endif
  
  #define PR_DLL_SUFFIX       ".so"
-@@ -35,7 +41,11 @@
+@@ -34,7 +40,11 @@
  #define _MD_DEFAULT_STACK_SIZE  65536L
  #define _MD_MMAP_FLAGS          MAP_PRIVATE
  
@@ -26,7 +26,7 @@ Index: nspr/pr/include/md/_openbsd.h
  #define HAVE_DLL
  #define USE_DLFCN
  #define _PR_HAVE_SOCKADDR_LEN
-@@ -69,8 +79,12 @@
+@@ -68,8 +78,12 @@
  #define JB_SP_INDEX 34
  #elif defined(__amd64__)
  #define JB_SP_INDEX 6

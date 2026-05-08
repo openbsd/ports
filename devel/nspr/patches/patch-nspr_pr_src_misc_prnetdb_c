@@ -1,7 +1,7 @@
 Index: nspr/pr/src/misc/prnetdb.c
 --- nspr/pr/src/misc/prnetdb.c.orig
 +++ nspr/pr/src/misc/prnetdb.c
-@@ -2011,7 +2011,9 @@ PR_GetAddrInfoByName(const char* hostname, PRUint16 af
+@@ -2010,7 +2010,9 @@ PR_GetAddrInfoByName(const char* hostname, PRUint16 af
       */
      hints.ai_socktype = SOCK_STREAM;
  

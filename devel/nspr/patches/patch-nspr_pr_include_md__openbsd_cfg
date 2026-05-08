@@ -1,7 +1,7 @@
 Index: nspr/pr/include/md/_openbsd.cfg
 --- nspr/pr/include/md/_openbsd.cfg.orig
 +++ nspr/pr/include/md/_openbsd.cfg
-@@ -161,7 +161,7 @@
+@@ -160,7 +160,7 @@
  #define PR_BYTES_PER_WORD_LOG2  3
  #define PR_BYTES_PER_DWORD_LOG2 3
  
@@ -10,7 +10,7 @@ Index: nspr/pr/include/md/_openbsd.cfg
  
  #undef IS_LITTLE_ENDIAN
  #define  IS_BIG_ENDIAN 1
-@@ -206,7 +206,7 @@
+@@ -205,7 +205,7 @@
  #define PR_ALIGN_OF_DOUBLE  8
  #define PR_ALIGN_OF_POINTER 4
  
@@ -19,7 +19,7 @@ Index: nspr/pr/include/md/_openbsd.cfg
  #define IS_LITTLE_ENDIAN 1
  #undef  IS_BIG_ENDIAN
  #define	HAVE_ALIGNED_DOUBLES
-@@ -294,6 +294,58 @@
+@@ -293,6 +293,58 @@
  #define PR_ALIGN_OF_FLOAT   4
  #define PR_ALIGN_OF_DOUBLE  4
  #define PR_ALIGN_OF_POINTER 4
