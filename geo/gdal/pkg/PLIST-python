@@ -165,9 +165,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}mak
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}mkgraticule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr2vrt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr_build_junction_table.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr_dispatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogrinfo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogrupdate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}rel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}tigerpoly.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}tile_extent_from_raster.${MODPY_PYC_MAGIC_TAG}pyc
@@ -177,6 +175,9 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}val
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}validate_geoparquet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}validate_gpkg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}validate_jp2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}validate_s102.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}validate_s104.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}validate_s111.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}vec_tr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}vec_tr_spat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}wcs_virtds_params.${MODPY_PYC_MAGIC_TAG}pyc
@@ -219,9 +220,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/make_fuzzer_friendl
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/mkgraticule.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr2vrt.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr_build_junction_table.py
-lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr_dispatch.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogrinfo.py
-lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogrupdate.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/rel.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/tigerpoly.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/tile_extent_from_raster.py
@@ -231,6 +230,9 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_cloud_opti
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_geoparquet.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_gpkg.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_jp2.py
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_s102.py
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_s104.py
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_s111.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/vec_tr.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/vec_tr_spat.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/wcs_virtds_params.py

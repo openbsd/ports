@@ -94,6 +94,7 @@ include/gdal_geotransform.h
 include/gdal_majorobject.h
 include/gdal_maskbands.h
 include/gdal_mdreader.h
+include/gdal_mem.h
 include/gdal_minmax_element.hpp
 include/gdal_multidim.h
 include/gdal_multidim_cpp.h
@@ -110,6 +111,7 @@ include/gdal_rasterblock.h
 include/gdal_rat.h
 include/gdal_relationship.h
 include/gdal_simplesurf.h
+include/gdal_thread_pool.h
 include/gdal_typetraits.h
 include/gdal_utils.h
 include/gdal_vector_cpp.h
@@ -141,6 +143,7 @@ include/ogr_geomcoordinateprecision.h
 include/ogr_geometry.h
 include/ogr_p.h
 include/ogr_recordbatch.h
+include/ogr_refcountedptr.h
 include/ogr_spatialref.h
 include/ogr_srs_api.h
 include/ogr_swq.h
@@ -158,6 +161,7 @@ lib/gdalplugins/drivers.ini
 lib/pkgconfig/gdal.pc
 @man man/man1/gdal-config.1
 @man man/man1/gdal-convert.1
+@man man/man1/gdal-dataset-check.1
 @man man/man1/gdal-dataset-copy.1
 @man man/man1/gdal-dataset-delete.1
 @man man/man1/gdal-dataset-identify.1
@@ -197,6 +201,7 @@ lib/pkgconfig/gdal.pc
 @man man/man1/gdal-raster-pixel-info.1
 @man man/man1/gdal-raster-polygonize.1
 @man man/man1/gdal-raster-proximity.1
+@man man/man1/gdal-raster-read.1
 @man man/man1/gdal-raster-reclassify.1
 @man man/man1/gdal-raster-reproject.1
 @man man/man1/gdal-raster-resize.1
@@ -214,6 +219,7 @@ lib/pkgconfig/gdal.pc
 @man man/man1/gdal-raster-unscale.1
 @man man/man1/gdal-raster-update.1
 @man man/man1/gdal-raster-viewshed.1
+@man man/man1/gdal-raster-write.1
 @man man/man1/gdal-raster-zonal-stats.1
 @man man/man1/gdal-raster.1
 @man man/man1/gdal-vector-buffer.1
@@ -221,10 +227,14 @@ lib/pkgconfig/gdal.pc
 @man man/man1/gdal-vector-check-geometry.1
 @man man/man1/gdal-vector-clean-coverage.1
 @man man/man1/gdal-vector-clip.1
+@man man/man1/gdal-vector-combine.1
 @man man/man1/gdal-vector-concat.1
 @man man/man1/gdal-vector-convert.1
+@man man/man1/gdal-vector-create.1
+@man man/man1/gdal-vector-dissolve.1
 @man man/man1/gdal-vector-edit.1
 @man man/man1/gdal-vector-explode-collections.1
+@man man/man1/gdal-vector-export-schema.1
 @man man/man1/gdal-vector-filter.1
 @man man/man1/gdal-vector-grid.1
 @man man/man1/gdal-vector-index.1
@@ -235,13 +245,18 @@ lib/pkgconfig/gdal.pc
 @man man/man1/gdal-vector-partition.1
 @man man/man1/gdal-vector-pipeline.1
 @man man/man1/gdal-vector-rasterize.1
+@man man/man1/gdal-vector-read.1
+@man man/man1/gdal-vector-rename-layer.1
 @man man/man1/gdal-vector-segmentize.1
 @man man/man1/gdal-vector-select.1
 @man man/man1/gdal-vector-set-field-type.1
 @man man/man1/gdal-vector-set-geom-type.1
 @man man/man1/gdal-vector-simplify.1
+@man man/man1/gdal-vector-sort.1
 @man man/man1/gdal-vector-sql.1
 @man man/man1/gdal-vector-swap-xy.1
+@man man/man1/gdal-vector-update.1
+@man man/man1/gdal-vector-write.1
 @man man/man1/gdal-vector.1
 @man man/man1/gdal-vsi-copy.1
 @man man/man1/gdal-vsi-delete.1
@@ -281,40 +296,54 @@ lib/pkgconfig/gdal.pc
 @man man/man1/sozip.1
 share/bash-completion/completions/gdal
 share/bash-completion/completions/gdal-config
+share/bash-completion/completions/gdal2tiles
 share/bash-completion/completions/gdal2tiles.py
+share/bash-completion/completions/gdal2xyz
 share/bash-completion/completions/gdal2xyz.py
+share/bash-completion/completions/gdal_calc
 share/bash-completion/completions/gdal_calc.py
 share/bash-completion/completions/gdal_contour
 share/bash-completion/completions/gdal_create
+share/bash-completion/completions/gdal_edit
 share/bash-completion/completions/gdal_edit.py
+share/bash-completion/completions/gdal_fillnodata
 share/bash-completion/completions/gdal_fillnodata.py
 share/bash-completion/completions/gdal_footprint
 share/bash-completion/completions/gdal_grid
+share/bash-completion/completions/gdal_merge
 share/bash-completion/completions/gdal_merge.py
+share/bash-completion/completions/gdal_polygonize
 share/bash-completion/completions/gdal_polygonize.py
+share/bash-completion/completions/gdal_proximity
 share/bash-completion/completions/gdal_proximity.py
 share/bash-completion/completions/gdal_rasterize
+share/bash-completion/completions/gdal_retile
 share/bash-completion/completions/gdal_retile.py
+share/bash-completion/completions/gdal_sieve
 share/bash-completion/completions/gdal_sieve.py
 share/bash-completion/completions/gdal_translate
 share/bash-completion/completions/gdal_viewshed
 share/bash-completion/completions/gdaladdo
 share/bash-completion/completions/gdalbuildvrt
+share/bash-completion/completions/gdalcompare
 share/bash-completion/completions/gdalcompare.py
 share/bash-completion/completions/gdaldem
 share/bash-completion/completions/gdalenhance
 share/bash-completion/completions/gdalinfo
 share/bash-completion/completions/gdallocationinfo
 share/bash-completion/completions/gdalmanage
+share/bash-completion/completions/gdalmove
 share/bash-completion/completions/gdalmove.py
 share/bash-completion/completions/gdalsrsinfo
 share/bash-completion/completions/gdaltindex
 share/bash-completion/completions/gdaltransform
 share/bash-completion/completions/gdalwarp
 share/bash-completion/completions/ogr2ogr
+share/bash-completion/completions/ogr_layer_algebra
 share/bash-completion/completions/ogr_layer_algebra.py
 share/bash-completion/completions/ogrinfo
 share/bash-completion/completions/ogrlineref
+share/bash-completion/completions/ogrmerge
 share/bash-completion/completions/ogrmerge.py
 share/bash-completion/completions/ogrtindex
 share/bash-completion/completions/sozip

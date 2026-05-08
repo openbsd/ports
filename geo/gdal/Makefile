@@ -3,7 +3,7 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.12.4
+V =		3.13.0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}.zip
@@ -13,7 +13,7 @@ FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python
 
-SHARED_LIBS =	gdal 52.1 #38 cf gdal.cmake
+SHARED_LIBS =	gdal 53.0 #39 cf gdal.cmake
 CATEGORIES =	geo devel
 
 HOMEPAGE =	https://gdal.org/
@@ -64,7 +64,7 @@ LIB_DEPENDS-main =	archivers/libarchive \
 			net/curl \
 			print/poppler
 
-WANTLIB-main =		Lerc archive arrow arrow_acero arrow_dataset avif c crypto \
+WANTLIB-main =		Lerc archive arrow arrow_acero arrow_compute arrow_dataset avif c crypto \
 			curl deflate expat freexl geos_c geotiff gif hdf5 iconv jpeg \
 			json-c jxl jxl_threads lzma lz4 m netcdf openjp2 parquet \
 			pcre2-8 png poppler pq proj pthread qhull_r spatialite \
