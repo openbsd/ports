@@ -22,10 +22,6 @@ PERMIT_PACKAGE=	Yes
 # lots of logic in mozilla.port.mk
 MODULES =	www/mozilla lang/python
 
-SITES.p =	https://bugzilla.mozilla.org/
-PATCHFILES.p=	bug-1962139-ffmpeg8-140esr.patch{attachment.cgi?id=9525881}
-PATCH_DIST_STRIP =	-p1 -f
-
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
