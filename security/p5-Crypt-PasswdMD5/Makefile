@@ -1,12 +1,19 @@
-COMMENT=	md5-based passwords in perl
+COMMENT =	md5-based passwords in perl
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Crypt-PasswdMD5-1.3
-REVISION=	1
-CATEGORIES=	security
+DISTNAME =	Crypt-PasswdMD5-1.42
+CPAN_AUTHOR =	RSAVAGE
 
-# beer-ware
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	security
 
-.include <bsd.port.mk>	
+# Perl
+PERMIT_PACKAGE =	Yes
+
+EXTRACT_SUFX =		.tgz
+
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-BSD-arc4random
+
+PKG_ARCH =		*
+
+.include <bsd.port.mk>

@@ -1,0 +1,22 @@
+use BSD::arc4random until CVE-2026-6659 has been fixed upstream
+
+Index: lib/Crypt/PasswdMD5.pm
+--- lib/Crypt/PasswdMD5.pm.orig
++++ lib/Crypt/PasswdMD5.pm
+@@ -3,6 +3,7 @@ package Crypt::PasswdMD5;
+ use strict;
+ use warnings;
+ 
++use BSD::arc4random qw(:all);
+ use Digest::MD5;
+ use Encode;
+ 
+@@ -40,7 +41,7 @@ sub random_md5_salt
+ 	# Sanity check.
+ 
+ 	$len  = $max_salt_length unless ( ($len >= 1) and ($len <= $max_salt_length) );
+-	$salt .= substr($itoa64,int(rand(64)),1) for (1..$len);
++	$salt .= substr($itoa64,int(arc4random_uniform(64)),1) for (1..$len);
+ 
+ 	return $salt;
+ 
