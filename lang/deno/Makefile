@@ -13,9 +13,11 @@ USE_WXNEEDED =		Yes
 
 V =			2.7.14
 DIST_TUPLE =		github denoland deno v${V} .
+REVISION =		0
+
 HOMEPAGE =		https://deno.com
 
-MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
+MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 
 CATEGORIES =		lang
 
@@ -58,7 +60,7 @@ MODCARGO_TEST_ARGS +=	--no-fail-fast
 MAKE_ENV =		${MODCARGO_ENV}
 
 COMPILER =		ports-clang
-WANTLIB +=		${MODCARGO_WANTLIB} m execinfo ffi zstd
+WANTLIB +=		${MODCARGO_WANTLIB} m execinfo ffi onig zstd
 
 BUILD_DEPENDS =		databases/sqlite3 \
 			devel/cmake/core \
@@ -71,7 +73,8 @@ BUILD_DEPENDS =		databases/sqlite3 \
 			${RUN_DEPENDS}
 
 LIB_DEPENDS =		archivers/zstd \
-			devel/libffi
+			devel/libffi \
+			textproc/oniguruma
 
 RUN_DEPENDS =		sysutils/libudev-openbsd
 
