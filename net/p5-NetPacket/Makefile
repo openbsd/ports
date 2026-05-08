@@ -1,6 +1,7 @@
 COMMENT =	assemble/disassemble network packets at protocol level
 
-DISTNAME =	NetPacket-1.7.2
+DISTNAME =	NetPacket-1.8.0
+CPAN_AUTHOR =	YANICK
 
 CATEGORIES =	net
 

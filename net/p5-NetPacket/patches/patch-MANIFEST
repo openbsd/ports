@@ -1,11 +1,11 @@
 Index: MANIFEST
 --- MANIFEST.orig
 +++ MANIFEST
-@@ -21,6 +21,7 @@ lib/NetPacket/IGMP.pm
+@@ -23,6 +23,7 @@ lib/NetPacket/IGMP.pm
  lib/NetPacket/IP.pm
  lib/NetPacket/IPX.pm
  lib/NetPacket/IPv6.pm
 +lib/NetPacket/PFLog.pm
+ lib/NetPacket/SLL.pm
+ lib/NetPacket/SLL2.pm
  lib/NetPacket/TCP.pm
- lib/NetPacket/UDP.pm
- lib/NetPacket/USBMon.pm

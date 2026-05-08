@@ -9,6 +9,8 @@ ${P5SITE}/NetPacket/IP.pm
 ${P5SITE}/NetPacket/IPX.pm
 ${P5SITE}/NetPacket/IPv6.pm
 ${P5SITE}/NetPacket/PFLog.pm
+${P5SITE}/NetPacket/SLL.pm
+${P5SITE}/NetPacket/SLL2.pm
 ${P5SITE}/NetPacket/TCP.pm
 ${P5SITE}/NetPacket/UDP.pm
 ${P5SITE}/NetPacket/USBMon.pm
@@ -22,6 +24,8 @@ ${P5SITE}/NetPacket/USBMon.pm
 @man man/man3p/NetPacket::IPX.3p
 @man man/man3p/NetPacket::IPv6.3p
 @man man/man3p/NetPacket::PFLog.3p
+@man man/man3p/NetPacket::SLL.3p
+@man man/man3p/NetPacket::SLL2.3p
 @man man/man3p/NetPacket::TCP.3p
 @man man/man3p/NetPacket::UDP.3p
 @man man/man3p/NetPacket::USBMon.3p
