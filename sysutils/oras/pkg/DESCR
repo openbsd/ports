@@ -1,0 +1,20 @@
+ORAS is the de facto tool for working with OCI Artifacts. It treats
+media types as a critical piece of the puzzle. Container images are
+never assumed to be the artifact in question. ORAS provides CLI and
+client libraries to distribute artifacts across OCI-compliant
+registries.
+
+* Artifact Reference
+- Attach supply chain artifacts to container images.
+- Discover and show the artifact reference relations.
+- Extend the registries not just for storing container images.
+
+* Distributed Software Artifacts
+- Manage artifacts in OCI registries.
+- Migrate artifacts across registries.
+- Manage artifacts in file system through OCI image layout.
+
+* Explore and Manage OCI Image
+- Manage image manifest and layer in an OCI registry.
+- Operate tag and repository in an OCI registry.
+- Explore the detailed content of an OCI image.
