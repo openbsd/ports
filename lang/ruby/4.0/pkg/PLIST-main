@@ -1567,9 +1567,9 @@ lib/ruby/gems/${REV}/gems/drb-2.2.3/lib/drb/unix.rb
 lib/ruby/gems/${REV}/gems/drb-2.2.3/lib/drb/version.rb
 lib/ruby/gems/${REV}/gems/drb-2.2.3/lib/drb/weakidconv.rb
 lib/ruby/gems/${REV}/gems/english-0.8.1/
-lib/ruby/gems/${REV}/gems/erb-6.0.1/
-lib/ruby/gems/${REV}/gems/erb-6.0.1/libexec/
-lib/ruby/gems/${REV}/gems/erb-6.0.1/libexec/erb
+lib/ruby/gems/${REV}/gems/erb-6.0.1.1/
+lib/ruby/gems/${REV}/gems/erb-6.0.1.1/libexec/
+lib/ruby/gems/${REV}/gems/erb-6.0.1.1/libexec/erb
 lib/ruby/gems/${REV}/gems/error_highlight-0.7.1/
 lib/ruby/gems/${REV}/gems/etc-1.4.6/
 lib/ruby/gems/${REV}/gems/fcntl-1.3.0/
@@ -3475,7 +3475,7 @@ lib/ruby/gems/${REV}/specifications/default/delegate-0.6.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/did_you_mean-2.0.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/digest-3.2.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/english-0.8.1.gemspec
-lib/ruby/gems/${REV}/specifications/default/erb-6.0.1.gemspec
+lib/ruby/gems/${REV}/specifications/default/erb-6.0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/error_highlight-0.7.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/etc-1.4.6.gemspec
 lib/ruby/gems/${REV}/specifications/default/fcntl-1.3.0.gemspec
