@@ -2,7 +2,7 @@ BROKEN-sparc64 =	treesitter-yaml build fails with SIGABRT
 
 COMMENT =		syntax-aware git merge driver
 
-V =			0.16.3
+V =			0.17.0
 PKGNAME =		mergiraf-$V
 
 WRKDIST =		${WRKDIR}/mergiraf
