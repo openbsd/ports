@@ -2,6 +2,7 @@ COMMENT =		app launcher and fuzzy finder for wayland
 
 V =			1.14.1
 DISTNAME=		fuzzel-${V}
+REVISION=		0
 
 DIST_TUPLE=		codeberg dnkl fuzzel ${V} .
 
