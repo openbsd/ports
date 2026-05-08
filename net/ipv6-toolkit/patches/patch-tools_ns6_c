@@ -1,0 +1,13 @@
+Index: tools/ns6.c
+--- tools/ns6.c.orig
++++ tools/ns6.c
+@@ -40,8 +40,8 @@
+ #include <unistd.h>
+ 
+ #include <arpa/inet.h>
+-#include <netinet/icmp6.h>
+ #include <netinet/in.h>
++#include <netinet/icmp6.h>
+ #include <netinet/ip6.h>
+ 
+ #include "ipv6toolkit.h"

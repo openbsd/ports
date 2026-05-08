@@ -1,9 +1,6 @@
 COMMENT =		SI6 networks IPv6 toolkit
 
-VERSION =		2.0
-DISTNAME =		ipv6toolkit-v${VERSION}
-PKGNAME =		ipv6toolkit-${VERSION}
-REVISION =		1
+DIST_TUPLE =		github fgont ipv6toolkit v2.2 .
 
 CATEGORIES =		net
 
@@ -15,8 +12,6 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pcap
-
-SITES =			http://www.si6networks.com/tools/ipv6toolkit/
 
 MAKE_FLAGS =		CC=${CC}
 FAKE_FLAGS =		PREFIX=${PREFIX} \

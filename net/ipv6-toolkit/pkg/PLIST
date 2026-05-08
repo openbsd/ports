@@ -6,6 +6,7 @@
 @man man/man1/frag6.1
 @man man/man1/icmp6.1
 @man man/man1/jumbo6.1
+@man man/man1/mldq6.1
 @man man/man1/na6.1
 @man man/man1/ni6.1
 @man man/man1/ns6.1
@@ -24,6 +25,8 @@ sbin/blackhole6
 @bin sbin/frag6
 @bin sbin/icmp6
 @bin sbin/jumbo6
+sbin/messi
+@bin sbin/mldq6
 @bin sbin/na6
 @bin sbin/ni6
 @bin sbin/ns6
@@ -39,5 +42,12 @@ share/examples/ipv6toolkit/
 share/examples/ipv6toolkit/ipv6toolkit.conf
 @sample ${SYSCONFDIR}/ipv6toolkit.conf
 share/ipv6toolkit/
+share/ipv6toolkit/country-data.csv
+share/ipv6toolkit/dns-dictionary.txt
+share/ipv6toolkit/dns-gov-uk-domains.csv
+share/ipv6toolkit/dns-tld-database.csv
 share/ipv6toolkit/oui.txt
+share/ipv6toolkit/public_suffix_list.dat
+share/ipv6toolkit/rir-database.csv
 share/ipv6toolkit/service-names-port-numbers.csv
+share/ipv6toolkit/top-port-numbers.csv

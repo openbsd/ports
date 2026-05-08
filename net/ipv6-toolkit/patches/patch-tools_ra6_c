@@ -1,0 +1,13 @@
+Index: tools/ra6.c
+--- tools/ra6.c.orig
++++ tools/ra6.c
+@@ -34,8 +34,8 @@
+ 
+ #include <arpa/inet.h>
+ #include <net/if.h>
+-#include <netinet/icmp6.h>
+ #include <netinet/in.h>
++#include <netinet/icmp6.h>
+ #include <netinet/ip6.h>
+ #include <pcap.h>
+ 

@@ -1,0 +1,13 @@
+Index: tools/icmp6.c
+--- tools/icmp6.c.orig
++++ tools/icmp6.c
+@@ -32,8 +32,8 @@
+ 
+ #include <arpa/inet.h>
+ #include <net/if.h>
+-#include <netinet/icmp6.h>
+ #include <netinet/in.h>
++#include <netinet/icmp6.h>
+ #include <netinet/ip6.h>
+ #include <netinet/tcp.h>
+ #include <netinet/udp.h>

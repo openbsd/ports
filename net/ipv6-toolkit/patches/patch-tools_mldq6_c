@@ -1,0 +1,13 @@
+Index: tools/mldq6.c
+--- tools/mldq6.c.orig
++++ tools/mldq6.c
+@@ -39,8 +39,8 @@
+ #include <unistd.h>
+ 
+ #include <arpa/inet.h>
+-#include <netinet/icmp6.h>
+ #include <netinet/in.h>
++#include <netinet/icmp6.h>
+ #include <netinet/ip6.h>
+ 
+ #include "ipv6toolkit.h"
