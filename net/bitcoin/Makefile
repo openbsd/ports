@@ -2,10 +2,9 @@ BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
 COMMENT =		P2P payment system
 
-V =			30.2
+V =			31.0
 
 DISTNAME =		bitcoin-${V}
-REVISION =		0
 
 SITES =			https://bitcoincore.org/bin/bitcoin-core-${V}/
 
