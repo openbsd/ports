@@ -13,7 +13,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			147.0.7727.137
+V=			148.0.7778.96
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -48,7 +48,7 @@ SITES.a=	http://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python x11/qt5 x11/qt6
 
-MODCLANG_VERSION=	21
+MODCLANG_VERSION=	22
 MODQT5_DEPS=		No
 MODQT6_DEPS=		No
 MODPY_RUNDEP=		No
@@ -248,8 +248,7 @@ GN_ARGS+=	use_thin_lto=false \
 .endif
 
 # sync with flags.gni
-GN_ARGS+=	build_with_tflite_lib=false \
-		chrome_pgo_phase=0 \
+GN_ARGS+=	chrome_pgo_phase=0 \
 		clang_use_chrome_plugins=false \
 		disable_fieldtrial_testing_config=true \
 		enable_hangout_services_extension=false \
@@ -283,8 +282,12 @@ pre-patch:
 post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
-	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
-	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
+	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin \
+		${WRKSRC}/third_party/rust-toolchain/bin \
+		${WRKSRC}/third_party/gperf/cipd/bin
+	@ln -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
+	@ln -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+	@ln -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/third_party/gperf/cipd/bin/gperf
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \

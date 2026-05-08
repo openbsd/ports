@@ -1,7 +1,7 @@
 Index: third_party/blink/public/platform/platform.h
 --- third_party/blink/public/platform/platform.h.orig
 +++ third_party/blink/public/platform/platform.h
-@@ -377,7 +377,7 @@ class BLINK_PLATFORM_EXPORT Platform {
+@@ -382,7 +382,7 @@ class BLINK_PLATFORM_EXPORT Platform {
      return nullptr;
    }
  
