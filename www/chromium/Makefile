@@ -12,18 +12,16 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			147.0.7727.137
+V=			148.0.7778.96
 
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
-DISTFILES.a=		${PROFILE_DISTFILES.a} \
-			${REGRESS_DISTFILES.a}
+DISTFILES.a=		${REGRESS_DISTFILES.a}
 
 CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
-PROFILE_DISTFILES.a=	chromium-${V}-profdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz
 
 DIST_TUPLE+=		github rollup rollup v4.22.4 rollup
@@ -56,7 +54,7 @@ MODCARGO_BUILD=		No
 MODCARGO_INSTALL=	No
 MODCARGO_TEST=		No
 
-MODCLANG_VERSION=	21
+MODCLANG_VERSION=	22
 MODQT5_DEPS=		No
 MODQT6_DEPS=		No
 MODPY_RUNDEP=		No
@@ -277,9 +275,12 @@ pre-patch:
 post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
-	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
-	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
+	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin \
+		${WRKSRC}/third_party/rust-toolchain/bin
+	@ln -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
+	@ln -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
 	@ln -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
+	@ln -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/third_party/gperf/cipd/bin/gperf
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
@@ -303,8 +304,6 @@ do-configure:
 	)
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	# @cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
-	@cd ${WRKSRC}/chrome/build/pgo_profiles && _p=$$(echo *.profdata) && \
-		${LOCALBASE}/bin/llvm-profdata-${MODCLANG_VERSION} merge $${_p}.txt --output=$${_p}
 	@cd ${WRKSRC}/media/ffmpeg && \
 		${MODPY_BIN} scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
 	@cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h

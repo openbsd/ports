@@ -1,8 +1,8 @@
 Index: chrome/browser/extensions/BUILD.gn
 --- chrome/browser/extensions/BUILD.gn.orig
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1523,6 +1523,10 @@ source_set("extensions") {
-       deps += [ "//chrome/services/printing/public/mojom" ]
+@@ -1488,6 +1488,10 @@ source_set("extensions") {
+       ]
      }
  
 +    if (is_bsd) {

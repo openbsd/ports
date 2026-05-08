@@ -33,7 +33,7 @@ Index: chrome/browser/ui/accelerator_table.cc
      {ui::VKEY_BROWSER_BACK, ui::EF_NONE, IDC_BACK},
      {ui::VKEY_BROWSER_FORWARD, ui::EF_NONE, IDC_FORWARD},
      {ui::VKEY_BROWSER_HOME, ui::EF_NONE, IDC_HOME},
-@@ -310,7 +310,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
+@@ -312,7 +312,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
                           std::begin(kDevToolsAcceleratorMap),
                           std::end(kDevToolsAcceleratorMap));
  
