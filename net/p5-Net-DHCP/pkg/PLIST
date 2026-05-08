@@ -1,9 +1,18 @@
 ${P5SITE}/Net/
 ${P5SITE}/Net/DHCP/
+${P5SITE}/Net/DHCP.pm
 ${P5SITE}/Net/DHCP/Constants.pm
+${P5SITE}/Net/DHCP/Packet/
 ${P5SITE}/Net/DHCP/Packet.pm
+${P5SITE}/Net/DHCP/Packet/Attributes.pm
+${P5SITE}/Net/DHCP/Packet/IPv4Utils.pm
+${P5SITE}/Net/DHCP/Packet/OrderOptions.pm
+@man man/man3p/Net::DHCP.3p
 @man man/man3p/Net::DHCP::Constants.3p
 @man man/man3p/Net::DHCP::Packet.3p
+@man man/man3p/Net::DHCP::Packet::Attributes.3p
+@man man/man3p/Net::DHCP::Packet::IPv4Utils.3p
+@man man/man3p/Net::DHCP::Packet::OrderOptions.3p
 share/examples/p5-Net-DHCP/
 share/examples/p5-Net-DHCP/dhcp_sniffer.pl
 share/examples/p5-Net-DHCP/dhcpd.pl

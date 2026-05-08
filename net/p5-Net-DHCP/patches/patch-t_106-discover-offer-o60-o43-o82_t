@@ -1,0 +1,20 @@
+Net::Frame::Simple has a long dependency chain, avoid porting, skip tests
+
+Index: t/106-discover-offer-o60-o43-o82.t
+--- t/106-discover-offer-o60-o43-o82.t.orig
++++ t/106-discover-offer-o60-o43-o82.t
+@@ -6,11 +6,11 @@ use FindBin;
+ 
+ use strict;
+ 
++use Test::Requires qw(Net::Frame::Simple);
++use Net::Frame::Dump::Offline;
++
+ BEGIN { use_ok('Net::DHCP::Packet'); }
+ BEGIN { use_ok('Net::DHCP::Constants'); }
+-
+-use Net::Frame::Simple;
+-use Net::Frame::Dump::Offline;
+ 
+ my @data;
+ 

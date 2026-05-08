@@ -1,0 +1,20 @@
+Net::Frame::Simple has a long dependency chain, avoid porting, skip tests
+
+Index: t/107-query-active-qry-unass-qry-unk.t
+--- t/107-query-active-qry-unass-qry-unk.t.orig
++++ t/107-query-active-qry-unass-qry-unk.t
+@@ -6,11 +6,11 @@ use FindBin;
+ 
+ use strict;
+ 
++use Test::Requires qw(Net::Frame::Simple);
++use Net::Frame::Dump::Offline;
++
+ BEGIN { use_ok('Net::DHCP::Packet'); }
+ BEGIN { use_ok('Net::DHCP::Constants'); }
+-
+-use Net::Frame::Simple;
+-use Net::Frame::Dump::Offline;
+ 
+ my @data;
+ 
