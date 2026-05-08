@@ -1,13 +1,15 @@
-COMMENT=	finding memory leaks in perl XS
+COMMENT =	finding memory leaks in perl XS
 
-MODULES=	cpan
-DISTNAME=	Devel-Leak-0.03
-REVISION=	6
-CATEGORIES=	devel
+DISTNAME =	Devel-Leak-0.04
+CPAN_AUTHOR =	SREZIC
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-WANTLIB += c perl
+# Perl
+PERMIT_PACKAGE =	Yes
+
+WANTLIB =		c perl
+
+MODULES =		cpan
 
 .include <bsd.port.mk>
