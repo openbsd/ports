@@ -1,5 +1,6 @@
 COMMENT =	utility classes for KDE control modules
 DISTNAME =	kcmutils-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6KCMUtils               0.0 # 0.0
 SHARED_LIBS +=  KF6KCMUtilsCore           0.1 # 0.0
@@ -12,7 +13,8 @@ WANTLIB += KF6Service KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickWidgets
 WANTLIB += Qt6Widgets Qt6Xml c m
 
-BUILD_DEPENDS =	devel/gettext,-tools
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf6/kirigami>=${MODKF6_VERSION}
 
 LIB_DEPENDS =	devel/kf6/kconfigwidgets>=${MODKF6_VERSION} \
 		devel/kf6/kcoreaddons>=${MODKF6_VERSION} \
