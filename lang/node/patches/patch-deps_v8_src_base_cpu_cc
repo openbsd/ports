@@ -4,7 +4,7 @@ OpenBSD/riscv64 always uses floating-point support.
 Index: deps/v8/src/base/cpu.cc
 --- deps/v8/src/base/cpu.cc.orig
 +++ deps/v8/src/base/cpu.cc
-@@ -933,7 +933,10 @@ CPU::CPU()
+@@ -1005,7 +1005,10 @@ CPU::CPU()
    if (HasListItem(mmu, "sv57")) {
      riscv_mmu_ = RV_MMU_MODE::kRiscvSV57;
    }

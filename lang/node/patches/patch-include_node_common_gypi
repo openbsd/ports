@@ -9,7 +9,7 @@ Index: include/node/common.gypi
          'conditions': [
            ['enable_lto=="true"', {
              'cflags': ['<(lto)'],
-@@ -521,7 +520,6 @@
+@@ -524,7 +523,6 @@
              'standalone_static_library': 1,
            }],
            ['OS=="openbsd"', {
@@ -17,18 +17,18 @@ Index: include/node/common.gypi
              'ldflags': [ '-Wl,-z,wxneeded' ],
            }],
            ['_toolset=="host"', {
-@@ -538,7 +536,7 @@
-                 'cflags': [ '-m32' ],
-                 'ldflags': [ '-m32' ],
+@@ -537,7 +535,7 @@
+                 'cflags': [ '-m64' ],
+                 'ldflags': [ '-m64' ],
                }],
 -              [ 'host_arch=="ppc64" and OS not in "aix os400"', {
 +              [ 'host_arch=="ppc64" and OS not in "aix os400 openbsd"', {
                  'conditions': [
                    [ 'clang==0', {
                      'cflags': [ '-mminimal-toc' ],
-@@ -567,7 +565,7 @@
-                 'cflags': [ '-m32' ],
-                 'ldflags': [ '-m32' ],
+@@ -562,7 +560,7 @@
+                 'cflags': [ '-m64' ],
+                 'ldflags': [ '-m64' ],
                }],
 -              [ 'target_arch=="ppc64" and OS not in "aix os400"', {
 +              [ 'target_arch=="ppc64" and OS not in "aix os400 openbsd"', {
