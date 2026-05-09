@@ -4,11 +4,11 @@ MODGO_VERSION =		v4.25.0
 MODGO_MODNAME =		github.com/StackExchange/dnscontrol/v4
 
 DISTNAME =		dnscontrol-${MODGO_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
-HOMEPAGE =		https://stackexchange.github.io/dnscontrol/
+HOMEPAGE =		https://dnscontrol.org/
 
 # MIT
 PERMIT_PACKAGE =	Yes
