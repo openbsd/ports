@@ -1,8 +1,8 @@
 Index: extra/cups-pdf.conf
 --- extra/cups-pdf.conf.orig
 +++ extra/cups-pdf.conf
-@@ -48,7 +48,7 @@
- ##  root_squash! 
+@@ -49,7 +49,7 @@
+ ##  root_squash!
  ### Default: /var/spool/cups-pdf/${USER}
  
 -#Out /var/spool/cups-pdf/${USER}
@@ -10,7 +10,7 @@ Index: extra/cups-pdf.conf
  
  ### Key: AnonDirName (config)
  ##  ABSOLUTE path for anonymously created PDF files
-@@ -188,9 +188,9 @@
+@@ -189,9 +189,9 @@
  ### Key: Grp (config)
  ##  group cups-pdf is supposed to run as - this will also be the gid for all
  ##  created directories and log files
@@ -22,8 +22,8 @@ Index: extra/cups-pdf.conf
  
  ### Key: AllowUnsafeOptions (config)
  ##  DON'T CHANGE THIS SETTING UNLESS YOU ABSOLUTELY KNOW WHAT YOU ARE DOING
-@@ -236,9 +236,9 @@
- ##  location of GhostScript binary (gs) 
+@@ -237,9 +237,9 @@
+ ##  location of GhostScript binary (gs)
  ##  MacOSX: for using pstopdf (recommended) set this to /usr/bin/pstopdf
  ##          or its proper location on your system
 -### Default: /usr/bin/gs
@@ -33,13 +33,4 @@ Index: extra/cups-pdf.conf
 +#GhostScript ${LOCALBASE}/bin/gs
  
  ### Key: GSTmp (config)
- ##  location of temporary files during GhostScript operation 
-@@ -269,7 +269,7 @@
- ##  set this to an empty value to use no postprocessing
- ### Default: <empty>
- 
--#PostProcessing 
-+#PostProcessing ${TRUEPREFIX}/bin/cups-pdf-dispatch
- 
- 
- ###########################################################################
+ ##  location of temporary files during GhostScript operation

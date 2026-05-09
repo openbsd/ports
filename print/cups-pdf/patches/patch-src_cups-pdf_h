@@ -1,7 +1,7 @@
 Index: src/cups-pdf.h
 --- src/cups-pdf.h.orig
 +++ src/cups-pdf.h
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  /  they are reasonable for most systems.			     */
  
  /* location of the configuration file */
@@ -10,7 +10,7 @@ Index: src/cups-pdf.h
  
  
  /* --- DO NOT EDIT BELOW THIS LINE --- */
-@@ -57,9 +57,9 @@ struct {
+@@ -58,9 +58,9 @@ struct {
  } configData[] = {
    { "AnonDirName", SEC_CONF|SEC_PPD, { "/var/spool/cups-pdf/ANONYMOUS" } },
    { "AnonUser", SEC_CONF|SEC_PPD, { "nobody" } },

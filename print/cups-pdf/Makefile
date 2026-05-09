@@ -1,6 +1,6 @@
 COMMENT=		PDF backend for CUPS
 
-DISTNAME=		cups-pdf-3.0.2
+DISTNAME=		cups-pdf-3.0.3
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.cups-pdf.de/
