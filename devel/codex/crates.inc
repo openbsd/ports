@@ -63,6 +63,7 @@ MODCARGO_CRATES +=	aws-credential-types	1.2.11	# Apache-2.0
 MODCARGO_CRATES +=	aws-lc-rs	1.16.2	# ISC AND (Apache-2.0 OR ISC)
 MODCARGO_CRATES +=	aws-lc-sys	0.39.0	# ISC AND (Apache-2.0 OR ISC) AND Apache-2.0 AND MIT AND BSD-3-Clause AND (Apache-2.0 OR ISC OR MIT) AND (Apache-2.0 OR ISC OR MIT-0)
 MODCARGO_CRATES +=	aws-runtime	1.5.17	# Apache-2.0
+MODCARGO_CRATES +=	aws-sdk-signin	1.2.0	# Apache-2.0
 MODCARGO_CRATES +=	aws-sdk-sso	1.91.0	# Apache-2.0
 MODCARGO_CRATES +=	aws-sdk-ssooidc	1.93.0	# Apache-2.0
 MODCARGO_CRATES +=	aws-sdk-sts	1.95.0	# Apache-2.0

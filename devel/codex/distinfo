@@ -63,6 +63,7 @@ SHA256 (cargo/aws-credential-types-1.2.11.tar.gz) = PNNieDaBsV0TZICtVVoJnoLs2OLR
 SHA256 (cargo/aws-lc-rs-1.16.2.tar.gz) = oFSRIonRhinceDdbosNyajr+P/cbTtup3t/KDjRG0fw=
 SHA256 (cargo/aws-lc-sys-0.39.0.tar.gz) = H6flKkxcVHx0FhCixvEj84geQJtxTNJ+Z5jvAgxRTwo=
 SHA256 (cargo/aws-runtime-1.5.17.tar.gz) = 2BtbKJj2eYrVj0hIVnaLyoF+PNneCXTCSuDxET/ojxs=
+SHA256 (cargo/aws-sdk-signin-1.2.0.tar.gz) = wIS9Y5QZFuE0jLjZ4FrC5JvdQKOA6RZ3AmgxhMbGvlM=
 SHA256 (cargo/aws-sdk-sso-1.91.0.tar.gz) = juZAKjbye1L+Z2YcZzLWhLJjUVK2dqorq7+1IE+ZEV0=
 SHA256 (cargo/aws-sdk-ssooidc-1.93.0.tar.gz) = pFp/dQu9Fw7jZ3ZxrXgtkLiUVI9OSuFoMCxX7J3lyz4=
 SHA256 (cargo/aws-sdk-sts-1.95.0.tar.gz) = VVQjeOQZVY5rHzmMpwrbCyCIB355rZ8U6wlEHy97IWQ=
@@ -1141,7 +1142,7 @@ SHA256 (cargo/zune-jpeg-0.5.12.tar.gz) = QQ6ezvY0xwnjgxws/bjZwyFk+uHGdJbVto//co7
 SHA256 (cargo/zvariant-4.2.0.tar.gz) = IIQpCrmhxHHDj8UklFg3c0+/EkSH4QXa7Cu1f9SMgf4=
 SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3MgDSACxEk=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
-SHA256 (codex-rust-v0.129.0.tar.gz) = fD8x6mQ4r06Xwbz+46iZqd6VVXIlbd39vZgZHUv/hKI=
+SHA256 (codex-rust-v0.130.0.tar.gz) = E/rH96qO8uJ0dpauJoG9ISnzHw9ZKp0navl4AjT0/fA=
 SHA256 (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3b30DbjfaF32fDJg3+Wc9/+ksZOpMk4Qs1m76JgdueA=
 SHA256 (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 0WdqwzqCxZA//t5oznPJ2SRmaqihArtkmo+5JqemHOE=
 SHA256 (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995.tar.gz) = tJrDQua12cAV9ThGkMKmHW8xwMPDSq8cwivklWEiKUw=
@@ -1213,6 +1214,7 @@ SIZE (cargo/aws-credential-types-1.2.11.tar.gz) = 21589
 SIZE (cargo/aws-lc-rs-1.16.2.tar.gz) = 224799
 SIZE (cargo/aws-lc-sys-0.39.0.tar.gz) = 9461007
 SIZE (cargo/aws-runtime-1.5.17.tar.gz) = 77032
+SIZE (cargo/aws-sdk-signin-1.2.0.tar.gz) = 74539
 SIZE (cargo/aws-sdk-sso-1.91.0.tar.gz) = 92652
 SIZE (cargo/aws-sdk-ssooidc-1.93.0.tar.gz) = 111757
 SIZE (cargo/aws-sdk-sts-1.95.0.tar.gz) = 197624
@@ -2291,7 +2293,7 @@ SIZE (cargo/zune-jpeg-0.5.12.tar.gz) = 86116
 SIZE (cargo/zvariant-4.2.0.tar.gz) = 82180
 SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
-SIZE (codex-rust-v0.129.0.tar.gz) = 7572519
+SIZE (codex-rust-v0.130.0.tar.gz) = 7565974
 SIZE (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3951333
 SIZE (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 86782
 SIZE (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995.tar.gz) = 129254
