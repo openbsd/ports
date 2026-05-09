@@ -1,0 +1,23 @@
+Disable cpu feature detection on armv7
+
+Index: babl/babl-cpuaccel.c
+--- babl/babl-cpuaccel.c.orig
++++ babl/babl-cpuaccel.c
+@@ -579,6 +579,7 @@ arch_accel (void)
+ static guint32
+ arch_accel (void)
+ {
++#if 0 // disable on armv7
+   /* TODO : add or hardcode the other ways it can be on arm, where
+    *        this info comes from the system and not from running cpu
+    *        instructions
+@@ -599,6 +600,9 @@ arch_accel (void)
+     close (fd);
+   }
+   return has_neon?BABL_CPU_ACCEL_ARM_NEON:0;
++#else
++  return 0;
++#endif
+ }
+ 
+ #endif /* ARCH_ARM  */
