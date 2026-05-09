@@ -2,7 +2,7 @@ COMMENT =		high-performance preforking PSGI/Plack web server
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Starman-0.4017
+DISTNAME =		Starman-0.4018
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
