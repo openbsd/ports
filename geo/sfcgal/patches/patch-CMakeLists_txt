@@ -1,0 +1,42 @@
+From 9b044794ab95758c56a51f51a98adcb3ef874060 Mon Sep 17 00:00:00 2001
+From: Jean Felder <jean.felder@oslandia.com>
+Date: Mon, 11 Aug 2025 17:19:03 +0200
+Subject: [PATCH] chore(build): Fix compilation with boost 1.89
+
+In the upcoming Boost 1.89.0 release, Boost.System stub has been
+removed which causes CMake error:
+
+```
+CMake Error at /opt/homebrew/lib/cmake/Boost-1.89.0/BoostConfig.cmake:141 (find_package):
+  Could not find a package configuration file provided by "boost_system"
+  (requested version 1.89.0) with any of the following names:
+
+    boost_systemConfig.cmake
+    boost_system-config.cmake
+```
+
+This issue is fixed by dropping `system` from the `COMPONENTS` as it's
+not needed since 1.69. With this change, boost minimum version to
+build SFCGAL is now 1.69.0. This should not be an issue as this
+version was released in 2018.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -133,13 +133,13 @@ else()
+ 	message( STATUS "Boost_USE_MULTITHREAD=OFF" )
+ endif()
+ 
+-#-- minimalist build allowed with boost version older than 1.48
+-set( SFCGAL_Boost_COMPONENTS thread system serialization )
++#-- minimalist build allowed with boost version 1.69 or newer
++set( SFCGAL_Boost_COMPONENTS thread serialization )
+ #-- program_options
+ if ( SFCGAL_BUILD_TESTS OR SFCGAL_BUILD_EXAMPLES OR SFCGAL_BUILD_OSG )
+ 	set( SFCGAL_Boost_COMPONENTS chrono unit_test_framework filesystem program_options timer ${SFCGAL_Boost_COMPONENTS} )
+ endif()
+-find_package( Boost COMPONENTS ${SFCGAL_Boost_COMPONENTS} REQUIRED )
++find_package( Boost 1.69.0 COMPONENTS ${SFCGAL_Boost_COMPONENTS} REQUIRED )
+ if((${Boost_MAJOR_VERSION} EQUAL 1) AND (${Boost_MINOR_VERSION} EQUAL 58))
+ 	message( STATUS "Defining BOOST_VARIANT_USE_RELAXED_GET_BY_DEFAULT" )
+ 	add_definitions( "-DBOOST_VARIANT_USE_RELAXED_GET_BY_DEFAULT" )
