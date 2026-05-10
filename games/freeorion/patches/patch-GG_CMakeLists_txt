@@ -1,7 +1,18 @@
+Fix build with Boost 1.91
 Add X11BASE include directory
+
 Index: GG/CMakeLists.txt
 --- GG/CMakeLists.txt.orig
 +++ GG/CMakeLists.txt
+@@ -66,7 +66,7 @@ endif()
+ 
+ set(MINIMUM_BOOST_VERSION 1.69.0)
+ 
+-find_package(Boost ${MINIMUM_BOOST_VERSION} COMPONENTS filesystem regex system REQUIRED)
++find_package(Boost ${MINIMUM_BOOST_VERSION} COMPONENTS filesystem regex REQUIRED)
+ 
+ find_package(OpenGL REQUIRED)
+ find_package(GLEW REQUIRED)
 @@ -89,6 +89,7 @@ endif()
  include_directories(
      ${CMAKE_CURRENT_SOURCE_DIR}

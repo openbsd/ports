@@ -1,9 +1,18 @@
+Fix build with Boost 1.91
 Remove hardcoded optimisation option.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -515,7 +515,6 @@ target_compile_options(freeorionparseobj
+@@ -283,7 +283,6 @@ find_package(Boost ${MINIMUM_BOOST_VERSION}
+         log
+         log_setup
+         serialization
+-        system
+         thread
+     REQUIRED)
+ 
+@@ -515,7 +514,6 @@ target_compile_options(freeorionparseobj
      PRIVATE
          $<$<CXX_COMPILER_ID:Clang>:-ftemplate-depth=512>
          $<$<CXX_COMPILER_ID:AppleClang>:-ftemplate-depth=512>
