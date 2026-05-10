@@ -4,6 +4,8 @@ phonenumbers/metadata.h [-w dupbuild=err]
 
 Also Eliminate -Werror to fix sparc64 build
 
+boost_system removed in Boost 1.89, workaround dropped in 1.91
+
 Fix build on i386
 
 Index: cpp/CMakeLists.txt
@@ -53,6 +55,15 @@ Index: cpp/CMakeLists.txt
  if (BUILD_TESTING)
    include (../tools/cpp/gtest.cmake)
    find_or_build_gtest ()
+@@ -145,7 +118,7 @@ if (USE_BOOST)
+   if (WIN32)
+     set (Boost_USE_STATIC_LIBS ON)
+   endif ()
+-  find_package (Boost 1.40.0 COMPONENTS date_time system thread)
++  find_package (Boost 1.40.0 COMPONENTS date_time thread)
+   if (NOT Boost_FOUND)
+     print_error ("Boost Date_Time/System/Thread" "Boost")
+   endif ()
 @@ -418,7 +391,7 @@ if (USE_ICU_REGEXP)
  endif ()
  
