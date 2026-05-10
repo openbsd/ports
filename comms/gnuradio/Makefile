@@ -3,22 +3,18 @@ COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 GH_TAGNAME =	v3.10.11.0
 GH_ACCOUNT =	gnuradio
 GH_PROJECT =	gnuradio
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  gnuradio-analog           1.0 # 3.7
-SHARED_LIBS +=  gnuradio-atsc             1.0 # 3.7
 SHARED_LIBS +=  gnuradio-audio            1.0 # 3.7
 SHARED_LIBS +=  gnuradio-blocks           1.0 # 3.7
 SHARED_LIBS +=  gnuradio-channels         1.0 # 3.7
 SHARED_LIBS +=  gnuradio-digital          1.0 # 3.7
 SHARED_LIBS +=  gnuradio-dtv              1.0 # 3.7
-SHARED_LIBS +=  gnuradio-fcd              1.0 # 3.7
 SHARED_LIBS +=  gnuradio-fec              1.0 # 3.7
 SHARED_LIBS +=  gnuradio-fft              1.0 # 3.7
 SHARED_LIBS +=  gnuradio-filter           1.0 # 3.7
-SHARED_LIBS +=  gnuradio-noaa             1.0 # 3.7
 SHARED_LIBS +=  gnuradio-network          1.0 # 0.0
-SHARED_LIBS +=  gnuradio-pager            1.0 # 3.7
 SHARED_LIBS +=  gnuradio-pdu              1.0 # 0.0
 SHARED_LIBS +=  gnuradio-pmt              1.0 # 3.7
 SHARED_LIBS +=  gnuradio-qtgui            1.0 # 3.7
@@ -27,7 +23,6 @@ SHARED_LIBS +=  gnuradio-trellis          1.0 # 3.7
 SHARED_LIBS +=  gnuradio-video-sdl        1.0 # 3.7
 SHARED_LIBS +=  gnuradio-vocoder          1.0 # 3.7
 SHARED_LIBS +=  gnuradio-wavelet          1.0 # 3.7
-SHARED_LIBS +=  gnuradio-wxgui            1.0 # 3.7
 SHARED_LIBS +=  gnuradio-zeromq           1.0 # 3.7
 
 CATEGORIES =	comms
@@ -37,12 +32,12 @@ HOMEPAGE =	https://www.gnuradio.org/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += Qt5Core Qt5Gui Qt5Widgets SDL boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_unit_test_framework-mt boost_program_options-mt
-WANTLIB += boost_regex-mt boost_thread-mt c fftw3f
-WANTLIB += fftw3f_threads fmt gmp gmpxx gsl gslcblas gsm iconv jack
-WANTLIB += m portaudio qwt sndfile spdlog volk zmq
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets SDL boost_atomic-mt
+WANTLIB += boost_chrono-mt boost_container-mt boost_date_time-mt
+WANTLIB += boost_program_options-mt boost_regex-mt boost_thread-mt
+WANTLIB += boost_unit_test_framework-mt c fftw3f fftw3f_threads
+WANTLIB += fmt gmp gmpxx gsl gslcblas gsm iconv jack m portaudio
+WANTLIB += qwt sndfile spdlog volk zmq
 
 # c++17
 COMPILER =	base-clang ports-gcc
