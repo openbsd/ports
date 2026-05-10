@@ -1,0 +1,13 @@
+Fix build with boost 1.91
+
+Index: src/mongo/bson/util/builder.h
+--- src/mongo/bson/util/builder.h.orig
++++ src/mongo/bson/util/builder.h
+@@ -39,6 +39,7 @@
+ #include <type_traits>
+ 
+ #include <boost/optional.hpp>
++#include <boost/static_assert.hpp>
+ 
+ #include "mongo/base/data_type_endian.h"
+ #include "mongo/base/data_view.h"
