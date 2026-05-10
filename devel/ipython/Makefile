@@ -1,6 +1,6 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_DISTV =		9.12.0
+MODPY_DISTV =		9.13.0
 DISTNAME =		ipython-${MODPY_DISTV}
 
 CATEGORIES =		devel
@@ -25,6 +25,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-stack_data \
 			devel/py-traitlets>=5.13.0 \
 			graphics/py-matplotlib-inline>=0.1.6 \
+			sysutils/py-psutil>=7 \
 			textproc/py-ipython_pygments_lexers \
 			textproc/py-pygments>=2.14.0
 

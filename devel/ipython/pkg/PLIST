@@ -75,6 +75,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}inputtrans
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}inputtransformer2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}interactiveshell.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}interactiveshell.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}kitty.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}kitty.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}latex_symbols.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}latex_symbols.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -143,6 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/historyapp.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/hooks.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/inputtransformer2.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/interactiveshell.py
+lib/python${MODPY_VERSION}/site-packages/IPython/core/kitty.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/latex_symbols.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/logger.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/macro.py
