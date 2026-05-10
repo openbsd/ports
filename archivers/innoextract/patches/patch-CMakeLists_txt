@@ -1,0 +1,13 @@
+Fix build with Boost 1.91
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -155,7 +155,6 @@ find_package(Boost REQUIRED COMPONENTS
+ 	iostreams
+ 	filesystem
+ 	date_time
+-	system
+ 	program_options
+ )
+ list(APPEND LIBRARIES ${Boost_LIBRARIES})
