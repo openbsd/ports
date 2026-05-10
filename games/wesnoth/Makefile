@@ -4,6 +4,7 @@ BROKEN-hppa =	missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.18.7
+REVISION=	0
 
 CATEGORIES=	games x11
 
@@ -17,15 +18,14 @@ EXTRACT_SUFX=	.tar.bz2
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += SDL2 SDL2_image SDL2_mixer boost_context-mt
-WANTLIB += boost_atomic-mt boost_chrono-mt boost_thread-mt
-WANTLIB += boost_coroutine-mt boost_filesystem-mt
-WANTLIB += boost_iostreams-mt boost_locale-mt
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer boost_atomic-mt
+WANTLIB += boost_charconv-mt boost_chrono-mt boost_container-mt
+WANTLIB += boost_context-mt boost_coroutine-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
-WANTLIB += c cairo crypto curl dbus-1
-WANTLIB += fontconfig glib-2.0 gobject-2.0
-WANTLIB += harfbuzz icudata icui18n icuuc intl m pango-1.0
-WANTLIB += pangocairo-1.0 ssl vorbisfile ${COMPILER_LIBCXX}
+WANTLIB += boost_thread-mt c cairo crypto curl dbus-1 fontconfig
+WANTLIB += glib-2.0 gobject-2.0 harfbuzz icudata icui18n icuuc
+WANTLIB += intl m pango-1.0 pangocairo-1.0 ssl vorbisfile
 
 MODULES=	devel/cmake
 # c++17
