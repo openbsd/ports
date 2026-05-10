@@ -4,7 +4,7 @@ VERSION =	0.8
 PKGNAME =	freesynd-${VERSION}
 DISTNAME =	Freesynd-${VERSION}-Source
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://freesynd.sourceforge.io/
 
@@ -35,8 +35,8 @@ MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 NO_TEST =	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/freesynd/
-	mv ${WRKINST}${LOCALBASE}${SYSCONFDIR}/freesynd/freesynd.ini \
-		${PREFIX}/share/examples/freesynd/
+	mv ${WRKINST}${LOCALBASE}${SYSCONFDIR}/freesynd \
+		${PREFIX}/share/examples/
+	rmdir ${WRKINST}${LOCALBASE}${SYSCONFDIR}
 
 .include <bsd.port.mk>

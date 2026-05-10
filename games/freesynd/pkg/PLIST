@@ -1,6 +1,4 @@
 @bin bin/freesynd
-etc/
-etc/freesynd/
 share/doc/freesynd/
 share/doc/freesynd/changelog.gz
 share/doc/freesynd/copyright
