@@ -10,6 +10,15 @@ Index: CMakeLists.txt
  
  set(COLLADA_DOM_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/dom/include)
  set(COLLADA_DOM_LINK_DIRS "")
+@@ -151,7 +151,7 @@ endif()
+ if( NOT $ENV{BOOST_LIBRARYDIR} STREQUAL "" )
+   set(Boost_LIBRARY_DIRS $ENV{BOOST_LIBRARYDIR})
+ endif()
+-find_package(Boost COMPONENTS filesystem system REQUIRED)
++find_package(Boost COMPONENTS filesystem REQUIRED)
+ 
+ message(STATUS "found boost version: ${Boost_VERSION}")
+ 
 @@ -175,11 +175,7 @@ foreach(ldir ${Boost_LIBRARY_DIRS})
    set(COLLADA_DOM_BOOST_LIB_DIRS "${COLLADA_DOM_BOOST_LIB_DIRS} -L${ldir}")
  endforeach()
