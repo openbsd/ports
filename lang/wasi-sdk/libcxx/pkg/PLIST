@@ -200,6 +200,7 @@ share/wasi-sysroot/include/c++/v1/__algorithm/sift_down.h
 share/wasi-sysroot/include/c++/v1/__algorithm/simd_utils.h
 share/wasi-sysroot/include/c++/v1/__algorithm/sort.h
 share/wasi-sysroot/include/c++/v1/__algorithm/sort_heap.h
+share/wasi-sysroot/include/c++/v1/__algorithm/specialized_algorithms.h
 share/wasi-sysroot/include/c++/v1/__algorithm/stable_partition.h
 share/wasi-sysroot/include/c++/v1/__algorithm/stable_sort.h
 share/wasi-sysroot/include/c++/v1/__algorithm/swap_ranges.h
@@ -221,9 +222,12 @@ share/wasi-sysroot/include/c++/v1/__atomic/atomic_init.h
 share/wasi-sysroot/include/c++/v1/__atomic/atomic_lock_free.h
 share/wasi-sysroot/include/c++/v1/__atomic/atomic_ref.h
 share/wasi-sysroot/include/c++/v1/__atomic/atomic_sync.h
+share/wasi-sysroot/include/c++/v1/__atomic/atomic_sync_timed.h
+share/wasi-sysroot/include/c++/v1/__atomic/atomic_waitable_traits.h
 share/wasi-sysroot/include/c++/v1/__atomic/check_memory_order.h
 share/wasi-sysroot/include/c++/v1/__atomic/contention_t.h
 share/wasi-sysroot/include/c++/v1/__atomic/fence.h
+share/wasi-sysroot/include/c++/v1/__atomic/floating_point_helper.h
 share/wasi-sysroot/include/c++/v1/__atomic/is_always_lock_free.h
 share/wasi-sysroot/include/c++/v1/__atomic/kill_dependency.h
 share/wasi-sysroot/include/c++/v1/__atomic/memory_order.h
@@ -273,6 +277,7 @@ share/wasi-sysroot/include/c++/v1/__chrono/formatter.h
 share/wasi-sysroot/include/c++/v1/__chrono/gps_clock.h
 share/wasi-sysroot/include/c++/v1/__chrono/hh_mm_ss.h
 share/wasi-sysroot/include/c++/v1/__chrono/high_resolution_clock.h
+share/wasi-sysroot/include/c++/v1/__chrono/is_clock.h
 share/wasi-sysroot/include/c++/v1/__chrono/leap_second.h
 share/wasi-sysroot/include/c++/v1/__chrono/literals.h
 share/wasi-sysroot/include/c++/v1/__chrono/local_info.h
@@ -319,6 +324,7 @@ share/wasi-sysroot/include/c++/v1/__concepts/boolean_testable.h
 share/wasi-sysroot/include/c++/v1/__concepts/class_or_enum.h
 share/wasi-sysroot/include/c++/v1/__concepts/common_reference_with.h
 share/wasi-sysroot/include/c++/v1/__concepts/common_with.h
+share/wasi-sysroot/include/c++/v1/__concepts/comparison_common_type.h
 share/wasi-sysroot/include/c++/v1/__concepts/constructible.h
 share/wasi-sysroot/include/c++/v1/__concepts/convertible_to.h
 share/wasi-sysroot/include/c++/v1/__concepts/copyable.h
@@ -343,6 +349,8 @@ share/wasi-sysroot/include/c++/v1/__configuration/
 share/wasi-sysroot/include/c++/v1/__configuration/abi.h
 share/wasi-sysroot/include/c++/v1/__configuration/availability.h
 share/wasi-sysroot/include/c++/v1/__configuration/compiler.h
+share/wasi-sysroot/include/c++/v1/__configuration/experimental.h
+share/wasi-sysroot/include/c++/v1/__configuration/hardening.h
 share/wasi-sysroot/include/c++/v1/__configuration/language.h
 share/wasi-sysroot/include/c++/v1/__configuration/platform.h
 share/wasi-sysroot/include/c++/v1/__coroutine/
@@ -887,7 +895,6 @@ share/wasi-sysroot/include/c++/v1/__cxx03/clocale
 share/wasi-sysroot/include/c++/v1/__cxx03/cmath
 share/wasi-sysroot/include/c++/v1/__cxx03/codecvt
 share/wasi-sysroot/include/c++/v1/__cxx03/complex
-share/wasi-sysroot/include/c++/v1/__cxx03/complex.h
 share/wasi-sysroot/include/c++/v1/__cxx03/condition_variable
 share/wasi-sysroot/include/c++/v1/__cxx03/csetjmp
 share/wasi-sysroot/include/c++/v1/__cxx03/csignal
@@ -900,12 +907,10 @@ share/wasi-sysroot/include/c++/v1/__cxx03/cstdlib
 share/wasi-sysroot/include/c++/v1/__cxx03/cstring
 share/wasi-sysroot/include/c++/v1/__cxx03/ctgmath
 share/wasi-sysroot/include/c++/v1/__cxx03/ctime
-share/wasi-sysroot/include/c++/v1/__cxx03/ctype.h
 share/wasi-sysroot/include/c++/v1/__cxx03/cuchar
 share/wasi-sysroot/include/c++/v1/__cxx03/cwchar
 share/wasi-sysroot/include/c++/v1/__cxx03/cwctype
 share/wasi-sysroot/include/c++/v1/__cxx03/deque
-share/wasi-sysroot/include/c++/v1/__cxx03/errno.h
 share/wasi-sysroot/include/c++/v1/__cxx03/exception
 share/wasi-sysroot/include/c++/v1/__cxx03/experimental/
 share/wasi-sysroot/include/c++/v1/__cxx03/experimental/__config
@@ -914,13 +919,10 @@ share/wasi-sysroot/include/c++/v1/__cxx03/ext/
 share/wasi-sysroot/include/c++/v1/__cxx03/ext/__hash
 share/wasi-sysroot/include/c++/v1/__cxx03/ext/hash_map
 share/wasi-sysroot/include/c++/v1/__cxx03/ext/hash_set
-share/wasi-sysroot/include/c++/v1/__cxx03/fenv.h
-share/wasi-sysroot/include/c++/v1/__cxx03/float.h
 share/wasi-sysroot/include/c++/v1/__cxx03/forward_list
 share/wasi-sysroot/include/c++/v1/__cxx03/fstream
 share/wasi-sysroot/include/c++/v1/__cxx03/functional
 share/wasi-sysroot/include/c++/v1/__cxx03/future
-share/wasi-sysroot/include/c++/v1/__cxx03/inttypes.h
 share/wasi-sysroot/include/c++/v1/__cxx03/iomanip
 share/wasi-sysroot/include/c++/v1/__cxx03/ios
 share/wasi-sysroot/include/c++/v1/__cxx03/iosfwd
@@ -947,11 +949,8 @@ share/wasi-sysroot/include/c++/v1/__cxx03/set
 share/wasi-sysroot/include/c++/v1/__cxx03/sstream
 share/wasi-sysroot/include/c++/v1/__cxx03/stack
 share/wasi-sysroot/include/c++/v1/__cxx03/stdatomic.h
-share/wasi-sysroot/include/c++/v1/__cxx03/stdbool.h
-share/wasi-sysroot/include/c++/v1/__cxx03/stddef.h
 share/wasi-sysroot/include/c++/v1/__cxx03/stdexcept
 share/wasi-sysroot/include/c++/v1/__cxx03/stdint.h
-share/wasi-sysroot/include/c++/v1/__cxx03/stdio.h
 share/wasi-sysroot/include/c++/v1/__cxx03/stdlib.h
 share/wasi-sysroot/include/c++/v1/__cxx03/streambuf
 share/wasi-sysroot/include/c++/v1/__cxx03/string
@@ -959,7 +958,6 @@ share/wasi-sysroot/include/c++/v1/__cxx03/string.h
 share/wasi-sysroot/include/c++/v1/__cxx03/string_view
 share/wasi-sysroot/include/c++/v1/__cxx03/strstream
 share/wasi-sysroot/include/c++/v1/__cxx03/system_error
-share/wasi-sysroot/include/c++/v1/__cxx03/tgmath.h
 share/wasi-sysroot/include/c++/v1/__cxx03/thread
 share/wasi-sysroot/include/c++/v1/__cxx03/type_traits
 share/wasi-sysroot/include/c++/v1/__cxx03/typeindex
@@ -972,7 +970,6 @@ share/wasi-sysroot/include/c++/v1/__cxx03/valarray
 share/wasi-sysroot/include/c++/v1/__cxx03/vector
 share/wasi-sysroot/include/c++/v1/__cxx03/version
 share/wasi-sysroot/include/c++/v1/__cxx03/wchar.h
-share/wasi-sysroot/include/c++/v1/__cxx03/wctype.h
 share/wasi-sysroot/include/c++/v1/__cxxabi_config.h
 share/wasi-sysroot/include/c++/v1/__debug_utils/
 share/wasi-sysroot/include/c++/v1/__debug_utils/randomize_range.h
@@ -1025,6 +1022,7 @@ share/wasi-sysroot/include/c++/v1/__format/container_adaptor.h
 share/wasi-sysroot/include/c++/v1/__format/enable_insertable.h
 share/wasi-sysroot/include/c++/v1/__format/escaped_output_table.h
 share/wasi-sysroot/include/c++/v1/__format/extended_grapheme_cluster_table.h
+share/wasi-sysroot/include/c++/v1/__format/fmt_pair_like.h
 share/wasi-sysroot/include/c++/v1/__format/format_arg.h
 share/wasi-sysroot/include/c++/v1/__format/format_arg_store.h
 share/wasi-sysroot/include/c++/v1/__format/format_args.h
@@ -1047,6 +1045,7 @@ share/wasi-sysroot/include/c++/v1/__format/formatter_tuple.h
 share/wasi-sysroot/include/c++/v1/__format/indic_conjunct_break_table.h
 share/wasi-sysroot/include/c++/v1/__format/parser_std_format_spec.h
 share/wasi-sysroot/include/c++/v1/__format/range_default_formatter.h
+share/wasi-sysroot/include/c++/v1/__format/range_format.h
 share/wasi-sysroot/include/c++/v1/__format/range_formatter.h
 share/wasi-sysroot/include/c++/v1/__format/unicode.h
 share/wasi-sysroot/include/c++/v1/__format/width_estimation_table.h
@@ -1091,14 +1090,12 @@ share/wasi-sysroot/include/c++/v1/__fwd/functional.h
 share/wasi-sysroot/include/c++/v1/__fwd/get.h
 share/wasi-sysroot/include/c++/v1/__fwd/ios.h
 share/wasi-sysroot/include/c++/v1/__fwd/istream.h
-share/wasi-sysroot/include/c++/v1/__fwd/map.h
 share/wasi-sysroot/include/c++/v1/__fwd/mdspan.h
 share/wasi-sysroot/include/c++/v1/__fwd/memory.h
 share/wasi-sysroot/include/c++/v1/__fwd/memory_resource.h
 share/wasi-sysroot/include/c++/v1/__fwd/ostream.h
 share/wasi-sysroot/include/c++/v1/__fwd/pair.h
 share/wasi-sysroot/include/c++/v1/__fwd/queue.h
-share/wasi-sysroot/include/c++/v1/__fwd/set.h
 share/wasi-sysroot/include/c++/v1/__fwd/span.h
 share/wasi-sysroot/include/c++/v1/__fwd/sstream.h
 share/wasi-sysroot/include/c++/v1/__fwd/stack.h
@@ -1164,10 +1161,8 @@ share/wasi-sysroot/include/c++/v1/__locale_dir/check_grouping.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/get_c_locale.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/locale_base_api/
 share/wasi-sysroot/include/c++/v1/__locale_dir/locale_base_api.h
-share/wasi-sysroot/include/c++/v1/__locale_dir/locale_base_api/android.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_fallbacks.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/locale_base_api/ibm.h
-share/wasi-sysroot/include/c++/v1/__locale_dir/locale_base_api/musl.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/locale_base_api/openbsd.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/messages.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/money.h
@@ -1175,11 +1170,14 @@ share/wasi-sysroot/include/c++/v1/__locale_dir/num.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/pad_and_output.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/scan_keyword.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/support/
+share/wasi-sysroot/include/c++/v1/__locale_dir/support/aix.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/support/apple.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/support/bsd_like.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/support/freebsd.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/support/fuchsia.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/support/linux.h
+share/wasi-sysroot/include/c++/v1/__locale_dir/support/netbsd.h
+share/wasi-sysroot/include/c++/v1/__locale_dir/support/newlib.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/support/no_locale/
 share/wasi-sysroot/include/c++/v1/__locale_dir/support/no_locale/characters.h
 share/wasi-sysroot/include/c++/v1/__locale_dir/support/no_locale/strtonum.h
@@ -1221,7 +1219,6 @@ share/wasi-sysroot/include/c++/v1/__mdspan/mdspan.h
 share/wasi-sysroot/include/c++/v1/__memory/
 share/wasi-sysroot/include/c++/v1/__memory/addressof.h
 share/wasi-sysroot/include/c++/v1/__memory/align.h
-share/wasi-sysroot/include/c++/v1/__memory/aligned_alloc.h
 share/wasi-sysroot/include/c++/v1/__memory/allocate_at_least.h
 share/wasi-sysroot/include/c++/v1/__memory/allocation_guard.h
 share/wasi-sysroot/include/c++/v1/__memory/allocator.h
@@ -1361,6 +1358,8 @@ share/wasi-sysroot/include/c++/v1/__random/uniform_real_distribution.h
 share/wasi-sysroot/include/c++/v1/__random/weibull_distribution.h
 share/wasi-sysroot/include/c++/v1/__ranges/
 share/wasi-sysroot/include/c++/v1/__ranges/access.h
+share/wasi-sysroot/include/c++/v1/__ranges/adjacent_transform_view.h
+share/wasi-sysroot/include/c++/v1/__ranges/adjacent_view.h
 share/wasi-sysroot/include/c++/v1/__ranges/all.h
 share/wasi-sysroot/include/c++/v1/__ranges/as_rvalue_view.h
 share/wasi-sysroot/include/c++/v1/__ranges/chunk_by_view.h
@@ -1372,6 +1371,7 @@ share/wasi-sysroot/include/c++/v1/__ranges/dangling.h
 share/wasi-sysroot/include/c++/v1/__ranges/data.h
 share/wasi-sysroot/include/c++/v1/__ranges/drop_view.h
 share/wasi-sysroot/include/c++/v1/__ranges/drop_while_view.h
+share/wasi-sysroot/include/c++/v1/__ranges/elements_of.h
 share/wasi-sysroot/include/c++/v1/__ranges/elements_view.h
 share/wasi-sysroot/include/c++/v1/__ranges/empty.h
 share/wasi-sysroot/include/c++/v1/__ranges/empty_view.h
@@ -1403,6 +1403,7 @@ share/wasi-sysroot/include/c++/v1/__ranges/to.h
 share/wasi-sysroot/include/c++/v1/__ranges/transform_view.h
 share/wasi-sysroot/include/c++/v1/__ranges/view_interface.h
 share/wasi-sysroot/include/c++/v1/__ranges/views.h
+share/wasi-sysroot/include/c++/v1/__ranges/zip_transform_view.h
 share/wasi-sysroot/include/c++/v1/__ranges/zip_view.h
 share/wasi-sysroot/include/c++/v1/__split_buffer
 share/wasi-sysroot/include/c++/v1/__std_mbstate_t.h
@@ -1452,15 +1453,12 @@ share/wasi-sysroot/include/c++/v1/__tree
 share/wasi-sysroot/include/c++/v1/__tuple/
 share/wasi-sysroot/include/c++/v1/__tuple/find_index.h
 share/wasi-sysroot/include/c++/v1/__tuple/ignore.h
-share/wasi-sysroot/include/c++/v1/__tuple/make_tuple_types.h
 share/wasi-sysroot/include/c++/v1/__tuple/sfinae_helpers.h
 share/wasi-sysroot/include/c++/v1/__tuple/tuple_element.h
-share/wasi-sysroot/include/c++/v1/__tuple/tuple_indices.h
 share/wasi-sysroot/include/c++/v1/__tuple/tuple_like.h
-share/wasi-sysroot/include/c++/v1/__tuple/tuple_like_ext.h
 share/wasi-sysroot/include/c++/v1/__tuple/tuple_like_no_subrange.h
 share/wasi-sysroot/include/c++/v1/__tuple/tuple_size.h
-share/wasi-sysroot/include/c++/v1/__tuple/tuple_types.h
+share/wasi-sysroot/include/c++/v1/__tuple/tuple_transform.h
 share/wasi-sysroot/include/c++/v1/__type_traits/
 share/wasi-sysroot/include/c++/v1/__type_traits/add_cv_quals.h
 share/wasi-sysroot/include/c++/v1/__type_traits/add_pointer.h
@@ -1468,7 +1466,6 @@ share/wasi-sysroot/include/c++/v1/__type_traits/add_reference.h
 share/wasi-sysroot/include/c++/v1/__type_traits/aligned_storage.h
 share/wasi-sysroot/include/c++/v1/__type_traits/aligned_union.h
 share/wasi-sysroot/include/c++/v1/__type_traits/alignment_of.h
-share/wasi-sysroot/include/c++/v1/__type_traits/can_extract_key.h
 share/wasi-sysroot/include/c++/v1/__type_traits/common_reference.h
 share/wasi-sysroot/include/c++/v1/__type_traits/common_type.h
 share/wasi-sysroot/include/c++/v1/__type_traits/conditional.h
@@ -1497,7 +1494,6 @@ share/wasi-sysroot/include/c++/v1/__type_traits/is_arithmetic.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_array.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_assignable.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_base_of.h
-share/wasi-sysroot/include/c++/v1/__type_traits/is_bounded_array.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_callable.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_char_like_type.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_class.h
@@ -1516,6 +1512,7 @@ share/wasi-sysroot/include/c++/v1/__type_traits/is_final.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_floating_point.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_function.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_fundamental.h
+share/wasi-sysroot/include/c++/v1/__type_traits/is_generic_transparent_comparator.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_implicit_lifetime.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_implicitly_default_constructible.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_integral.h
@@ -1533,7 +1530,6 @@ share/wasi-sysroot/include/c++/v1/__type_traits/is_primary_template.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_reference.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_reference_wrapper.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_referenceable.h
-share/wasi-sysroot/include/c++/v1/__type_traits/is_replaceable.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_same.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_scalar.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_signed.h
@@ -1547,17 +1543,18 @@ share/wasi-sysroot/include/c++/v1/__type_traits/is_trivially_copyable.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_trivially_destructible.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_trivially_lexicographically_comparable.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_trivially_relocatable.h
-share/wasi-sysroot/include/c++/v1/__type_traits/is_unbounded_array.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_union.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_unqualified.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_unsigned.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_valid_expansion.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_void.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_volatile.h
+share/wasi-sysroot/include/c++/v1/__type_traits/is_within_lifetime.h
 share/wasi-sysroot/include/c++/v1/__type_traits/lazy.h
 share/wasi-sysroot/include/c++/v1/__type_traits/make_32_64_or_128_bit.h
 share/wasi-sysroot/include/c++/v1/__type_traits/make_const_lvalue_ref.h
 share/wasi-sysroot/include/c++/v1/__type_traits/make_signed.h
+share/wasi-sysroot/include/c++/v1/__type_traits/make_transparent.h
 share/wasi-sysroot/include/c++/v1/__type_traits/make_unsigned.h
 share/wasi-sysroot/include/c++/v1/__type_traits/maybe_const.h
 share/wasi-sysroot/include/c++/v1/__type_traits/nat.h
@@ -1590,6 +1587,7 @@ share/wasi-sysroot/include/c++/v1/__utility/auto_cast.h
 share/wasi-sysroot/include/c++/v1/__utility/cmp.h
 share/wasi-sysroot/include/c++/v1/__utility/convert_to_integral.h
 share/wasi-sysroot/include/c++/v1/__utility/declval.h
+share/wasi-sysroot/include/c++/v1/__utility/default_three_way_comparator.h
 share/wasi-sysroot/include/c++/v1/__utility/element_count.h
 share/wasi-sysroot/include/c++/v1/__utility/empty.h
 share/wasi-sysroot/include/c++/v1/__utility/exception_guard.h
@@ -1600,6 +1598,7 @@ share/wasi-sysroot/include/c++/v1/__utility/in_place.h
 share/wasi-sysroot/include/c++/v1/__utility/integer_sequence.h
 share/wasi-sysroot/include/c++/v1/__utility/is_pointer_in_range.h
 share/wasi-sysroot/include/c++/v1/__utility/is_valid_range.h
+share/wasi-sysroot/include/c++/v1/__utility/lazy_synth_three_way_comparator.h
 share/wasi-sysroot/include/c++/v1/__utility/move.h
 share/wasi-sysroot/include/c++/v1/__utility/no_destroy.h
 share/wasi-sysroot/include/c++/v1/__utility/pair.h
@@ -1611,6 +1610,7 @@ share/wasi-sysroot/include/c++/v1/__utility/scope_guard.h
 share/wasi-sysroot/include/c++/v1/__utility/small_buffer.h
 share/wasi-sysroot/include/c++/v1/__utility/swap.h
 share/wasi-sysroot/include/c++/v1/__utility/to_underlying.h
+share/wasi-sysroot/include/c++/v1/__utility/try_key_extraction.h
 share/wasi-sysroot/include/c++/v1/__utility/unreachable.h
 share/wasi-sysroot/include/c++/v1/__variant/
 share/wasi-sysroot/include/c++/v1/__variant/monostate.h
@@ -1745,7 +1745,6 @@ share/wasi-sysroot/include/c++/v1/span
 share/wasi-sysroot/include/c++/v1/sstream
 share/wasi-sysroot/include/c++/v1/stack
 share/wasi-sysroot/include/c++/v1/stdatomic.h
-share/wasi-sysroot/include/c++/v1/stdbool.h
 share/wasi-sysroot/include/c++/v1/stddef.h
 share/wasi-sysroot/include/c++/v1/stdexcept
 share/wasi-sysroot/include/c++/v1/stdio.h

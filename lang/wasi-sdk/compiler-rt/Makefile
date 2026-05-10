@@ -1,9 +1,9 @@
 COMMENT =	LLVM runtime library for WebAssembly System Interface
 
-DISTNAME =	compiler-rt-${LLVM_V}.src
+DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME =	wasi-compiler-rt-${LLVM_V}
 LIBPATH =	wasi/libclang_rt.builtins-wasm32.a
-BUILDSUBDIR =	lib/builtins
+BUILDSUBDIR =	compiler-rt/lib/builtins
 BUILD_DEPENDS +=	lang/wasi-libc>=0.20251114
 
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
@@ -12,8 +12,6 @@ PERMIT_PACKAGE =	Yes
 SUBST_VARS +=	MODCLANG_VERSION
 
 CONFIGURE_ARGS=	\
-		-DCMAKE_MODULE_PATH=${WRKDIR}/cmake-${LLVM_V}.src/Modules \
-		-DLLVM_CONFIG_PATH=${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} \
 		-DLLVM_CMAKE_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/llvm \
 		-DCMAKE_C_COMPILER_WORKS=1 \
 		-DCMAKE_CXX_COMPILER_WORKS=1 \
