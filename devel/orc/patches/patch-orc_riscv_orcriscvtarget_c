@@ -1,67 +1,60 @@
-orc_riscv_target_get_cpu_flags is Linux-specific, rename it and only call it
-on Linux.
-
-Implement orc_riscv_target_flush_cache on OpenBSD + clang/compiler-rt.
-
-Fix orc_riscv_target_get_default_flags: the V extension can't be assumed.
-On the other hand, on OpenBSD the C extension can be assumed.
+- riscv: Fix building on non-Linux systems
+  9861f1c213565f1533eca88bebfc5ae1bef28249
+- riscv: Fix orc_riscv_target_flush_cache() for OpenBSD
+  180a3999bd862a34c29641211dd7bae909be6f39
+- riscv: Don't enable Vector support if no CPU detection support
+  34502d128b25dda6b6f04e8c7f3845ab104d912d
 
 Index: orc/riscv/orcriscvtarget.c
 --- orc/riscv/orcriscvtarget.c.orig
 +++ orc/riscv/orcriscvtarget.c
-@@ -69,7 +69,7 @@ orc_riscv_target_detect_extension (const char *exts, c
+@@ -67,7 +67,9 @@ orc_riscv_target_detect_extension (const char *exts, c
+ 
+   return FALSE;
  }
++#endif
  
++#ifdef HAVE_RISCV
  static orc_uint32
--orc_riscv_target_get_cpu_flags (void)
-+orc_riscv_target_get_cpu_flags_linux (void)
+ orc_riscv_target_get_cpu_flags (void)
  {
-   orc_uint32 ret = 0;
+@@ -77,6 +79,7 @@ orc_riscv_target_get_cpu_flags (void)
+   ret |= ORC_TARGET_RISCV_64BIT;
+ #endif
  
-@@ -114,29 +114,29 @@ orc_riscv_target_get_cpu_flags (void)
++#ifdef __linux__
+   char *cpuinfo = get_proc_cpuinfo ();
+   if (cpuinfo == NULL) {
+     ORC_DEBUG ("Failed to read /proc/cpuinfo");
+@@ -105,16 +108,16 @@ orc_riscv_target_get_cpu_flags (void)
+ 
+     free (cpuinfo_line);
+   }
++#endif
+ 
+   return ret;
+ }
+-
+ #endif
+ 
  static void
  orc_riscv_target_flush_cache (OrcCode *code)
  {
 -#if defined(HAVE_RISCV) && defined(__linux__)
--#if __has_builtin(__builtin___clear_cache)
-+#if defined(HAVE_RISCV)
-+#if __has_builtin(__builtin___clear_cache) /* compiler-specific */
++#if defined(HAVE_RISCV) && (defined(__linux__) || defined(__OpenBSD__))
+ #if __has_builtin(__builtin___clear_cache)
    __builtin___clear_cache ((char*)code->code, (char*)code->code + code->code_size);
    if ((void *) code->exec != (void *) code->code)
-     __builtin___clear_cache ((char*)code->exec, (char*)code->exec + code->code_size);
--#else
-+#elif defined(__linux__) /* __clear_cache not really Linux-specific */
-   __clear_cache (code->code, code->code + code->code_size);
-   if ((void *) code->exec != (void *) code->code)
-     __clear_cache (code->exec, code->exec + code->code_size);
--#endif // __builtin___clear_cache
- #else
-   ORC_ERROR ("Couldn't flush icache");
-   ORC_ASSERT (0);
- #endif
-+#endif /* HAVE_RISCV */
- }
- 
- static orc_uint32
- orc_riscv_target_get_default_flags (void)
- {
+@@ -136,7 +139,11 @@ orc_riscv_target_get_default_flags (void)
  #if defined(HAVE_RISCV) && defined(__linux__)
--  return orc_riscv_target_get_cpu_flags ();
-+  return orc_riscv_target_get_cpu_flags_linux ();
+   return orc_riscv_target_get_cpu_flags ();
  #else
 -  return ORC_TARGET_RISCV_64BIT | ORC_TARGET_RISCV_V;
-+  return ORC_TARGET_RISCV_64BIT | ORC_TARGET_RISCV_C;
++  orc_uint32 ret = 0;
++#if defined(__riscv_xlen) && __riscv_xlen == 64
++  ret |= ORC_TARGET_RISCV_64BIT;
++#endif
++  return ret;
  #endif
  }
  
-@@ -162,8 +162,8 @@ static OrcTarget orc_riscv_target = {
- OrcTarget *
- orc_riscv_target_init (void)
- {
--#ifdef HAVE_RISCV
--  if (orc_riscv_target_get_cpu_flags () & ORC_TARGET_RISCV_V) {
-+#if defined(HAVE_RISCV) && defined(__linux__)
-+  if (orc_riscv_target_get_cpu_flags_linux () & ORC_TARGET_RISCV_V) {
-     ORC_INFO ("This RISC-V CPU supports RVV");
-   }
- #endif
