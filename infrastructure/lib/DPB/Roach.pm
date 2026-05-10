@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Roach.pm,v 1.5 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Roach.pm,v 1.6 2026/05/10 16:27:04 daniel Exp $
 #
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
@@ -74,7 +74,7 @@ sub new($class, $v)
 	return $o;
 }
 
-sub forget_roachinfo($class, $v0
+sub forget_roachinfo($class, $v)
 {
 	for my $d ($class->roachinfo) {
 		delete $v->{info}{$d};
