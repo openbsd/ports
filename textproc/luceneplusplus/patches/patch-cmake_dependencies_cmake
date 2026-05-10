@@ -1,0 +1,13 @@
+luceneplusplus: fix build with Boost 1.91
+
+Index: cmake/dependencies.cmake
+--- cmake/dependencies.cmake.orig
++++ cmake/dependencies.cmake
+@@ -7,7 +7,6 @@ find_package(Boost COMPONENTS
+   filesystem
+   iostreams
+   regex
+-  system
+   thread
+   REQUIRED
+ )

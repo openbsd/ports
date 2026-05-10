@@ -1,7 +1,7 @@
 V =		3.0.8
 PKGNAME =	luceneplusplus-${V}
 COMMENT =	C++ port of the Java Lucene library, the text search engine
-REVISION =	4
+REVISION =	5
 
 GH_ACCOUNT =	luceneplusplus
 GH_PROJECT =	LucenePlusPlus
@@ -15,10 +15,10 @@ CATEGORIES =	textproc
 # LGPL3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} m
-WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_regex-mt
-WANTLIB += boost_thread-mt z boost_random-mt
+WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
+WANTLIB += boost_container-mt boost_date_time-mt boost_filesystem-mt
+WANTLIB += boost_iostreams-mt boost_random-mt boost_regex-mt boost_thread-mt
+WANTLIB += m z
 
 COMPILER =		base-clang ports-gcc
 

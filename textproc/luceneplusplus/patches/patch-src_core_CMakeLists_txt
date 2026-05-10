@@ -3,13 +3,21 @@ disable cotire as it's deprecated and breaks the build with newer libc++
 Index: src/core/CMakeLists.txt
 --- src/core/CMakeLists.txt.orig
 +++ src/core/CMakeLists.txt
-@@ -79,9 +79,6 @@ set_target_properties(lucene++
+@@ -57,7 +57,6 @@ target_link_libraries(lucene++
+     Boost::filesystem
+     Boost::iostreams
+     Boost::regex
+-    Boost::system
+     Boost::thread
+     ZLIB::ZLIB
+ )
+@@ -78,9 +77,6 @@ set_target_properties(lucene++
+     VISIBILITY_INLINES_HIDDEN 1
      VERSION ${lucene++_VERSION}
      SOVERSION ${lucene++_SOVERSION})
- 
+-
 -cotire(lucene++)
 -
--
+ 
  install(TARGETS lucene++
    DESTINATION "${LIB_DESTINATION}"
-   COMPONENT runtime)
