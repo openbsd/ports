@@ -1,6 +1,15 @@
 Index: CMakeLists.txt
---- CMakeLists.txt.orig.port
+--- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -462,7 +462,7 @@ endif()
+ #        Finding packages                  #
+ ############################################
+ 
+-set(BOOST_COMPONENTS date_time filesystem locale program_options system thread)
++set(BOOST_COMPONENTS date_time filesystem locale program_options thread)
+ if(ENABLE_INNOEXTRACT)
+ 	list(APPEND BOOST_COMPONENTS iostreams)
+ endif()
 @@ -518,7 +518,7 @@ endif()
  
  if(ENABLE_LAUNCHER OR ENABLE_EDITOR)

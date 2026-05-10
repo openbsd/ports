@@ -1,7 +1,7 @@
 COMMENT =	HoMM3 engine rewrite
 
 CATEGORIES =	games
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://vcmi.eu/
 
@@ -19,10 +19,11 @@ PERMIT_PACKAGE =	Yes
 SHARED_LIBS =		vcmi	2.0
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer SDL2_ttf
-WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
-WANTLIB += boost_program_options-mt boost_thread-mt
-WANTLIB += c m minizip swresample swscale tbb z
+WANTLIB += avcodec avformat avutil boost_atomic-mt boost_charconv-mt
+WANTLIB += boost_chrono-mt boost_container-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
+WANTLIB += boost_thread-mt c m minizip swresample swscale tbb
+WANTLIB += z
 
 # C++17
 COMPILER = 		base-clang ports-gcc
