@@ -3,11 +3,11 @@ ONLY_FOR_ARCHS = amd64
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		10.0.4.0
+V =		10.1.0.0
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
-DISTFILES.jffi =jffi-1.3.10.tar.gz
+DISTFILES.jffi =jffi-1.3.15.tar.gz
 DISTFILES.gem =	${JRUBY_LAUNCHER_GEM}
 
 HOMEPAGE =	http://www.jruby.org/
@@ -42,8 +42,8 @@ WRKDIST =	${WRKDIR}/jruby-${V}
 JFFI_HOME =	${WRKDIST}/jffi
 JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
 FFI_ARCH =	${JFFI_ARCH:L}
-JRUBY_LAUNCHER_GEM = jruby-launcher-1.1.19-java.gem
-JRUBY_RUBY_VERSION =	3.1
+JRUBY_LAUNCHER_GEM = jruby-launcher-2.0.2-java.gem
+JRUBY_RUBY_VERSION =	4.0
 SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V JAVA_HOME
 
 MODJAVA_BUILD_DIR = ${JFFI_HOME}
@@ -58,7 +58,7 @@ post-extract:
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/jruby-launcher/jrubyexe.cpp \
-		${WRKSRC}/jruby-launcher/unixlauncher.cpp
+		${WRKSRC}/jruby-launcher/unixlauncher.c
 	cd ${WRKSRC}/jruby-launcher/ && ${SETENV} ${MAKE_ENV} \
 		../bin/jruby extconf.rb
 	perl -pi -e '$$. == 1 && s|^.*env j?ruby.*$$|\#!${LOCALBASE}/bin/jruby|;' \
@@ -80,8 +80,9 @@ do-install:
 	ln -s ${TRUEPREFIX}/jruby/bin/jruby ${PREFIX}/bin/jruby
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/bin
-	for file in ast bundle bundler erb irb gem jgem jirb jirb_swing jrubyc racc rake rdoc ri; \
-	  do ${INSTALL_SCRIPT} ${WRKBUILD}/bin/$$file ${JRUBY_HOME}/bin/$$file; \
+	cd ${WRKBUILD}/bin/ && for file in .* ast bundle bundler erb irb gem jgem jirb jirb_swing \
+		jruby.sh jrubyc lock_jars racc rake rdoc ri syntax_suggest test-unit; \
+	  do ${INSTALL_SCRIPT} $$file ${JRUBY_HOME}/bin/$$file; \
 	done
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/jruby ${JRUBY_HOME}/bin/jruby # not a shell script; used in #! lines
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/lib
@@ -96,7 +97,6 @@ do-install:
 	rm -f ${PREFIX}/jruby/lib/jruby-java*.jsa # tied to exact jdk build; may need jruby.sh to use?
 
 # JRuby doesn't ship tests in the binary distribution
-# Try running the database/ruby-sequel,jruby tests after an update
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

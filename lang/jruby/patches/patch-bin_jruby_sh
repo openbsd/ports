@@ -1,0 +1,18 @@
+Avoid the following warning on every startup:
+
+Warning: AppCDS archive directory is not writable, disabling AppCDS operations
+
+Users can set the JRUBY_JSA environment variable to a writeable file; doing so
+improves performance significantly.
+
+Index: bin/jruby.sh
+--- bin/jruby.sh.orig
++++ bin/jruby.sh
+@@ -875,6 +875,7 @@ if [ -n "${JRUBY_JSA-}" ]; then
+ else
+     # Default JVM Class Data Sharing Archive (jsa) file for JVMs that support it
+     jruby_jsa_file="$JRUBY_HOME/lib/jruby-java$java_runtime_version.jsa"
++    use_jsa_file=false
+ fi
+ readonly jruby_jsa_file
+ 

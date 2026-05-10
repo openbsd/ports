@@ -1,16 +1,17 @@
 Hardcode executable path so that the symlink in the standard PATH
 works correctly.
 
---- jruby-launcher/jrubyexe.cpp.orig	Fri Dec  2 09:34:43 2011
-+++ jruby-launcher/jrubyexe.cpp	Fri Dec  2 09:35:02 2011
+Index: jruby-launcher/jrubyexe.cpp
+--- jruby-launcher/jrubyexe.cpp.orig
++++ jruby-launcher/jrubyexe.cpp
 @@ -57,8 +57,10 @@ const char *CON_ATTACH_MSG =
- 
- #include "utilsfuncs.h"
+ #include "unixlauncher.h"
+ #endif  // WIN32
  
 +char JRUBY_PATH[] = "${PREFIX}/jruby/bin/jruby";
  
  int main(int argc, char *argv[], char* envp[]) {
 +    argv[0] = JRUBY_PATH;
+ #ifdef WIN32
      checkLoggingArg(argc, argv, true);
  
- #ifdef WIN32

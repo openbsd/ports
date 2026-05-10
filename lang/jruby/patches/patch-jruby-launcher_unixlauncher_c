@@ -5,22 +5,13 @@ JAVA_HOME=$(javaPathHelper -h jruby)
 Without this, if the JAVA_HOME environment variable is not
 defined, bin/jruby will segfault when run.
 
-Index: jruby-launcher/unixlauncher.cpp
---- jruby-launcher/unixlauncher.cpp.orig
-+++ jruby-launcher/unixlauncher.cpp
-@@ -3,6 +3,7 @@
- #include <unistd.h>
- #include <limits.h>
- #include <string.h>
-+#include <string.h>
- #include "unixlauncher.h"
- #include "utilsfuncs.h"
- 
-@@ -46,6 +47,44 @@ int UnixLauncher::run(int argc, char* argv[], char* en
+Index: jruby-launcher/unixlauncher.c
+--- jruby-launcher/unixlauncher.c.orig
++++ jruby-launcher/unixlauncher.c
+@@ -81,6 +81,44 @@ int unixlauncher_run(int argc, char *argv[], char *env
+         return 2;
      }
  
-     string java("");
-+
 +    if (getenv("JAVA_HOME") == NULL) {
 +      char *path;
 +      FILE *java_home_pipe;
@@ -58,6 +49,7 @@ Index: jruby-launcher/unixlauncher.cpp
 +        pclose(java_home_pipe);
 +      }
 +    }
- 
-     if (getenv("JAVACMD") != NULL) {
-         java = getenv("JAVACMD");
++
+     // Find ourselves
+     char *original_self = argv[0];
+     char *self_path;
