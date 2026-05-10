@@ -11,6 +11,10 @@ Database access is done via PDO. If you are using MySQL or PostgreSQL,
 make sure the the relevant package (php-pdo_mysql or php-pdo_pgsql) is
 installed and enabled.
 
+If updating from before 1.7, note the updated web server configuration
+for nginx, which adds a location block for "static.php" so that PATH_INFO
+is passed correctly.
+
 
 Setup with Apache
 =================
@@ -48,7 +52,7 @@ server {
     listen 80;
     listen [::]:80;
     location /.well-known/acme-challenge { root /var/www/letsencrypt/; }
-    location / { return 301 https://mail.example.org$request_uri; }
+    location / { return 307 https://mail.example.org$request_uri; }
 }
 
 server {
@@ -64,7 +68,15 @@ server {
 
     rewrite "^/[a-zA-Z0-9]{16}/(.*)" /$1; # allow use of 'use_secure_urls'
     location /.well-known/acme-challenge { root /var/www/letsencrypt/; }
-    location ~* \.php$ {
+    location ~ ^(/static\.php)/(.*)$ {
+        try_files       $uri =404;
+        fastcgi_pass    unix:run/php-fpm.sock;
+        fastcgi_param   SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+        fastcgi_param   PATH_INFO $2;
+        fastcgi_param   HTTPS on;
+        include         fastcgi_params;
+    }
+    location ~ ^.*\.php$ {
         try_files       $uri =404;
         fastcgi_pass    unix:run/php-fpm.sock;
         fastcgi_param   SCRIPT_FILENAME $document_root/$fastcgi_script_name;

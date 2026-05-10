@@ -1,8 +1,7 @@
 COMMENT=	IMAP4 webmail client
 
-V=		1.6.15
-REVISION=	0
-DISTNAME=	roundcubemail-${V}
+V=		1.7.0
+DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-//}
 EXTRACT_SUFX=	-complete.tar.gz
 
@@ -42,10 +41,7 @@ do-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
-	cd ${WRKSRC} && pax -rw .* * ${INSTDIR}
-.for i in .htaccess config/mimetypes.php
-	mv ${INSTDIR}/$i ${INSTDIR}/$i.dist
-.endfor
+	cd ${WRKSRC} && pax -rw * ${INSTDIR}
 	@${SUBST_CMD} -m 0644 -c ${FILESDIR}/roundcubemail.conf \
 	    ${INSTDIR}/roundcubemail.conf.dist
 	mkdir ${INSTDIR}/db; \
@@ -57,6 +53,7 @@ do-install:
 		-delete -o \
 	    \( -name \*.png -o -name \*.js -o -name \*.css \) \
 		-exec chmod -x {} +
-	rm ${INSTDIR}/composer.json
+	mv ${INSTDIR}/config/mimetypes.php{,.dist}
+	mv ${INSTDIR}/composer.json{,.dist}
 
 .include <bsd.port.mk>
