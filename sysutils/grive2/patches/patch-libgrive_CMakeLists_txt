@@ -1,9 +1,12 @@
 Index: libgrive/CMakeLists.txt
 --- libgrive/CMakeLists.txt.orig
 +++ libgrive/CMakeLists.txt
-@@ -6,7 +6,6 @@ find_package(LibGcrypt REQUIRED)
+@@ -4,9 +4,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SO
+ 
+ find_package(LibGcrypt REQUIRED)
  find_package(CURL REQUIRED)
- find_package(Boost 1.40.0 COMPONENTS program_options filesystem unit_test_framework regex system REQUIRED)
+-find_package(Boost 1.40.0 COMPONENTS program_options filesystem unit_test_framework regex system REQUIRED)
++find_package(Boost 1.40.0 COMPONENTS program_options filesystem unit_test_framework regex REQUIRED)
  find_package(BFD)
 -find_package(CppUnit)
  find_package(Iberty)
