@@ -1,7 +1,7 @@
 MODGO_MODULES =	\
 	charm.land/bubbles/v2			 v2.1.0 \
-	charm.land/bubbletea/v2			 v2.0.2 \
-	charm.land/lipgloss/v2			 v2.0.2 \
+	charm.land/bubbletea/v2			 v2.0.6 \
+	charm.land/lipgloss/v2			 v2.0.3 \
 	github.com/!burnt!sushi/toml		 v1.6.0 \
 	github.com/!make!now!just/heredoc	 v1.0.0 \
 	github.com/atotto/clipboard		 v0.1.4 \
@@ -9,8 +9,8 @@ MODGO_MODULES =	\
 	github.com/bits-and-blooms/bitset	 v1.24.4 \
 	github.com/charmbracelet/colorprofile	 v0.4.3 \
 	github.com/charmbracelet/harmonica	 v0.2.0 \
-	github.com/charmbracelet/ultraviolet	 v0.0.0-20260330092749-0f94982c930b \
-	github.com/charmbracelet/x/ansi		 v0.11.6 \
+	github.com/charmbracelet/ultraviolet	 v0.0.0-20260422141423-a0f1f21775f7 \
+	github.com/charmbracelet/x/ansi		 v0.11.7 \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20250806222409-83e3a29d542f \
 	github.com/charmbracelet/x/term		 v0.2.2 \
 	github.com/charmbracelet/x/termios	 v0.1.1 \
@@ -51,11 +51,14 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v3			 v3.0.1
 
 MODGO_MODFILES =	\
+	charm.land/bubbletea/v2			 v2.0.2 \
+	charm.land/lipgloss/v2			 v2.0.2 \
 	github.com/aymanbagabas/go-udiff	 v0.2.0 \
-	github.com/charmbracelet/colorprofile	 v0.4.1 \
 	github.com/charmbracelet/colorprofile	 v0.4.2 \
 	github.com/charmbracelet/ultraviolet	 v0.0.0-20251205161215-1948445e3318 \
 	github.com/charmbracelet/ultraviolet	 v0.0.0-20260205113103-524a6607adb8 \
+	github.com/charmbracelet/ultraviolet	 v0.0.0-20260416155717-489999b90468 \
+	github.com/charmbracelet/x/ansi		 v0.11.6 \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20241212170349-ad4b7ae0f25f \
 	github.com/clipperhouse/displaywidth	 v0.9.0 \
 	github.com/clipperhouse/uax29/v2	 v2.2.0 \
@@ -74,7 +77,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.34.0 \
 	golang.org/x/sys			 v0.36.0 \
 	golang.org/x/sys			 v0.39.0 \
-	golang.org/x/sys			 v0.40.0 \
 	golang.org/x/sys			 v0.42.0 \
 	golang.org/x/tools			 v0.43.0
 
