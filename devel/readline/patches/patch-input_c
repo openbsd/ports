@@ -1,0 +1,22 @@
+https://lists.gnu.org/archive/html/bug-readline/2025-07/msg00012.html
+
+Index: input.c
+--- input.c.orig
++++ input.c
+@@ -268,6 +268,8 @@ rl_gather_tyi (void)
+       result = (*rl_input_available_hook) ();
+       if (result == 0)
+         result = -1;
++      else
++        chars_avail = 1;
+     }
+ 
+ #if defined (HAVE_PSELECT) || defined (HAVE_SELECT)
+@@ -285,6 +287,7 @@ rl_gather_tyi (void)
+ #endif
+       if (result <= 0)
+ 	return 0;	/* Nothing to read. */
++      result = -1;
+     }
+ #endif
+ 
