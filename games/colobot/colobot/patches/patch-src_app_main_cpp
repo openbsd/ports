@@ -10,7 +10,7 @@ if the main -> SDL_main macro is in use.
 Index: src/app/main.cpp
 --- src/app/main.cpp.orig
 +++ src/app/main.cpp
-@@ -94,10 +94,14 @@ The current layout is the following:
+@@ -101,10 +101,14 @@ The current layout is the following:
   - src/script - link with the CBot library
  */
  
@@ -26,7 +26,7 @@ Index: src/app/main.cpp
  int main(int argc, char *argv[])
  {
      CLogger logger; // single instance of logger
-@@ -176,4 +180,6 @@ int main(int argc, char *argv[])
+@@ -203,4 +207,6 @@ int main(int argc, char *argv[])
      return code;
  }
  
