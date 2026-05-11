@@ -5,7 +5,7 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-onedrive=	GVFS mount module for Microsoft OneDrive backend
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.58.4
+GNOME_VERSION=		1.60.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -75,9 +75,6 @@ CONFIGURE_ARGS +=	-Dafc=false \
 			-Dlogind=false \
 			-Dsystemduserunitdir=no \
 			-Dtmpfilesdir=no
-
-# https://gitlab.gnome.org/GNOME/gvfs/-/commit/8e97b424e
-CONFIGURE_ARGS +=	-Dgoogle=false
 
 # needs libcap
 CONFIGURE_ARGS +=	-Dadmin=false
