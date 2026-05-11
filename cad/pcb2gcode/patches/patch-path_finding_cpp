@@ -1,0 +1,41 @@
+As of Boost 1.91, boost::optional<T> requires an explicit copy constructor
+
+Index: path_finding.cpp
+--- path_finding.cpp.orig
++++ path_finding.cpp
+@@ -213,7 +213,7 @@ boost::optional<MPRingIndices> inside_multipolygon(con
+       if (ring_indices.back().second.size() == poly.inners().size() + 1) {
+         // We never hit the break so we're inside this shape so we're
+         // done.
+-        return {ring_indices};
++        return boost::optional<MPRingIndices>(ring_indices);
+       }
+       // We're inside the outer but also inside an inner!  There might
+       // be another shape inside this hold so we'll ignore this one
+@@ -252,7 +252,7 @@ boost::optional<MPRingIndices> outside_multipolygon(co
+       // No need to examine the inners which we can't possibly be inside.
+     }
+   }
+-  return {ring_indices};
++  return boost::optional<MPRingIndices>(ring_indices);
+ }
+ 
+ boost::optional<RingIndices> inside_multipolygons(
+@@ -278,7 +278,7 @@ boost::optional<RingIndices> inside_multipolygons(
+       if (ring_indices.back().second.size() == poly.inners().size() + 1) {
+         // We never hit the break so we're inside this shape so we're
+         // done.
+-        return {ring_indices};
++        return boost::optional<RingIndices>(ring_indices);
+       }
+       // We're inside the outer but also inside an inner!  It might
+       // be an outer in an inner so we'll ignore this one and keep
+@@ -319,7 +319,7 @@ boost::optional<RingIndices> outside_multipolygons(
+       ring_indices.emplace_back(poly_index, vector<pair<size_t, MPRingIndices>>{{0, *outside_mp}});
+     }
+   }
+-  return {ring_indices};
++  return boost::optional<RingIndices>(ring_indices);
+ }
+ 
+ /* Given a point, determine if the point is in the search surface.  If
