@@ -5,7 +5,8 @@ SHARED_LIBS +=  KF6Holidays               0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Network Qt6Qml m
 
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/bison
 LIB_DEPENDS =		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
