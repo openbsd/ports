@@ -38,6 +38,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad.eyaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_badkey.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_badvalue.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_good.eyaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_good.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_key_empty.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_key_no_value.yaml
