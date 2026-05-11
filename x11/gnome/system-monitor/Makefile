@@ -1,7 +1,7 @@
 COMMENT=		view current processes and monitor system state
 
 GNOME_PROJECT=		gnome-system-monitor
-GNOME_VERSION=		49.1
+GNOME_VERSION=		50.0
 
 CATEGORIES=		sysutils
 
@@ -10,10 +10,10 @@ HOMEPAGE=		https://apps.gnome.org/SystemMonitor/
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} adwaita-1 c cairo gdk_pixbuf-2.0
-WANTLIB += gio-2.0 giomm-2.68 glib-2.0 glibmm-2.68 gmodule-2.0
-WANTLIB += gobject-2.0 graphene-1.0 gtk-4 gtkmm-4.0 gtop-2.0 intl
-WANTLIB += m pango-1.0 pangocairo-1.0 rsvg-2 sigc-3.0
+WANTLIB += ${COMPILER_LIBCXX} adwaita-1 c cairo gio-2.0 giomm-2.68
+WANTLIB += glib-2.0 glibmm-2.68 gmodule-2.0 gobject-2.0 graphene-1.0
+WANTLIB += gtk-4 gtkmm-4.0 gtop-2.0 intl m pango-1.0 pangocairo-1.0
+WANTLIB += rsvg-2 sigc-3.0
 
 MODULES=		devel/dconf \
 			devel/meson \
