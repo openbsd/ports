@@ -9,6 +9,10 @@ CATEGORIES=	sysutils
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
+# C17
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 # uses pledge()
 WANTLIB=	c m
 
