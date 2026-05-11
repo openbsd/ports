@@ -1,3 +1,4 @@
-General-purpose library in its second version from the GTK+ team,
-includes support routines for C such as lists, trees, hashes,
-memory allocation, and many other things.
+GLib is the low-level core library that forms the basis for projects such as GTK
+and GNOME. It provides data structure handling for C, portability wrappers, and
+interfaces for such runtime functionality as an event loop, threads, dynamic
+loading, and an object system.

@@ -1,0 +1,36 @@
+Index: gio/tests/iptosmessage.c
+--- gio/tests/iptosmessage.c.orig
++++ gio/tests/iptosmessage.c
+@@ -69,7 +69,9 @@ send_recv_control_message (GSocketFamily family, GSock
+ 
+   if (family == G_SOCKET_FAMILY_IPV4)
+     {
++#ifdef IP_RECVTOS
+       g_socket_set_option (rsock, IPPROTO_IP, IP_RECVTOS, 1, &error);
++#endif
+     }
+   else
+     {
+@@ -101,12 +103,11 @@ send_recv_control_message (GSocketFamily family, GSock
+ 
+   return g_steal_pointer (&result);
+ }
++#endif
+ 
+ const guint8 DSCP = 0x25;
+ const GEcnCodePoint ECN = G_ECN_ECT_0;
+ 
+-#endif
+-
+ static void
+ test_ip_tos (void)
+ {
+@@ -114,6 +115,8 @@ test_ip_tos (void)
+   g_test_skip ("GSocketControlMessage not supported on Windows.");
+ #elif defined(__APPLE__)
+   g_test_skip ("IP_TOS not supported on macOS.");
++#elif defined(__OpenBSD__)
++  g_test_skip ("IP_RECVTOS not supported on OpenBSD");
+ #elif defined(__GNU__)
+   g_test_skip ("IP_RECVTOS not supported on Hurd");
+ #else
