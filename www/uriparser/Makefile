@@ -2,11 +2,11 @@ COMMENT =		URI parsing library
 
 GH_ACCOUNT =		uriparser
 GH_PROJECT =		uriparser
-GH_TAGNAME =		uriparser-1.0.0
+GH_TAGNAME =		uriparser-1.0.2
 PKGNAME =		${GH_TAGNAME}
 
 # (ver from CMakeLists.txt URIPARSER_SO_CURRENT and URIPARSER_SO_REVISION)
-SHARED_LIBS +=  uriparser 4.1	# 3.0
+SHARED_LIBS +=  uriparser 4.1	# 3.2
 
 CATEGORIES =		www
 
