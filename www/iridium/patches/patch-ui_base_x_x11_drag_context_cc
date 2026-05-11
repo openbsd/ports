@@ -19,3 +19,12 @@ Index: ui/base/x/x11_drag_context.cc
        // If the source provided a portal key, retrieve the files now.
        if (target == x11::GetAtom(kMimeTypePortalFileTransfer) ||
            target == x11::GetAtom(kMimeTypePortalFiles)) {
+@@ -193,7 +193,7 @@ void XDragContext::RequestNextTargetOrComplete() {
+   }
+ }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ void XDragContext::OnPortalPathsExtracted(std::vector<std::string> paths) {
+   if (!paths.empty()) {
+     auto data = base::MakeRefCounted<base::RefCountedString>(

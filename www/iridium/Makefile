@@ -11,8 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2026.04.147.1
-REVISION=		0
+V=			2026.05.148
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -50,7 +49,7 @@ MODCARGO_BUILD=		No
 MODCARGO_INSTALL=	No
 MODCARGO_TEST=		No
 
-MODCLANG_VERSION=	21
+MODCLANG_VERSION=	22
 MODQT5_DEPS=		No
 MODQT6_DEPS=		No
 MODPY_RUNDEP=		No
@@ -254,9 +253,12 @@ pre-patch:
 post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
-	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
-	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
+	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin \
+		${WRKSRC}/third_party/rust-toolchain/bin
+	@ln -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
+	@ln -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
 	@ln -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
+	@ln -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/third_party/gperf/cipd/bin/gperf
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \

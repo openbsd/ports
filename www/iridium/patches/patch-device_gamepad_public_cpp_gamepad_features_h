@@ -1,7 +1,7 @@
 Index: device/gamepad/public/cpp/gamepad_features.h
 --- device/gamepad/public/cpp/gamepad_features.h.orig
 +++ device/gamepad/public/cpp/gamepad_features.h
-@@ -22,7 +22,7 @@ GAMEPAD_FEATURES_EXPORT BASE_DECLARE_FEATURE(kGamepadR
+@@ -22,7 +22,7 @@ GAMEPAD_FEATURES_EXPORT BASE_DECLARE_FEATURE(
  GAMEPAD_FEATURES_EXPORT BASE_DECLARE_FEATURE(kIgnorePS5GamepadsInWgi);
  #endif  // BUILDFLAG(IS_WIN)
  

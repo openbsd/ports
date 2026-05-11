@@ -1,7 +1,7 @@
 Index: components/device_signals/core/common/signals_features.h
 --- components/device_signals/core/common/signals_features.h.orig
 +++ components/device_signals/core/common/signals_features.h
-@@ -40,7 +40,7 @@ bool IsSystemSignalCollectionImprovementEnabled();
+@@ -36,7 +36,7 @@ bool IsDetectedAgentSignalCollectionEnabled();
  bool IsPolicyDataCollectionEnabled();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

@@ -1,7 +1,7 @@
 Index: chrome/common/url_constants.h
 --- chrome/common/url_constants.h.orig
 +++ chrome/common/url_constants.h
-@@ -776,7 +776,7 @@ inline constexpr char kOutdatedPluginLearnMoreURL[] =
+@@ -729,7 +729,7 @@ inline constexpr char kOutdatedPluginLearnMoreURL[] =
      "https://support.google.com/chrome?p=ib_outdated_plugin";
  #endif
  

@@ -1,7 +1,7 @@
 Index: components/dbus/xdg/file_transfer_portal.cc
 --- components/dbus/xdg/file_transfer_portal.cc.orig
 +++ components/dbus/xdg/file_transfer_portal.cc
-@@ -28,6 +28,10 @@
+@@ -31,6 +31,10 @@
  #include "dbus/object_path.h"
  #include "dbus/object_proxy.h"
  
