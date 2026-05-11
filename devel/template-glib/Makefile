@@ -1,9 +1,9 @@
 COMMENT=		templating library for GLib
 
 GNOME_PROJECT=		template-glib
-GNOME_VERSION=		3.38.0
+GNOME_VERSION=		3.40.0
 
-SHARED_LIBS += template_glib-1.0         1.0 # 0.3800.0
+SHARED_LIBS += template_glib-1.0         1.0 # 0.4000.0
 
 CATEGORIES=		devel
 
