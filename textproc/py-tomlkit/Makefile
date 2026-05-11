@@ -1,10 +1,9 @@
 COMMENT=	style-preserving TOML library for Python
 
-MODPY_DISTV=	0.14.0
+MODPY_DISTV=	0.15.0
 DISTNAME=	tomlkit-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes
