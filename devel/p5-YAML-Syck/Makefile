@@ -1,6 +1,6 @@
 COMMENT =	YAML and JSON for perl, optimized C
 
-DISTNAME =	YAML-Syck-1.44
+DISTNAME =	YAML-Syck-1.45
 CPAN_AUTHOR =	TODDR
 
 CATEGORIES =	devel
