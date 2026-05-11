@@ -28,6 +28,7 @@ lib/localsearch-3.0/extract-modules/
 @so lib/localsearch-3.0/extract-modules/libextract-tiff.so
 @so lib/localsearch-3.0/extract-modules/libextract-webp.so
 @so lib/localsearch-3.0/extract-modules/libextract-xps.so
+@so lib/localsearch-3.0/libtracker-extract-zip.so
 @so lib/localsearch-3.0/libtracker-extract.so
 lib/localsearch-3.0/trackertestutils/
 lib/localsearch-3.0/trackertestutils/__init__.py
@@ -42,9 +43,11 @@ lib/localsearch-3.0/trackertestutils/sandbox.py
 lib/localsearch-3.0/trackertestutils/storehelper.py
 lib/localsearch-3.0/writeback-modules/
 @so lib/localsearch-3.0/writeback-modules/libwriteback-gstreamer.so
+@so lib/localsearch-3.0/writeback-modules/libwriteback-playlist.so
 @so lib/localsearch-3.0/writeback-modules/libwriteback-xmp.so
 @bin libexec/localsearch-3
 @bin libexec/localsearch-control-3
+@bin libexec/localsearch-endpoint-3
 @bin libexec/localsearch-extractor-3
 @bin libexec/localsearch-writeback-3
 @man man/man1/localsearch-3.1
@@ -59,6 +62,7 @@ lib/localsearch-3.0/writeback-modules/
 @man man/man1/localsearch-writeback-3.1
 @man man/man1/localsearch.1
 share/bash-completion/completions/localsearch
+share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.Tracker3.Miner.Files.Index.xml
 share/dbus-1/interfaces/org.freedesktop.Tracker3.Miner.xml
 share/dbus-1/services/org.freedesktop.LocalSearch3.Control.service
@@ -138,6 +142,8 @@ share/locale/th/LC_MESSAGES/localsearch3.mo
 share/locale/tr/LC_MESSAGES/localsearch3.mo
 share/locale/ug/LC_MESSAGES/localsearch3.mo
 share/locale/uk/LC_MESSAGES/localsearch3.mo
+share/locale/uz/
+share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/localsearch3.mo
 share/locale/vi/LC_MESSAGES/localsearch3.mo
 share/locale/zh_CN/LC_MESSAGES/localsearch3.mo
@@ -177,6 +183,4 @@ share/localsearch3/extract-rules/15-text.rule
 share/localsearch3/extract-rules/90-disc-generic.rule
 share/localsearch3/extract-rules/90-libav-audio-generic.rule
 share/localsearch3/extract-rules/90-libav-video-generic.rule
-share/localsearch3/miners/
-share/localsearch3/miners/org.freedesktop.Tracker3.Miner.Files.service
 @tag glib-compile-schemas

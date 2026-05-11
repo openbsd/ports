@@ -1,16 +1,16 @@
 COMMENT=		collection of data extractors for Tracker/Nepomuk
 
 GNOME_PROJECT=		localsearch
-GNOME_VERSION=		3.10.2
+GNOME_VERSION=		3.11.1
 
 # LGPLv2.1+ - GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += avformat c cue exempi exif gexiv2 gif gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gsf-1 gstreamer-1.0 gsttag-1.0
-WANTLIB += gupnp-dlna-2.0 gxps icui18n intl iptcdata jpeg kvm
-WANTLIB += m osinfo-1.0 png poppler-glib tiff tinysparql-3.0 totem-plparser
-WANTLIB += upower-glib webpdemux xml2
+WANTLIB += avformat c cue exempi gexiv2 gif gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gsf-1 gstreamer-1.0 gsttag-1.0 gupnp-dlna-2.0
+WANTLIB += gxps icui18n intl jpeg kvm m osinfo-1.0 png poppler-glib
+WANTLIB += tiff tinysparql-3.0 totem-plparser upower-glib webpdemux
+WANTLIB += xml2 zip
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -23,14 +23,13 @@ BUILD_DEPENDS=		textproc/asciidoc
 # sha256sum; cf. patch-meson_build
 BUILD_DEPENDS +=	sysutils/coreutils
 
-LIB_DEPENDS=		audio/libcue \
+LIB_DEPENDS=		archivers/libzip \
+			audio/libcue \
 			devel/libgsf \
 			graphics/ffmpeg \
 			graphics/giflib \
-			graphics/libexif \
 			graphics/libgexiv2 \
 			graphics/libgxps \
-			graphics/libiptcdata \
 			graphics/libwebp \
 			misc/osinfo/libosinfo \
 			net/gupnp/dlna \
