@@ -3,7 +3,7 @@ PKG_ARCH=		*
 COMMENT=		base icon theme for GNOME
 
 GNOME_PROJECT=		adwaita-icon-theme
-GNOME_VERSION=		49.0
+GNOME_VERSION=		50.0
 
 CATEGORIES=		x11
 
