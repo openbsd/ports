@@ -1,6 +1,8 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-pgsql-${PHP_PKGSPEC}
+@pkgpath lang/php/8.0,-pgsql
+@pkgpath lang/php/8.1,-pgsql
 @so lib/php-${PV}/modules/pgsql.so
 share/examples/php-${PV}/pgsql.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/pgsql.ini

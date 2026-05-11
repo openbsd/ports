@@ -1,6 +1,8 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-mysqli-${PHP_PKGSPEC}
+@pkgpath lang/php/8.0,-mysqli
+@pkgpath lang/php/8.1,-mysqli
 @so lib/php-${PV}/modules/mysqli.so
 share/examples/php-${PV}/mysqli.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/mysqli.ini

@@ -252,7 +252,6 @@
      SUBDIR += pdfcrack
      SUBDIR += pdfid
      SUBDIR += pebble
-     SUBDIR += pecl-mcrypt,php82
      SUBDIR += pecl-mcrypt,php83
      #SUBDIR += pecl-mcrypt,php84
      SUBDIR += pgp5

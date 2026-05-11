@@ -247,7 +247,6 @@
      SUBDIR += p5-Sane
      SUBDIR += pcl
      SUBDIR += pdfsandwich
-     SUBDIR += pecl-imagick,php82
      SUBDIR += pecl-imagick,php83
      SUBDIR += pecl-imagick,php84
      SUBDIR += pecl-imagick,php85

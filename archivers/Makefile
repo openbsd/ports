@@ -55,7 +55,6 @@
      SUBDIR += p7zip
      SUBDIR += par1cmdline
      SUBDIR += par2cmdline
-     SUBDIR += pecl-lzf,php82
      SUBDIR += pecl-lzf,php83
      SUBDIR += pecl-lzf,php84
      SUBDIR += pecl-lzf,php85
