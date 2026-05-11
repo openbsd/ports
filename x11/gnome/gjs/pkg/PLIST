@@ -26,7 +26,7 @@ libexec/installed-tests/gjs/WarnLib-1.0.typelib
 @so libexec/installed-tests/gjs/libutility.so
 @so libexec/installed-tests/gjs/libwarnlib.so
 share/examples/gjs/
-share/examples/gjs/README
+share/examples/gjs/README.md
 share/examples/gjs/calc.js
 share/examples/gjs/dbus-client.js
 share/examples/gjs/dbus-service.js
@@ -38,6 +38,8 @@ share/examples/gjs/gtk3-template.js
 share/examples/gjs/gtk3-template.ui
 share/examples/gjs/gtk3.js
 share/examples/gjs/gtk4-frame-clock.js
+share/examples/gjs/gtk4-interface.js
+share/examples/gjs/gtk4-interface.ui
 share/examples/gjs/gtk4-template.js
 share/examples/gjs/gtk4-template.ui
 share/examples/gjs/gtk4.js

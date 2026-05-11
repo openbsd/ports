@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -616,6 +616,7 @@ pkg.generate(libgjs, name: api_name, description: 'JS 
+@@ -620,6 +620,7 @@ pkg.generate(libgjs, name: api_name, description: 'JS 
      requires: ['glib-2.0', 'gobject-2.0', 'gio-2.0'],
      requires_private: requires_private_names,
      subdirs: api_name,
