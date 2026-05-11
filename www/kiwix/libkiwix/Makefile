@@ -1,9 +1,9 @@
 COMMENT =	common code base for all Kiwix ports
 
 KIWIX_PROJECT =	libkiwix
-V =		14.1.0
+V =		14.2.0
 
-SHARED_LIBS +=  kiwix                     3.0 # 0.0
+SHARED_LIBS +=  kiwix                     3.1
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
