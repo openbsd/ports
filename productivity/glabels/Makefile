@@ -2,7 +2,7 @@ COMMENT =		labels and business card designer
 
 GNOME_PROJECT =		glabels
 GNOME_VERSION =		3.4.1
-REVISION =		26
+REVISION =		27
 
 CATEGORIES =		productivity graphics
 
@@ -15,11 +15,11 @@ HOMEPAGE =		http://glabels.org/
 # Attribution-ShareAlike 3.0 Unported
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender absl_base
-WANTLIB += absl_city absl_civil_time absl_cord absl_cord_internal
-WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
-WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB += ${COMPILER_LIBCXX} X11 XRes Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += absl_base absl_borrowed_fixup_buffer absl_city absl_civil_time
+WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
+WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
 WANTLIB += absl_demangle_internal absl_demangle_rust absl_die_if_null
 WANTLIB += absl_examine_stack absl_exponential_biased absl_flags_commandlineflag
@@ -41,24 +41,24 @@ WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material
 WANTLIB += absl_random_seed_gen_exception absl_random_seed_sequences
 WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
 WANTLIB += absl_stacktrace absl_status absl_statusor absl_str_format_internal
-WANTLIB += absl_strerror absl_borrowed_fixup_buffer absl_strings absl_strings_internal
-WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
-WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
+WANTLIB += absl_strerror absl_strings absl_strings_internal absl_symbolize
+WANTLIB += absl_synchronization absl_throw_delegate absl_time
+WANTLIB += absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += boost_date_time-mt boost_thread-mt
-WANTLIB += brotlicommon brotlidec c cairo cairo-gobject camel-1.2
-WANTLIB += db dbus-1 ebackend-1.2 ebook-1.2 ebook-contacts-1.2
-WANTLIB += edata-book-1.2 edataserver-1.2 epoll-shim epoxy execinfo
-WANTLIB += expat ffi fontconfig freetype fribidi gcrypt gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gpg-error graphite2 gtk-3 harfbuzz iconv icudata icui18n
-WANTLIB += icuuc idn2 iec16022 intl jpeg json-glib-1.0 lzma m
-WANTLIB += nghttp2 nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre2-8 phonenumber pixman-1 plc4 plds4
-WANTLIB += png protobuf psl qrencode rsvg-2 secret-1 smime3 soup-3.0
-WANTLIB += sqlite3 ssl3 unistring utf8_validity uuid wayland-client
-WANTLIB += wayland-cursor wayland-egl xcb xcb-render xcb-shm xkbcommon
-WANTLIB += xml2 z
+WANTLIB += boost_atomic-mt boost_chrono-mt boost_container-mt
+WANTLIB += boost_date_time-mt boost_thread-mt brotlicommon brotlidec
+WANTLIB += c cairo cairo-gobject camel-1.2 dav1d db dbus-1 ebackend-1.2
+WANTLIB += ebook-1.2 ebook-contacts-1.2 edata-book-1.2 edataserver-1.2
+WANTLIB += epoll-shim epoxy execinfo expat ffi fontconfig freetype
+WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gtk-3 harfbuzz
+WANTLIB += iconv icudata icui18n icuuc idn2 iec16022 intl jpeg
+WANTLIB += json-glib-1.0 m nghttp2 nspr4 nss3 nssutil3 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 phonenumber pixman-1
+WANTLIB += plc4 plds4 png protobuf psl qrencode rsvg-2 secret-1
+WANTLIB += smime3 soup-3.0 sqlite3 ssl3 unistring utf8_validity
+WANTLIB += uuid wayland-client wayland-cursor wayland-egl xcb
+WANTLIB += xcb-render xcb-shm xkbcommon xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
