@@ -2,7 +2,7 @@ COMMENT =	information gathering suite
 
 VERSION =	3.0.6
 DISTNAME =	theharvester-${VERSION}
-REVISION =	8
+REVISION =	9
 
 GH_ACCOUNT =	laramies
 GH_PROJECT =	theHarvester
@@ -17,7 +17,8 @@ PERMIT_PACKAGE =	Yes
 
 FIX_CRLF_FILES =	discovery/dnssearch.py \
 			discovery/googlesearch.py \
-			discovery/wfuzz_search.py
+			discovery/wfuzz_search.py \
+			discovery/DNS/Type.py
 
 MODULES =	lang/python
 
