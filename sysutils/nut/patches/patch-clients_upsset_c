@@ -1,21 +1,21 @@
 Index: clients/upsset.c
 --- clients/upsset.c.orig
 +++ clients/upsset.c
-@@ -200,7 +200,7 @@ static void do_pickups(const char *currfunc)
+@@ -218,7 +218,7 @@ static void do_pickups(const char *currfunc)
  	char	hostfn[NUT_PATH_MAX + 1];
  	PCONF_CTX_t	ctx;
  
 -	snprintf(hostfn, sizeof(hostfn), "%s/hosts.conf", confpath());
 +	snprintf(hostfn, sizeof(hostfn), "%s/hosts.conf", cgiconfpath());
  
- 	printf("<FORM METHOD=\"POST\" ACTION=\"upsset.cgi\">\n");
+ 	printf("<FORM METHOD=\"POST\" ACTION=\"upsset.cgi" EXEEXT "\">\n");
  
-@@ -1029,7 +1029,7 @@ static void check_conf(void)
+@@ -1066,7 +1066,7 @@ static void check_conf(void)
  	char	fn[NUT_PATH_MAX + 1];
  	PCONF_CTX_t	ctx;
  
 -	snprintf(fn, sizeof(fn), "%s/upsset.conf", confpath());
 +	snprintf(fn, sizeof(fn), "%s/upsset.conf", cgiconfpath());
+ 	upsdebugx(1, "%s: considering configuration file %s", __func__, fn);
  
  	pconf_init(&ctx, upsset_conf_err);
- 

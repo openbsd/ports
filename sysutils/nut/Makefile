@@ -1,18 +1,18 @@
 COMMENT-main=	UPS monitoring program supporting many brands
 COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
+COMMENT-upower=	driver for monitoring UPS via UPower
 COMMENT-snmp=	driver for monitoring UPS via SNMP
 COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
-V=		2.8.4
-REVISION=	0
+V=		2.8.5
 DISTNAME=	nut-${V:C/-rc.*//}
 PKGNAME=	nut-${V:S/-rc/rc/}
 SITES=		https://github.com/networkupstools/nut/releases/download/v$V/
 
-SHARED_LIBS +=  upsclient            5.0      # .7.0
-SHARED_LIBS +=  nutclient            2.0      # .2.2
-SHARED_LIBS +=  nutclientstub        1.0      # .1.1
-SHARED_LIBS +=  nutscan              4.0      # .4.0
+SHARED_LIBS +=  upsclient            6.0      # .8.0
+SHARED_LIBS +=  nutclient            3.0      # .3.0
+SHARED_LIBS +=  nutclientstub        1.1      # .1.1
+SHARED_LIBS +=  nutscan              5.0      # .5.0
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://networkupstools.org/
@@ -24,6 +24,7 @@ COMPILER=	base-clang ports-gcc
 
 COMMON +=	c crypto kvm pthread
 WANTLIB-main +=	${COMMON} ltdl m ssl ${COMPILER_LIBCXX} usb-1.0
+WANTLIB-upower += c gio-2.0 glib-2.0 gobject-2.0 iconv intl kvm pthread
 WANTLIB-xml +=	${COMMON} expat iconv intl neon proxy ssl z \
 		nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB-snmp +=	${COMMON} m netsnmp ssl
@@ -67,17 +68,23 @@ CONFIGURE_ARGS+= --datadir=${PREFIX}/share/nut \
 		LDFLAGS="${LDFLAGS}"
 
 # for CGI
-PREFIX-cgi=            ${WEB_ROOT}
-BUILD_DEPENDS+=        graphics/gd>=1.8.3
+PREFIX-cgi=		${WEB_ROOT}
+BUILD_DEPENDS+=	graphics/gd>=1.8.3
 CONFIGURE_ARGS+= --with-cgi \
 		--with-cgipath="${WEB_ROOT}/cgi-bin/nut" \
 		--with-gd-libs="-L${X11BASE}/lib -L${PREFIX}/lib \
 		    -lgd -lpng -lz -ljpeg -lm -lfreetype -lX11" \
 		--with-gd-includes="-I${PREFIX}/include"
 
-PSEUDO_FLAVORS=		no_snmp no_xml
+PSEUDO_FLAVORS=		no_snmp no_upower no_xml
 FLAVOR?=
 MULTI_PACKAGES=		-main -cgi
+
+.if ${FLAVOR:Mno_upower}
+CONFIGURE_ARGS+=	--without-upower
+.else
+MULTI_PACKAGES+=	-upower
+.endif
 
 .if ${FLAVOR:Mno_snmp}
 CONFIGURE_ARGS+=	--without-snmp
@@ -96,6 +103,10 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libusb1
 RUN_DEPENDS-main=	# empty
 
+LIB_DEPENDS-upower=	devel/glib2
+RUN_DEPENDS-upower=	${RUN_DEPENDS} \
+			sysutils/nut
+
 LIB_DEPENDS-xml=	net/neon
 RUN_DEPENDS-xml=	${RUN_DEPENDS} \
 			sysutils/nut
@@ -110,13 +121,16 @@ LIB_DEPENDS-cgi=	devel/gettext,-runtime \
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		gnu# -all-static
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nut
-
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nut \
+			conf_examplesdir=${PREFIX}/share/examples/nut
 NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/conf/upssched.conf.sample.in
 	-ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+
+pre-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nut
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${WEB_ROOT}/conf/nut/

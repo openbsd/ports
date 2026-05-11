@@ -7,6 +7,10 @@ conf/nut/hosts.conf.sample
 @sample conf/nut/hosts.conf
 conf/nut/upsset.conf.sample
 @sample conf/nut/upsset.conf
+conf/nut/upsstats-modern-list.html.sample
+@sample conf/nut/upsstats-modern-list.html
+conf/nut/upsstats-modern-single.html.sample
+@sample conf/nut/upsstats-modern-single.html
 conf/nut/upsstats-single.html.sample
 @sample conf/nut/upsstats-single.html
 conf/nut/upsstats.html.sample
@@ -16,3 +20,4 @@ nut/bottom.html
 nut/header.html
 nut/index.html
 nut/nut-banner.png
+nut/nut-logo-60x60.png

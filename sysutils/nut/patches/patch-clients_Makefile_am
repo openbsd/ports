@@ -1,7 +1,7 @@
 Index: clients/Makefile.am
 --- clients/Makefile.am.orig
 +++ clients/Makefile.am
-@@ -110,10 +110,13 @@ upssched_LDADD = \
+@@ -157,12 +157,15 @@ upssched_LDADD += \
  
  upsimage_cgi_SOURCES = upsimage.c upsclient.h upsimagearg.h cgilib.c cgilib.h
  upsimage_cgi_LDADD = $(LDADD) $(LIBGD_LDFLAGS)
@@ -9,9 +9,11 @@ Index: clients/Makefile.am
  
  upsset_cgi_SOURCES = upsset.c upsclient.h cgilib.c cgilib.h
 +upsset_cgi_LDFLAGS = $(LDFLAGS) -all-static
+ 
  upsstats_cgi_SOURCES = upsstats.c upsclient.h status.h upsstats.h	\
   upsimagearg.h cgilib.c cgilib.h
+ upsstats_cgi_LDADD = $(LDADD_CLIENT) $(top_builddir)/common/libcommonstrjson.la
 +upsstats_cgi_LDFLAGS = $(LDFLAGS) -all-static
  
- # not LDADD... why?
- libupsclient_la_SOURCES = upsclient.c upsclient.h
+ ################################## Plain C client library (libupsclient) :
+ 

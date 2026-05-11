@@ -1,0 +1,2 @@
+This NUT driver provides support for monitoring UPS and battery devices
+managed by the UPower daemon via D-Bus.

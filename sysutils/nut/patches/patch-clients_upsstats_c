@@ -1,21 +1,21 @@
 Index: clients/upsstats.c
 --- clients/upsstats.c.orig
 +++ clients/upsstats.c
-@@ -851,7 +851,7 @@ static void display_template(const char *tfn)
- {
- 	char	fn[NUT_PATH_MAX + 1], buf[LARGEBUF];
+@@ -1225,7 +1225,7 @@ static void display_template(const char *tfn, int type
+ 		exit(EXIT_FAILURE);
+ 	}
  
 -	snprintf(fn, sizeof(fn), "%s/%s", confpath(), tfn);
 +	snprintf(fn, sizeof(fn), "%s/%s", cgiconfpath(), tfn);
  
- 	tf = fopen(fn, "r");
+ 	tf = fopen(fn, "rb");
  
-@@ -971,7 +971,7 @@ static void load_hosts_conf(void)
+@@ -1430,7 +1430,7 @@ static void load_hosts_conf(int handle_MONITOR)
  	char	fn[NUT_PATH_MAX + 1];
  	PCONF_CTX_t	ctx;
  
--	snprintf(fn, sizeof(fn), "%s/hosts.conf", CONFPATH);
+-	snprintf(fn, sizeof(fn), "%s/hosts.conf", confpath());
 +	snprintf(fn, sizeof(fn), "%s/hosts.conf", cgiconfpath());
+ 	upsdebugx(1, "%s: considering configuration file %s", __func__, fn);
  
  	pconf_init(&ctx, upsstats_hosts_err);
- 

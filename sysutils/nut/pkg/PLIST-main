@@ -40,6 +40,7 @@
 @bin bin/liebert-esp2
 @bin bin/liebert-gxe
 @bin bin/masterguard
+@bin bin/meanwell_ntu
 @bin bin/metasys
 @bin bin/mge-shut
 @bin bin/mge-utalk
@@ -77,11 +78,6 @@ bin/upssched-cmd
 @bin bin/usbhid-ups
 @bin bin/ve-direct
 @bin bin/victronups
-@comment html/
-@comment html/bottom.html
-@comment html/header.html
-@comment html/index.html
-@comment html/nut-banner.png
 include/nut/
 include/nut/nut-scan.h
 include/nut/nutclient.h
@@ -142,10 +138,40 @@ lib/python${MODPY_VERSION}/site-packages/test_nutclient.py
 @man man/man3/nutclient_set_device_variable_value.3
 @man man/man3/nutclient_set_device_variable_values.3
 @man man/man3/nutclient_tcp_create_client.3
+@man man/man3/nutclient_tcp_create_client_ssl_NSSL.3
+@man man/man3/nutclient_tcp_create_client_ssl_OpenSSL.3
 @man man/man3/nutclient_tcp_disconnect.3
+@man man/man3/nutclient_tcp_get_ssl_cafile.3
+@man man/man3/nutclient_tcp_get_ssl_capath.3
+@man man/man3/nutclient_tcp_get_ssl_caps.3
+@man man/man3/nutclient_tcp_get_ssl_certfile.3
+@man man/man3/nutclient_tcp_get_ssl_certhost_name.3
+@man man/man3/nutclient_tcp_get_ssl_certident_name.3
+@man man/man3/nutclient_tcp_get_ssl_certstore_path.3
+@man man/man3/nutclient_tcp_get_ssl_certstore_prefix.3
+@man man/man3/nutclient_tcp_get_ssl_certverify.3
+@man man/man3/nutclient_tcp_get_ssl_force.3
+@man man/man3/nutclient_tcp_get_ssl_keyfile.3
+@man man/man3/nutclient_tcp_get_ssl_keypass.3
+@man man/man3/nutclient_tcp_get_ssl_try.3
 @man man/man3/nutclient_tcp_get_timeout.3
 @man man/man3/nutclient_tcp_is_connected.3
+@man man/man3/nutclient_tcp_is_ssl.3
 @man man/man3/nutclient_tcp_reconnect.3
+@man man/man3/nutclient_tcp_set_ssl_cafile.3
+@man man/man3/nutclient_tcp_set_ssl_capath.3
+@man man/man3/nutclient_tcp_set_ssl_certfile.3
+@man man/man3/nutclient_tcp_set_ssl_certhost_name.3
+@man man/man3/nutclient_tcp_set_ssl_certident_name.3
+@man man/man3/nutclient_tcp_set_ssl_certstore_path.3
+@man man/man3/nutclient_tcp_set_ssl_certstore_prefix.3
+@man man/man3/nutclient_tcp_set_ssl_certverify.3
+@man man/man3/nutclient_tcp_set_ssl_config_NSS.3
+@man man/man3/nutclient_tcp_set_ssl_config_OpenSSL.3
+@man man/man3/nutclient_tcp_set_ssl_force.3
+@man man/man3/nutclient_tcp_set_ssl_keyfile.3
+@man man/man3/nutclient_tcp_set_ssl_keypass.3
+@man man/man3/nutclient_tcp_set_ssl_try.3
 @man man/man3/nutclient_tcp_set_timeout.3
 @man man/man3/nutscan.3
 @man man/man3/nutscan_add_commented_option_to_device.3
@@ -175,6 +201,13 @@ lib/python${MODPY_VERSION}/site-packages/test_nutclient.py
 @man man/man3/nutscan_scan_usb.3
 @man man/man3/nutscan_scan_xml_http_range.3
 @man man/man3/nutscan_stringify_ip_ranges.3
+@man man/man3/nutscan_upslog_cookie.3
+@man man/man3/nutscan_upslog_get_debug_level.3
+@man man/man3/nutscan_upslog_getproctag.3
+@man man/man3/nutscan_upslog_set_debug_level.3
+@man man/man3/nutscan_upslog_setprocname.3
+@man man/man3/nutscan_upslog_setproctag.3
+@man man/man3/nutscan_upslog_start_sync.3
 @man man/man3/upscli_add_host_cert.3
 @man man/man3/upscli_cleanup.3
 @man man/man3/upscli_connect.3
@@ -188,17 +221,29 @@ lib/python${MODPY_VERSION}/site-packages/test_nutclient.py
 @man man/man3/upscli_list_start.3
 @man man/man3/upscli_readline.3
 @man man/man3/upscli_readline_timeout.3
+@man man/man3/upscli_readline_timeout_may_disconnect.3
+@man man/man3/upscli_report_build_details.3
 @man man/man3/upscli_sendline.3
 @man man/man3/upscli_sendline_timeout.3
+@man man/man3/upscli_sendline_timeout_may_disconnect.3
 @man man/man3/upscli_set_default_connect_timeout.3
 @man man/man3/upscli_splitaddr.3
 @man man/man3/upscli_splitname.3
 @man man/man3/upscli_ssl.3
+@man man/man3/upscli_ssl_caps.3
+@man man/man3/upscli_ssl_caps_descr.3
 @man man/man3/upscli_str_add_unique_token.3
 @man man/man3/upscli_str_contains_token.3
 @man man/man3/upscli_strerror.3
 @man man/man3/upscli_tryconnect.3
 @man man/man3/upscli_upserror.3
+@man man/man3/upscli_upslog_cookie.3
+@man man/man3/upscli_upslog_get_debug_level.3
+@man man/man3/upscli_upslog_getproctag.3
+@man man/man3/upscli_upslog_set_debug_level.3
+@man man/man3/upscli_upslog_setprocname.3
+@man man/man3/upscli_upslog_setproctag.3
+@man man/man3/upscli_upslog_start_sync.3
 @man man/man3/upsclient.3
 @man man/man5/hosts.conf.5
 @man man/man5/nut.conf.5
@@ -239,6 +284,7 @@ lib/python${MODPY_VERSION}/site-packages/test_nutclient.py
 @man man/man8/liebert-gxe.8
 @man man/man8/liebert.8
 @man man/man8/masterguard.8
+@man man/man8/meanwell_ntu.8
 @man man/man8/metasys.8
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
@@ -250,7 +296,7 @@ lib/python${MODPY_VERSION}/site-packages/test_nutclient.py
 @man man/man8/nutdrv_atcl_usb.8
 @man man/man8/nutdrv_hashx.8
 @man man/man8/nutdrv_qx.8
-@man man/man8/nutdrv_siemens_sitop.8
+@man man/man8/nutdrv_siemens-sitop.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
 @man man/man8/optiups.8
@@ -409,9 +455,14 @@ share/doc/nut/images/ci/jenkins-nut.css
 share/doc/nut/images/ci/jenkins-nut.png
 share/doc/nut/images/ci/jenkins-nut.txt
 share/doc/nut/images/ci/jenkins-nut.txt-prepped
+share/doc/nut/images/ci/obs-logo.png
+share/doc/nut/images/ci/obs-logo.svg
+share/doc/nut/images/ci/openSUSEBuildService.png
 share/doc/nut/images/hostedby.png
 share/doc/nut/images/note.png
-share/doc/nut/images/nut-logo.png
+share/doc/nut/images/nut-logo-256x256.png
+share/doc/nut/images/nut-logo-60x60.png
+share/doc/nut/images/nut-logo.svg
 share/doc/nut/images/nut_layering.png
 share/doc/nut/images/old-cgi.png
 share/doc/nut/images/simple.png
@@ -465,8 +516,6 @@ share/examples/nut/upssched.conf.sample
 @sample ${SYSCONFDIR}/upssched.conf
 @mode 700
 @sample /var/db/nut/
-@comment share/examples/nut/upsstats-single.html.sample
-@comment share/examples/nut/upsstats.html.sample
 @mode
 @owner
 share/nut/
