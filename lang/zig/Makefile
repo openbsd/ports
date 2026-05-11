@@ -5,23 +5,17 @@ BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
 
 COMMENT =	zig compiler and toolchain
 
-DISTNAME =	zig-0.15.2
+V =		0.16.0
+DIST_TUPLE = 	codeberg ziglang zig ${V} .
 
-REVISION =	0
-
-GH_ACCOUNT =	ziglang
-GH_PROJECT =	zig
-GH_COMMIT =	${ZIG_COMMIT}
-
-# see https://github.com/ziglang/zig/tree/0.15.x
-ZIG_VERSION =	0.15.2
-ZIG_COMMIT =	e4cbd752c8c05f131051f8c873cff7823177d7d3
+# see https://codeberg.org/ziglang/zig/src/tag/0.16.0
+ZIG_COMMIT =	24fdd5b7a4c1c8b5deb5b56756b9dbc8e08c86a8
 
 CATEGORIES =	lang
 
 HOMEPAGE =	https://ziglang.org/
 
-MAINTAINER =	Brandon Mercer <bmercer@eutonian.com>
+MAINTAINER =	Brandon Mercer <bmercer@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -35,12 +29,14 @@ MODULES +=		devel/cmake
 
 MODULES +=		lang/clang
 MODCLANG_LANGS =	c c++
-MODCLANG_VERSION =	20
+MODCLANG_VERSION =	21
 
 SEPARATE_BUILD =	Yes
 
+WRKDIST =		${WRKDIR}/zig
+
 CONFIGURE_ARGS +=	\
-	-DZIG_VERSION="${ZIG_VERSION}+${ZIG_COMMIT:C/(.........).*/\1/}" \
+	-DZIG_VERSION="${V}+${ZIG_COMMIT:C/(.........).*/\1/}" \
 	-DZIG_STATIC_LLVM=ON \
 	-DZIG_TARGET_TRIPLE=native \
 	-DZIG_TARGET_MCPU=baseline \
@@ -60,9 +56,9 @@ CXXFLAGS +=		${XFLAGS-${MACHINE_ARCH}}
 MAKE_ENV +=	ZIG_GLOBAL_CACHE_DIR=${WRKBUILD}/zig-global-cache \
 		ZIG_LOCAL_CACHE_DIR=${WRKBUILD}/zig-local-cache
 
-# set stacksize limit to 10M during the build
+# set stacksize limit to 16M during the build
 do-build:
-	@ulimit -s 10240 && ${MODCMAKE_BUILD_TARGET}
+	@ulimit -s 16384 && ${MODCMAKE_BUILD_TARGET}
 
 do-install:
 	cp -R ${WRKBUILD}/stage3/* ${PREFIX}
