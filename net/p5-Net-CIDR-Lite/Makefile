@@ -1,6 +1,6 @@
 COMMENT =	Perl extension for merging IPv4 or IPv6 CIDR addresses
 
-DISTNAME =	Net-CIDR-Lite-0.23
+DISTNAME =	Net-CIDR-Lite-0.24
 CPAN_AUTHOR =	STIGTSP
 
 CATEGORIES =	net
