@@ -20,6 +20,7 @@ share/evolution-data-server/ews/
 share/evolution-data-server/ews/windowsZones.xml
 share/evolution/errors/module-ews-configuration.error
 share/locale/as/LC_MESSAGES/evolution-ews.mo
+share/locale/bg/LC_MESSAGES/evolution-ews.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-ews.mo
 share/locale/bs/LC_MESSAGES/evolution-ews.mo
 share/locale/ca/LC_MESSAGES/evolution-ews.mo
@@ -28,6 +29,7 @@ share/locale/da/LC_MESSAGES/evolution-ews.mo
 share/locale/de/LC_MESSAGES/evolution-ews.mo
 share/locale/el/LC_MESSAGES/evolution-ews.mo
 share/locale/en_GB/LC_MESSAGES/evolution-ews.mo
+share/locale/eo/LC_MESSAGES/evolution-ews.mo
 share/locale/es/LC_MESSAGES/evolution-ews.mo
 share/locale/eu/LC_MESSAGES/evolution-ews.mo
 share/locale/fa/LC_MESSAGES/evolution-ews.mo
@@ -41,6 +43,7 @@ share/locale/id/LC_MESSAGES/evolution-ews.mo
 share/locale/it/LC_MESSAGES/evolution-ews.mo
 share/locale/ja/LC_MESSAGES/evolution-ews.mo
 share/locale/ka/LC_MESSAGES/evolution-ews.mo
+share/locale/kk/LC_MESSAGES/evolution-ews.mo
 share/locale/kn/LC_MESSAGES/evolution-ews.mo
 share/locale/lt/LC_MESSAGES/evolution-ews.mo
 share/locale/lv/LC_MESSAGES/evolution-ews.mo
