@@ -2,6 +2,10 @@
 @bin bin/roxterm-config
 @man man/man1/roxterm-config.1
 @man man/man1/roxterm.1
+man/pt_BR/
+man/pt_BR/man1/
+@man man/pt_BR/man1/roxterm-config.1
+@man man/pt_BR/man1/roxterm.1
 share/applications/roxterm.desktop
 share/doc/roxterm/
 share/doc/roxterm/en/
@@ -33,8 +37,13 @@ share/doc/roxterm/ru/index.html
 share/doc/roxterm/uk/
 share/doc/roxterm/uk/index.html
 share/icons/hicolor/scalable/apps/roxterm.svg
+share/locale/ca/LC_MESSAGES/roxterm.mo
+share/locale/de/LC_MESSAGES/roxterm.mo
 share/locale/es/LC_MESSAGES/roxterm.mo
 share/locale/fr/LC_MESSAGES/roxterm.mo
+share/locale/fr_BE/
+share/locale/fr_BE/LC_MESSAGES/
+share/locale/fr_BE/LC_MESSAGES/roxterm.mo
 share/locale/hu/LC_MESSAGES/roxterm.mo
 share/locale/pt/LC_MESSAGES/roxterm.mo
 share/locale/pt_BR/LC_MESSAGES/roxterm.mo
