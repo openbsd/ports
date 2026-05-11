@@ -1,5 +1,6 @@
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
+${P5ARCH}/Crypt/ASN1.pm
 ${P5ARCH}/Crypt/AuthEnc/
 ${P5ARCH}/Crypt/AuthEnc.pm
 ${P5ARCH}/Crypt/AuthEnc/CCM.pm
@@ -7,6 +8,8 @@ ${P5ARCH}/Crypt/AuthEnc/ChaCha20Poly1305.pm
 ${P5ARCH}/Crypt/AuthEnc/EAX.pm
 ${P5ARCH}/Crypt/AuthEnc/GCM.pm
 ${P5ARCH}/Crypt/AuthEnc/OCB.pm
+${P5ARCH}/Crypt/AuthEnc/SIV.pm
+${P5ARCH}/Crypt/AuthEnc/XChaCha20Poly1305.pm
 ${P5ARCH}/Crypt/Checksum/
 ${P5ARCH}/Crypt/Checksum.pm
 ${P5ARCH}/Crypt/Checksum/Adler32.pm
@@ -34,6 +37,7 @@ ${P5ARCH}/Crypt/Cipher/SAFER_K64.pm
 ${P5ARCH}/Crypt/Cipher/SAFER_SK128.pm
 ${P5ARCH}/Crypt/Cipher/SAFER_SK64.pm
 ${P5ARCH}/Crypt/Cipher/SEED.pm
+${P5ARCH}/Crypt/Cipher/SM4.pm
 ${P5ARCH}/Crypt/Cipher/Serpent.pm
 ${P5ARCH}/Crypt/Cipher/Skipjack.pm
 ${P5ARCH}/Crypt/Cipher/Twofish.pm
@@ -49,6 +53,7 @@ ${P5ARCH}/Crypt/Digest/BLAKE2s_160.pm
 ${P5ARCH}/Crypt/Digest/BLAKE2s_224.pm
 ${P5ARCH}/Crypt/Digest/BLAKE2s_256.pm
 ${P5ARCH}/Crypt/Digest/CHAES.pm
+${P5ARCH}/Crypt/Digest/KangarooTwelve.pm
 ${P5ARCH}/Crypt/Digest/Keccak224.pm
 ${P5ARCH}/Crypt/Digest/Keccak256.pm
 ${P5ARCH}/Crypt/Digest/Keccak384.pm
@@ -73,6 +78,7 @@ ${P5ARCH}/Crypt/Digest/SHA512_224.pm
 ${P5ARCH}/Crypt/Digest/SHA512_256.pm
 ${P5ARCH}/Crypt/Digest/SHAKE.pm
 ${P5ARCH}/Crypt/Digest/Tiger192.pm
+${P5ARCH}/Crypt/Digest/TurboSHAKE.pm
 ${P5ARCH}/Crypt/Digest/Whirlpool.pm
 ${P5ARCH}/Crypt/KeyDerivation.pm
 ${P5ARCH}/Crypt/Mac/
@@ -100,8 +106,10 @@ ${P5ARCH}/Crypt/PK/DH.pm
 ${P5ARCH}/Crypt/PK/DSA.pm
 ${P5ARCH}/Crypt/PK/ECC.pm
 ${P5ARCH}/Crypt/PK/Ed25519.pm
+${P5ARCH}/Crypt/PK/Ed448.pm
 ${P5ARCH}/Crypt/PK/RSA.pm
 ${P5ARCH}/Crypt/PK/X25519.pm
+${P5ARCH}/Crypt/PK/X448.pm
 ${P5ARCH}/Crypt/PRNG/
 ${P5ARCH}/Crypt/PRNG.pm
 ${P5ARCH}/Crypt/PRNG/ChaCha20.pm
@@ -116,6 +124,8 @@ ${P5ARCH}/Crypt/Stream/Rabbit.pm
 ${P5ARCH}/Crypt/Stream/Salsa20.pm
 ${P5ARCH}/Crypt/Stream/Sober128.pm
 ${P5ARCH}/Crypt/Stream/Sosemanuk.pm
+${P5ARCH}/Crypt/Stream/XChaCha.pm
+${P5ARCH}/Crypt/Stream/XSalsa20.pm
 ${P5ARCH}/CryptX.pm
 ${P5ARCH}/Math/
 ${P5ARCH}/Math/BigInt/
@@ -123,12 +133,15 @@ ${P5ARCH}/Math/BigInt/LTM.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/CryptX/
 @so ${P5ARCH}/auto/CryptX/CryptX.so
+@man man/man3p/Crypt::ASN1.3p
 @man man/man3p/Crypt::AuthEnc.3p
 @man man/man3p/Crypt::AuthEnc::CCM.3p
 @man man/man3p/Crypt::AuthEnc::ChaCha20Poly1305.3p
 @man man/man3p/Crypt::AuthEnc::EAX.3p
 @man man/man3p/Crypt::AuthEnc::GCM.3p
 @man man/man3p/Crypt::AuthEnc::OCB.3p
+@man man/man3p/Crypt::AuthEnc::SIV.3p
+@man man/man3p/Crypt::AuthEnc::XChaCha20Poly1305.3p
 @man man/man3p/Crypt::Checksum.3p
 @man man/man3p/Crypt::Checksum::Adler32.3p
 @man man/man3p/Crypt::Checksum::CRC32.3p
@@ -154,6 +167,7 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::Cipher::SAFER_SK128.3p
 @man man/man3p/Crypt::Cipher::SAFER_SK64.3p
 @man man/man3p/Crypt::Cipher::SEED.3p
+@man man/man3p/Crypt::Cipher::SM4.3p
 @man man/man3p/Crypt::Cipher::Serpent.3p
 @man man/man3p/Crypt::Cipher::Skipjack.3p
 @man man/man3p/Crypt::Cipher::Twofish.3p
@@ -168,6 +182,7 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::Digest::BLAKE2s_224.3p
 @man man/man3p/Crypt::Digest::BLAKE2s_256.3p
 @man man/man3p/Crypt::Digest::CHAES.3p
+@man man/man3p/Crypt::Digest::KangarooTwelve.3p
 @man man/man3p/Crypt::Digest::Keccak224.3p
 @man man/man3p/Crypt::Digest::Keccak256.3p
 @man man/man3p/Crypt::Digest::Keccak384.3p
@@ -192,6 +207,7 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::Digest::SHA512_256.3p
 @man man/man3p/Crypt::Digest::SHAKE.3p
 @man man/man3p/Crypt::Digest::Tiger192.3p
+@man man/man3p/Crypt::Digest::TurboSHAKE.3p
 @man man/man3p/Crypt::Digest::Whirlpool.3p
 @man man/man3p/Crypt::KeyDerivation.3p
 @man man/man3p/Crypt::Mac.3p
@@ -216,8 +232,10 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::PK::DSA.3p
 @man man/man3p/Crypt::PK::ECC.3p
 @man man/man3p/Crypt::PK::Ed25519.3p
+@man man/man3p/Crypt::PK::Ed448.3p
 @man man/man3p/Crypt::PK::RSA.3p
 @man man/man3p/Crypt::PK::X25519.3p
+@man man/man3p/Crypt::PK::X448.3p
 @man man/man3p/Crypt::PRNG.3p
 @man man/man3p/Crypt::PRNG::ChaCha20.3p
 @man man/man3p/Crypt::PRNG::Fortuna.3p
@@ -230,5 +248,7 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::Stream::Salsa20.3p
 @man man/man3p/Crypt::Stream::Sober128.3p
 @man man/man3p/Crypt::Stream::Sosemanuk.3p
+@man man/man3p/Crypt::Stream::XChaCha.3p
+@man man/man3p/Crypt::Stream::XSalsa20.3p
 @man man/man3p/CryptX.3p
 @man man/man3p/Math::BigInt::LTM.3p
