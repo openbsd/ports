@@ -132,6 +132,7 @@ include/pjlib-util/srv_resolver.h
 include/pjlib-util/string.h
 include/pjlib-util/stun_simple.h
 include/pjlib-util/types.h
+include/pjlib-util/websock.h
 include/pjlib-util/xml.h
 include/pjlib.h
 include/pjmedia/
@@ -183,6 +184,7 @@ include/pjmedia-videodev/opengl_dev.h
 include/pjmedia-videodev/videodev.h
 include/pjmedia-videodev/videodev_imp.h
 include/pjmedia.h
+include/pjmedia/ai_port.h
 include/pjmedia/alaw_ulaw.h
 include/pjmedia/audiodev.h
 include/pjmedia/av_sync.h

@@ -1,7 +1,7 @@
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
 
-V=		2.16
+V=		2.17
 
 GH_ACCOUNT=	pjsip
 GH_PROJECT=	pjproject
@@ -10,7 +10,7 @@ GH_TAGNAME=	$V
 PKGNAME-main=	pjsip-$V
 PKGNAME-pjsua=	pjsua-$V
 
-LIBVER=		2.0
+LIBVER=		3.0
 SHARED_LIBS +=	g7221codec                ${LIBVER}
 SHARED_LIBS +=	ilbccodec                 ${LIBVER}
 SHARED_LIBS +=	pj                        ${LIBVER}
