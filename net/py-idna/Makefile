@@ -1,6 +1,6 @@
 COMMENT=	Python library to support the IDNA protocol
 
-MODPY_DISTV=	3.13
+MODPY_DISTV=	3.14
 DISTNAME=	idna-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
