@@ -1,30 +1,33 @@
 COMMENT=		service interface for assistive technologies
 
 GNOME_PROJECT=		at-spi2-core
-GNOME_VERSION=		2.58.5
+GNOME_VERSION=		2.60.3
 
-SHARED_LIBS += atk-1.0                   21810.4 # 0.25814.1
-SHARED_LIBS += atspi                     1.4 # 0.0.1
-SHARED_LIBS += atk-bridge-2.0            0.4 # 0.0.0
+SHARED_LIBS += atk-1.0                   21810.5 # 0.26012.1
+SHARED_LIBS += atspi                     1.5 # 0.0.1
+SHARED_LIBS += atk-bridge-2.0            0.5 # 0.0.0
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xi Xtst c dbus-1 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += intl
+WANTLIB += X11 XRes Xi Xtst c dbus-1 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 intl
 
 MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
+
+MODGNOME_TOOLS=		gobject-introspection
 MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		textproc/libxml
+
 RUN_DEPENDS=		textproc/libxml
 
 LIB_DEPENDS=		devel/glib2 \
 			x11/dbus
 
-MODGNOME_TOOLS=		gobject-introspection
+CONFIGURE_ARGS=		-Ddefault_bus=dbus-daemon
 
 # connects to DBus
 TEST_IS_INTERACTIVE=	x11

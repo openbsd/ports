@@ -19,7 +19,6 @@ include/at-spi-2.0/atspi/atspi-document.h
 include/at-spi-2.0/atspi/atspi-editabletext.h
 include/at-spi-2.0/atspi/atspi-enum-types.h
 include/at-spi-2.0/atspi/atspi-event-listener.h
-include/at-spi-2.0/atspi/atspi-gmain.h
 include/at-spi-2.0/atspi/atspi-hyperlink.h
 include/at-spi-2.0/atspi/atspi-hypertext.h
 include/at-spi-2.0/atspi/atspi-image.h
@@ -181,6 +180,9 @@ share/locale/ku/LC_MESSAGES/at-spi2-core.mo
 share/locale/li/
 share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/at-spi2-core.mo
+share/locale/lo/
+share/locale/lo/LC_MESSAGES/
+share/locale/lo/LC_MESSAGES/at-spi2-core.mo
 share/locale/lt/LC_MESSAGES/at-spi2-core.mo
 share/locale/lv/LC_MESSAGES/at-spi2-core.mo
 share/locale/mai/LC_MESSAGES/at-spi2-core.mo
