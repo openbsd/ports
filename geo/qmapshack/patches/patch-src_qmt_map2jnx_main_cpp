@@ -1,0 +1,15 @@
+fix build with gdal 3.13
+
+from https://github.com/Maproom/qmapshack/commit/9dc06c5e6c94f48cb3efca12d8fefcb106b5ee01
+Index: src/qmt_map2jnx/main.cpp
+--- src/qmt_map2jnx/main.cpp.orig
++++ src/qmt_map2jnx/main.cpp
+@@ -430,7 +430,7 @@ static void printProgress(int current, int total) {
+   static int nLastTick = -1;
+   int nThisTick = (int)(dfComplete * 40.0);
+ 
+-  nThisTick = MIN(40, MAX(0, nThisTick));
++  nThisTick = std::min(40, std::max(0, nThisTick));
+ 
+   // Have we started a new progress run?
+   if (nThisTick < nLastTick && nLastTick >= 39) {
