@@ -1,8 +1,12 @@
 COMMENT=	software G729A encoder and decoder library
 
-V=		1.1.1
+#SITES.gitlab=	https://gitlab.linphone.org/BC/
+#DIST_TUPLE=	gitlab public bcg729 1.1.1 .
+
+GH_ACCOUNT=	BelledonneCommunications
+GH_PROJECT=	bcg729
+GH_TAGNAME=	1.1.1
 REVISION=	0
-DISTNAME=	bcg729-${V}
 
 SHARED_LIBS +=	bcg729 0.2 # unknown
 
@@ -12,8 +16,6 @@ HOMEPAGE=	https://www.linphone.org/en/bcg729-implementation/
 
 # Dual: GPLv3(only) or commercial
 PERMIT_PACKAGE=	Yes
-
-SITES=		https://gitlab.linphone.org/BC/public/bcg729/-/archive/${V}/
 
 MODULES=	devel/cmake
 CONFIGURE_ARGS=	-DENABLE_TESTS=YES
