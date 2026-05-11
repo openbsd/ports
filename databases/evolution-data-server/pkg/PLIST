@@ -295,6 +295,7 @@ include/evolution-data-server/libedataserver/e-source-backend.h
 include/evolution-data-server/libedataserver/e-source-calendar.h
 include/evolution-data-server/libedataserver/e-source-camel.h
 include/evolution-data-server/libedataserver/e-source-collection.h
+include/evolution-data-server/libedataserver/e-source-conflict-search.h
 include/evolution-data-server/libedataserver/e-source-contacts.h
 include/evolution-data-server/libedataserver/e-source-credentials-provider-impl-oauth2.h
 include/evolution-data-server/libedataserver/e-source-credentials-provider-impl-password.h
@@ -455,7 +456,6 @@ libexec/evolution-data-server/csv2vcard
 @bin libexec/evolution-data-server/evolution-alarm-notify
 @bin libexec/evolution-data-server/evolution-oauth2-handler
 @bin libexec/evolution-data-server/list-sources
-@bin libexec/evolution-scan-gconf-tree-xml
 @bin libexec/evolution-source-registry
 @bin libexec/evolution-user-prompter
 share/GConf/gsettings/evolution-data-server.convert
