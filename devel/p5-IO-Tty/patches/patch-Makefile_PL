@@ -3,7 +3,7 @@ Fix detection of openpty with gcc 4.
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -179,20 +179,8 @@ foreach my $f (sort keys %funcs) {
+@@ -185,20 +185,8 @@ $platform_defines
  #include <fcntl.h>
  
  /* Try platform-specific headers for openpty and friends */
@@ -22,5 +22,5 @@ Index: Makefile.PL
 -#  endif
 -#endif
  
- int
- main ()
+ /* Store the function pointer in a global so the optimizer cannot
+    eliminate the reference.  A local + (void)cast is dead code that
