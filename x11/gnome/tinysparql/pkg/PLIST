@@ -82,6 +82,8 @@ share/doc/Tsparql-3.0/ctor.SparqlConnection.bus_new.html
 share/doc/Tsparql-3.0/ctor.SparqlConnection.bus_new_finish.html
 share/doc/Tsparql-3.0/ctor.SparqlConnection.new.html
 share/doc/Tsparql-3.0/ctor.SparqlConnection.new_finish.html
+share/doc/Tsparql-3.0/ctor.SparqlConnection.new_from_rdf.html
+share/doc/Tsparql-3.0/ctor.SparqlConnection.new_from_rdf_finish.html
 share/doc/Tsparql-3.0/ctor.SparqlConnection.remote_new.html
 share/doc/Tsparql-3.0/dc-ontology.html
 share/doc/Tsparql-3.0/enum.DeserializeFlags.html
@@ -286,6 +288,7 @@ share/doc/Tsparql-3.0/type_func.NamespaceManager.get_default.html
 share/doc/Tsparql-3.0/type_func.Resource.deserialize.html
 share/doc/Tsparql-3.0/type_func.SparqlConnection.bus_new_async.html
 share/doc/Tsparql-3.0/type_func.SparqlConnection.new_async.html
+share/doc/Tsparql-3.0/type_func.SparqlConnection.new_from_rdf_async.html
 share/doc/Tsparql-3.0/type_func.SparqlError.quark.html
 share/doc/Tsparql-3.0/urlmap.js
 share/doc/Tsparql-3.0/xsd-ontology.html
@@ -327,6 +330,7 @@ share/locale/ka/LC_MESSAGES/tinysparql3.mo
 share/locale/kab/LC_MESSAGES/tinysparql3.mo
 share/locale/kk/LC_MESSAGES/tinysparql3.mo
 share/locale/ko/LC_MESSAGES/tinysparql3.mo
+share/locale/kw/LC_MESSAGES/tinysparql3.mo
 share/locale/lt/LC_MESSAGES/tinysparql3.mo
 share/locale/lv/LC_MESSAGES/tinysparql3.mo
 share/locale/mk/LC_MESSAGES/tinysparql3.mo
