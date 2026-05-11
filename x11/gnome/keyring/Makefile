@@ -6,7 +6,7 @@
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		48.0
+GNOME_VERSION=		50.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -27,7 +27,8 @@ RUN_DEPENDS +=		security/pinentry,-gnome3,
 
 CONFIGURE_ARGS=		-Dselinux=disabled \
 			-Dsystemd=disabled \
-			-Dpam=false
+			-Dpam=false \
+			-Dlibcap-ng=disabled
 
 # XXX x11/gnome/gcr4 should be used to provide the ssh-agent functionality;
 # however it requires systemctl to export SSH_AUTH_SOCK and activate
