@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	i386
 
 COMMENT =	monitoring and metric analytics dashboards
 
-V =		12.4.2
+V =		13.0.1
 DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zst
@@ -37,13 +37,11 @@ MODGO_GO111MODULE = on
 MODGO_FLAGS += -ldflags="-w -X main.version=$V"
 
 do-build:
-	mkdir -p ${WRKDIR}/go/src/github.com/grafana
-	ln -s ../../all ${WRKDIR}/go/src/github.com/grafana/grafana
-	cd ${WRKSRC} && ${MODGO_CMD} run ${MODGO_FLAGS} build.go setup
-	cd ${WRKSRC} && ${MODGO_CMD} run ${MODGO_FLAGS} build.go build
+	cd ${WRKSRC} && ${MODGO_CMD} build ${MODGO_FLAGS} \
+		-o ./bin/openbsd/grafana ./pkg/cmd/grafana
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/openbsd-*/grafana{,-{server,cli}} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/openbsd/grafana ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/grafana
 	${SUBST_CMD} ${WRKSRC}/conf/sample.ini
 .for c in sample.ini ldap.toml
