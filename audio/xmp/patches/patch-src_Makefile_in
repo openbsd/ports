@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -431,7 +431,7 @@ xmp_LDADD = ${LIBXMP_LIBS} $(am__append_3) $(am__appen
+@@ -435,7 +435,7 @@ xmp_LDADD = ${LIBXMP_LIBS} $(am__append_3) $(am__appen
  	$(am__append_22) $(am__append_24) $(am__append_26)
  xmp_LDFLAGS = ${XMP_DARWIN_LDFLAGS}
  man_MANS = xmp.1
