@@ -3,9 +3,11 @@ share/applications/space.rirusha.Cassette.desktop
 share/glib-2.0/schemas/space.rirusha.Cassette.gschema.xml
 share/icons/hicolor/scalable/apps/space.rirusha.Cassette.svg
 share/icons/hicolor/symbolic/apps/space.rirusha.Cassette-symbolic.svg
+share/locale/az/LC_MESSAGES/cassette.mo
 share/locale/be/LC_MESSAGES/cassette.mo
 share/locale/de/LC_MESSAGES/cassette.mo
 share/locale/es/LC_MESSAGES/cassette.mo
+share/locale/ka/LC_MESSAGES/cassette.mo
 share/locale/pt/LC_MESSAGES/cassette.mo
 share/locale/pt_BR/LC_MESSAGES/cassette.mo
 share/locale/ru/LC_MESSAGES/cassette.mo
