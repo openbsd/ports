@@ -16,6 +16,8 @@ lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}__version__.${
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}_internal_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}_internal_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}adapters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}adapters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -48,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}utils.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/__version__.py
 lib/python${MODPY_VERSION}/site-packages/requests/_internal_utils.py
+lib/python${MODPY_VERSION}/site-packages/requests/_types.py
 lib/python${MODPY_VERSION}/site-packages/requests/adapters.py
 lib/python${MODPY_VERSION}/site-packages/requests/api.py
 lib/python${MODPY_VERSION}/site-packages/requests/auth.py
@@ -59,6 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/requests/help.py
 lib/python${MODPY_VERSION}/site-packages/requests/hooks.py
 lib/python${MODPY_VERSION}/site-packages/requests/models.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages.py
+lib/python${MODPY_VERSION}/site-packages/requests/py.typed
 lib/python${MODPY_VERSION}/site-packages/requests/sessions.py
 lib/python${MODPY_VERSION}/site-packages/requests/status_codes.py
 lib/python${MODPY_VERSION}/site-packages/requests/structures.py
