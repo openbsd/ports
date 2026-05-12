@@ -3,6 +3,7 @@ COMMENT-tools=	tools for libde265 open H.265 video codec
 
 V=		1.0.18
 DISTNAME=	libde265-$V
+REVISION=	0
 
 SHARED_LIBS +=  de265                     3.0 # 0.12
 

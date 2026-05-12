@@ -1,18 +1,56 @@
-Fix pkg-config Libs.private entry
+- cmake: restore pthread/libm in libde265.pc Libs.private
+  c8a3d1b52ec7322495cee9887d93dcd7e5fc7270
+- force -lpthread instead of -pthread
+  f94b80af588fefb7625d2d190e7d59f9a8700935
+- force -lpthread instead of -pthread
+  d00861b415c4d735bc90078b5c61268239f0b4fa
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -121,11 +121,7 @@ endif()
+@@ -119,15 +119,31 @@ if(CMAKE_COMPILER_IS_GNUCXX OR ${CMAKE_CXX_COMPILER_ID
+   add_definitions(-Wall -Werror=return-type -Werror=unused-result -Werror=reorder)
+ endif()
  
++set(THREADS_PREFER_PTHREAD_FLAG TRUE)
++find_package(Threads REQUIRED)
++
  include(CheckCXXSymbolExists)
  check_cxx_symbol_exists(_LIBCPP_VERSION cstdlib HAVE_LIBCPP)
 -if(HAVE_LIBCPP)
 -  set(LIBS_PRIVATE "-lc++")
 -else()
 -  set(LIBS_PRIVATE "-lstdc++")
--endif()
-+set(LIBS_PRIVATE "-lpthread -lm")
++
++# Build Libs.private contents for libde265.pc.
++set(_libs_private "")
++if(NOT MSVC AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++  if(HAVE_LIBCPP)
++    list(APPEND _libs_private "-lc++")
++  else()
++    list(APPEND _libs_private "-lstdc++")
++  endif()
+ endif()
++# Emit '-lpthread' rather than '-pthread' so consumers using
++# `pkg-config --libs --static` get an unambiguous linker flag (see #453).
++if(CMAKE_USE_PTHREADS_INIT)
++  list(APPEND _libs_private "-lpthread")
++endif()
++if(UNIX)
++  list(APPEND _libs_private "-lm")
++endif()
++string(JOIN " " LIBS_PRIVATE ${_libs_private})
  
- 
+-
  option(BUILD_SHARED_LIBS "Build shared library" ON)
+ if(NOT BUILD_SHARED_LIBS)
+   add_definitions(-DLIBDE265_STATIC_BUILD)
+@@ -143,8 +159,6 @@ include_directories ("${PROJECT_SOURCE_DIR}/libde265")
+ if(MSVC)
+   include_directories ("${PROJECT_SOURCE_DIR}/extra")
+ endif()
+-
+-find_package(Threads)
+ 
+ option(ENABLE_DECODER "Enable Decoder" ON)
+ option(ENABLE_ENCODER "Enable Encoder" OFF)

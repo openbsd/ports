@@ -1,0 +1,17 @@
+- cmake: restore pthread/libm in libde265.pc Libs.private
+  c8a3d1b52ec7322495cee9887d93dcd7e5fc7270
+
+Index: libde265/CMakeLists.txt
+--- libde265/CMakeLists.txt.orig
++++ libde265/CMakeLists.txt
+@@ -106,6 +106,10 @@ endif()
+ 
+ add_library(de265 ${libde265_sources} ${libde265_public_headers} ${ENCODER_OBJECTS} ${X86_OBJECTS} ${ARM_OBJECTS})
+ target_include_directories(de265 PRIVATE ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
++target_link_libraries(de265 PRIVATE Threads::Threads)
++if(UNIX)
++  target_link_libraries(de265 PRIVATE m)
++endif()
+ 
+ write_basic_package_version_file(libde265-config-version.cmake COMPATIBILITY ExactVersion)
+ 
