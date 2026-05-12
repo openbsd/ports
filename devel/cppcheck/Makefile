@@ -34,7 +34,6 @@ MODULES =		lang/python
 
 COMPILER =		base-clang ports-gcc
 MODPY_RUNDEP =		No
-CONFIGURE_STYLE =	none
 
 USE_GMAKE =		Yes
 
