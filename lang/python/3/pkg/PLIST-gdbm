@@ -5,4 +5,4 @@
 @pkgpath lang/python/3.9,-gdbm
 @pkgpath lang/python/3.10,-gdbm
 @pkgpath lang/python/3.11,-gdbm
-@so lib/python3.13/lib-dynload/_gdbm.cpython-313.so
+@so lib/${PY_VERSION}/lib-dynload/_gdbm.${PYC_MAGIC_TAG}.so

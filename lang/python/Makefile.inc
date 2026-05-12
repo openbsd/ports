@@ -150,7 +150,9 @@ MAKE_FLAGS +=	CFLAGS_NODIST='-I${LOCALBASE}/include' LDFLAGS_NODIST='-L${WRKSRC}
 FAKE_FLAGS +=	RANLIB=:
 
 PY_PLATFORM =	openbsd${OSMAJOR}
-SUBST_VARS +=	FULL_VERSION VERSION_SPEC PY_PLATFORM
+PY_VERSION =	python${VERSION}
+PYC_MAGIC_TAG =	cpython-${VERSION:S/.//}
+SUBST_VARS +=	FULL_VERSION PY_PLATFORM PY_VERSION PYC_MAGIC_TAG VERSION VERSION_SPEC
 
 # Python itself is clean, but some dlopen()'d extensions e.g. QtWebKit
 # require W|X mappings and/or don't have the required landing pads for
