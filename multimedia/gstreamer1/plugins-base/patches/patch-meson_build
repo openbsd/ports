@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -412,6 +412,7 @@ else
+@@ -413,6 +413,7 @@ else
  endif
  
  base_platform_dep = []
@@ -9,7 +9,7 @@ Index: meson.build
  # Check for libatomic for use of C11 atomics: some architectures need
  # to link explicitly to this library.
  # TODO: Once meson 1.7 is in use, this can be updated to
-@@ -419,6 +420,7 @@ base_platform_dep = []
+@@ -420,6 +421,7 @@ base_platform_dep = []
  atomic_dep = cc.find_library('atomic', required: false)
  
  base_platform_dep += [atomic_dep]
