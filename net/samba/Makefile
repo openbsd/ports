@@ -1,5 +1,6 @@
 VERSION =		4.24.1
 DISTNAME =		samba-${VERSION}
+REVISION-main =		0
 EPOCH =			0
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
