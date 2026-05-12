@@ -1,6 +1,6 @@
 COMMENT=	transparent persistent cache for the py-requests library
 
-MODPY_DISTV=	1.3.1
+MODPY_DISTV=	1.3.2
 DISTNAME=	requests_cache-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
