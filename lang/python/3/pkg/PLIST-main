@@ -4,6 +4,7 @@
 @conflict python3-*
 @conflict glade-*
 @conflict py3-bsddb3-*
+@conflict py3-backports-zstd-*
 @pkgpath lang/python/3.8,-main
 @pkgpath lang/python/3.9,-main
 @pkgpath lang/python/3.10,-main
@@ -11,6 +12,7 @@
 @pkgpath meta/python3
 @pkgpath devel/glade
 @pkgpath databases/py-bsddb3
+@pkgpath archivers/py-backports-zstd
 bin/pydoc3
 bin/pydoc${VERSION}
 bin/python
