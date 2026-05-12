@@ -1,9 +1,7 @@
 COMMENT=	low-level library to install Python wheel distributions
 
-MODPY_DISTV=	1.0.0
-GH_ACCOUNT=	pypa
-GH_PROJECT=	installer
-GH_TAGNAME=	${MODPY_DISTV}
+MODPY_DISTV=	1.0.1
+DISTNAME=	installer-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	devel
@@ -14,6 +12,7 @@ HOMEPAGE=	https://installer.readthedocs.io/en/stable/
 PERMIT_PACKAGE= Yes
 
 MODULES=	lang/python
+MODPY_PI=	Yes
 MODPY_PYTEST=	Yes
 
 # This port is a BDEP of most py-* ports so must have minimal deps and
