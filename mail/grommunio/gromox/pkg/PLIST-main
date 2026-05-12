@@ -160,7 +160,6 @@ man/man4/user_filter.4gx
 @man man/man7/gromox.7
 man/man7/mapi.7gx
 man/man8/authtry.8gx
-man/man8/cgkrepair.8gx
 man/man8/delivery-queue.8gx
 man/man8/delivery.8gx
 man/man8/event.8gx
@@ -255,7 +254,6 @@ share/gromox/abkt.pak
 share/gromox/conf.php
 share/gromox/cpid.txt
 share/gromox/db.php
-share/gromox/exmdb_list.txt
 share/gromox/folder_names.txt
 share/gromox/fpm-gromox.conf.sample
 share/gromox/gdbinit
