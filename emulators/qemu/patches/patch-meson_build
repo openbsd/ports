@@ -1,4 +1,4 @@
-- support for libnfs API v2
+- block/nfs: add support for libnfs v6
 - localstatedir does not belong under prefix
 - remove hardcoding of optimization
 
