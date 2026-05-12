@@ -60,7 +60,6 @@
      SUBDIR += pecl-lzf,php85
      SUBDIR += pigz
      SUBDIR += pixz
-     SUBDIR += py-backports-zstd
      SUBDIR += py-brotli
      SUBDIR += py-brotlicffi
      SUBDIR += py-compressed_rtf

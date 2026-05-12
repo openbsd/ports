@@ -4,7 +4,7 @@ COMMENT=	compress Flask app responses
 MODPY_DISTV =	1.23
 DISTNAME=	flask_compress-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
@@ -18,8 +18,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools_scm
 
-RUN_DEPENDS =		archivers/py-backports-zstd \
-			archivers/py-brotli \
+RUN_DEPENDS=		archivers/py-brotli \
 			www/py-flask
 
 TEST_DEPENDS =		www/py-flask-caching
