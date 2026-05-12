@@ -1,6 +1,6 @@
 COMMENT =		Tool Command Language
 
-P =			17
+P =			18
 DISTNAME =		tcl8.6.${P}
 PKGNAME =		tcl-8.6.${P}
 PKGSTEM = 		tcl-8.6
@@ -50,9 +50,7 @@ TESTFLAGS =
 
 # The fCmd-9.4.b test will always fail;
 # OpenBSD won't allow overwriting a read-only directory.
-# Some cmdAH tests are broken:
-# https://core.tcl-lang.org/tcl/tktview/45bfbebe46
-TESTFLAGS += -skip 'fCmd-9.4.b cmdAH-1[67].[23] cmdAH-18.3'
+TESTFLAGS += -skip 'fCmd-9.4.b'
 
 pre-configure:
 	@${SUBST_CMD} ${WRKDIST}/library/init.tcl
