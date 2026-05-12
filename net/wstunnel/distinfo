@@ -463,7 +463,7 @@ SHA256 (cargo/zerotrie-0.2.4.tar.gz) = D5FS0x2weS+oP3D7L4MUjv+1wfW4x2hsNFnjYdm8I
 SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXsjk=
 SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhNvVKpLEBVU=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (wstunnel-10.5.4.tar.gz) = GBW2SkcRTk10Sby3bikqB8Djo8rlO+FDReu2TrrT47Q=
+SHA256 (wstunnel-10.5.5.tar.gz) = xLZ1uthmjLhqmelrbjQ6i848Y4L1TCZodTM6rKIJsfk=
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/android_system_properties-0.1.5.tar.gz) = 5243
@@ -929,4 +929,4 @@ SIZE (cargo/zerotrie-0.2.4.tar.gz) = 83690
 SIZE (cargo/zerovec-0.11.6.tar.gz) = 128583
 SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (wstunnel-10.5.4.tar.gz) = 1721726
+SIZE (wstunnel-10.5.5.tar.gz) = 1721833
