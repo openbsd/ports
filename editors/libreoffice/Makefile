@@ -234,7 +234,7 @@ WANTLIB-main += gstreamer-1.0 gstvideo-1.0 gtk-3 harfbuzz harfbuzz-icu
 WANTLIB-main += hunspell-1.7 iconv icudata icui18n icuuc intl jpeg
 WANTLIB-main += lber lcms2 ldap m mariadb nspr4 nss3 nssutil3 pango-1.0
 WANTLIB-main += pangocairo-1.0 plc4 plds4 png poppler poppler-cpp pq
-WANTLIB-main += python3.13 raptor2 rdf revenge-0.0 smime3 ssl ssl3
+WANTLIB-main += ${MODPY_WANTLIB} raptor2 rdf revenge-0.0 smime3 ssl ssl3
 WANTLIB-main += tiff util webp wpd-0.10 xml2 xslt z zstd
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
