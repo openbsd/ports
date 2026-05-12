@@ -29,6 +29,9 @@ share/wycheproof/go.mod
 share/wycheproof/go.sum
 share/wycheproof/schemas/
 share/wycheproof/schemas/aead_test_schema_v1.json
+share/wycheproof/schemas/bls_aggregate_verify_schema.json
+share/wycheproof/schemas/bls_hash_to_g2_schema.json
+share/wycheproof/schemas/bls_sig_verify_schema.json
 share/wycheproof/schemas/common.json
 share/wycheproof/schemas/daead_test_schema_v1.json
 share/wycheproof/schemas/dsa_common.json
@@ -61,6 +64,7 @@ share/wycheproof/schemas/mlkem_encaps_test_schema.json
 share/wycheproof/schemas/mlkem_keygen_seed_test_schema.json
 share/wycheproof/schemas/mlkem_semi_expanded_decaps_test_schema.json
 share/wycheproof/schemas/mlkem_test_schema.json
+share/wycheproof/schemas/pbkdf_test_schema.json
 share/wycheproof/schemas/primality_test_schema_v1.json
 share/wycheproof/schemas/rsa_common.json
 share/wycheproof/schemas/rsaes_oaep_decrypt_schema_v1.json
@@ -124,6 +128,10 @@ share/wycheproof/testvectors_v1/aria_wrap_test.json
 share/wycheproof/testvectors_v1/ascon128_test.json
 share/wycheproof/testvectors_v1/ascon128a_test.json
 share/wycheproof/testvectors_v1/ascon80pq_test.json
+share/wycheproof/testvectors_v1/bls_hash_to_g2_test.json
+share/wycheproof/testvectors_v1/bls_sig_g2_aggregate_verify_test.json
+share/wycheproof/testvectors_v1/bls_sig_g2_basic_verify_test.json
+share/wycheproof/testvectors_v1/bls_sig_g2_pop_verify_test.json
 share/wycheproof/testvectors_v1/camellia_cbc_pkcs5_test.json
 share/wycheproof/testvectors_v1/camellia_ccm_test.json
 share/wycheproof/testvectors_v1/camellia_cmac_test.json
