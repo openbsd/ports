@@ -4,7 +4,7 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	skim-rs
 GH_PROJECT =	skim
-GH_TAGNAME =	v0.20.5
+GH_TAGNAME =	v4.6.1
 
 MAINTAINER =            Laurence Tratt <laurie@tratt.net>
 
