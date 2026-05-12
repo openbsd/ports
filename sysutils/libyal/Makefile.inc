@@ -9,8 +9,6 @@ PERMIT_PACKAGE =	Yes
 
 SITES =	https://github.com/libyal/${BASENAME}/releases/download/${VERSION}/
 
-MODULES =		lang/python
-
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/py-setuptools
 

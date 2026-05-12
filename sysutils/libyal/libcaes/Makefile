@@ -10,6 +10,8 @@ SHARED_LIBS +=		caes			0.0 # 1.0
 WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += crypto iconv intl m pthread ssl util
 
+MODULES =		lang/python
+
 CONFIGURE_ARGS +=	--prefix='${PREFIX}' \
 			--mandir=${PREFIX}/man \
 			--enable-python \

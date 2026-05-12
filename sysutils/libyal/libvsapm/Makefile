@@ -10,6 +10,8 @@ SHARED_LIBS +=  vsapm				0.0 # 1.0
 WANTLIB += bfio c iconv intl m pthread util
 WANTLIB += ${MODPY_WANTLIB}
 
+MODULES =		lang/python
+
 CONFIGURE_ARGS +=	--enable-python \
 			AWK=/usr/bin/awk
 

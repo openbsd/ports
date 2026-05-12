@@ -10,6 +10,8 @@ SHARED_LIBS +=		creg			0.0 # 1.0
 WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += c fuse iconv intl m pthread util
 
+MODULES =		lang/python
+
 CONFIGURE_ARGS +=	--prefix='${PREFIX}' \
 			--mandir=${PREFIX}/man \
 			--enable-python \

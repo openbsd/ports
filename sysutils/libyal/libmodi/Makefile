@@ -10,6 +10,8 @@ SHARED_LIBS +=  modi			0.0 # 1.0
 WANTLIB += bfio c crypto fuse iconv intl m pthread util ssl
 WANTLIB += bz2 lzma z ${MODPY_WANTLIB}
 
+MODULES =		lang/python
+
 CONFIGURE_ARGS +=	--enable-python \
 			AWK=/usr/bin/awk
 
