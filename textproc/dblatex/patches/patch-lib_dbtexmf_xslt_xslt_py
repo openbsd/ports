@@ -1,0 +1,43 @@
+https://sourceforge.net/p/dblatex/patches/12/
+dblatex-0.3.12-replace-imp-by-importlib.patch
+
+https://sourceforge.net/p/dblatex/patches/13/
+dblatex-0.3.12-adjust-submodule-imports.patch
+
+Index: lib/dbtexmf/xslt/xslt.py
+--- lib/dbtexmf/xslt/xslt.py.orig
++++ lib/dbtexmf/xslt/xslt.py
+@@ -2,20 +2,22 @@
+ # Very simple plugin loader for Xslt classes
+ #
+ import os
+-import imp
++import importlib.machinery
++import importlib.util
+ import glob
++import sys
+ 
+ def load(modname):
+-    try:
+-        file, path, descr = imp.find_module(modname, [""])
+-    except ImportError:
+-        try:
+-            file, path, descr = imp.find_module(modname,
+-                                                [os.path.dirname(__file__)])
+-        except ImportError:
+-            raise ValueError("Xslt '%s' not found" % modname)
+-    mod = imp.load_module(modname, file, path, descr)
+-    file.close()
++    spec = importlib.machinery.PathFinder.find_spec(modname, [""])
++    if not spec:
++        spec = importlib.machinery.PathFinder.find_spec(modname,
++                                                        [os.path.dirname(__file__)])
++    if not spec:
++        raise ValueError("Xslt '%s' not found" % modname)
++
++    mod = importlib.util.module_from_spec(spec)
++    spec.loader.exec_module(mod)
++    sys.modules[modname] = mod
+     o = mod.Xslt()
+     return o
+ 

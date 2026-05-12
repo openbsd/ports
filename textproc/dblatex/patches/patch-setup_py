@@ -1,13 +1,32 @@
-Install the unzipped manpage in the right place.
-
---- setup.py.orig	Fri Sep 24 10:51:29 2010
-+++ setup.py	Fri Sep 24 10:52:44 2010
-@@ -405,7 +405,7 @@ if __name__ == "__main__":
-         data_files=[('share/dblatex', ['xsl', 'latex']),
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -200,7 +200,7 @@ class Build(build):
+             return
+ 
+         # Assumes that make is the GNU make
+-        cmd = ["make", "-C", "docs", "VERSION=%s" % (get_version())]
++        cmd = ["gmake", "-C", "docs", "VERSION=%s" % (get_version())]
+         if self.docbook_xsl:
+             cmd.append("XSLDBK=%s" % os.path.abspath(self.docbook_xsl))
+ 
+@@ -389,9 +389,7 @@ class Install(install):
+ 
+         if db: db.adapt_paths()
+ 
+-        # If no build is required, at least build the script
+-        if self.skip_build:
+-            self.run_command('build_scripts')
++        self.run_command('build_scripts')
+ 
+         install.run(self)
+ 
+@@ -515,7 +513,7 @@ if __name__ == "__main__":
+         data_files=[('share/dblatex', ['xsl', 'latex', 'etc/schema']),
                      ('share/doc/dblatex', pdfdocs),
                      ('share/doc/dblatex', htmldoc),
 -                    ('share/man/man1', ['docs/manpage/dblatex.1.gz'])],
-+                    ('man/man1', ['docs/manpage/dblatex.1'])],
++                    ('man/man1', ['docs/manpage/dblatex.1.gz'])],
          scripts=['scripts/dblatex'],
-         cmdclass={'build_scripts': BuildScripts,
-                   'install': Install,
+         cmdclass={'build': Build,
+                   'build_scripts': BuildScripts,

@@ -1,6 +1,7 @@
 COMMENT =		convert DocBook to LaTeX, DVI, PostScript, and PDF
-DISTNAME =		dblatex-0.3
-REVISION =		10
+V =			0.3.12
+DISTNAME =		dblatex3-$V
+PKGNAME =		dblatex-$V
 CATEGORIES =		textproc
 
 # GPLv2+
@@ -11,10 +12,9 @@ SITES =			${SITE_SOURCEFORGE:=dblatex/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-MODPY_DISTUTILS_INSTALL =install --prefix=${LOCALBASE} \
-				--root=${DESTDIR} \
-				--catalogs=${LOCALBASE}/share/xsl/docbook
+MODPY_PYBUILD =		setuptools
+USE_GMAKE =		Yes
+MODPY_PYBUILD_ARGS =	--config-setting=docbook_xsl=${LOCALBASE}/share/xsl/docbook
 
 RUN_DEPENDS =		print/texlive/texmf,-full \
 			textproc/docbook-xsl \
@@ -22,15 +22,12 @@ RUN_DEPENDS =		print/texlive/texmf,-full \
 BUILD_DEPENDS =		print/texlive/base \
 			textproc/docbook-xsl \
 			graphics/ImageMagick
-NO_TEST =		Yes
-
-SUBST_VARS +=		LOCALBASE MODPY_BIN
-
-post-extract:
-	@cd ${WRKSRC}/docs/manpage/ && gunzip dblatex.1.gz
 
 post-install:
-	@rm -r ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/contrib
 	${SUBST_PROGRAM} ${FILESDIR}/dblatex ${PREFIX}/bin/dblatex
+	gunzip ${PREFIX}/man/man1/dblatex.1.gz
+
+do-test:
+	cd ${WRKSRC}/tests/mathml; gmake
 
 .include <bsd.port.mk>
