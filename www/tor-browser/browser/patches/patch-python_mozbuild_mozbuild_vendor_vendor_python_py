@@ -1,0 +1,16 @@
+https://hg-edge.mozilla.org/mozilla-central/rev/d4b3eb4f76e8
+
+Index: python/mozbuild/mozbuild/vendor/vendor_python.py
+--- python/mozbuild/mozbuild/vendor/vendor_python.py.orig
++++ python/mozbuild/mozbuild/vendor/vendor_python.py
+@@ -40,6 +40,10 @@ EXCLUDED_PACKAGES = {
+     # modified 'dummy' version of it so that the dependency checks still succeed, but
+     # if it ever is attempted to be used, it will fail gracefully.
+     "ansicon",
++    # jsonschema 4.17.3 is incompatible with Python 3.14+,
++    # but later versions use a dependency with Rust components, which we thus can't vendor.
++    # For now we apply the minimal patch to jsonschema to make it work again.
++    "jsonschema",
+ }
+ 
+ 

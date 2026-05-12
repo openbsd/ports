@@ -1,0 +1,18 @@
+https://hg-edge.mozilla.org/mozilla-central/rev/d4b3eb4f76e8
+
+Index: third_party/python/jsonschema/jsonschema/validators.py
+--- third_party/python/jsonschema/jsonschema/validators.py.orig
++++ third_party/python/jsonschema/jsonschema/validators.py
+@@ -875,8 +875,11 @@ class RefResolver:
+             return None
+         uri, fragment = urldefrag(url)
+         for subschema in subschemas:
++            id = subschema["$id"]
++            if not isinstance(id, str):
++                continue
+             target_uri = self._urljoin_cache(
+-                self.resolution_scope, subschema["$id"],
++                self.resolution_scope, id,
+             )
+             if target_uri.rstrip("/") == uri.rstrip("/"):
+                 if fragment:
