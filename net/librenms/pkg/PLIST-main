@@ -11810,8 +11810,8 @@ librenms/resources/definitions/os_detection/fs-switch.yaml
 librenms/resources/definitions/os_detection/ftd.yaml
 librenms/resources/definitions/os_detection/ftos.yaml
 librenms/resources/definitions/os_detection/fujifilmprinter.yaml
+librenms/resources/definitions/os_detection/fujitsu-irmc.yaml
 librenms/resources/definitions/os_detection/fujitsueternusos.yaml
-librenms/resources/definitions/os_detection/fujitsuiRMC.yaml
 librenms/resources/definitions/os_detection/fujitsupyos.yaml
 librenms/resources/definitions/os_detection/fusion.yaml
 librenms/resources/definitions/os_detection/fusionhub.yaml
@@ -12565,7 +12565,7 @@ librenms/resources/definitions/os_discovery/fs-switch.yaml
 librenms/resources/definitions/os_discovery/ftd.yaml
 librenms/resources/definitions/os_discovery/ftos.yaml
 librenms/resources/definitions/os_discovery/fujifilmprinter.yaml
-librenms/resources/definitions/os_discovery/fujitsuiRMC.yaml
+librenms/resources/definitions/os_discovery/fujitsu-irmc.yaml
 librenms/resources/definitions/os_discovery/fujitsupyos.yaml
 librenms/resources/definitions/os_discovery/fusion.yaml
 librenms/resources/definitions/os_discovery/fusionhub.yaml
