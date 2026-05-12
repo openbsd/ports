@@ -3,12 +3,6 @@ ${RUST_COMMENT}@pkgpath shells/fish
 @shell bin/fish
 @bin bin/fish_indent
 @bin bin/fish_key_reader
-etc/
-etc/fish/
-etc/fish/completions/
-etc/fish/conf.d/
-etc/fish/config.fish
-etc/fish/functions/
 @man man/man1/fish-completions.1
 @man man/man1/fish-doc.1
 @man man/man1/fish-faq.1
@@ -1300,6 +1294,7 @@ share/fish/functions/__fish_complete_ppp_peer.fish
 share/fish/functions/__fish_complete_proc.fish
 share/fish/functions/__fish_complete_ssh.fish
 share/fish/functions/__fish_complete_subcommand.fish
+share/fish/functions/__fish_complete_sudo.fish
 share/fish/functions/__fish_complete_suffix.fish
 share/fish/functions/__fish_complete_user_at_hosts.fish
 share/fish/functions/__fish_complete_user_ids.fish
@@ -1318,6 +1313,7 @@ share/fish/functions/__fish_contains_opt.fish
 share/fish/functions/__fish_crux_packages.fish
 share/fish/functions/__fish_cursor_konsole.fish
 share/fish/functions/__fish_cursor_xterm.fish
+share/fish/functions/__fish_cygwin_noacl.fish
 share/fish/functions/__fish_data_with_directory.fish
 share/fish/functions/__fish_describe_command.fish
 share/fish/functions/__fish_echo.fish
@@ -1327,6 +1323,7 @@ share/fish/functions/__fish_git_prompt.fish
 share/fish/functions/__fish_gnu_complete.fish
 share/fish/functions/__fish_hg_prompt.fish
 share/fish/functions/__fish_indent.fish
+share/fish/functions/__fish_is_cygwin.fish
 share/fish/functions/__fish_is_first_arg.fish
 share/fish/functions/__fish_is_first_token.fish
 share/fish/functions/__fish_is_git_repository.fish

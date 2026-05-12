@@ -1,6 +1,6 @@
 COMMENT =		friendly interactive shell
 
-V =			4.6.0
+V =			4.7.1
 
 DISTNAME =		fish-${V}
 
@@ -65,6 +65,7 @@ post-install:
 	${MODPY_COMPILEALL} ${PREFIX}/share/fish/tools
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fish
 	${INSTALL_DATA} ${WRKSRC}/etc/config.fish ${PREFIX}/share/examples/fish/
+	rm -rf ${PREFIX}/etc
 
 pre-test:
 	ln -fs ${LOCALBASE}/bin/ghead ${WRKDIR}/bin/head
