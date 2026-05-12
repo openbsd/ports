@@ -78,8 +78,8 @@ WANTLIB-main +=		bz2 c crypto expat ffi intl m curses panel pthread \
 			readline sqlite3 ssl util z
 .if ${VERSION} != "2.7"
 LIB_DEPENDS-main +=	archivers/xz \
-			security/libb2
-WANTLIB-main +=		b2 lzma
+			archivers/zstd
+WANTLIB-main +=		lzma zstd
 .endif
 
 WANTLIB-tests =
@@ -201,6 +201,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/2to3 \
 		${PREFIX}/bin/python${VERSION}-2to3
 .else
+	cd ${PREFIX}/bin && ln -sf python3 python
 	rm -f ${PREFIX}/bin/pip3 # in devel/py-pip
 .endif
 	if [ -e ${FILESDIR}/EXTERNALLY-MANAGED ]; then \

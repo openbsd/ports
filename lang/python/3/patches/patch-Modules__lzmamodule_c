@@ -11,7 +11,7 @@ https://github.com/python/cpython/pull/148479
 Index: Modules/_lzmamodule.c
 --- Modules/_lzmamodule.c.orig
 +++ Modules/_lzmamodule.c
-@@ -1112,6 +1112,7 @@ decompress(Decompressor *d, uint8_t *data, size_t len,
+@@ -1120,6 +1120,7 @@ decompress(Decompressor *d, uint8_t *data, size_t len,
      return result;
  
  error:

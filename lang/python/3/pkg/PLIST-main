@@ -13,6 +13,7 @@
 @pkgpath databases/py-bsddb3
 bin/pydoc3
 bin/pydoc${VERSION}
+bin/python
 bin/python3
 bin/python3-config
 @bin bin/${PY_VERSION}
@@ -20,6 +21,7 @@ bin/${PY_VERSION}-config
 include/${PY_VERSION}/
 include/${PY_VERSION}/Python.h
 include/${PY_VERSION}/abstract.h
+include/${PY_VERSION}/audit.h
 include/${PY_VERSION}/bltinmodule.h
 include/${PY_VERSION}/boolobject.h
 include/${PY_VERSION}/bytearrayobject.h
@@ -30,6 +32,7 @@ include/${PY_VERSION}/compile.h
 include/${PY_VERSION}/complexobject.h
 include/${PY_VERSION}/cpython/
 include/${PY_VERSION}/cpython/abstract.h
+include/${PY_VERSION}/cpython/audit.h
 include/${PY_VERSION}/cpython/bytearrayobject.h
 include/${PY_VERSION}/cpython/bytesobject.h
 include/${PY_VERSION}/cpython/cellobject.h
@@ -81,7 +84,6 @@ include/${PY_VERSION}/cpython/pythonrun.h
 include/${PY_VERSION}/cpython/pythread.h
 include/${PY_VERSION}/cpython/pytime.h
 include/${PY_VERSION}/cpython/setobject.h
-include/${PY_VERSION}/cpython/sysmodule.h
 include/${PY_VERSION}/cpython/traceback.h
 include/${PY_VERSION}/cpython/tracemalloc.h
 include/${PY_VERSION}/cpython/tupleobject.h
@@ -116,12 +118,14 @@ include/${PY_VERSION}/internal/pycore_asdl.h
 include/${PY_VERSION}/internal/pycore_ast.h
 include/${PY_VERSION}/internal/pycore_ast_state.h
 include/${PY_VERSION}/internal/pycore_atexit.h
+include/${PY_VERSION}/internal/pycore_audit.h
 include/${PY_VERSION}/internal/pycore_backoff.h
 include/${PY_VERSION}/internal/pycore_bitutils.h
 include/${PY_VERSION}/internal/pycore_blocks_output_buffer.h
 include/${PY_VERSION}/internal/pycore_brc.h
 include/${PY_VERSION}/internal/pycore_bytes_methods.h
 include/${PY_VERSION}/internal/pycore_bytesobject.h
+include/${PY_VERSION}/internal/pycore_c_array.h
 include/${PY_VERSION}/internal/pycore_call.h
 include/${PY_VERSION}/internal/pycore_capsule.h
 include/${PY_VERSION}/internal/pycore_cell.h
@@ -135,6 +139,8 @@ include/${PY_VERSION}/internal/pycore_condvar.h
 include/${PY_VERSION}/internal/pycore_context.h
 include/${PY_VERSION}/internal/pycore_critical_section.h
 include/${PY_VERSION}/internal/pycore_crossinterp.h
+include/${PY_VERSION}/internal/pycore_crossinterp_data_registry.h
+include/${PY_VERSION}/internal/pycore_debug_offsets.h
 include/${PY_VERSION}/internal/pycore_descrobject.h
 include/${PY_VERSION}/internal/pycore_dict.h
 include/${PY_VERSION}/internal/pycore_dict_state.h
@@ -150,6 +156,7 @@ include/${PY_VERSION}/internal/pycore_flowgraph.h
 include/${PY_VERSION}/internal/pycore_format.h
 include/${PY_VERSION}/internal/pycore_frame.h
 include/${PY_VERSION}/internal/pycore_freelist.h
+include/${PY_VERSION}/internal/pycore_freelist_state.h
 include/${PY_VERSION}/internal/pycore_function.h
 include/${PY_VERSION}/internal/pycore_gc.h
 include/${PY_VERSION}/internal/pycore_genobject.h
@@ -160,19 +167,24 @@ include/${PY_VERSION}/internal/pycore_global_objects_fini_generated.h
 include/${PY_VERSION}/internal/pycore_global_strings.h
 include/${PY_VERSION}/internal/pycore_hamt.h
 include/${PY_VERSION}/internal/pycore_hashtable.h
-include/${PY_VERSION}/internal/pycore_identifier.h
 include/${PY_VERSION}/internal/pycore_import.h
 include/${PY_VERSION}/internal/pycore_importdl.h
+include/${PY_VERSION}/internal/pycore_index_pool.h
 include/${PY_VERSION}/internal/pycore_initconfig.h
 include/${PY_VERSION}/internal/pycore_instruction_sequence.h
 include/${PY_VERSION}/internal/pycore_instruments.h
 include/${PY_VERSION}/internal/pycore_interp.h
+include/${PY_VERSION}/internal/pycore_interp_structs.h
+include/${PY_VERSION}/internal/pycore_interpframe.h
+include/${PY_VERSION}/internal/pycore_interpframe_structs.h
+include/${PY_VERSION}/internal/pycore_interpolation.h
 include/${PY_VERSION}/internal/pycore_intrinsics.h
 include/${PY_VERSION}/internal/pycore_jit.h
 include/${PY_VERSION}/internal/pycore_list.h
 include/${PY_VERSION}/internal/pycore_llist.h
 include/${PY_VERSION}/internal/pycore_lock.h
 include/${PY_VERSION}/internal/pycore_long.h
+include/${PY_VERSION}/internal/pycore_magic_number.h
 include/${PY_VERSION}/internal/pycore_memoryobject.h
 include/${PY_VERSION}/internal/pycore_mimalloc.h
 include/${PY_VERSION}/internal/pycore_modsupport.h
@@ -180,6 +192,7 @@ include/${PY_VERSION}/internal/pycore_moduleobject.h
 include/${PY_VERSION}/internal/pycore_namespace.h
 include/${PY_VERSION}/internal/pycore_object.h
 include/${PY_VERSION}/internal/pycore_object_alloc.h
+include/${PY_VERSION}/internal/pycore_object_deferred.h
 include/${PY_VERSION}/internal/pycore_object_stack.h
 include/${PY_VERSION}/internal/pycore_object_state.h
 include/${PY_VERSION}/internal/pycore_obmalloc.h
@@ -208,27 +221,33 @@ include/${PY_VERSION}/internal/pycore_range.h
 include/${PY_VERSION}/internal/pycore_runtime.h
 include/${PY_VERSION}/internal/pycore_runtime_init.h
 include/${PY_VERSION}/internal/pycore_runtime_init_generated.h
+include/${PY_VERSION}/internal/pycore_runtime_structs.h
 include/${PY_VERSION}/internal/pycore_semaphore.h
 include/${PY_VERSION}/internal/pycore_setobject.h
 include/${PY_VERSION}/internal/pycore_signal.h
 include/${PY_VERSION}/internal/pycore_sliceobject.h
 include/${PY_VERSION}/internal/pycore_stackref.h
+include/${PY_VERSION}/internal/pycore_stats.h
 include/${PY_VERSION}/internal/pycore_strhex.h
+include/${PY_VERSION}/internal/pycore_structs.h
 include/${PY_VERSION}/internal/pycore_structseq.h
 include/${PY_VERSION}/internal/pycore_symtable.h
 include/${PY_VERSION}/internal/pycore_sysmodule.h
+include/${PY_VERSION}/internal/pycore_template.h
 include/${PY_VERSION}/internal/pycore_time.h
 include/${PY_VERSION}/internal/pycore_token.h
 include/${PY_VERSION}/internal/pycore_traceback.h
 include/${PY_VERSION}/internal/pycore_tracemalloc.h
 include/${PY_VERSION}/internal/pycore_tstate.h
 include/${PY_VERSION}/internal/pycore_tuple.h
+include/${PY_VERSION}/internal/pycore_typedefs.h
 include/${PY_VERSION}/internal/pycore_typeobject.h
 include/${PY_VERSION}/internal/pycore_typevarobject.h
 include/${PY_VERSION}/internal/pycore_ucnhash.h
 include/${PY_VERSION}/internal/pycore_unicodeobject.h
 include/${PY_VERSION}/internal/pycore_unicodeobject_generated.h
 include/${PY_VERSION}/internal/pycore_unionobject.h
+include/${PY_VERSION}/internal/pycore_uniqueid.h
 include/${PY_VERSION}/internal/pycore_uop_ids.h
 include/${PY_VERSION}/internal/pycore_uop_metadata.h
 include/${PY_VERSION}/internal/pycore_warnings.h
@@ -275,6 +294,7 @@ include/${PY_VERSION}/pythonrun.h
 include/${PY_VERSION}/pythread.h
 include/${PY_VERSION}/pytypedefs.h
 include/${PY_VERSION}/rangeobject.h
+include/${PY_VERSION}/refcount.h
 include/${PY_VERSION}/setobject.h
 include/${PY_VERSION}/sliceobject.h
 include/${PY_VERSION}/structmember.h
@@ -324,6 +344,9 @@ lib/${PY_VERSION}/__pycache__/_android_support.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/__pycache__/_apple_support.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/__pycache__/_apple_support.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/__pycache__/_apple_support.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/__pycache__/_ast_unparse.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/__pycache__/_ast_unparse.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/__pycache__/_ast_unparse.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/__pycache__/_collections_abc.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/__pycache__/_collections_abc.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/__pycache__/_collections_abc.${PYC_MAGIC_TAG}.pyc
@@ -333,9 +356,6 @@ lib/${PY_VERSION}/__pycache__/_colorize.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/__pycache__/_compat_pickle.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/__pycache__/_compat_pickle.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/__pycache__/_compat_pickle.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/__pycache__/_compression.${PYC_MAGIC_TAG}.opt-1.pyc
-lib/${PY_VERSION}/__pycache__/_compression.${PYC_MAGIC_TAG}.opt-2.pyc
-lib/${PY_VERSION}/__pycache__/_compression.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/__pycache__/_ios_support.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/__pycache__/_ios_support.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/__pycache__/_ios_support.${PYC_MAGIC_TAG}.pyc
@@ -351,6 +371,9 @@ lib/${PY_VERSION}/__pycache__/_osx_support.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/__pycache__/_py_abc.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/__pycache__/_py_abc.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/__pycache__/_py_abc.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/__pycache__/_py_warnings.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/__pycache__/_py_warnings.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/__pycache__/_py_warnings.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/__pycache__/_pydatetime.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/__pycache__/_pydatetime.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/__pycache__/_pydatetime.${PYC_MAGIC_TAG}.pyc
@@ -381,6 +404,9 @@ lib/${PY_VERSION}/__pycache__/_weakrefset.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/__pycache__/abc.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/__pycache__/abc.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/__pycache__/abc.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/__pycache__/annotationlib.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/__pycache__/annotationlib.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/__pycache__/annotationlib.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/__pycache__/antigravity.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/__pycache__/antigravity.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/__pycache__/antigravity.${PYC_MAGIC_TAG}.pyc
@@ -684,9 +710,6 @@ lib/${PY_VERSION}/__pycache__/stat.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/__pycache__/statistics.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/__pycache__/statistics.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/__pycache__/statistics.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/__pycache__/string.${PYC_MAGIC_TAG}.opt-1.pyc
-lib/${PY_VERSION}/__pycache__/string.${PYC_MAGIC_TAG}.opt-2.pyc
-lib/${PY_VERSION}/__pycache__/string.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/__pycache__/stringprep.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/__pycache__/stringprep.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/__pycache__/stringprep.${PYC_MAGIC_TAG}.pyc
@@ -771,15 +794,16 @@ lib/${PY_VERSION}/__pycache__/zipimport.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/_aix_support.py
 lib/${PY_VERSION}/_android_support.py
 lib/${PY_VERSION}/_apple_support.py
+lib/${PY_VERSION}/_ast_unparse.py
 lib/${PY_VERSION}/_collections_abc.py
 lib/${PY_VERSION}/_colorize.py
 lib/${PY_VERSION}/_compat_pickle.py
-lib/${PY_VERSION}/_compression.py
 lib/${PY_VERSION}/_ios_support.py
 lib/${PY_VERSION}/_markupbase.py
 lib/${PY_VERSION}/_opcode_metadata.py
 lib/${PY_VERSION}/_osx_support.py
 lib/${PY_VERSION}/_py_abc.py
+lib/${PY_VERSION}/_py_warnings.py
 lib/${PY_VERSION}/_pydatetime.py
 lib/${PY_VERSION}/_pydecimal.py
 lib/${PY_VERSION}/_pyio.py
@@ -794,9 +818,9 @@ lib/${PY_VERSION}/_pyrepl/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/__main__.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/__main__.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/__main__.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/_pyrepl/__pycache__/_minimal_curses.${PYC_MAGIC_TAG}.opt-1.pyc
-lib/${PY_VERSION}/_pyrepl/__pycache__/_minimal_curses.${PYC_MAGIC_TAG}.opt-2.pyc
-lib/${PY_VERSION}/_pyrepl/__pycache__/_minimal_curses.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/_pyrepl/__pycache__/_module_completer.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/_pyrepl/__pycache__/_module_completer.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/_pyrepl/__pycache__/_module_completer.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/_threading_handler.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/_threading_handler.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/_threading_handler.${PYC_MAGIC_TAG}.pyc
@@ -812,9 +836,6 @@ lib/${PY_VERSION}/_pyrepl/__pycache__/completing_reader.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/console.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/console.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/console.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/_pyrepl/__pycache__/curses.${PYC_MAGIC_TAG}.opt-1.pyc
-lib/${PY_VERSION}/_pyrepl/__pycache__/curses.${PYC_MAGIC_TAG}.opt-2.pyc
-lib/${PY_VERSION}/_pyrepl/__pycache__/curses.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/fancy_termios.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/fancy_termios.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/fancy_termios.${PYC_MAGIC_TAG}.pyc
@@ -842,6 +863,9 @@ lib/${PY_VERSION}/_pyrepl/__pycache__/readline.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/simple_interact.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/simple_interact.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/simple_interact.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/_pyrepl/__pycache__/terminfo.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/_pyrepl/__pycache__/terminfo.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/_pyrepl/__pycache__/terminfo.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/trace.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/trace.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/trace.${PYC_MAGIC_TAG}.pyc
@@ -863,13 +887,12 @@ lib/${PY_VERSION}/_pyrepl/__pycache__/windows_console.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/windows_eventqueue.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/windows_eventqueue.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/_pyrepl/__pycache__/windows_eventqueue.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/_pyrepl/_minimal_curses.py
+lib/${PY_VERSION}/_pyrepl/_module_completer.py
 lib/${PY_VERSION}/_pyrepl/_threading_handler.py
 lib/${PY_VERSION}/_pyrepl/base_eventqueue.py
 lib/${PY_VERSION}/_pyrepl/commands.py
 lib/${PY_VERSION}/_pyrepl/completing_reader.py
 lib/${PY_VERSION}/_pyrepl/console.py
-lib/${PY_VERSION}/_pyrepl/curses.py
 lib/${PY_VERSION}/_pyrepl/fancy_termios.py
 lib/${PY_VERSION}/_pyrepl/historical_reader.py
 lib/${PY_VERSION}/_pyrepl/input.py
@@ -880,6 +903,7 @@ lib/${PY_VERSION}/_pyrepl/pager.py
 lib/${PY_VERSION}/_pyrepl/reader.py
 lib/${PY_VERSION}/_pyrepl/readline.py
 lib/${PY_VERSION}/_pyrepl/simple_interact.py
+lib/${PY_VERSION}/_pyrepl/terminfo.py
 lib/${PY_VERSION}/_pyrepl/trace.py
 lib/${PY_VERSION}/_pyrepl/types.py
 lib/${PY_VERSION}/_pyrepl/unix_console.py
@@ -889,10 +913,12 @@ lib/${PY_VERSION}/_pyrepl/windows_console.py
 lib/${PY_VERSION}/_pyrepl/windows_eventqueue.py
 lib/${PY_VERSION}/_sitebuiltins.py
 lib/${PY_VERSION}/_strptime.py
+lib/${PY_VERSION}/_sysconfig_vars__${PY_PLATFORM}_.json
 lib/${PY_VERSION}/_sysconfigdata__${PY_PLATFORM}_.py
 lib/${PY_VERSION}/_threading_local.py
 lib/${PY_VERSION}/_weakrefset.py
 lib/${PY_VERSION}/abc.py
+lib/${PY_VERSION}/annotationlib.py
 lib/${PY_VERSION}/antigravity.py
 lib/${PY_VERSION}/argparse.py
 lib/${PY_VERSION}/ast.py
@@ -936,6 +962,9 @@ lib/${PY_VERSION}/asyncio/__pycache__/format_helpers.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/futures.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/futures.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/futures.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/asyncio/__pycache__/graph.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/asyncio/__pycache__/graph.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/asyncio/__pycache__/graph.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/locks.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/locks.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/locks.${PYC_MAGIC_TAG}.pyc
@@ -984,6 +1013,9 @@ lib/${PY_VERSION}/asyncio/__pycache__/threads.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/timeouts.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/timeouts.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/timeouts.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/asyncio/__pycache__/tools.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/asyncio/__pycache__/tools.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/asyncio/__pycache__/tools.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/transports.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/transports.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/asyncio/__pycache__/transports.${PYC_MAGIC_TAG}.pyc
@@ -1009,6 +1041,7 @@ lib/${PY_VERSION}/asyncio/events.py
 lib/${PY_VERSION}/asyncio/exceptions.py
 lib/${PY_VERSION}/asyncio/format_helpers.py
 lib/${PY_VERSION}/asyncio/futures.py
+lib/${PY_VERSION}/asyncio/graph.py
 lib/${PY_VERSION}/asyncio/locks.py
 lib/${PY_VERSION}/asyncio/log.py
 lib/${PY_VERSION}/asyncio/mixins.py
@@ -1025,6 +1058,7 @@ lib/${PY_VERSION}/asyncio/taskgroups.py
 lib/${PY_VERSION}/asyncio/tasks.py
 lib/${PY_VERSION}/asyncio/threads.py
 lib/${PY_VERSION}/asyncio/timeouts.py
+lib/${PY_VERSION}/asyncio/tools.py
 lib/${PY_VERSION}/asyncio/transports.py
 lib/${PY_VERSION}/asyncio/trsock.py
 lib/${PY_VERSION}/asyncio/unix_events.py
@@ -1033,6 +1067,7 @@ lib/${PY_VERSION}/asyncio/windows_utils.py
 lib/${PY_VERSION}/base64.py
 lib/${PY_VERSION}/bdb.py
 lib/${PY_VERSION}/bisect.py
+lib/${PY_VERSION}/build-details.json
 lib/${PY_VERSION}/bz2.py
 lib/${PY_VERSION}/cProfile.py
 lib/${PY_VERSION}/calendar.py
@@ -1048,6 +1083,48 @@ lib/${PY_VERSION}/collections/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/collections/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/colorsys.py
 lib/${PY_VERSION}/compileall.py
+lib/${PY_VERSION}/compression/
+lib/${PY_VERSION}/compression/__init__.py
+lib/${PY_VERSION}/compression/__pycache__/
+lib/${PY_VERSION}/compression/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/compression/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/compression/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/compression/__pycache__/bz2.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/compression/__pycache__/bz2.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/compression/__pycache__/bz2.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/compression/__pycache__/gzip.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/compression/__pycache__/gzip.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/compression/__pycache__/gzip.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/compression/__pycache__/lzma.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/compression/__pycache__/lzma.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/compression/__pycache__/lzma.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/compression/__pycache__/zlib.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/compression/__pycache__/zlib.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/compression/__pycache__/zlib.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/compression/_common/
+lib/${PY_VERSION}/compression/_common/__init__.py
+lib/${PY_VERSION}/compression/_common/__pycache__/
+lib/${PY_VERSION}/compression/_common/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/compression/_common/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/compression/_common/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/compression/_common/__pycache__/_streams.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/compression/_common/__pycache__/_streams.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/compression/_common/__pycache__/_streams.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/compression/_common/_streams.py
+lib/${PY_VERSION}/compression/bz2.py
+lib/${PY_VERSION}/compression/gzip.py
+lib/${PY_VERSION}/compression/lzma.py
+lib/${PY_VERSION}/compression/zlib.py
+lib/${PY_VERSION}/compression/zstd/
+lib/${PY_VERSION}/compression/zstd/__init__.py
+lib/${PY_VERSION}/compression/zstd/__pycache__/
+lib/${PY_VERSION}/compression/zstd/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/compression/zstd/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/compression/zstd/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/compression/zstd/__pycache__/_zstdfile.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/compression/zstd/__pycache__/_zstdfile.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/compression/zstd/__pycache__/_zstdfile.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/compression/zstd/_zstdfile.py
 lib/${PY_VERSION}/concurrent/
 lib/${PY_VERSION}/concurrent/__init__.py
 lib/${PY_VERSION}/concurrent/__pycache__/
@@ -1063,6 +1140,9 @@ lib/${PY_VERSION}/concurrent/futures/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/concurrent/futures/__pycache__/_base.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/concurrent/futures/__pycache__/_base.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/concurrent/futures/__pycache__/_base.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/concurrent/futures/__pycache__/interpreter.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/concurrent/futures/__pycache__/interpreter.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/concurrent/futures/__pycache__/interpreter.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/concurrent/futures/__pycache__/process.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/concurrent/futures/__pycache__/process.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/concurrent/futures/__pycache__/process.${PYC_MAGIC_TAG}.pyc
@@ -1070,8 +1150,23 @@ lib/${PY_VERSION}/concurrent/futures/__pycache__/thread.${PYC_MAGIC_TAG}.opt-1.p
 lib/${PY_VERSION}/concurrent/futures/__pycache__/thread.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/concurrent/futures/__pycache__/thread.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/concurrent/futures/_base.py
+lib/${PY_VERSION}/concurrent/futures/interpreter.py
 lib/${PY_VERSION}/concurrent/futures/process.py
 lib/${PY_VERSION}/concurrent/futures/thread.py
+lib/${PY_VERSION}/concurrent/interpreters/
+lib/${PY_VERSION}/concurrent/interpreters/__init__.py
+lib/${PY_VERSION}/concurrent/interpreters/__pycache__/
+lib/${PY_VERSION}/concurrent/interpreters/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/concurrent/interpreters/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/concurrent/interpreters/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/concurrent/interpreters/__pycache__/_crossinterp.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/concurrent/interpreters/__pycache__/_crossinterp.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/concurrent/interpreters/__pycache__/_crossinterp.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/concurrent/interpreters/__pycache__/_queues.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/concurrent/interpreters/__pycache__/_queues.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/concurrent/interpreters/__pycache__/_queues.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/concurrent/interpreters/_crossinterp.py
+lib/${PY_VERSION}/concurrent/interpreters/_queues.py
 lib/${PY_VERSION}/config-${VERSION}/
 lib/${PY_VERSION}/config-${VERSION}/Makefile
 lib/${PY_VERSION}/config-${VERSION}/Setup
@@ -1103,6 +1198,9 @@ lib/${PY_VERSION}/ctypes/__pycache__/_aix.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/ctypes/__pycache__/_endian.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/ctypes/__pycache__/_endian.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/ctypes/__pycache__/_endian.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/ctypes/__pycache__/_layout.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/ctypes/__pycache__/_layout.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/ctypes/__pycache__/_layout.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/ctypes/__pycache__/util.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/ctypes/__pycache__/util.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/ctypes/__pycache__/util.${PYC_MAGIC_TAG}.pyc
@@ -1111,6 +1209,7 @@ lib/${PY_VERSION}/ctypes/__pycache__/wintypes.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/ctypes/__pycache__/wintypes.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/ctypes/_aix.py
 lib/${PY_VERSION}/ctypes/_endian.py
+lib/${PY_VERSION}/ctypes/_layout.py
 lib/${PY_VERSION}/ctypes/macholib/
 lib/${PY_VERSION}/ctypes/macholib/README.ctypes
 lib/${PY_VERSION}/ctypes/macholib/__init__.py
@@ -1311,6 +1410,9 @@ lib/${PY_VERSION}/encodings/__pycache__/
 lib/${PY_VERSION}/encodings/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/encodings/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/encodings/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/encodings/__pycache__/_win_cp_codecs.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/encodings/__pycache__/_win_cp_codecs.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/encodings/__pycache__/_win_cp_codecs.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/encodings/__pycache__/aliases.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/encodings/__pycache__/aliases.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/encodings/__pycache__/aliases.${PYC_MAGIC_TAG}.pyc
@@ -1674,6 +1776,7 @@ lib/${PY_VERSION}/encodings/__pycache__/uu_codec.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/encodings/__pycache__/zlib_codec.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/encodings/__pycache__/zlib_codec.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/encodings/__pycache__/zlib_codec.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/encodings/_win_cp_codecs.py
 lib/${PY_VERSION}/encodings/aliases.py
 lib/${PY_VERSION}/encodings/ascii.py
 lib/${PY_VERSION}/encodings/base64_codec.py
@@ -1976,10 +2079,14 @@ lib/${PY_VERSION}/io.py
 lib/${PY_VERSION}/ipaddress.py
 lib/${PY_VERSION}/json/
 lib/${PY_VERSION}/json/__init__.py
+lib/${PY_VERSION}/json/__main__.py
 lib/${PY_VERSION}/json/__pycache__/
 lib/${PY_VERSION}/json/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/json/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/json/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/json/__pycache__/__main__.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/json/__pycache__/__main__.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/json/__pycache__/__main__.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/json/__pycache__/decoder.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/json/__pycache__/decoder.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/json/__pycache__/decoder.${PYC_MAGIC_TAG}.pyc
@@ -2008,18 +2115,17 @@ lib/${PY_VERSION}/lib-dynload/
 @so lib/${PY_VERSION}/lib-dynload/_codecs_jp.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_codecs_kr.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_codecs_tw.${PYC_MAGIC_TAG}.so
-@so lib/${PY_VERSION}/lib-dynload/_contextvars.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_csv.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_ctypes.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_ctypes_test.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_curses.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_curses_panel.${PYC_MAGIC_TAG}.so
-@so lib/${PY_VERSION}/lib-dynload/_datetime.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_dbm.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_decimal.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_elementtree.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_hashlib.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_heapq.${PYC_MAGIC_TAG}.so
+@so lib/${PY_VERSION}/lib-dynload/_hmac.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_interpchannels.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_interpqueues.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_interpreters.${PYC_MAGIC_TAG}.so
@@ -2029,12 +2135,12 @@ lib/${PY_VERSION}/lib-dynload/
 @so lib/${PY_VERSION}/lib-dynload/_md5.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_multibytecodec.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_multiprocessing.${PYC_MAGIC_TAG}.so
-@so lib/${PY_VERSION}/lib-dynload/_opcode.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_pickle.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_posixshmem.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_posixsubprocess.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_queue.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_random.${PYC_MAGIC_TAG}.so
+@so lib/${PY_VERSION}/lib-dynload/_remote_debugging.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_sha1.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_sha2.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_sha3.${PYC_MAGIC_TAG}.so
@@ -2047,7 +2153,6 @@ lib/${PY_VERSION}/lib-dynload/
 @so lib/${PY_VERSION}/lib-dynload/_testcapi.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_testclinic.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_testclinic_limited.${PYC_MAGIC_TAG}.so
-@so lib/${PY_VERSION}/lib-dynload/_testexternalinspection.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_testimportmultiple.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_testinternalcapi.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_testlimitedcapi.${PYC_MAGIC_TAG}.so
@@ -2056,6 +2161,7 @@ lib/${PY_VERSION}/lib-dynload/
 @so lib/${PY_VERSION}/lib-dynload/_uuid.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_xxtestfuzz.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_zoneinfo.${PYC_MAGIC_TAG}.so
+@so lib/${PY_VERSION}/lib-dynload/_zstd.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/array.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/binascii.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/cmath.${PYC_MAGIC_TAG}.so
@@ -2204,14 +2310,18 @@ lib/${PY_VERSION}/pathlib/__pycache__/
 lib/${PY_VERSION}/pathlib/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/pathlib/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/pathlib/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/pathlib/__pycache__/_abc.${PYC_MAGIC_TAG}.opt-1.pyc
-lib/${PY_VERSION}/pathlib/__pycache__/_abc.${PYC_MAGIC_TAG}.opt-2.pyc
-lib/${PY_VERSION}/pathlib/__pycache__/_abc.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/pathlib/__pycache__/_local.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/pathlib/__pycache__/_local.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/pathlib/__pycache__/_local.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/pathlib/_abc.py
+lib/${PY_VERSION}/pathlib/__pycache__/_os.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/pathlib/__pycache__/_os.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/pathlib/__pycache__/_os.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/pathlib/__pycache__/types.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/pathlib/__pycache__/types.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/pathlib/__pycache__/types.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/pathlib/_local.py
+lib/${PY_VERSION}/pathlib/_os.py
+lib/${PY_VERSION}/pathlib/types.py
 lib/${PY_VERSION}/pdb.py
 lib/${PY_VERSION}/pickle.py
 lib/${PY_VERSION}/pickletools.py
@@ -2307,7 +2417,16 @@ lib/${PY_VERSION}/sre_parse.py
 lib/${PY_VERSION}/ssl.py
 lib/${PY_VERSION}/stat.py
 lib/${PY_VERSION}/statistics.py
-lib/${PY_VERSION}/string.py
+lib/${PY_VERSION}/string/
+lib/${PY_VERSION}/string/__init__.py
+lib/${PY_VERSION}/string/__pycache__/
+lib/${PY_VERSION}/string/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/string/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/string/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/string/__pycache__/templatelib.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/string/__pycache__/templatelib.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/string/__pycache__/templatelib.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/string/templatelib.py
 lib/${PY_VERSION}/stringprep.py
 lib/${PY_VERSION}/struct.py
 lib/${PY_VERSION}/subprocess.py

@@ -8,7 +8,7 @@ https://github.com/python/cpython/pull/148517
 Index: Lib/test/test_webbrowser.py
 --- Lib/test/test_webbrowser.py.orig
 +++ Lib/test/test_webbrowser.py
-@@ -118,6 +118,15 @@ class ChromeCommandTest(CommandTestMixin, unittest.Tes
+@@ -119,6 +119,15 @@ class ChromeCommandTest(CommandTestMixin, unittest.Tes
                         arguments=[URL],
                         kw=dict(new=999))
  

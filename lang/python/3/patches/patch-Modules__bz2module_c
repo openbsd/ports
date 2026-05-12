@@ -11,7 +11,7 @@ https://github.com/python/cpython/pull/148479
 Index: Modules/_bz2module.c
 --- Modules/_bz2module.c.orig
 +++ Modules/_bz2module.c
-@@ -589,6 +589,7 @@ decompress(BZ2Decompressor *d, char *data, size_t len,
+@@ -593,6 +593,7 @@ decompress(BZ2Decompressor *d, char *data, size_t len,
      return result;
  
  error:
