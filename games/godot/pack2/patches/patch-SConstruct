@@ -3,10 +3,42 @@ disable hardcoded compiler/linker flags.  We handle stripping and debug
 
 Remove architecture from the program names
 
+backport commit 0b3496f:
+Add support for SDL3 joystick input driver
+
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -722,7 +722,7 @@ if env.msvc:
+@@ -191,6 +191,7 @@ opts.Add(BoolVariable("use_volk", "Use the volk librar
+ opts.Add(BoolVariable("disable_exceptions", "Force disabling exception handling code", True))
+ opts.Add("custom_modules", "A list of comma-separated directory paths containing custom modules to build.", "")
+ opts.Add(BoolVariable("custom_modules_recursive", "Detect custom modules recursively for each specified path.", True))
++opts.Add(BoolVariable("sdl", "Enable the SDL3 input driver", True))
+ 
+ # Advanced options
+ opts.Add(
+@@ -218,9 +219,12 @@ opts.Add("object_prefix", "Custom prefix added to the 
+ opts.Add(BoolVariable("vsproj", "Generate a Visual Studio solution", False))
+ opts.Add("vsproj_name", "Name of the Visual Studio solution", "godot")
+ opts.Add("import_env_vars", "A comma-separated list of environment variables to copy from the outer environment.", "")
++opts.Add(BoolVariable("disable_exceptions", "Force disabling exception handling code", True))
+ opts.Add(BoolVariable("disable_3d", "Disable 3D nodes for a smaller executable", False))
+ opts.Add(BoolVariable("disable_advanced_gui", "Disable advanced GUI nodes and behaviors", False))
+ opts.Add("build_profile", "Path to a file containing a feature build profile", "")
++opts.Add("custom_modules", "A list of comma-separated directory paths containing custom modules to build.", "")
++opts.Add(BoolVariable("custom_modules_recursive", "Detect custom modules recursively for each specified path.", True))
+ opts.Add(BoolVariable("modules_enabled_by_default", "If no, disable all modules except ones explicitly enabled", True))
+ opts.Add(BoolVariable("no_editor_splash", "Don't use the custom splash screen for the editor", True))
+ opts.Add(
+@@ -248,6 +252,7 @@ opts.Add(BoolVariable("builtin_msdfgen", "Use the buil
+ opts.Add(BoolVariable("builtin_glslang", "Use the built-in glslang library", True))
+ opts.Add(BoolVariable("builtin_graphite", "Use the built-in Graphite library", True))
+ opts.Add(BoolVariable("builtin_harfbuzz", "Use the built-in HarfBuzz library", True))
++opts.Add(BoolVariable("builtin_sdl", "Use the built-in SDL library", True))
+ opts.Add(BoolVariable("builtin_icu4c", "Use the built-in ICU library", True))
+ opts.Add(BoolVariable("builtin_libogg", "Use the built-in libogg library", True))
+ opts.Add(BoolVariable("builtin_libpng", "Use the built-in libpng library", True))
+@@ -722,7 +727,7 @@ if env.msvc:
          env.Append(LINKFLAGS=["/OPT:REF"])
      elif env["optimize"] == "debug" or env["optimize"] == "none":
          env.Append(CCFLAGS=["/Od"])
@@ -15,7 +47,7 @@ Index: SConstruct
      if env["debug_symbols"]:
          if env["platform"] == "windows":
              if methods.using_clang(env):
-@@ -908,7 +908,6 @@ if env.dev_build:
+@@ -908,7 +913,6 @@ if env.dev_build:
  if env["precision"] == "double":
      suffix += ".double"
  

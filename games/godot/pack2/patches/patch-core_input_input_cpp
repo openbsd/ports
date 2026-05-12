@@ -1,0 +1,23 @@
+backport commit 0b3496f:
+Add support for SDL3 joystick input driver
+
+Index: core/input/input.cpp
+--- core/input/input.cpp.orig
++++ core/input/input.cpp
+@@ -589,9 +589,13 @@ void Input::joy_connection_changed(int p_idx, bool p_c
+ 		js.uid = uidname;
+ 		js.connected = true;
+ 		int mapping = fallback_mapping;
+-		for (int i = 0; i < map_db.size(); i++) {
+-			if (js.uid == map_db[i].uid) {
+-				mapping = i;
++		// Bypass the mapping system if the joypad's mapping is already handled by its driver
++		// (for example, the SDL joypad driver).
++		if (!p_joypad_info.get("mapping_handled", false)) {
++			for (int i = 0; i < map_db.size(); i++) {
++				if (js.uid == map_db[i].uid) {
++					mapping = i;
++				}
+ 			}
+ 		}
+ 		_set_joypad_mapping(js, mapping);

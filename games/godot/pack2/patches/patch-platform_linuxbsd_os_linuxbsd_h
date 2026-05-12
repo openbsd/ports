@@ -1,9 +1,18 @@
 add sndio driver
 
+backport commit 0b3496f:
+Add support for SDL3 joystick input driver
+
 Index: platform/linuxbsd/os_linuxbsd.h
 --- platform/linuxbsd/os_linuxbsd.h.orig
 +++ platform/linuxbsd/os_linuxbsd.h
-@@ -38,6 +38,7 @@
+@@ -32,12 +32,12 @@
+ #define OS_LINUXBSD_H
+ 
+ #include "crash_handler_linuxbsd.h"
+-#include "joypad_linux.h"
+ 
+ #include "core/input/input.h"
  #include "drivers/alsa/audio_driver_alsa.h"
  #include "drivers/alsamidi/midi_driver_alsamidi.h"
  #include "drivers/pulseaudio/audio_driver_pulseaudio.h"
@@ -11,7 +20,27 @@ Index: platform/linuxbsd/os_linuxbsd.h
  #include "drivers/unix/os_unix.h"
  #include "servers/audio_server.h"
  
-@@ -75,6 +76,10 @@ class OS_LinuxBSD : public OS_Unix {
+@@ -49,6 +49,8 @@
+ #endif
+ #endif
+ 
++class JoypadSDL;
++
+ class OS_LinuxBSD : public OS_Unix {
+ 	virtual void delete_main_loop() override;
+ 
+@@ -61,8 +63,8 @@ class OS_LinuxBSD : public OS_Unix {
+ 	int _stretch_to_fc(int p_stretch) const;
+ #endif
+ 
+-#ifdef JOYDEV_ENABLED
+-	JoypadLinux *joypad = nullptr;
++#ifdef SDL_ENABLED
++	JoypadSDL *joypad_sdl = nullptr;
+ #endif
+ 
+ #ifdef ALSA_ENABLED
+@@ -75,6 +77,10 @@ class OS_LinuxBSD : public OS_Unix {
  
  #ifdef PULSEAUDIO_ENABLED
  	AudioDriverPulseAudio driver_pulseaudio;

@@ -7,11 +7,11 @@ COMMENT =	2D and 3D game engine
 
 VERSION =	4.4.1
 PKGNAME =	godot44-${VERSION}
-REVISION =	0
+REVISION =	1
 DIST_TUPLE +=	codeberg godotsteam godotsteam v4.3 godotsteam
 
-WANTLIB += ${COMPILER_LIBCXX} SPIRV X11 Xcursor Xext Xi Xinerama
-WANTLIB += Xrandr Xrender c dbus-1 enet fontconfig freetype glib-2.0
+WANTLIB += ${COMPILER_LIBCXX} SDL3 SPIRV X11 Xcursor Xext Xi Xinerama
+WANTLIB += Xrandr Xrender Xss c dbus-1 enet fontconfig freetype glib-2.0
 WANTLIB += glslang glslang-default-resource-limits intl m mbedcrypto
 WANTLIB += mbedtls mbedx509 miniupnpc ogg pcre2-32 sndio speechd
 WANTLIB += steam_api theora theoradec vorbis vorbisfile webp wslay
@@ -20,7 +20,8 @@ WANTLIB += xkbcommon zstd
 # Building with module_mono_enabled requires msbuild and to fix the
 # sharedlib_ext in modules/mono/config.py to '.so.1.0'
 MODSCONS_FLAGS =	cflags="${CFLAGS}" \
-			cxxflags="${CXXFLAGS} -Wno-deprecated-register" \
+			cxxflags="${CXXFLAGS} -Wno-deprecated-register -DSUSPEND_SCREENSAVER=1" \
+			linkflags="${LDFLAGS}" \
 			builtin_certs=no \
 			builtin_enet=no \
 			builtin_libogg=no \
@@ -28,10 +29,11 @@ MODSCONS_FLAGS =	cflags="${CFLAGS}" \
 			builtin_libtheora=no \
 			builtin_libvorbis=no \
 			builtin_libwebp=no \
-			builtin_wslay=no \
 			builtin_mbedtls=no \
 			builtin_miniupnpc=no \
 			builtin_pcre2=no \
+			builtin_sdl=no \
+			builtin_wslay=no \
 			builtin_zstd=no \
 			custom_modules=${WRKSRC}/godotsteam \
 			use_sowrap=no \
@@ -70,6 +72,7 @@ LIB_DEPENDS =		archivers/zstd \
 			audio/speech-dispatcher \
 			devel/gettext,-runtime \
 			devel/pcre2 \
+			devel/sdl3 \
 			games/goldberg_emulator \
 			graphics/glslang \
 			graphics/libwebp \
@@ -88,6 +91,7 @@ WANTLIB +=     atomic
 
 CFLAGS +=	-I${LOCALBASE}/include/goldberg_emulator
 CXXFLAGS +=	-I${LOCALBASE}/include/goldberg_emulator
+LDFLAGS +=	-lXss
 
 post-extract:
 	cp -R ${FILESDIR}/sndio ${WRKDIST}/drivers

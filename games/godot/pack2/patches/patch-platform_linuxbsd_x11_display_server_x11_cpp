@@ -1,11 +1,35 @@
 fix libXrandr (double) loading attempt.
+suspend X11 screensaver to not time out display when playing with game
+	controller
 we don't support DRI_PRIME as of March 2026 and setting it can lead to crashes
 	in multi-GPU setups
 
 Index: platform/linuxbsd/x11/display_server_x11.cpp
 --- platform/linuxbsd/x11/display_server_x11.cpp.orig
 +++ platform/linuxbsd/x11/display_server_x11.cpp
-@@ -6674,14 +6674,14 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
+@@ -42,6 +42,10 @@
+ #include "drivers/png/png_driver_common.h"
+ #include "main/main.h"
+ 
++#ifdef SUSPEND_SCREENSAVER
++#include <X11/extensions/scrnsaver.h>
++#endif
++
+ #if defined(VULKAN_ENABLED)
+ #include "servers/rendering/renderer_rd/renderer_compositor_rd.h"
+ #endif
+@@ -6588,6 +6592,10 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
+ 		return;
+ 	}
+ 
++#ifdef SUSPEND_SCREENSAVER
++	XScreenSaverSuspend(x11_display, true);
++#endif
++
+ 	if (xshaped_ext_ok) {
+ 		int version_major = 0;
+ 		int version_minor = 0;
+@@ -6674,14 +6682,14 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
  	int xrandr_minor = 0;
  	int event_base, error_base;
  	xrandr_ext_ok = XRRQueryExtension(x11_display, &event_base, &error_base);
@@ -22,7 +46,7 @@ Index: platform/linuxbsd/x11/display_server_x11.cpp
  		}
  	}
  
-@@ -6855,11 +6855,13 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
+@@ -6855,11 +6863,13 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
  				use_prime = DetectPrimeX11::detect_prime();
  			}
  

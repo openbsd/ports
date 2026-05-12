@@ -1,5 +1,8 @@
 add sndio driver
 
+backport commit 0b3496f:
+Add support for SDL3 joystick input driver
+
 Index: drivers/SCsub
 --- drivers/SCsub.orig
 +++ drivers/SCsub
@@ -11,3 +14,15 @@ Index: drivers/SCsub
  if env["platform"] == "windows":
      SConscript("wasapi/SCsub")
      if not env.msvc:
+@@ -51,6 +52,11 @@ if env["metal"]:
+         print_error("Target platform '{}' does not support the Metal rendering driver".format(env["platform"]))
+         Exit(255)
+     SConscript("metal/SCsub")
++
++# Input drivers
++if env["sdl"] and env["platform"] in ["linuxbsd", "macos", "windows"]:
++    # TODO: Evaluate support for Android, iOS, and Web.
++    SConscript("sdl/SCsub")
+ 
+ # Core dependencies
+ SConscript("png/SCsub")
