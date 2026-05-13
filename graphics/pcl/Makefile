@@ -73,8 +73,7 @@ CONFIGURE_ARGS =	-DWITH_LIBUSB=ON \
 GTEST_WRKSRC =		${WRKDIR}/gtest_dist/googletest
 CONFIGURE_ARGS +=	-DGTEST_SRC_DIR=${GTEST_WRKSRC} \
 			-DGTEST_INCLUDE_DIR=${GTEST_WRKSRC}/include
-
-do-test:
-	${MODCMAKE_TEST_TARGET} --test-dir ${WRKBUILD}/test
+TEST_FLAGS =		--test-dir ${WRKBUILD}/test
+#  103 - a_registration_test (Failed)
 
 .include <bsd.port.mk>
