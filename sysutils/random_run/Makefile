@@ -3,7 +3,7 @@ COMMENT =	run command with randomized parameters
 CATEGORIES = 	sysutils
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
-DIST_TUPLE =	github marcespie random_run 2.17 .
+DIST_TUPLE =	github marcespie random_run 2.18 .
 
 COMPILER =	base-clang ports-gcc
 
