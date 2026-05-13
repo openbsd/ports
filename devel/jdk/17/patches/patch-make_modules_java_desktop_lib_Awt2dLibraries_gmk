@@ -1,0 +1,20 @@
+Fix building with external libpng on aarch64
+
+Index: make/modules/java.desktop/lib/Awt2dLibraries.gmk
+--- make/modules/java.desktop/lib/Awt2dLibraries.gmk.orig
++++ make/modules/java.desktop/lib/Awt2dLibraries.gmk
+@@ -716,8 +716,12 @@ ifeq ($(ENABLE_HEADLESS_ONLY), false)
+     LIBSPLASHSCREEN_EXCLUDE_SRC_PATTERNS := /unix/
+   endif
+ 
+-  LIBSPLASHSCREEN_CFLAGS += -DSPLASHSCREEN -DPNG_NO_MMX_CODE \
+-                            -DPNG_ARM_NEON_OPT=0 -DPNG_ARM_NEON_IMPLEMENTATION=0
++  ifeq ($(USE_EXTERNAL_LIBPNG), false)
++    LIBSPLASHSCREEN_CFLAGS += -DPNG_NO_MMX_CODE -DPNG_ARM_NEON_OPT=0 \
++                              -DPNG_ARM_NEON_IMPLEMENTATION=0
++  endif
++
++  LIBSPLASHSCREEN_CFLAGS += -DSPLASHSCREEN
+ 
+   ifeq ($(call isTargetOs, linux), true)
+     ifeq ($(call isTargetCpuArch, ppc), true)

@@ -1,0 +1,13 @@
+Allow building with warnings as errors
+
+Index: make/hotspot/lib/CompileJvm.gmk
+--- make/hotspot/lib/CompileJvm.gmk.orig
++++ make/hotspot/lib/CompileJvm.gmk
+@@ -189,6 +189,7 @@ $(eval $(call SetupJdkLibrary, BUILD_LIBJVM, \
+     DISABLED_WARNINGS_clang_heapShared.cpp := missing-field-initializers, \
+     DISABLED_WARNINGS_clang_management.cpp := missing-field-initializers, \
+     DISABLED_WARNINGS_clang_notificationThread.cpp := bitwise-instead-of-logical, \
++    DISABLED_WARNINGS_clang_os_bsd_aarch64.cpp := format-nonliteral, \
+     DISABLED_WARNINGS_clang_os_posix.cpp := mismatched-tags missing-field-initializers, \
+     DISABLED_WARNINGS_clang_postaloc.cpp := tautological-undefined-compare, \
+     DISABLED_WARNINGS_clang_serviceThread.cpp := bitwise-instead-of-logical, \

@@ -4,15 +4,14 @@ USE_NOBTCFI=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	17.0.18
-BUILD_VER=	8
+BASE_VER=	17.0.19
+BUILD_VER=	10
 BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${BUILD_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-17
 EPOCH=		0
-REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -47,7 +46,7 @@ SUPDISTFILES.boot= \
 		openjdk-jdk17u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz \
 		openjdk-jdk17u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz
 
-COMPILER=	base-clang ports-gcc
+COMPILER=	base-clang
 
 .include <bsd.port.arch.mk>
 
@@ -95,6 +94,7 @@ CONFIGURE_ARGS=	DOT="" FLOCK="" GIT="" HG="" PANDOC="" \
 		AWK=awk DIFF=diff GZIP=gzip MAKE=${GMAKE} MKDIR=mkdir \
 		OBJCOPY=objcopy OBJDUMP=objdump PATCH=patch \
 		READELF=readelf READLINK=readlink \
+		--with-toolchain-type=clang \
 		--with-boot-jdk=${BOOT_JDK} \
 		--with-jobs=${MAKE_JOBS} \
 		--with-debug-level=release \
@@ -114,14 +114,6 @@ CONFIGURE_ARGS=	DOT="" FLOCK="" GIT="" HG="" PANDOC="" \
 		--disable-ccache \
 		--disable-dtrace \
 		--disable-javac-server
-
-.if ${PROPERTIES:Mclang}
-CONFIGURE_ARGS+=--with-toolchain-type=clang
-# for clang15+
-CONFIGURE_ARGS+=--disable-warnings-as-errors
-.else
-CONFIGURE_ARGS+=--with-toolchain-type=gcc
-.endif
 
 .if ${PROPERTIES:Mdebuginfo}
 CONFIGURE_ARGS+=--with-native-debug-symbols=external
