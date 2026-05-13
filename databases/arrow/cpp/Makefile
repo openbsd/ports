@@ -69,9 +69,7 @@ WANTLIB +=	${COMPILER_LIBCXX} c crypto m snappy ssl thrift z
 # 		devel/gtest
 # WANTLIB += boost_atomic-mt boost_context-mt boost_date_time-mt
 # WANTLIB += boost_filesystem-mt boost_process-mt gmock gtest
-# no way to set the timeout via env vars, defaults to 10000000
-# arrow-utility-test.txt timeouts
-do-test:
-	@${MODCMAKE_TEST_TARGET} --timeout 180
+# arrow-utility-test.txt timeouts, and the default is 10000000
+TEST_FLAGS =	--timeout 180
 
 .include <bsd.port.mk>
