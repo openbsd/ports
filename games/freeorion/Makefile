@@ -15,9 +15,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL2 boost_atomic-mt boost_charconv-mt
 WANTLIB += boost_chrono-mt boost_container-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_graph-mt boost_iostreams-mt
-WANTLIB += boost_locale-mt boost_log-mt boost_log_setup-mt boost_python313-mt
+WANTLIB += boost_locale-mt boost_log-mt boost_log_setup-mt boost_python${MODPY_VERSION:C/\.//g}-mt
 WANTLIB += boost_random-mt boost_regex-mt boost_serialization-mt
-WANTLIB += boost_thread-mt c freetype m ogg openal png python3.13
+WANTLIB += boost_thread-mt c freetype m ogg openal png ${MODPY_WANTLIB}
 WANTLIB += vorbis vorbisenc vorbisfile z
 
 COMPILER =	base-clang ports-gcc
