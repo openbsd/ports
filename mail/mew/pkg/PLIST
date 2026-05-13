@@ -7,7 +7,7 @@ bin/mew-pinentry
 bin/mewest
 @bin bin/mewl
 bin/smew
-@info info/mew.info
+info/mew.info
 @man man/man1/cmew.1
 @man man/man1/incm.1
 @man man/man1/mew-pinentry.1
@@ -121,6 +121,8 @@ share/emacs/site-lisp/mew-func.el
 share/emacs/site-lisp/mew-func.elc
 share/emacs/site-lisp/mew-gemacs.el
 share/emacs/site-lisp/mew-gemacs.elc
+share/emacs/site-lisp/mew-gnutls.el
+share/emacs/site-lisp/mew-gnutls.elc
 share/emacs/site-lisp/mew-header.el
 share/emacs/site-lisp/mew-header.elc
 share/emacs/site-lisp/mew-highlight.el
@@ -181,8 +183,8 @@ share/emacs/site-lisp/mew-sort.el
 share/emacs/site-lisp/mew-sort.elc
 share/emacs/site-lisp/mew-ssh.el
 share/emacs/site-lisp/mew-ssh.elc
-share/emacs/site-lisp/mew-ssl.el
-share/emacs/site-lisp/mew-ssl.elc
+share/emacs/site-lisp/mew-stunnel.el
+share/emacs/site-lisp/mew-stunnel.elc
 share/emacs/site-lisp/mew-summary.el
 share/emacs/site-lisp/mew-summary.elc
 share/emacs/site-lisp/mew-summary2.el
@@ -208,6 +210,5 @@ share/emacs/site-lisp/mew-varsx.elc
 share/emacs/site-lisp/mew-virtual.el
 share/emacs/site-lisp/mew-virtual.elc
 share/emacs/site-lisp/mew-win32.el
-share/emacs/site-lisp/mew-win32.elc
 share/emacs/site-lisp/mew.el
 share/emacs/site-lisp/mew.elc

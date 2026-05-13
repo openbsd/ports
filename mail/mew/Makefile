@@ -1,6 +1,6 @@
 COMMENT=	emacs-based mail client
 
-DISTNAME=	mew-6.10
+DISTNAME=	mew-6.11
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mew.org/
 
