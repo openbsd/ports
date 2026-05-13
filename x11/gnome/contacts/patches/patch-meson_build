@@ -1,0 +1,18 @@
+From 45cb9a2d7e8cffd17bab05e29ee38f0463743a9c Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Fri, 17 Oct 2025 11:10:09 +0200
+Subject: [PATCH] vcard-export: Adapt to evolution-data-server 3.59.1 EVCard API changes
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -52,6 +52,9 @@ libadwaita_dep = dependency('libadwaita-1', version: '
+ # E-D-S
+ libebook = dependency('libebook-1.2', version: '>=' + min_eds_version)
+ libedataserver = dependency('libedataserver-1.2', version: '>=' + min_eds_version)
++if libebook.version().version_compare('>=3.59.1')
++  add_project_arguments('-D', 'HAVE_EDS_3_59_1', language: 'vala')
++endif
+ # Camera
+ libportal_dep = dependency('libportal-gtk4', version: '>= 0.7')
+ gstreamer_dep = dependency('gstreamer-1.0')

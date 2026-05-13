@@ -1,0 +1,42 @@
+From 45cb9a2d7e8cffd17bab05e29ee38f0463743a9c Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Fri, 17 Oct 2025 11:10:09 +0200
+Subject: [PATCH] vcard-export: Adapt to evolution-data-server 3.59.1 EVCard API changes
+
+Index: src/io/contacts-io-vcard-export-operation.vala
+--- src/io/contacts-io-vcard-export-operation.vala.orig
++++ src/io/contacts-io-vcard-export-operation.vala
+@@ -16,7 +16,9 @@ public class Contacts.Io.VCardExportOperation : Export
+ 
+   // We _could_ parameterize this with our own enum, but there's no need for
+   // that at the moment.
++#if !HAVE_EDS_3_59_1
+   private E.VCardFormat vcard_format = E.VCardFormat.@30;
++#endif
+ 
+   // This should always be on false, except for debugging/troubleshooting
+   // purposes. It forces E-D-S personas to use our manual serialization instead
+@@ -53,7 +55,11 @@ public class Contacts.Io.VCardExportOperation : Export
+     // that's an E.VCard already
+     if (persona is Edsf.Persona && !avoid_eds) {
+       unowned var contact = ((Edsf.Persona) persona).contact;
++#if HAVE_EDS_3_59_1
++      return contact.to_string ();
++#else
+       return contact.to_string (this.vcard_format);
++#endif
+     }
+ 
+     var vcard = new E.VCard ();
+@@ -104,7 +110,11 @@ public class Contacts.Io.VCardExportOperation : Export
+       vcard_set_webservice_details (vcard, (WebServiceDetails) persona);
+ */
+ 
++#if HAVE_EDS_3_59_1
++    return vcard.to_string ();
++#else
+     return vcard.to_string (this.vcard_format);
++#endif
+   }
+ 
+   private void vcard_set_avatar_details (E.VCard vcard,
