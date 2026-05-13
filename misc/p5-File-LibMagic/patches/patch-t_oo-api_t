@@ -1,0 +1,14 @@
+use /usr/local/bin/efile from devel/libmagic
+
+Index: t/oo-api.t
+--- t/oo-api.t.orig
++++ t/oo-api.t
+@@ -92,7 +92,7 @@ SKIP:
+ 
+ sub _get_magic_file_path {
+     my @paths;
+-    for (`file -v`) {    ## no critic (ProhibitBacktickOperators)
++    for (`efile -v`) {    ## no critic (ProhibitBacktickOperators)
+         chomp;
+         next unless m/\Amagic file from (.*)/;
+ 
