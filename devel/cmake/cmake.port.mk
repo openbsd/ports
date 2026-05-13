@@ -25,7 +25,7 @@ MODCMAKE_INSTALL_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	${FAKE_SETUP} cmake --install ${WRKBUILD}
 
 MODCMAKE_TEST_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${ALL_TEST_ENV} \
-	ctest ${_MAKE_VERBOSE} -j ${MAKE_JOBS}
+	ctest ${_MAKE_VERBOSE} -j ${MAKE_JOBS} ${TEST_FLAGS}
 
 # Default targets are only known after configure, see cmake-buildsystem(7) and
 # cmake-properties(7) BUILDSYSTEM_TARGETS.
