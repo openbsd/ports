@@ -1,17 +1,18 @@
 COMMENT=	wiki and bug tracking system for software projects
 
-MODPY_DISTV=	1.6
-REVISION=	5
+MODPY_DISTV=	1.6.1.dev0
 PORTROACH=	limitw:1,even
-DISTNAME=	Trac-${MODPY_DISTV:S/post/.post/}
-PKGNAME=	trac-${MODPY_DISTV:S/post/pl/}
+#DISTNAME=	Trac-${MODPY_DISTV:S/post/.post/}
+#PKGNAME=	trac-${MODPY_DISTV:S/post/pl/}
+DISTNAME=	trac-1.6pl17925
 CATEGORIES=	www devel
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	https://trac.edgewall.org/
 
-SITES=		https://download.edgewall.org/trac/
+#SITES=		https://download.edgewall.org/trac/
+SITES=		https://spacehopper.org/mirrors/
 
 # BSD
 PERMIT_PACKAGE=   Yes
