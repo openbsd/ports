@@ -36,9 +36,7 @@ pre-test:
 # 49: /usr/ports/pobj/nlohmann-json-3.12.0/json-3.12.0/tests/src/unit-locale-cpp.cpp:142: ERROR: CHECK( std::string(buffer.data()) == "12,34" ) is NOT correct!
 # 49:   values: CHECK( 12.34 == 12,34 )
 
-# overwrite target, devel/cmake MODULE cannot pass ctest(1) arguments
-do-test:
-	# skip known to tail tests
-	@${MODCMAKE_TEST_TARGET} -LE git_required
+# skip known to fail tests
+TEST_FLAGS = -LE git_required
 
 .include <bsd.port.mk>
