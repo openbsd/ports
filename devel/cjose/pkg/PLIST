@@ -8,7 +8,7 @@ include/cjose/jwk.h
 include/cjose/jws.h
 include/cjose/util.h
 include/cjose/version.h
-lib/libcjose.a
+@static-lib lib/libcjose.a
 lib/libcjose.la
 @lib lib/libcjose.so.${LIBcjose_VERSION}
 lib/pkgconfig/cjose.pc
