@@ -1,0 +1,52 @@
+Fix build with poppler-26.05.
+
+https://gitlab.com/sinanonym/inkscape/-/commit/f6fa63d34e438feed7699e40f35c7a0adc12d70b
+
+Index: src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp
+--- src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp.orig
++++ src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp
+@@ -313,7 +313,11 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+ #else
+     GfxFontLoc *fontLoc;
+ #endif
++#if POPPLER_CHECK_VERSION(26, 5, 0)
++    const char * const *enc;
++#else
+     char **enc;
++#endif
+     const char *name;
+ #if POPPLER_CHECK_VERSION(25, 7, 0)
+     std::unique_ptr<FoFiType1C> ff1c;
+@@ -385,7 +389,11 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+                 goto err2;
+             }
+ 
++#if POPPLER_CHECK_VERSION(26, 5, 0)
++            enc = gfx8bit->getEncoding().data();
++#else
+             enc = gfx8bit->getEncoding();
++#endif
+ 
+             codeToGID.resize(256);
+             for (i = 0; i < 256; ++i) {
+@@ -677,7 +685,7 @@ CairoType3Font *CairoType3Font::create(GfxFont *gfxFon
+ #endif
+ 
+     std::vector<int> codeToGID;
+-    char *name;
++    const char *name;
+ 
+     Dict *charProcs = gfx8bit->getCharProcs();
+     Ref ref = *gfxFont->getID();
+@@ -694,7 +702,11 @@ CairoType3Font *CairoType3Font::create(GfxFont *gfxFon
+ 
+     cairo_font_face_set_user_data(font_face, &type3_font_key, (void *)info, _free_type3_font_info);
+ 
++#if POPPLER_CHECK_VERSION(26, 5, 0)
++    const char * const *enc = gfx8bit->getEncoding().data();
++#else
+     char **enc = gfx8bit->getEncoding();
++#endif
+     codeToGID.resize(256);
+     for (int i = 0; i < 256; ++i) {
+         codeToGID[i] = 0;
