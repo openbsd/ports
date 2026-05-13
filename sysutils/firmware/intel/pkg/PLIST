@@ -129,6 +129,8 @@ firmware/intel/06-bf-02
 firmware/intel/06-bf-05
 firmware/intel/06-c5-02
 firmware/intel/06-c6-02
+firmware/intel/06-cc-02
+firmware/intel/06-cc-03
 firmware/intel/06-cf-02
 firmware/intel/0f-00-07
 firmware/intel/0f-00-0a
