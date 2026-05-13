@@ -19,7 +19,8 @@ MODGO_MODULES =	\
 	github.com/ianlancetaylor/demangle				 v0.0.0-20210905161508-09a460cdf81d \
 	github.com/johnkerl/lumin					 v1.0.0 \
 	github.com/kballard/go-shellquote				 v0.0.0-20180428030007-95032a82bc51 \
-	github.com/klauspost/compress					 v1.18.0 \
+	github.com/kjk/lzma						 v0.0.0-20161016003348-3fd93898850d \
+	github.com/klauspost/compress					 v1.18.4 \
 	github.com/kshedden/dstream					 v0.0.0-20190512025041-c4c410631beb \
 	github.com/kshedden/statmodel					 v0.0.0-20210519035403-ee97d3e48df1 \
 	github.com/lestrrat-go/envload					 v0.0.0-20180220234015-a3eb8ddeffcc \
@@ -29,34 +30,45 @@ MODGO_MODULES =	\
 	github.com/pkg/profile						 v1.7.0 \
 	github.com/pmezard/go-difflib					 v1.0.0 \
 	github.com/stretchr/objx					 v0.5.2 \
-	github.com/stretchr/testify					 v1.10.0 \
+	github.com/stretchr/testify					 v1.11.1 \
+	github.com/xi2/xz						 v0.0.0-20171230120015-48954b6210f8 \
 	github.com/yuin/goldmark					 v1.4.13 \
+	golang.org/x/crypto						 v0.45.0 \
 	golang.org/x/image						 v0.25.0 \
-	golang.org/x/mod						 v0.26.0 \
-	golang.org/x/net						 v0.42.0 \
-	golang.org/x/sync						 v0.16.0 \
-	golang.org/x/sys						 v0.35.0 \
-	golang.org/x/telemetry						 v0.0.0-20250710130107-8d8967aff50b \
-	golang.org/x/term						 v0.34.0 \
-	golang.org/x/text						 v0.28.0 \
-	golang.org/x/tools						 v0.35.0 \
+	golang.org/x/mod						 v0.32.0 \
+	golang.org/x/net						 v0.49.0 \
+	golang.org/x/sync						 v0.19.0 \
+	golang.org/x/sys						 v0.41.0 \
+	golang.org/x/telemetry						 v0.0.0-20260109210033-bd525da824e2 \
+	golang.org/x/term						 v0.40.0 \
+	golang.org/x/text						 v0.34.0 \
+	golang.org/x/tools						 v0.41.0 \
 	gonum.org/v1/gonum						 v0.16.0 \
 	gonum.org/v1/plot						 v0.15.2 \
 	gopkg.in/check.v1						 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3						 v3.0.1 \
+	pault.ag/go/debian						 v0.19.0 \
+	pault.ag/go/topsort						 v0.1.1 \
 	rsc.io/pdf							 v0.1.1
 
 MODGO_MODFILES =	\
 	github.com/davecgh/go-spew	 v1.1.0 \
+	github.com/klauspost/compress	 v1.18.0 \
 	github.com/stretchr/objx	 v0.1.0 \
 	github.com/stretchr/objx	 v0.4.0 \
+	github.com/stretchr/testify	 v1.10.0 \
 	github.com/stretchr/testify	 v1.7.1 \
 	github.com/stretchr/testify	 v1.8.0 \
+	golang.org/x/crypto		 v0.40.0 \
 	golang.org/x/mod		 v0.21.0 \
+	golang.org/x/net		 v0.47.0 \
 	golang.org/x/sys		 v0.0.0-20211007075335-d3039528d8ac \
-	golang.org/x/sys		 v0.34.0 \
+	golang.org/x/sys		 v0.38.0 \
+	golang.org/x/sys		 v0.40.0 \
 	golang.org/x/sys		 v0.6.0 \
+	golang.org/x/term		 v0.37.0 \
 	golang.org/x/text		 v0.23.0 \
+	golang.org/x/text		 v0.31.0 \
 	golang.org/x/tools		 v0.26.0 \
 	gopkg.in/yaml.v3		 v3.0.0-20200313102051-9f266ea9e77c
 
