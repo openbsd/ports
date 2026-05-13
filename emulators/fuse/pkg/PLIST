@@ -1,5 +1,4 @@
 !%%gtk%%
-%%gtk%%
 @bin bin/fuse
 @man man/man1/fuse.1
 share/fuse/
@@ -8,6 +7,8 @@ share/fuse/128-1.rom
 share/fuse/48.rom
 share/fuse/cassette.bmp
 share/fuse/disciple.rom
+%%gtk%%
+share/fuse/keyboard.png
 share/fuse/keyboard.scr
 share/fuse/microdrive.bmp
 share/fuse/plus2-0.rom
