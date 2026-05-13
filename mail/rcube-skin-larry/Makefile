@@ -2,8 +2,10 @@ COMMENT=	larry skin for Roundcube webmail
 
 GH_ACCOUNT=	roundcube
 GH_PROJECT=	larry
-GH_TAGNAME=	1.6.1
+#GH_TAGNAME=	1.6.1
+GH_COMMIT=	03ccd350bc1035378798468396d824c282b28d7b
 
+DISTNAME=	larry-1.6.1pl20250921
 PKGNAME=	rcube-skin-${DISTNAME}
 
 CATEGORIES=	mail www

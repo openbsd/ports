@@ -140,6 +140,7 @@ roundcubemail/skins/larry/templates/bounce.html
 roundcubemail/skins/larry/templates/compose.html
 roundcubemail/skins/larry/templates/contact.html
 roundcubemail/skins/larry/templates/contactedit.html
+roundcubemail/skins/larry/templates/contactimport.html
 roundcubemail/skins/larry/templates/contactprint.html
 roundcubemail/skins/larry/templates/contactsearch.html
 roundcubemail/skins/larry/templates/error.html
@@ -147,7 +148,6 @@ roundcubemail/skins/larry/templates/folderedit.html
 roundcubemail/skins/larry/templates/folders.html
 roundcubemail/skins/larry/templates/identities.html
 roundcubemail/skins/larry/templates/identityedit.html
-roundcubemail/skins/larry/templates/importcontacts.html
 roundcubemail/skins/larry/templates/login.html
 roundcubemail/skins/larry/templates/mail.html
 roundcubemail/skins/larry/templates/message.html
