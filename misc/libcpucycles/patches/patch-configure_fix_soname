@@ -3,7 +3,7 @@ Fix library soname.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -10,6 +10,7 @@
+@@ -10,6 +10,7 @@ import tempfile
  prefix = '/usr/local'
  clean = True
  darwin = platform.system() == 'Darwin'
@@ -11,7 +11,7 @@ Index: configure
  
  def hostsanitize(host):
    host = host.split('-')[0]
-@@ -43,6 +44,9 @@
+@@ -51,6 +52,9 @@ for arg in sys.argv[1:]:
    if arg.startswith('--host='):
      host = hostsanitize(arg[7:])
      continue
@@ -21,15 +21,15 @@ Index: configure
    if arg == '--clean':
      clean = True
      continue
-@@ -60,6 +64,7 @@
+@@ -68,6 +72,7 @@ for arg in sys.argv[1:]:
  echoargs = './configure'
  echoargs += ' --prefix=%s' % prefix
  echoargs += ' --host=%s' % host
 +echoargs += ' --soversion=%s' % soversion
  if clean: echoargs += ' --clean'
- if not clean: echoargs += ' --noclean'
+ if not clean: echoargs += ' --no-clean'
  if darwin: echoargs += ' --darwin'
-@@ -96,7 +101,7 @@
+@@ -104,7 +109,7 @@ dirlinksym('build/%s/scripts'%host,'install','../src/s
  # ----- shared-library variations
  
  so = 'dylib' if darwin else 'so'
@@ -38,7 +38,7 @@ Index: configure
  soname = 'install_name' if darwin else 'soname'
  syslibs = '-lm' if darwin else '-lm -lrt'
  
-@@ -245,17 +250,11 @@
+@@ -258,17 +263,11 @@ with open('build/%s/scripts/sharedlib' % host,'w') as 
    f.write(f'chmod 644 package/lib/libcpucycles.{so1}\n')
  os.chmod('build/%s/scripts/sharedlib' % host,0o755)
  
@@ -57,7 +57,7 @@ Index: configure
  # ----- command
  
  os.makedirs('build/%s/command'%host)
-@@ -284,8 +283,8 @@
+@@ -308,8 +307,8 @@ for fn in sorted(os.listdir('command')):
    M += '\tscripts/compiledefault command %s c -I include\n' % base
    M += '\n'
    makefile = M + makefile
@@ -68,7 +68,7 @@ Index: configure
    M += '\n'
    makefile = M + makefile
    commands += ['package/bin/%s' % base]
-@@ -303,7 +302,7 @@
+@@ -327,7 +326,7 @@ makefile = M + makefile
  
  # ----- make default
  

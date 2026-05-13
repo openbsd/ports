@@ -1,6 +1,6 @@
 COMMENT=		library for counting CPU cycles
 
-V=			20250925
+V=			20260105
 DISTNAME=		libcpucycles-${V}
 SHARED_LIBS+=		cpucycles	0.0	# 1.0
 CATEGORIES=		misc
@@ -26,5 +26,11 @@ CONFIGURE_ARGS+=	--prefix="${WRKINST}${PREFIX}" \
 			--soversion="${LIBcpucycles_VERSION}"
 ALL_TARGET=
 MAKE_FLAGS+=		LIBcpucycles_VERSION=${LIBcpucycles_VERSION}
+FAKE_FLAGS=		DESTDIR=
+
+# just pokes at linux procfs/sysfs
+post-install:
+	rm ${PREFIX}/bin/cpucycles-open \
+		${PREFIX}/man/man1/cpucycles-open.1
 
 .include <bsd.port.mk>
