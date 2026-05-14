@@ -1,7 +1,6 @@
 @newgroup _hiawatha:579
 @newuser _hiawatha:579:579::Hiawatha HTTP Server:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/hiawatha
-@bin bin/ssi-cgi
 @man man/man1/cgi-wrapper.1
 @man man/man1/hiawatha.1
 @man man/man1/lefh.1
@@ -12,6 +11,7 @@
 @mode
 @bin sbin/hiawatha
 sbin/lefh
+@bin sbin/ssi-cgi
 @bin sbin/wigwam
 share/examples/hiawatha/
 @sample ${SYSCONFDIR}/hiawatha/

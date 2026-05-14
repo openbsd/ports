@@ -1,16 +1,18 @@
---- config/cgi-wrapper.conf.orig	Wed Dec 12 09:13:45 2012
-+++ config/cgi-wrapper.conf	Wed Dec 12 09:13:56 2012
-@@ -4,10 +4,9 @@
- 
+Index: config/cgi-wrapper.conf
+--- config/cgi-wrapper.conf.orig
++++ config/cgi-wrapper.conf
+@@ -5,10 +5,10 @@
  # CGIhandler = /path/to/cgi-handler
  #
--#CGIhandler = /usr/bin/perl
+ #CGIhandler = /usr/bin/perl
 -#CGIhandler = /usr/bin/php-cgi
 -#CGIhandler = /usr/bin/python
 -#CGIhandler = /usr/bin/ruby
-+#CGIhandler = ${LOCALBASE}/bin/php-fastcgi
+-#CGIhandler = /usr/sbin/ssi-cgi
++#CGIhandler = ${LOCALBASE}/bin/php-cgi-X.Y
 +#CGIhandler = ${LOCALBASE}/bin/python
-+#CGIhandler = ${LOCALBASE}/bin/ruby
- #CGIhandler = /usr/bin/ssi-cgi
++#CGIhandler = ${LOCALBASE}/bin/rubyXX
++#CGIhandler = ${TRUEPREFIX}/sbin/ssi-cgi
  
  # Wrap = <wrap-id>;<cgiroot>;<userid>[:<group>]
+ #

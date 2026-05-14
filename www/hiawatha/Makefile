@@ -1,6 +1,8 @@
 COMMENT =	secure webserver
-DISTNAME =	hiawatha-12.0
+DISTNAME =	hiawatha-12.2
 CATEGORIES =	www net
+
+# updates: check if http2 became enabled by default and sync libs if needed
 
 HOMEPAGE =	https://hiawatha.leisink.net/
 SITES =		https://hiawatha.leisink.net/files/download/

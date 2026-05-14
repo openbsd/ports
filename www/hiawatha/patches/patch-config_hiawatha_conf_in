@@ -9,21 +9,18 @@ Index: config/hiawatha.conf.in
  ConnectionsTotal = 1000
  ConnectionsPerIP = 25
  SystemLogfile = @LOG_DIR@/system.log
-@@ -48,12 +49,13 @@ Binding {
- # COMMON GATEWAY INTERFACE (CGI) SETTINGS
+@@ -59,10 +60,10 @@ Binding {
  # These settings can be used to run CGI applications.
  #
--#CGIhandler = /usr/bin/perl:pl
+ #CGIhandler = /usr/bin/perl:pl
 -#CGIhandler = /usr/bin/php-cgi:php
 -#CGIhandler = /usr/bin/python:py
 -#CGIhandler = /usr/bin/ruby:rb
-+#CGIhandler = ${LOCALBASE}/bin/php-fastcgi:php
+-#CGIhandler = /usr/sbin/ssi-cgi:shtml
++#CGIhandler = ${LOCALBASE}/bin/php-cgi-X.Y:php
 +#CGIhandler = ${LOCALBASE}/bin/python:py
-+#CGIhandler = ${LOCALBASE}/bin/ruby:rb
- #CGIhandler = /usr/bin/ssi-cgi:shtml
++#CGIhandler = ${LOCALBASE}/bin/rubyXX:rb
++#CGIhandler = ${TRUEPREFIX}/sbin/ssi-cgi
  #CGIextension = cgi
-+#
-+#CGIwrapper = ${LOCALBASE}/sbin/cgi-wrapper
  #
  #FastCGIserver {
- #	FastCGIid = PHP8
