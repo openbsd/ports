@@ -66,7 +66,9 @@ share/locale/it/LC_MESSAGES/showtime.mo
 share/locale/ja/LC_MESSAGES/showtime.mo
 share/locale/ka/LC_MESSAGES/showtime.mo
 share/locale/kab/LC_MESSAGES/showtime.mo
+share/locale/kk/LC_MESSAGES/showtime.mo
 share/locale/ko/LC_MESSAGES/showtime.mo
+share/locale/kw/LC_MESSAGES/showtime.mo
 share/locale/lt/LC_MESSAGES/showtime.mo
 share/locale/nb/LC_MESSAGES/showtime.mo
 share/locale/ne/LC_MESSAGES/showtime.mo
@@ -74,6 +76,7 @@ share/locale/nl/LC_MESSAGES/showtime.mo
 share/locale/nn/LC_MESSAGES/showtime.mo
 share/locale/oc/LC_MESSAGES/showtime.mo
 share/locale/pa/LC_MESSAGES/showtime.mo
+share/locale/pl/LC_MESSAGES/showtime.mo
 share/locale/pt/LC_MESSAGES/showtime.mo
 share/locale/pt_BR/LC_MESSAGES/showtime.mo
 share/locale/ro/LC_MESSAGES/showtime.mo
@@ -83,6 +86,7 @@ share/locale/sl/LC_MESSAGES/showtime.mo
 share/locale/sr/LC_MESSAGES/showtime.mo
 share/locale/sr@latin/LC_MESSAGES/showtime.mo
 share/locale/sv/LC_MESSAGES/showtime.mo
+share/locale/th/LC_MESSAGES/showtime.mo
 share/locale/tr/LC_MESSAGES/showtime.mo
 share/locale/ug/LC_MESSAGES/showtime.mo
 share/locale/uk/LC_MESSAGES/showtime.mo
