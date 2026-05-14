@@ -4,7 +4,7 @@ available for Linux.
 Index: src/manuals-window.ui
 --- src/manuals-window.ui.orig
 +++ src/manuals-window.ui
-@@ -131,6 +131,7 @@ Or, press Ctrl+W to close the window</property>
+@@ -138,6 +138,7 @@ Or, press Ctrl+W to close the window</property>
                              <property name="action-name">win.show-bundle-dialog</property>
                              <property name="label" translatable="yes">Install Documentation…</property>
                              <property name="halign">center</property>
