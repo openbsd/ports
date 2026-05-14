@@ -74,6 +74,10 @@ share/help/ja/gedit/bookmarks.page
 share/help/ja/gedit/draw-spaces.page
 share/help/ja/gedit/legal-plugins.xml
 share/help/ja/gedit/word-completion.page
+share/help/kk/gedit/bookmarks.page
+share/help/kk/gedit/draw-spaces.page
+share/help/kk/gedit/legal-plugins.xml
+share/help/kk/gedit/word-completion.page
 share/help/ko/gedit/bookmarks.page
 share/help/ko/gedit/draw-spaces.page
 share/help/ko/gedit/legal-plugins.xml
@@ -180,6 +184,7 @@ share/locale/kk/LC_MESSAGES/gedit-plugins.mo
 share/locale/kn/LC_MESSAGES/gedit-plugins.mo
 share/locale/ko/LC_MESSAGES/gedit-plugins.mo
 share/locale/ku/LC_MESSAGES/gedit-plugins.mo
+share/locale/kw/LC_MESSAGES/gedit-plugins.mo
 share/locale/la/LC_MESSAGES/gedit-plugins.mo
 share/locale/lt/LC_MESSAGES/gedit-plugins.mo
 share/locale/lv/LC_MESSAGES/gedit-plugins.mo
