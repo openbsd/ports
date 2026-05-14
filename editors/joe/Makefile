@@ -1,6 +1,6 @@
 COMMENT=		Joe's Own Editor
 
-DISTNAME=		joe-4.7
+DISTNAME=		joe-4.8
 CATEGORIES=		editors
 SITES=			${SITE_SOURCEFORGE:=joe-editor/}
 

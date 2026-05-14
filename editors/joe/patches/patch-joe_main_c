@@ -1,0 +1,19 @@
+Fix assign to stdin, use freopen instead.
+
+Upstream commit 0be9f4f2b7c4202b183f65aa65ecfd32f565385d.
+
+Index: joe/main.c
+--- joe/main.c.orig
++++ joe/main.c
+@@ -755,7 +755,10 @@ int main(int argc, char **real_argv, const char * cons
+ 			/* Close stdin, so that if user kills the copying the program feeding stdin sees a SIGPIPE */
+ 			/* It won't if there are any extra file descriptors open */
+ 			fclose(stdin);
+-			stdin = fopen("/dev/tty", "rb");
++			if (!freopen("/dev/tty", "rb", stdin))
++			{
++				/* This should not fail */
++			}
+ 		}
+ 	}
+ 
