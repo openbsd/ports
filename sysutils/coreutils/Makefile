@@ -1,6 +1,6 @@
 COMMENT =		file, shell and text manipulation utilities
 
-DISTNAME =		coreutils-9.10
+DISTNAME =		coreutils-9.11
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.gnu.org/software/coreutils/coreutils.html
