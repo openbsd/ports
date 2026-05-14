@@ -1,0 +1,5 @@
+Whsniff is a command line utility that interfaces TI CC2531 USB dongle
+with Wireshark for capturing and displaying IEEE 802.15.4 traffic at 2.4
+GHz.  Whsniff reads the packets from TI CC2531 USB dongle with
+sniffer_fw_cc2531 firmware, converts to the PCAP format and writes to
+the standard output(stdout).
