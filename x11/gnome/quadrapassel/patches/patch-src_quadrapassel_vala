@@ -3,20 +3,40 @@ Drop libmanette dependency which requires libevdev/libinput
 Index: src/quadrapassel.vala
 --- src/quadrapassel.vala.orig
 +++ src/quadrapassel.vala
-@@ -61,9 +61,6 @@ public class Quadrapassel : Adw.Application
+@@ -73,26 +73,6 @@ public class Quadrapassel : Adw.Application
      private Adw.PreferencesDialog preferences_dialog;
      private Preview theme_preview;
  
 -    private Manette.Monitor manette_monitor;
--    private bool is_manette_button_down = false;
--
+-    private const uint16[] MANETTE_BUTTONS = {
+-        InputEventCode.BTN_A,
+-        InputEventCode.BTN_B,
+-        InputEventCode.BTN_X,
+-        InputEventCode.BTN_Y,
+-        InputEventCode.BTN_TL,
+-        InputEventCode.BTN_TR,
+-        InputEventCode.BTN_TL2,
+-        InputEventCode.BTN_TR2,
+-        InputEventCode.BTN_SELECT,
+-        InputEventCode.BTN_START,
+-        InputEventCode.BTN_MODE,
+-        InputEventCode.BTN_THUMBL,
+-        InputEventCode.BTN_THUMBR,
+-        InputEventCode.BTN_DPAD_UP,
+-        InputEventCode.BTN_DPAD_DOWN,
+-        InputEventCode.BTN_DPAD_LEFT,
+-        InputEventCode.BTN_DPAD_RIGHT,
+-    };
+     private HashTable<uint16, bool> buttons_state = new HashTable<uint16, bool> (direct_hash, direct_equal);
+ 
      private bool pause_requested = false;
+@@ -308,16 +288,6 @@ public class Quadrapassel : Adw.Application
+                                             -1,
+                                             new Games.Scores.HistoryFileImporter (parse_old_score));
  
-     private const GLib.ActionEntry[] action_entries =
-@@ -271,13 +268,6 @@ public class Quadrapassel : Adw.Application
-                                                                         APP_ID,
-                                                                         -1);
- 
+-        foreach (unowned var button in MANETTE_BUTTONS)
+-            buttons_state[button] = false;
+-
 -        manette_monitor = new Manette.Monitor ();
 -        manette_monitor.device_connected.connect (manette_device_connected_cb);
 -        var manette_iterator = manette_monitor.iterate ();
@@ -24,10 +44,10 @@ Index: src/quadrapassel.vala
 -        while (manette_iterator.next (out manette_device))
 -            manette_device_connected_cb (manette_device);
 -
-         pause_action.set_enabled (false);
-         new_game_button.set_sensitive (false);
-     }
-@@ -534,103 +524,6 @@ public class Quadrapassel : Adw.Application
+         uint[] keys = {
+             Gdk.Key.Return,
+             Gdk.Key.Pause,
+@@ -593,149 +563,6 @@ public class Quadrapassel : Adw.Application
          }
  
          base.quit ();
@@ -37,33 +57,39 @@ Index: src/quadrapassel.vala
 -    {
 -        manette_device.button_press_event.connect (manette_button_press_event_cb);
 -        manette_device.button_release_event.connect (manette_button_release_event_cb);
+-        manette_device.absolute_axis_event.connect (manette_absolute_axis_event_cb);
 -    }
 -
 -    private void manette_button_press_event_cb (Manette.Event event)
 -    {
--        if (is_manette_button_down)
--            return;
--
 -        uint16 button;
 -        if (!event.get_button (out button))
 -            return;
 -
--        is_manette_button_down = true;
+-        if (buttons_state[button])
+-            return;
+-
+-        buttons_state[button] = true;
 -
 -        if (button == InputEventCode.BTN_SELECT)
 -        {
--            new_game();
+-            if (game_aspect.has_focus)
+-                new_game ();
+-
 -            return;
 -        }
 -
 -        if (button == InputEventCode.BTN_START)
 -        {
+-            if (!game_aspect.has_focus)
+-                return;
+-
 -            if (game == null)
--                new_game();
+-                new_game ();
 -            else if (!game.game_over)
 -                user_pause ();
 -            else
--                new_game();
+-                new_game ();
 -
 -            return;
 -        }
@@ -84,25 +110,37 @@ Index: src/quadrapassel.vala
 -            game.move_right ();
 -            return;
 -        }
--        else if (button == InputEventCode.BTN_A)
+-        else if (button == InputEventCode.BTN_TL2 || button == InputEventCode.BTN_TL)
 -        {
 -            game.rotate_left ();
 -            return;
 -        }
--        else if (button == InputEventCode.BTN_B)
+-        else if (button == InputEventCode.BTN_TR2 || button == InputEventCode.BTN_TR)
 -        {
 -            game.rotate_right ();
 -            return;
 -        }
--        else if (button == InputEventCode.BTN_DPAD_DOWN)
+-        else if (button == InputEventCode.BTN_B || button == InputEventCode.BTN_A)
 -        {
 -            game.set_fast_forward (true);
 -            return;
 -        }
--        else if (button == InputEventCode.BTN_DPAD_UP)
+-        else if (button == InputEventCode.BTN_X)
+-        {
+-            game.hold ();
+-            return;
+-        }
+-        else if (button == InputEventCode.BTN_DPAD_DOWN)
 -        {
 -            game.drop ();
 -            return;
+-        }
+-        else if (button == InputEventCode.BTN_DPAD_UP)
+-        {
+-            if (settings.get_boolean ("rotate-counter-clock-wise"))
+-                game.rotate_left ();
+-            else
+-                game.rotate_right ();
 -        }
 -    }
 -
@@ -112,7 +150,10 @@ Index: src/quadrapassel.vala
 -        if (!event.get_button (out button))
 -            return;
 -
--        is_manette_button_down = false;
+-        if (!buttons_state[button])
+-            return;
+-
+-        buttons_state[button] = false;
 -
 -        if (game == null)
 -            return;
@@ -123,11 +164,36 @@ Index: src/quadrapassel.vala
 -            game.stop_moving ();
 -            return;
 -        }
--        else if (button == InputEventCode.BTN_DPAD_DOWN)
+-        else if (button == InputEventCode.BTN_B || button == InputEventCode.BTN_A)
 -        {
 -            game.set_fast_forward (false);
 -            return;
 -        }
+-    }
+-
+-    private void manette_absolute_axis_event_cb (Manette.Event event)
+-    {
+-        if (game == null || game.paused)
+-            return;
+-
+-        uint16 axis;
+-        double val;
+-        event.get_absolute (out axis, out val);
+-
+-        if (axis != InputEventCode.ABS_X)
+-            return;
+-
+-        var abs = val.abs ();
+-        if (abs < 0.5)
+-        {
+-            game.stop_moving ();
+-            return;
+-        }
+-
+-        if (val > 0)
+-            game.move_right ();
+-        else if (val < 0)
+-            game.move_left ();
      }
  
      private bool key_press_event_cb (Gtk.EventControllerKey controller,
