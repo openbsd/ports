@@ -1,6 +1,6 @@
 COMMENT=	objects and routines pertaining to date and time
 
-MODPY_DISTV=	5.8.1
+MODPY_DISTV=	5.9.0
 DISTNAME=	tempora-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -17,8 +17,12 @@ MODPY_PI=	Yes
 
 BUILD_DEPENDS=	misc/py-coherent.licensed
 
-RUN_DEPENDS=	devel/py-jaraco-functools>=1.2.0
+RUN_DEPENDS=	devel/py-jaraco-functools \
+		devel/py-dateutil \
+		devel/py-jaraco-context \
+		devel/py-more-itertools \
+		devel/py-jaraco-collections
 
-TEST_DEPENDS=	devel/py-freezegun
+# some tests want py-test-freezer, not in ports
 
 .include <bsd.port.mk>
