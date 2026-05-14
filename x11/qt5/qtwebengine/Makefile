@@ -105,7 +105,6 @@ CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 # most of these would fit better in post-extract, but between
 # DIST_TUPLE and ../Makefile.inc that's complicated
 pre-configure:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32 arm64
 	mkdir -p ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}
 .  for _dir in avcodec avformat avutil

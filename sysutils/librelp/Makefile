@@ -35,7 +35,6 @@ post-extract:
 	sed -i s,#!/bin/bash,#!${LOCALBASE}/bin/bash, ${WRKSRC}/tests/*.sh
 
 pre-test:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -sf ${LOCALBASE}/bin/gtimeout ${WRKDIR}/bin/timeout
 	ln -sf ${LOCALBASE}/bin/ggrep ${WRKDIR}/bin/grep
 	ln -sf ${LOCALBASE}/bin/ghead ${WRKDIR}/bin/head

@@ -23,7 +23,4 @@ RUN_DEPENDS =		devel/py-colorama \
 			devel/py-tqdm \
 			graphics/ffmpeg
 
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

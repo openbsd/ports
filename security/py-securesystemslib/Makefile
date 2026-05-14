@@ -25,7 +25,4 @@ RUN_DEPENDS =		devel/py-colorama \
 			security/py-cryptography \
 			security/py-PyNaCl
 
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

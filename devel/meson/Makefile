@@ -65,13 +65,11 @@ pre-configure:
 # gfortran: test_fortran_compiler; XXX hardcoded
 # XXX test_fortran_compiler ... skipped 'No alternate Fortran implementation.'
 # javac: test_java_compiler; XXX hardcoded
-# python: test cases/unit/46 native file binary
 do-test:
 	ln -sf ${LOCALBASE}/jdk-11/bin/javac ${WRKDIR}/bin/javac
 	ln -sf ${LOCALBASE}/bin/egfortran ${WRKDIR}/bin/gfortran
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -sf ${LOCALBASE}/bin/clang-format-${MODCLANG_VERSION} ${WRKDIR}/bin/clang-format
-	cd ${WRKSRC} && PATH=${PORTPATH} LC_CTYPE="en_US.UTF-8" \
+	cd ${WRKSRC} && PATH=${PORTPATH} LC_CTYPE="en_US.UTF-8" ${MODPY_BIN} \
 		./run_tests.py --failfast
 
 post-install:

@@ -26,7 +26,4 @@ TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/py-test-instafail \
 		devel/py-test-mock
 
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

@@ -35,11 +35,4 @@ TEST_DEPENDS=	devel/py-hypothesis \
 		math/minisat \
 		textproc/py-black
 
-# Tests expect the python interpreter to be `python`.
-#
-# PR raised upstream, so hopefully this can go next time we update the port:
-# https://github.com/DRMacIver/shrinkray/pull/17
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

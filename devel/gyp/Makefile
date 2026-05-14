@@ -22,7 +22,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gyp
 
 pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 	# tests temporarily toggle write permissions, but this disrupts `make clean'.
 	# avoid toggling altogether.
 .for l in default all

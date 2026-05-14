@@ -16,7 +16,4 @@ MODPY_PYBUILD=	setuptools
 
 TEST_DEPENDS=	textproc/py-docutils
 
-pre-test:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

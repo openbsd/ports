@@ -39,7 +39,4 @@ post-install:
 	    ${PREFIX}/bin/borgmatic config generate \
 	    --destination ${PREFIX}/share/examples/borgmatic/config.yaml.dist
 
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

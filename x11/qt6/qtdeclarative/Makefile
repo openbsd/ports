@@ -80,8 +80,4 @@ PROGRAMS6 =	qml qmldom qmleasing qmlformat qmllint qmlls qmlplugindump \
 		qmlpreview qmlprofiler qmlscene qmltc qmltestrunner qmltime \
 		svgtoqml
 
-pre-configure:
-# Python is used for building, this path does not get into final packages.
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

@@ -56,8 +56,6 @@ MODQT5_DEPS =		No
 MODQMAKE_RECURSIVE =	No
 
 pre-configure:
-# Python is used for building, this path does not get into final packages.
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	${QT5_GEN_INCLUDES}
 
 .include <bsd.port.mk>

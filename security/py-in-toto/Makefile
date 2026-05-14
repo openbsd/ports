@@ -26,7 +26,4 @@ RUN_DEPENDS =		devel/py-attrs \
 			security/py-securesystemslib \
 			textproc/py-iso8601
 
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

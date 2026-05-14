@@ -150,7 +150,6 @@ SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 SUBST_VARS+=	V
 
 post-patch:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -sf ${LOCALBASE}/bin/gcp ${WRKDIR}/bin/cp
 	ln -sf ${LOCALBASE}/bin/gmv ${WRKDIR}/bin/mv
 

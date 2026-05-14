@@ -29,7 +29,4 @@ TEST_DEPENDS=	devel/py-mock
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cola/app.py
 
-pre-test:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

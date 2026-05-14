@@ -37,9 +37,6 @@ MODPY_RUNDEP =		No
 
 USE_GMAKE =		Yes
 
-pre-configure:
-	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
-
 post-build:
 	cd ${WRKSRC} && \
 	${PREFIX}/bin/xsltproc --novalid --nonet --param man.charmap.use.subset "0" \

@@ -280,7 +280,6 @@ pre-patch:
 		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx/source/libvpx 
 
 post-patch:
-	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin \
 		${WRKSRC}/third_party/rust-toolchain/bin \

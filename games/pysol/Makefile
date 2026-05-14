@@ -34,9 +34,6 @@ RUN_DEPENDS =		${MODPY_TKINTER_DEPENDS} \
 			games/pysol-cards \
 			graphics/py-Pillow
 
-pre-test:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-
 post-install:
 	mv ${PREFIX}/bin/pysol{.py,}
 	mv ${WRKDIR}/PySolFC-Cardsets-${V_CARDSETS}/* ${PREFIX}/share/PySolFC/

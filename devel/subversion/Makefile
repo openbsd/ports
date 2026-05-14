@@ -185,9 +185,6 @@ TEST_DEPENDS=${MODPY_RUN_DEPENDS}
 TEST_DEPENDS+=	${FULLPKGNAME-gnome-keyring}:${BUILD_PKGPATH},-gnome-keyring
 SUBST_VARS+=	LOCALBASE SO_VERSION MODRUBY_BINREV
 
-pre-patch:
-	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
-
 post-patch:
 	@${SUBST_CMD} ${WRKSRC}/Makefile.in \
 		${WRKSRC}/subversion/libsvn_subr/auth.c

@@ -36,7 +36,4 @@ CONFIGURE_ARGS +=	--enable-builtin=libidn2 \
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
-pre-configure:
-	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

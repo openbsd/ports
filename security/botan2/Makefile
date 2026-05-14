@@ -59,7 +59,6 @@ SUBST_VARS =		CXX CXXFLAGS LIBbotan-2_VERSION
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/build-data/os/openbsd.txt
 	${SUBST_CMD} ${WRKSRC}/src/tests/main.cpp
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 do-test:
 	LD_LIBRARY_PATH=${WRKBUILD} ${WRKBUILD}/botan-test \

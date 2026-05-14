@@ -36,7 +36,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/module/* ${EXAMPLESDIR}/module
 
 do-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 	cd ${WRKSRC}; PATH=${WRKSRC}:${PORTPATH} ./test/run.py
 
 .include <bsd.port.mk>

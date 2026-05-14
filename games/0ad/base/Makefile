@@ -69,8 +69,6 @@ CONFIGURE_ARGS +=	-j${MAKE_JOBS} \
 WRKSRC =		${WRKDIST}/build/workspaces/gcc
 
 do-build:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python3 # ensure correct version binary is used
-
 	cd ${WRKDIST}/libraries && \
 		${SETENV} CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" SO_VERSION="${SO_VERSION}" \

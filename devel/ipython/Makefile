@@ -59,7 +59,4 @@ pre-build:
 	${SUBST_CMD} ${WRKBUILD}/tests/test_interactiveshell.py
 	${SUBST_CMD} ${WRKBUILD}/examples/IPython\ Kernel/ipython.desktop
 
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

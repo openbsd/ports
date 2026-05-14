@@ -24,7 +24,6 @@ TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		shells/zsh
 
 do-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 	cd ${WRKSRC}; ${SETENV} ${ALL_TEST_ENV} make test
 
 .include <bsd.port.mk>

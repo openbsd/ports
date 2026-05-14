@@ -127,7 +127,6 @@ NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/conf/upssched.conf.sample.in
-	-ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nut

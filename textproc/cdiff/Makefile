@@ -30,7 +30,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${PREFIX}/share/doc/ydiff/
 
 pre-test:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -sf ${LOCALBASE}/bin/rst2html ${WRKDIR}/bin/rst2html.py
 	ln -sf ${LOCALBASE}/bin/pycodestyle ${WRKDIR}/bin/pep8
 	ln -sf ${LOCALBASE}/bin/coverage-${MODPY_VERSION} ${WRKDIR}/bin/coverage

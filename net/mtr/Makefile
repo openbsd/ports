@@ -45,9 +45,6 @@ CONFIGURE_ARGS+=	--without-glib \
 			--without-gtk
 .endif
 
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-
 post-extract:
 	printf '#!/bin/sh\necho -n ${GH_TAGNAME:S/v//}\n' > ${WRKSRC}/build-aux/git-version-gen
 

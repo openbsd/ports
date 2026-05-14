@@ -49,9 +49,6 @@ TEST_DEPENDS +=		${BASE_PKGPATH} \
 			devel/bison \
 			emacs->=24:editors/emacs \
 			devel/dejagnu
-
-pre-test:
-	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .endif
 
 do-test:

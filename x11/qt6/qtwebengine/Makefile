@@ -152,7 +152,6 @@ FFMPEG_BDIR=	${CHROMESRC}/third_party/ffmpeg/build.${FFMPEG_TARGET}.openbsd/${FF
 FFMPEG_CDIR=	${CHROMESRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/openbsd/${FFMPEG_TARGET}
 
 post-patch:
-	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${CHROMESRC}/build/gn_run_binary.py \

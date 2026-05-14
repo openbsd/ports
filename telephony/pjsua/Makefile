@@ -103,7 +103,4 @@ post-install:
 	rm ${PREFIX}/lib/*.so ${PREFIX}/lib/*-openbsd.a
 	${INSTALL_PROGRAM} ${WRKSRC}/pjsip-apps/bin/pjsua* ${PREFIX}/bin/pjsua
 
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>

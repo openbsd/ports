@@ -85,10 +85,8 @@ pre-configure:
 	sed -i -e 's,/usr/bin/env python3,${MODPY_BIN},g' \
 		${WRKSRC}/mono/tests/gc-descriptors/gen-descriptor-tests.py
 
-
 	@ln -fs /usr/local/bin/bash ${WRKDIR}/bin/bash
 	@ln -fs /usr/local/bin/gawk ${WRKDIR}/bin/gawk
-	@ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 
 # Force using the internal mcs compiler
 pre-build:

@@ -21,13 +21,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	shells/bash \
 		sysutils/coreutils
 
-#MODPY_ADJ_FILES= tests/fakessh/ssh
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-pexpect
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/py-pexpect
-
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>

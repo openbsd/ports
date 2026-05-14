@@ -1,7 +1,7 @@
 # XXX should be a RUN_DEPENDS of x11/gnome/libsecret but that would create
-# dependency loops:                                                
-# libsecret -> gnome-keyring -> pinentry -> libsecret                           
-# libsecret -> gnome-keyring -> gcr -> gnupg -> pinentry -> gcr                
+# dependency loops:
+# libsecret -> gnome-keyring -> pinentry -> libsecret
+# libsecret -> gnome-keyring -> gcr -> gnupg -> pinentry -> gcr
 
 COMMENT=		password agent for the GNOME project
 
@@ -54,8 +54,5 @@ MODPY_BUILDDEP=		No
 MODPY_ADJ_FILES=	build/tap-driver
 # couldn't connect to dbus session bus: Cannot autolaunch D-Bus without X11 $DISPLAY
 TEST_IS_INTERACTIVE=	x11
-
-pre-test:
-	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>

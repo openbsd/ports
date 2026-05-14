@@ -33,7 +33,4 @@ MODPY_PYTEST_ARGS= -k 'not test_install_data_dir \
 		and not test_symlink_data_dir \
 		and not test_symlink_module_pep621'
 
-pre-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-
 .include <bsd.port.mk>
