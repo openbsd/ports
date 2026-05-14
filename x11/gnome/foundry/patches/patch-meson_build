@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -59,7 +59,11 @@ peas_req_version = '2.0'
+@@ -71,7 +71,11 @@ peas_req_version = '2.0'
  peas_req = '>= @0@'.format(peas_req_version)
  peas_dep = dependency('libpeas-2', version: peas_req)
  

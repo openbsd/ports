@@ -1,0 +1,14 @@
+No pkg-config file for base readline.
+
+Index: testsuite/tools/meson.build
+--- testsuite/tools/meson.build.orig
++++ testsuite/tools/meson.build
+@@ -1,5 +1,8 @@
+ readline_dep = dependency('readline', required: false)
+ if not readline_dep.found()
++  readline_dep = cc.find_library('readline', required: false)
++endif
++if not readline_dep.found()
+   readline_dep = disabler()
+ endif
+ 
