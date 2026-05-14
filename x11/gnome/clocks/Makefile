@@ -1,7 +1,7 @@
 COMMENT=		keep track of time
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		49.0
+GNOME_VERSION=		50.0
 
 HOMEPAGE=		https://apps.gnome.org/Clocks/
 
@@ -9,11 +9,14 @@ HOMEPAGE=		https://apps.gnome.org/Clocks/
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += adwaita-1 c geoclue-2 geocode-glib-2 gio-2.0 glib-2.0
-WANTLIB += gnome-desktop-4 gobject-2.0 gtk-4 gweather-4 intl m
+WANTLIB += gnome-desktop-4 gobject-2.0 gtk-4 gweather-4 icui18n
+WANTLIB += icuuc intl m
 
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
+
+BUILD_DEPENDS=		audio/vorbis-tools
 
 LIB_DEPENDS=		geo/geocode-glib \
 			x11/gnome/desktop,-gtk4 \
