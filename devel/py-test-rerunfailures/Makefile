@@ -1,6 +1,6 @@
 COMMENT=	pytest plugin to re-run failures
 
-MODPY_DISTV=	16.1
+MODPY_DISTV=	16.2
 DISTNAME=	pytest_rerunfailures-${MODPY_DISTV}
 PKGNAME=	py-test-rerunfailures-${MODPY_DISTV}
 
