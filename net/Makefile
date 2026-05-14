@@ -808,6 +808,7 @@
      SUBDIR += wget
      SUBDIR += wget2
      SUBDIR += whatweb
+     SUBDIR += whsniff
      SUBDIR += wide-dhcpv6
      SUBDIR += wifind
      SUBDIR += wireguard-tools
