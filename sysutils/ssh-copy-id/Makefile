@@ -1,10 +1,10 @@
 COMMENT=        script to copy one's SSH keys to remote hosts
-V=              8.8p1
+V=              10.3p1
 DISTNAME=       openssh-${V}
 PKGNAME=        ssh-copy-id-${V:S/p/pl/}
 CATEGORIES=     sysutils
 
-HOMEPAGE=       http://git.hands.com/ssh-copy-id
+HOMEPAGE=       https://gitlab.com/phil_hands/ssh-copy-id
 MAINTAINER=     Jan-Piet Mens <ports@jpmens.net>
 
 # License free to use
