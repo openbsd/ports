@@ -1,6 +1,6 @@
 COMMENT=		C++ bindings for libxml2
 
-V=			5.6.0
+V=			5.6.1
 DISTNAME=		libxml++-${V}
 PKGNAME=		libxml++50-${V}
 EXTRACT_SUFX=		.tar.xz
