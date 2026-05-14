@@ -3,7 +3,7 @@ ARCHITECTURE_DESC is unused, no need to error out for that.
 Index: src/xpdev/genwrap.h
 --- src/xpdev/genwrap.h.orig
 +++ src/xpdev/genwrap.h
-@@ -228,7 +228,7 @@ extern "C" {
+@@ -232,7 +232,7 @@ extern "C" {
  	#ifdef UNAME_ARCHITECTURE_DESC
  		#define ARCHITECTURE_DESC UNAME_ARCHITECTURE_DESC
  	#else

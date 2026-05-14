@@ -1,6 +1,6 @@
 COMMENT=	BBS terminal program
 
-DISTNAME=	syncterm-1.7
+DISTNAME=	syncterm-1.8
 
 CATEGORIES=	comms net
 

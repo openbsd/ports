@@ -4,7 +4,7 @@ Don't hardcode -O3.
 Index: src/build/Common.gmake
 --- src/build/Common.gmake.orig
 +++ src/build/Common.gmake
-@@ -279,7 +279,6 @@ ifeq ($(machine_uname),x86_64)
+@@ -280,7 +280,6 @@ ifeq ($(machine_uname),x86_64)
   machine_uname	:= x64
  endif
  ifndef win
@@ -12,7 +12,7 @@ Index: src/build/Common.gmake
  endif
  ifeq ($(machine_uname),sparc64)
   CFLAGS +=      -D__BIG_ENDIAN__
-@@ -524,7 +523,7 @@ ifdef DEBUG
+@@ -536,7 +535,7 @@ ifdef DEBUG
  else # RELEASE
   # -finline-functions (used to) break the baja build badly.
   # This also meant that -O3 wouldn't work either.
