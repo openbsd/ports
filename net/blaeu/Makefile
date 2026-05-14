@@ -1,6 +1,6 @@
 COMMENT =	create measurements on RIPE Atlas probes
 
-MODPY_DISTV =	2.2
+MODPY_DISTV =	2.2.1
 DISTNAME =	blaeu-${MODPY_DISTV}
 CATEGORIES =	net
 REVISION =	0
