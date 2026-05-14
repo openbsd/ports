@@ -60,6 +60,7 @@ share/locale/km/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/kn/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ko/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ku/LC_MESSAGES/gnome-font-viewer.mo
+share/locale/kw/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ky/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/lt/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/lv/LC_MESSAGES/gnome-font-viewer.mo
@@ -85,6 +86,7 @@ share/locale/pt_BR/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ro/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ru/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/rw/LC_MESSAGES/gnome-font-viewer.mo
+share/locale/sat/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/si/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/sk/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/sl/LC_MESSAGES/gnome-font-viewer.mo
@@ -107,7 +109,7 @@ share/locale/xh/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-font-viewer.mo
-share/metainfo/org.gnome.font-viewer.appdata.xml
+share/metainfo/org.gnome.font-viewer.metainfo.xml
 share/thumbnailers/gnome-font-viewer.thumbnailer
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

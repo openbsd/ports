@@ -1,7 +1,7 @@
 COMMENT=		font viewer utility for GNOME
 
 GNOME_PROJECT=		gnome-font-viewer
-GNOME_VERSION=		49.0
+GNOME_VERSION=		50.0
 
 HOMEPAGE=		https://apps.gnome.org/FontViewer/
 
