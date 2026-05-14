@@ -1,6 +1,6 @@
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-3.12.1
+DISTNAME=	feh-3.12.2
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS= Yes
