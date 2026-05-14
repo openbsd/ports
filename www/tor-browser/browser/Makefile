@@ -12,7 +12,7 @@ EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
 DISTNAME =		src-firefox-tor-browser-140.10.2esr-15.0-1-build1
-REVISION =		0
+REVISION =		1
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -51,6 +51,9 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 # mach uses pkg_resources
 BUILD_DEPENDS +=	devel/py-setuptools
 BUILD_DEPENDS +=	textproc/jq
+
+# audio/video support
+RUN_DEPENDS =		graphics/ffmpeg
 
 # vendored copy of dav1d needs patching to avoid these (or changing to the ports
 # version, which already has relevant patches).
