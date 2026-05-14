@@ -1007,6 +1007,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}serv
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}server_notice_servlet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}statistics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}statistics.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}user_reports.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}user_reports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}username_available.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}username_available.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/${MODPY_PYCACHE}users.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1024,6 +1026,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/rooms.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/scheduled_tasks.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/server_notice_servlet.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/statistics.py
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/user_reports.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/username_available.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/users.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/
@@ -2228,6 +2231,11 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/93/${
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/94/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/94/01_redactions_recheck.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/94/02_redactions_recheck_bg_update.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/94/03_device_lists_room_timestamp.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/94/03_quarantined_media_tracking.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/94/03_quarantined_media_tracking_seq.sql.postgres
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/94/03_state_dag_fwd_extrems.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/94/04_device_lists_changes_max_pruned.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/full.sql.postgres

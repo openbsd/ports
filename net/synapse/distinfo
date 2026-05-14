@@ -106,6 +106,7 @@ SHA256 (cargo/regex-syntax-0.8.5.tar.gz) = KxXEMYa+Z6T9Y77lDQMDr//O84FJLr4sXYfzJ
 SHA256 (cargo/reqwest-0.12.28.tar.gz) = 7d08pVkgMYCjB/EtEUwmir9YP1mwPLkG/Qs/+GRsEUc=
 SHA256 (cargo/ring-0.17.14.tar.gz) = pGiebCKU2B6I3GJhx2i2O8T824Ur5tE1JJixFPYTg7c=
 SHA256 (cargo/rustc-hash-2.1.1.tar.gz) = NXcD1BNltLJ8WQ4+2R6rsbZj8HxMCECV5gy+1DYt/w0=
+SHA256 (cargo/rustc_version-0.4.1.tar.gz) = z8s6Iu9G6FtF3m7n550GMxnrtllPqvzxwiXqkqtum5I=
 SHA256 (cargo/rustls-0.23.31.tar.gz) = wOvL0vA94PwRIq2bsksSelps1R1yYEo/PFCsRZditsw=
 SHA256 (cargo/rustls-native-certs-0.8.1.tar.gz) = f8/y3VK1io2YpwJDZjoNI0xOK3kjVjeEnRWRM5SiR9M=
 SHA256 (cargo/rustls-pki-types-1.12.0.tar.gz) = IppKTCIQE+fh8aBDZ4xcw5/lFxQ3yI+0cVGiHm9bXHk=
@@ -115,6 +116,7 @@ SHA256 (cargo/ryu-1.0.20.tar.gz) = KNOysTZuwgmU8f0Yw8WU8Fxd1LxE2LsMHGMsjWgpSB8=
 SHA256 (cargo/schannel-0.1.27.tar.gz) = HynrqjRflFzsn7vFMuswfw/a2BYfKBtjaVOcjYSHaz0=
 SHA256 (cargo/security-framework-3.2.0.tar.gz) = JxcgQD9GygT3um9V1Dj4vYeNa4ygoQRugijEFFvLsxY=
 SHA256 (cargo/security-framework-sys-2.14.0.tar.gz) = SdsjHVahkEkctK7alSfxrUU0WvULCFFiKnrbjAOwHDI=
+SHA256 (cargo/semver-1.0.27.tar.gz) = 12frCqvIgLKZVsNXNBcPJu1VGoWdvTYdFAzb7KYaseI=
 SHA256 (cargo/serde-1.0.228.tar.gz) = mo6U6n83i9Msu9NxmKSpFDYYDFu0ckEeSLXsLiEkrp4=
 SHA256 (cargo/serde_core-1.0.228.tar.gz) = QdOFx9TKWOWfxzKvJcOYO2eshSwaJQAK/hF13kWLZ60=
 SHA256 (cargo/serde_derive-1.0.228.tar.gz) = 1UDyINMYcXPaIg+IWrZmCDZ7ZXTpJQEak1Pkut2pHXk=
@@ -194,7 +196,7 @@ SHA256 (cargo/zerotrie-0.2.2.tar.gz) = NvC71HhYP3ntrZeLQHkU9hspcvWvb6CJaGAWvo+a9
 SHA256 (cargo/zerovec-0.11.2.tar.gz) = SgXrCA4BW6OcyeI7vl5/sE1fsEA1D5nzTjONX90pRCg=
 SHA256 (cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5GsvPv8eu5dvfvIyHS9Y8=
 SHA256 (cargo/zmij-1.0.19.tar.gz) = P/BfjKqQOIlGN1ca5rnilGbB9Pgp0mybKPhpopy+NEU=
-SHA256 (synapse-1.151.0.tar.gz) = r9iWYYeJVRGhzV/VrcR3yOvpAOj9XdXhAq/R9HpnNto=
+SHA256 (synapse-1.152.1.tar.gz) = LE1oe9tZsVOYgsSgpT0q2lcDprv+VD2zxF38daf6/78=
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/anyhow-1.0.102.tar.gz) = 48658
 SIZE (cargo/arc-swap-1.7.1.tar.gz) = 68512
@@ -303,6 +305,7 @@ SIZE (cargo/regex-syntax-0.8.5.tar.gz) = 357541
 SIZE (cargo/reqwest-0.12.28.tar.gz) = 157031
 SIZE (cargo/ring-0.17.14.tar.gz) = 1502610
 SIZE (cargo/rustc-hash-2.1.1.tar.gz) = 14154
+SIZE (cargo/rustc_version-0.4.1.tar.gz) = 12245
 SIZE (cargo/rustls-0.23.31.tar.gz) = 371259
 SIZE (cargo/rustls-native-certs-0.8.1.tar.gz) = 31129
 SIZE (cargo/rustls-pki-types-1.12.0.tar.gz) = 64740
@@ -312,6 +315,7 @@ SIZE (cargo/ryu-1.0.20.tar.gz) = 48738
 SIZE (cargo/schannel-0.1.27.tar.gz) = 42772
 SIZE (cargo/security-framework-3.2.0.tar.gz) = 86095
 SIZE (cargo/security-framework-sys-2.14.0.tar.gz) = 20537
+SIZE (cargo/semver-1.0.27.tar.gz) = 30081
 SIZE (cargo/serde-1.0.228.tar.gz) = 83652
 SIZE (cargo/serde_core-1.0.228.tar.gz) = 63111
 SIZE (cargo/serde_derive-1.0.228.tar.gz) = 59605
@@ -391,4 +395,4 @@ SIZE (cargo/zerotrie-0.2.2.tar.gz) = 74423
 SIZE (cargo/zerovec-0.11.2.tar.gz) = 124500
 SIZE (cargo/zerovec-derive-0.11.1.tar.gz) = 21294
 SIZE (cargo/zmij-1.0.19.tar.gz) = 23948
-SIZE (synapse-1.151.0.tar.gz) = 9307465
+SIZE (synapse-1.152.1.tar.gz) = 9356251
