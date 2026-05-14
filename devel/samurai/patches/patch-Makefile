@@ -1,14 +1,16 @@
-Remove flags that base-gcc doesn't like
+- Remove flags that base-gcc doesn't like
+- Remove hardcoded librt
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -3,7 +3,7 @@
+@@ -5,8 +5,7 @@ OS=posix
  PREFIX=/usr/local
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/share/man
--ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wpedantic -Wno-unused-parameter
-+ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra
+-ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wshadow -Wmissing-prototypes -Wpedantic -Wno-unused-parameter
+-LDLIBS=-lrt
++ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wshadow -Wmissing-prototypes
  OBJ=\
  	build.o\
  	deps.o\

@@ -1,8 +1,7 @@
 COMMENT =	ninja-compatible build tool written in C
 
-V =		1.2
+V =		1.3
 DISTNAME =	samurai-$V
-REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/michaelforney/samurai
