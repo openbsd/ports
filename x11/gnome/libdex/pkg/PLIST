@@ -8,9 +8,12 @@ include/libdex-1/dex-channel.h
 include/libdex-1/dex-delayed.h
 include/libdex-1/dex-enums.h
 include/libdex-1/dex-error.h
+include/libdex-1/dex-features.h
 include/libdex-1/dex-fiber.h
+include/libdex-1/dex-future-list-model.h
 include/libdex-1/dex-future-set.h
 include/libdex-1/dex-future.h
+include/libdex-1/dex-gdbus.h
 include/libdex-1/dex-gio.h
 include/libdex-1/dex-init.h
 include/libdex-1/dex-main-scheduler.h
@@ -29,6 +32,13 @@ include/libdex-1/libdex.h
 lib/girepository-1.0/Dex-1.typelib
 @lib lib/libdex-1.so.${LIBdex-1_VERSION}
 lib/pkgconfig/libdex-1.pc
+lib/python3.14/site-packages/gi/
+lib/python3.14/site-packages/gi/overrides/
+lib/python3.14/site-packages/gi/overrides/Dex.py
+lib/python3.14/site-packages/gi/overrides/__pycache__/
+lib/python3.14/site-packages/gi/overrides/__pycache__/Dex.cpython-314.pyc
+libexec/libdex-1/
+libexec/libdex-1/dex-gdbus-codegen-extension.py
 share/gir-1.0/Dex-1.gir
 share/vala/
 share/vala/vapi/

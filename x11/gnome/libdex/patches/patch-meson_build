@@ -3,7 +3,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -56,6 +56,8 @@ if cc.has_header('ucontext.h')
+@@ -58,6 +58,8 @@ if cc.has_header('ucontext.h')
      libucontext_dep = disabler()
    endif
    config_h.set('HAVE_UCONTEXT_H', 1)

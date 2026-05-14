@@ -4,10 +4,9 @@ ONLY_FOR_ARCHS=		amd64
 COMMENT=		future-based programming for GLib-based applications
 
 GNOME_PROJECT=		libdex
-GNOME_VERSION=		1.0.0
-REVISION=		0
+GNOME_VERSION=		1.1.0
 
-SHARED_LIBS += dex-1                     0.2 # 1.0.0
+SHARED_LIBS += dex-1                     0.3 # 1.0.0
 
 CATEGORIES=		devel
 
@@ -29,6 +28,8 @@ BUILD_DEPENDS+=		devel/libsoup3
 
 LIB_DEPENDS=		devel/epoll-shim \
 			devel/glib2
+
+RUN_DEPENDS=		devel/py-gobject3
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
