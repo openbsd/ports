@@ -9,6 +9,7 @@ Log notice stdout
 #SocksPort 9150
 #ControlPort 9151
 CookieAuthentication 1
+DormantCanceledByStartup 1
 GeoIPFile ${LOCALBASE}/share/tor/geoip
 GeoIPv6File ${LOCALBASE}/share/tor/geoip6
 
