@@ -79,6 +79,12 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/activation/python/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/virtualenv/activation/python/${MODPY_PYCACHE}activate_this.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/activation/python/activate_this.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/activation/via_template.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv/activation/xonsh/
+lib/python${MODPY_VERSION}/site-packages/virtualenv/activation/xonsh/__init__.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv/activation/xonsh/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/virtualenv/activation/xonsh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/virtualenv/activation/xonsh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/virtualenv/activation/xonsh/activate.xsh
 lib/python${MODPY_VERSION}/site-packages/virtualenv/app_data/
 lib/python${MODPY_VERSION}/site-packages/virtualenv/app_data/__init__.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/app_data/${MODPY_PYCACHE}/
@@ -318,6 +324,7 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/pip-25.0.1-py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/pip-26.0.1-py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/pip-26.1.1-py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/setuptools-75.3.4-py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/setuptools-82.0.1-py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/wheel-0.45.1-py3-none-any.whl
