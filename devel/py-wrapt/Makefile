@@ -1,6 +1,6 @@
 COMMENT=	Python module for decorators, wrappers and monkey patching
 
-MODPY_DISTV=	2.1.1
+MODPY_DISTV=	2.1.2
 DISTNAME=	wrapt-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
+
 MODPY_PYTEST_ARGS= --ignore tests/conftest.py
 
 .include <bsd.port.mk>
