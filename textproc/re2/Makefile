@@ -43,6 +43,8 @@ WANTLIB += m
 # C++17
 COMPILER =		base-clang ports-gcc
 
+CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
+
 MODULES =		devel/cmake
 
 LIB_DEPENDS =		devel/abseil-cpp
