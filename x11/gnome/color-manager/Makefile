@@ -1,8 +1,10 @@
-COMMENT=		GNOME Color Profile Tools
+COMMENT=		GNOME color manager
 
-GNOME_PROJECT=		gnome-color-manager
-GNOME_VERSION=		3.36.2
-REVISION=		0
+# Date: Wed, 6 May 2026 06:55:57 +0000
+DIST_TUPLE=		gnome GNOME gnome-color-manager 1848b0affd90938e10400099e43bb0ad1866e945 .
+PKGNAME=		gnome-color-manager-3.36.2
+
+REVISION=		1
 
 CATEGORIES=		graphics
 

@@ -5,6 +5,7 @@
 share/applications/gcm-import.desktop
 share/applications/gcm-picker.desktop
 share/applications/org.gnome.ColorProfileViewer.desktop
+share/dbus-1/services/org.gnome.ColorProfileViewer.service
 share/gnome-color-manager/
 share/gnome-color-manager/figures/
 share/gnome-color-manager/figures/viewer-example-00.png
@@ -18,6 +19,12 @@ share/help/C/gnome-color-manager/color-import-linux.page
 share/help/C/gnome-color-manager/color-import-osx.page
 share/help/C/gnome-color-manager/color-import-windows.page
 share/help/C/gnome-color-manager/legal.xml
+share/help/bg/
+share/help/bg/gnome-color-manager/
+share/help/bg/gnome-color-manager/color-import-linux.page
+share/help/bg/gnome-color-manager/color-import-osx.page
+share/help/bg/gnome-color-manager/color-import-windows.page
+share/help/bg/gnome-color-manager/legal.xml
 share/help/ca/
 share/help/ca/gnome-color-manager/
 share/help/ca/gnome-color-manager/color-import-linux.page
@@ -102,6 +109,12 @@ share/help/it/gnome-color-manager/color-import-linux.page
 share/help/it/gnome-color-manager/color-import-osx.page
 share/help/it/gnome-color-manager/color-import-windows.page
 share/help/it/gnome-color-manager/legal.xml
+share/help/kk/
+share/help/kk/gnome-color-manager/
+share/help/kk/gnome-color-manager/color-import-linux.page
+share/help/kk/gnome-color-manager/color-import-osx.page
+share/help/kk/gnome-color-manager/color-import-windows.page
+share/help/kk/gnome-color-manager/legal.xml
 share/help/ko/
 share/help/ko/gnome-color-manager/
 share/help/ko/gnome-color-manager/color-import-linux.page
@@ -138,6 +151,12 @@ share/help/ru/gnome-color-manager/color-import-linux.page
 share/help/ru/gnome-color-manager/color-import-osx.page
 share/help/ru/gnome-color-manager/color-import-windows.page
 share/help/ru/gnome-color-manager/legal.xml
+share/help/sr/
+share/help/sr/gnome-color-manager/
+share/help/sr/gnome-color-manager/color-import-linux.page
+share/help/sr/gnome-color-manager/color-import-osx.page
+share/help/sr/gnome-color-manager/color-import-windows.page
+share/help/sr/gnome-color-manager/legal.xml
 share/help/sv/
 share/help/sv/gnome-color-manager/
 share/help/sv/gnome-color-manager/color-import-linux.page
@@ -220,6 +239,7 @@ share/locale/kab/LC_MESSAGES/gnome-color-manager.mo
 share/locale/kk/LC_MESSAGES/gnome-color-manager.mo
 share/locale/kn/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ko/LC_MESSAGES/gnome-color-manager.mo
+share/locale/kw/LC_MESSAGES/gnome-color-manager.mo
 share/locale/lt/LC_MESSAGES/gnome-color-manager.mo
 share/locale/lv/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ml/LC_MESSAGES/gnome-color-manager.mo
@@ -248,10 +268,11 @@ share/locale/th/LC_MESSAGES/gnome-color-manager.mo
 share/locale/tr/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ug/LC_MESSAGES/gnome-color-manager.mo
 share/locale/uk/LC_MESSAGES/gnome-color-manager.mo
+share/locale/uz/LC_MESSAGES/gnome-color-manager.mo
 share/locale/vi/LC_MESSAGES/gnome-color-manager.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-color-manager.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-color-manager.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-color-manager.mo
-share/metainfo/org.gnome.ColorProfileViewer.appdata.xml
+share/metainfo/org.gnome.ColorProfileViewer.metainfo.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
