@@ -18,7 +18,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
  #ifdef HAVE_FREERDP3
  #define COMMON(x) common.x
  #else
-@@ -48,22 +45,8 @@ typedef struct
+@@ -54,22 +51,8 @@ typedef struct
    FrdpClipboardResponseData *responses;
  } FrdpClipboardRequest;
  
@@ -41,7 +41,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
    gchar           *uri;
    FILEDESCRIPTORW *descriptor;
  } FrdpLocalFileInfo;
-@@ -75,27 +58,15 @@ typedef struct
+@@ -81,27 +64,15 @@ typedef struct
    FrdpLocalFileInfo *local_files_infos;
  } FrdpLocalLockData;
  
@@ -72,7 +72,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
  typedef struct
  {
    CliprdrClientContext        *cliprdr_client_context;
-@@ -111,7 +82,7 @@ typedef struct
+@@ -117,7 +88,7 @@ typedef struct
  
    gsize                        remote_files_count;
    FrdpRemoteFileInfo          *remote_files_infos;
@@ -81,7 +81,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
  
    gsize                        local_files_count;
    FrdpLocalFileInfo           *local_files_infos;
-@@ -119,13 +90,6 @@ typedef struct
+@@ -125,13 +96,6 @@ typedef struct
    guint                        next_stream_id;
    guint                        fgdw_id;
  
@@ -95,7 +95,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
    GList                       *locked_data;           /* List of locked arrays of files - list of (FrdpLocalLockData *) */
    GMutex                       lock_mutex;
    gboolean                     pending_lock;          /* Lock was requested right after format list has been sent */
-@@ -206,15 +170,9 @@ frdp_channel_clipboard_finalize (GObject *object)
+@@ -216,15 +180,9 @@ frdp_channel_clipboard_finalize (GObject *object)
    g_signal_handler_disconnect (priv->gtk_clipboard,
                                 priv->clipboard_owner_changed_id);
  
@@ -111,7 +111,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
    g_mutex_lock (&priv->lock_mutex);
  
    g_list_free_full (priv->locked_data, (GDestroyNotify) frdp_local_lock_data_free);
-@@ -222,8 +180,6 @@ frdp_channel_clipboard_finalize (GObject *object)
+@@ -232,8 +190,6 @@ frdp_channel_clipboard_finalize (GObject *object)
  
    g_mutex_unlock (&priv->lock_mutex);
  
@@ -120,7 +120,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
    g_mutex_clear (&priv->lock_mutex);
  
    G_OBJECT_CLASS (frdp_channel_clipboard_parent_class)->finalize (object);
-@@ -246,442 +202,14 @@ frdp_channel_clipboard_class_init (FrdpChannelClipboar
+@@ -256,443 +212,15 @@ frdp_channel_clipboard_class_init (FrdpChannelClipboar
                                                           G_PARAM_READWRITE));
  }
  
@@ -539,7 +539,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
 -  priv->locked_data = NULL;
 -  priv->pending_lock = FALSE;
 -  priv->remote_clip_data_id = 0;
--
+ 
 -  argv[0] = "gnome-connections";
 -  argv[1] = "-d";
 -  args.argc = 1; /* Set to 2 to see debug logs of Fuse */
@@ -560,10 +560,11 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
 -  } else {
 -    g_warning ("Could not initiate FUSE session\n");
 -  }
- }
- 
- static void
-@@ -918,6 +446,21 @@ send_client_format_list_response (FrdpChannelClipboard
+-
+   priv->duration = g_new0 (FrdpClipboardDuration, 1);
+   priv->duration->self = self;
+   g_atomic_int_set (&priv->duration->finalized, 0);
+@@ -931,6 +459,21 @@ send_client_format_list_response (FrdpChannelClipboard
    return priv->cliprdr_client_context->ClientFormatListResponse (priv->cliprdr_client_context, &response);
  }
  
@@ -585,7 +586,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
  static void
  replace_ascii_character (gchar *text,
                           gchar  old_character,
-@@ -1026,87 +569,64 @@ _gtk_clipboard_get_func (GtkClipboard     *clipboard,
+@@ -1039,87 +582,64 @@ _gtk_clipboard_get_func (GtkClipboard     *clipboard,
                                (guchar *) data,
                                length);
      } else if (info == priv->fgdw_id) {
@@ -707,7 +708,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
            uri_array = g_new0 (gchar *, g_list_length (uri_list) + 1);
            for (iter = uri_list, i = 0; iter != NULL; iter = iter->next, i++)
              uri_array[i] = iter->data;
-@@ -1124,6 +644,28 @@ _gtk_clipboard_get_func (GtkClipboard     *clipboard,
+@@ -1137,6 +657,28 @@ _gtk_clipboard_get_func (GtkClipboard     *clipboard,
    }
  }
  
@@ -736,7 +737,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
  static void
  clear_local_files_infos (FrdpChannelClipboard *self)
  {
-@@ -1148,23 +690,44 @@ _gtk_clipboard_clear_func (GtkClipboard *clipboard,
+@@ -1161,23 +703,44 @@ _gtk_clipboard_clear_func (GtkClipboard *clipboard,
    CLIPRDR_UNLOCK_CLIPBOARD_DATA  unlock_clipboard_data = { 0 };
    FrdpChannelClipboard          *self = (FrdpChannelClipboard *) user_data;
    FrdpChannelClipboardPrivate   *priv = frdp_channel_clipboard_get_instance_private (self);
@@ -788,7 +789,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
    unlock_clipboard_data.COMMON(msgType) = CB_UNLOCK_CLIPDATA;
    unlock_clipboard_data.COMMON(msgFlags) = 0;
    unlock_clipboard_data.COMMON(dataLen) = 4;
-@@ -1465,7 +1028,7 @@ clipboard_content_received (GtkClipboard     *clipboar
+@@ -1485,7 +1048,7 @@ clipboard_content_received (GtkClipboard     *clipboar
        size = (guint32 *) data;
        size[0] = length;
  
@@ -797,7 +798,7 @@ Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
  
        priv->local_files_count = length;
        priv->local_files_infos = g_new0 (FrdpLocalFileInfo, priv->local_files_count);
-@@ -1691,53 +1254,50 @@ server_file_contents_response (CliprdrClientContext   
+@@ -1711,53 +1274,50 @@ server_file_contents_response (CliprdrClientContext   
  {
    FrdpChannelClipboard        *self;
    FrdpChannelClipboardPrivate *priv;
