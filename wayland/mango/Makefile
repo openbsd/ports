@@ -1,12 +1,14 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-V =			0.12.8
-
+V =			0.12.9
+PKGNAME =		mango-${V}
 DIST_TUPLE=		github mangowm mango ${V} .
 
 CATEGORIES =		wayland
 
 HOMEPAGE =		https://mangowm.github.io/
+
+MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
