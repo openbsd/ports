@@ -53,7 +53,7 @@ RUN_DEPENDS=		x11/gnome/settings-daemon \
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
 
-# needed for gnome-color-panel
+# gnome-color-panel runs gcm-viewer (see panels/color/cc-color-panel.c)
 RUN_DEPENDS +=		x11/gnome/color-manager
 
 # needed for gnome-printers-panel
