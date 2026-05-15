@@ -1,6 +1,5 @@
-VERSION =		4.24.1
+VERSION =		4.24.2
 DISTNAME =		samba-${VERSION}
-REVISION-main =		0
 EPOCH =			0
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -23,13 +22,13 @@ SHARED_LIBS =		dcerpc			3.0 \
 			netapi			3.4 \
 			samba-credentials	3.1 \
 			samba-errors		2.1 \
-			samba-hostconfig	18.0 \
+			samba-hostconfig	19.0 \
 			samba-passdb		3.2 \
 			samba-policy		0.0 \
 			samba-util		13.0 \
 			samdb			6.0 \
 			smbclient		6.3 \
-			smbconf			19.0 \
+			smbconf			19.1 \
 			smbldap			1.0 \
 			tevent			2.4 \
 			tevent-util		2.0 \
