@@ -1,0 +1,31 @@
+REVERT:
+From 0a3104f38267aa3330437924faf415e707b3c8d0 Mon Sep 17 00:00:00 2001
+From: Niels De Graef <nielsdegraef@gmail.com>
+Date: Sat, 14 Jun 2025 12:48:50 +0200
+Subject: [PATCH] Use glycin instead of GdkPixbuf for image loading
+
+Index: src/contacts-avatar.vala
+--- src/contacts-avatar.vala.orig
++++ src/contacts-avatar.vala
+@@ -124,16 +124,11 @@ public class Contacts.Avatar : Adw.Bin {
+ 
+     try {
+       var stream = yield icon.load_async (this.avatar_size, null);
+-      var loader = new Gly.Loader.for_stream (stream);
+-      var image = yield loader.load_async (null);
+-      if (image == null)
+-        return;
+-
+-      var frame_request = new Gly.FrameRequest ();
+-      frame_request.set_scale (this.avatar_size, this.avatar_size);
+-      var frame = yield image.get_specific_frame_async (frame_request, null);
+-      var texture = GlyGtk4.frame_get_texture (frame);
+-      set_paintable (texture);
++      var pixbuf = yield new Gdk.Pixbuf.from_stream_at_scale_async (stream,
++                                                                    this.avatar_size,
++                                                                    this.avatar_size,
++                                                                    true);
++      set_paintable (Gdk.Texture.for_pixbuf (pixbuf));
+     } catch (Error e) {
+       warning ("Couldn't load avatar of '%s': %s", this.individual.display_name, e.message);
+     }

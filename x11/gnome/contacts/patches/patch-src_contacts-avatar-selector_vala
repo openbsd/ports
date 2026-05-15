@@ -1,0 +1,37 @@
+REVERT:
+From 0a3104f38267aa3330437924faf415e707b3c8d0 Mon Sep 17 00:00:00 2001
+From: Niels De Graef <nielsdegraef@gmail.com>
+Date: Sat, 14 Jun 2025 12:48:50 +0200
+Subject: [PATCH] Use glycin instead of GdkPixbuf for image loading
+
+Index: src/contacts-avatar-selector.vala
+--- src/contacts-avatar-selector.vala.orig
++++ src/contacts-avatar-selector.vala
+@@ -31,23 +31,14 @@ private class Contacts.Thumbnail : Gtk.FlowBoxChild {
+       requires (chunk.avatar != null) {
+ 
+     var stream = yield chunk.avatar.load_async (MAIN_SIZE);
+-    return yield Thumbnail.for_stream(stream);
++    var pixbuf = yield new Gdk.Pixbuf.from_stream_async (stream);
++    return new Thumbnail (Gdk.Texture.for_pixbuf (pixbuf));
+   }
+ 
+   public static async Thumbnail? for_file (File file) throws Error {
+     var stream = yield file.read_async ();
+-    return yield Thumbnail.for_stream(stream);
+-  }
+-
+-  public static async Thumbnail? for_stream (InputStream stream) throws Error {
+-    var loader = new Gly.Loader.for_stream (stream);
+-    var image = yield loader.load_async (null);
+-    if (image == null)
+-      return null;
+-
+-    var frame = yield image.next_frame_async (null);
+-    var texture = GlyGtk4.frame_get_texture (frame);
+-    return new Thumbnail (texture);
++    var pixbuf = yield new Gdk.Pixbuf.from_stream_async (stream);
++    return new Thumbnail (Gdk.Texture.for_pixbuf (pixbuf));
+   }
+ }
+ 

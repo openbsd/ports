@@ -1,0 +1,18 @@
+REVERT:
+From 0a3104f38267aa3330437924faf415e707b3c8d0 Mon Sep 17 00:00:00 2001
+From: Niels De Graef <nielsdegraef@gmail.com>
+Date: Sat, 14 Jun 2025 12:48:50 +0200
+Subject: [PATCH] Use glycin instead of GdkPixbuf for image loading
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -56,8 +56,6 @@ contacts_deps = [
+   gee,
+   gio_unix,
+   glib,
+-  glycin_dep,
+-  glycin_gtk_dep,
+   gstreamer_dep,
+   gtk4_dep,
+   libadwaita_dep,
