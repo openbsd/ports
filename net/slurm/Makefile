@@ -17,9 +17,6 @@ WANTLIB =	c curses
 
 MODULES =	devel/meson
 
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/slurm.1
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/slurm/
 .for i in COPYRIGHT FAQ THANKS COPYING
