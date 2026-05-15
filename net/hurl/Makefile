@@ -2,7 +2,7 @@ COMMENT =		CLI for HTTP requests
 
 GH_ACCOUNT =		Orange-OpenSource
 GH_PROJECT =		hurl
-GH_TAGNAME =		7.1.0
+GH_TAGNAME =		8.0.1
 
 CATEGORIES =		net
 
