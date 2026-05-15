@@ -1,0 +1,11 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/epmd${MAJ_V} -daemon"
+daemon_flags="-address 127.0.0.1"
+daemon_user=_epmd
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
