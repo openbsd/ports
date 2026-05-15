@@ -1,14 +1,12 @@
 COMMENT =	network traffic monitor and statistics
 
-GH_VERSION =	0.4.3
-GH_ACCOUNT =	mattthias
-GH_PROJECT =	slurm
-GH_TAGNAME =	upstream/${GH_VERSION}
-DISTNAME =	${GH_PROJECT}-${GH_VERSION}
+V =		0.4.4
+# alt repo pulls in several fixes https://github.com/mattthias/slurm/pull/53
+DIST_TUPLE =	github Iksas slurm 323d2bfced4b762f207633b50c0832ae1b19c40c .
+PKGNAME =	slurm-${V}pl0
 CATEGORIES =	net
-REVISION =	0
 
-HOMEPAGE =	http://github.com/mattthias/slurm/wiki/
+HOMEPAGE =	https://github.com/mattthias/slurm/wiki/
 
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
@@ -17,18 +15,15 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c curses
 
-MODULES =	devel/cmake
-
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+MODULES =	devel/meson
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/theme.c ${WRKSRC}/slurm.1
+	@${SUBST_CMD} ${WRKSRC}/slurm.1
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/slurm/
 .for i in COPYRIGHT FAQ THANKS COPYING
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/slurm/
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/slurm.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
