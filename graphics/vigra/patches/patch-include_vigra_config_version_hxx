@@ -1,0 +1,11 @@
+Index: include/vigra/config_version.hxx
+--- include/vigra/config_version.hxx.orig
++++ include/vigra/config_version.hxx
+@@ -40,6 +40,7 @@
+     #define VIGRA_VERSION_MAJOR 1
+     #define VIGRA_VERSION_MINOR 12
+     #define VIGRA_VERSION_PATCH 4
++    #define VIGRA_VERSION "1.12.4"
+ 
+     #define VIGRA_VERSION_STRINGIFY_HELPER(x) #x
+     #define VIGRA_VERSION_STRINGIFY(x) VIGRA_VERSION_STRINGIFY_HELPER(x)

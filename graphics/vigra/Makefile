@@ -1,12 +1,11 @@
 COMMENT =		image processing and analysis library
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 
-V = 			1-12-3
+V = 			1-12-4
 GH_ACCOUNT =		ukoethe
 GH_PROJECT =		vigra
 GH_TAGNAME =		Version-${V}
 DISTNAME =		vigra-${V:S/-/./g}
-REVISION =		0
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 
