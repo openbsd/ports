@@ -3,12 +3,9 @@ COMMENT =	JPEG XL image format reference implementation
 GH_ACCOUNT =	libjxl
 GH_PROJECT =	libjxl
 GH_TAGNAME =	v0.11.2
-GH_TESTDATA_COMMIT=73695d303670c90e4d506ea89d9901b081385089
 CATEGORIES =	graphics
 
-# add external test data
-DISTFILES.t = 	libjxl-testdata-${GH_TAGNAME}{${GH_TESTDATA_COMMIT}}${EXTRACT_SUFX}
-SITES.t =	https://github.com/libjxl/testdata/archive/
+DIST_TUPLE =	github libjxl testdata 73695d303670c90e4d506ea89d9901b081385089 ../testdata
 
 SHARED_LIBS +=	jxl			1.0 # 0.0
 SHARED_LIBS +=	jxl_threads		1.0 # 0.0
@@ -62,7 +59,7 @@ CONFIGURE_ARGS += \
 	-DJPEGXL_ENABLE_PLUGIN_GDKPIXBUF=ON \
 	-DJPEGXL_ENABLE_PLUGIN_GIMP210=OFF \
 	-DJPEGXL_ENABLE_PLUGIN_MIME=ON \
-	-DJPEGXL_TEST_DATA_PATH:STRING=${WRKDIR}/testdata-${GH_TESTDATA_COMMIT} \
+	-DJPEGXL_TEST_DATA_PATH:STRING=${WRKDIR}/testdata \
 	-DGMOCK_INCLUDE_DIR:STRING=${LOCALBASE}/include
 #https://github.com/libjxl/libjxl/issues/3069
 
