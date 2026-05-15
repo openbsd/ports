@@ -25,6 +25,7 @@ LIB_DEPENDS=		x11/gnome/libshumate
 BUILD_DEPENDS=		geo/geoclue2 \
 			geo/geocode-glib \
 			sysutils/flatpak/libportal \
+			x11/blueprint-compiler \
 			x11/gnome/gjs \
 			x11/gnome/libadwaita \
 			x11/gnome/libgweather4 \
