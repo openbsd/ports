@@ -351,7 +351,7 @@ SHA256 (gnome/../cargo/zmij-1.0.17.tar.gz) = Aqrg+D9pqvyUd26Hk2Ppdx1+y//ix/u2wUx
 SHA256 (gnome/../cargo/zune-core-0.5.1.tar.gz) = y4oIB/fAFFfQN5uogLpjImYESN3ryJDOKbtk2nH7QPk=
 SHA256 (gnome/../cargo/zune-jpeg-0.5.13.tar.gz) = 7F9Bx2OXt9pFHv0ZkVaE9yfX4dUWOEymvQ7EPslN4jw=
 SHA256 (gnome/librsvg-2.40.21.tar.xz) = 92KJBfHK2oTofisUiD7VfYCU3KMoHVvLJOzkJ56akro=
-SHA256 (gnome/librsvg-2.62.1.tar.xz) = tByoQgYkL93YJqK/djSNfN9SwQUMv6BguGboGiUhRcM=
+SHA256 (gnome/librsvg-2.62.2.tar.xz) = wME2fjgeGuSEKnjxtXxlb/GbJWN+OmUny0SuWhzGjWU=
 SIZE (gnome/../cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (gnome/../cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (gnome/../cargo/ahash-0.8.12.tar.gz) = 43413
@@ -705,4 +705,4 @@ SIZE (gnome/../cargo/zmij-1.0.17.tar.gz) = 24564
 SIZE (gnome/../cargo/zune-core-0.5.1.tar.gz) = 27883
 SIZE (gnome/../cargo/zune-jpeg-0.5.13.tar.gz) = 88872
 SIZE (gnome/librsvg-2.40.21.tar.xz) = 1655860
-SIZE (gnome/librsvg-2.62.1.tar.xz) = 6760928
+SIZE (gnome/librsvg-2.62.2.tar.xz) = 6761980
