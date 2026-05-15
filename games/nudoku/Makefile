@@ -11,6 +11,10 @@ HOMEPAGE =	https://jubalh.github.io/nudoku/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
+# initializer element is not constant
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=	c curses iconv intl
 
 BUILD_DEPENDS =	devel/gettext,-tools
