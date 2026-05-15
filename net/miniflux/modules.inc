@@ -1,9 +1,9 @@
 MODGO_MODULES =	\
 	cloud.google.com/go/compute/metadata	 v0.3.0 \
-	github.com/!puerkito!bio/goquery	 v1.11.0 \
+	github.com/!puerkito!bio/goquery	 v1.12.0 \
 	github.com/alecthomas/kingpin/v2	 v2.4.0 \
 	github.com/alecthomas/units		 v0.0.0-20211218093645-b94a6e3cc137 \
-	github.com/andybalholm/brotli		 v1.2.0 \
+	github.com/andybalholm/brotli		 v1.2.1 \
 	github.com/andybalholm/cascadia		 v1.3.3 \
 	github.com/beorn7/perks			 v1.0.1 \
 	github.com/cespare/xxhash/v2		 v2.3.0 \
@@ -12,10 +12,10 @@ MODGO_MODULES =	\
 	github.com/davecgh/go-spew		 v1.1.1 \
 	github.com/djherbis/atime		 v1.1.0 \
 	github.com/fsnotify/fsnotify		 v1.9.0 \
-	github.com/fxamacker/cbor/v2		 v2.9.0 \
-	github.com/go-jose/go-jose/v4		 v4.1.3 \
+	github.com/fxamacker/cbor/v2		 v2.9.1 \
+	github.com/go-jose/go-jose/v4		 v4.1.4 \
 	github.com/go-viper/mapstructure/v2	 v2.5.0 \
-	github.com/go-webauthn/webauthn		 v0.16.1 \
+	github.com/go-webauthn/webauthn		 v0.16.2 \
 	github.com/go-webauthn/x		 v0.2.2 \
 	github.com/golang-jwt/jwt/v5		 v5.3.1 \
 	github.com/golang/protobuf		 v1.5.0 \
@@ -23,7 +23,6 @@ MODGO_MODULES =	\
 	github.com/google/go-tpm		 v0.9.8 \
 	github.com/google/go-tpm-tools		 v0.3.13-0.20230620182252-4639ecce2aba \
 	github.com/google/uuid			 v1.6.0 \
-	github.com/gorilla/mux			 v1.8.1 \
 	github.com/jmoiron/sqlx			 v1.4.0 \
 	github.com/jpillora/backoff		 v1.0.0 \
 	github.com/json-iterator/go		 v1.1.12 \
@@ -32,12 +31,13 @@ MODGO_MODULES =	\
 	github.com/kr/pretty			 v0.3.1 \
 	github.com/kr/text			 v0.2.0 \
 	github.com/kylelemons/godebug		 v1.1.0 \
-	github.com/lib/pq			 v1.11.2 \
+	github.com/lib/pq			 v1.12.3 \
 	github.com/modern-go/concurrent		 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2		 v1.0.2 \
 	github.com/munnerz/goautoneg		 v0.0.0-20191010083416-a7dc8b61c822 \
 	github.com/mwitkow/go-conntrack		 v0.0.0-20190716064945-2f068394615f \
 	github.com/pelletier/go-toml		 v1.9.5 \
+	github.com/philhofer/fwd		 v1.2.0 \
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/prometheus/client_golang	 v1.23.2 \
 	github.com/prometheus/client_model	 v0.6.2 \
@@ -46,9 +46,10 @@ MODGO_MODULES =	\
 	github.com/rogpeppe/go-internal		 v1.10.0 \
 	github.com/stretchr/testify		 v1.11.1 \
 	github.com/tdewolff/argp		 v0.0.0-20250430135133-0f54527d2b1e \
-	github.com/tdewolff/minify/v2		 v2.24.10 \
-	github.com/tdewolff/parse/v2		 v2.8.10 \
+	github.com/tdewolff/minify/v2		 v2.24.11 \
+	github.com/tdewolff/parse/v2		 v2.8.11 \
 	github.com/tdewolff/test		 v1.0.11 \
+	github.com/tinylib/msgp			 v1.6.3 \
 	github.com/x448/float16			 v0.8.4 \
 	github.com/xhit/go-str2duration/v2	 v2.1.0 \
 	github.com/xyproto/randomstring		 v1.0.5 \
@@ -57,7 +58,7 @@ MODGO_MODULES =	\
 	go.uber.org/mock			 v0.6.0 \
 	go.yaml.in/yaml/v2			 v2.4.2 \
 	golang.org/x/crypto			 v0.49.0 \
-	golang.org/x/image			 v0.37.0 \
+	golang.org/x/image			 v0.38.0 \
 	golang.org/x/mod			 v0.33.0 \
 	golang.org/x/net			 v0.52.0 \
 	golang.org/x/oauth2			 v0.36.0 \
@@ -73,6 +74,7 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v3			 v3.0.1
 
 MODGO_MODFILES =	\
+	github.com/go-jose/go-jose/v4		 v4.1.3 \
 	github.com/google/go-cmp		 v0.5.5 \
 	github.com/google/go-cmp		 v0.5.9 \
 	github.com/google/go-cmp		 v0.6.0 \
@@ -87,6 +89,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod			 v0.12.0 \
 	golang.org/x/mod			 v0.15.0 \
 	golang.org/x/mod			 v0.17.0 \
+	golang.org/x/mod			 v0.18.0 \
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod			 v0.8.0 \
 	golang.org/x/net			 v0.0.0-20190620200207-3b0461eec859 \
@@ -98,7 +101,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.25.0 \
 	golang.org/x/net			 v0.33.0 \
 	golang.org/x/net			 v0.43.0 \
-	golang.org/x/net			 v0.47.0 \
 	golang.org/x/net			 v0.51.0 \
 	golang.org/x/net			 v0.6.0 \
 	golang.org/x/oauth2			 v0.28.0 \
@@ -148,6 +150,7 @@ MODGO_MODFILES =	\
 	golang.org/x/tools			 v0.1.12 \
 	golang.org/x/tools			 v0.13.0 \
 	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
+	golang.org/x/tools			 v0.22.0 \
 	golang.org/x/tools			 v0.6.0 \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
 	google.golang.org/protobuf		 v1.36.6 \
