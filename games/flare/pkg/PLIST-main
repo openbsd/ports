@@ -6,6 +6,7 @@ share/flare/
 share/flare/mods/default/
 share/flare/mods/default/cutscenes/
 share/flare/mods/default/cutscenes/credits.txt
+share/flare/mods/default/cutscenes/credits_engine.txt
 share/flare/mods/default/cutscenes/intro.txt
 share/flare/mods/default/engine/
 share/flare/mods/default/engine/classes.txt
@@ -14,7 +15,6 @@ share/flare/mods/default/engine/combat_text.txt
 share/flare/mods/default/engine/damage_types.txt
 share/flare/mods/default/engine/death_penalty.txt
 share/flare/mods/default/engine/default_music.txt
-share/flare/mods/default/engine/elements.txt
 share/flare/mods/default/engine/equip_flags.txt
 share/flare/mods/default/engine/font_colors.txt
 share/flare/mods/default/engine/font_settings.txt
@@ -65,6 +65,7 @@ share/flare/mods/default/images/menus/movement_type_mouse.png
 share/flare/mods/default/images/menus/tab_active.png
 share/flare/mods/default/images/menus/tab_inactive.png
 share/flare/mods/default/languages/
+share/flare/mods/default/languages/credits_settings.txt
 share/flare/mods/default/languages/data.be.po
 share/flare/mods/default/languages/data.bg.po
 share/flare/mods/default/languages/data.ca.po
@@ -77,6 +78,7 @@ share/flare/mods/default/languages/data.fi.po
 share/flare/mods/default/languages/data.fr.po
 share/flare/mods/default/languages/data.gd.po
 share/flare/mods/default/languages/data.gl.po
+share/flare/mods/default/languages/data.hi_IN.po
 share/flare/mods/default/languages/data.hu.po
 share/flare/mods/default/languages/data.id.po
 share/flare/mods/default/languages/data.it.po
@@ -91,6 +93,7 @@ share/flare/mods/default/languages/data.pt_BR.po
 share/flare/mods/default/languages/data.ru.po
 share/flare/mods/default/languages/data.sk.po
 share/flare/mods/default/languages/data.sv.po
+share/flare/mods/default/languages/data.th_TH.po
 share/flare/mods/default/languages/data.uk.po
 share/flare/mods/default/languages/data.vi.po
 share/flare/mods/default/languages/data.zh.po
@@ -107,6 +110,7 @@ share/flare/mods/default/languages/engine.fi.po
 share/flare/mods/default/languages/engine.fr.po
 share/flare/mods/default/languages/engine.gd.po
 share/flare/mods/default/languages/engine.gl.po
+share/flare/mods/default/languages/engine.hi_IN.po
 share/flare/mods/default/languages/engine.hu.po
 share/flare/mods/default/languages/engine.id.po
 share/flare/mods/default/languages/engine.it.po
@@ -121,6 +125,7 @@ share/flare/mods/default/languages/engine.pt_BR.po
 share/flare/mods/default/languages/engine.ru.po
 share/flare/mods/default/languages/engine.sk.po
 share/flare/mods/default/languages/engine.sv.po
+share/flare/mods/default/languages/engine.th_TH.po
 share/flare/mods/default/languages/engine.uk.po
 share/flare/mods/default/languages/engine.vi.po
 share/flare/mods/default/languages/engine.zh.po
@@ -134,8 +139,6 @@ share/flare/mods/default/menus/gameload.txt
 share/flare/mods/default/menus/gamenew.txt
 share/flare/mods/default/menus/gametitle.txt
 share/flare/mods/default/menus/movement_type.txt
-share/flare/mods/empyrean_campaign/powers/base/items/fireball_scroll.txt
-share/flare/mods/empyrean_campaign/powers/base/items/icebolt_scroll.txt
 share/flare/mods/gcw0_defaults/
 share/flare/mods/gcw0_defaults/engine/
 share/flare/mods/gcw0_defaults/engine/default_keybindings.txt
