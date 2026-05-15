@@ -28,9 +28,12 @@ share/locale/ie/LC_MESSAGES/tecla.mo
 share/locale/it/LC_MESSAGES/tecla.mo
 share/locale/ka/LC_MESSAGES/tecla.mo
 share/locale/kab/LC_MESSAGES/tecla.mo
+share/locale/kk/LC_MESSAGES/tecla.mo
 share/locale/ko/LC_MESSAGES/tecla.mo
+share/locale/kw/LC_MESSAGES/tecla.mo
 share/locale/lt/LC_MESSAGES/tecla.mo
 share/locale/lv/LC_MESSAGES/tecla.mo
+share/locale/nb/LC_MESSAGES/tecla.mo
 share/locale/ne/LC_MESSAGES/tecla.mo
 share/locale/nl/LC_MESSAGES/tecla.mo
 share/locale/oc/LC_MESSAGES/tecla.mo
@@ -46,6 +49,7 @@ share/locale/sr/LC_MESSAGES/tecla.mo
 share/locale/sr@latin/LC_MESSAGES/tecla.mo
 share/locale/sv/LC_MESSAGES/tecla.mo
 share/locale/tr/LC_MESSAGES/tecla.mo
+share/locale/ug/LC_MESSAGES/tecla.mo
 share/locale/uk/LC_MESSAGES/tecla.mo
 share/locale/uz/LC_MESSAGES/tecla.mo
 share/locale/zh_CN/LC_MESSAGES/tecla.mo
