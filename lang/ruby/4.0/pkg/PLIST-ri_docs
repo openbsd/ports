@@ -2032,6 +2032,8 @@ share/ri/${REV}/system/Gem/Commands/SignoutCommand/cdesc-SignoutCommand.ri
 share/ri/${REV}/system/Gem/Commands/SignoutCommand/execute-i.ri
 share/ri/${REV}/system/Gem/Commands/SignoutCommand/new-c.ri
 share/ri/${REV}/system/Gem/Commands/SourcesCommand/
+share/ri/${REV}/system/Gem/Commands/SourcesCommand/build_new_source-i.ri
+share/ri/${REV}/system/Gem/Commands/SourcesCommand/build_source-i.ri
 share/ri/${REV}/system/Gem/Commands/SourcesCommand/cdesc-SourcesCommand.ri
 share/ri/${REV}/system/Gem/Commands/SourcesCommand/check_typo_squatting-i.ri
 share/ri/${REV}/system/Gem/Commands/SourcesCommand/config_file_name-i.ri
@@ -3880,6 +3882,7 @@ share/ri/${REV}/system/Gem/Version/approximate_recommendation-i.ri
 share/ri/${REV}/system/Gem/Version/bump-i.ri
 share/ri/${REV}/system/Gem/Version/canonical_segments-i.ri
 share/ri/${REV}/system/Gem/Version/cdesc-Version.ri
+share/ri/${REV}/system/Gem/Version/compute_sort_key-i.ri
 share/ri/${REV}/system/Gem/Version/correct%3f-c.ri
 share/ri/${REV}/system/Gem/Version/create-c.ri
 share/ri/${REV}/system/Gem/Version/eql%3f-i.ri

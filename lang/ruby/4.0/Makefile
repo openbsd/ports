@@ -1,4 +1,4 @@
-VERSION =		4.0.3
+VERSION =		4.0.4
 DISTNAME =		ruby-${VERSION}
 PKGNAME-main =		ruby-${VERSION}
 PKGNAME-ri_docs =	ruby${BINREV}-ri_docs-${VERSION}
@@ -7,8 +7,7 @@ NEXTVER =		4.1
 PKGSPEC-main ?=         ruby->=4.0.0beta0,<${NEXTVER}
 
 SITES.rubygems =	https://github.com/ruby/rubygems/commit/
-PATCHFILES.p =     ruby-box-test-fix{099da884fe95ccf6c684a1563ed1c4b0fd8e1196}.patch
-PATCHFILES.rubygems =     ruby402-gem-fix{60e7365256ddd055b3cc59a28c2288b37ad6bf29}.patch
+PATCHFILES.p =		ruby-box-test-fix{099da884fe95ccf6c684a1563ed1c4b0fd8e1196}.patch
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches

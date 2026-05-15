@@ -18,7 +18,7 @@ Index: compile.c
    again:
      optimize_checktype(iseq, iobj);
  
-@@ -14436,8 +14440,11 @@ static VALUE
+@@ -14438,8 +14442,11 @@ static VALUE
  ibf_load_object_complex_rational(const struct ibf_load *load, const struct ibf_object_header *header, ibf_offset_t offset)
  {
      const struct ibf_object_complex_rational *nums = IBF_OBJBODY(struct ibf_object_complex_rational, offset);

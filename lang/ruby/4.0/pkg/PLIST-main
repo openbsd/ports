@@ -462,6 +462,7 @@ lib/ruby/${REV}/bundler/templates/newgem/exe/newgem.tt
 lib/ruby/${REV}/bundler/templates/newgem/ext/
 lib/ruby/${REV}/bundler/templates/newgem/ext/newgem/
 lib/ruby/${REV}/bundler/templates/newgem/ext/newgem/Cargo.toml.tt
+lib/ruby/${REV}/bundler/templates/newgem/ext/newgem/build.rs.tt
 lib/ruby/${REV}/bundler/templates/newgem/ext/newgem/extconf-c.rb.tt
 lib/ruby/${REV}/bundler/templates/newgem/ext/newgem/extconf-go.rb.tt
 lib/ruby/${REV}/bundler/templates/newgem/ext/newgem/extconf-rust.rb.tt
@@ -474,6 +475,7 @@ lib/ruby/${REV}/bundler/templates/newgem/ext/newgem/src/
 lib/ruby/${REV}/bundler/templates/newgem/ext/newgem/src/lib.rs.tt
 lib/ruby/${REV}/bundler/templates/newgem/github/
 lib/ruby/${REV}/bundler/templates/newgem/github/workflows/
+lib/ruby/${REV}/bundler/templates/newgem/github/workflows/build-gems.yml.tt
 lib/ruby/${REV}/bundler/templates/newgem/github/workflows/main.yml.tt
 lib/ruby/${REV}/bundler/templates/newgem/gitignore.tt
 lib/ruby/${REV}/bundler/templates/newgem/gitlab-ci.yml.tt
@@ -1451,10 +1453,10 @@ lib/ruby/gems/${REV}/gems/bigdecimal-4.0.1/sample/
 lib/ruby/gems/${REV}/gems/bigdecimal-4.0.1/sample/linear.rb
 lib/ruby/gems/${REV}/gems/bigdecimal-4.0.1/sample/nlsolve.rb
 lib/ruby/gems/${REV}/gems/bigdecimal-4.0.1/sample/pi.rb
-lib/ruby/gems/${REV}/gems/bundler-4.0.6/
-lib/ruby/gems/${REV}/gems/bundler-4.0.6/exe/
-lib/ruby/gems/${REV}/gems/bundler-4.0.6/exe/bundle
-lib/ruby/gems/${REV}/gems/bundler-4.0.6/exe/bundler
+lib/ruby/gems/${REV}/gems/bundler-4.0.10/
+lib/ruby/gems/${REV}/gems/bundler-4.0.10/exe/
+lib/ruby/gems/${REV}/gems/bundler-4.0.10/exe/bundle
+lib/ruby/gems/${REV}/gems/bundler-4.0.10/exe/bundler
 lib/ruby/gems/${REV}/gems/csv-3.3.5/
 lib/ruby/gems/${REV}/gems/csv-3.3.5/LICENSE.txt
 lib/ruby/gems/${REV}/gems/csv-3.3.5/NEWS.md
@@ -3469,7 +3471,7 @@ lib/ruby/gems/${REV}/specifications/bigdecimal-4.0.1.gemspec
 lib/ruby/gems/${REV}/specifications/csv-3.3.5.gemspec
 lib/ruby/gems/${REV}/specifications/debug-1.11.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/
-lib/ruby/gems/${REV}/specifications/default/bundler-4.0.6.gemspec
+lib/ruby/gems/${REV}/specifications/default/bundler-4.0.10.gemspec
 lib/ruby/gems/${REV}/specifications/default/date-3.5.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/delegate-0.6.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/did_you_mean-2.0.0.gemspec

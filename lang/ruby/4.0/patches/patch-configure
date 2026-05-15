@@ -19,7 +19,7 @@ Index: configure
  do :
  
                  # Try these flags in the _prepended_ position - i.e. we want to try building a program
-@@ -31848,7 +31848,7 @@ main (void)
+@@ -31845,7 +31845,7 @@ main (void)
  _ACEOF
  if ac_fn_c_try_link "$LINENO"
  then :
@@ -28,7 +28,7 @@ Index: configure
  then :
  
              { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: -A -n" >&5
-@@ -32396,7 +32396,7 @@ fi
+@@ -32393,7 +32393,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
  
@@ -37,7 +37,7 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -34645,7 +34645,7 @@ then :
+@@ -34642,7 +34642,7 @@ then :
  
  else $as_nop
  
