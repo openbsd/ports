@@ -1,0 +1,23 @@
+Fix for llvm 22 build. Don't mix usigned long long and unsigned long
+
+Index: src/modules/dbus/iface-stream.c
+--- src/modules/dbus/iface-stream.c.orig
++++ src/modules/dbus/iface-stream.c
+@@ -466,7 +466,7 @@ static void handle_get_buffer_latency(DBusConnection *
+ 
+ static void handle_get_device_latency(DBusConnection *conn, DBusMessage *msg, void *userdata) {
+     pa_dbusiface_stream *s = userdata;
+-    dbus_uint64_t device_latency = 0;
++    pa_usec_t device_latency = 0;
+ 
+     pa_assert(conn);
+     pa_assert(msg);
+@@ -526,7 +526,7 @@ static void handle_get_all(DBusConnection *conn, DBusM
+     dbus_uint32_t channels[PA_CHANNELS_MAX];
+     dbus_uint32_t volume[PA_CHANNELS_MAX];
+     dbus_uint64_t buffer_latency = 0;
+-    dbus_uint64_t device_latency = 0;
++    pa_usec_t device_latency = 0;
+     const char *resample_method = NULL;
+     unsigned i = 0;
+ 

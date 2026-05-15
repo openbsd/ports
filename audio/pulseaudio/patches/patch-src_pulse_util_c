@@ -30,7 +30,7 @@ Index: src/pulse/util.c
 +        if (sysctl (mib, 4, NULL, &len, NULL, 0) == -1)
 +            return NULL;
 +
-+        buf = (char *) pa_xmalloc(len);
++        buf = (char **) pa_xmalloc(len);
 +
 +        if (sysctl(mib, 4, buf, &len, NULL, 0) == 0) {
 +            pa_strlcpy(s, basename(*buf), l);
