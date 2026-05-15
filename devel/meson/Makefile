@@ -47,8 +47,7 @@ TEST_DEPENDS=		devel/git \
 			lang/mono \
 			lang/rust \
 			lang/vala \
-			shells/bash \
-			textproc/hotdoc
+			shells/bash
 
 # clang-format
 TEST_DEPENDS +=		devel/llvm/${MODCLANG_VERSION}
