@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1799 2026/04/15 13:15:55 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1800 2026/05/15 16:18:08 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1066,6 +1066,8 @@ setup_obsolete_reason(
 	6 => 'nix',
 	46 => 'exim',
 	46 => 'exim-eximon',
+# 8.0
+	1 => 'hotdoc',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later

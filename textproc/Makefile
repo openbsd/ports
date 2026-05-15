@@ -92,7 +92,6 @@
      SUBDIR += hfst
      SUBDIR += hgrep
      SUBDIR += highlight
-     SUBDIR += hotdoc
      SUBDIR += html
      SUBDIR += html-xml-utils
      SUBDIR += htmlq
