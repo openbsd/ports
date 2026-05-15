@@ -9,8 +9,8 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
 
-REVISION-main=		7
-REVISION-cups=		5
+REVISION-main=		8
+REVISION-cups=		6
 
 CATEGORIES=		x11 devel
 

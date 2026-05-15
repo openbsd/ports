@@ -1,0 +1,14 @@
+Fix build with llvm 22
+
+Index: modules/other/gail/gailtreeview.c
+--- modules/other/gail/gailtreeview.c.orig
++++ modules/other/gail/gailtreeview.c
+@@ -995,7 +995,7 @@ gail_tree_view_ref_child (AtkObject *obj, 
+         gail_cell_add_state (cell, ATK_STATE_FOCUSABLE, FALSE);
+         if (focus_index == i)
+           {
+-            gailview->focus_cell = g_object_ref (cell);
++            gailview->focus_cell = (AtkObject *)g_object_ref (cell);
+             gail_cell_add_state (cell, ATK_STATE_FOCUSED, FALSE);
+             g_signal_emit_by_name (gailview,
+                                    "active-descendant-changed",

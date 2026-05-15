@@ -1,0 +1,19 @@
+Fix build with llvm 22
+
+Index: gtk/gtkimmodule.c
+--- gtk/gtkimmodule.c.orig
++++ gtk/gtkimmodule.c
+@@ -660,11 +660,11 @@ lookup_immodule (gchar **immodules_list)
+       else
+ 	{
+ 	  gboolean found;
+-	  gchar *context_id;
++	  gpointer context_id;
+ 	  found = g_hash_table_lookup_extended (contexts_hash, *immodules_list,
+ 						&context_id, NULL);
+ 	  if (found)
+-	    return context_id;
++	    return (gchar *)context_id;
+ 	}
+       immodules_list++;
+     }
