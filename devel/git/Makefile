@@ -5,6 +5,7 @@ COMMENT-x11 =	graphical tools
 V =		2.54.0
 DISTNAME =	git-${V}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://git-scm.com/
 
