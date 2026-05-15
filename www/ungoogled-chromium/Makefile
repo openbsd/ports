@@ -14,6 +14,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Chromium browser sans integration with Google
 
 V=			148.0.7778.167
+REVISION=		0
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -339,6 +340,10 @@ do-install:
 .for f in snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
+
+	# ungoogled-chromium builds hyphen-data as an artifact
+	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/hyphen-data
+	${INSTALL_DATA} ${BUILDDIR}/hyphen-data/* ${PREFIX}/${DIST_TARGET_DIR}/hyphen-data
 
 	# ANGLE, EGL, Vk
 .for f in libEGL libGLESv2
