@@ -1,0 +1,12 @@
+Index: deps/v8/src/base/macros.h
+--- deps/v8/src/base/macros.h.orig
++++ deps/v8/src/base/macros.h
+@@ -181,7 +181,7 @@ V8_INLINE Dest bit_cast(Source const& source) {
+ 
+ // Define V8_USE_UNDEFINED_BEHAVIOR_SANITIZER macro.
+ #if defined(__has_feature)
+-#if __has_feature(undefined_behavior_sanitizer)
++#if __has_feature(undefined_behavior_sanitizer) && !defined(V8_OS_BSD)
+ #define V8_USE_UNDEFINED_BEHAVIOR_SANITIZER 1
+ #endif
+ #endif

@@ -7,17 +7,7 @@ from "0.0" if llvm (clang) is detected.
 Index: tools/v8_gypfiles/v8.gyp
 --- tools/v8_gypfiles/v8.gyp.orig
 +++ tools/v8_gypfiles/v8.gyp
-@@ -315,6 +315,9 @@
-             '<(icu_gyp_path):icuuc',
-           ],
-         }],
-+        ['v8_control_flow_integrity==1', {
-+          'sources': [ '<(V8_ROOT)/src/deoptimizer/deoptimizer-cfi-builtins.cc' ],
-+        }],
-       ],
-     },  # v8_initializers_slow
-     {
-@@ -733,7 +736,7 @@
+@@ -733,7 +733,7 @@
                }],
                ['v8_enable_webassembly==1', {
                  'conditions': [
@@ -26,7 +16,7 @@ Index: tools/v8_gypfiles/v8.gyp
                      'sources': [
                        '<(V8_ROOT)/src/trap-handler/handler-inside-posix.h',
                      ],
-@@ -776,7 +779,7 @@
+@@ -776,7 +776,7 @@
                }],
                ['v8_enable_webassembly==1', {
                  'conditions': [
@@ -35,7 +25,7 @@ Index: tools/v8_gypfiles/v8.gyp
                      'sources': [
                        '<(V8_ROOT)/src/trap-handler/handler-inside-posix.h',
                      ],
-@@ -1153,7 +1156,7 @@
+@@ -1153,7 +1153,7 @@
              }],
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -44,7 +34,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1181,7 +1184,7 @@
+@@ -1181,7 +1181,7 @@
            'conditions': [
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -53,7 +43,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1229,7 +1232,7 @@
+@@ -1229,7 +1229,7 @@
            'conditions': [
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -62,13 +52,3 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1804,6 +1807,9 @@
-         # "build/win:default_exe_manifest",
-       ],
-       'conditions': [
-+        ['v8_control_flow_integrity==1', {
-+          'sources': [ '<(V8_ROOT)/src/deoptimizer/deoptimizer-cfi-empty.cc' ],
-+        }],
-         ['want_separate_host_toolset', {
-           'toolsets': ['host'],
-         }],
