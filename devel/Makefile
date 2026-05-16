@@ -1979,6 +1979,7 @@
      SUBDIR += sanitizers-cmake
      SUBDIR += sbt
      SUBDIR += sccache
+     SUBDIR += scnlib
      SUBDIR += scons
      SUBDIR += sdcc
      SUBDIR += sdl
