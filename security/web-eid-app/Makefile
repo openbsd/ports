@@ -5,7 +5,7 @@ COMMENT-chrome =	Chromium extension
 COMMENT-firefox =	Firefox extension
 CATEGORIES =		security www
 
-V =			2.8.0
+V =			2.9.0
 DISTNAME =		web-eid-${V}
 PKGNAME-main =		web-eid-native-${V}
 
