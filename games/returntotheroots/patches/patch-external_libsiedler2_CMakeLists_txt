@@ -1,0 +1,14 @@
+Fix build with Boost 1.91
+
+Index: external/libsiedler2/CMakeLists.txt
+--- external/libsiedler2/CMakeLists.txt.orig
++++ external/libsiedler2/CMakeLists.txt
+@@ -37,7 +37,7 @@ endif()
+ 
+ 
+ include(RttrBoostCfg)
+-find_package(Boost 1.69 REQUIRED COMPONENTS system filesystem iostreams)
++find_package(Boost 1.69 REQUIRED COMPONENTS filesystem iostreams)
+ 
+ include(RttrTestingCfg)
+ if(isTopLevel)
