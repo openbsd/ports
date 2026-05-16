@@ -3,6 +3,7 @@ BROKEN-sparc64 =	clang problem, probably needs newer binutils
 COMMENT =		P2P payment system
 
 V =			31.0
+REVISION =		0
 
 DISTNAME =		bitcoin-${V}
 
