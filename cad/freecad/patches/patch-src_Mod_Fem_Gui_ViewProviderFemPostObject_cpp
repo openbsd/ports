@@ -1,0 +1,18 @@
+This patch has been merged upstream. Drop next update.
+Commit: bd90728f886bbeb6d69aafd4f68f934109b96f91
+
+Index: src/Mod/Fem/Gui/ViewProviderFemPostObject.cpp
+--- src/Mod/Fem/Gui/ViewProviderFemPostObject.cpp.orig
++++ src/Mod/Fem/Gui/ViewProviderFemPostObject.cpp
+@@ -75,11 +75,7 @@
+ using namespace FemGui;
+ namespace sp = std::placeholders;
+ 
+-#ifdef VTK_CELL_ARRAY_V2
+ using vtkIdTypePtr = const vtkIdType*;
+-#else
+-using vtkIdTypePtr = vtkIdType*;
+-#endif
+ 
+ // ----------------------------------------------------------------------------
+ 

@@ -1,8 +1,8 @@
 Index: tests/src/Mod/Material/CMakeLists.txt
 --- tests/src/Mod/Material/CMakeLists.txt.orig
 +++ tests/src/Mod/Material/CMakeLists.txt
-@@ -8,6 +8,7 @@ target_include_directories(Material_tests_run SYSTEM P
- target_link_directories(Material_tests_run PUBLIC ${OCC_LIBRARY_DIR})
+@@ -3,6 +3,7 @@
+ add_subdirectory(App)
  
  target_link_libraries(Material_tests_run
 +    gtest

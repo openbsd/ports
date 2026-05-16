@@ -1,0 +1,23 @@
+This patch has been merged upstream. Drop next update.
+Commit: bd90728f886bbeb6d69aafd4f68f934109b96f91
+
+Index: src/3rdParty/salomesmesh/src/SMDS/SMDS_BallElement.cpp
+--- src/3rdParty/salomesmesh/src/SMDS/SMDS_BallElement.cpp.orig
++++ src/3rdParty/salomesmesh/src/SMDS/SMDS_BallElement.cpp
+@@ -67,16 +67,9 @@ void SMDS_BallElement::SetDiameter(double diameter)
+ bool SMDS_BallElement::ChangeNode (const SMDS_MeshNode * node)
+ {
+   vtkUnstructuredGrid* grid = SMDS_Mesh::_meshList[myMeshId]->getGrid();
+-#ifdef VTK_CELL_ARRAY_V2
+   vtkNew<vtkIdList> cellPoints;
+   grid->GetCellPoints(myVtkID, cellPoints.GetPointer());
+   cellPoints->SetId(0, node->getVtkId());
+-#else
+-  vtkIdType npts = 0;
+-  vtkIdType* pts = 0;
+-  grid->GetCellPoints(myVtkID, npts, pts);
+-  pts[0] = node->getVtkId();
+-#endif
+   SMDS_Mesh::_meshList[myMeshId]->setMyModified();
+   return true;
+ }

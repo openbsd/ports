@@ -4,12 +4,12 @@ DPB_PROPERTIES =	parallel parallel2
 
 COMMENT =		general purpose parametric 3D CAD modeler
 
-V =			1.0.2
-DISTNAME =		freecad_source
+V =			1.1.0
+DISTNAME =		freecad_source_${V}
 PKGNAME =		freecad-${V}
-REVISION =		5
 
-SHARED_LIBS +=		OndselSolver              1.0 # 0.0
+SHARED_LIBS +=		OndselSolver              2.0 # 0.0
+SHARED_LIBS +=		E57Format                 0.0 # 0.0
 
 CATEGORIES =		cad
 HOMEPAGE =		https://www.freecad.org/
@@ -26,35 +26,34 @@ WANTLIB += TKDEIGES TKDESTEP TKDESTL TKExpress TKFeat TKFillet
 WANTLIB += TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKLCAF TKMath
 WANTLIB += TKMesh TKMeshVS TKOffset TKPrim TKRWMesh TKService
 WANTLIB += TKShHealing TKTopAlgo TKV3d TKVCAF TKXCAF TKXSBase
-WANTLIB += TKernel X11 boost_atomic-mt boost_chrono-mt boost_container-mt
+WANTLIB += TKernel boost_atomic-mt boost_chrono-mt boost_container-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
 WANTLIB += boost_serialization-mt boost_thread-mt c execinfo fmt
-WANTLIB += freetype hdf5 hdf5_hl m med medC pcl_common pcl_features
-WANTLIB += pcl_filters pcl_kdtree pcl_ml pcl_octree pcl_sample_consensus
-WANTLIB += pcl_search pcl_segmentation pcl_surface pyside6.abi3
-WANTLIB += ${MODPY_WANTLIB} shiboken6.abi3 vtkCommonCore vtkCommonDataModel
-WANTLIB += vtkCommonExecutionModel vtkCommonMath vtkCommonMisc
-WANTLIB += vtkCommonTransforms vtkFiltersCellGrid vtkFiltersCore
-WANTLIB += vtkFiltersExtraction vtkFiltersGeneral vtkFiltersGeometry
-WANTLIB += vtkFiltersSources vtkFiltersVerdict vtkIOCellGrid vtkIOCore
-WANTLIB += vtkIOImage vtkIOLegacy vtkIOXML vtkIOXMLParser vtkImagingCore
-WANTLIB += vtkInteractionStyle vtkRenderingCore vtkRenderingFreeType
-WANTLIB += vtkRenderingHyperTreeGrid vtkRenderingOpenGL2 vtkRenderingUI
-WANTLIB += vtkglad vtkkissfft vtksys vtktoken xerces-c yaml-cpp
-WANTLIB += z
+WANTLIB += freetype hdf5 hdf5_hl icui18n icuuc m med medC pcl_common
+WANTLIB += pcl_features pcl_filters pcl_kdtree pcl_ml pcl_octree
+WANTLIB += pcl_sample_consensus pcl_search pcl_segmentation pcl_surface
+WANTLIB += pyside6.abi3 ${MODPY_WANTLIB} scn shiboken6.abi3 vtkCommonCore
+WANTLIB += vtkCommonDataModel vtkCommonExecutionModel vtkCommonMath
+WANTLIB += vtkCommonMisc vtkCommonTransforms vtkFiltersCellGrid
+WANTLIB += vtkFiltersCore vtkFiltersExtraction vtkFiltersGeneral
+WANTLIB += vtkFiltersGeometry vtkFiltersSources vtkFiltersVerdict
+WANTLIB += vtkIOCellGrid vtkIOCore vtkIOImage vtkIOLegacy vtkIOXML
+WANTLIB += vtkIOXMLParser vtkImagingCore vtkInteractionStyle vtkRenderingCore
+WANTLIB += vtkRenderingFreeType vtkRenderingHyperTreeGrid vtkRenderingOpenGL2
+WANTLIB += vtkRenderingUI vtkglad vtkkissfft vtksys vtktoken vtkx11
+WANTLIB += xerces-c yaml-cpp z
 
 SITES =			https://github.com/FreeCAD/FreeCAD/releases/download/${V}/
+
+FIX_CRLF_FILES =	src/Gui/View3DInventor.cpp \
+			src/Gui/ViewProvider.h
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python \
 			x11/qt6
 
-# There are a few dependencies listed at configure time that are not required
-# by FreeCAD but that are picked up by the Find*.cmake modules of some of its
-# dependencies like vtk or pcl, e.g., flann, qhull, libusb1, utf8cpp, glslang,
-# shaderc or exprtk. Do not list these here.
 BUILD_DEPENDS =		cad/netgen-mesher \
 			devel/boost \
 			devel/gtest \
@@ -67,9 +66,21 @@ BUILD_DEPENDS =		cad/netgen-mesher \
 			textproc/nlohmann-json \
 			x11/qt6/pyside6/tools
 
+# There are a few dependencies listed at configure time that are not required
+# by FreeCAD but that are picked up by the Find*.cmake modules of some of its
+# dependencies like vtk or pcl. List them here just in case.
+BUILD_DEPENDS +=	devel/libusb1 \
+			devel/utfcpp \
+			graphics/glslang \
+			graphics/shaderc \
+			math/exprtk \
+			math/flann \
+			math/qhull
+
 RUN_DEPENDS =		cad/netgen-mesher \
 			devel/desktop-file-utils \
 			devel/py-ply \
+			devel/py-typing-extensions \
 			graphics/py-matplotlib \
 			graphics/py-pivy \
 			misc/shared-mime-info \
@@ -102,6 +113,7 @@ LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 #	https://github.com/FreeCAD/FreeCAD/blob/main/src/Mod/Robot/App/CMakeLists.txt#L77
 CONFIGURE_ARGS +=	-DFREECAD_USE_EXTERNAL_FMT=ON \
 			-DFREECAD_USE_EXTERNAL_PIVY=ON \
+			-DFREECAD_USE_EXTERNAL_GTEST=ON \
 			-DFREECAD_USE_EXTERNAL_KDL=OFF \
 			-DFREECAD_USE_EXTERNAL_ZIPIOS=OFF \
 			-DFREECAD_USE_EXTERNAL_SMESH=OFF \
@@ -113,7 +125,6 @@ CONFIGURE_ARGS +=	-DFREECAD_USE_EXTERNAL_FMT=ON \
 			-DFREECAD_QT_VERSION=6 \
 			-DINSTALL_TO_SITEPACKAGES=ON \
 			-DBUILD_FEM_NETGEN=ON \
-			-DBUILD_ADDONMGR=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Spnav=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_OpenMP=ON \
@@ -138,10 +149,9 @@ WRKDIST =		${WRKDIR}
 PORTHOME =		${WRKDIR}
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# Some tarballs bundle GSL and GTest, use GSL and GTest from ports:
+# Some tarballs bundle GSL, use GSL from ports.
 post-extract:
 	rm -r ${WRKSRC}/src/3rdParty/GSL
-	rm -r ${WRKSRC}/tests/lib
 
 # To generate src/Build/Version.h file:
 # 1. git clone --single-branch -b ${VERSION} https://github.com/FreeCAD/FreeCAD
@@ -162,5 +172,9 @@ post-install:
 	${MODPY_COMPILEALL} \
 		${WRKINST}${MODPY_SITEPKG}/freecad/ \
 		${PREFIX}/lib/freecad/{Mod,Ext}/
+
+	# Remove unnecessary files from E57Format and OndselSolver.
+	find ${WRKINST} \( -name 'E57*' -o -name 'OndselSolver*' \) \
+		-exec rm -rf {} +
 
 .include <bsd.port.mk>

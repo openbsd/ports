@@ -1,24 +1,11 @@
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt
-@@ -123,6 +123,7 @@ endif(BUILD_SKETCHER)
- 
- foreach (exe ${TestExecutables})
-     add_executable(${exe})
-+    target_link_directories(${exe} PUBLIC ${LOCALBASE}/lib)
+@@ -157,6 +157,7 @@ foreach (exe ${TestExecutables})
+         endif()
+     else()
+         set_target_properties(${exe} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tests)
++        target_link_directories(${exe} PUBLIC ${LOCALBASE}/lib)
+     endif()
+     gtest_discover_tests(${exe})
  endforeach()
- 
- if ( EXISTS "${CMAKE_SOURCE_DIR}/tests/lib/googletest" )
-@@ -135,10 +136,12 @@ target_include_directories(Tests_run SYSTEM PUBLIC
-     ${XercesC_INCLUDE_DIRS}
- )
- target_link_libraries(Tests_run
-+    gtest
-     gtest_main
-     gmock_main
-     ${Google_Tests_LIBS}
-     FreeCADApp
-+    -L${LOCALBASE}/lib
- )
- 
- include(GoogleTest)

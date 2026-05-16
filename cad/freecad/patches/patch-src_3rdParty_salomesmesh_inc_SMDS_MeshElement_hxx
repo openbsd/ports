@@ -1,0 +1,18 @@
+This patch has been merged upstream. Drop next update.
+Commit: bd90728f886bbeb6d69aafd4f68f934109b96f91
+
+Index: src/3rdParty/salomesmesh/inc/SMDS_MeshElement.hxx
+--- src/3rdParty/salomesmesh/inc/SMDS_MeshElement.hxx.orig
++++ src/3rdParty/salomesmesh/inc/SMDS_MeshElement.hxx
+@@ -45,11 +45,7 @@
+ //typedef unsigned short UShortType;
+ typedef short ShortType;
+ typedef int   LongType;
+-#ifdef VTK_CELL_ARRAY_V2
+ typedef const vtkIdType* vtkIdTypePtr;
+-#else
+-typedef vtkIdType* vtkIdTypePtr;
+-#endif
+ class SMDS_MeshNode;
+ class SMDS_MeshEdge;
+ class SMDS_MeshFace;

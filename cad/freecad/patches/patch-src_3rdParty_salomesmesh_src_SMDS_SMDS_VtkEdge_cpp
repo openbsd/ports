@@ -1,0 +1,35 @@
+This patch has been merged upstream. Drop next update.
+Commit: bd90728f886bbeb6d69aafd4f68f934109b96f91
+
+Index: src/3rdParty/salomesmesh/src/SMDS/SMDS_VtkEdge.cpp
+--- src/3rdParty/salomesmesh/src/SMDS/SMDS_VtkEdge.cpp.orig
++++ src/3rdParty/salomesmesh/src/SMDS/SMDS_VtkEdge.cpp
+@@ -67,7 +67,6 @@ bool SMDS_VtkEdge::ChangeNodes(const SMDS_MeshNode * n
+ bool SMDS_VtkEdge::ChangeNodes(const SMDS_MeshNode* nodes[], const int nbNodes)
+ {
+   vtkUnstructuredGrid* grid = SMDS_Mesh::_meshList[myMeshId]->getGrid();
+-#ifdef VTK_CELL_ARRAY_V2
+   vtkNew<vtkIdList> cellPoints;
+   grid->GetCellPoints(myVtkID, cellPoints.GetPointer());
+   if (nbNodes != cellPoints->GetNumberOfIds())
+@@ -79,20 +78,6 @@ bool SMDS_VtkEdge::ChangeNodes(const SMDS_MeshNode* no
+     {
+       cellPoints->SetId(i, nodes[i]->getVtkId());
+     }
+-#else
+-  vtkIdType npts = 0;
+-  vtkIdType* pts = 0;
+-  grid->GetCellPoints(myVtkID, npts, pts);
+-  if (nbNodes != npts)
+-    {
+-      MESSAGE("ChangeNodes problem: not the same number of nodes " << npts << " -> " << nbNodes);
+-      return false;
+-    }
+-  for (int i = 0; i < nbNodes; i++)
+-    {
+-      pts[i] = nodes[i]->getVtkId();
+-    }
+-#endif
+   SMDS_Mesh::_meshList[myMeshId]->setMyModified();
+   return true;
+ }

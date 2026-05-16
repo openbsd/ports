@@ -1,8 +1,8 @@
 Index: tests/src/Mod/Assembly/CMakeLists.txt
 --- tests/src/Mod/Assembly/CMakeLists.txt.orig
 +++ tests/src/Mod/Assembly/CMakeLists.txt
-@@ -8,6 +8,7 @@ target_include_directories(Assembly_tests_run SYSTEM P
- target_link_directories(Assembly_tests_run PUBLIC ${OCC_LIBRARY_DIR})
+@@ -9,6 +9,7 @@ if (NOT FREECAD_USE_EXTERNAL_ONDSELSOLVER)
+ endif ()
  
  target_link_libraries(Assembly_tests_run
 +    gtest

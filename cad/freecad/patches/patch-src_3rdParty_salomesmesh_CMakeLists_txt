@@ -1,7 +1,7 @@
 Index: src/3rdParty/salomesmesh/CMakeLists.txt
 --- src/3rdParty/salomesmesh/CMakeLists.txt.orig
 +++ src/3rdParty/salomesmesh/CMakeLists.txt
-@@ -135,6 +135,7 @@ else(MSVC)
+@@ -134,6 +134,7 @@ else(MSVC)
              ${NGLIB_LIBRARIES}
              ${OCC_LIBRARIES}
              ${OCC_OCAF_LIBRARIES}

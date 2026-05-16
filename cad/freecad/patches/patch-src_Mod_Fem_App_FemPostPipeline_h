@@ -1,0 +1,15 @@
+This patch has been merged upstream. Drop next update.
+Commit: c9acda2a659f9ac079fefd2c0b8d6ff9c8a8238e
+
+Index: src/Mod/Fem/App/FemPostPipeline.h
+--- src/Mod/Fem/App/FemPostPipeline.h.orig
++++ src/Mod/Fem/App/FemPostPipeline.h
+@@ -32,7 +32,7 @@
+ #include "FemResultObject.h"
+ #include "VTKExtensions/vtkFemFrameSourceAlgorithm.h"
+ 
+-#if VTK_VERSION_NUMBER < VTK_VERSION_CHECK(9, 3, 0)
++#if VTK_VERSION_NUMBER < VTK_VERSION_CHECK(9, 2, 20230125)
+ # include "VTKExtensions/vtkCleanUnstructuredGrid.h"
+ #else
+ # include <vtkCleanUnstructuredGrid.h>

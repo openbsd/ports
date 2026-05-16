@@ -1,8 +1,8 @@
 Index: tests/src/Mod/Part/CMakeLists.txt
 --- tests/src/Mod/Part/CMakeLists.txt.orig
 +++ tests/src/Mod/Part/CMakeLists.txt
-@@ -8,6 +8,7 @@ target_include_directories(Part_tests_run SYSTEM PUBLI
- target_link_directories(Part_tests_run PUBLIC ${OCC_LIBRARY_DIR})
+@@ -3,6 +3,7 @@
+ add_subdirectory(App)
  
  target_link_libraries(Part_tests_run
 +    gtest

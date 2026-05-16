@@ -1,0 +1,32 @@
+This patch has been merged upstream. Drop next update.
+Commit: bd90728f886bbeb6d69aafd4f68f934109b96f91
+Commit: c9acda2a659f9ac079fefd2c0b8d6ff9c8a8238e
+
+Index: src/3rdParty/salomesmesh/inc/SMDS_UnstructuredGrid.hxx
+--- src/3rdParty/salomesmesh/inc/SMDS_UnstructuredGrid.hxx.orig
++++ src/3rdParty/salomesmesh/inc/SMDS_UnstructuredGrid.hxx
+@@ -28,6 +28,7 @@
+ 
+ #include <vtkUnstructuredGrid.h>
+ #include <vtkCellLinks.h>
++#include <vtkVersion.h>
+ 
+ #include <vector>
+ #include <set>
+@@ -95,14 +96,10 @@ class SMDS_EXPORT SMDS_UnstructuredGrid: public vtkUns
+                                        std::map<int, std::map<long,int> >& nodeQuadDomains);
+   vtkCellLinks* GetLinks()
+   {
+-#ifdef VTK_CELL_ARRAY_V2
+-  #if VTK_VERSION_NUMBER_QUICK >= 90300000000
++#if VTK_VERSION_NUMBER >= VTK_VERSION_CHECK(9, 2, 20221112)
+     return static_cast<vtkCellLinks*>(vtkUnstructuredGrid::GetLinks());
+-  #else
+-    return static_cast<vtkCellLinks*>(GetCellLinks());
+-  #endif
+ #else
+-    return Links;
++    return static_cast<vtkCellLinks*>(GetCellLinks());
+ #endif
+   }
+   SMDS_Downward* getDownArray(unsigned char vtkType)
