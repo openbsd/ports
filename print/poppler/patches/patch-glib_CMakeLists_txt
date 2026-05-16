@@ -11,7 +11,7 @@ Index: glib/CMakeLists.txt
  if(MINGW AND BUILD_SHARED_LIBS)
      get_target_property(POPPLER_GLIB_SOVERSION poppler-glib SOVERSION)
      set_target_properties(poppler-glib PROPERTIES SUFFIX "-${POPPLER_GLIB_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")
-@@ -147,6 +146,9 @@ if (HAVE_INTROSPECTION AND BUILD_SHARED_LIBS)
+@@ -143,6 +142,9 @@ if (HAVE_INTROSPECTION AND BUILD_SHARED_LIBS)
    _gir_list_prefix(_includes _tmp_includes "-I")
    # And set flags for gir compiler and scanner
    set(Poppler_0_18_gir_CFLAGS ${_includes} -L${CMAKE_BINARY_DIR} -L${CMAKE_CURRENT_BINARY_DIR})
