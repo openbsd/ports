@@ -112,9 +112,6 @@ device e.g.:
 
 # chown youruser /dev/video?
 
-Screen sharing needs shmget() which isn't available when pledge() is active, so
-you will have to disable pledge for the main process.
-
 KerberosV support
 =================
 To use Kerberized Firefox, first manually install the "heimdal" package
