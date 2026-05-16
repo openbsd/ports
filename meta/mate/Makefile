@@ -3,7 +3,7 @@ COMMENT-extras =	MATE desktop meta-package (full installation)
 
 CATEGORIES =		meta x11
 
-V =			1.26
+V =			1.28
 PKGNAME =		mate-${V}
 
 PKGNAME-main =		mate-${V}
