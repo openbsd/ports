@@ -3,7 +3,7 @@ COMMENT =		jump 'n' run game
 V =			0.6.3
 DISTNAME =		SuperTux-v${V}-Source
 PKGNAME =		supertux-$V
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		games
 
@@ -14,10 +14,11 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL2 SDL2_image boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_locale-mt
-WANTLIB += c curl freetype m ogg openal physfs png vorbis vorbisfile
-WANTLIB += z boost_atomic-mt boost_chrono-mt boost_thread-mt
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL2 SDL2_image boost_atomic-mt
+WANTLIB += boost_charconv-mt boost_chrono-mt boost_container-mt
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
+WANTLIB += boost_thread-mt c curl freetype m ogg openal physfs
+WANTLIB += png vorbis vorbisfile z
 
 SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
 

@@ -10,6 +10,15 @@ Index: CMakeLists.txt
  
  set(BUILD_DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/data")
  set(BUILD_CONFIG_DATA_DIR "${CMAKE_BINARY_DIR}/data")
+@@ -171,7 +171,7 @@ if(ENABLE_BOOST_STATIC_LIBS)
+ else(ENABLE_BOOST_STATIC_LIBS)
+   set(Boost_USE_STATIC_LIBS FALSE)
+ endif(ENABLE_BOOST_STATIC_LIBS)
+-find_package(Boost REQUIRED COMPONENTS filesystem system date_time locale)
++find_package(Boost REQUIRED COMPONENTS filesystem date_time locale)
+ include_directories(SYSTEM ${Boost_INCLUDE_DIR})
+ link_directories(${Boost_LIBRARY_DIRS})
+ 
 @@ -351,7 +351,8 @@ if(NOT USE_SYSTEM_PHYSFS)
      -DLIB_SUFFIX=${LIB_SUFFIX}
      -DPHYSFS_BUILD_SHARED=${PHYSFS_BUILD_SHARED}
