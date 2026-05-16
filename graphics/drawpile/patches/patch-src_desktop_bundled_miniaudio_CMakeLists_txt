@@ -1,0 +1,10 @@
+Index: src/desktop/bundled/miniaudio/CMakeLists.txt
+--- src/desktop/bundled/miniaudio/CMakeLists.txt.orig
++++ src/desktop/bundled/miniaudio/CMakeLists.txt
+@@ -16,5 +16,5 @@ target_compile_definitions(miniaudio PUBLIC
+ if(APPLE)
+     target_link_options(miniaudio PUBLIC -lpthread -lm)
+ elseif(UNIX AND NOT ANDROID AND NOT HAIKU AND NOT EMSCRIPTEN)
+-    target_link_libraries(miniaudio PUBLIC -latomic -ldl -lpthread -lm)
++    target_link_libraries(miniaudio PUBLIC -pthread -lm)
+ endif()

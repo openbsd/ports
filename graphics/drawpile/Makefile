@@ -1,42 +1,40 @@
 COMMENT =	collaborative drawing program
-DISTNAME =	drawpile-2.1.20
+
+V =		2.3.0
+DISTNAME =	drawpile-${V}
+
 CATEGORIES =	graphics x11
-REVISION =	2
+
+DIST_TUPLE +=	github drawpile Drawpile ${V} .
 
 HOMEPAGE =	https://drawpile.net/
-
-# Override kf5.port.mk
-EXTRACT_SUFX =	.tar.gz
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5DNSSD Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets
-WANTLIB += c gif m microhttpd miniupnpc qt5keychain sodium vpx
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6WebSockets Qt6Widgets
+WANTLIB += Qt6Xml avcodec avfilter avformat avutil c m qt6keychain
+WANTLIB += sharpyuv sodium swscale webp webpdemux webpmux z zip
+WANTLIB += zstd
 
-SITES =		https://drawpile.net/files/src/
+MODULES =	devel/kf6
 
-MODULES =	devel/kf5
-
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kdnssd \
-		graphics/giflib \
-		multimedia/libvpx \
-		net/miniupnp/miniupnpc \
+LIB_DEPENDS =	archivers/libzip \
+		archivers/zstd \
+		graphics/ffmpeg \
+		graphics/libwebp \
 		security/libsodium \
-		security/qtkeychain \
-		www/libmicrohttpd \
-		x11/qt5/qtmultimedia \
-		x11/qt5/qtsvg
+		security/qtkeychain,qt6 \
+		x11/qt6/qtsvg \
+		x11/qt6/qtwebsockets
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic
 
+WRKDIST =	${WRKDIR}/Drawpile-${V}
 CXXFLAGS +=	-I${LOCALBASE}/include
-
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 NO_TEST =	Yes
 

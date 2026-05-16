@@ -1,0 +1,14 @@
+Index: src/thinsrv/headless/headless.cpp
+--- src/thinsrv/headless/headless.cpp.orig
++++ src/thinsrv/headless/headless.cpp
+@@ -31,8 +31,8 @@ void printVersion()
+ {
+ 	printf("drawpile-srv %s\n", cmake_config::version());
+ 	printf(
+-		"Protocol version: %d.%d\n", cmake_config::proto::major(),
+-		cmake_config::proto::minor());
++		"Protocol version: %d.%d\n", cmake_config::proto::_major(),
++		cmake_config::proto::_minor());
+ 	printf(
+ 		"Qt version: %s (compiled against %s)\n", qVersion(), QT_VERSION_STR);
+ 	printf(

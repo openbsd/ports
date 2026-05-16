@@ -1,0 +1,12 @@
+Index: src/drawdance/libcommon/dpcommon/common.h
+--- src/drawdance/libcommon/dpcommon/common.h.orig
++++ src/drawdance/libcommon/dpcommon/common.h
+@@ -42,6 +42,8 @@
+ #        define DP_PLATFORM "windows"
+ #    elif defined(__APPLE__)
+ #        define DP_PLATFORM "darwin"
++#    elif defined(__OpenBSD__)
++#        define DP_PLATFORM "openbsd"
+ #    elif defined(__linux__)
+ #        define DP_PLATFORM "linux"
+ #    elif defined(__HAIKU__)

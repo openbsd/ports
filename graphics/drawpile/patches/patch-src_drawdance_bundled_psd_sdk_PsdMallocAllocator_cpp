@@ -1,0 +1,30 @@
+Index: src/drawdance/bundled/psd_sdk/PsdMallocAllocator.cpp
+--- src/drawdance/bundled/psd_sdk/PsdMallocAllocator.cpp.orig
++++ src/drawdance/bundled/psd_sdk/PsdMallocAllocator.cpp
+@@ -4,7 +4,7 @@
+ #include "PsdPch.h"
+ #include "PsdMallocAllocator.h"
+ 
+-#if defined(__APPLE__)
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ #include <stdlib.h>
+ #include <errno.h>
+ #else
+@@ -18,7 +18,7 @@ PSD_NAMESPACE_BEGIN
+ // ---------------------------------------------------------------------------------------------------------------------
+ void* MallocAllocator::DoAllocate(size_t size, size_t alignment)
+ {
+-#if defined(__APPLE__)
++#if defined(__APPLE__) || defined(__OpenBSD__)
+     void *m = 0;
+     size_t minAlignment = sizeof(void *);
+     while (alignment > minAlignment) {
+@@ -38,7 +38,7 @@ void* MallocAllocator::DoAllocate(size_t size, size_t 
+ // ---------------------------------------------------------------------------------------------------------------------
+ void MallocAllocator::DoFree(void* ptr)
+ {
+-#if defined(__APPLE__) || defined(__GNUG__)
++#if defined(__APPLE__) || defined(__GNUG__) || defined(__OpenBSD__)
+ 	free(ptr);
+ #else
+ 	_aligned_free(ptr);
