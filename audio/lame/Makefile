@@ -3,6 +3,7 @@ COMMENT=	lame ain't an MP3 encoder
 
 # tarball generated from https://svn.code.sf.net/p/lame/svn/trunk/lame#revision=6531
 DISTNAME=	lame-3.101pre6531
+REVISION=	0
 
 SHARED_LIBS +=  mp3lame              2.2      # 0.0
 

@@ -1,0 +1,47 @@
+Fix build with llvm 22
+
+Index: libmp3lame/id3tag.c
+--- libmp3lame/id3tag.c.orig
++++ libmp3lame/id3tag.c
+@@ -658,7 +658,7 @@ id3tag_set_genre_utf8(lame_t gfp, unsigned short const
+             return 0;
+         }
+     }
+-    ret = id3v2_add_utf8_lng(gfp, ID_GENRE, 0, text);
++    ret = id3v2_add_utf8_lng(gfp, ID_GENRE, 0, (const char *)text);
+     if (ret == 0) {
+         gfc->tag_spec.flags |= CHANGED_FLAG;
+         gfc->tag_spec.genre_id3v1 = GENRE_INDEX_OTHER;
+@@ -1138,19 +1138,19 @@ id3tag_set_textinfo_utf8(lame_t gfp, char const *id, u
+         return 0;
+     }
+     if (frame_id == ID_TXXX || frame_id == ID_WXXX || frame_id == ID_COMMENT) {
+-        return id3tag_set_userinfo_utf8(gfp, frame_id, text);
++        return id3tag_set_userinfo_utf8(gfp, frame_id, (const char *)text);
+     }
+     if (frame_id == ID_GENRE) {
+         return id3tag_set_genre_utf8(gfp, text);
+     }
+     if (frame_id == ID_PCST) {
+-        return id3v2_add_utf8_lng(gfp, frame_id, 0, text);
++        return id3v2_add_utf8_lng(gfp, frame_id, 0, (const char *)text);
+     }
+     if (frame_id == ID_USER) {
+-        return id3v2_add_utf8_lng(gfp, frame_id, text, 0);
++        return id3v2_add_utf8_lng(gfp, frame_id, (const char *)text, 0);
+     }
+     if (frame_id == ID_WFED) {
+-        return id3v2_add_utf8_lng(gfp, frame_id, text, 0); /* iTunes expects WFED to be a text frame */
++        return id3v2_add_utf8_lng(gfp, frame_id, (const char *)text, 0); /* iTunes expects WFED to be a text frame */
+     }
+     if (isFrameIdMatching(frame_id, FRAME_ID('T', 0, 0, 0))
+       ||isFrameIdMatching(frame_id, FRAME_ID('W', 0, 0, 0))) {
+@@ -1159,7 +1159,7 @@ id3tag_set_textinfo_utf8(lame_t gfp, char const *id, u
+             return -2;  /* must be Latin-1 encoded */
+         }
+ #endif
+-        return id3v2_add_utf8_lng(gfp, frame_id, 0, text);
++        return id3v2_add_utf8_lng(gfp, frame_id, 0, (const char *)text);
+     }
+     return -255;        /* not supported by now */
+ }
