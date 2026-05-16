@@ -1,8 +1,8 @@
 Index: zzip/CMakeLists.txt
 --- zzip/CMakeLists.txt.orig
 +++ zzip/CMakeLists.txt
-@@ -189,16 +189,16 @@ target_link_libraries(libzzipmmapped ZLIB::ZLIB )
- target_include_directories (libzzipmmapped PRIVATE ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
+@@ -242,16 +242,16 @@ add_custom_command(OUTPUT libzzipmmapped.so.gcov
+ add_custom_target(libzzipmmapped.gcov DEPENDS libzzipmmapped.so.gcov)
  endif()
  
 -set_target_properties(libzzip PROPERTIES OUTPUT_NAME "zzip" RELEASE_POSTFIX "-${RELNUM}")
@@ -20,4 +20,47 @@ Index: zzip/CMakeLists.txt
 +set_target_properties(libzzipmmapped PROPERTIES OUTPUT_NAME "zzipmmapped")
  SET_TARGET_PROPERTIES(libzzipmmapped PROPERTIES VERSION ${VERNUM}.${FIXNUM} SOVERSION ${VERNUM})
  endif()
+ 
+@@ -415,42 +415,15 @@ if(ZZIP_LIBLATEST)
+     get_target_property(libname libzzip OUTPUT_NAME)
+     get_target_property(librelease libzzip RELEASE_POSTFIX)
+     set(libzzip_target "${lib}${libname}${dll}")
+-    add_custom_command(OUTPUT ${libzzip_target} 
+-        COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_NAME:libzzip> ${libzzip_target}
+-        )
+-    add_custom_target(libzzip_latest ALL
+-        DEPENDS ${libzzip_target}
+-        )
+-    install(FILES
+-        ${outdir}/${lib}${libname}${dll}
+-        DESTINATION ${CMAKE_INSTALL_LIBDIR})
+     if(ZZIPFSEEKO)
+     get_target_property(libname libzzipfseeko OUTPUT_NAME)
+     get_target_property(librelease libzzipfseeko RELEASE_POSTFIX)
+     set(libzzipfseeko_target "${lib}${libname}${dll}")
+-    add_custom_command(OUTPUT ${libzzipfseeko_target} 
+-        COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_NAME:libzzipfseeko> ${libzzipfseeko_target}
+-        )
+-    add_custom_target(libzzipfseeko_latest ALL
+-        DEPENDS ${libzzipfseeko_target}
+-        )
+-    install(FILES
+-        ${outdir}/${lib}${libname}${dll}
+-        DESTINATION ${CMAKE_INSTALL_LIBDIR})
+     endif(ZZIPFSEEKO)
+     if(ZZIPMMAPPED)
+     get_target_property(libname libzzipmmapped OUTPUT_NAME)
+     get_target_property(librelease libzzipmmapped RELEASE_POSTFIX)
+     set(libzzipmmapped_target "${lib}${libname}${dll}")
+-    add_custom_command(OUTPUT ${libzzipmmapped_target} 
+-        COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_NAME:libzzipmmapped> ${libzzipmmapped_target}
+-        )
+-    add_custom_target(libzzipmmaped_latest ALL
+-        DEPENDS ${libzzipmmapped_target}
+-        )
+-    install(FILES
+-        ${outdir}/${lib}${libname}${dll}
+-        DESTINATION ${CMAKE_INSTALL_LIBDIR})
+     endif(ZZIPMMAPPED)
+ endif(ZZIP_LIBLATEST)
  

@@ -4,10 +4,9 @@ CATEGORIES=	archivers
 
 GH_ACCOUNT =	gdraheim
 GH_PROJECT =	zziplib
-GH_TAGNAME =	v0.13.72
-REVISION =	1
+GH_TAGNAME =	v0.13.80
 
-SHARED_LIBS +=  zzip                      16.0 # 0.0
+SHARED_LIBS +=  zzip                      16.1 # 0.0
 SHARED_LIBS +=  zzipfseeko                14.0 # 0.0
 SHARED_LIBS +=  zzipmmapped               14.0 # 0.0
 SHARED_LIBS +=  zzipwrap                  14.0 # 0.0
@@ -30,7 +29,9 @@ MODULES =		devel/cmake \
 MODPY_RUNDEP =		No
 
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
+CONFIGURE_ARGS +=	-DZZIP_LIBTOOL=OFF \
+			-DZZIP_COMPAT=OFF
 
 TEST_TARGET =		tests
 

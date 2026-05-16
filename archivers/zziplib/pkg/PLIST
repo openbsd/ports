@@ -12,12 +12,11 @@ include/SDL_rwops_zzip/
 include/SDL_rwops_zzip/SDL_rwops_zzip.c
 include/SDL_rwops_zzip/SDL_rwops_zzip.h
 include/zzip/
-include/zzip-io.h
-include/zzip.h
 include/zzip/_config.h
 include/zzip/_msvc.h
-include/zzip/autoconf.h
+include/zzip/cdecl.h
 include/zzip/conf.h
+include/zzip/cstdint.h
 include/zzip/fetch.h
 include/zzip/file.h
 include/zzip/format.h
@@ -33,12 +32,16 @@ include/zzip/wrap.h
 include/zzip/write.h
 include/zzip/zzip.h
 include/zzip/zzip32.h
-include/zziplib.h
+lib/cmake/
+lib/cmake/zziplib/
+lib/cmake/zziplib/zziplib-config.cmake
+lib/cmake/zziplib/zziplibTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/zziplib/zziplibTargets.cmake
 @lib lib/libzzip.so.${LIBzzip_VERSION}
 @lib lib/libzzipfseeko.so.${LIBzzipfseeko_VERSION}
 @lib lib/libzzipmmapped.so.${LIBzzipmmapped_VERSION}
+@so lib/libzzipwrap.so
 @lib lib/libzzipwrap.so.${LIBzzipwrap_VERSION}
-lib/pkgconfig/SDL_rwops_zzip.pc
 lib/pkgconfig/zzipfseeko.pc
 lib/pkgconfig/zziplib.pc
 lib/pkgconfig/zzipmmapped.pc
@@ -62,26 +65,6 @@ lib/pkgconfig/zzipwrap.pc
 @man man/man3/zzip_dir_stat.3
 @man man/man3/zzip_dirfd.3
 @man man/man3/zzip_dirhandle.3
-@man man/man3/zzip_disk_buffer.3
-@man man/man3/zzip_disk_close.3
-@man man/man3/zzip_disk_entry_fopen.3
-@man man/man3/zzip_disk_entry_strdup_comment.3
-@man man/man3/zzip_disk_entry_strdup_name.3
-@man man/man3/zzip_disk_entry_to_data.3
-@man man/man3/zzip_disk_entry_to_file_header.3
-@man man/man3/zzip_disk_fclose.3
-@man man/man3/zzip_disk_feof.3
-@man man/man3/zzip_disk_findfile.3
-@man man/man3/zzip_disk_findfirst.3
-@man man/man3/zzip_disk_findmatch.3
-@man man/man3/zzip_disk_findnext.3
-@man man/man3/zzip_disk_fopen.3
-@man man/man3/zzip_disk_fread.3
-@man man/man3/zzip_disk_init.3
-@man man/man3/zzip_disk_mmap.3
-@man man/man3/zzip_disk_munmap.3
-@man man/man3/zzip_disk_new.3
-@man man/man3/zzip_disk_open.3
 @man man/man3/zzip_entry_data_offset.3
 @man man/man3/zzip_entry_fclose.3
 @man man/man3/zzip_entry_feof.3
@@ -104,6 +87,7 @@ lib/pkgconfig/zzipwrap.pc
 @man man/man3/zzip_file_real.3
 @man man/man3/zzip_file_stat.3
 @man man/man3/zzip_filesize.3
+@man man/man3/zzip_filesize32.3
 @man man/man3/zzip_fopen.3
 @man man/man3/zzip_fread.3
 @man man/man3/zzip_freopen.3
@@ -111,6 +95,7 @@ lib/pkgconfig/zzipwrap.pc
 @man man/man3/zzip_get_default_io.3
 @man man/man3/zzip_inflate_init.3
 @man man/man3/zzip_init_io.3
+@man man/man3/zzip_io_size_off_t.3
 @man man/man3/zzip_open.3
 @man man/man3/zzip_open_ext_io.3
 @man man/man3/zzip_open_shared_io.3
@@ -135,3 +120,4 @@ lib/pkgconfig/zzipwrap.pc
 @man man/man3/zzip_telldir32.3
 share/aclocal/
 share/aclocal/zziplib.m4
+share/pkgconfig/SDL_rwops_zzip.pc
