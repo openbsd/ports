@@ -3,7 +3,7 @@ Use libstdthreads
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -140,7 +140,7 @@ if cc.has_argument('-fmacro-prefix-map=/foo=')
+@@ -143,7 +143,7 @@ if cc.has_argument('-fmacro-prefix-map=/foo=')
  endif
  
  math = cc.find_library('m')
@@ -12,25 +12,25 @@ Index: meson.build
  libepoll = dependency('epoll-shim', required: false)
  pixman = dependency('pixman-1')
  wayland_protocols = dependency('wayland-protocols', version: '>=1.41',
-@@ -253,7 +253,8 @@ common = static_library(
+@@ -256,7 +256,7 @@ common = static_library(
    'macros.h',
    'xmalloc.c', 'xmalloc.h',
    'xsnprintf.c', 'xsnprintf.h',
 -  dependencies: [utf8proc]
-+  dependencies: [utf8proc],
-+  dependencies: [stdthreads]
++  dependencies: [utf8proc, stdthreads]
  )
  
  misc = static_library(
-@@ -263,6 +264,7 @@ misc = static_library(
+@@ -265,7 +265,7 @@ misc = static_library(
+   'macros.h',
    'misc.c', 'misc.h',
    'uri.c', 'uri.h',
-   dependencies: [utf8proc],
-+  dependencies: [stdthreads],
+-  dependencies: [utf8proc],
++  dependencies: [utf8proc, stdthreads],
    link_with: [common]
  )
  
-@@ -307,7 +309,7 @@ if get_option('b_pgo') == 'generate'
+@@ -310,7 +310,7 @@ if get_option('b_pgo') == 'generate'
      'pgo',
      'pgo/pgo.c',
      wl_proto_src + wl_proto_headers,
@@ -39,7 +39,7 @@ Index: meson.build
      link_with: pgolib,
    )
  endif
-@@ -341,7 +343,7 @@ executable(
+@@ -344,7 +344,7 @@ executable(
    'wayland.c', 'wayland.h', 'shm-formats.h',
    'xkbcommon-vmod.h',
    srgb_funcs, wl_proto_src + wl_proto_headers, version,
