@@ -104,6 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap/ldapobject.py
 lib/python${MODPY_VERSION}/site-packages/ldap/logger.py
 lib/python${MODPY_VERSION}/site-packages/ldap/modlist.py
 lib/python${MODPY_VERSION}/site-packages/ldap/pkginfo.py
+lib/python${MODPY_VERSION}/site-packages/ldap/request.py
 lib/python${MODPY_VERSION}/site-packages/ldap/resiter.py
 lib/python${MODPY_VERSION}/site-packages/ldap/sasl.py
 lib/python${MODPY_VERSION}/site-packages/ldap/schema/
