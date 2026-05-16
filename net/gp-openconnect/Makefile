@@ -2,6 +2,7 @@ COMMENT =		CLI GlobalProtect VPN client
 
 V =			2.5.3
 PKGNAME =		gp-openconnect-${V}
+REVISION =		0
 
 GH_ACCOUNT =		yuezk
 GH_PROJECT =		GlobalProtect-openconnect
@@ -19,8 +20,12 @@ WANTLIB +=		${MODCARGO_WANTLIB} crypto m ssl
 
 MODULES =		devel/cargo
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.15
+
+BUILD_DEPENDS =		devel/autoconf/${AUTOCONF_VERSION} \
+			devel/automake/${AUTOMAKE_VERSION} \
+			devel/metaauto	\
 			textproc/jq	\
 			x11/gtk+3,-main	\
 			devel/libsoup3	\
@@ -30,8 +35,8 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	cargo
 PORTHOME =		${WRKBUILD}
 
-MAKE_ENV +=		AUTOCONF_VERSION=2.69	\
-			AUTOMAKE_VERSION=1.16
+MAKE_ENV +=		AUTOCONF_VERSION=${AUTOCONF_VERSION}	\
+			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
