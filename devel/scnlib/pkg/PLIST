@@ -1,0 +1,15 @@
+include/scn/
+include/scn/chrono.h
+include/scn/fwd.h
+include/scn/istream.h
+include/scn/ranges.h
+include/scn/regex.h
+include/scn/scan.h
+include/scn/xchar.h
+lib/cmake/
+lib/cmake/scn/
+lib/cmake/scn/scn-config-version.cmake
+lib/cmake/scn/scn-config.cmake
+lib/cmake/scn/scn-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/scn/scn-targets.cmake
+@lib lib/libscn.so.${LIBscn_VERSION}
