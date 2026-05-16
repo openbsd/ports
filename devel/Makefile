@@ -175,6 +175,7 @@
      SUBDIR += frama-c
      SUBDIR += fribidi
      SUBDIR += gas
+     SUBDIR += gcem
      SUBDIR += gconf2
      SUBDIR += gdb
      SUBDIR += geany
