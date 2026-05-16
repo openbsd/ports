@@ -1,9 +1,9 @@
 COMMENT=	image processing tools
 
-VER=		6.9.13-43
+VER=		6.9.13-47
 DISTNAME=	ImageMagick-${VER}
 PKGNAME=	ImageMagick-${VER:S/-/./}
-PORTROACH=	limit:6.*
+PORTROACH=	site:https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/ limit:6.*
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=	MagickCore-6.Q16     8.2      # 7.0
@@ -15,8 +15,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	https://imagemagick.org/
 
 SITES=		https://imagemagick.org/archive/releases/ \
-		https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/ \
-		ftp://sunsite.icm.edu.pl/packages/ImageMagick/
+		https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/
 
 # https://imagemagick.org/script/license.php
 PERMIT_PACKAGE=	Yes
