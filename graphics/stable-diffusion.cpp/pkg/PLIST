@@ -14,6 +14,7 @@ share/doc/stable-diffusion.cpp/ernie_image.md
 share/doc/stable-diffusion.cpp/esrgan.md
 share/doc/stable-diffusion.cpp/flux.md
 share/doc/stable-diffusion.cpp/flux2.md
+share/doc/stable-diffusion.cpp/hidream_o1_image.md
 share/doc/stable-diffusion.cpp/hipBLAS_on_Windows.md
 share/doc/stable-diffusion.cpp/kontext.md
 share/doc/stable-diffusion.cpp/lcm.md
