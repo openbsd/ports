@@ -2,15 +2,19 @@
 @option is-branch
 @conflict python->=3,<4
 @conflict python3-*
-@conflict glade-*
-@conflict py3-bsddb3-*
-@conflict py3-backports-zstd-*
 @pkgpath lang/python/3.8,-main
 @pkgpath lang/python/3.9,-main
 @pkgpath lang/python/3.10,-main
 @pkgpath lang/python/3.11,-main
 @pkgpath meta/python3
+@comment -- ports which were removed that, in the last release, depend on python
+@comment -- these need merging into python to avoid breaking updates
+@conflict glade-*
+@conflict hotdoc-*
+@conflict py3-bsddb3-*
+@conflict py2-backports-zstd-*
 @pkgpath devel/glade
+@pkgpath textproc/hotdoc
 @pkgpath databases/py-bsddb3
 @pkgpath archivers/py-backports-zstd
 bin/pydoc3
