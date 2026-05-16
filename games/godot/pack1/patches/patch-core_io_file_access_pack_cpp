@@ -1,0 +1,22 @@
+With relative API stability in Godot 3.x, don't error when Godot bin
+minor is less than pack file minor, warn instead. This is stop refusing
+to run games that are built with HEAD and report higher minor version
+than latest release.
+
+Index: core/io/file_access_pack.cpp
+--- core/io/file_access_pack.cpp.orig
++++ core/io/file_access_pack.cpp
+@@ -211,10 +211,12 @@ bool PackedSourcePCK::try_open_pack(const String &p_pa
+ 		memdelete(f);
+ 		ERR_FAIL_V_MSG(false, "Pack version unsupported: " + itos(version) + ".");
+ 	}
+-	if (ver_major > VERSION_MAJOR || (ver_major == VERSION_MAJOR && ver_minor > VERSION_MINOR)) {
++	if (ver_major > VERSION_MAJOR) {
+ 		f->close();
+ 		memdelete(f);
+ 		ERR_FAIL_V_MSG(false, "Pack created with a newer version of the engine: " + itos(ver_major) + "." + itos(ver_minor) + ".");
++	} else if (ver_major == VERSION_MAJOR && ver_minor > VERSION_MINOR) {
++		WARN_PRINT("Pack created with a newer version of the engine: " + itos(ver_major) + "." + itos(ver_minor) + ".");
+ 	}
+ 
+ 	for (int i = 0; i < 16; i++) {
