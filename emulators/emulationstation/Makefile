@@ -14,10 +14,10 @@ HOMEPAGE =		http://www.emulationstation.org/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLU SDL2 boost_date_time-mt boost_filesystem-mt
-WANTLIB += boost_atomic-mt boost_chrono-mt boost_thread-mt
-WANTLIB += boost_locale-mt c curl freeimage freetype
-WANTLIB += m pthread ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 boost_atomic-mt boost_charconv-mt
+WANTLIB += boost_chrono-mt boost_container-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_locale-mt boost_thread-mt
+WANTLIB += c curl freeimage freetype m
 
 MODULES =		devel/cmake
 
