@@ -3,13 +3,11 @@ COMMENT =	tool for partial deblobbing of Intel ME/TXE firmware images
 GH_ACCOUNT =		corna
 GH_PROJECT =		me_cleaner
 GH_TAGNAME =		v1.2
-REVISION =		7
+REVISION =		8
 
 DISTFILES =		me_cleaner-{}${GH_TAGNAME}${EXTRACT_SUFX}
 
 CATEGORIES =		sysutils
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
