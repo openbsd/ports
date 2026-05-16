@@ -1,6 +1,6 @@
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.123.1
+VERSION=		3.124
 # from https://hg.mozilla.org/projects/nss/file/tip/automation/release/nspr-version.txt
 NSPR_VERSION=		4.38.2
 DISTNAME=		nss-${VERSION}
@@ -61,7 +61,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA} ${NSSDIST}/public/nss/*.{h,api} ${PREFIX}/include/nss/
 	${INSTALL_DATA} ${NSSOBJ}/lib/*.so.${SO_VERSION} ${PREFIX}/lib/
-	${INSTALL_DATA} ${NSSOBJ}/lib/{libcrmf.a,*.chk} ${PREFIX}/lib/
+	${INSTALL_DATA} ${NSSOBJ}/lib/*.chk ${PREFIX}/lib/
 	cd ${NSSOBJ}/bin && ${INSTALL_PROGRAM} ${MAIN_TOOLS} ${PREFIX}/bin/
 .for m in ${MAIN_TOOLS}
 	${INSTALL_MAN} ${WRKSRC}/doc/nroff/${m}.1 ${PREFIX}/man/man1/
