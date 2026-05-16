@@ -1,7 +1,7 @@
 Index: src/config.cmake
 --- src/config.cmake.orig
 +++ src/config.cmake
-@@ -211,6 +211,9 @@
+@@ -209,6 +209,9 @@
  /* Define to enable SDL3 audio driver */
  #cmakedefine SDL3_SUPPORT @SDL3_SUPPORT@
  

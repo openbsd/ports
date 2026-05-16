@@ -1,7 +1,7 @@
 Index: src/drivers/fluid_mdriver.h
 --- src/drivers/fluid_mdriver.h.orig
 +++ src/drivers/fluid_mdriver.h
-@@ -38,6 +38,15 @@ struct _fluid_midi_driver_t
+@@ -37,6 +37,15 @@ struct _fluid_midi_driver_t
  
  void fluid_midi_driver_settings(fluid_settings_t *settings);
  

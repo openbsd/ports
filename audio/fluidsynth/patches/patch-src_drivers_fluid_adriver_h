@@ -1,7 +1,7 @@
 Index: src/drivers/fluid_adriver.h
 --- src/drivers/fluid_adriver.h.orig
 +++ src/drivers/fluid_adriver.h
-@@ -43,6 +43,15 @@ void fluid_audio_driver_settings(fluid_settings_t *set
+@@ -42,6 +42,15 @@ void fluid_audio_driver_settings(fluid_settings_t *set
  /* Defined in fluid_filerenderer.c */
  void fluid_file_renderer_settings(fluid_settings_t *settings);
  

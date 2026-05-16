@@ -1,11 +1,10 @@
 COMMENT =		SoundFont2 software synthesizer
 
-# 2.5.x is expected to remove SDL2 support in favour of SDL3
 GH_ACCOUNT =		FluidSynth
 GH_PROJECT =		fluidsynth
-GH_TAGNAME =		v2.4.8
+GH_TAGNAME =		v2.5.4
 
-SHARED_LIBS +=	fluidsynth           4.0      # 3.3 (grep LIB_VERSION CMakeLists.txt)
+SHARED_LIBS +=	fluidsynth           5.0      # 3.5 (grep LIB_VERSION CMakeLists.txt)
 
 CATEGORIES =		audio
 
@@ -14,16 +13,19 @@ HOMEPAGE =		https://www.fluidsynth.org/
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} SDL2 c glib-2.0 gthread-2.0 intl
+WANTLIB += ${COMPILER_LIBCXX} SDL3 c glib-2.0 gthread-2.0 intl
 WANTLIB += m readline sndfile sndio
 
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
+BUILD_DEPENDS =		devel/gcem
+
 LIB_DEPENDS =		audio/libsndfile \
+			devel/gettext,-runtime \
 			devel/glib2 \
-			devel/sdl2
+			devel/sdl3
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On \
 			-Denable-jack=OFF \
@@ -37,7 +39,7 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On \
 			-Denable-oss=OFF \
 			-Denable-pipewire=OFF \
 			-Denable-pulseaudio=OFF \
-			-Denable-sdl3=OFF
+			-Denable-sdl3=ON
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 

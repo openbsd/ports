@@ -19,10 +19,10 @@ include/fluidsynth/types.h
 include/fluidsynth/version.h
 include/fluidsynth/voice.h
 lib/cmake/fluidsynth/
+lib/cmake/fluidsynth/FluidSynth-shared-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/fluidsynth/FluidSynth-shared-targets.cmake
 lib/cmake/fluidsynth/FluidSynthConfig.cmake
 lib/cmake/fluidsynth/FluidSynthConfigVersion.cmake
-lib/cmake/fluidsynth/FluidSynthTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/fluidsynth/FluidSynthTargets.cmake
 @lib lib/libfluidsynth.so.${LIBfluidsynth_VERSION}
 lib/pkgconfig/fluidsynth.pc
 @man man/man1/fluidsynth.1

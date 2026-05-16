@@ -1,16 +1,16 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -97,6 +97,7 @@ option ( enable-winmidi "compile Windows MIDI support 
- option ( enable-sdl2 "compile SDL2 audio support (if it is available)" off )
+@@ -96,6 +96,7 @@ option ( enable-waveout "compile Windows WaveOut suppo
+ option ( enable-winmidi "compile Windows MIDI support (if it is available)" on )
  option ( enable-sdl3 "compile SDL3 audio support (if it is available)" on )
  option ( enable-pulseaudio "compile PulseAudio support (if it is available)" on )
 +option ( enable-sndio "compile sndio support (if it is available)" on )
  option ( enable-pipewire "compile PipeWire support (if it is available)" on )
  option ( enable-readline "compile readline lib line editing (if it is available)" on )
  option ( enable-threads "enable multi-threading support (such as parallel voice synthesis)" on )
-@@ -201,8 +202,6 @@ if ( CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MA
-   if (NOT (CMAKE_SYSTEM_NAME MATCHES "Darwin|OS2|Emscripten|SunOS") )
+@@ -209,8 +210,6 @@ if ( CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MA
+   if (NOT (CMAKE_SYSTEM_NAME MATCHES "Darwin|iOS|tvOS|OS2|Emscripten|SunOS") )
      set ( CMAKE_EXE_LINKER_FLAGS
            "${CMAKE_EXE_LINKER_FLAGS} -Wl,--as-needed" )
 -    set ( CMAKE_SHARED_LINKER_FLAGS
@@ -18,8 +18,8 @@ Index: CMakeLists.txt
    endif ()
  
    # define some warning flags
-@@ -576,6 +575,18 @@ if ( enable-libsndfile )
-     endif ( LIBSNDFILE_SUPPORT )
+@@ -612,6 +611,18 @@ if ( enable-libsndfile )
+     endif ( SndFile_FOUND )
      #set(CMAKE_FIND_DEBUG_MODE OFF)
  endif ( enable-libsndfile )
 +
