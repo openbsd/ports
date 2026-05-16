@@ -8,7 +8,7 @@ allocations from dumps.
 Index: src/libopensc/sc.c
 --- src/libopensc/sc.c.orig
 +++ src/libopensc/sc.c
-@@ -907,11 +907,15 @@ void *sc_mem_secure_alloc(size_t len)
+@@ -906,10 +906,14 @@ void *sc_mem_secure_alloc(size_t len)
  		VirtualLock(p, len);
  	}
  #else
@@ -16,15 +16,14 @@ Index: src/libopensc/sc.c
 +	p = mmap(NULL, len, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS | MAP_CONCEAL, -1, 0);
 +# else
  	p = mmap(NULL, len, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
- 	if (p != NULL)
- 	{
+ 	if (p != NULL) {
  		mlock(p, len);
  	}
 +# endif
  #endif
  
  	return p;
-@@ -923,7 +927,9 @@ void sc_mem_secure_free(void *ptr, size_t len)
+@@ -921,7 +925,9 @@ void sc_mem_secure_free(void *ptr, size_t len)
  	VirtualUnlock(ptr, len);
  	VirtualFree(ptr, 0, MEM_RELEASE);
  #else
