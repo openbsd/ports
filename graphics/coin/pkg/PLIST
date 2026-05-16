@@ -648,6 +648,7 @@ include/Inventor/misc/SoNotRec.h
 include/Inventor/misc/SoNotification.h
 include/Inventor/misc/SoProto.h
 include/Inventor/misc/SoProtoInstance.h
+include/Inventor/misc/SoRefPtr.h
 include/Inventor/misc/SoScriptEngine.h
 include/Inventor/misc/SoState.h
 include/Inventor/misc/SoTempPath.h
