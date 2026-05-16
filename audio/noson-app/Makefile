@@ -1,8 +1,6 @@
 COMMENT =		fast and smart SONOS controller
-DIST_TUPLE =		github	janbar	noson-app	5.6.13	.
+DIST_TUPLE =		github	janbar	noson-app	5.6.24	.
 CATEGORIES =		audio net
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -14,7 +12,7 @@ WANTLIB +=		Qt5Svg Qt5Widgets Qt5Xml c crypto m noson ssl z
 MODULES =		devel/cmake \
 			x11/qt5
 
-LIB_DEPENDS =		audio/noson>=2.12.10 \
+LIB_DEPENDS =		audio/noson>=2.12.32 \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtquickcontrols2 \
 			x11/qt5/qtsvg
