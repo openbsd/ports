@@ -1,6 +1,6 @@
 COMMENT=	gzip-aware file mirroring over http
 
-DISTNAME=	zsync-0.6.3
+DISTNAME=	zsync-0.6.4
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net
@@ -14,7 +14,7 @@ WANTLIB += c m
 
 SITES=		${HOMEPAGE}download/
 
-AUTOCONF_VERSION=	2.65
+AUTOCONF_VERSION=	2.72#	should be 2.73
 CONFIGURE_STYLE=	autoconf
 
 # check-zsyncmake fails because the checksum it's looking for was
