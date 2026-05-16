@@ -32,7 +32,9 @@ include/netgen/core/simd_arm64.hpp
 include/netgen/core/simd_avx.hpp
 include/netgen/core/simd_avx512.hpp
 include/netgen/core/simd_generic.hpp
+include/netgen/core/simd_math.hpp
 include/netgen/core/simd_sse.hpp
+include/netgen/core/statushandler.hpp
 include/netgen/core/symboltable.hpp
 include/netgen/core/table.hpp
 include/netgen/core/taskmanager.hpp
