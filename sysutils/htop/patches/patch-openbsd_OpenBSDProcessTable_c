@@ -3,7 +3,7 @@ Include thread names in COMM
 Index: openbsd/OpenBSDProcessTable.c
 --- openbsd/OpenBSDProcessTable.c.orig
 +++ openbsd/OpenBSDProcessTable.c
-@@ -71,7 +71,13 @@ static void OpenBSDProcessTable_updateCwd(const struct
+@@ -72,7 +72,13 @@ static void OpenBSDProcessTable_updateCwd(const struct
  }
  
  static void OpenBSDProcessTable_updateProcessName(kvm_t* kd, const struct kinfo_proc* kproc, Process* proc) {

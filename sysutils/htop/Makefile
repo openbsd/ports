@@ -1,6 +1,6 @@
 COMMENT =	interactive process viewer
 
-V =		3.4.1
+V =		3.5.1
 DISTNAME =	htop-$V
 
 CATEGORIES =	sysutils
