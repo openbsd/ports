@@ -1,7 +1,6 @@
 COMMENT =	parse a PDF document
 
-REVISION =	0
-MODPY_DISTV =	0.7.13
+MODPY_DISTV =	0.7.14
 DISTNAME =	pdf-parser_V${MODPY_DISTV:S/./_/g}
 PKGNAME =	pdf-parser-${MODPY_DISTV}
 
