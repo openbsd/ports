@@ -315,6 +315,7 @@
      SUBDIR += natpmpd
      SUBDIR += nbtscan
      SUBDIR += ncftp
+     SUBDIR += neatvnc
      SUBDIR += neighbot
      SUBDIR += neochat
      SUBDIR += neon
