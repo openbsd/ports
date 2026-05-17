@@ -33,6 +33,7 @@
      SUBDIR += wayland
      SUBDIR += wayland-protocols
      SUBDIR += wayland-utils
+     SUBDIR += wayvnc
      SUBDIR += wcm
      SUBDIR += wdisplays
      SUBDIR += wev
