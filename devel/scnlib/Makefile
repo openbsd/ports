@@ -4,6 +4,8 @@ GH_ACCOUNT =		eliaskosunen
 GH_PROJECT =		scnlib
 GH_TAGNAME =		v4.0.1
 
+REVISION =		0
+
 SHARED_LIBS +=		scn	0.0 # 0.0
 
 CATEGORIES =		devel
@@ -20,6 +22,8 @@ MODULES =		devel/cmake \
 
 BUILD_DEPENDS =		devel/fast-float \
 			devel/gtest
+
+RUN_DEPENDS =		devel/fast-float
 
 CONFIGURE_ARGS +=	-DSCN_USE_EXTERNAL_FAST_FLOAT=ON \
 			-DSCN_USE_EXTERNAL_GTEST=ON \
