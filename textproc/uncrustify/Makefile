@@ -1,10 +1,8 @@
 COMMENT =	source code beautifier
 
-V =		0.82.0
+V =		0.83.0
 DISTNAME =	uncrustify-$V
 WRKDIST =	${WRKDIR}/uncrustify-${DISTNAME}
-
-REVISION =	0
 
 CATEGORIES =	textproc devel
 
