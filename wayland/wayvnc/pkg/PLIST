@@ -1,0 +1,4 @@
+@bin bin/wayvnc
+@bin bin/wayvncctl
+@man man/man1/wayvnc.1
+@man man/man1/wayvncctl.1
