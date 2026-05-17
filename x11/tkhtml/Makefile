@@ -1,12 +1,11 @@
 COMMENT =	Tk widget to display HTML/CSS formatted contents
 
-REVISION =	1
+REVISION =	2
 DISTNAME =	tkhtml3-alpha-16
 PKGNAME =	${DISTNAME:S/3-alpha-/-3a/}
 CATEGORIES =	x11
 HOMEPAGE = 	http://tkhtml.tcl.tk/
 SITES =		${HOMEPAGE}
-MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =		Yes
