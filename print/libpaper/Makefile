@@ -2,7 +2,7 @@ COMMENT=		library for handling paper characteristics
 
 GH_ACCOUNT=		rrthomas
 GH_PROJECT=		libpaper
-GH_TAGNAME=		v2.2.7
+GH_TAGNAME=		v2.2.8
 
 SHARED_LIBS +=  paper                1.0      # 4.7
 
