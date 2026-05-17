@@ -1,9 +1,8 @@
 COMMENT =	console-based 52-card solitare game
 
-V =		2.14
+V =		2.15
 DISTNAME =	bluemoon-${V}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	http://www.catb.org/~esr/bluemoon/
 
@@ -14,11 +13,13 @@ WANTLIB += c curses
 
 SITES =		http://www.catb.org/~esr/bluemoon/
 
+BUILD_DEPENDS =	textproc/asciidoctor
+
 RUN_DEPENDS =	devel/desktop-file-utils
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" VERSION="${V}"
 
-ALL_TARGET =	bluemoon
+ALL_TARGET =	bluemoon bluemoon.6
 
 NO_TEST =	Yes
 
