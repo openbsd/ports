@@ -333,6 +333,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${M
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}pstree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}ptrace.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}ptrace.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}sockscan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}sockscan.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}sockstat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}sockstat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}tty_check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -398,6 +400,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/mal
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/${MODPY_PYCACHE}modxview.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/${MODPY_PYCACHE}netfilter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/${MODPY_PYCACHE}netfilter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/${MODPY_PYCACHE}process_spoofing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/${MODPY_PYCACHE}process_spoofing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/${MODPY_PYCACHE}tty_check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/${MODPY_PYCACHE}tty_check.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/check_afinfo.py
@@ -410,6 +414,7 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/mal
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/malfind.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/modxview.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/netfilter.py
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/process_spoofing.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malware/tty_check.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/module_extract.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/modxview.py
@@ -424,6 +429,7 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/psl
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/psscan.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/pstree.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/ptrace.py
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/sockscan.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/sockstat.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/tracing/
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/tracing/__init__.py
