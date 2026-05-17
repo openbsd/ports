@@ -31,7 +31,7 @@ SUBDIR += syntax-highlighting
 SUBDIR += prison
 SUBDIR += syndication
 SUBDIR += kholidays
-SUBDIR += kcalendarcore
+#SUBDIR += kcalendarcore
 SUBDIR += kquickcharts
 
 # tier 2

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1801 2026/05/16 22:01:36 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1802 2026/05/17 09:50:29 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -524,6 +524,8 @@ my $stem_extensions = {
 	'godot-tools' => 'godot-editor',
 	'godot4-editor' => 'godot-editor',
 	'webkitgtk40' => 'webkitgtk41',
+# 8.0
+	'kcalendarcore' => 'kf6-kcalendarcore',
 };
 
 my $obsolete_reason = {};
