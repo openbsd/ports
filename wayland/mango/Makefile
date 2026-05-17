@@ -1,6 +1,6 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-V =			0.12.9
+V =			0.13.0
 PKGNAME =		mango-${V}
 DIST_TUPLE=		github mangowm mango ${V} .
 

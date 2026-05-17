@@ -9,7 +9,7 @@ Index: src/dispatch/bind_define.h
  int32_t bind_to_view(const Arg *arg) {
  	if (!selmon)
  		return 0;
-@@ -875,6 +879,7 @@ int32_t spawn(const Arg *arg) {
+@@ -979,6 +983,7 @@ int32_t spawn(const Arg *arg) {
  		dup2(STDERR_FILENO, STDOUT_FILENO);
  		setsid();
  
@@ -17,7 +17,7 @@ Index: src/dispatch/bind_define.h
  		// 2. 对整个参数字符串进行单词展开
  		wordexp_t p;
  		if (wordexp(arg->v, &p, 0) != 0) {
-@@ -889,6 +894,42 @@ int32_t spawn(const Arg *arg) {
+@@ -993,6 +998,42 @@ int32_t spawn(const Arg *arg) {
  		wlr_log(WLR_DEBUG, "mango: execvp '%s' failed: %s\n", p.we_wordv[0],
  				strerror(errno));
  		wordfree(&p); // 释放 wordexp 分配的内存
