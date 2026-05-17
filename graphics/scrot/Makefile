@@ -1,6 +1,6 @@
 COMMENT=	commandline screen capture util
 
-V=		1.12.1
+V=		2.0.0
 DISTNAME=	scrot-${V}
 
 CATEGORIES=	graphics
@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB += Imlib2 X11 Xcomposite Xext Xfixes Xinerama c
+WANTLIB += Imlib2 X11 Xcomposite Xfixes Xrandr c
 
 SITES=		https://github.com/resurrecting-open-source-projects/scrot/releases/download/${V}/
 
