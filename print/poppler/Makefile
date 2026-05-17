@@ -44,7 +44,7 @@ MODCLANG_COMPILER_LINKS = No
 # c++-17
 COMPILER=	base-clang ports-gcc
 
-MODULES=	devel/cmake
+MODULES+=	devel/cmake
 
 .if ${BUILD_PACKAGES:M-qt5}
 MODULES+=	x11/qt5
