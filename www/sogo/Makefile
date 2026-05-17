@@ -1,6 +1,6 @@
 COMMENT = 	web based groupware server
 
-VERSION =	5.12.7
+VERSION =	5.12.8
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
