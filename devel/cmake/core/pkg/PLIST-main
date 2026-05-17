@@ -78,6 +78,7 @@ share/cmake/Modules/CMakeDetermineJavaCompiler.cmake
 share/cmake/Modules/CMakeDetermineOBJCCompiler.cmake
 share/cmake/Modules/CMakeDetermineOBJCXXCompiler.cmake
 share/cmake/Modules/CMakeDetermineRCCompiler.cmake
+share/cmake/Modules/CMakeDetermineRustCompiler.cmake
 share/cmake/Modules/CMakeDetermineSwiftCompiler.cmake
 share/cmake/Modules/CMakeDetermineSystem.cmake
 share/cmake/Modules/CMakeDetermineVSServicePack.cmake
@@ -142,6 +143,8 @@ share/cmake/Modules/CMakePrintSystemInformation.cmake
 share/cmake/Modules/CMakePushCheckState.cmake
 share/cmake/Modules/CMakeRCCompiler.cmake.in
 share/cmake/Modules/CMakeRCInformation.cmake
+share/cmake/Modules/CMakeRustCompiler.cmake.in
+share/cmake/Modules/CMakeRustInformation.cmake
 share/cmake/Modules/CMakeSwiftCompiler.cmake.in
 share/cmake/Modules/CMakeSwiftInformation.cmake
 share/cmake/Modules/CMakeSystem.cmake.in
@@ -165,6 +168,7 @@ share/cmake/Modules/CMakeTestJavaCompiler.cmake
 share/cmake/Modules/CMakeTestOBJCCompiler.cmake
 share/cmake/Modules/CMakeTestOBJCXXCompiler.cmake
 share/cmake/Modules/CMakeTestRCCompiler.cmake
+share/cmake/Modules/CMakeTestRustCompiler.cmake
 share/cmake/Modules/CMakeTestSwiftCompiler.cmake
 share/cmake/Modules/CMakeUnixFindMake.cmake
 share/cmake/Modules/CMakeVerifyManifest.cmake
@@ -751,6 +755,7 @@ share/cmake/Modules/Internal/CMakeCUDAFilterImplicitLibs.cmake
 share/cmake/Modules/Internal/CMakeCUDAFindToolkit.cmake
 share/cmake/Modules/Internal/CMakeCUDALinkerInformation.cmake
 share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake
+share/cmake/Modules/Internal/CMakeChipStarHIP.cmake
 share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake
 share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake
 share/cmake/Modules/Internal/CMakeFortranLinkerInformation.cmake

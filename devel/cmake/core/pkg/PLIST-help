@@ -317,6 +317,8 @@ share/cmake/Help/manual/cmake-server.7.rst
 share/cmake/Help/manual/cmake-toolchains.7.rst
 share/cmake/Help/manual/cmake-variables.7.rst
 share/cmake/Help/manual/cmake.1.rst
+share/cmake/Help/manual/cmake/
+share/cmake/Help/manual/cmake/version-schema.json
 share/cmake/Help/manual/cpack-generators.7.rst
 share/cmake/Help/manual/cpack.1.rst
 share/cmake/Help/manual/ctest.1.rst
@@ -337,6 +339,8 @@ share/cmake/Help/manual/include/ID_RESERVE.rst
 share/cmake/Help/manual/include/LINKS.rst
 share/cmake/Help/manual/include/OPTIONS_BUILD.rst
 share/cmake/Help/manual/include/OPTIONS_HELP.rst
+share/cmake/Help/manual/instrumentation/
+share/cmake/Help/manual/instrumentation/query-v1-schema.json
 share/cmake/Help/manual/presets/
 share/cmake/Help/manual/presets/example.json
 share/cmake/Help/manual/presets/schema.json
@@ -825,6 +829,12 @@ share/cmake/Help/policy/CMP0201.rst
 share/cmake/Help/policy/CMP0202.rst
 share/cmake/Help/policy/CMP0203.rst
 share/cmake/Help/policy/CMP0204.rst
+share/cmake/Help/policy/CMP0205.rst
+share/cmake/Help/policy/CMP0206.rst
+share/cmake/Help/policy/CMP0207.rst
+share/cmake/Help/policy/CMP0208.rst
+share/cmake/Help/policy/CMP0209.rst
+share/cmake/Help/policy/CMP0210.rst
 share/cmake/Help/policy/include/
 share/cmake/Help/policy/include/DEPRECATED.rst
 share/cmake/Help/policy/include/DISALLOWED_COMMAND.rst
@@ -1171,6 +1181,7 @@ share/cmake/Help/prop_tgt/IMPORTED_CONFIGURATIONS.rst
 share/cmake/Help/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_DEFINITIONS.rst
 share/cmake/Help/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_FEATURES.rst
 share/cmake/Help/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_OPTIONS.rst
+share/cmake/Help/prop_tgt/IMPORTED_CXX_MODULES_CONFIG.rst
 share/cmake/Help/prop_tgt/IMPORTED_CXX_MODULES_INCLUDE_DIRECTORIES.rst
 share/cmake/Help/prop_tgt/IMPORTED_CXX_MODULES_LINK_LIBRARIES.rst
 share/cmake/Help/prop_tgt/IMPORTED_GLOBAL.rst
@@ -1242,6 +1253,7 @@ share/cmake/Help/prop_tgt/LANG_EXTENSIONS.rst
 share/cmake/Help/prop_tgt/LANG_ICSTAT.rst
 share/cmake/Help/prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.rst
 share/cmake/Help/prop_tgt/LANG_LINKER_LAUNCHER.rst
+share/cmake/Help/prop_tgt/LANG_PVS_STUDIO.rst
 share/cmake/Help/prop_tgt/LANG_STANDARD.rst
 share/cmake/Help/prop_tgt/LANG_STANDARD_REQUIRED.rst
 share/cmake/Help/prop_tgt/LANG_VISIBILITY_PRESET.rst
@@ -1310,6 +1322,7 @@ share/cmake/Help/prop_tgt/PRECOMPILE_HEADERS_REUSE_FROM.rst
 share/cmake/Help/prop_tgt/PREFIX.rst
 share/cmake/Help/prop_tgt/PRE_INSTALL_SCRIPT.rst
 share/cmake/Help/prop_tgt/PRIVATE_HEADER.rst
+share/cmake/Help/prop_tgt/PRIVATE_HEADER_SETS_TO_VERIFY.rst
 share/cmake/Help/prop_tgt/PROJECT_LABEL.rst
 share/cmake/Help/prop_tgt/PUBLIC_HEADER.rst
 share/cmake/Help/prop_tgt/RESOURCE.rst
@@ -1350,6 +1363,7 @@ share/cmake/Help/prop_tgt/UNITY_BUILD_MODE.rst
 share/cmake/Help/prop_tgt/UNITY_BUILD_RELOCATABLE.rst
 share/cmake/Help/prop_tgt/UNITY_BUILD_UNIQUE_ID.rst
 share/cmake/Help/prop_tgt/VERIFY_INTERFACE_HEADER_SETS.rst
+share/cmake/Help/prop_tgt/VERIFY_PRIVATE_HEADER_SETS.rst
 share/cmake/Help/prop_tgt/VERSION.rst
 share/cmake/Help/prop_tgt/VISIBILITY_INLINES_HIDDEN.rst
 share/cmake/Help/prop_tgt/VS_CONFIGURATION_TYPE.rst
@@ -1452,6 +1466,7 @@ share/cmake/Help/prop_tgt/include/MSVC_RUNTIME_LIBRARY-VALUES.rst
 share/cmake/Help/prop_tgt/include/PDB_NOTE.rst
 share/cmake/Help/prop_tgt/include/STATIC_LIBRARY_OPTIONS_ARCHIVER.rst
 share/cmake/Help/prop_tgt/include/Swift_COMPILATION_MODE-VALUES.rst
+share/cmake/Help/prop_tgt/include/VERIFY_XXX_HEADER_SETS.rst
 share/cmake/Help/prop_tgt/include/VERSION_SOVERSION_EXAMPLE.rst
 share/cmake/Help/prop_tgt/include/VS_USE_DEBUG_LIBRARIES-PURPOSE.rst
 share/cmake/Help/prop_tgt/include/WATCOM_RUNTIME_LIBRARY-VALUES.rst
@@ -1493,6 +1508,7 @@ share/cmake/Help/release/3.9.rst
 share/cmake/Help/release/4.0.rst
 share/cmake/Help/release/4.1.rst
 share/cmake/Help/release/4.2.rst
+share/cmake/Help/release/4.3.rst
 share/cmake/Help/release/dev.txt
 share/cmake/Help/release/index.rst
 share/cmake/Help/variable/
@@ -1772,6 +1788,7 @@ share/cmake/Help/variable/CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE.rst
 share/cmake/Help/variable/CMAKE_INCLUDE_PATH.rst
 share/cmake/Help/variable/CMAKE_INSTALL_DEFAULT_COMPONENT_NAME.rst
 share/cmake/Help/variable/CMAKE_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.rst
+share/cmake/Help/variable/CMAKE_INSTALL_EXPORTS_AS_PACKAGE_INFO.rst
 share/cmake/Help/variable/CMAKE_INSTALL_MESSAGE.rst
 share/cmake/Help/variable/CMAKE_INSTALL_NAME_DIR.rst
 share/cmake/Help/variable/CMAKE_INSTALL_OBJECT_NAME_STRATEGY.rst
@@ -1864,6 +1881,8 @@ share/cmake/Help/variable/CMAKE_LANG_LINKER_WRAPPER_FLAG.rst
 share/cmake/Help/variable/CMAKE_LANG_LINKER_WRAPPER_FLAG_SEP.rst
 share/cmake/Help/variable/CMAKE_LANG_LINK_DEF_FILE_FLAG.rst
 share/cmake/Help/variable/CMAKE_LANG_LINK_EXECUTABLE.rst
+share/cmake/Help/variable/CMAKE_LANG_LINK_FLAGS.rst
+share/cmake/Help/variable/CMAKE_LANG_LINK_FLAGS_CONFIG.rst
 share/cmake/Help/variable/CMAKE_LANG_LINK_GROUP_USING_FEATURE.rst
 share/cmake/Help/variable/CMAKE_LANG_LINK_GROUP_USING_FEATURE_SUPPORTED.rst
 share/cmake/Help/variable/CMAKE_LANG_LINK_LIBRARY_FEATURE_ATTRIBUTES.rst
@@ -1876,6 +1895,7 @@ share/cmake/Help/variable/CMAKE_LANG_LINK_MODE.rst
 share/cmake/Help/variable/CMAKE_LANG_LINK_WHAT_YOU_USE_FLAG.rst
 share/cmake/Help/variable/CMAKE_LANG_OUTPUT_EXTENSION.rst
 share/cmake/Help/variable/CMAKE_LANG_PLATFORM_ID.rst
+share/cmake/Help/variable/CMAKE_LANG_PVS_STUDIO.rst
 share/cmake/Help/variable/CMAKE_LANG_SIMULATE_ID.rst
 share/cmake/Help/variable/CMAKE_LANG_SIMULATE_VERSION.rst
 share/cmake/Help/variable/CMAKE_LANG_SIZEOF_DATA_PTR.rst
@@ -2068,6 +2088,7 @@ share/cmake/Help/variable/CMAKE_USER_MAKE_RULES_OVERRIDE_LANG.rst
 share/cmake/Help/variable/CMAKE_USE_RELATIVE_PATHS.rst
 share/cmake/Help/variable/CMAKE_VERBOSE_MAKEFILE.rst
 share/cmake/Help/variable/CMAKE_VERIFY_INTERFACE_HEADER_SETS.rst
+share/cmake/Help/variable/CMAKE_VERIFY_PRIVATE_HEADER_SETS.rst
 share/cmake/Help/variable/CMAKE_VERSION.rst
 share/cmake/Help/variable/CMAKE_VISIBILITY_INLINES_HIDDEN.rst
 share/cmake/Help/variable/CMAKE_VS_DEBUGGER_COMMAND.rst
@@ -2298,6 +2319,7 @@ share/cmake/Help/variable/include/CMAKE_LINK_GROUP_USING_FEATURE.rst
 share/cmake/Help/variable/include/CMAKE_LINK_LIBRARY_USING_FEATURE.rst
 share/cmake/Help/variable/include/CMAKE_OSX_VARIABLE.rst
 share/cmake/Help/variable/include/CMAKE_TLS_VERSION-VALUES.rst
+share/cmake/Help/variable/include/CMAKE_VERIFY_XXX_HEADER_SETS.rst
 share/cmake/Help/variable/include/CMAKE_VS_VERSION_BUILD_NUMBER_COMPONENTS.rst
 share/cmake/Help/variable/include/CTEST_CUSTOM_XXX.rst
 share/cmake/Help/variable/include/IGNORE_SEARCH_LOCATIONS.rst
