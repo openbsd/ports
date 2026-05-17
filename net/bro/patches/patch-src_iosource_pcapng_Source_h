@@ -1,0 +1,15 @@
+Unbreak build
+${WRKSRC}/src/iosource/pcapng/Source.cc:142:26: error: cannot initialize a parameter of type 'pkt_timeval *' (aka 'bpf_timeval *') with an rvalue of type 'struct timeval *'
+
+Index: src/iosource/pcapng/Source.h
+--- src/iosource/pcapng/Source.h.orig
++++ src/iosource/pcapng/Source.h
+@@ -41,7 +41,7 @@ class Source : public PktSrc { (protected)
+ private:
+     struct PacketBlock {
+         uint32_t interface = 0;
+-        struct timeval ts_tval{};
++        pkt_timeval ts_tval{};
+         uint32_t caplen = 0;
+         uint32_t origlen = 0;
+         uint8_t* data;
