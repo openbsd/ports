@@ -1,0 +1,3 @@
+include/neatvnc.h
+@lib lib/libneatvnc.so.${LIBneatvnc_VERSION}
+lib/pkgconfig/neatvnc.pc
