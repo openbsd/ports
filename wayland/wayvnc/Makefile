@@ -14,7 +14,8 @@ MODULES =	devel/meson
 
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	textproc/scdoc
+BUILD_DEPENDS =	textproc/scdoc \
+		wayland/libinput-openbsd
 
 LIB_DEPENDS =	devel/aml \
 		devel/jansson \
