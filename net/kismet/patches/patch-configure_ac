@@ -1,6 +1,6 @@
 - don't force -O3
 - GCC's libatomic should not be pulled in just because it exists
-- libstdc++ should n9t be explicitly linked (use "c++" as a linker instead)
+- libstdc++ should not be explicitly linked (use "c++" as a linker instead)
 
 Index: configure.ac
 --- configure.ac.orig
@@ -59,3 +59,19 @@ Index: configure.ac
  AC_SUBST(CXXLIBS)
  
  # Does the compiler handle various std::foo namespaces properly?
+@@ -1188,12 +1157,12 @@ AC_SUBST(LIBWSCFLAGS)
+ 
+ # Look for libpcap via pkg-config
+ have_libpcap=no
+-PKG_CHECK_MODULES([libpcap], [libpcap], [
++PKG_CHECK_MODULES([libepcap], [libepcap], [
+     have_libpcap=yes
+     AC_DEFINE(HAVE_LIBPCAP, 1, libpcap packet capture lib)
+ 
+-    PCAPLIBS=`pkg-config --libs libpcap`
+-    PCAPCFLAGS=`pkg-config --cflags libpcap`
++    PCAPLIBS=`pkg-config --libs libepcap`
++    PCAPCFLAGS=`pkg-config --cflags libepcap`
+     pcap=yes
+     ], [
+     AC_MSG_WARN(No libpcap found in pkg-config, will check system paths.)

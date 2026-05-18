@@ -5,7 +5,7 @@ COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 V=		2025-09-R1
 DISTNAME=	kismet-${V}
 PKGNAME=	kismet-${V:S,-,,g}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net security
 
@@ -18,8 +18,9 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto m mosquitto pcap pcre2-8
+WANTLIB += ${COMPILER_LIBCXX} c crypto m mosquitto pcre2-8
 WANTLIB += rtlsdr sqlite3 ssl usb-1.0 util websockets z
+WANTLIB += lib/libpcap/pcap
 
 # C++20
 COMPILER=	base-clang ports-gcc
@@ -47,6 +48,7 @@ FAKE_FLAGS+=	ETC="${WRKINST}${PREFIX}/share/examples/kismet"
 LIB_DEPENDS=	comms/rtl-sdr \
 		devel/pcre2 \
 		net/mosquitto \
+		net/libpcap \
 		www/libwebsockets
 RUN_DEPENDS=	comms/rtl_433 \
 		net/wireshark,-text

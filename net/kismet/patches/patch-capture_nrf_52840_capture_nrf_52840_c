@@ -1,0 +1,31 @@
+Not yet upstreamed, waiting for positive feedback
+that it actually works.
+
+Index: capture_nrf_52840/capture_nrf_52840.c
+--- capture_nrf_52840/capture_nrf_52840.c.orig
++++ capture_nrf_52840/capture_nrf_52840.c
+@@ -17,7 +17,11 @@
+ 
+ volatile int STOP=FALSE;
+ 
++#if defined(SYS_OPENBSD)
++#define MODEMDEVICE "/dev/cuaU0"
++#else
+ #define MODEMDEVICE "/dev/ttyACM0"
++#endif
+ #define CRTSCTS  020000000000 /*should be defined but isn't with the C99*/
+ 
+ #define CHECK_BIT(var,pos) ((var) & (1<<(pos)))
+@@ -317,7 +321,12 @@ int open_callback(kis_capture_handler_t *caph, uint32_
+     bzero(&localnrf->newtio, sizeof(localnrf->newtio)); /* clear struct for new port settings */
+ 
+     /* set the baud rate and flags */
++#if defined(SYS_OPENBSD)
++    localnrf->newtio.c_cflag = CRTSCTS | CS8 | CLOCAL | CREAD;
++    cfsetspeed(&localnrf->newtio, BAUDRATE);
++#else
+     localnrf->newtio.c_cflag = BAUDRATE | CRTSCTS | CS8 | CLOCAL | CREAD;
++#endif
+ 
+     /* ignore parity errors */
+     localnrf->newtio.c_iflag = IGNPAR;

@@ -8,11 +8,22 @@ known to work capture drivers
 The following capture drivers are known to work:
   * openbsd_wifi (autodetected)
   * sdr_rtladsb (autodetected)
+    * planes
   * sdr_rtl433 (autodetected)
+    * meters
   * nrf_51822 (not autodetected)
+    * Bluetooth LE
     * use with:
        * -c nrf51822:type=nrf51822,device=/dev/cuaU0,name=adafruit
-
+       * tested with Adafruit Bluefruit sniffer as well as nrf52840 
+         nice!Nano with Bluetooth sniffer firmware
+  * nrf_52840 (not autodetected)
+    * Zigbee
+    * use with:
+       * -c nrf52840:type=nrf52840,device=/dev/cuaU0,name=niceNano
+       * note: haven't seen it reporting any packets yet using a nice!Nano
+  * ti_cc_2531 (autodetected)
+    * Zigbee
 
 Many other capture drivers are enabled. They are untested,
 but may work as well.
