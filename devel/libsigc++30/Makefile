@@ -1,10 +1,9 @@
 COMMENT=		typesafe callback system for standard C++
 
-V=			3.8.0
+V=			3.8.1
 DISTNAME=		libsigc++-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME=		libsigc++30-${V}
-REVISION=		0
 
 CATEGORIES=		devel
 
