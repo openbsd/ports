@@ -1,11 +1,11 @@
 COMMENT =	source port of 3D game System Shock
 
-V =		0.7.8pl20210504
+V =		0.7.8pl20251001
 DISTNAME =	shockolate-v${V}
 PKGNAME =	shockolate-${V}
 GH_ACCOUNT =	Interrupt
 GH_PROJECT =	systemshock
-GH_COMMIT =	bcdb119b0c1b2e17820abf0fbe594378da603fd5
+GH_COMMIT =	4cc3d07dfff2d11b6d3a0a9960a51cf4ca253690
 
 CATEGORIES =	games x11
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
@@ -13,8 +13,8 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 SDL2_mixer c curses
-WANTLIB += fluidsynth m readline
+WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 SDL2_mixer c
+WANTLIB += fluidsynth m
 
 # C++11
 COMPILER =	base-clang ports-gcc
