@@ -16,7 +16,7 @@ SITES=	https://github.com/dosfstools/dosfstools/releases/download/v${V}/
 WANTLIB+=	c iconv
 
 LIB_DEPENDS=	converters/libiconv
-TEST_DEPENDS=	editors/vim,-main \
+TEST_DEPENDS=	editors/vim \
 		textproc/gdiff
 
 SEPARATE_BUILD=	Yes
