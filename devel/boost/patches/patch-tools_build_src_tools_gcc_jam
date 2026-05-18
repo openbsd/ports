@@ -10,7 +10,7 @@ Index: tools/build/src/tools/gcc.jam
  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
  toolset.flags gcc.compile OPTIONS <optimization>minimal : -O1 ;
  toolset.flags gcc.compile OPTIONS <optimization>debug : -Og ;
-@@ -1232,7 +1232,7 @@ cpu-flags gcc OPTIONS : x86 : c7 : -march=c7 ;
+@@ -1239,7 +1239,7 @@ cpu-flags gcc OPTIONS : x86 : c7 : -march=c7 ;
  ##
  cpu-flags gcc OPTIONS : x86 : atom : -march=atom ;
  # Sparc

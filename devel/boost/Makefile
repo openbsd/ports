@@ -5,16 +5,15 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-VERSION=	1.89.0
+VERSION=	1.91.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
 EPOCH=		0
 CATEGORIES=	devel
 SITES=		https://archives.boost.io/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	2
 
-SO_VERSION=	26.0
+SO_VERSION=	27.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_charconv-mt boost_charconv \
 		boost_chrono-mt boost_chrono \
@@ -70,9 +69,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # Boost
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} bz2 c iconv icudata icui18n icuuc m z
-WANTLIB-md+=	${COMPILER_LIBCXX} boost_date_time-mt boost_date_time
-WANTLIB-md+=	boost_filesystem-mt boost_filesystem kvm m
+WANTLIB=	${COMPILER_LIBCXX} bz2 c iconv icudata icui18n icuuc kvm m z
+WANTLIB-md+=	${COMPILER_LIBCXX} boost_filesystem-mt boost_regex-mt 
+WANTLIB-md+=	icudata icui18n icuuc m
 
 COMPILER=	base-clang ports-gcc
 

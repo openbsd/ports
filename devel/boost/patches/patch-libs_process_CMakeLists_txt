@@ -1,0 +1,15 @@
+- Replace the dependency on asio with asio_core.
+  e4d0d405a12f13ebe7d894382d3a98830ae1c7bd
+
+Index: libs/process/CMakeLists.txt
+--- libs/process/CMakeLists.txt.orig
++++ libs/process/CMakeLists.txt
+@@ -34,7 +34,7 @@ target_include_directories(boost_process PUBLIC includ
+ target_link_libraries(boost_process
+     PUBLIC
+     Boost::algorithm
+-    Boost::asio
++    Boost::asio_core
+     Boost::config
+     Boost::core
+     Boost::fusion
