@@ -11,7 +11,7 @@ Index: CMakeLists.txt
  endif()
  
  # handle dev mode
-@@ -194,7 +193,7 @@ if(NOT WIN32)
+@@ -210,7 +209,7 @@ if(NOT WIN32)
  			list(APPEND DATA_SCRIPTS "${SCRIPT_OUTPUT}")
  			add_custom_command(
  				OUTPUT "${SCRIPT_OUTPUT}"
@@ -20,7 +20,7 @@ Index: CMakeLists.txt
  				DEPENDS luac "${SCRIPT_PATH}"
  			)
  		endforeach()
-@@ -260,8 +259,8 @@ add_subdirectory(src)
+@@ -257,8 +256,8 @@ endif()
  if(NOT WIN32)
  
  	# linux installation
