@@ -1,6 +1,8 @@
 COMMENT=	image processing tools
 
-VER=		6.9.13-47
+# XXX remove workaround for https://github.com/ImageMagick/ImageMagick6/issues/427
+# in astro/celestia-data if issue is fixed
+VER=		6.9.13-48
 DISTNAME=	ImageMagick-${VER}
 PKGNAME=	ImageMagick-${VER:S/-/./}
 PORTROACH=	site:https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/ limit:6.*
