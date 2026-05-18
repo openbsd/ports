@@ -4,4 +4,4 @@ llvm${MODCLANG_VERSION}/lib/clang/
 llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/
 llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/lib/
 llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/lib/wasi/
-@static-lib llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/lib/wasi/libclang_rt.builtins-wasm32.a
+@static-lib llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/lib/${LIBPATH}

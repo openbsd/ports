@@ -10,7 +10,8 @@ WASI_SYSROOT =	${LOCALBASE}/share/wasi-sysroot
 # https://github.com/WebAssembly/wasi-sdk/issues/52
 CFLAGS +=	-fno-exceptions
 CXXFLAGS +=	-fno-exceptions
-TRIPLE =	wasm32-wasi
+TRIPLE ?=	wasm32-wasi
+SUBST_VARS +=	TRIPLE
 WRKSRC =	${WRKDIR}/${DISTNAME}/${BUILDSUBDIR}
 
 DISTFILES =	llvm-project-${LLVM_V}.src${EXTRACT_SUFX}

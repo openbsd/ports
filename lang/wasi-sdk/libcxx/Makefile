@@ -1,5 +1,6 @@
 COMMENT =	C++ standard library for WebAssembly System Interface
 
+REVISION =	0
 DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME =	wasi-libcxx-${LLVM_V}
 LIBPATH =	libc++.a

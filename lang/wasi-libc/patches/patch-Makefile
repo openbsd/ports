@@ -1,10 +1,13 @@
 https://cgit.freebsd.org/ports/tree/devel/wasi-libc/Makefile#n40
-avoid rebuilding everything in fake
+chunk 2: avoid rebuilding everything in fake
 
-wasi-libc requires some compiler headers that we remove from our
+chunk 1: wasi-libc requires some compiler headers that we remove from our
 llvm ports so we include them here instead
 
-chunk 2: adapt regex for our grep
+last chunk: adapt regex for our grep
+chunk 3 & 4: syms for llvm22
+cf https://github.com/WebAssembly/wasi-libc/commit/2fc32bc81b9f07f8d9525edea59bfbaf760c06d6
+and adapted from https://github.com/WebAssembly/wasi-libc/commit/3fa18af1 for __wasip1__ define
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
@@ -26,7 +29,24 @@ Index: Makefile
  	mkdir -p "$(INSTALL_DIR)"
  	cp -p -r "$(SYSROOT)/lib" "$(SYSROOT)/share" "$(SYSROOT)/include" "$(INSTALL_DIR)"
  
-@@ -1007,19 +1007,20 @@ endif
+@@ -925,7 +925,7 @@ check-symbols: $(STARTUP_FILES) libc
+ 	for undef_sym in $$("$(NM)" --undefined-only "$(SYSROOT_LIB)"/libc.a "$(SYSROOT_LIB)"/libc-*.a "$(SYSROOT_LIB)"/*.o \
+ 	    |grep ' U ' |sed 's/.* U //' |LC_ALL=C sort |uniq); do \
+ 	    grep -q '\<'$$undef_sym'\>' "$(DEFINED_SYMBOLS)" || echo $$undef_sym; \
+-	done | grep -E -v "^__mul|__memory_base|__indirect_function_table|__tls_base" > "$(UNDEFINED_SYMBOLS)"
++	done | grep -E -v "^__mul|__memory_base|__indirect_function_table|__wasm_first_page_end|__tls_base" > "$(UNDEFINED_SYMBOLS)"
+ ifneq ($(WASI_SNAPSHOT), p2)
+ 	grep '^_*imported_wasi_' "$(UNDEFINED_SYMBOLS)" \
+ 	    > "$(SYSROOT_LIB)/libc.imports"
+@@ -998,6 +998,7 @@ endif
+ 	    -U__wasm_nontrapping_fptoint__ \
+ 	    $(if $(filter-out expected/wasm32-wasip1-threads,$(EXPECTED_TARGET_DIR)),-U__wasm_bulk_memory__) \
+ 	    -U__wasm_bulk_memory_opt__ \
++	    -U__wasip1__ \
+ 	    -U__GNUC__ \
+ 	    -U__GNUC_MINOR__ \
+ 	    -U__GNUC_PATCHLEVEL__ \
+@@ -1007,19 +1008,20 @@ endif
  	    -U__FLT_EVAL_METHOD__ -Wno-builtin-macro-redefined \
  	    | sed -e 's/__[[:upper:][:digit:]]*_ATOMIC_\([[:upper:][:digit:]_]*\)_LOCK_FREE/__compiler_ATOMIC_\1_LOCK_FREE/' \
  	    | sed -e 's/__GNUC_VA_LIST $$/__GNUC_VA_LIST 1/' \

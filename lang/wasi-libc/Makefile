@@ -4,6 +4,7 @@ GH_ACCOUNT =	WebAssembly
 GH_PROJECT =	wasi-libc
 GH_COMMIT =	wasi-sdk-29
 DISTNAME =	wasi-libc-0.20251114
+REVISION =	0
 
 DISTFILES =	${GH_DISTFILE}
 DISTFILES.h = 	wasi-libc-llvm13-std-headers.tar.gz
@@ -21,6 +22,8 @@ PERMIT_PACKAGE =	Yes
 COMPILER =	ports-clang
 COMPILER_LANGS =c
 MODCLANG_VERSION =	19
+TRIPLE =	wasm32-wasi
+SUBST_VARS +=	TRIPLE
 USE_GMAKE =	yes
 ALL_TARGET =	finish
 BUILD_DEPENDS =	shells/bash
@@ -28,6 +31,7 @@ BUILD_DEPENDS =	shells/bash
 MAKE_ENV +=	AR=${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} \
 		NM=${LOCALBASE}/bin/llvm-nm-${MODCLANG_VERSION} \
 		CHECK_SYMBOLS=yes \
+		TARGET_TRIPLE=${TRIPLE} \
 		BUILTINS_LIB=${WRKDIR}/libclang_rt.builtins-wasm32-wasi-25.0/libclang_rt.builtins-wasm32.a \
 		INSTALL_DIR=${WRKINST}${PREFIX}/share/wasi-sysroot
 
@@ -38,6 +42,6 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/sysroot/include/* \
-		${PREFIX}/share/wasi-sysroot/include/wasm32-wasi
+		${PREFIX}/share/wasi-sysroot/include/${TRIPLE}
 	
 .include <bsd.port.mk>
