@@ -186,6 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_native_in
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_qhash.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_qlist.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_qmap.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_qrangemodel.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_qset.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_std_chrono_duration.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_std_optional.sip
@@ -352,6 +353,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpointingdevice.si
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpolygon.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_native_interface.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_qlist.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_qmap.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_vulkan.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qquaternion.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qrasterwindow.sip
@@ -792,7 +794,6 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qdrawutil.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qerrormessage.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qfiledialog.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qfileiconprovider.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qfilesystemmodel.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qfocusframe.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qfontcombobox.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qfontdialog.sip

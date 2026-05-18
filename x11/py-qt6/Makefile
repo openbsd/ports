@@ -1,6 +1,6 @@
 COMMENT=	Python bindings for Qt6
 
-MODPY_DISTV=	6.10.0
+MODPY_DISTV=	6.11.0
 DISTNAME=	pyqt6-${MODPY_DISTV}
 PKGNAME=	py-qt6-${MODPY_DISTV}
 
