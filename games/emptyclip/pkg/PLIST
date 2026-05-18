@@ -74,10 +74,10 @@ share/games/emptyclip/textures/particles
 share/games/emptyclip/textures/projectiles
 share/games/emptyclip/textures/props
 share/games/emptyclip/ui/
-share/games/emptyclip/ui/cursor_game.png
+share/games/emptyclip/ui/cursor_game.webp
 share/games/emptyclip/ui/elements.xml
 share/games/emptyclip/ui/fonts.tsv
-share/games/emptyclip/ui/icon.png
+share/games/emptyclip/ui/icon.webp
 share/games/emptyclip/ui/styles.tsv
 share/icons/hicolor/128x128/apps/emptyclip.png
 share/metainfo/

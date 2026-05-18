@@ -1,0 +1,11 @@
+Index: src/config.h
+--- src/config.h.orig
++++ src/config.h
+@@ -19,6 +19,7 @@
+ 
+ // Libraries
+ #include <glm/vec2.hpp>
++#include <sstream>
+ #include <string>
+ #include <unordered_map>
+ #include <vector>

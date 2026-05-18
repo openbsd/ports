@@ -1,0 +1,12 @@
+Index: ext/ae/enet/unix.c
+--- ext/ae/enet/unix.c.orig
++++ ext/ae/enet/unix.c
+@@ -18,7 +18,7 @@
+ #define ENET_BUILDING_LIB 1
+ #include "enet/enet.h"
+ 
+-#ifdef __APPLE__
++#ifdef __OpenBSD__
+ #ifdef HAS_POLL
+ #undef HAS_POLL
+ #endif

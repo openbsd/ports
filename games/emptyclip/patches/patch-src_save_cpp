@@ -1,7 +1,7 @@
 Index: src/save.cpp
 --- src/save.cpp.orig
 +++ src/save.cpp
-@@ -347,7 +347,7 @@ void _Save::LoadPlayer(_Player *Player) {
+@@ -346,7 +346,7 @@ void _Save::LoadPlayer(_Player *Player) {
  
  	// Initialize
  	Player->AddMissingBackpacks();

@@ -1,8 +1,8 @@
 BROKEN-sparc64 = framelimit.h:53 :105: error: no match for operator-
 COMMENT =	top-down shooter RPG
 
-V =		2.0.3
-COMMIT = 	0d97724f
+V =		2.0.4
+COMMIT = 	8007fb22
 DISTNAME =	emptyclip-${V}-${COMMIT}-src
 PKGNAME =	emptyclip-${V}
 CATEGORIES =	games x11
@@ -14,8 +14,8 @@ HOMEPAGE =	https://empty-clip.gitlab.io/
 # GPLv3+
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += c m pthread SDL2_image sqlite3 ${COMPILER_LIBCXX}
-WANTLIB += GL GLU SDL2 freetype ogg vorbis vorbisfile
+WANTLIB += c m pthread sqlite3 ${COMPILER_LIBCXX} webp
+WANTLIB += GL GLU SDL3 freetype ogg vorbis vorbisfile
 WANTLIB += z openal ${MODLUA_WANTLIB}
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -29,9 +29,9 @@ MODULES =	devel/cmake
 LIB_DEPENDS =	audio/libogg \
 		audio/libvorbis \
 		audio/openal \
-		devel/sdl2 \
-		devel/sdl2-image \
-		databases/sqlite3
+		devel/sdl3 \
+		databases/sqlite3 \
+		graphics/libwebp
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
