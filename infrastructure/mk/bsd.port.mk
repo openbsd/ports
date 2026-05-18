@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1649 2026/04/01 15:14:57 thfr Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1650 2026/05/18 13:20:37 kirill Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2026,6 +2026,7 @@ CHECK_LIB_DEPENDS_ARGS += -F pthread
 
 _CHECK_LIB_DEPENDS = PORTSDIR=${PORTSDIR} ${_PERLSCRIPT}/check-lib-depends
 _CHECK_LIB_DEPENDS += -d ${_PKG_REPO} -B ${WRKINST} ${CHECK_LIB_DEPENDS_ARGS}
+_CHECK_SYM = ${BSDSRCDIR}/lib/check_sym
 
 .for _s in ${MULTI_PACKAGES}
 .  if ${STATIC_PLIST${_s}:L} == "no"
@@ -2536,7 +2537,7 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-subpackage _internal-subupdate _internal-uninstall \
 	_internal-update _internal-update-or-install _internal-generate-readmes \
 	_internal-update-or-install-all _internal-update-plist \
-	lib-depends-check port-lib-depends-check update-patches:
+	lib-depends-check port-lib-depends-check check-shlib-syms update-patches:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE${SUBPACKAGE}} ${_EXTRA_IGNORE}."
 .  endif
@@ -2558,6 +2559,21 @@ port-lib-depends-check: ${WRKINST}/.saved_libs
 		lib_depends_args=all-lib-depends-args \
 		wantlib_args=fake-wantlib-args| \
 			${_CHECK_LIB_DEPENDS} -i -s ${WRKINST}/.saved_libs; \
+	done
+
+check-shlib-syms: ${_FAKE_COOKIE}
+	@[ -x ${_CHECK_SYM} ] || { echo "check-shlib-syms: ${_CHECK_SYM} doesn't exist"; exit 1; }; \
+	for s in ${BUILD_PACKAGES}; do \
+		cd ${.CURDIR} && SUBPACKAGE=$$s ${MAKE} print-plist-libs | while read _l; do \
+			case $$_l in */lib*.so.*|lib*.so.*) ;; *) continue;; esac; \
+			case $$_l in \
+			/*) oldpat=$${_l%.so.*}.so.*; new=${WRKINST}$$_l;; \
+			*) oldpat=${PREFIX}/$${_l%.so.*}.so.*; new=${WRKINST}${PREFIX}/$$_l;; \
+			esac; \
+			old=$$(ls -rt $$oldpat 2>/dev/null | tail -1); \
+			[ -n "$$old" ] || { echo "check-shlib-syms: no installed library for $$_l"; continue; }; \
+			${_CHECK_SYM} "$$old" "$$new"; \
+		done; \
 	done
 
 # Most standard port targets create a cookie to avoid being re-run.
@@ -3853,7 +3869,7 @@ _all_phony = ${_recursive_depends_targets} \
 	print-package-args _print-package-signature-lib \
 	_print-package-signature-run _print-packagename _recurse-all-dir-depends \
 	_recurse-test-dir-depends _recurse-run-dir-depends \
-	build-depends-list checkpatch clean clean-depends \
+	build-depends-list checkpatch check-shlib-syms clean clean-depends \
 	delete-package distpatch do-build do-configure do-distpatch \
 	do-gen do-extract do-install do-test fetch-all \
 	install-all lib-depends lib-depends-list \
