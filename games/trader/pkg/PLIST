@@ -2,6 +2,8 @@
 @man man/man6/trader.6
 share/locale/da/LC_MESSAGES/trader.mo
 share/locale/de/LC_MESSAGES/trader.mo
+share/locale/en@quot/
+share/locale/en@quot/LC_MESSAGES/
 share/locale/en@quot/LC_MESSAGES/trader.mo
 share/locale/en_AU/
 share/locale/en_AU/LC_MESSAGES/

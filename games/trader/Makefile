@@ -1,7 +1,6 @@
 COMMENT =	simple text-based game of interstellar trading
 
-DISTNAME =	trader-7.20
-REVISION =	1
+DISTNAME =	trader-7.21
 
 CATEGORIES =	games
 
@@ -12,7 +11,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  c curses iconv intl pthread
+WANTLIB =  c curses iconv intl
 
 SITES =		https://ftp.zap.org.au/pub/trader/unix/
 
