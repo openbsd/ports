@@ -20,4 +20,19 @@ MODULES=		devel/cmake
 BUILD_DEPENDS=		devel/gettext,-tools \
 			graphics/ImageMagick
 
+# -- workaround starts -- -- --
+# copy pre-generated file so that we avoid
+# https://github.com/ImageMagick/ImageMagick6/issues/427
+SITES.workaround=	https://spacehopper.org/mirrors/
+DISTFILES.workaround=	celestia-data-rocky_lores.jpg \
+			celestia-data-rocky_medres.jpg
+EXTRACT_ONLY=		${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}.tar.gz
+
+post-build:
+.for i in lores medres
+	cp ${FULLDISTDIR}/celestia-data-rocky_$i.jpg \
+		${WRKBUILD}/textures/hires/$i_rocky.jpg
+.endfor
+#-- workaround ends -- -- --
+
 .include <bsd.port.mk>
