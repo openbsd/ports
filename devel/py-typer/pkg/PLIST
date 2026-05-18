@@ -8,6 +8,10 @@ lib/python${MODPY_VERSION}/site-packages/typer-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/typer-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/typer-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/typer-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/typer/.agents/
+lib/python${MODPY_VERSION}/site-packages/typer/.agents/skills/
+lib/python${MODPY_VERSION}/site-packages/typer/.agents/skills/typer/
+lib/python${MODPY_VERSION}/site-packages/typer/.agents/skills/typer/SKILL.md
 lib/python${MODPY_VERSION}/site-packages/typer/__init__.py
 lib/python${MODPY_VERSION}/site-packages/typer/__main__.py
 lib/python${MODPY_VERSION}/site-packages/typer/${MODPY_PYCACHE}/
