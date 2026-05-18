@@ -3,6 +3,7 @@ COMMENT =	console-based 52-card solitare game
 V =		2.15
 DISTNAME =	bluemoon-${V}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	http://www.catb.org/~esr/bluemoon/
 
