@@ -5,7 +5,7 @@ GH_PROJECT =		EmulationStation
 GH_COMMIT =		646bede3d9ec0acf0ae378415edac136774a66c5
 
 DISTNAME =		emulationstation-2.0.1a
-REVISION =		5
+REVISION =		7
 
 CATEGORIES =		emulators
 
