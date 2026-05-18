@@ -1,6 +1,6 @@
 COMMENT=	web proxy with advanced filtering capabilities
 
-V=		4.0.0
+V=		4.1.0
 DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
@@ -18,7 +18,8 @@ FIX_EXTRACT_PERMISSIONS=	Yes
 
 # there are tests which can be run with tools/privoxy-regression-test.pl
 # they require privoxy to be running, and http_proxy=http://127.0.0.1:8118/
-NO_TEST=	Yes
+zNO_TEST=	Yes
+TEST_DEPENDS=	net/curl
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
@@ -34,14 +35,18 @@ CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \
 PRIVOXYCONF=	${SYSCONFDIR}/privoxy
 SUBST_VARS=	PRIVOXYCONF
 
-pre-configure:
-	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoheader
-
 FAKE_FLAGS=	CONF_DEST=${PREFIX}/share/examples/privoxy
 
 post-install:
 	${SUBST_CMD} ${PREFIX}/share/examples/privoxy/config
 	rm ${PREFIX}/share/examples/privoxy/config.beforesubst
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/* ${PREFIX}/bin
+
+# more tests available using the curl test suite
+do-test:
+	cd ${WRKSRC}; \
+		./privoxy --no-daemon --pidfile test.pid config${PATCHORIG} &
+	cd ${WRKSRC}; ./tools/privoxy-regression-test.pl --verbose
+	kill `cat ${WRKSRC}/test.pid`
 
 .include <bsd.port.mk>
