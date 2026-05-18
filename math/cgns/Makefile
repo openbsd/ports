@@ -2,9 +2,9 @@ COMMENT =		CFD General Notation System standard library
 
 GH_ACCOUNT =		CGNS
 GH_PROJECT =		CGNS
-GH_TAGNAME =		v4.5.1
+GH_TAGNAME =		v4.5.2
 
-SHARED_LIBS +=  	cgns 1.0	# 0.0
+SHARED_LIBS +=  	cgns 2.0	# 0.0
 
 CATEGORIES =		math
 HOMEPAGE =		https://cgns.github.io/
