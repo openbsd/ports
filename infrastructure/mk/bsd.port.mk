@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1650 2026/05/18 13:20:37 kirill Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1651 2026/05/18 23:38:23 kirill Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2572,7 +2572,7 @@ check-shlib-syms: ${_FAKE_COOKIE}
 			esac; \
 			old=$$(ls -rt $$oldpat 2>/dev/null | tail -1); \
 			[ -n "$$old" ] || { echo "check-shlib-syms: no installed library for $$_l"; continue; }; \
-			${_CHECK_SYM} "$$old" "$$new"; \
+			${_CHECK_SYM} -I "$$old" "$$new"; \
 		done; \
 	done
 
