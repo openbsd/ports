@@ -1,6 +1,6 @@
 COMMENT =		automatic 3d tetrahedral mesh generator
 
-V =			6.2.2602
+V =			6.2.2604
 PKGNAME =		netgen-mesher-${V}
 
 GH_ACCOUNT =		NGSolve
@@ -8,7 +8,7 @@ GH_PROJECT =		netgen
 GH_TAGNAME =		v${V}
 
 # git checkout v${V}; git describe --tags --match "v[0-9]*" --long --dirty
-NETGEN_VERSION_GIT =	v6.2.2602-0-g9f916098
+NETGEN_VERSION_GIT =	v6.2.2604-0-g3ee489c7
 
 CATEGORIES =		cad
 HOMEPAGE =		https://ngsolve.org/

@@ -1,0 +1,13 @@
+https://github.com/NGSolve/netgen/pull/221
+
+Index: ng/ngappinit.cpp
+--- ng/ngappinit.cpp.orig
++++ ng/ngappinit.cpp
+@@ -256,6 +256,7 @@ int main(int argc, char ** argv)
+       Tk_MainLoop();
+       Tcl_DeleteInterp (myinterp); 
+ #ifdef NETGEN_PYTHON
++      py::scoped_interpreter guard{};
+       py::gil_scoped_acquire ensure_gil;
+ #endif
+ 
