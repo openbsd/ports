@@ -1,9 +1,7 @@
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
-REVISION=	12
+REVISION=	13
 CATEGORIES=	emulators x11
-
-HOMEPAGE=	http://uae.coresystems.de/
 
 PERMIT_PACKAGE=	Yes
 
