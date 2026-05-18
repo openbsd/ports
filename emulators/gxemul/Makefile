@@ -1,10 +1,11 @@
 COMMENT=		ARM/M88k/MIPS/PowerPC/SuperH machines emulator
 
 DISTNAME =		gxemul-0.7.0
+REVISION =		0
 
 CATEGORIES=		emulators
 
-HOMEPAGE=		http://gavare.se/gxemul/
+HOMEPAGE=		https://gavare.se/gxemul/
 
 # BSD
 PERMIT_PACKAGE=	Yes
