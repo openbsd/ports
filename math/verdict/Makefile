@@ -2,7 +2,7 @@ COMMENT =		compute quality functions of 2 and 3-dimensional regions
 
 GH_ACCOUNT =		sandialabs
 GH_PROJECT =		verdict
-GH_TAGNAME =		1.4.4
+GH_TAGNAME =		1.4.5
 
 SHARED_LIBS +=  	verdict		1.0 # 0.0
 
