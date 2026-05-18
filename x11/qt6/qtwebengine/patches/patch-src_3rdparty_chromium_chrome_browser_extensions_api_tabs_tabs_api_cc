@@ -1,7 +1,7 @@
-Index: src/3rdparty/chromium/chrome/browser/extensions/api/tabs/tabs_api.cc
---- src/3rdparty/chromium/chrome/browser/extensions/api/tabs/tabs_api.cc.orig
-+++ src/3rdparty/chromium/chrome/browser/extensions/api/tabs/tabs_api.cc
-@@ -925,7 +925,7 @@ ExtensionFunction::ResponseAction WindowsCreateFunctio
+Index: src/3rdparty/chromium/chrome/browser/extensions/api/tabs/tabs_api_non_android.cc
+--- src/3rdparty/chromium/chrome/browser/extensions/api/tabs/tabs_api_non_android.cc.orig
++++ src/3rdparty/chromium/chrome/browser/extensions/api/tabs/tabs_api_non_android.cc
+@@ -756,7 +756,7 @@ ExtensionFunction::ResponseAction WindowsCreateFunctio
  // created as minimized.
  // TODO(crbug.com/40254339): Remove this workaround when linux is fixed.
  // TODO(crbug.com/40254339): Find a fix for wayland as well.

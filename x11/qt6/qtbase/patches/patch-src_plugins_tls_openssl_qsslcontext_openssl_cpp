@@ -13,7 +13,7 @@ Index: src/plugins/tls/openssl/qsslcontext_openssl.cpp
  
  } // namespace QTlsPrivate
  
-@@ -662,7 +662,7 @@ QT_WARNING_POP
+@@ -684,7 +684,7 @@ QT_WARNING_POP
          q_SSL_CTX_set_verify(sslContext->ctx, verificationMode, verificationCallback);
      }
  
@@ -22,7 +22,7 @@ Index: src/plugins/tls/openssl/qsslcontext_openssl.cpp
      // NewSessionTicket callback:
      if (mode == QSslSocket::SslClientMode && !isDtls) {
          q_SSL_CTX_sess_set_new_cb(sslContext->ctx, QTlsPrivate::q_ssl_sess_set_new_cb);
-@@ -759,6 +759,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -781,6 +781,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
      }
  #endif // ocsp
  
@@ -30,7 +30,7 @@ Index: src/plugins/tls/openssl/qsslcontext_openssl.cpp
      QSharedPointer<SSL_CONF_CTX> cctx(q_SSL_CONF_CTX_new(), &q_SSL_CONF_CTX_free);
      if (cctx) {
          q_SSL_CONF_CTX_set_ssl_ctx(cctx.data(), sslContext->ctx);
-@@ -802,7 +803,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -824,7 +825,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
              sslContext->errorStr = msgErrorSettingBackendConfig(QSslSocket::tr("SSL_CONF_finish() failed"));
              sslContext->errorCode = QSslError::UnspecifiedError;
          }

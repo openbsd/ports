@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ipc/ipc_channel_mojo.cc
 --- src/3rdparty/chromium/ipc/ipc_channel_mojo.cc.orig
 +++ src/3rdparty/chromium/ipc/ipc_channel_mojo.cc
-@@ -105,7 +105,7 @@ class ThreadSafeChannelProxy : public mojo::ThreadSafe
+@@ -104,7 +104,7 @@ class ThreadSafeChannelProxy : public mojo::ThreadSafe
  };
  
  base::ProcessId GetSelfPID() {

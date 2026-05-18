@@ -141,6 +141,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargetsPrecheck.cmake
 lib/cmake/Qt6Sensors/
 lib/cmake/Qt6Sensors/Qt6SensorsAdditionalTargetInfo.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsConfig.cmake
@@ -150,6 +151,7 @@ lib/cmake/Qt6Sensors/Qt6SensorsDependencies.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsPlugins.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Sensors/Qt6SensorsTargets.cmake
+lib/cmake/Qt6Sensors/Qt6SensorsTargetsPrecheck.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsVersionlessTargets.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginAdditionalTargetInfo.cmake
@@ -158,6 +160,7 @@ lib/cmake/Qt6Sensors/Qt6genericSensorPluginConfigVersion.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginTargets.cmake
+lib/cmake/Qt6Sensors/Qt6genericSensorPluginTargetsPrecheck.cmake
 lib/cmake/Qt6SensorsPrivate/
 lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateConfig.cmake
@@ -165,6 +168,7 @@ lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateConfigVersion.cmake
 lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateDependencies.cmake
 lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateTargets.cmake
+lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6SensorsQuick/
@@ -175,6 +179,7 @@ lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickConfigVersionImpl.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickDependencies.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickTargets.cmake
+lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickTargetsPrecheck.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickVersionlessTargets.cmake
 lib/cmake/Qt6SensorsQuickPrivate/
@@ -184,6 +189,7 @@ lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateConfigVersion.cmake
 lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateDependencies.cmake
 lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateTargets.cmake
+lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateVersionlessTargets.cmake
 lib/libQt6Sensors.prl

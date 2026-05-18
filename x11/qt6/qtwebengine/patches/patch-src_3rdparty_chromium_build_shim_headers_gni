@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/build/shim_headers.gni
+--- src/3rdparty/chromium/build/shim_headers.gni.orig
++++ src/3rdparty/chromium/build/shim_headers.gni
+@@ -31,8 +31,6 @@ template("shim_headers") {
+     output_pattern = "$target_gen_dir/" + invoker.root_path + "/{{source_file_part}}"
+     outputs = process_file_template(invoker.headers,output_pattern)
+ 
+-    input_pattern = "{{source_dir}}/" + invoker.root_path + "/{{source_file_part}}"
+-    inputs = process_file_template(invoker.headers, input_pattern)
+   }
+ 
+   group(target_name) {

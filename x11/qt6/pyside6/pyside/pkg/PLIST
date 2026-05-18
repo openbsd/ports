@@ -138,6 +138,7 @@ include/PySide6/pysidedynamicclass_p.h
 include/PySide6/pysidedynamiccommon_p.h
 include/PySide6/pysidedynamicenum_p.h
 include/PySide6/pysidedynamicpod_p.h
+include/PySide6/pysideglobals_p.h
 include/PySide6/pysideinit.h
 include/PySide6/pysidelogging_p.h
 include/PySide6/pysidemacros.h
@@ -146,16 +147,17 @@ include/PySide6/pysidemetafunction_p.h
 include/PySide6/pysidemetatype.h
 include/PySide6/pysideproperty.h
 include/PySide6/pysideproperty_p.h
+include/PySide6/pysidepropertybase_p.h
 include/PySide6/pysideqapp.h
 include/PySide6/pysideqenum.h
 include/PySide6/pysideqhash.h
-include/PySide6/pysideqmetatype.h
 include/PySide6/pysideqml.h
 include/PySide6/pysideqmlattached.h
 include/PySide6/pysideqmlattached_p.h
 include/PySide6/pysideqmlextended_p.h
 include/PySide6/pysideqmlforeign_p.h
 include/PySide6/pysideqmllistproperty_p.h
+include/PySide6/pysideqmllistpropertymixin.h
 include/PySide6/pysideqmlmacros.h
 include/PySide6/pysideqmlmetacallerror_p.h
 include/PySide6/pysideqmlnamedelement_p.h
@@ -367,6 +369,7 @@ share/PySide6/glue/qtstatemachine.cpp
 share/PySide6/glue/qttest.cpp
 share/PySide6/glue/qtuitools.cpp
 share/PySide6/glue/qtwebenginecore.cpp
+share/PySide6/glue/qtwebview.cpp
 share/PySide6/glue/qtwidgets.cpp
 share/PySide6/glue/qtxml.cpp
 share/PySide6/typesystems/

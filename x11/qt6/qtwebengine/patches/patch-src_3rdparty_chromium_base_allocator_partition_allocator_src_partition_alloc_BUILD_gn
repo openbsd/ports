@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/BUILD.gn
 --- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/BUILD.gn
-@@ -869,7 +869,7 @@ if (is_clang_or_gcc || is_msvc || is_mingw) {
+@@ -907,7 +907,7 @@ if (is_clang_or_gcc || is_msvc || is_mingw) {
          configs -= [ partition_alloc_enable_arc_config ]
        }
      }

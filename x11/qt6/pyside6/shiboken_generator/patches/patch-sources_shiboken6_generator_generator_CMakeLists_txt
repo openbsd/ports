@@ -1,0 +1,12 @@
+Index: sources/shiboken6_generator/generator/CMakeLists.txt
+--- sources/shiboken6_generator/generator/CMakeLists.txt.orig
++++ sources/shiboken6_generator/generator/CMakeLists.txt
+@@ -72,7 +72,7 @@ install(EXPORT "${package_name}Targets"
+ if(NOT is_pyside6_superproject_build)
+     install(TARGETS shiboken6
+             EXPORT "${package_name}WheelTargets"
+-            DESTINATION "shiboken6_generator")
++            DESTINATION "${BIN_INSTALL_DIR}")
+ 
+     install(EXPORT "${package_name}WheelTargets"
+             NAMESPACE "Shiboken6::"

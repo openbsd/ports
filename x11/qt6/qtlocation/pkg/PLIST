@@ -186,6 +186,7 @@ lib/cmake/Qt6Location/Qt6LocationDependencies.cmake
 lib/cmake/Qt6Location/Qt6LocationPlugins.cmake
 lib/cmake/Qt6Location/Qt6LocationTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Location/Qt6LocationTargets.cmake
+lib/cmake/Qt6Location/Qt6LocationTargetsPrecheck.cmake
 lib/cmake/Qt6Location/Qt6LocationVersionlessAliasTargets.cmake
 lib/cmake/Qt6Location/Qt6LocationVersionlessTargets.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginAdditionalTargetInfo.cmake
@@ -194,12 +195,14 @@ lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginConfigVersi
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginTargets.cmake
+lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginTargetsPrecheck.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginConfig.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginConfigVersion.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginTargets.cmake
+lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginTargetsPrecheck.cmake
 lib/cmake/Qt6LocationPrivate/
 lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateConfig.cmake
@@ -207,6 +210,7 @@ lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateConfigVersion.cmake
 lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateDependencies.cmake
 lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateTargets.cmake
+lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6LocationPrivate/Qt6LocationPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationAdditionalTargetInfo.cmake
@@ -215,6 +219,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargetsPrecheck.cmake
 lib/libQt6Location.prl
 @lib lib/libQt6Location.so.${LIBQt6Location_VERSION}
 lib/pkgconfig/Qt6Location.pc

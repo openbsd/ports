@@ -1,7 +1,7 @@
 Index: src/qdoc/cmake/QDocConfiguration.cmake
 --- src/qdoc/cmake/QDocConfiguration.cmake.orig
 +++ src/qdoc/cmake/QDocConfiguration.cmake
-@@ -8,6 +8,6 @@ set(QDOC_MINIMUM_CLANG_VERSION "17")
+@@ -8,7 +8,7 @@ set(QDOC_MINIMUM_CLANG_VERSION "17")
  
  # List of explicitly supported Clang versions for QDoc
  set(QDOC_SUPPORTED_CLANG_VERSIONS
@@ -9,3 +9,4 @@ Index: src/qdoc/cmake/QDocConfiguration.cmake
 +    "19.1"
  )
  
+ # Check for QDoc coverage dependencies

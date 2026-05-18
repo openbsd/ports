@@ -21,7 +21,7 @@ Index: src/core/api/configure.cmake
  qt_feature("webengine-pepper-plugins" PRIVATE
      LABEL "Pepper Plugins"
      PURPOSE "Enables use of Pepper plugins."
-@@ -179,15 +185,13 @@ qt_feature("webengine-vaapi" PRIVATE
+@@ -178,15 +184,13 @@ qt_feature("webengine-vaapi" PRIVATE
      PURPOSE "Enables support for VA-API hardware acceleration"
      AUTODETECT GBM_FOUND AND LIBVA_FOUND AND QT_FEATURE_vulkan
      # hardware accelerated encoding requires bundled libvpx
@@ -38,7 +38,7 @@ Index: src/core/api/configure.cmake
      DISABLE CMAKE_BUILD_TYPE STREQUAL Debug
  )
  qt_feature("webengine-arm64-udot-support" PRIVATE
-@@ -222,15 +226,19 @@ qt_configure_add_summary_entry(
+@@ -220,15 +224,19 @@ qt_configure_add_summary_entry(
  )
  qt_configure_add_summary_entry(
      ARGS "webengine-vaapi"

@@ -1,6 +1,6 @@
-Index: src/3rdparty/chromium/content/browser/utility_process_host_receiver_bindings.cc
---- src/3rdparty/chromium/content/browser/utility_process_host_receiver_bindings.cc.orig
-+++ src/3rdparty/chromium/content/browser/utility_process_host_receiver_bindings.cc
+Index: src/3rdparty/chromium/content/browser/service_host/utility_process_host_receiver_bindings.cc
+--- src/3rdparty/chromium/content/browser/service_host/utility_process_host_receiver_bindings.cc.orig
++++ src/3rdparty/chromium/content/browser/service_host/utility_process_host_receiver_bindings.cc
 @@ -10,7 +10,7 @@
  #include "content/public/common/content_client.h"
  #include "media/media_buildflags.h"

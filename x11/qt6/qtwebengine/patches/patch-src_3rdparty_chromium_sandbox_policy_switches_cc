@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/sandbox/policy/switches.cc
 --- src/3rdparty/chromium/sandbox/policy/switches.cc.orig
 +++ src/3rdparty/chromium/sandbox/policy/switches.cc
-@@ -38,7 +38,9 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
+@@ -40,7 +40,9 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
  // Meant to be used as a browser-level switch for testing purposes only.
  const char kNoSandbox[] = "no-sandbox";
  

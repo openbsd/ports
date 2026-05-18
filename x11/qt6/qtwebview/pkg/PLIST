@@ -2,20 +2,23 @@ include/X11/qt6/QtWebView/
 include/X11/qt6/QtWebView/${VERSION}/
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/
-include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qabstractwebview_p.h
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qtwebview-config_p.h
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qwebview_p.h
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qwebviewfactory_p.h
-include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qwebviewinterface_p.h
-include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qwebviewloadrequest_p.h
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qwebviewplugin_p.h
+include/X11/qt6/QtWebView/QWebView
+include/X11/qt6/QtWebView/QWebViewLoadingInfo
+include/X11/qt6/QtWebView/QWebViewSettings
 include/X11/qt6/QtWebView/QtWebView
 include/X11/qt6/QtWebView/QtWebViewDepends
 include/X11/qt6/QtWebView/QtWebViewVersion
 include/X11/qt6/QtWebView/qtwebview-config.h
 include/X11/qt6/QtWebView/qtwebviewfunctions.h
 include/X11/qt6/QtWebView/qtwebviewversion.h
+include/X11/qt6/QtWebView/qwebview.h
 include/X11/qt6/QtWebView/qwebview_global.h
+include/X11/qt6/QtWebView/qwebviewloadinginfo.h
+include/X11/qt6/QtWebView/qwebviewsettings.h
 include/X11/qt6/QtWebViewQuick/
 include/X11/qt6/QtWebViewQuick/${VERSION}/
 include/X11/qt6/QtWebViewQuick/${VERSION}/QtWebViewQuick/
@@ -37,6 +40,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebviewquickpluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebviewquickpluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebviewquickpluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebviewquickpluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebviewquickpluginTargetsPrecheck.cmake
 lib/cmake/Qt6WebView/
 lib/cmake/Qt6WebView/Qt6QWebEngineWebViewPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6WebView/Qt6QWebEngineWebViewPluginConfig.cmake
@@ -44,6 +48,7 @@ lib/cmake/Qt6WebView/Qt6QWebEngineWebViewPluginConfigVersion.cmake
 lib/cmake/Qt6WebView/Qt6QWebEngineWebViewPluginConfigVersionImpl.cmake
 lib/cmake/Qt6WebView/Qt6QWebEngineWebViewPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WebView/Qt6QWebEngineWebViewPluginTargets.cmake
+lib/cmake/Qt6WebView/Qt6QWebEngineWebViewPluginTargetsPrecheck.cmake
 lib/cmake/Qt6WebView/Qt6WebViewAdditionalTargetInfo.cmake
 lib/cmake/Qt6WebView/Qt6WebViewConfig.cmake
 lib/cmake/Qt6WebView/Qt6WebViewConfigVersion.cmake
@@ -52,6 +57,7 @@ lib/cmake/Qt6WebView/Qt6WebViewDependencies.cmake
 lib/cmake/Qt6WebView/Qt6WebViewPlugins.cmake
 lib/cmake/Qt6WebView/Qt6WebViewTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WebView/Qt6WebViewTargets.cmake
+lib/cmake/Qt6WebView/Qt6WebViewTargetsPrecheck.cmake
 lib/cmake/Qt6WebView/Qt6WebViewVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebView/Qt6WebViewVersionlessTargets.cmake
 lib/cmake/Qt6WebViewPrivate/
@@ -61,6 +67,7 @@ lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateConfigVersion.cmake
 lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateDependencies.cmake
 lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateTargets.cmake
+lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateVersionlessTargets.cmake
 lib/cmake/Qt6WebViewQuick/
@@ -71,6 +78,7 @@ lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickConfigVersionImpl.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickDependencies.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickTargets.cmake
+lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickTargetsPrecheck.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickVersionlessTargets.cmake
 lib/cmake/Qt6WebViewQuickPrivate/
@@ -80,6 +88,7 @@ lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateConfigVersion.cmake
 lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateDependencies.cmake
 lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateTargets.cmake
+lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateVersionlessTargets.cmake
 lib/libQt6WebView.prl

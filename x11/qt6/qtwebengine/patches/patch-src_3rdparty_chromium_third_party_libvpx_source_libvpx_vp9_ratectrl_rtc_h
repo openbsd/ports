@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/third_party/libvpx/source/libvpx/vp9/ratectrl_rtc.h
+--- src/3rdparty/chromium/third_party/libvpx/source/libvpx/vp9/ratectrl_rtc.h.orig
++++ src/3rdparty/chromium/third_party/libvpx/source/libvpx/vp9/ratectrl_rtc.h
+@@ -17,7 +17,6 @@
+ #include <memory>
+ 
+ #include "vpx/vpx_encoder.h"
+-#include "vpx/internal/vpx_ratectrl_rtc.h"
+ 
+ struct VP9_COMP;
+ 

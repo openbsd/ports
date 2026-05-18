@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/build/nocompile.gni
  }
  
  declare_args() {
--  enable_nocompile_tests = is_clang && !is_nacl
-+  enable_nocompile_tests = is_clang && !is_nacl && !is_bsd
+-  enable_nocompile_tests = is_clang
++  enable_nocompile_tests = is_clang && !is_bsd
  }
  
  if (enable_nocompile_tests) {

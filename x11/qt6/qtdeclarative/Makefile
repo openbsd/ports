@@ -7,33 +7,33 @@ PKGSPEC =	qt6-qtdeclarative-${QT6_PKGSPEC}
 
 DPB_PROPERTIES = parallel
 
-SHARED_LIBS =   Qt6Qml                    7.0 # 6.7
-SHARED_LIBS +=  Qt6Quick                  8.1 # 6.7
+SHARED_LIBS =   Qt6Qml                    8.0 # 6.7
+SHARED_LIBS +=  Qt6Quick                  9.0 # 6.7
 SHARED_LIBS +=  Qt6QuickParticles         3.0 # 6.7
 SHARED_LIBS +=  Qt6QuickTest              3.0 # 6.7
 SHARED_LIBS +=  Qt6QuickWidgets           5.0 # 6.7
-SHARED_LIBS +=  Qt6QuickShapes            3.0 # 6.7
-SHARED_LIBS +=  Qt6QmlModels              5.0 # 6.7
+SHARED_LIBS +=  Qt6QuickShapes            3.1 # 6.7
+SHARED_LIBS +=  Qt6QmlModels              6.0 # 6.7
 SHARED_LIBS +=  Qt6QmlWorkerScript        2.0 # 6.7
 SHARED_LIBS +=  Qt6LabsAnimation          2.0 # 6.7
 SHARED_LIBS +=  Qt6LabsFolderListModel    2.0 # 6.7
-SHARED_LIBS +=  Qt6LabsQmlModels          2.0 # 6.7
+SHARED_LIBS +=  Qt6LabsQmlModels          2.1 # 6.7
 SHARED_LIBS +=  Qt6LabsSettings           2.0 # 6.7
 SHARED_LIBS +=  Qt6LabsSharedImage        2.0 # 6.7
 SHARED_LIBS +=  Qt6LabsWavefrontMesh      2.0 # 6.7
 SHARED_LIBS +=  Qt6QmlCore                3.0 # 6.7
 SHARED_LIBS +=  Qt6QmlLocalStorage        2.0 # 6.7
 SHARED_LIBS +=  Qt6QmlXmlListModel        2.0 # 6.7
-SHARED_LIBS +=  Qt6QuickControls2         3.0 # 6.7
-SHARED_LIBS +=  Qt6QuickControls2Impl     2.0 # 6.7
+SHARED_LIBS +=  Qt6QuickControls2         3.1 # 6.7
+SHARED_LIBS +=  Qt6QuickControls2Impl     2.1 # 6.7
 SHARED_LIBS +=  Qt6QuickDialogs2          3.0 # 6.7
-SHARED_LIBS +=  Qt6QuickDialogs2QuickImpl 4.1 # 6.7
+SHARED_LIBS +=  Qt6QuickDialogs2QuickImpl 4.2 # 6.7
 SHARED_LIBS +=  Qt6QuickDialogs2Utils     2.0 # 6.7
 SHARED_LIBS +=  Qt6QuickLayouts           4.0 # 6.7
-SHARED_LIBS +=  Qt6QuickTemplates2        7.0 # 6.7
-SHARED_LIBS +=  Qt6QmlCompiler            5.0 # 6.7
-SHARED_LIBS +=  Qt6QuickEffects           2.0 # 6.7
-SHARED_LIBS +=	Qt6QmlNetwork             2.0 # 6.7
+SHARED_LIBS +=  Qt6QuickTemplates2        8.0 # 6.7
+SHARED_LIBS +=  Qt6QmlCompiler            6.0 # 6.7
+SHARED_LIBS +=  Qt6QuickEffects           2.1 # 6.7
+SHARED_LIBS +=	Qt6QmlNetwork             2.1 # 6.7
 
 SHARED_LIBS +=	Qt6QuickControls2Basic    0.0 # 0.0
 SHARED_LIBS +=	Qt6QuickControls2BasicStyleImpl 0.0 # 0.0
@@ -49,12 +49,14 @@ SHARED_LIBS +=	Qt6QuickControls2UniversalStyleImpl 0.0 # 0.0
 SHARED_LIBS +=  Qt6LabsPlatform           0.0 # 0.0
 SHARED_LIBS +=  Qt6QmlMeta                0.0 # 0.0
 SHARED_LIBS +=  Qt6QuickControls2FluentWinUI3StyleImpl 0.0 # 0.0
-SHARED_LIBS +=  Qt6QuickVectorImage       0.0 # 0.0
-SHARED_LIBS +=  Qt6QuickVectorImageGenerator 1.0 # 0.0
+SHARED_LIBS +=  Qt6QuickVectorImage       0.1 # 0.0
+SHARED_LIBS +=  Qt6QuickVectorImageGenerator 2.0 # 0.0
 
 SHARED_LIBS +=	Qt6LabsSynchronizer       0.0 # 0.0
-SHARED_LIBS +=	Qt6QuickShapesDesignHelpers 0.0 # 0.0
-SHARED_LIBS +=	Qt6QuickVectorImageHelpers 0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickShapesDesignHelpers 1.0 # 0.0
+SHARED_LIBS +=	Qt6QuickVectorImageHelpers 0.1 # 0.0
+SHARED_LIBS +=	Qt6LabsStyleKit           0.0 # 0.0
+SHARED_LIBS +=	Qt6LabsStyleKitImpl       0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Sql Qt6Svg Qt6Test Qt6Widgets c m xkbcommon
@@ -68,7 +70,7 @@ CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
 
 MODQT6_DEPS =	No
 
-BUILD_DEPENDS =	graphics/vulkan-loader \
+BUILD_DEPENDS =	graphics/vulkan-headers \
 		x11/qt6/qtlanguageserver \
 		x11/qt6/qtshadertools
 

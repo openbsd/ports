@@ -1,0 +1,6 @@
+Qt6.11: Forward to bundled private header for system jpeglib.h compatibility
+Index: src/3rdparty/chromium/third_party/libjpeg_turbo/jerror.h
+--- src/3rdparty/chromium/third_party/libjpeg_turbo/jerror.h.orig
++++ src/3rdparty/chromium/third_party/libjpeg_turbo/jerror.h
+@@ -0,0 +1 @@
++#include "src/jerror.h"

@@ -1,7 +1,7 @@
 Index: src/multimedia/CMakeLists.txt
 --- src/multimedia/CMakeLists.txt.orig
 +++ src/multimedia/CMakeLists.txt
-@@ -158,7 +158,7 @@ qt_internal_extend_target(Multimedia CONDITION QT_FEAT
+@@ -157,7 +157,7 @@ qt_internal_extend_target(Multimedia CONDITION QT_FEAT
  )
  
  qt_internal_extend_target(Multimedia
@@ -10,7 +10,7 @@ Index: src/multimedia/CMakeLists.txt
      SOURCES qsymbolsresolveutils.cpp qsymbolsresolveutils_p.h)
  
  qt_internal_add_simd_part(Multimedia SIMD sse2
-@@ -284,7 +284,7 @@ if(ANDROID)
+@@ -283,7 +283,7 @@ if(ANDROID)
      )
  endif()
  

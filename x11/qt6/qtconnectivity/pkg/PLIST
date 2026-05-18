@@ -131,6 +131,7 @@ lib/cmake/Qt6Bluetooth/Qt6BluetoothConfigVersionImpl.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothDependencies.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Bluetooth/Qt6BluetoothTargets.cmake
+lib/cmake/Qt6Bluetooth/Qt6BluetoothTargetsPrecheck.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothVersionlessAliasTargets.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothVersionlessTargets.cmake
 lib/cmake/Qt6BluetoothPrivate/
@@ -140,6 +141,7 @@ lib/cmake/Qt6BluetoothPrivate/Qt6BluetoothPrivateConfigVersion.cmake
 lib/cmake/Qt6BluetoothPrivate/Qt6BluetoothPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6BluetoothPrivate/Qt6BluetoothPrivateDependencies.cmake
 lib/cmake/Qt6BluetoothPrivate/Qt6BluetoothPrivateTargets.cmake
+lib/cmake/Qt6BluetoothPrivate/Qt6BluetoothPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6BluetoothPrivate/Qt6BluetoothPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6BluetoothPrivate/Qt6BluetoothPrivateVersionlessTargets.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtConnectivityTestsConfig.cmake
@@ -150,6 +152,7 @@ lib/cmake/Qt6Connectivity/Qt6ConnectivityConfigVersion.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityConfigVersionImpl.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityExtraProperties.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityTargets.cmake
+lib/cmake/Qt6Connectivity/Qt6ConnectivityTargetsPrecheck.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityVersionlessAliasTargets.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityVersionlessTargets.cmake
 lib/cmake/Qt6Nfc/
@@ -160,6 +163,7 @@ lib/cmake/Qt6Nfc/Qt6NfcConfigVersionImpl.cmake
 lib/cmake/Qt6Nfc/Qt6NfcDependencies.cmake
 lib/cmake/Qt6Nfc/Qt6NfcTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Nfc/Qt6NfcTargets.cmake
+lib/cmake/Qt6Nfc/Qt6NfcTargetsPrecheck.cmake
 lib/cmake/Qt6Nfc/Qt6NfcVersionlessAliasTargets.cmake
 lib/cmake/Qt6Nfc/Qt6NfcVersionlessTargets.cmake
 lib/cmake/Qt6NfcPrivate/
@@ -169,6 +173,7 @@ lib/cmake/Qt6NfcPrivate/Qt6NfcPrivateConfigVersion.cmake
 lib/cmake/Qt6NfcPrivate/Qt6NfcPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6NfcPrivate/Qt6NfcPrivateDependencies.cmake
 lib/cmake/Qt6NfcPrivate/Qt6NfcPrivateTargets.cmake
+lib/cmake/Qt6NfcPrivate/Qt6NfcPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6NfcPrivate/Qt6NfcPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6NfcPrivate/Qt6NfcPrivateVersionlessTargets.cmake
 lib/libQt6Bluetooth.prl

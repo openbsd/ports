@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/protobuf/src/google/protobuf/stubs/platform_macros.h
 --- src/3rdparty/chromium/third_party/protobuf/src/google/protobuf/stubs/platform_macros.h.orig
 +++ src/3rdparty/chromium/third_party/protobuf/src/google/protobuf/stubs/platform_macros.h
-@@ -122,7 +122,7 @@ GOOGLE_PROTOBUF_PLATFORM_ERROR
+@@ -99,7 +99,7 @@ GOOGLE_PROTOBUF_PLATFORM_ERROR
  
  #undef GOOGLE_PROTOBUF_PLATFORM_ERROR
  

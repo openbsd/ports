@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/headless/BUILD.gn
+--- src/3rdparty/chromium/headless/BUILD.gn.orig
++++ src/3rdparty/chromium/headless/BUILD.gn
+@@ -477,7 +477,7 @@ component("headless_non_renderer") {
+     }
+   }
+ 
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     deps += [
+       "//components/crash/content/browser",
+       "//components/crash/core/app",

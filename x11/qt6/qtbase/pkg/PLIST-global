@@ -29,6 +29,7 @@ share/doc/qt6/config/exampleurl-qtserialbus.qdocconf
 share/doc/qt6/config/exampleurl-qtserialport.qdocconf
 share/doc/qt6/config/exampleurl-qtspeech.qdocconf
 share/doc/qt6/config/exampleurl-qtsvg.qdocconf
+share/doc/qt6/config/exampleurl-qttasktree.qdocconf
 share/doc/qt6/config/exampleurl-qttools.qdocconf
 share/doc/qt6/config/exampleurl-qtvirtualkeyboard.qdocconf
 share/doc/qt6/config/exampleurl-qtwayland.qdocconf
@@ -163,6 +164,8 @@ share/doc/qt6/global/tools-doc-front-page/images/web-32x32.png
 share/doc/qt6/global/tools-doc-front-page/tool-name.qdoc
 share/doc/qt6/global/warninglimit.qdocconf
 share/qt6/
+share/qt6/json_schema/
+share/qt6/json_schema/modules.json
 share/qt6/wayland/
 share/qt6/wayland/extensions/
 share/qt6/wayland/extensions/README.md
@@ -223,6 +226,10 @@ share/qt6/wayland/protocols/scaler/
 share/qt6/wayland/protocols/scaler/REUSE.toml
 share/qt6/wayland/protocols/scaler/qt_attribution.json
 share/qt6/wayland/protocols/scaler/scaler.xml
+share/qt6/wayland/protocols/session-management/
+share/qt6/wayland/protocols/session-management/REUSE.toml
+share/qt6/wayland/protocols/session-management/qt_attribution.json
+share/qt6/wayland/protocols/session-management/xx-session-management-v1.xml
 share/qt6/wayland/protocols/tablet/
 share/qt6/wayland/protocols/tablet/REUSE.toml
 share/qt6/wayland/protocols/tablet/qt_attribution.json

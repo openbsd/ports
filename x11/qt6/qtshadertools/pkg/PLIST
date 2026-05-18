@@ -24,6 +24,7 @@ lib/cmake/Qt6ShaderTools/Qt6ShaderToolsConfigVersionImpl.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsDependencies.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargets.cmake
+lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargetsPrecheck.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsVersionlessAliasTargets.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsVersionlessTargets.cmake
 lib/cmake/Qt6ShaderToolsPrivate/
@@ -33,6 +34,7 @@ lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateConfigVersion.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateDependencies.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateTargets.cmake
+lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6ShaderToolsPrivate/Qt6ShaderToolsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6ShaderToolsTools/
@@ -44,6 +46,7 @@ lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsConfigVersionImpl.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsDependencies.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargets.cmake
+lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargetsPrecheck.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsVersionlessTargets.cmake
 lib/libQt6ShaderTools.prl
 @lib lib/libQt6ShaderTools.so.${LIBQt6ShaderTools_VERSION}

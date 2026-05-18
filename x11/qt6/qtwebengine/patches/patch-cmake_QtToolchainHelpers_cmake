@@ -10,24 +10,24 @@ Index: cmake/QtToolchainHelpers.cmake
      elseif(MACOS)
          set(${result} "mac" PARENT_SCOPE)
      elseif(IOS)
-@@ -257,6 +259,7 @@ macro(append_build_type_setup)
+@@ -255,6 +257,7 @@ macro(append_build_type_setup)
+         use_partition_alloc=true
          use_partition_alloc_as_malloc=false
          use_custom_libcxx=false
-         use_custom_libcxx_for_host=false
 +        use_system_libdrm=true
-         enable_rust=false # We do not yet support rust
-         enable_chromium_prelude=false
-         enable_rust_png=false
-@@ -326,7 +329,7 @@ macro(append_build_type_setup)
+         use_custom_libcxx_for_host=false
+         enable_constraints=false
+     )
+@@ -358,7 +361,7 @@ macro(append_build_type_setup)
  
      extend_gn_list(gnArgArg
          ARGS enable_precompiled_headers
--        CONDITION BUILD_WITH_PCH AND NOT LINUX
-+        CONDITION BUILD_WITH_PCH AND NOT UNIX
+-        CONDITION QT_FEATURE_webengine_precompiled_headers
++        CONDITION QT_FEATURE_webengine_precompiled_headers AND NOT UNIX
      )
      extend_gn_list(gnArgArg
          ARGS dcheck_always_on
-@@ -370,7 +373,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -384,7 +387,7 @@ macro(append_compiler_linker_sdk_setup)
      extend_gn_list(gnArgArg ARGS is_clang CONDITION CLANG)
      extend_gn_list(gnArgArg ARGS is_mingw CONDITION MINGW)
      extend_gn_list(gnArgArg ARGS is_msvc CONDITION MSVC)
@@ -35,17 +35,8 @@ Index: cmake/QtToolchainHelpers.cmake
 +    extend_gn_list(gnArgArg ARGS is_gcc CONDITION UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
  
      if(CLANG)
-         if(MACOS)
-@@ -418,7 +421,7 @@ macro(append_compiler_linker_sdk_setup)
-                 use_libcxx=true
-             )
-         endif()
--        if(DEFINED QT_FEATURE_stdlib_libcpp AND LINUX)
-+        if(DEFINED QT_FEATURE_stdlib_libcpp AND UNIX)
-             extend_gn_list(gnArgArg ARGS use_libcxx
-                 CONDITION QT_FEATURE_stdlib_libcpp
-             )
-@@ -459,7 +462,7 @@ macro(append_compiler_linker_sdk_setup)
+         get_clang_runtime_path_version(clang_runtime_path_version)
+@@ -478,7 +481,7 @@ macro(append_compiler_linker_sdk_setup)
          )
      endif()
      get_gn_arch(cpu ${TEST_architecture_arch})
@@ -54,7 +45,7 @@ Index: cmake/QtToolchainHelpers.cmake
  
          extend_gn_list_cflag(gnArgArg
              ARG arm_tune
-@@ -568,7 +571,7 @@ macro(append_toolchain_setup)
+@@ -587,7 +590,7 @@ macro(append_toolchain_setup)
          endif()
          unset(host_cpu)
          unset(target_cpu)

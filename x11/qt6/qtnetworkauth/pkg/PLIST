@@ -11,6 +11,7 @@ include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qoauth2authorizat
 include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qoauth2deviceauthorizationflow_p.h
 include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qoauthhttpserverreplyhandler_p.h
 include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qoauthoobreplyhandler_p.h
+include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qoauthurischemereplyhandler_p.h
 include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qtnetworkauth-config_p.h
 include/X11/qt6/QtNetworkAuth/QAbstractOAuth
 include/X11/qt6/QtNetworkAuth/QAbstractOAuth2
@@ -47,6 +48,7 @@ lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthConfigVersionImpl.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthDependencies.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthTargets.cmake
+lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthTargetsPrecheck.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthVersionlessAliasTargets.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthVersionlessTargets.cmake
 lib/cmake/Qt6NetworkAuthPrivate/
@@ -56,6 +58,7 @@ lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateConfigVersion.cmake
 lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateDependencies.cmake
 lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateTargets.cmake
+lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateVersionlessTargets.cmake
 lib/libQt6NetworkAuth.prl

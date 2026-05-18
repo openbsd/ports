@@ -2,7 +2,7 @@ QT6NAME =	QtTools
 COMMENT =	Qt6 development tools
 PKGSPEC =	qt6-qttools-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6Designer             3.1 # 6.7
+SHARED_LIBS +=  Qt6Designer             4.0 # 6.7
 SHARED_LIBS +=  Qt6DesignerComponents   2.0 # 6.7
 SHARED_LIBS +=  Qt6Help                 2.0 # 6.7
 SHARED_LIBS +=  Qt6UiTools              2.0 # 6.7
@@ -27,7 +27,7 @@ MODCLANG_COMPILER_LINKS =	Yes
 MODCLANG_BUILDDEP =		No
 MODCLANG_RUNDEP =		No
 
-BUILD_DEPENDS =	graphics/vulkan-loader \
+BUILD_DEPENDS =	graphics/vulkan-headers \
 		x11/qt6/qtlanguageserver
 
 RUN_DEPENDS =	x11/qt6/qtlanguageserver \
@@ -45,7 +45,10 @@ PROGRAMS6 =	assistant designer lconvert linguist lrelease lupdate \
 
 CONFIGURE_ARGS=	-DFEATURE_clang=ON -DTEST_libclang=ON
 
-CONFIGURE_ENV =	LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION} LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
-MODCMAKE_LDFLAGS = -L${LOCALBASE}/llvm${MODCLANG_VERSION}/lib -Wl,-rpath=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+CONFIGURE_ENV =		LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
+CONFIGURE_ENV +=	LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+
+MODCMAKE_LDFLAGS = -L${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+MODCMAKE_LDFLAGS += -Wl,-rpath=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
 .include <bsd.port.mk>

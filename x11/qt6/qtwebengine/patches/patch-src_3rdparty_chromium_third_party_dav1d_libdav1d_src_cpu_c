@@ -1,0 +1,25 @@
+Index: src/3rdparty/chromium/third_party/dav1d/libdav1d/src/cpu.c
+--- src/3rdparty/chromium/third_party/dav1d/libdav1d/src/cpu.c.orig
++++ src/3rdparty/chromium/third_party/dav1d/libdav1d/src/cpu.c
+@@ -53,9 +53,11 @@
+ #endif
+ #endif
+ 
+-#if HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
++#if !defined(__OpenBSD__)
++#if HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO || !
+ #include <sys/auxv.h>
+ #endif
++#endif
+ 
+ unsigned dav1d_cpu_flags = 0U;
+ unsigned dav1d_cpu_flags_mask = ~0U;
+@@ -114,7 +116,7 @@ COLD int dav1d_num_logical_processors(Dav1dContext *co
+ }
+ 
+ COLD unsigned long dav1d_getauxval(unsigned long type) {
+-#if HAVE_GETAUXVAL
++#if defined(HAVE_GETAUXVAL) && !defined(__OpenBSD__)
+     return getauxval(type);
+ #elif HAVE_ELF_AUX_INFO
+     unsigned long aux = 0;

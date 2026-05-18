@@ -16,23 +16,23 @@ PKG_ARCH-global =	*
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt6Concurrent                0.1 # 6.7
-SHARED_LIBS +=  Qt6Core                      7.0 # 6.7
+SHARED_LIBS +=  Qt6Core                      8.0 # 6.7
 SHARED_LIBS +=  Qt6DBus                      3.1 # 6.7
-SHARED_LIBS +=  Qt6Gui                       9.0 # 6.7
-SHARED_LIBS +=  Qt6Network                   5.0 # 6.7
+SHARED_LIBS +=  Qt6Gui                       10.0 # 6.7
+SHARED_LIBS +=  Qt6Network                   6.0 # 6.7
 SHARED_LIBS +=  Qt6OpenGL                    3.0 # 6.7
 SHARED_LIBS +=  Qt6PrintSupport              1.1 # 6.7
 SHARED_LIBS +=  Qt6Sql                       3.1 # 6.7
-SHARED_LIBS +=  Qt6Test                      5.0 # 6.7
-SHARED_LIBS +=  Qt6Widgets                   5.0 # 6.7
+SHARED_LIBS +=  Qt6Test                      5.1 # 6.7
+SHARED_LIBS +=  Qt6Widgets                   6.0 # 6.7
 SHARED_LIBS +=  Qt6Xml                       1.0 # 6.7
 SHARED_LIBS +=  Qt6EglFSDeviceIntegration    2.0 # 6.7
-SHARED_LIBS +=  Qt6EglFsKmsSupport           1.0 # 6.7
-SHARED_LIBS +=  Qt6XcbQpa                    4.1 # 6.7
-SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        0.2 # 6.7
+SHARED_LIBS +=  Qt6EglFsKmsSupport           1.1 # 6.7
+SHARED_LIBS +=  Qt6XcbQpa                    5.0 # 6.7
+SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        1.0 # 6.7
 SHARED_LIBS +=  Qt6OpenGLWidgets             1.0 # 6.7
-SHARED_LIBS +=  Qt6WaylandClient             9.0 # 6.7
-SHARED_LIBS +=  Qt6WlShellIntegration        4.0 # 6.7
+SHARED_LIBS +=  Qt6WaylandClient             10.0 # 6.7
+SHARED_LIBS +=  Qt6WlShellIntegration        4.1 # 6.7
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb atk-1.0
 WANTLIB-main += b2 brotlidec c cairo cairo-gobject crypto cups dbus-1
@@ -90,7 +90,7 @@ LIB_DEPENDS-psql =	${BASE_PKGPATH},-main \
 
 LIB_DEPENDS-psql +=	${MODGCC4_CPPLIBDEP}
 
-BUILD_DEPENDS =		graphics/vulkan-loader \
+BUILD_DEPENDS =		graphics/vulkan-headers \
 			wayland/wayland-protocols \
 			x11/gnome/at-spi2-core
 

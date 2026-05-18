@@ -1,0 +1,6 @@
+Qt6.11: Forward to bundled private header for system jpeglib.h compatibility
+Index: src/3rdparty/chromium/third_party/libjpeg_turbo/jpegint.h
+--- src/3rdparty/chromium/third_party/libjpeg_turbo/jpegint.h.orig
++++ src/3rdparty/chromium/third_party/libjpeg_turbo/jpegint.h
+@@ -0,0 +1 @@
++#include "src/jpegint.h"

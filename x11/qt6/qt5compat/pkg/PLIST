@@ -63,6 +63,7 @@ lib/cmake/Qt6Core5Compat/Qt6Core5CompatConfigVersionImpl.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatDependencies.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets.cmake
+lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargetsPrecheck.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessAliasTargets.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessTargets.cmake
 lib/cmake/Qt6Core5CompatPrivate/
@@ -72,6 +73,7 @@ lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateConfigVersion.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateDependencies.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateTargets.cmake
+lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake
@@ -80,12 +82,14 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargetsPrecheck.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargetsPrecheck.cmake
 lib/libQt6Core5Compat.prl
 @lib lib/libQt6Core5Compat.so.${LIBQt6Core5Compat_VERSION}
 lib/pkgconfig/Qt6Core5Compat.pc

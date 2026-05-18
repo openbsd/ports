@@ -2,8 +2,8 @@ QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6Multimedia             9.1 # 6.7
-SHARED_LIBS +=  Qt6MultimediaQuick        6.0 # 6.7
+SHARED_LIBS +=  Qt6Multimedia             10.0 # 6.7
+SHARED_LIBS +=  Qt6MultimediaQuick        7.0 # 6.7
 SHARED_LIBS +=  Qt6MultimediaWidgets      1.0 # 6.7
 SHARED_LIBS +=  Qt6SpatialAudio           2.0 # 6.7
 SHARED_LIBS +=	Qt6Quick3DSpatialAudio    0.0 # 0.0
@@ -18,7 +18,7 @@ WANTLIB += gstgl-1.0 gstpbutils-1.0 gstphotography-1.0 gstplay-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 intl m pulse swresample
 WANTLIB += swscale wayland-client wayland-egl xcb xkbcommon
 
-BUILD_DEPENDS =	graphics/vulkan-loader \
+BUILD_DEPENDS =	graphics/vulkan-headers \
 		x11/qt6/qtshadertools \
 		x11/qt6/qtsvg
 

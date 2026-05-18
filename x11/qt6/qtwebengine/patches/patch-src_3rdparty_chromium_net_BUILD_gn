@@ -25,22 +25,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
  source_set("constants") {
    sources = [ "base/trace_constants.h" ]
    deps = [ "//base" ]
-@@ -1313,10 +1321,10 @@ jumbo_component("net") {
-       "base/network_interfaces_linux.h",
-       "base/platform_mime_util_linux.cc",
-     ]
--    jumbo_excluded_sources += [
--      "base/address_tracker_linux.cc",
--      "base/network_interfaces_linux.cc",
--    ]
-+    #jumbo_excluded_sources += [
-+    #  "base/address_tracker_linux.cc",
-+    #  "base/network_interfaces_linux.cc",
-+    #]
-   }
- 
-   if (is_linux) {
-@@ -1326,6 +1334,19 @@ jumbo_component("net") {
+@@ -1373,6 +1381,23 @@ jumbo_component("net") {
      ]
    }
  
@@ -55,12 +40,16 @@ Index: src/3rdparty/chromium/net/BUILD.gn
 +      "base/network_change_notifier_linux.cc",
 +      "base/network_interfaces_linux.cc",
 +    ]
-+  }
++    jumbo_excluded_sources -= [
++      "base/address_tracker_linux.cc",
++      "base/network_interfaces_linux.cc",
++    ]
++  }   
 +
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1492,7 +1513,7 @@ jumbo_component("net") {
+@@ -1539,7 +1564,7 @@ jumbo_component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -69,7 +58,24 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -3009,7 +3030,7 @@ target(_test_target_type, "net_unittests") {
+@@ -2272,7 +2297,7 @@ static_library("test_support") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos || is_android) {
++  if (!is_bsd && (is_linux || is_chromeos || is_android)) {
+     sources += [
+       "base/address_tracker_linux_test_util.cc",
+       "base/address_tracker_linux_test_util.h",
+@@ -3070,14 +3095,14 @@ target(_test_target_type, "net_unittests") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "base/network_change_notifier_linux_unittest.cc",
+       "proxy_resolution/proxy_config_service_linux_unittest.cc",
      ]
    }
  
@@ -78,7 +84,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3103,6 +3124,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3178,6 +3203,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -89,16 +95,16 @@ Index: src/3rdparty/chromium/net/BUILD.gn
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3169,7 +3194,7 @@ target(_test_target_type, "net_unittests") {
-     ]
-   }
+@@ -3234,7 +3263,7 @@ target(_test_target_type, "net_unittests") {
+   ]
+   data_deps = [ "//testing/buildbot/filters:net_unittests_filters" ]
  
 -  if (is_linux || is_chromeos) {
 +  if ((is_linux || is_chromeos) && !is_bsd) {
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3308,7 +3333,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3364,7 +3393,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

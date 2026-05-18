@@ -2,8 +2,8 @@ QT6NAME =	QtGraphs
 COMMENT =	Qt6 module to visualize data in 2D and 3D graphs
 PKGSPEC =	qt6-qtgraphs-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6Graphs                 2.0 # 0.0
-SHARED_LIBS +=	Qt6GraphsWidgets          1.0 # 0.0
+SHARED_LIBS +=  Qt6Graphs                 3.0 # 0.0
+SHARED_LIBS +=	Qt6GraphsWidgets          1.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick

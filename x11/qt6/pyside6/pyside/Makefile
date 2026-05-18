@@ -23,7 +23,12 @@ WANTLIB += Qt6WebEngineWidgets Qt6WebSockets Qt6WebView Qt6Widgets
 WANTLIB += Qt6Xml m shiboken6.abi3
 WANTLIB += Qt6Multimedia
 
-MODULES +=		lang/python
+MODULES +=		lang/clang \
+			lang/python
+MODCLANG_VERSION =	19
+
+BUILD_DEPENDS =		x11/qt6/qttools \
+			devel/llvm/${MODCLANG_VERSION}
 
 LIB_DEPENDS =		x11/qt6/pyside6/shiboken \
 			x11/qt6/qt3d \
@@ -58,6 +63,9 @@ RUN_DEPENDS =		graphics/vulkan-headers
 CONFIGURE_ARGS +=	-DBUILD_TESTS=ON \
 			-DBUILD_DOCS=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
+
+CONFIGURE_ARGS +=	-DClang_DIR="${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/clang"
+CONFIGURE_ENV =		LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
 
 WRKSRC =		${WRKDIST}/sources/pyside6
 

@@ -11,4 +11,4 @@ Index: cmake/QtPlugins.cmake.in
 +    set(QT_SKIP_AUTO_PLUGIN_INCLUSION ON)
  endif()
  
- if(NOT QT_NO_CREATE_TARGETS AND NOT QT_SKIP_AUTO_PLUGIN_INCLUSION)
+ if(__qt_@QT_MODULE@_targets_file_included AND NOT QT_SKIP_AUTO_PLUGIN_INCLUSION)

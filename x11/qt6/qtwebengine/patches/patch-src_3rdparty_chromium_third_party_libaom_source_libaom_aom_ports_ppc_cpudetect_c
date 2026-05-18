@@ -26,10 +26,10 @@ Index: src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/ppc_cpud
  int ppc_simd_caps(void) {
    int flags;
    int mask;
-@@ -75,6 +78,39 @@ out_close:
-   close(fd);
+@@ -76,6 +79,39 @@ out_close:
    return flags & mask;
  }
+ #else
 +#elif defined(__OpenBSD__)
 +
 +#include <sys/auxv.h>
@@ -63,6 +63,6 @@ Index: src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/ppc_cpud
 +  return flags & mask;
 +}
 +#endif
- #else
  // If there is no RTCD the function pointers are not used and can not be
  // changed.
+ int ppc_simd_caps(void) { return 0; }

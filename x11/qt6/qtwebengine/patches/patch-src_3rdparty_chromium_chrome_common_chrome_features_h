@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/chrome/common/chrome_features.h
 --- src/3rdparty/chromium/chrome/common/chrome_features.h.orig
 +++ src/3rdparty/chromium/chrome/common/chrome_features.h
-@@ -55,13 +55,13 @@ BASE_DECLARE_FEATURE(kUseAdHocSigningForWebAppShims);
+@@ -49,13 +49,13 @@ BASE_DECLARE_FEATURE(kUseAdHocSigningForWebAppShims);
  #endif  // BUILDFLAG(IS_MAC)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -26,7 +26,7 @@ Index: src/3rdparty/chromium/chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kChromeAppsDeprecation);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kShortcutsNotApps);
-@@ -500,7 +500,7 @@ BASE_DECLARE_FEATURE(kKAnonymityServiceOHTTPRequests);
+@@ -697,7 +697,7 @@ BASE_DECLARE_FEATURE(kKAnonymityServiceOHTTPRequests);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kKAnonymityServiceStorage);
  
@@ -35,7 +35,7 @@ Index: src/3rdparty/chromium/chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kLinuxLowMemoryMonitor);
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorModerateLevel;
-@@ -508,7 +508,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -705,7 +705,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

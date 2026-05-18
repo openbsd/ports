@@ -35,7 +35,7 @@ MODQT6_LIB_DEPENDS =	x11/qt6/qtbase
 MODQT_LIB_DEPENDS ?=	${MODQT6_LIB_DEPENDS}
 
 # qdoc, etc.
-MODQT6_BUILD_DEPENDS =	graphics/vulkan-loader \
+MODQT6_BUILD_DEPENDS =	graphics/vulkan-headers \
 			x11/qt6/qttools
 
 MODQT_DEPS ?=		Yes

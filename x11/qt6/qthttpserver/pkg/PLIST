@@ -51,6 +51,7 @@ lib/cmake/Qt6HttpServer/Qt6HttpServerConfigVersionImpl.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerDependencies.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6HttpServer/Qt6HttpServerTargets.cmake
+lib/cmake/Qt6HttpServer/Qt6HttpServerTargetsPrecheck.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessAliasTargets.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessTargets.cmake
 lib/cmake/Qt6HttpServerPrivate/
@@ -60,6 +61,7 @@ lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateConfigVersion.cmake
 lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateDependencies.cmake
 lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateTargets.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateVersionlessTargets.cmake
 lib/libQt6HttpServer.prl
