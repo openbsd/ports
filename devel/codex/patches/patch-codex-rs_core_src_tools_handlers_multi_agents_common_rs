@@ -7,5 +7,5 @@ Index: codex-rs/core/src/tools/handlers/multi_agents_common.rs
      config.permissions.shell_environment_policy = turn.shell_environment_policy.clone();
 +    config.codex_self_exe = turn.codex_self_exe.clone();
      config.codex_linux_sandbox_exe = turn.codex_linux_sandbox_exe.clone();
-     config.cwd = turn.cwd.clone();
-     config
+     #[allow(deprecated)]
+     let turn_cwd = turn.cwd.clone();
