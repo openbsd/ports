@@ -1,8 +1,6 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-V =			0.13.0
-PKGNAME =		mango-${V}
-DIST_TUPLE=		github mangowm mango ${V} .
+DIST_TUPLE=		github mangowm mango 0.13.1 .
 
 CATEGORIES =		wayland
 
@@ -12,6 +10,9 @@ MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += c input m pcre2-8 scenefx-0.4 wayland-client wayland-server
+WANTLIB += xcb-icccm xkbcommon
 
 COMPILER =		base-clang ports-gcc
 
@@ -28,9 +29,6 @@ LIB_DEPENDS =		devel/pcre2 \
 RUN_DEPENDS =		sysutils/rofi \
 			wayland/foot \
 			wayland/xwayland
-
-WANTLIB += c input m pcre2-8 scenefx-0.4 wayland-client wayland-server
-WANTLIB += xcb-icccm xkbcommon
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mango/
