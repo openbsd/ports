@@ -7,10 +7,11 @@ GH_ACCOUNT =		visualboyadvance-m
 GH_PROJECT =		${GH_ACCOUNT}
 GH_TAGNAME =		v2.2.3
 PKGNAME =		vbam-${GH_TAGNAME:S/v//}
+REVISION =		0
 
 CATEGORIES =		emulators
 
-HOMEPAGE =		https://www.vba-m.com
+HOMEPAGE =		https://www.visualboyadvance-m.org/
 
 # GPLv2+ (see doc/License.txt)
 PERMIT_PACKAGE =		Yes
