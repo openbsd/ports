@@ -13,6 +13,8 @@ COMMENT=		Iridium browser
 
 V=			2026.05.148.1
 
+REVISION=		0
+
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES+=		${IRIDIUM_DISTFILES}
@@ -324,6 +326,10 @@ do-install:
 .for f in snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
+
+	# iridium builds hyphen-data as an artifact
+	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/hyphen-data
+	${INSTALL_DATA} ${BUILDDIR}/hyphen-data/* ${PREFIX}/${DIST_TARGET_DIR}/hyphen-data
 
 	# ANGLE, EGL, Vk
 .for f in libEGL libGLESv2
