@@ -1,6 +1,6 @@
 COMMENT=	C-style arbitrary precision calculator
 
-V=		2.16.1.3
+V=		2.17.0.0
 DISTNAME=	calc-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -14,13 +14,16 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	http://www.isthe.com/chongo/tech/comp/calc
 
+SITES=	https://github.com/lcn2/calc/releases/download/v$V/ \
+	http://www.isthe.com/chongo/src/calc/
+
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses readline
 
-SITES=	https://github.com/lcn2/calc/releases/download/v$V/ \
-	http://www.isthe.com/chongo/src/calc/
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MAKE_FLAGS= Q="" \
 	BINDIR='$${DESTDIR}${PREFIX}/bin' \
