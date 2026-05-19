@@ -4,8 +4,7 @@ COMMENT-doc=	documentation for LibreNMS
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	26.4.1
-# keep ver above 7.8-stable; nmap
+GH_TAGNAME=	26.5.0
 
 # strip off last component, don't normally rebuild vendor file for minor
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
