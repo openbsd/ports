@@ -51,6 +51,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/map/synchr
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/map/truffleruby_map_backend.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/non_concurrent_priority_queue.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/ruby_non_concurrent_priority_queue.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/ruby_timeout_queue.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/timeout_queue.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/concern/
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/concern/deprecation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/concern/dereferenceable.rb
