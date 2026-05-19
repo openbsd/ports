@@ -49,6 +49,8 @@ noVNC/app/locale/de.json
 noVNC/app/locale/el.json
 noVNC/app/locale/es.json
 noVNC/app/locale/fr.json
+noVNC/app/locale/hr.json
+noVNC/app/locale/hu.json
 noVNC/app/locale/it.json
 noVNC/app/locale/ja.json
 noVNC/app/locale/ko.json
@@ -139,7 +141,7 @@ noVNC/docs/rfbproto-3.3.pdf
 noVNC/docs/rfbproto-3.7.pdf
 noVNC/docs/rfbproto-3.8.pdf
 noVNC/eslint.config.mjs
-noVNC/karma.conf.js
+noVNC/karma.conf.cjs
 noVNC/mandatory.json.dist
 @sample noVNC/mandatory.json
 noVNC/package.json
@@ -150,6 +152,8 @@ noVNC/po/de.po
 noVNC/po/el.po
 noVNC/po/es.po
 noVNC/po/fr.po
+noVNC/po/hr.po
+noVNC/po/hu.po
 noVNC/po/it.po
 noVNC/po/ja.po
 noVNC/po/ko.po
@@ -203,7 +207,6 @@ noVNC/tests/vnc_playback.html
 noVNC/utils/
 noVNC/utils/README.md
 noVNC/utils/b64-to-binary.pl
-noVNC/utils/convert.js
 noVNC/utils/genkeysymdef.js
 noVNC/utils/novnc_proxy
 noVNC/utils/u2x11

@@ -2,7 +2,7 @@ COMMENT=	VNC client using HTML5 (Web Sockets, Canvas)
 
 GH_ACCOUNT=	novnc
 GH_PROJECT=	noVNC
-GH_TAGNAME=	v1.6.0
+GH_TAGNAME=	v1.7.0
 
 CATEGORIES=	net www
 
