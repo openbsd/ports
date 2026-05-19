@@ -1,0 +1,16 @@
+pkg_format is Linux only
+
+Index: src/main.cpp
+--- src/main.cpp.orig
++++ src/main.cpp
+@@ -490,8 +490,10 @@ int main(int argc, char* argv[])
+     // Read registry thru foxhacks
+     application->reg().read();
+ 
++#if defined(linux)
+     // Write package format
+     application->reg().writeUnsignedEntry("SETTINGS", "package_format", pkg_format);
++#endif
+ 
+     // Integer scaling factor depending on the monitor resolution
+     FXint res = application->reg().readUnsignedEntry("SETTINGS", "screenres", 100);

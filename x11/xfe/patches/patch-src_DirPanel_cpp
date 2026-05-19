@@ -3,7 +3,7 @@ No tar -a, use archivers/gtar
 Index: src/DirPanel.cpp
 --- src/DirPanel.cpp.orig
 +++ src/DirPanel.cpp
-@@ -1036,6 +1036,12 @@ long DirPanel::onCmdAddToArch(FXObject* o, FXSelector,
+@@ -2070,6 +2070,12 @@ long DirPanel::onCmdAddToArch(FXObject* sender, FXSele
              cmd = "tar -acvf " + archive + " ";
          }
  
@@ -14,5 +14,5 @@ Index: src/DirPanel.cpp
 +        }
 +
          // Archive command name
-         cmd = cmd + ::quote(name);
+         cmd = cmd + xf_quote(name);
  

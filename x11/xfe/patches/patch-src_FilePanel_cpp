@@ -13,7 +13,7 @@ Index: src/FilePanel.cpp
      FXMAPFUNC(SEL_RIGHTBUTTONRELEASE, FilePanel::ID_FILELIST, FilePanel::onCmdPopupMenu),
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_POPUP_MENU, FilePanel::onCmdPopupMenu),
      FXMAPFUNC(SEL_DOUBLECLICKED, FilePanel::ID_FILELIST, FilePanel::onCmdItemDoubleClicked),
-@@ -159,6 +158,7 @@ FXDEFMAP(FilePanel) FilePanelMap[] =
+@@ -160,6 +159,7 @@ FXDEFMAP(FilePanel) FilePanelMap[] =
      FXMAPFUNC(SEL_UPDATE, FilePanel::ID_TOGGLE_THUMBNAILS, FilePanel::onUpdToggleThumbnails),
      FXMAPFUNC(SEL_UPDATE, FilePanel::ID_DIR_USAGE, FilePanel::onUpdDirUsage),
  #if defined(linux)
@@ -21,7 +21,7 @@ Index: src/FilePanel.cpp
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_MOUNT, FilePanel::onCmdMount),
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_UMOUNT, FilePanel::onCmdMount),
      FXMAPFUNC(SEL_UPDATE, FilePanel::ID_MOUNT, FilePanel::onUpdMount),
-@@ -4984,6 +4984,12 @@ long FilePanel::onCmdAddToArch(FXObject* o, FXSelector
+@@ -5344,6 +5344,12 @@ long FilePanel::onCmdAddToArch(FXObject* sender, FXSel
              cmd = "tar -acvf " + archive + " ";
          }
  
@@ -34,7 +34,7 @@ Index: src/FilePanel.cpp
          for (int u = 0; u < current->list->getNumItems(); u++)
          {
              if (current->list->isItemSelected(u))
-@@ -5127,6 +5133,12 @@ long FilePanel::onCmdExtract(FXObject*, FXSelector, vo
+@@ -5489,6 +5495,12 @@ long FilePanel::onCmdExtract(FXObject*, FXSelector, vo
              cmd = "tar -axvf ";
          }
  
@@ -47,7 +47,7 @@ Index: src/FilePanel.cpp
          // Final extract command
          cmd += name + " ";
  
-@@ -5279,6 +5291,12 @@ long FilePanel::onCmdExtractToFolder(FXObject*, FXSele
+@@ -5644,6 +5656,12 @@ long FilePanel::onCmdExtractToFolder(FXObject*, FXSele
              cmd = "tar -axvf ";
          }
  
@@ -60,7 +60,7 @@ Index: src/FilePanel.cpp
          // Final extract command
          cmd += pathname + " ";
  
-@@ -5385,6 +5403,12 @@ long FilePanel::onCmdExtractHere(FXObject*, FXSelector
+@@ -5752,6 +5770,12 @@ long FilePanel::onCmdExtractHere(FXObject*, FXSelector
              else
              {
                  cmd = "tar -axvf ";

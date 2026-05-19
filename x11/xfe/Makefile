@@ -1,8 +1,7 @@
 COMMENT=	MS-Explorer like file manager for X
 
-DISTNAME=	xfe-1.46.2
+DISTNAME=	xfe-2.1.6
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
