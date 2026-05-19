@@ -14,6 +14,7 @@ VERSION=		2.0.0
 #   rm -rf node_modules
 DISTNAME=		vault-vendored-${VERSION}
 PKGNAME=		vault-${VERSION}
+REVISION=		0
 
 ### Vault UI
 MODGO_FLAGS=		-tags=ui
