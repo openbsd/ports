@@ -1,6 +1,6 @@
 COMMENT =		cryptography-based networking stack
 
-MODPY_DISTV =		1.1.3
+MODPY_DISTV =		1.2.9
 DISTNAME=		rns-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
