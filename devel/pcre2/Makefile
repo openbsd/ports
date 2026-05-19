@@ -1,11 +1,11 @@
 COMMENT =	perl-compatible regular expression library, version 2
 
-DISTNAME =	pcre2-10.44
+DISTNAME =	pcre2-10.47
 
-SHARED_LIBS +=  pcre2-16                  0.6 # 13.0
-SHARED_LIBS +=  pcre2-32                  0.6 # 13.0
-SHARED_LIBS +=  pcre2-8                   0.7 # 13.0
-SHARED_LIBS +=  pcre2-posix               1.0 # 3.5
+SHARED_LIBS +=  pcre2-16                  0.7 # 15.0
+SHARED_LIBS +=  pcre2-32                  0.7 # 15.0
+SHARED_LIBS +=  pcre2-8                   0.8 # 15.0
+SHARED_LIBS +=  pcre2-posix               1.0 # 3.7
 
 CATEGORIES =	devel
 
@@ -26,7 +26,9 @@ CONFIGURE_ARGS =	--enable-pcre2-16 \
 			--enable-pcre2-32 \
 			--enable-pcre2grep-libz \
 			--enable-pcre2grep-libbz2 \
-			--enable-pcre2test-libreadline
+			--enable-pcre2test-libreadline \
+			--disable-symvers
+
 # explicitly disable JIT that would require WXNEEDED
 CONFIGURE_ARGS +=	--disable-jit
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

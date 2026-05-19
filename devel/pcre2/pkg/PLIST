@@ -62,6 +62,7 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2_match_data_create.3
 @man man/man3/pcre2_match_data_create_from_pattern.3
 @man man/man3/pcre2_match_data_free.3
+@man man/man3/pcre2_next_match.3
 @man man/man3/pcre2_pattern_convert.3
 @man man/man3/pcre2_pattern_info.3
 @man man/man3/pcre2_serialize_decode.3
@@ -83,10 +84,12 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2_set_max_varlookbehind.3
 @man man/man3/pcre2_set_newline.3
 @man man/man3/pcre2_set_offset_limit.3
+@man man/man3/pcre2_set_optimize.3
 @man man/man3/pcre2_set_parens_nest_limit.3
 @man man/man3/pcre2_set_recursion_limit.3
 @man man/man3/pcre2_set_recursion_memory_management.3
 @man man/man3/pcre2_set_substitute_callout.3
+@man man/man3/pcre2_set_substitute_case_callout.3
 @man man/man3/pcre2_substitute.3
 @man man/man3/pcre2_substring_copy_byname.3
 @man man/man3/pcre2_substring_copy_bynumber.3
@@ -117,9 +120,10 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2syntax.3
 @man man/man3/pcre2unicode.3
 share/doc/pcre2/
-share/doc/pcre2/AUTHORS
+share/doc/pcre2/AUTHORS.md
 share/doc/pcre2/COPYING
 share/doc/pcre2/ChangeLog
-share/doc/pcre2/LICENCE
+share/doc/pcre2/LICENCE.md
 share/doc/pcre2/NEWS
 share/doc/pcre2/README
+share/doc/pcre2/SECURITY.md
