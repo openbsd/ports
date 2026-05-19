@@ -1,0 +1,14 @@
+Drop duplicate code that LLVM 22 no longer accepts.
+
+Index: converter/other/jpeg2000/libjasper_compat.c
+--- converter/other/jpeg2000/libjasper_compat.c.orig
++++ converter/other/jpeg2000/libjasper_compat.c
+@@ -3,7 +3,7 @@
+ #include "jasper/jasper.h"
+ #include "jasper/jas_image.h"
+ 
+-#ifndef JAS_HAVE_PMJAS_IMAGE_DECODE
++#if 0
+ 
+ void
+ pmjas_image_decode(jas_stream_t * const in,
