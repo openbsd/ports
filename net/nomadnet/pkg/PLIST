@@ -12,6 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/nomadnet/Conversation.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/Directory.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/Node.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/NomadNetworkApp.py
+lib/python${MODPY_VERSION}/site-packages/nomadnet/RRC.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}Conversation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -22,6 +23,8 @@ lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}Node.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}Node.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}NomadNetworkApp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}NomadNetworkApp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}RRC.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}RRC.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -62,6 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/${MODPY_PYCACHE}__init__.${
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/Browser.py
+lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/Channels.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/Config.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/Conversations.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/Directory.py
@@ -78,6 +82,8 @@ lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Browser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Browser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Channels.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Channels.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Conversations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -116,6 +122,8 @@ lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/${MODPY_PYCACHE}Scrolla
 lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/${MODPY_PYCACHE}Scrollable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/${MODPY_PYCACHE}cbor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/${MODPY_PYCACHE}cbor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/${MODPY_PYCACHE}quotes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/${MODPY_PYCACHE}quotes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/additional_urwid_widgets/
@@ -157,4 +165,5 @@ lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/additional_urwid_widget
 lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/additional_urwid_widgets/widgets/integer_picker.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/additional_urwid_widgets/widgets/message_dialog.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/additional_urwid_widgets/widgets/selectable_row.py
+lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/cbor.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/vendor/quotes.py
