@@ -1,6 +1,6 @@
 COMMENT =		lightweight extensible message format
 
-MODPY_DISTV =		0.9.3
+MODPY_DISTV =		0.9.8
 DISTNAME=		lxmf-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
