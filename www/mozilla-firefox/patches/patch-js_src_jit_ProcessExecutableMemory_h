@@ -3,7 +3,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1347139
 Index: js/src/jit/ProcessExecutableMemory.h
 --- js/src/jit/ProcessExecutableMemory.h.orig
 +++ js/src/jit/ProcessExecutableMemory.h
-@@ -17,8 +17,9 @@ namespace js {
+@@ -15,8 +15,9 @@ namespace js {
  namespace jit {
  
  // Limit on the number of bytes of executable memory to prevent JIT spraying

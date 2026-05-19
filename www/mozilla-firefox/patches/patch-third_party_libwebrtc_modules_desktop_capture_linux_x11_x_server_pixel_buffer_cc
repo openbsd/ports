@@ -1,3 +1,5 @@
+https://bugzil.la/1702919, fallback to ximage
+
 Index: third_party/libwebrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc
 --- third_party/libwebrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc.orig
 +++ third_party/libwebrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc
