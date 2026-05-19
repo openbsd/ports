@@ -4,7 +4,7 @@ Index: ext/default
 @@ -3,7 +3,7 @@
  ###########################################
  
- # Location of your Java binary (version 8)
+ # Location of your Java binary
 -JAVA_BIN="/usr/bin/java"
 +JAVA_BIN="$(/usr/local/bin/javaPathHelper -c openvox-server)"
  
