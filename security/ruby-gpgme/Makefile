@@ -1,7 +1,6 @@
 COMMENT =		Ruby language binding for gpgme
 
-DISTNAME =		gpgme-2.0.25
-REVISION =		0
+DISTNAME =		gpgme-2.0.26
 CATEGORIES =		security
 
 HOMEPAGE =		http://github.com/ueno/ruby-gpgme

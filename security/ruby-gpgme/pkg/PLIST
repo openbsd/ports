@@ -32,11 +32,13 @@ ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/crypto_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/ctx_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/data_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/encryption_flags_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/files/
 ${GEM_LIB}/gems/${DISTNAME}/test/files/testkey_pub.gpg
 ${GEM_LIB}/gems/${DISTNAME}/test/files/testkey_pub_invalid.gpg
 ${GEM_LIB}/gems/${DISTNAME}/test/files/testkey_sec.gpg
 ${GEM_LIB}/gems/${DISTNAME}/test/gpgme_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/io_callbacks_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/key_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/pinentry
 ${GEM_LIB}/gems/${DISTNAME}/test/signature_test.rb
