@@ -1,6 +1,6 @@
 COMMENT=		Ruby gem to ease i18n
 
-DISTNAME =		gettext-setup-1.1.0
+DISTNAME =		gettext-setup-1.1.1
 CATEGORIES =		devel
 HOMEPAGE =	https://github.com/puppetlabs/gettext-setup-gem
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/ruby
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		devel/ruby-fast_gettext,${MODRUBY_FLAVOR}>=2.1,<3 \
+RUN_DEPENDS +=		devel/ruby-fast_gettext,${MODRUBY_FLAVOR}>=2.1,<5 \
 			devel/ruby-gettext,${MODRUBY_FLAVOR}>=3.4,<4 \
 			devel/ruby-locale
 
