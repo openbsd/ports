@@ -1,7 +1,7 @@
 Index: src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
 --- src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts.orig
 +++ src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
-@@ -0,0 +1,957 @@
+@@ -0,0 +1,977 @@
 +// SPDX-License-Identifier: BSD-3-Clause
 +/*
 + * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
@@ -549,6 +549,26 @@ Index: src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
 +		pinctrl-names = "default";
 +
 +		wakeup-source;
++	};
++};
++
++/*
++ * Samsung Galaxy Book4 Edge embedded controller (ENE KB9058, Samsung
++ * SAM060B in ACPI).  Provides battery and AC adapter status via a
++ * vendor "Mbox" protocol on I2C.  Reverse-engineered Linux driver:
++ *   https://github.com/Saddytech/Galaxy-Book4-Edge-linux
++ *
++ * The DSDT _SB.ECTC._CRS lists this device on two channels:
++ *   - ACPI I2C1 (MMIO 0xb80000, FDT &i2c0) at addr 0x64 -- Mbox
++ *     command set used by the battery driver.
++ *   - ACPI I2C6 (MMIO 0xb94000, FDT &i2c5) at addr 0x62 -- "SABI"
++ *     command set used by fan/keyboard backlight tools.
++ * Only the Mbox channel (0x64 on &i2c0) is needed for battery status.
++ */
++&i2c0 {
++	ec: ec@64 {
++		compatible = "samsung,galaxybook-battery";
++		reg = <0x64>;
 +	};
 +};
 +
