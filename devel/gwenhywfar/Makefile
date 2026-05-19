@@ -8,6 +8,10 @@ DISTNAME=	gwenhywfar-${V}
 PKGNAME-gtk3=	gwenhywfar-gtk3-${V}
 PKGNAME-qt6=	gwenhywfar-qt6-${V}
 
+REVISION-main=	0
+REVISION-gtk3=	0
+REVISION-qt6=	0
+
 SHARED_LIBS +=  gwenhywfar           2.6      # 93.1
 SHARED_LIBS +=  gwengui-cpp          1.1      # 93.1
 SHARED_LIBS +=  gwengui-gtk3         0.1      # 93.1
@@ -35,7 +39,7 @@ WANTLIB-gtk3 += gnutls gobject-2.0 gpg-error graphite2 gtk-3 gwenhywfar
 WANTLIB-gtk3 += harfbuzz hogweed iconv idn2 intl jpeg m nettle p11-kit
 WANTLIB-gtk3 += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB-gtk3 += png tasn1 unistring wayland-client wayland-cursor wayland-egl
-WANTLIB-gtk3 += xcb xcb-render xcb-shm xkbcommon z
+WANTLIB-gtk3 += xcb xcb-render xcb-shm xkbcommon z XRes
 
 WANTLIB-qt6 += ${COMPILER_LIBCXX} EGL FLAC GL LLVM Qt6Concurrent Qt6Core
 WANTLIB-qt6 += Qt6DBus Qt6Designer Qt6Gui Qt6Help Qt6Multimedia Qt6MultimediaWidgets
@@ -54,6 +58,7 @@ WANTLIB-qt6 += ogg opus p11-kit pciaccess pcre2-16 pcre2-8 png proxy
 WANTLIB-qt6 += pulse sndfile ssl tasn1 unistring vorbis vorbisenc
 WANTLIB-qt6 += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-randr
 WANTLIB-qt6 += xcb-shm xcb-sync xcb-xfixes xkbcommon xshmfence z zstd
+WANTLIB-qt6 += Qt6SerialPort
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 WANTLIB-qt6 += drm_amdgpu drm_intel
@@ -77,6 +82,7 @@ LIB_DEPENDS-qt6=	${BASE_PKGPATH},-main \
 			${MODQT6_LIB_DEPENDS} \
 			x11/qt6/qtmultimedia \
 			x11/qt6/qtsensors \
+			x11/qt6/qtserialport \
 			x11/qt6/qttools
 
 USE_GMAKE=		Yes

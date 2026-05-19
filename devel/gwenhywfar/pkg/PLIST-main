@@ -158,6 +158,7 @@ include/gwenhywfar5/gwenhywfar/xmlcmd_gxml_fromdb.h
 include/gwenhywfar5/gwenhywfar/xmlcmd_gxml_todb.h
 include/gwenhywfar5/gwenhywfar/xmlctx.h
 include/gwenhywfar5/gwenhywfar/xsdnode.h
+lib/cmake/
 lib/cmake/gwengui-cpp-5.14/
 lib/cmake/gwengui-cpp-5.14/gwengui-cpp-config-version.cmake
 lib/cmake/gwengui-cpp-5.14/gwengui-cpp-config.cmake
