@@ -1,11 +1,10 @@
 COMMENT=	easy cache support for Flask
 
-MODPY_DISTV=2.1.0
-DISTNAME=	Flask-Caching-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:L}
+MODPY_DISTV=2.4.0
+DISTNAME=	flask_caching-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME:S/_/-/}
 CATEGORIES=	www
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
-REVISION=	3
 
 # BSD
 PERMIT_PACKAGE=	Yes
