@@ -1,10 +1,10 @@
 COMMENT = 	X.509 library
 
-DISTNAME = 	libksba-1.7.0
+DISTNAME = 	libksba-1.8.0
 
 CATEGORIES = 	security
 
-SHARED_LIBS = 	ksba 2.1	# 23.0
+SHARED_LIBS = 	ksba 2.2	# 24.0
 
 SITES =		${SITE_GNUPG:=libksba/}
 
