@@ -69,6 +69,8 @@ SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.19.mod) = 8Y88c/WdE4/VZ
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.21.mod) = 8Y88c/WdE4/VZfngGbQYcTY4FYnohQdwT0YY5C1a9Y4=
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.23.mod) = 8Y88c/WdE4/VZfngGbQYcTY4FYnohQdwT0YY5C1a9Y4=
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.23.zip) = WHrAzEu4emu6v6SOSk9kbDtrCN6sfJndQ+iDXdgVa2c=
+SHA256 (go_modules/github.com/mattn/go-shellwords/@v/v1.0.13.mod) = Kb//Fv9Xt9raZOanSAbZMVSazOYctwxFijidCZwtDsI=
+SHA256 (go_modules/github.com/mattn/go-shellwords/@v/v1.0.13.zip) = J1vIATcIKv+iCbcfDpiqeMO/KTrx14nRSxkyRerIO6I=
 SHA256 (go_modules/github.com/muesli/cancelreader/@v/v0.2.2.mod) = Q0PzbcwG1M5OFwGQBitdIk/1voMfdCUx7Cej1wk3j+E=
 SHA256 (go_modules/github.com/muesli/cancelreader/@v/v0.2.2.zip) = 8GVOf4+KSbAv8Qp1zKoOsIplqqy8RfW6kzBSduKsf2E=
 SHA256 (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.mod) = dLLnZushU3eGTVh7rfV+lVIfaS0qeGCzx3WQk/nJvsI=
@@ -126,7 +128,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = ThgX+WTKNOVFuBr9oDJaXonPWN4uQT2CB8Cv3dD9wVw=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (jjui-v0.10.5.zip) = 3Ka4/J7miTJcPNny7FdTxdEo/wqIA5XZEFV53Aly6Qo=
+SHA256 (jjui-v0.10.6.zip) = XfA4hoWH1dqR8ml0YdZQKvw6/iyJak6n/wTgukuCGhI=
 SIZE (go_modules/charm.land/bubbles/v2/@v/v2.1.0.mod) = 1275
 SIZE (go_modules/charm.land/bubbles/v2/@v/v2.1.0.zip) = 137690
 SIZE (go_modules/charm.land/bubbletea/v2/@v/v2.0.2.mod) = 1079
@@ -198,6 +200,8 @@ SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.19.mod) = 95
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.21.mod) = 95
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.23.mod) = 95
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.23.zip) = 25877
+SIZE (go_modules/github.com/mattn/go-shellwords/@v/v1.0.13.mod) = 47
+SIZE (go_modules/github.com/mattn/go-shellwords/@v/v1.0.13.zip) = 10488
 SIZE (go_modules/github.com/muesli/cancelreader/@v/v0.2.2.mod) = 108
 SIZE (go_modules/github.com/muesli/cancelreader/@v/v0.2.2.zip) = 17969
 SIZE (go_modules/github.com/pmezard/go-difflib/@v/v1.0.0.mod) = 37
@@ -255,4 +259,4 @@ SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = 
 SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = 39844
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (jjui-v0.10.5.zip) = 348873
+SIZE (jjui-v0.10.6.zip) = 356600

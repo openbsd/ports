@@ -27,6 +27,7 @@ MODGO_MODULES =	\
 	github.com/kylelemons/godebug		 v1.1.0 \
 	github.com/lucasb-eyer/go-colorful	 v1.4.0 \
 	github.com/mattn/go-runewidth		 v0.0.23 \
+	github.com/mattn/go-shellwords		 v1.0.13 \
 	github.com/muesli/cancelreader		 v0.2.2 \
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/rivo/uniseg			 v0.4.7 \
