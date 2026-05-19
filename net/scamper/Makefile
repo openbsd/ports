@@ -1,7 +1,7 @@
 COMMENT=	parallel internet measurement utility
 
 # https://mailman.caida.org/pipermail/scamper-announce/
-V=		20260331
+V=		20260420
 DISTNAME=	scamper-cvs-$V
 PKGNAME=	scamper-$V
 
@@ -17,6 +17,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # GPLv2 only
 PERMIT_PACKAGE=	 Yes
 
+# uses pledge()
 WANTLIB += c crypto m ssl pthread z
 
 SITES=		https://www.caida.org/tools/measurement/scamper/code/
