@@ -1,15 +1,16 @@
-
 proper system user name
 
 Index: lib/puppetserver/ca/utils/file_system.rb
 --- lib/puppetserver/ca/utils/file_system.rb.orig
 +++ lib/puppetserver/ca/utils/file_system.rb
-@@ -74,7 +74,7 @@ module Puppetserver
-             if pe_puppet_exists?
-               return 'pe-puppet', 'pe-puppet'
-             else
--              return 'puppet', 'puppet'
-+              return '_puppet', '_puppet'
-             end
-           end
+@@ -74,8 +74,8 @@ module Puppetserver
+         # is a symlink it operates on the link itself rather than its target.
+         def self.ensure_ownership(path)
+           return unless running_as_root?
+-          user = pe_puppet_exists? ? 'pe-puppet' : 'puppet'
+-          group = pe_puppet_exists? ? 'pe-puppet' : 'puppet'
++          user = pe_puppet_exists? ? 'pe-puppet' : '_puppet'
++          group = pe_puppet_exists? ? 'pe-puppet' : '_puppet'
+           FileUtils.chown(user, group, path)
          end
+ 
