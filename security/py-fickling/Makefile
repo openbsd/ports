@@ -1,10 +1,9 @@
 COMMENT =	analyze Python pickle object serializations
 
-MODPY_DISTV =	0.1.7
+MODPY_DISTV =	0.1.11
 DISTNAME =	fickling-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
-REVISION =	0
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 

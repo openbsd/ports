@@ -19,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}analysis.${MOD
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}analysis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,6 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}tracing.${MODP
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}tracing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fickling/analysis.py
 lib/python${MODPY_VERSION}/site-packages/fickling/cli.py
+lib/python${MODPY_VERSION}/site-packages/fickling/constants.py
 lib/python${MODPY_VERSION}/site-packages/fickling/context.py
 lib/python${MODPY_VERSION}/site-packages/fickling/exception.py
 lib/python${MODPY_VERSION}/site-packages/fickling/fickle.py
