@@ -1,7 +1,7 @@
 Index: src/cppunit/Makefile.in
 --- src/cppunit/Makefile.in.orig
 +++ src/cppunit/Makefile.in
-@@ -446,8 +446,7 @@ libcppunit_la_SOURCES = \
+@@ -478,8 +478,7 @@ libcppunit_la_SOURCES = \
    Win32DynamicLibraryManager.cpp
  
  libcppunit_la_LDFLAGS = \

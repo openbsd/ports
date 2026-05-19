@@ -1,6 +1,6 @@
 COMMENT=	c++ unit testing framework
 
-DISTNAME=	cppunit-1.14.0
+DISTNAME=	cppunit-1.15.1
 
 SHARED_LIBS +=	cppunit		4.0 # 1.14.0
 
