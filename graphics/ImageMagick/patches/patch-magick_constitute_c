@@ -1,0 +1,19 @@
+fix https://github.com/ImageMagick/ImageMagick6/issues/427 - problem
+introduced by 98153baf2e6 (mis-merge from b1db40da509 in 7.x)
+
+"ImageMagick 6 will only receive security updates and this does
+not seem to be a security issue".
+
+Index: magick/constitute.c
+--- magick/constitute.c.orig
++++ magick/constitute.c
+@@ -1193,8 +1193,7 @@ MagickExport MagickBooleanType WriteImage(const ImageI
+   if ((image->ping != MagickFalse) &&
+       (SyncImagePixelCache(image,exception) == MagickFalse))
+     return(MagickFalse);
+-  if (SyncImageProfiles(image) == MagickFalse)
+-    return(MagickFalse);
++  SyncImageProfiles(image) == MagickFalse;
+   DisassociateImageStream(image);
+   option=GetImageOption(image_info,"delegate:bimodal");
+   if ((option != (const char *) NULL) &&
