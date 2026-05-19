@@ -10,7 +10,7 @@ include/cddb/cddb_log.h
 include/cddb/cddb_site.h
 include/cddb/cddb_track.h
 include/cddb/version.h
-lib/libcddb.a
+@static-lib lib/libcddb.a
 lib/libcddb.la
 @lib lib/libcddb.so.${LIBcddb_VERSION}
 lib/pkgconfig/libcddb.pc

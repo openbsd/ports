@@ -1,0 +1,16 @@
+Fix build with llvm22:
+
+error: incompatible pointer types passing 'size_t *' (aka 'unsigned long *') to parameter of type 'socklen_t *' (aka 'unsigned int *') [-Wincompatible-pointer-types]
+
+Index: lib/cddb_net.c
+--- lib/cddb_net.c.orig
++++ lib/cddb_net.c
+@@ -305,7 +305,7 @@ int timeout_connect(int sockfd, const struct sockaddr 
+             int rv;
+             fd_set wfds;
+             struct timeval tv;
+-            size_t l;
++            socklen_t l;
+ 
+             /* set up select time out */
+             tv.tv_sec = timeout;
