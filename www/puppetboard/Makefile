@@ -1,9 +1,8 @@
 COMMENT=		web interface to PuppetDB
 
-MODPY_DISTV=		6.0.1
+MODPY_DISTV=		7.0.2
 DISTNAME=		puppetboard-${MODPY_DISTV}
 CATEGORIES=		www
-REVISION=		0
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -21,6 +20,7 @@ RUN_DEPENDS=		databases/py-puppetdb>=3.2 \
 			devel/py-setuptools \
 			sysutils/py-packaging \
 			textproc/py-commonmark \
+			textproc/py-yaml \
 			www/py-flask-apscheduler \
 			www/py-flask-wtf \
 			www/py-flask-caching \
