@@ -1,7 +1,7 @@
 Index: doc/Makefile
 --- doc/Makefile.orig
 +++ doc/Makefile
-@@ -185,7 +185,7 @@ INSTALL_SCRIPT = ${INSTALL}
+@@ -184,7 +184,7 @@ INSTALL_SCRIPT = ${INSTALL}
  INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
  LDFLAGS = 
  LIBOBJS = 
