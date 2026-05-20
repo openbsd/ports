@@ -1,0 +1,16 @@
+login_fingerprint.c:148:10: error: incompatible pointer types passing 'FILE *' (aka 'struct __sFILE *') to parameter of type 'const char *' [-Wincompatible-pointer-types]
+  148 |                 printf(back, BI_SILENT "\n");
+      |                        ^~~~
+
+Index: login_fingerprint.c
+--- login_fingerprint.c.orig
++++ login_fingerprint.c
+@@ -145,7 +145,7 @@ main(int argc, char **argv)
+ 	}
+ 
+ 	if (strcmp(service, "challenge") == 0) {
+-		printf(back, BI_SILENT "\n");
++		fprintf(back, BI_SILENT "\n");
+ 		exit(0);
+ 	}
+ 
