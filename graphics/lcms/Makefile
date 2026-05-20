@@ -3,7 +3,7 @@ COMMENT =	color management library
 DISTNAME =	lcms-1.19
 CATEGORIES =	graphics
 SITES =		${SITE_SOURCEFORGE:=lcms/}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  lcms                 2.0      # 1.19
 

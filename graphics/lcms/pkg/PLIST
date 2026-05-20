@@ -7,7 +7,7 @@
 @bin bin/wtpt
 include/icc34.h
 include/lcms.h
-lib/liblcms.a
+@static-lib lib/liblcms.a
 lib/liblcms.la
 @lib lib/liblcms.so.${LIBlcms_VERSION}
 lib/pkgconfig/lcms.pc

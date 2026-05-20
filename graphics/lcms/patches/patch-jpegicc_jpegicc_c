@@ -1,0 +1,16 @@
+jpegicc.c:752:78: error: incompatible pointer types passing 'DWORD *' (aka 'unsigned long *') to parameter of type 'unsigned int *' [-Wincompatible-pointer-types]
+  752 |         if (!IgnoreEmbedded && read_icc_profile(&Decompressor, &EmbedBuffer, &EmbedLen))
+      |                                                                              ^~~~~~~~~
+
+Index: jpegicc/jpegicc.c
+--- jpegicc/jpegicc.c.orig
++++ jpegicc/jpegicc.c
+@@ -707,7 +707,7 @@ int TransformImage(char *cDefInpProf, char *cOutProf)
+        DWORD wInput, wOutput;
+        int OutputColorSpace;
+        DWORD dwFlags = 0; 
+-       DWORD EmbedLen;
++       unsigned int EmbedLen;
+        LPBYTE EmbedBuffer;
+ 
+ 	   // Observer adaptation state (only meaningful on absolute colorimetric intent)
