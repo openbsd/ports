@@ -1,0 +1,27 @@
+Build with LibreSSL.
+
+Index: imap/http_jwt.c
+--- imap/http_jwt.c.orig
++++ imap/http_jwt.c
+@@ -82,7 +82,7 @@ static EVP_PKEY *read_public_key(struct buf *pem)
+     EVP_PKEY *pkey = PEM_read_bio_PUBKEY(bp, NULL, NULL, NULL);
+ 
+     if (pkey) {
+-        if (!EVP_PKEY_is_a(pkey, "RSA")) {
++        if (!(EVP_PKEY_base_id(pkey) == EVP_PKEY_RSA)) {
+             xsyslog(LOG_ERR, "Unsupported public key", NULL);
+             EVP_PKEY_free(pkey);
+             pkey = NULL;
+@@ -287,10 +287,10 @@ static int validate_pkey_type(struct jwt *jwt, EVP_PKE
+     if (!jwt->nid)
+         return 0;
+ 
+-    if (jwt->nid == EVP_PKEY_HMAC && EVP_PKEY_is_a(pkey, "HMAC"))
++    if (jwt->nid == EVP_PKEY_HMAC && (EVP_PKEY_base_id(pkey) == EVP_PKEY_HMAC))
+         return 1;
+ 
+-    if (jwt->nid == EVP_PKEY_RSA && EVP_PKEY_is_a(pkey, "RSA"))
++    if (jwt->nid == EVP_PKEY_RSA && (EVP_PKEY_base_id(pkey) == EVP_PKEY_RSA))
+         return 1;
+ 
+     return 0;

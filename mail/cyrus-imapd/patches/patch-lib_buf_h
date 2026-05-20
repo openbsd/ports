@@ -1,0 +1,11 @@
+Index: lib/buf.h
+--- lib/buf.h.orig
++++ lib/buf.h
+@@ -5,6 +5,7 @@
+ #ifndef INCLUDED_BUF_H
+ #define INCLUDED_BUF_H
+ 
++#include <stdarg.h> /* va_list */
+ #include <stdint.h>
+ #include <stdio.h>
+ 

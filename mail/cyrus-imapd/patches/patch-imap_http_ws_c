@@ -3,7 +3,7 @@
 Index: imap/http_ws.c
 --- imap/http_ws.c.orig
 +++ imap/http_ws.c
-@@ -390,7 +390,7 @@ static void on_frame_recv_start_cb(wslay_event_context
+@@ -309,7 +309,7 @@ static void on_frame_recv_start_cb(wslay_event_context
                                     void *user_data __attribute__((unused)))
  {
      xsyslog(LOG_DEBUG, "WS frame start",

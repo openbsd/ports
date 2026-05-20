@@ -1,0 +1,23 @@
+64bit time_t
+
+Index: imap/backupcyrusd.c
+--- imap/backupcyrusd.c.orig
++++ imap/backupcyrusd.c
+@@ -353,7 +353,7 @@ static void send_file(const char *name, const char *mb
+         map_refresh(fd, 1, &base, &len, sbuf.st_size, fname, 0);
+         prot_puts(bcd_out, "DATA ");
+         puturistring(bcd_out, name);
+-        prot_printf(bcd_out, " %lu %lu %lu\n", len, sbuf.st_mtim.tv_sec, sbuf.st_ino);
++        prot_printf(bcd_out, " %lu %lld %lu\n", len, sbuf.st_mtim.tv_sec, sbuf.st_ino);
+         prot_write(bcd_out, base, len);
+         struct message_guid guid = MESSAGE_GUID_INITIALIZER;
+         message_guid_generate(&guid, base, len);
+@@ -370,7 +370,7 @@ static void send_file(const char *name, const char *mb
+             prot_putc(' ', bcd_out);
+         }
+         puturistring(bcd_out, name);
+-        prot_printf(bcd_out, " %lu %lu %lu\n", sbuf.st_size, sbuf.st_mtim.tv_sec, sbuf.st_ino);
++        prot_printf(bcd_out, " %lu %lld %lu\n", sbuf.st_size, sbuf.st_mtim.tv_sec, sbuf.st_ino);
+     }
+ }
+ 

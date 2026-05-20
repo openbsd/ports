@@ -1,0 +1,22 @@
+./lib/util.h:472:22: error: alias must point to a defined variable or function
+  472 | __attribute__((weak, alias("wrap_clock_gettime"), visibility("default")))
+
+Index: lib/util.h
+--- lib/util.h.orig
++++ lib/util.h
+@@ -465,11 +465,15 @@ enum xsyslog_ev_arg_type {
+  * We need this shim because, unlike gettimeofday, clock_gettime itself is
+  * not a weak alias, so it can't be overridden directly.
+  */
++#ifdef __cplusplus
++extern "C" int cyrus_gettime(clockid_t, struct timespec *);
++#else
+ static int wrap_clock_gettime(clockid_t id, struct timespec *ts)
+ {
+     return clock_gettime(id, ts);
+ }
+ __attribute__((weak, alias("wrap_clock_gettime"), visibility("default")))
+ extern int cyrus_gettime(clockid_t, struct timespec *);
++#endif
+ 
+ #endif /* INCLUDED_UTIL_H */

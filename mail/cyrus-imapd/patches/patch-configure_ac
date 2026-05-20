@@ -1,0 +1,14 @@
+Use LibreSSL.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -1184,7 +1184,7 @@ SASL_SET_GSSAPI_LIBS
+ dnl
+ dnl Check for OpenSSL library, needed for TLS support
+ dnl
+-PKG_CHECK_MODULES([SSL], [openssl >= 3.0], [],
++PKG_CHECK_MODULES([SSL], [openssl], [],
+                   AC_MSG_ERROR([openssl is required]))
+ dnl call AC_SUBST macro to support pkg-config version older than 0.24
+ AC_SUBST([SSL_LIBS])

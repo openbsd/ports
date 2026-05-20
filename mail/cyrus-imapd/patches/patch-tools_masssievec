@@ -1,7 +1,7 @@
 Index: tools/masssievec
 --- tools/masssievec.orig
 +++ tools/masssievec
-@@ -59,7 +59,7 @@ if(!defined($imapdconf)) {
+@@ -22,7 +22,7 @@ if(!defined($imapdconf)) {
      $imapdconf = "/etc/imapd.conf";
  }
  

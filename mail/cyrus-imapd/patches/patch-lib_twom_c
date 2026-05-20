@@ -1,0 +1,12 @@
+Index: lib/twom.c
+--- lib/twom.c.orig
++++ lib/twom.c
+@@ -25,6 +25,8 @@
+ #include <unistd.h>
+ #include <uuid/uuid.h>
+ 
++#define UUID_STR_LEN 36 /* from OpenBSD uuid.h */
++
+ #include "twom.h"
+ 
+ #define XXH_STATIC_LINKING_ONLY /* access advanced declarations */

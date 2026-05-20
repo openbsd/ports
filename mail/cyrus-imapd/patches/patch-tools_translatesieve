@@ -1,7 +1,7 @@
 Index: tools/translatesieve
 --- tools/translatesieve.orig
 +++ tools/translatesieve
-@@ -72,7 +72,7 @@ $| = 1;
+@@ -35,7 +35,7 @@ $| = 1;
  # change ownership as appropriate?
  die "must not run as root" if ($< == 0);
  

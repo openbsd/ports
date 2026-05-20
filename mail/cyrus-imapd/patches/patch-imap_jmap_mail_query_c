@@ -1,0 +1,19 @@
+64bit time_t
+
+Index: imap/jmap_mail_query.c
+--- imap/jmap_mail_query.c.orig
++++ imap/jmap_mail_query.c
+@@ -901,11 +901,11 @@ static void _matchmime_query_serialize(matchmime_query
+         break;
+     case MATCHMIME_OP_BEFORE:
+         buf_appendcstr(buf, "BEFORE");
+-        buf_printf(buf, "{%ld}", q->v.time);
++        buf_printf(buf, "{%lld}", q->v.time);
+         break;
+     case MATCHMIME_OP_AFTER:
+         buf_appendcstr(buf, "AFTER");
+-        buf_printf(buf, "{%ld}", q->v.time);
++        buf_printf(buf, "{%lld}", q->v.time);
+         break;
+     case MATCHMIME_OP_CONVKEYWORD_ALL:
+         buf_appendcstr(buf, "CONVKEYWORD_ALL");

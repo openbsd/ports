@@ -2,7 +2,7 @@ PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.12.2
+V=			3.13.4
 DISTNAME=		cyrus-imapd-${V}
 
 SHARED_LIBS +=  cyrus_min            0.0      # unknown
@@ -20,21 +20,29 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlienc c com_err
-WANTLIB += crypto db db_cxx execinfo ical icalss icalvcal iconv
-WANTLIB += icudata icui18n icuuc jansson m nghttp2 pcre2-8 pcre2-posix
-WANTLIB += perl sasl2 shp sqlite3 srs2 ssl uuid wslay xapian xml2
-WANTLIB += z zstd
+WANTLIB += crypto execinfo ical icalvcard iconv icudata icui18n
+WANTLIB += icuuc jansson m nghttp2 pcre2-8 pcre2-posix perl sasl2
+WANTLIB += shp sqlite3 srs2 ssl uuid wslay xapian xml2 z zstd
 
-SITES=			https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-${V}/
+GH_ACCOUNT=		cyrusimap
+GH_PROJECT=		cyrus-imapd
+GH_TAGNAME=		cyrus-imapd-${V}
+#SITES=			https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-${V}/
 
 COMPILER=		base-clang ports-gcc base-gcc
 USE_GMAKE=		Yes
+
+YACC=			bison -y
+
+BUILD_DEPENDS=		devel/bison \
+			devel/p5-App-Cmd \
+			devel/p5-Type-Tiny
 
 # xapian support, needed to for compacting databases
 BUILD_DEPENDS +=	net/rsync
 RUN_DEPENDS +=		net/rsync
 
-# xxd(1), needed for caldav support
+# xxd(1), needed for http/caldav support
 BUILD_DEPENDS +=	vim-*|vim-classic-*:editors/vim
 
 LIB_DEPENDS=		archivers/brotli \
@@ -52,7 +60,9 @@ LIB_DEPENDS=		archivers/brotli \
 			www/nghttp2 \
 			www/wslay
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.18
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
@@ -63,10 +73,8 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
 			--with-syslogfacility=MAIL \
 			--without-chardet \
 			--without-sphinx-build \
-			--without-zeroskip \
 			--disable-gssapi \
 			--enable-autocreate \
-			--enable-backup \
 			--enable-calalarmd \
 			--enable-http \
 			--enable-idled \
@@ -86,6 +94,15 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 # --mandir is overriden by the ports infrastructure
 FAKE_FLAGS=		mandir=${PREFIX}/cyrus/man
 
+pre-configure:
+# XXX cannot use a patch because ./tools/imapoptions.pl iterates over the file
+# names and breaks with:
+# foo.orig.port: name must match filename at ./tools/lib/Cyrus/IMAPOptions/Option.pm line 119.
+	sed -i \
+		-e "s,/usr/lib/sendmail,/usr/sbin/sendmail,g" \
+		-e "s,/usr/sieve,/var/sieve,g" \
+		${WRKSRC}/lib/imapoptions/{sendmail,sievedir}
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/cyrus-imapd
 	cp -R ${WRKSRC}/doc/[!examples]* ${PREFIX}/share/doc/cyrus-imapd
@@ -94,11 +111,6 @@ post-install:
 	cp -R ${WRKSRC}/tools ${PREFIX}/share/examples/cyrus-imapd/
 	${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 		${PREFIX}/share/examples/cyrus-imapd/
-	rm -r ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd \
-		${PREFIX}/share/doc/cyrus-imapd/text
-# cleanup
-	rm -r ${PREFIX}/share/doc/cyrus-imapd/html/{_*,.buildinfo}
-	find ${PREFIX}/share/{doc,examples}/cyrus-imapd -name '.gitignore' -or \
-		-name '*.orig' -exec rm '{}' \+
+	rm -r ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd
 
 .include <bsd.port.mk>

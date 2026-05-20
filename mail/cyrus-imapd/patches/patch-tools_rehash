@@ -1,7 +1,7 @@
-Index: tools/rehash
---- tools/rehash.orig
-+++ tools/rehash
-@@ -69,7 +69,7 @@ my @configs = ($imapdconf);
+Index: tools/rehash.in
+--- tools/rehash.in.orig
++++ tools/rehash.in
+@@ -32,7 +32,7 @@ my @configs = ($imapdconf);
  my $confdir = "/var/imap";
  my @parts;
  my $yn = "y";

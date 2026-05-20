@@ -41,13 +41,13 @@ Index: doc/examples/cyrus_conf/normal.conf
  }
  
  EVENTS {
-@@ -47,9 +47,12 @@ EVENTS {
+@@ -55,9 +55,12 @@ EVENTS {
  
    # this is only necessary if caching TLS sessions
-   tlsprune      cmd="tls_prune" at=0400
+   tlsprune      cmd="tls_prune" cron="00 04 * * *"
 +
 +  # create SQUAT indexes for all mailboxes
-+#  squatter	cmd="squatter -s -r -i user" at=0540
++#  squatter    cmd="squatter -s -r -i user" at=0540
  }
  
  DAEMON {
