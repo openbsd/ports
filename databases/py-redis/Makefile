@@ -2,6 +2,7 @@ COMMENT =		Python interface to Redis
 
 # XXX v6+ is for redis >= 7.2 (which has new license)
 MODPY_DISTV =		5.3.1
+REVISION =		0
 GH_ACCOUNT =		redis
 GH_PROJECT =		redis-py
 GH_TAGNAME =		v${MODPY_DISTV}
@@ -24,6 +25,7 @@ MODPY_PYTEST_ARGS =	--disable-pytest-warnings \
 TEST_IS_INTERACTIVE =	Yes
 
 RUN_DEPENDS =		devel/py-async-timeout \
+			www/py-jwt
 
 TEST_DEPENDS =		databases/redis \
 			devel/py-cachetools \
