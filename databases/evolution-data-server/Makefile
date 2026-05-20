@@ -2,6 +2,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.60.1
+REVISION=		0
 
 CATEGORIES=		databases productivity
 
@@ -24,12 +25,12 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 boost_thread-mt c cairo
 WANTLIB += cairo-gobject canberra canberra-gtk3 db gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0 graphene-1.0
-WANTLIB += gtk-3 gtk-4 gweather-4 harfbuzz ical ical-glib icalss
-WANTLIB += icalvcal icudata icui18n icuuc intl javascriptcoregtk-4.1
-WANTLIB += javascriptcoregtk-6.0 json-glib-1.0 lber ldap m nspr4
-WANTLIB += nss3 nssutil3 pango-1.0 pangocairo-1.0 phonenumber
-WANTLIB += plc4 plds4 secret-1 smime3 soup-3.0 sqlite3 ssl3 uuid
-WANTLIB += vulkan webkit2gtk-4.1 webkitgtk-6.0 xml2 z
+WANTLIB += gtk-3 gtk-4 gweather-4 harfbuzz ical ical-glib icudata
+WANTLIB += icui18n icuuc intl javascriptcoregtk-4.1 javascriptcoregtk-6.0
+WANTLIB += json-glib-1.0 lber ldap m nspr4 nss3 nssutil3 pango-1.0
+WANTLIB += pangocairo-1.0 phonenumber plc4 plds4 secret-1 smime3
+WANTLIB += soup-3.0 sqlite3 ssl3 uuid vulkan webkit2gtk-4.1 webkitgtk-6.0
+WANTLIB += xml2 z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
