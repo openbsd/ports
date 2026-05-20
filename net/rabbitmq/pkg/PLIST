@@ -161,7 +161,6 @@ lib/rabbitmq/plugins/cowlib-${V}/ebin/cow_mimetypes.beam
 lib/rabbitmq/plugins/cowlib-${V}/ebin/cow_multipart.beam
 lib/rabbitmq/plugins/cowlib-${V}/ebin/cow_qpack.beam
 lib/rabbitmq/plugins/cowlib-${V}/ebin/cow_qs.beam
-lib/rabbitmq/plugins/cowlib-${V}/ebin/cow_spdy.beam
 lib/rabbitmq/plugins/cowlib-${V}/ebin/cow_sse.beam
 lib/rabbitmq/plugins/cowlib-${V}/ebin/cow_uri.beam
 lib/rabbitmq/plugins/cowlib-${V}/ebin/cow_uri_template.beam
@@ -373,6 +372,7 @@ lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_json_jiffy.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_json_jsone.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_json_jsx.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_json_ojson.beam
+lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_json_otp.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_json_poison.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_json_poison_compat_encoder.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_json_poison_lexical_encoder.beam
