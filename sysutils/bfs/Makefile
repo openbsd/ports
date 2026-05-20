@@ -4,7 +4,7 @@ CATEGORIES =	sysutils
 GH_ACCOUNT =	tavianator
 GH_PROJECT =	bfs
 GH_TAGNAME =	3.0.4
-REVISION =	1
+REVISION =	2
 
 # BSD
 PERMIT_PACKAGE =	Yes
