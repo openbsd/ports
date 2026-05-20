@@ -67,6 +67,7 @@ libexec/wireshark/extcap/
 @man man/man1/randpktdump.1
 @man man/man1/rawshark.1
 @man man/man1/reordercap.1
+@man man/man1/sharkd.1
 @man man/man1/sshdig.1
 @man man/man1/sshdump.1
 @man man/man1/strato.1
@@ -98,6 +99,7 @@ share/doc/wireshark/randpkt.html
 share/doc/wireshark/randpktdump.html
 share/doc/wireshark/rawshark.html
 share/doc/wireshark/reordercap.html
+share/doc/wireshark/sharkd.html
 share/doc/wireshark/sshdig.html
 share/doc/wireshark/sshdump.html
 share/doc/wireshark/strato.html
