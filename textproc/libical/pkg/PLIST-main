@@ -1,9 +1,28 @@
 @pkgpath textproc/libical
 include/libical/
+include/libical-glib/i-cal-enum-array.h
+include/libical-glib/i-cal-limits.h
+include/libical-glib/i-cal-param-iter.h
+include/libical-glib/i-cal-prop-iter.h
+include/libical-glib/i-cal-str-array.h
+include/libical-glib/i-cal-vcard-component.h
+include/libical-glib/i-cal-vcard-derived-parameter.h
+include/libical-glib/i-cal-vcard-derived-property.h
+include/libical-glib/i-cal-vcard-derived-value.h
+include/libical-glib/i-cal-vcard-enum-array.h
+include/libical-glib/i-cal-vcard-geo.h
+include/libical-glib/i-cal-vcard-parameter.h
+include/libical-glib/i-cal-vcard-parser.h
+include/libical-glib/i-cal-vcard-property.h
+include/libical-glib/i-cal-vcard-restriction.h
+include/libical-glib/i-cal-vcard-str-array.h
+include/libical-glib/i-cal-vcard-structured.h
+include/libical-glib/i-cal-vcard-time.h
+include/libical-glib/i-cal-vcard-tz.h
+include/libical-glib/i-cal-vcard-value.h
 include/libical/ical.h
 include/libical/icalarray.h
 include/libical/icalattach.h
-include/libical/icalbdbset_cxx.h
 include/libical/icalcalendar.h
 include/libical/icalclassify.h
 include/libical/icalcluster.h
@@ -14,45 +33,61 @@ include/libical/icalderivedvalue.h
 include/libical/icaldirset.h
 include/libical/icaldirsetimpl.h
 include/libical/icalduration.h
+include/libical/icalenumarray.h
 include/libical/icalenums.h
 include/libical/icalerror.h
 include/libical/icalfileset.h
 include/libical/icalfilesetimpl.h
 include/libical/icalgauge.h
 include/libical/icalgaugeimpl.h
-include/libical/icallangbind.h
+include/libical/icallimits.h
 include/libical/icalmemory.h
 include/libical/icalmessage.h
-include/libical/icalmime.h
 include/libical/icalparameter.h
-include/libical/icalparameter_cxx.h
+include/libical/icalparameter_cxx.hpp
 include/libical/icalparser.h
 include/libical/icalperiod.h
 include/libical/icalproperty.h
-include/libical/icalproperty_cxx.h
+include/libical/icalproperty_cxx.hpp
 include/libical/icalrecur.h
 include/libical/icalrestriction.h
 include/libical/icalset.h
 include/libical/icalspanlist.h
-include/libical/icalspanlist_cxx.h
+include/libical/icalspanlist_cxx.hpp
 include/libical/icalss.h
 include/libical/icalssyacc.h
+include/libical/icalstrarray.h
 include/libical/icaltime.h
+include/libical/icaltime_p.h
 include/libical/icaltimezone.h
 include/libical/icaltypes.h
-include/libical/icaltz-util.h
 include/libical/icalvalue.h
-include/libical/icalvalue_cxx.h
+include/libical/icalvalue_cxx.hpp
 include/libical/icalvcal.h
-include/libical/icptrholder_cxx.h
+include/libical/icptrholder_cxx.hpp
+include/libical/libical_deprecated.h
 include/libical/libical_ical_export.h
 include/libical/libical_icalss_export.h
+include/libical/libical_sentinel.h
 include/libical/libical_vcal_export.h
-include/libical/pvl.h
-include/libical/sspm.h
+include/libical/libical_vcard_export.h
 include/libical/vcaltmp.h
+include/libical/vcard.h
+include/libical/vcardcomponent.h
+include/libical/vcardderivedparameter.h
+include/libical/vcardderivedproperty.h
+include/libical/vcardderivedvalue.h
+include/libical/vcardenumarray.h
+include/libical/vcardparameter.h
+include/libical/vcardparser.h
+include/libical/vcardproperty.h
+include/libical/vcardstrarray.h
+include/libical/vcardstructured.h
+include/libical/vcardtime.h
+include/libical/vcardtypes.h
+include/libical/vcardvalue.h
 include/libical/vcc.h
-include/libical/vcomponent_cxx.h
+include/libical/vcomponent_cxx.hpp
 include/libical/vobject.h
 lib/cmake/
 lib/cmake/LibIcal/
@@ -61,17 +96,17 @@ lib/cmake/LibIcal/LibIcalConfigVersion.cmake
 lib/cmake/LibIcal/LibIcalTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/LibIcal/LibIcalTargets.cmake
 lib/girepository-1.0/
-lib/girepository-1.0/ICal-3.0.typelib
-@static-lib lib/libical.a
+lib/girepository-1.0/ICal-4.0.typelib
+lib/girepository-1.0/ICalGLib-4.0.typelib
 @lib lib/libical.so.${LIBical_VERSION}
-@static-lib lib/libical_cxx.a
 @lib lib/libical_cxx.so.${LIBical_cxx_VERSION}
-@static-lib lib/libicalss.a
 @lib lib/libicalss.so.${LIBicalss_VERSION}
-@static-lib lib/libicalss_cxx.a
 @lib lib/libicalss_cxx.so.${LIBicalss_cxx_VERSION}
-@static-lib lib/libicalvcal.a
 @lib lib/libicalvcal.so.${LIBicalvcal_VERSION}
+@lib lib/libicalvcard.so.${LIBicalvcard_VERSION}
 lib/pkgconfig/libical.pc
+lib/pkgconfig/libicalss.pc
+lib/pkgconfig/libicalvcal.pc
+lib/pkgconfig/libicalvcard.pc
 share/gir-1.0/
-share/gir-1.0/ICal-3.0.gir
+share/gir-1.0/ICal-4.0.gir

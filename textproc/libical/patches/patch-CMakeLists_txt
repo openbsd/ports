@@ -3,21 +3,21 @@ base gcc does not understand -Wwrite-strings and errors out.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -525,7 +525,7 @@ if(CMAKE_COMPILER_IS_GNUCC OR "${CMAKE_C_COMPILER_ID}"
-   check_c_compiler_flag(-Wredundant-decls HAVE_GCC_REDUNDANT_DECLS)
-   check_c_compiler_flag(-Wunreachable-code HAVE_GCC_UNREACHABLE_CODE)
-   check_c_compiler_flag(-Wvarargs HAVE_GCC_VARARGS)
--  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type")
-+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Werror=return-type")
-   #for more modern C
-   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wold-style-definition -Wstrict-prototypes")
-   if(HAVE_GCC_UNUSED_BUT_SET)
-@@ -569,7 +569,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_I
-   check_cxx_compiler_flag(-Wredundant-decls HAVE_GXX_REDUNDANT_DECLS)
-   check_cxx_compiler_flag(-Wunreachable-code HAVE_GXX_UNREACHABLE_CODE)
-   check_cxx_compiler_flag(-Wvarargs HAVE_GXX_VARARGS)
--  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden -Weffc++ -Wno-deprecated -Wall -Wextra -Woverloaded-virtual -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type")
-+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden -Weffc++ -Wno-deprecated -Wall -Wextra -Woverloaded-virtual -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Werror=return-type")
-   if(HAVE_GXX_UNUSED_BUT_SET)
-     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wunused-but-set-variable")
-   endif()
+@@ -768,7 +768,7 @@ if(CMAKE_C_COMPILER_IS_GCC OR CMAKE_C_COMPILER_IS_CLAN
+       -O2 \
+       -fvisibility=hidden \
+       -Wno-deprecated -Wall -Wunknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero \
+-      -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Wreturn-type \
++      -Wundef -Wpointer-arith -Wtype-limits -Wreturn-type \
+       -Wold-style-definition -Wstrict-prototypes"
+   )
+   if(LIBICAL_DEVMODE)
+@@ -805,7 +805,7 @@ if(CMAKE_CXX_COMPILER_IS_GCC OR CMAKE_CXX_COMPILER_IS_
+       -O2 \
+       -fvisibility=hidden \
+       -Weffc++ -Wno-deprecated -Wall -Wextra -Woverloaded-virtual -Winit-self -Wunused \
+-      -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Wreturn-type"
++      -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wreturn-type"
+   )
+   if(LIBICAL_DEVMODE)
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")

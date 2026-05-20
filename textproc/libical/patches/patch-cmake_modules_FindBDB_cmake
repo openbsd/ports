@@ -1,12 +1,12 @@
 Index: cmake/modules/FindBDB.cmake
 --- cmake/modules/FindBDB.cmake.orig
 +++ cmake/modules/FindBDB.cmake
-@@ -19,7 +19,7 @@ endif()
- find_path(
-   BDB_INCLUDE_DIR
-   NAMES db.h
--  HINTS /usr/local/opt/db/include
-+  HINTS ${LOCALBASE}/include/db4
+@@ -29,7 +29,7 @@ find_path(
+   NAMES
+     db.h
+   HINTS
+-    /usr/local/opt/db/include
++    ${LOCALBASE}/include/db4
    DOC "Include directory for the Berkeley DB library"
  )
  mark_as_advanced(BDB_INCLUDE_DIR)

@@ -3,7 +3,7 @@ don't pick up /usr/include/db.h
 Index: src/libicalss/icalbdbsetimpl.h
 --- src/libicalss/icalbdbsetimpl.h.orig
 +++ src/libicalss/icalbdbsetimpl.h
-@@ -19,7 +19,7 @@
+@@ -9,7 +9,7 @@
  #define ICALBDBSETIMPL_H
  
  #include "icalset.h"

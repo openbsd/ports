@@ -1,0 +1,19 @@
+From 0159109b38e5a3dd068f4f0c1affd9dc94983412 Mon Sep 17 00:00:00 2001
+From: Allen Winter <winter@kde.org>
+Date: Sat, 16 May 2026 10:54:38 -0400
+Subject: [PATCH] Remove "-Wl,-z,nodlopen" from gcc/clang compile options (#1325)
+
+Index: cmake/modules/openssf-cpp.cmake
+--- cmake/modules/openssf-cpp.cmake.orig
++++ cmake/modules/openssf-cpp.cmake
+@@ -117,10 +117,6 @@ if(CXX_SUPPORTS_FTRIVIAL_AUTO_VAR_INIT)
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ftrivial-auto-var-init")
+ endif()
+ 
+-check_linker_flag(CXX "-Wl,-z,nodlopen" CXX_LINKER_SUPPORTS_NODLOPEN)
+-if(CXX_LINKER_SUPPORTS_NODLOPEN)
+-  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,nodlopen")
+-endif()
+ check_linker_flag(CXX "-Wl,-z,noexecstack" CXX_LINKER_SUPPORTS_NOEXECSTACK)
+ if(CXX_LINKER_SUPPORTS_NOEXECSTACK)
+   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,noexecstack")

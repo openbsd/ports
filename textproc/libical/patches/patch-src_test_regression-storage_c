@@ -3,12 +3,12 @@ don't pick up /usr/include/db.h
 Index: src/test/regression-storage.c
 --- src/test/regression-storage.c.orig
 +++ src/test/regression-storage.c
-@@ -58,7 +58,7 @@ struct calendar
+@@ -45,7 +45,7 @@ struct calendar {
  int vcalendar_init(struct calendar **cal, const char *vcalendar, const char *title);
  
  #if defined(HAVE_BDB)
 -#include <db.h>
 +#include <db4/db.h>
  
+ /*
  int get_title(DB *dbp, const DBT *pkey, const DBT *pdata, DBT *skey);
- char *parse_vcalendar(const DBT *dbt);

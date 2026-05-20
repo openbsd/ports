@@ -1,20 +1,19 @@
 COMMENT-main=		implementation of the iCalendar protocols and data units
 COMMENT-glib=		GObject wrapper for libical library
 
-V=			3.0.20
+V=			4.0.1
 DISTNAME=		libical-${V}
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-glib=		libical-glib-${V}
-REVISION-glib=		0
-REVISION-main=		0
 
-SHARED_LIBS +=  ical                 4.5
-SHARED_LIBS +=  icalss               4.0
-SHARED_LIBS +=  icalvcal             3.0
-SHARED_LIBS +=  ical_cxx             1.1
-SHARED_LIBS +=  icalss_cxx           1.0
-SHARED_LIBS +=  ical-glib            0.0
+SHARED_LIBS +=  ical                 5.0
+SHARED_LIBS +=  icalss               5.0
+SHARED_LIBS +=  icalvcal             4.0
+SHARED_LIBS +=  ical_cxx             2.0
+SHARED_LIBS +=  icalss_cxx           2.0
+SHARED_LIBS +=  ical-glib            1.0
+SHARED_LIBS +=	icalvcard            0.0
 
 CATEGORIES=		textproc
 
@@ -27,9 +26,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += icui18n icudata icuuc
 WANTLIB-main += ${WANTLIB} ${COMPILER_LIBCXX} m lib/db4/db lib/db4/db_cxx
-WANTLIB-glib += ${WANTLIB} c ical glib-2.0 gobject-2.0 intl pthread xml2
+WANTLIB-glib += ${WANTLIB} c ical icalvcard glib-2.0 gobject-2.0 intl
+WANTLIB-glib += pthread xml2
 
-SITES=		https://github.com/libical/libical/releases/download/v${V}/
+SITES=			https://github.com/libical/libical/releases/download/v${V}/
 
 MULTI_PACKAGES=		-main -glib
 
@@ -49,10 +49,11 @@ LIB_DEPENDS-glib=	devel/glib2 \
 			${BASE_PKGPATH},-main=${V}
 
 
-CONFIGURE_ARGS=		-DENABLE_GTK_DOC=false \
-			-DGOBJECT_INTROSPECTION=true \
-			-DICAL_GLIB_VAPI=true \
-			-DICAL_BUILD_DOCS=false
+CONFIGURE_ARGS=		-DLIBICAL_GOBJECT_INTROSPECTION=true \
+			-DLIBICAL_GLIB_VAPI=true \
+			-DLIBICAL_BUILD_DOCS=false \
+			-DLIBICAL_BUILD_DOCS=false \
+			-DLIBICAL_JAVA_BINDINGS=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
