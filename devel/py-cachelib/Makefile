@@ -1,6 +1,6 @@
 COMMENT =		collection of cache libraries
 
-MODPY_DISTV =	0.14.0
+MODPY_DISTV =		0.14.0
 DISTNAME =		cachelib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		flit_core
 
 # Needs pkg_add mongodb and rcctl start mongod
 # to make the mongodb tests work
