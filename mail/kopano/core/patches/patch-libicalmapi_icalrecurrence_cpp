@@ -1,0 +1,322 @@
+Fix for libical >= 4
+
+Index: libicalmapi/icalrecurrence.cpp
+--- libicalmapi/icalrecurrence.cpp.orig
++++ libicalmapi/icalrecurrence.cpp
+@@ -73,7 +73,7 @@ HRESULT ICalRecurrence::HrParseICalRecurrenceRule(cons
+ 		// check for duration property
+ 		lpicProp = icalcomponent_get_first_property(lpicEvent, ICAL_DURATION_PROPERTY);
+ 		if (lpicProp != nullptr)
+-			dtUTCEnd = dtUTCStart + icaldurationtype_as_int(icalproperty_get_duration(lpicProp));
++			dtUTCEnd = dtUTCStart + icaldurationtype_as_utc_seconds(icalproperty_get_duration(lpicProp));
+ 	} else {
+ 		dtUTCEnd = ICalTimeTypeToUTC(lpicRootEvent, lpicProp);
+ 	}
+@@ -87,7 +87,7 @@ HRESULT ICalRecurrence::HrParseICalRecurrenceRule(cons
+ 	lpRec->setFirstDOW(0);
+ 
+ 	sPropVal.ulPropTag = CHANGE_PROP_TYPE(lpNamedProps->aulPropTag[PROP_RECURRENCETYPE], PT_LONG);
+-	switch (icRRule.freq) {
++	switch (icRRule->freq) {
+ 	case ICAL_DAILY_RECURRENCE:
+ 		sPropVal.Value.ul = 1;
+ 		lpRec->setFrequency(recurrence::DAILY);
+@@ -108,8 +108,8 @@ HRESULT ICalRecurrence::HrParseICalRecurrenceRule(cons
+ 		sPropVal.Value.ul = 4;
+ 		lpRec->setFrequency(recurrence::YEARLY);
+ 		lpRec->setDayOfMonth(tm.tm_mday);
+-		if (icRRule.by_month[0] != ICAL_RECURRENCE_ARRAY_MAX)
+-			lpRec->setMonth(icRRule.by_month[0]);
++		if (icRRule->by[ICAL_BY_MONTH].size > 0)
++			lpRec->setMonth(icRRule->by[ICAL_BY_MONTH].data[0]);
+ 		break;
+ 	default:
+ 		return MAPI_E_INVALID_PARAMETER;
+@@ -117,29 +117,26 @@ HRESULT ICalRecurrence::HrParseICalRecurrenceRule(cons
+ 	lpIcalItem->lstMsgProps.emplace_back(sPropVal);
+ 
+ 	// since we know the frequency, this value can be set correctly
+-	lpRec->setInterval(icRRule.interval);
++	lpRec->setInterval(icRRule->interval);
+ 
+ 	// ulWeekDays, ulWeekNumber (monthly)
+-	if (icRRule.by_day[i] != ICAL_RECURRENCE_ARRAY_MAX) {
++	if (icRRule->by[ICAL_BY_DAY].size > 0) {
+ 		ulWeekDays = 0;
+ 
+-		if (icRRule.by_day[0] < 0) {
++		if (icRRule->by[ICAL_BY_DAY].data[0] < 0) {
+ 			// outlook can only have _one_ last day of the month/year (not daily or weekly here!)
+-			auto dy = abs(icRRule.by_day[0] % 8);
++			auto dy = abs(icRRule->by[ICAL_BY_DAY].data[0] % 8);
+ 			ulWeekDays = dy != 0 ? 1 << (dy - 1) : 0b1111111;
+ 			// next call also changes pattern to 3!
+ 			lpRec->setWeekNumber(5);
+-		} else if (icRRule.by_day[0] >= 1 && icRRule.by_day[0] <= 7) {
++		} else if (icRRule->by[ICAL_BY_DAY].data[0] >= 1 && icRRule->by[ICAL_BY_DAY].data[0] <= 7) {
+ 			// weekly, normal days
+-			i = 0;
+-			while (icRRule.by_day[i] != ICAL_RECURRENCE_ARRAY_MAX) {
+-				ulWeekDays |= (1 << (icRRule.by_day[i] - 1));
+-				++i;
+-			}
++			for (i = 0; i < icRRule->by[ICAL_BY_DAY].size; ++i)
++				ulWeekDays |= (1 << (icRRule->by[ICAL_BY_DAY].data[i] - 1));
+ 			// handle the BYSETPOS value
+-			if (icRRule.by_set_pos[0] != ICAL_RECURRENCE_ARRAY_MAX) {
++			if (icRRule->by[ICAL_BY_SET_POS].size > 0) {
+ 				// Monthly every Nth [mo/to/we/th/fr/sa/su] day
+-				lpRec->setWeekNumber(icRRule.by_set_pos[0]);
++				lpRec->setWeekNumber(icRRule->by[ICAL_BY_SET_POS].data[0]);
+ 			} else if (lpRec->getFrequency() == recurrence::MONTHLY) {
+ 				// A monthly every [mo/tu/we/th/fr/sa/su]day is not supported in outlook. but this is the same as
+ 				// weekly x day so convert this item to weekly x day
+@@ -157,34 +154,34 @@ HRESULT ICalRecurrence::HrParseICalRecurrenceRule(cons
+ 			}
+ 		} else {
+ 			// monthly, first sunday: 9, monday: 10
+-			auto dy = icRRule.by_day[0] % 8;
++			auto dy = icRRule->by[ICAL_BY_DAY].data[0] % 8;
+ 			ulWeekDays = dy != 0 ? 1 << (dy - 1) : 0b1111111;
+-			lpRec->setWeekNumber((int)(icRRule.by_day[0]/8)); // 1..4
++			lpRec->setWeekNumber((int)(icRRule->by[ICAL_BY_DAY].data[0]/8)); // 1..4
+ 		}
+ 		lpRec->setWeekDays(ulWeekDays);
+-	} else if (icRRule.by_month_day[0] != ICAL_RECURRENCE_ARRAY_MAX) {
++	} else if (icRRule->by[ICAL_BY_MONTH_DAY].size > 0) {
+ 		// outlook can only have _one_ day in the month/year, while ical can do multiple
+ 		// do we need to create multiple items here ?? :(
+-		lpRec->setDayOfMonth(icRRule.by_month_day[0]);
+-	}else if (icRRule.freq == ICAL_MONTHLY_RECURRENCE || icRRule.freq == ICAL_YEARLY_RECURRENCE) {
++		lpRec->setDayOfMonth(icRRule->by[ICAL_BY_MONTH_DAY].data[0]);
++	}else if (icRRule->freq == ICAL_MONTHLY_RECURRENCE || icRRule->freq == ICAL_YEARLY_RECURRENCE) {
+ 		// When RRULE:FREQ=MONTHLY;INTERVAL=1 is set then day of the month is set from the start date.
+ 		lpRec->setDayOfMonth(tm.tm_mday);
+ 	}
+ 
+ 	lpRec->setStartDateTime(lpRec->calcStartDate());
+ 
+-	if (icRRule.count != 0) {
++	if (icRRule->count != 0) {
+ 		// count limit
+ 		lpRec->setEndType(recurrence::NUMBER);
+-		lpRec->setCount(icRRule.count);
++		lpRec->setCount(icRRule->count);
+ 		// calculate end
+ 		lpRec->setEndDate(lpRec->calcEndDate());
+ 		dtUTCUntil = lpRec->getEndDate();
+-	} else if (icRRule.until.year != 0) {
++	} else if (icRRule->until.year != 0) {
+ 		// date limit
+ 		lpRec->setEndType(recurrence::DATE);
+ 		// enddate is the date/time of the LAST occurrence, do not add duration
+-		dtUTCUntil = icaltime_as_timet_with_zone(icRRule.until, NULL);
++		dtUTCUntil = icaltime_as_timet_with_zone(icRRule->until, NULL);
+ 		lpRec->setEndDate(UTCToLocal(dtUTCUntil, sTimeZone));
+ 		// calculate number
+ 		lpRec->setCount(lpRec->calcCount());
+@@ -700,15 +697,20 @@ bool ICalRecurrence::HrValidateOccurrence(icalitem *lp
+ HRESULT ICalRecurrence::HrCreateICalRecurrence(const TIMEZONE_STRUCT &sTimeZone,
+     bool bIsAllDay, recurrence *lpRecurrence, icalcomponent *lpicEvent)
+ {
+-	icalrecurrencetype icRRule;
+ 	icaltimetype ittExDate;
+ 	TIMEZONE_STRUCT sTZgmt{};
+ 
+-	auto hr = HrCreateICalRecurrenceType(sTimeZone, bIsAllDay, lpRecurrence, &icRRule);
+-	if (hr != hrSuccess)
++	auto icRRule = icalrecurrencetype_new();
++	if (icRRule == nullptr)
++		return MAPI_E_NOT_ENOUGH_MEMORY;
++	auto hr = HrCreateICalRecurrenceType(sTimeZone, bIsAllDay, lpRecurrence, icRRule);
++	if (hr != hrSuccess) {
++		icalrecurrencetype_unref(icRRule);
+ 		return hr;
++	}
+ 
+ 	icalcomponent_add_property(lpicEvent, icalproperty_new_rrule(icRRule));
++	icalrecurrencetype_unref(icRRule);
+ 
+ 	// all delete exceptions are in the delete list,
+ 	auto lstExceptions = lpRecurrence->getDeletedExceptions();
+@@ -739,31 +741,31 @@ HRESULT ICalRecurrence::HrCreateICalRecurrence(const T
+ HRESULT ICalRecurrence::HrCreateICalRecurrenceType(const TIMEZONE_STRUCT &sTimeZone,
+     bool bIsAllday, recurrence *lpRecurrence, icalrecurrencetype *lpicRRule)
+ {
+-	struct icalrecurrencetype icRec;
++	/* lpicRRule is caller-allocated (icalrecurrencetype_new() already zero-inits). */
++	auto icRec = lpicRRule;
+ 
+-	icalrecurrencetype_clear(&icRec);
+-
+ 	switch (lpRecurrence->getFrequency()) {
+ 	case recurrence::DAILY:
+-		icRec.freq = ICAL_DAILY_RECURRENCE;
++		icRec->freq = ICAL_DAILY_RECURRENCE;
+ 		// only weekdays selected in outlook
+ 		if (!lpRecurrence->getWeekDays())
+ 			break;
+ 		// iCal.app does not have daily-weekday type of recurrence
+ 		// so Daily-weekdays is converted to weekly recurrence
+-		icRec.freq = ICAL_WEEKLY_RECURRENCE;
+-		WeekDaysToICalArray(lpRecurrence->getWeekDays(), &icRec);
++		icRec->freq = ICAL_WEEKLY_RECURRENCE;
++		WeekDaysToICalArray(lpRecurrence->getWeekDays(), icRec);
+ 		break;
+ 	case recurrence::WEEKLY:
+-		icRec.freq = ICAL_WEEKLY_RECURRENCE;
+-		WeekDaysToICalArray(lpRecurrence->getWeekDays(), &icRec);
++		icRec->freq = ICAL_WEEKLY_RECURRENCE;
++		WeekDaysToICalArray(lpRecurrence->getWeekDays(), icRec);
+ 		break;
+ 	case recurrence::MONTHLY:
+-		icRec.freq = ICAL_MONTHLY_RECURRENCE;
++		icRec->freq = ICAL_MONTHLY_RECURRENCE;
+ 		if (lpRecurrence->getWeekNumber() == 0) {
+ 			// mapi patterntype == 2
+-			icRec.by_month_day[0] = lpRecurrence->getDayOfMonth();
+-			icRec.by_month_day[1] = ICAL_RECURRENCE_ARRAY_MAX;
++			if (!icalrecur_resize_by(&icRec->by[ICAL_BY_MONTH_DAY], 1))
++				return MAPI_E_NOT_ENOUGH_MEMORY;
++			icRec->by[ICAL_BY_MONTH_DAY].data[0] = lpRecurrence->getDayOfMonth();
+ 			break;
+ 		}
+ 		// mapi patterntype == 3
+@@ -771,48 +773,56 @@ HRESULT ICalRecurrence::HrCreateICalRecurrenceType(con
+ 		if (lpRecurrence->getWeekDays() == 127) {
+ 			// All Weekdays are set for recurrence type "second" "day" of month.
+ 			// SU,MO,TU,WE,TH,FR,SA -> weekdays = 127.
+-			icRec.by_month_day[0] = lpRecurrence->getWeekNumber() == 5 ? -1 : lpRecurrence->getWeekNumber(); // hack to handle nth day month type of rec.
+-			icRec.by_month_day[1] = ICAL_RECURRENCE_ARRAY_MAX;
++			if (!icalrecur_resize_by(&icRec->by[ICAL_BY_MONTH_DAY], 1))
++				return MAPI_E_NOT_ENOUGH_MEMORY;
++			icRec->by[ICAL_BY_MONTH_DAY].data[0] = lpRecurrence->getWeekNumber() == 5 ? -1 : lpRecurrence->getWeekNumber(); // hack to handle nth day month type of rec.
+ 			break;
+ 		} else if (lpRecurrence->getWeekDays() == 62 || lpRecurrence->getWeekDays() == 65) {
+ 			// Recurrence of type '3rd weekday'/'last weekend'
+ 			// MO,TU,WE,TH,FR -> 62 and SU,SA -> 65
+-			icRec.by_set_pos[0] = lpRecurrence->getWeekNumber();
+-			icRec.by_set_pos[1] = ICAL_RECURRENCE_ARRAY_MAX;
+-			WeekDaysToICalArray(lpRecurrence->getWeekDays(), &icRec);
++			if (!icalrecur_resize_by(&icRec->by[ICAL_BY_SET_POS], 1))
++				return MAPI_E_NOT_ENOUGH_MEMORY;
++			icRec->by[ICAL_BY_SET_POS].data[0] = lpRecurrence->getWeekNumber();
++			WeekDaysToICalArray(lpRecurrence->getWeekDays(), icRec);
+ 		} else if (lpRecurrence->getWeekNumber() == 5) {
+-			icRec.by_day[0] = (round(log((double)lpRecurrence->getWeekDays()) / log(2.0)) + 8 + 1) * -1;  // corrected last weekday
+-			icRec.by_day[1] = ICAL_RECURRENCE_ARRAY_MAX;
++			if (!icalrecur_resize_by(&icRec->by[ICAL_BY_DAY], 1))
++				return MAPI_E_NOT_ENOUGH_MEMORY;
++			icRec->by[ICAL_BY_DAY].data[0] = (round(log((double)lpRecurrence->getWeekDays()) / log(2.0)) + 8 + 1) * -1;  // corrected last weekday
+ 		} else {
+-			icRec.by_day[0] = round(log((double)lpRecurrence->getWeekDays()) / log(2.0)) + (8 * lpRecurrence->getWeekNumber()) + 1; // +1 because outlook starts on sunday
+-			icRec.by_day[1] = ICAL_RECURRENCE_ARRAY_MAX;
++			if (!icalrecur_resize_by(&icRec->by[ICAL_BY_DAY], 1))
++				return MAPI_E_NOT_ENOUGH_MEMORY;
++			icRec->by[ICAL_BY_DAY].data[0] = round(log((double)lpRecurrence->getWeekDays()) / log(2.0)) + (8 * lpRecurrence->getWeekNumber()) + 1; // +1 because outlook starts on sunday
+ 		}
+ 		break;
+ 	case recurrence::YEARLY:
+-		icRec.freq = ICAL_YEARLY_RECURRENCE;
++		icRec->freq = ICAL_YEARLY_RECURRENCE;
+ 		if (lpRecurrence->getWeekNumber() == 0) {
+ 			// mapi patterntype == 2
+-			icRec.by_month_day[0] = lpRecurrence->getDayOfMonth();
+-			icRec.by_month_day[1] = ICAL_RECURRENCE_ARRAY_MAX;
+-			icRec.by_month[0] = lpRecurrence->getMonth();
+-			icRec.by_month[1] = ICAL_RECURRENCE_ARRAY_MAX;
++			if (!icalrecur_resize_by(&icRec->by[ICAL_BY_MONTH_DAY], 1))
++				return MAPI_E_NOT_ENOUGH_MEMORY;
++			icRec->by[ICAL_BY_MONTH_DAY].data[0] = lpRecurrence->getDayOfMonth();
++			if (!icalrecur_resize_by(&icRec->by[ICAL_BY_MONTH], 1))
++				return MAPI_E_NOT_ENOUGH_MEMORY;
++			icRec->by[ICAL_BY_MONTH].data[0] = lpRecurrence->getMonth();
+ 			break;
+ 		}
+ 		// mapi patterntype == 3
+ 		// only 1 day should be set!
++		if (!icalrecur_resize_by(&icRec->by[ICAL_BY_DAY], 1))
++			return MAPI_E_NOT_ENOUGH_MEMORY;
+ 		if (lpRecurrence->getWeekNumber() == 5)
+-			icRec.by_day[0] = ((log((double)lpRecurrence->getWeekDays())/log(2.0)) + 8 + 1 ) * -1;
++			icRec->by[ICAL_BY_DAY].data[0] = ((log((double)lpRecurrence->getWeekDays())/log(2.0)) + 8 + 1 ) * -1;
+ 		else
+-			icRec.by_day[0] = (int)(log((double)lpRecurrence->getWeekDays())/log(2.0)) + (8 * lpRecurrence->getWeekNumber() ) +1; // +1 because outlook starts on sunday
+-		icRec.by_day[1] = ICAL_RECURRENCE_ARRAY_MAX;
+-		icRec.by_month[0] = lpRecurrence->getMonth();
+-		icRec.by_month[1] = ICAL_RECURRENCE_ARRAY_MAX;
++			icRec->by[ICAL_BY_DAY].data[0] = (int)(log((double)lpRecurrence->getWeekDays())/log(2.0)) + (8 * lpRecurrence->getWeekNumber() ) +1; // +1 because outlook starts on sunday
++		if (!icalrecur_resize_by(&icRec->by[ICAL_BY_MONTH], 1))
++			return MAPI_E_NOT_ENOUGH_MEMORY;
++		icRec->by[ICAL_BY_MONTH].data[0] = lpRecurrence->getMonth();
+ 		break;
+ 	default:
+ 		return MAPI_E_INVALID_PARAMETER;
+ 	}
+ 
+-	icRec.interval = lpRecurrence->getInterval();
++	icRec->interval = lpRecurrence->getInterval();
+ 
+ 	switch (lpRecurrence->getEndType()) {
+ 	case recurrence::DATE:
+@@ -825,22 +835,21 @@ HRESULT ICalRecurrence::HrCreateICalRecurrenceType(con
+ 		   as a date-time value, then it MUST be specified in an UTC time
+ 		   format.
+ 		*/
+-		icRec.count = 0;
++		icRec->count = 0;
+ 		/* If untiltime is saved as UTC, it breaks last occurrence. */
+-		icRec.until = icaltime_from_timet_with_zone(lpRecurrence->getEndDate() + lpRecurrence->getStartTimeOffset(), bIsAllday, nullptr);
+-		kc_ical_utc(icRec.until, false);
++		icRec->until = icaltime_from_timet_with_zone(lpRecurrence->getEndDate() + lpRecurrence->getStartTimeOffset(), bIsAllday, nullptr);
++		kc_ical_utc(icRec->until, false);
+ 		break;
+ 	case recurrence::NUMBER:
+-		icRec.count = lpRecurrence->getCount();
+-		icRec.until = icaltime_null_time();
++		icRec->count = lpRecurrence->getCount();
++		icRec->until = icaltime_null_time();
+ 		break;
+ 	case recurrence::NEVER:
+-		icRec.count = 0;
+-		icRec.until = icaltime_null_time();
++		icRec->count = 0;
++		icRec->until = icaltime_null_time();
+ 		break;
+ 	};
+ 
+-	*lpicRRule = icRec;
+ 	return hrSuccess;
+ }
+ 
+@@ -854,12 +863,18 @@ HRESULT ICalRecurrence::HrCreateICalRecurrenceType(con
+  */
+ HRESULT ICalRecurrence::WeekDaysToICalArray(ULONG ulWeekDays, struct icalrecurrencetype *lpRec)
+ {
+-	int j = 0;
++	int j = 0, ndays = 0;
+ 
+ 	for (int i = 0; i < 7; ++i)
+ 		if ((ulWeekDays >> i) & 1)
+-			lpRec->by_day[j++] = i+1;
+-	lpRec->by_day[j] = ICAL_RECURRENCE_ARRAY_MAX;
++			++ndays;
++	if (ndays == 0)
++		return hrSuccess;
++	if (!icalrecur_resize_by(&lpRec->by[ICAL_BY_DAY], ndays))
++		return MAPI_E_NOT_ENOUGH_MEMORY;
++	for (int i = 0; i < 7; ++i)
++		if ((ulWeekDays >> i) & 1)
++			lpRec->by[ICAL_BY_DAY].data[j++] = i + 1;
+ 	return hrSuccess;
+ }
+ 
+@@ -872,7 +887,7 @@ HRESULT ICalRecurrence::WeekDaysToICalArray(ULONG ulWe
+  */
+ HRESULT ICalRecurrence::HrMakeICalException(icalcomponent *lpicEvent, icalcomponent **lppicException)
+ {
+-	auto lpicException = icalcomponent_new_clone(lpicEvent);
++	auto lpicException = icalcomponent_clone(lpicEvent);
+ 	// these are always different in an exception
+ 	auto lpicProp = icalcomponent_get_first_property(lpicException, ICAL_DTSTART_PROPERTY);
+ 	if (lpicProp) {

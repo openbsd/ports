@@ -1,0 +1,14 @@
+Fix for libical >= 4
+
+Index: libicalmapi/vconverter.cpp
+--- libicalmapi/vconverter.cpp.orig
++++ libicalmapi/vconverter.cpp
+@@ -2592,7 +2592,7 @@ HRESULT VConverter::HrUpdateReminderTime(icalcomponent
+ 		return MAPI_E_NOT_FOUND;
+ 
+ 	memset(&sittTrigger, 0, sizeof(icaltriggertype));
+-	sittTrigger.duration = icaldurationtype_from_int(-1 * lReminder * 60); // set seconds
++	sittTrigger.duration = icaldurationtype_from_seconds(-1 * lReminder * 60); // set seconds
+ 	auto lpicProp = icalcomponent_get_first_property(lpicAlarm, ICAL_TRIGGER_PROPERTY);
+ 	if (lpicProp) {
+ 		icalcomponent_remove_property(lpicAlarm, lpicProp);

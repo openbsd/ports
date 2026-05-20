@@ -8,8 +8,8 @@ PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
 EPOCH=		0
 
-REVISION-main=	14
-REVISION-mapi=	10
+REVISION-main=	15
+REVISION-mapi=	11
 
 CATEGORIES=	mail www productivity
 
@@ -48,10 +48,10 @@ BUILD_DEPENDS=	devel/cppunit \
 		textproc/xmlto
 
 WANTLIB += m pthread z vmime iconv icudata icui18n icuuc intl
-WANTLIB += lzma crypto ssl kvm idn2 unistring
+WANTLIB += crypto ssl kvm idn2 unistring nghttp3 ngtcp2 ngtcp2_crypto_libressl
 
 WANTLIB-main += c ${WANTLIB} ${MODPY_WANTLIB}
-WANTLIB-main += curl nghttp2 ical icalss
+WANTLIB-main += curl nghttp2 ical
 WANTLIB-main += mariadb curses ssl xml2
 WANTLIB-main += gsoapssl++
 WANTLIB-main += ${COMPILER_LIBCXX}
@@ -91,7 +91,7 @@ LIB_DEPENDS-main= databases/mariadb \
 		textproc/libxml
 
 WANTLIB-mapi += ${WANTLIB}
-WANTLIB-mapi += ical icalss mapi
+WANTLIB-mapi += ical mapi
 WANTLIB-mapi += xml2
 WANTLIB-mapi += ${COMPILER_LIBCXX}
 WANTLIB-mapi += icalvcal kcfreebusy kcicalmapi kcinetmapi

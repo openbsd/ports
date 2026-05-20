@@ -1,0 +1,16 @@
+Fix for libical >= 4
+
+Index: libicalmapi/vevent.cpp
+--- libicalmapi/vevent.cpp.orig
++++ libicalmapi/vevent.cpp
+@@ -350,8 +350,8 @@ HRESULT VEventConverter::HrAddTimes(icalproperty_metho
+ 			return MAPI_E_INVALID_PARAMETER;
+ 
+ 		icaldurationtype dur = icalproperty_get_duration(lpicDurationProp);
+-		timeDTEndLocal = timeDTStartLocal + icaldurationtype_as_int(dur);
+-		timeDTEndUTC = timeDTStartUTC + icaldurationtype_as_int(dur);
++		timeDTEndLocal = timeDTStartLocal + icaldurationtype_as_utc_seconds(dur);
++		timeDTEndUTC = timeDTStartUTC + icaldurationtype_as_utc_seconds(dur);
+ 	}
+ 	timeEndOffset = timeDTEndUTC - timeDTEndLocal;
+ 	sPropVal.Value.ft = UnixTimeToFileTime(bIsAllday ? timeDTEndLocal : timeDTEndUTC);

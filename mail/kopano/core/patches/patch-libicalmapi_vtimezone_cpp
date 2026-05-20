@@ -1,0 +1,132 @@
+Fix for libical >= 4
+
+Index: libicalmapi/vtimezone.cpp
+--- libicalmapi/vtimezone.cpp.orig
++++ libicalmapi/vtimezone.cpp
+@@ -184,20 +184,21 @@ static HRESULT HrZoneToStruct(icalcomponent_kind kind,
+ 
+ 	auto recur = icalproperty_get_rrule(rRule);
+ 	// can daylight saving really be !yearly ??
+-	if (recur.freq != ICAL_YEARLY_RECURRENCE ||
+-	    recur.by_month[0] == ICAL_RECURRENCE_ARRAY_MAX ||
+-	    recur.by_month[1] != ICAL_RECURRENCE_ARRAY_MAX)
++	if (recur->freq != ICAL_YEARLY_RECURRENCE ||
++	    recur->by[ICAL_BY_MONTH].size != 1)
+ 		return hrSuccess;
+ 
+ 	stRecurTime = TMToSystemTime(UTC_ICalTime2UnixTime(icTime));
+ 	lpSysTime->wHour = stRecurTime.wHour;
+ 	lpSysTime->wMinute = stRecurTime.wMinute;
+-	lpSysTime->wMonth = recur.by_month[0];
+-	if (icalrecurrencetype_day_position(recur.by_day[0]) == -1)
++	lpSysTime->wMonth = recur->by[ICAL_BY_MONTH].data[0];
++	if (recur->by[ICAL_BY_DAY].size == 0)
++		return hrSuccess;
++	if (icalrecurrencetype_day_position(recur->by[ICAL_BY_DAY].data[0]) == -1)
+ 		lpSysTime->wDay = 5;	// last day of month
+ 	else
+-		lpSysTime->wDay = icalrecurrencetype_day_position(recur.by_day[0]); // 1..4
+-	lpSysTime->wDayOfWeek = icalrecurrencetype_day_day_of_week(recur.by_day[0]) - 1;
++		lpSysTime->wDay = icalrecurrencetype_day_position(recur->by[ICAL_BY_DAY].data[0]); // 1..4
++	lpSysTime->wDayOfWeek = icalrecurrencetype_day_day_of_week(recur->by[ICAL_BY_DAY].data[0]) - 1;
+ 	return hrSuccess;
+ }
+ 
+@@ -273,8 +274,6 @@ HRESULT HrParseVTimeZone(icalcomponent* lpVTZ, std::st
+ HRESULT HrCreateVTimeZone(const std::string &strTZID,
+     const TIMEZONE_STRUCT &tsTimeZone, icalcomponent **lppVTZComp)
+ {
+-	icalrecurrencetype icRec;
+-
+ 	// wDay in a timezone context means "week in month", 5 for last week in month
+ 	if (tsTimeZone.stStdDate.wYear > 0 || tsTimeZone.stStdDate.wDay > 5 ||
+ 	    tsTimeZone.stStdDate.wDayOfWeek > 7 ||
+@@ -298,19 +297,35 @@ HRESULT HrCreateVTimeZone(const std::string &strTZID,
+ 		icalcomponent_add_property(icComp, icalproperty_new_tzoffsetfrom( ((-tsTimeZone.lBias) + (-tsTimeZone.lDstBias)) *60) );
+ 		icalcomponent_add_property(icComp, icalproperty_new_tzoffsetto(-tsTimeZone.lBias *60));
+ 
+-		// create rrule for STD zone
+-		icalrecurrencetype_clear(&icRec);
+-		icRec.freq = ICAL_YEARLY_RECURRENCE;
+-		icRec.interval = 1;
+-		icRec.by_month[0] = tsTimeZone.stStdDate.wMonth;
+-		icRec.by_month[1] = ICAL_RECURRENCE_ARRAY_MAX;
+-		icRec.week_start = ICAL_SUNDAY_WEEKDAY;
++		// create rrule for STD zone (icalrecurrencetype_new zero-inits)
++		auto icRec = icalrecurrencetype_new();
++		if (icRec == nullptr) {
++			icalcomponent_free(icComp);
++			icalcomponent_free(icTZComp);
++			return MAPI_E_NOT_ENOUGH_MEMORY;
++		}
++		icRec->freq = ICAL_YEARLY_RECURRENCE;
++		icRec->interval = 1;
++		if (!icalrecur_resize_by(&icRec->by[ICAL_BY_MONTH], 1)) {
++			icalrecurrencetype_unref(icRec);
++			icalcomponent_free(icComp);
++			icalcomponent_free(icTZComp);
++			return MAPI_E_NOT_ENOUGH_MEMORY;
++		}
++		icRec->by[ICAL_BY_MONTH].data[0] = tsTimeZone.stStdDate.wMonth;
++		icRec->week_start = ICAL_SUNDAY_WEEKDAY;
+ 
+ 		// by_day[0] % 8 = weekday, by_day[0]/8 = Nth week, 0 is 'any', and -1 = last
+-		icRec.by_day[0] = tsTimeZone.stStdDate.wDay == 5 ? -1*(8+tsTimeZone.stStdDate.wDayOfWeek+1) : (tsTimeZone.stStdDate.wDay)*8+tsTimeZone.stStdDate.wDayOfWeek+1;
+-		icRec.by_day[1] = ICAL_RECURRENCE_ARRAY_MAX;
+-		
++		if (!icalrecur_resize_by(&icRec->by[ICAL_BY_DAY], 1)) {
++			icalrecurrencetype_unref(icRec);
++			icalcomponent_free(icComp);
++			icalcomponent_free(icTZComp);
++			return MAPI_E_NOT_ENOUGH_MEMORY;
++		}
++		icRec->by[ICAL_BY_DAY].data[0] = tsTimeZone.stStdDate.wDay == 5 ? -1*(8+tsTimeZone.stStdDate.wDayOfWeek+1) : (tsTimeZone.stStdDate.wDay)*8+tsTimeZone.stStdDate.wDayOfWeek+1;
++
+ 		icalcomponent_add_property(icComp, icalproperty_new_rrule(icRec));
++		icalrecurrencetype_unref(icRec);
+ 	}
+ 	icalcomponent_add_component(icTZComp, icComp);
+ 
+@@ -328,15 +343,33 @@ HRESULT HrCreateVTimeZone(const std::string &strTZID,
+ 	icalcomponent_add_property(icComp, icalproperty_new_tzoffsetfrom(-tsTimeZone.lBias * 60));
+ 	icalcomponent_add_property(icComp, icalproperty_new_tzoffsetto((-tsTimeZone.lBias - tsTimeZone.lDstBias) * 60));
+ 	// create rrule for DST zone
+-	icalrecurrencetype_clear(&icRec);
+-	icRec.freq = ICAL_YEARLY_RECURRENCE;
+-	icRec.interval = 1;
+-	icRec.by_month[0] = tsTimeZone.stDstDate.wMonth;
+-	icRec.by_month[1] = ICAL_RECURRENCE_ARRAY_MAX;
+-	icRec.week_start = ICAL_SUNDAY_WEEKDAY;
+-	icRec.by_day[0] = tsTimeZone.stDstDate.wDay == 5 ? -(8 + tsTimeZone.stDstDate.wDayOfWeek + 1) : (tsTimeZone.stDstDate.wDay) * 8 + tsTimeZone.stDstDate.wDayOfWeek + 1;
+-	icRec.by_day[1] = ICAL_RECURRENCE_ARRAY_MAX;
+-	icalcomponent_add_property(icComp, icalproperty_new_rrule(icRec));
++	{
++		auto icRec = icalrecurrencetype_new();
++		if (icRec == nullptr) {
++			icalcomponent_free(icComp);
++			icalcomponent_free(icTZComp);
++			return MAPI_E_NOT_ENOUGH_MEMORY;
++		}
++		icRec->freq = ICAL_YEARLY_RECURRENCE;
++		icRec->interval = 1;
++		if (!icalrecur_resize_by(&icRec->by[ICAL_BY_MONTH], 1)) {
++			icalrecurrencetype_unref(icRec);
++			icalcomponent_free(icComp);
++			icalcomponent_free(icTZComp);
++			return MAPI_E_NOT_ENOUGH_MEMORY;
++		}
++		icRec->by[ICAL_BY_MONTH].data[0] = tsTimeZone.stDstDate.wMonth;
++		icRec->week_start = ICAL_SUNDAY_WEEKDAY;
++		if (!icalrecur_resize_by(&icRec->by[ICAL_BY_DAY], 1)) {
++			icalrecurrencetype_unref(icRec);
++			icalcomponent_free(icComp);
++			icalcomponent_free(icTZComp);
++			return MAPI_E_NOT_ENOUGH_MEMORY;
++		}
++		icRec->by[ICAL_BY_DAY].data[0] = tsTimeZone.stDstDate.wDay == 5 ? -(8 + tsTimeZone.stDstDate.wDayOfWeek + 1) : (tsTimeZone.stDstDate.wDay) * 8 + tsTimeZone.stDstDate.wDayOfWeek + 1;
++		icalcomponent_add_property(icComp, icalproperty_new_rrule(icRec));
++		icalrecurrencetype_unref(icRec);
++	}
+ 	icalcomponent_add_component(icTZComp, icComp);
+ 	*lppVTZComp = icTZComp;
+ 	return hrSuccess;
