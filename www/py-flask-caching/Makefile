@@ -16,6 +16,7 @@ MODPY_PYBUILD=		flit_core
 RUN_DEPENDS=		devel/py-cachelib \
 			www/py-flask
 
+# some tests fail (with longish delays) if redis is running on the machine
 TEST_DEPENDS=		databases/py-redis \
 			devel/py-test-cov \
 			devel/py-test-asyncio \
