@@ -5,8 +5,10 @@ MODGO_MODULES =	\
 	github.com/cespare/xxhash/v2		 v2.3.0 \
 	github.com/creack/pty			 v1.1.9 \
 	github.com/davecgh/go-spew		 v1.1.1 \
+	github.com/golang-jwt/jwt/v5		 v5.3.0 \
 	github.com/golang/protobuf		 v1.5.0 \
 	github.com/google/go-cmp		 v0.7.0 \
+	github.com/google/uuid			 v1.6.0 \
 	github.com/jpillora/backoff		 v1.0.0 \
 	github.com/json-iterator/go		 v1.1.12 \
 	github.com/julienschmidt/httprouter	 v1.3.0 \
@@ -21,19 +23,19 @@ MODGO_MODULES =	\
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/prometheus/client_golang	 v1.23.2 \
 	github.com/prometheus/client_model	 v0.6.2 \
-	github.com/prometheus/common		 v0.67.1 \
-	github.com/prometheus/procfs		 v0.17.0 \
+	github.com/prometheus/common		 v0.67.5 \
+	github.com/prometheus/procfs		 v0.20.1 \
 	github.com/rogpeppe/go-internal		 v1.10.0 \
 	github.com/stretchr/testify		 v1.11.1 \
 	github.com/xhit/go-str2duration/v2	 v2.1.0 \
 	go.uber.org/goleak			 v1.3.0 \
-	go.yaml.in/yaml/v2			 v2.4.3 \
-	golang.org/x/net			 v0.44.0 \
-	golang.org/x/oauth2			 v0.31.0 \
-	golang.org/x/sync			 v0.15.0 \
-	golang.org/x/sys			 v0.37.0 \
-	golang.org/x/text			 v0.29.0 \
-	google.golang.org/protobuf		 v1.36.10 \
+	go.yaml.in/yaml/v2			 v2.4.4 \
+	golang.org/x/net			 v0.48.0 \
+	golang.org/x/oauth2			 v0.34.0 \
+	golang.org/x/sync			 v0.19.0 \
+	golang.org/x/sys			 v0.43.0 \
+	golang.org/x/text			 v0.32.0 \
+	google.golang.org/protobuf		 v1.36.11 \
 	gopkg.in/check.v1			 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/yaml.v3			 v3.0.1
 
@@ -43,13 +45,13 @@ MODGO_MODFILES =	\
 	github.com/prometheus/procfs		 v0.15.1 \
 	github.com/prometheus/procfs		 v0.16.1 \
 	go.yaml.in/yaml/v2			 v2.4.2 \
+	go.yaml.in/yaml/v2			 v2.4.3 \
 	golang.org/x/net			 v0.43.0 \
 	golang.org/x/oauth2			 v0.30.0 \
-	golang.org/x/sys			 v0.33.0 \
 	golang.org/x/sys			 v0.35.0 \
-	golang.org/x/sys			 v0.36.0 \
+	golang.org/x/sys			 v0.39.0 \
+	golang.org/x/sys			 v0.41.0 \
 	golang.org/x/text			 v0.28.0 \
 	google.golang.org/protobuf		 v1.36.6 \
-	google.golang.org/protobuf		 v1.36.8 \
-	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405
+	google.golang.org/protobuf		 v1.36.8
 
