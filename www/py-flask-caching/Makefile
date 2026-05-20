@@ -1,6 +1,6 @@
 COMMENT=	easy cache support for Flask
 
-MODPY_DISTV=2.4.0
+MODPY_DISTV=	2.4.0
 DISTNAME=	flask_caching-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 CATEGORIES=	www
@@ -11,13 +11,16 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_PI=		Yes
-MODPY_PYBUILD=		setuptools
+MODPY_PYBUILD=		flit_core
 
 RUN_DEPENDS=		devel/py-cachelib \
 			www/py-flask
 
-# 3 failures caused due to missing ports: asgiref (Flask async extra), pylibmc
 TEST_DEPENDS=		databases/py-redis \
-			misc/py-memcached
+			devel/py-test-cov \
+			devel/py-test-asyncio \
+			devel/py-test-xprocess \
+			misc/py-memcached \
+			www/py-asgiref
 
 .include <bsd.port.mk>
