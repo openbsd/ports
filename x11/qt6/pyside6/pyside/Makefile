@@ -27,8 +27,9 @@ MODULES +=		lang/clang \
 			lang/python
 MODCLANG_VERSION =	19
 
-BUILD_DEPENDS =		x11/qt6/qttools \
-			devel/llvm/${MODCLANG_VERSION}
+BUILD_DEPENDS =		devel/llvm/${MODCLANG_VERSION} \
+			x11/qt6/pyside6/shiboken_generator \
+			x11/qt6/qttools
 
 LIB_DEPENDS =		x11/qt6/pyside6/shiboken \
 			x11/qt6/qt3d \
