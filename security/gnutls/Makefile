@@ -4,6 +4,8 @@ V=			3.8.13
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
 
+REVISION=		0
+
 CATEGORIES=		security
 
 SHARED_LIBS +=  gnutls              47.14     # 71.0
