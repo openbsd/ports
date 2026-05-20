@@ -1,0 +1,14 @@
+userio.c:387:2: error: incompatible pointer types passing 'int *' to parameter of type 'short *' [-Wincompatible-pointer-types]
+
+Index: cblocks/cursesio.c
+--- cblocks/cursesio.c.orig
++++ cblocks/cursesio.c
+@@ -380,7 +380,7 @@ static void selectrepresentation(void)
+     attr_t	attr;
+ 
+     if (has_colors()) {
+-	int	pair;
++	short	pair;
+ 	short	frgnd, bkgnd;
+ 
+ 	start_color();

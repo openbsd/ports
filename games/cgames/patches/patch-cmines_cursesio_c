@@ -1,0 +1,14 @@
+userio.c:398:2: error: incompatible pointer types passing 'int *' to parameter of type 'short *' [-Wincompatible-pointer-types]
+
+Index: cmines/cursesio.c
+--- cmines/cursesio.c.orig
++++ cmines/cursesio.c
+@@ -366,7 +366,7 @@ int ioinitialize(int updatetimerflag, int showsmileysf
+ 		 int allowoffclicksflag)
+ {
+     attr_t	attr;
+-    int		n;
++    short	n;
+ 
+     updatetimer = updatetimerflag;
+     showsmileys = showsmileysflag;

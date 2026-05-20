@@ -3,6 +3,7 @@ PORTROACH =	skipv:2.2
 COMMENT =	free console games suite
 DISTNAME =	cgames-2.2b
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.muppetlabs.com/~breadbox/software/cgames.html
 
