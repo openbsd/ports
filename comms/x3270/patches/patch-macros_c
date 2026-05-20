@@ -1,0 +1,14 @@
+macros.c:652:50: error: incompatible pointer types passing 'size_t *' (aka 'unsigned long *') to parameter of type 'socklen_t *' (aka 'unsigned int *') [-Wincompatible-pointer-types]
+
+Index: macros.c
+--- macros.c.orig
++++ macros.c
+@@ -643,7 +643,7 @@ socket_connection(void)
+ {
+ 	int fd;
+ 	struct sockaddr_un ssun;
+-	size_t len = sizeof(ssun);
++	socklen_t len = sizeof(ssun);
+ 	sms_t *s;
+ 
+ 	/* Accept the connection. */
