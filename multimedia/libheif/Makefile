@@ -1,9 +1,9 @@
 COMMENT=	HEIF and AVIF file format decoder and encoder
 
-V=		1.21.2
+V=		1.22.0
 DISTNAME=	libheif-$V
 
-SHARED_LIBS +=  heif 3.0
+SHARED_LIBS +=  heif 3.1
 
 CATEGORIES=	multimedia graphics
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} aom c dav1d de265 gdk_pixbuf-2.0
 WANTLIB += glib-2.0 gobject-2.0 intl jpeg m openh264 png sharpyuv
-WANTLIB += tiff x264 x265 z
+WANTLIB += tiff webp webpmux x264 x265 z
 
 SITES=		https://github.com/strukturag/libheif/releases/download/v$V/
 
