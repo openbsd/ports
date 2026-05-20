@@ -8,6 +8,7 @@ lib/${MOZILLA_PROJECT}/application.ini
 lib/${MOZILLA_PROJECT}/chrome/
 lib/${MOZILLA_PROJECT}/chrome/icons/
 lib/${MOZILLA_PROJECT}/chrome/icons/default/
+lib/${MOZILLA_PROJECT}/chrome/icons/default/TB-symbolic.svg
 lib/${MOZILLA_PROJECT}/chrome/icons/default/calendar-alarm-dialog.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/calendar-general-dialog.png
 lib/${MOZILLA_PROJECT}/chrome/icons/default/default128.png
@@ -32,6 +33,7 @@ lib/${MOZILLA_PROJECT}/dependentlibs.list
 lib/${MOZILLA_PROJECT}/distribution/
 lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 @bin lib/${MOZILLA_PROJECT}/glxtest
+lib/${MOZILLA_PROJECT}/interesting_serverknobs.json
 lib/${MOZILLA_PROJECT}/isp/
 lib/${MOZILLA_PROJECT}/isp/Bogofilter.sfd
 lib/${MOZILLA_PROJECT}/isp/DSPAM.sfd
