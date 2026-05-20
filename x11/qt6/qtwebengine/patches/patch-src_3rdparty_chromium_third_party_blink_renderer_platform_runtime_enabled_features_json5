@@ -46,7 +46,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1717,7 +1717,7 @@
+@@ -1724,7 +1724,7 @@
      {
        name: "DeviceBoundSessionCredentials",
        origin_trial_feature_name: "DeviceBoundSessionCredentials",
@@ -55,7 +55,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled
        status: "experimental",
        // Killswitch is net::features::kDeviceBoundSessions
        base_feature: "none",
-@@ -1856,7 +1856,7 @@
+@@ -1863,7 +1863,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -64,7 +64,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled
        base_feature: "none",
      },
      {
-@@ -2113,7 +2113,7 @@
+@@ -2120,7 +2120,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -73,7 +73,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3605,7 +3605,7 @@
+@@ -3612,7 +3612,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
@@ -82,7 +82,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled
        status: "experimental",
        public: true,
        base_feature_status: "enabled",
-@@ -5142,7 +5142,7 @@
+@@ -5154,7 +5154,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -91,7 +91,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -5340,7 +5340,7 @@
+@@ -5357,7 +5357,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -100,7 +100,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled
        status: "experimental",
        base_feature: "none",
      },
-@@ -5442,7 +5442,7 @@
+@@ -5459,7 +5459,7 @@
      {
        name: "WebAuthenticationImmediateGet",
        origin_trial_feature_name: "WebAuthenticationImmediateGet",
@@ -109,7 +109,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled
        base_feature: "none",
        public: true,
      },
-@@ -5595,7 +5595,7 @@
+@@ -5612,7 +5612,7 @@
      {
        name: "WebIdentityDigitalCredentials",
        origin_trial_feature_name: "WebIdentityDigitalCredentials",

@@ -15,6 +15,7 @@ include/shiboken6/sbkcontainer.h
 include/shiboken6/sbkconverter.h
 include/shiboken6/sbkcppstring.h
 include/shiboken6/sbkcpptonumpy.h
+include/shiboken6/sbkdestructorentry.h
 include/shiboken6/sbkenum.h
 include/shiboken6/sbkenum_p.h
 include/shiboken6/sbkerrors.h

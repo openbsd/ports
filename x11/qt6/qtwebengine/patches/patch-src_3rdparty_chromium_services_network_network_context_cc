@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/services/network/network_context.cc
  bool NetworkContext::NetworkContextHttpAuthPreferences::AllowGssapiLibraryLoad()
      const {
    if (network_service_) {
-@@ -2612,7 +2612,7 @@ void NetworkContext::OnHttpAuthDynamicParamsChanged(
+@@ -2610,7 +2610,7 @@ void NetworkContext::OnHttpAuthDynamicParamsChanged(
        http_auth_dynamic_network_service_params->android_negotiate_account_type);
  #endif  // BUILDFLAG(IS_ANDROID)
  

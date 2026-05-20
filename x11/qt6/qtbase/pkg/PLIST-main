@@ -2971,11 +2971,13 @@ lib/cmake/Qt6/QtPublicGitHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake
 lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomBuildToolHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomCommonGenerationHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomDocumentNamespaceHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomExternalReferenceHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomGenerationCycloneDXHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake
@@ -2985,6 +2987,7 @@ lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomRelationshipHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake
 lib/cmake/Qt6/QtPublicTargetHelpers.cmake
 lib/cmake/Qt6/QtPublicTestHelpers.cmake
@@ -3045,6 +3048,7 @@ lib/cmake/Qt6/qt-configure-module-flags.txt
 lib/cmake/Qt6/qt-internal-config.redo.bat.in
 lib/cmake/Qt6/qt-internal-config.redo.in
 lib/cmake/Qt6/qt.toolchain.cmake
+lib/cmake/Qt6/windows/
 lib/cmake/Qt6BuildInternals/
 lib/cmake/Qt6BuildInternals/Qt6BuildInternalsConfig.cmake
 lib/cmake/Qt6BuildInternals/Qt6BuildInternalsConfigVersion.cmake
@@ -3624,7 +3628,6 @@ lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateVersionlessAliasTargets
 lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6TestInternalsPrivate/QtRunCMake.cmake
 lib/cmake/Qt6TestInternalsPrivate/QtRunCMakeTestWrappers.cmake
-lib/cmake/Qt6TestInternalsPrivate/RunCMake.cmake
 lib/cmake/Qt6TestPrivate/
 lib/cmake/Qt6TestPrivate/Qt6TestPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6TestPrivate/Qt6TestPrivateConfig.cmake

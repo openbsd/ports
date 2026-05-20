@@ -166,6 +166,7 @@ include/PySide6/pysideqmlregistertype_p.h
 include/PySide6/pysideqmltypeinfo_p.h
 include/PySide6/pysideqmluncreatable.h
 include/PySide6/pysideqobject.h
+include/PySide6/pysideqobject_p.h
 include/PySide6/pysideqslotobject_p.h
 include/PySide6/pysiderephandler_p.h
 include/PySide6/pysidesignal.h

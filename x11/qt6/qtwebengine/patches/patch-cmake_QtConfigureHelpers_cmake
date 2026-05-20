@@ -25,4 +25,4 @@ Index: cmake/QtConfigureHelpers.cmake
 -    endif()
  endfunction()
  
- # Configures multi/matrix build
+ function(qt_webengine_check_for_metal_toolchain)

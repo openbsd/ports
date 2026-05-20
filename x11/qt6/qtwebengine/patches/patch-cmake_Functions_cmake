@@ -8,9 +8,9 @@ Index: cmake/Functions.cmake
 -    if(LINUX OR ANDROID)
 +    if(UNIX OR ANDROID)
           get_gn_arch(cpu ${TEST_architecture_arch})
-          if(CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm" AND ${config} STREQUAL "Debug")
-              target_link_options(${cmakeTarget} PRIVATE "LINKER:--long-plt")
-@@ -607,6 +607,7 @@ function(addSyncTargets module)
+ 
+          #QTBUG-145054#
+@@ -613,6 +613,7 @@ function(addSyncTargets module)
      add_custom_target(run_${module}_GnReady)
      add_custom_target(run_${module}_GnDone)
      add_custom_target(run_${module}_NinjaReady)

@@ -349,6 +349,7 @@ include/X11/qt6/QtSpatialAudio/${VERSION}/QtSpatialAudio/private/qambientsound_p
 include/X11/qt6/QtSpatialAudio/${VERSION}/QtSpatialAudio/private/qambisonicdecoder_p.h
 include/X11/qt6/QtSpatialAudio/${VERSION}/QtSpatialAudio/private/qambisonicdecoderdata_p.h
 include/X11/qt6/QtSpatialAudio/${VERSION}/QtSpatialAudio/private/qaudioengine_p.h
+include/X11/qt6/QtSpatialAudio/${VERSION}/QtSpatialAudio/private/qaudioengine_threaded_p.h
 include/X11/qt6/QtSpatialAudio/${VERSION}/QtSpatialAudio/private/qaudioroom_p.h
 include/X11/qt6/QtSpatialAudio/${VERSION}/QtSpatialAudio/private/qspatialsound_p.h
 include/X11/qt6/QtSpatialAudio/${VERSION}/QtSpatialAudio/private/qtspatialaudioglobal_p.h

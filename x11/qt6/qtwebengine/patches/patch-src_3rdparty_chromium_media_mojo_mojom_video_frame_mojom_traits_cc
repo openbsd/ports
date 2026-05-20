@@ -28,7 +28,7 @@ Index: src/3rdparty/chromium/media/mojo/mojom/video_frame_mojom_traits.cc
  // static
  bool StructTraits<
      media::mojom::ColorPlaneLayoutDataView,
-@@ -442,7 +442,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+@@ -440,7 +440,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
      frame = media::VideoFrame::WrapTrackingToken(
          format, *metadata.tracking_token, coded_size, visible_rect,
          natural_size, timestamp);

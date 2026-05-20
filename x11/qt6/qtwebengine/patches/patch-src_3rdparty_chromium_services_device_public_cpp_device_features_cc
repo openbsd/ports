@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/services/device/public/cpp/device_features.cc
 --- src/3rdparty/chromium/services/device/public/cpp/device_features.cc.orig
 +++ src/3rdparty/chromium/services/device/public/cpp/device_features.cc
-@@ -147,7 +147,7 @@ bool IsOsLevelGeolocationPermissionSupportEnabled() {
+@@ -154,7 +154,7 @@ bool IsOsLevelGeolocationPermissionSupportEnabled() {
  BASE_FEATURE(kAutomaticUsbDetach,
               "AutomaticUsbDetach",
               base::FEATURE_ENABLED_BY_DEFAULT);

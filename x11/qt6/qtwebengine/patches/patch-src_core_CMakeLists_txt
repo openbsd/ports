@@ -47,9 +47,9 @@ Index: src/core/CMakeLists.txt
 -        if(LINUX)
 +        if(UNIX)
              list(APPEND gnArgArg
-                 angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-@@ -525,6 +525,10 @@ foreach(arch ${archs})
+                 use_qt5=false # Qt5 toolkit bindings
+@@ -528,6 +528,10 @@ foreach(arch ${archs})
                  CONDITION QT_FEATURE_webengine_system_gbm
              )
              extend_gn_list(gnArgArg
@@ -60,7 +60,7 @@ Index: src/core/CMakeLists.txt
                  ARGS rtc_system_openh264
                  CONDITION QT_FEATURE_webengine_webrtc_system_openh264
              )
-@@ -648,9 +652,9 @@ add_gn_build_artifacts_to_target(
+@@ -655,9 +659,9 @@ add_gn_build_artifacts_to_target(
      ${dataStampOption}
  )
  add_dependencies(WebEngineCore run_core_NinjaDone)

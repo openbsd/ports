@@ -10,12 +10,14 @@ MODULES +=		lang/clang \
 			lang/python
 MODCLANG_VERSION =	19
 
+
 BUILD_DEPENDS =		x11/qt6/qttools \
 			math/py-numpy \
 			textproc/py-sphinx \
 			x11/qt6/pyside6/shiboken_generator
 
-RUN_DEPENDS =		math/py-numpy
+RUN_DEPENDS =		math/py-numpy \
+			x11/qt6/pyside6/shiboken_generator
 
 LIB_DEPENDS =		${MODCLANG_LIB_DEPENDS}
 

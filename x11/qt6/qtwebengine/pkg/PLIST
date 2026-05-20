@@ -225,14 +225,14 @@ include/X11/qt6/QtWebEngineWidgets/QtWebEngineWidgetsVersion
 include/X11/qt6/QtWebEngineWidgets/qtwebenginewidgetsglobal.h
 include/X11/qt6/QtWebEngineWidgets/qtwebenginewidgetsversion.h
 include/X11/qt6/QtWebEngineWidgets/qwebengineview.h
-lib/cmake/Qt6/FindBindgen.cmake
 lib/cmake/Qt6/FindGPerf.cmake
 lib/cmake/Qt6/FindGn.cmake
 lib/cmake/Qt6/FindNinja.cmake
 lib/cmake/Qt6/FindNodejs.cmake
 lib/cmake/Qt6/FindPkgConfigHost.cmake
+lib/cmake/Qt6/FindQWEBindgen.cmake
 lib/cmake/Qt6/FindQWELibClang.cmake
-lib/cmake/Qt6/FindRust.cmake
+lib/cmake/Qt6/FindQWERust.cmake
 lib/cmake/Qt6/FindSnappy.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtWebEngineTestsConfig.cmake
 lib/cmake/Qt6Designer/Qt6QWebEngineViewPluginAdditionalTargetInfo.cmake
@@ -508,6 +508,7 @@ lib/qt6/qml/QtWebEngine/ControlsDelegates/qmldir
 lib/qt6/qml/QtWebEngine/plugins.qmltypes
 lib/qt6/qml/QtWebEngine/qmldir
 share/qt6/resources/
+share/qt6/resources/icudtl.dat
 share/qt6/resources/qtwebengine_devtools_resources.pak
 share/qt6/resources/qtwebengine_resources.pak
 share/qt6/resources/qtwebengine_resources_100p.pak

@@ -49,7 +49,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1539,7 +1564,7 @@ jumbo_component("net") {
+@@ -1541,7 +1566,7 @@ jumbo_component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -58,7 +58,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2272,7 +2297,7 @@ static_library("test_support") {
+@@ -2274,7 +2299,7 @@ static_library("test_support") {
      ]
    }
  
@@ -67,7 +67,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [
        "base/address_tracker_linux_test_util.cc",
        "base/address_tracker_linux_test_util.h",
-@@ -3070,14 +3095,14 @@ target(_test_target_type, "net_unittests") {
+@@ -3072,14 +3097,14 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -84,7 +84,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3178,6 +3203,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3180,6 +3205,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -95,7 +95,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3234,7 +3263,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3236,7 +3265,7 @@ target(_test_target_type, "net_unittests") {
    ]
    data_deps = [ "//testing/buildbot/filters:net_unittests_filters" ]
  
@@ -104,7 +104,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3364,7 +3393,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3366,7 +3395,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

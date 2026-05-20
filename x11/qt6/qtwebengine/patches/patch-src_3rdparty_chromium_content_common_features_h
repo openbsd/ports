@@ -1,9 +1,9 @@
 Index: src/3rdparty/chromium/content/common/features.h
 --- src/3rdparty/chromium/content/common/features.h.orig
 +++ src/3rdparty/chromium/content/common/features.h
-@@ -60,7 +60,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kCommittedOriginEn
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kCommittedOriginTracking);
+@@ -61,7 +61,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kCommittedOriginTr
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kCriticalClientHint);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kWorkerOrWorkletAgentDoubleReleaseFix);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
