@@ -1,0 +1,26 @@
+Fix for libical >= 4
+
+Index: Event.m
+--- Event.m.orig
++++ Event.m
+@@ -227,9 +227,9 @@
+       diff = icalproperty_get_duration(pdur);
+     else {
+       end = icalproperty_get_dtend(pend);
+-      diff = icaltime_subtract(end, start);
++      diff = icalduration_from_times(end, start);
+     }
+-    [self setDuration:icaldurationtype_as_int(diff) / 60];
++    [self setDuration:icaldurationtype_as_utc_seconds(diff) / 60];
+   }
+   prop = icalcomponent_get_first_property(ic, ICAL_RRULE_PROPERTY);
+   if (prop)
+@@ -271,7 +271,7 @@
+   [self deleteProperty:ICAL_DTEND_PROPERTY fromComponent:ic];
+   [self deleteProperty:ICAL_DURATION_PROPERTY fromComponent:ic];
+   if (![self allDay])
+-    icalcomponent_add_property(ic, icalproperty_new_dtend(icaltime_add([_startDate UTCICalTime], icaldurationtype_from_int(_duration * 60))));
++    icalcomponent_add_property(ic, icalproperty_new_dtend(icalduration_extend([_startDate UTCICalTime], icaldurationtype_from_seconds(_duration * 60))));
+   else {
+     end = [_startDate copy];
+     [end incrementDay];

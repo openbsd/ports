@@ -1,0 +1,14 @@
+Fix for libical >= 4
+
+Index: src/plugins/vcalendar/vcal_meeting_gtk.c
+--- src/plugins/vcalendar/vcal_meeting_gtk.c.orig
++++ src/plugins/vcalendar/vcal_meeting_gtk.c
+@@ -2110,7 +2110,7 @@ gboolean vcal_meeting_export_freebusy(const gchar *pat
+ 	
+ 		ipt.start = icaltime_from_string(event->dtstart);
+ 		ipt.end = icaltime_from_string(event->dtend);
+-		ipt.duration = icaltime_subtract(ipt.end, ipt.start);
++		ipt.duration = icalduration_from_times(ipt.end, ipt.start);
+ 		if (icaltime_as_timet(ipt.start) <= icaltime_as_timet(itt_end) 
+ 		 && icaltime_as_timet(ipt.end) >= icaltime_as_timet(itt_start)) {
+ 			prop = icalproperty_new_freebusy(ipt);

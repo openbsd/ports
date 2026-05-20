@@ -1,0 +1,471 @@
+Fix for libical >= 4
+
+Index: src/ical-code.c
+--- src/ical-code.c.orig
++++ src/ical-code.c
+@@ -554,16 +554,16 @@ xfical_period ic_get_period(icalcomponent *c, gboolean
+             per.etime = convert_to_local_timezone(per.etime, p);
+         else
+             per.etime = ic_convert_to_timezone(per.etime, p);
+-        per.duration = icaltime_subtract(per.etime, per.stime);
++        per.duration = icalduration_from_times(per.etime, per.stime);
+         if (icaltime_is_date(per.stime) 
+-            && icaldurationtype_as_int(per.duration) != 0) {
++            && icaldurationtype_as_utc_seconds(per.duration) != 0) {
+         /* need to subtract 1 day.
+          * read explanation from appt_add_internal: appt->endtime processing */
+-            duration_tmp = icaldurationtype_from_int(60*60*24);
+-            dur_int = icaldurationtype_as_int(per.duration);
+-            dur_int -= icaldurationtype_as_int(duration_tmp);
+-            per.duration = icaldurationtype_from_int(dur_int);
+-            per.etime = icaltime_add(per.stime, per.duration);
++            duration_tmp = icaldurationtype_from_seconds(60*60*24);
++            dur_int = icaldurationtype_as_utc_seconds(per.duration);
++            dur_int -= icaldurationtype_as_utc_seconds(duration_tmp);
++            per.duration = icaldurationtype_from_seconds(dur_int);
++            per.etime = icalduration_extend(per.stime, per.duration);
+         }
+ 
+     }
+@@ -571,7 +571,7 @@ xfical_period ic_get_period(icalcomponent *c, gboolean
+         p = icalcomponent_get_first_property(c, ICAL_DURATION_PROPERTY);
+         if (p != NULL) {
+             per.duration = icalproperty_get_duration(p);
+-            per.etime = icaltime_add(per.stime, per.duration);
++            per.etime = icalduration_extend(per.stime, per.duration);
+         }
+         else {
+             per.etime = per.stime;
+@@ -717,8 +717,8 @@ gint xfical_compare_times (xfical_appt *appt)
+ 
+     if (appt->use_duration) {
+         stime = icaltimetype_from_gdatetime (appt->starttime, appt->allDay);
+-        duration = icaldurationtype_from_int(appt->duration);
+-        etime = icaltime_add(stime, duration);
++        duration = icaldurationtype_from_seconds(appt->duration);
++        etime = icalduration_extend(stime, duration);
+         text  = icaltime_as_ical_string(etime);
+         orage_gdatetime_unref (appt->endtime);
+         appt->endtime = orage_icaltime_to_gdatetime (text);
+@@ -739,8 +739,8 @@ gint xfical_compare_times (xfical_appt *appt)
+         etime = convert_to_zone (etime, appt->end_tz_loc);
+         etime = icaltime_convert_to_zone (etime, local_icaltimezone);
+ 
+-        duration = icaltime_subtract (etime, stime);
+-        appt->duration = icaldurationtype_as_int (duration);
++        duration = icalduration_from_times (etime, stime);
++        appt->duration = icaldurationtype_as_utc_seconds (duration);
+         return icaltime_compare (stime, etime);
+     }
+ }
+@@ -905,7 +905,7 @@ static void appt_add_alarm_internal_audio(xfical_appt 
+                 , icalproperty_new_repeat(appt->soundrepeat_cnt));
+         icalcomponent_add_property(ialarm
+                 , icalproperty_new_duration(
+-                        icaldurationtype_from_int(appt->soundrepeat_len)));
++                        icaldurationtype_from_seconds(appt->soundrepeat_len)));
+     }
+     icalattach_unref(attach);
+ }
+@@ -1005,9 +1005,9 @@ static void appt_add_alarm_internal(xfical_appt *appt,
+     duration = appt->alarmtime;
+     trg.time = icaltime_null_time();
+     if (appt->alarm_before)
+-        trg.duration = icaldurationtype_from_int(-duration);
++        trg.duration = icaldurationtype_from_seconds(-duration);
+     else /* alarm happens after */
+-        trg.duration = icaldurationtype_from_int(duration);
++        trg.duration = icaldurationtype_from_seconds(duration);
+ 
+     /********** DISPLAY **********/
+     if (appt->display_alarm_orage || appt->display_alarm_notify) {
+@@ -1080,7 +1080,7 @@ static void appt_add_recur_internal (const xfical_appt
+                                      icalcomponent *icmp)
+ {
+     gchar recur_str[1001], *recur_p, *recur_p2;
+-    struct icalrecurrencetype rrule;
++    struct icalrecurrencetype* rrule;
+     struct icaltimetype wtime;
+     gchar *byday_a[] = {"MO", "TU", "WE", "TH", "FR", "SA", "SU"};
+     const char *text;
+@@ -1115,7 +1115,7 @@ static void appt_add_recur_internal (const xfical_appt
+             break;
+         default:
+             g_warning ("%s: Unsupported freq", G_STRFUNC);
+-            icalrecurrencetype_clear(&rrule);
++            icalrecurrencetype_unref(rrule);
+     }
+     if (add_interval) { /* not default, need to insert it */
+         recur_p += g_sprintf(recur_p, ";INTERVAL=%d", appt->interval);
+@@ -1220,7 +1220,7 @@ static void appt_add_recur_internal (const xfical_appt
+             break;
+     }
+ 
+-    rrule = icalrecurrencetype_from_string(recur_str);
++    rrule = icalrecurrencetype_new_from_string(recur_str);
+     icalcomponent_add_property(icmp, icalproperty_new_rrule(rrule));
+     if (appt->type == XFICAL_TYPE_TODO) {
+         if (appt->recur_todo_base_start)
+@@ -1282,7 +1282,7 @@ static void appt_add_endtime_internal (const xfical_ap
+     }
+     else if (appt->use_duration) {
+         /* both event and todo can have duration */
+-        duration = icaldurationtype_from_int(appt->duration);
++        duration = icaldurationtype_from_seconds(appt->duration);
+         icalcomponent_add_property(icmp
+                 , icalproperty_new_duration(duration));
+     }
+@@ -1293,8 +1293,8 @@ static void appt_add_endtime_internal (const xfical_ap
+             /* need to add 1 day. For example:
+              * DTSTART=20070221 & DTEND=20070223
+              * means only 21 and 22 February */
+-            duration = icaldurationtype_from_int(60*60*24);
+-            wtime = icaltime_add(wtime, duration);
++            duration = icaldurationtype_from_seconds(60*60*24);
++            wtime = icalduration_extend(wtime, duration);
+         }
+         else if ORAGE_STR_EXISTS(appt->end_tz_loc) {
+         /* Null == floating => no special action needed */
+@@ -1490,7 +1490,7 @@ static gboolean get_alarm_trigger(icalcomponent *ca,  
+     if (p) {
+         trg = icalproperty_get_trigger(p);
+         if (icaltime_is_null_time(trg.time)) {
+-            appt->alarmtime = icaldurationtype_as_int(trg.duration);
++            appt->alarmtime = icaldurationtype_as_utc_seconds(trg.duration);
+             if (appt->alarmtime < 0) { /* before */
+                 appt->alarmtime *= -1;
+                 appt->alarm_before = TRUE;
+@@ -1599,7 +1599,7 @@ static void get_alarm_data(icalcomponent *ca,  xfical_
+             p = icalcomponent_get_first_property(ca, ICAL_DURATION_PROPERTY);
+             if (p) {
+                 duration = icalproperty_get_duration(p);
+-                appt->soundrepeat_len = icaldurationtype_as_int(duration);
++                appt->soundrepeat_len = icaldurationtype_as_utc_seconds(duration);
+             }
+         }
+     }
+@@ -1733,13 +1733,13 @@ static void ical_appt_get_rrule_internal (G_GNUC_UNUSE
+                                           xfical_appt *appt,
+                                           icalproperty *p)
+ {
+-    struct icalrecurrencetype rrule;
++    struct icalrecurrencetype* rrule;
+     int i, cnt, day;
+     GDateTime *gdt;
+     gint month_day;
+ 
+     rrule = icalproperty_get_rrule(p);
+-    switch (rrule.freq) {
++    switch (rrule->freq) {
+         case ICAL_DAILY_RECURRENCE:
+             appt->freq = XFICAL_FREQ_DAILY;
+             break;
+@@ -1748,9 +1748,9 @@ static void ical_appt_get_rrule_internal (G_GNUC_UNUSE
+             break;
+         case ICAL_MONTHLY_RECURRENCE:
+             appt->freq = XFICAL_FREQ_MONTHLY;
+-            month_day = rrule.by_month_day[0];
+-            if (month_day != ICAL_RECURRENCE_ARRAY_MAX)
++            if (rrule->by[ICAL_BY_MONTH_DAY].size > 0)
+             {
++                month_day = rrule->by[ICAL_BY_MONTH_DAY].data[0];
+                 if (month_day > 0)
+                 {
+                     appt->recur_month_type = XFICAL_RECUR_MONTH_TYPE_BEGIN;
+@@ -1762,16 +1762,16 @@ static void ical_appt_get_rrule_internal (G_GNUC_UNUSE
+                     appt->recur_month_days = -1 * month_day;
+                 }
+             }
+-            else if (rrule.by_day[0] != ICAL_RECURRENCE_ARRAY_MAX)
++            else if (rrule->by[ICAL_BY_DAY].size > 0)
+             {
+                 appt->recur_month_type = XFICAL_RECUR_MONTH_TYPE_EVERY;
+ 
+-                cnt = icalrecurrencetype_day_position (rrule.by_day[0]);
++                cnt = icalrecurrencetype_day_position(rrule->by[ICAL_BY_DAY].data[0]);
+ 
+                 appt->recur_week_sel =
+                         cnt < 0 ? XFICAL_RECUR_MONTH_WEEK_LAST : cnt - 1;
+                 appt->recur_day_sel =
+-                        orage_recurrence_type_to_day_of_week (rrule.by_day[0]);
++                        orage_recurrence_type_to_day_of_week(rrule->by[ICAL_BY_DAY].data[0]);
+             }
+             else
+                 g_critical ("%s: unknown weekday for %s", G_STRFUNC, appt->uid);
+@@ -1780,14 +1780,14 @@ static void ical_appt_get_rrule_internal (G_GNUC_UNUSE
+         case ICAL_YEARLY_RECURRENCE:
+             appt->freq = XFICAL_FREQ_YEARLY;
+ 
+-            cnt = icalrecurrencetype_day_position (rrule.by_day[0]);
++            cnt = icalrecurrencetype_day_position(rrule->by[ICAL_BY_DAY].data[0]);
+ 
+             appt->recur_week_sel =
+                     cnt < 0 ? XFICAL_RECUR_MONTH_WEEK_LAST : cnt - 1;
+             appt->recur_day_sel =
+-                    orage_recurrence_type_to_day_of_week (rrule.by_day[0]);
++                    orage_recurrence_type_to_day_of_week (rrule->by[ICAL_BY_DAY].data[0]);
+             appt->recur_month_sel =
+-                    icalrecurrencetype_month_month (rrule.by_month[0]) - 1;
++                    icalrecurrencetype_month_month (rrule->by[ICAL_BY_MONTH].data[0]) - 1;
+             break;
+         case ICAL_HOURLY_RECURRENCE:
+             appt->freq = XFICAL_FREQ_HOURLY;
+@@ -1796,12 +1796,12 @@ static void ical_appt_get_rrule_internal (G_GNUC_UNUSE
+             appt->freq = XFICAL_FREQ_NONE;
+             break;
+     }
+-    if ((appt->recur_count = rrule.count))
++    if ((appt->recur_count = rrule->count))
+         appt->recur_limit = XFICAL_RECUR_COUNT;
+-    else if(! icaltime_is_null_time(rrule.until)) {
++    else if(! icaltime_is_null_time(rrule->until)) {
+         const char *text;
+ 
+-        text = icaltime_as_ical_string (rrule.until);
++        text = icaltime_as_ical_string (rrule->until);
+         gdt = orage_icaltime_to_gdatetime (text);
+         if (gdt)
+         {
+@@ -1812,12 +1812,12 @@ static void ical_appt_get_rrule_internal (G_GNUC_UNUSE
+         else
+             appt->recur_limit = XFICAL_RECUR_NO_LIMIT;
+     }
+-    if (rrule.by_day[0] != ICAL_RECURRENCE_ARRAY_MAX) {
++    if (rrule->by[ICAL_BY_DAY].size > 0) {
+         for (i=0; i <= 6; i++)
+             appt->recur_byday[i] = FALSE;
+-        for (i=0; i <= 6 && rrule.by_day[i] != ICAL_RECURRENCE_ARRAY_MAX; i++) {
+-            cnt = (int)floor((double)(rrule.by_day[i]/8));
+-            day = abs(rrule.by_day[i]-8*cnt);
++        for (i=0; i <= 6 && i < rrule->by[ICAL_BY_DAY].size; i++) {
++            cnt = (int)floor((double)(rrule->by[ICAL_BY_DAY].data[i]/8));
++            day = abs(rrule->by[ICAL_BY_DAY].data[i]-8*cnt);
+             switch (day) {
+                 case ICAL_MONDAY_WEEKDAY:
+                     appt->recur_byday[0] = TRUE;
+@@ -1844,12 +1844,12 @@ static void ical_appt_get_rrule_internal (G_GNUC_UNUSE
+                     break;
+                 default:
+                     g_critical ("%s: unknown weekday %s: %d/%d (%x)", G_STRFUNC,
+-                                appt->uid, rrule.by_day[i], i, rrule.by_day[i]);
++                                appt->uid, rrule->by[ICAL_BY_DAY].data[i], i, rrule->by[ICAL_BY_DAY].data[i]);
+                     break;
+             }
+         }
+     }
+-    appt->interval = rrule.interval;
++    appt->interval = rrule->interval;
+ }
+ 
+ static void appt_init(xfical_appt *appt)
+@@ -1980,7 +1980,7 @@ static gboolean get_appt_from_icalcomponent(icalcompon
+                 appt->use_duration = TRUE;
+                 appt->use_due_time = TRUE;
+                 duration = icalproperty_get_duration(p);
+-                appt->duration = icaldurationtype_as_int(duration);
++                appt->duration = icaldurationtype_as_utc_seconds(duration);
+                 break;
+             case ICAL_RRULE_PROPERTY:
+                 ical_appt_get_rrule_internal(c, appt, p);
+@@ -2086,22 +2086,22 @@ static gboolean get_appt_from_icalcomponent(icalcompon
+ 
+     /* need to set missing endtime or duration */
+     if (appt->use_duration) {
+-        etime = icaltime_add(stime, duration);
++        etime = icalduration_extend(stime, duration);
+         text  = icaltime_as_ical_string(etime);
+         orage_gdatetime_unref (appt->endtime);
+         appt->endtime = orage_icaltime_to_gdatetime (text);
+         appt->end_tz_loc = appt->start_tz_loc;
+     }
+     else {
+-        duration = icaltime_subtract(eltime, sltime);
+-        appt->duration = icaldurationtype_as_int(duration);
++        duration = icalduration_from_times(eltime, sltime);
++        appt->duration = icaldurationtype_as_utc_seconds(duration);
+         if (appt->allDay && appt->duration) {
+     /* need to subtract 1 day.
+      * read explanation from appt_add_internal: appt.endtime processing */
+-            duration_tmp = icaldurationtype_from_int(60*60*24);
+-            appt->duration -= icaldurationtype_as_int(duration_tmp);
+-            duration = icaldurationtype_from_int(appt->duration);
+-            etime = icaltime_add(stime, duration);
++            duration_tmp = icaldurationtype_from_seconds(60*60*24);
++            appt->duration -= icaldurationtype_as_utc_seconds(duration_tmp);
++            duration = icaldurationtype_from_seconds(appt->duration);
++            etime = icalduration_extend(stime, duration);
+             text  = icaltime_as_ical_string(etime);
+             orage_gdatetime_unref (appt->endtime);
+             appt->endtime = orage_icaltime_to_gdatetime (text);
+@@ -2397,7 +2397,7 @@ static void set_todo_times(icalcomponent *c, xfical_pe
+                 text = (char *)icalproperty_get_value_as_string(p);
+                 if (!strcmp(text, "COMPLETED")) {/* use completed time */
+                      per->stime = per->ctime;
+-                     per->etime = icaltime_add(per->stime, per->duration);
++                     per->etime = icalduration_extend(per->stime, per->duration);
+                 }
+                 break; /* for loop done */
+             }
+@@ -2433,9 +2433,9 @@ static struct icaltimetype count_first_alarm_time(xfic
+         }
+     }
+     if (rel == ICAL_RELATED_END)
+-        alarm_time = icaltime_add(per.etime, dur);
++        alarm_time = icalduration_extend(per.etime, dur);
+     else /* default is ICAL_RELATED_START */
+-        alarm_time = icaltime_add(per.stime, dur);
++        alarm_time = icalduration_extend(per.stime, dur);
+     return(alarm_time);
+ }
+ 
+@@ -2455,7 +2455,7 @@ static struct icaltimetype count_next_alarm_time(struc
+         start_time.minute        = 0;
+         start_time.second        = 0;
+     }
+-    alarm_time = icaltime_add(start_time, dur);
++    alarm_time = icalduration_extend(start_time, dur);
+     return(alarm_time);
+ }
+ 
+@@ -2557,7 +2557,7 @@ static alarm_struct *process_alarm_trigger(icalcompone
+     struct icaltriggertype trg;
+     icalparameter *trg_related_par;
+     icalparameter_related rel;
+-    struct icalrecurrencetype rrule;
++    struct icalrecurrencetype* rrule;
+     icalrecur_iterator* ri;
+     xfical_period per;
+     struct icaltimetype next_alarm_time, next_start_time, next_end_time, 
+@@ -2585,7 +2585,7 @@ static alarm_struct *process_alarm_trigger(icalcompone
+         rel = ICAL_RELATED_START;
+     per = ic_get_period(c, TRUE);
+     next_alarm_time = count_first_alarm_time(per, trg.duration, rel);
+-    alarm_start_diff = icaltime_subtract(next_alarm_time, per.stime);
++    alarm_start_diff = icalduration_from_times(next_alarm_time, per.stime);
+     /* Due to the hack in date time calculation in count_first_alarm_time,
+        we need to set next_alarm_time to local timezone so that 
+        icaltime_compare works. Fix for Bug 8525
+@@ -2628,7 +2628,7 @@ struct icaltimetype exdatetime;
+         rrule = icalproperty_get_rrule(p);
+         set_todo_times(c, &per); /* may change per.stime to be per.ctime */
+         next_alarm_time = count_first_alarm_time(per, trg.duration, rel);
+-        alarm_start_diff = icaltime_subtract(next_alarm_time, per.stime);
++        alarm_start_diff = icalduration_from_times(next_alarm_time, per.stime);
+         ri = icalrecur_iterator_new(rrule, per.stime);
+         for (next_start_time = icalrecur_iterator_next(ri),
+              next_alarm_time = count_next_alarm_time(next_start_time
+@@ -2706,7 +2706,7 @@ struct icaltimetype exdatetime;
+         }
+ 
+         /* we still need to convert it from start time to alarm time */
+-        rdate_alarm_time = icaltime_add(rdate_period.time, alarm_start_diff);
++        rdate_alarm_time = icalduration_extend(rdate_period.time, alarm_start_diff);
+         if (icaltime_compare(cur_time, rdate_alarm_time) <= 0) {
+             /* this alarm is still active */
+             /* save the iterator since excluded check changes it */
+@@ -2754,8 +2754,8 @@ struct icaltimetype exdatetime;
+         else 
+             alarm_start_diff.is_neg = 1;
+ 
+-        next_start_time = icaltime_add(next_alarm_time, alarm_start_diff);
+-        next_end_time = icaltime_add(next_start_time, per.duration);
++        next_start_time = icalduration_extend(next_alarm_time, alarm_start_diff);
++        next_end_time = icalduration_extend(next_start_time, per.duration);
+         tmp1 = icaltime_to_i18_time (
+                         icaltime_as_ical_string(next_start_time));
+         tmp2 = icaltime_to_i18_time (
+@@ -2869,7 +2869,7 @@ static void process_alarm_data(icalcomponent *ca, alar
+         p = icalcomponent_get_first_property(ca, ICAL_DURATION_PROPERTY);
+         if (p) {
+             duration = icalproperty_get_duration(p);
+-            new_alarm->repeat_delay = icaldurationtype_as_int(duration);
++            new_alarm->repeat_delay = icaldurationtype_as_utc_seconds(duration);
+         }
+     }
+     else if (act == ICAL_ACTION_PROCEDURE) {
+@@ -3035,7 +3035,7 @@ static xfical_appt *xfical_appt_get_next_on_day_intern
+     gboolean recurrent_date_found=FALSE;
+     char *uid;
+     xfical_appt *appt;
+-    struct icalrecurrencetype rrule;
++    struct icalrecurrencetype* rrule;
+     icalrecur_iterator* ri;
+     icalcomponent_kind ikind = ICAL_VEVENT_COMPONENT;
+     const gchar *start_str;
+@@ -3090,7 +3090,7 @@ static xfical_appt *xfical_appt_get_next_on_day_intern
+             rrule = icalproperty_get_rrule(p);
+             ri = icalrecur_iterator_new(rrule, per.stime);
+             for (nsdate = icalrecur_iterator_next(ri),
+-                    nedate = icaltime_add(nsdate, per.duration);
++                    nedate = icalduration_extend(nsdate, per.duration);
+                  !icaltime_is_null_time(nsdate)
+                  && ((type == XFICAL_TYPE_TODO
+                         && local_compare(nsdate, per.ctime) <= 0)
+@@ -3099,7 +3099,7 @@ static xfical_appt *xfical_appt_get_next_on_day_intern
+                      || icalproperty_recurrence_is_excluded(c
+                             , &per.stime, &nsdate));
+                  nsdate = icalrecur_iterator_next(ri),
+-                    nedate = icaltime_add(nsdate, per.duration)) {}
++                    nedate = icalduration_extend(nsdate, per.duration)) {}
+             icalrecur_iterator_free(ri);
+             if (type == XFICAL_TYPE_TODO) {
+                 if (!icaltime_is_null_time(nsdate)) {
+@@ -3225,7 +3225,7 @@ static gboolean xfical_mark_calendar_days(GtkCalendar 
+ /* note that this not understand timezones, but gets always raw time,
+  * which we need to convert to correct timezone */
+ static void mark_calendar (G_GNUC_UNUSED icalcomponent *c,
+-                           icaltime_span *span,
++                           const icaltime_span *span,
+                            void *data)
+ {
+     struct icaltimetype sdate, edate;
+@@ -3293,7 +3293,7 @@ static void xfical_mark_calendar_from_component (GtkCa
+ {
+     xfical_period per;
+     struct icaltimetype nsdate, nedate;
+-    struct icalrecurrencetype rrule;
++    struct icalrecurrencetype* rrule;
+     icalrecur_iterator* ri;
+     icalproperty *p = NULL;
+     gboolean marked;
+@@ -3358,11 +3358,11 @@ static void xfical_mark_calendar_from_component (GtkCa
+                 rrule = icalproperty_get_rrule(p);
+                 ri = icalrecur_iterator_new(rrule, per.stime);
+                 for (nsdate = icalrecur_iterator_next(ri),
+-                        nedate = icaltime_add(nsdate, per.duration);
++                        nedate = icalduration_extend(nsdate, per.duration);
+                      !icaltime_is_null_time(nsdate)
+                         && (nsdate.year*12+nsdate.month) <= (int)(year*12+month);
+                      nsdate = icalrecur_iterator_next(ri),
+-                        nedate = icaltime_add(nsdate, per.duration)) {
++                        nedate = icalduration_extend(nsdate, per.duration)) {
+                     if (!icalproperty_recurrence_is_excluded(c, &per.stime
+                                 , &nsdate))
+                         (void)xfical_mark_calendar_days (gtkcal, year, month,
+@@ -3407,7 +3407,7 @@ static void xfical_mark_calendar_from_component (GtkCa
+             }
+             icalrecur_iterator_free(ri);
+             if (!icaltime_is_null_time(nsdate)) {
+-                nedate = icaltime_add(nsdate, per.duration);
++                nedate = icalduration_extend(nsdate, per.duration);
+                 (void)xfical_mark_calendar_days (gtkcal, year, month,
+                                                  nedate.year, nedate.month,
+                                                  nedate.day, nedate.year,
+@@ -3475,7 +3475,7 @@ void xfical_mark_calendar(GtkCalendar *gtkcal)
+ 
+ /* note that this not understand timezones, but gets always raw time,
+  * which we need to convert to correct timezone */
+-static void add_appt_to_list(icalcomponent *c, icaltime_span *span , void *data)
++static void add_appt_to_list(icalcomponent *c, const icaltime_span *span , void *data)
+ {
+     xfical_appt *appt;
+     struct icaltimetype sdate, edate;
+@@ -3620,7 +3620,7 @@ static void xfical_get_each_app_within_time_internal (
+         data1.orig_start_hour = start.hour;
+         /* FIXME: hack to fix year to be newer than 1970 based on BUG 9507 */
+         if (start.year < 1970) {
+-            c2 = icalcomponent_new_clone(c);
++            c2 = icalcomponent_clone(c);
+             p = icalcomponent_get_first_property(c2, ICAL_DTSTART_PROPERTY);
+             start = icalproperty_get_dtstart(p);
+             g_debug ("%s: Adjusting temporarily old DTSTART time %d", G_STRFUNC,

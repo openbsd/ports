@@ -1,0 +1,49 @@
+https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/763
+
+Index: src/core/gcal-recurrence.c
+--- src/core/gcal-recurrence.c.orig
++++ src/core/gcal-recurrence.c
+@@ -185,6 +185,15 @@ gcal_recurrence_parse_recurrence_rules (ECalComponent 
+ 
+       case I_CAL_WEEKLY_RECURRENCE:
+         {
++#if ICAL_CHECK_VERSION(4, 0, 0)
++          if (i_cal_recurrence_get_by (rrule, I_CAL_BY_DAY, 0) == I_CAL_MONDAY_WEEKDAY &&
++              i_cal_recurrence_get_by (rrule, I_CAL_BY_DAY, 1) == I_CAL_TUESDAY_WEEKDAY &&
++              i_cal_recurrence_get_by (rrule, I_CAL_BY_DAY, 2) == I_CAL_WEDNESDAY_WEEKDAY &&
++              i_cal_recurrence_get_by (rrule, I_CAL_BY_DAY, 3) == I_CAL_THURSDAY_WEEKDAY &&
++              i_cal_recurrence_get_by (rrule, I_CAL_BY_DAY, 4) == I_CAL_FRIDAY_WEEKDAY &&
++              i_cal_recurrence_get_by (rrule, I_CAL_BY_DAY, 5) != I_CAL_SATURDAY_WEEKDAY &&
++              i_cal_recurrence_get_by (rrule, I_CAL_BY_DAY, 6) != I_CAL_SUNDAY_WEEKDAY)
++#else
+           if (i_cal_recurrence_get_by_day (rrule, 0) == I_CAL_MONDAY_WEEKDAY &&
+               i_cal_recurrence_get_by_day (rrule, 1) == I_CAL_TUESDAY_WEEKDAY &&
+               i_cal_recurrence_get_by_day (rrule, 2) == I_CAL_WEDNESDAY_WEEKDAY &&
+@@ -192,6 +201,7 @@ gcal_recurrence_parse_recurrence_rules (ECalComponent 
+               i_cal_recurrence_get_by_day (rrule, 4) == I_CAL_FRIDAY_WEEKDAY &&
+               i_cal_recurrence_get_by_day (rrule, 5) != I_CAL_SATURDAY_WEEKDAY &&
+               i_cal_recurrence_get_by_day (rrule, 6) != I_CAL_SUNDAY_WEEKDAY)
++#endif
+             {
+               recur->frequency = GCAL_RECURRENCE_MON_FRI;
+             }
+@@ -289,11 +299,19 @@ gcal_recurrence_to_rrule (GcalRecurrence *recur)
+     case GCAL_RECURRENCE_MON_FRI:
+       {
+         i_cal_recurrence_set_freq (rrule, I_CAL_WEEKLY_RECURRENCE);
++#if ICAL_CHECK_VERSION(4, 0, 0)
++        i_cal_recurrence_set_by (rrule, I_CAL_BY_DAY, 0, I_CAL_MONDAY_WEEKDAY);
++        i_cal_recurrence_set_by (rrule, I_CAL_BY_DAY, 1, I_CAL_TUESDAY_WEEKDAY);
++        i_cal_recurrence_set_by (rrule, I_CAL_BY_DAY, 2, I_CAL_WEDNESDAY_WEEKDAY);
++        i_cal_recurrence_set_by (rrule, I_CAL_BY_DAY, 3, I_CAL_THURSDAY_WEEKDAY);
++        i_cal_recurrence_set_by (rrule, I_CAL_BY_DAY, 4, I_CAL_FRIDAY_WEEKDAY);
++#else
+         i_cal_recurrence_set_by_day (rrule, 0, I_CAL_MONDAY_WEEKDAY);
+         i_cal_recurrence_set_by_day (rrule, 1, I_CAL_TUESDAY_WEEKDAY);
+         i_cal_recurrence_set_by_day (rrule, 2, I_CAL_WEDNESDAY_WEEKDAY);
+         i_cal_recurrence_set_by_day (rrule, 3, I_CAL_THURSDAY_WEEKDAY);
+         i_cal_recurrence_set_by_day (rrule, 4, I_CAL_FRIDAY_WEEKDAY);
++#endif
+         break;
+       }
+ 

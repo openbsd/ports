@@ -1,0 +1,24 @@
+https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/4215
+
+Index: src/calendar-server/gnome-shell-calendar-server.c
+--- src/calendar-server/gnome-shell-calendar-server.c.orig
++++ src/calendar-server/gnome-shell-calendar-server.c
+@@ -112,11 +112,17 @@ typedef struct
+   time_t  end_time;
+ } CalendarAppointment;
+ 
++#if ICAL_MAJOR_VERSION >= 4
++typedef ICalTime * (* get_prop_func_type) (const ICalProperty *prop);
++#else
++typedef ICalTime * (* get_prop_func_type) (ICalProperty *prop);
++#endif
++
+ static gboolean
+ get_time_from_property (ECalClient            *cal,
+                         ICalComponent         *icomp,
+                         ICalPropertyKind       prop_kind,
+-                        ICalTime * (* get_prop_func) (ICalProperty *prop),
++                        get_prop_func_type     get_prop_func,
+                         ICalTimezone          *default_zone,
+                         ICalTime              **out_itt,
+                         ICalTimezone          **out_timezone)

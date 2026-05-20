@@ -1,0 +1,25 @@
+Fix for libical >= 4
+
+Use webkit2gtk-4.1.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -86,7 +86,7 @@ fi
+ AM_CONDITIONAL([HAVE_LIBARCHIVE], test "x$have_libarchive" = "xtrue")
+ 
+ # Checks for libical
+-PKG_CHECK_MODULES(LIBICAL, libical >= 1.0, have_libical=true,
++PKG_CHECK_MODULES(LIBICAL, libical >= 1.0 libicalss, have_libical=true,
+     have_libical=false)
+ if test "x$have_libical" = "xtrue"; then
+     AC_DEFINE([HAVE_LIBICAL], [1], [Definded to 1 if compile with libical support])
+@@ -132,7 +132,7 @@ if test "x$tasks" = "xyes"; then
+ fi
+ 
+ # Checks for libwebkit
+-PKG_CHECK_MODULES(LIBWEBKIT, webkit2gtk-4.0 >= 2.8.0, have_libwebkit=true,
++PKG_CHECK_MODULES(LIBWEBKIT, webkit2gtk-4.1 >= 2.8.0, have_libwebkit=true,
+     have_libwebkit=false)
+ if test "x$have_libwebkit" = "xtrue"; then
+     libwebkit="yes"

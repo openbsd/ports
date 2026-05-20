@@ -2,7 +2,7 @@ COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.4.4
 CATEGORIES=	productivity
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	https://clayo.org/osmo/
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += archive atk-1.0 c cairo cairo-gobject enchant-2 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gringotts gspell-1 gthread-2.0 gtk-3 harfbuzz ical
-WANTLIB += icalss icalvcal iconv intl javascriptcoregtk-4.1 m
+WANTLIB += icalss iconv intl javascriptcoregtk-4.1 m
 WANTLIB += notify pango-1.0 pangocairo-1.0 pthread soup-3.0 webkit2gtk-4.1
 WANTLIB += xml2 z
 
@@ -38,7 +38,9 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=	2.72
+
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--without-libsyncml

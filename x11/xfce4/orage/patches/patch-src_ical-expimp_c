@@ -1,0 +1,23 @@
+Fix for libical >= 4
+
+Index: src/ical-expimp.c
+--- src/ical-expimp.c.orig
++++ src/ical-expimp.c
+@@ -71,7 +71,7 @@ static void add_event (icalcomponent *c, gboolean *ica
+     icalcomponent *ca;
+     char *uid;
+ 
+-    ca = icalcomponent_new_clone(c);
++    ca = icalcomponent_clone(c);
+     if (icalcomponent_get_uid(ca) == NULL) {
+         uid = ic_generate_uid();
+         icalcomponent_add_property(ca,  icalproperty_new_uid(uid));
+@@ -327,7 +327,7 @@ static void export_selected_uid(icalcomponent *base, c
+          c = icalcomponent_get_next_component(base, ICAL_ANY_COMPONENT)) {
+         uid_ical = (char *)icalcomponent_get_uid(c);
+         if (strcmp(uid_int, uid_ical) == 0) { /* we found our uid */
+-            d = icalcomponent_new_clone(c);
++            d = icalcomponent_clone(c);
+             icalcomponent_add_component(x_ical, d);
+             key_found = TRUE;
+         }

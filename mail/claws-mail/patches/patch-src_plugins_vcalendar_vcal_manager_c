@@ -1,0 +1,23 @@
+Fix for libical >= 4
+
+Index: src/plugins/vcalendar/vcal_manager.c
+--- src/plugins/vcalendar/vcal_manager.c.orig
++++ src/plugins/vcalendar/vcal_manager.c
+@@ -402,7 +402,7 @@ gchar *vcal_manager_event_dump(VCalEvent *event, gbool
+ 		icalproperty_vanew_dtend((icaltime_from_string(event->dtend)), (void*)0));
+ 	if (event->recur && *(event->recur)) {
+ 		icalcomponent_add_property(ievent,
+-			icalproperty_vanew_rrule((icalrecurrencetype_from_string(event->recur)), (void*)0));
++			icalproperty_vanew_rrule((icalrecurrencetype_new_from_string(event->recur)), (void*)0));
+ 	}
+ 	icalcomponent_add_property(ievent,
+ 		icalproperty_new_description(event->description));
+@@ -690,7 +690,7 @@ gchar *vcal_manager_icalevent_dump(icalcomponent *even
+ 	icalcomponent *ievent = NULL;
+ 	int i = 0;
+ 
+-	ievent = icalcomponent_new_clone(event);
++	ievent = icalcomponent_clone(event);
+ 
+ 	prop = icalcomponent_get_first_property(ievent, ICAL_UID_PROPERTY);
+ 	if (prop) {

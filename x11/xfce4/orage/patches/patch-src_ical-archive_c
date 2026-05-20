@@ -1,0 +1,73 @@
+Fix for libical >= 4
+
+Index: src/ical-archive.c
+--- src/ical-archive.c.orig
++++ src/ical-archive.c
+@@ -118,7 +118,7 @@ static void xfical_icalcomponent_archive_normal(icalco
+     icalcomponent *d;
+ 
+     /* Add to the archive file */
+-    d = icalcomponent_new_clone(e);
++    d = icalcomponent_clone(e);
+     icalcomponent_add_component(ic_aical, d);
+ 
+     /* Remove from the main file */
+@@ -129,7 +129,7 @@ static void xfical_icalcomponent_archive_recurrent (ic
+                                                     const gint threshold_months)
+ {
+     struct icaltimetype sdate, edate, nsdate, nedate;
+-    struct icalrecurrencetype rrule;
++    struct icalrecurrencetype* rrule;
+     struct icaldurationtype duration;
+     icalrecur_iterator* ri;
+     gchar *stz_loc = NULL, *etz_loc = NULL;
+@@ -158,7 +158,7 @@ static void xfical_icalcomponent_archive_recurrent (ic
+     if (pdtend) { /* we have DTEND, so we need to adjust it. */
+         etz_loc = ic_get_char_timezone(pdtend);
+         edate = ic_convert_to_timezone(edate, pdtend);
+-        duration = icaltime_subtract(edate, sdate);
++        duration = icalduration_from_times(edate, sdate);
+         upd_edate = TRUE;
+     }
+     else {
+@@ -166,7 +166,7 @@ static void xfical_icalcomponent_archive_recurrent (ic
+         if (p) /* we have DURATION, which does not need changes */
+             duration = icalproperty_get_duration(p);
+         else  /* neither duration, nor dtend, assume dtend=dtstart */
+-            duration = icaltime_subtract(edate, sdate);
++            duration = icalduration_from_times(edate, sdate);
+     }
+     p_orig = icalcomponent_get_first_property(e, ICAL_X_PROPERTY);
+     while (p_orig) {
+@@ -217,11 +217,11 @@ static void xfical_icalcomponent_archive_recurrent (ic
+ 
+     /* We must do a loop for finding the first occurence after the threshold */
+     for (nsdate = icalrecur_iterator_next(ri),
+-            nedate = icaltime_add(nsdate, duration);
++            nedate = icalduration_extend(nsdate, duration);
+          !icaltime_is_null_time(nsdate)
+          && (nedate.year*12 + nedate.month) < threshold_months;
+          nsdate = icalrecur_iterator_next(ri),
+-            nedate = icaltime_add(nsdate, duration)){
++            nedate = icalduration_extend(nsdate, duration)){
+     }
+     icalrecur_iterator_free(ri);
+ 
+@@ -409,7 +409,7 @@ gboolean xfical_unarchive(void)
+          c != 0;
+          c = icalcomponent_get_next_component(ic_aical, ICAL_ANY_COMPONENT)) {
+     /* Add to the base file */
+-        d = icalcomponent_new_clone(c);
++        d = icalcomponent_clone(c);
+         icalcomponent_add_component(ic_ical, d);
+     }
+     xfical_archive_close();
+@@ -443,7 +443,7 @@ gboolean xfical_unarchive_uid (const gchar *uid)
+         text = icalcomponent_get_uid(c);
+         if (strcmp(text, ical_uid) == 0) { /* we found our uid (=event) */
+             /* Add to the base file */
+-            d = icalcomponent_new_clone(c);
++            d = icalcomponent_clone(c);
+             icalcomponent_add_component(ic_ical, d);
+             /* Remove from the archive file */
+             icalcomponent_remove_component(ic_aical, c);

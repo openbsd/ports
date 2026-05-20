@@ -1,0 +1,14 @@
+Fix for libical >= 4
+
+Index: src/calendar_ical.c
+--- src/calendar_ical.c.orig
++++ src/calendar_ical.c
+@@ -56,7 +56,7 @@ gint i;
+ 
+     for (i = 0; i < N_SEARCH_PATHS; i++) {
+         if (!g_access (tz_search_paths[i], F_OK | R_OK)) {
+-            set_zone_directory (tz_search_paths[i]);
++            icaltimezone_set_zone_directory (tz_search_paths[i]);
+             break;
+         }
+     }

@@ -1,0 +1,15 @@
+https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/763
+
+Index: src/utils/gcal-utils.h
+--- src/utils/gcal-utils.h.orig
++++ src/utils/gcal-utils.h
+@@ -48,7 +48,9 @@ typedef void (*GcalAskRecurrenceCallback) (GcalEvent  
+                                            GcalRecurrenceModType  modtype,
+                                            gpointer               user_data);
+ 
++#if !ICAL_CHECK_VERSION(4, 0, 0)
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (ICalTime, g_object_unref)
++#endif
+ 
+ gchar*               gcal_get_weekday                            (gint                i);
+ 

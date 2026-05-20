@@ -6,6 +6,8 @@ COMMENT-pdfviewer=	pdfviewer plugin
 V=			4.4.0
 DISTNAME=		claws-mail-${V}
 
+REVISION=		0
+
 CATEGORIES=		mail news
 
 HOMEPAGE=		https://www.claws-mail.org/
@@ -37,15 +39,15 @@ WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-3 harfbuzz iconv intl jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png wayland-client wayland-cursor
-WANTLIB += wayland-egl xcb xcb-render xcb-shm xkbcommon z
+WANTLIB += wayland-egl xcb xcb-render xcb-shm xkbcommon z XRes
 
 WANTLIB-bogofilter = ${WANTLIB}
 
 WANTLIB-main = ${WANTLIB}
 WANTLIB-main += ICE SM X11-xcb archive aspell assuan b2 bz2 c canberra
-WANTLIB-main += canberra-gtk3 crypto curl dav1d db db_cxx enchant-2
+WANTLIB-main += canberra-gtk3 crypto curl dav1d enchant-2
 WANTLIB-main += etpan gmp gnutls gpg-error gpgme gthread-2.0 gumbo
-WANTLIB-main += hogweed ical icalss icalvcal icudata icui18n icuuc
+WANTLIB-main += hogweed ical icudata icui18n icuuc
 WANTLIB-main += idn2 ltdl lz4 lzma nettle nghttp2 nghttp3 ngtcp2
 WANTLIB-main += ngtcp2_crypto_libressl notify ogg p11-kit perl rsvg-2
 WANTLIB-main += sasl2 ssl startup-notification-1 tasn1 unistring

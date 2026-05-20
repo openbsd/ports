@@ -1,0 +1,86 @@
+Fix for libical >= 4
+
+Index: RecurrenceRule.m
+--- RecurrenceRule.m.orig
++++ RecurrenceRule.m
+@@ -69,14 +69,14 @@
+ {
+   self = [super init];
+   if (self)
+-    icalrecurrencetype_clear(&recur);
++    icalrecurrencetype_unref(recur);
+   return self;
+ }
+ - (id)initWithFrequency:(recurrenceFrequency)frequency
+ {
+   NSAssert(frequency < recurrenceFrequenceOther, @"Wrong frequency");
+   if ((self = [self init]))
+-    recur.freq = (icalrecurrencetype_frequency)frequency;
++    recur->freq = (icalrecurrencetype_frequency)frequency;
+   return self;
+ }
+ - (id)initWithFrequency:(recurrenceFrequency)frequency until:(Date *)endDate
+@@ -88,8 +88,8 @@
+      * It's OK to use Date iCaltime: here as timezone modifications
+      * only affect datetimes, not dates
+      */
+-    recur.until = [endDate UTCICalTime];
+-    recur.freq = (icalrecurrencetype_frequency)frequency;
++    recur->until = [endDate UTCICalTime];
++    recur->freq = (icalrecurrencetype_frequency)frequency;
+   }
+   return self;
+ }
+@@ -97,8 +97,8 @@
+ {
+   NSAssert(frequency < recurrenceFrequenceOther, @"Wrong frequency");
+   if ((self = [self init])) {
+-    recur.count = count;
+-    recur.freq = (icalrecurrencetype_frequency)frequency;
++    recur->count = count;
++    recur->freq = (icalrecurrencetype_frequency)frequency;
+   }
+   return self;
+ }
+@@ -119,22 +119,22 @@
+ }
+ - (recurrenceFrequency)frequency
+ {
+-  return (recurrenceFrequency)recur.freq;
++  return (recurrenceFrequency)recur->freq;
+ }
+ - (Date *)until
+ {
+-  if (icaltime_is_null_time(recur.until))
++  if (icaltime_is_null_time(recur->until))
+     return nil;
+-  return AUTORELEASE([[Date alloc] initWithICalTime:recur.until]);
++  return AUTORELEASE([[Date alloc] initWithICalTime:recur->until]);
+ }
+ - (int)count
+ {
+-  return recur.count;
++  return recur->count;
+ }
+ @end
+ 
+ @implementation RecurrenceRule(iCalendar)
+-- (id)initWithICalRRule:(struct icalrecurrencetype)rrule
++- (id)initWithICalRRule:(struct icalrecurrencetype*)rrule
+ {
+   if ((self = [super init]))
+     recur = rrule;
+@@ -149,11 +149,11 @@
+ @implementation RecurrenceRule(NSCoding)
+ - (void)encodeWithCoder:(NSCoder *)coder
+ {
+-  [coder encodeObject:[NSString stringWithCString:icalrecurrencetype_as_string(&recur)] forKey:@"rrule"];
++  [coder encodeObject:[NSString stringWithCString:icalrecurrencetype_as_string(recur)] forKey:@"rrule"];
+ }
+ - (id)initWithCoder:(NSCoder *)coder
+ {
+-  recur = icalrecurrencetype_from_string([[coder decodeObjectForKey:@"rrule"] cString]);
++  recur = icalrecurrencetype_new_from_string([[coder decodeObjectForKey:@"rrule"] cString]);
+   return self;
+ }
+ @end

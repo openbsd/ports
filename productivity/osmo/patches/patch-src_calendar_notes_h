@@ -1,0 +1,14 @@
+Fix for libical >= 4
+
+Index: src/calendar_notes.h
+--- src/calendar_notes.h.orig
++++ src/calendar_notes.h
+@@ -53,7 +53,7 @@ enum {     
+ 
+ gboolean    cal_check_note              (guint32 julian, GUI *appGUI);
+ gboolean    cal_check_notes             (guint32 julian_start, guint32 julian_end, GUI *appGUI);
+-void        cal_notes_foreach           (guint32 julian_start, guint32 julian_end, gboolean (*cnfunc)(), GUI *appGUI);
++void        cal_notes_foreach           (guint32 julian_start, guint32 julian_end, gboolean (*cnfunc)(struct note*, GUI*), GUI *appGUI);
+ gchar *     cal_get_note                (guint32 julian, GUI *appGUI);
+ gchar *     cal_get_note_color          (guint32 julian, GUI *appGUI);
+ void        cal_replace_note_color      (gchar *old_color, gchar *new_color, GUI *appGUI);

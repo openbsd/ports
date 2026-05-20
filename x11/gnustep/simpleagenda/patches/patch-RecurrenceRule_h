@@ -1,0 +1,23 @@
+Fix for libical >= 4
+
+Index: RecurrenceRule.h
+--- RecurrenceRule.h.orig
++++ RecurrenceRule.h
+@@ -17,7 +17,7 @@ typedef enum
+ 
+ @interface RecurrenceRule : NSObject
+ {
+-  struct icalrecurrencetype recur;
++  struct icalrecurrencetype* recur;
+ }
+ 
+ - (id)initWithFrequency:(recurrenceFrequency)frequency;
+@@ -31,6 +31,6 @@ typedef enum
+ @end
+ 
+ @interface RecurrenceRule(iCalendar)
+-- (id)initWithICalRRule:(struct icalrecurrencetype)rrule;
+-- (struct icalrecurrencetype)iCalRRule;
++- (id)initWithICalRRule:(struct icalrecurrencetype*)rrule;
++- (struct icalrecurrencetype*)iCalRRule;
+ @end

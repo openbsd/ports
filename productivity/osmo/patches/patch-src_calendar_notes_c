@@ -1,0 +1,14 @@
+Fix for libical >= 4
+
+Index: src/calendar_notes.c
+--- src/calendar_notes.c.orig
++++ src/calendar_notes.c
+@@ -67,7 +67,7 @@ cal_check_notes (guint32 julian_start, guint32 julian_
+ /*------------------------------------------------------------------------------*/
+ 
+ void
+-cal_notes_foreach (guint32 julian_start, guint32 julian_end, gboolean (*cnfunc)(), GUI *appGUI)
++cal_notes_foreach (guint32 julian_start, guint32 julian_end, gboolean (*cnfunc)(struct note*, GUI*), GUI *appGUI)
+ {
+ 	GSList *node;
+ 	struct note *n;

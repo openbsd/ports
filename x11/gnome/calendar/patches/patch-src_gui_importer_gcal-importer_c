@@ -1,0 +1,17 @@
+https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/763
+
+Index: src/gui/importer/gcal-importer.c
+--- src/gui/importer/gcal-importer.c.orig
++++ src/gui/importer/gcal-importer.c
+@@ -147,7 +147,11 @@ read_file_in_thread (GTask        *task,
+   g_assert (g_utf8_validate (contents, length, NULL));
+ 
+   component = i_cal_parser_parse_string (contents);
++#if ICAL_CHECK_VERSION(4, 0, 0)
++  ical_error = i_cal_error_icalerrno ();
++#else
+   ical_error = i_cal_errno_return ();
++#endif
+ 
+   if (ical_error != I_CAL_NO_ERROR)
+     {
