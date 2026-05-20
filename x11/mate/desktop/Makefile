@@ -1,6 +1,6 @@
 COMMENT=		components for the MATE desktop
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS+=		mate-desktop-2		0.0 # 18.4
 

@@ -1,0 +1,14 @@
+https://gitlab.freedesktop.org/xdg/startup-notification/-/work_items/6
+
+Index: libmate-desktop/mate-desktop-item.c
+--- libmate-desktop/mate-desktop-item.c.orig
++++ libmate-desktop/mate-desktop-item.c
+@@ -1589,7 +1589,7 @@ startup_timeout (void *data)
+ 		suseconds_t tv_usec;
+ 		gint64 tv;
+ 
+-		sn_launcher_context_get_last_active_time (sn_context, &tv_sec, &tv_usec);
++		sn_launcher_context_get_last_active_time (sn_context, (long *)&tv_sec, &tv_usec);
+ 		tv = (tv_sec * G_USEC_PER_SEC) + tv_usec;
+ 		elapsed = (double) (now - tv) / 1000.0;
+ #else
