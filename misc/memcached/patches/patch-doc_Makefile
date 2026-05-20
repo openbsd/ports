@@ -9,4 +9,4 @@ Index: doc/Makefile
 +LIBS = -levent_core
  LTLIBOBJS = 
  MAKEINFO = ${SHELL} '/home/dormando/p/code/memcached/missing' makeinfo
- MKDIR_P = /usr/bin/mkdir -p
+ MKDIR_P = mkdir -p
