@@ -2,6 +2,7 @@ COMMENT=	X11-based presentation tool
 
 DISTNAME=	magicpoint-1.13a
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	misc productivity
 

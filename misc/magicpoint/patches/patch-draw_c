@@ -1,0 +1,14 @@
+error: incompatible pointer types passing 'int *' to parameter of type 'size_t *' (aka 'unsigned long *') [-Wincompatible-pointer-types]
+
+Index: draw.c
+--- draw.c.orig
++++ draw.c
+@@ -5243,7 +5243,7 @@ xft_draw_fragment(state, p, len, registry, charset16)
+ 	static char prefix[3][20] = { "\033$B", "\033$A", "\033$(C"};
+ 	char buf16[1024], *p16;
+ 	char out16[1024], *o16;
+-	int ileft, oleft;
++	size_t ileft, oleft;
+ #ifdef HAVE_ICONV
+ 	static iconv_t icv[3];
+ #endif
