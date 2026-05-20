@@ -1,0 +1,14 @@
+fix warning about missing one-line description during packaging
+
+Index: slurm.1
+--- slurm.1.orig
++++ slurm.1
+@@ -4,6 +4,7 @@
+ .\"
+ .Sh NAME
+-slurm \- yet another network load monitor
++.Nm slurm
++.Nd yet another network load monitor
+ .Sh SYNOPSIS
+ .Nm slurm
+ .Op Fl hHz
