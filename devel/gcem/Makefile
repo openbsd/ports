@@ -10,6 +10,9 @@ CATEGORIES =	devel
 # Apache-2.0
 PERMIT_PACKAGE =	Yes
 
+# C++11
+COMPILER =	base-clang ports-gcc
+
 MODULES =	devel/cmake
 
 NO_BUILD =	Yes
