@@ -1,0 +1,32 @@
+Index: saslauthd/md5.c
+--- saslauthd/md5.c.orig
++++ saslauthd/md5.c
+@@ -59,8 +59,12 @@ static void Encode PROTO_LIST
+        ((unsigned char *, UINT4 *, unsigned int)); 
+ static void Decode PROTO_LIST
+        ((UINT4 *, unsigned char *, unsigned int)); 
++#if 0
+ static void MD5_memcpy PROTO_LIST ((POINTER, POINTER, unsigned int));
+ static void MD5_memset PROTO_LIST ((POINTER, int, unsigned int));
++#endif
++#define MD5_memcpy memcpy
++#define MD5_memset memset
+ 
+ static unsigned char PADDING[64] = {
+        0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+@@ -317,6 +321,7 @@ unsigned int len;
+ 
+         */
+ 
++#if 0
+ static void MD5_memcpy (output, input, len)
+ POINTER output;
+ POINTER input;
+@@ -341,6 +346,7 @@ unsigned int len;
+        for (i = 0; i < len; i++) 
+        ((char *)output)[i] = (char)value; 
+ }
++#endif
+ 
+ void _saslauthd_hmac_md5_init(HMAC_MD5_CTX *hmac,
+ 			 const unsigned char *key,
