@@ -3,6 +3,7 @@ COMMENT=	tty-based e-mail client, forked from Mutt
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
 GH_TAGNAME=	20260504
+REVISION=	0
 
 DIST_TUPLE=	github neomutt neomutt-test-files \
 		    7404f4423b11cd5da2d123b3636c7a310bbbed9f neomutt-test-files
@@ -23,14 +24,14 @@ COMPILER_LANGS=	c
 # uses pledge()
 WANTLIB+=	c crypto curses iconv idn2 intl pcre2-8 ssl tdb z
 
-LIB_DEPENDS+=	databases/tdb \
+LIB_DEPENDS=	databases/tdb \
 		devel/gettext,-runtime \
 		devel/libidn2 \
 		devel/pcre2
-BUILD_DEPENDS+=	devel/gettext,-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		lang/jimtcl \
 		textproc/docbook-xsl \
-		w3m-*|lynx-*:www/lynx
+		www/w3m
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 FLAVORS=	gpgme sasl notmuch
