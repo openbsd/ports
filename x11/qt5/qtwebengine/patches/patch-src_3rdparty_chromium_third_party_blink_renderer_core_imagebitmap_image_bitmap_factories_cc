@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/blink/renderer/core/imagebitmap/image_bitmap_factories.cc
+--- src/3rdparty/chromium/third_party/blink/renderer/core/imagebitmap/image_bitmap_factories.cc.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/core/imagebitmap/image_bitmap_factories.cc
+@@ -63,7 +63,7 @@ namespace blink {
+ 
+ namespace {
+ // This enum is used in a UMA histogram.
+-enum CreateImageBitmapSource {
++enum CreateImageBitmapSource : uint8_t {
+   kCreateImageBitmapSourceBlob = 0,
+   kCreateImageBitmapSourceImageBitmap = 1,
+   kCreateImageBitmapSourceImageData = 2,

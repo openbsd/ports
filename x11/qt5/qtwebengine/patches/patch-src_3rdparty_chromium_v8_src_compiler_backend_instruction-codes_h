@@ -1,0 +1,21 @@
+Index: src/3rdparty/chromium/v8/src/compiler/backend/instruction-codes.h
+--- src/3rdparty/chromium/v8/src/compiler/backend/instruction-codes.h.orig
++++ src/3rdparty/chromium/v8/src/compiler/backend/instruction-codes.h
+@@ -35,7 +35,7 @@ namespace internal {
+ namespace compiler {
+ 
+ // Modes for ArchStoreWithWriteBarrier below.
+-enum class RecordWriteMode {
++enum class RecordWriteMode : uint8_t {
+   kValueIsMap,
+   kValueIsPointer,
+   kValueIsEphemeronKey,
+@@ -187,7 +187,7 @@ V8_EXPORT_PRIVATE std::ostream& operator<<(std::ostrea
+   V(None)                       \
+   TARGET_ADDRESSING_MODE_LIST(V)
+ 
+-enum AddressingMode {
++enum AddressingMode : uint8_t {
+ #define DECLARE_ADDRESSING_MODE(Name) kMode_##Name,
+   ADDRESSING_MODE_LIST(DECLARE_ADDRESSING_MODE)
+ #undef DECLARE_ADDRESSING_MODE

@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/v8/src/snapshot/references.h
+--- src/3rdparty/chromium/v8/src/snapshot/references.h.orig
++++ src/3rdparty/chromium/v8/src/snapshot/references.h
+@@ -37,7 +37,7 @@ constexpr bool IsPreAllocatedSpace(SnapshotSpace space
+ 
+ class SerializerReference {
+  private:
+-  enum SpecialValueType {
++  enum SpecialValueType : uint8_t {
+     kInvalidValue,
+     kAttachedReference,
+     kOffHeapBackingStore,
