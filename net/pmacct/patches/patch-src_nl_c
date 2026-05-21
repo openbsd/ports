@@ -1,0 +1,12 @@
+Index: src/nl.c
+--- src/nl.c.orig
++++ src/nl.c
+@@ -839,7 +839,7 @@ ssize_t recvfrom_savefile(struct pm_pcap_device *devic
+   if (savefile_pptrs->iph_ptr) {
+     (*savefile_pptrs->l3_handler)(savefile_pptrs);
+     if (savefile_pptrs->payload_ptr) {
+-      if (ts) (*ts) = &savefile_pptrs->pkthdr->ts; 
++      if (ts) (*ts) = &savefile_pptrs->pkthdr->ts; /* XXX bpf_timeval vs timeval; might be simpler to move to ports libpcap */
+       (*buf) = savefile_pptrs->payload_ptr;
+       ret = savefile_pptrs->pkthdr->caplen - (savefile_pptrs->payload_ptr - savefile_pptrs->packet_ptr);
+ 

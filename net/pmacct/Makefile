@@ -1,6 +1,6 @@
 COMMENT=	passive IP network monitoring tools: traffic accounting, etc
 
-DISTNAME=	pmacct-1.7.8
+DISTNAME=	pmacct-1.7.9
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/

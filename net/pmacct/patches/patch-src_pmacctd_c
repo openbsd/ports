@@ -1,0 +1,16 @@
+Index: src/pmacctd.c
+--- src/pmacctd.c.orig
++++ src/pmacctd.c
+@@ -260,7 +260,11 @@ void pm_pcap_check(struct pm_pcap_device *dev_ptr)
+     Log(LOG_INFO, "INFO ( %s/core ): [%s,%u] link type is: %d\n", config.name, dev_ptr->str, dev_ptr->id, dev_ptr->link_type);
+   }
+ 
+-  if (dev_ptr->link_type != DLT_EN10MB && dev_ptr->link_type != DLT_IEEE802 && dev_ptr->link_type != DLT_LINUX_SLL) {
++  if (dev_ptr->link_type != DLT_EN10MB && dev_ptr->link_type != DLT_IEEE802
++#ifdef DLT_LINUX_SLL
++		  && dev_ptr->link_type != DLT_LINUX_SLL
++#endif
++		  ) {
+     list = plugins_list;
+     while (list) {
+       if (list->cfg.what_to_count & COUNT_SRC_MAC) {

@@ -1,0 +1,14 @@
+Index: src/util.c
+--- src/util.c.orig
++++ src/util.c
+@@ -2455,8 +2455,8 @@ void compose_timestamp(char *buf, int buflen, struct t
+   if (buflen < VERYSHORTBUFLEN) return; 
+ 
+   if (since_epoch) {
+-    if (usec) snprintf(buf, buflen, "%ld.%.6ld", tv->tv_sec, (long)tv->tv_usec);
+-    else snprintf(buf, buflen, "%ld", tv->tv_sec);
++    if (usec) snprintf(buf, buflen, "%lld.%.6ld", (long long)tv->tv_sec, (long)tv->tv_usec);
++    else snprintf(buf, buflen, "%lld", (long long)tv->tv_sec);
+   }
+   else {
+     time1 = tv->tv_sec;

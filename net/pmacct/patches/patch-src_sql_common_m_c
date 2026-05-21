@@ -1,0 +1,32 @@
+64-bit time_t
+
+Index: src/sql_common_m.c
+--- src/sql_common_m.c.orig
++++ src/sql_common_m.c
+@@ -260,7 +260,7 @@ void SQL_SetENV_child(const struct insert_data *idata)
+ 
+     strncat(envbuf.ptr, "ELAPSED_TIME=", envbuf.end-envbuf.ptr);
+     tmpptr = envbuf.ptr + strlen(envbuf.ptr);
+-    snprintf(tmpptr, envbuf.end-tmpptr, "%lu", idata->elap_time);
++    snprintf(tmpptr, envbuf.end-tmpptr, "%llu", (long long)idata->elap_time);
+     ptrs[count] = envbuf.ptr;
+     envbuf.ptr += strlen(envbuf.ptr)+1;
+     count++;
+@@ -293,7 +293,7 @@ void SQL_SetENV_child(const struct insert_data *idata)
+ 
+     strncat(envbuf.ptr, "SQL_HISTORY_BASETIME=", envbuf.end-envbuf.ptr);
+     tmpptr = envbuf.ptr + strlen(envbuf.ptr);
+-    snprintf(tmpptr, envbuf.end-tmpptr, "%lu", idata->basetime);
++    snprintf(tmpptr, envbuf.end-tmpptr, "%llu", (long long)idata->basetime);
+     ptrs[count] = envbuf.ptr;
+     envbuf.ptr += strlen(envbuf.ptr)+1;
+     count++;
+@@ -304,7 +304,7 @@ void SQL_SetENV_child(const struct insert_data *idata)
+ 
+     strncat(envbuf.ptr, "SQL_HISTORY_TIMESLOT=", envbuf.end-envbuf.ptr);
+     tmpptr = envbuf.ptr + strlen(envbuf.ptr);
+-    snprintf(tmpptr, envbuf.end-tmpptr, "%lu", idata->timeslot);
++    snprintf(tmpptr, envbuf.end-tmpptr, "%llu", (long long)idata->timeslot);
+     ptrs[count] = envbuf.ptr;
+     envbuf.ptr += strlen(envbuf.ptr)+1;
+     count++;

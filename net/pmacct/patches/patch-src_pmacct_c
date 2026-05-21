@@ -1,0 +1,25 @@
+64-bit time_t
+
+Index: src/pmacct.c
+--- src/pmacct.c.orig
++++ src/pmacct.c
+@@ -3020,7 +3020,7 @@ int main(int argc,char **argv)
+ 	/* print packets */
+ 	else if (which_counter == 1) printf("%" PRIu64 "\n", acc_elem->pkt_num); 
+ 	/* print packets+bytes+flows+num */
+-	else if (which_counter == 2) printf("%" PRIu64 " %" PRIu64 " %" PRIu64 " %lu\n", acc_elem->pkt_num, acc_elem->pkt_len, acc_elem->flo_num, acc_elem->time_start.tv_sec);
++	else if (which_counter == 2) printf("%" PRIu64 " %" PRIu64 " %" PRIu64 " %" PRIu64 "\n", acc_elem->pkt_num, acc_elem->pkt_len, acc_elem->flo_num, (long long)acc_elem->time_start.tv_sec);
+ 	/* print flows */
+ 	else if (which_counter == 3) printf("%" PRIu64 "\n", acc_elem->flo_num);
+       }
+@@ -3866,8 +3866,8 @@ void pmc_compose_timestamp(char *buf, int buflen, stru
+   struct tm result_tm, *time2;
+ 
+   if (tstamp_since_epoch) {
+-    if (usec) snprintf(buf, buflen, "%ld.%.6ld", tv->tv_sec, (long)tv->tv_usec);
+-    else snprintf(buf, buflen, "%ld", tv->tv_sec);
++    if (usec) snprintf(buf, buflen, "%lld.%.6ld", (long long)tv->tv_sec, (long)tv->tv_usec);
++    else snprintf(buf, buflen, "%lld", (long long)tv->tv_sec);
+   }
+   else {
+     time1 = tv->tv_sec;
