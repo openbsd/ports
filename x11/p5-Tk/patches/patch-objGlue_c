@@ -23,13 +23,15 @@ Index: objGlue.c
  #ifdef SvUTF8
  # ifdef NEED_FIX_BUGGY_UTF8_STRING
       if (!is_utf8_string(s,strlen(s)))
-@@ -627,7 +635,8 @@ Tcl_GetByteArrayFromObj(Tcl_Obj * objPtr, int * length
+@@ -627,7 +635,10 @@ Tcl_GetByteArrayFromObj(Tcl_Obj * objPtr, int * length
   sv_utf8_downgrade(objPtr, 0);
   if (lengthPtr)
    {
 -   return (unsigned char *) SvPV(objPtr, *lengthPtr);
 +   long length = *lengthPtr;
-+   return (unsigned char *) SvPV(objPtr, length);
++   unsigned char *ret = SvPV(objPtr, length);
++   *lengthPtr = length;
++   return ret;
    }
   else
    {
