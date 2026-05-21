@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1802 2026/05/17 09:50:29 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1803 2026/05/21 22:51:55 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1098,6 +1098,8 @@ my $obsolete_suggestion = {
 	'opensmtpd-extras-mysql' => 'opensmtpd-table-mysql',
 	'opensmtpd-extras-pgsql' => 'opensmtpd-table-postgresql',
 	'opensmtpd-extras-redis' => 'opensmtpd-table-redis',
+# 7.7
+	'sqlite' => 'sqlite3',
 # 7.9
 	'dovecot-fts-xapian' => 'dovecot-fts-flatcurve',
 	'jd-gui' => 'vineflower',
