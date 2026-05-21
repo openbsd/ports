@@ -2,7 +2,7 @@ COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  akonadiconsole            2.0 # 5.13.2
+SHARED_LIBS +=  akonadiconsole            2.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets

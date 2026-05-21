@@ -2,7 +2,7 @@ COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=	KPim6MailCommon           0.1 # 0.0
+SHARED_LIBS +=	KPim6MailCommon           1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets

@@ -1,47 +1,46 @@
 Index: messageviewer/src/dkim-verify/tests/CMakeLists.txt
 --- messageviewer/src/dkim-verify/tests/CMakeLists.txt.orig
 +++ messageviewer/src/dkim-verify/tests/CMakeLists.txt
-@@ -4,7 +4,7 @@ set(dkimtest_lookupkey_SRCS main.cpp lookupkey.cpp loo
- add_executable(dkimtest_lookupkey ${dkimtest_lookupkey_SRCS})
- target_link_libraries(dkimtest_lookupkey
- 	Qt::Network
+@@ -9,7 +9,7 @@ add_executable(dkimtest_lookupkey ${dkimtest_lookupkey
+ target_link_libraries(
+     dkimtest_lookupkey
+     Qt::Network
 -    OpenSSL::SSL
 +    crypto
  )
  
  #####################
-@@ -12,7 +12,7 @@ set(dkimtest_checkrsapublickey_SRCS checkrsapublickey.
- add_executable(dkimtest_checkrsapublickey ${dkimtest_checkrsapublickey_SRCS})
- target_link_libraries(dkimtest_checkrsapublickey
-         Qt::Network
--        OpenSSL::SSL
-+        crypto
+@@ -21,7 +21,7 @@ add_executable(dkimtest_checkrsapublickey ${dkimtest_c
+ target_link_libraries(
+     dkimtest_checkrsapublickey
+     Qt::Network
+-    OpenSSL::SSL
++    crypto
  )
  #####################
- set(dkimtest_checksignature_SRCS checksignature.cpp checksignature.h)
-@@ -20,7 +20,7 @@ add_executable(dkimtest_checksignature ${dkimtest_chec
- target_link_libraries(dkimtest_checksignature
-         Qt::Network
-         KPim6::MessageViewer
--        OpenSSL::SSL
-+        crypto
+ set(dkimtest_checksignature_SRCS
+@@ -33,7 +33,7 @@ target_link_libraries(
+     dkimtest_checksignature
+     Qt::Network
+     KPim6::MessageViewer
+-    OpenSSL::SSL
++    crypto
  )
  
  #####################
-@@ -29,7 +29,7 @@ add_executable(dkimtest_dmarclookupkey ${dkimtest_dmar
- target_link_libraries(dkimtest_dmarclookupkey
-         Qt::Network
-         KPim6::MessageViewer
--        OpenSSL::SSL
-+        crypto
+@@ -46,7 +46,7 @@ target_link_libraries(
+     dkimtest_dmarclookupkey
+     Qt::Network
+     KPim6::MessageViewer
+-    OpenSSL::SSL
++    crypto
  )
  
  #####################
-@@ -38,6 +38,6 @@ target_sources(dkimmanagerkeydialog_gui PRIVATE dkimma
- target_link_libraries(dkimmanagerkeydialog_gui
-         Qt::Network
-         KPim6::MessageViewer
--        OpenSSL::SSL
-+        crypto
+@@ -56,5 +56,5 @@ target_link_libraries(
+     dkimmanagerkeydialog_gui
+     Qt::Network
+     KPim6::MessageViewer
+-    OpenSSL::SSL
++    crypto
  )
- 

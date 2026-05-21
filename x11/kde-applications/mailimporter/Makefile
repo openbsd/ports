@@ -2,8 +2,8 @@ COMMENT =	KDE PIM mail importer library
 DISTNAME =	mailimporter-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6MailImporter         0.0 # 0.0
-SHARED_LIBS +=	KPim6MailImporterAkonadi  0.0 # 0.0
+SHARED_LIBS +=	KPim6MailImporter         1.0 # 0.0
+SHARED_LIBS +=	KPim6MailImporterAkonadi  0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6CoreAddons KF6I18n KF6ItemModels KF6KIOCore KF6TextAutoCorrectionCore

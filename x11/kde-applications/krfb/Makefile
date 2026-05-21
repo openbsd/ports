@@ -51,4 +51,5 @@ LIB_DEPENDS +=	devel/kf6/kcolorscheme \
 
 CXXFLAGS +=	-I${LOCALBASE}/include -DNONETWORK=0
 
+LIB_DEPENDS += archivers/lzo2 graphics/jpeg graphics/png security/cyrus-sasl2 security/cyrus-sasl2,db4 security/cyrus-sasl2,gssapi security/cyrus-sasl2,ldap security/cyrus-sasl2,mysql security/cyrus-sasl2,pgsql security/cyrus-sasl2,sqlite3 security/gnutls 
 .include <bsd.port.mk>

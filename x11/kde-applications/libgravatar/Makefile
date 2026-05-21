@@ -14,8 +14,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/ki18n \
-		devel/kf6/kwidgetsaddons \
-		x11/kde-applications/pimcommon>=${VERSION}
+		devel/kf6/kwidgetsaddons
 
 TEST_IS_INTERACTIVE =	X11
 

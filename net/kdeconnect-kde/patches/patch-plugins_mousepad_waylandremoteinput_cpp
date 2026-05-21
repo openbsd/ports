@@ -1,18 +1,17 @@
 Index: plugins/mousepad/waylandremoteinput.cpp
 --- plugins/mousepad/waylandremoteinput.cpp.orig
 +++ plugins/mousepad/waylandremoteinput.cpp
-@@ -15,7 +15,9 @@
- #include <KSharedConfig>
+@@ -16,7 +16,8 @@
  #include <QDBusPendingCallWatcher>
  
+ #include <libei.h>
 -#include <linux/input.h>
 +//#include <linux/input.h>
 +enum mouse_button { BTN_LEFT, BTN_RIGHT, BTN_MIDDLE, BTN_TOUCH };
-+
+ #include <sys/mman.h>
+ #include <unistd.h>
  #include <xkbcommon/xkbcommon.h>
- 
- namespace
-@@ -23,38 +25,38 @@ namespace
+@@ -26,38 +27,38 @@ namespace
  // Translation table to keep in sync within all the implementations
  int SpecialKeysMap[] = {
      0, // Invalid
@@ -83,19 +82,3 @@ Index: plugins/mousepad/waylandremoteinput.cpp
  };
  }
  
-@@ -249,6 +251,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
-             bool shift = np.get<bool>(QStringLiteral("shift"), false);
-             bool super = np.get<bool>(QStringLiteral("super"), false);
- 
-+/*
-             if (ctrl)
-                 s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTCTRL, 1);
-             if (alt)
-@@ -281,6 +284,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
-                 s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTSHIFT, 0);
-             if (super)
-                 s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTMETA, 0);
-+*/
-         }
-     } else { // Is a mouse move event
-         s_session->iface->NotifyPointerMotion(s_session->m_xdpPath, {}, dx, dy);

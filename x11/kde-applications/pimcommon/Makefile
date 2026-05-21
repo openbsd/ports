@@ -2,17 +2,17 @@ COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6PimCommon            2.0 # 0.0
-SHARED_LIBS +=	KPim6PimCommonAkonadi     2.0 # 0.0
+SHARED_LIBS +=	KPim6PimCommon            3.0 # 0.0
+SHARED_LIBS +=	KPim6PimCommonAkonadi     2.1 # 0.0
 SHARED_LIBS +=	KPim6PimCommonActivities  0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6Contacts KF6CoreAddons KF6GuiAddons KF6I18n KF6ItemModels
-WANTLIB += KF6ItemViews KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
-WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Purpose KF6PurposeWidgets
-WANTLIB += KF6Service KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6NewStuffCore
+WANTLIB += KF6NewStuffWidgets KF6Purpose KF6PurposeWidgets KF6Service
+WANTLIB += KF6TextAddonsWidgets KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
 WANTLIB += KPim6AkonadiCore KPim6AkonadiPrivate KPim6AkonadiSearchPIM
@@ -40,7 +40,6 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/ki18n \
 		devel/kf6/kio \
 		devel/kf6/kitemmodels \
-		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kguiaddons \
 		devel/kf6/knewstuff \

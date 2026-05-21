@@ -7,7 +7,7 @@ DISTNAME =	kdevelop-${MODKDE_GEAR_VERSION}
 
 HOMEPAGE =	https://www.kdevelop.org/
 
-SHARED_LIBS +=  KDevPlatformDebugger      9.0 # 6.0
+SHARED_LIBS +=  KDevPlatformDebugger      10.0 # 6.0
 SHARED_LIBS +=  KDevPlatformDocumentation 4.1 # 6.0
 SHARED_LIBS +=  KDevPlatformInterfaces    6.0 # 6.0
 SHARED_LIBS +=  KDevPlatformLanguage      9.0 # 6.0
@@ -129,7 +129,7 @@ LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
-PLUGIN_V =	64
+PLUGIN_V =	65
 SUBST_VARS =	PLUGIN_V
 
 TEST_IS_INTERACTIVE =	X11

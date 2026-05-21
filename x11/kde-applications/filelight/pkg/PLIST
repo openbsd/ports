@@ -62,10 +62,6 @@ share/doc/HTML/uk/filelight/index.cache.bz2
 share/doc/HTML/uk/filelight/index.docbook
 share/doc/HTML/uk/filelight/radial_map.png
 share/doc/HTML/uk/filelight/radial_map_context_menu.png
-share/examples/filelight/
-share/examples/filelight/xdg/
-share/examples/filelight/xdg/filelightrc
-@sample ${SYSCONFDIR}/xdg/filelightrc
 share/icons/hicolor/128x128/apps/filelight.png
 share/icons/hicolor/16x16/apps/filelight.png
 share/icons/hicolor/22x22/apps/filelight.png

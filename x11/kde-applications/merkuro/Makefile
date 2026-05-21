@@ -11,8 +11,8 @@ HOMEPAGE =	https://apps.kde.org/merkuro.calendar/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=	MerkuroComponents         0.0 # 0.0
-SHARED_LIBS +=	merkuro_contact           0.0 # 0.0
+SHARED_LIBS +=	MerkuroComponents         1.0 # 0.0
+SHARED_LIBS +=	merkuro_contact           1.0 # 0.0
 
 # GPLv3+, LGPL-2.1+
 PERMIT_PACKAGE =	Yes

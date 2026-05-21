@@ -2,7 +2,7 @@ COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_GEAR_VERSION}
 
-SHARED_LIBS +=	kdeconnectcore		7.0 # 1.4
+SHARED_LIBS +=	kdeconnectcore		8.0 # 1.4
 
 CATEGORIES =	net
 
@@ -20,8 +20,8 @@ WANTLIB += KF6PulseAudioQt KF6Service KF6Solid KF6StatusNotifierItem
 WANTLIB += KF6WidgetsAddons KF6WindowSystem Qt6Bluetooth Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml
 WANTLIB += Qt6Quick Qt6QuickControls2 Qt6WaylandClient Qt6Widgets
-WANTLIB += Qt6Xml SM X11 Xext Xtst c crypto dbus-1 fakekey m wayland-client
-WANTLIB += wayland-cursor xkbcommon
+WANTLIB += Qt6Xml SM X11 Xext Xtst c crypto dbus-1 ei fakekey
+WANTLIB += m wayland-client wayland-cursor xkbcommon
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =		.tar.xz
@@ -76,6 +76,7 @@ LIB_DEPENDS =	audio/pulseaudio-qt \
 		devel/kf6/kwindowsystem \
 		devel/kf6/solid \
 		wayland/wayland \
+		wayland/libei \
 		x11/dbus \
 		x11/libfakekey \
 		x11/qt6/qtdeclarative \

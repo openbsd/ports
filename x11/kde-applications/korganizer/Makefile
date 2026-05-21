@@ -3,8 +3,8 @@ DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
 
 SHARED_LIBS +=  korganizer_core         4.0 # 5.13.2
-SHARED_LIBS +=  korganizer_interfaces   3.0 # 5.13.2
-SHARED_LIBS +=  korganizerprivate       10.0 # 5.13.2
+SHARED_LIBS +=  korganizer_interfaces   4.0 # 5.13.2
+SHARED_LIBS +=  korganizerprivate       10.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets

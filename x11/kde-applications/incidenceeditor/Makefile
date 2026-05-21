@@ -2,7 +2,7 @@ COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6IncidenceEditor      0.0 # 0.0
+SHARED_LIBS +=	KPim6IncidenceEditor      1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets

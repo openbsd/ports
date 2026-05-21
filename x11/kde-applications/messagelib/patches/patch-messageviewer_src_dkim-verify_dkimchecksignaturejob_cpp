@@ -31,7 +31,7 @@ Index: messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp
      const auto rawDer = QByteArray::fromBase64(der);
 +#ifdef LIBRESSL_VERSION_NUMBER
 +    const unsigned char *p = reinterpret_cast<const unsigned char *>(rawDer.constData());
-+    if ((pubKey = d2i_PUBKEY(nullptr, &p, rawDer.size())) == nullptr) {    
++    if ((pubKey = d2i_PUBKEY(nullptr, &p, rawDer.size())) == nullptr) {
 +#else
      std::unique_ptr<BIO, decltype(&BIO_free)> pubKeyBio(BIO_new_mem_buf(rawDer.constData(), rawDer.size()), BIO_free);
      if (!OSSL_DECODER_from_bio(decoderCtx.get(), pubKeyBio.get())) {

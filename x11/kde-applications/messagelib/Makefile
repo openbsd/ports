@@ -2,12 +2,12 @@ COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6MessageComposer      2.0 # 0.0
-SHARED_LIBS +=	KPim6MessageCore          2.0 # 0.0
-SHARED_LIBS +=	KPim6MessageList          3.0 # 0.0
-SHARED_LIBS +=	KPim6MessageViewer        3.0 # 0.0
-SHARED_LIBS +=	KPim6MimeTreeParser       2.0 # 0.0
-SHARED_LIBS +=	KPim6TemplateParser       1.0 # 0.0
+SHARED_LIBS +=	KPim6MessageComposer      3.0 # 0.0
+SHARED_LIBS +=	KPim6MessageCore          3.0 # 0.0
+SHARED_LIBS +=	KPim6MessageList          4.0 # 0.0
+SHARED_LIBS +=	KPim6MessageViewer        4.0 # 0.0
+SHARED_LIBS +=	KPim6MimeTreeParser       3.0 # 0.0
+SHARED_LIBS +=	KPim6TemplateParser       2.0 # 0.0
 SHARED_LIBS +=	KPim6WebEngineViewer      2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6CalendarCore

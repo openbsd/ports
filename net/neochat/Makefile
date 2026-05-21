@@ -11,12 +11,11 @@ HOMEPAGE =	https://apps.kde.org/neochat/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
-WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6DBusAddons
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6Crash KF6DBusAddons
 WANTLIB += KF6I18n KF6I18nQml KF6IconThemes KF6ItemModels KF6JobWidgets
 WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Notifications
-WANTLIB += KF6Purpose KF6Service KF6SonnetCore KF6StatusNotifierItem
-WANTLIB += KF6SyntaxHighlighting KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KUnifiedPush Kirigami KirigamiApp KirigamiPlatform
+WANTLIB += KF6Purpose KF6Service KF6SyntaxHighlighting KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KUnifiedPush Kirigami KirigamiApp KirigamiPlatform
 WANTLIB += QCoro6Core QCoro6Network Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2
 WANTLIB += Qt6Sql Qt6TextToSpeech Qt6WebView Qt6Widgets QuotientQt6
@@ -52,11 +51,10 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knotifications \
 		devel/kf6/kservice \
-		devel/kf6/kstatusnotifieritem \
 		devel/kf6/kwidgetsaddons \
+		devel/kf6/kcrash \
 		devel/kf6/kwindowsystem \
 		devel/kf6/purpose \
-		devel/kf6/sonnet \
 		devel/kf6/kiconthemes \
 		devel/kf6/syntax-highlighting \
 		graphics/kirigami-addons \

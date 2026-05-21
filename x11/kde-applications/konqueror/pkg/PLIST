@@ -63,6 +63,7 @@ lib/qt6/plugins/konqueror_kcms/
 @so lib/qt6/plugins/konqueror_kcms/kcm_history.so
 @so lib/qt6/plugins/konqueror_kcms/kcm_konq.so
 @so lib/qt6/plugins/konqueror_kcms/kcm_performance.so
+@so lib/qt6/plugins/konqueror_kcms/kcm_speeddial.so
 @so lib/qt6/plugins/konqueror_kcms/khtml_appearance.so
 @so lib/qt6/plugins/konqueror_kcms/khtml_behavior.so
 @so lib/qt6/plugins/konqueror_kcms/khtml_cache.so
@@ -91,12 +92,14 @@ share/akregator/pics/
 share/akregator/pics/feed.png
 share/applications/bookmarks.desktop
 share/applications/kcm_bookmarks.desktop
+share/applications/kcm_speeddial.desktop
 share/applications/kfmclient.desktop
 share/applications/kfmclient_dir.desktop
 share/applications/kfmclient_html.desktop
 share/applications/kfmclient_war.desktop
 share/applications/konqbrowser.desktop
 share/applications/org.kde.konqueror.desktop
+share/applications/speeddial.desktop
 share/config.kcfg/
 share/config.kcfg/kcreatewebarchive.kcfg
 share/config.kcfg/konqueror.kcfg
@@ -743,6 +746,9 @@ share/doc/HTML/tr/kcontrol/kcmcss/index.docbook
 share/doc/HTML/tr/kcontrol/khtml-adblock/
 share/doc/HTML/tr/kcontrol/khtml-adblock/index.cache.bz2
 share/doc/HTML/tr/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/tr/kcontrol/khtml-behavior/
+share/doc/HTML/tr/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/tr/kcontrol/khtml-behavior/index.docbook
 share/doc/HTML/tr/kcontrol/khtml-general/
 share/doc/HTML/tr/kcontrol/khtml-general/index.cache.bz2
 share/doc/HTML/tr/kcontrol/khtml-general/index.docbook
@@ -752,6 +758,9 @@ share/doc/HTML/tr/kcontrol/khtml-java-js/index.docbook
 share/doc/HTML/tr/kcontrol/performance/
 share/doc/HTML/tr/kcontrol/performance/index.cache.bz2
 share/doc/HTML/tr/kcontrol/performance/index.docbook
+share/doc/HTML/tr/konqueror/
+share/doc/HTML/tr/konqueror/index.cache.bz2
+share/doc/HTML/tr/konqueror/index.docbook
 share/doc/HTML/uk/kcontrol/
 share/doc/HTML/uk/kcontrol/bookmarks/
 share/doc/HTML/uk/kcontrol/bookmarks/index.cache.bz2
@@ -869,6 +878,8 @@ share/konqueror/about/konq.css
 share/konqueror/about/launch.html
 share/konqueror/about/plugins.html
 share/konqueror/about/plugins_rtl.html
+share/konqueror/about/speeddial.css
+share/konqueror/about/speeddial.html
 share/konqueror/about/tips.html
 share/konqueror/about/top-left-konqueror.png
 share/konqueror/about/top-middle.png
@@ -910,9 +921,6 @@ share/konqueror/pics/indicator_connect.png
 share/konqueror/pics/indicator_empty.png
 share/konqueror/pics/indicator_noconnect.png
 share/konqueror/pics/indicator_viewactive.png
-share/konqueror/webengine_dictionaries/
-share/konqueror/webengine_dictionaries/default.bdic
-share/konqueror/webengine_dictionaries/en-GB.bdic
 share/locale/af/LC_MESSAGES/babelfish.mo
 share/locale/af/LC_MESSAGES/dirfilterplugin.mo
 share/locale/af/LC_MESSAGES/imgalleryplugin.mo
@@ -948,6 +956,7 @@ share/locale/ar/LC_MESSAGES/konqueror.mo
 share/locale/ar/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ar/LC_MESSAGES/libkonq.mo
 share/locale/ar/LC_MESSAGES/searchbarplugin.mo
+share/locale/ar/LC_MESSAGES/speeddial.mo
 share/locale/ar/LC_MESSAGES/temporarysavedir.mo
 share/locale/ar/LC_MESSAGES/uachangerplugin.mo
 share/locale/ar/LC_MESSAGES/webarchiver.mo
@@ -1021,6 +1030,7 @@ share/locale/bg/LC_MESSAGES/konqueror.mo
 share/locale/bg/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/bg/LC_MESSAGES/libkonq.mo
 share/locale/bg/LC_MESSAGES/searchbarplugin.mo
+share/locale/bg/LC_MESSAGES/speeddial.mo
 share/locale/bg/LC_MESSAGES/temporarysavedir.mo
 share/locale/bg/LC_MESSAGES/uachangerplugin.mo
 share/locale/bg/LC_MESSAGES/webarchiver.mo
@@ -1101,6 +1111,7 @@ share/locale/ca/LC_MESSAGES/konqueror.mo
 share/locale/ca/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ca/LC_MESSAGES/libkonq.mo
 share/locale/ca/LC_MESSAGES/searchbarplugin.mo
+share/locale/ca/LC_MESSAGES/speeddial.mo
 share/locale/ca/LC_MESSAGES/temporarysavedir.mo
 share/locale/ca/LC_MESSAGES/uachangerplugin.mo
 share/locale/ca/LC_MESSAGES/webarchiver.mo
@@ -1125,6 +1136,7 @@ share/locale/ca@valencia/LC_MESSAGES/konqueror.mo
 share/locale/ca@valencia/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/libkonq.mo
 share/locale/ca@valencia/LC_MESSAGES/searchbarplugin.mo
+share/locale/ca@valencia/LC_MESSAGES/speeddial.mo
 share/locale/ca@valencia/LC_MESSAGES/temporarysavedir.mo
 share/locale/ca@valencia/LC_MESSAGES/uachangerplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/webarchiver.mo
@@ -1149,6 +1161,7 @@ share/locale/cs/LC_MESSAGES/konqueror.mo
 share/locale/cs/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/cs/LC_MESSAGES/libkonq.mo
 share/locale/cs/LC_MESSAGES/searchbarplugin.mo
+share/locale/cs/LC_MESSAGES/speeddial.mo
 share/locale/cs/LC_MESSAGES/temporarysavedir.mo
 share/locale/cs/LC_MESSAGES/uachangerplugin.mo
 share/locale/cs/LC_MESSAGES/webarchiver.mo
@@ -1220,6 +1233,7 @@ share/locale/de/LC_MESSAGES/konqueror.mo
 share/locale/de/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/de/LC_MESSAGES/libkonq.mo
 share/locale/de/LC_MESSAGES/searchbarplugin.mo
+share/locale/de/LC_MESSAGES/speeddial.mo
 share/locale/de/LC_MESSAGES/temporarysavedir.mo
 share/locale/de/LC_MESSAGES/uachangerplugin.mo
 share/locale/de/LC_MESSAGES/webarchiver.mo
@@ -1310,6 +1324,7 @@ share/locale/es/LC_MESSAGES/konqueror.mo
 share/locale/es/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/es/LC_MESSAGES/libkonq.mo
 share/locale/es/LC_MESSAGES/searchbarplugin.mo
+share/locale/es/LC_MESSAGES/speeddial.mo
 share/locale/es/LC_MESSAGES/temporarysavedir.mo
 share/locale/es/LC_MESSAGES/uachangerplugin.mo
 share/locale/es/LC_MESSAGES/webarchiver.mo
@@ -1355,6 +1370,7 @@ share/locale/eu/LC_MESSAGES/konqueror.mo
 share/locale/eu/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/eu/LC_MESSAGES/libkonq.mo
 share/locale/eu/LC_MESSAGES/searchbarplugin.mo
+share/locale/eu/LC_MESSAGES/speeddial.mo
 share/locale/eu/LC_MESSAGES/temporarysavedir.mo
 share/locale/eu/LC_MESSAGES/uachangerplugin.mo
 share/locale/eu/LC_MESSAGES/webarchiver.mo
@@ -1400,6 +1416,7 @@ share/locale/fi/LC_MESSAGES/konqueror.mo
 share/locale/fi/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fi/LC_MESSAGES/libkonq.mo
 share/locale/fi/LC_MESSAGES/searchbarplugin.mo
+share/locale/fi/LC_MESSAGES/speeddial.mo
 share/locale/fi/LC_MESSAGES/temporarysavedir.mo
 share/locale/fi/LC_MESSAGES/uachangerplugin.mo
 share/locale/fi/LC_MESSAGES/webarchiver.mo
@@ -1424,6 +1441,7 @@ share/locale/fr/LC_MESSAGES/konqueror.mo
 share/locale/fr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fr/LC_MESSAGES/libkonq.mo
 share/locale/fr/LC_MESSAGES/searchbarplugin.mo
+share/locale/fr/LC_MESSAGES/speeddial.mo
 share/locale/fr/LC_MESSAGES/temporarysavedir.mo
 share/locale/fr/LC_MESSAGES/uachangerplugin.mo
 share/locale/fr/LC_MESSAGES/webarchiver.mo
@@ -1467,6 +1485,7 @@ share/locale/ga/LC_MESSAGES/konqueror.mo
 share/locale/ga/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ga/LC_MESSAGES/libkonq.mo
 share/locale/ga/LC_MESSAGES/searchbarplugin.mo
+share/locale/ga/LC_MESSAGES/speeddial.mo
 share/locale/ga/LC_MESSAGES/temporarysavedir.mo
 share/locale/ga/LC_MESSAGES/uachangerplugin.mo
 share/locale/ga/LC_MESSAGES/webarchiver.mo
@@ -1525,6 +1544,7 @@ share/locale/he/LC_MESSAGES/konqueror.mo
 share/locale/he/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/he/LC_MESSAGES/libkonq.mo
 share/locale/he/LC_MESSAGES/searchbarplugin.mo
+share/locale/he/LC_MESSAGES/speeddial.mo
 share/locale/he/LC_MESSAGES/temporarysavedir.mo
 share/locale/he/LC_MESSAGES/uachangerplugin.mo
 share/locale/he/LC_MESSAGES/webarchiver.mo
@@ -1643,6 +1663,7 @@ share/locale/ia/LC_MESSAGES/konqueror.mo
 share/locale/ia/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ia/LC_MESSAGES/libkonq.mo
 share/locale/ia/LC_MESSAGES/searchbarplugin.mo
+share/locale/ia/LC_MESSAGES/speeddial.mo
 share/locale/ia/LC_MESSAGES/temporarysavedir.mo
 share/locale/ia/LC_MESSAGES/uachangerplugin.mo
 share/locale/ia/LC_MESSAGES/webarchiver.mo
@@ -1709,6 +1730,7 @@ share/locale/it/LC_MESSAGES/konqueror.mo
 share/locale/it/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/it/LC_MESSAGES/libkonq.mo
 share/locale/it/LC_MESSAGES/searchbarplugin.mo
+share/locale/it/LC_MESSAGES/speeddial.mo
 share/locale/it/LC_MESSAGES/temporarysavedir.mo
 share/locale/it/LC_MESSAGES/uachangerplugin.mo
 share/locale/it/LC_MESSAGES/webarchiver.mo
@@ -1755,6 +1777,7 @@ share/locale/ka/LC_MESSAGES/konqueror.mo
 share/locale/ka/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ka/LC_MESSAGES/libkonq.mo
 share/locale/ka/LC_MESSAGES/searchbarplugin.mo
+share/locale/ka/LC_MESSAGES/speeddial.mo
 share/locale/ka/LC_MESSAGES/temporarysavedir.mo
 share/locale/ka/LC_MESSAGES/uachangerplugin.mo
 share/locale/ka/LC_MESSAGES/webarchiver.mo
@@ -2105,6 +2128,7 @@ share/locale/nl/LC_MESSAGES/konqueror.mo
 share/locale/nl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/nl/LC_MESSAGES/libkonq.mo
 share/locale/nl/LC_MESSAGES/searchbarplugin.mo
+share/locale/nl/LC_MESSAGES/speeddial.mo
 share/locale/nl/LC_MESSAGES/temporarysavedir.mo
 share/locale/nl/LC_MESSAGES/uachangerplugin.mo
 share/locale/nl/LC_MESSAGES/webarchiver.mo
@@ -2247,6 +2271,7 @@ share/locale/pt_BR/LC_MESSAGES/konqueror.mo
 share/locale/pt_BR/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/pt_BR/LC_MESSAGES/libkonq.mo
 share/locale/pt_BR/LC_MESSAGES/searchbarplugin.mo
+share/locale/pt_BR/LC_MESSAGES/speeddial.mo
 share/locale/pt_BR/LC_MESSAGES/temporarysavedir.mo
 share/locale/pt_BR/LC_MESSAGES/uachangerplugin.mo
 share/locale/pt_BR/LC_MESSAGES/webarchiver.mo
@@ -2362,10 +2387,13 @@ share/locale/sk/LC_MESSAGES/kgetplugin.mo
 share/locale/sk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sk/LC_MESSAGES/khtmltts.mo
 share/locale/sk/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/sk/LC_MESSAGES/konqsidebar.mo
 share/locale/sk/LC_MESSAGES/konqueror.mo
 share/locale/sk/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sk/LC_MESSAGES/libkonq.mo
 share/locale/sk/LC_MESSAGES/searchbarplugin.mo
+share/locale/sk/LC_MESSAGES/speeddial.mo
+share/locale/sk/LC_MESSAGES/temporarysavedir.mo
 share/locale/sk/LC_MESSAGES/uachangerplugin.mo
 share/locale/sk/LC_MESSAGES/webarchiver.mo
 share/locale/sk/LC_MESSAGES/webenginepart.mo
@@ -2389,6 +2417,7 @@ share/locale/sl/LC_MESSAGES/konqueror.mo
 share/locale/sl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sl/LC_MESSAGES/libkonq.mo
 share/locale/sl/LC_MESSAGES/searchbarplugin.mo
+share/locale/sl/LC_MESSAGES/speeddial.mo
 share/locale/sl/LC_MESSAGES/temporarysavedir.mo
 share/locale/sl/LC_MESSAGES/uachangerplugin.mo
 share/locale/sl/LC_MESSAGES/webarchiver.mo
@@ -2611,6 +2640,7 @@ share/locale/tr/LC_MESSAGES/konqueror.mo
 share/locale/tr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/tr/LC_MESSAGES/libkonq.mo
 share/locale/tr/LC_MESSAGES/searchbarplugin.mo
+share/locale/tr/LC_MESSAGES/speeddial.mo
 share/locale/tr/LC_MESSAGES/temporarysavedir.mo
 share/locale/tr/LC_MESSAGES/uachangerplugin.mo
 share/locale/tr/LC_MESSAGES/webarchiver.mo
@@ -2656,6 +2686,7 @@ share/locale/uk/LC_MESSAGES/konqueror.mo
 share/locale/uk/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/uk/LC_MESSAGES/libkonq.mo
 share/locale/uk/LC_MESSAGES/searchbarplugin.mo
+share/locale/uk/LC_MESSAGES/speeddial.mo
 share/locale/uk/LC_MESSAGES/temporarysavedir.mo
 share/locale/uk/LC_MESSAGES/uachangerplugin.mo
 share/locale/uk/LC_MESSAGES/webarchiver.mo
@@ -2767,6 +2798,7 @@ share/locale/zh_CN/LC_MESSAGES/konqueror.mo
 share/locale/zh_CN/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/zh_CN/LC_MESSAGES/libkonq.mo
 share/locale/zh_CN/LC_MESSAGES/searchbarplugin.mo
+share/locale/zh_CN/LC_MESSAGES/speeddial.mo
 share/locale/zh_CN/LC_MESSAGES/temporarysavedir.mo
 share/locale/zh_CN/LC_MESSAGES/uachangerplugin.mo
 share/locale/zh_CN/LC_MESSAGES/webarchiver.mo
@@ -2792,6 +2824,7 @@ share/locale/zh_TW/LC_MESSAGES/konqueror.mo
 share/locale/zh_TW/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/zh_TW/LC_MESSAGES/libkonq.mo
 share/locale/zh_TW/LC_MESSAGES/searchbarplugin.mo
+share/locale/zh_TW/LC_MESSAGES/speeddial.mo
 share/locale/zh_TW/LC_MESSAGES/temporarysavedir.mo
 share/locale/zh_TW/LC_MESSAGES/uachangerplugin.mo
 share/locale/zh_TW/LC_MESSAGES/webarchiver.mo

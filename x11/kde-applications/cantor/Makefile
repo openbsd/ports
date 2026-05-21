@@ -4,7 +4,7 @@ COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
 
-SHARED_LIBS +=  cantorlibs                55.0 # 17.08
+SHARED_LIBS +=  cantorlibs                56.0 # 17.08
 
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui GL KF6Archive
 WANTLIB += KF6Attica KF6Bookmarks KF6ColorScheme KF6Completion

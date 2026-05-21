@@ -15,6 +15,7 @@ lib/cmake/DolphinVcs/DolphinVcsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/DolphinVcs/DolphinVcsTargets.cmake
 lib/kconf_update_bin/
 @bin lib/kconf_update_bin/dolphin_25.04_update_statusandlocationbarssettings
+@bin lib/kconf_update_bin/dolphin_update_splitviewsettings
 @lib lib/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
 @lib lib/libdolphinvcs.so.${LIBdolphinvcs_VERSION}
 lib/qt6/plugins/dolphin/

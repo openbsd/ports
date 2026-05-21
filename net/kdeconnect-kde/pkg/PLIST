@@ -5,7 +5,6 @@
 @bin bin/kdeconnect-sms
 @bin bin/kdeconnectd
 @lib lib/libkdeconnectcore.so.${LIBkdeconnectcore_VERSION}
-@static-lib lib/libkdeconnectinterfaces.a
 lib/qt6/plugins/kdeconnect/
 @so lib/qt6/plugins/kdeconnect/kdeconnect_battery.so
 @so lib/qt6/plugins/kdeconnect/kdeconnect_clipboard.so
@@ -116,6 +115,7 @@ share/icons/hicolor/scalable/apps/kdeconnectindicatordark.svg
 share/kdeconnect/
 share/kdeconnect/kdeconnect_clipboard_config.qml
 share/kdeconnect/kdeconnect_pausemusic_config.qml
+share/kdeconnect/kdeconnect_presenter_config.qml
 share/kdeconnect/kdeconnect_runcommand_config.qml
 share/kdeconnect/kdeconnect_sendnotifications_config.qml
 share/kdeconnect/kdeconnect_share_config.qml

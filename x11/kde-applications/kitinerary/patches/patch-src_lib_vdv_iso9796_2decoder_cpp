@@ -1,0 +1,33 @@
+Index: src/lib/vdv/iso9796_2decoder.cpp
+--- src/lib/vdv/iso9796_2decoder.cpp.orig
++++ src/lib/vdv/iso9796_2decoder.cpp
+@@ -23,6 +23,21 @@ void Iso9796_2Decoder::setRsaParameters(const uint8_t 
+     auto n = Bignum::fromByteArray(modulus, modulusSize);
+     auto e = Bignum::fromByteArray(exponent, exponentSize);
+ 
++#if defined(LIBRESSL_VERSION_NUMBER)
++    openssl::rsa_ptr rsa(RSA_new());
++    if (!rsa || !RSA_set0_key(rsa.get(), n.release(), e.release(), nullptr)) {
++        qWarning() << "Failed to set RSA key components (LibreSSL)";
++        return;
++    }
++
++    openssl::evp_pkey_ptr pkey(EVP_PKEY_new());
++    if (!pkey || EVP_PKEY_assign_RSA(pkey.get(), rsa.get()) <= 0) {
++        qWarning() << "Failed to assign RSA to EVP_PKEY";
++        return;
++    }
++    rsa.release();
++    m_key = std::move(pkey);
++#else
+     openssl::ossl_param_bld_ptr param_bld(OSSL_PARAM_BLD_new());
+     OSSL_PARAM_BLD_push_BN(param_bld.get(), "n", n.get());
+     OSSL_PARAM_BLD_push_BN(param_bld.get(), "e", e.get());
+@@ -36,6 +51,7 @@ void Iso9796_2Decoder::setRsaParameters(const uint8_t 
+     }
+ 
+     m_key.reset(pkey);
++#endif
+ }
+ 
+ void Iso9796_2Decoder::addWithRecoveredMessage(const uint8_t *data, int size)

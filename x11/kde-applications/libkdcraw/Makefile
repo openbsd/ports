@@ -1,5 +1,6 @@
 COMMENT =	KDE wrapper around the LibRaw library
 
+VERSION =	25.12.3
 DISTNAME =	libkdcraw-${VERSION}
 PKGNAME =	libkdcraw-kf5-${VERSION}
 

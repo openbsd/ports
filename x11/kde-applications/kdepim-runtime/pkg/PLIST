@@ -8,6 +8,7 @@
 @bin bin/akonadi_ical_resource
 @bin bin/akonadi_icaldir_resource
 @bin bin/akonadi_imap_resource
+@bin bin/akonadi_kolab_resource
 @bin bin/akonadi_maildir_resource
 @bin bin/akonadi_maildispatcher_agent
 @bin bin/akonadi_mbox_resource
@@ -34,6 +35,7 @@
 @so lib/qt6/plugins/pim6/akonadi/config/icalconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/icaldirconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/imapconfig.so
+@so lib/qt6/plugins/pim6/akonadi/config/kolabconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/maildirconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/maildispatcherconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/mboxconfig.so
@@ -56,6 +58,7 @@ share/akonadi/agents/googleresource.desktop
 share/akonadi/agents/icaldirresource.desktop
 share/akonadi/agents/icalresource.desktop
 share/akonadi/agents/imapresource.desktop
+share/akonadi/agents/kolabresource.desktop
 share/akonadi/agents/maildirresource.desktop
 share/akonadi/agents/maildispatcheragent.desktop
 share/akonadi/agents/mboxresource.desktop
@@ -89,6 +92,7 @@ share/applications/org.kde.akonadi_davgroupware_resource.desktop
 share/applications/org.kde.akonadi_ews_resource.desktop
 share/applications/org.kde.akonadi_google_resource.desktop
 share/applications/org.kde.akonadi_imap_resource.desktop
+share/applications/org.kde.akonadi_kolab_resource.desktop
 share/applications/org.kde.akonadi_openxchange_resource.desktop
 share/applications/org.kde.akonadi_vcard_resource.desktop
 share/applications/org.kde.akonadi_vcarddir_resource.desktop
@@ -176,6 +180,7 @@ share/icons/hicolor/96x96/apps/akonadi-ews.png
 share/knotifications6/akonadi_ews_resource.notifyrc
 share/knotifications6/akonadi_google_resource.notifyrc
 share/knotifications6/akonadi_imap_resource.notifyrc
+share/knotifications6/akonadi_kolab_resource.notifyrc
 share/knotifications6/akonadi_maildispatcher_agent.notifyrc
 share/knotifications6/akonadi_newmailnotifier_agent.notifyrc
 share/knotifications6/akonadi_pop3_resource.notifyrc

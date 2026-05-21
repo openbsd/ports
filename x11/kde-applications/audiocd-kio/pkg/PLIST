@@ -9,7 +9,6 @@ include/audiocdplugins/audiocdplugins_version.h
 @so lib/qt6/plugins/libaudiocd_encoder_flac.so
 @so lib/qt6/plugins/libaudiocd_encoder_lame.so
 @so lib/qt6/plugins/libaudiocd_encoder_opus.so
-@so lib/qt6/plugins/libaudiocd_encoder_vorbis.so
 @so lib/qt6/plugins/libaudiocd_encoder_wav.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_audiocd.so
 share/applications/kcm_audiocd.desktop
@@ -17,7 +16,6 @@ share/config.kcfg/
 share/config.kcfg/audiocd_flac_encoder.kcfg
 share/config.kcfg/audiocd_lame_encoder.kcfg
 share/config.kcfg/audiocd_opus_encoder.kcfg
-share/config.kcfg/audiocd_vorbis_encoder.kcfg
 share/doc/HTML/ca/kcontrol/
 share/doc/HTML/ca/kcontrol/kcmaudiocd/
 share/doc/HTML/ca/kcontrol/kcmaudiocd/index.cache.bz2

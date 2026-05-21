@@ -267,7 +267,7 @@
      SUBDIR += kf6-libkdcraw
      SUBDIR += kf6-kaccounts-integration
      SUBDIR += kf6-kio-extras
-     SUBDIR += kf6-libkcompactdisc
+     #SUBDIR += kf6-libkcompactdisc
      SUBDIR += kf6-libkcddb
      SUBDIR += kf6-kdegraphics-mobipocket
 

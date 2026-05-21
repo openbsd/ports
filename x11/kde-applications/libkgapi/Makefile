@@ -8,7 +8,7 @@ SHARED_LIBS +=	KPim6GAPICore             0.1 # 0.0
 SHARED_LIBS +=	KPim6GAPIDrive            0.0 # 0.0
 SHARED_LIBS +=	KPim6GAPILatitude         0.0 # 0.0
 SHARED_LIBS +=	KPim6GAPIMaps             0.0 # 0.0
-SHARED_LIBS +=	KPim6GAPIPeople           0.0 # 0.0
+SHARED_LIBS +=	KPim6GAPIPeople           0.1 # 0.0
 SHARED_LIBS +=	KPim6GAPITasks            0.0 # 0.0
 SHARED_LIBS +=  kdexoauth2                3.0 # 0.0
 

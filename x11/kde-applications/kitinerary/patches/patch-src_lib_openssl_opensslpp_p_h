@@ -1,0 +1,24 @@
+Index: src/lib/openssl/opensslpp_p.h
+--- src/lib/openssl/opensslpp_p.h.orig
++++ src/lib/openssl/opensslpp_p.h
+@@ -11,7 +11,9 @@
+ 
+ #include <openssl/bn.h>
+ #include <openssl/evp.h>
++#if !defined(LIBRESSL_VERSION_NUMBER)
+ #include <openssl/param_build.h>
++#endif
+ #include <openssl/rsa.h>
+ 
+ namespace openssl {
+@@ -26,8 +28,10 @@ namespace openssl {
+     using bn_ptr = std::unique_ptr<BIGNUM, detail::deleter<BIGNUM, &BN_free>>;
+     using evp_pkey_ptr = std::unique_ptr<EVP_PKEY, detail::deleter<EVP_PKEY, &EVP_PKEY_free>>;
+     using evp_pkey_ctx_ptr = std::unique_ptr<EVP_PKEY_CTX, detail::deleter<EVP_PKEY_CTX, &EVP_PKEY_CTX_free>>;
++#if !defined(LIBRESSL_VERSION_NUMBER)
+     using ossl_param_ptr = std::unique_ptr<OSSL_PARAM, detail::deleter<OSSL_PARAM, &OSSL_PARAM_free>>;
+     using ossl_param_bld_ptr = std::unique_ptr<OSSL_PARAM_BLD, detail::deleter<OSSL_PARAM_BLD, &OSSL_PARAM_BLD_free>>;
++#endif
+     using rsa_ptr = std::unique_ptr<RSA, detail::deleter<RSA, &RSA_free>>;
+ }
+ 

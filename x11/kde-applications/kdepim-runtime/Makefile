@@ -19,8 +19,8 @@ WANTLIB += KF6DAV KF6GuiAddons KF6I18n KF6ItemModels KF6ItemViews
 WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
 WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
-WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
-WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6Wallet KF6WidgetsAddons
+WANTLIB += KF6TextAddonsWidgets KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiAgentBase KPim6AkonadiAgentWidgetBase
 WANTLIB += KPim6AkonadiCalendar KPim6AkonadiCalendarCore KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
@@ -67,7 +67,6 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kservice \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kguiaddons \
-		devel/kf6/kwallet \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \

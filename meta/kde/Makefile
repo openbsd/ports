@@ -317,7 +317,6 @@ RUN_DEPENDS-development += \
 	x11/kde-applications/kf6-ksanecore \
 	x11/kde-applications/kf6-libkdcraw \
 	x11/kde-applications/kf6-kio-extras \
-	x11/kde-applications/kf6-libkcompactdisc \
 	x11/kde-applications/kf6-libkcddb \
 	x11/kde-applications/kf6-kdegraphics-mobipocket
 

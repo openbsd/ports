@@ -2,7 +2,7 @@ COMMENT =	PIM Akonadi contacts support library
 DISTNAME =	akonadi-contacts-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6AkonadiContactCore   0.0 # 0.0
+SHARED_LIBS +=	KPim6AkonadiContactCore   1.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiContactWidgets 0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion

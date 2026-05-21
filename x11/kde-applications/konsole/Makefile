@@ -2,8 +2,8 @@ COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
 CATEGORIES =	editors x11
 
-SHARED_LIBS +=  konsoleprivate            11.0 # 17.08
-SHARED_LIBS +=  konsoleapp                3.1  # 21
+SHARED_LIBS +=  konsoleprivate            12.0 # 17.08
+SHARED_LIBS +=  konsoleapp                4.0  # 21
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Bookmarks KF6BookmarksWidgets
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui

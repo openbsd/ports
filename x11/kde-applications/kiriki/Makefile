@@ -16,8 +16,7 @@ MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 
-LIB_DEPENDS =	 \
-		devel/kf6/ki18n \
+LIB_DEPENDS =	devel/kf6/ki18n \
 		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
 		devel/kf6/kconfig \

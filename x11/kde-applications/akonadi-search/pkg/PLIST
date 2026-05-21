@@ -51,7 +51,6 @@ lib/qt6/plugins/kf6/krunner/kcms/
 @so lib/qt6/plugins/pim6/akonadi/calendarsearchstore.so
 @so lib/qt6/plugins/pim6/akonadi/contactsearchstore.so
 @so lib/qt6/plugins/pim6/akonadi/emailsearchstore.so
-@so lib/qt6/plugins/pim6/akonadi/notesearchstore.so
 share/akonadi/agents/akonadiindexingagent.desktop
 share/locale/ar/LC_MESSAGES/akonadi_search.mo
 share/locale/ast/LC_MESSAGES/akonadi_search.mo
