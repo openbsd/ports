@@ -4,6 +4,7 @@ COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
 V =		3.13.0
+REVISION =	0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}.zip
@@ -79,6 +80,7 @@ WANTLIB-python =	gdal m pthread ${COMPILER_LIBCXX}
 BUILD_DEPENDS +=	${RUN_DEPENDS} \
 			${MODCLANG_RUN_DEPENDS} \
 			devel/py-setuptools \
+			math/exprtk \
 			math/py-numpy \
 			devel/gtest \
 			devel/swig
