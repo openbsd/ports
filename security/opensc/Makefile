@@ -21,6 +21,7 @@ WANTLIB += readline z
 SITES=		https://github.com/OpenSC/OpenSC/releases/download/${V}/
 
 BUILD_DEPENDS=	security/pcsc-lite \
+		security/p11-kit \
 		shells/bash-completion \
 		textproc/docbook-xsl
 RUN_DEPENDS=	devel/desktop-file-utils \
