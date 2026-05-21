@@ -42,7 +42,7 @@ Index: RecurrenceRule.m
    }
    return self;
  }
-@@ -119,22 +119,22 @@
+@@ -119,28 +119,28 @@
  }
  - (recurrenceFrequency)frequency
  {
@@ -70,6 +70,13 @@ Index: RecurrenceRule.m
  {
    if ((self = [super init]))
      recur = rrule;
+   return self;
+ }
+-- (struct icalrecurrencetype)iCalRRule
++- (struct icalrecurrencetype*)iCalRRule
+ {
+   return recur;
+ }
 @@ -149,11 +149,11 @@
  @implementation RecurrenceRule(NSCoding)
  - (void)encodeWithCoder:(NSCoder *)coder
