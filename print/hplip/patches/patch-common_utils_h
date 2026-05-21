@@ -1,7 +1,7 @@
 Index: common/utils.h
 --- common/utils.h.orig
 +++ common/utils.h
-@@ -25,7 +25,7 @@
+@@ -29,7 +29,7 @@
  #define SCAN_PLUGIN_ESCL "bb_escl.so"
  #define SCAN_PLUGIN_ORBLITE "bb_orblite.so"
  

@@ -1,7 +1,7 @@
 Index: base/device.py
 --- base/device.py.orig
 +++ base/device.py
-@@ -2450,9 +2450,9 @@ Content-length: %d\r
+@@ -2452,9 +2452,9 @@ Content-length: %d\r
                  if remove: rem_str = '-r'
  
                  if is_gzip:

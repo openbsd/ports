@@ -10,7 +10,7 @@ Index: common/utils.c
  #include <dlfcn.h>
  #include <sys/stat.h>
  #include <errno.h>
-@@ -159,7 +160,7 @@ enum UTILS_PLUGIN_STATUS validate_plugin_version()
+@@ -183,7 +184,7 @@ enum UTILS_PLUGIN_STATUS validate_plugin_version()
  
      if (get_key_value(HPLIP_PLUGIN_STATE,"[plugin]" , "version", plugin_version, sizeof(plugin_version)) != UTILS_CONF_OK )
      {
@@ -19,7 +19,7 @@ Index: common/utils.c
          return UTILS_PLUGIN_STATUS_NOT_INSTALLED;
      }
  
-@@ -311,7 +312,7 @@ int getHPLogLevel()
+@@ -335,7 +336,7 @@ int getHPLogLevel()
      char    *p;
      int iLogLevel = 0;
  
