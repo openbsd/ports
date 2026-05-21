@@ -1,0 +1,21 @@
+Index: sim/common/callback.c
+--- sim/common/callback.c.orig
++++ sim/common/callback.c
+@@ -421,10 +421,14 @@ os_system (host_callback *p, const char *s)
+   return wrap (p, system (s));
+ }
+ 
+-static long
+-os_time (host_callback *p, long *t)
++static time_t
++os_time (host_callback *p, time_t *t)
+ {
+-  return wrap (p, time (t));
++  time_t result;
++
++  result = time(t);
++  p->last_errno = errno;
++  return result;
+ }
+ 
+ 

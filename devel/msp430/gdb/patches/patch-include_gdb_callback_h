@@ -1,0 +1,12 @@
+Index: include/gdb/callback.h
+--- include/gdb/callback.h.orig
++++ include/gdb/callback.h
+@@ -81,7 +81,7 @@ struct host_callback_struct 
+   int (*read_stdin) ( host_callback *, char *, int);
+   int (*rename) (host_callback *, const char *, const char *);
+   int (*system) (host_callback *, const char *);
+-  long (*time) (host_callback *, long *);
++  time_t (*time) (host_callback *, time_t *);
+   int (*unlink) (host_callback *, const char *);
+   int (*write) (host_callback *,int, const char *, int);
+   int (*write_stdout) (host_callback *, const char *, int);

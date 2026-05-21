@@ -1,0 +1,12 @@
+Index: sim/common/sim-io.h
+--- sim/common/sim-io.h.orig
++++ sim/common/sim-io.h
+@@ -31,7 +31,7 @@ int sim_io_shutdown (SIM_DESC sd);
+ 
+ int sim_io_unlink (SIM_DESC sd, const char *);
+ 
+-long sim_io_time (SIM_DESC sd, long *);
++time_t sim_io_time (SIM_DESC sd, time_t *);
+ 
+ int sim_io_system (SIM_DESC sd, const char *);
+ 

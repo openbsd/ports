@@ -1,0 +1,15 @@
+Index: sim/common/sim-io.c
+--- sim/common/sim-io.c.orig
++++ sim/common/sim-io.c
+@@ -66,9 +66,9 @@ sim_io_unlink (SIM_DESC sd,
+ }
+ 
+ 
+-long
++time_t
+ sim_io_time (SIM_DESC sd,
+-	     long *t)
++	     time_t *t)
+ {
+   return STATE_CALLBACK (sd)->time (STATE_CALLBACK (sd), t);
+ }

@@ -1,0 +1,32 @@
+Index: sim/common/callback.c
+--- sim/common/callback.c.orig
++++ sim/common/callback.c
+@@ -74,7 +74,7 @@ extern int system PARAMS ((const char *));
+ static int os_init PARAMS ((host_callback *));
+ static int os_shutdown PARAMS ((host_callback *));
+ static int os_unlink PARAMS ((host_callback *, const char *));
+-static long os_time PARAMS ((host_callback *, long *));
++static time_t os_time PARAMS ((host_callback *, time_t *));
+ static int os_system PARAMS ((host_callback *, const char *));
+ static int os_rename PARAMS ((host_callback *, const char *, const char *));
+ static int os_write_stdout PARAMS ((host_callback *, const char *, int));
+@@ -496,12 +496,16 @@ os_system (p, s)
+   return wrap (p, system (s));
+ }
+ 
+-static long 
++static time_t 
+ os_time (p, t)
+      host_callback *p;
+-     long *t;
++     time_t *t;
+ {
+-  return wrap (p, time (t));
++  time_t result;
++
++  result = time(t);
++  p->last_errno = errno;
++  return result;
+ }
+ 
+ 
