@@ -1,7 +1,7 @@
 COMMENT=	audio/video converter and streamer
 
 # keep it synced with x11/mplayer
-V=		8.0.2
+V=		8.1.1
 DISTNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
@@ -22,13 +22,13 @@ USE_NOBTCFI-amd64=	Yes
 
 EPOCH=		1
 
-SHARED_LIBS=	avcodec		27.1 \
+SHARED_LIBS=	avcodec		27.2 \
 		avdevice	15.1 \
-		avfilter	13.1 \
-		avformat	24.1 \
-		avutil		17.1 \
+		avfilter	13.2 \
+		avformat	24.2 \
+		avutil		17.2 \
 		swresample	6.1 \
-		swscale		9.1
+		swscale		9.2
 
 HOMEPAGE=	https://ffmpeg.org/
 
@@ -39,11 +39,11 @@ MAINTAINER=	Brad Smith <brad@comstyle.com> \
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL2 SvtAv1Enc X11 Xext Xv aom ass bz2 c crypto dav1d
-WANTLIB += fontconfig freetype fribidi gsm harfbuzz iconv lzma m
-WANTLIB += mp3lame opus pthread sndio speex ssl theoradec theoraenc
-WANTLIB += v4l2 va va-drm va-x11 vidstab vorbis vorbisenc vpx webp
-WANTLIB += webpmux x264 x265 xcb xcb-shape xcb-shm xcb-xfixes xml2
-WANTLIB += xvidcore z zimg
+WANTLIB += drm fontconfig freetype fribidi gsm harfbuzz iconv
+WANTLIB += lzma m mp3lame opus pthread sndio speex ssl theoraenc
+WANTLIB += v4l2 va va-drm va-x11 vidstab vorbis vorbisenc vpx
+WANTLIB += webp webpmux x264 x265 xcb xcb-shape xcb-shm xcb-xfixes
+WANTLIB += xml2 xvidcore z zimg
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c

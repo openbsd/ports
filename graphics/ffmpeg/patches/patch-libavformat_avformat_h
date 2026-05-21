@@ -3,7 +3,7 @@ Add av_stream_get_first_dts for Chromium
 Index: libavformat/avformat.h
 --- libavformat/avformat.h.orig
 +++ libavformat/avformat.h
-@@ -1179,6 +1179,10 @@ typedef struct AVStreamGroup {
+@@ -1178,6 +1178,10 @@ typedef struct AVStreamGroup {
  
  struct AVCodecParserContext *av_stream_get_parser(const AVStream *s);
  

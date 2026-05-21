@@ -171,7 +171,7 @@ Index: libavutil/x86/tx_float.asm
  %if %2
  cglobal fft_sr_asm_float, 0, 0, 0, ctx, out, in, stride, len, lut, itab, rtab, tgt, tmp
  %else
-@@ -1522,6 +1543,7 @@ FFT_SPLIT_RADIX_FN avx2, 1
+@@ -1518,6 +1539,7 @@ FFT_SPLIT_RADIX_FN avx2, 1
  %endif
  
  %macro FFT15_FN 2
@@ -179,7 +179,7 @@ Index: libavutil/x86/tx_float.asm
  INIT_YMM avx2
  cglobal fft15_ %+ %2, 4, 10, 16, ctx, out, in, stride, len, lut, tmp, tgt5, stride3, stride5
      mov lutq, [ctxq + AVTXContext.map]
-@@ -1585,6 +1607,7 @@ FFT15_FN 1, ns_float
+@@ -1581,6 +1603,7 @@ FFT15_FN 1, ns_float
  %endif
  
  %macro IMDCT_FN 1
@@ -187,7 +187,7 @@ Index: libavutil/x86/tx_float.asm
  INIT_YMM %1
  cglobal mdct_inv_float, 4, 14, 16, 320, ctx, out, in, stride, len, lut, exp, t1, t2, t3, \
                                          t4, t5, btmp
-@@ -1772,6 +1795,7 @@ IMDCT_FN avx2
+@@ -1768,6 +1791,7 @@ IMDCT_FN avx2
  %endif
  
  %macro PFA_15_FN 2

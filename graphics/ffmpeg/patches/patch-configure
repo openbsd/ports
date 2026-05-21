@@ -3,7 +3,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5880,7 +5880,6 @@ case $target_os in
+@@ -6076,7 +6076,6 @@ case $target_os in
          enable section_data_rel_ro
          striptype=""
          SHFLAGS='-shared'
@@ -11,16 +11,16 @@ Index: configure
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -6252,7 +6251,7 @@ set_default libdir
+@@ -6451,7 +6450,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  
--disabled optimizations || enabled ossfuzz || echo "$CFLAGS" | grep -q -- '-fsanitize=' || check_cflags -fomit-frame-pointer
-+enabled x86_64 && check_cflags -fomit-frame-pointer
+-disabled optimizations || enabled ossfuzz || echo "$CFLAGS" | grep -q -- '-fsanitize=' || check_allcflags -fomit-frame-pointer
++enabled x86_64 && check_allcflags -fomit-frame-pointer
  
  enable_weak_pic() {
      disabled pic && return
-@@ -6799,7 +6798,7 @@ check_headers asm/types.h
+@@ -7002,7 +7001,7 @@ check_headers asm/types.h
  #
  # some configurations also require linking to libatomic, so try
  # both with -latomic and without
@@ -29,7 +29,7 @@ Index: configure
      check_builtin stdatomic stdatomic.h                                \
          "atomic_int foo, bar = -1; atomic_store(&foo, 0); foo += bar"  \
          $LATOMIC && eval stdatomic_extralibs="\$LATOMIC" && break
-@@ -7262,13 +7261,13 @@ enabled omx_rpi           && { test_code cc OMX_Core.h
+@@ -7489,13 +7488,13 @@ enabled omx_rpi           && { test_code cc OMX_Core.h
  enabled omx               && require_headers OMX_Core.h && \
      warn "The OpenMAX encoders are deprecated and will be removed in future versions"
  
@@ -46,5 +46,5 @@ Index: configure
 +                               check_lib openssl openssl/ssl.h OPENSSL_init_ssl -lssl -lcrypto -lws2_32 -lgdi32 ||
 +                               die "ERROR: openssl (>= 1.1.0) not found"; }
  enabled pocketsphinx      && require_pkg_config pocketsphinx pocketsphinx pocketsphinx/pocketsphinx.h ps_init
- enabled rkmpp             && { require_pkg_config rkmpp rockchip_mpp  rockchip/rk_mpi.h mpp_create &&
-                                require_pkg_config rockchip_mpp "rockchip_mpp >= 1.3.7" rockchip/rk_mpi.h mpp_create &&
+ enabled rkmpp             && { require_pkg_config rkmpp "rockchip_mpp >= 1.3.8" "rockchip/rk_mpi.h rockchip/mpp_buffer.h" "mpp_create mpp_buffer_sync_begin_f" &&
+                                { enabled libdrm ||

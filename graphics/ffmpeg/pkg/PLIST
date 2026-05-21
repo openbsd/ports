@@ -17,6 +17,7 @@ include/libavcodec/defs.h
 include/libavcodec/dirac.h
 include/libavcodec/dv_profile.h
 include/libavcodec/dxva2.h
+include/libavcodec/exif.h
 include/libavcodec/jni.h
 include/libavcodec/mediacodec.h
 include/libavcodec/packet.h
@@ -200,6 +201,7 @@ share/doc/ffmpeg/bootstrap.min.css
 share/doc/ffmpeg/community.html
 share/doc/ffmpeg/default.css
 share/doc/ffmpeg/developer.html
+share/doc/ffmpeg/drawvg-reference.html
 share/doc/ffmpeg/faq.html
 share/doc/ffmpeg/fate.html
 share/doc/ffmpeg/ffmpeg-all.html
