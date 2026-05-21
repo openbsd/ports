@@ -1,6 +1,6 @@
 COMMENT=	build Puppet modules from source
 
-DISTNAME=	puppet-modulebuilder-1.1.0
+DISTNAME=	puppet-modulebuilder-2.1.0
 
 CATEGORIES=	devel
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/ruby
 
 BUILD_DEPENDS += ${RUN_DEPENDS}
-RUN_DEPENDS +=	archivers/ruby-minitar,${MODRUBY_FLAVOR}>=0.9,<1 \
+RUN_DEPENDS +=	archivers/ruby-minitar,${MODRUBY_FLAVOR}>=0.9,<2 \
 		devel/ruby-pathspec,${MODRUBY_FLAVOR}>=1.1,<3
 
 CONFIGURE_STYLE=ruby gem
