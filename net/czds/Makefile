@@ -4,8 +4,11 @@ MODGO_MODNAME =	github.com/lanrat/czds
 MODGO_VERSION =	v1.4.0
 
 DISTNAME =	czds-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
+
+HOMEPAGE =	https://github.com/lanrat/czds
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
