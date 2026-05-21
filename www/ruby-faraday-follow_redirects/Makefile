@@ -1,6 +1,6 @@
 COMMENT =	Faraday 2.x FaradayMiddleware::FollowRedirects
 
-DISTNAME =	faraday-follow_redirects-0.3.0
+DISTNAME =	faraday-follow_redirects-0.5.0
 CATEGORIES =	www
 HOMEPAGE =	https://github.com/tisba/faraday-follow-redirects
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
