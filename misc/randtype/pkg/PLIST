@@ -1,2 +1,2 @@
-bin/randtype
+@bin bin/randtype
 @man man/man1/randtype.1

@@ -2,7 +2,7 @@ COMMENT=	output characters or lines at random intervals
 
 DISTNAME=	randtype-1.13
 CATEGORIES=	misc
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://bjk.sourceforge.net/randtype/
 SITES=		${SITE_SOURCEFORGE:=bjk/}
