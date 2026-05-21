@@ -1,7 +1,7 @@
 QT5NAME =		QtCharts
 COMMENT-main =		Qt5 components for drawing 2D charts
 
-KDE_COMMIT =		1093fb53ced126100d14af30a8adffd29b7ef855
+KDE_COMMIT =		16e9aff210cd4de7192adfc6cd91cdd44ba45a3d
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

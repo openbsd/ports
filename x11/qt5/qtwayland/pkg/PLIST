@@ -293,7 +293,6 @@ lib/pkgconfig/Qt5WaylandCompositor.pc
 @bin lib/qt5/bin/qtwaylandscanner
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QWaylandEglPlatformIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QWaylandIntegrationPlugin.cmake
-lib/qt5/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeEglPlatformIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeGlxPlatformIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5WaylandClient/
 lib/qt5/cmake/Qt5WaylandClient/Qt5WaylandClientConfig.cmake
@@ -305,7 +304,6 @@ lib/qt5/cmake/Qt5WaylandClient/Qt5WaylandClient_QWaylandEglClientBufferPlugin.cm
 lib/qt5/cmake/Qt5WaylandClient/Qt5WaylandClient_QWaylandFullScreenShellV1IntegrationPlugin.cmake
 lib/qt5/cmake/Qt5WaylandClient/Qt5WaylandClient_QWaylandIviShellIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5WaylandClient/Qt5WaylandClient_QWaylandWlShellIntegrationPlugin.cmake
-lib/qt5/cmake/Qt5WaylandClient/Qt5WaylandClient_QWaylandXCompositeEglClientBufferPlugin.cmake
 lib/qt5/cmake/Qt5WaylandClient/Qt5WaylandClient_QWaylandXCompositeGlxClientBufferPlugin.cmake
 lib/qt5/cmake/Qt5WaylandClient/Qt5WaylandClient_QWaylandXdgShellIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5WaylandClient/Qt5WaylandClient_QWaylandXdgShellV5IntegrationPlugin.cmake
@@ -336,7 +334,6 @@ lib/qt5/pkgconfig/Qt5WaylandClient.pc
 lib/qt5/pkgconfig/Qt5WaylandCompositor.pc
 @so lib/qt5/plugins/platforms/libqwayland-egl.so
 @so lib/qt5/plugins/platforms/libqwayland-generic.so
-@so lib/qt5/plugins/platforms/libqwayland-xcomposite-egl.so
 @so lib/qt5/plugins/platforms/libqwayland-xcomposite-glx.so
 lib/qt5/plugins/wayland-decoration-client/
 @so lib/qt5/plugins/wayland-decoration-client/libbradient.so
@@ -345,7 +342,6 @@ lib/qt5/plugins/wayland-graphics-integration-client/
 @so lib/qt5/plugins/wayland-graphics-integration-client/libdrm-egl-server.so
 @so lib/qt5/plugins/wayland-graphics-integration-client/libqt-plugin-wayland-egl.so
 @so lib/qt5/plugins/wayland-graphics-integration-client/libshm-emulation-server.so
-@so lib/qt5/plugins/wayland-graphics-integration-client/libxcomposite-egl.so
 @so lib/qt5/plugins/wayland-graphics-integration-client/libxcomposite-glx.so
 lib/qt5/plugins/wayland-graphics-integration-server/
 @so lib/qt5/plugins/wayland-graphics-integration-server/libqt-wayland-compositor-dmabuf-server-buffer.so

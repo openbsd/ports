@@ -1,7 +1,7 @@
 QT5NAME =		QtNetworKAuth
 COMMENT-main =		Qt5 network authorization components
 
-KDE_COMMIT =		510687fa4fdee84dd3d6d166e8f080c484016199
+KDE_COMMIT =		d1ce24a72122c315e3d190c9ebc26ed603b90057
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

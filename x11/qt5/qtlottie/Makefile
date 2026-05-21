@@ -1,7 +1,7 @@
 QT5NAME =		QtLottie
 COMMENT =		QML API for rendering graphics and animations
 
-KDE_COMMIT =		27ed5a3c95a0810a96fac2a8661ea94d8ea3c44e
+KDE_COMMIT =		5f1be885cf4ee0f1eb5400bf0c5d138818fc01d0
 KDE_VERSION =		0
 
 SHARED_LIBS +=  Qt5Bodymovin              0.0 # 5.13

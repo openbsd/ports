@@ -1,8 +1,8 @@
 QT5NAME =	QtConnectivity
 COMMENT-main =	Bluetooth and NFC support for Qt5
 
-KDE_COMMIT =		f1be05c8efeb65b77a8bfd21763ab55bb5c04906
-KDE_VERSION =		1
+KDE_COMMIT =		7e29434e06372efbb2127d0ef41538ff9aec1597
+KDE_VERSION =		0
 
 SHARED_LIBS +=  Qt5Bluetooth          3.0 # 5.9
 SHARED_LIBS +=  Qt5Nfc                3.0 # 5.9

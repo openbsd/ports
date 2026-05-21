@@ -1,7 +1,7 @@
 QT5NAME =		QtGraphicalEffects
 COMMENT =		UI effects library for Qt Quick
 
-KDE_COMMIT =		dfb2e7b2c98a9b7185c300d0b92b4048f5d89ba5
+KDE_COMMIT =		551732fb1d963e53af437e3982a010f69eb76253
 KDE_VERSION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Qml

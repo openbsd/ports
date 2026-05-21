@@ -1,7 +1,7 @@
 QT5NAME =		QtGamepad
 COMMENT-main =		Qt5 gamepad events handling components
 
-KDE_COMMIT =		269fc0731f6838a1c02877a83c0ada23659c69fc
+KDE_COMMIT =		9b69ae558f0f9feffe30b0aa8993e270dfcc81ff
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

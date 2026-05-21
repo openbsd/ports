@@ -1,7 +1,7 @@
 QT5NAME =		QtSerialPort
 COMMENT-main =		Qt5 serial ports access components
 
-KDE_COMMIT =		b64a7eeda9b6a65b5ed01b1b40b07177f0aa4c0f
+KDE_COMMIT =		ca1f2486527e7acf87d466062c035845f9774573
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

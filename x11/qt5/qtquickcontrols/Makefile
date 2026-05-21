@@ -1,7 +1,7 @@
 QT5NAME =		QtQuickControls
 COMMENT-main =		Qt Quick based UI controls
 
-KDE_COMMIT =		0c3c18bf8bdac1ef1afdb8aade903edb5c2bc041
+KDE_COMMIT =		af7fc486c8910b51733e1c7e758d50ca1a158b36
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

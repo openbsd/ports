@@ -1,9 +1,7 @@
 QT5NAME =		QtBase
 
-KDE_COMMIT =		bebdfd54917e25d1c100e6bd9f5dd53c2e645fd8
-KDE_VERSION =		109
-
-REVISION-main =		0
+KDE_COMMIT =		c68297f66533200c9ff626b056d096c78b4b94db
+KDE_VERSION =		0
 
 COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt5 documentation internals
@@ -22,20 +20,20 @@ PKG_ARCH-examples =	*
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt5Concurrent                4.1 # 5.15
-SHARED_LIBS +=  Qt5Core                      6.0 # 5.15
+SHARED_LIBS +=  Qt5Core                      8.0 # 5.15
 SHARED_LIBS +=  Qt5DBus                      3.0 # 5.15
-SHARED_LIBS +=  Qt5Gui                       4.3 # 5.15
+SHARED_LIBS +=  Qt5Gui                       6.0 # 5.15
 SHARED_LIBS +=  Qt5Network                   4.0 # 5.15
 SHARED_LIBS +=  Qt5OpenGL                    3.0 # 5.15
 SHARED_LIBS +=  Qt5PrintSupport              3.0 # 5.15
 SHARED_LIBS +=  Qt5Sql                       3.0 # 5.15
 SHARED_LIBS +=  Qt5Test                      3.1 # 5.15
-SHARED_LIBS +=  Qt5Widgets                   4.1 # 5.15
+SHARED_LIBS +=  Qt5Widgets                   6.0 # 5.15
 SHARED_LIBS +=  Qt5Xml                       3.0 # 5.15
 SHARED_LIBS +=  Qt5EglFSDeviceIntegration    1.0 # 5.15
 SHARED_LIBS +=  Qt5EglFsKmsSupport           1.0 # 5.15
 SHARED_LIBS +=  Qt5OpenGLExtensions          0.0 # 5.15
-SHARED_LIBS +=  Qt5XcbQpa                    2.0 # 5.15
+SHARED_LIBS +=  Qt5XcbQpa                    2.2 # 5.15
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xext atk-1.0
 WANTLIB-main += c cairo cairo-gobject crypto cups dbus-1 double-conversion

@@ -1,7 +1,7 @@
 QT5NAME =		QtSensors
 COMMENT-main =		Qt5 hardware sensors support
 
-KDE_COMMIT =		50a61b360877e7c1300df76b5aabf8d75554a398
+KDE_COMMIT =		8c6d11df60d4d783869c2d81568e3178f5ae75ce
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

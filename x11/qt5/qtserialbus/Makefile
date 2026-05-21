@@ -1,7 +1,7 @@
 QT5NAME =		QtSerialBus
 COMMENT-main =		Qt5 API for accessing serial bus devices
 
-KDE_COMMIT =		c23069351ec31563c9ea9fcdce42ccdba95ea518
+KDE_COMMIT =		6734222bccc5541f9527281c810c6b5f8fdd092f
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

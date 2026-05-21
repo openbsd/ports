@@ -1,7 +1,7 @@
 QT5NAME =		QtWebView
 COMMENT-main =		simple web viewing component for Qt5
 
-KDE_COMMIT =		34342073a59f3a27ef3de02f6b21337c4f8db6cf
+KDE_COMMIT =		043cb7c0eaf8d1bcee56a62d6a102f727a22fcbc
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

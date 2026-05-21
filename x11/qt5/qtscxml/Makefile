@@ -1,7 +1,7 @@
 QT5NAME =		QtScxml
 COMMENT-main =		create state machines from SCXML files
 
-KDE_COMMIT =		57491f554bc53bd020978b5744437b7ac7e56a27
+KDE_COMMIT =		edc6f0dd5e806cced1937b2b853717f588e14fd2
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

@@ -581,6 +581,7 @@ include/X11/qt5/QtCore/QtNumeric
 include/X11/qt5/QtCore/QtPlugin
 include/X11/qt5/QtCore/QtPluginInstanceFunction
 include/X11/qt5/QtCore/QtPluginMetaDataFunction
+include/X11/qt5/QtCore/QtStdLibDetection
 include/X11/qt5/QtCore/qabstractanimation.h
 include/X11/qt5/QtCore/qabstracteventdispatcher.h
 include/X11/qt5/QtCore/qabstractitemmodel.h
@@ -738,6 +739,7 @@ include/X11/qt5/QtCore/qstack.h
 include/X11/qt5/QtCore/qstandardpaths.h
 include/X11/qt5/QtCore/qstate.h
 include/X11/qt5/QtCore/qstatemachine.h
+include/X11/qt5/QtCore/qstdlibdetection.h
 include/X11/qt5/QtCore/qstorageinfo.h
 include/X11/qt5/QtCore/qstring.h
 include/X11/qt5/QtCore/qstringalgorithms.h
@@ -767,7 +769,6 @@ include/X11/qt5/QtCore/qtimer.h
 include/X11/qt5/QtCore/qtimezone.h
 include/X11/qt5/QtCore/qtranslator.h
 include/X11/qt5/QtCore/qtransposeproxymodel.h
-include/X11/qt5/QtCore/qtsan_impl.h
 include/X11/qt5/QtCore/qtypeinfo.h
 include/X11/qt5/QtCore/qtypetraits.h
 include/X11/qt5/QtCore/qurl.h
@@ -2763,7 +2764,6 @@ lib/qt5/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake
-lib/qt5/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake
@@ -2773,7 +2773,6 @@ lib/qt5/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake
-lib/qt5/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake
@@ -3662,7 +3661,6 @@ lib/qt5/plugins/egldeviceintegrations/
 @so lib/qt5/plugins/egldeviceintegrations/libqeglfs-emu-integration.so
 @so lib/qt5/plugins/egldeviceintegrations/libqeglfs-kms-egldevice-integration.so
 @so lib/qt5/plugins/egldeviceintegrations/libqeglfs-kms-integration.so
-@so lib/qt5/plugins/egldeviceintegrations/libqeglfs-x11-integration.so
 lib/qt5/plugins/generic/
 @so lib/qt5/plugins/generic/libqtuiotouchplugin.so
 lib/qt5/plugins/imageformats/
@@ -3686,5 +3684,4 @@ lib/qt5/plugins/printsupport/
 lib/qt5/plugins/sqldrivers/
 @so lib/qt5/plugins/sqldrivers/libqsqlite.so
 lib/qt5/plugins/xcbglintegrations/
-@so lib/qt5/plugins/xcbglintegrations/libqxcb-egl-integration.so
 @so lib/qt5/plugins/xcbglintegrations/libqxcb-glx-integration.so

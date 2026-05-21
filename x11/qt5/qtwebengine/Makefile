@@ -7,12 +7,12 @@ USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
 QT5NAME =		QtWebEngine
-KDE_COMMIT =		87ceb6a2ef5ee25d56f765dc533728c4ca4787e0
-KDE_VERSION =		2
+KDE_COMMIT =		a5d11cd6f8c487443c15c7e3a6cd8090b65cb313
+KDE_VERSION =		0
 
 # https://invent.kde.org/qt/qt/qtwebengine-chromium/-/commits/87-based?ref_type=heads
 DIST_TUPLE +=	kde qt qt/qtwebengine-chromium \
-		85337c28bae7d7d2c79282c4f4c92435cd7649b8 src/3rdparty
+		6d29e9cfcfffa7632cc3858ceaf8940677ba9c91 src/3rdparty
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 

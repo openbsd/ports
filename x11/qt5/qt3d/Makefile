@@ -1,18 +1,18 @@
 QT5NAME =		Qt3D
 COMMENT-main =		Qt5 components for 3D graphics
 
-KDE_COMMIT =		208f5835e6c2415c9dc5cbe92bba83aa28bab7ea
+KDE_COMMIT =		c3892c3ee3c0a2b8a050d0a1532f34806636eade
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples
 
-SHARED_LIBS +=  Qt53DCore                    3.0 # 5.9
+SHARED_LIBS +=  Qt53DCore                    5.0 # 5.9
 SHARED_LIBS +=  Qt53DInput                   2.0 # 5.9
 SHARED_LIBS +=  Qt53DLogic                   2.0 # 5.9
 SHARED_LIBS +=  Qt53DQuick                   2.0 # 5.9
 SHARED_LIBS +=  Qt53DQuickInput              2.0 # 5.9
 SHARED_LIBS +=  Qt53DQuickRender             2.0 # 5.9
-SHARED_LIBS +=  Qt53DRender                  3.0 # 5.9
+SHARED_LIBS +=  Qt53DRender                  5.0 # 5.9
 SHARED_LIBS +=  Qt53DAnimation               1.0 # 5.9
 SHARED_LIBS +=  Qt53DExtras                  1.0 # 5.9
 SHARED_LIBS +=  Qt53DQuickAnimation          1.0 # 5.9

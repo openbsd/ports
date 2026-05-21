@@ -1,7 +1,7 @@
 QT5NAME =	QtWebGlPlugin
 COMMENT =	QPA WebGL plugin for Qt applications
 
-KDE_COMMIT =		b9aaac72d0853ba48f6bfd710a43df94d83d4701
+KDE_COMMIT =		2a8ce0a61b4b9e892d948948182d935fa6792a1b
 KDE_VERSION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network

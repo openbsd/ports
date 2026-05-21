@@ -1,7 +1,7 @@
 QT5NAME =		QtVirtualKeyboard
 COMMENT-main =		Qt5 virtual keyboard plugin
 
-KDE_COMMIT =		859d2a6ee329cc08414410b2ef8c0af77a6853d3
+KDE_COMMIT =		4fc9919ee3fad1d520d0921ba3069dca3c34ff78
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

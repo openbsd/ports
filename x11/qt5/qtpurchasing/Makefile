@@ -1,7 +1,7 @@
 QT5NAME =		QtPurchasing
 COMMENT-main =		in-app purchases in Qt5 and Qt5 Quick applications
 
-KDE_COMMIT =		8e9a5ec9f68639162c85c198b28e072e7150883c
+KDE_COMMIT =		b471c6ca3edfa5ba459b8694622825b9e776bed6
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

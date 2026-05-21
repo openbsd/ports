@@ -30,6 +30,10 @@ lib/pkgconfig/Qt5Purchasing.pc
 lib/qt5/cmake/Qt5Purchasing/
 lib/qt5/cmake/Qt5Purchasing/Qt5PurchasingConfig.cmake
 lib/qt5/cmake/Qt5Purchasing/Qt5PurchasingConfigVersion.cmake
+lib/qt5/examples/purchasing/qthangman/android/gradle/
+lib/qt5/examples/purchasing/qthangman/android/gradle.properties
+lib/qt5/examples/purchasing/qthangman/android/gradle/wrapper/
+lib/qt5/examples/purchasing/qthangman/android/gradle/wrapper/gradle-wrapper.properties
 lib/qt5/libQt5Purchasing.la
 lib/qt5/libQt5Purchasing.prl
 @lib lib/qt5/libQt5Purchasing.so.${LIBQt5Purchasing_VERSION}

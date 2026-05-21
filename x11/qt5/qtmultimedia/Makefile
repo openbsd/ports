@@ -1,8 +1,8 @@
 QT5NAME =		QtMultimedia
 COMMENT-main =		Qt5 multimedia components
 
-KDE_COMMIT =		ff83d119c75cd8406f73ccc08958fe36747e7390
-KDE_VERSION =		2
+KDE_COMMIT =		54f54ab798ddfd16bfc2babaf94efb4a824d2379
+KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples
 

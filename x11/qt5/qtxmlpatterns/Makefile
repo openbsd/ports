@@ -1,7 +1,7 @@
 QT5NAME =		QtXmlPatterns
 COMMENT-main =		Qt5 support for XPath, XQuery, XSLT and XML Schema
 
-KDE_COMMIT =		0b644263abca66503db1ce8a4e126cf358a34685
+KDE_COMMIT =		ed3b333aa56ac193e969725e3c34be9070441271
 KDE_VERSION =		0
 
 SHARED_LIBS +=  Qt5XmlPatterns               3.0 # 5.9

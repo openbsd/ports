@@ -1,7 +1,7 @@
 QT5NAME =		QtScript
 COMMENT-main =		ECMAScript language for Qt5
 
-KDE_COMMIT =		182ceff6560f68d70017ab980186a6106fd126a6
+KDE_COMMIT =		bcd7cae6215df8f1c8b45a338f3327da51edeaff
 KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples

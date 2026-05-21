@@ -1,7 +1,7 @@
 QT5NAME =		QtX11Extras
 COMMENT =		X11-specific parts of Qt
 
-KDE_COMMIT =		c44c4fa86fa0794c25baef4ee1f6272aca8c511a
+KDE_COMMIT =		6695a3df4460577b3fcb5546b45a0c5cb3addac4
 KDE_VERSION =		0
 
 SHARED_LIBS +=  Qt5X11Extras                 3.0 # 5.9
