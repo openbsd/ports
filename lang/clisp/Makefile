@@ -46,6 +46,8 @@ CONFIGURE_ENV =		ac_cv_prog_DVIPDF='' \
 			cl_cv_func_shmctl_attachable=yes \
 			cl_cv_sys_shm_works=yes
 
+CFLAGS +=	-fno-strict-overflow
+
 .if ${MACHINE_ARCH} == "sparc64"
 CFLAGS +=		-DSAFETY=2 -DNO_ASM
 .endif
