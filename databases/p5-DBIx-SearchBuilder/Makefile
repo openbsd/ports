@@ -3,12 +3,14 @@ COMMENT=	encapsulate SQL queries and rows in simple perl objects
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME =	DBIx-SearchBuilder-1.82
+DISTNAME =	DBIx-SearchBuilder-1.85
 
 CATEGORIES=	databases
 
 # perl
 PERMIT_PACKAGE=	Yes
+
+CPAN_AUTHOR=	BPS
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	databases/p5-DBD-SQLite \
