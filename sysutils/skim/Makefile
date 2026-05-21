@@ -11,6 +11,10 @@ MAINTAINER =            Laurence Tratt <laurie@tratt.net>
 # MIT
 PERMIT_PACKAGE =	Yes
 
+# -Wno-error=date-time
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
