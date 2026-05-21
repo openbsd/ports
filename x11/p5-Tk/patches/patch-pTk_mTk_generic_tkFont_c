@@ -1,0 +1,48 @@
+Index: pTk/mTk/generic/tkFont.c
+--- pTk/mTk/generic/tkFont.c.orig
++++ pTk/mTk/generic/tkFont.c
+@@ -1044,6 +1044,7 @@ Tk_AllocFontFromObj(interp, tkwin, objPtr)
+     TkFont *fontPtr, *firstFontPtr, *oldFontPtr;
+     int new, descent;
+     NamedFont *nfPtr;
++    char *fontString;
+ 
+     fiPtr = ((TkWindow *) tkwin)->mainPtr->fontInfoPtr;
+     if (objPtr->typePtr != &tkFontObjType) {
+@@ -1077,8 +1078,12 @@ Tk_AllocFontFromObj(interp, tkwin, objPtr)
+ 	cacheHashPtr = oldFontPtr->cacheHashPtr;
+ 	FreeFontObjProc(objPtr);
+     } else {
++	fontString = Tcl_GetString(objPtr);
++	if (fontString == NULL) {
++		fontString = "";
++	}
+ 	cacheHashPtr = Tcl_CreateHashEntry(&fiPtr->fontCache,
+-		Tcl_GetString(objPtr), &new);
++		fontString, &new);
+     }
+     firstFontPtr = (TkFont *) Tcl_GetHashValue(cacheHashPtr);
+     for (fontPtr = firstFontPtr; (fontPtr != NULL);
+@@ -1095,8 +1100,12 @@ Tk_AllocFontFromObj(interp, tkwin, objPtr)
+      * The desired font isn't in the table.  Make a new one.
+      */
+ 
++    fontString = Tcl_GetString(objPtr);
++    if (fontString == NULL) {
++	    fontString = "";
++    }
+     namedHashPtr = Tcl_FindHashEntry(&fiPtr->namedTable,
+-	    Tcl_GetString(objPtr));
++	    fontString);
+     if (namedHashPtr != NULL) {
+ 	/*
+ 	 * Construct a font based on a named font.
+@@ -1111,7 +1120,7 @@ Tk_AllocFontFromObj(interp, tkwin, objPtr)
+ 	 * Native font?
+ 	 */
+ 
+-	fontPtr = TkpGetNativeFont(tkwin, Tcl_GetString(objPtr));
++	fontPtr = TkpGetNativeFont(tkwin, fontString);
+ 	if (fontPtr == NULL) {
+ 	    TkFontAttributes fa;
+ 	    Tcl_Obj *dupObjPtr = Tcl_DuplicateObj(objPtr);

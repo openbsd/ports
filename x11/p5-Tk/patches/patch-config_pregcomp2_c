@@ -1,0 +1,12 @@
+https://github.com/eserte/perl-tk/issues/98#issuecomment-1948125587
+
+Index: config/pregcomp2.c
+--- config/pregcomp2.c.orig
++++ config/pregcomp2.c
+@@ -4,5 +4,5 @@
+ 
+ int main() {
+     SV* sv = newSViv(0);
+-    regexp* rx = pregcomp(sv, 0);
++    void* rx = pregcomp(sv, 0);
+ }

@@ -1,0 +1,12 @@
+Index: pTk/mTk/generic/tkCanvText.c
+--- pTk/mTk/generic/tkCanvText.c.orig
++++ pTk/mTk/generic/tkCanvText.c
+@@ -1234,7 +1234,7 @@ GetTextIndex(interp, canvas, itemPtr, obj, indexPtr)
+ 				 * index. */
+ {
+     TextItem *textPtr = (TextItem *) itemPtr;
+-    size_t length;
++    int length;
+     int c;
+     TkCanvas *canvasPtr = (TkCanvas *) canvas;
+     Tk_CanvasTextInfo *textInfoPtr = textPtr->textInfoPtr;

@@ -1,0 +1,33 @@
+https://github.com/eserte/perl-tk/issues/112
+https://github.com/Cyanoxygen/aosc-os-abbs/commit/61a68449d1ea206d4ca01e27ad4c9bc74612e213
+
+Index: pTk/mTk/unix/tkUnixSelect.c
+--- pTk/mTk/unix/tkUnixSelect.c.orig
++++ pTk/mTk/unix/tkUnixSelect.c
+@@ -367,7 +367,7 @@ TkSelPropProc(eventPtr)
+ 	    ((char *) buffer)[numItems] = 0;
+ 
+ 	    errorHandler = Tk_CreateErrorHandler(eventPtr->xproperty.display,
+-		    -1, -1, -1, (int (*)()) NULL, (ClientData) NULL);
++		    -1, -1, -1, (int (*)(void*, XErrorEvent*)) NULL, (ClientData) NULL);
+ 	    /*
+ 	     * Encode the data using the proper format for each type.
+ 	     */
+@@ -872,7 +872,7 @@ ConvertSelection(winPtr, eventPtr)
+ 	    Tcl_GetThreadData(&dataKey, sizeof(ThreadSpecificData));
+ 
+     errorHandler = Tk_CreateErrorHandler(eventPtr->display, -1, -1,-1,
+-	    (int (*)()) NULL, (ClientData) NULL);
++	    (int (*)(void*, XErrorEvent*)) NULL, (ClientData) NULL);
+ 
+     /*
+      * Initialize the reply event.
+@@ -1149,7 +1149,7 @@ ConvertSelection(winPtr, eventPtr)
+ 	Tcl_DeleteTimerHandler(incr.timeout);
+ 	/* winPtr may have been destroyed now */
+ 	errorHandler = Tk_CreateErrorHandler(reply.display,
+-		-1, -1,-1, (int (*)()) NULL, (ClientData) NULL);
++		-1, -1,-1, (int (*)(void*, XErrorEvent*)) NULL, (ClientData) NULL);
+ 	XSelectInput(reply.display, reply.requestor, 0L);
+ 	Tk_DeleteErrorHandler(errorHandler);
+ 	if (tsdPtr->pendingIncrs == &incr) {

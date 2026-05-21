@@ -1,0 +1,11 @@
+https://github.com/eserte/perl-tk/pull/91
+
+Index: config/signedchar.c
+--- config/signedchar.c.orig
++++ config/signedchar.c
+@@ -1,4 +1,4 @@
+-main()
++int main(void)
+ {
+  signed char x = 'a';
+  return (x - 'a');

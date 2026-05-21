@@ -1,0 +1,33 @@
+Index: pTk/mTk/generic/tkConfig.c
+--- pTk/mTk/generic/tkConfig.c.orig
++++ pTk/mTk/generic/tkConfig.c
+@@ -1210,11 +1210,11 @@ GetOptionFromObj(interp, objPtr, tablePtr)
+      * First, check to see if the object already has the answer cached.
+      */
+ 
+-    if (objPtr->typePtr == &tkOptionObjType) {
++/*    if (objPtr->typePtr == &tkOptionObjType) {
+         if (objPtr->internalRep.twoPtrValue.ptr1 == (VOID *) tablePtr) {
+             return (Option *) objPtr->internalRep.twoPtrValue.ptr2;
+         }
+-    }
++    }*/
+ 
+     /*
+      * The answer isn't cached.
+@@ -2277,9 +2277,15 @@ Tk_GetOptionValue(interp, recordPtr, optionTable, name
+     if (optionPtr == NULL) {
+ 	return NULL;
+     }
++
++    if (optionPtr->specPtr == NULL) {
++	return NULL;
++    }
++
+     if (optionPtr->specPtr->type == TK_OPTION_SYNONYM) {
+ 	optionPtr = optionPtr->extra.synonymPtr;
+     }
++
+     if (optionPtr->specPtr->objOffset >= 0) {
+ 	resultPtr = *((Tcl_Obj **) (recordPtr + optionPtr->specPtr->objOffset));
+ 	if (resultPtr == NULL) {

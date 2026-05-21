@@ -8,6 +8,8 @@ PKGNAME-main=	p5-Tk-${VERSION}
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
 CATEGORIES=	x11 devel
 
+REVISION=	0
+
 # GPL + custom
 PERMIT_PACKAGE=	Yes
 

@@ -1,0 +1,14 @@
+https://github.com/eserte/perl-tk/pull/91
+
+Index: pTk/config/Hstrdup.c
+--- pTk/config/Hstrdup.c.orig
++++ pTk/config/Hstrdup.c
+@@ -6,7 +6,7 @@ int main()
+ {char *e;
+  char *p = strdup(STRING);
+  if (!p || strcmp(p,STRING))
+-  exit(1);
++  return 1;
+  return 0;
+ }
+ 

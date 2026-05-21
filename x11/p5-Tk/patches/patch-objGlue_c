@@ -1,0 +1,35 @@
+Index: objGlue.c
+--- objGlue.c.orig
++++ objGlue.c
+@@ -560,6 +560,10 @@ Tcl_GetStringFromObj (Tcl_Obj *objPtr, int *lengthPtr)
+       sv_utf8_upgrade(objPtr);
+ #endif
+      s = SvPV(objPtr, len);
++     if (!s)
++      {
++       return NULL;
++      }
+ #ifdef SvUTF8
+      if (!is_utf8_string(s,len))
+       {
+@@ -587,6 +591,10 @@ Tcl_GetStringFromObj (Tcl_Obj *objPtr, int *lengthPtr)
+    else
+     {
+      s = LangString(objPtr);
++     if (!s)
++      {
++       return NULL;
++      }
+ #ifdef SvUTF8
+ # ifdef NEED_FIX_BUGGY_UTF8_STRING
+      if (!is_utf8_string(s,strlen(s)))
+@@ -627,7 +635,8 @@ Tcl_GetByteArrayFromObj(Tcl_Obj * objPtr, int * length
+  sv_utf8_downgrade(objPtr, 0);
+  if (lengthPtr)
+   {
+-   return (unsigned char *) SvPV(objPtr, *lengthPtr);
++   long length = *lengthPtr;
++   return (unsigned char *) SvPV(objPtr, length);
+   }
+  else
+   {

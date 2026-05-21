@@ -1,0 +1,14 @@
+https://github.com/eserte/perl-tk/pull/91
+
+Index: pTk/mTk/generic/tkImage.c
+--- pTk/mTk/generic/tkImage.c.orig
++++ pTk/mTk/generic/tkImage.c
+@@ -1083,6 +1083,8 @@ int x;
+ int y;
+ int width;
+ int height;
++int imgWidth;
++int imgHeight;
+ {
+     Tk_Tile tile = (Tk_Tile) clientData;
+     Tk_TileChange *handler;

@@ -1,0 +1,18 @@
+https://github.com/eserte/perl-tk/issues/112
+https://github.com/Cyanoxygen/aosc-os-abbs/commit/61a68449d1ea206d4ca01e27ad4c9bc74612e213
+
+Index: pTk/mTk/unix/tkUnixEvent.c
+--- pTk/mTk/unix/tkUnixEvent.c.orig
++++ pTk/mTk/unix/tkUnixEvent.c
+@@ -416,9 +416,9 @@ DisplayFileProc(clientData, flags)
+ 	 * message.
+ 	 */
+ 
+-	void (*oldHandler)();
++	void (*oldHandler)(int);
+ 
+-	oldHandler = (void (*)()) signal(SIGPIPE, SIG_IGN);
++	oldHandler = (void (*)(int)) signal(SIGPIPE, SIG_IGN);
+ 	XNoOp(display);
+ 	XFlush(display);
+ 	(void) signal(SIGPIPE, oldHandler);

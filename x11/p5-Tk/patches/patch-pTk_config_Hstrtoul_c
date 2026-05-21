@@ -1,0 +1,11 @@
+https://github.com/eserte/perl-tk/pull/91
+
+Index: pTk/config/Hstrtoul.c
+--- pTk/config/Hstrtoul.c.orig
++++ pTk/config/Hstrtoul.c
+@@ -1,4 +1,5 @@
+ #include <stdlib.h>
++#include <string.h>
+ 
+ int main()
+ {char *e;

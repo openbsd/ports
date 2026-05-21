@@ -1,0 +1,14 @@
+https://github.com/eserte/perl-tk/issues/98#issuecomment-1944054296
+
+Index: tkGlue.c
+--- tkGlue.c.orig
++++ tkGlue.c
+@@ -5544,7 +5544,7 @@ _((pTHX))
+  char buf[128];
+  CV *cv;
+ #if PERL_REVISION > 5 || (PERL_REVISION == 5 && PERL_VERSION >= 9)
+-#define COP_WARNINGS_TYPE STRLEN*
++#define COP_WARNINGS_TYPE void*
+ #else
+ #define COP_WARNINGS_TYPE SV*
+ #endif
