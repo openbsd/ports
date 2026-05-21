@@ -14,7 +14,6 @@ bin/radcrypt
 @bin bin/radeapclient
 bin/radlast
 bin/radsecret
-@bin bin/radsniff
 bin/radsqlrelay
 bin/radtest
 @bin bin/radwho
@@ -197,7 +196,6 @@ lib/freeradius/
 @man man/man8/radiusd.8
 @man man/man8/radmin.8
 @man man/man8/radrelay.8
-@man man/man8/radsniff.8
 @man man/man8/radsqlrelay.8
 @man man/man8/rlm_ippool_tool.8
 @man man/man8/rlm_sqlippool_tool.8

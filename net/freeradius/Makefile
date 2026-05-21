@@ -8,6 +8,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python3= freeradius python3 rlm addon
 
 V=		3.2.8
+REVISION-main=	0
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -191,5 +192,6 @@ post-install:
 	chmod -R u+rwX,og+rX ${PREFIX}/share/examples/freeradius/
 	${SUBST_CMD} -c -m 555 ${FILESDIR}/freeradius-enable.sh \
 	    ${PREFIX}/share/freeradius/freeradius-enable.sh
+	rm ${PREFIX}/man/man8/radsniff.8
 
 .include <bsd.port.mk>
