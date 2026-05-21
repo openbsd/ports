@@ -95,6 +95,7 @@ lib/GraphicsMagick/config/
 lib/GraphicsMagick/config/delegates.mgk
 lib/GraphicsMagick/config/type-ghostscript.mgk
 lib/GraphicsMagick/config/type-solaris.mgk
+lib/GraphicsMagick/config/type-urw-base35-otf.mgk
 lib/GraphicsMagick/config/type-windows.mgk
 lib/GraphicsMagick/config/type.mgk
 lib/GraphicsMagick/modules-Q16/
@@ -384,6 +385,8 @@ share/doc/GraphicsMagick/www/ChangeLog-2020.html
 share/doc/GraphicsMagick/www/ChangeLog-2021.html
 share/doc/GraphicsMagick/www/ChangeLog-2022.html
 share/doc/GraphicsMagick/www/ChangeLog-2023.html
+share/doc/GraphicsMagick/www/ChangeLog-2024.html
+share/doc/GraphicsMagick/www/ChangeLog-2025.html
 share/doc/GraphicsMagick/www/ChangeLog.html
 share/doc/GraphicsMagick/www/Changes.html
 share/doc/GraphicsMagick/www/Copyright.html
