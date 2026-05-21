@@ -36,7 +36,7 @@ YACC=			bison -y
 
 BUILD_DEPENDS=		devel/bison \
 			devel/p5-App-Cmd \
-			devel/p5-Type-Tiny
+			devel/p5-Moo
 
 # xapian support, needed to for compacting databases
 BUILD_DEPENDS +=	net/rsync
