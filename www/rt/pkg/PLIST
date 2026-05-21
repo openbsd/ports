@@ -254,6 +254,7 @@ libdata/perl5/site_perl/RT/REST2/Resource/Collection/QueryByJSON.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Collection/QueryBySQL.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Collection/Search.pm
 libdata/perl5/site_perl/RT/REST2/Resource/CustomField.pm
+libdata/perl5/site_perl/RT/REST2/Resource/CustomFieldAppliesTo.pm
 libdata/perl5/site_perl/RT/REST2/Resource/CustomFieldValue.pm
 libdata/perl5/site_perl/RT/REST2/Resource/CustomFieldValues.pm
 libdata/perl5/site_perl/RT/REST2/Resource/CustomFields.pm
@@ -262,6 +263,7 @@ libdata/perl5/site_perl/RT/REST2/Resource/CustomRoles.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Group.pm
 libdata/perl5/site_perl/RT/REST2/Resource/GroupMembers.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Groups.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Lifecycle.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Message.pm
 libdata/perl5/site_perl/RT/REST2/Resource/ObjectCustomFieldValue.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Queue.pm
@@ -275,8 +277,10 @@ libdata/perl5/site_perl/RT/REST2/Resource/Record/Hypermedia.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Record/Readable.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Record/WithETag.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Record/Writable.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Rights.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Role/
 libdata/perl5/site_perl/RT/REST2/Resource/Role/RequestBodyIsJSON.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Role/Rights.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Search.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Searches.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Ticket.pm
@@ -383,6 +387,7 @@ libdata/perl5/site_perl/RT/Test/Email.pm
 libdata/perl5/site_perl/RT/Test/ExternalStorage.pm
 libdata/perl5/site_perl/RT/Test/FTS.pm
 libdata/perl5/site_perl/RT/Test/GnuPG.pm
+libdata/perl5/site_perl/RT/Test/Playwright.pm
 libdata/perl5/site_perl/RT/Test/REST2.pm
 libdata/perl5/site_perl/RT/Test/SMIME.pm
 libdata/perl5/site_perl/RT/Test/Selenium.pm
@@ -414,6 +419,7 @@ sbin/rt-attributes-viewer
 sbin/rt-clean-attributes
 sbin/rt-clean-sessions
 sbin/rt-clean-shorteners
+sbin/rt-config
 sbin/rt-dump-initialdata
 sbin/rt-email-dashboards
 sbin/rt-email-digest
@@ -1297,6 +1303,7 @@ share/examples/rt/upgrade/5.0.4/
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.4/
 share/examples/rt/upgrade/5.0.4/acl.Pg
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.4/acl.Pg
+share/examples/rt/upgrade/5.0.4/backcompat-preinit
 share/examples/rt/upgrade/5.0.4/content
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.4/content
 share/examples/rt/upgrade/5.0.4/schema.Oracle
@@ -1401,6 +1408,14 @@ share/examples/rt/upgrade/6.0.1/
 @sample ${SYSCONFDIR}/rt/upgrade/6.0.1/
 share/examples/rt/upgrade/6.0.1/content
 @sample ${SYSCONFDIR}/rt/upgrade/6.0.1/content
+share/examples/rt/upgrade/6.0.3/
+@sample ${SYSCONFDIR}/rt/upgrade/6.0.3/
+share/examples/rt/upgrade/6.0.3/schema.Oracle
+@sample ${SYSCONFDIR}/rt/upgrade/6.0.3/schema.Oracle
+share/examples/rt/upgrade/6.0.3/schema.Pg
+@sample ${SYSCONFDIR}/rt/upgrade/6.0.3/schema.Pg
+share/examples/rt/upgrade/6.0.3/schema.mysql
+@sample ${SYSCONFDIR}/rt/upgrade/6.0.3/schema.mysql
 share/examples/rt/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt/upgrade/generate-rtaddressregexp
 share/examples/rt/upgrade/reset-sequences
@@ -1742,7 +1757,6 @@ share/rt/html/Asset/Elements/ShowLinks
 share/rt/html/Asset/Elements/ShowPeople
 share/rt/html/Asset/Elements/ShowRoleMembers
 share/rt/html/Asset/Elements/ShowSummary
-share/rt/html/Asset/Elements/TSVExport
 share/rt/html/Asset/Helpers/
 share/rt/html/Asset/Helpers/CreateLinkedTicket
 share/rt/html/Asset/History.html
@@ -1780,6 +1794,7 @@ share/rt/html/Dashboards/Elements/ListOfDashboards
 share/rt/html/Dashboards/Elements/SelectPrivacy
 share/rt/html/Dashboards/Elements/ShowDashboards
 share/rt/html/Dashboards/Elements/ShowPortlet/
+share/rt/html/Dashboards/Elements/ShowPortlet/articlelinks
 share/rt/html/Dashboards/Elements/ShowPortlet/component
 share/rt/html/Dashboards/Elements/ShowPortlet/dashboard
 share/rt/html/Dashboards/Elements/ShowPortlet/search
@@ -1939,6 +1954,7 @@ share/rt/html/Elements/SelectArticle
 share/rt/html/Elements/SelectArticleAutocomplete
 share/rt/html/Elements/SelectAttachmentField
 share/rt/html/Elements/SelectBoolean
+share/rt/html/Elements/SelectCalendarColorMode
 share/rt/html/Elements/SelectCustomDateRangeField
 share/rt/html/Elements/SelectCustomFieldOperator
 share/rt/html/Elements/SelectCustomFieldValue
@@ -2013,6 +2029,7 @@ share/rt/html/Elements/ShowWidgetSection
 share/rt/html/Elements/ShowWidgets
 share/rt/html/Elements/SimpleSearch
 share/rt/html/Elements/SingleUserRoleInput
+share/rt/html/Elements/StatusBadge
 share/rt/html/Elements/Submit
 share/rt/html/Elements/SystemWarnings
 share/rt/html/Elements/TSVExport
@@ -2202,6 +2219,7 @@ share/rt/html/Search/Elements/Article
 share/rt/html/Search/Elements/BuildFormatString
 share/rt/html/Search/Elements/Calendar
 share/rt/html/Search/Elements/CalendarEvent
+share/rt/html/Search/Elements/CalendarStatusFilterDropdown
 share/rt/html/Search/Elements/Chart
 share/rt/html/Search/Elements/ChartTable
 share/rt/html/Search/Elements/ConditionRow
@@ -2252,6 +2270,14 @@ share/rt/html/SelfService/Asset/Display.html
 share/rt/html/SelfService/Asset/Helpers/
 share/rt/html/SelfService/Asset/Helpers/CreateLinkedTicket
 share/rt/html/SelfService/Asset/History.html
+share/rt/html/SelfService/Asset/Widgets/
+share/rt/html/SelfService/Asset/Widgets/Display/
+share/rt/html/SelfService/Asset/Widgets/Display/Basics
+share/rt/html/SelfService/Asset/Widgets/Display/CustomFieldCustomGroupings
+share/rt/html/SelfService/Asset/Widgets/Display/Dates
+share/rt/html/SelfService/Asset/Widgets/Display/Links
+share/rt/html/SelfService/Asset/Widgets/Display/People
+share/rt/html/SelfService/Asset/Widgets/autohandler
 share/rt/html/SelfService/Asset/index.html
 share/rt/html/SelfService/Attachment/
 share/rt/html/SelfService/Attachment/dhandler
@@ -2276,6 +2302,7 @@ share/rt/html/SelfService/Helpers/Autocomplete/Articles
 share/rt/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 share/rt/html/SelfService/Helpers/Autocomplete/Principals
 share/rt/html/SelfService/Helpers/Autocomplete/Users
+share/rt/html/SelfService/Helpers/CalendarEventInfo
 share/rt/html/SelfService/Helpers/SelectOwnerDropdown
 share/rt/html/SelfService/Helpers/ShortcutHelp
 share/rt/html/SelfService/Helpers/TextDiff
@@ -2289,6 +2316,19 @@ share/rt/html/SelfService/Open.html
 share/rt/html/SelfService/Prefs.html
 share/rt/html/SelfService/Search/
 share/rt/html/SelfService/Search/Results.tsv
+share/rt/html/SelfService/Ticket/
+share/rt/html/SelfService/Ticket/Widgets/
+share/rt/html/SelfService/Ticket/Widgets/Create/
+share/rt/html/SelfService/Ticket/Widgets/Create/Default
+share/rt/html/SelfService/Ticket/Widgets/Display/
+share/rt/html/SelfService/Ticket/Widgets/Display/Assets
+share/rt/html/SelfService/Ticket/Widgets/Display/Basics
+share/rt/html/SelfService/Ticket/Widgets/Display/CustomFieldCustomGroupings
+share/rt/html/SelfService/Ticket/Widgets/Display/Dates
+share/rt/html/SelfService/Ticket/Widgets/Display/History
+share/rt/html/SelfService/Ticket/Widgets/Update/
+share/rt/html/SelfService/Ticket/Widgets/Update/Default
+share/rt/html/SelfService/Ticket/Widgets/autohandler
 share/rt/html/SelfService/Transaction/
 share/rt/html/SelfService/Transaction/Display.html
 share/rt/html/SelfService/Update.html
@@ -2297,8 +2337,12 @@ share/rt/html/SelfService/User/Elements/
 share/rt/html/SelfService/User/Elements/RelatedData
 share/rt/html/SelfService/User/RelatedData.tsv
 share/rt/html/SelfService/Views/
+share/rt/html/SelfService/Views/Asset/
+share/rt/html/SelfService/Views/Asset/dhandler
 share/rt/html/SelfService/Views/Component/
 share/rt/html/SelfService/Views/Component/dhandler
+share/rt/html/SelfService/Views/Ticket/
+share/rt/html/SelfService/Views/Ticket/dhandler
 share/rt/html/SelfService/index.html
 share/rt/html/Ticket/
 share/rt/html/Ticket/Attachment/
@@ -2511,6 +2555,7 @@ share/rt/po/da.po
 share/rt/po/de.po
 share/rt/po/el.po
 share/rt/po/en.po
+share/rt/po/en_CA.po
 share/rt/po/en_GB.po
 share/rt/po/es.po
 share/rt/po/et.po
@@ -2524,6 +2569,7 @@ share/rt/po/id.po
 share/rt/po/is.po
 share/rt/po/it.po
 share/rt/po/ja.po
+share/rt/po/lo.po
 share/rt/po/lt.po
 share/rt/po/lv.po
 share/rt/po/nb.po
@@ -2704,6 +2750,7 @@ share/rt/static/js/forms.js
 share/rt/static/js/history-folding.js
 share/rt/static/js/htmx.min.js
 share/rt/static/js/i18n.js
+share/rt/static/js/init.js
 share/rt/static/js/jquery-3.6.0.min.js
 share/rt/static/js/jquery.jgrowl.min.js
 share/rt/static/js/jquery.tablesorter.min.js

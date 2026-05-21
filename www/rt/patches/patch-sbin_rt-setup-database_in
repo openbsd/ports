@@ -1,7 +1,7 @@
 Index: sbin/rt-setup-database.in
 --- sbin/rt-setup-database.in.orig
 +++ sbin/rt-setup-database.in
-@@ -426,7 +426,7 @@ sub action_insert {
+@@ -445,7 +445,7 @@ sub action_insert {
  
  sub action_upgrade {
      my %args = @_;
