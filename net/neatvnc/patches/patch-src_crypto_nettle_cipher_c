@@ -1,0 +1,61 @@
+Fix with nettle >=4
+
+Index: src/crypto/nettle/cipher.c
+--- src/crypto/nettle/cipher.c.orig
++++ src/crypto/nettle/cipher.c
+@@ -22,6 +22,7 @@
+ #include <stdlib.h>
+ #include <nettle/aes.h>
+ #include <nettle/eax.h>
++#include <nettle/version.h>
+ 
+ struct crypto_aes_eax {
+ 	struct eax_aes128_ctx ctx;
+@@ -119,7 +120,11 @@ static bool crypto_cipher_aes_eax_encrypt(struct crypt
+ 			(uint8_t*)dst->data + dst->len, src);
+ 	dst->len += src_len;
+ 
++#if NETTLE_VERSION_MAJOR > 3
++	nettle_eax_aes128_digest(&self->enc_ctx.aes_eax.ctx, mac);
++#else
+ 	nettle_eax_aes128_digest(&self->enc_ctx.aes_eax.ctx, 16, mac);
++#endif
+ 
+ 	return true;
+ }
+@@ -131,7 +136,11 @@ static ssize_t crypto_cipher_aes_eax_decrypt(struct cr
+ 	crypto_aes_eax_update_nonce(&self->dec_ctx.aes_eax);
+ 	nettle_eax_aes128_update(&self->dec_ctx.aes_eax.ctx, ad_len, ad);
+ 	nettle_eax_aes128_decrypt(&self->dec_ctx.aes_eax.ctx, len, dst, src);
++#if NETTLE_VERSION_MAJOR > 3
++	nettle_eax_aes128_digest(&self->dec_ctx.aes_eax.ctx, mac);
++#else
+ 	nettle_eax_aes128_digest(&self->dec_ctx.aes_eax.ctx, 16, mac);
++#endif
+ 	return len;
+ }
+ 
+@@ -179,7 +188,11 @@ static bool crypto_cipher_aes256_eax_encrypt(struct cr
+ 			(uint8_t*)dst->data + dst->len, src);
+ 	dst->len += src_len;
+ 
++#if NETTLE_VERSION_MAJOR > 3
++	EAX_DIGEST(&self->enc_ctx.aes256_eax.ctx, aes256_encrypt, mac);
++#else
+ 	EAX_DIGEST(&self->enc_ctx.aes256_eax.ctx, aes256_encrypt, 16, mac);
++#endif
+ 
+ 	return true;
+ }
+@@ -191,7 +204,11 @@ static ssize_t crypto_cipher_aes256_eax_decrypt(struct
+ 	crypto_aes256_eax_update_nonce(&self->dec_ctx.aes256_eax);
+ 	EAX_UPDATE(&self->dec_ctx.aes256_eax.ctx, aes256_encrypt, ad_len, ad);
+ 	EAX_DECRYPT(&self->dec_ctx.aes256_eax.ctx, aes256_encrypt, len, dst, src);
++#if NETTLE_VERSION_MAJOR > 3
++	EAX_DIGEST(&self->dec_ctx.aes256_eax.ctx, aes256_encrypt, mac);
++#else
+ 	EAX_DIGEST(&self->dec_ctx.aes256_eax.ctx, aes256_encrypt, 16, mac);
++#endif
+ 	return len;
+ }
+ 

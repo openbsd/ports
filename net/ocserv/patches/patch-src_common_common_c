@@ -1,0 +1,27 @@
+From: Dimitri Papadopoulos <3350651-DimitriPapadopoulos@users.noreply.gitlab.com>
+Date: Mon, 18 May 2026 21:53:53 +0200
+Subject: [PATCH] Build against GNU Nettle 4
+
+Index: src/common/common.c
+--- src/common/common.c.orig
++++ src/common/common.c
+@@ -33,6 +33,7 @@
+ #include <limits.h>
+ #include <assert.h>
+ #include <nettle/sha1.h>
++#include <nettle/version.h>
+ #include "common.h"
+ #include "defs.h"
+ #include "common/base64-helper.h"
+@@ -59,7 +60,11 @@ static void safe_hash(const uint8_t *data, unsigned in
+ 	sha1_init(&ctx);
+ 
+ 	sha1_update(&ctx, data_size, data);
++#if NETTLE_VERSION_MAJOR >= 4
++	sha1_digest(&ctx, output);
++#else
+ 	sha1_digest(&ctx, 20, output);
++#endif
+ }
+ 
+ char *calc_safe_id(const uint8_t *data, unsigned int size, char *output,

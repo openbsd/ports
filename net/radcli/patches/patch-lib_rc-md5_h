@@ -1,0 +1,14 @@
+Fix with nettle >=4
+
+Index: lib/rc-md5.h
+--- lib/rc-md5.h.orig
++++ lib/rc-md5.h
+@@ -13,7 +13,7 @@
+ 
+ #ifdef HAVE_NETTLE
+ 
+-#include <nettle/md5-compat.h>
++#include <nettle/md5.h>
+ 
+ #else
+ 

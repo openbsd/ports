@@ -1,0 +1,20 @@
+Fix with nettle >=4
+
+Index: lib/rc-md5.c
+--- lib/rc-md5.c.orig
++++ lib/rc-md5.c
+@@ -20,10 +20,10 @@
+ void rc_md5_calc(unsigned char *output, unsigned char const *input,
+ 		 size_t inlen)
+ {
+-	MD5_CTX	context;
++	struct md5_ctx context;
+ 
+-	MD5Init(&context);
+-	MD5Update(&context, input, inlen);
+-	MD5Final(output, &context);
++	md5_init(&context);
++	md5_update(&context, inlen, input);
++	md5_digest(&context, output);
+ }
+ 

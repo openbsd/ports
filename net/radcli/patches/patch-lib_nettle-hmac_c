@@ -1,0 +1,13 @@
+Fix with nettle >=4
+
+Index: lib/nettle-hmac.c
+--- lib/nettle-hmac.c.orig
++++ lib/nettle-hmac.c
+@@ -37,6 +37,6 @@ void hmac_md5_with_nettle(uint8_t *data, size_t  data_
+     memset(digest, 0, MD5_DIGEST_SIZE);
+     hmac_md5_set_key(&md5, key_len, key);
+     hmac_md5_update(&md5, data_len, data);
+-    hmac_md5_digest(&md5, MD5_DIGEST_SIZE, digest);
++    hmac_md5_digest(&md5, digest);
+ }
+ 

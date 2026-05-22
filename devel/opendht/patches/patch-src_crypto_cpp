@@ -1,0 +1,78 @@
+Fix with nettle >=4
+
+Index: src/crypto.cpp
+--- src/crypto.cpp.orig
++++ src/crypto.cpp
+@@ -27,6 +27,7 @@ extern "C" {
+ #include <nettle/gcm.h>
+ #include <nettle/aes.h>
+ #include <gnutls/crypto.h>
++#include <nettle/version.h>
+ 
+ #include <argon2.h>
+ }
+@@ -99,19 +100,31 @@ Blob aesEncrypt(const uint8_t* data, size_t data_lengt
+         gcm_aes128_set_key(&aes, key.data());
+         gcm_aes128_set_iv(&aes, GCM_IV_SIZE, ret.data());
+         gcm_aes128_encrypt(&aes, data_length, ret.data() + GCM_IV_SIZE, data);
++#if NETTLE_VERSION_MAJOR > 3
++        gcm_aes128_digest(&aes, ret.data() + GCM_IV_SIZE + data_length);
++#else
+         gcm_aes128_digest(&aes, GCM_DIGEST_SIZE, ret.data() + GCM_IV_SIZE + data_length);
++#endif
+     } else if (key.size() == AES_LENGTHS[1]) {
+         struct gcm_aes192_ctx aes;
+         gcm_aes192_set_key(&aes, key.data());
+         gcm_aes192_set_iv(&aes, GCM_IV_SIZE, ret.data());
+         gcm_aes192_encrypt(&aes, data_length, ret.data() + GCM_IV_SIZE, data);
++#if NETTLE_VERSION_MAJOR > 3
++        gcm_aes192_digest(&aes, ret.data() + GCM_IV_SIZE + data_length);
++#else
+         gcm_aes192_digest(&aes, GCM_DIGEST_SIZE, ret.data() + GCM_IV_SIZE + data_length);
++#endif
+     } else if (key.size() == AES_LENGTHS[2]) {
+         struct gcm_aes256_ctx aes;
+         gcm_aes256_set_key(&aes, key.data());
+         gcm_aes256_set_iv(&aes, GCM_IV_SIZE, ret.data());
+         gcm_aes256_encrypt(&aes, data_length, ret.data() + GCM_IV_SIZE, data);
+-        gcm_aes256_digest(&aes, GCM_DIGEST_SIZE, ret.data() + GCM_IV_SIZE + data_length);
++#if NETTLE_VERSION_MAJOR > 3
++        gcm_aes256_digest(&aes, ret.data() + GCM_IV_SIZE + data_length);
++#else
++        gcm_aes256_digest(&aes, GCM_DIGEST_SIZE, GCM_DIGEST_SIZE, ret.data() + GCM_IV_SIZE + data_length);
++#endif
+     }
+ 
+     return ret;
+@@ -142,19 +155,31 @@ Blob aesDecrypt(const uint8_t* data, size_t data_lengt
+         gcm_aes128_set_key(&aes, key.data());
+         gcm_aes128_set_iv(&aes, GCM_IV_SIZE, data);
+         gcm_aes128_decrypt(&aes, data_sz, ret.data(), data + GCM_IV_SIZE);
++#if NETTLE_VERSION_MAJOR > 3
++        gcm_aes128_digest(&aes, digest.data());
++#else
+         gcm_aes128_digest(&aes, GCM_DIGEST_SIZE, digest.data());
++#endif
+     } else if (key.size() == AES_LENGTHS[1]) {
+         struct gcm_aes192_ctx aes;
+         gcm_aes192_set_key(&aes, key.data());
+         gcm_aes192_set_iv(&aes, GCM_IV_SIZE, data);
+         gcm_aes192_decrypt(&aes, data_sz, ret.data(), data + GCM_IV_SIZE);
++#if NETTLE_VERSION_MAJOR > 3
++        gcm_aes192_digest(&aes, digest.data());
++#else
+         gcm_aes192_digest(&aes, GCM_DIGEST_SIZE, digest.data());
++#endif
+     } else if (key.size() == AES_LENGTHS[2]) {
+         struct gcm_aes256_ctx aes;
+         gcm_aes256_set_key(&aes, key.data());
+         gcm_aes256_set_iv(&aes, GCM_IV_SIZE, data);
+         gcm_aes256_decrypt(&aes, data_sz, ret.data(), data + GCM_IV_SIZE);
++#if NETTLE_VERSION_MAJOR > 3
++        gcm_aes256_digest(&aes, digest.data());
++#else
+         gcm_aes256_digest(&aes, GCM_DIGEST_SIZE, digest.data());
++#endif
+     }
+ 
+     if (not std::equal(digest.begin(), digest.end(), data + data_length - GCM_DIGEST_SIZE)) {

@@ -1,0 +1,27 @@
+From: Dimitri Papadopoulos
+ <3350651-DimitriPapadopoulos@users.noreply.gitlab.com> Date: Mon, 18 May 2026 21:53:53 +0200
+Subject: [PATCH] Build against GNU Nettle 4
+
+Index: src/common/hmac.c
+--- src/common/hmac.c.orig
++++ src/common/hmac.c
+@@ -26,6 +26,7 @@
+ #include <gnutls/crypto.h>
+ #include <gnutls/abstract.h>
+ #include <nettle/hmac.h>
++#include <nettle/version.h>
+ #include <common.h>
+ #include <hmac.h>
+ #include <stdbool.h>
+@@ -51,7 +52,11 @@ void generate_hmac(size_t key_length, const uint8_t *k
+ 		}
+ 	}
+ 
++#if NETTLE_VERSION_MAJOR >= 4
++	hmac_sha256_digest(&ctx, digest);
++#else
+ 	hmac_sha256_digest(&ctx, HMAC_DIGEST_SIZE, digest);
++#endif
+ 
+ 	safe_memset(&ctx, 0, sizeof(ctx));
+ }

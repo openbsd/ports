@@ -3,6 +3,7 @@ COMMENT =	lightweight C++17 Distributed Hash Table implementation
 GH_ACCOUNT =	savoirfairelinux
 GH_PROJECT =	opendht
 GH_TAGNAME =	v3.4.0
+REVISION =	0
 
 SHARED_LIBS +=	opendht		0.0 # 0.0
 
@@ -27,8 +28,8 @@ BUILD_DEPENDS =		devel/asio \
 LIB_DEPENDS =		security/argon2 \
 			devel/fmt \
 			security/gnutls \
-			security/libnettle \
-			devel/jsoncpp \
+			security/nettle \
+			devel/jsoncpp
 
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DOPENDHT_DOCUMENTATION=off

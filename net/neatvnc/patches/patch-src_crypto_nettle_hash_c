@@ -1,0 +1,14 @@
+Fix with nettle >=4
+
+Index: src/crypto/nettle/hash.c
+--- src/crypto/nettle/hash.c.orig
++++ src/crypto/nettle/hash.c
+@@ -21,7 +21,7 @@
+ #include <stdlib.h>
+ #include <nettle/md5.h>
+ #include <nettle/sha1.h>
+-#include <nettle/sha.h>
++#include <nettle/sha2.h>
+ 
+ struct crypto_hash {
+ 	union {
