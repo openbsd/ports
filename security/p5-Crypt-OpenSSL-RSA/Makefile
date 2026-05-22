@@ -1,7 +1,7 @@
 COMMENT =	RSA encoding and decoding using OpenSSL
 
-DISTNAME =	Crypt-OpenSSL-RSA-0.37
-CPAN_AUTHOR =	TODDR
+DISTNAME =	Crypt-OpenSSL-RSA-0.41
+CPAN_AUTHOR =	TIMLEGGE
 
 CATEGORIES =	security
 
