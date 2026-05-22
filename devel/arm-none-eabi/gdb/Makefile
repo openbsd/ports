@@ -2,7 +2,7 @@ COMMENT=	gdb for arm-none-eabi cross-development
 
 DISTNAME=	gdb-7.12.1
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 

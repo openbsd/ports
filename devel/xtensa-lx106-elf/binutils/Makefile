@@ -5,7 +5,7 @@ COMMENT =	binutils for ${CONFIG} cross-development
 VERSION =	2.32
 DISTNAME =	binutils-${VERSION}
 PKGNAME =	${CONFIG}-binutils-${VERSION}
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	bminor
 GH_PROJECT =	binutils-gdb
