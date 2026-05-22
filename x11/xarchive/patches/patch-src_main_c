@@ -10,6 +10,15 @@ Index: src/main.c
    return name;
  }
  #endif
+@@ -55,7 +55,7 @@ getline(char **lineptr, size_t *n, FILE *stream)
+ void 
+ setup_exts(WrapperEntry *wrapent)
+ {
+-  int maxline=MAXLINE;
++  size_t maxline=MAXLINE;
+   gchar *dataline = (gchar *) g_malloc (MAXLINE + 1);
+   gchar *cmd, *extname;
+   FILE *fdata;
 @@ -63,7 +63,7 @@ setup_exts(WrapperEntry *wrapent)
    GPtrArray *ext_array = NULL;
  
@@ -19,3 +28,13 @@ Index: src/main.c
    fdata = popen(cmd, "r");
    if (getline(&dataline, &maxline, fdata) > 0) 
    {
+@@ -216,7 +216,8 @@ get_archive_data(gchar **argv)
+    * sending each line to the widgets add_row function */
+   enum {name=0,size,attr,user,group,date,time,link,num_ent};
+   FILE *fdata;
+-  gint cnt, maxline=MAXLINE, i = 20, error = 0;
++  size_t maxline=MAXLINE;
++  gint cnt, i = 20, error = 0;
+   gchar *ent[num_ent], *esc_archive;
+   gchar *dataline = (gchar *) g_malloc (MAXLINE + 1);
+   gchar delimit[]=";\n";
