@@ -1,7 +1,8 @@
 ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
 
---- fmirror.c.orig	Thu Sep 15 16:30:34 2005
-+++ fmirror.c	Thu Sep 15 16:30:37 2005
+Index: fmirror.c
+--- fmirror.c.orig
++++ fmirror.c
 @@ -135,11 +135,12 @@ static FILE *in_file, *out_file;
  
  static int loglevel = 3; /* Default logging level is 3 */
@@ -16,7 +17,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  static char *localdir = NULL;
  static char *remotedir = NULL;
  static char *host = NULL;
-@@ -170,6 +171,12 @@ static int keep_newer = 0; /* don't down
+@@ -170,6 +171,12 @@ static int keep_newer = 0; /* don't download if a newe
  static int reset_times = 0; /* reset access and mod times to remote */
  static int use_mdtm = 1; /* default is use MDTM if we can find remote TZ */
  
@@ -30,7 +31,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  
  static int input_timeout = 240;
 @@ -183,6 +190,8 @@ static char whitespace[] = " \f\t\v";
- static char rcsid[] = "$Id: patch-fmirror_c,v 1.2 2022/03/11 19:45:58 naddy Exp $";
+ static char rcsid[] = "$Id: patch-fmirror_c,v 1.3 2026/05/22 05:25:27 tb Exp $";
  
  static char usage[] = 
 +" -4 - use only IPv4 connections\n"
@@ -58,7 +59,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
      FILE *file;
  };
  
-@@ -274,15 +286,17 @@ static struct reg_list *last_regex = NUL
+@@ -274,15 +286,17 @@ static struct reg_list *last_regex = NULL;
  
  static int parse_args(int argc, char *const *argv);
  static void do_mirror(struct mirror_info *);
@@ -78,7 +79,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  static void handle_dir_listing(struct connection *c);
  static int parse_filename(char *, char *, struct parse_info *);
  static struct timeinfo *Date2Min(const char *);
-@@ -301,7 +315,6 @@ static int skip_file(const char *filenam
+@@ -301,7 +315,6 @@ static int skip_file(const char *filename, const char 
  static int time_dif(time_t, time_t);
  static int size_dif(unsigned, unsigned);
  static int mode_dif(int, int);
@@ -91,7 +92,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  static time_t utc_mktime(struct tm *tm);
  static int sig_permanent(int sig, RETSIGTYPE (*handler)(int));
 -static int make_connected_socket(struct sockaddr_in *sad);
-+static int make_connected_socket(struct sockaddr *sad, size_t addrlen);
++static int make_connected_socket(struct sockaddr *sad, socklen_t addrlen);
  static void init_active(struct connection *c);
  static int init_passive(struct connection *c);
 +static int init_passive_ipv6(struct connection *c);
@@ -225,7 +226,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
 +  	      ("do_connect: wrong AF specification"));
 +  	  break;
 +      }
-+      LOG(3, ctrl_connect, (msg));
++      LOG(3, ctrl_connect, ("%s", (msg)));
 +
 +      /* sucessfully connected, break the loop */
 +      break;
@@ -396,7 +397,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
      while (*s && !isdigit(*s))
  	s++;
      if (!*s)
-@@ -1160,24 +1274,67 @@ parse_pasv_reply(char *buffer, struct co
+@@ -1160,24 +1274,67 @@ parse_pasv_reply(char *buffer, struct connection *c)
      addr += rdig(&s) << 8;
      addr += rdig(&s);
  
@@ -478,7 +479,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  static int
  do_get_file(char *arg_cmd, time_t mtime, uint perm, uint msize)
  {
-@@ -1200,6 +1358,9 @@ do_get_file(char *arg_cmd, time_t mtime,
+@@ -1200,6 +1358,9 @@ do_get_file(char *arg_cmd, time_t mtime, uint perm, ui
      int x;
      int retries = 4;
      int err;
@@ -488,7 +489,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
      LOG(7, other, ("do_get_file called with arg `%s'", arg_cmd));
      do {
  	const char *msg;
-@@ -1212,7 +1373,8 @@ do_get_file(char *arg_cmd, time_t mtime,
+@@ -1212,7 +1373,8 @@ do_get_file(char *arg_cmd, time_t mtime, uint perm, ui
  	    }
  	} else {
  	    init_active(c);
@@ -498,7 +499,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  	    if(!success()) {
  		LOG(1, cmdfail, ("Port command failed, skipping file"));
  		close(c->fd);
-@@ -1227,8 +1389,20 @@ do_get_file(char *arg_cmd, time_t mtime,
+@@ -1227,8 +1389,20 @@ do_get_file(char *arg_cmd, time_t mtime, uint perm, ui
  		free(c);
  		return 1;
  	    }
@@ -550,7 +551,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  static int
  handle_ftp_transfer(struct connection *c, char *filename, time_t mtime,
  		    uint perm, uint msize)
-@@ -1373,7 +1570,7 @@ handle_ftp_transfer(struct connection *c
+@@ -1373,7 +1570,7 @@ handle_ftp_transfer(struct connection *c, char *filena
      int ffd;
      char buffer[10240];
      int len;
@@ -559,7 +560,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
      int fd = -1;
      int totlen = 0;
      int hashedlen = 0;
-@@ -1395,7 +1592,7 @@ handle_ftp_transfer(struct connection *c
+@@ -1395,7 +1592,7 @@ handle_ftp_transfer(struct connection *c, char *filena
      } else {
  	LOG(5, connect, ("ftp trans: Waiting for connection..."));
  	alarm(connect_timeout);
@@ -568,7 +569,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  	alarm(0);
  	if (fd == -1) {
  	    if (errno == EINTR) {
-@@ -1406,8 +1603,7 @@ handle_ftp_transfer(struct connection *c
+@@ -1406,8 +1603,7 @@ handle_ftp_transfer(struct connection *c, char *filena
  	    LOG(0, connect, ("-- ERROR -- accept() : %s", strerror(errno)));
  	    exit(EXIT_FAILURE);
  	}
@@ -616,6 +617,15 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
      }
      x = handle_input(&msg);
      if (x >= 400) {
+@@ -2209,7 +2417,7 @@ parse_ls_entry(char *prefix, char *line)
+ 	    fht = realloc(fht, fht_len * sizeof(fhashentry_t));
+ 	    if (!fht) {
+ 		LOG(0, other,
+-		    ("FATAL ERROR: realloc(%p, %d) failed: %s",
++		    ("FATAL ERROR: realloc(%p, %zu) failed: %s",
+ 		     fht, fht_len * sizeof(fhashentry_t), strerror(errno)));
+ 		exit(EXIT_FAILURE);
+ 	    }
 @@ -2331,7 +2539,7 @@ no_such_dir:
  static void
  handle_dir_listing(struct connection *c)
@@ -867,12 +877,12 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  	case 'A':
  	    file_and_mask = strtoul(optarg, NULL, 0);
  	    break;
-@@ -3318,12 +3616,15 @@ sig_permanent(int sig, RETSIGTYPE (*hand
+@@ -3318,12 +3616,15 @@ sig_permanent(int sig, RETSIGTYPE (*handler)(int))
  
  
  static int
 -make_connected_socket(struct sockaddr_in *sad)
-+make_connected_socket(struct sockaddr *sad, size_t addrlen)
++make_connected_socket(struct sockaddr *sad, socklen_t addrlen)
  {
      int n = connect_retries;
 +    char numaddr[64];
@@ -885,7 +895,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  	if(sockfd < 0) {
  	    LOG(0, failure, ("-- ERROR -- creating socket: %s",
  			     strerror(errno)));
-@@ -3331,16 +3632,54 @@ make_connected_socket(struct sockaddr_in
+@@ -3331,16 +3632,54 @@ make_connected_socket(struct sockaddr_in *sad)
  	}
  	
  	alarm(connect_timeout);
@@ -942,7 +952,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  	    return sockfd;
  	}
      }
-@@ -3349,7 +3688,7 @@ make_connected_socket(struct sockaddr_in
+@@ -3349,7 +3688,7 @@ make_connected_socket(struct sockaddr_in *sad)
  
  
  static int
@@ -951,7 +961,7 @@ ipv6 patch by Vladimir Kotal <vlada@devnull.cz>
  {
      int l = sizeof(*sad);
      alarm(connect_timeout); /* die if no connection in 70 seconds */
-@@ -3361,11 +3700,15 @@ accept_connection(int fd, struct sockadd
+@@ -3361,11 +3700,15 @@ accept_connection(int fd, struct sockaddr_in *sad)
  static int
  make_passive_connection(struct connection *c)
  {
