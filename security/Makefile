@@ -129,6 +129,7 @@
      SUBDIR += minisign
      SUBDIR += mitmproxy
      SUBDIR += netpgp
+     SUBDIR += nettle
      SUBDIR += nfsshell
      SUBDIR += nikto
      SUBDIR += nss
