@@ -543,6 +543,7 @@ share/qbs/imports/qbs/base/AutotestRunner.qbs
 share/qbs/imports/qbs/base/ConfigBuild.qbs
 share/qbs/imports/qbs/base/ConfigInstall.qbs
 share/qbs/imports/qbs/base/CppApplication.qbs
+share/qbs/imports/qbs/base/CppLibrary.qbs
 share/qbs/imports/qbs/base/CppStd.qbs
 share/qbs/imports/qbs/base/DynamicLibrary.qbs
 share/qbs/imports/qbs/base/InnoSetup.qbs
@@ -555,6 +556,7 @@ share/qbs/imports/qbs/base/NSISSetup.qbs
 share/qbs/imports/qbs/base/NativeBinary.qbs
 share/qbs/imports/qbs/base/NetModule.qbs
 share/qbs/imports/qbs/base/NodeJSApplication.qbs
+share/qbs/imports/qbs/base/ObjectLibrary.qbs
 share/qbs/imports/qbs/base/Plugin.qbs
 share/qbs/imports/qbs/base/QtApplication.qbs
 share/qbs/imports/qbs/base/QtGuiApplication.qbs
