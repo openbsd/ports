@@ -1,4 +1,4 @@
-SHA256 (ruby-4.0.4.tar.gz) = 819u36Pauz9yP50M8ZBsZRKud/TkEqseaMxukdIw+oA=
+SHA256 (ruby-4.0.5.tar.gz) = fWFJB5pj+K4dMmyfplxgGbotwxVerns5FZgXkRyIlY4=
 SHA256 (ruby-box-test-fix.patch) = GbHsCPL9ZNdpXZl62mqghVbwkVoqKj6H3KtVJOoSrdk=
-SIZE (ruby-4.0.4.tar.gz) = 23816838
+SIZE (ruby-4.0.5.tar.gz) = 23818557
 SIZE (ruby-box-test-fix.patch) = 1047
