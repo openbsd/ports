@@ -1,0 +1,14 @@
+Index: unix/utils/subprocess_waiter.c
+--- unix/utils/subprocess_waiter.c.orig
++++ unix/utils/subprocess_waiter.c
+@@ -8,8 +8,9 @@
+ #include "putty.h"
+ #include "tree234.h"
+ 
+-#include <unistd.h>
+ #include <sys/wait.h>
++#include <unistd.h>
++#include <signal.h>
+ 
+ struct SubprocessWaiter {
+     pid_t pid;
