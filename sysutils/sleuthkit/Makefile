@@ -1,6 +1,6 @@
 COMMENT=		forensic toolkit based on TCT
 
-DISTNAME=		sleuthkit-4.14.0
+DISTNAME=		sleuthkit-4.15.0
 
 CATEGORIES=		sysutils security
 

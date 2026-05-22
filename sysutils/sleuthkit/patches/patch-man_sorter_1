@@ -6,7 +6,7 @@ Index: man/sorter.1
  Specify the location of the ONLY configuration file.  The standard config
  files will not be loaded if this option is given.  For example, in the
 -\'share/sort\' directory there is a file called 'images.sort'.  This file
-+\'%%PREFIX%%/share/tsk/sorter/\' directory there is a file called 'images.sort'.  This file
++\'/usr/local/share/tsk/sorter/\' directory there is a file called 'images.sort'.  This file
  contains only rules about graphic images.  If it is specified with \-C, then
  only images will be saved about the image.  
  .IP "-m mnt"
@@ -15,7 +15,7 @@ Index: man/sorter.1
  categories and what extensions belong to what file types.  Configuration
  files are distributed with the 'sorter' tool and are located in the
 -installation directory in the 'share/sorter' directory.  
-+installation directory in the '%%PREFIX%%/share/tsk/sorter/' directory.  
++installation directory in the '/usr/local/share/tsk/sorter/' directory.  
  
  The 'default.sort' file is used by any file system type.  It contains
  entries for common file types.  A specific operating system file also
@@ -24,7 +24,7 @@ Index: man/sorter.1
  To just identify images using the supplied 'images.sort' file:
  
 -    # sorter \-f ntfs \-C /usr/local/sleuthkit/share/sort/images.sort \
-+    # sorter \-f ntfs \-C %%PREFIX%%/share/tsk/sort/images.sort \
++    # sorter \-f ntfs \-C /usr/local/share/tsk/sort/images.sort \
  	  \-d data/sorter \-h \-s images/hda1.dd
  
  .SH REQUIREMENTS
