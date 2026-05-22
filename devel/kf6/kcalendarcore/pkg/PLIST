@@ -72,6 +72,9 @@ include/KF6/KCalendarCore/kcalendarcore/todo.h
 include/KF6/KCalendarCore/kcalendarcore/vcalformat.h
 include/KF6/KCalendarCore/kcalendarcore/visitor.h
 include/KF6/KCalendarCore/kcalendarcore_version.h
+include/PySide6/
+include/PySide6/KCalendarCore/
+include/PySide6/KCalendarCore/kcalendarcore_python.h
 lib/cmake/KF6CalendarCore/
 lib/cmake/KF6CalendarCore/FindLibIcal.cmake
 lib/cmake/KF6CalendarCore/KF6CalendarCoreConfig.cmake
@@ -80,6 +83,7 @@ lib/cmake/KF6CalendarCore/KF6CalendarCoreTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6CalendarCore/KF6CalendarCoreTargets.cmake
 @lib lib/libKF6CalendarCore.so.${LIBKF6CalendarCore_VERSION}
 lib/pkgconfig/KF6CalendarCore.pc
+@so lib/python3.14/site-packages/KCalendarCore.cpython-314.so
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/calendarcore/
@@ -87,6 +91,9 @@ lib/qt6/qml/org/kde/calendarcore/kcalendarcoreqml.qmltypes
 lib/qt6/qml/org/kde/calendarcore/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/calendarcore/libkcalendarcoreqml.so
 lib/qt6/qml/org/kde/calendarcore/qmldir
+share/PySide6/
+share/PySide6/typesystems/
+share/PySide6/typesystems/typesystem_kcalendarcore.xml
 share/qlogging-categories6/
 share/qlogging-categories6/kcalendarcore.categories
 share/qlogging-categories6/kcalendarcore.renamecategories

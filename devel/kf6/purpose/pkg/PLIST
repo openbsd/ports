@@ -44,6 +44,11 @@ lib/qt6/plugins/kf6/purpose/
 lib/qt6/qml/org/kde/purpose/
 lib/qt6/qml/org/kde/purpose/AlternativesView.qml
 lib/qt6/qml/org/kde/purpose/JobView.qml
+lib/qt6/qml/org/kde/purpose/accountshelper/
+lib/qt6/qml/org/kde/purpose/accountshelper/accountshelper.qmltypes
+lib/qt6/qml/org/kde/purpose/accountshelper/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/purpose/accountshelper/libaccountshelper.so
+lib/qt6/qml/org/kde/purpose/accountshelper/qmldir
 lib/qt6/qml/org/kde/purpose/kde-qmlmodule.version
 lib/qt6/qml/org/kde/purpose/kdeconnect/
 lib/qt6/qml/org/kde/purpose/kdeconnect/kde-qmlmodule.version

@@ -34,6 +34,10 @@ lib/cmake/KF6KirigamiPlatform/KF6KirigamiPlatformTargets.cmake
 @lib lib/libKirigamiControls.so.${LIBKirigamiControls_VERSION}
 @lib lib/libKirigamiDelegates.so.${LIBKirigamiDelegates_VERSION}
 @lib lib/libKirigamiDialogs.so.${LIBKirigamiDialogs_VERSION}
+@lib lib/libKirigamiForms.so.${LIBKirigamiForms_VERSION}
+@lib lib/libKirigamiFormsPrivateCards.so.${LIBKirigamiFormsPrivateCards_VERSION}
+@lib lib/libKirigamiFormsPrivateFlat.so.${LIBKirigamiFormsPrivateFlat_VERSION}
+@lib lib/libKirigamiFormsPrivateTemplates.so.${LIBKirigamiFormsPrivateTemplates_VERSION}
 @lib lib/libKirigamiLayouts.so.${LIBKirigamiLayouts_VERSION}
 @lib lib/libKirigamiLayoutsPrivate.so.${LIBKirigamiLayoutsPrivate_VERSION}
 @lib lib/libKirigamiPlatform.so.${LIBKirigamiPlatform_VERSION}
@@ -59,6 +63,7 @@ lib/qt6/qml/org/kde/kirigami/controls/ActionTextField.qml
 lib/qt6/qml/org/kde/kirigami/controls/ActionToolBar.qml
 lib/qt6/qml/org/kde/kirigami/controls/ApplicationItem.qml
 lib/qt6/qml/org/kde/kirigami/controls/ApplicationWindow.qml
+lib/qt6/qml/org/kde/kirigami/controls/Badge.qml
 lib/qt6/qml/org/kde/kirigami/controls/Card.qml
 lib/qt6/qml/org/kde/kirigami/controls/CardsLayout.qml
 lib/qt6/qml/org/kde/kirigami/controls/CardsListView.qml
@@ -138,6 +143,42 @@ lib/qt6/qml/org/kde/kirigami/dialogs/SearchDialog.qml
 lib/qt6/qml/org/kde/kirigami/dialogs/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigami/dialogs/libKirigamiDialogsplugin.so
 lib/qt6/qml/org/kde/kirigami/dialogs/qmldir
+lib/qt6/qml/org/kde/kirigami/forms/
+lib/qt6/qml/org/kde/kirigami/forms/KirigamiForms.qmltypes
+lib/qt6/qml/org/kde/kirigami/forms/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigami/forms/libKirigamiFormsplugin.so
+lib/qt6/qml/org/kde/kirigami/forms/private/
+lib/qt6/qml/org/kde/kirigami/forms/private/cards/
+lib/qt6/qml/org/kde/kirigami/forms/private/cards/Form.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/cards/FormAction.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/cards/FormEntry.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/cards/FormGroup.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/cards/FormSeparator.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/cards/KirigamiFormsPrivateCards.qmltypes
+lib/qt6/qml/org/kde/kirigami/forms/private/cards/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigami/forms/private/cards/libKirigamiFormsPrivateCardsplugin.so
+lib/qt6/qml/org/kde/kirigami/forms/private/cards/qmldir
+lib/qt6/qml/org/kde/kirigami/forms/private/flat/
+lib/qt6/qml/org/kde/kirigami/forms/private/flat/Form.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/flat/FormAction.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/flat/FormEntry.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/flat/FormGroup.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/flat/FormSeparator.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/flat/KirigamiFormsPrivateFlat.qmltypes
+lib/qt6/qml/org/kde/kirigami/forms/private/flat/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigami/forms/private/flat/libKirigamiFormsPrivateFlatplugin.so
+lib/qt6/qml/org/kde/kirigami/forms/private/flat/qmldir
+lib/qt6/qml/org/kde/kirigami/forms/private/templates/
+lib/qt6/qml/org/kde/kirigami/forms/private/templates/Form.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/templates/FormAction.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/templates/FormEntry.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/templates/FormGroup.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/templates/FormSeparator.qml
+lib/qt6/qml/org/kde/kirigami/forms/private/templates/KirigamiFormsPrivateTemplates.qmltypes
+lib/qt6/qml/org/kde/kirigami/forms/private/templates/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigami/forms/private/templates/libKirigamiFormsPrivateTemplatesplugin.so
+lib/qt6/qml/org/kde/kirigami/forms/private/templates/qmldir
+lib/qt6/qml/org/kde/kirigami/forms/qmldir
 lib/qt6/qml/org/kde/kirigami/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kirigami/layouts/
 lib/qt6/qml/org/kde/kirigami/layouts/FormLayout.qml
@@ -187,6 +228,7 @@ lib/qt6/qml/org/kde/kirigami/templates/
 lib/qt6/qml/org/kde/kirigami/templates/AbstractApplicationHeader.qml
 lib/qt6/qml/org/kde/kirigami/templates/AbstractCard.qml
 lib/qt6/qml/org/kde/kirigami/templates/AppHeaderSizeGroup.qml
+lib/qt6/qml/org/kde/kirigami/templates/Badge.qml
 lib/qt6/qml/org/kde/kirigami/templates/Chip.qml
 lib/qt6/qml/org/kde/kirigami/templates/Heading.qml
 lib/qt6/qml/org/kde/kirigami/templates/InlineMessage.qml
