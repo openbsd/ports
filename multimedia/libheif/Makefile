@@ -1,6 +1,7 @@
 COMMENT=	HEIF and AVIF file format decoder and encoder
 
 V=		1.22.0
+REVISION=	0
 DISTNAME=	libheif-$V
 
 SHARED_LIBS +=  heif 3.1
