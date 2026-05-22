@@ -1,6 +1,6 @@
 COMMENT =	Puppet development kit
 
-REVISION =	1
+REVISION =	2
 DISTNAME =	pdk-3.4.0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/pdk
@@ -20,7 +20,7 @@ RUN_DEPENDS += archivers/ruby-minitar,${MODRUBY_FLAVOR}>=0.8,<2 \
 		devel/ruby-ffi,${MODRUBY_FLAVOR}>=1.15.5,<2 \
 		devel/ruby-hitimes,${MODRUBY_FLAVOR}>2.0.0 \
 		devel/ruby-json_pure,${MODRUBY_FLAVOR}>=2.7.0,<3 \
-		devel/ruby-json-schema,${MODRUBY_FLAVOR}>=5,<6 \
+		devel/ruby-json-schema,${MODRUBY_FLAVOR}>=5,<7 \
 		devel/ruby-pathspec,${MODRUBY_FLAVOR}>=1.1,<3 \
 		devel/ruby-puppet_forge,${MODRUBY_FLAVOR}>=6,<7 \
 		devel/ruby-puppet-modulebuilder,${MODRUBY_FLAVOR}>=2,<3 \
