@@ -1,6 +1,6 @@
 COMMENT =	ForensicArtifacts.com Artifact Repository
 
-MODPY_DISTV =	20250913
+MODPY_DISTV =	20260421
 DISTNAME =	artifacts-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
@@ -18,6 +18,8 @@ MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	textproc/py-yaml
+
+# 27 passed, 2 warnings
 TEST_DEPENDS =	devel/py-yapf
 MAKE_ENV +=	LC_CTYPE='en_US.UTF-8'
 

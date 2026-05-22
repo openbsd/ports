@@ -13,7 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_DISTV}.dist-info/licenses/ACKNOWLEDGEMENTS
 lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_DISTV}.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_DISTV}.dist-info/licenses/LICENSE
-lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_DISTV}.dist-info/licenses/README
 lib/python${MODPY_VERSION}/site-packages/artifacts-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/artifacts/__init__.py
 lib/python${MODPY_VERSION}/site-packages/artifacts/${MODPY_PYCACHE}/
