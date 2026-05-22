@@ -1,0 +1,20 @@
+Index: arm64/chacha-core-internal.asm
+--- arm64/chacha-core-internal.asm.orig
++++ arm64/chacha-core-internal.asm
+@@ -84,7 +84,8 @@ define(`QROUND', `
+ 	.text
+ 	ALIGN(16)
+ PROLOGUE(_nettle_chacha_core)
+-	adr		x3, .Lrot24
++	adrp		x3, .Lrot24
++	add		x3, x3, :lo12:.Lrot24
+ 	ld1		{ROT24.4s},[x3]
+ 
+ 	ld1		{X0.4s,X1.4s,X2.4s,X3.4s}, [SRC]
+@@ -124,5 +125,6 @@ PROLOGUE(_nettle_chacha_core)
+ 	ret
+ EPILOGUE(_nettle_chacha_core)
+ 
++.rodata
+ .align	4
+ .Lrot24: .long	0x02010003,0x06050407,0x0a09080b,0x0e0d0c0f

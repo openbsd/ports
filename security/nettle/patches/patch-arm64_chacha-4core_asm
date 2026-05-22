@@ -1,0 +1,21 @@
+Index: arm64/chacha-4core.asm
+--- arm64/chacha-4core.asm.orig
++++ arm64/chacha-4core.asm
+@@ -148,7 +148,8 @@ PROLOGUE(_nettle_chacha_4core)
+ 	C Save callee-save registers
+ 	fmov	x3, d8
+ 
+-	adr		x4, .Lcnts
++	adrp		x4, .Lcnts
++	add		x4, x4, :lo12:.Lcnts
+ 	ld1		{TMP3.4s,ROT24.4s},[x4]
+ 
+ C Load state and splat
+@@ -234,6 +235,7 @@ PROLOGUE(_nettle_chacha_4core32)
+ 	b		.Lshared_entry
+ EPILOGUE(_nettle_chacha_4core32)
+ 
++.rodata
+ .align	4
+ .Lcnts: .long	0,1,2,3		C increments
+ .Lrot24: .long	0x02010003,0x06050407,0x0a09080b,0x0e0d0c0f

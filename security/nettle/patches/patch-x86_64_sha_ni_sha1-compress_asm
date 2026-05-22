@@ -1,0 +1,16 @@
+Index: x86_64/sha_ni/sha1-compress.asm
+--- x86_64/sha_ni/sha1-compress.asm.orig
++++ x86_64/sha_ni/sha1-compress.asm
+@@ -61,10 +61,11 @@ define(`QROUND', `
+ 
+ 	C nettle_sha1_compress(uint32_t *state, uint8_t *input)
+ 
+-	.text
++	.rodata
+ 	ALIGN(16)
+ .Lswap_mask:
+ 	.byte 15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0
++	.text
+ PROLOGUE(nettle_sha1_compress)
+ 	C save all registers that need to be saved
+ 	W64_ENTRY(2, 10)

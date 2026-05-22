@@ -1,0 +1,83 @@
+@bin bin/nettle-hash
+@bin bin/nettle-lfib-stream
+@bin bin/nettle-pbkdf2
+@bin bin/pkcs1-conv
+@bin bin/sexp-conv
+include/nettle/
+include/nettle/aes.h
+include/nettle/arcfour.h
+include/nettle/arctwo.h
+include/nettle/asn1.h
+include/nettle/balloon.h
+include/nettle/base16.h
+include/nettle/base64.h
+include/nettle/bignum.h
+include/nettle/blowfish.h
+include/nettle/buffer.h
+include/nettle/camellia.h
+include/nettle/cast128.h
+include/nettle/cbc.h
+include/nettle/ccm.h
+include/nettle/cfb.h
+include/nettle/chacha-poly1305.h
+include/nettle/chacha.h
+include/nettle/cmac.h
+include/nettle/ctr.h
+include/nettle/curve25519.h
+include/nettle/curve448.h
+include/nettle/des.h
+include/nettle/drbg-ctr.h
+include/nettle/dsa.h
+include/nettle/eax.h
+include/nettle/ecc-curve.h
+include/nettle/ecc.h
+include/nettle/ecdsa.h
+include/nettle/eddsa.h
+include/nettle/gcm.h
+include/nettle/gostdsa.h
+include/nettle/gosthash94.h
+include/nettle/hkdf.h
+include/nettle/hmac.h
+include/nettle/knuth-lfib.h
+include/nettle/macros.h
+include/nettle/md2.h
+include/nettle/md4.h
+include/nettle/md5.h
+include/nettle/memops.h
+include/nettle/memxor.h
+include/nettle/nettle-meta.h
+include/nettle/nettle-types.h
+include/nettle/nist-keywrap.h
+include/nettle/ocb.h
+include/nettle/pbkdf2.h
+include/nettle/pkcs1.h
+include/nettle/poly1305.h
+include/nettle/pss-mgf1.h
+include/nettle/pss.h
+include/nettle/realloc.h
+include/nettle/ripemd160.h
+include/nettle/rsa.h
+include/nettle/salsa20.h
+include/nettle/serpent.h
+include/nettle/sexp.h
+include/nettle/sha1.h
+include/nettle/sha2.h
+include/nettle/sha3.h
+include/nettle/siv-cmac.h
+include/nettle/siv-gcm.h
+include/nettle/slh-dsa.h
+include/nettle/sm3.h
+include/nettle/sm4.h
+include/nettle/streebog.h
+include/nettle/twofish.h
+include/nettle/umac.h
+include/nettle/version.h
+include/nettle/xts.h
+include/nettle/yarrow.h
+@info info/nettle.info
+@static-lib lib/libhogweed.a
+@lib lib/libhogweed.so.${LIBhogweed_VERSION}
+@static-lib lib/libnettle.a
+@lib lib/libnettle.so.${LIBnettle_VERSION}
+lib/pkgconfig/hogweed.pc
+lib/pkgconfig/nettle.pc

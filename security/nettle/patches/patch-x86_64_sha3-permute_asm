@@ -1,0 +1,11 @@
+Index: x86_64/sha3-permute.asm
+--- x86_64/sha3-permute.asm.orig
++++ x86_64/sha3-permute.asm
+@@ -496,6 +496,7 @@ PROLOGUE(nettle_sha3_permute)
+ 
+ EPILOGUE(nettle_sha3_permute)
+ 
++.rodata
+ ALIGN(16)
+ .rc:	C In reverse order
+ 	.quad	0x8000000080008008
