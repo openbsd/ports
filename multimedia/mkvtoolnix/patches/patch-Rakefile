@@ -12,7 +12,7 @@ Index: Rakefile
    ldflags                 += " -Llib/libebml/src -Llib/libmatroska/src" if c?(:EBML_MATROSKA_INTERNAL)
    ldflags                 += " -Llib/fmt/src"                           if c?(:FMT_INTERNAL)
    ldflags                 += " #{c(:EXTRA_LDFLAGS)} #{c(:USER_LDFLAGS)} #{c(:LDFLAGS_RPATHS)} #{c(:BOOST_LDFLAGS)}"
-@@ -1098,10 +1097,8 @@ $common_libs = [
+@@ -1122,10 +1121,8 @@ $common_libs = [
    :intl,
    :iconv,
    :fmt,
