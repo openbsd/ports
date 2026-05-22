@@ -1,14 +1,13 @@
 Index: src/plugins/lua/CMakeLists.txt
 --- src/plugins/lua/CMakeLists.txt.orig
 +++ src/plugins/lua/CMakeLists.txt
-@@ -28,8 +28,8 @@ set_target_properties(lua PROPERTIES PREFIX "")
+@@ -29,7 +29,7 @@ add_library(lua MODULE
+ set_target_properties(lua PROPERTIES PREFIX "")
  
- if(LUA_FOUND)
-   add_definitions(${LUA_CFLAGS})
--  include_directories(${LUA_INCLUDE_DIRS})
--  target_link_libraries(lua ${LUA_LDFLAGS} weechat_plugins_scripts coverage_config)
-+  include_directories(${LUA_INCLUDE_DIR})
-+  target_link_libraries(lua ${LUA_LIBRARY} weechat_plugins_scripts coverage_config)
- endif()
+ add_definitions(${LUA_CFLAGS})
+-include_directories(${LUA_INCLUDE_DIRS})
+-target_link_libraries(lua ${LUA_LDFLAGS} weechat_plugins_scripts coverage_config)
++include_directories(${LUA_INCLUDE_DIR})
++target_link_libraries(lua ${LUA_LIBRARY} weechat_plugins_scripts coverage_config)
  
  install(TARGETS lua LIBRARY DESTINATION "${WEECHAT_LIBDIR}/plugins")

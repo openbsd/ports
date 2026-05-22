@@ -4,8 +4,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		4.8.1
-REVISION-main=	0
+V=		4.9.0
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -26,7 +25,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB-main += aspell c cjson curl curses gcrypt gnutls iconv intl
 WANTLIB-main += m perl pthread z zstd
 WANTLIB-lua += ${MODLUA_WANTLIB}
-WANTLIB-python += ${MODPY_WANTLIB}
+WANTLIB-python += ${MODPY_WANTLIB} intl pthread util
 WANTLIB-tcl += ${MODTCL_WANTLIB}
 # uses link libruby*.so
 WANTLIB-ruby += ${MODRUBY_WANTLIB}
@@ -90,6 +89,8 @@ CONFIGURE_ARGS+=	-DTCL_TCLSH=${MODTCL_BIN} \
 			-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
 			-DMODTCL_LIB=${MODTCL_LIB}
 
+MODCMAKE_LDFLAGS =   -L${LOCALBASE}/lib
+
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
 # needed for ruby 3 on llvm
@@ -97,7 +98,7 @@ CONFIGURE_ENV=		CFLAGS="${CFLAGS} -fdeclspec"
 .endif
 
 pre-configure:
-	rm -f ${WRKSRC}/cmake/{FindLua,FindRuby,FindTCL}.cmake
+	rm -f ${WRKSRC}/cmake/{FindLua,FindRuby,FindTCL,FindPython}.cmake
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/weechat
