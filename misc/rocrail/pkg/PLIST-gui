@@ -1,5 +1,7 @@
-@bin bin/rocview
-bin/rocview.sh
+bin/rocview
+libexec/rocrail/
+@bin libexec/rocrail/rocview
+share/applications/Rocview.desktop
 share/rocrail/svg/
 share/rocrail/svg/themes/
 share/rocrail/svg/themes/Accessories/
@@ -184,8 +186,6 @@ share/rocrail/svg/themes/DB/sensor-on-route.svg
 share/rocrail/svg/themes/DB/sensor-on.svg
 share/rocrail/svg/themes/DB/shunting-f-g.svg
 share/rocrail/svg/themes/DB/shunting-f-r.svg
-share/rocrail/svg/themes/DB/signaldistance.svg
-share/rocrail/svg/themes/DB/signaldistant -2.svg
 share/rocrail/svg/themes/DB/signaldistant-2-g.svg
 share/rocrail/svg/themes/DB/signaldistant-2-r.svg
 share/rocrail/svg/themes/DB/signaldistant-2-y.svg
@@ -649,3 +649,4 @@ share/rocrail/svg/themes/SpDrS60/turnoutright-r.svg
 share/rocrail/svg/themes/SpDrS60/turnoutright-t-occ.svg
 share/rocrail/svg/themes/SpDrS60/turnoutright-t.svg
 share/rocrail/svg/themes/SpDrS60/turnoutright.svg
+@tag update-desktop-database
