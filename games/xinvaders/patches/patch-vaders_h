@@ -1,7 +1,7 @@
 Index: vaders.h
 --- vaders.h.orig
 +++ vaders.h
-@@ -90,15 +90,82 @@ typedef struct _VadersRec {
+@@ -90,20 +90,87 @@ typedef struct _VadersRec {
  
  
  
@@ -86,6 +86,12 @@ Index: vaders.h
  ext int level;
  
  ext Display *dpy;
+ ext Window gamewindow, labelwindow;
+-ext VadersWidget gamewidget, labelwidget;
++ext Widget gamewidget, labelwidget;
+ ext int gamewidth, gameheight;
+ ext Widget toplevel;
+ ext int score;
 @@ -111,54 +178,31 @@ ext int basesleft;
  
  /* Base info: */

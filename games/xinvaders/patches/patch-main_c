@@ -1,5 +1,6 @@
---- main.c.orig	Mon Sep 11 00:32:16 2000
-+++ main.c	Tue Aug 25 21:10:26 2015
+Index: main.c
+--- main.c.orig
++++ main.c
 @@ -26,7 +26,6 @@ Wed May  8 1991
  #include <X11/IntrinsicP.h>
  #include <X11/Label.h>
@@ -132,7 +133,7 @@
  
    form = XtCreateManagedWidget ("form", formWidgetClass,
  				toplevel, NULL, 0);
-@@ -189,8 +188,8 @@ int main(Cardinal argc, char **argv)
+@@ -189,10 +188,10 @@ int main(Cardinal argc, char **argv)
    XtSetArg (args[n], XtNright, XtChainLeft); n++;
    XtSetArg (args[n], XtNtop, XtChainTop); n++;
    XtSetArg (args[n], XtNbottom, XtChainTop); n++;
@@ -141,8 +142,11 @@
 +  XtSetArg (args[n], XtNwidth, app_data.width); n++;
 +  XtSetArg (args[n], XtNheight, app_data.height); n++;
    
-   gamewidget = (VadersWidget)
+-  gamewidget = (VadersWidget)
++  gamewidget =
      XtCreateManagedWidget("field", vadersWidgetClass, form, args, n);
+   
+   XtSetKeyboardFocus (form, (Widget) gamewidget);
 @@ -204,29 +203,29 @@ int main(Cardinal argc, char **argv)
    XtSetArg (args[n], XtNbottom, XtChainTop); n++;
    XtSetArg (args[n], XtNfromHoriz, gamewidget); n++;
@@ -152,7 +156,8 @@
 +  XtSetArg (args[n], XtNwidth, app_data.scale*IWIDTH); n++;
 +  XtSetArg (args[n], XtNheight, app_data.height/2); n++;
    
-   labelwidget = (VadersWidget)
+-  labelwidget = (VadersWidget)
++  labelwidget =
      XtCreateManagedWidget("label", vadersWidgetClass, form, args, n);
  
    pausebutton = MakeCommandButton(form, "pause", Pause, labelwidget, gamewidget, NULL);
