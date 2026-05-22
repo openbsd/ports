@@ -74,8 +74,8 @@ share/cmake/Help/command/get_source_file_property.rst
 share/cmake/Help/command/get_target_property.rst
 share/cmake/Help/command/get_test_property.rst
 share/cmake/Help/command/if.rst
-share/cmake/Help/command/include.rst
 share/cmake/Help/command/include/
+share/cmake/Help/command/include.rst
 share/cmake/Help/command/include/DEPRECATED_POLICY_VERSIONS.rst
 share/cmake/Help/command/include/DEVICE_LINK_OPTIONS.rst
 share/cmake/Help/command/include/FIND_XXX.rst
@@ -294,6 +294,7 @@ share/cmake/Help/index.rst
 share/cmake/Help/manual/
 share/cmake/Help/manual/CTEST_EXAMPLE_MAKEFILE_JOB_SERVER.make
 share/cmake/Help/manual/ccmake.1.rst
+share/cmake/Help/manual/cmake/
 share/cmake/Help/manual/cmake-buildsystem.7.rst
 share/cmake/Help/manual/cmake-commands.7.rst
 share/cmake/Help/manual/cmake-compile-features.7.rst
@@ -317,12 +318,11 @@ share/cmake/Help/manual/cmake-server.7.rst
 share/cmake/Help/manual/cmake-toolchains.7.rst
 share/cmake/Help/manual/cmake-variables.7.rst
 share/cmake/Help/manual/cmake.1.rst
-share/cmake/Help/manual/cmake/
 share/cmake/Help/manual/cmake/version-schema.json
 share/cmake/Help/manual/cpack-generators.7.rst
 share/cmake/Help/manual/cpack.1.rst
-share/cmake/Help/manual/ctest.1.rst
 share/cmake/Help/manual/ctest/
+share/cmake/Help/manual/ctest.1.rst
 share/cmake/Help/manual/ctest/show-only-schema.json
 share/cmake/Help/manual/file_api/
 share/cmake/Help/manual/file_api/schema_cache.json
