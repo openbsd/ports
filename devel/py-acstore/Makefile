@@ -1,6 +1,6 @@
 COMMENT =		read and write Attribute Container stores
 
-MODPY_DISTV =		20240407
+MODPY_DISTV =		20260411
 DISTNAME =		acstore-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -18,5 +18,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests/*.py
+
+RUN_DEPENDS =		textproc/py-yaml
 
 .include <bsd.port.mk>
