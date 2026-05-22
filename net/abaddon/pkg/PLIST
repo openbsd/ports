@@ -2,10 +2,6 @@
 share/abaddon/
 share/abaddon/css/
 share/abaddon/css/main.css
-share/abaddon/desktop/
-share/abaddon/desktop/icon.svg
-share/abaddon/desktop/io.github.uowuo.abaddon.desktop
-share/abaddon/desktop/io.github.uowuo.abaddon.metainfo.xml
 share/abaddon/fonts/
 share/abaddon/fonts/Twemoji-15.0.3.ttf
 share/abaddon/fonts/conf.d/
@@ -85,4 +81,7 @@ share/abaddon/res/twitter.png
 share/abaddon/res/typing_indicator.gif
 share/abaddon/res/xbox.png
 share/abaddon/res/youtube.png
+share/applications/icon.svg
+share/applications/io.github.uowuo.abaddon.desktop
+share/applications/io.github.uowuo.abaddon.metainfo.xml
 share/doc/pkg-readmes/${PKGSTEM}
