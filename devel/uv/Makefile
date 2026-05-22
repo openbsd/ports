@@ -9,7 +9,7 @@ USE_NOEXECONLY =	Yes
 
 COMMENT =		Python package and project manager
 
-MODPY_DISTV =		0.11.11
+MODPY_DISTV =		0.11.16
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
 GH_TAGNAME =		${MODPY_DISTV}
@@ -27,9 +27,10 @@ PERMIT_PACKAGE =	Yes
 BUILD_DEPENDS =		devel/maturin \
 			devel/py-installer
 
-LIB_DEPENDS +=		archivers/bzip2
+LIB_DEPENDS +=		archivers/bzip2 \
+			archivers/xz
 
-WANTLIB =		${MODCARGO_WANTLIB} bz2 m
+WANTLIB =		${MODCARGO_WANTLIB} bz2 lzma m
 
 MODULES =		devel/cargo \
 			lang/python
