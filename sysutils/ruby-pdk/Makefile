@@ -1,6 +1,6 @@
 COMMENT =	Puppet development kit
 
-REVISION =	0
+REVISION =	1
 DISTNAME =	pdk-3.4.0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/pdk

@@ -46,6 +46,15 @@ Index: .metadata
    type: :runtime
    prerelease: false
    version_requirements: !ruby/object:Gem::Requirement
+@@ -208,7 +214,7 @@ dependencies:
+   name: pathspec
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">="
+       - !ruby/object:Gem::Version
+         version: '1.1'
+   type: :runtime
 @@ -224,7 +230,7 @@ dependencies:
      requirements:
      - - "~>"
