@@ -1,0 +1,14 @@
+error: incompatible pointer types passing 'struct sockaddr_un *' to parameter of type 'const struct sockaddr *' [-Wincompatible-pointer-types]
+
+Index: plugins/check_ntp_time.c
+--- plugins/check_ntp_time.c.orig
++++ plugins/check_ntp_time.c
+@@ -397,7 +397,7 @@ static offset_request_wrapper offset_request(const cha
+ 
+ 		strncpy(unix_socket.sun_path, host, strlen(host));
+ 
+-		if (connect(socklist[0], &unix_socket, sizeof(unix_socket))) {
++		if (connect(socklist[0], (const struct sockaddr *)&unix_socket, sizeof(unix_socket))) {
+ 			/* don't die here, because it is enough if there is one server
+ 			   answering in time. This also would break for dual ipv4/6 stacked
+ 			   ntp servers when the client only supports on of them.

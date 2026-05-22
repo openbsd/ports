@@ -14,6 +14,8 @@ GH_ACCOUNT=	monitoring-plugins
 GH_PROJECT=	monitoring-plugins
 GH_TAGNAME=	v${V:S/rc/-rc/:S/pl0//}
 
+REVISION=	0
+
 DISTNAME=	monitoring-plugins-${V:S/rc/-rc/}
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
