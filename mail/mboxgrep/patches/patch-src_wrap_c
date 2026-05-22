@@ -1,0 +1,15 @@
+Index: src/wrap.c
+--- src/wrap.c.orig
++++ src/wrap.c
+@@ -107,9 +107,9 @@ FILE *m_fdopen (int fildes, const char *mode)
+ 
+ #ifdef HAVE_LIBZ
+ 
+-gzFile *m_gzdopen (int fildes, const char *mode)
++gzFile m_gzdopen (int fildes, const char *mode)
+ {
+-  gzFile *blah;
++  gzFile blah;
+ 
+   blah = gzdopen (fildes, mode);
+   if (blah == NULL)

@@ -1,8 +1,5 @@
 fix for -fno-common
 
-main.c:317: warning: dereferencing 'void *' pointer
-main.c:317: error: request for member '_file' in something not a structure or union
-
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
@@ -14,12 +11,3 @@ Index: src/main.c
  regex_t posix_pattern;
  #ifdef HAVE_LIBPCRE
  pcre *pcre_pattern;
-@@ -55,7 +56,7 @@ pcre_extra *hints;
- char *boxname, *outboxname, *pipecmd, *tmpfilename;
- int maildir_count = 0;
- int count = 0;
--void *tmpp;
-+FILE *tmpp;
- checksum_t *cs;
- 
- int

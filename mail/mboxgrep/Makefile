@@ -1,7 +1,7 @@
 COMMENT=		scan mailboxes for messages matching a regular expression
 
 DISTNAME=		mboxgrep-0.7.9
-REVISION=		0
+REVISION=		1
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.mboxgrep.org/

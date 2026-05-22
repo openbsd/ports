@@ -1,0 +1,12 @@
+Index: src/wrap.h
+--- src/wrap.h.orig
++++ src/wrap.h
+@@ -57,7 +57,7 @@ int m_open (const char *pathname, int flags, mode_t mo
+ FILE *m_fopen (const char *path, const char *mode);
+ FILE *m_fdopen (int fildes, const char *mode);
+ #ifdef HAVE_LIBZ
+-gzFile *m_gzdopen (int fildes, const char *mode);
++gzFile m_gzdopen (int fildes, const char *mode);
+ #endif /* HAVE_LIBZ */
+ 
+ DIR *m_opendir (const char *name);
