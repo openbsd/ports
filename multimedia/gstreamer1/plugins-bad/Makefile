@@ -1,6 +1,7 @@
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
+REVISION=		0
 
 SHARED_LIBS += gstadaptivedemux-1.0      4.4 # 0.2803.0
 SHARED_LIBS += gstanalytics-1.0          0.2 # 0.2803.0
@@ -48,7 +49,7 @@ LIB_DEPENDS=		multimedia/gstreamer1/plugins-base=${V} \
 			devel/json-glib \
 			graphics/lcms2 \
 			multimedia/libass \
-			security/libnettle \
+			security/nettle \
 			x11/gnome/librsvg
 
 # each plugin that has an external dependency is disabled unless proven useful

@@ -1,6 +1,7 @@
 COMMENT =	support library for FileZilla
 
 DISTNAME =	libfilezilla-0.55.5
+REVISION =	0
 
 SHARED_LIBS =	filezilla	25.1
 
@@ -28,7 +29,7 @@ BUILD_DEPENDS =		devel/cppunit \
 			devel/gettext,-tools
 LIB_DEPENDS =		converters/libiconv \
 			security/gnutls \
-			security/libnettle
+			security/nettle
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes

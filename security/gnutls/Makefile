@@ -3,8 +3,7 @@ COMMENT=		GNU Transport Layer Security library
 V=			3.8.13
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
-
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
@@ -35,7 +34,7 @@ LIB_DEPENDS=		converters/libunistring \
 			devel/libidn2 \
 			net/libunbound \
 			security/libtasn1 \
-			security/libnettle \
+			security/nettle \
 			security/p11-kit
 
 # dlopen()

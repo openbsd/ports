@@ -6,7 +6,7 @@ COMMENT-pdfviewer=	pdfviewer plugin
 V=			4.4.0
 DISTNAME=		claws-mail-${V}
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail news
 
@@ -78,7 +78,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			security/gnutls>=2.2 \
 			security/gpgme \
 			security/libb2 \
-			security/libnettle \
+			security/nettle \
 			textproc/enchant2 \
 			textproc/libical \
 			textproc/libxml \
