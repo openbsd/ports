@@ -1,5 +1,5 @@
-used for applying patches when building bundled mdb library; we use
-databases/lmdb from ports instead
+patch-ng only used for applying patches when building bundled mdb
+library; we use databases/lmdb from ports instead
 
 Index: pyproject.toml
 --- pyproject.toml.orig
@@ -10,4 +10,4 @@ Index: pyproject.toml
 +requires = ["setuptools", "wheel", "cffi>=0.8"]
  build-backend = "setuptools.build_meta"
  
- [tool.cibuildwheel]
+ [tool.pytest.ini_options]

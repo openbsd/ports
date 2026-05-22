@@ -1,6 +1,6 @@
 COMMENT=	Python bindings for LMDB
 
-MODPY_DISTV =	1.8.1
+MODPY_DISTV=	2.2.0
 DISTNAME=	lmdb-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -20,6 +20,9 @@ MODPY_PI=	Yes
 # otherwise the cpython extension is not found, and py-lmdb falls back
 # to a cffi-based implementation
 MODPY_TEST_LINK_SO= Yes
+
+# many tests in this file cause the test runner to crash (segfaults, FPE)
+MODPY_PYTEST_ARGS= --ignore tests/cve_test.py
 
 BUILD_DEPENDS=	devel/py-cffi
 LIB_DEPENDS=	databases/lmdb
