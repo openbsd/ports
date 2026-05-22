@@ -1,7 +1,7 @@
 Index: src/runtime/os-common.c
 --- src/runtime/os-common.c.orig
 +++ src/runtime/os-common.c
-@@ -585,14 +585,23 @@ int apply_pie_relocs(long code_space_translation,
+@@ -610,14 +610,23 @@ int apply_pie_relocs(long code_space_translation,
  }
  
  #ifdef LISP_FEATURE_ARM64
