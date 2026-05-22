@@ -1,0 +1,11 @@
+Index: plugins/mousepad/CMakeLists.txt
+--- plugins/mousepad/CMakeLists.txt.orig
++++ plugins/mousepad/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ kdeconnect_add_plugin(kdeconnect_mousepad SOURCES mousepadplugin.cpp abstractremoteinput.cpp)
+ 
+-if(UNIX AND NOT APPLE)
++if(LINUX AND NOT APPLE)
+     pkg_check_modules(PKG_libei REQUIRED IMPORTED_TARGET libei-1.0)
+     target_sources(kdeconnect_mousepad PUBLIC waylandremoteinput.cpp ${SRCS})
+     target_sources(kdeconnect_mousepad PRIVATE ${wayland_SRCS})

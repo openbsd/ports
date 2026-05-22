@@ -1,0 +1,21 @@
+Index: plugins/digitizer/CMakeLists.txt
+--- plugins/digitizer/CMakeLists.txt.orig
++++ plugins/digitizer/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ # SPDX-FileCopyrightText: 2025 Martin Sh <hemisputnik@proton.me>
+ # SPDX-License-Identifier: BSD-2-Clause
+ 
+-if(UNIX AND NOT APPLE)
++if(LINUX AND NOT APPLE)
+     pkg_check_modules(Evdev IMPORTED_TARGET libevdev)
+ 
+     if (Evdev_FOUND)
+@@ -18,7 +18,7 @@ if(HAS_DEPS)
+         KF6::WidgetsAddons
+     )
+ 
+-    if(UNIX AND NOT APPLE)
++    if(LINUX AND NOT APPLE)
+         target_link_libraries(kdeconnect_digitizer PkgConfig::Evdev)
+ 
+         target_sources(kdeconnect_digitizer PUBLIC linuxdigitizerimpl.cpp)
