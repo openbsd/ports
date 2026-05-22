@@ -1,49 +1,43 @@
 COMMENT =	krita gmic plugin
 
-V =		3.5.0.1
-DISTNAME =	krita-gmic-plugin-${V}
+V =		3.7.4.1
+DISTNAME =	gmic-${V}
+PKGNAME=	krita-gmic-plugin-${V}
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://krita.org
 
+MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
+
 # Info about this plugin:
 # https://invent.kde.org/graphics/krita/-/blob/master/README.packagers.md
-
-# Actually developed here:
-# https://github.com/vanyossi/gmic
-
-MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
+SITES =		https://github.com/vanyossi/gmic/releases/download/v${V}/
 
 # CeCILL, GPLv3
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://files.kde.org/krita/build/dependencies/
-DISTFILES =	gmic-${V}-patched.tar.gz
+WANTLIB += GL ICE KF6CoreAddons Qt6Core Qt6Gui Qt6Network Qt6Widgets
+WANTLIB += SM X11 Xext curl fftw3 fftw3_threads kritaqmicinterface
+WANTLIB += m png z
 
-MODULES =	devel/kf5 x11/qt5
+MODULES =	devel/kf6
 
-WANTLIB += ${COMPILER_LIBCXX} ICE KF5CoreAddons Qt5Core Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets SM X11 Xext curl fftw3 fftw3_threads
-WANTLIB += kritaqmicinterface m png z
+WANTLIB += ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS =	shells/bash
 
-LIB_DEPENDS =	graphics/krita \
+LIB_DEPENDS =	graphics/krita>=6.0 \
 		net/curl \
 		math/fftw3
 
+WRKDIST =	${WRKDIR}/gmic-v${V}
 WRKSRC =	${WRKDIST}/gmic-qt
 
-CONFIGURE_ARGS +=	-DCMAKE_PREFIX_PATH=${LOCALBASE}/lib/qt5/cmake \
-			-DENABLE_SYSTEM_GMIC=false \
+CONFIGURE_ARGS =	-DBUILD_WITH_QT6=ON \
+			-DENABLE_SYSTEM_GMIC=OFF \
 			-DGMIC_QT_HOST=krita-plugin \
-			-DCMAKE_CXX_FLAGS_RELEASE=
-
-USE_GMAKE =	Yes
-
-post-extract:
-	mv ${WRKDIR}/gmic-${V}-patched ${WRKDIST}
+			-DCMAKE_CXX_FLAGS_RELEASE=""
 
 post-configure:
 	chmod +x ${WRKSRC}/translations/lrelease.sh

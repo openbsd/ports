@@ -1,12 +1,12 @@
 Index: src/gmic.cpp
 --- src/gmic.cpp.orig
 +++ src/gmic.cpp
-@@ -2045,6 +2045,8 @@ inline CImgList<void*>& gmic_runs() {
+@@ -2059,6 +2059,8 @@ inline CImgList<void*>& gmic_runs() {
  inline void* get_tid() {
  #if defined(__MACOSX__) || defined(__APPLE__)
    void* tid = (void*)(cimg_ulong)getpid();
 +#elif defined(__OpenBSD__)
 +  void* tid = (void*)pthread_self();
  #elif cimg_OS==1
- #if defined(__NetBSD__) || defined(cimg_use_pthread) || cimg_display==1
+ #if defined(__NetBSD__) || cimg_use_pthread==1
    void* tid = (void*)(cimg_ulong)pthread_self();
