@@ -1,0 +1,9 @@
+Index: cmake/modules/Findxsimd.cmake
+--- cmake/modules/Findxsimd.cmake.orig
++++ cmake/modules/Findxsimd.cmake
+@@ -17,4 +17,4 @@ if(xsimd_FOUND)
+ endif()
+ 
+ include(FindPackageHandleStandardArgs)
+-find_package_handle_standard_args(xsimd CONFIG_MODE REQUIRED_VARS xsimd_IS_CONFIGURATION_VALID)
++find_package_handle_standard_args(xsimd CONFIG_MODE)

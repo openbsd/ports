@@ -19,6 +19,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritaassistanttool.so
 @so lib/kritaplugins/kritablurfilter.so
 @so lib/kritaplugins/kritabrushexport.so
+@so lib/kritaplugins/kritabrushhud.so
 @so lib/kritaplugins/kritabrushimport.so
 @so lib/kritaplugins/kritabuginfo.so
 @so lib/kritaplugins/kritachanneldocker.so
@@ -106,11 +107,14 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritapdfimport.so
 @so lib/kritaplugins/kritaphongbumpmap.so
 @so lib/kritaplugins/kritapixelizefilter.so
+@so lib/kritaplugins/kritaplatformpluginwayland.so
+@so lib/kritaplugins/kritaplatformpluginxcb.so
 @so lib/kritaplugins/kritapngexport.so
 @so lib/kritaplugins/kritapngimport.so
 @so lib/kritaplugins/kritaposterize.so
 @so lib/kritaplugins/kritapresetdocker.so
 @so lib/kritaplugins/kritapresethistory.so
+@so lib/kritaplugins/kritapropagatecolors.so
 @so lib/kritaplugins/kritapsdexport.so
 @so lib/kritaplugins/kritapsdimport.so
 @so lib/kritaplugins/kritaqimageioexport.so
@@ -122,6 +126,8 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritarecorderdocker.so
 @so lib/kritaplugins/kritaresettransparent.so
 @so lib/kritaplugins/kritaresourcemanager.so
+@so lib/kritaplugins/kritargbeexport.so
+@so lib/kritaplugins/kritargbeimport.so
 @so lib/kritaplugins/kritarotateimage.so
 @so lib/kritaplugins/kritaroundcornersfilter.so
 @so lib/kritaplugins/kritaroundmarkerpaintop.so
@@ -143,11 +149,13 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritasvgimport.so
 @so lib/kritaplugins/kritatangentnormalpaintop.so
 @so lib/kritaplugins/kritatasksetdocker.so
+@so lib/kritaplugins/kritatextproperties.so
 @so lib/kritaplugins/kritatgaexport.so
 @so lib/kritaplugins/kritatgaimport.so
 @so lib/kritaplugins/kritathreshold.so
 @so lib/kritaplugins/kritatiffexport.so
 @so lib/kritaplugins/kritatiffimport.so
+@so lib/kritaplugins/kritatoolKnife.so
 @so lib/kritaplugins/kritatoolSmartPatch.so
 @so lib/kritaplugins/kritatoolcrop.so
 @so lib/kritaplugins/kritatooldyna.so
@@ -167,7 +175,6 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritaxmp.so
 @lib lib/libkritabasicflakes.so.${LIBkritabasicflakes_VERSION}
 @lib lib/libkritacolor.so.${LIBkritacolor_VERSION}
-@lib lib/libkritacolord.so.${LIBkritacolord_VERSION}
 @lib lib/libkritacommand.so.${LIBkritacommand_VERSION}
 @lib lib/libkritaexifcommon.so.${LIBkritaexifcommon_VERSION}
 @lib lib/libkritaflake.so.${LIBkritaflake_VERSION}
@@ -185,14 +192,62 @@ lib/kritaplugins/
 @lib lib/libkritapsd.so.${LIBkritapsd_VERSION}
 @lib lib/libkritapsdutils.so.${LIBkritapsdutils_VERSION}
 @lib lib/libkritaqmicinterface.so.${LIBkritaqmicinterface_VERSION}
+@lib lib/libkritaqmlwidgets.so.${LIBkritaqmlwidgets_VERSION}
 @lib lib/libkritaresources.so.${LIBkritaresources_VERSION}
 @lib lib/libkritaresourcewidgets.so.${LIBkritaresourcewidgets_VERSION}
 @lib lib/libkritastore.so.${LIBkritastore_VERSION}
+@lib lib/libkritasurfacecolormanagementapi.so.${LIBkritasurfacecolormanagementapi_VERSION}
 @lib lib/libkritatiffpsd.so.${LIBkritatiffpsd_VERSION}
 @lib lib/libkritaui.so.${LIBkritaui_VERSION}
 @lib lib/libkritaversion.so.${LIBkritaversion_VERSION}
 @lib lib/libkritawidgets.so.${LIBkritawidgets_VERSION}
 @lib lib/libkritawidgetutils.so.${LIBkritawidgetutils_VERSION}
+lib/qt6/qml/org/krita/
+lib/qt6/qml/org/krita/components/
+lib/qt6/qml/org/krita/components/+Fusion/
+lib/qt6/qml/org/krita/components/+Fusion/TabButtonBase.qml
+lib/qt6/qml/org/krita/components/+Fusion/ToolSeparatorBase.qml
+lib/qt6/qml/org/krita/components/+qt5/
+lib/qt6/qml/org/krita/components/+qt5/WindowFocusChecker.qml
+lib/qt6/qml/org/krita/components/AngleSelector.qml
+lib/qt6/qml/org/krita/components/CssStylePresetDelegate.qml
+lib/qt6/qml/org/krita/components/CurveWidget.qml
+lib/qt6/qml/org/krita/components/DoubleParseSpinBox.qml
+lib/qt6/qml/org/krita/components/DoubleSliderSpinBox.qml
+lib/qt6/qml/org/krita/components/DoubleSpinBox.qml
+lib/qt6/qml/org/krita/components/FontFamilyDelegate.qml
+lib/qt6/qml/org/krita/components/GroupButton.qml
+lib/qt6/qml/org/krita/components/InformingTextInput.qml
+lib/qt6/qml/org/krita/components/IntParseSpinBox.qml
+lib/qt6/qml/org/krita/components/IntSliderSpinBox.qml
+lib/qt6/qml/org/krita/components/OptionButtonStrip.qml
+lib/qt6/qml/org/krita/components/ResourceDelegateBase.qml
+lib/qt6/qml/org/krita/components/ResourcePopup.qml
+lib/qt6/qml/org/krita/components/ResourceView.qml
+lib/qt6/qml/org/krita/components/TabButtonBase.qml
+lib/qt6/qml/org/krita/components/ThemedControl.qml
+lib/qt6/qml/org/krita/components/ToolSeparatorBase.qml
+lib/qt6/qml/org/krita/components/ToolTipBase.qml
+lib/qt6/qml/org/krita/components/WindowFocusChecker.qml
+lib/qt6/qml/org/krita/components/angleselector/
+lib/qt6/qml/org/krita/components/angleselector/AngleGauge.qml
+lib/qt6/qml/org/krita/components/angleselector/AngleSelectorUtil.js
+lib/qt6/qml/org/krita/components/kde-qmlmodule.version
+lib/qt6/qml/org/krita/components/kritaqmlcomponents.qmltypes
+@so lib/qt6/qml/org/krita/components/libkritaqmlcomponents.so
+lib/qt6/qml/org/krita/components/overlays/
+lib/qt6/qml/org/krita/components/overlays/SliderOverlay.qml
+lib/qt6/qml/org/krita/components/overlays/WarningOverlay.qml
+lib/qt6/qml/org/krita/components/qmldir
+lib/qt6/qml/org/krita/components/sliderspinbox/
+lib/qt6/qml/org/krita/components/sliderspinbox/SliderSpinBoxContentItem.qml
+lib/qt6/qml/org/krita/components/sliderspinbox/SliderSpinBoxManipulator.qml
+lib/qt6/qml/org/krita/components/sliderspinbox/SliderSpinBoxRangeSwitch.qml
+lib/qt6/qml/org/krita/components/spinbox/
+lib/qt6/qml/org/krita/components/spinbox/ParseSpinBoxContentItem.qml
+lib/qt6/qml/org/krita/components/textinput/
+lib/qt6/qml/org/krita/components/textinput/TextInputWithPrefixAndSuffix.qml
+lib/qt6/qml/org/krita/components/textinput/TextInputWithSelectionRange.qml
 share/applications/krita_brush.desktop
 share/applications/krita_csv.desktop
 share/applications/krita_exr.desktop
@@ -210,6 +265,7 @@ share/applications/krita_png.desktop
 share/applications/krita_psd.desktop
 share/applications/krita_qimageio.desktop
 share/applications/krita_raw.desktop
+share/applications/krita_rgbe.desktop
 share/applications/krita_spriter.desktop
 share/applications/krita_svg.desktop
 share/applications/krita_tga.desktop
@@ -263,10 +319,6 @@ share/color/icc/krita/krita25_lcms-builtin-sRGB_g100-truegamma.icc
 share/color/icc/krita/sRGB-elle-V2-g10.icc
 share/color/icc/krita/sRGB-elle-V2-srgbtrc.icc
 share/color/icc/krita/scRGB.icm
-share/examples/krita/
-share/examples/krita/xdg/
-share/examples/krita/xdg/kritarc
-@sample ${SYSCONFDIR}/xdg/kritarc
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
 share/icons/hicolor/1024x1024/apps/krita.png
@@ -324,6 +376,7 @@ share/krita/actions/krita.action
 share/krita/actions/kritamenu.action
 share/krita/actions/normalize.action
 share/krita/actions/palettize.action
+share/krita/actions/propagatecolors.action
 share/krita/actions/recorder.action
 share/krita/actions/threshold.action
 share/krita/actions/tools.action
@@ -768,10 +821,14 @@ share/krita/templates/comics/.source/
 share/krita/templates/comics/.source/BD-EuroTemplate.kra
 share/krita/templates/comics/.source/Comics-USTemplate.kra
 share/krita/templates/comics/.source/Manga-JpTemplate.kra
+share/krita/templates/comics/.source/Tsukirino.kra
+share/krita/templates/comics/.source/TsukirinoF.kra
 share/krita/templates/comics/.source/a4_waffle_grid.kra
 share/krita/templates/comics/BD-EuroTemplate.desktop
 share/krita/templates/comics/Comics-USTemplate.desktop
 share/krita/templates/comics/Manga-JpTemplate.desktop
+share/krita/templates/comics/Tsukirino.desktop
+share/krita/templates/comics/TsukirinoF.desktop
 share/krita/templates/comics/a4_waffle_grid.desktop
 share/krita/templates/design/
 share/krita/templates/design/.directory
@@ -862,7 +919,6 @@ share/kritaplugins/shearimage.xmlgui
 share/kritaplugins/waveletdecompose.xmlgui
 share/locale/af/LC_MESSAGES/krita.mo
 share/locale/ar/LC_MESSAGES/krita.mo
-share/locale/ast/LC_MESSAGES/krita.mo
 share/locale/be/LC_MESSAGES/krita.mo
 share/locale/bg/LC_MESSAGES/krita.mo
 share/locale/br/LC_MESSAGES/krita.mo
@@ -925,6 +981,7 @@ share/locale/sv/LC_MESSAGES/krita.mo
 share/locale/ta/LC_MESSAGES/krita.mo
 share/locale/tg/LC_MESSAGES/krita.mo
 share/locale/th/LC_MESSAGES/krita.mo
+share/locale/tok/LC_MESSAGES/krita.mo
 share/locale/tr/LC_MESSAGES/krita.mo
 share/locale/ug/LC_MESSAGES/krita.mo
 share/locale/uk/LC_MESSAGES/krita.mo
