@@ -2,7 +2,7 @@ COMMENT =	patch-set and bug tracking system for CVS
 
 DISTNAME =	cvstrac-2.0.1
 PKGNAME =	${DISTNAME}
-REVISION =	4
+REVISION =	5
 CATEGORIES =	devel www
 
 HOMEPAGE =	http://www.cvstrac.org/

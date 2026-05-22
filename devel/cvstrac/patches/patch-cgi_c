@@ -1,8 +1,9 @@
 http://www.cvstrac.org/cvstrac/chngview?cn=994
 Avoid using sqlite internal functions.
 
---- cgi.c.orig	Thu Dec 14 00:45:51 2006
-+++ cgi.c	Thu Aug  7 01:01:25 2008
+Index: cgi.c
+--- cgi.c.orig
++++ cgi.c
 @@ -57,13 +57,6 @@
  #endif /* INTERFACE */
  
@@ -39,3 +40,21 @@ Avoid using sqlite internal functions.
            char *z = azArg[++i];
            if( zName && z ){
              cgi_set_parameter_nocopy(mprintf("%s:mimetype",zName), z);
+@@ -2464,7 +2457,7 @@ void cgi_handle_http_request(void){
+   char *z, *zToken;
+   int i;
+   struct sockaddr_in remoteName;
+-  size_t size = sizeof(struct sockaddr_in);
++  socklen_t size = sizeof(struct sockaddr_in);
+   char zLine[2000];     /* A single line of input. */
+ 
+   fullHttpReply = 1;
+@@ -2542,7 +2535,7 @@ void cgi_http_server(int iPort){
+   int listener;                /* The server socket */
+   int connection;              /* A socket for each individual connection */
+   fd_set readfds;              /* Set of file descriptors for select() */
+-  size_t lenaddr;              /* Length of the inaddr structure */
++  socklen_t lenaddr;              /* Length of the inaddr structure */
+   int child;                   /* PID of the child process */
+   int nchildren = 0;           /* Number of child processes */
+   struct timeval delay;        /* How long to wait inside select() */
