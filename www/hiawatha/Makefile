@@ -13,6 +13,10 @@ SITES =		https://hiawatha.leisink.net/files/download/
 # branch is Apache-only.
 PERMIT_PACKAGE =	Yes
 
+# Atomics
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += c pthread xml2 xslt z
 
 MODULES =		devel/cmake \
