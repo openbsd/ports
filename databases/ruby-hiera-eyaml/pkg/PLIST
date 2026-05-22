@@ -5,6 +5,7 @@ ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
 ${GEM_LIB}/gems/${DISTNAME}/.github/dependabot.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/test.yml
