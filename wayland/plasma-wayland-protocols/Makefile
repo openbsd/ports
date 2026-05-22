@@ -1,6 +1,6 @@
 COMMENT =	KDE Wayland Plasma protocols
 
-VERSION =	1.20.0
+VERSION =	1.21.0
 DISTNAME =	plasma-wayland-protocols-${VERSION}
 
 CATEGORIES =	wayland
@@ -12,13 +12,17 @@ PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
-MODULES =		devel/kf6 x11/qt5
+MODULES =		lang/python devel/kf6 x11/qt5
+
+MODQT_DEPS =		NO
 
 SITES =			${SITE_KDE:=stable/plasma-wayland-protocols/}
 EXTRACT_SUFX ?=		.tar.xz
 
 BUILD_DEPENDS =		wayland/wayland \
-			wayland/wayland-protocols
+			wayland/wayland-protocols \
+			${MODQT5_LIB_DEPENDS} \
+			${MODQT6_LIB_DEPENDS}
 
 RUN_DEPENDS =		wayland/wayland \
 			wayland/wayland-protocols
