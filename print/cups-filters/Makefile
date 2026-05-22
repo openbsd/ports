@@ -2,7 +2,7 @@ COMMENT=		OpenPrinting CUPS filters
 
 V=			2.0.1
 DISTNAME=		cups-filters-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		print
 
@@ -14,7 +14,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += avahi-client avahi-common c crypto cups cupsfilters
-WANTLIB += dbus-1 execinfo exif expat fontconfig freetype gmp
+WANTLIB += dbus-1 exif expat fontconfig freetype gmp
 WANTLIB += hogweed iconv idn2 intl jpeg lcms2 m nettle p11-kit
 WANTLIB += png poppler-cpp ppd pthread qpdf ssl tasn1 tiff unistring
 WANTLIB += z
