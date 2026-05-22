@@ -13,3 +13,12 @@ Index: source3/lib/sysquotas_4B.c
  /* WorkARound broken HFS access checks in hfs_quotactl. Darwin only(?) */
  #define HFS_QUOTACTL_WAR 1
  #endif
+@@ -135,7 +135,7 @@ static int sys_quotactl_4B(const char * path, int cmd,
+ 	become_root();
+ #endif  /* HFS_QUOTACTL_WAR */
+ 
+-	ret = quotactl(path, cmd, id, qblk);
++	ret = quotactl(path, cmd, id, (char *)qblk);
+ 	if (ret == -1) {
+ 		/* ENOTSUP means quota support is not compiled in. EINVAL
+ 		 * means that quotas are not configured (commonly).
