@@ -83,6 +83,7 @@ include/dlib/clustering/modularity_clustering_abstract.h
 include/dlib/clustering/spectral_cluster.h
 include/dlib/clustering/spectral_cluster_abstract.h
 include/dlib/cmake_utils/
+include/dlib/cmake_utils/FindCUDNN.cmake
 include/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/check_if_neon_available.cmake
 include/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
@@ -95,8 +96,6 @@ include/dlib/cmake_utils/find_libwebp.cmake
 include/dlib/cmake_utils/set_compiler_specific_options.cmake
 include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
 include/dlib/cmake_utils/test_for_avx/
-include/dlib/cmake_utils/test_for_cuda/
-include/dlib/cmake_utils/test_for_cudnn/
 include/dlib/cmake_utils/test_for_libjpeg/
 include/dlib/cmake_utils/test_for_libjxl/
 include/dlib/cmake_utils/test_for_libpng/
@@ -177,6 +176,8 @@ include/dlib/cuda/tensor_abstract.h
 include/dlib/cuda/tensor_tools.h
 include/dlib/data_io/
 include/dlib/data_io.h
+include/dlib/data_io/arc_agi.h
+include/dlib/data_io/arc_agi_abstract.h
 include/dlib/data_io/cifar.h
 include/dlib/data_io/cifar_abstract.h
 include/dlib/data_io/image_dataset_metadata.h
