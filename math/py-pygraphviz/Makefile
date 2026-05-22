@@ -4,7 +4,7 @@ MODPY_DISTV =	1.14
 DISTNAME =	pygraphviz-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	math
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://pygraphviz.github.io/
 
@@ -19,9 +19,14 @@ MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 MODPY_TEST_LINK_SO =	Yes
 
+BUILD_DEPENDS += devel/swig
+
 LIB_DEPENDS +=	math/graphviz
 
 CFLAGS +=	-I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
