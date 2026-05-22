@@ -1,0 +1,12 @@
+Index: pcd.c
+--- pcd.c.orig
++++ pcd.c
+@@ -780,7 +780,7 @@ static huff *
+ 
+ 	/* Allocate double space to allow for branch nodes */
+ 	hufftab = (huff *) lmalloc(sizeof(huff) * (1 << 12));
+-	bfill(hufftab, sizeof(huff) * (1 << 12), 0xff);
++	bfill((char *)hufftab, sizeof(huff) * (1 << 12), 0xff);
+ 
+ 	for (i = 0; i < num; i++) {
+ 		unsigned int length, codeword, value;

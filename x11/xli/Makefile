@@ -2,7 +2,7 @@ COMMENT =	very lightweight image viewer for X11
 DISTNAME =	xli-1.17.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	x11 graphics
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.boomerangsworld.de/cms/worker/download/other.html
 
