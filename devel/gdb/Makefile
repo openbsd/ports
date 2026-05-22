@@ -4,8 +4,7 @@ DPB_PROPERTIES=	parallel
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
-DISTNAME=	gdb-17.1
-REVISION=	0
+DISTNAME=	gdb-17.2
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
