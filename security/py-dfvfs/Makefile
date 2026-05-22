@@ -1,6 +1,6 @@
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
-MODPY_DISTV =	20240505
+MODPY_DISTV =	20260411
 DISTNAME =	dfvfs-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
@@ -50,6 +50,8 @@ RUN_DEPENDS += 	devel/py-dtfabric \
 
 TEST_DEPENDS +=	devel/py-mock
 
+# Ran 1387 tests in 285.353s
+# OK (skipped=8)
 do-test:
 	touch ${WRKSRC}/utils/__init__.py
 	cd ${WRKSRC} && LC_CTYPE='en_US.UTF-8' ${MODPY_BIN} run_tests.py
