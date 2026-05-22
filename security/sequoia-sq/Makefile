@@ -1,3 +1,5 @@
+BROKEN =		does not build with new nettle
+
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
