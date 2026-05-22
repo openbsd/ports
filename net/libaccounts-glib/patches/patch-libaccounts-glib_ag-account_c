@@ -1,0 +1,12 @@
+Index: libaccounts-glib/ag-account.c
+--- libaccounts-glib/ag-account.c.orig
++++ libaccounts-glib/ag-account.c
+@@ -994,7 +994,7 @@ ag_account_finalize (GObject *object)
+     if (priv->changes)
+     {
+         DEBUG_INFO ("Finalizing account with uncommitted changes!");
+-        g_clear_pointer (&priv->services, _ag_account_changes_free);
++        g_clear_pointer (&priv->changes, _ag_account_changes_free);
+     }
+ 
+     G_OBJECT_CLASS (ag_account_parent_class)->finalize (object);
