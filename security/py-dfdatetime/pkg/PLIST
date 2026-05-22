@@ -8,7 +8,6 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/licenses/ACKNOWLEDGEMENTS
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/licenses/LICENSE
-lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/licenses/README
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/${MODPY_PYCACHE}/
