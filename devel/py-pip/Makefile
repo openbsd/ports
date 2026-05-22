@@ -1,6 +1,7 @@
 COMMENT=	command-line tool for installing Python packages
 
 MODPY_DISTV=	26.1.1
+REVISION=	1
 DISTNAME=	pip-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
