@@ -1,6 +1,6 @@
 COMMENT =		match path patterns
 
-DISTNAME =		pathspec-1.1.3
+DISTNAME =		pathspec-2.1.0
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/highb/pathspec-ruby
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
