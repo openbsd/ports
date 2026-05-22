@@ -552,6 +552,7 @@ share/locale/ca@valencia/LC_MESSAGES/libtextspeechtotext.mo
 share/locale/ca@valencia/LC_MESSAGES/libtexttranslator.mo
 share/locale/cs/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/cs/LC_MESSAGES/libtextautocorrection.mo
+share/locale/cs/LC_MESSAGES/libtextautogeneratetext.mo
 share/locale/cs/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/cs/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/cs/LC_MESSAGES/libtextemoticons.mo

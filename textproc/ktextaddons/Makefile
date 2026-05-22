@@ -1,6 +1,6 @@
 COMMENT =	various text handling addons
 
-DISTNAME =	ktextaddons-2.0.0
+DISTNAME =	ktextaddons-2.0.1
 
 SHARED_LIBS +=  KF6TextAddonsWidgets      1.0 # 0.0
 SHARED_LIBS +=  KF6TextAutoCorrectionCore 0.0 # 0.0
@@ -12,13 +12,13 @@ SHARED_LIBS +=  KF6TextEmoticonsWidgets   1.0 # 0.0
 SHARED_LIBS +=  KF6TextGrammarCheck       0.0 # 0.0
 SHARED_LIBS +=  KF6TextTranslator         1.0 # 0.0
 SHARED_LIBS +=  KF6TextUtils              0.1 # 0.0
-SHARED_LIBS +=	KF6TextAutoGenerateText   4.0 # 0.0
+SHARED_LIBS +=	KF6TextAutoGenerateText   5.0 # 0.0
 SHARED_LIBS +=	KF6TextSpeechToText       0.0 # 0.0
 SHARED_LIBS +=	textautogenerateollama    4.0 # 0.0
 SHARED_LIBS +=	textautogenerategenericnetwork 2.0 # 0.0
 SHARED_LIBS +=	textutils-cmark-rc-copy   0.0 # 0.0
 SHARED_LIBS +=	textautogenerateollamacloud 0.0 # 0.0
-SHARED_LIBS +=	textautogenerateollamacommon 0.0 # 0.0
+SHARED_LIBS +=	textautogenerateollamacommon 0.1 # 0.0
 SHARED_LIBS +=	textautogenerateollamaonline 0.0 # 0.0
 
 CATEGORIES =	textproc devel
