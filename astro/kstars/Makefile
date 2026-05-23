@@ -2,7 +2,7 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT =	planetarium simulator for KDE
 
-V =		3.8.1
+V =		3.8.2
 DISTNAME =	kstars-${V}
 EPOCH =		0
 
