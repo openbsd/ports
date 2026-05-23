@@ -1,0 +1,23 @@
+error: incompatible pointer types passing 'struct __sFILE *' to parameter of type 'const char *' [-Wincompatible-pointer-types]
+
+Index: src/sd-sdl/sound.c
+--- src/sd-sdl/sound.c.orig
++++ src/sd-sdl/sound.c
+@@ -73,7 +73,7 @@ int setup_sound (void)
+     spec.userdata = 0;
+ 
+     if (SDL_OpenAudio (&spec, NULL) < 0) {
+-	write_log (stderr, "Couldn't open audio: %s\n", SDL_GetError());
++	write_log ("Couldn't open audio: %s\n", SDL_GetError());
+ 	return 0;
+     }
+     sound_available = 1;
+@@ -104,7 +104,7 @@ static int open_sound (void)
+     spec.userdata = 0;
+ 
+     if (SDL_OpenAudio (&spec, NULL) < 0) {
+-	write_log (stderr, "Couldn't open audio: %s\n", SDL_GetError());
++	write_log ("Couldn't open audio: %s\n", SDL_GetError());
+ 	return 0;
+     }
+     have_sound = 1;
