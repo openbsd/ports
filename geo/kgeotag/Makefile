@@ -2,10 +2,9 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	stand-alone photo geotagging program
 
-V =		1.8.0
+V =		2.0.0
 DISTNAME =	kgeotag-${V}
 CATEGORIES =	geo x11
-REVISION =	0
 
 HOMEPAGE =	https://kgeotag.kde.org
 
