@@ -1,11 +1,8 @@
 COMMENT =		guidelines support library
-DISTNAME =		microsoft-gsl-$V
-GH_ACCOUNT =		microsoft
-GH_PROJECT =		GSL
-V =			4.2.1
-GH_TAGNAME =		v$V
+DIST_TUPLE =		github	microsoft	GSL	v4.2.2	.
+# must not be gsl-*, devel/gsl already exists
+PKGNAME =		microsoft-${DISTNAME:L}
 CATEGORIES =		devel
-REVISION =		0
 
 # MIT
 PERMIT_PACKAGE =	Yes
