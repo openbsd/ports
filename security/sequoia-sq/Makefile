@@ -1,5 +1,3 @@
-BROKEN =		does not build with new nettle
-
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
@@ -9,6 +7,8 @@ VERSION =		1.3.1
 SITES =			https://gitlab.com/sequoia-pgp/sequoia-sq/-/archive/v${VERSION}/
 DISTNAME =		sequoia-sq-v${VERSION}
 PKGNAME =		${DISTNAME:S/v//}
+REVISION =		0
+
 HOMEPAGE =		https://sequoia-pgp.org/
 
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
@@ -33,8 +33,12 @@ LIB_DEPENDS =		archivers/bzip2 \
 MAKE_ENV =		LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
 			ASSET_OUT_DIR=${WRKSRC}/assets
 
-WANTLIB += ${MODCARGO_WANTLIB} bz2 crypto gmp hogweed m nettle
-WANTLIB += sqlite3 ssl
+MODCARGO_RUSTFLAGS +=	-C link-arg="-Wl,-rpath,${LOCALBASE}/lib/nettle3"
+MODCARGO_RUSTFLAGS +=	-L native=${LOCALBASE}/lib/nettle3
+MAKE_ENV +=		PKG_CONFIG_PATH=${LOCALBASE}/lib/nettle3/pkgconfig
+
+WANTLIB += ${MODCARGO_WANTLIB} bz2 crypto gmp m sqlite3 ssl
+WANTLIB += lib/nettle3/hogweed lib/nettle3/nettle
 
 .include "crates.inc"
 

@@ -1,0 +1,26 @@
+Index: modcargo-crates/nettle-sys-2.3.1/build.rs
+--- modcargo-crates/nettle-sys-2.3.1/build.rs.orig
++++ modcargo-crates/nettle-sys-2.3.1/build.rs
+@@ -77,7 +77,7 @@ fn check_cc(includes: &[PathBuf], header: &str, symbol
+     let t = || -> Result<bool> {
+         let wd = tempfile::tempdir()?;
+         let testpath = wd.path().join("test.c");
+-        fs::write(&testpath, format!("#include <nettle/{}>
++        fs::write(&testpath, format!("#include <nettle3/nettle/{}>
+ int
+ main()
+ {{
+@@ -200,11 +200,11 @@ fn real_main() -> Result<()> {
+         .size_t_is_usize(true);
+ 
+     if config.have_cv448 {
+-        builder = builder.header_contents("cv448-wrapper.h", "#include <nettle/curve448.h>");
++        builder = builder.header_contents("cv448-wrapper.h", "#include <nettle3/nettle/curve448.h>");
+     }
+ 
+     if config.have_ocb {
+-        builder = builder.header_contents("ocb-wrapper.h", "#include <nettle/ocb.h>");
++        builder = builder.header_contents("ocb-wrapper.h", "#include <nettle3/nettle/ocb.h>");
+     }
+ 
+     for p in config.include_paths {
