@@ -1,9 +1,9 @@
 Index: llvm/lib/Target/Mips/MCTargetDesc/MipsABIInfo.cpp
 --- llvm/lib/Target/Mips/MCTargetDesc/MipsABIInfo.cpp.orig
 +++ llvm/lib/Target/Mips/MCTargetDesc/MipsABIInfo.cpp
-@@ -21,6 +21,11 @@ EmitJalrReloc("mips-jalr-reloc", cl::Hidden,
-               cl::desc("MIPS: Emit R_{MICRO}MIPS_JALR relocation with jalr"),
-               cl::init(true));
+@@ -25,6 +25,11 @@ cl::opt<bool>
+                    cl::desc("MIPS: Don't trap on integer division by zero."),
+                    cl::init(false));
  
 +cl::opt<bool>
 +FixLoongson2FBTB("fix-loongson2f-btb", cl::Hidden,

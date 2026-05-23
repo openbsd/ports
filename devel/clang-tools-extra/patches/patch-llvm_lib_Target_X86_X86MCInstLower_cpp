@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/X86MCInstLower.cpp
 --- llvm/lib/Target/X86/X86MCInstLower.cpp.orig
 +++ llvm/lib/Target/X86/X86MCInstLower.cpp
-@@ -2521,6 +2521,50 @@ void X86AsmPrinter::emitInstruction(const MachineInstr
+@@ -2518,6 +2518,50 @@ void X86AsmPrinter::emitInstruction(const MachineInstr
          MCInstBuilder(X86::MOV64rr).addReg(X86::R10).addReg(X86::RAX));
      return;
  
@@ -52,7 +52,7 @@ Index: llvm/lib/Target/X86/X86MCInstLower.cpp
    case X86::SEH_PushReg:
    case X86::SEH_SaveReg:
    case X86::SEH_SaveXMM:
-@@ -2642,6 +2686,12 @@ void X86AsmPrinter::emitInstruction(const MachineInstr
+@@ -2625,6 +2669,12 @@ void X86AsmPrinter::emitInstruction(const MachineInstr
    }
  
    EmitAndCountInstruction(TmpInst);
@@ -64,4 +64,4 @@ Index: llvm/lib/Target/X86/X86MCInstLower.cpp
 +  OutStreamer->emitValueToAlignment(Alignment, 0xCC, 1);
  }
  
- void X86AsmPrinter::emitCallInstruction(const llvm::MCInst &MCI) {
+ void X86AsmPrinter::emitInlineAsmEnd(const MCSubtargetInfo &StartInfo,

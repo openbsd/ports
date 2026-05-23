@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/CMakeLists.txt
 --- llvm/lib/Target/X86/CMakeLists.txt.orig
 +++ llvm/lib/Target/X86/CMakeLists.txt
-@@ -42,6 +42,8 @@ set(sources
+@@ -43,6 +43,8 @@ set(sources
    X86ExpandPseudo.cpp
    X86FastISel.cpp
    X86FixupBWInsts.cpp

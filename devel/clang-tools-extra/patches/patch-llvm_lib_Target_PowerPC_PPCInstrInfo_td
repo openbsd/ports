@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/PowerPC/PPCInstrInfo.td
 --- llvm/lib/Target/PowerPC/PPCInstrInfo.td.orig
 +++ llvm/lib/Target/PowerPC/PPCInstrInfo.td
-@@ -1366,6 +1366,31 @@ let Defs = [LR] in
+@@ -1581,6 +1581,31 @@ let Defs = [LR] in
    def MoveGOTtoLR : PPCEmitTimePseudo<(outs), (ins), "#MoveGOTtoLR", []>,
                      PPC970_Unit_BRU;
  

@@ -1,7 +1,7 @@
 Index: llvm/include/llvm/CodeGen/Passes.h
 --- llvm/include/llvm/CodeGen/Passes.h.orig
 +++ llvm/include/llvm/CodeGen/Passes.h
-@@ -400,6 +400,9 @@ LLVM_ABI extern char &PatchableFunctionID;
+@@ -419,6 +419,9 @@ LLVM_ABI extern char &PatchableFunctionID;
  ///
  LLVM_ABI FunctionPass *createStackProtectorPass();
  

@@ -1,15 +1,15 @@
 Index: llvm/lib/Target/Mips/AsmParser/MipsAsmParser.cpp
 --- llvm/lib/Target/Mips/AsmParser/MipsAsmParser.cpp.orig
 +++ llvm/lib/Target/Mips/AsmParser/MipsAsmParser.cpp
-@@ -68,6 +68,7 @@ class MCInstrInfo;
- } // end namespace llvm
+@@ -69,6 +69,7 @@ class MCInstrInfo;
  
  extern cl::opt<bool> EmitJalrReloc;
+ extern cl::opt<bool> NoZeroDivCheck;
 +extern cl::opt<bool> FixLoongson2FBTB;
  
  namespace {
  
-@@ -235,6 +236,9 @@ class MipsAsmParser : public MCTargetAsmParser {
+@@ -236,6 +237,9 @@ class MipsAsmParser : public MCTargetAsmParser {
  
    bool emitPartialAddress(MipsTargetStreamer &TOut, SMLoc IDLoc, MCSymbol *Sym);
  
@@ -19,7 +19,7 @@ Index: llvm/lib/Target/Mips/AsmParser/MipsAsmParser.cpp
    bool expandLoadImm(MCInst &Inst, bool Is32BitImm, SMLoc IDLoc,
                       MCStreamer &Out, const MCSubtargetInfo *STI);
  
-@@ -2058,6 +2062,20 @@ bool MipsAsmParser::processInstruction(MCInst &Inst, S
+@@ -2060,6 +2064,20 @@ bool MipsAsmParser::processInstruction(MCInst &Inst, S
      Inst = BInst;
    }
  
@@ -40,7 +40,7 @@ Index: llvm/lib/Target/Mips/AsmParser/MipsAsmParser.cpp
    // This expansion is not in a function called by tryExpandInstruction()
    // because the pseudo-instruction doesn't have a distinct opcode.
    if ((Opcode == Mips::JAL || Opcode == Mips::JAL_MM) && inPicMode()) {
-@@ -3353,6 +3371,39 @@ bool MipsAsmParser::emitPartialAddress(MipsTargetStrea
+@@ -3356,6 +3374,39 @@ bool MipsAsmParser::emitPartialAddress(MipsTargetStrea
        TOut.emitRRI(Mips::DSLL, ATReg, ATReg, 16, IDLoc, STI);
      }
    }

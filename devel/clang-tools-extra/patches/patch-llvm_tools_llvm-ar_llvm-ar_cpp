@@ -1,7 +1,7 @@
 Index: llvm/tools/llvm-ar/llvm-ar.cpp
 --- llvm/tools/llvm-ar/llvm-ar.cpp.orig
 +++ llvm/tools/llvm-ar/llvm-ar.cpp
-@@ -1463,8 +1463,12 @@ static int ranlib_main(int argc, char **argv) {
+@@ -1464,8 +1464,12 @@ static int ranlib_main(int argc, char **argv) {
                   " option not supported on non AIX OS");
            }
            break;

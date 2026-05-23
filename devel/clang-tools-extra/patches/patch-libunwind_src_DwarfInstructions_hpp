@@ -1,7 +1,7 @@
 Index: libunwind/src/DwarfInstructions.hpp
 --- libunwind/src/DwarfInstructions.hpp.orig
 +++ libunwind/src/DwarfInstructions.hpp
-@@ -385,6 +385,23 @@ int DwarfInstructions<A, R>::stepWithDwarf(A &addressS
+@@ -396,6 +396,23 @@ int DwarfInstructions<A, R>::stepWithDwarf(
        if (R::getArch() == REGISTERS_PPC64 && returnAddress != 0) {
          pint_t sp = newRegisters.getRegister(UNW_REG_SP);
          pint_t r2 = 0;
@@ -25,7 +25,7 @@ Index: libunwind/src/DwarfInstructions.hpp
          switch (addressSpace.get32(returnAddress)) {
          case PPC64_ELFV1_R2_LOAD_INST_ENCODING:
            r2 = addressSpace.get64(sp + PPC64_ELFV1_R2_OFFSET);
-@@ -393,6 +410,7 @@ int DwarfInstructions<A, R>::stepWithDwarf(A &addressS
+@@ -404,6 +421,7 @@ int DwarfInstructions<A, R>::stepWithDwarf(
            r2 = addressSpace.get64(sp + PPC64_ELFV2_R2_OFFSET);
            break;
          }

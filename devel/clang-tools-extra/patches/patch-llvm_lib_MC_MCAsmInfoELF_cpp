@@ -1,7 +1,7 @@
 Index: llvm/lib/MC/MCAsmInfoELF.cpp
 --- llvm/lib/MC/MCAsmInfoELF.cpp.orig
 +++ llvm/lib/MC/MCAsmInfoELF.cpp
-@@ -29,7 +29,7 @@ MCSection *MCAsmInfoELF::getNonexecutableStackSection(
+@@ -41,7 +41,7 @@ bool MCAsmInfoELF::useCodeAlign(const MCSection &Sec) 
  }
  
  MCAsmInfoELF::MCAsmInfoELF() {

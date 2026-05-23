@@ -1,7 +1,7 @@
 Index: clang/lib/Sema/SemaChecking.cpp
 --- clang/lib/Sema/SemaChecking.cpp.orig
 +++ clang/lib/Sema/SemaChecking.cpp
-@@ -7905,20 +7905,37 @@ bool CheckPrintfHandler::HandlePrintfSpecifier(
+@@ -8490,20 +8490,37 @@ bool CheckPrintfHandler::HandlePrintfSpecifier(
        // Claim the second argument.
        CoveredArgs.set(argIndex + 1);
  
@@ -51,7 +51,7 @@ Index: clang/lib/Sema/SemaChecking.cpp
        // Type check the second argument (char * for both %b and %D)
        Ex = getDataArg(argIndex + 1);
        const analyze_printf::ArgType &AT2 = ArgType::CStrTy;
-@@ -7955,6 +7972,15 @@ bool CheckPrintfHandler::HandlePrintfSpecifier(
+@@ -8540,6 +8557,15 @@ bool CheckPrintfHandler::HandlePrintfSpecifier(
                           /*IsStringLocation*/ false,
                           getSpecifierRange(startSpecifier, specifierLen));
  

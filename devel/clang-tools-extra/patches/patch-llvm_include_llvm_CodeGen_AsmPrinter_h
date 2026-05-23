@@ -1,7 +1,7 @@
 Index: llvm/include/llvm/CodeGen/AsmPrinter.h
 --- llvm/include/llvm/CodeGen/AsmPrinter.h.orig
 +++ llvm/include/llvm/CodeGen/AsmPrinter.h
-@@ -521,6 +521,11 @@ class LLVM_ABI AsmPrinter : public MachineFunctionPass
+@@ -550,6 +550,11 @@ class LLVM_ABI AsmPrinter : public MachineFunctionPass
    void emitAlignment(Align Alignment, const GlobalObject *GV = nullptr,
                       unsigned MaxBytesToEmit = 0) const;
  
@@ -13,7 +13,7 @@ Index: llvm/include/llvm/CodeGen/AsmPrinter.h
    /// Lower the specified LLVM Constant to an MCExpr.
    /// When BaseCV is present, we are lowering the element at BaseCV plus Offset.
    virtual const MCExpr *lowerConstant(const Constant *CV,
-@@ -590,6 +595,11 @@ class LLVM_ABI AsmPrinter : public MachineFunctionPass
+@@ -619,6 +624,11 @@ class LLVM_ABI AsmPrinter : public MachineFunctionPass
    virtual void emitInstruction(const MachineInstr *) {
      llvm_unreachable("EmitInstruction not implemented");
    }

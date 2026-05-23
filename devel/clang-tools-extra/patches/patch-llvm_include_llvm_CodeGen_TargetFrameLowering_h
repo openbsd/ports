@@ -9,7 +9,7 @@ Index: llvm/include/llvm/CodeGen/TargetFrameLowering.h
  #include "llvm/Support/TypeSize.h"
  #include <vector>
  
-@@ -217,6 +218,10 @@ class LLVM_ABI TargetFrameLowering { (public)
+@@ -210,6 +211,10 @@ class LLVM_ABI TargetFrameLowering { (public)
                              MachineBasicBlock &MBB) const = 0;
    virtual void emitEpilogue(MachineFunction &MF,
                              MachineBasicBlock &MBB) const = 0;

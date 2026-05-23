@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/Mips/MipsAsmPrinter.cpp
 --- llvm/lib/Target/Mips/MipsAsmPrinter.cpp.orig
 +++ llvm/lib/Target/Mips/MipsAsmPrinter.cpp
-@@ -240,6 +240,83 @@ void MipsAsmPrinter::emitInstruction(const MachineInst
+@@ -234,6 +234,83 @@ void MipsAsmPrinter::emitInstruction(const MachineInst
    case Mips::PATCHABLE_TAIL_CALL:
      LowerPATCHABLE_TAIL_CALL(*MI);
      return;

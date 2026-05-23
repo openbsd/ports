@@ -1,7 +1,7 @@
 Index: clang/lib/Basic/Targets/AArch64.cpp
 --- clang/lib/Basic/Targets/AArch64.cpp.orig
 +++ clang/lib/Basic/Targets/AArch64.cpp
-@@ -1349,13 +1349,16 @@ AArch64TargetInfo::checkCallingConvention(CallingConv 
+@@ -1409,13 +1409,16 @@ AArch64TargetInfo::checkCallingConvention(CallingConv 
    case CC_C:
    case CC_Swift:
    case CC_SwiftAsync:

@@ -13,13 +13,13 @@ Index: clang/lib/Driver/ToolChains/Arch/RISCV.cpp
 +    Features.push_back("-relax");
 +#else
    // -mrelax is default, unless -mno-relax is specified.
-   if (Args.hasFlag(options::OPT_mrelax, options::OPT_mno_relax, true)) {
+   if (Args.hasFlag(options::OPT_mrelax, options::OPT_mno_relax, true))
      Features.push_back("+relax");
-@@ -141,6 +148,7 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
-   } else {
-     Features.push_back("-relax");
+@@ -151,6 +158,7 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
+   } else if (CPUFastScalarUnaligned || Triple.isAndroid()) {
+     Features.push_back("+unaligned-scalar-mem");
    }
 +#endif
  
-   // If -mstrict-align, -mno-strict-align, -mscalar-strict-align, or
-   // -mno-scalar-strict-align is passed, use it. Otherwise, the
+   // If -mstrict-align, -mno-strict-align, -mvector-strict-align, or
+   // -mno-vector-strict-align is passed, use it. Otherwise, the

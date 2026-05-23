@@ -1,9 +1,9 @@
 Index: llvm/lib/Target/X86/X86AsmPrinter.h
 --- llvm/lib/Target/X86/X86AsmPrinter.h.orig
 +++ llvm/lib/Target/X86/X86AsmPrinter.h
-@@ -171,6 +171,8 @@ class LLVM_LIBRARY_VISIBILITY X86AsmPrinter : public A
- 
-   void emitInstruction(const MachineInstr *MI) override;
+@@ -176,6 +176,8 @@ class LLVM_LIBRARY_VISIBILITY X86AsmPrinter : public A
+                         const MCSubtargetInfo *EndInfo,
+                         const MachineInstr *MI) override;
  
 +  void emitTrapToAlignment(Align Alignment) const override;
 +

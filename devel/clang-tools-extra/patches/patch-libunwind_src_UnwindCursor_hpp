@@ -1,7 +1,7 @@
 Index: libunwind/src/UnwindCursor.hpp
 --- libunwind/src/UnwindCursor.hpp.orig
 +++ libunwind/src/UnwindCursor.hpp
-@@ -113,6 +113,8 @@ extern "C" _Unwind_Reason_Code __libunwind_seh_persona
+@@ -114,6 +114,8 @@ extern "C" _Unwind_Reason_Code __libunwind_seh_persona
  
  namespace libunwind {
  
@@ -10,15 +10,15 @@ Index: libunwind/src/UnwindCursor.hpp
  #if defined(_LIBUNWIND_SUPPORT_DWARF_UNWIND)
  /// Cache of recently found FDEs.
  template <typename A>
-@@ -2680,7 +2682,14 @@ void UnwindCursor<A, R>::setInfoBasedOnIPRegister(bool
+@@ -2776,7 +2778,14 @@ void UnwindCursor<A, R>::setInfoBasedOnIPRegister(bool
  
    // Ask address space object to find unwind sections for this pc.
    UnwindInfoSections sects;
--  if (_addressSpace.findUnwindSections(pc, sects)) {
+-  if (_addressSpace.template findUnwindSections<R>(pc, sects)) {
 +  bool have_sects = false;
 +  if (uwis_cache.getUnwindInfoSectionsForPC(pc, sects))
 +    have_sects = true;
-+  else if (_addressSpace.findUnwindSections(pc, sects)) {
++  else if (_addressSpace.template findUnwindSections<R>(pc, sects)) {
 +    uwis_cache.setUnwindInfoSectionsForPC(pc, sects);
 +    have_sects = true;
 +  }

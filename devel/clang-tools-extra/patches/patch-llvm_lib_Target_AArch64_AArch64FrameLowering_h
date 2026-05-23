@@ -9,7 +9,7 @@ Index: llvm/lib/Target/AArch64/AArch64FrameLowering.h
  #include "llvm/CodeGen/MachineOptimizationRemarkEmitter.h"
  #include "llvm/CodeGen/TargetFrameLowering.h"
  #include "llvm/Support/TypeSize.h"
-@@ -21,9 +22,12 @@ namespace llvm {
+@@ -32,9 +33,12 @@ struct SVEStackSizes {
  
  class AArch64FrameLowering : public TargetFrameLowering {
  public:
@@ -23,7 +23,7 @@ Index: llvm/lib/Target/AArch64/AArch64FrameLowering.h
  
    void resetCFIToInitialState(MachineBasicBlock &MBB) const override;
  
-@@ -35,6 +39,8 @@ class AArch64FrameLowering : public TargetFrameLowerin
+@@ -46,6 +50,8 @@ class AArch64FrameLowering : public TargetFrameLowerin
    /// the function.
    void emitPrologue(MachineFunction &MF, MachineBasicBlock &MBB) const override;
    void emitEpilogue(MachineFunction &MF, MachineBasicBlock &MBB) const override;

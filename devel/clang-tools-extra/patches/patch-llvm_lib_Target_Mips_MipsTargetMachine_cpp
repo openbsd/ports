@@ -9,7 +9,7 @@ Index: llvm/lib/Target/Mips/MipsTargetMachine.cpp
  static cl::opt<bool>
      EnableMulMulFix("mfix4300", cl::init(false),
                      cl::desc("Enable the VR4300 mulmul bug fix."), cl::Hidden);
-@@ -289,6 +290,9 @@ bool MipsPassConfig::addInstSelector() {
+@@ -253,6 +254,9 @@ bool MipsPassConfig::addInstSelector() {
  
  void MipsPassConfig::addPreRegAlloc() {
    addPass(createMipsOptimizePICCallPass());

@@ -1,7 +1,7 @@
 Index: llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
 --- llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp.orig
 +++ llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
-@@ -978,7 +978,7 @@ void AsmPrinter::emitFunctionHeader() {
+@@ -1003,7 +1003,7 @@ void AsmPrinter::emitFunctionHeader() {
  
    emitLinkage(&F, CurrentFnSym);
    if (MAI->hasFunctionAlignment())
@@ -10,7 +10,7 @@ Index: llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
  
    if (MAI->hasDotTypeDotSizeDirective())
      OutStreamer->emitSymbolAttribute(CurrentFnSym, MCSA_ELF_TypeFunction);
-@@ -3461,6 +3461,30 @@ void AsmPrinter::emitAlignment(Align Alignment, const 
+@@ -3693,6 +3693,30 @@ void AsmPrinter::emitAlignment(Align Alignment, const 
  }
  
  //===----------------------------------------------------------------------===//
@@ -41,7 +41,7 @@ Index: llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
  // Constant emission.
  //===----------------------------------------------------------------------===//
  
-@@ -4356,10 +4380,18 @@ void AsmPrinter::emitBasicBlockStart(const MachineBasi
+@@ -4590,10 +4614,18 @@ void AsmPrinter::emitBasicBlockStart(const MachineBasi
    for (auto &Handler : Handlers)
      Handler->beginCodeAlignment(MBB);
  

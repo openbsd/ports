@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/PowerPC/PPCISelDAGToDAG.cpp
 --- llvm/lib/Target/PowerPC/PPCISelDAGToDAG.cpp.orig
 +++ llvm/lib/Target/PowerPC/PPCISelDAGToDAG.cpp
-@@ -2337,6 +2337,11 @@ class BitPermutationSelector {
+@@ -2338,6 +2338,11 @@ class BitPermutationSelector {
                          ANDIVal, ANDISVal), 0);
      }
  
