@@ -1,6 +1,6 @@
 COMMENT =	various text handling addons
 
-DISTNAME =	ktextaddons-2.0.1
+DISTNAME =	ktextaddons-2.0.2
 
 SHARED_LIBS +=  KF6TextAddonsWidgets      1.0 # 0.0
 SHARED_LIBS +=  KF6TextAutoCorrectionCore 0.0 # 0.0
