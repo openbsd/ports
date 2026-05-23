@@ -40,6 +40,7 @@ MULTI_PACKAGES=-main -qt5 -qt6 -utils
 # (stolen from audio/openal)
 MODULES +=	lang/clang
 MODCLANG_COMPILER_LINKS = No
+MODCLANG_VERSION =	22
 
 # c++-17
 COMPILER=	base-clang ports-gcc
