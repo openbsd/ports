@@ -11,7 +11,7 @@ Index: src/libs/nanotrace/nanotracehr.cpp
  
  namespace NanotraceHR {
  
-@@ -104,11 +107,13 @@ std::string getThreadName()
+@@ -100,11 +103,13 @@ std::string getThreadName()
  {
      std::array<char, 200> buffer;
      buffer[0] = 0;

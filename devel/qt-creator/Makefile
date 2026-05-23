@@ -3,34 +3,34 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			18.0.2
+V =			19.0.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
 SHARED_LIBS +=  Aggregation               4.1 # 0.0
-SHARED_LIBS +=  CPlusPlus                 12.0 # 0.0
-SHARED_LIBS +=  ExtensionSystem           12.0 # 0.0
-SHARED_LIBS +=  GLSL                      4.0 # 0.0
+SHARED_LIBS +=  CPlusPlus                 14.0 # 0.0
+SHARED_LIBS +=  ExtensionSystem           14.0 # 0.0
+SHARED_LIBS +=  GLSL                      6.0 # 0.0
 SHARED_LIBS +=  LanguageUtils             4.0 # 0.0
-SHARED_LIBS +=  QmlDebug                  8.0 # 0.0
+SHARED_LIBS +=  QmlDebug                  8.2 # 0.0
 SHARED_LIBS +=  QmlEditorWidgets          4.0 # 0.0
-SHARED_LIBS +=  QmlJS                     17.0 # 0.0
-SHARED_LIBS +=  Utils                     18.0 # 0.0
-SHARED_LIBS +=  Sqlite                    13.0 # 1.0
+SHARED_LIBS +=  QmlJS                     19.0 # 0.0
+SHARED_LIBS +=  Utils                     20.0 # 0.0
+SHARED_LIBS +=  Sqlite                    15.0 # 1.0
 SHARED_LIBS +=  Modeling                  11.0 # 1.0
 SHARED_LIBS +=  Tracing                   5.0 # 4.7
-SHARED_LIBS +=  LanguageServerProtocol    11.0 # 4.8
-SHARED_LIBS +=  AdvancedDockingSystem     5.1 # 4.12
-SHARED_LIBS +=  qlitehtml                 5.1 # 4.15
-SHARED_LIBS +=  ProParser                 6.0 # 4.15
+SHARED_LIBS +=  LanguageServerProtocol    11.2 # 4.8
+SHARED_LIBS +=  AdvancedDockingSystem     7.0 # 4.12
+SHARED_LIBS +=  qlitehtml                 7.0 # 4.15
+SHARED_LIBS +=  ProParser                 8.0 # 4.15
 SHARED_LIBS +=  KSyntaxHighlighting       3.0 # 0.0
-SHARED_LIBS +=  TerminalLib               1.5 # 0.0
-SHARED_LIBS +=  Nanotrace                 1.0 # 0.0
+SHARED_LIBS +=  TerminalLib               1.7 # 0.0
+SHARED_LIBS +=  Nanotrace                 3.0 # 0.0
 SHARED_LIBS +=  qtkeychain                0.0 # 0.0
-SHARED_LIBS +=  CmdBridgeClient           2.1 # 0.0
-SHARED_LIBS +=  QmlDesignerCore           3.0 # 0.0
-SHARED_LIBS +=  DevContainer              0.0 # 0.0
-SHARED_LIBS +=  Tasking                   0.0 # 0.0
+SHARED_LIBS +=  CmdBridgeClient           4.0 # 0.0
+SHARED_LIBS +=  QmlDesignerCore           5.0 # 0.0
+SHARED_LIBS +=  DevContainer              2.0 # 0.0
+SHARED_LIBS +=  QtTaskTree                0.0 # 0.0
 
 CATEGORIES =	devel editors
 
@@ -49,9 +49,8 @@ WANTLIB += Qt6Quick Qt6Quick3D Qt6Quick3DAssetImport Qt6Quick3DAssetUtils
 WANTLIB += Qt6Quick3DParticles Qt6Quick3DRuntimeRender Qt6Quick3DUtils
 WANTLIB += Qt6QuickWidgets Qt6SerialPort Qt6ShaderTools Qt6Sql
 WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Test Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6WebSockets Qt6Widgets Qt6Xml
-WANTLIB += archive c gio-2.0 glib-2.0 gobject-2.0 intl m secret-1
-WANTLIB += xkbcommon yaml-cpp
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml archive c gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 intl m secret-1 xkbcommon yaml-cpp
 
 
 SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
@@ -89,7 +88,6 @@ LIB_DEPENDS = 	archivers/libarchive \
 		x11/qt6/qttools \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine \
-		x11/qt6/qtwebsockets \
 		x11/xkbcommon
 
 CONFIGURE_ARGS =	-DBUILD_CPLUSPLUS_TOOLS=ON \

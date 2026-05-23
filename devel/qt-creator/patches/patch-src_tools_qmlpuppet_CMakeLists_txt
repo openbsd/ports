@@ -1,7 +1,7 @@
 Index: src/tools/qmlpuppet/CMakeLists.txt
 --- src/tools/qmlpuppet/CMakeLists.txt.orig
 +++ src/tools/qmlpuppet/CMakeLists.txt
-@@ -79,7 +79,7 @@ extend_qtc_executable(qmlpuppet
+@@ -82,7 +82,7 @@ extend_qtc_executable(qmlpuppet
  )
  
  extend_qtc_executable(qmlpuppet
