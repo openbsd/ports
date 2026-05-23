@@ -5,7 +5,7 @@ Index: src/libedataserver/e-ms-oapxbc.c
 +++ src/libedataserver/e-ms-oapxbc.c
 @@ -41,6 +41,8 @@
  #define DBUS_BROKER_PATH "/com/microsoft/identity/broker1"
- #define AUTH_TYPE_OAUTH2 8
+ #define AT_PRT_SSO_COOKIE 8
  
 +#define UUID_STR_LEN 36 /* from OpenBSD uuid.h */
 +
