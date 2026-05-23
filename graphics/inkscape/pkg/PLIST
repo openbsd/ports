@@ -932,9 +932,7 @@ share/inkscape/extensions/inkex/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MO
 share/inkscape/extensions/inkex/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/base.py
 share/inkscape/extensions/inkex/bezier.py
-share/inkscape/extensions/inkex/colors/
 share/inkscape/extensions/inkex/colors.py
-share/inkscape/extensions/inkex/colors/spaces/
 share/inkscape/extensions/inkex/command.py
 share/inkscape/extensions/inkex/css/
 share/inkscape/extensions/inkex/css/__init__.py
@@ -4833,6 +4831,7 @@ share/inkscape/palettes/Tango-Palette.gpl
 share/inkscape/palettes/Topographic.gpl
 share/inkscape/palettes/Ubuntu.gpl
 share/inkscape/palettes/echo-palette.gpl
+share/inkscape/palettes/elementary.gpl
 share/inkscape/palettes/inkscape.gpl
 share/inkscape/palettes/svg.gpl
 share/inkscape/palettes/webhex.gpl
@@ -5364,6 +5363,7 @@ share/inkscape/tutorials/tutorial-tracing-pixelart.sl.svg
 share/inkscape/tutorials/tutorial-tracing-pixelart.sr.svg
 share/inkscape/tutorials/tutorial-tracing-pixelart.sv.svg
 share/inkscape/tutorials/tutorial-tracing-pixelart.svg
+share/inkscape/tutorials/tutorial-tracing-pixelart.tr.svg
 share/inkscape/tutorials/tutorial-tracing-pixelart.uk.svg
 share/inkscape/tutorials/tutorial-tracing-pixelart.zh_CN.svg
 share/inkscape/tutorials/tutorial-tracing-pixelart.zh_TW.svg
@@ -5390,6 +5390,7 @@ share/inkscape/tutorials/tutorial-tracing.sl.svg
 share/inkscape/tutorials/tutorial-tracing.sr.svg
 share/inkscape/tutorials/tutorial-tracing.sv.svg
 share/inkscape/tutorials/tutorial-tracing.svg
+share/inkscape/tutorials/tutorial-tracing.tr.svg
 share/inkscape/tutorials/tutorial-tracing.uk.svg
 share/inkscape/tutorials/tutorial-tracing.vi.svg
 share/inkscape/tutorials/tutorial-tracing.zh_CN.svg
