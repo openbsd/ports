@@ -1,0 +1,20 @@
+Fix build with llvm22 - actual bug.
+
+Index: uwm/init.c
+--- uwm/init.c.orig
++++ uwm/init.c
+@@ -984,11 +984,11 @@ void ReadConfigFile(FILE *uwmrc)
+                                   ActiveWorkSpace][UDE_Shadow].pixel);
+                         AllocColors(r,g,b,\
+                                     &TheScreen.Colors[TheScreen.desktop.\
+-                                    ActiveWorkSpace][UDE_Back],\
++                                    ActiveWorkSpace][UDE_Back].pixel,\
+                                     &TheScreen.Colors[TheScreen.desktop.\
+-                                    ActiveWorkSpace][UDE_Light],\
++                                    ActiveWorkSpace][UDE_Light].pixel,\
+                                     &TheScreen.Colors[TheScreen.desktop.\
+-                                    ActiveWorkSpace][UDE_Shadow]);
++                                    ActiveWorkSpace][UDE_Shadow].pixel);
+                         break;
+                       case FontColor:
+                         if(ParseColor(p,&r,&g,&b)) {

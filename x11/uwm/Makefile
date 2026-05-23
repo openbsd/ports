@@ -1,14 +1,13 @@
 COMMENT =	lightweight WM with an original look and feel
-DISTNAME =	uwm-0.2.11a
+DISTNAME =	uwm-0.2.11b
 CATEGORIES =	x11
-REVISION =	1
 
 HOMEPAGE =	https://udeproject.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =		Yes
 
-WANTLIB =  ICE SM X11 Xext Xmu Xpm c iconv intl jpeg pthread
+WANTLIB =  ICE SM X11 Xext Xmu Xpm c iconv intl jpeg
 
 SITES =		${SITE_SOURCEFORGE:=udeproject/}
 
