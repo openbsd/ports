@@ -1,9 +1,9 @@
 COMMENT =		tool for managing environment based on current directory
 
-GH_ACCOUNT =		direnv
-GH_PROJECT =		direnv
-GH_TAGNAME =		v2.26.0
-REVISION =		0
+MODGO_MODNAME =		github.com/direnv/direnv/v2
+MODGO_VERSION =		v2.37.1
+
+DISTNAME =		direnv-${MODGO_VERSION}
 
 MAINTAINER=		Ashton Fagg <ashton@fagg.id.au>
 CATEGORIES =		sysutils devel
@@ -25,14 +25,9 @@ RUN_DEPENDS =		shells/bash
 pre-build:
 	rm -rf ${WRKSRC}/script
 
-do-build:
-	${MODGO_BUILD_CMD} github.com/direnv/direnv/...
-
 do-install:
 	$(INSTALL_PROGRAM) $(MODGO_WORKSPACE)/bin/direnv $(PREFIX)/bin
 	${INSTALL_MAN} ${WRKSRC}/man/*.1 $(PREFIX)/man/man1/
 
-do-test:
-	${MODGO_CMD} test github.com/direnv/direnv/...
-
+.include "modules.inc"
 .include <bsd.port.mk>
