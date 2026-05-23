@@ -1,0 +1,14 @@
+Fix for typescript >=6.0
+
+Index: tsconfig.json
+--- tsconfig.json.orig
++++ tsconfig.json
+@@ -3,7 +3,7 @@
+         "experimentalDecorators": true,
+         "strict": true,
+         "target": "ES2022",
+-        "baseUrl": ".",
++        "rootDir": "src",
+         "moduleResolution": "bundler",
+         "module": "ES2022",
+         "lib": [

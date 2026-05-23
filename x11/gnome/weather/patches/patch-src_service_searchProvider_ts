@@ -1,0 +1,14 @@
+Fix for typescript >=6.0
+
+Index: src/service/searchProvider.ts
+--- src/service/searchProvider.ts.orig
++++ src/service/searchProvider.ts
+@@ -22,7 +22,7 @@ import GWeather from 'gi://GWeather';
+ 
+ import * as Util from '../misc/util.js';
+ import {WeatherBackgroundService} from './main.js';
+-import {WorldModel} from 'src/shared/world.js';
++import {WorldModel} from '../shared/world.js';
+ 
+ type ResultMeta = {
+     name: GLib.Variant<'s'>;
