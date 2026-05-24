@@ -10,7 +10,10 @@ WANTLIB += ical icalss icalvcal m pyside6.abi3 ${MODPY_WANTLIB} shiboken6.abi3
 
 MODULES =	lang/python
 
-BUILD_DEPENDS =	devel/bison
+BUILD_DEPENDS =	devel/bison \
+		devel/py-setuptools \
+		devel/py-wheel \
+		devel/py-build
 
 RUN_DEPENDS =	devel/bison
 
