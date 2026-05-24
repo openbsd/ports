@@ -1,0 +1,37 @@
+Fix with nettle >=4
+
+Index: src/putty/sshaes.c
+--- src/putty/sshaes.c.orig
++++ src/putty/sshaes.c
+@@ -11,6 +11,7 @@
+ #include <nettle/aes.h>
+ #include <nettle/gcm.h>
+ #include <nettle/memxor.h>
++#include <nettle/version.h>
+ 
+ /*
+  * Start by deciding whether we can support hardware AES at all.
+@@ -313,7 +314,11 @@ static void aes128_gcm_mac_genresult(ssh2_mac *mac, un
+ {
+     struct AES128GCMContext *ctx = container_of(mac, struct AES128GCMContext, mac_if);
+ 
++#if NETTLE_VERSION_MAJOR > 3
++    nettle_gcm_aes128_digest(&ctx->ctx, blk);
++#else
+     nettle_gcm_aes128_digest(&ctx->ctx, 16, blk);
++#endif
+     increment_iv_step32(ctx->iv + 4, 2);
+ }
+ 
+@@ -455,7 +460,11 @@ static void aes256_gcm_mac_genresult(ssh2_mac *mac, un
+ {
+     struct AES256GCMContext *ctx = container_of(mac, struct AES256GCMContext, mac_if);
+ 
++#if NETTLE_VERSION_MAJOR > 3
++    nettle_gcm_aes256_digest(&ctx->ctx, blk);
++#else
+     nettle_gcm_aes256_digest(&ctx->ctx, 16, blk);
++#endif
+     increment_iv_step32(ctx->iv + 4, 2);
+ }
+ 
