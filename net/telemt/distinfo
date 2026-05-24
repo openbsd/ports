@@ -243,7 +243,7 @@ SHA256 (cargo/rustls-native-certs-0.8.3.tar.gz) = YSRg1fe+pUDEkLK2OV2ONKlT5StJGs
 SHA256 (cargo/rustls-pki-types-1.14.0.tar.gz) = vgQPiwoiXkA3WCKlY/qVJDeLnWMRL1Phn//zTfXTP90=
 SHA256 (cargo/rustls-platform-verifier-0.6.2.tar.gz) = HZn+68crrnq3a6mUu14SG42D2RDKQLNuCSH1O+zEF4Q=
 SHA256 (cargo/rustls-platform-verifier-android-0.1.1.tar.gz) = +HFl8JlfY6n77qYrZNELTZ2OeOxtfVH7ISX9p7s2eI8=
-SHA256 (cargo/rustls-webpki-0.103.12.tar.gz) = gnm7hScsnxCBGuamxUf/WU1qfzxsawLulybR0Nz83QY=
+SHA256 (cargo/rustls-webpki-0.103.13.tar.gz) = YcQpqGSfEQ3d72Xipa0kD3R+hfd1imvMx+V3e9M/dW4=
 SHA256 (cargo/rustversion-1.0.22.tar.gz) = s5ze8PqAD8RFJchMy1SgKZYaghX5YZdTY1qcDSU41G0=
 SHA256 (cargo/rusty-fork-0.3.1.tar.gz) = zGv3n/JOZI9tofjR8BHpysJkkbYZ5rkoDytH8XdObuI=
 SHA256 (cargo/ryu-1.0.23.tar.gz) = l3S6SnTeX3scFFHtbNUoWjLt21zMuMxlWk5QAJ4GR38=
@@ -412,7 +412,7 @@ SHA256 (cargo/zerotrie-0.2.4.tar.gz) = D5FS0x2weS+oP3D7L4MUjv+1wfW4x2hsNFnjYdm8I
 SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXsjk=
 SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhNvVKpLEBVU=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (telemt-telemt-3.4.10.tar.gz) = lmPNmNfdF1AofQm59MdaVLFnrmo45/RynNXDZYhL7cA=
+SHA256 (telemt-telemt-3.4.12.tar.gz) = HlzDWFU3THSxZtd+C+xMEpFe3oqsMzQz1+GWgGBCYfI=
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (cargo/aes-gcm-0.10.3.tar.gz) = 148991
@@ -658,7 +658,7 @@ SIZE (cargo/rustls-native-certs-0.8.3.tar.gz) = 30380
 SIZE (cargo/rustls-pki-types-1.14.0.tar.gz) = 35403
 SIZE (cargo/rustls-platform-verifier-0.6.2.tar.gz) = 58924
 SIZE (cargo/rustls-platform-verifier-android-0.1.1.tar.gz) = 13919
-SIZE (cargo/rustls-webpki-0.103.12.tar.gz) = 87202
+SIZE (cargo/rustls-webpki-0.103.13.tar.gz) = 87513
 SIZE (cargo/rustversion-1.0.22.tar.gz) = 21096
 SIZE (cargo/rusty-fork-0.3.1.tar.gz) = 21108
 SIZE (cargo/ryu-1.0.23.tar.gz) = 52823
@@ -827,4 +827,4 @@ SIZE (cargo/zerotrie-0.2.4.tar.gz) = 83690
 SIZE (cargo/zerovec-0.11.6.tar.gz) = 128583
 SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (telemt-telemt-3.4.10.tar.gz) = 2361709
+SIZE (telemt-telemt-3.4.12.tar.gz) = 2404370
