@@ -1,7 +1,6 @@
      SUBDIR =
      SUBDIR += 2bwm
      SUBDIR += Xaw3d
-     SUBDIR += XawMu
      SUBDIR += Xdialog
      SUBDIR += abclock
      SUBDIR += adwaita-qt

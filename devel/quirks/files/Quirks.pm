@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1804 2026/05/24 07:11:21 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1805 2026/05/24 08:23:35 matthieu Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1070,6 +1070,7 @@ setup_obsolete_reason(
 	46 => 'exim-eximon',
 	3 => 'kf6-libkcompactdisc',
 # 8.0
+	5 => 'x11/XawMu',
 );
 # beware, if ports with an RDEP on Python 3 are removed, they need to be listed
 # as @conflcit/pkgpath in lang/python/3 and not here, otherwise an update from a
