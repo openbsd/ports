@@ -1,7 +1,7 @@
 Index: util/prosodyctl.lua
 --- util/prosodyctl.lua.orig
 +++ util/prosodyctl.lua
-@@ -200,7 +200,7 @@ local function start(source_dir, lua)
+@@ -198,7 +198,7 @@ local function start(source_dir, lua)
  	if not source_dir then
  		os.execute(lua .. "./prosody -D");
  	else
@@ -10,7 +10,7 @@ Index: util/prosodyctl.lua
  	end
  
  	if notify_socket then
-@@ -252,7 +252,7 @@ local render_cli = interpolation.new("%b{}", function 
+@@ -250,7 +250,7 @@ local render_cli = interpolation.new("%b{}", function 
  
  local function call_luarocks(operation, mod, server)
  	local dir = prosody.paths.installer;
