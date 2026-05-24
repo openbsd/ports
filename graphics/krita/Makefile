@@ -83,6 +83,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/immer \
 			devel/lager \
 			devel/zug \
+			devel/xsimd \
 			math/eigen3 \
 			net/curl
 
