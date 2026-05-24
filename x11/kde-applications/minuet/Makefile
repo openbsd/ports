@@ -1,7 +1,7 @@
 COMMENT =	KDE software for music education
 DISTNAME =	minuet-${VERSION}
 CATEGORIES =	audio education
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://minuet.kde.org/
 
@@ -16,8 +16,10 @@ MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
 MODKDE_DOCS = yes
 
-BUILD_DEPENDS =	devel/kf6/kirigami
-RUN_DEPENDS =	devel/kf6/kirigami
+BUILD_DEPENDS =	devel/kf6/kirigami \
+		devel/kf6/qqc2-desktop-style
+RUN_DEPENDS =	devel/kf6/kirigami \
+		devel/kf6/qqc2-desktop-style
 
 LIB_DEPENDS =	audio/fluidsynth>=2.5 \
 		devel/kf6/kcoreaddons \
