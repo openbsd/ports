@@ -1,7 +1,7 @@
 COMMENT =		fit falling blocks together
 
 GNOME_PROJECT =		quadrapassel
-GNOME_VERSION =		50.1
+GNOME_VERSION =		50.2
 
 CATEGORIES =		games
 

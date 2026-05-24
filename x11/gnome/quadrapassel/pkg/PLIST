@@ -154,6 +154,7 @@ share/locale/zh_HK/LC_MESSAGES/quadrapassel.mo
 share/locale/zh_TW/LC_MESSAGES/quadrapassel.mo
 share/locale/zh_TW/LC_MESSAGES/quadrapassel_libgnome-games-support.mo
 share/metainfo/org.gnome.Quadrapassel.metainfo.xml
+share/sounds/
 share/sounds/quadrapassel/
 share/sounds/quadrapassel/gameover.ogg
 share/sounds/quadrapassel/land.ogg
