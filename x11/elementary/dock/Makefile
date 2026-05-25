@@ -1,9 +1,7 @@
 # XXX: Make CPU and battery docklets work...
-# 0.11.89 appears as the version number during configure
 COMMENT =	dock from elementary OS
-DISTNAME =	dock-0.11.89
+DISTNAME =	dock-8.3.3
 PKGNAME =	${DISTNAME:S/^/elementary-/}
-REVISION =	2
 
 SHARED_LIBS +=	plank                     0.0 # 1.0.0
 
@@ -27,7 +25,8 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 
 LIB_DEPENDS =	devel/bamf \
 		devel/libgee \
-		x11/gnome/menus
+		x11/gnome/menus \
+		x11/gtk+3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
