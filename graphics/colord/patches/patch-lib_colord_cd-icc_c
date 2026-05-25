@@ -1,0 +1,12 @@
+Index: lib/colord/cd-icc.c
+--- lib/colord/cd-icc.c.orig
++++ lib/colord/cd-icc.c
+@@ -269,7 +269,7 @@ cd_icc_to_string (CdIcc *icc)
+ 	guint32 i;
+ 	guint32 number_tags;
+ 	guint32 tmp;
+-	guint64 header_flags;
++	cmsUInt64Number header_flags;
+ 	g_autofree gchar *profile_id = NULL;
+ 
+ 	g_return_val_if_fail (CD_IS_ICC (icc), NULL);
