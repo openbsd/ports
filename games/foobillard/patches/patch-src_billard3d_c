@@ -1,0 +1,14 @@
+Build fix for llvm 22
+
+Index: src/billard3d.c
+--- src/billard3d.c.orig
++++ src/billard3d.c
+@@ -5100,7 +5100,7 @@ int main( int argc, char *argv[] )
+ 
+ #if __BYTE_ORDER == __BIG_ENDIAN
+        {
+-          char *snd=ball_ball_snd.data;
++          char *snd=(char *)ball_ball_snd.data;
+           for(i=0;i<ball_ball_snd.len;i+=2)
+           {
+              char t=snd[i];
