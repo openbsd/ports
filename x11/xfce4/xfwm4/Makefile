@@ -1,7 +1,7 @@
 COMMENT=	Xfce4 window manager
 
 XFCE_PROJECT=	xfwm4
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

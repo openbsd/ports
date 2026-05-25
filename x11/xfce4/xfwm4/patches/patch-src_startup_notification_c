@@ -1,0 +1,15 @@
+startup_notification.c:139:57: error: incompatible pointer types passing 'long *' to parameter of type 'time_t *' (aka 'long long *') [-Wincompatible-pointer-types]
+
+Index: src/startup_notification.c
+--- src/startup_notification.c.orig
++++ src/startup_notification.c
+@@ -128,7 +128,8 @@ sn_collect_timed_out_foreach (void *element, void *dat
+     SnStartupSequence *sequence;
+     time_t tv_sec;
+     suseconds_t tv_usec;
+-    long l_sec, l_usec;
++    time_t l_sec;
++    suseconds_t l_usec;
+     double elapsed;
+ 
+     g_return_if_fail (data != NULL);
