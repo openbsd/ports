@@ -1,7 +1,7 @@
 COMMENT =	X11 based RTF editor
 V =		2.17
 DISTNAME =	ted-$V
-REVISION =	6
+REVISION =	7
 CATEGORIES =	editors textproc print
 HOMEPAGE =	http://www.nllgg.nl/Ted/
 SITES =		ftp://ftp.nluug.nl/pub/editors/ted/

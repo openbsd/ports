@@ -1,0 +1,16 @@
+Fix build with llvm22
+
+error: chained comparison 'X > Y > Z' does not behave the same as a mathematical expression [-Wparentheses]
+
+Index: appFrame/appTree.c
+--- appFrame/appTree.c.orig
++++ appFrame/appTree.c
+@@ -356,7 +356,7 @@ static int appDrawTreeNode(		TreeDocument *			td,
+ 	}
+ 
+     if  ( ( ! tn->tnParent || tn->tnIsOpen )	&&
+-	  tn->tnChildCount > 0			> 0 )
++	  tn->tnChildCount > 0 )
+ 	{
+ 	TreeNode *	tl= tn->tnChildren[tn->tnChildCount-1];
+ 
