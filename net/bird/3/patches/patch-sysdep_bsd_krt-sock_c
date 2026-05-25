@@ -1,0 +1,12 @@
+Index: sysdep/bsd/krt-sock.c
+--- sysdep/bsd/krt-sock.c.orig
++++ sysdep/bsd/krt-sock.c
+@@ -1233,7 +1233,7 @@ kif_update_sysdep_addr(struct iface *i)
+     return 0;
+ 
+   ip4_addr old = i->sysdep;
+-  i->sysdep = ipa_to_ip4(ipa_from_sa4(&ifr.ifr_addr));
++  i->sysdep = ipa_to_ip4(ipa_from_sa4((sockaddr *)&ifr.ifr_addr));
+ 
+   return !ip4_equal(i->sysdep, old);
+ }

@@ -1,4 +1,5 @@
 DISTNAME=	bird-3.2.1
+REVISION=	0
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -8,8 +9,6 @@ WANTLIB=	c curses pthread readline ssh
 LIB_DEPENDS=	security/libssh
 
 MAKE_FLAGS=	VERBOSE=1
-CONFIGURE_ARGS+= --enable-pthreads \
-		--enable-ssh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bird
