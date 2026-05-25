@@ -28,7 +28,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 BUILD_DEPENDS =	devel/desktop-file-utils \
 		fonts/unifont \
-		devel/xa
+		devel/xa \
+		shells/bash
 
 LIB_DEPENDS =	archivers/ancient \
 		archivers/bzip2 \
