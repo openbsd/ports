@@ -24,7 +24,6 @@ include/grpc++/impl/codegen/async_stream.h
 include/grpc++/impl/codegen/async_unary_call.h
 include/grpc++/impl/codegen/byte_buffer.h
 include/grpc++/impl/codegen/call.h
-include/grpc++/impl/codegen/call_hook.h
 include/grpc++/impl/codegen/channel_interface.h
 include/grpc++/impl/codegen/client_context.h
 include/grpc++/impl/codegen/client_unary_call.h
@@ -90,6 +89,7 @@ include/grpc/census.h
 include/grpc/compression.h
 include/grpc/create_channel_from_endpoint.h
 include/grpc/credentials.h
+include/grpc/credentials_cpp.h
 include/grpc/event_engine/
 include/grpc/event_engine/endpoint_config.h
 include/grpc/event_engine/event_engine.h
@@ -143,6 +143,7 @@ include/grpc/impl/propagation_bits.h
 include/grpc/impl/slice_type.h
 include/grpc/load_reporting.h
 include/grpc/passive_listener.h
+include/grpc/private_key_signer.h
 include/grpc/slice.h
 include/grpc/slice_buffer.h
 include/grpc/status.h
@@ -190,7 +191,6 @@ include/grpcpp/grpcpp.h
 include/grpcpp/health_check_service_interface.h
 include/grpcpp/impl/
 include/grpcpp/impl/call.h
-include/grpcpp/impl/call_hook.h
 include/grpcpp/impl/call_op_set.h
 include/grpcpp/impl/call_op_set_interface.h
 include/grpcpp/impl/channel_argument_option.h
@@ -202,7 +202,6 @@ include/grpcpp/impl/codegen/async_stream.h
 include/grpcpp/impl/codegen/async_unary_call.h
 include/grpcpp/impl/codegen/byte_buffer.h
 include/grpcpp/impl/codegen/call.h
-include/grpcpp/impl/codegen/call_hook.h
 include/grpcpp/impl/codegen/call_op_set.h
 include/grpcpp/impl/codegen/call_op_set_interface.h
 include/grpcpp/impl/codegen/callback_common.h
@@ -284,6 +283,7 @@ include/grpcpp/security/tls_certificate_provider.h
 include/grpcpp/security/tls_certificate_verifier.h
 include/grpcpp/security/tls_credentials_options.h
 include/grpcpp/security/tls_crl_provider.h
+include/grpcpp/security/tls_private_key_signer.h
 include/grpcpp/server.h
 include/grpcpp/server_builder.h
 include/grpcpp/server_context.h
@@ -357,4 +357,3 @@ lib/pkgconfig/grpc++.pc
 lib/pkgconfig/grpc++_unsecure.pc
 lib/pkgconfig/grpc.pc
 lib/pkgconfig/grpc_unsecure.pc
-lib/pkgconfig/grpcpp_otel_plugin.pc
