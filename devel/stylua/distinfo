@@ -1,4 +1,4 @@
-SHA256 (JohnnyMorganz-StyLua-v2.4.1.tar.gz) = iC6ttBcpQ5mom6Kz8X7cdR1LbRiS5IFL+/XAJLuJ3mw=
+SHA256 (JohnnyMorganz-StyLua-v2.5.2.tar.gz) = JqIgx786j1DRK3bJUvxFaaEWLi0AJED6rDNEo2NNtPI=
 SHA256 (cargo/aho-corasick-1.1.2.tar.gz) = spady5WLNmVUcfxh9+QW+nYDO91L/tBnjY/uHi0HofA=
 SHA256 (cargo/anes-0.1.6.tar.gz) = S0bLs2Krh1KSHJfgQfXjZu5il71CijEnW5/PHjgPcpk=
 SHA256 (cargo/anstyle-1.0.4.tar.gz) = cHkHW0H1M7jGHSpNBzxGduH4skn/lKOTsFldswTg3Yc=
@@ -43,7 +43,7 @@ SHA256 (cargo/equivalent-1.0.1.tar.gz) = VEOAfW3/aTc9Qzq571N4rY31DKYpjK8V3m5S4kq
 SHA256 (cargo/errno-0.3.8.tar.gz) = oljkbNwGPrhRnAC5/IRfxHvPykEw4vCOiGZc7ahHQkU=
 SHA256 (cargo/fastrand-2.0.1.tar.gz) = JcvONz7EZT8aAaMeil5ewMYi3Cf/nE5mBu7+9cu+1KU=
 SHA256 (cargo/fluent-uri-0.1.4.tar.gz) = F8cE6dvh3dhj2h5v81Z3lQh7HrIBzoDY+oEWLhUWUA0=
-SHA256 (cargo/full_moon-2.1.1.tar.gz) = QDc6a/hMQcYSTAHL7fWrU9DUaK3xwNfv1MMnNTH7tgk=
+SHA256 (cargo/full_moon-2.2.0.tar.gz) = oIPW9Zi76dcOaU8qXPePA1RniowTUo2i32RnsIlYZAQ=
 SHA256 (cargo/full_moon_derive-0.11.0.tar.gz) = mbS9Es5Wkn0dxUeNIVKOqMS5PKhf+PgEO2pTUaKjxvc=
 SHA256 (cargo/globset-0.4.14.tar.gz) = V9o7m1uFvWbzEJP4xAi5CnRDFnJUJGZJfcvf3AIDS+E=
 SHA256 (cargo/globwalk-0.9.1.tar.gz) = C/dg6/aYeNn9jxEMiXA9kM41CVMk0fHty1lcY5Re51c=
@@ -144,7 +144,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.52.0.tar.gz) = GmV+Hp0/UUdFpXKmhG08eqfb4W
 SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1CJjAgwFdwZ2XAQ=
 SHA256 (cargo/winnow-0.5.35.tar.gz) = GTHXipxzhh2gE09FO7H3kM5JsuMOuoQQtLebrHK0ai0=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SIZE (JohnnyMorganz-StyLua-v2.4.1.tar.gz) = 465792
+SIZE (JohnnyMorganz-StyLua-v2.5.2.tar.gz) = 452570
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/anes-0.1.6.tar.gz) = 23857
 SIZE (cargo/anstyle-1.0.4.tar.gz) = 13998
@@ -189,7 +189,7 @@ SIZE (cargo/equivalent-1.0.1.tar.gz) = 6615
 SIZE (cargo/errno-0.3.8.tar.gz) = 10645
 SIZE (cargo/fastrand-2.0.1.tar.gz) = 14664
 SIZE (cargo/fluent-uri-0.1.4.tar.gz) = 33596
-SIZE (cargo/full_moon-2.1.1.tar.gz) = 433720
+SIZE (cargo/full_moon-2.2.0.tar.gz) = 450590
 SIZE (cargo/full_moon_derive-0.11.0.tar.gz) = 5356
 SIZE (cargo/globset-0.4.14.tar.gz) = 25090
 SIZE (cargo/globwalk-0.9.1.tar.gz) = 12572
