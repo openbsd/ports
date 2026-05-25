@@ -1,0 +1,27 @@
+OpenBSD doesn't support useradd system users (-r)
+Index: lib/puppet/provider/user/useradd.rb
+--- lib/puppet/provider/user/useradd.rb.orig
++++ lib/puppet/provider/user/useradd.rb
+@@ -225,7 +225,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+   end
+ 
+   has_features :manages_homedir, :allows_duplicates, :manages_expiry
+-  has_features :system_users unless %w[HP-UX Solaris].include? Puppet.runtime[:facter].value('os.name')
++  has_features :system_users unless %w[HP-UX OpenBSD Solaris].include? Puppet.runtime[:facter].value('os.name')
+ 
+   has_features :manages_passwords, :manages_password_age if Puppet.features.libshadow?
+   has_features :manages_shell
+@@ -273,7 +273,12 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+ 
+   def check_system_users
+     if self.class.system_users? && resource.system?
+-      ["-r"]
++      osfamily = Puppet.runtime[:facter].value('os.family')
++      unless osfamily =~ /OpenBSD/ || osfamily == 'Suse' && osversion <= 11
++        ["-r"]
++      else
++        []
++      end
+     else
+       []
+     end
