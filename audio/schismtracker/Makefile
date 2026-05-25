@@ -1,9 +1,8 @@
 COMMENT =	open-source reimplementation of Impulse Tracker
 
-V =		20251014
+V =		20260524
 DISTNAME =	schismtracker-${V}.source
 PKGNAME =	${DISTNAME:S/.source//}
-REVISION =	1
 
 CATEGORIES =	audio x11
 
