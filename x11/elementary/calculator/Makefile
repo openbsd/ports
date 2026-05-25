@@ -1,14 +1,13 @@
 COMMENT =	calculator from elementary OS
 PKGNAME =	${DISTNAME:S/^/elementary-/}
-REVISION =	0
 
 GH_PROJECT =	calculator
-GH_TAGNAME =	1.5.5
+GH_TAGNAME =	8.0.1
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 granite gtk-3 m
+WANTLIB += c gio-2.0 glib-2.0 gobject-2.0  gtk-4 granite-7 intl m
 
 MODULES =	devel/dconf
 

@@ -1,6 +1,44 @@
 @bin bin/io.elementary.calculator
 share/applications/io.elementary.calculator.desktop
 share/glib-2.0/schemas/io.elementary.calculator.gschema.xml
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/io.elementary.calculator.svg
+share/icons/hicolor/128x128@2/
+share/icons/hicolor/128x128@2/apps/
+share/icons/hicolor/128x128@2/apps/io.elementary.calculator.svg
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/io.elementary.calculator.svg
+share/icons/hicolor/16x16@2/
+share/icons/hicolor/16x16@2/apps/
+share/icons/hicolor/16x16@2/apps/io.elementary.calculator.svg
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/io.elementary.calculator.svg
+share/icons/hicolor/24x24@2/
+share/icons/hicolor/24x24@2/apps/
+share/icons/hicolor/24x24@2/apps/io.elementary.calculator.svg
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/io.elementary.calculator.svg
+share/icons/hicolor/32x32@2/
+share/icons/hicolor/32x32@2/apps/
+share/icons/hicolor/32x32@2/apps/io.elementary.calculator.svg
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/io.elementary.calculator.svg
+share/icons/hicolor/48x48@2/
+share/icons/hicolor/48x48@2/apps/
+share/icons/hicolor/48x48@2/apps/io.elementary.calculator.svg
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/io.elementary.calculator.svg
+share/icons/hicolor/64x64@2/
+share/icons/hicolor/64x64@2/apps/
+share/icons/hicolor/64x64@2/apps/io.elementary.calculator.svg
 share/locale/af/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/ak/
 share/locale/ak/LC_MESSAGES/
@@ -27,6 +65,9 @@ share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/en_CA/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/en_GB/LC_MESSAGES/io.elementary.calculator.mo
+share/locale/en_ZA/
+share/locale/en_ZA/LC_MESSAGES/
+share/locale/en_ZA/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/eo/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/es/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/et/LC_MESSAGES/io.elementary.calculator.mo
@@ -75,8 +116,12 @@ share/locale/my/
 share/locale/my/LC_MESSAGES/
 share/locale/my/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/nb/LC_MESSAGES/io.elementary.calculator.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/nl/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/nn/LC_MESSAGES/io.elementary.calculator.mo
+share/locale/pa/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/pl/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/pt/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/pt_BR/LC_MESSAGES/io.elementary.calculator.mo
@@ -117,6 +162,7 @@ share/locale/zh/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/zh_CN/LC_MESSAGES/io.elementary.calculator.mo
 share/locale/zh_TW/LC_MESSAGES/io.elementary.calculator.mo
 share/metainfo/
-share/metainfo/io.elementary.calculator.appdata.xml
 @tag glib-compile-schemas
 @tag update-desktop-database
+share/metainfo/io.elementary.calculator.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
