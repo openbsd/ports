@@ -1,6 +1,7 @@
 COMMENT=		cryptographic library
 
 DISTNAME=		nettle-4.0
+REVISION=		0
 
 SHARED_LIBS +=  hogweed                   4.0 # 6.7
 SHARED_LIBS +=  nettle                    8.0 # 8.7
