@@ -1,0 +1,26 @@
+Fix build with llvm22
+
+error: incompatible pointer types passing 'gfloat *' (aka 'float *') to parameter of type 'gdouble *' (aka 'double *') [-Wincompatible-pointer-types]
+ 1372 |                     gimp_image_get_resolution (*image, &xres, &yres);
+
+Index: plug-ins/file-tiff/file-tiff-load.c
+--- plug-ins/file-tiff/file-tiff-load.c.orig
++++ plug-ins/file-tiff/file-tiff-load.c
+@@ -1365,11 +1365,16 @@ load_image (GFile        *file,
+                     ! isfinite (yres) ||
+                     yres < GIMP_MIN_RESOLUTION || yres > GIMP_MAX_RESOLUTION)
+                   {
++                    gdouble default_xres = 0.0;
++                    gdouble default_yres = 0.0;
++
+                     g_message (_("Invalid image resolution info, using default"));
+                     /* We need valid xres and yres for computing
+                      * layer_offset_x_pixel and layer_offset_y_pixel.
+                      */
+-                    gimp_image_get_resolution (*image, &xres, &yres);
++                    gimp_image_get_resolution (*image, &default_xres, &default_yres);
++                    xres = (gfloat) default_xres;
++                    yres = (gfloat) default_yres;
+                   }
+                 else
+                   {
