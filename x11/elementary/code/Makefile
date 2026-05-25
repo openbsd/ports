@@ -1,19 +1,20 @@
+BROKEN =	doesn't build with granite 7.x yet
+
 COMMENT =	code editor from elementary OS
 PKGNAME =	${DISTNAME:S/^/elementary-/}
-REVISION =	8
 
 SHARED_LIBS +=	codecore                  0.0 # 0.0
 
 GH_PROJECT =	code
-GH_TAGNAME =	3.4.1
+GH_TAGNAME =	8.3.0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c editorconfig fontconfig gdk-3 gee-0.8 gio-2.0 git2-glib-1.0
-WANTLIB += glib-2.0 gobject-2.0 granite gtk-3 gtksourceview-3.0
+WANTLIB += glib-2.0 gobject-2.0 granite-7 gtk-3 gtksourceview-4
 WANTLIB += gtkspell3-3 intl pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += peas-1.0 peas-gtk-1.0 soup-2.4 vala-0.56 vte-2.91
+WANTLIB += peas-2 soup-2.4 vala-0.56 vte-2.91
 
 MODULES =	devel/dconf
 
@@ -22,14 +23,14 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 
 LIB_DEPENDS =	devel/libgee \
 		devel/libgit2/libgit2-glib \
-		devel/libpeas \
+		devel/libpeas2 \
 		devel/libsoup \
 		devel/vte3 \
 		editors/editorconfig-core-c \
 		lang/vala \
 		textproc/gtkspell3 \
 		x11/elementary/granite \
-		x11/gtksourceview3
+		x11/gtksourceview4
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
