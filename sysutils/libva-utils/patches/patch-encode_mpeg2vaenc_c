@@ -1,7 +1,7 @@
 Index: encode/mpeg2vaenc.c
 --- encode/mpeg2vaenc.c.orig
 +++ encode/mpeg2vaenc.c
-@@ -169,7 +169,7 @@ struct __bitstream {
+@@ -170,7 +170,7 @@ struct __bitstream {
  typedef struct __bitstream bitstream;
  
  static unsigned int
@@ -10,7 +10,7 @@ Index: encode/mpeg2vaenc.c
  {
      unsigned char *pval = (unsigned char *)&val;
  
-@@ -196,7 +196,7 @@ bitstream_end(bitstream *bs)
+@@ -197,7 +197,7 @@ bitstream_end(bitstream *bs)
      int bit_left = 32 - bit_offset;
  
      if (bit_offset) {
@@ -19,7 +19,7 @@ Index: encode/mpeg2vaenc.c
      }
  }
  
-@@ -220,7 +220,7 @@ bitstream_put_ui(bitstream *bs, unsigned int val, int 
+@@ -221,7 +221,7 @@ bitstream_put_ui(bitstream *bs, unsigned int val, int 
      } else {
          size_in_bits -= bit_left;
          bs->buffer[pos] = (bs->buffer[pos] << bit_left) | (val >> size_in_bits);

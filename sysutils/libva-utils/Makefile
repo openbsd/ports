@@ -2,7 +2,7 @@ COMMENT =	collection of tests for VA-API
 
 GH_ACCOUNT =	intel
 GH_PROJECT =	libva-utils
-GH_TAGNAME =	2.22.0
+GH_TAGNAME =	2.23.0
 
 CATEGORIES =	sysutils graphics
 
