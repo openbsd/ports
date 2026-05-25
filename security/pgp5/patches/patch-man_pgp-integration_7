@@ -1,6 +1,7 @@
---- man/pgp-integration.7.orig	Sat Feb  7 17:08:45 1998
-+++ man/pgp-integration.7	Tue Apr 23 03:06:28 2002
-@@ -272,7 +272,7 @@ documentation, which details how to pass
+Index: man/pgp-integration.7
+--- man/pgp-integration.7.orig
++++ man/pgp-integration.7
+@@ -272,7 +272,7 @@ documentation, which details how to pass configuration
  command line, including the public and private keyrings your
  application wishes to use.
  .SH "SEE ALSO"

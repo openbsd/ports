@@ -1,7 +1,7 @@
---- man/Makefile.in.orig	Sat Feb  7 16:54:57 1998
-+++ man/Makefile.in	Tue Apr 23 03:06:28 2002
-@@ -6,7 +6,7 @@
- # $Id: patch-man_Makefile_in,v 1.2 2022/03/11 19:53:50 naddy Exp $
+Index: man/Makefile.in
+--- man/Makefile.in.orig
++++ man/Makefile.in
+@@ -7,6 +7,6 @@
  #
  
 -MAN1=pgp.1 pgpe.1 pgpk.1 pgps.1 pgpv.1

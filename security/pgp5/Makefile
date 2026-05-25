@@ -2,7 +2,7 @@ COMMENT=	Pretty Good Privacy 5.0i (world wide use)
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
 FIX_EXTRACT_PERMISSIONS=Yes
 

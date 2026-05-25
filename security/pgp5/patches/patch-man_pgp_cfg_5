@@ -1,5 +1,6 @@
---- man/pgp.cfg.5.orig	Sat Feb  7 16:54:57 1998
-+++ man/pgp.cfg.5	Tue Apr 23 03:06:28 2002
+Index: man/pgp.cfg.5
+--- man/pgp.cfg.5.orig
++++ man/pgp.cfg.5
 @@ -11,7 +11,7 @@
  .TH PGP 5.0 "JULY 1997 (v5.0)" PGP "User Manual"
  .SH NAME
@@ -9,7 +10,7 @@
  .SH DESCRIPTION
  The default location for this file is ~/.pgp.  You may specify another
  location by setting the environment variable
-@@ -125,9 +125,9 @@ decrypt such messages.  The default is o
+@@ -125,9 +125,9 @@ decrypt such messages.  The default is on.
  
  .SH BUGS
  See

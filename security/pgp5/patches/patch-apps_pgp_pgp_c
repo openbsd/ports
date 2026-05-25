@@ -1,6 +1,7 @@
---- apps/pgp/pgp.c.orig	Sat Feb  7 16:54:56 1998
-+++ apps/pgp/pgp.c	Tue Apr 23 03:06:28 2002
-@@ -1094,7 +1094,7 @@ static PGPInvokedType getInvokedType(cha
+Index: apps/pgp/pgp.c
+--- apps/pgp/pgp.c.orig
++++ apps/pgp/pgp.c
+@@ -1094,7 +1094,7 @@ static PGPInvokedType getInvokedType(char *Argv0)
  				invoked_type = PGPkeys;
  				break;
  					

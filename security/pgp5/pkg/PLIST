@@ -7,10 +7,10 @@ bin/pgpe
 @bin bin/pgpk
 bin/pgps
 bin/pgpv
-lib/libbn.a
-lib/libpgp.a
-lib/libpgptty.a
-lib/libsimple.a
+@static-lib lib/libbn.a
+@static-lib lib/libpgp.a
+@static-lib lib/libpgptty.a
+@static-lib lib/libsimple.a
 lib/pgp5/
 lib/pgp5/language50.txt
 @man man/man1/pgp5.1

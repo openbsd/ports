@@ -1,7 +1,7 @@
---- apps/pgp/Makefile.in.orig	Sat Feb  7 16:54:56 1998
-+++ apps/pgp/Makefile.in	Tue Apr 23 03:06:28 2002
-@@ -6,7 +6,7 @@
- # $Id: patch-apps_pgp_Makefile_in,v 1.2 2022/03/11 19:53:50 naddy Exp $
+Index: apps/pgp/Makefile.in
+--- apps/pgp/Makefile.in.orig
++++ apps/pgp/Makefile.in
+@@ -7,6 +7,6 @@
  #
  
 -PROG = pgp

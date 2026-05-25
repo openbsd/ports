@@ -1,6 +1,7 @@
---- lib/ttyui/pgpUserIO.c.orig	Sat Feb  7 16:54:57 1998
-+++ lib/ttyui/pgpUserIO.c	Tue Apr 23 03:06:29 2002
-@@ -1321,7 +1321,7 @@ pgpDevRandomAccum(int fd, unsigned count
+Index: lib/ttyui/pgpUserIO.c
+--- lib/ttyui/pgpUserIO.c.orig
++++ lib/ttyui/pgpUserIO.c
+@@ -1321,7 +1321,7 @@ pgpDevRandomAccum(int fd, unsigned count)
      pgpAssert(fd >= 0);
  
      for(i = 0; i <= count; ++i) {

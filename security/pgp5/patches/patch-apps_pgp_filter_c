@@ -1,0 +1,12 @@
+Index: apps/pgp/filter.c
+--- apps/pgp/filter.c.orig
++++ apps/pgp/filter.c
+@@ -269,7 +269,7 @@ static Boolean keyValidityOK(struct RingSet *ringset,
+     struct RingIterator *NameIter = NULL;
+     union RingObject *name;
+     Boolean OKToUse = FALSE, FoundName = FALSE;
+-    int len = 0;
++    size_t len = 0;
+     int trust;
+     char *TempNameString = NULL;
+ 

@@ -1,6 +1,7 @@
---- lib/pgp/random/pgpRndPool.c.orig	Sat Aug  9 18:45:13 1997
-+++ lib/pgp/random/pgpRndPool.c	Tue Apr 23 03:06:29 2002
-@@ -296,7 +296,7 @@ struct PgpRandomContext const pgpRandomP
+Index: lib/pgp/random/pgpRndPool.c
+--- lib/pgp/random/pgpRndPool.c.orig
++++ lib/pgp/random/pgpRndPool.c
+@@ -296,7 +296,7 @@ struct PgpRandomContext const pgpRandomPool = {
  * #define UMULH_32(r,a,b) (r) = 0
  */
  #ifndef UMULH_32
