@@ -31,36 +31,36 @@ Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
  
  void
 -LinuxProgramRunner::systemctlAction(QString const &action) {
--  qDebug() << Q("LinuxProgramRunner::systemctlAction: about to execute 'systemctl %1'").arg(action);
+-  qDebug() << u"LinuxProgramRunner::systemctlAction: about to execute 'systemctl %1'"_s.arg(action);
 +UnixProgramRunner::systemctlAction(QString const &action) {
-+  qDebug() << Q("UnixProgramRunner::systemctlAction: about to execute 'systemctl %1'").arg(action);
++  qDebug() << u"UnixProgramRunner::systemctlAction: about to execute 'systemctl %1'"_s.arg(action);
  
    auto args   = QStringList{} << action;
-   auto result = QProcess::execute(Q("systemctl"), args);
+   auto result = QProcess::execute(u"systemctl"_s, args);
 @@ -56,26 +56,26 @@ LinuxProgramRunner::systemctlAction(QString const &act
    if (result == 0)
      return;
  
--  qDebug() << Q("LinuxProgramRunner::systemctlAction: 'systemctl %1' failed: %2").arg(action).arg(result);
-+  qDebug() << Q("UnixProgramRunner::systemctlAction: 'systemctl %1' failed: %2").arg(action).arg(result);
+-  qDebug() << u"LinuxProgramRunner::systemctlAction: 'systemctl %1' failed: %2"_s.arg(action).arg(result);
++  qDebug() << u"UnixProgramRunner::systemctlAction: 'systemctl %1' failed: %2"_s.arg(action).arg(result);
  }
  
  void
 -LinuxProgramRunner::shutDownComputer(Util::Settings::RunProgramConfig &) {
 +UnixProgramRunner::shutDownComputer(Util::Settings::RunProgramConfig &) {
-   systemctlAction(Q("poweroff"));
+   systemctlAction(u"poweroff"_s);
  }
  
  void
 -LinuxProgramRunner::hibernateComputer(Util::Settings::RunProgramConfig &) {
 +UnixProgramRunner::hibernateComputer(Util::Settings::RunProgramConfig &) {
-   systemctlAction(Q("hibernate"));
+   systemctlAction(u"hibernate"_s);
  }
  
  void
 -LinuxProgramRunner::sleepComputer(Util::Settings::RunProgramConfig &) {
 +UnixProgramRunner::sleepComputer(Util::Settings::RunProgramConfig &) {
-   systemctlAction(Q("suspend"));
+   systemctlAction(u"suspend"_s);
  }
  
  void
@@ -70,8 +70,8 @@ Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
  #if defined(HAVE_QTDBUS)
    QString message;
 @@ -102,12 +102,12 @@ LinuxProgramRunner::showDesktopNotification([[maybe_un
-   hints[Q("desktop-entry")] = Q("org.bunkus.mkvtoolnix-gui");
-   hints[Q("urgency")]       = 0u; // low
+   hints[u"desktop-entry"_s] = u"org.bunkus.mkvtoolnix-gui"_s;
+   hints[u"urgency"_s]       = 0u; // low
  
 -  qDebug() << "LinuxProgramRunner::showDesktopNotification: about to notify; message & hints:" << message << hints;
 +  qDebug() << "UnixProgramRunner::showDesktopNotification: about to notify; message & hints:" << message << hints;

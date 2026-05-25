@@ -1,6 +1,6 @@
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-98.0
+DISTNAME=	mkvtoolnix-99.0
 
 CATEGORIES=	multimedia x11
 
