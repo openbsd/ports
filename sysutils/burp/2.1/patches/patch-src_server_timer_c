@@ -1,0 +1,16 @@
+fix build with llvm22
+
+error: incompatible pointer types passing 'long *' to parameter of type 'const time_t *' (aka 'const long long *') [-Wincompatible-pointer-types]
+
+Index: src/server/timer.c
+--- src/server/timer.c.orig
++++ src/server/timer.c
+@@ -117,7 +117,7 @@ static int check_interval(
+ 	time_t time_now)
+ {
+ 	char *cp;
+-	long min_time;
++	time_t min_time;
+ 	long seconds=0;
+ 	char tstmp[64]="";
+ 	char min_time_buf[64]="";

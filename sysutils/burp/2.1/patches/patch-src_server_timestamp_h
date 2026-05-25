@@ -1,0 +1,12 @@
+Index: src/server/timestamp.h
+--- src/server/timestamp.h.orig
++++ src/server/timestamp.h
+@@ -7,7 +7,7 @@ extern int timestamp_read(const char *path, char buf[]
+ extern int timestamp_write(const char *path, const char *tstmp);
+ extern int timestamp_get_new(uint64_t index,
+ 	char *buf, size_t s, char *bufforfile, size_t bs, const char *format);
+-extern long timestamp_to_long(const char *buf);
++extern time_t timestamp_to_long(const char *buf);
+ 
+ #ifdef UTEST
+ extern void timestamp_write_to_buf(char *buf, size_t s,

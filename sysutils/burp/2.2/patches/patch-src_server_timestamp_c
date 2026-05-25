@@ -1,0 +1,19 @@
+Index: src/server/timestamp.c
+--- src/server/timestamp.c.orig
++++ src/server/timestamp.c
+@@ -65,7 +65,7 @@ int timestamp_get_new(uint64_t index,
+ 	return 0;
+ }
+ 
+-long timestamp_to_long(const char *buf)
++time_t timestamp_to_long(const char *buf)
+ {
+ 	struct tm tm;
+ 	const char *b=NULL;
+@@ -76,5 +76,5 @@ long timestamp_to_long(const char *buf)
+ 		return 0;
+ 	// Unset dst so that mktime has to figure it out.
+ 	tm.tm_isdst=-1;
+-	return (long)mktime(&tm);
++	return mktime(&tm);
+ }
