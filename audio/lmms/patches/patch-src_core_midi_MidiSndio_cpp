@@ -1,0 +1,61 @@
+Index: src/core/midi/MidiSndio.cpp
+--- src/core/midi/MidiSndio.cpp.orig
++++ src/core/midi/MidiSndio.cpp
+@@ -42,6 +42,7 @@
+ 
+ MidiSndio::MidiSndio( void ) :
+ 	MidiClientRaw(),
++	m_hdlMutex(),
+ 	m_quit( false )
+ {
+ 	QString dev = probeDevice();
+@@ -86,7 +87,9 @@ QString MidiSndio::probeDevice( void )
+ 
+ void MidiSndio::sendByte( const unsigned char c )
+ {
++	m_hdlMutex.lock();
+ 	mio_write( m_hdl, &c, 1 );
++	m_hdlMutex.unlock();
+ }
+ 
+ 
+@@ -96,20 +99,33 @@ void MidiSndio::run( void )
+ 	nfds_t nfds;
+ 	char buf[0x100], *p;
+ 	size_t n;
++	int revents;
+ 	int ret;
++
+ 	while( m_quit == false && m_hdl )
+ 	{
++		m_hdlMutex.lock();
+ 		nfds = mio_pollfd( m_hdl, &pfd, POLLIN );
++		m_hdlMutex.unlock();
+ 		ret = poll( &pfd, nfds, 100 );
+-		if ( ret < 0 )
++		if ( ret < 0 ) {
++			if (errno == EINTR)
++				continue;
++			fprintf(stderr, "sndio: poll: %s\n", strerror(errno));
+ 			break;
+-		if ( !ret || !( mio_revents( m_hdl, &pfd ) & POLLIN ) )
+-			continue;
+-		n = mio_read( m_hdl, buf, sizeof(buf) );
+-		if ( !n )
+-		{
++		}
++		m_hdlMutex.lock();
++		revents = mio_revents( m_hdl, &pfd );
++		if (revents & POLLHUP) {
++			fprintf(stderr, "sndio: device disconnected\n");
++			m_hdlMutex.unlock();
+ 			break;
+ 		}
++		if (revents & POLLIN) {
++			n = mio_read( m_hdl, buf, sizeof(buf) );
++		} else
++			n = 0;
++		m_hdlMutex.unlock();
+ 		for (p = buf; n > 0; n--, p++)
+ 		{
+ 			parseData( *p );

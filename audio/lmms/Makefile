@@ -5,7 +5,7 @@ DISTNAME =		lmms_$V
 PKGNAME =		lmms-$V
 WRKDIST =		${WRKDIR}/lmms
 EXTRACT_SUFX =		.tar.xz
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio
 
