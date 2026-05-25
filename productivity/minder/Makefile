@@ -1,6 +1,6 @@
 COMMENT =	Mind-mapping application
 
-DIST_TUPLE =	github phase1geo Minder 1.17.0 .
+DIST_TUPLE =	github phase1geo Minder 2.0.9 .
 PKGNAME =	${DISTNAME:L}
 
 CATEGORIES =	productivity
@@ -10,10 +10,10 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE = Yes
 
-WANTLIB += archive c cairo gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 granite gtk-3 gtksourceview-4
-WANTLIB += handy-1 intl json-glib-1.0 m markdown pango-1.0 pangocairo-1.0
-WANTLIB += xml2
+WANTLIB += archive c cairo gdk_pixbuf-2.0 gee-0.8 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 granite-7 graphene-1.0 gtk-4 gtksourceview-5
+WANTLIB += intl json-glib-1.0 m  pango-1.0 pangocairo-1.0
+WANTLIB += webp xml2
 
 MODULES =	devel/dconf \
 		devel/meson \
@@ -30,10 +30,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	archivers/libarchive \
 		devel/json-glib \
-		textproc/discount \
+		graphics/graphene \
+		graphics/libwebp \
 		x11/elementary/granite \
-		x11/gtksourceview4 \
-		x11/libhandy
+		x11/gtksourceview5 
 
 CFLAGS +=	-I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib
