@@ -2,7 +2,7 @@ COMMENT =	Mind-mapping application
 
 DIST_TUPLE =	github phase1geo Minder 2.0.9 .
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	productivity
 
@@ -23,11 +23,11 @@ MODULES =	devel/dconf \
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		lang/vala
+		lang/vala \
+		textproc/discount
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		textproc/discount \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	archivers/libarchive \
