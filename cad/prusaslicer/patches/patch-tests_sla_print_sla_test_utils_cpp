@@ -1,0 +1,19 @@
+Index: tests/sla_print/sla_test_utils.cpp
+--- tests/sla_print/sla_test_utils.cpp.orig
++++ tests/sla_print/sla_test_utils.cpp
+@@ -79,6 +79,7 @@ void export_failed_case(const std::vector<ExPolygons> 
+         do_export_stl = do_export_stl || !intersections.empty();
+     }
+ 
++#ifndef NDEBUG
+     if (do_export_stl) {
+         indexed_triangle_set its;
+         byproducts.suptree_builder.retrieve_full_mesh(its);
+@@ -87,6 +88,7 @@ void export_failed_case(const std::vector<ExPolygons> 
+         m.WriteOBJFile((Catch::getResultCapture().getCurrentTestName() + "_" +
+                         byproducts.obj_fname).c_str());
+     }
++#endif
+ }
+ 
+ void test_supports(const std::string          &obj_filename,
