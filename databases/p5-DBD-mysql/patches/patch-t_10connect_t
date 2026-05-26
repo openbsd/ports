@@ -1,7 +1,7 @@
 Index: t/10connect.t
 --- t/10connect.t.orig
 +++ t/10connect.t
-@@ -71,7 +70,9 @@ ok($dbh->disconnect(), 'Disconnected');
+@@ -73,7 +73,9 @@ ok( ! $dbh->ping(), 'dbh is disconnected and did not s
  eval {$dbh= DBI->connect($test_dsn, $test_user, $test_password,
     { RaiseError => 1, PrintError => 1, AutoCommit => 0,
       Username => '4yZ73s9qeECdWi', Password => '64heUGwAsVoNqo' });};

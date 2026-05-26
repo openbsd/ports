@@ -1,6 +1,5 @@
 COMMENT=		MySQL drivers for the Perl DBI
-DISTNAME=		DBD-mysql-4.050
-REVISION=		1
+DISTNAME=		DBD-mysql-4.055
 
 CATEGORIES=		databases
 

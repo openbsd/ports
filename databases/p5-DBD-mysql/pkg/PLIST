@@ -6,7 +6,7 @@ ${P5ARCH}/DBD/mysql/GetInfo.pm
 @comment ${P5ARCH}/DBD/mysql/INSTALL.pod
 ${P5ARCH}/auto/DBD/
 ${P5ARCH}/auto/DBD/mysql/
-${P5ARCH}/auto/DBD/mysql/mysql.so
+@so ${P5ARCH}/auto/DBD/mysql/mysql.so
 @man man/man3p/Bundle::DBD::mysql.3p
 @man man/man3p/DBD::mysql.3p
 @man man/man3p/DBD::mysql::INSTALL.3p
