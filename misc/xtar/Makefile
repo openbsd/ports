@@ -1,7 +1,7 @@
 COMMENT=	view and manipulate contents of a tar file
 
 DISTNAME=	xtar-1.4
-REVISION=	7
+REVISION=	8
 CATEGORIES=	misc
 
 SITES=		${SITE_XCONTRIB:=utilities/}

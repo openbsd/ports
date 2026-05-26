@@ -1,0 +1,16 @@
+Fix build with llvm22
+
+error: incompatible pointer types passing 'char *' to parameter of type 'char **' [-Wincompatible-pointer-types]
+
+Index: Xbr/XbrGfx.c
+--- Xbr/XbrGfx.c.orig
++++ Xbr/XbrGfx.c
+@@ -351,7 +351,7 @@ unsigned char *XbrGfxParseXBMData(char *data, unsigned
+             ptr++;
+         }
+         token[i] = 0;
+-        val = (char) strtol(token, (char *)NULL, 16);
++        val = (char) strtol(token, NULL, 16);
+         newdata[j++] = val;
+ 
+         if(*ptr == '}' || *ptr == EOF) done = 1;
