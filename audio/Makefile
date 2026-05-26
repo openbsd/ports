@@ -40,6 +40,7 @@
      SUBDIR += dumb
      SUBDIR += easytag
      SUBDIR += espeak
+     SUBDIR += euphonica
      SUBDIR += faad
      SUBDIR += fdk-aac
      SUBDIR += ffmpeg-normalize
