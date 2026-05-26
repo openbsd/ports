@@ -1,9 +1,21 @@
-silence debug printf
+fix build with llvm22 & silence debug printf
 
 Index: src/browsers/playlist3-current-playlist-browser.c
 --- src/browsers/playlist3-current-playlist-browser.c.orig
 +++ src/browsers/playlist3-current-playlist-browser.c
-@@ -594,7 +594,6 @@ static void pl3_current_playlist_add_after_current_son
+@@ -35,9 +35,8 @@
+ 
+ #include "playlist3-playlist-editor.h"
+ 
+-
+-
+-
++#pragma clang diagnostic ignored "-Wincompatible-function-pointer-types"
++#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+ enum
+ {
+     PLAY_QUEUE_DUMMY_PROPERTY,
+@@ -594,7 +593,6 @@ static void pl3_current_playlist_add_after_current_son
  
  static int pl3_current_playlist_song_list_option_menu (GmpcPluginBrowserIface *obj, GtkWidget *tree, GtkMenu *menu)
  {
