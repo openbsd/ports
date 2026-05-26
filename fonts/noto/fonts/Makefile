@@ -2,7 +2,7 @@ COMMENT =		pan-unicode font family
 
 MODFONT_FAMILY =	noto-fonts
 
-MODFONT_VERSION =	2026.03.01
+MODFONT_VERSION =	2026.05.01
 GH_ACCOUNT =		notofonts
 GH_PROJECT =		notofonts.github.io
 GH_TAGNAME =		noto-monthly-release-${MODFONT_VERSION}
@@ -10,6 +10,6 @@ EPOCH =			0
 
 RUN_DEPENDS =		fonts/noto/emoji
 
-MODFONT_FONTFILES =	fonts/*/hinted/ttf/*.ttf
+MODFONT_FONTFILES =	fonts/*/unhinted/otf/*.otf
 
 .include <bsd.port.mk>
