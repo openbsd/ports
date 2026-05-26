@@ -2,12 +2,12 @@ COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggml-org
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		b9186
+GH_TAGNAME =		b9326
 PKGNAME =		llama.cpp-0.0.${GH_TAGNAME:S/b//}
 
-SHARED_LIBS +=		llama 4.1
-SHARED_LIBS +=		llama-common 1.1
-SHARED_LIBS +=		mtmd 2.2
+SHARED_LIBS +=		llama 5.0
+SHARED_LIBS +=		llama-common 2.0
+SHARED_LIBS +=		mtmd 3.0
 
 CATEGORIES =		misc
 
@@ -40,10 +40,10 @@ CFLAGS +=		-I${LOCALBASE}/include
 CXXFLAGS +=		-I${LOCALBASE}/include
 
 post-extract:
-	mkdir -p ${WRKSRC}/build/tools/ui/dist
+	mkdir -p ${WRKBUILD}/tools/ui/dist
 .for _s _t _e in ${DISTFILES.ui:C/^(.*)\{(.*)\}(.*)$/\1 \2 \3/}
 	cp ${FULLDISTDIR}/${DISTNAME}${_s}${_e} \
-		${WRKSRC}/build/tools/ui/dist/${_t}${_e}
+		${WRKBUILD}/tools/ui/dist/${_t}${_e}
 .endfor
 
 post-install:
