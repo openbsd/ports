@@ -1,13 +1,14 @@
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
 
-VERSION =		2.0
+VERSION =		2.1
+DATE =			20260304
 GH_ACCOUNT =		buzzdeee
 GH_PROJECT =		rocrail
 GH_COMMIT =		de50d21631ae4b2210206eecde1eb00f8a8838ef
-DISTNAME =              rocrail-${VERSION}.0.20260304
-PKGNAME-main =		rocrail-${VERSION}.0.20260304
-PKGNAME-gui =		rocview-${VERSION}.0.20260304
+DISTNAME =              rocrail-${VERSION}.${DATE}
+PKGNAME-main =		rocrail-${VERSION}.${DATE}
+PKGNAME-gui =		rocview-${VERSION}.${DATE}
 CATEGORIES =		misc x11
 
 HOMEPAGE =		https://www.rocrail.net/
