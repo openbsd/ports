@@ -1,5 +1,5 @@
 COMMENT =	manipulate dates in perl
-V =		6.76
+V =		6.98
 DISTNAME =	Date-Manip-$V
 PKGNAME =	p5-DateManip-$V
 CATEGORIES =	converters
