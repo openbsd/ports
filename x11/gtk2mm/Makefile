@@ -5,14 +5,14 @@ COMMENT=		C++ interface for gtk2+
 GNOME_PROJECT=		gtkmm
 GNOME_VERSION=		2.24.5
 PKGNAME=		gtk2mm-${GNOME_VERSION}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11 devel
 
 SHARED_LIBS +=  gdkmm-2.4            11.0     # 2.0
 SHARED_LIBS +=  gtkmm-2.4            11.0     # 2.0
 
-HOMEPAGE=		http://www.gtkmm.org/
+HOMEPAGE=		http://gtkmm.gnome.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

@@ -3,12 +3,13 @@ COMMENT=		C++ bindings for GTK+
 GNOME_PROJECT=		gtkmm
 GNOME_VERSION=		4.22.0
 PKGNAME=		gtkmm40-${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		x11 devel
 
 SHARED_LIBS += gtkmm-4.0                 0.4 # 0.0.0
 
-HOMEPAGE=		http://www.gtkmm.org/
+HOMEPAGE=		http://gtkmm.gnome.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

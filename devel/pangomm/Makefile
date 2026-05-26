@@ -4,12 +4,13 @@ COMMENT =		C++ interface for pango
 
 GNOME_PROJECT =		pangomm
 GNOME_VERSION =		2.46.4
+REVISION =		0
 
 CATEGORIES =		devel x11
 
 SHARED_LIBS += pangomm-1.4               10.3 # 1.0.30
 
-HOMEPAGE =		http://www.gtkmm.org/
+HOMEPAGE =		http://gtkmm.gnome.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

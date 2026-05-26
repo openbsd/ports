@@ -5,6 +5,7 @@ COMMENT=		C++ interface for glib2
 GNOME_PROJECT=		glibmm
 GNOME_VERSION=		2.66.8
 PKGNAME=		glib2mm-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS += glibmm_generate_extra_defs-2.4 13.4 # 1.3.0
 SHARED_LIBS += glibmm-2.4                15.4 # 1.3.0
@@ -12,7 +13,7 @@ SHARED_LIBS += giomm-2.4                 14.3 # 1.3.0
 
 CATEGORIES=		devel
 
-HOMEPAGE=		https://www.gtkmm.org/
+HOMEPAGE=		https://gtkmm.gnome.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

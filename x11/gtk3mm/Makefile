@@ -5,13 +5,14 @@ COMMENT=		C++ interface for gtk3+
 GNOME_PROJECT=		gtkmm
 GNOME_VERSION=		3.24.10
 PKGNAME=		gtk3mm-${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		x11 devel
 
 SHARED_LIBS += gdkmm-3.0                 4.5 # 1.1.0
 SHARED_LIBS += gtkmm-3.0                 4.5 # 1.1.0
 
-HOMEPAGE=		http://www.gtkmm.org/
+HOMEPAGE=		http://gtkmm.gnome.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

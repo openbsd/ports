@@ -3,6 +3,7 @@ COMMENT=		C++ API for parts of GLib
 GNOME_PROJECT=		glibmm
 GNOME_VERSION=		2.88.0
 PKGNAME=		glibmm268-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS += glibmm_generate_extra_defs-2.68 0.7 # 1.3.0
 SHARED_LIBS += glibmm-2.68               0.7 # 1.3.0
@@ -10,7 +11,7 @@ SHARED_LIBS += giomm-2.68                0.7 # 1.3.0
 
 CATEGORIES=		devel
 
-HOMEPAGE=		https://www.gtkmm.org/
+HOMEPAGE=		https://gtkmm.gnome.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

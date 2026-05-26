@@ -4,10 +4,11 @@ COMMENT=		common build utilities for GNOME C++ binding libraries
 
 GNOME_PROJECT=		mm-common
 GNOME_VERSION=		1.0.7
+REVISION=		0
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.gtkmm.org/
+HOMEPAGE=		http://gtkmm.gnome.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
