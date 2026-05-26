@@ -2,12 +2,12 @@ COMMENT =	Identity and Access Management solution
 
 CATEGORIES =	security
 
-VERSION =	26.5.3
+VERSION =	26.6.2
 DISTNAME =	keycloak-${VERSION}
 
 SITES =	https://github.com/keycloak/keycloak/releases/download/${VERSION}/
 
-MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
+MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 
 # Apache-2.0
 PERMIT_PACKAGE =	Yes
