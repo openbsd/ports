@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/tray-monitor/fileselectwizardpage.cpp
+--- src/qt-console/tray-monitor/fileselectwizardpage.cpp.orig
++++ src/qt-console/tray-monitor/fileselectwizardpage.cpp
+@@ -237,7 +237,7 @@ void FileSelectWizardPage::changeCurrentFolder(const Q
+                     if (m_currentPathStr == "/") {
+                         m_currentPathStr = "";
+                     } else {
+-                        m_currentPathStr.remove(QRegExp("[^/]+/$"));
++                        m_currentPathStr.remove(QRegularExpression("[^/]+/$"));
+                     }
+ 
+                 } else if (path == "/" && m_currentPathStr == "") {

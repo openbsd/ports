@@ -1,0 +1,32 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/help/help.cpp
+--- src/qt-console/help/help.cpp.orig
++++ src/qt-console/help/help.cpp
+@@ -35,8 +35,8 @@ Help::Help(const QString &path, const QString &file, Q
+         QWidget(parent)
+ {
+    setAttribute(Qt::WA_DeleteOnClose);     /* Make sure we go away */
+-   setAttribute(Qt::WA_GroupLeader);       /* allow calling from modal dialog */
+-
++   setWindowModality(Qt::NonModal);        /* allow calling from modal dialog */
++  
+    setupUi(this);                          /* create window */
+ 
+    textBrowser->setSearchPaths(QStringList() << HELPDIR << path << ":/images");
+@@ -57,11 +57,12 @@ void Help::updateTitle()
+ 
+ void Help::displayFile(const QString &file)
+ {
+-   QRegExp rx;
++   QRegularExpression rx;
+    rx.setPattern("/\\.libs");
+    QString path = QApplication::applicationDirPath();
+-   int pos = rx.indexIn(path);
+-   if (pos)
++   QRegularExpressionMatch match = rx.match(path);
++   int pos = match.capturedStart();
++   if (pos != -1)
+       path = path.remove(pos, 6);
+    path += "/help";
+    new Help(path, file);

@@ -19,7 +19,27 @@ Index: configure
     FD_PLUGIN_DIR="src/plugins/fd"
     DIR_PLUGIN_DIR="src/plugins/dir"
     DLIB="-rpath \$(libdir)"
-@@ -22612,7 +22612,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+@@ -22046,19 +22046,7 @@ fi
+ 
+ BAT_DIR=
+ if test x$support_bat = xyes; then
+-   abc=`$PKG_CONFIG QtGui`
+-   pkg=$?
+-   if test $pkg = 0; then
+-      BAT_DIR=src/qt-console
+-   else
+-     abc=`$PKG_CONFIG Qt5Gui`
+-     pkg=$?
+-     if test $pkg = 0; then
+ 	BAT_DIR="src/qt-console src/qt-console/tray-monitor"
+-     else
+-	as_fn_error $? "Unable to find either Qt4 or Qt5 installation needed by bat" "$LINENO" 5
+-     fi
+-   fi
+ fi
+ 
+ 
+@@ -22612,7 +22600,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
  
  $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
@@ -28,7 +48,7 @@ Index: configure
  		    got_readline="yes"
  
  else
-@@ -22651,7 +22651,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
+@@ -22651,7 +22639,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
  			got_readline="yes"
  			CONS_INC="-I${TOP_DIR}/depkgs/readline"
@@ -37,7 +57,7 @@ Index: configure
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -30612,13 +30612,19 @@ if test "${with_lzo+set}" = set; then :
+@@ -30612,13 +30600,19 @@ if test "${with_lzo+set}" = set; then :
  	     ;;
  	  yes|*)
  	     if test -f ${with_lzo}/include/lzo/lzoconf.h; then
@@ -58,7 +78,7 @@ Index: configure
  	     as_ac_Header=`$as_echo "ac_cv_header_${with_lzo}/lzo/lzoconf.h" | $as_tr_sh`
  ac_fn_c_check_header_mongrel "$LINENO" "${with_lzo}/lzo/lzoconf.h" "$as_ac_Header" "$ac_includes_default"
  if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
-@@ -30638,6 +30644,8 @@ else
+@@ -30638,6 +30632,8 @@ else
  
  fi
  
@@ -67,7 +87,7 @@ Index: configure
  
  	     ;;
  	  esac
-@@ -32454,6 +32462,7 @@ netbsd)
+@@ -32454,6 +32450,7 @@ netbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -75,7 +95,7 @@ Index: configure
     TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-@@ -32472,6 +32481,7 @@ openbsd)
+@@ -32472,6 +32469,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"

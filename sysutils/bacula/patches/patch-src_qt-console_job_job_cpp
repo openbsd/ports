@@ -1,0 +1,77 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/job/job.cpp
+--- src/qt-console/job/job.cpp.orig
++++ src/qt-console/job/job.cpp
+@@ -223,6 +223,7 @@ void Job::storeBwLimit(int val)
+ 
+ void Job::updateRunInfo()
+ {
++   QRegularExpressionMatch match;
+    QString cmd;
+    QStringList results;
+    QStringList lst;
+@@ -256,12 +257,12 @@ void Job::updateRunInfo()
+  *  Bytes=610976
+  *
+  */
+-   QRegExp jobline("(JobId) (\\d+) Job ");
+-   QRegExp itemline("([\\w /]+)[:=]\\s*(.+)");
+-   QRegExp filesline("Files: Examined=([\\d,]+) Backed up=([\\d,])");
+-   QRegExp oldline("Files=([\\d,]+) Bytes=([\\d,]+) Bytes/sec=([\\d,]+) Errors=([\\d,]+)");
+-   QRegExp restoreline("Files: Restored=([\\d,]+) Expected=([\\d,]+) Completed=([\\d,]+)%");
+-   QRegExp restoreline2("Files Examined=([\\d,]+) Expected Files=([\\d,]+) Percent Complete=([\\d,]+)");
++   QRegularExpression jobline("(JobId) (\\d+) Job ");
++   QRegularExpression itemline("([\\w /]+)[:=]\\s*(.+)");
++   QRegularExpression filesline("Files: Examined=([\\d,]+) Backed up=([\\d,])");
++   QRegularExpression oldline("Files=([\\d,]+) Bytes=([\\d,]+) Bytes/sec=([\\d,]+) Errors=([\\d,]+)");
++   QRegularExpression restoreline("Files: Restored=([\\d,]+) Expected=([\\d,]+) Completed=([\\d,]+)%");
++   QRegularExpression restoreline2("Files Examined=([\\d,]+) Expected Files=([\\d,]+) Percent Complete=([\\d,]+)");
+ 
+    QString com(",");
+    QString empty("");
+@@ -270,9 +271,10 @@ void Job::updateRunInfo()
+       foreach (QString mline, results) {
+          foreach (QString line, mline.split("\n")) { 
+             line = line.trimmed();
+-            if (oldline.indexIn(line) >= 0) {
++	    match = oldline.match(line);
++            if (match.hasMatch()) {
+                if (parseit) {
+-                  lst = oldline.capturedTexts();
++                  lst = match.capturedTexts();
+                   label_JobErrors->setText(lst[4]);
+                   label_Speed->setText(convertBytesSI(lst[3].replace(com, empty).toULongLong())+"/s");
+                   label_JobFiles->setText(lst[1]);
+@@ -280,9 +282,9 @@ void Job::updateRunInfo()
+                }
+                continue;
+ 
+-            } else if (filesline.indexIn(line) >= 0) {
++            } else if (match = filesline.match(line); match.hasMatch()) {
+                if (parseit) {
+-                  lst = filesline.capturedTexts(); // Will also catch Backed up
++                  lst = match.capturedTexts(); // Will also catch Backed up
+                   label_FilesExamined->setText(lst[1]);
+                }
+                continue;
+@@ -294,15 +296,13 @@ void Job::updateRunInfo()
+ //                  label_FilesExamined->setText(lst[1]); // Can also handle Expected and Completed
+ //               }
+ //               continue;
+-
+-            } else if (jobline.indexIn(line) >= 0) {
+-               lst = jobline.capturedTexts();
++            } else if (match = jobline.match(line); match.hasMatch()) {
++               lst = match.capturedTexts();
+                lst.removeFirst();
+ 
+-            } else if (itemline.indexIn(line) >= 0) {
+-               lst = itemline.capturedTexts();
++            } else if (match = itemline.match(line); match.hasMatch()) {
++               lst = match.capturedTexts();
+                lst.removeFirst();
+-
+             } else {
+                if (mainWin->m_miscDebug) 
+                   Pmsg1(0, "bad line=%s\n", line.toUtf8().data());

@@ -1,0 +1,49 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/tray-monitor/task.cpp
+--- src/qt-console/tray-monitor/task.cpp.orig
++++ src/qt-console/tray-monitor/task.cpp
+@@ -913,14 +913,14 @@ bool task::get_client_jobs(const char* client)
+     res->bs->fsend(".bvfs_get_jobs client=%s\n", client);
+     while (get_next_line(res)) {
+         QString line(curline);
+-        QStringList line_lst = line.split(" ", QString::SkipEmptyParts);
++        QStringList line_lst = line.split(" ", Qt::SkipEmptyParts);
+ 
+         model->setItem(row, 0, new QStandardItem(line_lst[0]));
+         
+         model->setItem(row, 1, new QStandardItem(line_lst[3]));
+ 
+         QDateTime date;
+-        date.setTime_t(line_lst[1].toUInt());
++        date.setSecsSinceEpoch(line_lst[1].toUInt());
+         QStandardItem *dateItem = new QStandardItem();
+         dateItem->setData(date, Qt::DisplayRole);
+         model->setItem(row, 3, dateItem);
+@@ -1027,7 +1027,7 @@ bool task::get_job_files(const char* job, uint64_t pat
+     //+ " limit=" + limit + " offset=" + offset ;
+     while (get_next_line(res)) {
+         QString line(curline);
+-        QStringList line_lst = line.split("\t", QString::KeepEmptyParts);
++        QStringList line_lst = line.split("\t", Qt::KeepEmptyParts);
+         if ((line_lst.size() == 6) && line_lst[5] != ".")
+         {
+             DirectoryItem *d = new DirectoryItem();
+@@ -1063,7 +1063,7 @@ bool task::get_job_files(const char* job, uint64_t pat
+ 
+     while (get_next_line(res)) {
+         QString line(curline);
+-        QStringList line_lst = line.split("\t", QString::SkipEmptyParts);
++        QStringList line_lst = line.split("\t", Qt::SkipEmptyParts);
+         if ((line_lst.size() == 6) && line_lst[5] != ".")
+         {
+             FileItem *f = new FileItem();
+@@ -1424,7 +1424,7 @@ QString task::parse_plugins(const QString& jobIds, con
+     while (get_next_line(res)) {
+         QString line(curline);
+         line = line.simplified();
+-        QStringList line_lst = line.split(":", QString::SkipEmptyParts);
++        QStringList line_lst = line.split(":", Qt::SkipEmptyParts);
+ 
+         if (!line_lst.empty() && fieldName.compare(line_lst[0]) == 0) {
+             sl << line_lst[1];

@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/util/comboutil.h
+--- src/qt-console/util/comboutil.h.orig
++++ src/qt-console/util/comboutil.h
+@@ -24,7 +24,7 @@
+ 
+ class QComboBox;
+ class QString;
+-class QStringList;
++//class QStringList;
+ 
+ /* selects value val on combo, if exists */
+ void comboSel(QComboBox *combo, const QString &val);

@@ -1,0 +1,14 @@
+Index: src/qt-console/bat.pro
+--- src/qt-console/bat.pro.orig
++++ src/qt-console/bat.pro
+@@ -30,8 +30,8 @@ QMAKE_INSTALL_PROGRAM = $${LIBTOOL_INSTALL} install -m
+ QMAKE_CLEAN += .libs/* bat
+ 
+ qwt {
+-  INCLUDEPATH += 
+-  LIBS        +=  
++  INCLUDEPATH += /usr/local/include
++  LIBS        +=  -lqwt-qt6
+ }
+ 
+ macx {

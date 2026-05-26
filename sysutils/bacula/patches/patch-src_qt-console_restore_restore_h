@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/restore/restore.h
+--- src/qt-console/restore/restore.h.orig
++++ src/qt-console/restore/restore.h
+@@ -125,7 +125,7 @@ private slots: (private)
+    QString m_cwd;
+    QHash<QString, QTreeWidgetItem *> m_dirPaths;
+    QHash<QTreeWidgetItem *,QString> m_dirTreeItems;
+-   QRegExp m_rx;
++   QRegularExpression m_rx;
+    QString m_splitText;
+ };
+ 

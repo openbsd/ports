@@ -1,0 +1,23 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/tray-monitor/tray-ui.h
+--- src/qt-console/tray-monitor/tray-ui.h.orig
++++ src/qt-console/tray-monitor/tray-ui.h
+@@ -347,7 +347,7 @@ private slots:
+        }
+        if (dirs.count() > 1) {
+           /* TODO: Set Modal attribute */
+-          QString dir = QInputDialog::getItem(this, _("Select a Director"), "Director:", dirs, 0, false, &ok, 0);
++          QString dir = QInputDialog::getItem(this, _("Select a Director"), "Director:", dirs, 0, false, &ok, Qt::Widget);
+           if (!ok) {
+              return NULL;
+           }
+@@ -410,7 +410,7 @@ private slots:
+        if (oldnbjobs) {
+           QString q;
+           tray->setIcon(QIcon(":/images/R.png"));
+-          tray->setToolTip(q.sprintf("Bacula Tray Monitor - %d job%s running", oldnbjobs, oldnbjobs>1?"s":""));
++          tray->setToolTip(q.asprintf("Bacula Tray Monitor - %d job%s running", oldnbjobs, oldnbjobs>1?"s":""));
+           //tray->showMessage();   Can use this function to display a popup
+ 
+        } else {

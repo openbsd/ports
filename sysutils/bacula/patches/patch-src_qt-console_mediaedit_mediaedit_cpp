@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/mediaedit/mediaedit.cpp
+--- src/qt-console/mediaedit/mediaedit.cpp.orig
++++ src/qt-console/mediaedit/mediaedit.cpp
+@@ -82,7 +82,7 @@ MediaEdit::MediaEdit(QTreeWidgetItem *parentWidget, QS
+    }
+ 
+    QString where = " WHERE Media.VolumeName = '" + mediaId + "' ";
+-   if (mediaId.contains(QRegExp("^[0-9]+$"))) {
++   if (mediaId.contains(QRegularExpression("^[0-9]+$"))) {
+       where = " WHERE Media.MediaId=" + mediaId;
+    }
+    query += " FROM Media"

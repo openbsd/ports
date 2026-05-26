@@ -1,0 +1,29 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/run/run.cpp
+--- src/qt-console/run/run.cpp.orig
++++ src/qt-console/run/run.cpp
+@@ -73,14 +73,13 @@ runPage::runPage(const QString &defJob, const QString 
+ void runPage::init()
+ {
+    QDateTime dt;
+-   QDesktopWidget *desk = QApplication::desktop(); 
+    QRect scrn;
+ 
+    m_name = tr("Run");
+    pgInitialize();
+    setupUi(this);
+    /* Get screen rectangle */
+-   scrn = desk->screenGeometry(desk->primaryScreen());
++   scrn = QGuiApplication::primaryScreen()->availableGeometry();
+    /* Position this window in the middle of the screen */
+    this->move((scrn.width()-this->width())/2, (scrn.height()-this->height())/2);
+    QTreeWidgetItem* thisitem = mainWin->getFromHash(this);
+@@ -181,6 +180,6 @@ void runPage::job_name_change(int index)
+       m_console->dir_cmd(cmd, m_console->level_list);
+       levelCombo->clear();
+       levelCombo->addItems(m_console->level_list);
+-      levelCombo->setCurrentIndex(levelCombo->findText(job_defs.level, 0 /*Qt::MatchExactly*/));
++      levelCombo->setCurrentIndex(levelCombo->findText(job_defs.level, Qt::MatchExactly));
+    }
+ }

@@ -1,0 +1,100 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/restore/restoretree.cpp
+--- src/qt-console/restore/restoretree.cpp.orig
++++ src/qt-console/restore/restoretree.cpp
+@@ -44,7 +44,7 @@ restoreTree::restoreTree() : Pages()
+ 
+    QGridLayout *gridLayout = new QGridLayout(this);
+    gridLayout->setSpacing(6);
+-   gridLayout->setMargin(9);
++   gridLayout->setContentsMargins(9,9,9,9);
+    gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+ 
+    m_splitter = new QSplitter(Qt::Vertical, this);
+@@ -426,12 +426,12 @@ void restoreTree::directoryCurrentItemChanged(QTreeWid
+                tableItem = new QTableWidgetItem(field, 1);
+                /* Possible flags are Qt::ItemFlags flag = Qt::ItemIsSelectable | Qt::ItemIsEditablex
+                 *  | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsUserCheckable 
+-                *  | Qt::ItemIsEnabled | Qt::ItemIsTristate; */
++                *  | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate; */
+                tableItem->setForeground(blackBrush);
+                /* Just in case a column ever gets added */
+                if (mainWin->m_sqlDebug) Pmsg1(000, "Column=%d\n", column);
+                if (column == 0) {
+-                  Qt::ItemFlags flag = Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate;
++                  Qt::ItemFlags flag = Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate;
+                   tableItem->setFlags(flag);
+                   tableItem->setData(Qt::UserRole, QVariant(directory));
+                   fileTable->setItem(row, column, tableItem);
+@@ -537,13 +537,13 @@ void restoreTree::fileCurrentItemChanged(QTableWidgetI
+                      }
+                   }
+                   tableItem = new QTableWidgetItem(field, 1);
+-                  tableItem->setFlags(0);
++                  tableItem->setFlags(Qt::NoItemFlags);
+                   tableItem->setForeground(blackBrush);
+                   tableItem->setData(Qt::UserRole, QVariant(directory));
+                   versionTable->setItem(row, column, tableItem);
+                   if (mainWin->m_sqlDebug) Pmsg1(000, "Column=%d\n", column);
+                   if (column == 0) {
+-                     Qt::ItemFlags flag = Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate;
++                     Qt::ItemFlags flag = Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate;
+                      tableItem->setFlags(flag);
+                      m_versionCheckStateList.append(Qt::Unchecked);
+                      tableItem->setCheckState(Qt::Unchecked);
+@@ -687,7 +687,7 @@ void restoreTree::populateJobTable()
+                      }
+                   }
+                   tableItem = new QTableWidgetItem(field, 1);
+-                  tableItem->setFlags(0);
++                  tableItem->setFlags(Qt::NoItemFlags);
+                   tableItem->setForeground(blackBrush);
+                   jobTable->setItem(row, column, tableItem);
+                   if (mainWin->m_sqlDebug) Pmsg1(000, "Column=%d\n", column);
+@@ -695,12 +695,12 @@ void restoreTree::populateJobTable()
+                      bool ok;
+                      int purged = fieldlist[purgedIndex].toInt(&ok, 10); 
+                      if (!((ok) && (purged == 1))) {
+-                        Qt::ItemFlags flag = Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate;
++                        Qt::ItemFlags flag = Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate;
+                         tableItem->setFlags(flag);
+                         tableItem->setCheckState(Qt::Checked);
+                         tableItem->setBackground(Qt::green);
+                      } else {
+-                        tableItem->setFlags(0);
++                        tableItem->setFlags(Qt::NoItemFlags);
+                         tableItem->setCheckState(Qt::Unchecked);
+                      }
+                   }
+@@ -708,12 +708,12 @@ void restoreTree::populateJobTable()
+                }
+             }
+             tableItem = new QTableWidgetItem(QIcon(QString::fromUtf8(":images/go-up.png")), "", 1);
+-            tableItem->setFlags(0);
++            tableItem->setFlags(Qt::NoItemFlags);
+             tableItem->setForeground(blackBrush);
+             jobTable->setItem(row, column, tableItem);
+             column++;
+             tableItem = new QTableWidgetItem(QIcon(QString::fromUtf8(":images/go-down.png")), "", 1);
+-            tableItem->setFlags(0);
++            tableItem->setFlags(Qt::NoItemFlags);
+             tableItem->setForeground(blackBrush);
+             jobTable->setItem(row, column, tableItem);
+             row++;
+@@ -1404,6 +1404,7 @@ void restoreTree::directorySetIcon(int operation, int 
+  */
+ void restoreTree::restoreButtonPushed()
+ {
++#ifdef tb
+    /* Set progress bars and repaint */
+    prLabel1->setVisible(true);
+    prLabel1->setText(tr("Task 1 of 3"));
+@@ -1622,6 +1623,7 @@ void restoreTree::restoreButtonPushed()
+    prBar2->setVisible(false);
+    prLabel1->setVisible(false);
+    prLabel2->setVisible(false);
++#endif
+ }
+ 
+ int restoreTree::mostRecentVersionfromFullPath(QString &fullPath)

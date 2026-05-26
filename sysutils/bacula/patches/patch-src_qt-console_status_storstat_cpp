@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/status/storstat.cpp
+--- src/qt-console/status/storstat.cpp.orig
++++ src/qt-console/status/storstat.cpp
+@@ -254,7 +254,7 @@ void StorStat::populateTerminated()
+             field = field.trimmed();  /* strip leading & trailing spaces */
+             p_tableitem = new QTableWidgetItem(field, 1);
+             p_tableitem->setForeground(blackBrush);
+-            p_tableitem->setFlags(0);
++            p_tableitem->setFlags(Qt::NoItemFlags);
+             if (flaglist[column].contains("R"))
+                p_tableitem->setTextAlignment(Qt::AlignRight);
+             if (flaglist[column].contains("C")) {

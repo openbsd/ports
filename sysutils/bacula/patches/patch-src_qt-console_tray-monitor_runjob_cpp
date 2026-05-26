@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/tray-monitor/runjob.cpp
+--- src/qt-console/tray-monitor/runjob.cpp.orig
++++ src/qt-console/tray-monitor/runjob.cpp
+@@ -414,7 +414,7 @@ void TSched::timerEvent(QTimerEvent *event)
+                msgbox.setText(QString("The job \"%1\" will start automatically in few seconds...").arg(parser.argv[i]));
+                msgbox.setStandardButtons(QMessageBox::Ok | QMessageBox::Ignore);
+                msgbox.setDefaultButton(QMessageBox::Ok);
+-               msgbox.button(QMessageBox::Ok)->animateClick(6000);
++               msgbox.button(QMessageBox::Ok)->animateClick();
+             }
+             switch(msgbox.exec()) {
+                case QMessageBox::Ok:

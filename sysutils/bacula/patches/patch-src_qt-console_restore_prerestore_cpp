@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/restore/prerestore.cpp
+--- src/qt-console/restore/prerestore.cpp.orig
++++ src/qt-console/restore/prerestore.cpp
+@@ -271,7 +271,7 @@ bool prerestorePage::checkJobIdList()
+          "Press OK to continue?"), QMessageBox::Ok );
+       return false;
+    }
+-   QStringList joblist = line.split(",", QString::SkipEmptyParts);
++   QStringList joblist = line.split(",", Qt::SkipEmptyParts);
+    bool allintokay = true, alljobok = true, allisjob = true;
+    QString jobName(""), clientName("");
+    foreach (QString job, joblist) {

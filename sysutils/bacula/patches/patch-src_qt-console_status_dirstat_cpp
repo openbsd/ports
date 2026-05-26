@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/status/dirstat.cpp
+--- src/qt-console/status/dirstat.cpp.orig
++++ src/qt-console/status/dirstat.cpp
+@@ -157,7 +157,7 @@ void DirStat::populateTerminated()
+             field = field.trimmed();  /* strip leading & trailing spaces */
+             p_tableitem = new QTableWidgetItem(field, 1);
+             p_tableitem->setForeground(blackBrush);
+-            p_tableitem->setFlags(0);
++            p_tableitem->setFlags(Qt::NoItemFlags);
+             if (flaglist[column].contains("R"))
+                p_tableitem->setTextAlignment(Qt::AlignRight);
+             if (flaglist[column].contains("C")) {

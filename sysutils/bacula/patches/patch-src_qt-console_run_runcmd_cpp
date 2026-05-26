@@ -1,0 +1,25 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/run/runcmd.cpp
+--- src/qt-console/run/runcmd.cpp.orig
++++ src/qt-console/run/runcmd.cpp
+@@ -60,7 +60,7 @@ void runCmdPage::fill()
+ {
+    QString item, val;
+    QStringList items;
+-   QRegExp rx("^.*:\\s*(\\S.*$)");   /* Regex to get value */
++   QRegularExpression rx("^.*:\\s*(\\S.*$)");   /* Regex to get value */
+ 
+    clientCombo->addItems(m_console->client_list);
+    filesetCombo->addItems(m_console->fileset_list);
+@@ -74,8 +74,8 @@ void runCmdPage::fill()
+    item = m_console->msg(m_conn);
+    items = item.split("\n");
+    foreach(item, items) {
+-      rx.indexIn(item);
+-      val = rx.cap(1);
++      QRegularExpressionMatch mrx = rx.match(item);
++      val = mrx.captured(1);
+       Dmsg1(100, "Item=%s\n", item.toUtf8().data());
+       Dmsg1(100, "Value=%s\n", val.toUtf8().data());
+ 

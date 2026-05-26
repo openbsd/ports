@@ -16,8 +16,7 @@ PKGNAME-bat=		bacula-bat-$V
 PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
-
-REVISION-server=	0
+REVISION=		1
 
 CATEGORIES=		sysutils
 
@@ -34,7 +33,7 @@ SHARED_LIBS +=  baccats-postgresql   ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-sqlite3      ${BACCATS_LIBV}
 
 SITES=			${SITE_SOURCEFORGE:=bacula/}
-HOMEPAGE=		http://www.bacula.org/
+HOMEPAGE=		https://www.bacula.org/
 
 WANTLIB += c crypto m pthread ssl z ${COMPILER_LIBCXX}
 
@@ -84,7 +83,7 @@ CONFIGURE_ARGS=		--enable-smartalloc \
 			--with-sqlite3
 
 MAKE_FLAGS=		NO_ECHO=
-USE_LIBTOOL=		gnu# base libtool with Qt5 is in the too-hard basket
+USE_LIBTOOL=		gnu# base libtool with Qt6 is in the too-hard basket
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ENV=		CONFIG_SITE="${PORTSDIR}/infrastructure/db/config.site" \
@@ -118,15 +117,15 @@ WANTLIB-mysql += m mariadb ${COMPILER_LIBCXX}
 LIB_DEPENDS-mysql +=	${MODGCC4_CPPLIBDEP} \
 			databases/mariadb
 
-WANTLIB-sqlite3 += sqlite3 m pthread z ${COMPILER_LIBCXX}
+WANTLIB-sqlite3 += sqlite3 m pthread ${COMPILER_LIBCXX}
 LIB_DEPENDS-sqlite3=	${MODGCC4_CPPLIBDEP} \
 			databases/sqlite3
 
-MODULES +=		x11/qt5
+MODULES +=		x11/qt6
 MODQT_DEPS =		No
 
 WANTLIB-bat += ${WANTLIB} bac baccfg bacfind
-WANTLIB-bat += GL Qt5Core Qt5Gui Qt5Widgets qwt
+WANTLIB-bat += GL Qt6Core Qt6Gui Qt6Widgets
 WANTLIB-bat += lib/inotify/inotify
 
 RUN_DEPENDS-bat=	${RUN_DEPENDS} \
@@ -134,8 +133,7 @@ RUN_DEPENDS-bat=	${RUN_DEPENDS} \
 LIB_DEPENDS-bat=	${LIB_DEPENDS} \
 			${MODQT_LIB_DEPENDS} \
 			devel/libinotify \
-			sysutils/bacula,-main \
-			x11/qwt
+			sysutils/bacula,-main
 
 RUN_DEPENDS-server=	lang/gawk
 
@@ -145,10 +143,8 @@ RUN_DEPENDS-server=	lang/gawk
 CONFIGURE_ARGS +=	--disable-bat
 .else
 CONFIGURE_ARGS +=	--enable-bat
-# something in tray-monitor seems to still depend on this (at least,
-# it complains if junked during the build), though it looks like the dep
-# is supposed to have been removed by now.
-BUILD_DEPENDS +=	x11/qwt
+# Depends on qwt header files only
+BUILD_DEPENDS +=	x11/qwt,-common
 .endif
 
 .if !${BUILD_PACKAGES:M-mysql}

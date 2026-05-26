@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/joblist/joblist.cpp
+--- src/qt-console/joblist/joblist.cpp.orig
++++ src/qt-console/joblist/joblist.cpp
+@@ -66,7 +66,7 @@ JobList::JobList(const QString &mediaName, const QStri
+ 
+    QGridLayout *gridLayout = new QGridLayout(this);
+    gridLayout->setSpacing(6);
+-   gridLayout->setMargin(9);
++   gridLayout->setContentsMargins(9,9,9,9);
+    gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+ 
+    m_splitter = new QSplitter(Qt::Vertical, this);

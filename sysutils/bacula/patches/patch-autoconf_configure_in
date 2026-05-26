@@ -1,0 +1,12 @@
+Index: autoconf/configure.in
+--- autoconf/configure.in.orig
++++ autoconf/configure.in
+@@ -456,7 +456,7 @@ dnl look for Qt4
+       BAT_DIR=src/qt-console
+    else
+ dnl look for Qt5
+-     abc=`$PKG_CONFIG Qt5Gui`
++     abc=`PKG_CONFIG_PATH="/usr/local/lib/qt6/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}" $PKG_CONFIG --exists Qt6Gui`
+      pkg=$?
+      if test $pkg = 0; then
+ 	BAT_DIR="src/qt-console src/qt-console/tray-monitor"

@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/restore/brestore.cpp
+--- src/qt-console/restore/brestore.cpp.orig
++++ src/qt-console/restore/brestore.cpp
+@@ -162,7 +162,7 @@ void bRestore::displayFiles(int64_t pathid, QString pa
+          if (m_path == "/") {
+             m_path = "";
+          } else {
+-            m_path.remove(QRegExp("[^/]+/$"));
++            m_path.remove(QRegularExpression("[^/]+/$"));
+          }
+ 
+       } else if (path == "/" && m_path == "") {

@@ -1,0 +1,15 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/qstd.cpp
+--- src/qt-console/qstd.cpp.orig
++++ src/qt-console/qstd.cpp
+@@ -30,7 +30,8 @@ int qstd::promptInt(int base /* =10 */) { /* Usage: in
+     QString numstr;
+     int result;
+     bool ok;
+-    cout << ": " << flush;
++    cout << ": ";
++    cout.flush();
+     while (1) {
+         numstr = cin.readLine();
+         result = numstr.toInt(&ok, base);

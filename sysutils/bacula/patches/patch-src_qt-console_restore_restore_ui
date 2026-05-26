@@ -1,0 +1,14 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/restore/restore.ui
+--- src/qt-console/restore/restore.ui.orig
++++ src/qt-console/restore/restore.ui
+@@ -219,7 +219,7 @@
+      </widget>
+      <widget class="QTreeWidget" name="fileWidget" >
+       <property name="sizePolicy" >
+-       <sizepolicy vsizetype="Expanding" hsizetype="Fixed" >
++       <sizepolicy vsizetype="Expanding" hsizetype="MinimumExpanding" >
+         <horstretch>144</horstretch>
+         <verstretch>1</verstretch>
+        </sizepolicy>

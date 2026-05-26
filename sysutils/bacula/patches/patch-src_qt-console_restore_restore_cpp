@@ -1,0 +1,15 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/restore/restore.cpp
+--- src/qt-console/restore/restore.cpp.orig
++++ src/qt-console/restore/restore.cpp
+@@ -109,7 +109,8 @@ void restorePage::fillDirectory()
+       strip_trailing_junk(p);
+       if (*p == '$' || !*p) { continue; }
+       if (first) {
+-         if (m_rx.indexIn(QString(p)) != -1) { continue; }
++	 QRegularExpressionMatch rxm = m_rx.match(QString(p));
++	 if (rxm.hasMatch()) { continue; }
+          first = false;
+       }
+       l = p;

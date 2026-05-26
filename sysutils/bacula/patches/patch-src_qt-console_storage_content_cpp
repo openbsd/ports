@@ -1,0 +1,27 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/storage/content.cpp
+--- src/qt-console/storage/content.cpp.orig
++++ src/qt-console/storage/content.cpp
+@@ -190,10 +190,10 @@ void Content::populateContent()
+    tableTray->clearContents();
+ 
+    // take only valid records, TODO: Add D to get drive status
+-   QStringList results = results_all.filter(QRegExp("^[IS]\\|[0-9]+\\|"));
++   QStringList results = results_all.filter(QRegularExpression("^[IS]\\|[0-9]+\\|"));
+    tableContent->setRowCount(results.size());
+ 
+-   QStringList io_results = results_all.filter(QRegExp("^I\\|[0-9]+\\|"));
++   QStringList io_results = results_all.filter(QRegularExpression("^I\\|[0-9]+\\|"));
+    tableTray->setRowCount(io_results.size());
+ 
+    QString resultline;
+@@ -271,7 +271,7 @@ void Content::populateContent()
+ 
+    tableDrive->verticalHeader()->hide();
+    /* Get count of rows needed (Drives) */
+-   QStringList drives = results_all.filter(QRegExp("^D\\|[0-9]+\\|"));
++   QStringList drives = results_all.filter(QRegularExpression("^D\\|[0-9]+\\|"));
+    /* Ensure we have sufficient rows for Drive display */
+    tableDrive->setRowCount(drives.size()); 
+    row = 0;

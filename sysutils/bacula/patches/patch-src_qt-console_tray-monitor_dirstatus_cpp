@@ -1,0 +1,28 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/tray-monitor/dirstatus.cpp
+--- src/qt-console/tray-monitor/dirstatus.cpp.orig
++++ src/qt-console/tray-monitor/dirstatus.cpp
+@@ -76,9 +76,9 @@ void DIRStatus::taskDone(task *t)
+                TableItemFormatter item(*status.tableRunning, row++);
+                item.setNumericFld(col++, QString(edit_uint64(rjob->JobId, ed1)));
+                item.setTextFld(col++, QString(rjob->Job));
+-               item.setJobLevelFld(col++, QString(rjob->JobLevel));
++               item.setJobLevelFld(col++, QString((char *)&rjob->JobLevel));
+                item.setTextFld(col++, QString(rjob->Client));
+-               item.setJobStatusFld(col++, QString(rjob->JobStatus));
++               item.setJobStatusFld(col++, QString((char *)&rjob->JobStatus));
+                item.setTextFld(col++, QString(rjob->Storage));
+                item.setNumericFld(col++, QString(edit_uint64(rjob->JobFiles, ed1)));
+                item.setBytesFld(col++, QString(edit_uint64(rjob->JobBytes, ed1)));
+@@ -109,8 +109,8 @@ void DIRStatus::taskDone(task *t)
+                TableItemFormatter item(*status.tableTerminated, row++);
+                item.setNumericFld(col++, QString(edit_uint64(ljob->JobId, ed1)));
+                item.setTextFld(col++, QString(ljob->Job));
+-               item.setJobLevelFld(col++, QString(ljob->JobLevel));
+-               item.setJobStatusFld(col++, QString(ljob->JobStatus));
++               item.setJobLevelFld(col++, QString((char *)&ljob->JobLevel));
++               item.setJobStatusFld(col++, QString((char *)&ljob->JobStatus));
+                item.setNumericFld(col++, QString(edit_uint64(ljob->JobFiles, ed1)));
+                item.setBytesFld(col++, QString(edit_uint64(ljob->JobBytes, ed1)));
+                item.setNumericFld(col++, QString(edit_uint64(ljob->Errors, ed1)));

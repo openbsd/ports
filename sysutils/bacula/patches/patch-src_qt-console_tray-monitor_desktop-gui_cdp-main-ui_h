@@ -1,0 +1,23 @@
+bacula-15.0.3-qt6-gentoo.patch from https://dev.gentoo.org/~tomjbe/distfiles/
+
+Index: src/qt-console/tray-monitor/desktop-gui/cdp-main-ui.h
+--- src/qt-console/tray-monitor/desktop-gui/cdp-main-ui.h.orig
++++ src/qt-console/tray-monitor/desktop-gui/cdp-main-ui.h
+@@ -18,7 +18,7 @@
+ */
+ 
+ #ifndef CDPUI_H
+-#define CPDUI_H
++#define CDPUI_H
+ 
+ #include "../tray-monitor/common.h"
+ #include "backupservice.h"
+@@ -31,7 +31,7 @@
+ 
+ #include <QFileSystemModel>
+ #include <QTreeView>
+-#include <QDesktopWidget>
++#include <QScreen>
+ #include <QHeaderView>
+ #include <QListWidget>
+ #include <QPushButton>
