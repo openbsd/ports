@@ -1,6 +1,6 @@
 COMMENT =		convert between ASN.1 encodings and text
 
-V =			0.7.0
+V =			0.8.0
 MODGO_MODNAME =		github.com/google/der-ascii
 MODGO_VERSION =		v$V
 
