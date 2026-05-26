@@ -1,0 +1,6 @@
+Euphonica is an MPD client with delusions of grandeur, made with Rust,
+GTK4 and Libadwaita.
+
+It provides playback controls, queue management, playlist editing,
+library browsing, metadata display, and artwork/lyrics fetching for MPD
+servers.

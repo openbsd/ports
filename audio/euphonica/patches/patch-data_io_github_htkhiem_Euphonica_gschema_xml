@@ -1,0 +1,29 @@
+Index: data/io.github.htkhiem.Euphonica.gschema.xml
+--- data/io.github.htkhiem.Euphonica.gschema.xml.orig
++++ data/io.github.htkhiem.Euphonica.gschema.xml
+@@ -17,7 +17,6 @@
+ 	</enum>
+ 
+ 	<enum id="io.github.htkhiem.Euphonica.pcmsource">
+-		<value nick="pipewire" value="1"/>
+ 		<value nick="fifo" value="0"/>
+ 	</enum>
+ 
+@@ -77,7 +76,7 @@
+ 		</key>
+ 
+ 		<key name="mpd-visualizer-pcm-source" enum='io.github.htkhiem.Euphonica.pcmsource'>
+-			<default>'pipewire'</default>
++			<default>'fifo'</default>
+ 		</key>
+ 
+ 		<key name="mpd-fifo-path" type="s">
+@@ -271,7 +270,7 @@
+ 			<default>'percents'</default>
+ 		</key>
+ 		<key name="use-visualizer" type="b">
+-			<default>true</default>
++			<default>false</default>
+ 		</key>
+ 		<key name="visualizer-top-opacity" type="d">
+ 			<default>0.9</default>

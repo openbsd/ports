@@ -1,0 +1,11 @@
+@bin bin/euphonica
+share/applications/io.github.htkhiem.Euphonica.desktop
+share/euphonica/
+share/euphonica/euphonica.gresource
+share/glib-2.0/schemas/io.github.htkhiem.Euphonica.gschema.xml
+share/icons/hicolor/scalable/apps/io.github.htkhiem.Euphonica.svg
+share/icons/hicolor/symbolic/apps/io.github.htkhiem.Euphonica-symbolic.svg
+share/metainfo/io.github.htkhiem.Euphonica.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag glib-compile-schemas
+@tag update-desktop-database

@@ -1,0 +1,11 @@
+Index: src/gtk/preferences/client.ui
+--- src/gtk/preferences/client.ui.orig
++++ src/gtk/preferences/client.ui
+@@ -111,7 +111,6 @@
+               <object class="GtkStringList">
+                 <items>
+                   <item>MPD FIFO</item>
+-                  <item>PipeWire</item>
+                 </items>
+               </object>
+             </property>
