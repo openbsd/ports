@@ -556,6 +556,7 @@ roundcubemail/plugins/enigma/lib/enigma_driver_phpssl.php
 roundcubemail/plugins/enigma/lib/enigma_engine.php
 roundcubemail/plugins/enigma/lib/enigma_error.php
 roundcubemail/plugins/enigma/lib/enigma_key.php
+roundcubemail/plugins/enigma/lib/enigma_key_lookup.php
 roundcubemail/plugins/enigma/lib/enigma_mime_message.php
 roundcubemail/plugins/enigma/lib/enigma_signature.php
 roundcubemail/plugins/enigma/lib/enigma_subkey.php
@@ -2888,6 +2889,7 @@ roundcubemail/vendor/guzzlehttp/promises/
 roundcubemail/vendor/guzzlehttp/promises/CHANGELOG.md
 roundcubemail/vendor/guzzlehttp/promises/LICENSE
 roundcubemail/vendor/guzzlehttp/promises/README.md
+roundcubemail/vendor/guzzlehttp/promises/UPGRADING.md
 roundcubemail/vendor/guzzlehttp/promises/composer.json
 roundcubemail/vendor/guzzlehttp/promises/src/
 roundcubemail/vendor/guzzlehttp/promises/src/AggregateException.php
@@ -2910,6 +2912,7 @@ roundcubemail/vendor/guzzlehttp/psr7/
 roundcubemail/vendor/guzzlehttp/psr7/CHANGELOG.md
 roundcubemail/vendor/guzzlehttp/psr7/LICENSE
 roundcubemail/vendor/guzzlehttp/psr7/README.md
+roundcubemail/vendor/guzzlehttp/psr7/UPGRADING.md
 roundcubemail/vendor/guzzlehttp/psr7/composer.json
 roundcubemail/vendor/guzzlehttp/psr7/src/
 roundcubemail/vendor/guzzlehttp/psr7/src/AppendStream.php
