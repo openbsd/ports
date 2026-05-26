@@ -7,6 +7,7 @@
      SUBDIR += httperf
      SUBDIR += hyperfine
      SUBDIR += iozone
+     SUBDIR += librespeed-cli
      SUBDIR += netperf
      SUBDIR += netperf-wrapper
      SUBDIR += netpipe
