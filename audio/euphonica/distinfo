@@ -164,6 +164,7 @@ SHA256 (cargo/hashlink-0.10.0.tar.gz) = c4LPYmNBny2N84xV19qD2lwYrvh/x6f8H7HjRO3+
 SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
 SHA256 (cargo/hermit-abi-0.5.2.tar.gz) = /A/vRW5LqpbalQRVzQLAgcqVOxQSmOQds/x+NrHahJw=
 SHA256 (cargo/hex-0.4.3.tar.gz) = fyQlSqmlS1yFjq7i9bzNtGqvDkhqWV7V/Y+GulUjKnA=
+SHA256 (cargo/hsl-0.1.1.tar.gz) = V1+38RZ/O4jtgl6Q6xSRisRgRh/eqjllxqUJUd7hyXA=
 SHA256 (cargo/http-1.4.0.tar.gz) = 47oqOG1/hagfEZrXSY6+RE0uIsKvC4awaUFqzkizMRo=
 SHA256 (cargo/http-body-1.0.1.tar.gz) = Hv7c4fuOaRPyPgyS3o5izVt3Kmfns5Rt+TCmJWbJMYQ=
 SHA256 (cargo/http-body-util-0.1.3.tar.gz) = sCHZPia+z13H4bdbG+0f2TEks3TOtz9D1NTq/siWpko=
@@ -214,6 +215,7 @@ SHA256 (cargo/libsecret-sys-0.8.0.tar.gz) = jtad3TQCB98IKgIO1L0n9UeFkaR0ib9LsC8v
 SHA256 (cargo/libspa-0.9.2.tar.gz) = trjPoqdlZie0ySxrnvkpQzrNZz1as3CM2hsYR4rADfQ=
 SHA256 (cargo/libspa-sys-0.9.2.tar.gz) = kBBJRV0utt7PkFgjXXRSN5UvSAS8WExfy0FBLmrcxuA=
 SHA256 (cargo/libsqlite3-sys-0.35.0.tar.gz) = EzwYKmosh4ZP6Xd4eX5Gx+mZZyaQ3J+j7o4kGqSpwT8=
+SHA256 (cargo/libwebp-sys-0.9.6.tar.gz) = VM0w33xxZc50pFbkypcyxgPo3F5geEVYwcbcBH+HZzM=
 SHA256 (cargo/linux-raw-sys-0.11.0.tar.gz) = 3x08O1PaZM9XYEgic6mOV1xlGmfux/d9+WtbZC3o8Dk=
 SHA256 (cargo/litemap-0.8.1.tar.gz) = Y3NgelnwvnOjm2/kVrgZL8w1hfYCryB1FgDpdN1FXnc=
 SHA256 (cargo/locale_config-0.3.0.tar.gz) = CNLDWxb0SD9sJvDk6VUHF6L2V1vNbxKlP/DEkKlKaTQ=
@@ -263,10 +265,10 @@ SHA256 (cargo/objc_id-0.1.1.tar.gz) = yS1N20vXtQ1zDCFf+HF1TQ2msheISfiioqtpcS0MBz
 SHA256 (cargo/once_cell-1.21.4.tar.gz) = n3w+S+sz+F1Frj46F5IYVwbI4W0EMjjFkzMcx80xO1A=
 SHA256 (cargo/oneshot-0.1.12.tar.gz) = POZhl+mVRtpsbZkShfYFGS55TOrmlobBcWOESnv4/MI=
 SHA256 (cargo/open-5.3.3.tar.gz) = Q7tzp/o3mbGYlwSQpRF0Anug1OxQSwPNCMr1E9QAJLw=
-SHA256 (cargo/openssl-0.10.75.tar.gz) = CIONsSE5itF6uFMc6d6XskRYkInikKOEyQDLn/dDQyg=
+SHA256 (cargo/openssl-0.10.80.tar.gz) = pF+iqohsQnYiVdo0TwoNMT4lQGbEaq128wDD09pi2Wc=
 SHA256 (cargo/openssl-macros-0.1.1.tar.gz) = qUhma2N6D0ZehWTHPonU3eANctTUc8yXLzkPw9zufZw=
 SHA256 (cargo/openssl-probe-0.1.6.tar.gz) = 0F4n7iE2Ef/n1jSLlC6PlCs3EUwAzAPOwlQpWkoXhS4=
-SHA256 (cargo/openssl-sys-0.9.111.tar.gz) = gsqy1SCqdePFiJgolCkyHreIwxBpY9DciG7HpfStwyE=
+SHA256 (cargo/openssl-sys-0.9.116.tar.gz) = 8ooi3HFAzaXwluXnckppYsqBp/i/0pefmxjBGvVjGMQ=
 SHA256 (cargo/ordered-stream-0.2.0.tar.gz) = mqKwHh2RaHn3OlPQHR1s7mituzHW2Rd6jPzgk8ztHVA=
 SHA256 (cargo/pango-0.21.5.tar.gz) = UtHYXiB4B3oGW7f8ByeD1bzU5Rs3nyLWcQfQoWk362k=
 SHA256 (cargo/pango-sys-0.21.5.tar.gz) = tPBmJ9Nu1f8wPS32UhH8LlK6Wxe/GN2A/z2WKNbgbP0=
@@ -339,7 +341,7 @@ SHA256 (cargo/rustc_version-0.4.1.tar.gz) = z8s6Iu9G6FtF3m7n550GMxnrtllPqvzxwiXq
 SHA256 (cargo/rustix-1.1.3.tar.gz) = FGyeJHzMGAwfYWFUM4aMmfPeOuJWowpDtJ9nwtkXHzQ=
 SHA256 (cargo/rustls-0.23.35.tar.gz) = Uz9UvGp9T2R+Rq2QlUntqXv1r8FYUZDvaStChrGYvY8=
 SHA256 (cargo/rustls-pki-types-1.13.2.tar.gz) = IebyqykoykKRuGc2qL2SCid6OZu6FYlAnXIVT/h8EoI=
-SHA256 (cargo/rustls-webpki-0.103.8.tar.gz) = L/36L1KG4iRyNOA/aAhorCgVl03DngDqFa3ERdCq/lI=
+SHA256 (cargo/rustls-webpki-0.103.13.tar.gz) = YcQpqGSfEQ3d72Xipa0kD3R+hfd1imvMx+V3e9M/dW4=
 SHA256 (cargo/rustversion-1.0.22.tar.gz) = s5ze8PqAD8RFJchMy1SgKZYaghX5YZdTY1qcDSU41G0=
 SHA256 (cargo/ryu-1.0.22.tar.gz) = pQ9M9HW2XYjgV5ZODpux8KqbuyA23GXGRZa0KTJTaYQ=
 SHA256 (cargo/safe_arch-0.7.4.tar.gz) = lrAt6C3b4bY25hcMIb5iIiOuoYjvLhOb4KWyGewhUyM=
@@ -447,6 +449,7 @@ SHA256 (cargo/wasm-bindgen-macro-support-0.2.106.tar.gz) = zvtZ1c1fktnc+A5Gg5SfF
 SHA256 (cargo/wasm-bindgen-shared-0.2.106.tar.gz) = y8U4BX5ki2f3KpgucI1IWy76dx4awF/sMR+fY+WADbQ=
 SHA256 (cargo/web-sys-0.3.83.tar.gz) = mzKCjXdMQSBBCY0YKos4sW6oFpWOB89A7sK8CArhN6w=
 SHA256 (cargo/web_atoms-0.1.3.tar.gz) = V//eHcASQL35mS4yBWaLI15ZQh/QheijF+2Y2gF41BQ=
+SHA256 (cargo/webp-0.3.1.tar.gz) = wHFFat70rKWb9qWDxGuQ/16wtPdY/DR86oEpAojzfOE=
 SHA256 (cargo/weezl-0.1.12.tar.gz) = oorJjdyLknTLQbtNnU1cQltgIMUMRvJVWZEZBWELSog=
 SHA256 (cargo/wide-0.7.33.tar.gz) = DOXajstivNjsi36hn2mlEnXpEpm+WU6lzG73gZ4WzQM=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
@@ -516,7 +519,7 @@ SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3
 SHA256 (cargo/zvariant_derive-5.8.0.tar.gz) = 2lhXWhsrIHZlE7HsWdji5o2ydFN5+WH4ZlBlXoYtIAY=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
 SHA256 (cargo/zvariant_utils-3.2.1.tar.gz) = xpSdFC+J9pFt7KIjLPJqivrPK5/cNc52YQXhBEeL5Zk=
-SHA256 (htkhiem-euphonica-v0.99.2-beta.tar.gz) = +sBp0/dZIaAaoJKJ56U2rbgXQWyfLGj/E7uvWUmIKxk=
+SHA256 (htkhiem-euphonica-v0.99.4-beta.tar.gz) = PVXhb4BYSf2+hjSwQzsmIF56bwvXWR/Iou2Ne1kxKuM=
 SHA256 (htkhiem-rust-mpd-a8ddd7d624ee7ea2f4128e6df878e6b05fe5b0e7.tar.gz) = S3JOI9Nyo7Kl7Kn7kapdNW+OAwPHZnVctBvyhDqU8bA=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -684,6 +687,7 @@ SIZE (cargo/hashlink-0.10.0.tar.gz) = 29402
 SIZE (cargo/heck-0.5.0.tar.gz) = 11517
 SIZE (cargo/hermit-abi-0.5.2.tar.gz) = 17435
 SIZE (cargo/hex-0.4.3.tar.gz) = 13299
+SIZE (cargo/hsl-0.1.1.tar.gz) = 9819
 SIZE (cargo/http-1.4.0.tar.gz) = 106978
 SIZE (cargo/http-body-1.0.1.tar.gz) = 6125
 SIZE (cargo/http-body-util-0.1.3.tar.gz) = 16975
@@ -734,6 +738,7 @@ SIZE (cargo/libsecret-sys-0.8.0.tar.gz) = 13556
 SIZE (cargo/libspa-0.9.2.tar.gz) = 60642
 SIZE (cargo/libspa-sys-0.9.2.tar.gz) = 8920
 SIZE (cargo/libsqlite3-sys-0.35.0.tar.gz) = 5200364
+SIZE (cargo/libwebp-sys-0.9.6.tar.gz) = 5168820
 SIZE (cargo/linux-raw-sys-0.11.0.tar.gz) = 2659624
 SIZE (cargo/litemap-0.8.1.tar.gz) = 34172
 SIZE (cargo/locale_config-0.3.0.tar.gz) = 20808
@@ -783,10 +788,10 @@ SIZE (cargo/objc_id-0.1.1.tar.gz) = 3258
 SIZE (cargo/once_cell-1.21.4.tar.gz) = 35010
 SIZE (cargo/oneshot-0.1.12.tar.gz) = 45423
 SIZE (cargo/open-5.3.3.tar.gz) = 27716
-SIZE (cargo/openssl-0.10.75.tar.gz) = 288136
+SIZE (cargo/openssl-0.10.80.tar.gz) = 307341
 SIZE (cargo/openssl-macros-0.1.1.tar.gz) = 5601
 SIZE (cargo/openssl-probe-0.1.6.tar.gz) = 8128
-SIZE (cargo/openssl-sys-0.9.111.tar.gz) = 80871
+SIZE (cargo/openssl-sys-0.9.116.tar.gz) = 75899
 SIZE (cargo/ordered-stream-0.2.0.tar.gz) = 19077
 SIZE (cargo/pango-0.21.5.tar.gz) = 50279
 SIZE (cargo/pango-sys-0.21.5.tar.gz) = 28298
@@ -859,7 +864,7 @@ SIZE (cargo/rustc_version-0.4.1.tar.gz) = 12245
 SIZE (cargo/rustix-1.1.3.tar.gz) = 423447
 SIZE (cargo/rustls-0.23.35.tar.gz) = 373700
 SIZE (cargo/rustls-pki-types-1.13.2.tar.gz) = 34958
-SIZE (cargo/rustls-webpki-0.103.8.tar.gz) = 85810
+SIZE (cargo/rustls-webpki-0.103.13.tar.gz) = 87513
 SIZE (cargo/rustversion-1.0.22.tar.gz) = 21096
 SIZE (cargo/ryu-1.0.22.tar.gz) = 51321
 SIZE (cargo/safe_arch-0.7.4.tar.gz) = 74564
@@ -967,6 +972,7 @@ SIZE (cargo/wasm-bindgen-macro-support-0.2.106.tar.gz) = 49711
 SIZE (cargo/wasm-bindgen-shared-0.2.106.tar.gz) = 10115
 SIZE (cargo/web-sys-0.3.83.tar.gz) = 644431
 SIZE (cargo/web_atoms-0.1.3.tar.gz) = 27392
+SIZE (cargo/webp-0.3.1.tar.gz) = 1860766
 SIZE (cargo/weezl-0.1.12.tar.gz) = 46045
 SIZE (cargo/wide-0.7.33.tar.gz) = 99792
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
@@ -1036,5 +1042,5 @@ SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_derive-5.8.0.tar.gz) = 14336
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
 SIZE (cargo/zvariant_utils-3.2.1.tar.gz) = 14678
-SIZE (htkhiem-euphonica-v0.99.2-beta.tar.gz) = 471585
+SIZE (htkhiem-euphonica-v0.99.4-beta.tar.gz) = 491207
 SIZE (htkhiem-rust-mpd-a8ddd7d624ee7ea2f4128e6df878e6b05fe5b0e7.tar.gz) = 36445

@@ -1,6 +1,6 @@
 COMMENT =		GTK4 MPD client with delusions of grandeur
 
-V =			0.99.2
+V =			0.99.4
 PKGNAME =		euphonica-${V}
 
 DIST_TUPLE =		github htkhiem euphonica v${V}-beta .
