@@ -1,15 +1,29 @@
+Fix build with llvm-22:
+https://gitlab.xfce.org/xfce/xfwm4/-/work_items/911
+
+Revert https://gitlab.xfce.org/xfce/xfwm4/-/commit/f68c04ba8591615e5ee615865daf50c23b35ef33
+and its fix https://gitlab.xfce.org/xfce/xfwm4/-/commit/94c6b2507e771aaf3762fb15291c0b8b04e9c3a1
+
 startup_notification.c:139:57: error: incompatible pointer types passing 'long *' to parameter of type 'time_t *' (aka 'long long *') [-Wincompatible-pointer-types]
 
 Index: src/startup_notification.c
 --- src/startup_notification.c.orig
 +++ src/startup_notification.c
-@@ -128,7 +128,8 @@ sn_collect_timed_out_foreach (void *element, void *dat
+@@ -128,7 +128,6 @@ sn_collect_timed_out_foreach (void *element, void *dat
      SnStartupSequence *sequence;
      time_t tv_sec;
      suseconds_t tv_usec;
 -    long l_sec, l_usec;
-+    time_t l_sec;
-+    suseconds_t l_usec;
      double elapsed;
  
      g_return_if_fail (data != NULL);
+@@ -136,8 +135,7 @@ sn_collect_timed_out_foreach (void *element, void *dat
+ 
+     sequence = element;
+     ctod = (CollectTimedOutData *) data;
+-    sn_startup_sequence_get_last_active_time (sequence, &l_sec, &l_usec);
+-    tv_sec = l_sec; tv_usec = l_usec;
++    sn_startup_sequence_get_last_active_time (sequence, &tv_sec, &tv_usec);
+ 
+     elapsed = ((double) ctod->now - (tv_sec * G_USEC_PER_SEC) - tv_usec)
+         / 1000.0;
