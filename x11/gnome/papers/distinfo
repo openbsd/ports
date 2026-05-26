@@ -270,7 +270,7 @@ SHA256 (gnome/../cargo/zerovec-derive-0.11.2.tar.gz) = 6tzjlTnKXLOYVZAQJnHyVn5ln
 SHA256 (gnome/../cargo/zvariant-5.9.2.tar.gz) = aLZO9PQMeVEzfdxwI90DUopXo840CO6dpelIvSmyMsQ=
 SHA256 (gnome/../cargo/zvariant_derive-5.9.2.tar.gz) = SE1dl163r7UsxrkpwT03GaIK1lD+pBIOYxDeP8VeQVw=
 SHA256 (gnome/../cargo/zvariant_utils-3.3.0.tar.gz) = 91wjpk749A8TppiZkeZDVU2b7x1oKigRYM8MG8OJxek=
-SHA256 (gnome/papers-50.1.tar.xz) = 95zkuVDPURHcSOi33BcosWUcgPMvDiTc5VNxmTzKsnA=
+SHA256 (gnome/papers-50.2.tar.xz) = rhvc8c1Hy1DJ2EdleEYH+Bxy3xfdbmrZM/6hQXPSufQ=
 SIZE (gnome/../cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (gnome/../cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (gnome/../cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -543,4 +543,4 @@ SIZE (gnome/../cargo/zerovec-derive-0.11.2.tar.gz) = 21421
 SIZE (gnome/../cargo/zvariant-5.9.2.tar.gz) = 92444
 SIZE (gnome/../cargo/zvariant_derive-5.9.2.tar.gz) = 16586
 SIZE (gnome/../cargo/zvariant_utils-3.3.0.tar.gz) = 15417
-SIZE (gnome/papers-50.1.tar.xz) = 4579972
+SIZE (gnome/papers-50.2.tar.xz) = 4581560
