@@ -1,0 +1,12 @@
+Index: src/fast_endianless.hpp
+--- src/fast_endianless.hpp.orig
++++ src/fast_endianless.hpp
+@@ -5,6 +5,8 @@
+ #ifdef _WIN32
+ #include <winsock2.h>
+ #else
++// For int32_t
++#include <sys/types.h>
+ #include <arpa/inet.h>
+ #endif 
+ 

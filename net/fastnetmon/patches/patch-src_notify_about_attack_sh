@@ -1,0 +1,12 @@
+Index: src/notify_about_attack.sh
+--- src/notify_about_attack.sh.orig
++++ src/notify_about_attack.sh
+@@ -9,7 +9,7 @@
+ #  $4 Attack action: ban or unban
+ #
+ 
+-email_notify="please_fix_this_email@domain.com"
++email_notify="please_fix_this_email@example.com"
+ 
+ # For ban action we will receive attack details to stdin
+ # Please do not remove "cat" command because

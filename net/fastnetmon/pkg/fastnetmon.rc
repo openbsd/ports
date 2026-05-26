@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/fastnetmon --daemonize"
+daemon_user="_fastnetmon"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	install -d -m 750 -o ${daemon_user} /var/run/fastnetmon
+}
+
+rc_cmd $1

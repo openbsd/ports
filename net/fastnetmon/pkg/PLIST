@@ -1,0 +1,29 @@
+@newgroup _fastnetmon:814
+@newuser _fastnetmon:814:_fastnetmon::FastNetMon User:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/log/fastnetmon/*
+@extraunexec rm -rf /var/log/fastnetmon_attacks/*
+@rcscript ${RCDIR}/fastnetmon
+@bin bin/fastnetmon_api_client
+@bin bin/fastnetmon_client
+@man man/man1/fastnetmon_client.1
+@man man/man8/fastnetmon.8
+@bin sbin/fastnetmon
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/fastnetmon/
+@sample ${SYSCONFDIR}/fastnetmon/
+share/examples/fastnetmon/fastnetmon.conf
+@sample ${SYSCONFDIR}/fastnetmon/fastnetmon.conf
+share/examples/fastnetmon/fastnetmon_notify.py
+share/examples/fastnetmon/ipfix_csv_processor.pl
+share/examples/fastnetmon/networks_list
+@sample ${SYSCONFDIR}/fastnetmon/networks_list
+share/examples/fastnetmon/networks_whitelist
+@sample ${SYSCONFDIR}/fastnetmon/networks_whitelist
+share/examples/fastnetmon/notify_about_attack.sh
+@sample ${SYSCONFDIR}/fastnetmon/notify_about_attack.sh
+share/examples/fastnetmon/notify_with_discord.sh
+share/examples/fastnetmon/notify_with_slack.sh
+@owner _fastnetmon
+@group _fastnetmon
+@sample /var/log/fastnetmon/
+@sample /var/log/fastnetmon_attacks/

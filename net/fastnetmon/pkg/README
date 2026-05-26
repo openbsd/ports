@@ -1,0 +1,27 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+NetFlow input from pf
+---------------------
+By default FastNetMon listens on port 2055 for incoming NetFlow data. This can
+be obtained from pflow(4). Minimal pf.conf addition to export all states through
+pflow(4):
+
+	set state-defaults pflow
+
+And create a pflow0 with:
+
+	# ifconfig pflow0 flowsrc 127.0.0.1 flowdst 127.0.0.1:2055
+
+The default protocol version (5) works fine with FastNetMon.
+
+Configuration
+-------------
+At the very minimum the known networks need to be recorded in
+${SYSCONFDIR}/fastnetmon/networks_list in CIDR notation, otherwise all traffic
+is classified as "other traffic".
+
+Also a notification script needs to be configured and installed to actually
+perform a ban. A stub is provided in
+${PREFIX}/share/examples/fastnetmon/notify_about_attack.sh

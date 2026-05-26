@@ -104,6 +104,7 @@
      SUBDIR += ettercap,no_x11
      SUBDIR += exabgp
      SUBDIR += ezstream
+     SUBDIR += fastnetmon
      SUBDIR += filezilla
      SUBDIR += flare-messenger
      SUBDIR += flickcurl

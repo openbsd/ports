@@ -1,0 +1,34 @@
+from https://github.com/freebsd/freebsd-ports/blob/f009564d752e90a9070d32d97b901964044134c4/net-mgmt/fastnetmon/files/patch-fast__library.cpp
+
+Index: src/fast_library.cpp
+--- src/fast_library.cpp.orig
++++ src/fast_library.cpp
+@@ -36,6 +36,11 @@
+ 
+ #include "iana_ip_protocols.hpp"
+ 
++// For pthread_set_name_np
++#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
++#include <pthread_np.h>
++#endif
++
+ boost::regex regular_expression_cidr_pattern("^\\d+\\.\\d+\\.\\d+\\.\\d+\\/\\d+$");
+ boost::regex regular_expression_host_pattern("^\\d+\\.\\d+\\.\\d+\\.\\d+$");
+ 
+@@ -1202,12 +1207,16 @@ bool set_boost_process_name(boost::thread* thread, con
+     char new_process_name[16];
+     strcpy(new_process_name, process_name.c_str());
+ 
++#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
++    pthread_set_name_np(thread->native_handle(), new_process_name);
++#else
+     int result = pthread_setname_np(thread->native_handle(), new_process_name);
+ 
+     if (result != 0) {
+         logger << log4cpp::Priority::ERROR << "pthread_setname_np failed with code: " << result;
+         logger << log4cpp::Priority::ERROR << "Failed to set process name for " << process_name;
+     }
++#endif
+ 
+     return true;
+ }

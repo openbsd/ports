@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1805 2026/05/24 08:23:35 matthieu Exp $
+# $OpenBSD: Quirks.pm,v 1.1806 2026/05/26 09:26:35 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1001,7 +1001,6 @@ setup_obsolete_reason(
 	5 => 'pycha',
 	10 => 'gotosocial',
 	5 => 'xsd',
-	4 => 'fastnetmon',
 	3 => 'kross-interpreters-kf5',
 	3 => 'py3-notmuch',
 	3 => 'pop3d',
@@ -1130,6 +1129,7 @@ my $obsolete_message = {
 	15 => "use rspamd's internal milter support instead",
 	16 => "dependencies for recent versions can't be met",
 	17 => "outdated port, security problems in the last ported version",
+	18 => "renamed upstream",
 	46 => "setuid-root software with a track record of security issues",
 	47 => "DNS network daemon running as root and not using random source ports. use DNS64 support in unbound or isc-bind",
 	48 => "1.x does not support current PHP, 2.x is tricky to package, see https://github.com/leenooks/phpLDAPadmin/wiki/Installation-Instructions#install-from-the-source-code",
