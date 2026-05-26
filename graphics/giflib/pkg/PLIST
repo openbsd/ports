@@ -1,6 +1,5 @@
 @conflict libungif-*
 @pkgpath graphics/libungif
-@bin bin/gif2rgb
 @bin bin/gifbuild
 @bin bin/gifclrmp
 @bin bin/giffix
@@ -9,7 +8,6 @@
 include/gif_lib.h
 @static-lib lib/libgif.a
 @lib lib/libgif.so.${LIBgif_VERSION}
-@man man/man1/gif2rgb.1
 @man man/man1/gifbuild.1
 @man man/man1/gifclrmp.1
 @man man/man1/giffix.1

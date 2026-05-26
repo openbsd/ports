@@ -1,96 +1,48 @@
-- Correct document page install.
-  61f375082c80ee479eb8ff03189aea691a6a06aa
-
-hunk 1, disable -Wno-format-truncation, not available on some compilers?
-
-hunk 2, move quantize.c back to exported library, it was in the public
-API prior to 5.2 and is used by various downstream users
-https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=935088
-https://src.fedoraproject.org/rpms/giflib/c/109bf038d703a471b857aba44af673be103d7079?branch=master
-
-hunk 5-6, library handling
-
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -8,7 +8,7 @@
- #
- OFLAGS = -O0 -g
- OFLAGS  = -O2
--CFLAGS  = -std=gnu99 -fPIC -Wall -Wno-format-truncation $(OFLAGS)
-+CFLAGS  = -std=gnu99 -fPIC -Wall $(OFLAGS)
- 
- SHELL = /bin/sh
- TAR = tar
-@@ -29,11 +29,11 @@ LIBPOINT=0
- LIBVER=$(LIBMAJOR).$(LIBMINOR).$(LIBPOINT)
- 
- SOURCES = dgif_lib.c egif_lib.c gifalloc.c gif_err.c gif_font.c \
--	gif_hash.c openbsd-reallocarray.c
-+	gif_hash.c openbsd-reallocarray.c quantize.c
- HEADERS = gif_hash.h  gif_lib.h  gif_lib_private.h
- OBJECTS = $(SOURCES:.c=.o)
- 
--USOURCES = qprintf.c quantize.c getarg.c 
-+USOURCES = qprintf.c getarg.c
- UHEADERS = getarg.h
- UOBJECTS = $(USOURCES:.c=.o)
- 
-@@ -63,17 +63,21 @@ UTILS = $(INSTALLABLE) \
- 
- LDLIBS=libgif.a -lm
- 
--MANUAL_PAGES = \
-+MANUAL_PAGES_1 = \
- 	doc/gif2rgb.xml \
- 	doc/gifbuild.xml \
- 	doc/gifclrmp.xml \
- 	doc/giffix.xml \
--	doc/giflib.xml \
- 	doc/giftext.xml \
- 	doc/giftool.xml
- 
-+MANUAL_PAGES_7 = \
-+	doc/giflib.xml
-+
-+MANUAL_PAGES = $(MANUAL_PAGES_1) $(MANUAL_PAGES_7)
-+
- SOEXTENSION	= so
--LIBGIFSO	= libgif.$(SOEXTENSION)
-+LIBGIFSO	= libgif.$(SOEXTENSION).$(LIBVER)
+@@ -95,7 +95,7 @@ SOEXTENSION	= so
+ LIBGIFSO	= libgif.$(SOEXTENSION)
  LIBGIFSOMAJOR	= libgif.$(SOEXTENSION).$(LIBMAJOR)
  LIBGIFSOVER	= libgif.$(SOEXTENSION).$(LIBVER)
- LIBUTILSO	= libutil.$(SOEXTENSION)
-@@ -99,7 +103,7 @@ $(LIBGIFSO): $(OBJECTS) $(HEADERS)
+-LIBUTILSO	= libutil.$(SOEXTENSION)
++LIBUTILSO	= libutil.$(SOEXTENSION).$(LIBVER)
+ LIBUTILSOMAJOR	= libutil.$(SOEXTENSION).$(LIBMAJOR)
+ ifeq ($(UNAME), Darwin)
+ SOEXTENSION	= dylib
+@@ -125,7 +125,7 @@ $(LIBGIFSO): $(OBJECTS) $(HEADERS)
  ifeq ($(UNAME), Darwin)
  	$(CC) $(CFLAGS) -dynamiclib -current_version $(LIBVER) $(OBJECTS) -o $(LIBGIFSO)
  else
--	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname -Wl,$(LIBGIFSOMAJOR) -o $(LIBGIFSO) $(OBJECTS)
+-	$(CC) $(CFLAGS) $(CPPFLAGS) -shared $(LDFLAGS) -Wl,-soname -Wl,$(LIBGIFSOMAJOR) -o $(LIBGIFSO) $(OBJECTS)
 +	$(CC) $(CFLAGS) -shared $(LDFLAGS) -o $(LIBGIFSO) $(OBJECTS)
  endif
  
  libgif.a: $(OBJECTS) $(HEADERS)
-@@ -109,7 +113,7 @@ $(LIBUTILSO): $(UOBJECTS) $(UHEADERS)
+@@ -135,7 +135,7 @@ $(LIBUTILSO): $(UOBJECTS) $(UHEADERS)
  ifeq ($(UNAME), Darwin)
- 	$(CC) $(CFLAGS) -dynamiclib -current_version $(LIBVER) $(OBJECTS) -o $(LIBUTILSO)
+ 	$(CC) $(CFLAGS) -dynamiclib -current_version $(LIBVER) $(UOBJECTS) -o $(LIBUTILSO)
  else
--	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname -Wl,$(LIBUTILMAJOR) -o $(LIBUTILSO) $(UOBJECTS)
+-	$(CC) $(CFLAGS) $(CPPLAGS) -shared $(LDFLAGS) -Wl,-soname -Wl,$(LIBUTILSOMAJOR) -o $(LIBUTILSO) $(UOBJECTS)
 +	$(CC) $(CFLAGS) -shared $(LDFLAGS) -o $(LIBUTILSO) $(UOBJECTS)
  endif
  
  libutil.a: $(UOBJECTS) $(UHEADERS)
-@@ -145,11 +149,10 @@ install-lib:
+@@ -169,7 +169,7 @@ spellcheck:
+ ifeq ($(UNAME), Darwin)
+ install: all install-bin install-include install-lib
+ else
+-install: all install-bin install-include install-lib install-man install-doc
++install: all install-bin install-include install-lib install-man
+ endif
+ 
+ install-bin: $(INSTALLABLE)
+@@ -184,8 +184,6 @@ install-static-lib:
+ install-shared-lib:
  	$(INSTALL) -d "$(DESTDIR)$(LIBDIR)"
- 	$(INSTALL) -m 644 libgif.a "$(DESTDIR)$(LIBDIR)/libgif.a"
  	$(INSTALL) -m 755 $(LIBGIFSO) "$(DESTDIR)$(LIBDIR)/$(LIBGIFSOVER)"
 -	ln -sf $(LIBGIFSOVER) "$(DESTDIR)$(LIBDIR)/$(LIBGIFSOMAJOR)"
 -	ln -sf $(LIBGIFSOMAJOR) "$(DESTDIR)$(LIBDIR)/$(LIBGIFSO)"
+ install-lib: install-static-lib install-shared-lib
  install-man:
--	$(INSTALL) -d "$(DESTDIR)$(MANDIR)/man1"
--	$(INSTALL) -m 644 $(MANUAL_PAGES) "$(DESTDIR)$(MANDIR)/man1"
-+	$(INSTALL) -d "$(DESTDIR)$(MANDIR)/man1" "$(DESTDIR)$(MANDIR)/man7"
-+	$(INSTALL) -m 644 $(MANUAL_PAGES_1:xml=1) "$(DESTDIR)$(MANDIR)/man1"
-+	$(INSTALL) -m 644 $(MANUAL_PAGES_7:xml=7) "$(DESTDIR)$(MANDIR)/man7"
- uninstall: uninstall-man uninstall-include uninstall-lib uninstall-bin
- uninstall-bin:
- 	cd "$(DESTDIR)$(BINDIR)" && rm -f $(INSTALLABLE)
+ 	$(INSTALL) -d "$(DESTDIR)$(MANDIR)/man1" "$(DESTDIR)$(MANDIR)/man7"
