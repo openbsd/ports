@@ -1,8 +1,7 @@
 COMMENT =	simple, distraction-free writing environment
 
-DISTNAME =	focuswriter-1.8.12
+DISTNAME =	focuswriter-1.8.13
 CATEGORIES =	editors
-REVISION =	0
 
 HOMEPAGE =	https://gottcode.org/focuswriter/
 
