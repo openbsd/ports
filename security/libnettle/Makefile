@@ -1,3 +1,5 @@
+PORTROACH=		limit:^3
+
 COMMENT=		cryptographic library
 
 DISTNAME=		nettle-3.10.2
