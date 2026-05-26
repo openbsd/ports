@@ -4,7 +4,9 @@ V =		2.1.0
 PKGNAME =	libbson-${V}
 
 # libbson is only provided as part of the mongo-c-driver distribution.
-# other than libbson have been disabled here.
+# only libbson is built here (mongo-c-driver hasn't been strictly needed
+# in ports yet, and is fiddly because it wants a libbind-style system
+# resolver).
 DIST_TUPLE +=	github mongodb mongo-c-driver ${V} .
 
 SHARED_LIBS +=	bson2                     0.0 # 0.0
