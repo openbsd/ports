@@ -6,7 +6,7 @@ Index: sched.c
  }
  
 +#ifdef IPC_EXPORT_IMAGE
-+ extern struct window *windows;
++ extern struct win *windows;
 +#endif
 +
  void
