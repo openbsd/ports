@@ -4,7 +4,7 @@ COMMENT =		new type of shell
 
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
-GH_TAGNAME =		0.112.2
+GH_TAGNAME =		0.113.0
 
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
@@ -12,6 +12,8 @@ CATEGORIES =		shells
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+WANTLIB +=		${MODCARGO_WANTLIB} m git2
 
 # C1x
 COMPILER =		base-clang ports-gcc
@@ -29,10 +31,13 @@ MODCARGO_FEATURES =	trash-support sqlite system-clipboard rustls-tls mcp
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
+MAKE_ENV +=		LIBGIT2_NO_VENDOR=1
+
+LIB_DEPENDS =		devel/libgit2/libgit2
+
 # For Tests
 PORTHOME =		${WRKSRC}
 
-WANTLIB +=		${MODCARGO_WANTLIB} m
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/target/release/nu ${PREFIX}/bin/
@@ -41,6 +46,6 @@ post-patch:
 	${SUBST_CMD} ${WRKSRC}/src/main.rs
 
 # last known test results
-# 0.112.2: test result: FAILED. 1673 passed; 6 failed; 25 ignored; 0 filtered out;
+# 0.113.0: test result: FAILED. 1747 passed; 6 failed; 25 ignored;
 
 .include <bsd.port.mk>
