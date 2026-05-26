@@ -1,0 +1,10 @@
+Don't have a GUI but want to use LibreSpeed servers to test your Internet
+speed? librespeed-cli is a command line interface for LibreSpeed speed test
+backends, written in Go.
+
+Features:
+- Ping, Jitter, Download, Upload
+- IP address & ISP Information
+- Result sharing (telemetry) [optional]
+- Test with mutliple servers in a single run
+- Use your own server list or telemetry endpoints

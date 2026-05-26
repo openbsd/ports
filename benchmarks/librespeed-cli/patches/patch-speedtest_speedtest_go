@@ -1,0 +1,49 @@
+Index: speedtest/speedtest.go
+--- speedtest/speedtest.go.orig
++++ speedtest/speedtest.go
+@@ -15,6 +15,8 @@ import (
+ 	"sync"
+ 	"time"
+ 
++	"golang.org/x/sys/unix"
++
+ 	"github.com/gocarina/gocsv"
+ 	"github.com/urfave/cli/v2"
+ 
+@@ -33,8 +35,8 @@ const (
+ 	defaultTelemetryShare  = "/results/"
+ 
+ 	forceNothing = 0
+-	forceHttps = 1
+-	forceHttp = 2
++	forceHttps   = 1
++	forceHttp    = 2
+ )
+ 
+ type PingJob struct {
+@@ -169,7 +171,24 @@ func SpeedTest(c *cli.Context) error {
+ 	transport.MaxIdleConnsPerHost = concurrent + 2
+ 	transport.MaxConnsPerHost = concurrent + 2
+ 
+-	if caCertFileName := c.String(defs.OptionCACert); caCertFileName != "" {
++	caCertFileName := c.String(defs.OptionCACert)
++
++	for _, rpath := range []string{
++		"/dev/urandom", "/etc/hosts", "/etc/localtime", "/etc/resolv.conf",
++		"/etc/ssl/cert.pem", caCertFileName,
++	} {
++		if rpath != "" {
++			if err := unix.Unveil(rpath, "r"); err != nil {
++				return fmt.Errorf("unveil %s: %s", rpath, err)
++			}
++		}
++	}
++
++	if err := unix.PledgePromises("stdio tty inet dns rpath"); err != nil {
++		return fmt.Errorf("pledge: %s", err)
++	}
++
++	if caCertFileName != "" {
+ 		caCert, err := os.ReadFile(caCertFileName)
+ 		if err != nil {
+ 			output.Fatal(err)
