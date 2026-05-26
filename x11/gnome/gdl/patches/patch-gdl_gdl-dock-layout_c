@@ -1,0 +1,12 @@
+Index: gdl/gdl-dock-layout.c
+--- gdl/gdl-dock-layout.c.orig
++++ gdl/gdl-dock-layout.c
+@@ -620,7 +620,7 @@ gdl_dock_layout_set_master (GdlDockLayout *layout,
+         if (GDL_IS_DOCK_OBJECT (master)) {
+             master = gdl_dock_object_get_master (GDL_DOCK_OBJECT (master));
+         }
+-        layout->priv->master = g_object_ref (master);
++        layout->priv->master = GDL_DOCK_MASTER (g_object_ref (master));
+         layout->priv->layout_changed_id =
+             g_signal_connect (layout->priv->master, "layout-changed",
+                               (GCallback) gdl_dock_layout_layout_changed_cb,
