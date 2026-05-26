@@ -1,14 +1,14 @@
 COMMENT=		C++ bindings for the ATK library
 
 GNOME_PROJECT=		atkmm
-GNOME_VERSION=		2.36.3
+GNOME_VERSION=		2.36.4
 PKGNAME=		atkmm236-${GNOME_VERSION}
 
 CATEGORIES=		devel
 
 SHARED_LIBS += atkmm-2.36                0.0 # 1.1.0
 
-HOMEPAGE=		http://www.gtkmm.org/
+HOMEPAGE=		https://gtkmm.gnome.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
