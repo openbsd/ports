@@ -1,6 +1,6 @@
 FW_DRIVER=	arm64-qcom-dtb
 FW_VER=		2.7
-REVISION=	1
+REVISION=	2
 
 DISTNAME=	devicetree-rebasing-6.17-dts
 
