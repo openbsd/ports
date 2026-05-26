@@ -106,7 +106,7 @@ SHA256 (cargo/version-compare-0.2.1.tar.gz) = A8KFaDfvePVzgvBrK4VjovUS9xhdcyYI/Z
 SHA256 (cargo/windows-link-0.2.1.tar.gz) = 8IBSIuV/dSHWpi42+pFjvIkazUIvlx3v6X1k5w0KT+U=
 SHA256 (cargo/windows-sys-0.61.2.tar.gz) = rhNyKby9bN8Pe4CjHfYXZhRQd930lBanKLAss5If8/w=
 SHA256 (cargo/winnow-1.0.2.tar.gz) = LuFwi+8UcWoRuuF19XkGLUVU2VvixoKfUY34R7ez/dA=
-SHA256 (helvum-0.6.1.tar.gz) = Rv+4DU684d4LutxCsYQGFGWePH0BnSez/L/ETv/7Dnc=
+SHA256 (helvum-0.6.2.tar.gz) = nx7HgYbdneWzxaRxjIjrKkpL+d541HfLTbDqMEVnNJw=
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/annotate-snippets-0.11.5.tar.gz) = 34687
 SIZE (cargo/anstyle-1.0.14.tar.gz) = 17787
@@ -215,4 +215,4 @@ SIZE (cargo/version-compare-0.2.1.tar.gz) = 14245
 SIZE (cargo/windows-link-0.2.1.tar.gz) = 6133
 SIZE (cargo/windows-sys-0.61.2.tar.gz) = 2517186
 SIZE (cargo/winnow-1.0.2.tar.gz) = 188047
-SIZE (helvum-0.6.1.tar.gz) = 172992
+SIZE (helvum-0.6.2.tar.gz) = 150336

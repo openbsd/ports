@@ -1,7 +1,7 @@
 COMMENT=		GTK patchbay for pipewire
 
 PW_PROJECT=		helvum
-PW_VERSION=		0.6.1
+PW_VERSION=		0.6.2
 
 WANTLIB += ${MODCARGO_WANTLIB} adwaita-1 cairo gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 graphene-1.0 gtk-4 pipewire-0.3
