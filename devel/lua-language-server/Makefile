@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 COMMENT =		language server for Lua
 
-V =			3.18.0
+V =			3.18.2
 PKGNAME =		lua-language-server-${V}
 
 DIST_TUPLE +=		github LuaLS lua-language-server ${V} . \
