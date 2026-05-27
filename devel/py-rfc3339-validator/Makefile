@@ -7,6 +7,7 @@ REVISION=	2
 
 CATEGORIES=	devel
 
+# https://github.com/naimetti/rfc3339-validator
 HOMEPAGE=	https://pypi.org/project/rfc3339-validator/
 
 # MIT
