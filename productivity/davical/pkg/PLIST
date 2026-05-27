@@ -53,6 +53,7 @@ davical/dba/patches/1.3.2.sql
 davical/dba/patches/1.3.3.sql
 davical/dba/patches/1.3.4.sql
 davical/dba/patches/1.3.5.sql
+davical/dba/patches/1.3.6.sql
 davical/dba/rrule_functions-8.1.sql
 davical/dba/rrule_functions.sql
 davical/dba/rrule_tests.sql
@@ -140,10 +141,8 @@ davical/inc/caldav-client.php
 davical/inc/check_UTF8.php
 davical/inc/csrf_tokens.php
 davical/inc/davical_configuration_missing.php
-davical/inc/drivers_imap_pam.php
 davical/inc/drivers_ldap.php
 davical/inc/drivers_pwauth_pam.php
-davical/inc/drivers_rimap.php
 davical/inc/drivers_squid_pam.php
 davical/inc/external-fetch.php
 davical/inc/freebusy-functions.php
