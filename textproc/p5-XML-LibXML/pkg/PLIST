@@ -24,6 +24,7 @@ ${P5ARCH}/XML/LibXML/Error.pm
 ${P5ARCH}/XML/LibXML/Error.pod
 ${P5ARCH}/XML/LibXML/InputCallback.pod
 ${P5ARCH}/XML/LibXML/Literal.pm
+${P5ARCH}/XML/LibXML/NamedNodeMap.pod
 ${P5ARCH}/XML/LibXML/Namespace.pod
 ${P5ARCH}/XML/LibXML/Node.pod
 ${P5ARCH}/XML/LibXML/NodeList.pm
@@ -68,6 +69,7 @@ ${P5ARCH}/auto/XML/LibXML/
 @man man/man3p/XML::LibXML::Error.3p
 @man man/man3p/XML::LibXML::InputCallback.3p
 @man man/man3p/XML::LibXML::Literal.3p
+@man man/man3p/XML::LibXML::NamedNodeMap.3p
 @man man/man3p/XML::LibXML::Namespace.3p
 @man man/man3p/XML::LibXML::Node.3p
 @man man/man3p/XML::LibXML::NodeList.3p

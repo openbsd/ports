@@ -1,8 +1,8 @@
 COMMENT =	perl binding for libxml2
 
-DISTNAME =	XML-LibXML-2.0210
+DISTNAME =	XML-LibXML-2.0213
 EPOCH =		0
-REVISION =	2
+CPAN_AUTHOR =	TODDR
 
 CATEGORIES =	textproc
 
@@ -11,7 +11,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl xml2
+WANTLIB =		c perl xml2
 
 MODULES =		cpan
 RUN_DEPENDS =		textproc/p5-XML-NamespaceSupport \

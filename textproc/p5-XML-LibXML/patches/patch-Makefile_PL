@@ -22,7 +22,7 @@ Index: Makefile.PL
    "Config" => 0,
    "ExtUtils::MakeMaker" => 0,
  );
-@@ -68,15 +65,13 @@ my %prereqs = (
+@@ -67,15 +64,13 @@ my %prereqs = (
    "warnings" => 0,
  );
  
@@ -40,5 +40,5 @@ Index: Makefile.PL
 -  $xsbuild{$k} = (defined($base_val) ? ($base_val . ' ' . $v) : $v);
 -}
  
- my %WriteMakefileArgs = (
-   "NAME" => "XML::LibXML",
+ # Strip bogus -L/lib entries that Alien::Base::Wrapper sometimes injects
+ # (the directory does not exist on macOS and the linker warns about it).
