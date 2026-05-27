@@ -1,6 +1,6 @@
 COMMENT =		library for building CLI applications
 
-MODPY_DISTV =		0.25.1
+MODPY_DISTV =		0.26.2
 DISTNAME =		typer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -19,7 +19,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		pdm
 
 RUN_DEPENDS =		devel/py-annotated_doc \
-			devel/py-click>=8.0.0 \
 			devel/py-typing-extensions>=3.7.4.3
 
 .include <bsd.port.arch.mk>
@@ -33,6 +32,7 @@ TEST_DEPENDS =		devel/py-annotated_doc \
 			devel/py-coverage>=6.2 \
 			devel/py-rich>=10.11.0 \
 			devel/py-shellingham>=1.3.0 \
+			devel/py-typing-extensions>=3.7.4.3 \
 			shells/bash \
 			shells/fish/${FISH_DIR} \
 			shells/zsh
