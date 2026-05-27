@@ -6,6 +6,8 @@ PKGNAME =	openal-$V
 EPOCH =		0
 CATEGORIES =	audio
 
+REVISION =	0
+
 SHARED_LIBS =	openal	6.0
 
 HOMEPAGE =	https://openal-soft.org/
@@ -38,6 +40,10 @@ CONFIGURE_ARGS =-DALSOFT_BACKEND_PIPEWIRE=Off \
 		-DCMAKE_DISABLE_FIND_PACKAGE_PulseAudio:Bool=Yes \
 		-DCMAKE_DISABLE_FIND_PACKAGE_SDL2:Bool=Yes \
 		-DCMAKE_DISABLE_FIND_PACKAGE_SndFile:Bool=Yes
+
+MODCLANG_VERSION = 22
+# XXX - remove after switch to llvm 22
+BUILD_DEPENDS =	devel/llvm/19
 
 MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
