@@ -3,16 +3,7 @@ Remove -pedantic from CFLAGS to allow building with GCC.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -4,7 +4,7 @@ CC?=cc
- COMA=coma
- PREFIX?=/usr/local
- INSTALL_DIR=$(PREFIX)/bin
--MAN_DIR=$(PREFIX)/share/man
-+MAN_DIR=$(PREFIX)/man
- 
- SRC=	coma.c client.c config.c frame.c wm.c
- OBJS=	$(SRC:%.c=%.o)
-@@ -19,7 +19,6 @@ CFLAGS+=-Wpointer-arith
+@@ -20,7 +20,6 @@ CFLAGS+=-Wpointer-arith
  CFLAGS+=-Wcast-qual
  CFLAGS+=-Wsign-compare
  CFLAGS+=-std=c99

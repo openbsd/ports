@@ -1,18 +1,19 @@
 COMMENT =	keyboard driven tiling window manager
 
-DISTNAME =	coma-1.1
-REVISION =	0
+DISTNAME =	coma-1.2
 
 CATEGORIES =	x11
 
-HOMEPAGE =	https://coma.one/wm/
+HOMEPAGE =	https://github.com/jorisvink/coma
 
 # ISC
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	X11 Xft c
 
-SITES =		https://coma.one/releases/
+SITES =		https://hackhub.se/releases/
+
+MAKE_FLAGS +=	PREFIX=${PREFIX} MAN_DIR=${PREFIX}/man
 
 NO_TEST =	Yes
 
