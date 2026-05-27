@@ -1,6 +1,7 @@
      SUBDIR =
      SUBDIR += cage
      SUBDIR += cagebreak
+     SUBDIR += cliphist
      SUBDIR += dmenu-wayland
      SUBDIR += fnott
      SUBDIR += foot
