@@ -3,18 +3,12 @@ Net::Frame::Simple has a long dependency chain, avoid porting, skip tests
 Index: t/104-offer-o90-o120.t
 --- t/104-offer-o90-o120.t.orig
 +++ t/104-offer-o90-o120.t
-@@ -6,11 +6,11 @@ use FindBin;
- 
- use strict;
+@@ -4,6 +4,8 @@ use warnings;
+ use Test::More tests => 3;
+ use FindBin ();
  
 +use Test::Requires qw(Net::Frame::Simple);
-+use Net::Frame::Dump::Offline;
 +
  BEGIN { use_ok('Net::DHCP::Packet'); }
- BEGIN { use_ok('Net::DHCP::Constants'); }
--
--use Net::Frame::Simple;
--use Net::Frame::Dump::Offline;
+ BEGIN { use_ok('Net::DHCP::Constants', ':bootp_codes'); }
  
- my %values = (
-     htype => 1,

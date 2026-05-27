@@ -3,18 +3,12 @@ Net::Frame::Simple has a long dependency chain, avoid porting, skip tests
 Index: t/103-real-nak.t
 --- t/103-real-nak.t.orig
 +++ t/103-real-nak.t
-@@ -6,11 +6,11 @@ use FindBin;
- 
- use strict;
+@@ -5,6 +5,8 @@ use Test::More tests => 21;
+ use Test::Warn qw( warning_like );
+ use FindBin ();
  
 +use Test::Requires qw(Net::Frame::Simple);
-+use Net::Frame::Dump::Offline;
 +
  BEGIN { use_ok('Net::DHCP::Packet'); }
- BEGIN { use_ok('Net::DHCP::Constants'); }
--
--use Net::Frame::Simple;
--use Net::Frame::Dump::Offline;
+ BEGIN { use_ok('Net::DHCP::Constants', ':bootp_codes'); }
  
- my %values = (
-     htype => 0,

@@ -1,10 +1,10 @@
 Net::Frame::Simple has a long dependency chain, avoid porting, skip tests
 
-Index: t/107-query-active-qry-unass-qry-unk.t
---- t/107-query-active-qry-unass-qry-unk.t.orig
-+++ t/107-query-active-qry-unass-qry-unk.t
-@@ -5,6 +5,8 @@ use Test::More tests => 8;
- use Test::Warn qw( warning_like );
+Index: t/109-dhcpfo-inform-release-o77.t
+--- t/109-dhcpfo-inform-release-o77.t.orig
++++ t/109-dhcpfo-inform-release-o77.t
+@@ -4,6 +4,8 @@ use warnings;
+ use Test::More tests => 6;
  use FindBin ();
  
 +use Test::Requires qw(Net::Frame::Simple);
