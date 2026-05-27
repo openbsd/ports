@@ -1,0 +1,2 @@
+Pydantic Settings provides optional Pydantic features for loading a
+settings or config class from environment variables or secrets files.
