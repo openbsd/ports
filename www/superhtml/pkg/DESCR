@@ -1,0 +1,2 @@
+SuperHTML offers validation and autoformatting features for HTML files.
+It can be used either directly or through its LSP client implementation.
