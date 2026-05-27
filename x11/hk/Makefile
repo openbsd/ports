@@ -1,6 +1,6 @@
 COMMENT =		set temporary X11 hotkeys
 
-DISTNAME =		hk-0.3.1
+DISTNAME =		hk-0.3.3
 CATEGORIES =		x11
 
 HOMEPAGE =		https://tratt.net/laurie/src/hk/
@@ -18,6 +18,7 @@ EXTRACT_SUFX =		.tgz
 
 CONFIGURE_STYLE =	gnu
 
-NO_TEST =		Yes
+TEST_DEPENDS =		x11/xdotool
+TEST_TARGET =		test
 
 .include <bsd.port.mk>
