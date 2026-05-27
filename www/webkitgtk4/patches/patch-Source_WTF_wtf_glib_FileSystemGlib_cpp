@@ -1,14 +1,20 @@
 Index: Source/WTF/wtf/glib/FileSystemGlib.cpp
 --- Source/WTF/wtf/glib/FileSystemGlib.cpp.orig
 +++ Source/WTF/wtf/glib/FileSystemGlib.cpp
-@@ -89,6 +89,11 @@ CString currentExecutablePath()
+@@ -89,6 +89,17 @@ CString currentExecutablePath()
          return { };
      return CString(unsafeMakeSpan(readBuffer, static_cast<size_t>(result)));
  }
 +#elif OS(OPENBSD)
 +CString currentExecutablePath()
 +{
-+    return { };
++    /* XXX
++     * This returns just the basename, not a full path, but
++     * currentExecutableName() takes the basename of it, so it should not
++     * matter.
++     */
++    const char* name = getprogname();
++    return name ? CString(name) : CString();
 +}
  #elif OS(UNIX)
  CString currentExecutablePath()

@@ -16,6 +16,8 @@ DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
 
+REVISION =		1
+
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
