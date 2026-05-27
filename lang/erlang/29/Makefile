@@ -6,7 +6,7 @@ USE_WXNEEDED=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		29.0
+V=		29.0.1
 DISTNAME=	otp_src_${V}
 PORTROACH=	limit:^OTP-${MAJ_V}\.
 PKGNAME=	erlang-${V}
@@ -25,7 +25,6 @@ CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--disable-silent-rules  \
 		--without-jinterface	\
 		--without-odbc		\
-		--enable-threads	\
 		--enable-kernel-poll	\
 		--disable-hipe
 
@@ -66,7 +65,7 @@ UPDATE_PLIST_ARGS = -i V
 ERL_VERSIONS=	\
 ASN1_VSN        5.5 \
 COMMON_TEST_VSN 1.31 \
-COMPILER_VSN    10.0 \
+COMPILER_VSN    10.0.1 \
 CRYPTO_VSN      5.9 \
 DEBUGGER_VSN    7.0 \
 DIALYZER_VSN    6.0 \
@@ -78,26 +77,26 @@ ET_VSN          1.8 \
 EUNIT_VSN       2.11 \
 FTP_VSN         1.2.5 \
 INETS_VSN       9.7 \
-KERNEL_VSN      11.0 \
+KERNEL_VSN      11.0.1 \
 MEGACO_VSN      4.9 \
 MNESIA_VSN      4.26 \
 OBSERVER_VSN    2.19 \
 ODBC_VSN	2.17 \
 OS_MON_VSN      2.12 \
 PARSETOOLS_VSN  2.8 \
-PUBLIC_KEY_VSN  1.21 \
+PUBLIC_KEY_VSN  1.21.1 \
 RELTOOL_VSN     1.1 \
 RUNTIME_TOOLS_VSN       2.4 \
 SASL_VSN        4.4 \
-SNMP_VSN        5.20.3 \
+SNMP_VSN        5.20.4 \
 SSH_VSN         6.0 \
-SSL_VSN         11.7 \
+SSL_VSN         11.7.1 \
 STDLIB_VSN      8.0 \
 SYNTAX_TOOLS_VSN        4.1 \
 TFTP_VSN        1.3 \
 TOOLS_VSN       4.2 \
 WX_VSN          2.6 \
 XMERL_VSN       2.2 \
-ERTS_VSN        17.0
+ERTS_VSN        17.0.1
 
 .include <bsd.port.mk>
