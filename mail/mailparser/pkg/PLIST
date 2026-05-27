@@ -7,7 +7,6 @@ lib/python${MODPY_VERSION}/site-packages/mail_parser-${MODPY_DISTV}.dist-info/en
 lib/python${MODPY_VERSION}/site-packages/mail_parser-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/mail_parser-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/mail_parser-${MODPY_DISTV}.dist-info/licenses/NOTICE.txt
-lib/python${MODPY_VERSION}/site-packages/mail_parser-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mailparser/
 lib/python${MODPY_VERSION}/site-packages/mailparser/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mailparser/__main__.py

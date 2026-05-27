@@ -1,6 +1,6 @@
 COMMENT=	wrapper for 'email' in Python's standard library
 
-MODPY_DISTV=	4.1.4
+MODPY_DISTV=	4.2.1
 DISTNAME=	mail_parser-${MODPY_DISTV}
 PKGNAME=	mailparser-${MODPY_DISTV}
 
@@ -12,9 +12,10 @@ HOMEPAGE=	https://github.com/SpamScope/mail-parser
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	hatchling
 MODPY_PI=	Yes
 
-RUN_DEPENDS=	devel/py-six
+TEST_DEPENDS=	devel/py-test-cov \
+		devel/py-test-mock
 
 .include <bsd.port.mk>
