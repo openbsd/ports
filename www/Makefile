@@ -607,6 +607,7 @@
      SUBDIR += squidguard,ldap
      SUBDIR += stagit
      SUBDIR += sthttpd
+     SUBDIR += superhtml
      SUBDIR += surf
      SUBDIR += surfraw
      SUBDIR += swiggle
