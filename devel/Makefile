@@ -1668,6 +1668,7 @@
      SUBDIR += py-pydantic
      SUBDIR += py-pydantic-compat
      SUBDIR += py-pydantic-core
+     SUBDIR += py-pydantic-settings
      SUBDIR += py-pydocstyle
      SUBDIR += py-pygithub
      SUBDIR += py-pyinotify
