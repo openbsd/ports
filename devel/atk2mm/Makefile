@@ -10,7 +10,7 @@ CATEGORIES=		devel
 
 SHARED_LIBS += atkmm-1.6                 10.1 # 1.1.0
 
-HOMEPAGE=		http://www.gtkmm.org/
+HOMEPAGE=		http://gtkmm.gnome.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
