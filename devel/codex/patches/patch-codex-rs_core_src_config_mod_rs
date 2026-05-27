@@ -1,12 +1,12 @@
 Index: codex-rs/core/src/config/mod.rs
 --- codex-rs/core/src/config/mod.rs.orig
 +++ codex-rs/core/src/config/mod.rs
-@@ -3307,7 +3307,7 @@ impl Config {
+@@ -3203,7 +3203,7 @@ impl Config {
  
          let review_model = override_review_model.or(cfg.review_model);
  
 -        let check_for_update_on_startup = cfg.check_for_update_on_startup.unwrap_or(true);
 +        let check_for_update_on_startup = cfg.check_for_update_on_startup.unwrap_or(false);
-         let model_catalog = load_model_catalog(
-             config_profile
-                 .model_catalog_json
+         let model_catalog = load_model_catalog(cfg.model_catalog_json.clone())?;
+ 
+         let log_dir = cfg
