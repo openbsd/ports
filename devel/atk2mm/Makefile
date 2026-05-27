@@ -3,15 +3,14 @@ PORTROACH=		limit:^2\.28
 COMMENT=		C++ binding for the ATK library
 
 GNOME_PROJECT=		atkmm
-GNOME_VERSION=		2.28.4
+GNOME_VERSION=		2.28.5
 PKGNAME=		atk2mm-${GNOME_VERSION}
-REVISION=		0
 
 CATEGORIES=		devel
 
 SHARED_LIBS += atkmm-1.6                 10.1 # 1.1.0
 
-HOMEPAGE=		http://gtkmm.gnome.org/
+HOMEPAGE=		http://www.gtkmm.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
