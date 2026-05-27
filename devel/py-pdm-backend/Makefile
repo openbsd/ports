@@ -1,6 +1,6 @@
 COMMENT=	PEP 517 compatible backend for pdm
 
-MODPY_DISTV=	2.4.7
+MODPY_DISTV=	2.4.8
 DISTNAME=	pdm_backend-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
