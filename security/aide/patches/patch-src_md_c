@@ -1,0 +1,29 @@
+From 61130addb02a58d7de95d6b8f344ab9b6151d6aa Mon Sep 17 00:00:00 2001
+From: Hannes von Haugwitz <hannes@vonhaugwitz.com>
+Date: Tue, 26 May 2026 21:41:52 +0200
+Subject: [PATCH] Support build with nettle 4
+
+Index: src/md.c
+--- src/md.c.orig
++++ src/md.c
+@@ -47,6 +47,8 @@
+ #include <nettle/gosthash94.h>
+ #include <nettle/streebog.h>
+ 
++#include <nettle/version.h>
++
+ typedef struct {
+   nettle_hash_init_func *init;
+   nettle_hash_update_func *update;
+@@ -166,7 +168,11 @@ int close_md(struct md_container* md, md_hashsums * hs
+         for (HASHSUM i = 0 ; i < num_hashes ; ++i) {
+             DB_ATTR_TYPE h = ATTR(hashsums[i].attribute);
+             if (h&md->calc_attr) {
++#if NETTLE_VERSION_MAJOR < 4
+                 nettle_functions[i].digest(&md->ctx[i].md5, hashsums[i].length, hs->hashsums[i]);
++#else
++                nettle_functions[i].digest(&md->ctx[i].md5, hs->hashsums[i]);
++#endif
+             }
+         }
+ #endif
