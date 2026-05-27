@@ -1,3 +1,5 @@
+BROKEN=			new fontforge not properly detected
+
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 
