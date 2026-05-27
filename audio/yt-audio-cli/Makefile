@@ -1,10 +1,9 @@
 COMMENT=	yt-dlp wrapper to manage youtube audio
 
-MODPY_DISTV=	0.2.0
+MODPY_DISTV=	0.2.2
 DISTNAME=	yt_audio_cli-${MODPY_DISTV}
 PKGNAME=	yt-audio-cli-${MODPY_DISTV}
 CATEGORIES=	audio
-REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes
