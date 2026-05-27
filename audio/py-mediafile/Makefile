@@ -1,6 +1,6 @@
 COMMENT=	read and write audio file tags in Python
 
-MODPY_DISTV=	0.16.2
+MODPY_DISTV=	0.17.0
 GH_ACCOUNT=	beetbox
 GH_PROJECT=	mediafile
 GH_TAGNAME=	v${MODPY_DISTV}
