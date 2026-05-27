@@ -1,7 +1,7 @@
 COMMENT =		lightweight extensible message format
 
-MODPY_DISTV =		0.9.8
-DISTNAME=		lxmf-${MODPY_DISTV}
+MODPY_DISTV =		0.9.9
+DISTNAME =		lxmf-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		net devel
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_PI =		Yes
+SITES =			https://deftly.net/dist/
 MODPY_PYBUILD =		setuptools
 
 NO_TEST =		Yes
