@@ -1,16 +1,19 @@
 COMMENT =		persistent key-value database
 
 DISTNAME =		redis-6.2.22
+REVISION =		1
+
 CATEGORIES =		databases
+
 HOMEPAGE =		https://redis.io/
-REVISION =		0
+SITES =			http://download.redis.io/releases/
+
+MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c crypto ssl m pthread
-
-SITES =			http://download.redis.io/releases/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
