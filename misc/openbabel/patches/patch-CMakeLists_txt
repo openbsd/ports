@@ -1,25 +1,60 @@
-Revise for 3.1.1 release. Taken from
-https://github.com/openbabel/openbabel/commit/650b1f829ac47cc84877a330366ec9485da3ec99
-
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -10,9 +10,6 @@ set (CMAKE_CXX_STANDARD 11)
+@@ -505,14 +505,14 @@ if(WITH_MAEPARSER)
  
- if(COMMAND cmake_policy)
-   cmake_policy(SET CMP0003 NEW)
--  if(POLICY CMP0042)
--    cmake_policy(SET CMP0042 OLD)
--  endif()
- endif()
+       set(MAEPARSER_VERSION "v1.3.3" CACHE STRING "Maeparser fallback version to download")
  
- include (CheckCXXCompilerFlag)
-@@ -24,7 +21,7 @@ include (CheckCXXCompilerFlag)
- # had too many 1.100.1 releases. :-)
- set(BABEL_MAJ_VER   3)
- set(BABEL_MIN_VER   1)
--set(BABEL_PATCH_VER 0)
-+set(BABEL_PATCH_VER 1)
+-      set(MAEPARSER_DIR "${openbabel_SOURCE_DIR}/external/maeparser-${MAEPARSER_VERSION}")
++      set(MAEPARSER_DIR "${openbabel_SOURCE_DIR}/maeparser")
  
- # This should be phased out in preference for just using the target name
- set(BABEL_LIBRARY openbabel)
+       option(MAEPARSER_BUILD_SHARED_LIBS "Build maeparser as a shared library" ${BUILD_SHARED})
+ 
+       # Do not build the test, as it will be put into the bin dir, where it won't be found by the test runner.
+       set(MAEPARSER_BUILD_TESTS OFF CACHE BOOL "Disable Maeparser tests")
+ 
+-      if(EXISTS "${MAEPARSER_DIR}/maeparser/CMakeLists.txt")
++      if(EXISTS "${MAEPARSER_DIR}/CMakeLists.txt")
+ 
+         message(STATUS "Building existing MaeParser '${MAEPARSER_VERSION}' source at ${MAEPARSER_DIR}.")
+ 
+@@ -535,9 +535,9 @@ if(WITH_MAEPARSER)
+ 
+       endif()
+ 
+-      add_subdirectory("${MAEPARSER_DIR}/maeparser")
++      add_subdirectory("${MAEPARSER_DIR}")
+ 
+-      set(maeparser_INCLUDE_DIRS "${MAEPARSER_DIR}")
++      set(maeparser_INCLUDE_DIRS "${openbabel_SOURCE_DIR}")
+       set(maeparser_LIBRARIES maeparser)
+ 
+       message(STATUS "Maestro formats will be supported. Using MaeParser '${MAEPARSER_VERSION}' at ${MAEPARSER_DIR}")
+@@ -565,13 +565,13 @@ if(WITH_COORDGEN)
+       # v3.0.2-10-gd20e735
+       set(COORDGEN_VERSION "d20e735d96480385b2e257522288004038a08cc9" CACHE STRING "Coordgen fallback version to download")
+ 
+-      set(COORDGEN_DIR "${openbabel_SOURCE_DIR}/external/coordgen-${COORDGEN_VERSION}")
++      set(COORDGEN_DIR "${openbabel_SOURCE_DIR}/coordgen")
+ 
+       # These won't work, since openbabel relocates them to the "bin" dir
+       set(COORDGEN_BUILD_TESTS OFF CACHE BOOL "Disable building Coordgen tests")
+       set(COORDGEN_BUILD_EXAMPLE OFF CACHE BOOL "Disable building Coordgen example")
+ 
+-      if(EXISTS "${COORDGEN_DIR}/coordgen/CMakeLists.txt")
++      if(EXISTS "${COORDGEN_DIR}/CMakeLists.txt")
+ 
+         message(STATUS "Building existing Coordgen '${COORDGEN_VERSION}' source at ${COORDGEN_DIR}.")
+ 
+@@ -594,9 +594,9 @@ if(WITH_COORDGEN)
+ 
+       endif()
+ 
+-      add_subdirectory("${COORDGEN_DIR}/coordgen")
++      add_subdirectory("${COORDGEN_DIR}")
+ 
+-      set(coordgen_INCLUDE_DIRS "${COORDGEN_DIR}")
++      set(coordgen_INCLUDE_DIRS "${openbabel_SOURCE_DIR}")
+       set(coordgen_LIBRARIES coordgen)
+ 
+ 

@@ -1,15 +1,17 @@
 COMMENT=	chemistry file translation program
 
-V=		3.1.1
-REVISION=	7
-DISTNAME=	openbabel-${V}
+V=		3.2.0
+DIST_TUPLE=	github openbabel openbabel openbabel-${V:S/./-/g} . \
+		github schrodinger maeparser v1.3.3 maeparser \
+		github schrodinger coordgenlibs d20e735d96480385b2e257522288004038a08cc9 coordgen
+PKGNAME=	openbabel-${V}
 
 CATEGORIES=	misc
 
-SHARED_LIBS +=	coordgen	0.0 \
-		inchi		0.0 \
-		maeparser	0.0 \
-		openbabel	6.1
+SHARED_LIBS=	coordgen	1.0 \
+		inchi		1.0 \
+		maeparser	1.0 \
+		openbabel	7.0
 
 HOMEPAGE=	https://openbabel.org
 
@@ -18,11 +20,8 @@ MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+=	${COMPILER_LIBCXX} boost_iostreams-mt boost_regex-mt
-WANTLIB+=	c cairo m xml2 z boost_random-mt
-
-SITES=		https://github.com/openbabel/openbabel/releases/download/openbabel-${V:S/./-/g}/
-EXTRACT_SUFX=	-source.tar.bz2
+WANTLIB=	${COMPILER_LIBCXX} boost_iostreams-mt boost_regex-mt \
+		c cairo m xml2 z boost_random-mt
 
 COMPILER=	base-clang ports-gcc
 
@@ -40,13 +39,8 @@ BUILD_DEPENDS=	math/eigen3 \
 
 CONFIGURE_ARGS=	-DBUILD_GUI=OFF
 
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
-
 SEPARATE_BUILD=	No
 
 SUBST_VARS=	V
-
-
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

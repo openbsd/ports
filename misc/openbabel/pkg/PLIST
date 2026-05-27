@@ -99,6 +99,7 @@ include/openbabel3/openbabel/kekulize.h
 include/openbabel3/openbabel/kinetics.h
 include/openbabel3/openbabel/lineend.h
 include/openbabel3/openbabel/locale.h
+include/openbabel3/openbabel/macrocycle.h
 include/openbabel3/openbabel/math/
 include/openbabel3/openbabel/math/align.h
 include/openbabel3/openbabel/math/erf.h
@@ -130,7 +131,6 @@ include/openbabel3/openbabel/residue.h
 include/openbabel3/openbabel/ring.h
 include/openbabel3/openbabel/rotamer.h
 include/openbabel3/openbabel/rotor.h
-include/openbabel3/openbabel/shared_ptr.h
 include/openbabel3/openbabel/spectrophore.h
 include/openbabel3/openbabel/stereo/
 include/openbabel3/openbabel/stereo/bindings.h
@@ -145,8 +145,10 @@ include/openbabel3/openbabel/text.h
 include/openbabel3/openbabel/tokenst.h
 include/openbabel3/openbabel/typer.h
 include/openbabel3/openbabel/xml.h
-lib/cmake/coordgen-config${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/coordgen-config.cmake
+lib/cmake/coordgen/
+lib/cmake/coordgen/coordgen-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/coordgen/coordgen-config-version.cmake
+lib/cmake/coordgen/coordgen-config.cmake
 lib/cmake/maeparser-config${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/maeparser-config.cmake
 lib/cmake/openbabel3/
@@ -186,6 +188,7 @@ lib/openbabel/${V}/
 @so lib/openbabel/${V}/chemdoodlejsonformat.so
 @so lib/openbabel/${V}/chemdrawcdx.so
 @so lib/openbabel/${V}/chemdrawct.so
+@so lib/openbabel/${V}/chemicaljsonformat.so
 @so lib/openbabel/${V}/chemkinformat.so
 @so lib/openbabel/${V}/chemtoolformat.so
 @so lib/openbabel/${V}/cifformat.so
@@ -222,6 +225,7 @@ lib/openbabel/${V}/
 @so lib/openbabel/${V}/hinformat.so
 @so lib/openbabel/${V}/inchiformat.so
 @so lib/openbabel/${V}/jaguarformat.so
+@so lib/openbabel/${V}/ketformat.so
 @so lib/openbabel/${V}/lmpdatformat.so
 @so lib/openbabel/${V}/lpmdformat.so
 @so lib/openbabel/${V}/maeformat.so

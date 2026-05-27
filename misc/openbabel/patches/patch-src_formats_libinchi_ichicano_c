@@ -1,0 +1,11 @@
+Index: src/formats/libinchi/ichicano.c
+--- src/formats/libinchi/ichicano.c.orig
++++ src/formats/libinchi/ichicano.c
+@@ -43,7 +43,6 @@
+ #include <string.h>
+ #include <ctype.h>
+ #include <time.h>
+-#include <sys/timeb.h>
+ #include <limits.h>
+ 
+ #include "mode.h"
