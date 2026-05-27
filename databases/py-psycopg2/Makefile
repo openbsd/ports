@@ -1,6 +1,6 @@
 COMMENT=	PostgreSQL database adapter for Python
 
-MODPY_DISTV=	2.9.11
+MODPY_DISTV=	2.9.12
 DISTNAME=	psycopg2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	databases
