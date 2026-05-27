@@ -1,6 +1,6 @@
 COMMENT=	pure Python implementation of magic file detection
 
-MODPY_DISTV=	2.1.1
+MODPY_DISTV=	2.2.0
 DISTNAME=	puremagic-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
