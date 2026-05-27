@@ -1,16 +1,19 @@
 COMMENT-main=	database interface library for Lua (including SQLite3)
+COMMENT-duckdb=	DuckDB driver for luadbi
 COMMENT-mysql=	MySQL driver for luadbi
 COMMENT-pgsql=	PostgreSQL driver for luadbi
 
-V=		0.7.3
+V=		0.7.5
 GH_ACCOUNT=	mwild1
 GH_PROJECT=	luadbi
 GH_TAGNAME=	v${V}
 
-PKGNAME=		luadbi-$V
+PKGNAME=		${_MODLUA_PKG_PREFIX}dbi-$V
+FULLPKGNAME-duckdb=	${_MODLUA_PKG_PREFIX}dbi-duckdb-$V
 FULLPKGNAME-main=	${_MODLUA_PKG_PREFIX}dbi-$V
 FULLPKGNAME-mysql=	${_MODLUA_PKG_PREFIX}dbi-mysql-$V
 FULLPKGNAME-pgsql=	${_MODLUA_PKG_PREFIX}dbi-pgsql-$V
+FULLPKGPATH-duckdb=	databases/luadbi,${MODLUA_FLAVOR:=,}-duckdb
 FULLPKGPATH-main=	databases/luadbi,${MODLUA_FLAVOR:=,}-main
 FULLPKGPATH-mysql=	databases/luadbi,${MODLUA_FLAVOR:=,}-mysql
 FULLPKGPATH-pgsql=	databases/luadbi,${MODLUA_FLAVOR:=,}-pgsql
@@ -20,7 +23,7 @@ CATEGORIES=	databases
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MULTI_PACKAGES=	-main -mysql -pgsql
+MULTI_PACKAGES=	-main -mysql -pgsql -duckdb
 
 MODULES=	lang/lua
 FLAVORS=	lua52 lua53 lua54
@@ -29,6 +32,10 @@ FLAVOR?=
 WANTLIB-main=		sqlite3
 LIB_DEPENDS-main=	databases/sqlite3
 RUN_DEPENDS-main=	#empty
+
+WANTLIB-duckdb=		duckdb
+LIB_DEPENDS-duckdb=	databases/duckdb
+RUN_DEPENDS-duckdb=	#empty
 
 WANTLIB-mysql=		mariadb
 LIB_DEPENDS-mysql=	databases/mariadb
@@ -40,7 +47,7 @@ LIB_DEPENDS-pgsql=	databases/postgresql
 RUN_DEPENDS-pgsql=	${BASE_PKGPATH},-main
 
 USE_GMAKE=		Yes
-ALL_TARGET=		free # == sqlite3 mysql postgresql
+ALL_TARGET=		free # == sqlite3 mysql postgresql duckdb
 INSTALL_TARGET=		install_free
 # requires busted
 NO_TEST=		Yes
@@ -50,7 +57,8 @@ MAKE_FLAGS=	CC="${CC}" \
 		LUA_INC="-I${MODLUA_INCL_DIR}" \
 		MYSQL_INC="-I${LOCALBASE}/include" \
 		SQLITE3_INC="-I${LOCALBASE}/include" \
-		PSQL_INC="-I${LOCALBASE}/include/postgresql"
+		PSQL_INC="-I${LOCALBASE}/include/postgresql" \
+		DUCKDB_INC="-I${LOCALBASE}/include"
 
 FAKE_FLAGS=	LUA_LDIR=${MODLUA_DATADIR} \
 		LUA_CDIR=${MODLUA_LIBDIR}
