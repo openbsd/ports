@@ -1,7 +1,7 @@
 COMMENT =		cryptography-based networking stack
 
-MODPY_DISTV =		1.2.9
-DISTNAME=		rns-${MODPY_DISTV}
+MODPY_DISTV =		1.3.1
+DISTNAME =		rns-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		net devel
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_PI =		Yes
+SITES =			https://deftly.net/dist/
 MODPY_PYBUILD =		setuptools
 
 MODPY_PYTEST_ARGS =	-v tests/all.py
