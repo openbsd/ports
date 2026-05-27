@@ -1,8 +1,7 @@
 COMMENT =	Andrews web libraries for PHP
 
-DISTNAME =	awl_0.64.orig
-PKGNAME =	php-awl-0.64
-REVISION =	2
+DISTNAME =	awl_0.65.orig
+PKGNAME =	php-awl-0.65
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	www
 PKG_ARCH =	*
