@@ -8,7 +8,7 @@ PKGNAME =	spectrum-tools-$V
 FULLPKGNAME-main =  spectrum-tools-${V:S/-//g}
 FULLPKGNAME-utils = spectrum-tools-utils-${V:S/-//g}
 
-REVISION-main=	5
+REVISION-main=	6
 REVISION-utils= 2
 
 CATEGORIES =	net
