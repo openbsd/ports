@@ -1,0 +1,8 @@
+@bin bin/cliphist
+share/examples/cliphist/
+share/examples/cliphist/cliphist-fuzzel-img
+share/examples/cliphist/cliphist-fzf
+share/examples/cliphist/cliphist-fzf-sixel
+share/examples/cliphist/cliphist-rofi
+share/examples/cliphist/cliphist-rofi-img
+share/examples/cliphist/cliphist-wofi-img
