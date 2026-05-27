@@ -1,6 +1,6 @@
 COMMENT =	provide an interface to create pseudo ttys
 
-DISTNAME =	IO-Tty-1.29
+DISTNAME =	IO-Tty-1.31
 CPAN_AUTHOR =	TODDR
 
 CATEGORIES =	devel
