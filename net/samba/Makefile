@@ -1,4 +1,4 @@
-VERSION =		4.24.2
+VERSION =		4.24.3
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -25,7 +25,7 @@ SHARED_LIBS =		dcerpc			3.0 \
 			samba-hostconfig	19.0 \
 			samba-passdb		3.2 \
 			samba-policy		0.0 \
-			samba-util		13.0 \
+			samba-util		13.1 \
 			samdb			6.0 \
 			smbclient		6.3 \
 			smbconf			19.1 \
@@ -54,6 +54,8 @@ WANTLIB-docs =
 
 SITES =			https://download.samba.org/pub/samba/stable/ \
 			https://download.samba.org/pub/samba/old-versions/
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 MULTI_PACKAGES =	-main -docs
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
