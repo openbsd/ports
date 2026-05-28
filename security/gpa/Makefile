@@ -1,6 +1,6 @@
 COMMENT=	graphical interface for GnuPG
 
-DISTNAME=	gpa-0.11.0
+DISTNAME=	gpa-0.11.1
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security x11
