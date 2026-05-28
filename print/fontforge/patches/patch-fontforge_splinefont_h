@@ -1,0 +1,14 @@
+Pull in libintl.h (indirectly) before using anything from it. Fixes
+/usr/local/include/libintl.h:1019:17: error: cannot apply asm label to function after its first use
+
+Index: fontforge/splinefont.h
+--- fontforge/splinefont.h.orig
++++ fontforge/splinefont.h
+@@ -31,6 +31,7 @@
+ #include "basics.h"
+ #include "dlist.h"
+ #include "gwwiconv.h"
++#include "intl.h"
+ #include "ustring.h"
+ #include "splinechar.h"
+ #include "splinefont_enums.h"
