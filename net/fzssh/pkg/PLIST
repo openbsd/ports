@@ -1,0 +1,16 @@
+include/fzssh/
+include/fzssh/agent.hpp
+include/fzssh/client.hpp
+include/fzssh/privkey.hpp
+include/fzssh/pubkey.hpp
+include/fzssh/sftp/
+include/fzssh/sftp/sftp.hpp
+include/fzssh/sftp/sftp_client.hpp
+include/fzssh/ssh.hpp
+include/fzssh/version.hpp
+include/fzssh/visibility.hpp
+include/fzssh/visibility_client.hpp
+@lib lib/libfzssh-client.so.${LIBfzssh-client_VERSION}
+@lib lib/libfzssh-crypt.so.${LIBfzssh-crypt_VERSION}
+@lib lib/libfzssh.so.${LIBfzssh_VERSION}
+lib/pkgconfig/libfzssh-client.pc
