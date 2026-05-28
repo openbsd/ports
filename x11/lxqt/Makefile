@@ -11,6 +11,7 @@
      SUBDIR += liblxqt
      SUBDIR += libdbusmenu
      SUBDIR += about
+     SUBDIR += archiver
      SUBDIR += config
      SUBDIR += globalkeys
      SUBDIR += notificationd
@@ -22,6 +23,7 @@
      SUBDIR += runner
      SUBDIR += qtxdg-tools
      SUBDIR += session
+     SUBDIR += wayland-session
      SUBDIR += sudo
      SUBDIR += themes
 # Related Releases
