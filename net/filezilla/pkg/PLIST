@@ -1,6 +1,4 @@
 @bin bin/filezilla
-@bin bin/fzputtygen
-@bin bin/fzsftp
 @static-lib lib/libfzclient-commonui-private.a
 lib/libfzclient-commonui-private.la
 @lib lib/libfzclient-commonui-private.so.${LIBfzclient-commonui-private_VERSION}
@@ -8,8 +6,6 @@ lib/libfzclient-commonui-private.la
 lib/libfzclient-private.la
 @lib lib/libfzclient-private.so.${LIBfzclient-private_VERSION}
 @man man/man1/filezilla.1
-@man man/man1/fzputtygen.1
-@man man/man1/fzsftp.1
 @man man/man5/fzdefaults.xml.5
 share/appdata/
 share/appdata/filezilla.appdata.xml
