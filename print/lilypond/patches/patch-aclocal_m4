@@ -10,7 +10,7 @@ Index: aclocal.m4
 -        | grep '\(^\|[^0-9a-f]\)[0-9]\{6,8\}\([^0-9a-f]\|$\)' \
 -        | head -n 1 \
 -        | sed -e 's/^[^.0-9]*//' -e 's/[^.0-9]*$//'\`\"
-+        | sed -ne 's/^libfontforge //p'\`\"
++        | sed -ne 's/^fontforge //p'\`\"
      fi
      echo "$_ver"
      changequote([, ])#dnl
