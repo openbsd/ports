@@ -1,0 +1,23 @@
+openbsd' cp/mv dont support -n option
+
+Index: src/core/fr-archive.c
+--- src/core/fr-archive.c.orig
++++ src/core/fr-archive.c
+@@ -2741,8 +2741,6 @@ move_files_to_dir (FrArchive  *archive,
+ 			fr_process_add_arg (archive->process, "-R");
+ 			if (overwrite)
+ 				fr_process_add_arg (archive->process, "-f");
+-			else
+-				fr_process_add_arg (archive->process, "-n");
+ 			if (filename[0] == '/')
+ 				fr_process_add_arg_concat (archive->process, source_dir, filename, NULL);
+ 			else
+@@ -2768,8 +2766,6 @@ move_files_to_dir (FrArchive  *archive,
+ 	fr_process_begin_command (archive->process, "mv");
+ 	if (overwrite)
+ 		fr_process_add_arg (archive->process, "-f");
+-	else
+-		fr_process_add_arg (archive->process, "-n");
+ 	for (scan = list; scan; scan = scan->next) {
+ 		char *filename = scan->data;
+ 
