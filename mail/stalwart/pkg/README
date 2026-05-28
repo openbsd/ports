@@ -2,80 +2,57 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Basic configuration gotchas
-===========================
+First run
+=========
 
 The complete documentation is at https://stalw.art/docs/get-started
 
-- By default stalwart tries to listen on the following ports:
-  - smtp
-  - https (for jmap and web admin)
-  - imap
-  - imaps
-  - sieve
-  - submission
-  - submissions
+With no config.json present at the supplied config file path, Stalwart will
+start in bootstrap mode. This means it will be only listening on port 8080 for
+the web UI and the JMAP API (accessible with, for instance, stalwart-cli). A
+temporary admin password will be generated and written in the output, so execute
+the daemon in the foreground like so:
 
-if you want to disable some of the listeners, comment out the corresponding
-server.listener section in /var/stalwart/etc/config.toml.
+# su -fl -c stalwart_mail -s /bin/sh root -c 'stalwart --config /etc/stalwart/config.json'
 
-it is possible to check if the server is properly configured by calling
-/.well-known/jmap like this:
+The web admin interface uses WebAssembly which is switched off by default on
+Chromium-based browsers. Set ENABLE_WASM=1 in the environment to enable it.
+You will also likely want to install the stalwart-cli package to manage the
+server on the command line.
 
-$ curl https://<jmap_url>/.well-known/jmap
-{"type":"about:blank","status":401,"title":"Unauthorized","detail":"You have to authenticate first."}
-$ curl -u admin:changeme https://<jmap_url>/.well-known/jmap
-
-- stalwart-mail starts as root, binds to ports then drops privilege to the
-  unpriviledged _stalwart-smtp user.
-
-- once installed, you need to at least initialize the administrator password:
-
-# env ADMIN_SECRET=changeme STALWART_PATH=/var/stalwart stalwart-mail --config /var/stalwart/etc/config.toml
-
-(or if you don't like env vars configure the
-authentication.fallback-admin.secret key in /var/stalwart/etc/config.toml)
-
-the initial startup of the server will:
-- download spam filters from https://get.stalw.art/resources/config/spamfilter.toml
+During bootstrap mode, Stalwart will:
 - download the web admin interface from https://github.com/stalwartlabs/webadmin/releases/latest/download/webadmin.zip
-- rewrite its own config file
+- write the config file to point to a default datastore configuration
 
-From that point, you should be able to connect as admin/changeme on the https
-interface to configure the daemon/services. The web admin interface uses
-WebAssembly which is switched off by default on Chromium-based browsers. You
-need to enable it by setting ENABLE_WASM=1 in the environment if you want to
-use the admin web interface.
+Stalwart can also read from several environment variables, which can be added to
+the login.conf(5) drop-in as appropriate for your installation:
+- override the hostname used in HTTP responses:
+  STALWART_HOSTNAME=mail.example.com
 
-Using stalwart-cli to manage the server
-=======================================
+- override the HTTPS port used in HTTPS responses: STALWART_HTTPS_PORT=8080
 
-stalwart-cli allows to manage:
-- domains
-- accounts
-- imports
-- lists & groups
+- enable recovery mode: STALWART_RECOVERY_MODE=true
 
-the following commands should give you a headstart to:
-- create a domain
-$ stalwart-cli --url https://localhost -cadmin:changeme domain create -d 'test domain' jmap.test
+- log level while in recovery mode (default: info):
+  STALWART_RECOVERY_MODE_LOG_LEVEL=debug
 
-- create an account in that domain
-$ stalwart-cli --url https://localhost -cadmin:changeme account create user@jmap.test password accountname
+- HTTP port used in recovery mode (default: 8080):
+  STALWART_RECOVERY_MODE_PORT=9090
 
-- import a mailbox in that account
-$ stalwart-cli --url https://localhost -cadmin:changeme import messages -f mbox user@jmap.test /var/mail/user
+- fixed administrator credentials (default: a temporary random password is
+  generated and printed to the logs): STALWART_RECOVERY_ADMIN=admin:changeme
+  NB: make sure to escape the colon with \c if putting this in login.conf,
+  consult cgetent(3) for more information.
 
-from that point:
-- an IMAP client such as mutt or meli or thunderbird configured
-  to point at stalwart-mail ip:port should show you imported messages over IMAP
+- cluster role assigned to this node. Must match a role name defined in the
+  cluster registry. Leave unset for a standalone (non-clustered) deployment:
+  STALWART_ROLE=primary
 
-- a JMAP client such as meli or cypht.org configured to point at
-  stalwart-mail jmap-url should show you messages over JMAP.
+- push-notification shard this node is responsible for, when running in a
+  cluster: STALWART_PUSH_SHARD=1
 
 Upgrading
 =========
 
-As being in development, stalwart-mail tends to have breaking changes often,
-refer to https://github.com/stalwartlabs/mail-server/blob/main/UPGRADING.md for
-upgrade notes.
+Please refer to UPGRADING_v0_16.md in ${PREFIX}/share/doc/${PKGSTEM}/ as v0.16
+introduced a lot of fundamental breaking changes.

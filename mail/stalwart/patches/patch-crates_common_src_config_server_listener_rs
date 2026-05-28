@@ -1,0 +1,14 @@
+Listen on ipv4, no automagic v6-to-v4 mapping
+
+Index: crates/common/src/config/server/listener.rs
+--- crates/common/src/config/server/listener.rs.orig
++++ crates/common/src/config/server/listener.rs
+@@ -68,7 +68,7 @@ impl Listeners {
+                     object: NetworkListener {
+                         bind: Map::new(vec![
+                             SocketAddr::from_str(&format!(
+-                                "[::]:{}",
++                                "0.0.0.0:{}",
+                                 std::env::var("STALWART_RECOVERY_MODE_PORT")
+                                     .ok()
+                                     .and_then(|p| p.parse::<u16>().ok())

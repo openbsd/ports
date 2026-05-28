@@ -1,0 +1,14 @@
+Listen on ipv4, no automagic v6-to-v4 mapping
+
+Index: crates/common/src/manager/defaults.rs
+--- crates/common/src/manager/defaults.rs.orig
++++ crates/common/src/manager/defaults.rs
+@@ -447,7 +447,7 @@ async fn insert_safe_defaults(bp: &mut Bootstrap) -> t
+                 .write(RegistryWrite::insert(
+                     &NetworkListener {
+                         bind: Map::new(vec![
+-                            SocketAddr::from_str(&format!("[::]:{port}")).unwrap(),
++                            SocketAddr::from_str(&format!("0.0.0.0:{port}")).unwrap(),
+                         ]),
+                         name: name.to_string(),
+                         protocol,

@@ -1,0 +1,14 @@
+There is no env file here
+
+Index: crates/store/src/build/registry.rs
+--- crates/store/src/build/registry.rs.orig
++++ crates/store/src/build/registry.rs
+@@ -58,7 +58,7 @@ impl RegistryStore {
+                     eprintln!();
+                     eprintln!("This password is shown only once. To pin a credential");
+                     eprintln!("instead, set STALWART_RECOVERY_ADMIN=admin:<password> in the");
+-                    eprintln!("env file.");
++                    eprintln!("execution environment.");
+                     eprintln!("════════════════════════════════════════════════════════════");
+                     eprintln!();
+                     inner.env_recovery_admin = Some(("admin".to_string(), password));

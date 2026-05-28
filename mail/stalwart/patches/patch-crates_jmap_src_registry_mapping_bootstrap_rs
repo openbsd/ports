@@ -1,0 +1,14 @@
+Make bootstrap paths for data directory adhere to OpenBSD folder structure
+
+Index: crates/jmap/src/registry/mapping/bootstrap.rs
+--- crates/jmap/src/registry/mapping/bootstrap.rs.orig
++++ crates/jmap/src/registry/mapping/bootstrap.rs
+@@ -644,7 +644,7 @@ fn build_default_bootstrap(server: &Server) -> Bootstr
+ 
+     Bootstrap {
+         data_store: DataStore::RocksDb(RocksDbStore {
+-            path: "/var/lib/stalwart/".to_string(),
++            path: "/var/db/stalwart/".to_string(),
+             ..Default::default()
+         }),
+         blob_store: BlobStore::Default,

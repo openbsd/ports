@@ -2,7 +2,7 @@
 
 daemon="${TRUEPREFIX}/bin/stalwart"
 daemon_logger="daemon.info"
-daemon_flags="--config /var/stalwart/etc/config.toml"
+daemon_flags="--config /etc/stalwart/config.json"
 
 . /etc/rc.d/rc.subr
 

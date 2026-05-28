@@ -1,8 +1,7 @@
-@conflict stalwart-cli-*
+@conflict stalwart-cli-<0.6.0
 @conflict stalwart-imap-*
 @conflict stalwart-jmap-*
 @conflict stalwart-smtp-*
-@pkgpath mail/stalwart/cli
 @pkgpath mail/stalwart/imap
 @pkgpath mail/stalwart/jmap
 @pkgpath mail/stalwart/smtp
@@ -12,24 +11,16 @@
 @mode 750
 @owner _stalwart-smtp
 @group _stalwart-smtp
-@sample /var/stalwart/
-@sample /var/stalwart/etc/
-@sample /var/stalwart/data/
-@sample /var/stalwart/logs/
-@sample /var/stalwart/queue/
-@sample /var/stalwart/reports/
+@sample ${SYSCONFDIR}/stalwart/
+@sample ${LOCALSTATEDIR}/db/stalwart/
+@sample ${LOCALSTATEDIR}/log/stalwart/
 @mode
 @owner
 @group
 @bin bin/stalwart
-@bin bin/stalwart-cli
-bin/stalwart-mail
 share/doc/pkg-readmes/${PKGSTEM}
+share/doc/${PKGSTEM}/
+share/doc/${PKGSTEM}/UPGRADING_v0_16.md
+share/doc/${PKGSTEM}/migrate_v016.py
 share/examples/login.conf.d/stalwart_mail
 @sample ${SYSCONFDIR}/login.conf.d/stalwart_mail
-share/examples/stalwart/
-share/examples/stalwart/config.toml
-@mode 640
-@owner _stalwart-smtp
-@group _stalwart-smtp
-@sample /var/stalwart/etc/config.toml

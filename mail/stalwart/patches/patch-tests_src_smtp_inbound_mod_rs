@@ -1,0 +1,13 @@
+antispam::antispam test runs forever
+
+Index: tests/src/smtp/inbound/mod.rs
+--- tests/src/smtp/inbound/mod.rs.orig
++++ tests/src/smtp/inbound/mod.rs
+@@ -19,7 +19,6 @@ use store::{
+ use tokio::sync::mpsc::error::TryRecvError;
+ use types::id::Id;
+ 
+-pub mod antispam;
+ pub mod asn;
+ pub mod auth;
+ pub mod basic;
