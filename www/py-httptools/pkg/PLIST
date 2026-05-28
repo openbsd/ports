@@ -5,6 +5,11 @@ lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/RECO
 lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/licenses/vendor/
+lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/licenses/vendor/http-parser/
+lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/licenses/vendor/http-parser/LICENSE-MIT
+lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/licenses/vendor/llhttp/
+lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/licenses/vendor/llhttp/LICENSE
 lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/httptools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/httptools/${MODPY_PYCACHE}/
@@ -33,3 +38,4 @@ lib/python${MODPY_VERSION}/site-packages/httptools/parser/url_cparser.pxd
 @so lib/python${MODPY_VERSION}/site-packages/httptools/parser/url_parser.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/url_parser.pyi
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/url_parser.pyx
+lib/python${MODPY_VERSION}/site-packages/httptools/py.typed
