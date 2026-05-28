@@ -1,8 +1,12 @@
 COMMENT=	library and milter for DKIM (Domain Keys Identified Mail)
 
-PORTROACH=	site:https://github.com/trusteddomainproject/OpenDKIM/archive/
-DISTNAME=	opendkim-2.10.3
-REVISION=	3
+# should be able to switch back to proper tarballs for new releases
+V=		2.10.3
+GH_ACCOUNT=	trusteddomainproject
+GH_PROJECT=	OpenDKIM
+GH_TAGNAME=	rel-opendkim-${V:S/./-/g}
+PKGNAME=	opendkim-${V}
+REVISION=	4
 
 SHARED_LIBS +=	opendkim             0.0      # 10.3
 
@@ -15,15 +19,15 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto milter pthread ssl
 
-SITES=		${SITE_SOURCEFORGE:=opendkim/}
-
 LIB_DEPENDS=	mail/sendmail,-libmilter
 
 TEST_FLAGS=	COV_LIBADD=-pthread
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE= gnu
 
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.13
+CONFIGURE_STYLE= autoreconf
 CONFIGURE_ARGS=	--enable-replace_rules
 
 post-install:
