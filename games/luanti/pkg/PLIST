@@ -60,6 +60,7 @@ share/locale/jbo/LC_MESSAGES/luanti.mo
 share/locale/jv/
 share/locale/jv/LC_MESSAGES/
 share/locale/jv/LC_MESSAGES/luanti.mo
+share/locale/ka/LC_MESSAGES/luanti.mo
 share/locale/kab/LC_MESSAGES/luanti.mo
 share/locale/kk/LC_MESSAGES/luanti.mo
 share/locale/kmr/
@@ -69,6 +70,9 @@ share/locale/ko/LC_MESSAGES/luanti.mo
 share/locale/kv/
 share/locale/kv/LC_MESSAGES/
 share/locale/kv/LC_MESSAGES/luanti.mo
+share/locale/kw/
+share/locale/kw/LC_MESSAGES/
+share/locale/kw/LC_MESSAGES/luanti.mo
 share/locale/ky/LC_MESSAGES/luanti.mo
 share/locale/lt/LC_MESSAGES/luanti.mo
 share/locale/lv/LC_MESSAGES/luanti.mo
@@ -149,8 +153,10 @@ share/luanti/builtin/common/tests/after_spec.lua
 share/luanti/builtin/common/tests/math_spec.lua
 share/luanti/builtin/common/tests/misc_helpers_spec.lua
 share/luanti/builtin/common/tests/serialize_spec.lua
+share/luanti/builtin/common/tests/vector2_spec.lua
 share/luanti/builtin/common/tests/vector_spec.lua
 share/luanti/builtin/common/vector.lua
+share/luanti/builtin/common/vector2.lua
 share/luanti/builtin/emerge/
 share/luanti/builtin/emerge/env.lua
 share/luanti/builtin/emerge/init.lua
@@ -288,6 +294,11 @@ share/luanti/builtin/profiler/instrumentation.lua
 share/luanti/builtin/profiler/reporter.lua
 share/luanti/builtin/profiler/sampling.lua
 share/luanti/builtin/settingtypes.txt
+share/luanti/builtin/sscsm_client/
+share/luanti/builtin/sscsm_client/init.lua
+share/luanti/builtin/sscsm_client/register.lua
+share/luanti/builtin/sscsm_server/
+share/luanti/builtin/sscsm_server/init.lua
 share/luanti/client/
 share/luanti/client/shaders/
 share/luanti/client/shaders/3d_interlaced_merge/

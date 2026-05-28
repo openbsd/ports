@@ -1,7 +1,7 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -355,7 +355,7 @@ endif()
+@@ -356,7 +356,7 @@ endif()
  # Note that find_library does not reliably find it so we have to resort to this.
  # Also, passing -latomic is not always the same as adding atomic to the library list.
  include(CheckCSourceCompiles)
@@ -10,7 +10,7 @@ Index: src/CMakeLists.txt
  	set(CMAKE_REQUIRED_LIBRARIES "-latomic")
  	check_c_source_compiles("int main(){}" HAVE_LINK_ATOMIC)
  	set(CMAKE_REQUIRED_LIBRARIES "")
-@@ -968,7 +968,7 @@ else()
+@@ -972,7 +972,7 @@ else()
  		endif()
  	endif()
  
