@@ -1,9 +1,9 @@
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
-GNOME_VERSION=		50.1
+GNOME_VERSION=		50.2
 
-SHARED_LIBS += gtkhex-4                  1.1 # 1.12.0
+SHARED_LIBS += gtkhex-4                  1.1 # 1.12.1
 
 CATEGORIES=		sysutils editors
 
@@ -25,6 +25,8 @@ LIB_DEPENDS=		x11/gnome/libadwaita
 
 MODGNOME_TOOLS= 	desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache yelp
+
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 # XXX
 # Checking for function "mremap" : NO 
