@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1807 2026/05/28 07:31:10 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.1808 2026/05/28 15:19:08 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1132,7 +1132,6 @@ my $obsolete_message = {
 	15 => "use rspamd's internal milter support instead",
 	16 => "dependencies for recent versions can't be met",
 	17 => "outdated port, security problems in the last ported version",
-	18 => "renamed upstream",
 	46 => "setuid-root software with a track record of security issues",
 	47 => "DNS network daemon running as root and not using random source ports. use DNS64 support in unbound or isc-bind",
 	48 => "1.x does not support current PHP, 2.x is tricky to package, see https://github.com/leenooks/phpLDAPadmin/wiki/Installation-Instructions#install-from-the-source-code",
