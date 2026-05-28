@@ -1,0 +1,3 @@
+@conflict stalwart-mail-<0.16
+@pkgpath mail/stalwart
+@bin bin/stalwart-cli

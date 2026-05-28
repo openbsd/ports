@@ -1,0 +1,9 @@
+A schema-driven command line tool for administering Stalwart Mail and
+Collaboration Server over its JMAP API.
+
+The tool fetches the server's schema on first use and derives every
+command, validation rule, and rendered view from it. The same binary
+works against any compatible Stalwart deployment without recompilation.
+
+Output is human-friendly by default (sectioned, with color when stdout
+is a TTY) and switches to compact JSON or NDJSON for machine consumption.
