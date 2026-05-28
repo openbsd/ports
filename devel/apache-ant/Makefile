@@ -1,7 +1,6 @@
 COMMENT=	build tool for java applications
 
-DISTNAME=	apache-ant-1.10.15
-REVISION=	0
+DISTNAME=	apache-ant-1.10.17
 CATEGORIES=	devel
 
 HOMEPAGE=	https://ant.apache.org/
