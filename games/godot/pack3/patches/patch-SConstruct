@@ -15,7 +15,7 @@ Index: SConstruct
      if env["debug_symbols"]:
          if env["platform"] == "windows":
              if methods.using_clang(env):
-@@ -1018,7 +1018,6 @@ if env.dev_build:
+@@ -1021,7 +1021,6 @@ if env.dev_build:
  if env["precision"] == "double":
      suffix += ".double"
  
