@@ -1,6 +1,6 @@
 COMMENT=	resource manager for PC/SC
 
-V=		2.4.0
+V=		2.5.0
 DISTNAME=	pcsc-lite-${V}
 CATEGORIES=	security
 
@@ -10,6 +10,8 @@ SHARED_LIBS+=	pcscspy		1.0 # 1.0.0
 
 HOMEPAGE=	https://pcsclite.apdu.fr
 
+# on https://pcsclite.apdu.fr/files/ portroach only finds the last-but-1 version
+PORTROACH =	https://github.com/LudovicRousseau/PCSC/releases/
 SITES=		https://pcsclite.apdu.fr/files/
 
 EXTRACT_SUFX=	.tar.xz
@@ -55,5 +57,9 @@ CFLAGS+=	-DLIBPCSC=${_file:Q:Q}
 
 post-test:
 	${WRKBUILD}/testpcsc
+
+post-install:
+	rm -rf ${PREFIX}/lib/systemd \
+		${PREFIX}/sysusers.d
 
 .include <bsd.port.mk>
