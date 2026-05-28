@@ -1,5 +1,7 @@
 firmware/mwx-license
 firmware/mwx-mt7922_patch_mcu_1_1_hdr
 firmware/mwx-mt7922_ram_code_1
+firmware/mwx-mt7925_patch_mcu_1_1_hdr
+firmware/mwx-mt7925_ram_code_1_1
 firmware/mwx-mt7961_patch_mcu_1_2_hdr
 firmware/mwx-mt7961_ram_code_1
