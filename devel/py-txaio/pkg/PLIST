@@ -6,8 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_DISTV}.dist-info/licenses/LICENSE
-lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_DISTV}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/txaio/__init__.py
 lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -41,6 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/txaio/_util.py
 lib/python${MODPY_VERSION}/site-packages/txaio/_version.py
 lib/python${MODPY_VERSION}/site-packages/txaio/aio.py
 lib/python${MODPY_VERSION}/site-packages/txaio/interfaces.py
+lib/python${MODPY_VERSION}/site-packages/txaio/py.typed
 lib/python${MODPY_VERSION}/site-packages/txaio/testutil.py
 lib/python${MODPY_VERSION}/site-packages/txaio/tx.py
 lib/python${MODPY_VERSION}/site-packages/txaio/with_asyncio.py
