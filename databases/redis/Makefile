@@ -6,7 +6,7 @@ REVISION =		1
 CATEGORIES =		databases
 
 HOMEPAGE =		https://redis.io/
-SITES =			http://download.redis.io/releases/
+SITES =			https://download.redis.io/releases/
 
 MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
 
