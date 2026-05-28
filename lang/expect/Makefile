@@ -1,6 +1,8 @@
 COMMENT =	sophisticated scripter based on Tcl/Tk
 
 VERSION =	5.45.4
+REVISION =	0
+
 DISTNAME =	expect${VERSION}
 PKGNAME =	expect-${VERSION}
 SHARED_LIBS =	expect5454 0.0

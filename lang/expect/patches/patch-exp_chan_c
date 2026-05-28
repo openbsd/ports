@@ -1,7 +1,10 @@
 Get rid of implicit declaration of function warning
 
---- exp_chan.c.orig	Thu Sep  9 19:29:43 2010
-+++ exp_chan.c	Thu Sep  9 19:30:27 2010
+error: incompatible pointer types initializing 'Tcl_ChannelTypeVersion' (aka 'struct Tcl_ChannelTypeVersion_ *') with an expression of type 'int (ClientData, int)' (aka 'int (void *, int)') [-Wincompatible-pointer-types]
+
+Index: exp_chan.c
+--- exp_chan.c.orig
++++ exp_chan.c
 @@ -37,6 +37,7 @@
  #include "exp_log.h"
  #include "tcldbg.h" /* Dbg_StdinMode */
@@ -10,3 +13,20 @@ Get rid of implicit declaration of function warning
  extern int		expSetBlockModeProc _ANSI_ARGS_((int fd, int mode));
  static int		ExpBlockModeProc _ANSI_ARGS_((ClientData instanceData,
  			    int mode));
+@@ -58,7 +59,7 @@ static int		ExpGetHandleProc _ANSI_ARGS_((ClientData i
+ 
+ Tcl_ChannelType expChannelType = {
+     "exp",				/* Type name. */
+-    ExpBlockModeProc,			/* Set blocking/nonblocking mode.*/
++    TCL_CHANNEL_VERSION_2,		/* Version. */
+     ExpCloseProc,			/* Close proc. */
+     ExpInputProc,			/* Input proc. */
+     ExpOutputProc,			/* Output proc. */
+@@ -68,6 +69,7 @@ Tcl_ChannelType expChannelType = {
+     ExpWatchProc,			/* Initialize notifier. */
+     ExpGetHandleProc,			/* Get OS handles out of channel. */
+     NULL,				/* Close2 proc */
++    ExpBlockModeProc,			/* Set blocking/nonblocking mode.*/
+ };
+ 
+ typedef struct ThreadSpecificData {
