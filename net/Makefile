@@ -118,6 +118,7 @@
      SUBDIR += freeradius
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame
+     SUBDIR += fzssh
      SUBDIR += gajim
      SUBDIR += gblc
      SUBDIR += gdnsd
