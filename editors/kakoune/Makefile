@@ -1,6 +1,6 @@
 COMMENT =		modal code editor with a focus on interactivity
 
-V =			2026.04.12
+V =			2026.05.21
 DISTNAME =		kakoune-${V}
 
 CATEGORIES =		editors
