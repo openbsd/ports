@@ -1,6 +1,7 @@
 COMMENT =	simple http server class
 
-DISTNAME =	HTTP-Daemon-6.16
+DISTNAME =	HTTP-Daemon-6.17
+CPAN_AUTHOR =	OALDERS
 
 CATEGORIES =	www
 
