@@ -1,0 +1,9 @@
+Files needed for the LXQt Wayland Session: Wayland session start script,
+its desktop entry for display managers and default configurations for
+actually supported compositors which are:
+- Labwc
+- Wayfire
+- kwin_wayland
+- Niri
+- river
+- Sway

@@ -1,0 +1,11 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Startup
+=======
+LXQt desktop environment is launched through the 'startlxqtwayland' script.
+It can be run from a VT if the permissions are correctly set on the various
+DRM devices required by wayland, which should be the default.
+
+An lxqt-wayland.desktop file is provided for use by greetd.
