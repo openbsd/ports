@@ -1,6 +1,8 @@
 COMMENT =	USB Chip/Smart Card Interface Devices driver
 
-DISTNAME =	ccid-1.7.1
+# portroach only identifies the previous release on https://ccid.apdu.fr/files/
+PORTROACH =	https://github.com/LudovicRousseau/CCID/releases/
+DISTNAME =	ccid-1.8.0
 
 CATEGORIES =	security
 
@@ -29,6 +31,6 @@ CONFIGURE_ARGS = -Dserial=true \
 NO_TEST =	Yes
 
 post-install:
-	mv {${WRKINST}${SYSCONFDIR},${PREFIX}/share/examples}/reader.conf.d
+	mv {${WRKINST}${SYSCONFDIR},${PREFIX}/share/examples}/ccid
 
 .include <bsd.port.mk>
