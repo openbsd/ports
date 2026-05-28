@@ -1,9 +1,8 @@
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
-VERSION=	17.7
+VERSION=	17.10
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
-REVISION=	0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.10 \
