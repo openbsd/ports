@@ -1,6 +1,7 @@
 COMMENT =	modules to parse and extract information from HTML
 
-DISTNAME =	HTML-Parser-3.83
+DISTNAME =	HTML-Parser-3.85
+CPAN_AUTHOR =	OALDERS
 
 CATEGORIES =	www
 
