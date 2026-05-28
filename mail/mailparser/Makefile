@@ -1,6 +1,6 @@
 COMMENT=	wrapper for 'email' in Python's standard library
 
-MODPY_DISTV=	4.2.1
+MODPY_DISTV=	4.3.0
 DISTNAME=	mail_parser-${MODPY_DISTV}
 PKGNAME=	mailparser-${MODPY_DISTV}
 
