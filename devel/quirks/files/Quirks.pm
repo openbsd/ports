@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1806 2026/05/26 09:26:35 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1807 2026/05/28 07:31:10 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1069,7 +1069,8 @@ setup_obsolete_reason(
 	46 => 'exim-eximon',
 	3 => 'kf6-libkcompactdisc',
 # 8.0
-	5 => 'x11/XawMu',
+	5 => 'XawMu',
+	3 => 'facette',
 );
 # beware, if ports with an RDEP on Python 3 are removed, they need to be listed
 # as @conflcit/pkgpath in lang/python/3 and not here, otherwise an update from a
@@ -1107,6 +1108,8 @@ my $obsolete_suggestion = {
 	'minecraft' => 'multimc',
 	'tls-attacker' => 'py3-tlsfuzzer',
 	'usmb' => 'susmb',
+# 8.0
+	'facette' => 'grafana',
 };
 
 # reasons for obsolete packages
