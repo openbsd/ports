@@ -228,6 +228,7 @@
      SUBDIR += spampd
      SUBDIR += sqlgrey
      SUBDIR += stalwart
+     SUBDIR += stalwart-cli
      SUBDIR += swaks
      SUBDIR += sylpheed
      SUBDIR += sympa
