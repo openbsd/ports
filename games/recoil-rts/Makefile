@@ -8,7 +8,7 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
 
-V =			2025.06.19
+V =			2025.06.24
 PKGNAME =		recoil-rts-${V}
 
 DIST_TUPLE +=		github beyond-all-reason RecoilEngine ${V} .
