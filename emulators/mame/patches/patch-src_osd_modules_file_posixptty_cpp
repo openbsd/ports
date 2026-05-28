@@ -1,7 +1,7 @@
 Index: src/osd/modules/file/posixptty.cpp
 --- src/osd/modules/file/posixptty.cpp.orig
 +++ src/osd/modules/file/posixptty.cpp
-@@ -161,7 +161,7 @@ std::error_condition posix_open_ptty(std::uint32_t ope
+@@ -117,7 +117,7 @@ std::error_condition posix_open_ptty(std::uint32_t ope
  	tios.c_lflag = 0;
  
  	int masterfd = -1, slavefd = -1;
