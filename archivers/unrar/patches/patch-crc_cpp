@@ -1,16 +1,14 @@
 Index: crc.cpp
 --- crc.cpp.orig
 +++ crc.cpp
-@@ -48,6 +48,12 @@ void InitCRC32(uint *CRCTab)
+@@ -48,6 +48,10 @@ void InitCRC32(uint *CRCTab)
      size_t Size=sizeof(Value);
      int RetCode=sysctlbyname("hw.optional.armv8_crc32",&Value,&Size,NULL,0);
      CRC_Neon=RetCode==0 && Value!=0;
-+  #elif __OpenBSD__
-+    const int ISAR0_MIB[] = { CTL_MACHDEP, CPU_ID_AA64ISAR0 };
-+    uint64_t ISAR0;
-+    size_t Size=sizeof(ISAR0);
-+    int RetCode=sysctl(ISAR0_MIB, 2, &ISAR0, &Size, NULL, 0);
-+    CRC_Neon=RetCode!=-1 && ID_AA64ISAR0_CRC32(ISAR0)>=ID_AA64ISAR0_CRC32_BASE;
++  #elif defined(__FreeBSD__) || defined(__OpenBSD__)
++    unsigned long Value;
++    int RetCode=elf_aux_info(AT_HWCAP, &Value, sizeof(Value));
++    CRC_Neon=RetCode==0 && (Value & HWCAP_CRC32)!=0;
    #else
      CRC_Neon=(getauxval(AT_HWCAP) & HWCAP_CRC32)!=0;
    #endif

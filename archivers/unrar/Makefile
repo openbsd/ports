@@ -7,9 +7,9 @@ COMMENT=	extract, list, and test RAR archives
 # to 0 for a non-beta release, e.g., "5.00 beta 8" was succeeded
 # by "5.00".
 
-PKGNAME=	unrar-7.13
+PKGNAME=	unrar-7.21
 EPOCH=		2
-DISTNAME=	unrarsrc-7.1.10
+DISTNAME=	unrarsrc-7.2.6
 CATEGORIES=	archivers
 
 HOMEPAGE=	https://www.rarlab.com/
