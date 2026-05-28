@@ -1,7 +1,7 @@
 Index: src/LYMainLoop.c
 --- src/LYMainLoop.c.orig
 +++ src/LYMainLoop.c
-@@ -7225,7 +7225,8 @@ int mainloop(void)
+@@ -7231,7 +7231,8 @@ int mainloop(void)
  	    handle_LYK_DOWN_HALF(&old_c, real_c);
  	    break;
  

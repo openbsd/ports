@@ -76,6 +76,8 @@ share/doc/lynx/lynx_doc/test/c1.html
 share/doc/lynx/lynx_doc/test/circle.html
 share/doc/lynx/lynx_doc/test/cp-1252.html
 share/doc/lynx/lynx_doc/test/cp-1252a.html
+share/doc/lynx/lynx_doc/test/formaction.html
+share/doc/lynx/lynx_doc/test/formaction2.html
 share/doc/lynx/lynx_doc/test/idna-tr46.html
 share/doc/lynx/lynx_doc/test/image.jpg
 share/doc/lynx/lynx_doc/test/iso-8859-1.html
@@ -83,6 +85,7 @@ share/doc/lynx/lynx_doc/test/iso-8859-1a.html
 share/doc/lynx/lynx_doc/test/iso-8859-2.html
 share/doc/lynx/lynx_doc/test/iso-8859-2a.html
 share/doc/lynx/lynx_doc/test/koi8-r.html
+share/doc/lynx/lynx_doc/test/named-entities.html
 share/doc/lynx/lynx_doc/test/nobody
 share/doc/lynx/lynx_doc/test/quickbrown.html
 share/doc/lynx/lynx_doc/test/raw8bit.html

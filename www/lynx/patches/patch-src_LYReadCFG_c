@@ -11,10 +11,10 @@ Index: src/LYReadCFG.c
       PARSE_SET(RC_ENABLE_SCROLLBACK,    enable_scrollback),
 @@ -1547,7 +1546,6 @@ static Config_Type Config_Table [] =
  #endif
-      PARSE_Env(RC_FTP_PROXY,            0),
+      PARSE_Env(RC_FTP_PROXY,            NULL),
       PARSE_STR(RC_GLOBAL_EXTENSION_MAP, global_extension_map),
 -     PARSE_STR(RC_GLOBAL_MAILCAP,       global_type_map),
-      PARSE_Env(RC_GOPHER_PROXY,         0),
+      PARSE_Env(RC_GOPHER_PROXY,         NULL),
       PARSE_SET(RC_GOTOBUFFER,           goto_buffer),
       PARSE_PRG(RC_GZIP_PATH,            ppGZIP),
 @@ -1668,7 +1666,6 @@ static Config_Type Config_Table [] =
@@ -38,7 +38,7 @@ Index: src/LYReadCFG.c
       PARSE_SET(RC_VERBOSE_IMAGES,       verbose_img),
       PARSE_SET(RC_VI_KEYS_ALWAYS_ON,    vi_keys),
 -     PARSE_FUN(RC_VIEWER,               viewer_fun),
-      PARSE_Env(RC_WAIS_PROXY,           0),
+      PARSE_Env(RC_WAIS_PROXY,           NULL),
       PARSE_SET(RC_WAIT_VIEWER_TERMINATION, wait_viewer_termination),
       PARSE_SET(RC_WITH_BACKSPACES,      with_backspaces),
 -     PARSE_STR(RC_XLOADIMAGE_COMMAND,   XLoadImageCommand),
