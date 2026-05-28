@@ -672,6 +672,7 @@ share/vim/${P}/compiler/yamllint.vim
 share/vim/${P}/compiler/zig.vim
 share/vim/${P}/compiler/zig_build.vim
 share/vim/${P}/compiler/zig_build_exe.vim
+share/vim/${P}/compiler/zig_cc.vim
 share/vim/${P}/compiler/zig_test.vim
 share/vim/${P}/compiler/zsh.vim
 share/vim/${P}/defaults.vim
