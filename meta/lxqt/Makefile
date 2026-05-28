@@ -2,6 +2,7 @@ COMMENT-main =		desktop meta-package for LXQt (base installation)
 COMMENT-extras =	desktop meta-package for LXQt (full installation)
 
 V =		2.4.0
+REVISION =	0
 PKGNAME =	lxqt-${V}
 
 PKGNAME-main =		lxqt-${V}
@@ -32,6 +33,7 @@ RUN_DEPENDS-extras += \
 		x11/lxqt/lximage-qt \
 		x11/lxqt/openssh-askpass \
 		x11/lxqt/pavucontrol-qt \
+		x11/lxqt/archiver \
 		x11/lxqt/runner \
 		x11/lxqt/screengrab \
 		x11/lxqt/sudo
