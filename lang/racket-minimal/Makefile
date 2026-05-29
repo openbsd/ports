@@ -1,12 +1,11 @@
 BROKEN-arm =		invalid memory reference
-BROKEN-i386 =		compiling ChezScheme/s/format.ss nonrecoverable invalid memory reference
 BROKEN-sparc64 =	racket-v.boot environment-variables-ref: contract violation
 
-ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 riscv64 sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			9.1
+V =			9.2
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX}
 DISTFILES.boot = 	racket-openbsd-2${EXTRACT_SUFX}
@@ -87,7 +86,7 @@ FLAVOR ?=
 # - CS without -pb requires wxneeded.
 .if ${FLAVOR:Mpb}
 CONFIGURE_ARGS +=	--enable-pb
-.elif ${MACHINE_ARCH} == "amd64"
+.elif ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
 USE_NOBTCFI =		Yes
 USE_WXNEEDED =		Yes
 LDFLAGS_WXNEEDED =	-Wl,-z,wxneeded
@@ -95,13 +94,10 @@ LDFLAGS_NOBTCFI =	-Wl,-z,nobtcfi
 .elif ${MACHINE_ARCH} == "powerpc64" || ${MACHINE_ARCH} == "sparc64"
 CONFIGURE_ARGS +=	--enable-pb \
 			--enable-mach=tpb64b
-.elif ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ARGS +=	--enable-pb \
-			--enable-mach=tpb32b
-.elif ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "mips64el"
+.elif ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "riscv64"
 CONFIGURE_ARGS +=	--enable-pb \
 			--enable-mach=tpb64l
-.elif ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386"
+.elif ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS +=	--enable-pb \
 			--enable-mach=tpb32l
 .else
