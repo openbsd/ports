@@ -1,6 +1,7 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
+REVISION =	0
 MOZILLA_VERSION =	140.11.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
@@ -24,16 +25,23 @@ MODULES =	www/mozilla lang/python
 
 MODPY_RUNDEP =	No
 
+# jumbo patch to update bindgen to a llvm22-compatible version
+SITES.p =	https://bugzilla.mozilla.org/
+PATCHFILES.p=	bug-2038504-backport-bug-D262840-to-esr140.patch{attachment.cgi?id=9585442}
+PATCH_DIST_STRIP =	-p1 -f
+
 COMPILER =	ports-clang
+MODCLANG_VERSION =	22
+USE_LLD =	ports
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
 # wasi
-BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
-			lang/wasi-sdk/libcxx \
-			lang/wasi-libc
+BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt>=22.1.5p1 \
+			lang/wasi-sdk/libcxx>=21.1.5p1 \
+			lang/wasi-libc>=0.20251114p1
 # mach uses pkg_resources
 BUILD_DEPENDS +=	devel/py-setuptools
 
