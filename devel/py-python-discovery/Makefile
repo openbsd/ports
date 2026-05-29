@@ -1,6 +1,7 @@
 COMMENT =		library for discovering Python interpreters
 
 MODPY_DISTV =		1.3.1
+REVISION =		0
 DISTNAME =		python_discovery-${MODPY_DISTV}
 PKGNAME =		py-python-discovery-${MODPY_DISTV}
 CATEGORIES =		devel
@@ -17,9 +18,10 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatch-vcs
 
-TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
-			devel/py-test-mock \
-			sysutils/py-filelock \
+RUN_DEPENDS =		sysutils/py-filelock \
 			sysutils/py-platformdirs
+
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			devel/py-test-mock
 
 .include <bsd.port.mk>
