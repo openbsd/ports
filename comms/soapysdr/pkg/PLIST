@@ -1,0 +1,44 @@
+@bin bin/SoapySDRUtil
+include/SoapySDR/
+include/SoapySDR/Config.h
+include/SoapySDR/Config.hpp
+include/SoapySDR/Constants.h
+include/SoapySDR/ConverterPrimitives.hpp
+include/SoapySDR/ConverterRegistry.hpp
+include/SoapySDR/Converters.h
+include/SoapySDR/Device.h
+include/SoapySDR/Device.hpp
+include/SoapySDR/Errors.h
+include/SoapySDR/Errors.hpp
+include/SoapySDR/Formats.h
+include/SoapySDR/Formats.hpp
+include/SoapySDR/Logger.h
+include/SoapySDR/Logger.hpp
+include/SoapySDR/Modules.h
+include/SoapySDR/Modules.hpp
+include/SoapySDR/Registry.hpp
+include/SoapySDR/Time.h
+include/SoapySDR/Time.hpp
+include/SoapySDR/Types.h
+include/SoapySDR/Types.hpp
+include/SoapySDR/Version.h
+include/SoapySDR/Version.hpp
+@lib lib/libSoapySDR.so.${LIBSoapySDR_VERSION}
+lib/pkgconfig/SoapySDR.pc
+lib/python${MODPY_VERSION}/site-packages/SoapySDR.py
+@so lib/python${MODPY_VERSION}/site-packages/_SoapySDR.so
+@man man/man1/SoapySDRUtil.1
+share/cmake/
+share/cmake/SoapySDR/
+share/cmake/SoapySDR/SoapySDRConfig.cmake
+share/cmake/SoapySDR/SoapySDRConfigVersion.cmake
+share/cmake/SoapySDR/SoapySDRExport${MODCMAKE_BUILD_SUFFIX}
+share/cmake/SoapySDR/SoapySDRExport.cmake
+share/cmake/SoapySDR/SoapySDRUtil.cmake
+share/lua/${MODLUA_VERSION}/SoapySDR/
+share/lua/${MODLUA_VERSION}/SoapySDR/Device.lua
+share/lua/${MODLUA_VERSION}/SoapySDR/Lib.lua
+share/lua/${MODLUA_VERSION}/SoapySDR/Logger.lua
+share/lua/${MODLUA_VERSION}/SoapySDR/Time.lua
+share/lua/${MODLUA_VERSION}/SoapySDR/Utility.lua
+share/lua/${MODLUA_VERSION}/SoapySDR/init.lua
