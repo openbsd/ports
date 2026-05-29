@@ -34,6 +34,9 @@ CONFIGURE_ARGS+=	--disable-suffix
 
 DOC_DIR=		${PREFIX}/share/doc/iverilog
 
+# So ports-gcc can find bzlib.h
+CFLAGS+=		-I${LOCALBASE}/include
+
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}/{ivlpp,vvp}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOC_DIR}
