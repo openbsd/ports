@@ -32,7 +32,7 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 SITES.p =      https://bugzilla.mozilla.org/
-PATCHFILES.p=	bug-2038504-backport-bug-D262840-to-esr140.patch
+PATCHFILES.p=	bug-2038504-backport-bug-D262840-to-esr140.patch{attachment.cgi?id=9585442}
 PATCH_DIST_STRIP =     -p1 -f
 
 COMPILER =	ports-clang
