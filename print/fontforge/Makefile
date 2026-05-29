@@ -29,7 +29,8 @@ EXTRACT_SUFX=	.tar.xz
 MODULES=		devel/cmake \
 			lang/python
 
-BUILD_DEPENDS=		devel/gettext,-tools
+BUILD_DEPENDS=		devel/gettext,-tools \
+			textproc/py-sphinx
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS}	\
 			archivers/woff2		\
