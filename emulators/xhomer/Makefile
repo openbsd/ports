@@ -5,11 +5,11 @@ COMMENT=		DEC Professional 350 emulator based on SIMH
 VERSION=		9-16-06
 DISTNAME=		xhomer-${VERSION}
 PKGNAME=		xhomer-${VERSION:S/-/./g}
-REVISION=		2
+REVISION=		3
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		emulators
 
-HOMEPAGE=		http://xhomer.isani.org/xhomer/
+HOMEPAGE=		https://xhomer.isani.org/xhomer/
 
 # SIMH + GPLv2
 PERMIT_PACKAGE=	Yes
