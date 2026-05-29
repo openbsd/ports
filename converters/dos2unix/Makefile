@@ -1,17 +1,17 @@
 COMMENT=	convert DOS/MAC files to UNIX (line-endings/charset)
 
-DISTNAME =	dos2unix-7.5.5
+DISTNAME =	dos2unix-7.5.6
 
 CATEGORIES=	converters
 
-HOMEPAGE=	https://waterlan.home.xs4all.nl/dos2unix.html
+HOMEPAGE=	https://waterlander.net/dos2unix/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c intl
 
-SITES=		https://waterlan.home.xs4all.nl/dos2unix/
+SITES=		https://waterlander.net/dos2unix/files/
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
