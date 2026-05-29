@@ -2,14 +2,8 @@ USE_NOBTCFI =	Yes
 
 COMMENT =	simple offline API documentation browser
 
-V =		0.7.0
+V =		0.8.1
 DISTNAME =	zeal-${V}
-REVISION =	0
-
-# fix build with Qt6
-SITES.qt =		https://github.com/zealdocs/zeal/commit/
-PATCHFILES.qt =		9630cc94c155d87295e51b41fbab2bd5798f8229.patch
-PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =	devel
 
@@ -44,20 +38,6 @@ LIB_DEPENDS =	archivers/libarchive \
 
 CONFIGURE_ARGS =	-DZEAL_RELEASE_BUILD=ON
 
-FIX_CRLF_FILES =	src/libs/registry/*.cpp \
-			src/libs/ui/qxtglobalshortcut/*.cpp \
-			src/libs/ui/*.cpp
-
 NO_TEST =	Yes
-
-# XXX FIX_CRLF_FILES runs after distpatch, but patch(1) and gpatch(1) won't
-# apply PATCHFILES due to wrong line endings
-post-extract:
-	@cd ${WRKDIST} && perl -i -pe 's/\r$$//' -- \
-	    src/libs/registry/docset.cpp \
-	    src/libs/registry/docsetmetadata.cpp \
-	    src/libs/registry/docsetregistry.cpp \
-	    src/libs/ui/docsetsdialog.cpp \
-	    src/libs/ui/qxtglobalshortcut/qxtglobalshortcut_x11.cpp
 
 .include <bsd.port.mk>
