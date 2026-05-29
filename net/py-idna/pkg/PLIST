@@ -1,15 +1,22 @@
 @pkgpath net/py-idna,python3
+bin/idna
 lib/python${MODPY_VERSION}/site-packages/idna/
 lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_DISTV}.dist-info/licenses/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/idna/__init__.py
+lib/python${MODPY_VERSION}/site-packages/idna/__main__.py
 lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}codec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}codec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,6 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}package_data.${MOD
 lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}package_data.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}uts46data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}uts46data.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/idna/cli.py
 lib/python${MODPY_VERSION}/site-packages/idna/codec.py
 lib/python${MODPY_VERSION}/site-packages/idna/compat.py
 lib/python${MODPY_VERSION}/site-packages/idna/core.py

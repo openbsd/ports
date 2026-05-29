@@ -1,6 +1,6 @@
-COMMENT=	Python library to support the IDNA protocol
+COMMENT=	IDNA internationalized domain names for Python
 
-MODPY_DISTV=	3.14
+MODPY_DISTV=	3.17
 DISTNAME=	idna-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
