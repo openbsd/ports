@@ -4,7 +4,7 @@ GH_ACCOUNT =	WebAssembly
 GH_PROJECT =	wasi-libc
 GH_COMMIT =	wasi-sdk-29
 DISTNAME =	wasi-libc-0.20251114
-REVISION =	0
+REVISION =	1
 
 DISTFILES =	${GH_DISTFILE}
 DISTFILES.h = 	wasi-libc-llvm13-std-headers.tar.gz
@@ -21,8 +21,8 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER =	ports-clang
 COMPILER_LANGS =c
-MODCLANG_VERSION =	19
-TRIPLE =	wasm32-wasi
+MODCLANG_VERSION =	22
+TRIPLE =	wasm32-wasip1
 SUBST_VARS +=	TRIPLE
 USE_GMAKE =	yes
 ALL_TARGET =	finish
