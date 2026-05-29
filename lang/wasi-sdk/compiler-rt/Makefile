@@ -1,6 +1,5 @@
 COMMENT =	LLVM runtime library for WebAssembly System Interface
 
-REVISION =	1
 DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME =	wasi-compiler-rt-${LLVM_V}
 LIBPATH =	${TRIPLE}/libclang_rt.builtins.a

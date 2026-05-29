@@ -3,5 +3,5 @@ llvm${MODCLANG_VERSION}/lib/
 llvm${MODCLANG_VERSION}/lib/clang/
 llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/
 llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/lib/
-llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/lib/wasi/
+llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/lib/${TRIPLE}/
 @static-lib llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/lib/${LIBPATH}
