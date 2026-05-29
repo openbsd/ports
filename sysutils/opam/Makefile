@@ -4,7 +4,7 @@ COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
 
-V =			2.5.0
+V =			2.5.1
 PKGNAME =		opam-${V:S/-//}
 DISTNAME =		opam-full-${V}
 
