@@ -2,7 +2,7 @@ COMMENT =	Qt git repository viewer
 
 GH_ACCOUNT =	tibirna
 GH_PROJECT =	qgit
-GH_TAGNAME =	qgit-2.12
+GH_TAGNAME =	qgit-2.13
 DISTNAME =	${GH_TAGNAME}
 
 CATEGORIES =	devel x11
