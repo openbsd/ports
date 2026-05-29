@@ -1,0 +1,3 @@
+include/liquid/
+include/liquid/liquid.h
+@lib lib/libliquid.so.${LIBliquid_VERSION}

@@ -1,0 +1,15 @@
+Index: src/nco/src/nco.proto.c
+--- src/nco/src/nco.proto.c.orig
++++ src/nco/src/nco.proto.c
+@@ -32,6 +32,11 @@
+ #include <string.h>
+ #include <assert.h>
+ 
++#ifdef M_PI
++#undef M_PI
++#endif
++#define M_PI 3.141592653589793238462643383279502884
++
+ #define NCO_STATIC_LUT_WORDBITS     32
+ #define NCO_STATIC_LUT_NBITS        10
+ #define NCO_STATIC_LUT_SIZE         (1LLU << NCO_STATIC_LUT_NBITS)

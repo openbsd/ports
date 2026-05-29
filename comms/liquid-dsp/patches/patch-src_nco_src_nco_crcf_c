@@ -1,0 +1,15 @@
+Index: src/nco/src/nco_crcf.c
+--- src/nco/src/nco_crcf.c.orig
++++ src/nco/src/nco_crcf.c
+@@ -26,6 +26,11 @@
+ 
+ #include "liquid.internal.h"
+ 
++#ifdef M_PI
++#undef M_PI
++#endif
++#define M_PI 3.141592653589793238462643383279502884
++
+ #define NCO(name)   LIQUID_CONCAT(nco_crcf,name)
+ #define SYNTH(name) LIQUID_CONCAT(synth_crcf,name)
+ #define EXTENSION   "crcf"
