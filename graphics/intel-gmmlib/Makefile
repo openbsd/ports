@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =	Intel Graphics Memory Management Library
 
-VERSION =	22.9.0
+VERSION =	22.10.0
 GH_ACCOUNT =	intel
 GH_PROJECT =	gmmlib
 GH_TAGNAME =	intel-gmmlib-${VERSION}
