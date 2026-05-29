@@ -22,4 +22,4 @@ Index: runtime/syntax/make.vim
 +syn match makeInclude  "^ *\. *include"
  syn match makeStatement	"^ *vpath"
  syn match makeExport    "^ *\(export\|unexport\)\>"
- syn match makeOverride	"^ *override"
+ syn match makeOverride	"^ *override\>"
