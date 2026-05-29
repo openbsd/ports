@@ -15,7 +15,6 @@
 @bin bin/qemu-system-loongarch64
 @bin bin/qemu-system-m68k
 @bin bin/qemu-system-microblaze
-@bin bin/qemu-system-microblazeel
 @bin bin/qemu-system-mips
 @bin bin/qemu-system-mips64
 @bin bin/qemu-system-mips64el
@@ -143,6 +142,7 @@ share/doc/qemu/devel/migration/qpl-compression.html
 share/doc/qemu/devel/migration/uadk-compression.html
 share/doc/qemu/devel/migration/vfio.html
 share/doc/qemu/devel/migration/virtio.html
+share/doc/qemu/devel/migration/xbzrle.html
 share/doc/qemu/devel/modules.html
 share/doc/qemu/devel/multi-process.html
 share/doc/qemu/devel/multi-thread-tcg.html
@@ -231,6 +231,7 @@ share/doc/qemu/specs/edu.html
 share/doc/qemu/specs/fsi.html
 share/doc/qemu/specs/fw_cfg.html
 share/doc/qemu/specs/index.html
+share/doc/qemu/specs/iommu-testdev.html
 share/doc/qemu/specs/ivshmem-spec.html
 share/doc/qemu/specs/pci-ids.html
 share/doc/qemu/specs/pci-serial.html
@@ -267,7 +268,6 @@ share/doc/qemu/system/arm/emcraft-sf2.html
 share/doc/qemu/system/arm/emulation.html
 share/doc/qemu/system/arm/exynos.html
 share/doc/qemu/system/arm/fby35.html
-share/doc/qemu/system/arm/highbank.html
 share/doc/qemu/system/arm/imx25-pdk.html
 share/doc/qemu/system/arm/imx8mp-evk.html
 share/doc/qemu/system/arm/integratorcp.html
@@ -314,6 +314,9 @@ share/doc/qemu/system/devices/ivshmem.html
 share/doc/qemu/system/devices/keyboard.html
 share/doc/qemu/system/devices/net.html
 share/doc/qemu/system/devices/nvme.html
+share/doc/qemu/system/devices/scsi/
+share/doc/qemu/system/devices/scsi/index.html
+share/doc/qemu/system/devices/scsi/migrate-pr.html
 share/doc/qemu/system/devices/usb-u2f.html
 share/doc/qemu/system/devices/usb.html
 share/doc/qemu/system/devices/vfio-user.html
@@ -352,11 +355,12 @@ share/doc/qemu/system/managed-startup.html
 share/doc/qemu/system/monitor.html
 share/doc/qemu/system/multi-process.html
 share/doc/qemu/system/mux-chardev.html
-share/doc/qemu/system/openrisc/
-share/doc/qemu/system/openrisc/cpu-features.html
-share/doc/qemu/system/openrisc/emulation.html
-share/doc/qemu/system/openrisc/or1k-sim.html
-share/doc/qemu/system/openrisc/virt.html
+share/doc/qemu/system/nitro.html
+share/doc/qemu/system/or1k/
+share/doc/qemu/system/or1k/cpu-features.html
+share/doc/qemu/system/or1k/emulation.html
+share/doc/qemu/system/or1k/or1k-sim.html
+share/doc/qemu/system/or1k/virt.html
 share/doc/qemu/system/ppc/
 share/doc/qemu/system/ppc/amigang.html
 share/doc/qemu/system/ppc/embedded.html
@@ -367,12 +371,14 @@ share/doc/qemu/system/ppc/prep.html
 share/doc/qemu/system/ppc/pseries.html
 share/doc/qemu/system/pr-manager.html
 share/doc/qemu/system/qemu-block-drivers.html
+share/doc/qemu/system/qemu-colo.html
 share/doc/qemu/system/qemu-cpu-models.html
 share/doc/qemu/system/qemu-manpage.html
 share/doc/qemu/system/replay.html
 share/doc/qemu/system/riscv/
 share/doc/qemu/system/riscv/microblaze-v-generic.html
 share/doc/qemu/system/riscv/microchip-icicle-kit.html
+share/doc/qemu/system/riscv/mips.html
 share/doc/qemu/system/riscv/shakti-c.html
 share/doc/qemu/system/riscv/sifive_u.html
 share/doc/qemu/system/riscv/virt.html
@@ -395,7 +401,7 @@ share/doc/qemu/system/target-i386.html
 share/doc/qemu/system/target-loongarch.html
 share/doc/qemu/system/target-m68k.html
 share/doc/qemu/system/target-mips.html
-share/doc/qemu/system/target-openrisc.html
+share/doc/qemu/system/target-or1k.html
 share/doc/qemu/system/target-ppc.html
 share/doc/qemu/system/target-riscv.html
 share/doc/qemu/system/target-rx.html
@@ -408,6 +414,7 @@ share/doc/qemu/system/tls.html
 share/doc/qemu/system/virtio-net-failover.html
 share/doc/qemu/system/vm-templating.html
 share/doc/qemu/system/vnc-security.html
+share/doc/qemu/system/whpx.html
 share/doc/qemu/tools/
 share/doc/qemu/tools/index.html
 share/doc/qemu/tools/qemu-img.html
@@ -532,9 +539,7 @@ share/qemu/keymaps/sv
 share/qemu/keymaps/th
 share/qemu/keymaps/tr
 share/qemu/kvmvapic.bin
-share/qemu/linuxboot.bin
 share/qemu/linuxboot_dma.bin
-share/qemu/multiboot.bin
 share/qemu/multiboot_dma.bin
 share/qemu/npcm7xx_bootrom.bin
 share/qemu/npcm8xx_bootrom.bin

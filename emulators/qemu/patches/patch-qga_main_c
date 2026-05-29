@@ -3,7 +3,7 @@ Adapted from https://github.com/aborche/qemu-guest-agent
 Index: qga/main.c
 --- qga/main.c.orig
 +++ qga/main.c
-@@ -45,7 +45,11 @@
+@@ -47,7 +47,11 @@
  #else /* CONFIG_BSD */
  #define QGA_VIRTIO_PATH_DEFAULT "/dev/virtio-ports/org.qemu.guest_agent.0"
  #endif /* CONFIG_BSD */
@@ -15,7 +15,7 @@ Index: qga/main.c
  #define QGA_STATE_RELATIVE_DIR  "run"
  #else
  #define QGA_VIRTIO_PATH_DEFAULT "\\\\.\\Global\\org.qemu.guest_agent.0"
-@@ -1656,7 +1660,11 @@ int main(int argc, char **argv)
+@@ -1690,7 +1694,11 @@ int main(int argc, char **argv)
      }
  
      if (config->method == NULL) {

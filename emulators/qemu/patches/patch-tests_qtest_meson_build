@@ -1,7 +1,7 @@
 Index: tests/qtest/meson.build
 --- tests/qtest/meson.build.orig
 +++ tests/qtest/meson.build
-@@ -394,14 +394,6 @@ qtests = {
+@@ -405,14 +405,6 @@ qtests = {
    'netdev-socket': files('netdev-socket.c', '../unit/socket-helpers.c'),
  }
  
