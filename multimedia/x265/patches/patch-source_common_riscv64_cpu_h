@@ -1,0 +1,59 @@
+- Add run-time CPU feature detection for FreeBSD / OpenBSD
+
+Index: source/common/riscv64/cpu.h
+--- source/common/riscv64/cpu.h.orig
++++ source/common/riscv64/cpu.h
+@@ -28,12 +28,13 @@
+ 
+ #if RISCV64_RUNTIME_CPU_DETECT
+ 
+-#if defined(__linux__)
++#if HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
+ 
+ #include <sys/auxv.h>
+ 
+ #define HWCAP_RISCV64_RVV     (1 << ('V' - 'A'))
+ 
++#ifdef __linux__
+ static int parse_proc_cpuinfo(const char *flag) {
+     FILE *file = fopen("/proc/cpuinfo", "r");
+     if (file == NULL)
+@@ -52,31 +53,34 @@ static int parse_proc_cpuinfo(const char *flag) {
+     fclose(file);
+     return found;
+ }
++#endif
+ 
+ static inline uint32_t riscv64_cpu_detect()
+ {
+     uint32_t flags = 0;
+ 
+-    unsigned long hwcap = getauxval(AT_HWCAP);
++    unsigned long hwcap = x265_getauxval(AT_HWCAP);
+ 
+     if (hwcap & HWCAP_RISCV64_RVV) {
+         flags |= X265_CPU_RVV;
+ 
++#ifdef __linux__
+         if (parse_proc_cpuinfo("zbb"))
+             flags |= X265_CPU_ZBB;
++#endif
+     }
+ 
+     return flags;
+ }
+ 
+-#else // defined(__linux__)
++#else // HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
+ #error                                                                 \
+     "Run-time CPU feature detection selected, but no detection method" \
+     "available for your platform. Rerun cmake configure with"          \
+     "-DRISCV64_RUNTIME_CPU_DETECT=OFF."
+-#endif // defined(__linux__)
++#endif // HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
+ 
+-#else // if AARCH64_RUNTIME_CPU_DETECT
++#else // if RISCV64_RUNTIME_CPU_DETECT
+ 
+ static inline uint32_t riscv64_cpu_detect()
+ {

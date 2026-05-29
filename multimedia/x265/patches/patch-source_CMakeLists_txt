@@ -1,25 +1,10 @@
 - Add run-time CPU feature detection for FreeBSD / OpenBSD
+- Fix building AltiVec code on powerpc64
 
 Index: source/CMakeLists.txt
 --- source/CMakeLists.txt.orig
 +++ source/CMakeLists.txt
-@@ -7,13 +7,13 @@ if(NOT CMAKE_BUILD_TYPE)
- endif()
- message(STATUS "cmake version ${CMAKE_VERSION}")
- if(POLICY CMP0025)
--    cmake_policy(SET CMP0025 OLD) # report Apple's Clang as just Clang
-+    cmake_policy(SET CMP0025 NEW) # report Apple's Clang as just Clang
- endif()
- if(POLICY CMP0042)
-     cmake_policy(SET CMP0042 NEW) # MACOSX_RPATH
- endif()
- if(POLICY CMP0054)
--    cmake_policy(SET CMP0054 OLD) # Only interpret if() arguments as variables or keywords when unquoted
-+    cmake_policy(SET CMP0054 NEW) # Only interpret if() arguments as variables or keywords when unquoted
- endif()
- 
- project (x265)
-@@ -88,7 +88,7 @@ elseif(ARM64MATCH GREATER "-1")
+@@ -91,7 +91,7 @@ elseif(ARM64MATCH GREATER "-1")
      option(AARCH64_WARNINGS_AS_ERRORS "Build with -Werror for AArch64 Intrinsics files" OFF)
  
      option(AARCH64_RUNTIME_CPU_DETECT "Enable AArch64 run-time CPU feature detection" ON)
@@ -28,12 +13,21 @@ Index: source/CMakeLists.txt
          set(AARCH64_RUNTIME_CPU_DETECT OFF CACHE BOOL "" FORCE)
          message(STATUS "Run-time CPU feature detection unsupported on this platform")
      endif()
-@@ -522,6 +522,16 @@ endif()
+@@ -120,6 +120,10 @@ elseif(RISCV64MATCH GREATER "-1")
+     set(RISCV64 1)
  
- if(ENABLE_ASSEMBLY)
+     option(RISCV64_RUNTIME_CPU_DETECT "Enable RISCV64 run-time CPU feature detection" ON)
++    if(NOT CMAKE_SYSTEM_NAME MATCHES "Linux|FreeBSD|OpenBSD")
++        set(RISCV64_RUNTIME_CPU_DETECT OFF CACHE BOOL "" FORCE)
++        message(STATUS "Run-time CPU feature detection unsupported on this platform")
++    endif()
+ 
+     option(ENABLE_RVV "Enable RVV" ON)
+ 
+@@ -664,6 +668,16 @@ if(ENABLE_ASSEMBLY)
     add_definitions(-DENABLE_ASSEMBLY)
-+endif()
-+
+ endif()
+ 
 +check_symbol_exists(getauxval sys/auxv.h HAVE_GETAUXVAL)
 +if(HAVE_GETAUXVAL)
 +    add_definitions(-DHAVE_GETAUXVAL=1)
@@ -42,6 +36,21 @@ Index: source/CMakeLists.txt
 +check_symbol_exists(elf_aux_info sys/auxv.h HAVE_ELF_AUX_INFO)
 +if(HAVE_ELF_AUX_INFO)
 +    add_definitions(-DHAVE_ELF_AUX_INFO=1)
- endif()
- 
++endif()
++
  option(CHECKED_BUILD "Enable run-time sanity checks (debugging)" OFF)
+ if(CHECKED_BUILD)
+     add_definitions(-DCHECKED_BUILD=1)
+@@ -785,7 +799,11 @@ if(POWER)
+     # IBM Power8
+     option(ENABLE_ALTIVEC "Enable ALTIVEC profiling instrumentation" ON)
+     if(ENABLE_ALTIVEC)
+-        add_definitions(-DHAVE_ALTIVEC=1 -maltivec -mabi=altivec)
++        add_definitions(-DHAVE_ALTIVEC=1 -maltivec)
++        check_cxx_compiler_flag(-mabi=altivec CC_HAS_MABI_ALTIVEC)
++        if(CC_HAS_MABI_ALTIVEC)
++            add_definitions(-mabi=altivec)
++        endif()
+         add_definitions(-flax-vector-conversions -fpermissive)
+     else()
+         add_definitions(-DHAVE_ALTIVEC=0)
