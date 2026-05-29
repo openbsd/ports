@@ -28,6 +28,7 @@
      SUBDIR += kermit
      SUBDIR += lcdproc
      SUBDIR += libhidapi
+     SUBDIR += liquid-dsp
      SUBDIR += lrzsz
      SUBDIR += mgetty+sendfax
      SUBDIR += minicom
@@ -50,6 +51,9 @@
      SUBDIR += scmxx
      SUBDIR += sigrok
      SUBDIR += smstools
+     SUBDIR += soapysdr
+     SUBDIR += soapy-hackrf
+     SUBDIR += soapy-rtlsdr
      SUBDIR += spisniffer
      SUBDIR += sredird
      SUBDIR += syncterm
