@@ -3,6 +3,7 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
+REVISION =	0
 MOZILLA_VERSION =	140.11.1esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
@@ -30,8 +31,14 @@ PERMIT_PACKAGE=	Yes
 MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
+SITES.p =      https://bugzilla.mozilla.org/
+PATCHFILES.p=	bug-2038504-backport-bug-D262840-to-esr140.patch
+PATCH_DIST_STRIP =     -p1 -f
+
 COMPILER =	ports-clang
 MODCLANG_ARCHS =	amd64 aarch64 riscv64
+MODCLANG_VERSION =	22
+USE_LLD =	ports
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
@@ -42,9 +49,9 @@ BUILD_DEPENDS +=	devel/cbindgen
 BUILD_DEPENDS +=	devel/nasm
 .endif
 # wasi
-BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
-			lang/wasi-sdk/libcxx \
-			lang/wasi-libc
+BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt>=22.1.5p1 \
+			lang/wasi-sdk/libcxx>=21.1.5p1 \
+			lang/wasi-libc>=0.20251114p1
 # mach uses pkg_resources
 BUILD_DEPENDS +=	devel/py-setuptools
 
@@ -99,6 +106,7 @@ post-patch:
 .for c in glslopt cubeb-sys minimal-lexical sfv wasi
 	sed -i -e 's/".gitmodules":"[0-9a-f]*",//' ${WRKSRC}/comm/third_party/rust/${c}/.cargo-checksum.json
 .endfor
+	cp -r ${WRKSRC}/third_party/rust/bindgen ${WRKSRC}/comm/third_party/rust/
 
 post-install:
 	# install prefs
