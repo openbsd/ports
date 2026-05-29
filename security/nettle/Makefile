@@ -15,6 +15,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE=		Yes
 
+# stdalign.h
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += c gmp
 
 SITES=			${SITE_GNU:=nettle/}
