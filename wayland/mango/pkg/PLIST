@@ -1,5 +1,29 @@
 @bin bin/mango
 @bin bin/mmsg
+share/doc/mango/
+share/doc/mango/bindings/
+share/doc/mango/bindings/keys.md
+share/doc/mango/bindings/mouse-gestures.md
+share/doc/mango/configuration/
+share/doc/mango/configuration/basics.md
+share/doc/mango/configuration/input.md
+share/doc/mango/configuration/miscellaneous.md
+share/doc/mango/configuration/monitors.md
+share/doc/mango/configuration/xdg-portals.md
+share/doc/mango/faq.md
+share/doc/mango/ipc.md
+share/doc/mango/quick-start.md
+share/doc/mango/screenshot.md
+share/doc/mango/visuals/
+share/doc/mango/visuals/animations.md
+share/doc/mango/visuals/effects.md
+share/doc/mango/visuals/status-bar.md
+share/doc/mango/visuals/theming.md
+share/doc/mango/window-management/
+share/doc/mango/window-management/layouts.md
+share/doc/mango/window-management/overview.md
+share/doc/mango/window-management/rules.md
+share/doc/mango/window-management/scratchpad.md
 share/examples/mango/
 @sample ${SYSCONFDIR}/mango/
 share/examples/mango/config.conf
