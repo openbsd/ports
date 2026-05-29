@@ -3,10 +3,12 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
+REVISION =	0
 MOZILLA_VERSION =	151.0.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+MOZILLA_PROFDATA_TASKID =	ZJmsHlaQS1eJnAogyhIejg
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
@@ -26,15 +28,17 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
+MODCLANG_VERSION =	22
+USE_LLD =	ports
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
 # wasi
-BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
-			lang/wasi-sdk/libcxx \
-			lang/wasi-libc
+BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt>=22.1.5p1 \
+			lang/wasi-sdk/libcxx>=21.1.5p1 \
+			lang/wasi-libc>=0.20251114p1
 # mach uses pkg_resources
 BUILD_DEPENDS +=	devel/py-setuptools
 
