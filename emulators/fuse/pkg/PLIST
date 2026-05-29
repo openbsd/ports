@@ -7,7 +7,6 @@ share/fuse/128-1.rom
 share/fuse/48.rom
 share/fuse/cassette.bmp
 share/fuse/disciple.rom
-%%gtk%%
 share/fuse/keyboard.png
 share/fuse/keyboard.scr
 share/fuse/microdrive.bmp
