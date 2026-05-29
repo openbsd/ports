@@ -1,6 +1,6 @@
 COMMENT =	C++ standard library for WebAssembly System Interface
 
-REVISION =	0
+REVISION =	1
 DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME =	wasi-libcxx-${LLVM_V}
 LIBPATH =	libc++.a
@@ -9,7 +9,8 @@ BUILDSUBDIR =	runtimes
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS +=	lang/wasi-libc>=0.20251114
+BUILD_DEPENDS +=	lang/wasi-libc>=0.20251114p1
+TRIPLE =	wasm32-wasip1
 
 CONFIGURE_ARGS=	\
 		-DLLVM_CMAKE_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/llvm \

@@ -4,13 +4,13 @@ CATEGORIES =	lang
 SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
 COMPILER =	ports-clang
-MODCLANG_VERSION=	19
+MODCLANG_VERSION=	22
 MODULES =		devel/cmake
 WASI_SYSROOT =	${LOCALBASE}/share/wasi-sysroot
 # https://github.com/WebAssembly/wasi-sdk/issues/52
 CFLAGS +=	-fno-exceptions
 CXXFLAGS +=	-fno-exceptions
-TRIPLE ?=	wasm32-wasi
+TRIPLE ?=	wasm32-unknown-wasip1
 SUBST_VARS +=	TRIPLE
 WRKSRC =	${WRKDIR}/${DISTNAME}/${BUILDSUBDIR}
 

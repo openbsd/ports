@@ -1,11 +1,11 @@
 COMMENT =	LLVM runtime library for WebAssembly System Interface
 
-REVISION =	0
+REVISION =	1
 DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME =	wasi-compiler-rt-${LLVM_V}
-LIBPATH =	wasi/libclang_rt.builtins-wasm32.a
+LIBPATH =	${TRIPLE}/libclang_rt.builtins.a
 BUILDSUBDIR =	compiler-rt/lib/builtins
-BUILD_DEPENDS +=	lang/wasi-libc>=0.20251114
+BUILD_DEPENDS +=	lang/wasi-libc>=0.20251114p1
 
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes
@@ -25,6 +25,6 @@ CONFIGURE_ARGS=	\
 		-DCOMPILER_RT_DEFAULT_TARGET_ONLY=ON \
 		-DCOMPILER_RT_HAS_FPIC_FLAG:BOOL=ON \
 		-DCOMPILER_RT_INCLUDE_TESTS=OFF \
-		-DCOMPILER_RT_OS_DIR=wasi
+		-DLLVM_ENABLE_PER_TARGET_RUNTIME_DIR=ON
 
 .include <bsd.port.mk>
