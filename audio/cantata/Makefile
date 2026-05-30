@@ -3,6 +3,7 @@ COMMENT =	Qt-based MPD client
 GH_ACCOUNT=     nullobsi
 GH_PROJECT=     cantata
 GH_TAGNAME=     v3.4.0
+REVISION=       0
 
 CATEGORIES =	audio
 
@@ -18,6 +19,7 @@ MODULES =	devel/cmake \
 		x11/qt6
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		fonts/font-awesome \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	audio/libebur128 \
