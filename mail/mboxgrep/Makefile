@@ -1,7 +1,8 @@
 COMMENT=		scan mailboxes for messages matching a regular expression
 
-DISTNAME=		mboxgrep-0.7.9
-REVISION=		1
+V=			0.7.13
+DISTNAME=		mboxgrep-${V}
+
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.mboxgrep.org/
@@ -9,18 +10,14 @@ HOMEPAGE=		http://www.mboxgrep.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += bz2 c pcre z
+WANTLIB += bz2 c pcre2-32 z
 
-SITES=			${SITE_SOURCEFORGE:=mboxgrep/}
+SITES=			https://git.datatipp.se/dspiljar/mboxgrep/releases/download/${V}/
 
 LIB_DEPENDS=		archivers/bzip2 \
-			devel/pcre
+			devel/pcre2
 
-CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LIBS="-L${LOCALBASE}/lib"
-
-CFLAGS +=		-DHAVE_CONFIG_H
+CONFIGURE_STYLE=	gnu
 
 NO_TEST=		Yes
 
