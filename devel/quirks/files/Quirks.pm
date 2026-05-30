@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1808 2026/05/28 15:19:08 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.1809 2026/05/30 12:50:06 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1110,6 +1110,7 @@ my $obsolete_suggestion = {
 	'usmb' => 'susmb',
 # 8.0
 	'facette' => 'grafana',
+	'telepathy-logger' => '5',
 };
 
 # reasons for obsolete packages
