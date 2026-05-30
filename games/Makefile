@@ -369,7 +369,6 @@
      SUBDIR += wordwarvi
      SUBDIR += wrath
      SUBDIR += wtf
-     SUBDIR += xasteroids
      SUBDIR += xbattle
      SUBDIR += xbill
      SUBDIR += xbl
@@ -401,7 +400,6 @@
      SUBDIR += xonix
      SUBDIR += xonotic
      SUBDIR += xpat2
-     SUBDIR += xpilot
      SUBDIR += xroach
      SUBDIR += xscavenger
      SUBDIR += xscrabble
