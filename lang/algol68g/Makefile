@@ -1,13 +1,14 @@
 COMMENT =	Algol 68 Genie compiler-interpreter
 DISTNAME =	algol68g-3.10.14
+REVISION =	0
+
 CATEGORIES =	lang
 
-HOMEPAGE =	https://jmvdveer.home.xs4all.nl/algol.html
+HOMEPAGE =	https://algol68genie.nl/
+SITES =		https://algol68genie.nl/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
-
-SITES =		https://jmvdveer.home.xs4all.nl/
 
 WANTLIB += c curl curses m pthread
 
@@ -15,7 +16,7 @@ WANTLIB += c curl curses m pthread
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-LIB_DEPENDS =	net/curl
+LIB_DEPENDS =		net/curl
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-gsl \
