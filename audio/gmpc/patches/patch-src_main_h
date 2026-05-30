@@ -1,0 +1,12 @@
+Index: src/main.h
+--- src/main.h.orig
++++ src/main.h
+@@ -39,6 +39,8 @@
+ 
+ #include "playlist3-messages.h"
+ 
++#pragma clang diagnostic ignored "-Wincompatible-function-pointer-types"
++#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+ 
+ /**
+  * Some gobjects

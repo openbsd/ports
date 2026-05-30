@@ -1,0 +1,13 @@
+Index: src/egg/eggcolumnmodel.h
+--- src/egg/eggcolumnmodel.h.orig
++++ src/egg/eggcolumnmodel.h
+@@ -25,6 +25,9 @@
+ 
+ G_BEGIN_DECLS
+ 
++#pragma clang diagnostic ignored "-Wincompatible-function-pointer-types"
++#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
++
+ #define EGG_TYPE_COLUMN_MODEL            (egg_column_model_get_type ())
+ #define EGG_COLUMN_MODEL(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EGG_TYPE_COLUMN_MODEL, EggColumnModel))
+ #define EGG_COLUMN_MODEL_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EGG_TYPE_COLUMN_MODEL, EggColumnModelClass))
