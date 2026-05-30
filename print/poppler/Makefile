@@ -42,9 +42,6 @@ MODULES +=	lang/clang
 MODCLANG_COMPILER_LINKS = No
 MODCLANG_VERSION =	22
 
-# XXX remove after base has llvm/22
-BUILD_DEPENDS = devel/llvm/19
-
 # c++-17
 COMPILER=	base-clang ports-gcc
 
