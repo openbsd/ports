@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1809 2026/05/30 12:50:06 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1810 2026/05/30 14:01:44 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1071,9 +1071,11 @@ setup_obsolete_reason(
 # 8.0
 	5 => 'XawMu',
 	3 => 'facette',
+	0 => 'xpilot',
+	0 => 'xasteroids',
 );
 # beware, if ports with an RDEP on Python 3 are removed, they need to be listed
-# as @conflcit/pkgpath in lang/python/3 and not here, otherwise an update from a
+# as @conflict/pkgpath in lang/python/3 and not here, otherwise an update from a
 # release with an old python version to one with a newer version will fail
 
 # these should be pkgnames, there was some hope that pkg_add might later
