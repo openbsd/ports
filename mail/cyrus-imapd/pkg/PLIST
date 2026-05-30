@@ -325,7 +325,7 @@ share/examples/cyrus-imapd/tools/
 share/examples/cyrus-imapd/tools/arbitronsort.pl
 share/examples/cyrus-imapd/tools/cassandane-history-rewrite.sh
 share/examples/cyrus-imapd/tools/clang-format-everything
-share/examples/cyrus-imapd/tools/compile_st.pl
+share/examples/cyrus-imapd/tools/coverage-report
 share/examples/cyrus-imapd/tools/find-fixme-markers
 share/examples/cyrus-imapd/tools/fixsearchpath.pl
 share/examples/cyrus-imapd/tools/git-version.sh
