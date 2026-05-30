@@ -1,10 +1,9 @@
 COMMENT=	SMTP virus filter
 
-DISTNAME=	clamsmtp-1.10
-CATEGORIES=    	mail
+DISTNAME=	clamsmtp-1.10.2
+CATEGORIES=	mail
 
-HOMEPAGE=	http://memberwebs.com/stef/software/clamsmtp/
-
+HOMEPAGE=	http://thewalter.net/stef/software/clamsmtp/
 SITES=		${HOMEPAGE}
 
 RUN_DEPENDS=	security/clamav

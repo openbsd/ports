@@ -1,0 +1,12 @@
+Index: common/smtppass.h
+--- common/smtppass.h.orig
++++ common/smtppass.h
+@@ -71,7 +71,7 @@ typedef struct spio
+     char localname[MAXPATHLEN];         /* Address where we accepted the connection */
+     
+     /* Internal use only */
+-    char line[SP_LINE_LENGTH];  
++    char line[SP_LINE_LENGTH + 1];	/* space for trailing nul */
+     char* _nx;
+     size_t _ln;                         
+ }

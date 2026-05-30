@@ -1,0 +1,20 @@
+Index: common/sock_any.c
+--- common/sock_any.c.orig
++++ common/sock_any.c
+@@ -367,14 +367,14 @@ int sock_any_cmp(const struct sockaddr_any* a1, const 
+     case AF_INET:
+         if(memcmp(&(a1->s.in.sin_addr), &(a2->s.in.sin_addr), sizeof(a2->s.in.sin_addr)) != 0)
+             return -1;
+-        if(!(opts && SANY_OPT_NOPORT) && a1->s.in.sin_port != a2->s.in.sin_port)
++        if(!(opts & SANY_OPT_NOPORT) && a1->s.in.sin_port != a2->s.in.sin_port)
+             return -1;
+         return 0;
+ #ifdef HAVE_INET6        
+     case AF_INET6:
+         if(memcmp(&(a1->s.in6.sin6_addr), &(a2->s.in6.sin6_addr), sizeof(a2->s.in6.sin6_addr)) != 0)
+             return -1;
+-        if(!(opts && SANY_OPT_NOPORT) && a1->s.in6.sin6_port != a2->s.in6.sin6_port)
++        if(!(opts & SANY_OPT_NOPORT) && a1->s.in6.sin6_port != a2->s.in6.sin6_port)
+             return -1;
+         return 0;
+ #endif    
