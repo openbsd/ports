@@ -1,16 +1,7 @@
 Index: Makedefs.in
 --- Makedefs.in.orig
 +++ Makedefs.in
-@@ -42,7 +42,7 @@ INSTALL_MAN	=	$(INSTALL) -c -m 444
- # Directories...
- #
- 
--BUILDROOT	=	$(DSTROOT)$(RPM_BUILD_ROOT)$(DESTDIR)
-+BUILDROOT	=	${WRKDIR}
- bindir		=	@bindir@
- datadir		=	@datadir@
- datarootdir	=	@datarootdir@
-@@ -81,11 +81,8 @@ WARNINGS	=	@WARNINGS@
+@@ -80,11 +80,8 @@ WARNINGS	=	@WARNINGS@
  # Rules...
  #
  

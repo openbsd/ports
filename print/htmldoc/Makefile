@@ -1,6 +1,7 @@
 COMMENT =		convert HTML pages to PDF/PS format
 
 V =			1.9.23
+REVISION =		0
 DISTNAME =		htmldoc-${V}
 CATEGORIES =		print www
 
@@ -22,9 +23,8 @@ LIB_DEPENDS =		graphics/jpeg \
 			graphics/png \
 			print/cups,-libs
 
-CONFIGURE_STYLE =	gnu dest
-CONFIGURE_ARGS +=	--without-gui --disable-gnutls \
-			--datadir=${WRKINST}${PREFIX}/share
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--without-gui
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 			CPPFLAGS="-I${LOCALBASE}/include"
