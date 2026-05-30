@@ -4,7 +4,9 @@ V =		7.34.1
 DISTNAME =	mlt-${V}
 PKGNAME-main =	mlt7-${V}
 PKGNAME-gpl2 =	mlt7-gpl2-${V}
-REVISION-gpl2 =	0
+
+REVISION-main =	0
+REVISION-gpl2 =	1
 
 CATEGORIES =	multimedia devel
 
@@ -37,8 +39,13 @@ WANTLIB-gpl2 += pulse-simple samplerate vidstab
 MULTI_PACKAGES =	-main -gpl2
 
 MODULES =		devel/cmake \
+			lang/clang \
 			x11/qt5 \
 			x11/qt6
+
+# Does not directly use CXX_MODULES; still ends up pulling in clang-scan-deps
+MODCLANG_VERSION =	22
+MODCLANG_COMPILER_LINKS = No
 
 BUILD_DEPENDS =		audio/ladspa \
 			multimedia/frei0r-plugins \
