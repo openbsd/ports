@@ -1,5 +1,9 @@
 Fix with nettle >=4
 
+rdssl_rkey_get_exp_mod hunk: segfault (fixes build with llvm22)
+https://github.com/rdesktop/rdesktop/issues/356
+https://github.com/rdesktop/rdesktop/pull/357
+
 Index: ssl.c
 --- ssl.c.orig
 +++ ssl.c
@@ -35,6 +39,19 @@ Index: ssl.c
  }
  
  void
+@@ -307,10 +316,10 @@ rdssl_rkey_get_exp_mod(RDSSL_RKEY * rkey, uint8 * expo
+ {
+ 	size_t outlen;
+ 
+-	outlen = (mpz_sizeinbase(modulus, 2) + 7) / 8;
++	outlen = (mpz_sizeinbase(rkey->n, 2) + 7) / 8;
+ 	if (outlen > max_mod_len)
+ 		return 1;
+-	outlen = (mpz_sizeinbase(exponent, 2) + 7) / 8;
++	outlen = (mpz_sizeinbase(rkey->e, 2) + 7) / 8;
+ 	if (outlen > max_exp_len)
+ 		return 1;
+ 
 @@ -360,5 +369,9 @@ rdssl_hmac_md5(const void *key, int key_len, const uns
  
  	hmac_md5_set_key(&ctx, key_len, key);
