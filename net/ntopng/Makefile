@@ -1,3 +1,5 @@
+BROKEN=		various bpf_timeval problems remain
+
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
 # see GIT_RELEASE below if moving back to a commit id rather than a tag
