@@ -2280,6 +2280,13 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/2020-04-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/2020-04-30/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/2020-04-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/2020-04-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehubv2/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehubv2/2026-02-17/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehubv2/2026-02-17/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehubv2/2026-02-17/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehubv2/2026-02-17/paginators-1.sdk-extras.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehubv2/2026-02-17/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehubv2/2026-02-17/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-explorer-2/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-explorer-2/2022-07-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-explorer-2/2022-07-28/endpoint-rule-set-1.json
