@@ -1,14 +1,17 @@
 COMMENT=	web frontend to symon
-DISTNAME=	syweb-0.67
-CATEGORIES=	www sysutils
-REVISION=	3
 
-HOMEPAGE=	http://www.xs4all.nl/~wpd/symon
+#GH_ACCOUNT=	dijkstrw
+#GH_PROJECT=	syweb
+#GH_TAGNAME=	0.67
+DIST_TUPLE=	github dijkstrw syweb 0.67 .
+REVISION=	4
+
+CATEGORIES=	www sysutils
+
+HOMEPAGE=	https://github.com/dijkstrw/syweb
 
 # BSD
 PERMIT_PACKAGE=	Yes
-
-SITES=		${HOMEPAGE}/philes/
 
 NO_TEST=	Yes
 NO_BUILD=	Yes
@@ -17,8 +20,6 @@ PREFIX=		${VARBASE}/www
 
 MODULES=	lang/php
 RUN_DEPENDS=	net/rrdtool
-
-WRKDIST=	${WRKDIR}/syweb
 
 do-install:
 	${TAR} -C ${WRKDIST} -cf - htdocs symon | ${TAR} -C ${PREFIX} -xpf -
