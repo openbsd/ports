@@ -52,4 +52,4 @@ share/examples/runit/init/getty-ttyC4/
 share/examples/runit/init/getty-ttyC4/finish
 share/examples/runit/init/getty-ttyC4/run
 share/examples/runit/rc.shutdown
-@sample /etc/rc.shutdown
+@sample ${SYSCONFDIR}/rc.shutdown

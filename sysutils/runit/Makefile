@@ -1,10 +1,11 @@
 COMMENT=		daemontools alike replacement for init
 
-DISTNAME=		runit-2.1.2
+DISTNAME=		runit-2.3.1
 CATEGORIES=		sysutils
-REVISION=		1
 
 HOMEPAGE=		http://www.smarden.org/runit/
+
+MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
@@ -20,7 +21,7 @@ DOCS1=			benefits.html chpst.8.html dependencies.html faq.html \
 			index.html install.html replaceinit.html runit-init.8.html \
 			runit.8.html runlevels.html runscripts.html runsv.8.html \
 			runsvchdir.8.html runsvdir.8.html sv.8.html svlogd.8.html \
-			upgrade.html useinit.html index.html utmpset.8.html
+			upgrade.html useinit.html utmpset.8.html
 DOCS2=			CHANGES README COPYING THANKS
 EXAMPLES=		etc/2 etc/openbsd/1 etc/openbsd/3 etc/openbsd/ctrlaltdel
 
