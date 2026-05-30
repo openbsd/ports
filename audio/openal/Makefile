@@ -41,10 +41,6 @@ CONFIGURE_ARGS =-DALSOFT_BACKEND_PIPEWIRE=Off \
 		-DCMAKE_DISABLE_FIND_PACKAGE_SDL2:Bool=Yes \
 		-DCMAKE_DISABLE_FIND_PACKAGE_SndFile:Bool=Yes
 
-MODCLANG_VERSION = 22
-# XXX - remove after switch to llvm 22
-BUILD_DEPENDS =	devel/llvm/19
-
 MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .if ${MACHINE_ARCH} == "arm"
@@ -55,6 +51,7 @@ MODULES =	devel/cmake
 
 # XXX cmake config uses CXX_MODULES, which needs clang-scan-deps
 MODULES +=	lang/clang
+MODCLANG_VERSION = 22
 MODCLANG_COMPILER_LINKS = No
 
 COMPILER =	base-clang ports-gcc
