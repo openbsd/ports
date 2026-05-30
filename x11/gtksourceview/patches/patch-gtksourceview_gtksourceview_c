@@ -1,0 +1,16 @@
+From: Will Thompson <wjt@endlessos.org>
+Date: Mon, 24 Mar 2025 10:22:03 +0000
+Subject: [PATCH] gtksourceview: Add typecast when setting source_buffer
+
+Index: gtksourceview/gtksourceview.c
+--- gtksourceview/gtksourceview.c.orig
++++ gtksourceview/gtksourceview.c
+@@ -1766,7 +1766,7 @@ set_source_buffer (GtkSourceView *view,
+ 
+ 	if (buffer && GTK_IS_SOURCE_BUFFER (buffer))
+ 	{
+-		view->priv->source_buffer = g_object_ref (buffer);
++		view->priv->source_buffer = g_object_ref (GTK_SOURCE_BUFFER (buffer));
+ 
+ 		g_signal_connect (buffer,
+ 				  "highlight_updated",
