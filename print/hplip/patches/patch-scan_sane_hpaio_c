@@ -1,9 +1,20 @@
+Fix build with llvm 22.
+
 scan/sane/hpaio.c:555:8: error: void function 'sane_hpaio_cancel' should not return a value [-Wreturn-type]
        return orblite_cancel(handle)
 
 Index: scan/sane/hpaio.c
 --- scan/sane/hpaio.c.orig
 +++ scan/sane/hpaio.c
+@@ -378,7 +378,7 @@ extern SANE_Status sane_hpaio_get_devices(const SANE_D
+    ResetDeviceList(&DeviceList);
+    DevDiscovery(localOnly);
+    *deviceList = (const SANE_Device **)DeviceList;
+-   SANE_Device*** devList;
++   const SANE_Device*** devList;
+    orblite_get_devices(devList, localOnly);
+ 
+    return SANE_STATUS_GOOD;
 @@ -427,7 +427,7 @@ extern void sane_hpaio_close(SANE_Handle handle)
      if (strcmp(*((char **)handle), "ESCL") == 0)
         return escl_close(handle);
