@@ -14,6 +14,8 @@ HOMEPAGE=	https://github.com/dijkstrw/symon
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-main=	c util
+
+# uses pledge(), unveil()
 WANTLIB-mux=	c rrd
 
 MULTI_PACKAGES=	-main -mux
