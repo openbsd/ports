@@ -1,0 +1,21 @@
+Index: src/misc.c
+--- src/misc.c.orig
++++ src/misc.c
+@@ -60,7 +60,7 @@ void loaddict()
+ 	    }
+ 	} else
+ 	if (mode==1) {
+-	   ptr = gzgets((gzFile *)fp, buf, 20);
++	   ptr = gzgets((gzFile)fp, buf, 20);
+             buf[19] = '\0';
+             n = strlen(buf);
+             if (buf[n-1]=='\n') {
+@@ -104,7 +104,7 @@ void loaddict()
+         if (mode==0)
+ 	    fclose((FILE *)fp);
+         if (mode==1)
+-	    gzclose((gzFile *)fp);
++	    gzclose((gzFile)fp);
+         if (mode==2)
+ 	    BZ2_bzclose((BZFILE *)fp);   
+ }

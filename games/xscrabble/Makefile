@@ -2,7 +2,7 @@ COMMENT=	X11 version of the popular board game
 
 V=		2.12
 DISTNAME=	xscrabble-${V}
-REVISION =	3
+REVISION=	4
 CATEGORIES=	games
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 SITES=		ftp://ftp.ac-grenoble.fr/ge/educational_games/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c \
