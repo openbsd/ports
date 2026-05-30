@@ -1,6 +1,6 @@
 COMMENT =	bozotic HTTP server
 
-DISTNAME =	bozohttpd-20240126
+DISTNAME =	bozohttpd-20260503
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.eterna23.net/bozohttpd/

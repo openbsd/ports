@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -26,24 +26,22 @@
+@@ -26,17 +26,15 @@
  
  COPTS+=	-DDO_HTPASSWD
  PROG=	bozohttpd
@@ -20,16 +20,17 @@ Index: Makefile
 +DPADD=	${LIBM}
  
  WARNS?=	4
- 
+ LINTFLAGS+=	-X 193	# statement not reached
+@@ -44,7 +42,7 @@ LINTFLAGS+=	-X 193	# statement not reached
  .if defined(.OS.MAKE)
  OPSYS=	${.OS.MAKE}
  .else
 -OPSYS:=	${:!uname -s!:S/-//g:S/\///g}
-+OPSYS!=	uname -s
++OPSYS:=	uname -s
  .endif
  
  .if ${OPSYS} == "QNX"
-@@ -86,7 +84,7 @@ check:
+@@ -87,7 +85,7 @@ check:
  .if empty(BOZOVER)
  BOZOVER!=	sed -n \
  		    -e s/\"$$// -e \
