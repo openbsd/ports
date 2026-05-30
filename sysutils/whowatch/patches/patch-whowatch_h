@@ -1,0 +1,16 @@
+Index: whowatch.h
+--- whowatch.h.orig
++++ whowatch.h
+@@ -132,10 +132,10 @@ void page_up(struct window *, void (*)());
+ void key_home(struct window *, void (*)());
+ void key_end(struct window *, void (*)());
+ void update_load(void);
+-void updatescr();
++void updatescr(struct window *w);
+ 
+ /* proctree.c */
+-int update_tree();
++int update_tree(void del(void*));
+ void get_rows_cols(int *, int *);
+ 
+ /* procinfo.c */
