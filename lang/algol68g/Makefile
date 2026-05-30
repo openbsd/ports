@@ -6,6 +6,7 @@ CATEGORIES =	lang
 
 HOMEPAGE =	https://algol68genie.nl/
 SITES =		https://algol68genie.nl/
+PORTROACH =	site:https://algol68genie.nl/en/algol-68-genie-source-code-repository/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
