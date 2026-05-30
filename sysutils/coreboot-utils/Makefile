@@ -7,6 +7,7 @@ COMMENT =		utilities to work on firmware images and hardware
 V =			4.21
 DISTNAME =		coreboot-${V}
 PKGNAME =		coreboot-utils-${V}
+REVISION =		0
 
 CATEGORIES =		sysutils devel
 
