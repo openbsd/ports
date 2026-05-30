@@ -27,6 +27,9 @@ MODULES=		devel/meson \
 LIB_DEPENDS=		devel/libsoup3 \
 			graphics/clutter/clutter-gtk
 
-MODGNOME_TOOLS +=	gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection vala
+
+# Fix build with llvm 22
+MODGNOME_CPPFLAGS +=	-Wno-error=incompatible-pointer-types
 
 .include <bsd.port.mk>
