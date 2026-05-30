@@ -45,11 +45,13 @@ include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceview-enumtypes.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceview-typebuiltins.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceview.h
 lib/girepository-1.0/GtkSource-${MAJOR_VERSION}.typelib
-lib/libgtksourceview-${MAJOR_VERSION}.a
+@static-lib lib/libgtksourceview-${MAJOR_VERSION}.a
 lib/libgtksourceview-${MAJOR_VERSION}.la
 @lib lib/libgtksourceview-${MAJOR_VERSION}.so.${LIBgtksourceview-${MAJOR_VERSION}_VERSION}
 lib/pkgconfig/gtksourceview-${MAJOR_VERSION}.pc
 share/gir-1.0/GtkSource-${MAJOR_VERSION}.gir
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceBuffer.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceCompletion.html
