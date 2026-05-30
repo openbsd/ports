@@ -1,24 +1,20 @@
 COMMENT-main=	active host monitoring tool
 COMMENT-mux=	symon data gatherer
 
-V=		2.89
-REVISION=	0
-DISTNAME=	symon-$V
-WRKDIST=	${WRKDIR}/symon
-PKGNAME-main=	${DISTNAME}
-FULLPKGNAME-mux= symux-$V
+GH_ACCOUNT=	dijkstrw
+GH_PROJECT=	symon
+GH_TAGNAME=	2.91
+FULLPKGNAME-mux= symux-${GH_TAGNAME}
 
 CATEGORIES=	sysutils net
 
-HOMEPAGE=	http://www.xs4all.nl/~wpd/symon
+HOMEPAGE=	https://github.com/dijkstrw/symon
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-main=	c
-WANTLIB-mux=	c fontconfig rrd
-
-SITES=		${HOMEPAGE}/philes/
+WANTLIB-main=	c util
+WANTLIB-mux=	c rrd
 
 MULTI_PACKAGES=	-main -mux
 MODULES=	perl
@@ -31,11 +27,6 @@ MAKE_ENV=	CLIENTDIR="${P5SITE}" \
 		LIBS="-L${X11BASE}/lib" \
 		MANDIR="man" \
 		SHRDIR="share/examples/symon"
-
-.ifdef DEBUG
-# avoid stripping the binaries
-MAKE_ENV+=	DEBUG=1
-.endif
 
 post-build:
 	cd ${WRKSRC}/client && \

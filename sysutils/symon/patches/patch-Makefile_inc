@@ -3,7 +3,7 @@ cc1: error: unrecognized command line option "-Wpedantic"
 Index: Makefile.inc
 --- Makefile.inc.orig
 +++ Makefile.inc
-@@ -2,7 +2,7 @@ V=2.89
+@@ -2,7 +2,7 @@ V=2.91
  
  AR?=	ar
  CC?=	cc
