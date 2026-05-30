@@ -1,6 +1,7 @@
 COMMENT=		Common Desktop Environment
 
-DISTNAME=		cde-2.5.3
+# 2026-05-17
+DISTNAME=		cde-2.5.4pre0
 
 CATEGORIES=		x11
 
@@ -23,7 +24,8 @@ SHARED_LIBS +=  DtMmdb               0.0      # .2.1
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-SITES=			${SITE_SOURCEFORGE:=cdesktopenv/}
+#SITES=			${SITE_SOURCEFORGE:=cdesktopenv/}
+SITES=			https://distfiles.bsdfrog.org/
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Mrm SM Uil X11 Xau Xdmcp Xext
 WANTLIB += Xft Xinerama Xm Xmu Xpm Xrender Xss Xt c expat fontconfig
@@ -59,6 +61,9 @@ AUTOCONF_VERSION=	2.72
 AUTOMAKE_VERSION=	1.18
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
+
+# Fix build with llvm 22
+CFLAGS +=		-Wno-error=incompatible-pointer-types
 
 # Our ksh(1) might be enough but considering the KSH found at configure time is
 # propagated to most installed scripts, let's not take any chances.
