@@ -1,10 +1,9 @@
 COMMENT =	Algol 68 Genie compiler-interpreter
-DISTNAME =	algol68g-3.10.14
-REVISION =	0
+DISTNAME =	algol68g-3.12.2
 
 CATEGORIES =	lang
 
-HOMEPAGE =	https://algol68genie.nl/
+HOMEPAGE =	https://algol68genie.nl/en/algol-68-genie/
 SITES =		https://algol68genie.nl/
 PORTROACH =	site:https://algol68genie.nl/en/algol-68-genie-source-code-repository/
 
