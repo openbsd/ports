@@ -1,8 +1,0 @@
---- Axe.tmpl.orig	Wed Apr  6 18:07:33 1994
-+++ Axe.tmpl	Tue Aug 21 02:43:48 2001
-@@ -131,4 +131,4 @@ XAW3D_INCLUDES = -I./X11/Xaw3d
-   SCANDIR_OBJS = scandir.o
- #endif
- 
--DEFINES = ${EXTENSION} ${XAW3D} ${HAVEX11R5PL20} ${MAXPATHLEN}
-+DEFINES = ${EXTENSION} ${XAW3D} ${HAVEX11R5PL20} ${MAXPATHLEN} -D__BSD_4_4__

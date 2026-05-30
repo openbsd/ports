@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1810 2026/05/30 14:01:44 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1811 2026/05/30 15:30:21 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1071,8 +1071,10 @@ setup_obsolete_reason(
 # 8.0
 	5 => 'XawMu',
 	3 => 'facette',
+	5 => 'telepathy-logger',
 	0 => 'xpilot',
 	0 => 'xasteroids',
+	0 => 'axe',
 );
 # beware, if ports with an RDEP on Python 3 are removed, they need to be listed
 # as @conflict/pkgpath in lang/python/3 and not here, otherwise an update from a
@@ -1112,7 +1114,6 @@ my $obsolete_suggestion = {
 	'usmb' => 'susmb',
 # 8.0
 	'facette' => 'grafana',
-	'telepathy-logger' => '5',
 };
 
 # reasons for obsolete packages

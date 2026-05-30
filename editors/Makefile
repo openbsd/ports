@@ -2,7 +2,6 @@
      SUBDIR += TeXmacs
      SUBDIR += abiword
      SUBDIR += apostrophe
-     SUBDIR += axe
      SUBDIR += beav
      SUBDIR += bvi
      SUBDIR += calligra
