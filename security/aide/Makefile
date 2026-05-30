@@ -11,6 +11,10 @@ HOMEPAGE=		https://github.com/aide/aide
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
+# stdalign.h
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 # uses pledge()
 WANTLIB += c m nettle pcre2-8 pthread z
 
