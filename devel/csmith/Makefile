@@ -1,9 +1,17 @@
 COMMENT=	fuzzer for C compilers
 
-DISTNAME=	csmith-2.3.0
-REVISION=	1
+GH_ACCOUNT=	csmith-project
+GH_PROJECT=	csmith
+GH_COMMIT=	0cdc710315cfee9035e22ef4363ca479270d1934
+
+DISTNAME=	csmith-2.4.0
+PKGNAME=	csmith-2.4.0
 
 CATEGORIES=	devel
+
+HOMEPAGE=	https://embed.cs.utah.edu/csmith/
+
+MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -14,15 +22,8 @@ WANTLIB+=	c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-CXXFLAGS_base-clang =	-std=c++14 \
-			-Wno-error=enum-constexpr-conversion
+MODULES =	devel/cmake
 
-HOMEPAGE=	https://embed.cs.utah.edu/csmith/
-SITES=		${HOMEPAGE}
-
-CONFIGURE_STYLE=gnu
-
-USE_GMAKE=	Yes
 NO_TEST=	Yes
 
 pre-install:
