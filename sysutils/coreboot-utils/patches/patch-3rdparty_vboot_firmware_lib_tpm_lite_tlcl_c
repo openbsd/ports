@@ -1,0 +1,14 @@
+Avoid -Wuninitialized-const-pointer
+
+Index: 3rdparty/vboot/firmware/lib/tpm_lite/tlcl.c
+--- 3rdparty/vboot/firmware/lib/tpm_lite/tlcl.c.orig
++++ 3rdparty/vboot/firmware/lib/tpm_lite/tlcl.c
+@@ -822,7 +822,7 @@ uint32_t TlclGetFlags(uint8_t* disable,
+ 
+ uint32_t TlclSetGlobalLock(void)
+ {
+-	uint32_t x;
++	uint32_t x = 0;
+ 	VB2_DEBUG("TPM: Set global lock\n");
+ 	return TlclWrite(TPM_NV_INDEX0, (uint8_t*) &x, 0);
+ }
