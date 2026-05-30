@@ -1,0 +1,13 @@
+Index: src/examples/video-src-fixate.c
+--- src/examples/video-src-fixate.c.orig
++++ src/examples/video-src-fixate.c
+@@ -18,7 +18,9 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/mman.h>
++#ifndef __OpenBSD__
+ #include <sys/sysmacros.h>
++#endif
+ #include <assert.h>
+ 
+ #include <spa/param/dict-utils.h>

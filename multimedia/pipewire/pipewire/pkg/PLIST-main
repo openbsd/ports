@@ -13,6 +13,8 @@ bin/pw-encplay
 @bin bin/pw-link
 @bin bin/pw-loopback
 @bin bin/pw-metadata
+bin/pw-midi2play
+bin/pw-midi2record
 @bin bin/pw-mididump
 bin/pw-midiplay
 bin/pw-midirecord
@@ -21,6 +23,7 @@ bin/pw-play
 @bin bin/pw-profiler
 bin/pw-record
 @bin bin/pw-reserve
+bin/pw-sysex
 @bin bin/pw-top
 @bin bin/spa-inspect
 @bin bin/spa-json-dump
@@ -195,6 +198,7 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/pipewire-pulse-module-zeroconf-discover.7
 @man man/man7/pipewire-pulse-modules.7
 share/locale/af/LC_MESSAGES/pipewire.mo
+share/locale/ar/LC_MESSAGES/pipewire.mo
 share/locale/as/LC_MESSAGES/pipewire.mo
 share/locale/be/LC_MESSAGES/pipewire.mo
 share/locale/bg/LC_MESSAGES/pipewire.mo
@@ -255,6 +259,7 @@ share/pipewire/client.conf.avail/20-upmix.conf
 share/pipewire/filter-chain/
 share/pipewire/filter-chain.conf
 share/pipewire/filter-chain/demonic.conf
+share/pipewire/filter-chain/sink-dolby-pro-logic-ii.conf
 share/pipewire/filter-chain/sink-dolby-surround.conf
 share/pipewire/filter-chain/sink-eq6.conf
 share/pipewire/filter-chain/sink-make-LFE.conf

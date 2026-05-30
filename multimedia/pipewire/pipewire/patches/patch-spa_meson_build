@@ -1,0 +1,12 @@
+Needs linux/limits.h
+
+Index: spa/meson.build
+--- spa/meson.build.orig
++++ spa/meson.build
+@@ -162,6 +162,5 @@ if get_option('spa-plugins').allowed()
+ endif
+ 
+ subdir('tools')
+-subdir('tests')
+ subdir('examples')
+ subdir('lib')

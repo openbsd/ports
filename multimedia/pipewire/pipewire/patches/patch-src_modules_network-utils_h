@@ -1,9 +1,9 @@
 Index: src/modules/network-utils.h
 --- src/modules/network-utils.h.orig
 +++ src/modules/network-utils.h
-@@ -8,7 +8,7 @@
- #include <net/if.h>
- #include <errno.h>
+@@ -14,7 +14,7 @@
+ 
+ #include <spa/utils/string.h>
  
 -#ifdef __FreeBSD__
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)

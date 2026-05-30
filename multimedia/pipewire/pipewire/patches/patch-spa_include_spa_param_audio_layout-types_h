@@ -1,0 +1,14 @@
+Index: spa/include/spa/param/audio/layout-types.h
+--- spa/include/spa/param/audio/layout-types.h.orig
++++ spa/include/spa/param/audio/layout-types.h
+@@ -9,6 +9,10 @@
+ #include <spa/utils/string.h>
+ #include <spa/param/audio/layout.h>
+ 
++#ifndef ECHRNG
++#define ECHRNG ERANGE
++#endif
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif

@@ -54,7 +54,7 @@ Index: src/pipewire/thread.c
  
  static struct spa_thread *impl_create(void *object,
  			const struct spa_dict *props,
-@@ -115,9 +123,11 @@ static struct spa_thread *impl_create(void *object,
+@@ -117,16 +125,20 @@ static struct spa_thread *impl_create(void *object,
  		if ((str = spa_dict_lookup(props, SPA_KEY_THREAD_NAME)) != NULL &&
  		    (err = pthread_setname_np(pt, str)) != 0)
  			pw_log_warn("pthread_setname error: %s", strerror(err));
@@ -62,7 +62,16 @@ Index: src/pipewire/thread.c
  		if ((str = spa_dict_lookup(props, SPA_KEY_THREAD_AFFINITY)) != NULL &&
  		    (err = thread_setaffinity(pt, str)) != 0)
  			pw_log_warn("pthread_setaffinity error: %s", strerror(-err));
+ 		if ((str = spa_dict_lookup(props, SPA_KEY_THREAD_RESET_ON_FORK)) != NULL)
+ 			reset_on_fork = spa_atob(str);
 +#endif
  	}
- 	return (struct spa_thread*)pt;
- }
+ 
+ 	pthread_getschedparam(pt, &old_policy, &sp);
+ 	new_policy = old_policy;
++#ifndef __OpenBSD__
+ 	SPA_FLAG_UPDATE(new_policy, SCHED_RESET_ON_FORK, reset_on_fork);
++#endif
+ 	if (old_policy != new_policy)
+ 		pthread_setschedparam(pt, new_policy, &sp);
+ 

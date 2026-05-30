@@ -1,0 +1,14 @@
+Index: spa/include/spa/param/audio/raw-utils.h
+--- spa/include/spa/param/audio/raw-utils.h.orig
++++ spa/include/spa/param/audio/raw-utils.h
+@@ -11,6 +11,10 @@
+ #include <spa/param/audio/format.h>
+ #include <spa/param/format-utils.h>
+ 
++#ifndef ECHRNG
++#define ECHRNG ERANGE
++#endif
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif

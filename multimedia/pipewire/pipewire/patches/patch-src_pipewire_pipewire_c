@@ -18,7 +18,19 @@ Index: src/pipewire/pipewire.c
  #include <pwd.h>
  #include <errno.h>
  #include <dlfcn.h>
-@@ -484,7 +488,7 @@ static struct spa_log *load_journal_logger(struct supp
+@@ -310,7 +314,11 @@ struct spa_handle *pw_load_spa_handle(const char *lib,
+ error:
+ 	pw_log_error("load lib: pw_init() was not called");
+ 	pthread_mutex_unlock(&support_lock);
++#ifdef __linux__
+ 	errno = EBADFD;
++#else
++	errno = EBADF;
++#endif
+ 	return NULL;
+ }
+ 
+@@ -495,7 +503,7 @@ static struct spa_log *load_journal_logger(struct supp
   * This function can be called multiple times.
   */
  SPA_EXPORT
@@ -27,7 +39,7 @@ Index: src/pipewire/pipewire.c
  {
  	const char *str;
  	struct spa_dict_item items[6];
-@@ -599,7 +603,7 @@ done:
+@@ -610,7 +618,7 @@ done:
   * used again after being deinitialized with a new pw_init() call.
   */
  SPA_EXPORT
@@ -36,7 +48,7 @@ Index: src/pipewire/pipewire.c
  {
  	struct support *support = &global_support;
  	struct registry *registry = &support->registry;
-@@ -625,6 +629,21 @@ done:
+@@ -636,6 +644,21 @@ done:
  
  }
  
@@ -58,7 +70,7 @@ Index: src/pipewire/pipewire.c
  /** Check if a debug category is enabled
   *
   * \param name the name of the category to check
-@@ -672,7 +691,7 @@ static void init_prgname(void)
+@@ -683,7 +706,7 @@ static void init_prgname(void)
  		}
  	}
  #endif
@@ -67,7 +79,7 @@ Index: src/pipewire/pipewire.c
  	{
  		if (prctl(PR_GET_NAME, (unsigned long) name, 0, 0, 0) == 0) {
  			prgname = name;
-@@ -790,4 +809,21 @@ SPA_EXPORT
+@@ -801,4 +824,21 @@ SPA_EXPORT
  const struct spa_type_info * pw_type_info(void)
  {
  	return type_info;

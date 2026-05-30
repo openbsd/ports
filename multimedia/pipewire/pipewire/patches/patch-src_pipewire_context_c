@@ -1,0 +1,33 @@
+Index: src/pipewire/context.c
+--- src/pipewire/context.c.orig
++++ src/pipewire/context.c
+@@ -346,21 +346,29 @@ static int adjust_rlimits(const struct spa_dict *dict)
+ {
+ 	const struct spa_dict_item *it;
+ 	static const char* rlimit_table[] = {
++#ifndef __OpenBSD__
+ 		[RLIMIT_AS]         = "as",
+ 		[RLIMIT_CORE]       = "core",
++#endif
+ 		[RLIMIT_CPU]        = "cpu",
+ 		[RLIMIT_DATA]       = "data",
+ 		[RLIMIT_FSIZE]      = "fsize",
++#ifndef __OpenBSD__
+ 		[RLIMIT_LOCKS]      = "locks",
++#endif
+ 		[RLIMIT_MEMLOCK]    = "memlock",
++#ifndef __OpenBSD__
+ 		[RLIMIT_MSGQUEUE]   = "msgqueue",
+ 		[RLIMIT_NICE]       = "nice",
++#endif
+ 		[RLIMIT_NOFILE]     = "nofile",
+ 		[RLIMIT_NPROC]      = "nproc",
+ 		[RLIMIT_RSS]        = "rss",
++#ifndef __OpenBSD__
+ 		[RLIMIT_RTPRIO]     = "rtprio",
+ 		[RLIMIT_RTTIME]     = "rttime",
+ 		[RLIMIT_SIGPENDING] = "sigpending",
++#endif
+ 		[RLIMIT_STACK]      = "stack",
+ 	};
+ 	int res;

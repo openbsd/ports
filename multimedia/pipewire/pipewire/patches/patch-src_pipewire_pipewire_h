@@ -3,7 +3,7 @@ https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
 Index: src/pipewire/pipewire.h
 --- src/pipewire/pipewire.h.orig
 +++ src/pipewire/pipewire.h
-@@ -50,9 +50,15 @@ extern "C" {
+@@ -53,9 +53,15 @@ extern "C" {
   * \{
   */
  void

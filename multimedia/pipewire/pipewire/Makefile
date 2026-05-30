@@ -2,10 +2,10 @@ COMMENT-main=		low-level multimedia framework - client & server
 COMMENT-libs=		low-level multimedia framework - libraries
 
 PW_PROJECT=		pipewire
-PW_VERSION=		1.4.10
+PW_VERSION=		1.6.6
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-SHARED_LIBS += pipewire-0.3              0.3 # 0.1409.0
+SHARED_LIBS += pipewire-0.3              0.4 # 0.1606.0
 
 MULTI_PACKAGES=		-main -libs
 
@@ -54,7 +54,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libepol
 
 CONFIGURE_ARGS=		-Dman=enabled \
 			-Dsession-managers=[] \
-			-Dsystemd=disabled \
+			-Dlibsystemd=disabled \
 			-Dsystemd-user-service=disabled \
 			-Dlogind=disabled \
 			-Dudev=disabled \
@@ -75,7 +75,8 @@ CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
 			-Davb=disabled \
 			-Dlibffado=disabled \
 			-Dlibmysofa=disabled \
-			-Davahi=disabled
+			-Davahi=disabled \
+			-Donnxruntime=disabled
 
 # PAM limits.d file
 CONFIGURE_ARGS +=	-Drlimits-install=false
@@ -98,6 +99,7 @@ CONFIGURE_ARGS +=	-Djack=disabled
 # Jack3 server
 CONFIGURE_ARGS +=	-Dpipewire-jack=disabled
 
+CFLAGS +=		-DECHRNG=ERANGE
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/daemon/pipewire.conf.in

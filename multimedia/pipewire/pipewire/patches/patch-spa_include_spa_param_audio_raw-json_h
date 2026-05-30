@@ -1,0 +1,14 @@
+Index: spa/include/spa/param/audio/raw-json.h
+--- spa/include/spa/param/audio/raw-json.h.orig
++++ spa/include/spa/param/audio/raw-json.h
+@@ -11,6 +11,10 @@
+ #include <spa/param/audio/raw-types.h>
+ #include <spa/param/audio/layout-types.h>
+ 
++#ifndef ECHRNG
++#define ECHRNG ERANGE
++#endif
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif

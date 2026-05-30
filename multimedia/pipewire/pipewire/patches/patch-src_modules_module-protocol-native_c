@@ -1,7 +1,7 @@
 Index: src/modules/module-protocol-native.c
 --- src/modules/module-protocol-native.c.orig
 +++ src/modules/module-protocol-native.c
-@@ -613,6 +613,8 @@ static struct client_data *client_new(struct server *s
+@@ -601,6 +601,8 @@ static struct client_data *client_new(struct server *s
  	socklen_t len;
  #if defined(__FreeBSD__) || defined(__MidnightBSD__)
  	struct xucred xucred;
@@ -10,7 +10,7 @@ Index: src/modules/module-protocol-native.c
  #else
  	struct ucred ucred;
  #endif
-@@ -626,7 +628,7 @@ static struct client_data *client_new(struct server *s
+@@ -614,7 +616,7 @@ static struct client_data *client_new(struct server *s
  	if (props == NULL)
  		goto exit;
  

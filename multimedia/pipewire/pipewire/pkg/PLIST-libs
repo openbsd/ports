@@ -4,6 +4,7 @@ include/pipewire-0.3/
 include/pipewire-0.3/pipewire/
 include/pipewire-0.3/pipewire/array.h
 include/pipewire-0.3/pipewire/buffers.h
+include/pipewire-0.3/pipewire/capabilities.h
 include/pipewire-0.3/pipewire/client.h
 include/pipewire-0.3/pipewire/conf.h
 include/pipewire-0.3/pipewire/context.h
@@ -109,6 +110,8 @@ include/spa-0.2/spa/param/audio/
 include/spa-0.2/spa/param/audio/aac-types.h
 include/spa-0.2/spa/param/audio/aac-utils.h
 include/spa-0.2/spa/param/audio/aac.h
+include/spa-0.2/spa/param/audio/ac3-utils.h
+include/spa-0.2/spa/param/audio/ac3.h
 include/spa-0.2/spa/param/audio/alac-utils.h
 include/spa-0.2/spa/param/audio/alac.h
 include/spa-0.2/spa/param/audio/amr-types.h
@@ -121,6 +124,11 @@ include/spa-0.2/spa/param/audio/dsd-utils.h
 include/spa-0.2/spa/param/audio/dsd.h
 include/spa-0.2/spa/param/audio/dsp-utils.h
 include/spa-0.2/spa/param/audio/dsp.h
+include/spa-0.2/spa/param/audio/dts-types.h
+include/spa-0.2/spa/param/audio/dts-utils.h
+include/spa-0.2/spa/param/audio/dts.h
+include/spa-0.2/spa/param/audio/eac3-utils.h
+include/spa-0.2/spa/param/audio/eac3.h
 include/spa-0.2/spa/param/audio/flac-utils.h
 include/spa-0.2/spa/param/audio/flac.h
 include/spa-0.2/spa/param/audio/format-utils.h
@@ -128,10 +136,13 @@ include/spa-0.2/spa/param/audio/format.h
 include/spa-0.2/spa/param/audio/iec958-types.h
 include/spa-0.2/spa/param/audio/iec958-utils.h
 include/spa-0.2/spa/param/audio/iec958.h
+include/spa-0.2/spa/param/audio/layout-types.h
 include/spa-0.2/spa/param/audio/layout.h
 include/spa-0.2/spa/param/audio/mp3-types.h
 include/spa-0.2/spa/param/audio/mp3-utils.h
 include/spa-0.2/spa/param/audio/mp3.h
+include/spa-0.2/spa/param/audio/mpegh-utils.h
+include/spa-0.2/spa/param/audio/mpegh.h
 include/spa-0.2/spa/param/audio/opus.h
 include/spa-0.2/spa/param/audio/ra-utils.h
 include/spa-0.2/spa/param/audio/ra.h
@@ -139,6 +150,8 @@ include/spa-0.2/spa/param/audio/raw-json.h
 include/spa-0.2/spa/param/audio/raw-types.h
 include/spa-0.2/spa/param/audio/raw-utils.h
 include/spa-0.2/spa/param/audio/raw.h
+include/spa-0.2/spa/param/audio/truehd-utils.h
+include/spa-0.2/spa/param/audio/truehd.h
 include/spa-0.2/spa/param/audio/type-info.h
 include/spa-0.2/spa/param/audio/vorbis-utils.h
 include/spa-0.2/spa/param/audio/vorbis.h
@@ -150,6 +163,9 @@ include/spa-0.2/spa/param/bluetooth/audio.h
 include/spa-0.2/spa/param/bluetooth/type-info.h
 include/spa-0.2/spa/param/buffers-types.h
 include/spa-0.2/spa/param/buffers.h
+include/spa-0.2/spa/param/dict-types.h
+include/spa-0.2/spa/param/dict-utils.h
+include/spa-0.2/spa/param/dict.h
 include/spa-0.2/spa/param/format-types.h
 include/spa-0.2/spa/param/format-utils.h
 include/spa-0.2/spa/param/format.h
@@ -158,6 +174,9 @@ include/spa-0.2/spa/param/latency-utils.h
 include/spa-0.2/spa/param/latency.h
 include/spa-0.2/spa/param/param-types.h
 include/spa-0.2/spa/param/param.h
+include/spa-0.2/spa/param/peer-types.h
+include/spa-0.2/spa/param/peer-utils.h
+include/spa-0.2/spa/param/peer.h
 include/spa-0.2/spa/param/port-config-types.h
 include/spa-0.2/spa/param/port-config.h
 include/spa-0.2/spa/param/profile-types.h
@@ -174,6 +193,7 @@ include/spa-0.2/spa/param/tag.h
 include/spa-0.2/spa/param/type-info.h
 include/spa-0.2/spa/param/video/
 include/spa-0.2/spa/param/video/chroma.h
+include/spa-0.2/spa/param/video/color-types.h
 include/spa-0.2/spa/param/video/color.h
 include/spa-0.2/spa/param/video/dsp-utils.h
 include/spa-0.2/spa/param/video/dsp.h
@@ -182,6 +202,8 @@ include/spa-0.2/spa/param/video/format-utils.h
 include/spa-0.2/spa/param/video/format.h
 include/spa-0.2/spa/param/video/h264-utils.h
 include/spa-0.2/spa/param/video/h264.h
+include/spa-0.2/spa/param/video/h265-utils.h
+include/spa-0.2/spa/param/video/h265.h
 include/spa-0.2/spa/param/video/mjpg-utils.h
 include/spa-0.2/spa/param/video/mjpg.h
 include/spa-0.2/spa/param/video/multiview.h
@@ -190,6 +212,7 @@ include/spa-0.2/spa/param/video/raw-utils.h
 include/spa-0.2/spa/param/video/raw.h
 include/spa-0.2/spa/param/video/type-info.h
 include/spa-0.2/spa/pod/
+include/spa-0.2/spa/pod/body.h
 include/spa-0.2/spa/pod/builder.h
 include/spa-0.2/spa/pod/command.h
 include/spa-0.2/spa/pod/compare.h
@@ -199,6 +222,7 @@ include/spa-0.2/spa/pod/filter.h
 include/spa-0.2/spa/pod/iter.h
 include/spa-0.2/spa/pod/parser.h
 include/spa-0.2/spa/pod/pod.h
+include/spa-0.2/spa/pod/simplify.h
 include/spa-0.2/spa/pod/vararg.h
 include/spa-0.2/spa/support/
 include/spa-0.2/spa/support/cpu.h
