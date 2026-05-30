@@ -1,6 +1,7 @@
 COMMENT=	cross-platform multimedia library
 
 V=		2.32.10
+REVISION=	0
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 
@@ -53,6 +54,12 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${MACHINE_ARCH} == "hppa"
 CONFIGURE_ARGS+= --disable-atomic
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+= --disable-mmx \
+		--disable-sse \
+		--enable-sse2
 .endif
 
 # The assembly code contains AltiVec instructions, whose support is not
