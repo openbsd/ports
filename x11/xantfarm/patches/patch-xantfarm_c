@@ -43,7 +43,26 @@ Index: xantfarm.c
  main( argc, argv )
      int argc;
      char* argv[];
-@@ -1539,7 +1528,7 @@ read_world( cf )
+@@ -403,9 +392,6 @@ usage:
+ 	exit( 1 );
+ 	}
+ 
+-    /* Initialize the random number generator. */
+-    srandom( (int) ( time( (long*) 0 ) ^ getpid() ) );
+-
+     /* Create the ant world. */
+     ant_init();
+ 
+@@ -870,7 +856,7 @@ main_loop()
+ 	    FD_SET( fd, &fds );
+ 	    timeout.tv_sec = 1 / cycles;
+ 	    timeout.tv_usec = 1000000L / cycles;
+-	    (void) select( fd + 1, &fds, (int*) 0, (int*) 0, &timeout );
++	    (void) select( fd + 1, &fds, NULL, NULL, &timeout );
+ 	    }
+ 	if ( XPending( display ) == 0 )
+ 	    {
+@@ -1539,7 +1525,7 @@ read_world( cf )
      char* cf;
      {
      FILE* cfP;
