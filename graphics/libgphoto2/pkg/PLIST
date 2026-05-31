@@ -129,6 +129,10 @@ share/libgphoto2_port/
 share/libgphoto2_port/${GPHOTO2_PORT_API}/
 share/libgphoto2_port/${GPHOTO2_PORT_API}/vcamera/
 share/libgphoto2_port/${GPHOTO2_PORT_API}/vcamera/README.txt
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/libgphoto2-6.mo
+share/locale/ar/LC_MESSAGES/libgphoto2_port-12.mo
 share/locale/cs/LC_MESSAGES/libgphoto2-6.mo
 share/locale/cs/LC_MESSAGES/libgphoto2_port-12.mo
 share/locale/da/LC_MESSAGES/libgphoto2-6.mo
