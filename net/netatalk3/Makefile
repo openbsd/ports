@@ -1,6 +1,6 @@
 COMMENT=		Apple Filing Protocol file server over TCP/IP
 
-V=			4.4.3
+V=			4.5.0
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
@@ -18,8 +18,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += avahi-client avahi-common bstring c crack db event_core
-WANTLIB += gcrypt gio-2.0 glib-2.0 gobject-2.0 iconv iniparser
-WANTLIB += rpcsvc
+WANTLIB += gcrypt iconv iniparser pthread rpcsvc
 
 SITES=			https://github.com/Netatalk/Netatalk/releases/download/netatalk-${V:S/./-/g}/
 
@@ -48,7 +47,7 @@ RUN_DEPENDS=		net/avahi
 RUN_DEPENDS +=		net/p5-Net-DBus
 
 CONFIGURE_ARGS=		-Dwith-acls=false \
-			-Dwith-cnid-backends=dbd,last \
+			-Dwith-cnid-backends=dbd \
 			-Dwith-dtrace=false \
 			-Dwith-gssapi=false \
 			-Dwith-kerberos=false \

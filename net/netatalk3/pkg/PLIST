@@ -12,7 +12,6 @@ bin/afpstats
 bin/asip-status
 @bin bin/dbd
 @bin bin/fce_listen
-bin/macusers
 @bin bin/nad
 include/atalk/
 include/atalk/acl.h
@@ -23,6 +22,7 @@ include/atalk/afp_util.h
 include/atalk/asp.h
 include/atalk/atp.h
 include/atalk/cnid.h
+include/atalk/constant_time.h
 include/atalk/ddp.h
 include/atalk/ea.h
 include/atalk/globals.h
@@ -53,6 +53,7 @@ lib/netatalk/
 @so lib/netatalk/uams_guest.so
 @so lib/netatalk/uams_passwd.so
 @so lib/netatalk/uams_randnum.so
+@so lib/netatalk/uams_srp.so
 @man man/man1/addump.1
 @man man/man1/afpldaptest.1
 @man man/man1/afppasswd.1
@@ -60,11 +61,7 @@ lib/netatalk/
 @man man/man1/asip-status.1
 @man man/man1/dbd.1
 @man man/man1/fce_listen.1
-@man man/man1/macusers.1
 @man man/man1/nad.1
-@man man/man3/atalk_aton.3
-@man man/man3/nbp_name.3
-@man man/man4/atalk.4
 @man man/man5/afp.conf.5
 @man man/man5/afp_signature.conf.5
 @man man/man5/afp_voluuid.conf.5
@@ -77,7 +74,6 @@ lib/netatalk/
 @bin sbin/cnid_dbd
 @bin sbin/cnid_metad
 @bin sbin/netatalk
-share/dbus-1/system.d/netatalk-dbus.conf
 share/examples/netatalk/
 share/examples/netatalk/netatalk/
 @sample ${SYSCONFDIR}/netatalk/
