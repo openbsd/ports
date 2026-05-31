@@ -1,0 +1,37 @@
+https://github.com/anjo76/angelscript/pull/72
+
+Index: AI/Skirmish/BARb/src/lib/angelscript/source/as_callfunc.cpp
+--- AI/Skirmish/BARb/src/lib/angelscript/source/as_callfunc.cpp.orig
++++ AI/Skirmish/BARb/src/lib/angelscript/source/as_callfunc.cpp
+@@ -675,17 +675,23 @@ int CallSystemFunction(int id, asCContext *context)
+ 			// Skip the object pointer
+ 			args += AS_PTR_SIZE;
+ 		}
+-		
+-		// Add the base offset for multiple inheritance
++		if( obj )
++		{
++			// For composition we need to add the offset and/or dereference the pointer
++			obj = (void*)((char*)obj + sysFunc->compositeOffset);
++			if (sysFunc->isCompositeIndirect) obj = *((void**)obj);
++
++			// Add the base offset for multiple inheritance
+ #if (defined(__GNUC__) && (defined(AS_ARM64) || defined(AS_ARM) || defined(AS_MIPS))) || defined(AS_PSVITA)
+-		// On GNUC + ARM the lsb of the offset is used to indicate a virtual function
+-		// and the whole offset is thus shifted one bit left to keep the original
+-		// offset resolution
+-		// MIPS also work like ARM in this regard
+-		obj = (void*)(asPWORD(obj) + (sysFunc->baseOffset>>1));
++			// On GNUC + ARM the lsb of the offset is used to indicate a virtual function
++			// and the whole offset is thus shifted one bit left to keep the original
++			// offset resolution
++			// MIPS also work like ARM in this regard
++			obj = (void*)(asPWORD(obj) + (sysFunc->baseOffset>>1));
+ #else
+-		obj = (void*)(asPWORD(obj) + sysFunc->baseOffset);
++			obj = (void*)(asPWORD(obj) + sysFunc->baseOffset);
+ #endif		
++		}
+ 	}
+ #else // !defined(AS_NO_THISCALL_FUNCTOR_METHOD)
+ 
