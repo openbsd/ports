@@ -1,6 +1,6 @@
 COMMENT =		generate and work with holidays in Python
 
-MODPY_DISTV =		0.96
+MODPY_DISTV =		0.97
 DISTNAME =		holidays-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
