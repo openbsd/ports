@@ -2,9 +2,7 @@ COMMENT=	DDoS detector with multiple packet capture engines
 
 GH_ACCOUNT=	pavel-odintsov
 GH_PROJECT=	fastnetmon
-GH_COMMIT=	2bf813b2590b9847308877a65fc72df560dd282f
-#GH_TAGNAME=	v1.2.8
-DISTNAME=	fastnetmon-1.2.9pre20260527
+GH_TAGNAME=	v1.2.9
 WRKSRC=		${WRKDIST}/src
 
 HOMEPAGE=	https://fastnetmon.com/guides/

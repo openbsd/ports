@@ -1,7 +1,18 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -185,15 +185,15 @@ message(STATUS "Commit hash: ${GIT_LAST_COMMIT_HASH_SH
+@@ -48,7 +48,9 @@ set(GTEST_INSTALL_PATH "${FASTNETMON_LIBRARIES_GLOBAL_
+ # In order to get a warning about an unused function parameter, you must either specify -Wextra -Wunused (note that -Wall implies -Wunused), or separately specify -Wunused-parameter.
+ # TODO: return -Wunused-parameter and address all warning later, I started it but did not finish as we have too many of them
+ # catch-value is documented here: https://patchwork.ozlabs.org/project/gcc/patch/tkrat.8c7b4260a533be2f@netcologne.de/#1680619
+-add_definitions("-Wreorder -Wunused -Wparentheses -Wimplicit-fallthrough -Wreturn-type -Wuninitialized -Winit-self -Wmaybe-uninitialized -Wcatch-value=3 -Wclass-memaccess")
++add_definitions("-Wreorder -Wunused -Wparentheses -Wimplicit-fallthrough -Wreturn-type -Wuninitialized -Winit-self")
++# disabled: -Wmaybe-uninitialized -Wcatch-value=3 -Wclass-memaccess
++# XXX should use check_compiler_flag to test whether flags are valid
+ 
+ # On Windows we need to build libgcc and libstdc++ statically to avoid need to carry dlls with us
+ if (${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+@@ -185,15 +187,15 @@ message(STATUS "Commit hash: ${GIT_LAST_COMMIT_HASH_SH
  set(FASTNETMON_APPLICATION_VERSION "${FASTNETMON_VERSION_MAJOR}.${FASTNETMON_VERSION_MINOR}.${FASTNETMON_VERSION_PATCH} ${GIT_LAST_COMMIT_HASH_SHORT}")
  
  # Set standard values which work for majority of platforms
@@ -25,7 +36,7 @@ Index: src/CMakeLists.txt
  
  # For FreeBSD based platforms we need to adjust them
  if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD" OR ${CMAKE_SYSTEM_NAME} STREQUAL "DragonFly")
-@@ -1167,6 +1167,10 @@ elseif (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+@@ -1167,6 +1169,10 @@ elseif (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
      endif()
  elseif (${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
      message(STATUS "We run on Apple platform")
