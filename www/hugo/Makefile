@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	${GO_ARCHS}
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.161.1
+MODGO_VERSION =	v0.162.1
 
 DISTNAME =	hugo-${MODGO_VERSION}
 
@@ -32,6 +32,9 @@ SEPARATE_BUILD =	Yes
 MODGO_FLAGS +=	--tags extended,withdeploy
 LIB_DEPENDS +=	www/libsass
 MAKE_ENV +=	CGO_CPPFLAGS='-I${LOCALBASE}/include -DUSE_LIBSASS_SRC' CGO_LDFLAGS='-L${LOCALBASE}/lib -lm -lsass'
+
+MODGO_LDFLAGS+=	-X github.com/gohugoio/hugo/common/hugo.buildDate=`date -u '+%FT%TZ'` \
+		-X github.com/gohugoio/hugo/common/hugo.vendorInfo="OpenBSD/ports" \
 
 post-build:
 	cd ${MODGO_WORKSPACE}/bin && ./hugo gen man
