@@ -1,0 +1,14 @@
+Fix build with llvm 22.
+
+Index: Hebrew.xs
+--- Hebrew.xs.orig
++++ Hebrew.xs
+@@ -17,7 +17,7 @@ SV *
+ _hebrewflip(s)
+ SV * s
+ CODE:
+-    int l;
++    STRLEN l;
+     char *src, *dst;
+     SV *r;
+ 
