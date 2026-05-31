@@ -1,0 +1,17 @@
+From d202b7143673a84998521c751770d6b4bdd01259 Mon Sep 17 00:00:00 2001
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Mon, 27 Jan 2025 10:38:38 +0100
+Subject: [PATCH] xsane-save.c: Specify function argument in prototype
+
+Index: src/xsane-save.h
+--- src/xsane-save.h.orig
++++ src/xsane-save.h
+@@ -50,7 +50,7 @@ struct pdf_xref
+ 
+ 
+ extern int xsane_create_secure_file(const char *filename);
+-extern void xsane_cancel_save();
++extern void xsane_cancel_save(int *cancel_save);
+ extern void xsane_convert_text_to_filename(char **filename);
+ extern int xsane_get_filesize(char *filename);
+ extern void xsane_ensure_counter_in_filename(char **filename, int counter_len);

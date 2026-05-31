@@ -1,7 +1,7 @@
 COMMENT=	scanner frontend for SANE
 
 DISTNAME=	xsane-0.999
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	graphics
 
