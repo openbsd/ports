@@ -8,14 +8,15 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel parallel2
 
-DISTNAME =	qgis-4.0.2
+DISTNAME =	qgis-4.0.3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
+SUBST_VARS +=	PKGNAME
 
-SHARED_LIBS =	qgis_core	87.0 \
+SHARED_LIBS =	qgis_core	88.0 \
 		qgis_app	54.0 \
-		qgis_gui	62.1 \
+		qgis_gui	62.2 \
 		qgis_analysis	31.0 \
 		qgis_server	23.0 \
 		qgispython	6.0 \

@@ -3462,8 +3462,8 @@ share/qgis/python/pyplugin_installer/qgsplugininstallerrepositorydialog.py
 share/qgis/python/pyplugin_installer/unzip.py
 share/qgis/python/pyplugin_installer/version_compare.py
 share/qgis/python/qgis/
-share/qgis/python/qgis-4.0.2.dist-info/
-share/qgis/python/qgis-4.0.2.dist-info/METADATA
+share/qgis/python/${PKGNAME}.dist-info/
+share/qgis/python/${PKGNAME}.dist-info/METADATA
 share/qgis/python/qgis/PyQt/
 share/qgis/python/qgis/PyQt/Qsci.py
 share/qgis/python/qgis/PyQt/Qt.py
