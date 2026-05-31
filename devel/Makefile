@@ -193,6 +193,7 @@
      SUBDIR += git-crypt
      SUBDIR += git-filter-repo
      SUBDIR += git-lfs
+     SUBDIR += git-tools
      SUBDIR += github-backup
      SUBDIR += github-cli
      SUBDIR += gitsh
