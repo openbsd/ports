@@ -1,0 +1,14 @@
+Index: sope-appserver/NGObjWeb/WebDAV/SoSubscriptionManager.m
+--- sope-appserver/NGObjWeb/WebDAV/SoSubscriptionManager.m.orig
++++ sope-appserver/NGObjWeb/WebDAV/SoSubscriptionManager.m
+@@ -186,8 +186,8 @@ static SoSubscriptionManager *sm = nil;
+     }
+   }
+   
+-  if (pending  == nil) pending  = [NSArray array];
+-  if (inactive == nil) inactive = [NSArray array];
++  if (pending  == nil) pending  = [NSMutableArray array];
++  if (inactive == nil) inactive = [NSMutableArray array];
+   return [NSDictionary dictionaryWithObjectsAndKeys:
+                          pending,  @"pending",
+                          inactive, @"inactive",

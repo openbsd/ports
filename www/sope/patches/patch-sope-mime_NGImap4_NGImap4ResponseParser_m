@@ -1,0 +1,21 @@
+Index: sope-mime/NGImap4/NGImap4ResponseParser.m
+--- sope-mime/NGImap4/NGImap4ResponseParser.m.orig
++++ sope-mime/NGImap4/NGImap4ResponseParser.m
+@@ -97,7 +97,7 @@ static NSString *_parseBodyDecodeString(NGImap4Respons
+                                         BOOL _decode);
+ static NSDictionary *_parseBodyParameterList(NGImap4ResponseParser *self);
+ static NSDictionary *_parseContentDisposition(NGImap4ResponseParser *self);
+-static NSArray *_parseAddressStructure(NGImap4ResponseParser *self);
++static NSDictionary *_parseAddressStructure(NGImap4ResponseParser *self);
+ static NSArray *_parseParenthesizedAddressList(NGImap4ResponseParser *self);
+ static int _parseTaggedResponse(NGImap4ResponseParser *self,
+                                 NGMutableHashMap *result_);
+@@ -2205,7 +2205,7 @@ static NSDictionary *_parseContentDisposition(NGImap4R
+   return disposition;
+ }
+ 
+-static NSArray *_parseAddressStructure(NGImap4ResponseParser *self) {
++static NSDictionary *_parseAddressStructure(NGImap4ResponseParser *self) {
+   NSString *personalName, *sourceRoute, *mailboxName, *hostName;
+ 
+   // Handle broken address list - generally sent by Microsoft Exchange.

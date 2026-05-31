@@ -1,0 +1,12 @@
+Index: sope-mime/NGImap4/NGImap4Folder.m
+--- sope-mime/NGImap4/NGImap4Folder.m.orig
++++ sope-mime/NGImap4/NGImap4Folder.m
+@@ -300,7 +300,7 @@ static int FetchNewUnseenMessagesInSubFoldersOnDemand 
+   msn  = [[dict objectForKey:@"search"] mutableCopy];
+   
+   if ((msn == nil) || ![msn isNotEmpty]) {
+-    mes = [NSArray array];
++    mes = [NSMutableArray array];
+   }
+   else {
+     NSEnumerator *seq = nil;

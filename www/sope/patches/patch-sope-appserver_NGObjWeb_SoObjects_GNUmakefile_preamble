@@ -1,0 +1,18 @@
+SoClassRegistry.m:129:52: warning: incompatible pointer types sending 'Class' to parameter of type 'id<NSCopying>' [-Wincompatible-pointer-types]
+  129 |   if ((soClass = [self->objcToSoClass objectForKey:_clazz]))
+      |                                                    ^~~~~~
+SoClassRegistry.m:139:49: warning: incompatible pointer types sending 'Class' to parameter of type 'id<NSCopying>' [-Wincompatible-pointer-types]
+  139 |   [self->objcToSoClass setObject:soClass forKey:_clazz];
+      |      
+Index: sope-appserver/NGObjWeb/SoObjects/GNUmakefile.preamble
+--- sope-appserver/NGObjWeb/SoObjects/GNUmakefile.preamble.orig
++++ sope-appserver/NGObjWeb/SoObjects/GNUmakefile.preamble
+@@ -4,7 +4,7 @@ include ../../../config.make
+ 
+ ADDITIONAL_INCLUDE_DIRS += -I../WebDAV/
+ 
+-ADDITIONAL_CPPFLAGS += -DCOMPILING_NGOBJWEB=1 -DCOMPILE_FOR_GNUSTEP=1
++ADDITIONAL_CPPFLAGS += -DCOMPILING_NGOBJWEB=1 -DCOMPILE_FOR_GNUSTEP=1 -Wno-error=incompatible-pointer-types
+ 
+ # Parameters for SoProduct lookup
+ 

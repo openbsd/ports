@@ -1,0 +1,12 @@
+Index: sope-appserver/WEExtensions/WETableView/WETableView.m
+--- sope-appserver/WEExtensions/WETableView/WETableView.m.orig
++++ sope-appserver/WEExtensions/WETableView/WETableView.m
+@@ -462,7 +462,7 @@ static inline void _applyState_(WETableView *self, WOC
+     infos = [_ctx objectForKey:WETableView_INFOS];
+ 
+     if (infos == nil)
+-      infos = [NSArray array];
++      infos = [NSMutableArray array];
+ 
+     NSAssert(infos != nil, @"Infos is nil.");
+ 
