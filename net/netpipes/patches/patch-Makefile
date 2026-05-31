@@ -1,5 +1,6 @@
---- Makefile.orig	Wed Oct 28 20:30:03 1998
-+++ Makefile	Wed Mar 21 22:11:23 2001
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -17,7 +17,7 @@
  
  # You probably want to change this:
@@ -18,7 +19,7 @@
  
  # SGI
  #CFLAGS = -DSYSV $(CDEBUGFLAGS)
-@@ -71,7 +71,7 @@ CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_
+@@ -71,7 +71,7 @@ CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_INET_ATON $(CD
  #CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
  
  # FreeBSD

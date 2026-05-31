@@ -1,10 +1,10 @@
-bin/encapsulate
-bin/faucet
-bin/getpeername
+@bin bin/encapsulate
+@bin bin/faucet
+@bin bin/getpeername
 bin/getsockname
-bin/hose
-bin/sockdown
-bin/timelimit
+@bin bin/hose
+@bin bin/sockdown
+@bin bin/timelimit
 @man man/man1/encapsulate.1
 @man man/man1/faucet.1
 @man man/man1/getpeername.1

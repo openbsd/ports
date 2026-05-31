@@ -1,0 +1,15 @@
+Casts the socket address union pointer to struct sockaddr * to fix a compiler
+type mismatch
+
+Index: faucet.c
+--- faucet.c.orig
++++ faucet.c
+@@ -619,7 +619,7 @@ char ** argv;
+       continue;
+     }
+     
+-    if (!authorize_address(&saddr)) {
++    if (!authorize_address((struct sockaddr *)&saddr)) {
+       close(rval);
+       continue;
+     }
