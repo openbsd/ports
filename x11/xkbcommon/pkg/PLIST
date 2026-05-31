@@ -20,6 +20,7 @@ libexec/xkbcommon/
 @bin libexec/xkbcommon/xkbcli-dump-keymap-wayland
 @bin libexec/xkbcommon/xkbcli-dump-keymap-x11
 @bin libexec/xkbcommon/xkbcli-how-to-type
+@bin libexec/xkbcommon/xkbcli-info
 @bin libexec/xkbcommon/xkbcli-interactive
 @bin libexec/xkbcommon/xkbcli-interactive-wayland
 @bin libexec/xkbcommon/xkbcli-interactive-x11
@@ -29,6 +30,7 @@ libexec/xkbcommon/
 @man man/man1/xkbcli-dump-keymap-wayland.1
 @man man/man1/xkbcli-dump-keymap-x11.1
 @man man/man1/xkbcli-how-to-type.1
+@man man/man1/xkbcli-info.1
 @man man/man1/xkbcli-interactive-wayland.1
 @man man/man1/xkbcli-interactive-x11.1
 @man man/man1/xkbcli-list.1
