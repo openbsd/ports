@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS =	${MONO_ARCHS}
 COMMENT =	additional libraries for running games with fnaify
 V =		0.1
 DISTNAME =	fnaify-extralibs-${V}
+REVISION =	0
 
 SHARED_LIBS +=  SDL2_image_compact	0.0 # 0.0
 SHARED_LIBS +=  atomstb			0.0 # 0.0

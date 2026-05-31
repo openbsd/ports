@@ -1,0 +1,12 @@
+Index: AZSNotSFML/atomstb/stb_vorbis.c
+--- AZSNotSFML/atomstb/stb_vorbis.c.orig
++++ AZSNotSFML/atomstb/stb_vorbis.c
+@@ -1363,7 +1363,7 @@ static int set_file_offset(stb_vorbis *f, unsigned int
+    #endif
+    f->eof = 0;
+    if (USE_MEMORY(f)) {
+-      if (f->stream_start + loc >= f->stream_end || f->stream_start + loc < f->stream_start) {
++      if (f->stream_start + loc >= f->stream_end) {
+          f->stream = f->stream_end;
+          f->eof = 1;
+          return 0;
