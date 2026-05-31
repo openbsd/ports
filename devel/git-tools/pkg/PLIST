@@ -1,0 +1,12 @@
+bin/git-branches-rename
+bin/git-clone-subset
+bin/git-find-uncommitted-repos
+bin/git-rebase-theirs
+bin/git-restore-mtime
+bin/git-strip-merge
+@man man/man1/git-branches-rename.1
+@man man/man1/git-clone-subset.1
+@man man/man1/git-find-uncommitted-repos.1
+@man man/man1/git-rebase-theirs.1
+@man man/man1/git-restore-mtime.1
+@man man/man1/git-strip-merge.1

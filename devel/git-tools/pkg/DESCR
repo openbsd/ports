@@ -1,0 +1,18 @@
+Assorted git-related scripts and tools:
+
+- git-branches-rename: Batch renames branches with a matching prefix to
+  another prefix
+
+- git-clone-subset: Clones a subset of a git repository
+
+- git-find-uncommitted-repos: Recursively list repos with uncommitted
+  changes
+
+- git-rebase-theirs: Resolve rebase conflicts and failed cherry-picks by
+  favoring 'theirs' version
+
+- git-restore-mtime: Restore original modification time of files based
+  on the date of the most recent commit that modified them
+
+- git-strip-merge: A git-merge wrapper that deletes files on a "foreign"
+  branch before merging
