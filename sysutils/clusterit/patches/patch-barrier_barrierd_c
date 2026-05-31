@@ -1,0 +1,14 @@
+Fix build with llvm 22
+
+Index: barrier/barrierd.c
+--- barrier/barrierd.c.orig
++++ barrier/barrierd.c
+@@ -111,7 +111,7 @@ sleeper(void)
+     char *key, *buf;
+     char *tokens[MAX_TOKENS];
+     int i, k, l, m, found, sock;
+-    size_t size;
++    socklen_t size;
+     int sizes[MAX_TOKENS];
+     int connections[MAX_TOKENS];
+     int sockets[MAX_TOKENS][MAX_CLUSTER];
