@@ -1,22 +1,22 @@
 Index: cli/vgmstream_cli.c
 --- cli/vgmstream_cli.c.orig
 +++ cli/vgmstream_cli.c
-@@ -4,6 +4,7 @@
- #define POSIXLY_CORRECT
+@@ -7,6 +7,7 @@
+ #include <stdio.h>
  
  #include <getopt.h>
 +#include <stdlib.h>
- #include "../src/vgmstream.h"
- #include "../src/api.h"
- #include "../src/util.h"
-@@ -593,6 +594,10 @@ int main(int argc, char** argv) {
-     cli_config cfg = {0};
-     int i, res, ok;
+ 
+ #ifdef WIN32
+ #include <io.h>
+@@ -586,6 +587,10 @@ static bool convert_file(cli_config_t* cfg) {
+         return true;
+     }
  
 +    if (pledge("stdio rpath wpath cpath", NULL) == -1) {
 +        fprintf(stderr, "pledge\n");
 +        return 1;
 +    }
  
-     /* read args */
-     res = parse_config(&cfg, argc, argv);
+     /* main decode */
+     write_file(vgmstream, cfg);

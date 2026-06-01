@@ -1,7 +1,7 @@
 Index: cli/vgmstream123.c
 --- cli/vgmstream123.c.orig
 +++ cli/vgmstream123.c
-@@ -760,7 +760,18 @@ int main(int argc, char **argv) {
+@@ -771,7 +771,18 @@ int main(int argc, char** argv) {
      signal(SIGINT,  interrupt_handler);
      signal(SIGQUIT, interrupt_handler);
  

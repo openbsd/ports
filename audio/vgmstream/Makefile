@@ -2,7 +2,7 @@ COMMENT =	play back various video game streamed audio formats
 
 PKGNAME =	vgmstream-$V
 
-V =		1866
+V =		2117
 
 DIST_TUPLE =	github vgmstream vgmstream r$V .
 
@@ -10,7 +10,7 @@ CATEGORIES =	audio
 
 HOMEPAGE =	https://vgmstream.org/
 
-MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
+MAINTAINER =	Anthony J. Bentley <bentley@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes
