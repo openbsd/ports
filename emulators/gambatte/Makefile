@@ -4,18 +4,18 @@ REV =			571
 V =			0.5.0.${REV}
 DISTNAME =		gambatte_src-r${REV}
 PKGNAME =		gambatte-$V
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		emulators
 
 HOMEPAGE =		https://gambatte.sourceforge.net/
 
-MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
+MAINTAINER =		Anthony J. Bentley <bentley@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} SDL c m z
+WANTLIB += ${COMPILER_LIBCXX} SDL c m minizip z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -33,6 +33,7 @@ SEPARATE_BUILD =	No
 
 BUILD_DEPENDS =		graphics/png
 LIB_DEPENDS =		${MODGCC4_CPPLIBDEP} \
+			archivers/minizip \
 			devel/sdl
 
 TEST_DEPENDS =		graphics/png

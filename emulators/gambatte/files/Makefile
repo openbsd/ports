@@ -48,8 +48,6 @@ LIB_OBJECTS = \
 	libgambatte/src/statesaver.o \
 	libgambatte/src/tima.o \
 	libgambatte/src/file/file_zip.o \
-	libgambatte/src/file/unzip/unzip.o \
-	libgambatte/src/file/unzip/ioapi.o \
 	libgambatte/src/mem/cartridge.o \
 	libgambatte/src/mem/memptrs.o \
 	libgambatte/src/mem/pakinfo.o \
@@ -74,16 +72,17 @@ TEST_OBJECTS = \
 all: $(SDL_TARGET)
 
 SDL_LFLAGS != pkg-config --libs sdl
+MINIZIP_LFLAGS != pkg-config --libs minizip
 ZLIB_LFLAGS != pkg-config --libs zlib
 $(SDL_TARGET): $(SDL_OBJECTS) $(LIB)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ -pthread $(SDL_OBJECTS) $(LIB) \
-		$(ZLIB_LFLAGS) $(SDL_LFLAGS)
+		$(ZLIB_LFLAGS) $(SDL_LFLAGS) $(MINIZIP_LFLAGS)
 
 $(LIB): $(LIB_OBJECTS)
 	$(AR) $(ARFLAGS) $@ $(LIB_OBJECTS)
 	ranlib $@
 
-PKGCONFIG_CFLAGS != pkg-config --cflags sdl libpng zlib
+PKGCONFIG_CFLAGS != pkg-config --cflags sdl libpng minizip zlib
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $*.o
 .cpp.o:
