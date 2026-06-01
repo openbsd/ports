@@ -4,7 +4,7 @@ COMMENT-libretro =	accurate Nintendo Game Boy core for retroarch
 PKGNAME-main =		sameboy-$V
 PKGNAME-libretro =	libretro-sameboy-$V
 
-V =		1.0.2
+V =		1.0.3
 
 GH_ACCOUNT =	LIJI32
 GH_PROJECT =	SameBoy
@@ -20,12 +20,12 @@ CATEGORIES =	emulators
 
 HOMEPAGE =	https://sameboy.github.io/
 
-MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
+MAINTAINER =	Anthony J. Bentley <bentley@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main += GL SDL2 c m openal pthread
+WANTLIB-main += GL SDL2 c m openal png pthread
 WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 intl
 WANTLIB-libretro += m
 
