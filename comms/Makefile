@@ -10,6 +10,7 @@
      SUBDIR += conserver,ipmi
      SUBDIR += conserver,ipmi,net
      SUBDIR += conserver,net
+     SUBDIR += cubicsdr
      SUBDIR += dfu-util
      SUBDIR += dump1090
      SUBDIR += ebook2cw
