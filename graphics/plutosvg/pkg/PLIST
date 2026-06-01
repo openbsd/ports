@@ -1,0 +1,10 @@
+include/plutosvg/
+include/plutosvg/plutosvg-ft.h
+include/plutosvg/plutosvg.h
+lib/cmake/plutosvg/
+lib/cmake/plutosvg/plutosvgConfig.cmake
+lib/cmake/plutosvg/plutosvgConfigVersion.cmake
+lib/cmake/plutosvg/plutosvgTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plutosvg/plutosvgTargets.cmake
+@lib lib/libplutosvg.so.${LIBplutosvg_VERSION}
+lib/pkgconfig/plutosvg.pc
