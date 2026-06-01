@@ -1,0 +1,44 @@
+From 01dd9eb5f3bfdd57d94ada63b88b1bc092155ebe Mon Sep 17 00:00:00 2001
+From: robert <robert@openbsd.org>
+Date: Fri, 29 May 2026 11:53:08 +0000
+Subject: [PATCH] revert upstream commit
+ 947b9f55b5f327e14368a48fb6ce10242ea29bf3
+
+It breaks cpp -traditional -dM
+
+https://github.com/llvm/llvm-project/issues/200085
+
+Index: clang/lib/Frontend/PrintPreprocessedOutput.cpp
+--- clang/lib/Frontend/PrintPreprocessedOutput.cpp.orig
++++ clang/lib/Frontend/PrintPreprocessedOutput.cpp
+@@ -914,7 +914,8 @@ static void PrintPreprocessedTokens(Preprocessor &PP, 
+       PP.Lex(Tok);
+       continue;
+     } else if (Tok.is(tok::annot_repl_input_end)) {
+-      // Fall through to exit the loop.
++      PP.Lex(Tok);
++      continue;
+     } else if (Tok.is(tok::eod)) {
+       // Don't print end of directive tokens, since they are typically newlines
+       // that mess up our line tracking. These come from unknown pre-processor
+@@ -1023,8 +1024,7 @@ static void PrintPreprocessedTokens(Preprocessor &PP, 
+     Callbacks->setEmittedTokensOnThisLine();
+     IsStartOfLine = false;
+ 
+-    if (Tok.is(tok::eof) || Tok.is(tok::annot_repl_input_end))
+-      break;
++    if (Tok.is(tok::eof)) break;
+ 
+     PP.Lex(Tok);
+     // If lexing that token causes us to need to skip future tokens, do so now.
+@@ -1047,7 +1047,9 @@ static void DoPrintMacros(Preprocessor &PP, raw_ostrea
+   // the macro table at the end.
+   PP.EnterMainSourceFile();
+ 
+-  PP.LexTokensUntilEOF();
++  Token Tok;
++  do PP.Lex(Tok);
++  while (Tok.isNot(tok::eof));
+ 
+   SmallVector<id_macro_pair, 128> MacrosByID;
+   for (Preprocessor::macro_iterator I = PP.macro_begin(), E = PP.macro_end();
