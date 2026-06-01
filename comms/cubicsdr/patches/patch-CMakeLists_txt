@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -246,7 +246,7 @@ IF (UNIX AND NOT APPLE)
+     SET(USE_SYSTEM_RTAUDIO OFF CACHE BOOL "Use the system RtAudio which in turn provides OSS, ALSA, JACK, PulseAudio support depending on how it was compiled")
+ 
+     SET(LIQUID_LIB liquid)
+-    SET(OTHER_LIBRARIES ${OTHER_LIBRARIES} dl)
++    SET(OTHER_LIBRARIES ${OTHER_LIBRARIES} ${CMAKE_DL_LIBS})
+ 
+     IF(USE_SYSTEM_RTAUDIO)
+         find_package(RtAudio)
