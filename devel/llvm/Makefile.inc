@@ -37,9 +37,7 @@ WANTLIB-main +=	${COMPILER_LIBCXX} c edit execinfo m z
 WANTLIB-libcxx += c m pthread
 WANTLIB-lldb += ${COMPILER_LIBCXX} c curses edit form kvm
 WANTLIB-lldb += m panel ${MODPY_WANTLIB} z
-.if ${LLVM_MAJOR} > 16
 WANTLIB-lldb += llvm${LLVM_MAJOR}/lib/LLVM
-.endif
 WANTLIB-lldb += llvm${LLVM_MAJOR}/lib/clang-cpp
 WANTLIB-python =
 
@@ -150,7 +148,6 @@ CXXFLAGS-mips64 =	-fno-ret-protector -fomit-frame-pointer
 CXXFLAGS-mips64el =	-fno-ret-protector -fomit-frame-pointer
 CXXFLAGS-powerpc =	-fno-ret-protector
 
-.if ${LLVM_MAJOR} > 17
 CXXFLAGS-mips64 +=	-mxgot
 CXXFLAGS-mips64el +=	-mxgot
 
