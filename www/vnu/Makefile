@@ -1,6 +1,6 @@
 COMMENT =	HTML5 validator
 
-V =		26.2.26
+V =		26.5.29
 DISTNAME =	vnu-jar-$V
 PKGNAME =	vnu-$V
 
@@ -8,7 +8,7 @@ CATEGORIES =	www
 
 HOMEPAGE =	https://validator.github.io/validator/
 
-MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
+MAINTAINER =	Anthony J. Bentley <bentley@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -18,7 +18,7 @@ SITES =		https://registry.npmjs.org/vnu-jar/-/
 EXTRACT_SUFX =		.tgz
 
 MODULES =		java
-MODJAVA_VER =		11+
+MODJAVA_VER =		17+
 RUN_DEPENDS =		java/javaPathHelper
 
 NO_BUILD =		Yes
