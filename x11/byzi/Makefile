@@ -1,7 +1,7 @@
 COMMENT =	confine pointer and keyboard events to a Tk window sub-tree
 
 DISTNAME =	byzi-0.2
-REVISION =	0
+REVISION =	1
 CATEGORIES =	x11
 HOMEPAGE =	http://github.com/aryler/Byzi
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>

@@ -1,0 +1,15 @@
+Unbreak with llvm22.
+
+
+Index: generic/tkBusy.c
+--- generic/tkBusy.c.orig
++++ generic/tkBusy.c
+@@ -534,7 +534,7 @@ CreateBusy(
+     Window parent;
+     Tk_FakeWin *winPtr;
+ 
+-    busyPtr = ckalloc(sizeof(Busy));
++    busyPtr = (Busy *) ckalloc(sizeof(Busy));
+     x = y = 0;
+     length = strlen(Tk_Name(tkRef));
+     name = ckalloc(length + 6);

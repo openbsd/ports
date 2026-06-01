@@ -1,0 +1,32 @@
+Unbreak with llvm22.
+Silence "discarded const" warning for (Tcl_ObjType *).
+
+
+Index: generic/tkObj.c
+--- generic/tkObj.c.orig
++++ generic/tkObj.c
+@@ -903,13 +903,13 @@ SetWindowFromAny(
+ 	typePtr->freeIntRepProc(objPtr);
+     }
+ 
+-    winPtr = ckalloc(sizeof(WindowRep));
++    winPtr = (WindowRep *) ckalloc(sizeof(WindowRep));
+     winPtr->tkwin = NULL;
+     winPtr->mainPtr = NULL;
+     winPtr->epoch = 0;
+ 
+     objPtr->internalRep.twoPtrValue.ptr1 = winPtr;
+-    objPtr->typePtr = &windowObjType;
++    objPtr->typePtr = (Tcl_ObjType *) &windowObjType;
+ 
+     return TCL_OK;
+ }
+@@ -940,7 +940,7 @@ DupWindowInternalRep(
+     register WindowRep *oldPtr, *newPtr;
+ 
+     oldPtr = srcPtr->internalRep.twoPtrValue.ptr1;
+-    newPtr = ckalloc(sizeof(WindowRep));
++    newPtr = (WindowRep *) ckalloc(sizeof(WindowRep));
+     newPtr->tkwin = oldPtr->tkwin;
+     newPtr->mainPtr = oldPtr->mainPtr;
+     newPtr->epoch = oldPtr->epoch;

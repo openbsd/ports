@@ -1,5 +1,8 @@
-The Byzi extension for Tk provides a simple means to
-block keyboard, button and pointer events from Tk widgets, while
-overriding the widget's cursor with a configurable busy cursor.
+The Byzi extension for Tk provides a [byzi] command,
+based on the Tk 8.6 [busy] command sources.
 
-The Byzi extension is based on the Tk 8.6 busy command sources.
+Keyboard, button and pointer events from Tk widgets can be blocked,
+while overriding the widget's cursor with a configurable busy cursor.
+
+Created to bring Tk 8.6 [busy] functionality to Tk 8.5,
+the Byzi extension can be used with Tk 8.6 as well.
