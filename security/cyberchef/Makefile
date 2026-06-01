@@ -1,10 +1,8 @@
 COMMENT =	cyber swiss army knife
 
-V =		10.22.1
-#DISTNAME =	CyberChef_v$V
-DISTNAME =	CyberChef_v$V-rerolled1{CyberChef_v$V}
+V =		11.0.0
+DISTNAME =	CyberChef_v$V
 PKGNAME =	cyberchef-$V
-REVISION =	0
 
 PREFIX =	${VARBASE}/www
 
@@ -12,12 +10,12 @@ CATEGORIES =	security www
 
 HOMEPAGE =	https://gchq.github.io/CyberChef/
 
-MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
+MAINTAINER =	Anthony J. Bentley <bentley@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://gchq.github.io/CyberChef/
+SITES =		https://github.com/gchq/CyberChef/releases/download/v$V/
 
 EXTRACT_SUFX =	.zip
 
