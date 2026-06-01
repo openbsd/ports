@@ -1,0 +1,22 @@
+llvm22 fix: Use same approach as gnustep-gui 
+Index: Source/IRCObject.m
+--- Source/IRCObject.m.orig
++++ Source/IRCObject.m
+@@ -68,7 +68,7 @@ static NSData *IRC_new_line = nil;
+ @implementation NSString (IRCAddition)
+ - (NSString *)uppercaseIRCString
+ {
+-	NSMutableString *aString = [NSString stringWithString: [self uppercaseString]];
++	NSMutableString *aString = [[NSString stringWithString: [self uppercaseString]] mutableCopy];
+ 	NSRange aRange = {0, [aString length]};
+ 
+ 	[aString replaceOccurrencesOfString: @"{" withString: @"[" options: 0
+@@ -84,7 +84,7 @@ static NSData *IRC_new_line = nil;
+ }
+ - (NSString *)uppercaseStrictRFC1459IRCString
+ {
+-	NSMutableString *aString = [NSString stringWithString: [self uppercaseString]];
++	NSMutableString *aString = [[NSString stringWithString: [self uppercaseString]] mutableCopy];
+ 	NSRange aRange = {0, [aString length]};
+ 
+ 	[aString replaceOccurrencesOfString: @"{" withString: @"[" options: 0
