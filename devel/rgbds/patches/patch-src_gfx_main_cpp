@@ -9,7 +9,7 @@ Index: src/gfx/main.cpp
  #include <vector>
  
  #include "cli.hpp"
-@@ -639,6 +640,11 @@ static void replaceExtension(std::string &path, char c
+@@ -638,6 +639,11 @@ static void replaceExtension(std::string &path, char c
  }
  
  int main(int argc, char *argv[]) {

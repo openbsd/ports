@@ -9,7 +9,7 @@ Index: src/fix/main.cpp
  
  #include "cli.hpp"
  #include "diagnostics.hpp"
-@@ -346,6 +347,11 @@ static void initLogo() {
+@@ -345,6 +346,11 @@ static void initLogo() {
  }
  
  int main(int argc, char *argv[]) {

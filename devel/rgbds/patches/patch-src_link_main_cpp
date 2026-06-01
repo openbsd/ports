@@ -9,7 +9,7 @@ Index: src/link/main.cpp
  #include <utility>
  
  #include "backtrace.hpp"
-@@ -415,6 +416,11 @@ static void verboseOutputConfig() {
+@@ -414,6 +415,11 @@ static void verboseOutputConfig() {
  // LCOV_EXCL_STOP
  
  int main(int argc, char *argv[]) {
