@@ -204,7 +204,7 @@ SHA256 (go_modules/modernc.org/token/@v/v1.1.0.mod) = evOzXO1S6tSw7Q4iEB2VvABh0g
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.zip) = Pvqknp+xBWnangnnhfojDNXA9Q/PYF87VDnfzWFXfFg=
 SHA256 (go_modules/rsc.io/pdf/@v/v0.1.1.mod) = /ofZECCWyHkA0bShBtm9WPYMBoCaTvedgEv/BoT1y+c=
 SHA256 (go_modules/rsc.io/pdf/@v/v0.1.1.zip) = eb8xDjmc8OLYqmFTZ1DSppmcXKiE56J/r4jTcBzVuo8=
-SHA256 (trdsql-v1.2.1.zip) = 9J7Nfs6ImjemEqWYKqGifReCTH0T2xmFLBMKovTVSf4=
+SHA256 (trdsql-v1.2.3.zip) = QcYMFbxag8oJWgiR1N2N+LyZ9diD8uWrFlpQ/IRwW8c=
 SIZE (go_modules/codeberg.org/go-fonts/liberation/@v/v0.5.0.mod) = 134
 SIZE (go_modules/codeberg.org/go-fonts/liberation/@v/v0.5.0.zip) = 2429297
 SIZE (go_modules/codeberg.org/go-latex/latex/@v/v0.1.0.mod) = 803
@@ -411,4 +411,4 @@ SIZE (go_modules/modernc.org/token/@v/v1.1.0.mod) = 25
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.zip) = 6860
 SIZE (go_modules/rsc.io/pdf/@v/v0.1.1.mod) = 18
 SIZE (go_modules/rsc.io/pdf/@v/v0.1.1.zip) = 50919
-SIZE (trdsql-v1.2.1.zip) = 2549760
+SIZE (trdsql-v1.2.3.zip) = 2548885

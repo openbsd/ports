@@ -1,7 +1,7 @@
 COMMENT =		run SQL queries on CSV, LTSV, JSON, YAML and TBLN
 
 MODGO_MODNAME =		github.com/noborus/trdsql
-MODGO_VERSION =		v1.2.1
+MODGO_VERSION =		v1.2.3
 
 DISTNAME =		trdsql-${MODGO_VERSION}
 
