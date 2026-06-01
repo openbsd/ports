@@ -38,6 +38,7 @@ share/i2p/certificates/reseed/
 share/i2p/certificates/reseed/admin_at_stormycloud.org.crt
 share/i2p/certificates/reseed/arnavbhatt288_at_mail.i2p.crt
 share/i2p/certificates/reseed/creativecowpat_at_mail.i2p.crt
+share/i2p/certificates/reseed/diyarciftci_at_protonmail.com.crt
 share/i2p/certificates/reseed/echelon3_at_mail.i2p.crt
 share/i2p/certificates/reseed/hankhill19580_at_gmail.com.crt
 share/i2p/certificates/reseed/hottuna_at_mail.i2p.crt
@@ -47,8 +48,10 @@ share/i2p/certificates/reseed/lazygravy_at_mail.i2p.crt
 share/i2p/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
 share/i2p/certificates/reseed/rambler_at_mail.i2p.crt
 share/i2p/certificates/reseed/reseed_at_diva.exchange.crt
+share/i2p/certificates/reseed/sahil_at_mail.i2p.crt
 share/i2p/certificates/reseed/unixeno_at_cubicchaos.net.crt
 share/i2p/certificates/router/
+share/i2p/certificates/router/admin_at_stormycloud.org.crt
 share/i2p/certificates/router/echelon_at_mail.i2p.crt
 share/i2p/certificates/router/hankhill19580_at_gmail.com.crt
 share/i2p/certificates/router/zzz_at_mail.i2p.crt
@@ -307,8 +310,15 @@ share/i2p/eepsite/
 share/i2p/eepsite/cgi-bin/
 share/i2p/eepsite/contexts/
 share/i2p/eepsite/contexts/base-context.xml
-share/i2p/eepsite/contexts/cgi-context.xml
+share/i2p/eepsite/contexts/cgi-context.xml.disabled
 share/i2p/eepsite/docroot/
+share/i2p/eepsite/docroot/.resources/
+share/i2p/eepsite/docroot/.resources/000.html
+share/i2p/eepsite/docroot/.resources/403.html
+share/i2p/eepsite/docroot/.resources/404.html
+share/i2p/eepsite/docroot/.resources/4xx.html
+share/i2p/eepsite/docroot/.resources/5xx.html
+share/i2p/eepsite/docroot/.resources/README.txt
 share/i2p/eepsite/docroot/favicon.ico
 share/i2p/eepsite/docroot/help/
 share/i2p/eepsite/docroot/help/index.html

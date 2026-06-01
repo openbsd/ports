@@ -1,13 +1,12 @@
 COMMENT=	i2p routing protocol
 
-V =		2.10.0
+V =		2.12.0
 DISTNAME =	i2psource_${V}
 PKGNAME =	i2p-${V}
-REVISION =	0
 
 CATEGORIES=	net
 
-HOMEPAGE=	https://geti2p.net/en/
+HOMEPAGE=	https://i2p.net/en/
 
 MAINTAINER=	Pascal Stumpf <pascal@stumpf.co>
 
@@ -19,7 +18,7 @@ EXTRACT_SUFX =	.tar.bz2
 
 WANTLIB +=	gmp
 
-SITES =		https://files.i2p-projekt.de/${V}/
+SITES =		https://files.i2p.net/${V}/
 
 MODULES=	java
 MODJAVA_VER=	17
