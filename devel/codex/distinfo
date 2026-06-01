@@ -507,7 +507,11 @@ SHA256 (cargo/jiff-static-0.2.23.tar.gz) = KoyLNEEkIi79cUtzu0H4tRILJ6fMHHVZOm/3a
 SHA256 (cargo/jiff-tzdb-0.1.6.tar.gz) = yQDvhIJvEzilV2l9yPxgHfnKmvSsE3x/th1Mby39MHY=
 SHA256 (cargo/jiff-tzdb-platform-0.1.3.tar.gz) = h1paaawrqxqJFxHPXsy+wc4DQeqAVWDc2Qt6LpJRMug=
 SHA256 (cargo/jni-0.21.1.tar.gz) = GoeqK7fSrzQZfASEVSJHMkLhqhfBL0k11YVkkaf7jJc=
+SHA256 (cargo/jni-0.22.4.tar.gz) = Xv2aSCzzpCfwDWs18UMyrceQLOke+3eFgOGA/5D6NJg=
+SHA256 (cargo/jni-macros-0.22.4.tar.gz) = oAEJrMwXDwvbFB/tPjk8VltvXgcjZcO9WPWwYlkVYKM=
 SHA256 (cargo/jni-sys-0.3.0.tar.gz) = jq9LwC0Xy91/9MdDjK/N9/uaRhMxOtEbT4/v59P6ATA=
+SHA256 (cargo/jni-sys-0.4.1.tar.gz) = xjd6iMs5EL7psPqI1PQuHS2o55kVWY9l+wx+4UyHivI=
+SHA256 (cargo/jni-sys-macros-0.4.1.tar.gz) = OMC5QvRY/lDNrAhtL5RlEjBeVjHnIHKPKmGqvNR6YmQ=
 SHA256 (cargo/jobserver-0.1.34.tar.gz) = mvs95Dldaz5np4C23mS1HJeOzxHLmkYsZr59TKkDnTM=
 SHA256 (cargo/js-sys-0.3.85.tar.gz) = jJQuv46VSFyg1S2X2nxaLDh9Dn8LpMNek7/K7gRZVbM=
 SHA256 (cargo/jsonptr-0.7.1.tar.gz) = paPMZgul1yvOCzuylb8ghHzLtA/UI/PwW2EnNnLlYf4=
@@ -758,12 +762,13 @@ SHA256 (cargo/regex-lite-0.1.8.tar.gz) = jZQrmN9eZY9W8g1ZLH+GiDP+OBFeZcMwA9jNIks
 SHA256 (cargo/regex-syntax-0.6.29.tar.gz) = 8WLG3XsAiYHk1AIQrKILS9D5tgypJxBhsH94U3ci8uE=
 SHA256 (cargo/regex-syntax-0.8.8.tar.gz) = ei2YeFezGTYgQ+lfU1PAU1wfWO7FM2/fz2JkMK9971g=
 SHA256 (cargo/reqwest-0.12.28.tar.gz) = 7d08pVkgMYCjB/EtEUwmir9YP1mwPLkG/Qs/+GRsEUc=
+SHA256 (cargo/reqwest-0.13.4.tar.gz) = IZxYEd5lJeVBbH1dU7tlbTr9vGxa+BbggCvPpC29wcM=
 SHA256 (cargo/resb-0.1.2.tar.gz) = ItOSeR88aAKhkFpQnp0aYDnLvLXp4A5abTZh98h085A=
 SHA256 (cargo/resolv-conf-0.7.6.tar.gz) = HgYdG0jLjTgELeSuCnpkAQCdYUPcgNLi1vMfC91kcMc=
 SHA256 (cargo/rfc6979-0.4.0.tar.gz) = +N0qgI1FbEpU4wCiPp9aZ+EiwwJBGay/1z479mRJHLI=
 SHA256 (cargo/ring-0.17.14.tar.gz) = pGiebCKU2B6I3GJhx2i2O8T824Ur5tE1JJixFPYTg7c=
-SHA256 (cargo/rmcp-0.15.0.tar.gz) = G+9B68nr7SwbHZAgPp0XVgkeigC7wxB2dhUfOYaMoO4=
-SHA256 (cargo/rmcp-macros-0.15.0.tar.gz) = DoithLi2I3qTRTSmKzeaW+Y4iRVmPAzFmM65sykru/4=
+SHA256 (cargo/rmcp-1.7.0.tar.gz) = CBCp9xfZgo9HX+H2KfTDBchGS39JbDqFS1jSnmX0BY4=
+SHA256 (cargo/rmcp-macros-1.7.0.tar.gz) = au+sSMNkdW6X8EwEAboyMehgeILHwdktoEN9wWMHkE0=
 SHA256 (cargo/rtrb-0.3.3.tar.gz) = cgTtZCD2mINrdtTVwuxd7HWF/Vw6eI/RzehV0d5Zgjk=
 SHA256 (cargo/rust-embed-8.11.0.tar.gz) = BBE8uTVaN32D8G7x8KRbirjNfYsSiBYHF9Zt9ceYjSc=
 SHA256 (cargo/rust-embed-impl-8.11.0.tar.gz) = 2gkC5MfI6ZcVmrOE5tD8kcIhN19olDRq4Qf0fdDzzKo=
@@ -779,6 +784,8 @@ SHA256 (cargo/rustix-1.1.4.tar.gz) = tv5FZblRi4PvT5G7R84pYgyoKL0yy35AjwBi6ZMLoZA
 SHA256 (cargo/rustls-0.23.36.tar.gz) = xmXzPTjOplfZYU92aIHk1RDg7aQjmJHupWtMrc8BgBs=
 SHA256 (cargo/rustls-native-certs-0.8.3.tar.gz) = YSRg1fe+pUDEkLK2OV2ONKlT5StJGszWyGyBZMWTKmM=
 SHA256 (cargo/rustls-pki-types-1.14.0.tar.gz) = vgQPiwoiXkA3WCKlY/qVJDeLnWMRL1Phn//zTfXTP90=
+SHA256 (cargo/rustls-platform-verifier-0.7.0.tar.gz) = JtHiU2zk819IRqoTv/Fr0P9AFXzbFMwFbHsUukEjO6A=
+SHA256 (cargo/rustls-platform-verifier-android-0.1.1.tar.gz) = +HFl8JlfY6n77qYrZNELTZ2OeOxtfVH7ISX9p7s2eI8=
 SHA256 (cargo/rustls-webpki-0.103.13.tar.gz) = YcQpqGSfEQ3d72Xipa0kD3R+hfd1imvMx+V3e9M/dW4=
 SHA256 (cargo/rustversion-1.0.22.tar.gz) = s5ze8PqAD8RFJchMy1SgKZYaghX5YZdTY1qcDSU41G0=
 SHA256 (cargo/rustyline-14.0.0.tar.gz) = eAPok22jfv2bbUR4J39LK5u1zbN6ET6NYyIuWNpkfmM=
@@ -851,6 +858,7 @@ SHA256 (cargo/signal-hook-mio-0.2.5.tar.gz) = t1oZp6dAslvHlEve5hcjaPmIdjt0Tj1N/n
 SHA256 (cargo/signal-hook-registry-1.4.8.tar.gz) = xNtpy6ERCv/A6fe81Iu/h7P0/Hxh/JFVr9TEaes9bBs=
 SHA256 (cargo/signature-2.2.0.tar.gz) = d1STmVUt5FqJilgMG0HURb9zDfhnzETmwCM7vEuDKd4=
 SHA256 (cargo/simd-adler32-0.3.8.tar.gz) = 4yCmxa0x0nGtUj3POtE+J2etixy48Ef3Worq+NoTnaI=
+SHA256 (cargo/simd_cesu8-1.1.1.tar.gz) = lPkBV7uHzd9wJ5fF2t+gvn0mbN9J4i2i/Koy7/dbLDM=
 SHA256 (cargo/simdutf8-0.1.5.tar.gz) = 46n+NOPnpQMWBgNR83GHo/VGvOlUlhVnVLYBpfpxt24=
 SHA256 (cargo/similar-2.7.0.tar.gz) = u7tdllkUFkauZHtC/glNr2xhktFiCHC0SdlVf3SLLao=
 SHA256 (cargo/simple_asn1-0.6.4.tar.gz) = DVhZl7CsEL48XuY18bqwLVEnYNFLfEaIAayKAdmuXx0=
@@ -1029,6 +1037,7 @@ SHA256 (cargo/wasm-bindgen-shared-0.2.108.tar.gz) = HwG1gMmsdMjY8MDkr7BO7vKs8UVF
 SHA256 (cargo/wasm-encoder-0.244.0.tar.gz) = mQBl8v5jAD/jN7kyz7XjuA4LTQ9f9lDmmFsQSPYsgxk=
 SHA256 (cargo/wasm-metadata-0.244.0.tar.gz) = uw41PmovvcF2kyu6q0k3YusSVaeQD+D+oaL5bClsyQk=
 SHA256 (cargo/wasm-streams-0.4.2.tar.gz) = FQU9jYXH7M2+/vYPBnaXYKVjx/Cp1pAqE9NceACwrWU=
+SHA256 (cargo/wasm-streams-0.5.0.tar.gz) = nR7E9lF8nhGuYw4gCytl0ZMnkELijt1KLNojPkZnC7s=
 SHA256 (cargo/wasmparser-0.244.0.tar.gz) = R7gHxy4brGk4Kzpvs9vo6kwO2H/1YpuGha5rmmEQKP4=
 SHA256 (cargo/wayland-backend-0.3.12.tar.gz) = /uZBlMzZa/ZI9Cplp+WJVHCW36cC98re+ENHtmrRZPk=
 SHA256 (cargo/wayland-client-0.31.12.tar.gz) = uOb6pTf7tsGGy58dQfL4EaQSDRtX7GH1DaRRoMUSK+w=
@@ -1170,7 +1179,7 @@ SHA256 (cargo/zune-jpeg-0.5.12.tar.gz) = QQ6ezvY0xwnjgxws/bjZwyFk+uHGdJbVto//co7
 SHA256 (cargo/zvariant-4.2.0.tar.gz) = IIQpCrmhxHHDj8UklFg3c0+/EkSH4QXa7Cu1f9SMgf4=
 SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3MgDSACxEk=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
-SHA256 (codex-rust-v0.135.0.tar.gz) = ySI4fP41kUmaGiGdgxer1PetpVGBjreYZWgqX2HNrNY=
+SHA256 (codex-rust-v0.136.0.tar.gz) = DSYdhGZ7Ei/MLp06UOb3/y+OZhYPrVsudjr+Vfyt854=
 SHA256 (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3b30DbjfaF32fDJg3+Wc9/+ksZOpMk4Qs1m76JgdueA=
 SHA256 (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 0WdqwzqCxZA//t5oznPJ2SRmaqihArtkmo+5JqemHOE=
 SHA256 (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995.tar.gz) = tJrDQua12cAV9ThGkMKmHW8xwMPDSq8cwivklWEiKUw=
@@ -1686,7 +1695,11 @@ SIZE (cargo/jiff-static-0.2.23.tar.gz) = 83745
 SIZE (cargo/jiff-tzdb-0.1.6.tar.gz) = 62478
 SIZE (cargo/jiff-tzdb-platform-0.1.3.tar.gz) = 3179
 SIZE (cargo/jni-0.21.1.tar.gz) = 105028
+SIZE (cargo/jni-0.22.4.tar.gz) = 199347
+SIZE (cargo/jni-macros-0.22.4.tar.gz) = 63557
 SIZE (cargo/jni-sys-0.3.0.tar.gz) = 10232
+SIZE (cargo/jni-sys-0.4.1.tar.gz) = 13249
+SIZE (cargo/jni-sys-macros-0.4.1.tar.gz) = 3301
 SIZE (cargo/jobserver-0.1.34.tar.gz) = 29013
 SIZE (cargo/js-sys-0.3.85.tar.gz) = 56436
 SIZE (cargo/jsonptr-0.7.1.tar.gz) = 54126
@@ -1937,12 +1950,13 @@ SIZE (cargo/regex-lite-0.1.8.tar.gz) = 96884
 SIZE (cargo/regex-syntax-0.6.29.tar.gz) = 299752
 SIZE (cargo/regex-syntax-0.8.8.tar.gz) = 359141
 SIZE (cargo/reqwest-0.12.28.tar.gz) = 157031
+SIZE (cargo/reqwest-0.13.4.tar.gz) = 162754
 SIZE (cargo/resb-0.1.2.tar.gz) = 163418
 SIZE (cargo/resolv-conf-0.7.6.tar.gz) = 17955
 SIZE (cargo/rfc6979-0.4.0.tar.gz) = 9140
 SIZE (cargo/ring-0.17.14.tar.gz) = 1502610
-SIZE (cargo/rmcp-0.15.0.tar.gz) = 243420
-SIZE (cargo/rmcp-macros-0.15.0.tar.gz) = 17882
+SIZE (cargo/rmcp-1.7.0.tar.gz) = 327632
+SIZE (cargo/rmcp-macros-1.7.0.tar.gz) = 21411
 SIZE (cargo/rtrb-0.3.3.tar.gz) = 37835
 SIZE (cargo/rust-embed-8.11.0.tar.gz) = 901130
 SIZE (cargo/rust-embed-impl-8.11.0.tar.gz) = 9286
@@ -1958,6 +1972,8 @@ SIZE (cargo/rustix-1.1.4.tar.gz) = 425241
 SIZE (cargo/rustls-0.23.36.tar.gz) = 374313
 SIZE (cargo/rustls-native-certs-0.8.3.tar.gz) = 30380
 SIZE (cargo/rustls-pki-types-1.14.0.tar.gz) = 35403
+SIZE (cargo/rustls-platform-verifier-0.7.0.tar.gz) = 58733
+SIZE (cargo/rustls-platform-verifier-android-0.1.1.tar.gz) = 13919
 SIZE (cargo/rustls-webpki-0.103.13.tar.gz) = 87513
 SIZE (cargo/rustversion-1.0.22.tar.gz) = 21096
 SIZE (cargo/rustyline-14.0.0.tar.gz) = 116347
@@ -2030,6 +2046,7 @@ SIZE (cargo/signal-hook-mio-0.2.5.tar.gz) = 14373
 SIZE (cargo/signal-hook-registry-1.4.8.tar.gz) = 21668
 SIZE (cargo/signature-2.2.0.tar.gz) = 15531
 SIZE (cargo/simd-adler32-0.3.8.tar.gz) = 17294
+SIZE (cargo/simd_cesu8-1.1.1.tar.gz) = 319542
 SIZE (cargo/simdutf8-0.1.5.tar.gz) = 28488
 SIZE (cargo/similar-2.7.0.tar.gz) = 53928
 SIZE (cargo/simple_asn1-0.6.4.tar.gz) = 18842
@@ -2208,6 +2225,7 @@ SIZE (cargo/wasm-bindgen-shared-0.2.108.tar.gz) = 10121
 SIZE (cargo/wasm-encoder-0.244.0.tar.gz) = 85804
 SIZE (cargo/wasm-metadata-0.244.0.tar.gz) = 21500
 SIZE (cargo/wasm-streams-0.4.2.tar.gz) = 36773
+SIZE (cargo/wasm-streams-0.5.0.tar.gz) = 37790
 SIZE (cargo/wasmparser-0.244.0.tar.gz) = 265607
 SIZE (cargo/wayland-backend-0.3.12.tar.gz) = 77037
 SIZE (cargo/wayland-client-0.31.12.tar.gz) = 64851
@@ -2349,7 +2367,7 @@ SIZE (cargo/zune-jpeg-0.5.12.tar.gz) = 86116
 SIZE (cargo/zvariant-4.2.0.tar.gz) = 82180
 SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
-SIZE (codex-rust-v0.135.0.tar.gz) = 8203228
+SIZE (codex-rust-v0.136.0.tar.gz) = 8299291
 SIZE (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3951333
 SIZE (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 86782
 SIZE (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995.tar.gz) = 129254
