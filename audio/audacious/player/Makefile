@@ -3,9 +3,9 @@ COMMENT =		graphical audio player which supports lots of formats
 DISTNAME =		audacious-${VERSION}
 PKGNAME =		audacious-player-${VERSION}
 
-SHARED_LIBS +=		audcore		5.3
+SHARED_LIBS +=		audcore		6.0
 SHARED_LIBS +=		audtag		3.0
-SHARED_LIBS +=		audqt		1.0
+SHARED_LIBS +=		audqt		2.0
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -19,9 +19,5 @@ LIB_DEPENDS =		x11/qt5/qtsvg
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
-
-MAKE_ENV =		LIBaudcore_VERSION=${LIBaudcore_VERSION} \
-			LIBaudtag_VERSION=${LIBaudtag_VERSION} \
-			LIBaudqt_VERSION=${LIBaudqt_VERSION}
 
 .include <bsd.port.mk>

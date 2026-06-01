@@ -29,7 +29,6 @@ include/libaudcore/ringbuf.h
 include/libaudcore/runtime.h
 include/libaudcore/templates.h
 include/libaudcore/threads.h
-include/libaudcore/tinylock.h
 include/libaudcore/tuple.h
 include/libaudcore/vfs.h
 include/libaudcore/vfs_async.h
@@ -121,3 +120,5 @@ share/locale/zh_CN/LC_MESSAGES/audacious.mo
 share/locale/zh_TW/LC_MESSAGES/audacious.mo
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/
+share/metainfo/audacious.metainfo.xml

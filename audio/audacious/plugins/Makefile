@@ -1,21 +1,21 @@
 COMMENT =		input and output plugins for Audacious
 
 DISTNAME =		audacious-plugins-${VERSION}
-REVISION =		0
 
 # BSD / GPL
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC GL Qt5Core Qt5Gui Qt5OpenGL
-WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras X11 adplug audcore audqt
-WANTLIB += audtag avcodec avformat avutil binio cddb cdio cdio_cdda
-WANTLIB += cue curl faad gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += iconv intl m mms modplug mp3lame mpg123 neon notify
-WANTLIB += ogg opusfile samplerate sndfile sndio soxr vorbis vorbisenc
-WANTLIB += vorbisfile wavpack xml2 z
+WANTLIB += ${COMPILER_LIBCXX} FLAC Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras
+WANTLIB += X11 adplug audcore audqt audtag avcodec avformat avutil
+WANTLIB += binio cddb cdio cdio_cdda cue curl faad gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl m mms modplug mp3lame
+WANTLIB += mpg123 neon notify ogg opusfile samplerate sndfile
+WANTLIB += sndio soxr vorbis vorbisenc vorbisfile wavpack xml2
+WANTLIB += z
 
 # needed for the gio plugin
 RUN_DEPENDS =		x11/gnome/gvfs
+
 LIB_DEPENDS =		audio/adplug \
 			audio/audacious/player>=${VERSION} \
 			audio/faad>=2.7 \
@@ -40,18 +40,16 @@ LIB_DEPENDS =		audio/adplug \
 			textproc/libxml \
 			x11/qt5/qtx11extras
 
-CONFIGURE_ARGS =	--disable-alsa \
-			--disable-amidiplug \
-			--disable-bs2b \
-			--disable-jack \
-			--disable-lirc \
-			--disable-openmpt \
-			--disable-pipewire \
-			--disable-pulse \
-			--disable-qtaudio \
-			--disable-sdlout \
-			--disable-sid
-CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ARGS =	-Dalsa=false \
+			-Damidiplug=false \
+			-Dbs2b=false \
+			-Djack=false \
+			-Dlirc=false \
+			-Dopenmpt=false \
+			-Dpipewire=false \
+			-Dpulse=false \
+			-Dqtaudio=false \
+			-Dsdlout=false \
+			-Dsid=false
 
 .include <bsd.port.mk>

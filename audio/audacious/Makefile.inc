@@ -1,5 +1,5 @@
 # Do not forget to sync meta/audacious
-VERSION =	4.5.1
+VERSION =	4.6
 
 CATEGORIES =	audio multimedia
 
@@ -12,16 +12,15 @@ EXTRACT_SUFX =	.tar.bz2
 
 COMPILER =	base-clang ports-gcc
 
-FIX_EXTRACT_PERMISSIONS =	Yes
-
 BUILD_DEPENDS +=	devel/gettext,-tools
 
-MODULES +=		x11/qt5
-CONFIGURE_ARGS +=	--disable-gtk \
-			--enable-qt5
+MODULES +=		devel/meson \
+			x11/qt5
 
-USE_GMAKE =		Yes
+CONFIGURE_ARGS +=	-Dgtk=false \
+			-Dqt5=true
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV += 	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST =		Yes

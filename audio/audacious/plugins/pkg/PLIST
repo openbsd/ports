@@ -28,6 +28,7 @@ lib/audacious/General/
 @so lib/audacious/General/albumart-qt.so
 @so lib/audacious/General/cd-menu-items.so
 @so lib/audacious/General/delete-files.so
+@so lib/audacious/General/filebrowser-qt.so
 @so lib/audacious/General/lyrics-qt.so
 @so lib/audacious/General/mpris2.so
 @so lib/audacious/General/notify.so
@@ -122,6 +123,7 @@ share/audacious/Skins/Default/pledit.png
 share/audacious/Skins/Default/pledit.txt
 share/audacious/Skins/Default/posbar.png
 share/audacious/Skins/Default/shufrep.png
+share/audacious/Skins/Default/skin-classic.hints
 share/audacious/Skins/Default/skin.hints
 share/audacious/Skins/Default/text.png
 share/audacious/Skins/Default/titlebar.png
