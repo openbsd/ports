@@ -255,6 +255,7 @@
      SUBDIR += piglit
      SUBDIR += pinta
      SUBDIR += pixelorama
+     SUBDIR += plutosvg
      SUBDIR += png
      SUBDIR += png2ico
      SUBDIR += pngcheck
