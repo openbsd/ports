@@ -1,0 +1,4 @@
+@bin bin/nchat
+libexec/nchat/
+libexec/nchat/compose
+@man man/man1/nchat.1

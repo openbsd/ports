@@ -1,0 +1,3 @@
+nchat is a multi-protocol terminal-based messaging client for Telegram,
+WhatsApp and Signal, altough only the former is currently supported on
+OpenBSD.
