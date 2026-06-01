@@ -48,7 +48,6 @@ LIB_DEPENDS-lldb += devel/llvm/${LLVM_MAJOR},-main
 SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/
 EXTRACT_SUFX =	.tar.xz
 
-.if ${LLVM_MAJOR} >= 19
 LIBCPP_PACKAGE=		-libcxx
 
 # mimic the way base libc++ is built except for the namespace which
@@ -74,7 +73,6 @@ CONFIGURE_ARGS +=	\
 	-DLIBUNWIND_INSTALL_LIBRARY=OFF \
 	-DLIBUNWIND_INSTALL_SHARED_LIBRARY=OFF \
 	-DLIBUNWIND_INSTALL_STATIC_LIBRARY=OFF
-.endif
 
 # BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk
 .if ${BUILD_LLDB:L} == yes
@@ -92,7 +90,7 @@ DESCR-${i} =	${.CURDIR}/../files/DESCR-${i}
 WRKDIST =	${WRKDIR}/llvm-project-${LLVM_VERSION}.src
 WRKSRC =	${WRKDIR}/llvm-project-${LLVM_VERSION}.src/llvm
 
-# C++11
+# C++17
 COMPILER =	base-clang ports-gcc
 
 MODULES +=	devel/cmake
@@ -152,11 +150,9 @@ CXXFLAGS-mips64 =	-fno-ret-protector -fomit-frame-pointer
 CXXFLAGS-mips64el =	-fno-ret-protector -fomit-frame-pointer
 CXXFLAGS-powerpc =	-fno-ret-protector
 
-# Avoid GOT overflow.
 .if ${LLVM_MAJOR} > 17
 CXXFLAGS-mips64 +=	-mxgot
 CXXFLAGS-mips64el +=	-mxgot
-.endif
 
 CXXFLAGS +=		${CXXFLAGS-${MACHINE_ARCH}}
 
@@ -179,11 +175,7 @@ GCC_VER =		15.2.0
 # do not include OSREV
 GCC_CONFIG =		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd
 
-.if ${LLVM_MAJOR} > 13
 CLANG_INCLUDE_PATH =	${LLVM_BASE}/lib/clang/${LLVM_MAJOR}/include
-.else
-CLANG_INCLUDE_PATH =	${LLVM_BASE}/lib/clang/${LLVM_VERSION}/include
-.endif
 SUBST_VARS +=		CLANG_INCLUDE_PATH GCC_VER GCC_CONFIG
 
 # hack to disable the use of -Bsymbolic-functions
