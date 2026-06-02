@@ -1,6 +1,6 @@
 COMMENT =		Qt GUI Interface for FluidSynth
 
-DISTNAME =		qsynth-1.0.5
+DISTNAME =		qsynth-1.0.6
 
 CATEGORIES =		audio
 
