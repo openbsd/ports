@@ -231,8 +231,8 @@ SHA256 (gnome/../cargo/quick-error-1.2.3.tar.gz) = odAZQdgvoqtQvh555nFCid183njrp
 SHA256 (gnome/../cargo/quick-error-2.0.1.tar.gz) = qZNVXzHlpgn2F8EttiUN7crBsKhQdpEsQ25vybLI5qM=
 SHA256 (gnome/../cargo/quote-1.0.44.tar.gz) = IbLrz3J7d2DEYfCR+fD1Obd7jofy/YgTHn8bQzs87OQ=
 SHA256 (gnome/../cargo/r-efi-5.3.0.tar.gz) = ac2zTBWM6yiN8R4YtL053plPZlfYOEe9/9vX80Z1Sw8=
-SHA256 (gnome/../cargo/rand-0.8.5.tar.gz) = NK+NGg4lkkvFt8Q8B5yUIznY8Ki1fDkEm+9YG0YydAQ=
-SHA256 (gnome/../cargo/rand-0.9.2.tar.gz) = bbJ3DwYRfUkGEMdIhUfVQ2F7Ib+gd5bXoS9vG9U4UNE=
+SHA256 (gnome/../cargo/rand-0.8.6.tar.gz) = XKDs+pMcKQBwR9G8WOYjqxLlWQ6MfMUyANUgK2kmbYo=
+SHA256 (gnome/../cargo/rand-0.9.4.tar.gz) = RMWvBrsbfTIW2RkyrtUmUWS/OE3InNa6Bc9Zo19fduo=
 SHA256 (gnome/../cargo/rand_chacha-0.9.0.tar.gz) = 0wIrXx32Dybh/93Wxm6KoV3jgq5js6DBv8Dk0+PzJcs=
 SHA256 (gnome/../cargo/rand_core-0.6.4.tar.gz) = 7AvkeV4vaigGm+wLX/PirJuvyZ5qmn3DVHmWxcgWkiw=
 SHA256 (gnome/../cargo/rand_core-0.9.5.tar.gz) = dq/IJt4UI45ujDdN3MH6GeN0/Y3ZhrDSrw0CN3Jh2Dw=
@@ -351,7 +351,7 @@ SHA256 (gnome/../cargo/zmij-1.0.17.tar.gz) = Aqrg+D9pqvyUd26Hk2Ppdx1+y//ix/u2wUx
 SHA256 (gnome/../cargo/zune-core-0.5.1.tar.gz) = y4oIB/fAFFfQN5uogLpjImYESN3ryJDOKbtk2nH7QPk=
 SHA256 (gnome/../cargo/zune-jpeg-0.5.13.tar.gz) = 7F9Bx2OXt9pFHv0ZkVaE9yfX4dUWOEymvQ7EPslN4jw=
 SHA256 (gnome/librsvg-2.40.21.tar.xz) = 92KJBfHK2oTofisUiD7VfYCU3KMoHVvLJOzkJ56akro=
-SHA256 (gnome/librsvg-2.62.2.tar.xz) = wME2fjgeGuSEKnjxtXxlb/GbJWN+OmUny0SuWhzGjWU=
+SHA256 (gnome/librsvg-2.62.3.tar.xz) = frRJsnIqdoAhNW9m3+4yAsIptU7U5qcM5AwJDpf/FvI=
 SIZE (gnome/../cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (gnome/../cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (gnome/../cargo/ahash-0.8.12.tar.gz) = 43413
@@ -585,8 +585,8 @@ SIZE (gnome/../cargo/quick-error-1.2.3.tar.gz) = 15066
 SIZE (gnome/../cargo/quick-error-2.0.1.tar.gz) = 14265
 SIZE (gnome/../cargo/quote-1.0.44.tar.gz) = 31629
 SIZE (gnome/../cargo/r-efi-5.3.0.tar.gz) = 64532
-SIZE (gnome/../cargo/rand-0.8.5.tar.gz) = 87113
-SIZE (gnome/../cargo/rand-0.9.2.tar.gz) = 99930
+SIZE (gnome/../cargo/rand-0.8.6.tar.gz) = 83339
+SIZE (gnome/../cargo/rand-0.9.4.tar.gz) = 99786
 SIZE (gnome/../cargo/rand_chacha-0.9.0.tar.gz) = 18258
 SIZE (gnome/../cargo/rand_core-0.6.4.tar.gz) = 22666
 SIZE (gnome/../cargo/rand_core-0.9.5.tar.gz) = 24129
@@ -705,4 +705,4 @@ SIZE (gnome/../cargo/zmij-1.0.17.tar.gz) = 24564
 SIZE (gnome/../cargo/zune-core-0.5.1.tar.gz) = 27883
 SIZE (gnome/../cargo/zune-jpeg-0.5.13.tar.gz) = 88872
 SIZE (gnome/librsvg-2.40.21.tar.xz) = 1655860
-SIZE (gnome/librsvg-2.62.2.tar.xz) = 6761980
+SIZE (gnome/librsvg-2.62.3.tar.xz) = 6760876
