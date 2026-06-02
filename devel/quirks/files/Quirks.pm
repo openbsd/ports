@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1811 2026/05/30 15:30:21 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.1812 2026/06/02 22:07:04 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1075,6 +1075,14 @@ setup_obsolete_reason(
 	0 => 'xpilot',
 	0 => 'xasteroids',
 	0 => 'axe',
+	3 => 'unit',
+	3 => 'unit-perl',
+	3 => 'unit-php81',
+	3 => 'unit-php82',
+	3 => 'unit-php83',
+	3 => 'unit-php84',
+	3 => 'unit-python',
+	3 => 'unit-ruby',
 );
 # beware, if ports with an RDEP on Python 3 are removed, they need to be listed
 # as @conflict/pkgpath in lang/python/3 and not here, otherwise an update from a
