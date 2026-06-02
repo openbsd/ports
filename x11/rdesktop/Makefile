@@ -12,6 +12,10 @@ HOMEPAGE=		https://www.rdesktop.org/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
+# Uses 'alignas' (C99)
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += X11 Xcursor Xrandr ao c gmp gnutls hogweed iconv nettle
 WANTLIB += pcsclite pthread samplerate tasn1
 
