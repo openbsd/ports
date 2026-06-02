@@ -1,0 +1,190 @@
+From upstream
+Index: Framework/Pantomime/CWPOP3CacheManager.m
+--- Framework/Pantomime/CWPOP3CacheManager.m.orig
++++ Framework/Pantomime/CWPOP3CacheManager.m
+@@ -2,7 +2,7 @@
+ **  CWPOP3CacheManager.m
+ **
+ **  Copyright (c) 2001-2007 Ludovic Marcotte
+-**  Copyright (C) 2014-2020 Riccardo Mottola
++**  Copyright (C) 2014-2024 Riccardo Mottola
+ **
+ **  Author: Ludovic Marcotte <ludovic@Sophos.ca>
+ **          Riccardo Mottola <rm@gnu.org>
+@@ -56,86 +56,88 @@ static unsigned short version = 1;
+   self = [super initWithPath: thePath];
+   if (self)
+     {
++      _table = NSCreateMapTable(NSObjectMapKeyCallBacks, NSObjectMapValueCallBacks, 128);
++      _count = 0;
+   
+-  _table = NSCreateMapTable(NSObjectMapKeyCallBacks, NSObjectMapValueCallBacks, 128);
+-  _count = 0;
++      if ((_fd = open([thePath UTF8String], O_RDWR|O_CREAT, S_IRUSR|S_IWUSR)) < 0) 
++	{
++	  NSLog(@"CANNOT CREATE OR OPEN THE CACHE!)");
++	  abort();
++	}
+   
+-  if ((_fd = open([thePath UTF8String], O_RDWR|O_CREAT, S_IRUSR|S_IWUSR)) < 0) 
+-    {
+-      NSLog(@"CANNOT CREATE OR OPEN THE CACHE!)");
+-      abort();
+-    }
+-  
+-  if (lseek(_fd, 0L, SEEK_SET) < 0)
+-    {
+-      NSLog(@"UNABLE TO LSEEK INITIAL");
+-      abort();
+-    }
+-  
+-  attributes = [[NSFileManager defaultManager] fileAttributesAtPath: thePath  traverseLink: NO];
++      if (lseek(_fd, 0L, SEEK_SET) < 0)
++	{
++	  NSLog(@"UNABLE TO LSEEK INITIAL");
++	  abort();
++	}
+ 
+-  // If the cache exists, lets parse it.
+-  if ([[attributes objectForKey: NSFileSize] intValue])
+-    {
+-      NSString *aUID;
+-      NSDate *aDate;
++      attributes = [[NSFileManager defaultManager] fileAttributesAtPath: thePath  traverseLink: NO];
+ 
+-      unsigned short len;
+-      char *s;
+-      NSUInteger i;
++      // If the cache exists, lets parse it.
++      if ([[attributes objectForKey: NSFileSize] intValue])
++	{
++	  NSString *aUID;
++	  NSDate *aDate;
+ 
+-      v = read_uint16(_fd);
++	  unsigned short len;
++	  char *s;
++	  NSUInteger i;
++	  uint32_t tmpUInt32;
+ 
+-      // Version mismatch. We ignore the cache for now.
+-      if (v != version)
+-	{
+-	  if (ftruncate(_fd, 0) == -1)
+-            {
++	  v = read_uint16(_fd);
+ 
+-              if (errno == EACCES || errno == EROFS)
+-                NSLog(@"UNABLE TO TRUNCATE CACHE FILE WITH OLD VERSION, NOT WRITABLE");
+-              else
+-                NSLog(@"UNABLE TO TRUNCATE CACHE FILE WITH OLD VERSION");
+-              close(_fd);
+-              abort();
+-            }
+-	  [self synchronize];
+-	  return self;
+-	}      
++	  // Version mismatch. We ignore the cache for now.
++	  if (v != version)
++	    {
++	      if (ftruncate(_fd, 0) == -1)
++		{
+ 
+-      if(read_uint32(_fd, &_count) <= 0)
+-        {
+-          NSLog(@"CWPOP3CacheManager initWithPath: error reading count");
+-        }
++		  if (errno == EACCES || errno == EROFS)
++		    NSLog(@"UNABLE TO TRUNCATE CACHE FILE WITH OLD VERSION, NOT WRITABLE");
++		  else
++		    NSLog(@"UNABLE TO TRUNCATE CACHE FILE WITH OLD VERSION");
++		  close(_fd);
++		  abort();
++		}
++	      [self synchronize];
++	      return self;
++	    }      
+ 
+-      //NSLog(@"Init with count = %d  version = %d", _count, v);
++	  if(read_uint32(_fd, &tmpUInt32) > 0)
++	    {
++	      _count = tmpUInt32;
++	    }
++	  else
++	    {
++	      NSLog(@"CWPOP3CacheManager initWithPath: error reading count");
++	    }
+   
+-      s = (char *)malloc(4096);
++	  s = (char *)malloc(4096);
+     
+-      for (i = 0; i < _count; i++)
+-	{
+-          unsigned int dateInt;
++	  for (i = 0; i < _count; i++)
++	    {
++	      unsigned int dateInt;
+ 
+-          read_uint32(_fd, &dateInt);
+-	  aDate = [NSCalendarDate dateWithTimeIntervalSince1970: dateInt];
+-	  if (read_string(_fd, s, &len) < 0)
+-            {
+-              NSLog(@"CWPOP3CacheManager initWithPath: error reading data (%lu/%lu)", (unsigned long)i, (unsigned long)_count);
+-              break;
+-            }
+-          // FIXME, this could use read_data
+-	  aUID = AUTORELEASE([[NSString alloc] initWithData: [NSData dataWithBytes: s  length: len]
+-                                                   encoding: NSASCIIStringEncoding]);
+-	  NSMapInsert(_table, aUID, aDate);
+-	}
++	      read_uint32(_fd, &dateInt);
++	      aDate = [NSCalendarDate dateWithTimeIntervalSince1970: dateInt];
++	      if (read_string(_fd, s, &len) < 0)
++		{
++		  NSLog(@"CWPOP3CacheManager initWithPath: error reading data (%lu/%lu)", (unsigned long)i, (unsigned long)_count);
++		  break;
++		}
++	      // FIXME, this could use read_data
++	      aUID = AUTORELEASE([[NSString alloc] initWithData: [NSData dataWithBytes: s  length: len]
++						       encoding: NSASCIIStringEncoding]);
++	      NSMapInsert(_table, aUID, aDate);
++	    }
+       
+-      free(s);
++	  free(s);
++	}
++      else
++	{
++	  [self synchronize];
++	}
+     }
+-  else
+-    {
+-      [self synchronize];
+-    }
+-    }
+   return self;
+ }
+ 
+@@ -144,10 +146,9 @@ static unsigned short version = 1;
+ //
+ - (void) dealloc
+ {
+-  //NSLog(@"CWPOP3CacheManager: -dealloc, _fd was = %d", _fd);
+-  
+   NSFreeMapTable(_table);
+-  if (_fd >= 0) close(_fd);
++  if (_fd >= 0)
++    close(_fd);
+   [super dealloc];
+ }
+ 
+@@ -173,7 +174,7 @@ static unsigned short version = 1;
+   
+   // We write our cache version, count and UID validity.
+   write_uint16(_fd, version);
+-  write_uint32(_fd, _count);
++  write_uint32(_fd, (uint32_t)_count);
+  
+   return (fsync(_fd) == 0);
+ }
