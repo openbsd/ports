@@ -1,12 +1,12 @@
 Index: scripts/pkg/private/configure_make.m
 --- scripts/pkg/private/configure_make.m.orig
 +++ scripts/pkg/private/configure_make.m
-@@ -110,7 +110,7 @@ function configure_make (desc, packdir, verbose)
-     endif
- 
+@@ -112,7 +112,7 @@ function configure_make (desc, packdir, verbose)
      if (exist (fullfile (src, "Makefile"), "file"))
--      [status, output] = shell (sprintf ("%s make --jobs %i --directory '%s'",
-+      [status, output] = shell (sprintf ("%s gmake --jobs %i --directory '%s'",
-                                          scenv, jobs, src), verbose);
-       if (status != 0)
-         disp (output);
+       make_cmd = getenv ("MAKE");
+       if (isempty (make_cmd))
+-        make_cmd = "make";
++        make_cmd = "gmake";
+       endif
+       [status, output] = shell (sprintf ("%s %s -j %i -C '%s'",
+                                          scenv, make_cmd, jobs, src), verbose);
