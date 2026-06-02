@@ -5,7 +5,7 @@ In file included from ../mutter-49.1.1/src/core/delete.c:33:
 Index: src/core/window-private.h
 --- src/core/window-private.h.orig
 +++ src/core/window-private.h
-@@ -527,7 +527,7 @@ struct _MetaWindow
+@@ -528,7 +528,7 @@ struct _MetaWindow
    guint placed : 1;
  
    /* Have this window been positioned? */
