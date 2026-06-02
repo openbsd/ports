@@ -1,2 +1,0 @@
-@pkgpath www/unit,-ruby
-@so lib/unit/modules/ruby${MODRUBY_REV}.unit.so

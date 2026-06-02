@@ -1,2 +1,0 @@
-@pkgpath www/unit,-python
-@so lib/unit/modules/python${MODPY_VERSION}.unit.so

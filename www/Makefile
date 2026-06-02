@@ -626,7 +626,6 @@
      SUBDIR += uget
      SUBDIR += ulfius
      SUBDIR += ungoogled-chromium
-     SUBDIR += unit
      SUBDIR += uriparser
      SUBDIR += urlwatch
      SUBDIR += uwebsockets
