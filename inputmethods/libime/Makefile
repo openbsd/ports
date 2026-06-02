@@ -1,7 +1,7 @@
 COMMENT =	library to support generic input method implementation
 
 DISTNAME =	libime-1.1.9
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=	IMECore		0.2 # 0.0
 SHARED_LIBS +=	IMEPinyin	0.2 # 0.0
