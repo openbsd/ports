@@ -1,14 +1,13 @@
 COMMENT=		web scanner
 
-GH_TAGNAME=		v0.5.5
+GH_TAGNAME=		v0.6.4
 GH_PROJECT=		WhatWeb
 GH_ACCOUNT=		urbanadventurer
-
-REVISION=		2
 
 CATEGORIES=		net www
 
 HOMEPAGE=		http://www.morningstarsecurity.com/research/whatweb
+MAINTAINER =		Sebastian Reitenbach <sebastia@l00-bugdead-prods.de>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

@@ -25,8 +25,10 @@ share/whatweb/lib/logging/object.rb
 share/whatweb/lib/logging/sql.rb
 share/whatweb/lib/logging/verbose.rb
 share/whatweb/lib/logging/xml.rb
+share/whatweb/lib/messages.rb
 share/whatweb/lib/plugin_support.rb
 share/whatweb/lib/plugins.rb
+share/whatweb/lib/simple_cookie_jar.rb
 share/whatweb/lib/target.rb
 share/whatweb/lib/version_class.rb
 share/whatweb/lib/whatweb/
@@ -144,6 +146,7 @@ share/whatweb/plugins/akamai-global-host.rb
 share/whatweb/plugins/akiva-webboard.rb
 share/whatweb/plugins/aladdin-hasp-license-manager.rb
 share/whatweb/plugins/alcatel-lucent-omniswitch.rb
+share/whatweb/plugins/alibaba-aliyun.rb
 share/whatweb/plugins/all-in-one-seo-pack.rb
 share/whatweb/plugins/allegro-rompager.rb
 share/whatweb/plugins/allen-bradley-plc.rb
@@ -242,6 +245,7 @@ share/whatweb/plugins/backbee.rb
 share/whatweb/plugins/backuppc.rb
 share/whatweb/plugins/bad-behaviour-anti-spam-plugin.rb
 share/whatweb/plugins/badblue.rb
+share/whatweb/plugins/baidu-platform.rb
 share/whatweb/plugins/barracuda-backup-server.rb
 share/whatweb/plugins/barracuda-load-balancer.rb
 share/whatweb/plugins/barracuda-spam-firewall.rb
@@ -363,6 +367,7 @@ share/whatweb/plugins/cisco-ace.rb
 share/whatweb/plugins/cisco-adaptive-security-appliance.rb
 share/whatweb/plugins/cisco-ios.rb
 share/whatweb/plugins/cisco-ip-phone.rb
+share/whatweb/plugins/cisco-meraki.rb
 share/whatweb/plugins/cisco-vpn-3000-concentrator.rb
 share/whatweb/plugins/citrix-access-gateway.rb
 share/whatweb/plugins/citrix-confproxy.rb
@@ -667,12 +672,14 @@ share/whatweb/plugins/gitweb.rb
 share/whatweb/plugins/glfusion.rb
 share/whatweb/plugins/glossword.rb
 share/whatweb/plugins/goahead-web.rb
+share/whatweb/plugins/goanywhere-web-client.rb
 share/whatweb/plugins/google-analytics.rb
 share/whatweb/plugins/google-apis.rb
 share/whatweb/plugins/google-hack-honeypot.rb
 share/whatweb/plugins/google-maps.rb
 share/whatweb/plugins/google-results.rb
 share/whatweb/plugins/google-search-appliance.rb
+share/whatweb/plugins/google-tag-manager.rb
 share/whatweb/plugins/google-talk-chatback.rb
 share/whatweb/plugins/gordano-messaging-suite.rb
 share/whatweb/plugins/goserve.rb
@@ -956,6 +963,7 @@ share/whatweb/plugins/meitrack.rb
 share/whatweb/plugins/memht-portal.rb
 share/whatweb/plugins/mercurial.rb
 share/whatweb/plugins/meta-author.rb
+share/whatweb/plugins/meta-facebook-infrastructure.rb
 share/whatweb/plugins/meta-generator.rb
 share/whatweb/plugins/meta-geo.rb
 share/whatweb/plugins/meta-powered-by.rb
@@ -1001,6 +1009,7 @@ share/whatweb/plugins/mobileiron-mdm.rb
 share/whatweb/plugins/mobilityguard.rb
 share/whatweb/plugins/mobotix-network-camera.rb
 share/whatweb/plugins/mochiweb.rb
+share/whatweb/plugins/modern-security-headers.rb
 share/whatweb/plugins/modernizr.rb
 share/whatweb/plugins/modlogan.rb
 share/whatweb/plugins/modx-cms.rb
@@ -1054,6 +1063,7 @@ share/whatweb/plugins/netbotz-network-monitoring-device.rb
 share/whatweb/plugins/netbox.rb
 share/whatweb/plugins/netcache-appliance.rb
 share/whatweb/plugins/netcomm-wireless-hotspot-gateway.rb
+share/whatweb/plugins/netflix-platform.rb
 share/whatweb/plugins/netgear-firewall.rb
 share/whatweb/plugins/netgear-print-server.rb
 share/whatweb/plugins/netgear-router.rb
@@ -1153,6 +1163,7 @@ share/whatweb/plugins/oracle-access-manager.rb
 share/whatweb/plugins/oracle-adf-faces.rb
 share/whatweb/plugins/oracle-application-server.rb
 share/whatweb/plugins/oracle-database.rb
+share/whatweb/plugins/oracle-ebs.rb
 share/whatweb/plugins/oracle-fusion-middleware.rb
 share/whatweb/plugins/oracle-http-server.rb
 share/whatweb/plugins/oracle-internet-application-server.rb
@@ -1292,6 +1303,7 @@ share/whatweb/plugins/plandora.rb
 share/whatweb/plugins/play-framework.rb
 share/whatweb/plugins/playsms.rb
 share/whatweb/plugins/plesk.rb
+share/whatweb/plugins/plex-media-server.rb
 share/whatweb/plugins/pligg-cms.rb
 share/whatweb/plugins/plogger.rb
 share/whatweb/plugins/plone.rb
@@ -1650,6 +1662,7 @@ share/whatweb/plugins/toshiba-printer.rb
 share/whatweb/plugins/toshiba-projector.rb
 share/whatweb/plugins/totvs-smartclient.rb
 share/whatweb/plugins/tp-link-router.rb
+share/whatweb/plugins/tp-link.rb
 share/whatweb/plugins/trac.rb
 share/whatweb/plugins/tracewatch.rb
 share/whatweb/plugins/tradingeye.rb
@@ -1676,6 +1689,7 @@ share/whatweb/plugins/typekit.rb
 share/whatweb/plugins/typepad.rb
 share/whatweb/plugins/typo3.rb
 share/whatweb/plugins/typolight.rb
+share/whatweb/plugins/ubiquiti-uisp.rb
 share/whatweb/plugins/ucenter-home.rb
 share/whatweb/plugins/uclinux-httpd.rb
 share/whatweb/plugins/uebimiau-webmail.rb
@@ -1725,6 +1739,7 @@ share/whatweb/plugins/visionweb.rb
 share/whatweb/plugins/visualroute.rb
 share/whatweb/plugins/visualware-myconnection-server.rb
 share/whatweb/plugins/vivotek-network-camera.rb
+share/whatweb/plugins/vkontakte-platform.rb
 share/whatweb/plugins/vlc-web-interface.rb
 share/whatweb/plugins/vmware-esxi-server.rb
 share/whatweb/plugins/vmware-horizon.rb
@@ -1794,6 +1809,7 @@ share/whatweb/plugins/websvn.rb
 share/whatweb/plugins/webtrends.rb
 share/whatweb/plugins/webyep.rb
 share/whatweb/plugins/weebly.rb
+share/whatweb/plugins/weibo-platform.rb
 share/whatweb/plugins/werkzeug.rb
 share/whatweb/plugins/whatsup.rb
 share/whatweb/plugins/whatweb-plugin.rb
