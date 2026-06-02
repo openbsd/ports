@@ -20,7 +20,28 @@ Index: configure
  
  enable_weak_pic() {
      disabled pic && return
-@@ -7002,7 +7001,7 @@ check_headers asm/types.h
+@@ -6745,11 +6744,19 @@ elif enabled x86; then
+     # As 'i' is stored on the stack, this program will crash
+     # if the base pointer is used to access it because the
+     # base pointer is cleared in the inline assembly code.
+-    check_exec_crash <<EOF && enable ebp_available
++    # Since https://github.com/llvm/llvm-project/commit/0d471b3f64d3116bd57c79d872f7384fff80daa5,
++    # Clang can save/restore EBP around clobber-only asm, so the old
++    # crash probe can be a false positive.
++    check_exec_crash <<EOF && test_cc <<EOF_EBP_REGS && enable ebp_available
+ volatile int i=0;
+ __asm__ volatile ("xorl %%ebp, %%ebp" ::: "%ebp");
+ return i;
+ EOF
++void foo(void *a, void *b, void *c, void *d, int e, void *f)
++{
++    __asm__ volatile ("" :: "r"(a), "r"(b), "r"(c), "r"(d), "g"(e), "r"(f) : "%eax", "%edx");
++}
++EOF_EBP_REGS
+ 
+     # check whether EBX is available on x86
+     check_inline_asm ebx_available '""::"b"(0)' &&
+@@ -7002,7 +7009,7 @@ check_headers asm/types.h
  #
  # some configurations also require linking to libatomic, so try
  # both with -latomic and without
@@ -29,7 +50,7 @@ Index: configure
      check_builtin stdatomic stdatomic.h                                \
          "atomic_int foo, bar = -1; atomic_store(&foo, 0); foo += bar"  \
          $LATOMIC && eval stdatomic_extralibs="\$LATOMIC" && break
-@@ -7489,13 +7488,13 @@ enabled omx_rpi           && { test_code cc OMX_Core.h
+@@ -7489,13 +7496,13 @@ enabled omx_rpi           && { test_code cc OMX_Core.h
  enabled omx               && require_headers OMX_Core.h && \
      warn "The OpenMAX encoders are deprecated and will be removed in future versions"
  
