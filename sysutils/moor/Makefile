@@ -1,7 +1,7 @@
 COMMENT =		pager with incremental search and transparent decompression
 
 MODGO_MODNAME =		github.com/walles/moor/v2
-MODGO_VERSION =		v2.12.3
+MODGO_VERSION =		v2.13.4
 
 DISTNAME =		moor-${MODGO_VERSION}
 WRKDIST =		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
@@ -9,6 +9,8 @@ WRKDIST =		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
 CATEGORIES =		sysutils textproc
 
 MAINTAINER =		Lydia Sobot <chilledfrogs@disroot.org>
+
+HOMEPAGE =		https://github.com/walles/moor
 
 # BSD2
 PERMIT_PACKAGE =	Yes
@@ -18,7 +20,7 @@ SUBST_VARS +=		WRKSRC
 
 MODGO_LDFLAGS +=	-X main.versionString=${MODGO_VERSION}
 
-TEST_TARGET =	${MODGO_MODNAME}/cmd/moor
+TEST_TARGET =		${MODGO_MODNAME}/cmd/moor
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/internal/reader/reader_test.go
