@@ -11,16 +11,16 @@ Index: lld/ELF/Symbols.h
    // Symbol visibility. This is the computed minimum visibility of all
    // observed non-DSO symbols.
    uint8_t visibility() const { return stOther & 3; }
-@@ -243,7 +246,7 @@ class Symbol { (public)
-          uint8_t stOther, uint8_t type)
-       : file(file), nameData(name.data()), nameSize(name.size()), type(type),
-         binding(binding), stOther(stOther), symbolKind(k), ltoCanOmit(false),
--        archSpecificBit(false) {}
-+        gwarn(false), archSpecificBit(false) {}
+@@ -247,7 +250,7 @@ class Symbol { (public)
+         traced(false), hasVersionSuffix(false), isInIplt(false),
+         gotInIgot(false), folded(false), archSpecificBit(false),
+         scriptDefined(false), dsoDefined(false), dsoProtected(false),
+-        versionScriptAssigned(false), thunkAccessed(false),
++        versionScriptAssigned(false), thunkAccessed(false), gwarn(false),
+         inDynamicList(false), referenced(false), referencedAfterWrap(false) {}
  
    void overwrite(Symbol &sym, Kind k) const {
-     if (sym.traced)
-@@ -536,6 +539,8 @@ void reportDuplicate(Ctx &, const Symbol &sym, const I
+@@ -540,6 +543,8 @@ void reportDuplicate(Ctx &, const Symbol &sym, const I
  void maybeWarnUnorderableSymbol(Ctx &, const Symbol *sym);
  bool computeIsPreemptible(Ctx &, const Symbol &sym);
  void parseVersionAndComputeIsPreemptible(Ctx &);

@@ -43,7 +43,7 @@ Index: lld/ELF/InputFiles.cpp
        break;
      case SHT_LLVM_LTO:
        // Discard .llvm.lto in a relocatable link that does not use the bitcode.
-@@ -1567,6 +1588,9 @@ template <class ELFT> void SharedFile::parse() {
+@@ -1565,6 +1586,9 @@ template <class ELFT> void SharedFile::parse() {
    const ELFFile<ELFT> obj = this->getObj<ELFT>();
    ArrayRef<Elf_Shdr> sections = getELFShdrs<ELFT>();
  
@@ -53,7 +53,7 @@ Index: lld/ELF/InputFiles.cpp
    const Elf_Shdr *versymSec = nullptr;
    const Elf_Shdr *verdefSec = nullptr;
    const Elf_Shdr *verneedSec = nullptr;
-@@ -1590,6 +1614,13 @@ template <class ELFT> void SharedFile::parse() {
+@@ -1588,6 +1612,13 @@ template <class ELFT> void SharedFile::parse() {
      case SHT_GNU_verneed:
        verneedSec = &sec;
        break;
