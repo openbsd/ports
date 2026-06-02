@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.114 2025/12/12 18:19:46 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.115 2026/06/02 20:44:13 naddy Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -99,7 +99,7 @@ _SYSTEM_VERSION-${MACHINE_ARCH} ?= 0
 _SYSTEM_VERSION-${ARCH} ?= 0
 
 # added to version for all clang arches
-_SYSTEM_VERSION-clang = 3
+_SYSTEM_VERSION-clang = 4
 
 # defined in go.port.mk; added to version for all go arches so that
 # go-compiled packages can be updated easily for a new go compiler
