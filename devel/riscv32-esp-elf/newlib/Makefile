@@ -2,7 +2,7 @@ COMMENT =	newlib for ${CONFIG} cross-development
 
 VERSION =	2021.2
 PKGNAME =	${CONFIG}-newlib-${VERSION}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	newlib-esp32

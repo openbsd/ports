@@ -4,6 +4,7 @@ GH_ACCOUNT =	JakubMelka
 GH_PROJECT =	PDF4QT
 GH_TAGNAME =	v1.5.3.1
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 
 HOMEPAGE =	https://jakubmelka.github.io/
 

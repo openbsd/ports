@@ -5,7 +5,7 @@ COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 VERSION =	10.2.0
 DISTNAME =	gcc-${VERSION}
 PKGNAME =	${CONFIG}-gcc-bootstrap-${VERSION}
-REVISION =	2
+REVISION =	3
 
 WANTLIB += ${COMPILER_LIBCXX} c gmp isl m mpc mpfr
 

@@ -2,7 +2,7 @@ COMMENT=		background browser and setter for X11
 
 DISTNAME=		nitrogen-1.6.1
 CATEGORIES=		x11 graphics
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://projects.l3ib.org/nitrogen/
 

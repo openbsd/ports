@@ -3,6 +3,7 @@ COMMENT=	CBOR (de)serializer with extensive tag support
 MODPY_DISTV =	5.8.0
 DISTNAME=	cbor2-${MODPY_DISTV}
 PKGNAME=	py-cbor2-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	net
 

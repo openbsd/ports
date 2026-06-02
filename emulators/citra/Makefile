@@ -9,7 +9,7 @@ DISTNAME =	citra-unified-source-20240303-0ff3440
 
 V =		2104
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	emulators
 

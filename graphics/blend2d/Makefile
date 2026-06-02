@@ -1,6 +1,7 @@
 COMMENT =		2d vector graphics engine
 
 DISTNAME =	blend2d-0.21.2
+REVISION =	0
 
 CATEGORIES =	graphics
 SHARED_LIBS =	blend2d	1.0

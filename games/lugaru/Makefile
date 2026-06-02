@@ -2,7 +2,7 @@ COMMENT =	third-person rabbit combat action game
 
 V =		1.2
 DISTNAME =	lugaru-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	games
 

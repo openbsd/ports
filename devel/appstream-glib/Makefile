@@ -1,6 +1,7 @@
 COMMENT=		library for AppStream metadata
 
 DISTNAME=		appstream-glib-0.8.3
+REVISION=		0
 EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS += appstream-glib            3.7 # 8.0.10

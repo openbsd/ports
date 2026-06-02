@@ -3,6 +3,7 @@ COMMENT=	javascript minifier written in python
 MODPY_DISTV=	1.2.5
 DISTNAME=	rjsmin-${MODPY_DISTV}
 PKGNAME=	py-rjsmin-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc devel
 

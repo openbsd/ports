@@ -3,7 +3,7 @@ COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 V =		8.4.0
 VERSION =	${V}.2021.2
 PKGNAME =	${CONFIG}-gcc-bootstrap-${VERSION}
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	gcc

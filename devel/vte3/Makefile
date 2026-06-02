@@ -4,6 +4,7 @@ COMMENT-common=		shared files for vte3
 
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.84.0
+REVISION=		0
 
 PKGNAME-main=		vte3-${GNOME_VERSION}
 PKGNAME-gtk4=		vte3-gtk4-${GNOME_VERSION}
