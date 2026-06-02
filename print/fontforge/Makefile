@@ -15,6 +15,9 @@ MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
+# C++17
+COMPILER=	base-clang ports-gcc
+
 WANTLIB =  ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += atk-1.0 atkmm-1.6 brotlidec brotlienc c cairo cairo-gobject
 WANTLIB += cairomm-1.0 freetype gdk-3 gdk_pixbuf-2.0 gdkmm-3.0
