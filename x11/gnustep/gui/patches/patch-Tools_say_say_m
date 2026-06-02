@@ -1,0 +1,14 @@
+llvm22 fix from upstream
+https://github.com/gnustep/libs-gui/commit/b9a4418268fa33e10d94c8401be69a9426d68946
+Index: Tools/say/say.m
+--- Tools/say/say.m.orig
++++ Tools/say/say.m
+@@ -43,7 +43,7 @@ int main(int argc, char **argv)
+   if (nil != inFile)
+     {
+       NSData *file = [NSData dataWithContentsOfFile: inFile];
+-      words = [NSString stringWithCString: [file bytes]];
++      words = [[NSString stringWithCString: [file bytes]] mutableCopy];
+     }
+   else
+     {
