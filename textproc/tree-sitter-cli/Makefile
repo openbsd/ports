@@ -7,6 +7,8 @@ GH_ACCOUNT =	tree-sitter
 GH_PROJECT =	tree-sitter
 GH_TAGNAME =	v${V}
 
+REVISION =	0
+
 # The tests require grammar files not in the source tarball. We provide our own
 # tarball containing them.
 #

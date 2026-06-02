@@ -7,7 +7,7 @@ VERSION =		1.3.1
 SITES =			https://gitlab.com/sequoia-pgp/sequoia-sq/-/archive/v${VERSION}/
 DISTNAME =		sequoia-sq-v${VERSION}
 PKGNAME =		${DISTNAME:S/v//}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://sequoia-pgp.org/
 

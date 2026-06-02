@@ -13,6 +13,8 @@ PERMIT_PACKAGE =	Yes
 GH_TAGNAME =		v0.16.6
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
 
+REVISION =		0
+
 HOMEPAGE =	https://stalw.art/
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}

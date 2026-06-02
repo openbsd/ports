@@ -4,6 +4,8 @@ GH_ACCOUNT =		Orange-OpenSource
 GH_PROJECT =		hurl
 GH_TAGNAME =		8.0.1
 
+REVISION =		0
+
 CATEGORIES =		net
 
 HOMEPAGE =		https://hurl.dev

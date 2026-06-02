@@ -7,6 +7,8 @@ GH_PROJECT = xwayland-satellite
 GH_TAGNAME = v${V}
 DISTNAME = ${GH_PROJECT}-${V}
 
+REVISION = 0
+
 # Bundled dependencies
 SITES += ${SITES_GITHUB}
 DISTFILES = ${GH_DISTFILE}

@@ -3,6 +3,7 @@ GH_ACCOUNT =		Spotifyd
 GH_PROJECT =		spotifyd
 GH_TAGNAME =		v0.4.2
 CATEGORIES =		audio net
+REVISION =		0
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 

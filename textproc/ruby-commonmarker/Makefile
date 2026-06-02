@@ -4,6 +4,8 @@ DISTNAME =	commonmarker-2.6.0
 CATEGORIES =	textproc
 HOMEPAGE =	https://github.com/gjtorikian/commonmarker
 
+REVISION =	0
+
 # MIT License
 PERMIT_PACKAGE =	Yes
 

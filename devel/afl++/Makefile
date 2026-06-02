@@ -4,7 +4,7 @@ COMMENT=	improved version of afl
 GH_ACCOUNT =	AFLplusplus
 GH_PROJECT =	AFLplusplus
 GH_TAGNAME =	v4.32c
-REVISION =	0
+REVISION =	1
 PKGNAME =	afl++-${GH_TAGNAME:S/v//}
 CATEGORIES=	devel
 

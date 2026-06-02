@@ -5,6 +5,8 @@ V=			0.15.2
 DIST_TUPLE=		fdo gstreamer gst-plugins-rs ${V} .
 WRKDIST=		${WRKDIR}/gst-plugins-rs-${V}-43af825d36368c55037c91abdda48f2905c230c2
 
+REVISION=		0
+
 # see patch-Cargo_toml;
 # grep git+https Cargo.lock | sort -u
 DIST_TUPLE +=		github gtk-rs gtk-rs-core ba575eeaf5c7cf043e55454620e5926593756c67 ../gtk-rs-core
