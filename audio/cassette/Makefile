@@ -1,19 +1,15 @@
 COMMENT =		unofficial Yandex Music client
 
-V =			0.2.2
-# Properly named and structured release tarballs should soon be available...
-DISTNAME =		sources
-PKGNAME =		cassette-${V}
+V =			0.2.4
+DISTNAME =		Cassette-${V}
+PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		audio x11
 
 HOMEPAGE =		https://altlinux.space/rirusha/Cassette
 
 SITES =			https://altlinux.space/rirusha/Cassette/releases/download/v${V}/
-
-# ... until then name the file uniquely and create missing WRKDIST on the fly.
-DISTFILES =		${PKGNAME}{${DISTNAME}}${EXTRACT_SUFX}
-EXTRACT_CASES =		*) ${TAR} -s ,^,${WRKDIST}/, -xzf ${FULLDISTDIR}/$$archive;;
+EXTRACT_SUFX =		.tar.zst
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
