@@ -1,0 +1,618 @@
+Remade workaround for uninitialized va_list
+https://sourceforge.net/p/ctrio/git/ci/acc21f6fea12d32d2f5790b05e8aa000423106a2/
+
+Index: src/trio.c
+--- src/trio.c.orig
++++ src/trio.c
+@@ -1148,7 +1148,7 @@ TRIO_ARGS5((type, format, parameters, arglist, argarra
+ 	   int type,
+ 	   TRIO_CONST char *format,
+ 	   trio_parameter_t *parameters,
+-	   va_list *arglist,
++	   va_list arglist,
+ 	   trio_pointer_t *argarray)
+ {
+   /* Count the number of times a parameter is referenced */
+@@ -1183,9 +1183,6 @@ TRIO_ARGS5((type, format, parameters, arglist, argarra
+   int num;
+   char *tmpformat;
+ 
+-  /* One and only one of arglist and argarray must be used */
+-  assert((arglist != NULL) ^ (argarray != NULL));
+-  
+   /*
+    * The 'parameters' array is not initialized, but we need to
+    * know which entries we have used.
+@@ -1925,14 +1922,14 @@ TRIO_ARGS5((type, format, parameters, arglist, argarra
+ 	  if (flags & FLAGS_WIDECHAR)
+ 	    {
+ 	      parameters[i].data.wstring = (argarray == NULL)
+-		? va_arg(*arglist, trio_wchar_t *)
++		? va_arg(arglist, trio_wchar_t *)
+ 		: (trio_wchar_t *)(argarray[num]);
+ 	    }
+ 	  else
+ #endif
+ 	    {
+ 	      parameters[i].data.string = (argarray == NULL)
+-		? va_arg(*arglist, char *)
++		? va_arg(arglist, char *)
+ 		: (char *)(argarray[num]);
+ 	    }
+ 	  break;
+@@ -1944,7 +1941,7 @@ TRIO_ARGS5((type, format, parameters, arglist, argarra
+ 	case FORMAT_COUNT:
+ 	case FORMAT_UNKNOWN:
+ 	  parameters[i].data.pointer = (argarray == NULL)
+-	    ? va_arg(*arglist, trio_pointer_t )
++	    ? va_arg(arglist, trio_pointer_t )
+ 	    : argarray[num];
+ 	  break;
+ 
+@@ -1954,7 +1951,7 @@ TRIO_ARGS5((type, format, parameters, arglist, argarra
+ 	    {
+               if (argarray == NULL)
+                 parameters[i].data.pointer = 
+-                  (trio_pointer_t)va_arg(*arglist, trio_pointer_t);
++                  (trio_pointer_t)va_arg(arglist, trio_pointer_t);
+               else
+                 {
+                   if (parameters[i].type == FORMAT_CHAR)
+@@ -2012,36 +2009,36 @@ TRIO_ARGS5((type, format, parameters, arglist, argarra
+ #if defined(QUALIFIER_SIZE_T) || defined(QUALIFIER_SIZE_T_UPPER)
+ 	      if (parameters[i].flags & FLAGS_SIZE_T)
+ 		parameters[i].data.number.as_unsigned = (argarray == NULL)
+-		  ? (trio_uintmax_t)va_arg(*arglist, size_t)
++		  ? (trio_uintmax_t)va_arg(arglist, size_t)
+ 		  : (trio_uintmax_t)(*((size_t *)argarray[num]));
+ 	      else
+ #endif
+ #if defined(QUALIFIER_PTRDIFF_T)
+ 	      if (parameters[i].flags & FLAGS_PTRDIFF_T)
+ 		parameters[i].data.number.as_unsigned = (argarray == NULL)
+-		  ? (trio_uintmax_t)va_arg(*arglist, ptrdiff_t)
++		  ? (trio_uintmax_t)va_arg(arglist, ptrdiff_t)
+ 		  : (trio_uintmax_t)(*((ptrdiff_t *)argarray[num]));
+ 	      else
+ #endif
+ #if defined(QUALIFIER_INTMAX_T)
+ 	      if (parameters[i].flags & FLAGS_INTMAX_T)
+ 		parameters[i].data.number.as_unsigned = (argarray == NULL)
+-		  ? (trio_uintmax_t)va_arg(*arglist, trio_intmax_t)
++		  ? (trio_uintmax_t)va_arg(arglist, trio_intmax_t)
+ 		  : (trio_uintmax_t)(*((trio_intmax_t *)argarray[num]));
+ 	      else
+ #endif
+ 	      if (parameters[i].flags & FLAGS_QUAD)
+ 		parameters[i].data.number.as_unsigned = (argarray == NULL)
+-		  ? (trio_uintmax_t)va_arg(*arglist, trio_ulonglong_t)
++		  ? (trio_uintmax_t)va_arg(arglist, trio_ulonglong_t)
+ 		  : (trio_uintmax_t)(*((trio_ulonglong_t *)argarray[num]));
+ 	      else if (parameters[i].flags & FLAGS_LONG)
+ 		parameters[i].data.number.as_unsigned = (argarray == NULL)
+-		  ? (trio_uintmax_t)va_arg(*arglist, long)
++		  ? (trio_uintmax_t)va_arg(arglist, long)
+ 		  : (trio_uintmax_t)(*((long *)argarray[num]));
+ 	      else
+ 		{
+ 		  if (argarray == NULL)
+-		    parameters[i].data.number.as_unsigned = (trio_uintmax_t)va_arg(*arglist, int);
++		    parameters[i].data.number.as_unsigned = (trio_uintmax_t)va_arg(arglist, int);
+ 		  else
+ 		    {
+ 		      if (parameters[i].type == FORMAT_CHAR)
+@@ -2062,11 +2059,11 @@ TRIO_ARGS5((type, format, parameters, arglist, argarra
+ 	   */
+ 	  if (parameters[i].flags & FLAGS_USER_DEFINED)
+ 	    parameters[i].data.pointer = (argarray == NULL)
+-	      ? va_arg(*arglist, trio_pointer_t )
++	      ? va_arg(arglist, trio_pointer_t )
+ 	      : argarray[num];
+ 	  else
+ 	    parameters[i].data.number.as_unsigned = (argarray == NULL)
+-	      ? (trio_uintmax_t)va_arg(*arglist, int)
++	      ? (trio_uintmax_t)va_arg(arglist, int)
+ 	      : (trio_uintmax_t)(*((int *)argarray[num]));
+ 	  break;
+ 
+@@ -2075,17 +2072,17 @@ TRIO_ARGS5((type, format, parameters, arglist, argarra
+ 	    {
+ 	      if (parameters[i].flags & FLAGS_LONGDOUBLE)
+ 		parameters[i].data.longdoublePointer = (argarray == NULL)
+-		  ? va_arg(*arglist, trio_long_double_t *)
++		  ? va_arg(arglist, trio_long_double_t *)
+ 		  : (trio_long_double_t *)argarray[num];
+ 	      else
+                 {
+ 		  if (parameters[i].flags & FLAGS_LONG)
+ 		    parameters[i].data.doublePointer = (argarray == NULL)
+-		      ? va_arg(*arglist, double *)
++		      ? va_arg(arglist, double *)
+ 		      : (double *)argarray[num];
+ 		  else
+ 		    parameters[i].data.doublePointer = (argarray == NULL)
+-		      ? (double *)va_arg(*arglist, float *)
++		      ? (double *)va_arg(arglist, float *)
+ 		      : (double *)((float *)argarray[num]);
+                 }
+ 	    }
+@@ -2093,13 +2090,13 @@ TRIO_ARGS5((type, format, parameters, arglist, argarra
+ 	    {
+ 	      if (parameters[i].flags & FLAGS_LONGDOUBLE)
+ 		parameters[i].data.longdoubleNumber = (argarray == NULL)
+-		  ? va_arg(*arglist, trio_long_double_t)
++		  ? va_arg(arglist, trio_long_double_t)
+ 		  : (trio_long_double_t)(*((trio_long_double_t *)argarray[num]));
+ 	      else
+ 		{
+ 		  if (argarray == NULL)
+ 		    parameters[i].data.longdoubleNumber =
+-		      (trio_long_double_t)va_arg(*arglist, double);
++		      (trio_long_double_t)va_arg(arglist, double);
+ 		  else
+ 		    {
+ 		      if (parameters[i].flags & FLAGS_SHORT)
+@@ -3301,7 +3298,7 @@ TrioFormatRef
+ TRIO_ARGS4((reference, format, arglist, argarray),
+ 	   trio_reference_t *reference,
+ 	   TRIO_CONST char *format,
+-	   va_list *arglist,
++	   va_list arglist,
+ 	   trio_pointer_t *argarray)
+ {
+   int status;
+@@ -3329,7 +3326,7 @@ TRIO_ARGS6((destination, destinationSize, OutStream, f
+ 	   size_t destinationSize,
+ 	   void (*OutStream) TRIO_PROTO((trio_class_t *, int)),
+ 	   TRIO_CONST char *format,
+-	   va_list *arglist,
++	   va_list arglist,
+ 	   trio_pointer_t *argarray)
+ {
+   int status;
+@@ -3555,7 +3552,7 @@ TRIO_VARGS2((format, va_alist),
+   assert(VALID(format));
+   
+   TRIO_VA_START(args, format);
+-  status = TrioFormat(stdout, 0, TrioOutStreamFile, format, &args, NULL);
++  status = TrioFormat(stdout, 0, TrioOutStreamFile, format, args, NULL);
+   TRIO_VA_END(args);
+   return status;
+ }
+@@ -3575,7 +3572,7 @@ TRIO_ARGS2((format, args),
+ {
+   assert(VALID(format));
+ 
+-  return TrioFormat(stdout, 0, TrioOutStreamFile, format, &args, NULL);
++  return TrioFormat(stdout, 0, TrioOutStreamFile, format, args, NULL);
+ }
+ 
+ /**
+@@ -3591,9 +3588,11 @@ TRIO_ARGS2((format, args),
+ 	   TRIO_CONST char *format,
+ 	   trio_pointer_t * args)
+ {
++  static va_list unused;
++
+   assert(VALID(format));
+ 
+-  return TrioFormat(stdout, 0, TrioOutStreamFile, format, NULL, args);
++  return TrioFormat(stdout, 0, TrioOutStreamFile, format, unused, args);
+ }
+ 
+ /*************************************************************************
+@@ -3622,7 +3621,7 @@ TRIO_VARGS3((file, format, va_alist),
+   assert(VALID(format));
+   
+   TRIO_VA_START(args, format);
+-  status = TrioFormat(file, 0, TrioOutStreamFile, format, &args, NULL);
++  status = TrioFormat(file, 0, TrioOutStreamFile, format, args, NULL);
+   TRIO_VA_END(args);
+   return status;
+ }
+@@ -3645,7 +3644,7 @@ TRIO_ARGS3((file, format, args),
+   assert(VALID(file));
+   assert(VALID(format));
+   
+-  return TrioFormat(file, 0, TrioOutStreamFile, format, &args, NULL);
++  return TrioFormat(file, 0, TrioOutStreamFile, format, args, NULL);
+ }
+ 
+ /**
+@@ -3663,10 +3662,12 @@ TRIO_ARGS3((file, format, args),
+ 	   TRIO_CONST char *format,
+ 	   trio_pointer_t * args)
+ {
++  static va_list unused;
++
+   assert(VALID(file));
+   assert(VALID(format));
+   
+-  return TrioFormat(file, 0, TrioOutStreamFile, format, NULL, args);
++  return TrioFormat(file, 0, TrioOutStreamFile, format, unused, args);
+ }
+ 
+ /*************************************************************************
+@@ -3694,7 +3695,7 @@ TRIO_VARGS3((fd, format, va_alist),
+   assert(VALID(format));
+   
+   TRIO_VA_START(args, format);
+-  status = TrioFormat(&fd, 0, TrioOutStreamFileDescriptor, format, &args, NULL);
++  status = TrioFormat(&fd, 0, TrioOutStreamFileDescriptor, format, args, NULL);
+   TRIO_VA_END(args);
+   return status;
+ }
+@@ -3716,7 +3717,7 @@ TRIO_ARGS3((fd, format, args),
+ {
+   assert(VALID(format));
+   
+-  return TrioFormat(&fd, 0, TrioOutStreamFileDescriptor, format, &args, NULL);
++  return TrioFormat(&fd, 0, TrioOutStreamFileDescriptor, format, args, NULL);
+ }
+ 
+ /**
+@@ -3734,9 +3735,11 @@ TRIO_ARGS3((fd, format, args),
+ 	   TRIO_CONST char *format,
+ 	   trio_pointer_t *args)
+ {
++  static va_list unused;
++
+   assert(VALID(format));
+   
+-  return TrioFormat(&fd, 0, TrioOutStreamFileDescriptor, format, NULL, args);
++  return TrioFormat(&fd, 0, TrioOutStreamFileDescriptor, format, unused, args);
+ }
+ 
+ /*************************************************************************
+@@ -3760,7 +3763,7 @@ TRIO_VARGS4((stream, closure, format, va_alist),
+   TRIO_VA_START(args, format);
+   data.stream.out = stream;
+   data.closure = closure;
+-  status = TrioFormat(&data, 0, TrioOutStreamCustom, format, &args, NULL);
++  status = TrioFormat(&data, 0, TrioOutStreamCustom, format, args, NULL);
+   TRIO_VA_END(args);
+   return status;
+ }
+@@ -3780,7 +3783,7 @@ TRIO_ARGS4((stream, closure, format, args),
+ 
+   data.stream.out = stream;
+   data.closure = closure;
+-  return TrioFormat(&data, 0, TrioOutStreamCustom, format, &args, NULL);
++  return TrioFormat(&data, 0, TrioOutStreamCustom, format, args, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -3791,6 +3794,7 @@ TRIO_ARGS4((stream, closure, format, args),
+ 	   TRIO_CONST char *format,
+ 	   void **args)
+ {
++  static va_list unused;
+   trio_custom_t data;
+ 
+   assert(VALID(stream));
+@@ -3798,7 +3802,7 @@ TRIO_ARGS4((stream, closure, format, args),
+ 
+   data.stream.out = stream;
+   data.closure = closure;
+-  return TrioFormat(&data, 0, TrioOutStreamCustom, format, NULL, args);
++  return TrioFormat(&data, 0, TrioOutStreamCustom, format, unused, args);
+ }
+ 
+ /*************************************************************************
+@@ -3827,7 +3831,7 @@ TRIO_VARGS3((buffer, format, va_alist),
+   assert(VALID(format));
+   
+   TRIO_VA_START(args, format);
+-  status = TrioFormat(&buffer, 0, TrioOutStreamString, format, &args, NULL);
++  status = TrioFormat(&buffer, 0, TrioOutStreamString, format, args, NULL);
+   *buffer = NIL; /* Terminate with NIL character */
+   TRIO_VA_END(args);
+   return status;
+@@ -3853,7 +3857,7 @@ TRIO_ARGS3((buffer, format, args),
+   assert(VALID(buffer));
+   assert(VALID(format));
+ 
+-  status = TrioFormat(&buffer, 0, TrioOutStreamString, format, &args, NULL);
++  status = TrioFormat(&buffer, 0, TrioOutStreamString, format, args, NULL);
+   *buffer = NIL;
+   return status;
+ }
+@@ -3873,12 +3877,13 @@ TRIO_ARGS3((buffer, format, args),
+ 	   TRIO_CONST char *format,
+ 	   trio_pointer_t *args)
+ {
++  static va_list unused;
+   int status;
+ 
+   assert(VALID(buffer));
+   assert(VALID(format));
+ 
+-  status = TrioFormat(&buffer, 0, TrioOutStreamString, format, NULL, args);
++  status = TrioFormat(&buffer, 0, TrioOutStreamString, format, unused, args);
+   *buffer = NIL;
+   return status;
+ }
+@@ -3912,7 +3917,7 @@ TRIO_VARGS4((buffer, max, format, va_alist),
+ 
+   TRIO_VA_START(args, format);
+   status = TrioFormat(&buffer, max > 0 ? max - 1 : 0,
+-		      TrioOutStreamStringMax, format, &args, NULL);
++		      TrioOutStreamStringMax, format, args, NULL);
+   if (max > 0)
+     *buffer = NIL;
+   TRIO_VA_END(args);
+@@ -3942,7 +3947,7 @@ TRIO_ARGS4((buffer, max, format, args),
+   assert(VALID(format));
+ 
+   status = TrioFormat(&buffer, max > 0 ? max - 1 : 0,
+-		      TrioOutStreamStringMax, format, &args, NULL);
++		      TrioOutStreamStringMax, format, args, NULL);
+   if (max > 0)
+     *buffer = NIL;
+   return status;
+@@ -3965,13 +3970,14 @@ TRIO_ARGS4((buffer, max, format, args),
+ 	   TRIO_CONST char *format,
+ 	   trio_pointer_t *args)
+ {
++  static va_list unused;
+   int status;
+ 
+   assert(VALID(buffer));
+   assert(VALID(format));
+ 
+   status = TrioFormat(&buffer, max > 0 ? max - 1 : 0,
+-		      TrioOutStreamStringMax, format, NULL, args);
++		      TrioOutStreamStringMax, format, unused, args);
+   if (max > 0)
+     *buffer = NIL;
+   return status;
+@@ -4003,7 +4009,7 @@ TRIO_VARGS4((buffer, max, format, va_alist),
+   buffer = &buffer[buf_len];
+ 
+   status = TrioFormat(&buffer, max - 1 - buf_len,
+-		      TrioOutStreamStringMax, format, &args, NULL);
++		      TrioOutStreamStringMax, format, args, NULL);
+   TRIO_VA_END(args);
+   *buffer = NIL;
+   return status;
+@@ -4026,7 +4032,7 @@ TRIO_ARGS4((buffer, max, format, args),
+   buf_len = trio_length(buffer);
+   buffer = &buffer[buf_len];
+   status = TrioFormat(&buffer, max - 1 - buf_len,
+-		      TrioOutStreamStringMax, format, &args, NULL);
++		      TrioOutStreamStringMax, format, args, NULL);
+   *buffer = NIL;
+   return status;
+ }
+@@ -4053,7 +4059,7 @@ TRIO_VARGS2((format, va_alist),
+     {
+       TRIO_VA_START(args, format);
+       (void)TrioFormat(info, 0, TrioOutStreamStringDynamic,
+-		       format, &args, NULL);
++		       format, args, NULL);
+       TRIO_VA_END(args);
+ 
+       trio_string_terminate(info);
+@@ -4079,7 +4085,7 @@ TRIO_ARGS2((format, args),
+   if (info)
+     {
+       (void)TrioFormat(info, 0, TrioOutStreamStringDynamic,
+-		       format, &args, NULL);
++		       format, args, NULL);
+       trio_string_terminate(info);
+       result = trio_string_extract(info);
+       trio_string_destroy(info);
+@@ -4111,7 +4117,7 @@ TRIO_VARGS3((result, format, va_alist),
+     {
+       TRIO_VA_START(args, format);
+       status = TrioFormat(info, 0, TrioOutStreamStringDynamic,
+-			  format, &args, NULL);
++			  format, args, NULL);
+       TRIO_VA_END(args);
+       if (status >= 0)
+ 	{
+@@ -4145,7 +4151,7 @@ TRIO_ARGS3((result, format, args),
+   else
+     {
+       status = TrioFormat(info, 0, TrioOutStreamStringDynamic,
+-			  format, &args, NULL);
++			  format, args, NULL);
+       if (status >= 0)
+ 	{
+ 	  trio_string_terminate(info);
+@@ -4817,7 +4823,7 @@ TRIO_VARGS3((ref, format, va_alist),
+   assert(VALID(format));
+   
+   TRIO_VA_START(arglist, format);
+-  status = TrioFormatRef((trio_reference_t *)ref, format, &arglist, NULL);
++  status = TrioFormatRef((trio_reference_t *)ref, format, arglist, NULL);
+   TRIO_VA_END(arglist);
+   return status;
+ }
+@@ -4834,7 +4840,7 @@ TRIO_ARGS3((ref, format, arglist),
+ {
+   assert(VALID(format));
+   
+-  return TrioFormatRef((trio_reference_t *)ref, format, &arglist, NULL);
++  return TrioFormatRef((trio_reference_t *)ref, format, arglist, NULL);
+ }
+ 
+ /*************************************************************************
+@@ -6262,7 +6268,7 @@ TRIO_ARGS6((source, sourceSize, InStream, format, argl
+ 	   size_t sourceSize,
+ 	   void (*InStream) TRIO_PROTO((trio_class_t *, int *)),
+ 	   TRIO_CONST char *format,
+-	   va_list *arglist,
++	   va_list arglist,
+ 	   trio_pointer_t *argarray)
+ {
+   int status;
+@@ -6474,7 +6480,7 @@ TRIO_VARGS2((format, va_alist),
+   TRIO_VA_START(args, format);
+   status = TrioScan((trio_pointer_t)stdin, 0,
+ 		    TrioInStreamFile,
+-		    format, &args, NULL);
++		    format, args, NULL);
+   TRIO_VA_END(args);
+   return status;
+ }
+@@ -6489,7 +6495,7 @@ TRIO_ARGS2((format, args),
+   
+   return TrioScan((trio_pointer_t)stdin, 0,
+ 		  TrioInStreamFile,
+-		  format, &args, NULL);
++		  format, args, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -6498,11 +6504,13 @@ TRIO_ARGS2((format, args),
+ 	   TRIO_CONST char *format,
+ 	   trio_pointer_t *args)
+ {
++  static va_list unused;
++
+   assert(VALID(format));
+   
+   return TrioScan((trio_pointer_t)stdin, 0,
+ 		  TrioInStreamFile,
+-		  format, NULL, args);
++		  format, unused, args);
+ }
+ 
+ /*************************************************************************
+@@ -6524,7 +6532,7 @@ TRIO_VARGS3((file, format, va_alist),
+   TRIO_VA_START(args, format);
+   status = TrioScan((trio_pointer_t)file, 0,
+ 		    TrioInStreamFile,
+-		    format, &args, NULL);
++		    format, args, NULL);
+   TRIO_VA_END(args);
+   return status;
+ }
+@@ -6541,7 +6549,7 @@ TRIO_ARGS3((file, format, args),
+   
+   return TrioScan((trio_pointer_t)file, 0,
+ 		  TrioInStreamFile,
+-		  format, &args, NULL);
++		  format, args, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -6551,12 +6559,14 @@ TRIO_ARGS3((file, format, args),
+ 	   TRIO_CONST char *format,
+ 	   trio_pointer_t *args)
+ {
++  static va_list unused;
++
+   assert(VALID(file));
+   assert(VALID(format));
+   
+   return TrioScan((trio_pointer_t)file, 0,
+ 		  TrioInStreamFile,
+-		  format, NULL, args);
++		  format, unused, args);
+ }
+ 
+ /*************************************************************************
+@@ -6577,7 +6587,7 @@ TRIO_VARGS3((fd, format, va_alist),
+   TRIO_VA_START(args, format);
+   status = TrioScan((trio_pointer_t)&fd, 0,
+ 		    TrioInStreamFileDescriptor,
+-		    format, &args, NULL);
++		    format, args, NULL);
+   TRIO_VA_END(args);
+   return status;
+ }
+@@ -6593,7 +6603,7 @@ TRIO_ARGS3((fd, format, args),
+   
+   return TrioScan((trio_pointer_t)&fd, 0,
+ 		  TrioInStreamFileDescriptor,
+-		  format, &args, NULL);
++		  format, args, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -6603,11 +6613,13 @@ TRIO_ARGS3((fd, format, args),
+ 	   TRIO_CONST char *format,
+ 	   trio_pointer_t *args)
+ {
++  static va_list unused;
++
+   assert(VALID(format));
+   
+   return TrioScan((trio_pointer_t)&fd, 0,
+ 		  TrioInStreamFileDescriptor,
+-		  format, NULL, args);
++		  format, unused, args);
+ }
+ 
+ /*************************************************************************
+@@ -6631,7 +6643,7 @@ TRIO_VARGS4((stream, closure, format, va_alist),
+   TRIO_VA_START(args, format);
+   data.stream.in = stream;
+   data.closure = closure;
+-  status = TrioScan(&data, 0, TrioInStreamCustom, format, &args, NULL);
++  status = TrioScan(&data, 0, TrioInStreamCustom, format, args, NULL);
+   TRIO_VA_END(args);
+   return status;
+ }
+@@ -6651,7 +6663,7 @@ TRIO_ARGS4((stream, closure, format, args),
+ 
+   data.stream.in = stream;
+   data.closure = closure;
+-  return TrioScan(&data, 0, TrioInStreamCustom, format, &args, NULL);
++  return TrioScan(&data, 0, TrioInStreamCustom, format, args, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -6662,6 +6674,7 @@ TRIO_ARGS4((stream, closure, format, args),
+ 	   TRIO_CONST char *format,
+ 	   trio_pointer_t *args)
+ {
++  static va_list unused;
+   trio_custom_t data;
+   
+   assert(VALID(stream));
+@@ -6669,7 +6682,7 @@ TRIO_ARGS4((stream, closure, format, args),
+ 
+   data.stream.in = stream;
+   data.closure = closure;
+-  return TrioScan(&data, 0, TrioInStreamCustom, format, NULL, args);
++  return TrioScan(&data, 0, TrioInStreamCustom, format, unused, args);
+ }
+ 
+ /*************************************************************************
+@@ -6691,7 +6704,7 @@ TRIO_VARGS3((buffer, format, va_alist),
+   TRIO_VA_START(args, format);
+   status = TrioScan((trio_pointer_t)&buffer, 0,
+ 		    TrioInStreamString,
+-		    format, &args, NULL);
++		    format, args, NULL);
+   TRIO_VA_END(args);
+   return status;
+ }
+@@ -6708,7 +6721,7 @@ TRIO_ARGS3((buffer, format, args),
+   
+   return TrioScan((trio_pointer_t)&buffer, 0,
+ 		  TrioInStreamString,
+-		  format, &args, NULL);
++		  format, args, NULL);
+ }
+ 
+ TRIO_PUBLIC int
+@@ -6718,12 +6731,14 @@ TRIO_ARGS3((buffer, format, args),
+ 	   TRIO_CONST char *format,
+ 	   trio_pointer_t *args)
+ {
++  static va_list unused;
++
+   assert(VALID(buffer));
+   assert(VALID(format));
+   
+   return TrioScan((trio_pointer_t)&buffer, 0,
+ 		  TrioInStreamString,
+-		  format, NULL, args);
++		  format, unused, args);
+ }
+ 
+ /** @} End of Scanf documentation module */

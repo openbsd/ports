@@ -3,8 +3,9 @@ COMMENT=		generate a cross-referenced HTML mail archive
 VERSION=		2.3.0
 DISTNAME=		hypermail-${VERSION}
 CATEGORIES=		mail www
+REVISION=		0
 
-HOMEPAGE=		http://www.hypermail-project.org/
+HOMEPAGE=		https://www.hypermail-project.org/
 
 SITES=			${HOMEPAGE}
 WRKDIST=		${WRKDIR}/hypermail
