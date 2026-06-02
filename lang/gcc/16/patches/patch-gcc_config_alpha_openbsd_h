@@ -1,0 +1,32 @@
+Index: gcc/config/alpha/openbsd.h
+--- gcc/config/alpha/openbsd.h.orig
++++ gcc/config/alpha/openbsd.h
+@@ -41,6 +41,28 @@ along with GCC; see the file COPYING3.  If not see
+ #undef ENDFILE_SPEC
+ #define ENDFILE_SPEC "%{!shared:crtend%O%s} %{shared:crtendS%O%s}"
+ 
++#undef TARGET_DEFAULT
++#define TARGET_DEFAULT \
++	(MASK_FPREGS | MASK_IEEE | MASK_IEEE_CONFORMANT)
++
++#define LINK_SPEC \
++  "%{!shared:%{!nostdlib:%{!r:%{!e*:-e __start}}}} \
++   %{shared:-shared} %{R*} \
++   %{static:-Bstatic} \
++   %{!static:-Bdynamic} \
++   %{rdynamic:-export-dynamic} \
++   %{assert*} \
++   %{!static:-dynamic-linker /usr/libexec/ld.so}"
++
++/* As an elf system, we need crtbegin/crtend stuff.  */
++#undef STARTFILE_SPEC
++#define STARTFILE_SPEC "\
++	%{!shared: %{pg:gcrt0%O%s} %{!pg:%{p:gcrt0%O%s} \
++	%{!p:%{!static:crt0%O%s} %{static:%{nopie:crt0%O%s} \
++	%{!nopie:rcrt0%O%s}}}} crtbegin%O%s} %{shared:crtbeginS%O%s}"
++#undef ENDFILE_SPEC
++#define ENDFILE_SPEC "%{!shared:crtend%O%s} %{shared:crtendS%O%s}"
++
+ /* run-time target specifications */
+ #define TARGET_OS_CPP_BUILTINS()		\
+     do {					\

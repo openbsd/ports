@@ -1,0 +1,70 @@
+Index: libatomic/Makefile.in
+--- libatomic/Makefile.in.orig
++++ libatomic/Makefile.in
+@@ -164,10 +164,9 @@ LTLIBRARIES = $(noinst_LTLIBRARIES) $(toolexeclib_LTLI
+ @ARCH_AARCH64_LINUX_TRUE@@PARTIAL_VXWORKS_FALSE@	atomic_16.lo
+ @PARTIAL_VXWORKS_FALSE@am_libatomic_la_OBJECTS = gload.lo gstore.lo \
+ @PARTIAL_VXWORKS_FALSE@	gcas.lo gexch.lo glfree.lo lock.lo \
+-@PARTIAL_VXWORKS_FALSE@	init.lo fenv.lo fence.lo flag.lo \
++@PARTIAL_VXWORKS_FALSE@	init.lo fenv.lo \
+ @PARTIAL_VXWORKS_FALSE@	$(am__objects_1)
+-@PARTIAL_VXWORKS_TRUE@am_libatomic_la_OBJECTS = fenv.lo fence.lo \
+-@PARTIAL_VXWORKS_TRUE@	flag.lo $(am__objects_1)
++@PARTIAL_VXWORKS_TRUE@am_libatomic_la_OBJECTS = fenv.lo $(am__objects_1)
+ libatomic_la_OBJECTS = $(am_libatomic_la_OBJECTS)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+@@ -179,10 +178,8 @@ libatomic_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(A
+ libatomic_convenience_la_DEPENDENCIES = $(libatomic_la_LIBADD)
+ @PARTIAL_VXWORKS_FALSE@am__objects_2 = gload.lo gstore.lo gcas.lo \
+ @PARTIAL_VXWORKS_FALSE@	gexch.lo glfree.lo lock.lo init.lo \
+-@PARTIAL_VXWORKS_FALSE@	fenv.lo fence.lo flag.lo \
+-@PARTIAL_VXWORKS_FALSE@	$(am__objects_1)
+-@PARTIAL_VXWORKS_TRUE@am__objects_2 = fenv.lo fence.lo flag.lo \
+-@PARTIAL_VXWORKS_TRUE@	$(am__objects_1)
++@PARTIAL_VXWORKS_FALSE@	fenv.lo $(am__objects_1)
++@PARTIAL_VXWORKS_TRUE@am__objects_2 = fenv.lo $(am__objects_1)
+ am_libatomic_convenience_la_OBJECTS = $(am__objects_2)
+ libatomic_convenience_la_OBJECTS =  \
+ 	$(am_libatomic_convenience_la_OBJECTS)
+@@ -417,6 +414,8 @@ gcc_version := $(shell @get_gcc_base_ver@ $(top_srcdir
+ search_path = $(addprefix $(top_srcdir)/config/, $(config_path)) \
+ 	$(top_srcdir) $(top_builddir)
+ 
++include $(top_srcdir)/../libversions
++
+ DEFAULT_INCLUDES = $(addprefix -I, $(search_path))
+ AM_CFLAGS = $(XCFLAGS)
+ AM_CCASFLAGS = $(XCFLAGS)
+@@ -429,7 +428,7 @@ noinst_LTLIBRARIES = libatomic_convenience.la
+ @LIBAT_BUILD_VERSIONED_SHLIB_FALSE@libatomic_version_dep = 
+ @LIBAT_BUILD_VERSIONED_SHLIB_GNU_TRUE@@LIBAT_BUILD_VERSIONED_SHLIB_TRUE@libatomic_version_dep = $(top_srcdir)/libatomic.map
+ @LIBAT_BUILD_VERSIONED_SHLIB_SUN_TRUE@@LIBAT_BUILD_VERSIONED_SHLIB_TRUE@libatomic_version_dep = libatomic.map-sun
+-libatomic_version_info = -version-info $(libtool_VERSION)
++libatomic_version_info = $(LIBatomic_LTVERSION)
+ @ENABLE_DARWIN_AT_RPATH_TRUE@libatomic_darwin_rpath =  \
+ @ENABLE_DARWIN_AT_RPATH_TRUE@	-Wc,-nodefaultrpaths \
+ @ENABLE_DARWIN_AT_RPATH_TRUE@	-Wl,-rpath,@loader_path
+@@ -437,10 +436,8 @@ libatomic_la_LDFLAGS = $(libatomic_version_info) $(lib
+ 	-Wc,-fno-link-libatomic $(lt_host_flags) $(libatomic_darwin_rpath)
+ 
+ @PARTIAL_VXWORKS_FALSE@libatomic_la_SOURCES = gload.c gstore.c gcas.c \
+-@PARTIAL_VXWORKS_FALSE@	gexch.c glfree.c lock.c init.c fenv.c \
+-@PARTIAL_VXWORKS_FALSE@	fence.c flag.c $(am__append_6)
+-@PARTIAL_VXWORKS_TRUE@libatomic_la_SOURCES = fenv.c fence.c flag.c \
+-@PARTIAL_VXWORKS_TRUE@	$(am__append_6)
++@PARTIAL_VXWORKS_FALSE@	gexch.c glfree.c lock.c init.c fenv.c $(am__append_6)
++@PARTIAL_VXWORKS_TRUE@libatomic_la_SOURCES = fenv.c $(am__append_6)
+ @PARTIAL_VXWORKS_FALSE@SIZEOBJS = load store cas exch fadd fsub fand fior fxor fnand tas
+ @PARTIAL_VXWORKS_FALSE@EXTRA_libatomic_la_SOURCES = $(addsuffix _n.c,$(SIZEOBJS))
+ @PARTIAL_VXWORKS_FALSE@libatomic_la_DEPENDENCIES = $(libatomic_la_LIBADD) $(libatomic_version_dep)
+@@ -606,9 +603,7 @@ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/atomic_16.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fence.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fenv.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/flag.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gcas.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gexch.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/glfree.Plo@am__quote@

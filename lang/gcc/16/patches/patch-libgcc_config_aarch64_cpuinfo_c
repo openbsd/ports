@@ -1,0 +1,42 @@
+Index: libgcc/config/aarch64/cpuinfo.c
+--- libgcc/config/aarch64/cpuinfo.c.orig
++++ libgcc/config/aarch64/cpuinfo.c
+@@ -48,6 +48,30 @@ typedef struct __ifunc_arg_t {
+ } __ifunc_arg_t;
+ 
+ #define _IFUNC_ARG_HWCAP (1ULL << 62)
++#ifdef __OpenBSD__
++static unsigned long
++__aarch64_getauxval (unsigned long type)
++{
++  unsigned long val = 0;
++
++  if (type == 0
++      || elf_aux_info ((int) type, &val, (int) sizeof val) != 0)
++    return 0;
++
++  return val;
++}
++
++#define getauxval(type) __aarch64_getauxval (type)
++#ifndef AT_HWCAP3
++#define AT_HWCAP3 0
++#endif
++#ifndef AT_HWCAP4
++#define AT_HWCAP4 0
++#endif
++#ifndef HWCAP2_LRCPC3
++#define HWCAP2_LRCPC3		(1UL << 46)
++#endif
++#else
+ #define AT_HWCAP 16
+ #define AT_HWCAP2 26
+ #define AT_HWCAP3 29
+@@ -101,6 +125,7 @@ typedef struct __ifunc_arg_t {
+ #define HWCAP2_SME2		(1UL << 37)
+ #define HWCAP2_MOPS		(1UL << 43)
+ #define HWCAP2_LRCPC3		(1UL << 46)
++#endif
+ 
+ #define __IFUNC_ARG_SIZE_HWCAP2 (sizeof (unsigned long) * 3)
+ #define __IFUNC_ARG_SIZE_HWCAP3 (sizeof (unsigned long) * 4)

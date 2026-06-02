@@ -1,0 +1,16 @@
+Index: gcc/ada/adaint.c
+--- gcc/ada/adaint.c.orig
++++ gcc/ada/adaint.c
+@@ -3745,6 +3745,12 @@ int __gnat_set_thread_description(HANDLE h, char *desc
+ 
+ #endif /* defined (_WIN32) */
+ 
++const char *
++fname_as_string(int pretty_p __attribute__((__unused__)))
++{
++	return NULL;
++}
++
+ #ifdef __cplusplus
+ }
+ #endif

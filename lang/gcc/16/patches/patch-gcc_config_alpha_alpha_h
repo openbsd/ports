@@ -1,0 +1,12 @@
+Index: gcc/config/alpha/alpha.h
+--- gcc/config/alpha/alpha.h.orig
++++ gcc/config/alpha/alpha.h
+@@ -483,7 +483,7 @@ enum reg_class {
+    is at the high-address end of the local variables;
+    that is, each additional local variable allocated
+    goes at a more negative offset in the frame.  */
+-/* #define FRAME_GROWS_DOWNWARD 0 */
++#define FRAME_GROWS_DOWNWARD 1
+ 
+ /* If we generate an insn to push BYTES bytes,
+    this says how many the stack pointer really advances by.

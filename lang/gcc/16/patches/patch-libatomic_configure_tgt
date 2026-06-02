@@ -1,0 +1,12 @@
+Index: libatomic/configure.tgt
+--- libatomic/configure.tgt.orig
++++ libatomic/configure.tgt
+@@ -69,7 +69,7 @@ case "${target_cpu}" in
+ 	    ;;
+ 	  *)
+ 	    if test -z "$with_cpu"; then
+-	      XCFLAGS="${XCFLAGS} -mcpu=v9"
++	      XCFLAGS="${XCFLAGS} -mcpu=v7"
+ 	    fi
+ 	esac
+ 	ARCH=sparc

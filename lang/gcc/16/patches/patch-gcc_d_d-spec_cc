@@ -1,0 +1,12 @@
+Index: gcc/d/d-spec.cc
+--- gcc/d/d-spec.cc.orig
++++ gcc/d/d-spec.cc
+@@ -31,7 +31,7 @@ along with GCC; see the file COPYING3.  If not see
+ #define SKIPOPT		(1<<3)
+ 
+ #ifndef LIBSTDCXX
+-#define LIBSTDCXX "stdc++"
++#define LIBSTDCXX "estdc++"
+ #endif
+ #ifndef LIBSTDCXX_PROFILE
+ #define LIBSTDCXX_PROFILE LIBSTDCXX

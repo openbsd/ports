@@ -1,0 +1,89 @@
+Index: gcc/common.opt
+--- gcc/common.opt.orig
++++ gcc/common.opt
+@@ -695,6 +695,10 @@ Wnull-dereference
+ Common Var(warn_null_dereference) Warning
+ Warn if dereferencing a NULL pointer may lead to erroneous or undefined behavior.
+ 
++Wstack-larger-than-
++Common RejectNegative Joined UInteger
++-Wstack-larger-than-<number> Warn if a function is using more than <number> bytes of stack space for its local variables.
++
+ Wunsafe-loop-optimizations
+ Common Ignore Warning
+ Does nothing. Preserved for backward compatibility.
+@@ -826,7 +830,7 @@ Warn about statements between switch's controlling exp
+ case.
+ 
+ Wsystem-headers
+-Common Var(warn_system_headers) Warning
++Common Var(warn_system_headers) Init(1) Warning
+ Do not suppress warnings from system headers.
+ 
+ Wtautological-compare
+@@ -895,6 +899,10 @@ Wunused-variable
+ Common Var(warn_unused_variable) Warning EnabledBy(Wunused)
+ Warn when a variable is unused.
+ 
++Wvariable-decl
++Common Var(warn_variable_decl)
++Warn about variable-sized declarations
++
+ Wcoverage-mismatch
+ Common Var(warn_coverage_mismatch) Init(1) Warning
+ Warn in case profiles in -fprofile-use do not match.
+@@ -1090,7 +1098,7 @@ Common Joined RejectNegative UInteger Var(flag_abi_ver
+ The version of the C++ ABI in use.
+ 
+ faggressive-loop-optimizations
+-Common Var(flag_aggressive_loop_optimizations) Optimization Init(1)
++Common Var(flag_aggressive_loop_optimizations) Optimization
+ Aggressively optimize loops using language constraints.
+ 
+ falign-functions
+@@ -1403,7 +1411,7 @@ Common Var(flag_delete_dead_exceptions) Init(0) Optimi
+ Delete dead instructions that may throw exceptions.
+ 
+ fdelete-null-pointer-checks
+-Common Var(flag_delete_null_pointer_checks) Init(-1) Optimization
++Common Var(flag_delete_null_pointer_checks) Init(0) Optimization
+ Delete useless null pointer checks.
+ 
+ fdep-fusion
+@@ -2007,7 +2015,7 @@ Enum(hardcfr_check_noreturn_calls) String(always) Valu
+ ; Nonzero means do not emit .ident assembler directives and ignore
+ ; `#ident' preprocessor directives.
+ fident
+-Common Var(flag_no_ident,0)
++Common Var(flag_no_ident,0) Init(1)
+ Emit .ident assembler directives.
+ 
+ fif-conversion
+@@ -2122,7 +2130,7 @@ Common RejectNegative Alias(fcf-protection=,full)
+ Equivalent to -fcf-protection=full.
+ 
+ fcf-protection=
+-Common Joined RejectNegative Enum(cf_protection_level) EnumSet Var(flag_cf_protection) Init(CF_NONE)
++Common Joined RejectNegative Enum(cf_protection_level) EnumSet Var(flag_cf_protection) Init(CF_DEFAULT)
+ -fcf-protection=[full|branch|return|none|check]	Instrument functions with checks to verify jump/call/return control-flow transfer
+ instructions have valid targets.
+ 
+@@ -3072,7 +3080,7 @@ Common RejectNegative Joined Var(common_deferred_optio
+ -fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>.
+ 
+ fstack-protector
+-Common Var(flag_stack_protect, 1) Init(-1) Optimization
++Common Var(flag_stack_protect, 3) Init(-1) Optimization
+ Use propolice as a stack protection method.
+ 
+ fstack-protector-all
+@@ -3867,6 +3875,9 @@ no-canonical-prefixes
+ Driver
+ 
+ nodefaultlibs
++Driver
++
++nopie
+ Driver
+ 
+ nostartfiles

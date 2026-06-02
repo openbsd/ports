@@ -1,0 +1,30 @@
+Revert turning -Wimplicit-function-declaration into a permerror
+
+Index: gcc/c/c-decl.cc
+--- gcc/c/c-decl.cc.orig
++++ gcc/c/c-decl.cc
+@@ -3709,13 +3709,13 @@ implicit_decl_permerror (location_t loc, tree id, tree
+ 	{
+ 	  gcc_rich_location richloc (loc);
+ 	  richloc.add_fixit_replace (suggestion);
+-	  warned = permerror_opt (&richloc, OPT_Wimplicit_function_declaration,
++	  warned = pedwarn (&richloc, OPT_Wimplicit_function_declaration,
+ 				  "implicit declaration of function %qE;"
+ 				  " did you mean %qs?",
+ 				  id, suggestion);
+ 	}
+       else
+-	warned = permerror_opt (loc, OPT_Wimplicit_function_declaration,
++	warned = pedwarn (loc, OPT_Wimplicit_function_declaration,
+ 				"implicit declaration of function %qE", id);
+     }
+   else if (const char *suggestion = hint.suggestion ())
+@@ -6726,6 +6726,8 @@ warn_variable_length_array (tree name, tree size)
+ 	pedwarn_c90 (input_location, OPT_Wvla, "ISO C90 forbids variable "
+ 		     "length array");
+     }
++    if (warn_variable_decl)
++      warning (OPT_Wvariable_decl, "variable-sized array %qE", name);
+ }
+ 
+ /* Returns the smallest location != UNKNOWN_LOCATION in LOCATIONS,

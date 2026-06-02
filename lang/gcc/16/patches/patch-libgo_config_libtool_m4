@@ -1,0 +1,12 @@
+Index: libgo/config/libtool.m4
+--- libgo/config/libtool.m4.orig
++++ libgo/config/libtool.m4
+@@ -2536,7 +2536,7 @@ openbsd*)
+     *)				need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in

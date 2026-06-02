@@ -1,0 +1,24 @@
+Avoid using sprintf: aside from its unsafety it triggers ld(1)
+warnings, leading to broken feature detection when linking test
+programs with libestdc++.
+
+Index: libstdc++-v3/src/c++17/floating_to_chars.cc
+--- libstdc++-v3/src/c++17/floating_to_chars.cc.orig
++++ libstdc++-v3/src/c++17/floating_to_chars.cc
+@@ -1073,14 +1073,14 @@ namespace
+ 	  {
+ 	    // strfromf128 unfortunately doesn't allow .*
+ 	    char fmt[3 * sizeof(int) + 6];
+-	    sprintf(fmt, "%%.%d%c", args..., int(format_string[4]));
++	    snprintf(fmt, sizeof(fmt), "%%.%d%c", args..., int(format_string[4]));
+ 	    len = __strfromf128(buffer, length, fmt, value);
+ 	  }
+       }
+     else
+ #endif
+ #endif
+-    len = sprintf(buffer, format_string, args..., value);
++    len = snprintf(buffer, length, format_string, args..., value);
+ 
+ #if _GLIBCXX_USE_C99_FENV_TR1 && defined(FE_TONEAREST)
+     if (saved_rounding_mode != FE_TONEAREST)
