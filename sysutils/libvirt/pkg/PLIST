@@ -47,10 +47,6 @@ lib/pkgconfig/libvirt-admin.pc
 lib/pkgconfig/libvirt-lxc.pc
 lib/pkgconfig/libvirt-qemu.pc
 lib/pkgconfig/libvirt.pc
-lib/systemd/
-lib/systemd/system/
-lib/systemd/system/libvirtd.service.d/
-lib/systemd/system/libvirtd.service.d/10-secret.conf
 lib/sysusers.d/
 lib/sysusers.d/libvirt-qemu.conf
 lib/sysusers.d/libvirt.conf
@@ -492,6 +488,7 @@ share/libvirt/cpu_map/arm_Kunpeng-920.xml
 share/libvirt/cpu_map/arm_Neoverse-N1.xml
 share/libvirt/cpu_map/arm_Neoverse-N2.xml
 share/libvirt/cpu_map/arm_Neoverse-V1.xml
+share/libvirt/cpu_map/arm_Neoverse-V2.xml
 share/libvirt/cpu_map/arm_Tengyun-S2500.xml
 share/libvirt/cpu_map/arm_ThunderX299xx.xml
 share/libvirt/cpu_map/arm_a64fx.xml
@@ -528,6 +525,8 @@ share/libvirt/cpu_map/x86_Cascadelake-Server-v4.xml
 share/libvirt/cpu_map/x86_Cascadelake-Server-v5.xml
 share/libvirt/cpu_map/x86_Cascadelake-Server.xml
 share/libvirt/cpu_map/x86_ClearwaterForest-v1.xml
+share/libvirt/cpu_map/x86_ClearwaterForest-v2.xml
+share/libvirt/cpu_map/x86_ClearwaterForest-v3.xml
 share/libvirt/cpu_map/x86_ClearwaterForest.xml
 share/libvirt/cpu_map/x86_Conroe-v1.xml
 share/libvirt/cpu_map/x86_Conroe.xml
@@ -541,6 +540,8 @@ share/libvirt/cpu_map/x86_Denverton.xml
 share/libvirt/cpu_map/x86_Dhyana-v1.xml
 share/libvirt/cpu_map/x86_Dhyana-v2.xml
 share/libvirt/cpu_map/x86_Dhyana.xml
+share/libvirt/cpu_map/x86_DiamondRapids-v1.xml
+share/libvirt/cpu_map/x86_DiamondRapids.xml
 share/libvirt/cpu_map/x86_EPYC-Genoa-v1.xml
 share/libvirt/cpu_map/x86_EPYC-Genoa-v2.xml
 share/libvirt/cpu_map/x86_EPYC-Genoa.xml
@@ -566,6 +567,8 @@ share/libvirt/cpu_map/x86_EPYC.xml
 share/libvirt/cpu_map/x86_GraniteRapids-v1.xml
 share/libvirt/cpu_map/x86_GraniteRapids-v2.xml
 share/libvirt/cpu_map/x86_GraniteRapids-v3.xml
+share/libvirt/cpu_map/x86_GraniteRapids-v4.xml
+share/libvirt/cpu_map/x86_GraniteRapids-v5.xml
 share/libvirt/cpu_map/x86_GraniteRapids.xml
 share/libvirt/cpu_map/x86_Haswell-IBRS.xml
 share/libvirt/cpu_map/x86_Haswell-noTSX-IBRS.xml
@@ -616,10 +619,14 @@ share/libvirt/cpu_map/x86_SapphireRapids-v1.xml
 share/libvirt/cpu_map/x86_SapphireRapids-v2.xml
 share/libvirt/cpu_map/x86_SapphireRapids-v3.xml
 share/libvirt/cpu_map/x86_SapphireRapids-v4.xml
+share/libvirt/cpu_map/x86_SapphireRapids-v5.xml
+share/libvirt/cpu_map/x86_SapphireRapids-v6.xml
 share/libvirt/cpu_map/x86_SapphireRapids.xml
 share/libvirt/cpu_map/x86_SierraForest-v1.xml
 share/libvirt/cpu_map/x86_SierraForest-v2.xml
 share/libvirt/cpu_map/x86_SierraForest-v3.xml
+share/libvirt/cpu_map/x86_SierraForest-v4.xml
+share/libvirt/cpu_map/x86_SierraForest-v5.xml
 share/libvirt/cpu_map/x86_SierraForest.xml
 share/libvirt/cpu_map/x86_Skylake-Client-IBRS.xml
 share/libvirt/cpu_map/x86_Skylake-Client-noTSX-IBRS.xml
