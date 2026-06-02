@@ -10,20 +10,21 @@ Index: Source/cmake/WebKitCommon.cmake
      else ()
          set(WTF_CPU_UNKNOWN 1)
      endif ()
-@@ -204,9 +206,9 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
-     # We cannot check for RUBY_FOUND because it is set only when the full package is installed and
+@@ -205,10 +207,10 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
      # the only thing we need is the interpreter. Unlike Python, cmake does not provide a macro
      # for finding only the Ruby interpreter.
--    find_package(Ruby 2.5)
--    if (NOT RUBY_EXECUTABLE OR RUBY_VERSION VERSION_LESS 2.5)
--        message(FATAL_ERROR "Ruby 2.5 or higher is required.")
-+    find_package(Ruby 3.3)
-+    if (NOT RUBY_EXECUTABLE OR RUBY_VERSION VERSION_LESS 3.3)
-+        message(FATAL_ERROR "Ruby 3.3 or higher is required.")
-     endif ()
- 
-     # -----------------------------------------------------------------------------
-@@ -219,7 +221,7 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
+     message(CHECK_START "Ruby interpreter executable")
+-    find_package(Ruby 2.5 QUIET)
++    find_package(Ruby ${MODRUBY_REV} QUIET)
+     if (Ruby_EXECUTABLE AND Ruby_VERSION)
+-        if (Ruby_VERSION VERSION_LESS 2.5)
+-            message(CHECK_FAIL "${Ruby_EXECUTABLE} (version: ${Ruby_VERSION}, minimum required 2.5)")
++        if (Ruby_VERSION VERSION_LESS ${MODRUBY_REV})
++            message(CHECK_FAIL "${Ruby_EXECUTABLE} (version: ${Ruby_VERSION}, minimum required ${MODRUBY_REV})")
+             set(Ruby_EXECUTABLE NOTFOUND)
+         else ()
+             message(CHECK_PASS "${Ruby_EXECUTABLE} (version: ${Ruby_VERSION})")
+@@ -230,7 +232,7 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
      include(CheckCXXCompilerFlag)
      include(CheckCXXSourceCompiles)
      include(CheckFunctionExists)

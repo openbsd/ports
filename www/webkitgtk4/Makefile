@@ -11,12 +11,12 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.52.3
+V =			2.52.4
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
 
-REVISION =		1
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
@@ -60,6 +60,8 @@ MODULES =		devel/cmake \
 MODGNOME_TOOLS =	gi-docgen gobject-introspection
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
+
+SUBST_VARS +=		MODRUBY_REV
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

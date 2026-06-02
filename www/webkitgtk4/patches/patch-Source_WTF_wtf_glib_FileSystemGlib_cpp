@@ -17,5 +17,5 @@ Index: Source/WTF/wtf/glib/FileSystemGlib.cpp
 +    return name ? CString(name) : CString();
 +}
  #elif OS(UNIX)
- CString currentExecutablePath()
- {
+ #if OS(NETBSD)
+ #define _PROC_CURPROC_PATH "/proc/curproc/exe"
