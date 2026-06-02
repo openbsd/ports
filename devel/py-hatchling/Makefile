@@ -1,6 +1,6 @@
 COMMENT=	modern, extensible Python build backend used by Hatch
 
-MODPY_DISTV=	1.29.0
+MODPY_DISTV=	1.30.1
 DISTNAME=	hatchling-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
