@@ -1,0 +1,29 @@
+Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
+--- src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi.orig
++++ src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
+@@ -1061,25 +1061,6 @@
+ 	status = "okay";
+ };
+ 
+-&pcie5 {
+-	perst-gpios = <&tlmm 149 GPIO_ACTIVE_LOW>;
+-	wake-gpios = <&tlmm 151 GPIO_ACTIVE_LOW>;
+-
+-	vddpe-3v3-supply = <&vreg_wwan>;
+-
+-	pinctrl-0 = <&pcie5_default>;
+-	pinctrl-names = "default";
+-
+-	status = "okay";
+-};
+-
+-&pcie5_phy {
+-	vdda-phy-supply = <&vreg_l3i_0p8>;
+-	vdda-pll-supply = <&vreg_l3e_1p2>;
+-
+-	status = "okay";
+-};
+-
+ &pcie6a {
+ 	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
+ 	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
