@@ -1,0 +1,14 @@
+Index: libmpcpsy/libmpcpsy.h
+--- libmpcpsy/libmpcpsy.h.orig
++++ libmpcpsy/libmpcpsy.h
+@@ -86,8 +86,8 @@ typedef struct {
+ 	float KBD2; // = -1.
+ 
+ 	// FIXME : remove this :
+-	int * SCF_Index_L;
+-	int * SCF_Index_R;              // Scalefactor-index for Bitstream
++	int (* SCF_Index_L)[3];
++	int (* SCF_Index_R)[3];         // Scalefactor-index for Bitstream
+ 
+ } PsyModel;
+ 

@@ -1,0 +1,14 @@
+Index: mpcenc/mpcenc.c
+--- mpcenc/mpcenc.c.orig
++++ mpcenc/mpcenc.c
+@@ -1535,8 +1535,8 @@ mainloop ( int argc, char** argv )
+ 
+     // initialize tables which must be initialized once and only once
+ 
+-	m.SCF_Index_L = (int*) e.SCF_Index_L;
+-	m.SCF_Index_R = (int*) e.SCF_Index_R;
++	m.SCF_Index_L = e.SCF_Index_L;
++	m.SCF_Index_R = e.SCF_Index_R;
+ 
+ 	Init_Psychoakustik (&m);
+ 	Init_FPU ();
