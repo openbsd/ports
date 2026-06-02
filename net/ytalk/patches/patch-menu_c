@@ -1,0 +1,242 @@
+Index: menu.c
+--- menu.c.orig
++++ menu.c
+@@ -24,7 +24,7 @@
+ 
+ #include "menu.h"
+ 
+-int show_user_list();
++int show_user_list(void);
+ 
+ /* This particular file was written real early one night (morning?)
+  * while trying to stay awake long enough to do laundry.  I hereby take
+@@ -32,7 +32,7 @@ int show_user_list();
+  * for this source.
+  */
+ 
+-static void main_menu_sel();
++static void main_menu_sel(void *);
+ menu_item *menu_ptr = NULL;		/* current menu in processing */
+ static int menu_len;			/* number of items in current menu */
+ static int menu_long;			/* longest item of current menu */
+@@ -40,7 +40,11 @@ static int menu_line;			/* current line number of menu
+ static int text_pos = -1;		/* text offset if non-negative */
+ static int text_ypos = -1, text_xpos = -1; /* text coord if non-negative */
+ 
+-extern void raw_term();			/* our raw interface to the terminal */
++static void
++show_error2(void *a)
++{
++	show_error(a);
++}
+ 
+ /* some menus... */
+ 
+@@ -75,17 +79,17 @@ static char err_str[8][MAXERR];
+ static menu_item error_menu[] = {
+     { "Ytalk Error",		NULL,		' ' },
+     { "",			NULL,		' ' },
+-    { NULL,			show_error,	' ' },
+-    { NULL,			show_error,	' ' },
++    { NULL,			show_error2,	' ' },
++    { NULL,			show_error2,	' ' },
+     { "",			NULL,		' ' },
+-    { NULL,			show_error,	' ' },
+-    { NULL,			show_error,	' ' },
++    { NULL,			show_error2,	' ' },
++    { NULL,			show_error2,	' ' },
+     { "",			NULL,		' ' },
+-    { NULL,			show_error,	' ' },
+-    { NULL,			show_error,	' ' },
++    { NULL,			show_error2,	' ' },
++    { NULL,			show_error2,	' ' },
+     { "",			NULL,		' ' },
+-    { NULL,			show_error,	' ' },
+-    { NULL,			show_error,	' ' },
++    { NULL,			show_error2,	' ' },
++    { NULL,			show_error2,	' ' },
+     { "",			NULL,		'\0'}	/* MUST BE LAST */
+ };
+ 
+@@ -94,8 +98,7 @@ static menu_item error_menu[] = {
+ static yuser *output_user = NULL;
+ 
+ static void
+-do_output(filename)
+-  char *filename;
++do_output(char *filename)
+ {
+     int fd;
+ 
+@@ -112,8 +115,7 @@ do_output(filename)
+ }
+ 
+ static void
+-do_output_user(user)
+-  yuser *user;
++do_output_user(yuser *user)
+ {
+     /* if he has an open descriptor, close it */
+ 
+@@ -136,8 +138,7 @@ do_output_user(user)
+ }
+ 
+ static void
+-do_invite(name)
+-  char *name;
++do_invite(char *name)
+ {
+     invite(name, 1);
+ }
+@@ -149,10 +150,11 @@ kill_all_unconnected()
+ }
+ 
+ static void
+-main_menu_sel(key)
+-  ychar key;
++main_menu_sel(void *p)
+ {
+-    switch(key)
++    ychar *key = p;
++
++    switch(*key)
+     {
+ 	case 'a':	/* add a user */
+ 	    if(show_text("Add Which User?", do_invite) >= 0)
+@@ -188,14 +190,14 @@ main_menu_sel(key)
+ }
+ 
+ static void
+-option_menu_sel(key)
+-  ychar key;
++option_menu_sel(void *p)
+ {
++    ychar *key = p;
+     register yuser *u;
+     ylong old_flags;
+ 
+     old_flags = def_flags;
+-    switch(key)
++    switch(*key)
+     {
+ 	case 'a':	/* toggle asides */
+ 	    def_flags ^= FL_ASIDE;
+@@ -234,9 +236,9 @@ option_menu_sel(key)
+ }
+ 
+ static void
+-user_menu_sel(key)
+-  ychar key;
++user_menu_sel(void *p)
+ {
++    ychar *key = p;
+     register int i;
+     register yuser *u;
+ 
+@@ -245,10 +247,10 @@ user_menu_sel(key)
+      * of the users from it.
+      */
+     for(i = 0; i < menu_len; i++)
+-	if(user_menu[i].key == key)
++	if(user_menu[i].key == *key)
+ 	{
+ 	    for(u = user_list; u; u = u->unext)
+-		if(u->key == key && 
++		if(u->key == *key && 
+  		   strcmp(u->full_name, user_menu[i].item) == 0)
+ 		{
+ 		    user_menu[0].func(u);
+@@ -277,9 +279,7 @@ generate_yes_no_length()
+ }
+ 
+ static void
+-pad_str(from, len, to)
+-  char *from, *to;
+-  int len;
++pad_str(char *from, int len, char *to)
+ {
+     for(; len > 0 && *from; len--, from++)
+ 	*(to++) = *from;
+@@ -410,7 +410,7 @@ update_menu()
+ 	    io_len--;
+ 	    kill_menu();
+ 	    if(mesg_menu[0].func)
+-		mesg_menu[0].func(ic);
++		mesg_menu[0].func(&ic);
+ 	    return;
+ 	}
+ 	else
+@@ -436,7 +436,7 @@ update_menu()
+ 		for(i = 0; i < menu_len; i++)
+ 		    if(menu_ptr[i].key == ic && menu_ptr[i].func != NULL)
+ 		    {
+-			menu_ptr[i].func(ic);
++			menu_ptr[i].func(&ic);
+ 			/*
+ 			 * THE WHOLE WORLD COULD BE DIFFERENT NOW.
+ 			 */
+@@ -576,9 +576,7 @@ update_menu()
+ /* Show a menu, overriding any existing menu.
+  */
+ int
+-show_menu(menu, len)
+-  menu_item *menu;
+-  int len;
++show_menu(menu_item *menu, int len)
+ {
+     register int i, j;
+ 
+@@ -621,9 +619,7 @@ show_menu(menu, len)
+ /* Show a text entry menu, overriding any existing menu.
+  */
+ int
+-show_text(prompt, func)
+-  char *prompt;
+-  void (*func)();
++show_text(char *prompt, menu_funcp func)
+ {
+     if(me->t_rows < 3)
+     {
+@@ -656,9 +652,7 @@ show_text(prompt, func)
+ /* Show a message in a menu.
+  */
+ int
+-show_mesg(mesg, func)
+-  char *mesg;
+-  void (*func)();
++show_mesg(char *mesg, void (*func)())
+ {
+     /* set up the menu for display */
+ 
+@@ -760,10 +754,7 @@ show_option_menu()
+ }
+ 
+ int
+-show_user_menu(title, func, metoo)
+-  char *title;
+-  void (*func)();
+-  int metoo;
++show_user_menu(char *title, menu_funcp func, int metoo)
+ {
+     register int i;
+     register yuser *u;
+@@ -861,8 +852,7 @@ show_user_list()
+ }
+ 
+ int
+-show_error_menu(str1, str2)
+-  char *str1, *str2;
++show_error_menu(const char *str1, char *str2)
+ {
+     register int i;
+ 
+@@ -886,8 +876,7 @@ show_error_menu(str1, str2)
+  * necessary for this function to hang until an answer is received.
+  */
+ int
+-yes_no(prompt)
+-  char *prompt;
++yes_no(char *prompt)
+ {
+     int out = 0;
+ 

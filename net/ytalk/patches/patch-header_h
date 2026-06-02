@@ -1,0 +1,181 @@
+Index: header.h
+--- header.h.orig
++++ header.h
+@@ -127,7 +127,8 @@ typedef struct _yuser {
+     int dbuf_size;		/* current buffer size */
+     ychar *dbuf, *dptr;		/* buffer base and current pointer */
+     int drain;			/* remaining bytes to drain */
+-    void (*dfunc)();		/* function to call with drained data */
++    void (*dfunc)(struct _yuser *, ychar *);
++    				/* function to call with drained data */
+     int got_oob;		/* got OOB flag */
+ 
+     /* anything below this is available for the terminal interface */
+@@ -280,89 +281,90 @@ struct alias {
+ 
+ /* ---- global functions ---- */
+ 
+-extern void	bail		( /* int */ );			/* main.c */
+-extern yaddr	get_mem		( /* int */ );			/* main.c */
+-extern char    *str_copy	( /* string */ );		/* main.c */
+-extern yaddr	realloc_mem	( /* pointer, int */ );		/* main.c */
+-extern void	show_error	( /* str */ );			/* main.c */
++extern void	bail		(int);			/* main.c */
++extern yaddr	get_mem		(int);			/* main.c */
++extern char    *str_copy	(const char *);		/* main.c */
++extern yaddr	realloc_mem	(void *, int );		/* main.c */
++extern void	show_error	(const char *);		/* main.c */
+ 
+-extern void	init_term	();				/* term.c */
+-extern void	set_terminal_size  ( /* fd, rows, cols */ );	/* term.c */
+-extern void	set_terminal_flags ( /* fd */ );		/* term.c */
+-extern int	what_term	();				/* term.c */
+-extern void	end_term	();				/* term.c */
+-extern int	open_term	( /* yuser, title */ );		/* term.c */
+-extern void	close_term	( /* yuser */ );		/* term.c */
+-extern void	addch_term	( /* yuser, ch */ );		/* term.c */
+-extern void	move_term	( /* yuser, y, x */ );		/* term.c */
+-extern void	clreol_term	( /* yuser */ );		/* term.c */
+-extern void	clreos_term	( /* yuser */ );		/* term.c */
+-extern void	scroll_term	( /* yuser */ );		/* term.c */
+-extern void	rev_scroll_term	( /* yuser */ );		/* term.c */
+-extern void	flush_term	( /* yuser */ );		/* term.c */
+-extern void	rub_term	( /* yuser */ );		/* term.c */
+-extern int	word_term	( /* yuser */ );		/* term.c */
+-extern void	kill_term	( /* yuser */ );		/* term.c */
+-extern void	tab_term	( /* yuser */ );		/* term.c */
+-extern void	newline_term	( /* yuser */ );		/* term.c */
+-extern void	add_line_term	( /* yuser, num */ );		/* term.c */
+-extern void	del_line_term	( /* yuser, num */ );		/* term.c */
+-extern void	add_char_term	( /* yuser, num */ );		/* term.c */
+-extern void	del_char_term	( /* yuser, num */ );		/* term.c */
+-extern void	redraw_term	( /* yuser, start_row */ );	/* term.c */
+-extern void	resize_win	( /* yuser, h, w */ );		/* term.c */
+-extern void	set_win_region	( /* yuser, h, w */ );		/* term.c */
+-extern void	end_win_region	( /* yuser */ );		/* term.c */
+-extern void	set_scroll_region( /* yuser, top, bottom */ );	/* term.c */
+-extern void	msg_term	( /* yuser, str */ );		/* term.c */
+-extern void	spew_term	( /* yuser, fd, rows, cols */ ); /* term.c */
+-extern int	center		( /* width, n */ );		/* term.c */
+-extern void	redraw_all_terms();				/* term.c */
+-extern void	set_raw_term	();				/* term.c */
+-extern void	set_cooked_term	();				/* term.c */
+-extern int	term_does_asides();				/* term.c */
++extern void	init_term	(void);			/* term.c */
++extern void	set_terminal_size  (int, int, int);	/* term.c */
++extern void	set_terminal_flags (int);		/* term.c */
++extern int	what_term	(void);			/* term.c */
++extern void	end_term	(void);			/* term.c */
++extern int	open_term	(yuser *, char *);	/* term.c */
++extern void	close_term	(yuser *);		/* term.c */
++extern void	addch_term	(yuser *, ychar);	/* term.c */
++extern void	move_term	(yuser *, int, int);	/* term.c */
++extern void	clreol_term	(yuser *);		/* term.c */
++extern void	clreos_term	(yuser *);		/* term.c */
++extern void	scroll_term	(yuser *);		/* term.c */
++extern void	rev_scroll_term	(yuser *);		/* term.c */
++extern void	flush_term	(yuser *);		/* term.c */
++extern void	rub_term	(yuser *);		/* term.c */
++extern int	word_term	(yuser *);		/* term.c */
++extern void	kill_term	(yuser *);		/* term.c */
++extern void	tab_term	(yuser *);		/* term.c */
++extern void	newline_term	(yuser *);		/* term.c */
++extern void	add_line_term	(yuser *, int);		/* term.c */
++extern void	del_line_term	(yuser *, int);		/* term.c */
++extern void	add_char_term	(yuser *, int);		/* term.c */
++extern void	del_char_term	(yuser *, int);		/* term.c */
++extern void	redraw_term	(yuser *, int);		/* term.c */
++extern void	resize_win	(yuser *, int, int);	/* term.c */
++extern void	set_win_region	(yuser *, int, int);	/* term.c */
++extern void	end_win_region	(yuser *);		/* term.c */
++extern void	set_scroll_region(yuser *, int, int);	/* term.c */
++extern void	msg_term	(yuser *, char *);	/* term.c */
++extern void	spew_term	(yuser *, int, int, int); /* term.c */
++extern int	center		(int, int);		/* term.c */
++extern void	raw_term	(yuser *, int, int, ychar *, int); /* term.c */
++extern void	redraw_all_terms(void);			/* term.c */
++extern void	set_raw_term	(void);			/* term.c */
++extern void	set_cooked_term	(void);			/* term.c */
++extern int	term_does_asides(void);			/* term.c */
+ 
+-extern void	init_user	();				/* user.c */
+-extern yuser   *new_user	( /* name, host, tty */ );	/* user.c */
+-extern void	free_user	( /* yuser */ );		/* user.c */
+-extern yuser   *find_user	( /* name, host_addr, pid */ );	/* user.c */
+-extern void	generate_full_name ( /* yuser */ );		/* user.c */
++extern void	init_user	(char *);		/* user.c */
++extern yuser   *new_user	(char *, char *, char *); /* user.c */
++extern void	free_user	(yuser *);		/* user.c */
++extern yuser   *find_user	(char *, ylong, ylong);	/* user.c */
++extern void	generate_full_name (yuser *);		/* user.c */
+ 
+-extern void	init_fd		();				/* fd.c */
+-extern void	add_fd		( /* fd, func */ );		/* fd.c */
+-extern void	remove_fd	( /* fd */ );			/* fd.c */
+-extern int	full_read	( /* fd, buf, len */ );		/* fd.c */
+-extern void	main_loop	();				/* fd.c */
+-extern void	input_loop	();				/* fd.c */
++extern void	init_fd		(void);			/* fd.c */
++extern void	add_fd		(int , void (*)());	/* fd.c */
++extern void	remove_fd	(int);			/* fd.c */
++extern int	full_read	(int, void *, int);	/* fd.c */
++extern void	main_loop	(void);			/* fd.c */
++extern void	input_loop	(void);			/* fd.c */
+ 
+-extern yuser   *invite		( /* username, announce */ );	/* comm.c */
+-extern void	house_clean	();				/* comm.c */
+-extern void	send_winch	( /* yuser */ );		/* comm.c */
+-extern void	send_region	();				/* comm.c */
+-extern void	send_end_region	();				/* comm.c */
+-extern void	send_users	( /* buf, len */ );		/* comm.c */
+-extern void	show_input	( /* user, buf, len */ );	/* comm.c */
+-extern void	my_input	( /* buf, len */ );		/* comm.c */
+-extern void	lock_flags	( /* flags */ );		/* comm.c */
+-extern void	unlock_flags	();				/* comm.c */
++extern yuser   *invite		(char *, int);		/* comm.c */
++extern void	house_clean	(void);			/* comm.c */
++extern void	send_winch	(yuser *);		/* comm.c */
++extern void	send_region	(void);			/* comm.c */
++extern void	send_end_region	(void);			/* comm.c */
++extern void	send_users	(yuser *, ychar *, int);/* comm.c */
++extern void	show_input	(yuser *, ychar *, int);/* comm.c */
++extern void	my_input	(yuser *, ychar *, int ); /* comm.c */
++extern void	lock_flags	(ylong);		/* comm.c */
++extern void	unlock_flags	(void);			/* comm.c */
+ 
+-extern void	init_socket	();				/* socket.c */
+-extern void	close_all	();				/* socket.c */
+-extern int	send_dgram	( /* user, type */ );		/* socket.c */
+-extern int	send_auto	( /* type */ );			/* socket.c */
+-extern void	kill_auto	();				/* socket.c */
+-extern int	newsock		( /* yuser */ );		/* socket.c */
+-extern int	connect_to	( /* yuser */ );		/* socket.c */
+-extern ylong	get_host_addr	( /* hostname */ );		/* socket.c */
+-extern char    *host_name	( /* addr */ );			/* socket.c */
+-extern void	readdress_host	( /* from, to, on */ );		/* socket.c */
++extern void	init_socket	(void);			/* socket.c */
++extern void	close_all	(void);			/* socket.c */
++extern int	send_dgram	(yuser *, u_char);	/* socket.c */
++extern int	send_auto	(u_char);		/* socket.c */
++extern void	kill_auto	(void);			/* socket.c */
++extern int	newsock		(yuser *);		/* socket.c */
++extern int	connect_to	(yuser *);		/* socket.c */
++extern ylong	get_host_addr	(char *);		/* socket.c */
++extern char    *host_name	(ylong);		/* socket.c */
++extern void	readdress_host	(char *, char *, char *); /* socket.c */
+ 
+-extern void	read_ytalkrc	();				/* rc.c */
+-extern char    *resolve_alias	( /* uh */ );			/* rc.c */
++extern void	read_ytalkrc	(void);			/* rc.c */
++extern char    *resolve_alias	(char *);		/* rc.c */
+ 
+-extern void	execute		( /* command */ );		/* exec.c */
+-extern void	update_exec	();				/* exec.c */
+-extern void	kill_exec	();				/* exec.c */
+-extern void	winch_exec	();				/* exec.c */
++extern void	execute		(char *);		/* exec.c */
++extern void	update_exec	(void);			/* exec.c */
++extern void	kill_exec	(void);			/* exec.c */
++extern void	winch_exec	(void);			/* exec.c */
+ 
+ /* EOF */

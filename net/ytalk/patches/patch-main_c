@@ -1,0 +1,75 @@
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -26,8 +26,7 @@ char *vhost = NULL;	/* specified virtual host */
+ /* Clean up and exit.
+  */
+ void
+-bail(n)
+-  int n;
++bail(int n)
+ {
+     end_term();
+     kill_auto();
+@@ -41,8 +40,7 @@ bail(n)
+ /* Display an error.
+  */
+ void
+-show_error(str)
+-  register char *str;
++show_error(const char *str)
+ {
+     register char *syserr;
+     static int in_error = 0;
+@@ -75,8 +73,7 @@ show_error(str)
+ /* Allocate memory.
+  */
+ yaddr
+-get_mem(n)
+-  int n;
++get_mem(int n)
+ {
+     register yaddr out;
+     if((out = (yaddr)malloc(n)) == NULL)
+@@ -90,8 +87,7 @@ get_mem(n)
+ /* Copy a string.
+  */
+ char *
+-str_copy(str)
+-  register char *str;
++str_copy(const char *str)
+ {
+     register char *out;
+     register int len;
+@@ -107,9 +103,7 @@ str_copy(str)
+ /* Reallocate memory.
+  */
+ yaddr
+-realloc_mem(p, n)
+-  char *p;
+-  int n;
++realloc_mem(void *p, int n)
+ {
+     register yaddr out;
+     if(p == NULL)
+@@ -125,8 +119,7 @@ realloc_mem(p, n)
+ /* Process signals.
+  */
+ static RETSIGTYPE
+-got_sig(n)
+-  int n;
++got_sig(int n)
+ {
+     if(n == SIGINT)
+ 	bail(0);
+@@ -135,9 +128,7 @@ got_sig(n)
+ 
+ /*  MAIN  */
+ int
+-main(argc, argv)
+-  int argc;
+-  char **argv;
++main(int argc, char **argv)
+ {
+     int xflg = 0, sflg = 0, yflg = 0, iflg = 0;
+     char *prog;

@@ -1,0 +1,43 @@
+Index: rc.c
+--- rc.c.orig
++++ rc.c
+@@ -27,8 +27,7 @@ static struct alias *alias0 = NULL;
+ /* ---- local functions ---- */
+ 
+ static char *
+-get_word(p)
+-  char **p;
++get_word(char **p)
+ {
+     register char *c, *out;
+ 
+@@ -47,8 +46,7 @@ get_word(p)
+ }
+ 
+ static int
+-set_option(opt, value)
+-  char *opt, *value;
++set_option(char *opt, char *value)
+ {
+     ylong mask = 0;
+     int set_it;
+@@ -136,8 +134,7 @@ set_option(opt, value)
+ }
+ 
+ static void
+-read_rcfile(fname)
+-  char *fname;
++read_rcfile(char *fname)
+ {
+     FILE *fp;
+     char *buf, *ptr;
+@@ -260,8 +257,7 @@ read_rcfile(fname)
+ /* ---- global functions ---- */
+ 
+ char *
+-resolve_alias(uh) 
+-  char *uh;
++resolve_alias(char *uh) 
+ {
+   struct alias *a;
+   static char uh1[256], *at;

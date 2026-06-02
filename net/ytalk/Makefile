@@ -1,7 +1,7 @@
 COMMENT=	enhanced talk that allows for multiple parties
 
 DISTNAME=	ytalk-3.1.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 
 SITES=		https://distfiles.sigtrap.nl/
@@ -9,6 +9,7 @@ SITES=		https://distfiles.sigtrap.nl/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE=	Yes
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 WANTLIB=		c curses 
 

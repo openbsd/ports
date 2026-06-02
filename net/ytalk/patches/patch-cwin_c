@@ -1,0 +1,147 @@
+Index: cwin.c
+--- cwin.c.orig
++++ cwin.c
+@@ -43,8 +43,7 @@ static ywin *head;		/* head of linked list */
+ /* Take input from the user.
+  */
+ static void
+-curses_input(fd)
+-  int fd;
++curses_input(int fd)
+ {
+     register int rc;
+     static ychar buf[MAXBUF];
+@@ -59,9 +58,7 @@ curses_input(fd)
+ }
+ 
+ static ywin *
+-new_ywin(user, title)
+-  yuser *user;
+-  char *title;
++new_ywin(yuser *user, char *title)
+ {
+     register ywin *out;
+     register int len;
+@@ -76,9 +73,7 @@ new_ywin(user, title)
+ }
+ 
+ static void
+-make_win(w, height, width, row, col)
+-  ywin *w;
+-  int height, width, row, col;
++make_win(ywin *w, int height, int width, int row, int col)
+ {
+     if((w->win = newwin(height, width, row, col)) == NULL)
+     {
+@@ -97,8 +92,7 @@ make_win(w, height, width, row, col)
+ }
+ 
+ static void
+-draw_title(w)
+-  ywin *w;
++draw_title(ywin *w)
+ {
+     register int pad, x;
+     register char *t;
+@@ -129,8 +123,7 @@ draw_title(w)
+ /* Return number of lines per window, given "wins" windows.
+  */
+ static int
+-win_size(wins)
+-  int wins;
++win_size(int wins)
+ {
+     return (LINES - 1) / wins;
+ }
+@@ -138,7 +131,7 @@ win_size(wins)
+ /* Break down and redraw all user windows.
+  */
+ static void
+-curses_redraw()
++curses_redraw(void)
+ {
+     register ywin *w;
+     register int row, wins, wsize;
+@@ -261,9 +254,7 @@ end_curses()
+ /* Open a new window.
+  */
+ int
+-open_curses(user, title)
+-  yuser *user;
+-  char *title;
++open_curses(yuser *user, char *title)
+ {
+     register ywin *w;
+     register int wins;
+@@ -300,8 +291,7 @@ open_curses(user, title)
+ /* Close a window.
+  */
+ void
+-close_curses(user)
+-  yuser *user;
++close_curses(yuser *user)
+ {
+     register ywin *w, *p;
+ 
+@@ -330,9 +320,7 @@ close_curses(user)
+ }
+ 
+ void
+-addch_curses(user, c)
+-  yuser *user;
+-  register ychar c;
++addch_curses(yuser *user, ychar c)
+ {
+     register ywin *w;
+     register int x, y;
+@@ -345,9 +333,7 @@ addch_curses(user, c)
+ }
+ 
+ void
+-move_curses(user, y, x)
+-  yuser *user;
+-  register int y, x;
++move_curses(yuser *user, int y, int x)
+ {
+     register ywin *w;
+ 
+@@ -356,8 +342,7 @@ move_curses(user, y, x)
+ }
+ 
+ void
+-clreol_curses(user)
+-  register yuser *user;
++clreol_curses(yuser *user)
+ {
+     register ywin *w;
+ 
+@@ -366,8 +351,7 @@ clreol_curses(user)
+ }
+ 
+ void
+-clreos_curses(user)
+-  register yuser *user;
++clreos_curses(yuser *user)
+ {
+     register ywin *w;
+ 
+@@ -376,8 +360,7 @@ clreos_curses(user)
+ }
+ 
+ void
+-scroll_curses(user)
+-  register yuser *user;
++scroll_curses(yuser *user)
+ {
+     register ywin *w;
+ 
+@@ -400,8 +383,7 @@ scroll_curses(user)
+ }
+ 
+ void
+-flush_curses(user)
+-  register yuser *user;
++flush_curses(yuser *user)
+ {
+     register ywin *w;
+ 

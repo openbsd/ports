@@ -1,0 +1,74 @@
+Index: user.c
+--- user.c.orig
++++ user.c
+@@ -38,8 +38,7 @@ static ylong daemon_id;	/* running daemon ID counter *
+ static int passwd_opened = 0;
+ 
+ static char *
+-user_name(uid)
+-  int uid;
++user_name(int uid)
+ {
+     register struct passwd *pw;
+     passwd_opened = 1;
+@@ -59,8 +58,7 @@ close_passwd()
+ }
+ 
+ void
+-generate_full_name(user)
+-  yuser *user;
++generate_full_name(yuser *user)
+ {
+     register char *c, *d, *ce;
+ 
+@@ -88,8 +86,7 @@ generate_full_name(user)
+ }
+ 
+ static void
+-assign_key(user)
+-  yuser *user;
++assign_key(yuser *user)
+ {
+     register ychar old;
+     static ychar key = 'a';
+@@ -120,8 +117,7 @@ assign_key(user)
+ /* Initialize user data structures.
+  */
+ void
+-init_user(vhost)
+-char *vhost;
++init_user(char *vhost)
+ {
+     int my_uid;
+     char *my_name, *my_vhost;
+@@ -196,8 +192,7 @@ char *vhost;
+ /* Create a new user record.
+  */
+ yuser *
+-new_user(name, hostname, tty)
+-  char *name, *hostname, *tty;
++new_user(char *name, char *hostname, char *tty)
+ {
+     register yuser *out, *u;
+     ylong addr;
+@@ -255,8 +250,7 @@ new_user(name, hostname, tty)
+ }
+ 
+ void
+-free_user(user)
+-  yuser *user;
++free_user(yuser *user)
+ {
+     register yuser *u;
+ 
+@@ -328,9 +322,7 @@ free_user(user)
+  * then it is not checked.
+  */
+ yuser *
+-find_user(name, host_addr, pid)
+-  char *name;
+-  ylong host_addr, pid;
++find_user(char *name, ylong host_addr, ylong pid)
+ {
+     register yuser *u;
+ 

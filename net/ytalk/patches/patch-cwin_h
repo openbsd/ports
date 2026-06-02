@@ -1,0 +1,36 @@
+Index: cwin.h
+--- cwin.h.orig
++++ cwin.h
+@@ -16,19 +16,19 @@
+ 
+ /* Mail comments or questions to ytalk@austin.eds.com */
+ 
+-extern void	init_curses	();
+-extern void	end_curses	();
+-extern int	open_curses	( /* yuser, title */ );
+-extern void	close_curses	( /* yuser */ );
+-extern void	addch_curses	( /* yuser, char */ );
+-extern void	move_curses	( /* yuser, y, x */ );
+-extern void	clreol_curses	( /* yuser */ );
+-extern void	clreos_curses	( /* yuser */ );
+-extern void	scroll_curses	( /* yuser */ );
+-extern void	flush_curses	( /* yuser */ );
+-extern void	redisplay_curses();
+-extern void	set_raw_curses();
+-extern void	set_cooked_curses();
++extern void	init_curses	(void);
++extern void	end_curses	(void);
++extern int	open_curses	(yuser *, char *);
++extern void	close_curses	(yuser *);
++extern void	addch_curses	(yuser *, ychar);
++extern void	move_curses	(yuser *, int, int);
++extern void	clreol_curses	(yuser *);
++extern void	clreos_curses	(yuser *);
++extern void	scroll_curses	(yuser *);
++extern void	flush_curses	(yuser *);
++extern void	redisplay_curses(void);
++extern void	set_raw_curses(void);
++extern void	set_cooked_curses(void);
+ 
+ #ifndef getyx
+ # define getyx(w,y,x)	y = w->_cury, x = w->_curx

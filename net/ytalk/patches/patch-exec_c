@@ -1,6 +1,29 @@
---- exec.c.orig	Fri Dec  7 22:54:16 2012
-+++ exec.c	Fri Dec  7 22:57:00 2012
-@@ -100,7 +100,11 @@ getpty(name)
+Index: exec.c
+--- exec.c.orig
++++ exec.c
+@@ -47,6 +47,7 @@
+ #  endif
+ # endif
+ #endif
++#include <unistd.h>
+ 
+ #if defined(HAVE_PTSNAME) && defined(HAVE_GRANTPT) && defined(HAVE_UNLOCKPT)
+ # define USE_DEV_PTMX
+@@ -85,12 +86,10 @@ int needtopush=0;
+ #endif
+ 
+ static int
+-getpty(name)
+-  char *name;
++getpty(char *name)
+ {
+     register int pty, tty;
+     char *tt;
+-    extern char *ttyname();
+ 
+ #ifdef USE_DEV_PTMX
+     RETSIGTYPE (*sigchld)();
+@@ -100,7 +99,11 @@ getpty(name)
      /* look for a Solaris/UNIX98-type pseudo-device */
  
  #ifdef USE_DEV_PTMX
@@ -12,3 +35,33 @@
      {
      	/* grantpt() might want to fork/exec! */
  	sigchld = signal(SIGCHLD, SIG_DFL);
+@@ -167,8 +170,7 @@ getpty(name)
+ }
+ 
+ static void
+-exec_input(fd)
+-  int fd;
++exec_input(int fd)
+ {
+     register int rc;
+     static ychar buf[MAXBUF];
+@@ -185,8 +187,7 @@ exec_input(fd)
+ }
+ 
+ static void
+-calculate_size(rows, cols)
+-  int *rows, *cols;
++calculate_size(int *rows, int *cols)
+ {
+     register yuser *u;
+ 
+@@ -209,8 +210,7 @@ calculate_size(rows, cols)
+  * a shell.
+  */
+ void
+-execute(command)
+-  char *command;
++execute(char *command)
+ {
+     int fd;
+     char name[20], *shell;

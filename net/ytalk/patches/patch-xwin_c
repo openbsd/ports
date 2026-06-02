@@ -1,0 +1,161 @@
+Index: xwin.c
+--- xwin.c.orig
++++ xwin.c
+@@ -43,8 +43,7 @@ static int		font_width,	/* font width */
+ /* ----- local functions ----- */
+ 
+ static XTextProperty *
+-strToTP(s)
+-  char *s;
++strToTP(char *s)
+ {
+     XTextProperty *tp = (XTextProperty *)get_mem(sizeof(XTextProperty));
+     XStringListToTextProperty(&s, 1, tp);
+@@ -52,8 +51,7 @@ strToTP(s)
+ }
+ 
+ static char *
+-getOption(o)
+-  char *o;
++getOption(char *o)
+ {
+     XrmValue value;
+     char *type;
+@@ -73,9 +71,7 @@ getOption(o)
+ }
+ 
+ static void
+-load_font(name, font)
+-  char *name;
+-  XFontStruct **font;
++load_font(char *name, XFontStruct **font)
+ {
+     if((*font = XLoadQueryFont(display, name)) == NULL)
+     {
+@@ -86,11 +82,8 @@ load_font(name, font)
+ }
+ 
+ static void
+-make_GC(gc, font, fgpixel, bgpixel, l_width, l_style, l_cap, l_join, gcfunc)
+-  GC *gc;
+-  XFontStruct *font;
+-  ylong fgpixel, bgpixel;
+-  int l_width, l_style, l_cap, l_join, gcfunc;
++make_GC(GC *gc, XFontStruct *font, ylong fgpixel, ylong bgpixel, 
++    int l_width, int l_style, int l_cap, int l_join, int gcfunc)
+ {
+     ylong mask = 0;
+     XGCValues values;
+@@ -119,8 +112,7 @@ make_GC(gc, font, fgpixel, bgpixel, l_width, l_style, 
+ /* Find the user who owns a given Window.
+  */
+ static yuser *
+-win_user(win)
+-  Window win;
++win_user(Window win)
+ {
+     register yuser *u;
+ 
+@@ -169,9 +161,7 @@ process_event()
+ }
+ 
+ static void
+-place_cursor(win, y, x)
+-  Window win;
+-  int y, x;
++place_cursor(Window win, int y, int x)
+ {
+     XFillRectangle(display, win, invertGC,
+ 	XPOS(x), YPOS(y),
+@@ -262,9 +252,7 @@ end_xwin()
+ /* Open a new window.
+  */
+ int
+-open_xwin(user, title)
+-  yuser *user;
+-  char *title;
++open_xwin(yuser *user, char *title)
+ {
+     XWMHints	WMhints;
+     XClassHint	ClassHints;
+@@ -320,17 +308,14 @@ open_xwin(user, title)
+ }
+ 
+ void
+-close_xwin(user)
+-  yuser *user;
++close_xwin(yuser *user)
+ {
+     XDestroyWindow(display, user->win);
+     user->win = (Window)0;
+ }
+ 
+ void
+-addch_xwin(user, ch)
+-  yuser *user;
+-  ychar ch;
++addch_xwin(yuser *user, ychar ch)
+ {
+     XClearArea(display, user->win,
+ 	XPOS(user->tx), YPOS(user->ty),
+@@ -346,9 +331,7 @@ addch_xwin(user, ch)
+ }
+ 
+ void
+-move_xwin(user, y, x)
+-  yuser *user;
+-  int y, x;
++move_xwin(yuser *user, int y, int x)
+ {
+     place_cursor(user->win, user->ty, user->tx);
+     user->ty = y;
+@@ -357,8 +340,7 @@ move_xwin(user, y, x)
+ }
+ 
+ void
+-clreol_xwin(user)
+-  yuser *user;
++clreol_xwin(yuser *user)
+ {
+     XClearArea(display, user->win,
+ 	XPOS(user->tx), YPOS(user->ty),
+@@ -368,8 +350,7 @@ clreol_xwin(user)
+ }
+ 
+ void
+-clreos_xwin(user)
+-  yuser *user;
++clreos_xwin(yuser *user)
+ {
+     XClearArea(display, user->win,
+ 	XPOS(user->tx), YPOS(user->ty),
+@@ -383,8 +364,7 @@ clreos_xwin(user)
+ }
+ 
+ void
+-scroll_xwin(user)
+-  yuser *user;
++scroll_xwin(yuser *user)
+ {
+     place_cursor(user->win, user->ty, user->tx);
+     XCopyArea(display, user->win, user->win, textGC,
+@@ -399,8 +379,7 @@ scroll_xwin(user)
+ }
+ 
+ void
+-rev_scroll_xwin(user)
+-  yuser *user;
++rev_scroll_xwin(yuser *user)
+ {
+     place_cursor(user->win, user->ty, user->tx);
+     XCopyArea(display, user->win, user->win, textGC,
+@@ -415,8 +394,7 @@ rev_scroll_xwin(user)
+ }
+ 
+ void
+-flush_xwin(user)
+-  yuser *user;
++flush_xwin(yuser *user)
+ {
+     /* "user" is unused -- sorry, lint  :-) */
+     XFlush(display);

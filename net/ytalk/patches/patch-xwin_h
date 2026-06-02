@@ -1,0 +1,32 @@
+Index: xwin.h
+--- xwin.h.orig
++++ xwin.h
+@@ -18,17 +18,17 @@
+ 
+ #ifdef USE_X11
+ 
+-extern void	init_xwin	();
+-extern void	end_xwin	();
+-extern int	open_xwin	( /* yuser, title */ );
+-extern void	close_xwin	( /* yuser */ );
+-extern void	addch_xwin	( /* yuser, char */ );
+-extern void	move_xwin	( /* yuser, y, x */ );
+-extern void	clreol_xwin	( /* yuser */ );
+-extern void	clreos_xwin	( /* yuser */ );
+-extern void	scroll_xwin	( /* yuser */ );
+-extern void	rev_scroll_xwin	( /* yuser */ );
+-extern void	flush_xwin	( /* yuser */ );
++extern void	init_xwin	(void);
++extern void	end_xwin	(void);
++extern int	open_xwin	(yuser *, char *);
++extern void	close_xwin	(yuser *);
++extern void	addch_xwin	(yuser *, ychar);
++extern void	move_xwin	(yuser *, int, int);
++extern void	clreol_xwin	(yuser *);
++extern void	clreos_xwin	(yuser *);
++extern void	scroll_xwin	(yuser *);
++extern void	rev_scroll_xwin	(yuser *);
++extern void	flush_xwin	(yuser *);
+ 
+ #endif
+ 

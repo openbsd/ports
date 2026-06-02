@@ -1,0 +1,368 @@
+Index: term.c
+--- term.c.orig
++++ term.c
+@@ -38,15 +38,15 @@
+ #include "xwin.h"
+ #include "menu.h"
+ 
+-static int  (*_open_term)();	/* open a new terminal */
+-static void (*_close_term)();	/* close a terminal */
+-static void (*_addch_term)();	/* write a char to a terminal */
+-static void (*_move_term)();	/* move cursor to Y,X position */
+-static void (*_clreol_term)();	/* clear to end of line */
+-static void (*_clreos_term)();	/* clear to end of screen */
+-static void (*_scroll_term)();	/* scroll up one line */
+-static void (*_rev_scroll_term)(); /* scroll down one line */
+-static void (*_flush_term)();	/* flush pending output */
++static int  (*_open_term)(yuser *, char *);	/* open a new terminal */
++static void (*_close_term)(yuser *);	/* close a terminal */
++static void (*_addch_term)(yuser *, ychar);/* write a char to a terminal */
++static void (*_move_term)(yuser *, int, int);/* move cursor to Y,X position */
++static void (*_clreol_term)(yuser *);	/* clear to end of line */
++static void (*_clreos_term)(yuser *);	/* clear to end of screen */
++static void (*_scroll_term)(yuser *);	/* scroll up one line */
++static void (*_rev_scroll_term)(yuser *); /* scroll down one line */
++static void (*_flush_term)(yuser *);	/* flush pending output */
+ 
+ static int term_type = 0;
+ 
+@@ -191,8 +191,7 @@ init_term()
+ /* Set terminal size.
+  */
+ void
+-set_terminal_size(fd, rows, cols)
+-  int fd, rows, cols;
++set_terminal_size(int fd, int rows, int cols)
+ {
+ #ifdef TIOCSWINSZ
+     struct winsize winsize;
+@@ -206,8 +205,7 @@ set_terminal_size(fd, rows, cols)
+ /* Set terminal and input characteristics for slave terminals.
+  */
+ void
+-set_terminal_flags(fd)
+-  int fd;
++set_terminal_flags(int fd)
+ {
+ #ifdef USE_SGTTY
+     (void)ioctl(fd, TIOCSETD, &line_discipline);
+@@ -249,9 +247,7 @@ end_term()
+ /* Open a new user window.
+  */
+ int
+-open_term(user, title)
+-  register yuser *user;
+-  register char *title;
++open_term(yuser *user, char *title)
+ {
+     if(_open_term(user, title) != 0)
+ 	return -1;
+@@ -264,8 +260,7 @@ open_term(user, title)
+ /* Close a user window.
+  */
+ void
+-close_term(user)
+-  register yuser *user;
++close_term(yuser *user)
+ {
+     register int i;
+ 
+@@ -284,9 +279,7 @@ close_term(user)
+ /* Place a character.
+  */
+ void
+-addch_term(user, c)
+-  register yuser *user;
+-  register ychar c;
++addch_term(yuser *user, ychar c)
+ {
+     if (is_printable(c))
+     {
+@@ -305,9 +298,7 @@ addch_term(user, c)
+ /* Move the cursor.
+  */
+ void
+-move_term(user, y, x)
+-  register yuser *user;
+-  register int y, x;
++move_term(yuser *user, int y, int x)
+ {
+     if(y < 0 || y > user->sc_bot)
+ 	y = user->sc_bot;
+@@ -326,8 +317,7 @@ move_term(user, y, x)
+ /* Clear to EOL.
+  */
+ void
+-clreol_term(user)
+-  register yuser *user;
++clreol_term(yuser *user)
+ {
+     register int j;
+     register ychar *c;
+@@ -354,8 +344,7 @@ clreol_term(user)
+ /* Clear to EOS.
+  */
+ void
+-clreos_term(user)
+-  register yuser *user;
++clreos_term(yuser *user)
+ {
+     register int j, i;
+     register ychar *c;
+@@ -390,8 +379,7 @@ clreos_term(user)
+ /* Scroll window.
+  */
+ void
+-scroll_term(user)
+-  register yuser *user;
++scroll_term(yuser *user)
+ {
+     register int i;
+     register ychar *c;
+@@ -427,8 +415,7 @@ scroll_term(user)
+ /* Reverse-scroll window.
+  */
+ void
+-rev_scroll_term(user)
+-  register yuser *user;
++rev_scroll_term(yuser *user)
+ {
+     register int i;
+     register ychar *c;
+@@ -464,8 +451,7 @@ rev_scroll_term(user)
+ /* Flush window output.
+  */
+ void
+-flush_term(user)
+-  register yuser *user;
++flush_term(yuser *user)
+ {
+     _flush_term(user);
+ }
+@@ -473,8 +459,7 @@ flush_term(user)
+ /* Rub one character.
+  */
+ void
+-rub_term(user)
+-  register yuser *user;
++rub_term(yuser *user)
+ {
+     if(user->x > 0)
+     {
+@@ -496,8 +481,7 @@ rub_term(user)
+ /* Rub one word.
+  */
+ int
+-word_term(user)
+-  register yuser *user;
++word_term(yuser *user)
+ {
+     register int x, out;
+ 
+@@ -516,8 +500,7 @@ word_term(user)
+ /* Kill current line.
+  */
+ void
+-kill_term(user)
+-  register yuser *user;
++kill_term(yuser *user)
+ {
+     if(user->x > 0)
+     {
+@@ -529,8 +512,7 @@ kill_term(user)
+ /* Expand a tab.  We use non-destructive tabs.
+  */
+ void
+-tab_term(user)
+-  register yuser *user;
++tab_term(yuser *user)
+ {
+     move_term(user, user->y, (user->x + 8) & 0xfff8);
+ }
+@@ -538,8 +520,7 @@ tab_term(user)
+ /* Process a newline.
+  */
+ void
+-newline_term(user)
+-  register yuser *user;
++newline_term(yuser *user)
+ {
+     register int new_y, next_y;
+ 
+@@ -581,9 +562,7 @@ newline_term(user)
+ /* Insert lines.
+  */
+ void
+-add_line_term(user, num)
+-  register yuser *user;
+-  int num;
++add_line_term(yuser *user, int num)
+ {
+     register ychar *c;
+     register int i;
+@@ -628,9 +607,7 @@ add_line_term(user, num)
+ /* Delete lines.
+  */
+ void
+-del_line_term(user, num)
+-  register yuser *user;
+-  int num;
++del_line_term(yuser *user, int num)
+ {
+     register ychar *c;
+     register int i;
+@@ -673,9 +650,7 @@ del_line_term(user, num)
+ }
+ 
+ static void
+-copy_text(fr, to, count)
+-  register ychar *fr, *to;
+-  register int count;
++copy_text(ychar *fr, ychar *to, int count)
+ {
+     if(to < fr)
+     {
+@@ -694,9 +669,7 @@ copy_text(fr, to, count)
+ /* Add chars.
+  */
+ void
+-add_char_term(user, num)
+-  register yuser *user;
+-  int num;
++add_char_term(yuser *user, int num)
+ {
+     register ychar *c;
+     register int i;
+@@ -730,9 +703,7 @@ add_char_term(user, num)
+ /* Delete chars.
+  */
+ void
+-del_char_term(user, num)
+-  register yuser *user;
+-  int num;
++del_char_term(yuser *user, int num)
+ {
+     register ychar *c;
+     register int i;
+@@ -766,9 +737,7 @@ del_char_term(user, num)
+ /* Redraw a user's window.
+  */
+ void
+-redraw_term(user, y)
+-  register yuser *user;
+-  register int y;
++redraw_term(yuser *user, int y)
+ {
+     register int x, spaces;
+     register ychar *c;
+@@ -815,9 +784,7 @@ redraw_term(user, y)
+  * the given height and width.
+  */
+ static int
+-first_interesting_row(user, height, width)
+-  yuser *user;
+-  int height, width;
++first_interesting_row(yuser *user, int height, int width)
+ {
+     register int j, i;
+     register ychar *c;
+@@ -851,9 +818,7 @@ first_interesting_row(user, height, width)
+ /* Called when a user's window has been resized.
+  */
+ void
+-resize_win(user, height, width)
+-  yuser *user;
+-  int height, width;
++resize_win(yuser *user, int height, int width)
+ {
+     register int j, i;
+     register ychar *c, **newscr;
+@@ -939,10 +904,7 @@ resize_win(user, height, width)
+ /* Draw a nice box.
+  */
+ static void
+-draw_box(user, height, width, c)
+-  yuser *user;
+-  int height, width;
+-  char c;
++draw_box(yuser *user, int height, int width, char c)
+ {
+     register int i;
+ 
+@@ -976,9 +938,7 @@ draw_box(user, height, width, c)
+ /* Set the virtual terminal size, ie: the display region.
+  */
+ void
+-set_win_region(user, height, width)
+-  yuser *user;
+-  int height, width;
++set_win_region(yuser *user, int height, int width)
+ {
+     register int x, y;
+     int old_height, old_width;
+@@ -1029,8 +989,7 @@ set_win_region(user, height, width)
+ /* Set the virtual terminal size, ie: the display region.
+  */
+ void
+-end_win_region(user)
+-  yuser *user;
++end_win_region(yuser *user)
+ {
+     int old_height, old_width;
+ 
+@@ -1050,9 +1009,7 @@ end_win_region(user)
+ /* Set the scrolling region.
+  */
+ void
+-set_scroll_region(user, top, bottom)
+-  yuser *user;
+-  int top, bottom;
++set_scroll_region(yuser *user, int top, int bottom)
+ {
+     if(top < 0 || top >= user->rows || bottom >= user->rows || bottom < top
+        || (bottom <= 0 && top <= 0))
+@@ -1069,9 +1026,7 @@ set_scroll_region(user, top, bottom)
+ /* Send a message to the terminal.
+  */
+ void
+-msg_term(user, str)
+-  yuser *user;
+-  char *str;
++msg_term(yuser *user, char *str)
+ {
+     int y;
+ 
+@@ -1090,9 +1045,7 @@ msg_term(user, str)
+ /* Spew terminal contents to a file descriptor.
+  */
+ void
+-spew_term(user, fd, rows, cols)
+-  yuser *user;
+-  int fd, rows, cols;
++spew_term(yuser *user, int fd, int rows, int cols)
+ {
+     register ychar *c, *e;
+     register int len;
+@@ -1157,11 +1110,7 @@ spew_term(user, fd, rows, cols)
+  * This is an unadvertised function.
+  */
+ void
+-raw_term(user, y, x, str, len)
+-  yuser *user;
+-  int y, x;
+-  ychar *str;
+-  int len;
++raw_term(yuser *user, int y, int x, ychar *str, int len)
+ {
+     register ychar *c;
+ 
+@@ -1182,8 +1131,7 @@ raw_term(user, y, x, str, len)
+ }
+ 
+ int
+-center(width, n)
+-  int width, n;
++center(int width, int n)
+ {
+     if(n >= width)
+ 	return 0;

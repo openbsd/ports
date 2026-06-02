@@ -1,0 +1,222 @@
+Index: socket.c
+--- socket.c.orig
++++ socket.c
+@@ -34,6 +34,7 @@
+ #ifdef _AIX
+ # include <sys/select.h>
+ #endif
++#include <arpa/inet.h>
+ 
+ struct _talkd talkd[MAXDAEMON+1];
+ int daemons = 0;
+@@ -59,11 +60,10 @@ static readdr *readdr_list = NULL;	/* list of re-addre
+ /* Create a datagram socket.
+  */
+ static int
+-init_dgram(sock)
+-  struct sockaddr_in *sock;
++init_dgram(struct sockaddr_in *sock)
+ {
+     int fd;
+-    size_t socklen;
++    socklen_t socklen;
+ 
+     sock->sin_family = AF_INET;
+     IN_ADDR(*sock) = INADDR_ANY;
+@@ -93,11 +93,7 @@ init_dgram(sock)
+ /* Initialize a new daemon structure.
+  */
+ static int
+-init_daemon(name, port, mptr, mlen, rptr, rlen)
+-  char *name;
+-  short port;
+-  yaddr mptr, rptr;
+-  int mlen, rlen;
++init_daemon(char *name, short port, yaddr mptr, int mlen, yaddr rptr, int rlen)
+ {
+     struct servent *serv;
+     int d;
+@@ -123,10 +119,9 @@ init_daemon(name, port, mptr, mlen, rptr, rlen)
+ }
+ 
+ static void
+-read_autoport(fd)
+-  int fd;
++read_autoport(int fd)
+ {
+-    size_t socklen;
++    socklen_t socklen;
+     static v2_pack pack;
+     static char estr[V2_NAMELEN + V2_HOSTLEN + 20];
+     static struct sockaddr_in temp;
+@@ -166,7 +161,7 @@ read_autoport(fd)
+ static void
+ init_autoport()
+ {
+-    size_t socklen;
++    socklen_t socklen;
+ 
+     autosock.sin_family = AF_INET;
+     IN_ADDR(autosock) = INADDR_ANY;
+@@ -208,9 +203,7 @@ init_autoport()
+  * the host I'm sending to.
+  */
+ static void
+-place_my_address(sock, addr)
+-  BSD42_SOCK *sock;
+-  register ylong addr;
++place_my_address(BSD42_SOCK *sock, ylong addr)
+ {
+     register readdr *r;
+ 
+@@ -233,9 +226,8 @@ place_my_address(sock, addr)
+  * hostname, then reads a response packet.
+  */
+ static int
+-sendit(addr, d)
+-  ylong addr;	/* host internet address */
+-  int d;	/* daemon number */
++sendit(ylong addr, 	/* host internet address */
++		int d)	/* daemon number */
+ {
+     int n;
+     struct sockaddr_in daemon;
+@@ -392,8 +384,7 @@ sendit(addr, d)
+  * what version(s) of the daemon are running.
+  */
+ static int
+-find_daemon(addr)
+-  ylong addr;
++find_daemon(ylong addr)
+ {
+     register hostinfo *h;
+     register int n, i, d;
+@@ -504,8 +495,7 @@ find_daemon(addr)
+ }
+ 
+ static ylong
+-make_net_mask(addr)
+-  ylong addr;
++make_net_mask(ylong addr)
+ {
+     if(addr & (ylong)0xff)
+ 	return (ylong)0xffffffff;
+@@ -576,9 +566,7 @@ close_all()
+ /* First, a quick and easy interface for the user sockets.
+  */
+ int
+-send_dgram(user, type)
+-  yuser *user;
+-  u_char type;
++send_dgram(yuser *user, u_char type)
+ {
+     ylong addr;
+     int d;
+@@ -723,8 +711,7 @@ send_dgram(user, type)
+  * always sends to the caller's host, and always does just an invite.
+  */
+ int
+-send_auto(type)
+-  u_char type;
++send_auto(u_char type)
+ {
+     int dtype, d, rc;
+ 
+@@ -773,11 +760,10 @@ kill_auto()
+ /* Create a TCP socket for communication with other talk users.
+  */
+ int
+-newsock(user)
+-  yuser *user;
++newsock(yuser *user)
+ {
+     int fd;
+-    size_t socklen;
++    socklen_t socklen;
+ 
+     user->sock.sin_family = AF_INET;
+     IN_ADDR(user->sock) = INADDR_ANY;
+@@ -800,7 +786,7 @@ newsock(user)
+ 	show_error("newsock: getsockname() failed");
+ 	return -1;
+     }
+-    place_my_address(&(user->sock), user->host_addr);
++    place_my_address((BSD42_SOCK *)&(user->sock), user->host_addr);
+     if(listen(fd, 5) < 0)
+     {
+ 	close(fd);
+@@ -816,12 +802,11 @@ newsock(user)
+ /* Connect to another user's communication socket.
+  */
+ int
+-connect_to(user)
+-  yuser *user;
++connect_to(yuser *user)
+ {
+     register yuser *u;
+     int fd;
+-    size_t socklen;
++    socklen_t socklen;
+     struct sockaddr_in sock, orig_sock;
+ 
+     orig_sock = *(struct sockaddr_in *)&nrsp.addr;
+@@ -871,15 +856,13 @@ connect_to(user)
+ /* Find a host's address.
+  */
+ ylong
+-get_host_addr(hostname)
+-  char *hostname;
++get_host_addr(char *hostname)
+ {
+     struct hostent *host;
+     ylong addr;
+-    ylong inet_addr();
+ 
+     errno = 0;
+-    if((host = (struct hostent *) gethostbyname(hostname)) != NULL)
++    if((host = gethostbyname(hostname)) != NULL)
+     {
+ 	if(host->h_length != sizeof(addr))
+ 	{
+@@ -898,27 +881,25 @@ get_host_addr(hostname)
+    [19NOV96 Roger]: try to find the fqdn (1st alias with a dot)
+  */
+ char *
+-host_name(addr)
+-  ylong addr;
++host_name(ylong addr)
+ {
+     struct hostent *host;
+-    char *inet_ntoa();
+     char **s;
+ 
+-    if((host = gethostbyaddr((char *) &addr, sizeof(addr), AF_INET)) == NULL)
++    if((host = gethostbyaddr(&addr, sizeof(addr), AF_INET)) == NULL)
+     {
+ 	struct in_addr tmp;
+ 	tmp.s_addr = addr;
+ 	return inet_ntoa(tmp);
+     }
+     if (strchr(host->h_name, '.'))
+-      return (char *)host->h_name;
++      return host->h_name;
+     s = host->h_aliases;
+     if (s && *s)
+       for (; *s; s++)
+         if (strchr(*s, '.'))
+           return *s;
+-    return (char *)host->h_name;
++    return host->h_name;
+ }
+ 
+ /* Re-address a given host ("from_id") to the given address or host
+@@ -927,8 +908,7 @@ host_name(addr)
+  * as the differently-addressed "bar.com" to host "xyzzy.com".
+  */
+ void
+-readdress_host(from_id, to_id, on_id)
+-  char *from_id, *to_id, *on_id;
++readdress_host(char *from_id, char *to_id, char *on_id)
+ {
+     register readdr *new;
+     ylong from_addr, to_addr, on_addr;
