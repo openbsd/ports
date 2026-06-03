@@ -1,10 +1,12 @@
 COMMENT =		cargo helper to build and install c-like libraries
 
-V =			0.10.22
+V =			0.10.23
 PKGNAME =		cargo-c-$V
 GH_ACCOUNT =		lu-zero
 GH_PROJECT =		cargo-c
 GH_TAGNAME =		v$V
+
+DPB_PROPERTIES =	parallel
 
 SITES.gh =		https://github.com/lu-zero/cargo-c/releases/download/v$V/
 DISTFILES.gh +=		cargo-c-${V}.Cargo.lock{Cargo.lock}
