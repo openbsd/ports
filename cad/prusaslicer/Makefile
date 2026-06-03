@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS = ${LP64_ARCHS}
 DPB_PROPERTIES = parallel
 
 V =		2.9.4
-REVISION =	2
+REVISION =	3
 PKGNAME =	prusaslicer-${V}
 
 GH_ACCOUNT =	prusa3d

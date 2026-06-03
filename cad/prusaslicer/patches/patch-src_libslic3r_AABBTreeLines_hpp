@@ -1,0 +1,12 @@
+Index: src/libslic3r/AABBTreeLines.hpp
+--- src/libslic3r/AABBTreeLines.hpp.orig
++++ src/libslic3r/AABBTreeLines.hpp
+@@ -35,7 +35,7 @@ template<typename ALineType, typename ATreeType, typen
+     {
+         Vec<LineType::Dim, typename LineType::Scalar> nearest_point;
+         const LineType                               &line = lines[primitive_index];
+-        squared_distance = line_alg::distance_to_squared(line, origin.template cast<typename LineType::Scalar>(), &nearest_point);
++        squared_distance = line_alg::distance_to_squared(line, Vec<LineType::Dim, typename LineType::Scalar>{origin.template cast<typename LineType::Scalar>()}, &nearest_point);
+         return nearest_point.template cast<ScalarType>();
+     }
+ };

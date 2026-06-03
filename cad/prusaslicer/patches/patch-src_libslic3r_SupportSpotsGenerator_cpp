@@ -1,0 +1,21 @@
+Index: src/libslic3r/SupportSpotsGenerator.cpp
+--- src/libslic3r/SupportSpotsGenerator.cpp.orig
++++ src/libslic3r/SupportSpotsGenerator.cpp
+@@ -502,7 +502,7 @@ float compute_second_moment(
+ 
+     const Linef axis_at_0_0 = {{0, 0}, axis_direction.cast<double>()};
+ 
+-    const double distance = distance_to_infinite_squared(axis_at_0_0, centroid.cast<double>());
++    const double distance = distance_to_infinite_squared(axis_at_0_0, Vec2d{centroid.cast<double>()});
+     return moment_at_0_0 - area * distance;
+ }
+ 
+@@ -613,7 +613,7 @@ float ObjectPart::compute_elastic_section_modulus(
+     Vec2f centroid                = integrals.x_i / integrals.area;
+     float extreme_fiber_dist      = line_alg::distance_to(Linef(centroid.head<2>().cast<double>(),
+                                                                 (centroid.head<2>() + Vec2f(line_dir.y(), -line_dir.x())).cast<double>()),
+-                                                          extreme_point.head<2>().cast<double>());
++                                                          Vec2d{extreme_point.head<2>().cast<double>()});
+ 
+     float elastic_section_modulus = second_moment_of_area / extreme_fiber_dist;
+ 
