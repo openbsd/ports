@@ -1,0 +1,13 @@
+Address llvm22 breakage
+Index: LapisPuzzleView.h
+--- LapisPuzzleView.h.orig
++++ LapisPuzzleView.h
+@@ -176,7 +176,7 @@ typedef enum _LPResultType
+ 	id __currentUnit;
+ 
+ 	NSMutableArray *_units;
+-	NSMutableArray *_blowing;
++	NSMutableSet *_blowing;
+ 
+ 	int chain;
+ 	int stone;
