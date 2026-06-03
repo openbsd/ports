@@ -2,7 +2,7 @@ COMMENT=		multi-platform CD-Player library
 
 DISTNAME=		libworkman-1999-06-20
 PKGNAME=		libworkman-1.4
-REVISION=		2
+REVISION=		3
 SHARED_LIBS=		workman	1.4
 CATEGORIES=		audio
 FIX_EXTRACT_PERMISSIONS=Yes
