@@ -3,7 +3,7 @@ fix types passed to curl_easy_setopt()
 Index: src/modules/rlm_rest/rest.c
 --- src/modules/rlm_rest/rest.c.orig
 +++ src/modules/rlm_rest/rest.c
-@@ -409,11 +409,11 @@ void *mod_conn_create(TALLOC_CTX *ctx, void *instance)
+@@ -409,9 +409,9 @@ void *mod_conn_create(TALLOC_CTX *ctx, void *instance)
  		 *  done on the first request, but we do it here to minimise
  		 *  latency.
  		 */
@@ -14,12 +14,18 @@ Index: src/modules/rlm_rest/rest.c
 +		SET_OPTION(CURLOPT_SSL_VERIFYHOST, 0L);
 +		SET_OPTION(CURLOPT_CONNECT_ONLY, 1L);
  		SET_OPTION(CURLOPT_URL, inst->connect_uri);
+ 		/* libcurl ignores this when connect_uri_socket is NULL */
+ #ifdef CURLOPT_ABSTRACT_UNIX_SOCKET
+@@ -424,7 +424,7 @@ void *mod_conn_create(TALLOC_CTX *ctx, void *instance)
+ 		SET_OPTION(CURLOPT_UNIX_SOCKET_PATH,
+ 			   inst->connect_uri_socket);
+ #endif
 -		SET_OPTION(CURLOPT_NOSIGNAL, 1);
 +		SET_OPTION(CURLOPT_NOSIGNAL, 1L);
  
  		DEBUG("rlm_rest (%s): Connecting to \"%s\"", inst->xlat_name, inst->connect_uri);
  
-@@ -1974,7 +1974,7 @@ static int rest_request_config_body(UNUSED rlm_rest_t 
+@@ -1985,7 +1985,7 @@ static int rest_request_config_body(UNUSED rlm_rest_t 
  	 *  no body should be sent.
  	 */
  	if (!func) {
@@ -28,16 +34,16 @@ Index: src/modules/rlm_rest/rest.c
  		return 0;
  	}
  
-@@ -2062,7 +2062,7 @@ int rest_request_config(rlm_rest_t *instance, rlm_rest
- 	 *	Setup any header options and generic headers.
- 	 */
- 	SET_OPTION(CURLOPT_URL, uri);
+@@ -2084,7 +2084,7 @@ int rest_request_config(rlm_rest_t *instance, rlm_rest
+ 	SET_OPTION(CURLOPT_UNIX_SOCKET_PATH,
+ 		   instance->connect_uri_socket);
+ #endif
 -	SET_OPTION(CURLOPT_NOSIGNAL, 1);
 +	SET_OPTION(CURLOPT_NOSIGNAL, 1L);
  	SET_OPTION(CURLOPT_USERAGENT, "FreeRADIUS " RADIUSD_VERSION_STRING);
  
  	/*
-@@ -2253,8 +2253,8 @@ int rest_request_config(rlm_rest_t *instance, rlm_rest
+@@ -2275,8 +2275,8 @@ int rest_request_config(rlm_rest_t *instance, rlm_rest
  	}
  #endif
  

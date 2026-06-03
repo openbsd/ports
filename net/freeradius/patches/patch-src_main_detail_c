@@ -3,7 +3,7 @@ Cope with 32-bit arch with 64-bit time variables.
 Index: src/main/detail.c
 --- src/main/detail.c.orig
 +++ src/main/detail.c
-@@ -789,7 +789,7 @@ open_file:
+@@ -787,7 +787,7 @@ open_file:
  	 */
   alloc_packet:
  	if (data->done_entry) {

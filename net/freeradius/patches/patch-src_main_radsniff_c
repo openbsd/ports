@@ -1,13 +1,14 @@
 OpenBSD libpcap uses nonstandard "bpf_timeval" variables which are a
 different size to timeval on some arch..
 
-This patch is enough to let it build but is incomplete and unlikely to
-allow radsniff to actually work.
+This patch is enough to let it build but is incomplete - building
+radsniff is disabled in the patch to src/main/all.mk (llvm 22
+correctly notices the type mismatches)
 
 Index: src/main/radsniff.c
 --- src/main/radsniff.c.orig
 +++ src/main/radsniff.c
-@@ -1003,7 +1003,8 @@ static inline int rs_request_to_pcap(rs_event_t *event
+@@ -1002,7 +1002,8 @@ static inline int rs_request_to_pcap(rs_event_t *event
  #define RS_CLEANUP_NOW(_x, _s)\
  	{\
  		_x->silent_cleanup = _s;\
@@ -17,7 +18,7 @@ Index: src/main/radsniff.c
  		rs_packet_cleanup(_x);\
  		_x = NULL;\
  	} while (0)
-@@ -1038,10 +1039,12 @@ static void rs_packet_process(uint64_t count, rs_event
+@@ -1037,10 +1038,12 @@ static void rs_packet_process(uint64_t count, rs_event
  	memset(&search, 0, sizeof(search));
  
  	if (!start_pcap.tv_sec) {
@@ -31,7 +32,7 @@ Index: src/main/radsniff.c
  		rs_time_print(timestr, sizeof(timestr), &header->ts);
  	}
  
-@@ -1135,11 +1138,13 @@ static void rs_packet_process(uint64_t count, rs_event
+@@ -1134,11 +1137,13 @@ static void rs_packet_process(uint64_t count, rs_event
  	current = rad_alloc(conf, false);
  	if (!current) {
  		REDEBUG("Failed allocating memory to hold decoded packet");
@@ -46,7 +47,7 @@ Index: src/main/radsniff.c
  	current->data_len = header->caplen - (p - data);
  	memcpy(&current->data, &p, sizeof(current->data));
  
-@@ -1259,6 +1264,7 @@ static void rs_packet_process(uint64_t count, rs_event
+@@ -1258,6 +1263,7 @@ static void rs_packet_process(uint64_t count, rs_event
  			 *	The delay is so we can detect retransmissions.
  			 */
  			original->linked = talloc_steal(original, current);
@@ -54,7 +55,7 @@ Index: src/main/radsniff.c
  			rs_tv_add_ms(&header->ts, conf->stats.timeout, &original->when);
  			if (!fr_event_insert(event->list, _rs_event, original, &original->when,
  					     &original->event)) {
-@@ -1339,6 +1345,7 @@ static void rs_packet_process(uint64_t count, rs_event
+@@ -1338,6 +1344,7 @@ static void rs_packet_process(uint64_t count, rs_event
  		search.expect = rad_alloc_reply(current, current);
  		if (!search.expect) {
  			REDEBUG("Failed allocating memory to hold expected reply");
@@ -62,7 +63,7 @@ Index: src/main/radsniff.c
  			rs_tv_add_ms(&header->ts, conf->stats.timeout, &stats->quiet);
  			rad_free(&current);
  			return;
-@@ -1489,7 +1496,9 @@ static void rs_packet_process(uint64_t count, rs_event
+@@ -1488,7 +1495,9 @@ static void rs_packet_process(uint64_t count, rs_event
  		/*
  		 *	Insert a callback to remove the request from the tree
  		 */
@@ -73,7 +74,7 @@ Index: src/main/radsniff.c
  		rs_tv_add_ms(&header->ts, conf->stats.timeout, &original->when);
  		if (!fr_event_insert(event->list, _rs_event, original,
  				     &original->when, &original->event)) {
-@@ -1510,6 +1519,7 @@ static void rs_packet_process(uint64_t count, rs_event
+@@ -1509,6 +1518,7 @@ static void rs_packet_process(uint64_t count, rs_event
  		return;
  	}
  
@@ -81,7 +82,7 @@ Index: src/main/radsniff.c
  	rs_tv_sub(&header->ts, &start_pcap, &elapsed);
  
  	/*
-@@ -1539,6 +1549,7 @@ static void rs_packet_process(uint64_t count, rs_event
+@@ -1538,6 +1548,7 @@ static void rs_packet_process(uint64_t count, rs_event
  		 *	Were filtering on response, now print out the full data from the request
  		 */
  		if (conf->filter_response && RIDEBUG_ENABLED() && (conf->event_flags & RS_NORMAL)) {
@@ -89,7 +90,7 @@ Index: src/main/radsniff.c
  			rs_time_print(timestr, sizeof(timestr), &original->packet->timestamp);
  			rs_tv_sub(&original->packet->timestamp, &start_pcap, &elapsed);
  			rs_packet_print(original, original->id, RS_NORMAL, original->in,
-@@ -1621,7 +1632,8 @@ static void rs_got_packet(fr_event_list_t *el, int fd,
+@@ -1620,7 +1631,8 @@ static void rs_got_packet(fr_event_list_t *el, int fd,
  			}
  
  			do {

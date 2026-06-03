@@ -10,9 +10,12 @@
 bin/rad_counter
 @bin bin/radattr
 @bin bin/radclient
+@bin bin/radconf2json
 bin/radcrypt
+@bin bin/raddict2json
 @bin bin/radeapclient
 bin/radlast
+@bin bin/radmod2json
 bin/radsecret
 bin/radsqlrelay
 bin/radtest
@@ -24,10 +27,13 @@ bin/rlm_sqlippool_tool
 include/freeradius/
 include/freeradius/attributes.h
 include/freeradius/autoconf.h
+include/freeradius/automask.h
 include/freeradius/base64.h
 include/freeradius/build.h
+include/freeradius/clients.h
 include/freeradius/conf.h
 include/freeradius/conffile.h
+include/freeradius/connection.h
 include/freeradius/detail.h
 include/freeradius/event.h
 include/freeradius/features.h
@@ -35,6 +41,8 @@ include/freeradius/freeradius.h
 include/freeradius/hash.h
 include/freeradius/heap.h
 include/freeradius/libradius.h
+include/freeradius/listen.h
+include/freeradius/log.h
 include/freeradius/map.h
 include/freeradius/md4.h
 include/freeradius/md5.h
@@ -42,6 +50,7 @@ include/freeradius/missing.h
 include/freeradius/modcall.h
 include/freeradius/modules.h
 include/freeradius/packet.h
+include/freeradius/process.h
 include/freeradius/rad_assert.h
 include/freeradius/radius.h
 include/freeradius/radiusd.h
@@ -89,9 +98,11 @@ include/freeradius/sysutmp.h
 include/freeradius/tcp.h
 include/freeradius/threads.h
 include/freeradius/tls.h
+include/freeradius/tmpl.h
 include/freeradius/token.h
 include/freeradius/udpfromto.h
 include/freeradius/vqp.h
+include/freeradius/xlat.h
 lib/freeradius/
 @so lib/freeradius/libfreeradius-dhcp.so
 @so lib/freeradius/libfreeradius-eap.so
@@ -258,7 +269,6 @@ share/doc/freeradius/rfc/attributes.html
 share/doc/freeradius/rfc/draft-kamath-pppext-eap-mschapv2-00.txt
 share/doc/freeradius/rfc/draft-sterman-aaa-sip-00.txt
 share/doc/freeradius/rfc/genref.pl
-share/doc/freeradius/rfc/leap.txt
 share/doc/freeradius/rfc/per-rfc.pl
 share/doc/freeradius/rfc/rewrite.pl
 share/doc/freeradius/rfc/rfc1157.txt
@@ -667,6 +677,7 @@ share/examples/freeradius/mods-enabled/date
 share/examples/freeradius/mods-enabled/detail
 share/examples/freeradius/mods-enabled/detail.log
 share/examples/freeradius/mods-enabled/digest
+share/examples/freeradius/mods-enabled/dpsk
 share/examples/freeradius/mods-enabled/dynamic_clients
 share/examples/freeradius/mods-enabled/eap
 share/examples/freeradius/mods-enabled/echo
@@ -990,6 +1001,7 @@ share/freeradius/dictionary.rfc8559
 share/freeradius/dictionary.riverbed
 share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin
+share/freeradius/dictionary.rtbrick
 share/freeradius/dictionary.ruckus
 share/freeradius/dictionary.ruggedcom
 share/freeradius/dictionary.sangoma

@@ -1,8 +1,11 @@
+radsniff doesn't cope with openbsd's non-standard use of bpf_timeval
+
 Index: src/main/all.mk
 --- src/main/all.mk.orig
 +++ src/main/all.mk
-@@ -1,3 +1,3 @@
+@@ -1,4 +1,4 @@
 -SUBMAKEFILES := radclient.mk radiusd.mk radsniff.mk radmin.mk radattr.mk \
 +SUBMAKEFILES := radclient.mk radiusd.mk radmin.mk radattr.mk \
  	radwho.mk radlast.mk radtest.mk radzap.mk checkrad.mk radsecret.mk \
- 	libfreeradius-server.mk unittest.mk fuzzer.mk
+ 	libfreeradius-server.mk unittest.mk fuzzer.mk \
+ 	radconf2json.mk radmod2json.mk raddict2json.mk
