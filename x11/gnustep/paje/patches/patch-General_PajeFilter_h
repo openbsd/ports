@@ -1,0 +1,13 @@
+clang22 build breakage fix
+Index: General/PajeFilter.h
+--- General/PajeFilter.h.orig
++++ General/PajeFilter.h
+@@ -40,7 +40,7 @@
+ @class PajeFilter;
+ @interface PajeComponent : NSObject
+ {
+-    PajeFilter *outputComponent;
++    id outputComponent;
+     PajeFilter *inputComponent;
+     SEL outputSelector;
+     PajeTraceController *controller;
