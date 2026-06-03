@@ -1,13 +1,14 @@
 COMMENT=	rendering for complex writing systems
 
-DISTNAME=	graphite2-1.3.14
+V=		1.3.15
+DISTNAME=	graphite2-${V}
 EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS=	graphite2 2.0 # 3.0.1
 
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://scripts.sil.org/cms/scripts/page.php?site_id=projects&item_id=graphite_home
+HOMEPAGE=	https://graphite.sil.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-SITES=		${SITE_SOURCEFORGE:=silgraphite/}
+SITES=		https://github.com/silnrsi/graphite/releases/download/${V}/
 
 MODULES=	devel/cmake \
 		lang/python
