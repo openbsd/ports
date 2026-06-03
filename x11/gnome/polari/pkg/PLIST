@@ -24,6 +24,22 @@ share/help/C/polari/legal.xml
 share/help/C/polari/network-connect.page
 share/help/C/polari/overview.page
 share/help/C/polari/sharing.page
+share/help/bg/
+share/help/bg/polari/
+share/help/bg/polari/images/
+share/help/bg/polari/images/Polari.png
+share/help/bg/polari/images/polari-paste.png
+share/help/bg/polari/images/polari-screenshot.png
+share/help/bg/polari/index.page
+share/help/bg/polari/introduction.page
+share/help/bg/polari/irc-commands.page
+share/help/bg/polari/irc-join-room.page
+share/help/bg/polari/irc-nick-password.page
+share/help/bg/polari/irc-start-conversation.page
+share/help/bg/polari/legal.xml
+share/help/bg/polari/network-connect.page
+share/help/bg/polari/overview.page
+share/help/bg/polari/sharing.page
 share/help/ca/
 share/help/ca/polari/
 share/help/ca/polari/images/
@@ -264,6 +280,22 @@ share/help/ru/polari/legal.xml
 share/help/ru/polari/network-connect.page
 share/help/ru/polari/overview.page
 share/help/ru/polari/sharing.page
+share/help/sr/
+share/help/sr/polari/
+share/help/sr/polari/images/
+share/help/sr/polari/images/Polari.png
+share/help/sr/polari/images/polari-paste.png
+share/help/sr/polari/images/polari-screenshot.png
+share/help/sr/polari/index.page
+share/help/sr/polari/introduction.page
+share/help/sr/polari/irc-commands.page
+share/help/sr/polari/irc-join-room.page
+share/help/sr/polari/irc-nick-password.page
+share/help/sr/polari/irc-start-conversation.page
+share/help/sr/polari/legal.xml
+share/help/sr/polari/network-connect.page
+share/help/sr/polari/overview.page
+share/help/sr/polari/sharing.page
 share/help/sv/
 share/help/sv/polari/
 share/help/sv/polari/images/
@@ -383,6 +415,7 @@ share/polari/
 share/polari/gir-1.0/
 share/polari/gir-1.0/Polari-1.0.gir
 share/polari/thumbnailer.js
+share/telepathy/clients/
 share/telepathy/clients/Polari.client
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
