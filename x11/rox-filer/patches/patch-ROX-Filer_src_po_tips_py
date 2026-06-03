@@ -1,0 +1,22 @@
+from https://bugs.gentoo.org/950161
+
+Index: ROX-Filer/src/po/tips.py
+--- ROX-Filer/src/po/tips.py.orig
++++ ROX-Filer/src/po/tips.py
+@@ -4,14 +4,14 @@ from xml.sax import *
+ from xml.sax.handler import ContentHandler
+ import string, os
+ 
+-print "Extracting translatable bits from Options.xml..."
++print("Extracting translatable bits from Options.xml...")
+ 
+ class Handler(ContentHandler):
+ 	data = ""
+ 
+ 	def startElement(self, tag, attrs):
+ 		for x in ['title', 'label', 'end', 'unit']:
+-			if attrs.has_key(x):
++			if x in attrs :
+ 				self.trans(attrs[x])
+ 		self.data = ""
+ 	

@@ -5,22 +5,13 @@
 Index: ROX-Filer/src/Makefile.in
 --- ROX-Filer/src/Makefile.in.orig
 +++ ROX-Filer/src/Makefile.in
-@@ -7,7 +7,7 @@ CC = @CC@
- .SUFFIXES: .c .o
- 
- PKG_CONFIG = @PKG_CONFIG@
--LIBS = @LIBS@ @LFS_LDFLAGS@ -lICE -lSM
-+LIBS = @LIBS@ @LFS_LDFLAGS@ -lICE -lSM -lm
- #PROF = -fprofile-arcs -pg
- 
- PKG_CONFIG_FLAGS=
-@@ -47,10 +47,6 @@ OBJECTS = abox.o action.o appinfo.o appmenu.o bind.o b
+@@ -48,10 +48,6 @@ OBJECTS = abox.o action.o appinfo.o appmenu.o bind.o b
  ${PROG}: ${OBJECTS}
  	${CC} -o "${PROG}" ${OBJECTS} ${LDFLAGS}
  	mv "${PROG}" "${PLATFORM_DIR}"
 -	-(cd "${PLATFORM_DIR}" && \
 -	 objcopy --only-keep-debug ROX-Filer ROX-Filer.dbg && \
--	 strip ROX-Filer && \
+-#	 strip ROX-Filer && \
 -	 objcopy --add-gnu-debuglink=ROX-Filer.dbg ROX-Filer)
  
  clean:

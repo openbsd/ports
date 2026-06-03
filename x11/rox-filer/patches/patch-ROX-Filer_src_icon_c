@@ -1,0 +1,43 @@
+from https://bugs.gentoo.org/950161
+
+Index: ROX-Filer/src/icon.c
+--- ROX-Filer/src/icon.c.orig
++++ ROX-Filer/src/icon.c
+@@ -1389,25 +1389,25 @@ static void create_menu(void)
+ #define adi menu_add_item
+ #define ads menu_add_stock
+ 
+-	ads(N_("About ROX-Filer..."), menu_rox_help, HELP_ABOUT , GTK_STOCK_DIALOG_INFO);
+-	ads(N_("Show Help Files"   ), menu_rox_help, HELP_DIR   , GTK_STOCK_HELP);
+-	adi(N_("Manual"            ), menu_rox_help, HELP_MANUAL);
++	ads(N_("About ROX-Filer..."), (GtkItemFactoryCallback) menu_rox_help, HELP_ABOUT , GTK_STOCK_DIALOG_INFO);
++	ads(N_("Show Help Files"   ), (GtkItemFactoryCallback) menu_rox_help, HELP_DIR   , GTK_STOCK_HELP);
++	adi(N_("Manual"            ), (GtkItemFactoryCallback) menu_rox_help, HELP_MANUAL);
+ 	menu_add_separator();
+-	ads(N_("Options..."    ), menu_show_options, 0, GTK_STOCK_PREFERENCES);
+-	ads(N_("Home Directory"), open_home        , 0, GTK_STOCK_HOME       );
++	ads(N_("Options..."    ), (GtkItemFactoryCallback) menu_show_options, 0, GTK_STOCK_PREFERENCES);
++	ads(N_("Home Directory"), (GtkItemFactoryCallback) open_home        , 0, GTK_STOCK_HOME       );
+ 
+ 	icon_file_menu = menu_start(N_("File"), icon_menu);
+ 
+-	adi(N_("Shift Open"       ), file_op, ACTION_SHIFT     );
+-	ads(N_("Properties"       ), file_op, ACTION_PROPERTIES, GTK_STOCK_PROPERTIES);
+-	ads(N_("Set Run Action..."), file_op, ACTION_RUN_ACTION, GTK_STOCK_EXECUTE   );
+-	adi(N_("Set Icon..."      ), file_op, ACTION_SET_ICON  );
++	adi(N_("Shift Open"       ), (GtkItemFactoryCallback) file_op, ACTION_SHIFT     );
++	ads(N_("Properties"       ), (GtkItemFactoryCallback) file_op, ACTION_PROPERTIES, GTK_STOCK_PROPERTIES);
++	ads(N_("Set Run Action..."), (GtkItemFactoryCallback) file_op, ACTION_RUN_ACTION, GTK_STOCK_EXECUTE   );
++	adi(N_("Set Icon..."      ), (GtkItemFactoryCallback) file_op, ACTION_SET_ICON  );
+ 
+ 	menu_start(NULL, icon_menu);
+ 
+-	ads(N_("Edit Item"     ), file_op     , ACTION_EDIT    , GTK_STOCK_PROPERTIES);
+-	ads(N_("Show Location" ), file_op     , ACTION_LOCATION, GTK_STOCK_JUMP_TO   );
+-	ads(N_("Remove Item(s)"), remove_items, 0              , GTK_STOCK_REMOVE    );
++	ads(N_("Edit Item"     ), (GtkItemFactoryCallback) file_op     , ACTION_EDIT    , GTK_STOCK_PROPERTIES);
++	ads(N_("Show Location" ), (GtkItemFactoryCallback) file_op     , ACTION_LOCATION, GTK_STOCK_JUMP_TO   );
++	ads(N_("Remove Item(s)"), (GtkItemFactoryCallback) remove_items, 0              , GTK_STOCK_REMOVE    );
+ 	menu_add_separator();
+ 
+ 	/* File '' label... */

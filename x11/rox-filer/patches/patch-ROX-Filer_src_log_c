@@ -1,0 +1,14 @@
+from https://bugs.gentoo.org/950161
+
+Index: ROX-Filer/src/log.c
+--- ROX-Filer/src/log.c.orig
++++ ROX-Filer/src/log.c
+@@ -155,7 +155,7 @@ void log_show_window()
+ 	GtkCellRenderer *renderer;
+ 	gchar *ids[] = {"Log viewer", NULL};
+ 
+-	builder = get_gtk_builder(ids);
++	builder = get_gtk_builder((gchar**)ids); 
+ 
+ 	tv = GTK_TREE_VIEW(gtk_builder_get_object(builder, "log_list"));
+ 	gtk_tree_view_set_model(tv, GTK_TREE_MODEL(log));

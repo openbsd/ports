@@ -1,0 +1,16 @@
+from https://bugs.gentoo.org/950161
+
+Index: ROX-Filer/src/run.c
+--- ROX-Filer/src/run.c.orig
++++ ROX-Filer/src/run.c
+@@ -243,8 +243,8 @@ void run_with_args(const char *path, DirItem *item, co
+ 
+ static FilerWindow *open_or_change(
+ 		FilerWindow *fw,
+-		const gchar *pto,
+-		const gchar *pfrom,
++		const guchar *pto,
++		const guchar *pfrom,
+ 		OpenFlags flags)
+ {
+ 	FilerWindow *ret = fw;

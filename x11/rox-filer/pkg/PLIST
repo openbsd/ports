@@ -191,7 +191,6 @@ rox/ROX-Filer/images/dirs.png
 rox/ROX-Filer/images/iconified.png
 rox/ROX-Filer/images/rox-mount.png
 rox/ROX-Filer/images/rox-mounted.png
-rox/ROX-Filer/images/rox-select.png
 rox/ROX-Filer/images/rox-show-details.png
 rox/ROX-Filer/images/rox-show-hidden.png
 rox/ROX-Filer/images/rox-symlink.png
@@ -199,9 +198,12 @@ rox/ROX-Filer/images/rox-xattr.png
 rox/ROX-Filer/images/symlink.png
 rox/ROX-Filer/style.css
 rox/ROX-Filer/subclasses
+share/applications/
+share/applications/rox.desktop
 share/rox/
 share/rox/Choices/
 share/rox/Choices/MIME-types/
 share/rox/Choices/MIME-types/application_postscript
 share/rox/Choices/MIME-types/text
 share/rox/Choices/MIME-types/text_html
+@tag update-desktop-database

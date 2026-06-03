@@ -1,6 +1,7 @@
---- ROX-Filer/src/config.h.in.orig	Sun May 10 14:22:54 2009
-+++ ROX-Filer/src/config.h.in	Wed Aug  4 21:24:15 2010
-@@ -60,7 +60,7 @@
+Index: ROX-Filer/src/config.h.in
+--- ROX-Filer/src/config.h.in.orig
++++ ROX-Filer/src/config.h.in
+@@ -62,7 +62,7 @@
  
  /* printf format string to print file sizes */
  #ifdef LARGE_FILE_SUPPORT

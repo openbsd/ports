@@ -1,0 +1,11 @@
+Index: ROX-Filer/src/i18n.c
+--- ROX-Filer/src/i18n.c.orig
++++ ROX-Filer/src/i18n.c
+@@ -23,6 +23,7 @@
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <string.h>
++#include <locale.h>
+ #ifdef HAVE_LIBINTL_H
+ #include <libintl.h>
+ #endif

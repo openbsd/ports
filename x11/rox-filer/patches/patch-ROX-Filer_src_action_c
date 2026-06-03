@@ -1,0 +1,13 @@
+Index: ROX-Filer/src/action.c
+--- ROX-Filer/src/action.c.orig
++++ ROX-Filer/src/action.c
+@@ -1608,7 +1608,9 @@ static void do_copy2(const char *path, const char *des
+ 			{
+ 				/* (just been created then) */
+ 				lchown(safe_dest, info.st_uid, info.st_gid);
++#if defined(HAVE_GETXATTR)
+ 				xattr_copy(safe_path, safe_dest);
++#endif
+ 				send_check_path(safe_dest);
+ 			}
+ 

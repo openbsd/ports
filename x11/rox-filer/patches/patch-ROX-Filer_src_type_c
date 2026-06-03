@@ -1,14 +1,39 @@
-warning: absolute value function 'abs' given an argument of type 'long long' but has parameter of type 'int' which may cause truncation of value
+from https://bugs.gentoo.org/950161
 
 Index: ROX-Filer/src/type.c
 --- ROX-Filer/src/type.c.orig
 +++ ROX-Filer/src/type.c
-@@ -466,7 +466,7 @@ MaskedPixmap *type_to_icon(MIME_type *type)
- 	if (type->image)
- 	{
- 		/* Yes - don't recheck too often */
--		if (abs(now - type->image_time) < 2)
-+		if (llabs(now - type->image_time) < 2)
- 		{
- 			g_object_ref(type->image);
- 			return type->image;
+@@ -285,7 +285,7 @@ MIME_type *type_get_type(const guchar *path)
+ 	DirItem		*item;
+ 	MIME_type	*type = NULL;
+ 
+-	item = diritem_new("");
++	item = diritem_new((const guchar *)"");
+ 	diritem_restat(path, item, NULL, TRUE);
+ 	if (item->base_type != TYPE_ERROR)
+ 		type = item->mime_type;
+@@ -341,18 +341,13 @@ char *handler_for(MIME_type *type)
+ 	char	*open;
+ 	char	*target;
+ 
+-	if (type == NULL)
+-		open = choices_find_xdg_path_load("all", "MIME-types", SITE);
+-	else
+-	{
+-		type_name = g_strconcat(type->media_type, "_", type->subtype, NULL);
+-		open = choices_find_xdg_path_load(type_name, "MIME-types", SITE);
+-		g_free(type_name);
++	type_name = g_strconcat(type->media_type, "_", type->subtype, NULL);
++	open = choices_find_xdg_path_load(type_name, "MIME-types", SITE);
++	g_free(type_name);
+ 
+-		if (!open)
+-			open = choices_find_xdg_path_load(type->media_type,
+-							  "MIME-types", SITE);
+-	}
++	if (!open)
++		open = choices_find_xdg_path_load(type->media_type,
++						  "MIME-types", SITE);
+ 
+ 	if (!open)
+ 		return NULL;

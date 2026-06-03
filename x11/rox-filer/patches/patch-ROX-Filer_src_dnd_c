@@ -1,0 +1,24 @@
+from https://bugs.gentoo.org/950161
+
+Index: ROX-Filer/src/dnd.c
+--- ROX-Filer/src/dnd.c.orig
++++ ROX-Filer/src/dnd.c
+@@ -1102,12 +1102,12 @@ static void prompt_action(GList *paths, gchar *dest)
+ 	{
+ 		dnd_menu = menu_start("<dnd>", NULL);
+ #define adi menu_add_item
+-		adi(N_("Copy"                     ), menuitem_response, MENU_COPY        );
+-		adi(N_("Move"                     ), menuitem_response, MENU_MOVE        );
+-		adi(N_("Link (relative)"          ), menuitem_response, MENU_LINK_REL    );
+-		adi(N_("Link (absolute)"          ), menuitem_response, MENU_LINK_ABS    );
+-		adi(N_("Link (relative, sym path)"), menuitem_response, MENU_LINK_REL_SYM);
+-		adi(N_("Link (absolute, sym path)"), menuitem_response, MENU_LINK_ABS_SYM);
++		adi(N_("Copy"                     ), (GtkItemFactoryCallback) menuitem_response, MENU_COPY        );
++		adi(N_("Move"                     ), (GtkItemFactoryCallback) menuitem_response, MENU_MOVE        );
++		adi(N_("Link (relative)"          ), (GtkItemFactoryCallback) menuitem_response, MENU_LINK_REL    );
++		adi(N_("Link (absolute)"          ), (GtkItemFactoryCallback) menuitem_response, MENU_LINK_ABS    );
++		adi(N_("Link (relative, sym path)"), (GtkItemFactoryCallback) menuitem_response, MENU_LINK_REL_SYM);
++		adi(N_("Link (absolute, sym path)"), (GtkItemFactoryCallback) menuitem_response, MENU_LINK_ABS_SYM);
+ 	}
+ 
+ 	/* Shade 'Set Icon' if there are multiple files */
