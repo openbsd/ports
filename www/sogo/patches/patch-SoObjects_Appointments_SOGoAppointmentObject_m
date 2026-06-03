@@ -1,0 +1,12 @@
+Index: SoObjects/Appointments/SOGoAppointmentObject.m
+--- SoObjects/Appointments/SOGoAppointmentObject.m.orig
++++ SoObjects/Appointments/SOGoAppointmentObject.m
+@@ -1551,7 +1551,7 @@ inRecurrenceExceptionsForEvent: (iCalEvent *) theEvent
+       if (addDelegate)
+         {
+           delegatedUID = [delegate uidInContext: context];
+-          delegates = [NSArray arrayWithObject: delegate];
++          delegates = [NSMutableArray arrayWithObject: delegate];
+           [event addToAttendees: delegate];
+           
+           if (delegatedUID)

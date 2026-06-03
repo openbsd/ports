@@ -1,0 +1,12 @@
+Index: UI/Common/UIxToolbar.m
+--- UI/Common/UIxToolbar.m.orig
++++ UI/Common/UIxToolbar.m
+@@ -138,7 +138,7 @@
+   if ((tb = [pathToConfig objectForKey:path]) != nil)
+     return [tb isNotNull] ? (id)tb : nil;
+   
+-  if ((tb = [NSArray arrayWithContentsOfFile:path]) == nil)
++  if ((tb = [NSDictionary arrayWithContentsOfFile:path]) == nil)
+     [self errorWithFormat:@"Could not load toolbar resource: %@", _name];
+ 
+   if (pathToConfig == nil)

@@ -1,0 +1,12 @@
+Index: UI/MainUI/SOGoRootPage.m
+--- UI/MainUI/SOGoRootPage.m.orig
++++ UI/MainUI/SOGoRootPage.m
+@@ -630,7 +630,7 @@ static const NSString *kJwtKey = @"jwt";
+   WOResponse *response;
+   NSString *login, *redirectLocation, *serverUrl;
+   NSString *sessionState, *code, *refreshTokenValue;
+-  NSURL *newLocation, *oldLocation;
++  NSString *newLocation, *oldLocation;
+   NSDictionary *formValues;
+   SOGoUser *loggedInUser;
+   WOCookie *openIdCookie, *openIdCookieLocation, *openIdRefreshCookie, *domainCookie;

@@ -1,0 +1,12 @@
+Index: UI/Scheduler/UIxAppointmentEditor.m
+--- UI/Scheduler/UIxAppointmentEditor.m.orig
++++ UI/Scheduler/UIxAppointmentEditor.m
+@@ -535,7 +535,7 @@
+ {
+   NSArray *removeAttendees;
+   NSDictionary *params;
+-  NSString *jsonResponse;
++  NSDictionary *jsonResponse;
+   NSException *ex;
+   iCalEvent *event;
+   SOGoAppointmentFolder *previousCalendar;

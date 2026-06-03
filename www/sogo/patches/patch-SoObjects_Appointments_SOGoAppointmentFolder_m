@@ -1,0 +1,15 @@
+Index: SoObjects/Appointments/SOGoAppointmentFolder.m
+--- SoObjects/Appointments/SOGoAppointmentFolder.m.orig
++++ SoObjects/Appointments/SOGoAppointmentFolder.m
+@@ -466,9 +466,9 @@ static Class iCalEventK = nil;
+         {
+           sogoUser = [SOGoUser userWithLogin: theIdentifier roles: nil];
+           if (sogoUser)
+-            allUsers = [NSArray arrayWithObject: sogoUser];
++            allUsers = [NSMutableArray arrayWithObject: sogoUser];
+           else
+-            allUsers = [NSArray array];
++            allUsers = [NSMutableArray array];
+         }
+ 
+       for (i = 0; i < [allUsers count]; i++)

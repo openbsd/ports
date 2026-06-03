@@ -1,0 +1,12 @@
+Index: UI/Scheduler/UIxComponentEditor.m
+--- UI/Scheduler/UIxComponentEditor.m.orig
++++ UI/Scheduler/UIxComponentEditor.m
+@@ -619,7 +619,7 @@ static NSArray *reminderValues = nil;
+   if(url && attachUrls)
+     [attachUrls addObject: [NSDictionary dictionaryWithObject: [url absoluteString] forKey: @"value"]];
+   else
+-    attachUrls = [NSArray arrayWithObjects: [NSDictionary dictionaryWithObject: [url absoluteString] forKey: @"value"], nil];
++    attachUrls = [NSMutableArray arrayWithObjects: [NSDictionary dictionaryWithObject: [url absoluteString] forKey: @"value"], nil];
+ 
+   return attachUrls;
+ }

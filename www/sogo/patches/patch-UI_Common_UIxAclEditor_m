@@ -1,0 +1,21 @@
+Index: UI/Common/UIxAclEditor.m
+--- UI/Common/UIxAclEditor.m.orig
++++ UI/Common/UIxAclEditor.m
+@@ -167,7 +167,7 @@
+       if (!defaultUserDisable && defaultUserID)
+       {
+ 
+-          userData = [NSDictionary dictionaryWithObjectsAndKeys:
++          userData = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                      defaultUserID, @"uid",
+                                    [self labelForKey: @"Any Authenticated User"], @"cn",
+                                    @"public-user", @"userClass",
+@@ -178,7 +178,7 @@
+       if ([self canSubscribeUsers] && [self isPublicAccessEnabled])
+         {
+           // Add the 'public access' user
+-          userData = [NSDictionary dictionaryWithObjectsAndKeys:
++          userData = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                      @"anonymous", @"uid",
+                                    [self labelForKey: @"Public Access"], @"cn",
+                                    @"public-user", @"userClass",

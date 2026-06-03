@@ -1,0 +1,12 @@
+Index: SoObjects/SOGo/SOGoWebDAVAclManager.m
+--- SoObjects/SOGo/SOGoWebDAVAclManager.m.orig
++++ SoObjects/SOGo/SOGoWebDAVAclManager.m
+@@ -248,7 +248,7 @@ static NSNumber *yesObject = nil;
+     [privilege addObject:
+ 		 [self _supportedPrivilegeSetFromPermission: currentPerm]];
+ 
+-  return davElementWithContent (@"supported-privilege",
++  return (SOGoWebDAVValue*) davElementWithContent (@"supported-privilege",
+ 				@"DAV:", privilege);
+ }
+ 

@@ -1,0 +1,12 @@
+Index: UI/Contacts/UIxContactView.m
+--- UI/Contacts/UIxContactView.m.orig
++++ UI/Contacts/UIxContactView.m
+@@ -417,7 +417,7 @@
+                 [allUserEmails addObject: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           email, @"value", @"work", @"type", nil]];
+               }
+-              userData = [NSDictionary dictionaryWithObjectsAndKeys:
++              userData = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                        [user loginInDomain], @"c_uid",
+                                        [user cn], @"c_cn",
+                                        allUserEmails, @"emails", nil];

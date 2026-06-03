@@ -1,0 +1,14 @@
+Index: UI/Contacts/UIxContactsListActions.m
+--- UI/Contacts/UIxContactsListActions.m.orig
++++ UI/Contacts/UIxContactsListActions.m
+@@ -141,8 +141,8 @@
+ {
+   id <SOGoContactFolder> folder, sourceFolder;
+   NSString *ascending, *valueText;
+-  NSArray *searchFields, *fields, *folders, *tmpGlobalAddressBookResults;
+-  NSMutableArray *filteredContacts, *headers, *results, *globalAddressBookResults;
++  NSArray *results, *searchFields, *fields, *folders, *tmpGlobalAddressBookResults;
++  NSMutableArray *filteredContacts, *headers, *globalAddressBookResults;
+   NSDictionary *data, *contact;
+   BOOL excludeLists;
+   NSComparisonResult ordering;

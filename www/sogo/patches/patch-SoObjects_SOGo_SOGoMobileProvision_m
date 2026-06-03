@@ -1,0 +1,12 @@
+Index: SoObjects/SOGo/SOGoMobileProvision.m
+--- SoObjects/SOGo/SOGoMobileProvision.m.orig
++++ SoObjects/SOGo/SOGoMobileProvision.m
+@@ -27,7 +27,7 @@
+ 
+ @implementation SOGoMobileProvision
+ 
+-+ (NSString *)_plistWithContext:(WOContext *)context andPath:(NSString *)path andType:(ProvisioningType) provisioningType andName:(NSString *)name
+++ (NSData *)_plistWithContext:(WOContext *)context andPath:(NSString *)path andType:(ProvisioningType) provisioningType andName:(NSString *)name
+ {
+   NSData *plistData;
+   SOGoUser *activeUser;

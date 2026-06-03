@@ -1,0 +1,12 @@
+Index: SoObjects/Appointments/SOGoComponentOccurence.m
+--- SoObjects/Appointments/SOGoComponentOccurence.m.orig
++++ SoObjects/Appointments/SOGoComponentOccurence.m
+@@ -159,7 +159,7 @@
+   else
+     {
+       if ([container respondsToSelector: @selector (prepareDeleteOccurence:)])
+-	[container prepareDeleteOccurence: component];
++	[container prepareDeleteOccurence: (iCalEvent*) component];
+ 
+       recurrenceId = [component recurrenceId];
+ 

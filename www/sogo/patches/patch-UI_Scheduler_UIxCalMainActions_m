@@ -1,0 +1,12 @@
+Index: UI/Scheduler/UIxCalMainActions.m
+--- UI/Scheduler/UIxCalMainActions.m.orig
++++ UI/Scheduler/UIxCalMainActions.m
+@@ -90,7 +90,7 @@
+   if (ex)
+     {
+       httpStatus = 500;
+-      jsonResponse = [NSDictionary dictionaryWithObjectsAndKeys:
++      jsonResponse = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                      @"failure", @"status",
+                                    [ex reason], @"message",
+                                    nil];

@@ -1,0 +1,12 @@
+Index: UI/Common/UIxFolderActions.m
+--- UI/Common/UIxFolderActions.m.orig
++++ UI/Common/UIxFolderActions.m
+@@ -108,7 +108,7 @@
+           objectCreator = ([owner isEqualToString: login] || [allACLs containsObject: SOGoRole_ObjectCreator]);
+           objectEditor = ([owner isEqualToString: login] || [allACLs containsObject: SOGoRole_ObjectEditor]);
+           objectEraser = ([owner isEqualToString: login] || [allACLs containsObject: SOGoRole_ObjectEraser]);
+-          acls = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithBool: objectCreator], @"objectCreator",
++          acls = [NSMutableDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithBool: objectCreator], @"objectCreator",
+                                    [NSNumber numberWithBool: objectEditor], @"objectEditor",
+                                    [NSNumber numberWithBool: objectEraser], @"objectEraser", nil];
+ 

@@ -1,0 +1,12 @@
+Index: UI/MailerUI/UIxMailView.m
+--- UI/MailerUI/UIxMailView.m.orig
++++ UI/MailerUI/UIxMailView.m
+@@ -339,7 +339,7 @@ static NSString *mailETag = nil;
+   
+   if (![self message]) // TODO: redirect to proper error
+     {
+-      data = [NSDictionary dictionaryWithObject: [self labelForKey: @"Did not find specified message"]
++      data = [NSMutableDictionary dictionaryWithObject: [self labelForKey: @"Did not find specified message"]
+                                          forKey: @"message"];
+       return [self responseWithStatus: 404 /* Not Found */
+                 andJSONRepresentation: data];

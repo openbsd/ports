@@ -1,0 +1,21 @@
+Index: SoObjects/SOGo/SOGoCacheGCSObject.m
+--- SoObjects/SOGo/SOGoCacheGCSObject.m.orig
++++ SoObjects/SOGo/SOGoCacheGCSObject.m
+@@ -599,7 +599,7 @@ static EOAttribute *textColumn = nil;
+         parentPathValue = @"NULL";
+ 
+       if ([GCSFolderManager singleStoreMode])
+-        sql = [NSString stringWithFormat:
++        sql = [NSMutableString stringWithFormat:
+                           (@"INSERT INTO %@"
+                            @"  (c_uid, c_path, c_parent_path, c_type, c_creationdate, c_lastmodified,"
+                            @"   c_deleted, c_version, c_content)"
+@@ -610,7 +610,7 @@ static EOAttribute *textColumn = nil;
+                         (int)creationDateValue, (int)lastModifiedValue,
+                         propsValue];
+       else
+-        sql = [NSString stringWithFormat:
++        sql = [NSMutableString stringWithFormat:
+                           (@"INSERT INTO %@"
+                            @"  (c_path, c_parent_path, c_type, c_creationdate, c_lastmodified,"
+                            @"   c_deleted, c_version, c_content)"

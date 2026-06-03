@@ -1,0 +1,28 @@
+Index: API/SOGoAPIDispatcher.m
+--- API/SOGoAPIDispatcher.m.orig
++++ API/SOGoAPIDispatcher.m
+@@ -83,7 +83,7 @@ void handle_api_terminate(int signum)
+                                   message, @"error",
+                                   nil];
+   [response setStatus: status];
+-  [response setContent: [msg jsonRepresentation]];
++  [response setContent: (NSData*) [msg jsonRepresentation]];
+ }
+ 
+ - (NSString *) _getActionFromUri: (NSString *) _uri
+@@ -388,7 +388,7 @@ void handle_api_terminate(int signum)
+   
+ 
+   //Make the response
+-  [theResponse setContent: [ret jsonRepresentation]];
++  [theResponse setContent: (NSData*) [ret jsonRepresentation]];
+ 
+   RELEASE(context);
+   RELEASE(pool);
+@@ -396,4 +396,4 @@ void handle_api_terminate(int signum)
+   return nil;
+ }
+ 
+-@end
+\ No newline at end of file
++@end

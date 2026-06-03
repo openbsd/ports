@@ -1,0 +1,22 @@
+Index: UI/Contacts/UIxContactEditor.m
+--- UI/Contacts/UIxContactEditor.m.orig
++++ UI/Contacts/UIxContactEditor.m
+@@ -494,6 +494,7 @@ static Class SOGoContactGCSEntryK = Nil;
+     {
+       // Check if a similar card already exists in the same addressbook
+       EOKeyValueQualifier *qualifier;
++      EOAndQualifier *aqualifier;
+       NSEnumerator *allKeys;
+       NSMutableArray *qualifiers;
+       NSMutableDictionary *checks;
+@@ -546,8 +547,8 @@ static Class SOGoContactGCSEntryK = Nil;
+               [qualifier autorelease];
+               [qualifiers addObject: qualifier];
+             }
+-	  qualifier = [[EOAndQualifier alloc] initWithQualifierArray: qualifiers];
+-	  similarRecords = [(SOGoContactGCSFolder *) [co container] lookupContactsWithQualifier: qualifier];
++	  aqualifier = [[EOAndQualifier alloc] initWithQualifierArray: qualifiers];
++	  similarRecords = [(SOGoContactGCSFolder *) [co container] lookupContactsWithQualifier: aqualifier];
+ 	}
+     }
+ 

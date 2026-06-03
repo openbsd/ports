@@ -1,0 +1,12 @@
+Index: SoObjects/SOGo/SOGoSession.m
+--- SoObjects/SOGo/SOGoSession.m.orig
++++ SoObjects/SOGo/SOGoSession.m
+@@ -70,7 +70,7 @@
+ 	  // invoke an action method on SOGo.
+ 	  [folder writeRecordForEntryWithID: theSessionKey
+ 		  value: value
+-		  creationDate: [NSDate dateWithTimeIntervalSince1970: [[d objectForKey: @"c_creationdate"] intValue]]
++		  creationDate: [NSCalendarDate dateWithTimeIntervalSince1970: [[d objectForKey: @"c_creationdate"] intValue]]
+ 		  lastSeenDate: [NSCalendarDate date]];
+ 	}
+     }

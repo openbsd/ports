@@ -1,0 +1,12 @@
+Index: SoObjects/SOGo/SOGoUserManager.m
+--- SoObjects/SOGo/SOGoUserManager.m.orig
++++ SoObjects/SOGo/SOGoUserManager.m
+@@ -1401,7 +1401,7 @@ static const NSString *kObfuscatedSecondaryEmailKey = 
+   NSDictionary *info, *data;
+   SOGoSystemDefaults *sd;
+   NSString *uid, *suffix;
+-  NSMutableString *obfuscatedSecondaryEmail;
++  NSString *obfuscatedSecondaryEmail;
+   NSInteger i, j;
+   NSRange range;
+ 

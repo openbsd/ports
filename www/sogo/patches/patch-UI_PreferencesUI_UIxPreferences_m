@@ -1,0 +1,30 @@
+Index: UI/PreferencesUI/UIxPreferences.m
+--- UI/PreferencesUI/UIxPreferences.m.orig
++++ UI/PreferencesUI/UIxPreferences.m
+@@ -273,7 +273,7 @@ static NSArray *reminderValues = nil;
+   NSObject <SOGoSource> *userSource;
+   NSMutableDictionary *translations = [[NSMutableDictionary alloc] init];
+   NSDictionary *policy;
+-  NSDictionary *translatedUserPolicy;
++  NSArray *translatedUserPolicy;
+   
+   userSource = [user authenticationSource];
+   
+@@ -441,7 +441,7 @@ static NSArray *reminderValues = nil;
+ {
+   NSMutableArray *options;
+ 
+-  options = [NSArray arrayWithObjects: @"selected", @"personal", @"first", nil];
++  options = [NSMutableArray arrayWithObjects: @"selected", @"personal", @"first", nil];
+ 
+   return options;
+ }
+@@ -962,7 +962,7 @@ static NSArray *reminderValues = nil;
+   }
+   else
+   {
+-    defaultCategoriesLabels = [localizedLabels allValues];
++    defaultCategoriesLabels = (NSMutableArray*) [localizedLabels allValues];
+   }
+ 
+ 

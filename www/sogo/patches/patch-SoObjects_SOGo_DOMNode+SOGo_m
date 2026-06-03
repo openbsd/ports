@@ -1,0 +1,12 @@
+Index: SoObjects/SOGo/DOMNode+SOGo.m
+--- SoObjects/SOGo/DOMNode+SOGo.m.orig
++++ SoObjects/SOGo/DOMNode+SOGo.m
+@@ -63,7 +63,7 @@
+   id <DOMElement> currentElement;
+   unsigned int count, max;
+ 
+-  childElementsWithTag = [NSMutableArray array];
++  childElementsWithTag = [NSMutableArray<DOMNodeList> array];
+ 
+   nodes = [self childNodes];
+   max = [nodes length];

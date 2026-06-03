@@ -1,0 +1,12 @@
+Index: UI/Scheduler/UIxTaskEditor.m
+--- UI/Scheduler/UIxTaskEditor.m.orig
++++ UI/Scheduler/UIxTaskEditor.m
+@@ -318,7 +318,7 @@
+ {
+   NSDictionary *params;
+   NSException *ex;
+-  NSString *jsonResponse;
++  NSDictionary *jsonResponse;
+   SOGoAppointmentFolder *previousCalendar;
+   SOGoTaskObject *co;
+   SoSecurityManager *sm;

@@ -1,0 +1,21 @@
+Index: SoObjects/SOGo/SOGoSieveManager.m
+--- SoObjects/SOGo/SOGoSieveManager.m.orig
++++ SoObjects/SOGo/SOGoSieveManager.m
+@@ -667,7 +667,7 @@ static NSString *sieveScriptName = @"sogo";
+           if ([[currentScript objectForKey: @"active"] boolValue])
+             {
+               sieveText = [self _convertScriptToSieve: currentScript
+-                                            withReq: newRequirements
++                                            withReq: (NSMutableDictionary*) newRequirements
+                                             delimiter: delimiter];
+               [sieveScript appendString: sieveText];
+             }
+@@ -1309,7 +1309,7 @@ static NSString *sieveScriptName = @"sogo";
+ 
+   if ([req count])
+     {
+-      header = [NSString stringWithFormat: @"require [\"%@\"];\r\n",
++      header = [NSMutableString stringWithFormat: @"require [\"%@\"];\r\n",
+                          [[req uniqueObjects] componentsJoinedByString: @"\",\""]];
+       [script insertString: header  atIndex: 0];
+     }

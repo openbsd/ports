@@ -1,0 +1,14 @@
+Fix build with llvm22
+
+Index: SOPE/GDLContentStore/GCSFolder.m
+--- SOPE/GDLContentStore/GCSFolder.m.orig
++++ SOPE/GDLContentStore/GCSFolder.m
+@@ -1146,7 +1146,7 @@ andAttribute: (EOAttribute *)_attribute
+         // Update c_startdate for appointments
+         if ([theComponent respondsToSelector:@selector(startDate)]) {
+           NSTimeInterval t;
+-          startDate = [theComponent startDate];
++          startDate = (NSCalendarDate*) [theComponent startDate];
+           t = [startDate timeIntervalSince1970];
+           if (startDate) {
+             if (t < (long long)INT_MAX && t > (long long)INT_MIN) {

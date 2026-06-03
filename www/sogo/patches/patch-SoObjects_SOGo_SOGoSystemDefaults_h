@@ -1,0 +1,12 @@
+Index: SoObjects/SOGo/SOGoSystemDefaults.h
+--- SoObjects/SOGo/SOGoSystemDefaults.h.orig
++++ SoObjects/SOGo/SOGoSystemDefaults.h
+@@ -38,7 +38,7 @@ static const NSString *kDisableSharingCalendar = @"Cal
+ - (NSArray *) domainIds;
+ - (BOOL) doesLoginTypeByDomain;
+ - (NSString *) getLoginTypeForDomain: (NSString*) _domain;
+-- (NSString *) getLoginConfigForDomain: (NSDictionary*) _domain;
++- (NSDictionary *) getLoginConfigForDomain: (NSString*) _domain;
+ - (NSString *) getImapAuthMechForDomain: (NSString*) _domain;
+ - (NSString *) getSmtpAuthMechForDomain: (NSString*) _domain;
+ - (BOOL) forbidUnknownDomainsAuth;
