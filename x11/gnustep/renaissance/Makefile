@@ -1,7 +1,7 @@
 COMMENT =	GNUstep layer to write portable GUIs
 
 VERSION =	0.9.0
-REVISION =	16
+REVISION =	17
 DISTNAME =	Renaissance-${VERSION}
 PKGNAME =	gnustep-renaissance-${VERSION}
 

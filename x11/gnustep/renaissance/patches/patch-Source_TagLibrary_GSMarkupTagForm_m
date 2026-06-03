@@ -1,0 +1,13 @@
+fix clang22 update breakage
+Index: Source/TagLibrary/GSMarkupTagForm.m
+--- Source/TagLibrary/GSMarkupTagForm.m.orig
++++ Source/TagLibrary/GSMarkupTagForm.m
+@@ -101,7 +101,7 @@
+ 	/* The following call will cause the item to load all
+ 	 * additional attributes into the platform object.
+ 	 */
+-	cell = [item initPlatformObject: cell];
++	cell = (id)[item initPlatformObject: cell];
+ 	[item setPlatformObject: cell];
+       }
+   }
