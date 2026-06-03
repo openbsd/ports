@@ -1,17 +1,18 @@
 COMMENT =	simple ADS-B Mode-S decoder for RTLSDR devices
-DISTNAME =	${GH_PROJECT}-0.0.0.20200203
+DISTNAME =	${GH_PROJECT}-0.0.0.20260215
 CATEGORIES =	comms
-REVISION =	0
 
 # No releases...
 GH_ACCOUNT =	antirez
 GH_PROJECT =	dump1090
-GH_COMMIT =	de61bd564f1aa929bae414a70e421acd0b81789a
+GH_COMMIT =	efe64db3c6ba1520291331628a33c1e208e851a6
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m pthread rtlsdr usb-1.0
+WANTLIB += c m pthread rtlsdr
 
 LIB_DEPENDS =	comms/rtl-sdr
 

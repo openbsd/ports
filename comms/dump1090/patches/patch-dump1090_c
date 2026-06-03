@@ -1,10 +1,11 @@
 Clang says this abs should be llabs.
 Cherry pick quiet mode from PR #17.
+update error message to mention permissions
 
 Index: dump1090.c
 --- dump1090.c.orig
 +++ dump1090.c
-@@ -162,6 +162,7 @@ struct {
+@@ -170,6 +170,7 @@ struct {
      int debug;                      /* Debugging mode. */
      int net;                        /* Enable networking. */
      int net_only;                   /* Enable just networking. */
@@ -12,7 +13,7 @@ Index: dump1090.c
      int interactive;                /* Interactive mode */
      int interactive_rows;           /* Interactive mode: max number of rows. */
      int interactive_ttl;            /* Interactive mode: TTL before deletion. */
-@@ -273,6 +274,7 @@ void modesInitConfig(void) {
+@@ -312,6 +313,7 @@ void modesInitConfig(void) {
      Modes.interactive = 0;
      Modes.interactive_rows = MODES_INTERACTIVE_ROWS;
      Modes.interactive_ttl = MODES_INTERACTIVE_TTL;
@@ -20,7 +21,16 @@ Index: dump1090.c
      Modes.aggressive = 0;
      Modes.interactive_rows = getTermRows();
      Modes.loop = 0;
-@@ -1568,7 +1570,7 @@ void useModesMessage(struct modesMessage *mm) {
+@@ -389,7 +391,7 @@ void modesInitRTLSDR(void) {
+ 
+     device_count = rtlsdr_get_device_count();
+     if (!device_count) {
+-        fprintf(stderr, "No supported RTLSDR devices found.\n");
++        fprintf(stderr, "No supported RTLSDR devices found or missing permissions on device nodes.\n");
+         exit(1);
+     }
+ 
+@@ -1808,7 +1810,7 @@ void useModesMessage(struct modesMessage *mm) {
              if (a && Modes.stat_sbs_connections > 0) modesSendSBSOutput(mm, a);  /* Feed SBS output clients. */
          }
          /* In non-interactive way, display messages on standard output. */
@@ -29,16 +39,7 @@ Index: dump1090.c
              displayModesMessage(mm);
              if (!Modes.raw && !Modes.onlyaddr) printf("\n");
          }
-@@ -1801,7 +1803,7 @@ struct aircraft *interactiveReceiveData(struct modesMe
-             }
-             /* If the two data is less than 10 seconds apart, compute
-              * the position. */
--            if (abs(a->even_cprtime - a->odd_cprtime) <= 10000) {
-+            if (llabs(a->even_cprtime - a->odd_cprtime) <= 10000) {
-                 decodeCPR(a);
-             }
-         } else if (mm->metype == 19) {
-@@ -2462,6 +2464,7 @@ void showHelp(void) {
+@@ -2813,6 +2815,7 @@ void showHelp(void) {
  "--metric                 Use metric units (meters, km/h, ...).\n"
  "--snip <level>           Strip IQ file removing samples < level.\n"
  "--debug <flags>          Debug mode (verbose), see README for details.\n"
@@ -46,7 +47,7 @@ Index: dump1090.c
  "--help                   Show this help.\n"
  "\n"
  "Debug mode flags: d = Log frames decoded with errors\n"
-@@ -2568,6 +2571,8 @@ int main(int argc, char **argv) {
+@@ -2921,6 +2924,8 @@ int main(int argc, char **argv) {
              }
          } else if (!strcmp(argv[j],"--stats")) {
              Modes.stats = 1;
