@@ -19,3 +19,12 @@ Index: wm_helpers.c
  	return s;
  } /* wm_libver_number() */
  
+@@ -160,7 +160,7 @@ wm_strdup( char *s )
+  */
+ void wm_lib_set_verbosity( int level )
+ {
+-	if( WM_MSG_LEVEL_NONE <= level <= WM_MSG_LEVEL_DEBUG )
++	if( WM_MSG_LEVEL_NONE <= level && level <= WM_MSG_LEVEL_DEBUG )
+ 	{
+ 	 	wm_lib_verbosity = level;
+ 	}
