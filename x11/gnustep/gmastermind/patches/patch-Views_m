@@ -1,0 +1,40 @@
+address clang22 build failures
+Index: Views.m
+--- Views.m.orig
++++ Views.m
+@@ -74,7 +74,7 @@ void tile(NSRect rect)
+     NSRectEdge sides[] = {
+ 	NSMinXEdge, NSMaxXEdge, NSMinYEdge, NSMaxYEdge,
+ 	NSMinXEdge, NSMaxXEdge, NSMinYEdge, NSMaxYEdge};
+-    float grays[] = {
++    CGFloat grays[] = {
+ 	NSWhite, NSBlack, NSBlack, NSWhite,
+ 	NSWhite, NSBlack, NSBlack, NSWhite};
+     NSDrawTiledRects(rect, rect, sides, grays, 8);
+@@ -164,7 +164,7 @@ void tile(NSRect rect)
+ 
+ - setColor:(NSColor *)aColor
+ {
+-    float thecomps[4];
++    CGFloat thecomps[4];
+ 
+     if(color!=nil){
+         [color release];
+@@ -199,7 +199,7 @@ void tile(NSRect rect)
+ 
+ - setCValue:(int)cval
+ {
+-    float thecomps[3];
++    CGFloat thecomps[3];
+ 
+     if(color!=nil){
+         [color release];
+@@ -444,7 +444,7 @@ static NSImage *dragImages[8] = {
+     if([[pb types] indexOfObject:NSColorPboardType]!=NSNotFound){
+         if(sourceDragMask & NSDragOperationCopy){
+             NSColor *col = [NSColor colorFromPasteboard:pb], *rgb;
+-            float ccomps[4];
++            CGFloat ccomps[4];
+ 
+             rgb = [col colorUsingColorSpaceName:NSDeviceRGBColorSpace];
+ 

@@ -1,0 +1,13 @@
+clang22 build fix
+Index: Controller.m
+--- Controller.m.orig
++++ Controller.m
+@@ -331,7 +331,7 @@
+ {
+     int col;
+     int aCombo[4];
+-    float thecomps[4];
++    CGFloat thecomps[4];
+     int white, black;
+ 
+     for(col=0; col<4; col++){
