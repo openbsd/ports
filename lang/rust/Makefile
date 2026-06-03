@@ -12,15 +12,21 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.95.0
+V =			1.96.0
 DISTNAME =		rustc-${V}-src
 
+# always keep REVISION-bootstrap in sync with REVISION-main (if defined)
+# (setting only REVISION is also properly managed)
+.ifdef REVISION-main
+REVISION-bootstrap =	${REVISION-main}
+.endif
+
 # rustc bootstrap version
-BV-aarch64 =		1.94.1
-BV-amd64 =		1.95.0
+BV-aarch64 =		1.95.0
+BV-amd64 =		1.96.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.94.1
-BV-sparc64 =		1.94.1
+BV-riscv64 =		1.95.0
+BV-sparc64 =		1.95.0
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -45,6 +51,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl m pthread ssl z
 WANTLIB-clippy =	${COMPILER_LIBCXX} c m pthread
 WANTLIB-rustfmt =	${COMPILER_LIBCXX} c m pthread
+WANTLIB-bootstrap =	${WANTLIB-main}
 
 SITES =			https://static.rust-lang.org/dist/ \
 			https://dev-static.rust-lang.org/dist/
@@ -139,7 +146,7 @@ BUILD_DEPENDS +=	devel/gdb
 
 .if !${USE_EMB_LLVM:L:Myes}
 MODULES +=			lang/clang
-MODCLANG_VERSION =		20
+MODCLANG_VERSION =		21
 MODCLANG_COMPILER_LINKS =	No
 .else
 WANTLIB-main +=		execinfo
@@ -147,6 +154,7 @@ WANTLIB-main +=		execinfo
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			net/curl
+LIB_DEPENDS-bootstrap =	${LIB_DEPENDS-main}
 
 RUN_DEPENDS-gdb +=	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 			devel/gdb
