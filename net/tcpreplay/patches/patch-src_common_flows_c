@@ -1,0 +1,22 @@
+flows.c:320:45: fatal error: incompatible pointer types passing 'const struct bpf_timeval *' to parameter of type 'const struct timeval *'
+
+Index: src/common/flows.c
+--- src/common/flows.c.orig
++++ src/common/flows.c
+@@ -21,6 +21,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <net/bpf.h>
+ 
+ #define JUNIPER_FLAG_NO_L2          0x02     /* L2 header */
+ #define JUNIPER_FLAG_EXT            0x80     /* Juniper extensions present */
+@@ -115,7 +116,7 @@ static inline flow_hash_entry_t *hash_add_entry(flow_h
+  * Only check for expiry if 'expiry' is set
+  */
+ static inline flow_entry_type_t hash_put_data(flow_hash_table_t *fht, const uint32_t key,
+-        const flow_entry_data_t *hash_entry, const struct timeval *tv, const int expiry)
++        const flow_entry_data_t *hash_entry, const struct bpf_timeval *tv, const int expiry)
+ {
+     uint32_t hash_value = key & (fht->num_buckets - 1);
+     flow_hash_entry_t *he;
