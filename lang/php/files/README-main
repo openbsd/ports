@@ -91,7 +91,7 @@ Server APIs (SAPI)
 ==================
 The main php package includes the cli and php_fpm (FastCGI process
 manager) SAPIs. These cover many common use-cases. Others are packaged
-separately: php-apache, php-cgi, php-dbg, php-embed.
+separately: php-apache, php-cgi, php-dbg.
 
 Extension modules
 =================

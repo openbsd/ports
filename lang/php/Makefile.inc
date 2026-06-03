@@ -111,15 +111,12 @@ PHP_EXTENSIONS+=	-bz2 -curl -dba -enchant -gd -gmp -intl \
 			-shmop -soap -snmp -sqlite3 -pdo_dblib \
 			-tidy -xsl -zip
 
-SAPI+=			-main -apache -cgi -dbg -embed
+SAPI+=			-main -apache -cgi -dbg
 
 # setup for no_* build options to allow disabling extensions with
 # larger dependencies;
 PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop)//:C/-/no_/g}
 
-# cannot build two SAPIs producing libraries (e.g. apache and embed)
-# in a single build.
-PSEUDO_FLAVORS+=	embed
 FLAVOR ?=
 
 # xxhash is used as a header-only library here; the file is included in
@@ -131,32 +128,19 @@ CONFIGURE_ARGS+=	--with-capstone
 LIB_DEPENDS-main+=	devel/capstone/main
 WANTLIB-main=		capstone
 
-# where the main php module is stored (outside the chroot)
-.if ${FLAVOR:Membed}
-MULTI_PACKAGES=	-main -embed
-SAPI_DIR=	lib/php-${PV}
-.else
 MULTI_PACKAGES=	${SAPI} ${PHP_EXTENSIONS}
+# where the main php module is stored (outside the chroot)
 SAPI_DIR=	lib/apache2/php-${PV}
 APACHE_DIR=	${SAPI_DIR}
-.endif
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-.include <bsd.port.arch.mk>
-.if ${FLAVOR:Membed}
-BUILD_PACKAGES:=	-embed
-.endif
-.if ${BUILD_PACKAGES:M-apache}
-BUILD_PACKAGES := ${BUILD_PACKAGES:N-embed}
-.endif
-
-.if ${BUILD_PACKAGES:M-main}
 CONFIGURE_ARGS+=	--enable-cli \
 			--enable-fpm \
 			--with-fpm-user=www \
 			--with-fpm-group=www
-.endif
+
+.include <bsd.port.arch.mk>
 
 # cgi
 COMMENT-cgi=		php CGI binary
@@ -183,12 +167,6 @@ CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs
 BUILD_DEPENDS+=		www/apache-httpd
 .endif
 
-# embed
-COMMENT-embed=		embeddable php library
-.if ${BUILD_PACKAGES:M-embed}
-CONFIGURE_ARGS+=	--enable-embed
-.endif
-
 # default for SAPI subpackages
 WANTLIB +=		argon2 crypto curses iconv intl m onig
 WANTLIB +=		pcre2-8 pthread readline sodium ssl util xml2 z
@@ -204,7 +182,7 @@ LIB_DEPENDS +=		devel/gettext,-runtime \
 WANTLIB$i +=		${WANTLIB}
 LIB_DEPENDS$i +=	${LIB_DEPENDS}
 .endfor
-.for i in ${SAPI:N-apache:N-embed}
+.for i in ${SAPI:N-apache}
 WANTLIB$i +=		c
 .endfor
 
@@ -523,7 +501,7 @@ post-install:
 	rmdir ${PREFIX}/share/php
 .endif
 
-.if ${BUILD_PACKAGES:M-apache} || ${BUILD_PACKAGES:M-embed}
+.if ${BUILD_PACKAGES:M-apache}
 	${INSTALL_DATA_DIR} ${PREFIX}/${SAPI_DIR}
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp.so ${PREFIX}/${SAPI_DIR}
 .endif
