@@ -1,7 +1,7 @@
 COMMENT=	graphical reverse polish notation calculator
 
 DISTNAME=	grpn-1.1.2
-REVISION=	10
+REVISION=	11
 CATEGORIES=	math x11
 
 HOMEPAGE=	http://lashwhip.com/grpn.html

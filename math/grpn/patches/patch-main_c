@@ -1,7 +1,8 @@
 Port to gtk+2.
 
---- main.c.orig	Thu Apr  4 05:46:11 2002
-+++ main.c	Tue Mar 23 21:33:01 2010
+Index: main.c
+--- main.c.orig
++++ main.c
 @@ -23,6 +23,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
   */
  
@@ -11,13 +12,22 @@ Port to gtk+2.
  #ifdef USE_GNOME
  #include <gnome.h>
  #endif
+@@ -50,7 +52,7 @@ void usage(char *str){
+ }
+ 
+    GtkWidget *main_w;
+-main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ {
+    int n;
+    int rows, cols;
 @@ -156,8 +158,8 @@ main(int argc, char *argv[])
           exit(0);
        }
        new_style = gtk_style_copy(default_style);
 -      new_style->font = new_font;
 -      gtk_widget_set_default_style(new_style);
-+      new_style->font_desc = new_font;
++      new_style->font_desc = pango_font_description_copy(default_style->font_desc);
 +/*      gtk_widget_set_default_style(new_style); */
     }
     
