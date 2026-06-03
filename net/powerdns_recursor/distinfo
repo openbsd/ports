@@ -46,7 +46,7 @@ SHA256 (cargo/quote-1.0.42.tar.gz) = ozjMQdJ+bMbc5s78E6Bynfu4HCYrH1GTMVdd2A7zBn8
 SHA256 (cargo/ring-0.17.14.tar.gz) = pGiebCKU2B6I3GJhx2i2O8T824Ur5tE1JJixFPYTg7c=
 SHA256 (cargo/rustls-0.23.35.tar.gz) = Uz9UvGp9T2R+Rq2QlUntqXv1r8FYUZDvaStChrGYvY8=
 SHA256 (cargo/rustls-pki-types-1.13.1.tar.gz) = cIwPnV9UugJyRowdMGpSxJWzH6FV6RvCU3Hm33mWkIw=
-SHA256 (cargo/rustls-webpki-0.103.8.tar.gz) = L/36L1KG4iRyNOA/aAhorCgVl03DngDqFa3ERdCq/lI=
+SHA256 (cargo/rustls-webpki-0.103.13.tar.gz) = YcQpqGSfEQ3d72Xipa0kD3R+hfd1imvMx+V3e9M/dW4=
 SHA256 (cargo/ryu-1.0.20.tar.gz) = KNOysTZuwgmU8f0Yw8WU8Fxd1LxE2LsMHGMsjWgpSB8=
 SHA256 (cargo/scratch-1.0.9.tar.gz) = 1o8uxRsJfkwadbaBqL7GIZCbXpHxW7e4QMTy97ARSLI=
 SHA256 (cargo/serde-1.0.228.tar.gz) = mo6U6n83i9Msu9NxmKSpFDYYDFu0ckEeSLXsLiEkrp4=
@@ -96,7 +96,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.53.1.tar.gz) = D/oXni0H7uitj1dJNDZWbHzDCs
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/windows_x86_64_msvc-0.53.1.tar.gz) = 1rv/XwqtpCeh5abaXx+YFYGC8mVW80WsngTTbQ6+1lA=
 SHA256 (cargo/zeroize-1.8.2.tar.gz) = uXFU5n4yyFRlgm6LzBxZQpqq8QfB5KnlPI2MzV7/iNA=
-SHA256 (pdns-recursor-5.4.1.tar.xz) = k/I+6T+w06n9SIFyZWMezkdYuAAa9ybDWO46+2ZFtjo=
+SHA256 (pdns-recursor-5.4.2.tar.xz) = pM6imB3HizlJmf/+KO/5CW4hTV5CKcXC7Ae/8+/QLVk=
 SIZE (cargo/anstyle-1.0.13.tar.gz) = 17651
 SIZE (cargo/atomic-waker-1.1.2.tar.gz) = 12422
 SIZE (cargo/base64-0.22.1.tar.gz) = 81597
@@ -145,7 +145,7 @@ SIZE (cargo/quote-1.0.42.tar.gz) = 31504
 SIZE (cargo/ring-0.17.14.tar.gz) = 1502610
 SIZE (cargo/rustls-0.23.35.tar.gz) = 373700
 SIZE (cargo/rustls-pki-types-1.13.1.tar.gz) = 34901
-SIZE (cargo/rustls-webpki-0.103.8.tar.gz) = 85810
+SIZE (cargo/rustls-webpki-0.103.13.tar.gz) = 87513
 SIZE (cargo/ryu-1.0.20.tar.gz) = 48738
 SIZE (cargo/scratch-1.0.9.tar.gz) = 8170
 SIZE (cargo/serde-1.0.228.tar.gz) = 83652
@@ -195,4 +195,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.53.1.tar.gz) = 787739
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/windows_x86_64_msvc-0.53.1.tar.gz) = 837950
 SIZE (cargo/zeroize-1.8.2.tar.gz) = 20907
-SIZE (pdns-recursor-5.4.1.tar.xz) = 1393844
+SIZE (pdns-recursor-5.4.2.tar.xz) = 1394108
