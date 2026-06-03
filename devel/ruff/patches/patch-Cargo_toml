@@ -3,7 +3,7 @@ Use local sources for crate lsp-types
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -129,9 +129,7 @@ libc = { version = "0.2.153" }
+@@ -131,9 +131,7 @@ libc = { version = "0.2.153" }
  libcst = { version = "1.8.4", default-features = false }
  log = { version = "0.4.17" }
  lsp-server = { version = "0.7.6" }
@@ -13,4 +13,4 @@ Index: Cargo.toml
 +lsp-types = { path = "../lsp-types", features = [ "proposed" ] }
  matchit = { version = "0.9.0" }
  memchr = { version = "2.7.1" }
- mimalloc = { version = "0.1.39" }
+ mimalloc = { version = "0.1.49", features = ["v2"] }
