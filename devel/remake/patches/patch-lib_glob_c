@@ -1,0 +1,12 @@
+Index: lib/glob.c
+--- lib/glob.c.orig
++++ lib/glob.c
+@@ -182,7 +182,7 @@ extern void bcopy ();
+ # define mempcpy(Dest, Src, Len) __mempcpy (Dest, Src, Len)
+ #endif
+ 
+-#if !defined __GNU_LIBRARY__ && !defined __DJGPP__
++#if !defined __GNU_LIBRARY__ && !defined __DJGPP__ && !defined __OpenBSD__
+ # ifdef	__GNUC__
+ __inline
+ # endif
