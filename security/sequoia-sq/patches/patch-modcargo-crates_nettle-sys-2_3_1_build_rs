@@ -1,6 +1,6 @@
-Index: modcargo-crates/nettle-sys-2.3.1/build.rs
---- modcargo-crates/nettle-sys-2.3.1/build.rs.orig
-+++ modcargo-crates/nettle-sys-2.3.1/build.rs
+Index: modcargo-crates/nettle-sys-2.3.2/build.rs
+--- modcargo-crates/nettle-sys-2.3.2/build.rs.orig
++++ modcargo-crates/nettle-sys-2.3.2/build.rs
 @@ -77,7 +77,7 @@ fn check_cc(includes: &[PathBuf], header: &str, symbol
      let t = || -> Result<bool> {
          let wd = tempfile::tempdir()?;

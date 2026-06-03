@@ -7,7 +7,7 @@ VERSION =		1.3.1
 SITES =			https://gitlab.com/sequoia-pgp/sequoia-sq/-/archive/v${VERSION}/
 DISTNAME =		sequoia-sq-v${VERSION}
 PKGNAME =		${DISTNAME:S/v//}
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://sequoia-pgp.org/
 
@@ -32,6 +32,8 @@ LIB_DEPENDS =		archivers/bzip2 \
 
 MAKE_ENV =		LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
 			ASSET_OUT_DIR=${WRKSRC}/assets
+
+MODCARGO_CRATES_UPDATE =	bindgen nettle-sys rustc-hash
 
 MODCARGO_RUSTFLAGS +=	-C link-arg="-Wl,-rpath,${LOCALBASE}/lib/nettle3"
 MODCARGO_RUSTFLAGS +=	-L native=${LOCALBASE}/lib/nettle3

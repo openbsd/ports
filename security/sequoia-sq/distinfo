@@ -28,7 +28,7 @@ SHA256 (cargo/backtrace-0.3.74.tar.gz) = jYLLMyzfrtF64jWmOEOKxNSDmRPMKvWFw8Z0bo+
 SHA256 (cargo/base16ct-0.2.0.tar.gz) = TH8C1Opl8sGFMIn/2NJ4e9vGPeLw0p3tvPjM36DM1M8=
 SHA256 (cargo/base64-0.22.1.tar.gz) = crMlTxYlGoOBqhLkDjxNLwGZ+MZQj77LnZH1deD7uMY=
 SHA256 (cargo/base64ct-1.6.0.tar.gz) = jDwaNo9w1s9zAtePj3CT2iQfuOiAfAXMnlGhJYlabVs=
-SHA256 (cargo/bindgen-0.70.1.tar.gz) = 9J2P7YgNRz6nHvub9ZdlHncgG91Ik+/lTJ5dZa4Ezm8=
+SHA256 (cargo/bindgen-0.72.1.tar.gz) = mTd2tQnPtJx1DxG48HpG+iPgoThv/AH7Hn00Pvw4eJU=
 SHA256 (cargo/bit-set-0.5.3.tar.gz) = BwDdq1BvM7IKA7E5luzNMJpI5f930NlZJqoCEPtOlfE=
 SHA256 (cargo/bit-set-0.8.0.tar.gz) = CIB+CA7X+dVDP6mydRls/DVBT2agx52GTcUaDYJSMaM=
 SHA256 (cargo/bit-vec-0.6.3.tar.gz) = NJ+bahee1gcwVSbKSJs0rQpBrtX3mA+pDrAxYLaVmPs=
@@ -213,7 +213,6 @@ SHA256 (cargo/ipconfig-0.3.2.tar.gz) = tY25L5a3IN6YGBu75jyDHocAWrRgwb8wbrJiK0cHm
 SHA256 (cargo/ipnet-2.11.0.tar.gz) = Rp+wuc76V+PvMSde58rLePL9ykTkdlSRiEorEZ1OsTA=
 SHA256 (cargo/is_terminal_polyfill-1.70.1.tar.gz) = eUPIZsxc1ky8JbLgFiHQf6jrKhojFg7oHOOHBOl7js8=
 SHA256 (cargo/itertools-0.11.0.tar.gz) = scFzpWhs6L+lUbNWPQwhcL8kykTamcfKS/2rVBjD/lc=
-SHA256 (cargo/itertools-0.13.0.tar.gz) = QT7n38Uu4aSUnO6328ijPy1sCIGU2fki+4MY+vHwEYY=
 SHA256 (cargo/itertools-0.14.0.tar.gz) = KxkseCA3+t2c+nVUgxBIiqvb89Lac4hbMb0KvQM1EoU=
 SHA256 (cargo/itoa-1.0.14.tar.gz) = 11oqSxsZCvtvVCXxD2qPlZ0uoLnCsdeVU1UYUFOeRnQ=
 SHA256 (cargo/js-sys-0.3.77.tar.gz) = HPrzPGlfxuCAZO+8H3Lsk3QpYU8l7vg6+ULQ4ifDoo8=
@@ -248,7 +247,7 @@ SHA256 (cargo/miniz_oxide-0.8.5.tar.gz) = jj4E3ru1lpjBW6y7bZNYSowMqcwyE8tCPTH3YN
 SHA256 (cargo/mio-1.0.3.tar.gz) = KIaEO/gA+6LjN3z/JKv2N5tMTVxmger56lsNFQkEUL0=
 SHA256 (cargo/native-tls-0.2.13.tar.gz) = DatZ+OBQ1d+OTdh9kgb7b2Wkg+IKyf2jZa3k+rNTGWw=
 SHA256 (cargo/nettle-7.4.0.tar.gz) = ROb/SpTl00of1au9OUGAdGRuL6UbJXGYcBMw8i/NaTY=
-SHA256 (cargo/nettle-sys-2.3.1.tar.gz) = YaP1QGBk0xDVmxohnTxcmknK9AR7ZJYDLj+TCHZIjDQ=
+SHA256 (cargo/nettle-sys-2.3.2.tar.gz) = 81UCNYqnflmFcLv5p5rRnEmFobzRV7XXAZdoja/Km0g=
 SHA256 (cargo/new_debug_unreachable-1.0.6.tar.gz) = ZQ7vjHEUMPGoef3QHUdFp97qR1vs+5AmnAZ3WYO78IY=
 SHA256 (cargo/nibble_vec-0.1.0.tar.gz) = d6XYPfnzb+I/DDZIxru4sCmLtfGTnI8nBEMTcfS4TUM=
 SHA256 (cargo/nix-0.29.0.tar.gz) = ceJ0bcOiTdeLPPy3vpM2jG3plj0w9Dpqc5mKnPSxe0Y=
@@ -337,7 +336,7 @@ SHA256 (cargo/rsa-0.9.7.tar.gz) = R8ddfFxrZz5Yv1TYVEqfQy46klsOgPfNNgKrXFDFVRk=
 SHA256 (cargo/rtoolbox-0.0.2.tar.gz) = wkfSTmMjDNtWRjrjKEeL1erIuPqoxpRhp36OMjr6yQ4=
 SHA256 (cargo/rusqlite-0.31.0.tar.gz) = uDjronjSE6i+r0hb0xP9WAykUFoA1YccrrFFfFUyLK4=
 SHA256 (cargo/rustc-demangle-0.1.24.tar.gz) = cZuVPiCVgp7mfbc4s7+p+jaMlJAN8yez8H/m55TS/h8=
-SHA256 (cargo/rustc-hash-1.1.0.tar.gz) = CNQ/eqawjUnzgs3mp5ggR8NCbblJsUJLxLfsmuEsbOI=
+SHA256 (cargo/rustc-hash-2.1.0.tar.gz) = x/uAObMDLBkQhrEPEfMZpumeHoKInFzGBG9RXJ2x1Jc=
 SHA256 (cargo/rustc_version-0.4.1.tar.gz) = z8s6Iu9G6FtF3m7n550GMxnrtllPqvzxwiXqkqtum5I=
 SHA256 (cargo/rustix-0.38.44.tar.gz) = /bW8GuK6pZGADfFsnKeGGb9lwEiLQblszsXREiDYwVQ=
 SHA256 (cargo/rustls-0.23.23.tar.gz) = R3lsmMSA/OVAbvadHHY3g3VJLDsKDeWHvgwdn+sS85U=
@@ -561,7 +560,7 @@ SIZE (cargo/backtrace-0.3.74.tar.gz) = 88516
 SIZE (cargo/base16ct-0.2.0.tar.gz) = 10240
 SIZE (cargo/base64-0.22.1.tar.gz) = 81597
 SIZE (cargo/base64ct-1.6.0.tar.gz) = 28870
-SIZE (cargo/bindgen-0.70.1.tar.gz) = 226363
+SIZE (cargo/bindgen-0.72.1.tar.gz) = 246071
 SIZE (cargo/bit-set-0.5.3.tar.gz) = 14470
 SIZE (cargo/bit-set-0.8.0.tar.gz) = 16289
 SIZE (cargo/bit-vec-0.6.3.tar.gz) = 19927
@@ -746,7 +745,6 @@ SIZE (cargo/ipconfig-0.3.2.tar.gz) = 24468
 SIZE (cargo/ipnet-2.11.0.tar.gz) = 29718
 SIZE (cargo/is_terminal_polyfill-1.70.1.tar.gz) = 7492
 SIZE (cargo/itertools-0.11.0.tar.gz) = 125074
-SIZE (cargo/itertools-0.13.0.tar.gz) = 146261
 SIZE (cargo/itertools-0.14.0.tar.gz) = 152715
 SIZE (cargo/itoa-1.0.14.tar.gz) = 11210
 SIZE (cargo/js-sys-0.3.77.tar.gz) = 55538
@@ -781,7 +779,7 @@ SIZE (cargo/miniz_oxide-0.8.5.tar.gz) = 62237
 SIZE (cargo/mio-1.0.3.tar.gz) = 103703
 SIZE (cargo/native-tls-0.2.13.tar.gz) = 29133
 SIZE (cargo/nettle-7.4.0.tar.gz) = 583944
-SIZE (cargo/nettle-sys-2.3.1.tar.gz) = 81980
+SIZE (cargo/nettle-sys-2.3.2.tar.gz) = 115388
 SIZE (cargo/new_debug_unreachable-1.0.6.tar.gz) = 2582
 SIZE (cargo/nibble_vec-0.1.0.tar.gz) = 11796
 SIZE (cargo/nix-0.29.0.tar.gz) = 318248
@@ -870,7 +868,7 @@ SIZE (cargo/rsa-0.9.7.tar.gz) = 80231
 SIZE (cargo/rtoolbox-0.0.2.tar.gz) = 9179
 SIZE (cargo/rusqlite-0.31.0.tar.gz) = 152252
 SIZE (cargo/rustc-demangle-0.1.24.tar.gz) = 29047
-SIZE (cargo/rustc-hash-1.1.0.tar.gz) = 9331
+SIZE (cargo/rustc-hash-2.1.0.tar.gz) = 13316
 SIZE (cargo/rustc_version-0.4.1.tar.gz) = 12245
 SIZE (cargo/rustix-0.38.44.tar.gz) = 379347
 SIZE (cargo/rustls-0.23.23.tar.gz) = 342561

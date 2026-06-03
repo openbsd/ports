@@ -1,6 +1,6 @@
-Index: modcargo-crates/nettle-sys-2.3.1/bindgen-wrapper.h
---- modcargo-crates/nettle-sys-2.3.1/bindgen-wrapper.h.orig
-+++ modcargo-crates/nettle-sys-2.3.1/bindgen-wrapper.h
+Index: modcargo-crates/nettle-sys-2.3.2/bindgen-wrapper.h
+--- modcargo-crates/nettle-sys-2.3.2/bindgen-wrapper.h.orig
++++ modcargo-crates/nettle-sys-2.3.2/bindgen-wrapper.h
 @@ -1,58 +1,58 @@
 -#include <nettle/aes.h>
 -#include <nettle/arcfour.h>
