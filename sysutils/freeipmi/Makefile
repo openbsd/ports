@@ -1,10 +1,10 @@
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
-DISTNAME=	freeipmi-1.6.17
+DISTNAME=	freeipmi-1.6.18
 
-SHARED_LIBS +=  freeipmi             7.0      # 19.3
-SHARED_LIBS +=  ipmiconsole          3.1      # 5.5
-SHARED_LIBS +=  ipmimonitoring       1.1      # 6.8
+SHARED_LIBS +=  freeipmi             7.1      # 19.16
+SHARED_LIBS +=  ipmiconsole          3.1      # 5.7
+SHARED_LIBS +=  ipmimonitoring       1.1      # 6.10
 SHARED_LIBS +=  ipmidetect           1.1      # 0.1
 
 CATEGORIES=	sysutils
