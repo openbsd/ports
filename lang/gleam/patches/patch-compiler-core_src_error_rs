@@ -1,7 +1,7 @@
 Index: compiler-core/src/error.rs
 --- compiler-core/src/error.rs.orig
 +++ compiler-core/src/error.rs
-@@ -1410,7 +1410,7 @@ your app.src file \"{app_ver}\"."
+@@ -1451,7 +1451,7 @@ your app.src file \"{app_ver}\"."
                  text.push('\n');
  
                  match program.as_str() {

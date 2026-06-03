@@ -1,9 +1,13 @@
 COMMENT =		statically typed language for Erlang VM and JavaScript
 
+# aws-lc-sys has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+USE_NOEXECONLY =	Yes
+
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
-V =			1.16.0
+V =			1.17.0
 DIST_TUPLE =		github gleam-lang gleam v${V} .
 
 HOMEPAGE =		https://gleam.run
