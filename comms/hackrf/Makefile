@@ -1,8 +1,7 @@
 COMMENT =	host software for the HackRF One SDR
 
-V =		2024.02.1
+V =		2026.01.3
 DISTNAME =	hackrf-$V
-REVISION =	0
 
 SHARED_LIBS +=  hackrf                    0.1 # 0.8
 
@@ -15,7 +14,7 @@ MAINTAINER =	Bryan Vyhmeister <bryan@bsdjournal.net>
 # GPLv2+ (tools), 3-clause BSD (library)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c fftw3f m pthread usb-1.0
+WANTLIB += c fftw3f fftw3f_threads m pthread usb-1.0
 
 SITES =		https://github.com/mossmann/hackrf/releases/download/v$V/
 

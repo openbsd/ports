@@ -9,6 +9,12 @@
 @bin bin/hackrf_transfer
 include/libhackrf/
 include/libhackrf/hackrf.h
+lib/cmake/HackRF/
+lib/cmake/HackRF/FindLIBUSB.cmake
+lib/cmake/HackRF/HackRFConfig.cmake
+lib/cmake/HackRF/HackRFConfigVersion.cmake
+lib/cmake/HackRF/HackRFTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/HackRF/HackRFTargets.cmake
 @static-lib lib/libhackrf.a
 @lib lib/libhackrf.so.${LIBhackrf_VERSION}
 lib/pkgconfig/libhackrf.pc
