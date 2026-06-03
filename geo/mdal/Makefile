@@ -4,7 +4,7 @@ COMMENT =	mesh data abstration library
 
 GH_ACCOUNT=	lutraconsulting
 GH_PROJECT =	MDAL
-GH_TAGNAME =	release-1.3.2
+GH_TAGNAME =	release-1.3.3
 
 PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/release-//}
 
