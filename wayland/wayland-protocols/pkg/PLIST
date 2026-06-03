@@ -47,6 +47,7 @@ include/wayland-protocols/xdg-dialog-v1-enum.h
 include/wayland-protocols/xdg-foreign-unstable-v1-enum.h
 include/wayland-protocols/xdg-foreign-unstable-v2-enum.h
 include/wayland-protocols/xdg-output-unstable-v1-enum.h
+include/wayland-protocols/xdg-session-management-v1-enum.h
 include/wayland-protocols/xdg-shell-enum.h
 include/wayland-protocols/xdg-shell-unstable-v5-enum.h
 include/wayland-protocols/xdg-shell-unstable-v6-enum.h
@@ -56,9 +57,12 @@ include/wayland-protocols/xdg-toplevel-icon-v1-enum.h
 include/wayland-protocols/xdg-toplevel-tag-v1-enum.h
 include/wayland-protocols/xwayland-keyboard-grab-unstable-v1-enum.h
 include/wayland-protocols/xwayland-shell-v1-enum.h
+include/wayland-protocols/xx-cutouts-v1-enum.h
 include/wayland-protocols/xx-input-method-v2-enum.h
+include/wayland-protocols/xx-keyboard-filter-v1-enum.h
 include/wayland-protocols/xx-session-management-v1-enum.h
 include/wayland-protocols/xx-text-input-v3-enum.h
+include/wayland-protocols/xx-zones-v1-enum.h
 share/pkgconfig/wayland-protocols.pc
 share/wayland-protocols/
 share/wayland-protocols/stable/
@@ -123,6 +127,8 @@ share/wayland-protocols/staging/xdg-activation/
 share/wayland-protocols/staging/xdg-activation/xdg-activation-v1.xml
 share/wayland-protocols/staging/xdg-dialog/
 share/wayland-protocols/staging/xdg-dialog/xdg-dialog-v1.xml
+share/wayland-protocols/staging/xdg-session-management/
+share/wayland-protocols/staging/xdg-session-management/xdg-session-management-v1.xml
 share/wayland-protocols/staging/xdg-system-bell/
 share/wayland-protocols/staging/xdg-system-bell/xdg-system-bell-v1.xml
 share/wayland-protocols/staging/xdg-toplevel-drag/
