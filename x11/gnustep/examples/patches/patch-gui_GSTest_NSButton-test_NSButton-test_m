@@ -1,0 +1,24 @@
+cc NSButton-test.m -c \
+      -MMD -MP -I/usr/local/include/gnustep -DGNUSTEP -DGNUSTEP_BASE_LIBRARY=1 -DGNU_GUI_LIBRARY=1 -DGNUSTEP_RUNTIME=1 -D_NONFRAGILE_ABI=1 -DGNUSTEP_BASE_LIBRARY=1 -fno-strict-aliasing -fexceptions -fobjc-exceptions -D_NATIVE_OBJC_EXCEPTIONS -pthread -fPIC -DDEBUG -fno-omit-frame-pointer -Wall -DGSWARN -DGSDIAGNOSE -Wno-import -O2 -pipe -g -O0 -Wall -fobjc-runtime=gnustep-2.2 -fblocks -fconstant-string-class=NSConstantString -I. -I/gnustep-examples-1.4.0_writes_to_HOME/GNUstep/Library/Headers -I/usr/local/include -I/usr/local/include \
+       -o obj/NSButton-test.obj/NSButton-test.m.o
+NSButton-test.m:171:8: error: incompatible pointer types assigning to 'NSTextView *' from 'NSText *'
+      [-Wincompatible-pointer-types]
+  171 |   text = [[NSText alloc] initWithFrame: [[scrollView contentView] frame]];
+      |        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/AppKit/NSView.h:209:1: note: instance method 'initWithFrame:' is assumed to return an
+      instance of its receiver type ('NSText *')
+  209 | - (id) initWithFrame: (NSRect)frameRect;
+      | ^
+1 error generated.
+Index: gui/GSTest/NSButton-test/NSButton-test.m
+--- gui/GSTest/NSButton-test/NSButton-test.m.orig
++++ gui/GSTest/NSButton-test/NSButton-test.m
+@@ -168,7 +168,7 @@
+   [scrollView setHasVerticalScroller: YES]; 
+   [scrollView setAutoresizingMask: NSViewHeightSizable | NSViewWidthSizable];
+ 
+-  text = [[NSText alloc] initWithFrame: [[scrollView contentView] frame]];
++  text = [[NSTextView alloc] initWithFrame: [[scrollView contentView] frame]];
+   [text setEditable: NO];
+   [text setRichText: YES];
+   [text setDelegate: self];

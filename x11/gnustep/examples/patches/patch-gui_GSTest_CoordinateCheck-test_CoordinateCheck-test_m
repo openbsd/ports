@@ -1,0 +1,35 @@
+cc CoordinateCheck-test.m -c \
+      -MMD -MP -I/usr/local/include/gnustep -DGNUSTEP -DGNUSTEP_BASE_LIBRARY=1 -DGNU_GUI_LIBRARY=1 -DGNUSTEP_RUNTIME=1 -D_NONFRAGILE_ABI=1 -DGNUSTEP_BASE_LIBRARY=1 -fno-strict-aliasing -fexceptions -fobjc-exceptions -D_NATIVE_OBJC_EXCEPTIONS -pthread -fPIC -Wall -DGSWARN -DGSDIAGNOSE -Wno-import -O2 -pipe -Wall -fobjc-runtime=gnustep-2.2 -fblocks -fconstant-string-class=NSConstantString -I. -I/gnustep-examples-1.4.0_writes_to_HOME/GNUstep/Library/Headers -I/usr/local/include -I/usr/local/include \
+       -o obj/CoordinateCheck-test.obj/CoordinateCheck-test.m.o
+CoordinateCheck-test.m:91:22: warning: duplicate definition of category 'CheckCoordinates' on interface 'NSWindow' [-Wobjc-duplicate-category-definition]
+   91 | @interface NSWindow (CheckCoordinates)
+      |                      ^
+CoordinateCheck-test.m:84:17: note: previous definition is here
+   84 | @implementation NSWindow (CheckCoordinates)
+      |                 ^
+CoordinateCheck-test.m:133:8: error: incompatible pointer types assigning to 'NSTextView *' from 'NSText *' [-Wincompatible-pointer-types]
+  133 |   text = [[NSText alloc] initWithFrame: [[scrollView contentView] frame]];
+      |        ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/AppKit/NSView.h:209:1: note: instance method 'initWithFrame:' is assumed to return an instance of its receiver type ('NSText *')
+  209 | - (id) initWithFrame: (NSRect)frameRect;
+      | ^
+CoordinateCheck-test.m:279:11: warning: data argument not used by format string [-Wformat-extra-args]
+  278 |          withString: [NSString stringWithFormat: @"\n", 
+      |                                                  ~~~~~
+  279 |                                [winToCheck title]]];
+      |                                ^
+2 warnings and 1 error generated.
+
+
+Index: gui/GSTest/CoordinateCheck-test/CoordinateCheck-test.m
+--- gui/GSTest/CoordinateCheck-test/CoordinateCheck-test.m.orig
++++ gui/GSTest/CoordinateCheck-test/CoordinateCheck-test.m
+@@ -130,7 +130,7 @@
+   [scrollView setHasVerticalScroller: YES]; 
+   [scrollView setAutoresizingMask: NSViewHeightSizable | NSViewWidthSizable];
+ 
+-  text = [[NSText alloc] initWithFrame: [[scrollView contentView] frame]];
++  text = [[NSTextView alloc] initWithFrame: [[scrollView contentView] frame]];
+   [text setEditable: NO];
+   [text setRichText: YES];
+   [text setDelegate: self];

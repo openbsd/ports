@@ -1,0 +1,27 @@
+cc ImageSelection-test.m -c \
+      -MMD -MP -I/usr/local/include/gnustep -DGNUSTEP -DGNUSTEP_BASE_LIBRARY=1 -DGNU_GUI_LIBRARY=1 -DGNUSTEP_RUNTIME=1 -D_NONFRAGILE_ABI=1 -DGNUSTEP_BASE_LIBRARY=1 -fno-strict-aliasing -fexceptions -fobjc-exceptions -D_NATIVE_OBJC_EXCEPTIONS -pthread -fPIC -DDEBUG -fno-omit-frame-pointer -Wall -DGSWARN -DGSDIAGNOSE -Wno-import -O2 -pipe -g -O0 -Wall -fobjc-runtime=gnustep-2.2 -fblocks -fconstant-string-class=NSConstantString -I. -I/gnustep-examples-1.4.0_writes_to_HOME/GNUstep/Library/Headers -I/usr/local/include -I/usr/local/include \
+       -o obj/ImageSelection-test.obj/ImageSelection-test.m.o
+ImageSelection-test.m:193:17: error: incompatible pointer types assigning to 'NSImageView *' from
+      'NSButton *' [-Wincompatible-pointer-types]
+  193 |       imageView = [[[NSButton alloc] initWithFrame: frame] autorelease];
+      |                 ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/Foundation/NSObject.h:202:1: note: instance method 'autorelease' is assumed to return
+      an instance of its receiver type ('NSButton *')
+  202 | - (id) autorelease NS_AUTOMATED_REFCOUNT_UNAVAILABLE;
+      | ^
+ImageSelection-test.m:169:9: warning: unused variable 'c' [-Wunused-variable]
+  169 |   Class c = Nil;
+      |         ^
+1 warning and 1 error generated.
+Index: gui/GSTest/ImageSelection-test/ImageSelection-test.m
+--- gui/GSTest/ImageSelection-test/ImageSelection-test.m.orig
++++ gui/GSTest/ImageSelection-test/ImageSelection-test.m
+@@ -48,7 +48,7 @@
+   NSImage *test72DPIAnd288DPI;
+   NSImage *testICNSIcon;
+   NSImage *testTIFFIconWithAllImages72DPI;
+-  NSImageView *imageView;
++  NSView *imageView;
+ 
+   NSPopUpButton *classesPopUp;
+   NSPopUpButton *scalingModesPopUp;
