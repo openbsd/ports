@@ -1,11 +1,11 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
-MODPY_DISTV=	2.1.5
+MODPY_DISTV=	2.1.6
 DISTNAME=	borgmatic-${MODPY_DISTV}
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-# changelog https://github.com/borgmatic-collective/borgmatic/releases
+# https://github.com/borgmatic-collective/borgmatic/releases
 HOMEPAGE=	https://torsion.org/borgmatic/
 
 CATEGORIES=	sysutils
@@ -19,6 +19,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
+# XXX new 'browse' ui needs devel/py-binaryornot and 'textual' (wip)
 RUN_DEPENDS=	borgbackup-*:sysutils/borgbackup/1.4 \
 		devel/py-colorama<0.5 \
 		devel/py-jsonschema \
