@@ -1,10 +1,9 @@
 COMMENT=	parser for the CommonMark markdown spec
 
-MODPY_DISTV=	0.9.1
+MODPY_DISTV=	0.9.2
 DISTNAME=	commonmark-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	9
 
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
