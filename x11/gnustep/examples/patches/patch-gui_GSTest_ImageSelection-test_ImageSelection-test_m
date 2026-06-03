@@ -25,3 +25,42 @@ Index: gui/GSTest/ImageSelection-test/ImageSelection-test.m
  
    NSPopUpButton *classesPopUp;
    NSPopUpButton *scalingModesPopUp;
+@@ -152,11 +152,11 @@ static NSImage *ImageFromBundle(NSString *name, NSStri
+   NSInteger mode = [[scalingModesPopUp selectedItem] tag];
+   if ([imageView isKindOfClass: [NSImageView class]])
+     {
+-      [imageView setImageScaling: mode];
++      [(NSImageView *)imageView setImageScaling: mode];
+     }
+   else if ([imageView isKindOfClass: [NSButton class]])
+     {
+-      NSButtonCell *cell = [imageView cell];
++      NSButtonCell *cell = [(NSButton *)imageView cell];
+       [cell setImageScaling: mode];
+     }
+   
+@@ -166,7 +166,6 @@ static NSImage *ImageFromBundle(NSString *name, NSStri
+ 
+ - (void) imageClass: (id)sender
+ {
+-  Class c = Nil;
+   NSRect frame;
+   NSString *selected = [[classesPopUp selectedItem] title];
+ 
+@@ -185,13 +184,13 @@ static NSImage *ImageFromBundle(NSString *name, NSStri
+   if ([selected isEqual: @"NSImageView"])
+     {
+       imageView = [[[NSImageView alloc] initWithFrame: frame] autorelease];
+-      [imageView setImage: testTIFFIconWithAllImages72DPI];
+-      [imageView setImageFrameStyle: NSImageFrameGrayBezel];
++      [(NSImageView *)imageView setImage: testTIFFIconWithAllImages72DPI];
++      [(NSImageView *)imageView setImageFrameStyle: NSImageFrameGrayBezel];
+     }
+   else if ([selected isEqual: @"NSButton"])
+     {
+       imageView = [[[NSButton alloc] initWithFrame: frame] autorelease];
+-      [imageView setImage: testTIFFIconWithAllImages72DPI];
++      [(NSButton *)imageView setImage: testTIFFIconWithAllImages72DPI];
+     }
+ 
+   if (imageView)
