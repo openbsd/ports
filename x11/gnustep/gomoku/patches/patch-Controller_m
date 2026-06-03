@@ -1,0 +1,12 @@
+Index: Controller.m
+--- Controller.m.orig
++++ Controller.m
+@@ -144,7 +144,7 @@
+   NSImageCell *cell;
+   int level;
+   
+-  cell = [[NSCell alloc] init];
++  cell = [[NSImageCell alloc] init];
+   AUTORELEASE (cell);
+   [cell setBordered: NO];
+   [cell setBezeled: NO];
