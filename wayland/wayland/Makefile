@@ -1,14 +1,13 @@
 COMMENT =	Display server protocol
 
 DISTNAME =	wayland-${V}
-V =		1.24.0
-REVISION =	2
+V =		1.25.0
 
 CATEGORIES =	wayland
 
 HOMEPAGE =	https://wayland.freedesktop.org/
 
-SHARED_LIBS +=  wayland-client          0.3 # 0.24.0
+SHARED_LIBS +=  wayland-client          0.4 # 0.24.0
 SHARED_LIBS +=  wayland-cursor          0.0 # 0.24.0
 SHARED_LIBS +=  wayland-egl             0.0 # 1.24.0
 SHARED_LIBS +=  wayland-server          0.4 # 0.24.0
@@ -38,7 +37,7 @@ LIB_DEPENDS =		devel/libffi \
 			devel/epoll-shim
 
 MODMESON_CONFIGURE_ARGS +=	-Ddocumentation=false \
-				-Dicon_directory="~/.icons:/usr/local/lib/X11/icons:/usr/local/share/icons:/usr/local/share/pixmaps:${X11BASE}/share/icons:${X11BASE}/share/pixmaps"
+				-Dicon_directory="~/.icons:${LOCALBASE}/lib/X11/icons:${LOCALBASE}/share/icons:${LOCALBASE}/share/pixmaps:${X11BASE}/share/icons:${X11BASE}/share/pixmaps"
 
 TEST_DEPENDS =		devel/llvm/${MODCLANG_VERSION},-main
 
