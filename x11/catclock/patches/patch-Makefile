@@ -1,0 +1,31 @@
+convert to bsdmake, and point at our motif/X11 paths
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -13,14 +13,11 @@ XLIB      = -lX11
+ MOTIFLIBS = -lXm -lXt
+ EXTENSIONLIB = -lXext
+ SYSLIBS   = -lm
+-LIBS      = -L/opt/local/lib $(MOTIFLIBS) $(EXTENSIONLIB) $(XLIB) $(SYSLIBS)
+-ifeq ($(WITH_TEMPO_TRACKER), 1)
+-	LIBS += -lpulse -lpulse-simple -lpthread -laubio
+-endif
++LIBS      = -L/usr/local/lib -L/usr/X11R6/lib $(MOTIFLIBS) $(EXTENSIONLIB) $(XLIB) $(SYSLIBS)
+ #LIBS      = $(MOTIFLIBS) $(EXTENSIONLIB) $(XLIB) $(SYSLIBS)
+ 
+ LOCALINCS = -I.
+-MOTIFINCS = -I/opt/local/include -I/opt/local/include/X11
++MOTIFINCS = -I/usr/local/include -I/usr/X11R6/include/
+ #MOTIFINCS = -I/usr/include
+ INCS      = $(LOCALINCS) $(MOTIFINCS)
+ 
+@@ -28,7 +25,7 @@ INCS      = $(LOCALINCS) $(MOTIFINCS)
+ CDEBUGFLAGS = -g
+ CFLAGS      = $(DEFINES) $(INCS) $(CDEBUGFLAGS)
+ 
+-DESTINATION = /udir/pjs/bin
++DESTINATION = ${PREFIX}/bin
+ 
+ PROG  = xclock
+ DEBUG = debug
