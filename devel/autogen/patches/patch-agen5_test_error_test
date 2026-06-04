@@ -1,9 +1,10 @@
 # Cope with the additional abort message (don't panic -- this test
 # intentionally checks abort behaviour).
 
---- agen5/test/error.test.orig	Sun Sep 24 04:11:15 2006
-+++ agen5/test/error.test	Fri Nov 17 20:15:03 2006
-@@ -103,6 +103,7 @@ AutoGen aborting on signal <text-varies>
+Index: agen5/test/error.test
+--- agen5/test/error.test.orig
++++ agen5/test/error.test
+@@ -103,6 +103,7 @@ AutoGen aborting on signal <text-varies> in state EMIT
  processing template error2.tpl
              on line 2
         for function EXPR (11)

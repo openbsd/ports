@@ -19,7 +19,9 @@ WANTLIB += c gmp guile iconv intl ltdl m pthread xml2 z
 LIB_DEPENDS=	devel/gettext,-runtime \
 		lang/guile \
 		textproc/libxml
-CONFIGURE_STYLE=gnu
+
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.60
 
 CONFIGURE_ARGS=	--without-libregex \
 		--includedir=${PREFIX}/include/autogen
