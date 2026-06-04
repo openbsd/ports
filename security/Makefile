@@ -362,7 +362,6 @@
      SUBDIR += ruby-bcrypt,ruby33
      SUBDIR += ruby-bcrypt,ruby34
      SUBDIR += ruby-bcrypt,ruby40
-     SUBDIR += ruby-cms_scanner
      SUBDIR += ruby-ed25519,ruby33
      SUBDIR += ruby-ed25519,ruby34
      SUBDIR += ruby-ed25519,ruby40
