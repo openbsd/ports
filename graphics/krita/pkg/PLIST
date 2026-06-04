@@ -207,6 +207,8 @@ lib/qt6/qml/org/krita/components/
 lib/qt6/qml/org/krita/components/+Fusion/
 lib/qt6/qml/org/krita/components/+Fusion/TabButtonBase.qml
 lib/qt6/qml/org/krita/components/+Fusion/ToolSeparatorBase.qml
+lib/qt6/qml/org/krita/components/+qquickwidget/
+lib/qt6/qml/org/krita/components/+qquickwidget/PopupBase.qml
 lib/qt6/qml/org/krita/components/+qt5/
 lib/qt6/qml/org/krita/components/+qt5/WindowFocusChecker.qml
 lib/qt6/qml/org/krita/components/AngleSelector.qml
@@ -221,6 +223,7 @@ lib/qt6/qml/org/krita/components/InformingTextInput.qml
 lib/qt6/qml/org/krita/components/IntParseSpinBox.qml
 lib/qt6/qml/org/krita/components/IntSliderSpinBox.qml
 lib/qt6/qml/org/krita/components/OptionButtonStrip.qml
+lib/qt6/qml/org/krita/components/PopupBase.qml
 lib/qt6/qml/org/krita/components/ResourceDelegateBase.qml
 lib/qt6/qml/org/krita/components/ResourcePopup.qml
 lib/qt6/qml/org/krita/components/ResourceView.qml

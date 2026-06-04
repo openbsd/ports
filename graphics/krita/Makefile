@@ -1,23 +1,23 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	6.0.1
-DISTNAME =	krita-${VERSION}.1
+VERSION =	6.0.2
+DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          5.0 # 16.0
-SHARED_LIBS +=  kritaflake                15.0 # 16.0
+SHARED_LIBS +=  kritaflake                15.1 # 16.0
 SHARED_LIBS +=  kritapigment              10.0 # 16.0
 SHARED_LIBS +=  kritaplugin               4.0 # 16.0
 SHARED_LIBS +=  kritastore                4.0 # 16.0
 SHARED_LIBS +=  kritaversion              1.1 # 16.0
 SHARED_LIBS +=  kritawidgets              11.0 # 16.0
 SHARED_LIBS +=  kritawidgetutils          10.0 # 16.0
-SHARED_LIBS +=  kritacommand              5.2 # 16.0
+SHARED_LIBS +=  kritacommand              6.0 # 16.0
 SHARED_LIBS +=  kritaimpex                2.1 # 16.0
 SHARED_LIBS +=  kritalibkis               5.0 # 16.0
-SHARED_LIBS +=  kritalibkra               9.0 # 16.0
+SHARED_LIBS +=  kritalibkra               10.0 # 16.0
 SHARED_LIBS +=  kritametadata             3.0 # 18.0
 SHARED_LIBS +=  kritaqmicinterface        2.0 # 17.0
-SHARED_LIBS +=  kritaresources            5.0 # 17.0
+SHARED_LIBS +=  kritaresources            5.1 # 17.0
 SHARED_LIBS +=  kritaresourcewidgets      2.0 # 17.0
 SHARED_LIBS +=  kritapsdutils             2.0 # 0.0
 SHARED_LIBS +=  kritatiffpsd              0.0 # 0.0
@@ -27,11 +27,11 @@ SHARED_LIBS +=  kritamultiarch            0.1 # 0.0
 SHARED_LIBS +=  kritapsd                  6.0 # 14.0
 SHARED_LIBS +=  kritacolor                3.0 # 14.0
 SHARED_LIBS +=  kritaglobal               8.0 # 14.0
-SHARED_LIBS +=  kritaimage                70.0 # 0.0
+SHARED_LIBS +=  kritaimage                71.0 # 0.0
 SHARED_LIBS +=  kritalibbrush             60.0 # 0.0
-SHARED_LIBS +=  kritalibpaintop           61.0 # 0.0
-SHARED_LIBS +=  kritaui                   75.0 # 0.0
-SHARED_LIBS +=  kritaqmlwidgets           0.0 # 0.0
+SHARED_LIBS +=  kritalibpaintop           61.1 # 0.0
+SHARED_LIBS +=  kritaui                   76.0 # 0.0
+SHARED_LIBS +=  kritaqmlwidgets           0.1 # 0.0
 SHARED_LIBS +=  kritasurfacecolormanagementapi 0.0 # 0.0
 
 CATEGORIES =	graphics
