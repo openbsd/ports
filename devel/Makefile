@@ -1937,7 +1937,6 @@
      SUBDIR += ruby-nio4r,ruby33
      SUBDIR += ruby-nio4r,ruby34
      SUBDIR += ruby-nio4r,ruby40
-     SUBDIR += ruby-opt_parse_validator
      SUBDIR += ruby-optimist
      SUBDIR += ruby-pastel
      SUBDIR += ruby-pathspec
