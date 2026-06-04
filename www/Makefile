@@ -555,6 +555,7 @@
      SUBDIR += ruby-fcgi,ruby34
      SUBDIR += ruby-fcgi,ruby40
      SUBDIR += ruby-httpclient
+     SUBDIR += ruby-ferrum
      SUBDIR += ruby-jwt
      SUBDIR += ruby-multipart-post
      SUBDIR += ruby-ntlm,ruby33
