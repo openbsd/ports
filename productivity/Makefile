@@ -61,7 +61,6 @@
      SUBDIR += when
      SUBDIR += workrave
      SUBDIR += xinvest
-     SUBDIR += xquote
      SUBDIR += yokadi
      SUBDIR += zim
 
