@@ -1,0 +1,12 @@
+Index: src/u_init.c
+--- src/u_init.c.orig
++++ src/u_init.c
+@@ -711,7 +711,7 @@ u_init()
+ 	u.ulycn = NON_PM;
+ 	set_uasmon();
+ 
+-#ifdef BSD
++#if 0
+ 	(void) time((long *)&u.ubirthday);
+ #else
+ 	(void) time(&u.ubirthday);

@@ -1,7 +1,7 @@
 @unexec rm -rf %D/lib/slashdir/save
 @group games
 bin/slash
-bin/srecover
+@bin bin/srecover
 @mode 0775
 ${GAMEDIR}/
 @mode
@@ -182,7 +182,7 @@ ${GAMEDIR}/save/
 @mode
 ${GAMEDIR}/sea.lev
 @mode 2555
-${GAMEDIR}/slash
+@bin ${GAMEDIR}/slash
 @mode
 ${GAMEDIR}/spiders.lev
 ${GAMEDIR}/stor-1.lev

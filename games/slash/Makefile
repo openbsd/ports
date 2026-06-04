@@ -2,7 +2,7 @@ COMMENT =	dungeon explorin', hackin' game, but harder than nethack
 
 DISTNAME =	slash-e8
 PKGNAME =	slash-3.2.2.e8
-REVISION =	8
+REVISION =	9
 CATEGORIES =	games
 
 SITES =		${SITE_SOURCEFORGE:=nethack/}
@@ -34,7 +34,7 @@ FLAVOR ?=
 NETHACKCONFIG =	${FILESDIR}/simple-config
 .else
 NETHACKCONFIG =	${FILESDIR}/x-config
-WANTLIB +=	X11 Xaw Xext Xmu Xpm Xt xcb
+WANTLIB +=	X11 Xaw Xext Xmu Xpm Xt
 .endif
 
 RUN_DEPENDS =	games/hackdata

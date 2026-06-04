@@ -1,0 +1,52 @@
+Index: src/hacklib.c
+--- src/hacklib.c.orig
++++ src/hacklib.c
+@@ -410,6 +410,7 @@ static struct tm *NDECL(getlt);
+ void
+ setrandom()
+ {
++#if 0
+ 	/* the types are different enough here that sweeping the different
+ 	 * routine names into one via #defines is even more confusing
+ 	 */
+@@ -433,6 +434,7 @@ setrandom()
+ #  endif
+ # endif
+ #endif
++#endif
+ }
+ 
+ static struct tm *
+@@ -440,12 +442,12 @@ getlt()
+ {
+ 	time_t date;
+ 
+-#ifdef BSD
++#if 0
+ 	(void) time((long *)(&date));
+ #else
+ 	(void) time(&date);
+ #endif
+-#if (defined(ULTRIX) && !(defined(ULTRIX_PROTO) || defined(NHSTDC))) || defined(BSD)
++#if 0
+ 	return(localtime((long *)(&date)));
+ #else
+ 	return(localtime(&date));
+@@ -469,7 +471,7 @@ time_t date;
+ 	if (date == 0)
+ 		lt = getlt();
+ 	else
+-#if (defined(ULTRIX) && !(defined(ULTRIX_PROTO) || defined(NHSTDC))) || defined(BSD)
++#if 0
+ 		lt = localtime((long *)(&date));
+ #else
+ 		lt = localtime(&date);
+@@ -490,7 +492,7 @@ time_t date;
+ 	if (date == 0)
+ 		lt = getlt();
+ 	else
+-#if (defined(ULTRIX) && !(defined(ULTRIX_PROTO) || defined(NHSTDC))) || defined(BSD)
++#if 0
+ 		lt = localtime((long *)(&date));
+ #else
+ 		lt = localtime(&date);
