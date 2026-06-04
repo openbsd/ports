@@ -1,7 +1,7 @@
 Index: kstars/indi/servermanager.cpp
 --- kstars/indi/servermanager.cpp.orig
 +++ kstars/indi/servermanager.cpp
-@@ -548,17 +548,17 @@ void ServerManager::processStandardError()
+@@ -549,17 +549,17 @@ void ServerManager::processStandardError()
      qWarning() << "INDI server is currently not supported on Windows.";
      return;
  #else
@@ -14,10 +14,10 @@ Index: kstars/indi/servermanager.cpp
  
 -    serverBuffer.write(stderr.toLatin1());
 +    serverBuffer.write(sstderr.toLatin1());
-     emit newServerLog();
+     Q_EMIT newServerLog();
  
 -    //if (driverCrashed == false && (stderr.contains("stdin EOF") || stderr.contains("stderr EOF")))
-+    //if (driverCrashed == false && (sstderr.contains("stdin EOF") || sstderr.contains("sstderr EOF")))
++    //if (driverCrashed == false && (sstderr.contains("stdin EOF") || sstderr.contains("stderr EOF")))
      QRegularExpression re("Driver (.*): Terminated after #0 restarts");
 -    QRegularExpressionMatch match = re.match(stderr);
 +    QRegularExpressionMatch match = re.match(sstderr);
