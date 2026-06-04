@@ -1,7 +1,7 @@
 @unexec rm -rf ${GAMEDIR}/save/*
 @group games
 bin/falconseye
-bin/frecover
+@bin bin/frecover
 @mode 0775
 ${GAMEDIR}/
 @mode
@@ -94,7 +94,7 @@ ${GAMEDIR}/earth.lev
 ${GAMEDIR}/fakewiz1.lev
 ${GAMEDIR}/fakewiz2.lev
 @mode 2555
-${GAMEDIR}/falconseye
+@bin ${GAMEDIR}/falconseye
 @mode
 ${GAMEDIR}/fire.lev
 ${GAMEDIR}/graphics/

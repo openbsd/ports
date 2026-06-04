@@ -1,5 +1,6 @@
---- sys/unix/unixunix.c.orig	Sun Jun 24 18:57:24 2001
-+++ sys/unix/unixunix.c	Wed Jul  4 11:23:29 2001
+Index: sys/unix/unixunix.c
+--- sys/unix/unixunix.c.orig
++++ sys/unix/unixunix.c
 @@ -42,7 +42,9 @@ gethdate(name)
   * does not exist on all systems, and moreover, that it sometimes includes
   * <sys/types.h> again, so that the compiler sees these typedefs twice.
@@ -10,3 +11,12 @@
  
  	register const char *np, *path;
  	char filename[MAXPATHLEN+1];
+@@ -119,7 +121,7 @@ int fd;
+ #ifndef INSURANCE
+ 	if(buf.st_size != sizeof(int)) return(0);	/* not an xlock file */
+ #endif
+-#ifdef BSD
++#if 0
+ 	(void) time((long *)(&date));
+ #else
+ 	(void) time(&date);

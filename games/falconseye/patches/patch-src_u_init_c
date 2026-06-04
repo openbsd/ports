@@ -1,0 +1,12 @@
+Index: src/u_init.c
+--- src/u_init.c.orig
++++ src/u_init.c
+@@ -576,7 +576,7 @@ u_init()
+ 			aligns[flags.initalign].value;
+ 	u.ulycn = NON_PM;
+ 
+-#ifdef BSD
++#if 0
+ 	(void) time((long *)&u.ubirthday);
+ #else
+ 	(void) time(&u.ubirthday);
