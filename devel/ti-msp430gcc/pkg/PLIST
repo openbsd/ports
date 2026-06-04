@@ -30,8 +30,8 @@ lib/gcc/msp430-none-elf/${GCC_V}/
 lib/gcc/msp430-none-elf/${GCC_V}/430/
 lib/gcc/msp430-none-elf/${GCC_V}/430/crtbegin.o
 lib/gcc/msp430-none-elf/${GCC_V}/430/crtend.o
-lib/gcc/msp430-none-elf/${GCC_V}/430/libgcc.a
-lib/gcc/msp430-none-elf/${GCC_V}/430/libgcov.a
+@static-lib lib/gcc/msp430-none-elf/${GCC_V}/430/libgcc.a
+@static-lib lib/gcc/msp430-none-elf/${GCC_V}/430/libgcov.a
 lib/gcc/msp430-none-elf/${GCC_V}/crtbegin.o
 lib/gcc/msp430-none-elf/${GCC_V}/crtend.o
 lib/gcc/msp430-none-elf/${GCC_V}/include/
@@ -69,10 +69,10 @@ lib/gcc/msp430-none-elf/${GCC_V}/install-tools/mkheaders.conf
 lib/gcc/msp430-none-elf/${GCC_V}/large/
 lib/gcc/msp430-none-elf/${GCC_V}/large/crtbegin.o
 lib/gcc/msp430-none-elf/${GCC_V}/large/crtend.o
-lib/gcc/msp430-none-elf/${GCC_V}/large/libgcc.a
-lib/gcc/msp430-none-elf/${GCC_V}/large/libgcov.a
-lib/gcc/msp430-none-elf/${GCC_V}/libgcc.a
-lib/gcc/msp430-none-elf/${GCC_V}/libgcov.a
+@static-lib lib/gcc/msp430-none-elf/${GCC_V}/large/libgcc.a
+@static-lib lib/gcc/msp430-none-elf/${GCC_V}/large/libgcov.a
+@static-lib lib/gcc/msp430-none-elf/${GCC_V}/libgcc.a
+@static-lib lib/gcc/msp430-none-elf/${GCC_V}/libgcov.a
 lib/gcc/msp430-none-elf/${GCC_V}/plugin/
 lib/gcc/msp430-none-elf/${GCC_V}/plugin/gtype.state
 lib/gcc/msp430-none-elf/${GCC_V}/plugin/include/
@@ -1101,15 +1101,15 @@ msp430-none-elf/lib/430/crtn-minrt.o
 msp430-none-elf/lib/430/crtn.o
 msp430-none-elf/lib/430/gcrt0.o
 msp430-none-elf/lib/430/intr_vectors.ld
-msp430-none-elf/lib/430/libc.a
-msp430-none-elf/lib/430/libcrt.a
-msp430-none-elf/lib/430/libg.a
-msp430-none-elf/lib/430/libm.a
-msp430-none-elf/lib/430/libnosys.a
-msp430-none-elf/lib/430/libsim.a
-msp430-none-elf/lib/430/libssp.a
+@static-lib msp430-none-elf/lib/430/libc.a
+@static-lib msp430-none-elf/lib/430/libcrt.a
+@static-lib msp430-none-elf/lib/430/libg.a
+@static-lib msp430-none-elf/lib/430/libm.a
+@static-lib msp430-none-elf/lib/430/libnosys.a
+@static-lib msp430-none-elf/lib/430/libsim.a
+@static-lib msp430-none-elf/lib/430/libssp.a
 msp430-none-elf/lib/430/libssp.la
-msp430-none-elf/lib/430/libssp_nonshared.a
+@static-lib msp430-none-elf/lib/430/libssp_nonshared.a
 msp430-none-elf/lib/430/libssp_nonshared.la
 msp430-none-elf/lib/430/msp430-sim.ld
 msp430-none-elf/lib/430/msp430.ld
@@ -1702,15 +1702,15 @@ msp430-none-elf/lib/large/crtn-minrt.o
 msp430-none-elf/lib/large/crtn.o
 msp430-none-elf/lib/large/gcrt0.o
 msp430-none-elf/lib/large/intr_vectors.ld
-msp430-none-elf/lib/large/libc.a
-msp430-none-elf/lib/large/libcrt.a
-msp430-none-elf/lib/large/libg.a
-msp430-none-elf/lib/large/libm.a
-msp430-none-elf/lib/large/libnosys.a
-msp430-none-elf/lib/large/libsim.a
-msp430-none-elf/lib/large/libssp.a
+@static-lib msp430-none-elf/lib/large/libc.a
+@static-lib msp430-none-elf/lib/large/libcrt.a
+@static-lib msp430-none-elf/lib/large/libg.a
+@static-lib msp430-none-elf/lib/large/libm.a
+@static-lib msp430-none-elf/lib/large/libnosys.a
+@static-lib msp430-none-elf/lib/large/libsim.a
+@static-lib msp430-none-elf/lib/large/libssp.a
 msp430-none-elf/lib/large/libssp.la
-msp430-none-elf/lib/large/libssp_nonshared.a
+@static-lib msp430-none-elf/lib/large/libssp_nonshared.a
 msp430-none-elf/lib/large/libssp_nonshared.la
 msp430-none-elf/lib/large/msp430-sim.ld
 msp430-none-elf/lib/large/msp430.ld
@@ -1726,15 +1726,15 @@ msp430-none-elf/lib/ldscripts/msp430X.xbn
 msp430-none-elf/lib/ldscripts/msp430X.xn
 msp430-none-elf/lib/ldscripts/msp430X.xr
 msp430-none-elf/lib/ldscripts/msp430X.xu
-msp430-none-elf/lib/libc.a
-msp430-none-elf/lib/libcrt.a
-msp430-none-elf/lib/libg.a
-msp430-none-elf/lib/libm.a
-msp430-none-elf/lib/libnosys.a
-msp430-none-elf/lib/libsim.a
-msp430-none-elf/lib/libssp.a
+@static-lib msp430-none-elf/lib/libc.a
+@static-lib msp430-none-elf/lib/libcrt.a
+@static-lib msp430-none-elf/lib/libg.a
+@static-lib msp430-none-elf/lib/libm.a
+@static-lib msp430-none-elf/lib/libnosys.a
+@static-lib msp430-none-elf/lib/libsim.a
+@static-lib msp430-none-elf/lib/libssp.a
 msp430-none-elf/lib/libssp.la
-msp430-none-elf/lib/libssp_nonshared.a
+@static-lib msp430-none-elf/lib/libssp_nonshared.a
 msp430-none-elf/lib/libssp_nonshared.la
 msp430-none-elf/lib/msp430-sim.ld
 msp430-none-elf/lib/msp430.ld
