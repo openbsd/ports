@@ -3,15 +3,14 @@ CATEGORIES =	graphics x11
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	maim
-GH_TAGNAME =	v5.8.1
-REVISION =	0
+GH_TAGNAME =	v5.8.2
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL ICE SM X11 Xcomposite Xext Xfixes
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xcomposite Xext Xfixes
 WANTLIB += Xrandr Xrender c icuuc jpeg m png slopy webp z
 
 MODULES =		devel/cmake
