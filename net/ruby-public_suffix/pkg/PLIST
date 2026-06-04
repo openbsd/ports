@@ -1,8 +1,8 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
-${GEM_LIB}/gems/${DISTNAME}/2.0-Upgrade.md
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/SECURITY.md
