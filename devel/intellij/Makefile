@@ -1,7 +1,7 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2026.1.2
-DIST_VER=		261.24374.151
+V=			2026.1.3
+DIST_VER=		261.25134.95
 DISTNAME=		idea-${V}
 DISTFILES=		${DISTNAME}-1{${DISTNAME}}.tar.gz
 PKGNAME=		intellij-${V}
