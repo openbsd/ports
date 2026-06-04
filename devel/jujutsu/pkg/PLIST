@@ -97,6 +97,8 @@
 @man man/man1/jj-tag.1
 @man man/man1/jj-undo.1
 @man man/man1/jj-unsign.1
+@man man/man1/jj-util-backend-name.1
+@man man/man1/jj-util-backend.1
 @man man/man1/jj-util-completion.1
 @man man/man1/jj-util-config-schema.1
 @man man/man1/jj-util-exec.1
