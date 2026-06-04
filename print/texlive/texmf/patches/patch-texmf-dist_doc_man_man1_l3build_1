@@ -2,7 +2,7 @@ Index: texmf-dist/doc/man/man1/l3build.1
 --- texmf-dist/doc/man/man1/l3build.1.orig
 +++ texmf-dist/doc/man/man1/l3build.1
 @@ -1,7 +1,7 @@
- .TH L3BUILD 1 "2025-02-23" "LaTeX"
+ .TH L3BUILD 1 "2025-12-24" "LaTeX"
  
  .SH NAME
 -l3build

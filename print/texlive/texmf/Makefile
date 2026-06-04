@@ -23,10 +23,6 @@ PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
 
-REVISION-full =		0
-REVISION-main =		0
-REVISION-buildset =	0
-
 NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*
@@ -51,7 +47,9 @@ RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${MODTK_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
-# While pdfjam needs bash, depend upon bash:
+# While pdfjam needs bash, depend upon bash.
+# Should be able to get rid of this (and the patch) in TL2027:
+# https://github.com/pdfjam/pdfjam/issues/99#issuecomment-3560852984
 RUN_DEPENDS-full +=	shells/bash
 
 # XXX: Can we make context be further towards the top dep chain? Can it depend

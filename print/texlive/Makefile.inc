@@ -7,8 +7,8 @@ PERMIT_PACKAGE ?=	Yes
 
 EXTRACT_SUFX ?=		.tar.xz
 
-V ?=		2025
-DIST_V ?=	${V}0308
+V ?=		2026
+DIST_V ?=	${V}0301
 
 # Note: The TUG FTP server is frequently overloaded and doesn't work with
 # ftp(1)'s keepalive implementation.

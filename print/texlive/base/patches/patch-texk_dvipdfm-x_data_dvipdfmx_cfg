@@ -1,0 +1,31 @@
+dvipdfmx \special{PSfile=...} fix
+https://tug.org/pipermail/tldistro/2026q1/000542.html
+
+Index: texk/dvipdfm-x/data/dvipdfmx.cfg
+--- texk/dvipdfm-x/data/dvipdfmx.cfg.orig
++++ texk/dvipdfm-x/data/dvipdfmx.cfg
+@@ -147,12 +147,23 @@ P  0x003C
+ %% will also be re-encoded using Flate. To turn the conversion off,
+ %% remove the options mentioned above.
+ %% 
++%% The -- forces the remaining argument(s) to be considered as
++%% filenames, just in case someone manages to insert a Ghostscript option.
++%% Although it's traditional to end gs invocations with "-c quit",
++%% in this context it is not necessary, and we don't want that with the --,
++%% since we wouldn't want to randomly find input files named "-c" or
++%% "quit".
++%% 
+ %% Incidentally, more than one dvipdfmx.cfg may exist.
+ %% You can find the one that is active by running:
+ %%   kpsewhich -progname=dvipdfmx -format=othertext dvipdfmx.cfg
++%% (add -all to see all files found)
+ %% and control which one is found by setting DVIPDFMXINPUTS.
+ %%
+-D  "rungs -q -dSAFER -dNOPAUSE -dBATCH -dEPSCrop -sPAPERSIZE=a0 -sDEVICE=pdfwrite -dCompatibilityLevel=%v -dAutoFilterGrayImages=false -dGrayImageFilter=/FlateEncode -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dAutoRotatePages=/None -sOutputFile='%o' '%i' -c quit"
++%% Incidentally 2, the syntax of this value is a C string: "...".
++%% The embedded '...' quotes are interpreted by dvipdfmx, not a shell.
++%% 
++D  "rungs -q -dSAFER -dNOPAUSE -dBATCH -dEPSCrop -sPAPERSIZE=a0 -sDEVICE=pdfwrite -dCompatibilityLevel=%v -dAutoFilterGrayImages=false -dGrayImageFilter=/FlateEncode -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dAutoRotatePages=/None -sOutputFile='%o' -- '%i'"
+ %% If you change the above rungs invocation, also change dvipdfmx-unsafe.cfg!
+ 
+ % other random ps converters people have experimented with.

@@ -6,6 +6,6 @@ Index: texmf-dist/scripts/pdfjam/pdfjam
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!${LOCALBASE}/bin/bash
- version=4.1
+ version=4.2
  #########################################################################
  ##                                                                     ##

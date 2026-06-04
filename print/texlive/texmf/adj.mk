@@ -9,6 +9,10 @@ BASH_ADJ_FILES += \
 	texmf-dist/doc/fonts/drm/chartscript.sh \
 	texmf-dist/doc/fonts/hfbright/generate.sh \
 	texmf-dist/doc/generic/e-french/bin/linux/makefrindex \
+	texmf-dist/doc/generic/pst-fourbarlinkage/examples/tex2gif.sh \
+	texmf-dist/doc/generic/pst-kepler/images/tex2gif.sh \
+	texmf-dist/doc/generic/pst-nutation/animations/tex2gif.sh \
+	texmf-dist/doc/generic/pst-sphericaltrochoid/animations/tex2gif.sh \
 	texmf-dist/doc/latex/bardiag/example/compile.all \
 	texmf-dist/doc/latex/beamerappendixnote/build.sh \
 	texmf-dist/doc/latex/biblatex-abnt/test.sh \
@@ -30,8 +34,6 @@ BASH_ADJ_FILES += \
 	texmf-dist/doc/latex/confproc/papersinfo.sh \
 	texmf-dist/doc/latex/confproc/paperssplitpreamble.sh \
 	texmf-dist/doc/latex/confproc/removeLaTeXcmds.sh \
-	texmf-dist/doc/latex/ctable/doit \
-	texmf-dist/doc/latex/ctable/inst \
 	texmf-dist/doc/latex/curves/latex2pdf \
 	texmf-dist/doc/latex/doclicense/test-package-option-matrix \
 	texmf-dist/doc/latex/exframe/exfsermk.sh \
@@ -43,11 +45,13 @@ BASH_ADJ_FILES += \
 	texmf-dist/doc/latex/hvfloat/runAll.sh \
 	texmf-dist/doc/latex/hvfloat/runEXA.sh \
 	texmf-dist/doc/latex/joinbox/build.sh \
+	texmf-dist/doc/latex/ktbox/ktbox.build.sh \
 	texmf-dist/doc/latex/latex-brochure/build \
 	texmf-dist/doc/latex/latex-via-exemplos/makedoc.sh \
 	texmf-dist/doc/latex/mathspic/mathspic.sh \
 	texmf-dist/doc/latex/milog/milog \
 	texmf-dist/doc/latex/mitthesis/examples/cover_page_samples/latex_sources/cover_compile.sh \
+	texmf-dist/doc/latex/mitthesis/examples/design_examples/latex_sources/compile-design-samples.sh \
 	texmf-dist/doc/latex/mitthesis/examples/font_samples/latex_sources/compile-font-samples.sh \
 	texmf-dist/doc/latex/multibib/bibtexall \
 	texmf-dist/doc/latex/notes/makedoc \
@@ -68,10 +72,10 @@ BASH_ADJ_FILES += \
 	texmf-dist/doc/latex/uspace/uspace-ctanify.sh \
 	texmf-dist/doc/lualatex/gitinfo-lua/git-scenario.sh \
 	texmf-dist/doc/lualatex/wallcalendar/doc/examples/diff-cal.sh \
-	texmf-dist/doc/luatex/opbible/examples/make-all \
 	texmf-dist/doc/metapost/featpost/bash/COMPILE.sh \
 	texmf-dist/doc/metapost/featpost/bash/laproof.sh \
 	texmf-dist/doc/metapost/featpost/bash/makehtmlindex.sh \
+	texmf-dist/doc/optex/opbible/examples/make-all \
 	texmf-dist/doc/pdftex/tests/38-interword-space-at-font-switch/postpdf.sh \
 	texmf-dist/doc/plain/plipsum/compile.sh \
 	texmf-dist/doc/plain/transparent-io/TrIO.org \
@@ -92,6 +96,7 @@ BASH_ADJ_FILES += \
 	texmf-dist/scripts/logicpuzzle/createlpsudoku \
 	texmf-dist/scripts/logicpuzzle/lpsmag \
 	texmf-dist/scripts/ltxfileinfo/ltxfileinfo \
+	texmf-dist/scripts/pdfjam/pdfjam \
 	texmf-dist/scripts/pdftex-quiet/pdftex-quiet \
 	texmf-dist/scripts/pdfxup/pdfxup \
 	texmf-dist/scripts/tlcockpit/tlcockpit.sh \
@@ -185,7 +190,6 @@ MODPERL_ADJ_FILES += \
 	texmf-dist/scripts/easydtx/edtx2dtx.pl \
 	texmf-dist/scripts/epstopdf/epstopdf.pl \
 	texmf-dist/scripts/fig4latex/fig4latex \
-	texmf-dist/scripts/flowfram/flowfram.perl \
 	texmf-dist/scripts/fontools/afm2afm \
 	texmf-dist/scripts/fontools/autoinst \
 	texmf-dist/scripts/fontools/ot2kpx \
@@ -204,6 +208,7 @@ MODPERL_ADJ_FILES += \
 	texmf-dist/scripts/latexindent/latexindent.pl \
 	texmf-dist/scripts/latexmk/latexmk.pl \
 	texmf-dist/scripts/ltximg/ltximg.pl \
+	texmf-dist/scripts/makedtx/makedtx.pl \
 	texmf-dist/scripts/memoize/memoize-clean.pl \
 	texmf-dist/scripts/memoize/memoize-extract.pl \
 	texmf-dist/scripts/mf2pt1/mf2pt1.pl \
@@ -257,7 +262,8 @@ MODPERL_ADJ_FILES += \
 	texmf-dist/source/support/bibtexperllibs/LaTeX-ToUnicode/t/release-synopsis.t
 
 PYTHON2_ADJ_FILES += \
-	texmf-dist/doc/fonts/gentium-sil/documentation/source/makepsmd.py \
+	texmf-dist/doc/fonts/gentium-sil/Gentium/documentation/source/makepsmd.py \
+	texmf-dist/doc/fonts/gentium-sil/GentiumBook/documentation/source/makepsmd.py \
 	texmf-dist/doc/fonts/gnu-freefont/tools/test/ranges/Arabic/arabic_test.py \
 	texmf-dist/doc/fonts/gnu-freefont/tools/test/ranges/Arabic/generate_arabic_shaping.py \
 	texmf-dist/doc/fonts/gnu-freefont/tools/test/ranges/Arabic/unicode_joining.py \
@@ -266,7 +272,6 @@ PYTHON2_ADJ_FILES += \
 	texmf-dist/doc/fonts/xcharter/altSRB.py \
 	texmf-dist/doc/fonts/xcharter/altone.py \
 	texmf-dist/doc/generic/enctex/unimap.py \
-	texmf-dist/doc/latex/aramaic-serto/serto.py \
 	texmf-dist/doc/latex/biblatex-bookinother/documentation/generate-crossref-graphs.py \
 	texmf-dist/doc/latex/biblatex-morenames/documentation/generate-crossref-graphs.py \
 	texmf-dist/doc/latex/comprehensive/source/makefakeasapsym \
@@ -282,13 +287,14 @@ PYTHON2_ADJ_FILES += \
 	texmf-dist/doc/latex/newcommand/newcommand.py \
 	texmf-dist/doc/latex/pythontex/syncpdb.py \
 	texmf-dist/doc/latex/scanpages/replicate.py \
+	texmf-dist/doc/latex/xepersian/dkun-0.3.py \
+	texmf-dist/doc/latex/xepersian/dkun-0.4.py \
+	texmf-dist/doc/latex/xepersian/ftxe-0.12.py \
+	texmf-dist/doc/latex/xepersian/undk-0.6.py \
+	texmf-dist/doc/latex/xepersian/unldk-0.2.py \
 	texmf-dist/doc/plain/plipsum/stripc \
 	texmf-dist/doc/support/hook-pre-commit-pkg/pre-commit-latex \
 	texmf-dist/doc/support/latexdiff/contrib/latexchanges.py \
-	texmf-dist/doc/xelatex/xepersian/dkun-0.3.py \
-	texmf-dist/doc/xelatex/xepersian/dkun-0.4.py \
-	texmf-dist/doc/xelatex/xepersian/undk-0.6.py \
-	texmf-dist/doc/xelatex/xepersian/unldk-0.2.py \
 	texmf-dist/scripts/changes/pyMergeChanges.py \
 	texmf-dist/scripts/de-macro/de-macro \
 	texmf-dist/scripts/ebong/ebong.py \
@@ -302,7 +308,6 @@ PYTHON2_ADJ_FILES += \
 	texmf-dist/scripts/pythontex/depythontex2.py \
 	texmf-dist/scripts/pythontex/pythontex.py \
 	texmf-dist/scripts/pythontex/pythontex2.py \
-	texmf-dist/scripts/pythontex/pythontex_2to3.py \
 	texmf-dist/scripts/pythontex/pythontex_install.py \
 	texmf-dist/scripts/texliveonfly/texliveonfly.py \
 	texmf-dist/source/latex/wargame/utils/wgexport.py \
@@ -323,10 +328,8 @@ PYTHON3_ADJ_FILES += \
 	texmf-dist/asymptote/GUI/Widg_addPolyOpt.py \
 	texmf-dist/asymptote/GUI/Widg_editBezier.py \
 	texmf-dist/asymptote/GUI/Window1.py \
-	texmf-dist/asymptote/GUI/__init__.py \
 	texmf-dist/asymptote/GUI/buildtool.py \
 	texmf-dist/asymptote/GUI/labelEditor.py \
-	texmf-dist/asymptote/GUI/setup.py \
 	texmf-dist/asymptote/GUI/xasy.py \
 	texmf-dist/asymptote/GUI/xasy2asy.py \
 	texmf-dist/asymptote/GUI/xasyArgs.py \
@@ -339,13 +342,13 @@ PYTHON3_ADJ_FILES += \
 	texmf-dist/asymptote/GUI/xasyUtils.py \
 	texmf-dist/asymptote/GUI/xasyValidator.py \
 	texmf-dist/asymptote/asymptote.py \
-	texmf-dist/doc/latex/biblatex-gb7714-2015/makeall.py \
-	texmf-dist/doc/latex/biblatex-gb7714-2015/makeupdateversion.py \
+	texmf-dist/doc/latex/aramaic-serto/serto.py \
 	texmf-dist/doc/latex/emo/config/emo.py \
+	texmf-dist/doc/latex/luatex-cn/build_wiki_pdf.py \
 	texmf-dist/doc/latex/songproj/song2tex.py \
 	texmf-dist/doc/latex/unicode-math-input/unicode-math-input-script.py \
-	texmf-dist/doc/luatex/opbible/txs-gen/maketxs.py \
 	texmf-dist/doc/metapost/metapost-colorbrewer/make_mp_colorbrewer.py \
+	texmf-dist/doc/optex/opbible/txs-gen/maketxs.py \
 	texmf-dist/doc/support/gitfile-info/gfi-run.py \
 	texmf-dist/doc/support/gitfile-info/post-commit.py \
 	texmf-dist/doc/support/gitfile-info/post-merge.py \
@@ -397,6 +400,7 @@ RUBY_ADJ_FILES += \
 	texmf-dist/source/generic/hyph-utf8/generate-tl-files.rb \
 	texmf-dist/source/generic/hyph-utf8/languages/eu/generate_patterns_eu.rb \
 	texmf-dist/source/generic/hyph-utf8/languages/hy/generate_patterns_hy.rb \
+	texmf-dist/source/generic/hyph-utf8/languages/kk/generate_patterns_kk.rb \
 	texmf-dist/source/generic/hyph-utf8/languages/tk/generate_patterns_tk.rb \
 	texmf-dist/source/generic/hyph-utf8/languages/tr/generate_patterns_tr.rb \
 	texmf-dist/source/latex/proposal/bin/generate-issues \
@@ -407,7 +411,8 @@ RUBY_ADJ_FILES += \
 TEXLUA_ADJ_FILES += \
 	texmf-dist/doc/fonts/zhmetrics-uptex/makemetrics.lua \
 	texmf-dist/doc/generic/m-tx/buildmtxdoc.lua \
-	texmf-dist/doc/support/cluttex/src/cluttex.lua \
+	texmf-dist/doc/generic/m-tx/m-tx.lua \
+	texmf-dist/doc/latex/struktex/build.lua \
 	texmf-dist/scripts/cachepic/cachepic.tlu \
 	texmf-dist/scripts/checkcites/checkcites.lua \
 	texmf-dist/scripts/citation-style-language/citeproc-lua.lua \
@@ -427,7 +432,6 @@ TEXLUA_ADJ_FILES += \
 	texmf-dist/scripts/luafindfont/luafindfont.lua \
 	texmf-dist/scripts/luaotfload/luaotfload-tool.lua \
 	texmf-dist/scripts/lwarp/lwarpmk.lua \
-	texmf-dist/scripts/m-tx/m-tx.lua \
 	texmf-dist/scripts/make4ht/make4ht \
 	texmf-dist/scripts/markdown/markdown-cli.lua \
 	texmf-dist/scripts/markdown/markdown2tex.lua \
@@ -438,7 +442,9 @@ TEXLUA_ADJ_FILES += \
 	texmf-dist/scripts/pmxchords/pmxchords.lua \
 	texmf-dist/scripts/ppmcheckpdf/ppmcheckpdf.lua \
 	texmf-dist/scripts/ptex2pdf/ptex2pdf.lua \
+	texmf-dist/scripts/runtexfile/runtexfile.lua \
 	texmf-dist/scripts/runtexshebang/runtexshebang.lua \
+	texmf-dist/scripts/show-pdf-tags/show-pdf-tags.lua \
 	texmf-dist/scripts/splitindex/splitindex.tlu \
 	texmf-dist/scripts/splitindex/splitindex_main.tlu \
 	texmf-dist/scripts/tex4ebook/tex4ebook \

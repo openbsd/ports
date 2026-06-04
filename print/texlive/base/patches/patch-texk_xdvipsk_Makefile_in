@@ -1,0 +1,14 @@
+Fix 'could not find a stdc++ library'
+
+Index: texk/xdvipsk/Makefile.in
+--- texk/xdvipsk/Makefile.in.orig
++++ texk/xdvipsk/Makefile.in
+@@ -1136,7 +1136,7 @@ libtiff_a_SOURCES = \
+ LIBTIFF_LIBS = libtiff.a
+ xdvipsk_LDADD = libdvipsgraph.a $(KPATHSEA_LIBS) $(LUA_LIBS) \
+ 	$(LIBTIFF_LIBS) $(LIBPNG_LIBS) $(ZLIB_LIBS) $(LIBJPEG_LIBS) \
+-	$(FREETYPE2_LIBS) -lstdc++ $(am__append_2)
++	$(FREETYPE2_LIBS) $(am__append_2)
+ @cross_TRUE@xdvipsk_LDFLAGS = -fno-lto -fno-use-linker-plugin -static -static-libgcc -static-libstdc++ --disable-shared
+ noinst_LIBRARIES = libdvipsgraph.a $(LIBTIFF_LIBS) $(LIBJPEG_LIBS)
+ libdvipsgraph_a_dependencies = $(ZLIB_DEPEND) $(LIBPNG_DEPEND) $(LIBJPEG_DEPEND) $(LIBTIFF_DEPEND)

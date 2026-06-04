@@ -1,55 +1,31 @@
 Index: texmf-dist/web2c/texmfcnf.lua
 --- texmf-dist/web2c/texmfcnf.lua.orig
 +++ texmf-dist/web2c/texmfcnf.lua
-@@ -22,6 +22,9 @@ return {
-         -- time to prune and update this file, also because LMTX has a few more features.
+@@ -42,7 +42,10 @@ local package_revision = "A"
+ -- The location of the distribution's TEXMF tree. The contents stored in this
+ -- path should not be modified by users, and are solely managed by the
+ -- distribution itself.
+-local distribution_path = "selfautoparent:texmf-dist"
++--
++-- Note that in OpenBSD, where we use the old teTeX path convention, and
++-- therefore selfauto does not work.
++local distribution_path = "${TRUEPREFIX}/share/texmf-dist"
  
-         variables = {
-+            -- Note that in OpenBSD, where we use the old teTeX path convention, and
-+            -- therefore selfauto does not work.
-+            TEXMFROOT = "${TRUEPREFIX}/share",
+ -- Where ConTeXt should store any caches. There is a single "system" folder for
+ -- the entire computer, and this folder is typically only writable by
+@@ -51,13 +54,13 @@ local distribution_path = "selfautoparent:texmf-dist"
+ -- must be writable by ConTeXt at runtime, or else ConTeXt will refuse to run.
+ -- These folders should be persistent (so not in a temporary directory);
+ -- however, it is generally safe to delete them at any time.
+-local system_cache = "selfautoparent:"
++local system_cache = "${TRUEPREFIX}/share"
+ local user_cache   = "home:.texlive2026"
  
-             -- The following variable is predefined (but can be overloaded) and in most cases you can
-             -- leave this one untouched. The built-in definition permits relocation of the tree.
-@@ -52,7 +55,7 @@ return {
+ -- Where ConTeXt should search for custom files. "system" and "user" have the
+ -- same meaning as above. ConTeXt will never write to or otherwise modify these
+ -- files itself.
+-local system_data = "selfautoparent:../texmf-local"
++local system_data = "${TRUEPREFIX}/share/texmf-local"
+ local user_data   = "home:texmf"
  
-             TEXMFVAR        = "home:" .. hiddentexlivepath .. "/texmf-var",
-             TEXMFCONFIG     = "home:" .. hiddentexlivepath .. "/texmf-config",
--            TEXMFSYSVAR     = "selfautoparent:texmf-var",
-+            TEXMFSYSVAR     = "$TEXMFROOT/texmf-var",
-             TEXMFCACHE      = "$TEXMFSYSVAR;$TEXMFVAR",
- 
-             -- I don't like this texmf under home and texmf-home would make more sense. One never knows
-@@ -62,7 +65,7 @@ return {
-             -- By using prefixes we don't get expanded paths in the cache __path__ entry. This makes the
-             -- tex root relocatable.
- 
--            TEXMFOS         = "selfautodir:",
-+            TEXMFOS         = "${TRUEPREFIX}",
- 
-             -- standalone:
- 
-@@ -73,8 +76,8 @@ return {
- 
-             -- texlive:
- 
--            TEXMFDIST       = "selfautoparent:texmf-dist",
--            TEXMFSYSCONFIG  = "selfautoparent:texmf-config",
-+            TEXMFDIST       = "$TEXMFROOT/texmf-dist",
-+            TEXMFSYSCONFIG  = "$TEXMFROOT/texmf-config",
- 
-             -- The texmf-local path is only used for (maybe) some additional configuration file.
- 	    -- Changed texmf-local to use ../ per Bruno Voisin,
-@@ -86,9 +89,9 @@ return {
- 	    -- More info:
- 	    --   https://wiki.contextgarden.net/Use_the_fonts_you_want
- 	    --   https://wiki.contextgarden.net/Mtxrun#base and #fontsa
--            TEXMFLOCAL      = "selfautoparent:../texmf-local",
--            TEXMFFONTS      = "selfautoparent:texmf-fonts",
--            TEXMFPROJECT    = "selfautoparent:texmf-project",
-+            TEXMFLOCAL      = "$TEXMFROOT/texmf-local",
-+            TEXMFFONTS      = "$TEXMFROOT/texmf-fonts",
-+            TEXMFPROJECT    = "$TEXMFROOT/texmf-project",
- 
-             TEXMFHOME       = "home:texmf",
-          -- TEXMFHOME       = os.name == "macosx" and "home:Library/texmf" or "home:texmf",
+ -- The location of non-TeX files optionally used by ConTeXt. Different paths are

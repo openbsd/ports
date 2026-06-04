@@ -1,11 +1,10 @@
 COMMENT =	TeX engine for ConTeXt
 
-V =		2.11.06
+V =		2.11.08
 PKGNAME =	luametatex-${V}
 
 # note: upstream forgot to tag this release it seems.
-DIST_TUPLE =	github contextgarden luametatex 76be136f8c8c4d75e53df3a17e036e81ba984525 .
-
+DIST_TUPLE =	github contextgarden luametatex b51333fea8011aa6d341ef8af9536010b3a7fb4e .
 
 CATEGORIES =	print textproc
 

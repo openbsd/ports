@@ -63,7 +63,4 @@ MAN_SYMLINKS_CMD = \
 	ln -sf ../man1/cluttex.1 cllualatex.1 && \
 	ln -sf ../man1/cluttex.1 clxelatex.1 && \
 	ln -sf ../man1/ctwill.1 ctwill-proofsort.1 && \
-	ln -sf ../man1/twill.1 twill-refsort.1 && \
-	ln -sf ../man1/context.1 contextjit.1 && \
-	ln -sf ../man1/mtxrun.1 luatools.1 && \
-	ln -sf ../man1/mtxrun.1 mtxrunjit.1
+	ln -sf ../man1/twill.1 twill-refsort.1

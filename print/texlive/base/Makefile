@@ -2,13 +2,7 @@ COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 COMMENT-synctex =	synctex for TeXLive typesetting distribution
 
-# Note that there were several problems with the release tarball this year.
-# Upstream made an svn tag containing the fixes and I've rolled my own tarball
-# from that.
-#
-# https://tug.org/pipermail/tldistro/2025q1/000512.html
-# https://tug.org/pipermail/tldistro/2025q1/000517.html
-DISTNAME =		texlive-${V}.2-source
+DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 
 MULTI_PACKAGES =	-main -mktexlsr -synctex
@@ -16,11 +10,9 @@ PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
 
-REVISION-main =		2
-
-DISTFILES =		texlive-${DIST_V}-extra${EXTRACT_SUFX}
-DISTFILES.zoo =		${DISTNAME}${EXTRACT_SUFX} \
-			mktexlsr-${V}.gz
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			texlive-${DIST_V}-extra${EXTRACT_SUFX}
+DISTFILES.zoo =		mktexlsr-${V}.gz
 
 SITES.zoo =		https://theunixzoo.co.uk/distfiles/
 
@@ -31,8 +23,8 @@ SHARED_LIBS +=		texlua53        0.1 # 8.6
 
 WANTLIB-main += ${COMPILER_LIBCXX} ICE Lerc SM X11 Xau Xaw Xdmcp Xext Xi
 WANTLIB-main += Xmu Xpm Xrender Xt c cairo expat fontconfig freetype
-WANTLIB-main += gd glib-2.0 graphite2 harfbuzz iconv icudata icui18n
-WANTLIB-main += icuio icuuc intl jpeg kpathsea lzma m paper pcre2-8
+WANTLIB-main += gd glib-2.0 graphite2 harfbuzz harfbuzz-subset iconv icudata
+WANTLIB-main += icui18n icuio icuuc intl jpeg kpathsea lzma m paper pcre2-8
 WANTLIB-main += pixman-1 png sharpyuv tiff webp xcb xcb-render xcb-shm
 WANTLIB-main += z zstd zzip
 
@@ -48,9 +40,9 @@ RUN_DEPENDS-main =	graphics/libwebp \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
 			devel/desktop-file-utils \
-			${BASE_PKGPATH},-synctex
+			${BASE_PKGPATH},-synctex \
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
 LIB_DEPENDS-main =	converters/libiconv \
 			graphics/png \
@@ -186,9 +178,9 @@ post-install: tl-symlinks-buildset
 	# Users should not use tlmgr (tex live package manager)
 	rm ${PREFIX}/bin/tlmgr
 
-	# The build installs `ptex` and `uptex` which conflict
-	# with symlinks that get installed by other texmf packages.
-	rm ${PREFIX}/bin/{u,}ptex
+	# The build installs `uptex` which conflicts with the symlink installed
+	# by the texmf packages.
+	rm ${PREFIX}/bin/uptex
 
 	# translate some sylinks from ../texmf* to ../share/texmf*
 	for link in `find ${PREFIX}/bin -type l`; do \

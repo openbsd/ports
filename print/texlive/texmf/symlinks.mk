@@ -17,7 +17,6 @@ tl-symlinks-main:
 		ln -s pdftex csplain && \
 		ln -s pdftex eplain && \
 		ln -s euptex eptex && \
-		ln -s hitex hilatex && \
 		ln -s pdftex jadetex && \
 		ln -s tex lollipop && \
 		ln -s luatex luacsplain && \
