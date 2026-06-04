@@ -35,6 +35,7 @@
      SUBDIR += bspwm
      SUBDIR += bwidget
      SUBDIR += byzi
+     SUBDIR += catclock
      SUBDIR += cde
      SUBDIR += cegui
      SUBDIR += chicago95-theme
