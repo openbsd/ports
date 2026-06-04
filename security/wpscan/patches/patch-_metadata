@@ -1,0 +1,12 @@
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -147,7 +147,7 @@ dependencies:
+     - - "<"
+       - !ruby/object:Gem::Version
+         version: 1.4.0
+-  type: :runtime
++  type: :development
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
