@@ -1,17 +1,15 @@
 COMMENT=	automatic text creation from templates
 CATEGORIES=	devel
 
-V=		5.8.7
+V=		5.16.2
 DISTNAME=	autogen-${V}
-REVISION=	10
 
-SHARED_LIBS +=	opts                 27.5     # .27.5
-SHARED_LIBS +=	guileopts            1.0      # .0.1
+SHARED_LIBS +=	opts                 28.0     # 36.5
 
 HOMEPAGE=	https://autogen.sourceforge.net/
 SITES=		${SITE_GNU:=autogen/rel${V}/}
 
-# GPLv2
+# GPLv3+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gmp guile iconv intl ltdl m pthread xml2 z
@@ -20,8 +18,9 @@ LIB_DEPENDS=	devel/gettext,-runtime \
 		lang/guile \
 		textproc/libxml
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.60
+CONFIGURE_STYLE=	gnu
+
+USE_GMAKE=	Yes
 
 CONFIGURE_ARGS=	--without-libregex \
 		--includedir=${PREFIX}/include/autogen

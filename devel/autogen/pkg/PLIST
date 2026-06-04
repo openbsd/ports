@@ -7,13 +7,9 @@ include/autogen/
 include/autogen/autoopts/
 include/autogen/autoopts/options.h
 include/autogen/autoopts/usage-txt.h
-@static-lib lib/libguileopts.a
-lib/libguileopts.la
-@lib lib/libguileopts.so.${LIBguileopts_VERSION}
 @static-lib lib/libopts.a
 lib/libopts.la
 @lib lib/libopts.so.${LIBopts_VERSION}
-lib/pkgconfig/autoopts.pc
 @man man/man1/autogen.1
 @man man/man1/autoopts-config.1
 @man man/man1/columns.1
@@ -41,25 +37,49 @@ lib/pkgconfig/autoopts.pc
 @man man/man3/strneqvcmp.3
 @man man/man3/strtransform.3
 share/aclocal/autoopts.m4
-share/aclocal/liboptschk.m4
 share/autogen/
 share/autogen/aginfo.tpl
 share/autogen/aginfo3.tpl
-share/autogen/agman-lib.tpl
+share/autogen/agman-cmd.tpl
+share/autogen/agman.tlib
 share/autogen/agman1.tpl
 share/autogen/agman3.tpl
+share/autogen/agmdoc-cmd.tpl
+share/autogen/agpl.lic
+share/autogen/agtexi-cmd.tpl
 share/autogen/autoopts.m4
-share/autogen/confmacs.tpl
+share/autogen/bits.tpl
+share/autogen/cmd-doc.tlib
+share/autogen/confmacs.tlib
 share/autogen/conftest.tpl
-share/autogen/fsm-macro.tpl
-share/autogen/fsm-trans.tpl
+share/autogen/def2pot.tpl
+share/autogen/fsm-macro.tlib
+share/autogen/fsm-trans.tlib
 share/autogen/fsm.tpl
 share/autogen/getopt.tpl
-share/autogen/libopts-27.5.3.tar.gz
-share/autogen/optcode.tpl
-share/autogen/opthead.tpl
+share/autogen/gpl.lic
+share/autogen/gplv2.lic
+share/autogen/lgpl.lic
+share/autogen/libopts-36.5.11.tar.gz
+share/autogen/liboptschk.m4
+share/autogen/man2man
+share/autogen/man2mdoc
+share/autogen/man2texi
+share/autogen/mbsd.lic
+share/autogen/mdoc2man
+share/autogen/mdoc2mdoc
+share/autogen/mdoc2texi
+share/autogen/optcode.tlib
+share/autogen/opthead.tlib
 share/autogen/options.tpl
-share/autogen/optlib.tpl
-share/autogen/optmain.tpl
+share/autogen/optlib.tlib
+share/autogen/optmain.tlib
 share/autogen/rc-sample.tpl
 share/autogen/stdoptions.def
+share/autogen/strings.tpl
+share/autogen/texi2man
+share/autogen/texi2mdoc
+share/autogen/texi2texi
+share/autogen/tpl-config.tlib
+share/autogen/usage.tlib
+share/pkgconfig/autoopts.pc
