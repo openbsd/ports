@@ -28,14 +28,14 @@ include/giggle/libgiggle/giggle-enums.h
 lib/giggle/
 lib/giggle/plugins/
 lib/giggle/plugins/${GNOME_VERSION}/
-lib/giggle/plugins/${GNOME_VERSION}/libpersonal-details.so
-lib/giggle/plugins/${GNOME_VERSION}/libterminal-view.so
+@so lib/giggle/plugins/${GNOME_VERSION}/libpersonal-details.so
+@so lib/giggle/plugins/${GNOME_VERSION}/libterminal-view.so
 lib/giggle/plugins/${GNOME_VERSION}/personal-details.xml
 lib/giggle/plugins/${GNOME_VERSION}/terminal-view.xml
-lib/libgiggle-git.a
+@static-lib lib/libgiggle-git.a
 lib/libgiggle-git.la
 @lib lib/libgiggle-git.so.${LIBgiggle-git_VERSION}
-lib/libgiggle.a
+@static-lib lib/libgiggle.a
 lib/libgiggle.la
 @lib lib/libgiggle.so.${LIBgiggle_VERSION}
 share/applications/giggle.desktop
