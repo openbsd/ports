@@ -1,7 +1,7 @@
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
 PKGNAME =	slash-em-3.4.3.7e7f1
-REVISION =	9
+REVISION =	10
 V =		3.4.3.7e7f1
 CATEGORIES =	games
 
@@ -39,7 +39,7 @@ LIB_DEPENDS =		x11/qt2
 WANTLIB +=		qt.=2
 .else
 NETHACKCONFIG =		${FILESDIR}/x-config
-WANTLIB +=		X11 Xaw Xext Xmu Xpm Xt xcb
+WANTLIB +=		X11 Xaw Xext Xmu Xpm Xt
 .endif
 
 RUN_DEPENDS =		games/hackdata

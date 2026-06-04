@@ -4,7 +4,7 @@
 @comment bin/slashem
 bin/slashem-${V}
 @group games
-bin/strecover-${V}
+@bin bin/strecover-${V}
 @mode 0775
 ${GAMEDIR}/
 @mode
@@ -179,7 +179,7 @@ ${GAMEDIR}/rats.lev
 @comment no checksum
 ${GAMEDIR}/record
 @mode
-${GAMEDIR}/recover
+@bin ${GAMEDIR}/recover
 ${GAMEDIR}/rumors
 ${GAMEDIR}/sanctum.lev
 @mode 0570
@@ -187,7 +187,7 @@ ${GAMEDIR}/save/
 @mode
 ${GAMEDIR}/sea.lev
 @mode 2555
-${GAMEDIR}/slashem
+@bin ${GAMEDIR}/slashem
 @mode
 ${GAMEDIR}/soko1-1.lev
 ${GAMEDIR}/soko1-2.lev
