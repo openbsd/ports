@@ -382,7 +382,6 @@
      SUBDIR += xarchive
      SUBDIR += xarchiver
      SUBDIR += xautolock
-     SUBDIR += xbae
      SUBDIR += xbanish
      SUBDIR += xbindkeys
      SUBDIR += xcalib
