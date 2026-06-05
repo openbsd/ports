@@ -1,8 +1,8 @@
 COMMENT=	read metadata from media files
 
-VERSION=	26.01
+VERSION=	26.05
 PKGNAME=	libmediainfo-${VERSION}
-SHARED_LIBS=	mediainfo	22.0 # 0.0
+SHARED_LIBS=	mediainfo	23.0 # 0.0
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
@@ -22,7 +22,7 @@ COMPILER=	base-clang ports-gcc
 LIB_DEPENDS=	devel/libzen
 
 CONFIGURE_STYLE=autoreconf
-CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ARGS=	--enable-static	--enable-visibility
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
