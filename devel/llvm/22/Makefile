@@ -1,6 +1,3 @@
-# this will be only used by upcoming www/chromium versions
-ONLY_FOR_ARCHS =	amd64 arm64
-
 LLVM_MAJOR =	22
 LLVM_VERSION =	${LLVM_MAJOR}.1.7
 LLVM_PKGSPEC =	>=22,<23
