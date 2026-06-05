@@ -1,0 +1,14 @@
+Fix build with llvm 22
+
+Index: modules/secure-logging/slog.c
+--- modules/secure-logging/slog.c.orig
++++ modules/secure-logging/slog.c
+@@ -932,7 +932,7 @@ int writeKey(char *key, guint64 counter, gchar *keypat
+       return 0;
+     }
+ 
+-  guint64 outlen = 0;
++  gsize outlen = 0;
+   // Write key
+   status = g_io_channel_write_chars(keyfile, key, KEY_LENGTH, &outlen, &error);
+   if(status != G_IO_STATUS_NORMAL)
