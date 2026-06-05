@@ -1,10 +1,13 @@
 Index: src/tools/hunspell.cxx
 --- src/tools/hunspell.cxx.orig
 +++ src/tools/hunspell.cxx
-@@ -116,28 +116,14 @@
+@@ -116,31 +116,14 @@
  #include "../parsers/odfparser.hxx"
  
  #define LIBDIR                \
+-  DATADIR "/hunspell:"        \
+-  DATADIR "/myspell:"         \
+-  DATADIR "/myspell/dicts:"   \
 -  "/usr/share/hunspell:"      \
 -  "/usr/share/myspell:"       \
 -  "/usr/share/myspell/dicts:" \

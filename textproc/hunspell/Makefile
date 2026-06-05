@@ -1,9 +1,9 @@
 COMMENT =	spelling, stemming, morphological analysis and generation
 
-V =		1.7.2
+V =		1.7.3
 DISTNAME =	hunspell-$V
 
-SHARED_LIBS =	hunspell-1.7	1.0 # 0.0
+SHARED_LIBS =	hunspell-1.7	2.0 # 1.0
 
 CATEGORIES =	textproc
 
