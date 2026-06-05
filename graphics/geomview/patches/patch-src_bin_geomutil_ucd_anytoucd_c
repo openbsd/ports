@@ -1,0 +1,12 @@
+Index: src/bin/geomutil/ucd/anytoucd.c
+--- src/bin/geomutil/ucd/anytoucd.c.orig
++++ src/bin/geomutil/ucd/anytoucd.c
+@@ -370,7 +370,7 @@ int main(int argc, char **argv)
+ 	}
+     {
+     char *timestring;
+-    long mytime;
++    time_t mytime;
+     time_t myt;
+     myt = time(&mytime);
+     timestring = ctime(&myt);

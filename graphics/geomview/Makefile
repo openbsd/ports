@@ -1,8 +1,7 @@
 COMMENT =		geometry viewer for OOGL file formats
 
-V =			1.9.4
+V =			1.9.5
 DISTNAME =		geomview-$V
-REVISION =		12
 SHARED_LIBS =		geomview	0.0
 CATEGORIES =		graphics
 

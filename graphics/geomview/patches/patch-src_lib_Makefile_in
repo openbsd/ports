@@ -1,6 +1,7 @@
---- src/lib/Makefile.in.orig	Wed Aug 29 11:49:52 2007
-+++ src/lib/Makefile.in	Wed Mar 16 19:50:01 2016
-@@ -264,7 +264,7 @@ libgeomview_la_LIBADD = \
+Index: src/lib/Makefile.in
+--- src/lib/Makefile.in.orig
++++ src/lib/Makefile.in
+@@ -427,7 +427,7 @@ libgeomview_la_LIBADD = \
   $(OOGLLIBS) $(OPENGLLIBS) $(SOCKETLIBS) $(XLIBS) $(ZLIB_LIB)
  
  libgeomview_la_DEPENDENCIES = $(OOGLLIBS) Makefile.am
