@@ -1,10 +1,10 @@
 COMMENT =	SSH/SFTP library based on libfilezilla
 
-DISTNAME =	fzssh-1.2.1
+DISTNAME =	fzssh-1.3.0
 
-SHARED_LIBS +=  fzssh-client	0.0
+SHARED_LIBS +=  fzssh-client	1.0
 SHARED_LIBS +=  fzssh-crypt	0.0
-SHARED_LIBS +=  fzssh		0.0
+SHARED_LIBS +=  fzssh		1.0
 
 CATEGORIES =	net
 
