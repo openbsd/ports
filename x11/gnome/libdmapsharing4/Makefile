@@ -1,15 +1,14 @@
 COMMENT=		DMAP client and server library
 
 GNOME_PROJECT=		libdmapsharing
-GNOME_VERSION=		3.9.13
+GNOME_VERSION=		3.9.14
 PKGNAME=		${GNOME_PROJECT}4-${GNOME_VERSION}
-REVISION=		0
 
 # override gnome MODULE
 SITES=			https://www.flyn.org/projects/libdmapsharing/
 EXTRACT_SUFX=		.tar.gz
 
-SHARED_LIBS +=	dmapsharing-4.0           0.0 # 12.12
+SHARED_LIBS +=	dmapsharing-4.0           0.0 # 12.14
 
 HOMEPAGE=		https://www.flyn.org/projects/libdmapsharing/index.html
 
