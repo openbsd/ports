@@ -3,7 +3,7 @@ COMMENT =	NetHack derivative
 VERSION =	1.9.3
 DISTNAME =	nethack_source_331_jtp_${VERSION:S/.//g}
 PKGNAME =	falconseye-${VERSION}
-REVISION =	11
+REVISION =	12
 CATEGORIES =	games x11
 EXTRACT_SUFX =	.zip
 
@@ -14,7 +14,6 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	SDL c curses m pthread
-#WANTLIB =	X11 Xext c curses m pthread usbhid xcb SDL
 
 SITES =		${SITE_SOURCEFORGE:=falconseye/}
 

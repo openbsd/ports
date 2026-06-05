@@ -1,0 +1,11 @@
+Index: src/files.c
+--- src/files.c.orig
++++ src/files.c
+@@ -95,6 +95,7 @@ extern int n_dgns;		/* from dungeon.c */
+ 
+ STATIC_DCL char *FDECL(set_bonesfile_name, (char *,d_level*));
+ STATIC_DCL char *NDECL(set_bonestemp_name);
++#undef COMPRESS
+ #ifdef COMPRESS
+ STATIC_DCL void FDECL(redirect, (char *,char *,FILE *,BOOLEAN_P));
+ STATIC_DCL void FDECL(docompress_file, (char *,BOOLEAN_P));
