@@ -27,6 +27,11 @@ WANTLIB +=	${COMPILER_LIBCXX} m
 CONFIGURE_ARGS +=	-DHWY_SYSTEM_GTEST=ON \
 			-DBUILD_SHARED_LIBS=ON
 
+.if ${MACHINE_ARCH} == riscv64
+# Don't assume risc-v Vector support
+CONFIGURE_ARGS+=	-DHWY_CMAKE_RVV=OFF
+.endif
+
 # everything except tests
 ALL_TARGET =	${SHARED_LIBS:Mhwy*}
 
