@@ -102,7 +102,7 @@ _MODPY_USE_CARGO = No
 .if ${MODPY_PYBUILD} != No
 BUILD_DEPENDS +=	devel/py-build \
 			devel/py-installer
-# if adding new backends, update python-modules(5)
+# if adding new backends, update python-module(5)
 .  if ${MODPY_PYBUILD} == flit
 BUILD_DEPENDS +=	devel/py-flit
 .  elif ${MODPY_PYBUILD} == flit_core
@@ -166,7 +166,7 @@ _MODPY_USE_CARGO =	Yes
 .  elif ${MODPY_PYBUILD} == uv_build
 BUILD_DEPENDS +=	devel/uv
 .  elif !${MODPY_PYBUILD:Mother}
-ERRORS +=		"Fatal: unknown MODPY_PYBUILD value - see python-modules(5)"
+ERRORS +=		"Fatal: unknown MODPY_PYBUILD value - see python-module(5)"
 .  endif
 _MODPY_EXPECTED_BACKEND ?= ${MODPY_PYBUILD}
 _MODPY_WHEELSDIR ?= dist
