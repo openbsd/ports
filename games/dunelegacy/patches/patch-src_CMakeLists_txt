@@ -1,15 +1,7 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -60,6 +60,7 @@ target_sources(dunelegacy
-         Choam.cpp
-         Command.cpp
-         CommandManager.cpp
-+        CursorManager.cpp
-         Explosion.cpp
-         Game.cpp
-         GameInitSettings.cpp
-@@ -271,17 +272,6 @@ target_sources(dunelegacy
+@@ -307,17 +307,6 @@ target_sources(dunelegacy
  # C source files
  target_sources(dunelegacy
      PRIVATE
@@ -27,10 +19,3 @@ Index: src/CMakeLists.txt
          # fixmath
          fixmath/fix16.c
          fixmath/fix16_exp.c
-@@ -363,4 +353,4 @@ install(TARGETS dunelegacy
- target_compile_definitions(dunelegacy
-     PRIVATE
-         DATA_DIRECTORY="${CMAKE_INSTALL_DATADIR}/dunelegacy"
--) 
-\ No newline at end of file
-+) 

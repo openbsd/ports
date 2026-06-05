@@ -1,25 +1,12 @@
-Do not duplicate data installation
-
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -174,12 +174,6 @@ if(WIN32)
-     endif()
- endif()
- 
--# Install data files
--install(DIRECTORY data/
--    DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}
--    PATTERN "*.svn" EXCLUDE
--)
--
- # Install desktop file and icons on Linux
- if(UNIX AND NOT APPLE)
-     install(FILES dunelegacy.desktop
-@@ -230,4 +224,4 @@ else()
-     set(CPACK_RPM_PACKAGE_GROUP "Amusements/Games")
- endif()
- 
--include(CPack) 
-\ No newline at end of file
-+include(CPack) 
+@@ -340,7 +340,7 @@ else()
+     set(CPACK_PACKAGE_FILE_NAME "DuneLegacy-${PROJECT_VERSION}-Linux-x64")
+     
+     # Add custom target for Linux packages
+-    add_custom_target(package
++    add_custom_target(packages
+         COMMAND ${CMAKE_COMMAND} -E echo "Cleaning CPack cache and install directory..."
+         COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/_CPack_Packages
+         COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/*.deb ${CMAKE_BINARY_DIR}/*.rpm ${CMAKE_BINARY_DIR}/*.tar.gz

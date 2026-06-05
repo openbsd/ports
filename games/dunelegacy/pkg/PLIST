@@ -1,98 +1,108 @@
 @bin bin/dunelegacy
+share/DuneLegacy/
+share/DuneLegacy/Dune2-Versions.txt
+share/DuneLegacy/GFXHD.PAK
+share/DuneLegacy/LEGACY.PAK
+share/DuneLegacy/OPENSD2.PAK
+share/DuneLegacy/config/
+share/DuneLegacy/config/Dune Legacy.ini
+share/DuneLegacy/config/ObjectData.ini.default
+share/DuneLegacy/config/QuantBot Config.ini.default
+share/DuneLegacy/config/README.md
+share/DuneLegacy/locale/
+share/DuneLegacy/locale/English.en.po
+share/DuneLegacy/locale/French.fr.po
+share/DuneLegacy/locale/German.de.po
+share/DuneLegacy/locale/Spanish.es.po
+share/DuneLegacy/locale/dunelegacy.pot
+share/DuneLegacy/maps/
+share/DuneLegacy/maps/multiplayer/
+share/DuneLegacy/maps/multiplayer/2P - 32x128 - Gatekeeper.ini
+share/DuneLegacy/maps/multiplayer/2P - 32x32 - X-Factor.ini
+share/DuneLegacy/maps/multiplayer/2P - 64x32 - Cliffs Of Rene.ini
+share/DuneLegacy/maps/multiplayer/2P - 64x64 - Bottle Neck.ini
+share/DuneLegacy/maps/multiplayer/2P - 64x64 - Broken Mountains.ini
+share/DuneLegacy/maps/multiplayer/2P - 64x64 - David's Pass.ini
+share/DuneLegacy/maps/multiplayer/2P - 64x64 - Face Off.ini
+share/DuneLegacy/maps/multiplayer/2P - 64x64 - Great Divide.ini
+share/DuneLegacy/maps/multiplayer/2P - 64x64 - Sanctuarys.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - Deserted.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - Equilibrium.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - Four Cities.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - Hungry Hippos.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - Moshpit with Garbages.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - Silicon Valley XL.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - Snake Pass.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - Spicestorm.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - The Sardaukar Outpost.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - Worm Investation.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x128 - Wormhole.ini
+share/DuneLegacy/maps/multiplayer/4P - 128x64 - Gamma Sector.ini
+share/DuneLegacy/maps/multiplayer/4P - 64x64 - Channels.ini
+share/DuneLegacy/maps/multiplayer/4P - 64x64 - Clear Path.ini
+share/DuneLegacy/maps/multiplayer/4P - 64x64 - Combed.ini
+share/DuneLegacy/maps/multiplayer/4P - 64x64 - Four Chambers.ini
+share/DuneLegacy/maps/multiplayer/4P - 64x64 - Four Courners.ini
+share/DuneLegacy/maps/multiplayer/4P - 64x64 - Sietch Stefan.ini
+share/DuneLegacy/maps/multiplayer/4P - 64x64 - Silicon Valley.ini
+share/DuneLegacy/maps/multiplayer/4P - 64x64 - Stronghold.ini
+share/DuneLegacy/maps/multiplayer/4P - 64x64 - Vast Armies Have Arrived.ini
+share/DuneLegacy/maps/multiplayer/5P - 128x128 - Fortress.ini
+share/DuneLegacy/maps/multiplayer/5P - 128x128 - Gridlocked.ini
+share/DuneLegacy/maps/multiplayer/5P - 128x128 - Hellvetika.ini
+share/DuneLegacy/maps/multiplayer/5P - 128x128 - Kragetam.ini
+share/DuneLegacy/maps/multiplayer/5P - 128x128 - Meadow.ini
+share/DuneLegacy/maps/multiplayer/5P - 128x64 - Watch Your Track.ini
+share/DuneLegacy/maps/multiplayer/6P - 128x128 - Alkozeltser 2 JS (F4p) - JAN2025 Homelander.ini
+share/DuneLegacy/maps/multiplayer/6P - 128x128 - Alkozeltser 2.ini
+share/DuneLegacy/maps/multiplayer/6P - 128x128 - Full Wormage.ini
+share/DuneLegacy/maps/multiplayer/6P - 128x128 - Gargantuan Mountains.ini
+share/DuneLegacy/maps/multiplayer/6P - 64x128 - Rocking Fields.ini
+share/DuneLegacy/maps/multiplayer/6P - 64x64 - Fertile Basin.ini
+share/DuneLegacy/maps/singleplayer/
+share/DuneLegacy/maps/singleplayer/2P - 32x128 - Canyon.ini
+share/DuneLegacy/maps/singleplayer/2P - 64x64 - Duality.ini
+share/DuneLegacy/maps/singleplayer/2P - 64x64 - North vs. South.ini
+share/DuneLegacy/maps/singleplayer/2P - 64x64 - Twin Fists.ini
+share/DuneLegacy/maps/singleplayer/3P - 64x32 - Middle Man.ini
+share/DuneLegacy/maps/singleplayer/4P - 64x64 - 3 vs 1.ini
+share/DuneLegacy/maps/singleplayer/5P - 128x128 - All against Atreides.ini
+share/DuneLegacy/maps/singleplayer/5P - 128x128 - Sardaukar Base Easy.ini
+share/DuneLegacy/maps/singleplayer/5P - 128x128 - Sardaukar Base.ini
+share/DuneLegacy/maps/singleplayer/LDCPUL.TXT
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA001.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA002.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA003.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA004.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA005.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA006.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA007.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA008.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA009.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA010.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA011.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA021.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENA022.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENF001.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENF011.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENG017.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENG018.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENG020.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENH001.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENH002.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENH003.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENM001.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENM022.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENO001.INI
+share/DuneLegacy/maps/singleplayer/RWRK_SCENS001.INI
 share/applications/dunelegacy.desktop
 share/doc/DuneLegacy/
 share/doc/DuneLegacy/AUTHORS
 share/doc/DuneLegacy/COPYING
 share/doc/DuneLegacy/NEWS
 share/doc/DuneLegacy/README
+share/doc/DuneLegacy/Release_Notes.md
 share/doc/pkg-readmes/${PKGSTEM}
-share/dunelegacy/
-share/dunelegacy/Dune2-Versions.txt
-share/dunelegacy/GFXHD.PAK
-share/dunelegacy/LEGACY.PAK
-share/dunelegacy/OPENSD2.PAK
-share/dunelegacy/locale/
-share/dunelegacy/locale/English.en.po
-share/dunelegacy/locale/French.fr.po
-share/dunelegacy/locale/German.de.po
-share/dunelegacy/locale/Spanish.es.po
-share/dunelegacy/locale/dunelegacy.pot
-share/dunelegacy/maps/
-share/dunelegacy/maps/multiplayer/
-share/dunelegacy/maps/multiplayer/2P - 32x128 - Gatekeeper.ini
-share/dunelegacy/maps/multiplayer/2P - 32x32 - X-Factor.ini
-share/dunelegacy/maps/multiplayer/2P - 64x32 - Cliffs Of Rene.ini
-share/dunelegacy/maps/multiplayer/2P - 64x64 - Bottle Neck.ini
-share/dunelegacy/maps/multiplayer/2P - 64x64 - Broken Mountains.ini
-share/dunelegacy/maps/multiplayer/2P - 64x64 - David's Pass.ini
-share/dunelegacy/maps/multiplayer/2P - 64x64 - Face Off.ini
-share/dunelegacy/maps/multiplayer/2P - 64x64 - Great Divide.ini
-share/dunelegacy/maps/multiplayer/2P - 64x64 - Sanctuarys.ini
-share/dunelegacy/maps/multiplayer/4P - 128x128 - Deserted.ini
-share/dunelegacy/maps/multiplayer/4P - 128x128 - Equilibrium.ini
-share/dunelegacy/maps/multiplayer/4P - 128x128 - Four Cities.ini
-share/dunelegacy/maps/multiplayer/4P - 128x128 - Hungry Hippos.ini
-share/dunelegacy/maps/multiplayer/4P - 128x128 - Silicon Valley XL.ini
-share/dunelegacy/maps/multiplayer/4P - 128x128 - Snake Pass.ini
-share/dunelegacy/maps/multiplayer/4P - 128x128 - Spicestorm.ini
-share/dunelegacy/maps/multiplayer/4P - 128x128 - The Sardaukar Outpost.ini
-share/dunelegacy/maps/multiplayer/4P - 128x128 - Worm Investation.ini
-share/dunelegacy/maps/multiplayer/4P - 128x128 - Wormhole.ini
-share/dunelegacy/maps/multiplayer/4P - 128x64 - Gamma Sector.ini
-share/dunelegacy/maps/multiplayer/4P - 64x64 - Channels.ini
-share/dunelegacy/maps/multiplayer/4P - 64x64 - Clear Path.ini
-share/dunelegacy/maps/multiplayer/4P - 64x64 - Combed.ini
-share/dunelegacy/maps/multiplayer/4P - 64x64 - Four Chambers.ini
-share/dunelegacy/maps/multiplayer/4P - 64x64 - Four Courners.ini
-share/dunelegacy/maps/multiplayer/4P - 64x64 - Sietch Stefan.ini
-share/dunelegacy/maps/multiplayer/4P - 64x64 - Silicon Valley.ini
-share/dunelegacy/maps/multiplayer/4P - 64x64 - Stronghold.ini
-share/dunelegacy/maps/multiplayer/4P - 64x64 - Vast Armies Have Arrived.ini
-share/dunelegacy/maps/multiplayer/5P - 128x128 - Fortress.ini
-share/dunelegacy/maps/multiplayer/5P - 128x128 - Gridlocked.ini
-share/dunelegacy/maps/multiplayer/5P - 128x128 - Hellvetika.ini
-share/dunelegacy/maps/multiplayer/5P - 128x128 - Kragetam.ini
-share/dunelegacy/maps/multiplayer/5P - 128x128 - Meadow.ini
-share/dunelegacy/maps/multiplayer/5P - 128x64 - Watch Your Track.ini
-share/dunelegacy/maps/multiplayer/6P - 128x128 - Gargantuan Mountains.ini
-share/dunelegacy/maps/multiplayer/6P - 64x128 - Rocking Fields.ini
-share/dunelegacy/maps/multiplayer/6P - 64x64 - Fertile Basin.ini
-share/dunelegacy/maps/singleplayer/
-share/dunelegacy/maps/singleplayer/2P - 32x128 - Canyon.ini
-share/dunelegacy/maps/singleplayer/2P - 64x64 - Duality.ini
-share/dunelegacy/maps/singleplayer/2P - 64x64 - North vs. South.ini
-share/dunelegacy/maps/singleplayer/2P - 64x64 - Twin Fists.ini
-share/dunelegacy/maps/singleplayer/3P - 64x32 - Middle Man.ini
-share/dunelegacy/maps/singleplayer/4P - 64x64 - 3 vs 1.ini
-share/dunelegacy/maps/singleplayer/5P - 128x128 - All against Atreides.ini
-share/dunelegacy/maps/singleplayer/5P - 128x128 - Sardaukar Base Easy.ini
-share/dunelegacy/maps/singleplayer/5P - 128x128 - Sardaukar Base.ini
-share/dunelegacy/maps/singleplayer/LDCPUL.TXT
-share/dunelegacy/maps/singleplayer/RWRK_SCENA001.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA002.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA003.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA004.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA005.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA006.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA007.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA008.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA009.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA010.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA011.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA021.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENA022.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENF001.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENF011.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENG017.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENG018.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENG020.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENH001.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENH002.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENH003.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENM001.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENM022.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENO001.INI
-share/dunelegacy/maps/singleplayer/RWRK_SCENS001.INI
 share/icons/hicolor/128x128/apps/dunelegacy.png
 share/icons/hicolor/48x48/apps/dunelegacy.png
 share/icons/hicolor/scalable/apps/dunelegacy.svg
