@@ -1,0 +1,58 @@
+Index: hashcash.c
+--- hashcash.c.orig
++++ hashcash.c
+@@ -569,9 +569,9 @@ int main( int argc, char* argv[] ) 
+ 	    }
+    
+ 	    if ( anon_flag ) {
+-		VPRINTF( stderr, "anon period: %ld seconds\n", 
+-			 (long)anon_period );
+-		VPRINTF( stderr, "adding: %ld seconds\n", anon_random );
++		VPRINTF( stderr, "anon period: %lld seconds\n", 
++			 (long long)anon_period );
++		VPRINTF( stderr, "adding: %lld seconds\n", (long long)anon_random );
+ 	    }
+ 
+ 	    VPRINTF( stderr, "tries: %.0f", tries_taken );
+@@ -860,8 +860,8 @@ int main( int argc, char* argv[] ) 
+ 		    if ( left_flag || verbose_flag ) {
+ 			QPRINTF( stderr, "valid: " );
+ 			if ( valid_for > 0 ) {
+-			    QPRINTF( stderr, "for %ld seconds\n",
+-				     (long)valid_for );
++			    QPRINTF( stderr, "for %lld seconds\n",
++				     (long long)valid_for );
+ 			    if ( name_flag || width_flag ) {
+ 				PPUTS( stdout, " " );
+ 			    }
+@@ -877,22 +877,22 @@ int main( int argc, char* argv[] ) 
+ 				PPUTS( stdout, "0" );
+ 				break;
+ 			    case HASHCASH_VALID_IN_FUTURE:
+-				QPRINTF( stderr, "in %ld seconds\n",
+-					 token_time-(now_time+grace_period) );
++				QPRINTF( stderr, "in %lld seconds\n",
++					 (long long)token_time-(now_time+grace_period) );
+ 				if ( name_flag || width_flag ) {
+ 				    PPUTS( stdout, " " );
+ 				}
+-				PPRINTF( stdout, "+%ld",
+-					 token_time-(now_time+grace_period) );
++				PPRINTF( stdout, "+%lld",
++					 (long long)token_time-(now_time+grace_period) );
+ 				break;
+ 			    case HASHCASH_EXPIRED:
+-				QPRINTF( stderr, "expired %ld seconds ago\n",
+-					 now_time-(expiry_time+grace_period) );
++				QPRINTF( stderr, "expired %lld seconds ago\n",
++					 (long long)now_time-(expiry_time+grace_period) );
+ 				if ( name_flag || width_flag ) {
+ 				    PPUTS( stdout, " " );
+ 				}
+-				PPRINTF( stdout, "-%ld",
+-					 now_time-(expiry_time+grace_period) );
++				PPRINTF( stdout, "-%lld",
++					 (long long)now_time-(expiry_time+grace_period) );
+ 				break;
+ 			    default:
+ 				QPRINTF( stderr, "not valid\n" );
