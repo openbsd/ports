@@ -1,9 +1,8 @@
 COMMENT =	support library for FileZilla
 
-DISTNAME =	libfilezilla-0.55.5
-REVISION =	0
+DISTNAME =	libfilezilla-0.56.1
 
-SHARED_LIBS =	filezilla	25.1
+SHARED_LIBS =	filezilla	25.2
 
 CATEGORIES =	net
 
