@@ -28,6 +28,8 @@ CONFIGURE_ARGS +=	-DHWY_SYSTEM_GTEST=ON \
 			-DBUILD_SHARED_LIBS=ON
 
 .if ${MACHINE_ARCH} == riscv64
+# The riscv Vector code does not build because of a long vs long long mismatch
+CXXFLAGS +=		-DHWY_BROKEN_RVV=HWY_RVV
 # Don't assume risc-v Vector support
 CONFIGURE_ARGS+=	-DHWY_CMAKE_RVV=OFF
 .endif
