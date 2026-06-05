@@ -18,7 +18,7 @@ Index: components/BUILD.gn
        deps += [
          "//components/crash/content/browser:unit_tests",
          "//components/crash/core/app:unit_tests",
-@@ -835,7 +834,7 @@ test("components_unittests") {
+@@ -839,7 +838,7 @@ test("components_unittests") {
      deps += [ "//components/constrained_window:unit_tests" ]
    }
  

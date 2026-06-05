@@ -1,7 +1,7 @@
 Index: chrome/browser/signin/signin_util.h
 --- chrome/browser/signin/signin_util.h.orig
 +++ chrome/browser/signin/signin_util.h
-@@ -207,7 +207,7 @@ bool IsSyncingUserSelectableTypesAllowedByPolicy(
+@@ -206,7 +206,7 @@ bool IsSyncingUserSelectableTypesAllowedByPolicy(
      const syncer::SyncService* sync_service,
      const syncer::UserSelectableTypeSet& types);
  

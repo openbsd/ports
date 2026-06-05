@@ -1,6 +1,6 @@
-Index: third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h.orig
-+++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h
+Index: third_party/libphonenumber/src/cpp/src/phonenumbers/base/synchronization/lock.h
+--- third_party/libphonenumber/src/cpp/src/phonenumbers/base/synchronization/lock.h.orig
++++ third_party/libphonenumber/src/cpp/src/phonenumbers/base/synchronization/lock.h
 @@ -22,7 +22,7 @@
  #elif (__cplusplus >= 201103L) && defined(I18N_PHONENUMBERS_USE_STDMUTEX)
  // C++11 Lock implementation based on std::mutex.

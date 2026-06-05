@@ -10,7 +10,7 @@ Index: chrome/browser/ui/tabs/public/tab_features.h
  namespace wallet {
  class ChromeWalletablePassClient;
  }  // namespace wallet
-@@ -560,7 +560,7 @@ class TabFeatures {
+@@ -563,7 +563,7 @@ class TabFeatures {
        skills_ui_tab_controller_;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -19,7 +19,7 @@ Index: chrome/browser/ui/tabs/public/tab_features.h
    std::unique_ptr<wallet::ChromeWalletablePassClient> walletable_pass_client_;
  #endif
  
-@@ -571,7 +571,7 @@ class TabFeatures {
+@@ -574,7 +574,7 @@ class TabFeatures {
    std::unique_ptr<skills::SkillsUpdateObserver> skills_update_observer_;
  #endif  //  !BUILDFLAG(IS_ANDROID)
  

@@ -1,7 +1,7 @@
 Index: chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc
 --- chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig
 +++ chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc
-@@ -57,7 +57,7 @@
+@@ -55,7 +55,7 @@
  
  #endif  // BUILDFLAG(ENABLE_EXTENSIONS)
  
