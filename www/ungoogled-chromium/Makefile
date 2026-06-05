@@ -13,10 +13,8 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			148.0.7778.215
+V=			149.0.7827.53
 UGV=			${V}-1
-
-REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -281,6 +279,10 @@ pre-patch:
 	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
 		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx/source/libvpx 
 
+	# Hack to avoid wrong update-patches
+	${SUBST_CMD} ${WRKSRC}/third_party/libaom/source/config/linux/arm64-cpu-detect/config/av1_rtcd.h \
+		${WRKSRC}/third_party/libaom/source/config/linux/x64/config/av1_rtcd.h
+
 post-patch:
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin \
@@ -296,6 +298,9 @@ post-patch:
 		${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+	perl -pi -e 's#int eob,#uint16_t eob,#g' \
+		${WRKSRC}/third_party/libaom/source/config/linux/arm64-cpu-detect/config/av1_rtcd.h \
+		${WRKSRC}/third_party/libaom/source/config/linux/x64/config/av1_rtcd.h
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs

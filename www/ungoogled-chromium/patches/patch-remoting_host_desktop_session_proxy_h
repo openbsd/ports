@@ -5,8 +5,8 @@ Index: remoting/host/desktop_session_proxy.h
    std::unique_ptr<UrlForwarderConfigurator> CreateUrlForwarderConfigurator();
    std::unique_ptr<RemoteWebAuthnStateChangeNotifier>
    CreateRemoteWebAuthnStateChangeNotifier();
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    void OnSessionServicesClientConnected(
        mojo::PendingReceiver<mojom::ChromotingSessionServices> receiver);
  #endif
