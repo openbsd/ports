@@ -1,19 +1,17 @@
 COMMENT=	resend network traffic saved by tcpdump
 
-V=		4.5.1
+V=		4.5.2
 DISTNAME=	tcpreplay-$V
 CATEGORIES=	net
 
 HOMEPAGE=	https://tcpreplay.appneta.com/
 
-MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
-
-# GPLv3
+# GPLv3 "or _with the author's permission_ any later version"
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c dnet>=1
 
-SITES=   	https://github.com/appneta/tcpreplay/releases/download/v$V/
+SITES=		https://github.com/appneta/tcpreplay/releases/download/v$V/
 
 CONFIGURE_STYLE= gnu
 
