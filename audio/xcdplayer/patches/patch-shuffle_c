@@ -1,5 +1,6 @@
---- shuffle.c.orig	Tue Jan 12 19:59:38 1993
-+++ shuffle.c	Mon May 17 10:25:14 2010
+Index: shuffle.c
+--- shuffle.c.orig
++++ shuffle.c
 @@ -15,9 +15,13 @@
  
  # include <X11/Intrinsic.h>
@@ -28,6 +29,15 @@
  	extern time_t	time(time_t *);
  #else
  	extern long	time();
+@@ -68,7 +73,7 @@ shuffle_setup() {
+ 		exit(1);
+ 	}
+ 
+-	now = time((long *) 0);
++	now = time(NULL);
+ 	seed = now & 0xfff;
+ 
+ 	initstate(seed, state, sizeof(state));
 @@ -97,7 +102,7 @@ shuffle_setup() {
  		random_tracks[i] = try;
  	}
