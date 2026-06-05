@@ -242,15 +242,24 @@ Index: src/gui.c
  static GdkWindow *window_container;
  static GtkWidget *fs_window;
  static GtkWidget *fs_controls;
-@@ -1707,11 +1937,6 @@ gboolean set_volume(void *data)
-         gm_log(verbose, G_LOG_LEVEL_DEBUG, "in set_volume without data");
+@@ -1708,11 +1938,6 @@ gboolean set_volume(void *data)
          if (!(softvol || audio_device.type == AUDIO_TYPE_SOFTVOL)) {
              gm_audio_get_volume(&audio_device);
--        }
+         }
 -        if (pref_volume != -1) {
 -            audio_device.volume = (gdouble) pref_volume / 100.0;
 -            gmtk_media_player_set_volume(GMTK_MEDIA_PLAYER(media), audio_device.volume);
 -            pref_volume = -1;
-         }
+-        }
          gm_log(verbose, G_LOG_LEVEL_DEBUG, "data is null new volume is %f", audio_device.volume);
  #ifdef GTK2_12_ENABLED
+         gtk_scale_button_set_value(GTK_SCALE_BUTTON(vol_slider), audio_device.volume);
+@@ -7244,7 +7469,7 @@ void player_media_state_changed_callback(GtkButton * b
+             dbus_disable_screensaver();
+         gmtk_media_tracker_set_text(GMTK_MEDIA_TRACKER(tracker), _("Playing"));
+         gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SUB_VISIBLE,
+-                                                gtk_check_menu_item_get_active(menuitem_view_subtitles));
++                                                gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem_view_subtitles)));
+         dbus_send_event("MediaPlaying", 0);
+         g_idle_add(set_media_label, idledata);
+         if (gmtk_media_player_get_attribute_string(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_TITLE) != NULL) {
