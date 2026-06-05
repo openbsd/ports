@@ -1,0 +1,34 @@
+Index: hwy/targets.cc
+--- hwy/targets.cc.orig
++++ hwy/targets.cc
+@@ -29,7 +29,7 @@
+ 
+ #elif (HWY_ARCH_ARM || HWY_ARCH_PPC || HWY_ARCH_S390X || HWY_ARCH_RISCV || \
+        HWY_ARCH_LOONGARCH) &&                                              \
+-    HWY_OS_LINUX
++    (HWY_OS_LINUX || HWY_OS_FREEBSD || defined(__OpenBSD__))
+ // sys/auxv.h does not always include asm/hwcap.h, or define HWCAP*, hence we
+ // still include this directly. See #1199.
+ #if HWY_HAVE_ASM_HWCAP
+@@ -112,6 +112,21 @@ static HWY_INLINE HWY_MAYBE_UNUSED bool IsMacOs12_2OrL
+   return (major > 21 || (major == 21 && minor >= 3));
+ }
+ #endif  // HWY_OS_APPLE
++
++// XXX getauxval and elf_aux_info should be autodetected
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++static HWY_INLINE HWY_MAYBE_UNUSED unsigned long getauxval(unsigned long type) {
++  unsigned long hwcap = 0;
++  switch (type) {
++  case AT_HWCAP:
++  case AT_HWCAP2:
++    elf_aux_info((int)type, &hwcap, sizeof(hwcap));
++    return hwcap;
++  default:
++    return 0;
++  }
++}
++#endif
+ 
+ #if HWY_ARCH_X86 && HWY_HAVE_RUNTIME_DISPATCH
+ namespace x86 {
