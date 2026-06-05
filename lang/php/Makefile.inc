@@ -510,7 +510,7 @@ post-install:
 .  for m in ${ZEND_EXTENSIONS:S/-//g}
 	cd ${PREFIX}; \
 	${INSTALL_DATA} ${WRKBUILD}/modules/$m.so ${MODULES_SUBDIR}/$m.so; \
-	echo "zend_extension=$m.so" > share/examples/php-${PV}/$m.ini
+	echo "zend_extension=$m" > share/examples/php-${PV}/$m.ini
 .  endfor
 .endif
 
@@ -518,7 +518,7 @@ post-install:
 .    if ${BUILD_PACKAGES:M-$m}
 	cd ${PREFIX}; \
 	${INSTALL_DATA} ${WRKBUILD}/modules/$m.so ${MODULES_SUBDIR}/$m.so; \
-	echo "extension=$m.so" > share/examples/php-${PV}/$m.ini
+	echo "extension=$m" > share/examples/php-${PV}/$m.ini
 .    endif
 .endfor
 
