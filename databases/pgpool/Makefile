@@ -1,6 +1,6 @@
 COMMENT= 	connection pool server for PostgreSQL
 
-DISTNAME= 	pgpool-II-4.6.0
+DISTNAME= 	pgpool-II-4.6.7
 
 CATEGORIES= 	databases
 
@@ -13,7 +13,7 @@ SHARED_LIBS=  pcp	0.0
 # BSD
 PERMIT_PACKAGE=	Yes
 
-SITES=			https://www.pgpool.net/mediawiki/images/
+SITES=			https://www.pgpool.net/source/
 
 WANTLIB= 		c crypto m pq ssl pthread
 
