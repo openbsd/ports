@@ -1,0 +1,15 @@
+Use time_t to pass to ctime(). This isn't 2038 clean, but fixing that
+would be too much patching.
+
+Index: src/preferences/ario-server-preferences.c
+--- src/preferences/ario-server-preferences.c.orig
++++ src/preferences/ario-server-preferences.c
+@@ -169,7 +169,7 @@ ario_server_preferences_sync_server (ArioServerPrefere
+         int crossfadetime;
+         int state;
+         gboolean updating;
+-        long last_update;
++        time_t last_update;
+         gchar *last_update_char;
+         GtkTreeIter iter;
+         GSList *tmp;

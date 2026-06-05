@@ -1,7 +1,7 @@
 COMMENT =	GTK3 MPD client inspired by Rhythmbox
 DISTNAME =	ario-1.6
 CATEGORIES =	audio x11
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=	filesystem		1.0 # 0.0
 SHARED_LIBS +=	information		1.0 # 0.0
