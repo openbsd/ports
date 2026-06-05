@@ -53,24 +53,37 @@
      SUBDIR += spectacle
 
     # Not ported yet
-    # SUBDIR +=bluedevil
-    # SUBDIR +=breeze-plymouth
-    # SUBDIR +=discover
-    # SUBDIR +=drkonqi
-    # SUBDIR +=flatpak-kcm
-    # SUBDIR +=kwallet-pam
-    # SUBDIR +=plasma-disks
-    # SUBDIR +=plasma-firewall
-    # SUBDIR +=plasma-mobile
-    # SUBDIR +=plasma-nm
-    # SUBDIR +=plasma-systemmonitor
-    # SUBDIR +=plasma-thunderbolt
-    # SUBDIR +=plasma-vault
-    # SUBDIR +=plasma-welcome
-    # SUBDIR +=plymouth-kcm
-    # SUBDIR +=sddm-kcm
+    # SUBDIR += bluedevil
+    # SUBDIR += breeze-plymouth
+    # SUBDIR += discover
+    # SUBDIR += drkonqi
+    # SUBDIR += flatpak-kcm
+    # SUBDIR += kgamma
+    # SUBDIR += krdp
+    # SUBDIR += kwallet-pam
+    # SUBDIR += kwayland-integration
+    # SUBDIR += plasma-dialer
+    # SUBDIR += plasma-disks
+    # SUBDIR += plasma-disks
+    # SUBDIR += plasma-firewall
+    # SUBDIR += plasma-firewall
+    # SUBDIR += plasma-keyboard
+    # SUBDIR += plasma-login-manager
+    # SUBDIR += plasma-mobile
+    # SUBDIR += plasma-nm
+    # SUBDIR += plasma-nm
+    # SUBDIR += plasma-setup
+    # SUBDIR += plasma-systemmonitor
+    # SUBDIR += plasma-thunderbolt
+    # SUBDIR += plasma-vault
+    # SUBDIR += plasma-welcome
+    # SUBDIR += plymouth-kcm
+    # SUBDIR += sddm-kcm
+    # SUBDIR += spacebar
+    # SUBDIR += wacomtablet
 
     # out-of-scope
     # breeze-grub
 
 .include <bsd.port.subdir.mk>
+
