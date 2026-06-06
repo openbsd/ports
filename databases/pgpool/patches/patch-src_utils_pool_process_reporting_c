@@ -4,7 +4,6 @@ linked unless snprintf/vsnprintf arent detected by configure..
 Index: src/utils/pool_process_reporting.c
 --- src/utils/pool_process_reporting.c.orig
 +++ src/utils/pool_process_reporting.c
-<<<<<<< patch-src_utils_pool_process_reporting_c
 @@ -45,6 +45,16 @@ static void write_one_field_v2(POOL_CONNECTION * front
  static char *db_node_status(int node);
  static char *db_node_role(int node);
