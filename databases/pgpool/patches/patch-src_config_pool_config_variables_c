@@ -1,0 +1,12 @@
+Index: src/config/pool_config_variables.c
+--- src/config/pool_config_variables.c.orig
++++ src/config/pool_config_variables.c
+@@ -3880,7 +3880,7 @@ setConfigOptionVar(struct config_generic *record, cons
+ 				if (newval < conf->min || newval > conf->max)
+ 				{
+ 					ereport(elevel,
+-							(errmsg("%ld is outside the valid range for parameter \"%s\" (%ld .. %ld)",
++							(errmsg("%lld is outside the valid range for parameter \"%s\" (%lld .. %lld)",
+ 									newval, name,
+ 									conf->min, conf->max)));
+ 					return false;

@@ -1,0 +1,21 @@
+Index: src/utils/pool_process_reporting.c
+--- src/utils/pool_process_reporting.c.orig
++++ src/utils/pool_process_reporting.c
+@@ -802,7 +802,7 @@ get_config(int *nrows)
+ 	/* OTHERS */
+ 
+ 	StrNCpy(status[i].name, "relcache_expire", POOLCONFIG_MAXNAMELEN);
+-	snprintf(status[i].value, POOLCONFIG_MAXVALLEN, "%ld", pool_config->relcache_expire);
++	snprintf(status[i].value, POOLCONFIG_MAXVALLEN, "%lld", (long long)pool_config->relcache_expire);
+ 	StrNCpy(status[i].desc, "relation cache expiration time in seconds", POOLCONFIG_MAXDESCLEN);
+ 	i++;
+ 
+@@ -1076,7 +1076,7 @@ get_config(int *nrows)
+ 	i++;
+ 
+ 	StrNCpy(status[i].name, "memqcache_total_size", POOLCONFIG_MAXNAMELEN);
+-	snprintf(status[i].value, POOLCONFIG_MAXVALLEN, "%ld", pool_config->memqcache_total_size);
++	snprintf(status[i].value, POOLCONFIG_MAXVALLEN, "%lld", (long long)pool_config->memqcache_total_size);
+ 	StrNCpy(status[i].desc, "Total memory size in bytes for storing memory cache. Mandatory if memqcache_method=shmem", POOLCONFIG_MAXDESCLEN);
+ 	i++;
+ 

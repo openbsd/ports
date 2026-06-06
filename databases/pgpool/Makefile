@@ -1,34 +1,35 @@
-COMMENT= 	connection pool server for PostgreSQL
+COMMENT=	connection pool server for PostgreSQL
 
-DISTNAME= 	pgpool-II-4.6.7
+DISTNAME=	pgpool-II-4.6.7
+REVISION=	0
 
-CATEGORIES= 	databases
+CATEGORIES=	databases
 
-HOMEPAGE= 	https://www.pgpool.net/
+HOMEPAGE=	https://www.pgpool.net/
 
-MAINTAINER= 	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 SHARED_LIBS=  pcp	0.0
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-SITES=			https://www.pgpool.net/source/
+SITES=		https://www.pgpool.net/source/
 
-WANTLIB= 		c crypto m pq ssl pthread
+WANTLIB=	c crypto m pq ssl pthread
 
 # -Wvla and other unrecognized command line options
-COMPILER=		base-clang ports-gcc
-COMPILER_LANG=		c
+COMPILER=	base-clang ports-gcc
+COMPILER_LANG=	c
 
-CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS= 	--with-openssl
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--with-openssl
 
-USE_GMAKE=		Yes
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/pgpool-II/
+USE_GMAKE=	Yes
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/pgpool-II/
 
-BUILD_DEPENDS = 	databases/postgresql,-server
-LIB_DEPENDS = 		databases/postgresql
+BUILD_DEPENDS=	databases/postgresql,-server
+LIB_DEPENDS=	databases/postgresql
 
 post-install:
 	@cd ${WRKSRC}/src/sql/pgpool-regclass && \

@@ -1,0 +1,28 @@
+Index: src/query_cache/pool_memqcache.c
+--- src/query_cache/pool_memqcache.c.orig
++++ src/query_cache/pool_memqcache.c
+@@ -390,7 +390,7 @@ pool_catalog_commit_cache(POOL_CONNECTION_POOL * backe
+ 	memqcache_expire = pool_config->relcache_expire;
+ 	ereport(DEBUG1,
+ 			(errmsg("committing relation cache to cache storage"),
+-			 errdetail("memqcache_expire = %ld", memqcache_expire)));
++			 errdetail("memqcache_expire = %lld", (long long)memqcache_expire)));
+ 
+ 	if (pool_is_shmem_cache())
+ 	{
+@@ -2136,13 +2136,13 @@ pool_shared_memory_cache_size(void)
+ 	if (num_blocks == 0)
+ 		ereport(FATAL,
+ 				(errmsg("invalid memory cache configuration"),
+-				 errdetail("memqcache_total_size %ld should be greater or equal to memqcache_cache_block_size %d",
++				 errdetail("memqcache_total_size %lld should be greater or equal to memqcache_cache_block_size %d",
+ 						   pool_config->memqcache_total_size,
+ 						   pool_config->memqcache_cache_block_size)));
+ 
+ 	ereport(LOG,
+ 			(errmsg("memory cache initialized"),
+-			 errdetail("memcache blocks :%ld", num_blocks)));
++			 errdetail("memcache blocks :%lld", num_blocks)));
+ 	/* Remember # of blocks */
+ 	pool_set_memqcache_blocks(num_blocks);
+ 	size = pool_config->memqcache_cache_block_size * num_blocks;
