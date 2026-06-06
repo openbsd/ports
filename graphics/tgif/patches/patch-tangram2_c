@@ -1,0 +1,21 @@
+Index: tangram2.c
+--- tangram2.c.orig
++++ tangram2.c
+@@ -1796,7 +1796,7 @@ char *args; /* semi-colon separated list (arg1;arg2;ar
+    char arg[3][1024];
+ 
+    /* Extracts parameters from args */
+-   if( !parseArgs( args, arg, 3, 1024 ) )
++   if( !parseArgs( args, &arg[0][0], 3, 1024 ) )
+    {
+         fprintf( stderr, "TGIF: Usage Tangram2GenerateChain( \"arg1;arg2;arg3\" )\n" );
+         return;
+@@ -1844,7 +1844,7 @@ char *args;
+ 
+ 
+    /* Extracts parameters from args */
+-   if( !parseArgs( args, arg, 12, 1024 ) )
++   if( !parseArgs( args, &arg[0][0], 12, 1024 ) )
+    {
+         return;
+    }

@@ -1,0 +1,12 @@
+Index: tgcwdl.c
+--- tgcwdl.c.orig
++++ tgcwdl.c
+@@ -152,7 +152,7 @@ static
+ void PixeltoRGB(pcwdi, pixel, pn_r, pn_g, pn_b)
+    ColorWheelDlgInfo *pcwdi;
+    int pixel;
+-   unsigned int *pn_r, *pn_g, *pn_b;
++   unsigned char *pn_r, *pn_g, *pn_b;
+    /* 0 <= r,g,b <= 255 */
+ {
+    uint32_t pix=(uint32_t)(unsigned int)pixel;

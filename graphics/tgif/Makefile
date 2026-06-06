@@ -3,7 +3,7 @@ COMMENT =	two-dimensional drawing tool and hyper-object browser
 VERSION =	4.2.5
 DISTNAME =	tgif-QPL-${VERSION}
 PKGNAME =	tgif-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://bourbon.usc.edu/tgif/
