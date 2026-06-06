@@ -1,7 +1,27 @@
+1st chunk: glibc-replacement function defined in src/parser/snprintf.c, but the file isnt
+linked unless snprintf/vsnprintf arent detected by configure..
+
 Index: src/utils/pool_process_reporting.c
 --- src/utils/pool_process_reporting.c.orig
 +++ src/utils/pool_process_reporting.c
-@@ -802,7 +802,7 @@ get_config(int *nrows)
+@@ -45,6 +45,16 @@ static void write_one_field_v2(POOL_CONNECTION * front
+ static char *db_node_status(int node);
+ static char *db_node_role(int node);
+ 
++static char * strchrnul(const char *s, int c);
++
++static char *
++strchrnul(const char *s, int c)
++{
++	while (*s != '\0' && *s != c)
++		s++;
++	return s;
++}
++
+ void
+ send_row_description(POOL_CONNECTION * frontend, POOL_CONNECTION_POOL * backend,
+ 					 short num_fields, char **field_names)
+@@ -802,7 +812,7 @@ get_config(int *nrows)
  	/* OTHERS */
  
  	StrNCpy(status[i].name, "relcache_expire", POOLCONFIG_MAXNAMELEN);
@@ -10,7 +30,7 @@ Index: src/utils/pool_process_reporting.c
  	StrNCpy(status[i].desc, "relation cache expiration time in seconds", POOLCONFIG_MAXDESCLEN);
  	i++;
  
-@@ -1076,7 +1076,7 @@ get_config(int *nrows)
+@@ -1076,7 +1086,7 @@ get_config(int *nrows)
  	i++;
  
  	StrNCpy(status[i].name, "memqcache_total_size", POOLCONFIG_MAXNAMELEN);
