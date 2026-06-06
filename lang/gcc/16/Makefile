@@ -1,7 +1,7 @@
 # When updating/switching to a new version, remember to adapt devel/llvm!
 #
 
-# tested: amd64, arm64, sparc64
+# tested: amd64, arm64, sparc64, riscv64
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
@@ -208,7 +208,8 @@ PKG_ARGS += -D128BIT=0
 	${MACHINE_ARCH} == "arm" || \
 	${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
 	${MACHINE_ARCH} == "powerpc" ||	${MACHINE_ARCH} == "powerpc64" || \
-	${MACHINE_ARCH} == "sh" || ${MACHINE_ARCH} == "sparc64"
+	${MACHINE_ARCH} == "sh" || ${MACHINE_ARCH} == "sparc64" || \
+	${MACHINE_ARCH} == "riscv64"
 PKG_ARGS += -DITM=1
 .else
 PKG_ARGS += -DITM=0

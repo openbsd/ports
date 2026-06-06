@@ -166,6 +166,7 @@ lib/gcc/${CONFIG}/${V}/plugin/include/config.h
 %%mips64el%%
 %%powerpc%%
 %%powerpc64%%
+%%riscv64%%
 %%sparc64%%
 %%X86%%
 lib/gcc/${CONFIG}/${V}/plugin/include/configargs.h

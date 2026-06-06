@@ -1,3 +1,9 @@
+lib/gcc/${CONFIG}/${V}/include/andes_vector.h
+lib/gcc/${CONFIG}/${V}/include/riscv_bitmanip.h
+lib/gcc/${CONFIG}/${V}/include/riscv_crypto.h
+lib/gcc/${CONFIG}/${V}/include/riscv_th_vector.h
+lib/gcc/${CONFIG}/${V}/include/riscv_vector.h
+lib/gcc/${CONFIG}/${V}/include/sifive_vector.h
 lib/gcc/${CONFIG}/${V}/include/tgmath.h
 lib/gcc/${CONFIG}/${V}/include/unwind.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/elfos.h
@@ -5,6 +11,7 @@ lib/gcc/${CONFIG}/${V}/plugin/include/config/initfini-array.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd-libpthread.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd-stdint.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/riscv/
 lib/gcc/${CONFIG}/${V}/plugin/include/config/riscv/
 lib/gcc/${CONFIG}/${V}/plugin/include/config/riscv/openbsd.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/riscv/riscv-opts.h
