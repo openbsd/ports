@@ -15,14 +15,15 @@ Index: src/query_cache/pool_memqcache.c
  		ereport(FATAL,
  				(errmsg("invalid memory cache configuration"),
 -				 errdetail("memqcache_total_size %ld should be greater or equal to memqcache_cache_block_size %d",
+-						   pool_config->memqcache_total_size,
 +				 errdetail("memqcache_total_size %lld should be greater or equal to memqcache_cache_block_size %d",
- 						   pool_config->memqcache_total_size,
++						   (long long)pool_config->memqcache_total_size,
  						   pool_config->memqcache_cache_block_size)));
  
  	ereport(LOG,
  			(errmsg("memory cache initialized"),
 -			 errdetail("memcache blocks :%ld", num_blocks)));
-+			 errdetail("memcache blocks :%lld", num_blocks)));
++			 errdetail("memcache blocks :%lld", (long long)num_blocks)));
  	/* Remember # of blocks */
  	pool_set_memqcache_blocks(num_blocks);
  	size = pool_config->memqcache_cache_block_size * num_blocks;

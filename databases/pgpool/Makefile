@@ -1,7 +1,7 @@
 COMMENT=	connection pool server for PostgreSQL
 
 DISTNAME=	pgpool-II-4.6.7
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	databases
 
@@ -24,6 +24,8 @@ COMPILER_LANG=	c
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-openssl
+
+CFLAGS+=	-Wno-unknown-warning-option
 
 USE_GMAKE=	Yes
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/pgpool-II/
