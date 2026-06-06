@@ -1,0 +1,11 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -137,7 +137,6 @@ add_subdirectory(external)
+ 
+ set_target_properties(lincity-ng PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_BINDIR})
+ install(TARGETS lincity-ng
+-	RUNTIME_DEPENDENCY_SET dll_dependencies
+ 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+ )
+ if(WIN32)

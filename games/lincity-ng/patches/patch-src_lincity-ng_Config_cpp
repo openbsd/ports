@@ -1,0 +1,32 @@
+From 3c5a428218fbdb972047f03820c76a3d69ffbbff Mon Sep 17 00:00:00 2001
+From: David Bears <dbear4q@gmail.com>
+Date: Thu, 2 Oct 2025 12:21:55 -0400
+Subject: [PATCH] fix template instantiation with clang
+
+Index: src/lincity-ng/Config.cpp
+--- src/lincity-ng/Config.cpp.orig
++++ src/lincity-ng/Config.cpp
+@@ -436,11 +436,6 @@ Config::parseCommandLine(int argc, char** argv) {
+ }
+ 
+ 
+-template class Config::Option<int>;
+-template class Config::Option<bool>;
+-template class Config::Option<std::string>;
+-template class Config::Option<std::filesystem::path>;
+-
+ template<typename T>
+ Config::Option<T>::Option() :
+   default_(std::nullopt)
+@@ -486,6 +481,11 @@ parseValue(const std::string& value) {
+   }
+   return tmp;
+ }
++
++template class Config::Option<int>;
++template class Config::Option<bool>;
++template class Config::Option<std::string>;
++template class Config::Option<std::filesystem::path>;
+ 
+ template<>
+ /*static*/ std::optional<bool>

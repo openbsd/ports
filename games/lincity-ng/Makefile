@@ -1,45 +1,41 @@
 COMMENT=	city simulation game
 
-DISTNAME=	lincity-ng-2.0
-REVISION =	13
-EXTRACT_SUFX=	.tar.bz2
+# 2.15.0 needs devel/sdl3, devel/sdl3-image, but also sdl3-mixer and
+# sdl3-ttf that we don't have yet, also there's some issue around
+# std::from_chars in src/util/xmlutil.cpp. 2.15.0 fixes the issue that
+# requires USE_NINJA=No.
+V=		2.14.2
+DISTNAME=	lincity-ng-$V-Source
+PKGNAME=	lincity-ng-$V
+EXTRACT_SUFX=	.tar.xz
+SITES=		https://github.com/lincity-ng/lincity-ng/releases/download/lincity-ng-$V/
+
 CATEGORIES=	games x11
 
 HOMEPAGE=	https://github.com/lincity-ng/lincity-ng
 
-SITES=		${SITE_SOURCEFORGE:=lincity-ng.berlios/}
-
-# GPLv2
+# models, svg-files, images, sound and music, xml data: GPL or CC-by-sa-v2
+# DejaVuSans.ttf: see COPYING-fonts.txt
+# main code: GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	GL SDL X11 c iconv intl m pthread ${COMPILER_LIBCXX} xcb z \
-		SDL_gfx SDL_image SDL_mixer SDL_ttf physfs xml2
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer SDL2_ttf
+WANTLIB += c fmt m xml++-5.0 xml2 z
 
-COMPILER =		base-clang ports-gcc base-gcc
+MODULES=	devel/cmake
+USE_NINJA=	No
 
-CXXFLAGS_base-clang =	-std=c++14
+# C++17
+COMPILER=	base-clang ports-gcc
 
-LIB_DEPENDS=	devel/sdl-gfx \
-		devel/sdl-image \
-		devel/sdl-mixer \
-		devel/sdl-ttf \
-		devel/physfs \
-		textproc/libxml
-BUILD_DEPENDS=	devel/gettext,-tools \
-		devel/jam
-RUN_DEPENDS=	devel/desktop-file-utils
+LIB_DEPENDS=	devel/fmt \
+		devel/sdl2-image \
+		devel/sdl2-mixer \
+		devel/sdl2-ttf \
+		textproc/libxml++50
+BUILD_DEPENDS=	devel/gettext,-tools
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+4,-guic
 NO_TEST=	Yes
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-liconv -pthread"
-CONFIGURE_STYLE=gnu
-
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam -dx
-
-do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${ALL_FAKE_FLAGS} jam \
-		install install_man
 
 .include <bsd.port.mk>
