@@ -778,7 +778,6 @@
      SUBDIR += transmission
      SUBDIR += transmission-remote-gtk
      SUBDIR += tremc
-     SUBDIR += trickle
      SUBDIR += trippy
      SUBDIR += trurl
      SUBDIR += ttg
