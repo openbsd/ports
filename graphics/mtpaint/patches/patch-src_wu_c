@@ -1,0 +1,112 @@
+Index: src/wu.c
+--- src/wu.c.orig
++++ src/wu.c
+@@ -64,14 +64,14 @@ struct box { int r0, r1, g0, g1, b0, b1, vol;	// min v
+  */
+ 
+ static double	*m2;
+-static int	*wt, *mr, *mg, *mb;
++static int	(*wt)[33][33], (*mr)[33][33], (*mg)[33][33], (*mb)[33][33];
+ 
+ static int	size; // image size
+ static int	K;    // color look-up table size
+ 
+-static void Hist3d(inbuf, vwt, vmr, vmg, vmb) 	// build 3-D color histogram of counts, r/g/b, c^2
+-unsigned char *inbuf;
+-int *vwt, *vmr, *vmg, *vmb;
++
++static void Hist3d(unsigned char *inbuf, int *vwt, int *vmr, int *vmg, int *vmb)
++// build 3-D color histogram of counts, r/g/b, c^2
+ {
+ 	register int ind, r, g, b;
+ 	int	     inr, ing, inb, table[256];
+@@ -125,8 +125,8 @@ int *vwt, *vmr, *vmg, *vmb;
+  */
+ 
+ 
+-static void M3d(vwt, vmr, vmg, vmb)	// compute cumulative moments.
+-int *vwt, *vmr, *vmg, *vmb;
++static void M3d(int *vwt, int *vmr, int *vmg, int *vmb)
++// compute cumulative moments.
+ {
+ 	register unsigned short int ind1, ind2;
+ 	register unsigned char i, r, g, b;
+@@ -164,9 +164,8 @@ int *vwt, *vmr, *vmg, *vmb;
+ }
+ 
+ 
+-static long int Vol(cube, mmt)			// Compute sum over a box of any given statistic
+-struct box *cube;
+-int mmt[33][33][33];
++static long int Vol(struct box *cube, int mmt[33][33][33])
++// Compute sum over a box of any given statistic
+ {
+ 	return( mmt[cube->r1][cube->g1][cube->b1]
+ 		-mmt[cube->r1][cube->g1][cube->b0]
+@@ -184,12 +183,9 @@ int mmt[33][33][33];
+  * and with the specified new upper bound.
+  */
+ 
+-static long int Bottom(cube, dir, mmt)
++static long int Bottom(struct box *cube, unsigned char dir, int mmt[33][33][33])
+ // Compute part of Vol(cube, mmt) that doesn't depend on r1, g1, or b1
+ // (depending on dir)
+-struct box *cube;
+-unsigned char dir;
+-int mmt[33][33][33];
+ {
+ 	switch(dir)
+ 	{
+@@ -216,13 +212,9 @@ int mmt[33][33][33];
+ }
+ 
+ 
+-static long int Top(cube, dir, pos, mmt)
++static long int Top(struct box *cube, unsigned char dir, int pos, int mmt[33][33][33])
+ // Compute remainder of Vol(cube, mmt), substituting pos for
+ // r1, g1, or b1 (depending on dir)
+-struct box *cube;
+-unsigned char dir;
+-int pos;
+-int mmt[33][33][33];
+ {
+ 	switch(dir)
+ 	{
+@@ -249,10 +241,9 @@ int mmt[33][33][33];
+ }
+ 
+ 
+-static double Var(cube)
++static double Var(struct box *cube)
+ // Compute the weighted variance of a box
+ // NB: as with the raw statistics, this is really the variance * size
+-struct box *cube;
+ {
+ 	double dr, dg, db, xx;
+ 
+@@ -278,11 +269,9 @@ struct box *cube;
+  */
+ 
+ 
+-static double Maximize(cube, dir, first, last, cut, whole_r, whole_g, whole_b, whole_w)
+-struct box *cube;
+-unsigned char dir;
+-int first, last, *cut;
+-long int whole_r, whole_g, whole_b, whole_w;
++static double Maximize(struct box *cube, unsigned char dir,
++	int first, int last, int *cut,
++	long int whole_r, long int whole_g, long int whole_b, long int whole_w)
+ {
+ 	register long int half_r, half_g, half_b, half_w;
+ 	long int base_r, base_g, base_b, base_w;
+@@ -415,8 +404,8 @@ int wu_quant(unsigned char *inbuf, int width, int heig
+ 		&tag, 33*33*33, NULL);
+ 	if (!mem) return (-1);
+ 
+-	Hist3d(inbuf, wt, mr, mg, mb);
+-	M3d(wt, mr, mg, mb);
++	Hist3d(inbuf, &wt[0][0][0], &mr[0][0][0], &mg[0][0][0], &mb[0][0][0]);
++	M3d(&wt[0][0][0], &mr[0][0][0], &mg[0][0][0], &mb[0][0][0]);
+ 
+ 	cube[0].r0 = cube[0].g0 = cube[0].b0 = 0;
+ 	cube[0].r1 = cube[0].g1 = cube[0].b1 = 32;

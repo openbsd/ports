@@ -1,7 +1,7 @@
 COMMENT =	simple GTK+3 raster painting program
 
 DISTNAME =	mtpaint-3.50
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	graphics
