@@ -1,0 +1,12 @@
+Index: src/datatypes/mailhist/datatype.c
+--- src/datatypes/mailhist/datatype.c.orig
++++ src/datatypes/mailhist/datatype.c
+@@ -37,7 +37,7 @@
+ 
+ /* begin of Mailhist */
+ 
+-int mdata_Mailhist_to_xml(gzFile *fd, mdata *data) {
++int mdata_Mailhist_to_xml(gzFile fd, mdata *data) {
+ #define WR(x,f) \
+ 	gzprintf(fd, "<%s>%"#f"</%s>\n", #x, data->data.hist->data.mail.x, #x);
+ 

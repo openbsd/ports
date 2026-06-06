@@ -1,0 +1,12 @@
+Index: src/datatypes/webhist/datatype.h
+--- src/datatypes/webhist/datatype.h.orig
++++ src/datatypes/webhist/datatype.h
+@@ -31,7 +31,7 @@
+ #include "mdatatypes.h"
+ #include "mstate.h"
+ 
+-int	mdata_WebHist_to_xml(gzFile *fd, mdata *data);
++int	mdata_WebHist_to_xml(gzFile fd, mdata *data);
+ int     mdata_WebHist_from_xml(void *user_data, int tagtype, const xmlChar *value, const xmlChar **attrs);
+ 
+ mdata  *mdata_WebHist_create(const char *str,

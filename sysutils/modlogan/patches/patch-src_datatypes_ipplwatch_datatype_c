@@ -1,0 +1,12 @@
+Index: src/datatypes/ipplwatch/datatype.c
+--- src/datatypes/ipplwatch/datatype.c.orig
++++ src/datatypes/ipplwatch/datatype.c
+@@ -44,7 +44,7 @@
+ #define DEBUG_SETDATA
+ #endif
+ 
+-int mdata_IpplWatch_to_xml(gzFile *fd, mdata *data) {
++int mdata_IpplWatch_to_xml(gzFile fd, mdata *data) {
+ #define WR(x,f) \
+ 	gzprintf(fd, "<%s>%"#f"</%s>\n", #x, data->data.ipplwatch->x, #x);
+ #define WRS(x) \

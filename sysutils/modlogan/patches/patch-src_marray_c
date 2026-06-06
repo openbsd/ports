@@ -1,0 +1,12 @@
+Index: src/marray.c
+--- src/marray.c.orig
++++ src/marray.c
+@@ -215,7 +215,7 @@ int marray_append (marray *a, mdata *data) {
+ 	return 0;
+ }
+ 
+-int marray_write(gzFile *fd, marray *a) {
++int marray_write(gzFile fd, marray *a) {
+ 	size_t i;
+ 	
+ 	for (i = 0; i < a->used; i++) {

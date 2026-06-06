@@ -1,0 +1,12 @@
+Index: src/datatypes/count/datatype.h
+--- src/datatypes/count/datatype.h.orig
++++ src/datatypes/count/datatype.h
+@@ -30,7 +30,7 @@
+ 
+ #include "mdatatypes.h"
+ 
+-int	mdata_Count_to_xml(gzFile *fd, mdata *data);
++int	mdata_Count_to_xml(gzFile fd, mdata *data);
+ int     mdata_Count_from_xml(void *user_data, int tagtype, const xmlChar *value, const xmlChar **attrs);
+ 
+ mdata  *mdata_Count_init();

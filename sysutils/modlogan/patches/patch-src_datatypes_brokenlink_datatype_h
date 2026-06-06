@@ -1,0 +1,12 @@
+Index: src/datatypes/brokenlink/datatype.h
+--- src/datatypes/brokenlink/datatype.h.orig
++++ src/datatypes/brokenlink/datatype.h
+@@ -30,7 +30,7 @@
+ 
+ #include "mdatatypes.h"
+ 
+-int	mdata_BrokenLink_to_xml(gzFile *fd, mdata *data);
++int	mdata_BrokenLink_to_xml(gzFile fd, mdata *data);
+ int     mdata_BrokenLink_from_xml(void *user_data, m_tag tagtype, const xmlChar *value, const xmlChar **attrs);
+ 
+ mdata  *mdata_BrokenLink_create(const char *key,

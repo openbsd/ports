@@ -1,0 +1,12 @@
+Index: src/datatypes/ipplwatch/datatype.h
+--- src/datatypes/ipplwatch/datatype.h.orig
++++ src/datatypes/ipplwatch/datatype.h
+@@ -35,7 +35,7 @@
+ 
+ #include "mdatatypes.h"
+ 
+-int	mdata_IpplWatch_to_xml(gzFile *fd, mdata *data);
++int	mdata_IpplWatch_to_xml(gzFile fd, mdata *data);
+ int     mdata_IpplWatch_from_xml(mstate_stack *m, int tagtype, const xmlChar *value, const xmlChar **attrs);
+ 
+ mdata *mdata_IpplWatch_create(const char *str, time_t ts, char *dt, int type, long count);

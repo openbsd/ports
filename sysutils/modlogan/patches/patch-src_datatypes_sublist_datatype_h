@@ -1,0 +1,12 @@
+Index: src/datatypes/sublist/datatype.h
+--- src/datatypes/sublist/datatype.h.orig
++++ src/datatypes/sublist/datatype.h
+@@ -31,7 +31,7 @@
+ #include "mdatatypes.h"
+ #include "mlist.h"
+ 
+-int     mdata_SubList_to_xml(gzFile *fd, mdata *data);
++int     mdata_SubList_to_xml(gzFile fd, mdata *data);
+ int     mdata_SubList_from_xml(void *user_data, int tagtype, const xmlChar *value, const xmlChar **attrs);
+ 
+ mdata  *mdata_SubList_init();

@@ -1,0 +1,12 @@
+Index: src/datatypes/visit/datatype.c
+--- src/datatypes/visit/datatype.c.orig
++++ src/datatypes/visit/datatype.c
+@@ -63,7 +63,7 @@ static int is_md5(char *s) {
+ 	return 1;
+ }
+ 
+-int mdata_Visit_to_xml(gzFile *fd, mdata *data) {
++int mdata_Visit_to_xml(gzFile fd, mdata *data) {
+ #define WR(x,f) \
+ 	gzprintf(fd, "<%s>%"#f"</%s>\n", #x, data->data.visit->x, #x);
+ #define WRS(x,f) \

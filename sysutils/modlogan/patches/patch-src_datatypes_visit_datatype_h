@@ -1,0 +1,12 @@
+Index: src/datatypes/visit/datatype.h
+--- src/datatypes/visit/datatype.h.orig
++++ src/datatypes/visit/datatype.h
+@@ -30,7 +30,7 @@
+ #include <zlib.h>
+ #include "mdatatypes.h"
+ 
+-int     mdata_Visit_to_xml(gzFile *fd, mdata *data);
++int     mdata_Visit_to_xml(gzFile fd, mdata *data);
+ int     mdata_Visit_from_xml(void *user_data, int tagtype, const xmlChar *value, const xmlChar **attrs);
+ 
+ mdata  *mdata_Visit_create(const char *str,
