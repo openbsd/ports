@@ -1,22 +1,16 @@
-COMMENT =	parametric 2D/3D CAD program
-V =		3.1
-DISTNAME =	solvespace-${V}
-CATEGORIES =	cad
-REVISION =	1
+COMMENT =		parametric 2D/3D CAD program
 
-SHARED_LIBS +=	slvs	0.0
+V =			3.2
+DISTNAME =		solvespace-${V}
 
-HOMEPAGE =	https://solvespace.com/
+SHARED_LIBS +=		slvs	1.0
 
-MAINTAINER =	Johannes Thyssen Tishman <jtt@openbsd.org>
-
-SITES =	https://github.com/solvespace/solvespace/releases/download/v${V}/
-EXTRACT_SUFX =	.tar.xz
+CATEGORIES =		cad
+HOMEPAGE =		https://solvespace.com/
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE = Yes
-
-COMPILER =	base-clang
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU X11 atk-1.0 atkmm-1.6 c cairo
 WANTLIB += cairo-gobject cairomm-1.0 execinfo fontconfig freetype
@@ -25,41 +19,37 @@ WANTLIB += glibmm-2.4 gobject-2.0 gtk-3 gtkmm-3.0 harfbuzz intl
 WANTLIB += json-c m pango-1.0 pangocairo-1.0 pangomm-1.4 png sigc-2.0
 WANTLIB += z
 
-BUILD_DEPENDS = devel/gettext,-runtime \
-		math/eigen3
+SITES =			https://github.com/solvespace/solvespace/releases/download/v${V}/
+EXTRACT_SUFX =		.tar.xz
 
-LIB_DEPENDS =	devel/json-c \
-		x11/gtk3mm
+COMPILER =		base-clang
+MODULES =		devel/cmake
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/shared-mime-info \
-		math/eigen3 \
-		x11/gtk+4,-guic
+BUILD_DEPENDS =		devel/gettext,-runtime \
+			math/eigen3
 
-MODULES =	devel/cmake
+LIB_DEPENDS =		devel/json-c \
+			graphics/cairo \
+			graphics/png \
+			x11/gtk3mm
 
-CONFIGURE_ARGS+= -DENABLE_GUI=ON \
-		 -DENABLE_CLI=ON \
-		 -DFORCE_VENDORED_Eigen3=OFF \
-		 -DENABLE_LTO=OFF \
-		 -DENABLE_COVERAGE=OFF \
-		 -DENABLE_TESTS=OFF \
-		 -DENABLE_OPENMP=OFF \
-		 -DENABLE_SANITIZERS=OFF \
-		 -DMI_SECURE=ON \
-		 -DMI_LIBATOMIC=OFF \
-		 -DMI_BUILD_TESTS=OFF \
-		 -DMI_OVERRIDE=OFF \
-		 -DMI_BUILD_SHARED=OFF \
-		 -DMI_BUILD_OBJECT=OFF
+RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info \
+			math/eigen3 \
+			x11/gtk+4,-guic
 
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
-# testsuite broken as is
-NO_TEST =	YES
+CONFIGURE_ARGS+=	-DENABLE_GUI=ON \
+			-DENABLE_CLI=ON \
+			-DFORCE_VENDORED_Eigen3=OFF \
+			-DENABLE_LTO=OFF \
+			-DENABLE_COVERAGE=OFF \
+			-DENABLE_TESTS=ON \
+			-DENABLE_OPENMP=OFF \
+			-DENABLE_SANITIZERS=OFF
 
-# add FindCairo.cmake
-post-extract:
-	cp ${FILESDIR}/FindCairo.cmake ${WRKSRC}/cmake/
+do-test:
+	cd ${WRKSRC} && ${WRKBUILD}/bin/solvespace-testsuite
 
 .include <bsd.port.mk>

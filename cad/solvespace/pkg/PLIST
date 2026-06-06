@@ -70,6 +70,8 @@ share/solvespace/icons/graphics-window/text.png
 share/solvespace/icons/graphics-window/trim.png
 share/solvespace/icons/graphics-window/vert.png
 share/solvespace/icons/text-window/
+share/solvespace/icons/text-window/constraint-dimo.png
+share/solvespace/icons/text-window/constraint-wo.png
 share/solvespace/icons/text-window/constraint.png
 share/solvespace/icons/text-window/construction.png
 share/solvespace/icons/text-window/edges.png
@@ -85,10 +87,12 @@ share/solvespace/icons/text-window/shaded.png
 share/solvespace/icons/text-window/workplane.png
 share/solvespace/locales/
 share/solvespace/locales.txt
+share/solvespace/locales/cs_CZ.po
 share/solvespace/locales/de_DE.po
 share/solvespace/locales/en_US.po
 share/solvespace/locales/es_AR.po
 share/solvespace/locales/fr_FR.po
+share/solvespace/locales/ja_JP.po
 share/solvespace/locales/ru_RU.po
 share/solvespace/locales/tr_TR.po
 share/solvespace/locales/uk_UA.po
@@ -115,3 +119,4 @@ share/solvespace/threejs/three-r111.min.js.gz
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
+share/thumbnailers/solvespace.thumbnailer
