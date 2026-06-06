@@ -4,7 +4,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		visualization toolkit
 
-V =			9.6.0
+V =			9.6.2
 DISTNAME =		VTK-${V}
 PKGNAME =		${DISTNAME:L}
 
@@ -44,7 +44,7 @@ PKGNAME =		${DISTNAME:L}
 	vtkTestingRendering vtkViewsContext2D vtkViewsCore vtkViewsInfovis \
 	vtkexodusII vtkglad vtkioss vtkkissfft vtkmetaio vtksys vtktoken \
 	vtkx11
-SHARED_LIBS += ${LIB} 4.0 # 0.0
+SHARED_LIBS += ${LIB} 5.0 # 0.0
 .endfor
 
 CATEGORIES =		graphics
