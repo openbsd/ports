@@ -1,0 +1,12 @@
+Index: gnushogi/book.c
+--- gnushogi/book.c.orig
++++ gnushogi/book.c
+@@ -912,7 +912,7 @@ OpeningBook(unsigned short *hint, short side)
+     unsigned short r, m;
+     int possibles = TrPnt[2] - TrPnt[1];
+ 
+-    gsrand((unsigned int) time((long *) 0));
++    gsrand((unsigned int) time((long long *) 0));
+     m = 0;
+ 
+     /*

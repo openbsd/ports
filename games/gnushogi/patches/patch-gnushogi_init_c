@@ -1,5 +1,6 @@
---- gnushogi/init.c.orig	Mon Feb 17 21:26:59 2014
-+++ gnushogi/init.c	Mon Sep 21 16:10:55 2015
+Index: gnushogi/init.c
+--- gnushogi/init.c.orig
++++ gnushogi/init.c
 @@ -63,7 +63,7 @@ short nolist          = 1;  /* Don't list the game aft
   * or DISPLAY_X; the default is DISPLAY_X to make life easier for xshogi.
   */
@@ -18,3 +19,12 @@
              ? (short)(*distdata)[(int)a][(int)b]
              : (short)computed_distance(a, b));
  }
+@@ -642,7 +642,7 @@ NewGame(void)
+ int
+ InitMain(void)
+ {
+-    gsrand(starttime = ((unsigned int)time((long *)0)));    /* init urand */
++    gsrand(starttime = ((unsigned int)time((long long *)0)));    /* init urand */
+ 
+ #if ttblsz
+     ttblsize = ttblsz;
