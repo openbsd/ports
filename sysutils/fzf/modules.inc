@@ -4,7 +4,7 @@ MODGO_MODULES =	\
 	github.com/gdamore/tcell/v2		 v2.9.0 \
 	github.com/junegunn/go-shellwords	 v0.0.0-20250127100254-2aa3b3277741 \
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
-	github.com/mattn/go-isatty		 v0.0.20 \
+	github.com/mattn/go-isatty		 v0.0.22 \
 	github.com/mattn/go-runewidth		 v0.0.16 \
 	github.com/rivo/uniseg			 v0.4.7 \
 	github.com/yuin/goldmark		 v1.4.13 \
@@ -35,8 +35,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys	 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/sys	 v0.0.0-20220520151302-bc2c85ada10a \
 	golang.org/x/sys	 v0.0.0-20220722155257-8c9f86f7a55f \
+	golang.org/x/sys	 v0.28.0 \
 	golang.org/x/sys	 v0.5.0 \
-	golang.org/x/sys	 v0.6.0 \
 	golang.org/x/term	 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term	 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term	 v0.5.0 \
