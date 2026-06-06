@@ -1,10 +1,8 @@
 @bin bin/plakar
-@man man/man1/plakar-agent.1
 @man man/man1/plakar-archive.1
 @man man/man1/plakar-backup.1
 @man man/man1/plakar-cat.1
 @man man/man1/plakar-check.1
-@man man/man1/plakar-clone.1
 @man man/man1/plakar-create.1
 @man man/man1/plakar-destination.1
 @man man/man1/plakar-diag.1
@@ -28,13 +26,12 @@
 @man man/man1/plakar-ptar.1
 @man man/man1/plakar-restore.1
 @man man/man1/plakar-rm.1
-@man man/man1/plakar-scheduler.1
 @man man/man1/plakar-server.1
 @man man/man1/plakar-service.1
 @man man/man1/plakar-source.1
 @man man/man1/plakar-store.1
 @man man/man1/plakar-sync.1
-@man man/man1/plakar-token.1
+@man man/man1/plakar-token-create.1
 @man man/man1/plakar-ui.1
 @man man/man1/plakar-version.1
 @man man/man1/plakar.1
