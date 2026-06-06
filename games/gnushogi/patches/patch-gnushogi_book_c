@@ -6,7 +6,7 @@ Index: gnushogi/book.c
      int possibles = TrPnt[2] - TrPnt[1];
  
 -    gsrand((unsigned int) time((long *) 0));
-+    gsrand((unsigned int) time((long long *) 0));
++    gsrand((unsigned int) time(NULL));
      m = 0;
  
      /*

@@ -24,7 +24,7 @@ Index: gnushogi/init.c
  InitMain(void)
  {
 -    gsrand(starttime = ((unsigned int)time((long *)0)));    /* init urand */
-+    gsrand(starttime = ((unsigned int)time((long long *)0)));    /* init urand */
++    gsrand(starttime = ((unsigned int)time(NULL)));    /* init urand */
  
  #if ttblsz
      ttblsize = ttblsz;
