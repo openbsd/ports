@@ -1,11 +1,10 @@
 COMMENT =		library to deal with Japanese kana-to-kanji conversion
 
-V =			1.0.5
+V =			1.1.1
 DISTNAME =		libskk-${V}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		1
 
-SHARED_LIBS +=  skk                  0.1      # 0.0
+SHARED_LIBS +=  skk                  0.2      # 0.0
 
 CATEGORIES =		inputmethods japanese
 
@@ -19,11 +18,10 @@ WANTLIB += iconv intl json-glib-1.0 pcre2-8 pthread xkbcommon z
 
 SITES =			https://github.com/ueno/libskk/releases/download/${V}/
 
-MODULES =		textproc/intltool
-
 USE_GMAKE =		Yes
 
-BUILD_DEPENDS =		devel/gobject-introspection \
+BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/gobject-introspection \
 			lang/vala
 
 RUN_DEPENDS =		japanese/skk-jisyo
