@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =         sparc64
 
 COMMENT =		OAuth2 authentication daemon
 
-V =			1.0.11
+V =			1.1.0
 DISTNAME =		pizauth-$V
 
 CATEGORIES =		mail security
@@ -41,6 +41,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d
 	${INSTALL_DATA} ${WRKSRC}/share/fish/pizauth.fish \
 	  ${PREFIX}/share/fish/vendor_completions.d
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/share/zsh/_pizauth \
+	  ${PREFIX}/share/zsh/site-functions
 
 .include "crates.inc"
 
