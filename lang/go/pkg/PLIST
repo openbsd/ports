@@ -64,6 +64,7 @@ go/lib/
 go/lib/fips140/
 go/lib/fips140/Makefile
 go/lib/fips140/README.md
+go/lib/fips140/certified.txt
 go/lib/fips140/fips140.sum
 go/lib/fips140/inprocess.txt
 go/lib/fips140/v1.0.0-c2097c7c.zip
@@ -1205,6 +1206,7 @@ go/src/cmd/compile/internal/loopvar/testdata/opt-122.go
 go/src/cmd/compile/internal/loopvar/testdata/opt.go
 go/src/cmd/compile/internal/loopvar/testdata/range_esc_address.go
 go/src/cmd/compile/internal/loopvar/testdata/range_esc_closure.go
+go/src/cmd/compile/internal/loopvar/testdata/range_esc_closure_linedir.go
 go/src/cmd/compile/internal/loopvar/testdata/range_esc_method.go
 go/src/cmd/compile/internal/loopvar/testdata/range_esc_minimal_closure.go
 go/src/cmd/compile/internal/mips/
@@ -2692,6 +2694,7 @@ go/src/cmd/go/testdata/script/cover_runs.txt
 go/src/cmd/go/testdata/script/cover_single_vs_multiple.txt
 go/src/cmd/go/testdata/script/cover_statements.txt
 go/src/cmd/go/testdata/script/cover_swig.txt
+go/src/cmd/go/testdata/script/cover_switch_toolchain.txt
 go/src/cmd/go/testdata/script/cover_sync_atomic_import.txt
 go/src/cmd/go/testdata/script/cover_test_localpkg_filepath.txt
 go/src/cmd/go/testdata/script/cover_test_pkgselect.txt
@@ -2719,6 +2722,7 @@ go/src/cmd/go/testdata/script/env_write.txt
 go/src/cmd/go/testdata/script/fileline.txt
 go/src/cmd/go/testdata/script/fips.txt
 go/src/cmd/go/testdata/script/fipssnap.txt
+go/src/cmd/go/testdata/script/fix_diff_exitcode.txt
 go/src/cmd/go/testdata/script/fix_suite.txt
 go/src/cmd/go/testdata/script/fix_vendor.txt
 go/src/cmd/go/testdata/script/fmt_load_errors.txt
@@ -3132,6 +3136,7 @@ go/src/cmd/go/testdata/script/mod_skip_write.txt
 go/src/cmd/go/testdata/script/mod_stale.txt
 go/src/cmd/go/testdata/script/mod_std_vendor.txt
 go/src/cmd/go/testdata/script/mod_string_alias.txt
+go/src/cmd/go/testdata/script/mod_sum_absent.txt
 go/src/cmd/go/testdata/script/mod_sum_ambiguous.txt
 go/src/cmd/go/testdata/script/mod_sum_issue56222.txt
 go/src/cmd/go/testdata/script/mod_sum_lookup.txt
@@ -3245,6 +3250,8 @@ go/src/cmd/go/testdata/script/test_build_failure.txt
 go/src/cmd/go/testdata/script/test_buildinfo.txt
 go/src/cmd/go/testdata/script/test_buildinfo_godebug_issue68053.txt
 go/src/cmd/go/testdata/script/test_buildvcs.txt
+go/src/cmd/go/testdata/script/test_cache_coverpkg_bug.txt
+go/src/cmd/go/testdata/script/test_cache_coverpkg_no_profile.txt
 go/src/cmd/go/testdata/script/test_cache_inputs.txt
 go/src/cmd/go/testdata/script/test_chatty_fail.txt
 go/src/cmd/go/testdata/script/test_chatty_parallel_fail.txt
@@ -5708,6 +5715,8 @@ go/src/crypto/internal/fips140/check/checktest/test.go
 go/src/crypto/internal/fips140/drbg/
 go/src/crypto/internal/fips140/drbg/cast.go
 go/src/crypto/internal/fips140/drbg/ctrdrbg.go
+go/src/crypto/internal/fips140/drbg/entropy_fips140.go
+go/src/crypto/internal/fips140/drbg/entropy_wasm.go
 go/src/crypto/internal/fips140/drbg/rand.go
 go/src/crypto/internal/fips140/drbg/rand_test.go
 go/src/crypto/internal/fips140/ecdh/
@@ -9477,6 +9486,7 @@ go/src/internal/types/testdata/fixedbugs/issue76366.go
 go/src/internal/types/testdata/fixedbugs/issue76383.go
 go/src/internal/types/testdata/fixedbugs/issue76384.go
 go/src/internal/types/testdata/fixedbugs/issue76478.go
+go/src/internal/types/testdata/fixedbugs/issue78163.go
 go/src/internal/types/testdata/spec/
 go/src/internal/types/testdata/spec/assignability.go
 go/src/internal/types/testdata/spec/comparable.go
@@ -15663,9 +15673,12 @@ go/test/fixedbugs/issue77779.go
 go/test/fixedbugs/issue77815.go
 go/test/fixedbugs/issue77919.go
 go/test/fixedbugs/issue7794.go
+go/test/fixedbugs/issue78404.go
 go/test/fixedbugs/issue7863.go
+go/test/fixedbugs/issue78641.go
 go/test/fixedbugs/issue7867.go
 go/test/fixedbugs/issue7884.go
+go/test/fixedbugs/issue79182.go
 go/test/fixedbugs/issue7921.go
 go/test/fixedbugs/issue7944.go
 go/test/fixedbugs/issue7995.go
