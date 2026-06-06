@@ -1,5 +1,5 @@
 COMMENT =		ncurses file manager with Vim-like everything
-V =			0.14.3
+V =			0.14.4
 DISTNAME =		vifm-${V}
 CATEGORIES =		sysutils
 HOMEPAGE =		https://vifm.info/
