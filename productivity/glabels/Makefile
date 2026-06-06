@@ -1,82 +1,30 @@
 COMMENT =		labels and business card designer
 
-GNOME_PROJECT =		glabels
-GNOME_VERSION =		3.4.1
-REVISION =		27
+GH_ACCOUNT=		j-evins
+GH_PROJECT=		glabels-qt
+GH_TAGNAME=		3.99-master638
+PKGNAME=		glabels-${GH_TAGNAME:S/-master/pre/}
 
-CATEGORIES =		productivity graphics
+CATEGORIES=		productivity graphics print
 
-SHARED_LIBS +=  glabels-3.0               0.0 # 8.0
-SHARED_LIBS +=  glbarcode-3.0             0.0 # 0.0
+HOMEPAGE=		https://glabels.org/
 
-HOMEPAGE =		http://glabels.org/
+# GPLv3
+PERMIT_PACKAGE=		Yes
 
-# GPLv3/LGPLv3/MIT
-# Attribution-ShareAlike 3.0 Unported
-PERMIT_PACKAGE =	Yes
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
+WANTLIB += Qt6PrintSupport Qt6Svg Qt6Widgets Qt6Xml c m qrencode
+WANTLIB += z zint
 
-WANTLIB += ${COMPILER_LIBCXX} X11 XRes Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += absl_base absl_borrowed_fixup_buffer absl_city absl_civil_time
-WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
-WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
-WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
-WANTLIB += absl_demangle_internal absl_demangle_rust absl_die_if_null
-WANTLIB += absl_examine_stack absl_exponential_biased absl_flags_commandlineflag
-WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
-WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_private_handle_accessor
-WANTLIB += absl_flags_program_name absl_flags_reflection absl_graphcycles_internal
-WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_initialize
-WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
-WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
-WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
-WANTLIB += absl_log_internal_message absl_log_internal_nullguard
-WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
-WANTLIB += absl_log_severity absl_log_sink absl_malloc_internal
-WANTLIB += absl_random_distributions absl_random_internal_entropy_pool
-WANTLIB += absl_random_internal_platform absl_random_internal_randen
-WANTLIB += absl_random_internal_randen_hwaes absl_random_internal_randen_hwaes_impl
-WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material
-WANTLIB += absl_random_seed_gen_exception absl_random_seed_sequences
-WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
-WANTLIB += absl_stacktrace absl_status absl_statusor absl_str_format_internal
-WANTLIB += absl_strerror absl_strings absl_strings_internal absl_symbolize
-WANTLIB += absl_synchronization absl_throw_delegate absl_time
-WANTLIB += absl_time_zone absl_tracing_internal absl_utf8_for_code_point
-WANTLIB += absl_vlog_config_internal atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += boost_atomic-mt boost_chrono-mt boost_container-mt
-WANTLIB += boost_date_time-mt boost_thread-mt brotlicommon brotlidec
-WANTLIB += c cairo cairo-gobject camel-1.2 dav1d db dbus-1 ebackend-1.2
-WANTLIB += ebook-1.2 ebook-contacts-1.2 edata-book-1.2 edataserver-1.2
-WANTLIB += epoll-shim epoxy execinfo expat ffi fontconfig freetype
-WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gtk-3 harfbuzz
-WANTLIB += iconv icudata icui18n icuuc idn2 iec16022 intl jpeg
-WANTLIB += json-glib-1.0 m nghttp2 nspr4 nss3 nssutil3 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 phonenumber pixman-1
-WANTLIB += plc4 plds4 png protobuf psl qrencode rsvg-2 secret-1
-WANTLIB += smime3 soup-3.0 sqlite3 ssl3 unistring utf8_validity
-WANTLIB += uuid wayland-client wayland-cursor wayland-egl xcb
-WANTLIB += xcb-render xcb-shm xkbcommon xml2 z
+MODULES=		devel/cmake \
+			x11/qt6
 
-COMPILER =		base-clang ports-gcc base-gcc
+LIB_DEPENDS=		graphics/libqrencode \
+			graphics/zint \
+			x11/qt6/qtbase \
+			x11/qt6/qtsvg
 
-MODULES =		devel/dconf \
-			x11/gnome
-
-LIB_DEPENDS =		databases/evolution-data-server \
-			graphics/iec16022 \
-			graphics/libqrencode \
-			x11/gnome/librsvg \
-			x11/gtk+3
-
-# unreferenced and unused, but linked against
-# probably picked up through some dependency's .pc file
-LIB_DEPENDS +=		devel/abseil-cpp
-
-MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
-
-CONFIGURE_STYLE =	gnu
+RUN_DEPENDS=		misc/shared-mime-info \
+			x11/gtk+4,-guic
 
 .include <bsd.port.mk>

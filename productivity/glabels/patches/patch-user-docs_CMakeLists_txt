@@ -1,0 +1,10 @@
+Index: user-docs/CMakeLists.txt
+--- user-docs/CMakeLists.txt.orig
++++ user-docs/CMakeLists.txt
+@@ -30,5 +30,5 @@ add_custom_target (manpages DEPENDS ${man_pages})
+ #=======================================
+ # Install
+ #=======================================
+-install (FILES ${man_pages} DESTINATION share/man/man1)
++install (FILES ${man_pages} DESTINATION man/man1)
+ 
