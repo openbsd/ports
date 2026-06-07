@@ -1,0 +1,14 @@
+Fix build on sparc64 by not erroring out
+
+Index: hwy/detect_compiler_arch.h
+--- hwy/detect_compiler_arch.h.orig
++++ hwy/detect_compiler_arch.h
+@@ -441,8 +441,6 @@
+ #define HWY_ARCH_MAX_BYTES 32
+ #elif HWY_ARCH_PPC || HWY_ARCH_S390X || HWY_ARCH_ARM_V7 || HWY_ARCH_ARM_OLD
+ #define HWY_ARCH_MAX_BYTES 16
+-#else
+-#error "Missing case for HWY_ARCH_*"
+ #endif
+ 
+ //------------------------------------------------------------------------------

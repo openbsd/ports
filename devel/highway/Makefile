@@ -1,5 +1,3 @@
-BROKEN-sparc64 = error "Missing case for HWY_ARCH_*"
-
 COMMENT =	length-agnostic SIMD with runtime dispatch
 
 GH_ACCOUNT =	google
