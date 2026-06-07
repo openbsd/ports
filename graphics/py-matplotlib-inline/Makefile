@@ -1,9 +1,8 @@
 COMMENT =		inline matplotlib backend for jupyter
 
-MODPY_DISTV =		0.1.6
-DISTNAME =		matplotlib-inline-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		3
+MODPY_DISTV =		0.2.2
+DISTNAME =		matplotlib_inline-${MODPY_DISTV}
+PKGNAME =		py-${DISTNAME:S/_/-/}
 
 CATEGORIES =		graphics math
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		flit_core
 
 RUN_DEPENDS =		devel/py-traitlets
 
