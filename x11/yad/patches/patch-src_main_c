@@ -1,0 +1,21 @@
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -670,7 +670,7 @@ create_dialog (void)
+ 
+ #if GTK_CHECK_VERSION(3,0,0)
+   if (css)
+-    gtk_style_context_add_provider (gtk_widget_get_style_context (dlg), css, GTK_STYLE_PROVIDER_PRIORITY_USER);
++    gtk_style_context_add_provider (gtk_widget_get_style_context (dlg), GTK_STYLE_PROVIDER(css), GTK_STYLE_PROVIDER_PRIORITY_USER);
+ #endif
+ 
+   return dlg;
+@@ -700,7 +700,7 @@ create_plug (void)
+ 
+ #if GTK_CHECK_VERSION(3,0,0)
+   if (css)
+-    gtk_style_context_add_provider (gtk_widget_get_style_context (win), css, GTK_STYLE_PROVIDER_PRIORITY_USER);
++    gtk_style_context_add_provider (gtk_widget_get_style_context (win), GTK_STYLE_PROVIDER(css), GTK_STYLE_PROVIDER_PRIORITY_USER);
+ #endif
+ 
+   gtk_widget_show_all (win);

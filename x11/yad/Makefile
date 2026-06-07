@@ -2,7 +2,7 @@ COMMENT=		display graphical dialogs from shell scripts or command line
 
 DISTNAME=		yad-0.40.0
 CATEGORIES=		x11
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		https://sourceforge.net/projects/yad-dialog/
 
