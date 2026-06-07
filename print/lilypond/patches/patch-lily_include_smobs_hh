@@ -1,0 +1,13 @@
+Horrible fix for llvm 22.
+
+Index: lily/include/smobs.hh
+--- lily/include/smobs.hh.orig
++++ lily/include/smobs.hh
+@@ -251,6 +251,7 @@ class Smob_base (private)
+   // least, but in emergency situations one can always use a "rest"
+   // argument and take it apart manually.
+ 
++public:
+   template <SCM (Super::*pmf) (void)>
+   static SCM smob_trampoline (SCM self)
+   {
