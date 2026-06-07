@@ -8,7 +8,7 @@ WANTLIB += Qt6DBus Qt6Sql m
 
 
 BUILD_DEPENDS =	devel/boost \
-		x11/qt5/qtdeclarative
+		x11/qt6/qtdeclarative
 
 LIB_DEPENDS =	devel/kf6/kconfig \
 		x11/kde-plasma/plasma-activities>=${VERSION}
