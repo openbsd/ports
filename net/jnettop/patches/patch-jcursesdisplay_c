@@ -1,0 +1,16 @@
+Index: jcursesdisplay.c
+--- jcursesdisplay.c.orig
++++ jcursesdisplay.c
+@@ -125,12 +125,10 @@ static void drawHeader() {
+ 	gchar		timeBuffer[32];
+ 	gchar srcbps[10], dstbps[10], bps[10], total[10], totalsrc[10], totaldst[10];
+ 	int i;
+-	struct tm tm;
+ 
+ 	attron(A_BOLD);
+ 	
+ 	g_get_current_time(&currentTime);
+-	localtime_r(&currentTime.tv_sec, &tm);
+ 	sprintf(timeBuffer, "%3d:%02d:%02d", (int)((currentTime.tv_sec-jprocessor_Stats.startTime.tv_sec)/3600), (int)((currentTime.tv_sec-jprocessor_Stats.startTime.tv_sec)%3600/60), (int)((currentTime.tv_sec-jprocessor_Stats.startTime.tv_sec)%60));
+ 	mvprintw(0, 4, "%s", timeBuffer);
+ 	if (jcapture_ActiveDevice)
