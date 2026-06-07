@@ -35,4 +35,9 @@ CONFIGURE_ARGS=		--enable-static \
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
+.if ${MACHINE_ARCH} == riscv64
+# long vs long long in riscv64-specific code
+CFLAGS +=		-Wno-error=incompatible-pointer-types
+.endif
+
 .include <bsd.port.mk>
