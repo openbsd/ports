@@ -1,10 +1,9 @@
 COMMENT=	subprocess interface: call any program like a function
 
-MODPY_DISTV=	2.2.2
+MODPY_DISTV=	2.2.4
 DISTNAME=	sh-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://github.com/amoffat/sh
 
