@@ -1,0 +1,11 @@
+Index: src/melt/io.c
+--- src/melt/io.c.orig
++++ src/melt/io.c
+@@ -29,6 +29,7 @@
+ #ifndef _WIN32
+ #include <termios.h>
+ #include <unistd.h>
++#include <sys/time.h>
+ #else
+ // MinGW defines struct timespec in pthread.h
+ #include <pthread.h>

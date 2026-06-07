@@ -1,0 +1,46 @@
+Index: src/modules/openfx/factory.c
+--- src/modules/openfx/factory.c.orig
++++ src/modules/openfx/factory.c
+@@ -25,7 +25,7 @@ extern OfxHost MltOfxHost;
+ mlt_properties mltofx_context;
+ mlt_properties mltofx_dl;
+ 
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) ||  defined(__OpenBSD__)
+ 
+ #define OFX_DIRLIST_SEP_CHARS ":;"
+ #define OFX_DIRSEP "/"
+@@ -36,14 +36,22 @@ static const char *getArchStr()
+     if (sizeof(void *) == 4) {
+ #if defined(__linux__)
+         return "Linux-x86";
+-#else
++#elif defined(__FreeBSD__)
+         return "FreeBSD-x86";
++#elif defined(__OpenBSD__)
++        return "OpenBSD-x86";
++#else
++#error "Unsupported platform"
+ #endif
+     } else {
+ #if defined(__linux__)
+         return "Linux-x86-64";
+-#else
++#elif defined(__FreeBSD__)
+         return "FreeBSD-x86-64";
++#elif defined(__OpenBSD__)
++        return "OpenBSD-x86-64";
++#else
++#error "Unsupported platform"
+ #endif
+     }
+ }
+@@ -256,7 +264,7 @@ MLT_REPOSITORY
+     int dli = 0;
+ 
+     // Scan standard platform default paths per the OpenFX specification
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) ||  defined(__OpenBSD__)
+     scan_ofx_dir(repository, "/usr/OFX/Plugins", &dli, 0);
+     scan_ofx_dir(repository, "/usr/local/OFX/Plugins", &dli, 0);
+ #elif defined(__APPLE__)

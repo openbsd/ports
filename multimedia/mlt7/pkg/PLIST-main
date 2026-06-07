@@ -80,6 +80,7 @@ lib/mlt-7/
 @so lib/mlt-7/libmltkdenlive.so
 @so lib/mlt-7/libmltmovit.so
 @so lib/mlt-7/libmltoldfilm.so
+@so lib/mlt-7/libmltopenfx.so
 @so lib/mlt-7/libmltplus.so
 @so lib/mlt-7/libmltsdl2.so
 @so lib/mlt-7/libmltsox.so
@@ -95,9 +96,11 @@ share/mlt-7/avformat/consumer_avformat.yml
 share/mlt-7/avformat/filter_avcolour_space.yml
 share/mlt-7/avformat/filter_avdeinterlace.yml
 share/mlt-7/avformat/filter_swresample.yml
+share/mlt-7/avformat/filter_sws_colortransform.yml
 share/mlt-7/avformat/filter_swscale.yml
 share/mlt-7/avformat/link_avdeinterlace.yml
 share/mlt-7/avformat/link_swresample.yml
+share/mlt-7/avformat/producer_avformat-novalidate.yml
 share/mlt-7/avformat/producer_avformat.yml
 share/mlt-7/avformat/resolution_scale.yml
 share/mlt-7/avformat/yuv_only.txt
@@ -115,6 +118,7 @@ share/mlt-7/core/filter_box_blur.yml
 share/mlt-7/core/filter_brightness.yml
 share/mlt-7/core/filter_channelcopy.yml
 share/mlt-7/core/filter_choppy.yml
+share/mlt-7/core/filter_color_transform.yml
 share/mlt-7/core/filter_crop.yml
 share/mlt-7/core/filter_fieldorder.yml
 share/mlt-7/core/filter_gamma.yml
@@ -156,6 +160,7 @@ share/mlt-7/decklink/consumer_decklink.yml
 share/mlt-7/decklink/producer_decklink.yml
 share/mlt-7/frei0r/
 share/mlt-7/frei0r/aliases.yaml
+share/mlt-7/frei0r/alpha_only.txt
 share/mlt-7/frei0r/blacklist.txt
 share/mlt-7/frei0r/filter_cairoblend_mode.yml
 share/mlt-7/frei0r/not_thread_safe.txt
@@ -172,6 +177,8 @@ share/mlt-7/kdenlive/filter_wave.yml
 share/mlt-7/kdenlive/producer_framebuffer.yml
 share/mlt-7/metaschema.yaml
 share/mlt-7/movit/
+share/mlt-7/movit/consumer_xgl.yml
+share/mlt-7/movit/filter_glsl_manager.yml
 share/mlt-7/movit/filter_movit_blur.yml
 share/mlt-7/movit/filter_movit_convert.yml
 share/mlt-7/movit/filter_movit_crop.yml
@@ -182,6 +189,7 @@ share/mlt-7/movit/filter_movit_glow.yml
 share/mlt-7/movit/filter_movit_lift_gamma_gain.yml
 share/mlt-7/movit/filter_movit_mirror.yml
 share/mlt-7/movit/filter_movit_opacity.yml
+share/mlt-7/movit/filter_movit_overlay_mode.yml
 share/mlt-7/movit/filter_movit_rect.yml
 share/mlt-7/movit/filter_movit_resample.yml
 share/mlt-7/movit/filter_movit_resize.yml
@@ -209,6 +217,8 @@ share/mlt-7/oldfilm/lines.svg
 share/mlt-7/oldfilm/oldfilm.svg
 share/mlt-7/oldfilm/tcolor.svg
 share/mlt-7/oldfilm/vignette.svg
+share/mlt-7/openfx/
+share/mlt-7/openfx/filter_openfx.yml
 share/mlt-7/plus/
 share/mlt-7/plus/consumer_blipflash.yml
 share/mlt-7/plus/filter_affine.yml
@@ -240,6 +250,7 @@ share/mlt-7/plus/filter_timer.yml
 share/mlt-7/plus/producer_blipflash.yml
 share/mlt-7/plus/producer_count.yml
 share/mlt-7/plus/producer_pgm.yml
+share/mlt-7/plus/producer_subtitle.yml
 share/mlt-7/plus/transition_affine.yml
 share/mlt-7/presets/
 share/mlt-7/presets/consumer/
@@ -364,6 +375,8 @@ share/mlt-7/presets/consumer/avformat/ten_bit/ProRes 422
 share/mlt-7/presets/consumer/avformat/ten_bit/ProRes 444
 share/mlt-7/presets/consumer/avformat/ten_bit/ProRes HQ
 share/mlt-7/presets/consumer/avformat/ten_bit/SVT-AV1
+share/mlt-7/presets/consumer/avformat/ten_bit/vp9-eac3-mp4
+share/mlt-7/presets/consumer/avformat/ten_bit/vp9-opus-webm
 share/mlt-7/presets/consumer/avformat/ten_bit/x264-high10
 share/mlt-7/presets/consumer/avformat/ten_bit/x265-main10
 share/mlt-7/presets/consumer/avformat/vp9
@@ -468,8 +481,6 @@ share/mlt-7/profiles/vcd_ntsc
 share/mlt-7/profiles/vcd_pal
 share/mlt-7/profiles/vertical_hd_30
 share/mlt-7/profiles/vertical_hd_60
-share/mlt-7/resample/
-share/mlt-7/resample/link_resample.yml
 share/mlt-7/sdl2/
 share/mlt-7/sdl2/consumer_sdl2.yml
 share/mlt-7/sdl2/consumer_sdl2_audio.yml
