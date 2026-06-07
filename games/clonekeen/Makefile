@@ -1,15 +1,13 @@
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
 PKGNAME =		clonekeen-8.4
-REVISION =		7
+REVISION =		8
 CATEGORIES =		games
 
 WRKDIST = 		${WRKDIR}/keen
 WRKBUILD =		${WRKDIST}/src
 
 HOMEPAGE =		https://clonekeen.sourceforge.net/
-
-MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -27,7 +25,8 @@ NO_TEST =		Yes
 # LDFLAGS only used at link time
 CPPFLAGS = 	-I${LOCALBASE}/include
 LDFLAGS =	-L${LOCALBASE}/lib -pthread -lm
-CFLAGS =	-Wno-int-conversion
+CFLAGS =	-Wno-int-conversion \
+		-Wno-error=incompatible-pointer-types
 MAKE_ENV =	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 
 do-install:
