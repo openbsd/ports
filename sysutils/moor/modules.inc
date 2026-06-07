@@ -6,6 +6,8 @@ MODGO_MODULES =	\
 	github.com/charlievieth/strcase	 v0.0.5 \
 	github.com/davecgh/go-spew	 v1.1.1 \
 	github.com/dlclark/regexp2	 v1.11.5 \
+	github.com/go-enry/go-enry/v2	 v2.9.6 \
+	github.com/go-enry/go-oniguruma	 v1.2.1 \
 	github.com/google/go-cmp	 v0.5.9 \
 	github.com/hexops/gotextdiff	 v1.0.3 \
 	github.com/klauspost/compress	 v1.17.4 \
@@ -13,7 +15,7 @@ MODGO_MODULES =	\
 	github.com/rivo/uniseg		 v0.4.7 \
 	github.com/sirupsen/logrus	 v1.8.3 \
 	github.com/spf13/pflag		 v1.0.3 \
-	github.com/stretchr/objx	 v0.1.0 \
+	github.com/stretchr/objx	 v0.5.0 \
 	github.com/stretchr/testify	 v1.9.0 \
 	github.com/ulikunitz/xz		 v0.5.15 \
 	github.com/yuin/goldmark	 v1.2.1 \
@@ -28,6 +30,7 @@ MODGO_MODULES =	\
 	golang.org/x/tools		 v0.16.0 \
 	golang.org/x/xerrors		 v0.0.0-20200804184101-5ec99f83aff1 \
 	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
+	gopkg.in/yaml.v2		 v2.2.8 \
 	gopkg.in/yaml.v3		 v3.0.1 \
 	gotest.tools/v3			 v3.3.0
 
@@ -35,7 +38,12 @@ MODGO_MODFILES =	\
 	github.com/davecgh/go-spew	 v1.1.0 \
 	github.com/google/go-cmp	 v0.5.5 \
 	github.com/google/go-cmp	 v0.5.8 \
+	github.com/stretchr/objx	 v0.1.0 \
+	github.com/stretchr/objx	 v0.4.0 \
 	github.com/stretchr/testify	 v1.7.0 \
+	github.com/stretchr/testify	 v1.7.1 \
+	github.com/stretchr/testify	 v1.8.0 \
+	github.com/stretchr/testify	 v1.8.1 \
 	golang.org/x/crypto		 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto		 v0.0.0-20191011191535-87dc89f01550 \
 	golang.org/x/mod		 v0.3.0 \

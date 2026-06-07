@@ -1,7 +1,7 @@
 COMMENT =		pager with incremental search and transparent decompression
 
 MODGO_MODNAME =		github.com/walles/moor/v2
-MODGO_VERSION =		v2.13.4
+MODGO_VERSION =		v2.14.0
 
 DISTNAME =		moor-${MODGO_VERSION}
 WRKDIST =		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
