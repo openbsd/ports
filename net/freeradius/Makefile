@@ -7,7 +7,7 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python3= freeradius python3 rlm addon
 
-V=		3.2.9
+V=		3.2.10
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
