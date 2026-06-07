@@ -41,7 +41,13 @@ share/examples/rspamd/logging.inc
 @sample ${ETC}/rspamd/logging.inc
 share/examples/rspamd/lua.local.d/
 @sample ${ETC}/rspamd/lua.local.d/
+share/examples/rspamd/lua.local.d/maps/
+share/examples/rspamd/lua.local.d/maps/example.lua.example
 share/examples/rspamd/lua.local.d/module.lua.example
+share/examples/rspamd/lua.local.d/regexps/
+share/examples/rspamd/lua.local.d/regexps/example.lua.example
+share/examples/rspamd/lua.local.d/selectors/
+share/examples/rspamd/lua.local.d/selectors/example.lua.example
 share/examples/rspamd/maps.d/
 @sample ${ETC}/rspamd/maps.d/
 share/examples/rspamd/maps.d/dmarc_whitelist.inc
@@ -309,6 +315,8 @@ share/rspamd/lualib/lua_content/pdf.lua
 share/rspamd/lualib/lua_content/vcard.lua
 share/rspamd/lualib/lua_cta.lua
 share/rspamd/lualib/lua_dkim_tools.lua
+share/rspamd/lualib/lua_extras.lua
+share/rspamd/lualib/lua_feedback_parsers.lua
 share/rspamd/lualib/lua_ffi/
 share/rspamd/lualib/lua_ffi/common.lua
 share/rspamd/lualib/lua_ffi/dkim.lua
@@ -340,6 +348,7 @@ share/rspamd/lualib/lua_scanners/clamav.lua
 share/rspamd/lualib/lua_scanners/cloudmark.lua
 share/rspamd/lualib/lua_scanners/common.lua
 share/rspamd/lualib/lua_scanners/dcc.lua
+share/rspamd/lualib/lua_scanners/expurgate.lua
 share/rspamd/lualib/lua_scanners/fprot.lua
 share/rspamd/lualib/lua_scanners/icap.lua
 share/rspamd/lualib/lua_scanners/init.lua
@@ -422,6 +431,7 @@ share/rspamd/lualib/rspamadm/grep.lua
 share/rspamd/lualib/rspamadm/keypair.lua
 share/rspamd/lualib/rspamadm/logstats.lua
 share/rspamd/lualib/rspamadm/mapstats.lua
+share/rspamd/lualib/rspamadm/memstat.lua
 share/rspamd/lualib/rspamadm/mime.lua
 share/rspamd/lualib/rspamadm/neural_export.lua
 share/rspamd/lualib/rspamadm/neural_test.lua
