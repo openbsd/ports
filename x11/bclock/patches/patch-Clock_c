@@ -1,0 +1,23 @@
+Fix build with llvm22
+
+Index: Clock.c
+--- Clock.c.orig
++++ Clock.c
+@@ -376,7 +376,7 @@ static void Realize (gw, valueMask, attrs)
+     w->clock.eraseGC = XCreateGC (XtDisplay (w), XtWindow (w),
+     				  GCForeground | GCCapStyle | GCJoinStyle, &values);
+     if (!w->clock.transparent)
+-	Resize (w);
++	Resize ((Widget)w);
+     new_time ((XtPointer) gw, 0);
+ }
+ 
+@@ -456,7 +456,7 @@ static void new_time (client_data, id)
+ 	w->clock.hour_angle = 2.0 * PI * hour_fraction;
+ 
+ 	if (w->clock.transparent)
+-	    Resize (w);
++		Resize ((Widget)w);
+ 	else
+ 	{
+ 	    if (w->clock.pm &&

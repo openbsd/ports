@@ -1,7 +1,7 @@
 COMMENT=	round, analog X11 clock with bezier curve hands
 
 DISTNAME=	bclock-1.0
-REVISION=	3
+REVISION=	4
 CATEGORIES=	x11
 
 SITES=	${SITE_SUNSITE:=X11/clocks/}
