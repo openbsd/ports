@@ -1,7 +1,7 @@
 COMMENT=	X11 counterpart of curses-based misc/dialog
 
 DISTNAME=	Xdialog-2.3.1
-REVISION=	9
+REVISION=	10
 CATEGORIES=	x11 misc
 
 HOMEPAGE=	http://xdialog.free.fr/

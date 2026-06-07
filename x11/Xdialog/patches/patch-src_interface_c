@@ -1,16 +1,17 @@
 Fix gtk2 support. From archlinux:
-http://aur.archlinux.org/packages.php?ID=16517
-http://aur.archlinux.org/packages/xdialog-gtk2/xdialog-gtk2/xdialog-2.3.1-gtk2.patch
+https://aur.archlinux.org/packages/xdialog
+https://aur.archlinux.org/cgit/aur.git/tree/xdialog-2.3.1-gtk2.patch?h=xdialog
 
---- src/interface.c.orig	Wed Mar 24 18:16:07 2010
-+++ src/interface.c	Wed Mar 24 18:20:06 2010
+Index: src/interface.c
+--- src/interface.c.orig
++++ src/interface.c
 @@ -183,6 +183,11 @@ static void open_window(void)
  	/* Open a new GTK top-level window */
  	window = Xdialog.window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
  
 +	/* Set window icon (in GTK2 mode only)  */
 +#ifdef USE_GTK2
-+		gtk_window_set_icon_name(window, Xdialog.icon_file);
++	gtk_window_set_icon_name(GTK_WINDOW(window), Xdialog.icon_file);
 +#endif
 +
  	/* Apply the custom GTK+ theme, if any. */
