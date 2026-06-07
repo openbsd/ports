@@ -1,9 +1,8 @@
 COMMENT =		C++ class and template library
 
-V =			1.5.3
+V =			1.5.5
 DISTNAME =		ETL-${V}
 PKGNAME =		etl-${V}
-REVISION =		0
 
 CATEGORIES =		devel
 

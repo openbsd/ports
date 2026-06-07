@@ -260,6 +260,7 @@ share/synfig/icons/classic/128x128/duck_width_icon.png
 share/synfig/icons/classic/128x128/duplicate_icon.png
 share/synfig/icons/classic/128x128/graphs_icon.png
 share/synfig/icons/classic/128x128/group_icon.png
+share/synfig/icons/classic/128x128/hex_icon.png
 share/synfig/icons/classic/128x128/history_icon.png
 share/synfig/icons/classic/128x128/incr_resolution_icon.png
 share/synfig/icons/classic/128x128/info_icon.png
@@ -332,6 +333,7 @@ share/synfig/icons/classic/128x128/layer_transform_rotate_icon.png
 share/synfig/icons/classic/128x128/layer_transform_scale_icon.png
 share/synfig/icons/classic/128x128/layer_transform_translate_icon.png
 share/synfig/icons/classic/128x128/library_icon.png
+share/synfig/icons/classic/128x128/lower_bound_handle_icon.png
 share/synfig/icons/classic/128x128/meta_data_icon.png
 share/synfig/icons/classic/128x128/navigator_icon.png
 share/synfig/icons/classic/128x128/onion_skin_icon.png
@@ -388,18 +390,23 @@ share/synfig/icons/classic/128x128/tool_text_icon.png
 share/synfig/icons/classic/128x128/tool_width_icon.png
 share/synfig/icons/classic/128x128/tool_zoom_icon.png
 share/synfig/icons/classic/128x128/type_angle_icon.png
+share/synfig/icons/classic/128x128/type_bone_object_icon.png
+share/synfig/icons/classic/128x128/type_bone_valuenode_icon.png
 share/synfig/icons/classic/128x128/type_bool_icon.png
 share/synfig/icons/classic/128x128/type_canvas_icon.png
 share/synfig/icons/classic/128x128/type_color_icon.png
 share/synfig/icons/classic/128x128/type_gradient_icon.png
 share/synfig/icons/classic/128x128/type_integer_icon.png
 share/synfig/icons/classic/128x128/type_list_icon.png
+share/synfig/icons/classic/128x128/type_pair_bone_object_bone_object_icon.png
 share/synfig/icons/classic/128x128/type_real_icon.png
 share/synfig/icons/classic/128x128/type_segment_icon.png
 share/synfig/icons/classic/128x128/type_splinepoint_icon.png
 share/synfig/icons/classic/128x128/type_string_icon.png
 share/synfig/icons/classic/128x128/type_time_icon.png
+share/synfig/icons/classic/128x128/type_transformation_icon.png
 share/synfig/icons/classic/128x128/type_vector_icon.png
+share/synfig/icons/classic/128x128/upper_bound_handle_icon.png
 share/synfig/icons/classic/128x128/utils_chain_link_off_icon.png
 share/synfig/icons/classic/128x128/utils_chain_link_on_icon.png
 share/synfig/icons/classic/128x128/utils_timetrack_align_icon.png
@@ -467,6 +474,7 @@ share/synfig/plugins/lottie-exporter/layers/scale_layer.py
 share/synfig/plugins/lottie-exporter/layers/shape.py
 share/synfig/plugins/lottie-exporter/layers/shape_solid.py
 share/synfig/plugins/lottie-exporter/layers/solid.py
+share/synfig/plugins/lottie-exporter/layers/text.py
 share/synfig/plugins/lottie-exporter/layers/translate_layer.py
 share/synfig/plugins/lottie-exporter/lottie-exporter.py
 share/synfig/plugins/lottie-exporter/plugin.xml

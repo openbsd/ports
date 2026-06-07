@@ -182,8 +182,10 @@ include/synfig-${API_V}/synfig/value.h
 include/synfig-${API_V}/synfig/valuenode.h
 include/synfig-${API_V}/synfig/valuenode_registry.h
 include/synfig-${API_V}/synfig/valuenodes/
+include/synfig-${API_V}/synfig/valuenodes/valuenode_absolute.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_add.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_and.h
+include/synfig-${API_V}/synfig/valuenodes/valuenode_angle.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_anglestring.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_animated.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_animatedfile.h
@@ -218,6 +220,7 @@ include/synfig-${API_V}/synfig/valuenodes/valuenode_intstring.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_join.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_linear.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_log.h
+include/synfig-${API_V}/synfig/valuenodes/valuenode_maprange.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_modulo.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_not.h
 include/synfig-${API_V}/synfig/valuenodes/valuenode_or.h
