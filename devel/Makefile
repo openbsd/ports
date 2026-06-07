@@ -335,7 +335,6 @@
      SUBDIR += libnfs
      SUBDIR += libnotify
      SUBDIR += libofx
-     SUBDIR += liboil
      SUBDIR += liboop
      SUBDIR += libopensync
      SUBDIR += libotf
