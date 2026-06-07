@@ -1,5 +1,6 @@
 @bin bin/mango
 @bin bin/mmsg
+@man man/man1/mmsg.1
 share/doc/mango/
 share/doc/mango/bindings/
 share/doc/mango/bindings/keys.md

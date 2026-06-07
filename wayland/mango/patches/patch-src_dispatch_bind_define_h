@@ -9,7 +9,7 @@ Index: src/dispatch/bind_define.h
  int32_t bind_to_view(const Arg *arg) {
  	if (!selmon)
  		return 0;
-@@ -952,6 +956,7 @@ int32_t spawn(const Arg *arg) {
+@@ -956,6 +960,7 @@ int32_t spawn(const Arg *arg) {
  		dup2(STDERR_FILENO, STDOUT_FILENO);
  		setsid();
  
@@ -17,7 +17,7 @@ Index: src/dispatch/bind_define.h
  		wordexp_t p;
  		if (wordexp(arg->v, &p, 0) != 0) {
  			wlr_log(WLR_DEBUG, "mango: wordexp failed for '%s'\n",
-@@ -964,6 +969,35 @@ int32_t spawn(const Arg *arg) {
+@@ -968,6 +973,35 @@ int32_t spawn(const Arg *arg) {
  		wlr_log(WLR_DEBUG, "mango: execvp '%s' failed: %s\n", p.we_wordv[0],
  				strerror(errno));
  		wordfree(&p);
