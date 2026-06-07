@@ -1,5 +1,6 @@
 # not enough RAM to compile
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
+BROKEN-riscv64 =	error: incompatible pointer types passing 'const int64_t *' (aka 'const long long *') to parameter of type 'const long *' [-Wincompatible-pointer-types]
 
 COMMENT =		diffusion model inference system
 
