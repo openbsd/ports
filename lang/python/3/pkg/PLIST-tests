@@ -31,9 +31,6 @@ lib/${PY_VERSION}/test/__pycache__/_test_eintr.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/__pycache__/_test_embed_structseq.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/__pycache__/_test_embed_structseq.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/__pycache__/_test_embed_structseq.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/test/__pycache__/_test_gc_fast_cycles.${PYC_MAGIC_TAG}.opt-1.pyc
-lib/${PY_VERSION}/test/__pycache__/_test_gc_fast_cycles.${PYC_MAGIC_TAG}.opt-2.pyc
-lib/${PY_VERSION}/test/__pycache__/_test_gc_fast_cycles.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/__pycache__/_test_monitoring_shutdown.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/__pycache__/_test_monitoring_shutdown.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/__pycache__/_test_monitoring_shutdown.${PYC_MAGIC_TAG}.pyc
@@ -1362,7 +1359,6 @@ lib/${PY_VERSION}/test/_crossinterp_definitions.py
 lib/${PY_VERSION}/test/_test_atexit.py
 lib/${PY_VERSION}/test/_test_eintr.py
 lib/${PY_VERSION}/test/_test_embed_structseq.py
-lib/${PY_VERSION}/test/_test_gc_fast_cycles.py
 lib/${PY_VERSION}/test/_test_monitoring_shutdown.py
 lib/${PY_VERSION}/test/_test_multiprocessing.py
 lib/${PY_VERSION}/test/_test_venv_multiprocessing.py
@@ -3951,6 +3947,7 @@ lib/${PY_VERSION}/test/test_json/__pycache__/test_tool.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_json/__pycache__/test_unicode.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_json/__pycache__/test_unicode.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_json/__pycache__/test_unicode.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_json/json_lines.jsonl
 lib/${PY_VERSION}/test/test_json/test_decode.py
 lib/${PY_VERSION}/test/test_json/test_default.py
 lib/${PY_VERSION}/test/test_json/test_dump.py
