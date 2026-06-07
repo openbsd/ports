@@ -470,6 +470,9 @@ share/shotcut/qml/filters/opacity/icon.webp
 share/shotcut/qml/filters/opacity/meta.qml
 share/shotcut/qml/filters/opacity/meta_movit.qml
 share/shotcut/qml/filters/opacity/ui.qml
+share/shotcut/qml/filters/openfx.wtf.vala^NtscRs/
+share/shotcut/qml/filters/openfx.wtf.vala^NtscRs/meta.qml
+share/shotcut/qml/filters/openfx.wtf.vala^NtscRs/ui.qml
 share/shotcut/qml/filters/outline/
 share/shotcut/qml/filters/outline/icon.webp
 share/shotcut/qml/filters/outline/meta.qml

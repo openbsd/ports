@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	video editor
 
-V =		26.2.26
+V =		26.4.30
 
 DIST_TUPLE =	github mltframework shotcut v${V} .
 PKGNAME =	shotcut-${V}
@@ -41,6 +41,7 @@ LIB_DEPENDS =		math/fftw3 \
 			multimedia/mlt7,-main \
 			x11/qt6/qtdeclarative \
 			x11/qt6/qtcharts \
+			x11/qt6/qtwebsockets \
 			x11/qt6/qtmultimedia
 
 NO_TEST =		Yes
