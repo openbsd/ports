@@ -1,7 +1,6 @@
 COMMENT=	set of internet protocol service daemons for Unix
 
-DISTNAME=	ipsvd-0.12.1
-REVISION=	1
+DISTNAME=	ipsvd-1.1.1
 CATEGORIES=	net
 
 # https://github.com/g-pape/ipsvd/

@@ -1,8 +1,6 @@
 @man man/man5/ipsvd-instruct.5
 @man man/man7/ipsvd.7
 @man man/man8/ipsvd-cdb.8
-@comment @man man/man8/sslio.8
-@comment @man man/man8/sslsvd.8
 @man man/man8/tcpsvd.8
 @man man/man8/udpsvd.8
 @bin sbin/ipsvd-cdb
@@ -19,8 +17,6 @@ share/doc/ipsvd/install.html
 share/doc/ipsvd/ipsvd-cdb.8.html
 share/doc/ipsvd/ipsvd-instruct.5.html
 share/doc/ipsvd/ipsvd.7.html
-@comment share/doc/ipsvd/sslio.8.html
-@comment share/doc/ipsvd/sslsvd.8.html
 share/doc/ipsvd/tcpsvd.8.html
 share/doc/ipsvd/udpsvd.8.html
 share/doc/ipsvd/upgrade.html
