@@ -50,13 +50,6 @@ starting php-fpm, for example
 
     rcctl set phpXY_fpm flags -y /etc/php-fpm-X.Y.conf
 
-NGINX Unit
-----------
-NGINX Unit (https://unit.nginx.org/) is a standalone application server,
-distinct to the standard NGINX web server. It uses its own compiled module
-to provide PHP support. Install the relevant package (e.g. unit-php${SV})
-and follow the usual documentation for Unit.
-
 Apache httpd
 ------------
 For Apache, the most common option is with the mod_php Apache module
