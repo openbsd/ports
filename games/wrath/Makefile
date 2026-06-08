@@ -1,10 +1,10 @@
 COMMENT =		client of wrath-darkplaces engine
 
-DISTNAME =		wrath-1.0
+DISTNAME =		wrath-1.1.2
 
 GH_ACCOUNT =		Official3DRealms
 GH_PROJECT =		wrath-darkplaces
-GH_COMMIT =		d7a494fbe76f45a84d1df0c7360c0c4848042e45
+GH_COMMIT =		f6862f628d6ddc133a9ef67bc4631b6137809772
 
 CATEGORIES =		games
 

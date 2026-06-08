@@ -1,0 +1,66 @@
+unbreak with llvm22. vid_sdljoystick is considered a Joystick type at
+build time, not GameController, so remove the whole dance using
+SDL_IsGameConttroller()
+
+Index: vid_sdl.c
+--- vid_sdl.c.orig
++++ vid_sdl.c
+@@ -2197,47 +2197,26 @@ void VID_EnableJoystick(qboolean enable)
+ 		// close SDL joystick if active
+ 		if (vid_sdljoystick)
+ 		{
+-			if (SDL_IsGameController(vid_sdljoystick))
+-				SDL_GameControllerClose(vid_sdljoystick);
+-			else
+-				SDL_JoystickClose(vid_sdljoystick);
++			SDL_JoystickClose(vid_sdljoystick);
+ 		}
+ 		vid_sdlcontroller = NULL;
+ 		vid_sdljoystick = NULL;
+ 		if (sdlindex >= 0)
+ 		{
+-			if (SDL_IsGameController(sdlindex))
++			vid_sdljoystick = SDL_JoystickOpen(sdlindex);
++			if (vid_sdljoystick)
+ 			{
+-				vid_sdljoystick = SDL_GameControllerOpen(sdlindex);
+-				vid_sdlcontroller = vid_sdljoystick;
+-				if (vid_sdljoystick)
+-				{
+-					const char *joystickname = SDL_GameControllerName(vid_sdljoystick);
+-					Con_Printf("GameController %i opened (SDL_GameController %i is \"%s\")\n", index, sdlindex, joystickname);
+-				}
+-				else
+-				{
+-					Con_Printf("GameController %i failed (SDL_GameControllerOpen(%i) returned: %s)\n", index, sdlindex, SDL_GetError());
+-					sdlindex = -1;
+-				}
+-			}
+-			else
+-			{
+-				vid_sdljoystick = SDL_JoystickOpen(sdlindex);
+-				if (vid_sdljoystick)
+-				{
+ #if SDL_MAJOR_VERSION == 1
+-					const char *joystickname = SDL_JoystickName(sdlindex);
++				const char *joystickname = SDL_JoystickName(sdlindex);
+ #else
+-					const char *joystickname = SDL_JoystickName(vid_sdljoystick);
++				const char *joystickname = SDL_JoystickName(vid_sdljoystick);
+ #endif
+-					Con_Printf("Joystick %i opened (SDL_Joystick %i is \"%s\" with %i axes, %i buttons, %i balls)\n", index, sdlindex, joystickname, (int)SDL_JoystickNumAxes(vid_sdljoystick), (int)SDL_JoystickNumButtons(vid_sdljoystick), (int)SDL_JoystickNumBalls(vid_sdljoystick));
+-				}
+-				else
+-				{
+-					Con_Printf("Joystick %i failed (SDL_JoystickOpen(%i) returned: %s)\n", index, sdlindex, SDL_GetError());
+-					sdlindex = -1;
+-				}
++				Con_Printf("Joystick %i opened (SDL_Joystick %i is \"%s\" with %i axes, %i buttons, %i balls)\n", index, sdlindex, joystickname, (int)SDL_JoystickNumAxes(vid_sdljoystick), (int)SDL_JoystickNumButtons(vid_sdljoystick), (int)SDL_JoystickNumBalls(vid_sdljoystick));
++			}
++			else
++			{
++				Con_Printf("Joystick %i failed (SDL_JoystickOpen(%i) returned: %s)\n", index, sdlindex, SDL_GetError());
++				sdlindex = -1;
+ 			}
+ 		}
+ 	}
