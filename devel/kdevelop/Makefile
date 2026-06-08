@@ -5,6 +5,8 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 CATEGORIES =	devel x11
 DISTNAME =	kdevelop-${MODKDE_GEAR_VERSION}
 
+REVISION =	0
+
 HOMEPAGE =	https://www.kdevelop.org/
 
 SHARED_LIBS +=  KDevPlatformDebugger      10.0 # 6.0
@@ -54,7 +56,7 @@ MODULES =	x11/kde \
 		lang/clang \
 		lang/python
 
-MODCLANG_VERSION =	19
+MODCLANG_VERSION =	22
 MODCLANG_COMPILER_LINKS=No
 MODCLANG_BUILDDEP=	No
 MODPY_BUILDDEP =	No
