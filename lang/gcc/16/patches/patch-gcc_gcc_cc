@@ -1,7 +1,17 @@
 Index: gcc/gcc.cc
 --- gcc/gcc.cc.orig
 +++ gcc/gcc.cc
-@@ -1078,7 +1078,7 @@ proper position among the other output files.  */
+@@ -37,6 +37,9 @@ compilation is specified by a string called a "spec". 
+ #include "coretypes.h"
+ #include "multilib.h" /* before tm.h */
+ #include "tm.h"
++#ifdef OPENBSD_VERSIONED_SHLIBS
++#include <dirent.h>
++#endif
+ #include "xregex.h"
+ #include "obstack.h"
+ #include "intl.h"
+@@ -1078,7 +1081,7 @@ proper position among the other output files.  */
  #else
  #define LD_PIE_SPEC ""
  #endif
@@ -10,3 +20,96 @@ Index: gcc/gcc.cc
  #endif
  
  #ifndef LINK_BUILDID_SPEC
+@@ -3049,7 +3052,34 @@ access_check (const char *name, int mode)
+   return access (name, mode);
+ }
+ 
++#ifdef OPENBSD_VERSIONED_SHLIBS
++static bool
++openbsd_shlib_version (const char *suffix, unsigned long *major,
++		       unsigned long *minor)
++{
++  char *end;
+ 
++  if (*suffix != '.')
++    return false;
++  ++suffix;
++  if (!ISDIGIT (*suffix))
++    return false;
++
++  errno = 0;
++  *major = strtoul (suffix, &end, 10);
++  if (errno || *end != '.')
++    return false;
++
++  suffix = end + 1;
++  if (!ISDIGIT (*suffix))
++    return false;
++
++  errno = 0;
++  *minor = strtoul (suffix, &end, 10);
++  return !errno && *end == '\0';
++}
++#endif
++
+ /* Search for NAME using the prefix list PREFIXES.  MODE is passed to
+    access to check permissions.  If DO_MULTI is true, search multilib
+    paths then non-multilib paths, otherwise do not search multilib paths.
+@@ -3073,6 +3103,57 @@ find_a_file (const struct path_prefix *pprefix, const 
+   const int name_len = strlen (name);
+   const int suffix_len = strlen (suffix);
+ 
++#ifdef OPENBSD_VERSIONED_SHLIBS
++  if (pprefix == &startfile_prefixes && mode == R_OK
++      && endswith (name, ".so") && lbasename (name) == name)
++    return for_each_path (pprefix, do_multi, 0,
++			  [=](char *path) -> char*
++    {
++      DIR *dir = opendir (*path ? path : ".");
++      struct dirent *entry;
++      char *best = NULL;
++      unsigned long best_major = 0;
++      unsigned long best_minor = 0;
++      size_t path_len = strlen (path);
++      const char *sep = path_len && !IS_DIR_SEPARATOR (path[path_len - 1])
++			? dir_separator_str : "";
++
++      if (!dir)
++	return NULL;
++
++      while ((entry = readdir (dir)) != NULL)
++	{
++	  unsigned long major;
++	  unsigned long minor;
++	  char *candidate;
++
++	  if (strncmp (entry->d_name, name, name_len) != 0
++	      || !openbsd_shlib_version (entry->d_name + name_len,
++					 &major, &minor))
++	    continue;
++
++	  if (best != NULL
++	      && (major < best_major
++		  || (major == best_major && minor <= best_minor)))
++	    continue;
++
++	  candidate = concat (path, sep, entry->d_name, NULL);
++	  if (access_check (candidate, mode) != 0)
++	    {
++	      free (candidate);
++	      continue;
++	    }
++
++	  free (best);
++	  best = candidate;
++	  best_major = major;
++	  best_minor = minor;
++	}
++
++      closedir (dir);
++      return best;
++    });
++#endif
+ 
+   /* Callback appends the file name to the directory path.  If the
+      resulting file exists in the right mode, return the full pathname
