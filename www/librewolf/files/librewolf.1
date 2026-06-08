@@ -1,0 +1,98 @@
+.TH librewolf 1 "April 04, 2026" librewolf "Unix User's Manual"
+.SH NAME
+librewolf \- a privacy- and security-first Web browser.
+
+.SH SYNOPSIS
+.B librewolf
+[\fIOPTIONS\fR] [\fIURL\fR]
+
+.SH DESCRIPTION
+\fBLibrewolf\fR is an open-source web browser, designed for standards compliance,
+performance, portability and user privacy/security.
+
+.SH OPTIONS
+A summary of the options supported by \fBlibrewolf\fR is included below.
+
+.SS "X11 options"
+.TP
+.BI \-\-display= DISPLAY
+X display to use
+.TP
+.B \--sync
+Make X calls synchronous
+.TP
+.B \-\-g-fatal-warnings
+Make all warnings fatal
+
+.SS "Librewolf options"
+.TP
+.B \-h, \-help
+Show summary of options.
+.TP
+.B \-v, \-version
+Print \fBlibrewolf\fR version.
+.TP
+\fB\-P\fR \fIprofile\fR
+Start with \fIprofile\fR.
+.TP
+.B \-migration
+Start with the migration wizard.
+.TP
+.B \-ProfileManager
+Start with profile manager.
+.TP
+.B \-no-remote
+Do not accept or send remote commands; implies -new-instance.
+.TP
+.B \-new-instance
+Open new instance, not a new window in running instance.
+.TP
+\fB\-UILocale\fR \fIlocale\fR
+Start with \fIlocale\fR resources as UI Locale.
+.TP
+.B \-safe-mode
+Disables extensions and themes for the session.
+.TP
+.B \-jsconsole
+Start with Javascript Console
+.TP
+.B \-browser
+Open a browser window.
+.TP
+\fB\-new-window\fR \fIurl\fR
+Open \fIurl\fR in a new window.
+.TP
+\fB\-new-tab\fR \fIurl\fR
+Open \fIurl\fR in a new tab.
+.TP
+.B \-preferences
+Open Preferences dialog.
+.TP
+\fB\-search\fR \fIterm\fR
+Search \fIterm\fR with your default search engine.
+.TP
+.B \-private
+Enable private browsing mode.
+.TP
+.B \-private-toggle
+Toggle private browsing mode.
+.TP
+.B \-setDefaultBrowser
+Set \fBlibrewolf\fR as the default browser.
+
+.SH FILES
+\fI${TRUEPREFIX}/bin/librewolf\fR - \fBlibrewolf\fR executable
+
+.SH VERSION
+${MOZILLA_VERSION}
+
+.SH BUGS
+To report a bug, please visit \fIhttps://codeberg.org/librewolf/issues/issues\fR
+
+.SH "SEE ALSO"
+\fB${TRUEPREFIX}/share/doc/pkg-readmes/librewolf\fR
+
+.SH AUTHORS
+.TP
+.B LibreWolf
+.I https://librewolf.net/

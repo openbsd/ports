@@ -1,0 +1,34 @@
+LibreWolf is a modified version of Mozilla Firefox focused on
+privacy, security, and software freedom. It enhances protections
+against tracking and fingerprinting, and applies additional
+hardening compared to standard Firefox.
+
+LibreWolf removes telemetry and disables DRM (e.g. Widevine/EME)
+by default.
+
+Notable changes include:
+
+* Removal of telemetry; uBlock Origin installed by default,
+  along with various privacy-oriented settings.
+* Private search engines enabled by default (e.g. DuckDuckGo,
+  Searx).
+* Automatic cookie deletion on browser exit.
+* dFPI (Total Cookie Protection) enabled by default.
+* Anti-fingerprinting measures using Tor Browser's RFP.
+* Default use of en-US locale to reduce fingerprinting surface.
+* WebGL disabled by default.
+* Location services disabled by default.
+* DNS and WebRTC proxying where supported.
+* Disabled search and form history by default.
+* Use of CRLs instead of OCSP to avoid potential tracking.
+* HTTPS-only mode enabled by default.
+* Hardened TLS configuration.
+* Prompts for file save location.
+* Mitigations for IDN homograph attacks (e.g. Cyrillic "е").
+* JavaScript disabled in the built-in PDF viewer.
+
+LibreWolf aims to track upstream Firefox releases closely in order
+to incorporate security updates and bug fixes.
+
+Further information is available at:
+<https://librewolf.net/docs/features/>

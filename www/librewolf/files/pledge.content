@@ -1,0 +1,14 @@
+stdio
+rpath
+wpath
+cpath
+recvfd
+sendfd
+prot_exec
+unix
+drm
+ps
+inet #dns.google does socket()
+dns #allows sndio forwarding on a fqdn
+# only needed if using NIS of the profile is located on a NFS share
+getpw

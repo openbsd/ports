@@ -1,0 +1,22 @@
+perhaps send these to librewolf upstream as well
+
+Index: lw/policies.json
+--- lw/policies.json.orig
++++ lw/policies.json
+@@ -14,6 +14,16 @@
+         "DisableSetDesktopBackground": false,
+         "DisableDeveloperTools": false,
+         "NoDefaultBookmarks": true,
++        "DontCheckDefaultBrowser": true,
++        "GoToIntranetSiteForSingleWordEntryInAddressBar": true,
++        "FirefoxHome": {
++	    "SponsoredStories": false,
++            "SponsoredTopSites": false,
++            "Stories": false
++        },
++        "GenerativeAI": {
++            "Enabled": false
++        },
+         "WebsiteFilter": {
+             "Block": [
+                 "https://localhost/*"

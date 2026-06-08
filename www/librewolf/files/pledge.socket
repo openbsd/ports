@@ -1,0 +1,7 @@
+# wait until network.process.enabled and network.http.network_access_on_socket_process.enabled
+stdio
+rpath # at least for /etc/resolv.conf & /etc/localtime
+recvfd
+sendfd
+inet
+dns

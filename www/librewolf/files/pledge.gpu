@@ -1,0 +1,11 @@
+stdio
+rpath
+wpath
+cpath
+ps
+sendfd
+recvfd
+drm
+dns
+unix
+prot_exec

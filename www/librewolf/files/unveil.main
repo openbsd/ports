@@ -1,0 +1,83 @@
+# for uuid generation?
+/dev/urandom r
+/dev/video0 rw
+/dev/video1 rw
+/dev/video2 rw
+/dev/video3 rw
+/dev/fido rw
+# for webgl info in about:support
+/dev/dri rw
+/usr/lib r
+
+/etc/fonts r
+/etc/machine-id r
+
+# normally "pledge dns" exempts this from unveil, but pledge might be disabled
+/etc/resolv.conf r
+/etc/hosts r
+
+/usr/local/lib r
+/usr/local/lib/librewolf rx
+/usr/local/share r
+/usr/share/locale r
+/etc/localtime r
+/usr/share/zoneinfo r
+/var/cache/fontconfig r
+/usr/X11R6/lib r
+/usr/X11R6/share r
+/var/run r
+
+# security devices, e.g. OpenSC's PKCS #11 module, may talk to this socket
+/var/run/pcscd/pcscd.comm rw
+
+# printing
+/usr/bin/lpr rx
+/var/run/cups/cups.sock rw
+
+/etc/mailcap r
+~/.mailcap r
+~/.mime.types r
+
+~/.XCompose r
+~/.Xauthority r
+~/.Xdefaults r
+~/.fontconfig r
+~/.fonts r
+~/.fonts.conf r
+~/.fonts.conf.d r
+~/.icons r
+~/.pki rwc
+~/.sndio rwc
+~/.terminfo r
+
+~/.librewolf rwc
+~/Downloads rwc
+
+# for at least shm_open (for now)
+/tmp rwc
+
+# $XDG_CACHE_HOME, $XDG_CONFIG_HOME, and $XDG_DATA_HOME will expand to the
+# given variable if it exists in the environment, otherwise defaulting to
+# ~/.cache, ~/.config, and ~/.local/share
+$XDG_RUNTIME_DIR/dconf rwc
+$XDG_CACHE_HOME/at-spi rw
+$XDG_CACHE_HOME/thumbnails rwc
+$XDG_CACHE_HOME/gvfsd r
+$XDG_CACHE_HOME/dconf rwc
+$XDG_CACHE_HOME/librewolf rwc
+$XDG_CACHE_HOME/mesa_shader_cache rwc
+$XDG_CONFIG_HOME/dconf rw
+$XDG_CONFIG_HOME/fcitx r
+$XDG_CONFIG_HOME/fontconfig r
+$XDG_CONFIG_HOME/gtk-3.0 r
+$XDG_CONFIG_HOME/mimeapps.list r
+$XDG_CONFIG_HOME/librewolf rwc
+$XDG_CONFIG_HOME/user-dirs.dirs r
+$XDG_DATA_HOME/applications rwc
+$XDG_DATA_HOME/applnk r
+$XDG_DATA_HOME/fonts r
+$XDG_DATA_HOME/glib-2.0 r
+$XDG_DATA_HOME/icons r
+$XDG_DATA_HOME/mime r
+$XDG_DATA_HOME/recently-used.xbel rwc
+$XDG_DATA_HOME/themes r

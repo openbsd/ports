@@ -1,0 +1,15 @@
+/dev/dri rw
+
+/usr/local/lib/librewolf r
+/usr/local/lib/gdk-pixbuf-2.0 r
+/usr/X11R6/lib r
+/usr/share/locale r
+/usr/local/share r
+/usr/lib r
+
+# normally "pledge dns" exempts this from unveil, but pledge might be disabled
+/etc/resolv.conf r
+
+/tmp rwc
+
+~/.Xauthority r

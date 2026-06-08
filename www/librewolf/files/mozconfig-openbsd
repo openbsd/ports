@@ -1,0 +1,81 @@
+# Maintenance notes: %%VARIABLE%% is populated from the Makefile.
+# This file closely matches upstream's mozconfig, with only surgical
+# changes made for integration with the OpenBSD ports system. Changes,
+# relative to upstream, are annotated where appropriate. Please ensure
+# that this file is updated appropriately, tracking upstream changes.
+
+ac_add_options --enable-application=browser
+
+# OpenBSD www/mozilla-firefox doesn't allow sideloading, but upstream
+# librewolf does. We disable it in the OpenBSD LibreWolf port.
+# ac_add_options --allow-addon-sideload
+ac_add_options --disable-crashreporter
+# upstream sets this unconditionally. we set conditionally in our Makefile
+# ac_add_options --disable-debug
+ac_add_options --disable-default-browser-agent
+# Upstream adds this, but we set it conditionally in our Makefile
+# ac_add_options --disable-tests
+ac_add_options --disable-updater
+ac_add_options --disable-cargo-incremental
+ac_add_options --enable-hardening
+ac_add_options --enable-stl-hardening
+ac_add_options --enable-optimize
+ac_add_options --enable-release
+# upstream uses --enable-rust-simd but www/mozilla-firefox does not.
+# --enable-rust-simd caused a build error in librewolf 150.0-1
+# ac_add_options --enable-rust-simd
+# allow replacing malloc manually, will not affect regular systems
+# not compatible with ac_add_options --disable-jemalloc, which only works when preloading custom malloc
+# ac_add_options --enable-replace-malloc
+# ac_add_options --enable-jemalloc
+# 
+# ...but openbsd is not a member of "regular systems", so we comment these;
+# mozjemalloc neither compiles nor runs safely, on OpenBSD (porting required)
+
+# upstream does: --with-app-name=librewolf
+ac_add_options --with-app-name=%%MOZILLA_PROJECT%%
+# upstream does: ac_add_options --with-branding=browser/branding/librewolf
+ac_add_options --with-branding=browser/branding/%%MOZILLA_PROJECT%%
+
+# LibreWolf upstream adds these, but we remove these for OpenBSD hardening
+# ac_add_options --with-unsigned-addon-scopes=app,system
+
+ac_add_options --with-l10n-base=$PWD/lw/l10n
+
+# OpenBSD www/firefox doesn't use this, so we won't. Disabling.
+# ac_add_options --enable-bootstrap
+
+# upstream does: MOZ_REQUIRE_SIGNING=
+# upstream does: MOZILLA_OFFICIAL=1
+
+mk_add_options MOZ_CRASHREPORTER=0
+mk_add_options MOZ_DATA_REPORTING=0
+mk_add_options MOZ_SERVICES_HEALTHREPORT=0
+mk_add_options MOZ_TELEMETRY_REPORTING=0
+
+# upstream hardcode-replaces CFLAGS. we want to include ports flags.
+# upstream does:
+# export CFLAGS="-ftrivial-auto-var-init=zero -fwrapv"
+# export CXXFLAGS="-ftrivial-auto-var-init=zero -fwrapv"
+# #export LDFLAGS=
+export CFLAGS="-ftrivial-auto-var-init=zero -fwrapv $CFLAGS"
+export CXXFLAGS="-ftrivial-auto-var-init=zero -fwrapv $CXXFLAGS"
+export LDFLAGS="$LDFLAGS"
+
+# Everything below the line are OpenBSD *additions*
+# -----------------------------------------------------
+
+# The types of additions here are ones that should always
+# be hardcoded, on OpenBSD. Additions subject to configuration
+# are handled inside the Makefile, via pre-configure.
+
+# OpenBSD uses e.g. -fno-ret-protector
+export CPPFLAGS="$CPPFLAGS"
+
+ac_add_options --prefix=%%PREFIX%%
+ac_add_options --enable-sandbox
+ac_add_options --enable-forkserver
+ac_add_options --with-wasi-sysroot=%%LOCALBASE%%/share/wasi-sysroot
+
+# ff/lw >= 46 defaults to gtk+3
+ac_add_options --enable-default-toolkit=cairo-gtk3
