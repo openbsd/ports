@@ -19,8 +19,6 @@ LIB_DEPENDS =		archivers/zstd \
 			x11/qt6/qttools \
 			x11/xkbcommon
 
-LIB_DEPENDS +=		${MODCLANG_LIB_DEPENDS}
-
 WRKSRC =		${WRKDIST}/sources/pyside-tools
 NO_BUILD =		yes
 
