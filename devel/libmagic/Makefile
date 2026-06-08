@@ -1,11 +1,10 @@
 COMMENT=	library to determine file type
 
-V=		5.47
+V=		5.48
 DISTNAME=	file-${V}
 PKGNAME=	libmagic-${V}
-REVISION=	0
 
-SHARED_LIBS +=  magic                5.1      # 1.0
+SHARED_LIBS +=  magic                5.2      # 1.0
 
 CATEGORIES=	sysutils devel
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c m z
 
-SITES=		http://ftp.astron.com/pub/file/
+SITES=		https://astron.com/pub/file/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-fsect-man5
