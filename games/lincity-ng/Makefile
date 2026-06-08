@@ -33,7 +33,8 @@ LIB_DEPENDS=	devel/fmt \
 		devel/sdl2-mixer \
 		devel/sdl2-ttf \
 		textproc/libxml++50
-BUILD_DEPENDS=	devel/gettext,-tools
+BUILD_DEPENDS=	devel/gettext,-tools \
+		textproc/libxslt
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 NO_TEST=	Yes
