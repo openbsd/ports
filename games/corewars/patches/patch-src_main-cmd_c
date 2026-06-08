@@ -85,8 +85,8 @@
 +	int c;
 +	char *p;
 +
-+	while (c = getopt(argc, argv, 
-+	    "Hl:s:m:t:e:z:yd:r:ia:c:k:onbxf:hpg") != -1)
++	while ((c = getopt(argc, argv, 
++	    "Hl:s:m:t:e:z:yd:r:ia:c:k:onbxf:hpg")) != -1)
 +	    switch(c) {
 +	    case 'l':
 +	    	if (strcmp(optarg, "COREWARS") == 0)

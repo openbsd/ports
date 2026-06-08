@@ -8,7 +8,7 @@ From Debian's corewars_0.9.13+ds-1.diff.
  
    /* Attach the new accelerator group to the window. */
 -  gtk_accel_group_attach (accel_group, GTK_OBJECT (window));
-+  gtk_window_add_accel_group(GTK_OBJECT (window), accel_group);
++  gtk_window_add_accel_group(GTK_WINDOW (window), accel_group);
  
    menu_file_start = gtk_item_factory_get_widget (item_factory, "/File/Start");
    menu_file_pause = gtk_item_factory_get_widget (item_factory, "/File/Pause");
