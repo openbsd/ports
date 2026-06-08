@@ -1,6 +1,7 @@
 QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt6Multimedia             10.0 # 6.7
 SHARED_LIBS +=  Qt6MultimediaQuick        7.0 # 6.7
@@ -40,12 +41,13 @@ CONFIGURE_ARGS =	-DQT_FEATURE_ffmpeg=ON \
 
 MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib
 
-# avoid error: always_inline function '_mm_add_ps' requires target feature
-# 'sse', but would be inlined into function 'AddPointwise' that is compiled
-# without support for 'sse' (in src/3rdparty/resonance-audio)
+# avoid errors around always_inline functions requiring target feature
+# 'sse' that would be inlined into functions that are compiled without
+# support. with llvm 19, -msse was enough, but now -msse2 is needed.
+# (i.e. compile all code with SSE2 extensions).
 .if ${MACHINE_ARCH} == i386
-CFLAGS +=	-msse
-CXXFLAGS +=	-msse
+CFLAGS +=	-msse2
+CXXFLAGS +=	-msse2
 .endif
 
 LIB_DEPENDS += devel/gettext,-runtime wayland/wayland 
