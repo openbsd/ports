@@ -1,7 +1,7 @@
 Index: docs/dunst.1.pod.in
 --- docs/dunst.1.pod.in.orig
 +++ docs/dunst.1.pod.in
-@@ -92,9 +92,9 @@ Set notification timeout time.
+@@ -59,9 +59,9 @@ Display a notification on startup.
  
  =head1 CONFIGURATION
  

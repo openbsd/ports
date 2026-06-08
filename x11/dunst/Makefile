@@ -2,7 +2,7 @@ COMMENT =	customizable and lightweight notification-daemon
 
 GH_ACCOUNT =	dunst-project
 GH_PROJECT =	dunst
-GH_TAGNAME =	v1.13.1
+GH_TAGNAME =	v1.13.2
 
 CATEGORIES =	x11
 
