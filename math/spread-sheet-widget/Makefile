@@ -1,7 +1,6 @@
 COMMENT =	spread sheet widget library
-DISTNAME =	spread-sheet-widget-0.6
+DISTNAME =	spread-sheet-widget-0.7
 CATEGORIES =	math x11
-REVISION =	0
 
 SHARED_LIBS +=	spread-sheet-widget       1.0 # 0.6
 
