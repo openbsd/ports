@@ -6,7 +6,7 @@ ${P5SITE}/IndieRunner/Engine/
 ${P5SITE}/IndieRunner/Engine.pm
 ${P5SITE}/IndieRunner/Engine/DosBox.pm
 ${P5SITE}/IndieRunner/Engine/FNA.pm
-${P5SITE}/IndieRunner/Engine/GZDoom.pm
+${P5SITE}/IndieRunner/Engine/GemRB.pm
 ${P5SITE}/IndieRunner/Engine/Godot.pm
 ${P5SITE}/IndieRunner/Engine/HashLink.pm
 ${P5SITE}/IndieRunner/Engine/Java/
@@ -24,6 +24,7 @@ ${P5SITE}/IndieRunner/Engine/Mono/Iomap.pm
 ${P5SITE}/IndieRunner/Engine/MonoGame.pm
 ${P5SITE}/IndieRunner/Engine/ScummVM.pm
 ${P5SITE}/IndieRunner/Engine/XNA.pm
+${P5SITE}/IndieRunner/Engine/idTech1.pm
 ${P5SITE}/IndieRunner/Game.pm
 ${P5SITE}/IndieRunner/GrandCentral.pm
 ${P5SITE}/IndieRunner/Helpers.pm
@@ -47,8 +48,32 @@ ${P5SITE}/auto/share/dist/IndieRunner/doc/Adding-Engine-Modules.md
 @man man/man3p/IndieRunner.3p
 @man man/man3p/IndieRunner::Cmdline.3p
 @man man/man3p/IndieRunner::Engine.3p
+@man man/man3p/IndieRunner::Engine::DosBox.3p
+@man man/man3p/IndieRunner::Engine::FNA.3p
+@man man/man3p/IndieRunner::Engine::GemRB.3p
+@man man/man3p/IndieRunner::Engine::Godot.3p
+@man man/man3p/IndieRunner::Engine::HashLink.3p
+@man man/man3p/IndieRunner::Engine::Java.3p
+@man man/man3p/IndieRunner::Engine::Java::JavaMod.3p
+@man man/man3p/IndieRunner::Engine::Java::LWJGL2.3p
+@man man/man3p/IndieRunner::Engine::Java::LWJGL3.3p
+@man man/man3p/IndieRunner::Engine::Java::LibGDX.3p
+@man man/man3p/IndieRunner::Engine::Java::Steamworks4j.3p
+@man man/man3p/IndieRunner::Engine::Love2D.3p
+@man man/man3p/IndieRunner::Engine::Mono.3p
+@man man/man3p/IndieRunner::Engine::Mono::Dllmap.3p
+@man man/man3p/IndieRunner::Engine::Mono::Iomap.3p
+@man man/man3p/IndieRunner::Engine::MonoGame.3p
+@man man/man3p/IndieRunner::Engine::ScummVM.3p
+@man man/man3p/IndieRunner::Engine::XNA.3p
+@man man/man3p/IndieRunner::Engine::idTech1.3p
 @man man/man3p/IndieRunner::Game.3p
 @man man/man3p/IndieRunner::GrandCentral.3p
 @man man/man3p/IndieRunner::Helpers.3p
+@man man/man3p/IndieRunner::Io.3p
 @man man/man3p/IndieRunner::Mode.3p
+@man man/man3p/IndieRunner::Mode::Dryrun.3p
+@man man/man3p/IndieRunner::Mode::Run.3p
+@man man/man3p/IndieRunner::Mode::Script.3p
 @man man/man3p/IndieRunner::Platform.3p
+@man man/man3p/IndieRunner::Platform::openbsd.3p

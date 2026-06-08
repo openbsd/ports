@@ -1,9 +1,8 @@
 COMMENT =	launch independent games
 
-V =		0.2
+V =		0.3
 DISTNAME =	IndieRunner-v${V}
 PKGNAME =	indierunner-${V}
-REVISION =	3
 
 CATEGORIES =	games
 
