@@ -1,0 +1,12 @@
+Index: plugins/gmail/gmail_csv.c
+--- plugins/gmail/gmail_csv.c.orig
++++ plugins/gmail/gmail_csv.c
+@@ -266,7 +266,7 @@ r_gmail_csv_open_file (RAbook* abook, const gchar* fil
+ {
+   RGMailCsv* csv;
+   RGMailCsvPrivate* priv;
+-  gunichar2* file_contents;
++  gchar* file_contents;
+   GError* error = NULL;
+   gint i = 0;
+   gchar ch;

@@ -1,8 +1,9 @@
 Fix with libnotify>=0.7
 (notify_notification_new has lost its widget argument)
 
---- src/app.c.orig	Sun Dec  6 09:53:23 2009
-+++ src/app.c	Tue Apr 19 14:45:07 2011
+Index: src/app.c
+--- src/app.c.orig
++++ src/app.c
 @@ -69,7 +69,7 @@ static RubricaDefaultCategories defcats[] = {
    {"applications-multimedia",  "hobbies",       N_("hobbies")      },
    {"sport",                    "sport",         N_("sport")        },
@@ -12,7 +13,7 @@ Fix with libnotify>=0.7
    {"system-file-manager",      "company",       N_("company")      },
    {"application-certificate",  "legal",         N_("legal")        },
    {"applications-office",      "office",        N_("office")       },
-@@ -1269,8 +1269,7 @@ rubrica_app_init(RubricaApp* self)
+@@ -1269,13 +1269,12 @@ rubrica_app_init(RubricaApp* self)
    self->priv->cutted      = NULL;
    self->priv->notify      = notify_notification_new("Rubrica Addressbook",
  						    NULL, 
@@ -22,3 +23,10 @@ Fix with libnotify>=0.7
    self->priv->show_card   = TRUE;
  
    g_object_set(self->priv->notebook, "homogeneous", FALSE, NULL);
+-  g_object_set_data(self->window, "paned", self->priv->paned);
+-  g_object_set_data(self->window, "group_paned", self->priv->group_paned);
++  g_object_set_data(G_OBJECT(self->window), "paned", self->priv->paned);
++  g_object_set_data(G_OBJECT(self->window), "group_paned", self->priv->group_paned);
+ 
+   gtk_box_pack_start(GTK_BOX(groups_box), self->priv->groups_view,
+ 		     TRUE, TRUE, 0);
