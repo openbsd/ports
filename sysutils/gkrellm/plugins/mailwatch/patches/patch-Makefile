@@ -1,5 +1,6 @@
---- Makefile.orig	Tue Dec 24 12:47:34 2002
-+++ Makefile	Tue Dec 24 12:48:21 2002
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -1,18 +1,18 @@
  # Makefile for the GKrellM mailwatch plugin
  
@@ -21,5 +22,5 @@
 -LFLAGS += -shared
 +LFLAGS += -shared -pthread
  
- OBJS = mailwatch.o
- 
+ LOCALEDIR := $(DESTDIR)/usr/share/locale
+ PACKAGE ?= gkrellm-mailwatch

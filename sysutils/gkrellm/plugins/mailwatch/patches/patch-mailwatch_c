@@ -1,0 +1,12 @@
+Index: mailwatch.c
+--- mailwatch.c.orig
++++ mailwatch.c
+@@ -608,7 +608,7 @@ update_plugin(void) {
+ 
+       p->statstext->x_off =
+         gkrellm_chart_width() -
+-        gdk_string_width(p->panel->textstyle->font,
++        gkrellm_gdk_string_width(p->panel->textstyle->font,
+                          buf) -
+         2 * gkrellm_get_style_margins(p->panel->style)->left;
+ 

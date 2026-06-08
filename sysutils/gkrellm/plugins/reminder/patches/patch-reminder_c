@@ -1,8 +1,7 @@
-Index: reminder.c
-
 second, third and fourth chunk: scan/serialize time_t as/into into long
 long, fixes crashes at runtime due to timestamps corruption.
 
+Index: reminder.c
 --- reminder.c.orig
 +++ reminder.c
 @@ -87,7 +87,7 @@ static struct reminder_config {
@@ -189,3 +188,18 @@ long, fixes crashes at runtime due to timestamps corruption.
  
    /* delete event from today */
    num_active--;
+@@ -3181,12 +3186,12 @@ reminder_draw_panel_text( gint num_active, gint num_to
+ 
+   ts_old = ts = reminder_text_decal->text_style;
+ 
+-  w = gdk_string_width( ts.font, buf );
++  w = gkrellm_gdk_string_width( ts.font, buf );
+ 
+   if( w > reminder_text_decal->w )
+     {
+       ts.font = gkrellm_meter_alt_textstyle( style_id )->font;
+-      w = gdk_string_width( ts.font, buf );
++      w = gkrellm_gdk_string_width( ts.font, buf );
+     }
+ 
+   style = gkrellm_meter_style( style_id );

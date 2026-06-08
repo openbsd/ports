@@ -1,5 +1,6 @@
---- gkrellm_itime.c.orig	Wed Aug 14 12:18:21 2002
-+++ gkrellm_itime.c	Wed Jan  8 22:27:58 2003
+Index: gkrellm_itime.c
+--- gkrellm_itime.c.orig
++++ gkrellm_itime.c
 @@ -71,7 +71,8 @@
  #define gkrellm_panel_bg_image_override gkrellm_panel_bg_piximage_override
  #define gkrellm_load_image              gkrellm_load_piximage
@@ -10,3 +11,14 @@
  #define gkrellm_bg_grid_image           gkrellm_bg_grid_piximage
  #define gkrellm_bg_panel_image          gkrellm_bg_panel_piximage
  #define gkrellm_bg_meter_image          gkrellm_bg_meter_piximage
+@@ -178,8 +179,8 @@ static void update_itime()
+ 
+ 	if (g_ticks->second_tick) {
+ 		getBeats();
+-		w = gdk_string_width(decal_symbol->text_style.font, "@");
+-		w_time = gdk_string_width(decal_text1->text_style.font, s_itime);
++		w = gkrellm_gdk_string_width(decal_symbol->text_style.font, "@");
++		w_time = gkrellm_gdk_string_width(decal_text1->text_style.font, s_itime);
+ 		decal_symbol->x_off = ((w + w_time) < decal_symbol->w) ? (decal_text1->w - (w + w_time)) / 2 : 0;
+ 		decal_text1->x_off = decal_symbol->x_off + w + 2;
+ 
