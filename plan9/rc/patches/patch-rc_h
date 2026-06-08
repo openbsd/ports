@@ -1,0 +1,23 @@
+From 429f81caf8af998e59075c86b777b2ecef7956cf Mon Sep 17 00:00:00 2001
+From: Jacob Mealey <jacobmealey.maine@gmail.com>
+Date: Sun, 28 Sep 2025 20:14:18 -0400
+Subject: [PATCH] Fix build for gcc 15
+
+Index: rc.h
+--- rc.h.orig
++++ rc.h
+@@ -44,9 +44,14 @@ typedef enum ecodes {
+ 	eError, eBreak, eReturn, eVarstack, eArena, eFifo, eFd
+ } ecodes;
+ 
++#if __STDC_VERSION__ >= 202311L
++#define FALSE false
++#define TRUE true
++#else
+ typedef enum bool {
+ 	FALSE, TRUE
+ } bool;
++#endif
+ 
+ typedef enum redirtype {
+ 	rFrom, rCreate, rAppend, rHeredoc, rHerestring

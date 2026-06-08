@@ -1,7 +1,7 @@
 COMMENT=	shell (clone of plan9 shell)
 
 DISTNAME=	rc-1.7.4
-REVISION=	1
+REVISION=	2
 CATEGORIES=	plan9 shells
 SITES=		http://static.tobold.org/rc/
 

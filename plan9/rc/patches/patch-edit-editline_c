@@ -1,0 +1,26 @@
+From 6c9b748f309753f86bae1632c71b8992294894c1 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Bert=20M=C3=BCnnich?= <xyb3rt@gmail.com>
+Date: Sun, 11 Jun 2023 18:45:47 +0200
+Subject: [PATCH] Fix type of pointer passed to el_gets()
+
+Index: edit-editline.c
+--- edit-editline.c.orig
++++ edit-editline.c
+@@ -39,6 +39,7 @@ static void edit_catcher(int sig) {
+ char *edit_alloc(void *cookie, size_t *count) {
+ 	struct cookie *c = cookie;
+ /*
++	int len = 0;
+ 	const char *r;
+ 	HistEvent he;
+ 	struct cookie *c = cookie;
+@@ -47,7 +48,8 @@ char *edit_alloc(void *cookie, size_t *count) {
+ 	oldint = sys_signal(SIGINT, edit_catcher);
+ 	oldquit = sys_signal(SIGQUIT, edit_catcher);
+ 
+-	r = el_gets(c->el, count);
++	r = el_gets(c->el, &len);
++	*count = len;
+ 
+ 	sys_signal(SIGINT, oldint);
+ 	sys_signal(SIGQUIT, oldquit);
