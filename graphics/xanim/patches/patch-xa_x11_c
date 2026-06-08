@@ -6,7 +6,7 @@ Index: xa_x11.c
  		    PropModeReplace, (unsigned char *)command, 1);
      if (xa_window_prepare_flag == xaFALSE)
 -      xanim_expose(theWG, event, NULL, 0);
-+      xanim_expose(theWG, &event, NULL, 0);
++      xanim_expose(theWG, (XExposeEvent *)&event, NULL, 0);
      while (1)
      {
        XtAppNextEvent(theContext, &event);
@@ -16,7 +16,7 @@ Index: xa_x11.c
  	    if (xa_anim_status == XA_UNSTARTED) 
 -	      xanim_expose(theWG, event, NULL, 0);
 -	    else xanim_toggle_action(theWG, event, NULL, 0);
-+	      xanim_expose(theWG, &event, NULL, 0);
++	      xanim_expose(theWG, (XExposeEvent *)&event, NULL, 0);
 +	    else xanim_toggle_action(theWG, &event, NULL, 0);
  	    break;
  	  case ',':
@@ -82,7 +82,7 @@ Index: xa_x11.c
  	    break;
  	  case 'z':
 -	    xanim_realize_remote(theWG, event, NULL, 0);
-+	    xanim_realize_remote(theWG, &event, NULL, 0);
++	    xanim_realize_remote(theWG, (XExposeEvent *)&event, NULL, 0);
  	    break;
  	  case 'e':
  	    x11_expose_flag = xaTRUE;

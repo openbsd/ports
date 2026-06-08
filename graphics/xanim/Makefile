@@ -1,7 +1,7 @@
 COMMENT =	X11 player for the old ANIM format
 
 DISTNAME =	xanim-2.80.1
-REVISION =	9
+REVISION =	10
 WRKDIST =	${WRKDIR}/xanim2801
 CATEGORIES =	graphics x11
 
