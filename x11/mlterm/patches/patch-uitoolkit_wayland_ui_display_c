@@ -1,0 +1,14 @@
+OpenBSD doesn't have posix_fallocate
+
+Index: uitoolkit/wayland/ui_display.c
+--- uitoolkit/wayland/ui_display.c.orig
++++ uitoolkit/wayland/ui_display.c
+@@ -94,7 +94,7 @@ static int create_anonymous_file(off_t size) {
+     return -1;
+   }
+ 
+-  if (posix_fallocate(fd, 0, size) != 0) {
++  if (ftruncate(fd, size) != 0) {
+     close(fd);
+     return -1;
+   }

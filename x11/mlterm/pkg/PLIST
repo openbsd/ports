@@ -7,9 +7,7 @@
 @bin bin/mlterm
 @mode
 @group
-@mode 4555
-@bin bin/mlterm-fb
-@mode
+@bin bin/mlterm-wl
 @comment lib/libmef.a
 @comment lib/libmef.la
 @lib lib/libmef.so.${LIBmef_VERSION}
@@ -35,13 +33,17 @@ lib/mlterm/
 @so lib/mlterm/libathena.so
 @comment lib/mlterm/libim-kbd-fb.a
 @comment lib/mlterm/libim-kbd-fb.la
-@so lib/mlterm/libim-kbd-fb.so
+@static-lib lib/mlterm/libim-kbd-wl.a
+lib/mlterm/libim-kbd-wl.la
+@so lib/mlterm/libim-kbd-wl.so
 @comment lib/mlterm/libim-kbd.a
 @comment lib/mlterm/libim-kbd.la
 @so lib/mlterm/libim-kbd.so
 @comment lib/mlterm/libim-skk-fb.a
 @comment lib/mlterm/libim-skk-fb.la
-@so lib/mlterm/libim-skk-fb.so
+@static-lib lib/mlterm/libim-skk-wl.a
+lib/mlterm/libim-skk-wl.la
+@so lib/mlterm/libim-skk-wl.so
 @comment lib/mlterm/libim-skk.a
 @comment lib/mlterm/libim-skk.la
 @so lib/mlterm/libim-skk.so
@@ -69,10 +71,14 @@ lib/mlterm/
 @comment lib/mlterm/libtype_xft.a
 @comment lib/mlterm/libtype_xft.la
 @so lib/mlterm/libtype_xft.so
+@static-lib lib/mlterm/libzmodem.a
+lib/mlterm/libzmodem.la
+@so lib/mlterm/libzmodem.so
 libexec/mlterm/
 @bin libexec/mlterm/mlconfig
 @bin libexec/mlterm/mlimgloader
 @bin libexec/mlterm/mlterm-menu
+@man man/man1/mlcc.1
 @man man/man1/mlclient.1
 @man man/man1/mlterm.1
 share/examples/mlterm/
@@ -109,9 +115,6 @@ share/locale/ja/LC_MESSAGES/mlconfig.mo
 share/locale/vi/LC_MESSAGES/mlconfig.mo
 share/locale/zh_TW/LC_MESSAGES/mlconfig.mo
 share/mlterm/
-share/mlterm/kbd/
-share/mlterm/kbd/kbd.six
-share/mlterm/kbd/pressed_kbd.six
 share/mlterm/scrollbars/
 share/mlterm/scrollbars/sample3/
 share/mlterm/scrollbars/sample3/bg_body.png

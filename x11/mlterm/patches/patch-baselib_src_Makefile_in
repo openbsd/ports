@@ -5,8 +5,8 @@ Index: baselib/src/Makefile.in
  
  LIBNAME=libpobl
  LIBNAME_DEB=libpobl_deb
--MAJOR = 1
--MINOR = 0
+-MAJOR = 2
+-MINOR = 1
 +MAJOR = ${LIBpobl_VERSION:R}
 +MINOR = ${LIBpobl_VERSION:E}
  

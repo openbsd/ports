@@ -5,8 +5,8 @@ Index: encodefilter/src/Makefile.in
  
  LIBNAME = libmef
  LIBNAME_DEB = libmef_deb
--MAJOR = 1
--MINOR = 0
+-MAJOR = 3
+-MINOR = 1
 +MAJOR = ${LIBmef_VERSION:R}
 +MINOR = ${LIBmef_VERSION:E}
  

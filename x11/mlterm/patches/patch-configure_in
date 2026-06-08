@@ -1,47 +1,11 @@
-setuid root/setgid utmp are handled by PLIST
-
 Do not enable VTE support if libvte is around
 
 Index: configure.in
 --- configure.in.orig
 +++ configure.in
-@@ -652,15 +652,6 @@ else
- 				OT_LAYOUT_OBJ=hb.o
- 			fi
- 		fi
--
--		if test "$have_hb" != "yes"; then
--			AC_CHECK_PROG(libotf_config,libotf-config,yes)
--			if test "$libotf_config" = "yes" ; then
--				OT_LAYOUT_CFLAGS="`libotf-config --cflags` -DUSE_OT_LAYOUT"
--				OT_LAYOUT_LIBS="`libotf-config --libs`"
--				OT_LAYOUT_OBJ=otf.o
--			fi
--		fi
- 	fi
- 
- 	if test "$have_hb" = "yes" ; then
-@@ -807,44 +798,14 @@ AC_ARG_ENABLE(pty_helper,
- 	pty_helper=$enable_pty_helper)
- if test "$utmp" = "yes" -a "$pty_helper" != "yes" ; then
- 	UTMP_CFLAGS="-DUSE_UTMP"
--	has_utmp=`grep utmp /etc/group 2>/dev/null`
--	if test "$has_utmp" ; then
--		INSTALL_OPT="-m 2755 -g utmp"
--	else
--		INSTALL_OPT="-m 4755 -o root"
--	fi
--else
--	INSTALL_OPT="-m 755"
- fi
- 
--if test "$gui" = "fb" ; then
--	INSTALL_OPT="-m 4755 -o root"
--fi
-+INSTALL_OPT="-m 0555 -s"
- 
- AC_SUBST(UTMP_CFLAGS)
- AC_SUBST(INSTALL_OPT)
+@@ -1075,27 +1075,7 @@ AC_SUBST(MOSH_OCB_OBJ)
+ AC_SUBST(PROTOBUF_CFLAGS)
+ AC_SUBST(PROTOBUF_LIBS)
  
 -if test "${have_gtk}" = "yes" ; then
 -	if test "${gtk_version}" = "3.0" ; then
@@ -66,5 +30,5 @@ Index: configure.in
 -fi
 +have_vte=no
  
- tools="mlclient,mlconfig,mlcc,mlterm-menu,mlimgloader,registobmp,mlfc"
- AC_ARG_WITH(tools,
+ if test "$image" = "yes"; then
+ 	tools="mlclient,mlconfig,mlcc,mlterm-menu,mlimgloader,registobmp,mlfc"
