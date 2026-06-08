@@ -86,6 +86,7 @@
      SUBDIR += larbin
      SUBDIR += libcroco
      SUBDIR += libmicrohttpd
+     SUBDIR += librewolf
      SUBDIR += libsass
      SUBDIR += libwebsockets
      SUBDIR += libwpe
