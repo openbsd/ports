@@ -1,7 +1,9 @@
 @option no-default-conflict
 @option is-branch
 @conflict lua->=5.4,<5.5
+@bin bin/lua5.4
 @bin bin/lua54
+@bin bin/luac5.4
 @bin bin/luac54
 include/lua-5.4/
 include/lua-5.4/lauxlib.h

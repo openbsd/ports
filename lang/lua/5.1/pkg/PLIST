@@ -2,7 +2,9 @@
 @option is-branch
 @conflict lua->=5.1.5,<5.2
 @pkgpath lang/lua
+@bin bin/lua5.1
 @bin bin/lua51
+@bin bin/luac5.1
 @bin bin/luac51
 include/lua-5.1/
 include/lua-5.1/lauxlib.h
