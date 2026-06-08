@@ -1,14 +1,14 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -68,8 +68,8 @@ else:
-         SUITESPARSE_INC_DIR = "/usr/include/suitesparse"
-     else:
-         # Default
--        SUITESPARSE_LIB_DIR = '/usr/lib'
--        SUITESPARSE_INC_DIR = '/usr/include'
-+        SUITESPARSE_LIB_DIR = '/usr/local/lib'
-+        SUITESPARSE_INC_DIR = '/usr/local/include'
- 
- if sys.platform.startswith("win"):
-     GSL_MACROS = [('GSL_DLL',''),('WIN32','')]
+@@ -46,8 +46,8 @@ if platform.system() == "Darwin":
+     GLPK_INC_DIR = PREFIX + '/include'
+     GLPK_LIB_DIR = PREFIX + '/lib'
+ else:
+-    SUITESPARSE_INC_DIR = "/usr/include/suitesparse"
+-    PREFIX= '/usr'
++    SUITESPARSE_INC_DIR = "/usr/local/include"
++    PREFIX= '/usr/local'
+     if glob("/usr/lib/x86_64-linux-gnu/libsuitesparse*"):
+         # Ubuntu/Debian
+         BLAS_LIB_DIR = PREFIX + "/lib/x86_64-linux-gnu"
