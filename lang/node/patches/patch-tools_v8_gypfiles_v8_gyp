@@ -1,9 +1,3 @@
-Hunk 1: enable webassembly on OpenBSD
-
-Hunk 2: don't link against libatomic with clang, which uses libcompiler-rt
-at least on OpenBSD.  The heuristic used is that llvm_version will be different
-from "0.0" if llvm (clang) is detected.
-
 Index: tools/v8_gypfiles/v8.gyp
 --- tools/v8_gypfiles/v8.gyp.orig
 +++ tools/v8_gypfiles/v8.gyp
@@ -52,3 +46,12 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
+@@ -1324,7 +1324,7 @@
+         # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
+         # to implement atomic memory access.
+         # Clang needs it for some atomic operations (https://clang.llvm.org/docs/Toolchain.html#atomics-library).
+-        ['(OS=="linux" and clang==1) or (v8_current_cpu in ["mips64", "mips64el", "arm", "riscv64", "loong64"])', {
++        ['(OS=="linux" and clang==1) or (v8_current_cpu in [])', {
+           'link_settings': {
+             'libraries': ['-latomic', ],
+           },
