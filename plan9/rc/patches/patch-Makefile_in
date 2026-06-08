@@ -1,6 +1,7 @@
---- Makefile.in.orig	Wed Jun  7 02:07:28 2000
-+++ Makefile.in	Wed Jun  7 02:09:33 2000
-@@ -517,10 +517,10 @@ trip: rc tripping
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -945,10 +945,10 @@ trip: rc tripping
  	./rc -p < $(srcdir)/trip.rc
  
  install-exec-hook:

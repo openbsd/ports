@@ -1,5 +1,6 @@
---- configure.orig	Wed Aug 26 16:57:31 2015
-+++ configure	Wed Aug 26 16:57:45 2015
+Index: configure
+--- configure.orig
++++ configure
 @@ -2224,7 +2224,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
