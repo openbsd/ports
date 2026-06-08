@@ -6,35 +6,37 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	rushsteve1
 GH_PROJECT =	trash-d
-GH_TAGNAME =	19
-REVISION =	1
+GH_TAGNAME =	21
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi execinfo m pthread
+WANTLIB += c m pthread
 
-MODULES = lang/ruby
+BUILD_DEPENDS =	lang/gcc/15,-dlang \
+		textproc/scdoc
 
-BUILD_DEPENDS =	lang/dmd \
-		textproc/ruby-ronn
-
-MODRUBY_RUNDEP = No
-
-# dub,dmd includes dmd compiler
-TEST_DEPENDS =	devel/dub,dmd
+TEST_DEPENDS =	lang/gcc/15,-dlang
 
 do-build:
-	cd ${WRKSRC} && dmd -O -release -inline -Isource -J. -oftrash \
-		source/app.d source/trash/*.d
+	cd ${WRKSRC} && egdc -O -frelease -finline-functions -Isource -J. \
+		-otrash source/app.d source/trash/*.d
+	cd ${WRKSRC} && scdoc < MANUAL.scd > trash.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trash ${PREFIX}/bin
-	ronn${GEM_BIN_SUFFIX} --roff --pipe ${WRKSRC}/MANUAL.md > \
-		${PREFIX}/man/man1/trash.1
+	${INSTALL_MAN} ${WRKSRC}/trash.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} \
+		${PREFIX}/share/fish/vendor_completions.d \
+		${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/completions/fish/trash.fish \
+		${PREFIX}/share/fish/vendor_completions.d/trash.fish
+	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_trash \
+		${PREFIX}/share/zsh/site-functions/_trash
 
+# If tests pass, exit code is 0 and output contains: 1 modules passed unittests
 do-test:
-	cd ${WRKSRC} && \
-		env HOME=${WRKDIR} dub test --cache=local --compiler=dmd
+	cd ${WRKSRC} && egdc -fmain -funittest -Isource -J. -otests \
+		source/tests.d source/trash/*.d && ./tests
 
 .include <bsd.port.mk>
