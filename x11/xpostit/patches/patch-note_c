@@ -36,6 +36,15 @@ Index: note.c
  	register PostItNote *pn;
  #if defined(USG) || defined(SYSV) || defined(SVR4)
  	register struct dirent *d;
+@@ -650,7 +654,7 @@ PostItNote *pn;
+ 	 * Add an event handler to keep track of the iconification state.
+ 	 */
+ 	XtAddEventHandler(pn->pn_shellwidget, StructureNotifyMask, False,
+-		(XtEventHandler *) StructureNotifyHandler, (XtPointer) pn);
++		(XtEventHandler) StructureNotifyHandler, (XtPointer) pn);
+ 
+ 	/*
+ 	 * Realize the note.
 @@ -1169,6 +1173,7 @@ NoteIndex()
   *
   *		     Thanks to Stewart Levin for the original code.

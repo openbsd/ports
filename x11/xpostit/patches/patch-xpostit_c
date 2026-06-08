@@ -1,5 +1,6 @@
---- xpostit.c.orig	Thu Dec 10 17:40:27 1992
-+++ xpostit.c	Fri Oct 26 22:55:30 2007
+Index: xpostit.c
+--- xpostit.c.orig
++++ xpostit.c
 @@ -121,7 +121,6 @@ int argc;
  {
  	Arg args[4];
@@ -8,3 +9,12 @@
  	Atom protos[2];
  	register int nargs;
  	Boolean setsigs = False;
+@@ -179,7 +178,7 @@ int argc;
+ 	 * Now get any resources we're interested in.
+ 	 */
+ 	XtGetApplicationResources(toplevel, &app_res, resources,
+-				  XtNumber(resources), argv, argc);
++				  XtNumber(resources), (ArgList)argv, argc);
+ 
+ 	/*
+ 	 * Construct the path to the directory notes are
