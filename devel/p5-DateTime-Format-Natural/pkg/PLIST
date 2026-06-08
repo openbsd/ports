@@ -3,6 +3,7 @@ ${P5SITE}/DateTime/Format/
 ${P5SITE}/DateTime/Format/Natural/
 ${P5SITE}/DateTime/Format/Natural.pm
 ${P5SITE}/DateTime/Format/Natural/Calc.pm
+${P5SITE}/DateTime/Format/Natural/Calendar.pm
 ${P5SITE}/DateTime/Format/Natural/Compat.pm
 ${P5SITE}/DateTime/Format/Natural/Duration/
 ${P5SITE}/DateTime/Format/Natural/Duration.pm
@@ -21,6 +22,7 @@ ${P5SITE}/DateTime/Format/Natural/Wrappers.pm
 @man man/man1/dateparse.1
 @man man/man3p/DateTime::Format::Natural.3p
 @man man/man3p/DateTime::Format::Natural::Calc.3p
+@man man/man3p/DateTime::Format::Natural::Calendar.3p
 @man man/man3p/DateTime::Format::Natural::Compat.3p
 @man man/man3p/DateTime::Format::Natural::Duration.3p
 @man man/man3p/DateTime::Format::Natural::Duration::Checks.3p
