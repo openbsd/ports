@@ -3,10 +3,10 @@ COMMENT=	start subprocess with envvar populated from Consul and Vault
 MODGO_MODNAME=	github.com/hashicorp/envconsul
 MODGO_VERSION=	v0.13.4
 DISTNAME=	envconsul-${MODGO_VERSION}
+REVISION=	0
 
 CATEGORIES=	sysutils
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # MPLv2.0
 PERMIT_PACKAGE=	Yes
 

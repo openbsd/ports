@@ -3,12 +3,11 @@ COMMENT=	template rendering and notifications with Consul
 MODGO_MODNAME=	github.com/hashicorp/consul-template
 MODGO_VERSION=	v0.42.0
 DISTNAME=	consul-template-${MODGO_VERSION}
+REVISION=	0
 
 CATEGORIES=	sysutils net
 
 HOMEPAGE=	https://www.consul.io/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPLv2.0
 PERMIT_PACKAGE=	Yes
