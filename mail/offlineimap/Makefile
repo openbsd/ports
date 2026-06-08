@@ -1,6 +1,6 @@
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-MODPY_DISTV =	8.0.2
+MODPY_DISTV =	8.0.3
 GH_ACCOUNT=	OfflineIMAP
 GH_PROJECT=	offlineimap3
 GH_TAGNAME=	v${MODPY_DISTV}
