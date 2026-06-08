@@ -1,0 +1,40 @@
+llvm22 fallout fix
+Index: GWMetadata/MDKit/MDKQuery.m
+--- GWMetadata/MDKit/MDKQuery.m.orig
++++ GWMetadata/MDKit/MDKQuery.m
+@@ -1120,7 +1120,7 @@ enum {
+   MDKQuery *leftSibling = [self leftSibling];
+   NSMutableString *sqlstr;
+   
+-  sqlstr = [NSString stringWithFormat: @"CREATE TEMP TABLE %@ "
++  sqlstr = [NSMutableString stringWithFormat: @"CREATE TEMP TABLE %@ "
+                                    @"(id INTEGER UNIQUE ON CONFLICT IGNORE, "
+                                    @"path TEXT UNIQUE ON CONFLICT IGNORE, "
+                                    @"words_count INTEGER, "
+@@ -1128,7 +1128,7 @@ enum {
+   
+   [root appendSQLToPreStatements: sqlstr checkExisting: YES];
+ 
+-  sqlstr = [NSString stringWithFormat: @"CREATE TEMP TRIGGER %@_trigger "
++  sqlstr = [NSMutableString stringWithFormat: @"CREATE TEMP TRIGGER %@_trigger "
+                @"BEFORE INSERT ON %@ "
+                @"BEGIN "
+                @"UPDATE %@ "
+@@ -1397,7 +1397,7 @@ enum {
+   MDKQuery *leftSibling = [self leftSibling];  
+   NSMutableString *sqlstr;
+ 
+-  sqlstr = [NSString stringWithFormat: @"CREATE TEMP TABLE %@ "
++  sqlstr = [NSMutableString stringWithFormat: @"CREATE TEMP TABLE %@ "
+                                    @"(id INTEGER UNIQUE ON CONFLICT IGNORE, "
+                                    @"path TEXT UNIQUE ON CONFLICT IGNORE, "
+                                    @"words_count INTEGER, "
+@@ -1405,7 +1405,7 @@ enum {
+   
+   [root appendSQLToPreStatements: sqlstr checkExisting: YES];
+   
+-  sqlstr = [NSString stringWithFormat: @"CREATE TEMP TRIGGER %@_trigger "
++  sqlstr = [NSMutableString stringWithFormat: @"CREATE TEMP TRIGGER %@_trigger "
+                @"BEFORE INSERT ON %@ "
+                @"BEGIN "
+                @"UPDATE %@ "
