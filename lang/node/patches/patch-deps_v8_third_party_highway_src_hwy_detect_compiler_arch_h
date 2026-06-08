@@ -1,0 +1,14 @@
+Forcefully disable RVV support for now.
+
+Index: deps/v8/third_party/highway/src/hwy/detect_compiler_arch.h
+--- deps/v8/third_party/highway/src/hwy/detect_compiler_arch.h.orig
++++ deps/v8/third_party/highway/src/hwy/detect_compiler_arch.h
+@@ -266,7 +266,7 @@
+ #define HWY_ARCH_WASM 0
+ #endif
+ 
+-#ifdef __riscv
++#if 0
+ #define HWY_ARCH_RISCV 1
+ #else
+ #define HWY_ARCH_RISCV 0
