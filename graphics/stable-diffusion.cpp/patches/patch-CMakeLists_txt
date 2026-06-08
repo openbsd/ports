@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -179,7 +179,7 @@ file(GLOB SD_LIB_SOURCES CONFIGURE_DEPENDS
+@@ -233,7 +233,7 @@ file(GLOB SD_LIB_SOURCES CONFIGURE_DEPENDS
      "src/tokenizers/vocab/*.cpp"
  )
  
