@@ -2,6 +2,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		Python Qt bindings for Qt 6
 PKGNAME =		pyside6-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=		pyside6.abi3		2.0 # 0.0
 SHARED_LIBS +=		pyside6qml.abi3		1.0 # 0.0
@@ -25,7 +26,7 @@ WANTLIB += Qt6Multimedia
 
 MODULES +=		lang/clang \
 			lang/python
-MODCLANG_VERSION =	19
+MODCLANG_VERSION =	22
 
 BUILD_DEPENDS =		devel/llvm/${MODCLANG_VERSION} \
 			x11/qt6/qttools
