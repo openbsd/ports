@@ -9,7 +9,7 @@ COMMENT=	Zigbee to MQTT bridge
 
 GH_ACCOUNT=	Koenkk
 GH_PROJECT=	zigbee2mqtt
-GH_TAGNAME=	2.9.2
+GH_TAGNAME=	2.11.0
 
 SITES.dep=	https://spacehopper.org/mirrors/
 DISTFILES.dep=	zigbee2mqtt-${GH_TAGNAME}-vendor.tar.xz
