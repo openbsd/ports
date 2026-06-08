@@ -1,7 +1,8 @@
 COMMENT =	the standard database interface module for Perl
 
 MODULES =	cpan
-DISTNAME =	DBI-1.647
+CPAN_AUTHOR =	HMBRAND
+DISTNAME =	DBI-1.648
 EXTRACT_SUFX =	.tgz
 FIX_EXTRACT_PERMISSIONS =	Yes
 CATEGORIES =	databases
