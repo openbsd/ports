@@ -1,7 +1,17 @@
 Index: gcc/gcc.cc
 --- gcc/gcc.cc.orig
 +++ gcc/gcc.cc
-@@ -1052,7 +1052,7 @@ proper position among the other output files.  */
+@@ -36,6 +36,9 @@ compilation is specified by a string called a "spec". 
+ #include "coretypes.h"
+ #include "multilib.h" /* before tm.h */
+ #include "tm.h"
++#ifdef OPENBSD_VERSIONED_SHLIBS
++#include <dirent.h>
++#endif
+ #include "xregex.h"
+ #include "obstack.h"
+ #include "intl.h"
+@@ -1052,7 +1055,7 @@ proper position among the other output files.  */
  #else
  #define LD_PIE_SPEC ""
  #endif
@@ -10,3 +20,102 @@ Index: gcc/gcc.cc
  #endif
  
  #ifndef LINK_BUILDID_SPEC
+@@ -3034,7 +3037,84 @@ struct file_at_path_info {
+   int mode;
+ };
+ 
++#ifdef OPENBSD_VERSIONED_SHLIBS
++static bool
++openbsd_shlib_version (const char *suffix, unsigned long *major,
++		       unsigned long *minor)
++{
++  char *end;
++
++  if (*suffix != '.')
++    return false;
++  ++suffix;
++  if (!ISDIGIT (*suffix))
++    return false;
++
++  errno = 0;
++  *major = strtoul (suffix, &end, 10);
++  if (errno || *end != '.')
++    return false;
++
++  suffix = end + 1;
++  if (!ISDIGIT (*suffix))
++    return false;
++
++  errno = 0;
++  *minor = strtoul (suffix, &end, 10);
++  return !errno && *end == '\0';
++}
++
+ static void *
++openbsd_shlib_at_path (char *path, void *data)
++{
++  struct file_at_path_info *info = (struct file_at_path_info *) data;
++  DIR *dir = opendir (*path ? path : ".");
++  struct dirent *entry;
++  char *best = NULL;
++  unsigned long best_major = 0;
++  unsigned long best_minor = 0;
++  size_t len = strlen (path);
++  const char *sep = len && !IS_DIR_SEPARATOR (path[len - 1])
++		    ? dir_separator_str : "";
++
++  if (!dir)
++    return NULL;
++
++  while ((entry = readdir (dir)) != NULL)
++    {
++      unsigned long major;
++      unsigned long minor;
++      char *candidate;
++
++      if (strncmp (entry->d_name, info->name, info->name_len) != 0
++	  || !openbsd_shlib_version (entry->d_name + info->name_len,
++				     &major, &minor))
++	continue;
++
++      if (best != NULL
++	  && (major < best_major
++	      || (major == best_major && minor <= best_minor)))
++	continue;
++
++      candidate = concat (path, sep, entry->d_name, NULL);
++      if (access_check (candidate, info->mode) != 0)
++	{
++	  free (candidate);
++	  continue;
++	}
++
++      free (best);
++      best = candidate;
++      best_major = major;
++      best_minor = minor;
++    }
++
++  closedir (dir);
++  return best;
++}
++#endif
++
++static void *
+ file_at_path (char *path, void *data)
+ {
+   struct file_at_path_info *info = (struct file_at_path_info *) data;
+@@ -3085,6 +3165,13 @@ find_a_file (const struct path_prefix *pprefix, const 
+   info.name_len = strlen (info.name);
+   info.suffix_len = strlen (info.suffix);
+   info.mode = mode;
++
++#ifdef OPENBSD_VERSIONED_SHLIBS
++  if (pprefix == &startfile_prefixes && mode == R_OK
++      && endswith (name, ".so") && lbasename (name) == name)
++    return (char*) for_each_path (pprefix, do_multi, 0,
++				  openbsd_shlib_at_path, &info);
++#endif
+ 
+   return (char*) for_each_path (pprefix, do_multi,
+ 				info.name_len + info.suffix_len,

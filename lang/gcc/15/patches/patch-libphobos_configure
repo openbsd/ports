@@ -48,14 +48,14 @@ Index: libphobos/configure
        druntime_fiber_asm_external=yes
        ;;
    esac
-@@ -16067,6 +16081,10 @@ if test -z "${DRUNTIME_CPU_POWERPC_TRUE}" && test -z "
-   as_fn_error $? "conditional \"DRUNTIME_CPU_POWERPC\" was never defined.
- Usually this means the macro was only invoked conditionally." "$LINENO" 5
+@@ -16065,6 +16079,10 @@ Usually this means the macro was only invoked conditio
  fi
-+if test -z "${DRUNTIME_CPU_SPARC64_TRUE}" && test -z "${DRUNTIME_CPU_SPARC64_FALSE}"; then
-+  as_fn_error $? "conditional \"DRUNTIME_CPU_SPARC64\" was never defined.
+ if test -z "${DRUNTIME_CPU_POWERPC_TRUE}" && test -z "${DRUNTIME_CPU_POWERPC_FALSE}"; then
+   as_fn_error $? "conditional \"DRUNTIME_CPU_POWERPC\" was never defined.
 +Usually this means the macro was only invoked conditionally." "$LINENO" 5
 +fi
- if test -z "${DRUNTIME_CPU_X86_TRUE}" && test -z "${DRUNTIME_CPU_X86_FALSE}"; then
-   as_fn_error $? "conditional \"DRUNTIME_CPU_X86\" was never defined.
++if test -z "${DRUNTIME_CPU_SPARC64_TRUE}" && test -z "${DRUNTIME_CPU_SPARC64_FALSE}"; then
++  as_fn_error $? "conditional \"DRUNTIME_CPU_SPARC64\" was never defined.
  Usually this means the macro was only invoked conditionally." "$LINENO" 5
+ fi
+ if test -z "${DRUNTIME_CPU_X86_TRUE}" && test -z "${DRUNTIME_CPU_X86_FALSE}"; then

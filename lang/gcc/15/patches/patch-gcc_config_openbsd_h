@@ -1,7 +1,7 @@
 Index: gcc/config/openbsd.h
 --- gcc/config/openbsd.h.orig
 +++ gcc/config/openbsd.h
-@@ -40,6 +40,10 @@ along with GCC; see the file COPYING3.  If not see
+@@ -40,6 +40,12 @@ along with GCC; see the file COPYING3.  If not see
     intended as common ground for arch that don't provide
     anything suitable.  */
  
@@ -9,10 +9,12 @@ Index: gcc/config/openbsd.h
 +   unless user explicitly requests it.  */
 +#undef LOCAL_INCLUDE_DIR
 +
++#define OPENBSD_VERSIONED_SHLIBS
++
  /* OPENBSD_NATIVE is defined only when gcc is configured as part of
     the OpenBSD source tree, specifically through Makefile.bsd-wrapper.
  
-@@ -108,9 +112,9 @@ while (0)
+@@ -108,9 +114,9 @@ while (0)
     This two-stage defines makes it easy to pick that for targets that
     have subspecs.  */
  #ifdef CPP_CPU_SPEC
@@ -24,7 +26,7 @@ Index: gcc/config/openbsd.h
  #endif
  
  #undef LIB_SPEC
-@@ -273,6 +277,12 @@ do {									 \
+@@ -273,6 +279,12 @@ do {									 \
  #endif
  
  /* Storage layout.  */
