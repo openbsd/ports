@@ -1,0 +1,35 @@
+Let it build with llvm 22.
+
+Index: socket.c
+--- socket.c.orig
++++ socket.c
+@@ -582,12 +582,12 @@ static char s_getpeername[] = "getpeername";
+ SCM l_getpeername(sockpt)
+      SCM sockpt;
+ {
+-  struct sockaddr_in sad;
++  struct sockaddr sad;
+   int sts, sadlen = sizeof(sad);
+   bzero((char *) &sad, sizeof(sad));
+   ASRTER(NIMP(sockpt) && OPFPORTP(sockpt), sockpt, ARG1, s_getpeername);
+   SYSCALL(sts = getpeername(fileno(STREAM(sockpt)),
+-			    (struct sockaddr*)&sad, &sadlen););
++			    &sad, &sadlen););
+   if (sts || sizeof(sad) != sadlen) return BOOL_F;
+ /*  ASRTER(sad.sin_family==AF_INET, sockpt, "non-internet", s_getpeername); */
+   return maksknm(&sad);
+@@ -596,12 +596,12 @@ static char s_getsockname[] = "getsockname";
+ SCM l_getsockname(sockpt)
+      SCM sockpt;
+ {
+-  struct sockaddr_in sad;
++  struct sockaddr sad;
+   int sts, sadlen = sizeof(sad);
+   bzero((char *) &sad, sizeof(sad));
+   ASRTER(NIMP(sockpt) && OPFPORTP(sockpt), sockpt, ARG1, s_getsockname);
+   SYSCALL(sts = getsockname(fileno(STREAM(sockpt)),
+-			    (struct sockaddr*)&sad, &sadlen););
++			    &sad, &sadlen););
+   if (sts || sizeof(sad) != sadlen) return BOOL_F;
+   return maksknm(&sad);
+ }
