@@ -37,7 +37,8 @@ LIB_DEPENDS=		databases/sqlite3 \
 
 TEST_DEPENDS=		devel/check
 
-CONFIGURE_ARGS=		-Dlibsoup=false
+CONFIGURE_ARGS=		-Dlibsoup=false \
+			-Dsqlcipher=false
 
 # jsonglib_dep is unused
 CONFIGURE_ARGS +=	-Djson=false
