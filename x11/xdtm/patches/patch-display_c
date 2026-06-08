@@ -1,0 +1,14 @@
+Fix build with llvm22
+
+Index: display.c
+--- display.c.orig
++++ display.c
+@@ -211,7 +211,7 @@ private void WM_destroy_view(w, client_data, event, di
+     /* the widget got a kill signal */
+     {
+ 	/* Directly call callback of `Quit' button */
+-	destroy_view(w, (Widget *)client_data);
++	destroy_view(w, (widgets *)client_data);
+     }
+ }
+ 
