@@ -1,0 +1,12 @@
+Index: eject/eject.c
+--- eject/eject.c.orig
++++ eject/eject.c
+@@ -130,7 +130,7 @@ alloc_mntitem(struct ejector *ejector, const char *key
+ 			    rd->menu_item);
+ 			gtk_widget_set_tooltip_text(GTK_WIDGET(rd->menu_item),
+ 			    key);
+-			gtk_signal_connect_object(G_OBJECT(rd->menu_item),
++			gtk_signal_connect_object(GTK_OBJECT(rd->menu_item),
+ 			    "activate", G_CALLBACK(cb_menu_activate), rd);
+ 		}
+ 	}
