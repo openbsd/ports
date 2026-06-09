@@ -4,7 +4,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		9.0.0
+V =		9.1.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
@@ -13,9 +13,9 @@ HOMEPAGE =	https://www.digikam.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  digikamcore               10.0  # 8.0
-SHARED_LIBS +=  digikamdatabase           11.0 # 8.0
-SHARED_LIBS +=  digikamgui                9.0  # 8.0
+SHARED_LIBS +=  digikamcore               11.0  # 8.0
+SHARED_LIBS +=  digikamdatabase           12.0 # 8.0
+SHARED_LIBS +=  digikamgui                10.0  # 8.0
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes
