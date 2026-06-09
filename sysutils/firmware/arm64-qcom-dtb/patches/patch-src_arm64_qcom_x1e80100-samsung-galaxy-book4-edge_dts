@@ -1,6 +1,6 @@
 --- src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts.orig
 +++ src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
-@@ -0,0 +1,1001 @@
+@@ -0,0 +1,1024 @@
 +// SPDX-License-Identifier: BSD-3-Clause
 +/*
 + * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
@@ -9,6 +9,8 @@
 +/dts-v1/;
 +
 +#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/gpio-keys.h>
++#include <dt-bindings/input/input.h>
 +#include <dt-bindings/pinctrl/qcom,pmic-gpio.h>
 +#include <dt-bindings/regulator/qcom,rpmh-regulator.h>
 +
@@ -19,6 +21,21 @@
 +	model = "Samsung Galaxy Book4 Edge";
 +	compatible = "samsung,galaxy-book4-edge", "qcom,x1e80100";
 +	chassis-type = "laptop";
++
++	gpio-keys {
++		compatible = "gpio-keys";
++
++		pinctrl-0 = <&hall_int_n_default>;
++		pinctrl-names = "default";
++
++		switch-lid {
++			gpios = <&tlmm 92 GPIO_ACTIVE_LOW>;
++			linux,input-type = <EV_SW>;
++			linux,code = <SW_LID>;
++			wakeup-source;
++			wakeup-event-action = <EV_ACT_DEASSERTED>;
++		};
++	};
 +
 +	pmic-glink {
 +		compatible = "qcom,x1e80100-pmic-glink",
@@ -865,6 +882,12 @@
 +		pins = "gpio70";
 +		function = "gpio";
 +		drive-strength = <16>;
++		bias-disable;
++	};
++
++	hall_int_n_default: hall-int-n-state {
++		pins = "gpio92";
++		function = "gpio";
 +		bias-disable;
 +	};
 +
