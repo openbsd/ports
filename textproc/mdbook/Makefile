@@ -1,5 +1,6 @@
 COMMENT =		create books from markdown files
 
+# When updating regenerate PLIST of devel/rust-analyzer
 GH_ACCOUNT =            rust-lang
 GH_PROJECT =            mdBook
 GH_TAGNAME =            v0.5.3
