@@ -1,5 +1,7 @@
 COMMENT=	fast, secure sendmail replacement
 
+DPB_PROPERTIES=	parallel
+
 DISTNAME=	postfix-${VERSION}
 PKGNAME=	postfix-${VERSION:S/-/./}
 CATEGORIES=	mail
