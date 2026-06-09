@@ -1,9 +1,16 @@
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
+# aws-lc-sys has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+.if ${MACHINE_ARCH} == "amd64"
+USE_NOEXECONLY =        Yes
+.endif
+
 COMMENT =		fast, encrypted, deduplicated backups
 
 DIST_TUPLE =		github rustic-rs rustic v0.11.3 .
+REVISION =		0
 
 CATEGORIES =		sysutils
 
