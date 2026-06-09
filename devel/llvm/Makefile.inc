@@ -2,6 +2,9 @@
 ONLY_FOR_ARCHS ?=	${LLVM_ARCHS}
 
 DPB_PROPERTIES =	parallel parallel2
+.if ${MACHINE_ARCH:Mi386} && ${LLVM_VERSION:M22*}
+DPB_PROPERTIES +=	lonesome
+.endif
 
 COMMENT-main =		modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-libcxx =	C++ standard library
