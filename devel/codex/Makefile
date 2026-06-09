@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.137.0
+V =			0.138.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -79,8 +79,9 @@ MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 # Makes the build look more alive while compiling v8
 MODCARGO_BUILD_ARGS +=	-vv
 
-# install the CLI crate ('codex')
+# build only the CLI crate ('codex')
 MODCARGO_INSTALL_TARGET_PATHS = cli
+MODCARGO_BUILD_ARGS +=		-p codex-cli --bin codex
 
 MAKE_ENV =		${MODCARGO_ENV}
 
