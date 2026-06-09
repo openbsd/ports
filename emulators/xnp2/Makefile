@@ -2,7 +2,7 @@ COMMENT =		PC-9801 emulator
 
 DISTNAME =		xnp2-0.86
 EPOCH =			0
-REVISION =		6
+REVISION =		7
 CATEGORIES =		emulators
 
 HOMEPAGE =		https://nonakap.org/np2/

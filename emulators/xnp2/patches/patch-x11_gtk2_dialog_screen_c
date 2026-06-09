@@ -1,0 +1,23 @@
+Index: x11/gtk2/dialog_screen.c
+--- x11/gtk2/dialog_screen.c.orig
++++ x11/gtk2/dialog_screen.c
+@@ -45,7 +45,7 @@
+ static GtkWidget *video_lcd_checkbutton;
+ static GtkWidget *video_lcd_reverse_checkbutton;
+ static GtkWidget *video_skipline_checkbutton;
+-static GObject *video_skipline_ratio_adj;
++static GtkObject *video_skipline_ratio_adj;
+ 
+ /*
+  * Chip
+@@ -61,8 +61,8 @@ static const char *timing_waitclock_str[] = {
+ 	"T-RAM", "V-RAM", "GRCG"
+ };
+ 
+-static GObject *timing_waitclock_adj[NELEMENTS(timing_waitclock_str)];
+-static GObject *timing_realpal_adj;
++static GtkObject *timing_waitclock_adj[NELEMENTS(timing_waitclock_str)];
++static GtkObject *timing_realpal_adj;
+ 
+ 
+ static void

@@ -1,0 +1,30 @@
+Index: x11/gtk2/dialog_sound.c
+--- x11/gtk2/dialog_sound.c.orig
++++ x11/gtk2/dialog_sound.c
+@@ -55,7 +55,7 @@ static const struct {
+ 	{ "Rhythm", &np2cfg.vol_rhythm, 0.0, 128.0 },
+ };
+ 
+-static GObject *mixer_adj[NELEMENTS(mixer_vol_tbl)];
++static GtkObject *mixer_adj[NELEMENTS(mixer_vol_tbl)];
+ 
+ 
+ /*
+@@ -66,7 +66,7 @@ static const char *snd14_vol_str[] = {
+ 	"left", "right", "f2", "f4", "f8", "f16"
+ };
+ 
+-static GObject *snd14_adj[NELEMENTS(snd14_vol_str)];
++static GtkObject *snd14_adj[NELEMENTS(snd14_vol_str)];
+ 
+ 
+ /*
+@@ -223,7 +223,7 @@ static GtkWidget *spb_int_entry;
+ static GtkWidget *spb_romaddr_entry;
+ static GtkWidget *spb_vr_channel_checkbutton[2];
+ static GtkWidget *spb_reverse_channel_checkbutton;
+-static GObject *spb_vr_level_adj;
++static GtkObject *spb_vr_level_adj;
+ 
+ 
+ /*
