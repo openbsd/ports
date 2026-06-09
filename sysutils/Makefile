@@ -238,7 +238,6 @@
      SUBDIR += memtester
      SUBDIR += mencal
      SUBDIR += menulibre
-     SUBDIR += modlogan
      SUBDIR += monit
      SUBDIR += monitord
      SUBDIR += moor
