@@ -5,7 +5,7 @@ share/doc/rust-analyzer/404.html
 share/doc/rust-analyzer/ace-2a3cd908.js
 share/doc/rust-analyzer/assists.html
 share/doc/rust-analyzer/ayu-highlight-3fdfc3ac.css
-share/doc/rust-analyzer/book-a0b12cfe.js
+share/doc/rust-analyzer/book-c22b7243.js
 share/doc/rust-analyzer/clipboard-1626706a.min.js
 share/doc/rust-analyzer/configuration.html
 share/doc/rust-analyzer/contributing/
@@ -19,8 +19,8 @@ share/doc/rust-analyzer/contributing/style.html
 share/doc/rust-analyzer/contributing/syntax.html
 share/doc/rust-analyzer/contributing/testing.html
 share/doc/rust-analyzer/css/
-share/doc/rust-analyzer/css/chrome-ae938929.css
-share/doc/rust-analyzer/css/general-2459343d.css
+share/doc/rust-analyzer/css/chrome-fc474251.css
+share/doc/rust-analyzer/css/general-0392ca55.css
 share/doc/rust-analyzer/css/print-9e4910d8.css
 share/doc/rust-analyzer/css/variables-8adf115d.css
 share/doc/rust-analyzer/diagnostics.html
@@ -58,12 +58,12 @@ share/doc/rust-analyzer/other_editors.html
 share/doc/rust-analyzer/print.html
 share/doc/rust-analyzer/privacy.html
 share/doc/rust-analyzer/rust_analyzer_binary.html
-share/doc/rust-analyzer/searcher-c2a407aa.js
+share/doc/rust-analyzer/searcher-09f2665d.js
 share/doc/rust-analyzer/searchindex-0c13bc81.js
 share/doc/rust-analyzer/security.html
 share/doc/rust-analyzer/theme-dawn-4493f9c8.js
 share/doc/rust-analyzer/theme-tomorrow_night-9dbe62a9.js
-share/doc/rust-analyzer/toc-6c762e67.js
+share/doc/rust-analyzer/toc-9d21adb9.js
 share/doc/rust-analyzer/toc.html
 share/doc/rust-analyzer/tomorrow-night-4c0ae647.css
 share/doc/rust-analyzer/troubleshooting.html
