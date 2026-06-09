@@ -17,7 +17,6 @@ lib/notion/lc/ioncore_wd.lc
 lib/notion/lc/ioncore_winprops.lc
 lib/notion/lc/mod_dock.lc
 lib/notion/lc/mod_menu.lc
-lib/notion/lc/mod_mgmtmode.lc
 lib/notion/lc/mod_notionflux.lc
 lib/notion/lc/mod_query.lc
 lib/notion/lc/mod_query_chdir.lc
@@ -35,7 +34,6 @@ lib/notion/mod/
 @so lib/notion/mod/de.so
 @so lib/notion/mod/mod_dock.so
 @so lib/notion/mod/mod_menu.so
-@so lib/notion/mod/mod_mgmtmode.so
 @so lib/notion/mod/mod_notionflux.so
 @so lib/notion/mod/mod_query.so
 @so lib/notion/mod/mod_sm.so
