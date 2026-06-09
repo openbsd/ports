@@ -243,6 +243,7 @@ share/doc/apache2/bind.html.en
 share/doc/apache2/bind.html.fr.utf8
 share/doc/apache2/bind.html.ja.utf8
 share/doc/apache2/bind.html.ko.euc-kr
+share/doc/apache2/bind.html.pt-br.utf8
 share/doc/apache2/bind.html.tr.utf8
 share/doc/apache2/caching.html
 share/doc/apache2/caching.html.en
@@ -333,6 +334,7 @@ share/doc/apache2/filter.html.es
 share/doc/apache2/filter.html.fr.utf8
 share/doc/apache2/filter.html.ja.utf8
 share/doc/apache2/filter.html.ko.euc-kr
+share/doc/apache2/filter.html.pt-br.utf8
 share/doc/apache2/filter.html.tr.utf8
 share/doc/apache2/getting-started.html
 share/doc/apache2/getting-started.html.en
@@ -379,6 +381,7 @@ share/doc/apache2/howto/htaccess.html.fr.utf8
 share/doc/apache2/howto/htaccess.html.ja.utf8
 share/doc/apache2/howto/htaccess.html.ko.euc-kr
 share/doc/apache2/howto/htaccess.html.pt-br
+share/doc/apache2/howto/htaccess.html.pt-br.utf8
 share/doc/apache2/howto/http2.html
 share/doc/apache2/howto/http2.html.en
 share/doc/apache2/howto/http2.html.es
@@ -424,24 +427,27 @@ share/doc/apache2/images/favicon.png
 share/doc/apache2/images/feather.gif
 share/doc/apache2/images/feather.png
 share/doc/apache2/images/filter_arch.png
+share/doc/apache2/images/filter_arch.pt-br.png
 share/doc/apache2/images/filter_arch.tr.png
 share/doc/apache2/images/home.gif
 share/doc/apache2/images/index.gif
 share/doc/apache2/images/left.gif
 share/doc/apache2/images/mod_filter_new.gif
 share/doc/apache2/images/mod_filter_new.png
+share/doc/apache2/images/mod_filter_new.pt-br.png
 share/doc/apache2/images/mod_filter_new.tr.png
 share/doc/apache2/images/mod_filter_old.gif
 share/doc/apache2/images/mod_filter_old.png
-share/doc/apache2/images/mod_rewrite_fig1.gif
 share/doc/apache2/images/mod_rewrite_fig1.png
-share/doc/apache2/images/mod_rewrite_fig2.gif
+share/doc/apache2/images/mod_rewrite_fig1.svg
 share/doc/apache2/images/mod_rewrite_fig2.png
+share/doc/apache2/images/mod_rewrite_fig2.svg
 share/doc/apache2/images/pixel.gif
 share/doc/apache2/images/reverse-proxy-arch.png
 share/doc/apache2/images/rewrite_backreferences.png
+share/doc/apache2/images/rewrite_backreferences.svg
 share/doc/apache2/images/rewrite_process_uri.png
-share/doc/apache2/images/rewrite_rule_flow.png
+share/doc/apache2/images/rewrite_process_uri.svg
 share/doc/apache2/images/right.gif
 share/doc/apache2/images/ssl_intro_fig1.gif
 share/doc/apache2/images/ssl_intro_fig1.png
@@ -451,7 +457,9 @@ share/doc/apache2/images/ssl_intro_fig3.gif
 share/doc/apache2/images/ssl_intro_fig3.png
 share/doc/apache2/images/sub.gif
 share/doc/apache2/images/syntax_rewritecond.png
+share/doc/apache2/images/syntax_rewritecond.svg
 share/doc/apache2/images/syntax_rewriterule.png
+share/doc/apache2/images/syntax_rewriterule.svg
 share/doc/apache2/images/up.gif
 share/doc/apache2/index.html
 share/doc/apache2/index.html.da
@@ -462,6 +470,7 @@ share/doc/apache2/index.html.fr.utf8
 share/doc/apache2/index.html.ja.utf8
 share/doc/apache2/index.html.ko.euc-kr
 share/doc/apache2/index.html.pt-br
+share/doc/apache2/index.html.pt-br.utf8
 share/doc/apache2/index.html.ru.utf8
 share/doc/apache2/index.html.tr.utf8
 share/doc/apache2/index.html.zh-cn.utf8
@@ -472,6 +481,7 @@ share/doc/apache2/install.html.es
 share/doc/apache2/install.html.fr.utf8
 share/doc/apache2/install.html.ja.utf8
 share/doc/apache2/install.html.ko.euc-kr
+share/doc/apache2/install.html.pt-br.utf8
 share/doc/apache2/install.html.tr.utf8
 share/doc/apache2/invoking.html
 share/doc/apache2/invoking.html.de
@@ -480,6 +490,7 @@ share/doc/apache2/invoking.html.es
 share/doc/apache2/invoking.html.fr.utf8
 share/doc/apache2/invoking.html.ja.utf8
 share/doc/apache2/invoking.html.ko.euc-kr
+share/doc/apache2/invoking.html.pt-br.utf8
 share/doc/apache2/invoking.html.tr.utf8
 share/doc/apache2/license.html
 share/doc/apache2/license.html.en
@@ -1092,16 +1103,19 @@ share/doc/apache2/new_features_2_0.html.fr.utf8
 share/doc/apache2/new_features_2_0.html.ja.utf8
 share/doc/apache2/new_features_2_0.html.ko.euc-kr
 share/doc/apache2/new_features_2_0.html.pt-br
+share/doc/apache2/new_features_2_0.html.pt-br.utf8
 share/doc/apache2/new_features_2_0.html.tr.utf8
 share/doc/apache2/new_features_2_2.html
 share/doc/apache2/new_features_2_2.html.en
 share/doc/apache2/new_features_2_2.html.fr.utf8
 share/doc/apache2/new_features_2_2.html.ko.euc-kr
 share/doc/apache2/new_features_2_2.html.pt-br
+share/doc/apache2/new_features_2_2.html.pt-br.utf8
 share/doc/apache2/new_features_2_2.html.tr.utf8
 share/doc/apache2/new_features_2_4.html
 share/doc/apache2/new_features_2_4.html.en
 share/doc/apache2/new_features_2_4.html.fr.utf8
+share/doc/apache2/new_features_2_4.html.pt-br.utf8
 share/doc/apache2/new_features_2_4.html.tr.utf8
 share/doc/apache2/platform/
 share/doc/apache2/platform/ebcdic.html
@@ -1344,6 +1358,7 @@ share/doc/apache2/suexec.html.tr.utf8
 share/doc/apache2/upgrading.html
 share/doc/apache2/upgrading.html.en
 share/doc/apache2/upgrading.html.fr.utf8
+share/doc/apache2/upgrading.html.pt-br.utf8
 share/doc/apache2/urlmapping.html
 share/doc/apache2/urlmapping.html.en
 share/doc/apache2/urlmapping.html.fr.utf8
@@ -1463,6 +1478,7 @@ share/examples/apache2/error/HTTP_BAD_REQUEST.html.var
 @sample /var/www/error/HTTP_BAD_REQUEST.html.var
 share/examples/apache2/error/HTTP_FORBIDDEN.html.var
 @sample /var/www/error/HTTP_FORBIDDEN.html.var
+share/examples/apache2/error/HTTP_GATEWAY_TIME_OUT.html.var
 share/examples/apache2/error/HTTP_GONE.html.var
 @sample /var/www/error/HTTP_GONE.html.var
 share/examples/apache2/error/HTTP_INTERNAL_SERVER_ERROR.html.var

@@ -1,6 +1,6 @@
 COMMENT=		apache HTTP server
 
-V=			2.4.67
+V=			2.4.68
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 
