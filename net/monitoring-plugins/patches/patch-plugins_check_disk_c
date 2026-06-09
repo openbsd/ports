@@ -3,7 +3,7 @@ https://github.com/monitoring-plugins/monitoring-plugins/pull/2211
 Index: plugins/check_disk.c
 --- plugins/check_disk.c.orig
 +++ plugins/check_disk.c
-@@ -263,8 +263,8 @@ int main(int argc, char **argv) {
+@@ -266,8 +266,8 @@ int main(int argc, char **argv) {
  			*filesystem = get_path_stats(*filesystem, fsp, config.freespace_ignore_reserved);
  
  			if (verbose >= 3) {

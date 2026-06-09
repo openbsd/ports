@@ -8,15 +8,14 @@ COMMENT-pgsql=	postgresql monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
-V=		3.0.0rc3pl0
-#SITES=		https://www.monitoring-plugins.org/download/
-GH_ACCOUNT=	monitoring-plugins
-GH_PROJECT=	monitoring-plugins
-GH_TAGNAME=	v${V:S/rc/-rc/:S/pl0//}
+# XXX mixture of rc and pl in PKGNAMEs caused version ordering issues
+# (see pkg_check-version). for 3.0.0rc series append pl0. for 3.0.0
+# final release move to EPOCH=0.
+# series) append pl0 - for 3.0.0 release move to EPOCH=0
+V=		3.0.0rc4pl0
+SITES=		https://www.monitoring-plugins.org/download/
 
-REVISION=	0
-
-DISTNAME=	monitoring-plugins-${V:S/rc/-rc/}
+DISTNAME=	monitoring-plugins-${V:S/rc/-rc/:S/pl0//}
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
 PKGNAME-fping=	monitoring-plugins-fping-$V
@@ -42,9 +41,7 @@ WANTLIB=	c crypto pthread
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-CONFIGURE_STYLE= autoreconf
-AUTOCONF_VERSION= 2.71
-AUTOMAKE_VERSION= 1.16
+CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 FAKE_FLAGS=	setuid_root_mode=0555
 
