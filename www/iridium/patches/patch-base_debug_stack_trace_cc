@@ -28,7 +28,7 @@ Index: base/debug/stack_trace.cc
 +#if !defined(__UCLIBC__) && !defined(_AIX) && !BUILDFLAG(IS_BSD)
    OutputToStreamWithPrefix(&stream, prefix_string);
  #endif
-   return stream.str();
+   return std::move(stream).str();
 @@ -393,7 +395,7 @@ bool StackTrace::ShouldSuppressOutput() {
  }
  

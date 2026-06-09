@@ -1,7 +1,7 @@
 Index: base/system/sys_info_posix.cc
 --- base/system/sys_info_posix.cc.orig
 +++ base/system/sys_info_posix.cc
-@@ -58,7 +58,11 @@ base::ByteSize AmountOfVirtualMemory() {
+@@ -59,7 +59,11 @@ base::ByteSize AmountOfVirtualMemory() {
    if (result != 0) {
      NOTREACHED();
    }
@@ -13,7 +13,7 @@ Index: base/system/sys_info_posix.cc
  }
  using LazyVirtualMemory =
      base::internal::LazySysInfoValue<base::ByteSize, AmountOfVirtualMemory>;
-@@ -140,7 +144,7 @@ void GetKernelVersionNumbers(int32_t* major_version,
+@@ -110,7 +114,7 @@ void GetKernelVersionNumbers(int32_t* major_version,
  
  namespace base {
  
@@ -22,7 +22,7 @@ Index: base/system/sys_info_posix.cc
  // static
  int SysInfo::NumberOfProcessors() {
  #if BUILDFLAG(IS_MAC)
-@@ -196,7 +200,7 @@ int SysInfo::NumberOfProcessors() {
+@@ -166,7 +170,7 @@ int SysInfo::NumberOfProcessors() {
  
    return cached_num_cpus;
  }
@@ -31,7 +31,7 @@ Index: base/system/sys_info_posix.cc
  
  // static
  ByteSize SysInfo::AmountOfVirtualMemory() {
-@@ -286,6 +290,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -275,6 +279,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

@@ -8,5 +8,5 @@ Index: remoting/host/desktop_session_connector.h
 -#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX)
 +#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
    // Notifies the network process that |terminal_id| is now attached to
-   // a desktop integration process. |session_id| is the id of the desktop
-   // session being attached. |desktop_pipe| is the client end of the pipe opened
+   // a desktop integration process. |desktop_pipe| is the client end of the pipe
+   // opened by the desktop process.
