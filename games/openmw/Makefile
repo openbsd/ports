@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT =		open source implementation of TES III: Morrowind
 
 V =			0.50.0
-REVISION =		1
+REVISION =		2
 GH_ACCOUNT =		OpenMW
 GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
@@ -34,7 +34,7 @@ WANTLIB += osgShadow osgSim osgText osgUtil osgViewer sqlite3
 WANTLIB += swresample swscale unshield yaml-cpp z
 
 MODULES =		devel/cmake lang/lua x11/qt6 lang/clang
-MODCLANG_VERSION =	19
+MODCLANG_VERSION =	22
 COMPILER =		ports-clang
 
 MODCMAKE_POLICY_VERSION_OVERRIDE=	Yes
