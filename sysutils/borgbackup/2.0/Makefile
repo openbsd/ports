@@ -6,7 +6,7 @@ USE_NOEXECONLY=		Yes
 MODULES =		lang/python
 MODPY_DISTV =		2.0.0b21
 PKGNAME =		borgbackup-${MODPY_DISTV:S/b/beta/}
-REVISION =		0
+REVISION =		1
 EPOCH =			0
 
 # OpenSSL used for EVP_aes_256_ocb. It is linked statically to avoid conflicting
