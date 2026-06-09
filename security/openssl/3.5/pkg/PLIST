@@ -639,6 +639,10 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/BIO_new_ssl.3
 @man lib/${EOPENSSL_V}/man/man3/BIO_new_ssl_connect.3
 @man lib/${EOPENSSL_V}/man/man3/BIO_next.3
+@man lib/${EOPENSSL_V}/man/man3/BIO_nread.3
+@man lib/${EOPENSSL_V}/man/man3/BIO_nread0.3
+@man lib/${EOPENSSL_V}/man/man3/BIO_nwrite.3
+@man lib/${EOPENSSL_V}/man/man3/BIO_nwrite0.3
 @man lib/${EOPENSSL_V}/man/man3/BIO_parse_hostserv.3
 @man lib/${EOPENSSL_V}/man/man3/BIO_pending.3
 @man lib/${EOPENSSL_V}/man/man3/BIO_pop.3
