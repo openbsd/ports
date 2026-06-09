@@ -8,6 +8,7 @@ GH_ACCOUNT =		leejet
 GH_PROJECT =		stable-diffusion.cpp
 GH_TAGNAME =		master-685-19bdfe2
 PKGNAME =		stable-diffusion.cpp-0.0.${GH_TAGNAME:S/master-//:C/-.+//g}
+REVISION =		0
 
 VERSION.ggml =		0ce7ad348a3151e1da9f65d962044546bcaad421
 DISTFILES.ggml =	${VERSION.ggml}.tar.gz
@@ -39,7 +40,8 @@ DOCDIR =		${PREFIX}/share/doc/stable-diffusion.cpp/
 
 .if ${FLAVOR:Mvulkan}
 CONFIGURE_ARGS +=	-DSD_VULKAN=on
-BUILD_DEPENDS +=	graphics/shaderc
+BUILD_DEPENDS +=	graphics/shaderc \
+			graphics/spirv-headers
 LIB_DEPENDS +=		graphics/vulkan-loader
 WANTLIB +=		vulkan
 .endif
