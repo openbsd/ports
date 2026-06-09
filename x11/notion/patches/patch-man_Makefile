@@ -1,13 +1,7 @@
 Index: man/Makefile
 --- man/Makefile.orig
 +++ man/Makefile
-@@ -8,12 +8,12 @@ include $(TOPDIR)/build/system-inc.mk
- 
- ######################################
- 
--SHELL=bash -o pipefail
-+SHELL=sh -o pipefail
- 
+@@ -13,7 +13,7 @@ SHELL=sh -e
  TARGETS=notion.1 notionflux.1 welcome.txt
  
  MKMAN=$(LUA) ../build/mkman.lua

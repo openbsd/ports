@@ -1,7 +1,6 @@
 COMMENT=	light, keyboard friendly static tiling window manager
 
-DIST_TUPLE=	github raboof notion 4.0.2 .
-REVISION=	0
+DIST_TUPLE=	github raboof notion 4.0.5 .
 
 CATEGORIES=	x11
 
@@ -14,8 +13,8 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/lua
 
-# works with lua 5.1-5.3
-MODLUA_VERSION=	5.3
+# works with lua 5.1-5.4
+MODLUA_VERSION=	5.4
 
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xrandr c intl
 WANTLIB += m readline ${MODLUA_WANTLIB}
@@ -29,7 +28,8 @@ USE_GMAKE=	Yes
 
 MAKE_FLAGS=	ETCDIR=$(SYSCONFDIR)/notion \
 		LOCALBASE=${LOCALBASE} \
-		NOTION_RELEASE=${GH_TAGNAME}
+		NOTION_RELEASE=${GH_TAGNAME} \
+		LUA_VERSION=${MODLUA_VERSION}
 FAKE_FLAGS=	ETCDIR=$(PREFIX)/share/examples/notion \
 		MANDIR=$(PREFIX)/man \
 		PREFIX=${TRUEPREFIX}
@@ -39,12 +39,5 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L$(MODLUA_LIBDIR) -lintl -l$(MODLUA_LIB)
 
 NOTION_DIR=	${SYSCONFDIR}/notion
 SUBST_VARS+=	NOTION_DIR
-
-# XXX should set LUA_VERSION in MAKE_FLAGS instead, but that doesn't work
-# with our non-standard lua binary/pkg-config naming scheme
-
-pre-configure:
-	sed -e 's/5\.3\ 5\.2 5\.1/$(MODLUA_DEP_VERSION)/g' -i \
-		$(WRKSRC)/build/lua-detect.mk
 
 .include <bsd.port.mk>

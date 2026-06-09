@@ -3,7 +3,7 @@ libtu,libext need want gettext
 Index: build/libs.mk
 --- build/libs.mk.orig
 +++ build/libs.mk
-@@ -19,8 +19,8 @@ else
+@@ -10,14 +10,14 @@ CFLAGS += -DNOTION_RELEASE='"$(NOTION_RELEASE)"'
  LIBS_SUBDIRS += libtu
  
  LIBTU_DIR = $(TOPDIR)/libtu
@@ -12,9 +12,7 @@ Index: build/libs.mk
 +LIBTU_INCLUDES = -I$(TOPDIR) -I${LOCALBASE}/include
 +LIBTU_LIBS = -L$(LIBTU_DIR) -L${LOCALBASE}/lib -lintl -liconv -ltu
  
- endif
- 
-@@ -39,8 +39,8 @@ else
+ #libextl
  LIBS_SUBDIRS += libextl
  
  LIBEXTL_DIR = $(TOPDIR)/libextl
@@ -24,4 +22,3 @@ Index: build/libs.mk
 +LIBEXTL_LIBS = -L$(LIBEXTL_DIR) -L${LOCALBASE}/lib -lintl -liconv -lextl
  
  MKEXPORTS = $(LUA) $(LIBEXTL_DIR)/libextl-mkexports
- 
