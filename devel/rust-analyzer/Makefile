@@ -4,7 +4,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
 GH_TAGNAME =	2026-01-12
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME:S/-//g}
 
@@ -33,9 +33,11 @@ CONFIGURE_STYLE =	cargo
 # (otherwise it reports itself as version 0.0.0)
 MAKE_ENV += CFG_RELEASE=${GH_TAGNAME}
 
-# generate HTML docs
 post-build:
 	${MODCARGO_CARGO_RUN} xtask codegen
+
+# generate HTML docs
+pre-install:
 	cd ${WRKSRC}/docs/book && ${SETENV} ${MAKE_ENV} \
 		${LOCALBASE}/bin/mdbook build
 

@@ -1,0 +1,14 @@
+Don't add a browser-cache busting hash to the generated files.
+mdbook 0.5 made this the default behavior.
+
+Index: docs/book/book.toml
+--- docs/book/book.toml.orig
++++ docs/book/book.toml
+@@ -12,6 +12,7 @@ edit-url-template = "https://github.com/rust-lang/rust
+ git-repository-url = "https://github.com/rust-lang/rust-analyzer/tree/master/docs/book"
+ mathjax-support = true
+ site-url = "/book/"
++hash-files = false
+ 
+ [output.html.playground]
+ editable = true
