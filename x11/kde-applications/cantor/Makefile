@@ -6,21 +6,23 @@ CATEGORIES =	education math
 
 SHARED_LIBS +=  cantorlibs                56.0 # 17.08
 
-WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui GL KF6Archive
-WANTLIB += KF6Attica KF6Bookmarks KF6ColorScheme KF6Completion
-WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets
-WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets
-WANTLIB += KF6Parts KF6Service KF6Solid KF6SonnetUi KF6SyntaxHighlighting
-WANTLIB += KF6TextEditor KF6TextWidgets KF6WidgetsAddons KF6XmlGui
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Help Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6Sql
-WANTLIB += Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml c intl luajit-5.1 m poppler poppler-qt6
-WANTLIB += ${MODPY_WANTLIB} qalculate spectre util xml2 xslt
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} Analitza AnalitzaGui
+WANTLIB += GL KF6Archive KF6Attica KF6Bookmarks KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6CoreAddons KF6Crash KF6GuiAddons KF6I18n KF6IconThemes
+WANTLIB += KF6IconWidgets KF6ItemViews KF6JobWidgets KF6KIOCore
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6NewStuffCore
+WANTLIB += KF6NewStuffWidgets KF6Parts KF6Service KF6Solid KF6SonnetUi
+WANTLIB += KF6SyntaxHighlighting KF6TextEditor KF6TextWidgets
+WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Help
+WANTLIB += Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6Quick Qt6Sql Qt6Svg Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c intl luajit-5.1
+WANTLIB += m poppler poppler-qt6 qalculate spectre util xml2 xslt
 
-WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
+WANTLIB += lib/R/lib/R
+WANTLIB += lib/R/lib/Rblas
+WANTLIB += lib/R/lib/Rlapack
 
 MODULES +=	fortran \
 		lang/lua \
@@ -79,7 +81,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
-LIB_DEPENDS += math/R
+LIB_DEPENDS +=	math/R
 
 TEST_IS_INTERACTIVE =	X11
 

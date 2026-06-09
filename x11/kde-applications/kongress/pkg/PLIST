@@ -88,6 +88,5 @@ share/locale/zh_CN/LC_MESSAGES/kongress.mo
 share/locale/zh_CN/LC_MESSAGES/kongressac.mo
 share/locale/zh_TW/LC_MESSAGES/kongress.mo
 share/locale/zh_TW/LC_MESSAGES/kongressac.mo
-share/metainfo/
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/metainfo/org.kde.kongress.appdata.xml

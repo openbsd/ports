@@ -376,7 +376,6 @@ share/locale/vi/LC_MESSAGES/kaddressbook.mo
 share/locale/xh/LC_MESSAGES/kaddressbook.mo
 share/locale/zh_CN/LC_MESSAGES/kaddressbook.mo
 share/locale/zh_TW/LC_MESSAGES/kaddressbook.mo
-share/metainfo/
 share/metainfo/org.kde.kaddressbook.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -42,7 +42,6 @@ share/locale/tr/LC_MESSAGES/kde-itinerary.mo
 share/locale/uk/LC_MESSAGES/kde-itinerary.mo
 share/locale/zh_CN/LC_MESSAGES/kde-itinerary.mo
 share/locale/zh_TW/LC_MESSAGES/kde-itinerary.mo
-share/metainfo/
 share/metainfo/org.kde.itinerary.appdata.xml
 share/qlogging-categories6/org_kde_itinerary.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor

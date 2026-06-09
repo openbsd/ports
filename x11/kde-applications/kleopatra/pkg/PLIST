@@ -251,7 +251,6 @@ share/locale/zh_CN/LC_MESSAGES/kleopatra.mo
 share/locale/zh_CN/LC_MESSAGES/kwatchgnupg.mo
 share/locale/zh_TW/LC_MESSAGES/kleopatra.mo
 share/locale/zh_TW/LC_MESSAGES/kwatchgnupg.mo
-share/metainfo/
 share/metainfo/org.kde.kleopatra.appdata.xml
 share/mime/packages/application-vnd-kde-kleopatra.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor

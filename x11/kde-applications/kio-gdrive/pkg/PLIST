@@ -99,7 +99,6 @@ share/locale/tr/LC_MESSAGES/kio6_gdrive.mo
 share/locale/uk/LC_MESSAGES/kio6_gdrive.mo
 share/locale/zh_CN/LC_MESSAGES/kio6_gdrive.mo
 share/locale/zh_TW/LC_MESSAGES/kio6_gdrive.mo
-share/metainfo/
 share/metainfo/org.kde.kio_gdrive.metainfo.xml
 share/purpose/
 share/purpose/purpose_gdrive_config.qml
