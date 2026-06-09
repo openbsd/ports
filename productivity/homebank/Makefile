@@ -1,6 +1,6 @@
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.10
+DISTNAME =	homebank-5.10.1
 
 CATEGORIES =	productivity x11
 
@@ -37,8 +37,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 USE_GMAKE =	Yes
 
 NO_TEST =	Yes
-
-WRKDIST =		${WRKDIR}/${DISTNAME}.0
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
