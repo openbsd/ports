@@ -77,8 +77,6 @@ lib/python${MODPY_VERSION}/site-packages/typer/_click/${MODPY_PYCACHE}shell_comp
 lib/python${MODPY_VERSION}/site-packages/typer/_click/${MODPY_PYCACHE}shell_completion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/typer/_click/${MODPY_PYCACHE}termui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/typer/_click/${MODPY_PYCACHE}termui.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/typer/_click/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/typer/_click/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/typer/_click/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/typer/_click/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/typer/_click/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -96,7 +94,6 @@ lib/python${MODPY_VERSION}/site-packages/typer/_click/parser.py
 lib/python${MODPY_VERSION}/site-packages/typer/_click/py.typed
 lib/python${MODPY_VERSION}/site-packages/typer/_click/shell_completion.py
 lib/python${MODPY_VERSION}/site-packages/typer/_click/termui.py
-lib/python${MODPY_VERSION}/site-packages/typer/_click/testing.py
 lib/python${MODPY_VERSION}/site-packages/typer/_click/types.py
 lib/python${MODPY_VERSION}/site-packages/typer/_click/utils.py
 lib/python${MODPY_VERSION}/site-packages/typer/_completion_classes.py
