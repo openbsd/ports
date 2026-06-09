@@ -299,8 +299,16 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/ASIdentifiers_free.3
 @man lib/${EOPENSSL_V}/man/man3/ASIdentifiers_new.3
 @man lib/${EOPENSSL_V}/man/man3/ASN1_AUX.3
+@man lib/${EOPENSSL_V}/man/man3/ASN1_BIT_STRING_check.3
+@man lib/${EOPENSSL_V}/man/man3/ASN1_BIT_STRING_free.3
+@man lib/${EOPENSSL_V}/man/man3/ASN1_BIT_STRING_get_bit.3
 @man lib/${EOPENSSL_V}/man/man3/ASN1_BIT_STRING_get_length.3
+@man lib/${EOPENSSL_V}/man/man3/ASN1_BIT_STRING_name_print.3
+@man lib/${EOPENSSL_V}/man/man3/ASN1_BIT_STRING_new.3
+@man lib/${EOPENSSL_V}/man/man3/ASN1_BIT_STRING_num_asc.3
 @man lib/${EOPENSSL_V}/man/man3/ASN1_BIT_STRING_set1.3
+@man lib/${EOPENSSL_V}/man/man3/ASN1_BIT_STRING_set_asc.3
+@man lib/${EOPENSSL_V}/man/man3/ASN1_BIT_STRING_set_bit.3
 @man lib/${EOPENSSL_V}/man/man3/ASN1_ENUMERATED_get.3
 @man lib/${EOPENSSL_V}/man/man3/ASN1_ENUMERATED_get_int64.3
 @man lib/${EOPENSSL_V}/man/man3/ASN1_ENUMERATED_set.3
@@ -631,6 +639,10 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/BIO_new_ssl.3
 @man lib/${EOPENSSL_V}/man/man3/BIO_new_ssl_connect.3
 @man lib/${EOPENSSL_V}/man/man3/BIO_next.3
+@man lib/${EOPENSSL_V}/man/man3/BIO_nread.3
+@man lib/${EOPENSSL_V}/man/man3/BIO_nread0.3
+@man lib/${EOPENSSL_V}/man/man3/BIO_nwrite.3
+@man lib/${EOPENSSL_V}/man/man3/BIO_nwrite0.3
 @man lib/${EOPENSSL_V}/man/man3/BIO_parse_hostserv.3
 @man lib/${EOPENSSL_V}/man/man3/BIO_pending.3
 @man lib/${EOPENSSL_V}/man/man3/BIO_pop.3
@@ -2883,6 +2895,7 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/OSSL_BASIC_ATTR_CONSTRAINTS_free.3
 @man lib/${EOPENSSL_V}/man/man3/OSSL_BASIC_ATTR_CONSTRAINTS_it.3
 @man lib/${EOPENSSL_V}/man/man3/OSSL_BASIC_ATTR_CONSTRAINTS_new.3
+@man lib/${EOPENSSL_V}/man/man3/OSSL_BEGIN_ALLOW_DEPRECATED.3
 @man lib/${EOPENSSL_V}/man/man3/OSSL_CALLBACK.3
 @man lib/${EOPENSSL_V}/man/man3/OSSL_CMP_ATAV.3
 @man lib/${EOPENSSL_V}/man/man3/OSSL_CMP_ATAVS.3
@@ -3256,6 +3269,7 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/OSSL_ENCODER_to_data.3
 @man lib/${EOPENSSL_V}/man/man3/OSSL_ENCODER_to_fp.3
 @man lib/${EOPENSSL_V}/man/man3/OSSL_ENCODER_up_ref.3
+@man lib/${EOPENSSL_V}/man/man3/OSSL_END_ALLOW_DEPRECATED.3
 @man lib/${EOPENSSL_V}/man/man3/OSSL_ERR_STATE_free.3
 @man lib/${EOPENSSL_V}/man/man3/OSSL_ERR_STATE_new.3
 @man lib/${EOPENSSL_V}/man/man3/OSSL_ERR_STATE_restore.3
