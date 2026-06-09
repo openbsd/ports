@@ -1,6 +1,7 @@
 @option no-default-conflict
 @option is-branch
 @conflict llvm-${LLVM_PKGSPEC}
+@conflict lldb->=22.1.0,<22.1.7p0
 bin/amdgpu-arch-${LLVM_MAJOR}
 bin/analyze-build-${LLVM_MAJOR}
 bin/bugpoint-${LLVM_MAJOR}
@@ -119,7 +120,6 @@ bin/scan-build-py-${LLVM_MAJOR}
 bin/scan-view-${LLVM_MAJOR}
 bin/verify-uselistorder-${LLVM_MAJOR}
 bin/wasm-ld-${LLVM_MAJOR}
-bin/yaml2macho-core-${LLVM_MAJOR}
 ${LLVM_BASE}/
 ${LLVM_BASE}/bin/
 ${LLVM_BASE}/bin/amdgpu-arch
@@ -243,7 +243,6 @@ ${LLVM_BASE}/bin/scan-build-py
 ${LLVM_BASE}/bin/scan-view
 @bin ${LLVM_BASE}/bin/verify-uselistorder
 ${LLVM_BASE}/bin/wasm-ld
-@bin ${LLVM_BASE}/bin/yaml2macho-core
 ${LLVM_BASE}/include/
 ${LLVM_BASE}/include/clang/
 ${LLVM_BASE}/include/clang-c/

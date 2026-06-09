@@ -4,6 +4,9 @@ LLVM_PKGSPEC =	>=22,<23
 
 REVISION-main =	0
 
+REVISION-main =	0
+REVISION-lldb =	0
+
 SHARED_LIBS +=	LLVM		0.0 \
 		LTO		0.0 \
 		Remarks		0.0 \

@@ -1,18 +1,21 @@
 @option no-default-conflict
 @option is-branch
 @conflict lldb-${LLVM_PKGSPEC}
+@conflict llvm->=22.1.0,<22.1.7p0
 bin/lldb-${LLVM_MAJOR}
 bin/lldb-argdumper-${LLVM_MAJOR}
 bin/lldb-dap-${LLVM_MAJOR}
 bin/lldb-mcp-${LLVM_MAJOR}
 bin/lldb-server-${LLVM_MAJOR}
 bin/lldb-tblgen-${LLVM_MAJOR}
+bin/yaml2macho-core-${LLVM_MAJOR}
 @bin ${LLVM_BASE}/bin/lldb
 @bin ${LLVM_BASE}/bin/lldb-argdumper
 @bin ${LLVM_BASE}/bin/lldb-dap
 @bin ${LLVM_BASE}/bin/lldb-mcp
 @bin ${LLVM_BASE}/bin/lldb-server
 @bin ${LLVM_BASE}/bin/lldb-tblgen
+@bin ${LLVM_BASE}/bin/yaml2macho-core
 ${LLVM_BASE}/include/lldb/
 ${LLVM_BASE}/include/lldb/API/
 ${LLVM_BASE}/include/lldb/API/LLDB.h
