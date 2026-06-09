@@ -1,6 +1,6 @@
 COMMENT=		functional language for building scalable applications
 
-V=			1.20.0
+V=			1.20.1
 DIST_TUPLE=		github elixir-lang elixir v${V} .
 
 CATEGORIES=		lang
