@@ -3,7 +3,7 @@
 
 COMMENT =	HTTP/2-based RPC framework
 
-V =		1.81.0
+V =		1.81.1
 DISTNAME =	grpc-${V}
 
 DIST_TUPLE +=	github grpc grpc v${V} .
@@ -15,7 +15,7 @@ SHARED_LIBS +=	grpc++_alts               1.0 # 0.0
 SHARED_LIBS +=	grpc++_error_details      0.0 # 0.0
 SHARED_LIBS +=	grpc++_reflection         3.0 # 0.0
 SHARED_LIBS +=	grpc++_unsecure           4.0 # 0.0
-SHARED_LIBS +=	grpc                      8.0 # 0.0
+SHARED_LIBS +=	grpc                      9.0 # 0.0
 SHARED_LIBS +=	grpc_authorization_provider 9.0 # 0.0
 SHARED_LIBS +=	grpc_plugin_support       4.0 # 0.0
 SHARED_LIBS +=	grpc_unsecure             9.0 # 0.0
