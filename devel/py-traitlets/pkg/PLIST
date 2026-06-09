@@ -1,5 +1,5 @@
-@pkgpath devel/py-traitlets,python3
 @conflict py-traitlets-*
+@pkgpath devel/py-traitlets,python3
 lib/python${MODPY_VERSION}/site-packages/traitlets/
 lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_DISTV}.dist-info/METADATA

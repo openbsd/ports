@@ -1,9 +1,8 @@
 COMMENT =		configuration system for Python applications
 
-MODPY_DISTV =	5.14.3
+MODPY_DISTV =		5.15.1
 DISTNAME =		traitlets-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		devel
 
