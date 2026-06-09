@@ -1,7 +1,7 @@
 COMMENT =		modern terminal IRC client
 
 MODGO_MODNAME =		git.sr.ht/~delthas/senpai
-MODGO_VERSION =		v0.4.1
+MODGO_VERSION =		v0.5.0
 DISTNAME =		senpai-${MODGO_VERSION}
 
 CATEGORIES =		net
@@ -18,6 +18,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 USE_GMAKE =		yes
 MAKE_FLAGS =		GIT=
+
+MODGO_LDFLAGS =		-X git.sr.ht/~delthas/senpai.version=${MODGO_VERSION}
 
 post-build:
 	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKSRC} ${MAKE_FLAGS} doc

@@ -1,12 +1,15 @@
 MODGO_MODULES =	\
 	codeberg.org/emersion/go-scfg		 v0.1.0 \
-	git.sr.ht/~rockorager/vaxis		 v0.13.0 \
+	git.sr.ht/~rockorager/vaxis		 v0.15.1-0.20260305170555-c3371e09d426 \
 	github.com/containerd/console		 v1.0.4 \
 	github.com/creack/pty			 v1.1.18 \
+	github.com/dave/jennifer		 v1.7.1 \
 	github.com/davecgh/go-spew		 v1.1.1 \
-	github.com/delthas/go-libnp		 v0.1.0 \
-	github.com/delthas/go-localeinfo	 v0.1.0 \
+	github.com/delthas/go-libnp		 v0.2.0 \
+	github.com/delthas/go-localeinfo	 v0.2.0 \
 	github.com/disintegration/imaging	 v1.6.2 \
+	github.com/emersion/go-varlink		 v0.0.0-20251006073247-e7ad9f7950c7 \
+	github.com/go-ole/go-ole		 v1.3.0 \
 	github.com/godbus/dbus/v5		 v5.1.0 \
 	github.com/mattn/go-runewidth		 v0.0.16 \
 	github.com/mattn/go-sixel		 v0.0.5 \
@@ -16,7 +19,6 @@ MODGO_MODULES =	\
 	github.com/soniakeys/quant		 v1.0.0 \
 	github.com/stretchr/testify		 v1.8.3 \
 	golang.org/x/crypto			 v0.33.0 \
-	golang.org/x/exp			 v0.0.0-20230522175609-2e198f4a06a1 \
 	golang.org/x/image			 v0.24.0 \
 	golang.org/x/mod			 v0.10.0 \
 	golang.org/x/net			 v0.35.0 \
