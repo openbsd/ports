@@ -3,7 +3,7 @@
 # patches with devel/llvm
 COMMENT =	LLVM Fortran compiler driver
 DISTNAME =	flang-driver-8.0.1.20190819
-REVISION =	0
+REVISION =	1
 
 GH_PROJECT =	flang-driver
 GH_COMMIT =	ea411daaafc7ec5b85be1cd7857c0ceab42e54aa
@@ -17,7 +17,7 @@ MODULES =	devel/cmake \
 		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-BUILD_DEPENDS =	devel/llvm/19 \
+BUILD_DEPENDS =	devel/llvm/21 \
 		textproc/libxml
 
 CONFIGURE_ARGS =	-DLIBCLANG_BUILD_STATIC=On \

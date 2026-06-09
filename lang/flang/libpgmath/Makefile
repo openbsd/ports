@@ -2,7 +2,7 @@
 COMMENT =	LLVM Fortran math library
 DISTNAME =	flang-8.0.1.20200707
 PKGNAME =	${DISTNAME:S/flang/libpgmath/}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=	pgmath                    4.4 # 8.0
 
@@ -26,7 +26,7 @@ MODCMAKE_LDFLAGS =	-static-libstdc++ -static-libgcc
 MODULES =	devel/cmake \
 		lang/python
 
-BUILD_DEPENDS =	devel/llvm/19
+BUILD_DEPENDS =	devel/llvm/21
 
 # If you delete flang, this should go too.
 RUN_DEPENDS =	lang/flang/driver

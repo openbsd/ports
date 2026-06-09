@@ -1,6 +1,6 @@
 COMMENT =	LLVM Fortran compiler passes and runtime library
 DISTNAME =	flang-8.0.1.20200707
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	flang                     2.1 # 8.0
 SHARED_LIBS +=	flangrti                  5.0 # 8.0
@@ -16,7 +16,7 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
-BUILD_DEPENDS =	devel/llvm/19 \
+BUILD_DEPENDS =	devel/llvm/21 \
 		${RUN_DEPENDS}
 
 LIB_DEPENDS =	devel/libaio_compat \
