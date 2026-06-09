@@ -1479,6 +1479,7 @@ share/examples/apache2/error/HTTP_BAD_REQUEST.html.var
 share/examples/apache2/error/HTTP_FORBIDDEN.html.var
 @sample /var/www/error/HTTP_FORBIDDEN.html.var
 share/examples/apache2/error/HTTP_GATEWAY_TIME_OUT.html.var
+@sample /var/www/error/HTTP_GATEWAY_TIME_OUT.html.var
 share/examples/apache2/error/HTTP_GONE.html.var
 @sample /var/www/error/HTTP_GONE.html.var
 share/examples/apache2/error/HTTP_INTERNAL_SERVER_ERROR.html.var
