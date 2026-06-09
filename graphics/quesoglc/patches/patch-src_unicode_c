@@ -1,5 +1,8 @@
 Fix build with recent fribidi
 
+Fix base by making it a paragraph direction variable, not a character
+bidi type variable.
+
 Index: src/unicode.c
 --- src/unicode.c.orig
 +++ src/unicode.c
@@ -16,3 +19,21 @@ Index: src/unicode.c
  
  
  /* Find a Unicode name from its code */
+@@ -550,7 +550,7 @@ GLCchar32* __glcConvertToVisualUcs4(__GLCcontext* inCo
+ {
+   GLCchar32* string = NULL;
+   int length = 0;
+-  FriBidiCharType base = FRIBIDI_TYPE_ON;
++  FriBidiParType base = FRIBIDI_PAR_ON;
+   GLCchar32* visualString = NULL;
+ 
+   assert(inString);
+@@ -677,7 +677,7 @@ GLCchar32* __glcConvertCountedStringToVisualUcs4(__GLC
+ 						const GLint inCount)
+ {
+   GLCchar32* string = NULL;
+-  FriBidiCharType base = FRIBIDI_TYPE_ON;
++  FriBidiParType base = FRIBIDI_PAR_ON;
+   GLCchar32* visualString = NULL;
+ 
+   assert(inString);

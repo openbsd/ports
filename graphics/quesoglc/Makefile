@@ -1,7 +1,7 @@
 COMMENT=	implementation of the OpenGL Character Renderer
 
 DISTNAME=	quesoglc-0.7.2
-REVISION=	12
+REVISION=	13
 CATEGORIES=	graphics
 SITES=		${SITE_SOURCEFORGE:=quesoglc/}
 
