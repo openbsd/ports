@@ -3,7 +3,7 @@ cope with openbsd ancient nameser.h
 Index: plug-ins/mdns_spoof/mdns_spoof.c
 --- plug-ins/mdns_spoof/mdns_spoof.c.orig
 +++ plug-ins/mdns_spoof/mdns_spoof.c
-@@ -207,21 +207,21 @@ static int parse_line (const char *str, int line, int 
+@@ -233,21 +233,21 @@ static int parse_line (const char *str, int line, int 
                    ETTER_MDNS, line, str);
           return (0);
        }
@@ -28,7 +28,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
        *name_p = name;
        *ip_p = ip;
        return (1);
-@@ -250,7 +250,7 @@ static int parse_line (const char *str, int line, int 
+@@ -276,7 +276,7 @@ static int parse_line (const char *str, int line, int 
           return 0;
        }
  
@@ -37,7 +37,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
        *name_p = name;
        *ip_p = ip;
        *port_p = port & 0x0000ffff;
-@@ -312,7 +312,7 @@ static int parse_line (const char *str, int line, int 
+@@ -338,7 +338,7 @@ static int parse_line (const char *str, int line, int 
        if ((class & ~MDNS_QU_FLAG) != ns_c_in)
           return;
  
@@ -46,7 +46,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
           struct ip_addr *reply;
           struct ip_addr *sender;
           struct ip_addr *target;
-@@ -361,7 +361,7 @@ static int parse_line (const char *str, int line, int 
+@@ -387,7 +387,7 @@ static int parse_line (const char *str, int line, int 
           
           USER_MSG("mdns_spoof: [%s %s] spoofed to [%s]\n", name, type_str(type), ip_addr_ntoa(reply, tmp));
        }
@@ -55,7 +55,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
           struct ip_addr *reply;
           struct ip_addr *sender;
           struct ip_addr *target;
-@@ -410,7 +410,7 @@ static int parse_line (const char *str, int line, int 
+@@ -436,7 +436,7 @@ static int parse_line (const char *str, int line, int 
           
           USER_MSG("mdns_spoof: [%s %s] spoofed to [%s]\n", name, type_str(type), ip_addr_ntoa(reply, tmp));
         }
@@ -64,7 +64,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
           struct ip_addr *reply;
           struct ip_addr *sender;
           struct ip_addr *target;
-@@ -453,7 +453,7 @@ static int parse_line (const char *str, int line, int 
+@@ -479,7 +479,7 @@ static int parse_line (const char *str, int line, int 
           
           USER_MSG("mdns_spoof: [%s %s] spoofed to [%s]\n", name, type_str(type), a);
        }
@@ -73,7 +73,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
           struct ip_addr *reply;
           struct ip_addr *sender;
           struct ip_addr *target;
-@@ -572,7 +572,7 @@ static int get_spoofed_a(const char *a, struct ip_addr
+@@ -598,7 +598,7 @@ static int get_spoofed_a(const char *a, struct ip_addr
     struct mdns_spoof_entry *d;
  
     SLIST_FOREACH(d, &mdns_spoof_head, next) {
@@ -82,7 +82,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
  
           /* return the pointer to the struct */
           *ip = &d->ip;
-@@ -592,7 +592,7 @@ static int get_spoofed_aaaa(const char *a, struct ip_a
+@@ -618,7 +618,7 @@ static int get_spoofed_aaaa(const char *a, struct ip_a
     struct mdns_spoof_entry *d;
  
     SLIST_FOREACH(d, &mdns_spoof_head, next) {
@@ -91,7 +91,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
  
           /* return the pointer to the struct */
           *ip = &d->ip;
-@@ -687,7 +687,7 @@ static int get_spoofed_ptr(const char *arpa, char **a,
+@@ -713,7 +713,7 @@ static int get_spoofed_ptr(const char *arpa, char **a,
         * we cannot return whildcards in the reply, 
         * so skip the entry if the name contains a '*'
         */
@@ -100,7 +100,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
  
           /* return the pointer to the name */
           *a = d->name;
-@@ -705,7 +705,7 @@ static int get_spoofed_srv(const char *name, struct ip
+@@ -731,7 +731,7 @@ static int get_spoofed_srv(const char *name, struct ip
      struct mdns_spoof_entry *d;
  
      SLIST_FOREACH(d, &mdns_spoof_head, next) {
@@ -109,7 +109,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
              /* return the pointer to the struct */
              *ip = &d->ip;
              *port = d->port;
-@@ -811,12 +811,12 @@ static int prep_mdns_reply(struct packet_object *po, u
+@@ -837,12 +837,12 @@ static int prep_mdns_reply(struct packet_object *po, u
  
  char *type_str (int type)
  {
@@ -127,7 +127,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
  }
  
  static void mdns_spoof_dump(void)
-@@ -827,7 +827,7 @@ static void mdns_spoof_dump(void)
+@@ -853,7 +853,7 @@ static void mdns_spoof_dump(void)
     DEBUG_MSG("mdns_spoof entries:");
     SLIST_FOREACH(d, &mdns_spoof_head, next) {
        if (ntohs(d->ip.addr_type) == AF_INET) {
@@ -136,7 +136,7 @@ Index: plug-ins/mdns_spoof/mdns_spoof.c
              DEBUG_MSG("  %s -> [%s:%d], type %s, family IPv4", 
                        d->name, ip_addr_ntoa(&d->ip, tmp), d->port , type_str(d->type));
           }
-@@ -837,7 +837,7 @@ static void mdns_spoof_dump(void)
+@@ -863,7 +863,7 @@ static void mdns_spoof_dump(void)
           }
        }
        else if (ntohs(d->ip.addr_type) == AF_INET6) {

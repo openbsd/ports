@@ -1,7 +1,7 @@
 Index: man/ettercap.8.in
 --- man/ettercap.8.in.orig
 +++ man/ettercap.8.in
-@@ -174,7 +174,7 @@ the subnet".
+@@ -174,7 +174,7 @@ means "all the hosts in the subnet".
  .SH PRIVILEGES DROPPING
  ettercap needs root privileges to open the Link Layer sockets. After the
  initialization phase, the root privs are not needed anymore, so ettercap drops

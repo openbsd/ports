@@ -1,9 +1,11 @@
 bin/ettercap-pkexec
 @man man/man8/ettercap-pkexec.8
 share/applications/ettercap.desktop
+share/icons/hicolor/scalable/apps/ettercap.svg
 share/metainfo/
 share/metainfo/ettercap.metainfo.xml
-share/pixmaps/
-share/pixmaps/ettercap.svg
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.pkexec.ettercap.policy
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

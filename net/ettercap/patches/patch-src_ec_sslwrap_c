@@ -1,17 +1,11 @@
 Index: src/ec_sslwrap.c
 --- src/ec_sslwrap.c.orig
 +++ src/ec_sslwrap.c
-@@ -71,11 +71,11 @@
- #define TLS_server_method SSLv23_server_method
+@@ -72,6 +72,7 @@
  #endif
  
--#if (OPENSSL_VERSION_NUMBER >= 0x10100000L)
-+#if (OPENSSL_VERSION_NUMBER >= 0x10100000L) && !defined(LIBRESSL_VERSION_NUMBER)
+ #if (OPENSSL_VERSION_NUMBER >= 0x10100000L) && !defined(LIBRESSL_VERSION_NUMBER)
++/* wants at least SSL_CONF_CTX */
  #define HAVE_OPENSSL_1_1_0
- #endif
- 
--#if (OPENSSL_VERSION_NUMBER >= 0x10101000L)
-+#if (OPENSSL_VERSION_NUMBER >= 0x10101000L) && !defined(LIBRESSL_VERSION_NUMBER)
- #define HAVE_OPENSSL_1_1_1
  #endif
  

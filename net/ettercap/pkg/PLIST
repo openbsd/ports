@@ -40,7 +40,6 @@ lib/ettercap/
 @lib lib/libettercap.so.${LIBettercap_VERSION}
 @man man/man5/etter.conf.5
 @man man/man8/ettercap.8
-@man man/man8/ettercap_curses.8
 @man man/man8/ettercap_plugins.8
 @man man/man8/etterfilter.8
 @man man/man8/etterlog.8

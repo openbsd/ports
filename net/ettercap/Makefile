@@ -3,11 +3,10 @@ SHARED_LIBS +=	ettercap-ui 0.0
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 
-V=		0.8.3.1
+V=		0.8.4.1
 DISTNAME=	ettercap-$V
 CATEGORIES=	net
 SITES=		https://github.com/Ettercap/ettercap/releases/download/v$V/
-REVISION=	0
 
 HOMEPAGE=	https://www.ettercap-project.org/
 
@@ -15,18 +14,18 @@ HOMEPAGE=	https://www.ettercap-project.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curl curses form iconv lib/libnet-1.1/net=11 menu
-WANTLIB += panel pcap pcre pthread ssl z
+WANTLIB += panel pcap pcre2-8 pthread ssl z
 
 MODULES=	devel/cmake
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 DPB_PROPERTIES=	parallel
 
-BUILD_DEPENDS+=	devel/bison
+BUILD_DEPENDS=	devel/bison
 
 LIB_DEPENDS=	net/libnet/1.1 \
 		net/curl \
 		converters/libiconv \
-		devel/pcre
+		devel/pcre2
 
 FLAVORS=	no_x11
 FLAVOR?=
@@ -37,35 +36,29 @@ FLAVOR?=
 # can't be used because it introduces other errors, and, more
 # importantly, because using those NS_* macros in src/ec_inet.c is just
 # wrong.
-CFLAGS+=	-DNS_IN6ADDRSZ=16 -DNS_INT16SZ=2
-
-CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS+= -DMAN_INSTALLDIR="${TRUEPREFIX}/man" \
+CFLAGS +=	-DNS_IN6ADDRSZ=16 -DNS_INT16SZ=2 \
+		-I${LOCALBASE}/include
+CONFIGURE_ARGS=	-DMAN_INSTALLDIR="${TRUEPREFIX}/man" \
 		-DENABLE_GEOIP=off \
-		-DBUNDLED_LIBS=off
+		-DBUNDLED_LIBS=off \
+		-DENABLE_IPV6=on \
+		-DINSTALL_SYSCONFDIR=${SYSCONFDIR}
 
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+# seems extremely crashy (use after free, etc) in curses mode
+# whereas plaintext/gtk are not quite as bad
+CONFIGURE_ARGS += -DENABLE_CURSES=off
 
 .if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS+= -DENABLE_GTK=off
+CONFIGURE_ARGS += -DENABLE_GTK=off
 .else
-RUN_DEPENDS+=	devel/desktop-file-utils \
+RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
-CONFIGURE_ARGS+= -DGTK_BUILD_TYPE=GTK2
-# when built with gtk3, it fails at runtime with:
-# gtk_list_store_get_value: assertion 'iter_is_valid (iter, list_store)' failed
-#LIB_DEPENDS+=	x11/gtk+3
-#WANTLIB += atk-1.0 cairo freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
-#WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 pango-1.0
-LIB_DEPENDS+=	x11/gtk+2
-WANTLIB += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pangoxft-1.0
+CONFIGURE_ARGS += -DGTK_BUILD_TYPE=GTK3
+LIB_DEPENDS +=	x11/gtk+3
+WANTLIB += atk-1.0 cairo freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 pango-1.0
 .endif
 
 NO_TEST=	Yes
-
-post-install:
-	mv ${WRKINST}/etc/ettercap ${PREFIX}/share/examples/ettercap
 
 .include <bsd.port.mk>

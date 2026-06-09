@@ -3,7 +3,7 @@ cope with openbsd ancient nameser.h
 Index: plug-ins/dns_spoof/dns_spoof.c
 --- plug-ins/dns_spoof/dns_spoof.c.orig
 +++ plug-ins/dns_spoof/dns_spoof.c
-@@ -232,7 +232,7 @@ static int load_db(void)
+@@ -247,7 +247,7 @@ static int load_db(void)
        d->ttl = ttl;
  
        /* convert the ip address */
@@ -12,7 +12,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
           /* Nothing to convert for TXT - just copy the string */
           d->text = strndup(ip, 255);
          if (d->text == NULL) {
-@@ -291,28 +291,28 @@ static int parse_line(const char *str, int line, int *
+@@ -306,28 +306,28 @@ static int parse_line(const char *str, int line, int *
                    ETTER_DNS, line, str);
           return (0);
        }
@@ -45,7 +45,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
        *name_p = name;
        *ip_p = ip;
        return (1);
-@@ -336,7 +336,7 @@ static int parse_line(const char *str, int line, int *
+@@ -351,7 +351,7 @@ static int parse_line(const char *str, int line, int *
  
        if (ttl > MAX_DNS_TTL) ttl = 3600; /* keep TTL within DNS standard limits (2^31 - 1) - see RFC 2181 */
  
@@ -54,7 +54,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
        *name_p = name;
        *ip_p = txt;
        *ttl_p = ttl;
-@@ -354,7 +354,7 @@ static int parse_line(const char *str, int line, int *
+@@ -369,7 +369,7 @@ static int parse_line(const char *str, int line, int *
           return (0);
        }
  
@@ -63,7 +63,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
        *name_p = name;
        *ip_p = ip_tmp;
        *port_p = port;
-@@ -528,12 +528,12 @@ static int prepare_dns_reply(u_char *data, const char 
+@@ -543,12 +543,12 @@ static int prepare_dns_reply(u_char *data, const char 
     is_negative = false;
     
     /* it is and address resolution (name to ip) */
@@ -78,7 +78,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
              goto any_aaaa;
            else
              return -E_NOTFOUND;
-@@ -591,12 +591,12 @@ static int prepare_dns_reply(u_char *data, const char 
+@@ -606,12 +606,12 @@ static int prepare_dns_reply(u_char *data, const char 
  any_aaaa:
  
     /* also care about AAAA records */
@@ -93,7 +93,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
               goto any_mx;
            else
               return -E_NOTFOUND;
-@@ -654,12 +654,12 @@ any_aaaa:
+@@ -669,12 +669,12 @@ any_aaaa:
  any_mx:
  
     /* it is an MX query (mail to ip) */
@@ -108,7 +108,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
              goto any_wins;
            else
              return -E_NOTFOUND;
-@@ -748,12 +748,12 @@ any_mx:
+@@ -763,12 +763,12 @@ any_mx:
  any_wins:
  
     /* it is an WINS query (NetBIOS-name to ip) */
@@ -123,7 +123,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
              goto any_txt;
            else
              return -E_NOTFOUND;
-@@ -797,7 +797,7 @@ any_wins:
+@@ -812,7 +812,7 @@ any_wins:
  any_txt:
  
     /* it's a descriptive TXT record */
@@ -132,7 +132,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
        char *txt;
        u_int8 txtlen;
        u_int16 datalen;
-@@ -805,7 +805,7 @@ any_txt:
+@@ -820,7 +820,7 @@ any_txt:
        /* found the reply in the list */
        if (get_spoofed_txt(name, &txt, &ttl) != E_SUCCESS) {
           /* in case of ANY we have to proceed with the next section */
@@ -141,7 +141,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
              goto exit;
           else
              return -E_NOTFOUND;
-@@ -844,7 +844,7 @@ any_txt:
+@@ -859,7 +859,7 @@ any_txt:
     } /* TXT */
  
     /* it is a reverse query (ip to name) */
@@ -150,7 +150,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
        
        u_char *answer, *p;
        char *a;
-@@ -891,7 +891,7 @@ any_txt:
+@@ -906,7 +906,7 @@ any_txt:
     } /* PTR */
  
     /* it is a SRV query (service discovery) */
@@ -159,7 +159,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
  
        char tgtoffset[2];
        u_int16 port;
-@@ -1002,7 +1002,7 @@ any_txt:
+@@ -1017,7 +1017,7 @@ any_txt:
              type_str(type), name, ip_addr_ntoa(reply, tmp), port, ttl);
     } /* SRV */
  
@@ -168,7 +168,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
  
        /* allocate memory for authorative answer */
        len = 46;
-@@ -1053,7 +1053,7 @@ static int get_spoofed_a(const char *a, struct ip_addr
+@@ -1068,7 +1068,7 @@ static int get_spoofed_a(const char *a, struct ip_addr
     struct dns_spoof_entry *d;
  
     SLIST_FOREACH(d, &dns_spoof_head, next) {
@@ -177,7 +177,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
  
           /* return the pointer to the struct */
           *ip = &d->ip;
-@@ -1074,7 +1074,7 @@ static int get_spoofed_aaaa(const char *a, struct ip_a
+@@ -1089,7 +1089,7 @@ static int get_spoofed_aaaa(const char *a, struct ip_a
      struct dns_spoof_entry *d;
      
      SLIST_FOREACH(d, &dns_spoof_head, next) {
@@ -186,7 +186,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
              /* return the pointer to the struct */
              *ip = &d->ip;
              *ttl = d->ttl;
-@@ -1094,7 +1094,7 @@ static int get_spoofed_txt(const char *name, char **tx
+@@ -1109,7 +1109,7 @@ static int get_spoofed_txt(const char *name, char **tx
     struct dns_spoof_entry *d;
  
     SLIST_FOREACH(d, &dns_spoof_head, next) {
@@ -195,7 +195,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
           /* return the pointer to the string */
           *txt = d->text;
           *ttl = d->ttl;
-@@ -1191,7 +1191,7 @@ static int get_spoofed_ptr(const char *arpa, char **a,
+@@ -1206,7 +1206,7 @@ static int get_spoofed_ptr(const char *arpa, char **a,
         * we cannot return whildcards in the reply, 
         * so skip the entry if the name contains a '*'
         */
@@ -204,7 +204,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
  
           /* return the pointer to the name */
           *a = d->name;
-@@ -1212,7 +1212,7 @@ static int get_spoofed_mx(const char *a, struct ip_add
+@@ -1227,7 +1227,7 @@ static int get_spoofed_mx(const char *a, struct ip_add
     struct dns_spoof_entry *d;
  
     SLIST_FOREACH(d, &dns_spoof_head, next) {
@@ -213,7 +213,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
  
           /* return the pointer to the struct */
           *ip = &d->ip;
-@@ -1253,7 +1253,7 @@ static int get_spoofed_srv(const char *name, struct ip
+@@ -1268,7 +1268,7 @@ static int get_spoofed_srv(const char *name, struct ip
      struct dns_spoof_entry *d;
  
      SLIST_FOREACH(d, &dns_spoof_head, next) {
@@ -222,7 +222,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
             /* return the pointer to the struct */
             *ip = &d->ip;
             *port = d->port;
-@@ -1268,14 +1268,14 @@ static int get_spoofed_srv(const char *name, struct ip
+@@ -1283,14 +1283,14 @@ static int get_spoofed_srv(const char *name, struct ip
  
  char *type_str (int type)
  {
@@ -244,7 +244,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
  }
  
  static void dns_spoof_dump(void)
-@@ -1288,12 +1288,12 @@ static void dns_spoof_dump(void)
+@@ -1303,12 +1303,12 @@ static void dns_spoof_dump(void)
  
     DEBUG_MSG("dns_spoof entries:");
     SLIST_FOREACH(d, &dns_spoof_head, next) {
@@ -259,7 +259,7 @@ Index: plug-ins/dns_spoof/dns_spoof.c
              DEBUG_MSG("  %s -> [%s:%d], type %s, TTL %u, family IPv4",
                        d->name, ip_addr_ntoa(&d->ip, tmp), d->port, type_str(d->type), d->ttl);
           } 
-@@ -1304,7 +1304,7 @@ static void dns_spoof_dump(void)
+@@ -1319,7 +1319,7 @@ static void dns_spoof_dump(void)
        }
        else if (ntohs(d->ip.addr_type) == AF_INET6)
        {

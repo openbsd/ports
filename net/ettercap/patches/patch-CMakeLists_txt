@@ -1,7 +1,16 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -132,7 +132,7 @@ if(NOT DISABLE_RPATH)
+@@ -114,6 +114,8 @@ set(INSTALL_EXECPREFIX ${CMAKE_INSTALL_PREFIX} CACHE P
+ set(INSTALL_BINDIR  ${CMAKE_INSTALL_FULL_BINDIR} CACHE PATH "Binary files installation directory")
+ if(OS_DARWIN OR OS_BSD_FREE OR OS_WINDOWS)
+   set(INSTALL_SYSCONFDIR ${CMAKE_INSTALL_PREFIX}/etc CACHE PATH "System configuration directory")
++endif()
++if(OS_DARWIN OR OS_BSD_FREE OR OS_WINDOWS OR OS_BSD_OPEN)
+   set(POLKIT_DIR ${CMAKE_INSTALL_FULL_DATADIR}/polkit-1/actions/ CACHE PATH "Polkit installation directory")
+ else()
+ #at least on ubuntu, polkit dir couldn't be /usr/local/share, but should be /usr/share
+@@ -133,7 +135,7 @@ if(NOT DISABLE_RPATH)
  endif()
  
  # set general build flags for debug build-type
@@ -10,7 +19,7 @@ Index: CMakeLists.txt
  ## append ASAN build flags if compiler version has support
  #if("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
  #   if(CMAKE_C_COMPILER_VERSION VERSION_GREATER 4.8)
-@@ -153,7 +153,7 @@ set(CMAKE_C_FLAGS_DEBUG "-O0 -ggdb3 -DDEBUG -fno-commo
+@@ -154,7 +156,7 @@ set(CMAKE_C_FLAGS_DEBUG "-O0 -ggdb3 -DDEBUG -fno-commo
  #endif()
  
  # set build flags for release build-type

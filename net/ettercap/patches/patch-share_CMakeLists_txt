@@ -1,0 +1,12 @@
+Index: share/CMakeLists.txt
+--- share/CMakeLists.txt.orig
++++ share/CMakeLists.txt
+@@ -50,7 +50,7 @@ endforeach()
+ install(FILES
+         ${CMAKE_CURRENT_BINARY_DIR}/${EC_CONFFILES}
+         ${CMAKE_CURRENT_BINARY_DIR}/etter.conf
+-        DESTINATION ${INSTALL_SYSCONFDIR}/ettercap)
++        DESTINATION ${INSTALL_DATADIR}/examples/ettercap)
+ install(FILES
+         ${CMAKE_CURRENT_BINARY_DIR}/${EC_DATAFILES}
+         DESTINATION ${INSTALL_DATADIR}/ettercap)
