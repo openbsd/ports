@@ -1,0 +1,16 @@
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -209,9 +209,9 @@ main (int argc, char *argv[])
+ 	/* It looks like we can't hide widgets attached to a grid,
+ 	   so the next best thing is to just `null them out':
+ 	 */
+-	gtk_label_set_label (glade_xml_get_widget (gladexml, "label205"), "");
+-	gtk_label_set_label (glade_xml_get_widget (gladexml, "label206"), "");
+-	gtk_label_set_label (glade_xml_get_widget (gladexml, "label207"), "");
++	gtk_label_set_label (GTK_LABEL(glade_xml_get_widget (gladexml, "label205")), "");
++	gtk_label_set_label (GTK_LABEL(glade_xml_get_widget (gladexml, "label206")), "");
++	gtk_label_set_label (GTK_LABEL(glade_xml_get_widget (gladexml, "label207")), "");
+ #endif
+ 
+ 	init();
