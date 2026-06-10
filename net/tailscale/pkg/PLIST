@@ -44,6 +44,8 @@
 @comment bin/tl-longchain
 @comment bin/tsconnect
 @bin bin/tsidp
+@comment bin/tsnet-proxy
+@comment bin/tsp
 @comment bin/tta
 @comment bin/vet
 @comment bin/viewer
