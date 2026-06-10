@@ -4,12 +4,12 @@ COMMENT-main=	DNS library modelled after Net::DNS
 COMMENT-drill=	DNS debugger
 COMMENT-utils=	LDNS utilities
 
-V=		1.9.1
+V=		1.9.2
 DISTNAME=	ldns-$V
 PKGNAME-main=	libldns-$V
 PKGNAME-drill=	drill-$V
 
-SHARED_LIBS +=	ldns                 10.0      # 9.0
+SHARED_LIBS +=	ldns                 11.0      # 12.0
 
 CATEGORIES=	net
 
