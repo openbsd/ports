@@ -15,6 +15,8 @@ COMMENT-src =		Rust source component
 V =			1.96.0
 DISTNAME =		rustc-${V}-src
 
+REVISION-gdb =		0
+
 # always keep REVISION-bootstrap in sync with REVISION-main (if defined)
 # (setting only REVISION is also properly managed)
 .ifdef REVISION-main
@@ -148,6 +150,12 @@ BUILD_DEPENDS +=	devel/gdb
 MODULES +=			lang/clang
 MODCLANG_VERSION =		21
 MODCLANG_COMPILER_LINKS =	No
+
+# (BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk)
+. if ${BUILD_LLDB:L} == yes && 
+RUN_DEPENDS-gdb +=	devel/llvm/${MODCLANG_VERSION},-lldb
+. endif
+
 .else
 WANTLIB-main +=		execinfo
 .endif
@@ -158,10 +166,6 @@ LIB_DEPENDS-bootstrap =	${LIB_DEPENDS-main}
 
 RUN_DEPENDS-gdb +=	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 			devel/gdb
-# BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk
-.if ${BUILD_LLDB:L} == yes
-RUN_DEPENDS-gdb +=	devel/llvm/20,-lldb
-.endif
 RUN_DEPENDS-clippy +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 RUN_DEPENDS-rustfmt +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 RUN_DEPENDS-src +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
