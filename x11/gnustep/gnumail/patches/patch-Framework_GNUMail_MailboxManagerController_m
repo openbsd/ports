@@ -1,0 +1,24 @@
+Address llvm22 fallout
+Index: Framework/GNUMail/MailboxManagerController.m
+--- Framework/GNUMail/MailboxManagerController.m.orig
++++ Framework/GNUMail/MailboxManagerController.m
+@@ -2465,8 +2465,8 @@ static MailboxManagerController *singleInstance = nil;
+ 	  folderName: [Utilities pathOfFolderFromFolderNode: (FolderNode *)item  separator: '/']
+ 	  username: aUsername];
+   
+-  [self _reloadFoldersAndExpandParentsFromNode: [item parent]
+-	selectNodeWithPath: [Utilities completePathForFolderNode: [item parent]
++  [self _reloadFoldersAndExpandParentsFromNode: [(FolderNode *)item parent]
++	selectNodeWithPath: [Utilities completePathForFolderNode: [(FolderNode *)item parent]
+ 				       separator: '/']];
+ }
+ 
+@@ -2572,7 +2572,7 @@ static MailboxManagerController *singleInstance = nil;
+ 			  aNewName];
+     }
+   
+-  [self _reloadFoldersAndExpandParentsFromNode: [[outlineView itemAtRow: [outlineView selectedRow]] parent]
++  [self _reloadFoldersAndExpandParentsFromNode: [(FolderNode *)[outlineView itemAtRow: [outlineView selectedRow]] parent]
+ 	selectNodeWithPath: aString];
+   
+   // We also refresh our window's title
