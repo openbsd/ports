@@ -72,7 +72,6 @@
      SUBDIR += gegl04
      SUBDIR += geomview
      SUBDIR += gexiv2
-     SUBDIR += gfract
      SUBDIR += gif2png
      SUBDIR += giflib
      SUBDIR += gifsicle
