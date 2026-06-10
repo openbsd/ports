@@ -1,6 +1,6 @@
 COMMENT =	distributed and RESTful search engine
 
-V =		3.6.0
+V =		3.7.0
 DISTNAME =	opensearch-$V-linux-x64
 PKGNAME =	opensearch-$V
 
