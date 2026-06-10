@@ -1,0 +1,9 @@
+Index: llvm/utils/TableGen/CMakeLists.txt
+--- llvm/utils/TableGen/CMakeLists.txt.orig
++++ llvm/utils/TableGen/CMakeLists.txt
+@@ -81,3 +81,5 @@ add_tablegen(llvm-tblgen LLVM
+   DEPENDS
+   intrinsics_gen # via llvm-min-tablegen
+   )
++
++add_definitions(-D_LIBCPP_USE_LOWER_DEQUE_BLOCK_SIZE)

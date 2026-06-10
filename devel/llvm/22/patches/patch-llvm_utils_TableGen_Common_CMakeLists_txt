@@ -1,0 +1,12 @@
+Index: llvm/utils/TableGen/Common/CMakeLists.txt
+--- llvm/utils/TableGen/Common/CMakeLists.txt.orig
++++ llvm/utils/TableGen/Common/CMakeLists.txt
+@@ -44,6 +44,8 @@ add_llvm_library(LLVMTableGenCommon STATIC OBJECT EXCL
+   intrinsics_gen
+   )
+ 
++add_definitions(-D_LIBCPP_USE_LOWER_DEQUE_BLOCK_SIZE)
++
+ # Users may include its headers as "Common/*.h"
+ target_include_directories(LLVMTableGenCommon
+   PUBLIC

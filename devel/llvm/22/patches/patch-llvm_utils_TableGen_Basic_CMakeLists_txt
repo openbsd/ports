@@ -1,0 +1,12 @@
+Index: llvm/utils/TableGen/Basic/CMakeLists.txt
+--- llvm/utils/TableGen/Basic/CMakeLists.txt.orig
++++ llvm/utils/TableGen/Basic/CMakeLists.txt
+@@ -24,6 +24,8 @@ add_llvm_library(LLVMTableGenBasic OBJECT EXCLUDE_FROM
+   VTEmitter.cpp
+ )
+ 
++add_definitions(-D_LIBCPP_USE_LOWER_DEQUE_BLOCK_SIZE)
++
+ # Users may include its headers as "Basic/*.h"
+ target_include_directories(LLVMTableGenBasic
+   INTERFACE
