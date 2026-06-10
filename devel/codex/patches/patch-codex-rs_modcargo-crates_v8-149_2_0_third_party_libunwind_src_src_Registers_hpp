@@ -1,0 +1,13 @@
+Index: codex-rs/modcargo-crates/v8-149.2.0/third_party/libunwind/src/src/Registers.hpp
+--- codex-rs/modcargo-crates/v8-149.2.0/third_party/libunwind/src/src/Registers.hpp.orig
++++ codex-rs/modcargo-crates/v8-149.2.0/third_party/libunwind/src/src/Registers.hpp
+@@ -20,7 +20,8 @@
+ #include "libunwind_ext.h"
+ #include "shadow_stack_unwind.h"
+ 
+-#if defined(_LIBUNWIND_HAVE_GETAUXVAL) || defined(_LIBUNWIND_HAVE_ELF_AUX_INFO)
++#if (defined(_LIBUNWIND_HAVE_GETAUXVAL) || defined(_LIBUNWIND_HAVE_ELF_AUX_INFO)) && \
++    !defined(__OpenBSD__) && !defined(__FreeBSD__)
+ #include <sys/auxv.h>
+ #endif
+ 

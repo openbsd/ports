@@ -1,0 +1,12 @@
+Index: codex-rs/modcargo-crates/v8-149.2.0/third_party/libc++/src/include/__locale_dir/locale_base_api.h
+--- codex-rs/modcargo-crates/v8-149.2.0/third_party/libc++/src/include/__locale_dir/locale_base_api.h.orig
++++ codex-rs/modcargo-crates/v8-149.2.0/third_party/libc++/src/include/__locale_dir/locale_base_api.h
+@@ -113,8 +113,6 @@
+ #    include <__locale_dir/support/freebsd.h>
+ #  elif defined(__NetBSD__)
+ #    include <__locale_dir/support/netbsd.h>
+-#  elif defined(__OpenBSD__)
+-#    include <__locale_dir/support/bsd_like.h>
+ #  elif defined(_LIBCPP_MSVCRT_LIKE)
+ #    include <__locale_dir/support/windows.h>
+ #  elif defined(__Fuchsia__)

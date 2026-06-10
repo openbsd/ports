@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.138.0
+V =			0.139.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -88,9 +88,17 @@ MAKE_ENV =		${MODCARGO_ENV}
 # test suite expects network access and a configured OpenAI account
 NO_TEST =	Yes
 
+DENO_CORE_ICUDATA_V =	0.77.0
+V8_CARGO_V =		149.2.0
+
+V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
+
 post-patch:
 	cd ${WRKSRC} && ${SUBST_CMD} arg0/src/lib.rs \
 		core/src/tools/runtimes/apply_patch.rs
+	mkdir ${V8_DISTDIR}/third_party/icu/common
+	cp ${MODCARGO_VENDOR_DIR}/deno_core_icudata-${DENO_CORE_ICUDATA_V}/src/icudtl.dat \
+	    ${V8_DISTDIR}/third_party/icu/common/
 
 post-build:
 .for s in bash fish zsh
