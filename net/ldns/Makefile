@@ -4,7 +4,7 @@ COMMENT-main=	DNS library modelled after Net::DNS
 COMMENT-drill=	DNS debugger
 COMMENT-utils=	LDNS utilities
 
-V=		1.9.0
+V=		1.9.1
 DISTNAME=	ldns-$V
 PKGNAME-main=	libldns-$V
 PKGNAME-drill=	drill-$V
