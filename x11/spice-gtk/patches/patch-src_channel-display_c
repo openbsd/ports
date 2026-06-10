@@ -1,0 +1,12 @@
+Index: src/channel-display.c
+--- src/channel-display.c.orig
++++ src/channel-display.c
+@@ -22,7 +22,7 @@
+ #include <glib/gi18n-lib.h>
+ 
+ #ifdef G_OS_UNIX
+-#include <drm/drm_fourcc.h>
++#include <libdrm/drm_fourcc.h>
+ #endif
+ 
+ #include "spice-client.h"
