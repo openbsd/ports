@@ -1,14 +1,13 @@
 COMMENT=	library for parsing and formatting dates and times
 
 MODULES=	cpan
+CPAN_AUTHOR=	ATOOMIC
 PKG_ARCH=	*
-DISTNAME=	TimeDate-2.33
+DISTNAME=	TimeDate-2.35
 PKGNAME=	p5-Time-${DISTNAME}
 CATEGORIES=	devel
 
 # Artistic
 PERMIT_PACKAGE=	Yes
-
-SITES=		${SITE_PERL_CPAN:=Time/}
 
 .include <bsd.port.mk>

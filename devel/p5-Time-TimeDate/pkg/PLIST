@@ -1,9 +1,12 @@
 ${P5SITE}/Date/
+${P5SITE}/Date/Format/
 ${P5SITE}/Date/Format.pm
+${P5SITE}/Date/Format/Generic.pm
 ${P5SITE}/Date/Language/
 ${P5SITE}/Date/Language.pm
 ${P5SITE}/Date/Language/Afar.pm
 ${P5SITE}/Date/Language/Amharic.pm
+${P5SITE}/Date/Language/Arabic.pm
 ${P5SITE}/Date/Language/Austrian.pm
 ${P5SITE}/Date/Language/Brazilian.pm
 ${P5SITE}/Date/Language/Bulgarian.pm
@@ -24,6 +27,7 @@ ${P5SITE}/Date/Language/Italian.pm
 ${P5SITE}/Date/Language/Norwegian.pm
 ${P5SITE}/Date/Language/Occitan.pm
 ${P5SITE}/Date/Language/Oromo.pm
+${P5SITE}/Date/Language/Portuguese.pm
 ${P5SITE}/Date/Language/Romanian.pm
 ${P5SITE}/Date/Language/Russian.pm
 ${P5SITE}/Date/Language/Russian_cp1251.pm
@@ -41,9 +45,44 @@ ${P5SITE}/Time/
 ${P5SITE}/Time/Zone.pm
 ${P5SITE}/TimeDate.pm
 @man man/man3p/Date::Format.3p
+@man man/man3p/Date::Format::Generic.3p
 @man man/man3p/Date::Language.3p
+@man man/man3p/Date::Language::Afar.3p
+@man man/man3p/Date::Language::Amharic.3p
+@man man/man3p/Date::Language::Arabic.3p
+@man man/man3p/Date::Language::Austrian.3p
+@man man/man3p/Date::Language::Brazilian.3p
 @man man/man3p/Date::Language::Bulgarian.3p
+@man man/man3p/Date::Language::Chinese.3p
+@man man/man3p/Date::Language::Chinese_GB.3p
+@man man/man3p/Date::Language::Czech.3p
+@man man/man3p/Date::Language::Danish.3p
+@man man/man3p/Date::Language::Dutch.3p
+@man man/man3p/Date::Language::English.3p
+@man man/man3p/Date::Language::Finnish.3p
+@man man/man3p/Date::Language::French.3p
+@man man/man3p/Date::Language::Gedeo.3p
+@man man/man3p/Date::Language::German.3p
+@man man/man3p/Date::Language::Greek.3p
 @man man/man3p/Date::Language::Hungarian.3p
+@man man/man3p/Date::Language::Icelandic.3p
+@man man/man3p/Date::Language::Italian.3p
+@man man/man3p/Date::Language::Norwegian.3p
+@man man/man3p/Date::Language::Occitan.3p
+@man man/man3p/Date::Language::Oromo.3p
+@man man/man3p/Date::Language::Portuguese.3p
+@man man/man3p/Date::Language::Romanian.3p
+@man man/man3p/Date::Language::Russian.3p
+@man man/man3p/Date::Language::Russian_cp1251.3p
+@man man/man3p/Date::Language::Russian_koi8r.3p
+@man man/man3p/Date::Language::Sidama.3p
+@man man/man3p/Date::Language::Somali.3p
+@man man/man3p/Date::Language::Spanish.3p
+@man man/man3p/Date::Language::Swedish.3p
+@man man/man3p/Date::Language::Tigrinya.3p
+@man man/man3p/Date::Language::TigrinyaEritrean.3p
+@man man/man3p/Date::Language::TigrinyaEthiopian.3p
+@man man/man3p/Date::Language::Turkish.3p
 @man man/man3p/Date::Parse.3p
 @man man/man3p/Time::Zone.3p
 @man man/man3p/TimeDate.3p
