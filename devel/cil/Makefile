@@ -1,3 +1,5 @@
+BROKEN = does not support Ocaml 5.x, replace with Goblint-CIL
+
 # build system needs per-arch tweaks and is very unfriendly to
 # bytecode-only builds. powerpc nativecode is currently broken.
 ONLY_FOR_ARCHS = ${OCAML_NATIVE_ARCHS}
