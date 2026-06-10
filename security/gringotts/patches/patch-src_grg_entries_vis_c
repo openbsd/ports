@@ -1,0 +1,12 @@
+Index: src/grg_entries_vis.c
+--- src/grg_entries_vis.c.orig
++++ src/grg_entries_vis.c
+@@ -342,7 +342,7 @@ GtkWidget 
+ 				  hasData ? grg_entries_get_Body () : "",
+ 				  -1);
+ 		g_signal_handler_unblock (entryBuf, simpleSigID);
+-		return simpleSheet;
++		return GTK_WIDGET (simpleSheet);
+ 	/*} else {
+ 		GtkTreeIter iter;
+ 		

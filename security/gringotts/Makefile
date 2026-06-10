@@ -1,7 +1,7 @@
 COMMENT=	GTK+2 secure notes manager
 
 DISTNAME=	gringotts-1.2.10
-REVISION=	4
+REVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
