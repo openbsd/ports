@@ -7,16 +7,16 @@ MODGO_MODULES =	\
 	github.com/andybalholm/cascadia		 v1.3.3 \
 	github.com/beorn7/perks			 v1.0.1 \
 	github.com/cespare/xxhash/v2		 v2.3.0 \
-	github.com/coreos/go-oidc/v3		 v3.17.0 \
+	github.com/coreos/go-oidc/v3		 v3.18.0 \
 	github.com/creack/pty			 v1.1.9 \
 	github.com/davecgh/go-spew		 v1.1.1 \
 	github.com/djherbis/atime		 v1.1.0 \
 	github.com/fsnotify/fsnotify		 v1.9.0 \
-	github.com/fxamacker/cbor/v2		 v2.9.1 \
+	github.com/fxamacker/cbor/v2		 v2.9.2 \
 	github.com/go-jose/go-jose/v4		 v4.1.4 \
 	github.com/go-viper/mapstructure/v2	 v2.5.0 \
-	github.com/go-webauthn/webauthn		 v0.16.2 \
-	github.com/go-webauthn/x		 v0.2.2 \
+	github.com/go-webauthn/webauthn		 v0.17.4 \
+	github.com/go-webauthn/x		 v0.2.6 \
 	github.com/golang-jwt/jwt/v5		 v5.3.1 \
 	github.com/golang/protobuf		 v1.5.0 \
 	github.com/google/go-cmp		 v0.7.0 \
@@ -45,11 +45,11 @@ MODGO_MODULES =	\
 	github.com/prometheus/procfs		 v0.16.1 \
 	github.com/rogpeppe/go-internal		 v1.10.0 \
 	github.com/stretchr/testify		 v1.11.1 \
-	github.com/tdewolff/argp		 v0.0.0-20250430135133-0f54527d2b1e \
-	github.com/tdewolff/minify/v2		 v2.24.11 \
-	github.com/tdewolff/parse/v2		 v2.8.11 \
-	github.com/tdewolff/test		 v1.0.11 \
-	github.com/tinylib/msgp			 v1.6.3 \
+	github.com/tdewolff/argp		 v0.0.0-20260424074207-decde4f86440 \
+	github.com/tdewolff/minify/v2		 v2.24.13 \
+	github.com/tdewolff/parse/v2		 v2.8.12 \
+	github.com/tdewolff/test		 v1.0.12 \
+	github.com/tinylib/msgp			 v1.6.4 \
 	github.com/x448/float16			 v0.8.4 \
 	github.com/xhit/go-str2duration/v2	 v2.1.0 \
 	github.com/xyproto/randomstring		 v1.0.5 \
@@ -57,35 +57,36 @@ MODGO_MODULES =	\
 	go.uber.org/goleak			 v1.3.0 \
 	go.uber.org/mock			 v0.6.0 \
 	go.yaml.in/yaml/v2			 v2.4.2 \
-	golang.org/x/crypto			 v0.49.0 \
-	golang.org/x/image			 v0.38.0 \
-	golang.org/x/mod			 v0.33.0 \
-	golang.org/x/net			 v0.52.0 \
+	golang.org/x/crypto			 v0.52.0 \
+	golang.org/x/image			 v0.41.0 \
+	golang.org/x/mod			 v0.35.0 \
+	golang.org/x/net			 v0.55.0 \
 	golang.org/x/oauth2			 v0.36.0 \
 	golang.org/x/sync			 v0.20.0 \
-	golang.org/x/sys			 v0.42.0 \
+	golang.org/x/sys			 v0.45.0 \
 	golang.org/x/telemetry			 v0.0.0-20240228155512-f48c80bd79b2 \
-	golang.org/x/term			 v0.41.0 \
-	golang.org/x/text			 v0.35.0 \
-	golang.org/x/tools			 v0.42.0 \
+	golang.org/x/term			 v0.43.0 \
+	golang.org/x/text			 v0.37.0 \
+	golang.org/x/tools			 v0.44.0 \
 	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/protobuf		 v1.36.8 \
 	gopkg.in/check.v1			 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/yaml.v3			 v3.0.1
 
 MODGO_MODFILES =	\
-	github.com/go-jose/go-jose/v4		 v4.1.3 \
 	github.com/google/go-cmp		 v0.5.5 \
 	github.com/google/go-cmp		 v0.5.9 \
 	github.com/google/go-cmp		 v0.6.0 \
 	github.com/prometheus/client_golang	 v1.20.4 \
 	github.com/prometheus/procfs		 v0.15.1 \
+	github.com/tdewolff/test		 v1.0.11 \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto			 v0.13.0 \
 	golang.org/x/crypto			 v0.19.0 \
 	golang.org/x/crypto			 v0.23.0 \
 	golang.org/x/crypto			 v0.31.0 \
+	golang.org/x/crypto			 v0.51.0 \
 	golang.org/x/mod			 v0.12.0 \
 	golang.org/x/mod			 v0.15.0 \
 	golang.org/x/mod			 v0.17.0 \
@@ -101,9 +102,9 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.25.0 \
 	golang.org/x/net			 v0.33.0 \
 	golang.org/x/net			 v0.43.0 \
-	golang.org/x/net			 v0.51.0 \
+	golang.org/x/net			 v0.52.0 \
+	golang.org/x/net			 v0.54.0 \
 	golang.org/x/net			 v0.6.0 \
-	golang.org/x/oauth2			 v0.28.0 \
 	golang.org/x/oauth2			 v0.30.0 \
 	golang.org/x/sync			 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync			 v0.0.0-20220722155255-886fb9371eb4 \
@@ -124,7 +125,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.28.0 \
 	golang.org/x/sys			 v0.32.0 \
 	golang.org/x/sys			 v0.35.0 \
-	golang.org/x/sys			 v0.37.0 \
+	golang.org/x/sys			 v0.43.0 \
+	golang.org/x/sys			 v0.44.0 \
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.8.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
