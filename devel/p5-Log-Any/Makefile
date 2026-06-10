@@ -1,6 +1,6 @@
 COMMENT =	bringing loggers and listeners together
 
-DISTNAME =	Log-Any-1.719
+DISTNAME =	Log-Any-1.720
 
 CATEGORIES =	devel
 
@@ -17,8 +17,5 @@ TEST_DEPENDS =		devel/p5-Devel-StackTrace>=2.00 \
 			www/p5-Mojo
 
 PKG_ARCH =		*
-
-pre-configure:
-			find ${WRKSRC} -name "*${PATCHORIG}" -delete
 
 .include <bsd.port.mk>
