@@ -1,6 +1,7 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_GEAR_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		8.0 # 1.4
 
@@ -41,6 +42,8 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf6/kpackage \
 		graphics/kirigami-addons \
 		wayland/wayland-protocols \
+		wayland/libei \
+		x11/libfakekey \
 		wayland/plasma-wayland-protocols
 
 RUN_DEPENDS =	devel/desktop-file-utils \
