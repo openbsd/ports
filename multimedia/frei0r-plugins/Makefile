@@ -3,7 +3,7 @@ CATEGORIES =	graphics multimedia
 
 GH_ACCOUNT =	dyne
 GH_PROJECT =	frei0r
-GH_TAGNAME =	v2.5.6
+GH_TAGNAME =	v3.2.1
 
 DISTNAME =	frei0r-plugins-${GH_TAGNAME:S/v//}
 
@@ -23,8 +23,7 @@ COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake
 
 CONFIGURE_ARGS =	-DWITHOUT_GAVL=ON \
-			-DWITHOUT_OPENCV=ON
-
-NO_TEST =	Yes
+			-DWITHOUT_OPENCV=ON \
+			-DFREI0R_VERSION=${GH_TAGNAME:S/v//}
 
 .include <bsd.port.mk>
