@@ -4,11 +4,11 @@ COMMENT =	open reimplementation of Google's Widevine CDM
 
 GH_ACCOUNT =	tchebb
 GH_PROJECT =	openwv
-GH_TAGNAME =	v1.1.3
-REVISION =	2
+GH_TAGNAME =	v1.1.4
 
 # Rust crates downloaded via git
-AUTOCXX =	1fca5acd26f533576f98da45075d5498a1731d92
+AUTOCXX =		cef6d9e9d2ad98daefa0eccef4a79dbfa1f175d2
+AUTOCXX_BINDGEN =	2ed5c81765a6b3f59c775d4425ad06815dbdba5c
 
 # Chromium CDM headers
 CDM =		9920660ea0162f88c44a648de177e6f8cb976d07
@@ -16,7 +16,8 @@ CDM =		9920660ea0162f88c44a648de177e6f8cb976d07
 DISTFILES.a +=	chromium-cdm-${CDM}.tar.gz
 SITES.a +=	https://nerd.hu/distfiles/
 
-DIST_TUPLE +=	github tchebb autocxx ${AUTOCXX} ../autocxx
+DIST_TUPLE +=	github tchebb autocxx ${AUTOCXX} autocxx
+DIST_TUPLE +=	github tchebb rust-bindgen ${AUTOCXX_BINDGEN} autocxx-bindgen
 
 CATEGORIES =	multimedia
 
@@ -34,9 +35,9 @@ MODULES =	devel/cargo
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-BUILD_DEPENDS +=	devel/llvm/19
+BUILD_DEPENDS +=	devel/llvm/22
 
-MAKE_ENV +=		LIBCLANG_PATH=${LOCALBASE}/llvm19/lib
+MAKE_ENV +=		LIBCLANG_PATH=${LOCALBASE}/llvm22/lib
 
 .if ${MACHINE_ARCH} == "aarch64"
 TARGET =	arm64

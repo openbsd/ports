@@ -5,7 +5,6 @@ SHA256 (cargo/anyhow-1.0.99.tar.gz) = sGdKHd7stwGXeB6UXeSzuP+2H6k5pVl7z0hQNzdmMQ
 SHA256 (cargo/aquamarine-0.1.12.tar.gz) = qUHDlwhHjo7qOSQ7WYPxxC0nF7NiDukfSlIRX9AqxD8=
 SHA256 (cargo/atty-0.2.14.tar.gz) = 2bOb4Ydw0RQhzbG5lHpF3T836TCSy/N3YUgooxnV/ug=
 SHA256 (cargo/autocfg-1.5.0.tar.gz) = wIYG+MPL9M5uyOKPsAFKLAhnCP6VTqqIU4SmFlFy5+g=
-SHA256 (cargo/autocxx-bindgen-0.73.0.tar.gz) = 7Kr4TZzxp3JAnAq9rH0kd6Mf2JDb32Btj2hNxgEpqpQ=
 SHA256 (cargo/base16ct-0.2.0.tar.gz) = TH8C1Opl8sGFMIn/2NJ4e9vGPeLw0p3tvPjM36DM1M8=
 SHA256 (cargo/base64ct-1.8.0.tar.gz) = VSSLR7DK8FRveYiQZYh3mYHEO7G8nQxECHJ4+AzbRLo=
 SHA256 (cargo/bitflags-2.9.2.tar.gz) = amW1Rasx1ofP9SiZ1IkIVf7EWetq/g2mQXuKGNqHqik=
@@ -62,7 +61,6 @@ SHA256 (cargo/indexmap-2.10.0.tar.gz) = /kzYUzPiJBFBmgvK4Sl9JeWMlEOEixHcaob+/ox4
 SHA256 (cargo/indoc-1.0.9.tar.gz) = v6eZ3V7SCn40nztGOaqA10VJyBcW2exPmUybWBVZgwY=
 SHA256 (cargo/inout-0.2.0-rc.5.tar.gz) = x3TIa84g6gSr4cN88AUcVpAHmjoo71/awqWgQSs9fXQ=
 SHA256 (cargo/itertools-0.10.5.tar.gz) = sP0iYOgpvd9MtuqAIoneL4bWp6aQGS++kbP0bg8shHM=
-SHA256 (cargo/itertools-0.13.0.tar.gz) = QT7n38Uu4aSUnO6328ijPy1sCIGU2fki+4MY+vHwEYY=
 SHA256 (cargo/itertools-0.14.0.tar.gz) = KxkseCA3+t2c+nVUgxBIiqvb89Lac4hbMb0KvQM1EoU=
 SHA256 (cargo/itertools-0.9.0.tar.gz) = KE8Y+FZR/hHoqZGyrbQssHgyXJlu0CbZlHGe/Pyh1Us=
 SHA256 (cargo/itoa-1.0.15.tar.gz) = Sl8TuFjI0xTuPo9jkBH3zO/nH5f5blAVH7mR8meSjiw=
@@ -163,8 +161,9 @@ SHA256 (cargo/zerocopy-0.8.26.tar.gz) = EDndDTwxDPBd4BLYo5/1V8sNIwh/1EytYd8I/DGQ
 SHA256 (cargo/zerocopy-derive-0.8.26.tar.gz) = ns9bTMU2RXLX9MMpZhvMgnJCIpc/LKtvBQpOXCL3UYE=
 SHA256 (cargo/zeroize-1.8.1.tar.gz) = ztNniih5swMG0yP0VCYmaXpGSpfAoHya6/frymXNTd4=
 SHA256 (chromium-cdm-9920660ea0162f88c44a648de177e6f8cb976d07.tar.gz) = t9DKHb8ZkSdyADkJnA4BZVEv5XIK/lTAJzl382BvlKE=
-SHA256 (openwv-1.1.3.tar.gz) = oUa2TBepGpevQCGeFso2T+fg+nQMoKvam23skW1pE/Q=
-SHA256 (tchebb-autocxx-1fca5acd26f533576f98da45075d5498a1731d92.tar.gz) = lqm0FoXm1kRU4TShcXLnQ/UzySC3aXNBKdg9TzHxXEw=
+SHA256 (openwv-1.1.4.tar.gz) = usnPk4rM4ar4uRZ0PUqK5vQtDkKFbKeUClblrNST7A4=
+SHA256 (tchebb-autocxx-cef6d9e9d2ad98daefa0eccef4a79dbfa1f175d2.tar.gz) = l/i4PcsIE+USzkMu0czYAX+qcAs3zoLWFNKKcAUCEnc=
+SHA256 (tchebb-rust-bindgen-2ed5c81765a6b3f59c775d4425ad06815dbdba5c.tar.gz) = ROoSSjxwAJWDzpV4dpx655v5uo0E4EdDzQwS+8TxKZw=
 SIZE (cargo/aes-0.9.0-rc.0.tar.gz) = 126308
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/anstyle-1.0.11.tar.gz) = 15880
@@ -172,7 +171,6 @@ SIZE (cargo/anyhow-1.0.99.tar.gz) = 53809
 SIZE (cargo/aquamarine-0.1.12.tar.gz) = 290835
 SIZE (cargo/atty-0.2.14.tar.gz) = 5470
 SIZE (cargo/autocfg-1.5.0.tar.gz) = 18729
-SIZE (cargo/autocxx-bindgen-0.73.0.tar.gz) = 249462
 SIZE (cargo/base16ct-0.2.0.tar.gz) = 10240
 SIZE (cargo/base64ct-1.8.0.tar.gz) = 31211
 SIZE (cargo/bitflags-2.9.2.tar.gz) = 47977
@@ -229,7 +227,6 @@ SIZE (cargo/indexmap-2.10.0.tar.gz) = 95836
 SIZE (cargo/indoc-1.0.9.tar.gz) = 13475
 SIZE (cargo/inout-0.2.0-rc.5.tar.gz) = 12490
 SIZE (cargo/itertools-0.10.5.tar.gz) = 115354
-SIZE (cargo/itertools-0.13.0.tar.gz) = 146261
 SIZE (cargo/itertools-0.14.0.tar.gz) = 152715
 SIZE (cargo/itertools-0.9.0.tar.gz) = 96429
 SIZE (cargo/itoa-1.0.15.tar.gz) = 11231
@@ -330,5 +327,6 @@ SIZE (cargo/zerocopy-0.8.26.tar.gz) = 249223
 SIZE (cargo/zerocopy-derive-0.8.26.tar.gz) = 88080
 SIZE (cargo/zeroize-1.8.1.tar.gz) = 20029
 SIZE (chromium-cdm-9920660ea0162f88c44a648de177e6f8cb976d07.tar.gz) = 14985
-SIZE (openwv-1.1.3.tar.gz) = 38091
-SIZE (tchebb-autocxx-1fca5acd26f533576f98da45075d5498a1731d92.tar.gz) = 834442
+SIZE (openwv-1.1.4.tar.gz) = 38035
+SIZE (tchebb-autocxx-cef6d9e9d2ad98daefa0eccef4a79dbfa1f175d2.tar.gz) = 834372
+SIZE (tchebb-rust-bindgen-2ed5c81765a6b3f59c775d4425ad06815dbdba5c.tar.gz) = 2332883
