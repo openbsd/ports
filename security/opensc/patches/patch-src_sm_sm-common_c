@@ -1,0 +1,48 @@
+Index: src/sm/sm-common.c
+--- src/sm/sm-common.c.orig
++++ src/sm/sm-common.c
+@@ -137,7 +137,7 @@ DES_cbc_cksum_3des_emv96(struct sc_context *ctx,
+ 	const unsigned char *iv = &(*ivec)[0];
+ #if OPENSSL_VERSION_NUMBER < 0x30000000L
+ 	register unsigned int tout0,tout1,tin0,tin1;
+-	unsigned int tin[2];
++	DES_LONG tin[2];
+ 	sm_des_cblock kk, k2;
+ 	DES_key_schedule ks,ks2;
+ 
+@@ -160,7 +160,7 @@ DES_cbc_cksum_3des_emv96(struct sc_context *ctx,
+ 
+ 		tin0^=tout0; tin[0]=tin0;
+ 		tin1^=tout1; tin[1]=tin1;
+-		DES_encrypt1((unsigned int *)tin, &ks, DES_ENCRYPT);
++		DES_encrypt1((DES_LONG *)tin, &ks, DES_ENCRYPT);
+ 		tout0=tin[0];
+ 		tout1=tin[1];
+ 	}
+@@ -174,7 +174,7 @@ DES_cbc_cksum_3des_emv96(struct sc_context *ctx,
+ 
+ 	tin0^=tout0; tin[0]=tin0;
+ 	tin1^=tout1; tin[1]=tin1;
+-	DES_encrypt3((unsigned int *)tin, &ks, &ks2, &ks);
++	DES_encrypt3((DES_LONG *)tin, &ks, &ks2, &ks);
+ 	tout1=tin[1];
+ 	if (out != NULL)
+ 		{
+@@ -277,7 +277,7 @@ DES_cbc_cksum_3des(struct sc_context *ctx,
+ 	const unsigned char *iv = &(*ivec)[0];
+ #if OPENSSL_VERSION_NUMBER < 0x30000000L
+ 	register unsigned int tout0,tout1,tin0,tin1;
+-	unsigned int tin[2];
++	DES_LONG tin[2];
+ 	sm_des_cblock kk, k2;
+ 	DES_key_schedule ks,ks2;
+ 
+@@ -301,7 +301,7 @@ DES_cbc_cksum_3des(struct sc_context *ctx,
+ 
+ 		tin0^=tout0; tin[0]=tin0;
+ 		tin1^=tout1; tin[1]=tin1;
+-		DES_encrypt3((unsigned int *)tin, &ks, &ks2, &ks);
++		DES_encrypt3((DES_LONG *)tin, &ks, &ks2, &ks);
+ 		/* fix 15/10/91 eay - thanks to keithr@sco.COM */
+ 		tout0=tin[0];
+ 		tout1=tin[1];
