@@ -1,13 +1,14 @@
 Disable checking for new versions at startup.
 
---- src/Preferences.cpp.orig	Fri Sep 16 09:55:06 2016
-+++ src/Preferences.cpp	Sun Sep 18 15:31:21 2016
-@@ -1211,7 +1211,7 @@ void CPreferences::BuildItemList( const wxString& appd
+Index: src/Preferences.cpp
+--- src/Preferences.cpp.orig
++++ src/Preferences.cpp
+@@ -1266,7 +1266,7 @@ void CPreferences::BuildItemList( const wxString& appd
  	/**
  	 * Version check
  	 **/
--	 NewCfgItem(IDC_NEWVERSION,	(new Cfg_Bool( wxT("/eMule/NewVersionCheck"), s_NewVersionCheck, true )));
-+	 NewCfgItem(IDC_NEWVERSION,	(new Cfg_Bool( wxT("/eMule/NewVersionCheck"), s_NewVersionCheck, false )));
+-	 NewCfgItem(IDC_NEWVERSION,	(new Cfg_Bool( "/eMule/NewVersionCheck", s_NewVersionCheck, true )));
++	 NewCfgItem(IDC_NEWVERSION,	(new Cfg_Bool( "/eMule/NewVersionCheck", s_NewVersionCheck, false )));
  
  	 /**
  	  * Obfuscation

@@ -14,6 +14,7 @@ bin/mldonkey_importer
 @man man/man1/cas.1
 @man man/man1/ed2k.1
 @man man/man1/wxcas.1
+@comment share/LICENSE.md
 share/amule/
 share/amule/skins/
 share/amule/skins/Mac_Gray.zip
@@ -24,21 +25,20 @@ share/amule/skins/priscilla.zip
 share/amule/skins/tango.zip
 share/amule/skins/xfce.zip
 share/applications/alc.desktop
-share/applications/amule.desktop
-share/applications/amulegui.desktop
+share/applications/org.amule.aMule.desktop
+share/applications/org.amule.aMule.gui.desktop
 share/applications/wxcas.desktop
 share/cas/
 share/cas/stat.png
 share/cas/tmp.html
 share/doc/amule/
-@comment share/doc/amule/ABOUT-NLS
-@comment share/doc/amule/Changelog
-share/doc/amule/EC_Protocol.txt
-@comment share/doc/amule/INSTALL
-share/doc/amule/README
-@comment share/doc/amule/TODO
-share/doc/amule/amulesig.txt
-share/doc/amule/license.txt
+share/doc/amule/CHANGELOG.md
+share/doc/amule/EC_Protocol.md
+share/doc/amule/INSTALL.md
+share/doc/amule/IP2Country.md
+share/doc/amule/README.md
+share/doc/amule/amulesig.md
+share/icons/hicolor/128x128/apps/org.amule.aMule.png
 share/locale/ar/LC_MESSAGES/amule.mo
 share/locale/ast/LC_MESSAGES/amule.mo
 share/locale/bg/LC_MESSAGES/amule.mo
@@ -64,8 +64,6 @@ share/locale/it_CH/
 share/locale/it_CH/LC_MESSAGES/
 share/locale/it_CH/LC_MESSAGES/amule.mo
 share/locale/ja/LC_MESSAGES/amule.mo
-share/locale/ko_KR/
-share/locale/ko_KR/LC_MESSAGES/
 share/locale/ko_KR/LC_MESSAGES/amule.mo
 share/locale/lt/LC_MESSAGES/amule.mo
 share/locale/nl/LC_MESSAGES/amule.mo
@@ -84,9 +82,11 @@ share/locale/tr/LC_MESSAGES/amule.mo
 share/locale/uk/LC_MESSAGES/amule.mo
 share/locale/zh_CN/LC_MESSAGES/amule.mo
 share/locale/zh_TW/LC_MESSAGES/amule.mo
+share/metainfo/
+share/metainfo/org.amule.aMule.metainfo.xml
 share/pixmaps/
 share/pixmaps/alc.xpm
-share/pixmaps/amule.xpm
-share/pixmaps/amulegui.xpm
+share/pixmaps/org.amule.aMule.png
 share/pixmaps/wxcas.xpm
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
