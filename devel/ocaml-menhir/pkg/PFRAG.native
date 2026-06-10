@@ -1,4 +1,8 @@
 %%dynlink%%
+lib/ocaml/menhirCST/menhirCST.a
+lib/ocaml/menhirCST/menhirCST.cmx
+lib/ocaml/menhirCST/menhirCST.cmxa
+lib/ocaml/menhirCST/menhirCST__Settle.cmx
 lib/ocaml/menhirLib/menhirLib.a
 lib/ocaml/menhirLib/menhirLib.cmx
 lib/ocaml/menhirLib/menhirLib.cmxa

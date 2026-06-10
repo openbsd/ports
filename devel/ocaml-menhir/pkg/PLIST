@@ -6,6 +6,18 @@ lib/ocaml/coq-menhirlib/dune-package
 lib/ocaml/menhir/
 lib/ocaml/menhir/META
 lib/ocaml/menhir/dune-package
+lib/ocaml/menhirCST/
+lib/ocaml/menhirCST/META
+lib/ocaml/menhirCST/Settle.ml
+lib/ocaml/menhirCST/Settle.mli
+lib/ocaml/menhirCST/dune-package
+lib/ocaml/menhirCST/menhirCST.cma
+lib/ocaml/menhirCST/menhirCST.cmi
+lib/ocaml/menhirCST/menhirCST.cmt
+lib/ocaml/menhirCST/menhirCST.ml
+lib/ocaml/menhirCST/menhirCST__Settle.cmi
+lib/ocaml/menhirCST/menhirCST__Settle.cmt
+lib/ocaml/menhirCST/menhirCST__Settle.cmti
 lib/ocaml/menhirLib/
 lib/ocaml/menhirLib/META
 lib/ocaml/menhirLib/dune-package
@@ -52,6 +64,8 @@ share/doc/ocaml-menhir/menhir/manual.pdf
 share/doc/ocaml-menhir/menhir/manual001.png
 share/doc/ocaml-menhir/menhir/manual002.png
 share/doc/ocaml-menhir/menhir/manual003.png
+share/doc/ocaml-menhir/menhirCST/
+share/doc/ocaml-menhir/menhirCST/LICENSE
 share/doc/ocaml-menhir/menhirLib/
 share/doc/ocaml-menhir/menhirLib/LICENSE
 share/doc/ocaml-menhir/menhirSdk/

@@ -1,2 +1,3 @@
+lib/ocaml/menhirCST/menhirCST.cmxs
 lib/ocaml/menhirLib/menhirLib.cmxs
 lib/ocaml/menhirSdk/menhirSdk.cmxs
