@@ -41,7 +41,6 @@
      SUBDIR += burp
      SUBDIR += cdist
      SUBDIR += cdrtools
-     SUBDIR += cfengine
      SUBDIR += checkbashisms
      SUBDIR += checkrestart
      SUBDIR += chezmoi
