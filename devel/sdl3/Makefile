@@ -3,7 +3,7 @@ COMMENT =		cross-platform multimedia library
 V =			3.4.2
 DISTNAME =		SDL3-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=		SDL3                      0.1 # 3.4.0
 
@@ -26,6 +26,7 @@ MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/fribidi \
+			wayland/libinput-openbsd \
 			wayland/wayland \
 			x11/xkbcommon
 
