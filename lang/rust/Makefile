@@ -152,7 +152,7 @@ MODCLANG_VERSION =		21
 MODCLANG_COMPILER_LINKS =	No
 
 # (BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk)
-. if ${BUILD_LLDB:L} == yes && 
+. if ${BUILD_LLDB:L} == yes
 RUN_DEPENDS-gdb +=	devel/llvm/${MODCLANG_VERSION},-lldb
 . endif
 
