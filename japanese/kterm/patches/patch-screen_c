@@ -1,6 +1,25 @@
---- screen.c.orig	Fri Apr 28 14:22:37 2017
-+++ screen.c	Fri Apr 28 14:23:27 2017
-@@ -245,6 +245,7 @@ Reallocate(sbuf, sbufaddr, nrow, ncol, oldrow, oldcol)
+Index: screen.c
+--- screen.c.orig
++++ screen.c
+@@ -32,6 +32,7 @@
+ #include "error.h"
+ #include "data.h"
+ 
++#include <stdlib.h>
+ #include <stdio.h>
+ #include <signal.h>
+ #if defined(SVR4) || defined(hpux)
+@@ -46,9 +47,6 @@
+ #include <sys/ptem.h>
+ #endif
+ 
+-extern Char *calloc(), *malloc(), *realloc();
+-extern void free();
+-
+ ScrnBuf Allocate (nrow, ncol, addr)
+ /*
+    allocates memory for a 2-dimensional array of chars and returns a pointer
+@@ -245,6 +243,7 @@ Reallocate(sbuf, sbufaddr, nrow, ncol, oldrow, oldcol)
  #endif /* !KTERM */
  }
  
@@ -8,3 +27,16 @@
  #ifdef KTERM
  ScreenWrite (screen, str, flags, gset, length)
  #else /* !KTERM */
+@@ -912,10 +911,10 @@ ScreenResize (screen, width, height, flags)
+ 		    /* swap buffer pointers back to make all this hair work */
+ 		    SwitchBufPtrs(screen);
+ 		if (screen->altbuf) 
+-		    (void) Reallocate(&screen->altbuf, (Char **)&screen->abuf_address,
++		    (void) Reallocate(&screen->altbuf, (Bchr **)&screen->abuf_address,
+ 			 rows, cols, screen->max_row + 1, screen->max_col + 1);
+ 		move_down_by = Reallocate(&screen->allbuf,
+-					  (Char **)&screen->sbuf_address,
++					  (Bchr **)&screen->sbuf_address,
+ 					  rows + savelines, cols,
+ 					  screen->max_row + 1 + savelines,
+ 					  screen->max_col + 1);
