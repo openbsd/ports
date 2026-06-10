@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1816 2026/06/09 05:08:38 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1817 2026/06/10 04:51:31 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -526,6 +526,8 @@ my $stem_extensions = {
 	'webkitgtk40' => 'webkitgtk41',
 # 8.0
 	'kcalendarcore' => 'kf6-kcalendarcore',
+	'libkcddb-kf5' => 'kf6-libkcddb',
+
 };
 
 my $obsolete_reason = {};
