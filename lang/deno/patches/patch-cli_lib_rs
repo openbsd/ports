@@ -1,7 +1,7 @@
 Index: cli/lib.rs
 --- cli/lib.rs.orig
 +++ cli/lib.rs
-@@ -153,9 +153,10 @@ async fn run_subcommand(
+@@ -155,9 +155,10 @@ async fn run_subcommand(
        );
        tools::bundle::bundle(Arc::new(flags), bundle_flags).await
      }),
@@ -15,7 +15,7 @@ Index: cli/lib.rs
      DenoSubcommand::Doc(doc_flags) => spawn_subcommand(async {
        tools::doc::doc(Arc::new(flags), doc_flags).await
      }),
-@@ -617,7 +618,7 @@ pub fn main() {
+@@ -686,7 +687,7 @@ pub fn main() {
    #[cfg(feature = "dhat-heap")]
    let profiler = dhat::Profiler::new_heap();
  
@@ -24,7 +24,7 @@ Index: cli/lib.rs
  
    init_logging(None, None);
  
-@@ -752,11 +753,13 @@ async fn resolve_flags_and_init(
+@@ -821,11 +822,13 @@ async fn resolve_flags_and_init(
    }
  
    let sys = crate::sys::CliSys::default();
@@ -38,7 +38,7 @@ Index: cli/lib.rs
    if flags.tunnel && !matches!(flags.subcommand, DenoSubcommand::Deploy(_)) {
      if let Err(err) = initialize_tunnel(&flags).await {
        exit_for_error(
-@@ -769,6 +772,10 @@ async fn resolve_flags_and_init(
+@@ -838,6 +841,10 @@ async fn resolve_flags_and_init(
        std::env::set_var("DENO_CONNECTED", "1");
      }
    }
@@ -49,7 +49,7 @@ Index: cli/lib.rs
  
    flags.unstable_config.fill_with_env(&sys);
    if std::env::var("DENO_COMPAT").is_ok() {
-@@ -1031,6 +1038,7 @@ struct AuthTunnelOutput {
+@@ -1102,6 +1109,7 @@ struct AuthTunnelOutput {
    token: String,
  }
  
@@ -57,7 +57,7 @@ Index: cli/lib.rs
  async fn auth_tunnel(
    no_config: bool,
    env_token: Option<String>,
-@@ -1065,6 +1073,7 @@ async fn auth_tunnel(
+@@ -1136,6 +1144,7 @@ async fn auth_tunnel(
    Ok(output)
  }
  

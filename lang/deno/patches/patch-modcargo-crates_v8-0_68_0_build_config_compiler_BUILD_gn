@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
---- modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn.orig
-+++ modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
-@@ -202,7 +202,7 @@ declare_args() {
+Index: modcargo-crates/v8-149.2.0/build/config/compiler/BUILD.gn
+--- modcargo-crates/v8-149.2.0/build/config/compiler/BUILD.gn.orig
++++ modcargo-crates/v8-149.2.0/build/config/compiler/BUILD.gn
+@@ -203,7 +203,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
    # debugging information which is required by some specialized
    # debugging tools.
@@ -10,7 +10,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
  
    # This switch is used to enable -Wexit-time-destructors by default. This
    # warning serves as a flip switch to allow a gradual migration of targets
-@@ -322,13 +322,16 @@ config("default_include_dirs") {
+@@ -323,13 +323,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -28,7 +28,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -448,6 +451,10 @@ config("compiler") {
+@@ -449,6 +452,10 @@ config("compiler") {
      # --------------------------------
      cflags += [ "-fno-strict-aliasing" ]  # See http://crbug.com/32204
  
@@ -39,7 +39,16 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
      # Stack protection. ShadowCallStack and Stack protector address the same
      # problems. Therefore, we only enable one or the other. Clang advertises SCS as
      # a stronger alternative to StackProtector, so we give SCS precedence over SP.
-@@ -616,7 +623,7 @@ config("compiler") {
+@@ -601,7 +608,7 @@ config("compiler") {
+     # Flags for diagnostics.
+     cflags += [ "-fcolor-diagnostics" ]
+     if (!is_win) {
+-      cflags += [ "-fdiagnostics-show-inlining-chain" ]
++      #cflags += [ "-fdiagnostics-show-inlining-chain" ]
+     } else {
+       # Combine after https://github.com/llvm/llvm-project/pull/192241
+       cflags += [ "/clang:-fdiagnostics-show-inlining-chain" ]
+@@ -627,7 +634,7 @@ config("compiler") {
      }
    }
  
@@ -48,16 +57,16 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -1067,7 +1074,7 @@ config("linker") {
+@@ -1084,7 +1091,7 @@ config("linker") {
+         # errors. We only apply fatal warnings when using lld.
+         ldflags += [ "-Wl,-fatal_warnings" ]
+       }
+-      if (!is_apple && current_os != "aix" && current_os != "zos") {
++      if (!is_apple && current_os != "aix" && current_os != "zos" && !is_openbsd) {
+         ldflags += [ "-Wl,--fatal-warnings" ]
+       }
      }
- 
-     # Linker warnings.
--    if (fatal_linker_warnings && !is_apple && current_os != "aix" &&
-+    if (fatal_linker_warnings && !is_apple && !is_openbsd && current_os != "aix" &&
-         current_os != "zos") {
-       ldflags += [ "-Wl,--fatal-warnings" ]
-     }
-@@ -1325,7 +1332,7 @@ config("compiler_cpu_abi") {
+@@ -1349,7 +1356,7 @@ config("compiler_cpu_abi") {
      # CPU architecture. We may or may not be doing a cross compile now, so for
      # simplicity we always explicitly set the architecture.
      if (current_cpu == "x64") {
@@ -66,7 +75,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
          cflags += [ "--target=x86_64-unknown-linux-gnu" ]
          ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
        } else {
-@@ -1339,7 +1346,7 @@ config("compiler_cpu_abi") {
+@@ -1363,7 +1370,7 @@ config("compiler_cpu_abi") {
          ldflags += [ "-march=$cros_target_cpu_arch" ]
        }
      } else if (current_cpu == "x86") {
@@ -75,7 +84,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
          cflags += [ "--target=i386-unknown-linux-gnu" ]
          ldflags += [ "--target=i386-unknown-linux-gnu" ]
        } else {
-@@ -1351,7 +1358,7 @@ config("compiler_cpu_abi") {
+@@ -1375,7 +1382,7 @@ config("compiler_cpu_abi") {
          "-msse3",
        ]
      } else if (current_cpu == "arm") {
@@ -84,7 +93,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -1360,7 +1367,7 @@ config("compiler_cpu_abi") {
+@@ -1384,7 +1391,7 @@ config("compiler_cpu_abi") {
          "-mfloat-abi=$arm_float_abi",
        ]
      } else if (current_cpu == "arm64") {
@@ -93,7 +102,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1720,7 +1727,7 @@ config("compiler_deterministic") {
+@@ -1744,7 +1751,7 @@ config("compiler_deterministic") {
        "-file-prefix-map",
        rebase_path("//.", "") + "=" + rebase_path("//.", root_build_dir),
      ]
@@ -102,7 +111,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1773,7 +1780,7 @@ config("compiler_deterministic") {
+@@ -1797,7 +1804,7 @@ config("compiler_deterministic") {
  
  config("clang_revision") {
    if (is_clang && clang_base_path == default_clang_base_path &&
@@ -111,32 +120,41 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
      _perform_consistency_checks = current_toolchain == default_toolchain
      if (llvm_force_head_revision) {
        _head_revision_stamp_path = "//third_party/llvm-build/force_head_revision"
-@@ -1897,13 +1904,13 @@ config("sanitize_c_array_bounds") {
-       # sanitizer) is enabled, they then do expensive debug like operations. We
-       # want to suppress this behaviour since we want to keep performance costs
-       # as low as possible while having these checks.
--      "-fsanitize-ignore-for-ubsan-feature=array-bounds",
-+      # "-fsanitize-ignore-for-ubsan-feature=array-bounds",
+@@ -1910,7 +1917,7 @@ config("clang_warning_suppression") {
+ # See also: https://crbug.com/40891132#comment10
+ ubsan_hardening("c_array_bounds") {
+   sanitizer = "array-bounds"
+-  condition = !(is_asan && target_cpu == "x86")
++  condition = !(is_bsd || (is_asan && target_cpu == "x86"))
  
-       # Because we've enabled array-bounds sanitizing we also want to suppress
-       # the related warning about "unsafe-buffer-usage-in-static-sized-array",
-       # since we know that the array bounds sanitizing will catch any out-of-
-       # bounds accesses.
--      "-Wno-unsafe-buffer-usage-in-static-sized-array",
-+      # "-Wno-unsafe-buffer-usage-in-static-sized-array",
-     ]
-   }
+   # Because we've enabled array-bounds sanitizing we also want to suppress
+   # the related warning about "unsafe-buffer-usage-in-static-sized-array",
+@@ -1924,6 +1931,7 @@ ubsan_hardening("c_array_bounds") {
+ # `NOTREACHED()` at the end of such functions.
+ ubsan_hardening("return") {
+   sanitizer = "return"
++  condition = !is_bsd
  }
-@@ -2608,7 +2615,7 @@ config("export_dynamic") {
+ 
+ config("rustc_revision") {
+@@ -2260,7 +2268,6 @@ config("default_warnings") {
+       "-Wno-uninitialized-const-pointer",
+ 
+       # TODO(crbug.com/495753203): Fix and re-enable.
+-      "-Wno-unused-but-set-global",
+     ]
+ 
+     cflags_cc += [
+@@ -2629,7 +2636,7 @@ config("export_dynamic") {
  # 2. Remove the thin_archive config, so that the .a file actually contains all
  #    .o files, instead of just references to .o files in the build directoy
  config("thin_archive") {
--  if ((is_apple && use_lld) || (is_linux && !is_clang) || current_os == "aix") {
-+  if ((is_apple && use_lld) || (is_linux && !is_clang && !is_bsd) || current_os == "aix") {
+-  if ((is_apple && use_lld) || (is_linux && !is_clang) || current_os == "aix" ||
++  if ((is_apple && use_lld) || (is_linux && !is_clang && !is_bsd) || current_os == "aix" ||
+       current_os == "zos") {
      # The macOS and iOS linker ld64.ldd doesn't support thin archive without
      # symbol table, gcc on linux also throws the error `archive has no index`.
-     # AIX does support -s option, not -S option.
-@@ -3044,7 +3051,7 @@ config("afdo_optimize_size") {
+@@ -3066,7 +3073,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -145,7 +163,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -3071,7 +3078,7 @@ config("afdo") {
+@@ -3093,7 +3100,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -154,7 +172,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -3201,7 +3208,7 @@ config("symbols") {
+@@ -3223,7 +3230,7 @@ config("symbols") {
      }
  
      if (current_os != "zos") {
@@ -163,7 +181,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
      }
  
      if (is_clang && !is_tsan && !is_asan) {
-@@ -3230,7 +3237,7 @@ config("symbols") {
+@@ -3252,7 +3259,7 @@ config("symbols") {
        if (use_dwarf5) {
          cflags += [ "-gpubnames" ]
        } else {
@@ -172,7 +190,7 @@ Index: modcargo-crates/v8-147.4.0/build/config/compiler/BUILD.gn
            # This flag enables the GNU-format pubnames and pubtypes sections,
            # which lld needs in order to generate a correct GDB index.
            # TODO(pcc): Try to make lld understand non-GNU-format pubnames
-@@ -3264,7 +3271,7 @@ config("symbols") {
+@@ -3286,7 +3293,7 @@ config("symbols") {
      cflags += [ "-gomit-unreferenced-methods" ]
    }
  

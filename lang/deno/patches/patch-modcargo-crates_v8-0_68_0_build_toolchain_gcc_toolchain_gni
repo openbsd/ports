@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-147.4.0/build/toolchain/gcc_toolchain.gni
---- modcargo-crates/v8-147.4.0/build/toolchain/gcc_toolchain.gni.orig
-+++ modcargo-crates/v8-147.4.0/build/toolchain/gcc_toolchain.gni
+Index: modcargo-crates/v8-149.2.0/build/toolchain/gcc_toolchain.gni
+--- modcargo-crates/v8-149.2.0/build/toolchain/gcc_toolchain.gni.orig
++++ modcargo-crates/v8-149.2.0/build/toolchain/gcc_toolchain.gni
 @@ -46,6 +46,12 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
@@ -14,7 +14,7 @@ Index: modcargo-crates/v8-147.4.0/build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -913,22 +919,13 @@ template("gcc_toolchain") {
+@@ -956,22 +962,13 @@ template("gcc_toolchain") {
  # actually just be doing a native compile.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {

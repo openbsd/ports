@@ -1,19 +1,16 @@
 # deno only supports amd64 and arm64
 ONLY_FOR_ARCHS =	amd64 aarch64
+DPB_PROPERTIES =	parallel
 
 # aws-lc-sys has constants in .text
 # https://github.com/awslabs/s2n-bignum/pull/242
 USE_NOEXECONLY =	Yes
+USE_WXNEEDED =		Yes
 
 COMMENT =		runtime for JavaScript and TypeScript
 
-DPB_PROPERTIES =	parallel
-
-USE_WXNEEDED =		Yes
-
-V =			2.7.14
+V =			2.8.2
 DIST_TUPLE =		github denoland deno v${V} .
-REVISION =		0
 
 HOMEPAGE =		https://deno.com
 
@@ -24,9 +21,11 @@ CATEGORIES =		lang
 # MIT
 PERMIT_PACKAGE =	Yes
 
+WANTLIB +=		${MODCARGO_WANTLIB} m execinfo ffi zstd
+
 MODULES =		devel/cargo lang/clang
 
-MODCLANG_VERSION =	21
+MODCLANG_VERSION =	22
 
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys \
 			libz-sys
@@ -60,7 +59,6 @@ MODCARGO_TEST_ARGS +=	--no-fail-fast
 MAKE_ENV =		${MODCARGO_ENV}
 
 COMPILER =		ports-clang
-WANTLIB +=		${MODCARGO_WANTLIB} m execinfo ffi onig zstd
 
 BUILD_DEPENDS =		databases/sqlite3 \
 			devel/cmake/core \
@@ -73,8 +71,7 @@ BUILD_DEPENDS =		databases/sqlite3 \
 			${RUN_DEPENDS}
 
 LIB_DEPENDS =		archivers/zstd \
-			devel/libffi \
-			textproc/oniguruma
+			devel/libffi
 
 RUN_DEPENDS =		sysutils/libudev-openbsd
 
@@ -86,7 +83,7 @@ DOCDIR =		${PREFIX}/share/doc/deno
 PORTHOME =		${WRKSRC}
 
 DENO_CORE_ICUDATA_V =	0.77.0
-V8_CARGO_V =		147.4.0
+V8_CARGO_V =		149.2.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo

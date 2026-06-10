@@ -1,7 +1,7 @@
 Index: cli/task_runner.rs
 --- cli/task_runner.rs.orig
 +++ cli/task_runner.rs
-@@ -247,8 +247,7 @@ impl ShellCommand for NpmCommand {
+@@ -329,8 +329,7 @@ impl ShellCommand for NpmCommand {
        return ExecutableCommand::new(
          "deno".to_string(),
          std::env::current_exe()
@@ -11,7 +11,7 @@ Index: cli/task_runner.rs
        )
        .execute(ShellCommandContext {
          args,
-@@ -278,8 +277,7 @@ impl Default for DenoCommand {
+@@ -360,8 +359,7 @@ impl Default for DenoCommand {
      Self(ExecutableCommand::new(
        "deno".to_string(),
        std::env::current_exe()
@@ -21,7 +21,7 @@ Index: cli/task_runner.rs
      ))
    }
  }
-@@ -331,8 +329,7 @@ impl ShellCommand for NodeCommand {
+@@ -413,8 +411,7 @@ impl ShellCommand for NodeCommand {
      ExecutableCommand::new(
        "deno".to_string(),
        std::env::current_exe()
@@ -31,7 +31,7 @@ Index: cli/task_runner.rs
      )
      .execute(ShellCommandContext {
        args,
-@@ -431,8 +428,7 @@ impl ShellCommand for NodeModulesFileRunCommand {
+@@ -513,8 +510,7 @@ impl ShellCommand for NodeModulesFileRunCommand {
      let executable_command = deno_task_shell::ExecutableCommand::new(
        "deno".to_string(),
        std::env::current_exe()

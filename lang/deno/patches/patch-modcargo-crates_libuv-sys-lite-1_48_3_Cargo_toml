@@ -1,0 +1,12 @@
+Fix build with llvm 22.
+Obtained from FreeBSD (Mikael Urankar)
+
+Index: modcargo-crates/libuv-sys-lite-1.48.3/Cargo.toml
+--- modcargo-crates/libuv-sys-lite-1.48.3/Cargo.toml.orig
++++ modcargo-crates/libuv-sys-lite-1.48.3/Cargo.toml
+@@ -47,4 +47,4 @@ version = "0.8.5"
+ optional = true
+ 
+ [build-dependencies.bindgen]
+-version = "0.70.1"
++version = "0.72.1"
