@@ -2,11 +2,11 @@ Index: Makefile
 --- Makefile.orig
 +++ Makefile
 @@ -93,7 +93,7 @@ INSTALL_LIB=\
-   src/ocamlbuildlib.cma \
-   src/ocamlbuild.cmo \
+   plugin-lib/ocamlbuildlib.cma \
+   bin/ocamlbuild.cmo \
    src/ocamlbuild_pack.cmi \
 -  $(EXTRA_CMO:.cmo=.cmi)
 +  $(EXTRA_CMO) $(EXTRA_CMO:.cmo=.cmi)
  
  INSTALL_LIB_OPT=\
-   src/ocamlbuildlib.cmxa src/ocamlbuildlib$(EXT_LIB) \
+   plugin-lib/ocamlbuildlib.cmxa plugin-lib/ocamlbuildlib$(EXT_LIB) \
