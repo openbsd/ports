@@ -1,8 +1,10 @@
+BROKEN-riscv64 =	RISC-V type '__rvv_float32m8_t' requires the 'zve32f' extension
+
 COMMENT=		tensor library for machine learning
 
 GH_ACCOUNT=		ggml-org
 GH_PROJECT=		ggml
-GH_TAGNAME =		v0.13.1
+GH_TAGNAME =		v0.14.0
 PKGNAME=		lib${DISTNAME}
 
 SHARED_LIBS +=		ggml 4.1
