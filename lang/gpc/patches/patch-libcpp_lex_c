@@ -1,0 +1,20 @@
+cpp-id-data.h (UC): Was U, conflicts with U...
+https://gcc.gnu.org/git/?p=gcc.git;a=commit;h=b6baa67d7947f
+
+Index: libcpp/lex.c
+--- libcpp/lex.c.orig
++++ libcpp/lex.c
+@@ -39,10 +39,10 @@ struct token_spelling
+ };
+ 
+ static const unsigned char *const digraph_spellings[] =
+-{ U"%:", U"%:%:", U"<:", U":>", U"<%", U"%>" };
++{ UC"%:", UC"%:%:", UC"<:", UC":>", UC"<%", UC"%>" };
+ 
+-#define OP(e, s) { SPELL_OPERATOR, U s  },
+-#define TK(e, s) { SPELL_ ## s,    U #e },
++#define OP(e, s) { SPELL_OPERATOR, UC s  },
++#define TK(e, s) { SPELL_ ## s,    UC #e },
+ static const struct token_spelling token_spellings[N_TTYPES] = { TTYPE_TABLE };
+ #undef OP
+ #undef TK

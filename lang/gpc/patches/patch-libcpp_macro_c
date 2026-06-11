@@ -1,0 +1,26 @@
+cpp-id-data.h (UC): Was U, conflicts with U...
+https://gcc.gnu.org/git/?p=gcc.git;a=commit;h=b6baa67d7947f
+
+Index: libcpp/macro.c
+--- libcpp/macro.c.orig
++++ libcpp/macro.c
+@@ -154,7 +154,7 @@ _cpp_builtin_macro_text (cpp_reader *pfile, cpp_hashno
+ 		  {
+ 		    cpp_errno (pfile, CPP_DL_WARNING,
+ 			"could not determine file timestamp");
+-		    pbuffer->timestamp = U"\"??? ??? ?? ??:??:?? ????\"";
++		    pbuffer->timestamp = UC"\"??? ??? ?? ??:??:?? ????\"";
+ 		  }
+ 	      }
+ 	  }
+@@ -252,8 +252,8 @@ _cpp_builtin_macro_text (cpp_reader *pfile, cpp_hashno
+ 	      cpp_errno (pfile, CPP_DL_WARNING,
+ 			 "could not determine date and time");
+ 		
+-	      pfile->date = U"\"??? ?? ????\"";
+-	      pfile->time = U"\"??:??:??\"";
++	      pfile->date = UC"\"??? ?? ????\"";
++	      pfile->time = UC"\"??:??:??\"";
+ 	    }
+ 	}
+ 

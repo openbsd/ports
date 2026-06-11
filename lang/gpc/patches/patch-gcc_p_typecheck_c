@@ -1,0 +1,15 @@
+Index: gcc/p/typecheck.c
+--- gcc/p/typecheck.c.orig
++++ gcc/p/typecheck.c
+@@ -3931,7 +3931,11 @@ really_start_incremental_init (tree type)
+   constructor_constant = 1;
+   constructor_simple = 1;
+   constructor_depth = SPELLING_DEPTH ();
++#ifndef GCC_4_1
+   constructor_elements = NULL_TREE;
++#else
++  constructor_elements = NULL;
++#endif
+   constructor_pending_elts = NULL_TREE;
+   constructor_type = type;
+ 

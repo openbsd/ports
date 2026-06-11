@@ -1,0 +1,15 @@
+cpp-id-data.h (UC): Was U, conflicts with U...
+https://gcc.gnu.org/git/?p=gcc.git;a=commit;h=b6baa67d7947f
+
+Index: libcpp/include/cpp-id-data.h
+--- libcpp/include/cpp-id-data.h.orig
++++ libcpp/include/cpp-id-data.h
+@@ -22,7 +22,7 @@ Foundation, 51 Franklin Street, Fifth Floor, Boston, M
+ typedef unsigned char uchar;
+ #endif
+ 
+-#define U (const unsigned char *)  /* Intended use: U"string" */
++#define UC (const unsigned char *)  /* Intended use: UC"string" */
+ 
+ /* Chained list of answers to an assertion.  */
+ struct answer GTY(())
