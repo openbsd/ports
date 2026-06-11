@@ -4,6 +4,7 @@ VERSION =	11.1.0
 DISTNAME =	octave-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
+REVISION =	0
 
 SHARED_LIBS +=	octave		19.0
 SHARED_LIBS +=	octgui		13.0
@@ -24,7 +25,7 @@ WANTLIB += Qt6Sql Qt6Widgets Qt6Xml SM X11 X11-xcb Xau Xdmcp Xext
 WANTLIB += Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm aec amd arpack
 WANTLIB += b2 blas brotlicommon brotlidec bz2 c camd ccolamd cholmod
 WANTLIB += colamd crypto curl curses cxsparse dbus-1 double-conversion
-WANTLIB += drm drm_amdgpu drm_intel duktape elf epoll-shim ereadline
+WANTLIB += drm drm_amdgpu duktape elf epoll-shim ereadline
 WANTLIB += execinfo expat ffi fftw3 fftw3_threads fftw3f fftw3f_threads
 WANTLIB += fontconfig freetype gbm gio-2.0 gl2ps glapi glib-2.0
 WANTLIB += glpk glut gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0
@@ -36,6 +37,10 @@ WANTLIB += sndfile sndio spqr ssl suitesparseconfig sz umfpack
 WANTLIB += util vorbis vorbisenc wayland-client xcb xcb-dri2 xcb-dri3
 WANTLIB += xcb-glx xcb-present xcb-randr xcb-shm xcb-sync xcb-xfixes
 WANTLIB += xkbcommon xshmfence z zstd
+
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" 
+WANTLIB += drm_intel
+.endif
 
 SITES =		${SITE_GNU:=octave/}
 
