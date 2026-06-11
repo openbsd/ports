@@ -39,7 +39,7 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			lang/vala \
 			sysutils/usbutils \
 			textproc/asciidoc \
-			textproc/gtk-doc \
+			textproc/gi-docgen \
 			wayland/wayland-protocols
 
 RUN_DEPENDS=		sysutils/usbutils
