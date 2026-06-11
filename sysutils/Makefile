@@ -472,6 +472,7 @@
      SUBDIR += sysmon
      SUBDIR += tabled
      SUBDIR += tabs
+     SUBDIR += talos-ii-pnor-bootkernel
      SUBDIR += tarsnap
      SUBDIR += tarsnap-gui
      SUBDIR += tarsnapper
