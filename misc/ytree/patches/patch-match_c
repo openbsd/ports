@@ -8,8 +8,8 @@ Index: match.c
  #include "ytree.h"
  
  
--#if defined( hpux ) || defined ( __APPLE__ ) || defined ( linux )
-+#if defined( hpux ) || defined ( __APPLE__ ) || defined ( linux ) || defined( __OpenBSD__ )
+-#if defined( hpux ) || defined ( __APPLE__ ) || defined ( linux ) || defined(__HAIKU__)
++#if defined( hpux ) || defined ( __APPLE__ ) || defined ( linux ) || defined(__HAIKU__) || defined( __OpenBSD__ ) 
  #define HAS_REGCOMP
  #else
 -#if defined( sun ) || defined( __NeXT__ ) || defined( OSF1 ) ||  defined( __OpenBSD__ ) || defined(__NetBSD__) || defined( __FreeBSD__ ) || defined( __GNU__ )
