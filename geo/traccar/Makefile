@@ -1,5 +1,5 @@
 COMMENT =	modern GPS tracking platform
-V =		6.13.3
+V =		6.14.4
 PKGNAME =	traccar-${V}
 DISTNAME =	traccar-other-${V}
 EXTRACT_SUFX =	.zip
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 SITES =		https://github.com/traccar/traccar/releases/download/v${V}/
 
 MODULES =	java
-MODJAVA_VER =	17+
+MODJAVA_VER =	21+
 
 RUN_DEPENDS =	java/javaPathHelper
 
