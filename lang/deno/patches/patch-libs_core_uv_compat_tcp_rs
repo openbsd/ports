@@ -1,0 +1,19 @@
+Index: libs/core/uv_compat/tcp.rs
+--- libs/core/uv_compat/tcp.rs.orig
++++ libs/core/uv_compat/tcp.rs
+@@ -929,7 +929,6 @@ unsafe fn apply_keepalive_fd(
+       target_os = "ios",
+       target_os = "freebsd",
+       target_os = "netbsd",
+-      target_os = "openbsd",
+       target_os = "dragonfly"
+     ))]
+     let idle_opt: Option<c_int> = Some(libc::TCP_KEEPALIVE);
+@@ -940,7 +939,6 @@ unsafe fn apply_keepalive_fd(
+       target_os = "ios",
+       target_os = "freebsd",
+       target_os = "netbsd",
+-      target_os = "openbsd",
+       target_os = "dragonfly"
+     )))]
+     let idle_opt: Option<c_int> = None;

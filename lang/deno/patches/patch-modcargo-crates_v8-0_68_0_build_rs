@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-149.2.0/build.rs
---- modcargo-crates/v8-149.2.0/build.rs.orig
-+++ modcargo-crates/v8-149.2.0/build.rs
+Index: modcargo-crates/v8-149.3.0/build.rs
+--- modcargo-crates/v8-149.3.0/build.rs.orig
++++ modcargo-crates/v8-149.3.0/build.rs
 @@ -255,7 +255,7 @@ fn build_v8(is_asan: bool) {
      download_ninja_gn_binaries();
    }
