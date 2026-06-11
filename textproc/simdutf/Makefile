@@ -1,6 +1,7 @@
 COMMENT =	unicode validator and transcoder with SIMD
 
 VERSION =	8.2.0
+REVISION =	0
 DIST_TUPLE +=	github simdutf simdutf v${VERSION} .
 
 SHARED_LIBS =	simdutf 0.4
@@ -21,7 +22,7 @@ LIB_DEPENDS =		converters/libiconv
 COMPILER =		base-clang ports-gcc
 MODULES =		lang/python \
 			devel/cmake
-
+MODPY_RUNDEP =		No
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
 
