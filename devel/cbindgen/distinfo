@@ -70,7 +70,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJ
 SHA256 (cargo/winnow-0.7.12.tar.gz) = 8+3r9JLIElBEmDN47LV2YgOtO0wvepIr190gf21EPpU=
 SHA256 (cargo/wit-bindgen-rt-0.39.0.tar.gz) = b0IyDmH+LP00NU7LWX+G9BNISnmLpEqMoRZcWNQtpsE=
 SHA256 (cargo/yansi-1.0.1.tar.gz) = z+U6Zlf9KA6qiQo7xZFSiS/6PjAQExnRaLeB7WUpsEk=
-SHA256 (cbindgen-0.29.2.tar.gz) = x9TWEEgjkMcORxpWgt5xSWfhh+0vkvIjfDF6SEqMfjo=
+SHA256 (cbindgen-0.29.4.tar.gz) = m1dX6RXPi+Uj06yigrm1ZRuvoRLhS/G6SIViuigoB9Y=
 SIZE (cargo/anstream-0.6.19.tar.gz) = 28767
 SIZE (cargo/anstyle-1.0.11.tar.gz) = 15880
 SIZE (cargo/anstyle-parse-0.2.7.tar.gz) = 21707
@@ -143,4 +143,4 @@ SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/winnow-0.7.12.tar.gz) = 174403
 SIZE (cargo/wit-bindgen-rt-0.39.0.tar.gz) = 12241
 SIZE (cargo/yansi-1.0.1.tar.gz) = 75497
-SIZE (cbindgen-0.29.2.tar.gz) = 245826
+SIZE (cbindgen-0.29.4.tar.gz) = 252643
