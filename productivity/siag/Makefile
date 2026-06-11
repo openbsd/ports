@@ -2,7 +2,7 @@ COMMENT=		tightly integrated, free office package
 
 VERSION=		3.6.1
 DISTNAME=		siag-${VERSION}
-REVISION=		7
+REVISION=		8
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://siag.nu/

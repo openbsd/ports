@@ -1,5 +1,6 @@
---- stocks/http.c.orig	Wed Aug 29 16:14:41 2007
-+++ stocks/http.c	Wed Aug 29 16:17:14 2007
+Index: stocks/http.c
+--- stocks/http.c.orig
++++ stocks/http.c
 @@ -20,13 +20,13 @@
  
  #define __HTTP_C__
@@ -15,3 +16,12 @@
  #include <ctype.h>
  #include <string.h>
  #include <stdlib.h>
+@@ -98,7 +98,7 @@ libstocks_return_code http_get(char *http_file, char *
+   setsockopt(s, SOL_SOCKET, SO_KEEPALIVE, 0, 0);
+ 
+   /* connect to server */
+-  if (connect(s, &server, sizeof(server)) < 0)
++  if (connect(s, (struct sockaddr *)&server, sizeof(server)) < 0)
+     {
+ #ifdef DEBUG
+       printf(" connect to server : NOK\n");
