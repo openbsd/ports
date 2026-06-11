@@ -22,6 +22,7 @@ share/wycheproof/doc/hkdf.md
 share/wycheproof/doc/index.md
 share/wycheproof/doc/json_web_crypto.md
 share/wycheproof/doc/key_wrap.md
+share/wycheproof/doc/mldsa.md
 share/wycheproof/doc/rsa.md
 share/wycheproof/doc/spongycastle.md
 share/wycheproof/doc/types.md
