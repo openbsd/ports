@@ -35,6 +35,17 @@ lib/python${MODPY_VERSION}/site-packages/filelock/_async_read_write.py
 lib/python${MODPY_VERSION}/site-packages/filelock/_error.py
 lib/python${MODPY_VERSION}/site-packages/filelock/_read_write.py
 lib/python${MODPY_VERSION}/site-packages/filelock/_soft.py
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/__init__.py
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/${MODPY_PYCACHE}_async.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/${MODPY_PYCACHE}_async.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/${MODPY_PYCACHE}_sync.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/${MODPY_PYCACHE}_sync.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/_async.py
+lib/python${MODPY_VERSION}/site-packages/filelock/_soft_rw/_sync.py
 lib/python${MODPY_VERSION}/site-packages/filelock/_unix.py
 lib/python${MODPY_VERSION}/site-packages/filelock/_util.py
 lib/python${MODPY_VERSION}/site-packages/filelock/_windows.py
