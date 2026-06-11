@@ -1,11 +1,11 @@
 COMMENT =	fast in-process analytical database
 
-V =		1.5.2
+V =		1.5.3
 GH_ACCOUNT =	duckdb
 GH_PROJECT =	duckdb
 GH_TAGNAME =	v${V}
 
-SHARED_LIBS =	duckdb	1.2
+SHARED_LIBS =	duckdb	2.0
 
 CATEGORIES =	databases
 
@@ -22,10 +22,10 @@ COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake
 
 CONFIGURE_ARGS =	-DOVERRIDE_GIT_DESCRIBE="v${V}" \
+			-DENABLE_JEMALLOC=OFF \
 			-DENABLE_SANITIZER=OFF \
 			-DENABLE_UBSAN=OFF \
-			-DBUILD_EXTENSIONS="autocomplete;icu;json;parquet" \
-			-DSKIP_EXTENSIONS="jemalloc"
+			-DBUILD_EXTENSIONS="autocomplete;icu;json;parquet"
 
 do-test:
 	cd ${WRKBUILD}/test && ./unittest
