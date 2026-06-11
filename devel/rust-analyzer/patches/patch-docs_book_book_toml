@@ -12,3 +12,9 @@ Index: docs/book/book.toml
  
  [output.html.playground]
  editable = true
+@@ -33,3 +34,5 @@ use-boolean-and = true
+ [output.html.fold]
+ enable = true
+ level = 3
++
++[output.markdown]
