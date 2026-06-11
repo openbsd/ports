@@ -29,7 +29,8 @@ MODULES = 		devel/dconf \
 			textproc/intltool
 
 BUILD_DEPENDS = 	devel/gettext,-tools \
-			devel/gsettings-desktop-schemas
+			devel/gsettings-desktop-schemas \
+			devel/help2man
 LIB_DEPENDS =		devel/libglade2 \
 			databases/sqlite3 \
 			graphics/libexif \
