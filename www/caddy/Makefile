@@ -1,7 +1,7 @@
 COMMENT=	extensible HTTP/1-2-3 web server
 
 MODGO_MODNAME=	github.com/caddyserver/caddy/v2
-MODGO_VERSION=	v2.11.2
+MODGO_VERSION=	v2.11.4
 DISTNAME=	caddy-${MODGO_VERSION}
 
 CATEGORIES=	www
