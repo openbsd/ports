@@ -1,4 +1,4 @@
-SHA256 (cargo-insta-1.47.2.tar.gz) = cuEql+EaaFN+tseJPdsnkixdCYUlHamWKs7F4Adrz54=
+SHA256 (cargo-insta-1.48.0.tar.gz) = SUZBbqPGtusgWhexdm6jUCxlTtV9negePozPA29Qhss=
 SHA256 (cargo/aho-corasick-0.7.19.tar.gz) = tPVb2RoJeMv9kcRXoWS6uLQAHIM7fzIxMsCk4ZIt1E4=
 SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3cYo=
 SHA256 (cargo/bitflags-2.10.0.tar.gz) = gS4StShcxRWpxypcHTttRqGdrFrP71JllowWYQbjHdM=
@@ -81,6 +81,7 @@ SHA256 (cargo/serde_spanned-1.0.4.tar.gz) = +Lv5HlpNYxXu5F5wQ3JZCzDiYO6Dr2Y51kVX
 SHA256 (cargo/sha2-0.10.8.tar.gz) = eT23WtK8r8P/p8aLIV/uJo9TeYLNkB0TL4nGND86Pcg=
 SHA256 (cargo/similar-2.6.0.tar.gz) = HeHU+BFzsDr0wMvtPImPa/9bhw5Kf11vQFfWKnpLaG4=
 SHA256 (cargo/similar-asserts-1.5.0.tar.gz) = 4EG7gn0b/KGPITQR1RtmUwnxr7N6BKXRRkUw4Td5/A8=
+SHA256 (cargo/strip-ansi-escapes-0.2.1.tar.gz) = Ko+AOOfnlpq7Pxt8KoESJekpbaIIU54PecUlHWysACU=
 SHA256 (cargo/strsim-0.10.0.tar.gz) = c0c8Dlnm1YEsXf4qBkpkRJSfCJ4g7smi5VBllklORiM=
 SHA256 (cargo/syn-2.0.100.tar.gz) = sJpErMrYHhuhzXSjJGG6id7okJW6F7MvXQNoOxsfwqA=
 SHA256 (cargo/tempfile-3.5.0.tar.gz) = ufvshPOB1XlbCGVuSRK+xgTRYr/5KR1hiaePTIq4eZg=
@@ -100,6 +101,7 @@ SHA256 (cargo/unicode-segmentation-1.10.0.tar.gz) = D9vwUqB4PeAelEps56jLk54pWx57
 SHA256 (cargo/unicode-width-0.2.2.tar.gz) = tKwEjXHt5+521YVRet1F2lMGYO9DkOSbCYczxuiX8lQ=
 SHA256 (cargo/uuid-1.1.2.tar.gz) = 3WRp9DFNXx/+xHbgXxfMmni8eiemqFeEIXC9+Nb5jS8=
 SHA256 (cargo/version_check-0.9.4.tar.gz) = SYdLUWe2XXGTuKuhVn9cfZPQAcr8NGAM7gA+2nh+SD8=
+SHA256 (cargo/vte-0.14.1.tar.gz) = Ix/c1+8wN+gzDY4X5hARosJEEmrMCpgvQECsP58LwHc=
 SHA256 (cargo/walkdir-2.3.2.tar.gz) = gIzyc1zUtoZhE/ZIt5HGrcVxRTe8Ii2TR7sgM4b/2lY=
 SHA256 (cargo/wasi-0.11.0+wasi-snapshot-preview1.tar.gz) = nI2H5ytko7TbKNEc4pI3wkYYj09RBX1lp+q2O3mH5CM=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
@@ -148,7 +150,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.48.0.tar.gz) = GlFfV5n+SWHLUy+YPOKyMII2a4mOU
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/windows_x86_64_msvc-0.53.1.tar.gz) = 1rv/XwqtpCeh5abaXx+YFYGC8mVW80WsngTTbQ6+1lA=
 SHA256 (cargo/winnow-0.7.13.tar.gz) = IaAja1l4b+1h4qgFgt1QD+YfGLXcpnpKBn0LyQOTOc8=
-SIZE (cargo-insta-1.47.2.tar.gz) = 1513365
+SIZE (cargo-insta-1.48.0.tar.gz) = 1519576
 SIZE (cargo/aho-corasick-0.7.19.tar.gz) = 113070
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bitflags-2.10.0.tar.gz) = 48427
@@ -231,6 +233,7 @@ SIZE (cargo/serde_spanned-1.0.4.tar.gz) = 11032
 SIZE (cargo/sha2-0.10.8.tar.gz) = 26357
 SIZE (cargo/similar-2.6.0.tar.gz) = 51659
 SIZE (cargo/similar-asserts-1.5.0.tar.gz) = 15337
+SIZE (cargo/strip-ansi-escapes-0.2.1.tar.gz) = 8273
 SIZE (cargo/strsim-0.10.0.tar.gz) = 11355
 SIZE (cargo/syn-2.0.100.tar.gz) = 297947
 SIZE (cargo/tempfile-3.5.0.tar.gz) = 31129
@@ -250,6 +253,7 @@ SIZE (cargo/unicode-segmentation-1.10.0.tar.gz) = 93893
 SIZE (cargo/unicode-width-0.2.2.tar.gz) = 282768
 SIZE (cargo/uuid-1.1.2.tar.gz) = 49511
 SIZE (cargo/version_check-0.9.4.tar.gz) = 14895
+SIZE (cargo/vte-0.14.1.tar.gz) = 57382
 SIZE (cargo/walkdir-2.3.2.tar.gz) = 23516
 SIZE (cargo/wasi-0.11.0+wasi-snapshot-preview1.tar.gz) = 28131
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
