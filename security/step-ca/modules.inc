@@ -594,7 +594,7 @@ MODGO_MODULES =	\
 	google.golang.org/genproto/googleapis/api						 v0.0.0-20260217215200-42d3e9bedb6d \
 	google.golang.org/genproto/googleapis/bytestream					 v0.0.0-20260226221140-a57be14db171 \
 	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20260226221140-a57be14db171 \
-	google.golang.org/grpc									 v1.79.2 \
+	google.golang.org/grpc									 v1.79.3 \
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc						 v1.5.1 \
 	google.golang.org/protobuf								 v1.36.11 \
 	gopkg.in/check.v1									 v1.0.0-20201130134442-10cb98267c6c \
@@ -1040,6 +1040,7 @@ MODGO_MODFILES =	\
 	google.golang.org/grpc								 v1.76.0 \
 	google.golang.org/grpc								 v1.78.0 \
 	google.golang.org/grpc								 v1.79.1 \
+	google.golang.org/grpc								 v1.79.2 \
 	google.golang.org/protobuf							 v1.31.0 \
 	google.golang.org/protobuf							 v1.33.0 \
 	google.golang.org/protobuf							 v1.34.1 \
