@@ -1,6 +1,6 @@
 COMMENT=		Gemini AI agent CLI
 
-V=			0.45.2
+V=			0.46.0
 DISTNAME=		gemini-cli-${V}
 
 CATEGORIES=		sysutils misc devel
