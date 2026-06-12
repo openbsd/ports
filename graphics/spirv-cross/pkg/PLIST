@@ -27,6 +27,7 @@ include/spirv_cross/spirv_reflect.hpp
 @static-lib lib/libspirv-cross-reflect.a
 @static-lib lib/libspirv-cross-util.a
 lib/pkgconfig/spirv-cross-c-shared.pc
+lib/pkgconfig/spirv-cross-c.pc
 share/spirv_cross_c/
 share/spirv_cross_c/cmake/
 share/spirv_cross_c/cmake/spirv_cross_cConfig${MODCMAKE_BUILD_SUFFIX}
