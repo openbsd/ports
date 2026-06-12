@@ -1,6 +1,6 @@
 COMMENT =		monitor the progress of data through a pipeline
 
-DISTNAME =		pv-1.10.5
+DISTNAME =		pv-1.11.0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.ivarch.com/programs/pv.shtml
@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 SITES =			https://www.ivarch.com/programs/sources/
 
-WANTLIB =		c curses iconv intl m pthread
+WANTLIB =		c curses iconv intl m
 
 CONFIGURE_STYLE =	gnu
 
