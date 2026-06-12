@@ -1,6 +1,8 @@
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=		spice-gtk-0.43
+REVISION=		0
+
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		x11 net
@@ -18,7 +20,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 c cairo crypto epoxy gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 gtk-3 intl jpeg json-glib-1.0
-WANTLIB += lz4 m opus pixman-1 sasl2 ssl va-x11 wayland-client
+WANTLIB += lz4 m opus pixman-1 sasl2 ssl udev va-x11 wayland-client
 WANTLIB += wayland-server z
 
 SITES=			https://gitlab.freedesktop.org/-/project/64/uploads/88f5d31a961da9921add46ca3f0be904/
@@ -52,6 +54,7 @@ LIB_DEPENDS=		archivers/lz4 \
 			devel/json-glib \
 			multimedia/gstreamer1/plugins-base \
 			security/cyrus-sasl2 \
+			sysutils/libudev-openbsd \
 			x11/gtk+3
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
