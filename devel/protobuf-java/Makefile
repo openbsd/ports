@@ -1,7 +1,7 @@
 COMMENT =	Google data interchange format (protocol buffers)
 
 JAVAMAJOR=		4
-PROTOBUF_VERSION=	34.2
+PROTOBUF_VERSION=	35.0
 
 V=		${JAVAMAJOR}.${PROTOBUF_VERSION}
 
