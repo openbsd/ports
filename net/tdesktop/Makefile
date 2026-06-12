@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			6.8.2
+V =			6.9.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -54,7 +54,8 @@ BUILD_DEPENDS =		devel/boost,-main \
 			devel/microsoft-gsl \
 			devel/range-v3>=0.11.0p0 \
 			devel/tl-expected \
-			net/tdlib/tde2e
+			net/tdlib/tde2e \
+			x11/qt6/qtshadertools
 
 LIB_DEPENDS =		archivers/lz4 \
 			archivers/minizip \
@@ -98,7 +99,7 @@ CONFIGURE_ARGS +=	-DLINUX=true
 NO_TEST =		Yes
 
 # unported and required
-NEEDED_BUNDLES =	cld3 libprisma rlottie tgcalls
+NEEDED_BUNDLES =	cld3 libprisma rlottie tgcalls MicroTeX cmark-gfm
 
 # ported but CMake code hardcodes bundled file paths
 NEEDED_BUNDLES +=	xdg-desktop-portal
