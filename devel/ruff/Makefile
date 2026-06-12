@@ -3,16 +3,11 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	Python linter and code formatter
 
-MODPY_DISTV =	0.15.15
+MODPY_DISTV =	0.15.17
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
 GH_TAGNAME =	${MODPY_DISTV}
-
-# Rust crates downloaded via git
-LSPTYPES =	e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c
-
-DIST_TUPLE +=	github astral-sh lsp-types ${LSPTYPES} ../lsp-types
 
 CATEGORIES =	devel textproc
 
