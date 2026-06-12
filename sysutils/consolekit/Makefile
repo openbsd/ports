@@ -1,3 +1,5 @@
+PORTROACH=		limit:^1
+
 COMMENT=		framework for defining and tracking users, sessions & seats
 
 GH_TAGNAME=		1.2.6
