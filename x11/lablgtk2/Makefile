@@ -1,10 +1,9 @@
 COMMENT =	OCaml interface to GTK+2
 
-V =		2.18.11
+V =		2.18.14
 DISTNAME =	lablgtk2-$V
 PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
-REVISION =	5
 
 HOMEPAGE =	http://lablgtk.forge.ocamlcore.org/
 GH_ACCOUNT =	garrigue
@@ -21,7 +20,8 @@ WANTLIB += glib-2.0 gnomecanvas-2 gobject-2.0 gtk-x11-2.0 gtksourceview-2.0
 WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += rsvg-2 xml2 z
 
-BUILD_DEPENDS =	sysutils/findlib
+BUILD_DEPENDS =	sysutils/findlib \
+		devel/ocaml-camlp-streams
 
 LIB_DEPENDS =	x11/gtk+2 \
 		devel/gettext,-runtime \
