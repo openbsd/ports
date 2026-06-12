@@ -15,6 +15,10 @@ HOMEPAGE =		https://www.jj-vcs.dev/v$V/
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
+# No option -Wdate-time
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
