@@ -1,6 +1,6 @@
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-2.3.2
+DISTNAME=	mutt-2.3.3
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -13,7 +13,7 @@ EPOCH=		3
 PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-WANTLIB+=	c crypto curses iconv idn2 intl pthread qdbm ssl unistring z
+WANTLIB += c crypto curses iconv idn2 intl pthread qdbm ssl unistring z
 
 SITES=		https://ftp.osuosl.org/pub/mutt/ \
 		http://ftp.mutt.org/pub/mutt/ \
@@ -22,7 +22,7 @@ SITES=		https://ftp.osuosl.org/pub/mutt/ \
 LIB_DEPENDS=	databases/qdbm \
 		devel/gettext,-runtime \
 		devel/libidn2
-BUILD_DEPENDS+=	textproc/docbook-xsl \
+BUILD_DEPENDS=	textproc/docbook-xsl \
 		www/lynx
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 COMPILER=	base-clang ports-gcc
@@ -41,7 +41,7 @@ MODPY_RUNDEP=	No
 MODPY_BUILDDEP=	No
 MODPY_ADJ_FILES= contrib/markdown2html
 
-CONFIGURE_ARGS+= --enable-compressed \
+CONFIGURE_ARGS=	--enable-compressed \
 		--enable-debug \
 		--enable-external_dotlock \
 		--disable-fcntl \
