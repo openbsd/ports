@@ -1,0 +1,14 @@
+Prevent negative array index.  Array has 1000 elements, i-1 is the index.
+
+Index: KQueue.xs
+--- KQueue.xs.orig
++++ KQueue.xs
+@@ -143,7 +143,7 @@ get_kev(kq, i)
+   PREINIT:
+     dXSTARG;
+   CODE:
+-    if (i < 0 || i >= 1000) {
++    if (i <= 0 || i > 1000) {
+         croak("Invalid kevent id: %d", i);
+     }
+     

@@ -1,6 +1,7 @@
 COMMENT =	perl interface to the BSD kqueue system call
 
 DISTNAME =	IO-KQueue-0.39
+REVISION =	0
 
 CATEGORIES =	devel
 
