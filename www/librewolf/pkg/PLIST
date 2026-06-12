@@ -12,6 +12,7 @@ lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default32.png
 lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default48.png
 lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default64.png
 lib/${MOZILLA_PROJECT}/browser/defaults/
+lib/${MOZILLA_PROJECT}/browser/defaults/pref/
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/all-openbsd.js

@@ -53,13 +53,9 @@ mk_add_options MOZ_DATA_REPORTING=0
 mk_add_options MOZ_SERVICES_HEALTHREPORT=0
 mk_add_options MOZ_TELEMETRY_REPORTING=0
 
-# upstream hardcode-replaces CFLAGS. we want to include ports flags.
-# upstream does:
-# export CFLAGS="-ftrivial-auto-var-init=zero -fwrapv"
-# export CXXFLAGS="-ftrivial-auto-var-init=zero -fwrapv"
-# #export LDFLAGS=
-export CFLAGS="-ftrivial-auto-var-init=zero -fwrapv $CFLAGS"
-export CXXFLAGS="-ftrivial-auto-var-init=zero -fwrapv $CXXFLAGS"
+export CFLAGS="-ftrivial-auto-var-init=zero -fwrapv -Wno-backend-plugin $CFLAGS"
+export CXXFLAGS="-ftrivial-auto-var-init=zero -fwrapv -Wno-backend-plugin $CXXFLAGS"
+# upstream comments this, but we uncomment it for the ports system:
 export LDFLAGS="$LDFLAGS"
 
 # Everything below the line are OpenBSD *additions*
