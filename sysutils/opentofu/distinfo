@@ -652,7 +652,8 @@ SHA256 (go_modules/github.com/go-gl/glfw/@v/v0.0.0-20190409004039-e6da0acd62b1.z
 SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.5.mod) = aja1hxUh5hTmjTqZMnQguALVy6w17HzugPb8PSnujIU=
 SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.2.mod) = j+a6KejQH7xwG/FpOt1SaxMXN1p/7wosLBz5D92kjj8=
 SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.3.mod) = 4GnmAC0pSVuMLcbPDTtWoHXsW+ertsLrGhwIRctmuLM=
-SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.3.zip) = 7AGbEQ9s3D9V8Gf1JXO+RHTVBRubfH/BHrhGsTxWvrQ=
+SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.4.mod) = 4GnmAC0pSVuMLcbPDTtWoHXsW+ertsLrGhwIRctmuLM=
+SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.4.zip) = BqN7ZmgBKi3RCaX3H2rhU4fcgIs1089z9eQG54oXsCc=
 SHA256 (go_modules/github.com/go-kit/kit/@v/v0.8.0.mod) = gHxS02vtLb98bcmTVno4bmvRMHOWozXvLvnsjOe1wts=
 SHA256 (go_modules/github.com/go-kit/kit/@v/v0.9.0.mod) = gHxS02vtLb98bcmTVno4bmvRMHOWozXvLvnsjOe1wts=
 SHA256 (go_modules/github.com/go-kit/kit/@v/v0.9.0.zip) = 89qbNbEA3TLnsQw3oGMK9g1Ur6N8YSkefflLwKwx7QM=
@@ -1952,7 +1953,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7Uv
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SHA256 (opentofu-v1.12.1.zip) = wSxn/utz4fI+BYb1Y3tAQrWlS7sH0nFzweVUqs71low=
+SHA256 (opentofu-v1.12.2.zip) = 0N8x2ynIsON5UPNswEmixVLAc4kcx+Cspwgsv5ID914=
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.mod) = 96
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.zip) = 239588
@@ -2607,7 +2608,8 @@ SIZE (go_modules/github.com/go-gl/glfw/@v/v0.0.0-20190409004039-e6da0acd62b1.zip
 SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.5.mod) = 305
 SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.2.mod) = 85
 SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.3.mod) = 48
-SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.3.zip) = 368633
+SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.4.mod) = 48
+SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.4.zip) = 370134
 SIZE (go_modules/github.com/go-kit/kit/@v/v0.8.0.mod) = 29
 SIZE (go_modules/github.com/go-kit/kit/@v/v0.9.0.mod) = 29
 SIZE (go_modules/github.com/go-kit/kit/@v/v0.9.0.zip) = 438465
@@ -3907,4 +3909,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = 162
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = 60719
-SIZE (opentofu-v1.12.1.zip) = 7704777
+SIZE (opentofu-v1.12.2.zip) = 7708659

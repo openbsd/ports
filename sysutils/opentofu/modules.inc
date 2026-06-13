@@ -259,7 +259,7 @@ MODGO_MODULES =	\
 	github.com/fxamacker/cbor/v2									 v2.9.0 \
 	github.com/ghodss/yaml										 v1.0.0 \
 	github.com/go-gl/glfw										 v0.0.0-20190409004039-e6da0acd62b1 \
-	github.com/go-jose/go-jose/v4									 v4.1.3 \
+	github.com/go-jose/go-jose/v4									 v4.1.4 \
 	github.com/go-kit/kit										 v0.9.0 \
 	github.com/go-kit/log										 v0.1.0 \
 	github.com/go-ldap/ldap										 v3.0.2+incompatible \
@@ -725,6 +725,7 @@ MODGO_MODFILES =	\
 	github.com/fsnotify/fsnotify								 v1.4.9 \
 	github.com/go-jose/go-jose/v4								 v4.0.5 \
 	github.com/go-jose/go-jose/v4								 v4.1.2 \
+	github.com/go-jose/go-jose/v4								 v4.1.3 \
 	github.com/go-kit/kit									 v0.8.0 \
 	github.com/go-logfmt/logfmt								 v0.3.0 \
 	github.com/go-logfmt/logfmt								 v0.4.0 \
