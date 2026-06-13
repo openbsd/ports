@@ -1,6 +1,6 @@
 @mode g+s
 @group games
-bin/spatial
+@bin bin/spatial
 @mode
 @group
 @man man/man6/spatial.6

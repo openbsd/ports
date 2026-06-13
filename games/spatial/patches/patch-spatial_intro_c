@@ -1,5 +1,6 @@
---- spatial/intro.c.orig	Fri Aug 27 21:02:51 1993
-+++ spatial/intro.c	Wed Dec  5 15:03:28 2007
+Index: spatial/intro.c
+--- spatial/intro.c.orig
++++ spatial/intro.c
 @@ -3,8 +3,13 @@
   notice is retained. */
  
@@ -23,6 +24,15 @@
  void initintro()
  {
      intro_redraw();
+@@ -60,7 +63,7 @@ void introloop()
+ 		intro_redraw();
+ 		break;
+ 	    case KeyPress:
+-		XLookupString(&event, &key, 1, &ksym, NULL);
++		XLookupString(&event.xkey, &key, 1, &ksym, NULL);
+ 		/*printf("got '%s'\n", XKeysymToString(ksym));*/
+ 		switch (ksym) {
+ 		    case XK_q:
 @@ -118,7 +121,7 @@ void intro_redraw()
      xputs(50, 220, "(C) Copyright 1991-3 Andrew Plotkin");
      xputs(50, 240, " (ap1i@andrew.cmu.edu)");

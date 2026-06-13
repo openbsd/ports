@@ -1,6 +1,7 @@
---- spatial/deco.c.orig	Mon Aug 23 20:31:10 1993
-+++ spatial/deco.c	Thu Sep  8 14:12:49 2005
-@@ -3,14 +3,16 @@
+Index: spatial/deco.c
+--- spatial/deco.c.orig
++++ spatial/deco.c
+@@ -3,15 +3,17 @@
   notice is retained. */
  
  #include <stdio.h>
@@ -14,8 +15,18 @@
  #include "spatial.h"
  
  extern GC gcblack, gcwhite, gcinv, gccopy, gcline, gcfield, gccubes[]; 
--
--extern void pause_redraw(), add_cubie();
  
+-extern void pause_redraw(), add_cubie();
+-
  void pauseloop()
  {
+     short status, res, lev;
+@@ -43,7 +45,7 @@ void pauseloop()
+ 		pause_redraw();
+ 		break;
+ 	    case KeyPress:
+-		XLookupString(&event, &key, 1, &ksym, NULL);
++		XLookupString(&event.xkey, &key, 1, &ksym, NULL);
+ 		/*printf("got '%s'\n", XKeysymToString(ksym));*/
+ 		switch (ksym) {
+ 		    case XK_Escape:

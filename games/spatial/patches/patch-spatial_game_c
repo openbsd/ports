@@ -1,5 +1,6 @@
---- spatial/game.c.orig	Mon Aug 23 21:28:21 1993
-+++ spatial/game.c	Wed Dec  5 15:03:28 2007
+Index: spatial/game.c
+--- spatial/game.c.orig
++++ spatial/game.c
 @@ -3,8 +3,13 @@
   notice is retained. */
  
@@ -28,6 +29,15 @@
  
  void clearfield()
  {
+@@ -123,7 +121,7 @@ void gameloop()
+ 		back_to_disp(1);
+ 		break;
+ 	    case KeyPress:
+-		XLookupString(&event, &key, 1, &ksym, NULL);
++		XLookupString(&event.xkey, &key, 1, &ksym, NULL);
+ 		switch (ksym) {
+ 		    case XK_Q:
+ 		    case XK_q:
 @@ -382,11 +380,10 @@ long current_usec() /* returns the current
      return tv.tv_usec + 1000000*(tv.tv_sec%100);
  }
