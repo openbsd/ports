@@ -1,7 +1,7 @@
 COMMENT =		real-time graphical programming language for multimedia
 
-DISTNAME =		pd-0.56-2.src
-PKGNAME =		pd-0.56.2
+DISTNAME =		pd-0.56-3.src
+PKGNAME =		pd-0.56.3
 
 CATEGORIES =		audio multimedia
 

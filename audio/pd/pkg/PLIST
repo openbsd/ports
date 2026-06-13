@@ -17,6 +17,12 @@ lib/pd/bin/
 lib/pd/bin/pd
 lib/pd/doc/
 lib/pd/doc/1.manual/
+lib/pd/doc/1.manual/1.introduction.htm
+lib/pd/doc/1.manual/2.theory.of.operation.htm
+lib/pd/doc/1.manual/3.installing.configuring.htm
+lib/pd/doc/1.manual/4.externals.htm
+lib/pd/doc/1.manual/5.current.status.htm
+lib/pd/doc/1.manual/6.building.from.source.htm
 lib/pd/doc/1.manual/index.htm
 lib/pd/doc/1.manual/resources/
 lib/pd/doc/1.manual/resources/1.2.1.png
@@ -99,6 +105,8 @@ lib/pd/doc/1.manual/resources/2.4.8.png
 lib/pd/doc/1.manual/resources/2.4.9.png
 lib/pd/doc/1.manual/resources/2.5.1.png
 lib/pd/doc/1.manual/resources/2.6.1.png
+lib/pd/doc/1.manual/resources/2.7.1.png
+lib/pd/doc/1.manual/resources/2.7.2.png
 lib/pd/doc/1.manual/resources/2.8.1.png
 lib/pd/doc/1.manual/resources/2.8.2.png
 lib/pd/doc/1.manual/resources/2.8.3.png
@@ -130,12 +138,6 @@ lib/pd/doc/1.manual/resources/4.3.6.png
 lib/pd/doc/1.manual/resources/4.4.1.png
 lib/pd/doc/1.manual/resources/4.4.2.png
 lib/pd/doc/1.manual/resources/4.4.3.png
-lib/pd/doc/1.manual/resources/chapter1.htm
-lib/pd/doc/1.manual/resources/chapter2.htm
-lib/pd/doc/1.manual/resources/chapter3.htm
-lib/pd/doc/1.manual/resources/chapter4.htm
-lib/pd/doc/1.manual/resources/chapter5.htm
-lib/pd/doc/1.manual/resources/chapter6.htm
 lib/pd/doc/1.manual/resources/favicon.ico
 lib/pd/doc/1.manual/resources/icon.png
 lib/pd/doc/1.manual/resources/pdmanual.css
