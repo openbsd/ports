@@ -1,7 +1,7 @@
 COMMENT =		pager with incremental search and transparent decompression
 
 MODGO_MODNAME =		github.com/walles/moor/v2
-MODGO_VERSION =		v2.14.0
+MODGO_VERSION =		v2.15.0
 
 DISTNAME =		moor-${MODGO_VERSION}
 WRKDIST =		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
@@ -20,6 +20,7 @@ SUBST_VARS +=		WRKSRC
 
 MODGO_LDFLAGS +=	-X main.versionString=${MODGO_VERSION}
 
+PORTHOME =		${WRKSRC}/porthome
 TEST_TARGET =		${MODGO_MODNAME}/cmd/moor
 
 post-patch:
@@ -27,6 +28,9 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/moor.1 ${PREFIX}/man/man1
+
+pre-test:
+	mkdir -p ${PORTHOME}/.local/share/moor
 
 .include "modules.inc"
 .include <bsd.port.mk>
