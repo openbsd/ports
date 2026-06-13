@@ -38,6 +38,7 @@ lib/cmake/KF6ConfigWidgets/KF6ConfigWidgetsTargets.cmake
 @so lib/qt6/plugins/designer/kconfigwidgets6widgets.so
 share/locale/af/LC_MESSAGES/kconfigwidgets6.mo
 share/locale/af/kf6_entry.desktop
+share/locale/am/kf6_entry.desktop
 share/locale/ar/LC_MESSAGES/kconfigwidgets6.mo
 share/locale/ar/kf6_entry.desktop
 share/locale/as/LC_MESSAGES/kconfigwidgets6.mo

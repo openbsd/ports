@@ -26,6 +26,7 @@ lib/cmake/KF6Runner/KF6RunnerConfigVersion.cmake
 lib/cmake/KF6Runner/KF6RunnerTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6Runner/KF6RunnerTargets.cmake
 @lib lib/libKF6Runner.so.${LIBKF6Runner_VERSION}
+lib/qt6/metatypes/qt6kf6runner_metatypes.json
 share/dbus-1/interfaces/kf6_org.kde.krunner1.xml
 share/kdevappwizard/
 share/kdevappwizard/templates/

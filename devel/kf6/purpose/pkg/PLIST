@@ -59,6 +59,13 @@ lib/qt6/qml/org/kde/purpose/kdeconnect/qmldir
 lib/qt6/qml/org/kde/purpose/phabricator/
 @so lib/qt6/qml/org/kde/purpose/phabricator/libphabricatorquickplugin.so
 lib/qt6/qml/org/kde/purpose/phabricator/qmldir
+lib/qt6/qml/org/kde/purpose/private/
+lib/qt6/qml/org/kde/purpose/private/widgets/
+lib/qt6/qml/org/kde/purpose/private/widgets/JobDialog.qml
+lib/qt6/qml/org/kde/purpose/private/widgets/KF6PurposeWidgets.qmltypes
+lib/qt6/qml/org/kde/purpose/private/widgets/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/purpose/private/widgets/libKF6PurposeWidgetsplugin.so
+lib/qt6/qml/org/kde/purpose/private/widgets/qmldir
 lib/qt6/qml/org/kde/purpose/purposequickplugin.qmltypes
 lib/qt6/qml/org/kde/purpose/qmldir
 lib/qt6/qml/org/kde/purpose/reviewboard/
@@ -700,6 +707,7 @@ share/locale/ta/LC_MESSAGES/libpurpose6_quick.mo
 share/locale/ta/LC_MESSAGES/libpurpose6_widgets.mo
 share/locale/ta/LC_MESSAGES/purpose6_bluetooth.mo
 share/locale/ta/LC_MESSAGES/purpose6_fileitemaction.mo
+share/locale/ta/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ta/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ta/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ta/LC_MESSAGES/purpose6_saveas.mo
@@ -730,6 +738,20 @@ share/locale/tr/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/tr/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/tr/LC_MESSAGES/purpose6_saveas.mo
 share/locale/tr/LC_MESSAGES/purpose6_youtube.mo
+share/locale/ug/LC_MESSAGES/libpurpose6_quick.mo
+share/locale/ug/LC_MESSAGES/libpurpose6_widgets.mo
+share/locale/ug/LC_MESSAGES/purpose6_barcode.mo
+share/locale/ug/LC_MESSAGES/purpose6_bluetooth.mo
+share/locale/ug/LC_MESSAGES/purpose6_fileitemaction.mo
+share/locale/ug/LC_MESSAGES/purpose6_imgur.mo
+share/locale/ug/LC_MESSAGES/purpose6_kdeconnect.mo
+share/locale/ug/LC_MESSAGES/purpose6_kdeconnectsms.mo
+share/locale/ug/LC_MESSAGES/purpose6_nextcloud.mo
+share/locale/ug/LC_MESSAGES/purpose6_pastebin.mo
+share/locale/ug/LC_MESSAGES/purpose6_phabricator.mo
+share/locale/ug/LC_MESSAGES/purpose6_reviewboard.mo
+share/locale/ug/LC_MESSAGES/purpose6_saveas.mo
+share/locale/ug/LC_MESSAGES/purpose6_youtube.mo
 share/locale/uk/LC_MESSAGES/libpurpose6_quick.mo
 share/locale/uk/LC_MESSAGES/libpurpose6_widgets.mo
 share/locale/uk/LC_MESSAGES/purpose6_barcode.mo

@@ -47,6 +47,7 @@ lib/cmake/KF6GuiAddons/KF6GuiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6GuiAddons/KF6GuiAddonsTargets.cmake
 @lib lib/libKF6GuiAddons.so.${LIBKF6GuiAddons_VERSION}
 lib/pkgconfig/KF6GuiAddons.pc
+lib/qt6/metatypes/qt6kf6guiaddons_metatypes.json
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/guiaddons/

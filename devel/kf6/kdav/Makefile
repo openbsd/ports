@@ -1,7 +1,7 @@
 COMMENT =	KDE PIM DAV protocol support library
 DISTNAME =	kdav-${VERSION}
 
-SHARED_LIBS +=  KF6DAV                    0.0 # 0.0
+SHARED_LIBS +=  KF6DAV                    0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6I18n KF6KIOCore
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Xml m

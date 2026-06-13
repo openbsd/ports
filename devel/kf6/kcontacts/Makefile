@@ -2,7 +2,7 @@ COMMENT =	KDE contacts access library
 DISTNAME =	kcontacts-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF6Contacts               0.0 # 0.0
+SHARED_LIBS +=  KF6Contacts               0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ConfigCore KF6CoreAddons
 WANTLIB += KF6I18n KF6I18nLocaleData Qt6Core Qt6Gui Qt6Network

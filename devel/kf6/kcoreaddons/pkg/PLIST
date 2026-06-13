@@ -83,6 +83,7 @@ lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets.cmake
 @lib lib/libKF6CoreAddons.so.${LIBKF6CoreAddons_VERSION}
 lib/pkgconfig/KF6CoreAddons.pc
+lib/qt6/metatypes/qt6kf6coreaddons_metatypes.json
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/coreaddons/
@@ -94,6 +95,7 @@ share/kf6/
 share/kf6/jsonschema/
 share/kf6/jsonschema/kpluginmetadata.schema.json
 share/locale/af/LC_MESSAGES/kcoreaddons6_qt.qm
+share/locale/am/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/ar/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/as/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/ast/LC_MESSAGES/kcoreaddons6_qt.qm

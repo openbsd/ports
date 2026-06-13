@@ -49,6 +49,7 @@ lib/cmake/KF6XmlGui/KF6XmlGuiTargets.cmake
 @lib lib/libKF6XmlGui.so.${LIBKF6XmlGui_VERSION}
 @so lib/qt6/plugins/designer/kxmlgui6widgets.so
 share/locale/af/LC_MESSAGES/kxmlgui6.mo
+share/locale/am/LC_MESSAGES/kxmlgui6.mo
 share/locale/ar/LC_MESSAGES/kxmlgui6.mo
 share/locale/as/LC_MESSAGES/kxmlgui6.mo
 share/locale/ast/LC_MESSAGES/kxmlgui6.mo

@@ -61,6 +61,8 @@ lib/cmake/KF6Config/KF6ConfigTargets.cmake
 @lib lib/libKF6ConfigCore.so.${LIBKF6ConfigCore_VERSION}
 @lib lib/libKF6ConfigGui.so.${LIBKF6ConfigGui_VERSION}
 @lib lib/libKF6ConfigQml.so.${LIBKF6ConfigQml_VERSION}
+lib/qt6/metatypes/qt6kf6configcore_metatypes.json
+lib/qt6/metatypes/qt6kf6configgui_metatypes.json
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/config/

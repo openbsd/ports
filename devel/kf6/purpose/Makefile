@@ -2,7 +2,7 @@ COMMENT =	framework to create integrate services and actions
 DISTNAME =	purpose-${VERSION}
 
 SHARED_LIBS +=  KF6Purpose                0.0 # 0.0
-SHARED_LIBS +=  KF6PurposeWidgets         0.0 # 0.0
+SHARED_LIBS +=  KF6PurposeWidgets         0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Completion KF6ConfigCore KF6CoreAddons
 WANTLIB += KF6I18n KF6I18nQml KF6JobWidgets KF6KIOCore KF6KIOGui

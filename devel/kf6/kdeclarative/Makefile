@@ -1,8 +1,8 @@
 COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
 
-SHARED_LIBS +=  KF6CalendarEvents         0.0 # 0.0
-SHARED_LIBS +=	kquickcontrolsprivate     0.0 # 0.0
+SHARED_LIBS +=  KF6CalendarEvents         0.1 # 0.0
+SHARED_LIBS +=  kquickcontrolsprivate     0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6GlobalAccel
 WANTLIB += KF6GuiAddons KF6I18n KF6WidgetsAddons Qt6Core Qt6DBus
