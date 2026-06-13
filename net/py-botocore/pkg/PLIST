@@ -2737,6 +2737,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/taxsettings/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/taxsettings/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/taxsettings/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/taxsettings/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/taxsettings/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/textract/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/textract/2018-06-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/textract/2018-06-27/endpoint-rule-set-1.json
