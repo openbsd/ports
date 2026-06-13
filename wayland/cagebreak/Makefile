@@ -1,7 +1,7 @@
 COMMENT =	wayland tiling compositor inspired by ratpoison
 
 V =		3.1.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	release_${V}
 PKGNAME =	cagebreak-${V}
 

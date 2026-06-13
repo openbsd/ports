@@ -2,6 +2,7 @@ COMMENT =		drop-in replacement for the wlroots scene API
 
 V =			0.4.1
 SCENEFX_LIBV =		0.4
+REVISION =		0
 
 DIST_TUPLE=		github wlrfx scenefx ${V} .
 

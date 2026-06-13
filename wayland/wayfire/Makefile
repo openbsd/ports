@@ -2,6 +2,7 @@ COMMENT =	modular and extensible wayland compositor
 
 V =		0.10.1
 GH_ACCOUNT =	WayfireWM
+REVISION =	0
 
 DISTNAME =	wayfire-${V}
 

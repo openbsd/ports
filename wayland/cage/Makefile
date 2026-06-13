@@ -3,6 +3,7 @@ COMMENT =	Wayland kiosk
 V =		0.2.1
 DISTNAME =	cage-${V}
 CATEGORIES =	wayland
+REVISION =	0
 HOMEPAGE =	https://www.hjdskes.nl/projects/cage/
 
 SITES =		https://github.com/cage-kiosk/cage/releases/download/v${V}/

@@ -3,6 +3,7 @@ COMMENT =	X11 compat layer for running full X11 desktop environments
 V =		0.3
 DISTNAME =	wayback-${V}
 CATEGORIES =	wayland
+REVISION =	0
 
 SITES =		${HOMEPAGE}/wayback/-/archive/${V}/
 
