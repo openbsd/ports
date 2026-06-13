@@ -2,7 +2,7 @@ COMMENT =	neofetch-like tool for fetching system information
 
 GH_ACCOUNT =	fastfetch-cli
 GH_PROJECT =	fastfetch
-GH_TAGNAME=	2.60.0
+GH_TAGNAME=	2.64.2
 
 CATEGORIES =	sysutils
 
@@ -13,11 +13,14 @@ MAINTAINER =	Kevin Lo <kevlo@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	c kvm m pthread sndio
+WANTLIB +=	c kvm m pthread sndio util
 
 MODULES =	devel/cmake \
 		devel/dconf \
+		lang/lua \
 		lang/python
+
+MODLUA_VERSION =	5.4
 
 BUILD_DEPENDS = databases/sqlite3 \
 		graphics/vulkan-loader \
