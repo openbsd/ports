@@ -4,11 +4,9 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	11.4.10
-REVISION-tests=	0
+VERSION=	11.4.12
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
-REVISION=	0
 EPOCH=		1
 
 CATEGORIES=	databases
