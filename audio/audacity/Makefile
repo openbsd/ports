@@ -3,12 +3,12 @@ NOT_FOR_ARCHS=	${BE_ARCHS}
 
 COMMENT=	free audio editor
 
-# fosshub has proper tarballs, but they are on time-expired URLs
-# so can't be fetched automatically
-GH_ACCOUNT=	audacity
-GH_PROJECT=	audacity
-GH_TAGNAME=	Audacity-3.7.8
-DISTNAME=	${GH_TAGNAME:L}
+V=		3.7.8
+DISTNAME=	audacity-sources-${V}
+PKGNAME=	audacity-${V}
+
+REVISION=	0
+
 CATEGORIES=	audio
 
 HOMEPAGE=	https://www.audacityteam.org/
@@ -29,6 +29,8 @@ WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2
 WANTLIB += z
 # dlopened
 WANTLIB += avcodec avformat avutil
+
+SITES=		https://github.com/audacity/audacity/releases/download/Audacity-${V}/
 
 COMPILER=	base-clang ports-gcc
 
