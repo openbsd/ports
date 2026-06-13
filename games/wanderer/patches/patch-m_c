@@ -9,6 +9,38 @@ Index: m.c
  #include "wand_head.h"
  
  #define SCROLLING 0
+@@ -81,7 +82,7 @@ void show_credits(opt)
+ int maxlines, linecount;
+ FILE *fp;
+ char ch, buffer[100];
+-int inp ,nul;
++fd_set inp;
+ struct timeval tv;
+ 
+     sprintf(buffer,"%s/credits",SCREENPATH);
+@@ -97,7 +98,6 @@ struct timeval tv;
+         maxlines = tgetnum("li") - 3;
+     }
+     linecount = 0;
+-    nul = 0;
+     tv.tv_sec = 0;
+     tv.tv_usec = 500000L;  /* half second between scrolls */
+     while( fgets(buffer,100,fp) ) {
+@@ -117,10 +117,11 @@ struct timeval tv;
+                         linecount = 0;
+                 }
+             } else { /* opt == SCROLLING */
+-                inp = 1;
++                FD_ZERO(&inp);
++                FD_SET(0, &inp);
+                 printf("%s",buffer);
+-                select(1,&inp,&nul,&nul,&tv);
+-                if(inp) {
++                select(1,&inp,NULL,NULL,&tv);
++                if(FD_ISSET(0, &inp)) {
+                     read(0,&ch,1);
+                     if(ch == 'q') 
+                         break;
 @@ -147,23 +148,24 @@ char *get_name(void)
  char *name;
  char *endchar;

@@ -1,6 +1,6 @@
 @mode 2555
 @group games
-bin/wanderer
+@bin bin/wanderer
 @mode
 @group
 @man man/man6/wanderer.6

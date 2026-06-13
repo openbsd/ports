@@ -1,7 +1,7 @@
 COMMENT=	Rogue like adventure game
 
 DISTNAME=	wanderer-3.2
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	games
 
