@@ -5,4 +5,4 @@ lib/rep/gui/
 lib/rep/gui/gtk-2/
 lib/rep/gui/gtk-2/gtk.a
 lib/rep/gui/gtk-2/gtk.la
-lib/rep/gui/gtk-2/gtk.so
+@so lib/rep/gui/gtk-2/gtk.so

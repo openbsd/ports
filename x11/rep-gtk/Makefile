@@ -3,20 +3,20 @@ COMMENT=	GTK+ binding for librep Lisp environment
 VERSION=	0.90.8.1
 DISTNAME=	rep-gtk-${VERSION}
 CATEGORIES=     x11
-REVISION=	8
+REVISION=	9
 
 HOMEPAGE=       https://rep-gtk.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype fribidi
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
-WANTLIB += png pthread xcb xcb-render xcb-shm z Xau Xdmcp jpeg
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += cairo expat ffi fontconfig freetype fribidi gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gtk-x11-2.0 harfbuzz iconv intl jpeg m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png xcb
+WANTLIB += xcb-render xcb-shm z
 
 SITES=			https://download.tuxfamily.org/librep/rep-gtk/
 EXTRACT_SUFX=		.tar.xz

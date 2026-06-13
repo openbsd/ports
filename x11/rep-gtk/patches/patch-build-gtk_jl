@@ -1,0 +1,47 @@
+Fix generated C for modern compilers.
+
+Add prototypes for init calls and handle callback typedefs declared
+as boxed types without adding an extra pointer level.
+
+Adapted from https://src.fedoraproject.org/rpms/rep-gtk/tree/rawhide
+
+Index: build-gtk.jl
+--- build-gtk.jl.orig
++++ build-gtk.jl
+@@ -508,6 +508,7 @@
+       (@ "  static int done;\n  if (!done)\n    {\n")
+       (@ "      done = 1;\n")
+       (mapc (lambda (func)
++	      (@ "      extern void %s (void);\n" func)
+ 	      (@ "      %s ();\n" func)) other-inits)
+       (when (or gtk-enums gtk-string-enums gtk-flags gtk-boxed gtk-objects)
+ 	(@ "      sgtk_register_type_infos (_type_infos);\n"))
+@@ -637,7 +638,12 @@
+   (declare (unused typage))
+   (setq type (gtk-outer-type type))
+   (if (or (assq type gtk-enums) (assq type gtk-imported-enums)
+-	  (assq type gtk-flags) (assq type gtk-imported-flags))
++          (assq type gtk-flags) (assq type gtk-imported-flags)
++          (memq type '(GtkTreeSelectionFunc GtkTreeViewRowSeparatorFunc
++                       GtkTreeIterCompareFunc GtkTreeViewColumnDropFunc
++                       GtkTreeViewMappingFunc GtkTreeViewSearchEqualFunc
++                       GtkAboutDialogActivateLinkFunc GtkAccelGroupFindFunc
++                       GtkAccelMapForeach GDestroyNotify GtkDestroyNotify)))
+       (symbol-name type)
+     (format nil "%s*" type)))
+ 
+@@ -676,7 +682,13 @@
+ (defun output-rep-to-boxed (output type rep-var typage)
+   (declare (unused typage))
+   (setq type (gtk-outer-type type))
+-  (@ "\(%s*\) sgtk_rep_to_boxed \(%s\)" type rep-var))
++  (if (memq type '(GtkTreeSelectionFunc GtkTreeViewRowSeparatorFunc
++                   GtkTreeIterCompareFunc GtkTreeViewColumnDropFunc
++                   GtkTreeViewMappingFunc GtkTreeViewSearchEqualFunc
++                   GtkAboutDialogActivateLinkFunc GtkAccelGroupFindFunc
++                   GtkAccelMapForeach GDestroyNotify GtkDestroyNotify))
++      (@ "\(%s\) sgtk_rep_to_boxed \(%s\)" type rep-var)
++    (@ "\(%s*\) sgtk_rep_to_boxed \(%s\)" type rep-var)))
+ 
+ (defun output-boxed-to-rep (output type gtk-var typage)
+   (declare (unused typage))

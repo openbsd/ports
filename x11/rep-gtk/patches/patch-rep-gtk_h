@@ -1,0 +1,23 @@
+Add missing prototypes for status icon helper functions to
+avoid implicit function declarations with C99 compilers.
+
+Adapted from https://src.fedoraproject.org/rpms/rep-gtk/tree/rawhide
+
+Index: rep-gtk.h
+--- rep-gtk.h.orig
++++ rep-gtk.h
+@@ -340,6 +340,14 @@ void gtk_color_selection_set_color_interp (GtkColorSel
+ GdkColor *gtk_color_selection_get_color_interp (GtkColorSelection *sel);
+ char *gtk_color_button_get_color_interp (GtkColorButton *button);
+ extern void gtk_widget_draw_interp (GtkWidget *widget);
++void gtk_status_icon_popup_menu(GtkStatusIcon *status_icon,
++				GtkMenu *menu,
++				guint button,
++				guint32 activate_time);
++gboolean gtk_status_icon_get_geometry_interp(GtkStatusIcon *status_icon,
++					     gint *x, gint *y,
++					     GtkOrientation *orientation);
++
+ 
+ GtkTextIter *gtk_text_iter_new (void);
+ repv sgtk_gtk_widget_get_allocation (GtkWidget *w);

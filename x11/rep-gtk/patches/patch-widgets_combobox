@@ -1,0 +1,16 @@
+Fix to take a scalar string.
+
+Adapted from https://src.fedoraproject.org/rpms/rep-gtk/tree/rawhide
+
+Index: widgets/combobox
+--- widgets/combobox.orig
++++ widgets/combobox
+@@ -57,7 +57,7 @@
+ (define-func gtk_combo_box_set_title
+   none
+   ((GtkComboBox box)
+-   ((tvec string in) title)))
++   (string title)))
+ 
+ (define-func gtk_combo_box_get_title
+   static_string

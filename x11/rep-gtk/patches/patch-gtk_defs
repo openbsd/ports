@@ -1,0 +1,56 @@
+Mark GTK window getter out-parameters as ret values so generated code
+passes pointers for returned x/y/width/height values.
+
+Adapted from https://src.fedoraproject.org/rpms/rep-gtk/tree/rawhide
+
+Index: gtk.defs
+--- gtk.defs.orig
++++ gtk.defs
+@@ -1686,8 +1686,8 @@
+ (define-func gtk_window_get_position
+   none
+   ((GtkWindow window)
+-   (int x)
+-   (int y)))
++   ((ret int) x)
++   ((ret int) y)))
+ 
+ (define-func gtk_window_set_default
+   none
+@@ -1849,10 +1849,10 @@
+ (define-func gtk_window_get_frame_dimensions
+   none
+   ((GtkWindow window)
+-   (int left)
+-   (int top)
+-   (int right)
+-   (int bottom)))
++   ((ret int) left)
++   ((ret int) top)
++   ((ret int) right)
++   ((ret int) bottom)))
+ 
+ (define-func gtk_window_set_decorated
+   none
+@@ -2032,8 +2032,8 @@
+ (define-func gtk_window_get_default_size
+   none
+   ((GtkWindow window)
+-   (int width)
+-   (int height)))
++   ((ret int) width)
++   ((ret int) height)))
+ 
+ (define-func gtk_window_resize
+   none
+@@ -2044,8 +2044,8 @@
+ (define-func gtk_window_get_size
+   none
+   ((GtkWindow window)
+-   (int width)
+-   (int height)))
++   ((ret int) width)
++   ((ret int) height)))
+ 
+ (define-func gtk_window_move
+   none

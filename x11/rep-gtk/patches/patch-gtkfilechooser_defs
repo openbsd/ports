@@ -1,0 +1,121 @@
+Fix filename, URI, folder, filter name, MIME type, pattern,
+and backend arguments to be scalar strings instead of string vectors.
+
+Adapted from https://src.fedoraproject.org/rpms/rep-gtk/tree/rawhide
+
+Index: gtkfilechooser.defs
+--- gtkfilechooser.defs.orig
++++ gtkfilechooser.defs
+@@ -92,7 +92,7 @@
+ (define-func gtk_file_chooser_unselect_filename
+   none
+   ((GtkFileChooser chooser)
+-   ((tvec string in) filename)))
++   (string filename)))
+ 
+ (define-func gtk_file_chooser_select_all
+   none
+@@ -110,7 +110,7 @@
+ (define-func gtk_file_chooser_set_current_folder
+   bool
+   ((GtkFileChooser chooser)
+-   ((tvec string in) folder)))
++   (string folder)))
+ 
+ (define-func gtk_file_chooser_get_current_folder
+   string
+@@ -121,7 +121,7 @@
+ (define-func gtk_file_chooser_set_uri
+   bool
+   ((GtkFileChooser chooser)
+-  ((tvec string in) uri)))
++  (string uri)))
+ 
+ (define-func gtk_file_chooser_get_uri
+   string
+@@ -130,12 +130,12 @@
+ (define-func gtk_file_chooser_select_uri
+   bool
+   ((GtkFileChooser chooser)
+-   ((tvec string in) uri)))
++   (string uri)))
+ 
+ (define-func gtk_file_chooser_unselect_uri
+   none
+   ((GtkFileChooser chooser)
+-   ((tvec string in) uri)))
++   (string uri)))
+ 
+ ;;; XXX need GSList return type support
+ ;;(define-func gtk_file_chooser_get_uris
+@@ -145,7 +145,7 @@
+ (define-func gtk_file_chooser_set_current_folder_uri
+   bool
+   ((GtkFileChooser chooser)
+-  ((tvec string in) uri)))
++  (string uri)))
+ 
+ (define-func gtk_file_chooser_get_current_folder_uri
+   string
+@@ -210,7 +210,7 @@
+ (define-func gtk_file_filter_set_name
+   none
+   ((GtkFileFilter filter)
+-   ((tvec string in) name)))
++   (string name)))
+ 
+ (define-func gtk_file_filter_get_name
+   string
+@@ -219,12 +219,12 @@
+ (define-func gtk_file_filter_add_mime_type
+   none
+   ((GtkFileFilter filter)
+-   ((tvec string in) mimetype)))
++   (string mimetype)))
+ 
+ (define-func gtk_file_filter_add_pattern
+   none
+   ((GtkFileFilter filter)
+-   ((tvec string in) pattern)))
++   (string pattern)))
+ 
+ (define-func gtk_file_filter_add_pixbuf_formats
+   none
+@@ -280,13 +280,13 @@
+ (define-func gtk_file_chooser_add_shortcut_folder
+   bool
+   ((GtkFileChooser chooser)
+-   ((tvec string in) folder)
++   (string folder)
+    (GPointer gerror error)))
+ 
+ (define-func gtk_file_chooser_remove_shortcut_folder
+   bool
+   ((GtkFileChooser chooser)
+-   ((tvec string in) folder)
++   (string folder)
+    (GPointer gerror error)))
+ 
+ ;; XXX Need GSList Returntype support
+@@ -297,13 +297,13 @@
+ (define-func gtk_file_chooser_add_shortcut_folder_uri
+   bool
+   ((GtkFileChooser chooser)
+-   ((tvec string in) folder)
++   (string folder)
+    (GPointer gerror error)))
+ 
+ (define-func gtk_file_chooser_remove_shortcut_folder_uri
+   bool
+   ((GtkFileChooser chooser)
+-   ((tvec string in) folder)
++   (string folder)
+    (GPointer gerror error)))
+ 
+ ;; XXX Need GSList Returntype support
+@@ -322,4 +322,4 @@
+ (define-func gtk_file_chooser_widget_new_with_backend
+   GtkWidget
+   ((GtkFileChooserAction action)
+-   ((tvec string in) backend)))
++   (string backend)))

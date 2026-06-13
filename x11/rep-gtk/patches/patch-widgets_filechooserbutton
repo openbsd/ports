@@ -1,0 +1,25 @@
+Fix to use scalar strings.
+
+Adapted from https://src.fedoraproject.org/rpms/rep-gtk/tree/rawhide
+
+Index: widgets/filechooserbutton
+--- widgets/filechooserbutton.orig
++++ widgets/filechooserbutton
+@@ -4,7 +4,7 @@
+ 
+ (define-func gtk_file_chooser_button_new
+   GtkWidget
+-  (((tvec string in) title)
++  ((string title)
+    (GtkFileChooserAction action)))
+ 
+ (define-func gtk_file_chooser_button_new_with_dialog
+@@ -14,7 +14,7 @@
+ (define-func gtk_file_chooser_button_set_title
+   none
+   ((GtkFileChooserButton button)
+-   ((tvec string in) title)))
++   (string title)))
+ 
+ (define-func gtk_file_chooser_button_get_title
+   static_string

@@ -1,0 +1,104 @@
+Fix tree/cell renderer string arguments, callback selected type,
+and GtkTreeView output parameters for path/column/range return values.
+
+Adapted from https://src.fedoraproject.org/rpms/rep-gtk/tree/rawhide
+
+Index: gtktree.defs
+--- gtktree.defs.orig
++++ gtktree.defs
+@@ -280,7 +280,7 @@
+   ((GtkTreeSelection selection)
+    (GtkTreeModel model)
+    (GtkTreePath path)
+-   (bool selected)
++   (int selected)
+    (GPointer data)))
+ 
+ (define-boxed GtkTreeViewRowSeparatorFunc
+@@ -378,7 +378,7 @@
+   ((GtkCellRenderer cell)
+    (GdkEvent event)
+    (GtkWidget widget)
+-   ((tvec string in) path)
++   (string path)
+    ((tvec GdkRectangle in) background_area)
+    ((tvec GdkRectangle in) cell_area)
+    (GtkCellRendererState state)))
+@@ -388,7 +388,7 @@
+   ((GtkCellRenderer cell)
+    (GdkEvent event)
+    (GtkWidget widget)
+-   ((tvec string in) path)
++   (string path)
+    ((tvec GdkRectangle in) background_area)
+    ((tvec GdkRectangle in) cell_area)
+    (GtkCellRendererState state)))
+@@ -526,7 +526,7 @@
+   none
+   ((GtkTreeViewColumn tv_column)
+    (GtkCellRenderer cell)
+-   ((tvec string in) attr)
++   (string attr)
+    (int column)))
+ 
+ (define-func gtk_tree_view_column_clear_attributes
+@@ -613,7 +613,7 @@
+ (define-func gtk_tree_view_column_set_title
+   none
+   ((GtkTreeViewColumn column)
+-   ((tvec string in) title)))
++   (string title)))
+ 
+ (define-func gtk_tree_view_column_get_title
+   static_string
+@@ -1087,8 +1087,8 @@
+ (define-func gtk_tree_view_get_cursor
+   none
+   ((GtkTreeView tree)
+-   (GtkTreePath path)
+-   (GtkTreeViewColumn column)))
++   ((ret GtkTreePath) path)
++   ((ret GtkTreeViewColumn) column)))
+ 
+ ;; GtkTreeView [Layout]
+ 
+@@ -1101,8 +1101,8 @@
+   ((GtkTreeView tree)
+    (int x)
+    (int y)
+-   (GtkTreePath path)
+-   (GtkTreeViewColumn column)
++   ((ret GtkTreePath) path)
++   ((ret GtkTreeViewColumn) column)
+    (int cell_x)
+    (int cell_y)))
+ 
+@@ -1128,8 +1128,8 @@
+ (define-func gtk_tree_view_get_visible_range
+   bool
+   ((GtkTreeView tree)
+-   (GtkTreePath start)
+-   (GtkTreePath end)))
++   ((ret GtkTreePath) start)
++   ((ret GtkTreePath) end)))
+ 
+ ;; GtkTreeView [D-N-D]
+ 
+@@ -1171,7 +1171,7 @@
+ (define-func gtk_tree_view_get_drag_dest_row
+   none
+   ((GtkTreeView tree)
+-   (GtkTreePath path)
++   ((ret GtkTreePath) path)
+    ((tvec GtkTreeViewDropPosition in) pos)))
+ 
+ (define-func gtk_tree_view_get_dest_row_at_pos
+@@ -1179,7 +1179,7 @@
+   ((GtkTreeView tree)
+    (int x)
+    (int y)
+-   (GtkTreePath path)
++   ((ret GtkTreePath) path)
+    ((tvec GtkTreeViewDropPosition in) pos)))
+ 
+ (define-func gtk_tree_view_create_row_drag_icon

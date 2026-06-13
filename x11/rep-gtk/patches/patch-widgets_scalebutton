@@ -1,0 +1,16 @@
+Fix to use a string vector matching GTK's const gchar ** API.
+
+Adapted from https://src.fedoraproject.org/rpms/rep-gtk/tree/rawhide
+
+Index: widgets/scalebutton
+--- widgets/scalebutton.orig
++++ widgets/scalebutton
+@@ -13,7 +13,7 @@
+ (define-func gtk_scale_button_set_icons
+   none
+   ((GtkScaleButton button)
+-   (string icons)))
++   ((tvec string in) icons)))
+ 
+ (define-func gtk_scale_button_get_value
+   double
