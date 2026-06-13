@@ -62,7 +62,6 @@ lib/localsearch-3.0/writeback-modules/
 @man man/man1/localsearch-writeback-3.1
 @man man/man1/localsearch.1
 share/bash-completion/completions/localsearch
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.Tracker3.Miner.Files.Index.xml
 share/dbus-1/interfaces/org.freedesktop.Tracker3.Miner.xml
 share/dbus-1/services/org.freedesktop.LocalSearch3.Control.service
@@ -142,8 +141,6 @@ share/locale/th/LC_MESSAGES/localsearch3.mo
 share/locale/tr/LC_MESSAGES/localsearch3.mo
 share/locale/ug/LC_MESSAGES/localsearch3.mo
 share/locale/uk/LC_MESSAGES/localsearch3.mo
-share/locale/uz/
-share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/localsearch3.mo
 share/locale/vi/LC_MESSAGES/localsearch3.mo
 share/locale/zh_CN/LC_MESSAGES/localsearch3.mo

@@ -2,11 +2,12 @@ COMMENT=		collection of data extractors for Tracker/Nepomuk
 
 GNOME_PROJECT=		localsearch
 GNOME_VERSION=		3.11.1
+REVISION=		0
 
 # LGPLv2.1+ - GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += avformat c cue exempi gexiv2 gif gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += avformat c cue exempi gexiv2-0.16 gif gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gsf-1 gstreamer-1.0 gsttag-1.0 gupnp-dlna-2.0
 WANTLIB += gxps icui18n intl jpeg kvm m osinfo-1.0 png poppler-glib
 WANTLIB += tiff tinysparql-3.0 totem-plparser upower-glib webpdemux
@@ -28,7 +29,7 @@ LIB_DEPENDS=		archivers/libzip \
 			devel/libgsf \
 			graphics/ffmpeg \
 			graphics/giflib \
-			graphics/libgexiv2 \
+			graphics/gexiv2 \
 			graphics/libgxps \
 			graphics/libwebp \
 			misc/osinfo/libosinfo \
