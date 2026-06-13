@@ -9,6 +9,7 @@ V =			6.9.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -66,7 +67,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/kf6/kcoreaddons \
 			devel/libdispatch \
 			devel/protobuf \
-			graphics/ffmpeg>=8.0p2v1 \
+			graphics/ffmpeg>=8.1.1p0v1 \
 			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
 			net/tg_owt>=0.0.0.20260409 \
