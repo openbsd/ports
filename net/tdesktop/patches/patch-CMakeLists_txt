@@ -1,0 +1,13 @@
+Reenable dispatch, its replacement TooManyCooks requires newer libcxx
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -67,7 +67,6 @@ include(cmake/options.cmake)
+ include(cmake/external/qt/package.cmake)
+ 
+ set(desktop_app_skip_libs
+-    dispatch
+     glibmm
+     variant
+ )
