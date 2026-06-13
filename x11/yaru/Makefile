@@ -1,10 +1,8 @@
 COMMENT=		Ubuntu GNOME theme
 
-V=			26.04.5
-GH_TAGNAME=		26.04.5.1ubuntu
+GH_TAGNAME=		26.10.1
 GH_ACCOUNT=		ubuntu
 GH_PROJECT=		yaru
-PKGNAME=		yaru-${V}
 
 CATEGORIES=		x11
 

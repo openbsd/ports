@@ -1,7 +1,7 @@
 Index: gtk/src/meson.build
 --- gtk/src/meson.build.orig
 +++ gtk/src/meson.build
-@@ -291,8 +291,8 @@ foreach flavour: yaru_flavours
+@@ -258,8 +258,8 @@ foreach flavour: yaru_flavours
                command: [
                  'bash', '-xec', ';'.join([
                    'mkdir -p "@3@"',
