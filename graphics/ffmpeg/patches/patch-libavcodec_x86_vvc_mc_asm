@@ -1,0 +1,69 @@
+Index: libavcodec/x86/vvc/mc.asm
+--- libavcodec/x86/vvc/mc.asm.orig
++++ libavcodec/x86/vvc/mc.asm
+@@ -41,7 +41,7 @@ SECTION_RODATA
+     %xdefine %%prefix mangle(private_prefix %+ _vvc_%1_%3_%4)
+     %%table:
+     %rep %0 - 4
+-        dd %%prefix %+ .w%5 - %%base
++        dd %%prefix %+ .w%5_ibt - %%base
+         %rotate 1
+     %endrep
+ %endmacro
+@@ -75,6 +75,8 @@ SECTION .text
+ 
+ %if %3
+ INIT_XMM cpuname
++.w2_ibt:
++    _CET_ENDBR
+ .w2:
+     movd                xm0, [src0q]
+     pinsrd              xm0, [src0q + AVG_SRC_STRIDE], 1
+@@ -84,6 +86,8 @@ INIT_XMM cpuname
+     AVG_SAVE_W2          %1
+     AVG_LOOP_END        .w2
+ 
++.w4_ibt:
++    _CET_ENDBR
+ .w4:
+     movq                xm0, [src0q]
+     pinsrq              xm0, [src0q + AVG_SRC_STRIDE], 1
+@@ -95,6 +99,8 @@ INIT_XMM cpuname
+     AVG_LOOP_END        .w4
+ 
+ INIT_YMM cpuname
++.w8_ibt:
++    _CET_ENDBR
+ .w8:
+     movu               xm0, [src0q]
+     movu               xm1, [src1q]
+@@ -105,21 +111,29 @@ INIT_YMM cpuname
+ 
+     AVG_LOOP_END       .w8
+ 
++.w16_ibt:
++    _CET_ENDBR
+ .w16:
+     AVG_W16_FN          %1, %2, 1
+ 
+     AVG_LOOP_END       .w16
+ 
++.w32_ibt:
++    _CET_ENDBR
+ .w32:
+     AVG_W16_FN          %1, %2, 2
+ 
+     AVG_LOOP_END       .w32
+ 
++.w64_ibt:
++    _CET_ENDBR
+ .w64:
+     AVG_W16_FN          %1, %2, 4
+ 
+     AVG_LOOP_END       .w64
+ 
++.w128_ibt:
++    _CET_ENDBR
+ .w128:
+     AVG_W16_FN          %1, %2, 8
+ 

@@ -1,0 +1,19 @@
+Index: libavcodec/x86/vp9itxfm_avx512.asm
+--- libavcodec/x86/vp9itxfm_avx512.asm.orig
++++ libavcodec/x86/vp9itxfm_avx512.asm
+@@ -524,6 +524,7 @@ cglobal vp9_idct_16x16_internal, 0, 5, 16, dst, stride
+     punpckldq            m0, m4     ; 0-1
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     test               eobd, eobd
+     jl .pass2_fast
+     call .main
+@@ -771,6 +772,7 @@ cglobal vp9_iadst_16x16_internal, 0, 5, 16, dst, strid
+     vpermt2q             m3, m5, m4
+     jmp                tx2q
+ .pass2:
++    _CET_ENDBR
+     pshufd               m1, m1, q1032
+     pshufd               m3, m3, q1032
+     test               eobd, eobd
