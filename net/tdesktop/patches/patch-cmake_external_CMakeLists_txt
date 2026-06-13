@@ -1,0 +1,13 @@
+Skip unused TooManyCooks, it requires newer libcxx
+
+Index: cmake/external/CMakeLists.txt
+--- cmake/external/CMakeLists.txt.orig
++++ cmake/external/CMakeLists.txt
+@@ -49,7 +49,6 @@ add_checked_subdirectory(ranges)
+ add_checked_subdirectory(rlottie)
+ add_checked_subdirectory(rnnoise)
+ add_checked_subdirectory(tde2e)
+-add_checked_subdirectory(tmc)
+ add_checked_subdirectory(ton)
+ add_checked_subdirectory(variant)
+ add_checked_subdirectory(vpx)
