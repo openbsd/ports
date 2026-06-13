@@ -1,12 +1,10 @@
 COMMENT =	lightweight LLVM-Python binding for writing JIT compilers
 
-MODPY_DISTV =	0.46.0
+MODPY_DISTV =	0.48.0rc1
 GH_ACCOUNT =	numba
 GH_PROJECT =	llvmlite
 GH_TAGNAME =	v${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -28,9 +26,7 @@ BUILD_DEPENDS =	devel/cmake/core \
 		devel/ninja
 LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS}
 
-# llvmlite 0.45.x/0.46.x are for llvm 20.x only
-# https://github.com/numba/llvmlite?tab=readme-ov-file#compatibility
-MODCLANG_VERSION= 20
+MODCLANG_VERSION= 22
 
 MODPY_PYBUILD =	setuptools
 MODPY_PYTEST_ARGS =	llvmlite/tests
