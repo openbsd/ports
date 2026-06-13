@@ -63,7 +63,6 @@
      SUBDIR += vice
      SUBDIR += virtualjaguar
      SUBDIR += x48
-     SUBDIR += xcopilot
      SUBDIR += xhomer
      SUBDIR += xnp2
      SUBDIR += xnp21kai
