@@ -18,7 +18,7 @@ Index: data/io.github.htkhiem.Euphonica.gschema.xml
  		</key>
  
  		<key name="mpd-fifo-path" type="s">
-@@ -295,7 +294,7 @@
+@@ -306,7 +305,7 @@
  			<default>'percents'</default>
  		</key>
  		<key name="use-visualizer" type="b">

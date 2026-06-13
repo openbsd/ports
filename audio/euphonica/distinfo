@@ -519,8 +519,8 @@ SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3
 SHA256 (cargo/zvariant_derive-5.8.0.tar.gz) = 2lhXWhsrIHZlE7HsWdji5o2ydFN5+WH4ZlBlXoYtIAY=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
 SHA256 (cargo/zvariant_utils-3.2.1.tar.gz) = xpSdFC+J9pFt7KIjLPJqivrPK5/cNc52YQXhBEeL5Zk=
-SHA256 (htkhiem-euphonica-v0.99.4-beta.tar.gz) = PVXhb4BYSf2+hjSwQzsmIF56bwvXWR/Iou2Ne1kxKuM=
-SHA256 (htkhiem-rust-mpd-a8ddd7d624ee7ea2f4128e6df878e6b05fe5b0e7.tar.gz) = S3JOI9Nyo7Kl7Kn7kapdNW+OAwPHZnVctBvyhDqU8bA=
+SHA256 (htkhiem-euphonica-v0.99.5-beta.tar.gz) = fe21bR9PUc84pfdZ/o31jjCCYMNpH+eRFkj1CbqMgnI=
+SHA256 (htkhiem-rust-mpd-e9f5ad589e0eaaeb1d9758cc3a6b5762bb67e4b5.tar.gz) = T80Zu9sfo3yK9WHqs1obakoTRgSnlsXg7iuyculSTgA=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -1042,5 +1042,5 @@ SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_derive-5.8.0.tar.gz) = 14336
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
 SIZE (cargo/zvariant_utils-3.2.1.tar.gz) = 14678
-SIZE (htkhiem-euphonica-v0.99.4-beta.tar.gz) = 491207
-SIZE (htkhiem-rust-mpd-a8ddd7d624ee7ea2f4128e6df878e6b05fe5b0e7.tar.gz) = 36445
+SIZE (htkhiem-euphonica-v0.99.5-beta.tar.gz) = 495568
+SIZE (htkhiem-rust-mpd-e9f5ad589e0eaaeb1d9758cc3a6b5762bb67e4b5.tar.gz) = 36792
