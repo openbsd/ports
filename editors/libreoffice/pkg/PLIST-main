@@ -10982,6 +10982,7 @@ lib/libreoffice/share/fingerprint/fo.lm
 lib/libreoffice/share/fingerprint/fon.lm
 lib/libreoffice/share/fingerprint/fpdb.conf
 lib/libreoffice/share/fingerprint/fr.lm
+lib/libreoffice/share/fingerprint/frp.lm
 lib/libreoffice/share/fingerprint/fur.lm
 lib/libreoffice/share/fingerprint/fy.lm
 lib/libreoffice/share/fingerprint/ga.lm
@@ -10991,7 +10992,7 @@ lib/libreoffice/share/fingerprint/grc.lm
 lib/libreoffice/share/fingerprint/gu.lm
 lib/libreoffice/share/fingerprint/gug.lm
 lib/libreoffice/share/fingerprint/gv.lm
-lib/libreoffice/share/fingerprint/ha-NG.lm
+lib/libreoffice/share/fingerprint/ha-Latn-NG.lm
 lib/libreoffice/share/fingerprint/haw.lm
 lib/libreoffice/share/fingerprint/he.lm
 lib/libreoffice/share/fingerprint/hi.lm
@@ -11008,6 +11009,8 @@ lib/libreoffice/share/fingerprint/is.lm
 lib/libreoffice/share/fingerprint/it.lm
 lib/libreoffice/share/fingerprint/ja.lm
 lib/libreoffice/share/fingerprint/ka.lm
+lib/libreoffice/share/fingerprint/kaa.lm
+lib/libreoffice/share/fingerprint/kab.lm
 lib/libreoffice/share/fingerprint/kbd.lm
 lib/libreoffice/share/fingerprint/kk.lm
 lib/libreoffice/share/fingerprint/kl.lm
@@ -11028,6 +11031,7 @@ lib/libreoffice/share/fingerprint/lo.lm
 lib/libreoffice/share/fingerprint/lt.lm
 lib/libreoffice/share/fingerprint/lv.lm
 lib/libreoffice/share/fingerprint/mai.lm
+lib/libreoffice/share/fingerprint/mfe.lm
 lib/libreoffice/share/fingerprint/mi.lm
 lib/libreoffice/share/fingerprint/min.lm
 lib/libreoffice/share/fingerprint/mk.lm
@@ -11055,6 +11059,7 @@ lib/libreoffice/share/fingerprint/pl.lm
 lib/libreoffice/share/fingerprint/plt.lm
 lib/libreoffice/share/fingerprint/pt.lm
 lib/libreoffice/share/fingerprint/quh.lm
+lib/libreoffice/share/fingerprint/qul.lm
 lib/libreoffice/share/fingerprint/quz.lm
 lib/libreoffice/share/fingerprint/rm.lm
 lib/libreoffice/share/fingerprint/ro.lm
@@ -11069,9 +11074,12 @@ lib/libreoffice/share/fingerprint/se.lm
 lib/libreoffice/share/fingerprint/sg.lm
 lib/libreoffice/share/fingerprint/shs.lm
 lib/libreoffice/share/fingerprint/si.lm
+lib/libreoffice/share/fingerprint/sid.lm
 lib/libreoffice/share/fingerprint/sk.lm
 lib/libreoffice/share/fingerprint/skr.lm
 lib/libreoffice/share/fingerprint/sl.lm
+lib/libreoffice/share/fingerprint/smn.lm
+lib/libreoffice/share/fingerprint/sms.lm
 lib/libreoffice/share/fingerprint/so.lm
 lib/libreoffice/share/fingerprint/sq.lm
 lib/libreoffice/share/fingerprint/sr-Cyrl.lm
@@ -11083,6 +11091,7 @@ lib/libreoffice/share/fingerprint/sv.lm
 lib/libreoffice/share/fingerprint/sw.lm
 lib/libreoffice/share/fingerprint/swb.lm
 lib/libreoffice/share/fingerprint/ta.lm
+lib/libreoffice/share/fingerprint/te.lm
 lib/libreoffice/share/fingerprint/tet.lm
 lib/libreoffice/share/fingerprint/tg.lm
 lib/libreoffice/share/fingerprint/th.lm
@@ -11109,6 +11118,7 @@ lib/libreoffice/share/fingerprint/wa.lm
 lib/libreoffice/share/fingerprint/xh.lm
 lib/libreoffice/share/fingerprint/yi.lm
 lib/libreoffice/share/fingerprint/yo.lm
+lib/libreoffice/share/fingerprint/yrk.lm
 lib/libreoffice/share/fingerprint/zh-Hans.lm
 lib/libreoffice/share/fingerprint/zh-Hant.lm
 lib/libreoffice/share/fingerprint/zu.lm

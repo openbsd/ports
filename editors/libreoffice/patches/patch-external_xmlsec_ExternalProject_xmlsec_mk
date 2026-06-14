@@ -1,0 +1,12 @@
+Index: external/xmlsec/ExternalProject_xmlsec.mk
+--- external/xmlsec/ExternalProject_xmlsec.mk.orig
++++ external/xmlsec/ExternalProject_xmlsec.mk
+@@ -69,7 +69,7 @@ $(call gb_ExternalProject_get_state_target,xmlsec,buil
+ 			) \
+ 			$(gb_CONFIGURE_PLATFORMS) \
+ 			$(if $(SYSBASE),CFLAGS="-I$(SYSBASE)/usr/include" \
+-			LDFLAGS="$(call gb_ExternalProject_get_link_flags,xmlsec) -L$(SYSBASE)/usr/lib $(if $(filter-out LINUX FREEBSD,$(OS)),",-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-rpath$(COMMA)\\"\$$\$$ORIGIN)) \
++			LDFLAGS="$(call gb_ExternalProject_get_link_flags,xmlsec) -L$(SYSBASE)/usr/lib $(if $(filter-out LINUX OPENBSD FREEBSD,$(OS)),",-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-rpath$(COMMA)\\"\$$\$$ORIGIN)) \
+ 		&& $(MAKE) \
+ 	)
+ 	$(call gb_Trace_EndRange,xmlsec,EXTERNAL)
