@@ -1,51 +1,26 @@
 COMMENT =	style for Qt/KDE Applications
 DISTNAME =	oxygen-${VERSION}
-
-SHARED_LIBS =   oxygenstyle5              1.1 # 0.0
-SHARED_LIBS +=  oxygenstyleconfig5        0.0 # 0.0
+REVISION =	0
 
 SHARED_LIBS +=  oxygenstyle6              0.1 # 0.0
 SHARED_LIBS +=  oxygenstyleconfig6        0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5GuiAddons KF5I18n KF5Style KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF6ColorScheme KF6Completion KF6ConfigCore
-WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons
-WANTLIB += KF6I18n KF6IconThemes KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
-WANTLIB += KF6Style KF6WidgetsAddons KF6WindowSystem Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6Widgets X11 c kdecorations3
-WANTLIB += m xcb xkbcommon
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6Style KF6WidgetsAddons KF6WindowSystem
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6Quick Qt6Widgets X11 c kdecorations3 m xcb xkbcommon
 
 MODKDE_TRANSLATIONS = Yes
 
-MODULES +=	x11/qt5
-
 BUILD_DEPENDS =	devel/kf6/kpackage \
-		devel/kf5/kpackage \
 		x11/kde-plasma/libplasma>=${VERSION} \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/kf6/kpackage \
-		devel/kf6/breeze-icons
+		devel/kf5/oxygen-icons \
+		devel/kf6/kpackage
 
-# KDE5
-LIB_DEPENDS =	devel/kf5/frameworkintegration \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kguiaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtx11extras
-
-# KDE6
 LIB_DEPENDS +=	devel/kf6/kcolorscheme \
 		devel/kf6/frameworkintegration \
 		devel/kf6/kcmutils \
@@ -61,6 +36,8 @@ LIB_DEPENDS +=	devel/kf6/kcolorscheme \
 		x11/kde-plasma/kdecoration>=${VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/xkbcommon
+
+CONFIGURE_ARGS =	-DBUILD_QT5=OFF
 
 # duplicates devel/kf5/oxygen-icons partially
 post-install:

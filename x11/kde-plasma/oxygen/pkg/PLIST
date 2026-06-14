@@ -1,20 +1,16 @@
 @conflict libplasma-<6.2.0
-@bin bin/oxygen-demo5
 @bin bin/oxygen-demo6
 @bin bin/oxygen-settings6
-@lib lib/liboxygenstyle5.so.${LIBoxygenstyle5_VERSION}
 @lib lib/liboxygenstyle6.so.${LIBoxygenstyle6_VERSION}
-@lib lib/liboxygenstyleconfig5.so.${LIBoxygenstyleconfig5_VERSION}
 @lib lib/liboxygenstyleconfig6.so.${LIBoxygenstyleconfig6_VERSION}
-lib/qt5/plugins/kstyle_config/
-@so lib/qt5/plugins/kstyle_config/kstyle_oxygen_config.so
-lib/qt5/plugins/org.kde.kdecoration3/
-lib/qt5/plugins/org.kde.kdecoration3.kcm/
-@so lib/qt5/plugins/org.kde.kdecoration3.kcm/kcm_oxygendecoration.so
-@so lib/qt5/plugins/org.kde.kdecoration3/org.kde.oxygen.so
-lib/qt5/plugins/styles/
-@so lib/qt5/plugins/styles/oxygen5.so
-@so lib/qt5/plugins/styles/oxygen6.so
+lib/qt6/plugins/kstyle_config/
+@so lib/qt6/plugins/kstyle_config/kstyle_oxygen_config.so
+lib/qt6/plugins/org.kde.kdecoration3/
+lib/qt6/plugins/org.kde.kdecoration3.kcm/
+@so lib/qt6/plugins/org.kde.kdecoration3.kcm/kcm_oxygendecoration.so
+@so lib/qt6/plugins/org.kde.kdecoration3/org.kde.oxygen.so
+lib/qt6/plugins/styles/
+@so lib/qt6/plugins/styles/oxygen6.so
 share/applications/kcm_oxygendecoration.desktop
 share/color-schemes/
 share/color-schemes/Oxygen.colors
