@@ -1,0 +1,7 @@
+River is a non-monolithic Wayland compositor: it provides only the
+compositor itself, while window-management policy is delegated to an
+external client over a custom Wayland protocol. This separation lets
+users mix-and-match compositors and window managers.
+
+For a list of window manager supporting the river compositor, please
+see: https://codeberg.org/river/wiki/src/branch/main/pages/wm-list.md

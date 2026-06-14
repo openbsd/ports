@@ -1,0 +1,115 @@
+Link against versioned shared libraries on OpenBSD.
+
+OpenBSD ships only versioned shared libraries (libfoo.so.X.Y) and there
+are no unversioned symlinks, so Zig's linkSystemLibrary() cannot resolve
+plain -lfoo references. Add a small helper that picks the highest X.Y
+version of lib<name>.so.* found in the configured library directory at
+build time, and feed the resolved path to addObjectFile() instead of
+hardcoding versions that would break on every minor library bump.
+
+Index: build.zig
+--- build.zig.orig
++++ build.zig
+@@ -144,12 +144,14 @@ pub fn build(b: *Build) !void {
+     wlroots.addImport("xkbcommon", xkbcommon);
+     wlroots.addImport("pixman", pixman);
+
+-    // We need to ensure the wlroots include path obtained from pkg-config is
+-    // exposed to the wlroots module for @cImport() to work. This seems to be
+-    // the best way to do so with the current std.Build API.
+     wlroots.resolved_target = target;
+-    const wlroots_pkgconf = "wlroots-0.20";
+-    wlroots.linkSystemLibrary(wlroots_pkgconf, .{});
++    wlroots.addIncludePath(.{ .cwd_relative = "/usr/local/include/wlroots-0.20" });
++    wlroots.addIncludePath(.{ .cwd_relative = "/usr/local/include" });
++    wlroots.addIncludePath(.{ .cwd_relative = "/usr/local/include/libepoll-shim" });
++    wlroots.addIncludePath(.{ .cwd_relative = "/usr/X11R6/include" });
++    wlroots.addIncludePath(.{ .cwd_relative = "/usr/X11R6/include/libdrm" });
++    wlroots.addIncludePath(.{ .cwd_relative = "/usr/X11R6/include/pixman-1" });
++    wlroots.addObjectFile(.{ .cwd_relative = try latestLib(b, "/usr/local/lib", "wlroots-0.20") });
+
+     const flags = b.createModule(.{ .root_source_file = b.path("common/flags.zig") });
+     const slotmap = b.createModule(.{ .root_source_file = b.path("common/slotmap.zig") });
+@@ -160,8 +162,10 @@ pub fn build(b: *Build) !void {
+         .target = target,
+         .optimize = optimize,
+     });
+-    translate_c.linkSystemLibrary("libevdev", .{});
+-    translate_c.linkSystemLibrary("libinput", .{});
++    translate_c.addIncludePath(.{ .cwd_relative = "/usr/local/include" });
++    translate_c.addIncludePath(.{ .cwd_relative = "/usr/local/include/libepoll-shim" });
++    translate_c.mod.addObjectFile(.{ .cwd_relative = try latestLib(b, "/usr/local/lib", "evdev") });
++    translate_c.mod.addObjectFile(.{ .cwd_relative = try latestLib(b, "/usr/local/lib", "input") });
+
+     {
+         const river = b.addExecutable(.{
+@@ -178,12 +182,18 @@ pub fn build(b: *Build) !void {
+         });
+         river.root_module.addOptions("build_options", options);
+
+-        river.root_module.linkSystemLibrary("libevdev", .{});
+-        river.root_module.linkSystemLibrary("libinput", .{});
+-        river.root_module.linkSystemLibrary("wayland-server", .{});
+-        river.root_module.linkSystemLibrary(wlroots_pkgconf, .{});
+-        river.root_module.linkSystemLibrary("xkbcommon", .{});
+-        river.root_module.linkSystemLibrary("pixman-1", .{});
++        river.root_module.addIncludePath(.{ .cwd_relative = "/usr/local/include" });
++        river.root_module.addIncludePath(.{ .cwd_relative = "/usr/local/include/libepoll-shim" });
++        river.root_module.addIncludePath(.{ .cwd_relative = "/usr/local/include/wlroots-0.20" });
++        river.root_module.addIncludePath(.{ .cwd_relative = "/usr/X11R6/include" });
++        river.root_module.addIncludePath(.{ .cwd_relative = "/usr/X11R6/include/libdrm" });
++        river.root_module.addIncludePath(.{ .cwd_relative = "/usr/X11R6/include/pixman-1" });
++        river.root_module.addObjectFile(.{ .cwd_relative = try latestLib(b, "/usr/local/lib", "evdev") });
++        river.root_module.addObjectFile(.{ .cwd_relative = try latestLib(b, "/usr/local/lib", "input") });
++        river.root_module.addObjectFile(.{ .cwd_relative = try latestLib(b, "/usr/local/lib", "wayland-server") });
++        river.root_module.addObjectFile(.{ .cwd_relative = try latestLib(b, "/usr/local/lib", "wlroots-0.20") });
++        river.root_module.addObjectFile(.{ .cwd_relative = try latestLib(b, "/usr/local/lib", "xkbcommon") });
++        river.root_module.addObjectFile(.{ .cwd_relative = try latestLib(b, "/usr/X11R6/lib", "pixman-1") });
+
+         river.root_module.addImport("wayland", wayland);
+         river.root_module.addImport("xkbcommon", xkbcommon);
+@@ -257,4 +267,44 @@ pub fn build(b: *Build) !void {
+         const test_step = b.step("test", "Run the tests");
+         test_step.dependOn(&run_slotmap_test.step);
+     }
++}
++
++// Find the highest-versioned shared library named lib<basename>.so.<major>.<minor>
++// in dir_path. OpenBSD's shared libraries are always versioned and there are no
++// unversioned symlinks, so Zig's linkSystemLibrary() cannot find them; we feed
++// the resolved path to addObjectFile() instead.
++fn latestLib(b: *Build, dir_path: []const u8, basename: []const u8) ![]const u8 {
++    const io = b.graph.io;
++    var dir = try std.Io.Dir.openDirAbsolute(io, dir_path, .{});
++    defer dir.close(io);
++
++    const prefix = b.fmt("lib{s}.so.", .{basename});
++
++    var best_major: i64 = -1;
++    var best_minor: i64 = -1;
++    var best_name: ?[]const u8 = null;
++
++    var it = dir.iterate();
++    while (try it.next(io)) |entry| {
++        if (!mem.startsWith(u8, entry.name, prefix)) continue;
++        const rest = entry.name[prefix.len..];
++        var sit = mem.splitScalar(u8, rest, '.');
++        const maj_str = sit.next() orelse continue;
++        const min_str = sit.next() orelse continue;
++        if (sit.next() != null) continue;
++        const maj = std.fmt.parseInt(i64, maj_str, 10) catch continue;
++        const min = std.fmt.parseInt(i64, min_str, 10) catch continue;
++        if (maj > best_major or (maj == best_major and min > best_minor)) {
++            best_major = maj;
++            best_minor = min;
++            best_name = b.fmt("{s}", .{entry.name});
++        }
++    }
++
++    const name = best_name orelse {
++        std.log.err("no versioned shared library lib{s}.so.* found in {s}", .{ basename, dir_path });
++        return error.LibraryNotFound;
++    };
++
++    return b.fmt("{s}/{s}", .{ dir_path, name });
+ }
