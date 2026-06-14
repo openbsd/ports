@@ -1,12 +1,12 @@
 # When updating/switching to a new version, remember to adapt devel/llvm!
 #
 
-# tested: amd64, arm64, sparc64, riscv64
+# tested: amd64, arm64, sparc64, riscv64, i386
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
-ONLY_FOR_ARCHS-ada = amd64 mips64 powerpc # i386
-ONLY_FOR_ARCHS-dlang = aarch64 amd64 sparc64 # needs gdc from gcc-9+
+ONLY_FOR_ARCHS-ada = amd64 mips64 powerpc i386
+ONLY_FOR_ARCHS-dlang = aarch64 amd64 sparc64 i386 # needs gdc from gcc-9+
 
 DPB_PROPERTIES = parallel
 
@@ -24,7 +24,7 @@ BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.1.0-0.tar.xz
 BOOTSTRAP-amd64 = gcc-bootstrap-amd64-16.1.0-0.tar.xz
 BOOTSTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 BOOTSTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
-BOOTSTRAP-i386 = adastrap-i386-11.2.0-4.tar.xz
+BOOTSTRAP-i386 = gcc-bootstrap-i386-16.1.0-0.tar.xz
 BOOTSTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
 BOOTSTRAP-powerpc = adastrap-powerpc-11.2.0-4.tar.xz
 BOOTSTRAP-sparc64 = gcc-bootstrap-sparc64-16.1.0-0.tar.xz
