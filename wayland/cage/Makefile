@@ -1,9 +1,8 @@
 COMMENT =	Wayland kiosk
 
-V =		0.2.1
+V =		0.3.0
 DISTNAME =	cage-${V}
 CATEGORIES =	wayland
-REVISION =	0
 HOMEPAGE =	https://www.hjdskes.nl/projects/cage/
 
 SITES =		https://github.com/cage-kiosk/cage/releases/download/v${V}/
@@ -16,6 +15,7 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 MODULES =	devel/meson wayland/wlroots
+MODWLROOTS_VERSION =	0.20
 
 WANTLIB =	c xkbcommon wayland-server
 
