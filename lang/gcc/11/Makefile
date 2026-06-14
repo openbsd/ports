@@ -1,4 +1,4 @@
-UNLINKED =	"old gcc version; keeping the ports dir around in case of problems with 15 on less well tested archs"
+UNLINKED =	"old gcc version; required to add dlang support for future gcc"
 
 # tested: aarch64 amd64 arm hppa i386 powerpc
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
@@ -19,7 +19,7 @@ REVISION-dlang = 23
 # aarch64 and sparc64 bootstrap contain only gdc
 ADASTRAP-aarch64 = adastrap-aarch64-$V-1.tar.xz
 ADASTRAP-amd64 = adastrap-amd64-$V-7.tar.xz
-ADASTRAP-i386 = adastrap-i386-$V-4.tar.xz
+ADASTRAP-i386 = adastrap-i386-$V-5.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
 ADASTRAP-powerpc = adastrap-powerpc-$V-4.tar.xz
 ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
