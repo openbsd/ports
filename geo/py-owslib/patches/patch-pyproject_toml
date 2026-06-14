@@ -1,0 +1,17 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools<69", "wheel"]
++requires = ["setuptools", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -58,4 +58,4 @@ exclude = [".git", "__pycache__", "docs/source/conf.py
+ 
+ # ensure all subpackages are found
+ [tool.setuptools.packages.find]
+-include = ["owslib*"]
+\ No newline at end of file
++include = ["owslib*"]
