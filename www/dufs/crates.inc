@@ -1,5 +1,3 @@
-===>  Verifying specs:  c pthread c++abi
-===>  found c.102.1 pthread.28.0 c++abi.9.0
 MODCARGO_CRATES +=	addr2line	0.24.2	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	adler2	2.0.1	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	aho-corasick	1.1.3	# Unlicense OR MIT
