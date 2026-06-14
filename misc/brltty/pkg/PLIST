@@ -1,169 +1,763 @@
 @bin bin/brltty
-bin/brltty-config
+@bin bin/brltty-atb
+@bin bin/brltty-cldr
+@bin bin/brltty-cmdref
+bin/brltty-config.sh
+@bin bin/brltty-ctb
+bin/brltty-genkey
+@bin bin/brltty-hid
+@bin bin/brltty-ktb
+@bin bin/brltty-lsinc
+bin/brltty-mkuser
+@bin bin/brltty-morse
+bin/brltty-prologue.bash
+bin/brltty-prologue.lua
+bin/brltty-prologue.sh
+bin/brltty-prologue.tcl
+bin/brltty-setcaps
+bin/brltty-term
+bin/brltty-tmux
+@bin bin/brltty-trtxt
+@bin bin/brltty-ttb
+bin/brltty-ttysize
+@bin bin/brltty-tune
 include/brltty/
-include/brltty/api.h
-include/brltty/api_protocol.h
-include/brltty/brldefs.h
+include/brltty/addresses.h
+include/brltty/alert.h
+include/brltty/ascii.h
+include/brltty/async_alarm.h
+include/brltty/async_event.h
+include/brltty/async_handle.h
+include/brltty/async_io.h
+include/brltty/async_signal.h
+include/brltty/async_task.h
+include/brltty/async_types_alarm.h
+include/brltty/async_types_event.h
+include/brltty/async_types_handle.h
+include/brltty/async_types_io.h
+include/brltty/async_types_task.h
+include/brltty/async_types_wait.h
+include/brltty/async_wait.h
+include/brltty/atb.h
+include/brltty/auth.h
+include/brltty/beep.h
+include/brltty/bell.h
+include/brltty/bitfield.h
+include/brltty/bitmask.h
+include/brltty/brl_base.h
+include/brltty/brl_cmds.h
+include/brltty/brl_custom.h
+include/brltty/brl_dots.h
+include/brltty/brl_driver.h
+include/brltty/brl_types.h
+include/brltty/brl_utils.h
+include/brltty/charset.h
+include/brltty/cldr.h
+include/brltty/clipboard.h
+include/brltty/cmd.h
+include/brltty/cmd_enqueue.h
+include/brltty/cmd_types.h
+include/brltty/cmdargs.h
+include/brltty/cmdbase.h
+include/brltty/cmdline.h
+include/brltty/cmdline_types.h
+include/brltty/cmdput.h
+include/brltty/color.h
+include/brltty/color_types.h
+include/brltty/common_java.h
+include/brltty/config.h
+include/brltty/crc.h
+include/brltty/crc_algorithms.h
+include/brltty/crc_definitions.h
+include/brltty/crc_generate.h
+include/brltty/crc_properties.h
+include/brltty/crc_verify.h
+include/brltty/ctb.h
+include/brltty/ctb_types.h
+include/brltty/dataarea.h
+include/brltty/datafile.h
+include/brltty/device.h
+include/brltty/driver.h
+include/brltty/drivers.h
+include/brltty/dynld.h
+include/brltty/embed.h
+include/brltty/ezusb.h
+include/brltty/file.h
+include/brltty/fm.h
+include/brltty/fm_adlib.h
+include/brltty/forbuild.h
+include/brltty/get_curses.h
+include/brltty/get_select.h
+include/brltty/get_sockets.h
+include/brltty/get_term.h
+include/brltty/get_thread.h
+include/brltty/gettime.h
+include/brltty/gio_types.h
+include/brltty/hid_braille.h
+include/brltty/hid_defs.h
+include/brltty/hid_inspect.h
+include/brltty/hid_items.h
+include/brltty/hid_tables.h
+include/brltty/hid_types.h
+include/brltty/hostcmd.h
+include/brltty/ihex.h
+include/brltty/ihex_types.h
+include/brltty/io_bluetooth.h
+include/brltty/io_generic.h
+include/brltty/io_hid.h
+include/brltty/io_misc.h
+include/brltty/io_serial.h
+include/brltty/io_usb.h
+include/brltty/kbd_keycodes.h
+include/brltty/ktb.h
+include/brltty/ktb_types.h
+include/brltty/leds.h
+include/brltty/lock.h
+include/brltty/log.h
+include/brltty/log_history.h
+include/brltty/match.h
+include/brltty/menu.h
+include/brltty/message.h
+include/brltty/messages.h
+include/brltty/midi.h
+include/brltty/mntfs.h
+include/brltty/mntpt.h
+include/brltty/morse.h
+include/brltty/msg_queue.h
+include/brltty/note_types.h
+include/brltty/notes.h
+include/brltty/params.h
+include/brltty/parse.h
+include/brltty/pcm.h
+include/brltty/pgmpath.h
+include/brltty/pgmprivs.h
+include/brltty/pid.h
+include/brltty/ports.h
+include/brltty/prefs.h
+include/brltty/program.h
+include/brltty/prologue.h
+include/brltty/pty_object.h
+include/brltty/pty_screen.h
+include/brltty/pty_terminal.h
+include/brltty/queue.h
+include/brltty/revision.h
+include/brltty/rgx.h
+include/brltty/scr_base.h
+include/brltty/scr_driver.h
+include/brltty/scr_emulator.h
+include/brltty/scr_gpm.h
+include/brltty/scr_main.h
+include/brltty/scr_real.h
+include/brltty/scr_terminal.h
+include/brltty/scr_types.h
+include/brltty/scr_utils.h
+include/brltty/serial_types.h
+include/brltty/service.h
+include/brltty/spk.h
+include/brltty/spk_base.h
+include/brltty/spk_driver.h
+include/brltty/spk_types.h
+include/brltty/status_types.h
+include/brltty/stdiox.h
+include/brltty/strfmt.h
+include/brltty/strfmt_types.h
+include/brltty/system.h
+include/brltty/system_darwin.h
+include/brltty/system_java.h
+include/brltty/system_linux.h
+include/brltty/system_msdos.h
+include/brltty/system_windows.h
+include/brltty/thread.h
+include/brltty/timing.h
+include/brltty/timing_types.h
+include/brltty/ttb.h
+include/brltty/tune.h
+include/brltty/tune_builder.h
+include/brltty/tune_types.h
+include/brltty/tune_utils.h
+include/brltty/unicode.h
+include/brltty/usb_hid.h
+include/brltty/usb_types.h
+include/brltty/utf8.h
+include/brltty/variables.h
+include/brltty/vga.h
+include/brltty/win_errno.h
+include/brltty/win_pthread.h
+include/brltty/xsel.h
 lib/brltty/
-lib/brltty/brltty-brl.lst
-lib/brltty/brltty-spk.lst
 @so lib/brltty/libbrlttybal.so
 @so lib/brltty/libbrlttybat.so
+@so lib/brltty/libbrlttybbc.so
+@so lib/brltty/libbrlttybbd.so
 @so lib/brltty/libbrlttybbl.so
+@so lib/brltty/libbrlttybbm.so
 @so lib/brltty/libbrlttybbn.so
 @so lib/brltty/libbrlttybcb.so
+@so lib/brltty/libbrlttybce.so
+@so lib/brltty/libbrlttybcn.so
+@so lib/brltty/libbrlttybdp.so
 @so lib/brltty/libbrlttybec.so
 @so lib/brltty/libbrlttybeu.so
+@so lib/brltty/libbrlttybfa.so
 @so lib/brltty/libbrlttybfs.so
+@so lib/brltty/libbrlttybhd.so
+@so lib/brltty/libbrlttybhm.so
 @so lib/brltty/libbrlttybht.so
+@so lib/brltty/libbrlttybhw.so
+@so lib/brltty/libbrlttybic.so
+@so lib/brltty/libbrlttybir.so
 @so lib/brltty/libbrlttyblt.so
 @so lib/brltty/libbrlttybmb.so
 @so lib/brltty/libbrlttybmd.so
+@so lib/brltty/libbrlttybmm.so
 @so lib/brltty/libbrlttybmn.so
+@so lib/brltty/libbrlttybmt.so
+@so lib/brltty/libbrlttybnp.so
+@so lib/brltty/libbrlttybpg.so
 @so lib/brltty/libbrlttybpm.so
+@so lib/brltty/libbrlttybsk.so
+@so lib/brltty/libbrlttybtn.so
 @so lib/brltty/libbrlttybts.so
 @so lib/brltty/libbrlttybtt.so
-@so lib/brltty/libbrlttybva.so
 @so lib/brltty/libbrlttybvd.so
-@so lib/brltty/libbrlttybvh.so
 @so lib/brltty/libbrlttybvo.so
-@so lib/brltty/libbrlttybvr.so
 @so lib/brltty/libbrlttybvs.so
+@so lib/brltty/libbrlttybxw.so
 @so lib/brltty/libbrlttysal.so
 @so lib/brltty/libbrlttysbl.so
 @so lib/brltty/libbrlttyscb.so
-@so lib/brltty/libbrlttyses.so
+@so lib/brltty/libbrlttysen.so
+@so lib/brltty/libbrlttysfl.so
 @so lib/brltty/libbrlttysfv.so
 @so lib/brltty/libbrlttysgs.so
-@static-lib lib/libbrlapi.a
-@so lib/libbrlapi.so
-@bin lib/libbrlapi.so.0.3.0
+@so lib/brltty/libbrlttyssd.so
+@so lib/brltty/libbrlttysxs.so
+@so lib/brltty/libbrlttyxa2.so
+@so lib/brltty/libbrlttyxem.so
+@so lib/brltty/libbrlttyxfv.so
+@so lib/brltty/libbrlttyxsc.so
+@so lib/brltty/libbrlttyxtx.so
+lib/pkgconfig/brltty.pc
+libexec/brltty/
+@bin libexec/brltty/brltty-pty
 @man man/man1/brltty.1
-@man man/man3/brlapi_closeConnection.3
-@man man/man3/brlapi_connection.3
-@man man/man3/brlapi_errlist.3
-@man man/man3/brlapi_errno.3
-@man man/man3/brlapi_errno_location.3
-@man man/man3/brlapi_error.3
-@man man/man3/brlapi_extWriteBrl.3
-@man man/man3/brlapi_extWriteStruct.3
-@man man/man3/brlapi_fd_mutex.3
-@man man/man3/brlapi_getDisplaySize.3
-@man man/man3/brlapi_getDriverId.3
-@man man/man3/brlapi_getDriverName.3
-@man man/man3/brlapi_getRaw.3
-@man man/man3/brlapi_getTty.3
-@man man/man3/brlapi_ignoreKeyRange.3
-@man man/man3/brlapi_ignoreKeySet.3
-@man man/man3/brlapi_info.3
-@man man/man3/brlapi_initializeConnection.3
-@man man/man3/brlapi_keys.3
-@man man/man3/brlapi_leaveRaw.3
-@man man/man3/brlapi_leaveTty.3
-@man man/man3/brlapi_loadAuthKey.3
-@man man/man3/brlapi_nerr.3
-@man man/man3/brlapi_perror.3
-@man man/man3/brlapi_protocol.3
-@man man/man3/brlapi_raw.3
-@man man/man3/brlapi_readCommand.3
-@man man/man3/brlapi_readKey.3
-@man man/man3/brlapi_readPacket.3
-@man man/man3/brlapi_recvRaw.3
-@man man/man3/brlapi_sendRaw.3
-@man man/man3/brlapi_settings_t.3
-@man man/man3/brlapi_strerror.3
-@man man/man3/brlapi_tty.3
-@man man/man3/brlapi_unignoreKeyRange.3
-@man man/man3/brlapi_unignoreKeySet.3
-@man man/man3/brlapi_write.3
-@man man/man3/brlapi_writeBrl.3
-@man man/man3/brlapi_writeBrlDots.3
-@man man/man3/brlapi_writePacket.3
 share/brltty/
-share/brltty/allchars.cti
-share/brltty/attrib.tbl
-share/brltty/attributes.tbl
-share/brltty/big5.ctb
-share/brltty/brltty-al.hlp
-share/brltty/brltty-at.hlp
-share/brltty/brltty-bl.hlp
-share/brltty/brltty-bn.hlp
-share/brltty/brltty-cb.hlp
-share/brltty/brltty-ec.hlp
-share/brltty/brltty-eu.hlp
-share/brltty/brltty-fs.hlp
-share/brltty/brltty-ht.hlp
-share/brltty/brltty-lt.hlp
-share/brltty/brltty-mb.hlp
-share/brltty/brltty-md.hlp
-share/brltty/brltty-mn.hlp
-share/brltty/brltty-pm-2d_l.hlp
-share/brltty/brltty-pm-2d_s.hlp
-share/brltty/brltty-pm-c.hlp
-share/brltty/brltty-pm-c_486.hlp
-share/brltty/brltty-pm-el_2d_40.hlp
-share/brltty/brltty-pm-el_2d_66.hlp
-share/brltty/brltty-pm-el_2d_80.hlp
-share/brltty/brltty-pm-el_40_p.hlp
-share/brltty/brltty-pm-el_40_s.hlp
-share/brltty/brltty-pm-el_66_s.hlp
-share/brltty/brltty-pm-el_80.hlp
-share/brltty/brltty-pm-el_80_s.hlp
-share/brltty/brltty-pm-elba_20.hlp
-share/brltty/brltty-pm-elba_32.hlp
-share/brltty/brltty-pm-ib_80.hlp
-share/brltty/brltty-pm.conf
-share/brltty/brltty-pm.hlp
-share/brltty/brltty-ts.hlp
-share/brltty/brltty-tt.hlp
-share/brltty/brltty-va.hlp
-share/brltty/brltty-vd.hlp
-share/brltty/brltty-vh.hlp
-share/brltty/brltty-vo.hlp
-share/brltty/brltty-vr.hlp
-share/brltty/brltty-vs.hlp
-share/brltty/compress.ctb
-share/brltty/countries.cti
-share/brltty/en-us-g2.ctb
-share/brltty/fr-abrege.ctb
-share/brltty/fr-integral.ctb
-share/brltty/text.brf.tbl
-share/brltty/text.cz.tbl
-share/brltty/text.da-1252.tbl
-share/brltty/text.da-lt.tbl
-share/brltty/text.da.tbl
-share/brltty/text.de.tbl
-share/brltty/text.es.tbl
-share/brltty/text.fi1.tbl
-share/brltty/text.fi2.tbl
-share/brltty/text.fr-cbifs.tbl
-share/brltty/text.fr-iso01.tbl
-share/brltty/text.fr.tbl
-share/brltty/text.identity.tbl
-share/brltty/text.it.tbl
-share/brltty/text.nabcc.tbl
-share/brltty/text.no-h.tbl
-share/brltty/text.no-p.tbl
-share/brltty/text.pl.tbl
-share/brltty/text.ru.tbl
-share/brltty/text.se1.tbl
-share/brltty/text.se2.tbl
-share/brltty/text.simple.tbl
-share/brltty/text.uk.tbl
-share/brltty/text.us.tbl
-share/brltty/text.visiob.tbl
-share/brltty/text.vni.tbl
+share/brltty/Attributes/
+share/brltty/Attributes/invleft_right.atb
+share/brltty/Attributes/left_right.atb
+share/brltty/Attributes/upper_lower.atb
+share/brltty/Contraction/
+share/brltty/Contraction/af.ctb
+share/brltty/Contraction/am.ctb
+share/brltty/Contraction/countries.cti
+share/brltty/Contraction/de-g0.ctb
+share/brltty/Contraction/de-g1.ctb
+share/brltty/Contraction/de-g2.ctb
+share/brltty/Contraction/de.ctb
+share/brltty/Contraction/en-ueb-g1.ctb
+share/brltty/Contraction/en-ueb-g2.ctb
+share/brltty/Contraction/en-us-g2.ctb
+share/brltty/Contraction/en.ctb
+share/brltty/Contraction/en_US.ctb
+share/brltty/Contraction/es.ctb
+share/brltty/Contraction/fr-g1.ctb
+share/brltty/Contraction/fr-g2.ctb
+share/brltty/Contraction/fr.ctb
+share/brltty/Contraction/ha.ctb
+share/brltty/Contraction/id.ctb
+share/brltty/Contraction/ipa.ctb
+share/brltty/Contraction/ja.ctb
+share/brltty/Contraction/ko-g0.ctb
+share/brltty/Contraction/ko-g1.ctb
+share/brltty/Contraction/ko-g2.ctb
+share/brltty/Contraction/ko.ctb
+share/brltty/Contraction/latex-access.ctb
+share/brltty/Contraction/letters-latin.cti
+share/brltty/Contraction/lt.ctb
+share/brltty/Contraction/mg.ctb
+share/brltty/Contraction/mun.ctb
+share/brltty/Contraction/nabcc.cti
+share/brltty/Contraction/nl.ctb
+share/brltty/Contraction/none.ctb
+share/brltty/Contraction/ny.ctb
+share/brltty/Contraction/pt.ctb
+share/brltty/Contraction/ru.ctb
+share/brltty/Contraction/si.ctb
+share/brltty/Contraction/spaces.cti
+share/brltty/Contraction/sw.ctb
+share/brltty/Contraction/th.ctb
+share/brltty/Contraction/zh-tw.ctb
+share/brltty/Contraction/zh-tw.cti
+share/brltty/Contraction/zh_TW.ctb
+share/brltty/Contraction/zu.ctb
+share/brltty/Input/
+share/brltty/Input/al/
+share/brltty/Input/al/abt_basic.kti
+share/brltty/Input/al/abt_extra.kti
+share/brltty/Input/al/abt_large.ktb
+share/brltty/Input/al/abt_small.ktb
+share/brltty/Input/al/bc-etouch.kti
+share/brltty/Input/al/bc-smartpad.kti
+share/brltty/Input/al/bc-thumb.kti
+share/brltty/Input/al/bc.kti
+share/brltty/Input/al/bc640.ktb
+share/brltty/Input/al/bc680.ktb
+share/brltty/Input/al/el.ktb
+share/brltty/Input/al/sat_common.kti
+share/brltty/Input/al/sat_large.ktb
+share/brltty/Input/al/sat_nav.kti
+share/brltty/Input/al/sat_small.ktb
+share/brltty/Input/al/sat_speech.kti
+share/brltty/Input/al/sat_tumblers.kti
+share/brltty/Input/al/voyager.ktb
+share/brltty/Input/at/
+share/brltty/Input/at/all.ktb
+share/brltty/Input/ba/
+share/brltty/Input/ba/all.txt
+share/brltty/Input/bd/
+share/brltty/Input/bd/all.txt
+share/brltty/Input/bg/
+share/brltty/Input/bg/all.ktb
+share/brltty/Input/bl/
+share/brltty/Input/bl/18.txt
+share/brltty/Input/bl/40_m20_m40.txt
+share/brltty/Input/bm/
+share/brltty/Input/bm/NLS_Zoomax.ktb
+share/brltty/Input/bm/b2g.ktb
+share/brltty/Input/bm/b9b10.kti
+share/brltty/Input/bm/b9b11b10.kti
+share/brltty/Input/bm/command.kti
+share/brltty/Input/bm/connect.ktb
+share/brltty/Input/bm/conny.ktb
+share/brltty/Input/bm/d6.kti
+share/brltty/Input/bm/default.ktb
+share/brltty/Input/bm/display6.kti
+share/brltty/Input/bm/display7.kti
+share/brltty/Input/bm/dm80p.ktb
+share/brltty/Input/bm/emulate6.kti
+share/brltty/Input/bm/front10.kti
+share/brltty/Input/bm/front6.kti
+share/brltty/Input/bm/horizontal.kti
+share/brltty/Input/bm/inka.ktb
+share/brltty/Input/bm/joystick.kti
+share/brltty/Input/bm/keyboard.kti
+share/brltty/Input/bm/navpad.kti
+share/brltty/Input/bm/orbit.ktb
+share/brltty/Input/bm/pro.ktb
+share/brltty/Input/bm/pronto.ktb
+share/brltty/Input/bm/pv.ktb
+share/brltty/Input/bm/rb.ktb
+share/brltty/Input/bm/routing.kti
+share/brltty/Input/bm/routing6.kti
+share/brltty/Input/bm/routing7.kti
+share/brltty/Input/bm/status.kti
+share/brltty/Input/bm/sv.ktb
+share/brltty/Input/bm/ultra.ktb
+share/brltty/Input/bm/v40.ktb
+share/brltty/Input/bm/v80.ktb
+share/brltty/Input/bm/vertical.kti
+share/brltty/Input/bm/vk.ktb
+share/brltty/Input/bm/wheels.kti
+share/brltty/Input/bn/
+share/brltty/Input/bn/all.ktb
+share/brltty/Input/bn/input.kti
+share/brltty/Input/bp/
+share/brltty/Input/bp/all.kti
+share/brltty/Input/cb/
+share/brltty/Input/cb/all.ktb
+share/brltty/Input/ce/
+share/brltty/Input/ce/all.ktb
+share/brltty/Input/ce/novem.ktb
+share/brltty/Input/chords-android.kti
+share/brltty/Input/chords-global.kti
+share/brltty/Input/chords.kti
+share/brltty/Input/cn/
+share/brltty/Input/cn/all.ktb
+share/brltty/Input/dp/
+share/brltty/Input/dp/all.ktb
+share/brltty/Input/dp/function.kti
+share/brltty/Input/dp/keyboard.kti
+share/brltty/Input/dp/navigation.kti
+share/brltty/Input/dp/panfn4.ktb
+share/brltty/Input/dp/panning.kti
+share/brltty/Input/dp/routing.kti
+share/brltty/Input/dp/scroll.kti
+share/brltty/Input/ec/
+share/brltty/Input/ec/all.txt
+share/brltty/Input/ec/spanish.txt
+share/brltty/Input/eu/
+share/brltty/Input/eu/all.txt
+share/brltty/Input/eu/bbook.ktb
+share/brltty/Input/eu/bcommon.kti
+share/brltty/Input/eu/bnote.ktb
+share/brltty/Input/eu/braille.kti
+share/brltty/Input/eu/clio.ktb
+share/brltty/Input/eu/common.kti
+share/brltty/Input/eu/esys_large.ktb
+share/brltty/Input/eu/esys_medium.ktb
+share/brltty/Input/eu/esys_small.ktb
+share/brltty/Input/eu/esytime.ktb
+share/brltty/Input/eu/iris.ktb
+share/brltty/Input/eu/joysticks.kti
+share/brltty/Input/eu/keypads.kti
+share/brltty/Input/eu/navctl.kti
+share/brltty/Input/eu/routing.kti
+share/brltty/Input/eu/sw12.kti
+share/brltty/Input/eu/sw34.kti
+share/brltty/Input/eu/sw56.kti
+share/brltty/Input/fa/
+share/brltty/Input/fa/all.ktb
+share/brltty/Input/fs/
+share/brltty/Input/fs/bumpers.kti
+share/brltty/Input/fs/common.kti
+share/brltty/Input/fs/focus.kti
+share/brltty/Input/fs/focus1.ktb
+share/brltty/Input/fs/focus14.ktb
+share/brltty/Input/fs/focus40.ktb
+share/brltty/Input/fs/focus80.ktb
+share/brltty/Input/fs/keyboard.kti
+share/brltty/Input/fs/pacmate.ktb
+share/brltty/Input/fs/rockers.kti
+share/brltty/Input/fs/speech.kti
+share/brltty/Input/hd/
+share/brltty/Input/hd/mbl.ktb
+share/brltty/Input/hd/pfl.ktb
+share/brltty/Input/hm/
+share/brltty/Input/hm/beetle.ktb
+share/brltty/Input/hm/braille.kti
+share/brltty/Input/hm/common.kti
+share/brltty/Input/hm/contexts.kti
+share/brltty/Input/hm/edge.ktb
+share/brltty/Input/hm/emotion.ktb
+share/brltty/Input/hm/f14.kti
+share/brltty/Input/hm/f18.kti
+share/brltty/Input/hm/fnkey.kti
+share/brltty/Input/hm/left.kti
+share/brltty/Input/hm/letters.kti
+share/brltty/Input/hm/pan.ktb
+share/brltty/Input/hm/pan.kti
+share/brltty/Input/hm/qwerty.ktb
+share/brltty/Input/hm/qwerty.kti
+share/brltty/Input/hm/right.kti
+share/brltty/Input/hm/scroll.ktb
+share/brltty/Input/hm/scroll.kti
+share/brltty/Input/hm/sync.ktb
+share/brltty/Input/ht/
+share/brltty/Input/ht/ab.ktb
+share/brltty/Input/ht/ab.kti
+share/brltty/Input/ht/ab_s.ktb
+share/brltty/Input/ht/ac4.ktb
+share/brltty/Input/ht/acp.ktb
+share/brltty/Input/ht/alo.ktb
+share/brltty/Input/ht/android.kti
+share/brltty/Input/ht/as40.ktb
+share/brltty/Input/ht/bb.ktb
+share/brltty/Input/ht/bbp.ktb
+share/brltty/Input/ht/bkwm.ktb
+share/brltty/Input/ht/brln.ktb
+share/brltty/Input/ht/bs.kti
+share/brltty/Input/ht/bs40.ktb
+share/brltty/Input/ht/bs80.ktb
+share/brltty/Input/ht/cb40.ktb
+share/brltty/Input/ht/dots.kti
+share/brltty/Input/ht/easy.ktb
+share/brltty/Input/ht/input.kti
+share/brltty/Input/ht/joystick.kti
+share/brltty/Input/ht/keypad.kti
+share/brltty/Input/ht/map.kti
+share/brltty/Input/ht/mc88.ktb
+share/brltty/Input/ht/mdlr.ktb
+share/brltty/Input/ht/me.kti
+share/brltty/Input/ht/me64.ktb
+share/brltty/Input/ht/me88.ktb
+share/brltty/Input/ht/rockers.kti
+share/brltty/Input/ht/wave.ktb
+share/brltty/Input/hw/
+share/brltty/Input/hw/B80.ktb
+share/brltty/Input/hw/BI14.ktb
+share/brltty/Input/hw/BI20X.ktb
+share/brltty/Input/hw/BI32.ktb
+share/brltty/Input/hw/BI40.ktb
+share/brltty/Input/hw/BI40X.ktb
+share/brltty/Input/hw/C20.ktb
+share/brltty/Input/hw/M40.ktb
+share/brltty/Input/hw/NLS.ktb
+share/brltty/Input/hw/braille.kti
+share/brltty/Input/hw/command.kti
+share/brltty/Input/hw/joystick.kti
+share/brltty/Input/hw/one.ktb
+share/brltty/Input/hw/routing.kti
+share/brltty/Input/hw/thumb.kti
+share/brltty/Input/hw/thumb_legacy.kti
+share/brltty/Input/hw/touch.ktb
+share/brltty/Input/ic/
+share/brltty/Input/ic/bb.ktb
+share/brltty/Input/ic/chords.kti
+share/brltty/Input/ic/common.kti
+share/brltty/Input/ic/nvda.ktb
+share/brltty/Input/ic/route.kti
+share/brltty/Input/ic/toggle.kti
+share/brltty/Input/ir/
+share/brltty/Input/ir/all.kti
+share/brltty/Input/ir/brl.ktb
+share/brltty/Input/ir/pc.ktb
+share/brltty/Input/lb/
+share/brltty/Input/lb/all.txt
+share/brltty/Input/lt/
+share/brltty/Input/lt/all.txt
+share/brltty/Input/mb/
+share/brltty/Input/mb/all.txt
+share/brltty/Input/md/
+share/brltty/Input/md/common.kti
+share/brltty/Input/md/default.ktb
+share/brltty/Input/md/fk.ktb
+share/brltty/Input/md/fk_s.ktb
+share/brltty/Input/md/fkeys.kti
+share/brltty/Input/md/kbd.ktb
+share/brltty/Input/md/keyboard.kti
+share/brltty/Input/md/status.kti
+share/brltty/Input/menu.kti
+share/brltty/Input/mm/
+share/brltty/Input/mm/common.kti
+share/brltty/Input/mm/nt.ktb
+share/brltty/Input/mm/pocket.ktb
+share/brltty/Input/mm/smart.ktb
+share/brltty/Input/mn/
+share/brltty/Input/mn/all.txt
+share/brltty/Input/mt/
+share/brltty/Input/mt/bd1_3.ktb
+share/brltty/Input/mt/bd1_3.kti
+share/brltty/Input/mt/bd1_3s.ktb
+share/brltty/Input/mt/bd1_6.ktb
+share/brltty/Input/mt/bd1_6.kti
+share/brltty/Input/mt/bd1_6s.ktb
+share/brltty/Input/mt/bd2.ktb
+share/brltty/Input/mt/status.kti
+share/brltty/Input/nav.kti
+share/brltty/Input/no/
+share/brltty/Input/no/all.txt
+share/brltty/Input/np/
+share/brltty/Input/np/all.ktb
+share/brltty/Input/pg/
+share/brltty/Input/pg/all.ktb
+share/brltty/Input/pm/
+share/brltty/Input/pm/2d_l.ktb
+share/brltty/Input/pm/2d_s.ktb
+share/brltty/Input/pm/bar.kti
+share/brltty/Input/pm/c.ktb
+share/brltty/Input/pm/c_486.ktb
+share/brltty/Input/pm/el2d_80s.ktb
+share/brltty/Input/pm/el40c.ktb
+share/brltty/Input/pm/el40s.ktb
+share/brltty/Input/pm/el60c.ktb
+share/brltty/Input/pm/el66s.ktb
+share/brltty/Input/pm/el70s.ktb
+share/brltty/Input/pm/el80_ii.ktb
+share/brltty/Input/pm/el80c.ktb
+share/brltty/Input/pm/el80s.ktb
+share/brltty/Input/pm/el_2d_40.ktb
+share/brltty/Input/pm/el_2d_66.ktb
+share/brltty/Input/pm/el_2d_80.ktb
+share/brltty/Input/pm/el_40_p.ktb
+share/brltty/Input/pm/el_80.ktb
+share/brltty/Input/pm/elb_tr_20.ktb
+share/brltty/Input/pm/elb_tr_32.ktb
+share/brltty/Input/pm/elba_20.ktb
+share/brltty/Input/pm/elba_32.ktb
+share/brltty/Input/pm/front13.kti
+share/brltty/Input/pm/front9.kti
+share/brltty/Input/pm/ib_80.ktb
+share/brltty/Input/pm/keyboard.kti
+share/brltty/Input/pm/keys.kti
+share/brltty/Input/pm/live.ktb
+share/brltty/Input/pm/routing.kti
+share/brltty/Input/pm/status0.kti
+share/brltty/Input/pm/status13.kti
+share/brltty/Input/pm/status2.kti
+share/brltty/Input/pm/status20.kti
+share/brltty/Input/pm/status22.kti
+share/brltty/Input/pm/status4.kti
+share/brltty/Input/pm/switches.kti
+share/brltty/Input/pm/trio.ktb
+share/brltty/Input/sk/
+share/brltty/Input/sk/bdp.ktb
+share/brltty/Input/sk/ntk.ktb
+share/brltty/Input/speech.kti
+share/brltty/Input/tn/
+share/brltty/Input/tn/all.txt
+share/brltty/Input/toggle.kti
+share/brltty/Input/ts/
+share/brltty/Input/ts/nav.kti
+share/brltty/Input/ts/nav20.ktb
+share/brltty/Input/ts/nav40.ktb
+share/brltty/Input/ts/nav80.ktb
+share/brltty/Input/ts/nav_large.kti
+share/brltty/Input/ts/nav_small.kti
+share/brltty/Input/ts/pb.kti
+share/brltty/Input/ts/pb40.ktb
+share/brltty/Input/ts/pb65.ktb
+share/brltty/Input/ts/pb80.ktb
+share/brltty/Input/ts/pb_large.kti
+share/brltty/Input/ts/pb_small.kti
+share/brltty/Input/ts/routing.kti
+share/brltty/Input/tt/
+share/brltty/Input/tt/all.txt
+share/brltty/Input/vd/
+share/brltty/Input/vd/all.txt
+share/brltty/Input/vo/
+share/brltty/Input/vo/all.ktb
+share/brltty/Input/vo/all.kti
+share/brltty/Input/vo/bp.ktb
+share/brltty/Input/vr/
+share/brltty/Input/vr/all.txt
+share/brltty/Input/vs/
+share/brltty/Input/vs/all.txt
+share/brltty/Input/xw/
+share/brltty/Input/xw/all.txt
+share/brltty/Keyboard/
+share/brltty/Keyboard/braille.ktb
+share/brltty/Keyboard/braille.kti
+share/brltty/Keyboard/desktop.ktb
+share/brltty/Keyboard/desktop.kti
+share/brltty/Keyboard/keypad.ktb
+share/brltty/Keyboard/kp_say.kti
+share/brltty/Keyboard/kp_speak.kti
+share/brltty/Keyboard/laptop.ktb
+share/brltty/Keyboard/sun_type6.ktb
+share/brltty/Text/
+share/brltty/Text/alias.tti
+share/brltty/Text/ar.ttb
+share/brltty/Text/as.ttb
+share/brltty/Text/ascii-basic.tti
+share/brltty/Text/awa.ttb
+share/brltty/Text/bengali.tti
+share/brltty/Text/bg.ttb
+share/brltty/Text/bh.ttb
+share/brltty/Text/blocks.tti
+share/brltty/Text/bn.ttb
+share/brltty/Text/bo.ttb
+share/brltty/Text/boxes.tti
+share/brltty/Text/bra.ttb
+share/brltty/Text/brf.ttb
+share/brltty/Text/common.tti
+share/brltty/Text/cs.ttb
+share/brltty/Text/ctl-latin.tti
+share/brltty/Text/cy.ttb
+share/brltty/Text/da-1252.ttb
+share/brltty/Text/da-lt.ttb
+share/brltty/Text/da.ttb
+share/brltty/Text/de-chess.tti
+share/brltty/Text/de.ttb
+share/brltty/Text/devanagari.tti
+share/brltty/Text/dra.ttb
+share/brltty/Text/el.ttb
+share/brltty/Text/en-chess.tti
+share/brltty/Text/en-na-ascii.tti
+share/brltty/Text/en-nabcc.ttb
+share/brltty/Text/en.ttb
+share/brltty/Text/en_CA.ttb
+share/brltty/Text/en_GB.ttb
+share/brltty/Text/en_US.ttb
+share/brltty/Text/eo.ttb
+share/brltty/Text/es.ttb
+share/brltty/Text/et.ttb
+share/brltty/Text/fi.ttb
+share/brltty/Text/fr-2007.ttb
+share/brltty/Text/fr-cbifs.ttb
+share/brltty/Text/fr-vs.ttb
+share/brltty/Text/fr.ttb
+share/brltty/Text/fr_CA.ttb
+share/brltty/Text/fr_FR.ttb
+share/brltty/Text/ga.ttb
+share/brltty/Text/gd.ttb
+share/brltty/Text/gon.ttb
+share/brltty/Text/greek.tti
+share/brltty/Text/gu.ttb
+share/brltty/Text/gujarati.tti
+share/brltty/Text/gurmukhi.tti
+share/brltty/Text/he-old.ttb
+share/brltty/Text/he.ttb
+share/brltty/Text/he_IL.ttb
+share/brltty/Text/hi.ttb
+share/brltty/Text/hr.ttb
+share/brltty/Text/hu.ttb
+share/brltty/Text/hy.ttb
+share/brltty/Text/is.ttb
+share/brltty/Text/it.ttb
+share/brltty/Text/kannada.tti
+share/brltty/Text/kha.ttb
+share/brltty/Text/kn.ttb
+share/brltty/Text/kok.ttb
+share/brltty/Text/kru.ttb
+share/brltty/Text/lt.ttb
+share/brltty/Text/ltr-alias.tti
+share/brltty/Text/ltr-cyrillic.tti
+share/brltty/Text/ltr-dot8.tti
+share/brltty/Text/ltr-latin.tti
+share/brltty/Text/ltr-tibetan.tti
+share/brltty/Text/lv.ttb
+share/brltty/Text/malayalam.tti
+share/brltty/Text/mg.ttb
+share/brltty/Text/mi.ttb
+share/brltty/Text/ml.ttb
+share/brltty/Text/mni.ttb
+share/brltty/Text/mr.ttb
+share/brltty/Text/mt.ttb
+share/brltty/Text/mun.ttb
+share/brltty/Text/mwr.ttb
+share/brltty/Text/ne.ttb
+share/brltty/Text/new.ttb
+share/brltty/Text/nl.ttb
+share/brltty/Text/nl_BE.ttb
+share/brltty/Text/nl_NL.ttb
+share/brltty/Text/no-generic.ttb
+share/brltty/Text/no-oup.ttb
+share/brltty/Text/no.ttb
+share/brltty/Text/num-alias.tti
+share/brltty/Text/num-dot6.tti
+share/brltty/Text/num-dot8.tti
+share/brltty/Text/num-french.tti
+share/brltty/Text/num-nemd8.tti
+share/brltty/Text/num-nemeth.tti
+share/brltty/Text/nwc.ttb
+share/brltty/Text/or.ttb
+share/brltty/Text/oriya.tti
+share/brltty/Text/pa.ttb
+share/brltty/Text/pi.ttb
+share/brltty/Text/pl.ttb
+share/brltty/Text/pt.ttb
+share/brltty/Text/punc-alternate.tti
+share/brltty/Text/punc-basic.tti
+share/brltty/Text/punc-tibetan.tti
+share/brltty/Text/ro.ttb
+share/brltty/Text/ru.ttb
+share/brltty/Text/sa.ttb
+share/brltty/Text/sat.ttb
+share/brltty/Text/sd.ttb
+share/brltty/Text/se.ttb
+share/brltty/Text/sk.ttb
+share/brltty/Text/sl.ttb
+share/brltty/Text/sv-1989.ttb
+share/brltty/Text/sv-1996.ttb
+share/brltty/Text/sv.ttb
+share/brltty/Text/sw.ttb
+share/brltty/Text/ta.ttb
+share/brltty/Text/tamil.tti
+share/brltty/Text/te.ttb
+share/brltty/Text/telugu.tti
+share/brltty/Text/tr.ttb
+share/brltty/Text/uk.ttb
+share/brltty/Text/vi.ttb
+share/brltty/Text/win-1252.tti
 share/doc/brltty/
-share/doc/brltty/Manual-1.html
-share/doc/brltty/Manual-2.html
-share/doc/brltty/Manual-3.html
-share/doc/brltty/Manual-4.html
-share/doc/brltty/Manual-5.html
-share/doc/brltty/Manual-6.html
-share/doc/brltty/Manual-7.html
-share/doc/brltty/Manual-8.html
-share/doc/brltty/Manual-9.html
-share/doc/brltty/Manual.html
-share/doc/brltty/Manual.txt
-share/doc/brltty/README
 share/doc/brltty/brltty.conf
+share/locale/ar/LC_MESSAGES/brltty.mo
+share/locale/de/LC_MESSAGES/brltty.mo
+share/locale/fr/LC_MESSAGES/brltty.mo
+share/locale/it/LC_MESSAGES/brltty.mo
+share/locale/ka/LC_MESSAGES/brltty.mo
+share/locale/ru/LC_MESSAGES/brltty.mo
+share/locale/sv/LC_MESSAGES/brltty.mo
+share/locale/zh/
+share/locale/zh/LC_MESSAGES/
+share/locale/zh/LC_MESSAGES/brltty.mo

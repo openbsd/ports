@@ -1,0 +1,12 @@
+Index: Programs/Makefile.in
+--- Programs/Makefile.in.orig
++++ Programs/Makefile.in
+@@ -618,7 +618,7 @@ ctb_translate.$O:
+ 	$(CC) $(LIBCFLAGS) $(ICU_INCLUDES) -c $(SRC_DIR)/ctb_translate.c
+ 
+ ctb_native.$O:
+-	$(CC) $(LIBCFLAGS) -c $(SRC_DIR)/ctb_native.c
++	$(CC) $(LIBCFLAGS) $(ICU_INCLUDES) -c $(SRC_DIR)/ctb_native.c
+ 
+ ctb_external.$O:
+ 	$(CC) $(LIBCFLAGS) -c $(SRC_DIR)/ctb_external.c

@@ -1,0 +1,11 @@
+Properly pass compiler flags detected at configure-timee
+
+Index: Drivers/Screen/AtSpi2/Makefile.in
+--- Drivers/Screen/AtSpi2/Makefile.in.orig
++++ Drivers/Screen/AtSpi2/Makefile.in
+@@ -28,3 +28,5 @@ include $(SRC_TOP)screen.mk
+ screen.$O:
+ 	$(CC) $(DRIVER_CFLAGS) $(ATSPI2_INCLUDES) $(DBUS_INCLUDES) $(GLIB2_INCLUDES) -c $(SRC_DIR)/screen.c
+ 
++xsel.$O: $(SRC_TOP)$(PGM_DIR)/xsel.c
++	$(CC) $(DRIVER_CFLAGS) $(X11_INCLUDES) -c $<

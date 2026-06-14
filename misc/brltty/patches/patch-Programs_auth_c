@@ -1,0 +1,17 @@
+SO_PEERCRED is using `struct sockpeercred`
+
+Index: Programs/auth.c
+--- Programs/auth.c.orig
++++ Programs/auth.c
+@@ -209,7 +209,11 @@ checkPeerGroup (PeerCredentials *credentials, const Me
+ #elif defined(SO_PEERCRED)
+ #define CAN_CHECK_CREDENTIALS
+ 
++#ifdef __OpenBSD__
++typedef struct sockpeercred PeerCredentials;
++#else
+ typedef struct ucred PeerCredentials;
++#endif
+ 
+ static int
+ retrievePeerCredentials (PeerCredentials *credentials, int fd) {

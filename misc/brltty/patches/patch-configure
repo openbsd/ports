@@ -1,11 +1,30 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -7790,6 +7790,7 @@ _ACEOF
-       ;;
-    openbsd*)
-       system_object="openbsd"
-+      LIBS="-lsndio ${LIBS}"
-       ;;
-    freebsd*)
-       system_object="freebsd"
+@@ -11318,7 +11318,7 @@ then :
+   printf %s "(cached) " >&6
+ else case e in #(
+   e) ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltinfo  $LIBS"
++LIBS="-lncurses  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -11358,7 +11358,7 @@ if test "x$ac_cv_lib_tinfo_intrflush" = xyes
+ then :
+   printf "%s\n" "#define HAVE_LIBTINFO 1" >>confdefs.h
+ 
+-  LIBS="-ltinfo $LIBS"
++  LIBS="-lncurses $LIBS"
+ 
+ fi
+ 
+@@ -18989,7 +18989,7 @@ esac
+ brltty_item_entries_screen="${brltty_item_entries_screen} fv-FileViewer"
+ brltty_item_codes_screen="${brltty_item_codes_screen} fv"
+ brltty_item_names_screen="${brltty_item_names_screen} FileViewer"
+-screen_libraries_fv='-ltinfo'
++screen_libraries_fv='-lncurses'
+ 
+ brltty_item_entries_screen="${brltty_item_entries_screen} tx-Tmux"
+ brltty_item_codes_screen="${brltty_item_codes_screen} tx"

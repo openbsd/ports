@@ -15,8 +15,12 @@
  * This software is maintained by Dave Mielke <dave@mielke.cc>.
  */
 
-#include "iomisc.h"
+#include "prologue.h"
+
 #include <sndio.h>
+
+#include "log.h"
+#include "pcm.h"
 
 struct PcmDeviceStruct {
   struct sio_hdl *hdl;
@@ -31,12 +35,12 @@ openPcmDevice (int errorLevel, const char *device) {
     device = SIO_DEVANY;
   pcm = malloc(sizeof(*pcm));
   if (pcm == NULL) {
-    LogError("PCM device allocation");
+    logSystemError("PCM device allocation");
     return NULL;
   }
   pcm->hdl = sio_open(device, SIO_PLAY, 0);
   if (pcm->hdl == NULL) {
-      LogPrint(errorLevel, "Cannot open PCM device: %s", device);
+      logMessage(errorLevel, "Cannot open PCM device: %s", device);
       goto bad_free;
   }
   sio_initpar(&pcm->par);
@@ -46,16 +50,16 @@ openPcmDevice (int errorLevel, const char *device) {
   pcm->par.rate = 16000;
   pcm->par.sig = 1;
   if (!sio_setpar(pcm->hdl, &pcm->par) || !sio_getpar(pcm->hdl, &pcm->par)) {
-    LogPrint(errorLevel, "Cannot set PCM device parameters");
+    logMessage(errorLevel, "Cannot set PCM device parameters");
     goto bad_free;
   }
   if (pcm->par.bits != 16 || pcm->par.le != SIO_LE_NATIVE ||
       pcm->par.pchan != 1 || pcm->par.rate != 16000) {
-    LogPrint(errorLevel, "Unsupported PCM device parameters");
+    logMessage(errorLevel, "Unsupported PCM device parameters");
     goto bad_free;
   }
   if (!sio_start(pcm->hdl)) {
-    LogPrint(errorLevel, "Cannot start PCM device");
+    logMessage(errorLevel, "Cannot start PCM device");
     goto bad_free;
   }
   return pcm;
@@ -124,7 +128,7 @@ setPcmAmplitudeFormat (PcmDevice *pcm, PcmAmplitudeFormat format) {
 }
 
 void
-forcePcmOutput (PcmDevice *pcm) {
+pushPcmOutput (PcmDevice *pcm) {
 }
 
 void
