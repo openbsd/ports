@@ -50,6 +50,7 @@
      SUBDIR += rtl-sdr
      SUBDIR += rtl_433
      SUBDIR += scmxx
+     SUBDIR += sdrpp
      SUBDIR += sigrok
      SUBDIR += smstools
      SUBDIR += soapysdr
