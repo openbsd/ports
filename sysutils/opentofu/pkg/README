@@ -1,0 +1,63 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Most plugins and providers are available for OpenBSD on the the OpenTofu
+registry (https://search.opentofu.org/).
+
+Here's a sample build procedure for missing or in-house plugins and providers.
+
+Example: Terraform AWS provider; version 6.50.0
+===============================================
+
+Building
+--------
+
+A few packages are required for building:
+    # pkg_add bash git gmake go
+
+    $ git clone https://github.com/opentofu/terraform-provider-aws
+    $ cd terraform-provider-aws
+
+Choose the release tag you want to build:
+    $ git fetch --all --tags && git checkout tags/v6.50.0 -b 6.50.0
+
+Go eats a lot of memory and you may need to bump your limits (`ulimit -d`).
+Build the provider (manual fixes may be needed to properly build on OpenBSD)
+    $ gmake build
+
+The provider will be available at ${GOPATH}/bin/terraform-provider-aws.
+GOPATH defaults to ${HOME}/go/bin.
+
+Installing
+----------
+
+Providers can be installed under any of these directories:
+    ${PWD}/terraform.d/plugins
+    ~/.terraform.d/plugins
+    ~/.local/share/terraform/plugins
+    ${TRUEPREFIX}/share/terraform/plugins
+
+They must follow the sub-hierarchy according to the plugin configuration.
+
+Using this code in the Terraform configuration...
+
+---8<-------------------------
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "6.50.0"
+    }
+  }
+}
+
+provider "aws" {
+  # Configuration options
+}
+---8<-------------------------
+
+... means the Terraform AWS provider for OpenBSD/amd64 must be installed as:
+    ${PLUGINSDIR}/registry.opentofu.org/hashicorp/aws/6.50.0/openbsd_amd64/terraform-provider-aws
+
+`tofu init` should now be able to detect this provider plugin.
