@@ -1,6 +1,6 @@
 COMMENT =		download videos from YLE Areena
 
-MODPY_DISTV =		20250730
+MODPY_DISTV =		20260520
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
 GH_TAGNAME =		releases/${MODPY_DISTV}
