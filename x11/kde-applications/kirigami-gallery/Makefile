@@ -1,5 +1,6 @@
 COMMENT =	kirigami component gallery application
 DISTNAME =	kirigami-gallery-${VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -11,8 +12,6 @@ WANTLIB += Qt6QuickControls2 Qt6Svg Qt6Widgets c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_TRANSLATIONS = yes
-
-BUILD_DEPENDS =	devel/kf5/kpackage
 
 LIB_DEPENDS =	devel/kf6/kirigami \
 		devel/kf6/kitemmodels \
