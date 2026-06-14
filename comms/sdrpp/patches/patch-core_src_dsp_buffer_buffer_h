@@ -1,0 +1,18 @@
+Attempt to fix null pointer deref when switching demodulators.
+Index: core/src/dsp/buffer/buffer.h
+--- core/src/dsp/buffer/buffer.h.orig
++++ core/src/dsp/buffer/buffer.h
+@@ -10,10 +10,11 @@ namespace dsp::buffer {
+ 
+     template<class T>
+     inline void clear(T* buffer, int count, int offset = 0) {
++        if (buffer == nullptr) return;
+         memset(&buffer[offset], 0, count * sizeof(T));
+     }
+ 
+     inline void free(void* buffer) {
+         volk_free(buffer);
+     }
+-}
+\ No newline at end of file
++}

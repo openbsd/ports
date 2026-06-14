@@ -1,0 +1,5 @@
+By default, sdrpp requires root privileges to access USB hardware.
+To run it as a regular user, you must adjust the owner or group 
+permissions of the corresponding /dev/usb* and /dev/ugen* devices.
+
+You can automate this upon device insertion by using hotplugd(8).

@@ -1,0 +1,20 @@
+Index: core/src/dsp/convert/real_to_complex.h
+--- core/src/dsp/convert/real_to_complex.h.orig
++++ core/src/dsp/convert/real_to_complex.h
+@@ -22,6 +22,9 @@ namespace dsp::convert {
+         }
+ 
+         inline int process(int count, const float* in, complex_t* out) {
++            if (!nullBuf || !out || !in) {
++                return 0; 
++            }
+             volk_32f_x2_interleave_32fc((lv_32fc_t*)out, in, nullBuf, count);
+             return count;
+         }
+@@ -41,4 +44,4 @@ namespace dsp::convert {
+         float* nullBuf;
+ 
+     };
+-}
+\ No newline at end of file
++}

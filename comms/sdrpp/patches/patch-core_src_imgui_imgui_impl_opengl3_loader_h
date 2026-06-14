@@ -1,0 +1,12 @@
+Index: core/src/imgui/imgui_impl_opengl3_loader.h
+--- core/src/imgui/imgui_impl_opengl3_loader.h.orig
++++ core/src/imgui/imgui_impl_opengl3_loader.h
+@@ -625,7 +625,7 @@ static GL3WglProc (*glx_get_proc_address)(const GLubyt
+ 
+ static int open_libgl(void)
+ {
+-    libgl = dlopen("libGL.so.1", RTLD_LAZY | RTLD_LOCAL);
++    libgl = dlopen("libGL.so", RTLD_LAZY | RTLD_LOCAL);
+     if (!libgl)
+         return GL3W_ERROR_LIBRARY_OPEN;
+     *(void **)(&glx_get_proc_address) = dlsym(libgl, "glXGetProcAddressARB");

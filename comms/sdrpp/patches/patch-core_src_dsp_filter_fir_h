@@ -1,0 +1,21 @@
+Index: core/src/dsp/filter/fir.h
+--- core/src/dsp/filter/fir.h.orig
++++ core/src/dsp/filter/fir.h
+@@ -60,6 +60,10 @@ namespace dsp::filter {
+         }
+ 
+         inline int process(int count, const D* in, D* out) {
++
++            if (!buffer || !bufStart) {
++                return 0; 
++            }
+             // Copy data to work buffer
+             memcpy(bufStart, in, count * sizeof(D));
+             
+@@ -98,4 +102,4 @@ namespace dsp::filter {
+         D* buffer;
+         D* bufStart;
+     };
+-}
+\ No newline at end of file
++}
