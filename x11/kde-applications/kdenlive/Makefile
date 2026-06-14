@@ -4,6 +4,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU Imath-3_2 KF6Archive KF6Attica
 WANTLIB += KF6Bookmarks KF6Codecs KF6ColorScheme KF6Completion
@@ -28,7 +29,7 @@ MODKDE_DOCS = yes
 
 MODULES +=	lang/python
 
-BILD_DEPENDS =	multimedia/mlt7,-gpl2>=7.34.1
+BUILD_DEPENDS =	multimedia/mlt7,-gpl2
 
 RUN_DEPENDS =	devel/kf6/breeze-icons \
 		devel/kf6/qqc2-desktop-style \
@@ -36,7 +37,7 @@ RUN_DEPENDS =	devel/kf6/breeze-icons \
 		misc/shared-mime-info \
 		multimedia/dvdauthor \
 		multimedia/frei0r-plugins \
-		multimedia/mlt7,-gpl2>=7.24.1 \
+		multimedia/mlt7,-gpl2 \
 		sysutils/cdrtools
 
 LIB_DEPENDS =	devel/kf6/attica \
@@ -67,10 +68,10 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/purpose \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
-		multimedia/mlt7>=7.34.1 \
-		multimedia/opentimelineio \
 		graphics/ffmpeg \
 		math/imath \
+		multimedia/mlt7 \
+		multimedia/opentimelineio \
 		x11/kddockwidgets \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
