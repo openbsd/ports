@@ -2,8 +2,7 @@ COMMENT =	window-stacking Wayland compositor
 
 GH_ACCOUNT =	labwc
 GH_PROJECT =	labwc
-GH_TAGNAME =	0.9.7
-REVISION =	0
+GH_TAGNAME =	0.20.0
 
 CATEGORIES =	wayland
 
@@ -16,7 +15,8 @@ PERMIT_PACKAGE = Yes
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-MODULES =	devel/meson wayland/wlroots
+MODULES =		devel/meson wayland/wlroots
+MODWLROOTS_VERSION =	0.20
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
@@ -39,5 +39,7 @@ WANTLIB += c cairo glib-2.0 gobject-2.0 input intl m pango-1.0
 WANTLIB += pangocairo-1.0 pixman-1 png rsvg-2 sfdo-basedir sfdo-desktop
 WANTLIB += sfdo-icon wayland-server xcb xcb-ewmh xkbcommon
 WANTLIB += xml2 epoll-shim wayland-client wayland-cursor
+
+CONFIGURE_ARGS =	-Dsystemd-session=disabled
 
 .include <bsd.port.mk>

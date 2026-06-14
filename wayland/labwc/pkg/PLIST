@@ -46,6 +46,7 @@ share/locale/id/LC_MESSAGES/labwc.mo
 share/locale/it/LC_MESSAGES/labwc.mo
 share/locale/ja/LC_MESSAGES/labwc.mo
 share/locale/ka/LC_MESSAGES/labwc.mo
+share/locale/kab/LC_MESSAGES/labwc.mo
 share/locale/kk/LC_MESSAGES/labwc.mo
 share/locale/ko/LC_MESSAGES/labwc.mo
 share/locale/lt/LC_MESSAGES/labwc.mo
@@ -57,6 +58,9 @@ share/locale/pt/LC_MESSAGES/labwc.mo
 share/locale/pt_BR/LC_MESSAGES/labwc.mo
 share/locale/ru/LC_MESSAGES/labwc.mo
 share/locale/sk/LC_MESSAGES/labwc.mo
+share/locale/sr_Latn/
+share/locale/sr_Latn/LC_MESSAGES/
+share/locale/sr_Latn/LC_MESSAGES/labwc.mo
 share/locale/sv/LC_MESSAGES/labwc.mo
 share/locale/tr/LC_MESSAGES/labwc.mo
 share/locale/uk/LC_MESSAGES/labwc.mo
