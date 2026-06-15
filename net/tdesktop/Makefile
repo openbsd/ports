@@ -9,6 +9,7 @@ V =			6.9.3
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -78,7 +79,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			x11/qt6/qtwayland
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/kf5/kimageformats \
+			devel/kf6/kimageformats \
 			x11/gtk+4,-guic \
 			x11/qt6/qtimageformats
 
