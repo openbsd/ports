@@ -6,7 +6,7 @@ Adapted from https://src.fedoraproject.org/rpms/rep-gtk/tree/rawhide
 Index: rep-gtk.h
 --- rep-gtk.h.orig
 +++ rep-gtk.h
-@@ -340,6 +340,14 @@ void gtk_color_selection_set_color_interp (GtkColorSel
+@@ -341,6 +341,14 @@ void gtk_color_selection_set_color_interp (GtkColorSel
  GdkColor *gtk_color_selection_get_color_interp (GtkColorSelection *sel);
  char *gtk_color_button_get_color_interp (GtkColorButton *button);
  extern void gtk_widget_draw_interp (GtkWidget *widget);
