@@ -200,8 +200,6 @@ share/sawfish/lisp/poweroff.jl
 share/sawfish/lisp/poweroff.jlc
 share/sawfish/lisp/prompt.jl
 share/sawfish/lisp/prompt.jlc
-share/sawfish/lisp/razor-int.jl
-share/sawfish/lisp/razor-int.jlc
 share/sawfish/lisp/rects.jl
 share/sawfish/lisp/rects.jlc
 share/sawfish/lisp/sawfish/
@@ -390,8 +388,6 @@ share/sawfish/lisp/sawfish/wm/integration/lxde.jl
 share/sawfish/lisp/sawfish/wm/integration/lxde.jlc
 share/sawfish/lisp/sawfish/wm/integration/mate.jl
 share/sawfish/lisp/sawfish/wm/integration/mate.jlc
-share/sawfish/lisp/sawfish/wm/integration/razor.jl
-share/sawfish/lisp/sawfish/wm/integration/razor.jlc
 share/sawfish/lisp/sawfish/wm/integration/xfce.jl
 share/sawfish/lisp/sawfish/wm/integration/xfce.jlc
 share/sawfish/lisp/sawfish/wm/keymaps.jl

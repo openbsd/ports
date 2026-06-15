@@ -1,17 +1,14 @@
 COMMENT=		extensible window manager
 
-VERSION=		1.12.90
-DISTNAME=		sawfish_${VERSION}
-PKGNAME=		sawfish-${VERSION}
-REVISION=		4
+VERSION=		1.13.0
+GH_ACCOUNT=		SawfishWM
+GH_PROJECT=		sawfish
+GH_TAGNAME=		sawfish-${VERSION}
+DISTNAME=		sawfish-${VERSION}
 
 CATEGORIES=		x11
 
-SITES=			https://download.tuxfamily.org/sawfish/ \
-			https://download.tuxfamily.org/sawfish/Archive/
-EXTRACT_SUFX=		.tar.xz
-
-HOMEPAGE=		https://sawfish.fandom.com/wiki/Main_Page
+HOMEPAGE=		https://sawfish.tuxfamily.org/
 
 # GPLv2
 # Sounds: Artistic License 2.0
@@ -38,10 +35,10 @@ LIB_DEPENDS=		devel/gettext,-runtime \
 			lang/librep \
 			x11/gtk+2
 
-USE_GMAKE=	      Yes
+USE_GMAKE=		Yes
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.18
 
 CONFIGURE_STYLE=	autoreconf
 
@@ -54,7 +51,7 @@ CONFIGURE_ARGS=		--with-gnome-prefix=${LOCALBASE}
 CONFIGURE_ARGS +=	--without-kde4session \
 			--without-kde5session
 
-NO_TEST=	Yes
+NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/themes/Makefile.in
