@@ -1,0 +1,27 @@
+Index: x/gtk2/gtk_screen.c
+--- x/gtk2/gtk_screen.c.orig
++++ x/gtk2/gtk_screen.c
+@@ -690,7 +690,6 @@ void scrnmng_blthdc(void) {
+ 
+ void scrnmng_bltwab() {
+ #if defined(SUPPORT_WAB)
+-	GdkRectangle	*dst;
+ 	GdkRectangle	src;
+ 	GdkRectangle	dstmp;
+ 	int exmgn = 0;
+@@ -698,15 +697,12 @@ void scrnmng_bltwab() {
+ 	GdkPixbuf* rotatebuf;
+ 	if (np2wabwnd.multiwindow) return;
+ 	if (drawmng.backsurf != NULL) {
+-		dst = &drawmng.rect;
+ 		if (!(drawmng.scrnmode & SCRNMODE_FULLSCREEN)) {
+ 			exmgn = scrnstat.extend;
+ 		}
+ 		src.x = src.y = 0;
+ 		src.width = scrnstat.width;
+ 		src.height = scrnstat.height;
+-		memcpy(&dstmp, dst, sizeof(GdkRectangle));
+-		dstmp.x += exmgn;
+ 		dstmp.width = scrnstat.width;
+ 		dstmp.height = scrnstat.height;
+ 		if (!(drawmng.scrnmode & SCRNMODE_ROTATE)) {

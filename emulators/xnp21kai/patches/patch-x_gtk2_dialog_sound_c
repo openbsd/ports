@@ -1,0 +1,30 @@
+Index: x/gtk2/dialog_sound.c
+--- x/gtk2/dialog_sound.c.orig
++++ x/gtk2/dialog_sound.c
+@@ -62,7 +62,7 @@ static const struct {
+ 	{ "CD-DA",  &np2cfg.davolume,   0.0, 255.0 },
+ };
+ 
+-static GObject *mixer_adj[NELEMENTS(mixer_vol_tbl)];
++static GtkObject *mixer_adj[NELEMENTS(mixer_vol_tbl)];
+ 
+ 
+ /*
+@@ -73,7 +73,7 @@ static const char *snd14_vol_str[] = {
+ 	"left", "right", "f2", "f4", "f8", "f16"
+ };
+ 
+-static GObject *snd14_adj[NELEMENTS(snd14_vol_str)];
++static GtkObject *snd14_adj[NELEMENTS(snd14_vol_str)];
+ 
+ 
+ /*
+@@ -315,7 +315,7 @@ static GtkWidget *spb_int_entry;
+ static GtkWidget *spb_romaddr_entry;
+ static GtkWidget *spb_vr_channel_checkbutton[2];
+ static GtkWidget *spb_reverse_channel_checkbutton;
+-static GObject *spb_vr_level_adj;
++static GtkObject *spb_vr_level_adj;
+ 
+ 
+ /*

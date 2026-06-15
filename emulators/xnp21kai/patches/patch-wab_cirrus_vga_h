@@ -1,0 +1,12 @@
+Index: wab/cirrus_vga.h
+--- wab/cirrus_vga.h.orig
++++ wab/cirrus_vga.h
+@@ -91,6 +91,8 @@ typedef struct DisplaySurface {
+     struct PixelFormat pf;
+ } DisplaySurface;
+ 
++struct DisplayState;
++
+ typedef struct DisplayChangeListener {
+     int idle;
+     UINT64 gui_timer_interval;

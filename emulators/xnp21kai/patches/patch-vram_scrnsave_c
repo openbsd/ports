@@ -1,0 +1,12 @@
+Index: vram/scrnsave.c
+--- vram/scrnsave.c.orig
++++ vram/scrnsave.c
+@@ -178,7 +178,7 @@ SCRNSAVE scrnsave_create(void)
+ 	PALNUM		col;
+ 	BMPPAL		curpal;
+ 	UINT		pos;
+-	uint8_t*	dirty[SURFACE_HEIGHT];
++	uint8_t		dirty[SURFACE_HEIGHT];
+ 
+ 
+ 	width = dsync.scrnxmax;

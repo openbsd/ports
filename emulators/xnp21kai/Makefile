@@ -4,6 +4,7 @@ COMMENT =	PC-9801 emulator
 
 DISTNAME =	NP21kai-0.0.20231030
 PKGNAME =	x${DISTNAME:L}
+REVISION =	0
 
 GH_ACCOUNT =	AZO234
 GH_PROJECT =	NP2kai
@@ -37,7 +38,11 @@ LIB_DEPENDS =	devel/harfbuzz \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
-FIX_CRLF_FILES = ${WRKSRC}/network/net.c
+FIX_CRLF_FILES = ${WRKSRC}/network/net.c \
+		${WRKSRC}/generic/hostdrvs.c \
+		${WRKSRC}/vram/scrnsave.c \
+		${WRKSRC}/wab/cirrus_vga.h \
+		${WRKSRC}/wab/wab.c
 
 CONFIGURE_ARGS = -DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE
 

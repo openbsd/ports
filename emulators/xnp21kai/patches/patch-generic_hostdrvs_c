@@ -1,0 +1,20 @@
+Index: generic/hostdrvs.c
+--- generic/hostdrvs.c.orig
++++ generic/hostdrvs.c
+@@ -394,12 +394,15 @@ UINT hostdrvs_getrealdir(HDRVPATH *phdp, char *lpFcbna
+ {
+ 	phdp->file = s_hddroot;
+ 	if(PathIsRelative(np2cfg.hdrvroot)){
++#if defined(_WIN32)
+ 		TCHAR pathbuf[MAX_PATH+1];
+ 		TCHAR *pathtmp;
+ 		initgetfile(pathbuf, _countof(pathbuf));
+-#if defined(_WIN32)
+ 		pathtmp = strrchr(pathbuf, '\\');
+ #else	/* _WIN32 */
++		char pathbuf[MAX_PATH+1];
++		char *pathtmp;
++		initgetfile(pathbuf, _countof(pathbuf));
+ 		pathtmp = strrchr(pathbuf, '/');
+ #endif	/* _WIN32 */
+ 		if(pathtmp){

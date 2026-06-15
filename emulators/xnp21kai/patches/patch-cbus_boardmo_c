@@ -1,0 +1,36 @@
+Index: cbus/boardmo.c
+--- cbus/boardmo.c.orig
++++ cbus/boardmo.c
+@@ -119,7 +119,7 @@ static REG8 IOINPCALL opn_i18a(UINT port) {
+ 		return(fmboard_getjoy(&g_opna[0]));
+ 	}
+ 	else if (addr < 0x10) {
+-		return(psggen_getreg(&g_opna[0], addr));
++		return(psggen_getreg(&g_opna[0].psg, addr));
+ 	}
+ 	(void)port;
+ 	return(g_opna[0].s.data);
+@@ -157,7 +157,7 @@ static const IOOUT opl_o[4] = {
+ static const IOINP opl_i[4] = {
+ 			opl_i288,	opl_i28a,	opl_i28c,		opl_i28e};
+ 
+-static void psgpanset(OPNA* psg) {
++static void psgpanset(PSGGEN psg) {
+ 	// SSG‚ÍLŒÅ’è
+ 	psggen_setpan(psg, 0, 2);
+ 	psggen_setpan(psg, 1, 2);
+@@ -193,12 +193,12 @@ void boardmo_reset(const NP2CFG *pConfig) {
+ }
+ 
+ void boardmo_bind(void) {
+-	psgpanset(&g_opna[0]);
++	psgpanset(&g_opna[0].psg);
+ //	fmboard_fmrestore(0, 0);
+ 	opngen_setreg(&g_opna[0].opngen, 0, 0xb4, 1 << 6);
+ 	opngen_setreg(&g_opna[0].opngen, 0, 0xb5, 1 << 6);
+ 	opngen_setreg(&g_opna[0].opngen, 0, 0xb6, 1 << 6);
+-	psggen_restore(&g_opna[0].opngen);
++	psggen_restore(&g_opna[0].psg);
+ 	sound_streamregist(&g_opna[0].opngen, (SOUNDCB)opngen_getpcm);
+ 	sound_streamregist(&g_opna[0].opngen, (SOUNDCB)psggen_getpcm);
+ 	cbuscore_attachsndex(0x188 - g_opna[0].s.base, opn_o, opn_i);
