@@ -22,8 +22,6 @@ RUN_DEPENDS=	devel/py-codestyle<2.15.0 \
 		devel/py-mccabe<0.8.0 \
 		devel/pyflakes<3.5.0
 
-BUILD_DEPENDS=	devel/py-test-runner
-
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

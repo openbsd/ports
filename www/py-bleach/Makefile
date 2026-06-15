@@ -23,6 +23,4 @@ MODPY_PYBUILD =		setuptools
 RUN_DEPENDS =		textproc/py-tinycss2 \
 			textproc/py-webencodings
 
-BUILD_DEPENDS =		devel/py-test-runner
-
 .include <bsd.port.mk>
