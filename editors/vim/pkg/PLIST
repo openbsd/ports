@@ -433,6 +433,8 @@ share/vim/${P}/autoload/README.txt
 share/vim/${P}/autoload/RstFold.vim
 share/vim/${P}/autoload/ada.vim
 share/vim/${P}/autoload/adacomplete.vim
+share/vim/${P}/autoload/beancount.vim
+share/vim/${P}/autoload/beancountcomplete.vim
 share/vim/${P}/autoload/bitbake.vim
 share/vim/${P}/autoload/cargo/
 share/vim/${P}/autoload/cargo.vim
@@ -544,6 +546,7 @@ share/vim/${P}/compiler/ant.vim
 share/vim/${P}/compiler/bash.vim
 share/vim/${P}/compiler/bcc.vim
 share/vim/${P}/compiler/bdf.vim
+share/vim/${P}/compiler/bean_check.vim
 share/vim/${P}/compiler/biome.vim
 share/vim/${P}/compiler/cabal.vim
 share/vim/${P}/compiler/cargo.vim
@@ -868,6 +871,7 @@ share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bash.vim
 share/vim/${P}/ftplugin/basic.vim
 share/vim/${P}/ftplugin/bdf.vim
+share/vim/${P}/ftplugin/beancount.vim
 share/vim/${P}/ftplugin/bicep-params.vim
 share/vim/${P}/ftplugin/bicep.vim
 share/vim/${P}/ftplugin/bindzone.vim
@@ -1226,6 +1230,7 @@ share/vim/${P}/ftplugin/thrift.vim
 share/vim/${P}/ftplugin/tiasm.vim
 share/vim/${P}/ftplugin/tidy.vim
 share/vim/${P}/ftplugin/tmux.vim
+share/vim/${P}/ftplugin/tolk.vim
 share/vim/${P}/ftplugin/toml.vim
 share/vim/${P}/ftplugin/treetop.vim
 share/vim/${P}/ftplugin/tt2html.vim
@@ -1291,6 +1296,7 @@ share/vim/${P}/indent/automake.vim
 share/vim/${P}/indent/awk.vim
 share/vim/${P}/indent/bash.vim
 share/vim/${P}/indent/basic.vim
+share/vim/${P}/indent/beancount.vim
 share/vim/${P}/indent/bib.vim
 share/vim/${P}/indent/bitbake.vim
 share/vim/${P}/indent/bpftrace.vim
@@ -1362,6 +1368,7 @@ share/vim/${P}/indent/jsonc.vim
 share/vim/${P}/indent/jsp.vim
 share/vim/${P}/indent/julia.vim
 share/vim/${P}/indent/just.vim
+share/vim/${P}/indent/karel.vim
 share/vim/${P}/indent/kdl.vim
 share/vim/${P}/indent/kotlin.vim
 share/vim/${P}/indent/krl.vim
@@ -2105,6 +2112,7 @@ share/vim/${P}/syntax/bash.vim
 share/vim/${P}/syntax/basic.vim
 share/vim/${P}/syntax/bc.vim
 share/vim/${P}/syntax/bdf.vim
+share/vim/${P}/syntax/beancount.vim
 share/vim/${P}/syntax/bib.vim
 share/vim/${P}/syntax/bindzone.vim
 share/vim/${P}/syntax/bitbake.vim
@@ -2631,6 +2639,7 @@ share/vim/${P}/syntax/sensors.vim
 share/vim/${P}/syntax/services.vim
 share/vim/${P}/syntax/setserial.vim
 share/vim/${P}/syntax/sexplib.vim
+share/vim/${P}/syntax/sgf.vim
 share/vim/${P}/syntax/sgml.vim
 share/vim/${P}/syntax/sgmldecl.vim
 share/vim/${P}/syntax/sgmllnx.vim
@@ -2739,6 +2748,7 @@ share/vim/${P}/syntax/tidy.vim
 share/vim/${P}/syntax/tilde.vim
 share/vim/${P}/syntax/tli.vim
 share/vim/${P}/syntax/tmux.vim
+share/vim/${P}/syntax/tolk.vim
 share/vim/${P}/syntax/toml.vim
 share/vim/${P}/syntax/tpp.vim
 share/vim/${P}/syntax/trasys.vim
@@ -2857,6 +2867,7 @@ share/vim/${P}/tools/vimspell.txt
 share/vim/${P}/tools/xcmdsrv_client.c
 share/vim/${P}/tutor/
 share/vim/${P}/tutor/README.el.txt
+share/vim/${P}/tutor/README.it.txt
 share/vim/${P}/tutor/README.ru.txt
 share/vim/${P}/tutor/README.sv.txt
 share/vim/${P}/tutor/README.txt
