@@ -108,4 +108,4 @@ check: $(TEST)
 PNG_LFLAGS != pkg-config --libs libpng
 $(TEST): $(TEST_OBJECTS) $(LIB)
 	$(CXX) $(CXXFLAGS) -o $@ $(TEST_OBJECTS) $(LIB) \
-		$(PNG_LFLAGS) $(ZLIB_LFLAGS)
+		$(PNG_LFLAGS) $(MINIZIP_LFLAGS) $(ZLIB_LFLAGS)
