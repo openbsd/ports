@@ -1,13 +1,13 @@
 COMMENT=	general purpose TCP-IP emulator library
 
-VER=		4.7.0
+VER=		4.9.3
 DISTNAME=	libslirp-v${VER}
 PKGNAME=	libslirp-${VER}
 CATEGORIES=	net
 SITES=		https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS+=	slirp	0.1
+SHARED_LIBS+=	slirp	0.2
 
 HOMEPAGE=	https://gitlab.freedesktop.org/slirp/libslirp
 

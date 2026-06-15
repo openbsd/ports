@@ -1,0 +1,21 @@
+https://gitlab.freedesktop.org/slirp/libslirp/-/commit/3e6e68e779c9051590250a87214dabf91e70949a
+
+Index: src/slirp.c
+--- src/slirp.c.orig
++++ src/slirp.c
+@@ -1581,9 +1581,12 @@ static bool check_guestfwd(Slirp *slirp, struct in_add
+                              (htonl(0x0204) & ~slirp->vnetwork_mask.s_addr);
+     }
+     if ((guest_addr->s_addr & slirp->vnetwork_mask.s_addr) !=
+-            slirp->vnetwork_addr.s_addr ||
+-        guest_addr->s_addr == slirp->vhost_addr.s_addr ||
+-        guest_addr->s_addr == slirp->vnameserver_addr.s_addr) {
++            slirp->vnetwork_addr.s_addr) {
++        return false;
++    }
++    if (!slirp->disable_dns &&
++        guest_addr->s_addr == slirp->vnameserver_addr.s_addr &&
++        guest_port == 53) {
+         return false;
+     }
+ 

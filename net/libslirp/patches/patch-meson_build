@@ -1,0 +1,22 @@
+https://gitlab.freedesktop.org/slirp/libslirp/-/commit/3e6e68e779c9051590250a87214dabf91e70949a
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -238,6 +238,16 @@ ncsitest = executable('ncsitest', 'test/ncsitest.c',
+ 
+ test('ncsi', ncsitest)
+ 
++guestfwdtest = executable('guestfwdtest', 'test/guestfwdtest.c',
++  link_with: [lib],
++  c_args : cargs,
++  link_args : vflag,
++  include_directories: ['src'],
++  dependencies: libslirp_deps
++)
++
++test('guestfwd', guestfwdtest)
++
+ if install_devel
+   install_headers(['src/libslirp.h'], subdir : 'slirp')
+ 
