@@ -7,6 +7,7 @@
 @bin bin/afsrv_terminal
 @bin bin/arcan
 @bin bin/arcan-net
+@bin bin/arcan-net-session
 @bin bin/arcan-wayland
 @bin bin/arcan_db
 @bin bin/arcan_frameserver
@@ -37,6 +38,7 @@ include/arcan/shmif/arcan_shmif_sub.h
 @lib lib/libarcan_shmif_intext.so.${LIBarcan_shmif_intext_VERSION}
 @lib lib/libarcan_shmif_server.so.${LIBarcan_shmif_server_VERSION}
 @lib lib/libarcan_tui.so.${LIBarcan_tui_VERSION}
+lib/pkgconfig/arcan-a12.pc
 lib/pkgconfig/arcan-shmif-ext.pc
 lib/pkgconfig/arcan-shmif-srv.pc
 lib/pkgconfig/arcan-shmif-tui.pc
@@ -66,6 +68,7 @@ share/arcan/scripts/builtin/debug.lua
 share/arcan/scripts/builtin/decorator.lua
 share/arcan/scripts/builtin/json.lua
 share/arcan/scripts/builtin/keyboard.lua
+share/arcan/scripts/builtin/legacy.lua
 share/arcan/scripts/builtin/mouse.lua
 share/arcan/scripts/builtin/osdkbd.lua
 share/arcan/scripts/builtin/string.lua
@@ -79,3 +82,5 @@ share/arcan/scripts/hook/external_input.lua
 share/arcan/scripts/hook/shutdown.lua
 share/arcan/scripts/hook/timed_dump.lua
 share/arcan/scripts/hook/touch_simulator.lua
+share/doc/arcan/
+share/doc/arcan/config.lua.example

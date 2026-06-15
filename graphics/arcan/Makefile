@@ -7,11 +7,9 @@ SHARED_LIBS +=  arcan_shmif_intext        0.0 # 0.15
 SHARED_LIBS +=  arcan_shmif_server        0.0 # 0.15
 SHARED_LIBS +=  arcan_tui                 0.0 # 0.15
 
-DIST_TUPLE =	codeberg letoram arcan 0.6.2 .
+DIST_TUPLE =	codeberg letoram arcan 0.7.1 .
 WRKDIST =	${WRKDIR}/arcan
 WRKSRC =	${WRKDIST}/src
-
-REVISION =	2
 
 CATEGORIES =	graphics devel
 HOMEPAGE =	https://arcan-fe.com
@@ -20,10 +18,11 @@ HOMEPAGE =	https://arcan-fe.com
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB += ${COMPILER_LIBCXX} EGL GL SDL2 archive avcodec avdevice
-WANTLIB += avfilter avformat avutil bz2 c curl drm espeak-ng freetype
-WANTLIB += gbm iconv ${MODLUA_WANTLIB} lzma m magic openal sqlite3 swresample
-WANTLIB += swscale tesseract util vlc vncclient vncserver wayland-server
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} EGL GL SDL2 archive
+WANTLIB += avcodec avdevice avfilter avformat avutil bz2 c curl
+WANTLIB += display-info drm espeak-ng freetype gbm hunspell-1.7
+WANTLIB += iconv lzma m magic openal sqlite3 swresample swscale
+WANTLIB += tesseract util vlc vncclient vncserver wayland-server
 WANTLIB += xcb xcb-composite xcb-icccm xcb-util xcb-xfixes xkbcommon
 WANTLIB += z
 
@@ -44,6 +43,8 @@ LIB_DEPENDS =		archivers/bzip2 \
 			graphics/ffmpeg \
 			graphics/tesseract/tesseract \
 			net/libvncserver \
+			sysutils/libdisplay-info \
+			textproc/hunspell \
 			wayland/wayland \
 			x11/vlc \
 			x11/xkbcommon

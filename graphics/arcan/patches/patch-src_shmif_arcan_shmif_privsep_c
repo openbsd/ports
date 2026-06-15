@@ -1,0 +1,11 @@
+Index: src/shmif/arcan_shmif_privsep.c
+--- src/shmif/arcan_shmif_privsep.c.orig
++++ src/shmif/arcan_shmif_privsep.c
+@@ -1,3 +1,7 @@
++#ifdef __OpenBSD__
++#include <pthread.h>
++#endif
++
+ #include <arcan_shmif.h>
+ 
+ #ifdef __OpenBSD__
