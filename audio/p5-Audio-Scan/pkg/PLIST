@@ -4,5 +4,5 @@ ${P5ARCH}/Audio/Scan.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Audio/
 ${P5ARCH}/auto/Audio/Scan/
-${P5ARCH}/auto/Audio/Scan/Scan.so
+@so ${P5ARCH}/auto/Audio/Scan/Scan.so
 @man man/man3p/Audio::Scan.3p
