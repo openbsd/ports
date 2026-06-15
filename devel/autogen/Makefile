@@ -14,6 +14,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gmp guile iconv intl ltdl m pthread xml2 z
 
+BUILD_DEPENDS=	shells/bash
+
 LIB_DEPENDS=	devel/gettext,-runtime \
 		lang/guile \
 		textproc/libxml
