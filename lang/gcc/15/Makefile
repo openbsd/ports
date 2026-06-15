@@ -18,10 +18,7 @@ USE_NOEXECONLY = Yes
 V = 15.2.0
 GCC_PKGSPEC = >=15,<16
 
-REVISION = 6
-REVISION-ada = 7
-REVISION-f95 = 7
-REVISION-dlang = 7
+REVISION = 8
 
 # aarch64 and sparc64 bootstrap contain only gdc
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-15.2.0-0.tar.xz
