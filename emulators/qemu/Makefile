@@ -7,6 +7,7 @@ COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
 VERSION=	11.0.1
+REVISION-main=	0
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
@@ -39,6 +40,7 @@ MODPY_RUNDEP=	No
 BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/meson \
 		devel/ninja \
+		devel/py-setuptools \
 		shells/bash \
 		sysutils/py-distlib \
 		textproc/py-sphinx \

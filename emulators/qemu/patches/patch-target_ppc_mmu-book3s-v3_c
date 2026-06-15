@@ -1,0 +1,58 @@
+https://marc.info/?l=qemu-devel&m=178097910779871&w=2
+
+Index: target/ppc/mmu-book3s-v3.c
+--- target/ppc/mmu-book3s-v3.c.orig
++++ target/ppc/mmu-book3s-v3.c
+@@ -23,19 +23,21 @@
+ #include "mmu-hash64.h"
+ #include "mmu-book3s-v3.h"
+ 
+-bool ppc64_v3_get_pate(PowerPCCPU *cpu, target_ulong lpid, ppc_v3_pate_t *entry)
++static bool ppc64_v3_get_pate_from_size(PowerPCCPU *cpu, target_ulong lpid,
++                                        ppc_v3_pate_t *entry,
++                                        uint64_t table_size)
+ {
+     uint64_t patb = cpu->env.spr[SPR_PTCR] & PTCR_PATB;
+-    uint64_t pats = cpu->env.spr[SPR_PTCR] & PTCR_PATS;
++    uint64_t entries;
+ 
+     /* Check if partition table is properly aligned */
+-    if (patb & MAKE_64BIT_MASK(0, pats + 12)) {
++    if (patb & (table_size - 1)) {
+         return false;
+     }
+ 
+     /* Calculate number of entries */
+-    pats = 1ull << (pats + 12 - 4);
+-    if (pats <= lpid) {
++    entries = table_size / sizeof(*entry);
++    if (entries <= lpid) {
+         return false;
+     }
+ 
+@@ -44,4 +46,25 @@ bool ppc64_v3_get_pate(PowerPCCPU *cpu, target_ulong l
+     entry->dw0 = ldq_phys(CPU(cpu)->as, patb);
+     entry->dw1 = ldq_phys(CPU(cpu)->as, patb + 8);
+     return true;
++}
++
++bool ppc64_v3_get_pate(PowerPCCPU *cpu, target_ulong lpid, ppc_v3_pate_t *entry)
++{
++    uint64_t pats = cpu->env.spr[SPR_PTCR] & PTCR_PATS;
++
++    /*
++     * Keep the existing ISA v3.0 PATS interpretation first.  OpenBSD/powernv
++     * uses the PATSIZE value it writes to PTCR as one exponent smaller, and it
++     * only needs that interpretation for the bare metal LPID 0 table.
++     */
++    if (ppc64_v3_get_pate_from_size(cpu, lpid, entry, 1ull << (pats + 12))) {
++        return true;
++    }
++
++    if (lpid == 0) {
++        return ppc64_v3_get_pate_from_size(cpu, lpid, entry,
++                                           1ull << (pats + 11));
++    }
++
++    return false;
+ }

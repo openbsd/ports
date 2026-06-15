@@ -1,0 +1,39 @@
+https://marc.info/?l=qemu-devel&m=178097910779871&w=2
+
+Index: hw/ppc/pnv_psi.c
+--- hw/ppc/pnv_psi.c.orig
++++ hw/ppc/pnv_psi.c
+@@ -688,6 +688,8 @@ static uint64_t pnv_psi_p9_mmio_read(void *opaque, hwa
+     case PSIHB9_ESB_CI_BASE:
+     case PSIHB9_ESB_NOTIF_ADDR:
+     case PSIHB9_IVT_OFFSET:
++    case PSIHB9_IRQ_LEVEL:
++    case PSIHB9_IRQ_STAT:
+         val = psi->regs[reg];
+         break;
+     default:
+@@ -817,18 +819,15 @@ static const MemoryRegionOps pnv_psi_p9_xscom_ops = {
+ static void pnv_psi_power9_set_irq(void *opaque, int irq, int state)
+ {
+     PnvPsi *psi = opaque;
+-    uint64_t irq_method = psi->regs[PSIHB_REG(PSIHB9_INTERRUPT_CONTROL)];
++    uint64_t irq_bit = PPC_BIT(irq);
+ 
+-    if (irq_method & PSIHB9_IRQ_METHOD) {
+-        qemu_log_mask(LOG_GUEST_ERROR, "PSI: LSI IRQ method no supported\n");
+-        return;
+-    }
+-
+-    /* Update LSI levels */
++    /* Update LSI levels and pending status */
+     if (state) {
+-        psi->regs[PSIHB_REG(PSIHB9_IRQ_LEVEL)] |= PPC_BIT(irq);
++        psi->regs[PSIHB_REG(PSIHB9_IRQ_LEVEL)] |= irq_bit;
++        psi->regs[PSIHB_REG(PSIHB9_IRQ_STAT)] |= irq_bit;
+     } else {
+-        psi->regs[PSIHB_REG(PSIHB9_IRQ_LEVEL)] &= ~PPC_BIT(irq);
++        psi->regs[PSIHB_REG(PSIHB9_IRQ_LEVEL)] &= ~irq_bit;
++        psi->regs[PSIHB_REG(PSIHB9_IRQ_STAT)] &= ~irq_bit;
+     }
+ 
+     qemu_set_irq(psi->qirqs[irq], state);
