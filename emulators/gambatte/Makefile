@@ -4,7 +4,7 @@ REV =			571
 V =			0.5.0.${REV}
 DISTNAME =		gambatte_src-r${REV}
 PKGNAME =		gambatte-$V
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		emulators
 
@@ -24,7 +24,7 @@ CXXFLAGS_base-clang =	-std=c++14
 SITES =			${SITE_SOURCEFORGE:=gambatte/}
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
+
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 MODPY_TESTDEP =		Yes
