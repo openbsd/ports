@@ -19,13 +19,11 @@ MODULES=		lang/python
 
 MODPY_PYBUILD=		setuptools
 
-BUILD_DEPENDS=		devel/py-test-runner
-
 RUN_DEPENDS=		sysutils/py-lockfile
 
 TEST_DEPENDS=		devel/flake8 \
+			devel/py-fasteners \
 			devel/py-mock \
-			devel/py-test-runner \
 			security/py-openssl \
 			sysutils/py-lockfile \
 			www/py-requests-mock
