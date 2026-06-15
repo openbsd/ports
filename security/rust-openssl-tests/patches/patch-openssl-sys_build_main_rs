@@ -1,13 +1,13 @@
-Allow libressl 4.3.0
+Allow libressl 4.4.0
 
 Index: openssl-sys/build/main.rs
 --- openssl-sys/build/main.rs.orig
 +++ openssl-sys/build/main.rs
-@@ -425,6 +425,7 @@ See rust-openssl documentation for more information:
-             (4, 1, 0) => ('4', '1', '0'),
+@@ -430,6 +430,7 @@ See rust-openssl documentation for more information:
              (4, 1, _) => ('4', '1', 'x'),
              (4, 2, _) => ('4', '2', 'x'),
-+            (4, 3, _) => ('4', '3', 'x'),
+             (4, 3, _) => ('4', '3', 'x'),
++            (4, 4, _) => ('4', '4', 'x'),
              _ => version_error(),
          };
  
