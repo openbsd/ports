@@ -1,6 +1,6 @@
 COMMENT=	streamlined Cython bindings for the HarfBuzz shaping engine
 
-MODPY_DISTV=	0.54.1
+MODPY_DISTV=	0.55.0
 DISTNAME=	uharfbuzz-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -10,7 +10,7 @@ HOMEPAGE=	https://github.com/trufont/uharfbuzz
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} harfbuzz harfbuzz-subset m
+WANTLIB += ${COMPILER_LIBCXX} harfbuzz harfbuzz-raster harfbuzz-subset m
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools_scm
