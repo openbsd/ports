@@ -3,7 +3,9 @@ COMMENT=	parse human-readable date/time text
 MODPY_DISTV=	2.6
 DISTNAME=	parsedatetime-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	5
+REVISION=	6
+
+HOMEPAGE=	https://github.com/bear/parsedatetime
 
 CATEGORIES=	devel
 
@@ -15,7 +17,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= tests/*.py
 
-BUILD_DEPENDS=	devel/py-test-runner
 TEST_DEPENDS=	textproc/py-ICU
 
 .include <bsd.port.mk>
