@@ -1,30 +1,28 @@
-COMMENT =		cross-version byte-code disassembler and marshal routines
+COMMENT=	cross-version byte-code disassembler and marshal routines
 
-MODPY_DISTV =	6.0.5.20230918
-GH_ACCOUNT =		rocky
-GH_PROJECT =		python-xdis
-GH_COMMIT =		21fd850c48b20d451c9d93cb6f25f01fa26b02fd
-DISTNAME =		xdis-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		2
+# pypi releases are very stale
+MODPY_DISTV=	6.3.0
+GH_ACCOUNT=	rocky
+GH_PROJECT=	python-xdis
+GH_TAGNAME=	${MODPY_DISTV}
+DISTNAME=	xdis-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
-HOMEPAGE =		https://github.com/rocky/python-xdis/
+HOMEPAGE=	https://github.com/rocky/python-xdis/
 
 # GPLv2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PYTEST_ARGS= pytest/
 
-# XXX: pypi releases are too stale; use github head so this
-# XXX: doesn't break with each new Python point release.
-#MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	pytest
+RUN_DEPENDS=	devel/py-click \
+		devel/py-six
 
-RUN_DEPENDS =		devel/py-click \
-			devel/py-six
-BUILD_DEPENDS =		devel/py-test-runner
+post-test:
+	cd ${WRKSRC}/test; env ${TEST_ENV} make PYTHON=${MODPY_BIN}
 
 .include <bsd.port.mk>
