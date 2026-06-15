@@ -5,3 +5,5 @@ are provided by the Math::Pari library.
 
 This package provides DSA signing, signature verification, and key
 generation.
+
+It is deprecated.
