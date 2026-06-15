@@ -153,6 +153,8 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}eiffelto
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}eiffeltower.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}fan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}fan.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}fission.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}fission.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}fortythieves.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}fortythieves.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}freecell.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -275,6 +277,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/games/diplomat.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/doublets.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/eiffeltower.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/fan.py
+lib/python${MODPY_VERSION}/site-packages/pysollib/games/fission.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/fortythieves.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/freecell.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/glenwood.py
@@ -359,6 +362,8 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}larasgame.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}lightsout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}lightsout.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}matchthree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}matchthree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}matrix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}matrix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}memory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -387,6 +392,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/hexadeck.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/ishido.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/larasgame.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/lightsout.py
+lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/matchthree.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/matrix.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/memory.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/mughal.py
@@ -23875,6 +23881,7 @@ share/PySolFC/html/rules/americancanister.html
 share/PySolFC/html/rules/americantoad.html
 share/PySolFC/html/rules/amphibian.html
 share/PySolFC/html/rules/annodomini.html
+share/PySolFC/html/rules/antares.html
 share/PySolFC/html/rules/ants.html
 share/PySolFC/html/rules/apophis.html
 share/PySolFC/html/rules/appachanswaterfall.html
@@ -23981,6 +23988,7 @@ share/PySolFC/html/rules/calculation.html
 share/PySolFC/html/rules/camelot.html
 share/PySolFC/html/rules/canberra.html
 share/PySolFC/html/rules/cancan.html
+share/PySolFC/html/rules/candike.html
 share/PySolFC/html/rules/canfield.html
 share/PySolFC/html/rules/canfieldrush.html
 share/PySolFC/html/rules/canister.html
@@ -24099,6 +24107,7 @@ share/PySolFC/html/rules/doublecockroach.html
 share/PySolFC/html/rules/doubledolphin.html
 share/PySolFC/html/rules/doubledot.html
 share/PySolFC/html/rules/doubledrawbridge.html
+share/PySolFC/html/rules/doubleeightoff.html
 share/PySolFC/html/rules/doublefives.html
 share/PySolFC/html/rules/doublefootling.html
 share/PySolFC/html/rules/doublefourteen.html
@@ -24148,6 +24157,7 @@ share/PySolFC/html/rules/eighteens.html
 share/PySolFC/html/rules/eightlegions.html
 share/PySolFC/html/rules/eightoff.html
 share/PySolFC/html/rules/eightpacks.html
+share/PySolFC/html/rules/eights.html
 share/PySolFC/html/rules/eightsages.html
 share/PySolFC/html/rules/eighttimeseight.html
 share/PySolFC/html/rules/eightythieves.html
@@ -24184,6 +24194,7 @@ share/PySolFC/html/rules/finalbattle.html
 share/PySolFC/html/rules/fireandice.html
 share/PySolFC/html/rules/firecracker.html
 share/PySolFC/html/rules/firingsquad.html
+share/PySolFC/html/rules/fission.html
 share/PySolFC/html/rules/fiveaces.html
 share/PySolFC/html/rules/flake.html
 share/PySolFC/html/rules/flake2decks.html
@@ -24255,6 +24266,7 @@ share/PySolFC/html/rules/glacier.html
 share/PySolFC/html/rules/glencoe.html
 share/PySolFC/html/rules/gloaming.html
 share/PySolFC/html/rules/gloria.html
+share/PySolFC/html/rules/gloucestershire.html
 share/PySolFC/html/rules/gnat.html
 share/PySolFC/html/rules/goldmine.html
 share/PySolFC/html/rules/goldrush.html
@@ -24296,6 +24308,7 @@ share/PySolFC/html/rules/herzzuherz.html
 share/PySolFC/html/rules/hexaklon.html
 share/PySolFC/html/rules/hexaklondraw3.html
 share/PySolFC/html/rules/hexlabyrinth.html
+share/PySolFC/html/rules/hexofhearts.html
 share/PySolFC/html/rules/hexyukon.html
 share/PySolFC/html/rules/hiddenpassages.html
 share/PySolFC/html/rules/hiranyaksha.html
@@ -24341,6 +24354,7 @@ share/PySolFC/html/rules/japanesegardenii.html
 share/PySolFC/html/rules/japanesegardeniii.html
 share/PySolFC/html/rules/jokeklon.html
 share/PySolFC/html/rules/jokeklondraw3.html
+share/PySolFC/html/rules/jokerbombs.html
 share/PySolFC/html/rules/josephine.html
 share/PySolFC/html/rules/journeytocuddapah.html
 share/PySolFC/html/rules/junction.html
@@ -24437,6 +24451,7 @@ share/PySolFC/html/rules/marierose.html
 share/PySolFC/html/rules/marshal.html
 share/PySolFC/html/rules/martha.html
 share/PySolFC/html/rules/master.html
+share/PySolFC/html/rules/matchthree.html
 share/PySolFC/html/rules/matriarchy.html
 share/PySolFC/html/rules/matrimony.html
 share/PySolFC/html/rules/matrix.html
@@ -24480,6 +24495,7 @@ share/PySolFC/html/rules/mystique.html
 share/PySolFC/html/rules/napoleon.html
 share/PySolFC/html/rules/napoleonleavesmoscow.html
 share/PySolFC/html/rules/napoleonsexile.html
+share/PySolFC/html/rules/napoleonsfolly.html
 share/PySolFC/html/rules/napoleonsshoulder.html
 share/PySolFC/html/rules/napoleonssquare.html
 share/PySolFC/html/rules/napoleonstomb.html
@@ -24524,6 +24540,7 @@ share/PySolFC/html/rules/openpeek.html
 share/PySolFC/html/rules/openproils.html
 share/PySolFC/html/rules/openslyfox.html
 share/PySolFC/html/rules/openspider.html
+share/PySolFC/html/rules/opera.html
 share/PySolFC/html/rules/opus.html
 share/PySolFC/html/rules/osmium.html
 share/PySolFC/html/rules/osmiumii.html
@@ -24533,6 +24550,7 @@ share/PySolFC/html/rules/paganini.html
 share/PySolFC/html/rules/paganiniii.html
 share/PySolFC/html/rules/pagat.html
 share/PySolFC/html/rules/pagoda.html
+share/PySolFC/html/rules/palace.html
 share/PySolFC/html/rules/panopticon.html
 share/PySolFC/html/rules/pantagruel.html
 share/PySolFC/html/rules/parallels.html

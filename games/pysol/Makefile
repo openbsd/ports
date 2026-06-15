@@ -1,6 +1,6 @@
 COMMENT =		solitaire card games collection
 
-MODPY_DISTV =		3.4.1
+MODPY_DISTV =		3.6.0
 V_CARDSETS =		3.1
 DISTNAME =		PySolFC-${MODPY_DISTV}
 PKGNAME =		pysol-${MODPY_DISTV}
