@@ -1,4 +1,5 @@
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
+NOT_FOR_ARCHS-wx= alpha arm hppa i386
 
 USE_NOBTCFI=	Yes
 USE_WXNEEDED=	Yes
@@ -41,16 +42,11 @@ WANTLIB-main += ${WANTLIB} c crypto curses util z
 WANTLIB-wx += ${WANTLIB}
 WANTLIB-wx += GLU glib-2.0 wx_baseu-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
 WANTLIB-wx += wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2 wx_gtk3u_stc-3.2
-WANTLIB-wx += wx_gtk3u_xrc-3.2
+WANTLIB-wx += wx_gtk3u_webview-3.2 wx_gtk3u_xrc-3.2
 
 LIB_DEPENDS-wx +=x11/wxWidgets
 LIB_DEPENDS-wx +=devel/glib2
-
-.if ${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "arm" \
-	&& ${MACHINE_ARCH} != "hppa" && ${MACHINE_ARCH} != "i386"
 LIB_DEPENDS-wx +=x11/wxWidgets,-webview
-WANTLIB-wx += wx_gtk3u_webview-3.2
-.endif
 
 RUN_DEPENDS-wx =${BASE_PKGPATH},-main>=${MAJ_V}
 
@@ -98,5 +94,11 @@ TOOLS_VSN       4.2.1 \
 WX_VSN          2.6 \
 XMERL_VSN       2.2 \
 ERTS_VSN        17.0.2
+
+.include <bsd.port.arch.mk>
+
+.if !${BUILD_PACKAGES:M-wx}
+CONFIGURE_ARGS += --without-wx
+.endif
 
 .include <bsd.port.mk>
