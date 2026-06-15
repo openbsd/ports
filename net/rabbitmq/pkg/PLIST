@@ -206,6 +206,7 @@ lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_advanced.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_bytesize.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_conf.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_datatypes.beam
+lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_diff.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_duration.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_duration_parse.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_effective.beam
@@ -215,6 +216,8 @@ lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_escript.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_flag.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_generator.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_mapping.beam
+lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_partial.beam
+lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_paths.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_rebar_plugin.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_schema.beam
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/cuttlefish_translation.beam
@@ -897,6 +900,8 @@ lib/rabbitmq/plugins/rabbit-${V}/include/vhost_v2.hrl
 lib/rabbitmq/plugins/rabbit-${V}/priv/
 lib/rabbitmq/plugins/rabbit-${V}/priv/schema/
 lib/rabbitmq/plugins/rabbit-${V}/priv/schema/rabbit.schema
+lib/rabbitmq/plugins/rabbit-${V}/priv/schema/ssl_options.partial
+lib/rabbitmq/plugins/rabbit-${V}/priv/schema/tcp_listen_options.partial
 lib/rabbitmq/plugins/rabbit_common-${V}/
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/app_utils.beam
@@ -944,6 +949,7 @@ lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_pbe.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_peer_discovery_backend.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_policy_validator.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_queue_collector.beam
+lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_re.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_registry.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_registry_class.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_resource_monitor_misc.beam
@@ -953,6 +959,7 @@ lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_runtime_parameter.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_semver.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_semver_parser.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_ssl_options.beam
+lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_term_decoding.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_types.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_writer.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/supervisor2.beam
