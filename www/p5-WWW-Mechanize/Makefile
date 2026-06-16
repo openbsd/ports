@@ -1,6 +1,6 @@
 COMMENT =	handy web browsing in a Perl object
 
-DISTNAME =	WWW-Mechanize-2.20
+DISTNAME =	WWW-Mechanize-2.21
 CPAN_AUTHOR =	OALDERS
 
 CATEGORIES =	www
