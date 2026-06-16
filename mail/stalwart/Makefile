@@ -10,10 +10,8 @@ GH_PROJECT =		stalwart
 CATEGORIES =		mail
 # AGPLv3
 PERMIT_PACKAGE =	Yes
-GH_TAGNAME =		v0.16.6
+GH_TAGNAME =		v0.16.9
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
-
-REVISION =		0
 
 HOMEPAGE =	https://stalw.art/
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
