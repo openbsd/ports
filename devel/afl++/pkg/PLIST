@@ -10,7 +10,9 @@ bin/afl-clang-fast++
 bin/afl-clang-lto
 bin/afl-clang-lto++
 bin/afl-cmin
+bin/afl-cmin.awk
 bin/afl-cmin.bash
+bin/afl-cmin.py
 @bin bin/afl-fuzz
 bin/afl-g++
 bin/afl-gcc
@@ -26,6 +28,7 @@ bin/afl-system-config
 bin/afl-whatsup
 include/afl/
 include/afl/afl-fuzz.h
+include/afl/afl-ijon-min.h
 include/afl/afl-mutations.h
 include/afl/afl-persistent-replay.h
 include/afl/afl-prealloc.h
@@ -57,6 +60,7 @@ libexec/afl/afl-compiler-rt-32.o
 libexec/afl/afl-compiler-rt-64.o
 libexec/afl/afl-compiler-rt.o
 @so libexec/afl/afl-llvm-dict2file.so
+@so libexec/afl/afl-llvm-ijon-pass.so
 @so libexec/afl/afl-llvm-lto-instrumentlist.so
 @so libexec/afl/afl-llvm-pass.so
 libexec/afl/afl-llvm-rt-lto-32.o
@@ -81,7 +85,9 @@ libexec/afl/dynamic_list.txt
 @man man/man8/afl-clang-lto++.8
 @man man/man8/afl-clang-lto.8
 @man man/man8/afl-cmin.8
+@man man/man8/afl-cmin.awk.8
 @man man/man8/afl-cmin.bash.8
+@man man/man8/afl-cmin.py.8
 @man man/man8/afl-fuzz.8
 @man man/man8/afl-gotcpu.8
 @man man/man8/afl-lto++.8
@@ -156,6 +162,7 @@ share/afl/dictionaries/sas.dict
 share/afl/dictionaries/spss.dict
 share/afl/dictionaries/sql.dict
 share/afl/dictionaries/stata.dict
+share/afl/dictionaries/stl.dict
 share/afl/dictionaries/svg.dict
 share/afl/dictionaries/tex.dict
 share/afl/dictionaries/theme-load-fuzz.dict
@@ -269,6 +276,8 @@ share/afl/testcases/others/xml/small_document.xml
 share/doc/afl/
 share/doc/afl/Changelog.md
 share/doc/afl/FAQ.md
+share/doc/afl/FrameShift.md
+share/doc/afl/IJON.md
 share/doc/afl/INSTALL.md
 share/doc/afl/README.cmplog.md
 share/doc/afl/README.gcc_plugin.md
@@ -287,7 +296,6 @@ share/doc/afl/env_variables.md
 share/doc/afl/features.md
 share/doc/afl/fuzzing_binary-only_targets.md
 share/doc/afl/fuzzing_in_depth.md
-share/doc/afl/ideas.md
 share/doc/afl/important_changes.md
 share/doc/afl/rpc_statsd.md
 share/doc/afl/third_party_tools.md

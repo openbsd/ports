@@ -14,7 +14,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =		${COMPILER_LIBCXX} c m z
+WANTLIB =		${COMPILER_LIBCXX} c execinfo m z
 USE_GMAKE=		Yes
 
 MODULES =		lang/clang
@@ -23,6 +23,7 @@ RUN_DEPENDS =		lang/gawk
 # if nproc is not set, sub-makes are passed "-j" which does not limit
 # the number of jobs.
 MAKE_FLAGS =		nproc=${MAKE_JOBS} \
+			LDFLAGS=-lexecinfo \
 			LLVM_CONFIG=llvm-config-${MODCLANG_VERSION} \
 			NO_PYTHON=1
 FAKE_FLAGS=		PREFIX="${TRUEPREFIX}"

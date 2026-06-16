@@ -14,7 +14,7 @@ Index: GNUmakefile
  INCLUDE_PATH = $(PREFIX)/include/afl
  
  PROGNAME    = afl
-@@ -332,7 +332,7 @@ ifdef TEST_MMAP
+@@ -328,7 +328,7 @@ ifeq "$(ARCH)" "aarch64"
  endif
  
  .PHONY: all
@@ -23,7 +23,7 @@ Index: GNUmakefile
  	-$(MAKE) -C utils/aflpp_driver
  	@echo
  	@echo
-@@ -698,7 +698,6 @@ endif
+@@ -733,7 +733,6 @@ endif
  distrib: all
  	-$(MAKE) -j$(nproc) -f GNUmakefile.llvm
  ifneq "$(SYS)" "Darwin"

@@ -12,6 +12,6 @@ Index: GNUmakefile.llvm
  MISC_PATH   ?= $(PREFIX)/share/afl
 -MAN_PATH    ?= $(PREFIX)/share/man/man8
 +MAN_PATH    ?= $(PREFIX)/man/man8
+ INCLUDE_PATH := $(PREFIX)/include/afl
  
  BUILD_DATE  ?= $(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
- 
