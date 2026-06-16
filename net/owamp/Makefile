@@ -1,5 +1,8 @@
 COMMENT =	rfc4656 one-way active measurement protocol
 
+PORTROACH =	site:https://github.com/perfsonar/owamp/archive/
+
+# newer versions are a bit more linux-centric
 DISTNAME =	owamp-3.1
 REVISION =	3
 
