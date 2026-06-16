@@ -11,7 +11,7 @@ lib/libestdc++.la
 lib/libestdc++.so.22.0-gdb.py
 lib/libgfortran.la
 @lib lib/libgfortran.so.${LIBgfortran_VERSION}
+%%QUADMATH%%
 lib/libobjc.la
 @lib lib/libobjc.so.${LIBobjc_VERSION}
 %%ITM%%
-%%QUADMATH%%

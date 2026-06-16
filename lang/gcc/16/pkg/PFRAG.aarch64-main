@@ -8,8 +8,6 @@ lib/gcc/${CONFIG}/${V}/include/arm_private_fp8.h
 lib/gcc/${CONFIG}/${V}/include/arm_private_neon_types.h
 lib/gcc/${CONFIG}/${V}/include/arm_sme.h
 lib/gcc/${CONFIG}/${V}/include/arm_sve.h
-lib/gcc/${CONFIG}/${V}/include/tgmath.h
-lib/gcc/${CONFIG}/${V}/include/unwind.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/aarch64/
 lib/gcc/${CONFIG}/${V}/plugin/include/config/aarch64/aarch64-arches.def
 lib/gcc/${CONFIG}/${V}/plugin/include/config/aarch64/aarch64-cores.def
@@ -27,9 +25,4 @@ lib/gcc/${CONFIG}/${V}/plugin/include/config/aarch64/openbsd.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/
 lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/aarch-common-protos.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/aarch-common.h
-lib/gcc/${CONFIG}/${V}/plugin/include/config/elfos.h
-lib/gcc/${CONFIG}/${V}/plugin/include/config/initfini-array.h
-lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd-libpthread.h
-lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd-stdint.h
-lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/vxworks-dummy.h

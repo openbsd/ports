@@ -15,8 +15,6 @@ lib/gcc/${CONFIG}/${V}/adainclude/s-imglllb.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-imgllli.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-imglllu.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-imglllw.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vade128.ads
-lib/gcc/${CONFIG}/${V}/adainclude/s-vafi128.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-pack100.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-pack100.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-pack101.adb
@@ -143,6 +141,8 @@ lib/gcc/${CONFIG}/${V}/adainclude/s-pack98.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-pack98.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-pack99.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-pack99.ads
+lib/gcc/${CONFIG}/${V}/adainclude/s-vade128.ads
+lib/gcc/${CONFIG}/${V}/adainclude/s-vafi128.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-valllli.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-vallllu.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-widllli.ads

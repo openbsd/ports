@@ -21,7 +21,6 @@
 @info info/gcc.info
 @info info/gccinstall.info
 @info info/gccint.info
-@info info/libquadmath.info
 lib/gcc/
 lib/gcc/${CONFIG}/
 lib/gcc/${CONFIG}/${V}/
@@ -35,8 +34,9 @@ lib/gcc/${CONFIG}/${V}/include/stdatomic.h
 lib/gcc/${CONFIG}/${V}/include/stdfix.h
 lib/gcc/${CONFIG}/${V}/include/stdnoreturn.h
 lib/gcc/${CONFIG}/${V}/include/syslimits.h
+lib/gcc/${CONFIG}/${V}/include/tgmath.h
+lib/gcc/${CONFIG}/${V}/include/unwind.h
 %%ITM%%
-%%QUADMATH%%
 lib/gcc/${CONFIG}/${V}/install-tools/
 lib/gcc/${CONFIG}/${V}/install-tools/fixinc_list
 lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
@@ -156,12 +156,16 @@ lib/gcc/${CONFIG}/${V}/plugin/include/color-macros.h
 lib/gcc/${CONFIG}/${V}/plugin/include/conditions.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/
 lib/gcc/${CONFIG}/${V}/plugin/include/config.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/elfos.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/initfini-array.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd-libpthread.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd-stdint.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd.h
 %%aarch64%%
 %%alpha%%
 %%amd64%%
 %%arm%%
 %%hppa%%
-%%i386%%
 %%mips64%%
 %%mips64el%%
 %%powerpc%%
@@ -672,6 +676,7 @@ lib/gcc/${CONFIG}/${V}/plugin/libcp1plugin.la
 @lib lib/gcc/${CONFIG}/${V}/plugin/libcp1plugin.so.${LIBcp1plugin_VERSION}
 @static-lib lib/libatomic.a
 @static-lib lib/libatomic_asneeded.a
+%%QUADMATH%%
 lib/libstdc++.modules.json
 @static-lib lib/libstdc++exp.a
 lib/libstdc++exp.la
