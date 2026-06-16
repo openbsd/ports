@@ -1,10 +1,11 @@
 COMMENT=	module and program for processing ID3 tags
 
-# standalone software - intentionally no py-* prefix/FLAVOR.
-MODPY_DISTV=	0.9.7
-DISTNAME=	eyeD3-${MODPY_DISTV}
+# standalone software - intentionally no py-* prefix
+MODPY_DISTV=	0.9.9
+DISTNAME=	eyed3-${MODPY_DISTV}
+PKGNAME=	eyeD3-${MODPY_DISTV}
+
 CATEGORIES=	audio
-REVISION=	3
 
 HOMEPAGE=	https://eyed3.readthedocs.io/
 
@@ -12,8 +13,10 @@ HOMEPAGE=	https://eyed3.readthedocs.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
+
 MODPY_PI=	Yes
-MODPY_PYBUILD=	poetry-core
+MODPY_PYBUILD=	setuptools
+
 RUN_DEPENDS=	devel/py-deprecation \
 		devel/py-filetype
 
