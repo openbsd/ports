@@ -3,6 +3,7 @@ COMMENT =		library for building CLI applications
 MODPY_DISTV =		0.26.7
 DISTNAME =		typer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -19,7 +20,8 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		pdm
 
 RUN_DEPENDS =		devel/py-annotated_doc \
-			devel/py-typing-extensions>=3.7.4.3
+			devel/py-rich>=10.11.0 \
+			devel/py-shellingham>=1.3.0
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mrust}
@@ -28,11 +30,7 @@ FISH_DIR =		main
 FISH_DIR =		v3
 .endif
 
-TEST_DEPENDS =		devel/py-annotated_doc \
-			devel/py-coverage>=6.2 \
-			devel/py-rich>=10.11.0 \
-			devel/py-shellingham>=1.3.0 \
-			devel/py-typing-extensions>=3.7.4.3 \
+TEST_DEPENDS =		devel/py-coverage>=6.2 \
 			shells/bash \
 			shells/fish/${FISH_DIR} \
 			shells/zsh
