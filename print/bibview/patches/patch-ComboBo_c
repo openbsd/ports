@@ -1,0 +1,10 @@
+Index: ComboBo.c
+--- ComboBo.c.orig
++++ ComboBo.c
+@@ -768,5 +768,5 @@ ComboBoxSetString(fnw, dir)
+     }
+ 
+     strcpy(CurrentDir(fnw), dir);
+-    ChangeDirectory(fnw, 0);
++    ChangeDirectory((ComboBoxWidget) fnw, 0);
+ }

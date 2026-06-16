@@ -36,3 +36,10 @@ Index: FileNom.c
      
      if (num <= 0)
      {
+@@ -1145,5 +1145,5 @@ FileNominatorSetDirectory(fnw, dir)
+ 	strcat(CurrentDir(fnw), "/");
+     }
+ 
+-    ChangeDirectory(fnw, 0);
++    ChangeDirectory((FileNominatorWidget) fnw, 0);
+ }
