@@ -3,8 +3,7 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-REVISION =	0
-MOZILLA_VERSION =	140.11.1esr
+MOZILLA_VERSION =	140.12.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
