@@ -11,6 +11,7 @@ COMMENT-data =	data for Tales of Maj'Eyal
 
 V =		1.7.6
 PKGNAME =	tome4-${V}
+REVISION =	0
 CATEGORIES =	games x11
 
 SITES =		https://te4.org/dl/t-engine/

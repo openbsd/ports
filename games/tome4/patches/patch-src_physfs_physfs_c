@@ -1,0 +1,18 @@
+Index: src/physfs/physfs.c
+--- src/physfs/physfs.c.orig
++++ src/physfs/physfs.c
+@@ -68,12 +68,13 @@ extern const PHYSFS_Archiver       __PHYSFS_Archiver_M
+ extern const PHYSFS_ArchiveInfo    __PHYSFS_ArchiveInfo_WAD;
+ extern const PHYSFS_Archiver       __PHYSFS_Archiver_WAD;
+ extern const PHYSFS_Archiver       __PHYSFS_Archiver_DIR;
++extern const PHYSFS_ArchiveInfo    __PHYSFS_ArchiveInfo_BIND_PHYSFS;
+ extern const PHYSFS_Archiver       __PHYSFS_Archiver_BIND_PHYSFS;
+ 
+ 
+ static const PHYSFS_ArchiveInfo *supported_types[] =
+ {
+-    &__PHYSFS_Archiver_BIND_PHYSFS,
++    &__PHYSFS_ArchiveInfo_BIND_PHYSFS,
+ #if (defined PHYSFS_SUPPORTS_ZIP)
+     &__PHYSFS_ArchiveInfo_SUBZIP,
+     &__PHYSFS_ArchiveInfo_ZIP,
