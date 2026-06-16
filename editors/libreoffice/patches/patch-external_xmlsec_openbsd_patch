@@ -1,14 +1,15 @@
 Index: external/xmlsec/openbsd.patch
 --- external/xmlsec/openbsd.patch.orig
 +++ external/xmlsec/openbsd.patch
-@@ -0,0 +1,11 @@
-+--- xmlsec/apps/Makefile.am.orig	Sun Jun 14 10:52:20 2026
-++++ xmlsec/apps/Makefile.am	Sun Jun 14 10:52:30 2026
+@@ -0,0 +1,12 @@
++--- xmlsec/apps/Makefile.am.orig	Sun Jun 14 11:25:47 2026
+++++ xmlsec/apps/Makefile.am	Sun Jun 14 11:25:52 2026
 +@@ -1,7 +1,7 @@
 + NULL =
 + 
-+ bin_PROGRAMS = xmlsec1
++-bin_PROGRAMS = xmlsec1
 +-noinst_PROGRAMS = xmlsec_unit_tests
+++#bin_PROGRAMS = xmlsec1
 ++#noinst_PROGRAMS = xmlsec_unit_tests
 + 
 + XMLSEC_LIBS = $(top_builddir)/src/libxmlsec1.la
