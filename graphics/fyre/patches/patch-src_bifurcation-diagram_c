@@ -1,0 +1,14 @@
+Index: src/bifurcation-diagram.c
+--- src/bifurcation-diagram.c.orig
++++ src/bifurcation-diagram.c
+@@ -139,8 +139,8 @@ void bifurcation_diagram_set_linear_endpoints (Bifurca
+     }
+ 
+     pair = g_new(ParameterHolderPair, 1);
+-    pair->a = g_object_ref(first);
+-    pair->b = g_object_ref(second);
++    pair->a = PARAMETER_HOLDER(g_object_ref(first));
++    pair->b = PARAMETER_HOLDER(g_object_ref(second));
+ 
+     bifurcation_diagram_set_interpolator(self, PARAMETER_INTERPOLATOR(parameter_holder_interpolate_linear),
+ 					 pair, (GFreeFunc) parameter_holder_pair_free);
