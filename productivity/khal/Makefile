@@ -1,6 +1,6 @@
 COMMENT =		standards based terminal calendar
 
-MODPY_DISTV =		0.13.0
+MODPY_DISTV =		0.14.0
 DISTNAME =		khal-${MODPY_DISTV}
 
 CATEGORIES =		productivity
