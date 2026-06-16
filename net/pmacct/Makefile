@@ -1,3 +1,5 @@
+BROKEN=		bpf_timeval vs timeval mix-ups result in failure with llvm22
+
 COMMENT=	passive IP network monitoring tools: traffic accounting, etc
 
 DISTNAME=	pmacct-1.7.9

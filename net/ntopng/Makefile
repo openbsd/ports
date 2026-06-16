@@ -1,4 +1,4 @@
-BROKEN=		various bpf_timeval problems remain
+BROKEN=		bpf_timeval vs timeval mix-ups result in failure with llvm22
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
