@@ -1,2 +1,1 @@
-@info info/libquadmath.info
 @static-lib lib/libquadmath.a

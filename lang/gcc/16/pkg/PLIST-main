@@ -21,6 +21,7 @@
 @info info/gcc.info
 @info info/gccinstall.info
 @info info/gccint.info
+@info info/libquadmath.info
 lib/gcc/
 lib/gcc/${CONFIG}/
 lib/gcc/${CONFIG}/${V}/
