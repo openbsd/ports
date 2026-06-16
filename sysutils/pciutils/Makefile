@@ -2,7 +2,7 @@ NOT_FOR_ARCHS =		m88k
 
 COMMENT =		PCI bus configuration register access tools
 
-DISTNAME =		pciutils-3.11.1
+DISTNAME =		pciutils-3.15.0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://mj.ucw.cz/sw/pciutils/
