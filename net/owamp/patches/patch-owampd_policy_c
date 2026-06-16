@@ -1,0 +1,12 @@
+Index: owampd/policy.c
+--- owampd/policy.c.orig
++++ owampd/policy.c
+@@ -2857,7 +2857,7 @@ OWPDCloseFile(
+      * otherwise - this is a fetch-session target file.
+      */
+     else if(rinfo->itype == OWPDINFO_FETCH){
+-        xinfo = &rinfo->test;
++        xinfo = &rinfo->fetch;
+         finfo = xinfo->finfo;
+         xinfo->finfo = NULL;
+ 
