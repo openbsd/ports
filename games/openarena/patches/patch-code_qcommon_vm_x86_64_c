@@ -9,8 +9,18 @@ BUGS
      means that such descriptors must be opened with O_RDWR, which requires
      both read and write permissions on the underlying object.
 
---- code/qcommon/vm_x86_64.c.orig	Sat Dec 24 14:29:32 2011
-+++ code/qcommon/vm_x86_64.c	Sun Mar 11 15:22:24 2012
+Index: code/qcommon/vm_x86_64.c
+--- code/qcommon/vm_x86_64.c.orig
++++ code/qcommon/vm_x86_64.c
+@@ -85,7 +85,7 @@ static int64_t CROSSCALL callAsmCall(int64_t callProgr
+ {
+ 	vm_t *savedVM;
+ 	int64_t ret = 0x77;
+-	int64_t args[11];
++	intptr_t args[11];
+ //	int iargs[11];
+ 	int i;
+ 
 @@ -445,7 +445,7 @@ void VM_Compile( vm_t *vm, vmHeader_t *header ) {
  		vm->codeLength = compiledOfs;
  

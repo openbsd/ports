@@ -18,8 +18,8 @@ E_V =			${V}# 	engine version
 
 PKGNAME =		openarena-${V}
 
-REVISION-main =		3
-REVISION-server =	2
+REVISION-main =		4
+REVISION-server =	3
 REVISION-data =		0
 
 PKG_ARCH-data = 	*
