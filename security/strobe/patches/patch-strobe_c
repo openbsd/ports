@@ -1,5 +1,15 @@
---- strobe.c.orig	Sun Mar 21 06:49:27 1999
-+++ strobe.c	Tue Jan 20 03:27:42 2015
+Index: strobe.c
+--- strobe.c.orig
++++ strobe.c
+@@ -1025,7 +1025,7 @@ add_port(h,p)
+     if (h->portlist_n == h->portlist_alloc)
+     {
+         h->portlist_alloc += 20;
+-        h->portlist=(int *)Srealloc(h->portlist,h->portlist_alloc*sizeof(int));
++        h->portlist=(int *)Srealloc((char *)h->portlist,h->portlist_alloc*sizeof(int));
+     }
+     h->portlist[h->portlist_n++]=p;
+     return p;
 @@ -1297,7 +1297,7 @@ loaddescs ()
  	exit (1);
      }
