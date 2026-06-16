@@ -3,8 +3,7 @@ ONLY_FOR_ARCHS= i386 amd64
 COMMENT=	improved version of afl
 GH_ACCOUNT =	AFLplusplus
 GH_PROJECT =	AFLplusplus
-GH_TAGNAME =	v4.32c
-REVISION =	1
+GH_TAGNAME =	v4.40c
 PKGNAME =	afl++-${GH_TAGNAME:S/v//}
 CATEGORIES=	devel
 
