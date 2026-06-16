@@ -1,3 +1,5 @@
+BROKEN =		bpf_timeval vs timeval mix-ups result in failure with llvm22
+
 COMMENT =		highly flexible sniffer/NIDS
 
 DISTNAME =		snort-2.9.20
