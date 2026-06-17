@@ -120,6 +120,7 @@
      SUBDIR += latex2html
      SUBDIR += latexmk
      SUBDIR += lgrind
+     SUBDIR += libchardet
      SUBDIR += libebml
      SUBDIR += libexttextcat
      SUBDIR += libfyaml
