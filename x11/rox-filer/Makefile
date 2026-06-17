@@ -27,7 +27,7 @@ CONFIGURE_STYLE= autoconf no-autoheader
 AUTOCONF_VERSION= 2.69
 
 BUILD_DEPENDS=	devel/gettext,-tools \
-		textproc/docbook \
+		textproc/docbook-xsl \
 		textproc/intltool \
 		textproc/libxml \
 		textproc/libxslt
