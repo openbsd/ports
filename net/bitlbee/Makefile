@@ -7,7 +7,7 @@ V=			3.6
 DISTNAME=		bitlbee-$V
 PKGSPEC=		bitlbee-=$V
 CATEGORIES=		net
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		https://bitlbee.org/
 
@@ -28,9 +28,7 @@ DOCDIR=			${PREFIX}/share/doc/bitlbee/
 
 BUILD_DEPENDS=		textproc/docbook-xsl \
 			textproc/libxslt
-MODULES=		lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_2}
-MODPY_RUNDEP=		No
+
 LIB_DEPENDS=		devel/glib2
 
 CONFIGURE_STYLE=	simple
