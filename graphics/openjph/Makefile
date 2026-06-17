@@ -2,7 +2,7 @@ COMMENT=	implementation of JPEG2000 Part-15
 
 GH_ACCOUNT=	aous72
 GH_PROJECT=	OpenJPH
-GH_TAGNAME=	0.28.1
+GH_TAGNAME=	0.29.0
 PKGNAME=	${DISTNAME:L}
 
 SHARED_LIBS +=	openjph                   0.3 # 0.0
