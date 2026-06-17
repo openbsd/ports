@@ -1,6 +1,6 @@
 COMMENT=	Perl implementation of DMARC
 
-DISTNAME=	Mail-DMARC-1.20250805
+DISTNAME=	Mail-DMARC-1.20260612
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 CATEGORIES=	mail
@@ -9,6 +9,7 @@ CATEGORIES=	mail
 PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
+CPAN_AUTHOR =	MSIMERSON
 PKG_ARCH=	*
 
 BUILD_DEPENDS=	devel/p5-File-ShareDir-Install>=0.06
