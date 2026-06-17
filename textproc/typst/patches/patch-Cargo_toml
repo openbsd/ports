@@ -1,0 +1,12 @@
+Remove tests/fuzz as OpenBSD isn't supported platform for running fuzzing
+
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -1,5 +1,5 @@
+ [workspace]
+-members = ["crates/*", "docs", "tests", "tests/fuzz", "tests/wrapper"]
++members = ["crates/*", "docs", "tests", "tests/wrapper"]
+ default-members = ["crates/typst-cli"]
+ resolver = "2"
+ 
