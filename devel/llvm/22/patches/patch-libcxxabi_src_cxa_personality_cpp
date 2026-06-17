@@ -1,0 +1,15 @@
+- libcxxabi: declare __gnu_unwind_frame in cxa_personality
+  8119f1854948b50358bbfaea08f207f51970f06c
+
+Index: libcxxabi/src/cxa_personality.cpp
+--- libcxxabi/src/cxa_personality.cpp.orig
++++ libcxxabi/src/cxa_personality.cpp
+@@ -1125,6 +1125,8 @@ __gxx_personality_seh0(PEXCEPTION_RECORD ms_exc, void 
+ 
+ #else
+ 
++extern "C" _Unwind_Reason_Code __gnu_unwind_frame(_Unwind_Exception*, _Unwind_Context*);
++
+ // Helper function to unwind one frame.
+ // ARM EHABI 7.3 and 7.4: If the personality function returns _URC_CONTINUE_UNWIND, the
+ // personality routine should update the virtual register set (VRS) according to the
