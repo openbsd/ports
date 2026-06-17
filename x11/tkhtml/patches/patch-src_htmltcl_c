@@ -1,10 +1,11 @@
 fix implicit declaration compilation warning
 
---- src/htmltcl.c.orig	Sun Dec 12 10:19:53 2010
-+++ src/htmltcl.c	Sun Dec 12 10:20:10 2010
-@@ -41,6 +41,7 @@ static char const rcsid[] = "@(#) $Id: htmltcl.c,v 1.1
- #include <assert.h>
+Index: src/htmltcl.c
+--- src/htmltcl.c.orig
++++ src/htmltcl.c
+@@ -42,6 +42,7 @@ static char const rcsid[] = "@(#) $Id: htmltcl.c,v 1.2
  #include "html.h"
+ #include "restrack.h"
  #include "swproc.h"
 +#include "restrack.h"
  

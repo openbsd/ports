@@ -1,0 +1,23 @@
+Fix build with llvm22
+
+Index: src/htmlprop.c
+--- src/htmlprop.c.orig
++++ src/htmlprop.c
+@@ -1232,7 +1232,7 @@ propertyValuesSetColor(p, pCVar, pProp)
+     HtmlTree *pTree = p->pTree;
+ 
+     if (pProp->eType == CSS_CONST_INHERIT) {
+-        HtmlColor **pInherit = (HtmlColor **)getInheritPointer(p, pCVar);
++        HtmlColor **pInherit = (HtmlColor **)getInheritPointer(p, (unsigned char *)pCVar);
+         assert(pInherit);
+         cVal = *pInherit;
+         goto setcolor_out;
+@@ -1757,7 +1757,7 @@ propertyValuesSetSize(p, pIVal, p_mask, pProp, allow_m
+         case CSS_CONST_INHERIT:
+             if (allow_mask & SZ_INHERIT) {
+                 HtmlNode *pParent = p->pParent;
+-                int *pInherit = (int *)getInheritPointer(p, pIVal);
++                int *pInherit = (int *)getInheritPointer(p, (unsigned char *)pIVal);
+                 assert(pInherit);
+                 assert(pParent);
+ 

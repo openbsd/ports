@@ -1,0 +1,23 @@
+Fix build with llvm22
+
+Index: src/htmltable.c
+--- src/htmltable.c.orig
++++ src/htmltable.c
+@@ -1206,7 +1206,7 @@ rowGroupIterate(pTree, pNode, p)
+             sRow.node.iNode = -1;
+             sRow.nChild = jj - ii;
+             sRow.apChildren = &((HtmlElementNode *)pNode)->apChildren[ii];
+-            rowIterate(pTree, &sRow, p);
++            rowIterate(pTree, (HtmlNode *)&sRow, p);
+             assert(!sRow.pLayoutCache);
+             ii = jj - 1;
+         }
+@@ -1331,7 +1331,7 @@ tableIterate(pTree, pNode, xCallback, xRowCallback, pC
+             sRowGroup.node.iNode = -1;
+             sRowGroup.nChild = jj - ii;
+             sRowGroup.apChildren = &((HtmlElementNode *)pNode)->apChildren[ii];
+-            rowGroupIterate(pTree, &sRowGroup, &sRowContext);
++            rowGroupIterate(pTree, (HtmlNode *)&sRowGroup, &sRowContext);
+             assert(!sRowGroup.pLayoutCache);
+             ii = jj - 1;
+         }

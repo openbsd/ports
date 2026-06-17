@@ -1,0 +1,45 @@
+Fix build with llvm22
+
+Index: src/htmltree.c
+--- src/htmltree.c.orig
++++ src/htmltree.c
+@@ -3169,7 +3169,7 @@ fragmentAddElement(pTree, eType, zType, pAttributes, i
+             return;
+     }
+ 
+-    implicitCloseCount(pTree, pFragment->pCurrent, eType, &nClose);
++    implicitCloseCount(pTree, (HtmlNode *)pFragment->pCurrent, eType, &nClose);
+     for (ii = 0; ii < nClose; ii++) {
+         HtmlNode *pC = &pFragment->pCurrent->node;
+         HtmlNode *pParentC = HtmlNodeParent(pC);
+@@ -3199,7 +3199,7 @@ fragmentAddElement(pTree, eType, zType, pAttributes, i
+     pFragment->pCurrent = pElem;
+ 
+     if (HtmlMarkup(eType)->flags & HTMLTAG_EMPTY) {
+-        nodeHandlerCallbacks(pTree, pFragment->pCurrent);
++        nodeHandlerCallbacks(pTree, (HtmlNode *)pFragment->pCurrent);
+         pFragment->pCurrent = (HtmlElementNode *)HtmlNodeParent(pElem);
+     }
+     if (!pFragment->pCurrent) {
+@@ -3217,10 +3217,10 @@ fragmentAddClosingTag(pTree, eType, zType, iOffset)
+     int nClose;
+     int ii;
+     HtmlFragmentContext *p = pTree->pFragment;
+-    explicitCloseCount(p->pCurrent, eType, zType, &nClose);
++    explicitCloseCount((HtmlNode *)p->pCurrent, eType, zType, &nClose);
+     for (ii = 0; ii < nClose; ii++) {
+         assert(p->pCurrent);
+-        nodeHandlerCallbacks(pTree, p->pCurrent);
++        nodeHandlerCallbacks(pTree, (HtmlNode *)p->pCurrent);
+         p->pCurrent = (HtmlElementNode *)HtmlNodeParent(p->pCurrent);
+     }
+     if (!p->pCurrent) {
+@@ -3247,7 +3247,7 @@ HtmlParseFragment(pTree, zHtml)
+ 
+     while (sContext.pCurrent) {
+         HtmlNode *pParent = HtmlNodeParent(sContext.pCurrent); 
+-        nodeHandlerCallbacks(pTree, sContext.pCurrent);
++        nodeHandlerCallbacks(pTree, (HtmlNode *)sContext.pCurrent);
+         sContext.pCurrent = (HtmlElementNode *)pParent;
+     }
+ 

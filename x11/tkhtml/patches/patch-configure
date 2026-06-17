@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9545,7 +9545,7 @@ echo "${ECHO_T}$tcl_cv_ld_elf" >&6
+@@ -9579,7 +9579,7 @@ echo "${ECHO_T}$tcl_cv_ld_elf" >&6
  	    DL_LIBS=""
  	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
  	    LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}

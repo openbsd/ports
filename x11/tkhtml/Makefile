@@ -1,24 +1,34 @@
 COMMENT =	Tk widget to display HTML/CSS formatted contents
 
-REVISION =	2
-DISTNAME =	tkhtml3-alpha-16
-PKGNAME =	${DISTNAME:S/3-alpha-/-3a/}
+V =		17
+GH_ACCOUNT =	Geballin
+GH_PROJECT =	tkhtml3
+GH_TAGNAME =	Alpha-$V
+PKGNAME =	tkhtml-3a$V
+
 CATEGORIES =	x11
-HOMEPAGE = 	http://tkhtml.tcl.tk/
-SITES =		${HOMEPAGE}
+HOMEPAGE = 	https://github.com/Geballin/tkhtml3/
+MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
-MODULES =		x11/tk
-BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
-RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 WANTLIB +=		X11
 
-WRKDIST =		${WRKDIR}/htmlwidget
-USE_GMAKE =		Yes
+MODULES =		x11/tk
+MODTK_VERSION =		8.6
+BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
+
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
+			devel/tcllib
+
+FAKE_FLAGS =		PKG_DIR=tkhtml \
+			INSTALL_PROGRAM='$$(INSTALL_DATA)'
+
 SEPARATE_BUILD =	Yes
+USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
+
 CONFIGURE_ARGS =	--libdir=${MODTCL_TCLDIR} \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--with-tclinclude=${MODTCL_INCDIR} \
@@ -26,11 +36,14 @@ CONFIGURE_ARGS =	--libdir=${MODTCL_TCLDIR} \
 			--with-tkinclude=${MODTK_INCDIR} \
 			--datadir=${PREFIX}/share/examples
 
-FAKE_FLAGS =		PKG_DIR=tkhtml INSTALL_PROGRAM='$$(INSTALL_DATA)'
-TEST_TARGET =	test
-TEST_IS_INTERACTIVE = X11
-SUBST_VARS =	VER
+TEST_TARGET =		test
+TEST_IS_INTERACTIVE =	X11
 
-VER =		30
+SUBST_VARS =		VER
+VER =			30
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/hv/combobox.tcl \
+	    ${DESTDIR}${MODTCL_TCLDIR}/tkhtml/
 
 .include <bsd.port.mk>
