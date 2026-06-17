@@ -27,7 +27,8 @@ SHA256 (go_modules/github.com/!plakar!korp/go-human2duration/@v/v0.1.6.zip) = mg
 SHA256 (go_modules/github.com/!plakar!korp/integration-grpc/@v/v1.1.0.mod) = OTPISmuip04gb2yFmhRgX8DAGLaLcTk8QBpqDhx90gg=
 SHA256 (go_modules/github.com/!plakar!korp/integration-grpc/@v/v1.1.0.zip) = k6rzfWVRl7ZNyiUuEYgW7KJSXUmoBEct2Fws+B+nNOU=
 SHA256 (go_modules/github.com/!plakar!korp/integrations/fs/@v/v1.1.0.mod) = ahFjHbrf6W9Q8Tb/MC+CaZcJbZeHQl6kq/9wuMwZvM0=
-SHA256 (go_modules/github.com/!plakar!korp/integrations/fs/@v/v1.1.0.zip) = ucR8ta0Kvln0WEDH65FQUvw1k/HZNcICSkEr8yJC8V4=
+SHA256 (go_modules/github.com/!plakar!korp/integrations/fs/@v/v1.1.2.mod) = mMFdphv/UwcZLIrERzeUzgUU1JpEbxm3Ie8ZxW3fWis=
+SHA256 (go_modules/github.com/!plakar!korp/integrations/fs/@v/v1.1.2.zip) = 4fPJKhEnwbuU+Z7M4XgQjfYP5oHVTvSoTpnXd3leEFo=
 SHA256 (go_modules/github.com/!plakar!korp/integrations/http/@v/v1.1.0.mod) = nNEIInDehyQGF0GhBPNTxQiorVtpv+uvD0EDJ7j6ZK8=
 SHA256 (go_modules/github.com/!plakar!korp/integrations/http/@v/v1.1.0.zip) = jub4RNd7sCVXOj5gXLnWdPoNJZllLX1NJjxaazgoPYk=
 SHA256 (go_modules/github.com/!plakar!korp/integrations/ptar/@v/v1.1.0.mod) = cq9i5tVvZbSaqX1FUnA8WXVPXwwK7UGiP4XT55Hhoq0=
@@ -37,7 +38,9 @@ SHA256 (go_modules/github.com/!plakar!korp/integrations/stdio/@v/v1.1.0.zip) = W
 SHA256 (go_modules/github.com/!plakar!korp/integrations/tar/@v/v1.1.0.mod) = o28/v81WV0KUhc53vblBQ2UbNXVYMnFvttfZBchk+OE=
 SHA256 (go_modules/github.com/!plakar!korp/integrations/tar/@v/v1.1.0.zip) = ovpZJK9v6GMgplBJF6zXfyndabEexNoHjDhYHvyQKZc=
 SHA256 (go_modules/github.com/!plakar!korp/kloset/@v/v1.1.0.mod) = cZJ7e6aSpMcqufRLlH9m6WLmpxQm3KNsdS4fvuTH2cQ=
-SHA256 (go_modules/github.com/!plakar!korp/kloset/@v/v1.1.0.zip) = EOzUzXF43TDFUSYJ5V3S5NvEwH4brwLDTNEwSInq9Xo=
+SHA256 (go_modules/github.com/!plakar!korp/kloset/@v/v1.1.1.mod) = cZJ7e6aSpMcqufRLlH9m6WLmpxQm3KNsdS4fvuTH2cQ=
+SHA256 (go_modules/github.com/!plakar!korp/kloset/@v/v1.1.2.mod) = cZJ7e6aSpMcqufRLlH9m6WLmpxQm3KNsdS4fvuTH2cQ=
+SHA256 (go_modules/github.com/!plakar!korp/kloset/@v/v1.1.2.zip) = 0oTIvnYe+gd/+MGZrLbNHKh0ml1Gcojqh23rZKxrxXY=
 SHA256 (go_modules/github.com/!plakar!korp/pkg/@v/v1.1.0.mod) = 56eWRyxZcVJy2g5E0bPPySrYi1Rxc0F02AmV3ZR1n5o=
 SHA256 (go_modules/github.com/!plakar!korp/pkg/@v/v1.1.0.zip) = CzpXurJBJ9cc2DO7bZfA/WbCpJt06rRWZQnJD/EjCDQ=
 SHA256 (go_modules/github.com/!proton!mail/go-crypto/@v/v1.1.6.mod) = hnHY2ZjDcE7hdQ2rbfqN81+xfOoiCvtir8MQwnNQjak=
@@ -779,7 +782,7 @@ SHA256 (go_modules/modernc.org/token/@v/v1.1.0.mod) = evOzXO1S6tSw7Q4iEB2VvABh0g
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.zip) = Pvqknp+xBWnangnnhfojDNXA9Q/PYF87VDnfzWFXfFg=
 SHA256 (go_modules/zombiezen.com/go/sqlite/@v/v0.12.0.mod) = aEj1p50kLesr2ER3zjE1mC9ot1ygh8q5nLsD/ipmVuE=
 SHA256 (go_modules/zombiezen.com/go/sqlite/@v/v0.12.0.zip) = yFHj9iOdcLLYVQG5TbpKZvSuUxj8O3cou+UMMuUAcPo=
-SHA256 (plakar-v1.1.0.zip) = ut+BLl6bqOwWOdyXT9qLLovgYrNjTdSvRDuzfTfE1bg=
+SHA256 (plakar-v1.1.3.zip) = gPhkP5m1nLbZf5wnEt7NFTRBVzOfjbEz1nBY44CLACw=
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.mod) = 96
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.zip) = 239588
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.9.0.mod) = 127
@@ -809,7 +812,8 @@ SIZE (go_modules/github.com/!plakar!korp/go-human2duration/@v/v0.1.6.zip) = 5009
 SIZE (go_modules/github.com/!plakar!korp/integration-grpc/@v/v1.1.0.mod) = 1366
 SIZE (go_modules/github.com/!plakar!korp/integration-grpc/@v/v1.1.0.zip) = 56169
 SIZE (go_modules/github.com/!plakar!korp/integrations/fs/@v/v1.1.0.mod) = 1952
-SIZE (go_modules/github.com/!plakar!korp/integrations/fs/@v/v1.1.0.zip) = 1552891
+SIZE (go_modules/github.com/!plakar!korp/integrations/fs/@v/v1.1.2.mod) = 1952
+SIZE (go_modules/github.com/!plakar!korp/integrations/fs/@v/v1.1.2.zip) = 1553000
 SIZE (go_modules/github.com/!plakar!korp/integrations/http/@v/v1.1.0.mod) = 1634
 SIZE (go_modules/github.com/!plakar!korp/integrations/http/@v/v1.1.0.zip) = 16292
 SIZE (go_modules/github.com/!plakar!korp/integrations/ptar/@v/v1.1.0.mod) = 1511
@@ -819,7 +823,9 @@ SIZE (go_modules/github.com/!plakar!korp/integrations/stdio/@v/v1.1.0.zip) = 110
 SIZE (go_modules/github.com/!plakar!korp/integrations/tar/@v/v1.1.0.mod) = 1197
 SIZE (go_modules/github.com/!plakar!korp/integrations/tar/@v/v1.1.0.zip) = 11878
 SIZE (go_modules/github.com/!plakar!korp/kloset/@v/v1.1.0.mod) = 3282
-SIZE (go_modules/github.com/!plakar!korp/kloset/@v/v1.1.0.zip) = 378435
+SIZE (go_modules/github.com/!plakar!korp/kloset/@v/v1.1.1.mod) = 3282
+SIZE (go_modules/github.com/!plakar!korp/kloset/@v/v1.1.2.mod) = 3282
+SIZE (go_modules/github.com/!plakar!korp/kloset/@v/v1.1.2.zip) = 378589
 SIZE (go_modules/github.com/!plakar!korp/pkg/@v/v1.1.0.mod) = 1789
 SIZE (go_modules/github.com/!plakar!korp/pkg/@v/v1.1.0.zip) = 25258
 SIZE (go_modules/github.com/!proton!mail/go-crypto/@v/v1.1.6.mod) = 172
@@ -1561,4 +1567,4 @@ SIZE (go_modules/modernc.org/token/@v/v1.1.0.mod) = 25
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.zip) = 6860
 SIZE (go_modules/zombiezen.com/go/sqlite/@v/v0.12.0.mod) = 315
 SIZE (go_modules/zombiezen.com/go/sqlite/@v/v0.12.0.zip) = 117366
-SIZE (plakar-v1.1.0.zip) = 6465572
+SIZE (plakar-v1.1.3.zip) = 6472745

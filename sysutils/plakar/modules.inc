@@ -13,12 +13,12 @@ MODGO_MODULES =	\
 	github.com/!plakar!korp/go-cdc-chunkers						 v1.0.3 \
 	github.com/!plakar!korp/go-human2duration					 v0.1.6 \
 	github.com/!plakar!korp/integration-grpc					 v1.1.0 \
-	github.com/!plakar!korp/integrations/fs						 v1.1.0 \
+	github.com/!plakar!korp/integrations/fs						 v1.1.2 \
 	github.com/!plakar!korp/integrations/http					 v1.1.0 \
 	github.com/!plakar!korp/integrations/ptar					 v1.1.0 \
 	github.com/!plakar!korp/integrations/stdio					 v1.1.0 \
 	github.com/!plakar!korp/integrations/tar					 v1.1.0 \
-	github.com/!plakar!korp/kloset							 v1.1.0 \
+	github.com/!plakar!korp/kloset							 v1.1.2 \
 	github.com/!plakar!korp/pkg							 v1.1.0 \
 	github.com/!proton!mail/go-crypto						 v1.1.6 \
 	github.com/!radu!berinde/axisds							 v0.1.0 \
@@ -279,6 +279,9 @@ MODGO_MODULES =	\
 	zombiezen.com/go/sqlite								 v0.12.0
 
 MODGO_MODFILES =	\
+	github.com/!plakar!korp/integrations/fs			 v1.1.0 \
+	github.com/!plakar!korp/kloset				 v1.1.0 \
+	github.com/!plakar!korp/kloset				 v1.1.1 \
 	github.com/!radu!berinde/btreemap			 v0.0.0-20250419174037-3d62b7205d54 \
 	github.com/!roaring!bitmap/roaring			 v0.4.7 \
 	github.com/anacrolix/envpprof				 v0.0.0-20180404065416-323002cec2fa \
