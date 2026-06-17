@@ -1,10 +1,22 @@
 Honor DESTDIR
 https://github.com/encukou/py3c/pull/29
 
+Remove dependency on Python 2 for the tests
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -42,12 +42,12 @@ py3c.pc: py3c.pc.in $(includedir)
+@@ -16,9 +16,7 @@ doc:
+ 	cd doc && $(MAKE) html
+ 
+ test:
+-	$(MAKE) test-python2
+ 	$(MAKE) test-python3
+-	$(MAKE) test-python2-cpp
+ 	$(MAKE) test-python3-cpp
+ 
+ # TODO: A better way to build & use one-off extensions?
+@@ -42,12 +40,12 @@ py3c.pc: py3c.pc.in $(includedir)
  	sed -e's:@includedir@:$(realpath $(includedir)):' $< > $@
  
  install: py3c.pc

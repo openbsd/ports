@@ -3,7 +3,7 @@ COMMENT =	python 2/3 compatibility layer for C extensions
 GH_ACCOUNT =	encukou
 GH_PROJECT =	py3c
 GH_TAGNAME =	v1.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -15,11 +15,9 @@ MAINTAINER =	Stefan Sperling <stsp@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
 MODPY_BUILDDEP = No
 MODPY_RUNDEP =	No
-TEST_DEPENDS =	lang/python/${MODPY_DEFAULT_VERSION_2} \
-		lang/python/3
 
 CONFIGURE_STYLE =	none
 
