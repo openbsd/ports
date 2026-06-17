@@ -1,9 +1,8 @@
 COMMENT =		python bindings for Gammu
 
-MODPY_DISTV =		2.12
-DISTNAME =		python-gammu-${MODPY_DISTV}
-PKGNAME =		${DISTNAME:S/python/py/}
-REVISION =		0
+MODPY_DISTV =		3.2.5
+DISTNAME =		python_gammu-${MODPY_DISTV}
+PKGNAME =		${DISTNAME:S/python_/py-/}
 
 CATEGORIES =		comms
 
@@ -16,17 +15,16 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += Gammu gsmsd m pthread ${MODPY_WANTLIB}
 
-SITES =			https://dl.cihar.com/python-gammu/
-
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
+MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
+# This test crashes
+MODPY_PYTEST_ARGS =	-v --ignore test/test_smsd.py
+MODPY_TEST_LINK_SO =	Yes
+
 LIB_DEPENDS =		comms/gammu
 
 SEPARATE_BUILD = 	Yes
-
-MODPY_SETUPTOOLS = 	Yes
-MODPY_PYTEST =		Yes
-
-TEST_IS_INTERACTIVE =	Yes
 
 .include <bsd.port.mk>
