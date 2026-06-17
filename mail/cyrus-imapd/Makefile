@@ -4,6 +4,7 @@ COMMENT=		Cyrus IMAP server
 
 V=			3.13.5
 DISTNAME=		cyrus-imapd-${V}
+REVISION=		0
 
 SHARED_LIBS +=  cyrus_min            0.0      # unknown
 SHARED_LIBS +=  cyrus                0.0      # unknown
@@ -19,10 +20,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # CMU - see COPYING file in package
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlienc c com_err
-WANTLIB += crypto execinfo ical icalvcard iconv icudata icui18n
-WANTLIB += icuuc jansson m nghttp2 pcre2-8 pcre2-posix perl sasl2
-WANTLIB += shp sqlite3 srs2 ssl uuid wslay xapian xml2 z zstd
+WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlienc c chardet
+WANTLIB += com_err crypto execinfo ical icalvcard iconv icudata
+WANTLIB += icui18n icuuc jansson m nghttp2 pcre2-8 pcre2-posix
+WANTLIB += perl sasl2 shp sqlite3 srs2 ssl uuid wslay xapian xml2
+WANTLIB += z zstd
 
 GH_ACCOUNT=		cyrusimap
 GH_PROJECT=		cyrus-imapd
@@ -57,6 +59,7 @@ LIB_DEPENDS=		archivers/brotli \
 			security/cyrus-sasl2 \
 			sysutils/e2fsprogs \
 			textproc/icu4c \
+			textproc/libchardet \
 			textproc/libical \
 			textproc/libxml \
 			www/nghttp2 \
@@ -73,7 +76,6 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
 			--with-sasl=${LOCALBASE} \
 			--with-cyrus-user=_cyrus \
 			--with-syslogfacility=MAIL \
-			--without-chardet \
 			--without-sphinx-build \
 			--disable-gssapi \
 			--enable-autocreate \
