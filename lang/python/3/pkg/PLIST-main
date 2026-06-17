@@ -12,7 +12,7 @@
 @conflict glade-*
 @conflict hotdoc-*
 @conflict py3-bsddb3-*
-@conflict py2-backports-zstd-*
+@conflict py3-backports-zstd-*
 @pkgpath devel/glade
 @pkgpath textproc/hotdoc
 @pkgpath databases/py-bsddb3

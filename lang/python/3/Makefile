@@ -4,6 +4,7 @@
 # Python itself.
 
 FULL_VERSION =		3.14.5
+REVISION-main =		0
 SHARED_LIBS =		python3.14 0.0
 VERSION_SPEC =		>=3.14
 PORTROACH =		limit:^3\.14
