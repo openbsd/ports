@@ -13,6 +13,10 @@ MAINTAINER =	Renaud Allard <renaud@allard.it>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+# Uses nettle
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB+=	c curses ev gnutls llhttp lz4 m nettle oath pam protobuf-c
 WANTLIB+=	radcli readline talloc
 
