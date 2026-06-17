@@ -1,7 +1,7 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -307,17 +307,6 @@ target_sources(dunelegacy
+@@ -313,17 +313,6 @@ target_sources(dunelegacy
  # C source files
  target_sources(dunelegacy
      PRIVATE

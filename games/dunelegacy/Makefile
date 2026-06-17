@@ -1,6 +1,7 @@
 COMMENT =		improved opensource version of Dune 2
 
-DISTNAME =		dunelegacy-0.98.7.2
+# Newer version depends on miniupnpc->=2.2.8
+DISTNAME =		dunelegacy-0.99.2
 
 CATEGORIES =		games x11
 
@@ -29,7 +30,8 @@ RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 TEST_DEPENDS = 		devel/cppunit
 
-CONFIGURE_ARGS += 	-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lenet -lexecinfo"
+CONFIGURE_ARGS += 	-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${LOCALBASE}/lib \
+				-lenet -lexecinfo"
 CXXFLAGS += 		-DDUNELEGACY_DATADIR=\\\"${PREFIX}/share/DuneLegacy\\\"
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
