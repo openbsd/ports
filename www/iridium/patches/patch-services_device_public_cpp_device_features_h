@@ -1,7 +1,7 @@
 Index: services/device/public/cpp/device_features.h
 --- services/device/public/cpp/device_features.h.orig
 +++ services/device/public/cpp/device_features.h
-@@ -59,11 +59,11 @@ extern const DEVICE_FEATURES_EXPORT
+@@ -60,11 +60,11 @@ extern const DEVICE_FEATURES_EXPORT
  
  DEVICE_FEATURES_EXPORT bool IsOsLevelGeolocationPermissionSupportEnabled();
  
