@@ -4,7 +4,7 @@ COMMENT=		Cyrus IMAP server
 
 V=			3.13.5
 DISTNAME=		cyrus-imapd-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  cyrus_min            0.0      # unknown
 SHARED_LIBS +=  cyrus                0.0      # unknown
@@ -30,6 +30,9 @@ GH_ACCOUNT=		cyrusimap
 GH_PROJECT=		cyrus-imapd
 GH_TAGNAME=		cyrus-imapd-${V}
 #SITES=			https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-${V}/
+
+FLAVORS=		clamav
+FLAVOR?=
 
 COMPILER=		base-clang ports-gcc base-gcc
 USE_GMAKE=		Yes
@@ -90,8 +93,12 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
 # needed for jmap support
 CONFIGURE_ARGS +=	--enable-xapian
 
-# FLAVOR?
+.if ${FLAVOR:Mclamav}
+WANTLIB += bz2 clamav json-c mspack util
+LIB_DEPENDS +=		security/clamav
+.else
 CONFIGURE_ARGS +=	--without-clamav
+.endif
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
