@@ -1,3 +1,5 @@
+BROKEN =	fails to build after move to LLVM 22
+
 COMMENT =	placement tool used in VLSI design
 
 GH_ACCOUNT =	rubund

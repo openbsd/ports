@@ -1,3 +1,5 @@
+BROKEN=		fails to build after move to LLVM 22
+
 COMMENT=	interactive electronics designing software
 
 GH_ACCOUNT=	fritzing

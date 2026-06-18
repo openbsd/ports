@@ -1,3 +1,5 @@
+BROKEN =	fails to build after move to LLVM 22
+
 ONLY_FOR_ARCHS =amd64 arm64
 
 COMMENT =	simple, fast, safe, compiled language

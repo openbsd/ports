@@ -1,3 +1,5 @@
+BROKEN=		fails to build after move to LLVM 22
+
 COMMENT=	space combat and trading game in the style of Elite
 
 VERSION=	1.73.4

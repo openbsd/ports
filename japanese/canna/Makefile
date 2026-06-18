@@ -1,3 +1,5 @@
+BROKEN=		fails to build after move to LLVM 22
+
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
 COMMENT-server=	canna (kana-kanji converter) server

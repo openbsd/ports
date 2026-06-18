@@ -1,3 +1,5 @@
+BROKEN =	fails to build after move to LLVM 22
+
 COMMENT =	GNU Simula compiler
 DISTNAME =	cim-5.1
 REVISION =	1

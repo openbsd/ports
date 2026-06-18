@@ -1,3 +1,5 @@
+BROKEN =	fails to build after move to LLVM 22
+
 COMMENT =	interactive system for VLSI circuit layouts
 
 DISTNAME =	magic-8.3.393

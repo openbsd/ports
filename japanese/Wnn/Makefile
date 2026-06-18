@@ -1,3 +1,5 @@
+BROKEN =		fails to build after move to LLVM 22
+
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
 COMMENT-ko = 		Korean input method
