@@ -1,6 +1,7 @@
 COMMENT =	interact with OpenVox Server's CA
 
 DISTNAME =	openvoxserver-ca-3.2.0
+REVISION =	0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/OpenVoxProject/openvoxserver-ca/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>

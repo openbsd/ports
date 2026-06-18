@@ -4,6 +4,8 @@ COMMENT=	vi clone with many additional features
 # if there are new languages for manpages, "make fix-plist" will add the
 # ${GUI_ONLY} markers as needed for gui-only tools.
 V=		9.2.0663
+# keep package version above 7.9-stable
+REVISION=	0
 
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
@@ -22,7 +24,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # Uganda, see runtime/doc/uganda.txt / https://www.kuwasha.net/
 PERMIT_PACKAGE=	Yes
 
-# ruby 3.2 libraries need ports-gcc
+# ruby libraries need ports-gcc if base does not use clang
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 

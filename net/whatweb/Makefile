@@ -3,6 +3,7 @@ COMMENT=		web scanner
 GH_TAGNAME=		v0.6.4
 GH_PROJECT=		WhatWeb
 GH_ACCOUNT=		urbanadventurer
+REVISION=		0
 
 CATEGORIES=		net www
 

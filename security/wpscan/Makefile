@@ -1,5 +1,6 @@
 COMMENT =	WordPress security scanner
 
+REVISION =	0
 DISTNAME =	wpscan-4.0.0
 CATEGORIES =	security
 

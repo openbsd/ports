@@ -1,5 +1,5 @@
 VERSION =		0.13
-REVISION =		7
+REVISION =		8
 
 COMMENT =		interactive shell for git
 
@@ -14,7 +14,7 @@ MAINTAINER =		Mike Burns <mike+openbsd@mike-burns.com>
 # License: BSD
 PERMIT_PACKAGE =	Yes
 
-# Ruby 3.2 libs need ports-gcc
+# Ruby libs need ports-gcc if clang is not available
 COMPILER =		base-clang ports-gcc
 
 WANTLIB +=		ereadline curses ${MODRUBY_WANTLIB}

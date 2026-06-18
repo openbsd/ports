@@ -1,3 +1,4 @@
+REVISION =		0
 VERSION =		8.28.0
 
 RUN_DEPENDS =		converters/ruby-multi_json,${MODRUBY_FLAVOR}>=1.13,<2 \

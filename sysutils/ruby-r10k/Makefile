@@ -1,5 +1,6 @@
 COMMENT =	Puppet module management
 
+REVISION =	0
 DISTNAME =	r10k-5.0.3
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/r10k

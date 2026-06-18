@@ -1,6 +1,6 @@
 COMMENT =	data backend for Hiera to return whole files
 
-REVISION =	3
+REVISION =	4
 DISTNAME =	hiera-file-1.1.1
 CATEGORIES =	databases
 

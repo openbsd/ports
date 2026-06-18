@@ -3,6 +3,7 @@
 
 COMMENT =		system inventory tool
 DISTNAME =		openfact-5.6.1
+REVISION =		0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://github.com/OpenVoxProject/openfact/

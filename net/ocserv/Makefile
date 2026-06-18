@@ -2,6 +2,7 @@ COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
 VERSION = 	1.4.0
 DISTNAME=	ocserv-${VERSION}
+REVISION=	0
 EXTRACT_SUFX=	.tar.gz
 
 CATEGORIES=	net

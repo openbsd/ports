@@ -1,6 +1,6 @@
 COMMENT =	gpg encryptor for the hiera eyaml backend
 
-REVISION =	0
+REVISION =	1
 DISTNAME =	hiera-eyaml-gpg-0.7.4
 CATEGORIES =	databases
 

@@ -1,5 +1,6 @@
 COMMENT =	Hiera backend for decrypting encrypted yaml properties
 
+REVISION =	0
 DISTNAME =	hiera-eyaml-5.0.1
 CATEGORIES =	databases
 

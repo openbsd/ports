@@ -13,7 +13,7 @@ PKGNAME-ruby =		ruby-libmarisa-${V}
 
 REVISION-main =		4
 REVISION-python =	8
-REVISION-ruby =		6
+REVISION-ruby =		7
 REVISION-perl =		2
 
 GH_ACCOUNT =	s-yata
