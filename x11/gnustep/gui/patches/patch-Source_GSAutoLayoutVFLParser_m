@@ -1,0 +1,36 @@
+llvm22 fallout fix i386
+Index: Source/GSAutoLayoutVFLParser.m
+--- Source/GSAutoLayoutVFLParser.m.orig
++++ Source/GSAutoLayoutVFLParser.m
+@@ -554,9 +554,14 @@ NSInteger const GS_DEFAULT_SUPERVIEW_SPACING = 20;
+ 
+   CGFloat parsedConstant;
+   NSView *predicatedView = nil;
+-  BOOL scanConstantResult = [_scanner scanDouble: &parsedConstant];
+-  if (!scanConstantResult)
++  double tempParsedConstant;
++  BOOL scanConstantResult = [_scanner scanDouble: &tempParsedConstant];
++  if (scanConstantResult)
+     {
++      parsedConstant = (CGFloat)tempParsedConstant;
++    }
++  else
++    {
+       NSString *identiferName = [self parseIdentifier];
+       if (![self isValidIdentifier: identiferName])
+         {
+@@ -651,11 +656,11 @@ NSInteger const GS_DEFAULT_SUPERVIEW_SPACING = 20;
+ 
+ - (NSNumber *) parseConstant
+ {
+-  CGFloat constant;
+-  BOOL scanConstantResult = [_scanner scanDouble: &constant];
++  double tempConstant;
++  BOOL scanConstantResult = [_scanner scanDouble: &tempConstant];
+   if (scanConstantResult)
+     {
+-      return [NSNumber numberWithFloat: constant];
++      return [NSNumber numberWithDouble: tempConstant];
+     }
+ 
+   NSString *metricName = [self parseIdentifier];
