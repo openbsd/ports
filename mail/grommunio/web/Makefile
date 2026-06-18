@@ -1,6 +1,6 @@
 COMMENT=	web user interface for grommunio
 
-V=		3.17
+V=		3.18
 DISTNAME=	grommunio-web-${V}
 
 GH_ACCOUNT=	grommunio
