@@ -1,7 +1,6 @@
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		5.9
-REVISION=	1
+V=		5.9.1
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
@@ -17,10 +16,10 @@ EXTRACT_SUFX=	.tar.xz
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c curses iconv m pcre util
+WANTLIB=	c curses iconv m pcre2-8 util
 
 LIB_DEPENDS=	converters/libiconv \
-		devel/pcre
+		devel/pcre2
 
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -2460,6 +2460,37 @@ dnl ---------------
+@@ -2243,6 +2243,37 @@ dnl ---------------
  zsh_CHECK_SOCKLEN_T
  
  dnl ---------------
