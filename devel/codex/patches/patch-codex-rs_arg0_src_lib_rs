@@ -1,7 +1,7 @@
 Index: codex-rs/arg0/src/lib.rs
 --- codex-rs/arg0/src/lib.rs.orig
 +++ codex-rs/arg0/src/lib.rs
-@@ -219,6 +219,9 @@ where
+@@ -225,6 +225,9 @@ where
              let runtime = build_runtime()?;
              runtime.block_on(run_main_with_arg0_guard(
                  path_entry_guard,
@@ -11,7 +11,7 @@ Index: codex-rs/arg0/src/lib.rs
                  current_exe,
                  main_fn,
              ))
-@@ -374,6 +377,9 @@ fn prepare_path_entry_for_codex_aliases(
+@@ -380,6 +383,9 @@ fn prepare_path_entry_for_codex_aliases(
          #[cfg(unix)]
          EXECVE_WRAPPER_ARG0,
      ] {
@@ -21,7 +21,7 @@ Index: codex-rs/arg0/src/lib.rs
          let exe = std::env::current_exe()?;
  
          #[cfg(unix)]
-@@ -400,7 +406,16 @@ fn prepare_path_entry_for_codex_aliases(
+@@ -406,7 +412,16 @@ fn prepare_path_entry_for_codex_aliases(
      let updated_path_env_var = path_env_with_entry(path, existing_path);
  
      let paths = Arg0DispatchPaths {

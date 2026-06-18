@@ -1,12 +1,18 @@
 ONLY_FOR_ARCHS =	amd64 aarch64
 
+# aws-lc-sys has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+.if ${MACHINE_ARCH} == "amd64"
+USE_NOEXECONLY =	Yes
+.endif
+
 COMMENT =		OpenAI terminal-based coding agent
 
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.140.0
+V =			0.141.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
