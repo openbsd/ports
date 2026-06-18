@@ -11,11 +11,14 @@ Index: app/main.c
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -570,8 +571,14 @@ main (int    argc,
+@@ -570,11 +571,17 @@ main (int    argc,
  #endif
    gint            retval;
    gint            i;
 +  struct          rlimit limit;
+ #if defined(ENABLE_RELOCATABLE_RESOURCES) && defined(__APPLE__)
+   gint            newargc;
+ #endif
  
    gimp_attach_console_window ();
 +
