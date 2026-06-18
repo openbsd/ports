@@ -11,6 +11,7 @@ include/gpgme++/engineinfo.h
 include/gpgme++/error.h
 include/gpgme++/eventloopinteractor.h
 include/gpgme++/exception.h
+include/gpgme++/flags.h
 include/gpgme++/global.h
 include/gpgme++/gpgaddexistingsubkeyeditinteractor.h
 include/gpgme++/gpgadduserideditinteractor.h
