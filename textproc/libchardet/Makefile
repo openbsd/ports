@@ -3,13 +3,13 @@ COMMENT=		Mozilla's universal character set detector C/C++ API
 V=			1.0.6
 DISTNAME=		libchardet-${V}
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 SHARED_LIBS +=  chardet              0.0      # 1.0
 
 CATEGORIES=		textproc
 
-# https preferred for HOMEPAGE
-#HOMEPAGE =	???	URL
+HOMEPAGE=		https://github.com/Joungkyun/libchardet
 
 # MPL-1.1
 PERMIT_PACKAGE=		Yes
