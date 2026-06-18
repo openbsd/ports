@@ -8,11 +8,7 @@ COMMENT-pgsql=	postgresql monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
-# XXX mixture of rc and pl in PKGNAMEs caused version ordering issues
-# (see pkg_check-version). for 3.0.0rc series append pl0. for 3.0.0
-# final release move to EPOCH=0.
-# series) append pl0 - for 3.0.0 release move to EPOCH=0
-V=		3.0.0rc4pl0
+V=		3.0.0
 SITES=		https://www.monitoring-plugins.org/download/
 
 DISTNAME=	monitoring-plugins-${V:S/rc/-rc/:S/pl0//}
@@ -25,6 +21,8 @@ PKGNAME-mysql=	monitoring-plugins-mysql-$V
 PKGNAME-pgsql=	monitoring-plugins-pgsql-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
+
+EPOCH=		0
 
 CATEGORIES=	net
 
