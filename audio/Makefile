@@ -223,10 +223,8 @@
      SUBDIR += rnnoise
      SUBDIR += rtunes
      SUBDIR += rubberband
-     SUBDIR += ruby-taglib,ruby33
      SUBDIR += ruby-taglib,ruby34
      SUBDIR += ruby-taglib,ruby40
-     SUBDIR += ruby-vorbis_comment,ruby33
      SUBDIR += ruby-vorbis_comment,ruby34
      SUBDIR += ruby-vorbis_comment,ruby40
      SUBDIR += s-cdda
