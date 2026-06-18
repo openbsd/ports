@@ -1,0 +1,15 @@
+Unbreak with llvm22.
+
+
+Index: generic/tokenize.c
+--- generic/tokenize.c.orig
++++ generic/tokenize.c
+@@ -533,7 +533,7 @@ int handle_substitutions(Tcl_Interp *interp, const cha
+ 		result = array_to_utf8(interp, replacementArray, lengthArray, nextVarIndex, bufferPtr);
+ 
+   cleanup_and_exit:
+-	if(lengthArray) ckfree(lengthArray);
++	if(lengthArray) ckfree((char *)lengthArray);
+ 
+ 	if(result == TCL_OK) {
+ 		*newSqlPtr = newSql;

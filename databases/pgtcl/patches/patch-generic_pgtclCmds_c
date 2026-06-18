@@ -1,0 +1,17 @@
+Unbreak with llvm22.
+
+
+Index: generic/pgtclCmds.c
+--- generic/pgtclCmds.c.orig
++++ generic/pgtclCmds.c
+@@ -572,8 +572,8 @@ int build_param_array(Tcl_Interp *interp, int nParams,
+ 	}
+ 
+ 	if (array_to_utf8(interp, paramValues, paramLengths, nParams, bufferPtr) != TCL_OK) {
+-		ckfree(paramValues);
+-		ckfree(paramLengths);
++		ckfree((void *)paramValues);
++		ckfree((void *)paramLengths);
+ 		return TCL_ERROR;
+ 	}
+ 
