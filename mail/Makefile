@@ -26,6 +26,7 @@
      SUBDIR += courier-unicode
      SUBDIR += cucipop
      SUBDIR += cyrus-imapd
+     SUBDIR += cyrus-imapd,clamav
      SUBDIR += dcc
      SUBDIR += dkimproxy
      SUBDIR += dma
