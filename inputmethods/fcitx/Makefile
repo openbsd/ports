@@ -2,7 +2,7 @@ COMMENT =	flexible input method framework
 
 DISTNAME =	fcitx5-5.1.11
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  Fcitx5Config			0.0 # 0.0
 SHARED_LIBS +=  Fcitx5Core			1.1 # 0.0
@@ -29,10 +29,10 @@ DISTFILES.data= en_dict-20121020.tar.gz
 
 EXTRACT_SUFX =	.tar.zst
 
-MODULES =	devel/kf5
-MODQT5_DEPS =	No
+MODULES =	devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/gettext,-tools \
 			devel/iso-codes \
 			devel/fmt
 

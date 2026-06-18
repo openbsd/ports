@@ -2,7 +2,7 @@ COMMENT =	addons related to Chinese with IME bundled inside fcitx
 
 DISTNAME =	fcitx5-chinese-addons-5.1.7
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	inputmethods chinese
 
@@ -23,9 +23,10 @@ SITES.py =		https://download.fcitx-im.org/data/
 DISTFILES.py +=		py_table-20121124.tar.gz
 DISTFILES.py +=		py_stroke-20121124.tar.gz
 
-MODULES =		devel/kf5
+MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/gettext,-tools \
 			inputmethods/fcitx-lua \
 			devel/fmt \
 			devel/iso-codes

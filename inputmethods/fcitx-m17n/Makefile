@@ -2,7 +2,7 @@ COMMENT =	m17n wrapper for fcitx5
 
 DISTNAME =	fcitx5-m17n-5.1.2
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	inputmethods
 
@@ -17,10 +17,10 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Utils
 WANTLIB += m m17n m17n-core m17n-gui
 
-MODULES =       devel/kf5
-MODQT5_DEPS =	No
+MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/gettext,-tools \
 			inputmethods/fcitx \
 			devel/fmt \
 			devel/iso-codes

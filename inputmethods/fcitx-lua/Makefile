@@ -2,7 +2,7 @@ COMMENT =	Lua support for fcitx5
 
 DISTNAME =	fcitx5-lua-5.0.13
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	inputmethods
 
@@ -17,10 +17,10 @@ EXTRACT_SUFX =	.tar.zst
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Utils
 WANTLIB += m
 
-MODULES =       devel/kf5
-MODQT5_DEPS =	No
+MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/gettext,-tools \
 			lang/lua/5.3 \
 			devel/iso-codes
 

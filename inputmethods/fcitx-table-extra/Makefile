@@ -2,7 +2,7 @@ COMMENT =	extra table for Fcitx5
 
 DISTNAME =	fcitx5-table-extra-5.1.6
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	inputmethods chinese
 
@@ -14,9 +14,10 @@ PERMIT_PACKAGE=	Yes
 SITES =			https://download.fcitx-im.org/fcitx5/fcitx5-table-extra/
 EXTRACT_SUFX =		.tar.zst
 
-MODULES =		devel/kf5
+MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/gettext,-tools \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \

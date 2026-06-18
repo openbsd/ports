@@ -2,7 +2,7 @@ COMMENT =	anthy wrapper for fcitx5
 
 DISTNAME =	fcitx5-anthy-5.1.5
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	inputmethods japanese
 
@@ -17,10 +17,10 @@ PERMIT_PACKAGE=	Yes
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-anthy/
 EXTRACT_SUFX =	.tar.zst
 
-MODULES =       devel/kf5
-MODQT5_DEPS =	No
+MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/gettext,-tools \
 			inputmethods/fcitx \
 			devel/iso-codes
 

@@ -1,7 +1,7 @@
 COMMENT =	implementation of xim protocol in xcb
 
 DISTNAME =	xcb-imdkit-1.0.9
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  xcb-imdkit		2.0 # 2.0
 
@@ -21,10 +21,10 @@ EXTRACT_SUFX = .tar.zst
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-MODULES =		devel/kf5
-MODQT5_DEPS =		No
+MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/uthash
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/uthash
 
 CFLAGS +=		-I${LOCALBASE}/include
 

@@ -2,7 +2,7 @@ COMMENT =	libkkc wrapper for fcitx5
 
 DISTNAME =	fcitx5-kkc-5.1.5
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	inputmethods japanese
 
@@ -18,9 +18,10 @@ WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Qt6WidgetsAddons
 WANTLIB += Fcitx5Utils GL Qt6Core Qt6Gui Qt6Widgets gee-0.8 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 intl json-glib-1.0 kkc m
 
-MODULES =       devel/kf5
+MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/gettext,-tools \
 			inputmethods/fcitx \
 			devel/iso-codes
 

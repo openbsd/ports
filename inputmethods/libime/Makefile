@@ -1,7 +1,7 @@
 COMMENT =	library to support generic input method implementation
 
 DISTNAME =	libime-1.1.9
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=	IMECore		0.2 # 0.0
 SHARED_LIBS +=	IMEPinyin	0.2 # 0.0
@@ -33,10 +33,9 @@ EXTRACT_SUFX = 		.tar.zst
 
 COMPILER =		base-clang ports-gcc
 
-MODULES =		devel/kf5
-MODQT5_DEPS =		No
+MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
 			devel/boost \
 			devel/iso-codes
 

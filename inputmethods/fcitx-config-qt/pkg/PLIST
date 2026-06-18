@@ -1,35 +1,15 @@
 @bin bin/fcitx5-config-qt
 @bin bin/fcitx5-plasma-theme-generator
 @bin bin/kbd-layout-viewer5
-@so lib/qt5/plugins/plasma/kcms/systemsettings/kcm_fcitx5.so
+lib/qt6/
+lib/qt6/plugins/
+lib/qt6/plugins/plasma/
+lib/qt6/plugins/plasma/kcms/
+lib/qt6/plugins/plasma/kcms/systemsettings/
+@so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_fcitx5.so
 share/applications/kbd-layout-viewer5.desktop
 share/applications/kcm_fcitx5.desktop
 share/applications/org.fcitx.fcitx5-config-qt.desktop
-share/kpackage/
-share/kpackage/kcms/
-share/kpackage/kcms/kcm_fcitx5/
-share/kpackage/kcms/kcm_fcitx5/contents/
-share/kpackage/kcms/kcm_fcitx5/contents/ui/
-share/kpackage/kcms/kcm_fcitx5/contents/ui/AddIMPage.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/AddonPage.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/BoolOption.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/ColorOption.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/ConfigGroup.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/ConfigPage.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/EnumOption.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/ExternalOption.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/FontOption.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/IntegerOption.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/KeyListOption.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/KeyOption.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/ListOption.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/OptionLoader.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/SaveWarningDialog.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/SelectLayoutSheet.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/StringOption.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/main.qml
-share/kpackage/kcms/kcm_fcitx5/contents/ui/utils.js
-share/kpackage/kcms/kcm_fcitx5/metadata.json
 share/locale/ca/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/ca/LC_MESSAGES/kcm_fcitx5.mo
 share/locale/da/LC_MESSAGES/fcitx5-configtool.mo

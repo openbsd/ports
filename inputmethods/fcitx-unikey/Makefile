@@ -2,7 +2,7 @@ COMMENT =	unikey Vietnamese support for fcitx5
 
 DISTNAME =	fcitx5-unikey-5.1.5
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	inputmethods
 
@@ -17,10 +17,10 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Qt6WidgetsAddons
 WANTLIB += Fcitx5Utils GL Qt6Core Qt6Gui Qt6Widgets m
 
-MODULES =       devel/kf5
-MODQT5_DEPS =	No
+MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/gettext,-tools \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \

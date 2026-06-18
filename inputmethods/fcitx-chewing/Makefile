@@ -3,7 +3,7 @@ COMMENT =	chewing wrapper for fcitx5
 DISTNAME =	fcitx5-chewing-5.1.6
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 CATEGORIES =	inputmethods chinese
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-chewing
 
@@ -16,10 +16,10 @@ WANTLIB += chewing m
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-chewing/
 EXTRACT_SUFX =	.tar.zst
 
-MODULES =       devel/kf5
-MODQT5_DEPS =	No
+MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/gettext,-tools \
 			inputmethods/fcitx \
 			devel/iso-codes
 
