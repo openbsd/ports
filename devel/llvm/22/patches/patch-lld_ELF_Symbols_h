@@ -12,11 +12,11 @@ Index: lld/ELF/Symbols.h
    // observed non-DSO symbols.
    uint8_t visibility() const { return stOther & 3; }
 @@ -247,7 +250,7 @@ class Symbol { (public)
-         traced(false), hasVersionSuffix(false), isInIplt(false),
-         gotInIgot(false), folded(false), archSpecificBit(false),
-         scriptDefined(false), dsoDefined(false), dsoProtected(false),
--        versionScriptAssigned(false), thunkAccessed(false),
-+        versionScriptAssigned(false), thunkAccessed(false), gwarn(false),
+         ltoCanOmit(false), traced(false), hasVersionSuffix(false),
+         isInIplt(false), gotInIgot(false), folded(false),
+         archSpecificBit(false), scriptDefined(false), dsoDefined(false),
+-        dsoProtected(false), versionScriptAssigned(false), thunkAccessed(false),
++        dsoProtected(false), versionScriptAssigned(false), thunkAccessed(false), gwarn(false),
          inDynamicList(false), referenced(false), referencedAfterWrap(false) {}
  
    void overwrite(Symbol &sym, Kind k) const {
