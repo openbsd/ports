@@ -1,36 +1,37 @@
 COMMENT=	GnuPG Made Easy
 
-VERSION =	2.0.1
-REVISION =	0
-DISTNAME =	gpgme-${VERSION}
+# check updates with security/gpgmepp, security/qgpgme - they often need to
+# be done in-sync.
+VERSION=	2.1.0
+DISTNAME=	gpgme-${VERSION}
 
-CATEGORIES =	security devel
+CATEGORIES=	security devel
 
 SHARED_LIBS +=  gpgme                25.0     # 45.1
 
-HOMEPAGE =	https://www.gnupg.org/software/gpgme/
+HOMEPAGE=	https://www.gnupg.org/software/gpgme/
 
-SITES =		${SITE_GNUPG:=gpgme/}
-EXTRACT_SUFX =	.tar.bz2
+SITES=		${SITE_GNUPG:=gpgme/}
+EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += assuan c gpg-error iconv intl m pthread
 
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE= gnu
 
-BUILD_DEPENDS =		security/gnupg
-RUN_DEPENDS =		security/gnupg
+BUILD_DEPENDS=	security/gnupg
+RUN_DEPENDS=	security/gnupg
 
-LIB_DEPENDS =		devel/gettext,-runtime \
-			security/libgpg-error \
-			security/libassuan
+LIB_DEPENDS=	devel/gettext,-runtime \
+		security/libgpg-error \
+		security/libassuan
 
 # needed for the regression tests
-USE_GMAKE =		Yes
+USE_GMAKE=	Yes
 
 .include <bsd.port.mk>
