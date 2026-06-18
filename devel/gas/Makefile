@@ -1,7 +1,7 @@
 COMMENT =		GNU assembler
 
 # keep version synchronized with devel/binutils
-V =			2.45.1
+V =			2.46.1
 DISTNAME =		binutils-$V
 PKGNAME =		gas-$V
 
@@ -9,7 +9,8 @@ CATEGORIES =		devel
 
 HOMEPAGE =		https://sourceware.org/binutils/
 
-MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co> \
+			Kirill A. Korinsky <kirill@korins.ky>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
