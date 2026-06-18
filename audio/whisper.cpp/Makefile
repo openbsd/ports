@@ -3,13 +3,14 @@ COMMENT=	automatic speech recognition (openai whisper model)
 # https://github.com/ggml-org/whisper.cpp/releases
 GH_ACCOUNT=	ggml-org
 GH_PROJECT=	whisper.cpp
-GH_TAGNAME=	v1.8.6
+GH_TAGNAME=	v1.9.0
 
 SITES.ggml=	https://huggingface.co/ggerganov/whisper.cpp/resolve/main/
 DISTFILES.ggml=	ggml-base.en.bin
 EXTRACT_ONLY=	${DISTFILES}
 
 SHARED_LIBS +=  whisper 0.1
+SHARED_LIBS +=  parakeet 0.0
 
 CATEGORIES=	audio
 
@@ -23,12 +24,11 @@ MODULES=	devel/cmake
 COMPILER=	base-clang ports-gcc
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-LIB_DEPENDS=	devel/libggml \
-		graphics/ffmpeg
+LIB_DEPENDS=	devel/libggml
 
 CONFIGURE_ARGS=	-DWHISPER_USE_SYSTEM_GGML=on \
 		-DWHISPER_BUILD_SERVER=On \
-		-DWHISPER_FFMPEG=On
+		-DWHISPER_COMMON_FFMPEG=On
 CXXFLAGS+=	-I${LOCALBASE}/include
 
 TEST_DEPENDS=	net/wget \

@@ -1,14 +1,22 @@
+@bin bin/parakeet-cli
+@bin bin/parakeet-quantize
 @bin bin/whisper-bench
 @bin bin/whisper-cli
 @bin bin/whisper-quantize
 @bin bin/whisper-server
 @bin bin/whisper-vad-speech-segments
 bin/whisper.cpp-download-ggml-model
+include/parakeet.h
 include/whisper.h
+lib/cmake/parakeet/
+lib/cmake/parakeet/parakeet-config.cmake
+lib/cmake/parakeet/parakeet-version.cmake
 lib/cmake/whisper/
 lib/cmake/whisper/whisper-config.cmake
 lib/cmake/whisper/whisper-version.cmake
+@lib lib/libparakeet.so.${LIBparakeet_VERSION}
 @lib lib/libwhisper.so.${LIBwhisper_VERSION}
+lib/pkgconfig/parakeet.pc
 lib/pkgconfig/whisper.pc
 @bin sbin/whisper-server
 share/doc/pkg-readmes/${PKGSTEM}

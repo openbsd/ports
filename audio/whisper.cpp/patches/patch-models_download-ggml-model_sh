@@ -12,7 +12,7 @@ Index: models/download-ggml-model.sh
  
  # get the path of this script
  get_script_path() {
-@@ -124,8 +124,7 @@ elif [ -x "$(command -v curl)" ]; then
+@@ -130,8 +130,7 @@ elif [ -x "$(command -v curl)" ]; then
  elif [ -x "$(command -v wget)" ]; then
      wget --no-config --quiet --show-progress -O ggml-"$model".bin $src/$pfx-"$model".bin
  else

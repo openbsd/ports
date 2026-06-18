@@ -1,18 +1,22 @@
 Index: tests/run-tests.sh
 --- tests/run-tests.sh.orig
 +++ tests/run-tests.sh
-@@ -39,7 +39,7 @@ if [ $# -eq 0 ]; then
+@@ -69,10 +69,10 @@ for v in "${parakeet_models[@]}"; do
+ done
+ 
+ if [ $is_parakeet -eq 1 ]; then
+-    main="../build/bin/parakeet-cli"
++    main="../../build*/bin/parakeet-cli"
+     model_path="../models/ggml-parakeet-tdt-0.6b-v3-${parakeet_variant}.bin"
+ else
+-    main="../build/bin/whisper-cli"
++    main="../../build*/bin/whisper-cli"
+     model_path="../models/ggml-${model}.bin"
  fi
  
- model=$1
--main="../build/bin/whisper-cli"
-+main="../../build*/bin/whisper-cli"
- 
- threads=""
- if [ $# -eq 2 ]; then
-@@ -112,7 +112,7 @@ function run_lang() {
- 
-         $main -m ../models/ggml-$model.bin $threads -f $fname_dst -l $lang -otxt 2> /dev/null
+@@ -146,7 +146,7 @@ function run_lang() {
+             $main -m $model_path $threads -f $fname_dst -l $lang -otxt 2> /dev/null
+         fi
  
 -        git diff --no-index --word-diff=color --word-diff-regex=. $lang-$i-ref.txt $fname_dst.txt
 +        git --no-pager diff --no-index --word-diff=color --word-diff-regex=. $lang-$i-ref.txt $fname_dst.txt
