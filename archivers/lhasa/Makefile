@@ -1,6 +1,6 @@
 COMMENT =	free Software LHA implementation
 
-DISTNAME =	lhasa-0.5.0
+DISTNAME =	lhasa-0.6.0
 
 SHARED_LIBS +=	lhasa	1.0	# 1.0
 
