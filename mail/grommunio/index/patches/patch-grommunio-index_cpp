@@ -1,21 +1,18 @@
 Index: grommunio-index.cpp
 --- grommunio-index.cpp.orig
 +++ grommunio-index.cpp
-@@ -1286,7 +1286,7 @@ int main(int argc, char **argv) try
- 	 * the right group already.
- 	 */
- 	if (geteuid() == 0) {
--		auto ret = HXproc_switch_user("groindex", "groweb");
-+		auto ret = HXproc_switch_user("www", "daemon");
- 		if (static_cast<int>(ret) < 0) {
- 			fprintf(stderr, "switch_user grommunio/groweb: %s\n", strerror(errno));
- 			return EXIT_FAILURE;
-@@ -1295,7 +1295,7 @@ int main(int argc, char **argv) try
- 		execv(argv[0], argv);
- 	}
- 	int bigret = EXIT_SUCCESS;
--	static const std::string index_root = "/var/lib/grommunio-web/sqlite-index";
-+	static const std::string index_root = "/var/www/cache/sqlite-index";
- 	fprintf(stderr, "Running grommunio-index for all user databases\n");
- 	for (auto &&u : am_read_users(std::move(cfg))) {
- 		auto index_home = index_root + "/" + u.username;
+@@ -1242,11 +1242,11 @@ static void load_index_config()
+ 			dest = it->second;
+ 	};
+ 	if (index_root.empty())
+-		index_root = "/var/lib/grommunio-web/sqlite-index";
++		index_root = "/var/www/cache/sqlite-index";
+ 	if (switch_user.empty())
+-		switch_user = "groindex";
++		switch_user = "www";
+ 	if (switch_group.empty())
+-		switch_group = "groweb";
++		switch_group = "daemon";
+ 	apply("index_root", index_root);
+ 	apply("user", switch_user);
+ 	apply("group", switch_group);

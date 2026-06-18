@@ -2,12 +2,12 @@ BROKEN-sparc64 = undefined reference to `std::filesystem::__cxx11::path::*
 
 COMMENT=	FTS indexer for grommunio-web
 
-V=		1.4
+V=		1.5
 DISTNAME=	grommunio-index-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-index
-GH_COMMIT=	622b983d46f515f5448fbf44c75ed00830b25412
+GH_COMMIT=	b0a01b9aa1a005486ccd97dd4a9b10ba2514de74
 
 CATEGORIES=	mail www productivity
 
