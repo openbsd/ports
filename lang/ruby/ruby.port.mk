@@ -42,9 +42,9 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
-# Without a FLAVOR, assume the use of ruby 3.4.
+# Without a FLAVOR, assume the use of ruby 4.0.
 .    if empty(FLAVOR)
-FLAVOR =		ruby34
+FLAVOR =		ruby40
 .    endif
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
@@ -63,8 +63,8 @@ ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .endif
 
 # The default ruby version to use for non-gem ports.  Defaults to ruby
-# 3.4 for consistency with the default ruby34 FLAVOR for gem ports.
-MODRUBY_REV?=		3.4
+# 4.0 for consistency with the default ruby40 FLAVOR for gem ports.
+MODRUBY_REV?=		4.0
 
 # Use the FLAVOR as the prefix for the package, to avoid conflicts.
 MODRUBY_PKG_PREFIX =	${MODRUBY_FLAVOR}
