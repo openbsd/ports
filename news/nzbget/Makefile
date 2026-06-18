@@ -1,6 +1,6 @@
 COMMENT =	binary newsreader supporting NZB files
 
-DIST_TUPLE +=	github nzbgetcom nzbget v26.1 .
+DIST_TUPLE +=	github nzbgetcom nzbget v26.2 .
 DIST_TUPLE +=	github nzbgetcom par2cmdline-turbo v1.4.0-20260323 par2cmdline-turbo
 DIST_TUPLE +=	github nzbgetcom rapidyenc v1.1.1-20260217 rapidyenc
 
