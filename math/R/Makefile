@@ -1,5 +1,5 @@
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-4.5.2
+DISTNAME=	R-4.5.3
 
 # When bumping SO_VERSION, adjust
 # math/rstudio/patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
@@ -17,9 +17,9 @@ MAINTAINER=	Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODTK_WANTLIB} ${MODFORTRAN_WANTLIB}
-WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo curl deflate glib-2.0
-WANTLIB += gobject-2.0 harfbuzz iconv icui18n icuuc intl jpeg
-WANTLIB += lzma m pango-1.0 pangocairo-1.0 pcre2-8 png pthread
+WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo curl deflate
+WANTLIB += glib-2.0 gobject-2.0 harfbuzz iconv icui18n icuuc intl
+WANTLIB += jpeg lzma m pango-1.0 pangocairo-1.0 pcre2-8 png pthread
 WANTLIB += readline tiff z zstd
 
 COMPILER =	base-clang ports-gcc base-gcc
@@ -48,7 +48,9 @@ LIB_DEPENDS=	${MODTK_LIB_DEPENDS} \
 		archivers/bzip2 \
 		archivers/libdeflate \
 		archivers/xz \
+		archivers/zstd \
 		devel/glib2 \
+		devel/harfbuzz \
 		devel/pango \
 		devel/pcre2 \
 		graphics/cairo \
