@@ -3,13 +3,67 @@ Allowing building on Ruby 4.0+
 Index: .metadata
 --- .metadata.orig
 +++ .metadata
-@@ -57,9 +57,6 @@ dependencies:
+@@ -34,7 +34,7 @@ dependencies:
+   name: minitar
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">="
+       - !ruby/object:Gem::Version
+         version: '0.8'
+   type: :runtime
+@@ -51,9 +51,6 @@ dependencies:
      - - ">="
        - !ruby/object:Gem::Version
          version: 2.1.0
 -    - - "<"
 -      - !ruby/object:Gem::Version
 -        version: 3.0.0
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+@@ -96,7 +93,7 @@ dependencies:
+   name: hitimes
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - '='
++    - - '>='
+       - !ruby/object:Gem::Version
+         version: 2.0.0
+   type: :runtime
+@@ -154,7 +151,7 @@ dependencies:
+     requirements:
+     - - "~>"
+       - !ruby/object:Gem::Version
+-        version: '5.0'
++        version: '6.0'
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+@@ -168,7 +165,7 @@ dependencies:
+     requirements:
+     - - "~>"
+       - !ruby/object:Gem::Version
+-        version: '1.0'
++        version: '2.0'
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+@@ -210,7 +207,7 @@ dependencies:
+     requirements:
+     - - "~>"
+       - !ruby/object:Gem::Version
+-        version: '1.1'
++        version: '2.1'
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+@@ -224,7 +221,7 @@ dependencies:
+     requirements:
+     - - "~>"
+       - !ruby/object:Gem::Version
+-        version: '5.0'
++        version: '6.0'
    type: :runtime
    prerelease: false
    version_requirements: !ruby/object:Gem::Requirement
