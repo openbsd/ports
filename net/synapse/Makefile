@@ -1,6 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_DISTV =	1.152.1
+MODPY_DISTV =	1.155.0
 
 GH_ACCOUNT =	element-hq
 GH_PROJECT =	synapse
