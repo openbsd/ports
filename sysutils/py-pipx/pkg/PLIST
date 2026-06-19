@@ -45,6 +45,8 @@ lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}venv_inspect.${MOD
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}venv_inspect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}wrap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}wrap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/animate.py
 lib/python${MODPY_VERSION}/site-packages/pipx/backends/
 lib/python${MODPY_VERSION}/site-packages/pipx/backends/__init__.py
@@ -125,3 +127,4 @@ lib/python${MODPY_VERSION}/site-packages/pipx/venv.py
 lib/python${MODPY_VERSION}/site-packages/pipx/venv_inspect.py
 lib/python${MODPY_VERSION}/site-packages/pipx/version.py
 lib/python${MODPY_VERSION}/site-packages/pipx/version.pyi
+lib/python${MODPY_VERSION}/site-packages/pipx/wrap.py
