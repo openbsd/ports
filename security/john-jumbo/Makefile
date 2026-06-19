@@ -4,7 +4,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 
 V =		1.9.0
 JV =		1
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX =	.tar.xz
 
 DISTNAME =	john-$V-jumbo-${JV}
@@ -26,6 +26,8 @@ WANTLIB += nssutil3 ssl ssl3 z
 SITES =			https://www.openwall.com/john/k/
 
 LIB_DEPENDS =		security/nss
+
+TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH}
 
 USE_GMAKE =		Yes
 MAKE_FILE =		Makefile.legacy
@@ -94,7 +96,8 @@ do-install:
 	cp -R ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
 
 # not using TEST_TARGET as it gets confused by the quotes in CFLAGS
+PORTHOME=${WRKDIR}
 do-test:
-	cd ${WRKSRC}; ${MAKE_PROGRAM} -f ${MAKE_FILE} check
+	cd ${WRKSRC} && env -i ${ALL_TEST_ENV} ${MAKE_PROGRAM} -f ${MAKE_FILE} check
 
 .include <bsd.port.mk>
