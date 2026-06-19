@@ -1,6 +1,6 @@
 COMMENT=	HTTP request/response parser
 
-V=		9.4.1
+V=		9.4.2
 GH_ACCOUNT=	nodejs
 GH_PROJECT=	llhttp
 GH_TAGNAME=	release/v$V
@@ -12,6 +12,7 @@ SHARED_LIBS +=	llhttp                    1.0
 
 CATEGORIES=	www
 
+# https://github.com/nodejs/llhttp/releases
 HOMEPAGE=	https://llhttp.org/
 
 # MIT
