@@ -4,7 +4,7 @@ COMMENT-doc=	documentation for LibreNMS
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	26.6.0
+GH_TAGNAME=	26.6.1
 
 # strip off last component, don't normally rebuild vendor file for minor
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
@@ -21,10 +21,8 @@ PERMIT_PACKAGE=	Yes
 
 SITES.dep=	https://spacehopper.org/mirrors/
 
-MODULES=	lang/php \
-		lang/python
+MODULES=	lang/php
 MODPHP_VERSION=	8.4
-MODPY_BUILDDEP= No
 MULTI_PACKAGES= -main -doc
 
 RUN_DEPENDS-doc=
@@ -57,7 +55,6 @@ UPDATE_PLIST_ARGS += -i MODPHP_VERSION
 
 R =	s,^\#!( )?(/usr/bin/env |/bin/)bash,\#!${LOCALBASE}/bin/bash,;
 R +=	s,^\#!( )?/usr/bin/(env )?php.*,\#!${MODPHP_BIN},;
-R +=	s,^\#!( )?/usr/bin/(env )?python.*,\#!${MODPY_BIN},;
 R +=	s,/opt/librenms,/var/www/librenms,g;
 R +=	s,/var/www/librenms,${PREFIX-main}/librenms,g;
 R +=	s,/usr/local,${LOCALBASE},g
