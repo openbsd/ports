@@ -1,13 +1,14 @@
-function removed from libre in https://github.com/baresip/re/pull/1407
+removed in https://github.com/baresip/re/commit/e11a4c584bdb0cb30dde9d4f3e8a7a5717506855
 
 Index: src/dtls.c
 --- src/dtls.c.orig
 +++ src/dtls.c
-@@ -52,7 +52,6 @@ static void conn_destructor(void *arg)
+@@ -180,7 +180,7 @@ static int dtls_listen_handler(const struct pl *val, v
  
- 	list_unlink(&conn->le);
- 	tmr_cancel(&conn->tmr);
--	dtls_set_handlers(conn->tlsc, NULL, NULL, NULL, NULL);
- 	mem_deref(conn->tlsc);
- }
+ 	(void)pl_strcpy(&cert, certpath, sizeof(certpath));
  
+-	err = tls_alloc(&dl->tls, TLS_METHOD_DTLSV1, certpath, NULL);
++	err = tls_alloc(&dl->tls, TLS_METHOD_DTLS, certpath, NULL);
+ 	if (err) {
+ 		restund_warning("tls error: %m\n", err);
+ 		goto out;

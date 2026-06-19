@@ -1,0 +1,14 @@
+removed in https://github.com/baresip/re/commit/e11a4c584bdb0cb30dde9d4f3e8a7a5717506855
+
+Index: src/tcp.c
+--- src/tcp.c.orig
++++ src/tcp.c
+@@ -271,7 +271,7 @@ static int listen_handler(const struct pl *val, void *
+ 
+ 		(void)pl_strcpy(&cert, certpath, sizeof(certpath));
+ 
+-		err = tls_alloc(&tl->tls, TLS_METHOD_SSLV23, certpath, NULL);
++		err = tls_alloc(&tl->tls, TLS_METHOD_TLS, certpath, NULL);
+ 		if (err) {
+ 			restund_warning("tls error: %m\n", err);
+ 			goto out;
