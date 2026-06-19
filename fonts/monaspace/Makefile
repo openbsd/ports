@@ -1,7 +1,7 @@
 COMMENT =		innovative superfamily of fonts for code
 
 MODFONT_FAMILY =	monaspace
-MODFONT_VERSION =	1.301
+MODFONT_VERSION =	1.400
 
 CATEGORIES =		fonts
 
