@@ -84,7 +84,7 @@ Index: configure.ac
  	else
  		AC_MSG_RESULT(no)
  	fi
-@@ -2661,10 +2725,10 @@ fi
+@@ -2644,10 +2708,10 @@ fi
  AST_EXT_LIB_CHECK([OPUSFILE], [opusfile], [op_open_callbacks], [opus/opusfile.h], [], [$__opus_include])
  
  for ver in ${LUA_VERSIONS:-5.4 5.3 5.2 5.1}; do

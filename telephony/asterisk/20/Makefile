@@ -1,6 +1,6 @@
-VER=		20.19.0
+VER=		20.20.0
 
-PJ_V=		2.16
+PJ_V=		2.17
 SHLIB_V=	0.0
 VERSION_SPEC=	>=20.0,<21.0
 

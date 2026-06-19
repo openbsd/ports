@@ -194,6 +194,7 @@ include/asterisk/spinlock.h
 include/asterisk/srv.h
 include/asterisk/stasis.h
 include/asterisk/stasis_app.h
+include/asterisk/stasis_app_broadcast.h
 include/asterisk/stasis_app_device_state.h
 include/asterisk/stasis_app_impl.h
 include/asterisk/stasis_app_mailbox.h
@@ -302,6 +303,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_speech_utils.so
 @so lib/asterisk/modules/app_stack.so
 @so lib/asterisk/modules/app_stasis.so
+@so lib/asterisk/modules/app_stasis_broadcast.so
 @so lib/asterisk/modules/app_stream_echo.so
 @so lib/asterisk/modules/app_system.so
 @so lib/asterisk/modules/app_talkdetect.so
@@ -499,6 +501,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_pjsip_header_funcs.so
 @so lib/asterisk/modules/res_pjsip_history.so
 @so lib/asterisk/modules/res_pjsip_logger.so
+@so lib/asterisk/modules/res_pjsip_maintenance.so
 @so lib/asterisk/modules/res_pjsip_messaging.so
 @so lib/asterisk/modules/res_pjsip_mwi.so
 @so lib/asterisk/modules/res_pjsip_mwi_body_generator.so
@@ -543,6 +546,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_srtp.so
 @so lib/asterisk/modules/res_stasis.so
 @so lib/asterisk/modules/res_stasis_answer.so
+@so lib/asterisk/modules/res_stasis_broadcast.so
 @so lib/asterisk/modules/res_stasis_device_state.so
 @so lib/asterisk/modules/res_stasis_playback.so
 @so lib/asterisk/modules/res_stasis_recording.so
