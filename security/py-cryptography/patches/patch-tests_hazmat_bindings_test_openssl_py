@@ -1,0 +1,21 @@
+https://github.com/pyca/cryptography/pull/15070
+
+Index: tests/hazmat/bindings/test_openssl.py
+--- tests/hazmat/bindings/test_openssl.py.orig
++++ tests/hazmat/bindings/test_openssl.py
+@@ -27,6 +27,7 @@ class TestOpenSSL:
+         if not (
+             rust_openssl.CRYPTOGRAPHY_IS_BORINGSSL
+             or rust_openssl.CRYPTOGRAPHY_IS_AWSLC
++            or rust_openssl.CRYPTOGRAPHY_IS_LIBRESSL
+         ):
+             assert b.lib.SSL_OP_ALL > 0
+         ctx = b.lib.SSL_CTX_new(b.lib.TLS_method())
+@@ -45,6 +46,7 @@ class TestOpenSSL:
+         if not (
+             rust_openssl.CRYPTOGRAPHY_IS_BORINGSSL
+             or rust_openssl.CRYPTOGRAPHY_IS_AWSLC
++            or rust_openssl.CRYPTOGRAPHY_IS_LIBRESSL
+         ):
+             assert b.lib.SSL_OP_ALL > 0
+         ctx = b.lib.SSL_CTX_new(b.lib.TLS_method())
