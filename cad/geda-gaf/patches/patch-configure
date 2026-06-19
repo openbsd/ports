@@ -1,9 +1,19 @@
 do not ENABLE_GROFF_HTML if we have no groff
 
+do not build xorn which is Python 2
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -14664,7 +14664,7 @@ $as_echo_n "checking whether $GROFF has an html driver
+@@ -942,7 +942,6 @@ URI_VIEWER
+ DOXYGEN
+ UPDATE_MIME_DATABASE
+ UPDATE_DESKTOP_DATABASE'
+-ac_subdirs_all='xorn'
+ 
+ # Initialize some variables set by options.
+ ac_init_help=
+@@ -14664,7 +14663,7 @@ $as_echo_n "checking whether $GROFF has an html driver
  $as_echo "$HAVE_GROFF_HTML" >&6; }
    fi
  
@@ -12,3 +22,11 @@ Index: configure
    ENABLE_GROFF_HTML_TRUE=
    ENABLE_GROFF_HTML_FALSE='#'
  else
+@@ -19608,7 +19607,6 @@ export GEDARCDIR
+ 
+ 
+ 
+-subdirs="$subdirs xorn"
+ 
+ 
+ #####################################################################
