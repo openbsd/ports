@@ -20,6 +20,7 @@ COMMENT-stream=		nginx TCP/UDP proxy module
 COMMENT-xslt=		nginx XSLT filter module
 
 VERSION=	1.30.3
+REVISION-main=	0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -242,5 +243,6 @@ do-install:
 		${PREFIX}/${P5ARCH}/
 	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so \
 		${PREFIX}/${P5ARCH}/auto/nginx/
+	cp -r ${WRKSRC}/contrib/vim ${PREFIX}/share/vim
 
 .include <bsd.port.mk>

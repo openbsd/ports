@@ -36,3 +36,12 @@ share/nginx/uwsgi_params
 @sample ${SYSCONFDIR}/nginx/uwsgi_params
 share/nginx/win-utf
 @sample ${SYSCONFDIR}/nginx/win-utf
+share/vim/
+share/vim/ftdetect/
+share/vim/ftdetect/nginx.vim
+share/vim/ftplugin/
+share/vim/ftplugin/nginx.vim
+share/vim/indent/
+share/vim/indent/nginx.vim
+share/vim/syntax/
+share/vim/syntax/nginx.vim
