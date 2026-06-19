@@ -1,7 +1,7 @@
 COMMENT =		extremely fast password cracker
 
 DISTNAME =		john-1.8.0
-REVISION =		1
+REVISION =		2
 CATEGORIES =		security
 
 HOMEPAGE =		https://www.openwall.com/john/
@@ -16,6 +16,8 @@ WANTLIB =		c
 SITES =			${HOMEPAGE}/j/
 
 WRKSRC =		${WRKDIST}/src
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 MAKE_FLAGS =		CC=${CC} AS=${CC} LD=${CC} \
 			CFLAGS="${CFLAGS} -c" LDFLAGS="${LDFLAGS}" \

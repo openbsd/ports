@@ -1,0 +1,43 @@
+Index: src/x86-64.S
+--- src/x86-64.S.orig
++++ src/x86-64.S
+@@ -966,6 +966,7 @@ DO_SPACE(nptr(48))
+ DO_ALIGN(6)
+ .globl DES_bs_init_asm
+ DES_bs_init_asm:
++	endbr64
+ 	pcmpeqd %xmm0,%xmm0
+ 	movdqa %xmm0,pnot
+ 	paddb %xmm0,%xmm0
+@@ -993,6 +994,7 @@ DES_bs_init_asm:
+ DO_ALIGN(6)
+ .globl DES_bs_crypt
+ DES_bs_crypt:
++	endbr64
+ 	cmpl $0,DES_bs_all_keys_changed(%rip)
+ 	jz DES_bs_crypt_body
+ 	pushq %rdi
+@@ -1057,6 +1059,7 @@ DES_bs_crypt_next:
+ DO_ALIGN(6)
+ .globl DES_bs_crypt_25
+ DES_bs_crypt_25:
++	endbr64
+ 	cmpl $0,DES_bs_all_keys_changed(%rip)
+ 	jnz DES_bs_finalize_keys_25
+ DES_bs_crypt_25_body:
+@@ -1177,6 +1180,7 @@ DES_bs_finalize_keys_expand_loop:
+ DO_ALIGN(6)
+ .globl DES_bs_crypt_LM
+ DES_bs_crypt_LM:
++	endbr64
+ 	movl (%rdi),%r8d
+ 	movdqa mask01,%xmm7
+ 	movdqa mask02,%xmm8
+@@ -1352,6 +1356,7 @@ DES_bs_crypt_LM_loop:
+ #endif
+ .globl CPU_detect
+ CPU_detect:
++	endbr64
+ 	pushq %rbx
+ 	movl $1,%eax
+ 	cpuid

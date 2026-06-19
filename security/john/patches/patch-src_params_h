@@ -1,6 +1,7 @@
---- src/params.h.orig	Wed Jun 22 15:38:55 2011
-+++ src/params.h	Fri Jun 24 09:09:42 2011
-@@ -51,15 +51,15 @@
+Index: src/params.h
+--- src/params.h.orig
++++ src/params.h
+@@ -75,15 +75,15 @@
   * notes above.
   */
  #ifndef JOHN_SYSTEMWIDE
@@ -19,7 +20,7 @@
  #endif
  #define JOHN_PRIVATE_HOME		"~/.john"
  #endif
-@@ -103,7 +103,7 @@
+@@ -135,7 +135,7 @@
  /*
   * File names.
   */
