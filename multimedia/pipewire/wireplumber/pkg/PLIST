@@ -26,6 +26,7 @@ include/wireplumber-0.5/wp/node.h
 include/wireplumber-0.5/wp/object-interest.h
 include/wireplumber-0.5/wp/object-manager.h
 include/wireplumber-0.5/wp/object.h
+include/wireplumber-0.5/wp/permission-manager.h
 include/wireplumber-0.5/wp/plugin.h
 include/wireplumber-0.5/wp/port.h
 include/wireplumber-0.5/wp/proc-utils.h
@@ -144,9 +145,13 @@ share/locale/zh_TW/LC_MESSAGES/wireplumber.mo
 share/wireplumber/
 share/wireplumber/scripts/
 share/wireplumber/scripts/client/
-share/wireplumber/scripts/client/access-default.lua
-share/wireplumber/scripts/client/access-portal.lua
-share/wireplumber/scripts/client/access-snap.lua
+share/wireplumber/scripts/client/apply-access.lua
+share/wireplumber/scripts/client/find-config-access.lua
+share/wireplumber/scripts/client/find-default-access.lua
+share/wireplumber/scripts/client/find-flatpak-access.lua
+share/wireplumber/scripts/client/find-portal-access.lua
+share/wireplumber/scripts/client/find-snap-access.lua
+share/wireplumber/scripts/client/select-access.lua
 share/wireplumber/scripts/default-nodes/
 share/wireplumber/scripts/default-nodes/apply-default-node.lua
 share/wireplumber/scripts/default-nodes/find-best-default-node.lua
