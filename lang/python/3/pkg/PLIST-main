@@ -1918,7 +1918,7 @@ lib/${PY_VERSION}/ensurepip/__pycache__/_uninstall.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/ensurepip/__pycache__/_uninstall.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/ensurepip/__pycache__/_uninstall.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/ensurepip/_bundled/
-lib/${PY_VERSION}/ensurepip/_bundled/pip-26.1.1-py3-none-any.whl
+lib/${PY_VERSION}/ensurepip/_bundled/pip-26.1.2-py3-none-any.whl
 lib/${PY_VERSION}/ensurepip/_uninstall.py
 lib/${PY_VERSION}/enum.py
 lib/${PY_VERSION}/filecmp.py

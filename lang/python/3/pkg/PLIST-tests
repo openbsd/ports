@@ -2329,6 +2329,9 @@ lib/${PY_VERSION}/test/test_capi/__pycache__/test_unicode.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_watchers.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_watchers.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_watchers.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_capi/__pycache__/test_weakref.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_capi/__pycache__/test_weakref.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_capi/__pycache__/test_weakref.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_capi/check_config.py
 lib/${PY_VERSION}/test/test_capi/test_abstract.py
 lib/${PY_VERSION}/test/test_capi/test_bytearray.py
@@ -2366,6 +2369,7 @@ lib/${PY_VERSION}/test/test_capi/test_tuple.py
 lib/${PY_VERSION}/test/test_capi/test_type.py
 lib/${PY_VERSION}/test/test_capi/test_unicode.py
 lib/${PY_VERSION}/test/test_capi/test_watchers.py
+lib/${PY_VERSION}/test/test_capi/test_weakref.py
 lib/${PY_VERSION}/test/test_cext/
 lib/${PY_VERSION}/test/test_cext/__init__.py
 lib/${PY_VERSION}/test/test_cext/__pycache__/
@@ -3026,6 +3030,9 @@ lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_dbm_gnu.${PYC_MAGIC_
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_dict.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_dict.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_dict.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_dict_watcher.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_dict_watcher.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_dict_watcher.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_enumerate.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_enumerate.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_enumerate.${PYC_MAGIC_TAG}.pyc
@@ -3068,6 +3075,9 @@ lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_mmap.${PYC_MAGIC_TAG
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_monitoring.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_monitoring.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_monitoring.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_pickle.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_pickle.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_pickle.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_races.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_races.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_races.${PYC_MAGIC_TAG}.pyc
@@ -3109,6 +3119,7 @@ lib/${PY_VERSION}/test/test_free_threading/test_cprofile.py
 lib/${PY_VERSION}/test/test_free_threading/test_csv.py
 lib/${PY_VERSION}/test/test_free_threading/test_dbm_gnu.py
 lib/${PY_VERSION}/test/test_free_threading/test_dict.py
+lib/${PY_VERSION}/test/test_free_threading/test_dict_watcher.py
 lib/${PY_VERSION}/test/test_free_threading/test_enumerate.py
 lib/${PY_VERSION}/test/test_free_threading/test_frame.py
 lib/${PY_VERSION}/test/test_free_threading/test_func_annotations.py
@@ -3123,6 +3134,7 @@ lib/${PY_VERSION}/test/test_free_threading/test_list.py
 lib/${PY_VERSION}/test/test_free_threading/test_methodcaller.py
 lib/${PY_VERSION}/test/test_free_threading/test_mmap.py
 lib/${PY_VERSION}/test/test_free_threading/test_monitoring.py
+lib/${PY_VERSION}/test/test_free_threading/test_pickle.py
 lib/${PY_VERSION}/test/test_free_threading/test_races.py
 lib/${PY_VERSION}/test/test_free_threading/test_re.py
 lib/${PY_VERSION}/test/test_free_threading/test_resource.py
