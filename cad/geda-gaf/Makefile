@@ -3,7 +3,7 @@ V =			1.10.2
 DISTNAME =		geda-gaf-${V}
 CATEGORIES =		cad
 HOMEPAGE =		http://wiki.geda-project.org/geda:gaf
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS = 		geda		1.0	# 47.0
 SHARED_LIBS +=		gedacairo	0.0	# 1.3

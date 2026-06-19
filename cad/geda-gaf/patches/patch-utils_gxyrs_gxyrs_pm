@@ -1,0 +1,14 @@
+Fix gxyrs test failures caused by a Perl warning
+
+Index: utils/gxyrs/gxyrs.pm
+--- utils/gxyrs/gxyrs.pm.orig
++++ utils/gxyrs/gxyrs.pm
+@@ -417,7 +417,7 @@ sub add_number_to_col {
+ 	}
+ 	
+ 	# Change offset to line's units.
+-	if (! $units =~ /^$/) {
++	if ($units !~ /^$/) {
+ 	    $changed = change_text_units($units, $offset);
+ 	}
+ 	else {
