@@ -1,0 +1,15 @@
+This package provides the Python extension for RapidFuzz, a fast MIT-licensed
+fuzzy string-matching library for Python and C++. It uses string similarity
+calculations from a pre-GPL version of https://github.com/seatgeek/fuzzywuzzy
+providing a wide range of fundamental algorithms:
+
+- Damerau Levenshtein
+- Hamming
+- Indel
+- Jaro
+- JaroWinkler
+- Levenshtein
+- Longest Common Subsequence
+- Optimal String Alignment (OSA)
+- Prefix
+- Postfix
