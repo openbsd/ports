@@ -24,7 +24,8 @@ MODULES=	devel/cmake
 COMPILER=	base-clang ports-gcc
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-LIB_DEPENDS=	devel/libggml
+LIB_DEPENDS=	devel/libggml \
+		graphics/ffmpeg
 
 CONFIGURE_ARGS=	-DWHISPER_USE_SYSTEM_GGML=on \
 		-DWHISPER_BUILD_SERVER=On \
