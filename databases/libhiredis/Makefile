@@ -2,30 +2,28 @@ COMMENT=	minimalistic C client for Redis
 
 GH_ACCOUNT=	redis
 GH_PROJECT=	hiredis
-GH_TAGNAME=	v1.3.0
+GH_TAGNAME=	v1.4.0
 PKGNAME=	lib${DISTNAME}
 
-SHARED_LIBS=	hiredis		1.3
+# upstream just uses the full version number, see hiredis.h
+SHARED_LIBS +=	hiredis		1.4
+SHARED_LIBS +=	hiredis_ssl	0.0
 
 CATEGORIES=	databases devel
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
+WANTLIB += crypto ssl
+
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-LIBV=		HIREDIS_MAJOR=${LIBhiredis_VERSION:R} \
-		HIREDIS_MINOR=${LIBhiredis_VERSION:E} \
-		HIREDIS_SONAME=${LIBhiredis_VERSION}
-MAKE_FLAGS=	OPTIMIZATION= DEBUG= ${LIBV}
-FAKE_FLAGS=	INSTALL="cp -r" PREFIX="${TRUEPREFIX}" ${LIBV}
+MODULES=	devel/cmake
+CONFIGURE_ARGS=	-DENABLE_SSL=on
 
-USE_GMAKE=	Yes
-
-# needs redis to be running for some tests
-TEST_IS_INTERACTIVE= Yes
+TEST_DEPENDS=	databases/redis
 
 post-install:
-	rm -f ${PREFIX}/lib/libhiredis.so
+	rm -r ${PREFIX}/build
 
 .include <bsd.port.mk>

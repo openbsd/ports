@@ -15,10 +15,21 @@ include/hiredis/adapters/redismoduleapi.h
 include/hiredis/alloc.h
 include/hiredis/async.h
 include/hiredis/hiredis.h
+include/hiredis/hiredis_ssl.h
 include/hiredis/read.h
 include/hiredis/sds.h
 include/hiredis/sockcompat.h
-@static-lib lib/libhiredis.a
-lib/libhiredis.so.1
+lib/cmake/
+lib/cmake/hiredis/
+lib/cmake/hiredis/hiredis-config-version.cmake
+lib/cmake/hiredis/hiredis-config.cmake
+lib/cmake/hiredis/hiredis-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/hiredis/hiredis-targets.cmake
+lib/cmake/hiredis_ssl/
+lib/cmake/hiredis_ssl/hiredis_ssl-config.cmake
+lib/cmake/hiredis_ssl/hiredis_ssl-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/hiredis_ssl/hiredis_ssl-targets.cmake
 @lib lib/libhiredis.so.${LIBhiredis_VERSION}
+@lib lib/libhiredis_ssl.so.${LIBhiredis_ssl_VERSION}
 lib/pkgconfig/hiredis.pc
+lib/pkgconfig/hiredis_ssl.pc
