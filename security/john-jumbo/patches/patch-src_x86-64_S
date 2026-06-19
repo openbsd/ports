@@ -1,0 +1,15 @@
+Fix for CET/IBT
+
+Index: src/x86-64.S
+--- src/x86-64.S.orig
++++ src/x86-64.S
+@@ -84,7 +84,8 @@
+  * Return: RAX.
+  */
+ #define ARG1				%rdi
+-#define PROLOGUE
++#define PROLOGUE \
++	endbr64
+ #define EPILOGUE
+ #endif
+ 
