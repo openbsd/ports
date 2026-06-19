@@ -4,8 +4,8 @@ bin/cim2ps
 bin/cimindent
 include/cim.h
 @info info/cim.info
-lib/libcim-atr.a
-lib/libcim.a
+@static-lib lib/libcim-atr.a
+@static-lib lib/libcim.a
 lib/libcim.la
 @lib lib/libcim.so.${LIBcim_VERSION}
 @man man/man1/cim.1

@@ -1,8 +1,6 @@
-BROKEN =	fails to build after move to LLVM 22
-
 COMMENT =	GNU Simula compiler
 DISTNAME =	cim-5.1
-REVISION =	1
+REVISION =	2
 CATEGORIES =	lang
 
 SHARED_LIBS +=	cim                       0.0 # 3.0
@@ -20,7 +18,7 @@ CONFIGURE_STYLE =	gnu
 
 # It's really really not C99.
 # SCFLAGS is what cim calls cc with.
-MAKE_FLAGS =	CFLAGS="${CFLAGS} -std=gnu89" \
-		SCFLAGS="${CFLAGS} -std=gnu89 -w"
+MAKE_FLAGS =	CFLAGS="${CFLAGS} -std=gnu89 -Wno-incompatible-pointer-types" \
+		SCFLAGS="${CFLAGS} -std=gnu89 -w -Wno-incompatible-pointer-types"
 
 .include <bsd.port.mk>
