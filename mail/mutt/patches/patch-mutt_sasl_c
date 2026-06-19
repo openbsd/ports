@@ -3,11 +3,12 @@ Pledge.
 Index: mutt_sasl.c
 --- mutt_sasl.c.orig
 +++ mutt_sasl.c
-@@ -89,7 +89,6 @@ static sasl_callback_t mutt_sasl_callbacks[5];
+@@ -88,8 +88,6 @@ static sasl_callback_t mutt_sasl_callbacks[5];
  
  static sasl_secret_t *secret_ptr = NULL;
  
--static int mutt_sasl_start (void);
- 
+-static int mutt_sasl_start(void);
+-
  /* callbacks */
- static int mutt_sasl_cb_log (void* context, int priority, const char* message);
+ static int mutt_sasl_cb_log(void *context, int priority, const char *message);
+ static int mutt_sasl_cb_authname(void *context, int id, const char **result,
