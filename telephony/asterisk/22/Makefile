@@ -1,6 +1,6 @@
-VER=		22.9.0
+VER=		22.10.0
 
-PJ_V=		2.16
+PJ_V=		2.17
 SHLIB_V=	0.0
 VERSION_SPEC=	>=22.0,<23.0
 
