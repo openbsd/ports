@@ -495,6 +495,7 @@
      SUBDIR += py-python-json-logger
      SUBDIR += py-python-markdown-math
      SUBDIR += py-pyuca
+     SUBDIR += py-rapidfuzz
      SUBDIR += py-rebulk
      SUBDIR += py-recommonmark
      SUBDIR += py-referencing
