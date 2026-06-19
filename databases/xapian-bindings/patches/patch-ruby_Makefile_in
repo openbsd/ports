@@ -1,0 +1,12 @@
+Index: ruby/Makefile.in
+--- ruby/Makefile.in.orig
++++ ruby/Makefile.in
+@@ -1340,7 +1340,7 @@ uninstall-local:
+ docs/rdocs/index.html: docs/xapian.rb
+ 	rm -rf docs/rdocs
+ 	$(MKDIR_P) docs
+-	cd docs && $(RDOC) --op rdocs `test -f xapian.rb||echo '$(abs_srcdir)/docs/'`xapian.rb
++	cd docs && LC_CTYPE=en_US.UTF-8 $(RDOC) --op rdocs `test -f xapian.rb||echo '$(abs_srcdir)/docs/'`xapian.rb
+ 
+ @DOCUMENTATION_RULES_TRUE@docs/xapian.rb: generate-rdoc-stubs xapian.rb ../doxygen-xml/index.xml
+ @DOCUMENTATION_RULES_TRUE@	$(PERL) $(srcdir)/generate-rdoc-stubs
