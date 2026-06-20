@@ -1169,7 +1169,6 @@ share/nvim/runtime/lua/vim/_meta/api_keysets.gen.lua
 share/nvim/runtime/lua/vim/_meta/api_keysets_extra.lua
 share/nvim/runtime/lua/vim/_meta/base64.lua
 share/nvim/runtime/lua/vim/_meta/builtin.lua
-share/nvim/runtime/lua/vim/_meta/builtin_types.lua
 share/nvim/runtime/lua/vim/_meta/events.lua
 share/nvim/runtime/lua/vim/_meta/json.lua
 share/nvim/runtime/lua/vim/_meta/lpeg.lua
@@ -1180,6 +1179,7 @@ share/nvim/runtime/lua/vim/_meta/re.lua
 share/nvim/runtime/lua/vim/_meta/regex.lua
 share/nvim/runtime/lua/vim/_meta/spell.lua
 share/nvim/runtime/lua/vim/_meta/vimfn.gen.lua
+share/nvim/runtime/lua/vim/_meta/vimfn_types.lua
 share/nvim/runtime/lua/vim/_meta/vvars.gen.lua
 share/nvim/runtime/lua/vim/_meta/vvars_extra.lua
 share/nvim/runtime/lua/vim/_watch.lua
