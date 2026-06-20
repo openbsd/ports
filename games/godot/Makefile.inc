@@ -1,4 +1,4 @@
-DBP_PROPERTIES ?=	parallel
+DPB_PROPERTIES +=	parallel
 
 DISTNAME ?=		godot-${VERSION}-stable
 
