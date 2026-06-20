@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS=		${RUST_ARCHS}
 COMMENT-main=		access to machine-readable software metadata
 COMMENT-qt6=		Qt6 interface for AppStream
 
-V=			1.1.2
+V=			1.1.3
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
@@ -48,7 +48,6 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			lang/vala \
 			shells/bash-completion \
 			textproc/gi-docgen \
-			textproc/gtk-doc \
 			textproc/itstool
 
 LIB_DEPENDS-main=	net/curl \
@@ -68,6 +67,12 @@ CONFIGURE_ARGS=		-Dsystemd=false \
 			-Dqt=true \
 			-Dvapi=true \
 			-Dcompose=true
+
+# XXX needs dockbook 5
+CONFIGURE_ARGS +=	-Dman=false
+
+# XXX needs https://github.com/BLAKE3-team/BLAKE3
+CONFIGURE_ARGS +=	-Dblake3-support=false
 
 # /usr/include/sys/sysctl.h:504:2: error: unknown type name 'u_long'
 # src/as-system-info.c:466:23: error: use of undeclared identifier 'DT_LNK'

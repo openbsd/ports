@@ -59,8 +59,6 @@ lib/girepository-1.0/AppStreamCompose-1.0.typelib
 lib/pkgconfig/appstream-compose.pc
 lib/pkgconfig/appstream.pc
 @bin libexec/appstreamcli-compose
-@man man/man1/appstreamcli-compose.1
-@man man/man1/appstreamcli.1
 share/appstream/
 share/appstream/appstream.conf
 share/bash-completion/completions/appstreamcli
@@ -1020,6 +1018,7 @@ share/doc/appstream/html/compose-api/flags.ImageLoadFlags.html
 share/doc/appstream/html/compose-api/flags.ImageSaveFlags.html
 share/doc/appstream/html/compose-api/fonts.css
 share/doc/appstream/html/compose-api/func.build_component_global_id.html
+share/doc/appstream/html/compose-api/func.compute_content_checksum_for_data.html
 share/doc/appstream/html/compose-api/func.filename_from_url.html
 share/doc/appstream/html/compose-api/func.globals_add_hint_tag.html
 share/doc/appstream/html/compose-api/func.globals_clear.html
@@ -1272,6 +1271,7 @@ share/locale/id/LC_MESSAGES/appstream.mo
 share/locale/it/LC_MESSAGES/appstream.mo
 share/locale/ja/LC_MESSAGES/appstream.mo
 share/locale/ka/LC_MESSAGES/appstream.mo
+share/locale/kk/LC_MESSAGES/appstream.mo
 share/locale/ko/LC_MESSAGES/appstream.mo
 share/locale/kw/
 share/locale/kw/LC_MESSAGES/
