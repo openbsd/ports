@@ -216,6 +216,7 @@
      SUBDIR += py-standard-chunk
      SUBDIR += py-tagpy
      SUBDIR += py-tinytag
+     SUBDIR += pyradio
      SUBDIR += qsynth
      SUBDIR += quodlibet
      SUBDIR += rgain
