@@ -2609,6 +2609,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instance-t
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instance-types.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-internet-gateways.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-ipam-pool-allocations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-ipam-pools.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-ipam-resource-discoveries.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-ipam-resource-discovery-associations.rst
@@ -2827,6 +2828,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-eve
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-maintenance-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-metadata-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-placement.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-ipam-pool-allocation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-ipam-pool.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-ipam-resource-cidr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-ipam-resource-discovery.rst
