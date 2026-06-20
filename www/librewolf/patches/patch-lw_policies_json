@@ -10,13 +10,13 @@ Index: lw/policies.json
 +        "DontCheckDefaultBrowser": true,
 +        "GoToIntranetSiteForSingleWordEntryInAddressBar": true,
 +        "FirefoxHome": {
-+	    "SponsoredStories": false,
++        "SponsoredStories": false,
 +            "SponsoredTopSites": false,
 +            "Stories": false
 +        },
 +        "GenerativeAI": {
 +            "Enabled": false
 +        },
+         "DefaultSerialGuardSetting": 3,
          "WebsiteFilter": {
              "Block": [
-                 "https://localhost/*"
