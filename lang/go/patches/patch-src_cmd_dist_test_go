@@ -1,0 +1,12 @@
+Index: src/cmd/dist/test.go
+--- src/cmd/dist/test.go.orig
++++ src/cmd/dist/test.go
+@@ -763,7 +763,7 @@ func (t *tester) registerTests() {
+ 	}
+ 
+ 	// Test GOEXPERIMENT=simd on amd64.
+-	if goarch == "amd64" && !strings.Contains(goexperiment, "simd") {
++	if goarch == "amd64" && goos != "openbsd" && !strings.Contains(goexperiment, "simd") {
+ 		t.registerTest("GOEXPERIMENT=simd go test simd/archsimd/...", &goTest{
+ 			variant: "simd",
+ 			env:     []string{"GOEXPERIMENT=" + goexperiments("simd")},
