@@ -3,7 +3,7 @@ COMMENT=	automatic speech recognition (openai whisper model)
 # https://github.com/ggml-org/whisper.cpp/releases
 GH_ACCOUNT=	ggml-org
 GH_PROJECT=	whisper.cpp
-GH_TAGNAME=	v1.9.0
+GH_TAGNAME=	v1.9.1
 
 SITES.ggml=	https://huggingface.co/ggerganov/whisper.cpp/resolve/main/
 DISTFILES.ggml=	ggml-base.en.bin
