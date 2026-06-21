@@ -1,10 +1,9 @@
 COMMENT=	markdown parsing for Python, port of markdown-it
 
-MODPY_DISTV=	4.0.0
+MODPY_DISTV=	4.2.0
 DISTNAME=	markdown_it_py-${MODPY_DISTV}
 PKGNAME=	py-markdown-it-${MODPY_DISTV}
 CATEGORIES=	textproc
-REVISION=	0
 
 # BSD
 PERMIT_PACKAGE=	Yes
