@@ -33,7 +33,6 @@
      SUBDIR += fennel,lua52
      SUBDIR += fennel,lua53
      SUBDIR += fennel,lua54
-     SUBDIR += flang
      SUBDIR += fpc
      SUBDIR += freebasic
      SUBDIR += fsharp
