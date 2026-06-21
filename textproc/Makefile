@@ -263,6 +263,7 @@
      SUBDIR += p5-Pod-LaTeX
      SUBDIR += p5-Pod-Markdown
      SUBDIR += p5-Pod-POM
+     SUBDIR += p5-Pod-POM-View-Restructured
      SUBDIR += p5-Pod-Parser
      SUBDIR += p5-Pod-Spell
      SUBDIR += p5-Pod-Tests
