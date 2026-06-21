@@ -1,5 +1,23 @@
 64bit time_t
 
+imap/backupcyrusd.c:356:75: warning: format specifies type 'unsigned long' but the argument has type 'ino_t'
+      (aka 'unsigned long long') [-Wformat]
+  356 |         prot_printf(bcd_out, " %lu %lld %lu\n", len, sbuf.st_mtim.tv_sec, sbuf.st_ino);
+      |                                         ~~~                               ^~~~~~~~~~~
+      |                                         %llu
+imap/backupcyrusd.c:373:49: warning: format specifies type 'unsigned long' but the argument has type 'off_t' (aka 'long long')
+      [-Wformat]
+  373 |         prot_printf(bcd_out, " %lu %lld %lu\n", sbuf.st_size, sbuf.st_mtim.tv_sec, sbuf.st_ino);
+      |                                ~~~              ^~~~~~~~~~~~
+      |                                %lld
+imap/backupcyrusd.c:373:84: warning: format specifies type 'unsigned long' but the argument has type 'ino_t'
+      (aka 'unsigned long long') [-Wformat]
+  373 |         prot_printf(bcd_out, " %lu %lld %lu\n", sbuf.st_size, sbuf.st_mtim.tv_sec, sbuf.st_ino);
+      |                                         ~~~                                        ^~~~~~~~~~~
+      |                                         %llu
+mv -f imap/.deps/lmtpd-jcal.Tpo imap/.deps/lmtpd-jcal.Po
+depbase=`echo imap/smmapd.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+
 Index: imap/backupcyrusd.c
 --- imap/backupcyrusd.c.orig
 +++ imap/backupcyrusd.c
@@ -8,7 +26,7 @@ Index: imap/backupcyrusd.c
          prot_puts(bcd_out, "DATA ");
          puturistring(bcd_out, name);
 -        prot_printf(bcd_out, " %lu %lu %lu\n", len, sbuf.st_mtim.tv_sec, sbuf.st_ino);
-+        prot_printf(bcd_out, " %lu %lld %lu\n", len, sbuf.st_mtim.tv_sec, sbuf.st_ino);
++        prot_printf(bcd_out, " %lu %lld %llu\n", len, sbuf.st_mtim.tv_sec, sbuf.st_ino);
          prot_write(bcd_out, base, len);
          struct message_guid guid = MESSAGE_GUID_INITIALIZER;
          message_guid_generate(&guid, base, len);
@@ -17,7 +35,7 @@ Index: imap/backupcyrusd.c
          }
          puturistring(bcd_out, name);
 -        prot_printf(bcd_out, " %lu %lu %lu\n", sbuf.st_size, sbuf.st_mtim.tv_sec, sbuf.st_ino);
-+        prot_printf(bcd_out, " %lu %lld %lu\n", sbuf.st_size, sbuf.st_mtim.tv_sec, sbuf.st_ino);
++        prot_printf(bcd_out, " %lld %lld %llu\n", sbuf.st_size, sbuf.st_mtim.tv_sec, sbuf.st_ino);
      }
  }
  
