@@ -22,6 +22,8 @@ share/openssl-ruby-tests/ext/openssl/ossl_engine.c
 share/openssl-ruby-tests/ext/openssl/ossl_engine.h
 share/openssl-ruby-tests/ext/openssl/ossl_hmac.c
 share/openssl-ruby-tests/ext/openssl/ossl_hmac.h
+share/openssl-ruby-tests/ext/openssl/ossl_hpke.c
+share/openssl-ruby-tests/ext/openssl/ossl_hpke.h
 share/openssl-ruby-tests/ext/openssl/ossl_kdf.c
 share/openssl-ruby-tests/ext/openssl/ossl_kdf.h
 share/openssl-ruby-tests/ext/openssl/ossl_ns_spki.c
@@ -94,6 +96,7 @@ share/openssl-ruby-tests/test/openssl/test_digest.rb
 share/openssl-ruby-tests/test/openssl/test_engine.rb
 share/openssl-ruby-tests/test/openssl/test_fips.rb
 share/openssl-ruby-tests/test/openssl/test_hmac.rb
+share/openssl-ruby-tests/test/openssl/test_hpke.rb
 share/openssl-ruby-tests/test/openssl/test_kdf.rb
 share/openssl-ruby-tests/test/openssl/test_ns_spki.rb
 share/openssl-ruby-tests/test/openssl/test_ocsp.rb
