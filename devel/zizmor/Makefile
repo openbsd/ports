@@ -8,7 +8,7 @@ COMMENT =		static analysis tool for GitHub Actions
 
 GH_ACCOUNT =		zizmorcore
 GH_PROJECT =		zizmor
-GH_TAGNAME =		v1.25.2
+GH_TAGNAME =		v1.26.1
 
 MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
