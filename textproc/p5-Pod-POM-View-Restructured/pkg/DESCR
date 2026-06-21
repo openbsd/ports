@@ -1,0 +1,4 @@
+This module outputs reStructuredText that is expected to be used with Sphinx.
+Verbatim sections (indented paragraphs) in the POD will be output with syntax
+highlighting for Perl code by default. See "POD commands specifically for
+reStructuredText" for how to change this for a particular block.

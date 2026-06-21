@@ -1,0 +1,4 @@
+bin/pod2rst
+${P5SITE}/Pod/POM/View/Restructured.pm
+@man man/man1/pod2rst.1
+@man man/man3p/Pod::POM::View::Restructured.3p
