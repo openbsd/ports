@@ -1,0 +1,12 @@
+Index: libcyrus_min.pc.in
+--- libcyrus_min.pc.in.orig
++++ libcyrus_min.pc.in
+@@ -7,7 +7,7 @@ Name: Cyrus Imapd libcyrus_min
+ Description: libcyrus_min library of Cyrus Imapd
+ URL: http://www.cyrusimap.org/
+ Version: @PACKAGE_VERSION@
+-Requires: openssl >= 3.0
++Requires: openssl
+ Cflags: -I${includedir}/cyrus
+ Libs: -L${libdir} -lcyrus_min
+ Libs.private: @LIBS@

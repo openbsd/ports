@@ -4,7 +4,7 @@ COMMENT=		Cyrus IMAP server
 
 V=			3.13.5
 DISTNAME=		cyrus-imapd-${V}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  cyrus_min            0.0      # unknown
 SHARED_LIBS +=  cyrus                0.0      # unknown
