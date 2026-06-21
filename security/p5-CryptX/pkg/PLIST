@@ -7,6 +7,7 @@ ${P5ARCH}/Crypt/AuthEnc/CCM.pm
 ${P5ARCH}/Crypt/AuthEnc/ChaCha20Poly1305.pm
 ${P5ARCH}/Crypt/AuthEnc/EAX.pm
 ${P5ARCH}/Crypt/AuthEnc/GCM.pm
+${P5ARCH}/Crypt/AuthEnc/GCMSIV.pm
 ${P5ARCH}/Crypt/AuthEnc/OCB.pm
 ${P5ARCH}/Crypt/AuthEnc/SIV.pm
 ${P5ARCH}/Crypt/AuthEnc/XChaCha20Poly1305.pm
@@ -17,6 +18,7 @@ ${P5ARCH}/Crypt/Checksum/CRC32.pm
 ${P5ARCH}/Crypt/Cipher/
 ${P5ARCH}/Crypt/Cipher.pm
 ${P5ARCH}/Crypt/Cipher/AES.pm
+${P5ARCH}/Crypt/Cipher/ARIA.pm
 ${P5ARCH}/Crypt/Cipher/Anubis.pm
 ${P5ARCH}/Crypt/Cipher/Blowfish.pm
 ${P5ARCH}/Crypt/Cipher/CAST5.pm
@@ -77,6 +79,7 @@ ${P5ARCH}/Crypt/Digest/SHA512.pm
 ${P5ARCH}/Crypt/Digest/SHA512_224.pm
 ${P5ARCH}/Crypt/Digest/SHA512_256.pm
 ${P5ARCH}/Crypt/Digest/SHAKE.pm
+${P5ARCH}/Crypt/Digest/SM3.pm
 ${P5ARCH}/Crypt/Digest/Tiger192.pm
 ${P5ARCH}/Crypt/Digest/TurboSHAKE.pm
 ${P5ARCH}/Crypt/Digest/Whirlpool.pm
@@ -87,6 +90,7 @@ ${P5ARCH}/Crypt/Mac/BLAKE2b.pm
 ${P5ARCH}/Crypt/Mac/BLAKE2s.pm
 ${P5ARCH}/Crypt/Mac/F9.pm
 ${P5ARCH}/Crypt/Mac/HMAC.pm
+${P5ARCH}/Crypt/Mac/KMAC.pm
 ${P5ARCH}/Crypt/Mac/OMAC.pm
 ${P5ARCH}/Crypt/Mac/PMAC.pm
 ${P5ARCH}/Crypt/Mac/Pelican.pm
@@ -139,6 +143,7 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::AuthEnc::ChaCha20Poly1305.3p
 @man man/man3p/Crypt::AuthEnc::EAX.3p
 @man man/man3p/Crypt::AuthEnc::GCM.3p
+@man man/man3p/Crypt::AuthEnc::GCMSIV.3p
 @man man/man3p/Crypt::AuthEnc::OCB.3p
 @man man/man3p/Crypt::AuthEnc::SIV.3p
 @man man/man3p/Crypt::AuthEnc::XChaCha20Poly1305.3p
@@ -147,6 +152,7 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::Checksum::CRC32.3p
 @man man/man3p/Crypt::Cipher.3p
 @man man/man3p/Crypt::Cipher::AES.3p
+@man man/man3p/Crypt::Cipher::ARIA.3p
 @man man/man3p/Crypt::Cipher::Anubis.3p
 @man man/man3p/Crypt::Cipher::Blowfish.3p
 @man man/man3p/Crypt::Cipher::CAST5.3p
@@ -206,6 +212,7 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::Digest::SHA512_224.3p
 @man man/man3p/Crypt::Digest::SHA512_256.3p
 @man man/man3p/Crypt::Digest::SHAKE.3p
+@man man/man3p/Crypt::Digest::SM3.3p
 @man man/man3p/Crypt::Digest::Tiger192.3p
 @man man/man3p/Crypt::Digest::TurboSHAKE.3p
 @man man/man3p/Crypt::Digest::Whirlpool.3p
@@ -215,6 +222,7 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::Mac::BLAKE2s.3p
 @man man/man3p/Crypt::Mac::F9.3p
 @man man/man3p/Crypt::Mac::HMAC.3p
+@man man/man3p/Crypt::Mac::KMAC.3p
 @man man/man3p/Crypt::Mac::OMAC.3p
 @man man/man3p/Crypt::Mac::PMAC.3p
 @man man/man3p/Crypt::Mac::Pelican.3p
