@@ -1,6 +1,6 @@
 COMMENT=	Python interface to the OpenSSL library
 
-MODPY_DISTV=	26.1.0
+MODPY_DISTV=	26.3.0
 DISTNAME=	pyopenssl-${MODPY_DISTV}
 PKGNAME=	py-openssl-${MODPY_DISTV}
 CATEGORIES=	security devel
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += crypto pthread ssl
 
-RUN_DEPENDS=	security/py-cryptography>=46.0.0,<48
+RUN_DEPENDS=	security/py-cryptography>=49.0.0,<50
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODULES=	lang/python
