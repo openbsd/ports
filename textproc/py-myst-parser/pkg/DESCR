@@ -1,0 +1,3 @@
+Reference implementation of MyST, a rich and extensible flavor of Markdown meant
+for technical documentation and publishing.  Supports working with the Sphinx
+documentation system.
