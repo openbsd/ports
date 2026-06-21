@@ -653,7 +653,6 @@
      SUBDIR += xpdf
      SUBDIR += xpdf3
      SUBDIR += xxdiff
-     SUBDIR += yould
      SUBDIR += yq
      SUBDIR += zathura
      SUBDIR += zoem
