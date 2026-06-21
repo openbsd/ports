@@ -1,0 +1,3 @@
+Sphinx plugin that integrates Doxygen output in your user-facing documentation.
+With it, you can combine Doxygen's excellent technical understanding of your
+code base with the superb long form documentation output of the Sphinx system.
