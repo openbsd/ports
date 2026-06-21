@@ -412,6 +412,7 @@
      SUBDIR += py-bashlex
      SUBDIR += py-black
      SUBDIR += py-bracex
+     SUBDIR += py-breathe
      SUBDIR += py-canonicaljson
      SUBDIR += py-cchardet
      SUBDIR += py-changelog-chug
@@ -468,9 +469,11 @@
      SUBDIR += py-markdown
      SUBDIR += py-markdown-it
      SUBDIR += py-markups
+     SUBDIR += py-mdit-py-plugins
      SUBDIR += py-mdown-extensions
      SUBDIR += py-mdurl
      SUBDIR += py-mistune
+     SUBDIR += py-myst-parser
      SUBDIR += py-natsort
      SUBDIR += py-nltk
      SUBDIR += py-numpydoc
