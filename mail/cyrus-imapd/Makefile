@@ -4,7 +4,7 @@ COMMENT=		Cyrus IMAP server
 
 V=			3.13.5
 DISTNAME=		cyrus-imapd-${V}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  cyrus_min            0.0      # unknown
 SHARED_LIBS +=  cyrus                0.0      # unknown
@@ -45,6 +45,15 @@ BUILD_DEPENDS=		devel/bison \
 			devel/p5-Type-Tiny \
 			devel/gperf
 
+# needed for documentation and man pages
+BUILD_DEPENDS +=	devel/doxygen \
+			devel/py-gitpython \
+			textproc/py-sphinx \
+			textproc/py-sphinx_rtd_theme \
+			textproc/p5-Pod-POM-View-Restructured \
+			textproc/py-myst-parser \
+			textproc/py-breathe
+
 # xapian support, needed to for compacting databases
 BUILD_DEPENDS +=	net/rsync
 RUN_DEPENDS +=		net/rsync
@@ -79,7 +88,6 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
 			--with-sasl=${LOCALBASE} \
 			--with-cyrus-user=_cyrus \
 			--with-syslogfacility=MAIL \
-			--without-sphinx-build \
 			--disable-gssapi \
 			--enable-autocreate \
 			--enable-calalarmd \
