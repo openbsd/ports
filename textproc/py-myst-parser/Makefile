@@ -18,7 +18,7 @@ MODPY_PI =	Yes
 MODPY_PYBUILD =	flit_core
 
 RUN_DEPENDS =	textproc/py-markdown-it \
-                textproc/py-mdit-plugins\
+		textproc/py-mdit-py-plugins \
                 textproc/py-yaml \
                 textproc/py-docutils \
                 textproc/py-sphinx \
