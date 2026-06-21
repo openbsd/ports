@@ -653,7 +653,6 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/Camellia/c
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/Camellia/camellia-cfb.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/Camellia/camellia-ofb.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20/
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20/counter-overflow.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20/rfc7539.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20Poly1305/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20Poly1305/boringssl.txt
