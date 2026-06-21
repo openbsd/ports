@@ -1,7 +1,7 @@
 COMMENT =	data visualization and analysis software
 
 DISTNAME =	labplot-2.12.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	math x11
 
@@ -31,6 +31,7 @@ WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6SerialPort Qt6Sql
 WANTLIB += Qt6Svg Qt6Widgets Qt6Xml c cantorlibs cerf cfitsio
 WANTLIB += fftw3 gsl gslcblas hdf5 lz4 m markdown matio netcdf
 WANTLIB += poppler-qt6 qtadvanceddocking-qt6 spectre xcb z zstd
+WANTLIB += poppler sz
 
 SITES =		https://download.kde.org/stable/labplot/
 EXTRACT_SUFX =	.tar.xz
