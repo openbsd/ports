@@ -1,13 +1,12 @@
 COMMENT=		MS Excel file reader/writer library
 
-GH_TAGNAME=		v1.5.0
+GH_TAGNAME=		v1.5.1.1
 GH_ACCOUNT=		QtExcel
 GH_PROJECT=		QXlsx
 FULLPKGNAME=		qt6-${DISTNAME:L}
 
 WRKSRC=			${WRKDIST}/QXlsx
 
-SHARED_LIBS +=	QXlsxQt5                  0.0 # 0.0
 SHARED_LIBS +=	QXlsxQt6                  0.0 # 0.0
 
 CATEGORIES=		textproc devel
@@ -24,5 +23,9 @@ MODULES=		devel/cmake \
 
 CONFIGURE_ARGS=		-DBUILD_SHARED_LIBS=ON \
 			-DQT_VERSION_MAJOR=6
+
+# unbreak math/labplot
+post-install:
+	ln -sf QXlsx ${PREFIX}/include/QXlsxQt6
 
 .include <bsd.port.mk>

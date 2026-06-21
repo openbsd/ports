@@ -1,17 +1,21 @@
-https://github.com/QtExcel/QXlsx/commit/90d762625750c6b2c73f6cd96b633e9158aed72e
+https://github.com/QtExcel/QXlsx/pull/465/
 
 Index: QXlsx/CMakeLists.txt
 --- QXlsx/CMakeLists.txt.orig
 +++ QXlsx/CMakeLists.txt
-@@ -17,6 +17,11 @@ if(NOT DEFINED QT_VERSION_MAJOR)
-     find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Gui REQUIRED)
- endif()
- find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Gui REQUIRED)
-+
-+if(Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
-+    find_package(Qt6 REQUIRED COMPONENTS GuiPrivate)
-+endif()
-+
- set(EXPORT_NAME QXlsxQt${QT_VERSION_MAJOR})
+@@ -114,7 +114,6 @@ set(SRC_FILES
+     header/xlsxdrawing_p.h
+     header/xlsxrichstring_p.h
+     header/xlsxutility_p.h
+-    header/xlsxreadsax.h
+ )
  
- if (QT_VERSION_MAJOR EQUAL 6)
+ set(QXLSX_PUBLIC_HEADERS
+@@ -134,6 +133,7 @@ set(QXLSX_PUBLIC_HEADERS
+     header/xlsxdocument.h
+     header/xlsxformat.h
+     header/xlsxglobal.h
++    header/xlsxreadsax.h
+     header/xlsxrichstring.h
+     header/xlsxworkbook.h
+     header/xlsxworksheet.h
