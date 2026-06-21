@@ -1,6 +1,6 @@
 COMMENT =	DNS and DNSSEC zone file validator
 
-V =		0.9.0
+V =		0.10.0
 PKGNAME =	validns-${V}
 
 CATEGORIES =	net
