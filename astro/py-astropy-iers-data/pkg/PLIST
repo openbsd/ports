@@ -19,8 +19,3 @@ lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/data/ReadMe.eopc04
 lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/data/ReadMe.finals2000A
 lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/data/eopc04.1962-now
 lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/data/finals2000A.all
-lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/tests/
-lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

@@ -1,6 +1,6 @@
 COMMENT=	IERS earth rotation and leap second tables for astropy
 
-MODPY_DISTV=	0.2026.5.4.1.4.54
+MODPY_DISTV=	0.2026.6.22.1.23.34
 DISTNAME=	astropy_iers_data-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/g}
 
@@ -14,6 +14,5 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
