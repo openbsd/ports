@@ -6,6 +6,9 @@ GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	26.6.1
 
+# keep above 7.9-stable
+REVISION=	0
+
 # strip off last component, don't normally rebuild vendor file for minor
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
 EPOCH=		0
