@@ -1,9 +1,9 @@
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-4.5.3
+DISTNAME=	R-4.6.0
 
 # When bumping SO_VERSION, adjust
 # math/rstudio/patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
-SO_VERSION=	41.0
+SO_VERSION=	42.0
 .for _lib in R Rblas Rlapack
 SHARED_LIBS +=	${_lib} ${SO_VERSION}
 .endfor
