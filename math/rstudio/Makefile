@@ -16,7 +16,7 @@ COMMENT =	Integrated Development Environment (IDE) for R
 GH_ACCOUNT =	rstudio
 GH_PROJECT =	rstudio
 GH_TAGNAME =	v1.3.959
-REVISION =	14
+REVISION =	15
 
 SITES.a =	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/
 SITES.b =	https://s3.amazonaws.com/rstudio-buildtools/
@@ -55,7 +55,7 @@ BUILD_DEPENDS =	devel/apache-ant
 
 LIB_DEPENDS =	devel/boost \
 		devel/libinotify \
-		math/R>=4.5.0 \
+		math/R>=4.6.0 \
 		security/openpam \
 		sysutils/e2fsprogs \
 		x11/qt5/qtsensors \
