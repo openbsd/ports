@@ -1,0 +1,19 @@
+use uselocale+strtod instead of strtod_l which is not available on OpenBSD
+
+Index: kitty/colors.c
+--- kitty/colors.c.orig
++++ kitty/colors.c
+@@ -1051,7 +1051,13 @@ static bool
+ parse_double(const char *src, double *out) {
+     char *endptr;
+     errno = 0;
++#ifdef __OpenBSD__
++    locale_t prev = uselocale(get_c_locale());
++    *out = strtod(src, &endptr);
++    uselocale(prev);
++#else
+     *out = strtod_l(src, &endptr, get_c_locale());
++#endif
+     return endptr != src && *endptr == 0 && errno == 0;
+ }
+ 

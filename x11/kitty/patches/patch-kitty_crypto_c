@@ -1,0 +1,14 @@
+do not redefine explicit_bzero on OpenBSD ??? it is already in libc and libressl_explicit_bzero is not exported
+
+Index: kitty/crypto.c
+--- kitty/crypto.c.orig	Mon Dec 31 00:00:00 1979
++++ kitty/crypto.c	Fri Jun 19 01:17:06 2026
+@@ -18,7 +18,7 @@
+ #include <sys/mman.h>
+ #include <structmember.h>
+ 
+-#ifdef LIBRESSL_VERSION_NUMBER
++#if defined(LIBRESSL_VERSION_NUMBER) && !defined(__OpenBSD__)
+ /* from: https://github.com/libressl/portable/blob/master/include/compat/string.h#L63 */
+ #define explicit_bzero libressl_explicit_bzero
+ void explicit_bzero(void *, size_t);

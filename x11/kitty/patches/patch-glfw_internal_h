@@ -1,0 +1,13 @@
+undef close macro from libepoll-shim at end of internal.h to avoid conflict with callbacks.close struct member
+
+Index: glfw/internal.h
+--- glfw/internal.h.orig
++++ glfw/internal.h
+@@ -926,3 +926,7 @@ void _glfw_free_clipboard_data(_GLFWClipboardData *cd)
+ #define debug_rendering(...) if (_glfw.hints.init.debugRendering) { timed_debug_print(__VA_ARGS__); }
+ #define debug_input(...) if (_glfw.hints.init.debugKeyboard) { timed_debug_print(__VA_ARGS__); }
+ #define safe_close(fd) do { errno = 0; close(fd); } while(errno == EINTR)
++// libepoll-shim defines close() as a macro; undef to avoid conflicts with struct members
++#ifdef close
++#  undef close
++#endif

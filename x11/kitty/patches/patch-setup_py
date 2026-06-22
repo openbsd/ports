@@ -1,34 +1,31 @@
 remove -O3 and -march=native optimizations
-fix man directory
-disable wayland, libcrypto
+fix man directory (linux-package puts man under share/man, ports expect man/)
+disable SIMD on OpenBSD (simde not available as a port)
+use gmake on OpenBSD for docs build
+build only man pages on OpenBSD (furo theme and tab directives not available)
+skip HTML docs installation on OpenBSD
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -355,7 +355,6 @@ def init_env(
+@@ -511,7 +511,6 @@ def init_env(
          df += ' -Og'
          float_conversion = '-Wfloat-conversion'
      fortify_source = '' if sanitize and is_macos else '-D_FORTIFY_SOURCE=2'
 -    optimize = df if debug or sanitize else '-O3'
-     sanitize_args = get_sanitize_args(cc, ccver) if sanitize else set()
+     sanitize_args = get_sanitize_args(cc, ccver) if sanitize else []
      cppflags_ = os.environ.get(
          'OVERRIDE_CPPFLAGS', '-D{}DEBUG'.format('' if debug else 'N'),
-@@ -369,12 +368,11 @@ def init_env(
-     werror = '' if ignore_compiler_warnings else '-pedantic-errors -Werror'
-     std = '' if is_openbsd else '-std=c11'
-     sanitize_flag = ' '.join(sanitize_args)
--    march = '-march=native' if native_optimizations else ''
+@@ -531,7 +530,7 @@ def init_env(
      cflags_ = os.environ.get(
          'OVERRIDE_CFLAGS', (
-             f'-Wextra {float_conversion} -Wno-missing-field-initializers -Wall -Wstrict-prototypes {std}'
+             f'-Wextra {float_conversion} -Wno-missing-field-initializers -Wall -Wstrict-prototypes {c_std}'
 -            f' {werror} {optimize} {sanitize_flag} -fwrapv {stack_protector} {missing_braces}'
--            f' -pipe {march} -fvisibility=hidden {fortify_source}'
 +            f' {werror} {sanitize_flag} -fwrapv {stack_protector} {missing_braces}'
-+            f' -pipe -fvisibility=hidden {fortify_source}'
+             f' -pipe -fvisibility=hidden {no_plt}'
          )
      )
-     cflags = shlex.split(cflags_) + shlex.split(
-@@ -382,7 +380,7 @@ def init_env(
+@@ -540,7 +539,7 @@ def init_env(
      )
      ldflags_ = os.environ.get(
          'OVERRIDE_LDFLAGS',
@@ -37,17 +34,27 @@ Index: setup.py
      )
      ldflags = shlex.split(ldflags_)
      ldflags.append('-shared')
-@@ -761,7 +759,7 @@ def find_c_files() -> Tuple[List[str], List[str]]:
+@@ -599,7 +598,7 @@ def init_env(
+         set_arches(ldflags, building_arch)
+     ba = test_compile(cc, *(cppflags + cflags), ldflags=ldflags, get_output_arch=True)
+     assert isinstance(ba, BinaryArch)
+-    if ba.isa not in (ISA.AMD64, ISA.X86, ISA.ARM64):
++    if ba.isa not in (ISA.AMD64, ISA.X86, ISA.ARM64) or is_openbsd:
+         cppflags.append('-DKITTY_NO_SIMD')
  
+     control_flow_protection = ''
+@@ -614,9 +613,6 @@ def init_env(
+     if control_flow_protection:
+         cflags.append(control_flow_protection)
  
- def compile_glfw(compilation_database: CompilationDatabase) -> None:
--    modules = 'cocoa' if is_macos else 'x11 wayland'
-+    modules = 'cocoa' if is_macos else 'x11'
-     for module in modules.split():
-         try:
-             genv = glfw.init_env(env, pkg_config, pkg_version, at_least_version, test_compile, module)
-@@ -892,8 +890,6 @@ def build_launcher(args: Options, launcher_dir: str = 
-             cflags.append('-g')
+-    if native_optimizations and ba.isa in (ISA.AMD64, ISA.X86):
+-        cflags.extend('-march=native -mtune=native'.split())
+-
+     ans = Env(
+         cc, cppflags, cflags, ldflags, library_paths, binary_arch=ba, native_optimizations=native_optimizations,
+         ccver=ccver, ldpaths=ldpaths, vcs_rev=vcs_rev,
+@@ -1385,8 +1381,6 @@ def build_launcher(args: Options, launcher_dir: str = 
+             libs += ['-lasan'] if not is_macos and env.compiler_type is not CompilerType.clang else []
          if args.profile:
              libs.append('-lprofiler')
 -    else:
@@ -55,7 +62,7 @@ Index: setup.py
      if bundle_type.endswith('-freeze'):
          cppflags.append('-DFOR_BUNDLE')
          cppflags.append(f'-DPYVER="{sysconfig.get_python_version()}"')
-@@ -940,7 +936,7 @@ def build_launcher(args: Options, launcher_dir: str = 
+@@ -1451,7 +1445,7 @@ def build_launcher(args: Options, launcher_dir: str = 
  
  # Packaging {{{
  def copy_man_pages(ddir: str) -> None:
@@ -64,3 +71,24 @@ Index: setup.py
      safe_makedirs(mandir)
      man_levels = '15'
      with suppress(FileNotFoundError):
+@@ -1509,8 +1503,8 @@ def create_linux_bundle_gunk(ddir: str, args: Options)
+         kitten_exe = os.path.join(os.path.dirname(str(launcher)), 'kitten')
+         if os.path.exists(kitten_exe):
+             os.environ['KITTEN_EXE_FOR_DOCS'] = kitten_exe
+-            make = 'gmake' if is_freebsd else 'make'
+-            run_tool([make, 'docs'])
++            make = 'gmake' if is_freebsd or is_openbsd else 'make'
++            run_tool([make, 'man' if is_openbsd else 'docs'])
+         else:
+             if args.skip_building_kitten:
+                 skip_docs = True
+@@ -1521,7 +1515,8 @@ def create_linux_bundle_gunk(ddir: str, args: Options)
+                 raise SystemExit(f'kitten binary not found at: {kitten_exe}')
+     if not skip_docs:
+         copy_man_pages(ddir)
+-        copy_html_docs(ddir)
++        if not is_openbsd:
++            copy_html_docs(ddir)
+     for (icdir, ext) in {'256x256': 'png', 'scalable': 'svg'}.items():
+         icdir = os.path.join(ddir, 'share', 'icons', 'hicolor', icdir, 'apps')
+         safe_makedirs(icdir)
