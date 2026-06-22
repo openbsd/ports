@@ -5,6 +5,7 @@ MODPY_DISTV=	5.8.0
 DISTNAME=	yubikey_manager-${MODPY_DISTV}
 PKGNAME=	yubikey-manager-${MODPY_DISTV}
 YK_PROJECT=	yubikey-manager
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -14,7 +15,7 @@ MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-click<9 \
 		security/pcsc-lite \
-		security/py-cryptography<48 \
+		security/py-cryptography \
 		security/py-fido2<3 \
 		security/py-keyring<26 \
 		security/py-pyscard
