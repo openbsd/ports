@@ -116,11 +116,6 @@ BUILD_DEPENDS +=	devel/apache-ant
 CONFIGURE_ARGS +=	-DBUILD_opencv_java=OFF
 .endif
 
-CONFIG_ADJ_CMD =	perl -pi
-.for _l _v in ${SHARED_LIBS}
-CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so([^.]),lib${_l}.so.${_v}$$1,g;'
-.endfor
-
 NO_TEST =	Yes
 # Enable to run the regression tests
 #TEST_IS_INTERACTIVE =	X11
