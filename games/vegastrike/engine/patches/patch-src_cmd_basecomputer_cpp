@@ -1,6 +1,7 @@
---- src/cmd/basecomputer.cpp.orig.port	Mon Mar 19 09:20:14 2012
-+++ src/cmd/basecomputer.cpp	Mon Aug 26 18:45:59 2013
-@@ -3047,7 +3047,7 @@ static int datesort( const void *v1, const void *v2 )
+Index: src/cmd/basecomputer.cpp
+--- src/cmd/basecomputer.cpp.orig
++++ src/cmd/basecomputer.cpp
+@@ -2877,7 +2877,7 @@ static int datesort( const void *v1, const void *v2 )
      return s1.st_mtime-s2.st_mtime;
  }
  
@@ -9,7 +10,7 @@
  typedef int (*scancompare)( const struct dirent **v1, const struct dirent **v2 );
  #else
  typedef int (*scancompare)( const void *v1, const void *v2 );
-@@ -4750,7 +4750,7 @@ bool BaseComputer::showPlayerInfo( const EventCommandI
+@@ -4574,7 +4574,7 @@ bool BaseComputer::showPlayerInfo( const EventCommandI
  void prettyPrintFloat( char *buffer, float f, int digitsBefore, int digitsAfter, int bufferLen )
  {
      int   bufferPos = 0;

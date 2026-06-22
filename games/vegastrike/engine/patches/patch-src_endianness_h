@@ -1,6 +1,7 @@
---- src/endianness.h.orig.port	Tue Sep 21 17:24:32 2010
-+++ src/endianness.h	Sat May 26 16:32:35 2012
-@@ -7,6 +7,7 @@ double DONTUSE__NXSwapBigDoubleToLittleEndian( double 
+Index: src/endianness.h
+--- src/endianness.h.orig
++++ src/endianness.h
+@@ -31,6 +31,7 @@ double DONTUSE__NXSwapBigDoubleToLittleEndian( double 
  #if defined (__HAIKU__) //For unknow reasons, Haiku don't fit into any case below
      #include <endian.h>
  #elif defined (__APPLE__) || defined (MACOSX) || defined (BSD) || defined (__FreeBSD__)

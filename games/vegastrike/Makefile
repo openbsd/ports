@@ -1,8 +1,5 @@
 SUBDIR =
-SUBDIR += data
 SUBDIR += engine
-SUBDIR += extra
-SUBDIR += music
-SUBDIR += speech
+SUBDIR += utcs
 
 .include <bsd.port.subdir.mk>

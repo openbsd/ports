@@ -1,0 +1,56 @@
+- don't disable PIE on OpenBSD
+- look for Python 3.14
+- disable a few things that don't fully work
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -298,11 +298,11 @@ IF (ENABLE_PIE)
+     ADD_COMPILE_OPTIONS("-fpie")
+     LINK_LIBRARIES("-pie")
+ ELSE (ENABLE_PIE)
+-    MESSAGE("++ Disabling Position Independent Executables/Shared Libraries (Recommended on Ubuntu/Mint)")
+-    IF (NOT MSVC)
++    IF (NOT MSVC AND NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++        MESSAGE("++ Disabling Position Independent Executables/Shared Libraries (Recommended on Ubuntu/Mint)")
+         ADD_COMPILE_OPTIONS("-fno-pie")
+         LINK_LIBRARIES("-no-pie")
+-    ENDIF (NOT MSVC)
++    ENDIF ()
+ ENDIF (ENABLE_PIE)
+ 
+ IF (MSVC)
+@@ -434,7 +434,7 @@ FIND_PACKAGE(LinuxDistro REQUIRED)
+ OPTION(USE_PYTHON_3 "Use Python 3 or Python 2.7 (default is 3)" ON)
+ IF (USE_PYTHON_3)
+     # We want at least Python 3.4, but we prefer newer versions
+-    SET(Python_ADDITIONAL_VERSIONS 3.11 3.10 3.9 3.8 3.7 3.6 3.5 3.4)
++    SET(Python_ADDITIONAL_VERSIONS 3.14 3.11 3.10 3.9 3.8 3.7 3.6 3.5 3.4)
+ ELSE (USE_PYTHON_3)
+     MESSAGE("++ Adding python 2.7 variant")
+     SET(Python_ADDITIONAL_VERSIONS 2.7)
+@@ -503,7 +503,8 @@ IF (USE_SYSTEM_BOOST)
+ 
+         UNSET(Boost_${BOOST_PYTHON_COMPONENT}_FOUND)
+         MESSAGE("++ Looking for System Boost::python")
+-        FIND_PACKAGE(Boost COMPONENTS ${BOOST_PYTHON_COMPONENT} log log_setup date_time system filesystem thread chrono atomic REQUIRED)
++	SET(Boost_NO_BOOST_CMAKE ON)
++        FIND_PACKAGE(Boost COMPONENTS ${BOOST_PYTHON_COMPONENT} log log_setup date_time filesystem thread chrono atomic REQUIRED)
+         IF (Boost_python3_FOUND)
+             MESSAGE("++ Found System Boost::python3 : ${Boost_PYTHON3_LIBRARY}")
+         ELSEIF (Boost_python_FOUND)
+@@ -1333,8 +1334,6 @@ INSTALL(PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/vegastri
+ ENDIF (WIN32)
+ 
+ 
+-ADD_SUBDIRECTORY("../doc" "./doc")
+-
+ # As per https://braintrekking.wordpress.com/2013/04/27/dll-hell-how-to-include-microsoft-redistributable-runtime-libraries-in-your-cmakecpack-project/
+ INSTALL(FILES ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS} DESTINATION bin COMPONENT Libraries)
+ 
+@@ -1733,5 +1732,3 @@ ELSE ()
+     # Unknown Platform --> Just do the various compressed tarballs
+     SET(CPACK_GENERATOR "TBZ2" "TGZ" "TXZ")
+ ENDIF (WIN32 AND NOT UNIX)
+-
+-INCLUDE(CPack)

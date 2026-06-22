@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1820 2026/06/21 20:32:33 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1821 2026/06/22 02:22:11 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -527,6 +527,10 @@ my $stem_extensions = {
 # 8.0
 	'kcalendarcore' => 'kf6-kcalendarcore',
 	'libkcddb-kf5' => 'kf6-libkcddb',
+	'vegastrike-data' => 'vegastrike-utcs',
+	'vegastrike-extra' => 'vegastrike-utcs',
+	'vegastrike-music' => 'vegastrike-utcs',
+	'vegastrike-speech' => 'vegastrike-utcs',
 
 };
 

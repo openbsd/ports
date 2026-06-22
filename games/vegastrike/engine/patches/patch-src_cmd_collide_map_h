@@ -1,6 +1,7 @@
---- src/cmd/collide_map.h.orig.port	Mon Mar 19 09:20:14 2012
-+++ src/cmd/collide_map.h	Sat May 26 16:32:35 2012
-@@ -7,6 +7,7 @@
+Index: src/cmd/collide_map.h
+--- src/cmd/collide_map.h.orig
++++ src/cmd/collide_map.h
+@@ -33,6 +33,7 @@
  #include <limits>
  #endif
  #include <vector>
@@ -8,7 +9,7 @@
  /* Arbitrarily use Set for ALL PLATFORMS -hellcatv */
  class Unit;
  class Bolt;
-@@ -35,7 +36,7 @@ class Collidable (public)
+@@ -61,7 +62,7 @@ class Collidable (public)
              position = QVector( 0, 0, 0 );      //hack for now
  
  #else
@@ -17,7 +18,7 @@
              position = QVector( 0, 0, 0 );      //hack for now
  #endif
      }
-@@ -76,7 +77,7 @@ class Collidable (public)
+@@ -102,7 +103,7 @@ class Collidable (public)
  #ifdef __APPLE__
              !FINITE( radius )
  #else
@@ -26,7 +27,7 @@
  #endif
              || radius >= -FLT_MIN) radius = -FLT_MIN*2;
          this->SetPosition( p );
-@@ -176,7 +177,7 @@ inline void init_null_collide_iter()
+@@ -202,7 +203,7 @@ inline void init_null_collide_iter()
  
  inline bool is_null( const CollideMap::iterator &it )
  {

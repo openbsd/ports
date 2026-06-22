@@ -1,6 +1,7 @@
---- src/cmd/collide2/opcodetypes.h.orig.port	Sat Sep 18 00:29:19 2010
-+++ src/cmd/collide2/opcodetypes.h	Sat May 26 16:32:35 2012
-@@ -196,7 +196,7 @@ typedef uint64 uintmax_t;
+Index: src/cmd/collide2/opcodetypes.h
+--- src/cmd/collide2/opcodetypes.h.orig
++++ src/cmd/collide2/opcodetypes.h
+@@ -195,7 +195,7 @@ typedef uint64 uintmax_t;
  #if defined(HAVE_WCTYPE_H)
  #include <wctype.h>
  #endif

@@ -1,7 +1,10 @@
-COMMENT =	data files for vegastrike
+COMMENT =	game data for Upon The Coldest Sea
 
-DISTNAME =	vegastrike-data-${V}
-REVISION = 	2
+DISTNAME =	vsUTCS_v${V}-Source
+PKGNAME =	vegastrike-utcs-${V}
+
+SITES =		https://github.com/vegastrike/Assets-Production/releases/download/v${V}/
+EXTRACT_SUFX =	.tar.xz
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
@@ -9,15 +12,15 @@ NO_TEST =	Yes
 EXTRACT_ONLY =
 
 MODULES = 	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-BUILD_DEPENDS =	archivers/bzip2
+
+MODPY_BUILDDEP =	No
+MODPY_RUNDEP =		No
+
 RUN_DEPENDS =	devel/desktop-file-utils
 
-MODPY_BUILDDEP =No
-MODPY_RUNDEP =	No
-
 do-install:
-	tar -xjf ${FULLDISTDIR}/${DISTFILES} -C ${PREFIX}/share \
+	xz -dc ${FULLDISTDIR}/${DISTFILES} | \
+		tar -xf - -C ${PREFIX}/share \
 		-s ",${DISTNAME},vegastrike,"
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons
@@ -27,7 +30,7 @@ do-install:
 		${PREFIX}/share/icons
 
 post-install:
-	find ${PREFIX}/share/vegastrike/modules/builtin/ \
+	find ${PREFIX}/share/vegastrike/modules/ \
 		-name *.py -exec ${MODPY_BIN_ADJ} {} +
 	${MODPY_BIN_ADJ} \
 		${PREFIX}/share/vegastrike/cgi-accountserver/accountserver.py

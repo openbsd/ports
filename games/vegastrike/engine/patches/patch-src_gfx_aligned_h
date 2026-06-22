@@ -1,0 +1,50 @@
+Index: src/gfx/aligned.h
+--- src/gfx/aligned.h.orig
++++ src/gfx/aligned.h
+@@ -61,6 +61,11 @@ template <typename T, int ALIGN=16> class aligned_allo
+     typedef typename std::allocator<T>::difference_type difference_type;
+     
+     static const int _OVERHEAD = (sizeof(T) + ALIGN-1) / ALIGN + sizeof(size_t);
++
++    template <typename U>
++    struct rebind {
++        typedef aligned_allocator<U, ALIGN> other;
++    };
+     
+     aligned_allocator() {}
+     template<typename A> explicit aligned_allocator(const A &other) : std::allocator<T>(other) {}
+@@ -83,10 +88,10 @@ template <typename T, int ALIGN=16> class aligned_allo
+         }
+     }
+     
+-    typename std::allocator<T>::pointer _align (typename std::allocator<void>::const_pointer p)
++    typename std::allocator<T>::pointer _align (const void *p)
+     {
+         if (p == 0)
+-            return p;
++            return (pointer)p;
+         
+         char *vrv;
+         
+@@ -99,10 +104,10 @@ template <typename T, int ALIGN=16> class aligned_allo
+         // Store offset
+         *((size_t*)vrv - 1) = vrv - (char*)p;
+         
+-        return __alpn(vrv, ALIGN);
++        return (pointer)__alpn(vrv, ALIGN);
+     }
+ 
+-    void _dealign (typename std::allocator<T>::pointer p)
++    typename std::allocator<T>::pointer _dealign (typename std::allocator<T>::pointer p)
+     {
+         if (p == 0)
+             return p;
+@@ -115,7 +120,7 @@ template <typename T, int ALIGN=16> class aligned_allo
+     
+     typename std::allocator<T>::pointer allocate (typename std::allocator<T>::size_type n, typename std::allocator<void>::const_pointer hint=0)
+     {
+-        return __alpn(_align(std::allocator<T>::allocate(n+_OVERHEAD, _dealign(hint))), ALIGN);
++        return __alpn(_align(std::allocator<T>::allocate(n+_OVERHEAD, hint)), ALIGN);
+     }
+     
+     void deallocate (typename std::allocator<T>::pointer p, typename std::allocator<T>::size_type n)

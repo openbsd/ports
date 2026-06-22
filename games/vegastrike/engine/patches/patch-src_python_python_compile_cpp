@@ -1,0 +1,11 @@
+Index: src/python/python_compile.cpp
+--- src/python/python_compile.cpp.orig
++++ src/python/python_compile.cpp
+@@ -27,7 +27,6 @@
+ #include "cmd/unit_generic.h"
+ #include "python_compile.h"
+ #include <compile.h>
+-#include <eval.h>
+ #include "configxml.h"
+ #include "vs_globals.h"
+ #include "vsfilesystem.h"
