@@ -3,9 +3,9 @@ ONLY_FOR_ARCHS=	amd64
 
 USE_NOBTCFI =	Yes
 
-V =		1.17.1
-V_SHARDS =	0.19.1
-V_MOLINILLO =	0.2.0
+V =		1.20.1
+V_SHARDS =	0.20.0
+V_MOLINILLO =	0.2.2
 
 DIST_TUPLE =	github crystal-lang crystal ${V} . \
 		github crystal-lang shards v${V_SHARDS} shards-${V_SHARDS} \
@@ -16,13 +16,12 @@ DISTNAME =	crystal-${V}
 CATEGORIES =	lang
 
 HOMEPAGE =	https://crystal-lang.org/
-MAINTAINER =	joshua stein <jcs@jcs.org>
 
 # Apache 2.0
 PERMIT_PACKAGE = Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} c event_core event_extra gc iconv m pcre2-8
-WANTLIB +=	yaml-0 llvm${MODCLANG_VERSION}/lib/LLVM
+WANTLIB +=	${COMPILER_LIBCXX} c gc
+WANTLIB +=	iconv m pcre2-8 yaml-0 llvm${MODCLANG_VERSION}/lib/LLVM
 
 #
 # crystal-X-OpenBSDX.X.tar.gz is an archive of a bootstrap compiler object
@@ -30,26 +29,25 @@ WANTLIB +=	yaml-0 llvm${MODCLANG_VERSION}/lib/LLVM
 # current version of Crystal there, then checking out the source for that
 # version, applying patches included in this port, and running:
 #
-# 	make crystal FLAGS="--cross-compile --target amd64-unknown-openbsd7.7"
+# 	make crystal FLAGS="--cross-compile --target amd64-unknown-openbsd7.9"
 #
 # The result will be built at .build/crystal.o
 #
 
 SITES =		https://jcs.org/distfiles/
-DISTFILES =	crystal-${V}-OpenBSD7.7.tar.gz
+DISTFILES =	crystal-${V}-OpenBSD7.9.tar.gz
 
 # Build requires llvm-config from ports, not from base.  When changing
 # MODCLANG_VERSION, keep paths in patches/ in sync here and in bootstrap
 # environment.
 MODULES =	lang/clang
-MODCLANG_VERSION = 19
+MODCLANG_VERSION = 22
 MODCLANG_RUNDEP= yes
 COMPILER =	ports-clang
 LLVM_CONFIG =	llvm-config-${MODCLANG_VERSION}
 
 LIB_DEPENDS =	converters/libiconv \
 		devel/boehm-gc \
-		devel/libevent2 \
 		devel/pcre2 \
 		devel/libyaml \
 		${MODCLANG_LIB_DEPENDS}
@@ -68,7 +66,7 @@ do-build:
 		${WRKSRC}/../crystal.o \
 		${WRKSRC}/src/llvm/ext/llvm_ext.o \
 		`(${LLVM_CONFIG} --libs --system-libs --ldflags 2> /dev/null)` \
-		-L${LOCALBASE}/lib -liconv -lpcre2-8 -levent_core -lgc -lyaml -Wl,-z,nobtcfi
+		-L${LOCALBASE}/lib -liconv -lpcre2-8 -lgc -lyaml -Wl,-z,nobtcfi
 	cd ${WRKSRC}/shards-${V_SHARDS} && \
 		env LD_LIBRARY_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
 		CRYSTAL_PATH=lib:${WRKSRC}/src:${WRKSRC}/crystal-molinillo-${V_MOLINILLO}/src \
@@ -85,8 +83,10 @@ do-install:
 	@chmod ${BINMODE} ${PREFIX}/bin/crystal
 
 do-test:
+	# this will break if WRKSRC is a symlink
 	cd ${WRKSRC}; \
-		ulimit -s 5120 -d 6120000 && \
+		ulimit -s 5120 -d 6291456 && \
+		CRYSTAL_PATH="lib:${WRKSRC}/src" \
 		${MAKE_PROGRAM} ${TEST_TARGET}
 
 .include <bsd.port.mk>
