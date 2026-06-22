@@ -1,4 +1,8 @@
 @pkgpath x11/freefont-ttf
+share/doc/freefont/
+share/doc/freefont/README
+share/doc/freefont/TROUBLESHOOTING
+share/doc/freefont/USAGE
 share/fonts/
 @fontdir share/fonts/freefont/
 share/fonts/freefont/FreeMono.ttf

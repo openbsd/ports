@@ -1,8 +1,9 @@
 COMMENT=		free UCS outline fonts
 
-V=			20120503
-DISTNAME=		freefont-ttf-$V
-CATEGORIES=		fonts x11
+MODFONT_FAMILY =	freefont
+MODFONT_VERSION =	20120503
+DISTNAME =		freefont-ttf-${MODFONT_VERSION}
+PKGNAME =		freefont-ttf-${MODFONT_VERSION}
 
 HOMEPAGE=		https://www.gnu.org/software/freefont/
 
@@ -10,16 +11,14 @@ HOMEPAGE=		https://www.gnu.org/software/freefont/
 PERMIT_PACKAGE=		Yes
 
 SITES=			${SITE_GNU:=freefont/}
-EXTRACT_SUFX=		.zip
 
-WRKDIST=		${WRKDIR}/freefont-$V
+WRKDIST =		${WRKDIR}/freefont-${MODFONT_VERSION}
+
+MODULES =		font
+
 NO_BUILD=		Yes
-PKG_ARCH=		*
 NO_TEST=		Yes
-FONTSDIR=		${PREFIX}/share/fonts/freefont
 
-do-install:
-	${INSTALL_DATA_DIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
+MODFONT_DOCFILES =	README TROUBLESHOOTING USAGE
 
 .include <bsd.port.mk>
