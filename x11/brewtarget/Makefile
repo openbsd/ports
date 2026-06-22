@@ -1,6 +1,6 @@
 COMMENT =		brewing software
 
-V =			5.1.0
+V =			5.1.1
 DISTNAME =		brewtarget-$V
 
 CATEGORIES =		x11
