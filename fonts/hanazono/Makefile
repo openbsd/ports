@@ -1,6 +1,9 @@
 COMMENT =	Japanese Ming-style font
 
-DISTNAME =	hanazono-20170904
+MODFONT_FAMILY =	hanazono
+MODFONT_VERSION =	20170904
+
+DISTNAME =	hanazono-${MODFONT_VERSION}
 
 CATEGORIES =	fonts japanese
 
@@ -11,17 +14,12 @@ HOMEPAGE =	http://fonts.jp/hanazono/
 PERMIT_PACKAGE =	Yes
 
 SITES =			${SITE_OSDN_JP:=hanazono-font/68253/}
-EXTRACT_SUFX =		.zip
+
+MODULES =		font
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
-PKG_ARCH =		*
 
 WRKDIST =		${WRKDIR}
-
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/hanazono
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${PREFIX}/share/fonts/hanazono
 
 .include <bsd.port.mk>
