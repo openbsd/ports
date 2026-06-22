@@ -505,8 +505,8 @@ SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhN
 SHA256 (cargo/zip-2.4.2.tar.gz) = +r5jJOkI+FocUgY856omto3LfrbbyDotFIQDybw+ulA=
 SHA256 (cargo/zipsign-api-0.1.5.tar.gz) = 26YGP/gs29mnZa3RbTaavoHlIPg2BU6ZfC2yF87KQMA=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (cookcli-0.30.0-output.css) = qPzVoFeHH1M2xy6xybeEjjZMVWniYSbzYpOY8mAJ9mc=
-SHA256 (cookcli-0.30.0.tar.gz) = mkSzeLfgnm5BqCniv9Zm9NoYCbKBUB/louoUhRoBozg=
+SHA256 (cookcli-0.32.0-output.css) = jzHvu0mH/+bEJS8AepD8pjwoPkcEKXAzllREVAy/8As=
+SHA256 (cookcli-0.32.0.tar.gz) = 9o03FLQva2euW29NBHtdckvFoivDBkcltFFAv82mkUI=
 SIZE (cargo/accept-language-3.1.0.tar.gz) = 9269
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -1014,5 +1014,5 @@ SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
 SIZE (cargo/zip-2.4.2.tar.gz) = 110773
 SIZE (cargo/zipsign-api-0.1.5.tar.gz) = 17451
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (cookcli-0.30.0-output.css) = 44440
-SIZE (cookcli-0.30.0.tar.gz) = 5673565
+SIZE (cookcli-0.32.0-output.css) = 44702
+SIZE (cookcli-0.32.0.tar.gz) = 5705611

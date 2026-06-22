@@ -1,3 +1,5 @@
+===>  Generating configure for cookcli-0.32.0
+===>  Configuring for cookcli-0.32.0
 MODCARGO_CRATES +=	accept-language	3.1.0	# MIT
 MODCARGO_CRATES +=	adler2	2.0.1	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	ahash	0.8.12	# MIT OR Apache-2.0
