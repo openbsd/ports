@@ -1592,6 +1592,7 @@
      SUBDIR += py-looseversion
      SUBDIR += py-lsprotocol
      SUBDIR += py-magic
+     SUBDIR += py-makefun
      SUBDIR += py-marshmallow
      SUBDIR += py-matrix-common
      SUBDIR += py-mccabe
