@@ -1,10 +1,9 @@
 COMMENT =		manage DNS configuration across any number of DNS hosts
 
-MODGO_VERSION =		v4.25.0
-MODGO_MODNAME =		github.com/StackExchange/dnscontrol/v4
+MODGO_VERSION =		v4.42.0
+MODGO_MODNAME =		github.com/DNSControl/dnscontrol/v4
 
 DISTNAME =		dnscontrol-${MODGO_VERSION}
-REVISION =		1
 
 CATEGORIES =		net
 
