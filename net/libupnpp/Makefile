@@ -1,6 +1,6 @@
 COMMENT =		UPnP client library
 
-DISTNAME =		libupnpp-1.0.3
+DISTNAME =		libupnpp-1.0.4
 
 SHARED_LIBS +=	upnpp                     2.0 # 8.1.0
 
@@ -13,7 +13,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} curl expat m npupnp
+WANTLIB += ${COMPILER_LIBCXX} curl m npupnp
 
 SITES =			https://www.lesbonscomptes.com/upmpdcli/downloads/
 
