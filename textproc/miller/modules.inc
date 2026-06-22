@@ -3,11 +3,14 @@ MODGO_MODULES =	\
 	codeberg.org/go-latex/latex					 v0.1.0 \
 	codeberg.org/go-pdf/fpdf					 v0.10.0 \
 	git.sr.ht/~sbinet/gg						 v0.6.0 \
+	github.com/!proton!mail/go-crypto				 v1.4.1 \
 	github.com/ajstarks/svgo					 v0.0.0-20211024235047-1546f124cd8b \
+	github.com/bwesterb/go-ristretto				 v1.2.3 \
 	github.com/campoy/embedmd					 v1.0.0 \
 	github.com/chzyer/logex						 v1.1.10 \
 	github.com/chzyer/readline					 v0.0.0-20180603132655-2972be24d48e \
 	github.com/chzyer/test						 v0.0.0-20180213035817-a1ea475d72b1 \
+	github.com/cloudflare/circl					 v1.6.3 \
 	github.com/davecgh/go-spew					 v1.1.1 \
 	github.com/facette/natsort					 v0.0.0-20181210072756-2cd4dd1e2dcb \
 	github.com/felixge/fgprof					 v0.9.3 \
@@ -21,52 +24,56 @@ MODGO_MODULES =	\
 	github.com/johnkerl/pgpg/go					 v1.0.0 \
 	github.com/kballard/go-shellquote				 v0.0.0-20180428030007-95032a82bc51 \
 	github.com/kjk/lzma						 v0.0.0-20161016003348-3fd93898850d \
-	github.com/klauspost/compress					 v1.18.5 \
+	github.com/klauspost/compress					 v1.18.6 \
 	github.com/kshedden/dstream					 v0.0.0-20190512025041-c4c410631beb \
 	github.com/kshedden/statmodel					 v0.0.0-20210519035403-ee97d3e48df1 \
 	github.com/lestrrat-go/envload					 v0.0.0-20180220234015-a3eb8ddeffcc \
-	github.com/lestrrat-go/strftime					 v1.1.1 \
-	github.com/mattn/go-isatty					 v0.0.21 \
+	github.com/lestrrat-go/strftime					 v1.2.0 \
+	github.com/mattn/go-isatty					 v0.0.22 \
 	github.com/nine-lives-later/go-windows-terminal-sequences	 v1.0.4 \
 	github.com/pkg/profile						 v1.7.0 \
 	github.com/pmezard/go-difflib					 v1.0.0 \
+	github.com/rivo/uniseg						 v0.4.7 \
 	github.com/stretchr/objx					 v0.5.2 \
 	github.com/stretchr/testify					 v1.11.1 \
 	github.com/xi2/xz						 v0.0.0-20171230120015-48954b6210f8 \
 	github.com/yuin/goldmark					 v1.4.13 \
 	golang.org/x/crypto						 v0.45.0 \
 	golang.org/x/image						 v0.25.0 \
-	golang.org/x/mod						 v0.34.0 \
-	golang.org/x/net						 v0.52.0 \
-	golang.org/x/sync						 v0.20.0 \
-	golang.org/x/sys						 v0.43.0 \
-	golang.org/x/telemetry						 v0.0.0-20260311193753-579e4da9a98c \
-	golang.org/x/term						 v0.42.0 \
-	golang.org/x/text						 v0.36.0 \
-	golang.org/x/tools						 v0.43.0 \
+	golang.org/x/mod						 v0.36.0 \
+	golang.org/x/net						 v0.54.0 \
+	golang.org/x/sync						 v0.21.0 \
+	golang.org/x/sys						 v0.46.0 \
+	golang.org/x/telemetry						 v0.0.0-20260508192327-42602be52be6 \
+	golang.org/x/term						 v0.44.0 \
+	golang.org/x/text						 v0.38.0 \
+	golang.org/x/tools						 v0.45.0 \
 	gonum.org/v1/gonum						 v0.16.0 \
 	gonum.org/v1/plot						 v0.15.2 \
 	gopkg.in/check.v1						 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3						 v3.0.1 \
-	pault.ag/go/debian						 v0.19.0 \
+	pault.ag/go/debian						 v0.21.0 \
 	pault.ag/go/topsort						 v0.1.1 \
 	rsc.io/pdf							 v0.1.1
 
 MODGO_MODFILES =	\
+	github.com/cloudflare/circl	 v1.6.2 \
 	github.com/davecgh/go-spew	 v1.1.0 \
 	github.com/klauspost/compress	 v1.18.0 \
 	github.com/stretchr/objx	 v0.1.0 \
 	github.com/stretchr/objx	 v0.4.0 \
-	github.com/stretchr/testify	 v1.10.0 \
 	github.com/stretchr/testify	 v1.7.1 \
 	github.com/stretchr/testify	 v1.8.0 \
-	golang.org/x/crypto		 v0.40.0 \
+	golang.org/x/crypto		 v0.30.0 \
+	golang.org/x/crypto		 v0.41.0 \
 	golang.org/x/mod		 v0.21.0 \
 	golang.org/x/net		 v0.47.0 \
+	golang.org/x/sync		 v0.20.0 \
 	golang.org/x/sys		 v0.0.0-20211007075335-d3039528d8ac \
 	golang.org/x/sys		 v0.28.0 \
+	golang.org/x/sys		 v0.35.0 \
 	golang.org/x/sys		 v0.38.0 \
-	golang.org/x/sys		 v0.42.0 \
+	golang.org/x/sys		 v0.44.0 \
 	golang.org/x/term		 v0.37.0 \
 	golang.org/x/text		 v0.23.0 \
 	golang.org/x/text		 v0.31.0 \
