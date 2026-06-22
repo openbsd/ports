@@ -10,6 +10,7 @@ include/openjph/ojph_file.h
 include/openjph/ojph_mem.h
 include/openjph/ojph_message.h
 include/openjph/ojph_params.h
+include/openjph/ojph_simd_vsx.h
 include/openjph/ojph_version.h
 lib/cmake/openjph/
 lib/cmake/openjph/openjph-config-version.cmake
