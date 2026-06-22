@@ -1,5 +1,7 @@
 COMMENT =		manage DNS configuration across any number of DNS hosts
 
+# XXX cursor control in "dnscontrol init" does not work correctly
+# (possible syscall issue?)
 MODGO_VERSION =		v4.42.0
 MODGO_MODNAME =		github.com/DNSControl/dnscontrol/v4
 
