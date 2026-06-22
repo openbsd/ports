@@ -1,7 +1,7 @@
 COMMENT=	connection pool server for PostgreSQL
 
 DISTNAME=	pgpool-II-4.6.7
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	databases
 
@@ -20,7 +20,7 @@ WANTLIB=	c crypto m pq ssl pthread
 
 # -Wvla and other unrecognized command line options
 COMPILER=	base-clang ports-gcc
-COMPILER_LANG=	c
+COMPILER_LANGS=	c
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-openssl
