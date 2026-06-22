@@ -1,0 +1,17 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+There are two binaries included with this package:
+
+    * pokerth_client:
+
+        This is the standard client program, version 2.0.8
+
+    * pokerth_qml-client
+
+        This is a "preview" of the QML client being prepared
+        for future version 2.1.0.  It's operational, but still
+        considered experimental rather than production-ready.
+        It provides a very different user interface and user
+        experience.

@@ -1,5 +1,7 @@
 @bin bin/pokerth_client
+@bin bin/pokerth_qml-client
 share/applications/pokerth.desktop
+share/doc/pkg-readmes/${PKGSTEM}
 share/pixmaps/
 share/pixmaps/pokerth.png
 share/pokerth/

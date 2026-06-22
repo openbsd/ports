@@ -2,7 +2,7 @@ BROKEN-i386 =	protobuf/abseil problems
 
 COMMENT =	texas holdem poker client, local or internet games
 
-V =		2.0.7
+V =		2.0.8
 DIST_TUPLE =	github pokerth pokerth v${V} .
 PKGNAME =	pokerth-${V}
 
@@ -14,17 +14,18 @@ MAINTAINER =	Josh Grosse <josh@jggimi.net>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6Sql Qt6Widgets Qt6Xml boost_atomic-mt
-WANTLIB += boost_chrono-mt boost_container-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
-WANTLIB += boost_random-mt boost_regex-mt boost_thread-mt c crypto
-WANTLIB += iconv m protobuf ssl
+WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Sql Qt6Svg Qt6Widgets Qt6Xml boost_atomic-mt boost_chrono-mt
+WANTLIB += boost_container-mt boost_date_time-mt boost_filesystem-mt
+WANTLIB += boost_iostreams-mt boost_program_options-mt boost_random-mt
+WANTLIB += boost_regex-mt boost_thread-mt c crypto iconv m protobuf
+WANTLIB += ssl
 
 MODULES =	devel/cmake \
 		x11/qt6
 SUBST_VARS +=	MODQT_QTDIR V
 
-ALL_TARGET =	pokerth_client
+ALL_TARGET =	pokerth_client pokerth_qml-client
 
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib -liconv
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
