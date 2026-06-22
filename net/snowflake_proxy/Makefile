@@ -1,7 +1,7 @@
 COMMENT=	anti-censorship proxy and pluggable transports for Tor
 
 MODGO_MODNAME=	gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2
-V=		2.12.1
+V=		2.14.0
 MODGO_VERSION=	v$V
 
 DISTNAME=	snowflake.git-${MODGO_VERSION}
@@ -11,7 +11,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	https://snowflake.torproject.org/
 
-MAINTAINER=	Caspar Schutijser <caspar@schutijser.com>
+MAINTAINER=	Caspar Schutijser <caspar@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE= Yes
