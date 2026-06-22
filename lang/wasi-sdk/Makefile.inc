@@ -1,5 +1,5 @@
 ONLY_FOR_ARCHS =	${LLVM_ARCHS}
-LLVM_V ?=	22.1.7
+LLVM_V ?=	22.1.8
 CATEGORIES =	lang
 SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
