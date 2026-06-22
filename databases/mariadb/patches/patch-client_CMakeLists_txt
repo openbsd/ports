@@ -1,10 +1,10 @@
 Index: client/CMakeLists.txt
 --- client/CMakeLists.txt.orig
 +++ client/CMakeLists.txt
-@@ -71,10 +71,10 @@ MYSQL_ADD_EXECUTABLE(mariadb-plugin mysql_plugin.c)
+@@ -78,10 +78,10 @@ MYSQL_ADD_EXECUTABLE(mariadb-plugin mysql_plugin.c)
  TARGET_LINK_LIBRARIES(mariadb-plugin ${CLIENT_LIB})
  
- MYSQL_ADD_EXECUTABLE(mariadb-binlog mysqlbinlog.cc)
+ MYSQL_ADD_EXECUTABLE(mariadb-binlog mysqlbinlog.cc mysqlbinlog-engine.cc)
 -TARGET_LINK_LIBRARIES(mariadb-binlog ${CLIENT_LIB} mysys_ssl)
 +TARGET_LINK_LIBRARIES(mariadb-binlog ${CLIENT_LIB} mysys_ssl ${SSL_LIBRARIES})
  

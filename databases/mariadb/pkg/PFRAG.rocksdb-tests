@@ -280,7 +280,6 @@ share/mysql-test/plugin/rocksdb/rocksdb/r/table_stats.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/tbl_opt_ai.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/tbl_opt_avg_row_length.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/tbl_opt_checksum.result
-share/mysql-test/plugin/rocksdb/rocksdb/r/tbl_opt_connection.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/tbl_opt_data_index_dir.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/tbl_opt_delay_key_write.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/tbl_opt_insert_method.result
@@ -347,6 +346,7 @@ share/mysql-test/plugin/rocksdb/rocksdb/r/use_direct_reads.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/use_direct_reads_writes.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/validate_datadic.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/varbinary_format.result
+share/mysql-test/plugin/rocksdb/rocksdb/r/vector.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/write_sync.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/xa.result
 share/mysql-test/plugin/rocksdb/rocksdb/slow_query_log.awk
@@ -716,7 +716,6 @@ share/mysql-test/plugin/rocksdb/rocksdb/t/table_stats.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/tbl_opt_ai.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/tbl_opt_avg_row_length.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/tbl_opt_checksum.test
-share/mysql-test/plugin/rocksdb/rocksdb/t/tbl_opt_connection.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/tbl_opt_data_index_dir.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/tbl_opt_delay_key_write.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/tbl_opt_insert_method.test
@@ -826,6 +825,7 @@ share/mysql-test/plugin/rocksdb/rocksdb/t/use_direct_reads.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/use_direct_reads_writes.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/validate_datadic.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/varbinary_format.test
+share/mysql-test/plugin/rocksdb/rocksdb/t/vector.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/write_sync.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/xa-master.opt
 share/mysql-test/plugin/rocksdb/rocksdb/t/xa.test

@@ -26,5 +26,5 @@ Index: scripts/CMakeLists.txt
    SET(localstatedir ${MYSQL_DATADIR})
 -ENDIF()
  
- SET(resolveip_locations "$basedir/${INSTALL_BINDIR} $basedir/bin")
- SET(mysqld_locations "$basedir/${INSTALL_SBINDIR} $basedir/libexec $basedir/sbin $basedir/bin")
+ get_filename_component(MYSQL_UNIX_DIR ${MYSQL_UNIX_ADDR} DIRECTORY)
+ SET(mysqlunixdir ${MYSQL_UNIX_DIR})

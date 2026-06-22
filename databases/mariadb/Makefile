@@ -4,7 +4,7 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	11.4.12
+VERSION=	12.3.2
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 EPOCH=		1
@@ -53,7 +53,7 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/bison
 
 LIB_DEPENDS-main=	${LIB_DEPENDS}
-RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=11.4v1,<11.5v1 \
+RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=12.3v1,<12.4v1 \
 			databases/p5-DBD-MariaDB \
 			misc/findutils \
 			sysutils/coreutils
@@ -67,7 +67,7 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			devel/pcre2 \
 			net/curl \
 			textproc/libxml
-RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=11.4v1,<11.5v1
+RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=12.3v1,<12.4v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
 			devel/pcre2
 
