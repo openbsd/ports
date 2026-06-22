@@ -1,6 +1,8 @@
-@bin bin/xaos
+@bin bin/XaoS
 share/XaoS/
 share/XaoS/catalogs/
+share/XaoS/catalogs/README
+share/XaoS/catalogs/README.i18n
 share/XaoS/catalogs/cs.cat
 share/XaoS/catalogs/de.cat
 share/XaoS/catalogs/en.cat
@@ -44,6 +46,7 @@ share/XaoS/examples/burnship.xpf
 share/XaoS/examples/butterfly-langston.xpf
 share/XaoS/examples/butterfly.xpf
 share/XaoS/examples/checker.xpf
+share/XaoS/examples/cigarettes.xpf
 share/XaoS/examples/circle.xpf
 share/XaoS/examples/crone.xpf
 share/XaoS/examples/csiga2.xpf
@@ -52,12 +55,14 @@ share/XaoS/examples/csiga4.xpf
 share/XaoS/examples/csiga5.xpf
 share/XaoS/examples/dark.xpf
 share/XaoS/examples/dblspira.xpf
+share/XaoS/examples/diamond_eye.xpf
 share/XaoS/examples/dragons.xpf
 share/XaoS/examples/dragons2.xpf
 share/XaoS/examples/edge.xpf
 share/XaoS/examples/edge2.xpf
 share/XaoS/examples/edge3.xpf
 share/XaoS/examples/eifell.xpf
+share/XaoS/examples/elevators.xpf
 share/XaoS/examples/eye.xpf
 share/XaoS/examples/eyes.xpf
 share/XaoS/examples/fract0.xpf
@@ -156,6 +161,7 @@ share/XaoS/examples/redmand.xpf
 share/XaoS/examples/redmand2.xpf
 share/XaoS/examples/rocks.xpf
 share/XaoS/examples/royal.xpf
+share/XaoS/examples/royal_fabric.xpf
 share/XaoS/examples/rpg.xpf
 share/XaoS/examples/shell.xpf
 share/XaoS/examples/skullfrm.xpf
