@@ -1,0 +1,9 @@
+This Python library handles Portable Symmetric Key Container (PSKC)
+files as defined in RFC 6030. PSKC files are used to transport and
+provision symmetric keys (seed files) to different types of crypto
+modules, commonly one-time password tokens or other authentication
+devices.
+
+This module can be used to extract keys from PSKC files for use in an
+OTP authentication system. The module can also be used for authoring
+PSKC files.
