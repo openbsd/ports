@@ -1,5 +1,5 @@
 COMMENT=		Free Unix Spectrum Emulator
-DISTNAME=		fuse-1.8.0
+DISTNAME=		fuse-1.9.0
 CATEGORIES=		emulators
 HOMEPAGE=		https://fuse-emulator.sourceforge.net/
 
@@ -21,9 +21,7 @@ LIB_DEPENDS=		devel/glib2 \
 			graphics/png \
 			textproc/libxml
 
-CONFIGURE_STYLE =       autoreconf
-AUTOMAKE_VERSION =      1.16
-AUTOCONF_VERSION =      2.72
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
