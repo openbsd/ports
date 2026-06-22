@@ -3,7 +3,6 @@
 @conflict libgfortran-*
 @pkgpath lang/gcc/4.9,-f95
 @pkgpath lang/gcc/8,-f95
-@pkgpath lang/gcc/15,-f95
 @bin bin/egfortran
 bin/gfortran
 @bin bin/${CONFIG}-egfortran

@@ -1,5 +1,4 @@
 @option is-branch
-@pkgpath lang/gcc/15,-dlang
 @bin bin/egdc
 @bin bin/${CONFIG}-egdc
 @info info/gdc.info

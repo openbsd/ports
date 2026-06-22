@@ -1,7 +1,6 @@
 @option is-branch
 @pkgpath lang/gcc/4.9,-objc
 @pkgpath lang/gcc/8,-objc
-@pkgpath lang/gcc/15,-objc
 lib/gcc/${CONFIG}/${V}/include/objc/
 lib/gcc/${CONFIG}/${V}/include/objc/NXConstStr.h
 lib/gcc/${CONFIG}/${V}/include/objc/Object.h
