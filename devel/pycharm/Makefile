@@ -1,7 +1,7 @@
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2026.1.2
-DIST_VER=		261.24374.152
+V=			2026.1.3
+DIST_VER=		261.25134.203
 DISTNAME=		pycharm-${V}
 CATEGORIES=		devel
 
