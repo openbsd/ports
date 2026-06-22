@@ -4,12 +4,13 @@ V=		1.7
 GH_ACCOUNT=	the-tcpdump-group
 GH_PROJECT=	tcpslice
 GH_COMMIT=	tcpslice-${V}
+REVISION=	0
 
 DISTNAME=	tcpslice-${V}
 EPOCH=		0
 CATEGORIES=	net
 
-HOME_PAGE=	https://github.com/the-tcpdump-group/tcpslice
+HOMEPAGE=	https://github.com/the-tcpdump-group/tcpslice
 
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
