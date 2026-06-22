@@ -1,6 +1,6 @@
 COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
 
-V =		6.0.0
+V =		6.1.0
 DISTNAME =	atari800-${V}-src
 PKGNAME =	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.tgz
