@@ -1,11 +1,9 @@
 COMMENT=	library and CLI tool (ykman) for configuring a YubiKey
 
-MODPY_DISTV=	5.8.0
-
+MODPY_DISTV=	5.9.1
 DISTNAME=	yubikey_manager-${MODPY_DISTV}
 PKGNAME=	yubikey-manager-${MODPY_DISTV}
 YK_PROJECT=	yubikey-manager
-REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -18,9 +16,10 @@ RUN_DEPENDS=	devel/py-click<9 \
 		security/py-cryptography \
 		security/py-fido2<3 \
 		security/py-keyring<26 \
-		security/py-pyscard
+		security/py-python-pskc<2 \
+		security/py-pyscard<3
 
-# tests need "makefun"
+TEST_DEPENDS=	devel/py-makefun
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
