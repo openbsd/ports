@@ -1,0 +1,14 @@
+makefun helps you create functions dynamically, with the signature of
+your choice. It was largely inspired by decorator and functools, and
+created mainly to cover some of their limitations.
+
+The typical use cases are:
+
+- creating signature-preserving function wrappers
+
+- creating function wrappers that have more or less arguments than
+the function they wrap
+
+- more generally, creating functions with a signature derived from
+a reference signature, or even creating functions with a signature
+completely defined at runtime
