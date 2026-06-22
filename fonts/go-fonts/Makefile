@@ -1,12 +1,16 @@
 COMMENT=	Go TrueType fonts
+
+# version number taken from the upstream git commit log
+MODFONT_FAMILY =	go-fonts
+MODFONT_VERSION =	2.010
+EPOCH =			0
+
 GH_ACCOUNT=	golang
 GH_PROJECT=	image
 GH_COMMIT=	41969df76e82aeec85fa3821b1e24955ea993001
-DISTNAME=	go-image-20220616
-PKGNAME=	${DISTNAME:S/image/fonts/}
-HOMEPAGE=	https://blog.golang.org/go-fonts
+DISTNAME =	go-fonts-${MODFONT_VERSION}v${EPOCH}
 
-CATEGORIES=	fonts x11
+HOMEPAGE=	https://blog.golang.org/go-fonts
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -14,14 +18,11 @@ PERMIT_PACKAGE=	Yes
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-PKG_ARCH=	*
+MODULES =	font
 
-FONTDIR=	${PREFIX}/share/fonts/go
-DOCDIR=		${PREFIX}/share/doc/go-fonts
+WRKSRC =	${WRKDIST}/font/gofont/ttfs
 
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/font/gofont/ttfs/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/font/gofont/ttfs/README ${DOCDIR}
+MODFONT_FONTDIR =	${PREFIX}/share/fonts/go
+MODFONT_DOCFILES =	README
 
 .include <bsd.port.mk>
