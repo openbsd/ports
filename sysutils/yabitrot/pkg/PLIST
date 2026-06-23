@@ -1,4 +1,4 @@
 bin/yabitrot
-man/man1/yabitrot.1
+@man man/man1/yabitrot.1
 share/doc/yabitrot/
 share/doc/yabitrot/README

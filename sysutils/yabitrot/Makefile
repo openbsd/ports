@@ -1,8 +1,7 @@
 COMMENT =		fast bitrot detection utility
 
-V =			0.4
-DISTNAME =		yabitrot-${V}
-REVISION =		4
+DISTNAME =		yabitrot-0.4
+REVISION =		5
 
 CATEGORIES =		sysutils
 
@@ -14,15 +13,10 @@ MAINTAINER =		Martin Ziemer <horrad@horrad.de>
 PERMIT_PACKAGE =	Yes
 
 SITES =			${SITE_SOURCEFORGE:=yabitrot/}
-EXTRACT_SUFX =		.tar.gz
 
 MODULES =		lang/python
 NO_BUILD =		yes
 PKG_ARCH =		*
-
-WRKDIST =		${WRKDIR}/yabitrot-${V}
-
-CONFIGURE_STYLE =	none
 
 pre-install:
 	${SUBST_CMD} ${WRKSRC}/yabitrot
