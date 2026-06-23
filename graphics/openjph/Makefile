@@ -23,4 +23,8 @@ MODULES=	devel/cmake
 
 LIB_DEPENDS=	graphics/tiff
 
+.if ${MACHINE_ARCH:Mi386}
+CXXFLAGS += -msse2
+.endif
+
 .include <bsd.port.mk>
