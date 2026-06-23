@@ -5,6 +5,7 @@ COMMENT =		new type of shell
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
 GH_TAGNAME =		0.113.1
+REVISION =		0
 
 MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 
@@ -17,7 +18,7 @@ WANTLIB +=		${MODCARGO_WANTLIB} m git2
 
 # C1x
 COMPILER =		base-clang ports-gcc
-COMILER_LANGS =		c
+COMPILER_LANGS =	c
 
 MODULES =		devel/cargo
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys
