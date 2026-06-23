@@ -16,6 +16,7 @@ MODULES=	devel/meson \
 		x11/xfce4
 MODPY_ADJ_FILES=bin/catfish
 
+DEBUG_PACKAGES =
 RUN_DEPENDS =	devel/py-gobject3 \
 		devel/desktop-file-utils \
 		devel/xdg-utils \
