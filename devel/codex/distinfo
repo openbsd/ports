@@ -542,7 +542,6 @@ SHA256 (cargo/libloading-0.8.9.tar.gz) = 18SwIZn+58XSGlrn2M+nmm71uy/INNbpBY6JyCX
 SHA256 (cargo/libm-0.2.16.tar.gz) = ttLOw+rpT59QnHZ7RZMvGtqDUMS9uFry/KtKPBSAeYE=
 SHA256 (cargo/libredox-0.1.12.tar.gz) = PQuV4CyFE1H4dxR7fe6nsa+x33G2OqX4JwcW4MVyBhY=
 SHA256 (cargo/libsqlite3-sys-0.37.0.tar.gz) = sfERyMQefGGknNNORMdhlGKWciGmRDsOwpngrDDPubE=
-SHA256 (cargo/libz-sys-1.1.23.tar.gz) = FdEYu/N3EGDnMRzHuwVFsB0IqLSn3pSRmN7B+gyhwPc=
 SHA256 (cargo/link-cplusplus-1.0.12.tar.gz) = f3jHMKqn0LkzaimQKepJ+e5TsO0G6SAujLfbm657jII=
 SHA256 (cargo/link-section-0.17.2.tar.gz) = TR6QikFtbp9yV0O4Sjb+6kDEwTHoBfvCbWH59FHzYIA=
 SHA256 (cargo/linked-hash-map-0.5.6.tar.gz) = BxfO8byLY2xuHBu978CeYyLaipMhlm6JKO+A0g9/dw8=
@@ -1174,6 +1173,7 @@ SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXs
 SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhNvVKpLEBVU=
 SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
 SHA256 (cargo/zip-2.4.2.tar.gz) = +r5jJOkI+FocUgY856omto3LfrbbyDotFIQDybw+ulA=
+SHA256 (cargo/zlib-rs-0.5.5.tar.gz) = QJkO3VGq4sK2kHr3T/tjUCnVeIIoIixLuBHpNRwMqtM=
 SHA256 (cargo/zlib-rs-0.6.3.tar.gz) = O+PUDkChM/nJFu4/n0+i2dY0NbX74b/G2drgqgraFRM=
 SHA256 (cargo/zmij-1.0.19.tar.gz) = P/BfjKqQOIlGN1ca5rnilGbB9Pgp0mybKPhpopy+NEU=
 SHA256 (cargo/zoneinfo64-0.3.0.tar.gz) = 7W6yYH6QYWDEV/1XPpKX5lApZpkGuayPsbXNXgVfBwU=
@@ -1190,13 +1190,13 @@ SHA256 (cargo/zune-jpeg-0.5.12.tar.gz) = QQ6ezvY0xwnjgxws/bjZwyFk+uHGdJbVto//co7
 SHA256 (cargo/zvariant-4.2.0.tar.gz) = IIQpCrmhxHHDj8UklFg3c0+/EkSH4QXa7Cu1f9SMgf4=
 SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3MgDSACxEk=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
-SHA256 (codex-rust-v0.141.0.tar.gz) = TsZwHt2NQ9pTS8WvAo52g7h6hhoZnG6TNwAcsCjPVbo=
+SHA256 (codex-rust-v0.142.0.tar.gz) = P+m6qmm4SEc0sUxdzuc5SEI9MCNdzMk+Rv9LdzzasG8=
 SHA256 (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3b30DbjfaF32fDJg3+Wc9/+ksZOpMk4Qs1m76JgdueA=
 SHA256 (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 0WdqwzqCxZA//t5oznPJ2SRmaqihArtkmo+5JqemHOE=
 SHA256 (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995.tar.gz) = tJrDQua12cAV9ThGkMKmHW8xwMPDSq8cwivklWEiKUw=
 SHA256 (nornagon-ratatui-9b2ad1298408c45918ee9f8241a6f95498cdbed2.tar.gz) = slLAIUXlq7/BcEZniLvutTozZfy8ilYh8o95ut0fanA=
-SHA256 (openai-oss-forks-tokio-tungstenite-132f5b39c862e3a970f731d709608b3e6276d5f6.tar.gz) = 1TPWV+/M8npsEchhFJmLGnd9UkNpbRnaLhgHKb2nxH0=
-SHA256 (openai-oss-forks-tungstenite-rs-9200079d3b54a1ff51072e24d81fd354f085156f.tar.gz) = pm7OW230fR9e8D0JibP2kxyXLB1okFE/rzrH6O8B2ho=
+SHA256 (openai-oss-forks-tokio-tungstenite-0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186.tar.gz) = odi/7fQepZ1e03XrwoDa1wmdDDOY6RQGxR1IUnAZaj0=
+SHA256 (openai-oss-forks-tungstenite-rs-4fffad30fe373adbdcffab9545e9e9bf4f2fc19f.tar.gz) = 2FOTRn3VhDaIBZuyBKYbdFDc4RZqLIqrPIdHiVX/zkg=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/actix-codec-0.5.2.tar.gz) = 14085
 SIZE (cargo/actix-http-3.11.2.tar.gz) = 168165
@@ -1741,7 +1741,6 @@ SIZE (cargo/libloading-0.8.9.tar.gz) = 30222
 SIZE (cargo/libm-0.2.16.tar.gz) = 164243
 SIZE (cargo/libredox-0.1.12.tar.gz) = 7469
 SIZE (cargo/libsqlite3-sys-0.37.0.tar.gz) = 5295554
-SIZE (cargo/libz-sys-1.1.23.tar.gz) = 854540
 SIZE (cargo/link-cplusplus-1.0.12.tar.gz) = 8178
 SIZE (cargo/link-section-0.17.2.tar.gz) = 55982
 SIZE (cargo/linked-hash-map-0.5.6.tar.gz) = 15049
@@ -2373,6 +2372,7 @@ SIZE (cargo/zerovec-0.11.6.tar.gz) = 128583
 SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
 SIZE (cargo/zip-0.6.6.tar.gz) = 65789
 SIZE (cargo/zip-2.4.2.tar.gz) = 110773
+SIZE (cargo/zlib-rs-0.5.5.tar.gz) = 207080
 SIZE (cargo/zlib-rs-0.6.3.tar.gz) = 210781
 SIZE (cargo/zmij-1.0.19.tar.gz) = 23948
 SIZE (cargo/zoneinfo64-0.3.0.tar.gz) = 81655
@@ -2389,10 +2389,10 @@ SIZE (cargo/zune-jpeg-0.5.12.tar.gz) = 86116
 SIZE (cargo/zvariant-4.2.0.tar.gz) = 82180
 SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
-SIZE (codex-rust-v0.141.0.tar.gz) = 8843915
+SIZE (codex-rust-v0.142.0.tar.gz) = 9093589
 SIZE (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3951333
 SIZE (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 86782
 SIZE (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995.tar.gz) = 129254
 SIZE (nornagon-ratatui-9b2ad1298408c45918ee9f8241a6f95498cdbed2.tar.gz) = 566574
-SIZE (openai-oss-forks-tokio-tungstenite-132f5b39c862e3a970f731d709608b3e6276d5f6.tar.gz) = 31620
-SIZE (openai-oss-forks-tungstenite-rs-9200079d3b54a1ff51072e24d81fd354f085156f.tar.gz) = 293929
+SIZE (openai-oss-forks-tokio-tungstenite-0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186.tar.gz) = 33055
+SIZE (openai-oss-forks-tungstenite-rs-4fffad30fe373adbdcffab9545e9e9bf4f2fc19f.tar.gz) = 293806

@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.141.0
+V =			0.142.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -23,8 +23,8 @@ WRKSRC =		${WRKDIST}/codex-rs
 
 DIST_TUPLE += github nornagon crossterm 87db8bfa6dc99427fd3b071681b07fc31c6ce995 ./crossterm
 DIST_TUPLE += github nornagon ratatui 9b2ad1298408c45918ee9f8241a6f95498cdbed2 ./ratatui
-DIST_TUPLE += github openai-oss-forks tokio-tungstenite 132f5b39c862e3a970f731d709608b3e6276d5f6 ./tokio-tungstenite
-DIST_TUPLE += github openai-oss-forks tungstenite-rs 9200079d3b54a1ff51072e24d81fd354f085156f ./tungstenite
+DIST_TUPLE += github openai-oss-forks tokio-tungstenite 0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186 ./tokio-tungstenite
+DIST_TUPLE += github openai-oss-forks tungstenite-rs 4fffad30fe373adbdcffab9545e9e9bf4f2fc19f ./tungstenite
 DIST_TUPLE += github helix-editor nucleo 4253de9faabb4e5c6d81d946a5e35a90f87347ee ./nucleo
 DIST_TUPLE += github dzbarsky rules_rust b56cbaa8465e74127f1ea216f813cd377295ad81 ./runfiles
 
