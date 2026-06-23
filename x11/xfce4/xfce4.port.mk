@@ -59,7 +59,7 @@ MODXFCE_PURGE_LA?=	lib/xfce4/panel/plugins lib/xfce4/panel-plugins
 .elif defined(XFCE_GOODIE)
 HOMEPAGE?=	https://docs.xfce.org/apps/${XFCE_GOODIE}/start
 
-DEBUG_PACKAGES=	${BUILD_PACKAGES}
+DEBUG_PACKAGES?=	${BUILD_PACKAGES}
 SITES?=	https://archive.xfce.org/src/apps/${XFCE_GOODIE:L}/${XFCE_BRANCH}/
 SITES_GIT?=	https://gitlab.xfce.org/apps/${XFCE_GOODIE:L}/-/archive/${XFCE_COMMIT}/
 DISTNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
