@@ -4,6 +4,7 @@ COMMENT=	GTK+-2 file manager with desktop features
 GH_ACCOUNT=	jun7
 GH_PROJECT=	rox-filer
 GH_COMMIT=	c5de8d8356fd0eaeff5a34b67387704422b8c010
+REVISION=	0
 
 DISTNAME=	rox-filer-2.11pl20230717
 CATEGORIES=	x11
@@ -26,6 +27,8 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf no-autoheader
 AUTOCONF_VERSION= 2.69
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
 BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/docbook-xsl \
 		textproc/intltool \
@@ -47,7 +50,7 @@ MAKE_ENV=	CC="${CC}" \
 
 pre-configure:
 	@perl -pi -e 's,/usr/local/share/Choices,${PREFIX}/share/rox/Choices,g' \
-		${WRKSRC}/ROX-Filer/src/choices.c
+		${WRKSRC}/choices.c
 
 post-build:
 	${MAKE_PROGRAM} -C ${WRKSRC}/Docs

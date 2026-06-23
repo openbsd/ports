@@ -1,4 +1,4 @@
-from https://bugs.gentoo.org/950161
+from https://bugs.gentoo.org/attachment.cgi?id=944025
 
 Index: ROX-Filer/src/dnd.c
 --- ROX-Filer/src/dnd.c.orig

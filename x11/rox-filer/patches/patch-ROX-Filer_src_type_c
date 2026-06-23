@@ -1,4 +1,6 @@
-from https://bugs.gentoo.org/950161
+from https://bugs.gentoo.org/attachment.cgi?id=944025 minus a hunk which
+removes handling of "if (type == NULL)"; type_open() is called with
+type == NULL by run_diritem, type is then passed on to handler_for()
 
 Index: ROX-Filer/src/type.c
 --- ROX-Filer/src/type.c.orig
@@ -12,28 +14,3 @@ Index: ROX-Filer/src/type.c
  	diritem_restat(path, item, NULL, TRUE);
  	if (item->base_type != TYPE_ERROR)
  		type = item->mime_type;
-@@ -341,18 +341,13 @@ char *handler_for(MIME_type *type)
- 	char	*open;
- 	char	*target;
- 
--	if (type == NULL)
--		open = choices_find_xdg_path_load("all", "MIME-types", SITE);
--	else
--	{
--		type_name = g_strconcat(type->media_type, "_", type->subtype, NULL);
--		open = choices_find_xdg_path_load(type_name, "MIME-types", SITE);
--		g_free(type_name);
-+	type_name = g_strconcat(type->media_type, "_", type->subtype, NULL);
-+	open = choices_find_xdg_path_load(type_name, "MIME-types", SITE);
-+	g_free(type_name);
- 
--		if (!open)
--			open = choices_find_xdg_path_load(type->media_type,
--							  "MIME-types", SITE);
--	}
-+	if (!open)
-+		open = choices_find_xdg_path_load(type->media_type,
-+						  "MIME-types", SITE);
- 
- 	if (!open)
- 		return NULL;

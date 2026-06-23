@@ -1,0 +1,14 @@
+from https://bugs.gentoo.org/attachment.cgi?id=944025
+
+Index: ROX-Filer/src/usericons.c
+--- ROX-Filer/src/usericons.c.orig
++++ ROX-Filer/src/usericons.c
+@@ -546,7 +546,7 @@ void delete_globicon(const gchar *path)
+ }
+ 
+ /* Set the icon for this dialog's file to 'icon' */
+-static void do_set_icon(GtkWidget *dialog, const gchar *icon)
++static void do_set_icon(GtkWidget *dialog, const guchar *icon)
+ {
+ 	guchar  *path = NULL;
+ 	Radios *radios;
