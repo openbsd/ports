@@ -1,30 +1,26 @@
 COMMENT=		monospace font designed for coders
 
-V =			3.000
-DISTNAME =		inconsolata-font-$V
-PKGNAME =		inconsolata-new-$V
-CATEGORIES=		fonts x11
+MODFONT_FAMILY =	inconsolata-new
+MODFONT_VERSION =	3.000
 
 HOMEPAGE =		https://www.levien.com/type/myfonts/inconsolata.html
 
-DIST_SUBDIR =		inconsolata-$V
-SITES =	https://github.com/googlefonts/Inconsolata/releases/download/v$V/
+DIST_SUBDIR =		inconsolata-${MODFONT_VERSION}
+SITES =	https://github.com/googlefonts/Inconsolata/releases/download/v${MODFONT_VERSION}/
 DISTFILES =		fonts_ttf.zip \
 			fonts_otf.zip
 
 # SIL OFL 1.1
 PERMIT_PACKAGE=	Yes
 
+MODULES =		font
+
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-PKG_ARCH =		*
-
 WRKDIST =		${WRKDIR}/fonts
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/inconsolata
-	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${PREFIX}/share/fonts/inconsolata
-	${INSTALL_DATA} ${WRKSRC}/otf/*.otf ${PREFIX}/share/fonts/inconsolata
+MODFONT_FONTDIR =	${PREFIX}/share/fonts/inconsolata
+MODFONT_FONTFILES =	ttf/*.ttf otf/*.otf
 
 .include <bsd.port.mk>
