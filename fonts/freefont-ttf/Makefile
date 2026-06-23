@@ -4,6 +4,7 @@ MODFONT_FAMILY =	freefont
 MODFONT_VERSION =	20120503
 DISTNAME =		freefont-ttf-${MODFONT_VERSION}
 PKGNAME =		freefont-ttf-${MODFONT_VERSION}
+REVISION =		0
 
 HOMEPAGE=		https://www.gnu.org/software/freefont/
 
