@@ -21,8 +21,6 @@ SITES =			https://pari.math.u-bordeaux.fr/pub/pari/packages/
 
 RUN_DEPENDS =		math/pari
 
-CONFIGURE_STYLE =	none
-
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
