@@ -2,10 +2,11 @@ COMMENT=	reusable library for GPU-accelerated video/image rendering
 
 GH_ACCOUNT=	haasn
 GH_PROJECT=	libplacebo
-GH_TAGNAME=	v7.360.1
+GH_TAGNAME=	v7.351.0
+EPOCH=		0
 CATEGORIES=	graphics
 
-SHARED_LIBS=	placebo	10.0
+SHARED_LIBS=	placebo	11.0
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
@@ -18,9 +19,10 @@ WANTLIB +=	execinfo lcms2 m pthread shaderc_shared vulkan
 WANTLIB +=	GL epoxy
 
 MODULES=	devel/meson
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 BUILD_DEPENDS=	devel/fast-float \
-		graphics/glad \
+		graphics/glad>=2.0.6 \
 		graphics/vulkan-headers
 
 LIB_DEPENDS=	graphics/lcms2 \
