@@ -1,6 +1,4 @@
 @option is-branch
-@pkgpath lang/gcc/4.9,-c++
-@pkgpath lang/gcc/8,-c++
 @bin bin/ec++
 @bin bin/eg++
 @bin bin/${CONFIG}-ec++

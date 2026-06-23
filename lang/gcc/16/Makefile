@@ -19,7 +19,7 @@ USE_NOEXECONLY = Yes
 V = 16.1.0
 GCC_PKGSPEC = >=16,<17
 
-REVISION = 0
+REVISION = 1
 
 # aarch64, powerpc64 and sparc64 bootstrap contain only gdc
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.1.0-0.tar.xz
