@@ -59,8 +59,6 @@ ALL_TARGET =		default build-doc build-man
 WRKDIST =		${WRKDIR}/${DISTNAME:S/_/-/}
 PKG_ARCH =		*
 
-CONFIGURE_STYLE =	none # hack, otherwise python.port.mk overrides target
-
 MAKE_ENV +=		CONFDIR=${SYSCONFDIR}/munin \
 			OSTYPE=openbsd \
 			PREFIX=${PREFIX} \
