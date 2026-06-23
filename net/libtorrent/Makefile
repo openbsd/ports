@@ -3,9 +3,9 @@ COMMENT=		BitTorrent library written in C++
 BROKEN-hppa =		undefined references to __sync atomic ops
 BROKEN-sh =		undefined references to __sync atomic ops
 
-DISTNAME=		libtorrent-0.15.7
+DISTNAME=		libtorrent-0.16.11
 EPOCH=			0
-SHARED_LIBS +=  	torrent 23.0	# .18.0
+SHARED_LIBS +=  	torrent 24.0	# .18.0
 CATEGORIES=		net devel
 
 HOMEPAGE=		https://rakshasa.github.io/rtorrent/
@@ -16,8 +16,11 @@ PERMIT_PACKAGE=	Yes
 SITES=			https://github.com/rakshasa/rtorrent-archive/raw/master/
 
 WANTLIB += ${COMPILER_LIBCXX} crypto execinfo m z
+WANTLIB += curl nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl ssl
 
 COMPILER =		base-clang ports-gcc base-gcc
+
+LIB_DEPENDS =		net/curl
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-debug \

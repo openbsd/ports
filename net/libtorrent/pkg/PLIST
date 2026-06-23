@@ -28,16 +28,18 @@ include/torrent/error.h
 include/torrent/event.h
 include/torrent/exceptions.h
 include/torrent/hash_string.h
-include/torrent/http.h
 include/torrent/net/
 include/torrent/net/address_info.h
+include/torrent/net/connection_state.h
 include/torrent/net/fd.h
+include/torrent/net/http_get.h
+include/torrent/net/http_stack.h
+include/torrent/net/network_config.h
+include/torrent/net/poll.h
 include/torrent/net/resolver.h
 include/torrent/net/socket_address.h
 include/torrent/net/socket_address_key.h
-include/torrent/net/socket_event.h
 include/torrent/net/types.h
-include/torrent/net/utils.h
 include/torrent/object.h
 include/torrent/object_raw_bencode.h
 include/torrent/object_static_map.h
@@ -51,8 +53,12 @@ include/torrent/peer/connection_list.h
 include/torrent/peer/peer.h
 include/torrent/peer/peer_info.h
 include/torrent/peer/peer_list.h
-include/torrent/poll.h
 include/torrent/rate.h
+include/torrent/runtime/
+include/torrent/runtime/network_manager.h
+include/torrent/runtime/socket_manager.h
+include/torrent/system/
+include/torrent/system/thread.h
 include/torrent/throttle.h
 include/torrent/torrent.h
 include/torrent/tracker/
@@ -65,6 +71,7 @@ include/torrent/utils/
 include/torrent/utils/chrono.h
 include/torrent/utils/directory_events.h
 include/torrent/utils/extents.h
+include/torrent/utils/file_stat.h
 include/torrent/utils/log.h
 include/torrent/utils/log_buffer.h
 include/torrent/utils/option_strings.h
@@ -73,7 +80,8 @@ include/torrent/utils/ranges.h
 include/torrent/utils/resume.h
 include/torrent/utils/scheduler.h
 include/torrent/utils/signal_bitfield.h
-include/torrent/utils/thread.h
+include/torrent/utils/string_manip.h
+include/torrent/utils/unordered_vector.h
 include/torrent/utils/uri_parser.h
 @static-lib lib/libtorrent.a
 lib/libtorrent.la
