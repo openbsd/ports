@@ -1,0 +1,24 @@
+share/fonts/
+@fontdir share/fonts/inclusive-sans/
+share/fonts/inclusive-sans/InclusiveSans-Bold.otf
+share/fonts/inclusive-sans/InclusiveSans-Bold.ttf
+share/fonts/inclusive-sans/InclusiveSans-BoldItalic.otf
+share/fonts/inclusive-sans/InclusiveSans-BoldItalic.ttf
+share/fonts/inclusive-sans/InclusiveSans-Italic.otf
+share/fonts/inclusive-sans/InclusiveSans-Italic.ttf
+share/fonts/inclusive-sans/InclusiveSans-Italic[wght].ttf
+share/fonts/inclusive-sans/InclusiveSans-Light.otf
+share/fonts/inclusive-sans/InclusiveSans-Light.ttf
+share/fonts/inclusive-sans/InclusiveSans-LightItalic.otf
+share/fonts/inclusive-sans/InclusiveSans-LightItalic.ttf
+share/fonts/inclusive-sans/InclusiveSans-Medium.otf
+share/fonts/inclusive-sans/InclusiveSans-Medium.ttf
+share/fonts/inclusive-sans/InclusiveSans-MediumItalic.otf
+share/fonts/inclusive-sans/InclusiveSans-MediumItalic.ttf
+share/fonts/inclusive-sans/InclusiveSans-Regular.otf
+share/fonts/inclusive-sans/InclusiveSans-Regular.ttf
+share/fonts/inclusive-sans/InclusiveSans-SemiBold.otf
+share/fonts/inclusive-sans/InclusiveSans-SemiBold.ttf
+share/fonts/inclusive-sans/InclusiveSans-SemiBoldItalic.otf
+share/fonts/inclusive-sans/InclusiveSans-SemiBoldItalic.ttf
+share/fonts/inclusive-sans/InclusiveSans[wght].ttf

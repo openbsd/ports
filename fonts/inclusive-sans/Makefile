@@ -1,19 +1,23 @@
-COMMENT =	text font designed for accessibility and readability
+COMMENT-main =	text font designed for accessibility and readability
+COMMENT-web =	text font designed for accessibility and readability (web fonts)
+
+MULTI_PACKAGES =	-main -web
 
 MODFONT_FAMILY =	inclusive-sans
-MODFONT_VERSION =	0.0.20230803
+MODFONT_VERSION =	0.0.20250220
 
-CATEGORIES =	fonts x11
+HOMEPAGE =	https://www.oliviaking.com/inclusivesans/feature
 
-HOMEPAGE =	https://www.oliviaking.com/inclusive-sans
-
-# OFL
+# SIL OFL 1.1
 PERMIT_PACKAGE=	Yes
 
-DIST_TUPLE =	github LivKing Inclusive-Sans 97577e1a7c08db105c19bae35ea17b1a8f81ec5e .
+DIST_TUPLE =	github LivKing Inclusive-Sans 38b8ed1dd67bd25ef4180140492810cf050ef501 .
 
 MODULES =	font
-WRKSRC =	${WRKDIST}/fonts/otf
+WRKSRC =	${WRKDIST}/fonts
+
+MODFONT_FONTFILES =	otf/*.otf ttf/*.ttf variable/*.ttf
+MODFONT_WEBFILES =	webfonts/*.woff2
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
