@@ -1,0 +1,31 @@
+Make pod happy
+
+Index: perl/imap/lib/Cyrus/IndexFile.pm
+--- perl/imap/lib/Cyrus/IndexFile.pm.orig
++++ perl/imap/lib/Cyrus/IndexFile.pm
+@@ -1409,6 +1409,8 @@ sub _make_pack {
+ 
+ =head1 PUBLIC API
+ 
++=over
++
+ =item Cyrus::IndexFile->new($fh)
+ 
+ Build a new Cyrus::IndexFile object from a filehandle.  The handle is not
+@@ -1521,6 +1523,7 @@ sub new_empty {
+   return $Self;
+ }
+ 
++
+ =item $index->stream_copy($outfh, $decider, %Opts)
+ 
+ Currently broken!  Supposed to copy this file into the output filehandle.
+@@ -2376,6 +2379,8 @@ sub tv_nsec {
+   return $Self->{header}{MinorVersion} < 20 ? 0
+                                             : $time % 1_000_000_000;
+ }
++
++=back
+ 
+ =cut
+ 

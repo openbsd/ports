@@ -1,0 +1,27 @@
+Make pod happy
+
+Index: perl/imap/lib/Cyrus/AccountSync.pm
+--- perl/imap/lib/Cyrus/AccountSync.pm.orig
++++ perl/imap/lib/Cyrus/AccountSync.pm
+@@ -13,6 +13,7 @@ use Data::Dumper;
+ use Data::UUID;
+ 
+ =pod
++
+ =head1 NAME
+ 
+ Cyrus::AccountSync - dump and undump entire accounts
+@@ -21,8 +22,13 @@ Cyrus::AccountSync - dump and undump entire accounts
+ 
+ =cut
+ =head1 PUBLIC API
++
+ =over
++
+ =item Cyrus::AccountSync->new($SyncProto);
++
++=back
++
+ =cut
+ 
+ sub new {

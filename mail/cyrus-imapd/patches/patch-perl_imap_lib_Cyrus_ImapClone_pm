@@ -1,0 +1,33 @@
+Make pod happy
+
+Index: perl/imap/lib/Cyrus/ImapClone.pm
+--- perl/imap/lib/Cyrus/ImapClone.pm.orig
++++ perl/imap/lib/Cyrus/ImapClone.pm
+@@ -16,6 +16,7 @@ use JSON::XS;
+ use IO::File;
+ 
+ =pod
++
+ =head1 NAME
+ 
+ Cyrus::ImapClone  - A pure perl interface to clone Cyrus Mailbox.
+@@ -24,8 +25,11 @@ Cyrus::ImapClone  - A pure perl interface to clone Cyr
+ 
+ =cut
+ =head1 PUBLIC API
++
+ =over
++
+ =item Cyrus::ImapClone->new()
++
+ =cut
+ 
+ sub new {
+@@ -439,6 +443,7 @@ sub _splituser {
+ }
+ 
+ =back
++
+ =cut
+ 
+ 1;

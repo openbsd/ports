@@ -1,0 +1,33 @@
+Make pod happy
+
+Index: perl/imap/lib/Cyrus/SyncProto.pm
+--- perl/imap/lib/Cyrus/SyncProto.pm.orig
++++ perl/imap/lib/Cyrus/SyncProto.pm
+@@ -13,6 +13,7 @@ use Digest::SHA;
+ use Digest::CRC qw(crc32);
+ 
+ =pod
++
+ =head1 NAME
+ 
+ Cyrus::SyncProto  -
+@@ -21,8 +22,11 @@ Cyrus::SyncProto  -
+ 
+ =cut
+ =head1 PUBLIC API
++
+ =over
++
+ =item Cyrus::SyncProto->new()
++
+ =cut
+ 
+ my $digest = Digest::SHA->new();
+@@ -165,6 +169,7 @@ sub get_mailboxes {
+ }
+ 
+ =back
++
+ =cut
+ 
+ 1;
