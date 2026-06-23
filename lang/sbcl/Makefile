@@ -1,6 +1,7 @@
 # codegen for mips, mips64, riscv64, and sparc64 is present,
 # but it needs some portage for OpenBSD.
 ONLY_FOR_ARCHS +=	aarch64 amd64 arm i386 powerpc powerpc64
+BROKEN-i386 =	fails after LLVM 22 update
 
 COMMENT =	high performance Common Lisp compiler
 
