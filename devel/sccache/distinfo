@@ -454,7 +454,7 @@ SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
 SHA256 (cargo/zstd-0.13.1.tar.gz) = LXibFRQgOhEgrSQp6uQ6e9MrkJdqe7igX37AL6iMwjo=
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
-SHA256 (sccache-0.15.0.tar.gz) = bmm4jy+ImC3GOJ9opmJLNVArWidgpqige9sQolDtmN8=
+SHA256 (sccache-0.16.0.tar.gz) = kX/U1+WEwj3Tz5yi85TCygPFfHPi1geXcPB9kAgXav4=
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
@@ -911,4 +911,4 @@ SIZE (cargo/zip-0.6.6.tar.gz) = 65789
 SIZE (cargo/zstd-0.13.1.tar.gz) = 29805
 SIZE (cargo/zstd-safe-7.1.0.tar.gz) = 20792
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
-SIZE (sccache-0.15.0.tar.gz) = 470381
+SIZE (sccache-0.16.0.tar.gz) = 476256
