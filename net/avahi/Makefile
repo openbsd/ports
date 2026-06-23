@@ -9,7 +9,7 @@ GH_ACCOUNT=		avahi
 GH_PROJECT=		avahi
 GH_TAGNAME=		v0.9-rc4
 
-REVISION-python=	0
+REVISION-python=	1
 
 PKGNAME-main=		avahi-${_GH_TAG_DIST:S/-//}
 PKGNAME-glib=		avahi-glib-${_GH_TAG_DIST:S/-//}
@@ -41,7 +41,7 @@ PSEUDO_FLAVORS=		no_gui bootstrap
 FLAVOR?=		no_gui bootstrap
 
 MULTI_PACKAGES= 	-main -glib -gui -gtk3 -libs -python
-DEBUG_PACKAGES=		-main -glib -gui -gtk3 -libs -python
+DEBUG_PACKAGES=		-main -glib -gui -gtk3 -libs
 
 MODULES=		textproc/intltool
 

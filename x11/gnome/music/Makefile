@@ -2,6 +2,7 @@ COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
 GNOME_VERSION=		49.1
+REVISION=		0
 
 HOMEPAGE=		https://apps.gnome.org/Music/
 
@@ -40,7 +41,5 @@ RUN_DEPENDS +=		x11/gnome/localsearch
 
 # sndio(7) support
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base
-
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
