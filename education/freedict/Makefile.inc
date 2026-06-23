@@ -12,7 +12,6 @@ SITES =		https://download.freedict.org/dictionaries/${DICT}/${V}/
 
 EXTRACT_SUFX ?=		.tar.xz
 
-CONFIGURE_STYLE ?=	none
 NO_BUILD ?=		Yes
 NO_TEST ?=		Yes
 
