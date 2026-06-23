@@ -1,10 +1,11 @@
-COMMENT-main =	text font designed for accessibility and readability
-COMMENT-web =	text font designed for accessibility and readability (web fonts)
+COMMENT-main =	font designed for accessibility and readability
+COMMENT-web =	font designed for accessibility and readability (web fonts)
 
 MULTI_PACKAGES =	-main -web
 
 MODFONT_FAMILY =	inclusive-sans
 MODFONT_VERSION =	0.0.20250220
+REVISION =		0
 
 HOMEPAGE =	https://www.oliviaking.com/inclusivesans/feature
 
