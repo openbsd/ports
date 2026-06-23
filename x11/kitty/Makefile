@@ -1,5 +1,6 @@
 # Requires OpenGL>=3.3
-ONLY_FOR_ARCHS =	aarch64 amd64 i386
+# github.com/sgtdi/fswatcher@v1.3.0 watcher_kqueue.go fails on ILP32
+ONLY_FOR_ARCHS =	aarch64 amd64
 
 COMMENT =		fast, feature full, GPU-based terminal emulator
 
