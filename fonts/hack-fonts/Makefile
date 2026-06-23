@@ -1,11 +1,9 @@
-PKG_ARCH =		*
-
 COMMENT =		typeface designed for source code
 
-V =			3.003
-DISTNAME =		Hack-v${V}-ttf
-PKGNAME =		hack-fonts-$V
-CATEGORIES =		fonts
+MODFONT_FAMILY =	hack-fonts
+MODFONT_VERSION =	3.003
+DISTNAME =		Hack-v${MODFONT_VERSION}-ttf
+
 HOMEPAGE =		https://sourcefoundry.org/hack/
 
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
@@ -13,15 +11,16 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://github.com/source-foundry/Hack/releases/download/v${V}/
+SITES =		https://github.com/source-foundry/Hack/releases/download/v${MODFONT_VERSION}/
+
+MODULES =		font
 
 WRKDIST =		${WRKDIR}
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/Hack/
-	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${PREFIX}/share/fonts/Hack/
+MODFONT_FONTDIR =	${PREFIX}/share/fonts/Hack
+MODFONT_FONTFILES =	ttf/*.ttf
 
 .include <bsd.port.mk>
