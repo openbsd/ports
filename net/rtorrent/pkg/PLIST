@@ -3,3 +3,6 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/doc/rtorrent/
 share/examples/rtorrent/
 share/examples/rtorrent/rtorrent.rc
+share/rtorrent/
+share/rtorrent/lua/
+share/rtorrent/lua/rtorrent.lua

@@ -1,7 +1,7 @@
 Index: test/Makefile.in
 --- test/Makefile.in.orig
 +++ test/Makefile.in
-@@ -674,9 +674,9 @@ rtorrent_Test_Src_SOURCES = $(rtorrent_Test_Common) \
+@@ -673,9 +673,9 @@ rtorrent_Test_Src_SOURCES = $(rtorrent_Test_Common) \
  	src/test_command_dynamic.h
  
  rtorrent_Test_Rpc_CXXFLAGS = $(CPPUNIT_CFLAGS)
