@@ -1,3 +1,6 @@
+fix #!
+don't test_no_color, it uses script -q (unsupported)
+
 Index: tests/shtest
 --- tests/shtest.orig
 +++ tests/shtest
@@ -7,11 +10,12 @@ Index: tests/shtest
  
  . "${0%/*}/setup" "$@"
  
-@@ -613,6 +613,7 @@ done
- test_no_color=true
+@@ -641,7 +641,7 @@ done
+ unset JQ_COLORS
+ 
+ # Check $NO_COLOR
+-test_no_color=true
++test_no_color=false
  $msys  && test_no_color=false
  $mingw && test_no_color=false
-+[ "$(uname -s)" = OpenBSD ] && test_no_color=false
- if $test_no_color && command -v script >/dev/null 2>&1; then
-   if script -qc echo /dev/null >/dev/null 2>&1; then
-     faketty() { script -qec "$*" /dev/null; }
+ $sunos && test_no_color=false
