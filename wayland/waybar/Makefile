@@ -4,7 +4,7 @@ V =		0.15.0
 
 DIST_TUPLE=	github  Alexays Waybar ${V} .
 PKGNAME=	waybar-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES =	wayland
 
