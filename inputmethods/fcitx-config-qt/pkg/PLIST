@@ -1,8 +1,6 @@
 @bin bin/fcitx5-config-qt
 @bin bin/fcitx5-plasma-theme-generator
 @bin bin/kbd-layout-viewer5
-lib/qt6/
-lib/qt6/plugins/
 lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/kcms/
 lib/qt6/plugins/plasma/kcms/systemsettings/

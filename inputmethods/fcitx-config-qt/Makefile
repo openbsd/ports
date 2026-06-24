@@ -2,7 +2,7 @@ COMMENT =	GUI configure tool for fcitx5
 
 DISTNAME =	fcitx5-configtool-5.1.7
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	inputmethods
 
@@ -24,6 +24,7 @@ EXTRACT_SUFX =		.tar.zst
 MODULES =		devel/cmake x11/qt6
 
 BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			devel/kf6/kdeclarative \
 			devel/gettext,-tools \
 			devel/kf6/kpackage \
 			devel/iso-codes
