@@ -1,5 +1,5 @@
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-4.6.0
+DISTNAME=	R-4.6.1
 
 # When bumping SO_VERSION, adjust
 # math/rstudio/patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
@@ -35,6 +35,8 @@ MODFORTRAN_COMPILER = flang
 .else
 MODFORTRAN_COMPILER = gfortran
 .endif
+
+MODTK_VERSION =	9
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
 		archivers/gtar \
