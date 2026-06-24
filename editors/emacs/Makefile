@@ -2,7 +2,7 @@ COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		30.2
 DISTNAME=		emacs-${VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		editors
 
@@ -123,6 +123,7 @@ post-install:
 	mv ${PREFIX}/libexec/emacs/${VERSION}/${GCCARCH}/emacs-*.pdmp \
 	    ${PREFIX}/libexec/emacs/${VERSION}/${GCCARCH}/emacs.pdmp
 	rm ${PREFIX}/info/elisp_type_hierarchy.*
+	${INSTALL_DATA} ${FILESDIR}/default.el ${PREFIX}/share/emacs/site-lisp
 .if ${FLAVOR:Mno_x11}
 	rm -Rf ${PREFIX}/share/applications/ ${PREFIX}/share/icons/
 .endif

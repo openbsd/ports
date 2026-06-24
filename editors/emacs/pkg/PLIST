@@ -4458,6 +4458,7 @@ share/emacs/${VERSION}/lisp/yank-media.elc
 share/emacs/${VERSION}/site-lisp/
 share/emacs/${VERSION}/site-lisp/subdirs.el
 share/emacs/site-lisp/
+share/emacs/site-lisp/default.el
 share/emacs/site-lisp/subdirs.el
 share/metainfo/
 share/metainfo/emacs.metainfo.xml
