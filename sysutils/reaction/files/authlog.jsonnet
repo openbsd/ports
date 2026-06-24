@@ -10,7 +10,7 @@ local banFor(time) = {
 {
   patterns: {
     ip: {
-      regex: @'(?:(?:[ 0-9 ]{1,3}\.){3}[0-9]{1,3})|(?:(?:[a-fA-F0-9]{1,4}:){7}[a-fA-F0-9]{1,4})',
+      type: 'ip',
     },
   },
   start: [

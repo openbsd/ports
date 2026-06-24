@@ -1,13 +1,28 @@
 @rcscript ${RCDIR}/reaction
 @bin bin/reaction
+@bin bin/reaction-plugin-virtual
+@man man/man1/reaction-flush.1
+@man man/man1/reaction-rotate.1
+@man man/man1/reaction-show.1
+@man man/man1/reaction-start.1
+@man man/man1/reaction-test-config.1
+@man man/man1/reaction-test-regex.1
+@man man/man1/reaction-trigger.1
+@man man/man1/reaction.1
+@sample ${SYSCONFDIR}/reaction/
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/reaction
 share/examples/reaction/
-share/examples/reaction/activitywatch.jsonnet
+share/examples/reaction/README.md
 share/examples/reaction/authlog.jsonnet
-@sample ${SYSCONFDIR}/reaction.conf
+@sample ${SYSCONFDIR}/reaction/authlog.jsonnet
 share/examples/reaction/example.jsonnet
-share/examples/reaction/heavy-load.yml
-share/examples/reaction/persistence.jsonnet
-share/examples/reaction/reaction.example.service
-share/examples/reaction/server.jsonnet
-share/examples/reaction/test.jsonnet
+share/examples/reaction/example.yml
 @sample /var/reaction/
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/reaction.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_reaction

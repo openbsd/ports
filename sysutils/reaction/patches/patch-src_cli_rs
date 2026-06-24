@@ -1,0 +1,50 @@
+No systemd to create /run/reaction/ for the socket here
+
+Index: src/cli.rs
+--- src/cli.rs.orig
++++ src/cli.rs
+@@ -34,7 +34,7 @@ pub enum SubCommand {
+         loglevel: Level,
+ 
+         /// path to the client-daemon communication socket
+-        #[clap(short = 's', long, default_value = "/run/reaction/reaction.sock")]
++        #[clap(short = 's', long, default_value = "/var/run/reaction/reaction.sock")]
+         socket: PathBuf,
+     },
+ 
+@@ -44,7 +44,7 @@ pub enum SubCommand {
+     )]
+     Show {
+         /// path to the client-daemon communication socket
+-        #[clap(short = 's', long, default_value = "/run/reaction/reaction.sock")]
++        #[clap(short = 's', long, default_value = "/var/run/reaction/reaction.sock")]
+         socket: PathBuf,
+ 
+         /// how to format output
+@@ -67,7 +67,7 @@ Then prints the flushed matches and actions."
+     )]
+     Flush {
+         /// path to the client-daemon communication socket
+-        #[clap(short = 's', long, default_value = "/run/reaction/reaction.sock")]
++        #[clap(short = 's', long, default_value = "/var/run/reaction/reaction.sock")]
+         socket: PathBuf,
+ 
+         /// how to format output
+@@ -89,7 +89,7 @@ Then prints the flushed matches and actions."
+     )]
+     Trigger {
+         /// path to the client-daemon communication socket
+-        #[clap(short = 's', long, default_value = "/run/reaction/reaction.sock")]
++        #[clap(short = 's', long, default_value = "/var/run/reaction/reaction.sock")]
+         socket: PathBuf,
+ 
+         /// STREAM.FILTER to trigger
+@@ -106,7 +106,7 @@ Then prints the flushed matches and actions."
+ See state_rotation_interval configuration key for more information)")]
+     Rotate {
+         /// path to the client-daemon communication socket
+-        #[clap(short = 's', long, default_value = "/run/reaction/reaction.sock")]
++        #[clap(short = 's', long, default_value = "/var/run/reaction/reaction.sock")]
+         socket: PathBuf,
+     },
+ 

@@ -1,13 +1,17 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/reaction"
-daemon_flags="start -c ${SYSCONFDIR}/reaction.conf"
-daemon_execdir="/var/reaction"
+daemon_flags="start -c ${SYSCONFDIR}/reaction/"
+daemon_execdir="${LOCALSTATEDIR}/reaction"
 daemon_logger="daemon.info"
 
 . /etc/rc.d/rc.subr
 
 rc_reload=NO
 rc_bg=YES
+
+rc_pre() {
+	install -d ${LOCALSTATEDIR}/run/reaction
+}
 
 rc_cmd $1
