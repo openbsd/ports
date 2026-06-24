@@ -2,8 +2,7 @@ COMMENT =	i3-compatible Wayland compositor
 
 GH_ACCOUNT =	swaywm
 GH_PROJECT =	sway
-GH_TAGNAME =	1.11
-REVISION =	1
+GH_TAGNAME =	1.12
 
 CATEGORIES =	wayland
 
@@ -16,7 +15,8 @@ PERMIT_PACKAGE = Yes
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-MODULES =	devel/meson wayland/wlroots
+MODULES =		devel/meson wayland/wlroots
+MODWLROOTS_VERSION =	0.20
 
 WANTLIB =	cairo drm evdev gdk_pixbuf-2.0 glib-2.0 gobject-2.0 input
 WANTLIB +=	json-c pango-1.0 pangocairo-1.0 pcre2-8 pixman-1 pthread
