@@ -21,7 +21,8 @@ WANTLIB += Qt6QuickControls2 Qt6Widgets fmt m spdlog xkbcommon
 MODULES =		devel/cmake \
 			x11/qt6
 
-BUILD_DEPENDS =		devel/kdbindings
+BUILD_DEPENDS =		devel/kdbindings \
+			textproc/nlohmann-json
 
 LIB_DEPENDS =		devel/fmt \
 			devel/spdlog \
