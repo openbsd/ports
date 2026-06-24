@@ -1,6 +1,6 @@
 COMMENT=	gzip-aware file mirroring over http
 
-DISTNAME=	zsync-0.6.4
+DISTNAME=	zsync-0.6.5
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net
