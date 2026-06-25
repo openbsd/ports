@@ -1,6 +1,7 @@
 COMMENT=	a software fax modem that uses an IAX channel
 
 DISTNAME=	iaxmodem-1.3.5
+REVISION=	0
 CATEGORIES=	telephony
 SITES=		${SITE_SOURCEFORGE:=iaxmodem/}
 

@@ -62,3 +62,11 @@ Index: iaxmodem.c
  	_exit(-1);
      }
  
+@@ -1566,6 +1564,7 @@
+ 			if (regstate == PENDING) {
+ 			    printlog(LOG_ERROR, "Registration timed out.\n");
+ 			}
++			iax_destroy(session[1]);
+ 			break;
+ 		    case IAX_EVENT_ACCEPT:
+ 			phonestate = PHONE_CALLACCEPTED;
