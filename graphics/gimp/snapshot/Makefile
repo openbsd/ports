@@ -10,6 +10,7 @@ GIMP_API_V=	3.0
 GIMP_APP_V=	${V:R}
 DISTNAME=	gimp-${V}
 SUBST_VARS +=	GIMP_API_V GIMP_APP_V
+REVISION=	0
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu

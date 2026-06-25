@@ -1,6 +1,6 @@
 @option no-default-conflict
 @option is-branch
-@conflict gimp->=2.99,<3.1
+@conflict gimp->=2.99,<4
 @bin bin/gimp-${GIMP_APP_V}
 @bin bin/gimp-console-${GIMP_APP_V}
 @bin bin/gimp-script-fu-interpreter-${GIMP_API_V}
