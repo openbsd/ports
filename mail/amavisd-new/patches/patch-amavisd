@@ -1,10 +1,11 @@
-Hunks 1, 4: Disable File::LibMagic in favour of safer file(1) from base.
-Hunks 2, 5: fix DKIM signing
+Hunks 1, 5: Disable File::LibMagic in favour of safer file(1) from base.
+Hunks 4, 6: fix DKIM signing
+Hunks 2, 3: fix Crypto::OpenSSL::RSA
 
 Index: amavisd
 --- amavisd.orig
 +++ amavisd
-@@ -12939,7 +12939,7 @@ sub after_chroot_init() {
+@@ -12964,7 +12964,7 @@ sub after_chroot_init() {
                 grep(/\.pm\z/, keys %INC)) {
      next  if !grep($_ eq $m, qw(Amavis::Conf
        Archive::Tar Archive::Zip Compress::Zlib Compress::Raw::Zlib
@@ -13,7 +14,27 @@ Index: amavisd
        MIME::Entity MIME::Parser MIME::Tools Mail::Header Mail::Internet
        Digest::MD5 Digest::SHA Digest::SHA1 Crypt::OpenSSL::RSA
        Authen::SASL Authen::SASL::XS Authen::SASL::Cyrus Authen::SASL::Perl
-@@ -30859,7 +30859,7 @@ sub new_SpamAssassin_instance {
+@@ -18790,7 +18790,7 @@ sub fetch_modules_extra() {
+                       auto::Net::SSLeay::dump_peer_certificate));
+   }
+   push(@modules, qw(Net::DNS::RR::TXT Text::ParseWords
+-         auto::Crypt::OpenSSL::RSA::new_public_key))  if $extra_code_dkim;
++       ))  if $extra_code_dkim;
+   push(@modules, 'Anomy::Sanitizer')  if $enable_anomy_sanitizer;
+   Amavis::Boot::fetch_modules('REQUIRED ADDITIONAL MODULES', 1, @modules);
+ 
+@@ -30827,10 +30827,6 @@ sub getSAPlugins {
+       $mod_names{'Mail::SpamAssassin::Plugin::DKIM'}) {
+     push(@modules, qw(
+       Crypt::OpenSSL::RSA
+-      auto::Crypt::OpenSSL::RSA::new_public_key
+-      auto::Crypt::OpenSSL::RSA::new_key_from_parameters
+-      auto::Crypt::OpenSSL::RSA::get_key_parameters
+-      auto::Crypt::OpenSSL::RSA::import_random_seed
+       Digest::SHA Error));
+   }
+ # HTML/HeadParser.pm
+@@ -30915,7 +30911,7 @@ sub new_SpamAssassin_instance {
  #   PREFIX            => '/usr/local',
  #   DEF_RULES_DIR     => '/usr/local/share/spamassassin',
  #   LOCAL_RULES_DIR   => '/etc/mail/spamassassin',
@@ -22,7 +43,7 @@ Index: amavisd
  #see Mail::SpamAssassin man page for other options
    };
    if ($sa_version_num < 3.001005 && !defined $sa_args->{LOCAL_STATE_DIR})
-@@ -31634,17 +31634,8 @@ BEGIN {
+@@ -31690,17 +31686,8 @@ BEGIN {
    import Amavis::Unpackers::NewFilename qw(consumed_bytes);
  }
  
