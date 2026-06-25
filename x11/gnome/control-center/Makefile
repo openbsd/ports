@@ -4,7 +4,7 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 # !!! sync MAJOR_VERSION (from meson.build) with meta/gnome "V" variable
-GNOME_VERSION=		49.7
+GNOME_VERSION=		49.8
 
 CATEGORIES=		x11
 
