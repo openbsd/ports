@@ -4,6 +4,7 @@ bin/kmail_clamav.sh
 bin/kmail_fprot.sh
 bin/kmail_sav.sh
 @lib lib/libKPim6AutoGenerateText.so.${LIBKPim6AutoGenerateText_VERSION}
+@lib lib/libadblockplugin.so.${LIBadblockplugin_VERSION}
 @lib lib/libakonadidatasetools.so.${LIBakonadidatasetools_VERSION}
 @lib lib/libdkimverifyconfigure.so.${LIBdkimverifyconfigure_VERSION}
 @lib lib/libexpireaccounttrashfolderconfig.so.${LIBexpireaccounttrashfolderconfig_VERSION}
@@ -122,6 +123,7 @@ lib/qt6/plugins/pim6/templateparser/
 @so lib/qt6/plugins/pim6/templateparser/templateparseraddressrequesterplugin.so
 lib/qt6/plugins/pim6/webengineviewer/
 lib/qt6/plugins/pim6/webengineviewer/urlinterceptor/
+@so lib/qt6/plugins/pim6/webengineviewer/urlinterceptor/webengineviewer_adblockplugin.so
 @so lib/qt6/plugins/pim6/webengineviewer/urlinterceptor/webengineviewer_donottrackplugin.so
 lib/qt6/plugins/plasmacalendarplugins/
 lib/qt6/plugins/plasmacalendarplugins/pimevents/

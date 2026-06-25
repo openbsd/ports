@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  dkimverifyconfigure                      5.1 # 5.13.2
 SHARED_LIBS +=  kaddressbookmergelibprivate              2.0 # 5.13.2
@@ -12,9 +13,10 @@ SHARED_LIBS +=  folderconfiguresettings                  2.1 # 5.16.1
 SHARED_LIBS +=  kmailconfirmbeforedeleting               3.2 # 5.18.3
 SHARED_LIBS +=  openurlwithconfigure                     2.1 # 5.19.0
 SHARED_LIBS +=  akonadidatasetools                       2.2 # 0.0
-SHARED_LIBS +=	KPim6AutoGenerateText                    0.0 # 0.0
+SHARED_LIBS +=  KPim6AutoGenerateText                    0.0 # 0.0
+SHARED_LIBS +=  adblockplugin                            0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6CalendarCore KF6CalendarEvents
+WANTLIB += ${MODCARGO_WANTLIB} GL KF6Archive KF6CalendarCore KF6CalendarEvents
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
 WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemModels KF6ItemViews
@@ -41,9 +43,8 @@ WANTLIB += KPim6TemplateParser KPim6TextEdit KPim6Tnef KPim6WebEngineViewer
 WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick
 WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml gpg-error gpgme gpgmepp m markdown
-WANTLIB += qgpgmeqt6
-
+WANTLIB += Qt6Widgets Qt6Xml c++ execinfo gpg-error gpgme gpgmepp
+WANTLIB += m markdown qgpgmeqt6 util
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -116,5 +117,44 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/qt6/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
+
+BUILD_DEPENDS +=	devel/corrosion
+
+MODULES =		devel/cmake \
+			devel/cargo
+
+MODCARGO_BUILD =	No
+MODCARGO_INSTALL =	No
+
+MODCARGO_DIST_SUBDIR = ../cargo
+MODCARGO_CARGOTOML =	${WRKSRC}/plugins/webengineurlinterceptor/adblock/Cargo.toml
+
+CONFIGURE_ENV +=	CARGO_HOME=${WRKDIR}/cargo-home
+MAKE_ENV +=		CARGO_HOME=${WRKDIR}/cargo-home
+
+CXXBRIDGE_V =		1.0.189
+CXXBRIDGE_LOCKFILE =	cxxbridge-cargo.lock
+
+pre-configure:
+	# We ship our own Cargo.lock for cxxbridge-cmd so the build resolves
+	# against the vendored crates instead of reaching out to crates.io
+	cp ${FILESDIR}/${CXXBRIDGE_LOCKFILE} \
+		${MODCARGO_VENDOR_DIR}/cxxbridge-cmd-${CXXBRIDGE_V}/Cargo.lock
+	# We replaced Cargo.lock so we drop its entry from .cargo-checksum.json
+	# because otherwise cargo's integrity check fails the --locked build.
+	cd ${MODCARGO_VENDOR_DIR}/cxxbridge-cmd-${CXXBRIDGE_V} && \
+		sed -i 's,"Cargo.lock":"[0-9a-f]*"\,,,' .cargo-checksum.json
+	mkdir -p ${WRKDIR}/cargo-home
+	printf '%s\n' \
+		'[source.crates-io]' \
+		'replace-with = "modcargo"' \
+		'[source.modcargo]' \
+		'directory = "${MODCARGO_VENDOR_DIR}"' \
+		'[net]' \
+		'offline = true' \
+		> ${WRKDIR}/cargo-home/config.toml
+
+# This file includes MODCARGO_CARGOTOML and CXXBRIDGE_LOCKFILE crates.
+.include "crates.inc"
 
 .include <bsd.port.mk>
