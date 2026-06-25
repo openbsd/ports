@@ -3,7 +3,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			19.0.2
+V =			20.0.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -31,6 +31,8 @@ SHARED_LIBS +=  CmdBridgeClient           4.0 # 0.0
 SHARED_LIBS +=  QmlDesignerCore           5.0 # 0.0
 SHARED_LIBS +=  DevContainer              2.0 # 0.0
 SHARED_LIBS +=  QtTaskTree                0.0 # 0.0
+SHARED_LIBS +=  AcpLib                    0.0 # 0.0
+SHARED_LIBS +=  McpServerLib              0.0 # 0.0
 
 CATEGORIES =	devel editors
 
@@ -43,14 +45,15 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Concurrent Qt6Core
 WANTLIB += Qt6DBus Qt6Designer Qt6DesignerComponents Qt6Gui Qt6Help
-WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6Quick3D Qt6Quick3DAssetImport Qt6Quick3DAssetUtils
-WANTLIB += Qt6Quick3DParticles Qt6Quick3DRuntimeRender Qt6Quick3DUtils
-WANTLIB += Qt6QuickWidgets Qt6SerialPort Qt6ShaderTools Qt6Sql
-WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Test Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml archive c gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 intl m secret-1 xkbcommon yaml-cpp
+WANTLIB += Qt6HttpServer Qt6Network Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Quick3D Qt6Quick3DAssetImport
+WANTLIB += Qt6Quick3DAssetUtils Qt6Quick3DParticles Qt6Quick3DRuntimeRender
+WANTLIB += Qt6Quick3DUtils Qt6QuickWidgets Qt6SerialPort Qt6ShaderTools
+WANTLIB += Qt6Sql Qt6Svg Qt6SvgWidgets Qt6Test Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6WebSockets Qt6Widgets Qt6Xml
+WANTLIB += archive c gio-2.0 glib-2.0 gobject-2.0 intl m secret-1
+WANTLIB += xkbcommon yaml-cpp
 
 
 SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
@@ -117,4 +120,6 @@ post-install:
 .endfor
 	${MODPY_COMPILEALL} ${PREFIX}/share/qtcreator/debugger/
 
+LIB_DEPENDS += x11/qt6/qthttpserver
+LIB_DEPENDS += x11/qt6/qtwebsockets 
 .include <bsd.port.mk>
