@@ -23,7 +23,7 @@ SUBST_VARS +=		VERSION
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -luuid"
-CONFIGURE_ARGS =	--disable-qt
+CONFIGURE_ARGS =	--disable-qt --without-ewf
 
 LIB_DEPENDS =		converters/libiconv \
 			sysutils/e2fsprogs>=1.42.7 \
