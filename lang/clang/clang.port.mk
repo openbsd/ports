@@ -11,10 +11,6 @@ MODCLANG_BUILDDEP ?= Yes
 MODCLANG_RUNDEP ?= No
 MODCLANG_CPPLIB ?= No
 
-.if ${MODCLANG_CPPLIB:L} == "yes" && ${MODCLANG_VERSION} < 19
-ERRORS += "Fatal: ${MODCLANG_LIB_DEPENDS} does not support ports libc++"
-.endif
-
 .if ${MODCLANG_RUNDEP:L} == "yes"
 RUN_DEPENDS+=           ${MODCLANG_RUN_DEPENDS}
 .endif
