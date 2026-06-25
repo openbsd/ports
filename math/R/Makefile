@@ -1,5 +1,6 @@
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-4.6.1
+REVISION=	0
 
 # When bumping SO_VERSION, adjust
 # math/rstudio/patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
@@ -29,12 +30,6 @@ SITES=		https://cran.r-project.org/src/base/R-4/ \
 
 MODULES=	fortran \
 		x11/tk
-
-.if ${MACHINE_ARCH:Maarch64}
-MODFORTRAN_COMPILER = flang
-.else
-MODFORTRAN_COMPILER = gfortran
-.endif
 
 MODTK_VERSION =	9
 
