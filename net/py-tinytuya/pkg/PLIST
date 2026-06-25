@@ -24,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/RFRemoteControlDevice.
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/SocketDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/SoriaInverterDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/ThermostatDevice.py
+lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/TowelRailHeaterDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/WiFiDualMeterDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}/
@@ -51,6 +52,8 @@ lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}SoriaI
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}SoriaInverterDevice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}ThermostatDevice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}ThermostatDevice.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}TowelRailHeaterDevice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}TowelRailHeaterDevice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}WiFiDualMeterDevice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}WiFiDualMeterDevice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -72,10 +75,13 @@ lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}__init__.${MOD
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}scanner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}scanner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}wizard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}wizard.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tinytuya/cli.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/Device.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/XenonDevice.py
