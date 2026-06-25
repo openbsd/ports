@@ -1,7 +1,7 @@
 Index: src/aarch64/ffi.c
 --- src/aarch64/ffi.c.orig
 +++ src/aarch64/ffi.c
-@@ -889,8 +889,9 @@ ffi_prep_closure_loc (ffi_closure *closure,
+@@ -927,8 +927,9 @@ ffi_prep_closure_loc (ffi_closure *closure,
  # endif
  #else
    static const unsigned char trampoline[16] = {
