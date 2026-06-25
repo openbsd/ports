@@ -1,6 +1,6 @@
 COMMENT=	Python binding for xxHash
 
-MODPY_DISTV=	3.7.0
+MODPY_DISTV=	3.7.1
 DISTNAME=	xxhash-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -17,5 +17,6 @@ MODPY_PI=	Yes
 MODPY_TEST_LINK_SO= Yes
 
 RUN_DEPENDS=	sysutils/xxhash
+TEST_DEPENDS=	devel/py-test-benchmark
 
 .include <bsd.port.mk>
