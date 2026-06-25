@@ -34,6 +34,7 @@
      SUBDIR += colorexplorer
      SUBDIR += cstitch
      SUBDIR += ctl
+     SUBDIR += cxx-rust-cssparser
      SUBDIR += darktable
      SUBDIR += dcmtk
      SUBDIR += dcraw
