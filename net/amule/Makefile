@@ -2,7 +2,7 @@ COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
 COMMENT-daemon =stand-alone daemon/cmdline for amule
 
-V =		3.0.0
+V =		3.0.1
 GH_ACCOUNT =	amule-org
 GH_PROJECT =	amule
 GH_TAGNAME =	$V
@@ -25,7 +25,7 @@ WANTLIB =	${COMPILER_LIBCXX} \
 		cryptopp intl ixml upnp \
 		wx_baseu-3.2 wx_baseu_net-3.2 wx_gtk3u_core-3.2
 
-WANTLIB-main =	${WANTLIB} cryptopp curl gd glib-2.0
+WANTLIB-main =	${WANTLIB} cryptopp curl gd glib-2.0 maxminddb
 WANTLIB-web =	${WANTLIB} png readline
 WANTLIB-daemon = ${WANTLIB} cryptopp curl glib-2.0 readline
 
@@ -45,6 +45,7 @@ LIB_DEPENDS =	devel/cryptopp \
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		devel/cryptopp \
 		graphics/gd \
+		net/libmaxminddb
 
 LIB_DEPENDS-web = ${LIB_DEPENDS} \
 		devel/gettext,-runtime
@@ -53,24 +54,21 @@ RUN_DEPENDS-main = devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
 CONFIGURE_ARGS = \
-	-D ENABLE_IP2COUNTRY=off \
-	-D BUILD_MONOLITHIC=on \
-	-D BUILD_ED2K=on \
-	-D BUILD_DAEMON=on \
-	-D BUILD_REMOTEGUI=on \
-	-D BUILD_AMULECMD=on \
-	-D BUILD_WEBSERVER=on \
-	-D BUILD_ALC=on \
-	-D BUILD_ALCC=on \
-	-D BUILD_CAS=on \
-	-D BUILD_WXCAS=on \
+	-D ENABLE_CCACHE=OFF \
+	-D BUILD_MONOLITHIC=ON \
+	-D BUILD_ED2K=ON \
+	-D BUILD_DAEMON=ON \
+	-D BUILD_REMOTEGUI=ON \
+	-D BUILD_AMULECMD=ON \
+	-D BUILD_WEBSERVER=ON \
+	-D BUILD_ALC=ON \
+	-D BUILD_ALCC=ON \
+	-D BUILD_CAS=ON \
+	-D BUILD_WXCAS=ON \
 	-D CRYPTOPP_INCLUDE_PREFIX=${LOCALBASE}/include/cryptopp \
+	-D DEFAULT_VERSION_CHECK=OFF
 
 CXXFLAGS +=	-I${LOCALBASE}/include
-
-pre-configure:
-	cd ${WRKSRC}; rm docs/man/[ae]*.*.1.in \
-		src/utils/*/docs/[acw]*.*.1.in
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/src/utils/scripts/mldonkey_importer.pl \

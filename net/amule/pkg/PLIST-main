@@ -36,12 +36,15 @@ share/doc/amule/CHANGELOG.md
 share/doc/amule/EC_Protocol.md
 share/doc/amule/INSTALL.md
 share/doc/amule/IP2Country.md
+share/doc/amule/LICENSE.md
 share/doc/amule/README.md
 share/doc/amule/amulesig.md
 share/icons/hicolor/128x128/apps/org.amule.aMule.png
+share/icons/hicolor/256x256/apps/org.amule.aMule.png
 share/locale/ar/LC_MESSAGES/amule.mo
 share/locale/ast/LC_MESSAGES/amule.mo
 share/locale/bg/LC_MESSAGES/amule.mo
+share/locale/bn/LC_MESSAGES/amule.mo
 share/locale/ca/LC_MESSAGES/amule.mo
 share/locale/cs/LC_MESSAGES/amule.mo
 share/locale/da/LC_MESSAGES/amule.mo
@@ -66,6 +69,7 @@ share/locale/it_CH/LC_MESSAGES/amule.mo
 share/locale/ja/LC_MESSAGES/amule.mo
 share/locale/ko_KR/LC_MESSAGES/amule.mo
 share/locale/lt/LC_MESSAGES/amule.mo
+share/locale/lv/LC_MESSAGES/amule.mo
 share/locale/nl/LC_MESSAGES/amule.mo
 share/locale/nn/LC_MESSAGES/amule.mo
 share/locale/pl/LC_MESSAGES/amule.mo
@@ -78,6 +82,7 @@ share/locale/ru/LC_MESSAGES/amule.mo
 share/locale/sl/LC_MESSAGES/amule.mo
 share/locale/sq/LC_MESSAGES/amule.mo
 share/locale/sv/LC_MESSAGES/amule.mo
+share/locale/ta/LC_MESSAGES/amule.mo
 share/locale/tr/LC_MESSAGES/amule.mo
 share/locale/uk/LC_MESSAGES/amule.mo
 share/locale/zh_CN/LC_MESSAGES/amule.mo
