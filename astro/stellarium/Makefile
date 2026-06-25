@@ -2,9 +2,8 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
 
-V=			26.1
+V=			26.2
 DISTNAME=		stellarium-${V}
-REVISION=		1
 
 CATEGORIES=		astro x11
 
@@ -24,6 +23,8 @@ WANTLIB += Qt6Widgets c exiv2 gps indiclient m md4c md4c-html
 WANTLIB += nlopt xkbcommon z
 
 SITES=			https://github.com/Stellarium/stellarium/releases/download/v${V}/
+
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 MODULES=		devel/cmake \
 			lang/python \
