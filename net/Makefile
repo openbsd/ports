@@ -763,6 +763,7 @@
      SUBDIR += tkabber
      SUBDIR += tkirc
      SUBDIR += tn5250
+     SUBDIR += tocaia
      SUBDIR += toot
      SUBDIR += tor
      SUBDIR += torsocks
