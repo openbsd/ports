@@ -1,0 +1,10 @@
+Tocaia is a simple and portable Gopher Client built with C89 and POSIX
+in mind.  It offers a TUI interface to explore Gopherspace, with support
+for menus, text files, searches, and back/forward navigation.
+
+Features
+- Menu and text file browsing
+- Search queries
+- Back/forward navigation history
+- Cross-platform support (Unix-like systems)
+- Minimal dependencies
