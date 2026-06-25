@@ -1,9 +1,8 @@
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-2.0.6
+DISTNAME=		dnsdist-2.0.7
 EXTRACT_SUFX=		.tar.xz
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-REVISION=		1
 
 CATEGORIES=		net
 
