@@ -1,6 +1,6 @@
 COMMENT=		mobile device management server
 
-V=			5.38.1
+V=			5.39.1
 GH_ACCOUNT=		h-mdm
 GH_PROJECT=		hmdm-server
 GH_TAGNAME=		v${V}
@@ -29,7 +29,7 @@ RUN_DEPENDS+=		www/tomcat/v9
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-HMDM_APK_VERSION=	6.31
+HMDM_APK_VERSION=	6.36
 HMDM_APK=		hmdm-${HMDM_APK_VERSION}-os.apk
 HMDM_SERVER_DIR=	/var/tomcat/work/hmdm-server
 HMDM_LANGUAGE=		en
