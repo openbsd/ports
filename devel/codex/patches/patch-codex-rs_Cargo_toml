@@ -19,7 +19,7 @@ Index: codex-rs/Cargo.toml
  rustls = { version = "0.23", default-features = false, features = [
      "aws_lc_rs",
      "std",
-@@ -543,14 +543,7 @@ opt-level = 0
+@@ -544,14 +544,7 @@ opt-level = 0
  
  [patch.crates-io]
  # Uncomment to debug local changes.
