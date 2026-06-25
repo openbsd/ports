@@ -1,0 +1,8 @@
+lib/cmake/
+lib/cmake/Corrosion/
+lib/cmake/Corrosion/CorrosionConfig.cmake
+lib/cmake/Corrosion/CorrosionConfigVersion.cmake
+share/cmake/
+share/cmake/Corrosion.cmake
+share/cmake/CorrosionGenerator.cmake
+share/cmake/FindRust.cmake
