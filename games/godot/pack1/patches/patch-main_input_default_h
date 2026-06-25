@@ -1,0 +1,23 @@
+backport commit 0b3496f:
+	Add support for SDL3 joystick input driver
+
+Index: main/input_default.h
+--- main/input_default.h.orig
++++ main/input_default.h
+@@ -92,6 +92,7 @@ class InputDefault : public Input {
+ 		int last_hat;
+ 		int mapping;
+ 		int hat_current;
++		Dictionary info;
+ 
+ 		Joypad() {
+ 			for (int i = 0; i < JOY_AXIS_MAX; i++) {
+@@ -241,7 +242,7 @@ class InputDefault : public Input {
+ 	virtual Vector2 get_joy_vibration_strength(int p_device);
+ 	virtual float get_joy_vibration_duration(int p_device);
+ 	virtual uint64_t get_joy_vibration_timestamp(int p_device);
+-	void joy_connection_changed(int p_idx, bool p_connected, String p_name, String p_guid = "");
++	void joy_connection_changed(int p_idx, bool p_connected, String p_name, String p_guid = "", const Dictionary &p_joypad_info = Dictionary());
+ 
+ 	virtual Vector3 get_gravity() const;
+ 	virtual Vector3 get_accelerometer() const;

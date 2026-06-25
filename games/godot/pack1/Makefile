@@ -6,12 +6,12 @@ COMMENT-sharp=	.NET libs for mono/C# module of Godot
 VERSION =	3.6.2
 PKGNAME =	godot3-${VERSION}
 SHARPFILES_V =	3.5.2
-REVISION =	1
+REVISION =	2
 
 MULTI_PACKAGES =	-main -sharp
 
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
-WANTLIB += GL LinearMath X11 Xcursor Xext
+WANTLIB += GL LinearMath SDL3 X11 Xcursor Xext
 WANTLIB += Xi Xinerama Xrandr Xrender c enet execinfo
 WANTLIB += intl m mbedcrypto mbedtls mbedx509 mpcdec ogg opus
 WANTLIB += opusfile pcre2-32 sndio steam_api theora theoradec
@@ -61,6 +61,7 @@ LIB_DEPENDS =		archivers/zstd \
 			devel/bullet \
 			devel/gettext,-runtime \
 			devel/pcre2 \
+			devel/sdl3 \
 			games/goldberg_emulator \
 			graphics/libwebp \
 			multimedia/libtheora \
@@ -111,8 +112,6 @@ CXXFLAGS +=	-I${LOCALBASE}/include/goldberg_emulator
 
 post-extract:
 	cp -R	${FILESDIR}/sndio ${WRKDIST}/drivers
-	cp	${FILESDIR}/ujoy/joypad_openbsd.{cpp,h} \
-		${WRKDIST}/platform/x11/
 .if ${PROPERTIES:Mmono}
 	mkdir -p ${PORTHOME}/.nuget
 	mv	${WRKDIR}/godot-${SHARPFILES_V}-nuget-packages ${PORTHOME}/.nuget/packages

@@ -1,0 +1,39 @@
+backport commit 0b3496f:
+	Add support for SDL3 joystick input driver
+
+Index: main/input_default.cpp
+--- main/input_default.cpp.orig
++++ main/input_default.cpp
+@@ -261,11 +261,12 @@ static String _hex_str(uint8_t p_byte) {
+ 	return ret;
+ };
+ 
+-void InputDefault::joy_connection_changed(int p_idx, bool p_connected, String p_name, String p_guid) {
++void InputDefault::joy_connection_changed(int p_idx, bool p_connected, String p_name, String p_guid, const Dictionary &p_joypad_info) {
+ 	_THREAD_SAFE_METHOD_
+ 	Joypad js;
+ 	js.name = p_connected ? p_name : "";
+ 	js.uid = p_connected ? p_guid : "";
++	js.info = p_connected ? p_joypad_info : Dictionary();
+ 
+ 	if (p_connected) {
+ 		String uidname = p_guid;
+@@ -278,10 +279,14 @@ void InputDefault::joy_connection_changed(int p_idx, b
+ 		js.uid = uidname;
+ 		js.connected = true;
+ 		int mapping = fallback_mapping;
+-		for (int i = 0; i < map_db.size(); i++) {
+-			if (js.uid == map_db[i].uid) {
+-				mapping = i;
+-				js.name = map_db[i].name;
++		// Bypass the mapping system if the joypad's mapping is already handled by its driver
++		// (for example, the SDL joypad driver).
++		if (!p_joypad_info.get("mapping_handled", false)) {
++			for (int i = 0; i < map_db.size(); i++) {
++				if (js.uid == map_db[i].uid) {
++					mapping = i;
++					js.name = map_db[i].name;
++				}
+ 			};
+ 		};
+ 		js.mapping = mapping;

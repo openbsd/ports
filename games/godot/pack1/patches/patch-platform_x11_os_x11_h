@@ -1,10 +1,12 @@
 load sndio
 use OpenBSD joypad class
+backport commit 0b3496f:
+	Add support for SDL3 joystick input driver
 
 Index: platform/x11/os_x11.h
 --- platform/x11/os_x11.h.orig
 +++ platform/x11/os_x11.h
-@@ -37,9 +37,10 @@
+@@ -37,9 +37,9 @@
  #include "crash_handler_x11.h"
  #include "drivers/alsa/audio_driver_alsa.h"
  #include "drivers/alsamidi/midi_driver_alsamidi.h"
@@ -12,20 +14,30 @@ Index: platform/x11/os_x11.h
  #include "drivers/pulseaudio/audio_driver_pulseaudio.h"
  #include "drivers/unix/os_unix.h"
 -#include "joypad_linux.h"
-+#include "joypad_openbsd.h"
  #include "main/input_default.h"
  #include "power_x11.h"
  #include "servers/audio_server.h"
-@@ -203,7 +204,7 @@ class OS_X11 : public OS_Unix {
+@@ -81,6 +81,8 @@ typedef struct _xrr_monitor_info {
+ 
+ #undef CursorShape
+ 
++class JoypadSDL;
++
+ class OS_X11 : public OS_Unix {
+ 	Atom wm_delete;
+ 	Atom xdnd_enter;
+@@ -202,8 +204,8 @@ class OS_X11 : public OS_Unix {
+ 
  	InputDefault *input;
  
- #ifdef JOYDEV_ENABLED
+-#ifdef JOYDEV_ENABLED
 -	JoypadLinux *joypad;
-+	JoypadOpenBSD *joypad;
++#ifdef SDL_ENABLED
++	JoypadSDL *joypad_sdl = nullptr;
  #endif
  
  #ifdef ALSA_ENABLED
-@@ -212,6 +213,10 @@ class OS_X11 : public OS_Unix {
+@@ -212,6 +214,10 @@ class OS_X11 : public OS_Unix {
  
  #ifdef ALSAMIDI_ENABLED
  	MIDIDriverALSAMidi driver_alsamidi;

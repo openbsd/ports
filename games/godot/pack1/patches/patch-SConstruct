@@ -1,0 +1,22 @@
+backport commit 0b3496f:
+	Add support for SDL3 joystick input driver
+
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -134,6 +134,7 @@ opts.Add(BoolVariable("xaudio2", "Enable the XAudio2 a
+ opts.Add(BoolVariable("disable_exceptions", "Force disabling exception handling code", True))
+ opts.Add("custom_modules", "A list of comma-separated directory paths containing custom modules to build.", "")
+ opts.Add(BoolVariable("custom_modules_recursive", "Detect custom modules recursively for each specified path.", True))
++opts.Add(BoolVariable("sdl", "Enable the SDL3 input driver", True))
+ 
+ # Advanced options
+ opts.Add(BoolVariable("dev", "If yes, alias for verbose=yes warnings=extra werror=yes", False))
+@@ -188,6 +189,7 @@ opts.Add(BoolVariable("builtin_pcre2", "Use the built-
+ opts.Add(BoolVariable("builtin_pcre2_with_jit", "Use JIT compiler for the built-in PCRE2 library", True))
+ opts.Add(BoolVariable("builtin_recast", "Use the built-in Recast library", True))
+ opts.Add(BoolVariable("builtin_rvo2", "Use the built-in RVO2 library", True))
++opts.Add(BoolVariable("builtin_sdl", "Use the built-in SDL library", False))
+ opts.Add(BoolVariable("builtin_squish", "Use the built-in squish library", True))
+ opts.Add(BoolVariable("builtin_xatlas", "Use the built-in xatlas library", True))
+ opts.Add(BoolVariable("builtin_zlib", "Use the built-in zlib library", True))
