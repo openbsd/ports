@@ -98,6 +98,7 @@
      SUBDIR += coeurl
      SUBDIR += colordiff
      SUBDIR += commoncpp
+     SUBDIR += corrosion
      SUBDIR += coxpcall
      SUBDIR += coxpcall,lua52
      SUBDIR += coxpcall,lua53
