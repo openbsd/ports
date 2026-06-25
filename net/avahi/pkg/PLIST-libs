@@ -146,6 +146,9 @@ share/locale/kk/
 share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/avahi.mo
 share/locale/ko/LC_MESSAGES/avahi.mo
+share/locale/lo/
+share/locale/lo/LC_MESSAGES/
+share/locale/lo/LC_MESSAGES/avahi.mo
 share/locale/lv/LC_MESSAGES/avahi.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/

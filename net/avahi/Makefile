@@ -7,9 +7,7 @@ COMMENT-python=		python bindings for avahi
 
 GH_ACCOUNT=		avahi
 GH_PROJECT=		avahi
-GH_TAGNAME=		v0.9-rc4
-
-REVISION-python=	1
+GH_TAGNAME=		v0.9-rc5
 
 PKGNAME-main=		avahi-${_GH_TAG_DIST:S/-//}
 PKGNAME-glib=		avahi-glib-${_GH_TAG_DIST:S/-//}
@@ -107,7 +105,7 @@ WANTLIB-gtk3 += fribidi gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-gtk3 += gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz iconv
 WANTLIB-gtk3 += intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB-gtk3 += pixman-1 png wayland-client wayland-cursor wayland-egl
-WANTLIB-gtk3 += xcb xcb-render xcb-shm xkbcommon z
+WANTLIB-gtk3 += xcb xcb-render xcb-shm xkbcommon z XRes
 
 ### -gui
 LIB_DEPENDS-gui=	${BUILD_PKGPATH},-gtk3
@@ -125,7 +123,7 @@ WANTLIB-gui += ffi fontconfig freetype fribidi gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-gui += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB-gui += gtk-3 harfbuzz iconv intl jpeg m pango-1.0 pangocairo-1.0
 WANTLIB-gui += pangoft2-1.0 pcre2-8 pixman-1 png wayland-client wayland-cursor
-WANTLIB-gui += wayland-egl xcb xcb-render xcb-shm xkbcommon z
+WANTLIB-gui += wayland-egl xcb xcb-render xcb-shm xkbcommon z XRes
 
 ### -python
 LIB_DEPENDS-python=	#empty
