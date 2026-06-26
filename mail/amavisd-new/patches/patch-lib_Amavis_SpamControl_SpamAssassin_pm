@@ -1,0 +1,12 @@
+Index: lib/Amavis/SpamControl/SpamAssassin.pm
+--- lib/Amavis/SpamControl/SpamAssassin.pm.orig
++++ lib/Amavis/SpamControl/SpamAssassin.pm
+@@ -243,7 +243,7 @@ sub new_SpamAssassin_instance {
+ #   PREFIX            => '/usr/local',
+ #   DEF_RULES_DIR     => '/usr/local/share/spamassassin',
+ #   LOCAL_RULES_DIR   => '/etc/mail/spamassassin',
+-#   LOCAL_STATE_DIR   => '/var/lib/spamassassin',
++   LOCAL_STATE_DIR   => '/var/db/spamassassin',
+ #see Mail::SpamAssassin man page for other options
+   };
+   if ($sa_version_num < 3.001005 && !defined $sa_args->{LOCAL_STATE_DIR})

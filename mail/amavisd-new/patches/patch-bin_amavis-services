@@ -1,6 +1,7 @@
---- amavis-services.orig	Fri Jul 11 08:42:24 2014
-+++ amavis-services	Fri Jul 11 08:42:55 2014
-@@ -71,7 +71,7 @@ $log_level = 0;  # 0..5
+Index: bin/amavis-services
+--- bin/amavis-services.orig
++++ bin/amavis-services
+@@ -72,7 +72,7 @@ $log_level = 0;  # 0..5
  $syslog_facility = LOG_MAIL;
  $syslog_ident = $myproduct_name;
  

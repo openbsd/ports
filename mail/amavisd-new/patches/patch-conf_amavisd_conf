@@ -1,14 +1,7 @@
-Index: amavisd.conf
---- amavisd.conf.orig
-+++ amavisd.conf
-@@ -17,12 +17,12 @@ use strict;
-                         # truncation in /proc/<pid>/stat and ps -e output
- 
- $max_servers = 2;            # num of pre-forked children (2..30 is common), -m
--$daemon_user  = 'vscan';     # (no default;  customary: vscan or amavis), -u
--$daemon_group = 'vscan';     # (no default;  customary: vscan or amavis), -g
-+$daemon_user  = '_vscan';     # (no default;  customary: _vscan or amavis), -u
-+$daemon_group = '_vscan';     # (no default;  customary: _vscan or amavis), -g
+Index: conf/amavisd.conf
+--- conf/amavisd.conf.orig
++++ conf/amavisd.conf
+@@ -22,7 +22,7 @@ $daemon_user   = 'vscan';    # (no default;  customary
  
  $mydomain = 'example.com';   # a convenient default for other settings
  
@@ -17,7 +10,7 @@ Index: amavisd.conf
  $TEMPBASE = "$MYHOME/tmp";   # working directory, needs to exist, -T
  $ENV{TMPDIR} = $TEMPBASE;    # environment variable TMPDIR, used by SA, etc.
  $QUARANTINEDIR = '/var/virusmails';  # -Q
-@@ -235,7 +235,7 @@ $banned_filename_re = new_RE(
+@@ -248,7 +248,7 @@ $banned_filename_re = new_RE(
  
    qr'.\.(exe|vbs|pif|scr|cpl)$'i,             # banned extension - basic
  # qr'.\.(exe|vbs|pif|scr|cpl|bat|cmd|com)$'i, # banned extension - basic+cmd
@@ -26,7 +19,7 @@ Index: amavisd.conf
  #        inf|ini|ins|isp|js|jse|lib|lnk|mda|mdb|mde|mdt|mdw|mdz|msc|msi|
  #        msp|mst|ocx|ops|pcd|pif|prg|reg|scr|sct|shb|shs|sys|vb|vbe|vbs|vxd|
  #        wmf|wsc|wsf|wsh)$'ix,                # banned extensions - long
-@@ -319,7 +319,7 @@ $banned_filename_re = new_RE(
+@@ -332,7 +332,7 @@ $banned_filename_re = new_RE(
  @decoders = (
    ['mail', \&do_mime_decode],
  # [[qw(asc uue hqx ync)], \&do_ascii],  # not safe
@@ -35,7 +28,7 @@ Index: amavisd.conf
    ['Z',    \&do_uncompress, ['uncompress', 'gzip -d', 'zcat'] ],
    ['gz',   \&do_uncompress, 'gzip -d'],
    ['gz',   \&do_gunzip],
-@@ -338,8 +338,8 @@ $banned_filename_re = new_RE(
+@@ -352,8 +352,8 @@ $banned_filename_re = new_RE(
             # ['/usr/local/heirloom/usr/5bin/pax', 'pax', 'gcpio', 'cpio']
    ['deb',  \&do_ar, 'ar'],
  # ['a',    \&do_ar, 'ar'],  # unpacking .a seems an overkill

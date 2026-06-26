@@ -1,0 +1,12 @@
+Index: lib/Amavis/Conf.pm
+--- lib/Amavis/Conf.pm.orig
++++ lib/Amavis/Conf.pm
+@@ -467,7 +467,7 @@ BEGIN {  # init_primary: version, base policy bank
+ #
+ BEGIN {
+   # serves only as a quick default for other configuration settings
+-  $MYHOME = '/var/amavis';
++  $MYHOME = '/var/amavisd';
+   $mydomain = '!change-mydomain-variable!.example.com';#intentionally bad deflt
+ 
+   # Create debugging output - true: log to stderr; false: log to syslog/file

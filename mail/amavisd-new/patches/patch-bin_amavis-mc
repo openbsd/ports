@@ -1,13 +1,14 @@
---- amavis-mc.orig	Tue May  6 13:56:46 2014
-+++ amavis-mc	Mon Jul 14 10:15:13 2014
-@@ -70,16 +70,16 @@ use vars qw(@path @services $daemon_user $daemon_group
+Index: bin/amavis-mc
+--- bin/amavis-mc.orig
++++ bin/amavis-mc
+@@ -73,16 +73,16 @@ use vars qw(@path @services $daemon_user @daemon_group
  
  ### USER CONFIGURABLE:
  
--$daemon_user  = 'vscan';
--$daemon_group = 'vscan';
-+$daemon_user  = '_vscan';
-+$daemon_group = '_vscan';
+-$daemon_user   = 'vscan';
+-@daemon_groups = 'vscan';
++$daemon_user   = '_vscan';
++@daemon_groups = '_vscan';
  
 -$pid_file = '/var/amavis/amavis-mc.pid';
 +$pid_file = '/var/amavisd/amavis-mc.pid';
