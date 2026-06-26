@@ -3,7 +3,7 @@ rename hid_init() to hidapi_hid_init() to avoid collision with usbhid
 Index: hidtest/test.c
 --- hidtest/test.c.orig
 +++ hidtest/test.c
-@@ -93,12 +93,12 @@ int main(int argc, char* argv[])
+@@ -169,12 +169,12 @@ int main(int argc, char* argv[])
  		printf("Compile-time version is different than runtime version of hidapi.\n]n");
  	}
  

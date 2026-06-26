@@ -3,7 +3,7 @@ rename hid_init() to hidapi_hid_init() to avoid collision with usbhid
 Index: hidapi/hidapi.h
 --- hidapi/hidapi.h.orig
 +++ hidapi/hidapi.h
-@@ -197,7 +197,7 @@ extern "C" {
+@@ -202,7 +202,7 @@ extern "C" {
  				This function returns 0 on success and -1 on error.
  				Call hid_error(NULL) to get the failure reason.
  		*/

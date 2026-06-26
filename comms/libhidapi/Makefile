@@ -3,7 +3,7 @@ COMMENT =	library for communicating with USB and Bluetooth HID devices
 # XXX Any consumer should be patched to use hidapi_hid_init() instead of
 # hid_init(3) to avoid conflict with base usbhid(3).
 
-V =		0.13.1
+V =		0.15.0
 DISTNAME =	libhidapi-${V}
 
 GH_ACCOUNT =	libusb
@@ -11,8 +11,8 @@ GH_PROJECT =	hidapi
 GH_TAGNAME =	hidapi-${V}
 
 #libhidapi is symlink to hidapi-libusb. Same version numbers should be kept.
-SHARED_LIBS +=	hidapi-libusb		1.0 # 0.0
-SHARED_LIBS +=	hidapi			1.0 # 0.0
+SHARED_LIBS +=	hidapi-libusb		1.1 # 0.0
+SHARED_LIBS +=	hidapi			1.1 # 0.0
 
 CATEGORIES =	comms
 
@@ -26,8 +26,6 @@ LIB_DEPENDS =	converters/libiconv \
 		devel/libusb1
 
 MODULES =	devel/cmake
-
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 DOCDIR =	${PREFIX}/share/doc/hidapi
 
