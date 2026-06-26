@@ -1,10 +1,9 @@
 COMMENT =		simply and securely transfer files and folders
 
-MODGO_VERSION =		v10.0.13
+MODGO_VERSION =		v10.4.4
 MODGO_MODNAME =		github.com/schollz/croc/v10
 
 DISTNAME =		croc-${MODGO_VERSION}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
