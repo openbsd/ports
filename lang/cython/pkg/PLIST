@@ -394,6 +394,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/bit.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/cast.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/cmath.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/complex.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/condition_variable.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/deque.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/exception.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/execution.pxd
@@ -552,11 +553,11 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CppConvert.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CppSupport.cpp
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CythonFunction.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Dataclasses.c
-lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Dataclasses.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Embed.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Exceptions.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/ExtensionTypes.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/FunctionArguments.c
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/FusedFunction.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/ImportExport.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/MemoryView.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/MemoryView.pyx
@@ -570,6 +571,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Printing.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Profile.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/StringTools.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Synchronization.c
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TString.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TestCyUtilityLoader.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TestCythonScope.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TestUtilityLoader.c
@@ -578,8 +580,6 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/UFuncs.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/UFuncs_C.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}Dataclasses.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}Dataclasses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/arrayarray.h
