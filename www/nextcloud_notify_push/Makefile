@@ -1,6 +1,12 @@
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
+# aws-lc-sys has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+.if ${MACHINE_ARCH} == "amd64"
+USE_NOEXECONLY =	Yes
+.endif
+
 # 20220112 - build often fails due to out of memory
 # memory allocation of 402653184 bytes failed
 # error: could not compile `notify_push`
@@ -10,7 +16,7 @@ COMMENT =		update notifications for nextcloud clients
 
 GH_ACCOUNT =		nextcloud
 GH_PROJECT =		notify_push
-GH_TAGNAME =		v1.3.0
+GH_TAGNAME =		v1.3.3
 
 CATEGORIES =		www
 
