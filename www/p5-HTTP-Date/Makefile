@@ -1,6 +1,7 @@
 COMMENT =	date conversion routines
 
-DISTNAME =	HTTP-Date-6.06
+DISTNAME =	HTTP-Date-6.07
+CPAN_AUTHOR =	OALDERS
 
 CATEGORIES =	www
 
