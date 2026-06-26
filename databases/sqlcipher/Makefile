@@ -3,8 +3,9 @@ COMMENT=	encrypted SQLite database
 GH_ACCOUNT=	sqlcipher
 GH_PROJECT=	sqlcipher
 GH_TAGNAME=	v4.16.0
+REVISION =	0
 
-SHARED_LIBS +=  sqlcipher                 3.3
+SHARED_LIBS +=  sqlcipher                 3.4
 
 CATEGORIES=	databases
 
@@ -38,7 +39,9 @@ CONFIGURE_ENV=	CCACHE=None \
 CFLAGS+=	-DOMIT_MEMLOCK \
 		-DSQLITE_EXTRA_INIT=sqlcipher_extra_init \
 		-DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown \
-		-DSQLITE_HAS_CODEC
+		-DSQLITE_HAS_CODEC \
+		-DSQLITE_ENABLE_COLUMN_METADATA \
+		-DSQLITE_ENABLE_UNLOCK_NOTIFY
 
 LDFLAGS+=	-lcrypto
 
