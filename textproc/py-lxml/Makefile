@@ -1,9 +1,8 @@
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
-MODPY_DISTV=	6.0.2
+MODPY_DISTV=	6.0.4
 DISTNAME=	lxml-${MODPY_DISTV}
 PKGNAME=	py-lxml-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	textproc devel
 
