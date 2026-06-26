@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--soname=${LIBsqlcipher_VERSION} \
 
 CONFIGURE_ENV=	CCACHE=None \
 		CFLAGS='${CFLAGS}' \
-		LDFLAGS='${LDFLAGS}' \
+		LDFLAGS='-lcrypto' \
 		autosetup_tclsh=${MODTCL_BIN}
 
 CFLAGS+=	-DOMIT_MEMLOCK \
@@ -42,8 +42,6 @@ CFLAGS+=	-DOMIT_MEMLOCK \
 		-DSQLITE_HAS_CODEC \
 		-DSQLITE_ENABLE_COLUMN_METADATA \
 		-DSQLITE_ENABLE_UNLOCK_NOTIFY
-
-LDFLAGS+=	-lcrypto
 
 post-install:
 	mv ${PREFIX}/bin/{sqlite3,sqlcipher}
