@@ -421,7 +421,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefS
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
-SHA256 (snowflake.git-v2.14.0.zip) = 5WBREt1vU4Tp7l+YDQAQbXn3AK066+Xtamq5l49WcFU=
+SHA256 (snowflake.git-v2.14.1.zip) = b9xGr24pz4ZBdtBz5sRNAdbwx9FBwU3gS8IaAvF15/A=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.zip) = 2508208
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v0.3.1.mod) = 34
@@ -845,4 +845,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 449180
-SIZE (snowflake.git-v2.14.0.zip) = 263602
+SIZE (snowflake.git-v2.14.1.zip) = 264415
