@@ -49,8 +49,6 @@ LIB_DEPENDS-lldb += devel/llvm/${LLVM_MAJOR},-main
 SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/
 EXTRACT_SUFX =	.tar.xz
 
-LIBCPP_PACKAGE=		-libcxx
-
 # mimic the way base libc++ is built except for the namespace which
 # is set to __E${LLVM_MAJOR} to avoid conflicts with base libc++
 CONFIGURE_ARGS +=	\
@@ -75,14 +73,17 @@ CONFIGURE_ARGS +=	\
 	-DLIBUNWIND_INSTALL_SHARED_LIBRARY=OFF \
 	-DLIBUNWIND_INSTALL_STATIC_LIBRARY=OFF
 
+MULTI_PACKAGES ?=	-main -python -libcxx -lldb
+.include <bsd.port.arch.mk>
+
 # BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk
 .if ${BUILD_LLDB:L} == yes
-MULTI_PACKAGES ?=	-main -python -lldb ${LIBCPP_PACKAGE}
-PROJECTS ?=		clang;lld;lldb
+LLDB_PROJ =		;lldb
 .else
-MULTI_PACKAGES ?=	-main -python ${LIBCPP_PACKAGE}
-PROJECTS ?=		clang;lld
+BUILD_PACKAGES :=	${BUILD_PACKAGES:N-lldb}
 .endif
+
+PROJECTS ?=		clang;lld${LLDB_PROJ}
 
 .for i in ${MULTI_PACKAGES:S/-//g}
 DESCR-${i} =	${.CURDIR}/../files/DESCR-${i}
