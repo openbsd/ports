@@ -10,11 +10,13 @@ lib/python${MODPY_VERSION}/site-packages/peewee-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/peewee-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/peewee-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/peewee-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/peewee-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/peewee-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/peewee-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/peewee-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/peewee.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/
+lib/python${MODPY_VERSION}/site-packages/playhouse/README.md
 lib/python${MODPY_VERSION}/site-packages/playhouse/__init__.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}apsw_ext.${MO
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}apsw_ext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}cockroachdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}cockroachdb.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}cysqlite_ext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}cysqlite_ext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}dataset.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}dataset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}db_url.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,8 +47,10 @@ lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}pool.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}pool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}postgres_ext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}postgres_ext.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}psycopg3_ext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}psycopg3_ext.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}pwasyncio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}pwasyncio.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}pydantic_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}pydantic_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}reflection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}reflection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}shortcuts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -63,10 +69,11 @@ lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}sqliteq.${MOD
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}sqliteq.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/playhouse/_sqlite_ext.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/playhouse/_sqlite_udf.c
 @so lib/python${MODPY_VERSION}/site-packages/playhouse/_sqlite_udf.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/playhouse/apsw_ext.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/cockroachdb.py
+lib/python${MODPY_VERSION}/site-packages/playhouse/cysqlite_ext.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/dataset.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/db_url.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/fields.py
@@ -77,7 +84,8 @@ lib/python${MODPY_VERSION}/site-packages/playhouse/migrate.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/mysql_ext.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/pool.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/postgres_ext.py
-lib/python${MODPY_VERSION}/site-packages/playhouse/psycopg3_ext.py
+lib/python${MODPY_VERSION}/site-packages/playhouse/pwasyncio.py
+lib/python${MODPY_VERSION}/site-packages/playhouse/pydantic_utils.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/reflection.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/shortcuts.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/signals.py
@@ -125,6 +133,7 @@ share/examples/py-peewee/blog/templates/logout.html
 share/examples/py-peewee/diary.py
 share/examples/py-peewee/graph.py
 share/examples/py-peewee/hexastore.py
+share/examples/py-peewee/query_library.py
 share/examples/py-peewee/reddit_ranking.py
 share/examples/py-peewee/sqlite_fts_compression.py
 share/examples/py-peewee/twitter/

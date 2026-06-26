@@ -1,6 +1,6 @@
 COMMENT=	small expressive ORM
 
-MODPY_DISTV=	3.18.2
+MODPY_DISTV=	4.0.9
 DISTNAME=	peewee-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -39,6 +39,5 @@ MAKE_ENV=	PYTHONPATH=${WRKSRC} \
 
 post-install:
 	cp -r ${WRKSRC}/examples ${PREFIX}/share/examples/py-peewee
-	mv ${PREFIX}/bin/pwiz.py ${PREFIX}/bin/pwiz
 
 .include <bsd.port.mk>
