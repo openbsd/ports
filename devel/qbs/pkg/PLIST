@@ -708,6 +708,7 @@ share/qbs/modules/freedesktop/FreeDesktop.qbs
 share/qbs/modules/freedesktop/freedesktop.js
 share/qbs/modules/ib/
 share/qbs/modules/ib/IBModule.qbs
+share/qbs/modules/ib/IBModuleBase.qbs
 share/qbs/modules/ib/ib.js
 share/qbs/modules/ico/
 share/qbs/modules/ico/IcoModule.qbs
