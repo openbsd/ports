@@ -41,7 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/rapidfuzz/__pyinstaller/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/__pyinstaller/test_rapidfuzz_packaging.py
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/_common_py.py
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/_feature_detector.py
-@so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/_feature_detector_cpp.${MODPY_PYC_MAGIC_TAG}so
+${X86_ONLY}@so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/_feature_detector_cpp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/_utils.py
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/distance/
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/distance/DamerauLevenshtein.py
@@ -130,12 +130,14 @@ lib/python${MODPY_VERSION}/site-packages/rapidfuzz/distance/_initialize.pyi
 @so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/distance/_initialize_cpp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/distance/_initialize_py.py
 @so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/distance/metrics_cpp.${MODPY_PYC_MAGIC_TAG}so
-@so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/distance/metrics_cpp_avx2.${MODPY_PYC_MAGIC_TAG}so
+${X86_ONLY}@so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/distance/metrics_cpp_avx2.${MODPY_PYC_MAGIC_TAG}so
+${I386_ONLY}@so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/distance/metrics_cpp_sse2.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/distance/metrics_py.py
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/fuzz.py
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/fuzz.pyi
 @so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/fuzz_cpp.${MODPY_PYC_MAGIC_TAG}so
-@so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/fuzz_cpp_avx2.${MODPY_PYC_MAGIC_TAG}so
+${X86_ONLY}@so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/fuzz_cpp_avx2.${MODPY_PYC_MAGIC_TAG}so
+${I386_ONLY}@so lib/python${MODPY_VERSION}/site-packages/rapidfuzz/fuzz_cpp_sse2.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/fuzz_py.py
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/process.py
 lib/python${MODPY_VERSION}/site-packages/rapidfuzz/process.pyi
