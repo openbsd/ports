@@ -1,6 +1,6 @@
 COMMENT =	access OpenSSL X509 API from Perl
 
-DISTNAME =	Crypt-OpenSSL-X509-2.1.1
+DISTNAME =	Crypt-OpenSSL-X509-2.1.2
 CPAN_AUTHOR =	JONASBN
 
 CATEGORIES =	security
