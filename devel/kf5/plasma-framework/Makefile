@@ -1,5 +1,6 @@
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5Plasma		12.4
 SHARED_LIBS +=	KF5PlasmaQuick		9.0
@@ -32,8 +33,8 @@ BUILD_DEPENDS =	archivers/bzip2 \
 RUN_DEPENDS =	archivers/bzip2 \
 		devel/kf5/kdbusaddons>=${MODKF5_VERSION} \
 		devel/kf5/kdoctools>=${MODKF5_VERSION} \
-		devel/kf5/oxygen-icons>=${MODKF5_VERSION} \
 		devel/kf5/qqc2-desktop-style>=${MODKF5_VERSION} \
+		x11/oxygen-icons \
 		x11/qt5/qtquickcontrols \
 		x11/qt5/qtwayland
 
