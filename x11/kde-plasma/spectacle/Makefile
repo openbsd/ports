@@ -29,9 +29,12 @@ WANTLIB += X11 c m opencv_core opencv_imgproc wayland-client wayland-cursor
 WANTLIB += xcb xcb-cursor xcb-image xcb-randr xcb-render xcb-shape
 WANTLIB += xcb-shm xcb-util xcb-xfixes xkbcommon
 
-BUILD_DEPENDS =	wayland/libinput-openbsd \
+BUILD_DEPENDS =	graphics/tesseract/tesseract \
+		wayland/libinput-openbsd \
 		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
+
+RUN_DEPENDS =	graphics/tesseract/tesseract
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \

@@ -1,3 +1,4 @@
+@bin bin/ksysguard-identify
 include/ksysguard/
 include/ksysguard/faces/
 include/ksysguard/faces/FaceLoader.h
@@ -12,6 +13,7 @@ include/ksysguard/formatter/formatter_export.h
 include/ksysguard/processcore/
 include/ksysguard/processcore/enums.h
 include/ksysguard/processcore/formatter.h
+include/ksysguard/processcore/gpu_utils.h
 include/ksysguard/processcore/process.h
 include/ksysguard/processcore/process_attribute.h
 include/ksysguard/processcore/process_attribute_model.h

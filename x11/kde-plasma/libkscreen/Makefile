@@ -2,7 +2,7 @@ COMMENT =	screen management library for KDE Plasma Workspaces
 DISTNAME =	libkscreen-${VERSION}
 PKGNAME =	kf6-libkscreen-${VERSION}
 
-SHARED_LIBS +=  KF6Screen                 1.0 # 0.0
+SHARED_LIBS +=  KF6Screen                 1.1 # 0.0
 SHARED_LIBS +=  KF6ScreenDpms             0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6WaylandClient

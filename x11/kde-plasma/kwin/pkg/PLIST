@@ -17,8 +17,10 @@ include/kwin/core/colorpipeline.h
 include/kwin/core/colorpipelinestage.h
 include/kwin/core/colorspace.h
 include/kwin/core/colortransformation.h
+include/kwin/core/drm_formats.h
 include/kwin/core/drmdevice.h
 include/kwin/core/gbmgraphicsbufferallocator.h
+include/kwin/core/gpumanager.h
 include/kwin/core/graphicsbuffer.h
 include/kwin/core/graphicsbufferallocator.h
 include/kwin/core/graphicsbufferview.h
@@ -33,6 +35,7 @@ include/kwin/core/pixelgrid.h
 include/kwin/core/rect.h
 include/kwin/core/region.h
 include/kwin/core/renderbackend.h
+include/kwin/core/renderdevice.h
 include/kwin/core/renderjournal.h
 include/kwin/core/renderloop.h
 include/kwin/core/renderloop_p.h
@@ -85,6 +88,7 @@ include/kwin/layershellv1window.h
 include/kwin/lidswitchtracker.h
 include/kwin/main.h
 include/kwin/mousebuttons.h
+include/kwin/multigpuswapchain.h
 include/kwin/netinfo.h
 include/kwin/onscreennotification.h
 include/kwin/opengl/
@@ -120,6 +124,7 @@ include/kwin/pointer_input.h
 include/kwin/rulebooksettings.h
 include/kwin/rules.h
 include/kwin/scene/
+include/kwin/scene/atlas.h
 include/kwin/scene/backgroundeffectitem.h
 include/kwin/scene/borderoutline.h
 include/kwin/scene/borderradius.h
@@ -132,6 +137,7 @@ include/kwin/scene/itemgeometry.h
 include/kwin/scene/itemrenderer.h
 include/kwin/scene/itemrenderer_opengl.h
 include/kwin/scene/itemrenderer_qpainter.h
+include/kwin/scene/ninepatch.h
 include/kwin/scene/outlinedborderitem.h
 include/kwin/scene/rootitem.h
 include/kwin/scene/scene.h
@@ -139,6 +145,7 @@ include/kwin/scene/shadowitem.h
 include/kwin/scene/surfaceitem.h
 include/kwin/scene/surfaceitem_internal.h
 include/kwin/scene/surfaceitem_wayland.h
+include/kwin/scene/texture.h
 include/kwin/scene/windowitem.h
 include/kwin/scene/workspacescene.h
 include/kwin/screenedge.h
@@ -154,7 +161,6 @@ include/kwin/utils/c_ptr.h
 include/kwin/utils/common.h
 include/kwin/utils/cursortheme.h
 include/kwin/utils/damagejournal.h
-include/kwin/utils/drm_format_helper.h
 include/kwin/utils/edid.h
 include/kwin/utils/executable_path.h
 include/kwin/utils/filedescriptor.h
@@ -176,16 +182,21 @@ include/kwin/utils/xcbutils.h
 include/kwin/virtualdesktops.h
 include/kwin/virtualdesktopsdbustypes.h
 include/kwin/virtualkeyboard_dbus.h
+include/kwin/vulkan/
+include/kwin/vulkan/vulkan_device.h
+include/kwin/vulkan/vulkan_logging.h
+include/kwin/vulkan/vulkan_render_time_query.h
+include/kwin/vulkan/vulkan_swapchain.h
+include/kwin/vulkan/vulkan_texture.h
 include/kwin/wayland/
 include/kwin/wayland/alphamodifier_v1.h
 include/kwin/wayland/appmenu.h
-include/kwin/wayland/blur.h
+include/kwin/wayland/backgroundeffect_v1.h
 include/kwin/wayland/clientconnection.h
 include/kwin/wayland/colormanagement_v1.h
 include/kwin/wayland/colorrepresentation_v1.h
 include/kwin/wayland/compositor.h
 include/kwin/wayland/contenttype_v1.h
-include/kwin/wayland/contrast.h
 include/kwin/wayland/cursorshape_v1.h
 include/kwin/wayland/datacontroldevice_v1.h
 include/kwin/wayland/datacontroldevicemanager_v1.h
@@ -201,6 +212,7 @@ include/kwin/wayland/drmlease_v1.h
 include/kwin/wayland/externalbrightness_v1.h
 include/kwin/wayland/fifo_v1.h
 include/kwin/wayland/fractionalscale_v1.h
+include/kwin/wayland/fractionalscale_v2.h
 include/kwin/wayland/frog_colormanagement_v1.h
 include/kwin/wayland/idle.h
 include/kwin/wayland/idleinhibit_v1.h
@@ -233,6 +245,7 @@ include/kwin/wayland/qwayland-server-alpha-modifier-v1.h
 include/kwin/wayland/qwayland-server-color-management-v1.h
 include/kwin/wayland/qwayland-server-color-representation-v1.h
 include/kwin/wayland/qwayland-server-content-type-v1.h
+include/kwin/wayland/qwayland-server-ext-background-effect-v1.h
 include/kwin/wayland/qwayland-server-fifo-v1.h
 include/kwin/wayland/qwayland-server-frog-color-management-v1.h
 include/kwin/wayland/qwayland-server-kde-external-brightness-v1.h
@@ -256,7 +269,6 @@ include/kwin/wayland/surface.h
 include/kwin/wayland/tablet_v2.h
 include/kwin/wayland/tearingcontrol_v1.h
 include/kwin/wayland/textinput.h
-include/kwin/wayland/textinput_v1.h
 include/kwin/wayland/textinput_v2.h
 include/kwin/wayland/textinput_v3.h
 include/kwin/wayland/touch.h
@@ -265,6 +277,7 @@ include/kwin/wayland/wayland-alpha-modifier-v1-server-protocol.h
 include/kwin/wayland/wayland-color-management-v1-server-protocol.h
 include/kwin/wayland/wayland-color-representation-v1-server-protocol.h
 include/kwin/wayland/wayland-content-type-v1-server-protocol.h
+include/kwin/wayland/wayland-ext-background-effect-v1-server-protocol.h
 include/kwin/wayland/wayland-fifo-v1-server-protocol.h
 include/kwin/wayland/wayland-frog-color-management-v1-server-protocol.h
 include/kwin/wayland/wayland-kde-external-brightness-v1-server-protocol.h
@@ -304,6 +317,7 @@ lib/cmake/KWin/KWinTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KWin/KWinTargets.cmake
 lib/cmake/KWinDBusInterface/
 lib/cmake/KWinDBusInterface/KWinDBusInterfaceConfig.cmake
+lib/kconf_update_bin/
 @bin lib/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts
 @bin lib/kconf_update_bin/kwin-6.0-remove-breeze-tabbox-default
 @bin lib/kconf_update_bin/kwin-6.0-reset-active-mouse-screen
@@ -356,6 +370,7 @@ lib/qt6/plugins/kwin/plugins/
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_kwinrules.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_kwinxwayland.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_virtualkeyboard.so
+lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/
 @so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kwinoptions.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kwinscreenedges.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kwintabbox.so
@@ -376,6 +391,8 @@ lib/qt6/qml/org/kde/kwin/private/kdecoration/qmldir
 lib/systemd/user/plasma-kwin_wayland.service
 @bin libexec/kwin-applywindowdecoration
 @bin libexec/kwin-tabbox-preview
+@bin libexec/kwin_dialog_helper
+@bin libexec/kwin_eis_prompter
 @bin libexec/kwin_killer_helper
 share/applications/kcm_animations.desktop
 share/applications/kcm_kwin_effects.desktop
@@ -387,6 +404,7 @@ share/applications/kcm_kwinrules.desktop
 share/applications/kcm_kwintabbox.desktop
 share/applications/kcm_kwinxwayland.desktop
 share/applications/kcm_virtualkeyboard.desktop
+share/applications/org.kde.kwin.dialoghelper.desktop
 share/applications/org.kde.kwin.killer.desktop
 share/config.kcfg/
 share/config.kcfg/kwin.kcfg
@@ -402,6 +420,7 @@ share/dbus-1/interfaces/org.kde.kwin.Compositing.xml
 share/dbus-1/interfaces/org.kde.kwin.Effects.xml
 share/dbus-1/interfaces/org.kde.kwin.InputDevice.xml
 share/dbus-1/interfaces/org.kde.kwin.VirtualKeyboard.xml
+share/doc/HTML/ca/kcontrol/
 share/doc/HTML/ca/kcontrol/desktop/
 share/doc/HTML/ca/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/ca/kcontrol/desktop/index.docbook
@@ -460,6 +479,7 @@ share/doc/HTML/de/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/de/kcontrol/windowspecific/
 share/doc/HTML/de/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/de/kcontrol/windowspecific/index.docbook
+share/doc/HTML/en/kcontrol/
 share/doc/HTML/en/kcontrol/desktop/
 share/doc/HTML/en/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/en/kcontrol/desktop/index.docbook
@@ -591,6 +611,7 @@ share/doc/HTML/id/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/id/kcontrol/windowspecific/
 share/doc/HTML/id/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/id/kcontrol/windowspecific/index.docbook
+share/doc/HTML/it/kcontrol/
 share/doc/HTML/it/kcontrol/desktop/
 share/doc/HTML/it/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/it/kcontrol/desktop/index.docbook
@@ -618,6 +639,7 @@ share/doc/HTML/it/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/it/kcontrol/windowspecific/
 share/doc/HTML/it/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/it/kcontrol/windowspecific/index.docbook
+share/doc/HTML/nl/kcontrol/
 share/doc/HTML/nl/kcontrol/desktop/
 share/doc/HTML/nl/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/nl/kcontrol/desktop/index.docbook
@@ -667,6 +689,7 @@ share/doc/HTML/pt/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/pt/kcontrol/windowspecific/
 share/doc/HTML/pt/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/pt/kcontrol/windowspecific/index.docbook
+share/doc/HTML/pt_BR/kcontrol/
 share/doc/HTML/pt_BR/kcontrol/desktop/
 share/doc/HTML/pt_BR/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/desktop/index.docbook
@@ -827,6 +850,7 @@ share/doc/HTML/sv/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/sv/kcontrol/windowspecific/
 share/doc/HTML/sv/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/sv/kcontrol/windowspecific/index.docbook
+share/doc/HTML/tr/kcontrol/
 share/doc/HTML/tr/kcontrol/desktop/
 share/doc/HTML/tr/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/tr/kcontrol/desktop/index.docbook
@@ -854,6 +878,7 @@ share/doc/HTML/tr/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/tr/kcontrol/windowspecific/
 share/doc/HTML/tr/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/tr/kcontrol/windowspecific/index.docbook
+share/doc/HTML/uk/kcontrol/
 share/doc/HTML/uk/kcontrol/desktop/
 share/doc/HTML/uk/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/uk/kcontrol/desktop/index.docbook
@@ -888,12 +913,15 @@ share/icons/hicolor/16x16/apps/kwin.png
 share/icons/hicolor/32x32/apps/kwin.png
 share/icons/hicolor/48x48/apps/kwin.png
 share/icons/hicolor/scalable/apps/kwin.svgz
+share/kconf_update/
 share/kconf_update/kwin.upd
 share/knotifications6/kwin.notifyrc
 share/knsrcfiles/kwineffect.knsrc
 share/knsrcfiles/kwinscripts.knsrc
 share/knsrcfiles/kwinswitcher.knsrc
 share/knsrcfiles/window-decorations.knsrc
+share/krunner/
+share/krunner/dbusplugins/
 share/krunner/dbusplugins/kwin-runner-windows.desktop
 share/kwin-wayland/
 share/kwin-wayland/builtin-effects/
@@ -923,6 +951,7 @@ share/kwin-wayland/builtin-effects/showfps.json
 share/kwin-wayland/builtin-effects/showpaint.json
 share/kwin-wayland/builtin-effects/slide.json
 share/kwin-wayland/builtin-effects/slideback.json
+share/kwin-wayland/builtin-effects/slidingnotifications.json
 share/kwin-wayland/builtin-effects/slidingpopups.json
 share/kwin-wayland/builtin-effects/startupfeedback.json
 share/kwin-wayland/builtin-effects/systembell.json

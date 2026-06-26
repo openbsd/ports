@@ -1,7 +1,7 @@
 COMMENT =	library for secure lock screen architecture
 DISTNAME =	kscreenlocker-${VERSION}
 
-SHARED_LIBS +=  KScreenLocker         1.0 # 5.22.5
+SHARED_LIBS +=  KScreenLocker         1.1 # 5.22.5
 
 MODKDE_TRANSLATIONS =	Yes
 

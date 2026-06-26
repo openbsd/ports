@@ -1,11 +1,10 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  kfontinst                 1.0 # 0.0
 SHARED_LIBS +=  kfontinstui               2.0 # 0.0
-SHARED_LIBS +=  notificationmanager       2.0 # 0.0
-SHARED_LIBS +=  taskmanager               2.0 # 0.0
+SHARED_LIBS +=  notificationmanager       3.0 # 0.0
+SHARED_LIBS +=  taskmanager               2.1 # 0.0
 SHARED_LIBS +=  kmpris                    0.0 # 0.0
 SHARED_LIBS +=  kworkspace6               0.1 # 0.0
 SHARED_LIBS +=  batterycontrol            0.0 # 0.0
@@ -31,11 +30,11 @@ WANTLIB += KSysGuardSensors KWaylandClient KirigamiPlatform LayerShellQtInterfac
 WANTLIB += Plasma PlasmaActivities PlasmaActivitiesStats PlasmaQuick
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6QuickWidgets
-WANTLIB += Qt6Sql Qt6Svg Qt6Test Qt6WaylandClient Qt6Widgets Qt6Xml
-WANTLIB += SM X11 Xau Xcursor Xext Xfixes Xft Xi Xrender Xtst
-WANTLIB += c canberra dbus-1 fontconfig freetype icui18n icuuc
-WANTLIB += m processcore qalculate udev wayland-client wayland-cursor
-WANTLIB += xcb xcb-composite xcb-cursor xcb-damage xcb-image xcb-randr
+WANTLIB += Qt6Sql Qt6Svg Qt6WaylandClient Qt6Widgets Qt6Xml SM
+WANTLIB += X11 Xau Xcursor Xext Xfixes Xft Xi Xrender Xtst c canberra
+WANTLIB += dbus-1 fontconfig freetype icui18n icuuc m processcore
+WANTLIB += qalculate udev wayland-client wayland-cursor xcb xcb-composite
+WANTLIB += xcb-cursor xcb-damage xcb-icccm xcb-image xcb-randr
 WANTLIB += xcb-render xcb-shape xcb-shm xcb-util xcb-xfixes xkbcommon
 WANTLIB += z
 

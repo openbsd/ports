@@ -1,7 +1,7 @@
 COMMENT =	KDE Plasma PulseAudio support
 DISTNAME =	plasma-pa-${VERSION}
 
-SHARED_LIBS +=	plasma-volume             0.0 # 0.0
+SHARED_LIBS +=	plasma-volume             1.0 # 0.0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_DOCS = Yes

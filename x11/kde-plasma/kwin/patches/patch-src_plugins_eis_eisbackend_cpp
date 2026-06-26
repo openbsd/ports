@@ -1,0 +1,12 @@
+Index: src/plugins/eis/eisbackend.cpp
+--- src/plugins/eis/eisbackend.cpp.orig
++++ src/plugins/eis/eisbackend.cpp
+@@ -50,7 +50,7 @@ EisBackend::EisBackend(QObject *parent)
+     // in libwayland so we are resorting to this hack
+     // https://gitlab.freedesktop.org/libinput/libei/-/issues/63
+     m_xWaylandContext = std::make_unique<XWaylandEisContext>(this);
+-    FileDescriptor fd(open(m_xWaylandContext->socketName.constData(), O_PATH | O_CLOEXEC));
++    FileDescriptor fd(open(m_xWaylandContext->socketName.constData(), O_RDONLY | O_CLOEXEC));
+     unlink(m_xWaylandContext->socketName.constData());
+     if (QByteArray(kwinApp()->metaObject()->className()) == typeName(KWin::ApplicationWayland)) {
+         auto appWayland = static_cast<ApplicationWayland *>(kwinApp());

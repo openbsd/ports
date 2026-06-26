@@ -14,6 +14,8 @@ lib/qt6/qml/org/kde/kwin/decoration/ButtonGroup.qml
 lib/qt6/qml/org/kde/kwin/decoration/Decoration.qml
 lib/qt6/qml/org/kde/kwin/decoration/DecorationButton.qml
 lib/qt6/qml/org/kde/kwin/decoration/MenuButton.qml
+lib/qt6/qml/org/kde/kwin/decoration/decorationplugin.qmltypes
+lib/qt6/qml/org/kde/kwin/decoration/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kwin/decoration/libdecorationplugin.so
 lib/qt6/qml/org/kde/kwin/decoration/qmldir
 lib/qt6/qml/org/kde/kwin/decorations/
@@ -59,6 +61,7 @@ share/locale/he/LC_MESSAGES/aurorae.mo
 share/locale/hu/LC_MESSAGES/aurorae.mo
 share/locale/ia/LC_MESSAGES/aurorae.mo
 share/locale/it/LC_MESSAGES/aurorae.mo
+share/locale/ja/LC_MESSAGES/aurorae.mo
 share/locale/ka/LC_MESSAGES/aurorae.mo
 share/locale/ko/LC_MESSAGES/aurorae.mo
 share/locale/lt/LC_MESSAGES/aurorae.mo

@@ -153,6 +153,7 @@ lib/qt6/qml/org/kde/plasma/core/qmldir
 lib/qt6/qml/org/kde/plasma/extras/
 lib/qt6/qml/org/kde/plasma/extras/ActionTextField.qml
 lib/qt6/qml/org/kde/plasma/extras/BasicPlasmoidHeading.qml
+lib/qt6/qml/org/kde/plasma/extras/ContextualHelpButton.qml
 lib/qt6/qml/org/kde/plasma/extras/DescriptiveLabel.qml
 lib/qt6/qml/org/kde/plasma/extras/ExpandableListItem.qml
 lib/qt6/qml/org/kde/plasma/extras/Heading.qml

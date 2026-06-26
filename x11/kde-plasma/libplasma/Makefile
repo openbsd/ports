@@ -1,8 +1,8 @@
 COMMENT =	Plasma library and runtime components
 DISTNAME =	libplasma-${VERSION}
 
-SHARED_LIBS +=  Plasma                    1.0 # 0.0
-SHARED_LIBS +=  PlasmaQuick               0.1 # 0.0
+SHARED_LIBS +=  Plasma                    1.1 # 0.0
+SHARED_LIBS +=  PlasmaQuick               1.0 # 0.0
 
 MODKDE_TRANSLATIONS = Yes
 

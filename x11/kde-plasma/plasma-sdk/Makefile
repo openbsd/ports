@@ -21,7 +21,7 @@ RUN_DEPENDS =	devel/kf6/kirigami \
 		devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
-LIB_DEPENDS +=	devel/kf6/karchive \
+LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
@@ -45,9 +45,6 @@ LIB_DEPENDS +=	devel/kf6/karchive \
 		x11/kde-plasma/libplasma>=${VERSION} \
 		x11/kde-plasma/plasma5support>=${VERSION} \
 		x11/qt6/qtdeclarative
-
-CONFIGURE_ARGS = \
-	-DCMAKE_DISABLE_FIND_PACKAGE_KF5NetworkManagerQt=Yes
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 

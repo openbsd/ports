@@ -1,25 +1,24 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
-REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
 MODKDE_DOCS =		Yes
 
-SHARED_LIBS +=	kglobalaccelmodel         0.2 # 0.0
+SHARED_LIBS +=	kglobalaccelmodel         1.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6AuthCore KF6Baloo
-WANTLIB += KF6Bookmarks KF6Codecs KF6ColorScheme KF6Completion
-WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6DBusAddons KF6FileMetaData KF6GlobalAccel
-WANTLIB += KF6GuiAddons KF6I18n KF6I18nLocaleData KF6IconThemes
-WANTLIB += KF6IconWidgets KF6ItemModels KF6ItemViews KF6JobWidgets
-WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
-WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6NewStuffCore
-WANTLIB += KF6Notifications KF6NotifyConfig KF6Package KF6Runner
-WANTLIB += KF6Service KF6Solid KF6SonnetCore KF6SonnetUi KF6Svg
-WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KSysGuardFormatter
-WANTLIB += Plasma PlasmaActivities PlasmaActivitiesStats PlasmaQuick
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Baloo KF6Bookmarks
+WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6DBusAddons KF6FileMetaData KF6GlobalAccel KF6GuiAddons
+WANTLIB += KF6I18n KF6I18nLocaleData KF6IconThemes KF6IconWidgets
+WANTLIB += KF6ItemModels KF6ItemViews KF6JobWidgets KF6KCMUtils
+WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6NewStuffCore KF6Notifications
+WANTLIB += KF6NotifyConfig KF6Package KF6Runner KF6Service KF6Solid
+WANTLIB += KF6SonnetCore KF6SonnetUi KF6Svg KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui KSysGuardFormatter KirigamiPlatform Plasma
+WANTLIB += PlasmaActivities PlasmaActivitiesStats PlasmaQuick
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Qml Qt6Quick Qt6QuickWidgets Qt6Sql Qt6Widgets Qt6Xml
 WANTLIB += SDL2 X11 Xext Xi accounts-qt6 c gio-2.0 glib-2.0 gobject-2.0
@@ -43,7 +42,6 @@ RUN_DEPENDS =	devel/kf6/kirigami \
 
 LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/baloo \
-		devel/kf6/kauth \
 		devel/kf6/kbookmarks \
 		devel/kf6/kcmutils \
 		devel/kf6/kcodecs \
@@ -69,6 +67,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kpackage \
 		devel/kf6/krunner \
 		devel/kf6/kservice \
+		devel/kf6/kirigami \
 		devel/kf6/ksvg \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
@@ -88,13 +87,9 @@ LIB_DEPENDS =	devel/kf6/attica \
 		x11/qt6/qtdeclarative \
 		x11/xkbcommon
 
-CONFIGURE_ARGS += \
-	-DCMAKE_DISABLE_FIND_PACKAGE_KF5NetworkManagerQt=Yes
-
 CONFIGURE_ARGS +=	-DBUILD_KCM_MOUSE_X11=OFF \
 			-DBUILD_KCM_TOUCHPAD_X11=OFF \
 			-DBUILD_KCM_TABLET=OFF
-
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 

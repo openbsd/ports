@@ -7,7 +7,6 @@
 @lib lib/libkglobalaccelmodel.so.${LIBkglobalaccelmodel_VERSION}
 @so lib/qt6/plugins/attica_kde.so
 @so lib/qt6/plugins/kf6/kded/device_automounter.so
-@so lib/qt6/plugins/kf6/kded/kded_touchpad.so
 @so lib/qt6/plugins/kf6/kded/keyboard.so
 @so lib/qt6/plugins/kf6/krunner/krunner_keys.so
 @so lib/qt6/plugins/kf6/krunner/krunner_kwin.so
@@ -17,7 +16,6 @@
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.kicker.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.kickoff.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.kimpanel.so
-@so lib/qt6/plugins/plasma/applets/org.kde.plasma.marginsseparator.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.pager.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.showActivityManager.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.showdesktop.so
@@ -25,7 +23,6 @@
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.trash.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.windowlist.so
 @so lib/qt6/plugins/plasma/kcminit/kcm_mouse_init.so
-@so lib/qt6/plugins/plasma/kcminit/kcm_touchpad_init.so
 lib/qt6/plugins/plasma/kcms/desktop/
 @so lib/qt6/plugins/plasma/kcms/desktop/kcm_krunnersettings.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_access.so
@@ -41,8 +38,6 @@ lib/qt6/plugins/plasma/kcms/desktop/
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_plasmasearch.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_smserver.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_splashscreen.so
-@so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_touchpad.so
-@so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_touchscreen.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_workspace.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_clock.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_device_automounter.so
@@ -72,7 +67,6 @@ lib/qt6/qml/org/kde/private/desktopcontainment/folder/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/private/desktopcontainment/folder/libfolderplugin.so
 lib/qt6/qml/org/kde/private/desktopcontainment/folder/qmldir
 lib/systemd/user/plasma-kaccess.service
-@bin libexec/kf6/kauth/kcmdatetimehelper
 @bin libexec/kimpanel-ibus-panel
 @bin libexec/kimpanel-ibus-panel-launcher
 share/accounts/providers/kde/opendesktop.provider
@@ -96,8 +90,6 @@ share/applications/kcm_recentFiles.desktop
 share/applications/kcm_smserver.desktop
 share/applications/kcm_solid_actions.desktop
 share/applications/kcm_splashscreen.desktop
-share/applications/kcm_touchpad.desktop
-share/applications/kcm_touchscreen.desktop
 share/applications/kcm_workspace.desktop
 share/applications/kcmspellchecking.desktop
 share/applications/kde-mimeapps.list
@@ -118,10 +110,6 @@ share/config.kcfg/splashscreensettings.kcfg
 share/config.kcfg/workspaceoptions_kdeglobalssettings.kcfg
 share/config.kcfg/workspaceoptions_kwinsettings.kcfg
 share/config.kcfg/workspaceoptions_plasmasettings.kcfg
-share/dbus-1/interfaces/org.kde.touchpad.xml
-share/dbus-1/system-services/org.kde.kcontrol.kcmclock.service
-share/dbus-1/system.d/org.kde.kcontrol.kcmclock.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kcontrol.kcmclock.conf
 share/doc/HTML/ca/kcontrol/baloo/
 share/doc/HTML/ca/kcontrol/baloo/index.cache.bz2
 share/doc/HTML/ca/kcontrol/baloo/index.docbook
@@ -1081,16 +1069,6 @@ share/examples/plasma-desktop/xdg/
 share/examples/plasma-desktop/xdg/autostart/
 share/examples/plasma-desktop/xdg/autostart/kaccess.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/kaccess.desktop
-share/icons/hicolor/128x128/devices/input-touchpad.png
-share/icons/hicolor/16x16/devices/input-touchpad.png
-share/icons/hicolor/22x22/devices/input-touchpad.png
-share/icons/hicolor/24x24/devices/input-touchpad.png
-share/icons/hicolor/256x256/devices/input-touchpad.png
-share/icons/hicolor/32x32/devices/input-touchpad.png
-share/icons/hicolor/48x48/devices/input-touchpad.png
-share/icons/hicolor/64x64/devices/input-touchpad.png
-share/icons/hicolor/96x96/devices/input-touchpad.png
-share/icons/hicolor/scalable/devices/input-touchpad.svgz
 share/kcm_recentFiles/
 share/kcm_recentFiles/workspace/
 share/kcm_recentFiles/workspace/settings/
@@ -1114,8 +1092,9 @@ share/kcmmouse/pics/mouse_lh.png
 share/kcmmouse/pics/mouse_rh.png
 share/kcmsolidactions/
 share/kcmsolidactions/solid-action-template.desktop
+share/kconf_update/50-krunner-activate-typing.sh
+share/kconf_update/50-krunner-activate-typing.upd
 share/kglobalaccel/org.kde.plasma.emojier.desktop
-share/kglobalaccel/org.kde.touchpadshortcuts.desktop
 share/knotifications6/kaccess.notifyrc
 share/knsrcfiles/krunner.knsrc
 share/knsrcfiles/ksplash.knsrc
@@ -2802,6 +2781,7 @@ share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/lv/LC_MESSAGES/plasma_runner_keys.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/lv/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -4411,12 +4391,10 @@ share/plasma/shells/org.kde.plasma.desktop/contents/views/DesktopEditMode.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/views/Panel.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/views/PreviewBanner.qml
 share/plasma/shells/org.kde.plasma.desktop/metadata.json
-share/polkit-1/actions/org.kde.kcontrol.kcmclock.policy
 share/qlogging-categories6/kcm_gamecontroller.categories
 share/qlogging-categories6/kcm_kded.categories
 share/qlogging-categories6/kcm_keyboard.categories
 share/qlogging-categories6/kcm_mouse.categories
-share/qlogging-categories6/kcm_touchscreen.categories
 share/qlogging-categories6/kcmkeys.categories
 share/sddm/
 share/sddm/themes/

@@ -3,11 +3,29 @@ include/plasma/
 include/plasma/potdprovider/
 include/plasma/potdprovider/plasma_potd_export.h
 include/plasma/potdprovider/potdprovider.h
+include/plasma/weather/
+include/plasma/weather/currentday.h
+include/plasma/weather/forecast.h
+include/plasma/weather/futuredays.h
+include/plasma/weather/ion.h
+include/plasma/weather/lastday.h
+include/plasma/weather/lastobservation.h
+include/plasma/weather/locations.h
+include/plasma/weather/metadata.h
+include/plasma/weather/plasmaweatherdata_export.h
+include/plasma/weather/plasmaweatherion_export.h
+include/plasma/weather/station.h
+include/plasma/weather/warnings.h
 lib/cmake/PlasmaPotdProvider/
 lib/cmake/PlasmaPotdProvider/PlasmaPotdProviderConfig.cmake
 lib/cmake/PlasmaPotdProvider/PlasmaPotdProviderConfigVersion.cmake
 lib/cmake/PlasmaPotdProvider/PlasmaPotdProviderTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/PlasmaPotdProvider/PlasmaPotdProviderTargets.cmake
+lib/cmake/PlasmaWeather/
+lib/cmake/PlasmaWeather/PlasmaWeatherConfig.cmake
+lib/cmake/PlasmaWeather/PlasmaWeatherConfigVersion.cmake
+lib/cmake/PlasmaWeather/PlasmaWeatherTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/PlasmaWeather/PlasmaWeatherTargets.cmake
 @lib lib/libplasmapotdprovidercore.so.${LIBplasmapotdprovidercore_VERSION}
 @lib lib/libplasmaweatherdata.so.${LIBplasmaweatherdata_VERSION}
 @lib lib/libplasmaweatherion.so.${LIBplasmaweatherion_VERSION}
@@ -104,8 +122,11 @@ lib/qt6/qml/org/kde/plasmacalendar/astronomicaleventsconfig/kde-qmlmodule.versio
 @so lib/qt6/qml/org/kde/plasmacalendar/astronomicaleventsconfig/libplasmacalendarastronomicaleventsconfig.so
 lib/qt6/qml/org/kde/plasmacalendar/astronomicaleventsconfig/plasmacalendarastronomicaleventsconfig.qmltypes
 lib/qt6/qml/org/kde/plasmacalendar/astronomicaleventsconfig/qmldir
+@bin libexec/kf6/kameleon-qmk-helper
 @bin libexec/kf6/kauth/kameleonhelper
+share/dbus-1/system-services/org.kde.kameleon.qmk.helper.service
 share/dbus-1/system-services/org.kde.kameleonhelper.service
+share/dbus-1/system.d/org.kde.kameleon.qmk.helper.conf
 share/dbus-1/system.d/org.kde.kameleonhelper.conf
 share/icons/hicolor/scalable/apps/accessories-dictionary.svgz
 share/kdevappwizard/templates/plasmapotdprovider.tar.bz2
@@ -919,6 +940,7 @@ share/locale/hu/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/hu/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/hu/LC_MESSAGES/plasma_wallpaper_org.kde.tiled.mo
 share/locale/ia/LC_MESSAGES/kwin_effect_cube.mo
 share/locale/ia/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/ia/LC_MESSAGES/plasma_addons_profiles_utility.mo
@@ -1260,6 +1282,7 @@ share/locale/lv/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/lv/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/lv/LC_MESSAGES/plasma_wallpaper_org.kde.tiled.mo
 share/locale/ml/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.addons.katesessions.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
@@ -2140,6 +2163,7 @@ share/plasma/wallpapers/org.kde.tiled/metadata.json
 share/plasma/wallpapers/org.kde.tiled/metadata.json.license
 share/plasma/weather/
 share/plasma/weather/noaa_station_list.xml
+share/polkit-1/actions/org.kde.kameleon.qmk.helper.policy
 share/polkit-1/actions/org.kde.kameleonhelper.policy
 share/qlogging-categories6/kdeplasma-addons.categories
 share/qlogging-categories6/kdeplasma-addons.renamecategories

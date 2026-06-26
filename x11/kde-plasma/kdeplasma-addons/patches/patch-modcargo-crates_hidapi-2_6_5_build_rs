@@ -1,0 +1,11 @@
+Index: modcargo-crates/hidapi-2.6.5/build.rs
+--- modcargo-crates/hidapi-2.6.5/build.rs.orig
++++ modcargo-crates/hidapi-2.6.5/build.rs
+@@ -127,6 +127,7 @@ fn compile_freebsd() {
+ }
+ 
+ fn compile_openbsd() {
++    pkg_config::probe_library("libusb-1.0").expect("Unable to find libusb-1.0");
+     pkg_config::probe_library("hidapi-libusb").expect("Unable to find hidapi");
+     println!("cargo:rustc-cfg=libusb");
+     println!("cargo:rustc-cfg=hidapi");

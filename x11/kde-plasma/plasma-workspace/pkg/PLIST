@@ -128,9 +128,9 @@ lib/cmake/LibTaskManager/LibTaskManagerLibraryTargets.cmake
 @so lib/qt6/plugins/kf6/kded/ktimezoned.so
 @so lib/qt6/plugins/kf6/kded/lookandfeelautoswitcher.so
 @so lib/qt6/plugins/kf6/kded/mprisservice.so
-@so lib/qt6/plugins/kf6/kded/oom-notifier.so
-@so lib/qt6/plugins/kf6/kded/plasma-session-shortcuts.so
+@so lib/qt6/plugins/kf6/kded/oom_notifier.so
 @so lib/qt6/plugins/kf6/kded/plasma_accentcolor_service.so
+@so lib/qt6/plugins/kf6/kded/plasma_session_shortcuts.so
 @so lib/qt6/plugins/kf6/kded/soliduiserver.so
 @so lib/qt6/plugins/kf6/kded/statusnotifierwatcher.so
 lib/qt6/plugins/kf6/kfileitemaction/
@@ -170,6 +170,7 @@ lib/qt6/plugins/plasma/applets/
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.icon.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.lock_logout.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.manage-inputmethod.so
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.marginsseparator.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.mediacontroller.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.notifications.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.panelspacer.so
@@ -338,12 +339,6 @@ lib/qt6/qml/org/kde/plasma/workspace/dbus/dbusplugin.qmltypes
 lib/qt6/qml/org/kde/plasma/workspace/dbus/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/plasma/workspace/dbus/libdbusplugin.so
 lib/qt6/qml/org/kde/plasma/workspace/dbus/qmldir
-lib/qt6/qml/org/kde/plasma/workspace/dialogs/
-lib/qt6/qml/org/kde/plasma/workspace/dialogs/SystemDialog.qml
-lib/qt6/qml/org/kde/plasma/workspace/dialogs/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/plasma/workspace/dialogs/libsystemdialogs.so
-lib/qt6/qml/org/kde/plasma/workspace/dialogs/qmldir
-lib/qt6/qml/org/kde/plasma/workspace/dialogs/systemdialogs.qmltypes
 lib/qt6/qml/org/kde/plasma/workspace/keyboardlayout/
 lib/qt6/qml/org/kde/plasma/workspace/keyboardlayout/kde-qmlmodule.version
 lib/qt6/qml/org/kde/plasma/workspace/keyboardlayout/keyboardlayoutplugin.qmltypes
@@ -382,6 +377,7 @@ lib/systemd/user/plasma-ksmserver.service
 lib/systemd/user/plasma-ksplash.service
 lib/systemd/user/plasma-plasmashell.service
 lib/systemd/user/plasma-restoresession.service
+lib/systemd/user/plasma-startupsound.service
 lib/systemd/user/plasma-xembedsniproxy.service
 @bin libexec/baloorunner
 @bin libexec/kf6/kauth/fontinst
@@ -395,6 +391,7 @@ libexec/plasma-dbus-run-session-if-needed
 @bin libexec/plasma-fallback-session-restore
 @bin libexec/plasma-fallback-session-save
 libexec/plasma-sourceenv.sh
+@bin libexec/plasma-startup-sound
 share/applications/kcm_autostart.desktop
 share/applications/kcm_colors.desktop
 share/applications/kcm_componentchooser.desktop
@@ -1230,7 +1227,7 @@ share/knotifications6/devicenotifications.notifyrc
 share/knotifications6/donationmessage.notifyrc
 share/knotifications6/freespacenotifier.notifyrc
 share/knotifications6/libnotificationmanager.notifyrc
-share/knotifications6/oom-notifier.notifyrc
+share/knotifications6/oom_notifier.notifyrc
 share/knsrcfiles/colorschemes.knsrc
 share/knsrcfiles/gtk_themes.knsrc
 share/knsrcfiles/icons.knsrc
@@ -1303,7 +1300,7 @@ share/locale/ar/LC_MESSAGES/libkicker.mo
 share/locale/ar/LC_MESSAGES/libkmpris.mo
 share/locale/ar/LC_MESSAGES/libkworkspace.mo
 share/locale/ar/LC_MESSAGES/libnotificationmanager.mo
-share/locale/ar/LC_MESSAGES/oom-notifier.mo
+share/locale/ar/LC_MESSAGES/oom_notifier.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -1444,7 +1441,7 @@ share/locale/az/LC_MESSAGES/libkicker.mo
 share/locale/az/LC_MESSAGES/libkmpris.mo
 share/locale/az/LC_MESSAGES/libkworkspace.mo
 share/locale/az/LC_MESSAGES/libnotificationmanager.mo
-share/locale/az/LC_MESSAGES/oom-notifier.mo
+share/locale/az/LC_MESSAGES/oom_notifier.mo
 share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -1514,7 +1511,7 @@ share/locale/be/LC_MESSAGES/libkicker.mo
 share/locale/be/LC_MESSAGES/libkmpris.mo
 share/locale/be/LC_MESSAGES/libkworkspace.mo
 share/locale/be/LC_MESSAGES/libnotificationmanager.mo
-share/locale/be/LC_MESSAGES/oom-notifier.mo
+share/locale/be/LC_MESSAGES/oom_notifier.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -1600,7 +1597,7 @@ share/locale/bg/LC_MESSAGES/libkicker.mo
 share/locale/bg/LC_MESSAGES/libkmpris.mo
 share/locale/bg/LC_MESSAGES/libkworkspace.mo
 share/locale/bg/LC_MESSAGES/libnotificationmanager.mo
-share/locale/bg/LC_MESSAGES/oom-notifier.mo
+share/locale/bg/LC_MESSAGES/oom_notifier.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -1759,7 +1756,7 @@ share/locale/ca/LC_MESSAGES/libkicker.mo
 share/locale/ca/LC_MESSAGES/libkmpris.mo
 share/locale/ca/LC_MESSAGES/libkworkspace.mo
 share/locale/ca/LC_MESSAGES/libnotificationmanager.mo
-share/locale/ca/LC_MESSAGES/oom-notifier.mo
+share/locale/ca/LC_MESSAGES/oom_notifier.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -1833,7 +1830,7 @@ share/locale/ca@valencia/LC_MESSAGES/libkicker.mo
 share/locale/ca@valencia/LC_MESSAGES/libkmpris.mo
 share/locale/ca@valencia/LC_MESSAGES/libkworkspace.mo
 share/locale/ca@valencia/LC_MESSAGES/libnotificationmanager.mo
-share/locale/ca@valencia/LC_MESSAGES/oom-notifier.mo
+share/locale/ca@valencia/LC_MESSAGES/oom_notifier.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -1907,7 +1904,7 @@ share/locale/cs/LC_MESSAGES/libkicker.mo
 share/locale/cs/LC_MESSAGES/libkmpris.mo
 share/locale/cs/LC_MESSAGES/libkworkspace.mo
 share/locale/cs/LC_MESSAGES/libnotificationmanager.mo
-share/locale/cs/LC_MESSAGES/oom-notifier.mo
+share/locale/cs/LC_MESSAGES/oom_notifier.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2015,7 +2012,7 @@ share/locale/da/LC_MESSAGES/libkicker.mo
 share/locale/da/LC_MESSAGES/libkmpris.mo
 share/locale/da/LC_MESSAGES/libkworkspace.mo
 share/locale/da/LC_MESSAGES/libnotificationmanager.mo
-share/locale/da/LC_MESSAGES/oom-notifier.mo
+share/locale/da/LC_MESSAGES/oom_notifier.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2088,7 +2085,7 @@ share/locale/de/LC_MESSAGES/libkicker.mo
 share/locale/de/LC_MESSAGES/libkmpris.mo
 share/locale/de/LC_MESSAGES/libkworkspace.mo
 share/locale/de/LC_MESSAGES/libnotificationmanager.mo
-share/locale/de/LC_MESSAGES/oom-notifier.mo
+share/locale/de/LC_MESSAGES/oom_notifier.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2227,7 +2224,7 @@ share/locale/en_GB/LC_MESSAGES/libkicker.mo
 share/locale/en_GB/LC_MESSAGES/libkmpris.mo
 share/locale/en_GB/LC_MESSAGES/libkworkspace.mo
 share/locale/en_GB/LC_MESSAGES/libnotificationmanager.mo
-share/locale/en_GB/LC_MESSAGES/oom-notifier.mo
+share/locale/en_GB/LC_MESSAGES/oom_notifier.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2369,7 +2366,7 @@ share/locale/es/LC_MESSAGES/libkicker.mo
 share/locale/es/LC_MESSAGES/libkmpris.mo
 share/locale/es/LC_MESSAGES/libkworkspace.mo
 share/locale/es/LC_MESSAGES/libnotificationmanager.mo
-share/locale/es/LC_MESSAGES/oom-notifier.mo
+share/locale/es/LC_MESSAGES/oom_notifier.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2502,7 +2499,7 @@ share/locale/eu/LC_MESSAGES/libkicker.mo
 share/locale/eu/LC_MESSAGES/libkmpris.mo
 share/locale/eu/LC_MESSAGES/libkworkspace.mo
 share/locale/eu/LC_MESSAGES/libnotificationmanager.mo
-share/locale/eu/LC_MESSAGES/oom-notifier.mo
+share/locale/eu/LC_MESSAGES/oom_notifier.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2599,7 +2596,7 @@ share/locale/fi/LC_MESSAGES/libkicker.mo
 share/locale/fi/LC_MESSAGES/libkmpris.mo
 share/locale/fi/LC_MESSAGES/libkworkspace.mo
 share/locale/fi/LC_MESSAGES/libnotificationmanager.mo
-share/locale/fi/LC_MESSAGES/oom-notifier.mo
+share/locale/fi/LC_MESSAGES/oom_notifier.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2673,7 +2670,7 @@ share/locale/fr/LC_MESSAGES/libkicker.mo
 share/locale/fr/LC_MESSAGES/libkmpris.mo
 share/locale/fr/LC_MESSAGES/libkworkspace.mo
 share/locale/fr/LC_MESSAGES/libnotificationmanager.mo
-share/locale/fr/LC_MESSAGES/oom-notifier.mo
+share/locale/fr/LC_MESSAGES/oom_notifier.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2776,7 +2773,7 @@ share/locale/ga/LC_MESSAGES/libkicker.mo
 share/locale/ga/LC_MESSAGES/libkmpris.mo
 share/locale/ga/LC_MESSAGES/libkworkspace.mo
 share/locale/ga/LC_MESSAGES/libnotificationmanager.mo
-share/locale/ga/LC_MESSAGES/oom-notifier.mo
+share/locale/ga/LC_MESSAGES/oom_notifier.mo
 share/locale/ga/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/ga/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ga/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2847,7 +2844,7 @@ share/locale/gl/LC_MESSAGES/libkicker.mo
 share/locale/gl/LC_MESSAGES/libkmpris.mo
 share/locale/gl/LC_MESSAGES/libkworkspace.mo
 share/locale/gl/LC_MESSAGES/libnotificationmanager.mo
-share/locale/gl/LC_MESSAGES/oom-notifier.mo
+share/locale/gl/LC_MESSAGES/oom_notifier.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2919,6 +2916,7 @@ share/locale/gu/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/gu/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
+share/locale/gu/LC_MESSAGES/plasmashell.mo
 share/locale/gu/LC_MESSAGES/soliduiserver.mo
 share/locale/he/LC_MESSAGES/freespacenotifier.mo
 share/locale/he/LC_MESSAGES/kcm_autostart.mo
@@ -2954,7 +2952,7 @@ share/locale/he/LC_MESSAGES/libkicker.mo
 share/locale/he/LC_MESSAGES/libkmpris.mo
 share/locale/he/LC_MESSAGES/libkworkspace.mo
 share/locale/he/LC_MESSAGES/libnotificationmanager.mo
-share/locale/he/LC_MESSAGES/oom-notifier.mo
+share/locale/he/LC_MESSAGES/oom_notifier.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3024,7 +3022,7 @@ share/locale/hi/LC_MESSAGES/libkicker.mo
 share/locale/hi/LC_MESSAGES/libkmpris.mo
 share/locale/hi/LC_MESSAGES/libkworkspace.mo
 share/locale/hi/LC_MESSAGES/libnotificationmanager.mo
-share/locale/hi/LC_MESSAGES/oom-notifier.mo
+share/locale/hi/LC_MESSAGES/oom_notifier.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3179,12 +3177,13 @@ share/locale/hu/LC_MESSAGES/kio_desktop.mo
 share/locale/hu/LC_MESSAGES/klipper.mo
 share/locale/hu/LC_MESSAGES/krdb.mo
 share/locale/hu/LC_MESSAGES/krunner.mo
+share/locale/hu/LC_MESSAGES/ksecretprompter.mo
 share/locale/hu/LC_MESSAGES/ksmserver.mo
 share/locale/hu/LC_MESSAGES/libkicker.mo
 share/locale/hu/LC_MESSAGES/libkmpris.mo
 share/locale/hu/LC_MESSAGES/libkworkspace.mo
 share/locale/hu/LC_MESSAGES/libnotificationmanager.mo
-share/locale/hu/LC_MESSAGES/oom-notifier.mo
+share/locale/hu/LC_MESSAGES/oom_notifier.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3262,7 +3261,7 @@ share/locale/ia/LC_MESSAGES/libkicker.mo
 share/locale/ia/LC_MESSAGES/libkmpris.mo
 share/locale/ia/LC_MESSAGES/libkworkspace.mo
 share/locale/ia/LC_MESSAGES/libnotificationmanager.mo
-share/locale/ia/LC_MESSAGES/oom-notifier.mo
+share/locale/ia/LC_MESSAGES/oom_notifier.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3333,7 +3332,7 @@ share/locale/id/LC_MESSAGES/libkicker.mo
 share/locale/id/LC_MESSAGES/libkmpris.mo
 share/locale/id/LC_MESSAGES/libkworkspace.mo
 share/locale/id/LC_MESSAGES/libnotificationmanager.mo
-share/locale/id/LC_MESSAGES/oom-notifier.mo
+share/locale/id/LC_MESSAGES/oom_notifier.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3421,7 +3420,7 @@ share/locale/is/LC_MESSAGES/libkicker.mo
 share/locale/is/LC_MESSAGES/libkmpris.mo
 share/locale/is/LC_MESSAGES/libkworkspace.mo
 share/locale/is/LC_MESSAGES/libnotificationmanager.mo
-share/locale/is/LC_MESSAGES/oom-notifier.mo
+share/locale/is/LC_MESSAGES/oom_notifier.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3495,7 +3494,7 @@ share/locale/it/LC_MESSAGES/libkicker.mo
 share/locale/it/LC_MESSAGES/libkmpris.mo
 share/locale/it/LC_MESSAGES/libkworkspace.mo
 share/locale/it/LC_MESSAGES/libnotificationmanager.mo
-share/locale/it/LC_MESSAGES/oom-notifier.mo
+share/locale/it/LC_MESSAGES/oom_notifier.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3546,11 +3545,13 @@ share/locale/ja/LC_MESSAGES/kcm_fonts.mo
 share/locale/ja/LC_MESSAGES/kcm_icons.mo
 share/locale/ja/LC_MESSAGES/kcm_lookandfeel.mo
 share/locale/ja/LC_MESSAGES/kcm_nightlight.mo
+share/locale/ja/LC_MESSAGES/kcm_nighttime.mo
 share/locale/ja/LC_MESSAGES/kcm_notifications.mo
 share/locale/ja/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/ja/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/ja/LC_MESSAGES/kcm_style.mo
 share/locale/ja/LC_MESSAGES/kcm_users.mo
+share/locale/ja/LC_MESSAGES/kcm_wallpaper.mo
 share/locale/ja/LC_MESSAGES/kcminit.mo
 share/locale/ja/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/ja/LC_MESSAGES/kded_donationmessage.mo
@@ -3637,7 +3638,7 @@ share/locale/ka/LC_MESSAGES/libkicker.mo
 share/locale/ka/LC_MESSAGES/libkmpris.mo
 share/locale/ka/LC_MESSAGES/libkworkspace.mo
 share/locale/ka/LC_MESSAGES/libnotificationmanager.mo
-share/locale/ka/LC_MESSAGES/oom-notifier.mo
+share/locale/ka/LC_MESSAGES/oom_notifier.mo
 share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3806,12 +3807,13 @@ share/locale/ko/LC_MESSAGES/kio_desktop.mo
 share/locale/ko/LC_MESSAGES/klipper.mo
 share/locale/ko/LC_MESSAGES/krdb.mo
 share/locale/ko/LC_MESSAGES/krunner.mo
+share/locale/ko/LC_MESSAGES/ksecretprompter.mo
 share/locale/ko/LC_MESSAGES/ksmserver.mo
 share/locale/ko/LC_MESSAGES/libkicker.mo
 share/locale/ko/LC_MESSAGES/libkmpris.mo
 share/locale/ko/LC_MESSAGES/libkworkspace.mo
 share/locale/ko/LC_MESSAGES/libnotificationmanager.mo
-share/locale/ko/LC_MESSAGES/oom-notifier.mo
+share/locale/ko/LC_MESSAGES/oom_notifier.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3909,7 +3911,7 @@ share/locale/lt/LC_MESSAGES/libkicker.mo
 share/locale/lt/LC_MESSAGES/libkmpris.mo
 share/locale/lt/LC_MESSAGES/libkworkspace.mo
 share/locale/lt/LC_MESSAGES/libnotificationmanager.mo
-share/locale/lt/LC_MESSAGES/oom-notifier.mo
+share/locale/lt/LC_MESSAGES/oom_notifier.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3966,6 +3968,7 @@ share/locale/lv/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/lv/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/lv/LC_MESSAGES/kcm_style.mo
 share/locale/lv/LC_MESSAGES/kcm_users.mo
+share/locale/lv/LC_MESSAGES/kcm_wallpaper.mo
 share/locale/lv/LC_MESSAGES/kcminit.mo
 share/locale/lv/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/lv/LC_MESSAGES/kded_donationmessage.mo
@@ -3976,12 +3979,13 @@ share/locale/lv/LC_MESSAGES/kio_desktop.mo
 share/locale/lv/LC_MESSAGES/klipper.mo
 share/locale/lv/LC_MESSAGES/krdb.mo
 share/locale/lv/LC_MESSAGES/krunner.mo
+share/locale/lv/LC_MESSAGES/ksecretprompter.mo
 share/locale/lv/LC_MESSAGES/ksmserver.mo
 share/locale/lv/LC_MESSAGES/libkicker.mo
 share/locale/lv/LC_MESSAGES/libkmpris.mo
 share/locale/lv/LC_MESSAGES/libkworkspace.mo
 share/locale/lv/LC_MESSAGES/libnotificationmanager.mo
-share/locale/lv/LC_MESSAGES/oom-notifier.mo
+share/locale/lv/LC_MESSAGES/oom_notifier.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -4240,7 +4244,7 @@ share/locale/nb/LC_MESSAGES/libkicker.mo
 share/locale/nb/LC_MESSAGES/libkmpris.mo
 share/locale/nb/LC_MESSAGES/libkworkspace.mo
 share/locale/nb/LC_MESSAGES/libnotificationmanager.mo
-share/locale/nb/LC_MESSAGES/oom-notifier.mo
+share/locale/nb/LC_MESSAGES/oom_notifier.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -4377,7 +4381,7 @@ share/locale/nl/LC_MESSAGES/libkicker.mo
 share/locale/nl/LC_MESSAGES/libkmpris.mo
 share/locale/nl/LC_MESSAGES/libkworkspace.mo
 share/locale/nl/LC_MESSAGES/libnotificationmanager.mo
-share/locale/nl/LC_MESSAGES/oom-notifier.mo
+share/locale/nl/LC_MESSAGES/oom_notifier.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -4450,7 +4454,7 @@ share/locale/nn/LC_MESSAGES/libkicker.mo
 share/locale/nn/LC_MESSAGES/libkmpris.mo
 share/locale/nn/LC_MESSAGES/libkworkspace.mo
 share/locale/nn/LC_MESSAGES/libnotificationmanager.mo
-share/locale/nn/LC_MESSAGES/oom-notifier.mo
+share/locale/nn/LC_MESSAGES/oom_notifier.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -4548,6 +4552,7 @@ share/locale/pa/LC_MESSAGES/kcm_style.mo
 share/locale/pa/LC_MESSAGES/kcm_users.mo
 share/locale/pa/LC_MESSAGES/kcminit.mo
 share/locale/pa/LC_MESSAGES/kded_devicenotifications.mo
+share/locale/pa/LC_MESSAGES/kded_geotimezoned.mo
 share/locale/pa/LC_MESSAGES/kfontinst.mo
 share/locale/pa/LC_MESSAGES/kio_applications.mo
 share/locale/pa/LC_MESSAGES/kio_desktop.mo
@@ -4632,7 +4637,7 @@ share/locale/pl/LC_MESSAGES/libkicker.mo
 share/locale/pl/LC_MESSAGES/libkmpris.mo
 share/locale/pl/LC_MESSAGES/libkworkspace.mo
 share/locale/pl/LC_MESSAGES/libnotificationmanager.mo
-share/locale/pl/LC_MESSAGES/oom-notifier.mo
+share/locale/pl/LC_MESSAGES/oom_notifier.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -4767,7 +4772,7 @@ share/locale/pt_BR/LC_MESSAGES/libkicker.mo
 share/locale/pt_BR/LC_MESSAGES/libkmpris.mo
 share/locale/pt_BR/LC_MESSAGES/libkworkspace.mo
 share/locale/pt_BR/LC_MESSAGES/libnotificationmanager.mo
-share/locale/pt_BR/LC_MESSAGES/oom-notifier.mo
+share/locale/pt_BR/LC_MESSAGES/oom_notifier.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -4841,7 +4846,7 @@ share/locale/ro/LC_MESSAGES/libkicker.mo
 share/locale/ro/LC_MESSAGES/libkmpris.mo
 share/locale/ro/LC_MESSAGES/libkworkspace.mo
 share/locale/ro/LC_MESSAGES/libnotificationmanager.mo
-share/locale/ro/LC_MESSAGES/oom-notifier.mo
+share/locale/ro/LC_MESSAGES/oom_notifier.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -4914,7 +4919,7 @@ share/locale/ru/LC_MESSAGES/libkicker.mo
 share/locale/ru/LC_MESSAGES/libkmpris.mo
 share/locale/ru/LC_MESSAGES/libkworkspace.mo
 share/locale/ru/LC_MESSAGES/libnotificationmanager.mo
-share/locale/ru/LC_MESSAGES/oom-notifier.mo
+share/locale/ru/LC_MESSAGES/oom_notifier.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -4984,7 +4989,7 @@ share/locale/sa/LC_MESSAGES/libkicker.mo
 share/locale/sa/LC_MESSAGES/libkmpris.mo
 share/locale/sa/LC_MESSAGES/libkworkspace.mo
 share/locale/sa/LC_MESSAGES/libnotificationmanager.mo
-share/locale/sa/LC_MESSAGES/oom-notifier.mo
+share/locale/sa/LC_MESSAGES/oom_notifier.mo
 share/locale/sa/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/sa/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/sa/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -5105,7 +5110,7 @@ share/locale/sk/LC_MESSAGES/libkicker.mo
 share/locale/sk/LC_MESSAGES/libkmpris.mo
 share/locale/sk/LC_MESSAGES/libkworkspace.mo
 share/locale/sk/LC_MESSAGES/libnotificationmanager.mo
-share/locale/sk/LC_MESSAGES/oom-notifier.mo
+share/locale/sk/LC_MESSAGES/oom_notifier.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -5179,7 +5184,7 @@ share/locale/sl/LC_MESSAGES/libkicker.mo
 share/locale/sl/LC_MESSAGES/libkmpris.mo
 share/locale/sl/LC_MESSAGES/libkworkspace.mo
 share/locale/sl/LC_MESSAGES/libnotificationmanager.mo
-share/locale/sl/LC_MESSAGES/oom-notifier.mo
+share/locale/sl/LC_MESSAGES/oom_notifier.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -5493,7 +5498,7 @@ share/locale/sv/LC_MESSAGES/libkicker.mo
 share/locale/sv/LC_MESSAGES/libkmpris.mo
 share/locale/sv/LC_MESSAGES/libkworkspace.mo
 share/locale/sv/LC_MESSAGES/libnotificationmanager.mo
-share/locale/sv/LC_MESSAGES/oom-notifier.mo
+share/locale/sv/LC_MESSAGES/oom_notifier.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -5697,7 +5702,7 @@ share/locale/th/LC_MESSAGES/klipper.mo
 share/locale/th/LC_MESSAGES/krdb.mo
 share/locale/th/LC_MESSAGES/ksmserver.mo
 share/locale/th/LC_MESSAGES/libkworkspace.mo
-share/locale/th/LC_MESSAGES/oom-notifier.mo
+share/locale/th/LC_MESSAGES/oom_notifier.mo
 share/locale/th/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/th/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/th/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -5822,7 +5827,7 @@ share/locale/tr/LC_MESSAGES/libkicker.mo
 share/locale/tr/LC_MESSAGES/libkmpris.mo
 share/locale/tr/LC_MESSAGES/libkworkspace.mo
 share/locale/tr/LC_MESSAGES/libnotificationmanager.mo
-share/locale/tr/LC_MESSAGES/oom-notifier.mo
+share/locale/tr/LC_MESSAGES/oom_notifier.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -5931,7 +5936,7 @@ share/locale/uk/LC_MESSAGES/libkicker.mo
 share/locale/uk/LC_MESSAGES/libkmpris.mo
 share/locale/uk/LC_MESSAGES/libkworkspace.mo
 share/locale/uk/LC_MESSAGES/libnotificationmanager.mo
-share/locale/uk/LC_MESSAGES/oom-notifier.mo
+share/locale/uk/LC_MESSAGES/oom_notifier.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -6131,7 +6136,7 @@ share/locale/zh_CN/LC_MESSAGES/libkicker.mo
 share/locale/zh_CN/LC_MESSAGES/libkmpris.mo
 share/locale/zh_CN/LC_MESSAGES/libkworkspace.mo
 share/locale/zh_CN/LC_MESSAGES/libnotificationmanager.mo
-share/locale/zh_CN/LC_MESSAGES/oom-notifier.mo
+share/locale/zh_CN/LC_MESSAGES/oom_notifier.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -6205,7 +6210,7 @@ share/locale/zh_TW/LC_MESSAGES/libkicker.mo
 share/locale/zh_TW/LC_MESSAGES/libkmpris.mo
 share/locale/zh_TW/LC_MESSAGES/libkworkspace.mo
 share/locale/zh_TW/LC_MESSAGES/libnotificationmanager.mo
-share/locale/zh_TW/LC_MESSAGES/oom-notifier.mo
+share/locale/zh_TW/LC_MESSAGES/oom_notifier.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -6326,8 +6331,6 @@ share/plasma/look-and-feel/org.kde.breeze.desktop/contents/splash/images/busywid
 share/plasma/look-and-feel/org.kde.breeze.desktop/contents/splash/images/kde-puffy.svgz
 share/plasma/look-and-feel/org.kde.breeze.desktop/contents/splash/images/kde.svgz
 share/plasma/look-and-feel/org.kde.breeze.desktop/contents/splash/images/plasma.svgz
-share/plasma/look-and-feel/org.kde.breeze.desktop/contents/systemdialog/
-share/plasma/look-and-feel/org.kde.breeze.desktop/contents/systemdialog/SystemDialog.qml
 share/plasma/look-and-feel/org.kde.breeze.desktop/metadata.json
 share/plasma/look-and-feel/org.kde.breezedark.desktop/
 share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/
@@ -6457,6 +6460,7 @@ share/timezonefiles/timezones.json
 share/wayland-sessions/
 share/wayland-sessions/plasma.desktop
 share/xdg-desktop-portal/kde-portals.conf
+share/xdg-desktop-portal/portals/plasmanotify.portal
 share/xsessions/
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
