@@ -1,6 +1,6 @@
 COMMENT=	fast implementation of cached properties
 
-MODPY_DISTV=	0.4.1
+MODPY_DISTV=	0.5.2
 DISTNAME=	propcache-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -24,10 +24,9 @@ TEST_DEPENDS=	devel/py-covdefaults \
 		devel/py-test-cov \
 		devel/py-test-xdist
 
-# test needs "make fake"
-MODPY_TEST_LINK_SO= Yes
-
-pre-test:
-	ln -fs src/propcache ${WRKSRC}/
+# because we patched to use older setuptools (v82+ for version = attr:)
+pre-configure:
+	sed -i 's,= attr: propcache.__version__.*,= ${MODPY_DISTV},' \
+		${WRKSRC}/setup.cfg
 
 .include <bsd.port.mk>
