@@ -1,4 +1,5 @@
 COMMENT =	file manager and desktop icon manager
+REVISION =	0
 
 NAME =		pcmanfm-qt
 
@@ -18,7 +19,7 @@ LIB_DEPENDS =	graphics/libexif \
 		x11/menu-cache
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/oxygen-icons \
+		x11/oxygen-icons \
 		x11/gtk+4,-guic
 
 post-install:

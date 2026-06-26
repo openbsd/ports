@@ -1,4 +1,5 @@
 COMMENT =	session manager for LXQt
+REVISION =	0
 
 NAME =		lxqt-session
 
@@ -20,7 +21,7 @@ RUN_DEPENDS =	x11/lxqt/qtxdg-tools \
 		devel/xdg-user-dirs \
 		devel/desktop-file-utils \
 		x11/xscreensaver \
-		devel/kf5/oxygen-icons
+		x11/oxygen-icons
 
 CONFIGURE_ARGS +=	-DWITH_LIBUDEV=No
 

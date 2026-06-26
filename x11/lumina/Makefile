@@ -4,7 +4,7 @@ GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
 GH_TAGNAME=		v1.4.0-p1
 PKGNAME=		lumina-1.4.0pl1
-REVISION=		10
+REVISION=		11
 
 CATEGORIES=		x11
 
@@ -24,7 +24,7 @@ MODULES=		x11/qt5
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/git \
-			devel/kf5/oxygen-icons \
+			x11/oxygen-icons \
 			multimedia/gstreamer1/plugins-base \
 			x11/fluxbox \
 			x11/numlockx \

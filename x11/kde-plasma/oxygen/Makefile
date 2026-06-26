@@ -1,5 +1,6 @@
 COMMENT =	style for Qt/KDE Applications
 DISTNAME =	oxygen-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  oxygenstyle6              0.1 # 0.0
 SHARED_LIBS +=  oxygenstyleconfig6        0.0 # 0.0
@@ -17,7 +18,7 @@ BUILD_DEPENDS =	devel/kf6/kpackage \
 		x11/kde-plasma/libplasma>=${VERSION} \
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/kf5/oxygen-icons \
+		x11/oxygen-icons \
 		devel/kf6/kpackage
 
 LIB_DEPENDS +=	devel/kf6/kcolorscheme \
@@ -38,7 +39,7 @@ LIB_DEPENDS +=	devel/kf6/kcolorscheme \
 
 CONFIGURE_ARGS =	-DBUILD_QT5=OFF
 
-# duplicates devel/kf5/oxygen-icons partially
+# duplicates x11/oxygen-icons partially
 post-install:
 	rm -Rf ${PREFIX}/share/icons
 
