@@ -6,7 +6,7 @@ CATEGORIES =		mail
 # AGPLv3
 PERMIT_PACKAGE =	Yes
 
-GH_TAGNAME =		v1.0.8
+GH_TAGNAME =		v1.0.9
 PKGNAME =		stalwart-cli-${GH_TAGNAME:S/v//}
 
 HOMEPAGE =	https://stalw.art/docs/management/cli/overview/
