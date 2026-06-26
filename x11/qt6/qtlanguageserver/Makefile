@@ -6,4 +6,6 @@ MODQT6_DEPS =	No
 
 BUILD_DEPENDS =	x11/qt6/qtbase
 
+DEBUG_PACKAGES =
+
 .include <bsd.port.mk>
