@@ -1,7 +1,7 @@
 Index: mojo/core/channel_posix.cc
 --- mojo/core/channel_posix.cc.orig
 +++ mojo/core/channel_posix.cc
-@@ -606,6 +606,13 @@ void Channel::OfferChannelUpgrade() {
+@@ -613,6 +613,13 @@ void Channel::OfferChannelUpgrade() {
    }
    static_cast<ChannelLinux*>(this)->OfferSharedMemUpgrade();
  }
