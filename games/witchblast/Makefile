@@ -1,4 +1,3 @@
-BROKEN =	modern C++ issues in SFML/String.hpp
 BROKEN-sparc64 =	undefined reference to XRRConfigRotations, etc.
 
 COMMENT =	roguelite dungeon crawler game
@@ -6,7 +5,7 @@ COMMENT =	roguelite dungeon crawler game
 GH_ACCOUNT =	Cirrus-Minor
 GH_PROJECT =	witchblast
 GH_TAGNAME =	v0.7.5
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	games x11
 
