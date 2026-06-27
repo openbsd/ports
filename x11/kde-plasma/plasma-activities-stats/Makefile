@@ -1,5 +1,6 @@
 COMMENT =	statistics for the KDE Activity concept
 DISTNAME =	plasma-activities-stats-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  PlasmaActivitiesStats     0.0 # 0.0
 
@@ -12,8 +13,5 @@ BUILD_DEPENDS =	devel/boost \
 
 LIB_DEPENDS =	devel/kf6/kconfig \
 		x11/kde-plasma/plasma-activities>=${VERSION}
-
-# For boost
-CXXFLAGS=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
