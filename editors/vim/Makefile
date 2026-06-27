@@ -3,7 +3,7 @@ COMMENT=	vi clone with many additional features
 # careful with PLISTs if updating; normally use a gui flavour, not no_x11
 # if there are new languages for manpages, "make fix-plist" will add the
 # ${GUI_ONLY} markers as needed for gui-only tools.
-V=		9.2.0699
+V=		9.2.0738
 # keep package version above 7.9-stable
 REVISION=	0
 
