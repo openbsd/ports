@@ -1,6 +1,7 @@
 COMMENT =	KDE Plasma add-ons
 DISTNAME =	kdeplasma-addons-${VERSION}
 PKGNAME =	kf6-kdeplasma-addons-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  plasmapotdprovidercore    1.0 # 0.0
 SHARED_LIBS +=	plasmaweatherdata         0.0 # 0.0
@@ -65,11 +66,6 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
-
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
-
-CFLAGS +=	-I${LOCALBASE}/include/
-CXXFLAGS +=	-I${LOCALBASE}/include/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
