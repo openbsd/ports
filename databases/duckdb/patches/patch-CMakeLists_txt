@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -649,7 +649,7 @@ if(NOT MSVC)
+@@ -662,7 +662,7 @@ if(NOT MSVC)
    set(CMAKE_CXX_FLAGS_DEBUG
        "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -DDEBUG -Wall ${M32_FLAG} ${CXX_EXTRA}")
    set(CMAKE_CXX_FLAGS_RELEASE
