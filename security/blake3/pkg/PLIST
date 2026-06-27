@@ -1,0 +1,9 @@
+include/blake3.h
+lib/cmake/
+lib/cmake/blake3/
+lib/cmake/blake3/blake3-config-version.cmake
+lib/cmake/blake3/blake3-config.cmake
+lib/cmake/blake3/blake3-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/blake3/blake3-targets.cmake
+@lib lib/libblake3.so.${LIBblake3_VERSION}
+lib/pkgconfig/libblake3.pc

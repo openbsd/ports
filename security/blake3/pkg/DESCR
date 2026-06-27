@@ -1,0 +1,4 @@
+BLAKE3 is a fast cryptographic hash function. Using a Merkle tree on the
+inside, it's highly parallelizable across any number of threads and SIMD
+lanes, and capable of verified streaming and incremental updates.
+It provides a PRF, MAC, KDF, and XOF, as well as a regular hash.
