@@ -1,5 +1,6 @@
 COMMENT =	applications useful for Plasma development
 DISTNAME =	plasma-sdk-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
@@ -45,11 +46,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/kde-plasma/libplasma>=${VERSION} \
 		x11/kde-plasma/plasma5support>=${VERSION} \
 		x11/qt6/qtdeclarative
-
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
-
-CFLAGS +=		-I${LOCALBASE}/include/
-CXXFLAGS +=		-I${LOCALBASE}/include/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
