@@ -1,7 +1,7 @@
 COMMENT =	Qt API to interact with the wayland-client and -server
 DISTNAME =	kwayland-${VERSION}
 PKGNAME =	kf6-kwayland-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  KWaylandClient            0.2 # 0.0
 
@@ -18,8 +18,5 @@ RUN_DEPENDS =		wayland/libinput-openbsd \
 
 LIB_DEPENDS =		wayland/wayland \
 			x11/xkbcommon
-
-# libinput
-CXXFLAGS=		-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
