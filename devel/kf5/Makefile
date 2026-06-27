@@ -23,7 +23,6 @@ SUBDIR += kitemviews
 SUBDIR += kplotting
 SUBDIR += kwidgetsaddons
 SUBDIR += kwindowsystem
-SUBDIR += oxygen-icons
 SUBDIR += solid
 SUBDIR += sonnet
 SUBDIR += threadweaver
