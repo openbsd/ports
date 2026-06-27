@@ -7,7 +7,7 @@ COMMENT =		ncurses Spotify client
 
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
-GH_TAGNAME =		v1.3.3
+GH_TAGNAME =		v1.3.4
 
 CATEGORIES =		audio
 
