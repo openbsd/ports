@@ -36,6 +36,7 @@ MODULES =	devel/cmake \
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	devel/bison \
+		devel/boost \
 		devel/gettext,-tools
 
 LIB_DEPENDS =	devel/cryptopp \
