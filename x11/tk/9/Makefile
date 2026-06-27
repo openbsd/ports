@@ -1,6 +1,6 @@
 COMMENT =		graphical toolkit for Tcl
 
-P =			3
+P =			4
 
 DISTNAME =		tk9.0.${P}
 PKGNAME =		tk-9.0.${P}
