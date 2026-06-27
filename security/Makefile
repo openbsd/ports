@@ -15,6 +15,7 @@
      SUBDIR += b3sum
      SUBDIR += badkeys
      SUBDIR += bfbtester
+     SUBDIR += blake3
      SUBDIR += boofuzz
      SUBDIR += boringssl
      SUBDIR += botan2
