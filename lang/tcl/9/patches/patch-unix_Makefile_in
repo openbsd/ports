@@ -41,10 +41,10 @@ Index: unix/Makefile.in
  		echo "Making directory $(MODULE_INSTALL_DIR)/$$i"; \
 @@ -1073,23 +1073,23 @@ install-libraries: libraries
  	    done
- 	@echo "Installing package http 2.10.1 as a Tcl Module"
+ 	@echo "Installing package http 2.10.2 as a Tcl Module"
  	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl \
--		"$(MODULE_INSTALL_DIR)/9.0/http-2.10.1.tm"
-+		"$(MODULE_INSTALL_DIR)/http-2.10.1.tm"
+-		"$(MODULE_INSTALL_DIR)/9.0/http-2.10.2.tm"
++		"$(MODULE_INSTALL_DIR)/http-2.10.2.tm"
  	@echo "Installing package opt0.4 files to $(SCRIPT_INSTALL_DIR)/opt0.4/"
  	@for i in $(TOP_DIR)/library/opt/*.tcl; do \
  	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)/opt0.4"; \
@@ -53,10 +53,10 @@ Index: unix/Makefile.in
  	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl \
 -		"$(MODULE_INSTALL_DIR)/9.0/msgcat-1.7.1.tm"
 +		"$(MODULE_INSTALL_DIR)/msgcat-1.7.1.tm"
- 	@echo "Installing package tcltest 2.5.10 as a Tcl Module"
+ 	@echo "Installing package tcltest 2.5.11 as a Tcl Module"
  	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl \
--		"$(MODULE_INSTALL_DIR)/9.0/tcltest-2.5.10.tm"
-+		"$(MODULE_INSTALL_DIR)/tcltest-2.5.10.tm"
+-		"$(MODULE_INSTALL_DIR)/9.0/tcltest-2.5.11.tm"
++		"$(MODULE_INSTALL_DIR)/tcltest-2.5.11.tm"
  	@echo "Installing package platform 1.1.0 as a Tcl Module"
  	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl \
 -		"$(MODULE_INSTALL_DIR)/9.0/platform-1.1.0.tm"

@@ -4,7 +4,7 @@ Set here to propagate through everything.
 Index: unix/configure
 --- unix/configure.orig
 +++ unix/configure
-@@ -11288,11 +11288,11 @@ fi
+@@ -11506,11 +11506,11 @@ fi
  # Replace ${VERSION} with contents of ${TCL_VERSION}
  # double-eval to account for TCL_TRIM_DOTS.
  #

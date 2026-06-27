@@ -719,7 +719,6 @@ lib/tcl/tcl9/man/man3/
 @man lib/tcl/tcl9/man/man3/Tcl_Ungets.3
 @man lib/tcl/tcl9/man/man3/Tcl_UniChar.3
 @man lib/tcl/tcl9/man/man3/Tcl_UniCharAtIndex.3
-@man lib/tcl/tcl9/man/man3/Tcl_UniCharCaseMatch.3
 @man lib/tcl/tcl9/man/man3/Tcl_UniCharIsAlnum.3
 @man lib/tcl/tcl9/man/man3/Tcl_UniCharIsAlpha.3
 @man lib/tcl/tcl9/man/man3/Tcl_UniCharIsControl.3
@@ -732,8 +731,6 @@ lib/tcl/tcl9/man/man3/
 @man lib/tcl/tcl9/man/man3/Tcl_UniCharIsUpper.3
 @man lib/tcl/tcl9/man/man3/Tcl_UniCharIsWordChar.3
 @man lib/tcl/tcl9/man/man3/Tcl_UniCharLen.3
-@man lib/tcl/tcl9/man/man3/Tcl_UniCharNcasecmp.3
-@man lib/tcl/tcl9/man/man3/Tcl_UniCharNcmp.3
 @man lib/tcl/tcl9/man/man3/Tcl_UniCharToLower.3
 @man lib/tcl/tcl9/man/man3/Tcl_UniCharToTitle.3
 @man lib/tcl/tcl9/man/man3/Tcl_UniCharToUpper.3
@@ -985,12 +982,12 @@ lib/tcl/tcl9/man/mann/
 @man lib/tcl/tcl9/man/mann/zipfs.n
 @man lib/tcl/tcl9/man/mann/zlib.n
 lib/tcl/tcl9/modules/
-lib/tcl/tcl9/modules/http-2.10.1.tm
+lib/tcl/tcl9/modules/http-2.10.2.tm
 lib/tcl/tcl9/modules/msgcat-1.7.1.tm
 lib/tcl/tcl9/modules/platform/
 lib/tcl/tcl9/modules/platform-1.1.0.tm
 lib/tcl/tcl9/modules/platform/shell-1.1.4.tm
-lib/tcl/tcl9/modules/tcltest-2.5.10.tm
+lib/tcl/tcl9/modules/tcltest-2.5.11.tm
 lib/tcl/tcl9/msgs/
 lib/tcl/tcl9/msgs/af.msg
 lib/tcl/tcl9/msgs/af_za.msg
