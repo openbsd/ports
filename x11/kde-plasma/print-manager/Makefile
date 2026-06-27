@@ -1,5 +1,6 @@
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
+REVISION =	0
 
 # From KDE Gear 23.08.4 to KDE Plasma 6.0
 EPOCH =		0
@@ -20,8 +21,10 @@ MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 
-BUILD_DEPENDS =	net/samba
-RUN_DEPENDS =	net/samba
+BUILD_DEPENDS =	net/samba \
+		devel/kf6/kdeclarative
+RUN_DEPENDS =	net/samba \
+		devel/kf6/kdeclarative
 
 LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kcolorscheme \
