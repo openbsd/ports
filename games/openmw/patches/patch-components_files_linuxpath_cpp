@@ -1,7 +1,7 @@
 Index: components/files/linuxpath.cpp
 --- components/files/linuxpath.cpp.orig
 +++ components/files/linuxpath.cpp
-@@ -75,6 +75,10 @@ namespace Files
+@@ -77,6 +77,10 @@ namespace Files
  
      std::filesystem::path LinuxPath::getLocalPath() const
      {
@@ -12,7 +12,7 @@ Index: components/files/linuxpath.cpp
          auto localPath = std::filesystem::current_path() / "";
  
          static const std::filesystem::path statusPaths[]
-@@ -92,6 +96,7 @@ namespace Files
+@@ -94,6 +98,7 @@ namespace Files
          }
  
          return localPath;

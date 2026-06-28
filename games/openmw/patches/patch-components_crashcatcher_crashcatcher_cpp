@@ -1,0 +1,33 @@
+Index: components/crashcatcher/crashcatcher.cpp
+--- components/crashcatcher/crashcatcher.cpp.orig
++++ components/crashcatcher/crashcatcher.cpp
+@@ -217,7 +217,7 @@ namespace
+ 
+     struct Gdb
+     {
+-        static constexpr char sName[] = "gdb";
++        static constexpr char sName[] = "egdb";
+         static constexpr char sScript[] = R"(shell echo ""
+ shell echo "* Loaded Libraries"
+ info sharedlibrary
+@@ -236,7 +236,7 @@ thread apply all backtrace full 1000
+ detach
+ quit
+ )";
+-        static constexpr char sCommandTemplate[] = "gdb --pid %d --quiet --batch --command %s";
++        static constexpr char sCommandTemplate[] = "egdb --pid %d --quiet --batch --command %s";
+     };
+ 
+     struct Lldb
+@@ -472,6 +472,11 @@ static void getExecPath(char** argv)
+     if (argv[0][0] == '/')
+     {
+         snprintf(argv0, sizeof(argv0), "%s", argv[0]);
++        return;
++    }
++    else
++    {
++        snprintf(argv0, sizeof(argv0), "%s/%s", "${TRUEPREFIX}/bin", argv[0]);
+         return;
+     }
+ 
