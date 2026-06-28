@@ -29,3 +29,23 @@ currently unsupported on OpenBSD. However, 100% Java implementations such as
 PureJavaComm and jSerialComm are known to work.
 
 Refer to https://www.openhab.org/docs/ for more details.
+
+Preserve shell history
+======================
+
+By default, the openHAB console attempts to save its command history to a
+directory that is not writable by the _openhab user, preventing history from
+being preserved.
+
+To enable and configure shell history, add the following property to
+/var/db/openhab/etc/custom.system.properties:
+
+karaf.history=${openhab.userdata}/.karaf/history
+
+This evaluates to /var/db/openhab/.karaf/history. Note that this file will be
+created with world-readable permissions by default. To restrict access,
+pre-create the directory with secure permissions before launching the service:
+
+# install -d -o _openhab -g _openhab -m 0750 /var/db/openhab/.karaf
+
+Refer to https://www.openhab.org/docs/ for more details.

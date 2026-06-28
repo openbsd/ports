@@ -1,5 +1,4 @@
-OH_VERSION=	4.3.9
+OH_VERSION=	4.3.11
 MODJAVA_VER=	17
-REVISION=	1
 
 .include <bsd.port.mk>
