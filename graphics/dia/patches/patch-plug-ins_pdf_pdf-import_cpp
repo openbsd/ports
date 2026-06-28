@@ -1,9 +1,23 @@
-Fix build with poppler-25.09.1, 25.10.0, 26.01.0 and 26.02.0.
+Fix build with poppler-25.09.1, 25.10.0, 26.01.0, 26.02.0 and 26.06.0.
 
 Index: plug-ins/pdf/pdf-import.cpp
 --- plug-ins/pdf/pdf-import.cpp.orig
 +++ plug-ins/pdf/pdf-import.cpp
-@@ -120,7 +120,7 @@ public :
+@@ -93,8 +93,13 @@ public :
+                       (Annot *annot, void *user_data) G_GNUC_UNUSED,
+                   void   *annotDisplayDecideCbkData   G_GNUC_UNUSED)
+   {
++#if POPPLER_VERSION_MAJOR >= 26 && POPPLER_VERSION_MAJOR > 6
++    const PDFRectangle *mediaBox = &page->getMediaBox();
++    const PDFRectangle *clipBox = &page->getCropBox ();
++#else
+     const PDFRectangle *mediaBox = page->getMediaBox();
+     const PDFRectangle *clipBox = page->getCropBox ();
++#endif
+ 
+     if (page->isOk()) {
+       real w1 = (clipBox->x2 - clipBox->x1);
+@@ -120,7 +125,7 @@ public :
      return FALSE;
    }
    //! Apparently no effect at all - so we translate everything to Dia space ouself
@@ -12,7 +26,7 @@ Index: plug-ins/pdf/pdf-import.cpp
    {
      DiaMatrix mat;
  
-@@ -396,7 +396,7 @@ public :
+@@ -396,7 +401,7 @@ public :
      if ((pf = strstr (family, " Oblique")) != NULL)
        *pf = 0;
  
@@ -21,7 +35,7 @@ Index: plug-ins/pdf/pdf-import.cpp
      double fsize = state->getTransformedFontSize();
      if (fm[0] != 0)
        fsize *= fabs(fm[3] / fm[0]);
-@@ -776,7 +776,7 @@ void
+@@ -776,7 +781,7 @@ void
  DiaOutputDev::drawString(GfxState *state, GooString *s)
  {
    Color text_color = this->fill_color;
@@ -30,7 +44,7 @@ Index: plug-ins/pdf/pdf-import.cpp
    DiaObject *obj;
    gchar *utf8 = NULL;
    DiaFont *font;
-@@ -875,7 +875,7 @@ DiaOutputDev::drawImage (GfxState         *state,
+@@ -875,7 +880,7 @@ DiaOutputDev::drawImage (GfxState         *state,
    GdkPixbuf *pixbuf;
    Point pos;
    DiaObjectChange *change;
@@ -39,7 +53,7 @@ Index: plug-ins/pdf/pdf-import.cpp
  
    pos.x = ctm[4] * scale;
    // there is some undocumented magic done with the ctm for drawImage
-@@ -900,7 +900,7 @@ DiaOutputDev::drawImage (GfxState         *state,
+@@ -900,7 +905,7 @@ DiaOutputDev::drawImage (GfxState         *state,
        unsigned char *pixels = gdk_pixbuf_get_pixels (pixbuf);
        int y;
  
