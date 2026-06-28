@@ -1,10 +1,7 @@
-BROKEN =	fails to build after move to LLVM 22
-
 COMMENT =	interactive system for VLSI circuit layouts
 
-DISTNAME =	magic-8.3.393
+DISTNAME =	magic-8.3.664
 EXTRACT_SUFX =	.tgz
-REVISION =	0
 
 CATEGORIES =	cad
 HOMEPAGE =	http://opencircuitdesign.com/magic/
@@ -13,8 +10,8 @@ MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 # MIT (Magic, scmos), GPLv2 only (readline)
 PERMIT_PACKAGE = Yes
 
-WANTLIB =	${MODTK_WANTLIB} GL GLU X11 Xext Xi Xmu c cairo fontconfig \
-		freetype m z
+WANTLIB =	${MODTK_WANTLIB} GL GLU ICE SM X11 Xext Xi Xmu c cairo \
+		fontconfig freetype m z
 
 SITES =		http://opencircuitdesign.com/magic/archive/
 
@@ -26,6 +23,7 @@ CFLAGS_base-clang =	-Wno-error=int-conversion
 MODULES =	lang/python \
 		x11/tk
 MODPY_RUNDEP =	No
+MODTK_VERSION =	8.5
 
 LIB_DEPENDS =	${MODTK_LIB_DEPENDS} \
 		graphics/cairo

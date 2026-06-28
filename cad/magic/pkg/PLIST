@@ -51,6 +51,7 @@ lib/magic/tcl/magic.tcl
 @bin lib/magic/tcl/magicexec
 lib/magic/tcl/mazeroute.tcl
 lib/magic/tcl/readspice.tcl
+lib/magic/tcl/reorderLayers.tcl
 lib/magic/tcl/socketcmd.tcl
 lib/magic/tcl/strip_reflibs.tcl
 @so lib/magic/tcl/tclmagic.so
@@ -58,6 +59,7 @@ lib/magic/tcl/techbuilder.tcl
 lib/magic/tcl/texthelper.tcl
 lib/magic/tcl/tkcon.tcl
 lib/magic/tcl/tkshell.tcl
+lib/magic/tcl/toolbar.tcl
 lib/magic/tcl/toolkit.tcl
 lib/magic/tcl/toolkit_rev0.tcl
 lib/magic/tcl/tools.tcl
@@ -83,6 +85,7 @@ share/doc/magic/html/Makefile
 share/doc/magic/html/addcommandentry.html
 share/doc/magic/html/addpath.html
 share/doc/magic/html/antennacheck.html
+share/doc/magic/html/archive.html
 share/doc/magic/html/array.html
 share/doc/magic/html/box.html
 share/doc/magic/html/calma.html
@@ -130,8 +133,6 @@ share/doc/magic/html/ext2sim.html
 share/doc/magic/html/ext2spice.html
 share/doc/magic/html/extract.html
 share/doc/magic/html/extresist.html
-share/doc/magic/html/exttosim.html
-share/doc/magic/html/exttospice.html
 share/doc/magic/html/feedback.html
 share/doc/magic/html/fill.html
 share/doc/magic/html/findbox.html
@@ -153,7 +154,8 @@ share/doc/magic/html/graphics/corner2.gif
 share/doc/magic/html/graphics/email_address.png
 share/doc/magic/html/graphics/line1.gif
 share/doc/magic/html/graphics/magic_OGL_sm.gif
-share/doc/magic/html/graphics/magic_title2.gif
+share/doc/magic/html/graphics/magic_title8_3.gif
+share/doc/magic/html/graphics/magic_title8_3.png
 share/doc/magic/html/graphics/techmgr.gif
 share/doc/magic/html/graphics/toolbar.gif
 share/doc/magic/html/graphics/writeall.gif
@@ -251,6 +253,7 @@ share/doc/magic/html/tk_path_name.html
 share/doc/magic/html/tool.html
 share/doc/magic/html/undo.html
 share/doc/magic/html/unexpand.html
+share/doc/magic/html/units.html
 share/doc/magic/html/unmeasure.html
 share/doc/magic/html/updatedisplay.html
 share/doc/magic/html/upsidedown.html
