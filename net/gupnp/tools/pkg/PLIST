@@ -28,6 +28,7 @@ share/icons/hicolor/256x256/apps/universal-cp.png
 share/icons/hicolor/64x64/apps/av-cp.png
 share/icons/hicolor/64x64/apps/network-light.png
 share/icons/hicolor/64x64/apps/universal-cp.png
+share/locale/bg/LC_MESSAGES/gupnp-tools.mo
 share/locale/bs/LC_MESSAGES/gupnp-tools.mo
 share/locale/cs/LC_MESSAGES/gupnp-tools.mo
 share/locale/da/LC_MESSAGES/gupnp-tools.mo
@@ -39,12 +40,15 @@ share/locale/fur/LC_MESSAGES/gupnp-tools.mo
 share/locale/hi/LC_MESSAGES/gupnp-tools.mo
 share/locale/hu/LC_MESSAGES/gupnp-tools.mo
 share/locale/id/LC_MESSAGES/gupnp-tools.mo
+share/locale/it/LC_MESSAGES/gupnp-tools.mo
 share/locale/ja/LC_MESSAGES/gupnp-tools.mo
 share/locale/ka/LC_MESSAGES/gupnp-tools.mo
+share/locale/kk/LC_MESSAGES/gupnp-tools.mo
 share/locale/pl/LC_MESSAGES/gupnp-tools.mo
 share/locale/pt/LC_MESSAGES/gupnp-tools.mo
 share/locale/pt_BR/LC_MESSAGES/gupnp-tools.mo
 share/locale/ro/LC_MESSAGES/gupnp-tools.mo
+share/locale/ru/LC_MESSAGES/gupnp-tools.mo
 share/locale/sk/LC_MESSAGES/gupnp-tools.mo
 share/locale/sl/LC_MESSAGES/gupnp-tools.mo
 share/locale/sr/LC_MESSAGES/gupnp-tools.mo
