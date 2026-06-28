@@ -3,8 +3,7 @@ PORTROACH=		limit:^2\.46
 COMMENT =		C++ interface for pango
 
 GNOME_PROJECT =		pangomm
-GNOME_VERSION =		2.46.4
-REVISION =		0
+GNOME_VERSION =		2.46.5
 
 CATEGORIES =		devel x11
 
