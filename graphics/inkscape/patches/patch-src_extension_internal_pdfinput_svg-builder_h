@@ -1,0 +1,25 @@
+Fix with poppler-26.06.0.
+
+From https://gitlab.com/inkscape/inkscape/-/work_items/6210,
+1.4.x-Poppler-26.06.0_rev0.patch
+
+Index: src/extension/internal/pdfinput/svg-builder.h
+--- src/extension/internal/pdfinput/svg-builder.h.orig
++++ src/extension/internal/pdfinput/svg-builder.h
+@@ -186,7 +186,7 @@ class SvgBuilder { (private)
+     // Pattern creation
+     gchar *_createPattern(GfxPattern *pattern, GfxState *state, bool is_stroke=false);
+     gchar *_createGradient(GfxShading *shading, const Geom::Affine pat_matrix, bool for_shading = false);
+-    void _addStopToGradient(Inkscape::XML::Node *gradient, double offset, GfxColor *color, GfxColorSpace *space,
++    void _addStopToGradient(Inkscape::XML::Node *gradient, double offset, GfxColor &color, GfxColorSpace *space,
+                             double opacity);
+     bool _addGradientStops(Inkscape::XML::Node *gradient, GfxShading *shading,
+                            _POPPLER_CONST Function *func);
+@@ -239,6 +239,7 @@ class SvgBuilder { (private)
+     static bool _attrEqual(Inkscape::XML::Node *a, Inkscape::XML::Node *b, char const *attr);
+ 
+     // Colors
++    std::string convertGfxColor(const GfxColor &color, GfxColorSpace *space);
+     std::string convertGfxColor(const GfxColor *color, GfxColorSpace *space);
+     std::string _getColorProfile(cmsHPROFILE hp);
+ 

@@ -38,7 +38,7 @@ Index: src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp
  
      Dict *charProcs = gfx8bit->getCharProcs();
      Ref ref = *gfxFont->getID();
-@@ -694,7 +702,11 @@ CairoType3Font *CairoType3Font::create(GfxFont *gfxFon
+@@ -694,13 +702,21 @@ CairoType3Font *CairoType3Font::create(GfxFont *gfxFon
  
      cairo_font_face_set_user_data(font_face, &type3_font_key, (void *)info, _free_type3_font_info);
  
@@ -50,3 +50,13 @@ Index: src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp
      codeToGID.resize(256);
      for (int i = 0; i < 256; ++i) {
          codeToGID[i] = 0;
+         if (charProcs && (name = enc[i])) {
+             for (int j = 0; j < charProcs->getLength(); j++) {
++#if POPPLER_CHECK_VERSION(26, 6, 0)
++                if (std::string(charProcs->getKey(j)).compare(name) == 0) {
++#else
+                 if (strcmp(name, charProcs->getKey(j)) == 0) {
++#endif
+                     codeToGID[i] = j;
+                 }
+             }

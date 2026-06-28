@@ -1,0 +1,19 @@
+Fix with poppler-26.06.0.
+
+From https://gitlab.com/inkscape/inkscape/-/work_items/6210,
+1.4.x-Poppler-26.06.0_rev0.patch
+
+Index: src/extension/internal/pdfinput/pdf-parser.h
+--- src/extension/internal/pdfinput/pdf-parser.h.orig
++++ src/extension/internal/pdfinput/pdf-parser.h
+@@ -112,8 +112,8 @@ struct OpHistoryEntry {
+ class PdfParser {
+ public:
+ 
+-  // Constructor for regular output.
+-    PdfParser(std::shared_ptr<PDFDoc> pdf_doc, SvgBuilder *builderA, Page *page, _POPPLER_CONST PDFRectangle *cropBox);
++    // Constructor for regular output.
++    PdfParser(std::shared_ptr<PDFDoc> pdf_doc, SvgBuilder *builderA, Page *page, const std::optional<PDFRectangle> &cropBox);
+     // Constructor for a sub-page object.
+     PdfParser(XRef *xrefA, SvgBuilder *builderA, Dict *resDict, _POPPLER_CONST PDFRectangle *box);
+ 

@@ -1,0 +1,20 @@
+Fix with poppler-26.06.0.
+
+From https://gitlab.com/inkscape/inkscape/-/work_items/6210,
+1.4.x-Poppler-26.06.0_rev0.patch
+
+Index: src/extension/internal/pdfinput/pdf-utils.cpp
+--- src/extension/internal/pdfinput/pdf-utils.cpp.orig
++++ src/extension/internal/pdfinput/pdf-utils.cpp
+@@ -133,6 +133,11 @@ Geom::Rect getRect(_POPPLER_CONST PDFRectangle *box)
+     return Geom::Rect(box->x1, box->y1, box->x2, box->y2);
+ }
+ 
++Geom::Rect getRect(const PDFRectangle &box)
++{
++    return Geom::Rect(box.x1, box.y1, box.x2, box.y2);
++}
++
+ Geom::PathVector getPathV(GfxPath *path) 
+ {
+     if (!path) {

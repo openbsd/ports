@@ -1,0 +1,35 @@
+Fix with poppler-26.06.0.
+
+From https://gitlab.com/inkscape/inkscape/-/work_items/6210,
+1.4.x-Poppler-26.06.0_rev0.patch
+
+Index: src/extension/internal/pdfinput/poppler-utils.cpp
+--- src/extension/internal/pdfinput/poppler-utils.cpp.orig
++++ src/extension/internal/pdfinput/poppler-utils.cpp
+@@ -195,15 +195,17 @@ void InkFontDict::hashFontObject1(const Object *obj, F
+                 hashFontObject1(&obj2, h);
+             }
+             break;
+-        case objDict:
+-            h->hash('d');
+-            n = obj->dictGetLength();
+-            h->hash((char *)&n, sizeof(int));
+-            for (i = 0; i < n; ++i) {
+-                p = obj->dictGetKey(i);
+-                h->hash(p, (int)strlen(p));
+-                const Object &obj2 = obj->dictGetValNF(i);
+-                hashFontObject1(&obj2, h);
++        case objDict: {
++                h->hash('d');
++                auto objdict = obj->getDict();
++                n = objdict->getLength();
++                h->hash((char *)&n, sizeof(int));
++                for (i = 0; i < n; ++i) {
++                    auto p = std::string(objdict->getKey(i));
++                    h->hash(p.c_str(), p.length());
++                    const Object &obj2 = objdict->getValNF(i);
++                    hashFontObject1(&obj2, h);
++                }
+             }
+             break;
+         case objStream:

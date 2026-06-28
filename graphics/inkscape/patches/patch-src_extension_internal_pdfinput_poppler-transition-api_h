@@ -1,0 +1,31 @@
+Fix with poppler-26.06.0.
+
+From https://gitlab.com/inkscape/inkscape/-/work_items/6210,
+1.4.x-Poppler-26.06.0_rev0.patch
+
+Index: src/extension/internal/pdfinput/poppler-transition-api.h
+--- src/extension/internal/pdfinput/poppler-transition-api.h.orig
++++ src/extension/internal/pdfinput/poppler-transition-api.h
+@@ -15,6 +15,22 @@
+ #include <glib/poppler-features.h>
+ #include <poppler/UTF.h>
+ 
++#if POPPLER_CHECK_VERSION(26, 6, 0)
++#define _POPPLER_GET_GRAY(color, gray) getGray(color, gray)
++#define _POPPLER_GET_RGB(color, rgb) getRGB(color, rgb)
++#define _POPPLER_GET_CMYK(color, cmyk) getCMYK(color, cmyk)
++#define _POPPLER_SET_FILL_COLOR(color) setFillColor(color)
++#define _POPPLER_SET_STROKE_COLOR(color) setStrokeColor(color)
++#define _POPPLER_GFX_STATE(h, v, Rect, rotateA, upsideDown) GfxState(h, v, Rect, rotateA, upsideDown)
++#else
++#define _POPPLER_GET_GRAY(color, gray) getGray(&color, gray)
++#define _POPPLER_GET_RGB(color, rgb) getRGB(&color, rgb)
++#define _POPPLER_GET_CMYK(color, cmyk) getCMYK(&color, cmyk)
++#define _POPPLER_SET_FILL_COLOR(color) setFillColor(&color)
++#define _POPPLER_SET_STROKE_COLOR(color) setStrokeColor(&color)
++#define _POPPLER_GFX_STATE(h, v, Rect, rotateA, upsideDown) GfxState(h, v, &Rect, rotateA, upsideDown)
++#endif
++
+ #if POPPLER_CHECK_VERSION(26, 2, 0)
+ #define _POPPLER_WMODE GfxFont::WritingMode
+ #define _POPPLER_WMODE_HORIZONTAL GfxFont::WritingMode::Horizontal

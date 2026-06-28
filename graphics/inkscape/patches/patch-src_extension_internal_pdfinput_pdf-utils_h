@@ -1,0 +1,18 @@
+Fix with poppler-26.06.0.
+
+From https://gitlab.com/inkscape/inkscape/-/work_items/6210,
+1.4.x-Poppler-26.06.0_rev0.patch
+
+Index: src/extension/internal/pdfinput/pdf-utils.h
+--- src/extension/internal/pdfinput/pdf-utils.h.orig
++++ src/extension/internal/pdfinput/pdf-utils.h
+@@ -59,6 +59,9 @@ class ClipHistoryEntry (private)
+ };
+ 
+ Geom::Rect getRect(_POPPLER_CONST PDFRectangle *box);
++Geom::Rect getRect(_POPPLER_CONST PDFRectangle &box);
+ Geom::PathVector getPathV(GfxPath *gPath);
++Geom::PathVector maybeIntersect(Geom::PathVector const &v1, Geom::PathVector const &v2,
++                                FillRule fill1 = FillRule::fill_nonZero, FillRule fill2 = FillRule::fill_nonZero);
+ 
+ #endif /* PDF_UTILS_H */

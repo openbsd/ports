@@ -1,0 +1,104 @@
+Fix with poppler-26.06.0.
+
+From https://gitlab.com/inkscape/inkscape/-/work_items/6210,
+1.4.x-Poppler-26.06.0_rev0.patch
+
+Index: src/extension/internal/pdfinput/svg-builder.cpp
+--- src/extension/internal/pdfinput/svg-builder.cpp.orig
++++ src/extension/internal/pdfinput/svg-builder.cpp
+@@ -384,6 +384,7 @@ static gchar *svgConvertRGBToText(double r, double g, 
+     return (gchar *)&tmp;
+ }
+ 
++// for poppler < 26.06.0
+ static std::string svgConvertGfxRGB(GfxRGB *color)
+ {
+     double r = (double)color->r / 65535.0;
+@@ -394,6 +395,14 @@ static std::string svgConvertGfxRGB(GfxRGB *color)
+ 
+ std::string SvgBuilder::convertGfxColor(const GfxColor *color, GfxColorSpace *space)
+ {
++    if (!color) {
++        return "";
++    }
++    return convertGfxColor(*color, space);
++}
++
++std::string SvgBuilder::convertGfxColor(const GfxColor &color, GfxColorSpace *space)
++{
+     std::string icc = "";
+     switch (space->getMode()) {
+         case csDeviceGray:
+@@ -412,14 +421,14 @@ std::string SvgBuilder::convertGfxColor(const GfxColor
+     }
+ 
+     GfxRGB rgb;
+-    space->getRGB(color, &rgb);
++    space->_POPPLER_GET_RGB(color, &rgb);
+     auto rgb_color = svgConvertGfxRGB(&rgb);
+ 
+     if (!icc.empty()) {
+         Inkscape::CSSOStringStream icc_color;
+         icc_color << rgb_color << " icc-color(" << icc;
+         for (int i = 0; i < space->getNComps(); ++i) {
+-            icc_color << ", " << colToDbl((*color).c[i]);
++            icc_color << ", " << colToDbl((color).c[i]);
+         }
+         icc_color << ");";
+         return icc_color.str();
+@@ -1204,7 +1213,7 @@ gchar *SvgBuilder::_createGradient(GfxShading *shading
+ /**
+  * \brief Adds a stop with the given properties to the gradient's representation
+  */
+-void SvgBuilder::_addStopToGradient(Inkscape::XML::Node *gradient, double offset, GfxColor *color, GfxColorSpace *space,
++void SvgBuilder::_addStopToGradient(Inkscape::XML::Node *gradient, double offset, GfxColor &color, GfxColorSpace *space,
+                                     double opacity)
+ {
+     Inkscape::XML::Node *stop = _xml_doc->createElement("svg:stop");
+@@ -1214,7 +1223,7 @@ void SvgBuilder::_addStopToGradient(Inkscape::XML::Nod
+     if (space->getMode() == csDeviceGray) {
+         // This is a transparency mask.
+         GfxRGB rgb;
+-        space->getRGB(color, &rgb);
++        space->_POPPLER_GET_RGB(color, &rgb);
+         double gray = (double)rgb.r / 65535.0;
+         gray = CLAMP(gray, 0.0, 1.0);
+         os_opacity << gray;
+@@ -1255,8 +1264,8 @@ bool SvgBuilder::_addGradientStops(Inkscape::XML::Node
+         if (!svgGetShadingColor(shading, 0.0, &stop1) || !svgGetShadingColor(shading, 1.0, &stop2)) {
+             return false;
+         } else {
+-            _addStopToGradient(gradient, 0.0, &stop1, space, 1.0);
+-            _addStopToGradient(gradient, 1.0, &stop2, space, 1.0);
++            _addStopToGradient(gradient, 0.0, stop1, space, 1.0);
++            _addStopToGradient(gradient, 1.0, stop2, space, 1.0);
+         }
+     } else if (type == _POPPLER_FUNCTION_TYPE_STITCHING) {
+         auto stitchingFunc = static_cast<_POPPLER_CONST StitchingFunction*>(func);
+@@ -1269,7 +1278,7 @@ bool SvgBuilder::_addGradientStops(Inkscape::XML::Node
+         // Add stops from all the stitched functions
+         GfxColor prev_color, color;
+         svgGetShadingColor(shading, bounds[0], &prev_color);
+-        _addStopToGradient(gradient, bounds[0], &prev_color, space, 1.0);
++        _addStopToGradient(gradient, bounds[0], prev_color, space, 1.0);
+         for ( int i = 0 ; i < num_funcs ; i++ ) {
+             svgGetShadingColor(shading, bounds[i + 1], &color);
+             // Add stops
+@@ -1279,14 +1288,14 @@ bool SvgBuilder::_addGradientStops(Inkscape::XML::Node
+                     expE = (bounds[i + 1] - bounds[i])/expE;    // approximate exponential as a single straight line at x=1
+                     if (encode[2*i] == 0) {    // normal sequence
+                         auto offset = (bounds[i + 1] - expE) / max_bound;
+-                        _addStopToGradient(gradient, offset, &prev_color, space, 1.0);
++                        _addStopToGradient(gradient, offset, prev_color, space, 1.0);
+                     } else {                   // reflected sequence
+                         auto offset = (bounds[i] + expE) / max_bound;
+-                        _addStopToGradient(gradient, offset, &color, space, 1.0);
++                        _addStopToGradient(gradient, offset, color, space, 1.0);
+                     }
+                 }
+             }
+-            _addStopToGradient(gradient, bounds[i + 1] / max_bound, &color, space, 1.0);
++            _addStopToGradient(gradient, bounds[i + 1] / max_bound, color, space, 1.0);
+             prev_color = color;
+         }
+     } else { // Unsupported function type
