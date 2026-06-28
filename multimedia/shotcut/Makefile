@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	video editor
 
-V =		26.4.30
+V =		26.6.25
 
 DIST_TUPLE =	github mltframework shotcut v${V} .
 PKGNAME =	shotcut-${V}
@@ -20,7 +20,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Multimedia Qt6Network Qt6OpenGL Qt6OpenGLWidgets
 WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Sql
 WANTLIB += Qt6WebSockets Qt6Widgets Qt6Xml X11 c fftw3 m mlt++-7
-WANTLIB += mlt-7
+WANTLIB += mlt-7 xkbcommon
 
 MODULES =		devel/cmake \
 			x11/qt6
