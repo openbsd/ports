@@ -1,3 +1,5 @@
+PORTROACH=		skipv:2.62.90
+
 COMMENT=		SAX-based render library for SVG files
 
 # !!! /!\ make sure both distinfo are updated on version change:
