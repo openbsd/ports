@@ -1,7 +1,7 @@
 COMMENT=		image data transformation library
 
 GNOME_PROJECT=		gdk-pixbuf
-GNOME_VERSION=		2.44.6
+GNOME_VERSION=		2.44.7
 
 CATEGORIES=		graphics
 
