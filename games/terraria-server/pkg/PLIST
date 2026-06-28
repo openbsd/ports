@@ -1,0 +1,4 @@
+bin/TerrariaServer
+share/terraria-server/
+share/terraria-server/FNA.dll
+share/terraria-server/TerrariaServer.exe
