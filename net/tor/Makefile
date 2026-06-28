@@ -1,6 +1,6 @@
 COMMENT=	anonymity service using onion routing
 
-DISTNAME=	tor-0.4.9.9
+DISTNAME=	tor-0.4.9.11
 CATEGORIES=	net
 HOMEPAGE=	https://www.torproject.org/
 
