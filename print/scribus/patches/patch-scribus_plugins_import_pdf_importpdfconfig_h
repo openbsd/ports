@@ -1,16 +1,22 @@
-Fix build with poppler-26.05.
+Prepare for poppler-26.06.0.
 
-From svn r27545.
+From svn r27627.
 
 Index: scribus/plugins/import/pdf/importpdfconfig.h
 --- scribus/plugins/import/pdf/importpdfconfig.h.orig
 +++ scribus/plugins/import/pdf/importpdfconfig.h
-@@ -21,4 +21,8 @@ for which a new license (GPL+exception) is in place.
+@@ -21,4 +21,14 @@ for which a new license (GPL+exception) is in place.
  #define POPPLER_CONST_25_02
  #endif
  
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 5, 0)
 +using SplashCoord = double;
++#endif
++
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 6, 0)
++#define POPPLER_CONST_26_06 const
++#else
++#define POPPLER_CONST_26_06
 +#endif
 +
  #endif
