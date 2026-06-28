@@ -1428,9 +1428,17 @@ share/examples/openhab/userdata/etc/org.apache.karaf.shell.cfg
 share/examples/openhab/userdata/etc/org.jupnp.cfg
 @sample /var/db/openhab/etc/org.jupnp.cfg
 share/examples/openhab/userdata/etc/org.openhab.audio.cfg
+@owner _openhab
+@group _openhab
 @sample /var/db/openhab/etc/org.openhab.audio.cfg
+@owner
+@group
 share/examples/openhab/userdata/etc/org.openhab.voice.cfg
+@owner _openhab
+@group _openhab
 @sample /var/db/openhab/etc/org.openhab.voice.cfg
+@owner
+@group
 share/examples/openhab/userdata/etc/org.ops4j.pax.logging.cfg
 @owner _openhab
 @group _openhab
@@ -1460,9 +1468,11 @@ share/examples/openhab/userdata/etc/system.properties
 share/examples/openhab/userdata/etc/users.properties
 @owner _openhab
 @group _openhab
+@mode 0640
 @sample /var/db/openhab/etc/users.properties
 @owner
 @group
+@mode
 share/examples/openhab/userdata/etc/version.properties
 @sample /var/db/openhab/etc/version.properties
 share/examples/openhab/userdata/tmp/
