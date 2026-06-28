@@ -1,11 +1,11 @@
 COMMENT=		GObject-based wrapper around the Exiv2 library
 
-GNOME_VERSION=		0.16.0
+GNOME_VERSION=		0.16.1
 GNOME_PROJECT=		gexiv2
 
 CATEGORIES=		graphics
 
-SHARED_LIBS += gexiv2-0.16               0.0 # 4.16.0
+SHARED_LIBS += gexiv2-0.16               0.0 # 4.16.1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
