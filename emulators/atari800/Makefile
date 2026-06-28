@@ -1,6 +1,6 @@
 COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
 
-V =		6.1.0
+V =		7.0.0
 DISTNAME =	atari800-${V}-src
 PKGNAME =	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.tgz
@@ -12,16 +12,22 @@ HOMEPAGE =	https://atari800.github.io/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	SDL2 c curses m mp3lame pthread readline z
+WANTLIB +=	SDL2 c curl curses m mp3lame png pthread readline z
 
 SITES =		https://github.com/atari800/atari800/releases/download/ATARI800_${V:S/./_/g}/
 
 LIB_DEPENDS =	audio/lame \
-		devel/sdl2
+		devel/sdl2 \
+		graphics/png \
+		net/curl
 
 WRKDIST =	${WRKDIR}/atari800-${V}
 
 CONFIGURE_STYLE = gnu
+
+# Fix net/curl detection at configure time
+CONFIGURE_ENV += CPPFLAGS="-I${LOCALBASE}/include" \
+                 LDFLAGS="-L${LOCALBASE}/lib"
 
 # Prevent ossaudio from being linked even when SDL audio is used
 CONFIGURE_ENV += ac_cv_lib_ossaudio__oss_ioctl=no
