@@ -1,7 +1,7 @@
 Index: src/posh.h
 --- src/posh.h.orig
 +++ src/posh.h
-@@ -1058,7 +1058,7 @@ POSH_COMPILE_TIME_ASSERT( posh_i64_t, sizeof (posh_i64
+@@ -1061,7 +1061,7 @@ POSH_COMPILE_TIME_ASSERT(posh_i64_t, sizeof(posh_i64_t
  
  #endif /* defined FORCE_DOXYGEN */
  

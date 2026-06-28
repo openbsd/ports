@@ -1,38 +1,11 @@
 Index: src/cmd/unit_generic.cpp
 --- src/cmd/unit_generic.cpp.orig
 +++ src/cmd/unit_generic.cpp
-@@ -78,6 +78,7 @@
+@@ -95,6 +95,7 @@
  
  #include "unit_find.h"
  #include "pilot.h"
 +#include <cmath>
  
- #include "vsfilesystem.h"
  #include <iostream>
-@@ -1931,7 +1932,7 @@ Vector Unit::ClampTorque( const Vector &amt1 )
-     //HACK this forces the reaction to be Li-6+D fusion with efficiency governed by the getFuelUsage function
-     fuel -= Energetic::getFuelUsage( false ) * simulation_atom_var * Res.Magnitude()*FMEC_exit_vel_inverse/Lithium6constant;
- #ifndef __APPLE__
--    if ( ISNAN( fuel ) ) {
-+    if ( std::isnan( fuel ) ) {
-         BOOST_LOG_TRIVIAL(error) << "FUEL is NAN";
-         fuel = 0;
-     }
-@@ -2085,7 +2086,7 @@ Vector Unit::ClampThrust( const Vector &amt1, bool aft
-                && finegrainedFuelEfficiency) ? afterburnenergy : Energetic::getFuelUsage( afterburn ) ) * simulation_atom_var * Res.Magnitude()
-             *FMEC_exit_vel_inverse/Lithium6constant;
- #ifndef __APPLE__
--        if ( ISNAN( fuel ) ) {
-+        if ( std::isnan( fuel ) ) {
-             BOOST_LOG_TRIVIAL(error) << "Fuel is NAN A";
-             fuel = 0;
-         }
-@@ -2096,7 +2097,7 @@ Vector Unit::ClampThrust( const Vector &amt1, bool aft
-         //HACK this forces the reaction to be Li-6+Li-6 fusion with efficiency governed by the getFuelUsage function
-         fuel -= getFuelUsage( false ) * simulation_atom_var * Res.Magnitude()*FMEC_exit_vel_inverse/Lithium6constant;
- #ifndef __APPLE__
--        if ( ISNAN( fuel ) ) {
-+        if ( std::isnan( fuel ) ) {
-             BOOST_LOG_TRIVIAL(error) << "Fuel is NAN B";
-             fuel = 0;
-         }
+ #define DEBUG_MESH_ANI

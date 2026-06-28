@@ -1,7 +1,7 @@
 Index: src/cmd/collide_map.h
 --- src/cmd/collide_map.h.orig
 +++ src/cmd/collide_map.h
-@@ -33,6 +33,7 @@
+@@ -35,6 +35,7 @@
  #include <limits>
  #endif
  #include <vector>
@@ -9,25 +9,25 @@ Index: src/cmd/collide_map.h
  /* Arbitrarily use Set for ALL PLATFORMS -hellcatv */
  class Unit;
  class Bolt;
-@@ -61,7 +62,7 @@ class Collidable (public)
+@@ -61,7 +62,7 @@ class Collidable { (public)
              position = QVector( 0, 0, 0 );      //hack for now
  
  #else
--        if ( ISNAN( getKey() ) )
-+        if ( std::isnan( getKey() ) )
-             position = QVector( 0, 0, 0 );      //hack for now
+-        if (ISNAN(getKey())) {
++        if (std::isnan(getKey())) {
+             position = QVector(0, 0, 0);
+         }      //hack for now
  #endif
-     }
-@@ -102,7 +103,7 @@ class Collidable (public)
- #ifdef __APPLE__
-             !FINITE( radius )
+@@ -105,7 +106,7 @@ class Collidable { (public)
+ #if defined(__APPLE__) && defined(__MACH__)
+                         !FINITE( radius )
  #else
--            ISNAN( radius )
-+            std::isnan( radius )
+-                        ISNAN(radius)
++                        std::isnan(radius)
  #endif
-             || radius >= -FLT_MIN) radius = -FLT_MIN*2;
-         this->SetPosition( p );
-@@ -202,7 +203,7 @@ inline void init_null_collide_iter()
+                         || radius >= -FLT_MIN) {
+             radius = -FLT_MIN * 2;
+@@ -223,7 +224,7 @@ inline void init_null_collide_iter()
  
  inline bool is_null( const CollideMap::iterator &it )
  {

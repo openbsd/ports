@@ -1,0 +1,21 @@
+Index: src/cmd/movable.cpp
+--- src/cmd/movable.cpp.orig
++++ src/cmd/movable.cpp
+@@ -685,7 +685,7 @@ Vector Movable::ClampThrust(const Vector &amt1, bool a
+                         * simulation_atom_var * Res.Magnitude()
+                         * FMEC_exit_vel_inverse / Lithium6constant;
+ #ifndef __APPLE__
+-        if (ISNAN(unit->fuel)) {
++        if (std::isnan(unit->fuel)) {
+             VS_LOG(error, "Fuel is NAN A");
+             unit->fuel = 0;
+         }
+@@ -696,7 +696,7 @@ Vector Movable::ClampThrust(const Vector &amt1, bool a
+         //HACK this forces the reaction to be Li-6+Li-6 fusion with efficiency governed by the getFuelUsage function
+         unit->fuel -= unit->getFuelUsage(false) * simulation_atom_var * Res.Magnitude() * FMEC_exit_vel_inverse / Lithium6constant;
+ #ifndef __APPLE__
+-        if (ISNAN(unit->fuel)) {
++        if (std::isnan(unit->fuel)) {
+             VS_LOG(error, "Fuel is NAN B");
+             unit->fuel = 0;
+         }

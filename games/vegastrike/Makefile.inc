@@ -1,6 +1,6 @@
 ONLY_FOR_ARCHS =	amd64 i386
 
-V =			0.8.0
+V =			0.9.1
 
 SUBST_VARS +=		V
 

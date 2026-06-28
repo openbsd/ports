@@ -1,4 +1,6 @@
 @bin bin/vega-meshtool
-@bin bin/vegasettings
 @bin bin/vegastrike
 @bin bin/vegastrike-engine
+@bin bin/vs-buildenv-asteroidgen
+@bin bin/vs-buildenv-replace
+@bin bin/vs-buildenv-trisort

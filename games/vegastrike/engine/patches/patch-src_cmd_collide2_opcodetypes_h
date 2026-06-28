@@ -1,7 +1,7 @@
 Index: src/cmd/collide2/opcodetypes.h
 --- src/cmd/collide2/opcodetypes.h.orig
 +++ src/cmd/collide2/opcodetypes.h
-@@ -195,7 +195,7 @@ typedef uint64 uintmax_t;
+@@ -141,7 +141,7 @@ typedef intptr_t opc_ptrdiff_t;
  #if defined(HAVE_WCTYPE_H)
  #include <wctype.h>
  #endif
@@ -9,4 +9,4 @@ Index: src/cmd/collide2/opcodetypes.h
 +#if !((defined(CS_HAVE_WINT_T) && defined(_WCTYPE_T_DEFINED)) || defined(_WINT_T) || defined(_WINT_T_DECLARED)) && !defined(__cplusplus)
  #ifndef wint_t
  #if _MSC_VER >= 1300
-     typedef unsigned short wint_t;
+ typedef unsigned short wint_t;

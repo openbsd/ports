@@ -1837,6 +1837,7 @@ share/vegastrike/communications/uln.xml
 share/vegastrike/communications/uln_citizen.xml
 share/vegastrike/communications/unadorned.xml
 share/vegastrike/communications/unadorned_citizen.xml
+share/vegastrike/convert.py
 share/vegastrike/cursor1.cur
 share/vegastrike/documentation/
 share/vegastrike/documentation/IntroMonologue.txt
@@ -1847,7 +1848,11 @@ share/vegastrike/favicon.ico
 share/vegastrike/history/
 share/vegastrike/history/Excerpts_from_the_Ivan_kltakln_guidebook.txt
 share/vegastrike/history/a brief history in time and space.pdf
+share/vegastrike/master_asteroid_list.json
+share/vegastrike/master_component_list.json
 share/vegastrike/master_part_list.csv
+share/vegastrike/master_part_list.json
+share/vegastrike/master_ship_list.json
 share/vegastrike/meshes/
 share/vegastrike/meshes/BFXMMake
 share/vegastrike/meshes/Makefile.am
@@ -2496,10 +2501,12 @@ share/vegastrike/py27_modules.7z
 share/vegastrike/py3_modules.7z
 share/vegastrike/script/
 share/vegastrike/script/build
+share/vegastrike/script/build.ps1
 share/vegastrike/script/cibuild
 share/vegastrike/script/clean
 share/vegastrike/script/docker-entrypoint.sh
 share/vegastrike/script/package
+share/vegastrike/script/package.ps1
 share/vegastrike/sectors/
 share/vegastrike/sectors/Crucible/
 share/vegastrike/sectors/Crucible/Cephid_17.system
@@ -4437,6 +4444,7 @@ share/vegastrike/units/factions/rlaan/starfortressouter/
 share/vegastrike/units/factions/rlaan/starfortressouter/starfortressouter
 share/vegastrike/units/findunits.py
 share/vegastrike/units/findunits.sh
+share/vegastrike/units/how_to_convert_to_json.txt
 share/vegastrike/units/installations/
 share/vegastrike/units/installations/Agricultural_Station/
 share/vegastrike/units/installations/Agricultural_Station/Agricultural_Station-hud.png
@@ -4682,8 +4690,11 @@ share/vegastrike/units/landscape/
 share/vegastrike/units/landscape/Road-grass.png
 share/vegastrike/units/landscape/grass.png
 share/vegastrike/units/landscape/puddle.png
+share/vegastrike/units/migrate_parts.py
 share/vegastrike/units/navpoint/
 share/vegastrike/units/navpoint/navpoint.bfxm
+share/vegastrike/units/parser.py
+share/vegastrike/units/ships.json
 share/vegastrike/units/subunits/
 share/vegastrike/units/subunits/aeraturretLR_heavy/
 share/vegastrike/units/subunits/aeraturretLR_heavy/aeraturretLR_heavy
@@ -4856,6 +4867,7 @@ share/vegastrike/units/subunits/turretswarm/turretlaunchergun.bfxm
 share/vegastrike/units/subunits/turretswarm/turretswarm
 share/vegastrike/units/turretsize.txt
 share/vegastrike/units/units.csv
+share/vegastrike/units/units.json
 share/vegastrike/units/units_description.csv
 share/vegastrike/units/units_working.sxc
 share/vegastrike/units/vessels/
@@ -5729,22 +5741,13 @@ share/vegastrike/universe/egyptian.txt
 share/vegastrike/universe/etruscan.txt
 share/vegastrike/universe/fgnames/
 share/vegastrike/universe/fgnames/ISO.txt
-share/vegastrike/universe/fgnames/LIHW.txt
 share/vegastrike/universe/fgnames/aera.txt
-share/vegastrike/universe/fgnames/andolian.txt
 share/vegastrike/universe/fgnames/bzbr.txt
 share/vegastrike/universe/fgnames/cities.txt
-share/vegastrike/universe/fgnames/confed.txt
-share/vegastrike/universe/fgnames/forsaken.txt
-share/vegastrike/universe/fgnames/highborn.txt
-share/vegastrike/universe/fgnames/homeland-security.txt
 share/vegastrike/universe/fgnames/klkk.txt
-share/vegastrike/universe/fgnames/merchant.txt
-share/vegastrike/universe/fgnames/purist.txt
+share/vegastrike/universe/fgnames/names.txt
 share/vegastrike/universe/fgnames/rlaan.txt
-share/vegastrike/universe/fgnames/shaper.txt
 share/vegastrike/universe/fgnames/uln.txt
-share/vegastrike/universe/fgnames/unadorned.txt
 share/vegastrike/universe/gas_giants.txt
 share/vegastrike/universe/greek.txt
 share/vegastrike/universe/hawaiian.txt
@@ -5782,5 +5785,6 @@ share/vegastrike/vsettings
 share/vegastrike/vsinstall.sh
 share/vegastrike/vslogo.xpm
 share/vegastrike/weapon_list.xml
+share/vegastrike/weapons.json
 share/vegastrike/windows readme.txt
 @tag update-desktop-database
