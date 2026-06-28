@@ -1634,6 +1634,16 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/lakeformation/2017-03-31/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lakeformation/2017-03-31/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lakeformation/2017-03-31/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-core/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-core/2026-04-30/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-core/2026-04-30/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-core/2026-04-30/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-core/2026-04-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-microvms/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-microvms/2025-09-09/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-microvms/2025-09-09/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-microvms/2025-09-09/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-microvms/2025-09-09/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/2014-11-11/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/2014-11-11/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/2014-11-11/service-2.json
