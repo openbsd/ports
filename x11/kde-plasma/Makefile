@@ -64,13 +64,10 @@
     # SUBDIR += kwayland-integration
     # SUBDIR += plasma-dialer
     # SUBDIR += plasma-disks
-    # SUBDIR += plasma-disks
-    # SUBDIR += plasma-firewall
     # SUBDIR += plasma-firewall
     # SUBDIR += plasma-keyboard
     # SUBDIR += plasma-login-manager
     # SUBDIR += plasma-mobile
-    # SUBDIR += plasma-nm
     # SUBDIR += plasma-nm
     # SUBDIR += plasma-setup
     # SUBDIR += plasma-systemmonitor
