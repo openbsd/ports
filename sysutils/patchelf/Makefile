@@ -1,13 +1,14 @@
 COMMENT =	utility for modifying existing ELF executables and libraries
 
-V =			0.18.0
+V =			0.19.0
 DISTNAME =		patchelf-${V}
 SITES =			https://github.com/NixOS/patchelf/releases/download/${V}/
-REVISION =		1
 
 CATEGORIES =		sysutils
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
+
+HOMEPAGE =		https://github.com/NixOS/patchelf
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -25,7 +26,7 @@ CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.arch.mk>
 
-# 0.18.0 amd64:   TOTAL: 56, PASS: 52, FAIL:  2
+# 0.19.0 amd64:   TOTAL: 69, PASS: 54, FAIL:  11, SKIP:  4
 # 0.18.0 sparc64: TOTAL: 56, PASS: 48, FAIL:  6 (3 SEGVs)
 TEST_TARGET =		check
 
