@@ -3,12 +3,12 @@ PORTROACH=		skipv:1.90.0
 COMMENT=		library for layout and rendering of text
 
 GNOME_PROJECT=		pango
-GNOME_VERSION=		1.57.1
+GNOME_VERSION=		1.58.0
 
-SHARED_LIBS += pango-1.0                 3801.7 # 0.5701.0
-SHARED_LIBS += pangoft2-1.0              3801.4 # 0.5701.0
-SHARED_LIBS += pangoxft-1.0              3801.4 # 0.5701.0
-SHARED_LIBS += pangocairo-1.0            3801.4 # 0.5701.0
+SHARED_LIBS += pango-1.0                 3801.8 # 0.5800.0
+SHARED_LIBS += pangoft2-1.0              3801.4 # 0.5800.0
+SHARED_LIBS += pangoxft-1.0              3801.4 # 0.5800.0
+SHARED_LIBS += pangocairo-1.0            3801.4 # 0.5800.0
 
 CATEGORIES=		devel x11
 
