@@ -325,6 +325,7 @@
      SUBDIR += taisei
      SUBDIR += tbftss
      SUBDIR += teeworlds
+     SUBDIR += terraria-server
      SUBDIR += tetrinetx
      SUBDIR += tic80
      SUBDIR += tome4
