@@ -1,5 +1,5 @@
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
-V =		3.6.6
+V =		3.6.7
 # what we have compatible with
 BASEV =		3.6.0
 DISTNAME =	nethack-$V
@@ -7,7 +7,6 @@ PKGNAME =	${DISTNAME}
 CATEGORIES =	games
 SITES =		https://www.nethack.org/download/$V/
 DISTFILES =	nethack-${V:S/.//g}-src.tgz
-REVISION =	1
 
 HOMEPAGE =	http://nethack.org/
 
@@ -24,7 +23,7 @@ CONFIG =		x-config
 WANTLIB += X11 Xaw Xext Xmu Xt
 .endif
 RUN_DEPENDS = games/hackdata
-WRKDIST =	${WRKDIR}/NetHack-NetHack-$V_Released
+WRKDIST =	${WRKDIR}/NetHack-$V
 
 # GPL
 PERMIT_PACKAGE =	Yes

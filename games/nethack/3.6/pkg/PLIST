@@ -1,6 +1,6 @@
 @option no-default-conflict
 @option is-branch
-@conflict nethack->=${BASEV}
+@conflict nethack->=${BASEV},<5.0
 @newgroup ${GAMEGRP}:806
 @comment bin/license
 @comment bin/nethack
