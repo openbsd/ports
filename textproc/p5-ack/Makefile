@@ -2,7 +2,7 @@ COMMENT=	grep like tool, aimed at programmers
 
 MODULES=	cpan
 PKG_ARCH=	*
-V=		3.9.0
+V=		3.10.0
 DISTNAME=	ack-v$V
 PKGNAME=	p5-ack-$V
 CPAN_AUTHOR=	PETDANCE
