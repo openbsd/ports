@@ -5,10 +5,6 @@
 Icecast v2 is very versatile and can be used in many different
 environments.  A streaming service provider has different requirements
 than someone who wants to set up a jukebox at home.
-
-To get a better understanding of streaming with Icecast,
-http://liveice.sourceforge.net/understanding.html may be of use.
-
 This is a small step-by-step guide to get Icecast v2 running in a basic
 setup, using its chrooting feature, dropping privileges to an
 unprivileged account.
