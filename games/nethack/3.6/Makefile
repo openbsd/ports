@@ -25,7 +25,7 @@ WANTLIB += X11 Xaw Xext Xmu Xt
 RUN_DEPENDS = games/hackdata
 WRKDIST =	${WRKDIR}/NetHack-$V
 
-# GPL
+# "NETHACK GENERAL PUBLIC LICENSE", see dat/license
 PERMIT_PACKAGE =	Yes
 
 # The game dir name actually refers to the base version
