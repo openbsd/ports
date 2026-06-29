@@ -1,7 +1,7 @@
 # When updating/switching to a new version, remember to adapt devel/llvm!
 #
 
-# not tested: alpha, hppa, mips64, mips64el, powerpc
+# not tested: alpha, hppa, mips64el, powerpc
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
@@ -19,7 +19,7 @@ USE_NOEXECONLY = Yes
 V = 16.1.0
 GCC_PKGSPEC = >=16,<17
 
-REVISION = 1
+REVISION = 2
 
 # aarch64, powerpc64 and sparc64 bootstrap contain only gdc
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.1.0-0.tar.xz
@@ -27,7 +27,7 @@ BOOTSTRAP-amd64 = gcc-bootstrap-amd64-16.1.0-0.tar.xz
 BOOTSTRAP-arm = gcc-bootstrap-arm-16.1.0-0.tar.xz
 BOOTSTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
 BOOTSTRAP-i386 = gcc-bootstrap-i386-16.1.0-0.tar.xz
-BOOTSTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
+BOOTSTRAP-mips64 = gcc-bootstrap-mips64-16.1.0-0.tar.xz
 BOOTSTRAP-powerpc = adastrap-powerpc-11.2.0-4.tar.xz
 BOOTSTRAP-powerpc64 = gcc-bootstrap-powerpc64-16.1.0-0.tar.xz
 BOOTSTRAP-sparc64 = gcc-bootstrap-sparc64-16.1.0-0.tar.xz

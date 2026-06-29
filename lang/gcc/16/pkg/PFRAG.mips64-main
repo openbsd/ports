@@ -1,7 +1,9 @@
+lib/gcc/${CONFIG}/${V}/include/loongson-mmiintrin.h
 lib/gcc/${CONFIG}/${V}/include/loongson.h
 lib/gcc/${CONFIG}/${V}/include/msa.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/mips/
-lib/gcc/${CONFIG}/${V}/plugin/include/config/mips/mips.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/mips/mips-opts.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/mips/mips-protos.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/mips/mips.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/mips/openbsd.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/vxworks-dummy.h
