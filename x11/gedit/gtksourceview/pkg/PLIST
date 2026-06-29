@@ -45,8 +45,6 @@ lib/girepository-1.0/GtkSource-300.typelib
 @lib lib/libgedit-gtksourceview-300.so.${LIBgedit-gtksourceview-300_VERSION}
 lib/pkgconfig/libgedit-gtksourceview-300.pc
 share/gir-1.0/GtkSource-300.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libgedit-gtksourceview-300/
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceBuffer.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceCompletion.html
