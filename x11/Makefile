@@ -387,6 +387,7 @@
      SUBDIR += xcape
      SUBDIR += xcb
      SUBDIR += xchm
+     SUBDIR += xclicker
      SUBDIR += xclickroot
      SUBDIR += xclip
      SUBDIR += xcolor
