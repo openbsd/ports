@@ -2,7 +2,7 @@ COMMENT=	GnuPG Made Easy
 
 # check updates with security/gpgmepp, security/qgpgme - they often need to
 # be done in-sync.
-VERSION=	2.1.0
+VERSION=	2.1.1
 DISTNAME=	gpgme-${VERSION}
 
 CATEGORIES=	security devel
