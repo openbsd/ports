@@ -1,5 +1,6 @@
---- src/Makefile.am.orig	Wed Apr 15 11:10:56 2015
-+++ src/Makefile.am	Wed Apr 15 11:11:45 2015
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
 @@ -14,6 +14,10 @@ if HAVE_OSS
  oss = im_oss.c
  endif
@@ -18,12 +19,12 @@
 -ices_SOURCES = input.c cfgparse.c stream.c ices.c signals.c im_playlist.c reencode.c encode.c playlist_basic.c im_stdinpcm.c stream_shared.c metadata.c playlist_script.c audio.c resample.c $(oss) $(sun) $(alsa) $(roar)
 +ices_SOURCES = input.c cfgparse.c stream.c ices.c signals.c im_playlist.c reencode.c encode.c playlist_basic.c im_stdinpcm.c stream_shared.c metadata.c playlist_script.c audio.c resample.c $(oss) $(sun) $(alsa) $(roar) $(sndio)
  
- ices_LDADD = log/libicelog.la \
-              timing/libicetiming.la \
-              thread/libicethread.la \
-              avl/libiceavl.la \
+ ices_LDADD = common/log/libicelog.la \
+              common/timing/libicetiming.la \
+              common/thread/libicethread.la \
+              common/avl/libiceavl.la \
 -             @ROARAUDIO_LIBS@ \
 +             @ROARAUDIO_LIBS@ @SNDIO_LIBS@ \
-              @ALSA_LIBS@ @XIPH_LIBS@
+              @ALSA_LIBS@ @XIPH_LIBS@ @OGG_LIBS@
  
  debug:

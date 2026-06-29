@@ -2,6 +2,7 @@
 @option is-branch
 @conflict ices-2.*
 @extraunexec rm -rf /var/log/ices/*
+@rcscript ${RCDIR}/ices2
 @bin bin/ices2
 share/doc/ices2/
 share/doc/ices2/basic.html
@@ -18,4 +19,3 @@ share/examples/ices2/ices-playlist.xml
 @mode
 share/examples/ices2/ices-sndio.xml
 @sample /var/log/ices/
-@rcscript ${RCDIR}/ices2

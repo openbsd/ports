@@ -1,7 +1,7 @@
 /* im_sndio.h
  * - read pcm data from sndio devices
  *
- * $Id: im_sndio.h,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
+ * $Id: im_sndio.h,v 1.2 2026/06/29 11:45:47 sthen Exp $
  *
  * by Jacob Meuser <jakemsr@sdf.lonestar.org>, based
  * on im_sun.c which is...
@@ -20,7 +20,7 @@
 
 #include <sndio.h>
 #include "inputmodule.h"
-#include "thread/thread.h"
+#include "common/thread/thread.h"
 #include <ogg/ogg.h>
 
 typedef struct
