@@ -3,13 +3,13 @@ espie@ added feature
 Index: docs/man/mupdf.1
 --- docs/man/mupdf.1.orig
 +++ docs/man/mupdf.1
-@@ -119,6 +119,9 @@ Pan page left or right.
+@@ -121,6 +121,9 @@ Pan page left or right.
  .TP
  .B Control + Scroll wheel
  Zoom in or out.
 +.TP
 +.B Shift + Control + Scroll wheel
 +Fine grained Zoom in or out.
- 
+ .
  .SH KEY BINDINGS
- 
+ .SS Page navigation

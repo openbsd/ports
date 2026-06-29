@@ -13,7 +13,7 @@ Index: source/tools/pdfpages.c
  #include <stdlib.h>
  #include <stdio.h>
  
-@@ -223,6 +226,12 @@ int pdfpages_main(int argc, char **argv)
+@@ -228,6 +231,12 @@ int pdfpages_main(int argc, char **argv)
  
  	if (fz_optind == argc)
  		return infousage();
