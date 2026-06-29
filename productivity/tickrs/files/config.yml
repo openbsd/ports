@@ -92,3 +92,17 @@
 #  border_axis: '#FC9766'
 #  highlight_focused: '#FC9766'
 #  highlight_unfocused: '#727072'
+
+# Track portfolio holdings
+# average_price must be calculated manually
+# Ticker symbols must match 'symbols:' above to appear
+
+#portfolio:
+#  AMD:
+#    quantity: 1.3
+#    average_price: 221
+#  SPY:
+#    quantity: 100
+#    average_price: 450.25
+
+

@@ -1,10 +1,10 @@
 COMMENT =	realtime ticker data in your terminal
 
-PKGNAME =	tickrs-0.14.11
+PKGNAME =	tickrs-0.15.0
 
 GH_ACCOUNT =	tarkah
 GH_PROJECT =	tickrs
-GH_TAGNAME =	v0.14.11
+GH_TAGNAME =	v0.15.0
 
 CATEGORIES =	productivity
 
@@ -17,7 +17,7 @@ WANTLIB += 	${MODCARGO_WANTLIB} m curl
 
 LIB_DEPENDS =	net/curl
 
-MODULES =		devel/cargo
+MODULES =	devel/cargo
 
 MODCARGO_CRATES_UPDATE +=	tickrs-api
 
