@@ -1,3 +1,5 @@
+https://github.com/rasterio/rasterio/issues/3582
+
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
