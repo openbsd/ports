@@ -13,5 +13,6 @@ COMPILER =			base-clang ports-gcc
 MODQT5_DEPS =			no
 MODQT5_USE_CXX11 =		No
 NO_CCACHE =			Yes
+DEBUG_PACKAGES =
 
 .include <bsd.port.mk>
