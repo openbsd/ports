@@ -230,6 +230,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_default_tokenizer
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_flags_comment.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_flags_index_medium.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_flags_index_small.result
+share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_flags_invalid.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_flags_none.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_flags_parameter.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_index_flags_none.result
@@ -627,6 +628,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_boolean_mode_syntax_f
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_database_path_prefix.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_default_parser_new_value.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_default_parser_same_value.result
+share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_default_tokenizer_disable.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_default_tokenizer_new_value.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_default_tokenizer_same_value.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_dry_write_delete.result
@@ -639,6 +641,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_lock_timeout_no_retry
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_lock_timeout_valid.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_log_file_new_value.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_log_file_nonexistent_path.result
+share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_log_file_reject_null.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_log_file_same_value.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_log_level_TODO_SPLIT_ME.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_match_escalation_threshold_global.result
@@ -830,6 +833,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_default_tokenizer
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_flags_comment.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_flags_index_medium.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_flags_index_small.test
+share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_flags_invalid.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_flags_none.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_flags_parameter.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_index_flags_none.test
@@ -1227,6 +1231,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_boolean_mode_syntax_f
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_database_path_prefix.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_default_parser_new_value.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_default_parser_same_value.test
+share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_default_tokenizer_disable.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_default_tokenizer_new_value.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_default_tokenizer_same_value.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_dry_write_delete.test
@@ -1239,6 +1244,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_lock_timeout_no_retry
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_lock_timeout_valid.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_log_file_new_value.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_log_file_nonexistent_path.test
+share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_log_file_reject_null.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_log_file_same_value.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_log_level_TODO_SPLIT_ME.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_match_escalation_threshold_global.test

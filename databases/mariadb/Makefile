@@ -7,6 +7,7 @@ COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 VERSION=	12.3.2
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
+REVISION-tests=	0
 EPOCH=		1
 
 CATEGORIES=	databases

@@ -4366,12 +4366,6 @@ share/mysql-test/plugin/metadata_lock_info/metadata_lock_info/t/
 share/mysql-test/plugin/metadata_lock_info/metadata_lock_info/t/global_read_lock.test
 share/mysql-test/plugin/metadata_lock_info/metadata_lock_info/t/table_metadata_lock.test
 share/mysql-test/plugin/metadata_lock_info/metadata_lock_info/t/user_lock.test
-share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_flags_invalid.result
-share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_default_tokenizer_disable.result
-share/mysql-test/plugin/mroonga/mroonga/storage/r/variable_log_file_reject_null.result
-share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_flags_invalid.test
-share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_default_tokenizer_disable.test
-share/mysql-test/plugin/mroonga/mroonga/storage/t/variable_log_file_reject_null.test
 share/mysql-test/plugin/myisam/
 share/mysql-test/plugin/myisam/mtr2/
 share/mysql-test/plugin/myisam/mtr2/README
