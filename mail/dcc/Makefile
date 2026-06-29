@@ -42,6 +42,11 @@ CONFIGURE_ARGS=	--disable-dccm \
 		--without-DCC-MD5
 NO_TEST=	Yes
 
+.if ${MACHINE_ARCH:Maarch64}
+# compiler segfault with loop vectorization
+CFLAGS += -fno-vectorize
+.endif
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/dcc
 	mv ${WRKINST}/var/dcc/* ${PREFIX}/share/examples/dcc
