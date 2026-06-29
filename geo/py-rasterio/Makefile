@@ -6,6 +6,7 @@ PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	geo
 
+# https://github.com/rasterio/rasterio
 HOMEPAGE =	https://rasterio.readthedocs.io/en/latest/
 
 # BSD
