@@ -1,4 +1,4 @@
-V =		17.0.04
+V =		17.0.05
 COMMENT =	free Unicode font from the GNU project
 DISTNAME =	unifont-${V}
 DISTFILES =	${DISTNAME}.otf \
