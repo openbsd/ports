@@ -4,7 +4,7 @@
 Index: src/update-mime-database.cpp
 --- src/update-mime-database.cpp.orig
 +++ src/update-mime-database.cpp
-@@ -2150,6 +2150,11 @@ static void check_in_path_xdg_data(const char *mime_pa
+@@ -2148,6 +2148,11 @@ static void check_in_path_xdg_data(const char *mime_pa
  
  	path = g_path_get_dirname(mime_path);
  
@@ -16,7 +16,7 @@ Index: src/update-mime-database.cpp
  	if (stat(path, &path_info))
  	{
  		g_warning("Can't stat '%s' directory: %s",
-@@ -2174,12 +2179,23 @@ static void check_in_path_xdg_data(const char *mime_pa
+@@ -2172,12 +2177,23 @@ static void check_in_path_xdg_data(const char *mime_pa
  
  	for (i = 0; i < n; i++)
  	{
@@ -40,7 +40,7 @@ Index: src/update-mime-database.cpp
  	if (i == n)
  	{
  		g_printerr(_("\nNote that '%s' is not in the search path\n"
-@@ -3684,6 +3700,16 @@ int main(int argc, char **argv)
+@@ -3682,6 +3698,16 @@ int main(int argc, char **argv)
  #endif
  
  	LIBXML_TEST_VERSION;
