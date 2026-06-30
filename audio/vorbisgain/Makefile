@@ -1,7 +1,6 @@
 COMMENT=		add tags to Ogg Vorbis files to adjust the volume
 
-DISTNAME=		vorbisgain-0.36
-REVISION=		4
+DISTNAME=		vorbisgain-0.37
 CATEGORIES=		audio
 HOMEPAGE=		https://sjeng.org/vorbisgain.html
 
@@ -11,7 +10,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c m ogg vorbis>=4 vorbisfile>=4
 
 SITES=			https://sjeng.org/ftp/vorbis/
-EXTRACT_SUFX=		.zip
 
 LIB_DEPENDS=		audio/libvorbis
 
