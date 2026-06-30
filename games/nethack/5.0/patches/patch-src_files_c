@@ -1,0 +1,16 @@
+Index: src/files.c
+--- src/files.c.orig
++++ src/files.c
+@@ -1691,8 +1691,10 @@ docompress_file(const char *filename, boolean uncomp)
+             redirect(filename, RDBMODE, stdin, uncomp);
+             redirect(cfn, WRBMODE, stdout, uncomp);
+         }
+-        (void) setgid(getgid());
+-        (void) setuid(getuid());
++	int uid = getuid();
++	int gid = getgid();
++        (void) setresgid(gid, gid, gid);
++        (void) setresuid(uid, uid, uid);
+         (void) execv(args[0], (char *const *) args);
+         perror((char *) 0);
+         (void) fprintf(stderr, "Exec to %scompress %s failed.\n",

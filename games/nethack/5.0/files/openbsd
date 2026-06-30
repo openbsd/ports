@@ -1,0 +1,43 @@
+# vi:syntax=make
+
+#-PRE
+
+CFLAGS += ${COPTS} -I../include -DNOTPARMDECL -DDLB -DSECURE -DNCURSES_WIDECHAR
+CFLAGS += -DHACKDIR=\"$(HACKDIR)\"
+CFLAGS += -DSYSCF -DSYSCF_FILE=\"$(HACKDIR)/sysconf\"
+
+# Wee, let's not do config
+CFLAGS += -DTIMED_DELAY -DNOMAIL
+CFLAGS += -DCURSES_GRAPHICS
+
+CFLAGS += -DCOMPRESS=\"/usr/bin/gzip\" -DCOMPRESS_EXTENSION=\".gz\"
+
+LINK = ${CC}
+CXX = c++
+
+WINSRC = $(WINTTYSRC) $(WINCURSESSRC)
+WINOBJ = $(WINTTYOBJ) $(WINCURSESOBJ)
+WINLIB = $(WINTTYLIB) $(WINCURSESLIB)
+
+POSTINSTALL = install -g $(GAMEGRP) -m $(VARFILEPERM) sys/unix/sysconf ${INSTDIR}/sysconf
+WINTTYLIB=-lcurses
+
+HACKDIR = 	${PREFIX}/$(GAMEDIR)
+REALHACKDIR =	${TRUEPREFIX}/$(GAMEDIR)
+SHELLDIR = 	${PREFIX}/bin
+VARDIR = 	${HACKDIR}
+INSTDIR = 	${HACKDIR}
+REALGAME =	nethack-$V
+
+# in case you install manually, make it so
+CHOWN = 	true
+CHGRP = 	chgrp
+# choose a GAMEGRP !
+
+VARDIRPERM = 	0755
+GAMEPERM = 0755
+VARFILEPERM = 0600
+
+XFILES = x11tiles pet_mark.xbm rip.xpm pilemark.xbm
+
+include ${FILESDIR}/${CONFIG}

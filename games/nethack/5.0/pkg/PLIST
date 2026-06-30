@@ -1,0 +1,38 @@
+@option no-default-conflict
+@option is-branch
+@conflict nethack->=${BASEV}
+@newgroup ${GAMEGRP}:806
+bin/nethack-${V}
+bin/recover-${V}
+@mode 0775
+@group ${GAMEGRP}
+${GAMEDIR}/
+@mode
+${GAMEDIR}/license
+${GAMEDIR}/livelog
+@mode 0664
+@comment no checksum
+${GAMEDIR}/logfile
+@mode 2555
+@bin ${GAMEDIR}/nethack
+@mode
+${GAMEDIR}/nhdat
+@mode 0664
+${GAMEDIR}/perm
+@comment no checksum
+${GAMEDIR}/record
+@mode 2555
+@bin ${GAMEDIR}/recover
+@mode 0774
+${GAMEDIR}/save/
+@mode
+${GAMEDIR}/symbols
+${GAMEDIR}/sysconf
+@mode 0664
+@comment no checksum
+${GAMEDIR}/xlogfile
+@mode
+@man man/man6/nethack-${V}.6
+@man man/man6/recover-${V}.6
+share/doc/nethack-${V}/
+share/doc/nethack-${V}/Guidebook.txt

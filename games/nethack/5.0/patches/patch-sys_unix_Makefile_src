@@ -1,0 +1,11 @@
+Index: sys/unix/Makefile.src
+--- sys/unix/Makefile.src.orig
++++ sys/unix/Makefile.src
+@@ -506,6 +506,7 @@ LUA_VERSION ?=5.4.8
+ LUABASE = liblua-$(LUA_VERSION).a
+ LUALIB = ../lib/lua/$(LUABASE)
+ LUALIBS = $(LUALIB) -lm $(DLLIB)
++LUALIBS = `pkg-config --libs lua54`
+ LUAHEADERS = lib/lua-$(LUA_VERSION)/src
+ 
+ # timestamp files to reduce `make' overhead and shorten .o dependency lists
