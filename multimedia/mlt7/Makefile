@@ -35,12 +35,7 @@ WANTLIB-gpl2 += pulse-simple samplerate vidstab
 MULTI_PACKAGES =	-main -gpl2
 
 MODULES =		devel/cmake \
-			lang/clang \
 			x11/qt6
-
-# Does not directly use CXX_MODULES; still ends up pulling in clang-scan-deps
-MODCLANG_VERSION =	22
-MODCLANG_COMPILER_LINKS = No
 
 BUILD_DEPENDS =		audio/ladspa \
 			multimedia/frei0r-plugins \

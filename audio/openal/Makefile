@@ -48,12 +48,6 @@ CONFIGURE_ARGS +=-DALSOFT_CPUEXT_NEON=Off
 .endif
 
 MODULES =	devel/cmake
-
-# XXX cmake config uses CXX_MODULES, which needs clang-scan-deps
-MODULES +=	lang/clang
-MODCLANG_VERSION = 22
-MODCLANG_COMPILER_LINKS = No
-
 COMPILER =	base-clang ports-gcc
 
 NO_TEST =	Yes

@@ -4,6 +4,7 @@ COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
 V =		3.13.1
+REVISION-main =	0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}.zip
@@ -27,7 +28,6 @@ SITES =		https://download.osgeo.org/gdal/${V:C/rc.//:C/beta.//}/
 WRKDIST =	${WRKDIR}/${DISTNAME:C/rc.//}
 
 MODULES =	devel/cmake \
-		lang/clang \
 		lang/python
 
 COMPILER = base-clang ports-gcc
@@ -77,7 +77,6 @@ LIB_DEPENDS-python =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-python =	gdal m pthread ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} \
-			${MODCLANG_RUN_DEPENDS} \
 			devel/py-setuptools \
 			math/exprtk \
 			math/py-numpy \
