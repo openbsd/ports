@@ -18,8 +18,6 @@ MODULES =		devel/cmake
 LIB_DEPENDS =		devel/libconfig \
 			devel/protobuf-c>=1.0.1
 
-NO_TEST =		Yes
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/conf.c ${WRKSRC}/src/config.h.in \
 		${WRKSRC}/umurmur.conf.example
