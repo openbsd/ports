@@ -16,6 +16,7 @@
      SUBDIR += lepton-eda
      SUBDIR += lib3mf
      SUBDIR += librecad
+     SUBDIR += libspnav
      SUBDIR += magic
      SUBDIR += manifold
      SUBDIR += necpp
