@@ -1,6 +1,5 @@
 COMMENT =		DeaDBeeF is an audio player
-DISTNAME =		deadbeef-1.9.6
-REVISION =		2
+DISTNAME =		deadbeef-1.10.3
 CATEGORIES =		audio
 
 HOMEPAGE =		https://deadbeef.sourceforge.io/
@@ -9,22 +8,22 @@ HOMEPAGE =		https://deadbeef.sourceforge.io/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += BlocksRuntime FLAC X11 X11-xcb Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += aom atk-1.0 atk-bridge-2.0 atspi avcodec avformat avutil
-WANTLIB += bz2 c cairo cairo-gobject cddb cdio crypto curl dav1d
-WANTLIB += dbus-1 dispatch drm epoll-shim epoxy execinfo expat
-WANTLIB += faad ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += BlocksRuntime FLAC SvtAv1Enc X11 X11-xcb XRes Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender aom atk-1.0 atk-bridge-2.0 atspi avcodec avformat
+WANTLIB += avutil bz2 c cairo cairo-gobject cddb cdio crypto curl
+WANTLIB += dav1d dbus-1 dispatch drm epoll-shim epoxy execinfo
+WANTLIB += expat faad ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gsm gthread-2.0 gtk-3 harfbuzz iconv intl jansson jpeg
 WANTLIB += lzma m mms mp3lame mpcdec mpg123 nghttp2 nghttp3 ngtcp2
-WANTLIB += ngtcp2_crypto_libressl ogg opus opusfile pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pulse pulse-simple
-WANTLIB += sndfile speex ssl swresample theoradec theoraenc va
-WANTLIB += va-drm va-x11 vorbis vorbisenc vorbisfile vpx wavpack
-WANTLIB += wayland-client wayland-cursor wayland-egl x264 x265
-WANTLIB += xcb xcb-dri3 xcb-render xcb-shm xkbcommon xml2 xvidcore
-WANTLIB += z zip zstd sharpyuv webp webpmux
+WANTLIB += ngtcp2_crypto_libressl ogg opus opusfile pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pulse
+WANTLIB += pulse-simple sharpyuv sndfile speex ssl swresample
+WANTLIB += theoraenc va va-drm va-x11 vorbis vorbisenc vorbisfile
+WANTLIB += vpx wavpack wayland-client wayland-cursor wayland-egl
+WANTLIB += webp webpmux x264 x265 xcb xcb-dri3 xcb-render xcb-shm
+WANTLIB += xkbcommon xml2 xvidcore z zip zstd
 
 COMPILER =		base-clang ports-gcc
 
@@ -85,12 +84,9 @@ CONFIGURE_ARGS +=	--disable-static \
 			--disable-supereq \
 			--disable-wildmidi \
 			--disable-wma \
-			--disable-cdda-paranoia
-
-# sndio code worked with 0.7.2 but needs further changes for 1.9.2
-CONFIGURE_ARGS +=	--enable-pulse \
-			--disable-sndio \
-			--disable-pipewire
+			--disable-cdda-paranoia \
+			--disable-pipewire \
+			--enable-pulse
 
 CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/lib/libzip/include \
 				  -I${X11BASE}/include \
@@ -101,12 +97,10 @@ CONFIGURE_ENV +=	ax_cv_c_flags__msse2='no'
 .endif
 
 # XXX: why is this even needed?
-MAKE_FLAGS +=		INTL_LIBS=-lintl
+#MAKE_FLAGS +=		INTL_LIBS=-lintl
 
 post-patch:
-	@mkdir -p ${WRKSRC}/plugins/sndio
-	@cp ${FILESDIR}/{Makefile.am,sndio.c} ${WRKSRC}/plugins/sndio
-	sed -i 's/-msse3//' ${WRKSRC}/external/ddb_dsp_libretro/Makefile.am
+	echo sed -i 's/-msse3//' ${WRKSRC}/external/ddb_dsp_libretro/Makefile.am
 
 pre-configure:
 	cd ${WRKSRC}; intltoolize --force

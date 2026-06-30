@@ -1,9 +1,12 @@
+@pkgpath audio/deadbeef-plugin-mpris2
+@conflict deadbeef-plugin-mpris2-*
 @bin bin/deadbeef
 include/deadbeef/
 include/deadbeef/artwork.h
 include/deadbeef/converter.h
 include/deadbeef/deadbeef.h
 include/deadbeef/gtkui_api.h
+include/deadbeef/medialib.h
 lib/deadbeef/
 @so lib/deadbeef/aac.so
 @so lib/deadbeef/alac.so
@@ -139,9 +142,12 @@ lib/deadbeef/data68/Replay/zonewarrior.bin
 @so lib/deadbeef/hotkeys.so
 @so lib/deadbeef/in_sc68.so
 @so lib/deadbeef/lastfm.so
+@so lib/deadbeef/lyrics_gtk3.so
 @so lib/deadbeef/m3u.so
+@so lib/deadbeef/medialib.so
 @so lib/deadbeef/mms.so
 @so lib/deadbeef/mp3.so
+@so lib/deadbeef/mpris.so
 @so lib/deadbeef/musepack.so
 @so lib/deadbeef/notify.so
 @so lib/deadbeef/nullout.so
@@ -160,6 +166,7 @@ lib/deadbeef/data68/Replay/zonewarrior.bin
 @so lib/deadbeef/vtx.so
 @so lib/deadbeef/wavpack.so
 share/applications/deadbeef.desktop
+share/applications/deadbeef_enqueue.desktop
 share/deadbeef/
 share/deadbeef/pixmaps/
 share/deadbeef/pixmaps/buffering_16.png

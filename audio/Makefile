@@ -35,7 +35,6 @@
      SUBDIR += curseradio
      SUBDIR += d11amp
      SUBDIR += deadbeef
-     SUBDIR += deadbeef-plugin-mpris2
      SUBDIR += disc-cover
      SUBDIR += dumb
      SUBDIR += easytag
