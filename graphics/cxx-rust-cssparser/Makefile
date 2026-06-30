@@ -1,6 +1,7 @@
 COMMENT =	library for parsing CSS using the Rust cssparser crate
 VERSION =	1.0.0
 DISTNAME =	cxx-rust-cssparser-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	cxx-rust-cssparser        0.0 # 0.0
 
@@ -21,7 +22,8 @@ MODCARGO_INSTALL =	No
 
 MODCARGO_CARGOTOML =	${WRKSRC}/rust/Cargo.toml
 
-BUILD_DEPENDS =		devel/corrosion
+BUILD_DEPENDS =		devel/corrosion \
+			devel/kf6/extra-cmake-modules
 
 CONFIGURE_ENV +=	CARGO_HOME=${WRKDIR}/cargo-home
 MAKE_ENV +=		CARGO_HOME=${WRKDIR}/cargo-home
