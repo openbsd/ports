@@ -1,0 +1,21 @@
+include/igloo/
+include/igloo/config.h
+include/igloo/cs.h
+include/igloo/digest.h
+include/igloo/error.h
+include/igloo/feature.h
+include/igloo/igloo.h
+include/igloo/list.h
+include/igloo/prng.h
+include/igloo/ro.h
+include/igloo/rwlock.h
+include/igloo/sp.h
+include/igloo/tap.h
+include/igloo/time.h
+include/igloo/typedef.h
+include/igloo/types.h
+include/igloo/uuid.h
+@static-lib lib/libigloo.a
+lib/libigloo.la
+@lib lib/libigloo.so.${LIBigloo_VERSION}
+lib/pkgconfig/igloo.pc
