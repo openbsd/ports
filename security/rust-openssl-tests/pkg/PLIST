@@ -238,6 +238,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/CMakeList
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/LICENSE
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/cmake/
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/cmake/go.cmake
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/cmake/rust_bindings.cmake
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/crypto/
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/crypto/CMakeLists.txt
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/crypto/abi_self_test.cc
@@ -1441,6 +1442,8 @@ share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/ssl/ssl_b
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/ssl/ssl_c_test.c
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/ssl/ssl_cert.cc
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/ssl/ssl_cipher.cc
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/ssl/ssl_client_hello_test.cc
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/ssl/ssl_common_test.h
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/ssl/ssl_decrepit.c
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/ssl/ssl_file.cc
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/aws-lc/ssl/ssl_key_share.cc
@@ -1849,10 +1852,18 @@ share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/cc_build
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/cc_builder/win_x86.rs
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/cc_builder/win_x86_64.rs
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/cmake_builder.rs
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/fips_link_probe.c
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/fips_probe.rs
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/fips_probe_tests.rs
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/fips_runtime_check.c
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/main.rs
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/nasm_builder.rs
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/printenv.bat
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/sys_bindgen.rs
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/system_detect.rs
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/system_detect_tests.rs
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/system_library.rs
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/builder/system_library_tests.rs
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/generated-include/
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/generated-include/openssl/
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-fips-sys}/generated-include/openssl/boringssl_prefix_symbols.h
