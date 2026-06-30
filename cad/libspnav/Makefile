@@ -26,4 +26,6 @@ CONFIGURE_ARGS =	--disable-opt
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/Makefile.in
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>
