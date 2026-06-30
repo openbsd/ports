@@ -1,10 +1,9 @@
 COMMENT=		library for reading, creating and modifying zip archives
 
-DISTNAME=		libzip-1.8.0
-REVISION=		1
+DISTNAME=		libzip-1.11.4
 
 CATEGORIES=		archivers
-SHARED_LIBS +=  zip                  4.2      # 5.0
+SHARED_LIBS +=  zip                  4.3      # 5.0
 
 HOMEPAGE=		https://libzip.org/
 
@@ -25,6 +24,6 @@ CONFIGURE_ARGS =	-DENABLE_COMMONCRYPTO=OFF \
 			-DENABLE_GNUTLS=OFF \
 			-DENABLE_MBEDTLS=OFF
 
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+#MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>
