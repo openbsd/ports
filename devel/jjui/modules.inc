@@ -1,7 +1,7 @@
 MODGO_MODULES =	\
 	charm.land/bubbles/v2			 v2.1.0 \
-	charm.land/bubbletea/v2			 v2.0.6 \
-	charm.land/lipgloss/v2			 v2.0.3 \
+	charm.land/bubbletea/v2			 v2.0.7 \
+	charm.land/lipgloss/v2			 v2.0.4 \
 	github.com/!burnt!sushi/toml		 v1.6.0 \
 	github.com/!make!now!just/heredoc	 v1.0.0 \
 	github.com/atotto/clipboard		 v0.1.4 \
@@ -9,7 +9,7 @@ MODGO_MODULES =	\
 	github.com/bits-and-blooms/bitset	 v1.24.4 \
 	github.com/charmbracelet/colorprofile	 v0.4.3 \
 	github.com/charmbracelet/harmonica	 v0.2.0 \
-	github.com/charmbracelet/ultraviolet	 v0.0.0-20260422141423-a0f1f21775f7 \
+	github.com/charmbracelet/ultraviolet	 v0.0.0-20260615092913-2399af76d5b1 \
 	github.com/charmbracelet/x/ansi		 v0.11.7 \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20250806222409-83e3a29d542f \
 	github.com/charmbracelet/x/term		 v0.2.2 \
@@ -26,12 +26,12 @@ MODGO_MODULES =	\
 	github.com/google/go-cmp		 v0.6.0 \
 	github.com/kylelemons/godebug		 v1.1.0 \
 	github.com/lucasb-eyer/go-colorful	 v1.4.0 \
-	github.com/mattn/go-runewidth		 v0.0.23 \
+	github.com/mattn/go-runewidth		 v0.0.24 \
 	github.com/mattn/go-shellwords		 v1.0.13 \
 	github.com/muesli/cancelreader		 v0.2.2 \
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/rivo/uniseg			 v0.4.7 \
-	github.com/sahilm/fuzzy			 v0.1.1 \
+	github.com/sahilm/fuzzy			 v0.1.3 \
 	github.com/stretchr/objx		 v0.5.2 \
 	github.com/stretchr/testify		 v1.11.1 \
 	github.com/tailscale/peercred		 v0.0.0-20250107143737-35a0c7bd7edc \
@@ -40,14 +40,14 @@ MODGO_MODULES =	\
 	github.com/yuin/gopher-lua		 v1.1.2 \
 	golang.org/x/crypto			 v0.46.0 \
 	golang.org/x/exp			 v0.0.0-20231006140011-7918f672742d \
-	golang.org/x/mod			 v0.35.0 \
-	golang.org/x/net			 v0.53.0 \
-	golang.org/x/sync			 v0.20.0 \
-	golang.org/x/sys			 v0.43.0 \
-	golang.org/x/telemetry			 v0.0.0-20260409153401-be6f6cb8b1fa \
+	golang.org/x/mod			 v0.37.0 \
+	golang.org/x/net			 v0.56.0 \
+	golang.org/x/sync			 v0.21.0 \
+	golang.org/x/sys			 v0.46.0 \
+	golang.org/x/telemetry			 v0.0.0-20260610154732-fb80ec83bdd9 \
 	golang.org/x/term			 v0.38.0 \
 	golang.org/x/text			 v0.32.0 \
-	golang.org/x/tools			 v0.44.0 \
+	golang.org/x/tools			 v0.46.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3			 v3.0.1
 
@@ -58,7 +58,7 @@ MODGO_MODFILES =	\
 	github.com/charmbracelet/colorprofile	 v0.4.2 \
 	github.com/charmbracelet/ultraviolet	 v0.0.0-20251205161215-1948445e3318 \
 	github.com/charmbracelet/ultraviolet	 v0.0.0-20260205113103-524a6607adb8 \
-	github.com/charmbracelet/ultraviolet	 v0.0.0-20260416155717-489999b90468 \
+	github.com/charmbracelet/ultraviolet	 v0.0.0-20260525132238-948f4557a654 \
 	github.com/charmbracelet/x/ansi		 v0.11.6 \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20241212170349-ad4b7ae0f25f \
 	github.com/clipperhouse/displaywidth	 v0.9.0 \
@@ -67,10 +67,15 @@ MODGO_MODFILES =	\
 	github.com/lucasb-eyer/go-colorful	 v1.3.0 \
 	github.com/mattn/go-runewidth		 v0.0.19 \
 	github.com/mattn/go-runewidth		 v0.0.21 \
+	github.com/mattn/go-runewidth		 v0.0.23 \
+	github.com/sahilm/fuzzy			 v0.1.1 \
 	golang.org/x/exp			 v0.0.0-20220909182711-5c715a9e8561 \
+	golang.org/x/mod			 v0.26.0 \
 	golang.org/x/net			 v0.47.0 \
+	golang.org/x/sync			 v0.16.0 \
 	golang.org/x/sync			 v0.18.0 \
 	golang.org/x/sync			 v0.19.0 \
+	golang.org/x/sync			 v0.20.0 \
 	golang.org/x/sys			 v0.0.0-20190204203706-41f3e6584952 \
 	golang.org/x/sys			 v0.0.0-20220204135822-1c1b9b1eba6a \
 	golang.org/x/sys			 v0.29.0 \
@@ -79,5 +84,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.36.0 \
 	golang.org/x/sys			 v0.39.0 \
 	golang.org/x/sys			 v0.42.0 \
-	golang.org/x/tools			 v0.43.0
+	golang.org/x/sys			 v0.45.0 \
+	golang.org/x/tools			 v0.35.0 \
+	golang.org/x/tools			 v0.45.0
 
