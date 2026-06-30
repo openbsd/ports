@@ -1,7 +1,6 @@
 COMMENT =	wayland tiling compositor inspired by ratpoison
 
-V =		3.1.0
-REVISION =	1
+V =		3.2.1
 DISTNAME =	release_${V}
 PKGNAME =	cagebreak-${V}
 
@@ -15,7 +14,7 @@ MAINTAINER =	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c cairo evdev fontconfig gobject-2.0 input m pango-1.0
-WANTLIB += pangocairo-1.0 udev wayland-server xkbcommon
+WANTLIB += pangocairo-1.0 pixman-1 udev wayland-server xkbcommon
 
 SITES =			https://github.com/project-repo/cagebreak/releases/download/${V}/
 
@@ -25,6 +24,7 @@ COMPILER_LANGS =	c
 
 MODULES =		devel/meson \
 			wayland/wlroots
+MODWLROOTS_VERSION =	0.20
 BUILD_DEPENDS =		textproc/scdoc \
 			wayland/wayland-protocols
 LIB_DEPENDS =		devel/pango \
