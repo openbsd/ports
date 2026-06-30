@@ -319,6 +319,7 @@
      SUBDIR += libhid
      SUBDIR += libidn
      SUBDIR += libidn2
+     SUBDIR += libigloo
      SUBDIR += libinotify
      SUBDIR += libio
      SUBDIR += libiscsi
