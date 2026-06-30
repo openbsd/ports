@@ -189,6 +189,7 @@ lib/node_modules/@npmcli/arborist/lib/edge.js
 lib/node_modules/@npmcli/arborist/lib/from-path.js
 lib/node_modules/@npmcli/arborist/lib/gather-dep-set.js
 lib/node_modules/@npmcli/arborist/lib/index.js
+lib/node_modules/@npmcli/arborist/lib/install-scripts.js
 lib/node_modules/@npmcli/arborist/lib/inventory.js
 lib/node_modules/@npmcli/arborist/lib/isolated-classes.js
 lib/node_modules/@npmcli/arborist/lib/link.js
@@ -205,6 +206,7 @@ lib/node_modules/@npmcli/arborist/lib/realpath.js
 lib/node_modules/@npmcli/arborist/lib/relpath.js
 lib/node_modules/@npmcli/arborist/lib/reset-dep-flags.js
 lib/node_modules/@npmcli/arborist/lib/retire-path.js
+lib/node_modules/@npmcli/arborist/lib/script-allowed.js
 lib/node_modules/@npmcli/arborist/lib/shrinkwrap.js
 lib/node_modules/@npmcli/arborist/lib/signal-handling.js
 lib/node_modules/@npmcli/arborist/lib/signals.js
@@ -227,6 +229,7 @@ lib/node_modules/@npmcli/config/lib/env-replace.js
 lib/node_modules/@npmcli/config/lib/errors.js
 lib/node_modules/@npmcli/config/lib/index.js
 lib/node_modules/@npmcli/config/lib/nerf-dart.js
+lib/node_modules/@npmcli/config/lib/parse-allow-scripts-list.js
 lib/node_modules/@npmcli/config/lib/parse-field.js
 lib/node_modules/@npmcli/config/lib/set-envs.js
 lib/node_modules/@npmcli/config/lib/type-defs.js
@@ -1096,13 +1099,37 @@ lib/node_modules/lru-cache/
 lib/node_modules/lru-cache/LICENSE.md
 lib/node_modules/lru-cache/dist/
 lib/node_modules/lru-cache/dist/commonjs/
+lib/node_modules/lru-cache/dist/commonjs/browser/
+lib/node_modules/lru-cache/dist/commonjs/browser/diagnostics-channel.js
+lib/node_modules/lru-cache/dist/commonjs/browser/index.js
+lib/node_modules/lru-cache/dist/commonjs/browser/index.min.js
+lib/node_modules/lru-cache/dist/commonjs/browser/perf.js
+lib/node_modules/lru-cache/dist/commonjs/diagnostics-channel.js
 lib/node_modules/lru-cache/dist/commonjs/index.js
 lib/node_modules/lru-cache/dist/commonjs/index.min.js
+lib/node_modules/lru-cache/dist/commonjs/node/
+lib/node_modules/lru-cache/dist/commonjs/node/diagnostics-channel.js
+lib/node_modules/lru-cache/dist/commonjs/node/index.js
+lib/node_modules/lru-cache/dist/commonjs/node/index.min.js
+lib/node_modules/lru-cache/dist/commonjs/node/perf.js
 lib/node_modules/lru-cache/dist/commonjs/package.json
+lib/node_modules/lru-cache/dist/commonjs/perf.js
 lib/node_modules/lru-cache/dist/esm/
+lib/node_modules/lru-cache/dist/esm/browser/
+lib/node_modules/lru-cache/dist/esm/browser/diagnostics-channel.js
+lib/node_modules/lru-cache/dist/esm/browser/index.js
+lib/node_modules/lru-cache/dist/esm/browser/index.min.js
+lib/node_modules/lru-cache/dist/esm/browser/perf.js
+lib/node_modules/lru-cache/dist/esm/diagnostics-channel.js
 lib/node_modules/lru-cache/dist/esm/index.js
 lib/node_modules/lru-cache/dist/esm/index.min.js
+lib/node_modules/lru-cache/dist/esm/node/
+lib/node_modules/lru-cache/dist/esm/node/diagnostics-channel.js
+lib/node_modules/lru-cache/dist/esm/node/index.js
+lib/node_modules/lru-cache/dist/esm/node/index.min.js
+lib/node_modules/lru-cache/dist/esm/node/perf.js
 lib/node_modules/lru-cache/dist/esm/package.json
+lib/node_modules/lru-cache/dist/esm/perf.js
 lib/node_modules/lru-cache/package.json
 lib/node_modules/make-fetch-happen/
 lib/node_modules/make-fetch-happen/LICENSE
@@ -1157,18 +1184,8 @@ lib/node_modules/minipass-fetch/lib/request.js
 lib/node_modules/minipass-fetch/lib/response.js
 lib/node_modules/minipass-fetch/package.json
 lib/node_modules/minipass-flush/
-lib/node_modules/minipass-flush/LICENSE
+lib/node_modules/minipass-flush/LICENSE.md
 lib/node_modules/minipass-flush/index.js
-lib/node_modules/minipass-flush/node_modules/
-lib/node_modules/minipass-flush/node_modules/minipass/
-lib/node_modules/minipass-flush/node_modules/minipass/LICENSE
-lib/node_modules/minipass-flush/node_modules/minipass/index.js
-lib/node_modules/minipass-flush/node_modules/minipass/package.json
-lib/node_modules/minipass-flush/node_modules/yallist/
-lib/node_modules/minipass-flush/node_modules/yallist/LICENSE
-lib/node_modules/minipass-flush/node_modules/yallist/iterator.js
-lib/node_modules/minipass-flush/node_modules/yallist/package.json
-lib/node_modules/minipass-flush/node_modules/yallist/yallist.js
 lib/node_modules/minipass-flush/package.json
 lib/node_modules/minipass-pipeline/
 lib/node_modules/minipass-pipeline/LICENSE
@@ -1592,6 +1609,7 @@ lib/node_modules/npm/docs/content/
 lib/node_modules/npm/docs/content/commands/
 lib/node_modules/npm/docs/content/commands/npm-access.md
 lib/node_modules/npm/docs/content/commands/npm-adduser.md
+lib/node_modules/npm/docs/content/commands/npm-approve-scripts.md
 lib/node_modules/npm/docs/content/commands/npm-audit.md
 lib/node_modules/npm/docs/content/commands/npm-bugs.md
 lib/node_modules/npm/docs/content/commands/npm-cache.md
@@ -1599,6 +1617,7 @@ lib/node_modules/npm/docs/content/commands/npm-ci.md
 lib/node_modules/npm/docs/content/commands/npm-completion.md
 lib/node_modules/npm/docs/content/commands/npm-config.md
 lib/node_modules/npm/docs/content/commands/npm-dedupe.md
+lib/node_modules/npm/docs/content/commands/npm-deny-scripts.md
 lib/node_modules/npm/docs/content/commands/npm-deprecate.md
 lib/node_modules/npm/docs/content/commands/npm-diff.md
 lib/node_modules/npm/docs/content/commands/npm-dist-tag.md
@@ -1642,6 +1661,7 @@ lib/node_modules/npm/docs/content/commands/npm-sbom.md
 lib/node_modules/npm/docs/content/commands/npm-search.md
 lib/node_modules/npm/docs/content/commands/npm-set.md
 lib/node_modules/npm/docs/content/commands/npm-shrinkwrap.md
+lib/node_modules/npm/docs/content/commands/npm-stage.md
 lib/node_modules/npm/docs/content/commands/npm-star.md
 lib/node_modules/npm/docs/content/commands/npm-stars.md
 lib/node_modules/npm/docs/content/commands/npm-start.md
@@ -1685,6 +1705,7 @@ lib/node_modules/npm/docs/output/
 lib/node_modules/npm/docs/output/commands/
 lib/node_modules/npm/docs/output/commands/npm-access.html
 lib/node_modules/npm/docs/output/commands/npm-adduser.html
+lib/node_modules/npm/docs/output/commands/npm-approve-scripts.html
 lib/node_modules/npm/docs/output/commands/npm-audit.html
 lib/node_modules/npm/docs/output/commands/npm-bugs.html
 lib/node_modules/npm/docs/output/commands/npm-cache.html
@@ -1692,6 +1713,7 @@ lib/node_modules/npm/docs/output/commands/npm-ci.html
 lib/node_modules/npm/docs/output/commands/npm-completion.html
 lib/node_modules/npm/docs/output/commands/npm-config.html
 lib/node_modules/npm/docs/output/commands/npm-dedupe.html
+lib/node_modules/npm/docs/output/commands/npm-deny-scripts.html
 lib/node_modules/npm/docs/output/commands/npm-deprecate.html
 lib/node_modules/npm/docs/output/commands/npm-diff.html
 lib/node_modules/npm/docs/output/commands/npm-dist-tag.html
@@ -1735,6 +1757,7 @@ lib/node_modules/npm/docs/output/commands/npm-sbom.html
 lib/node_modules/npm/docs/output/commands/npm-search.html
 lib/node_modules/npm/docs/output/commands/npm-set.html
 lib/node_modules/npm/docs/output/commands/npm-shrinkwrap.html
+lib/node_modules/npm/docs/output/commands/npm-stage.html
 lib/node_modules/npm/docs/output/commands/npm-star.html
 lib/node_modules/npm/docs/output/commands/npm-stars.html
 lib/node_modules/npm/docs/output/commands/npm-start.html
@@ -1787,6 +1810,7 @@ lib/node_modules/npm/lib/cli/validate-engines.js
 lib/node_modules/npm/lib/commands/
 lib/node_modules/npm/lib/commands/access.js
 lib/node_modules/npm/lib/commands/adduser.js
+lib/node_modules/npm/lib/commands/approve-scripts.js
 lib/node_modules/npm/lib/commands/audit.js
 lib/node_modules/npm/lib/commands/bugs.js
 lib/node_modules/npm/lib/commands/cache.js
@@ -1794,6 +1818,7 @@ lib/node_modules/npm/lib/commands/ci.js
 lib/node_modules/npm/lib/commands/completion.js
 lib/node_modules/npm/lib/commands/config.js
 lib/node_modules/npm/lib/commands/dedupe.js
+lib/node_modules/npm/lib/commands/deny-scripts.js
 lib/node_modules/npm/lib/commands/deprecate.js
 lib/node_modules/npm/lib/commands/diff.js
 lib/node_modules/npm/lib/commands/dist-tag.js
@@ -1837,6 +1862,14 @@ lib/node_modules/npm/lib/commands/sbom.js
 lib/node_modules/npm/lib/commands/search.js
 lib/node_modules/npm/lib/commands/set.js
 lib/node_modules/npm/lib/commands/shrinkwrap.js
+lib/node_modules/npm/lib/commands/stage/
+lib/node_modules/npm/lib/commands/stage/approve.js
+lib/node_modules/npm/lib/commands/stage/download.js
+lib/node_modules/npm/lib/commands/stage/index.js
+lib/node_modules/npm/lib/commands/stage/list.js
+lib/node_modules/npm/lib/commands/stage/publish.js
+lib/node_modules/npm/lib/commands/stage/reject.js
+lib/node_modules/npm/lib/commands/stage/view.js
 lib/node_modules/npm/lib/commands/star.js
 lib/node_modules/npm/lib/commands/stars.js
 lib/node_modules/npm/lib/commands/start.js
@@ -1864,8 +1897,11 @@ lib/node_modules/npm/lib/npm.js
 lib/node_modules/npm/lib/package-url-cmd.js
 lib/node_modules/npm/lib/trust-cmd.js
 lib/node_modules/npm/lib/utils/
+lib/node_modules/npm/lib/utils/allow-scripts-cmd.js
+lib/node_modules/npm/lib/utils/allow-scripts-writer.js
 lib/node_modules/npm/lib/utils/audit-error.js
 lib/node_modules/npm/lib/utils/auth.js
+lib/node_modules/npm/lib/utils/check-allow-scripts.js
 lib/node_modules/npm/lib/utils/cmd-list.js
 lib/node_modules/npm/lib/utils/completion.fish
 lib/node_modules/npm/lib/utils/completion.sh
@@ -1882,6 +1918,7 @@ lib/node_modules/npm/lib/utils/get-workspaces.js
 lib/node_modules/npm/lib/utils/installed-deep.js
 lib/node_modules/npm/lib/utils/installed-shallow.js
 lib/node_modules/npm/lib/utils/is-windows.js
+lib/node_modules/npm/lib/utils/key-values.js
 lib/node_modules/npm/lib/utils/log-file.js
 lib/node_modules/npm/lib/utils/npm-usage.js
 lib/node_modules/npm/lib/utils/oidc.js
@@ -1892,17 +1929,22 @@ lib/node_modules/npm/lib/utils/queryable.js
 lib/node_modules/npm/lib/utils/read-user-info.js
 lib/node_modules/npm/lib/utils/reify-finish.js
 lib/node_modules/npm/lib/utils/reify-output.js
+lib/node_modules/npm/lib/utils/resolve-allow-scripts.js
 lib/node_modules/npm/lib/utils/sbom-cyclonedx.js
 lib/node_modules/npm/lib/utils/sbom-spdx.js
+lib/node_modules/npm/lib/utils/strict-allow-scripts-preflight.js
 lib/node_modules/npm/lib/utils/tar.js
 lib/node_modules/npm/lib/utils/timers.js
 lib/node_modules/npm/lib/utils/update-workspaces.js
 lib/node_modules/npm/lib/utils/validate-lockfile.js
+lib/node_modules/npm/lib/utils/validate-uuid.js
 lib/node_modules/npm/lib/utils/verify-signatures.js
+lib/node_modules/npm/lib/utils/warn-workspace-allow-scripts.js
 @mandir lib/node_modules/npm/man/
 lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/npm-access.1
 @man lib/node_modules/npm/man/man1/npm-adduser.1
+@man lib/node_modules/npm/man/man1/npm-approve-scripts.1
 @man lib/node_modules/npm/man/man1/npm-audit.1
 @man lib/node_modules/npm/man/man1/npm-bugs.1
 @man lib/node_modules/npm/man/man1/npm-cache.1
@@ -1910,6 +1952,7 @@ lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/npm-completion.1
 @man lib/node_modules/npm/man/man1/npm-config.1
 @man lib/node_modules/npm/man/man1/npm-dedupe.1
+@man lib/node_modules/npm/man/man1/npm-deny-scripts.1
 @man lib/node_modules/npm/man/man1/npm-deprecate.1
 @man lib/node_modules/npm/man/man1/npm-diff.1
 @man lib/node_modules/npm/man/man1/npm-dist-tag.1
@@ -1953,6 +1996,7 @@ lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/npm-search.1
 @man lib/node_modules/npm/man/man1/npm-set.1
 @man lib/node_modules/npm/man/man1/npm-shrinkwrap.1
+@man lib/node_modules/npm/man/man1/npm-stage.1
 @man lib/node_modules/npm/man/man1/npm-star.1
 @man lib/node_modules/npm/man/man1/npm-stars.1
 @man lib/node_modules/npm/man/man1/npm-start.1
@@ -2105,6 +2149,7 @@ lib/node_modules/npm/node_modules/tiny-relative-date
 lib/node_modules/npm/node_modules/tinyglobby
 lib/node_modules/npm/node_modules/treeverse
 lib/node_modules/npm/node_modules/tuf-js
+lib/node_modules/npm/node_modules/undici
 lib/node_modules/npm/node_modules/util-deprecate
 lib/node_modules/npm/node_modules/validate-npm-package-name
 lib/node_modules/npm/node_modules/walk-up-path
@@ -2303,6 +2348,7 @@ lib/node_modules/semver/functions/rcompare.js
 lib/node_modules/semver/functions/rsort.js
 lib/node_modules/semver/functions/satisfies.js
 lib/node_modules/semver/functions/sort.js
+lib/node_modules/semver/functions/truncate.js
 lib/node_modules/semver/functions/valid.js
 lib/node_modules/semver/index.js
 lib/node_modules/semver/internal/
@@ -2557,6 +2603,162 @@ lib/node_modules/tuf-js/dist/utils/
 lib/node_modules/tuf-js/dist/utils/tmpfile.js
 lib/node_modules/tuf-js/dist/utils/url.js
 lib/node_modules/tuf-js/package.json
+lib/node_modules/undici/
+lib/node_modules/undici/LICENSE
+lib/node_modules/undici/docs/
+lib/node_modules/undici/docs/docs/
+lib/node_modules/undici/docs/docs/api/
+lib/node_modules/undici/docs/docs/api/Agent.md
+lib/node_modules/undici/docs/docs/api/BalancedPool.md
+lib/node_modules/undici/docs/docs/api/CacheStorage.md
+lib/node_modules/undici/docs/docs/api/Client.md
+lib/node_modules/undici/docs/docs/api/Connector.md
+lib/node_modules/undici/docs/docs/api/ContentType.md
+lib/node_modules/undici/docs/docs/api/Cookies.md
+lib/node_modules/undici/docs/docs/api/Debug.md
+lib/node_modules/undici/docs/docs/api/DiagnosticsChannel.md
+lib/node_modules/undici/docs/docs/api/DispatchInterceptor.md
+lib/node_modules/undici/docs/docs/api/Dispatcher.md
+lib/node_modules/undici/docs/docs/api/EnvHttpProxyAgent.md
+lib/node_modules/undici/docs/docs/api/Errors.md
+lib/node_modules/undici/docs/docs/api/EventSource.md
+lib/node_modules/undici/docs/docs/api/Fetch.md
+lib/node_modules/undici/docs/docs/api/MockAgent.md
+lib/node_modules/undici/docs/docs/api/MockClient.md
+lib/node_modules/undici/docs/docs/api/MockErrors.md
+lib/node_modules/undici/docs/docs/api/MockPool.md
+lib/node_modules/undici/docs/docs/api/Pool.md
+lib/node_modules/undici/docs/docs/api/PoolStats.md
+lib/node_modules/undici/docs/docs/api/ProxyAgent.md
+lib/node_modules/undici/docs/docs/api/RedirectHandler.md
+lib/node_modules/undici/docs/docs/api/RetryAgent.md
+lib/node_modules/undici/docs/docs/api/RetryHandler.md
+lib/node_modules/undici/docs/docs/api/Util.md
+lib/node_modules/undici/docs/docs/api/WebSocket.md
+lib/node_modules/undici/docs/docs/api/api-lifecycle.md
+lib/node_modules/undici/docs/docs/best-practices/
+lib/node_modules/undici/docs/docs/best-practices/client-certificate.md
+lib/node_modules/undici/docs/docs/best-practices/mocking-request.md
+lib/node_modules/undici/docs/docs/best-practices/proxy.md
+lib/node_modules/undici/docs/docs/best-practices/writing-tests.md
+lib/node_modules/undici/index-fetch.js
+lib/node_modules/undici/index.js
+lib/node_modules/undici/lib/
+lib/node_modules/undici/lib/api/
+lib/node_modules/undici/lib/api/abort-signal.js
+lib/node_modules/undici/lib/api/api-connect.js
+lib/node_modules/undici/lib/api/api-pipeline.js
+lib/node_modules/undici/lib/api/api-request.js
+lib/node_modules/undici/lib/api/api-stream.js
+lib/node_modules/undici/lib/api/api-upgrade.js
+lib/node_modules/undici/lib/api/index.js
+lib/node_modules/undici/lib/api/readable.js
+lib/node_modules/undici/lib/api/util.js
+lib/node_modules/undici/lib/core/
+lib/node_modules/undici/lib/core/connect.js
+lib/node_modules/undici/lib/core/constants.js
+lib/node_modules/undici/lib/core/diagnostics.js
+lib/node_modules/undici/lib/core/errors.js
+lib/node_modules/undici/lib/core/request.js
+lib/node_modules/undici/lib/core/symbols.js
+lib/node_modules/undici/lib/core/tree.js
+lib/node_modules/undici/lib/core/util.js
+lib/node_modules/undici/lib/dispatcher/
+lib/node_modules/undici/lib/dispatcher/agent.js
+lib/node_modules/undici/lib/dispatcher/balanced-pool.js
+lib/node_modules/undici/lib/dispatcher/client-h1.js
+lib/node_modules/undici/lib/dispatcher/client-h2.js
+lib/node_modules/undici/lib/dispatcher/client.js
+lib/node_modules/undici/lib/dispatcher/dispatcher-base.js
+lib/node_modules/undici/lib/dispatcher/dispatcher.js
+lib/node_modules/undici/lib/dispatcher/env-http-proxy-agent.js
+lib/node_modules/undici/lib/dispatcher/fixed-queue.js
+lib/node_modules/undici/lib/dispatcher/pool-base.js
+lib/node_modules/undici/lib/dispatcher/pool-stats.js
+lib/node_modules/undici/lib/dispatcher/pool.js
+lib/node_modules/undici/lib/dispatcher/proxy-agent.js
+lib/node_modules/undici/lib/dispatcher/retry-agent.js
+lib/node_modules/undici/lib/global.js
+lib/node_modules/undici/lib/handler/
+lib/node_modules/undici/lib/handler/decorator-handler.js
+lib/node_modules/undici/lib/handler/redirect-handler.js
+lib/node_modules/undici/lib/handler/retry-handler.js
+lib/node_modules/undici/lib/interceptor/
+lib/node_modules/undici/lib/interceptor/dns.js
+lib/node_modules/undici/lib/interceptor/dump.js
+lib/node_modules/undici/lib/interceptor/redirect-interceptor.js
+lib/node_modules/undici/lib/interceptor/redirect.js
+lib/node_modules/undici/lib/interceptor/response-error.js
+lib/node_modules/undici/lib/interceptor/retry.js
+lib/node_modules/undici/lib/llhttp/
+lib/node_modules/undici/lib/llhttp/constants.js
+lib/node_modules/undici/lib/llhttp/llhttp-wasm.js
+lib/node_modules/undici/lib/llhttp/llhttp_simd-wasm.js
+lib/node_modules/undici/lib/llhttp/utils.js
+lib/node_modules/undici/lib/mock/
+lib/node_modules/undici/lib/mock/mock-agent.js
+lib/node_modules/undici/lib/mock/mock-client.js
+lib/node_modules/undici/lib/mock/mock-errors.js
+lib/node_modules/undici/lib/mock/mock-interceptor.js
+lib/node_modules/undici/lib/mock/mock-pool.js
+lib/node_modules/undici/lib/mock/mock-symbols.js
+lib/node_modules/undici/lib/mock/mock-utils.js
+lib/node_modules/undici/lib/mock/pending-interceptors-formatter.js
+lib/node_modules/undici/lib/mock/pluralizer.js
+lib/node_modules/undici/lib/util/
+lib/node_modules/undici/lib/util/timers.js
+lib/node_modules/undici/lib/web/
+lib/node_modules/undici/lib/web/cache/
+lib/node_modules/undici/lib/web/cache/cache.js
+lib/node_modules/undici/lib/web/cache/cachestorage.js
+lib/node_modules/undici/lib/web/cache/symbols.js
+lib/node_modules/undici/lib/web/cache/util.js
+lib/node_modules/undici/lib/web/cookies/
+lib/node_modules/undici/lib/web/cookies/constants.js
+lib/node_modules/undici/lib/web/cookies/index.js
+lib/node_modules/undici/lib/web/cookies/parse.js
+lib/node_modules/undici/lib/web/cookies/util.js
+lib/node_modules/undici/lib/web/eventsource/
+lib/node_modules/undici/lib/web/eventsource/eventsource-stream.js
+lib/node_modules/undici/lib/web/eventsource/eventsource.js
+lib/node_modules/undici/lib/web/eventsource/util.js
+lib/node_modules/undici/lib/web/fetch/
+lib/node_modules/undici/lib/web/fetch/LICENSE
+lib/node_modules/undici/lib/web/fetch/body.js
+lib/node_modules/undici/lib/web/fetch/constants.js
+lib/node_modules/undici/lib/web/fetch/data-url.js
+lib/node_modules/undici/lib/web/fetch/dispatcher-weakref.js
+lib/node_modules/undici/lib/web/fetch/file.js
+lib/node_modules/undici/lib/web/fetch/formdata-parser.js
+lib/node_modules/undici/lib/web/fetch/formdata.js
+lib/node_modules/undici/lib/web/fetch/global.js
+lib/node_modules/undici/lib/web/fetch/headers.js
+lib/node_modules/undici/lib/web/fetch/index.js
+lib/node_modules/undici/lib/web/fetch/request.js
+lib/node_modules/undici/lib/web/fetch/response.js
+lib/node_modules/undici/lib/web/fetch/symbols.js
+lib/node_modules/undici/lib/web/fetch/util.js
+lib/node_modules/undici/lib/web/fetch/webidl.js
+lib/node_modules/undici/lib/web/fileapi/
+lib/node_modules/undici/lib/web/fileapi/encoding.js
+lib/node_modules/undici/lib/web/fileapi/filereader.js
+lib/node_modules/undici/lib/web/fileapi/progressevent.js
+lib/node_modules/undici/lib/web/fileapi/symbols.js
+lib/node_modules/undici/lib/web/fileapi/util.js
+lib/node_modules/undici/lib/web/websocket/
+lib/node_modules/undici/lib/web/websocket/connection.js
+lib/node_modules/undici/lib/web/websocket/constants.js
+lib/node_modules/undici/lib/web/websocket/events.js
+lib/node_modules/undici/lib/web/websocket/frame.js
+lib/node_modules/undici/lib/web/websocket/permessage-deflate.js
+lib/node_modules/undici/lib/web/websocket/receiver.js
+lib/node_modules/undici/lib/web/websocket/sender.js
+lib/node_modules/undici/lib/web/websocket/symbols.js
+lib/node_modules/undici/lib/web/websocket/util.js
+lib/node_modules/undici/lib/web/websocket/websocket.js
+lib/node_modules/undici/package.json
+lib/node_modules/undici/scripts/
+lib/node_modules/undici/scripts/strip-comments.js
 lib/node_modules/util-deprecate/
 lib/node_modules/util-deprecate/History.md
 lib/node_modules/util-deprecate/LICENSE

@@ -1,7 +1,7 @@
 Index: common.gypi
 --- common.gypi.orig
 +++ common.gypi
-@@ -42,6 +42,9 @@
+@@ -44,6 +44,9 @@
  
      ##### V8 defaults for Node.js #####
  
@@ -11,7 +11,7 @@ Index: common.gypi
      # Turn on SipHash for hash seed generation, addresses HashWick
      'v8_use_siphash': 'true',
  
-@@ -196,7 +199,6 @@
+@@ -198,7 +201,6 @@
              }],
            ],
          },
@@ -19,7 +19,7 @@ Index: common.gypi
          'conditions': [
            ['enable_lto=="true"', {
              'cflags': ['<(lto)'],
-@@ -524,8 +526,10 @@
+@@ -588,8 +590,10 @@
              'standalone_static_library': 1,
            }],
            ['OS=="openbsd"', {
@@ -32,7 +32,7 @@ Index: common.gypi
            }],
            ['_toolset=="host"', {
              'conditions': [
-@@ -537,7 +541,7 @@
+@@ -601,7 +605,7 @@
                  'cflags': [ '-m64' ],
                  'ldflags': [ '-m64' ],
                }],
