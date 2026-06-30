@@ -4,44 +4,44 @@
 @bin bin/icecast
 share/doc/icecast/
 share/doc/icecast/AUTHORS
+share/doc/icecast/COPYING
+share/doc/icecast/ChangeLog
 share/doc/icecast/NEWS
-share/doc/icecast/admin-interface.html
-share/doc/icecast/assets/
-share/doc/icecast/assets/css/
-share/doc/icecast/assets/css/style.css
-share/doc/icecast/assets/font/
-share/doc/icecast/assets/font/FiraMono-Bold.eot
-share/doc/icecast/assets/font/FiraMono-Bold.woff
-share/doc/icecast/assets/font/FiraMono-Regular.eot
-share/doc/icecast/assets/font/FiraMono-Regular.woff
-share/doc/icecast/assets/font/FiraSans-Bold.eot
-share/doc/icecast/assets/font/FiraSans-Bold.woff
-share/doc/icecast/assets/font/FiraSans-BoldItalic.eot
-share/doc/icecast/assets/font/FiraSans-BoldItalic.woff
-share/doc/icecast/assets/font/FiraSans-Italic.eot
-share/doc/icecast/assets/font/FiraSans-Italic.woff
-share/doc/icecast/assets/font/FiraSans-Regular.eot
-share/doc/icecast/assets/font/FiraSans-Regular.woff
-share/doc/icecast/assets/img/
-share/doc/icecast/assets/img/xiph-community.svg
-share/doc/icecast/auth.html
-share/doc/icecast/basic-setup.html
-share/doc/icecast/changes.html
-share/doc/icecast/config-file.html
-share/doc/icecast/faq.html
-share/doc/icecast/glossary.html
+share/doc/icecast/README.md
+share/doc/icecast/admin_interface/
+share/doc/icecast/admin_interface/index.html
+share/doc/icecast/auth/
+share/doc/icecast/auth/index.html
+share/doc/icecast/basic_setup/
+share/doc/icecast/basic_setup/index.html
+share/doc/icecast/config_file/
+share/doc/icecast/config_file/index.html
+share/doc/icecast/css/
+share/doc/icecast/css/highlight.css
+share/doc/icecast/css/theme.css
+share/doc/icecast/css/theme_extra.css
+share/doc/icecast/fonts/
+share/doc/icecast/fonts/fontawesome-webfont.eot
+share/doc/icecast/fonts/fontawesome-webfont.svg
+share/doc/icecast/fonts/fontawesome-webfont.ttf
+share/doc/icecast/fonts/fontawesome-webfont.woff
 share/doc/icecast/img/
-share/doc/icecast/img/listener_auth1.png
-share/doc/icecast/img/listener_auth2.png
-share/doc/icecast/img/listener_auth3.png
-share/doc/icecast/img/masterslave.png
-share/doc/icecast/img/relay.png
+share/doc/icecast/img/Icecast_shema.svg
+share/doc/icecast/img/favicon.ico
 share/doc/icecast/index.html
-share/doc/icecast/introduction.html
-share/doc/icecast/relaying.html
-share/doc/icecast/server-stats.html
-share/doc/icecast/win32.html
-share/doc/icecast/yp.html
+share/doc/icecast/js/
+share/doc/icecast/js/highlight.pack.js
+share/doc/icecast/js/jquery-2.1.1.min.js
+share/doc/icecast/js/modernizr-2.8.3.min.js
+share/doc/icecast/js/theme.js
+share/doc/icecast/relaying/
+share/doc/icecast/relaying/index.html
+share/doc/icecast/server_stats/
+share/doc/icecast/server_stats/index.html
+share/doc/icecast/win32/
+share/doc/icecast/win32/index.html
+share/doc/icecast/yp/
+share/doc/icecast/yp/index.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/icecast/
 @owner _icecast
@@ -49,8 +49,40 @@ share/examples/icecast/
 @sample /var/icecast/
 @sample /var/icecast/admin/
 share/examples/icecast/admin/
+share/examples/icecast/admin/dashboard.xsl
+@sample /var/icecast/admin/dashboard.xsl
+share/examples/icecast/admin/error-html.xsl
+@sample /var/icecast/admin/error-html.xsl
+share/examples/icecast/admin/error-plaintext.xsl
+@sample /var/icecast/admin/error-plaintext.xsl
+share/examples/icecast/admin/fallbacks.xsl
+@sample /var/icecast/admin/fallbacks.xsl
+share/examples/icecast/admin/includes/
+@sample /var/icecast/admin/includes/
+share/examples/icecast/admin/includes/authlist.xsl
+@sample /var/icecast/admin/includes/authlist.xsl
+share/examples/icecast/admin/includes/confirm.xsl
+@sample /var/icecast/admin/includes/confirm.xsl
+share/examples/icecast/admin/includes/footer.xsl
+@sample /var/icecast/admin/includes/footer.xsl
+share/examples/icecast/admin/includes/head.xsl
+@sample /var/icecast/admin/includes/head.xsl
+share/examples/icecast/admin/includes/header.xsl
+@sample /var/icecast/admin/includes/header.xsl
+share/examples/icecast/admin/includes/mountnav.xsl
+@sample /var/icecast/admin/includes/mountnav.xsl
+share/examples/icecast/admin/includes/page.xsl
+@sample /var/icecast/admin/includes/page.xsl
+share/examples/icecast/admin/includes/player.xsl
+@sample /var/icecast/admin/includes/player.xsl
+share/examples/icecast/admin/includes/playlist.xsl
+@sample /var/icecast/admin/includes/playlist.xsl
+share/examples/icecast/admin/includes/web-page.xsl
+@sample /var/icecast/admin/includes/web-page.xsl
 share/examples/icecast/admin/listclients.xsl
 @sample /var/icecast/admin/listclients.xsl
+share/examples/icecast/admin/listensocketlist.xsl
+@sample /var/icecast/admin/listensocketlist.xsl
 share/examples/icecast/admin/listmounts.xsl
 @sample /var/icecast/admin/listmounts.xsl
 share/examples/icecast/admin/manageauth.xsl
@@ -59,12 +91,26 @@ share/examples/icecast/admin/moveclients.xsl
 @sample /var/icecast/admin/moveclients.xsl
 share/examples/icecast/admin/response.xsl
 @sample /var/icecast/admin/response.xsl
+share/examples/icecast/admin/showlog.xsl
+@sample /var/icecast/admin/showlog.xsl
 share/examples/icecast/admin/stats.xsl
 @sample /var/icecast/admin/stats.xsl
+share/examples/icecast/admin/ui/
+@sample /var/icecast/admin/ui/
+share/examples/icecast/admin/ui/confirmdeleteuser.xsl
+@sample /var/icecast/admin/ui/confirmdeleteuser.xsl
+share/examples/icecast/admin/ui/confirmkillclient.xsl
+@sample /var/icecast/admin/ui/confirmkillclient.xsl
+share/examples/icecast/admin/ui/confirmkilldumpfile.xsl
+@sample /var/icecast/admin/ui/confirmkilldumpfile.xsl
+share/examples/icecast/admin/ui/confirmkillsource.xsl
+@sample /var/icecast/admin/ui/confirmkillsource.xsl
 share/examples/icecast/admin/updatemetadata.xsl
 @sample /var/icecast/admin/updatemetadata.xsl
 share/examples/icecast/admin/vclt.xsl
 @sample /var/icecast/admin/vclt.xsl
+share/examples/icecast/admin/version.xsl
+@sample /var/icecast/admin/version.xsl
 share/examples/icecast/admin/xspf.xsl
 @sample /var/icecast/admin/xspf.xsl
 @mode 600
@@ -73,26 +119,35 @@ share/examples/icecast/icecast.xml.dist
 @mode
 share/examples/icecast/icecast_minimal.xml.dist
 share/examples/icecast/icecast_shoutcast_compat.xml.dist
-share/examples/icecast/icecast_urlauth.xml.dist
 share/examples/icecast/web/
 @sample /var/icecast/web/
+share/examples/icecast/web/assets/
+@sample /var/icecast/web/assets/
+share/examples/icecast/web/assets/css/
+@sample /var/icecast/web/assets/css/
+share/examples/icecast/web/assets/css/style.css
+@sample /var/icecast/web/assets/css/style.css
+share/examples/icecast/web/assets/img/
+@sample /var/icecast/web/assets/img/
+share/examples/icecast/web/assets/img/icecast.png
+@sample /var/icecast/web/assets/img/icecast.png
 share/examples/icecast/web/auth.xsl
 @sample /var/icecast/web/auth.xsl
-share/examples/icecast/web/icecast.png
-@sample /var/icecast/web/icecast.png
-share/examples/icecast/web/key.png
-@sample /var/icecast/web/key.png
+share/examples/icecast/web/favicon.ico
+@sample /var/icecast/web/favicon.ico
+@owner _icecast
+@group _icecast
 share/examples/icecast/web/server_version.xsl
 @sample /var/icecast/web/server_version.xsl
 share/examples/icecast/web/status-json.xsl
 @sample /var/icecast/web/status-json.xsl
 share/examples/icecast/web/status.xsl
 @sample /var/icecast/web/status.xsl
-share/examples/icecast/web/style.css
-@sample /var/icecast/web/style.css
-share/examples/icecast/web/tunein.png
-@sample /var/icecast/web/tunein.png
 @sample /var/icecast/log/
 @sample /var/icecast/etc/
 share/examples/icecast/web/xml2json.xslt
 @sample /var/icecast/web/xml2json.xslt
+@owner
+@group
+share/icecast/
+share/icecast/report-db.xml

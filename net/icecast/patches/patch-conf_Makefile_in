@@ -1,7 +1,7 @@
 Index: conf/Makefile.in
 --- conf/Makefile.in.orig
 +++ conf/Makefile.in
-@@ -281,7 +281,7 @@ build_vendor = @build_vendor@
+@@ -282,7 +282,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@
@@ -10,7 +10,7 @@ Index: conf/Makefile.in
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
-@@ -480,7 +480,6 @@ info-am:
+@@ -479,7 +479,6 @@ info-am:
  
  install-data-am: install-docDATA
  	@$(NORMAL_INSTALL)

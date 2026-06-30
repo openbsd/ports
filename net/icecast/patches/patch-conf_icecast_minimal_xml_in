@@ -1,8 +1,9 @@
---- conf/icecast_minimal.xml.in.orig	Mon Nov 10 00:17:57 2014
-+++ conf/icecast_minimal.xml.in	Sun Jan  4 17:06:40 2015
+Index: conf/icecast_minimal.xml.in
+--- conf/icecast_minimal.xml.in.orig
++++ conf/icecast_minimal.xml.in
 @@ -23,9 +23,10 @@
+         <port>8000</port>
      </listen-socket>
-     <fileserve>1</fileserve>
      <paths>
 -        <logdir>@localstatedir@/log/@PACKAGE@</logdir>
 -        <webroot>@pkgdatadir@/web</webroot>
@@ -16,15 +17,15 @@
      <logging>
 @@ -33,6 +34,13 @@
          <errorlog>error.log</errorlog>
-         <loglevel>3</loglevel> <!-- 4 Debug, 3 Info, 2 Warn, 1 Error -->
+         <loglevel>information</loglevel> <!-- "debug", "information", "warning", or "error" -->
      </logging>
 +    <security>
-+        <chroot>1</chroot>  
++        <chroot>true</chroot>
 +        <changeowner>
 +            <user>_icecast</user>
 +            <group>_icecast</group>
 +        </changeowner>
 +    </security>
      <http-headers>
-         <header name="Access-Control-Allow-Origin" value="*" />
-     </http-headers>
+         <header type="cors" name="Access-Control-Allow-Origin" />
+         <header type="cors" name="Access-Control-Allow-Headers" />

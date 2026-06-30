@@ -1,7 +1,7 @@
 Index: conf/icecast.xml.in
 --- conf/icecast.xml.in.orig
 +++ conf/icecast.xml.in
-@@ -66,7 +66,7 @@
+@@ -68,7 +68,7 @@
      <!-- You may have multiple <listen-socket> elements -->
      <listen-socket>
          <port>8000</port>
@@ -10,33 +10,31 @@ Index: conf/icecast.xml.in
          <!-- <shoutcast-mount>/stream</shoutcast-mount> -->
      </listen-socket>
      <!--
-@@ -191,14 +191,14 @@
+@@ -258,13 +258,13 @@
  
      <paths>
          <!-- basedir is only used if chroot is enabled -->
 -        <basedir>@pkgdatadir@</basedir>
 +        <basedir>/var/icecast</basedir>
  
-         <!-- Note that if <chroot> is turned on below, these paths must both
+         <!-- Note that if <chroot> is turned on below, these paths must all
               be relative to the new root, not the original root -->
 -        <logdir>@localstatedir@/log/@PACKAGE@</logdir>
 -        <webroot>@pkgdatadir@/web</webroot>
 -        <adminroot>@pkgdatadir@/admin</adminroot>
--        <!-- <pidfile>@pkgdatadir@/icecast.pid</pidfile> -->
 +        <logdir>/log</logdir>
 +        <webroot>/web</webroot>
 +        <adminroot>/admin</adminroot>
-+        <!-- <pidfile>@localstatedir@/run/icecast.pid</pidfile> -->
+         <reportxmldb>@pkgdatadir@/report-db.xml</reportxmldb>
+         <!-- <pidfile>@pkgdatadir@/icecast.pid</pidfile> -->
  
-         <!-- Aliases: treat requests for 'source' path as being for 'dest' path
-              May be made specific to a port or bound address using the "port"
-@@ -233,12 +233,10 @@
+@@ -297,13 +297,11 @@
      </logging>
  
      <security>
--        <chroot>0</chroot>
+-        <chroot>false</chroot>
 -        <!--
-+        <chroot>1</chroot>  
++        <chroot>true</chroot>
          <changeowner>
 -            <user>nobody</user>
 -            <group>nogroup</group>
@@ -44,5 +42,14 @@ Index: conf/icecast.xml.in
 +            <group>_icecast</group>
          </changeowner>
 -        -->
-     </security>
- </icecast>
+ 
+         <tls-context>
+             <!-- The certificate file containng public and optionally private key.
+@@ -331,6 +329,7 @@
+              The linux profile includes the bsd profile but adds linux specific interfaces (such as /proc).
+         <prng-seed type="profile">linux</prng-seed>
+         -->
++        <prng-seed type="profile">bsd</prng-seed>
+         <!-- If your OS provides a urandom style device and there is no profile for your OS you can
+              provide a custom device name.
+              The size parameter defines how many bytes are read per (re)seeding. The optimal setting
