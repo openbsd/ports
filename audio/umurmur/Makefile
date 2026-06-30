@@ -2,8 +2,7 @@ COMMENT =		minimalistic Mumble server
 
 GH_ACCOUNT =		umurmur
 GH_PROJECT =		umurmur
-GH_TAGNAME =		0.2.20
-REVISION =		1
+GH_TAGNAME =		v0.3.1
 
 CATEGORIES =		audio
 
@@ -18,9 +17,6 @@ MODULES =		devel/cmake
 
 LIB_DEPENDS =		devel/libconfig \
 			devel/protobuf-c>=1.0.1
-
-CONFIGURE_ARGS =	-DSSL=openssl
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 NO_TEST =		Yes
 

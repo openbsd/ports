@@ -14,7 +14,7 @@ Index: umurmur.conf.example
 @@ -18,9 +18,9 @@ max_users = 10;
  
  # username and groupname for privilege dropping.
- # Will attempt to switch user if set. 
+ # Will attempt to switch user if set.
 -# username = "";
 +username = "_umurmur";
  # If groupname not set the user's default login group will be used

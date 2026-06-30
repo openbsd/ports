@@ -10,11 +10,11 @@ Index: CMakeLists.txt
  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${UMURMUR_BINARY_DIR}")
  
  if(NOT CMAKE_BUILD_TYPE)
-@@ -27,7 +27,7 @@ add_subdirectory(src)
+@@ -31,7 +31,7 @@ add_subdirectory(src)
  
  install(
    FILES "umurmur.conf.example"
--  DESTINATION "${CMAKE_INSTALL_FULL_SYSCONFDIR}/"
+-  DESTINATION "${CMAKE_INSTALL_FULL_SYSCONFDIR}/umurmur"
 +  DESTINATION "share/examples/umurmur"
    PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ
    RENAME "umurmur.conf"
