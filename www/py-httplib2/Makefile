@@ -1,6 +1,6 @@
 COMMENT=	Python HTTP client library
 
-MODPY_DISTV=	0.31.2
+MODPY_DISTV=	0.32.0
 DISTNAME=	httplib2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

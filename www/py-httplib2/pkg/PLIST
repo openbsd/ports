@@ -15,6 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}auth.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}certs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}certs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}decode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}decode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}iri2uri.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -22,5 +24,6 @@ lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}iri2uri.${MODP
 lib/python${MODPY_VERSION}/site-packages/httplib2/auth.py
 lib/python${MODPY_VERSION}/site-packages/httplib2/cacerts.txt
 lib/python${MODPY_VERSION}/site-packages/httplib2/certs.py
+lib/python${MODPY_VERSION}/site-packages/httplib2/decode.py
 lib/python${MODPY_VERSION}/site-packages/httplib2/error.py
 lib/python${MODPY_VERSION}/site-packages/httplib2/iri2uri.py
