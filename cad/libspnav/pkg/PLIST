@@ -1,0 +1,6 @@
+include/spnav.h
+include/spnav_config.h
+include/spnav_magellan.h
+@static-lib lib/libspnav.a
+@lib lib/libspnav.so.${LIBspnav_VERSION}
+lib/pkgconfig/spnav.pc

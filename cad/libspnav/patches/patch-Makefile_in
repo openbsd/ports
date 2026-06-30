@@ -1,0 +1,41 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -20,8 +20,8 @@ else
+ 	so_major = 0
+ 	so_minor = 4
+ 	devlink = lib$(name).so
+-	soname = $(devlink).$(so_major)
+-	lib_so = $(soname).$(so_minor)
++	soname = $(devlink).${LIBspnav_VERSION}
++	lib_so = ${soname}
+ 	shared = -shared -Wl,-soname,$(soname)
+ 	pic = -fPIC
+ endif
+@@ -52,15 +52,9 @@ install: $(lib_a) $(lib_so) $(hdr)
+ 	mkdir -p $(DESTDIR)$(PREFIX)/$(libdir) $(DESTDIR)$(PREFIX)/include
+ 	cp $(lib_a) $(DESTDIR)$(PREFIX)/$(libdir)/$(lib_a)
+ 	cp $(lib_so) $(DESTDIR)$(PREFIX)/$(libdir)/$(lib_so)
+-	[ -n "$(soname)" ] && \
+-		rm -f $(DESTDIR)$(PREFIX)/$(libdir)/$(soname) $(DESTDIR)$(PREFIX)/$(libdir)/$(devlink) && \
+-		cd $(DESTDIR)$(PREFIX)/$(libdir) && \
+-		ln -s $(lib_so) $(soname) && \
+-		ln -s $(soname) $(devlink) || \
+-		true
+ 	for h in $(hdr); do cp -p $(srcdir)/$$h $(DESTDIR)$(PREFIX)/include/; done
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/pkgconfig
+-	cp spnav.pc $(DESTDIR)$(PREFIX)/share/pkgconfig/spnav.pc
++	mkdir -p $(DESTDIR)$(PREFIX)/lib/pkgconfig
++	cp spnav.pc $(DESTDIR)$(PREFIX)/lib/pkgconfig/spnav.pc
+ 
+ .PHONY: uninstall
+ uninstall:
+@@ -70,7 +64,7 @@ uninstall:
+ 		rm -f $(DESTDIR)$(PREFIX)/$(libdir)/$(soname) $(DESTDIR)$(PREFIX)/$(libdir)/$(devlink) || \
+ 		true
+ 	for i in $(hdr); do rm -f $(DESTDIR)$(PREFIX)/include/$$i; done
+-	rm -f $(DESTDIR)$(PREFIX)/share/pkgconfig/spnav.pc
++	rm -f $(DESTDIR)$(PREFIX)/lib/pkgconfig/spnav.pc
+ 
+ .PHONY: examples
+ examples:
