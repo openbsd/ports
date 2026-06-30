@@ -3,6 +3,7 @@ COMMENT=	C/C++ compiler front-end to cache compiled object code
 V=		4.13.6
 DISTNAME=	ccache-$V
 SITES=		https://github.com/ccache/ccache/releases/download/v$V/
+REVISION=	0
 
 D=		2.4.12
 DISTFILES.dt=	doctest-$D{doctest}.h
@@ -16,7 +17,7 @@ HOMEPAGE=	https://ccache.dev/
 # GPLv3+
 PERMIT_PACKAGE=	 Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c fmt hiredis m xxhash zstd
+WANTLIB += ${COMPILER_LIBCXX} blake3 c fmt hiredis m xxhash zstd
 
 MODULES=	devel/cmake
 CONFIGURE_ARGS=	-DCMAKE_INSTALL_SYSCONFDIR=${SYSCONFDIR}
@@ -30,6 +31,7 @@ BUILD_DEPENDS=	textproc/asciidoctor \
 LIB_DEPENDS=	archivers/zstd \
 		databases/libhiredis \
 		devel/fmt \
+		security/blake3 \
 		sysutils/xxhash
 
 TEST_DEPENDS=	shells/bash \
