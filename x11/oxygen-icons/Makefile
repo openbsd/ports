@@ -1,7 +1,7 @@
 COMMENT =	KDE Oxygen-style icon theme
 VERSION =	6.2.0
 DISTNAME =	oxygen-icons-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SITES =		${SITE_KDE:=stable/oxygen-icons/}
 EXTRACT_SUFX =	.tar.xz
@@ -22,9 +22,8 @@ PKG_ARCH =	*
 
 TEST_DEPENDS =	sysutils/fdupes
 
-MODULES =	devel/cmake \
+MODULES =	devel/kf6 \
 		lang/python \
-		x11/qt6
 
 MODPY_RUNDEP =	No
 MODQT6_DEPS =	No
