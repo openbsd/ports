@@ -1,10 +1,9 @@
 COMMENT =	unicode validator and transcoder with SIMD
 
-VERSION =	8.2.0
-REVISION =	0
+VERSION =	9.0.0
 DIST_TUPLE +=	github simdutf simdutf v${VERSION} .
 
-SHARED_LIBS =	simdutf 0.4
+SHARED_LIBS =	simdutf 0.5 # 34.0.0
 
 CATEGORIES =	textproc devel
 
@@ -19,6 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} c iconv m
 
 LIB_DEPENDS =		converters/libiconv
 
+# C++17
 COMPILER =		base-clang ports-gcc
 MODULES =		lang/python \
 			devel/cmake

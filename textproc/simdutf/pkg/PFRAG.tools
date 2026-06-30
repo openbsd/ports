@@ -1,2 +1,6 @@
 @bin bin/fastbase64
+@bin bin/fastbase64.coreutils
 @bin bin/sutf
+@man man/man1/fastbase64.1
+@man man/man1/fastbase64.coreutils.1
+@man man/man1/sutf.1
