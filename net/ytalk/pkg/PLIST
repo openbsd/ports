@@ -1,4 +1,4 @@
-bin/ytalk
+@bin bin/ytalk
 @man man/man1/ytalk.1
 share/examples/ytalk/
 share/examples/ytalk/ytalkrc-sample

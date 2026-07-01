@@ -1,7 +1,7 @@
 COMMENT=	enhanced talk that allows for multiple parties
 
 DISTNAME=	ytalk-3.1.1
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net
 
 SITES=		https://distfiles.sigtrap.nl/
