@@ -1,6 +1,6 @@
 COMMENT=		generic spell checking library
 
-V=			2.8.16
+V=			2.8.17
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
 
