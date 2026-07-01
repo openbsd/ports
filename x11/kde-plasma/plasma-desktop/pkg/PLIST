@@ -69,6 +69,7 @@ lib/qt6/qml/org/kde/private/desktopcontainment/folder/qmldir
 lib/systemd/user/plasma-kaccess.service
 @bin libexec/kimpanel-ibus-panel
 @bin libexec/kimpanel-ibus-panel-launcher
+@bin libexec/kimpanel-scim-panel
 share/accounts/providers/kde/opendesktop.provider
 share/accounts/services/kde/opendesktop-rating.service
 share/applications/kaccess.desktop

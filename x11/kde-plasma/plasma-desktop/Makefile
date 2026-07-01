@@ -32,6 +32,7 @@ BUILD_DEPENDS =	devel/kf6/kirigami \
 		textproc/intltool \
 		wayland/libevdev-openbsd \
 		wayland/plasma-wayland-protocols \
+		inputmethods/scim \
 		x11/kde-plasma/kwin>=${VERSION} \
 		x11/kde-plasma/plasma5support>=${VERSION}
 
@@ -39,6 +40,7 @@ RUN_DEPENDS =	devel/kf6/kirigami \
 		devel/kf6/qqc2-desktop-style \
 		x11/kde-applications/kaccounts-providers \
 		devel/desktop-file-utils \
+		inputmethods/scim \
 		x11/dbus,-suid
 
 LIB_DEPENDS =	devel/kf6/attica \
