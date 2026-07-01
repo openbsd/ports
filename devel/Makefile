@@ -108,6 +108,7 @@
      SUBDIR += cppunit
      SUBDIR += cpputest
      SUBDIR += crc32c
+     SUBDIR += crush
      SUBDIR += cryptopp
      SUBDIR += cscope
      SUBDIR += csmith
