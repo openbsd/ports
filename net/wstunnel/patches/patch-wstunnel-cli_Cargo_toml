@@ -4,7 +4,7 @@ Index: wstunnel-cli/Cargo.toml
 @@ -13,6 +13,7 @@ tracing-subscriber = { version = "0.3.23", features = 
  wstunnel = { path = "../wstunnel", default-features = false, features = ["clap"] }
  
- tikv-jemallocator = { version = "0.6", optional = true }
+ tikv-jemallocator = { version = "0.7", optional = true }
 +unveil = "0.3.2"
  
  [features]

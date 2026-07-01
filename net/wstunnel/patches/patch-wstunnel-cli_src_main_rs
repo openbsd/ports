@@ -1,8 +1,8 @@
 Index: wstunnel-cli/src/main.rs
 --- wstunnel-cli/src/main.rs.orig
 +++ wstunnel-cli/src/main.rs
-@@ -9,6 +9,8 @@ use wstunnel::config::{Client, Server};
- use wstunnel::executor::DefaultTokioExecutor;
+@@ -10,6 +10,8 @@ use wstunnel::executor::DefaultTokioExecutor;
+ use wstunnel::tunnel::ca_reloader::SystemCaReloader;
  use wstunnel::{run_client, run_server};
  
 +use unveil::unveil;
@@ -10,7 +10,7 @@ Index: wstunnel-cli/src/main.rs
  #[cfg(feature = "jemalloc")]
  use tikv_jemallocator::Jemalloc;
  
-@@ -94,6 +96,9 @@ async fn main() -> anyhow::Result<()> {
+@@ -98,6 +100,9 @@ async fn main() -> anyhow::Result<()> {
  
      match args.commands {
          Commands::Client(args) => {
@@ -20,7 +20,7 @@ Index: wstunnel-cli/src/main.rs
              run_client(*args, DefaultTokioExecutor::default())
                  .await
                  .unwrap_or_else(|err| {
-@@ -101,6 +106,31 @@ async fn main() -> anyhow::Result<()> {
+@@ -105,6 +110,31 @@ async fn main() -> anyhow::Result<()> {
                  });
          }
          Commands::Server(args) => {

@@ -1,7 +1,7 @@
 Index: Cargo.lock
 --- Cargo.lock.orig
 +++ Cargo.lock
-@@ -3953,6 +3953,15 @@ source = "registry+https://github.com/rust-lang/crates
+@@ -3906,6 +3906,15 @@ source = "registry+https://github.com/rust-lang/crates
  checksum = "8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1"
  
  [[package]]
@@ -17,7 +17,7 @@ Index: Cargo.lock
  name = "ureq"
  version = "3.3.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4625,6 +4634,7 @@ dependencies = [
+@@ -4456,6 +4465,7 @@ dependencies = [
   "tokio",
   "tracing",
   "tracing-subscriber",
