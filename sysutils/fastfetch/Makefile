@@ -2,7 +2,7 @@ COMMENT =	neofetch-like tool for fetching system information
 
 GH_ACCOUNT =	fastfetch-cli
 GH_PROJECT =	fastfetch
-GH_TAGNAME=	2.64.2
+GH_TAGNAME=	2.65.2
 
 CATEGORIES =	sysutils
 
@@ -27,8 +27,7 @@ BUILD_DEPENDS = databases/sqlite3 \
 		graphics/chafa \
 		graphics/ImageMagick \
 		wayland/wayland \
-		x11/dbus \
-		x11/xfce4/xfconf
+		x11/dbus
 RUN_DEPENDS =	misc/hwdata
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
