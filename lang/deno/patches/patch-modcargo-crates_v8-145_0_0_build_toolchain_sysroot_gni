@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-149.3.0/build/toolchain/sysroot.gni
---- modcargo-crates/v8-149.3.0/build/toolchain/sysroot.gni.orig
-+++ modcargo-crates/v8-149.3.0/build/toolchain/sysroot.gni
+Index: modcargo-crates/v8-149.4.0/build/toolchain/sysroot.gni
+--- modcargo-crates/v8-149.4.0/build/toolchain/sysroot.gni.orig
++++ modcargo-crates/v8-149.4.0/build/toolchain/sysroot.gni
 @@ -8,7 +8,9 @@ declare_args() {
    # Move the argument here to avoid complex dependencies and dependency loop
    # as this is needed by files in both config and toolchain directories.

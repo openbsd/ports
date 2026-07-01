@@ -22,11 +22,11 @@ Index: cli/Cargo.toml
  
  [build-dependencies]
  deno_runtime = { workspace = true }
-@@ -126,7 +126,6 @@ imara-diff.workspace = true
+@@ -134,7 +134,6 @@ imara-diff.workspace = true
  import_map.workspace = true
  indexmap.workspace = true
  jsonc-parser = { workspace = true, features = ["cst", "serde"] }
 -keyring = { version = "3.6.3", features = ["apple-native", "sync-secret-service", "windows-native", "vendored"] }
- lazy-regex.workspace = true
- libc.workspace = true
- libz-sys.workspace = true
+ lax-css.workspace = true
+ lax-markup.workspace = true
+ lax-sql.workspace = true

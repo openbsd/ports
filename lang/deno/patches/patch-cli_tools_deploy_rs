@@ -1,7 +1,7 @@
 Index: cli/tools/deploy.rs
 --- cli/tools/deploy.rs.orig
 +++ cli/tools/deploy.rs
-@@ -63,24 +63,10 @@ pub async fn deploy(
+@@ -60,22 +60,7 @@ pub async fn deploy(
    let worker_factory =
      Arc::new(factory.create_cli_main_worker_factory().await?);
  
@@ -22,6 +22,11 @@ Index: cli/tools/deploy.rs
 -
 -  Ok(worker.run().await?)
 +  Ok(0)
+ }
+ 
+ fn resolve_deploy_cli_version(
+@@ -84,6 +69,7 @@ fn resolve_deploy_cli_version(
+   info.latest.as_ref().or_else(|| info.versions.keys().max())
  }
  
 +#[cfg(not(target_os="openbsd"))]

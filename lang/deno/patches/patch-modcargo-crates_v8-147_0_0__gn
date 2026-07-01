@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-149.3.0/.gn
---- modcargo-crates/v8-149.3.0/.gn.orig
-+++ modcargo-crates/v8-149.3.0/.gn
+Index: modcargo-crates/v8-149.4.0/.gn
+--- modcargo-crates/v8-149.4.0/.gn.orig
++++ modcargo-crates/v8-149.4.0/.gn
 @@ -85,9 +85,9 @@ default_args = {
    # TODO: third_party/compiler-rt missing?
    use_llvm_libatomic = false

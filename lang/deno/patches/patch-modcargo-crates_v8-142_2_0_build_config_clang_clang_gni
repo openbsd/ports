@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-149.3.0/build/config/clang/clang.gni
---- modcargo-crates/v8-149.3.0/build/config/clang/clang.gni.orig
-+++ modcargo-crates/v8-149.3.0/build/config/clang/clang.gni
+Index: modcargo-crates/v8-149.4.0/build/config/clang/clang.gni
+--- modcargo-crates/v8-149.4.0/build/config/clang/clang.gni.orig
++++ modcargo-crates/v8-149.4.0/build/config/clang/clang.gni
 @@ -39,7 +39,7 @@ android_supported_cpus = [
    "x64",
    "x86",

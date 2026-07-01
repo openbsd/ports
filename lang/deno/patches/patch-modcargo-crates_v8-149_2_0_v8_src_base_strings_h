@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-149.3.0/v8/src/base/strings.h
---- modcargo-crates/v8-149.3.0/v8/src/base/strings.h.orig
-+++ modcargo-crates/v8-149.3.0/v8/src/base/strings.h
+Index: modcargo-crates/v8-149.4.0/v8/src/base/strings.h
+--- modcargo-crates/v8-149.4.0/v8/src/base/strings.h.orig
++++ modcargo-crates/v8-149.4.0/v8/src/base/strings.h
 @@ -9,6 +9,8 @@
  #include "src/base/macros.h"
  #include "src/base/vector.h"

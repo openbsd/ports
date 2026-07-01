@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-149.3.0/build/config/sanitizers/sanitizers.gni
---- modcargo-crates/v8-149.3.0/build/config/sanitizers/sanitizers.gni.orig
-+++ modcargo-crates/v8-149.3.0/build/config/sanitizers/sanitizers.gni
+Index: modcargo-crates/v8-149.4.0/build/config/sanitizers/sanitizers.gni
+--- modcargo-crates/v8-149.4.0/build/config/sanitizers/sanitizers.gni.orig
++++ modcargo-crates/v8-149.4.0/build/config/sanitizers/sanitizers.gni
 @@ -540,7 +540,7 @@ template("ubsan_hardening") {
          # be usable even in release builds, i.e. as widely as possible.
          # It's important not to have full-on UBSan workarounds activate

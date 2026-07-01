@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-149.3.0/build.rs
---- modcargo-crates/v8-149.3.0/build.rs.orig
-+++ modcargo-crates/v8-149.3.0/build.rs
+Index: modcargo-crates/v8-149.4.0/build.rs
+--- modcargo-crates/v8-149.4.0/build.rs.orig
++++ modcargo-crates/v8-149.4.0/build.rs
 @@ -255,7 +255,7 @@ fn build_v8(is_asan: bool) {
      download_ninja_gn_binaries();
    }
@@ -10,7 +10,7 @@ Index: modcargo-crates/v8-149.3.0/build.rs
  
    // `#[cfg(...)]` attributes don't work as expected from build.rs -- they refer to the configuration
    // of the host system which the build.rs script will be running on. In short, `cfg!(target_<os/arch>)`
-@@ -415,7 +415,6 @@ fn build_v8(is_asan: bool) {
+@@ -407,7 +407,6 @@ fn build_v8(is_asan: bool) {
      gn_args.push(format!(r#"target_cpu="{arch}""#).to_string());
      gn_args.push(r#"target_os="android""#.to_string());
      gn_args.push("treat_warnings_as_errors=false".to_string());

@@ -9,7 +9,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		runtime for JavaScript and TypeScript
 
-V =			2.8.3
+V =			2.9.1
 DIST_TUPLE =		github denoland deno v${V} .
 
 HOMEPAGE =		https://deno.com
@@ -83,7 +83,7 @@ DOCDIR =		${PREFIX}/share/doc/deno
 PORTHOME =		${WRKSRC}
 
 DENO_CORE_ICUDATA_V =	0.77.0
-V8_CARGO_V =		149.3.0
+V8_CARGO_V =		149.4.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo
