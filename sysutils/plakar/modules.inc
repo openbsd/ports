@@ -18,7 +18,7 @@ MODGO_MODULES =	\
 	github.com/!plakar!korp/integrations/ptar					 v1.1.0 \
 	github.com/!plakar!korp/integrations/stdio					 v1.1.0 \
 	github.com/!plakar!korp/integrations/tar					 v1.1.0 \
-	github.com/!plakar!korp/kloset							 v1.1.2 \
+	github.com/!plakar!korp/kloset							 v1.1.3 \
 	github.com/!plakar!korp/pkg							 v1.1.0 \
 	github.com/!proton!mail/go-crypto						 v1.1.6 \
 	github.com/!radu!berinde/axisds							 v0.1.0 \
