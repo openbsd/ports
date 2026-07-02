@@ -1,7 +1,6 @@
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
-DISTNAME=	openvpn-2.7.4
-REVISION=	0
+DISTNAME=	openvpn-2.7.5
 
 CATEGORIES=	net security
 
