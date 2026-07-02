@@ -28,5 +28,4 @@ lib/qt6/qml/org/kde/pkpass/kde-qmlmodule.version
 lib/qt6/qml/org/kde/pkpass/kpkpassqmlplugin.qmltypes
 @so lib/qt6/qml/org/kde/pkpass/libkpkpassqmlplugin.so
 lib/qt6/qml/org/kde/pkpass/qmldir
-share/mime/packages/application-vnd-apple-pkpasses.xml
 share/qlogging-categories6/org_kde_kpkpass.categories
