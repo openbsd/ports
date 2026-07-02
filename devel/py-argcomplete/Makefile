@@ -1,6 +1,6 @@
 COMMENT=	bash tab completion for argparse
 
-MODPY_DISTV=	3.6.3
+MODPY_DISTV=	3.7.0
 DISTNAME=	argcomplete-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
