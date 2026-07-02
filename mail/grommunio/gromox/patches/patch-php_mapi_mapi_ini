@@ -1,7 +1,7 @@
 Index: php_mapi/mapi.ini
 --- php_mapi/mapi.ini.orig
 +++ php_mapi/mapi.ini
-@@ -1,3 +1,8 @@
+@@ -1,5 +1,10 @@
  ; This enables the php-mapi extension
  extension=mapi.so
 +
@@ -10,3 +10,5 @@ Index: php_mapi/mapi.ini
 +
 +; chroot()'d php
  mapi.zcore_socket=/run/gromox/zcore.sock
+ opcache.enable=0
+ opcache.enable_cli=0

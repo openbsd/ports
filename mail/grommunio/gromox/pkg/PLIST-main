@@ -124,6 +124,7 @@ libexec/gromox/kdb-uidextract-limited
 @bin libexec/gromox/oab
 @bin libexec/gromox/oxdisco
 @bin libexec/gromox/pop3
+@bin libexec/gromox/shmget
 @bin libexec/gromox/textmapquery
 @bin libexec/gromox/timer
 @bin libexec/gromox/zcore
