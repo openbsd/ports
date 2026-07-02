@@ -2,7 +2,7 @@ COMMENT=	rabbitmq C library and commandline AMQP utilities
 
 GH_ACCOUNT=	alanxz
 GH_PROJECT=	rabbitmq-c
-GH_TAGNAME=	v0.16.0
+GH_TAGNAME=	v0.17.0
 
 SHARED_LIBS =	rabbitmq 2.1 # 4.7.1
 
