@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM Apple wallet file support library
 DISTNAME =	kpkpass-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6PkPass               0.1 # 0.0
 
