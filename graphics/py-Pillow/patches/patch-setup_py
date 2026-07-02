@@ -10,7 +10,7 @@ https://github.com/pypa/distutils/issues/396
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -671,6 +671,12 @@ class pil_build_ext(build_ext):
+@@ -667,6 +667,12 @@ class pil_build_ext(build_ext):
                      ),
                  )
  
@@ -23,7 +23,7 @@ Index: setup.py
          elif sys.platform.startswith("netbsd"):
              _add_directory(library_dirs, "/usr/pkg/lib")
              _add_directory(include_dirs, "/usr/pkg/include")
-@@ -792,6 +798,8 @@ class pil_build_ext(build_ext):
+@@ -788,6 +794,8 @@ class pil_build_ext(build_ext):
                      feature.set("tiff", "libtiff")
                  elif _find_library_file(self, "tiff"):
                      feature.set("tiff", "tiff")
@@ -32,7 +32,7 @@ Index: setup.py
  
          if feature.want("freetype"):
              _dbg("Looking for freetype")
-@@ -872,6 +880,8 @@ class pil_build_ext(build_ext):
+@@ -868,6 +876,8 @@ class pil_build_ext(build_ext):
                      ):
                          feature.set("webp", prefix + "webp")
                          break
