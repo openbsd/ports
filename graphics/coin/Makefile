@@ -1,12 +1,12 @@
 COMMENT =		3D graphics library based on the Open Inventor API
 
-V = 			4.0.8
+V = 			4.0.9
 DISTNAME =		coin-${V}-src
 PKGNAME =		${DISTNAME:S/-src$//}
 
 SITES =			https://github.com/coin3d/coin/releases/download/v${V}/
 
-SHARED_LIBS +=  	Coin	1.0 # 0.0
+SHARED_LIBS +=  	Coin	2.0 # 0.0
 
 CATEGORIES =		graphics
 HOMEPAGE =		https://www.coin3d.org/
@@ -22,12 +22,8 @@ MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/boost
 
-CONFIGURE_ARGS =	-DCOIN_BUILD_TESTS=OFF
-
 SUBST_VARS +=		V
 
 WRKDIST =		${WRKDIR}/coin
-
-NO_TEST =		yes
 
 .include <bsd.port.mk>
