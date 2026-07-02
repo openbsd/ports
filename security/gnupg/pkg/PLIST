@@ -109,7 +109,11 @@ share/locale/cs/LC_MESSAGES/gnupg2.mo
 share/locale/da/LC_MESSAGES/gnupg2.mo
 share/locale/de/LC_MESSAGES/gnupg2.mo
 share/locale/el/LC_MESSAGES/gnupg2.mo
+share/locale/en@boldquot/
+share/locale/en@boldquot/LC_MESSAGES/
 share/locale/en@boldquot/LC_MESSAGES/gnupg2.mo
+share/locale/en@quot/
+share/locale/en@quot/LC_MESSAGES/
 share/locale/en@quot/LC_MESSAGES/gnupg2.mo
 share/locale/eo/LC_MESSAGES/gnupg2.mo
 share/locale/es/LC_MESSAGES/gnupg2.mo
