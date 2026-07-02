@@ -1,7 +1,14 @@
 @option no-default-conflict
 @option is-branch
 @conflict llvm-${LLVM_PKGSPEC}
+@conflict llvm-<21
 @conflict lldb->=22.1.0,<22.1.7p0
+@pkgpath devel/llvm/13,-main
+@pkgpath devel/llvm/16,-main
+@pkgpath devel/llvm/17,-main
+@pkgpath devel/llvm/18,-main
+@pkgpath devel/llvm/19,-main
+@pkgpath devel/llvm/20,-main
 bin/amdgpu-arch-${LLVM_MAJOR}
 bin/analyze-build-${LLVM_MAJOR}
 bin/bugpoint-${LLVM_MAJOR}
