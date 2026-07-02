@@ -25,6 +25,9 @@ share/doc/libexif/ChangeLog
 share/doc/libexif/NEWS
 share/doc/libexif/README
 share/doc/libexif/SECURITY.md
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/libexif-12.mo
 share/locale/be/LC_MESSAGES/libexif-12.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
