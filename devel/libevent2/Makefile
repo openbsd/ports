@@ -1,16 +1,15 @@
 COMMENT=	event notification library
 
-V=		2.1.12
+V=		2.1.13
 DISTNAME=	libevent-$V-stable
 PKGNAME=	libevent-$V
 CATEGORIES=	devel
 HOMEPAGE=	https://libevent.org/
-REVISION=	3
 
-SHARED_LIBS+=	event_core	2.1	# 7.1
-SHARED_LIBS+=	event_extra	1.0	# 7.1
-SHARED_LIBS+=	event_openssl	1.0	# 7.1
-SHARED_LIBS+=	event_pthreads	0.0	# 7.1
+SHARED_LIBS+=	event_core	2.1	# 7.2
+SHARED_LIBS+=	event_extra	1.1	# 7.2
+SHARED_LIBS+=	event_openssl	1.0	# 7.2
+SHARED_LIBS+=	event_pthreads	0.0	# 7.2
 
 # BSD
 PERMIT_PACKAGE=	Yes
