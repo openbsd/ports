@@ -9,6 +9,7 @@ TRACY_COMMIT =		67d2d89e351048c76fc6d161e0ac09d8a831dc60
 SCRIPTY_COMMIT =	9c1e5903acd2a591f87f577b2ea08895e7168b9d
 KNOWN_FOLDERS_COMMIT =	175f5596b3d2ee3c658282bb07885580895a0e73
 LSP_KIT_COMMIT =	ec325a3c33d1da7708cf513355208f74d9560580
+REVISION =		0
 
 DIST_TUPLE =	github kristoff-it superhtml ${COMMIT} . \
 		github kristoff-it tracy ${TRACY_COMMIT} tracy \
@@ -27,8 +28,11 @@ WANTLIB += c
 
 BUILD_DEPENDS =		lang/zig
 
+ZIG_CPU =		${ARCH:S/amd64/x86_64/:S/arm64/generic/}
 ZIG_ARGS =		-p ${WRKSRC}/zig-out \
 			-j${MAKE_JOBS} \
+			-Dcpu=${ZIG_CPU} \
+			-Doptimize=ReleaseSafe \
 			--color off \
 			--verbose \
 			--fork=tracy \
