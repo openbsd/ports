@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -62,7 +62,7 @@ packages = [
+ mutagen = ["py.typed"]
+ 
+ [tool.setuptools.data-files]
+-"share/man/man1" = ["man/*.1"]
++"man/man1" = ["man/*.1"]
+ 
+ [build-system]
+ requires = ["setuptools>=77"]
