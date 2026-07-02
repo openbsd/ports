@@ -11,7 +11,7 @@ Index: cli/src/commands/bisect/run.rs
  use crate::command_error::user_error;
  use crate::command_error::user_error_with_message;
  use crate::complete;
-@@ -255,9 +254,7 @@ async fn evaluate_commit(
+@@ -262,9 +261,7 @@ async fn evaluate_commit(
      )
      .await?;
  
