@@ -17,6 +17,7 @@
 @man man/man1/jj-bookmark.1
 @man man/man1/jj-commit.1
 @man man/man1/jj-config-edit.1
+@man man/man1/jj-config-gc.1
 @man man/man1/jj-config-get.1
 @man man/man1/jj-config-list.1
 @man man/man1/jj-config-path.1
@@ -80,6 +81,7 @@
 @man man/man1/jj-restore.1
 @man man/man1/jj-revert.1
 @man man/man1/jj-root.1
+@man man/man1/jj-run.1
 @man man/man1/jj-show.1
 @man man/man1/jj-sign.1
 @man man/man1/jj-simplify-parents.1
