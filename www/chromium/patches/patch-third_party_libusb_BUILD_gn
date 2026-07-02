@@ -8,9 +8,9 @@ Index: third_party/libusb/BUILD.gn
 -assert(is_mac)
 +assert(is_mac || is_bsd)
  
- import("//build/config/chromeos/ui_mode.gni")
  import("//build/config/features.gni")
-@@ -103,7 +103,7 @@ static_library("libusb") {
+ 
+@@ -102,7 +102,7 @@ static_library("libusb") {
      ]
    }
  
@@ -19,7 +19,7 @@ Index: third_party/libusb/BUILD.gn
      sources += [
        "src/libusb/os/linux_usbfs.c",
        "src/libusb/os/linux_usbfs.h",
-@@ -114,11 +114,21 @@ static_library("libusb") {
+@@ -113,11 +113,21 @@ static_library("libusb") {
      ]
    }
  
@@ -33,7 +33,7 @@ Index: third_party/libusb/BUILD.gn
 +    ]
 +  }
 +
-   if (is_chromeos_ash) {
+   if (is_chromeos) {
      defines += [ "USBI_TIMERFD_AVAILABLE" ]
    }
  
@@ -42,7 +42,7 @@ Index: third_party/libusb/BUILD.gn
      sources += [ "src/libusb/os/linux_udev.cc" ]
      defines += [
        "HAVE_LIBUDEV=1",
-@@ -127,7 +137,7 @@ static_library("libusb") {
+@@ -126,7 +136,7 @@ static_library("libusb") {
      deps += [ "//build/linux/libudev" ]
    }
  

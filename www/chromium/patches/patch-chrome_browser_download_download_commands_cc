@@ -8,9 +8,9 @@ Index: chrome/browser/download/download_commands.cc
 -    BUILDFLAG(IS_MAC)
 +    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/ui/browser.h"
- #include "chrome/browser/ui/browser_finder.h"
  #include "chrome/browser/ui/scoped_tabbed_browser_displayer.h"
-@@ -174,7 +174,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+ #endif
+@@ -173,7 +173,7 @@ void DownloadCommands::ExecuteCommand(Command command)
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

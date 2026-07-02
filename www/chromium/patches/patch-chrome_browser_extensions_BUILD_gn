@@ -1,7 +1,7 @@
 Index: chrome/browser/extensions/BUILD.gn
 --- chrome/browser/extensions/BUILD.gn.orig
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1507,6 +1507,10 @@ source_set("extensions") {
+@@ -1524,6 +1524,10 @@ source_set("extensions") {
        ]
      }
  

@@ -10,7 +10,7 @@ Index: components/supervised_user/core/common/features.cc
  const int kLocalWebApprovalBottomSheetLoadTimeoutDefaultValueMs = 5000;
  
  const base::FeatureParam<int> kLocalWebApprovalBottomSheetLoadTimeoutMs{
-@@ -75,7 +75,7 @@ bool IsLocalWebApprovalsEnabledForSubframes() {
+@@ -68,7 +68,7 @@ bool IsLocalWebApprovalsEnabledForSubframes() {
    return base::FeatureList::IsEnabled(kAllowSubframeLocalWebApprovals);
  }
  

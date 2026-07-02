@@ -14,7 +14,7 @@ Index: v8/src/objects/simd.cc
  
  template <typename ScalarType>
  struct SVEOperations {
-@@ -636,9 +636,11 @@ template <typename T>
+@@ -637,9 +637,11 @@ template <typename T>
  inline uintptr_t search(T* array, uintptr_t array_len, uintptr_t index,
                          T search_element) {
  #ifdef NEON64

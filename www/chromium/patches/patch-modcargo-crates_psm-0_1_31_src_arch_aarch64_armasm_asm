@@ -1,6 +1,6 @@
-Index: modcargo-crates/psm-0.1.23/src/arch/aarch64_armasm.asm
---- modcargo-crates/psm-0.1.23/src/arch/aarch64_armasm.asm.orig
-+++ modcargo-crates/psm-0.1.23/src/arch/aarch64_armasm.asm
+Index: modcargo-crates/psm-0.1.31/src/arch/aarch64_armasm.asm
+--- modcargo-crates/psm-0.1.31/src/arch/aarch64_armasm.asm.orig
++++ modcargo-crates/psm-0.1.31/src/arch/aarch64_armasm.asm
 @@ -3,6 +3,7 @@
      GLOBAL |rust_psm_stack_direction|
      ALIGN 4

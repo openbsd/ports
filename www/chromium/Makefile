@@ -12,7 +12,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			149.0.7827.200
+V=			150.0.7871.46
 
 DISTNAME=		chromium-${V}
 
@@ -24,7 +24,7 @@ CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz
 
-DIST_TUPLE+=		github rollup rollup v4.22.4 rollup
+DIST_TUPLE+=		github rollup rollup v4.60.4 rollup
 
 EXTRACT_ONLY=		${ALL_DISTFILES:N*test*}
 

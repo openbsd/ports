@@ -129,12 +129,3 @@ Index: extensions/common/api/_permission_features.json
    },
    "system.display": {
      "channel": "stable",
-@@ -747,7 +747,7 @@
-     "channel": "stable",
-     "extension_types": ["platform_app"],
-     // "desktop_android" is not supported.
--    "platforms": ["chromeos", "linux", "mac", "win"]
-+    "platforms": ["chromeos", "linux", "mac", "win", "openbsd", "freebsd"]
-   },
-   "webRequest": [
-     {

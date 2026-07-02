@@ -15,6 +15,6 @@ Index: media/media_options.gni
    # desktop Chromecast builds.
 -  if (is_posix && !is_android && !is_apple &&
 +  if (is_posix && !is_android && !is_apple && !is_bsd &&
-       (!is_castos || (target_cpu == "x86" || target_cpu == "x64") ||
-        is_cast_audio_only)) {
+       (!is_castos || (target_cpu == "x86" || target_cpu == "x64"))) {
      use_alsa = true
+ 

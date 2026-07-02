@@ -18,7 +18,7 @@ Index: base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc
  #include <sys/syscall.h>
  #include <unistd.h>
  
-@@ -159,8 +168,16 @@ PA_ALWAYS_INLINE long FutexSyscall(volatile void* ftx,
+@@ -150,8 +159,16 @@ PA_ALWAYS_INLINE long FutexSyscall(volatile void* ftx,
    int saved_errno = errno;
    errno = 0;
  

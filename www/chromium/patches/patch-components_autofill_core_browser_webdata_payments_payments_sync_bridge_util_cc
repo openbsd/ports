@@ -1,7 +1,7 @@
 Index: components/autofill/core/browser/webdata/payments/payments_sync_bridge_util.cc
 --- components/autofill/core/browser/webdata/payments/payments_sync_bridge_util.cc.orig
 +++ components/autofill/core/browser/webdata/payments/payments_sync_bridge_util.cc
-@@ -1288,7 +1288,7 @@ bool AreMaskedBankAccountSupported() {
+@@ -1278,7 +1278,7 @@ bool AreMaskedBankAccountSupported() {
  
  bool IsBnplIssuerSupported() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

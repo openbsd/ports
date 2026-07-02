@@ -1,7 +1,7 @@
 Index: services/network/public/cpp/BUILD.gn
 --- services/network/public/cpp/BUILD.gn.orig
 +++ services/network/public/cpp/BUILD.gn
-@@ -749,7 +749,7 @@ component("cpp_base") {
+@@ -753,7 +753,7 @@ component("cpp_base") {
      sources += [ "transferable_directory_fuchsia.cc" ]
    }
  

@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/profiles/avatar_toolbar_button.cc
 --- chrome/browser/ui/views/profiles/avatar_toolbar_button.cc.orig
 +++ chrome/browser/ui/views/profiles/avatar_toolbar_button.cc
-@@ -440,7 +440,7 @@ void AvatarToolbarButton::MaybeShowProfileSwitchIPH() 
+@@ -466,7 +466,7 @@ void AvatarToolbarButton::MaybeShowProfileSwitchIPH() 
    state_manager_->MaybeShowProfileSwitchIPH();
  }
  
