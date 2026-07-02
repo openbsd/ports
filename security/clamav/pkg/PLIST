@@ -169,6 +169,7 @@ share/doc/clamav/html/manual/Signatures/SignatureNames.html
 share/doc/clamav/html/manual/Signatures/YaraRules.html
 share/doc/clamav/html/manual/Usage/
 share/doc/clamav/html/manual/Usage.html
+share/doc/clamav/html/manual/Usage/ClamdProtocol.html
 share/doc/clamav/html/manual/Usage/Configuration.html
 share/doc/clamav/html/manual/Usage/ReportABug.html
 share/doc/clamav/html/manual/Usage/Scanning.html
@@ -176,14 +177,16 @@ share/doc/clamav/html/manual/Usage/Services.html
 share/doc/clamav/html/manual/Usage/SignatureManagement.html
 share/doc/clamav/html/manual/cisco-talos.gpg
 share/doc/clamav/html/mark-09e88c2c.min.js
+share/doc/clamav/html/mermaid-eefea253.min.js
+share/doc/clamav/html/mermaid-init-ccf746f1.js
 share/doc/clamav/html/mode-rust-2c9d5c9a.js
 share/doc/clamav/html/print.html
-share/doc/clamav/html/searcher-c2a407aa.js
-share/doc/clamav/html/searchindex-1b5ba28b.js
+share/doc/clamav/html/searcher-09f2665d.js
+share/doc/clamav/html/searchindex-d348bbbb.js
 share/doc/clamav/html/sitemap.xml
 share/doc/clamav/html/theme-dawn-4493f9c8.js
 share/doc/clamav/html/theme-tomorrow_night-9dbe62a9.js
-share/doc/clamav/html/toc-cbaddea7.js
+share/doc/clamav/html/toc-0c194aa2.js
 share/doc/clamav/html/toc.html
 share/doc/clamav/html/tomorrow-night-4c0ae647.css
 share/examples/clamav/
