@@ -1,0 +1,21 @@
+Index: gerbview/gerbview_frame.cpp
+--- gerbview/gerbview_frame.cpp.orig
++++ gerbview/gerbview_frame.cpp
+@@ -60,7 +60,7 @@
+ #include "widgets/dcode_selection_box.h"
+ #include <dialog_draw_layers_settings.h>
+ 
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <spacenav/spnav_2d_plugin.h>
+ #else
+ #include <navlib/nl_gerbview_plugin.h>
+@@ -1057,7 +1057,7 @@ void GERBVIEW_FRAME::ActivateGalCanvas()
+     {
+         if( !m_spaceMouse )
+         {
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+             m_spaceMouse = std::make_unique<SPNAV_2D_PLUGIN>( galCanvas );
+             m_spaceMouse->SetScale( gerbIUScale.IU_PER_MILS / pcbIUScale.IU_PER_MILS );
+ #else

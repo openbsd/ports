@@ -3,7 +3,7 @@ avoid conflict with major/minor macros in sys/types.h
 Index: common/api/api_handler_common.cpp
 --- common/api/api_handler_common.cpp.orig
 +++ common/api/api_handler_common.cpp
-@@ -73,8 +73,8 @@ HANDLER_RESULT<GetVersionResponse> API_HANDLER_COMMON:
+@@ -74,8 +74,8 @@ HANDLER_RESULT<GetVersionResponse> API_HANDLER_COMMON:
      reply.mutable_version()->set_full_version( GetBuildVersion().ToStdString() );
  
      std::tuple<int, int, int> version = GetMajorMinorPatchTuple();

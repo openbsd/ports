@@ -1,7 +1,7 @@
 Index: eeschema/sch_io/easyedapro/sch_io_easyedapro.cpp
 --- eeschema/sch_io/easyedapro/sch_io_easyedapro.cpp.orig
 +++ eeschema/sch_io/easyedapro/sch_io_easyedapro.cpp
-@@ -104,6 +104,29 @@ int SCH_IO_EASYEDAPRO::GetModifyHash() const
+@@ -106,6 +106,29 @@ int SCH_IO_EASYEDAPRO::GetModifyHash() const
      return 0;
  }
  

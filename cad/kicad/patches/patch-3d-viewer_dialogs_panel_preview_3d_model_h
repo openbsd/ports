@@ -1,0 +1,21 @@
+Index: 3d-viewer/dialogs/panel_preview_3d_model.h
+--- 3d-viewer/dialogs/panel_preview_3d_model.h.orig
++++ 3d-viewer/dialogs/panel_preview_3d_model.h
+@@ -63,7 +63,7 @@ class EMBEDDED_FILES;
+ class BOARD;
+ class BOARD_ADAPTER;
+ class FOOTPRINT;
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ class SPNAV_VIEWER_PLUGIN;
+ #else
+ class NL_FOOTPRINT_PROPERTIES_PLUGIN;
+@@ -238,7 +238,7 @@ class PANEL_PREVIEW_3D_MODEL: public TOOLS_HOLDER, pub
+     /// The 3d viewer Render initial settings (must be saved and restored)
+     EDA_3D_VIEWER_SETTINGS::RENDER_SETTINGS          m_initialRender;
+ 
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+     std::unique_ptr<SPNAV_VIEWER_PLUGIN> m_spaceMouse;
+ #else
+     std::unique_ptr<NL_FOOTPRINT_PROPERTIES_PLUGIN>  m_spaceMouse;

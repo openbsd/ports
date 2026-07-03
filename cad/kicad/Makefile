@@ -4,7 +4,7 @@ USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel
 
-V =			9.0.8
+V =			10.0.4
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
@@ -18,17 +18,21 @@ CATEGORIES =		cad
 
 HOMEPAGE =		https://www.kicad.org
 
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
+
 # GPLv3, MIT, Boost
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL GLU TKBO TKBRep TKBool TKCAF
-WANTLIB += TKCDF TKDEGLTF TKDEIGES TKDEPLY TKDESTEP TKDESTL TKDEVRML
-WANTLIB += TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKLCAF TKMath
-WANTLIB += TKMesh TKPrim TKRWMesh TKService TKShHealing TKTopAlgo
-WANTLIB += TKV3d TKXCAF TKXSBase TKernel absl_base absl_borrowed_fixup_buffer
-WANTLIB += absl_city absl_civil_time absl_cord absl_cord_internal
-WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
-WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} GL GLU TKBO TKBRep
+WANTLIB += TKBin TKBinL TKBinTObj TKBinXCAF TKBool TKCAF TKCDF
+WANTLIB += TKDEGLTF TKDEIGES TKDEPLY TKDESTEP TKDESTL TKDEVRML
+WANTLIB += TKFeat TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR
+WANTLIB += TKLCAF TKMath TKMesh TKOffset TKPrim TKRWMesh TKService
+WANTLIB += TKShHealing TKTObj TKTopAlgo TKV3d TKXCAF TKXMesh TKXSBase
+WANTLIB += TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel absl_base
+WANTLIB += absl_borrowed_fixup_buffer absl_city absl_civil_time
+WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
+WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
 WANTLIB += absl_demangle_internal absl_demangle_rust absl_die_if_null
 WANTLIB += absl_examine_stack absl_exponential_biased absl_flags_commandlineflag
@@ -58,11 +62,12 @@ WANTLIB += boost_chrono-mt boost_container-mt boost_date_time-mt
 WANTLIB += boost_locale-mt boost_thread-mt c cairo cairo-gobject
 WANTLIB += curl fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += git2 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl iodbc
-WANTLIB += m ngspice nng pango-1.0 pangocairo-1.0 pixman-1 protobuf
-WANTLIB += ${MODPY_WANTLIB} secret-1 utf8_validity wx_baseu-3.2 wx_baseu_net-3.2
-WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
-WANTLIB += wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2
-WANTLIB += wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2 z zstd
+WANTLIB += m ngspice nng pango-1.0 pangocairo-1.0 pixman-1 poppler
+WANTLIB += poppler-cpp poppler-glib protobuf secret-1 spnav utf8_validity
+WANTLIB += wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_aui-3.2
+WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2
+WANTLIB += wx_gtk3u_propgrid-3.2 wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2
+WANTLIB += wx_gtk3u_webview-3.2 z zstd
 
 SITES =			https://gitlab.com/kicad/code/kicad/-/archive/${V}/
 
@@ -104,11 +109,16 @@ LIB_DEPENDS =		archivers/zstd \
 			graphics/gdk-pixbuf2 \
 			net/curl \
 			net/nng \
+			print/poppler \
 			x11/gnome/at-spi2-core \
 			x11/gnome/libsecret \
 			x11/gtk+3 \
 			x11/wxWidgets \
+			x11/wxWidgets,-webview \
+			cad/libspnav \
 			${MODPY_LIB_DEPENDS}
+
+CONFIGURE_ARGS +=	-DKICAD_USE_PCH=OFF
 
 CONFIGURE_ARGS +=	-DNANODBC_ENABLE_BOOST=ON \
 			-DNANODBC_ENABLE_UNICODE=OFF \
@@ -135,6 +145,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 # KHR/khrplatform.h
 CFLAGS +=		-I${X11BASE}/include
 CXXFLAGS +=		-I${X11BASE}/include
+CXXFLAGS +=	-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED
 
 NO_TEST =		Yes
 

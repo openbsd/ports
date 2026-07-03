@@ -1,0 +1,21 @@
+Index: eeschema/sch_base_frame.cpp
+--- eeschema/sch_base_frame.cpp.orig
++++ eeschema/sch_base_frame.cpp
+@@ -72,7 +72,7 @@
+ #include <wx/msgdlg.h>
+ #include <trace_helpers.h>
+ 
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <spacenav/spnav_2d_plugin.h>
+ #else
+ #include <navlib/nl_schematic_plugin.h>
+@@ -347,7 +347,7 @@ void SCH_BASE_FRAME::ActivateGalCanvas()
+     {
+         if( !m_spaceMouse )
+         {
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+             m_spaceMouse = std::make_unique<SPNAV_2D_PLUGIN>( GetCanvas() );
+             m_spaceMouse->SetScale( schIUScale.IU_PER_MILS / pcbIUScale.IU_PER_MILS );
+ #else

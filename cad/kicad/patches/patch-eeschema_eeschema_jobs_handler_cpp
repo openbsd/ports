@@ -1,7 +1,7 @@
 Index: eeschema/eeschema_jobs_handler.cpp
 --- eeschema/eeschema_jobs_handler.cpp.orig
 +++ eeschema/eeschema_jobs_handler.cpp
-@@ -249,7 +249,7 @@ void EESCHEMA_JOBS_HANDLER::InitRenderSettings( SCH_RE
+@@ -266,7 +266,7 @@ void EESCHEMA_JOBS_HANDLER::InitRenderSettings( SCH_RE
  
  int EESCHEMA_JOBS_HANDLER::JobExportPlot( JOB* aJob )
  {
@@ -10,7 +10,7 @@ Index: eeschema/eeschema_jobs_handler.cpp
  
      wxCHECK( aPlotJob, CLI::EXIT_CODES::ERR_UNKNOWN );
  
-@@ -394,7 +394,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportPlot( JOB* aJob )
+@@ -407,7 +407,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportPlot( JOB* aJob )
  
  int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob )
  {
@@ -19,7 +19,7 @@ Index: eeschema/eeschema_jobs_handler.cpp
  
      wxCHECK( aNetJob, CLI::EXIT_CODES::ERR_UNKNOWN );
  
-@@ -512,7 +512,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob
+@@ -535,7 +535,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob
  
  int EESCHEMA_JOBS_HANDLER::JobExportBom( JOB* aJob )
  {
@@ -28,7 +28,7 @@ Index: eeschema/eeschema_jobs_handler.cpp
  
      wxCHECK( aBomJob, CLI::EXIT_CODES::ERR_UNKNOWN );
  
-@@ -800,7 +800,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportBom( JOB* aJob )
+@@ -904,7 +904,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportBom( JOB* aJob )
  
  int EESCHEMA_JOBS_HANDLER::JobExportPythonBom( JOB* aJob )
  {
@@ -37,7 +37,7 @@ Index: eeschema/eeschema_jobs_handler.cpp
  
      wxCHECK( aNetJob, CLI::EXIT_CODES::ERR_UNKNOWN );
  
-@@ -979,7 +979,7 @@ int EESCHEMA_JOBS_HANDLER::doSymExportSvg( JOB_SYM_EXP
+@@ -1089,7 +1089,7 @@ int EESCHEMA_JOBS_HANDLER::doSymExportSvg( JOB_SYM_EXP
  
  int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob )
  {
@@ -46,7 +46,7 @@ Index: eeschema/eeschema_jobs_handler.cpp
  
      wxCHECK( svgJob, CLI::EXIT_CODES::ERR_UNKNOWN );
  
-@@ -1060,7 +1060,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob 
+@@ -1176,7 +1176,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob 
  
  int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
  {
@@ -55,7 +55,7 @@ Index: eeschema/eeschema_jobs_handler.cpp
  
      wxCHECK( upgradeJob, CLI::EXIT_CODES::ERR_UNKNOWN );
  
-@@ -1148,7 +1148,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
+@@ -1262,7 +1262,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
  
  int EESCHEMA_JOBS_HANDLER::JobSchErc( JOB* aJob )
  {

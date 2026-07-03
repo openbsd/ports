@@ -1,0 +1,21 @@
+Index: 3d-viewer/dialogs/panel_preview_3d_model.cpp
+--- 3d-viewer/dialogs/panel_preview_3d_model.cpp.orig
++++ 3d-viewer/dialogs/panel_preview_3d_model.cpp
+@@ -52,7 +52,7 @@
+ #include <eda_3d_viewer_settings.h>
+ #include <board_design_settings.h>
+ 
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <3d_spacenav/spnav_viewer_plugin.h>
+ #else
+ #include <3d_navlib/nl_footprint_properties_plugin.h>
+@@ -209,7 +209,7 @@ PANEL_PREVIEW_3D_MODEL::PANEL_PREVIEW_3D_MODEL( wxWind
+ 
+     try
+     {
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+         m_spaceMouse = std::make_unique<SPNAV_VIEWER_PLUGIN>( m_previewPane );
+ #else
+         m_spaceMouse = std::make_unique<NL_FOOTPRINT_PROPERTIES_PLUGIN>( m_previewPane );

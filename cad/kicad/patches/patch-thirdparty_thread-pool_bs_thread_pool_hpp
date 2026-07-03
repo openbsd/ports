@@ -1,0 +1,151 @@
+Index: thirdparty/thread-pool/bs_thread_pool.hpp
+--- thirdparty/thread-pool/bs_thread_pool.hpp.orig
++++ thirdparty/thread-pool/bs_thread_pool.hpp
+@@ -82,7 +82,7 @@ import std;
+         #include <windows.h>
+         #undef min
+         #undef max
+-    #elif defined(__linux__) || defined(__APPLE__)
++    #elif defined(__linux__) || defined(__APPLE__) || defined(__OpenBSD__)
+         #include <pthread.h>
+         #include <sched.h>
+         #include <sys/resource.h>
+@@ -91,12 +91,16 @@ import std;
+             #include <sys/syscall.h>
+             #include <sys/sysinfo.h>
+         #endif
++        #if defined(__OpenBSD__)
++            #include <pthread_np.h>
++            #include <sys/syscall.h>
++        #endif
+     #else
+         #undef BS_THREAD_POOL_NATIVE_EXTENSIONS
+     #endif
+ #endif
+ 
+-#if defined(__linux__)
++#if defined(__linux__) || defined (__FreeBSD__) || defined(__OpenBSD__)
+     // On Linux, <sys/sysmacros.h> defines macros called `major` and `minor`. We undefine them here so the `version` struct can work.
+     #ifdef major
+         #undef major
+@@ -577,7 +581,7 @@ enum class os_thread_priority
+     highest = THREAD_PRIORITY_HIGHEST,
+     realtime = THREAD_PRIORITY_TIME_CRITICAL
+ };
+-    #elif defined(__linux__) || defined(__APPLE__)
++    #elif defined(__linux__) || defined(__APPLE__) || defined(__OpenBSD__)
+ /**
+  * @brief An enum containing pre-defined OS-specific process priority values for portability.
+  */
+@@ -645,7 +649,7 @@ enum class os_thread_priority
+     for (std::size_t i = 0; i < affinity.size(); ++i)
+         affinity[i] = CPU_ISSET(i, &cpu_set);
+     return affinity;
+-    #elif defined(__APPLE__)
++    #elif defined(__APPLE__) || defined(__OpenBSD__)
+     return std::nullopt;
+     #endif
+ }
+@@ -672,7 +676,7 @@ inline bool set_os_process_affinity(const std::vector<
+             CPU_SET(i, &cpu_set);
+     }
+     return sched_setaffinity(getpid(), sizeof(cpu_set_t), &cpu_set) == 0;
+-    #elif defined(__APPLE__)
++    #elif defined(__APPLE__) || defined(__OpenBSD__)
+     return affinity[0] && false; // NOLINT(readability-simplify-boolean-expr) // Using `affinity` to suppress unused parameter warning.
+     #endif
+ }
+@@ -690,7 +694,7 @@ inline bool set_os_process_affinity(const std::vector<
+     if (priority == 0)
+         return std::nullopt;
+     return static_cast<os_process_priority>(priority);
+-    #elif defined(__linux__) || defined(__APPLE__)
++    #elif defined(__linux__) || defined(__APPLE__) || defined(__OpenBSD__)
+     // On Linux/macOS there is no direct analogue of `GetPriorityClass()` on Windows, so instead we get the "nice" value. The usual range is -20 to 19 or 20, with higher values corresponding to lower priorities. However, we are only using 6 pre-defined values for portability, so if the value was set via any means other than `BS::set_os_process_priority()`, it may not match one of our pre-defined values. Note that `getpriority()` returns -1 on error, but since this does not correspond to any of our pre-defined values, this function will return `std::nullopt` anyway.
+     const int nice_val = getpriority(PRIO_PROCESS, static_cast<id_t>(getpid()));
+     switch (nice_val)
+@@ -724,7 +728,7 @@ inline bool set_os_process_priority(const os_process_p
+     #if defined(_WIN32)
+     // On Windows, this is straightforward.
+     return SetPriorityClass(GetCurrentProcess(), static_cast<DWORD>(priority)) != 0;
+-    #elif defined(__linux__) || defined(__APPLE__)
++    #elif defined(__linux__) || defined(__APPLE__) || defined(__OpenBSD__)
+     // On Linux/macOS there is no direct analogue of `SetPriorityClass()` on Windows, so instead we set the "nice" value. The usual range is -20 to 19 or 20, with higher values corresponding to lower priorities. However, we are only using 6 pre-defined values for portability. Note that the "nice" values are only relevant for the `SCHED_OTHER` policy, but we do not set that policy here, as it is per-thread rather than per-process.
+     // Also, it's important to note that a non-root user cannot decrease the nice value (i.e. increase the process priority), only increase it. This can cause confusing behavior. For example, if the current priority is `BS::os_process_priority::normal` and the user sets it to `BS::os_process_priority::idle`, they cannot change it back `BS::os_process_priority::normal`.
+     return setpriority(PRIO_PROCESS, static_cast<id_t>(getpid()), static_cast<int>(priority)) == 0;
+@@ -806,7 +810,7 @@ class [[nodiscard]] this_thread (public)
+         for (std::size_t i = 0; i < affinity.size(); ++i)
+             affinity[i] = CPU_ISSET(i, &cpu_set);
+         return affinity;
+-    #elif defined(__APPLE__)
++    #elif defined(__APPLE__) || defined(__OpenBSD__)
+         return std::nullopt;
+     #endif
+     }
+@@ -833,7 +837,7 @@ class [[nodiscard]] this_thread (public)
+                 CPU_SET(i, &cpu_set);
+         }
+         return pthread_setaffinity_np(pthread_self(), sizeof(cpu_set_t), &cpu_set) == 0;
+-    #elif defined(__APPLE__)
++    #elif defined(__APPLE__) || defined(__OpenBSD__)
+         return affinity[0] && false; // NOLINT(readability-simplify-boolean-expr) // Using `affinity` to suppress unused parameter warning.
+     #endif
+     }
+@@ -877,6 +881,17 @@ class [[nodiscard]] this_thread (public)
+         if (pthread_getname_np(pthread_self(), name, buffer_size) != 0)
+             return std::nullopt;
+         return std::string(name);
++    #elif defined(__OpenBSD__)
++        #ifdef __linux__
++        // On Linux thread names are limited to 16 characters, including the null terminator.
++        constexpr std::size_t buffer_size = 16;
++        #else
++        // On macOS thread names are limited to 64 characters, including the null terminator.
++        constexpr std::size_t buffer_size = 64;
++        #endif
++        char name[buffer_size] = {};
++        pthread_get_name_np(pthread_self(), name, buffer_size);
++        return std::string(name);
+     #endif
+     }
+ 
+@@ -903,7 +918,11 @@ class [[nodiscard]] this_thread (public)
+         return pthread_setname_np(pthread_self(), name.data()) == 0;
+     #elif defined(__APPLE__)
+         // On macOS, unlike Linux, a thread can only set a name for itself, so the signature is different.
+-        return pthread_setname_np(name.data()) == 0;
++        return pthreadset_name_np(name.data()) == 0;
++    #elif defined(__OpenBSD__)
++        // On macOS, unlike Linux, a thread can only set a name for itself, so the signature is different.
++        pthread_set_name_np(pthread_self(), name.data());
++        return true;
+     #endif
+     }
+ 
+@@ -957,7 +976,7 @@ class [[nodiscard]] this_thread (public)
+                 return os_thread_priority::below_normal;
+             case PRIO_MAX - 3:
+                 return os_thread_priority::lowest;
+-        #ifdef __APPLE__
++        #if __APPLE__
+             // `SCHED_IDLE` doesn't exist on macOS, so we use the policy `SCHED_OTHER` with a "nice" value of `PRIO_MAX - 2`.
+             case PRIO_MAX - 2:
+                 return os_thread_priority::idle;
+@@ -967,7 +986,7 @@ class [[nodiscard]] this_thread (public)
+             }
+         }
+         return std::nullopt;
+-    #elif defined(__APPLE__)
++    #elif defined(__APPLE__) || defined(__OpenBSD__)
+         // On macOS, we distill the choices of scheduling policy and priority into 7 pre-defined levels, for simplicity and portability. The total number of possible combinations of policies and priorities is much larger, so if the value was set via any means other than `BS::this_thread::set_os_thread_priority()`, it may not match one of our pre-defined values.
+         int policy = 0;
+         struct sched_param param = {};
+@@ -1066,7 +1085,7 @@ class [[nodiscard]] this_thread (public)
+         if (nice_val.has_value())
+             success = success && (setpriority(PRIO_PROCESS, static_cast<id_t>(syscall(SYS_gettid)), nice_val.value()) == 0);
+         return success;
+-    #elif defined(__APPLE__)
++    #elif defined(__APPLE__) || defined(__OpenBSD__)
+         // On macOS, unlike Linux, the "nice" value is per-process, not per-thread (in compliance with the POSIX standard). However, unlike Linux, `SCHED_OTHER` on macOS does have a range of priorities. So for `realtime` and `highest` priorities we use `SCHED_FIFO` and `SCHED_RR` respectively as for Linux, but for the other priorities we use `SCHED_OTHER` with a priority in the range given by `sched_get_priority_min(SCHED_OTHER)` to `sched_get_priority_max(SCHED_OTHER)`.
+         int policy = 0;
+         struct sched_param param = {};

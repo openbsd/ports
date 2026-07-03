@@ -50,13 +50,12 @@ share/kicad/symbols/Diode_Bridge.kicad_sym
 share/kicad/symbols/Diode_Laser.kicad_sym
 share/kicad/symbols/Display_Character.kicad_sym
 share/kicad/symbols/Display_Graphic.kicad_sym
+share/kicad/symbols/Driver.kicad_sym
 share/kicad/symbols/Driver_Display.kicad_sym
 share/kicad/symbols/Driver_FET.kicad_sym
-share/kicad/symbols/Driver_Haptic.kicad_sym
 share/kicad/symbols/Driver_LED.kicad_sym
 share/kicad/symbols/Driver_Motor.kicad_sym
-share/kicad/symbols/Driver_Relay.kicad_sym
-share/kicad/symbols/Driver_TEC.kicad_sym
+share/kicad/symbols/FPGA_Altera_MAX10.kicad_sym
 share/kicad/symbols/FPGA_CologneChip_GateMate.kicad_sym
 share/kicad/symbols/FPGA_Efinix_Trion.kicad_sym
 share/kicad/symbols/FPGA_Lattice.kicad_sym

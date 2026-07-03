@@ -2,10 +2,12 @@
 
 PKG_ARCH ?=		*
 
-V ?=			9.0.8
+V ?=			10.0.4
 EXTRACT_SUFX ?=		.tar.bz2
 
 DISTNAME=		kicad-${KICAD_PROJECT}-$V
+
+MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 
 CATEGORIES ?=		cad
 
