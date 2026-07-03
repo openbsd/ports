@@ -1,4 +1,4 @@
-VERSION =		4.24.3
+VERSION =		4.24.4
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -25,7 +25,7 @@ SHARED_LIBS =		dcerpc			3.0 \
 			samba-hostconfig	19.0 \
 			samba-passdb		3.2 \
 			samba-policy		0.0 \
-			samba-util		13.1 \
+			samba-util		14.0 \
 			samdb			6.0 \
 			smbclient		6.3 \
 			smbconf			19.1 \
