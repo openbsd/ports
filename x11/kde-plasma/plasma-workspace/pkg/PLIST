@@ -1,4 +1,4 @@
-@conflict plasma-desktop-<6.4.0
+@conflict plasma-desktop-<6.7.0
 @bin bin/gmenudbusmenuproxy
 @bin bin/kcminit
 bin/kcminit_startup
