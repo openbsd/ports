@@ -24,6 +24,8 @@ pycharm/lib/
 pycharm/lib/annotations.jar
 pycharm/lib/app.jar
 pycharm/lib/build-marker-PC-${DIST_VER}
+pycharm/lib/eclipse.lsp4j.jar
+pycharm/lib/eclipse.lsp4j.jsonrpc.jar
 pycharm/lib/external-system-rt.jar
 pycharm/lib/externalProcess-rt.jar
 pycharm/lib/fleet.andel.jar
@@ -254,6 +256,8 @@ pycharm/lib/intellij.platform.lang.jar
 pycharm/lib/intellij.platform.langInjection.backend.jar
 pycharm/lib/intellij.platform.langInjection.jar
 pycharm/lib/intellij.platform.locking.impl.jar
+pycharm/lib/intellij.platform.lsp.impl.jar
+pycharm/lib/intellij.platform.lsp.jar
 pycharm/lib/intellij.platform.lvcs.impl.jar
 pycharm/lib/intellij.platform.managed.cache.backend.jar
 pycharm/lib/intellij.platform.managed.cache.jar
