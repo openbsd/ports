@@ -26,6 +26,8 @@ intellij/lib/annotations.jar
 intellij/lib/app-backend.jar
 intellij/lib/app.jar
 intellij/lib/build-marker-IC-${DIST_VER}
+intellij/lib/eclipse.lsp4j.jar
+intellij/lib/eclipse.lsp4j.jsonrpc.jar
 intellij/lib/external-system-rt.jar
 intellij/lib/externalProcess-rt.jar
 intellij/lib/fleet.andel.jar
@@ -267,6 +269,8 @@ intellij/lib/intellij.platform.lang.jar
 intellij/lib/intellij.platform.langInjection.backend.jar
 intellij/lib/intellij.platform.langInjection.jar
 intellij/lib/intellij.platform.locking.impl.jar
+intellij/lib/intellij.platform.lsp.impl.jar
+intellij/lib/intellij.platform.lsp.jar
 intellij/lib/intellij.platform.lvcs.impl.jar
 intellij/lib/intellij.platform.managed.cache.backend.jar
 intellij/lib/intellij.platform.managed.cache.jar
