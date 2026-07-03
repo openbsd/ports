@@ -16,6 +16,8 @@ lib/python${MODPY_VERSION}/site-packages/beets/${MODPY_PYCACHE}__main__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/beets/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beets/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/beets/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/${MODPY_PYCACHE}mediafile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,18 +55,24 @@ lib/python${MODPY_VERSION}/site-packages/beets/dbcore/${MODPY_PYCACHE}query.${MO
 lib/python${MODPY_VERSION}/site-packages/beets/dbcore/${MODPY_PYCACHE}query.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/dbcore/${MODPY_PYCACHE}queryparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/dbcore/${MODPY_PYCACHE}queryparse.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beets/dbcore/${MODPY_PYCACHE}sort.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/beets/dbcore/${MODPY_PYCACHE}sort.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/dbcore/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/dbcore/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/dbcore/db.py
 lib/python${MODPY_VERSION}/site-packages/beets/dbcore/pathutils.py
 lib/python${MODPY_VERSION}/site-packages/beets/dbcore/query.py
 lib/python${MODPY_VERSION}/site-packages/beets/dbcore/queryparse.py
+lib/python${MODPY_VERSION}/site-packages/beets/dbcore/sort.py
 lib/python${MODPY_VERSION}/site-packages/beets/dbcore/types.py
+lib/python${MODPY_VERSION}/site-packages/beets/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/beets/importer/
 lib/python${MODPY_VERSION}/site-packages/beets/importer/__init__.py
 lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}stages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,6 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}state.${
 lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}state.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}tasks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/importer/${MODPY_PYCACHE}tasks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beets/importer/actions.py
 lib/python${MODPY_VERSION}/site-packages/beets/importer/session.py
 lib/python${MODPY_VERSION}/site-packages/beets/importer/stages.py
 lib/python${MODPY_VERSION}/site-packages/beets/importer/state.py
@@ -208,6 +217,8 @@ lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}lyrics.${MOD
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}lyrics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}m3u.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}m3u.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}pathformats.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}pathformats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}pipeline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}pipeline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}units.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -225,6 +236,7 @@ lib/python${MODPY_VERSION}/site-packages/beets/util/id_extractors.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/layout.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/lyrics.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/m3u.py
+lib/python${MODPY_VERSION}/site-packages/beets/util/pathformats.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/pipeline.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/units.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/
@@ -497,6 +509,7 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/permissions.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/play.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/playlist.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/plexupdate.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/py.typed
 lib/python${MODPY_VERSION}/site-packages/beetsplug/random.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/replace.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/replaygain.py

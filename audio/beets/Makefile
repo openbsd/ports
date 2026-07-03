@@ -1,6 +1,6 @@
 COMMENT=	CLI tools to manage music collections
 
-MODPY_DISTV=	2.11.0
+MODPY_DISTV=	2.12.0
 DISTNAME=	beets-${MODPY_DISTV}
 CATEGORIES=	audio
 
