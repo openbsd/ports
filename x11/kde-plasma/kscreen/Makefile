@@ -1,7 +1,6 @@
 COMMENT =	KDEs screen management software
 
 DISTNAME =	kscreen-${VERSION}
-REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 
@@ -36,6 +35,7 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
+		devel/kf6/kirigami \
 		devel/kf6/kguiaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kwidgetsaddons \

@@ -1,6 +1,5 @@
 COMMENT =	statistics for the KDE Activity concept
 DISTNAME =	plasma-activities-stats-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  PlasmaActivitiesStats     0.0 # 0.0
 

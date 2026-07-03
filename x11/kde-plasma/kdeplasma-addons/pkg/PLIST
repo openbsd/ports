@@ -1428,6 +1428,7 @@ share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/nn/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/nn/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/nn/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1435,6 +1436,7 @@ share/locale/nn/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/nn/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/nn/LC_MESSAGES/plasma_wallpaper_org.kde.tiled.mo
 share/locale/pa/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.addons.katesessions.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo

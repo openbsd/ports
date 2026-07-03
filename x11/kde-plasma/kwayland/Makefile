@@ -1,7 +1,6 @@
 COMMENT =	Qt API to interact with the wayland-client and -server
 DISTNAME =	kwayland-${VERSION}
 PKGNAME =	kf6-kwayland-${VERSION}
-REVISION =	2
 
 SHARED_LIBS +=  KWaylandClient            0.2 # 0.0
 

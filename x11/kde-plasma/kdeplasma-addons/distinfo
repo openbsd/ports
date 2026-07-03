@@ -161,7 +161,7 @@ SHA256 (plasma/../cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWN
 SHA256 (plasma/../cargo/zvariant-5.10.0.tar.gz) = VwgpmyGQO740jpRynyLEnFXQRyCgBKo1Dx+cEi/SVAs=
 SHA256 (plasma/../cargo/zvariant_derive-5.10.0.tar.gz) = W1mwEuvpxGZW+cwI2NqLTHJlEK7xJVnaPl8b9yeAdSw=
 SHA256 (plasma/../cargo/zvariant_utils-3.3.0.tar.gz) = 91wjpk749A8TppiZkeZDVU2b7x1oKigRYM8MG8OJxek=
-SHA256 (plasma/kdeplasma-addons-6.7.1.tar.xz) = nQ5x7xgIUGMIdRtfmydMlty9PTAsPCSVrW1R6zt+pP8=
+SHA256 (plasma/kdeplasma-addons-6.7.2.tar.xz) = b3d4y+q9NOSBm7ijvFtBCqQ8If5eMyLjtJ0A8hYIqgc=
 SIZE (plasma/../cargo/anstyle-1.0.14.tar.gz) = 17787
 SIZE (plasma/../cargo/anyhow-1.0.102.tar.gz) = 48658
 SIZE (plasma/../cargo/async-broadcast-0.7.2.tar.gz) = 22746
@@ -325,4 +325,4 @@ SIZE (plasma/../cargo/zmij-1.0.21.tar.gz) = 26665
 SIZE (plasma/../cargo/zvariant-5.10.0.tar.gz) = 93150
 SIZE (plasma/../cargo/zvariant_derive-5.10.0.tar.gz) = 16592
 SIZE (plasma/../cargo/zvariant_utils-3.3.0.tar.gz) = 15417
-SIZE (plasma/kdeplasma-addons-6.7.1.tar.xz) = 1135984
+SIZE (plasma/kdeplasma-addons-6.7.2.tar.xz) = 1136328
