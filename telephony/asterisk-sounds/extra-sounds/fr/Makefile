@@ -1,3 +1,3 @@
-MODAS_LANG = fr
+ASND_LANG = fr
 
 .include <bsd.port.mk>

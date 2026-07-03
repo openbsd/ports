@@ -1,3 +1,3 @@
-MODAS_LANG = en_NZ
+ASND_LANG = en_NZ
 
 .include <bsd.port.mk>

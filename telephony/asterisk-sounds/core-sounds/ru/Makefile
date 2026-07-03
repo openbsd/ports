@@ -1,3 +1,3 @@
-MODAS_LANG = ru
+ASND_LANG = ru
 
 .include <bsd.port.mk>

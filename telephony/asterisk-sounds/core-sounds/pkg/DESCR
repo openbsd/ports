@@ -1,5 +1,5 @@
-This package contains the core ${MODAS_LANGNAME} sound files for Asterisk
-in ${MODAS_CODEC} format.  It contains standard prompts used by various
+This package contains the core ${ASND_LANGNAME} sound files for Asterisk
+in ${ASND_CODEC} format.  It contains standard prompts used by various
 parts of Asterisk (including the voicemail and conference systems,
 demonstration files and agent login), digits, letters and other prompts
 which are of general useful.

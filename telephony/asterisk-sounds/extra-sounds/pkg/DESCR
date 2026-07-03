@@ -1,5 +1,5 @@
 This package contains an assortment of useful and not so useful
-${MODAS_LANGNAME} sound files for Asterisk in ${MODAS_CODEC} format.
+${ASND_LANGNAME} sound files for Asterisk in ${ASND_CODEC} format.
 
 Codecs currently available via FLAVORs are as follows:
 
