@@ -10,7 +10,7 @@ Index: src/Makefile.in
  	    } \
  	; done
  
-@@ -1004,7 +1004,7 @@ uninstall-man: uninstall-man8
+@@ -999,7 +999,7 @@ uninstall-man: uninstall-man8
  
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@install-exec-local:	install-rootbinPROGRAMS
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(MKDIR_P) "$(DESTDIR)/sbin"

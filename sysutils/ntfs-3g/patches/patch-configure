@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -14120,7 +14120,7 @@ else $as_nop
+@@ -15281,7 +15281,7 @@ esac
  fi
  
  		;;

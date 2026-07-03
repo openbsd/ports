@@ -1,9 +1,9 @@
 COMMENT =	FUSE NTFS driver with read/write support
 
-V =		2022.10.3
-REVISION = 	1
+V =		2026.2.25
 
 DISTNAME =	ntfs-3g_ntfsprogs-${V}
+WRKDIST =	${WRKDIR}/ntfs-3g-${V}
 PKGNAME =	ntfs_3g-${V}
 SHARED_LIBS +=	ntfs-3g		1.0	# 89.0
 CATEGORIES =	sysutils
