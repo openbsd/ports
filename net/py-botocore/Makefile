@@ -4,7 +4,7 @@
 
 COMMENT=		low-level interface to Amazon Web Services
 
-MODPY_DISTV=		1.43.36
+MODPY_DISTV=		1.43.40
 DISTNAME=		botocore-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 
