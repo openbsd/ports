@@ -1,6 +1,6 @@
 COMMENT=	provide version info for uv/hatch projects
 
-MODPY_DISTV=	0.13.0
+MODPY_DISTV=	0.14.0
 DISTNAME=	uv_dynamic_versioning-${MODPY_DISTV}
 PKGNAME=	py-uv-dynamic-versioning-${MODPY_DISTV}
 
