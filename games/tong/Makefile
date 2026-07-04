@@ -1,9 +1,8 @@
 COMMENT =	Tetris and Pong played simultaneously on one playing field
-DISTNAME =	tong-1.3
+DISTNAME =	tong-1.3.1
 CATEGORIES =	games x11
-REVISION =	2
 
-HOMEPAGE =	http://www.nongnu.org/tong/
+HOMEPAGE =	https://www.nongnu.org/tong/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -12,7 +11,7 @@ WANTLIB += SDL SDL_image SDL_mixer c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-SITES =		http://www.nongnu.org/tong/
+SITES =		https://www.nongnu.org/tong/
 
 LIB_DEPENDS =	devel/sdl-image \
 		devel/sdl-mixer
