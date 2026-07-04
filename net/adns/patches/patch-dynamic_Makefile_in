@@ -1,11 +1,12 @@
---- dynamic/Makefile.in.orig	Mon Oct 20 01:07:01 2014
-+++ dynamic/Makefile.in	Wed Apr 27 16:40:21 2016
-@@ -32,8 +32,6 @@ ALLOBJS=	$(addsuffix _p.o, $(basename $(LIBOBJS)))
+Index: dynamic/Makefile.in
+--- dynamic/Makefile.in.orig
++++ dynamic/Makefile.in
+@@ -28,8 +28,6 @@ ALLOBJS=	$(addsuffix _p.o, $(basename $(LIBOBJS)))
  install:
  		mkdir -p $(libdir)
- 		$(INSTALL_PROGRAM) $(SHLIBFILE) $(libdir)/$(SHLIBFILE)
--		ln -sf $(SHLIBFILE) $(libdir)/$(SHLIBSONAME)
--		ln -sf $(SHLIBSONAME) $(libdir)/$(SHLIBFORLINK)
+ 		$(INSTALL_PROGRAM) $(SHLIBFILE) $(DESTDIR)$(libdir)/$(SHLIBFILE)
+-		ln -sf $(SHLIBFILE) $(DESTDIR)$(libdir)/$(SHLIBSONAME)
+-		ln -sf $(SHLIBSONAME) $(DESTDIR)$(libdir)/$(SHLIBFORLINK)
  
  uninstall:
  		rm -f $(libdir)/$(SHLIBFILE) $(libdir)/$(SHLIBSONAME)
