@@ -1,0 +1,3 @@
+Jinxed is a pure-Python implementation of a subset of the Python curses
+library, providing terminfo functions such as tigetstr() and tparm() on
+all platforms.
