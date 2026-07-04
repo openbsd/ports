@@ -2,7 +2,7 @@ COMMENT=	Python implementation of the patiencediff algorithm
 
 ONLY_FOR_ARCHS=	${RUST_ARCHS}
 
-MODPY_DISTV=	0.2.18
+MODPY_DISTV=	0.2.19
 # use github; sdist is missing Cargo.lock
 GH_ACCOUNT=	breezy-team
 GH_PROJECT=	patiencediff
