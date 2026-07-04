@@ -1,10 +1,10 @@
 COMMENT =		CLI program to mass download images from various websites
 
-MODPY_DISTV =		1.30.0
+MODPY_DISTV =		1.32.5
 DISTNAME =		gallery_dl-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/_/-/}
 CATEGORIES =		www
-HOMEPAGE =		https://github.com/mikf/gallery-dl/
+HOMEPAGE =		https://codeberg.org/mikf/gallery-dl/
 
 MAINTAINER =		Stefan Hagen <sh+ports@codevoid.de>
 
