@@ -2,9 +2,8 @@ PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.13.5
+V=			3.13.6
 DISTNAME=		cyrus-imapd-${V}
-REVISION=		5
 
 SHARED_LIBS +=  cyrus_min            0.0      # unknown
 SHARED_LIBS +=  cyrus                0.0      # unknown

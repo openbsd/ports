@@ -293,8 +293,6 @@ share/doc/cyrus-imapd/README.cyrusdb.md
 share/doc/cyrus-imapd/README.docs
 share/doc/cyrus-imapd/README.twom.md
 share/doc/cyrus-imapd/README.xapian
-share/doc/cyrus-imapd/internal/
-share/doc/cyrus-imapd/internal/replication_protocol.md
 share/examples/cyrus-imapd/
 share/examples/cyrus-imapd/cyrus_conf/
 share/examples/cyrus-imapd/cyrus_conf/cmu-backend.conf

@@ -4,7 +4,7 @@
 Index: lib/util.h
 --- lib/util.h.orig
 +++ lib/util.h
-@@ -465,11 +465,15 @@ enum xsyslog_ev_arg_type {
+@@ -466,11 +466,15 @@ enum xsyslog_ev_arg_type {
   * We need this shim because, unlike gettimeofday, clock_gettime itself is
   * not a weak alias, so it can't be overridden directly.
   */

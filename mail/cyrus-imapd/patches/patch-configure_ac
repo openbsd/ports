@@ -3,7 +3,7 @@ Use LibreSSL.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1183,7 +1183,7 @@ SASL_SET_GSSAPI_LIBS
+@@ -1193,7 +1193,7 @@ SASL_SET_GSSAPI_LIBS
  dnl
  dnl Check for OpenSSL library, needed for TLS support
  dnl

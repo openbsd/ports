@@ -1,7 +1,7 @@
 Index: imap/httpd.c
 --- imap/httpd.c.orig
 +++ imap/httpd.c
-@@ -1240,7 +1240,9 @@ static void _shutdown_tls(struct http_connection *conn
+@@ -1241,7 +1241,9 @@ static void _shutdown_tls(struct http_connection *conn
  
  static int tls_init(int client_auth, struct buf *serverinfo)
  {

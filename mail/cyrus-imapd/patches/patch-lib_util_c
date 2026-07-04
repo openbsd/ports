@@ -1,0 +1,14 @@
+uuid_generate_sha1() is not implemented by our libuuid
+
+Index: lib/util.c
+--- lib/util.c.orig
++++ lib/util.c
+@@ -1280,7 +1280,7 @@ EXPORTED const char *makeuuid5(const char *nsuuidstr,
+                                unsigned const char *value,
+                                size_t len)
+ {
+-#ifdef HAVE_LIBUUID
++#if defined(HAVE_LIBUUID) && ! defined(__OpenBSD__)
+     uuid_t nsuuidbin;
+     if (!nsuuidstr || uuid_parse(nsuuidstr, nsuuidbin) < 0)
+         return NULL;
