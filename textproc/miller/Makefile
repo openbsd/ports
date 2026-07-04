@@ -1,9 +1,9 @@
 COMMENT =	name-indexed data processing tool
 
 MODGO_MODNAME =	github.com/johnkerl/miller/v6
-MODGO_VERSION =	v6.19.0
+MODGO_VERSION =	v6.20.0
 
-DISTNAME =	miller-6.19.0
+DISTNAME =	miller-6.20.0
 
 CATEGORIES =	textproc
 
