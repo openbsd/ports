@@ -21,14 +21,18 @@ define(`confINSTALL_RAWMAN',	'Yes')dnl
 define(`confDONT_INSTALL_CATMAN', 'Yes')dnl
 dnl FIXME
 define(`confNO_STATISTICS_INSTALL')dnl
+dnl Don't pickup libcdb (remove from default lib search)
+dnl =================
+define(`confLIBSEARCH', `db bind resolv 44bsd')dnl
 dnl Features we want
 dnl ================
 APPENDDEF(`confENVDEF', `-DNEEDSGETIPNODE')dnl
 APPENDDEF(`confENVDEF', `-DNETINET6')dnl
 APPENDDEF(`confENVDEF', `-DSM_CONF_SHM')dnl
 APPENDDEF(`confMAPDEF', `-DSOCKETMAP')dnl
-APPENDDEF(`conf_libmilter_ENVDEF', `-DMILTER')
-APPENDDEF(`conf_sendmail_ENVDEF', `-DMILTER')
+APPENDDEF(`conf_libmilter_ENVDEF', `-DMILTER')dnl
+APPENDDEF(`conf_sendmail_ENVDEF', `-DMILTER')dnl
+APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_BADRCPT_SHUTDOWN')dnl
 dnl (START)TLS
 APPENDDEF(`confENVDEF', `-DSTARTTLS')dnl
 APPENDDEF(`confENVDEF', `-D_FFR_TLS_EC')dnl
