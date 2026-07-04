@@ -1,6 +1,6 @@
 COMMENT=	snowball stemming library collection for Python
 
-MODPY_DISTV=	3.0.1
+MODPY_DISTV=	3.1.1
 DISTNAME=	snowballstemmer-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
