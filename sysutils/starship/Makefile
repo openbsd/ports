@@ -1,6 +1,6 @@
 COMMENT =	minimal customizable cross-shell prompt
 
-V = 		1.25.1
+V = 		1.26.0
 DIST_TUPLE +=	github starship starship v${V} .
 
 CATEGORIES =	sysutils shells
