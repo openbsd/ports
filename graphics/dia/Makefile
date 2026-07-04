@@ -1,7 +1,7 @@
 COMMENT=		program for drawing structured diagrams
 
-DIST_TUPLE=		gnome GNOME dia 87116635c2216e80c65a4e520ad0365d5416a38a .
-PKGNAME=		dia-0.98.0alpha20250817
+DIST_TUPLE=		gnome GNOME dia ad68cc378b7a187706bc2648c48b44d16fb80819 .
+PKGNAME=		dia-0.98.0alpha20260425
 
 CATEGORIES=		graphics
 
@@ -22,6 +22,7 @@ COMPILER_LANGS=		c c++
 MODULES=		lang/python \
 			devel/meson \
 			x11/gnome
+
 MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/appstream
@@ -35,5 +36,7 @@ LIB_DEPENDS=		graphics/graphene \
 RUN_DEPENDS=		devel/xdg-utils
 
 MODGNOME_TOOLS=		desktop-file-utils docbook gtk-update-icon-cache
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
