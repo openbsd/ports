@@ -1,9 +1,81 @@
+Fix directory auto-creation on OpenBSD.
+
+cyrus_mkdir() -> xopendir() -> xopendirpath() creates missing parent
+directories by recursing on dirname(path) and then mkdir'ing basename(path).
+On OpenBSD, basename(3)/dirname(3) return pointers into shared static
+storage that is overwritten by each call, and they do not modify their
+argument (unlike glibc's in-place POSIX dirname()).  Since xopendirpath()
+holds "path" across a recursive xopendir() call -- which itself calls
+dirname() -- the retained pointer gets clobbered, so the wrong path
+component is created and the intended directory is never made.  Every
+lock/spool directory that must be auto-created then fails with ENOENT,
+e.g. the post-login user namespace lock trips the assertion at
+imap/user.c:710 (locktype == LOCK_NONBLOCKING) and the service dies.
+
+Have xopendirpath() own its path string so the shared basename()/dirname()
+buffer can be clobbered without affecting us.
+
+
 uuid_generate_sha1() is not implemented by our libuuid
 
 Index: lib/util.c
 --- lib/util.c.orig
 +++ lib/util.c
-@@ -1280,7 +1280,7 @@ EXPORTED const char *makeuuid5(const char *nsuuidstr,
+@@ -380,18 +380,25 @@ EXPORTED int xrenameat(int dirfd, const char *src, con
+ 
+ #define XOPENDIR_CREATE 1
+ #define XOPENDIR_NOSYNC 2
+-static int xopendirpath(const char *path, int flags)
++static int xopendirpath(const char *path_arg, int flags)
+ {
++    /* Own our copy of the path.  basename(3) and dirname(3) may return
++     * pointers into shared, static, per-call storage (e.g. on OpenBSD),
++     * and the recursive xopendir() call below invokes dirname().  If
++     * path_arg aliased that storage it would be clobbered mid-function,
++     * making us create the wrong directory component. */
++    char *path = xstrdup(path_arg);
++
+ #if defined(O_DIRECTORY)
+     int dirfd = open(path, O_RDONLY|O_DIRECTORY, 0600);
+ #else
+     int dirfd = open(path, O_RDONLY, 0600);
+ #endif
+-    if (dirfd >= 0) return dirfd; // exists, we're good
+-    if (!(flags & XOPENDIR_CREATE)) return dirfd; // not creating? Bail
++    if (dirfd >= 0) { free(path); return dirfd; } // exists, we're good
++    if (!(flags & XOPENDIR_CREATE)) { free(path); return dirfd; } // not creating? Bail
+ 
+     int parentfd = xopendir(path, flags);
+-    if (parentfd < 0) return parentfd; // failed, can't get further
++    if (parentfd < 0) { free(path); return parentfd; } // failed, can't get further
+ 
+     char *copy = xstrdup(path);
+     const char *leaf = basename(copy);
+@@ -402,6 +409,7 @@ static int xopendirpath(const char *path, int flags)
+                              "filename=<%s>", path);
+             int saved_errno = errno;
+             free(copy);
++            free(path);
+             close(parentfd);
+             errno = saved_errno;
+             return -1;
+@@ -414,6 +422,7 @@ static int xopendirpath(const char *path, int flags)
+                              "filename=<%s>", path);
+             int saved_errno = errno;
+             free(copy);
++            free(path);
+             close(parentfd);
+             errno = saved_errno;
+             return -1;
+@@ -429,6 +438,7 @@ static int xopendirpath(const char *path, int flags)
+     dirfd = open(path, O_RDONLY, 0600);
+ #endif
+ 
++    free(path);
+     return dirfd;
+ }
+ 
+@@ -1280,7 +1290,7 @@ EXPORTED const char *makeuuid5(const char *nsuuidstr,
                                 unsigned const char *value,
                                 size_t len)
  {
