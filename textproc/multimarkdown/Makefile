@@ -6,8 +6,9 @@ GH_ACCOUNT =	fletcher
 GH_PROJECT =	MultiMarkdown-6
 GH_TAGNAME =	6.6.0
 PKGNAME =	multimarkdown-${GH_TAGNAME}
+REVISION =	0
 
-HOMEPAGE =	http://fletcherpenney.net/multimarkdown/
+HOMEPAGE =	https://fletcherpenney.net/multimarkdown/
 
 # MIT (see LICENSE)
 PERMIT_PACKAGE =	Yes
