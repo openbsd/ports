@@ -1,6 +1,6 @@
 COMMENT=	easy, practical library for making terminal apps
 
-MODPY_DISTV=	1.38.0
+MODPY_DISTV=	1.46.0
 DISTNAME=	blessed-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -15,7 +15,8 @@ MODULES=	lang/python
 MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
 
-RUN_DEPENDS=	devel/py-wcwidth
+RUN_DEPENDS=	devel/py-wcwidth \
+		sysutils/py-jinxed
 TEST_DEPENDS=	devel/py-test-cov
 
 pre-test:
