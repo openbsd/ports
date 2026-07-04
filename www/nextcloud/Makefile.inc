@@ -22,6 +22,8 @@ PERMIT_PACKAGE=	Yes
 
 SITES=			https://download.nextcloud.com/server/releases/
 
+PORTROACH?=		limit:^${NC_VERSION:R}
+
 MODULES=		lang/php
 
 NO_BUILD=		Yes
