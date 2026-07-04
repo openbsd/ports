@@ -1,8 +1,7 @@
-V =		1.1.4
+V =		1.2
 COMMENT =	utility to run CP/M-80 programs under Unix
 DISTNAME =	tnylpo-${V}
 CATEGORIES =	emulators
-REVISION =	0
 
 HOMEPAGE =	https://gitlab.com/gbrein/tnylpo
 
