@@ -1,14 +1,13 @@
 COMMENT=	drive some car across the moon
 
-DISTNAME =	moon-buggy-1.0.51
-REVISION =	0
+DISTNAME =	moon-buggy-1.1.0
 CATEGORIES=    	games	
-HOMEPAGE=	http://seehuhn.de/pages/moon-buggy
+HOMEPAGE=	https://seehuhn.de/pages/moon-buggy
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-SITES=		http://seehuhn.de/media/programs/
+SITES=		https://seehuhn.de/media/programs/
 
 WANTLIB=	c curses m
 
