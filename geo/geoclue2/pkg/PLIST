@@ -46,6 +46,8 @@ share/examples/geoclue2/xdg/autostart/
 share/examples/geoclue2/xdg/autostart/geoclue-demo-agent.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/geoclue-demo-agent.desktop
 share/gir-1.0/Geoclue-2.0.gir
+share/locale/ka/LC_MESSAGES/geoclue-2.0.mo
+share/locale/oc/LC_MESSAGES/geoclue-2.0.mo
 share/vala/vapi/libgeoclue-2.0.deps
 share/vala/vapi/libgeoclue-2.0.vapi
 @tag update-desktop-database
