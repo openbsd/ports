@@ -29,6 +29,15 @@ share/gitg/icons/hicolor/
 share/gitg/icons/hicolor/scalable/
 share/gitg/icons/hicolor/scalable/actions/
 share/gitg/icons/hicolor/scalable/actions/diff-symbolic.svg
+share/gitg/styles/
+share/gitg/styles/Adwaita-dark.xml
+share/gitg/styles/Adwaita.xml
+share/gitg/styles/classic-dark.xml
+share/gitg/styles/cobalt-light.xml
+share/gitg/styles/its/
+share/gitg/styles/its/style-scheme.its
+share/gitg/styles/its/style-scheme.loc
+share/gitg/styles/kate-dark.xml
 share/glade/
 share/glade/catalogs/
 share/glade/catalogs/gitg-glade.xml
@@ -54,9 +63,11 @@ share/locale/fr/LC_MESSAGES/gitg.mo
 share/locale/fur/LC_MESSAGES/gitg.mo
 share/locale/gl/LC_MESSAGES/gitg.mo
 share/locale/he/LC_MESSAGES/gitg.mo
+share/locale/hi/LC_MESSAGES/gitg.mo
 share/locale/hr/LC_MESSAGES/gitg.mo
 share/locale/hu/LC_MESSAGES/gitg.mo
 share/locale/id/LC_MESSAGES/gitg.mo
+share/locale/ie/LC_MESSAGES/gitg.mo
 share/locale/it/LC_MESSAGES/gitg.mo
 share/locale/ja/LC_MESSAGES/gitg.mo
 share/locale/ka/LC_MESSAGES/gitg.mo
@@ -81,6 +92,7 @@ share/locale/sl/LC_MESSAGES/gitg.mo
 share/locale/sr/LC_MESSAGES/gitg.mo
 share/locale/sr@latin/LC_MESSAGES/gitg.mo
 share/locale/sv/LC_MESSAGES/gitg.mo
+share/locale/ta/LC_MESSAGES/gitg.mo
 share/locale/tr/LC_MESSAGES/gitg.mo
 share/locale/uk/LC_MESSAGES/gitg.mo
 share/locale/vi/LC_MESSAGES/gitg.mo
@@ -88,7 +100,7 @@ share/locale/zh_CN/LC_MESSAGES/gitg.mo
 share/locale/zh_HK/LC_MESSAGES/gitg.mo
 share/locale/zh_TW/LC_MESSAGES/gitg.mo
 share/metainfo/
-share/metainfo/org.gnome.gitg.appdata.xml
+share/metainfo/org.gnome.gitg.metainfo.xml
 share/vala/vapi/libgitg-1.0.vapi
 share/vala/vapi/libgitg-ext-1.0.vapi
 @tag gtk-update-icon-cache %D/share/icons/hicolor
