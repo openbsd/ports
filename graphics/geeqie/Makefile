@@ -1,7 +1,7 @@
 COMMENT=		lightweight Gtk+3 based image viewer
 FIX_EXTRACT_PERMISSIONS= Yes
 
-V=			2.7
+V=			2.9
 DISTNAME=		geeqie-${V}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
