@@ -1,6 +1,7 @@
 COMMENT =	KDEs screen management software
 
 DISTNAME =	kscreen-${VERSION}
+REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 
@@ -24,9 +25,13 @@ KDE_DEPENDS =	devel/kf6/kauth \
 BUILD_DEPENDS =	${KDE_DEPENDS} \
 		wayland/plasma-wayland-protocols \
 		wayland/wayland-protocols \
+		devel/kf6/kimageformats \
+		devel/kf6/kitemmodels \
 		x11/kde-plasma/plasma5support>=${VERSION}
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/kf6/kimageformats \
+		devel/kf6/kitemmodels
 
 LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kcolorscheme \
