@@ -1,6 +1,6 @@
 COMMENT=	kill and destroy as many targets as possible in 3 minutes
 
-DISTNAME =	barrage-1.0.7
+DISTNAME =	barrage-1.0.8
 CATEGORIES =	games
 
 HOMEPAGE=	https://lgames.sourceforge.net/?project=Barrage
