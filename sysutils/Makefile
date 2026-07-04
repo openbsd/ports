@@ -340,6 +340,7 @@
      SUBDIR += py-fsspec
      SUBDIR += py-ghmi
      SUBDIR += py-hpilo
+     SUBDIR += py-jinxed
      SUBDIR += py-joblib
      SUBDIR += py-lockfile
      SUBDIR += py-mitogen
