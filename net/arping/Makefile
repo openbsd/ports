@@ -1,6 +1,6 @@
 COMMENT =	ARP level ping utility
 
-DISTNAME =	arping-2.28
+DISTNAME =	arping-2.29
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.habets.pp.se/synscan/programs_arping.html
@@ -26,7 +26,7 @@ DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/arping
-		${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/arping
+		${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/arping
 
 NO_TEST =	Yes
 
