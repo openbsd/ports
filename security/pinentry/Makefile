@@ -3,14 +3,10 @@ COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
 COMMENT-qt5 =	PIN or passphrase entry dialog (Qt5 interface)
 COMMENT-qt6 =	PIN or passphrase entry dialog (Qt6 interface)
 
-VERSION = 	1.3.2
+VERSION = 	1.3.3
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
-
-REVISION-main =	2
-REVISION-qt5 =	1
-REVISION-qt6 =	0
 
 SITES = 	${SITE_GNUPG:=pinentry/}
 
