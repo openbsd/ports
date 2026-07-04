@@ -27,6 +27,10 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/nasm
 .endif
 
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+CFLAGS+=	-msse2
+.endif
+
 CONFIGURE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DCMAKE_POSITION_INDEPENDENT_CODE=ON
 
