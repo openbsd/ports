@@ -18,17 +18,7 @@ Index: src/core/CMakeLists.txt
    SET(PDF4QT_BUILD_ONLY_CORE_LIBRARY TRUE)
    SET(PDF4QT_ENABLE_OPENGL FALSE)
    SUBDIRS(${CMAKE_SOURCE_DIR}/external/PDF4QT)
-@@ -2294,7 +2294,8 @@ if(MSVC)
-   )
- else()
-   if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" AND (CMAKE_BUILD_TYPE MATCHES Release OR CMAKE_BUILD_TYPE MATCHES RelWithDebInfo))
--    set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/qgsexpression_texts.cpp PROPERTIES COMPILE_FLAGS "-O1")
-+    set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/qgsexpression_texts.cpp PROPERTIES COMPILE_FLAGS "-O1" SKIP_PRECOMPILE_HEADERS ON)
-+    set_source_files_properties(textrenderer/qgsfontmanager.cpp PROPERTIES COMPILE_FLAGS "-O0" SKIP_PRECOMPILE_HEADERS ON)
-     set_source_files_properties(proj/qgscoordinatereferencesystem.cpp PROPERTIES COMPILE_FLAGS "-mllvm -inline-threshold=128")
-   endif()
- endif()
-@@ -2675,10 +2676,15 @@ target_include_directories(qgis_core PUBLIC
+@@ -2758,10 +2758,15 @@ target_include_directories(qgis_core PUBLIC
    ${CMAKE_SOURCE_DIR}/external/earcut
  )
  

@@ -4,12 +4,10 @@ relax flex requirement as QGIS builds and runs fine with our flex.
 
 revert https://github.com/qgis/QGIS/commit/fd20e69dae49765b7f5419d7a3f934ebfa792168
 
-last chunk: fix build with qt 6.10, from https://github.com/qgis/QGIS/pull/64056
-
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -412,7 +412,7 @@ if(WITH_CORE)
+@@ -411,7 +411,7 @@ if(WITH_CORE)
      set (USING_NINJA TRUE)
    endif()
  
@@ -18,7 +16,7 @@ Index: CMakeLists.txt
    find_package(BISON 2.4 REQUIRED)
  
    #############################################################
-@@ -451,9 +451,6 @@ if(WITH_CORE)
+@@ -450,9 +450,6 @@ if(WITH_CORE)
      set(SPATIALINDEX_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/spatialindex/include)
    else()
      find_package(Spatialindex REQUIRED)
