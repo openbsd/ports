@@ -1,6 +1,6 @@
-Fix build with poppler-26.05, prepare for 26.06.0.
+Fix build with poppler-26.05, prepare for 26.06.0 and 26.07.0.
 
-From svn r27545 and r27627.
+From svn r27545 and r27627 plus local patch.
 
 Index: scribus/plugins/import/pdf/slaoutput.cpp
 --- scribus/plugins/import/pdf/slaoutput.cpp.orig
@@ -70,6 +70,15 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  					if (co > 0)
  					{
  						QString inh = UnicodeParsedString(btn->getChoice(0));
+@@ -884,7 +901,7 @@ bool SlaOutputDev::handleWidgetAnnot(Annot* annota, do
+ 				QList<int> radList;
+ 				for (int i = 0; i < obj2.arrayGetLength(); i++)
+ 				{
+-					const Object& childRef = obj2.arrayGetNF(i);
++					const Object& childRef = obj2.getArray()->getNF(i);
+ 					if (!childRef.isRef())
+ 						continue;
+ 					Object childObj = obj2.arrayGet(i);
 @@ -942,7 +959,7 @@ void SlaOutputDev::applyTextStyle(PageItem* ite, const
  
  void SlaOutputDev::handleActions(PageItem* ite, AnnotWidget *ano)

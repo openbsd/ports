@@ -1,0 +1,13 @@
+Fix with poppler-26.07.0.
+
+Index: src/lib/pdf/pdfextractoroutputdevice.cpp
+--- src/lib/pdf/pdfextractoroutputdevice.cpp.orig
++++ src/lib/pdf/pdfextractoroutputdevice.cpp
+@@ -13,6 +13,7 @@
+ #include <Annot.h>
+ #include <Link.h>
+ #include <Page.h>
++#include <Stream.h>
+ 
+ #include <QDebug>
+ 

@@ -1,7 +1,8 @@
-Fix with poppler-26.06.0.
+Fix with poppler-26.06.0 and 26.07.0.
 
 From https://gitlab.com/inkscape/inkscape/-/work_items/6210,
 1.4.x-Poppler-26.06.0_rev0.patch
+Plus local patches.
 
 Index: src/extension/internal/pdfinput/pdf-parser.cpp
 --- src/extension/internal/pdfinput/pdf-parser.cpp.orig
@@ -23,6 +24,17 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
      : _pdf_doc(pdf_doc)
      , xref(pdf_doc->getXRef())
      , builder(builderA)
+@@ -292,8 +293,8 @@ PdfParser::PdfParser(std::shared_ptr<PDFDoc> pdf_doc, 
+     if (page) {
+         // Increment the page building here and set page label
+         Catalog *catalog = pdf_doc->getCatalog();
+-        GooString *label = new GooString("");
+-        catalog->indexToLabel(page->getNum() - 1, label);
++        std::string label;
++        catalog->indexToLabel(page->getNum() - 1, &label);
+         builder->pushPage(getString(label), state);
+     }
+ 
 @@ -307,8 +308,8 @@ PdfParser::PdfParser(std::shared_ptr<PDFDoc> pdf_doc, 
      builder->setMargins(getRect(page->getTrimBox()) * scale,
                          getRect(page->getArtBox()) * scale,
@@ -43,6 +55,24 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
      , fontChanged(gFalse)
      , clip(clipNone)
      , ignoreUndef(0)
+@@ -817,7 +818,7 @@ void PdfParser::opSetExtGState(Object args[], int /*nu
+             }
+             _POPPLER_FREE(obj3);
+             if (_POPPLER_CALL_ARGS_DEREF(obj3, obj2.dictLookup, "G").isStream()) {
+-                if (_POPPLER_CALL_ARGS_DEREF(obj4, obj3.streamGetDict()->lookup, "Group").isDict()) {
++                if (_POPPLER_CALL_ARGS_DEREF(obj4, obj3.getStream()->getDict()->lookup, "Group").isDict()) {
+                     std::unique_ptr<GfxColorSpace> blendingColorSpace;
+                     GBool isolated = gFalse;
+                     GBool knockout = gFalse;
+@@ -880,7 +881,7 @@ void PdfParser::doSoftMask(Object *str, GBool alpha,
+   }
+ 
+   // get stream dict
+-  dict = str->streamGetDict();
++  dict = str->getStream()->getDict();
+ 
+   // check form type
+   _POPPLER_CALL_ARGS(obj1, dict->lookup, "FormType");
 @@ -992,7 +993,7 @@ void PdfParser::opSetFillGray(Object args[], int /*num
    state->setFillPattern(nullptr);
    state->setFillColorSpace(_POPPLER_CONSUME_UNIQPTR_ARG(std::make_unique<GfxDeviceGrayColorSpace>()));
@@ -196,3 +226,57 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
      state->moveTo(patch->x[0][0], patch->y[0][0]);
      state->curveTo(patch->x[0][1], patch->y[0][1],
  		   patch->x[0][2], patch->y[0][2],
+@@ -2377,7 +2378,7 @@ void PdfParser::opXObject(Object args[], int /*numArgs
+     }
+ 
+ //add layer at root if xObject has type OCG
+-    _POPPLER_CALL_ARGS(obj2, obj1.streamGetDict()->lookup, "OC");
++    _POPPLER_CALL_ARGS(obj2, obj1.getStream()->getDict()->lookup, "OC");
+     if(obj2.isDict()){
+         auto type_dict = obj2.getDict();
+         if (type_dict->lookup("Type").isName("OCG")) {
+@@ -2395,7 +2396,7 @@ void PdfParser::opXObject(Object args[], int /*numArgs
+         }
+     }
+ 
+-    _POPPLER_CALL_ARGS(obj2, obj1.streamGetDict()->lookup, "Subtype");
++    _POPPLER_CALL_ARGS(obj2, obj1.getStream()->getDict()->lookup, "Subtype");
+     if (obj2.isName(const_cast<char*>("Image"))) {
+         _POPPLER_CALL_ARGS(refObj, res->lookupXObjectNF, name);
+         doImage(&refObj, obj1.getStream(), gFalse);
+@@ -2403,7 +2404,7 @@ void PdfParser::opXObject(Object args[], int /*numArgs
+     } else if (obj2.isName(const_cast<char*>("Form"))) {
+         doForm(&obj1);
+     } else if (obj2.isName(const_cast<char*>("PS"))) {
+-        _POPPLER_CALL_ARGS(obj3, obj1.streamGetDict()->lookup, "Level1");
++        _POPPLER_CALL_ARGS(obj3, obj1.getStream()->getDict()->lookup, "Level1");
+     } else if (obj2.isName()) {
+         error(errSyntaxError, getPos(), "Unknown XObject subtype '{0:s}'", obj2.getName());
+     } else {
+@@ -2596,7 +2597,7 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
+ 	            goto err1;
+             }
+             maskStr = smaskObj.getStream();
+-            maskDict = smaskObj.streamGetDict();
++            maskDict = maskStr->getDict();
+             _POPPLER_CALL_ARGS(obj1, maskDict->lookup, "Width");
+             if (obj1.isNull()) {
+                     _POPPLER_FREE(obj1);
+@@ -2674,7 +2675,7 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
+                 goto err1;
+             }
+             maskStr = maskObj.getStream();
+-            maskDict = maskObj.streamGetDict();
++            maskDict = maskStr->getDict();
+             _POPPLER_CALL_ARGS(obj1, maskDict->lookup, "Width");
+             if (obj1.isNull()) {
+                 _POPPLER_FREE(obj1);
+@@ -2774,7 +2775,7 @@ void PdfParser::doForm(Object *str, double *offset)
+     }
+ 
+     // get stream dict
+-    dict = str->streamGetDict();
++    dict = str->getStream()->getDict();
+ 
+     // check form type
+     _POPPLER_CALL_ARGS(obj1, dict->lookup, "FormType");

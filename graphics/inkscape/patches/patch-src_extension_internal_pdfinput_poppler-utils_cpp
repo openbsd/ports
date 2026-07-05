@@ -6,7 +6,12 @@ From https://gitlab.com/inkscape/inkscape/-/work_items/6210,
 Index: src/extension/internal/pdfinput/poppler-utils.cpp
 --- src/extension/internal/pdfinput/poppler-utils.cpp.orig
 +++ src/extension/internal/pdfinput/poppler-utils.cpp
-@@ -195,15 +195,17 @@ void InkFontDict::hashFontObject1(const Object *obj, F
+@@ -191,19 +191,21 @@ void InkFontDict::hashFontObject1(const Object *obj, F
+             n = obj->arrayGetLength();
+             h->hash((char *)&n, sizeof(int));
+             for (i = 0; i < n; ++i) {
+-                const Object &obj2 = obj->arrayGetNF(i);
++                const Object &obj2 = obj->getArray()->getNF(i);
                  hashFontObject1(&obj2, h);
              }
              break;
@@ -33,3 +38,12 @@ Index: src/extension/internal/pdfinput/poppler-utils.cpp
              }
              break;
          case objStream:
+@@ -543,7 +545,7 @@ void _getFontsRecursive(std::shared_ptr<PDFDoc> pdf_do
+                 continue;
+ 
+             Ref resourcesRef;
+-            const Object resObj = obj2.streamGetDict()->lookup("Resources", &resourcesRef);
++            const Object resObj = obj2.getStream()->getDict()->lookup("Resources", &resourcesRef);
+             if (resourcesRef != Ref::INVALID() && !visitedObjects.insert(resourcesRef.num).second)
+                 continue;
+ 
