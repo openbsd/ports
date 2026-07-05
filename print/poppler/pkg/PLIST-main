@@ -48,6 +48,7 @@ include/poppler/PageTransition.h
 include/poppler/Parser.h
 include/poppler/PopplerCache.h
 include/poppler/ProfileData.h
+include/poppler/Ref.h
 include/poppler/Rendition.h
 include/poppler/SignatureInfo.h
 include/poppler/Sound.h
