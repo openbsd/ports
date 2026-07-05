@@ -1,7 +1,11 @@
 @bin bin/niri
-bin/startniri.sh
+bin/niri-session
 share/applications/niri.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/niri/
+@sample ${SYSCONFDIR}/niri/
 share/examples/niri/default-config.kdl
+@sample ${SYSCONFDIR}/niri/config.kdl
 @tag update-desktop-database
+share/xdg-desktop-portal/
+share/xdg-desktop-portal/niri-portals.conf

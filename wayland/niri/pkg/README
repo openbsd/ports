@@ -2,21 +2,5 @@
 | Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
 
-Running
-=======
-
-On OpenBSD, use the provided ${PREFIX}/bin/startniri.sh script to
+On OpenBSD, use the provided ${PREFIX}/bin/niri-session script to
 launch niri from an text VT (xenodm must be stopped).
-
-Configuration
-=============
-
-An example configuration file is installed to
-/usr/local/share/niri/examples/default-config.kdl
-
-Niri will load configuration from $XDG_CONFIG_HOME/niri/config.kdl
-or ~/.config/niri/config.kdl, falling back to /etc/niri/config.kdl
-if none of those are available.
-
-For more info on configuration options, see
-https://github.com/YaLTeR/niri/wiki/Configuration:-Overview

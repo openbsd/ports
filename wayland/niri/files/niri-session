@@ -1,0 +1,5 @@
+#! /bin/ksh
+set -eu
+
+exec ${TRUEPREFIX}/bin/dbus-run-session -- \
+	${TRUEPREFIX}/bin/niri --session "$@"

@@ -1,0 +1,26 @@
+Chase ABI from multimedia/pipewire/files/patch-src_pipewire_pipewire_init
+https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
+
+Courtesy of the FreeBSD Port
+
+Index: modcargo-crates/pipewire-0.9.2/src/lib.rs
+--- modcargo-crates/pipewire-0.9.2/src/lib.rs.orig
++++ modcargo-crates/pipewire-0.9.2/src/lib.rs
+@@ -171,7 +171,7 @@ use std::ptr;
+ pub fn init() {
+     use once_cell::sync::OnceCell;
+     static INITIALIZED: OnceCell<()> = OnceCell::new();
+-    INITIALIZED.get_or_init(|| unsafe { pw_sys::pw_init(ptr::null_mut(), ptr::null_mut()) });
++    INITIALIZED.get_or_init(|| unsafe { pw_sys::pipewire_init(ptr::null_mut(), ptr::null_mut()) });
+ }
+ 
+ /// Deinitialize PipeWire
+@@ -180,7 +180,7 @@ pub fn init() {
+ /// This must only be called once during the lifetime of the process, once no PipeWire threads
+ /// are running anymore and all PipeWire resources are released.
+ pub unsafe fn deinit() {
+-    pw_sys::pw_deinit()
++    pw_sys::pipewire_deinit()
+ }
+ 
+ #[cfg(test)]

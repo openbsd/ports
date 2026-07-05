@@ -1,0 +1,32 @@
+Index: modcargo-crates/drm-0.14.1/src/node/mod.rs
+--- modcargo-crates/drm-0.14.1/src/node/mod.rs.orig
++++ modcargo-crates/drm-0.14.1/src/node/mod.rs
+@@ -95,7 +95,7 @@ impl DrmNode {
+ 
+     /// Returns whether the DRM device has render nodes.
+     pub fn has_render(&self) -> bool {
+-        #[cfg(target_os = "linux")]
++        #[cfg(any(target_os = "linux", target_os = "openbsd"))]
+         {
+             node_path(self, NodeType::Render).is_ok()
+         }
+@@ -107,7 +107,7 @@ impl DrmNode {
+             false
+         }
+ 
+-        #[cfg(not(any(target_os = "linux", target_os = "freebsd")))]
++        #[cfg(not(any(target_os = "linux", target_os = "freebsd", target_os = "openbsd")))]
+         {
+             false
+         }
+@@ -363,8 +363,8 @@ pub fn dev_path(dev: dev_t, ty: NodeType) -> io::Resul
+     }
+ 
+     let old_id = minor(dev);
+-    let id_mask = 0b11_1111;
+-    let id = old_id & id_mask + ty.minor_base();
++    const ID_MASK: u32 = 0b11_1111;
++    let id = old_id & ID_MASK | ty.minor_base();
+     let path = PathBuf::from(format!("/dev/dri/{}{}", ty.minor_name_prefix(), id));
+     if path.exists() {
+         return Ok(path);

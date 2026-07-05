@@ -1,0 +1,14 @@
+Index: niri/src/main.rs
+--- niri/src/main.rs.orig
++++ niri/src/main.rs
+@@ -385,8 +385,8 @@ fn set_default_max_buffer_size(display: &Display<State
+         // RTLD_NOLOAD ensures we only get a handle to the libwayland-server that wayland-rs has
+         // already loaded into this process, rather than potentially pulling in a different copy.
+         let lib = libc::dlopen(
+-            c"libwayland-server.so.0".as_ptr(),
+-            libc::RTLD_LAZY | libc::RTLD_NOLOAD,
++            c"libwayland-server.so".as_ptr(),
++            libc::RTLD_LAZY
+         );
+         if lib.is_null() {
+             // It's not really expected that this can happen, maybe if some distro changes the

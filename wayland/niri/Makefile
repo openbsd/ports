@@ -1,34 +1,36 @@
 COMMENT =	scrollable-tiling Wayland compositor
 
-PKGNAME =	niri-25.11.20260220
-REVISION =	0
+DIST_TUPLE +=	github niri-wm niri v26.04 niri
+DIST_TUPLE +=	github Smithay smithay ff5fa7df392cecfba049ffed55cdaa4e98a8e7ef smithay
 
-# Use https://github.com/tobhe/niri/tree/openbsd-port until all
-# the dependency fixes have propagated to the actual rust packages
-DIST_TUPLE +=	github tobhe niri 097810ed0e7ef944fa7bca0947f41b9c34cd89f4 .
-DIST_TUPLE +=	github tobhe drm-rs ea05145076d7b81c1b99656923e6ee539590d654 .
-DIST_TUPLE +=	github tobhe smithay adf3bfddc019c8950deb650f4ed442c0312e0ea8 .
-DIST_TUPLE +=	github tobhe polling e838a159551ccbdc7a4c39a51fa36430615f8d34 .
-
-MODCARGO_NO_DEFAULT_FEATURES = Yes
-MODCARGO_FEATURES =
+WRKDIST =	${WRKDIR}
 
 CATEGORIES =	wayland
 
 MAINTAINER =	Tobias Heider <tobhe@openbsd.org>
 
-# GPLv3 only
+# GPLv3+
 PERMIT_PACKAGE = Yes
 
-MODULES =	devel/cargo
+WANTLIB += ${MODCARGO_WANTLIB} cairo display-info gbm glib-2.0
+WANTLIB += gobject-2.0 input m pango-1.0 pangocairo-1.0 pipewire-0.3
+WANTLIB += pixman-1 seat udev xkbcommon
 
+MODULES =	devel/cargo lang/clang
 CONFIGURE_STYLE =	cargo
+
+MODCARGO_CARGOTOML = 	${WRKDIST}/niri/Cargo.toml
+MODCARGO_ENV =		LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+MODCARGO_FEATURES = 	dbus xdp-gnome-screencast
+MODCARGO_INSTALL_TARGET_PATHS = ./niri
+MODCARGO_NO_DEFAULT_FEATURES =	Yes
 
 BUILD_DEPENDS =	wayland/wayland-protocols
 
-LIB_DEPENDS =	devel/pango \
-		devel/glib2 \
+LIB_DEPENDS =	devel/glib2 \
+		devel/pango \
 		graphics/cairo \
+		multimedia/pipewire/pipewire,-libs \
 		sysutils/libdisplay-info \
 		sysutils/libudev-openbsd \
 		sysutils/seatd \
@@ -36,20 +38,25 @@ LIB_DEPENDS =	devel/pango \
 		x11/xkbcommon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		multimedia/pipewire/pipewire \
 		wayland/foot \
-		wayland/wofi \
-		wayland/xwayland-satellite
-
-WANTLIB =	${MODCARGO_WANTLIB}
-WANTLIB +=	cairo display-info gbm glib-2.0 gobject-2.0 input m
-WANTLIB +=	pango-1.0 pangocairo-1.0 pixman-1 seat udev xkbcommon
+		wayland/fuzzel \
+		wayland/swaylock \
+		wayland/xwayland-satellite \
+		x11/dbus
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/niri
-	${INSTALL_DATA} ${WRKSRC}/resources/default-config.kdl ${PREFIX}/share/examples/niri
+	${INSTALL_DATA} ${WRKSRC}/niri/resources/default-config.kdl \
+		${PREFIX}/share/examples/niri
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/resources/niri.desktop ${PREFIX}/share/applications
-	${INSTALL_SCRIPT} ${FILESDIR}/startniri.sh ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/niri/resources/niri.desktop \
+		${PREFIX}/share/applications
+	${SUBST_CMD} -c -m755 ${FILESDIR}/niri-session \
+		${PREFIX}/bin/niri-session
+	${INSTALL_DATA_DIR} ${PREFIX}/share/xdg-desktop-portal
+	${INSTALL_DATA} ${WRKSRC}/niri/resources/niri-portals.conf \
+		${PREFIX}/share/xdg-desktop-portal
 
 .include "crates.inc"
 .include <bsd.port.mk>

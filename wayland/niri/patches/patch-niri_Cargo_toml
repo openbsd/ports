@@ -1,0 +1,25 @@
+Index: niri/Cargo.toml
+--- niri/Cargo.toml.orig
++++ niri/Cargo.toml
+@@ -27,15 +27,16 @@ tracy-client = { version = "0.18.4", default-features 
+ 
+ [workspace.dependencies.smithay]
+ # version = "0.4.1"
+-git = "https://github.com/Smithay/smithay.git"
+-rev = "ff5fa7df392cecfba049ffed55cdaa4e98a8e7ef"
++# git = "https://github.com/Smithay/smithay.git"
++# rev = "ff5fa7df392cecfba049ffed55cdaa4e98a8e7ef"
+ default-features = false
++path = "../smithay"
+ 
+ [workspace.dependencies.smithay-drm-extras]
+ # version = "0.1.0"
+-git = "https://github.com/Smithay/smithay.git"
+-rev = "ff5fa7df392cecfba049ffed55cdaa4e98a8e7ef"
+-# path = "../smithay/smithay-drm-extras"
++# git = "https://github.com/Smithay/smithay.git"
++# rev = "ff5fa7df392cecfba049ffed55cdaa4e98a8e7ef"
++path = "../smithay/smithay-drm-extras"
+ 
+ [package]
+ name = "niri"

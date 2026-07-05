@@ -1,0 +1,34 @@
+Index: modcargo-crates/polling-3.11.0/src/os/kqueue.rs
+--- modcargo-crates/polling-3.11.0/src/os/kqueue.rs.orig
++++ modcargo-crates/polling-3.11.0/src/os/kqueue.rs
+@@ -99,11 +99,13 @@ impl<F: Filter> PollerKqueueExt<F> for Poller {
+     #[inline(always)]
+     fn add_filter(&self, filter: F, key: usize, mode: PollMode) -> io::Result<()> {
+         // No difference between adding and modifying in kqueue.
++        #[cfg(not(target_os = "openbsd"))]
+         self.poller.add_source(filter.source_id())?;
+         self.modify_filter(filter, key, mode)
+     }
+ 
+     fn modify_filter(&self, filter: F, key: usize, mode: PollMode) -> io::Result<()> {
++        #[cfg(not(target_os = "openbsd"))]
+         self.poller.has_source(filter.source_id())?;
+ 
+         // Convert the filter into a kevent.
+@@ -118,9 +120,14 @@ impl<F: Filter> PollerKqueueExt<F> for Poller {
+         let event = filter.filter(kqueue::EventFlags::DELETE, 0);
+ 
+         // Delete the filter.
+-        self.poller.submit_changes([event])?;
++        #[cfg(not(target_os = "openbsd"))]
++        {
++            self.poller.submit_changes([event])?;
++            self.poller.remove_source(filter.source_id())
++        }
+ 
+-        self.poller.remove_source(filter.source_id())
++        #[cfg(target_os = "openbsd")]
++        self.poller.submit_changes([event])
+     }
+ }
+ 

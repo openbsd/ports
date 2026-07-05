@@ -1,0 +1,88 @@
+Index: modcargo-crates/polling-3.11.0/src/kqueue.rs
+--- modcargo-crates/polling-3.11.0/src/kqueue.rs.orig
++++ modcargo-crates/polling-3.11.0/src/kqueue.rs
+@@ -21,6 +21,7 @@ pub struct Poller {
+     /// List of sources currently registered in this poller.
+     ///
+     /// This is used to make sure the same source is not registered twice.
++    #[cfg(not(target_os = "openbsd"))]
+     sources: RwLock<HashSet<SourceId>>,
+ 
+     /// Notification pipe for waking up the poller.
+@@ -54,12 +55,19 @@ impl Poller {
+         let kqueue_fd = kqueue::kqueue()?;
+         fcntl_setfd(&kqueue_fd, FdFlags::CLOEXEC)?;
+ 
++        #[cfg(not(target_os = "openbsd"))]
+         let poller = Poller {
+             kqueue_fd,
+             sources: RwLock::new(HashSet::new()),
+             notify: notify::Notify::new()?,
+         };
+ 
++        #[cfg(target_os = "openbsd")]
++        let poller = Poller {
++            kqueue_fd,
++            notify: notify::Notify::new()?,
++        };
++
+         // Register the notification pipe.
+         poller.notify.register(&poller)?;
+ 
+@@ -87,6 +95,7 @@ impl Poller {
+     ///
+     /// The file descriptor must be valid and it must last until it is deleted.
+     pub unsafe fn add(&self, fd: RawFd, ev: Event, mode: PollMode) -> io::Result<()> {
++        #[cfg(not(target_os = "openbsd"))]
+         self.add_source(SourceId::Fd(fd))?;
+ 
+         // File descriptors don't need to be added explicitly, so just modify the interest.
+@@ -110,6 +119,7 @@ impl Poller {
+         #[cfg(feature = "tracing")]
+         let _enter = span.as_ref().map(|s| s.enter());
+ 
++        #[cfg(not(target_os = "openbsd"))]
+         self.has_source(SourceId::Fd(fd.as_raw_fd()))?;
+ 
+         let mode_flags = mode_to_flags(mode);
+@@ -183,6 +193,7 @@ impl Poller {
+ 
+     /// Add a source to the sources set.
+     #[inline]
++    #[cfg(not(target_os = "openbsd"))]
+     pub(crate) fn add_source(&self, source: SourceId) -> io::Result<()> {
+         if self
+             .sources
+@@ -198,6 +209,7 @@ impl Poller {
+ 
+     /// Tell if a source is currently inside the set.
+     #[inline]
++    #[cfg(not(target_os = "openbsd"))]
+     pub(crate) fn has_source(&self, source: SourceId) -> io::Result<()> {
+         if self
+             .sources
+@@ -213,6 +225,7 @@ impl Poller {
+ 
+     /// Remove a source from the sources set.
+     #[inline]
++    #[cfg(not(target_os = "openbsd"))]
+     pub(crate) fn remove_source(&self, source: SourceId) -> io::Result<()> {
+         if self
+             .sources
+@@ -229,9 +242,14 @@ impl Poller {
+     /// Deletes a file descriptor.
+     pub fn delete(&self, fd: BorrowedFd<'_>) -> io::Result<()> {
+         // Simply delete interest in the file descriptor.
+-        self.modify(fd, Event::none(0), PollMode::Oneshot)?;
++        #[cfg(not(target_os = "openbsd"))]
++        {
++            self.modify(fd, Event::none(0), PollMode::Oneshot)?;
++            self.remove_source(SourceId::Fd(fd.as_raw_fd()))
++        }
+ 
+-        self.remove_source(SourceId::Fd(fd.as_raw_fd()))
++        #[cfg(target_os = "openbsd")]
++        self.modify(fd, Event::none(0), PollMode::Oneshot)
+     }
+ 
+     /// Waits for I/O events with an optional deadline.
