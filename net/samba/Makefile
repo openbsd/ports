@@ -134,7 +134,6 @@ WAF_ARGS =		-v -j ${MAKE_JOBS}
 CONFIGURE_ENV =		LC_ALL=en_US.UTF-8 \
 			CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
-			CPP="/usr/libexec/cpp" \
 			CPPFLAGS="-I${LOCALBASE}/include/inotify -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib/inotify -Wl,-rpath,${LOCALBASE}/lib/inotify -L${LOCALBASE}/lib ${LDFLAGS}"
 

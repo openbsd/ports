@@ -41,6 +41,15 @@ Index: OpenBSD.cf
  
  #define UseGnuMalloc		NO
  
+@@ -162,7 +165,7 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #define MkdirHierCmd		mkdir -p
+ 
+ #ifndef CppCmd
+-#define CppCmd          	/usr/libexec/cpp
++#define CppCmd          	cpp
+ #endif
+ #define StandardCppOptions	-traditional
+ #define StandardCppDefines	/**/
 @@ -172,6 +175,9 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  #ifndef CcCmd
  #define CcCmd 			cc
