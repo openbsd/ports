@@ -1,1 +1,2 @@
 @bin bin/xwayland-satellite
+@man man/man1/xwayland-satellite.1
