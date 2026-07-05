@@ -1,5 +1,3 @@
-BROKEN-riscv64 =	needs riscv_vector.h
-
 COMMENT =		C implementations of functions for use within SABnzbd
 
 MODPY_DISTV =		9.4.0
