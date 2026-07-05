@@ -2,17 +2,19 @@ Create error() function, Linux-ism.
 Our libelf doesn't have some of these defines.
 obstack is not a system header
 xxhash is not a system header
+Use libc SHA1 functions.
 
 Index: dwz.c
 --- dwz.c.orig
 +++ dwz.c
-@@ -21,13 +21,13 @@
+@@ -21,13 +21,14 @@
  
  #include <assert.h>
  #include <errno.h>
 -#include <error.h>
  #include <fcntl.h>
  #include <setjmp.h>
++#include <sha1.h>
  #include <string.h>
  #include <stdbool.h>
  #include <stddef.h>
@@ -21,7 +23,7 @@ Index: dwz.c
  #include <inttypes.h>
  #include <stdlib.h>
  #include <unistd.h>
-@@ -38,7 +38,7 @@
+@@ -38,11 +39,10 @@
  #include <sys/wait.h>
  
  #include <gelf.h>
@@ -30,6 +32,10 @@ Index: dwz.c
  
  #include "dwarf2.h"
  #include "hashtab.h"
+-#include "sha1.h"
+ #include "args.h"
+ #include "util.h"
+ #include "pool.h"
 @@ -213,6 +213,29 @@ report_progress (void)
  /* Where to longjmp on OOM.  */
  static jmp_buf oom_buf;
@@ -96,15 +102,38 @@ Index: dwz.c
      {
        error (0, 0, "%s: elf_update failed", dso->filename);
        unlink (file);
-@@ -16004,7 +16027,7 @@ optimize_multifile (unsigned int *die_count)
+@@ -15739,7 +15762,7 @@ optimize_multifile (unsigned int *die_count)
+ 			       : sizeof shstrtab_gnu);
+   const char *p;
+   unsigned char note[0x24], *np, *supp;
+-  struct sha1_ctx ctx;
++  SHA1_CTX ctx;
+ 
+   if (multi_ehdr.e_ident[0] == '\0'
+       || multi_ptr_size == 0
+@@ -16004,17 +16027,17 @@ optimize_multifile (unsigned int *die_count)
        error (0, 0, "Could not create new ELF headers");
        goto fail;
      }
 -  elf_flagelf (elf, ELF_C_SET, ELF_F_LAYOUT | ELF_F_PERMISSIVE);
 +  elf_flagelf (elf, ELF_C_SET, ELF_F_LAYOUT);
  
-   sha1_init_ctx (&ctx);
+-  sha1_init_ctx (&ctx);
++  SHA1Init (&ctx);
    for (i = 0; debug_sections[i].name; i++)
+     {
+       if (debug_sections[i].new_size == 0)
+ 	continue;
+-      sha1_process_bytes (debug_sections[i].new_data,
+-			  debug_sections[i].new_size, &ctx);
++      SHA1Update (&ctx, debug_sections[i].new_data,
++		  debug_sections[i].new_size);
+     }
+-  sha1_finish_ctx (&ctx, multifile_sha1);
++  SHA1Final (multifile_sha1, &ctx);
+ 
+   memcpy (np, "GNU", sizeof ("GNU"));
+   memcpy (np + 4, multifile_sha1, 0x14);
 @@ -16097,7 +16120,7 @@ optimize_multifile (unsigned int *die_count)
    data->d_off = 0;
    data->d_align = 1;

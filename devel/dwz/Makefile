@@ -4,7 +4,7 @@ XXHASH_V =	0.8.3
 DISTFILES =	${PKGNAME}.tar.gz
 DISTFILES.h= 	xxhash-${XXHASH_V}{xxhash}.h
 
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 

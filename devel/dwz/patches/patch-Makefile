@@ -41,7 +41,7 @@ Index: Makefile
  datarootdir = $(prefix)/share
  mandir = $(datarootdir)/man
 -OBJECTS = args.o dwz.o hashtab.o pool.o sha1.o dwarfnames.o
-+OBJECTS = args.o dwz.o hashtab.o pool.o sha1.o dwarfnames.o obstack.o
++OBJECTS = args.o dwz.o hashtab.o pool.o dwarfnames.o obstack.o
  LIBS=-lelf
 -ifneq "$(XXH_INLINE_ALL_WORKS)" "1"
 -LIBS += -lxxhash

@@ -1,6 +1,8 @@
 More portable endianness check
 https://www.austingroupbugs.net/view.php?id=162#c665
 
+ANSIfy.
+
 Index: hashtab.c
 --- hashtab.c.orig
 +++ hashtab.c
@@ -13,3 +15,225 @@ Index: hashtab.c
  # define WORDS_BIGENDIAN 1
  #endif
  
+@@ -66,8 +66,7 @@ htab_eq htab_eq_pointer = eq_pointer;
+    greater than N, and near a power of two. */
+ 
+ unsigned long
+-higher_prime_number (n)
+-     unsigned long n;
++higher_prime_number (unsigned long n)
+ {
+   /* These are primes that are near, but slightly smaller than, a
+      power of two.  */
+@@ -130,8 +129,7 @@ higher_prime_number (n)
+ /* Returns a hash code for P.  */
+ 
+ static hashval_t
+-hash_pointer (p)
+-     const void * p;
++hash_pointer (const void * p)
+ {
+   return (hashval_t) ((long)p >> 3);
+ }
+@@ -139,9 +137,7 @@ hash_pointer (p)
+ /* Returns non-zero if P1 and P2 are equal.  */
+ 
+ static int
+-eq_pointer (p1, p2)
+-     const void * p1;
+-     const void * p2;
++eq_pointer (const void * p1, const void * p2)
+ {
+   return p1 == p2;
+ }
+@@ -152,11 +148,7 @@ eq_pointer (p1, p2)
+    hash table.  Memory allocation may fail; it may return NULL.  */
+ 
+ htab_t
+-htab_try_create (size, hash_f, eq_f, del_f)
+-     size_t size;
+-     htab_hash hash_f;
+-     htab_eq eq_f;
+-     htab_del del_f;
++htab_try_create (size_t size, htab_hash hash_f, htab_eq eq_f, htab_del del_f)
+ {
+   htab_t result;
+ 
+@@ -184,8 +176,7 @@ htab_try_create (size, hash_f, eq_f, del_f)
+    Naturally the hash table must already exist. */
+ 
+ void
+-htab_delete (htab)
+-     htab_t htab;
++htab_delete (htab_t htab)
+ {
+   int i;
+ 
+@@ -202,8 +193,7 @@ htab_delete (htab)
+ /* This function clears all entries in the given hash table.  */
+ 
+ void
+-htab_empty (htab)
+-     htab_t htab;
++htab_empty (htab_t htab)
+ {
+   int i;
+ 
+@@ -226,9 +216,7 @@ htab_empty (htab)
+    HASH is the hash value for the element to be inserted.  */
+ 
+ static void **
+-find_empty_slot_for_expand (htab, hash)
+-     htab_t htab;
+-     hashval_t hash;
++find_empty_slot_for_expand (htab_t htab, hashval_t hash)
+ {
+   size_t size = htab->size;
+   unsigned int index = hash % size;
+@@ -264,8 +252,7 @@ find_empty_slot_for_expand (htab, hash)
+    expanded.  If all goes well, it will return a non-zero value.  */
+ 
+ static int
+-htab_expand (htab)
+-     htab_t htab;
++htab_expand (htab_t htab)
+ {
+   void **oentries;
+   void **olimit;
+@@ -311,10 +298,7 @@ htab_expand (htab)
+    element.  It cannot be used to insert or delete an element.  */
+ 
+ void *
+-htab_find_with_hash (htab, element, hash)
+-     htab_t htab;
+-     const void * element;
+-     hashval_t hash;
++htab_find_with_hash (htab_t htab, const void * element, hashval_t hash)
+ {
+   unsigned int index;
+   hashval_t hash2;
+@@ -350,9 +334,7 @@ htab_find_with_hash (htab, element, hash)
+    element.  */
+ 
+ void *
+-htab_find (htab, element)
+-     htab_t htab;
+-     const void * element;
++htab_find (htab_t htab, const void * element)
+ {
+   return htab_find_with_hash (htab, element, (*htab->hash_f) (element));
+ }
+@@ -366,11 +348,8 @@ htab_find (htab, element)
+    fails.  */
+ 
+ void **
+-htab_find_slot_with_hash (htab, element, hash, insert)
+-     htab_t htab;
+-     const void * element;
+-     hashval_t hash;
+-     enum insert_option insert;
++htab_find_slot_with_hash (htab_t htab, const void * element, hashval_t hash,
++			  enum insert_option insert)
+ {
+   void **first_deleted_slot;
+   unsigned int index;
+@@ -435,10 +414,7 @@ htab_find_slot_with_hash (htab, element, hash, insert)
+    element.  */
+ 
+ void **
+-htab_find_slot (htab, element, insert)
+-     htab_t htab;
+-     const void * element;
+-     enum insert_option insert;
++htab_find_slot (htab_t htab, const void * element, enum insert_option insert)
+ {
+   return htab_find_slot_with_hash (htab, element, (*htab->hash_f) (element),
+ 				   insert);
+@@ -449,9 +425,7 @@ htab_find_slot (htab, element, insert)
+    function does nothing.  */
+ 
+ void
+-htab_remove_elt (htab, element)
+-     htab_t htab;
+-     void * element;
++htab_remove_elt (htab_t htab, void * element)
+ {
+   void **slot;
+ 
+@@ -471,9 +445,7 @@ htab_remove_elt (htab, element)
+    again.  */
+ 
+ void
+-htab_clear_slot (htab, slot)
+-     htab_t htab;
+-     void **slot;
++htab_clear_slot (htab_t htab, void **slot)
+ {
+   if (slot < htab->entries || slot >= htab->entries + htab->size
+       || *slot == EMPTY_ENTRY || *slot == DELETED_ENTRY)
+@@ -492,10 +464,7 @@ htab_clear_slot (htab, slot)
+    argument.  */
+ 
+ void
+-htab_traverse (htab, callback, info)
+-     htab_t htab;
+-     htab_trav callback;
+-     void * info;
++htab_traverse (htab_t htab, htab_trav callback, void * info)
+ {
+   void **slot = htab->entries;
+   void **limit = slot + htab->size;
+@@ -514,8 +483,7 @@ htab_traverse (htab, callback, info)
+ /* Return the current size of given hash table. */
+ 
+ size_t
+-htab_size (htab)
+-     htab_t htab;
++htab_size (htab_t htab)
+ {
+   return htab->size;
+ }
+@@ -523,8 +491,7 @@ htab_size (htab)
+ /* Return the current number of elements in given hash table. */
+ 
+ size_t
+-htab_elements (htab)
+-     htab_t htab;
++htab_elements (htab_t htab)
+ {
+   return htab->n_elements - htab->n_deleted;
+ }
+@@ -533,8 +500,7 @@ htab_elements (htab)
+    hash table. */
+ 
+ double
+-htab_collisions (htab)
+-     htab_t htab;
++htab_collisions (htab_t htab)
+ {
+   if (htab->searches == 0)
+     return 0.0;
+@@ -544,10 +510,7 @@ htab_collisions (htab)
+ 
+ #ifndef NDEBUG
+ void
+-htab_dump (htab, name, dumpfn)
+-     htab_t htab;
+-     const char *name;
+-     htab_dumpfn dumpfn;
++htab_dump (htab_t htab, const char *name, htab_dumpfn dumpfn)
+ {
+   FILE *f = fopen (name, "w");
+   size_t i, j;
+@@ -579,10 +542,7 @@ htab_dump (htab, name, dumpfn)
+ }
+ 
+ void
+-htab_restore (htab, name, restorefn)
+-     htab_t htab;
+-     const char *name;
+-     htab_restorefn restorefn;
++htab_restore (htab_t htab, const char *name, htab_restorefn restorefn)
+ {
+   FILE *f = fopen (name, "r");
+   size_t size, n_elements, n_deleted, i, j, k;
