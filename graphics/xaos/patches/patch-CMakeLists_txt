@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -286,11 +286,11 @@ else()
+@@ -290,11 +290,11 @@ else()
  endif()
  
  # install catalogs and tutorial
