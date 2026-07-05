@@ -1,15 +1,13 @@
 COMMENT = C11 standard threads library
 
 DISTNAME =	libstdthreads-${V}
-V =		0.3.2
-REVISION =	2
+V =		0.3.3
 
 CATEGORIES =	devel
 
-SITES =	https://code.tetaneutral.net/mherrb/libstdthreads//archive/
-DISTFILES =     ${DISTNAME}-1{${DISTNAME}}.tar.gz
+SITES =	https://code.tetaneutral.net/mherrb/libstdthreads/archive/
 
-SHARED_LIBS +=  stdthreads                0.0 # 0.0
+SHARED_LIBS +=	stdthreads		  0.0 # 0.0
 
 WRKDIST =	${WRKDIR}/libstdthreads
 
@@ -27,9 +25,8 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL} -c -m 444 -o root -g bin \
 		threads.h ${PREFIX}/include
 
-DEBUG_PACKAGES = 	${BUILD_PACKAGES}
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
-
