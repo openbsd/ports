@@ -2,6 +2,7 @@
 @option is-branch
 @conflict erlang-wx->=28,<29
 @conflict erlang-wx->=28v0,<29v0
+@conflict erlang->=28v0,<28.5.0.3p0v0
 lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/
 lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/
 lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_debugged.beam
