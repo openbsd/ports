@@ -1,6 +1,6 @@
 COMMENT=	virtual Python environment builder
 
-MODPY_DISTV=	21.5.0
+MODPY_DISTV=	21.5.1
 DISTNAME=	virtualenv-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
