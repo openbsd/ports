@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.216 2026/01/18 10:02:28 tb Exp $
+# $OpenBSD: update-plist,v 1.217 2026/07/06 08:12:40 tb Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -644,7 +644,8 @@ sub known_directory($self, $o, $plist)
 sub show_unknown($self)
 {
 	if (!$self->{found}) {
-		print "Not found: ", $self->fullname, " (in ", $self->{file}, ")\n";
+		print "Not found: ", $self->fullstring, " (in ", 
+		    $self->{file}, ")\n";
 	}
 }
 
