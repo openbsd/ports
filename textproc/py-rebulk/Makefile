@@ -1,10 +1,8 @@
 COMMENT=	define simple search patterns in bulk to perform
 
-MODPY_DISTV=	3.2.0
-
+MODPY_DISTV=	6.0.1
 DISTNAME=	rebulk-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	textproc
 
@@ -14,8 +12,7 @@ HOMEPAGE=	https://github.com/Toilal/rebulk/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
+MODPY_PYBUILD=	uv_build
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
 
 .include <bsd.port.mk>
