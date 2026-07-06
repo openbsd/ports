@@ -152,7 +152,7 @@ SHA256 (go_modules/pault.ag/go/topsort/@v/v0.1.1.mod) = s1IF1O7rfT5Cngja7qXxxvFp
 SHA256 (go_modules/pault.ag/go/topsort/@v/v0.1.1.zip) = G6Rt48aUcytcXN7fwsyFOE+K22/2MP/rOVejk1APIV8=
 SHA256 (go_modules/rsc.io/pdf/@v/v0.1.1.mod) = /ofZECCWyHkA0bShBtm9WPYMBoCaTvedgEv/BoT1y+c=
 SHA256 (go_modules/rsc.io/pdf/@v/v0.1.1.zip) = eb8xDjmc8OLYqmFTZ1DSppmcXKiE56J/r4jTcBzVuo8=
-SHA256 (miller-6.20.0.zip) = bVkhIFVpfVFQwmMQdqXBQvLZo+RwV6JtoVPV7af5VsU=
+SHA256 (miller-6.20.2.zip) = bVkhIFVpfVFQwmMQdqXBQvLZo+RwV6JtoVPV7af5VsU=
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = 53
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = 19692
 SIZE (go_modules/codeberg.org/go-fonts/liberation/@v/v0.5.0.mod) = 134
@@ -307,4 +307,4 @@ SIZE (go_modules/pault.ag/go/topsort/@v/v0.1.1.mod) = 36
 SIZE (go_modules/pault.ag/go/topsort/@v/v0.1.1.zip) = 5118
 SIZE (go_modules/rsc.io/pdf/@v/v0.1.1.mod) = 18
 SIZE (go_modules/rsc.io/pdf/@v/v0.1.1.zip) = 50919
-SIZE (miller-6.20.0.zip) = 17354587
+SIZE (miller-6.20.2.zip) = 17354587
