@@ -445,8 +445,8 @@ SHA256 (go_modules/github.com/josharian/intern/@v/v1.0.0.zip) = Vnm/0RwUrczbRb0a
 SHA256 (go_modules/github.com/keybase/go-keychain/@v/v0.0.1.mod) = 7fk9kL1XXc85Nd9x+PZHwPdufHYuZeR0ZAfhtw6jGpI=
 SHA256 (go_modules/github.com/keybase/go-keychain/@v/v0.0.1.zip) = lRSmjaCNOdYKR2QL7wSeRMgpqrXbvd0D0nLpJSA5pcc=
 SHA256 (go_modules/github.com/klauspost/compress/@v/v1.18.2.mod) = pi3SkWcb0su+bhlDErZBp82zxiIC/R5IoW5r+MJZyGc=
-SHA256 (go_modules/github.com/klauspost/compress/@v/v1.18.4.mod) = pi3SkWcb0su+bhlDErZBp82zxiIC/R5IoW5r+MJZyGc=
-SHA256 (go_modules/github.com/klauspost/compress/@v/v1.18.4.zip) = opXkRDrWyI2PW4aQgH9BOAD6FxVx06WXDiq+/m/m6ZA=
+SHA256 (go_modules/github.com/klauspost/compress/@v/v1.18.6.mod) = DWbWBp2eL7h1xbRk0VssgCMs/ImR5viDNs5GHKgQ4M8=
+SHA256 (go_modules/github.com/klauspost/compress/@v/v1.18.6.zip) = YbQX0tO2t/W19BefMR+xVr1bzqBANTFQxBER3Bd38Ro=
 SHA256 (go_modules/github.com/klauspost/cpuid/v2/@v/v2.0.1.mod) = ZhgLxWPIiQ4otpumT75uHSh5qFdKP/zn5ZfxkV94vGw=
 SHA256 (go_modules/github.com/klauspost/cpuid/v2/@v/v2.2.10.mod) = /2HUfyVPIzO/RKj/QYei8ulzaTgHwQAlAzuzcUNXcjc=
 SHA256 (go_modules/github.com/klauspost/cpuid/v2/@v/v2.2.11.mod) = /2HUfyVPIzO/RKj/QYei8ulzaTgHwQAlAzuzcUNXcjc=
@@ -843,7 +843,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (restic-v0.19.0.zip) = gvU8FO/ap4dtSVVpONu/kdq2CYVOcLGIbmftLdxZIZw=
+SHA256 (restic-v0.19.1.zip) = fUNMBr7iecwDeKI+keNp3ouu+a3bZM+WiziO9Lt17zQ=
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.mod) = 96
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.zip) = 239588
@@ -1291,8 +1291,8 @@ SIZE (go_modules/github.com/josharian/intern/@v/v1.0.0.zip) = 2648
 SIZE (go_modules/github.com/keybase/go-keychain/@v/v0.0.1.mod) = 333
 SIZE (go_modules/github.com/keybase/go-keychain/@v/v0.0.1.zip) = 2381161
 SIZE (go_modules/github.com/klauspost/compress/@v/v1.18.2.mod) = 201
-SIZE (go_modules/github.com/klauspost/compress/@v/v1.18.4.mod) = 201
-SIZE (go_modules/github.com/klauspost/compress/@v/v1.18.4.zip) = 39199617
+SIZE (go_modules/github.com/klauspost/compress/@v/v1.18.6.mod) = 201
+SIZE (go_modules/github.com/klauspost/compress/@v/v1.18.6.zip) = 39201205
 SIZE (go_modules/github.com/klauspost/cpuid/v2/@v/v2.0.1.mod) = 46
 SIZE (go_modules/github.com/klauspost/cpuid/v2/@v/v2.2.10.mod) = 80
 SIZE (go_modules/github.com/klauspost/cpuid/v2/@v/v2.2.11.mod) = 80
@@ -1689,4 +1689,4 @@ SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 81183
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (restic-v0.19.0.zip) = 24736564
+SIZE (restic-v0.19.1.zip) = 24746652

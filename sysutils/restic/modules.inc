@@ -191,7 +191,7 @@ MODGO_MODULES =	\
 	github.com/inconshreveable/mousetrap							 v1.1.0 \
 	github.com/josharian/intern								 v1.0.0 \
 	github.com/keybase/go-keychain								 v0.0.1 \
-	github.com/klauspost/compress								 v1.18.4 \
+	github.com/klauspost/compress								 v1.18.6 \
 	github.com/klauspost/cpuid/v2								 v2.2.11 \
 	github.com/klauspost/crc32								 v1.3.0 \
 	github.com/kr/fs									 v0.1.0 \
