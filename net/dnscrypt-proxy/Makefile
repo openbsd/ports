@@ -2,13 +2,12 @@ COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	DNSCrypt
 GH_PROJECT =	dnscrypt-proxy
-GH_TAGNAME =	2.1.15
+GH_TAGNAME =	2.1.16
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://dnscrypt.info/
 
-MAINTAINER =	Nam Nguyen <namn@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
