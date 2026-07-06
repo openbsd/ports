@@ -1,6 +1,6 @@
 COMMENT =	DSA signatures and key generation
 
-DISTNAME =	Crypt-DSA-1.22
+DISTNAME =	Crypt-DSA-1.24
 CPAN_AUTHOR =	TIMLEGGE
 
 CATEGORIES =	security
@@ -16,7 +16,6 @@ BUILD_DEPENDS =		converters/p5-Convert-PEM>=0.13 \
 RUN_DEPENDS =		converters/p5-Convert-ASN1 \
 			converters/p5-Convert-PEM>=0.13 \
 			devel/p5-Data-Buffer>=0.01 \
-			security/p5-Crypt-URandom \
 			security/p5-Crypt-SysRandom \
 			sysutils/p5-File-Which>=0.05
 TEST_DEPENDS =		security/p5-Crypt-DES-EDE3
