@@ -6,11 +6,10 @@ COMMENT =		diffusion model inference system
 
 GH_ACCOUNT =		leejet
 GH_PROJECT =		stable-diffusion.cpp
-GH_TAGNAME =		master-685-19bdfe2
+GH_TAGNAME =		master-765-bb84971
 PKGNAME =		stable-diffusion.cpp-0.0.${GH_TAGNAME:S/master-//:C/-.+//g}
-REVISION =		0
 
-VERSION.ggml =		0ce7ad348a3151e1da9f65d962044546bcaad421
+VERSION.ggml =		eced84c86f8b012c752c016f7fe789adea168e1e
 DISTFILES.ggml =	${VERSION.ggml}.tar.gz
 SITES.ggml =		https://github.com/ggml-org/ggml/archive/
 
