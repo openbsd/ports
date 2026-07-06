@@ -1,7 +1,6 @@
 COMMENT =	portable, lightweight framework for the Objective-C language
 
-DISTNAME =	objfw-1.5.1
-REVISION =	0
+DISTNAME =	objfw-1.5.7
 
 # .objc_sel_* symbols are for string de-duplication and can be ignored.
 SHARED_LIBS +=	objfw		1.2
