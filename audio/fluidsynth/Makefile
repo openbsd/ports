@@ -2,12 +2,13 @@ COMMENT =		SoundFont2 software synthesizer
 
 GH_ACCOUNT =		FluidSynth
 GH_PROJECT =		fluidsynth
-GH_TAGNAME =		v2.5.4
+GH_TAGNAME =		v2.5.6
 
 SHARED_LIBS +=	fluidsynth           5.0      # 3.5 (grep LIB_VERSION CMakeLists.txt)
 
 CATEGORIES =		audio
 
+# https://github.com/FluidSynth/fluidsynth/blob/master/doc/wiki/ChangeLog.md
 HOMEPAGE =		https://www.fluidsynth.org/
 
 # LGPLv2+
