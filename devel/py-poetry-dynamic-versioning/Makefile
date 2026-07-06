@@ -1,6 +1,6 @@
 COMMENT=	let Poetry fetch versions from VCS tags
 
-MODPY_DISTV=	1.9.1
+MODPY_DISTV=	1.10.0
 DISTNAME=	poetry_dynamic_versioning-${MODPY_DISTV}
 PKGNAME=	py-poetry-dynamic-versioning-${MODPY_DISTV}
 
