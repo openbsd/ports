@@ -1,0 +1,32 @@
+Index: fish/Cargo.toml
+--- fish/Cargo.toml.orig
++++ fish/Cargo.toml
+@@ -41,9 +41,9 @@ fish-wcstringutil = { path = "crates/wcstringutil" }
+ fish-wgetopt = { path = "crates/wgetopt" }
+ fish-widecharwidth = { path = "crates/widecharwidth" }
+ fish-widestring = { path = "crates/widestring" }
+-fluent = { git = "https://github.com/danielrainer/fluent-rs", rev = "cf712bced280b217b6307edabc2089b3e57204ab" }
+-fluent-ftl-tools = { git = "https://codeberg.org/danielrainer/fluent-ftl-tools", rev = "5917664c8f2e4928ef1e480ff5c13bbe1e226066" }
+-fluent-syntax = { git = "https://github.com/danielrainer/fluent-rs", rev = "cf712bced280b217b6307edabc2089b3e57204ab" }
++fluent = { path = "../fluent-rs/fluent" }
++fluent-ftl-tools = { path = "../fluent-ftl-tools" }
++fluent-syntax = { path = "../fluent-rs/fluent-syntax" }
+ ignore = "0.4.25"
+ itertools = "0.14.0"
+ libc = "0.2.177"
+@@ -64,7 +64,7 @@ nix = { version = "0.31.1", default-features = false, 
+ ] }
+ num-traits = "0.2.19"
+ once_cell = "1.19.0"
+-pcre2 = { git = "https://github.com/fish-shell/rust-pcre2", tag = "0.2.9-utf32", default-features = false, features = [
++pcre2 = { path = "../rust-pcre2-0.2.9-utf32", default-features = false, features = [
+   "utf32",
+ ] }
+ phf = { version = "0.13", default-features = false }
+@@ -259,4 +259,4 @@ print_stderr = "deny"
+ # and is configured in clippy.toml with `allow-print-in-tests`
+ 
+ [lints]
+-workspace = true
+\ No newline at end of file
++workspace = true
