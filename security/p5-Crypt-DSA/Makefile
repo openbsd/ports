@@ -1,6 +1,6 @@
 COMMENT =	DSA signatures and key generation
 
-DISTNAME =	Crypt-DSA-1.21
+DISTNAME =	Crypt-DSA-1.22
 CPAN_AUTHOR =	TIMLEGGE
 
 CATEGORIES =	security
