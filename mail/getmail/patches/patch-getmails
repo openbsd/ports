@@ -8,7 +8,7 @@ Index: getmails
  }
  UID_BY_ID=$(id -u)
 -PID_GETMAILS=$(pgrep -U $UID_BY_ID '^getmails$')
-+PID_GETMAILS=$(pgrep -f -U $UID_BY_ID '^/bin/sh /usr/local/bin/getmails$')
++PID_GETMAILS=$(pgrep -f -U $UID_BY_ID '^/bin/sh /usr/local/bin/getmails')
  if [ "x$PID_GETMAILS" != "x$$" ]; then
  	echo "The getmails script is already running as PID=\"$PID_GETMAILS\" ." >&2
  	exit 1
