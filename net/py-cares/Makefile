@@ -1,10 +1,11 @@
 COMMENT=	Python interface to c-ares
 
-MODPY_DISTV=	4.11.0
+MODPY_DISTV=	5.0.1
 DISTNAME=	pycares-${MODPY_DISTV}
 PKGNAME=	py-cares-${MODPY_DISTV}
 CATEGORIES=	net
-REVISION=	0
+
+HOMEPAGE=	https://github.com/saghul/pycares/
 
 # MIT
 PERMIT_PACKAGE=	Yes
