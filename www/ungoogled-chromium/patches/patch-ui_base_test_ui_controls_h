@@ -1,7 +1,7 @@
 Index: ui/base/test/ui_controls.h
 --- ui/base/test/ui_controls.h.orig
 +++ ui/base/test/ui_controls.h
-@@ -196,7 +196,7 @@ bool SendTouchEventsNotifyWhenDone(int action,
+@@ -194,7 +194,7 @@ bool SendTouchEventsNotifyWhenDone(int action,
                                     base::OnceClosure task);
  #endif
  

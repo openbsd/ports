@@ -1,7 +1,7 @@
 Index: services/network/BUILD.gn
 --- services/network/BUILD.gn.orig
 +++ services/network/BUILD.gn
-@@ -453,7 +453,6 @@ if (is_linux || is_chromeos) {
+@@ -447,7 +447,6 @@ if (is_linux || is_chromeos) {
      deps = [
        "//base",
        "//components/vrp_flags:buildflags",

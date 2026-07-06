@@ -1,7 +1,7 @@
 Index: remoting/host/ipc_desktop_environment.cc
 --- remoting/host/ipc_desktop_environment.cc.orig
 +++ remoting/host/ipc_desktop_environment.cc
-@@ -367,7 +367,7 @@ void IpcDesktopEnvironmentFactory::OnTerminalDisconnec
+@@ -371,7 +371,7 @@ void IpcDesktopEnvironmentFactory::OnTerminalDisconnec
    }
  }
  

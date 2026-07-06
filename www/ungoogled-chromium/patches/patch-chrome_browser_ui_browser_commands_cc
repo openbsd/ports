@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/browser_commands.cc
 --- chrome/browser/ui/browser_commands.cc.orig
 +++ chrome/browser/ui/browser_commands.cc
-@@ -2435,7 +2435,7 @@ void OpenUpdateChromeDialog(BrowserWindowInterface* br
+@@ -2524,7 +2524,7 @@ void OpenUpdateChromeDialog(BrowserWindowInterface* br
      ShowOutdatedUpgradeBubble(browser, browser,
                                /*auto_update_enabled=*/false);
    } else {

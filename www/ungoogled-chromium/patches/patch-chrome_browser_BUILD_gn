@@ -1,0 +1,25 @@
+Index: chrome/browser/BUILD.gn
+--- chrome/browser/BUILD.gn.orig
++++ chrome/browser/BUILD.gn
+@@ -4971,10 +4971,6 @@ static_library("browser") {
+       # ... get modularized.
+       "//chrome/browser/ui/extensions:impl",
+     ]
+-  } else if (!is_apple) {
+-    # This is already handled above in the CfT config and isn't needed on
+-    # Apple's platforms (which use a platform-specific hyphenation engine).
+-    deps += [ "//third_party/hyphenation-patterns:bundle_hyphen_data" ]
+   }
+ 
+   # TODO(https://crbug.com/356905053): Add more dependencies here and merge this
+@@ -5175,6 +5171,10 @@ static_library("browser") {
+       "//chrome/browser/chrome_for_testing",
+       "//chrome/browser/chrome_for_testing:browser",
+     ]
++  } else if (!is_apple) {
++    # This is already handled above in the CfT config and isn't needed on
++    # Apple's platforms (which use a platform-specific hyphenation engine).
++    deps += [ "//third_party/hyphenation-patterns:bundle_hyphen_data" ]
+   }
+ }
+ 

@@ -1,7 +1,7 @@
 Index: content/child/child_process.cc
 --- content/child/child_process.cc.orig
 +++ content/child/child_process.cc
-@@ -36,7 +36,7 @@
+@@ -37,7 +37,7 @@
  #include "content/common/android/cpu_time_metrics.h"
  #endif
  

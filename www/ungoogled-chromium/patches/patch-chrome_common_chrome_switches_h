@@ -1,7 +1,7 @@
 Index: chrome/common/chrome_switches.h
 --- chrome/common/chrome_switches.h.orig
 +++ chrome/common/chrome_switches.h
-@@ -286,7 +286,7 @@ extern const char kDebugPrint[];
+@@ -288,7 +288,7 @@ extern const char kDebugPrint[];
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -10,7 +10,7 @@ Index: chrome/common/chrome_switches.h
  extern const char kGuest[];
  #endif
  
-@@ -308,7 +308,7 @@ extern const char kGlicGuestUrlPresetStaging[];
+@@ -312,7 +312,7 @@ extern const char kGlicGuestUrlPresetStaging[];
  extern const char kGlicGuestUrlPresetPreprod[];
  extern const char kGlicGuestUrlPresetProd[];
  

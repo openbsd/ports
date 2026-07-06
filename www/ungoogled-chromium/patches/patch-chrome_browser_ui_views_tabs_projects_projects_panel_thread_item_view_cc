@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/tabs/projects/projects_panel_thread_item_view.cc
 --- chrome/browser/ui/views/tabs/projects/projects_panel_thread_item_view.cc.orig
 +++ chrome/browser/ui/views/tabs/projects/projects_panel_thread_item_view.cc
-@@ -116,7 +116,7 @@ void ProjectsPanelThreadItemView::OnMouseEntered(const
+@@ -117,7 +117,7 @@ void ProjectsPanelThreadItemView::OnMouseEntered(const
  }
  
  void ProjectsPanelThreadItemView::OnMouseExited(const ui::MouseEvent& event) {

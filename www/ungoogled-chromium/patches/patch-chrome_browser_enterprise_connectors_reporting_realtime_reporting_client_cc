@@ -28,7 +28,7 @@ Index: chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.
  
  void AddCrowdstrikeSignalsToEvent(
      base::DictValue& event,
-@@ -328,7 +328,7 @@ std::string RealtimeReportingClient::GetBrowserClientI
+@@ -329,7 +329,7 @@ std::string RealtimeReportingClient::GetBrowserClientI
    return client_id;
  }
  
