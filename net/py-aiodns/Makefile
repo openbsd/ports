@@ -1,10 +1,9 @@
 COMMENT =		simple DNS resolver for asyncio
 
-MODPY_DISTV =		3.2.0
+MODPY_DISTV =		4.0.4
 DISTNAME =		aiodns-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-REVISION =		1
 
 HOMEPAGE =		https://github.com/aio-libs/aiodns
 
@@ -17,8 +16,9 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	tests.py
 
-RUN_DEPENDS =		net/py-cares>=4.0.0
+BUILD_DEPENDS =		net/py-cares>=5.0.0
+RUN_DEPENDS =		net/py-cares>=5.0.0
+TEST_DEPENDS =		devel/py-test-asyncio
 
 .include <bsd.port.mk>
