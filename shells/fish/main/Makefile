@@ -1,11 +1,16 @@
 COMMENT =		friendly interactive shell
 
-V =			4.7.1
+V =			4.8.0
 
 DISTNAME =		fish-${V}
 
 SITES =			https://github.com/fish-shell/fish-shell/releases/download/${V}/
 DIST_TUPLE +=		github fish-shell rust-pcre2 0.2.9-utf32 .
+DIST_TUPLE +=		github danielrainer fluent-rs cf712bced280b217b6307edabc2089b3e57204ab fluent-rs
+DIST_TUPLE +=		codeberg danielrainer fluent-ftl-tools 5917664c8f2e4928ef1e480ff5c13bbe1e226066 .
+
+WRKDIST =		${WRKDIR}
+WRKSRC =		${WRKDIST}/fish
 
 CATEGORIES =		shells
 
@@ -39,6 +44,10 @@ LIB_DEPENDS =		devel/pcre2
 MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 			share/tools/web_config/webconfig.py
 
+MODCARGO_CARGOTOML =	${WRKDIST}/fish/Cargo.toml
+
+SEPARATE_BUILD =	No
+
 MAKE_FLAGS =		V=1
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -55,8 +64,8 @@ TEST_DEPENDS =		devel/py-pexpect \
 
 TEST_TARGET =		fish_run_tests
 
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/src/common.rs
+post-extract:
+	mv ${WRKDIST}/${DISTNAME} ${WRKDIST}/fish
 
 pre-configure:
 	@${MODCARGO_configure}
