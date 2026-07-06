@@ -1,13 +1,12 @@
 COMMENT=	console XMPP client
 
-MODPY_DISTV=	0.13.1
+MODPY_DISTV=	0.18
 DISTNAME=	poezio-${MODPY_DISTV}
 CATEGORIES=	net
-REVISION=	6
 
 HOMEPAGE=	https://poez.io/
 
-# zlib
+# GPLv3+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	lang/cython
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		net/py-aiodns \
-		net/py-slixmpp \
+		net/py-slixmpp>=1.14.0 \
 		security/py-potr
 
 .include <bsd.port.mk>
