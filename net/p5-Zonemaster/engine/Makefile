@@ -2,7 +2,7 @@ COMMENT=	tool to check the quality of a DNS zone
 
 MODULES=	cpan
 CPAN_AUTHOR=	ZNMSTR
-V=		8.1.0
+V=		9.0.0
 DISTNAME=	Zonemaster-Engine-v$V
 PKGNAME=	p5-Zonemaster-engine-$V
 CATEGORIES=	net
@@ -16,7 +16,8 @@ WANTLIB=	perl
 
 USE_GMAKE=	Yes
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Class-Accessor \
+RUN_DEPENDS=	converters/p5-CBOR-XS \
+		devel/p5-Class-Accessor \
 		devel/p5-Clone \
 		mail/p5-Email-Valid \
 		devel/p5-File-ShareDir>=1.00 \
