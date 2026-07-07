@@ -3,11 +3,11 @@ COMMENT=	soundcard-based software modem for Amateur Radio use
 # skip alpha-test versions (x.x.x.x format version numbers)
 PORTROACH=	limit:^[0-9]+\.[0-9]+\.[0-9]+$$
 DISTNAME=	fldigi-4.0.18
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	comms hamradio
 
-HOMEPAGE=	http://www.w1hkj.com/
+HOMEPAGE=	https://www.w1hkj.org/
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -17,7 +17,9 @@ WANTLIB += fltk_images fontconfig hamlib iconv intl jpeg m png
 WANTLIB += portaudio pthread samplerate sndfile ${COMPILER_LIBCXX} z
 WANTLIB += Xrender
 
-SITES=		${SITE_SOURCEFORGE:=fldigi/}
+SITES=		https://www.w1hkj.org/files/fldigi/ \
+		https://www.w1hkj.org/files/archives/Source/ \
+		${SITE_SOURCEFORGE:=fldigi/}
 
 COMPILER =	base-clang ports-gcc
 
