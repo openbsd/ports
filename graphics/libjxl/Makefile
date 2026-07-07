@@ -2,7 +2,7 @@ COMMENT =	JPEG XL image format reference implementation
 
 GH_ACCOUNT =	libjxl
 GH_PROJECT =	libjxl
-GH_TAGNAME =	v0.11.2
+GH_TAGNAME =	v0.12.0
 CATEGORIES =	graphics
 
 DIST_TUPLE =	github libjxl testdata 73695d303670c90e4d506ea89d9901b081385089 ../testdata

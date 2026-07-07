@@ -1,6 +1,7 @@
 @bin bin/cjxl
 @bin bin/djxl
 @bin bin/jxlinfo
+@bin bin/jxltran
 include/jxl/
 include/jxl/cms.h
 include/jxl/cms_interface.h
