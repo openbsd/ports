@@ -3,9 +3,9 @@ COMMENT =	libevent extra features
 VERSION =	1.4.13
 DISTNAME =	libevent-${VERSION}-stable
 PKGNAME =	libeventextra-${VERSION}
-REVISION =	2
+REVISION =	3
 
-SHARED_LIBS =    eventextra 1.0
+SHARED_LIBS =    eventextra 2.0
 
 CATEGORIES =	devel
 

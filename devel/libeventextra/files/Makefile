@@ -1,5 +1,5 @@
 LIB=	eventextra
-SRCS=	http.c evdns.c evrpc.c
+SRCS=	http.c evdns.c evrpc.c event_tagging.c
 
 LIBDIR=	/usr/local/lib
 NOPROFILE= 1
