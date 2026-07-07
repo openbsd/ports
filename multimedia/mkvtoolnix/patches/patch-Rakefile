@@ -4,7 +4,7 @@ Ensure that the default and working linker is used on all clang archs.
 Index: Rakefile
 --- Rakefile.orig
 +++ Rakefile
-@@ -182,7 +182,6 @@ def setup_globals
+@@ -190,7 +190,6 @@ def setup_globals
    ldflags                  = ""
    ldflags                 += determine_stack_protector_flags
    ldflags                 += " -pg"                                     if c?(:USE_PROFILING)
@@ -12,7 +12,7 @@ Index: Rakefile
    ldflags                 += " -Llib/libebml/src -Llib/libmatroska/src" if c?(:EBML_MATROSKA_INTERNAL)
    ldflags                 += " -Llib/fmt/src"                           if c?(:FMT_INTERNAL)
    ldflags                 += " #{c(:EXTRA_LDFLAGS)} #{c(:USER_LDFLAGS)} #{c(:LDFLAGS_RPATHS)} #{c(:BOOST_LDFLAGS)}"
-@@ -1128,10 +1127,8 @@ $common_libs = [
+@@ -1200,10 +1199,8 @@ $common_libs = [
    :intl,
    :iconv,
    :fmt,
