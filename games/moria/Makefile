@@ -3,17 +3,15 @@ COMMENT=	The Dungeons of Moria
 V=		5.5.2
 DISTNAME=	um$V
 PKGNAME=	moria-$V
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	games
-
-HOMEPAGE=	http://www-math.bgsu.edu/~grabine/moria.html
 
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 
-SITES=		http://www.nic.funet.fi/pub/unix/games/moria/source/
+SITES=		https://www.nic.funet.fi/pub/unix/games/moria/source/
 
 EXTRACT_SUFX=	.tar.Z
 
