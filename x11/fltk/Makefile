@@ -3,8 +3,7 @@ NOT_FOR_ARCHS=	m88k
 
 COMMENT=	Fast-Light Tool Kit
 
-VER=		1.3.9
-REVISION=	0
+VER=		1.3.11
 DISTNAME=	fltk-${VER}
 EXTRACT_SUFX=	-source.tar.gz
 
@@ -12,9 +11,10 @@ CATEGORIES=	x11
 
 # These all need to stay in sync.
 .for l in fltk fltk_forms fltk_gl fltk_images
-SHARED_LIBS+=	$l	9.0
+SHARED_LIBS+=	$l	9.1
 .endfor
 
+SITES=		https://github.com/fltk/fltk/releases/download/release-${VER}/
 HOMEPAGE=	https://www.fltk.org/
 
 # LGPLv2 with exceptions (see COPYING)
@@ -24,8 +24,6 @@ WANTLIB += GL GLU X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama Xrender
 WANTLIB += c fontconfig jpeg m png pthread z ${COMPILER_LIBCXX}
 
 COMPILER=	base-clang ports-gcc base-gcc
-
-SITES=		https://fltk.org/pub/fltk/${VER}/
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png
