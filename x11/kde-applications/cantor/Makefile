@@ -68,7 +68,6 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/kf6/syntax-highlighting \
 		lang/luajit \
 		math/libqalculate \
-		math/libqalculate \
 		print/libspectre \
 		print/poppler,-qt6 \
 		textproc/libxml \

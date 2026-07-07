@@ -136,7 +136,7 @@ SHA256 (kde-applications/../cargo/zerotrie-0.2.3.tar.gz) = KlnBelVi1QfktUlg6Faev
 SHA256 (kde-applications/../cargo/zerovec-0.11.5.tar.gz) = bChxkpSClHf1Jb4BhtE++po8YC9+wgLKnjU9MQ+5oAI=
 SHA256 (kde-applications/../cargo/zerovec-derive-0.11.2.tar.gz) = 6tzjlTnKXLOYVZAQJnHyVn5ln8qWZlga00EdWSB5UfM=
 SHA256 (kde-applications/../cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (kde-applications/kdepim-addons-26.04.2.tar.xz) = 7mlADOvS7ksuGfWlcbvK8SheVxchV1aFIVTAgJyBwD4=
+SHA256 (kde-applications/kdepim-addons-26.04.3.tar.xz) = A7LjertoM32SsZS8sMcu84BBzocmwKxPinx+0RUAdUY=
 SIZE (kde-applications/../cargo/adblock-0.11.1.tar.gz) = 131578
 SIZE (kde-applications/../cargo/addr-0.15.6.tar.gz) = 92595
 SIZE (kde-applications/../cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -275,4 +275,4 @@ SIZE (kde-applications/../cargo/zerotrie-0.2.3.tar.gz) = 69547
 SIZE (kde-applications/../cargo/zerovec-0.11.5.tar.gz) = 119620
 SIZE (kde-applications/../cargo/zerovec-derive-0.11.2.tar.gz) = 21421
 SIZE (kde-applications/../cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (kde-applications/kdepim-addons-26.04.2.tar.xz) = 2674128
+SIZE (kde-applications/kdepim-addons-26.04.3.tar.xz) = 2674544

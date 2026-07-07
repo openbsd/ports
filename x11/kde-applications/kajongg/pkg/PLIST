@@ -151,6 +151,8 @@ share/kajongg/${MODPY_PYCACHE}player.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kajongg/${MODPY_PYCACHE}player.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}playerlist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kajongg/${MODPY_PYCACHE}playerlist.${MODPY_PYC_MAGIC_TAG}pyc
+share/kajongg/${MODPY_PYCACHE}point.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/kajongg/${MODPY_PYCACHE}point.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}predefined.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kajongg/${MODPY_PYCACHE}predefined.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}qt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -214,7 +216,6 @@ share/kajongg/animation.py
 share/kajongg/appversion.py
 share/kajongg/background.py
 share/kajongg/backgroundselector.py
-share/kajongg/backgroundselector.ui
 share/kajongg/board.py
 share/kajongg/chat.py
 share/kajongg/client.py
@@ -250,6 +251,7 @@ share/kajongg/move.py
 share/kajongg/permutations.py
 share/kajongg/player.py
 share/kajongg/playerlist.py
+share/kajongg/point.py
 share/kajongg/predefined.py
 share/kajongg/qt.py
 share/kajongg/qtreactor.py
@@ -270,7 +272,6 @@ share/kajongg/tables.py
 share/kajongg/tile.py
 share/kajongg/tileset.py
 share/kajongg/tilesetselector.py
-share/kajongg/tilesetselector.ui
 share/kajongg/tilesource.py
 share/kajongg/tree.py
 share/kajongg/uitile.py
@@ -642,7 +643,6 @@ share/kajongg/wall.py
 share/kajongg/wind.py
 share/locale/ar/LC_MESSAGES/kajongg.mo
 share/locale/ast/LC_MESSAGES/kajongg.mo
-share/locale/bg/LC_MESSAGES/kajongg.mo
 share/locale/bs/LC_MESSAGES/kajongg.mo
 share/locale/ca/LC_MESSAGES/kajongg.mo
 share/locale/ca@valencia/LC_MESSAGES/kajongg.mo
@@ -660,6 +660,7 @@ share/locale/fr/LC_MESSAGES/kajongg.mo
 share/locale/ga/LC_MESSAGES/kajongg.mo
 share/locale/gl/LC_MESSAGES/kajongg.mo
 share/locale/he/LC_MESSAGES/kajongg.mo
+share/locale/hi/LC_MESSAGES/kajongg.mo
 share/locale/hu/LC_MESSAGES/kajongg.mo
 share/locale/ia/LC_MESSAGES/kajongg.mo
 share/locale/is/LC_MESSAGES/kajongg.mo
@@ -668,6 +669,7 @@ share/locale/ja/LC_MESSAGES/kajongg.mo
 share/locale/ka/LC_MESSAGES/kajongg.mo
 share/locale/kk/LC_MESSAGES/kajongg.mo
 share/locale/km/LC_MESSAGES/kajongg.mo
+share/locale/ko/LC_MESSAGES/kajongg.mo
 share/locale/lt/LC_MESSAGES/kajongg.mo
 share/locale/mai/LC_MESSAGES/kajongg.mo
 share/locale/ml/LC_MESSAGES/kajongg.mo
@@ -681,6 +683,7 @@ share/locale/pt/LC_MESSAGES/kajongg.mo
 share/locale/pt_BR/LC_MESSAGES/kajongg.mo
 share/locale/ro/LC_MESSAGES/kajongg.mo
 share/locale/ru/LC_MESSAGES/kajongg.mo
+share/locale/sa/LC_MESSAGES/kajongg.mo
 share/locale/sk/LC_MESSAGES/kajongg.mo
 share/locale/sl/LC_MESSAGES/kajongg.mo
 share/locale/sr/LC_MESSAGES/kajongg.mo
@@ -693,7 +696,6 @@ share/locale/ug/LC_MESSAGES/kajongg.mo
 share/locale/uk/LC_MESSAGES/kajongg.mo
 share/locale/zh_CN/LC_MESSAGES/kajongg.mo
 share/locale/zh_TW/LC_MESSAGES/kajongg.mo
-share/metainfo/
 share/metainfo/org.kde.kajongg.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

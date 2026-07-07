@@ -97,17 +97,6 @@ share/doc/HTML/de/kate/index.cache.bz2
 share/doc/HTML/de/kate/index.docbook
 share/doc/HTML/de/kate/menus.docbook
 share/doc/HTML/de/kate/plugins.docbook
-share/doc/HTML/de/katepart/
-share/doc/HTML/de/katepart/advanced.docbook
-share/doc/HTML/de/katepart/configuring.docbook
-share/doc/HTML/de/katepart/development.docbook
-share/doc/HTML/de/katepart/fundamentals.docbook
-share/doc/HTML/de/katepart/index.cache.bz2
-share/doc/HTML/de/katepart/index.docbook
-share/doc/HTML/de/katepart/menus.docbook
-share/doc/HTML/de/katepart/part.docbook
-share/doc/HTML/de/katepart/regular-expressions.docbook
-share/doc/HTML/de/katepart/vi.docbook
 share/doc/HTML/de/kwrite/
 share/doc/HTML/de/kwrite/index.cache.bz2
 share/doc/HTML/de/kwrite/index.docbook
@@ -1385,6 +1374,7 @@ share/locale/ko/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ko/LC_MESSAGES/katefiletree.mo
 share/locale/ko/LC_MESSAGES/kategdbplugin.mo
 share/locale/ko/LC_MESSAGES/kategitblameplugin.mo
+share/locale/ko/LC_MESSAGES/kategpgplugin.mo
 share/locale/ko/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/ko/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ko/LC_MESSAGES/kateproject.mo
@@ -1645,6 +1635,7 @@ share/locale/nn/LC_MESSAGES/katexmlcheck.mo
 share/locale/nn/LC_MESSAGES/katexmltools.mo
 share/locale/nn/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/nn/LC_MESSAGES/lspclient.mo
+share/locale/nn/LC_MESSAGES/rainbowparens.mo
 share/locale/nn/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/oc/LC_MESSAGES/kate.mo
 share/locale/oc/LC_MESSAGES/katefilebrowserplugin.mo

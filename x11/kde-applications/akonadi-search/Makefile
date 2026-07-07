@@ -1,7 +1,6 @@
 COMMENT =	libraries and daemons to implement searching in Akonadi
 DISTNAME =	akonadi-search-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6AkonadiSearchCore    0.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiSearchDebug   0.0 # 0.0

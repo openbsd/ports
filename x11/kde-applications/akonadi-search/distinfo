@@ -110,7 +110,7 @@ SHA256 (kde-applications/../cargo/windows-sys-0.61.2.tar.gz) = rhNyKby9bN8Pe4CjH
 SHA256 (kde-applications/../cargo/winnow-1.0.3.tar.gz) = BZLhydFR+FTm/TgldMOghVJQ4dmy+Z2SgcbmORrzUvE=
 SHA256 (kde-applications/../cargo/wit-bindgen-0.57.1.tar.gz) = Hr+UToenwlMjOtZ2bgguPNcUtdA4EqzCTDGPVJYUU24=
 SHA256 (kde-applications/../cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (kde-applications/akonadi-search-26.04.2.tar.xz) = FCzkbz2uJi9DJj+AoTulMnZ5EKOeRC/cS5JpOHCDnAQ=
+SHA256 (kde-applications/akonadi-search-26.04.3.tar.xz) = hriiOB9kHpap3mHKEGBe/7C+c18TQvTCIF6vYL9HzA4=
 SIZE (kde-applications/../cargo/anstyle-1.0.13.tar.gz) = 17651
 SIZE (kde-applications/../cargo/anstyle-1.0.14.tar.gz) = 17787
 SIZE (kde-applications/../cargo/bitflags-2.10.0.tar.gz) = 48427
@@ -223,4 +223,4 @@ SIZE (kde-applications/../cargo/windows-sys-0.61.2.tar.gz) = 2517186
 SIZE (kde-applications/../cargo/winnow-1.0.3.tar.gz) = 187990
 SIZE (kde-applications/../cargo/wit-bindgen-0.57.1.tar.gz) = 71227
 SIZE (kde-applications/../cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (kde-applications/akonadi-search-26.04.2.tar.xz) = 120268
+SIZE (kde-applications/akonadi-search-26.04.3.tar.xz) = 120180

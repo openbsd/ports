@@ -1,7 +1,6 @@
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  dkimverifyconfigure                      5.1 # 5.13.2
 SHARED_LIBS +=  kaddressbookmergelibprivate              2.0 # 5.13.2

@@ -10,12 +10,12 @@ WANTLIB += KF6DBusAddons KF6DNSSD KF6GuiAddons KF6I18n KF6Notifications
 WANTLIB += KF6StatusNotifierItem KF6Wallet KF6WidgetsAddons KF6WindowSystem
 WANTLIB += KF6XmlGui KPipeWire KPipeWireDmaBuf KWaylandClient
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
-WANTLIB += X11 Xdamage Xext Xtst c crypto gnutls jpeg lzo2 m pipewire-0.3
-WANTLIB += png sasl2 ssl vncserver wayland-client xcb xcb-damage
-WANTLIB += xcb-image xcb-render xcb-shape xcb-shm xcb-xfixes xkbcommon
-WANTLIB += z
+WANTLIB += X11 Xdamage Xext Xtst c crypto gcrypt gnutls jpeg lzo2
+WANTLIB += m pipewire-0.3 png sasl2 ssl vncserver wayland-client
+WANTLIB += xcb xcb-damage xcb-image xcb-render xcb-shape xcb-shm
+WANTLIB += xcb-xfixes xkbcommon z
 
-HOMEPAGE =	https://kde.org/applications/internet/org.kde.krfb
+HOMEPAGE =	https://apps.kde.org/krfb/
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -28,7 +28,8 @@ BUILD_DEPENDS =	wayland/libinput-openbsd \
 		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
-LIB_DEPENDS +=	devel/kf6/kcolorscheme \
+LIB_DEPENDS +=	archivers/lzo2 \
+		devel/kf6/kcolorscheme \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
@@ -42,14 +43,16 @@ LIB_DEPENDS +=	devel/kf6/kcolorscheme \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
-		net/libvncserver \
-		wayland/wayland \
+		graphics/jpeg \
+		graphics/png \
 		multimedia/pipewire/pipewire,-libs \
+		net/libvncserver \
+		security/gnutls \
+		wayland/wayland \
 		x11/kde-plasma/kpipewire \
 		x11/kde-plasma/kwayland \
 		x11/xkbcommon
 
 CXXFLAGS +=	-I${LOCALBASE}/include -DNONETWORK=0
 
-LIB_DEPENDS += archivers/lzo2 graphics/jpeg graphics/png security/cyrus-sasl2 security/cyrus-sasl2,db4 security/cyrus-sasl2,gssapi security/cyrus-sasl2,ldap security/cyrus-sasl2,mysql security/cyrus-sasl2,pgsql security/cyrus-sasl2,sqlite3 security/gnutls 
 .include <bsd.port.mk>

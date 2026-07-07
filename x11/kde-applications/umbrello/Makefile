@@ -1,7 +1,6 @@
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
 CATEGORIES =	x11 productivity
-REVISION =	0
 
 HOMEPAGE =	https://umbrello.kde.org/
 
