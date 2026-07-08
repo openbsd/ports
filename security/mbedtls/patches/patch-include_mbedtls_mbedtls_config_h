@@ -13,7 +13,7 @@ Index: include/mbedtls/mbedtls_config.h
  
  /**
   * \def MBEDTLS_USE_PSA_CRYPTO
-@@ -3775,7 +3775,7 @@
+@@ -3784,7 +3784,7 @@
   *
   * Enable this layer to allow use of mutexes within Mbed TLS
   */
