@@ -10,6 +10,10 @@ HOMEPAGE=		https://libzip.org/
 # BSD
 PERMIT_PACKAGE=	Yes
 
+# error: wrong number of arguments specified for 'deprecated' attribute
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += bz2 c crypto lzma z zstd
 
 SITES=			https://libzip.org/download/
