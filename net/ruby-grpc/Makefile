@@ -1,6 +1,6 @@
 COMMENT =	RPCs from Ruby using gRPC
 
-VERSION =	1.81.0
+VERSION =	1.82.0
 DISTNAME =	grpc-${VERSION}
 CATEGORIES =	net devel
 
@@ -23,7 +23,8 @@ BUILD_DEPENDS = \
 	net/ruby-googleapis-common-protos-types,${MODRUBY_FLAVOR} \
 	devel/ruby-google-protobuf,${MODRUBY_FLAVOR}
 
-LIB_DEPENDS =		net/grpc>=${VERSION}
+LIB_DEPENDS =		net/grpc>=${VERSION} \
+			devel/gmp
 
 CONFIGURE_STYLE =	ruby gem ext
 
