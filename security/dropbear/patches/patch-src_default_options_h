@@ -36,4 +36,4 @@ Index: src/default_options.h
 +#define DEFAULT_PATH "/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin"
  #define DEFAULT_ROOT_PATH "/usr/sbin:/usr/bin:/sbin:/bin"
  
- #endif /* DROPBEAR_DEFAULT_OPTIONS_H_ */
+ /* Features pending deletion. These will be removed in a future release
