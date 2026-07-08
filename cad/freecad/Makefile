@@ -7,6 +7,7 @@ COMMENT =		general purpose parametric 3D CAD modeler
 V =			1.1.0
 DISTNAME =		freecad_source_${V}
 PKGNAME =		freecad-${V}
+REVISION =		0
 
 SHARED_LIBS +=		OndselSolver              2.0 # 0.0
 SHARED_LIBS +=		E57Format                 0.0 # 0.0
