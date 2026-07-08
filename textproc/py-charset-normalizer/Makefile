@@ -1,6 +1,6 @@
 COMMENT=	character set detector library
 
-MODPY_DISTV=	3.4.7
+MODPY_DISTV=	3.4.9
 DISTNAME=	charset_normalizer-${MODPY_DISTV}
 PKGNAME=	py-charset-normalizer-${MODPY_DISTV}
 
