@@ -1,9 +1,6 @@
      SUBDIR =
+
      SUBDIR += kdecoration
-
-     # ports that need Qt5 and Qt6 build
-     SUBDIR += oxygen
-
      SUBDIR += aurorae
      SUBDIR += breeze
      SUBDIR += plasma-activities
@@ -31,6 +28,7 @@
      SUBDIR += polkit-kde-agent-1
      SUBDIR += kwrited
      SUBDIR += milou
+     SUBDIR += oxygen
      SUBDIR += oxygen-sounds
      SUBDIR += ksshaskpass
      SUBDIR += ksystemstats
