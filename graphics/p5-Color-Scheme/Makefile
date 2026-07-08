@@ -1,6 +1,7 @@
 COMMENT =	generate pleasant color schemes in Perl
 
 DISTNAME =	Color-Scheme-1.08
+REVISION =	0
 
 CATEGORIES =	graphics
 

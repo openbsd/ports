@@ -1,7 +1,7 @@
 COMMENT =	convert Lat/Lon to/from GB Ordnance Survey grid reference
 
 DISTNAME =	Geo-Coordinates-OSGB-2.20
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	geo
 

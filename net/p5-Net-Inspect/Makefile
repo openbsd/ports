@@ -1,6 +1,7 @@
 COMMENT =	library for inspection of data on various network layers
 
 DISTNAME =	Net-Inspect-0.331
+REVISION =	0
 
 CATEGORIES =	net
 

@@ -1,6 +1,7 @@
 COMMENT =	forbids warnings while testing
 
 DISTNAME =	Test-NoWarnings-1.06
+REVISION =	0
 
 CATEGORIES =	devel
 

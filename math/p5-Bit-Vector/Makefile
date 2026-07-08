@@ -3,7 +3,7 @@ COMMENT =	library of advanced math functions
 MODULES =	cpan
 DISTNAME =	Bit-Vector-7.4
 CATEGORIES =	math
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

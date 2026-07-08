@@ -1,6 +1,7 @@
 COMMENT =	simple creation of pcap files from code
 
 DISTNAME =	Net-PcapWriter-0.725
+REVISION =	0
 
 CATEGORIES =	net
 

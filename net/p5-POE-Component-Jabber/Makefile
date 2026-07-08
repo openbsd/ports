@@ -1,7 +1,7 @@
 COMMENT=		POE Component for communicating over Jabber
 
 DISTNAME=		POE-Component-Jabber-3.00
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net
 
 # GPLv2

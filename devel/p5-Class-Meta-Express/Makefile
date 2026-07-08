@@ -4,6 +4,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME =		Class-Meta-Express-0.14
 CATEGORIES=		devel
+REVISION =		0
 
 # perl
 PERMIT_PACKAGE=	Yes

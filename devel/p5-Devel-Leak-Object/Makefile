@@ -5,7 +5,7 @@ PKG_ARCH =	*
 DISTNAME =	Devel-Leak-Object-1.01
 CATEGORIES =	devel
 MAINTAINER =	Marc Espie <espie@openbsd.org>
-REVISION =	0
+REVISION =	1
 
 # perl
 PERMIT_PACKAGE =	Yes

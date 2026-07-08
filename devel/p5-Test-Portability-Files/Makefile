@@ -1,7 +1,7 @@
 COMMENT =	check file names portability
 
 DISTNAME =	Test-Portability-Files-0.10
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

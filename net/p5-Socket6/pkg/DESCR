@@ -1,4 +1,3 @@
-This module supports getaddrinfo() and getnameinfo() to intend to
-enable protocol independent programing.
-If your environment supports IPv6, IPv6 related defines such as
-AF_INET6 are included.
+This module provides glue routines and related definitions for various
+IPv6 functions, including inet_ntop/inet_pton, getaddrinfo, getnameinfo
+and others, allowing protocol independent programming from Perl.

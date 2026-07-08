@@ -5,6 +5,7 @@ PKG_ARCH =	*
 DISTNAME =	MooseX-Daemonize-0.22
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS =	Yes
+REVISION =	0
 
 # same as perl
 PERMIT_PACKAGE =	Yes

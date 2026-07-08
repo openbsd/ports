@@ -4,9 +4,9 @@ things undercover, and it was difficult to document all the thingies.
 
 Also, Net::Packet may suffer from unease of use, because frames were
 assembled using layers stored in L2, L3, L4 and L7 attributes.
-Net::Frame removes all this, and is splitted in different modules, for
-those who only want to use part of the framework, and not whole
-framework.
+Net::Frame removes all this, and is split into different modules,
+for those who only want to use part of the framework, and not
+the whole framework.
 
 Finally, anyone can create a layer, and put it on his CPAN space,
 because of the modularity Net::Frame offers. For an example, see

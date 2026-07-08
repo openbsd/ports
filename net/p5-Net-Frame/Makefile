@@ -4,7 +4,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Net-Frame-1.21
 CATEGORIES=	net
-REVISION =	0
+REVISION =	1
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 

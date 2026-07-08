@@ -1,2 +1,2 @@
-MIME::Charset provides informations about character sets used for MIME
+MIME::Charset provides information about character sets used for MIME
 messages on Internet.

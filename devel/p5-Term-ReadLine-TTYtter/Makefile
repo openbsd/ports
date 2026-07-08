@@ -1,6 +1,6 @@
 COMMENT =		Readline Library Wrapper Module for Twitter
 DISTNAME =		Term-ReadLine-TTYtter-1.4
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel perl5
 FIX_EXTRACT_PERMISSIONS=Yes
 

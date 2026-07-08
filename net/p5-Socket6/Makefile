@@ -1,7 +1,7 @@
 COMMENT =	Perl defines relating to AF_INET6 sockets
 
 DISTNAME =	Socket6-0.29
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net devel
 

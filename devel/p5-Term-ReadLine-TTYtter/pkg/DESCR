@@ -2,7 +2,7 @@ This is Term::ReadLine::TTYtter. It is a modified version of T::RL:Perl
 with several new nonstandard features specific to TTYtter, but may be
 useful for other applications.
 
-It also allows UTF-8 charaters to be entered without crashing, and adds
+It also allows UTF-8 characters to be entered without crashing, and adds
 a counter so you can see how many characters you've entered (which is a
 big deal for Twitter and other microblogging platforms).
 

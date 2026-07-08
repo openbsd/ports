@@ -4,7 +4,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Proc-Simple-1.32
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 # perl
 PERMIT_PACKAGE =	Yes

@@ -1,7 +1,7 @@
 COMMENT =		source constants from POD to avoid repetition
 
 DISTNAME =		Pod-Constant-0.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

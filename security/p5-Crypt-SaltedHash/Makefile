@@ -4,7 +4,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Crypt-SaltedHash-0.09
 CATEGORIES =	security
-REVISION =	0
+REVISION =	1
 
 CPAN_AUTHOR =	GSHANK
 

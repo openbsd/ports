@@ -3,6 +3,7 @@ COMMENT =	perl implementation of an Rsync client
 MODULES =	cpan
 DISTNAME =	File-RsyncP-0.76
 CATEGORIES =	devel
+REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

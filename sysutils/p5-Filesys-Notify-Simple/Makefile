@@ -5,7 +5,7 @@ PKG_ARCH =		*
 DISTNAME =		Filesys-Notify-Simple-0.14
 CATEGORIES =		sysutils
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
-REVISION =		0
+REVISION =		1
 
 BUILD_DEPENDS =		devel/p5-Test-SharedFork
 

@@ -2,6 +2,7 @@ COMMENT =	NativeTrait-like behavior for Moo
 DISTNAME =	MooX-HandlesVia-0.001009
 CATEGORIES =	devel
 PKG_ARCH =	*
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

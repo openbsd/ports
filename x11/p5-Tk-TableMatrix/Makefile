@@ -1,7 +1,7 @@
 COMMENT =	create and manipulate tables
 
 DISTNAME =	Tk-TableMatrix-1.23
-REVISION =	4
+REVISION =	5
 CATEGORIES =	x11 devel
 CPAN_AUTHOR =   CERNEY
 

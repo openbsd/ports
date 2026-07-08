@@ -3,7 +3,7 @@ COMMENT=	presents a DAAP share as a VFS
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Filesys-Virtual-DAAP-0.04
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 # same as perl

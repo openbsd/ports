@@ -1,6 +1,7 @@
 COMMENT =	copy files and directories with perl
 
 DISTNAME =	File-NCopy-0.36
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -5,6 +5,7 @@ PKG_ARCH=	*
 
 DISTNAME=	Algorithm-Dependency-1.112
 CATEGORIES=	devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

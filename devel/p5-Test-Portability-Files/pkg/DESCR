@@ -1,5 +1,5 @@
 This module is used to check the portability across operating systems
 of the names of the files present in the distribution of a module.
-The tests use the advices given in "Files and Filesystems" in
+The tests use the advice given in "Files and Filesystems" in
 perlport.  The author of a distribution can select which tests to
 execute.

@@ -2,7 +2,7 @@ COMMENT =	perlish implementation of Java like inner classes
 
 DISTNAME =	Class-Inner-0.200001
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 # perl
 PERMIT_PACKAGE =	Yes

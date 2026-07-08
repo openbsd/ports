@@ -4,7 +4,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Event-ExecFlow-0.64
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -3,7 +3,7 @@ COMMENT	= 	configure-time utilities for using C headers, etc.
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	ExtUtils-CChecker-0.12
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 # perl

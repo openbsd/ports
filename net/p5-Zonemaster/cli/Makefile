@@ -8,6 +8,7 @@ V=		8.0.2
 DISTNAME=	Zonemaster-CLI-v$V
 PKGNAME=	zonemaster-$V
 CATEGORIES=	net
+REVISION=	0
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 

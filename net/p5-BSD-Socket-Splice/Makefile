@@ -2,6 +2,7 @@ COMMENT =	perl interface to OpenBSD socket splicing
 
 DISTNAME =	BSD-Socket-Splice-0.09
 CPAN_AUTHOR =	BLUHM
+REVISION =	0
 
 CATEGORIES =	net
 

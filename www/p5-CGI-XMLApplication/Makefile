@@ -1,7 +1,7 @@
 COMMENT =	object oriented interface for CGI script applications
 
 DISTNAME =	CGI-XMLApplication-1.1.5
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =   	www
 

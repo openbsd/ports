@@ -5,7 +5,7 @@ PKG_ARCH=	*
 
 DISTNAME =	Email-Date-1.104
 CATEGORIES=	mail
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

@@ -6,7 +6,7 @@ and DNSSEC chains, among other things.
 It can also check undelegated domains by providing the list of
 authoritative nameservers and DS records.
 This is a joint project from .SE and AFNIC implementing a major
-rewrite of their erlier DNS validation projects DNSCheck and
+rewrite of their earlier DNS validation projects DNSCheck and
 Zonecheck.
 
 This package contains the backend modules. For the command-line user
