@@ -1,12 +1,12 @@
 COMMENT =		3D graphics library based on the Open Inventor API
 
-V = 			4.0.9
+V = 			4.0.10
 DISTNAME =		coin-${V}-src
 PKGNAME =		${DISTNAME:S/-src$//}
 
 SITES =			https://github.com/coin3d/coin/releases/download/v${V}/
 
-SHARED_LIBS +=  	Coin	2.0 # 0.0
+SHARED_LIBS +=  	Coin	2.1 # 0.0
 
 CATEGORIES =		graphics
 HOMEPAGE =		https://www.coin3d.org/
