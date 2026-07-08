@@ -52,6 +52,10 @@
      SUBDIR += kpipewire
      SUBDIR += spectacle
 
+     # XXX keep in sync
+     # life outside of x11/kde-plasma
+     # x11/oxygen-icons
+
     # Not ported yet
     # SUBDIR += bluedevil
     # SUBDIR += breeze-plymouth
