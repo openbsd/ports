@@ -186,7 +186,7 @@ SHA256 (cargo/crc32fast-1.5.0.tar.gz) = lIHByQy/KslT8HyNSliqOUXEJbcYXJFU1npl5CMN
 SHA256 (cargo/critical-section-1.2.0.tar.gz) = eQ7qQ2FjHF59IlmOzVcj/2EZBOM0TOhyB4TJPj2D1As=
 SHA256 (cargo/crossbeam-channel-0.5.15.tar.gz) = grj4+GizaWf5YGeQ0ZA1cN6c6vhwp7+fu9MBbWNqLLI=
 SHA256 (cargo/crossbeam-deque-0.8.6.tar.gz) = ndERt7f31VtywKauNhZg7lhTya9z9ww8LvaFi5UOLlE=
-SHA256 (cargo/crossbeam-epoch-0.9.18.tar.gz) = W4KsSjwsqcNGCWTwIOFALt1XU0EddzeqOcNxStG1Qg4=
+SHA256 (cargo/crossbeam-epoch-0.9.20.tar.gz) = LWkUBB8lTW6RdsAZQbIRFdz7cInlUTWjVBEIG9EG7z8=
 SHA256 (cargo/crossbeam-queue-0.3.12.tar.gz) = D1i7wo+R34GdCqKiwAzRl1R2nC+tkFebNZKxybp6MRU=
 SHA256 (cargo/crossbeam-utils-0.8.21.tar.gz) = 0KXEAN8oNLgKTDMns6rTpMTNTeBikGOWKwMjVpdQaig=
 SHA256 (cargo/crossterm_winapi-0.9.1.tar.gz) = rN18YqNmXH9oMKUWNdmsmyPtOFeX9wqDu4uv6cVyqys=
@@ -678,7 +678,7 @@ SHA256 (cargo/pin-utils-0.1.0.tar.gz) = i4cNjBUbby+5PoShMUYTjwXQLtEcfnxU+IJqqvfJ
 SHA256 (cargo/piper-0.2.4.tar.gz) = lsjEkPQi75pO/Sy1tCt2yGE9fn38HK9me4ozUKWswGY=
 SHA256 (cargo/pkcs8-0.10.2.tar.gz) = +VCyN3hFzr5c+LUWXLPMGl4Ppc+j4ff1VwfY/YLgp7c=
 SHA256 (cargo/pkg-config-0.3.32.tar.gz) = ft3b0LUtcyshrZpfq1xwTBTNlJ5emh7Fkpok/e0bkEw=
-SHA256 (cargo/plist-1.8.0.tar.gz) = dA6+oVxdFCj5EM0aX1LOv40lAGJF7YreknAvSUPZHgc=
+SHA256 (cargo/plist-1.9.0.tar.gz) = CSeRJ44CYnPBtlu9z7ujowDymUyJa9AasB2mE8KcRvE=
 SHA256 (cargo/png-0.18.0.tar.gz) = l7rO04hGSQnULYlkP+Q2GTmvm3znox7jKhaPgypw8qA=
 SHA256 (cargo/polling-3.11.0.tar.gz) = XQ5PWQhdR9gkHIjq0PJ06KDLVR82JSY8BeuN2JfDQhg=
 SHA256 (cargo/poly1305-0.8.0.tar.gz) = gVm9kHJdLfSYiaB4tU9Peeh/H4qERBlM3KgdOPU5Or8=
@@ -718,7 +718,8 @@ SHA256 (cargo/pulldown-cmark-0.10.3.tar.gz) = dpeb6mbnh151CcTsUwARKzFq+H+nolLKkc
 SHA256 (cargo/pulldown-cmark-escape-0.10.1.tar.gz) = vTSP9Ti8nK7afujK0tHUgjah9EPB+jkTxqAv4AQ7HdM=
 SHA256 (cargo/pxfm-0.1.27.tar.gz) = cYbTgiWTqkOTVh0YbROTs5I+nWFj0/v9boJePmzz5qg=
 SHA256 (cargo/quick-error-2.0.1.tar.gz) = qZNVXzHlpgn2F8EttiUN7crBsKhQdpEsQ25vybLI5qM=
-SHA256 (cargo/quick-xml-0.38.4.tar.gz) = tmwgWMVaQJ1gFmbP/jXwQzPPEBMBCILOwXSnRnzU4hw=
+SHA256 (cargo/quick-xml-0.39.4.tar.gz) = zcyN1OL2cNMJpfDoP+Nt/cBa8xcAj+opFE2hoqyFjl4=
+SHA256 (cargo/quick-xml-0.41.0.tar.gz) = 5mBFHlUST3mKaaWvP0nM+++9QZEO79JcryOT4fNHPsE=
 SHA256 (cargo/quickcheck-1.1.0.tar.gz) = lcWJ8zXbD2qqFop80nsfxpIPXhRwyAT4FNnNbmKg9ws=
 SHA256 (cargo/quinn-0.11.9.tar.gz) = ueIKlYljwpHcMi2YQR9UEAnfLO17Wk8r1SM3Y4z8zyA=
 SHA256 (cargo/quinn-proto-0.11.14.tar.gz) = Q0tC/sWRyW71DiHohpNuZtPMP3NxBP25tzfED/uUwJg=
@@ -773,8 +774,8 @@ SHA256 (cargo/resb-0.1.2.tar.gz) = ItOSeR88aAKhkFpQnp0aYDnLvLXp4A5abTZh98h085A=
 SHA256 (cargo/resolv-conf-0.7.6.tar.gz) = HgYdG0jLjTgELeSuCnpkAQCdYUPcgNLi1vMfC91kcMc=
 SHA256 (cargo/rfc6979-0.4.0.tar.gz) = +N0qgI1FbEpU4wCiPp9aZ+EiwwJBGay/1z479mRJHLI=
 SHA256 (cargo/ring-0.17.14.tar.gz) = pGiebCKU2B6I3GJhx2i2O8T824Ur5tE1JJixFPYTg7c=
-SHA256 (cargo/rmcp-1.7.0.tar.gz) = CBCp9xfZgo9HX+H2KfTDBchGS39JbDqFS1jSnmX0BY4=
-SHA256 (cargo/rmcp-macros-1.7.0.tar.gz) = au+sSMNkdW6X8EwEAboyMehgeILHwdktoEN9wWMHkE0=
+SHA256 (cargo/rmcp-1.8.0.tar.gz) = HR9XHHKUChnZUy/lLb6ovJkSvx12bClwu4JAVrhvP1k=
+SHA256 (cargo/rmcp-macros-1.8.0.tar.gz) = Gq0ANbaTgHgteOqVtQgyfm3qoiNZCQU+WW7qjye14dU=
 SHA256 (cargo/rtrb-0.3.3.tar.gz) = cgTtZCD2mINrdtTVwuxd7HWF/Vw6eI/RzehV0d5Zgjk=
 SHA256 (cargo/rust-embed-8.11.0.tar.gz) = BBE8uTVaN32D8G7x8KRbirjNfYsSiBYHF9Zt9ceYjSc=
 SHA256 (cargo/rust-embed-impl-8.11.0.tar.gz) = 2gkC5MfI6ZcVmrOE5tD8kcIhN19olDRq4Qf0fdDzzKo=
@@ -1056,7 +1057,7 @@ SHA256 (cargo/wayland-backend-0.3.12.tar.gz) = /uZBlMzZa/ZI9Cplp+WJVHCW36cC98re+
 SHA256 (cargo/wayland-client-0.31.12.tar.gz) = uOb6pTf7tsGGy58dQfL4EaQSDRtX7GH1DaRRoMUSK+w=
 SHA256 (cargo/wayland-protocols-0.32.10.tar.gz) = uu2p/7z8jNbdqt44Xq8jk70hFaaVI8c18SJCNTw99PM=
 SHA256 (cargo/wayland-protocols-wlr-0.3.10.tar.gz) = 6Vl83wLPDDTNWCN4bc5rWuhZjwXC2vViG24XjU9zRfM=
-SHA256 (cargo/wayland-scanner-0.31.8.tar.gz) = VCPpS2pj5o5DmAOj4VOpJS1erRL9hTM04q0zmX44ieM=
+SHA256 (cargo/wayland-scanner-0.31.10.tar.gz) = nDJKkQ/Ybr3DZKPmHsHxFzfTsdbCc8Ajnuj/S8DSS0o=
 SHA256 (cargo/wayland-sys-0.31.8.tar.gz) = Hm2/w6xe+XTJKiI1gFzAEUAzAYrhKQpy5HSqiyjLvf0=
 SHA256 (cargo/web-sys-0.3.85.tar.gz) = MS4y5VHZISkhjqmiRSEg9Kq8A1Ke8D5NDYL7J4BghZg=
 SHA256 (cargo/web-time-1.1.0.tar.gz) = WmWA8wix+tkgdhgIemXATnoQvHfgLI6E6bAN1LEvoLs=
@@ -1190,7 +1191,7 @@ SHA256 (cargo/zune-jpeg-0.5.12.tar.gz) = QQ6ezvY0xwnjgxws/bjZwyFk+uHGdJbVto//co7
 SHA256 (cargo/zvariant-4.2.0.tar.gz) = IIQpCrmhxHHDj8UklFg3c0+/EkSH4QXa7Cu1f9SMgf4=
 SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3MgDSACxEk=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
-SHA256 (codex-rust-v0.142.5.tar.gz) = yHeIfjzw0UNVUrTvNRYCMkT5IyDanR/hQvWo0DvNepU=
+SHA256 (codex-rust-v0.143.0.tar.gz) = 5O5zvqYlACD6FE7aZWcAwJr07AyLMou0OUSe9GHDwI4=
 SHA256 (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3b30DbjfaF32fDJg3+Wc9/+ksZOpMk4Qs1m76JgdueA=
 SHA256 (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 0WdqwzqCxZA//t5oznPJ2SRmaqihArtkmo+5JqemHOE=
 SHA256 (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995.tar.gz) = tJrDQua12cAV9ThGkMKmHW8xwMPDSq8cwivklWEiKUw=
@@ -1385,7 +1386,7 @@ SIZE (cargo/crc32fast-1.5.0.tar.gz) = 40723
 SIZE (cargo/critical-section-1.2.0.tar.gz) = 19133
 SIZE (cargo/crossbeam-channel-0.5.15.tar.gz) = 92716
 SIZE (cargo/crossbeam-deque-0.8.6.tar.gz) = 22471
-SIZE (cargo/crossbeam-epoch-0.9.18.tar.gz) = 46875
+SIZE (cargo/crossbeam-epoch-0.9.20.tar.gz) = 47545
 SIZE (cargo/crossbeam-queue-0.3.12.tar.gz) = 16270
 SIZE (cargo/crossbeam-utils-0.8.21.tar.gz) = 42691
 SIZE (cargo/crossterm_winapi-0.9.1.tar.gz) = 16027
@@ -1877,7 +1878,7 @@ SIZE (cargo/pin-utils-0.1.0.tar.gz) = 7580
 SIZE (cargo/piper-0.2.4.tar.gz) = 15950
 SIZE (cargo/pkcs8-0.10.2.tar.gz) = 26360
 SIZE (cargo/pkg-config-0.3.32.tar.gz) = 21370
-SIZE (cargo/plist-1.8.0.tar.gz) = 54623
+SIZE (cargo/plist-1.9.0.tar.gz) = 54769
 SIZE (cargo/png-0.18.0.tar.gz) = 118041
 SIZE (cargo/polling-3.11.0.tar.gz) = 59387
 SIZE (cargo/poly1305-0.8.0.tar.gz) = 32633
@@ -1917,7 +1918,8 @@ SIZE (cargo/pulldown-cmark-0.10.3.tar.gz) = 141746
 SIZE (cargo/pulldown-cmark-escape-0.10.1.tar.gz) = 6672
 SIZE (cargo/pxfm-0.1.27.tar.gz) = 879919
 SIZE (cargo/quick-error-2.0.1.tar.gz) = 14265
-SIZE (cargo/quick-xml-0.38.4.tar.gz) = 205035
+SIZE (cargo/quick-xml-0.39.4.tar.gz) = 214141
+SIZE (cargo/quick-xml-0.41.0.tar.gz) = 231661
 SIZE (cargo/quickcheck-1.1.0.tar.gz) = 31932
 SIZE (cargo/quinn-0.11.9.tar.gz) = 83606
 SIZE (cargo/quinn-proto-0.11.14.tar.gz) = 244123
@@ -1972,8 +1974,8 @@ SIZE (cargo/resb-0.1.2.tar.gz) = 163418
 SIZE (cargo/resolv-conf-0.7.6.tar.gz) = 17955
 SIZE (cargo/rfc6979-0.4.0.tar.gz) = 9140
 SIZE (cargo/ring-0.17.14.tar.gz) = 1502610
-SIZE (cargo/rmcp-1.7.0.tar.gz) = 327632
-SIZE (cargo/rmcp-macros-1.7.0.tar.gz) = 21411
+SIZE (cargo/rmcp-1.8.0.tar.gz) = 343865
+SIZE (cargo/rmcp-macros-1.8.0.tar.gz) = 21611
 SIZE (cargo/rtrb-0.3.3.tar.gz) = 37835
 SIZE (cargo/rust-embed-8.11.0.tar.gz) = 901130
 SIZE (cargo/rust-embed-impl-8.11.0.tar.gz) = 9286
@@ -2255,7 +2257,7 @@ SIZE (cargo/wayland-backend-0.3.12.tar.gz) = 77037
 SIZE (cargo/wayland-client-0.31.12.tar.gz) = 64851
 SIZE (cargo/wayland-protocols-0.32.10.tar.gz) = 156152
 SIZE (cargo/wayland-protocols-wlr-0.3.10.tar.gz) = 28244
-SIZE (cargo/wayland-scanner-0.31.8.tar.gz) = 37224
+SIZE (cargo/wayland-scanner-0.31.10.tar.gz) = 37213
 SIZE (cargo/wayland-sys-0.31.8.tar.gz) = 9595
 SIZE (cargo/web-sys-0.3.85.tar.gz) = 645049
 SIZE (cargo/web-time-1.1.0.tar.gz) = 18026
@@ -2389,7 +2391,7 @@ SIZE (cargo/zune-jpeg-0.5.12.tar.gz) = 86116
 SIZE (cargo/zvariant-4.2.0.tar.gz) = 82180
 SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
-SIZE (codex-rust-v0.142.5.tar.gz) = 9117574
+SIZE (codex-rust-v0.143.0.tar.gz) = 9452566
 SIZE (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3951333
 SIZE (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 86782
 SIZE (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995.tar.gz) = 129254
