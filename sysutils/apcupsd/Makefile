@@ -6,7 +6,7 @@ DISTNAME =		apcupsd-3.14.14
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
-REVISION-main =		6
+REVISION-main =		7
 REVISION-x11 =		4
 REVISION-cgi =		3
 

@@ -1,4 +1,4 @@
-Apcupsd can be used for power mangement and controlling most of APC's
+Apcupsd can be used for power management and controlling most of APC's
 UPS models. Apcupsd works with most of APC's Smart-UPS models as well as
 most simple signalling models such a Back-UPS, and BackUPS-Office.
 During a power failure, apcupsd will inform the users about the power

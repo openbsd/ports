@@ -3,7 +3,7 @@ COMMENT-emacs =		Emacs bindings for notmuch
 COMMENT-mutt =		Mutt integration for notmuch
 
 V =			0.40
-REVISION-main =		0
+REVISION-main =		1
 MODPY_DISTV =		${V}
 DISTNAME =		notmuch-${V}
 PKGNAME-main =		notmuch-${V}

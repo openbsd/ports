@@ -6,7 +6,7 @@ DISTNAME =		kfilemetadata-${VERSION}
 PKGNAME-main =		kf5-kfilemetadata-${VERSION}
 PKGNAME-locale =	kf5-kfilemetadata-l10n-${VERSION}
 REVISION-locale =	0
-REVISION-main =		0
+REVISION-main =		1
 
 SHARED_LIBS =	KF5FileMetaData		7.3 # 5.20
 
