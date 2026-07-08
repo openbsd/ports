@@ -1,14 +1,11 @@
-BROKEN=			fails to build after move to LLVM 22
-
 BROKEN-sparc64= strtoll_l strtoull_l strtod_l strtof_l not declared this scope
 
 COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
 
-V=			0.H-RELEASE
+V=			0.I
 DIST_TUPLE+=		github CleverRaven Cataclysm-DDA ${V} .
 PKGNAME=		cataclysm-dda-${V:S/-RELEASE//}
-REVISION=		1
 
 HOMEPAGE=		https://cataclysmdda.org
 MAINTAINER=		Kirill Bychkov <kirby@openbsd.org>
@@ -40,8 +37,11 @@ CONFIGURE_ARGS = 	-DLOCALIZE=ON \
 			-DBACKTRACE=OFF \
 			-DGIT_VERSION=${V} \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -lintl -liconv" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include \
+				-I${X11BASE}/include -I${X11BASE}/include/freetype2 \
+				-DCATCH_CONFIG_NO_COUNTER" \
+			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
+				-L${X11BASE}/lib -lintl -liconv" \
 			-DCMAKE_INSTALL_LOCALEDIR="${PREFIX}/share/locale" \
 			-Wno_dev
 
@@ -51,7 +51,7 @@ SUBST_VARS += 		V
 WANTLIB+=		curses form
 CONFIGURE_ARGS += 	-DCURSES_INCLUDE_PATH=/usr/include
 .else
-WANTLIB+=		SDL2 SDL2_image SDL2_mixer SDL2_ttf
+WANTLIB+=		SDL2 SDL2_image SDL2_mixer SDL2_ttf freetype
 
 LIB_DEPENDS+=		devel/sdl2-mixer \
 			devel/sdl2-image \
@@ -69,7 +69,8 @@ post-extract:
 		${WRKSRC}/src/third-party/flatbuffers_int/
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/src/version.cmake
+	${SUBST_CMD} ${WRKSRC}/src/version.cmake \
+		${WRKSRC}/data/fontdata.json
 	perl -pi -e 's,flatbuffers/,flatbuffers_int/,g' \
 		${WRKSRC}/src/third-party/CMakeLists.txt \
 		${WRKSRC}/src/third-party/flatbuffers_int/*.h \
@@ -83,6 +84,7 @@ post-patch:
 
 post-configure:
 	touch ${WRKSRC}/VERSION.txt
+	echo '#define VERSION "${V}"' > ${WRKSRC}/src/version.h
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/cataclysm${MAN_TILES}.6 ${PREFIX}/man/man6/

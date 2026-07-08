@@ -1,11 +1,14 @@
 Index: data/CMakeLists.txt
 --- data/CMakeLists.txt.orig
 +++ data/CMakeLists.txt
-@@ -9,7 +9,6 @@ set(CATACLYSM_DATA_DIRS
+@@ -8,9 +8,7 @@ set(CATACLYSM_DATA_DIRS
+         credits
          title
          core
-         screenshots
+-        screenshots
 -        xdg
-         help)
+-        help)
++        screenshots)
  
  if (SOUND)
+     list(APPEND CATACLYSM_DATA_DIRS sound)

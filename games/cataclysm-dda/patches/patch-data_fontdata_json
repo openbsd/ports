@@ -1,0 +1,31 @@
+Index: data/fontdata.json
+--- data/fontdata.json.orig
++++ data/fontdata.json
+@@ -1,19 +1,19 @@
+ {
+   "//1": "See docs/user-guides/FONT_OPTIONS.md for how to configure your fonts.",
+   "typeface": [
+-    { "path": "data/font/Terminus.ttf", "hinting": "Bitmap" },
+-    "data/font/unifont.ttf"
++    { "path": "${PREFIX}/share/cataclysm-dda/font/Terminus.ttf", "hinting": "Bitmap" },
++    "${PREFIX}/share/cataclysm-dda/font/unifont.ttf"
+   ],
+   "gui_typeface": [
+-    { "path": "data/font/Terminus.ttf", "hinting": "Bitmap" },
+-    "data/font/unifont.ttf"
++    { "path": "${PREFIX}/share/cataclysm-dda/font/Terminus.ttf", "hinting": "Bitmap" },
++    "${PREFIX}/share/cataclysm-dda/font/unifont.ttf"
+   ],
+   "map_typeface": [
+-    { "path": "data/font/Terminus.ttf", "hinting": "Bitmap" },
+-    "data/font/unifont.ttf"
++    { "path": "${PREFIX}/share/cataclysm-dda/font/Terminus.ttf", "hinting": "Bitmap" },
++    "${PREFIX}/share/cataclysm-dda/font/unifont.ttf"
+   ],
+   "overmap_typeface": [
+-    { "path": "data/font/Terminus.ttf", "hinting": "Bitmap" },
+-    "data/font/unifont.ttf"
++    { "path": "${PREFIX}/share/cataclysm-dda/font/Terminus.ttf", "hinting": "Bitmap" },
++    "${PREFIX}/share/cataclysm-dda/font/unifont.ttf"
+   ]
+ }

@@ -1,0 +1,14 @@
+Index: CMakeModules/GetGitRevisionDescription.cmake
+--- CMakeModules/GetGitRevisionDescription.cmake.orig
++++ CMakeModules/GetGitRevisionDescription.cmake
+@@ -84,10 +84,6 @@ function(git_describe _var)
+     if (GIT_BINARY)
+         set(GIT_EXECUTABLE ${GIT_BINARY})
+         set(GIT_FOUND True)
+-    else()
+-        if(NOT GIT_FOUND)
+-            find_package(Git QUIET)
+-        endif()
+     endif()
+     get_git_head_revision(refspec hash)
+     if(NOT GIT_FOUND)
