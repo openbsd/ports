@@ -4,6 +4,14 @@ man/it/man6/
 @man man/it/man6/galois.6
 @man man/man6/galois.6
 share/applications/galois.desktop
+share/doc/galois/
+share/doc/galois/figure1.png
+share/doc/galois/figure2.png
+share/doc/galois/figure3.png
+share/doc/galois/galois-it.html
+share/doc/galois/galois.html
+share/metainfo/
+share/metainfo/galois.appdata.xml
 share/pixmaps/
 share/pixmaps/galois.png
 @tag update-desktop-database

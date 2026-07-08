@@ -1,7 +1,7 @@
 Index: src/makefile.in
 --- src/makefile.in.orig
 +++ src/makefile.in
-@@ -50,8 +50,8 @@ distclean : clean
+@@ -54,8 +54,8 @@ distclean : clean
  	- rm -f ${AC}
  
  install : galois
