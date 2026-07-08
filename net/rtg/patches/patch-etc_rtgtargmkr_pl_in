@@ -1,7 +1,7 @@
 Index: etc/rtgtargmkr.pl.in
 --- etc/rtgtargmkr.pl.in.orig
 +++ etc/rtgtargmkr.pl.in
-@@ -78,7 +78,7 @@ $catalyst = [
+@@ -82,7 +82,7 @@ $catalyst = [
  );
  
  # Default locations to find RTG configuration file
@@ -10,7 +10,7 @@ Index: etc/rtgtargmkr.pl.in
  foreach $conf (@configs) {
    if (open CONF, "<$conf") {
      print "Reading [$conf].\n" if $DEBUG;
-@@ -88,6 +88,8 @@ foreach $conf (@configs) {
+@@ -92,6 +92,8 @@ foreach $conf (@configs) {
          $db_host=$cVals[1];
        } elsif ($cVals[0] =~ /DB_User/) {
          $db_user=$cVals[1];
@@ -19,7 +19,7 @@ Index: etc/rtgtargmkr.pl.in
        } elsif ($cVals[0] =~ /DB_Pass/) {
          $db_pass=$cVals[1];
        } elsif ($cVals[0] =~ /DB_Database/) {
-@@ -283,9 +285,9 @@ sub main {
+@@ -300,9 +302,9 @@ sub main {
  
      # SQL Database Handle
      if ( !$DBOFF ) {

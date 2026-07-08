@@ -2,6 +2,7 @@ bin/95.pl
 bin/report.pl
 @bin bin/rtgplot
 @bin bin/rtgpoll
+@bin bin/rtgtargmkr
 include/common.h
 include/rtg.h
 include/rtgplot.h

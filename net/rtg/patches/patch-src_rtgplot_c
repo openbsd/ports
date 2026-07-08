@@ -1,30 +1,54 @@
 Index: src/rtgplot.c
 --- src/rtgplot.c.orig
 +++ src/rtgplot.c
-@@ -791,7 +791,7 @@ void plot_scale(gdImagePtr *img, graph_t *graph) {
- 	int             i;
- 	int             last_day = 0;
- 	int             last_month = 0;
--	long            seconds;
-+	time_t          seconds;
- 	float           rate = 0.0;
- 	float           plot_rate = 0.0;
- 	int             days = 0;
-@@ -806,7 +806,7 @@ void plot_scale(gdImagePtr *img, graph_t *graph) {
- 	if (days < 1) {
+@@ -49,6 +49,7 @@
+   There are a bunch of subtleties beyond this that we try to comment.
+ */
+ 
++#include <stdbool.h>
+ #include "common.h"
+ #include "rtg.h"
+ #include "rtgplot.h"
+@@ -784,13 +785,13 @@ void plot_line(data_t *head, gdImagePtr *img, graph_t 
+ 	if (now_pixel < BORDER_L + graph->image.xplot_area)
+ 	{
+ 		if (set.verbose >= HIGH) 
+-			syslog(LOG_INFO, "Extending plot to current time %ld (x-pixel %d)", now, now_pixel);
++			syslog(LOG_INFO, "Extending plot to current time %lld (x-pixel %d)", (long long)now, now_pixel);
+ 		gdImageLine(*img, lastx + BORDER_L,
+ 			graph->image.yimg_area - graph->image.border_b - lasty, now_pixel + BORDER_L,
+ 			graph->image.yimg_area - graph->image.border_b - lasty, color);
+ 	} else {
+ 		if (set.verbose >= HIGH) 
+-			syslog(LOG_INFO, "Current time %ld (x-pixel %d) extends past plot end.", now, now_pixel);
++			syslog(LOG_INFO, "Current time %lld (x-pixel %d) extends past plot end.", (long long)now, now_pixel);
+ 	}
+ 	return;
+ }
+@@ -824,7 +825,7 @@ void plot_scale(gdImagePtr *img, graph_t *graph)
+ 	int		i;
+ 	int		last_day = 0;
+ 	int		last_month = 0;
+-	long		seconds;
++	time_t		seconds;
+ 	float		rate = 0.0;
+ 	float		plot_rate = 0.0;
+ 	int		days = 0;
+@@ -841,7 +842,7 @@ void plot_scale(gdImagePtr *img, graph_t *graph)
  		/* Draw X-axis time labels */
- 		for (i = 0; i <= graph->image.xplot_area; i += (graph->image.xplot_area / XTICKS)) {
+ 		for (i = 0; i <= graph->image.xplot_area; i += (graph->image.xplot_area / XTICKS))
+ 		{
 -			seconds = (long)i *(1 / pixels_per_sec);
 +			seconds = (time_t)i *(1 / pixels_per_sec);
  			seconds += graph->xoffset;
  			thetime = localtime(&seconds);
  			snprintf(string, sizeof(string), "%d:%02d", thetime->tm_hour, thetime->tm_min);
-@@ -819,7 +819,7 @@ void plot_scale(gdImagePtr *img, graph_t *graph) {
- 	if (skip <= 0)
+@@ -855,7 +856,7 @@ void plot_scale(gdImagePtr *img, graph_t *graph)
  		skip = 1;
- 	for (i = 0; i <= graph->image.xplot_area; i += skip) {
+ 	for (i = 0; i <= graph->image.xplot_area; i += skip)
+ 	{
 -		seconds = (long)i *(1 / pixels_per_sec);
 +		seconds = (time_t)i *(1 / pixels_per_sec);
  		seconds += graph->xoffset;
  		thetime = localtime(&seconds);
- 		if (thetime->tm_mon != last_month) {
+ 		if (thetime->tm_mon != last_month)

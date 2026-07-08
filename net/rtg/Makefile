@@ -1,9 +1,8 @@
 COMMENT =		SNMP statistics monitoring system
 
-DISTNAME =		rtg-0.7.5
+DISTNAME =		rtg-0.7.6
 CATEGORIES =		net
 SITES =			ftp://ftpmirror.uk/freebsd-ports/rtg/
-REVISION =		0
 
 HOMEPAGE =		https://rtg.sourceforge.net/
 
@@ -20,7 +19,8 @@ CONFIGURE_ARGS+=	--with-gd=${LOCALBASE} \
 			--with-mysql=${LOCALBASE} \
 			--with-snmp=${LOCALBASE}
 CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} \
-			LDFLAGS=-L${X11BASE}/lib
+			LDFLAGS=-L${X11BASE}/lib \
+			CPPFLAGS=-DHAVE_STDBOOL_H
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.69
 

@@ -1,7 +1,7 @@
 Index: etc/rtg.conf.sample
 --- etc/rtg.conf.sample.orig
 +++ etc/rtg.conf.sample
-@@ -8,6 +8,7 @@ OutOfRange	93750000000
+@@ -8,6 +8,7 @@ OutOfRange	900000000000
  SNMP_Ver	2
  SNMP_Port       161
  DB_Host	localhost

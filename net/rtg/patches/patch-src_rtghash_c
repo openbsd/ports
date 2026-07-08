@@ -1,0 +1,12 @@
+Index: src/rtghash.c
+--- src/rtghash.c.orig
++++ src/rtghash.c
+@@ -260,7 +260,7 @@ int hash_target_file(char *file)
+ 	FILE		*fp;
+ 	target_t	*new = NULL;
+ 	char		buffer[BUFSIZE];
+-	char		maxspeed[30];
++	char		maxspeed[31];
+ 	int		entries = 0;
+ 	int		removed = 0;
+ 
