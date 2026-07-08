@@ -18,7 +18,7 @@ The OpenBSD PostgreSQL port build produces several packages:
   contains all the above documentation.
 
 * postgresql-contrib-${VERSION} - contributions
-  Additional utilities and usefull libraries.
+  Additional utilities and useful libraries.
 
 * postgresql-plpython-${VERSION} - PL/Python procedural language.
 

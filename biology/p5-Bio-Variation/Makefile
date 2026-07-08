@@ -1,6 +1,7 @@
 COMMENT =		bioperl variation-related functionality
 
 DISTNAME =		Bio-Variation-1.7.5
+REVISION =		0
 
 CATEGORIES =		biology
 

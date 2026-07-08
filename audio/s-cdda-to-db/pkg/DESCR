@@ -1,5 +1,5 @@
 Queries content and data of audio CDs through s-cdda(1), collects
-informations (artist, album, song titles, etc.) of desired tracks,
+information (artist, album, song titles, etc.) from desired tracks,
 if possible correlates data with a web query against MusicBrainz,
 then places encoded tracks as well as a human readable and easily
 parseable database in a per-CD directory under a directory tree.

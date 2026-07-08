@@ -2,7 +2,7 @@ COMMENT=	utility for mp3 wrapping
 
 DISTNAME=	mp3wrap-0.5-src
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION =	3
+REVISION=	4
 
 CATEGORIES=	audio
 

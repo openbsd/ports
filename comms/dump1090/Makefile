@@ -1,5 +1,6 @@
 COMMENT =	simple ADS-B Mode-S decoder for RTLSDR devices
-DISTNAME =	${GH_PROJECT}-0.0.0.20260215
+DISTNAME =	dump1090-0.0.0.20260215
+REVISION =	0
 CATEGORIES =	comms
 
 # No releases...

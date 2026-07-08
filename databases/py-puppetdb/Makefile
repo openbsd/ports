@@ -1,12 +1,12 @@
-COMMENT=		library for working with the PuppetDB API
+COMMENT=	library for working with the PuppetDB API
 
 MODPY_DISTV=	3.2.0
-DISTNAME=		pypuppetdb-${MODPY_DISTV}
-PKGNAME=		py-puppetdb-${MODPY_DISTV}
-CATEGORIES=		databases www
-REVISION=		3
+DISTNAME=	pypuppetdb-${MODPY_DISTV}
+PKGNAME=	py-puppetdb-${MODPY_DISTV}
+CATEGORIES=	databases www
+REVISION=	4
 
-MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
+MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE=	Yes

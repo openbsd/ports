@@ -4,7 +4,7 @@ devices.
 The main features are:
 * Robust decoding of weak messages.
 * Network support: TCP30003 stream (MSG5...), Raw packets, HTTP.
-* Embedded HTTP server that displays the currently detected aircrafts
+* Embedded HTTP server that displays the currently detected aircraft
   on Google Maps.
 * Single bit errors correction using the 24 bit CRC.
 * Ability to decode DF11, DF17 messages.
@@ -12,7 +12,7 @@ The main features are:
   where the checksum is xored with the ICAO address by brute forcing
   the checksum field using recently seen ICAO addresses.
 * Decode raw IQ samples from file (using --ifile command line switch).
-* Interactive command-line-interfae mode where aircrafts currently
+* Interactive command-line-interfae mode where aircraft currently
   detected are shown as a list refreshing as more data arrives.
 * CPR coordinates decoding and track calculation from velocity.
 * TCP server streaming and receiving raw data to/from connected clients

@@ -1,8 +1,8 @@
 COMMENT=		logbook program for amateur radio operators
 
 DISTNAME=		xlog-2.0.15
-CATEGORIES=    		comms hamradio
-REVISION=		3
+CATEGORIES=		comms hamradio
+REVISION=		4
 
 HOMEPAGE=		http://www.nongnu.org/xlog/
 

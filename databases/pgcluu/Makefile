@@ -1,6 +1,7 @@
 COMMENT=		PostgreSQL performances monitoring and auditing tool
 
 DISTNAME=		pgcluu-3.1
+REVISION=		0
 CATEGORIES=		databases sysutils
 
 HOMEPAGE=		https://pgcluu.darold.net/

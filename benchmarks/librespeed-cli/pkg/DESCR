@@ -6,5 +6,5 @@ Features:
 - Ping, Jitter, Download, Upload
 - IP address & ISP Information
 - Result sharing (telemetry) [optional]
-- Test with mutliple servers in a single run
+- Test with multiple servers in a single run
 - Use your own server list or telemetry endpoints

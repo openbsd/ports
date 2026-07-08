@@ -1,30 +1,31 @@
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
-COMMENT =			command line client for LibreSpeed
+COMMENT =		command line client for LibreSpeed
 
 MODGO_MODNAME =		github.com/librespeed/speedtest-cli
 MODGO_VERSION =		v1.0.13
+REVISION =		0
 
-DISTNAME =			librespeed-cli-${MODGO_VERSION}
+DISTNAME =		librespeed-cli-${MODGO_VERSION}
 
 CATEGORIES =		benchmarks
 
-HOMEPAGE =			https://librespeed.org
+HOMEPAGE =		https://librespeed.org
 
-MAINTAINER =		Christoh Liebender <christoph@liebender.dev>
+MAINTAINER =		Christoph Liebender <christoph@liebender.dev>
 
 # LGPL-3.0
 PERMIT_PACKAGE =	Yes
 
 # uses pledge() and unveil()
-WANTLIB +=			c pthread
+WANTLIB +=		c pthread
 
-MODULES =			lang/go
+MODULES =		lang/go
 
 SEPARATE_BUILD =	Yes
 
 # patches
-WRKDIST =			${WRKSRC}
+WRKDIST =		${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/speedtest-cli \

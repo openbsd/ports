@@ -1,8 +1,9 @@
 COMMENT=	Ogg bitstream library
 
 VERSION=	1.3.6
+REVISION=	0
 DISTNAME=	libogg-${VERSION}
-CATEGORIES=    	audio
+CATEGORIES=	audio
 HOMEPAGE=	https://www.xiph.org/ogg/
 SHARED_LIBS=	ogg	6.2	# 8.6
 

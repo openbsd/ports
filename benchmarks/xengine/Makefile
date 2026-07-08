@@ -1,6 +1,6 @@
 COMMENT=	reciprocating engine for X11
 PKGNAME=	xengine-1.0.1
-REVISION=	5
+REVISION=	6
 CATEGORIES=	benchmarks x11
 SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/ \
 	https://distfiles.sigtrap.nl/xengine/

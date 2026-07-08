@@ -1,6 +1,7 @@
 COMMENT =	el torito boot image extractor
 
 DISTNAME =	geteltorito-0.6
+REVISION =	0
 CATEGORIES =	archivers
 
 HOMEPAGE =	https://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/

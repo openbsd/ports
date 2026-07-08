@@ -1,6 +1,7 @@
 COMMENT=		perl program that creates a music database via s-cdda
 
 DISTNAME=		s-cdda-to-db-0.8.0
+REVISION=		0
 CATEGORIES=		audio
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-cdda-to-db
 
