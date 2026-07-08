@@ -2,6 +2,7 @@ COMMENT=	binutils for or1k-elf cross-development
 
 V=		2.40
 DISTNAME=	binutils-${V}
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/binutils/
 

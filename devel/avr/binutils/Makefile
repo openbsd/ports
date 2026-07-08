@@ -4,6 +4,7 @@ VER=		2.30
 DISTNAME=	binutils-${VER}
 PKGNAME=	avr-binutils-${VER}
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/binutils/
 

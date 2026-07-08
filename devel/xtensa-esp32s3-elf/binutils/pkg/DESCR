@@ -10,7 +10,7 @@ But they also include:
   * gprof - Displays profiling information.
   * nlmconv - Converts object code into an NLM.
   * nm - Lists symbols from object files.
-  * objcopy - Copys and translates object files.
+  * objcopy - Copies and translates object files.
   * objdump - Displays information from object files.
   * ranlib - Generates an index to the contents of an archive.
   * readelf - Displays information from any ELF format object file.

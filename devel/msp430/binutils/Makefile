@@ -1,7 +1,7 @@
 TOOL=			binutils
 TOOL_V=			2.21.1a
 
-REVISION=		3
+REVISION=		4
 
 GNU_TOOL=		Yes
 

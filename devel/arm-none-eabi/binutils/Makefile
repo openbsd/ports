@@ -2,6 +2,7 @@ COMMENT=	binutils for ${CONFIG} cross-development
 
 VERSION=		2.40
 DISTNAME=	binutils-${VERSION}
+REVISION=	0
 
 FLAVORS=	aarch64 arm
 FLAVOR?=	arm
