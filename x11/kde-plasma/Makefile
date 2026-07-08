@@ -48,6 +48,7 @@
      SUBDIR += plasma-browser-integration
      SUBDIR += systemsettings
      SUBDIR += plasma-desktop
+     SUBDIR += union
 
      SUBDIR += kpipewire
      SUBDIR += spectacle

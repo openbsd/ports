@@ -30,6 +30,8 @@ PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 
+REVISION-plasma =	0
+
 MULTI_PACKAGES +=	-main \
 			-games \
 			-admin \
@@ -393,6 +395,7 @@ RUN_DEPENDS-plasma += \
 		x11/kde-plasma/print-manager \
 		x11/kde-plasma/qqc2-breeze-style \
 		x11/kde-plasma/systemsettings \
+		x11/kde-plasma/union \
 		x11/kde-plasma/xdg-desktop-portal-kde
 
 RUN_DEPENDS-plasma += \
