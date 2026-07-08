@@ -202,8 +202,8 @@ SHA256 (cargo/zerotrie-0.2.4.tar.gz) = D5FS0x2weS+oP3D7L4MUjv+1wfW4x2hsNFnjYdm8I
 SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXsjk=
 SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhNvVKpLEBVU=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (chromium-150.0.7871.46-lite.tar.xz) = 4mVPp8N93CCvmPkQia1YDjR8qcUm+N6OYl/hsc89mMY=
-SHA256 (chromium-150.0.7871.46-testdata.tar.xz) = Zo85jSw+AQV3x0ZBomCZl1Mf8557WUUU+PS0z11S91o=
+SHA256 (chromium-150.0.7871.100-lite.tar.xz) = 4OJs/+MZbdCM4RmZTsZQ+q829oOkLYVGDDE47WH2m+c=
+SHA256 (chromium-150.0.7871.100-testdata.tar.xz) = PxHyLguVhrcSClNL4Ma8d4m/nn23Qsq5tEstMwTw00k=
 SHA256 (rollup-rollup-v4.60.4.tar.gz) = wSkyTs74OhxNgpyLh2dRxypvot/nB/MvC1XDEc8p7pE=
 SHA256 (test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz) = oosiK3mFFxb4NY0oABV9n/4RezVFAxrlH2m34eG5qWk=
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -410,7 +410,7 @@ SIZE (cargo/zerotrie-0.2.4.tar.gz) = 83690
 SIZE (cargo/zerovec-0.11.6.tar.gz) = 128583
 SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (chromium-150.0.7871.46-lite.tar.xz) = 1667309220
-SIZE (chromium-150.0.7871.46-testdata.tar.xz) = 1314546092
+SIZE (chromium-150.0.7871.100-lite.tar.xz) = 1668003676
+SIZE (chromium-150.0.7871.100-testdata.tar.xz) = 1314438252
 SIZE (rollup-rollup-v4.60.4.tar.gz) = 2249970
 SIZE (test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz) = 33233004
