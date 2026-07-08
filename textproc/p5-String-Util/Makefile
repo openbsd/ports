@@ -1,6 +1,7 @@
 COMMENT =	string processing utility functions
 
-DISTNAME =	String-Util-1.35
+DISTNAME =	String-Util-1.36
+CPAN_AUTHOR =	BAKERSCOT
 
 CATEGORIES =	textproc
 
