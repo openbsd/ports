@@ -253,6 +253,7 @@
      SUBDIR += peek
      SUBDIR += pho
      SUBDIR += piglit
+     SUBDIR += pikopixel
      SUBDIR += pinta
      SUBDIR += pixelorama
      SUBDIR += plutosvg
