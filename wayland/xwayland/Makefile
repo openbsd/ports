@@ -1,6 +1,6 @@
 COMMENT =	X server running as wayland application
 
-DISTNAME =	xwayland-24.1.12
+DISTNAME =	xwayland-24.1.13
 
 CATEGORIES =	wayland
 
