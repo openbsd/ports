@@ -3,7 +3,7 @@
 
 COMMENT =	HTTP/2-based RPC framework
 
-V =		1.81.1
+V =		1.82.0
 DISTNAME =	grpc-${V}
 
 DIST_TUPLE +=	github grpc grpc v${V} .
@@ -15,24 +15,24 @@ SHARED_LIBS +=	grpc++_alts               1.0 # 0.0
 SHARED_LIBS +=	grpc++_error_details      0.0 # 0.0
 SHARED_LIBS +=	grpc++_reflection         3.0 # 0.0
 SHARED_LIBS +=	grpc++_unsecure           4.0 # 0.0
-SHARED_LIBS +=	grpc                      9.0 # 0.0
-SHARED_LIBS +=	grpc_authorization_provider 9.0 # 0.0
+SHARED_LIBS +=	grpc                      10.0 # 0.0
+SHARED_LIBS +=	grpc_authorization_provider 10.0 # 0.0
 SHARED_LIBS +=	grpc_plugin_support       4.0 # 0.0
-SHARED_LIBS +=	grpc_unsecure             9.0 # 0.0
+SHARED_LIBS +=	grpc_unsecure             10.0 # 0.0
 SHARED_LIBS +=	grpcpp_channelz           8.0 # 0.0
 SHARED_LIBS +=	upb_base_lib              0.0 # 0.0
 SHARED_LIBS +=	upb_json_lib              1.0 # 0.0
 SHARED_LIBS +=	upb_mem_lib               0.1 # 0.0
-SHARED_LIBS +=	upb_message_lib           1.0 # 0.0
-SHARED_LIBS +=	upb_mini_descriptor_lib   1.0 # 0.0
-SHARED_LIBS +=	upb_descriptor_lib        0.0 # 0.0
+SHARED_LIBS +=	upb_message_lib           1.1 # 0.0
+SHARED_LIBS +=	upb_mini_descriptor_lib   2.0 # 0.0
+SHARED_LIBS +=	upb_descriptor_lib        1.0 # 0.0
 SHARED_LIBS +=	upb_textformat_lib        1.0 # 0.0
-SHARED_LIBS +=	upb_wire_lib              0.1 # 0.0
+SHARED_LIBS +=	upb_wire_lib              1.0 # 0.0
 SHARED_LIBS +=	utf8_range_lib            0.0 # 0.0
-SHARED_LIBS +=	upb_hash_lib              0.0 # 0.0
+SHARED_LIBS +=	upb_hash_lib              0.1 # 0.0
 SHARED_LIBS +=	upb_lex_lib               0.0 # 0.0
-SHARED_LIBS +=	upb_mini_table_lib        0.0 # 0.0
-SHARED_LIBS +=	upb_reflection_lib        0.1 # 0.0
+SHARED_LIBS +=	upb_mini_table_lib        1.0 # 0.0
+SHARED_LIBS +=	upb_reflection_lib        1.0 # 0.0
 
 CATEGORIES =	net devel
 
