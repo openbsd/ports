@@ -1,7 +1,7 @@
 This package provides two strategies for "Hypothesis" for generating
 Python source code.
 
-The generated code will always be syntatically valid, and is useful for
+The generated code will always be syntactically valid, and is useful for
 testing parsers, linters, auto-formatters, and other tools that operate
 on source code.
 

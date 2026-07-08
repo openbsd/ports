@@ -4,7 +4,7 @@ MODPY_DISTV=	0.3.3
 DISTNAME=	hypothesmith-${MODPY_DISTV}
 PKGNAME=	py-hypothesmith-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/Zac-HD/hypothesmith
 

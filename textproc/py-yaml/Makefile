@@ -3,6 +3,7 @@ COMMENT=	YAML parser and emitter in Python
 MODPY_DISTV=	6.0.3
 DISTNAME=	pyyaml-${MODPY_DISTV}
 PKGNAME=	py-yaml-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 

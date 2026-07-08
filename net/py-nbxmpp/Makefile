@@ -4,6 +4,7 @@ MODPY_DISTV =		7.1.0
 DISTNAME =		nbxmpp-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net devel
+REVISION =		0
 
 HOMEPAGE =		https://python-nbxmpp.gajim.org/
 

@@ -4,7 +4,7 @@ PyYAML features
 
     * a complete YAML 1.1 parser. In particular, PyYAML can parse all
     examples from the specification. The parsing algorithm is simple
-    enough to be a reference for YAML parser implementors.  
+    enough to be a reference for YAML parser implementers.  
     * Unicode support including UTF-8/UTF-16 input/output and \u escape 
     sequences.
     * low-level event-based parser and emitter API (like SAX).  

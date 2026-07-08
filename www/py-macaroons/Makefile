@@ -3,7 +3,7 @@ COMMENT =		macaroon library for Python
 MODPY_DISTV =	0.13.0
 DISTNAME =		pymacaroons-${MODPY_DISTV}
 PKGNAME =		py-macaroons-${MODPY_DISTV}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		www
 

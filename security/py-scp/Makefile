@@ -3,7 +3,7 @@ COMMENT =		scp module for Paramiko
 MODPY_DISTV =		0.15.0
 DISTNAME =		scp-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 

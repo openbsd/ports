@@ -3,6 +3,7 @@ COMMENT=	Python bindings to GSSAPI C libraries
 MODPY_DISTV=	1.10.1
 DISTNAME=	python-gssapi-${MODPY_DISTV}
 PKGNAME=	py-gssapi-${MODPY_DISTV}
+REVISION=	0
 
 SITES=		https://github.com/pythongssapi/python-gssapi/releases/download/v${MODPY_DISTV}/
 

@@ -8,6 +8,7 @@ GH_ACCOUNT=	breezy-team
 GH_PROJECT=	patiencediff
 GH_TAGNAME=	v${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

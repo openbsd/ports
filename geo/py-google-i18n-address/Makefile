@@ -5,6 +5,7 @@ GH_ACCOUNT=	mirumee
 GH_PROJECT=	google-i18n-address
 GH_TAGNAME=	${MODPY_DISTV}
 PKGNAME=	py-google-i18n-address-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	geo
 

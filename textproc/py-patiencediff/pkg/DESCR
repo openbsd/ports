@@ -1,7 +1,7 @@
 This package contains the implementation of the patiencediff algorithm, as
 first described by Bram Cohen.
 
-Like Python's difflib, this module provides both a convience unified_diff
+Like Python's difflib, this module provides both a convenience unified_diff
 function for the generation of unified diffs of text files as well as a
 SequenceMatcher that can be used on arbitrary lists.
 
