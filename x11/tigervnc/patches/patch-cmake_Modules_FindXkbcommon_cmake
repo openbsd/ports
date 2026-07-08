@@ -1,0 +1,12 @@
+Index: cmake/Modules/FindXkbcommon.cmake
+--- cmake/Modules/FindXkbcommon.cmake.orig
++++ cmake/Modules/FindXkbcommon.cmake
+@@ -14,7 +14,7 @@ This module will set the following variables if found:
+ #]=======================================================================]
+ 
+ 
+-find_package(Pkgconfig QUIET)
++find_package(PkgConfig QUIET)
+ if(PKG_CONFIG_FOUND)
+   pkg_check_modules(PC_Xkbcommon QUIET xkbcommon)
+ endif()

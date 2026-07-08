@@ -2,8 +2,7 @@ COMMENT=	high performance, multi-platform VNC client and server
 
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
-GH_TAGNAME=	v1.15.0
-REVISION=	2
+GH_TAGNAME=	v1.16.2
 
 XORG_V=		21.1.23
 
@@ -26,7 +25,7 @@ WANTLIB += GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xfont2 Xft Xi Xinerama Xrandr Xrender Xtst avcodec
 WANTLIB += avutil c fltk fltk_images
 WANTLIB += fontconfig fontenc freetype gmp gnutls hogweed
-WANTLIB += iconv idn2 intl jpeg kvm m nettle p11-kit
+WANTLIB += iconv idn2 intl jpeg kvm m nettle p11-kit pam
 WANTLIB += pixman-1 swscale tasn1 unistring xcvt xshmfence z
 
 SITES.x=	https://www.x.org/releases/individual/xserver/
@@ -51,10 +50,9 @@ CONFIGURE_ARGS=	-DMAN_DIR="${TRUEPREFIX}/man" \
 		-DDOC_DIR="${TRUEPREFIX}/share/doc/tigervnc" \
 		-DCMAKE_INSTALL_FULL_SYSCONFDIR="${TRUEPREFIX}/share/examples/tigervnc" \
 		-DINSTALL_SYSTEMD_UNITS=OFF \
-		-DENABLE_PWQUALITY=OFF
-# ld: error: undefined symbol: vtable for rfb::UnixPasswordValidator
-# might need something more to enable nettle (sha/aes support) while pam is disabled?
-CONFIGURE_ARGS+= -DENABLE_NETTLE=OFF
+		-DENABLE_NETTLE=OFF \
+		-DENABLE_PWQUALITY=OFF \
+		-DENABLE_WAYLAND=OFF
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 NO_TEST=	Yes
@@ -64,6 +62,7 @@ BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	devel/gettext,-runtime \
 		graphics/ffmpeg \
 		security/gnutls \
+		security/openpam \
 		x11/fltk
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic

@@ -1,17 +1,16 @@
-blargh.
+strip off the directory name from library, to avoid issues finding libs
+with a full path (seen with e.g. /usr/X11R6/lib/libpixman-1.so.46.4)
 
 Index: cmake/Modules/CMakeMacroLibtoolFile.cmake
 --- cmake/Modules/CMakeMacroLibtoolFile.cmake.orig
 +++ cmake/Modules/CMakeMacroLibtoolFile.cmake
-@@ -112,6 +112,11 @@ function(libtool_generate_control_file _target)
-           if(NOT FL)
-             find_library(FL ${library} PATHS ${LIBRARY_PATHS})
+@@ -110,7 +110,8 @@ function(libtool_generate_control_file _target)
            endif()
-+          if(NOT FL)
-+            string(REPLACE "/usr/lib/" "" library ${library})
-+            string(REPLACE "/usr/local/lib/" "" library ${library})
-+            find_library(FL ${library} PATHS ${LIBRARY_PATHS})
-+          endif()
+ 
+           if(NOT FL)
+-            find_library(FL ${library} PATHS ${LIBRARY_PATHS})
++            get_filename_component(_lib_name ${library} NAME)
++            find_library(FL ${_lib_name} PATHS ${LIBRARY_PATHS})
+           endif()
  
            if(FL)
-             # Found library. Depending on if it's static or not we might

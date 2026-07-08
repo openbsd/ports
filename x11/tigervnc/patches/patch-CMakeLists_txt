@@ -1,30 +1,21 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -341,7 +341,7 @@ if (ENABLE_NETTLE)
- endif()
- 
- # Check for PAM library
--if(UNIX AND NOT APPLE)
-+if(UNIX AND NOT APPLE AND NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
-   check_include_files(security/pam_appl.h HAVE_PAM_H)
-   set(CMAKE_REQUIRED_LIBRARIES -lpam)
-   check_function_exists(pam_start HAVE_PAM_START)
-@@ -354,7 +354,7 @@ if(UNIX AND NOT APPLE)
+@@ -346,7 +346,7 @@ if(UNIX AND NOT APPLE)
  endif()
  
  # Check for SELinux library
 -if(UNIX AND NOT APPLE)
 +if(UNIX AND NOT APPLE AND NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
-   check_include_files(selinux/selinux.h HAVE_SELINUX_H)
-   if(HAVE_SELINUX_H)
-     set(CMAKE_REQUIRED_LIBRARIES -lselinux)
-@@ -367,7 +367,7 @@ if(UNIX AND NOT APPLE)
+   trioption(ENABLE_SELINUX "Enable SELinux support")
+   if(ENABLE_SELINUX)
+     if(ENABLE_SELINUX STREQUAL "AUTO")
+@@ -361,7 +361,7 @@ if(UNIX AND NOT APPLE)
  endif()
  
  # check for systemd support (socket activation)
 -if(UNIX AND NOT APPLE)
 +if(UNIX AND NOT APPLE AND NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
-   find_package(PkgConfig)
-   if (PKG_CONFIG_FOUND)
-     pkg_check_modules(LIBSYSTEMD libsystemd)
+   trioption(ENABLE_SYSTEMD "Enable systemd support")
+   if(ENABLE_SYSTEMD)
+     if(ENABLE_SYSTEMD STREQUAL "AUTO")
