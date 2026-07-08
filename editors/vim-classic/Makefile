@@ -1,10 +1,11 @@
 COMMENT=	vi clone with many additional features
 
-#V=		8.3.0000
-#PKGNAME=	vim-classic-${V:C/\.0+/./}0
-V=		8.3.0
-DIST_TUPLE=	srht sircmpwn vim-classic v$V .
-WRKDIST=	${WRKDIR}/vim-classic-v$V
+#V=		8.3.0
+#DIST_TUPLE=	srht sircmpwn vim-classic v$V .
+#WRKDIST=	${WRKDIR}/vim-classic-v$V
+
+DIST_TUPLE=	srht sircmpwn vim-classic c0e8e3fdc6f0ac1256aa29f534f5c199408a0bc5 .
+PKGNAME=	vim-classic-8.3.0pl20260708
 CATEGORIES=	editors
 
 # https://sr.ht/~sircmpwn/vim-classic/
