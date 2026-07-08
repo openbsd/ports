@@ -1,0 +1,12 @@
+PikoPixel is a free application for drawing & editing pixel-art images.
+It is originally for Mac, but it also runs on other Unix-like platforms
+using the GNUstep framework.
+
+Its features include:
+- Easy to use
+- Unlimited undo
+- Supports multiple layers
+- Customizable canvas background
+- Hotkey-activated popup panels
+- Export upscaled images
+- Supports linear (gamma-correct) color blending
