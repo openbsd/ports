@@ -4,7 +4,7 @@ we don't support DRI_PRIME as of March 2026 and setting it can lead to crashes
 Index: platform/linuxbsd/wayland/display_server_wayland.cpp
 --- platform/linuxbsd/wayland/display_server_wayland.cpp.orig
 +++ platform/linuxbsd/wayland/display_server_wayland.cpp
-@@ -2177,11 +2177,13 @@ DisplayServerWayland::DisplayServerWayland(const Strin
+@@ -2410,11 +2410,13 @@ DisplayServerWayland::DisplayServerWayland(const Strin
  				prime_idx = DetectPrimeEGL::detect_prime(EGL_PLATFORM_WAYLAND_KHR);
  			}
  

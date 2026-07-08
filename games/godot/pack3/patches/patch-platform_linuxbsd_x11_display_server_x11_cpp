@@ -5,7 +5,7 @@ we don't support DRI_PRIME as of March 2026 and setting it can lead to crashes
 Index: platform/linuxbsd/x11/display_server_x11.cpp
 --- platform/linuxbsd/x11/display_server_x11.cpp.orig
 +++ platform/linuxbsd/x11/display_server_x11.cpp
-@@ -6943,14 +6943,14 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
+@@ -7031,14 +7031,14 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
  	int xrandr_minor = 0;
  	int event_base, error_base;
  	xrandr_ext_ok = XRRQueryExtension(x11_display, &event_base, &error_base);
@@ -22,7 +22,7 @@ Index: platform/linuxbsd/x11/display_server_x11.cpp
  		}
  	}
  
-@@ -7106,11 +7106,13 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
+@@ -7184,11 +7184,13 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
  				use_prime = DetectPrimeX11::detect_prime();
  			}
  

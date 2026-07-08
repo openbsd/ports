@@ -9,9 +9,9 @@ Index: platform/linuxbsd/os_linuxbsd.h
  #include "drivers/pulseaudio/audio_driver_pulseaudio.h"
 +#include "drivers/sndio/audio_driver_sndio.h"
  #include "drivers/unix/os_unix.h"
- #include "servers/audio/audio_server.h"
  
-@@ -75,6 +76,10 @@ class OS_LinuxBSD : public OS_Unix {
+ class JoypadSDL;
+@@ -71,6 +72,10 @@ class OS_LinuxBSD : public OS_Unix {
  
  #ifdef PULSEAUDIO_ENABLED
  	AudioDriverPulseAudio driver_pulseaudio;

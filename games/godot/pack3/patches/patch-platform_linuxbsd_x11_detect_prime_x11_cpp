@@ -4,7 +4,7 @@ we don't support DRI_PRIME as of March 2026 and setting it can lead to crashes
 Index: platform/linuxbsd/x11/detect_prime_x11.cpp
 --- platform/linuxbsd/x11/detect_prime_x11.cpp.orig
 +++ platform/linuxbsd/x11/detect_prime_x11.cpp
-@@ -59,6 +59,8 @@ typedef GLXContext (*GLXCREATECONTEXTATTRIBSARBPROC)(D
+@@ -62,6 +62,8 @@ typedef GLXContext (*GLXCREATECONTEXTATTRIBSARBPROC)(D
  // To prevent shadowing warnings
  #undef glGetString
  
@@ -13,7 +13,7 @@ Index: platform/linuxbsd/x11/detect_prime_x11.cpp
  int silent_error_handler(Display *display, XErrorEvent *error) {
  	static char message[1024];
  	XGetErrorText(display, error->error_code, message, sizeof(message));
-@@ -191,9 +193,11 @@ int DetectPrimeX11::detect_prime() {
+@@ -194,9 +196,11 @@ int DetectPrimeX11::detect_prime() {
  
  			close(fdset[0]);
  

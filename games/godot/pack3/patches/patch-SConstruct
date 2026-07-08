@@ -6,7 +6,7 @@ Remove architecture from the program names
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -826,7 +826,7 @@ if env.msvc:
+@@ -851,7 +851,7 @@ if env.msvc:
              env.AppendUnique(CPPDEFINES=["SIZE_EXTRA"])
      elif env["optimize"] == "debug" or env["optimize"] == "none":
          env["OPTIMIZELEVEL"] = "/Od"
@@ -15,7 +15,7 @@ Index: SConstruct
      if env["debug_symbols"]:
          if env["platform"] == "windows":
              if methods.using_clang(env):
-@@ -1021,7 +1021,6 @@ if env.dev_build:
+@@ -1043,7 +1043,6 @@ if env.dev_build:
  if env["precision"] == "double":
      suffix += ".double"
  

@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 COMMENT-main =	2D and 3D game engine
 COMMENT-editor=	2D and 3D game engine (with the editor)
 
-VERSION =	4.6.3
+VERSION =	4.7
 PKGNAME =	godot-${VERSION}
 DIST_TUPLE +=	codeberg godotsteam godotsteam v4.3 godotsteam
 
@@ -17,12 +17,17 @@ WANTLIB-main += ${COMPILER_LIBCXX} SDL3 SPIRV X11 Xcursor Xext Xi Xinerama
 WANTLIB-main += Xrandr Xrender c dbus-1 enet fontconfig freetype glib-2.0
 WANTLIB-main += glslang glslang-default-resource-limits intl m mbedcrypto
 WANTLIB-main += mbedtls mbedx509 miniupnpc ogg pcre2-32 sndio speechd
-WANTLIB-main += steam_api theora theoradec vorbis vorbisfile webp wslay
+WANTLIB-main += theora theoradec vorbis vorbisfile webp wslay
 WANTLIB-main += xkbcommon zstd
 WANTLIB-editor = ${WANTLIB-main} theoraenc vorbisenc
 
 # Building with module_mono_enabled requires msbuild and to fix the
 # sharedlib_ext in modules/mono/config.py to '.so.1.0'
+
+# 4.7 has bug with compiling custom modules:
+# https://github.com/godotengine/godot/issues/120622
+# Therefore, the current line is not in MODSCONS_FLAGS until solved
+#			custom_modules=${WRKSRC}/godotsteam \
 MODSCONS_FLAGS =	cflags="${CFLAGS}" \
 			cxxflags="${CXXFLAGS} -Wno-deprecated-register" \
 			builtin_certs=no \
@@ -38,7 +43,6 @@ MODSCONS_FLAGS =	cflags="${CFLAGS}" \
 			builtin_sdl=no \
 			builtin_wslay=no \
 			builtin_zstd=no \
-			custom_modules=${WRKSRC}/godotsteam \
 			disable_path_overrides=no \
 			use_sowrap=no \
 			wayland=no
@@ -77,7 +81,6 @@ LIB_DEPENDS =		archivers/zstd \
 			devel/gettext,-runtime \
 			devel/pcre2 \
 			devel/sdl3 \
-			games/goldberg_emulator \
 			graphics/glslang \
 			graphics/libwebp \
 			multimedia/libtheora \
@@ -117,7 +120,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot.6 \
 		${PREFIX}/man/man6/godot.6
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/icon.svg \
+	${INSTALL_DATA} ${WRKSRC}/misc/logo/icon.svg \
 		${PREFIX}/share/pixmaps/godot.svg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.desktop \
