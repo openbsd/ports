@@ -1,7 +1,7 @@
 Index: ext/node/lib.rs
 --- ext/node/lib.rs.orig
 +++ ext/node/lib.rs
-@@ -430,8 +430,6 @@ deno_core::extension!(deno_node,
+@@ -431,8 +431,6 @@ deno_core::extension!(deno_node,
      ops::udp::op_node_udp_set_multicast_ttl,
      ops::udp::op_node_udp_set_ttl,
      ops::udp::op_node_udp_set_multicast_interface,
