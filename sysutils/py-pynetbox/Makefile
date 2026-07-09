@@ -1,6 +1,6 @@
 COMMENT =		NetBox API client library
 
-MODPY_DISTV =		7.7.0
+MODPY_DISTV =		7.8.0
 DISTNAME =		pynetbox-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
