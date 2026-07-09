@@ -1,10 +1,9 @@
 COMMENT =		ssh configuration security auditing tool
 
-MODPY_DISTV =	3.3.0
+MODPY_DISTV =		3.9.0
 
 DISTNAME =		ssh_audit-${MODPY_DISTV}
 PKGNAME =		ssh-audit-${MODPY_DISTV}
-REVISION =		1
 
 CATEGORIES =		security
 
