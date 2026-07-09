@@ -2,7 +2,7 @@ Index: Makefile
 --- Makefile.orig
 +++ Makefile
 @@ -1,6 +1,6 @@
- VERSION=1.11.4
+ VERSION=1.11.5
  CFLAGS?=-g
 -MAINFLAGS:=-DVERSION='"$(VERSION)"' -Wall -Wextra -Werror -Wno-unused-parameter
 +MAINFLAGS:=-DVERSION='"$(VERSION)"' -Wall -Wextra -Wno-unused-parameter

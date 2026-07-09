@@ -9,7 +9,7 @@ Index: src/main.c
  #define _XOPEN_SOURCE 600
  #include <assert.h>
  #include <ctype.h>
-@@ -777,6 +778,12 @@ int main(int argc, char **argv) {
+@@ -806,6 +807,12 @@ int main(int argc, char **argv) {
  		fprintf(stderr, "Usage: scdoc < input.scd > output.roff\n");
  		return 1;
  	}
