@@ -1,6 +1,6 @@
 COMMENT =		library for discovering Python interpreters
 
-MODPY_DISTV =		1.4.0
+MODPY_DISTV =		1.4.4
 DISTNAME =		python_discovery-${MODPY_DISTV}
 PKGNAME =		py-python-discovery-${MODPY_DISTV}
 CATEGORIES =		devel
