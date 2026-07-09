@@ -1,0 +1,24 @@
+PIXMA: decode SCAN button interrupt on MG3200 series (buf[4])
+
+- https://gitlab.com/sane-project/backends/-/work_items/856
+- https://gitlab.com/sane-project/backends/-/merge_requests/933
+
+Index: backend/pixma/pixma_mp150.c
+--- backend/pixma/pixma_mp150.c.orig
++++ backend/pixma/pixma_mp150.c
+@@ -1049,6 +1049,15 @@ handle_interrupt (pixma_t * s, int timeout)
+       s->events = PIXMA_EV_BUTTON1 | (buf[0x13] & 0x0f);
+     }
+   }
++  else if (s->cfg->pid == MG3200_PID)
++  /* MG3200 series: SCAN is the only button reported; flag in buf[4]. */
++  {
++    if (buf[4] & 1)
++    {
++      /* start scan */
++      s->events = PIXMA_EV_BUTTON1;
++    }
++  }
+   else
+   /* button no. in buf[0]
+    * original in buf[0]
