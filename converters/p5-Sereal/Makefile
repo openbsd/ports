@@ -1,6 +1,6 @@
 COMMENT =	fast, compact, powerful binary (de-)serialization
 
-VERSION =	5.006
+VERSION =	5.007
 DISTNAME =	Sereal-${VERSION}
 CPAN_AUTHOR =	YVES
 
