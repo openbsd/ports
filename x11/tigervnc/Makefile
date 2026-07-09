@@ -58,7 +58,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 NO_TEST=	Yes
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-BUILD_DEPENDS=	devel/gettext,-tools
+BUILD_DEPENDS=	devel/gettext,-tools \
+		devel/gtest
 LIB_DEPENDS=	devel/gettext,-runtime \
 		graphics/ffmpeg \
 		security/gnutls \
