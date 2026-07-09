@@ -1,0 +1,27 @@
+Index: fcft.c
+--- fcft.c.orig
++++ fcft.c
+@@ -1,7 +1,11 @@
+ #include "fcft/fcft.h"
+ 
+ #include <assert.h>
++#if !defined(__OpenBSD__)
+ #include <byteswap.h>
++#else
++#include <endian.h>
++#endif
+ #include <locale.h>
+ #include <math.h>
+ #include <stdbool.h>
+@@ -685,7 +689,11 @@ instantiate_pattern(FcPattern *pattern, double req_pt_
+         }
+ 
+ #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
++#if !defined(__OpenBSD__)
+         version = bswap_16(version);
++#else
++        version = swap16(version);
++#endif
+ #endif
+ 
+         LOG_DBG("%s: COLR: version=%d", version);
