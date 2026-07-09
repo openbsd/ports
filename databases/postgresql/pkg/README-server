@@ -90,43 +90,43 @@ Option 1: Dump and Restore
 This will work for any upgrade from any major version of PostgreSQL
 to the current version.
 
-1) Backup all your data:
+1) Determine local PostgreSQL configuration changes: 
+# diff -wu ${LOCALBASE}/share/postgresql/postgresql.conf.sample \
+    /var/postgresql/data/postgresql.conf | \
+    tee /var/postgresql/data/postgresql.conf.diff
+
+2) Backup all your data:
 # su _postgresql -c "cd /var/postgresql && \
     pg_dumpall -U postgres > /var/postgresql/full.sqldump"
 
-2) Shutdown the server:
+3) Shutdown the server:
 # rcctl stop postgresql
 
-3) Upgrade your PostgreSQL package with pkg_add.
+4) Upgrade your PostgreSQL package with pkg_add.
 # pkg_add -ui postgresql-server
 
-4) Backup your old data directory and rename:
+5) Backup your old data directory and rename:
 # cd /var/postgresql && tar cf - data | gzip -1 > data.tar.gz
 # mv /var/postgresql/data /var/postgresql/data-${PREV_MAJOR}
 
-5) Create a new data directory:
+6) Create a new data directory:
 # su _postgresql -c "mkdir /var/postgresql/data"
 # su _postgresql -c "cd /var/postgresql && \
     initdb -D /var/postgresql/data -U postgres -A scram-sha-256 -E UTF8 -W"
 
-6) Restore your old pg_hba.conf and (if used) SSL certificates
+7) Restore your old pg_hba.conf and (if used) SSL certificates
 # su _postgresql -c \
     "cp /var/postgresql/data-${PREV_MAJOR}/pg_hba.conf /var/postgresql/data/"
 # su _postgresql -c \
     "cp /var/postgresql/data-${PREV_MAJOR}/server.{crt,key} /var/postgresql/data/"
 
-Some postgresql.conf settings changed or disappeared in this version.
-Examine your old file for local changes and apply them to the new version
-(/var/postgresql/data/postgresql.conf). The following command may help
-identify them:
+8) Apply configuration changes using the diff file created in step 1:
+# $EDITOR /var/postgresql/data/postgresql.conf
 
-# diff -wu ${LOCALBASE}/share/postgresql-${PREV_MAJOR}/postgresql.conf.sample \
-    /var/postgresql/data-${PREV_MAJOR}/postgresql.conf
-
-7) Start PostgreSQL:
+9) Start PostgreSQL:
 # rcctl start postgresql
 
-8) Restore your data:
+10) Restore your data:
 # su _postgresql -c "cd /var/postgresql && \
     psql -U postgres < /var/postgresql/full.sqldump"
 
