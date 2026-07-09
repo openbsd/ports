@@ -1,6 +1,6 @@
 COMMENT =	VNC server for wlroots based Wayland compositors
 
-DIST_TUPLE =	github any1 wayvnc v0.10.0 .
+DIST_TUPLE =	github any1 wayvnc v0.10.1 .
 
 CATEGORIES =	wayland net
 
