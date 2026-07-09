@@ -1,6 +1,6 @@
 COMMENT =		PostgreSQL HA cluster management tool
 
-MODPY_DISTV =		4.1.3
+MODPY_DISTV =		4.1.4
 DISTNAME =		patroni-${MODPY_DISTV}
 
 CATEGORIES =		databases
