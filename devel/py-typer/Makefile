@@ -1,9 +1,8 @@
 COMMENT =		library for building CLI applications
 
-MODPY_DISTV =		0.26.7
+MODPY_DISTV =		0.26.8
 DISTNAME =		typer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
