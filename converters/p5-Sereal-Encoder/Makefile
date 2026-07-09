@@ -1,7 +1,7 @@
 COMMENT =	fast, compact, powerful binary serialization
 
 # Always upgrade the Decoder before the Encoder.
-VERSION =	5.006
+VERSION =	5.007
 DISTNAME =	Sereal-Encoder-${VERSION}
 CPAN_AUTHOR =	YVES
 
