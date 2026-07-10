@@ -1,7 +1,6 @@
 @newgroup _llama-server:583
 @newuser _llama-server:583:_llama-server::llama-server account:${LOCALSTATEDIR}/db/llama-server:/sbin/nologin
 @rcscript ${RCDIR}/llama_server
-@bin bin/export-graph-ops
 @bin bin/llama
 @bin bin/llama-batched
 @bin bin/llama-batched-bench
