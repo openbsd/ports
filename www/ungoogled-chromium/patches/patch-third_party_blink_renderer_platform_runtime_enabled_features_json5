@@ -64,7 +64,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: "experimental",
        public: true,
      },
-@@ -2353,7 +2353,7 @@
+@@ -2364,7 +2364,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -73,7 +73,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        base_feature: "none",
      },
      {
-@@ -2700,7 +2700,7 @@
+@@ -2711,7 +2711,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -82,7 +82,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3543,7 +3543,7 @@
+@@ -3554,7 +3554,7 @@
        name: "InstallElement",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "InstallElement",
@@ -91,7 +91,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6288,7 +6288,7 @@
+@@ -6299,7 +6299,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -100,7 +100,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -6386,7 +6386,7 @@
+@@ -6397,7 +6397,7 @@
        status: "experimental",
        origin_trial_feature_name: "UserMediaElement",
        public: true,
@@ -109,7 +109,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
      },
-@@ -6501,7 +6501,7 @@
+@@ -6512,7 +6512,7 @@
        name: "WebAppInstallation",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "WebAppInstallation",
@@ -118,7 +118,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6515,7 +6515,7 @@
+@@ -6526,7 +6526,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
