@@ -80,7 +80,8 @@ post-patch:
 		${WRKSRC}/src/flexbuffer_cache.* \
 		${WRKSRC}/src/flexbuffer_json-inl.h \
 		${WRKSRC}/src/flexbuffer_json.h \
-		${WRKSRC}/pch/main-pch.hpp
+		${WRKSRC}/pch/main-pch.hpp \
+		${WRKSRC}/src/zzip.cpp
 
 post-configure:
 	touch ${WRKSRC}/VERSION.txt
