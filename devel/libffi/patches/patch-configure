@@ -4,7 +4,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9949,7 +9949,7 @@ esac
+@@ -9952,7 +9952,7 @@ esac
  LIBTOOL_DEPS=$ltmain
  
  # Always use our own libtool.
@@ -13,7 +13,7 @@ Index: configure
  
  
  
-@@ -19430,6 +19430,12 @@ if test "x$sys_symbol_underscore" = xyes; then
+@@ -19433,6 +19433,12 @@ if test "x$sys_symbol_underscore" = xyes; then
  printf "%s\n" "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
  
  fi
