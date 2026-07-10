@@ -2,8 +2,8 @@ COMMENT=		GStreamer development and validation tools
 
 DISTNAME=		gst-devtools-${V}
 
-SHARED_LIBS += gstvalidate-1.0           0.2 # 0.2804.0
-SHARED_LIBS += gstvalidate-default-overrides-1.0 0.2 # 0.2804.0
+SHARED_LIBS += gstvalidate-1.0           0.2 # 0.2805.0
+SHARED_LIBS += gstvalidate-default-overrides-1.0 0.2 # 0.2805.0
 
 SITES=			${SITE_GST:=gst-devtools/}
 
