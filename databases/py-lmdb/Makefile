@@ -1,6 +1,6 @@
 COMMENT=	Python bindings for LMDB
 
-MODPY_DISTV=	2.2.0
+MODPY_DISTV=	2.2.1
 DISTNAME=	lmdb-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

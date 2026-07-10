@@ -25,6 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/lmdb/${MODPY_PYCACHE}tool.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/lmdb/${MODPY_PYCACHE}tool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lmdb/_config.py
 lib/python${MODPY_VERSION}/site-packages/lmdb/aio.py
+lib/python${MODPY_VERSION}/site-packages/lmdb/aio.pyi
 lib/python${MODPY_VERSION}/site-packages/lmdb/cffi.py
 @so lib/python${MODPY_VERSION}/site-packages/lmdb/cpython.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/lmdb/py.typed
