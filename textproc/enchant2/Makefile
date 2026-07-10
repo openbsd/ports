@@ -1,10 +1,10 @@
 COMMENT=		generic spell checking library
 
-V=			2.8.18
+V=			2.8.19
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
 
-SHARED_LIBS +=  enchant-2            1.2      # 10.18
+SHARED_LIBS +=  enchant-2            1.2      # 10.19
 
 CATEGORIES=		textproc
 
