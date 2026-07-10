@@ -1,14 +1,13 @@
 COMMENT=		decentralized service discovery and orchestration
 
 MODGO_MODNAME=		github.com/hashicorp/serf
-MODGO_VERSION=		v0.10.2
+MODGO_VERSION=		v0.10.4
 DISTNAME=		hashicorp-serf-${MODGO_VERSION:S/v//}
 
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		https://www.serfdom.io/
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MPLv2.0
 PERMIT_PACKAGE=	Yes
 
