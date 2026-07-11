@@ -241,6 +241,7 @@
      SUBDIR += monitord
      SUBDIR += moor
      SUBDIR += moreutils
+     SUBDIR += msitools
      SUBDIR += msktutil
      SUBDIR += mtools
      SUBDIR += multitail
