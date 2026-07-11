@@ -11,6 +11,7 @@ DIST_TUPLE +=	codeberg ziglang translate-c \
 		57c559cf581b1fcad90494eda219f98abeb155ce .
 DIST_TUPLE +=	github Vexu arocc \
 		5f5a050569a95ecc40a426f0c3666ae7ef987ede .
+REVISION =	0
 
 CATEGORIES =	wayland
 
@@ -20,6 +21,8 @@ MAINTAINER =	Rob Lillack <rob@lillack.net>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += c evdev input pixman-1 pthread wayland-server xkbcommon
 
 WRKDIST =	${WRKDIR}/river
 
@@ -38,8 +41,6 @@ LIB_DEPENDS =	wayland/libevdev-openbsd \
 		wayland/wayland \
 		x11/xkbcommon
 
-WANTLIB +=	c evdev input pixman-1 wayland-server xkbcommon
-
 # Hashes of the Zig package dependencies in build.zig.zon (and the transitive
 # aro dep pulled in by translate_c); these become the directory names under
 # ZIG_PKGDIR. Update whenever the deps in build.zig.zon are bumped.
@@ -55,17 +56,24 @@ ZIG_PKGDIR =	${WRKBUILD}/zig-packages
 MAKE_ENV +=	ZIG_GLOBAL_CACHE_DIR=${WRKBUILD}/zig-global-cache \
 		ZIG_LOCAL_CACHE_DIR=${WRKBUILD}/zig-local-cache
 
+ZIG_CPU =	${ARCH:S/amd64/x86_64/:S/arm64/generic/}
 # --system disables all network access; zig will error if a package is
 # missing from ZIG_PKGDIR instead of silently fetching it.
 ZIG_FLAGS =	--system ${ZIG_PKGDIR} \
 		--global-cache-dir ${WRKBUILD}/zig-global-cache \
 		--cache-dir ${WRKBUILD}/zig-local-cache \
+		--color off \
+		--verbose \
+		-j${MAKE_JOBS} \
+		-Dcpu=${ZIG_CPU} \
 		-Doptimize=ReleaseSafe \
 		-Dllvm=true \
 		-Dpie=true \
 		-Dxwayland=true \
 		-Dman-pages=true \
 		-Dversion-string=${V}
+
+NO_TEST =	Yes
 
 # Stage each Zig dependency under ZIG_PKGDIR keyed by its content hash, where
 # `zig build --system` expects to find them.
