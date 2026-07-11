@@ -9,7 +9,7 @@ Index: mesonbuild/build.py
  )
  from .options import OptionKey
  
-@@ -2730,6 +2731,30 @@ class SharedLibrary(BuildTarget):
+@@ -2727,6 +2728,30 @@ class SharedLibrary(BuildTarget):
              if self.darwin_versions is None and self.soversion is not None:
                  # If unspecified, pick the soversion
                  self.darwin_versions = (self.soversion, self.soversion)
@@ -40,7 +40,7 @@ Index: mesonbuild/build.py
  
          # Visual Studio module-definitions file
          self.process_vs_module_defs_kw(kwargs)
-@@ -2770,6 +2795,8 @@ class SharedLibrary(BuildTarget):
+@@ -2767,6 +2792,8 @@ class SharedLibrary(BuildTarget):
          # filename. If ltversion != soversion we create an soversion alias:
          # libfoo.so.0 -> libfoo.so.0.100.0
          # Where libfoo.so.0.100.0 is the actual library
