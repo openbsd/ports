@@ -2,7 +2,7 @@ COMMENT =		command line tool for CSV processing
 
 GH_ACCOUNT =		medialab
 GH_PROJECT =		xan
-GH_TAGNAME =		0.59.0
+GH_TAGNAME =		0.60.0
 
 CATEGORIES =		textproc
 
