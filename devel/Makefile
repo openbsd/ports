@@ -2083,6 +2083,7 @@
      SUBDIR += z80ex
      SUBDIR += zeal
      SUBDIR += zizmor
+     SUBDIR += zls
      SUBDIR += zmac
      SUBDIR += zug
 
