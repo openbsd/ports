@@ -1,0 +1,14 @@
+ZLS is a non-official implementation of the Language Server Protocol for Zig
+in Zig. It provides developers with IDE features in their editor.
+
+The majority of LSP features are supported:
+- Completions
+- Hover
+- Diagnostics and opt-in build-on-save
+- Go to definition/declaration
+- Workspace symbols and document symbols
+- Find references and rename symbol
+- Formatting based on zig fmt
+- Semantic tokens highlighting
+- Inlay hints
+- Code actions
