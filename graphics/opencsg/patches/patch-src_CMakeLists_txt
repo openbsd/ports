@@ -1,0 +1,17 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -25,11 +25,11 @@ add_library(opencsg
+ 
+ target_include_directories(opencsg PUBLIC
+     "${CMAKE_SOURCE_DIR}/include"
+ )
+ 
+ set_target_properties(opencsg PROPERTIES
+-    VERSION ${PROJECT_VERSION}
+-    SOVERSION ${PROJECT_VERSION_MAJOR}
++    VERSION ${LIBopencsg_VERSION}
++    SOVERSION ${LIBopencsg_VERSION}
+     PUBLIC_HEADER "${CMAKE_SOURCE_DIR}/include/opencsg.h" 
+ )
+ 

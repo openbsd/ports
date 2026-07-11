@@ -1,0 +1,12 @@
+Index: example/CMakeLists.txt
+--- example/CMakeLists.txt.orig
++++ example/CMakeLists.txt
+@@ -9,6 +9,8 @@ find_package(GLUT REQUIRED)
+ 
+ target_include_directories(opencsgexample PRIVATE
+     "${CMAKE_SOURCE_DIR}/include"
++    "${OPENGL_INCLUDE_DIRS}"
++    "${GLUT_INCLUDE_DIRS}"
+ )
+ 
+ target_link_libraries(opencsgexample PRIVATE
