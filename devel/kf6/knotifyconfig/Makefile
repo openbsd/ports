@@ -9,6 +9,7 @@ WANTLIB += KF6Service KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6Widgets canberra m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf6/kxmlgui>=${MODKF6_VERSION} \
 		devel/kf6/knotifications>=${MODKF6_VERSION}
 
 RUN_DEPENDS =	devel/kf6/knotifications>=${MODKF6_VERSION}

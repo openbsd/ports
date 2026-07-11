@@ -6,7 +6,7 @@ SHARED_LIBS +=  KF6FileMetaData           0.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Codecs KF6CoreAddons
 WANTLIB += KF6I18n QMobipocket6 Qt6Core Qt6Gui Qt6Xml avcodec
 WANTLIB += avformat avutil c epub exiv2 m poppler poppler-qt6
-WANTLIB += tag
+WANTLIB += tag xml2 zip
 
 # needs c++ and python
 COMPILER =	base-clang ports-gcc
@@ -22,15 +22,17 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 
 RUN_DEPENDS =	textproc/catdoc
 
-LIB_DEPENDS =	audio/taglib \
-		devel/kf6/kcodecs>=${MODKF6_VERSION} \
+LIB_DEPENDS =	archivers/libzip \
+		audio/taglib \
 		devel/kf6/karchive>=${MODKF6_VERSION} \
+		devel/kf6/kcodecs>=${MODKF6_VERSION} \
 		devel/kf6/kcoreaddons>=${MODKF6_VERSION} \
 		devel/kf6/ki18n>=${MODKF6_VERSION} \
 		graphics/exiv2 \
 		graphics/ffmpeg \
 		print/poppler,-qt6 \
 		textproc/ebook-tools \
+		textproc/libxml \
 		x11/kde-applications/kf6-kdegraphics-mobipocket
 
 .include <bsd.port.mk>

@@ -11,9 +11,11 @@ WANTLIB += Qt6Widgets X11 c gcrypt gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += intl m qca-qt6 secret-1
 
 BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf6/kiconthemes>=${MODKF6_VERSION} \
 		devel/kf6/kdoctools>=${MODKF6_VERSION}
 
 RUN_DEPENDS =	devel/kf6/kdoctools>=${MODKF6_VERSION} \
+		devel/kf6/kiconthemes>=${MODKF6_VERSION} \
 		devel/desktop-file-utils
 
 LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \

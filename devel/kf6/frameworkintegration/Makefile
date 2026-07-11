@@ -8,10 +8,18 @@ WANTLIB += KF6CoreAddons KF6I18n KF6IconThemes KF6NewStuffCore
 WANTLIB += KF6Notifications KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6Widgets c m
 
-BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/kf6/kpackage>=${MODKF6_VERSION}
+KDE_DEPENDS =	devel/kf6/kconfigwidgets>=${MODKF6_VERSION} \
+		devel/kf6/kguiaddons>=${MODKF6_VERSION} \
+		devel/kf6/kio>=${MODKF6_VERSION} \
+		devel/kf6/kitemviews>=${MODKF6_VERSION}
 
-RUN_DEPENDS =	fonts/noto/fonts
+BUILD_DEPENDS =	${KDE_DEPENDS} \
+		devel/gettext,-tools \
+		devel/kf6/kpackage>=${MODKF6_VERSION} \
+		x11/oxygen-icons
+
+RUN_DEPENDS =	fonts/noto/fonts \
+		x11/oxygen-icons
 
 LIB_DEPENDS =	devel/kf6/attica>=${MODKF6_VERSION} \
 		devel/kf6/kcolorscheme>=${MODKF6_VERSION} \

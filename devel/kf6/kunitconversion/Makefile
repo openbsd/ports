@@ -5,7 +5,8 @@ SHARED_LIBS +=  KF6UnitConversion         0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF6I18n Qt6Core Qt6Network m
 
-BUILD_DEPENDS =	devel/gettext,-tools
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf6/kconfig>=${MODKF6_VERSION}
 
 LIB_DEPENDS =	devel/kf6/ki18n>=${MODKF6_VERSION}
 

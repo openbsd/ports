@@ -1,7 +1,7 @@
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
 
-SHARED_LIBS +=  KF6KIOCore                2.1 # 0.0
+SHARED_LIBS +=  KF6KIOCore                2.2 # 0.0
 SHARED_LIBS +=  KF6KIOFileWidgets         0.2 # 0.0
 SHARED_LIBS +=  KF6KIOGui                 0.3 # 0.0
 SHARED_LIBS +=  KF6KIOWidgets             0.3 # 0.0
@@ -16,10 +16,12 @@ WANTLIB += Qt6Xml X11 c exslt m xkbcommon xml2
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/gettext,-tools \
+		devel/kf6/knotifications>=${MODKF6_VERSION} \
 		devel/kf6/kded>=${MODKF6_VERSION} \
 		devel/kf6/kdoctools>=${MODKF6_VERSION}
 
 RUN_DEPENDS =	devel/kf6/kdoctools>=${MODKF6_VERSION} \
+		devel/kf6/knotifications>=${MODKF6_VERSION} \
 		devel/kf6/kded>=${MODKF6_VERSION} \
 		devel/desktop-file-utils
 

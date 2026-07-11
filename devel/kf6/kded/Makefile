@@ -5,7 +5,10 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6CoreAddons KF6Crash
 WANTLIB += KF6DBusAddons KF6Service Qt6Core Qt6DBus Qt6Gui Qt6Widgets
 WANTLIB += c m
 
-BUILD_DEPENDS =	devel/kf6/kdoctools>=${MODKF6_VERSION}
+KDE_DEPENDS =	devel/kf6/ki18n>=${MODKF6_VERSION}
+
+BUILD_DEPENDS =	${KDE_DEPENDS} \
+		devel/kf6/kdoctools>=${MODKF6_VERSION}
 
 RUN_DEPENDS =	devel/kf6/kdoctools>=${MODKF6_VERSION} \
 		devel/desktop-file-utils

@@ -106,6 +106,7 @@ share/locale/ko/LC_MESSAGES/kxmlgui6.mo
 share/locale/ku/LC_MESSAGES/kxmlgui6.mo
 share/locale/lb/LC_MESSAGES/kxmlgui6.mo
 share/locale/lg/LC_MESSAGES/kxmlgui6.mo
+share/locale/lo/LC_MESSAGES/kxmlgui6.mo
 share/locale/lt/LC_MESSAGES/kxmlgui6.mo
 share/locale/lv/LC_MESSAGES/kxmlgui6.mo
 share/locale/mai/LC_MESSAGES/kxmlgui6.mo
@@ -114,6 +115,8 @@ share/locale/ml/LC_MESSAGES/kxmlgui6.mo
 share/locale/mr/LC_MESSAGES/kxmlgui6.mo
 share/locale/ms/LC_MESSAGES/kxmlgui6.mo
 share/locale/my/LC_MESSAGES/kxmlgui6.mo
+share/locale/nan_TW/LC_MESSAGES/kxmlgui6.mo
+share/locale/nan_TW@latin/LC_MESSAGES/kxmlgui6.mo
 share/locale/nb/LC_MESSAGES/kxmlgui6.mo
 share/locale/nds/LC_MESSAGES/kxmlgui6.mo
 share/locale/ne/LC_MESSAGES/kxmlgui6.mo

@@ -8,6 +8,7 @@ WANTLIB += KF6ItemModels KF6WindowSystem Qt6Core Qt6DBus Qt6Gui
 WANTLIB += X11 m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf6/threadweaver>=${MODKF6_VERSION} \
 		archivers/gtar
 
 LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \

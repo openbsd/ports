@@ -13,9 +13,11 @@ WANTLIB += Qt6Network Qt6PrintSupport Qt6Qml Qt6TextToSpeech Qt6Widgets
 WANTLIB += Qt6Xml c editorconfig m
 
 BUILD_DEPENDS =	archivers/gtar \
+		devel/kf6/breeze-icons>=${MODKF6_VERSION} \
 		devel/gettext,-tools
 
-RUN_DEPENDS =	x11/dbus,-suid
+RUN_DEPENDS =	x11/dbus,-suid \
+		devel/kf6/breeze-icons>=${MODKF6_VERSION}
 
 # The following OPTIONAL packages have not been found:
 # * EditorConfig

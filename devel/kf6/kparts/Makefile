@@ -11,6 +11,7 @@ WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
 WANTLIB += m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf6/knotifications>=${MODKF6_VERSION} \
 		archivers/gtar
 
 LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \
@@ -25,7 +26,6 @@ LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \
 		devel/kf6/kservice>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION} \
 		devel/kf6/kxmlgui>=${MODKF6_VERSION} \
-
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

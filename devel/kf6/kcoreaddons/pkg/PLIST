@@ -171,6 +171,12 @@ share/locale/ml/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/mr/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/ms/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/my/LC_MESSAGES/kcoreaddons6_qt.qm
+share/locale/nan_TW/
+share/locale/nan_TW/LC_MESSAGES/
+share/locale/nan_TW/LC_MESSAGES/kcoreaddons6_qt.qm
+share/locale/nan_TW@latin/
+share/locale/nan_TW@latin/LC_MESSAGES/
+share/locale/nan_TW@latin/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/nb/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/nds/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/ne/LC_MESSAGES/kcoreaddons6_qt.qm
