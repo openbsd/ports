@@ -1,6 +1,6 @@
 COMMENT =	utility for modifying existing ELF executables and libraries
 
-V =			0.19.0
+V =			0.19.1
 DISTNAME =		patchelf-${V}
 SITES =			https://github.com/NixOS/patchelf/releases/download/${V}/
 
