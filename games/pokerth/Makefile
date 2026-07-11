@@ -2,7 +2,7 @@ BROKEN-i386 =	protobuf/abseil problems
 
 COMMENT =	texas holdem poker client, local or internet games
 
-V =		2.0.8
+V =		2.1.3
 DIST_TUPLE =	github pokerth pokerth v${V} .
 PKGNAME =	pokerth-${V}
 
@@ -39,6 +39,6 @@ LIB_DEPENDS +=	x11/qt6/qtmultimedia
 RUN_DEPENDS +=	devel/desktop-file-utils
 
 pre-build:
-	${SUBST_CMD} ${WRKSRC}/pokerth.desktop
+	${SUBST_CMD} ${WRKSRC}/pokerth.desktop ${WRKSRC}/pokerth_qml.desktop
 
 .include <bsd.port.mk>

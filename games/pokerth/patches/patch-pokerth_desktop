@@ -1,7 +1,7 @@
 Index: pokerth.desktop
 --- pokerth.desktop.orig
 +++ pokerth.desktop
-@@ -39,7 +39,7 @@ Comment[ru]=Игра в техасский холде�
+@@ -27,7 +27,7 @@ Comment[ru]=Игра в техасский холде�
  Comment[tr]=Texas hold'em oyunu
  Comment[uk]=Гра в техаський холдем
  StartupWMClass=pokerth_client
