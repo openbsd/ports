@@ -1,7 +1,15 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -527,10 +527,10 @@ else()
+@@ -461,6 +461,7 @@ macro(find_graphics)
+       set(GLEW_SOURCES src/glview/glew-utils.cc)
+     endif()
+ 
++    set(OPENGL_glx_LIBRARY /usr/X11R6/lib/modules/extensions/libglx.so)
+     find_package(OpenGL REQUIRED QUIET)
+     target_link_libraries(OpenSCADLibInternal PUBLIC ${OPENGL_LIBRARIES})
+     message(STATUS "OpenGL: ${OPENGL_LIBRARIES}")
+@@ -528,10 +529,10 @@ else()
    target_link_libraries(svg PUBLIC Eigen3::Eigen)
    message(STATUS "Eigen: ${Eigen3_VERSION}")
  
@@ -14,7 +22,7 @@ Index: CMakeLists.txt
    target_link_libraries(svg PUBLIC Boost::headers)
  
    find_package(HarfBuzz 0.9.19 REQUIRED QUIET)
-@@ -693,7 +693,7 @@ if(ENABLE_CAIRO STREQUAL "AUTO")
+@@ -703,7 +704,7 @@ if(ENABLE_CAIRO STREQUAL "AUTO")
    if(CAIRO_VERSION OR CAIRO_FOUND)
      message(STATUS "Cairo: ${CAIRO_VERSION}")
      target_include_directories(OpenSCADLibInternal SYSTEM PUBLIC ${CAIRO_INCLUDE_DIRS})
@@ -23,7 +31,7 @@ Index: CMakeLists.txt
      target_compile_definitions(OpenSCADLibInternal PUBLIC ENABLE_CAIRO)
    else()
      message(STATUS "Cairo: disabled (not found)")
-@@ -957,7 +957,7 @@ elseif(UNIX)
+@@ -967,7 +968,7 @@ elseif(UNIX)
        if (NOT USE_GLAD)
          target_compile_definitions(OpenSCADLibInternal PUBLIC GLEW_EGL)
        endif()
@@ -32,8 +40,8 @@ Index: CMakeLists.txt
      endif()
      if(ENABLE_GLX AND OpenGL_GLX_FOUND)
        target_compile_definitions(OpenSCADLibInternal PUBLIC ENABLE_GLX)
-@@ -1260,11 +1260,6 @@ else()
-     ${GLEW_SOURCES})
+@@ -1279,11 +1280,6 @@ else()
+   endif()
  endif()
  
 -

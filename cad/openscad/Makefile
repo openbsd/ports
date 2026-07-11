@@ -1,8 +1,7 @@
 COMMENT =		programmers solid 3D CAD modeller
 
-V =			2026.02.24
+V =			2026.06.21
 DISTNAME =		openscad-${V}
-REVISION =		0
 
 CATEGORIES =		cad
 
@@ -13,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =	openscad
 GH_PROJECT =	openscad
-GH_COMMIT =	665ba242e8b61aee10a4b09af94c094e1eb354f8
+GH_COMMIT =	fb3d125fc17debb48080cd3551e944fcb8d97701
 
 MCAD_COMMIT =	1ea402208c3127ffb443931e9bb1681c191dacca
 SITES.mcad =	https://github.com/${GH_ACCOUNT}/MCAD/archive/
@@ -24,13 +23,14 @@ MODULES =		devel/cmake \
 			lang/python \
 			x11/qt6
 
-WANTLIB += ${COMPILER_LIBCXX} 3mf Clipper2 EGL GL GLEW GLU Qt6Concurrent
+WANTLIB += ${COMPILER_LIBCXX} 3mf Clipper2 EGL GL GLU Qt6Concurrent
 WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets
-WANTLIB += boost_atomic-mt boost_filesystem-mt boost_program_options-mt
-WANTLIB += boost_regex-mt c cairo double-conversion
-WANTLIB += fontconfig freetype glib-2.0 gmp gmpxx harfbuzz intl
-WANTLIB += m manifold mpfr opencsg qscintilla2_qt6 tbb xml2 zip
+WANTLIB += X11 boost_atomic-mt boost_container-mt boost_filesystem-mt
+WANTLIB += boost_program_options-mt boost_regex-mt c cairo crypto
+WANTLIB += double-conversion fontconfig freetype glib-2.0 gmp
+WANTLIB += gmpxx harfbuzz intl m manifold mpfr opencsg qscintilla2_qt6
+WANTLIB += ssl tbb xml2 zip
 
 # Match devel/boost
 COMPILER =		base-clang ports-gcc
@@ -48,7 +48,8 @@ BUILD_DEPENDS =		devel/bison \
 			shells/bash \
 			x11/xkbcommon
 
-TEST_DEPENDS =		graphics/py-Pillow
+TEST_DEPENDS =		graphics/py-Pillow \
+			print/ghostscript/gnu
 
 LIB_DEPENDS =		archivers/libzip \
 			cad/clipper2 \
@@ -62,7 +63,6 @@ LIB_DEPENDS =		archivers/libzip \
 			devel/mpfr \
 			devel/tbb \
 			editors/qscintilla,qt6 \
-			graphics/glew \
 			graphics/opencsg \
 			x11/qt6/qt5compat \
 			x11/qt6/qtbase \
@@ -100,8 +100,20 @@ CONFIGURE_ARGS +=	-DENABLE_HIDAPI=OFF
 
 # We don't have SpNav. Disable in case it get's ported.
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SpNav=ON
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
+
+# The tests want to write a shader cache to HOME
+PORTHOME =	${WRKDIR}
 
 TEST_IS_INTERACTIVE =	X11
+
+# Tests need the shaders somewhere they can be found
+#SHAREDIRS = color-schemes examples fonts libraries locale shaders templates 
+SHAREDIRS =	color-schemes locale shaders
+
+pre-test:
+	cd ${WRKSRC} && cp -a ${SHAREDIRS} ${WRKBUILD}
+	#for d in ${SHAREDIRS}; do ln -sf ${WRKSRC}/$d ${WRKBUILD}/$d; done
 
 post-extract:
 	rmdir ${WRKSRC}/libraries/MCAD
