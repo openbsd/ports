@@ -428,6 +428,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/billingconductor/
@@ -1419,6 +1420,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector2/2020-06-08/exa
 lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector2/2020-06-08/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector2/2020-06-08/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector2/2020-06-08/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector2/2020-06-08/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/interconnect/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/interconnect/2022-07-26/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/interconnect/2022-07-26/endpoint-rule-set-1.json
@@ -2068,6 +2070,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-channel/20
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-channel/2024-03-18/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-channel/2024-03-18/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-channel/2024-03-18/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-revenue-measurement/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-revenue-measurement/2022-07-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-revenue-measurement/2022-07-26/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-revenue-measurement/2022-07-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-revenue-measurement/2022-07-26/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-revenue-measurement/2022-07-26/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/endpoint-rule-set-1.json
