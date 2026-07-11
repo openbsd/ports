@@ -2,7 +2,7 @@ Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
 @@ -362,7 +362,6 @@ nu-table = { path = "./crates/nu-table", version = "0.
- nu-plugin-core = { path = "./crates/nu-plugin-core", version = "0.114.0" }
+ nu-plugin-core = { path = "./crates/nu-plugin-core", version = "0.114.1" }
  assert_cmd = "2.2.1"
  dirs = { workspace = true }
 -tango-bench = "0.7.2"
