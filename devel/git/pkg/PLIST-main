@@ -77,6 +77,7 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-for-each-ref
 @bin libexec/git/git-for-each-repo
 @bin libexec/git/git-format-patch
+@bin libexec/git/git-format-rev
 @bin libexec/git/git-fsck
 @bin libexec/git/git-fsck-objects
 @bin libexec/git/git-fsmonitor--daemon
@@ -188,6 +189,7 @@ libexec/git/git-subtree
 @bin libexec/git/git-update-server-info
 @bin libexec/git/git-upload-archive
 @bin libexec/git/git-upload-pack
+@bin libexec/git/git-url-parse
 @bin libexec/git/git-var
 @bin libexec/git/git-verify-commit
 @bin libexec/git/git-verify-pack
@@ -277,6 +279,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-for-each-ref.1
 @man man/man1/git-for-each-repo.1
 @man man/man1/git-format-patch.1
+@man man/man1/git-format-rev.1
 @man man/man1/git-fsck-objects.1
 @man man/man1/git-fsck.1
 @man man/man1/git-fsmonitor--daemon.1
@@ -377,6 +380,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-update-server-info.1
 @man man/man1/git-upload-archive.1
 @man man/man1/git-upload-pack.1
+@man man/man1/git-url-parse.1
 @man man/man1/git-var.1
 @man man/man1/git-verify-commit.1
 @man man/man1/git-verify-pack.1

@@ -2,10 +2,9 @@ COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
-V =		2.54.0
+V =		2.55.0
 DISTNAME =	git-${V}
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://git-scm.com/
 
