@@ -92,7 +92,7 @@ MODGO_MODULES =	\
 	github.com/!data!dog/datadog-agent/pkg/util/winutil							 v0.77.0 \
 	github.com/!data!dog/datadog-agent/pkg/version								 v0.77.0 \
 	github.com/!data!dog/datadog-go/v5									 v5.8.3 \
-	github.com/!data!dog/dd-trace-go/v2									 v2.9.1 \
+	github.com/!data!dog/dd-trace-go/v2									 v2.8.2 \
 	github.com/!data!dog/go-libddwaf/v4									 v4.9.0 \
 	github.com/!data!dog/go-runtime-metrics-internal							 v0.0.4-0.20260217080614-b0f4edc38a6d \
 	github.com/!data!dog/go-sqllexer									 v0.1.13 \
@@ -486,6 +486,7 @@ MODGO_MODFILES =	\
 	github.com/klauspost/compress							 v1.17.8 \
 	github.com/klauspost/compress							 v1.17.9 \
 	github.com/klauspost/compress							 v1.18.0 \
+	github.com/klauspost/compress							 v1.18.4 \
 	github.com/klauspost/cpuid/v2							 v2.2.3 \
 	github.com/kr/pretty								 v0.1.0 \
 	github.com/kr/pretty								 v0.2.1 \
@@ -590,7 +591,6 @@ MODGO_MODFILES =	\
 	golang.org/x/mod								 v0.3.0 \
 	golang.org/x/mod								 v0.31.0 \
 	golang.org/x/mod								 v0.33.0 \
-	golang.org/x/mod								 v0.34.0 \
 	golang.org/x/mod								 v0.35.0 \
 	golang.org/x/mod								 v0.4.2 \
 	golang.org/x/mod								 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
@@ -617,6 +617,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net								 v0.47.0 \
 	golang.org/x/net								 v0.48.0 \
 	golang.org/x/net								 v0.50.0 \
+	golang.org/x/net								 v0.51.0 \
 	golang.org/x/net								 v0.52.0 \
 	golang.org/x/net								 v0.53.0 \
 	golang.org/x/net								 v0.54.0 \
@@ -721,7 +722,6 @@ MODGO_MODFILES =	\
 	golang.org/x/tools								 v0.36.0 \
 	golang.org/x/tools								 v0.40.0 \
 	golang.org/x/tools								 v0.42.0 \
-	golang.org/x/tools								 v0.43.0 \
 	golang.org/x/tools								 v0.44.0 \
 	golang.org/x/tools								 v0.6.0 \
 	golang.org/x/tools								 v0.9.3 \
