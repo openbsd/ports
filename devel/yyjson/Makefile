@@ -1,11 +1,10 @@
 COMMENT = 		json library written in ANSI C
 
-V =			0.11.1
+V =			0.12.0
 PKGNAME =		yyjson-${V}
 DIST_TUPLE +=		github ibireme yyjson ${V} .
-REVISION =		0
 
-SHARED_LIBS =		yyjson 0.0 # 0.11.1
+SHARED_LIBS =		yyjson 0.1 # 0.12.0
 
 CATEGORIES =		devel
 
