@@ -2,9 +2,10 @@ COMMENT =		app launcher and fuzzy finder for wayland
 
 V =			1.14.1
 DISTNAME=		fuzzel-${V}
-REVISION=		0
+REVISION=		1
 
-DIST_TUPLE=		codeberg dnkl fuzzel ${V} .
+SITES =			https://codeberg.org/dnkl/fuzzel/releases/download/${V}/
+DISTFILES =		fuzzel-${V}${EXTRACT_SUFX}
 
 CATEGORIES =		wayland
 
@@ -33,8 +34,6 @@ LIB_DEPENDS =		devel/libstdthreads \
 			graphics/png \
 			wayland/wayland \
 			x11/xkbcommon
-
-WRKDIST =		${WRKDIR}/fuzzel
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fuzzel
