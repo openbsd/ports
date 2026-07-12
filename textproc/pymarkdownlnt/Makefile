@@ -1,6 +1,6 @@
 COMMENT =		markdown linter
 
-MODPY_DISTV =		0.9.37
+MODPY_DISTV =		0.9.39
 DISTNAME =		pymarkdownlnt-${MODPY_DISTV}
 
 CATEGORIES =		textproc
