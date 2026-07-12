@@ -1,12 +1,15 @@
 COMMENT =		lightweight Wayland notification daemon
 
 V =			1.8.0
+DISTNAME =		fnott-${V}
+REVISION =		0
 
-DIST_TUPLE =		codeberg dnkl fnott ${V} .
+SITES =			https://codeberg.org/dnkl/fnott/releases/download/${V}/
+DISTFILES =		fnott-${V}${EXTRACT_SUFX}
 
 CATEGORIES =		wayland
 
-MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
+MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -30,8 +33,6 @@ LIB_DEPENDS =		devel/epoll-shim \
 			x11/dbus
 
 RUN_DEPENDS =		devel/desktop-file-utils
-
-WRKDIST =		${WRKDIR}/fnott
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fnott
