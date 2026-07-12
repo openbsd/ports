@@ -16,6 +16,7 @@ share/icons/oxygen/applets/16x16/window-pin-symbolic.svg
 share/icons/oxygen/applets/16x16/window-unpin-symbolic.svg
 share/icons/oxygen/applets/22x22/
 share/icons/oxygen/applets/22x22/akregator-symbolic.svg
+share/icons/oxygen/applets/22x22/amarok-symbolic.svg
 share/icons/oxygen/applets/22x22/anki.svg
 share/icons/oxygen/applets/22x22/arrow-down-symbolic.svg
 share/icons/oxygen/applets/22x22/arrow-left-symbolic.svg
@@ -106,6 +107,7 @@ share/icons/oxygen/applets/22x22/kget-symbolic.svg
 share/icons/oxygen/applets/22x22/kgpg-symbolic.svg
 share/icons/oxygen/applets/22x22/klipper-symbolic.svg
 share/icons/oxygen/applets/22x22/ktorrent-symbolic.svg
+share/icons/oxygen/applets/22x22/mark-location-symbolic.svg
 share/icons/oxygen/applets/22x22/media-playback-paused-symbolic.svg
 share/icons/oxygen/applets/22x22/media-playback-playing-symbolic.svg
 share/icons/oxygen/applets/22x22/media-playback-stopped-symbolic.svg
@@ -299,6 +301,7 @@ share/icons/oxygen/applets/22x22/window-pin-symbolic.svg
 share/icons/oxygen/applets/22x22/window-unpin-symbolic.svg
 share/icons/oxygen/applets/24x24/
 share/icons/oxygen/applets/24x24/akregator-symbolic.svg
+share/icons/oxygen/applets/24x24/amarok-symbolic.svg
 share/icons/oxygen/applets/24x24/anki.svg
 share/icons/oxygen/applets/24x24/arrow-down-symbolic.svg
 share/icons/oxygen/applets/24x24/arrow-left-symbolic.svg
@@ -389,6 +392,7 @@ share/icons/oxygen/applets/24x24/kget-symbolic.svg
 share/icons/oxygen/applets/24x24/kgpg-symbolic.svg
 share/icons/oxygen/applets/24x24/klipper-symbolic.svg
 share/icons/oxygen/applets/24x24/ktorrent-symbolic.svg
+share/icons/oxygen/applets/24x24/mark-location-symbolic.svg
 share/icons/oxygen/applets/24x24/media-playback-paused-symbolic.svg
 share/icons/oxygen/applets/24x24/media-playback-playing-symbolic.svg
 share/icons/oxygen/applets/24x24/media-playback-stopped-symbolic.svg
@@ -594,6 +598,7 @@ share/icons/oxygen/applets/32x32/kget-symbolic.svg
 share/icons/oxygen/applets/32x32/kgpg-symbolic.svg
 share/icons/oxygen/applets/32x32/klipper-symbolic.svg
 share/icons/oxygen/applets/32x32/ktorrent-symbolic.svg
+share/icons/oxygen/applets/32x32/mark-location-symbolic.svg
 share/icons/oxygen/applets/32x32/monitor-symbolic.svg
 share/icons/oxygen/applets/32x32/network-connect-symbolic.svg
 share/icons/oxygen/applets/32x32/network-disconnect-symbolic.svg
@@ -645,6 +650,9 @@ share/icons/oxygen/applets/32x32/redshift-status-on-symbolic.svg
 share/icons/oxygen/applets/32x32/redshift-status-on.svg
 share/icons/oxygen/applets/32x32/speedometer-symbolic.svg
 share/icons/oxygen/applets/32x32/tablet-symbolic.svg
+share/icons/oxygen/applets/32x32/trash-empty-symbolic.svg
+share/icons/oxygen/applets/32x32/user-trash-full-symbolic.svg
+share/icons/oxygen/applets/32x32/user-trash-symbolic.svg
 share/icons/oxygen/applets/32x32/window-pin-symbolic.svg
 share/icons/oxygen/applets/32x32/window-unpin-symbolic.svg
 share/icons/oxygen/base/
@@ -815,6 +823,7 @@ share/icons/oxygen/base/128x128/apps/kde.png
 share/icons/oxygen/base/128x128/apps/kdeconnect.png
 share/icons/oxygen/base/128x128/apps/kdevelop.png
 share/icons/oxygen/base/128x128/apps/kdf.png
+share/icons/oxygen/base/128x128/apps/keepsecret.png
 share/icons/oxygen/base/128x128/apps/kformula.png
 share/icons/oxygen/base/128x128/apps/kgpg.png
 share/icons/oxygen/base/128x128/apps/kig.png
@@ -918,6 +927,7 @@ share/icons/oxygen/base/128x128/apps/step.png
 share/icons/oxygen/base/128x128/apps/strigi.png
 share/icons/oxygen/base/128x128/apps/system-diagnosis.png
 share/icons/oxygen/base/128x128/apps/system-file-manager.png
+share/icons/oxygen/base/128x128/apps/system-software-install.png
 share/icons/oxygen/base/128x128/apps/system-software-update.png
 share/icons/oxygen/base/128x128/apps/system-users.png
 share/icons/oxygen/base/128x128/apps/tagua.png
@@ -927,6 +937,7 @@ share/icons/oxygen/base/128x128/apps/utilities-file-archiver.png
 share/icons/oxygen/base/128x128/apps/utilities-log-viewer.png
 share/icons/oxygen/base/128x128/apps/utilities-system-monitor.png
 share/icons/oxygen/base/128x128/apps/utilities-terminal.png
+share/icons/oxygen/base/128x128/apps/wayland.png
 share/icons/oxygen/base/128x128/apps/wine.png
 share/icons/oxygen/base/128x128/apps/xorg.png
 share/icons/oxygen/base/128x128/apps/yakuake.png
@@ -1071,6 +1082,7 @@ share/icons/oxygen/base/128x128/mimetypes/application-sxw.png
 share/icons/oxygen/base/128x128/mimetypes/application-toml.png
 share/icons/oxygen/base/128x128/mimetypes/application-vnd-google-earth-kml.png
 share/icons/oxygen/base/128x128/mimetypes/application-vnd.android.package-archive.png
+share/icons/oxygen/base/128x128/mimetypes/application-vnd.appimage.png
 share/icons/oxygen/base/128x128/mimetypes/application-vnd.debian.binary-package.png
 share/icons/oxygen/base/128x128/mimetypes/application-vnd.efi.iso.png
 share/icons/oxygen/base/128x128/mimetypes/application-vnd.flatpak.ref.png
@@ -1208,6 +1220,7 @@ share/icons/oxygen/base/128x128/mimetypes/application-x-mimearchive.png
 share/icons/oxygen/base/128x128/mimetypes/application-x-mplayer2.png
 share/icons/oxygen/base/128x128/mimetypes/application-x-ms-dos-executable.png
 share/icons/oxygen/base/128x128/mimetypes/application-x-ms-wim.png
+share/icons/oxygen/base/128x128/mimetypes/application-x-msdownload.png
 share/icons/oxygen/base/128x128/mimetypes/application-x-mswinurl.png
 share/icons/oxygen/base/128x128/mimetypes/application-x-mswrite.png
 share/icons/oxygen/base/128x128/mimetypes/application-x-nzb.png
@@ -1884,6 +1897,7 @@ share/icons/oxygen/base/16x16/actions/enum.png
 share/icons/oxygen/base/16x16/actions/error.png
 share/icons/oxygen/base/16x16/actions/exifinfo.png
 share/icons/oxygen/base/16x16/actions/expand.png
+share/icons/oxygen/base/16x16/actions/favorite.png
 share/icons/oxygen/base/16x16/actions/feed-subscribe.png
 share/icons/oxygen/base/16x16/actions/file-zoom-in.png
 share/icons/oxygen/base/16x16/actions/file-zoom-out.png
@@ -2146,6 +2160,7 @@ share/icons/oxygen/base/16x16/actions/mail-signed-part.png
 share/icons/oxygen/base/16x16/actions/mail-signed-verified.png
 share/icons/oxygen/base/16x16/actions/mail-signed.png
 share/icons/oxygen/base/16x16/actions/mail-tagged.png
+share/icons/oxygen/base/16x16/actions/mail-thread-watch.png
 share/icons/oxygen/base/16x16/actions/measure.png
 share/icons/oxygen/base/16x16/actions/media-eject.png
 share/icons/oxygen/base/16x16/actions/media-playback-pause.png
@@ -2349,6 +2364,7 @@ share/icons/oxygen/base/16x16/actions/system-lock-screen.png
 share/icons/oxygen/base/16x16/actions/system-log-out.png
 share/icons/oxygen/base/16x16/actions/system-reboot.png
 share/icons/oxygen/base/16x16/actions/system-run.png
+share/icons/oxygen/base/16x16/actions/system-save-session.png
 share/icons/oxygen/base/16x16/actions/system-search.png
 share/icons/oxygen/base/16x16/actions/system-shutdown.png
 share/icons/oxygen/base/16x16/actions/system-suspend-hibernate.png
@@ -2527,6 +2543,7 @@ share/icons/oxygen/base/16x16/actions/view-time-schedule-child-insert.png
 share/icons/oxygen/base/16x16/actions/view-time-schedule-edit.png
 share/icons/oxygen/base/16x16/actions/view-time-schedule-insert.png
 share/icons/oxygen/base/16x16/actions/view-time-schedule.png
+share/icons/oxygen/base/16x16/actions/view-visible-off.png
 share/icons/oxygen/base/16x16/actions/view-visible.png
 share/icons/oxygen/base/16x16/actions/view-web-browser-dom-tree.png
 share/icons/oxygen/base/16x16/actions/viewhtml.png
@@ -2723,6 +2740,7 @@ share/icons/oxygen/base/16x16/apps/spectacle.png
 share/icons/oxygen/base/16x16/apps/step.png
 share/icons/oxygen/base/16x16/apps/strigi.png
 share/icons/oxygen/base/16x16/apps/system-file-manager.png
+share/icons/oxygen/base/16x16/apps/system-software-install.png
 share/icons/oxygen/base/16x16/apps/system-software-update.png
 share/icons/oxygen/base/16x16/apps/system-users.png
 share/icons/oxygen/base/16x16/apps/tagua.png
@@ -2732,6 +2750,7 @@ share/icons/oxygen/base/16x16/apps/utilities-file-archiver.png
 share/icons/oxygen/base/16x16/apps/utilities-log-viewer.png
 share/icons/oxygen/base/16x16/apps/utilities-system-monitor.png
 share/icons/oxygen/base/16x16/apps/utilities-terminal.png
+share/icons/oxygen/base/16x16/apps/wayland.png
 share/icons/oxygen/base/16x16/apps/wine.png
 share/icons/oxygen/base/16x16/apps/xorg.png
 share/icons/oxygen/base/16x16/apps/yakuake.png
@@ -2904,6 +2923,7 @@ share/icons/oxygen/base/16x16/mimetypes/application-sxw.png
 share/icons/oxygen/base/16x16/mimetypes/application-toml.png
 share/icons/oxygen/base/16x16/mimetypes/application-vnd-google-earth-kml.png
 share/icons/oxygen/base/16x16/mimetypes/application-vnd.android.package-archive.png
+share/icons/oxygen/base/16x16/mimetypes/application-vnd.appimage.png
 share/icons/oxygen/base/16x16/mimetypes/application-vnd.debian.binary-package.png
 share/icons/oxygen/base/16x16/mimetypes/application-vnd.efi.iso.png
 share/icons/oxygen/base/16x16/mimetypes/application-vnd.flatpak.ref.png
@@ -3041,6 +3061,7 @@ share/icons/oxygen/base/16x16/mimetypes/application-x-mimearchive.png
 share/icons/oxygen/base/16x16/mimetypes/application-x-mplayer2.png
 share/icons/oxygen/base/16x16/mimetypes/application-x-ms-dos-executable.png
 share/icons/oxygen/base/16x16/mimetypes/application-x-ms-wim.png
+share/icons/oxygen/base/16x16/mimetypes/application-x-msdownload.png
 share/icons/oxygen/base/16x16/mimetypes/application-x-mswinurl.png
 share/icons/oxygen/base/16x16/mimetypes/application-x-mswrite.png
 share/icons/oxygen/base/16x16/mimetypes/application-x-nzb.png
@@ -3785,6 +3806,7 @@ share/icons/oxygen/base/22x22/actions/enum.png
 share/icons/oxygen/base/22x22/actions/error.png
 share/icons/oxygen/base/22x22/actions/exifinfo.png
 share/icons/oxygen/base/22x22/actions/expand.png
+share/icons/oxygen/base/22x22/actions/favorite.png
 share/icons/oxygen/base/22x22/actions/feed-subscribe.png
 share/icons/oxygen/base/22x22/actions/file-zoom-in.png
 share/icons/oxygen/base/22x22/actions/file-zoom-out.png
@@ -4004,6 +4026,7 @@ share/icons/oxygen/base/22x22/actions/kt-change-tracker.png
 share/icons/oxygen/base/22x22/actions/kt-check-data.png
 share/icons/oxygen/base/22x22/actions/kt-encrypted.png
 share/icons/oxygen/base/22x22/actions/kt-info-widget.png
+share/icons/oxygen/base/22x22/actions/kt-magnet.png
 share/icons/oxygen/base/22x22/actions/kt-pause.png
 share/icons/oxygen/base/22x22/actions/kt-remove.png
 share/icons/oxygen/base/22x22/actions/kt-restore-defaults.png
@@ -4065,6 +4088,7 @@ share/icons/oxygen/base/22x22/actions/mail-signed-part.png
 share/icons/oxygen/base/22x22/actions/mail-signed-verified.png
 share/icons/oxygen/base/22x22/actions/mail-signed.png
 share/icons/oxygen/base/22x22/actions/mail-tagged.png
+share/icons/oxygen/base/22x22/actions/mail-thread-watch.png
 share/icons/oxygen/base/22x22/actions/measure.png
 share/icons/oxygen/base/22x22/actions/media-eject.png
 share/icons/oxygen/base/22x22/actions/media-playback-pause.png
@@ -4274,6 +4298,7 @@ share/icons/oxygen/base/22x22/actions/system-lock-screen.png
 share/icons/oxygen/base/22x22/actions/system-log-out.png
 share/icons/oxygen/base/22x22/actions/system-reboot.png
 share/icons/oxygen/base/22x22/actions/system-run.png
+share/icons/oxygen/base/22x22/actions/system-save-session.png
 share/icons/oxygen/base/22x22/actions/system-search.png
 share/icons/oxygen/base/22x22/actions/system-shutdown.png
 share/icons/oxygen/base/22x22/actions/system-suspend-hibernate.png
@@ -4455,6 +4480,7 @@ share/icons/oxygen/base/22x22/actions/view-time-schedule-child-insert.png
 share/icons/oxygen/base/22x22/actions/view-time-schedule-edit.png
 share/icons/oxygen/base/22x22/actions/view-time-schedule-insert.png
 share/icons/oxygen/base/22x22/actions/view-time-schedule.png
+share/icons/oxygen/base/22x22/actions/view-visible-off.png
 share/icons/oxygen/base/22x22/actions/view-visible.png
 share/icons/oxygen/base/22x22/actions/view-web-browser-dom-tree.png
 share/icons/oxygen/base/22x22/actions/viewhtml.png
@@ -4649,6 +4675,7 @@ share/icons/oxygen/base/22x22/apps/step.png
 share/icons/oxygen/base/22x22/apps/strigi.png
 share/icons/oxygen/base/22x22/apps/system-file-manager.png
 share/icons/oxygen/base/22x22/apps/system-reboot.png
+share/icons/oxygen/base/22x22/apps/system-software-install.png
 share/icons/oxygen/base/22x22/apps/system-software-update.png
 share/icons/oxygen/base/22x22/apps/system-users.png
 share/icons/oxygen/base/22x22/apps/tagua.png
@@ -4658,6 +4685,7 @@ share/icons/oxygen/base/22x22/apps/utilities-file-archiver.png
 share/icons/oxygen/base/22x22/apps/utilities-log-viewer.png
 share/icons/oxygen/base/22x22/apps/utilities-system-monitor.png
 share/icons/oxygen/base/22x22/apps/utilities-terminal.png
+share/icons/oxygen/base/22x22/apps/wayland.png
 share/icons/oxygen/base/22x22/apps/wine.png
 share/icons/oxygen/base/22x22/apps/xorg.png
 share/icons/oxygen/base/22x22/apps/yakuake.png
@@ -4888,6 +4916,7 @@ share/icons/oxygen/base/22x22/mimetypes/application-sxw.png
 share/icons/oxygen/base/22x22/mimetypes/application-toml.png
 share/icons/oxygen/base/22x22/mimetypes/application-vnd-google-earth-kml.png
 share/icons/oxygen/base/22x22/mimetypes/application-vnd.android.package-archive.png
+share/icons/oxygen/base/22x22/mimetypes/application-vnd.appimage.png
 share/icons/oxygen/base/22x22/mimetypes/application-vnd.debian.binary-package.png
 share/icons/oxygen/base/22x22/mimetypes/application-vnd.efi.iso.png
 share/icons/oxygen/base/22x22/mimetypes/application-vnd.flatpak.ref.png
@@ -5025,6 +5054,7 @@ share/icons/oxygen/base/22x22/mimetypes/application-x-mimearchive.png
 share/icons/oxygen/base/22x22/mimetypes/application-x-mplayer2.png
 share/icons/oxygen/base/22x22/mimetypes/application-x-ms-dos-executable.png
 share/icons/oxygen/base/22x22/mimetypes/application-x-ms-wim.png
+share/icons/oxygen/base/22x22/mimetypes/application-x-msdownload.png
 share/icons/oxygen/base/22x22/mimetypes/application-x-mswinurl.png
 share/icons/oxygen/base/22x22/mimetypes/application-x-mswrite.png
 share/icons/oxygen/base/22x22/mimetypes/application-x-nzb.png
@@ -5586,6 +5616,7 @@ share/icons/oxygen/base/256x256/apps/kde-windows.png
 share/icons/oxygen/base/256x256/apps/kdeconnect.png
 share/icons/oxygen/base/256x256/apps/kdevelop.png
 share/icons/oxygen/base/256x256/apps/kdf.png
+share/icons/oxygen/base/256x256/apps/keepsecret.png
 share/icons/oxygen/base/256x256/apps/kformula.png
 share/icons/oxygen/base/256x256/apps/kgpg.png
 share/icons/oxygen/base/256x256/apps/kig.png
@@ -5624,8 +5655,10 @@ share/icons/oxygen/base/256x256/apps/skrooge.png
 share/icons/oxygen/base/256x256/apps/spectacle.png
 share/icons/oxygen/base/256x256/apps/strigi.png
 share/icons/oxygen/base/256x256/apps/system-diagnosis.png
+share/icons/oxygen/base/256x256/apps/system-software-install.png
 share/icons/oxygen/base/256x256/apps/telepathy-kde.png
 share/icons/oxygen/base/256x256/apps/timevault.png
+share/icons/oxygen/base/256x256/apps/wayland.png
 share/icons/oxygen/base/256x256/apps/yakuake.png
 share/icons/oxygen/base/256x256/apps/zanshin.png
 share/icons/oxygen/base/256x256/categories/
@@ -5716,6 +5749,7 @@ share/icons/oxygen/base/256x256/mimetypes/application-sxw.png
 share/icons/oxygen/base/256x256/mimetypes/application-toml.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd-google-earth-kml.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd.android.package-archive.png
+share/icons/oxygen/base/256x256/mimetypes/application-vnd.appimage.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd.debian.binary-package.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd.efi.iso.png
 share/icons/oxygen/base/256x256/mimetypes/application-vnd.flatpak.ref.png
@@ -5850,6 +5884,7 @@ share/icons/oxygen/base/256x256/mimetypes/application-x-mimearchive.png
 share/icons/oxygen/base/256x256/mimetypes/application-x-mplayer2.png
 share/icons/oxygen/base/256x256/mimetypes/application-x-ms-dos-executable.png
 share/icons/oxygen/base/256x256/mimetypes/application-x-ms-wim.png
+share/icons/oxygen/base/256x256/mimetypes/application-x-msdownload.png
 share/icons/oxygen/base/256x256/mimetypes/application-x-mswinurl.png
 share/icons/oxygen/base/256x256/mimetypes/application-x-mswrite.png
 share/icons/oxygen/base/256x256/mimetypes/application-x-nzb.png
@@ -6396,6 +6431,7 @@ share/icons/oxygen/base/32x32/actions/edit-text-frame-update.png
 share/icons/oxygen/base/32x32/actions/edit-undo.png
 share/icons/oxygen/base/32x32/actions/editor.png
 share/icons/oxygen/base/32x32/actions/expand.png
+share/icons/oxygen/base/32x32/actions/favorite.png
 share/icons/oxygen/base/32x32/actions/feed-subscribe.png
 share/icons/oxygen/base/32x32/actions/filename-bpm-amarok.png
 share/icons/oxygen/base/32x32/actions/fileview-preview.png
@@ -6529,6 +6565,7 @@ share/icons/oxygen/base/32x32/actions/irc-voice.png
 share/icons/oxygen/base/32x32/actions/journal-new.png
 share/icons/oxygen/base/32x32/actions/key-enter.png
 share/icons/oxygen/base/32x32/actions/kt-info-widget.png
+share/icons/oxygen/base/32x32/actions/kt-magnet.png
 share/icons/oxygen/base/32x32/actions/kt-speed-limits.png
 share/icons/oxygen/base/32x32/actions/layer-visible-off.png
 share/icons/oxygen/base/32x32/actions/layer-visible-on.png
@@ -6572,6 +6609,7 @@ share/icons/oxygen/base/32x32/actions/mail-signed-part.png
 share/icons/oxygen/base/32x32/actions/mail-signed-verified.png
 share/icons/oxygen/base/32x32/actions/mail-signed.png
 share/icons/oxygen/base/32x32/actions/mail-tagged.png
+share/icons/oxygen/base/32x32/actions/mail-thread-watch.png
 share/icons/oxygen/base/32x32/actions/measure.png
 share/icons/oxygen/base/32x32/actions/media-eject.png
 share/icons/oxygen/base/32x32/actions/media-playback-pause.png
@@ -6696,6 +6734,7 @@ share/icons/oxygen/base/32x32/actions/system-lock-screen.png
 share/icons/oxygen/base/32x32/actions/system-log-out.png
 share/icons/oxygen/base/32x32/actions/system-reboot.png
 share/icons/oxygen/base/32x32/actions/system-run.png
+share/icons/oxygen/base/32x32/actions/system-save-session.png
 share/icons/oxygen/base/32x32/actions/system-search.png
 share/icons/oxygen/base/32x32/actions/system-shutdown.png
 share/icons/oxygen/base/32x32/actions/system-suspend-hibernate.png
@@ -6871,6 +6910,7 @@ share/icons/oxygen/base/32x32/actions/view-time-schedule-child-insert.png
 share/icons/oxygen/base/32x32/actions/view-time-schedule-edit.png
 share/icons/oxygen/base/32x32/actions/view-time-schedule-insert.png
 share/icons/oxygen/base/32x32/actions/view-time-schedule.png
+share/icons/oxygen/base/32x32/actions/view-visible-off.png
 share/icons/oxygen/base/32x32/actions/view-visible.png
 share/icons/oxygen/base/32x32/actions/view-web-browser-dom-tree.png
 share/icons/oxygen/base/32x32/actions/viewhtml.png
@@ -7059,6 +7099,7 @@ share/icons/oxygen/base/32x32/apps/spectacle.png
 share/icons/oxygen/base/32x32/apps/step.png
 share/icons/oxygen/base/32x32/apps/strigi.png
 share/icons/oxygen/base/32x32/apps/system-file-manager.png
+share/icons/oxygen/base/32x32/apps/system-software-install.png
 share/icons/oxygen/base/32x32/apps/system-software-update.png
 share/icons/oxygen/base/32x32/apps/system-users.png
 share/icons/oxygen/base/32x32/apps/tagua.png
@@ -7068,6 +7109,7 @@ share/icons/oxygen/base/32x32/apps/utilities-file-archiver.png
 share/icons/oxygen/base/32x32/apps/utilities-log-viewer.png
 share/icons/oxygen/base/32x32/apps/utilities-system-monitor.png
 share/icons/oxygen/base/32x32/apps/utilities-terminal.png
+share/icons/oxygen/base/32x32/apps/wayland.png
 share/icons/oxygen/base/32x32/apps/wine.png
 share/icons/oxygen/base/32x32/apps/xorg.png
 share/icons/oxygen/base/32x32/apps/yakuake.png
@@ -7262,6 +7304,7 @@ share/icons/oxygen/base/32x32/mimetypes/application-sxw.png
 share/icons/oxygen/base/32x32/mimetypes/application-toml.png
 share/icons/oxygen/base/32x32/mimetypes/application-vnd-google-earth-kml.png
 share/icons/oxygen/base/32x32/mimetypes/application-vnd.android.package-archive.png
+share/icons/oxygen/base/32x32/mimetypes/application-vnd.appimage.png
 share/icons/oxygen/base/32x32/mimetypes/application-vnd.debian.binary-package.png
 share/icons/oxygen/base/32x32/mimetypes/application-vnd.efi.iso.png
 share/icons/oxygen/base/32x32/mimetypes/application-vnd.flatpak.ref.png
@@ -7399,6 +7442,7 @@ share/icons/oxygen/base/32x32/mimetypes/application-x-mimearchive.png
 share/icons/oxygen/base/32x32/mimetypes/application-x-mplayer2.png
 share/icons/oxygen/base/32x32/mimetypes/application-x-ms-dos-executable.png
 share/icons/oxygen/base/32x32/mimetypes/application-x-ms-wim.png
+share/icons/oxygen/base/32x32/mimetypes/application-x-msdownload.png
 share/icons/oxygen/base/32x32/mimetypes/application-x-mswinurl.png
 share/icons/oxygen/base/32x32/mimetypes/application-x-mswrite.png
 share/icons/oxygen/base/32x32/mimetypes/application-x-nzb.png
@@ -8045,6 +8089,7 @@ share/icons/oxygen/base/48x48/actions/edit-text-frame-update.png
 share/icons/oxygen/base/48x48/actions/edit-undo.png
 share/icons/oxygen/base/48x48/actions/edit-web-search.png
 share/icons/oxygen/base/48x48/actions/expand.png
+share/icons/oxygen/base/48x48/actions/favorite.png
 share/icons/oxygen/base/48x48/actions/feed-subscribe.png
 share/icons/oxygen/base/48x48/actions/filename-bpm-amarok.png
 share/icons/oxygen/base/48x48/actions/fill-color.png
@@ -8175,6 +8220,7 @@ share/icons/oxygen/base/48x48/actions/irc-unvoice.png
 share/icons/oxygen/base/48x48/actions/irc-voice.png
 share/icons/oxygen/base/48x48/actions/key-enter.png
 share/icons/oxygen/base/48x48/actions/kt-info-widget.png
+share/icons/oxygen/base/48x48/actions/kt-magnet.png
 share/icons/oxygen/base/48x48/actions/kt-speed-limits.png
 share/icons/oxygen/base/48x48/actions/layer-visible-off.png
 share/icons/oxygen/base/48x48/actions/layer-visible-on.png
@@ -8218,6 +8264,7 @@ share/icons/oxygen/base/48x48/actions/mail-signed-part.png
 share/icons/oxygen/base/48x48/actions/mail-signed-verified.png
 share/icons/oxygen/base/48x48/actions/mail-signed.png
 share/icons/oxygen/base/48x48/actions/mail-tagged.png
+share/icons/oxygen/base/48x48/actions/mail-thread-watch.png
 share/icons/oxygen/base/48x48/actions/measure.png
 share/icons/oxygen/base/48x48/actions/media-eject.png
 share/icons/oxygen/base/48x48/actions/media-playback-pause.png
@@ -8335,6 +8382,7 @@ share/icons/oxygen/base/48x48/actions/system-lock-screen.png
 share/icons/oxygen/base/48x48/actions/system-log-out.png
 share/icons/oxygen/base/48x48/actions/system-reboot.png
 share/icons/oxygen/base/48x48/actions/system-run.png
+share/icons/oxygen/base/48x48/actions/system-save-session.png
 share/icons/oxygen/base/48x48/actions/system-search.png
 share/icons/oxygen/base/48x48/actions/system-shutdown.png
 share/icons/oxygen/base/48x48/actions/system-suspend-hibernate.png
@@ -8493,6 +8541,7 @@ share/icons/oxygen/base/48x48/actions/view-time-schedule-child-insert.png
 share/icons/oxygen/base/48x48/actions/view-time-schedule-edit.png
 share/icons/oxygen/base/48x48/actions/view-time-schedule-insert.png
 share/icons/oxygen/base/48x48/actions/view-time-schedule.png
+share/icons/oxygen/base/48x48/actions/view-visible-off.png
 share/icons/oxygen/base/48x48/actions/view-visible.png
 share/icons/oxygen/base/48x48/actions/view-web-browser-dom-tree.png
 share/icons/oxygen/base/48x48/actions/viewhtml.png
@@ -8572,6 +8621,7 @@ share/icons/oxygen/base/48x48/apps/kde.png
 share/icons/oxygen/base/48x48/apps/kdeconnect.png
 share/icons/oxygen/base/48x48/apps/kdevelop.png
 share/icons/oxygen/base/48x48/apps/kdf.png
+share/icons/oxygen/base/48x48/apps/keepsecret.png
 share/icons/oxygen/base/48x48/apps/kfind.png
 share/icons/oxygen/base/48x48/apps/kformula.png
 share/icons/oxygen/base/48x48/apps/kgpg.png
@@ -8681,6 +8731,7 @@ share/icons/oxygen/base/48x48/apps/spectacle.png
 share/icons/oxygen/base/48x48/apps/step.png
 share/icons/oxygen/base/48x48/apps/strigi.png
 share/icons/oxygen/base/48x48/apps/system-file-manager.png
+share/icons/oxygen/base/48x48/apps/system-software-install.png
 share/icons/oxygen/base/48x48/apps/system-software-update.png
 share/icons/oxygen/base/48x48/apps/system-users.png
 share/icons/oxygen/base/48x48/apps/tagua.png
@@ -8690,6 +8741,7 @@ share/icons/oxygen/base/48x48/apps/utilities-file-archiver.png
 share/icons/oxygen/base/48x48/apps/utilities-log-viewer.png
 share/icons/oxygen/base/48x48/apps/utilities-system-monitor.png
 share/icons/oxygen/base/48x48/apps/utilities-terminal.png
+share/icons/oxygen/base/48x48/apps/wayland.png
 share/icons/oxygen/base/48x48/apps/wine.png
 share/icons/oxygen/base/48x48/apps/xorg.png
 share/icons/oxygen/base/48x48/apps/yakuake.png
@@ -8854,6 +8906,7 @@ share/icons/oxygen/base/48x48/mimetypes/application-sxw.png
 share/icons/oxygen/base/48x48/mimetypes/application-toml.png
 share/icons/oxygen/base/48x48/mimetypes/application-vnd-google-earth-kml.png
 share/icons/oxygen/base/48x48/mimetypes/application-vnd.android.package-archive.png
+share/icons/oxygen/base/48x48/mimetypes/application-vnd.appimage.png
 share/icons/oxygen/base/48x48/mimetypes/application-vnd.debian.binary-package.png
 share/icons/oxygen/base/48x48/mimetypes/application-vnd.efi.iso.png
 share/icons/oxygen/base/48x48/mimetypes/application-vnd.flatpak.ref.png
@@ -8991,6 +9044,7 @@ share/icons/oxygen/base/48x48/mimetypes/application-x-mimearchive.png
 share/icons/oxygen/base/48x48/mimetypes/application-x-mplayer2.png
 share/icons/oxygen/base/48x48/mimetypes/application-x-ms-dos-executable.png
 share/icons/oxygen/base/48x48/mimetypes/application-x-ms-wim.png
+share/icons/oxygen/base/48x48/mimetypes/application-x-msdownload.png
 share/icons/oxygen/base/48x48/mimetypes/application-x-mswinurl.png
 share/icons/oxygen/base/48x48/mimetypes/application-x-mswrite.png
 share/icons/oxygen/base/48x48/mimetypes/application-x-nzb.png
@@ -9506,6 +9560,7 @@ share/icons/oxygen/base/64x64/actions/insert-link.png
 share/icons/oxygen/base/64x64/actions/internet-amarok.png
 share/icons/oxygen/base/64x64/actions/internet-services.png
 share/icons/oxygen/base/64x64/actions/kt-info-widget.png
+share/icons/oxygen/base/64x64/actions/kt-magnet.png
 share/icons/oxygen/base/64x64/actions/kt-speed-limits.png
 share/icons/oxygen/base/64x64/actions/list-add-user.png
 share/icons/oxygen/base/64x64/actions/list-remove.png
@@ -9608,6 +9663,7 @@ share/icons/oxygen/base/64x64/apps/kde.png
 share/icons/oxygen/base/64x64/apps/kdeconnect.png
 share/icons/oxygen/base/64x64/apps/kdevelop.png
 share/icons/oxygen/base/64x64/apps/kdf.png
+share/icons/oxygen/base/64x64/apps/keepsecret.png
 share/icons/oxygen/base/64x64/apps/kfind.png
 share/icons/oxygen/base/64x64/apps/kformula.png
 share/icons/oxygen/base/64x64/apps/kgpg.png
@@ -9702,6 +9758,7 @@ share/icons/oxygen/base/64x64/apps/spectacle.png
 share/icons/oxygen/base/64x64/apps/step.png
 share/icons/oxygen/base/64x64/apps/strigi.png
 share/icons/oxygen/base/64x64/apps/system-file-manager.png
+share/icons/oxygen/base/64x64/apps/system-software-install.png
 share/icons/oxygen/base/64x64/apps/system-software-update.png
 share/icons/oxygen/base/64x64/apps/system-users.png
 share/icons/oxygen/base/64x64/apps/tagua.png
@@ -9711,6 +9768,7 @@ share/icons/oxygen/base/64x64/apps/utilities-file-archiver.png
 share/icons/oxygen/base/64x64/apps/utilities-log-viewer.png
 share/icons/oxygen/base/64x64/apps/utilities-system-monitor.png
 share/icons/oxygen/base/64x64/apps/utilities-terminal.png
+share/icons/oxygen/base/64x64/apps/wayland.png
 share/icons/oxygen/base/64x64/apps/wine.png
 share/icons/oxygen/base/64x64/apps/xorg.png
 share/icons/oxygen/base/64x64/apps/yakuake.png
@@ -9867,6 +9925,7 @@ share/icons/oxygen/base/64x64/mimetypes/application-sxw.png
 share/icons/oxygen/base/64x64/mimetypes/application-toml.png
 share/icons/oxygen/base/64x64/mimetypes/application-vnd-google-earth-kml.png
 share/icons/oxygen/base/64x64/mimetypes/application-vnd.android.package-archive.png
+share/icons/oxygen/base/64x64/mimetypes/application-vnd.appimage.png
 share/icons/oxygen/base/64x64/mimetypes/application-vnd.debian.binary-package.png
 share/icons/oxygen/base/64x64/mimetypes/application-vnd.efi.iso.png
 share/icons/oxygen/base/64x64/mimetypes/application-vnd.flatpak.ref.png
@@ -10005,6 +10064,7 @@ share/icons/oxygen/base/64x64/mimetypes/application-x-mimearchive.png
 share/icons/oxygen/base/64x64/mimetypes/application-x-mplayer2.png
 share/icons/oxygen/base/64x64/mimetypes/application-x-ms-dos-executable.png
 share/icons/oxygen/base/64x64/mimetypes/application-x-ms-wim.png
+share/icons/oxygen/base/64x64/mimetypes/application-x-msdownload.png
 share/icons/oxygen/base/64x64/mimetypes/application-x-mswinurl.png
 share/icons/oxygen/base/64x64/mimetypes/application-x-mswrite.png
 share/icons/oxygen/base/64x64/mimetypes/application-x-nzb.png
