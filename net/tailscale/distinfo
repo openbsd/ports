@@ -2018,8 +2018,8 @@ SHA256 (go_modules/github.com/tailscale/web-client-prebuilt/@v/v0.0.0-2025012423
 SHA256 (go_modules/github.com/tailscale/wf/@v/v0.0.0-20240214030419-6fbb0a674ee6.mod) = pwYFg8oMZmolYbOB0CsVULx//SeaQ4EyOJSJrcESfeE=
 SHA256 (go_modules/github.com/tailscale/wf/@v/v0.0.0-20240214030419-6fbb0a674ee6.zip) = TDtL1+CGb6cAT5Edo6CldpP79kG185ftVYBf9gSphUc=
 SHA256 (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20250107165329-0b8b35511f19.mod) = 8/iBpPcBR2SVFQhQCQwtt5ysgHogzwPhRHa+Gi6jHuI=
-SHA256 (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260427181203-e3ac4a0afb4e.mod) = AwGJ27kZpx4OIVsGYaNOKBFdl5j9J962WnlTCI9ie5M=
-SHA256 (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260427181203-e3ac4a0afb4e.zip) = K2SEBtnlewYXiDbbay4+mnxeJf7+JWl4oR2R00pKVYE=
+SHA256 (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260622165914-65d8d42c9a5a.mod) = AwGJ27kZpx4OIVsGYaNOKBFdl5j9J962WnlTCI9ie5M=
+SHA256 (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260622165914-65d8d42c9a5a.zip) = M4tfu1IAxzHmwmNahaOCRvjlwdItlERhgJUGPN4QD5s=
 SHA256 (go_modules/github.com/tailscale/xnet/@v/v0.0.0-20240729143630-8497ac4dab2e.mod) = ex59X6JiSfNTLEs8FyRHhmY2xWXHNm/vfEncuDanP6U=
 SHA256 (go_modules/github.com/tailscale/xnet/@v/v0.0.0-20240729143630-8497ac4dab2e.zip) = Q4q/KM5fsDrfUpwstXpFH5skPEoqGB2dBs22G7EJYOc=
 SHA256 (go_modules/github.com/tc-hib/winres/@v/v0.2.1.mod) = xcdTcji11EIL0KwcA1enH9lX2pzj6GFPo6C1hEfuJL0=
@@ -2752,6 +2752,7 @@ SHA256 (go_modules/golang.org/x/time/@v/v0.12.0.zip) = zcsExDsRKRnF4ND6HZB2kSStV
 SHA256 (go_modules/golang.org/x/time/@v/v0.3.0.mod) = OOK8+aj1Y6FcL7pX5MIqWWOjipV2ZSGtK288nPhxj8w=
 SHA256 (go_modules/golang.org/x/time/@v/v0.5.0.mod) = ImpsyYK64C/x4WjejD5FovP5hsae28H0FsWLYIHvJi4=
 SHA256 (go_modules/golang.org/x/time/@v/v0.6.0.mod) = ImpsyYK64C/x4WjejD5FovP5hsae28H0FsWLYIHvJi4=
+SHA256 (go_modules/golang.org/x/time/@v/v0.7.0.mod) = ImpsyYK64C/x4WjejD5FovP5hsae28H0FsWLYIHvJi4=
 SHA256 (go_modules/golang.org/x/time/@v/v0.9.0.mod) = ImpsyYK64C/x4WjejD5FovP5hsae28H0FsWLYIHvJi4=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.0.0-20180917221912-90fa682c2a6e.mod) = oOAvBnj+Ytw8S0vHf6kSybcN4Q+p988veq0DNzkrUq8=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.0.0-20190114222345-bf090417da8b.mod) = oOAvBnj+Ytw8S0vHf6kSybcN4Q+p988veq0DNzkrUq8=
@@ -2864,6 +2865,8 @@ SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20240716161551-93cc26a95ae9.mo
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20240716161551-93cc26a95ae9.zip) = K3LP0GHTkrQ3iXh7maDg10s/KhJ/bpdepvhvFAGwFDA=
 SHA256 (go_modules/golang.zx2c4.com/wintun/@v/v0.0.0-20230126152724-0fa3db229ce2.mod) = JhpZz0dlHJFQMOFmn8G4aHnEc/xavnIio29jffk9oA8=
 SHA256 (go_modules/golang.zx2c4.com/wintun/@v/v0.0.0-20230126152724-0fa3db229ce2.zip) = BlmSItqmr4VHBFxEbO+porqxnVe94fxkNhFDCNeaK0s=
+SHA256 (go_modules/golang.zx2c4.com/wireguard/@v/v0.0.0-20260522210424-ecfc5a8d5446.mod) = h+VXTBfxyNO63ZGV2TMjfCicB7WBP05gzq42x7Jw4og=
+SHA256 (go_modules/golang.zx2c4.com/wireguard/@v/v0.0.0-20260522210424-ecfc5a8d5446.zip) = tJ9jsp4XPnvJYLZHt4fUIOQlxg5HjXovM37yGaD3SCE=
 SHA256 (go_modules/golang.zx2c4.com/wireguard/windows/@v/v0.5.3.mod) = 8LkVhcrCycgPpYU6rXLdPp+eqSbxJpGto00Mvp/F5wo=
 SHA256 (go_modules/golang.zx2c4.com/wireguard/windows/@v/v0.5.3.zip) = 4tVRcOd3Ak8IR8YlqdkFIOkOMRKPqFJcZ7xdqsrrVe0=
 SHA256 (go_modules/gomodules.xyz/jsonpatch/v2/@v/v2.4.0.mod) = O6GASNd67mWW6GIQR8kVkfy5krhd/654yEoWSFtKux0=
@@ -3063,6 +3066,7 @@ SHA256 (go_modules/gotest.tools/v3/@v/v3.5.2.mod) = 6TU82IDTmK+qywulThJXUhO5dfPN
 SHA256 (go_modules/gotest.tools/v3/@v/v3.5.2.zip) = 18QK4TXko03unKSEetGCCPE4hHch5pNke4lyWSh6HUs=
 SHA256 (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20230927004350-cbd86285d259.mod) = o3LzzlTDqcf0KiSfeM/v52Z7qknE1dn3ytwBw1joRqA=
 SHA256 (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20250205023644-9414b50a5633.mod) = hTPDZKG51gYkCuOD/Z5X5hP3wwtwzQt5NK15FpemA2M=
+SHA256 (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20250503011706-39ed1f5ac29c.mod) = 9beQ0AZXzpvoEdEWrB6gzZlRjiHaONKcVlmx1Hd9boI=
 SHA256 (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20260224225140-573d5e7127a8.mod) = NdsyycDqDBQMMjshB2CGWPMQJVfbQIAv9NLdzy79juU=
 SHA256 (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20260224225140-573d5e7127a8.zip) = IzXnPR7/uOVgG+MrMi5dOb8e/B7vLSlqjgVL03pytH8=
 SHA256 (go_modules/helm.sh/helm/v3/@v/v3.19.0.mod) = t5EeRulRAByzZ/u4hZ9C25BQizNDD1grIAvRWMN6swU=
@@ -3235,7 +3239,7 @@ SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.zi
 SHA256 (go_modules/tailscale.com/@v/v1.81.0-pre.0.20250303195457-5449aba94c51.mod) = uHvK4t5U8irH0H2uysqCjYGyka9XwJTcUbGkiU/xGhY=
 SHA256 (go_modules/tailscale.com/client/tailscale/v2/@v/v2.9.0.mod) = 51wk0RAzCJHq6dnTk+H/QB5QJ8AlXBO6Q/aEb4i7w9A=
 SHA256 (go_modules/tailscale.com/client/tailscale/v2/@v/v2.9.0.zip) = 98fHbNgqYo2JuhUD9lwY4yBsKC0dxR4EO2bXfSlNApc=
-SHA256 (tailscale.com-v1.98.5.zip) = 4dz0sUNnCl4XJYdJEWeVKeko3sNy6PocoOyDm+0Kzuc=
+SHA256 (tailscale.com-v1.98.8.zip) = 3kpMFnuqs/+BD32ffjsPtpt59TmlCv4bwBYvjnxaEr8=
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.2.1.mod) = 173
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.2.1.zip) = 7059
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.2.1.mod) = 77
@@ -5256,8 +5260,8 @@ SIZE (go_modules/github.com/tailscale/web-client-prebuilt/@v/v0.0.0-202501242337
 SIZE (go_modules/github.com/tailscale/wf/@v/v0.0.0-20240214030419-6fbb0a674ee6.mod) = 601
 SIZE (go_modules/github.com/tailscale/wf/@v/v0.0.0-20240214030419-6fbb0a674ee6.zip) = 58370
 SIZE (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20250107165329-0b8b35511f19.mod) = 381
-SIZE (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260427181203-e3ac4a0afb4e.mod) = 500
-SIZE (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260427181203-e3ac4a0afb4e.zip) = 225288
+SIZE (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260622165914-65d8d42c9a5a.mod) = 500
+SIZE (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260622165914-65d8d42c9a5a.zip) = 226706
 SIZE (go_modules/github.com/tailscale/xnet/@v/v0.0.0-20240729143630-8497ac4dab2e.mod) = 164
 SIZE (go_modules/github.com/tailscale/xnet/@v/v0.0.0-20240729143630-8497ac4dab2e.zip) = 1926127
 SIZE (go_modules/github.com/tc-hib/winres/@v/v0.2.1.mod) = 141
@@ -5990,6 +5994,7 @@ SIZE (go_modules/golang.org/x/time/@v/v0.12.0.zip) = 15010
 SIZE (go_modules/golang.org/x/time/@v/v0.3.0.mod) = 25
 SIZE (go_modules/golang.org/x/time/@v/v0.5.0.mod) = 34
 SIZE (go_modules/golang.org/x/time/@v/v0.6.0.mod) = 34
+SIZE (go_modules/golang.org/x/time/@v/v0.7.0.mod) = 34
 SIZE (go_modules/golang.org/x/time/@v/v0.9.0.mod) = 34
 SIZE (go_modules/golang.org/x/tools/@v/v0.0.0-20180917221912-90fa682c2a6e.mod) = 26
 SIZE (go_modules/golang.org/x/tools/@v/v0.0.0-20190114222345-bf090417da8b.mod) = 26
@@ -6102,6 +6107,8 @@ SIZE (go_modules/golang.org/x/xerrors/@v/v0.0.0-20240716161551-93cc26a95ae9.mod)
 SIZE (go_modules/golang.org/x/xerrors/@v/v0.0.0-20240716161551-93cc26a95ae9.zip) = 22375
 SIZE (go_modules/golang.zx2c4.com/wintun/@v/v0.0.0-20230126152724-0fa3db229ce2.mod) = 101
 SIZE (go_modules/golang.zx2c4.com/wintun/@v/v0.0.0-20230126152724-0fa3db229ce2.zip) = 6048
+SIZE (go_modules/golang.zx2c4.com/wireguard/@v/v0.0.0-20260522210424-ecfc5a8d5446.mod) = 348
+SIZE (go_modules/golang.zx2c4.com/wireguard/@v/v0.0.0-20260522210424-ecfc5a8d5446.zip) = 174972
 SIZE (go_modules/golang.zx2c4.com/wireguard/windows/@v/v0.5.3.mod) = 751
 SIZE (go_modules/golang.zx2c4.com/wireguard/windows/@v/v0.5.3.zip) = 2572453
 SIZE (go_modules/gomodules.xyz/jsonpatch/v2/@v/v2.4.0.mod) = 282
@@ -6301,6 +6308,7 @@ SIZE (go_modules/gotest.tools/v3/@v/v3.5.2.mod) = 195
 SIZE (go_modules/gotest.tools/v3/@v/v3.5.2.zip) = 101104
 SIZE (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20230927004350-cbd86285d259.mod) = 3579
 SIZE (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20250205023644-9414b50a5633.mod) = 4429
+SIZE (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20250503011706-39ed1f5ac29c.mod) = 4401
 SIZE (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20260224225140-573d5e7127a8.mod) = 3692
 SIZE (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20260224225140-573d5e7127a8.zip) = 5176449
 SIZE (go_modules/helm.sh/helm/v3/@v/v3.19.0.mod) = 9035
@@ -6473,4 +6481,4 @@ SIZE (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.zip)
 SIZE (go_modules/tailscale.com/@v/v1.81.0-pre.0.20250303195457-5449aba94c51.mod) = 19965
 SIZE (go_modules/tailscale.com/client/tailscale/v2/@v/v2.9.0.mod) = 342
 SIZE (go_modules/tailscale.com/client/tailscale/v2/@v/v2.9.0.zip) = 58407
-SIZE (tailscale.com-v1.98.5.zip) = 5998423
+SIZE (tailscale.com-v1.98.8.zip) = 6001638

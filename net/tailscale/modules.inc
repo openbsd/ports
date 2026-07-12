@@ -747,7 +747,7 @@ MODGO_MODULES =	\
 	github.com/tailscale/ts-gokrazy							 v0.0.0-20260429180033-fe741c6deb44 \
 	github.com/tailscale/web-client-prebuilt					 v0.0.0-20250124233751-d4cd19a26976 \
 	github.com/tailscale/wf								 v0.0.0-20240214030419-6fbb0a674ee6 \
-	github.com/tailscale/wireguard-go						 v0.0.0-20260427181203-e3ac4a0afb4e \
+	github.com/tailscale/wireguard-go						 v0.0.0-20260622165914-65d8d42c9a5a \
 	github.com/tailscale/xnet							 v0.0.0-20240729143630-8497ac4dab2e \
 	github.com/tc-hib/winres							 v0.2.1 \
 	github.com/tchap/go-patricia/v2							 v2.3.1 \
@@ -884,6 +884,7 @@ MODGO_MODULES =	\
 	golang.org/x/tools/go/packages/packagestest					 v0.1.1-deprecated \
 	golang.org/x/xerrors								 v0.0.0-20240716161551-93cc26a95ae9 \
 	golang.zx2c4.com/wintun								 v0.0.0-20230126152724-0fa3db229ce2 \
+	golang.zx2c4.com/wireguard							 v0.0.0-20260522210424-ecfc5a8d5446 \
 	golang.zx2c4.com/wireguard/windows						 v0.5.3 \
 	gomodules.xyz/jsonpatch/v2							 v2.4.0 \
 	gonum.org/v1/gonum								 v0.16.0 \
@@ -1963,6 +1964,7 @@ MODGO_MODFILES =	\
 	golang.org/x/time								 v0.3.0 \
 	golang.org/x/time								 v0.5.0 \
 	golang.org/x/time								 v0.6.0 \
+	golang.org/x/time								 v0.7.0 \
 	golang.org/x/time								 v0.9.0 \
 	golang.org/x/tools								 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools								 v0.0.0-20190114222345-bf090417da8b \
@@ -2206,6 +2208,7 @@ MODGO_MODFILES =	\
 	gotest.tools/v3									 v3.4.0 \
 	gvisor.dev/gvisor								 v0.0.0-20230927004350-cbd86285d259 \
 	gvisor.dev/gvisor								 v0.0.0-20250205023644-9414b50a5633 \
+	gvisor.dev/gvisor								 v0.0.0-20250503011706-39ed1f5ac29c \
 	honnef.co/go/tools								 v0.0.0-20190102054323-c2f93a96b099 \
 	honnef.co/go/tools								 v0.0.0-20190106161140-3f1c8253044a \
 	honnef.co/go/tools								 v0.0.0-20190418001031-e561f6794a2a \
