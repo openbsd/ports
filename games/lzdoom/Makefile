@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		legacy fork of GZDoom with lower system requirements
 
-V =			4.14.3a
+V =			4.14.4
 
 DIST_TUPLE =		github drfrag666 lzdoom l${V} .
 PKGNAME =		lzdoom-${V}
