@@ -3,7 +3,7 @@ No librt on OpenBSD
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -110,7 +110,6 @@ pixman = dependency('pixman-1',
+@@ -128,7 +128,6 @@ pixman = dependency('pixman-1',
  	default_options: ['werror=false'],
  )
  math = cc.find_library('m')
@@ -11,11 +11,11 @@ Index: meson.build
  
  scenefx_files = []
  scenefx_deps = [
-@@ -120,7 +119,6 @@ scenefx_deps = [
+@@ -138,7 +137,6 @@ scenefx_deps = [
  	xkbcommon,
  	pixman,
  	math,
 -	rt,
  ]
  
- subdir('protocol')
+ # Tracy

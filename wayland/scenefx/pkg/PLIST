@@ -2,14 +2,14 @@ include/scenefx-${SCENEFX_LIBV}/
 include/scenefx-${SCENEFX_LIBV}/scenefx/
 include/scenefx-${SCENEFX_LIBV}/scenefx/render/
 include/scenefx-${SCENEFX_LIBV}/scenefx/render/fx_renderer/
-include/scenefx-${SCENEFX_LIBV}/scenefx/render/fx_renderer/fx_effect_framebuffers.h
+include/scenefx-${SCENEFX_LIBV}/scenefx/render/fx_renderer/fx_offscreen_buffers.h
 include/scenefx-${SCENEFX_LIBV}/scenefx/render/fx_renderer/fx_renderer.h
 include/scenefx-${SCENEFX_LIBV}/scenefx/render/pass.h
 include/scenefx-${SCENEFX_LIBV}/scenefx/types/
 include/scenefx-${SCENEFX_LIBV}/scenefx/types/fx/
 include/scenefx-${SCENEFX_LIBV}/scenefx/types/fx/blur_data.h
 include/scenefx-${SCENEFX_LIBV}/scenefx/types/fx/clipped_region.h
-include/scenefx-${SCENEFX_LIBV}/scenefx/types/fx/corner_location.h
+include/scenefx-${SCENEFX_LIBV}/scenefx/types/linked_node.h
 include/scenefx-${SCENEFX_LIBV}/scenefx/types/wlr_scene.h
 @lib lib/libscenefx-${SCENEFX_LIBV}.so.${LIBscenefx-${SCENEFX_LIBV}_VERSION}
 lib/pkgconfig/scenefx-${SCENEFX_LIBV}.pc

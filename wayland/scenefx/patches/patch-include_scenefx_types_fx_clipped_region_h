@@ -1,0 +1,14 @@
+Index: include/scenefx/types/fx/clipped_region.h
+--- include/scenefx/types/fx/clipped_region.h.orig
++++ include/scenefx/types/fx/clipped_region.h
+@@ -3,6 +3,10 @@
+ 
+ #include <wlr/util/box.h>
+ 
++#ifndef __always_inline
++#define __always_inline __inline __attribute__ ((__always_inline__))
++#endif
++
+ // uint16_t is a reasonable enough range for corner radius
+ // and makes it 8 bytes wide, making it cheap with optimisations
+ // Note: layout is on purpose to be clockwise
