@@ -1,12 +1,15 @@
 COMMENT =	small font loading and glyph rasterization library
 
-DIST_TUPLE =	codeberg dnkl fcft 3.3.3 .
+V =		3.3.3
+DISTNAME =	fcft-${V}
+REVISION =	0
+
+SITES =		https://codeberg.org/dnkl/fcft/releases/download/${V}/
+DISTFILES =	fcft-${V}${EXTRACT_SUFX}
 
 CATEGORIES =	graphics
 
 SHARED_LIBS +=	fcft 0.1 # 0.0
-
-WRKDIST =	${WRKDIR}/fcft
 
 # MIT
 PERMIT_PACKAGE = Yes
