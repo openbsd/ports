@@ -1,11 +1,10 @@
 COMMENT =	open source engine recreation for Diablo 1 game
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	games x11
-REVISION =	0
 
 GH_ACCOUNT =	diasurgical
 GH_PROJECT =	devilutionX
-GH_TAGNAME =	1.5.4
+GH_TAGNAME =	1.5.5
 
 SITES =		${SITES_GITHUB}
 SITES.a =	https://github.com/diasurgical/devilutionX/releases/download/${GH_TAGNAME}/
@@ -72,7 +71,6 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/devilutionx-src-${GH_TAGNAME}/dist/devilutionx.mpq \
 		${PREFIX}/share/diasurgical/devilutionx
 	${INSTALL_DATA} ${WRKDIST}/LICENSE.md ${PREFIX}/share/diasurgical/devilutionx
-	
 	${INSTALL_PROGRAM} ${WRKBUILD}/devilutionx ${PREFIX}/bin
 
 .include <bsd.port.mk>
