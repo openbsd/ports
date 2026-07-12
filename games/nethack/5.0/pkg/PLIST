@@ -34,5 +34,6 @@ ${GAMEDIR}/xlogfile
 @mode
 @man man/man6/nethack-${V}.6
 @man man/man6/recover-${V}.6
+!%%no_x11%%
 share/doc/nethack-${V}/
 share/doc/nethack-${V}/Guidebook.txt

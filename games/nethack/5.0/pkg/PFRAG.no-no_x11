@@ -1,0 +1,5 @@
+lib/X11/app-defaults/NetHack-${V}
+${GAMEDIR}/pet_mark.xbm
+${GAMEDIR}/pilemark.xbm
+${GAMEDIR}/rip.xpm
+${GAMEDIR}/x11tiles

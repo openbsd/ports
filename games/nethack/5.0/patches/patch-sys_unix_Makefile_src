@@ -1,6 +1,15 @@
 Index: sys/unix/Makefile.src
 --- sys/unix/Makefile.src.orig
 +++ sys/unix/Makefile.src
+@@ -263,7 +263,7 @@ WINX11SRC = ../win/X11/Window.c ../win/X11/dialogs.c .
+ WINX11OBJ = $(TARGETPFX)Window.o $(TARGETPFX)dialogs.o $(TARGETPFX)winX.o \
+ 	$(TARGETPFX)winmap.o $(TARGETPFX)winmenu.o $(TARGETPFX)winmesg.o \
+ 	$(TARGETPFX)winmisc.o $(TARGETPFX)winstat.o $(TARGETPFX)wintext.o \
+-	$(TARGETPFX)winval.o #$(TARGETPFX)tile.o
++	$(TARGETPFX)winval.o $(TARGETPFX)tile.o
+ #
+ # Files for a Qt 3 interface (renamed since nethack 3.6.x)
+ #
 @@ -506,6 +506,7 @@ LUA_VERSION ?=5.4.8
  LUABASE = liblua-$(LUA_VERSION).a
  LUALIB = ../lib/lua/$(LUABASE)

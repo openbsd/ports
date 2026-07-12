@@ -15,9 +15,14 @@ WANTLIB +=	c curses m lua5.4
 
 # XXX for now I haven't ported the other flavors
 FLAVORS = no_x11
-FLAVOR ?= no_x11
+FLAVOR ?= 
 
-CONFIG =	simple-config
+.if ${FLAVOR} == "no_x11"
+CONFIG = 	simple-config
+.else
+CONFIG =		x-config
+WANTLIB += X11 Xaw Xext Xmu Xt
+.endif
 
 RUN_DEPENDS = games/hackdata
 WRKDIST =	${WRKDIR}/NetHack-$V
@@ -55,6 +60,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt \
 		${PREFIX}/share/doc/nethack-$V/Guidebook.txt
 	ln -s ${TRUEPREFIX}/${GAMEDIR}/recover ${PREFIX}/bin/recover-$V
+.if ${FLAVOR} == ""
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
+	@${INSTALL_DATA} ${WRKSRC}/win/X11/NetHack.ad \
+	    ${PREFIX}/lib/X11/app-defaults/NetHack-$V
+.endif
 .for i in $(MAN)
 	${WRKBUILD}/util/makedefs --grep --input ${WRKSRC}/doc/$i.6 \
 		--output ${PREFIX}/man/man6/$i-$V.6
