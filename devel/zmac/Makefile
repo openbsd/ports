@@ -1,9 +1,9 @@
 COMMENT =	Z-80 macro cross assembler and ld80 CP/M linker
 DISTNAME =	zmac-20221018
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
-HOMEPAGE =	http://48k.ca/zmac.html
+HOMEPAGE =	https://48k.ca/zmac.html
 
 # Public Domain
 PERMIT_PACKAGE =	Yes
