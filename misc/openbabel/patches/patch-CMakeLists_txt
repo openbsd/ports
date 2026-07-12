@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -505,14 +505,14 @@ if(WITH_MAEPARSER)
+@@ -499,14 +499,14 @@ if(WITH_MAEPARSER)
  
        set(MAEPARSER_VERSION "v1.3.3" CACHE STRING "Maeparser fallback version to download")
  
@@ -18,7 +18,7 @@ Index: CMakeLists.txt
  
          message(STATUS "Building existing MaeParser '${MAEPARSER_VERSION}' source at ${MAEPARSER_DIR}.")
  
-@@ -535,9 +535,9 @@ if(WITH_MAEPARSER)
+@@ -529,9 +529,9 @@ if(WITH_MAEPARSER)
  
        endif()
  
@@ -30,7 +30,7 @@ Index: CMakeLists.txt
        set(maeparser_LIBRARIES maeparser)
  
        message(STATUS "Maestro formats will be supported. Using MaeParser '${MAEPARSER_VERSION}' at ${MAEPARSER_DIR}")
-@@ -565,13 +565,13 @@ if(WITH_COORDGEN)
+@@ -559,13 +559,13 @@ if(WITH_COORDGEN)
        # v3.0.2-10-gd20e735
        set(COORDGEN_VERSION "d20e735d96480385b2e257522288004038a08cc9" CACHE STRING "Coordgen fallback version to download")
  
@@ -46,7 +46,7 @@ Index: CMakeLists.txt
  
          message(STATUS "Building existing Coordgen '${COORDGEN_VERSION}' source at ${COORDGEN_DIR}.")
  
-@@ -594,9 +594,9 @@ if(WITH_COORDGEN)
+@@ -588,9 +588,9 @@ if(WITH_COORDGEN)
  
        endif()
  
