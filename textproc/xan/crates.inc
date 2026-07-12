@@ -1,5 +1,3 @@
-===>  Generating configure for xan-0.60.0
-===>  Configuring for xan-0.60.0
 MODCARGO_CRATES +=	adler2	2.0.1	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	ahash	0.8.12	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	aho-corasick	1.1.4	# Unlicense OR MIT
