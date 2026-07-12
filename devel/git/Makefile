@@ -5,6 +5,7 @@ COMMENT-x11 =	graphical tools
 V =		2.55.0
 DISTNAME =	git-${V}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://git-scm.com/
 
@@ -64,7 +65,8 @@ MAKE_FLAGS =		V=1 \
 			perllibdir=${TRUEPREFIX}/${P5SITE} \
 			NO_PERL_CPAN_FALLBACKS=1 \
 			TCLTK_PATH=${MODTK_BIN} \
-			TCL_PATH=${MODTCL_BIN}
+			TCL_PATH=${MODTCL_BIN} \
+			NO_RUST=1
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--sysconfdir=${SYSCONFDIR} \
