@@ -1,7 +1,7 @@
 Index: src/mango.c
 --- src/mango.c.orig
 +++ src/mango.c
-@@ -88,7 +88,11 @@
+@@ -91,7 +91,11 @@
  #include <wlr/types/wlr_xdg_shell.h>
  #include <wlr/util/log.h>
  #include <wlr/util/region.h>

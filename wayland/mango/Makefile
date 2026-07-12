@@ -1,6 +1,6 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-DIST_TUPLE=		github mangowm mango 0.14.4 .
+DIST_TUPLE=		github mangowm mango 0.15.2 .
 
 CATEGORIES =		wayland
 
@@ -11,12 +11,15 @@ MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c cjson input m pcre2-8 pixman-1 scenefx-0.4 wayland-client
-WANTLIB += wayland-server xcb-icccm xkbcommon
+WANTLIB += c cairo cjson glib-2.0 gobject-2.0 input m pango-1.0
+WANTLIB += pangocairo-1.0 pcre2-8 pixman-1 scenefx-0.5 wayland-server
+WANTLIB += xcb-icccm xkbcommon
 
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/meson wayland/wlroots
+
+MODWLROOTS_VERSION =	0.20
 
 BUILD_DEPENDS =		wayland/wayland-protocols
 
