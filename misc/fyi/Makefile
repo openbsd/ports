@@ -1,6 +1,11 @@
 COMMENT =		cli to send desktop notifications
 
-DIST_TUPLE =		codeberg dnkl fyi 1.0.4 .
+V =			1.0.4
+DISTNAME=		fyi-${V}
+REVISION=		0
+
+SITES =			https://codeberg.org/dnkl/fyi/releases/download/${V}/
+DISTFILES =		fyi-${V}${EXTRACT_SUFX}
 
 CATEGORIES =		misc wayland x11
 
@@ -18,8 +23,6 @@ MODULES =		devel/meson
 BUILD_DEPENDS =		textproc/scdoc
 
 LIB_DEPENDS =		x11/dbus
-
-WRKDIST =		${WRKDIR}/fyi
 
 .include <bsd.port.mk>
 
