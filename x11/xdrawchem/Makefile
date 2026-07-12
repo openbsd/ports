@@ -1,30 +1,25 @@
 COMMENT=	two-dimensional molecule drawing program
 
-V=		1.11.1
-DISTNAME=	xdrawchem-${V}
+DIST_TUPLE=	github bryanherger xdrawchem v2.0.1 .
 
 CATEGORIES=	x11 biology
 
-HOMEPAGE=	https://gitlab.com/yamanq/xdrawchem/
-
 MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 
-# GPLv3+
+# GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+=	${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB+=	Qt5Svg Qt5Widgets Qt5Xml c m openbabel
+WANTLIB +=	${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6PrintSupport
+WANTLIB +=	Qt6Svg Qt6Widgets Qt6Xml c execinfo m openbabel
 
-SITES=		https://gitlab.com/yamanq/xdrawchem/-/archive/v${V}/
+MODULES=	devel/cmake \
+		x11/qt6
 
-MODULES=	devel/qmake \
-		x11/qt5
+MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib -lexecinfo
 
 LIB_DEPENDS=	misc/openbabel>=3.0.0 \
-		x11/qt5/qtsvg
+		x11/qt6/qtsvg
 
-NO_TEST=	Yes
-
-WRKDIST=	${WRKDIR}/xdrawchem-v1.11.1-9f224231491314825b3eebb23027f529f0f41f97
+WRKSRC=		${WRKDIST}/xdrawchem-qt5
 
 .include <bsd.port.mk>

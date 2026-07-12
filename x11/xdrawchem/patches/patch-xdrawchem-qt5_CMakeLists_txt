@@ -1,0 +1,14 @@
+Avoid overriding the system's global compiler optimization and debug flags.
+
+Index: xdrawchem-qt5/CMakeLists.txt
+--- xdrawchem-qt5/CMakeLists.txt.orig
++++ xdrawchem-qt5/CMakeLists.txt
+@@ -308,7 +308,7 @@ target_compile_definitions(xdrawchem PRIVATE
+ # ── Compiler warnings ─────────────────────────────────────────────────────────
+ target_compile_options(xdrawchem PRIVATE
+     $<$<CXX_COMPILER_ID:GNU,Clang>:-Wall -Wextra -Wpedantic>
+-    $<$<AND:$<CXX_COMPILER_ID:GNU,Clang>,$<CONFIG:Debug>>:-O0 -g3 -rdynamic>
++    $<$<AND:$<CXX_COMPILER_ID:GNU,Clang>,$<CONFIG:Debug>>:>
+ )
+ 
+ # ── Link libraries ────────────────────────────────────────────────────────────

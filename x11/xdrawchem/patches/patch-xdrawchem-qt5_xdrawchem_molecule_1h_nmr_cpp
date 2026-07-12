@@ -1,0 +1,26 @@
+Iterate backward via index to avoid iterator invalidation when removing
+elements. OpenBSD's strict malloc(3) aggressively flags this type of stale
+memory access, resulting in an immediate Signal 11 (SIGSEGV) crash. Taken from
+https://github.com/bryanherger/xdrawchem/pull/21
+
+Index: xdrawchem-qt5/xdrawchem/molecule_1h_nmr.cpp
+--- xdrawchem-qt5/xdrawchem/molecule_1h_nmr.cpp.orig
++++ xdrawchem-qt5/xdrawchem/molecule_1h_nmr.cpp
+@@ -133,12 +133,13 @@ void Molecule::AddNMRprotons()
+ 
+ void Molecule::RemoveNMRprotons()
+ {
+-    for (Bond *tmp_bond : bonds) {
++    int i;
++
++    for ( i = bonds.size() - 1; i >= 0; --i ) {
++        Bond *tmp_bond = bonds[i];
+         if ( tmp_bond->End()->nmr_proton == true ) {
+-            bonds.removeAll( tmp_bond );
+             delete tmp_bond;
+-
+-            tmp_bond = bonds.first();
++            bonds.removeAt(i);
+         }
+     }
+ }

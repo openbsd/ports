@@ -1,0 +1,19 @@
+Ensure that the inring status flag of all input atoms is properly initialized to
+false at the start of each ring-detection run, preventing stale state data from
+previous calculations or test cases. Taken from
+https://github.com/bryanherger/xdrawchem/pull/20
+
+Index: xdrawchem-qt5/xdrawchem/molecule_sssr.cpp
+--- xdrawchem-qt5/xdrawchem/molecule_sssr.cpp.orig
++++ xdrawchem-qt5/xdrawchem/molecule_sssr.cpp
+@@ -107,6 +107,10 @@ void SSSR::BuildSSSR( QList < DPoint * >alist )
+     sssr.clear();
+     sssr_data.clear();
+ 
++    for (DPoint *pt : alist) {
++        if (pt) pt->inring = false;
++    }
++
+     int atomsRemoved;
+ 
+     structureAtoms = alist;
