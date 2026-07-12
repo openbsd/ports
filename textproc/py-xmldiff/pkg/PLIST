@@ -11,7 +11,6 @@ lib/python${MODPY_VERSION}/site-packages/xmldiff-${MODPY_DISTV}.dist-info/entry_
 lib/python${MODPY_VERSION}/site-packages/xmldiff-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/xmldiff-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/xmldiff-${MODPY_DISTV}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/xmldiff-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/xmldiff/__init__.py
 lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xmldiff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

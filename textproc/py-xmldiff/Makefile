@@ -1,10 +1,9 @@
 COMMENT=	show differences between XML files/DOM trees
 
-MODPY_DISTV=	2.7.0
+MODPY_DISTV=	3.0
 DISTNAME=	xmldiff-${MODPY_DISTV}
 PKGNAME=	py-xmldiff-${MODPY_DISTV}
 CATEGORIES=	textproc
-REVISION=	1
 
 HOMEPAGE=	https://github.com/Shoobx/xmldiff
 
