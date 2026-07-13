@@ -1,7 +1,7 @@
 Index: cmake/ConkyPlatformChecks.cmake
 --- cmake/ConkyPlatformChecks.cmake.orig
 +++ cmake/ConkyPlatformChecks.cmake
-@@ -681,10 +681,10 @@ endif(WANT_LIBXML2)
+@@ -934,10 +934,10 @@ endif(WANT_LIBXML2)
  # Look for doc generation programs
  if(BUILD_DOCS)
    # Used for doc generation

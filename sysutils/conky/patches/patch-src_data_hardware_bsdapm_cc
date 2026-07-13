@@ -1,7 +1,7 @@
 Index: src/data/hardware/bsdapm.cc
 --- src/data/hardware/bsdapm.cc.orig
 +++ src/data/hardware/bsdapm.cc
-@@ -58,7 +58,7 @@ const u_int APM_UNKNOWN = 255;
+@@ -59,7 +59,7 @@ const u_int APM_UNKNOWN = 255;
  #ifdef __OpenBSD__
  const u_long GET_APM_INFO = APM_IOC_GETPOWER;
  using apm_info = apm_power_info;
@@ -10,7 +10,7 @@ Index: src/data/hardware/bsdapm.cc
  #else
  const u_long GET_APM_INFO = APMIO_GETINFO;
  #define ac_state ai_acline
-@@ -68,7 +68,7 @@ const u_long GET_APM_INFO = APMIO_GETINFO;
+@@ -69,7 +69,7 @@ const u_long GET_APM_INFO = APMIO_GETINFO;
  #endif
  
  static bool apm_getinfo(int fd, apm_info *aip) {
@@ -19,7 +19,7 @@ Index: src/data/hardware/bsdapm.cc
  }
  
  void print_apm_adapter(struct text_object *obj, char *p,
-@@ -167,7 +167,7 @@ void print_apm_battery_time(struct text_object *obj, c
+@@ -174,7 +174,7 @@ void print_apm_battery_time(struct text_object *obj, c
    close(fd);
  
    int batt_time = info.seconds_left;

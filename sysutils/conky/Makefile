@@ -4,7 +4,7 @@ COMMENT =	light-weight system monitor
 
 GH_ACCOUNT =	brndnmtthws
 GH_PROJECT =	conky
-GH_TAGNAME =	v1.22.3
+GH_TAGNAME =	v1.24.2
 
 CATEGORIES =	sysutils
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE=	Yes
 # C++
 COMPILER =	base-clang ports-gcc
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c curses intl kvm m ossaudio
-WANTLIB += curl xml2
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
+WANTLIB += Xi c curses intl kvm m ossaudio curl xml2
 
 MODULES =	devel/cmake \
 		lang/lua \

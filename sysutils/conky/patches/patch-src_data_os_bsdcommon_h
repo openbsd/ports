@@ -1,0 +1,13 @@
+Index: src/data/os/bsdcommon.h
+--- src/data/os/bsdcommon.h.orig
++++ src/data/os/bsdcommon.h
+@@ -35,8 +35,8 @@
+ #include <sys/sysctl.h>
+ #define BSD_COMMON_PROC_STRUCT struct kinfo_proc2
+ #elif defined(__OpenBSD__)
+-#include <sys/sysctl.h>
+ #include <sys/types.h>
++#include <sys/sysctl.h>
+ #define BSD_COMMON_PROC_STRUCT struct kinfo_proc
+ #else
+ #error Not supported BSD system
