@@ -1,5 +1,5 @@
 # https://download.lucee.org/changelog/
-V=		6.2.7.16
+V=		6.2.8.20
 # keep above 7.9-stable (lucee/v5 @pkgpath)
 REVISION=	0
 
