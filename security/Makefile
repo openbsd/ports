@@ -14,6 +14,7 @@
      SUBDIR += arirang
      SUBDIR += b3sum
      SUBDIR += badkeys
+     SUBDIR += bandit
      SUBDIR += bfbtester
      SUBDIR += blake3
      SUBDIR += boofuzz
