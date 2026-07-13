@@ -1,0 +1,12 @@
+Index: GsKit/base/video/scaler/scalebit.cpp
+--- GsKit/base/video/scaler/scalebit.cpp.orig
++++ GsKit/base/video/scaler/scalebit.cpp
+@@ -38,6 +38,8 @@
+ 
+ #ifdef __MINGW32__
+ 	#include <malloc.h>
++#elif __OpenBSD__
++#define alloca __builtin_alloca
+ #else
+ 	#include <alloca.h>
+ #endif

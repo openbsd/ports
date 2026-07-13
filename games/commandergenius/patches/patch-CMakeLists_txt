@@ -1,0 +1,28 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -10,10 +10,12 @@ SET(APPDIR CGenius)
+ SET(GAMES_SHAREDIR "${APPDIR}" CACHE PATH "Game data root dir")
+ SET(DOCDIR ${DATADIR} CACHE PATH "Docs destination")
+ ELSE(WIN32)
+-SET(SHAREDIR "/usr/share" CACHE PATH "System share dir location")
+-SET(GAMES_SHAREDIR "${SHAREDIR}/games/" CACHE PATH "Game data root dir")
++include(GNUInstallDirs)
++
++SET(SHAREDIR "${CMAKE_INSTALL_PREFIX}/share" CACHE PATH "System share dir location")
++SET(GAMES_SHAREDIR "${SHAREDIR}/games" CACHE PATH "Game data root dir")
+ SET(DATADIR "${GAMES_SHAREDIR}/commandergenius")
+-SET(APPDIR games CACHE PATH "Binary destination")
++SET(APPDIR "${CMAKE_INSTALL_BINDIR}" CACHE PATH "Binary destination")
+ SET(DOCDIR ${DATADIR} CACHE PATH "Docs destination")
+ SET(ICONDIR "${SHAREDIR}/icons/hicolor" CACHE PATH "Standard icon installation dir")
+ SET(DESKTOPFILESDIR "${SHAREDIR}/applications" CACHE PATH "Application installation dir")
+@@ -230,7 +232,7 @@ endif(GIT_FOUND)
+ 
+ # Pass correct definition for SYSTEM_DATA_DIR so packager or distributors can decide where the app should land in
+ if(UNIX AND NOT IOS)
+-    if(NOT IS_ABSOLUTE ${GAMES_SHAREDIR})
++    if(NOT IS_ABSOLUTE "${GAMES_SHAREDIR}")
+         set(FULL_GAMES_SHAREDIR "${CMAKE_INSTALL_PREFIX}/${GAMES_SHAREDIR}" CACHE PATH "Full where the games will be stored")
+     else()
+         set(FULL_GAMES_SHAREDIR ${GAMES_SHAREDIR} CACHE PATH "Full where the games will be stored")

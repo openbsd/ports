@@ -1,0 +1,24 @@
+Index: package.cmake
+--- package.cmake.orig
++++ package.cmake
+@@ -1,9 +1,6 @@
+ OPTION(CREATE_DEBS "Will create DEBs" No)
+ OPTION(CREATE_RPMS "Will create RPMs" No)
+ 
+-SET(CGENIUS_DESKTOP_DIR "share/applications/")
+-
+-
+ # Now let's setup the package for installation. You can create the package of the chosen build
+ # running make package, and if needed just runs that package
+ # For Linux it will create Debian Packages and replace the manual script I have been using in the past.
+@@ -32,9 +29,8 @@ IF(WIN32)
+         INSTALL(FILES ${CACHE_FILES} DESTINATION ${DOCDIR}/cache)
+ ELSE(WIN32)
+         SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/COPYRIGHT")
+-	SET(CPACK_PACKAGE_INSTALL_DIRECTORY "/usr/games")
++	SET(CPACK_PACKAGE_INSTALL_DIRECTORY "${CMAKE_INSTALL_PREFIX}")
+ 	SET(CPACK_GENERATOR "TGZ")	
+-        INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/share/cgenius.desktop DESTINATION ${CGENIUS_DESKTOP_DIR})
+ ENDIF(WIN32)
+ 
+ 
