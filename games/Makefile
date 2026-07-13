@@ -63,6 +63,7 @@
      SUBDIR += clonekeen
      SUBDIR += cmatrix
      SUBDIR += colobot
+     SUBDIR += commandergenius
      SUBDIR += corewars
      SUBDIR += corsixth
      SUBDIR += cosmosmash
