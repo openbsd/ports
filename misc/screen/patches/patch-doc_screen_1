@@ -1,7 +1,7 @@
 Index: doc/screen.1
 --- doc/screen.1.orig
 +++ doc/screen.1
-@@ -100,7 +100,7 @@ to its window. - Note that you cannot transport enviro
+@@ -103,7 +103,7 @@ to its window. - Note that you cannot transport enviro
  the invoking shell to the application (emacs in this case), because it is
  forked from the parent screen process, not from the invoking shell.
  .PP
@@ -10,7 +10,7 @@ Index: doc/screen.1
  .IR screen ,
  an appropriate record will be written to this file for each window, and
  removed when the window is terminated.
-@@ -229,7 +229,7 @@ See the \*Qdefflow\*U .screenrc command for details.
+@@ -232,7 +232,7 @@ See the \*Qdefflow\*U .screenrc command for details.
  The use of this option is discouraged.
  .TP 5
  .BR \-l " and " \-ln
@@ -19,7 +19,7 @@ Index: doc/screen.1
  This can also be defined through the \*Qdeflogin\*U .screenrc command.
  .TP 5
  .BR \-ls " [" \fImatch ]
-@@ -780,7 +780,7 @@ in the environment variable $SCREENDIR.
+@@ -787,7 +787,7 @@ in the environment variable $SCREENDIR.
  When
  .I screen
  is invoked, it executes initialization commands from the files
@@ -28,7 +28,7 @@ Index: doc/screen.1
  \*Q.screenrc\*U in the user's home directory. These are the \*Qprogrammer's
  defaults\*U that can be overridden in the following ways: for the
  global screenrc file 
-@@ -2047,7 +2047,7 @@ when seeing proper escape sequence. See also "TITLES (
+@@ -2052,7 +2052,7 @@ when seeing proper escape sequence. See also "TITLES (
  The echo command may be used to annoy 
  .I screen
  users with a 'message of the
@@ -37,7 +37,7 @@ Index: doc/screen.1
  The option \*Q\-n\*U may be used to suppress the line feed.
  See also \*Qsleep\*U.
  Echo is also useful for online checking of environment variables.
-@@ -5194,12 +5194,12 @@ Examples in the 
+@@ -5199,12 +5199,12 @@ Examples in the 
  .I screen
  distribution package for private and global initialization files.
  .IP $SYSSCREENRC
@@ -52,7 +52,7 @@ Index: doc/screen.1
  .IP $SCREENDIR/S\-<login>
  .IP $HOME/.screen
  Socket directories (default)
-@@ -5220,7 +5220,7 @@ Output log files created by the log function
+@@ -5225,7 +5225,7 @@ Output log files created by the log function
  or
  .IP /etc/termcap
  Terminal capability databases
@@ -61,7 +61,7 @@ Index: doc/screen.1
  Login records
  .IP $LOCKPRG
  Program that locks a terminal.
-@@ -5338,9 +5338,9 @@ does not make use of hardware tabs.
+@@ -5343,9 +5343,9 @@ does not make use of hardware tabs.
  must be installed as set-uid with owner root on most systems in order
  to be able to correctly change the owner of the tty device file for
  each window.

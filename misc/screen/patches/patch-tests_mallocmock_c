@@ -3,7 +3,7 @@ tests fail anyway, but this at least allows them to run
 Index: tests/mallocmock.c
 --- tests/mallocmock.c.orig
 +++ tests/mallocmock.c
-@@ -53,10 +53,10 @@ void *realloc(void *ptr, size_t size)
+@@ -54,10 +54,10 @@ void *realloc(void *ptr, size_t size)
  	_mallocmock_realloc_size += size;
  	return __libc_realloc(ptr, size);
  }
