@@ -1,6 +1,7 @@
      SUBDIR =
      SUBDIR += aarch64
      SUBDIR += arm
+     SUBDIR += octeon
      SUBDIR += riscv64
      SUBDIR += rk3328
      SUBDIR += rk356x
