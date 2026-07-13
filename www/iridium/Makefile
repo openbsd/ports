@@ -11,7 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2026.06.149.5
+V=			2026.07.150.1
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -19,7 +19,7 @@ DISTFILES+=		${IRIDIUM_DISTFILES}
 
 IRIDIUM_DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 
-DIST_TUPLE+=		github rollup rollup v4.22.4 rollup
+DIST_TUPLE+=		github rollup rollup v4.60.4 rollup
 
 EXTRACT_ONLY=		${ALL_DISTFILES:N*test*}
 

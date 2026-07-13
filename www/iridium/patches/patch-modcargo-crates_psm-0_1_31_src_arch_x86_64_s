@@ -1,7 +1,7 @@
-Index: modcargo-crates/psm-0.1.23/src/arch/x86_64.s
---- modcargo-crates/psm-0.1.23/src/arch/x86_64.s.orig
-+++ modcargo-crates/psm-0.1.23/src/arch/x86_64.s
-@@ -26,6 +26,7 @@ TYPE(rust_psm_stack_direction)
+Index: modcargo-crates/psm-0.1.31/src/arch/x86_64.s
+--- modcargo-crates/psm-0.1.31/src/arch/x86_64.s.orig
++++ modcargo-crates/psm-0.1.31/src/arch/x86_64.s
+@@ -27,6 +27,7 @@ TYPE(rust_psm_stack_direction)
  FUNCTION(rust_psm_stack_direction):
  /* extern "sysv64" fn() -> u8 (%al) */
  .cfi_startproc
@@ -9,7 +9,7 @@ Index: modcargo-crates/psm-0.1.23/src/arch/x86_64.s
      movb $STACK_DIRECTION_DESCENDING, %al # always descending on x86_64
      retq
  END_FUNCTION(rust_psm_stack_direction)
-@@ -38,6 +39,7 @@ TYPE(rust_psm_stack_pointer)
+@@ -39,6 +40,7 @@ TYPE(rust_psm_stack_pointer)
  FUNCTION(rust_psm_stack_pointer):
  /* extern "sysv64" fn() -> *mut u8 (%rax) */
  .cfi_startproc
@@ -17,7 +17,7 @@ Index: modcargo-crates/psm-0.1.23/src/arch/x86_64.s
      leaq 8(%rsp), %rax
      retq
  .rust_psm_stack_pointer_end:
-@@ -57,6 +59,7 @@ FUNCTION(rust_psm_replace_stack):
+@@ -58,6 +60,7 @@ FUNCTION(rust_psm_replace_stack):
      8-byte offset necessary to account for the "return" pointer that would otherwise be placed onto
      stack with a regular call
  */
@@ -25,7 +25,7 @@ Index: modcargo-crates/psm-0.1.23/src/arch/x86_64.s
      leaq -8(%rdx), %rsp
      jmpq *%rsi
  .rust_psm_replace_stack_end:
-@@ -70,6 +73,7 @@ TYPE(rust_psm_on_stack)
+@@ -71,6 +74,7 @@ TYPE(rust_psm_on_stack)
  FUNCTION(rust_psm_on_stack):
  /* extern "sysv64" fn(%rdi: usize, %rsi: usize, %rdx: extern "sysv64" fn(usize, usize), %rcx: *mut u8) */
  .cfi_startproc

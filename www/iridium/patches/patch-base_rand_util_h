@@ -1,7 +1,7 @@
 Index: base/rand_util.h
 --- base/rand_util.h.orig
 +++ base/rand_util.h
-@@ -221,7 +221,7 @@ decltype(auto) RandomChoice(Range&& r) {
+@@ -219,7 +219,7 @@ decltype(auto) RandomChoice(Range&& r) {
    return r[base::RandGenerator(r.size())];
  }
  

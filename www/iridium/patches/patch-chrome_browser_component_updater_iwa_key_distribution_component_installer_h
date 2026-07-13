@@ -5,8 +5,8 @@ Index: chrome/browser/component_updater/iwa_key_distribution_component_installer
  
  namespace component_updater {
  
--#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_DECLARE_FEATURE(kIwaKeyDistributionComponent);
- #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  

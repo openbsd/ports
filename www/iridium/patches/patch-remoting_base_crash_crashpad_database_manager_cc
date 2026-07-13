@@ -15,7 +15,7 @@ Index: remoting/base/crash/crashpad_database_manager.cc
  namespace {
  
 -#if !BUILDFLAG(IS_LINUX)
-+#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
++#if !BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  const base::FilePath::CharType kChromotingCrashpadDatabasePath[] =
      FILE_PATH_LITERAL("crashpad");
  #endif

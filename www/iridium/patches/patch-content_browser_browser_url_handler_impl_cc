@@ -17,6 +17,6 @@ Index: content/browser/browser_url_handler_impl.cc
 +	if (!command_line->HasSwitch(switches::kTrk))
 +		return;
 +
- 	auto browser = chrome::FindLastActive();
+ 	auto browser = GlobalBrowserCollection::GetInstance()->GetLastActiveBrowser();
  	if (browser == nullptr)
  		return;

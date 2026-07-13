@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/autofill/chrome_autofill_client.h
 --- chrome/browser/ui/autofill/chrome_autofill_client.h.orig
 +++ chrome/browser/ui/autofill/chrome_autofill_client.h
-@@ -121,7 +121,7 @@ class ChromeAutofillClient : public ContentAutofillCli
+@@ -124,7 +124,7 @@ class ChromeAutofillClient : public ContentAutofillCli
    ~ChromeAutofillClient() override;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/autofill/chrome_autofill_client.h
    void ShowAutofillAtMemoryPromo();
  #endif
  
-@@ -394,7 +394,7 @@ class ChromeAutofillClient : public ContentAutofillCli
+@@ -414,7 +414,7 @@ class ChromeAutofillClient : public ContentAutofillCli
    std::unique_ptr<ActorKeyMetricsRecorder> actor_key_metrics_recorder_;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

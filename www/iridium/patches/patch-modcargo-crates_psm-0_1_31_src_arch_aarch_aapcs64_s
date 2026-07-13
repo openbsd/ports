@@ -1,6 +1,6 @@
-Index: modcargo-crates/psm-0.1.23/src/arch/aarch_aapcs64.s
---- modcargo-crates/psm-0.1.23/src/arch/aarch_aapcs64.s.orig
-+++ modcargo-crates/psm-0.1.23/src/arch/aarch_aapcs64.s
+Index: modcargo-crates/psm-0.1.31/src/arch/aarch_aapcs64.s
+--- modcargo-crates/psm-0.1.31/src/arch/aarch_aapcs64.s.orig
++++ modcargo-crates/psm-0.1.31/src/arch/aarch_aapcs64.s
 @@ -33,6 +33,7 @@ TYPE(rust_psm_stack_direction)
  FUNCTION(rust_psm_stack_direction):
  /* extern "C" fn() -> u8 */

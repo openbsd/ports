@@ -1,7 +1,7 @@
 Index: chrome/browser/supervised_user/supervised_user_extensions_delegate_impl.cc
 --- chrome/browser/supervised_user/supervised_user_extensions_delegate_impl.cc.orig
 +++ chrome/browser/supervised_user/supervised_user_extensions_delegate_impl.cc
-@@ -193,7 +193,7 @@ void SupervisedUserExtensionsDelegateImpl::RequestExte
+@@ -198,7 +198,7 @@ void SupervisedUserExtensionsDelegateImpl::RequestExte
        return;
      }
    }

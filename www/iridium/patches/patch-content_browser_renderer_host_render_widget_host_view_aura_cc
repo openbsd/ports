@@ -19,7 +19,7 @@ Index: content/browser/renderer_host/render_widget_host_view_aura.cc
    ui::BrowserAccessibilityManager* manager =
        host()->GetOrCreateRootBrowserAccessibilityManager();
    if (manager && manager->GetBrowserAccessibilityRoot())
-@@ -2052,7 +2052,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
+@@ -2048,7 +2048,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
    return host() && host()->delegate() && host()->delegate()->ShouldDoLearning();
  }
  
@@ -28,7 +28,7 @@ Index: content/browser/renderer_host/render_widget_host_view_aura.cc
  bool RenderWidgetHostViewAura::SetCompositionFromExistingText(
      const gfx::Range& range,
      const std::vector<ui::ImeTextSpan>& ui_ime_text_spans) {
-@@ -3099,7 +3099,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -3122,7 +3122,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -37,7 +37,7 @@ Index: content/browser/renderer_host/render_widget_host_view_aura.cc
    return NeedsInputGrab();
  #else
    return false;
-@@ -3311,7 +3311,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
+@@ -3348,7 +3348,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
    if (!target_host)
      return;
  

@@ -10,7 +10,7 @@ Index: gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factor
      SHARED_IMAGE_USAGE_SCANOUT |
  #endif
      SHARED_IMAGE_USAGE_GLES2_READ | SHARED_IMAGE_USAGE_GLES2_WRITE |
-@@ -124,7 +124,7 @@ bool AngleVulkanImageBackingFactory::IsGMBSupported(
+@@ -103,7 +103,7 @@ bool AngleVulkanImageBackingFactory::IsGMBSupported(
      // usage?
      case gfx::EMPTY_BUFFER:
        return HasGLES2ReadOrWriteUsage(usage);

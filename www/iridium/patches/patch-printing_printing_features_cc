@@ -10,7 +10,7 @@ Index: printing/printing_features.cc
  // Use the CUPS IPP printing backend instead of the original CUPS backend that
  // calls the deprecated PPD API.
  BASE_FEATURE(kCupsIppPrintingBackend, base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -52,7 +52,7 @@ BASE_FEATURE(kUseXpsForPrintingFromPdf, base::FEATURE_
+@@ -40,7 +40,7 @@ BASE_FEATURE(kPrintWithReducedRasterization, base::FEA
  // Enables printing interactions with the operating system to be performed
  // out-of-process.
  BASE_FEATURE(kEnableOopPrintDrivers,

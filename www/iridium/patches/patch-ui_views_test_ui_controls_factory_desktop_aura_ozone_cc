@@ -1,7 +1,7 @@
 Index: ui/views/test/ui_controls_factory_desktop_aura_ozone.cc
 --- ui/views/test/ui_controls_factory_desktop_aura_ozone.cc.orig
 +++ ui/views/test/ui_controls_factory_desktop_aura_ozone.cc
-@@ -237,7 +237,7 @@ bool SendMouseClick(MouseButton type, gfx::NativeWindo
+@@ -241,7 +241,7 @@ bool SendMouseClick(MouseButton type, gfx::NativeWindo
                           window_hint);
  }
  

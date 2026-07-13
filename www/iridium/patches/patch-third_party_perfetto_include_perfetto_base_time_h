@@ -1,7 +1,7 @@
 Index: third_party/perfetto/include/perfetto/base/time.h
 --- third_party/perfetto/include/perfetto/base/time.h.orig
 +++ third_party/perfetto/include/perfetto/base/time.h
-@@ -242,7 +242,7 @@ inline TimeNanos GetWallTimeNs() {
+@@ -294,7 +294,7 @@ inline TimeNanos GetWallTimeNs() {
  }
  
  inline TimeNanos GetWallTimeRawNs() {

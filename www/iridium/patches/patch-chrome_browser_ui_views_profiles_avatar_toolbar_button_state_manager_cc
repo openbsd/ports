@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/profiles/avatar_toolbar_button_state_manager.cc
 --- chrome/browser/ui/views/profiles/avatar_toolbar_button_state_manager.cc.orig
 +++ chrome/browser/ui/views/profiles/avatar_toolbar_button_state_manager.cc
-@@ -2487,7 +2487,7 @@ void AvatarToolbarButtonStateManager::MaybeShowProfile
+@@ -2505,7 +2505,7 @@ void AvatarToolbarButtonStateManager::MaybeShowProfile
    }
  }
  

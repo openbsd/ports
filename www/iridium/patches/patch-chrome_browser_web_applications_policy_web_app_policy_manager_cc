@@ -1,7 +1,7 @@
 Index: chrome/browser/web_applications/policy/web_app_policy_manager.cc
 --- chrome/browser/web_applications/policy/web_app_policy_manager.cc.orig
 +++ chrome/browser/web_applications/policy/web_app_policy_manager.cc
-@@ -124,7 +124,7 @@ GetPreinstalledWebAppsMappingForTesting() {
+@@ -125,7 +125,7 @@ GetPreinstalledWebAppsMappingForTesting() {
  namespace web_app {
  
  BASE_FEATURE(kDesktopPWAsForceUnregisterOSIntegration,

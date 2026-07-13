@@ -1,7 +1,7 @@
 Index: build/config/ozone.gni
 --- build/config/ozone.gni.orig
 +++ build/config/ozone.gni
-@@ -80,7 +80,15 @@ declare_args() {
+@@ -78,7 +78,15 @@ declare_args() {
        ozone_platform = "x11"
        ozone_platform_drm = true
        ozone_platform_x11 = true

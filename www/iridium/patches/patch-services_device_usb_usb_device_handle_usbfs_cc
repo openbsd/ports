@@ -37,7 +37,7 @@ Index: services/device/usb/usb_device_handle_usbfs.cc
    if (base::FeatureList::IsEnabled(features::kAutomaticUsbDetach)) {
      const mojom::UsbConfigurationInfo* config =
          device_->GetActiveConfiguration();
-@@ -975,7 +975,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
+@@ -982,7 +982,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
      return;
    }
  #endif

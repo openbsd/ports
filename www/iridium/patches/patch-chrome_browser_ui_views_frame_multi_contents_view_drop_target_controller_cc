@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/frame/multi_contents_view_drop_target_controller.cc
 --- chrome/browser/ui/views/frame/multi_contents_view_drop_target_controller.cc.orig
 +++ chrome/browser/ui/views/frame/multi_contents_view_drop_target_controller.cc
-@@ -35,7 +35,7 @@ static constexpr base::TimeDelta kShowNudgeDelay = bas
+@@ -36,7 +36,7 @@ static constexpr base::TimeDelta kShowNudgeDelay = bas
  static constexpr int kDropTargetHideForOSWidth =
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN)
      32;
