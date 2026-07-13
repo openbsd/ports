@@ -1,0 +1,12 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -9,7 +9,7 @@ import setuptools
+ data_files = []
+ man_path = "doc/build/man/bandit.1"
+ if os.path.isfile(man_path):
+-    data_files.append(("share/man/man1", [man_path]))
++    data_files.append(("man/man1", [man_path]))
+ 
+ 
+ setuptools.setup(
