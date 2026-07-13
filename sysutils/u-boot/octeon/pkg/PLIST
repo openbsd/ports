@@ -1,0 +1,5 @@
+@pkgpath sysutils/u-boot,octeon
+share/u-boot/
+share/u-boot/octeon_ebb7304/
+share/u-boot/octeon_ebb7304/u-boot
+share/u-boot/octeon_ebb7304/u-boot.bin

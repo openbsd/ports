@@ -1,0 +1,36 @@
+Expose Octeon low DDR and high DDR as separate banks so LMB accepts the
+default loadaddr.
+
+Index: arch/mips/mach-octeon/dram.c
+--- arch/mips/mach-octeon/dram.c.orig
++++ arch/mips/mach-octeon/dram.c
+@@ -13,6 +13,7 @@
+ DECLARE_GLOBAL_DATA_PTR;
+ 
+ #define UBOOT_RAM_SIZE_MAX	0x10000000ULL
++#define OCTEON_DDR1_BASE	0x20000000ULL
+ 
+ int dram_init(void)
+ {
+@@ -75,6 +76,21 @@ void board_add_ram_info(int use_default)
+ phys_size_t get_effective_memsize(void)
+ {
+ 	return UBOOT_RAM_SIZE_MAX;
++}
++
++int dram_init_banksize(void)
++{
++	gd->bd->bi_dram[0].start = CFG_SYS_SDRAM_BASE;
++	gd->bd->bi_dram[0].size = min(gd->ram_size, UBOOT_RAM_SIZE_MAX);
++
++#if CONFIG_NR_DRAM_BANKS > 1
++	if (IS_ENABLED(CONFIG_RAM_OCTEON) && gd->ram_size > UBOOT_RAM_SIZE_MAX) {
++		gd->bd->bi_dram[1].start = OCTEON_DDR1_BASE;
++		gd->bd->bi_dram[1].size = gd->ram_size - UBOOT_RAM_SIZE_MAX;
++	}
++#endif
++
++	return 0;
+ }
+ 
+ phys_addr_t board_get_usable_ram_top(phys_size_t total_size)

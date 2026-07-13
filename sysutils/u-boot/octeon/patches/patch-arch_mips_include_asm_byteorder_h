@@ -1,0 +1,19 @@
+MIPS byteorder needs the same host compiler fallback as RISC-V.
+
+Index: arch/mips/include/asm/byteorder.h
+--- arch/mips/include/asm/byteorder.h.orig
++++ arch/mips/include/asm/byteorder.h
+@@ -61,9 +61,11 @@ static __inline__ __attribute_const__ __u64 ___arch__s
+ 
+ #endif /* __GNUC__ */
+ 
+-#if defined(__MIPSEB__)
++#if defined(__MIPSEB__) || \
++    (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+ #  include <linux/byteorder/big_endian.h>
+-#elif defined(__MIPSEL__)
++#elif defined(__MIPSEL__) || \
++    (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
+ #  include <linux/byteorder/little_endian.h>
+ #else
+ #  error "MIPS, but neither __MIPSEB__, nor __MIPSEL__???"

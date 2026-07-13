@@ -1,0 +1,14 @@
+Enable Octeon board misc init so U-Boot reserves its load buffer and
+sets a safe loadaddr.
+
+Index: arch/mips/mach-octeon/Kconfig
+--- arch/mips/mach-octeon/Kconfig.orig
++++ arch/mips/mach-octeon/Kconfig
+@@ -36,6 +36,7 @@ choice
+ 
+ config TARGET_OCTEON_EBB7304
+ 	bool "Marvell Octeon EBB7304"
++	select ARCH_MISC_INIT
+ 	select OCTEON_CN73XX
+ 	help
+ 	 Choose this for the Octeon EBB7304 board

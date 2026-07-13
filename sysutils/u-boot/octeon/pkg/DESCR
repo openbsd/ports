@@ -1,0 +1,7 @@
+U-Boot is firmware for embedded boards based on MIPS and several other
+processors; it initializes hardware, provides boot monitor facilities,
+and loads operating system kernels or standalone application code.
+
+This package provides patched U-Boot for the Octeon EBB7304 board as
+firmware for QEMU's octeon3 machine, in the form expected by
+OpenBSD/octeon.

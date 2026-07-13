@@ -1,0 +1,14 @@
+Keep BGX disabled for QEMU's EBB7304 target because native Octeon
+Ethernet is not emulated.
+
+Index: arch/mips/dts/mrvl,octeon-ebb7304.dts
+--- arch/mips/dts/mrvl,octeon-ebb7304.dts.orig
++++ arch/mips/dts/mrvl,octeon-ebb7304.dts
+@@ -235,7 +235,6 @@
+ 
+ /* BGX 0 */
+ &bgx0 {
+-	status = "okay";
+ 	phy-handle = <&phy01208>; /* put phy-handle in BGX node and MAC node */
+ 
+ 	/* SerDes 0, may differ from PCS Lane/LMAC */

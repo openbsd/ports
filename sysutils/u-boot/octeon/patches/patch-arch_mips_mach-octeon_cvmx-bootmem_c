@@ -1,0 +1,161 @@
+Reserve relocated U-Boot in CVMX bootmem and split ranges at 4GiB so
+consumers can distinguish DMA32-reachable memory from high memory.
+
+Index: arch/mips/mach-octeon/cvmx-bootmem.c
+--- arch/mips/mach-octeon/cvmx-bootmem.c.orig
++++ arch/mips/mach-octeon/cvmx-bootmem.c
+@@ -29,6 +29,47 @@ DECLARE_GLOBAL_DATA_PTR;
+  */
+ static u64 cvmx_bootmem_desc_addr;
+ 
++#define CVMX_BOOTMEM_DMA32_LIMIT	(1ULL << 32)
++#define CVMX_BOOTMEM_DMA32_GUARD	CVMX_BOOTMEM_ALIGNMENT_SIZE
++
++static void cvmx_bootmem_reserve_uboot(void)
++{
++	u64 start = virt_to_phys((void *)(gd->start_addr_sp -
++					  CONFIG_STACK_SIZE));
++	u64 end = virt_to_phys((void *)gd->ram_top);
++
++	if (start < end)
++		cvmx_bootmem_phy_alloc(end - start, start, end, 0, 0);
++}
++
++static void cvmx_bootmem_phy_free_dma32_split(u64 phy_addr, u64 size,
++					      u64 dma32_limit, u32 flags)
++{
++	u64 end = phy_addr + size;
++
++	if (!size)
++		return;
++
++	if (phy_addr < dma32_limit && end > dma32_limit) {
++		u64 low_size = dma32_limit - phy_addr;
++
++		/*
++		 * Keep bootmem users from seeing one free block that spans the
++		 * 32-bit DMA boundary. __cvmx_bootmem_phy_free() merges
++		 * adjacent blocks, so leave one bootmem-aligned guard.
++		 */
++		if (low_size > CVMX_BOOTMEM_DMA32_GUARD)
++			__cvmx_bootmem_phy_free(phy_addr,
++						low_size - CVMX_BOOTMEM_DMA32_GUARD,
++						flags);
++		__cvmx_bootmem_phy_free(dma32_limit, end - dma32_limit,
++					flags);
++		return;
++	}
++
++	__cvmx_bootmem_phy_free(phy_addr, size, flags);
++}
++
+ /**
+  * This macro returns the size of a member of a structure.
+  * Logically it is the same as "sizeof(s::field)" in C++, but
+@@ -1175,25 +1216,36 @@ s64 cvmx_bootmem_phy_mem_list_init(u64 mem_size,
+ 	cur_block_addr = (OCTEON_DDR0_BASE + low_reserved_bytes);
+ 
+ 	if (mem_size <= OCTEON_DDR0_SIZE) {
+-		__cvmx_bootmem_phy_free(cur_block_addr,
+-					mem_size - low_reserved_bytes, 0);
++		cvmx_bootmem_phy_free_dma32_split(cur_block_addr,
++						  mem_size -
++						  low_reserved_bytes,
++						  CVMX_BOOTMEM_DMA32_LIMIT, 0);
+ 		goto frees_done;
+ 	}
+ 
+-	__cvmx_bootmem_phy_free(cur_block_addr,
+-				OCTEON_DDR0_SIZE - low_reserved_bytes, 0);
++	cvmx_bootmem_phy_free_dma32_split(cur_block_addr,
++					  OCTEON_DDR0_SIZE -
++					  low_reserved_bytes,
++					  CVMX_BOOTMEM_DMA32_LIMIT, 0);
+ 
+ 	mem_size -= OCTEON_DDR0_SIZE;
+ 
+ 	/* Add DDR2 block next if present */
+ 	if (mem_size > OCTEON_DDR1_SIZE) {
+-		__cvmx_bootmem_phy_free(OCTEON_DDR1_BASE, OCTEON_DDR1_SIZE, 0);
+-		__cvmx_bootmem_phy_free(OCTEON_DDR2_BASE,
+-					mem_size - OCTEON_DDR2_BASE, 0);
++		cvmx_bootmem_phy_free_dma32_split(OCTEON_DDR1_BASE,
++						  OCTEON_DDR1_SIZE,
++						  CVMX_BOOTMEM_DMA32_LIMIT, 0);
++		cvmx_bootmem_phy_free_dma32_split(OCTEON_DDR2_BASE,
++						  mem_size -
++						  OCTEON_DDR1_SIZE,
++						  CVMX_BOOTMEM_DMA32_LIMIT, 0);
+ 	} else {
+-		__cvmx_bootmem_phy_free(OCTEON_DDR1_BASE, mem_size, 0);
++		cvmx_bootmem_phy_free_dma32_split(OCTEON_DDR1_BASE,
++						  mem_size,
++						  CVMX_BOOTMEM_DMA32_LIMIT, 0);
+ 	}
+ frees_done:
++	cvmx_bootmem_reserve_uboot();
+ 
+ 	/* Initialize the named block structure */
+ 	CVMX_BOOTMEM_DESC_SET_FIELD(named_block_name_len, CVMX_BOOTMEM_NAME_LEN);
+@@ -1292,30 +1344,46 @@ s64 cvmx_bootmem_phy_mem_list_init_multi(u8 node_mask,
+ 			node_base;
+ 
+ 		if (mem_size <= OCTEON_DDR0_SIZE) {
+-			__cvmx_bootmem_phy_free(cur_block_addr,
+-						mem_size - low_reserved_bytes,
+-						0);
++			cvmx_bootmem_phy_free_dma32_split(cur_block_addr,
++							  mem_size -
++							  low_reserved_bytes,
++							  node_base |
++							  CVMX_BOOTMEM_DMA32_LIMIT,
++							  0);
+ 			continue;
+ 		}
+ 
+-		__cvmx_bootmem_phy_free(cur_block_addr,
+-					OCTEON_DDR0_SIZE - low_reserved_bytes,
+-					0);
++		cvmx_bootmem_phy_free_dma32_split(cur_block_addr,
++						  OCTEON_DDR0_SIZE -
++						  low_reserved_bytes,
++						  node_base |
++						  CVMX_BOOTMEM_DMA32_LIMIT,
++						  0);
+ 
+ 		mem_size -= OCTEON_DDR0_SIZE;
+ 
+ 		/* Add DDR2 block next if present */
+ 		if (mem_size > OCTEON_DDR1_SIZE) {
+-			__cvmx_bootmem_phy_free(OCTEON_DDR1_BASE |
+-						node_base,
+-						OCTEON_DDR1_SIZE, 0);
+-			__cvmx_bootmem_phy_free(OCTEON_DDR2_BASE |
+-						node_base,
+-						mem_size - OCTEON_DDR1_SIZE, 0);
++			cvmx_bootmem_phy_free_dma32_split(OCTEON_DDR1_BASE |
++							  node_base,
++							  OCTEON_DDR1_SIZE,
++							  node_base |
++							  CVMX_BOOTMEM_DMA32_LIMIT,
++							  0);
++			cvmx_bootmem_phy_free_dma32_split(OCTEON_DDR2_BASE |
++							  node_base,
++							  mem_size -
++							  OCTEON_DDR1_SIZE,
++							  node_base |
++							  CVMX_BOOTMEM_DMA32_LIMIT,
++							  0);
+ 		} else {
+-			__cvmx_bootmem_phy_free(OCTEON_DDR1_BASE |
+-						node_base,
+-						mem_size, 0);
++			cvmx_bootmem_phy_free_dma32_split(OCTEON_DDR1_BASE |
++							  node_base,
++							  mem_size,
++							  node_base |
++							  CVMX_BOOTMEM_DMA32_LIMIT,
++							  0);
+ 		}
+ 	}
+ 
