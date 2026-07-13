@@ -1738,6 +1738,7 @@
      SUBDIR += py-stack_data
      SUBDIR += py-stdlib-list
      SUBDIR += py-stdnum
+     SUBDIR += py-stevedore
      SUBDIR += py-straight.plugin
      SUBDIR += py-strict_rfc3339
      SUBDIR += py-structlog
