@@ -1,0 +1,30 @@
+Fix Cygmon C prototypes required by GCC 16 diagnostics.
+Index: libgloss/mips/cygmon.c
+--- libgloss/mips/cygmon.c.orig
++++ libgloss/mips/cygmon.c
+@@ -15,6 +15,9 @@
+ 
+ #include "syscall.h"
+ 
++int sysCall (unsigned long func, unsigned long p1, unsigned long p2,
++	     unsigned long p3);
++
+ int
+ write ( int file,
+         char *buf,
+@@ -75,13 +78,11 @@ int sysCall(unsigned long func, unsigned long p1, unsi
+ #define SYS_meminfo     1001
+ 
+ void *
+-get_mem_info (mem)
+-     struct s_mem *mem;
++get_mem_info (struct s_mem *mem)
+ {
+   unsigned long totmem = 0, topmem = 0;
+-  int numbanks;
+ 
+-  numbanks = sysCall(SYS_meminfo, (unsigned long)&totmem, (unsigned long)&topmem, 0);
++  sysCall(SYS_meminfo, (unsigned long)&totmem, (unsigned long)&topmem, 0);
+   mem->size = totmem;
+   return (void*)topmem;
+ }

@@ -1,0 +1,999 @@
+@info info/porting.info
+mipsisa64-unknown-elfoabi/include/
+mipsisa64-unknown-elfoabi/include/_ansi.h
+mipsisa64-unknown-elfoabi/include/_newlib_version.h
+mipsisa64-unknown-elfoabi/include/_syslist.h
+mipsisa64-unknown-elfoabi/include/alloca.h
+mipsisa64-unknown-elfoabi/include/ar.h
+mipsisa64-unknown-elfoabi/include/argz.h
+mipsisa64-unknown-elfoabi/include/assert.h
+mipsisa64-unknown-elfoabi/include/bits/
+mipsisa64-unknown-elfoabi/include/complex.h
+mipsisa64-unknown-elfoabi/include/cpio.h
+mipsisa64-unknown-elfoabi/include/ctype.h
+mipsisa64-unknown-elfoabi/include/devctl.h
+mipsisa64-unknown-elfoabi/include/dirent.h
+mipsisa64-unknown-elfoabi/include/elf.h
+mipsisa64-unknown-elfoabi/include/envlock.h
+mipsisa64-unknown-elfoabi/include/envz.h
+mipsisa64-unknown-elfoabi/include/errno.h
+mipsisa64-unknown-elfoabi/include/fastmath.h
+mipsisa64-unknown-elfoabi/include/fcntl.h
+mipsisa64-unknown-elfoabi/include/fenv.h
+mipsisa64-unknown-elfoabi/include/fnmatch.h
+mipsisa64-unknown-elfoabi/include/ftw.h
+mipsisa64-unknown-elfoabi/include/getopt.h
+mipsisa64-unknown-elfoabi/include/glob.h
+mipsisa64-unknown-elfoabi/include/grp.h
+mipsisa64-unknown-elfoabi/include/iconv.h
+mipsisa64-unknown-elfoabi/include/ieeefp.h
+mipsisa64-unknown-elfoabi/include/inttypes.h
+mipsisa64-unknown-elfoabi/include/langinfo.h
+mipsisa64-unknown-elfoabi/include/libgen.h
+mipsisa64-unknown-elfoabi/include/limits.h
+mipsisa64-unknown-elfoabi/include/locale.h
+mipsisa64-unknown-elfoabi/include/machine/
+mipsisa64-unknown-elfoabi/include/machine/_arc4random.h
+mipsisa64-unknown-elfoabi/include/machine/_default_types.h
+mipsisa64-unknown-elfoabi/include/machine/_endian.h
+mipsisa64-unknown-elfoabi/include/machine/_time.h
+mipsisa64-unknown-elfoabi/include/machine/_types.h
+mipsisa64-unknown-elfoabi/include/machine/ansi.h
+mipsisa64-unknown-elfoabi/include/machine/asm.h
+mipsisa64-unknown-elfoabi/include/machine/endian.h
+mipsisa64-unknown-elfoabi/include/machine/fastmath.h
+mipsisa64-unknown-elfoabi/include/machine/fenv-fp.h
+mipsisa64-unknown-elfoabi/include/machine/fenv-softfloat.h
+mipsisa64-unknown-elfoabi/include/machine/ieee.h
+mipsisa64-unknown-elfoabi/include/machine/ieeefp.h
+mipsisa64-unknown-elfoabi/include/machine/malloc.h
+mipsisa64-unknown-elfoabi/include/machine/param.h
+mipsisa64-unknown-elfoabi/include/machine/regdef.h
+mipsisa64-unknown-elfoabi/include/machine/setjmp-dj.h
+mipsisa64-unknown-elfoabi/include/machine/setjmp.h
+mipsisa64-unknown-elfoabi/include/machine/stdlib.h
+mipsisa64-unknown-elfoabi/include/machine/termios.h
+mipsisa64-unknown-elfoabi/include/machine/time.h
+mipsisa64-unknown-elfoabi/include/machine/types.h
+mipsisa64-unknown-elfoabi/include/malloc.h
+mipsisa64-unknown-elfoabi/include/math.h
+mipsisa64-unknown-elfoabi/include/memory.h
+mipsisa64-unknown-elfoabi/include/mips/
+mipsisa64-unknown-elfoabi/include/mips/asm.h
+mipsisa64-unknown-elfoabi/include/mips/cm3.h
+mipsisa64-unknown-elfoabi/include/mips/cpu.h
+mipsisa64-unknown-elfoabi/include/mips/ctx.S
+mipsisa64-unknown-elfoabi/include/mips/dsp.h
+mipsisa64-unknown-elfoabi/include/mips/endian.h
+mipsisa64-unknown-elfoabi/include/mips/fgregdef.h
+mipsisa64-unknown-elfoabi/include/mips/fpa.h
+mipsisa64-unknown-elfoabi/include/mips/hal.h
+mipsisa64-unknown-elfoabi/include/mips/intctrl.h
+mipsisa64-unknown-elfoabi/include/mips/m32c0.h
+mipsisa64-unknown-elfoabi/include/mips/m32c1.h
+mipsisa64-unknown-elfoabi/include/mips/m32tlb.h
+mipsisa64-unknown-elfoabi/include/mips/m64c0.h
+mipsisa64-unknown-elfoabi/include/mips/m64tlb.h
+mipsisa64-unknown-elfoabi/include/mips/mips32.h
+mipsisa64-unknown-elfoabi/include/mips/mips64.h
+mipsisa64-unknown-elfoabi/include/mips/mt.h
+mipsisa64-unknown-elfoabi/include/mips/notlb.h
+mipsisa64-unknown-elfoabi/include/mips/prid.h
+mipsisa64-unknown-elfoabi/include/mips/regdef.h
+mipsisa64-unknown-elfoabi/include/mips/uhi_syscalls.h
+mipsisa64-unknown-elfoabi/include/mips/version.h
+mipsisa64-unknown-elfoabi/include/ndbm.h
+mipsisa64-unknown-elfoabi/include/newlib.h
+mipsisa64-unknown-elfoabi/include/paths.h
+mipsisa64-unknown-elfoabi/include/pthread.h
+mipsisa64-unknown-elfoabi/include/pwd.h
+mipsisa64-unknown-elfoabi/include/reent.h
+mipsisa64-unknown-elfoabi/include/regdef.h
+mipsisa64-unknown-elfoabi/include/regex.h
+mipsisa64-unknown-elfoabi/include/rpc/
+mipsisa64-unknown-elfoabi/include/sched.h
+mipsisa64-unknown-elfoabi/include/search.h
+mipsisa64-unknown-elfoabi/include/setjmp.h
+mipsisa64-unknown-elfoabi/include/signal.h
+mipsisa64-unknown-elfoabi/include/spawn.h
+mipsisa64-unknown-elfoabi/include/ssp/
+mipsisa64-unknown-elfoabi/include/ssp/ssp.h
+mipsisa64-unknown-elfoabi/include/ssp/stdio.h
+mipsisa64-unknown-elfoabi/include/ssp/stdlib.h
+mipsisa64-unknown-elfoabi/include/ssp/string.h
+mipsisa64-unknown-elfoabi/include/ssp/strings.h
+mipsisa64-unknown-elfoabi/include/ssp/unistd.h
+mipsisa64-unknown-elfoabi/include/ssp/wchar.h
+mipsisa64-unknown-elfoabi/include/stdatomic.h
+mipsisa64-unknown-elfoabi/include/stdint.h
+mipsisa64-unknown-elfoabi/include/stdio.h
+mipsisa64-unknown-elfoabi/include/stdio_ext.h
+mipsisa64-unknown-elfoabi/include/stdlib.h
+mipsisa64-unknown-elfoabi/include/string.h
+mipsisa64-unknown-elfoabi/include/strings.h
+mipsisa64-unknown-elfoabi/include/sys/
+mipsisa64-unknown-elfoabi/include/sys/_default_fcntl.h
+mipsisa64-unknown-elfoabi/include/sys/_intsup.h
+mipsisa64-unknown-elfoabi/include/sys/_locale.h
+mipsisa64-unknown-elfoabi/include/sys/_pthreadtypes.h
+mipsisa64-unknown-elfoabi/include/sys/_sigset.h
+mipsisa64-unknown-elfoabi/include/sys/_stdint.h
+mipsisa64-unknown-elfoabi/include/sys/_timespec.h
+mipsisa64-unknown-elfoabi/include/sys/_timeval.h
+mipsisa64-unknown-elfoabi/include/sys/_types.h
+mipsisa64-unknown-elfoabi/include/sys/_tz_structs.h
+mipsisa64-unknown-elfoabi/include/sys/cdefs.h
+mipsisa64-unknown-elfoabi/include/sys/config.h
+mipsisa64-unknown-elfoabi/include/sys/custom_file.h
+mipsisa64-unknown-elfoabi/include/sys/dir.h
+mipsisa64-unknown-elfoabi/include/sys/dirent.h
+mipsisa64-unknown-elfoabi/include/sys/endian.h
+mipsisa64-unknown-elfoabi/include/sys/errno.h
+mipsisa64-unknown-elfoabi/include/sys/fcntl.h
+mipsisa64-unknown-elfoabi/include/sys/features.h
+mipsisa64-unknown-elfoabi/include/sys/fenv.h
+mipsisa64-unknown-elfoabi/include/sys/file.h
+mipsisa64-unknown-elfoabi/include/sys/iconvnls.h
+mipsisa64-unknown-elfoabi/include/sys/lock.h
+mipsisa64-unknown-elfoabi/include/sys/param.h
+mipsisa64-unknown-elfoabi/include/sys/queue.h
+mipsisa64-unknown-elfoabi/include/sys/reent.h
+mipsisa64-unknown-elfoabi/include/sys/resource.h
+mipsisa64-unknown-elfoabi/include/sys/sched.h
+mipsisa64-unknown-elfoabi/include/sys/select.h
+mipsisa64-unknown-elfoabi/include/sys/signal.h
+mipsisa64-unknown-elfoabi/include/sys/stat.h
+mipsisa64-unknown-elfoabi/include/sys/stdio.h
+mipsisa64-unknown-elfoabi/include/sys/string.h
+mipsisa64-unknown-elfoabi/include/sys/syslimits.h
+mipsisa64-unknown-elfoabi/include/sys/time.h
+mipsisa64-unknown-elfoabi/include/sys/timeb.h
+mipsisa64-unknown-elfoabi/include/sys/times.h
+mipsisa64-unknown-elfoabi/include/sys/timespec.h
+mipsisa64-unknown-elfoabi/include/sys/tree.h
+mipsisa64-unknown-elfoabi/include/sys/types.h
+mipsisa64-unknown-elfoabi/include/sys/unistd.h
+mipsisa64-unknown-elfoabi/include/sys/utime.h
+mipsisa64-unknown-elfoabi/include/sys/wait.h
+mipsisa64-unknown-elfoabi/include/tar.h
+mipsisa64-unknown-elfoabi/include/termios.h
+mipsisa64-unknown-elfoabi/include/tgmath.h
+mipsisa64-unknown-elfoabi/include/threads.h
+mipsisa64-unknown-elfoabi/include/time.h
+mipsisa64-unknown-elfoabi/include/unctrl.h
+mipsisa64-unknown-elfoabi/include/unistd.h
+mipsisa64-unknown-elfoabi/include/utime.h
+mipsisa64-unknown-elfoabi/include/utmp.h
+mipsisa64-unknown-elfoabi/include/wchar.h
+mipsisa64-unknown-elfoabi/include/wctype.h
+mipsisa64-unknown-elfoabi/include/wordexp.h
+mipsisa64-unknown-elfoabi/lib/cfe.ld
+mipsisa64-unknown-elfoabi/lib/crt0.o
+mipsisa64-unknown-elfoabi/lib/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/eb/
+mipsisa64-unknown-elfoabi/lib/eb/cfe.ld
+mipsisa64-unknown-elfoabi/lib/eb/crt0.o
+mipsisa64-unknown-elfoabi/lib/eb/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/eb/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/eb/idt32.ld
+mipsisa64-unknown-elfoabi/lib/eb/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/libcfe.a
+mipsisa64-unknown-elfoabi/lib/eb/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/libnosys.a
+mipsisa64-unknown-elfoabi/lib/eb/mips32/
+mipsisa64-unknown-elfoabi/lib/eb/mips32/cfe.ld
+mipsisa64-unknown-elfoabi/lib/eb/mips32/crt0.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32/idt32.ld
+mipsisa64-unknown-elfoabi/lib/eb/mips32/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32/libcfe.a
+mipsisa64-unknown-elfoabi/lib/eb/mips32/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32/libnosys.a
+mipsisa64-unknown-elfoabi/lib/eb/mips32/nosys.specs
+mipsisa64-unknown-elfoabi/lib/eb/mips32/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32r2/
+mipsisa64-unknown-elfoabi/lib/eb/mips32r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/eb/mips32r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/eb/mips32r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/eb/mips32r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/eb/mips32r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/eb/mips32r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32r6/
+mipsisa64-unknown-elfoabi/lib/eb/mips32r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/eb/mips32r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/eb/mips32r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/eb/mips32r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/eb/mips32r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips32r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/eb/mips32r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/eb/mips32r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/eb/mips64r2/
+mipsisa64-unknown-elfoabi/lib/eb/mips64r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/eb/mips64r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/eb/mips64r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/eb/mips64r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/eb/mips64r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/eb/mips64r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/eb/mips64r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/eb/mips64r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/eb/mips64r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/eb/mips64r6/
+mipsisa64-unknown-elfoabi/lib/eb/mips64r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/eb/mips64r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/eb/mips64r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/eb/mips64r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/eb/mips64r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/eb/mips64r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/eb/mips64r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/eb/mips64r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/eb/mips64r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/eb/mips64r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/eb/nosys.specs
+mipsisa64-unknown-elfoabi/lib/eb/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/el/
+mipsisa64-unknown-elfoabi/lib/el/cfe.ld
+mipsisa64-unknown-elfoabi/lib/el/crt0.o
+mipsisa64-unknown-elfoabi/lib/el/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/el/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/el/idt32.ld
+mipsisa64-unknown-elfoabi/lib/el/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/el/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/libcfe.a
+mipsisa64-unknown-elfoabi/lib/el/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/libnosys.a
+mipsisa64-unknown-elfoabi/lib/el/mips32/
+mipsisa64-unknown-elfoabi/lib/el/mips32/cfe.ld
+mipsisa64-unknown-elfoabi/lib/el/mips32/crt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips32/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/el/mips32/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/el/mips32/idt32.ld
+mipsisa64-unknown-elfoabi/lib/el/mips32/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32/libcfe.a
+mipsisa64-unknown-elfoabi/lib/el/mips32/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32/libnosys.a
+mipsisa64-unknown-elfoabi/lib/el/mips32/nosys.specs
+mipsisa64-unknown-elfoabi/lib/el/mips32/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips32r2/
+mipsisa64-unknown-elfoabi/lib/el/mips32r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/el/mips32r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips32r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/el/mips32r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/el/mips32r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/el/mips32r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/el/mips32r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/el/mips32r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/el/mips32r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips32r6/
+mipsisa64-unknown-elfoabi/lib/el/mips32r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/el/mips32r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips32r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/el/mips32r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/el/mips32r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/el/mips32r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/el/mips32r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips32r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/el/mips32r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/el/mips32r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips64/
+mipsisa64-unknown-elfoabi/lib/el/mips64/cfe.ld
+mipsisa64-unknown-elfoabi/lib/el/mips64/crt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips64/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/el/mips64/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/el/mips64/idt32.ld
+mipsisa64-unknown-elfoabi/lib/el/mips64/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64/libcfe.a
+mipsisa64-unknown-elfoabi/lib/el/mips64/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64/libnosys.a
+mipsisa64-unknown-elfoabi/lib/el/mips64/nosys.specs
+mipsisa64-unknown-elfoabi/lib/el/mips64/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips64r2/
+mipsisa64-unknown-elfoabi/lib/el/mips64r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/el/mips64r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips64r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/el/mips64r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/el/mips64r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/el/mips64r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/el/mips64r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/el/mips64r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/el/mips64r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips64r6/
+mipsisa64-unknown-elfoabi/lib/el/mips64r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/el/mips64r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/el/mips64r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/el/mips64r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/el/mips64r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/el/mips64r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/el/mips64r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/el/mips64r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/el/mips64r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/el/mips64r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/el/nosys.specs
+mipsisa64-unknown-elfoabi/lib/el/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/fp64/
+mipsisa64-unknown-elfoabi/lib/fp64/eb/
+mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/
+mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/fp64/eb/mips32r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/fp64/el/
+mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/
+mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/fp64/el/mips32r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/
+mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/fp64/mips32r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/idt32.ld
+mipsisa64-unknown-elfoabi/lib/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/libcfe.a
+mipsisa64-unknown-elfoabi/lib/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/libnosys.a
+mipsisa64-unknown-elfoabi/lib/mips32/
+mipsisa64-unknown-elfoabi/lib/mips32/cfe.ld
+mipsisa64-unknown-elfoabi/lib/mips32/crt0.o
+mipsisa64-unknown-elfoabi/lib/mips32/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/mips32/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/mips32/idt32.ld
+mipsisa64-unknown-elfoabi/lib/mips32/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32/libcfe.a
+mipsisa64-unknown-elfoabi/lib/mips32/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32/libnosys.a
+mipsisa64-unknown-elfoabi/lib/mips32/nosys.specs
+mipsisa64-unknown-elfoabi/lib/mips32/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/mips32r2/
+mipsisa64-unknown-elfoabi/lib/mips32r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/mips32r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/mips32r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/mips32r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/mips32r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/mips32r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/mips32r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/mips32r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/mips32r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/mips32r6/
+mipsisa64-unknown-elfoabi/lib/mips32r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/mips32r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/mips32r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/mips32r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/mips32r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/mips32r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/mips32r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips32r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/mips32r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/mips32r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/mips64/
+mipsisa64-unknown-elfoabi/lib/mips64/cfe.ld
+mipsisa64-unknown-elfoabi/lib/mips64/crt0.o
+mipsisa64-unknown-elfoabi/lib/mips64/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/mips64/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/mips64/idt32.ld
+mipsisa64-unknown-elfoabi/lib/mips64/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64/libcfe.a
+mipsisa64-unknown-elfoabi/lib/mips64/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64/libnosys.a
+mipsisa64-unknown-elfoabi/lib/mips64/nosys.specs
+mipsisa64-unknown-elfoabi/lib/mips64/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/mips64r2/
+mipsisa64-unknown-elfoabi/lib/mips64r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/mips64r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/mips64r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/mips64r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/mips64r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/mips64r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/mips64r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/mips64r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/mips64r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/mips64r6/
+mipsisa64-unknown-elfoabi/lib/mips64r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/mips64r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/mips64r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/mips64r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/mips64r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/mips64r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/mips64r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/mips64r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/mips64r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/mips64r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/nosys.specs
+mipsisa64-unknown-elfoabi/lib/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/
+mipsisa64-unknown-elfoabi/lib/soft-float/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips32r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/mips64r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/eb/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/
+mipsisa64-unknown-elfoabi/lib/soft-float/el/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips32r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/el/mips64r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/el/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/el/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32/
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/mips32r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64/
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r2/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/cfe.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/crt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/crt0_cfe.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/crt0_cygmon.o
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/idt32.ld
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/idt64.ld
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/libc.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/libcfe.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/libcm3.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/libcygmon.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/libg.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/libidt.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/libm.a
+@static-lib mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/libnosys.a
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/mips64r6/pcrt0.o
+mipsisa64-unknown-elfoabi/lib/soft-float/nosys.specs
+mipsisa64-unknown-elfoabi/lib/soft-float/pcrt0.o
+share/doc/mips-elf/
+share/doc/mips-elf/newlib/
+share/doc/mips-elf/newlib/COPYING.NEWLIB
+share/mips/
+share/mips/boot/
+share/mips/boot/corecheck_predef.S
+share/mips/boot/init_caches.S
+share/mips/boot/init_caches_predef.S
+share/mips/boot/init_cm3l2.S
+share/mips/boot/init_cm3l2_predef.S
+share/mips/boot/init_cp0.S
+share/mips/boot/init_cp0_predef.S
+share/mips/boot/init_l23caches.S
+share/mips/boot/init_l23caches_predef.S
+share/mips/boot/init_tlb.S
+share/mips/boot/init_tlb_predef.S
+share/mips/boot/predef.h
+share/mips/boot/reset.S
+share/mips/boot/reset_predef.S
+share/mips/hal/
+share/mips/hal/__exit.c
+share/mips/hal/abiflags.S
+share/mips/hal/cache.h
+share/mips/hal/crt0.S
+share/mips/hal/get_ram_range.c
+share/mips/hal/link.c
+share/mips/hal/minicrt.S
+share/mips/hal/mips64_tlb.c
+share/mips/hal/mips_clean_cache.c
+share/mips/hal/mips_cm3_l2size.c
+share/mips/hal/mips_dsp.S
+share/mips/hal/mips_excpt_boot.S
+share/mips/hal/mips_excpt_entry.S
+share/mips/hal/mips_excpt_handler.c
+share/mips/hal/mips_excpt_isr_fallback.S
+share/mips/hal/mips_excpt_isr_fragment.S
+share/mips/hal/mips_excpt_register.S
+share/mips/hal/mips_excpt_timer.S
+share/mips/hal/mips_flush_cache.c
+share/mips/hal/mips_fp.S
+share/mips/hal/mips_intctrl.c
+share/mips/hal/mips_l2size.c
+share/mips/hal/mips_lock_cache.c
+share/mips/hal/mips_msa.S
+share/mips/hal/mips_size_cache.c
+share/mips/hal/mips_sync_cache.c
+share/mips/hal/mips_tlb.c
+share/mips/hal/mips_xpa.S
+share/mips/hal/syscalls.c
+share/mips/rules/
+share/mips/rules/mipshal.mk
+share/mips/rules/srec2hex.pl
+share/mips/uhi/
+share/mips/uhi/uhi_assert.c
+share/mips/uhi/uhi_break.c
+share/mips/uhi/uhi_close.c
+share/mips/uhi/uhi_exception.c
+share/mips/uhi/uhi_exit.c
+share/mips/uhi/uhi_fstat.c
+share/mips/uhi/uhi_get_ram_range.c
+share/mips/uhi/uhi_getargs.S
+share/mips/uhi/uhi_indirect.c
+share/mips/uhi/uhi_link.c
+share/mips/uhi/uhi_lseek.c
+share/mips/uhi/uhi_open.c
+share/mips/uhi/uhi_plog.c
+share/mips/uhi/uhi_pread.c
+share/mips/uhi/uhi_pwrite.c
+share/mips/uhi/uhi_read.c
+share/mips/uhi/uhi_stat.c
+share/mips/uhi/uhi_stat.h
+share/mips/uhi/uhi_unlink.c
+share/mips/uhi/uhi_write.c
+share/mips/uhi/yamon_close.c
+share/mips/uhi/yamon_exception.c
+share/mips/uhi/yamon_exit.c
+share/mips/uhi/yamon_fstat.c
+share/mips/uhi/yamon_read.c
+share/mips/uhi/yamon_syscalls.h
+share/mips/uhi/yamon_write.c

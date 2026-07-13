@@ -1,0 +1,13 @@
+Default mipsisa64 ELF targets to mips64; GCC otherwise injects mips1.
+Index: gcc/config.gcc
+--- gcc/config.gcc.orig
++++ gcc/config.gcc
+@@ -2847,7 +2847,7 @@ mipsisa64r6-*-elf* | mipsisa64r6el-*-elf*)
+ 	    tm_defines="${tm_defines} MIPS_ISA_DEFAULT=MIPS_ISA_MIPS64R2"
+ 	    ;;
+ 	  mipsisa64*)
+-	    tm_defines="${tm_defines} MIPS_ISA_DEFAULT=MIPS_ISA_MIPS64"
++	    tm_defines="${tm_defines} MIPS_ISA_DEFAULT=MIPS_ISA_MIPS64 MULTILIB_ISA_DEFAULT=\\\"mips64\\\""
+ 	    ;;
+ 	esac
+ 	case ${target} in

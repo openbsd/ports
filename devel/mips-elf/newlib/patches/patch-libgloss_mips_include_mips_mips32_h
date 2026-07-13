@@ -1,0 +1,23 @@
+O64 still executes a 64 bit ISA; the jr.hb helper therefore needs the
+64 bit address adjustment path, not the O32 addiu form.
+Index: libgloss/mips/include/mips/mips32.h
+--- libgloss/mips/include/mips/mips32.h.orig
++++ libgloss/mips/include/mips/mips32.h
+@@ -130,7 +130,7 @@ extern "C" {
+ "       jr.hb	$31\n"				\
+ "1:"						\
+ 	: : : "$31")
+-#elif _MIPS_SIM == _ABI64
++#elif _MIPS_SIM == _ABIO64 || _MIPS_SIM == _ABI64
+ #define mips32_jr_hb() __asm__ __volatile__(	\
+        "bltzal	$0,0f\n"			\
+ "0:     daddiu	$31,1f-0b\n"			\
+@@ -151,7 +151,7 @@ extern "C" {
+        "jr.hb	$24\n"				\
+ "1:"						\
+        : : : "$24")
+-#elif _MIPS_SIM == _ABI64
++#elif _MIPS_SIM == _ABIO64 || _MIPS_SIM == _ABI64
+ #define mips32_jr_hb() __asm__ __volatile__(	\
+        "auipc	$24,%pcrel_hi(1f)\n"		\
+        "daddiu	$24,%pcrel_lo(1f + 4)\n"	\

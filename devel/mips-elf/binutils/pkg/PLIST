@@ -1,0 +1,235 @@
+@bin bin/${CONFIG}-addr2line
+@bin bin/${CONFIG}-ar
+@bin bin/${CONFIG}-as
+@bin bin/${CONFIG}-c++filt
+@bin bin/${CONFIG}-elfedit
+@bin bin/${CONFIG}-ld
+@bin bin/${CONFIG}-ld.bfd
+@bin bin/${CONFIG}-nm
+@bin bin/${CONFIG}-objcopy
+@bin bin/${CONFIG}-objdump
+@bin bin/${CONFIG}-ranlib
+@bin bin/${CONFIG}-readelf
+@bin bin/${CONFIG}-size
+@bin bin/${CONFIG}-strings
+@bin bin/${CONFIG}-strip
+lib/bfd-plugins/
+@static-lib lib/bfd-plugins/libdep.a
+@man man/man1/${CONFIG}-addr2line.1
+@man man/man1/${CONFIG}-ar.1
+@man man/man1/${CONFIG}-as.1
+@man man/man1/${CONFIG}-c++filt.1
+@man man/man1/${CONFIG}-dlltool.1
+@man man/man1/${CONFIG}-elfedit.1
+@man man/man1/${CONFIG}-ld.1
+@man man/man1/${CONFIG}-nm.1
+@man man/man1/${CONFIG}-objcopy.1
+@man man/man1/${CONFIG}-objdump.1
+@man man/man1/${CONFIG}-ranlib.1
+@man man/man1/${CONFIG}-readelf.1
+@man man/man1/${CONFIG}-size.1
+@man man/man1/${CONFIG}-strings.1
+@man man/man1/${CONFIG}-strip.1
+@man man/man1/${CONFIG}-windmc.1
+@man man/man1/${CONFIG}-windres.1
+${CONFIG}/
+${CONFIG}/bin/
+@bin ${CONFIG}/bin/ar
+@bin ${CONFIG}/bin/as
+@bin ${CONFIG}/bin/ld
+@bin ${CONFIG}/bin/ld.bfd
+@bin ${CONFIG}/bin/nm
+@bin ${CONFIG}/bin/objcopy
+@bin ${CONFIG}/bin/objdump
+@bin ${CONFIG}/bin/ranlib
+@bin ${CONFIG}/bin/readelf
+@bin ${CONFIG}/bin/strip
+${CONFIG}/lib/
+${CONFIG}/lib/ldscripts/
+${CONFIG}/lib/ldscripts/elf32btsmip.x
+${CONFIG}/lib/ldscripts/elf32btsmip.xbn
+${CONFIG}/lib/ldscripts/elf32btsmip.xc
+${CONFIG}/lib/ldscripts/elf32btsmip.xce
+${CONFIG}/lib/ldscripts/elf32btsmip.xcer
+${CONFIG}/lib/ldscripts/elf32btsmip.xd
+${CONFIG}/lib/ldscripts/elf32btsmip.xdc
+${CONFIG}/lib/ldscripts/elf32btsmip.xdce
+${CONFIG}/lib/ldscripts/elf32btsmip.xdcer
+${CONFIG}/lib/ldscripts/elf32btsmip.xde
+${CONFIG}/lib/ldscripts/elf32btsmip.xder
+${CONFIG}/lib/ldscripts/elf32btsmip.xdw
+${CONFIG}/lib/ldscripts/elf32btsmip.xdwe
+${CONFIG}/lib/ldscripts/elf32btsmip.xdwer
+${CONFIG}/lib/ldscripts/elf32btsmip.xe
+${CONFIG}/lib/ldscripts/elf32btsmip.xer
+${CONFIG}/lib/ldscripts/elf32btsmip.xn
+${CONFIG}/lib/ldscripts/elf32btsmip.xr
+${CONFIG}/lib/ldscripts/elf32btsmip.xs
+${CONFIG}/lib/ldscripts/elf32btsmip.xsc
+${CONFIG}/lib/ldscripts/elf32btsmip.xsce
+${CONFIG}/lib/ldscripts/elf32btsmip.xscer
+${CONFIG}/lib/ldscripts/elf32btsmip.xse
+${CONFIG}/lib/ldscripts/elf32btsmip.xser
+${CONFIG}/lib/ldscripts/elf32btsmip.xsw
+${CONFIG}/lib/ldscripts/elf32btsmip.xswe
+${CONFIG}/lib/ldscripts/elf32btsmip.xswer
+${CONFIG}/lib/ldscripts/elf32btsmip.xu
+${CONFIG}/lib/ldscripts/elf32btsmip.xw
+${CONFIG}/lib/ldscripts/elf32btsmip.xwe
+${CONFIG}/lib/ldscripts/elf32btsmip.xwer
+${CONFIG}/lib/ldscripts/elf32btsmipn32.x
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xbn
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xc
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xce
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xcer
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xd
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xdc
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xdce
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xdcer
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xde
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xder
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xdw
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xdwe
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xdwer
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xe
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xer
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xn
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xr
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xs
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xsc
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xsce
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xscer
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xse
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xser
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xsw
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xswe
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xswer
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xu
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xw
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xwe
+${CONFIG}/lib/ldscripts/elf32btsmipn32.xwer
+${CONFIG}/lib/ldscripts/elf32ltsmip.x
+${CONFIG}/lib/ldscripts/elf32ltsmip.xbn
+${CONFIG}/lib/ldscripts/elf32ltsmip.xc
+${CONFIG}/lib/ldscripts/elf32ltsmip.xce
+${CONFIG}/lib/ldscripts/elf32ltsmip.xcer
+${CONFIG}/lib/ldscripts/elf32ltsmip.xd
+${CONFIG}/lib/ldscripts/elf32ltsmip.xdc
+${CONFIG}/lib/ldscripts/elf32ltsmip.xdce
+${CONFIG}/lib/ldscripts/elf32ltsmip.xdcer
+${CONFIG}/lib/ldscripts/elf32ltsmip.xde
+${CONFIG}/lib/ldscripts/elf32ltsmip.xder
+${CONFIG}/lib/ldscripts/elf32ltsmip.xdw
+${CONFIG}/lib/ldscripts/elf32ltsmip.xdwe
+${CONFIG}/lib/ldscripts/elf32ltsmip.xdwer
+${CONFIG}/lib/ldscripts/elf32ltsmip.xe
+${CONFIG}/lib/ldscripts/elf32ltsmip.xer
+${CONFIG}/lib/ldscripts/elf32ltsmip.xn
+${CONFIG}/lib/ldscripts/elf32ltsmip.xr
+${CONFIG}/lib/ldscripts/elf32ltsmip.xs
+${CONFIG}/lib/ldscripts/elf32ltsmip.xsc
+${CONFIG}/lib/ldscripts/elf32ltsmip.xsce
+${CONFIG}/lib/ldscripts/elf32ltsmip.xscer
+${CONFIG}/lib/ldscripts/elf32ltsmip.xse
+${CONFIG}/lib/ldscripts/elf32ltsmip.xser
+${CONFIG}/lib/ldscripts/elf32ltsmip.xsw
+${CONFIG}/lib/ldscripts/elf32ltsmip.xswe
+${CONFIG}/lib/ldscripts/elf32ltsmip.xswer
+${CONFIG}/lib/ldscripts/elf32ltsmip.xu
+${CONFIG}/lib/ldscripts/elf32ltsmip.xw
+${CONFIG}/lib/ldscripts/elf32ltsmip.xwe
+${CONFIG}/lib/ldscripts/elf32ltsmip.xwer
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.x
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xbn
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xc
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xce
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xcer
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xd
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xdc
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xdce
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xdcer
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xde
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xder
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xdw
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xdwe
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xdwer
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xe
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xer
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xn
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xr
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xs
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xsc
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xsce
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xscer
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xse
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xser
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xsw
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xswe
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xswer
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xu
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xw
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xwe
+${CONFIG}/lib/ldscripts/elf32ltsmipn32.xwer
+${CONFIG}/lib/ldscripts/elf64btsmip.x
+${CONFIG}/lib/ldscripts/elf64btsmip.xbn
+${CONFIG}/lib/ldscripts/elf64btsmip.xc
+${CONFIG}/lib/ldscripts/elf64btsmip.xce
+${CONFIG}/lib/ldscripts/elf64btsmip.xcer
+${CONFIG}/lib/ldscripts/elf64btsmip.xd
+${CONFIG}/lib/ldscripts/elf64btsmip.xdc
+${CONFIG}/lib/ldscripts/elf64btsmip.xdce
+${CONFIG}/lib/ldscripts/elf64btsmip.xdcer
+${CONFIG}/lib/ldscripts/elf64btsmip.xde
+${CONFIG}/lib/ldscripts/elf64btsmip.xder
+${CONFIG}/lib/ldscripts/elf64btsmip.xdw
+${CONFIG}/lib/ldscripts/elf64btsmip.xdwe
+${CONFIG}/lib/ldscripts/elf64btsmip.xdwer
+${CONFIG}/lib/ldscripts/elf64btsmip.xe
+${CONFIG}/lib/ldscripts/elf64btsmip.xer
+${CONFIG}/lib/ldscripts/elf64btsmip.xn
+${CONFIG}/lib/ldscripts/elf64btsmip.xr
+${CONFIG}/lib/ldscripts/elf64btsmip.xs
+${CONFIG}/lib/ldscripts/elf64btsmip.xsc
+${CONFIG}/lib/ldscripts/elf64btsmip.xsce
+${CONFIG}/lib/ldscripts/elf64btsmip.xscer
+${CONFIG}/lib/ldscripts/elf64btsmip.xse
+${CONFIG}/lib/ldscripts/elf64btsmip.xser
+${CONFIG}/lib/ldscripts/elf64btsmip.xsw
+${CONFIG}/lib/ldscripts/elf64btsmip.xswe
+${CONFIG}/lib/ldscripts/elf64btsmip.xswer
+${CONFIG}/lib/ldscripts/elf64btsmip.xu
+${CONFIG}/lib/ldscripts/elf64btsmip.xw
+${CONFIG}/lib/ldscripts/elf64btsmip.xwe
+${CONFIG}/lib/ldscripts/elf64btsmip.xwer
+${CONFIG}/lib/ldscripts/elf64ltsmip.x
+${CONFIG}/lib/ldscripts/elf64ltsmip.xbn
+${CONFIG}/lib/ldscripts/elf64ltsmip.xc
+${CONFIG}/lib/ldscripts/elf64ltsmip.xce
+${CONFIG}/lib/ldscripts/elf64ltsmip.xcer
+${CONFIG}/lib/ldscripts/elf64ltsmip.xd
+${CONFIG}/lib/ldscripts/elf64ltsmip.xdc
+${CONFIG}/lib/ldscripts/elf64ltsmip.xdce
+${CONFIG}/lib/ldscripts/elf64ltsmip.xdcer
+${CONFIG}/lib/ldscripts/elf64ltsmip.xde
+${CONFIG}/lib/ldscripts/elf64ltsmip.xder
+${CONFIG}/lib/ldscripts/elf64ltsmip.xdw
+${CONFIG}/lib/ldscripts/elf64ltsmip.xdwe
+${CONFIG}/lib/ldscripts/elf64ltsmip.xdwer
+${CONFIG}/lib/ldscripts/elf64ltsmip.xe
+${CONFIG}/lib/ldscripts/elf64ltsmip.xer
+${CONFIG}/lib/ldscripts/elf64ltsmip.xn
+${CONFIG}/lib/ldscripts/elf64ltsmip.xr
+${CONFIG}/lib/ldscripts/elf64ltsmip.xs
+${CONFIG}/lib/ldscripts/elf64ltsmip.xsc
+${CONFIG}/lib/ldscripts/elf64ltsmip.xsce
+${CONFIG}/lib/ldscripts/elf64ltsmip.xscer
+${CONFIG}/lib/ldscripts/elf64ltsmip.xse
+${CONFIG}/lib/ldscripts/elf64ltsmip.xser
+${CONFIG}/lib/ldscripts/elf64ltsmip.xsw
+${CONFIG}/lib/ldscripts/elf64ltsmip.xswe
+${CONFIG}/lib/ldscripts/elf64ltsmip.xswer
+${CONFIG}/lib/ldscripts/elf64ltsmip.xu
+${CONFIG}/lib/ldscripts/elf64ltsmip.xw
+${CONFIG}/lib/ldscripts/elf64ltsmip.xwe
+${CONFIG}/lib/ldscripts/elf64ltsmip.xwer
+${CONFIG}/lib/ldscripts/stamp

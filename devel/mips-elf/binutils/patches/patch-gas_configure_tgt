@@ -1,0 +1,14 @@
+Upstream handles Octeon only for Linux targets; the generic -elfoabi*
+target still needs the traditional MIPS assembler emulation.
+
+Index: gas/configure.tgt
+--- gas/configure.tgt.orig
++++ gas/configure.tgt
+@@ -321,6 +321,7 @@ case ${generic_target} in
+   mips-*-sysv4* | mips-*-gnu*)		fmt=elf em=tmips ;;
+   mips*-sde-elf* | mips*-mti-elf* | mips*-img-elf*)
+ 					fmt=elf em=tmips ;;
++  mips-*-elfoabi*)			fmt=elf em=tmips ;;
+   mips-*-haiku*)			fmt=elf em=haiku ;;
+   mips-*-elf*)				fmt=elf ;;
+   mips-*-netbsd*)			fmt=elf em=tmips ;;

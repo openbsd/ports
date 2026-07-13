@@ -1,0 +1,14 @@
+O64 keeps old ABI argument registers and 32 bit pointers; UHI context
+classification must follow O32, not N32 or N64.
+Index: libgloss/mips/include/mips/hal.h
+--- libgloss/mips/include/mips/hal.h.orig
++++ libgloss/mips/include/mips/hal.h
+@@ -32,7 +32,7 @@
+ #include <mips/asm.h>
+ #include <mips/m32c0.h>
+ 
+-#if _MIPS_SIM == _ABIO32
++#if _MIPS_SIM == _ABIO32 || _MIPS_SIM == _ABIO64
+ #define UHI_ABI 0
+ #elif _MIPS_SIM == _ABIN32
+ #define UHI_ABI 1

@@ -1,0 +1,156 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -1206,32 +1206,8 @@ configure-host:  \
+     maybe-configure-libgrust
+ .PHONY: configure-target
+ configure-target:  \
+-    maybe-configure-target-libstdc++-v3 \
+-    maybe-configure-target-libsanitizer \
+-    maybe-configure-target-libvtv \
+-    maybe-configure-target-libssp \
+     maybe-configure-target-newlib \
+-    maybe-configure-target-libgcc \
+-    maybe-configure-target-libbacktrace \
+-    maybe-configure-target-libquadmath \
+-    maybe-configure-target-libgfortran \
+-    maybe-configure-target-libobjc \
+-    maybe-configure-target-libgo \
+-    maybe-configure-target-libphobos \
+-    maybe-configure-target-libtermcap \
+-    maybe-configure-target-winsup \
+-    maybe-configure-target-libgloss \
+-    maybe-configure-target-libffi \
+-    maybe-configure-target-zlib \
+-    maybe-configure-target-rda \
+-    maybe-configure-target-libada \
+-    maybe-configure-target-libgm2 \
+-    maybe-configure-target-libga68 \
+-    maybe-configure-target-libgomp \
+-    maybe-configure-target-libitm \
+-    maybe-configure-target-libatomic \
+-    maybe-configure-target-libgrust \
+-    maybe-configure-target-libgcobol
++    maybe-configure-target-libgcc
+ 
+ # The target built for a native non-bootstrap build.
+ .PHONY: all
+@@ -1393,50 +1369,10 @@ all-host: maybe-all-libgrust
+ 
+ .PHONY: all-target
+ 
+-@if target-libstdc++-v3-no-bootstrap
+-all-target: maybe-all-target-libstdc++-v3
+-@endif target-libstdc++-v3-no-bootstrap
+-@if target-libsanitizer-no-bootstrap
+-all-target: maybe-all-target-libsanitizer
+-@endif target-libsanitizer-no-bootstrap
+-@if target-libvtv-no-bootstrap
+-all-target: maybe-all-target-libvtv
+-@endif target-libvtv-no-bootstrap
+-all-target: maybe-all-target-libssp
+ all-target: maybe-all-target-newlib
+ @if target-libgcc-no-bootstrap
+ all-target: maybe-all-target-libgcc
+ @endif target-libgcc-no-bootstrap
+-@if target-libbacktrace-no-bootstrap
+-all-target: maybe-all-target-libbacktrace
+-@endif target-libbacktrace-no-bootstrap
+-all-target: maybe-all-target-libquadmath
+-all-target: maybe-all-target-libgfortran
+-all-target: maybe-all-target-libobjc
+-all-target: maybe-all-target-libgo
+-@if target-libphobos-no-bootstrap
+-all-target: maybe-all-target-libphobos
+-@endif target-libphobos-no-bootstrap
+-all-target: maybe-all-target-libtermcap
+-all-target: maybe-all-target-winsup
+-all-target: maybe-all-target-libgloss
+-all-target: maybe-all-target-libffi
+-@if target-zlib-no-bootstrap
+-all-target: maybe-all-target-zlib
+-@endif target-zlib-no-bootstrap
+-all-target: maybe-all-target-rda
+-all-target: maybe-all-target-libada
+-all-target: maybe-all-target-libgm2
+-all-target: maybe-all-target-libga68
+-@if target-libgomp-no-bootstrap
+-all-target: maybe-all-target-libgomp
+-@endif target-libgomp-no-bootstrap
+-all-target: maybe-all-target-libitm
+-@if target-libatomic-no-bootstrap
+-all-target: maybe-all-target-libatomic
+-@endif target-libatomic-no-bootstrap
+-all-target: maybe-all-target-libgrust
+-all-target: maybe-all-target-libgcobol
+ 
+ # Do a target for all the subdirectories.  A ``make do-X'' will do a
+ # ``make X'' in all subdirectories (because, in general, there is a
+@@ -3098,32 +3034,8 @@ install-host:  \
+ 
+ .PHONY: install-target
+ install-target:  \
+-    maybe-install-target-libstdc++-v3 \
+-    maybe-install-target-libsanitizer \
+-    maybe-install-target-libvtv \
+-    maybe-install-target-libssp \
+     maybe-install-target-newlib \
+-    maybe-install-target-libgcc \
+-    maybe-install-target-libbacktrace \
+-    maybe-install-target-libquadmath \
+-    maybe-install-target-libgfortran \
+-    maybe-install-target-libobjc \
+-    maybe-install-target-libgo \
+-    maybe-install-target-libphobos \
+-    maybe-install-target-libtermcap \
+-    maybe-install-target-winsup \
+-    maybe-install-target-libgloss \
+-    maybe-install-target-libffi \
+-    maybe-install-target-zlib \
+-    maybe-install-target-rda \
+-    maybe-install-target-libada \
+-    maybe-install-target-libgm2 \
+-    maybe-install-target-libga68 \
+-    maybe-install-target-libgomp \
+-    maybe-install-target-libitm \
+-    maybe-install-target-libatomic \
+-    maybe-install-target-libgrust \
+-    maybe-install-target-libgcobol
++    maybe-install-target-libgcc
+ 
+ uninstall:
+ 	@echo "the uninstall target is not supported in this tree"
+@@ -3213,32 +3125,8 @@ install-strip-host:  \
+ 
+ .PHONY: install-strip-target
+ install-strip-target:  \
+-    maybe-install-strip-target-libstdc++-v3 \
+-    maybe-install-strip-target-libsanitizer \
+-    maybe-install-strip-target-libvtv \
+-    maybe-install-strip-target-libssp \
+     maybe-install-strip-target-newlib \
+-    maybe-install-strip-target-libgcc \
+-    maybe-install-strip-target-libbacktrace \
+-    maybe-install-strip-target-libquadmath \
+-    maybe-install-strip-target-libgfortran \
+-    maybe-install-strip-target-libobjc \
+-    maybe-install-strip-target-libgo \
+-    maybe-install-strip-target-libphobos \
+-    maybe-install-strip-target-libtermcap \
+-    maybe-install-strip-target-winsup \
+-    maybe-install-strip-target-libgloss \
+-    maybe-install-strip-target-libffi \
+-    maybe-install-strip-target-zlib \
+-    maybe-install-strip-target-rda \
+-    maybe-install-strip-target-libada \
+-    maybe-install-strip-target-libgm2 \
+-    maybe-install-strip-target-libga68 \
+-    maybe-install-strip-target-libgomp \
+-    maybe-install-strip-target-libitm \
+-    maybe-install-strip-target-libatomic \
+-    maybe-install-strip-target-libgrust \
+-    maybe-install-strip-target-libgcobol
++    maybe-install-strip-target-libgcc
+ 
+ 
+ ### other supporting targets
