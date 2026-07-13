@@ -1,3 +1,6 @@
+# fails on !LP64; github.com/!data!dog/dd-trace-go/v2
+NOT_FOR_ARCHS=	arm i386
+
 COMMENT=	fast and flexible DNS server/forwarder
 
 MODGO_MODNAME=	github.com/coredns/coredns
