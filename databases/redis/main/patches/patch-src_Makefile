@@ -1,0 +1,40 @@
+Changes in this file:
+- do not use -funwind-tables and -latomic on armv7
+- run tests with datasize, fds, stacksize and processes at the hard limit
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -84,11 +84,6 @@ ifeq ($(uname_S),Linux)
+ 	MALLOC=jemalloc
+ endif
+ 
+-# To get ARM stack traces if Redis crashes we need a special C flag.
+-ifneq (,$(filter aarch64 armv%,$(uname_M)))
+-        CFLAGS+=-funwind-tables
+-endif
+-
+ # Backwards compatibility for selecting an allocator
+ ifeq ($(USE_TCMALLOC),yes)
+ 	MALLOC=tcmalloc
+@@ -154,11 +149,6 @@ FINAL_LDFLAGS=$(LDFLAGS) $(OPT) $(REDIS_LDFLAGS) $(DEB
+ FINAL_LIBS=-lm
+ DEBUG=-g -ggdb
+ 
+-# Linux ARM32 needs -latomic at linking time
+-ifneq (,$(findstring armv,$(uname_M)))
+-        FINAL_LIBS+=-latomic
+-endif
+-
+ ifeq ($(uname_S),SunOS)
+ 	# SunOS
+ 	ifeq ($(findstring -m32,$(FINAL_CFLAGS)),)
+@@ -509,7 +499,7 @@ distclean: clean
+ .PHONY: distclean
+ 
+ test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME) $(REDIS_CLI_NAME) $(REDIS_BENCHMARK_NAME) module_tests
+-	@(cd ..; ./runtest)
++	@(cd ..; ulimit -Sd `ulimit -Hd`; ulimit -Sn `ulimit -Hn`; ulimit -Sp `ulimit -Hp`; ulimit -Ss `ulimit -Hs`; ./runtest)
+ 
+ test-modules: $(REDIS_SERVER_NAME)
+ 	@(cd ..; ./runtest-moduleapi)

@@ -1,3 +1,4 @@
+@option is-branch
 @newgroup _redis:686
 @newuser _redis:686:_redis::redis account:${DBDIR}:/sbin/nologin
 @rcscript ${RCDIR}/redis

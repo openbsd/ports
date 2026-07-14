@@ -1,0 +1,13 @@
+Recognize LOG_DAEMON as a valid facility
+
+Index: src/config.c
+--- src/config.c.orig
++++ src/config.c
+@@ -51,6 +51,7 @@ configEnum maxmemory_policy_enum[] = {
+ };
+ 
+ configEnum syslog_facility_enum[] = {
++    {"daemon",  LOG_DAEMON},
+     {"user",    LOG_USER},
+     {"local0",  LOG_LOCAL0},
+     {"local1",  LOG_LOCAL1},

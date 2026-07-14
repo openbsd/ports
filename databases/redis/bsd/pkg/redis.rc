@@ -1,0 +1,17 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/redis-server"
+daemon_flags="${SYSCONFDIR}/redis/redis.conf"
+daemon_user="_redis"
+
+. /etc/rc.d/rc.subr
+
+pexp="redis-server: ${daemon} .*"
+
+rc_reload=NO
+
+rc_pre() {
+	/usr/bin/install -d -o _redis -g _redis -m 0750 /var/run/redis
+}
+
+rc_cmd $1

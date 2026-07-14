@@ -1,0 +1,17 @@
+Fix an occurrence where char is considered signed on all platforms,
+it's not the case on powerpc and arm.
+
+https://github.com/antirez/linenoise/pull/188
+
+Index: deps/linenoise/linenoise.c
+--- deps/linenoise/linenoise.c.orig
++++ deps/linenoise/linenoise.c
+@@ -934,7 +934,7 @@ static int linenoiseEdit(int stdin_fd, int stdout_fd, 
+ 
+     if (write(l.ofd,prompt,l.plen) == -1) return -1;
+     while(1) {
+-        char c;
++        signed char c;
+         int nread;
+         char seq[3];
+ 

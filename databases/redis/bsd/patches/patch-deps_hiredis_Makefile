@@ -1,0 +1,12 @@
+Index: deps/hiredis/Makefile
+--- deps/hiredis/Makefile.orig
++++ deps/hiredis/Makefile
+@@ -76,7 +76,7 @@ ifeq ($(USE_SSL),1)
+   CFLAGS+=-DHIREDIS_TEST_SSL
+ endif
+ 
+-ifeq ($(uname_S),Linux)
++ifneq (,filter Linux OpenBSD,$(uname_S))
+   ifdef OPENSSL_PREFIX
+     CFLAGS+=-I$(OPENSSL_PREFIX)/include
+     SSL_LDFLAGS+=-L$(OPENSSL_PREFIX)/lib -lssl -lcrypto

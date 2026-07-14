@@ -1,0 +1,39 @@
+Index: sentinel.conf
+--- sentinel.conf.orig
++++ sentinel.conf
+@@ -10,14 +10,14 @@ protected-mode no
+ port 26379
+ 
+ # By default Redis Sentinel does not run as a daemon. Use 'yes' if you need it.
+-# Note that Redis will write a pid file in /var/run/redis-sentinel.pid when
++# Note that Redis will write a pid file in /var/run/redis/redis-sentinel.pid when
+ # daemonized.
+ daemonize no
+ 
+ # When running daemonized, Redis Sentinel writes a pid file in
+-# /var/run/redis-sentinel.pid by default. You can specify a custom pid file
++# /var/run/redis/redis-sentinel.pid by default. You can specify a custom pid file
+ # location here.
+-pidfile /var/run/redis-sentinel.pid
++pidfile /var/run/redis/redis-sentinel.pid
+ 
+ # Specify the server verbosity level.
+ # This can be one of:
+@@ -269,7 +269,7 @@ sentinel failover-timeout mymaster 180000
+ #
+ # Example:
+ #
+-# sentinel notification-script mymaster /var/redis/notify.sh
++# sentinel notification-script mymaster ${DBDIR}/notify.sh
+ 
+ # CLIENTS RECONFIGURATION SCRIPT
+ #
+@@ -294,7 +294,7 @@ sentinel failover-timeout mymaster 180000
+ #
+ # Example:
+ #
+-# sentinel client-reconfig-script mymaster /var/redis/reconfig.sh
++# sentinel client-reconfig-script mymaster ${DBDIR}/reconfig.sh
+ 
+ # SECURITY
+ #

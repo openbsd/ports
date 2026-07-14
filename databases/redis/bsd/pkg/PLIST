@@ -1,0 +1,21 @@
+@option is-branch
+@pkgpath databases/redis
+@newgroup _redis:686
+@newuser _redis:686:_redis::redis account:${DBDIR}:/sbin/nologin
+@rcscript ${RCDIR}/redis
+@bin bin/redis-benchmark
+bin/redis-check-aof
+bin/redis-check-rdb
+@bin bin/redis-cli
+bin/redis-sentinel
+@bin bin/redis-server
+share/examples/redis/
+@sample ${SYSCONFDIR}/redis/
+share/examples/redis/redis.conf
+@sample ${SYSCONFDIR}/redis/redis.conf
+share/examples/redis/sentinel.conf
+@sample ${SYSCONFDIR}/redis/sentinel.conf
+@mode 0700
+@owner _redis
+@group _redis
+@sample ${DBDIR}/

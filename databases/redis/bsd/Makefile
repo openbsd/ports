@@ -1,0 +1,22 @@
+COMMENT =		persistent key-value database (BSD-licensed version)
+
+PORTROACH =		limit:^6\.
+DISTNAME =		redis-6.2.22
+REVISION =		2
+
+WANTLIB +=		c crypto ssl m pthread
+
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
+MAKE_FLAGS =		BUILD_TLS=yes \
+			CC="${CC}" \
+			DEBUG="${DEBUG}" \
+			DEBUG_FLAGS="${DEBUG}" \
+			USE_JEMALLOC=no \
+			OPT="" \
+			OPTIMIZATION="" \
+			V=1
+
+.include <bsd.port.mk>

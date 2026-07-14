@@ -1,0 +1,9 @@
+Index: utils/gen-test-certs.sh
+--- utils/gen-test-certs.sh.orig
++++ utils/gen-test-certs.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Generate some test certificates which are used by the regression test suite:
+ #
