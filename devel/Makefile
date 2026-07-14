@@ -470,6 +470,7 @@
      SUBDIR += meson-python
      SUBDIR += metaauto
      SUBDIR += microsoft-gsl
+     SUBDIR += mips-elf
      SUBDIR += mklittlefs
      SUBDIR += mkspiffs
      SUBDIR += mm
