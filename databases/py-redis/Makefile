@@ -27,7 +27,7 @@ TEST_IS_INTERACTIVE =	Yes
 RUN_DEPENDS =		devel/py-async-timeout \
 			www/py-jwt
 
-TEST_DEPENDS =		databases/redis \
+TEST_DEPENDS =		databases/redis/bsd \
 			devel/py-cachetools \
 			devel/py-invoke \
 			devel/py-mock \

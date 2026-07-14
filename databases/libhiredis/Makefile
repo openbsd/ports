@@ -21,7 +21,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MODULES=	devel/cmake
 CONFIGURE_ARGS=	-DENABLE_SSL=on
 
-TEST_DEPENDS=	databases/redis
+TEST_DEPENDS=	databases/redis/bsd
 
 post-install:
 	rm -r ${PREFIX}/build

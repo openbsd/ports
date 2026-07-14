@@ -26,6 +26,6 @@ TEST_DEPENDS +=		devel/p5-Test-Deep \
 			devel/p5-Test-SharedFork \
 			net/p5-Test-TCP \
 			devel/p5-IO-String \
-			databases/redis
+			databases/redis/bsd
 
 .include <bsd.port.mk>
