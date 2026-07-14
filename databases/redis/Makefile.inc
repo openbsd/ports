@@ -3,7 +3,9 @@ COMMENT ?=		persistent key-value database
 CATEGORIES =		databases
 
 HOMEPAGE =		https://redis.io/
+.if !defined(GH_ACCOUNT)
 SITES =			https://download.redis.io/releases/
+.endif
 
 MAINTAINER ?=		Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -35,11 +37,6 @@ USE_GMAKE ?=		Yes
 
 DBDIR =			${VARBASE}/redis
 SUBST_VARS +=		DBDIR
-
-TEST_ULIMIT =		ulimit -Sd `ulimit -Hd`; \
-			ulimit -Sn `ulimit -Hn`; \
-			ulimit -Sp `ulimit -Hp`; \
-			ulimit -Ss `ulimit -Hs`
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/Makefile
