@@ -1,0 +1,16 @@
+PMTiles is a single-file archive format for tiled data. A PMTiles
+archive can be self-hosted, or hosted on a commodity storage platform
+such as S3, and enables low-cost, zero-maintenance map applications
+that are free of a custom tile backend or third party provider.
+
+This package provides the pmtiles CLI command, which works with local
+tilesets on disk, or remotely (e.g. with archives on cloud storage, even
+in private buckets). File operations include displaying basic information,
+extracting an archive containing just your chosen zoom levels and/or area
+from a larger file (e.g. those at https://maps.protomaps.com/builds/),
+merging disjoint files together, uploading to cloud storage, etc.
+
+Some applications (like MapLibre GL JS) are able to use pmtiles files
+directly (fetching sections via HTTP Range requests); some others want
+a server providing an industry-standard "ZXY" API to fetch rendered
+tiles: pmtiles can provide this over HTTP.
