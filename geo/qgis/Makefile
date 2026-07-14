@@ -43,7 +43,7 @@ COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/bison>=2.4 \
 		devel/py-qt-builder \
-		devel/py-sip \
+		devel/py-sip>=6.15.3 \
 		devel/py-six \
 		editors/py-qscintilla,${QTVER} \
 		geo/gdal,-python \
