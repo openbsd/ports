@@ -27,6 +27,7 @@
      SUBDIR += cdiff
      SUBDIR += check-jsonschema
      SUBDIR += chordpro
+     SUBDIR += chroma-syntax-highlighter
      SUBDIR += clit
      SUBDIR += clo++
      SUBDIR += cloc
