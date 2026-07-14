@@ -1,6 +1,6 @@
 COMMENT=	Python binding for xxHash
 
-MODPY_DISTV=	3.7.1
+MODPY_DISTV=	3.8.1
 DISTNAME=	xxhash-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
