@@ -13,6 +13,7 @@ SITES=			ftp://ftp.funet.fi/pub/languages/tcl/tcl/exmh/ \
 			ftp://ftp.tcl.tk/pub/tcl/exmh/
 
 MODULES=		x11/tk
+MODTK_VERSION=		8.5
 BUILD_DEPENDS=		${MODTCL_RUN_DEPENDS}
 RUN_DEPENDS=		lang/expect\
 			mail/nmh\
