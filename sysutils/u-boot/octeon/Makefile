@@ -4,7 +4,8 @@ SOC=		octeon
 
 BOARDS=		octeon_ebb7304
 
-BUILD_DEPENDS+=	devel/mips-elf/gcc
+BUILD_DEPENDS+=	devel/mips-elf/gcc \
+		shells/bash
 CROSS_COMPILE=	mipsisa64-unknown-elfoabi-
 
 do-build:
