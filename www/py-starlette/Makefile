@@ -1,6 +1,6 @@
 COMMENT =		lightweight ASGI library
 
-MODPY_DISTV =		0.48.0
+MODPY_DISTV =		1.3.1
 
 DISTNAME =		starlette-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
@@ -21,6 +21,7 @@ MODPY_PYBUILD =		hatchling
 
 RUN_DEPENDS =		net/py-anyio
 
+# XXX: needs httpx2
 TEST_DEPENDS =		devel/py-trio \
 			textproc/py-yaml \
 			www/py-httpx \
