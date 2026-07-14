@@ -1,5 +1,5 @@
 SUBDIR =
 SUBDIR += bsd
-#SUBDIR += main
+SUBDIR += main
 
 .include <bsd.port.subdir.mk>
