@@ -9,7 +9,7 @@ USE_NOEXECONLY =	Yes
 
 COMMENT =		Python package and project manager
 
-MODPY_DISTV =		0.11.25
+MODPY_DISTV =		0.11.28
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
 GH_TAGNAME =		${MODPY_DISTV}
