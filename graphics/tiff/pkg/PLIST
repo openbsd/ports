@@ -22,10 +22,10 @@ include/tiffio.h
 include/tiffio.hxx
 include/tiffvers.h
 lib/cmake/tiff/
-lib/cmake/tiff/TiffConfig.cmake
-lib/cmake/tiff/TiffConfigVersion.cmake
-lib/cmake/tiff/TiffTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/tiff/TiffTargets.cmake
+lib/cmake/tiff/tiff-config-version.cmake
+lib/cmake/tiff/tiff-config.cmake
+lib/cmake/tiff/tiff-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/tiff/tiff-targets.cmake
 @lib lib/libtiff.so.${LIBtiff_VERSION}
 @lib lib/libtiffxx.so.${LIBtiffxx_VERSION}
 lib/pkgconfig/libtiff-4.pc
@@ -68,6 +68,7 @@ lib/pkgconfig/libtiff-4.pc
 @man man/man3/TIFFFieldWriteCount.3
 @man man/man3/TIFFFlush.3
 @man man/man3/TIFFGetField.3
+@man man/man3/TIFFGetMaxCompressionRatio.3
 @man man/man3/TIFFMergeFieldInfo.3
 @man man/man3/TIFFOpen.3
 @man man/man3/TIFFPrintDirectory.3
@@ -155,6 +156,7 @@ share/doc/tiff/manual/_sources/functions/TIFFFieldTag.rst.txt
 share/doc/tiff/manual/_sources/functions/TIFFFieldWriteCount.rst.txt
 share/doc/tiff/manual/_sources/functions/TIFFFlush.rst.txt
 share/doc/tiff/manual/_sources/functions/TIFFGetField.rst.txt
+share/doc/tiff/manual/_sources/functions/TIFFGetMaxCompressionRatio.rst.txt
 share/doc/tiff/manual/_sources/functions/TIFFMergeFieldInfo.rst.txt
 share/doc/tiff/manual/_sources/functions/TIFFOpen.rst.txt
 share/doc/tiff/manual/_sources/functions/TIFFOpenOptions.rst.txt
@@ -271,6 +273,7 @@ share/doc/tiff/manual/_sources/releases/v4.5.1.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.6.0.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.7.0.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.7.1.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.7.2.rst.txt
 share/doc/tiff/manual/_sources/rfcs/
 share/doc/tiff/manual/_sources/rfcs/index.rst.txt
 share/doc/tiff/manual/_sources/rfcs/rfc1_psc.rst.txt
@@ -342,6 +345,7 @@ share/doc/tiff/manual/functions/TIFFFieldTag.html
 share/doc/tiff/manual/functions/TIFFFieldWriteCount.html
 share/doc/tiff/manual/functions/TIFFFlush.html
 share/doc/tiff/manual/functions/TIFFGetField.html
+share/doc/tiff/manual/functions/TIFFGetMaxCompressionRatio.html
 share/doc/tiff/manual/functions/TIFFMergeFieldInfo.html
 share/doc/tiff/manual/functions/TIFFOpen.html
 share/doc/tiff/manual/functions/TIFFOpenOptions.html
@@ -460,6 +464,7 @@ share/doc/tiff/manual/releases/v4.5.1.html
 share/doc/tiff/manual/releases/v4.6.0.html
 share/doc/tiff/manual/releases/v4.7.0.html
 share/doc/tiff/manual/releases/v4.7.1.html
+share/doc/tiff/manual/releases/v4.7.2.html
 share/doc/tiff/manual/rfcs/
 share/doc/tiff/manual/rfcs/index.html
 share/doc/tiff/manual/rfcs/rfc1_psc.html
