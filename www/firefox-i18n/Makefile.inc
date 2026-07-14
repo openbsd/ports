@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 PKG_ARCH =	*
 
-FV =		152.0.5
+FV =		152.0.6
 V =		${FV:C/b.$//}
 NAME =		firefox-i18n
 
