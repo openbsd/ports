@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# See: https://github.com/sbt/sbt/issues/8441
+# See: https://github.com/sbt/sbt/issues/9379
 exec ${LOCALBASE}/libexec/sbt/bin/sbt \
-    -Dsbt.server.autostart=false \
-    -Djna.nosys=true \
-    -Djna.nounpack=true \
+    --server \
     "$@"

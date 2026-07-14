@@ -1,6 +1,9 @@
 COMMENT=	interactive build tool, primarily for Scala/Java
 
-V=		1.12.13
+# See: https://github.com/sbt/sbt/issues/9379
+ONLY_FOR_ARCHS=	amd64
+
+V=		2.0.2
 DISTNAME=	sbt-$V
 CATEGORIES=	devel
 
