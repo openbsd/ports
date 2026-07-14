@@ -53,6 +53,7 @@
      SUBDIR += pdal
      SUBDIR += pgpointcloud
      SUBDIR += pgrouting
+     SUBDIR += pmtiles
      SUBDIR += postgis
      SUBDIR += py-cligj
      SUBDIR += py-fiona
