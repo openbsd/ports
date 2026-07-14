@@ -4,6 +4,9 @@ GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	4.1.1
 
+# keep above 7.9-stable (redis dir reorg)
+REVISION=	0
+
 CATEGORIES=	mail
 
 HOMEPAGE=	https://rspamd.com/
@@ -40,12 +43,12 @@ LIB_DEPENDS=	archivers/libarchive \
 		security/libsodium \
 		sysutils/xxhash \
 		textproc/icu4c
-RUN_DEPENDS=	databases/redis
+RUN_DEPENDS=	databases/redis/bsd
 
 BUILD_DEPENDS=	devel/ragel
 # /var/rspamd needs to exist for tests to run
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
-		databases/redis \
+		databases/redis/bsd \
 		devel/py-robotframework \
 		sysutils/py-psutil
 

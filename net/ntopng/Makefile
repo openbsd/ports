@@ -6,7 +6,7 @@ COMMENT=	network traffic probe with web ui and deep packet inspection
 NTOPNG_V=	5.2.1
 DIST_TUPLE=	github ntop ntopng ${NTOPNG_V} . \
 		github ntop nDPI 4.2 nDPI
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	net
 
@@ -22,7 +22,7 @@ WANTLIB += ssl z zmq zstd
 
 COMPILER =	base-clang ports-gcc
 
-RUN_DEPENDS=	databases/redis \
+RUN_DEPENDS=	databases/redis/bsd \
 		net/libmaxminddb,-db \
 		net/libmaxminddb,-city \
 		net/libmaxminddb,-asn
