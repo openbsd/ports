@@ -6,6 +6,8 @@ EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
 
+REVISION=		0
+
 SHARED_LIBS += atalk                     17.0 # 19.0.0
 
 CATEGORIES=		net
@@ -34,7 +36,6 @@ BUILD_DEPENDS +=	textproc/unicode/ucd
 
 LIB_DEPENDS=		databases/db/v4 \
 			devel/bstring \
-			devel/glib2 \
 			devel/iniparser \
 			devel/libevent2 \
 			net/avahi,-libs \
