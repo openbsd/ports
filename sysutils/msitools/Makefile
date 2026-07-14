@@ -3,6 +3,9 @@ COMMENT =	set of programs to build and inspect windows installer files
 V =		0.106
 DIST_TUPLE +=	gnome GNOME msitools v${V} .
 WRKDIST =	${WRKDIR}/msitools-v${V}
+REVISION =	0
+
+SHARED_LIBS +=  msi-1.0                   0.0 # 0.0
 
 CATEGORIES =	devel sysutils
 
@@ -18,15 +21,15 @@ MODULES =		devel/meson
 BUILD_DEPENDS = lang/vala,-main \
 		devel/gettext,-tools \
 		devel/bison \
-		devel/bats
+		devel/bats \
+		devel/gobject-introspection
+RUN_DEPENDS =	devel/gobject-introspection
 LIB_DEPENDS =	archivers/gcab \
 		devel/glib2 \
 		devel/libgsf \
 		textproc/libxml
 TEST_DEPENDS =	devel/bats \
 		sysutils/coreutils
-
-SHARED_LIBS +=  msi-1.0                   0.0 # 0.0
 
 WANTLIB += c gcab-1.0 gio-2.0 glib-2.0 gobject-2.0 gsf-1 intl
 WANTLIB += xml2
