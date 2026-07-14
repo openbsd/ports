@@ -47,3 +47,8 @@ post-install:
 			${PREFIX}/share/examples/redis/redis.conf
 	${SUBST_DATA} ${WRKSRC}/sentinel.conf \
 			${PREFIX}/share/examples/redis/sentinel.conf
+
+pre-test:
+	@[[ $$(ulimit -n) < 10000 ]] && \
+		echo "\n>>> Some tests need raised limits, possibly 10000+ openfiles" \
+		&& sleep 1 && echo && sleep 1
