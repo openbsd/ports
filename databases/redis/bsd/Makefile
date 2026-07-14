@@ -10,6 +10,9 @@ WANTLIB +=		c crypto ssl m pthread
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
+# >=9 support was added after the license change
+MODTCL_VERSION =	8.6
+
 MAKE_FLAGS =		BUILD_TLS=yes \
 			CC="${CC}" \
 			DEBUG="${DEBUG}" \
