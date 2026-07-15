@@ -39,7 +39,7 @@ Index: Cargo.lock
  dependencies = [
   "serde_json",
   "thiserror 1.999.999",
-@@ -3386,7 +3386,7 @@ dependencies = [
+@@ -3387,7 +3387,7 @@ dependencies = [
  [[package]]
  name = "interrupt-support"
  version = "0.1.0"
@@ -48,7 +48,7 @@ Index: Cargo.lock
  dependencies = [
   "lazy_static",
   "parking_lot",
-@@ -5108,7 +5108,7 @@ checksum = "d01a5bd0424d00070b0098dd17ebca6f961a959dea
+@@ -5109,7 +5109,7 @@ checksum = "d01a5bd0424d00070b0098dd17ebca6f961a959dea
  [[package]]
  name = "payload-support"
  version = "0.1.0"
@@ -57,7 +57,7 @@ Index: Cargo.lock
  dependencies = [
   "serde",
   "serde_derive",
-@@ -5615,7 +5615,7 @@ checksum = "dbb5fb1acd8a1a18b3dd5be62d25485eb770e05afb
+@@ -5616,7 +5616,7 @@ checksum = "dbb5fb1acd8a1a18b3dd5be62d25485eb770e05afb
  [[package]]
  name = "relevancy"
  version = "0.1.0"
@@ -66,7 +66,7 @@ Index: Cargo.lock
  dependencies = [
   "anyhow",
   "base64 0.21.999",
-@@ -5639,7 +5639,7 @@ dependencies = [
+@@ -5640,7 +5640,7 @@ dependencies = [
  [[package]]
  name = "remote_settings"
  version = "0.1.0"
@@ -75,7 +75,7 @@ Index: Cargo.lock
  dependencies = [
   "anyhow",
   "camino",
-@@ -5940,7 +5940,7 @@ dependencies = [
+@@ -5941,7 +5941,7 @@ dependencies = [
  [[package]]
  name = "search"
  version = "0.1.0"
@@ -84,7 +84,7 @@ Index: Cargo.lock
  dependencies = [
   "error-support",
   "firefox-versioning",
-@@ -6232,7 +6232,7 @@ dependencies = [
+@@ -6246,7 +6246,7 @@ dependencies = [
  [[package]]
  name = "sql-support"
  version = "0.1.0"
@@ -93,7 +93,7 @@ Index: Cargo.lock
  dependencies = [
   "error-support",
   "interrupt-support",
-@@ -6431,7 +6431,7 @@ checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99
+@@ -6445,7 +6445,7 @@ checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99
  [[package]]
  name = "suggest"
  version = "0.1.0"
@@ -102,7 +102,7 @@ Index: Cargo.lock
  dependencies = [
   "anyhow",
   "chrono",
-@@ -6484,7 +6484,7 @@ dependencies = [
+@@ -6498,7 +6498,7 @@ dependencies = [
  [[package]]
  name = "sync-guid"
  version = "0.1.0"
@@ -111,7 +111,7 @@ Index: Cargo.lock
  dependencies = [
   "base64 0.21.999",
   "rand",
-@@ -6495,7 +6495,7 @@ dependencies = [
+@@ -6509,7 +6509,7 @@ dependencies = [
  [[package]]
  name = "sync15"
  version = "0.1.0"
@@ -120,7 +120,7 @@ Index: Cargo.lock
  dependencies = [
   "anyhow",
   "error-support",
-@@ -6534,7 +6534,7 @@ dependencies = [
+@@ -6548,7 +6548,7 @@ dependencies = [
  [[package]]
  name = "tabs"
  version = "0.1.0"
@@ -129,7 +129,7 @@ Index: Cargo.lock
  dependencies = [
   "anyhow",
   "error-support",
-@@ -6892,7 +6892,7 @@ checksum = "497961ef93d974e23eb6f433eb5fe1b7930b659f06
+@@ -6906,7 +6906,7 @@ checksum = "497961ef93d974e23eb6f433eb5fe1b7930b659f06
  [[package]]
  name = "types"
  version = "0.1.0"
@@ -138,7 +138,7 @@ Index: Cargo.lock
  dependencies = [
   "rusqlite 0.33.0",
   "serde",
-@@ -7304,7 +7304,7 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc
+@@ -7318,7 +7318,7 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc
  [[package]]
  name = "viaduct"
  version = "0.1.0"
@@ -147,7 +147,7 @@ Index: Cargo.lock
  dependencies = [
   "error-support",
   "ffi-support",
-@@ -7473,7 +7473,7 @@ dependencies = [
+@@ -7487,7 +7487,7 @@ dependencies = [
  [[package]]
  name = "webext-storage"
  version = "0.1.0"
@@ -156,7 +156,7 @@ Index: Cargo.lock
  dependencies = [
   "anyhow",
   "error-support",
-@@ -8143,3 +8143,53 @@ name = "zlib-rs"
+@@ -8157,3 +8157,53 @@ name = "zlib-rs"
  version = "0.4.2"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "8b20717f0917c908dc63de2e44e97f1e6b126ca58d0e391cee86d504eb8fbd05"
