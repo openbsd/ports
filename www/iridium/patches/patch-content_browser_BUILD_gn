@@ -27,7 +27,7 @@ Index: content/browser/BUILD.gn
      "//components/payments/content/icon",
      "//components/payments/mojom",
      "//components/performance_manager/scenario_api",
-@@ -2675,6 +2678,14 @@ source_set("browser") {
+@@ -2677,6 +2680,14 @@ source_set("browser") {
      ]
    }
  
@@ -42,7 +42,7 @@ Index: content/browser/BUILD.gn
    if (is_linux || is_chromeos) {
      sources -=
          [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
-@@ -2724,6 +2735,15 @@ source_set("browser") {
+@@ -2726,6 +2737,15 @@ source_set("browser") {
    if (allow_oop_video_decoder) {
      sources += [ "media/oop_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom" ]
