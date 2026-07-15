@@ -1,12 +1,12 @@
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		0.4.32
+V =		0.5.3
 TITLE_V =	0.4.26
-OBJECTS_V =	1.7.6
+OBJECTS_V =    1.7.10
 OPENSFX_V =	1.0.6
 OPENMSX_V =	1.6.1
-REPLAYS_V =	0.0.92
+REPLAYS_V =	0.0.95
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTFILES =	openrct2-${V}{v${V}}.tar.gz
 DISTFILES.a = 	title-sequences-${TITLE_V}{title-sequences}.zip
@@ -16,7 +16,6 @@ DISTFILES.d =	openmsx-${OPENMSX_V}{openmusic}.zip
 DISTFILES.e = 	replays-${REPLAYS_V}{replays}.zip
 PKGNAME =	openrct2-${V}
 CATEGORIES =	games x11
-REVISION =	1
 
 HOMEPAGE =	https://openrct2.org/
 
@@ -69,7 +68,7 @@ CONFIGURE_ARGS =	-DDOWNLOAD_OBJECTS=OFF \
 			-DDOWNLOAD_TITLE_SEQUENCES=OFF \
 			-DDISABLE_DISCORD_RPC=ON \
 			-DOPENRCT2_BRANCH=master \
-			-DOPENRCT2_COMMIT_SHA1_SHORT="25c7379" \
+			-DOPENRCT2_COMMIT_SHA1_SHORT="7d2958e" \
 			-DOPENRCT2_USE_CCACHE=OFF
 
 # Downloads things. See: https://github.com/OpenRCT2/OpenRCT2/issues/5710
