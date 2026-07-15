@@ -3,8 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
-GH_TAGNAME =	2026-01-12
-REVISION =	2
+GH_TAGNAME =	2026-07-13
 
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME:S/-//g}
 
