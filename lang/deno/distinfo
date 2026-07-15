@@ -192,7 +192,7 @@ SHA256 (cargo/debugid-0.8.0.tar.gz) = vvVS5vWI5EYJj2ukDYmsFGyMe2Sq3oPAUe4Au10rwY
 SHA256 (cargo/deku-0.20.3.tar.gz) = 6/VSkSV6KlyQz1CuF7a7qrw/0TZCzziVpxxBJRPBljA=
 SHA256 (cargo/deku_derive-0.20.3.tar.gz) = vsKkK1Efxe/ZGD9PccF4hdYnsX5/2aYakgiUBsqkOX4=
 SHA256 (cargo/deno-tower-lsp-macros-0.12.0.tar.gz) = +fr5RwT2eyGuTp6b3WyzqHb9ruzQR8wuzys71NSXin4=
-SHA256 (cargo/deno_ast-0.53.2.tar.gz) = BXkvsrd5OHZ//rCFMonoZQH93ISxzbqeXchgxSuqL/c=
+SHA256 (cargo/deno_ast-0.53.3.tar.gz) = b3wThNh/wKZDmgZTEvvvj2rGEoaJ28KDGyizodTzpOY=
 SHA256 (cargo/deno_core_icudata-0.77.0.tar.gz) = qe//iZCoLBrmZCklB+GlxnSd3SMSiYzfnNfLH9S8ZMY=
 SHA256 (cargo/deno_doc-0.202.0.tar.gz) = vRlnPNS2Cw7PuaK9xZQFdBfaHNDFcfJRZxTY3USUHAM=
 SHA256 (cargo/deno_error-0.7.1.tar.gz) = v6/SIZspiGpxrsuzRJ5GLe7RssR03FsS+FXw5YxHiTE=
@@ -1042,7 +1042,7 @@ SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+Gft
 SHA256 (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 64EYPd2X0MdM7fHVDYXI0Iwbi2juhjve6ecG7tuhojc=
 SHA256 (cargo/zune-core-0.4.12.tar.gz) = P0I6LBcCmWSHDPqrsfE9+rfQkqYqKaiSZPTTaZDKQUo=
 SHA256 (cargo/zune-jpeg-0.4.13.tar.gz) = FgmUGGALTY8ChiL3P/bj3qq9/zMPuaKhMd6nge6LB2g=
-SHA256 (denoland-deno-v2.9.2.tar.gz) = 2nP8WY5YCnDL/OsZGKyzeg82hHsvhEStr8252qENAEw=
+SHA256 (denoland-deno-v2.9.3.tar.gz) = DwhWiGShd/f5Em6OdwfwVyv3dAlX/lCa8EeZouDcCh0=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -1237,7 +1237,7 @@ SIZE (cargo/debugid-0.8.0.tar.gz) = 12757
 SIZE (cargo/deku-0.20.3.tar.gz) = 102791
 SIZE (cargo/deku_derive-0.20.3.tar.gz) = 32119
 SIZE (cargo/deno-tower-lsp-macros-0.12.0.tar.gz) = 3549
-SIZE (cargo/deno_ast-0.53.2.tar.gz) = 97876
+SIZE (cargo/deno_ast-0.53.3.tar.gz) = 100299
 SIZE (cargo/deno_core_icudata-0.77.0.tar.gz) = 4598663
 SIZE (cargo/deno_doc-0.202.0.tar.gz) = 827196
 SIZE (cargo/deno_error-0.7.1.tar.gz) = 11498
@@ -2087,4 +2087,4 @@ SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 774847
 SIZE (cargo/zune-core-0.4.12.tar.gz) = 17355
 SIZE (cargo/zune-jpeg-0.4.13.tar.gz) = 62999
-SIZE (denoland-deno-v2.9.2.tar.gz) = 32363991
+SIZE (denoland-deno-v2.9.3.tar.gz) = 32433600
