@@ -12,7 +12,7 @@ Index: ttyplot.c
  #define _XOPEN_SOURCE_EXTENDED
  #else
  // This is needed for musl libc
-@@ -954,10 +954,6 @@ int main(int argc, char *argv[]) {
+@@ -1238,10 +1238,6 @@ int main(int argc, char *argv[]) {
          exit(1);
      }
  
@@ -23,7 +23,7 @@ Index: ttyplot.c
  
      // Check if any colors are defined
      bool has_colors = false;
-@@ -1017,6 +1013,11 @@ int main(int argc, char *argv[]) {
+@@ -1310,6 +1306,11 @@ int main(int argc, char *argv[]) {
  
      signal(SIGWINCH, signal_handler);
      signal(SIGINT, signal_handler);

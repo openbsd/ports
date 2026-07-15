@@ -11,5 +11,5 @@ Index: Makefile
 -LDLIBS += `pkg-config --libs ncursesw` -lm
 +LDLIBS += -lcurses -lm
  
- all: ttyplot stresstest
- 
+ # Experimental, opt-in ASCII-art rendering backend (aalib). Off by default;
+ # build with `make AA=1` (requires aalib and its aalib-config helper).
