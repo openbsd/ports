@@ -1,6 +1,6 @@
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.26.4
+VERSION =		1.27.0
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
 
@@ -20,23 +20,23 @@ MODULES =		lang/go
 
 GO_TAGS =		purego sqlite sqlite_unlock_notify
 MODGO_FLAGS +=		-tags "${GO_TAGS}"
-MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.AppWorkPath=${LOCALSTATEDIR}/gitea
-MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.CustomConf=${SYSCONFDIR}/gitea/app.ini
-MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.CustomPath=${LOCALSTATEDIR}/gitea/custom
-MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.StaticRootPath=${LOCALBASE}/share/gitea
+MODGO_LDFLAGS += -X gitea.dev/modules/setting.AppWorkPath=${LOCALSTATEDIR}/gitea
+MODGO_LDFLAGS += -X gitea.dev/modules/setting.CustomConf=${SYSCONFDIR}/gitea/app.ini
+MODGO_LDFLAGS += -X gitea.dev/modules/setting.CustomPath=${LOCALSTATEDIR}/gitea/custom
+MODGO_LDFLAGS += -X gitea.dev/modules/setting.StaticRootPath=${LOCALBASE}/share/gitea
 MODGO_LDFLAGS += -X main.Version=${VERSION}
 MODGO_LDFLAGS += -X 'main.Tags=${GO_TAGS}'
 
 RUN_DEPENDS =		devel/git
 
-ALL_TARGET =		code.gitea.io/gitea
+ALL_TARGET =		gitea.dev
 WRKSRC =		${MODGO_WORKSPACE}/src/${ALL_TARGET}
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/custom/conf/app.example.ini
 
 do-install:
-	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gitea ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gitea.dev ${PREFIX}/sbin/gitea
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gitea
 .for _d in custom/conf options templates
 	cp -Rp ${WRKSRC}/${_d} ${PREFIX}/share/gitea
