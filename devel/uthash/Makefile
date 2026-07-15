@@ -2,7 +2,7 @@ COMMENT =	C macros to add, find and delete items from a hash
 
 GH_ACCOUNT =	troydhanson
 GH_PROJECT =	uthash
-GH_TAGNAME =	v2.3.0
+GH_TAGNAME =	v2.4.0
 
 CATEGORIES =	devel
 

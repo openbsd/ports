@@ -3,7 +3,7 @@
 Index: tests/Makefile
 --- tests/Makefile.orig
 +++ tests/Makefile
-@@ -23,39 +23,8 @@ CFLAGS += -Wall
+@@ -24,39 +24,8 @@ CFLAGS += -Wall
  #CFLAGS += -std=c89
  CFLAGS += ${EXTRA_CFLAGS}
  
@@ -12,7 +12,7 @@ Index: tests/Makefile
 -endif
 -
 -ifeq ($(HASH_PEDANTIC),1)
--CFLAGS += -pedantic
+-CFLAGS += -pedantic -Wno-strict-prototypes
 -endif
 -
  TEST_TARGET=run_tests
