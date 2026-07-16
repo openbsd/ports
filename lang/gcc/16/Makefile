@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
 ONLY_FOR_ARCHS-ada = amd64 mips64 i386 powerpc
-ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 powerpc64 sparc64
+ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 powerpc64 riscv64 sparc64
 
 DPB_PROPERTIES = parallel
 
@@ -19,7 +19,7 @@ USE_NOEXECONLY = Yes
 V = 16.1.0
 GCC_PKGSPEC = >=16,<17
 
-REVISION = 2
+REVISION = 3
 
 # aarch64, powerpc64 and sparc64 bootstrap contain only gdc
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.1.0-0.tar.xz
@@ -30,6 +30,7 @@ BOOTSTRAP-i386 = gcc-bootstrap-i386-16.1.0-0.tar.xz
 BOOTSTRAP-mips64 = gcc-bootstrap-mips64-16.1.0-0.tar.xz
 BOOTSTRAP-powerpc = adastrap-powerpc-11.2.0-4.tar.xz
 BOOTSTRAP-powerpc64 = gcc-bootstrap-powerpc64-16.1.0-0.tar.xz
+BOOTSTRAP-riscv64 = gcc-bootstrap-riscv64-16.1.0-0.tar.xz
 BOOTSTRAP-sparc64 = gcc-bootstrap-sparc64-16.1.0-0.tar.xz
 
 SHARED_LIBS =	estdc++		22.0 \

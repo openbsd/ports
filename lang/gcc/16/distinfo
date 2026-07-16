@@ -6,6 +6,7 @@ SHA256 (gcc/gcc-bootstrap-arm-16.1.0-0.tar.xz) = ndwUrDAMJQscIld2dkVAHnIQwFmAUzx
 SHA256 (gcc/gcc-bootstrap-i386-16.1.0-0.tar.xz) = Bx13vSVSmPcTdxtEuBo09V34Kk3WcJLHR+QcQdB3Q/k=
 SHA256 (gcc/gcc-bootstrap-mips64-16.1.0-0.tar.xz) = /HoBipao09v1hFlbCgMXAxnON0KeQCLWWfjjoit6ZQI=
 SHA256 (gcc/gcc-bootstrap-powerpc64-16.1.0-0.tar.xz) = 2zEevZartfir4FoNIeP5UhWLUnZX4sqMnyisg7h4TNg=
+SHA256 (gcc/gcc-bootstrap-riscv64-16.1.0-0.tar.xz) = R4DaT0kLbPVlFXGF19+Bk9/dtfL+r348OPAUmmTnnWM=
 SHA256 (gcc/gcc-bootstrap-sparc64-16.1.0-0.tar.xz) = rPqfC17P9aQ3+nii6GJLLuS+MCbceWUSfWmwt+Iq2s8=
 SIZE (gcc/adastrap-powerpc-11.2.0-4.tar.xz) = 70164724
 SIZE (gcc/gcc-16.1.0.tar.xz) = 102456900
@@ -15,4 +16,5 @@ SIZE (gcc/gcc-bootstrap-arm-16.1.0-0.tar.xz) = 86586424
 SIZE (gcc/gcc-bootstrap-i386-16.1.0-0.tar.xz) = 134563524
 SIZE (gcc/gcc-bootstrap-mips64-16.1.0-0.tar.xz) = 86043372
 SIZE (gcc/gcc-bootstrap-powerpc64-16.1.0-0.tar.xz) = 94741772
+SIZE (gcc/gcc-bootstrap-riscv64-16.1.0-0.tar.xz) = 135909084
 SIZE (gcc/gcc-bootstrap-sparc64-16.1.0-0.tar.xz) = 81213816

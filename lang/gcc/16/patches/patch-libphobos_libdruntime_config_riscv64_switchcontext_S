@@ -1,0 +1,148 @@
+Index: libphobos/libdruntime/config/riscv64/switchcontext.S
+--- libphobos/libdruntime/config/riscv64/switchcontext.S.orig
++++ libphobos/libdruntime/config/riscv64/switchcontext.S
+@@ -0,0 +1,144 @@
++/* RISC-V 64-bit support code for fibers and multithreading.
++   Copyright (C) 2026 Free Software Foundation, Inc.
++
++This file is part of GCC.
++
++GCC is free software; you can redistribute it and/or modify it under
++the terms of the GNU General Public License as published by the Free
++Software Foundation; either version 3, or (at your option) any later
++version.
++
++GCC is distributed in the hope that it will be useful, but WITHOUT ANY
++WARRANTY; without even the implied warranty of MERCHANTABILITY or
++FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++for more details.
++
++Under Section 7 of GPL version 3, you are granted additional
++permissions described in the GCC Runtime Library Exception, version
++3.1, as published by the Free Software Foundation.
++
++You should have received a copy of the GNU General Public License and
++a copy of the GCC Runtime Library Exception along with this program;
++see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
++<http://www.gnu.org/licenses/>.  */
++
++#include "../common/threadasm.S"
++
++#if __riscv_xlen == 64
++
++#define FRAME_SIZE 208
++#define TSTACK_OFFSET 112
++#define RA_OFFSET 96
++
++    .text
++    .globl CSYM(fiber_switchContext)
++    .type CSYM(fiber_switchContext), @function
++    .align 2
++CSYM(fiber_switchContext):
++    .cfi_startproc
++    addi sp, sp, -FRAME_SIZE
++
++#if defined(__riscv_float_abi_double)
++    fsd fs0, 0(sp)
++    fsd fs1, 8(sp)
++    fsd fs2, 16(sp)
++    fsd fs3, 24(sp)
++    fsd fs4, 32(sp)
++    fsd fs5, 40(sp)
++    fsd fs6, 48(sp)
++    fsd fs7, 56(sp)
++    fsd fs8, 64(sp)
++    fsd fs9, 72(sp)
++    fsd fs10, 80(sp)
++    fsd fs11, 88(sp)
++#elif defined(__riscv_float_abi_single)
++    fsw fs0, 0(sp)
++    fsw fs1, 4(sp)
++    fsw fs2, 8(sp)
++    fsw fs3, 12(sp)
++    fsw fs4, 16(sp)
++    fsw fs5, 20(sp)
++    fsw fs6, 24(sp)
++    fsw fs7, 28(sp)
++    fsw fs8, 32(sp)
++    fsw fs9, 36(sp)
++    fsw fs10, 40(sp)
++    fsw fs11, 44(sp)
++#endif
++
++    sd ra, RA_OFFSET(sp)
++    sd s0, 112(sp)
++    sd s1, 120(sp)
++    sd s2, 128(sp)
++    sd s3, 136(sp)
++    sd s4, 144(sp)
++    sd s5, 152(sp)
++    sd s6, 160(sp)
++    sd s7, 168(sp)
++    sd s8, 176(sp)
++    sd s9, 184(sp)
++    sd s10, 192(sp)
++    sd s11, 200(sp)
++
++    addi t0, sp, TSTACK_OFFSET
++    sd t0, 0(a0)
++    addi sp, a1, -TSTACK_OFFSET
++
++#if defined(__riscv_float_abi_double)
++    fld fs0, 0(sp)
++    fld fs1, 8(sp)
++    fld fs2, 16(sp)
++    fld fs3, 24(sp)
++    fld fs4, 32(sp)
++    fld fs5, 40(sp)
++    fld fs6, 48(sp)
++    fld fs7, 56(sp)
++    fld fs8, 64(sp)
++    fld fs9, 72(sp)
++    fld fs10, 80(sp)
++    fld fs11, 88(sp)
++#elif defined(__riscv_float_abi_single)
++    flw fs0, 0(sp)
++    flw fs1, 4(sp)
++    flw fs2, 8(sp)
++    flw fs3, 12(sp)
++    flw fs4, 16(sp)
++    flw fs5, 20(sp)
++    flw fs6, 24(sp)
++    flw fs7, 28(sp)
++    flw fs8, 32(sp)
++    flw fs9, 36(sp)
++    flw fs10, 40(sp)
++    flw fs11, 44(sp)
++#endif
++
++    ld ra, RA_OFFSET(sp)
++    ld s0, 112(sp)
++    ld s1, 120(sp)
++    ld s2, 128(sp)
++    ld s3, 136(sp)
++    ld s4, 144(sp)
++    ld s5, 152(sp)
++    ld s6, 160(sp)
++    ld s7, 168(sp)
++    ld s8, 176(sp)
++    ld s9, 184(sp)
++    ld s10, 192(sp)
++    ld s11, 200(sp)
++    addi sp, sp, FRAME_SIZE
++    ret
++    .cfi_endproc
++    .size CSYM(fiber_switchContext),.-CSYM(fiber_switchContext)
++
++    .text
++    .globl CSYM(fiber_trampoline)
++    .type CSYM(fiber_trampoline), @function
++    .align 2
++CSYM(fiber_trampoline):
++    .cfi_startproc
++    .cfi_undefined 1
++    call CSYM(fiber_entryPoint)
++    .cfi_endproc
++    .size CSYM(fiber_trampoline),.-CSYM(fiber_trampoline)
++
++#endif

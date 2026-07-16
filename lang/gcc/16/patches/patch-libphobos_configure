@@ -1,32 +1,45 @@
-Add fiber asm for sparc64 and powerpc64, to avoid
+Add fiber asm for riscv64, sparc64 and powerpc64, to avoid
 "configure: error: setcontext required but not found"
 
 Index: libphobos/configure
 --- libphobos/configure.orig
 +++ libphobos/configure
-@@ -695,6 +695,8 @@ DRUNTIME_CPU_X86_FALSE
+@@ -695,6 +695,10 @@ DRUNTIME_CPU_X86_FALSE
  DRUNTIME_CPU_X86_TRUE
  DRUNTIME_CPU_POWERPC_FALSE
  DRUNTIME_CPU_POWERPC_TRUE
++DRUNTIME_CPU_RISCV64_FALSE
++DRUNTIME_CPU_RISCV64_TRUE
 +DRUNTIME_CPU_SPARC64_FALSE
 +DRUNTIME_CPU_SPARC64_TRUE
  DRUNTIME_CPU_MIPS_FALSE
  DRUNTIME_CPU_MIPS_TRUE
  DRUNTIME_CPU_LOONGARCH_FALSE
-@@ -14701,6 +14703,9 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -14701,6 +14705,12 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
        powerpc*)
                 druntime_target_cpu_parsed="powerpc"
                 ;;
++      riscv64*)
++               druntime_target_cpu_parsed="riscv64"
++               ;;
 +      sparc64)
 +               druntime_target_cpu_parsed="sparc64"
 +               ;;
        i[34567]86|x86_64)
                 druntime_target_cpu_parsed="x86"
                 ;;
-@@ -14751,6 +14756,14 @@ else
+@@ -14751,6 +14761,22 @@ else
    DRUNTIME_CPU_POWERPC_FALSE=
  fi
  
++   if test "$druntime_target_cpu_parsed" = "riscv64"; then
++  DRUNTIME_CPU_RISCV64_TRUE=
++  DRUNTIME_CPU_RISCV64_FALSE='#'
++else
++  DRUNTIME_CPU_RISCV64_TRUE='#'
++  DRUNTIME_CPU_RISCV64_FALSE=
++fi
++
 +   if test "$druntime_target_cpu_parsed" = "sparc64"; then
 +  DRUNTIME_CPU_SPARC64_TRUE=
 +  DRUNTIME_CPU_SPARC64_FALSE='#'
@@ -38,24 +51,34 @@ Index: libphobos/configure
     if test "$druntime_target_cpu_parsed" = "x86"; then
    DRUNTIME_CPU_X86_TRUE=
    DRUNTIME_CPU_X86_FALSE='#'
-@@ -15813,7 +15826,8 @@ fi
+@@ -15813,7 +15839,9 @@ fi
      aarch64* | \
      arm* | \
      i[34567]86|x86_64 | \
 -    powerpc)
 +    sparc64* | \
++    riscv64* | \
 +    powerpc*)
        druntime_fiber_asm_external=yes
        ;;
    esac
-@@ -16454,6 +16468,10 @@ Usually this means the macro was only invoked conditio
- fi
- if test -z "${DRUNTIME_CPU_POWERPC_TRUE}" && test -z "${DRUNTIME_CPU_POWERPC_FALSE}"; then
+@@ -16456,6 +16484,14 @@ if test -z "${DRUNTIME_CPU_POWERPC_TRUE}" && test -z "
    as_fn_error $? "conditional \"DRUNTIME_CPU_POWERPC\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
+ fi
++if test -z "${DRUNTIME_CPU_RISCV64_TRUE}" && test -z "${DRUNTIME_CPU_RISCV64_FALSE}"; then
++  as_fn_error $? "conditional \"DRUNTIME_CPU_RISCV64\" was never defined.
 +Usually this means the macro was only invoked conditionally." "$LINENO" 5
 +fi
 +if test -z "${DRUNTIME_CPU_SPARC64_TRUE}" && test -z "${DRUNTIME_CPU_SPARC64_FALSE}"; then
 +  as_fn_error $? "conditional \"DRUNTIME_CPU_SPARC64\" was never defined.
- Usually this means the macro was only invoked conditionally." "$LINENO" 5
- fi
++Usually this means the macro was only invoked conditionally." "$LINENO" 5
++fi
  if test -z "${DRUNTIME_CPU_X86_TRUE}" && test -z "${DRUNTIME_CPU_X86_FALSE}"; then
+   as_fn_error $? "conditional \"DRUNTIME_CPU_X86\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
+@@ -18975,4 +19011,3 @@ if test -n "$ac_unrecognized_opts" && test "$enable_op
+   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+ fi
+-
