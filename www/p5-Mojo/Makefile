@@ -1,8 +1,9 @@
 COMMENT =	next generation web framework for Perl
 
 MODULES =	cpan
+CPAN_AUTHOR =	SRI
 PKG_ARCH =	*
-DISTNAME =	Mojolicious-9.42
+DISTNAME =	Mojolicious-9.48
 CATEGORIES =	www
 
 # Artistic 2.0
