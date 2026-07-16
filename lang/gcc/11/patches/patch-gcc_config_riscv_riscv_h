@@ -1,0 +1,30 @@
+RISC-V: far-branch: Handle far jumps and branches for functions larger than 1MB
+
+https://github.com/gcc-mirror/gcc/commit/71f906498ada9ec2780660b03bd6e27a93ad350c
+
+Index: gcc/config/riscv/riscv.h
+--- gcc/config/riscv/riscv.h.orig
++++ gcc/config/riscv/riscv.h
+@@ -286,11 +286,11 @@ ASM_MISA_SPEC
+ 
+ #define FIRST_PSEUDO_REGISTER 66
+ 
+-/* x0, sp, gp, and tp are fixed.  */
++/* x0, ra, sp, gp, and tp are fixed.  */
+ 
+ #define FIXED_REGISTERS							\
+ { /* General registers.  */						\
+-  1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,			\
++  1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,			\
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,			\
+   /* Floating-point registers.  */					\
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,			\
+@@ -304,7 +304,7 @@ ASM_MISA_SPEC
+ 
+ #define CALL_USED_REGISTERS						\
+ { /* General registers.  */						\
+-  1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1,			\
++  1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1,			\
+   1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1,			\
+   /* Floating-point registers.  */					\
+   1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1,			\

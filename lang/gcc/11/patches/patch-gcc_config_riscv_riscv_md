@@ -1,0 +1,166 @@
+RISC-V: far-branch: Handle far jumps and branches for functions larger than 1MB
+
+https://github.com/gcc-mirror/gcc/commit/71f906498ada9ec2780660b03bd6e27a93ad350c
+
+Index: gcc/config/riscv/riscv.md
+--- gcc/config/riscv/riscv.md.orig
++++ gcc/config/riscv/riscv.md
+@@ -140,7 +140,9 @@
+ 
+ ;; Classification of each insn.
+ ;; branch	conditional branch
+-;; jump		unconditional jump
++;; jump		unconditional direct jump
++;; jalr		unconditional indirect jump
++;; ret		various returns, no arguments
+ ;; call		unconditional call
+ ;; load		load instruction(s)
+ ;; fpload	floating point load
+@@ -168,7 +170,7 @@
+ ;; nop		no operation
+ ;; ghost	an instruction that produces no real code
+ (define_attr "type"
+-  "unknown,branch,jump,call,load,fpload,store,fpstore,
++  "unknown,branch,jump,jalr,ret,call,load,fpload,store,fpstore,
+    mtc,mfc,const,arith,logical,shift,slt,imul,idiv,move,fmove,fadd,fmul,
+    fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,ghost"
+   (cond [(eq_attr "got" "load") (const_string "load")
+@@ -204,11 +206,22 @@
+ ;; Length of instruction in bytes.
+ (define_attr "length" ""
+    (cond [
++	  ;; Branches further than +/- 1 MiB require three instructions.
+ 	  ;; Branches further than +/- 4 KiB require two instructions.
+ 	  (eq_attr "type" "branch")
+ 	  (if_then_else (and (le (minus (match_dup 0) (pc)) (const_int 4088))
+ 				  (le (minus (pc) (match_dup 0)) (const_int 4092)))
+ 	  (const_int 4)
++	  (if_then_else (and (le (minus (match_dup 0) (pc)) (const_int 1048568))
++				  (le (minus (pc) (match_dup 0)) (const_int 1048572)))
++	  (const_int 8)
++	  (const_int 12)))
++
++	  ;; Jumps further than +/- 1 MiB require two instructions.
++	  (eq_attr "type" "jump")
++	  (if_then_else (and (le (minus (match_dup 0) (pc)) (const_int 1048568))
++				  (le (minus (pc) (match_dup 0)) (const_int 1048572)))
++	  (const_int 4)
+ 	  (const_int 8))
+ 
+ 	  ;; Conservatively assume calls take two instructions (AUIPC + JALR).
+@@ -1863,7 +1876,12 @@
+ 	 (label_ref (match_operand 0 "" ""))
+ 	 (pc)))]
+   ""
+-  "b%C1\t%2,%z3,%0"
++{
++  if (get_attr_length (insn) == 12)
++    return "b%N1\t%2,%z3,1f; jump\t%l0,ra; 1:";
++
++  return "b%C1\t%2,%z3,%l0";
++}
+   [(set_attr "type" "branch")
+    (set_attr "mode" "none")])
+ 
+@@ -2137,10 +2155,16 @@
+ ;; Unconditional branches.
+ 
+ (define_insn "jump"
+-  [(set (pc)
+-	(label_ref (match_operand 0 "" "")))]
++  [(set (pc) (label_ref (match_operand 0 "" "")))]
+   ""
+-  "j\t%l0"
++{
++  /* Hopefully this does not happen often as this is going
++     to clobber $ra and muck up the return stack predictors.  */
++  if (get_attr_length (insn) == 8)
++    return "call\t%l0";
++
++  return "j\t%l0";
++}
+   [(set_attr "type"	"jump")
+    (set_attr "mode"	"none")])
+ 
+@@ -2160,7 +2184,7 @@
+   [(set (pc) (match_operand:P 0 "register_operand" "l"))]
+   ""
+   "jr\t%0"
+-  [(set_attr "type" "jump")
++  [(set_attr "type" "jalr")
+    (set_attr "mode" "none")])
+ 
+ (define_expand "tablejump"
+@@ -2185,7 +2209,7 @@
+    (use (label_ref (match_operand 1 "" "")))]
+   ""
+   "jr\t%0"
+-  [(set_attr "type" "jump")
++  [(set_attr "type" "jalr")
+    (set_attr "mode" "none")])
+ 
+ ;;
+@@ -2245,7 +2269,7 @@
+ {
+   return riscv_output_return ();
+ }
+-  [(set_attr "type"	"jump")
++  [(set_attr "type"	"jalr")
+    (set_attr "mode"	"none")])
+ 
+ ;; Normal return.
+@@ -2255,7 +2279,7 @@
+    (use (match_operand 0 "pmode_register_operand" ""))]
+   ""
+   "jr\t%0"
+-  [(set_attr "type"	"jump")
++  [(set_attr "type"	"jalr")
+    (set_attr "mode"	"none")])
+ 
+ ;; This is used in compiling the unwind routines.
+@@ -2306,7 +2330,8 @@
+   "#"
+   "epilogue_completed"
+   [(const_int 0)]
+-  "riscv_expand_epilogue (EXCEPTION_RETURN); DONE;")
++  "riscv_expand_epilogue (EXCEPTION_RETURN); DONE;"
++  [(set_attr "type" "ret")])
+ 
+ ;;
+ ;;  ....................
+@@ -2463,7 +2488,8 @@
+    (use (match_operand 0 "pmode_register_operand" ""))
+    (const_int 0)]
+   ""
+-  "")
++  ""
++  [(set_attr "type" "ret")])
+ 
+ (define_insn "riscv_frflags"
+   [(set (match_operand:SI 0 "register_operand" "=r")
+@@ -2480,19 +2506,22 @@
+   [(return)
+    (unspec_volatile [(const_int 0)] UNSPECV_MRET)]
+   ""
+-  "mret")
++  "mret"
++  [(set_attr "type" "ret")])
+ 
+ (define_insn "riscv_sret"
+   [(return)
+    (unspec_volatile [(const_int 0)] UNSPECV_SRET)]
+   ""
+-  "sret")
++  "sret"
++  [(set_attr "type" "ret")])
+ 
+ (define_insn "riscv_uret"
+   [(return)
+    (unspec_volatile [(const_int 0)] UNSPECV_URET)]
+   ""
+-  "uret")
++  "uret"
++  [(set_attr "type" "ret")])
+ 
+ (define_insn "stack_tie<mode>"
+   [(set (mem:BLK (scratch))

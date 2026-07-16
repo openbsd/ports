@@ -4,7 +4,7 @@ Add fibers for powerpc64 ELFv2, and fix fibers for 32-bit powerpc ELF.
 The old code was for some other platform (AIX?), not BSD nor Linux.
 This patch fixes OpenBSD but might break the other platform.
 
-Add fibers for sparc64 ELF for OpenBSD only.
+Add fibers for riscv64 and sparc64 ELF for OpenBSD only.
 
 Index: libphobos/libdruntime/core/thread/fiber.d
 --- libphobos/libdruntime/core/thread/fiber.d.orig
@@ -26,7 +26,7 @@ Index: libphobos/libdruntime/core/thread/fiber.d
              version = AlignFiberStackTo16Byte;
          }
      }
-@@ -172,6 +175,11 @@ private
+@@ -172,8 +175,22 @@ private
      }
      else version (SPARC64)
      {
@@ -37,17 +37,30 @@ Index: libphobos/libdruntime/core/thread/fiber.d
 +        }
          version = AlignFiberStackTo16Byte;
      }
++    else version (RISCV64)
++    {
++        version (Posix)
++        {
++            version = AsmRISCV64_Posix;
++            version = AsmExternal;
++            version = AlignFiberStackTo16Byte;
++        }
++    }
  
-@@ -236,6 +244,8 @@ private
+     version (Posix)
+     {
+@@ -236,6 +253,10 @@ private
        extern (C) void fiber_switchContext( void** oldp, void* newp ) nothrow @nogc;
        version (AArch64)
            extern (C) void fiber_trampoline() nothrow;
 +      version (SPARC64)
 +          extern (C) void fiber_trampoline() nothrow;
++      version (RISCV64)
++          extern (C) void fiber_trampoline() nothrow;
    }
    else
      extern (C) void fiber_switchContext( void** oldp, void* newp ) nothrow @nogc
-@@ -1033,10 +1043,13 @@ class Fiber (private)
+@@ -1033,10 +1054,13 @@ class Fiber (private)
                  // Allocate more for the memory guard
                  sz += guardPageSize;
  
@@ -62,7 +75,7 @@ Index: libphobos/libdruntime/core/thread/fiber.d
                                 -1,
                                 0 );
                  if ( m_pmem == MAP_FAILED )
-@@ -1338,27 +1351,22 @@ class Fiber (private)
+@@ -1338,27 +1362,22 @@ class Fiber (private)
          }
          else version (AsmPPC_Posix)
          {
@@ -101,7 +114,7 @@ Index: libphobos/libdruntime/core/thread/fiber.d
              }
  
              assert( (cast(size_t) pstack & 0x0f) == 0 );
-@@ -1448,6 +1456,29 @@ class Fiber (private)
+@@ -1448,6 +1467,46 @@ class Fiber (private)
              pstack -= size_t.sizeof * 11;    // skip past x19-x29
              push(cast(size_t) &fiber_trampoline); // see threadasm.S for docs
              pstack += size_t.sizeof;         // adjust sp (newp) above lr
@@ -127,6 +140,23 @@ Index: libphobos/libdruntime/core/thread/fiber.d
 +            (cast(ubyte*)pstack - (FRAME_SIZE + RSA))[0 .. FRAME_SIZE + RSA] = 0;
 +            pstack -= FRAME_SIZE + RSA;
 +            *cast(size_t*)(pstack + RSA) = cast(size_t) &fiber_trampoline - 8;
++            pstack += TSTACK_OFFSET;
++        }
++        else version (AsmRISCV64_Posix)
++        {
++            // FP regs and return address are kept below tstack to hide from GC.
++            // See switchcontext.S for frame layout. tstack points to s0.
++            version (StackGrowsDown) {}
++            else
++                static assert(false, "Only full descending stacks supported on RISCV64");
++
++            enum FRAME_SIZE = 208;
++            enum TSTACK_OFFSET = 112;
++            enum RA_OFFSET = 96;
++
++            (cast(ubyte*)pstack - FRAME_SIZE)[0 .. FRAME_SIZE] = 0;
++            pstack -= FRAME_SIZE;
++            *cast(size_t*)(pstack + RA_OFFSET) = cast(size_t) &fiber_trampoline;
 +            pstack += TSTACK_OFFSET;
          }
          else version (AsmARM_Posix)

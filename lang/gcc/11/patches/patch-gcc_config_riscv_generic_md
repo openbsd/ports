@@ -1,0 +1,16 @@
+RISC-V: far-branch: Handle far jumps and branches for functions larger than 1MB
+
+https://github.com/gcc-mirror/gcc/commit/71f906498ada9ec2780660b03bd6e27a93ad350c
+
+Index: gcc/config/riscv/generic.md
+--- gcc/config/riscv/generic.md.orig
++++ gcc/config/riscv/generic.md
+@@ -47,7 +47,7 @@
+ 
+ (define_insn_reservation "generic_branch" 1
+   (and (eq_attr "tune" "generic")
+-       (eq_attr "type" "branch,jump,call"))
++       (eq_attr "type" "branch,jump,call,jalr"))
+   "alu")
+ 
+ (define_insn_reservation "generic_imul" 10

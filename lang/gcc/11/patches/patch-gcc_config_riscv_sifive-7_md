@@ -1,0 +1,16 @@
+RISC-V: far-branch: Handle far jumps and branches for functions larger than 1MB
+
+https://github.com/gcc-mirror/gcc/commit/71f906498ada9ec2780660b03bd6e27a93ad350c
+
+Index: gcc/config/riscv/sifive-7.md
+--- gcc/config/riscv/sifive-7.md.orig
++++ gcc/config/riscv/sifive-7.md
+@@ -44,7 +44,7 @@
+ 
+ (define_insn_reservation "sifive_7_jump" 1
+   (and (eq_attr "tune" "sifive_7")
+-       (eq_attr "type" "jump,call"))
++       (eq_attr "type" "jump,call,jalr"))
+   "sifive_7_B")
+ 
+ (define_insn_reservation "sifive_7_mul" 3

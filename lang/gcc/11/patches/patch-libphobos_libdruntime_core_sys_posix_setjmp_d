@@ -1,7 +1,7 @@
 Index: libphobos/libdruntime/core/sys/posix/setjmp.d
 --- libphobos/libdruntime/core/sys/posix/setjmp.d.orig
 +++ libphobos/libdruntime/core/sys/posix/setjmp.d
-@@ -265,6 +265,10 @@ else version (OpenBSD)
+@@ -265,10 +265,18 @@ else version (OpenBSD)
      {
          enum _JBLEN = 100;
      }
@@ -12,7 +12,15 @@ Index: libphobos/libdruntime/core/sys/posix/setjmp.d
      else version (MIPS64)
      {
          enum _JBLEN = 83;
-@@ -276,6 +280,10 @@ else version (OpenBSD)
+     }
++    else version (RISCV64)
++    {
++        enum _JBLEN = 32;
++    }
+     else version (SPARC)
+     {
+         enum _JBLEN = 10;
+@@ -276,6 +284,10 @@ else version (OpenBSD)
      else version (SPARC64)
      {
          enum _JBLEN = 14;
