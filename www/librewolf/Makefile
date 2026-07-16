@@ -13,7 +13,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # If upstream adds revision number -x, it will become plx in OpenBSD, e.g.
 # librewolf-149.0.2-2 (upstream) becomes librewolf-149.0.2pl2 (patch level 2)
-MOZILLA_DIST_VERSION =	152.0.2-1
+MOZILLA_DIST_VERSION =	152.0.6-1
 MOZILLA_VERSION =	${MOZILLA_DIST_VERSION:C/-([0-9]+)$/pl\1/}
 
 MOZILLA_PROJECT =	librewolf
