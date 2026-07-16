@@ -12,10 +12,8 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.96.0
+V =			1.97.1
 DISTNAME =		rustc-${V}-src
-
-REVISION-gdb =		0
 
 # always keep REVISION-bootstrap in sync with REVISION-main (if defined)
 # (setting only REVISION is also properly managed)
@@ -24,11 +22,11 @@ REVISION-bootstrap =	${REVISION-main}
 .endif
 
 # rustc bootstrap version
-BV-aarch64 =		1.95.0
-BV-amd64 =		1.96.0
+BV-aarch64 =		1.96.0
+BV-amd64 =		1.97.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.95.0
-BV-sparc64 =		1.95.0
+BV-riscv64 =		1.96.0
+BV-sparc64 =		1.96.0
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -88,7 +86,8 @@ TRIPLE_ARCH-riscv64 =	riscv64gc-unknown-openbsd
 TRIPLE_ARCH-sparc64 =	sparc64-unknown-openbsd
 TRIPLE_ARCH =	${TRIPLE_ARCH-${MACHINE_ARCH}}
 
-USE_EMB_LLVM ?=		No
+# one of "base", "embedded", "ports"
+RUST_LLVM_VERSION ?=	ports
 
 # flags to use when building LLVM
 LLVMCXXFLAGS-aarch64 =	-fno-ret-protector
@@ -146,18 +145,26 @@ BUILD_DEPENDS +=	shells/bash
 BUILD_DEPENDS +=	devel/ninja
 BUILD_DEPENDS +=	devel/gdb
 
-.if !${USE_EMB_LLVM:L:Myes}
+.if ${RUST_LLVM_VERSION:L:Mbase}
+ERRORS +=	"RUST_LLVM_VERSION=base is unsupported for now"
+
+.elif ${RUST_LLVM_VERSION:L:Mports}
 MODULES +=			lang/clang
-MODCLANG_VERSION =		21
+MODCLANG_VERSION =		22
 MODCLANG_COMPILER_LINKS =	No
+
+# /!\ keep patch on src/etc/rust-lldb in sync
 
 # (BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk)
 . if ${BUILD_LLDB:L} == yes
 RUN_DEPENDS-gdb +=	devel/llvm/${MODCLANG_VERSION},-lldb
 . endif
 
-.else
+.elif ${RUST_LLVM_VERSION:L:Membedded}
 WANTLIB-main +=		execinfo
+
+.else
+ERRORS +=	"invalid RUST_LLVM_VERSION value"
 .endif
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
@@ -257,9 +264,14 @@ do-configure:
 		>>${WRKBUILD}/config.toml
 
 	echo '[target.${TRIPLE_ARCH}]' >>${WRKBUILD}/config.toml
-.if !${USE_EMB_LLVM:L:Myes}
+.if ${RUST_LLVM_VERSION:L:Mbase}
+	echo 'llvm-config = "/usr/bin/llvm-config"' \
+		>>${WRKBUILD}/config.toml
+.elif ${RUST_LLVM_VERSION:L:Mports}
 	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION}"' \
 		>>${WRKBUILD}/config.toml
+.elif ${RUST_LLVM_VERSION:L:Membedded}
+	# empty
 .endif
 
 BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
