@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portimport,v 1.10 2020/02/19 17:53:18 sthen Exp $
+# $OpenBSD: portimport,v 1.11 2026/07/16 12:19:27 jca Exp $
 # Copyright (c) 2013 Robert Peichaer
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -55,7 +55,10 @@ if $error; then
 	[[ $ans == +(y|Y) ]] || exit 1
 fi
 
-portsdir=${portsdir:-${PWD%"/$pkgpath"}}
+if [ -z "$portsdir" ]; then
+	portsdir=${PWD%"/$pkgpath"}
+	portsdir=${portsdir%/mystuff}
+fi
 timestamp=$(date '+%Y%m%d')
 cvsroot=$user@cvs.openbsd.org:/cvs
 
@@ -71,7 +74,7 @@ if [[ $ans == +(y|Y) ]]; then
 	cvs -d$cvsroot import ports/$pkgpath $user ${user}_$timestamp
 	grep -q "^@new" pkg/P* && echo "New users/groups, remember to commit infrastructure/db/user.list!"
 	cd "$portsdir/${pkgpath%/*}"
-	cvs -R -d$cvsroot update -AdP ${pkgpath##*/}
+	cvs -d$cvsroot update -AdP ${pkgpath##*/}
 	echo "Don't forget to commit the ${pkgpath%/*}/Makefile when you're done!"
 	pwd
 fi
