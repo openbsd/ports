@@ -1,4 +1,6 @@
 COMMENT=	CLI to work with Protomaps PMTiles archives
+# modernc.org/sqlite@v1.46.2 fails
+NOT_FOR_ARCHS=	armv7 i386
 
 V=		1.31.1
 MODGO_MODNAME=	github.com/protomaps/go-pmtiles
