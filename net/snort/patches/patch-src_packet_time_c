@@ -1,0 +1,26 @@
+snort.c:1646:24: error: incompatible pointer types passing 'const struct bpf_timeval *' to parameter of type 'const struct timeval *'
+
+Index: src/packet_time.c
+--- src/packet_time.c.orig
++++ src/packet_time.c
+@@ -37,9 +37,9 @@
+ 
+ #include "packet_time.h"
+ 
+-static struct timeval s_recent_packet = { 0, 0 };
++static struct bpf_timeval s_recent_packet = { 0, 0 };
+ 
+-void packet_time_update(const struct timeval *cur_tv)
++void packet_time_update(const struct bpf_timeval *cur_tv)
+ {
+     s_recent_packet = *cur_tv;
+ }
+@@ -49,7 +49,7 @@ time_t packet_time(void)
+     return s_recent_packet.tv_sec;
+ }
+ 
+-void packet_gettimeofday(struct timeval *tv)
++void packet_gettimeofday(struct bpf_timeval *tv)
+ {
+     *tv = s_recent_packet;
+ }

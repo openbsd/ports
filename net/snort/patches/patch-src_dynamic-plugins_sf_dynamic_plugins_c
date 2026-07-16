@@ -1,0 +1,14 @@
+sf_dynamic_plugins.c:1844:25: error: incompatible pointer types passing 'struct timeval *' to parameter of type 'struct bpf_timeval *'
+
+Index: src/dynamic-plugins/sf_dynamic_plugins.c
+--- src/dynamic-plugins/sf_dynamic_plugins.c.orig
++++ src/dynamic-plugins/sf_dynamic_plugins.c
+@@ -1839,7 +1839,7 @@ time_t DynamicPktTime(void)
+     return packet_time();
+ }
+ 
+-void DynamicGetPktTimeOfDay(struct timeval *tv)
++void DynamicGetPktTimeOfDay(struct bpf_timeval *tv)
+ {
+     packet_gettimeofday(tv);
+ }

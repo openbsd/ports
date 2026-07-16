@@ -1,6 +1,26 @@
+snort_stream_tcp.c:6721:26: error: incompatible pointer types passing 'const struct bpf_timeval *' to parameter of type 'const struct timeval *'
+
 Index: src/preprocessors/Stream6/snort_stream_tcp.c
 --- src/preprocessors/Stream6/snort_stream_tcp.c.orig
 +++ src/preprocessors/Stream6/snort_stream_tcp.c
+@@ -354,7 +354,7 @@ typedef struct _StreamSegment
+ #ifdef DEBUG
+     int ordinal;
+ #endif
+-    struct timeval tv;
++    struct bpf_timeval tv;
+     uint32_t caplen;
+     uint32_t pktlen;
+ 
+@@ -6600,7 +6600,7 @@ static inline int SegmentFastTrack(StreamSegment *tail
+ }
+ 
+ static inline StreamSegment* SegmentAlloc (
+-        Packet* p, const struct timeval* tv, uint32_t caplen, uint32_t pktlen, const uint8_t* pkt)
++        Packet* p, const struct bpf_timeval* tv, uint32_t caplen, uint32_t pktlen, const uint8_t* pkt)
+ {
+     StreamSegment* ss;
+     unsigned size = sizeof(*ss);
 @@ -8953,7 +8953,7 @@ static int ProcessTcp(SessionControlBlock *scb, Packet
                          char src_addr[17];
                          char dst_addr[17];

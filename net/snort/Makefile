@@ -1,5 +1,3 @@
-BROKEN =		bpf_timeval vs timeval mix-ups result in failure with llvm22
-
 COMMENT =		highly flexible sniffer/NIDS
 
 DISTNAME =		snort-2.9.20
@@ -10,8 +8,6 @@ SUBST_VARS =		RULESV APPID_COMMENT
 CATEGORIES =		net security
 
 HOMEPAGE =		https://www.snort.org/
-
-MAINTAINER =		Markus Lude <markus.lude@gmx.de>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
