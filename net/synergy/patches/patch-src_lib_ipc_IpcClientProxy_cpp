@@ -1,4 +1,4 @@
-On loongson/sparc64/hppa/riscv:
+On octeon/sparc64/hppa/riscv:
 Same as IpcServerProxy.cpp
 
 Index: src/lib/ipc/IpcClientProxy.cpp

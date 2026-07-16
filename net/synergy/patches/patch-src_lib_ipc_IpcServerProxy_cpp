@@ -1,4 +1,4 @@
-On loongson/sparc64/hppa/riscv:
+On octeon/sparc64/hppa/riscv:
 CIpcServerProxy.cpp: In member function 'void CIpcServerProxy::send(const CIpcMessage&)':
 CIpcServerProxy.cpp:93: ISO C++ says that these are ambiguous, even though the worst conversion for the first is better than the worst conversion for the second:
 ../synergy/CProtocolUtil.h:81: note: candidate 1: static void CProtocolUtil::writef(void*, const char*, void*)
