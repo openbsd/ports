@@ -4,7 +4,7 @@ SHA256 (kvspb-nginx-auth-ldap-83c059b73566c2ee9cbda920d91b66657cf120b7.tar.gz) =
 SHA256 (leev-ngx_http_geoip2_module-3.4.tar.gz) = rXL8IzSNcVozCZSYRTH6ubNgbhYEgyNnN/mkppV9lFI=
 SHA256 (nbs-system-naxsi-d714f1636ea49a9a9f4f06dba14aee003e970834.tar.gz) = 2+IXdBFFfxy6mO5Gc84xh2mUrQa9zl7MDuZjhO8OQg4=
 SHA256 (nginx-1.30.0-chroot.patch) = verI7zwpFLZwG4rOIswpPlZUB1if66TDGL3HN2/RUAU=
-SHA256 (nginx-1.30.3.tar.gz) = 5YI9xvRWEJk975Pr9s/OaCZK9JWMd+h0t9IPNwkAG48=
+SHA256 (nginx-1.30.4.tar.gz) = QmHckOnkfBxAQSdumqo9SOvi5mT3KOFPqVrmxn1XoIs=
 SHA256 (nginx-modules-ngx_http_hmac_secure_link_module-48c4625fbbf51ed5a95bfec23fa444f6c3702e50.tar.gz) = ZXpA2rODS1enIREzlD1OqWwpWcv3NOUXH4eUOgOAmqg=
 SHA256 (nginx-njs-0.9.1.tar.gz) = YTZe6mnGhi/IpbXfUxUDrklJn2vNWvkySWuEhQooJKQ=
 SHA256 (openresty-headers-more-nginx-module-v0.34.tar.gz) = DA0s7SzolbP0XrKyMM2QUIqyp3MpnxU94UpD5EwSCbM=
@@ -17,7 +17,7 @@ SIZE (kvspb-nginx-auth-ldap-83c059b73566c2ee9cbda920d91b66657cf120b7.tar.gz) = 1
 SIZE (leev-ngx_http_geoip2_module-3.4.tar.gz) = 8877
 SIZE (nbs-system-naxsi-d714f1636ea49a9a9f4f06dba14aee003e970834.tar.gz) = 237272
 SIZE (nginx-1.30.0-chroot.patch) = 8217
-SIZE (nginx-1.30.3.tar.gz) = 1325830
+SIZE (nginx-1.30.4.tar.gz) = 1328314
 SIZE (nginx-modules-ngx_http_hmac_secure_link_module-48c4625fbbf51ed5a95bfec23fa444f6c3702e50.tar.gz) = 6159
 SIZE (nginx-njs-0.9.1.tar.gz) = 966480
 SIZE (openresty-headers-more-nginx-module-v0.34.tar.gz) = 28827
