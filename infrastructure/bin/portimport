@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portimport,v 1.11 2026/07/16 12:19:27 jca Exp $
+# $OpenBSD: portimport,v 1.12 2026/07/16 12:21:27 jca Exp $
 # Copyright (c) 2013 Robert Peichaer
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -46,7 +46,7 @@ shift $(($OPTIND - 1))
 
 error=false
 pkgpath=$(portcheck "${portcheck_args[@]}") || error=true
-if test -z $pkgpath; then
+if test -z "$pkgpath"; then
 	echo >&2 "Can't determine pkgpath"
 	exit 1
 fi
