@@ -41,6 +41,6 @@ CONFIGURE_ARGS =	-DBUILD_WITH_QT6=ON \
 
 post-configure:
 	chmod +x ${WRKSRC}/translations/lrelease.sh
-	cd ${WRKSRC}/translations/filters && gmake
+	cd ${WRKSRC}/translations/filters && PATH="${MODQT_LIBDIR}/bin:$$PATH" gmake
 
 .include <bsd.port.mk>
