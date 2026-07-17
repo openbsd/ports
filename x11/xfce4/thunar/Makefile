@@ -1,14 +1,14 @@
 COMMENT=	Xfce4 file manager
 
 XFCE_PROJECT=	thunar
-XFCE_VERSION=	4.20.8
+XFCE_VERSION=	4.20.9
 
 SHARED_LIBS=	thunarx-3	0.2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xau Xcomposite
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB += dbus-1 epoll-shim epoxy exif exo-2 expat ffi
