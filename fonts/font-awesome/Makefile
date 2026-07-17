@@ -7,7 +7,7 @@ DISTFILES =	fontawesome-free-${MODFONT_VERSION}-desktop.zip \
 		fontawesome-free-${MODFONT_VERSION}-web.zip
 
 MODFONT_FAMILY =	font-awesome
-MODFONT_VERSION =	7.3.0
+MODFONT_VERSION =	7.3.1
 
 HOMEPAGE =	https://fontawesome.com
 
