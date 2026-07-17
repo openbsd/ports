@@ -8,6 +8,8 @@ SHARED_LIBS =		python3.14 0.0
 VERSION_SPEC =		>=3.14
 PORTROACH =		limit:^3\.14
 
+REVISION-main =		0
+
 AUTOCONF_VERSION =	2.72
 
 # XXX - should come from expat_config.h, which isn't installed in base
