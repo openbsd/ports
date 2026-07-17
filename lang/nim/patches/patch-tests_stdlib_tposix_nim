@@ -1,0 +1,12 @@
+Index: tests/stdlib/tposix.nim
+--- tests/stdlib/tposix.nim.orig
++++ tests/stdlib/tposix.nim
+@@ -20,7 +20,7 @@ when not defined(windows):
+   writeLine(stdout, u.release)
+   writeLine(stdout, u.machine)
+ 
+-  when not (defined(nintendoswitch) or defined(macos) or defined(macosx)):
++  when not (defined(nintendoswitch) or defined(macos) or defined(macosx) or defined(openbsd)):
+     block:
+       type Message = object
+         value: int

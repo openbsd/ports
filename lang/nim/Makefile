@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	amd64 arm64 i386
 
 COMMENT =		statically typed systems programming language
 
-DISTNAME =		nim-2.2.8
+DISTNAME =		nim-2.2.10
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		lang
@@ -12,19 +12,28 @@ SITES =			${HOMEPAGE}download/
 
 MAINTAINER =		Alfred Morgan <alfred@54.org>
 
-NIMBLE_CHECKSUMS_V =	0b8e46379c5bc1bf73d8b3011908389c60fb9b98
+NIMBLE_CHECKSUMS_V =	f8f6bd34bfa3fe12c64b919059ad856a96efcba0
 NIMBLE_ZIPPY_V =	a99f6a7d8a8e3e0213b3cad0daf0ea974bf58e3f
+NIMBLE_CHRONOS_V =	0646c444fce7c7ed08ef6f2c9a7abfd172ffe655
+NIMBLE_RESULTS_V =	df8113dda4c2d74d460a8fa98252b0b771bf1f27
+NIMBLE_STEW_V =	b66168735d6f3841c5239c3169d3fe5fe98b1257
 
-DIST_TUPLE =		github nim-lang atlas ff1f4289482dce94ba9f95b3b0ae16d16e21eb3d .
-DIST_TUPLE +=		github nim-lang nimble 9207e8b2bbdf66b5a4d1020214cff44d2d30df92 .
+DIST_TUPLE =		github nim-lang atlas 0.14.7 .
+DIST_TUPLE +=		github nim-lang nimble 42ef70c2102a942c46f13eb76872326edd525cec .
+DIST_TUPLE +=		github status-im nim-chronos ${NIMBLE_CHRONOS_V} .
+DIST_TUPLE +=		github arnetheduck nim-results ${NIMBLE_RESULTS_V} .
+DIST_TUPLE +=		github status-im nim-stew ${NIMBLE_STEW_V} .
 DIST_TUPLE +=		github nim-lang sat e63eaea8baf00bed8bcd5a29ffd8823abb265b39 .
 DIST_TUPLE +=		github nim-lang checksums ${NIMBLE_CHECKSUMS_V} .
 DIST_TUPLE +=		github guzba zippy ${NIMBLE_ZIPPY_V} .
 
-# MIT
+# MIT, BSD, Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c m pthread
+WANTLIB =		c crypto m pthread ssl
+
+ATLAS_SSL_FLAGS =	-d:libressl --dynlibOverride:ssl \
+			--passl:-lssl --passl:-lcrypto
 
 MODULES =		lang/python
 
@@ -42,9 +51,15 @@ post-extract:
 	rm -R ${WRKDIST}/dist/nimble
 	rm -R ${WRKDIST}/dist/checksums
 	mv ${WRKDIR}/nimble-* ${WRKDIST}/dist/nimble
-	rm -R ${WRKDIST}/dist/nimble/vendor/{checksums,zippy}
+	rm -R ${WRKDIST}/dist/nimble/vendor/{checksums,chronos,results,stew,zippy}
 	cp -r ${WRKDIR}/checksums-${NIMBLE_CHECKSUMS_V} \
 		${WRKDIST}/dist/nimble/vendor/checksums
+	mv ${WRKDIR}/nim-chronos-${NIMBLE_CHRONOS_V} \
+		${WRKDIST}/dist/nimble/vendor/chronos
+	mv ${WRKDIR}/nim-results-${NIMBLE_RESULTS_V} \
+		${WRKDIST}/dist/nimble/vendor/results
+	mv ${WRKDIR}/nim-stew-${NIMBLE_STEW_V} \
+		${WRKDIST}/dist/nimble/vendor/stew
 	mv ${WRKDIR}/zippy-${NIMBLE_ZIPPY_V} \
 		${WRKDIST}/dist/nimble/vendor/zippy
 	cp -r ${WRKDIR}/sat-*/* \
@@ -57,6 +72,7 @@ post-extract:
 post-patch:
 	mkdir -p ${WRKSRC}/nimcache-port
 	mkdir -p ${WRKSRC}/nimcache-port-test
+	mkdir -p ${WRKSRC}/nimcache-port-test-compiler
 	perl -i -pe "s#NIM_PORT_PATH#${PATH}#" ${WRKSRC}/koch.nim
 	perl -i -pe "s#NIM_PORT_CACHE#${WRKSRC}/nimcache-port-test#" \
 		${WRKSRC}/koch.nim
@@ -73,15 +89,24 @@ do-build:
 		--lib:lib --noNimblePath --skipUserCfg --skipParentCfg --hints:off \
 		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
 		--listCmd --putenv:"PATH=${PATH}" koch
-.for t in boot nimble tools
+.for t in boot nimble toolsnoexternal
 	cd ${WRKSRC} && ./koch $t -d:release --parallelBuild:${MAKE_JOBS} \
 		--lib:lib --skipUserCfg --skipParentCfg --hints:off \
 		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
 		--listCmd --putenv:"PATH=${PATH}"
 .endfor
 
+	cd ${WRKSRC} && ./koch atlas -d:release --parallelBuild:${MAKE_JOBS} \
+		--lib:lib --skipUserCfg --skipParentCfg --hints:off \
+		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
+		--listCmd --putenv:"PATH=${PATH}" ${ATLAS_SSL_FLAGS}
+
+	cd ${WRKSRC} && bin/nim c -o:bin/atlas-run -d:release \
+		--noNimblePath --lib:lib -d:nimAtlasBootstrap ${ATLAS_SSL_FLAGS} \
+		dist/atlas/src/atlasrun.nim
+
 do-install:
-.for b in atlas nim nimble nimgrep nimpretty nimsuggest testament
+.for b in atlas atlas-run nim nimble nimgrep nimpretty nimsuggest testament
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/$b ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/nim
@@ -94,8 +119,17 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/*.cfg ${PREFIX}/share/examples/nim
 
 # note that for some tests an internet connection is required
+# Testament's all and pcat dispatch each consume one leading compiler option.
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} ./koch tests all -d:release \
+	cd ${WRKSRC} && bin/nim c -o:${WRKSRC}/bin/nim-test \
+		-d:release -d:nimPortLibpath=${WRKSRC}/lib \
+		--lib:lib --noNimblePath --skipUserCfg --skipParentCfg \
+		--hints:off --parallelBuild:1 \
+		--nimcache:"${WRKSRC}/nimcache-port-test-compiler" \
+		compiler/nim.nim
+	cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} ./koch \
+		--nim:${WRKSRC}/bin/nim-test tests all \
+		--hints:off --hints:off -d:release --hints:off \
 		--parallelBuild:1 \
 		--nimcache:"${WRKSRC}/nimcache-port-test" \
 		--putenv:"PATH=${PATH}"

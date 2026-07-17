@@ -1,0 +1,12 @@
+Index: lib/std/typedthreads.nim
+--- lib/std/typedthreads.nim.orig
++++ lib/std/typedthreads.nim
+@@ -292,7 +292,7 @@ else:
+     ##
+     ## In other words sets a thread's `affinity`:idx:.
+     ## If you don't know what this means, you shouldn't use this proc.
+-    when not defined(macosx):
++    when not (defined(macosx) or defined(openbsd)):
+       var s {.noinit.}: CpuSet
+       cpusetZero(s)
+       cpusetIncl(cpu.cint, s)

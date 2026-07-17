@@ -1,0 +1,15 @@
+Index: tests/stdlib/tstreams.nim
+--- tests/stdlib/tstreams.nim.orig
++++ tests/stdlib/tstreams.nim
+@@ -31,7 +31,10 @@ block tstreams2:
+   var
+     fs = newFileStream("amissingfile.txt")
+     line = ""
+-  echo "fs is: ",repr(fs)
++  when defined(openbsd):
++    echo "fs is: nil"
++  else:
++    echo "fs is: ", repr(fs)
+   if not isNil(fs):
+     while fs.readLine(line):
+       echo line

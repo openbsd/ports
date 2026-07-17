@@ -1,12 +1,20 @@
 Index: compiler/options.nim
 --- compiler/options.nim.orig
 +++ compiler/options.nim
-@@ -576,7 +576,7 @@ proc newConfigRef*(): ConfigRef =
+@@ -21,6 +21,7 @@ when defined(nimPreviewSlimSystem):
+ 
+ 
+ const
++  nimPortLibpath {.strdefine.} = "${PREFIX}/lib/nim"
+   hasTinyCBackend* = defined(tinyc)
+   useEffectSystem* = true
+   useWriteTracking* = false
+@@ -576,7 +577,7 @@ proc newConfigRef*(): ConfigRef =
      outFile: RelativeFile"",
      outDir: AbsoluteDir"",
      prefixDir: AbsoluteDir"",
 -    libpath: AbsoluteDir"", nimcacheDir: AbsoluteDir"",
-+    libpath: AbsoluteDir"${PREFIX}/lib/nim", nimcacheDir: AbsoluteDir"",
++    libpath: AbsoluteDir nimPortLibpath, nimcacheDir: AbsoluteDir"",
      dllOverrides: newStringTable(modeCaseInsensitive),
      moduleOverrides: newStringTable(modeStyleInsensitive),
      cfileSpecificOptions: newStringTable(modeCaseSensitive),

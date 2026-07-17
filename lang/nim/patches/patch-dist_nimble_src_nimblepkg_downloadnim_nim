@@ -1,0 +1,46 @@
+Index: dist/nimble/src/nimblepkg/downloadnim.nim
+--- dist/nimble/src/nimblepkg/downloadnim.nim.orig
++++ dist/nimble/src/nimblepkg/downloadnim.nim
+@@ -114,25 +114,26 @@ proc isAppleSilicon*(): bool =
+ 
+ proc getPlatformString*(arch: int): string =
+   ## Returns the platform string used in releases.json (e.g., "linux_x64", "macosx_arm64")
+-  let os =
+-    when defined(windows):
+-      "windows"
+-    elif defined(linux):
+-      "linux"
+-    elif defined(macosx):
+-      "macosx"
+-    else:
+-      # For other platforms, fall back to source
+-      return "source_tar"
++  when defined(windows) or defined(linux) or defined(macosx):
++    let os =
++      when defined(windows):
++        "windows"
++      elif defined(linux):
++        "linux"
++      else:
++        "macosx"
+ 
+-  when defined(macosx):
+-    if isAppleSilicon():
+-      return os & "_arm64"
++    when defined(macosx):
++      if isAppleSilicon():
++        return os & "_arm64"
++      else:
++        return os & "_x64"
+     else:
+-      return os & "_x64"
++      # For Windows and Linux
++      return os & "_x" & $arch
+   else:
+-    # For Windows and Linux
+-    return os & "_x" & $arch
++    # For other platforms, fall back to source
++    return "source_tar"
+ 
+ proc getNightliesUrl*(parsedContents: JsonNode, arch: int): (string, string) =
+   let os =

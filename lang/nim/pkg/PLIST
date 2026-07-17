@@ -2,6 +2,7 @@
 @pkgpath lang/nimrod
 @sample ${SYSCONFDIR}/nim/
 @bin bin/atlas
+@bin bin/atlas-run
 @bin bin/nim
 @bin bin/nimble
 @bin bin/nimgrep

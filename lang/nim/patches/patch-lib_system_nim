@@ -1,0 +1,12 @@
+Index: lib/system.nim
+--- lib/system.nim.orig
++++ lib/system.nim
+@@ -1098,7 +1098,7 @@ when defined(boehmgc):
+   elif defined(macosx):
+     const boehmLib = "libgc.dylib"
+   elif defined(openbsd):
+-    const boehmLib = "libgc.so.(4|5).0"
++    const boehmLib = "libgc.so.8.0"
+   elif defined(freebsd):
+     const boehmLib = "libgc-threaded.so.1"
+   else:
