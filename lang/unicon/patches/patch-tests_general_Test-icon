@@ -1,0 +1,19 @@
+Index: tests/general/Test-icon
+--- tests/general/Test-icon.orig
++++ tests/general/Test-icon
+@@ -43,12 +43,12 @@ for F in $*; do
+    # Assume that NT in uname means Windows
+    if [ -n "$NT" ]; then
+        if test -r stand/$F.wstd; then
+-          diff -w stand/$F.wstd local/$F.out
++          diff -uw stand/$F.wstd local/$F.out
+       else
+-          diff -w stand/$F.std local/$F.out
++          diff -uw stand/$F.std local/$F.out
+       fi
+    else
+-       diff stand/$F.std local/$F.out
++       diff -u stand/$F.std local/$F.out
+    fi
+ 
+    # diff returns one if there is a difference

@@ -1,0 +1,13 @@
+Index: src/common/yylex.h
+--- src/common/yylex.h.orig
++++ src/common/yylex.h
+@@ -104,7 +104,9 @@ int yylex()
+ 
+    if (yytext == NULL) {
+       yytext = malloc(256);
++      yytext[0] = 0;
+       savedyytext = malloc(256);
++      savedyytext[0] = 0;
+       yytextsize = 256;
+       }
+ 

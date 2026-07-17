@@ -1,0 +1,12 @@
+Index: plugins/src/Makedefs
+--- plugins/src/Makedefs.orig
++++ plugins/src/Makedefs
+@@ -38,7 +38,7 @@ $(LIBD)/%.u: %.icn  $(TLIB)
+ 	rm $(LIBD)/$<
+ 
+ %.o: %.c
+-	$(CC) $(CFDYN2) -c $<
++	$(CC) $(CPPFLAGS) $(CFDYN2) -c $<
+ 
+ zip:
+ 	 zip $(LNAME).zip Makefile *.icn *.c *.h

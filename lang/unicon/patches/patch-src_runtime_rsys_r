@@ -1,0 +1,21 @@
+Index: src/runtime/rsys.r
+--- src/runtime/rsys.r.orig
++++ src/runtime/rsys.r
+@@ -1392,7 +1392,7 @@ void ptclose(struct ptstruct *ptStruct)
+ struct ptstruct *ptopen(char *command)
+ {
+    char **av;
+-#if defined(MacOS) || defined(FreeBSD)
++#if defined(MacOS) || defined(FreeBSD) || defined(OpenBSD)
+    char *tmps;
+ #endif                                  /* MacOS || FreeBSD */
+ #if NT
+@@ -1482,7 +1482,7 @@ struct ptstruct *ptopen(char *command)
+    if(ttyname_r(newPtStruct->master_fd,newPtStruct->slave_filename,
+                       sizeof(newPtStruct->slave_filename)) != 0) {
+ #else                                   /* SUN */
+-#if defined(MacOS) || defined(FreeBSD)
++#if defined(MacOS) || defined(FreeBSD) || defined(OpenBSD)
+    if (((tmps = ptsname(newPtStruct->master_fd)) == NULL) ||
+       (strlen(tmps) > sizeof(newPtStruct->slave_filename)-1) ||
+       (!strcpy(newPtStruct->slave_filename, tmps))){

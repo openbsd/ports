@@ -1,0 +1,20 @@
+Index: tests/Makefile.test
+--- tests/Makefile.test.orig
++++ tests/Makefile.test
+@@ -85,14 +85,14 @@ endif
+ 	diff -wq stand/$@.wstd local/$@.nr >/dev/null; \
+ 	if [ $$? -eq 0 ] ; then echo "w pass"; \
+ 	else echo "w FAIL"; \
+-	diff --suppress-common-lines -wy stand/$@.wstd local/$@.nr > $@.diff; fi \
++	diff -wu stand/$@.wstd local/$@.nr > $@.diff; fi \
+ 	else \
+ 	diff -wq stand/$@.std local/$@.nr >/dev/null; \
+ 	if [ $$? -eq 0 ] ; then echo "pass"; \
+ 	else \
+ 	if grep -qi "This Program Requires" local/$@.out; then cat local/$@.out; \
+ 	else echo "FAIL"; \
+-	diff --suppress-common-lines -wy stand/$@.std local/$@.nr > $@.diff; fi \
++	diff -wu stand/$@.std local/$@.nr > $@.diff; fi \
+ 	fi; \
+ 	rm -f local/$@.nr; \
+ 	fi || true

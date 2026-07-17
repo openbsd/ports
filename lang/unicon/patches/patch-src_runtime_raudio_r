@@ -1,0 +1,50 @@
+Index: src/runtime/raudio.r
+--- src/runtime/raudio.r.orig
++++ src/runtime/raudio.r
+@@ -89,6 +89,7 @@ int GetIndex()
+ void MixUnInitialize();
+ int MixInitialize();
+ int LinuxMixer(char * cmd);
++int OpenBSDMixer(char * cmd);
+ 
+ #if defined(WIN32) && defined(HAVE_LIBOGG)
+ WAVEFORMATEX waveformater;
+@@ -877,14 +878,37 @@ int AudioMixer(char * cmd)
+ #if NT
+    res = WinMixer(cmd);
+ #else
++#if OpenBSD
++   res = OpenBSDMixer(cmd);
++#else
+    res = LinuxMixer(cmd);
+ #endif
++#endif
+    MixUnInitialize();
+    return res;
+ }
+ 
++#if OpenBSD
++/* placeholder for now */
++
++int OpenMixer()
++{
++	return -1;
++}
++
++int CloseMixer()
++{
++	return 0;
++}
++
++int OpenBSDMixer(char *cmd)
++{
++	return 0;
++}
++#endif
++
+ /* Linux mixer based on the OSS system  */
+-#if !NT
++#if !NT && !OpenBSD
+ 
+ /* names of available mixer devices */
+ const char *sound_device_names[] = SOUND_DEVICE_NAMES;

@@ -1,0 +1,10 @@
+Index: src/iconc/param.c.in
+--- src/iconc/param.c.in.orig
++++ src/iconc/param.c.in
+@@ -0,0 +1,6 @@
++
++   buf = growcat(buf, &buflen, 4, 
++	" @CPPFLAGS@",
++	" @CFLAGS@",
++	" @ICONCCFLAGS@",
++	" @LDFLAGS@");

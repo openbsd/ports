@@ -2,3 +2,4 @@ Unicon is the latest generation of Icon. It features:
 - system functions to access directories, fork processes, etc,
 - object oriented features, and packages,
 - a larger library.
+- the return of the iconc compiler !

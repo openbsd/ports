@@ -1,0 +1,11 @@
+Index: tests/general/Test-icont
+--- tests/general/Test-icont.orig
++++ tests/general/Test-icont
+@@ -11,6 +11,6 @@ do
+       ../../bin/iconx $i >local/$i.out 2>&1
+    fi
+    echo Checking $i
+-   diff local/$i.out stand/$i.out
++   diff -u local/$i.out stand/$i.out
+    rm -f $i
+ done

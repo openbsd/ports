@@ -1,0 +1,15 @@
+Index: src/h/sys.h
+--- src/h/sys.h.orig
++++ src/h/sys.h
+@@ -176,7 +176,11 @@
+ #endif                                  /* PseudoPty || Audio */
+ #ifdef Audio
+    #include <sys/ioctl.h>
++#ifdef OpenBSD
++   #include <sndio.h>
++#else
+    #include <linux/soundcard.h>
++#endif
+    #include <pthread.h>
+ #endif                                  /* Audio */
+ #endif                                  /* UNIX */

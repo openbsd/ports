@@ -1,0 +1,80 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -98,6 +98,11 @@ case $host_os in
+         unicon_os="aix"
+         AC_DEFINE([UNIX], [1], [Unix platform])
+         ;;
++     *openbsd*)
++        unicon_os="openbsd"
++	AC_DEFINE([UNIX], [1], [Unix platform])
++	AC_DEFINE([OpenBSD], [1], [OpenBSD OS])
++        ;;
+      *bsd*)
+         # freebsd for now
+         unicon_os="freebsd"
+@@ -421,6 +426,9 @@ fi
+ #  AC_CFLAG([-Wmissing-declarations])
+ #fi
+ 
++# remove some noise for now
++AC_CFLAG([-Wno-deprecated-non-prototype])
++
+ # We always want these CFLAGS if available; the second one is necessary for a stable runtime
+ AC_CFLAG([-fno-omit-frame-pointer])
+ 
+@@ -432,6 +440,10 @@ if test x"$CC" = x"clang" || test x"$unicon_os" = x"ma
+    AC_CFLAG([-Werror -Wno-parentheses-equality], [], [CFLAGS="$CFLAGS -Wno-parentheses-equality"])
+    AC_CXXFLAG([-Werror -Wno-parentheses-equality], [], [CXXFLAGS="$CXXFLAGS -Wno-parentheses-equality"])
+ fi
++AC_CFLAG([-Werror -Wno-deprecated-non-prototype], [], [ICONCCFLAGS="$ICONCCFLAGS -Wno-deprecated-non-prototype"])
++AC_CFLAG([-Werror -Wno-parentheses-equality], [], [ICONCCFLAGS="$ICONCCFLAGS -Wno-parentheses-equality"])
++AC_CFLAG([-Werror -Wno-unused-value], [], [ICONCCFLAGS="$ICONCCFLAGS -Wno-unused-value"])
++AC_CFLAG([-Werror -Wno-return-type], [], [ICONCCFLAGS="$ICONCCFLAGS -Wno-return-type"])
+ 
+ #if test x"${enable_werror}" = x"yes" ; then
+ #  WERROR="-Werror"
+@@ -622,6 +634,7 @@ AC_SUBST(CFDYN)
+ AC_SUBST(LDDYN)
+ AC_SUBST(SO)
+ AC_SUBST(ICONCTARGET)
++AC_SUBST(ICONCCFLAGS)
+ 
+ AC_SUBST(UDBTOOLS)
+ AC_SUBST(UNIPROGS)
+@@ -778,12 +791,7 @@ if ! test "x$graphics" = "xno"; then
+        else
+           CHECK_OPENGL()
+        fi
+-       # A C++ compiler must be present and usable
+-       if test "x$CXX" = "xg++" -a "x$GXX" = "xyes"; then
+-         CHECK_FTGL()
+-       else
+-         echo "FTGL: missing or untrusted C++; CXX is $CXX and GXX is $GXX"
+-       fi
++       CHECK_FTGL()
+     else
+       AC_DEFINE([NoGraphics3D], [1], [No Graphics3D])
+     fi
+@@ -895,12 +903,7 @@ else
+ fi
+ 
+ if ! test "x$voip" = "xno"; then
+-    # A C++ compiler must be present and usable
+-    if test "$CXX" = "g++" -a "$GXX" = "yes"; then
+-      CHECK_VOICE()
+-    else
+-         echo "VOIP: missing or untrusted C++; CXX is $CXX and GXX is $GXX"
+-    fi
++    CHECK_VOICE()
+ else
+   AC_DEFINE([NoVoip], [1], [No VOIP])
+ fi
+@@ -987,6 +990,7 @@ AC_CONFIG_FILES([Makefile:Makefile.in],)
+ AC_CONFIG_FILES([Makedefs:Makedefs.in],)
+ AC_CONFIG_FILES([Makedefs.uni:Makedefs.uni.in],)
+ AC_CONFIG_HEADERS([src/h/auto.h:src/h/auto.in],)
++AC_CONFIG_FILES([src/iconc/param.c:src/iconc/param.c.in],)
+ 
+ 
+ AC_OUTPUT

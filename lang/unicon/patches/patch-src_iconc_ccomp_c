@@ -1,0 +1,21 @@
+Index: src/iconc/ccomp.c
+--- src/iconc/ccomp.c.orig
++++ src/iconc/ccomp.c
+@@ -323,6 +323,9 @@ Deliberate Syntax Error
+ #endif                                  /* NTGCC */
+ 
+ #if UNIX
++#include "param.c"
++#if OpenBSD
++#else
+ #ifdef MacOS
+    /* needs to be more precise, add a HAVE_LIBDL or some such */
+    buf = growcat(buf, &buflen, 1, " -ldl -Wl,-export_dynamic ");
+@@ -331,6 +334,7 @@ Deliberate Syntax Error
+    buf = growcat(buf, &buflen, 1, " -ldl -export-dynamic ");
+ #endif                                  /* MacOS */
+ #endif                                  /* UNIX */
++#endif
+ 
+ #endif                                  /* UNIX || NTGCC */
+ 
