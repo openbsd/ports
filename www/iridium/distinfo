@@ -202,7 +202,7 @@ SHA256 (cargo/zerotrie-0.2.4.tar.gz) = D5FS0x2weS+oP3D7L4MUjv+1wfW4x2hsNFnjYdm8I
 SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXsjk=
 SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhNvVKpLEBVU=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (iridium-browser-2026.07.150.2.tar.xz) = 2f9ku5hiKi3VWkF0dlWhelabGjI8/LJGTMUghqis5F4=
+SHA256 (iridium-browser-2026.07.150.3.tar.xz) = B4Rn9rMmD0OBW9Uv8e/e9zgdTWnzMZguuvI0uq6aJJQ=
 SHA256 (rollup-rollup-v4.60.4.tar.gz) = wSkyTs74OhxNgpyLh2dRxypvot/nB/MvC1XDEc8p7pE=
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -408,5 +408,5 @@ SIZE (cargo/zerotrie-0.2.4.tar.gz) = 83690
 SIZE (cargo/zerovec-0.11.6.tar.gz) = 128583
 SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (iridium-browser-2026.07.150.2.tar.xz) = 1487313832
+SIZE (iridium-browser-2026.07.150.3.tar.xz) = 1487263528
 SIZE (rollup-rollup-v4.60.4.tar.gz) = 2249970
