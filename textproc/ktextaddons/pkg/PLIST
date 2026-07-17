@@ -18,6 +18,7 @@ include/KF6/TextAddonsWidgets/TextAddonsWidgets/RichTextQuickTextFormat
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/SaveFileUtils
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/SelectSpecialCharDialog
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/SlideContainer
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/SortFilterProxyModelBase
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/TextMessageWidget
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/VerifyNewVersionWidget
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/WhatsNewComboBoxWidget
@@ -47,6 +48,7 @@ include/KF6/TextAddonsWidgets/textaddonswidgets/richtextquicktextformat.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/savefileutils.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/selectspecialchardialog.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/slidecontainer.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/sortfilterproxymodelbase.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/textaddonswidgets_export.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/textmessagewidget.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/verifynewversionwidget.h
