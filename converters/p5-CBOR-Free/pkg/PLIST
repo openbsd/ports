@@ -11,6 +11,7 @@ ${P5ARCH}/CBOR/Free/X/
 ${P5ARCH}/CBOR/Free/X.pm
 ${P5ARCH}/CBOR/Free/X/Base.pm
 ${P5ARCH}/CBOR/Free/X/CannotDecode64Bit.pm
+${P5ARCH}/CBOR/Free/X/DuplicateMapKey.pm
 ${P5ARCH}/CBOR/Free/X/Incomplete.pm
 ${P5ARCH}/CBOR/Free/X/InvalidControl.pm
 ${P5ARCH}/CBOR/Free/X/InvalidMapKey.pm
