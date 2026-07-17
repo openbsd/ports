@@ -95,4 +95,5 @@ CONFIGURE_ARGS +=	-DBUILD_KCM_MOUSE_X11=OFF \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+LIB_DEPENDS += devel/gettext,-runtime devel/glib2 devel/glib2,bootstrap 
 .include <bsd.port.mk>

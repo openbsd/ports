@@ -2,7 +2,7 @@ COMMENT =	components relating to pipewire use in Plasma
 
 DISTNAME =	kpipewire-${VERSION}
 
-SHARED_LIBS +=  KPipeWire                 1.0 # 0.0
+SHARED_LIBS +=  KPipeWire                 1.1 # 0.0
 SHARED_LIBS +=  KPipeWireDmaBuf           0.0 # 0.0
 SHARED_LIBS +=  KPipeWireRecord           0.2 # 0.0
 
