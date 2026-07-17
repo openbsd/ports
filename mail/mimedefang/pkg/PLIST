@@ -13,37 +13,48 @@ bin/mimedefang-util
 bin/mimedefang.pl
 bin/watch-mimedefang
 bin/watch-multiple-mimedefangs.tcl
-libdata/perl5/site_perl/Mail/MIMEDefang/
-libdata/perl5/site_perl/Mail/MIMEDefang.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/Actions.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/Antispam.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/Antivirus.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/Authres.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/DKIM/
-libdata/perl5/site_perl/Mail/MIMEDefang/DKIM.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/DKIM/ARC.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/MIME.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/Mail.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/Net.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/RFC2822.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/SPF.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/Unit.pm
-libdata/perl5/site_perl/Mail/MIMEDefang/Utils.pm
+${P5SITE}/Mail/MIMEDefang/
+${P5SITE}/Mail/MIMEDefang.pm
+${P5SITE}/Mail/MIMEDefang/Actions.pm
+${P5SITE}/Mail/MIMEDefang/Antispam.pm
+${P5SITE}/Mail/MIMEDefang/Antivirus.pm
+${P5SITE}/Mail/MIMEDefang/Async/
+${P5SITE}/Mail/MIMEDefang/Async.pm
+${P5SITE}/Mail/MIMEDefang/Async/Checks.pm
+${P5SITE}/Mail/MIMEDefang/Async/Results.pm
+${P5SITE}/Mail/MIMEDefang/Authres.pm
+${P5SITE}/Mail/MIMEDefang/BIMI.pm
+${P5SITE}/Mail/MIMEDefang/DKIM/
+${P5SITE}/Mail/MIMEDefang/DKIM.pm
+${P5SITE}/Mail/MIMEDefang/DKIM/ARC.pm
+${P5SITE}/Mail/MIMEDefang/MIME.pm
+${P5SITE}/Mail/MIMEDefang/Mail.pm
+${P5SITE}/Mail/MIMEDefang/Net.pm
+${P5SITE}/Mail/MIMEDefang/RFC2822.pm
+${P5SITE}/Mail/MIMEDefang/SPF.pm
+${P5SITE}/Mail/MIMEDefang/TLSPolicy.pm
+${P5SITE}/Mail/MIMEDefang/Unit.pm
+${P5SITE}/Mail/MIMEDefang/Utils.pm
 @man man/man1/mimedefang-util.1
-@man man/man3/Mail::MIMEDefang.3
-@man man/man3/Mail::MIMEDefang::Actions.3
-@man man/man3/Mail::MIMEDefang::Antispam.3
-@man man/man3/Mail::MIMEDefang::Antivirus.3
-@man man/man3/Mail::MIMEDefang::Authres.3
-@man man/man3/Mail::MIMEDefang::DKIM.3
-@man man/man3/Mail::MIMEDefang::DKIM::ARC.3
-@man man/man3/Mail::MIMEDefang::MIME.3
-@man man/man3/Mail::MIMEDefang::Mail.3
-@man man/man3/Mail::MIMEDefang::Net.3
-@man man/man3/Mail::MIMEDefang::RFC2822.3
-@man man/man3/Mail::MIMEDefang::SPF.3
-@man man/man3/Mail::MIMEDefang::Unit.3
-@man man/man3/Mail::MIMEDefang::Utils.3
+@man man/man3p/Mail::MIMEDefang.3p
+@man man/man3p/Mail::MIMEDefang::Actions.3p
+@man man/man3p/Mail::MIMEDefang::Antispam.3p
+@man man/man3p/Mail::MIMEDefang::Antivirus.3p
+@man man/man3p/Mail::MIMEDefang::Async.3p
+@man man/man3p/Mail::MIMEDefang::Async::Checks.3p
+@man man/man3p/Mail::MIMEDefang::Async::Results.3p
+@man man/man3p/Mail::MIMEDefang::Authres.3p
+@man man/man3p/Mail::MIMEDefang::BIMI.3p
+@man man/man3p/Mail::MIMEDefang::DKIM.3p
+@man man/man3p/Mail::MIMEDefang::DKIM::ARC.3p
+@man man/man3p/Mail::MIMEDefang::MIME.3p
+@man man/man3p/Mail::MIMEDefang::Mail.3p
+@man man/man3p/Mail::MIMEDefang::Net.3p
+@man man/man3p/Mail::MIMEDefang::RFC2822.3p
+@man man/man3p/Mail::MIMEDefang::SPF.3p
+@man man/man3p/Mail::MIMEDefang::TLSPolicy.3p
+@man man/man3p/Mail::MIMEDefang::Unit.3p
+@man man/man3p/Mail::MIMEDefang::Utils.3p
 @man man/man5/mimedefang-filter.5
 @man man/man7/mimedefang-notify.7
 @man man/man7/mimedefang-protocol.7
@@ -66,17 +77,18 @@ share/examples/mimedefang/contrib/greylisting/mimedefang-filter
 share/examples/mimedefang/contrib/munin/
 share/examples/mimedefang/contrib/munin/mimedefang_munin_plugin
 share/examples/mimedefang/gen-ip-validator.pl
-share/examples/mimedefang/mail/
-share/examples/mimedefang/mail/mimedefang-filter
-share/examples/mimedefang/mail/sa-mimedefang.cf
-@sample ${SYSCONFDIR}/mail/sa-mimedefang.cf
+share/examples/mimedefang/mimedefang-filter
 share/examples/mimedefang/mimedefang-filter-openbsd-ports
 @sample ${SYSCONFDIR}/mail/mimedefang-filter
+@mode 0400
+@owner _mdefang
+share/examples/mimedefang/mimedefang-ip-key
+@mode
+@owner
+share/examples/mimedefang/sa-mimedefang.cf
+@sample ${SYSCONFDIR}/mail/sa-mimedefang.cf
 @mode 0750
 @owner _mdefang
 @group _mdefang
 @sample /var/spool/MD-Quarantine/
 @sample /var/spool/MIMEDefang/
-@mode 0400
-share/examples/mimedefang/mail/mimedefang-ip-key
-@sample ${SYSCONFDIR}/mail/mimedefang-ip-key

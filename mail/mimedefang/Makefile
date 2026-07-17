@@ -1,6 +1,8 @@
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-3.6
+V=		3.7.1
+DISTNAME=	Mail-MIMEDefang-${V}
+PKGNAME=	mimedefang-${V}
 
 CATEGORIES=	mail
 
@@ -27,12 +29,12 @@ RUN_DEPENDS +=	www/p5-HTML-Parser
 
 LIB_DEPENDS=	mail/sendmail,-libmilter
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" PERLINSTALLPRIVLIB=$PREFIX/libdata/perl5
-CONFIGURE_ARGS=	--with-user=_mdefang \
-		--with-ipheader \
-		--disable-anti-virus \
-		--enable-poll
+CONFIGURE_ARGS=	DEFANG_USER=_mdefang \
+		IPHEADER=1 \
+		ENABLE_ANTI_VIRUS=0 \
+		ENABLE_POLL=1
 
 TEST_DEPENDS=	devel/p5-Test-Class \
 		devel/p5-Test-Most
@@ -40,14 +42,13 @@ TEST_DEPENDS=	devel/p5-Test-Class \
 TEST_TARGET=	test
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/mimedefang
+EXAMPLESDIR=	${PREFIX}/share/examples/mimedefang
 
 post-extract:
 	cp ${WRKSRC}/examples/suggested-minimum-filter-for-windows-clients \
 		${WRKSRC}/examples/mimedefang-filter-openbsd-ports
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/SpamAssassin/spamassassin.cf \
-		${PREFIX}/share/examples/mimedefang/mail/sa-mimedefang.cf
 	${INSTALL_DATA} ${WRKSRC}/examples/mimedefang-filter-openbsd-ports \
 		${PREFIX}/share/examples/mimedefang/
 	${INSTALL_DATA_DIR} ${WRKSRC}/contrib \
