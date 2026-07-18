@@ -4,13 +4,14 @@ DISTNAME =		netinfo-0.6
 CATEGORIES =		net
 HOMEPAGE =		https://chiselapp.com/user/stwo/repository/netinfo/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
-REVISION =		0
+REVISION =		1
 
 # ISC
 PERMIT_PACKAGE =	Yes
 
 SITES =			${HOMEPAGE:=uv/}
 MODULES =		lang/tcl
+MODTCL_VERSION =	8.6
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
 TEST_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 TEST_FLAGS =		TCLLIBPATH=.
@@ -18,7 +19,7 @@ NO_BUILD =		Yes
 PKG_ARCH =		*
 WRKDIST =		${WRKDIR}/netinfo
 
-NI_MOD_DIR =		${DESTDIR}${MODTCL_MODDIR}/85
+NI_MOD_DIR =		${DESTDIR}${MODTCL_MODDIR}/86
 NI_MAN_DIR =		${PREFIX}/man/mann
 NI_EXA_DIR =		${PREFIX}/share/examples/netinfo
 
