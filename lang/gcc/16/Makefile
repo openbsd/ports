@@ -19,7 +19,7 @@ USE_NOEXECONLY = Yes
 V = 16.1.0
 GCC_PKGSPEC = >=16,<17
 
-REVISION = 3
+REVISION = 4
 
 # aarch64, powerpc64 and sparc64 bootstrap contain only gdc
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.1.0-0.tar.xz
@@ -65,7 +65,7 @@ BUILD_DEPENDS +=	devel/bison
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" || \
     ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "powerpc64" || \
-    ${MACHINE_ARCH} == "riscv64"
+    ${MACHINE_ARCH} == "riscv64" || ${MACHINE_ARCH} == "sparc64"
 BUILD_DEPENDS +=	devel/gas
 RUN_DEPENDS +=		devel/gas
 RUN_DEPENDS-main +=	devel/gas
