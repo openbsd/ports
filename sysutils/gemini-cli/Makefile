@@ -1,6 +1,6 @@
 COMMENT=		Gemini AI agent CLI
 
-V=			0.50.0
+V=			0.51.0
 DISTNAME=		gemini-cli-${V}
 
 CATEGORIES=		sysutils misc devel
@@ -71,7 +71,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gemini-cli
 	${INSTALL_DATA} ${FILESDIR}/settings.json \
 		${PREFIX}/share/examples/gemini-cli/
-#	rm ${PREFIX}/lib/node_modules/@google/gemini-cli/dist/*.tgz \
-#		${PREFIX}/lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/*.tgz
 
 .include <bsd.port.mk>
