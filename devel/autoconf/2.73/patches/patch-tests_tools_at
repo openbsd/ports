@@ -1,0 +1,16 @@
+Index: tests/tools.at
+--- tests/tools.at.orig
++++ tests/tools.at
+@@ -198,12 +198,6 @@ END
+ [m4@&t@_init[]m4@&t@_include(foo.m4)
+ m4@&t@_divert([])d@&t@nl]
+ END
+-  rm -rf "$file.m4f"
+-  AT_CHECK_AUTOM4TE([-C "$cachedir" -I "$dir" --language=m4sugar --freeze -o "$file.m4f" "$file"])
+-  AT_CHECK([test -s "$file.m4f"])
+-
+-  # Check --reload-state
+-  AT_CHECK_AUTOM4TE([-C "$cachedir" --language=m4sugar -o "$outfile" "$file.m4f" /dev/null])
+ 
+   test ! -f b
+ done

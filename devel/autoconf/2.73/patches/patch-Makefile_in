@@ -1,0 +1,120 @@
+Don't build any m4f.
+Don't use unsupported /usr/bin/makeinfo options.
+(undo autoconf commits of 2025-01-29 and 2024-10-29)
+
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -692,11 +692,7 @@ ETAGS_PERL = --lang=perl \
+   bin/ifnames.in
+ 
+ 
+-# ASCII_DASHES_AND_QUOTES=0 is needed for makeinfo versions ≥ 7.1.
+-# CHECK_NORMAL_MENU_STRUCTURE=1 is needed for makeinfo versions ≥ 6.8.
+-AM_MAKEINFOFLAGS = --no-split \
+- -c ASCII_DASHES_AND_QUOTES=0 \
+- -c CHECK_NORMAL_MENU_STRUCTURE=1
++AM_MAKEINFOFLAGS = --no-split
+ 
+ TEXI2HTML_FLAGS = -split_chapter
+ TEXINFO_TEX = build-aux/texinfo.tex
+@@ -748,7 +744,7 @@ dist_autoconflib_DATA = \
+   lib/autoconf/programs.m4 \
+   lib/autoconf/trailer.m4
+ 
+-nodist_autoconflib_DATA = lib/autoconf/autoconf.m4f
++nodist_autoconflib_DATA = 
+ autoscanlibdir = $(pkgdatadir)/autoscan
+ nodist_autoscanlib_DATA = lib/autoscan/autoscan.list
+ m4sugarlibdir = $(pkgdatadir)/m4sugar
+@@ -757,9 +753,7 @@ dist_m4sugarlib_DATA = \
+   lib/m4sugar/foreach.m4 \
+   lib/m4sugar/m4sh.m4
+ 
+-nodist_m4sugarlib_DATA = \
+-  lib/m4sugar/m4sugar.m4f \
+-  lib/m4sugar/m4sh.m4f
++nodist_m4sugarlib_DATA = 
+ 
+ autotestlibdir = $(pkgdatadir)/autotest
+ dist_autotestlib_DATA = \
+@@ -767,7 +761,7 @@ dist_autotestlib_DATA = \
+   lib/autotest/general.m4 \
+   lib/autotest/specific.m4
+ 
+-nodist_autotestlib_DATA = lib/autotest/autotest.m4f
++nodist_autotestlib_DATA = 
+ 
+ # These are declared as _DATA so that they are not subject to
+ # --program-transform-name; $(pkgdatadir) is sufficient to keep
+@@ -1230,6 +1224,10 @@ dist-info: $(INFO_DEPS)
+ 	  for file in $$d/$$base $$d/$$base-[0-9] $$d/$$base-[0-9][0-9] $$d/$$base_i[0-9] $$d/$$base_i[0-9][0-9]; do \
+ 	    if test -f $$file; then \
+ 	      relfile=`expr "$$file" : "$$d/\(.*\)"`; \
++	      ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++	      relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++	      relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++	      relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
+ 	      test -f "$(distdir)/$$relfile" || \
+ 		cp -p $$file "$(distdir)/$$relfile"; \
+ 	    else :; fi; \
+@@ -1957,18 +1955,25 @@ install-info-am: $(INFO_DEPS)
+ 	  for ifile in $$d/$$file $$d/$$file-[0-9] $$d/$$file-[0-9][0-9] \
+ 	               $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \
+ 	    if test -f $$ifile; then \
+-	      echo "$$ifile"; \
++	      relfile=`echo "$$ifile" | sed 's|^.*/||'`; \
++ 	      ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++ 	      relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++ 	      relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++ 	      relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
++	      echo " $(INSTALL_DATA) '$$ifile' '$(DESTDIR)$(infodir)/$$relfile'"; \
++	      $(INSTALL_DATA) "$$ifile" "$(DESTDIR)$(infodir)/$$relfile"; \
+ 	    else : ; fi; \
+ 	  done; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(infodir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(infodir)" || exit $$?; done
++	done
+ 	@$(POST_INSTALL)
+ 	@if $(am__can_run_installinfo); then \
+ 	  list='$(INFO_DEPS)'; test -n "$(infodir)" || list=; \
+ 	  for file in $$list; do \
+ 	    relfile=`echo "$$file" | sed 's|^.*/||'`; \
++ 	    ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++ 	    relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++ 	    relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++ 	    relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
+ 	    echo " install-info --info-dir='$(DESTDIR)$(infodir)' '$(DESTDIR)$(infodir)/$$relfile'";\
+ 	    install-info --info-dir="$(DESTDIR)$(infodir)" "$(DESTDIR)$(infodir)/$$relfile" || :;\
+ 	  done; \
+@@ -2193,7 +2198,7 @@ lib/autoscan/autoscan.list: $(srcdir)/lib/autoscan/aut
+ 	    -t'AN_OUTPUT:$$1: $$2		$$3' \
+ 	) | LC_ALL=C sort >>$@
+ 
+-lib/autoscan/autoscan.list: lib/autoconf/autoconf.m4f Makefile
++lib/autoscan/autoscan.list: $(autoconf_m4f_dependencies) Makefile
+ 
+ lib/m4sugar/m4sugar.m4f: $(m4sugar_m4f_dependencies)
+ lib/m4sugar/m4sh.m4f: $(m4sh_m4f_dependencies)
+@@ -2261,7 +2266,7 @@ tests/package.m4: Makefile
+ 	} > $@-t
+ 	mv $@-t $@
+ 
+-tests/wrapper.in: $(srcdir)/tests/wrapper.as lib/m4sugar/m4sh.m4f
++tests/wrapper.in: $(srcdir)/tests/wrapper.as $(m4sh_m4f_dependencies)
+ 	$(MY_AUTOM4TE) --language=M4sh $(srcdir)/tests/wrapper.as -o $@
+ 
+ $(wrappers): tests/wrapper.in
+@@ -2273,8 +2278,7 @@ $(wrappers): tests/wrapper.in
+ 	mv -f $@.tmp $@
+ $(TESTSUITE): tests/package.m4 \
+ 	      tests/local.at \
+-	      $(TESTSUITE_AT) \
+-	      lib/autotest/autotest.m4f
++	      $(TESTSUITE_AT)
+ 	$(AUTOTEST) $(AUTOTESTFLAGS) suite.at -o $@.tmp
+ 	mv $@.tmp $@
+ $(distclean_generic): clean-local
