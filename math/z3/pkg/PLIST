@@ -33,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/z3/z3num.py
 lib/python${MODPY_VERSION}/site-packages/z3/z3poly.py
 lib/python${MODPY_VERSION}/site-packages/z3/z3printer.py
 lib/python${MODPY_VERSION}/site-packages/z3/z3rcf.py
+lib/python${MODPY_VERSION}/site-packages/z3/z3regex.py
 lib/python${MODPY_VERSION}/site-packages/z3/z3test.py
 lib/python${MODPY_VERSION}/site-packages/z3/z3types.py
 lib/python${MODPY_VERSION}/site-packages/z3/z3util.py
