@@ -11,6 +11,15 @@ Index: SConscript
  #
  # Release identification ends here
  
+@@ -964,7 +963,7 @@ if not cleaning and not helping:
+          not config.env['target_platform'].startswith('darwin'))):
+         config.env.MergeFlags("-pthread")
+ 
+-    if config.env['target_platform'].startswith('openbsd7'):
++    if config.env['target_platform'].startswith('openbsd'):
+         # as of 5 Jan 23:
+         # scons 4.4.0 with clang 13.0.0 has trouble determining clang version.
+         # Then fails to add -fPIC.  So we force it here:
 @@ -1929,7 +1928,7 @@ libgpsd_static = env.StaticLibrary(
  packet_ffi_objects = [env.SharedObject(s) for s in packet_ffi_extension]
  packet_ffi_shared = env.SharedLibrary(target="gpsdpacket",

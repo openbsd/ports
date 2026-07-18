@@ -7,6 +7,8 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
+REVISION-main=		0
+REVISION-x11=		0
 
 # version from libgps_version_current/libgps_version_revision in SConscript
 SHARED_LIBS +=		gps		24.0 # 32.0
