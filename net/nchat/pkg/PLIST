@@ -1,4 +1,5 @@
 @bin bin/nchat
-libexec/nchat/
-libexec/nchat/compose
 @man man/man1/nchat.1
+share/doc/nchat/
+share/doc/nchat/LICENSE
+share/doc/nchat/THIRD_PARTY_LICENSES

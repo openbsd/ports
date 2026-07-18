@@ -6,7 +6,7 @@ COMMENT =	CLI Telegram client
 
 GH_ACCOUNT =	d99kris
 GH_PROJECT =	nchat
-GH_TAGNAME =	v5.16.9
+GH_TAGNAME =	v5.17.26
 
 CATEGORIES =	net
 MAINTAINER =	Mykyta Nazarenko <mykyta@nazarenko.sbs>
