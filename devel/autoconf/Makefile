@@ -17,5 +17,6 @@ SUBDIR += 2.68
 SUBDIR += 2.69
 SUBDIR += 2.71
 SUBDIR += 2.72
+SUBDIR += 2.73
 
 .include <bsd.port.subdir.mk>
