@@ -1,5 +1,5 @@
 COMMENT =		lightweight Spotify client using Qt
-DIST_TUPLE =		github	kraxarn	spotify-qt	v4.0.0	.
+DIST_TUPLE =		github	kraxarn	spotify-qt	v4.0.4	.
 CATEGORIES =		audio x11
 
 # GPLv3.0
@@ -17,8 +17,6 @@ RUN_DEPENDS =		audio/spotifyd \
 			devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
-# devel/kf5/kcrash is qt5-only
-CONFIGURE_ARGS =	-DUSE_KCRASH=OFF \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
 .include <bsd.port.mk>
