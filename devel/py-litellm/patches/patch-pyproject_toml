@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -237,7 +237,7 @@ healthcheck = [
+ ]
+ 
+ [build-system]
+-requires = ["uv_build==0.11.8"]
++requires = ["uv_build>=0.11.8"]
+ build-backend = "uv_build"
+ 
+ [tool.uv]
