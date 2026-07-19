@@ -1,0 +1,4 @@
+The Model Context Protocol (MCP) Python SDK provides a complete
+implementation of MCP, the open standard for connecting AI models
+to external tools and data sources. It supports both client and
+server roles over stdio and HTTP transports.
