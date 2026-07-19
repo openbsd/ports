@@ -1,12 +1,12 @@
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.125
+VERSION=		3.126
 # from https://hg.mozilla.org/projects/nss/file/tip/automation/release/nspr-version.txt
-NSPR_VERSION=		4.38.2
+NSPR_VERSION=		4.39
 DISTNAME=		nss-${VERSION}
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-SO_VERSION=		58.21
+SO_VERSION=		58.22
 .for _lib in freebl3 nss3 nssckbi nssckbi-testlib nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
