@@ -1,6 +1,6 @@
 COMMENT=	uniform API for multiple LLM providers
 
-MODPY_DISTV=	1.90.0
+MODPY_DISTV=	1.90.2
 DISTNAME=	litellm-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
