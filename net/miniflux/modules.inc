@@ -7,7 +7,7 @@ MODGO_MODULES =	\
 	github.com/andybalholm/cascadia		 v1.3.3 \
 	github.com/beorn7/perks			 v1.0.1 \
 	github.com/cespare/xxhash/v2		 v2.3.0 \
-	github.com/coreos/go-oidc/v3		 v3.18.0 \
+	github.com/coreos/go-oidc/v3		 v3.19.0 \
 	github.com/creack/pty			 v1.1.9 \
 	github.com/davecgh/go-spew		 v1.1.1 \
 	github.com/djherbis/atime		 v1.1.0 \
@@ -57,17 +57,17 @@ MODGO_MODULES =	\
 	go.uber.org/goleak			 v1.3.0 \
 	go.uber.org/mock			 v0.6.0 \
 	go.yaml.in/yaml/v2			 v2.4.2 \
-	golang.org/x/crypto			 v0.52.0 \
-	golang.org/x/image			 v0.41.0 \
-	golang.org/x/mod			 v0.35.0 \
-	golang.org/x/net			 v0.55.0 \
+	golang.org/x/crypto			 v0.53.0 \
+	golang.org/x/image			 v0.43.0 \
+	golang.org/x/mod			 v0.36.0 \
+	golang.org/x/net			 v0.56.0 \
 	golang.org/x/oauth2			 v0.36.0 \
-	golang.org/x/sync			 v0.20.0 \
-	golang.org/x/sys			 v0.45.0 \
+	golang.org/x/sync			 v0.21.0 \
+	golang.org/x/sys			 v0.46.0 \
 	golang.org/x/telemetry			 v0.0.0-20240228155512-f48c80bd79b2 \
-	golang.org/x/term			 v0.43.0 \
-	golang.org/x/text			 v0.37.0 \
-	golang.org/x/tools			 v0.44.0 \
+	golang.org/x/term			 v0.44.0 \
+	golang.org/x/text			 v0.38.0 \
+	golang.org/x/tools			 v0.45.0 \
 	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/protobuf		 v1.36.8 \
 	gopkg.in/check.v1			 v1.0.0-20201130134442-10cb98267c6c \
@@ -86,7 +86,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.19.0 \
 	golang.org/x/crypto			 v0.23.0 \
 	golang.org/x/crypto			 v0.31.0 \
-	golang.org/x/crypto			 v0.51.0 \
+	golang.org/x/crypto			 v0.52.0 \
 	golang.org/x/mod			 v0.12.0 \
 	golang.org/x/mod			 v0.15.0 \
 	golang.org/x/mod			 v0.17.0 \
@@ -103,7 +103,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.33.0 \
 	golang.org/x/net			 v0.43.0 \
 	golang.org/x/net			 v0.52.0 \
-	golang.org/x/net			 v0.54.0 \
+	golang.org/x/net			 v0.55.0 \
 	golang.org/x/net			 v0.6.0 \
 	golang.org/x/oauth2			 v0.30.0 \
 	golang.org/x/sync			 v0.0.0-20190423024810-112230192c58 \
@@ -126,7 +126,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.32.0 \
 	golang.org/x/sys			 v0.35.0 \
 	golang.org/x/sys			 v0.43.0 \
-	golang.org/x/sys			 v0.44.0 \
+	golang.org/x/sys			 v0.45.0 \
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.8.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
