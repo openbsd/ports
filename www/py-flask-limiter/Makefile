@@ -1,3 +1,5 @@
+BROKEN=		Does not support py-rich 15+ yet
+
 COMMENT=	rate limiting for Flask applications
 
 # XXX: flask-appbuilder needs < 4.0.0
