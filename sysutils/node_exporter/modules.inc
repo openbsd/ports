@@ -14,7 +14,7 @@ MODGO_MODULES =	\
 	github.com/dennwc/ioctl				 v1.0.1-0.20181021180353-017804252068 \
 	github.com/ema/qdisc				 v1.0.0 \
 	github.com/godbus/dbus/v5			 v5.2.2 \
-	github.com/golang-jwt/jwt/v5			 v5.3.0 \
+	github.com/golang-jwt/jwt/v5			 v5.3.1 \
 	github.com/golang/protobuf			 v1.5.0 \
 	github.com/google/go-cmp			 v0.7.0 \
 	github.com/google/uuid				 v1.6.0 \
@@ -22,7 +22,7 @@ MODGO_MODULES =	\
 	github.com/hodgesds/perf-utils			 v0.7.0 \
 	github.com/illumos/go-kstat			 v0.0.0-20210513183136-173c9b0a9973 \
 	github.com/jessevdk/go-flags			 v1.4.0 \
-	github.com/josharian/native			 v1.1.0 \
+	github.com/josharian/native			 v1.0.0 \
 	github.com/jpillora/backoff			 v1.0.0 \
 	github.com/jsimonetti/rtnetlink/v2		 v2.2.0 \
 	github.com/json-iterator/go			 v1.1.12 \
@@ -32,26 +32,25 @@ MODGO_MODULES =	\
 	github.com/kylelemons/godebug			 v1.1.0 \
 	github.com/lufia/iostat				 v1.2.1 \
 	github.com/mattn/go-xmlrpc			 v0.0.3 \
-	github.com/mdlayher/ethtool			 v0.6.0 \
-	github.com/mdlayher/genetlink			 v1.3.2 \
-	github.com/mdlayher/netlink			 v1.10.0 \
-	github.com/mdlayher/socket			 v0.5.1 \
-	github.com/mdlayher/vsock			 v1.2.1 \
-	github.com/mdlayher/wifi			 v0.7.2 \
+	github.com/mdlayher/ethtool			 v0.6.1 \
+	github.com/mdlayher/genetlink			 v1.4.0 \
+	github.com/mdlayher/netlink			 v1.11.2 \
+	github.com/mdlayher/socket			 v0.6.1 \
+	github.com/mdlayher/vsock			 v1.3.0 \
+	github.com/mdlayher/wifi			 v0.8.0 \
 	github.com/modern-go/concurrent			 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2			 v1.0.2 \
 	github.com/munnerz/goautoneg			 v0.0.0-20191010083416-a7dc8b61c822 \
 	github.com/mwitkow/go-conntrack			 v0.0.0-20190716064945-2f068394615f \
-	github.com/opencontainers/selinux		 v1.13.1 \
+	github.com/opencontainers/selinux		 v1.15.1 \
 	github.com/pmezard/go-difflib			 v1.0.0 \
 	github.com/power-devops/perfstat		 v0.0.0-20240221224432-82ca36839d55 \
 	github.com/prometheus-community/go-runit	 v0.1.0 \
 	github.com/prometheus/client_golang		 v1.23.2 \
 	github.com/prometheus/client_model		 v0.6.2 \
-	github.com/prometheus/common			 v0.67.5 \
-	github.com/prometheus/exporter-toolkit		 v0.16.0 \
-	github.com/prometheus/procfs			 v0.20.1 \
-	github.com/rogpeppe/go-internal			 v1.10.0 \
+	github.com/prometheus/common			 v0.70.0 \
+	github.com/prometheus/exporter-toolkit		 v0.17.1 \
+	github.com/prometheus/procfs			 v0.21.1 \
 	github.com/safchain/ethtool			 v0.7.0 \
 	github.com/siebenmann/go-kstat			 v0.0.0-20210513183136-173c9b0a9973 \
 	github.com/stretchr/objx			 v0.5.2 \
@@ -61,18 +60,18 @@ MODGO_MODULES =	\
 	go.uber.org/goleak				 v1.3.0 \
 	go.uber.org/multierr				 v1.6.0 \
 	go.yaml.in/yaml/v2				 v2.4.4 \
-	golang.org/x/crypto				 v0.49.0 \
-	golang.org/x/mod				 v0.33.0 \
-	golang.org/x/net				 v0.52.0 \
+	golang.org/x/crypto				 v0.54.0 \
+	golang.org/x/mod				 v0.37.0 \
+	golang.org/x/net				 v0.57.0 \
 	golang.org/x/oauth2				 v0.36.0 \
-	golang.org/x/sync				 v0.20.0 \
-	golang.org/x/sys				 v0.42.0 \
-	golang.org/x/term				 v0.41.0 \
-	golang.org/x/text				 v0.35.0 \
+	golang.org/x/sync				 v0.22.0 \
+	golang.org/x/sys				 v0.47.0 \
+	golang.org/x/term				 v0.45.0 \
+	golang.org/x/text				 v0.40.0 \
 	golang.org/x/time				 v0.15.0 \
-	golang.org/x/tools				 v0.42.0 \
+	golang.org/x/tools				 v0.47.0 \
 	google.golang.org/protobuf			 v1.36.11 \
-	gopkg.in/check.v1				 v1.0.0-20201130134442-10cb98267c6c \
+	gopkg.in/check.v1				 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v1				 v1.0.0-20140924161607-9f9df34309c0 \
 	gopkg.in/yaml.v3				 v3.0.1 \
 	howett.net/plist				 v1.0.1
@@ -84,17 +83,18 @@ MODGO_MODFILES =	\
 	github.com/davecgh/go-spew		 v1.1.0 \
 	github.com/godbus/dbus/v5		 v5.1.0 \
 	github.com/google/go-cmp		 v0.5.9 \
-	github.com/josharian/native		 v1.0.0 \
 	github.com/mdlayher/netlink		 v1.7.0 \
-	github.com/mdlayher/netlink		 v1.7.2 \
 	github.com/mdlayher/netlink		 v1.8.0 \
 	github.com/mdlayher/netlink		 v1.9.0 \
 	github.com/mdlayher/socket		 v0.4.0 \
-	github.com/mdlayher/socket		 v0.4.1 \
+	github.com/mdlayher/socket		 v0.5.1 \
+	github.com/mdlayher/socket		 v0.6.0 \
 	github.com/prometheus/client_golang	 v1.20.4 \
 	github.com/prometheus/common		 v0.66.1 \
+	github.com/prometheus/common		 v0.69.0 \
 	github.com/prometheus/procfs		 v0.15.1 \
 	github.com/prometheus/procfs		 v0.16.1 \
+	github.com/prometheus/procfs		 v0.21.0 \
 	github.com/stretchr/objx		 v0.1.0 \
 	github.com/stretchr/objx		 v0.4.0 \
 	github.com/stretchr/objx		 v0.5.0 \
@@ -105,41 +105,37 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify		 v1.8.4 \
 	github.com/stretchr/testify		 v1.9.0 \
 	go.yaml.in/yaml/v2			 v2.4.2 \
-	go.yaml.in/yaml/v2			 v2.4.3 \
-	golang.org/x/crypto			 v0.46.0 \
-	golang.org/x/net			 v0.14.0 \
+	golang.org/x/crypto			 v0.53.0 \
 	golang.org/x/net			 v0.2.0 \
 	golang.org/x/net			 v0.43.0 \
 	golang.org/x/net			 v0.44.0 \
 	golang.org/x/net			 v0.46.0 \
-	golang.org/x/net			 v0.47.0 \
-	golang.org/x/net			 v0.48.0 \
-	golang.org/x/net			 v0.50.0 \
-	golang.org/x/net			 v0.51.0 \
-	golang.org/x/net			 v0.9.0 \
+	golang.org/x/net			 v0.52.0 \
+	golang.org/x/net			 v0.53.0 \
+	golang.org/x/net			 v0.55.0 \
+	golang.org/x/net			 v0.56.0 \
 	golang.org/x/oauth2			 v0.30.0 \
-	golang.org/x/oauth2			 v0.34.0 \
 	golang.org/x/sync			 v0.1.0 \
 	golang.org/x/sync			 v0.19.0 \
-	golang.org/x/sync			 v0.3.0 \
+	golang.org/x/sync			 v0.20.0 \
+	golang.org/x/sync			 v0.21.0 \
 	golang.org/x/sys			 v0.0.0-20201204225414-ed752295db88 \
 	golang.org/x/sys			 v0.0.0-20211031064116-611d5d643895 \
 	golang.org/x/sys			 v0.1.0 \
-	golang.org/x/sys			 v0.11.0 \
 	golang.org/x/sys			 v0.2.0 \
 	golang.org/x/sys			 v0.26.0 \
 	golang.org/x/sys			 v0.27.0 \
 	golang.org/x/sys			 v0.35.0 \
 	golang.org/x/sys			 v0.36.0 \
 	golang.org/x/sys			 v0.38.0 \
-	golang.org/x/sys			 v0.39.0 \
 	golang.org/x/sys			 v0.40.0 \
-	golang.org/x/sys			 v0.41.0 \
-	golang.org/x/sys			 v0.7.0 \
+	golang.org/x/sys			 v0.42.0 \
+	golang.org/x/sys			 v0.43.0 \
+	golang.org/x/sys			 v0.45.0 \
+	golang.org/x/sys			 v0.46.0 \
 	golang.org/x/text			 v0.28.0 \
-	golang.org/x/text			 v0.32.0 \
+	golang.org/x/text			 v0.38.0 \
 	google.golang.org/protobuf		 v1.36.6 \
 	google.golang.org/protobuf		 v1.36.8 \
-	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c
 
