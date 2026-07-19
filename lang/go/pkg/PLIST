@@ -2333,6 +2333,7 @@ go/src/cmd/go/testdata/mod/example.com_fuzzfail_v0.1.0.txt
 go/src/cmd/go/testdata/mod/example.com_fuzzfail_v0.2.0.txt
 go/src/cmd/go/testdata/mod/example.com_generics_v1.0.0.txt
 go/src/cmd/go/testdata/mod/example.com_ignore_v1.0.0.txt
+go/src/cmd/go/testdata/mod/example.com_importcrypto_v1.0.0.txt
 go/src/cmd/go/testdata/mod/example.com_incompatiblewithsub_v1.0.0.txt
 go/src/cmd/go/testdata/mod/example.com_incompatiblewithsub_v2.0.0+incompatible.txt
 go/src/cmd/go/testdata/mod/example.com_invalidpath_v1_v1.0.0.txt
@@ -2945,6 +2946,7 @@ go/src/cmd/go/testdata/script/mod_get_errors.txt
 go/src/cmd/go/testdata/script/mod_get_exec_toolchain.txt
 go/src/cmd/go/testdata/script/mod_get_extra.txt
 go/src/cmd/go/testdata/script/mod_get_fallback.txt
+go/src/cmd/go/testdata/script/mod_get_fips140_issue73649.txt
 go/src/cmd/go/testdata/script/mod_get_fossil.txt
 go/src/cmd/go/testdata/script/mod_get_future.txt
 go/src/cmd/go/testdata/script/mod_get_go_file.txt
@@ -15679,6 +15681,7 @@ go/test/fixedbugs/issue78641.go
 go/test/fixedbugs/issue7867.go
 go/test/fixedbugs/issue7884.go
 go/test/fixedbugs/issue79182.go
+go/test/fixedbugs/issue79186.go
 go/test/fixedbugs/issue7921.go
 go/test/fixedbugs/issue7944.go
 go/test/fixedbugs/issue7995.go
@@ -15689,6 +15692,7 @@ go/test/fixedbugs/issue7995b.go
 go/test/fixedbugs/issue7996.go
 go/test/fixedbugs/issue7997.go
 go/test/fixedbugs/issue7998.go
+go/test/fixedbugs/issue80004.go
 go/test/fixedbugs/issue8004.go
 go/test/fixedbugs/issue8011.go
 go/test/fixedbugs/issue8017.go
