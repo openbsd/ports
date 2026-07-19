@@ -1,0 +1,17 @@
+lib/python${MODPY_VERSION}/site-packages/sse_starlette/
+lib/python${MODPY_VERSION}/site-packages/sse_starlette-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sse_starlette-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sse_starlette-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sse_starlette-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sse_starlette-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/sse_starlette-${MODPY_DISTV}.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/sse_starlette-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/sse_starlette-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/sse_starlette/__init__.py
+lib/python${MODPY_VERSION}/site-packages/sse_starlette/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sse_starlette/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sse_starlette/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sse_starlette/${MODPY_PYCACHE}sse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sse_starlette/${MODPY_PYCACHE}sse.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sse_starlette/py.typed
+lib/python${MODPY_VERSION}/site-packages/sse_starlette/sse.py
