@@ -1,0 +1,3 @@
+fast-cipher is a Python library providing symmetric encryption
+primitives based on AES, including support for format-preserving
+encryption of tokenized data.
