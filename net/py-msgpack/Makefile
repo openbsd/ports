@@ -1,6 +1,6 @@
 COMMENT =		messagepack (de)serializer
 
-MODPY_DISTV =		1.1.2
+MODPY_DISTV =		1.2.1
 EPOCH =			0
 DISTNAME =		msgpack-${MODPY_DISTV}
 PKGNAME =		py-msgpack-${MODPY_DISTV}
