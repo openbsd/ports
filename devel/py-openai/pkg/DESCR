@@ -1,0 +1,4 @@
+The OpenAI Python library provides convenient access to the OpenAI
+REST API. It includes type definitions for request parameters and
+response fields, and provides both synchronous and asynchronous
+clients powered by httpx.
