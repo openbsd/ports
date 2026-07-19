@@ -1,0 +1,21 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -2,7 +2,7 @@ from setuptools import setup
+ import io
+ import os
+ 
+-from version import get_version
++#from version import get_version
+ 
+ here = os.path.abspath(os.path.dirname(__file__))
+ 
+@@ -16,7 +16,7 @@ except FileNotFoundError:
+ 
+ setup(
+     name='rank_bm25',
+-    version=get_version(),
++    version='0.2.2',
+     description=short_description,
+     long_description=long_description,
+     long_description_content_type='text/markdown',

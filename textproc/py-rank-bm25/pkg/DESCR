@@ -1,0 +1,3 @@
+rank-bm25 provides Python implementations of the BM25 family of
+ranking functions, including BM25Okapi, BM25L, and BM25Plus, for
+use in information retrieval and full-text search applications.
