@@ -1,0 +1,2 @@
+tiktoken is a fast BPE (byte pair encoding) tokenizer for use with
+OpenAI's models.
