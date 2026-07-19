@@ -1,5 +1,5 @@
 MODULES =	lang/python
-MODPY_DISTV =	1.4.4
+MODPY_DISTV =	1.4.5
 
 WANTLIB =	crypto xxhash zstd
 

@@ -264,11 +264,12 @@ lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_DISTV}.dist-info/ent
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_DISTV}.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_DISTV}.dist-info/scm_file_list.json
+lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_DISTV}.dist-info/scm_version.json
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_DISTV}.dist-info/top_level.txt
 @man man/man1/borg-benchmark-crud.1
 @man man/man1/borg-benchmark.1
 @man man/man1/borg-break-lock.1
-@man man/man1/borg-change-passphrase.1
 @man man/man1/borg-check.1
 @man man/man1/borg-common.1
 @man man/man1/borg-compact.1
@@ -283,6 +284,7 @@ lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_DISTV}.dist-info/top
 @man man/man1/borg-info.1
 @man man/man1/borg-init.1
 @man man/man1/borg-key-change-passphrase.1
+@man man/man1/borg-key-export-related-secrets.1
 @man man/man1/borg-key-export.1
 @man man/man1/borg-key-import.1
 @man man/man1/borg-key-migrate-to-repokey.1
