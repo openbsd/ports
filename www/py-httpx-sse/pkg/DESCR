@@ -1,0 +1,2 @@
+httpx-sse provides support for consuming Server-Sent Events (SSE) with
+the httpx HTTP client library.
