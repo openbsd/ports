@@ -1,0 +1,5 @@
+jiter is a fast iterable JSON parser for Python.
+
+Written in Rust and exposed through pyo3 bindings, it provides
+high-performance JSON parsing with support for incremental parsing
+and iteration over JSON data.
