@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-V =	v1.91.2
+V =	v1.91.3
 DISTNAME =	upower-${V}
 PKGNAME =	upower-${V:S/v//}
 
