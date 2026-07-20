@@ -1,6 +1,6 @@
 COMMENT =	fast CBOR for everyone
 
-DISTNAME =	CBOR-Free-0.34
+DISTNAME =	CBOR-Free-0.36
 CPAN_AUTHOR =	FELIPE
 
 CATEGORIES =	converters
