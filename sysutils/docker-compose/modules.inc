@@ -104,7 +104,7 @@ MODGO_MODULES =	\
 	github.com/distribution/reference						 v0.6.0 \
 	github.com/dlclark/regexp2							 v1.11.0 \
 	github.com/docker/buildx							 v0.35.0 \
-	github.com/docker/cli								 v29.6.0+incompatible \
+	github.com/docker/cli								 v29.6.1+incompatible \
 	github.com/docker/cli-docs-tool							 v0.11.0 \
 	github.com/docker/distribution							 v2.8.3+incompatible \
 	github.com/docker/docker							 v28.5.2+incompatible \
@@ -227,7 +227,7 @@ MODGO_MODULES =	\
 	github.com/mitchellh/go-ps							 v1.0.0 \
 	github.com/mitchellh/go-wordwrap						 v1.0.1 \
 	github.com/mitchellh/hashstructure/v2						 v2.0.2 \
-	github.com/moby/buildkit							 v0.31.0 \
+	github.com/moby/buildkit							 v0.31.1 \
 	github.com/moby/docker-image-spec						 v1.3.1 \
 	github.com/moby/go-archive							 v0.2.0 \
 	github.com/moby/locker								 v1.0.1 \
@@ -245,7 +245,7 @@ MODGO_MODULES =	\
 	github.com/moby/sys/sequential							 v0.7.0 \
 	github.com/moby/sys/signal							 v0.7.1 \
 	github.com/moby/sys/symlink							 v0.3.0 \
-	github.com/moby/sys/user							 v0.4.0 \
+	github.com/moby/sys/user							 v0.4.1 \
 	github.com/moby/sys/userns							 v0.1.0 \
 	github.com/moby/term								 v0.5.2 \
 	github.com/modern-go/concurrent							 v0.0.0-20180306012644-bacd9c7ef1dd \
@@ -369,7 +369,7 @@ MODGO_MODULES =	\
 	go.uber.org/mock								 v0.6.0 \
 	go.yaml.in/yaml/v2								 v2.4.4 \
 	go.yaml.in/yaml/v3								 v3.0.4 \
-	go.yaml.in/yaml/v4								 v4.0.0-rc.4 \
+	go.yaml.in/yaml/v4								 v4.0.0-rc.6 \
 	golang.org/x/crypto								 v0.53.0 \
 	golang.org/x/exp								 v0.0.0-20260603202125-055de637280b \
 	golang.org/x/mod								 v0.36.0 \
@@ -454,11 +454,13 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-colorable							 v0.1.2 \
 	github.com/mattn/go-isatty							 v0.0.8 \
 	github.com/mattn/go-shellwords							 v1.0.12 \
+	github.com/moby/buildkit							 v0.31.0 \
 	github.com/moby/moby/api							 v1.54.2 \
 	github.com/moby/moby/client							 v0.4.1 \
 	github.com/moby/patternmatcher							 v0.6.0 \
 	github.com/moby/sys/mount							 v0.3.4 \
 	github.com/moby/sys/sequential							 v0.6.0 \
+	github.com/moby/sys/user							 v0.4.0 \
 	github.com/opencontainers/image-spec						 v1.0.2 \
 	github.com/opencontainers/image-spec						 v1.1.0 \
 	github.com/opencontainers/selinux						 v1.10.0 \
@@ -503,6 +505,7 @@ MODGO_MODFILES =	\
 	go.opentelemetry.io/otel/trace							 v1.43.0 \
 	go.opentelemetry.io/proto/otlp							 v1.5.0 \
 	go.yaml.in/yaml/v2								 v2.4.2 \
+	go.yaml.in/yaml/v4								 v4.0.0-rc.4 \
 	golang.org/x/crypto								 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto								 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto								 v0.22.0 \

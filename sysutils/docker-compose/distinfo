@@ -1,4 +1,4 @@
-SHA256 (docker-compose-v5.3.0.zip) = ACx6eCV1E8j6Qy3CrqgWC9IVXLK4RybK6MAzHAlhO2A=
+SHA256 (docker-compose-v5.3.1.zip) = rCXLCN6TgqpaiU7VqsBUAkjMhUGd+/rWmAAohNeNQVM=
 SHA256 (go_modules/cel.dev/expr/@v/v0.25.1.mod) = Z0UnUNV+zK4mM7F05mRotyYy7edErdtN4sCybd04qOE=
 SHA256 (go_modules/cel.dev/expr/@v/v0.25.1.zip) = EmUr6iRhqikATSMFLToIy1kRqwplJGnvXabvs3wS7oc=
 SHA256 (go_modules/cloud.google.com/go/compute/metadata/@v/v0.9.0.mod) = gK78uZ5//Kkil0xeuubMSA5r6IRbn0so56HTBVUl3wg=
@@ -231,8 +231,8 @@ SHA256 (go_modules/github.com/docker/buildx/@v/v0.35.0.zip) = sgZj22xMjhfaMUAAth
 SHA256 (go_modules/github.com/docker/cli-docs-tool/@v/v0.11.0.mod) = 8Kn8dNbqMDRor0B/AIQD6d2MrhkeXKImTIEGPExCDR0=
 SHA256 (go_modules/github.com/docker/cli-docs-tool/@v/v0.11.0.zip) = tIAnRzgNqdtScPU7TkA/BFcKN8PSQyPPoa5S6RG0DUw=
 SHA256 (go_modules/github.com/docker/cli/@v/v29.5.3+incompatible.mod) = xD81AcVwTxEKEnSdvPuU98elsNX9X6y5eGJtMc4MuCE=
-SHA256 (go_modules/github.com/docker/cli/@v/v29.6.0+incompatible.mod) = xD81AcVwTxEKEnSdvPuU98elsNX9X6y5eGJtMc4MuCE=
-SHA256 (go_modules/github.com/docker/cli/@v/v29.6.0+incompatible.zip) = X9V02Wyf6vm7JEq+NuvZB6SX1jwTmnrV/fgL6v8Kv8I=
+SHA256 (go_modules/github.com/docker/cli/@v/v29.6.1+incompatible.mod) = xD81AcVwTxEKEnSdvPuU98elsNX9X6y5eGJtMc4MuCE=
+SHA256 (go_modules/github.com/docker/cli/@v/v29.6.1+incompatible.zip) = ooioFQ2YZFwKO/4GbrfcMFhktOrexxcwplkZ1utoST8=
 SHA256 (go_modules/github.com/docker/distribution/@v/v2.8.3+incompatible.mod) = 8WJgpOubxmzzMUzM0qv+QkXD+3yoFlMeZI333gXFYAQ=
 SHA256 (go_modules/github.com/docker/distribution/@v/v2.8.3+incompatible.zip) = jwhyLFRZy02aoAbh+uCUmX2jcgmPThSlkhWx7T1Ic4o=
 SHA256 (go_modules/github.com/docker/docker-credential-helpers/@v/v0.9.8.mod) = mmbaJB2UUh6408LcZ8Kv0zcyT7Ti4lVohn+xq0ySDCQ=
@@ -499,7 +499,8 @@ SHA256 (go_modules/github.com/mitchellh/go-wordwrap/@v/v1.0.1.zip) = X5ZCbEs7PpC
 SHA256 (go_modules/github.com/mitchellh/hashstructure/v2/@v/v2.0.2.mod) = tZHIPymDE97gNhV/jmNF6NtbUx0kLHKY+VqZWfvAI1A=
 SHA256 (go_modules/github.com/mitchellh/hashstructure/v2/@v/v2.0.2.zip) = 7y/0BA4Yd7piDAw/bWSyH5sfvO5VHSEXAcQ/aUv9IKs=
 SHA256 (go_modules/github.com/moby/buildkit/@v/v0.31.0.mod) = Yp9I18SDdZ0I5Qnqkkn8w3SMAZ59updRJMBbGjc/i1s=
-SHA256 (go_modules/github.com/moby/buildkit/@v/v0.31.0.zip) = DySIV21pz1wWbpZeICv9EQjek9QXmrHrbQ7NhGprPyc=
+SHA256 (go_modules/github.com/moby/buildkit/@v/v0.31.1.mod) = Yp9I18SDdZ0I5Qnqkkn8w3SMAZ59updRJMBbGjc/i1s=
+SHA256 (go_modules/github.com/moby/buildkit/@v/v0.31.1.zip) = W83+NGlKjVeYyt8pH57Wy6N4UKaHKnSSk4Y1QvxnhEU=
 SHA256 (go_modules/github.com/moby/docker-image-spec/@v/v1.3.1.mod) = M+JQzbI2bSKHnGSwiulWxfeLDQkQ+IZcwekmC61k7Es=
 SHA256 (go_modules/github.com/moby/docker-image-spec/@v/v1.3.1.zip) = 4/4hK+QQRlwMrgMrqn4scoK5u4ePCB8AVJMz7cJgwwY=
 SHA256 (go_modules/github.com/moby/go-archive/@v/v0.2.0.mod) = 5T2oMTT3waDFmYLqG8AiDCoztLEh3d3xyyVAjZOjtFI=
@@ -540,7 +541,8 @@ SHA256 (go_modules/github.com/moby/sys/signal/@v/v0.7.1.zip) = jDhTvEuk8oP3/M3lx
 SHA256 (go_modules/github.com/moby/sys/symlink/@v/v0.3.0.mod) = Ww5Y8e+JL/HvXMCo0P+5uXhbLjWAVTl7GD+AXiBTVtI=
 SHA256 (go_modules/github.com/moby/sys/symlink/@v/v0.3.0.zip) = wANsl8m3t6JGRoFlqWj+3ZdGkRYbCD8efpm6/FjldFE=
 SHA256 (go_modules/github.com/moby/sys/user/@v/v0.4.0.mod) = lvs57KVgaDqLMxv658DHPxEZ74tsJtKgtey1Trvy8MU=
-SHA256 (go_modules/github.com/moby/sys/user/@v/v0.4.0.zip) = S5ZSF1ImOQWyas1ByYK+e/tz1FJD0HBwfjzdV/n7OpE=
+SHA256 (go_modules/github.com/moby/sys/user/@v/v0.4.1.mod) = syE3xFiO6G2mkLHL3V1tCG+yJUYliTtstZD7LAJnLLY=
+SHA256 (go_modules/github.com/moby/sys/user/@v/v0.4.1.zip) = rP22i9oY7hEq2s9V4LIHUqH1YzxV+wIPKhCpsu6uxGo=
 SHA256 (go_modules/github.com/moby/sys/userns/@v/v0.1.0.mod) = dGb3rRJIAMV7z9x1N1QoM7dK/4ebjS9qU6ahghhi9Aw=
 SHA256 (go_modules/github.com/moby/sys/userns/@v/v0.1.0.zip) = JMECvMQY3tw3j7yqU7ECUbNQQvLoa/CI93MlAGT+MIA=
 SHA256 (go_modules/github.com/moby/term/@v/v0.5.2.mod) = aYKER5WYc/nIJfuNGsSm0GjWaKLUjI3+5nPpvslbsiw=
@@ -832,7 +834,8 @@ SHA256 (go_modules/go.yaml.in/yaml/v2/@v/v2.4.4.zip) = G5impJjPJVxfKYLTLHRjO8eWl
 SHA256 (go_modules/go.yaml.in/yaml/v3/@v/v3.0.4.mod) = KYn4uABgWJCtQM9JEJsLapcr2nnZLfI21A3beYCTEn4=
 SHA256 (go_modules/go.yaml.in/yaml/v3/@v/v3.0.4.zip) = Axfa5W6qnplURnyHaP1qibogBfFTTiwm/OUWOtjS7zE=
 SHA256 (go_modules/go.yaml.in/yaml/v4/@v/v4.0.0-rc.4.mod) = 1CoBSdpGRfP8nQj1tNQwLfkjSQjEjmIsWu7xbGjt69U=
-SHA256 (go_modules/go.yaml.in/yaml/v4/@v/v4.0.0-rc.4.zip) = k5gRLX6C59GdAfDVkH7SMtix9EsNSHydXQkFpNcymWs=
+SHA256 (go_modules/go.yaml.in/yaml/v4/@v/v4.0.0-rc.6.mod) = 1CoBSdpGRfP8nQj1tNQwLfkjSQjEjmIsWu7xbGjt69U=
+SHA256 (go_modules/go.yaml.in/yaml/v4/@v/v4.0.0-rc.6.zip) = HDYuW/sElaA35YuNX3uqbfcT+UnuDjlDmOhsHymSzKk=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20190308221718-c2843e01d9a2.mod) = M+0HClpm4JYGhaxThkQOG1mJnnTYo4oRgGhecqIZXe0=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20210921155107-089bfa567519.mod) = zWMRYSoqpNDX4DxBs6ofvC1fiVqz9hCJ+rgL/p+PVIU=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.22.0.mod) = Pus2v2xwkmi0EeJB8lvUrunpeucVre4QgY03HESlSbQ=
@@ -1040,7 +1043,7 @@ SHA256 (go_modules/tags.cncf.io/container-device-interface/@v/v1.1.0.mod) = WF2o
 SHA256 (go_modules/tags.cncf.io/container-device-interface/@v/v1.1.0.zip) = HlzTA7aH4sCuTWxr1k0Is1/3hYTqCCRhJf2XyoedUvE=
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v1.1.0.mod) = EDvE/JGuY8D/nPNsMi4Sq7Wkvl5BEbpsmQ191uTAK+I=
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v1.1.0.zip) = 81TWsgtfNe2qPrV928l1FyVFShDKjmws8QPEBT5aVxE=
-SIZE (docker-compose-v5.3.0.zip) = 894961
+SIZE (docker-compose-v5.3.1.zip) = 895483
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.mod) = 96
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.zip) = 239588
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.9.0.mod) = 127
@@ -1273,8 +1276,8 @@ SIZE (go_modules/github.com/docker/buildx/@v/v0.35.0.zip) = 853129
 SIZE (go_modules/github.com/docker/cli-docs-tool/@v/v0.11.0.mod) = 502
 SIZE (go_modules/github.com/docker/cli-docs-tool/@v/v0.11.0.zip) = 54415
 SIZE (go_modules/github.com/docker/cli/@v/v29.5.3+incompatible.mod) = 29
-SIZE (go_modules/github.com/docker/cli/@v/v29.6.0+incompatible.mod) = 29
-SIZE (go_modules/github.com/docker/cli/@v/v29.6.0+incompatible.zip) = 2017483
+SIZE (go_modules/github.com/docker/cli/@v/v29.6.1+incompatible.mod) = 29
+SIZE (go_modules/github.com/docker/cli/@v/v29.6.1+incompatible.zip) = 2017263
 SIZE (go_modules/github.com/docker/distribution/@v/v2.8.3+incompatible.mod) = 38
 SIZE (go_modules/github.com/docker/distribution/@v/v2.8.3+incompatible.zip) = 660873
 SIZE (go_modules/github.com/docker/docker-credential-helpers/@v/v0.9.8.mod) = 391
@@ -1541,7 +1544,8 @@ SIZE (go_modules/github.com/mitchellh/go-wordwrap/@v/v1.0.1.zip) = 3740
 SIZE (go_modules/github.com/mitchellh/hashstructure/v2/@v/v2.0.2.mod) = 54
 SIZE (go_modules/github.com/mitchellh/hashstructure/v2/@v/v2.0.2.zip) = 11312
 SIZE (go_modules/github.com/moby/buildkit/@v/v0.31.0.mod) = 12899
-SIZE (go_modules/github.com/moby/buildkit/@v/v0.31.0.zip) = 2204391
+SIZE (go_modules/github.com/moby/buildkit/@v/v0.31.1.mod) = 12899
+SIZE (go_modules/github.com/moby/buildkit/@v/v0.31.1.zip) = 2205965
 SIZE (go_modules/github.com/moby/docker-image-spec/@v/v1.3.1.mod) = 265
 SIZE (go_modules/github.com/moby/docker-image-spec/@v/v1.3.1.zip) = 17196
 SIZE (go_modules/github.com/moby/go-archive/@v/v0.2.0.mod) = 612
@@ -1582,7 +1586,8 @@ SIZE (go_modules/github.com/moby/sys/signal/@v/v0.7.1.zip) = 11324
 SIZE (go_modules/github.com/moby/sys/symlink/@v/v0.3.0.mod) = 77
 SIZE (go_modules/github.com/moby/sys/symlink/@v/v0.3.0.zip) = 16884
 SIZE (go_modules/github.com/moby/sys/user/@v/v0.4.0.mod) = 266
-SIZE (go_modules/github.com/moby/sys/user/@v/v0.4.0.zip) = 20379
+SIZE (go_modules/github.com/moby/sys/user/@v/v0.4.1.mod) = 266
+SIZE (go_modules/github.com/moby/sys/user/@v/v0.4.1.zip) = 22548
 SIZE (go_modules/github.com/moby/sys/userns/@v/v0.1.0.mod) = 43
 SIZE (go_modules/github.com/moby/sys/userns/@v/v0.1.0.zip) = 7056
 SIZE (go_modules/github.com/moby/term/@v/v0.5.2.mod) = 171
@@ -1874,7 +1879,8 @@ SIZE (go_modules/go.yaml.in/yaml/v2/@v/v2.4.4.zip) = 81706
 SIZE (go_modules/go.yaml.in/yaml/v3/@v/v3.0.4.mod) = 97
 SIZE (go_modules/go.yaml.in/yaml/v3/@v/v3.0.4.zip) = 106476
 SIZE (go_modules/go.yaml.in/yaml/v4/@v/v4.0.0-rc.4.mod) = 35
-SIZE (go_modules/go.yaml.in/yaml/v4/@v/v4.0.0-rc.4.zip) = 313790
+SIZE (go_modules/go.yaml.in/yaml/v4/@v/v4.0.0-rc.6.mod) = 35
+SIZE (go_modules/go.yaml.in/yaml/v4/@v/v4.0.0-rc.6.zip) = 354570
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20190308221718-c2843e01d9a2.mod) = 88
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20210921155107-089bfa567519.mod) = 247
 SIZE (go_modules/golang.org/x/crypto/@v/v0.22.0.mod) = 190
