@@ -21,7 +21,7 @@ permit nopass _telegraf as _unbound cmd /usr/sbin/unbound-control \
 	args stats_noreset
 permit nopass _telegraf as _nsd cmd /usr/sbin/nsd-control args stats_noreset
 permit nopass _telegraf cmd /sbin/pfctl args -s info
-permit nopass _telegraf cmd /usr/sbin/ntpctl args -s peers
+permit nopass _telegraf cmd /usr/sbin/ntpctl args -s all
 permit nopass _telegraf cmd /usr/sbin/smtpctl args show stats
 
 Resource Limits
