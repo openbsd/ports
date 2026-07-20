@@ -411,11 +411,11 @@
      SUBDIR += pecl-ssh2,php85
      SUBDIR += pelican
      SUBDIR += perlbal
+     SUBDIR += pgweb
      SUBDIR += phpmyadmin
      SUBDIR += phppgadmin
      SUBDIR += phpvirtualbox
      SUBDIR += pipe-viewer
-     SUBDIR += pgweb
      SUBDIR += pm2
      SUBDIR += pnp4nagios
      SUBDIR += polipo
@@ -514,9 +514,9 @@
      SUBDIR += py-respx
      SUBDIR += py-selenium
      SUBDIR += py-soupsieve
+     SUBDIR += py-spotipy
      SUBDIR += py-sse-starlette
      SUBDIR += py-starlette
-     SUBDIR += py-spotipy
      SUBDIR += py-tempita
      SUBDIR += py-terminado
      SUBDIR += py-tinyhtml5
@@ -556,8 +556,8 @@
      SUBDIR += ruby-faraday-net_http
      SUBDIR += ruby-fcgi,ruby34
      SUBDIR += ruby-fcgi,ruby40
-     SUBDIR += ruby-httpclient
      SUBDIR += ruby-ferrum
+     SUBDIR += ruby-httpclient
      SUBDIR += ruby-jwt
      SUBDIR += ruby-multipart-post
      SUBDIR += ruby-ntlm,ruby34
