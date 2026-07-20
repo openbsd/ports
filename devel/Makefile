@@ -1501,6 +1501,7 @@
      SUBDIR += py-extras
      SUBDIR += py-fasteners
      SUBDIR += py-fastimport
+     SUBDIR += py-fastuuid
      SUBDIR += py-fields
      SUBDIR += py-filebytes
      SUBDIR += py-filetype
@@ -1588,6 +1589,7 @@
      SUBDIR += py-lazy-object-proxy
      SUBDIR += py-libcst
      SUBDIR += py-liblarch
+     SUBDIR += py-litellm
      SUBDIR += py-littleutils
      SUBDIR += py-llvmlite
      SUBDIR += py-logfury
@@ -1600,6 +1602,7 @@
      SUBDIR += py-marshmallow
      SUBDIR += py-matrix-common
      SUBDIR += py-mccabe
+     SUBDIR += py-mcp
      SUBDIR += py-minidump
      SUBDIR += py-minimock
      SUBDIR += py-mock
@@ -1626,6 +1629,7 @@
      SUBDIR += py-notebook-shim
      SUBDIR += py-objgraph
      SUBDIR += py-olefile
+     SUBDIR += py-openai
      SUBDIR += py-openapi-schema-validator
      SUBDIR += py-openapi-spec-validator
      SUBDIR += py-openbsd
