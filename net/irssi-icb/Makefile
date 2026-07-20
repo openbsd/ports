@@ -2,10 +2,10 @@ COMMENT=	ICB plugin for irssi
 
 GH_ACCOUNT=	mglocker
 GH_PROJECT=	irssi-icb
-GH_COMMIT=	c4e2ea8939b5b75d1941ebe3335475482d218838
+GH_COMMIT=	bfda7f633cabbc81a854d65aa62943e12ece16ea
 
 DISTNAME=	irssi-icb-0.17
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	net
 
