@@ -1,0 +1,12 @@
+Index: egl/wayland-egl-symbols-check
+--- egl/wayland-egl-symbols-check.orig
++++ egl/wayland-egl-symbols-check
+@@ -14,7 +14,7 @@ if ! test -n "$NM"; then
+ 	exit 99
+ fi
+ 
+-AVAIL_FUNCS="$($NM -D --format=bsd --defined-only $LIB | awk '{print $3}')"
++AVAIL_FUNCS="$($NM -D $LIB | awk '{print $3}')"
+ 
+ # Official ABI, taken from the header.
+ REQ_FUNCS="wl_egl_window_resize
