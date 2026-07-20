@@ -5,6 +5,7 @@ share/acme.sh/deploy/
 share/acme.sh/deploy/ali_cdn.sh
 share/acme.sh/deploy/ali_dcdn.sh
 share/acme.sh/deploy/apache.sh
+share/acme.sh/deploy/baidu_cdn.sh
 share/acme.sh/deploy/byteplus_alb.sh
 share/acme.sh/deploy/cachefly.sh
 share/acme.sh/deploy/cleverreach.sh
@@ -15,6 +16,7 @@ share/acme.sh/deploy/docker.sh
 share/acme.sh/deploy/dovecot.sh
 share/acme.sh/deploy/edgio.sh
 share/acme.sh/deploy/exim4.sh
+share/acme.sh/deploy/fortigate.sh
 share/acme.sh/deploy/fritzbox.sh
 share/acme.sh/deploy/gcore_cdn.sh
 share/acme.sh/deploy/gitlab.sh
@@ -53,6 +55,7 @@ share/acme.sh/deploy/unifi.sh
 share/acme.sh/deploy/vault.sh
 share/acme.sh/deploy/vault_cli.sh
 share/acme.sh/deploy/vsftpd.sh
+share/acme.sh/deploy/windows_rdp.sh
 share/acme.sh/deploy/zyxel_gs1900.sh
 share/acme.sh/dnsapi/
 share/acme.sh/dnsapi/dns_1984hosting.sh
@@ -64,6 +67,7 @@ share/acme.sh/dnsapi/dns_ali.sh
 share/acme.sh/dnsapi/dns_alviy.sh
 share/acme.sh/dnsapi/dns_anx.sh
 share/acme.sh/dnsapi/dns_artfiles.sh
+share/acme.sh/dnsapi/dns_arubabusiness.sh
 share/acme.sh/dnsapi/dns_arvan.sh
 share/acme.sh/dnsapi/dns_aurora.sh
 share/acme.sh/dnsapi/dns_autodns.sh
@@ -76,14 +80,18 @@ share/acme.sh/dnsapi/dns_bh.sh
 share/acme.sh/dnsapi/dns_bhosted.sh
 share/acme.sh/dnsapi/dns_bookmyname.sh
 share/acme.sh/dnsapi/dns_bunny.sh
+share/acme.sh/dnsapi/dns_calrissia.sh
+share/acme.sh/dnsapi/dns_cdmon.sh
 share/acme.sh/dnsapi/dns_cf.sh
 share/acme.sh/dnsapi/dns_clouddns.sh
 share/acme.sh/dnsapi/dns_cloudns.sh
 share/acme.sh/dnsapi/dns_cn.sh
+share/acme.sh/dnsapi/dns_comlaude.sh
 share/acme.sh/dnsapi/dns_conoha.sh
 share/acme.sh/dnsapi/dns_constellix.sh
 share/acme.sh/dnsapi/dns_cpanel.sh
 share/acme.sh/dnsapi/dns_cpanel_uapi.sh
+share/acme.sh/dnsapi/dns_creoline.sh
 share/acme.sh/dnsapi/dns_curanet.sh
 share/acme.sh/dnsapi/dns_cyon.sh
 share/acme.sh/dnsapi/dns_czechia.sh
@@ -110,8 +118,10 @@ share/acme.sh/dnsapi/dns_easydns.sh
 share/acme.sh/dnsapi/dns_edgecenter.sh
 share/acme.sh/dnsapi/dns_edgedns.sh
 share/acme.sh/dnsapi/dns_efficientip.sh
+share/acme.sh/dnsapi/dns_eurodns.sh
 share/acme.sh/dnsapi/dns_euserv.sh
 share/acme.sh/dnsapi/dns_exoscale.sh
+share/acme.sh/dnsapi/dns_firestorm.sh
 share/acme.sh/dnsapi/dns_fornex.sh
 share/acme.sh/dnsapi/dns_freedns.sh
 share/acme.sh/dnsapi/dns_freemyip.sh
@@ -120,14 +130,15 @@ share/acme.sh/dnsapi/dns_gcloud.sh
 share/acme.sh/dnsapi/dns_gcore.sh
 share/acme.sh/dnsapi/dns_gd.sh
 share/acme.sh/dnsapi/dns_geoscaling.sh
+share/acme.sh/dnsapi/dns_glesys.sh
 share/acme.sh/dnsapi/dns_gname.sh
 share/acme.sh/dnsapi/dns_googledomains.sh
 share/acme.sh/dnsapi/dns_he.sh
 share/acme.sh/dnsapi/dns_he_ddns.sh
-share/acme.sh/dnsapi/dns_hetzner.sh
 share/acme.sh/dnsapi/dns_hetznercloud.sh
 share/acme.sh/dnsapi/dns_hexonet.sh
 share/acme.sh/dnsapi/dns_hostingde.sh
+share/acme.sh/dnsapi/dns_hostinger.sh
 share/acme.sh/dnsapi/dns_hostup.sh
 share/acme.sh/dnsapi/dns_huaweicloud.sh
 share/acme.sh/dnsapi/dns_infoblox.sh
@@ -137,6 +148,7 @@ share/acme.sh/dnsapi/dns_internetbs.sh
 share/acme.sh/dnsapi/dns_inwx.sh
 share/acme.sh/dnsapi/dns_ionos.sh
 share/acme.sh/dnsapi/dns_ionos_cloud.sh
+share/acme.sh/dnsapi/dns_ipprojects.sh
 share/acme.sh/dnsapi/dns_ipv64.sh
 share/acme.sh/dnsapi/dns_ispconfig.sh
 share/acme.sh/dnsapi/dns_jd.sh
@@ -146,7 +158,9 @@ share/acme.sh/dnsapi/dns_kas.sh
 share/acme.sh/dnsapi/dns_kinghost.sh
 share/acme.sh/dnsapi/dns_knot.sh
 share/acme.sh/dnsapi/dns_la.sh
+share/acme.sh/dnsapi/dns_laodc.sh
 share/acme.sh/dnsapi/dns_leaseweb.sh
+share/acme.sh/dnsapi/dns_level27.sh
 share/acme.sh/dnsapi/dns_lexicon.sh
 share/acme.sh/dnsapi/dns_limacity.sh
 share/acme.sh/dnsapi/dns_linode.sh
@@ -159,6 +173,7 @@ share/acme.sh/dnsapi/dns_mgwm.sh
 share/acme.sh/dnsapi/dns_miab.sh
 share/acme.sh/dnsapi/dns_mijnhost.sh
 share/acme.sh/dnsapi/dns_misaka.sh
+share/acme.sh/dnsapi/dns_muumuu.sh
 share/acme.sh/dnsapi/dns_myapi.sh
 share/acme.sh/dnsapi/dns_mydevil.sh
 share/acme.sh/dnsapi/dns_mydnsjp.sh
@@ -192,6 +207,7 @@ share/acme.sh/dnsapi/dns_pdns.sh
 share/acme.sh/dnsapi/dns_pleskxml.sh
 share/acme.sh/dnsapi/dns_pointhq.sh
 share/acme.sh/dnsapi/dns_porkbun.sh
+share/acme.sh/dnsapi/dns_poweradmin.sh
 share/acme.sh/dnsapi/dns_qc.sh
 share/acme.sh/dnsapi/dns_rackcorp.sh
 share/acme.sh/dnsapi/dns_rackspace.sh
@@ -220,9 +236,11 @@ share/acme.sh/dnsapi/dns_variomedia.sh
 share/acme.sh/dnsapi/dns_veesp.sh
 share/acme.sh/dnsapi/dns_vercel.sh
 share/acme.sh/dnsapi/dns_virakcloud.sh
+share/acme.sh/dnsapi/dns_volcengine.sh
 share/acme.sh/dnsapi/dns_vscale.sh
 share/acme.sh/dnsapi/dns_vultr.sh
 share/acme.sh/dnsapi/dns_websupport.sh
+share/acme.sh/dnsapi/dns_wedos.sh
 share/acme.sh/dnsapi/dns_west_cn.sh
 share/acme.sh/dnsapi/dns_world4you.sh
 share/acme.sh/dnsapi/dns_yandex360.sh
@@ -236,6 +254,7 @@ share/acme.sh/notify/aws_ses.sh
 share/acme.sh/notify/bark.sh
 share/acme.sh/notify/callmebotWhatsApp.sh
 share/acme.sh/notify/cqhttp.sh
+share/acme.sh/notify/customscript.sh
 share/acme.sh/notify/dingtalk.sh
 share/acme.sh/notify/discord.sh
 share/acme.sh/notify/feishu.sh
@@ -256,6 +275,7 @@ share/acme.sh/notify/slack_app.sh
 share/acme.sh/notify/smtp.sh
 share/acme.sh/notify/teams.sh
 share/acme.sh/notify/telegram.sh
+share/acme.sh/notify/waha.sh
 share/acme.sh/notify/weixin_work.sh
 share/acme.sh/notify/xmpp.sh
 share/doc/acme.sh/

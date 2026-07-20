@@ -1,0 +1,15 @@
+Avoid ksh bug
+https://marc.info/?l=openbsd-tech&m=178449806343192&w=2
+
+Index: deploy/windows_rdp.sh
+--- deploy/windows_rdp.sh.orig
++++ deploy/windows_rdp.sh
+@@ -110,7 +110,7 @@ windows_rdp_deploy() {
+ # at all - unless "Exportable" is included in the storage flags. However, then the certificate seems
+ # unaccessible to TermService for some weird reasons despite all permissions being set (at least on my
+ # Win 11 lab machine). This might be some security setting that prevents TermService from working with
+-# exportable keys? I don't know - importing the entire collection including chain or not always fixes
++# exportable keys? I do not know - importing the entire collection including chain or not always fixes
+ # the issues.
+ #
+ # Note2: If you should have kicked yourself out for some reason, then deleting the certificate will make
