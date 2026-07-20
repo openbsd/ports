@@ -1,6 +1,6 @@
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		4.3.2
+V =		4.3.3
 DISTNAME =	rabbitmq-server-${V}
 PKGNAME =	rabbitmq-${V}
 
@@ -8,7 +8,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://www.rabbitmq.com/
 
-MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
+MAINTAINER =	Volker Schlecht <volker@openbsd.org>
 
 # MPL
 PERMIT_PACKAGE= Yes
@@ -73,7 +73,7 @@ OBSERVER_CLI_VSN	1.8.2 \
 OSIRIS_VSN	1.13.1 \
 PROMETHEUS_VSN	6.1.1 \
 QUANTILE_ESTIMATOR_VSN	1.0.2 \
-RA_VSN		3.1.7 \
+RA_VSN		3.1.9 \
 RECON_VSN	2.5.6 \
 REDBUG_VSN	2.1.0 \
 SESHAT_VSN	1.0.1 \

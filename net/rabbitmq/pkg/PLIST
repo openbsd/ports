@@ -601,6 +601,7 @@ lib/rabbitmq/plugins/${RABBIT_PROMETHEUS}/include/prometheus.hrl
 lib/rabbitmq/plugins/${RABBIT_PROMETHEUS}/include/prometheus_model.hrl
 lib/rabbitmq/plugins/${RABBIT_RA}/
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/
+lib/rabbitmq/plugins/${RABBIT_RA}/ebin/eqwalizer_specs.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra.app
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_app.beam
@@ -1170,6 +1171,7 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_load_definitions.
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_login.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_nodes.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_oauth_bootstrap.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_oauth_token_proxy.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_reset_handler.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_schema.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_stats.beam
