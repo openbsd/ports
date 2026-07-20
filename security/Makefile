@@ -296,6 +296,7 @@
      SUBDIR += py-duo_client
      SUBDIR += py-duo_universal
      SUBDIR += py-ecdsa
+     SUBDIR += py-fast-cipher
      SUBDIR += py-fastecdsa
      SUBDIR += py-fickling
      SUBDIR += py-fido2
