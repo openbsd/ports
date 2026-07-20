@@ -458,6 +458,7 @@
      SUBDIR += py-iso8601
      SUBDIR += py-jaraco-text
      SUBDIR += py-jellyfish
+     SUBDIR += py-jiter
      SUBDIR += py-json5
      SUBDIR += py-jsonpatch
      SUBDIR += py-jsonpointer
@@ -500,6 +501,7 @@
      SUBDIR += py-python-json-logger
      SUBDIR += py-python-markdown-math
      SUBDIR += py-pyuca
+     SUBDIR += py-rank-bm25
      SUBDIR += py-rapidfuzz
      SUBDIR += py-rebulk
      SUBDIR += py-recommonmark
@@ -530,7 +532,9 @@
      SUBDIR += py-textdistance
      SUBDIR += py-textfsm
      SUBDIR += py-texttable
+     SUBDIR += py-tiktoken
      SUBDIR += py-tinycss2
+     SUBDIR += py-tokenizers
      SUBDIR += py-toml
      SUBDIR += py-tomli
      SUBDIR += py-tomli_w
