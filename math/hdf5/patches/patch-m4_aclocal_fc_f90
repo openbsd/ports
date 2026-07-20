@@ -3,7 +3,7 @@ Already fixed upstream.
 Index: m4/aclocal_fc.f90
 --- m4/aclocal_fc.f90.orig
 +++ m4/aclocal_fc.f90
-@@ -150,6 +150,7 @@ PROGRAM FC_AVAIL_KINDS
+@@ -179,6 +179,7 @@ PROGRAM FC_AVAIL_KINDS
       WRITE(stdout,'(I0)') max_decimal_prec
       WRITE(stdout,'(I0)') num_ikinds
       WRITE(stdout,'(I0)') num_rkinds
