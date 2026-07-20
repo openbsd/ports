@@ -474,6 +474,7 @@
      SUBDIR += py-httptools
      SUBDIR += py-httpx
      SUBDIR += py-httpx-ntlm
+     SUBDIR += py-httpx-sse
      SUBDIR += py-hyperframe
      SUBDIR += py-hyperlink
      SUBDIR += py-itsdangerous
@@ -513,6 +514,7 @@
      SUBDIR += py-respx
      SUBDIR += py-selenium
      SUBDIR += py-soupsieve
+     SUBDIR += py-sse-starlette
      SUBDIR += py-starlette
      SUBDIR += py-spotipy
      SUBDIR += py-tempita
