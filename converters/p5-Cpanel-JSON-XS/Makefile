@@ -1,6 +1,6 @@
 COMMENT =	cPanel fork of JSON::XS, fast and correct serializing
 
-DISTNAME =	Cpanel-JSON-XS-4.42
+DISTNAME =	Cpanel-JSON-XS-4.43
 CPAN_AUTHOR =	RURBAN
 
 CATEGORIES =	converters
