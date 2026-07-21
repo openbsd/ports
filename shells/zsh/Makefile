@@ -1,9 +1,8 @@
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		5.9.1
+V=		5.9.2
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
-REVISION=	0
 
 MAINTAINER=	Matthew Martin <phy1729@gmail.com>
 

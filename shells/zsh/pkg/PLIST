@@ -370,6 +370,7 @@ share/zsh/${V}/functions/Completion/Linux/_mdadm
 share/zsh/${V}/functions/Completion/Linux/_mii-tool
 share/zsh/${V}/functions/Completion/Linux/_modutils
 share/zsh/${V}/functions/Completion/Linux/_mondo
+share/zsh/${V}/functions/Completion/Linux/_namei
 share/zsh/${V}/functions/Completion/Linux/_networkmanager
 share/zsh/${V}/functions/Completion/Linux/_nsenter
 share/zsh/${V}/functions/Completion/Linux/_opkg
@@ -444,6 +445,7 @@ share/zsh/${V}/functions/Completion/Unix/_abcde
 share/zsh/${V}/functions/Completion/Unix/_absolute_command_paths
 share/zsh/${V}/functions/Completion/Unix/_ack
 share/zsh/${V}/functions/Completion/Unix/_adb
+share/zsh/${V}/functions/Completion/Unix/_age
 share/zsh/${V}/functions/Completion/Unix/_ansible
 share/zsh/${V}/functions/Completion/Unix/_ant
 share/zsh/${V}/functions/Completion/Unix/_antiword
@@ -607,6 +609,7 @@ share/zsh/${V}/functions/Completion/Unix/_growisofs
 share/zsh/${V}/functions/Completion/Unix/_gsettings
 share/zsh/${V}/functions/Completion/Unix/_guilt
 share/zsh/${V}/functions/Completion/Unix/_gzip
+share/zsh/${V}/functions/Completion/Unix/_hardlink
 share/zsh/${V}/functions/Completion/Unix/_have_glob_qual
 share/zsh/${V}/functions/Completion/Unix/_head
 share/zsh/${V}/functions/Completion/Unix/_hexdump
