@@ -12,6 +12,10 @@ CATEGORIES =		textproc devel
 # MIT
 PERMIT_PACKAGE =	Yes
 
+# base-gcc - wrong number of arguments for deprecated attribute 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += c pthread xml2 z zip
 
 SITES =			${SITE_SOURCEFORGE:=ebook-tools/${V}/}
