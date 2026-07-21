@@ -1,0 +1,21 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -16,7 +16,7 @@ PREFIX?=/usr
+ BINDIR?=$(PREFIX)/sbin
+ MANDIR?=$(PREFIX)/share/man/man8
+ 
+-MAN=sslh.8.gz	# man page name
++MAN=sslh.8	# man page name
+ 
+ # End of configuration -- the rest should take care of
+ # itself
+@@ -105,7 +105,7 @@ echosrv: version.h echosrv-conf.c echosrv.o echosrv-co
+ landlock.o: config.h
+ 
+ $(MAN): sslh.pod Makefile
+-	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod | gzip -9 - > $(MAN)
++	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod > $(MAN)
+ 
+ # Create release: export clean tree and tag current
+ # configuration

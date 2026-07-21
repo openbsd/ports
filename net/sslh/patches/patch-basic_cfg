@@ -1,12 +1,12 @@
 Index: basic.cfg
 --- basic.cfg.orig
 +++ basic.cfg
-@@ -7,7 +7,7 @@ inetd: false;
- numeric: false;
- transparent: false;
+@@ -5,7 +5,7 @@
+ # example.cfg
+ 
  timeout: 2;
 -user: "nobody";
 +user: "_sslh";
  pidfile: "/var/run/sslh.pid";
- chroot: "/var/empty";
+ 
  

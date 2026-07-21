@@ -1,0 +1,21 @@
+Index: t/run
+--- t/run.orig
++++ t/run
+@@ -124,7 +124,7 @@ sub start_echosrv
+ 
+ sub stop_echosrv
+ {
+-    `killall echosrv` if $started_echosrvs;
++    `pkill -q echosrv` if $started_echosrvs;
+     undef $started_echosrvs;
+ }
+ 
+@@ -157,7 +157,7 @@ sub stop_sslh
+ {
+     if (defined $sslh_pid) {
+         kill TERM => $sslh_pid or warn "kill process: $!\n";
+-    `killall sslh-ev sslh-select sslh-fork`;
++    `pkill -q sslh-ev sslh-select sslh-fork`;
+         undef $sslh_pid;
+     }
+ }

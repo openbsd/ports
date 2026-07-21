@@ -1,0 +1,11 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/sslh-ev"
+daemon_flags="--user=_sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:22 --tls 127.0.0.1:443"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon} .*"
+rc_reload=NO
+
+rc_cmd $1
