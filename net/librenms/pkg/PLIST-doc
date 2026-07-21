@@ -42,6 +42,7 @@ share/doc/librenms/Alerting/Transports/Cisco-Spark.md
 share/doc/librenms/Alerting/Transports/Clickatell.md
 share/doc/librenms/Alerting/Transports/Discord.md
 share/doc/librenms/Alerting/Transports/Elasticsearch.md
+share/doc/librenms/Alerting/Transports/Flowtriq.md
 share/doc/librenms/Alerting/Transports/GLPI.md
 share/doc/librenms/Alerting/Transports/Gitlab.md
 share/doc/librenms/Alerting/Transports/Grafana-OnCall.md
@@ -188,6 +189,7 @@ share/doc/librenms/Extensions/Applications/RRDCached.md
 share/doc/librenms/Extensions/Applications/Raspberry PI.md
 share/doc/librenms/Extensions/Applications/Raspberry Pi GPIO Monitor.md
 share/doc/librenms/Extensions/Applications/Redis.md
+share/doc/librenms/Extensions/Applications/Routinator.md
 share/doc/librenms/Extensions/Applications/SDFS info.md
 share/doc/librenms/Extensions/Applications/SMART.md
 share/doc/librenms/Extensions/Applications/Sagan.md
@@ -248,6 +250,7 @@ share/doc/librenms/Extensions/Sub-Directory.md
 share/doc/librenms/Extensions/Supermicro.md
 share/doc/librenms/Extensions/Syslog.md
 share/doc/librenms/Extensions/Two-Factor-Auth.md
+share/doc/librenms/Extensions/Unimus.md
 share/doc/librenms/Extensions/Varnish.md
 share/doc/librenms/Extensions/VisJS-Config.md
 share/doc/librenms/Extensions/Weathermap.md

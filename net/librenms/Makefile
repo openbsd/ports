@@ -4,7 +4,7 @@ COMMENT-doc=	documentation for LibreNMS
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	26.6.1
+GH_TAGNAME=	26.7.0
 
 # keep above 7.9-stable
 REVISION=	0
