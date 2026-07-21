@@ -1,3 +1,6 @@
+# fails on !LP64; gitea.dev/vendor/modernc.org/sqlite/lib
+NOT_FOR_ARCHS =		arm i386
+
 COMMENT =		compact self-hosted Git service
 
 VERSION =		1.27.0
