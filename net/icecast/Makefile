@@ -8,6 +8,10 @@ HOMEPAGE=	https://icecast.org/
 # GPL
 PERMIT_PACKAGE=	Yes
 
+# base-gcc - expected specifier-qualifier-list before 'mmdb_uint128_t'
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += c crypto curl>=2 iconv igloo m nghttp2 nghttp3 ngtcp2
 WANTLIB += ngtcp2_crypto_libressl ogg pthread rhash speex>=3 ssl
 WANTLIB += theora>=1 vorbis>=3 xml2 xslt>=3 z
