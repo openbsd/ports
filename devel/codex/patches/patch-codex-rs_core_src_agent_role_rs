@@ -1,8 +1,8 @@
 Index: codex-rs/core/src/agent/role.rs
 --- codex-rs/core/src/agent/role.rs.orig
 +++ codex-rs/core/src/agent/role.rs
-@@ -207,6 +207,7 @@ mod reload {
-             cwd: Some(config.cwd.to_path_buf()),
+@@ -220,6 +220,7 @@ mod reload {
+                 .flatten(),
              model_provider: preserve_current_provider.then(|| config.model_provider_id.clone()),
              service_tier: preserve_current_service_tier.then(|| config.service_tier.clone()),
 +            codex_self_exe: config.codex_self_exe.clone(),

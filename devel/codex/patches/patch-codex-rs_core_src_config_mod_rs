@@ -1,7 +1,7 @@
 Index: codex-rs/core/src/config/mod.rs
 --- codex-rs/core/src/config/mod.rs.orig
 +++ codex-rs/core/src/config/mod.rs
-@@ -3658,7 +3658,7 @@ impl Config {
+@@ -3745,7 +3745,7 @@ impl Config {
  
          let review_model = override_review_model.or(cfg.review_model);
  
