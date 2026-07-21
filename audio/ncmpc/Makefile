@@ -1,7 +1,6 @@
 COMMENT=		curses based frontend for mpd
 
-VER=			0.52
-REVISION=		0
+VER=			0.53
 DISTNAME=		ncmpc-${VER}
 CATEGORIES=		audio
 
