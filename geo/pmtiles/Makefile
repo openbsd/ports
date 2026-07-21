@@ -3,6 +3,7 @@ COMMENT=	CLI to work with Protomaps PMTiles archives
 NOT_FOR_ARCHS=	armv7 i386
 
 V=		1.31.1
+REVISION=	0
 MODGO_MODNAME=	github.com/protomaps/go-pmtiles
 MODGO_VERSION=	v$V
 

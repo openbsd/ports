@@ -1,0 +1,3 @@
+Note: pmtiles requires a lot of memory when working with large tile sets.
+Either restrict zoom levels (e.g. --maxzoom=11) or ensure that the login
+class for your user has high datasize limits (login.conf / ulimit -d).
