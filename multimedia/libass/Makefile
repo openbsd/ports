@@ -37,4 +37,9 @@ CONFIGURE_ARGS+=-Ddefault_library=both \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+.if ${MACHINE_ARCH} == "sparc64"
+CONFIGURE_ARGS+=-Dasm=disabled \
+		-Dcheckasm=disabled
+.endif
+
 .include <bsd.port.mk>
