@@ -5,6 +5,9 @@ PKGNAME =		0ad-${V}
 
 USE_NOBTCFI =		Yes
 
+# setuptools
+DPB_PROPERTIES =	nojunk
+
 SO_VERSION =		0.0
 SHARED_LIBS +=		mozjs128-release	${SO_VERSION}
 
