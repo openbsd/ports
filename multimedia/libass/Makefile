@@ -37,7 +37,8 @@ CONFIGURE_ARGS+=-Ddefault_library=both \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.if ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \
+    ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+=-Dasm=disabled \
 		-Dcheckasm=disabled
 .endif
