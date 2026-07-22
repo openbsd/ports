@@ -2,11 +2,13 @@ COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	DNSCrypt
 GH_PROJECT =	dnscrypt-proxy
-GH_TAGNAME =	2.1.16
+GH_TAGNAME =	2.1.18
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://dnscrypt.info/
+
+MAINTAINER =	Igor Zornik <mocheryl@mocheryl.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes
