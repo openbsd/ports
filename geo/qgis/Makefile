@@ -8,6 +8,7 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel parallel2
 
+REVISION =	0
 DISTNAME =	qgis-4.2.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
@@ -73,6 +74,7 @@ LIB_DEPENDS +=	${MODPY_LIB_DEPENDS} \
 		editors/qscintilla,${QTVER} \
 		geo/gdal \
 		geo/geos \
+		geo/geographiclib \
 		geo/mdal \
 		geo/pdal \
 		geo/sfcgal \
@@ -102,7 +104,7 @@ WANTLIB += ${UQTV}WebEngineWidgets ${UQTV}QuickControls2
 WANTLIB += c draco exiv2 expat fcgi freexl gdal geos_c gsl gslcblas iconv intl m
 WANTLIB += mdal minizip pdalcpp pq proj protobuf-lite ${MODPY_WANTLIB}
 WANTLIB += qca-${QTVER} qscintilla2_${QTVER} ${QTVER}keychain rttopo spatialindex
-WANTLIB += spatialite sqlite3 sz util zip hdf5 xml2 z zstd GL SFCGAL
+WANTLIB += spatialite sqlite3 sz util zip hdf5 xml2 z zstd GeographicLib GL SFCGAL
 WANTLIB += Pdf4QtLibCore
 
 # absl wantlibs
@@ -146,6 +148,7 @@ CONFIGURE_ARGS +=-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 		-DWITH_PDAL=TRUE \
 		-DWITH_PDF4QT=TRUE \
 		-DWITH_SFCGAL=TRUE \
+		-DWITH_GEOGRAPHICLIB=TRUE \
 		-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_QSPATIALITE=TRUE
 
 
