@@ -1,5 +1,5 @@
-@newgroup _sslh:*
-@newuser _sslh:*:::sslh:/nonexistent:/sbin/nologin
+@newgroup _sslh:696
+@newuser _sslh:696:696::sslh:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/sslh_fork
 @rcscript ${RCDIR}/sslh_select
 @rcscript ${RCDIR}/sslh_ev
