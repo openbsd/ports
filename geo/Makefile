@@ -9,6 +9,7 @@
      SUBDIR += geos
      SUBDIR += gimgtools
      SUBDIR += globe
+     SUBDIR += geographiclib
      SUBDIR += gpsbabel
      SUBDIR += gpstk
      SUBDIR += gpx-viewer
