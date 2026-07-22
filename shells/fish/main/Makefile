@@ -1,13 +1,16 @@
 COMMENT =		friendly interactive shell
 
-V =			4.8.0
+V =			4.8.1
 
 DISTNAME =		fish-${V}
 
 SITES =			https://github.com/fish-shell/fish-shell/releases/download/${V}/
+FFT_COMMIT =		5917664c8f2e4928ef1e480ff5c13bbe1e226066
+SITES.fft =		https://codeberg.org/danielrainer/fluent-ftl-tools/archive/
+DISTFILES.fft =		danielrainer-fluent-ftl-tools-${FFT_COMMIT}-0{${FFT_COMMIT}}${EXTRACT_SUFX.fft}
+EXTRACT_SUFX.fft =	.tar.gz
 DIST_TUPLE +=		github fish-shell rust-pcre2 0.2.9-utf32 .
 DIST_TUPLE +=		github danielrainer fluent-rs cf712bced280b217b6307edabc2089b3e57204ab fluent-rs
-DIST_TUPLE +=		codeberg danielrainer fluent-ftl-tools 5917664c8f2e4928ef1e480ff5c13bbe1e226066 .
 
 WRKDIST =		${WRKDIR}
 WRKSRC =		${WRKDIST}/fish

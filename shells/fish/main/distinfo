@@ -165,9 +165,9 @@ SHA256 (cargo/xterm-color-1.0.2.tar.gz) = cAip2LqXp+R9my32P8242t4wMBDFp81b8kadTa
 SHA256 (cargo/zerofrom-0.1.8.tar.gz) = DsBaEYE+qAH/bXURCtCc0IJN26F9/hcSjqDV9o5sUnI=
 SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXsjk=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (danielrainer-fluent-ftl-tools-5917664c8f2e4928ef1e480ff5c13bbe1e226066.tar.gz) = LsTTi6YSWhHPL6R/1dm6YU+sE9JboL+sEfP1ZsMgMXA=
+SHA256 (danielrainer-fluent-ftl-tools-5917664c8f2e4928ef1e480ff5c13bbe1e226066-0.tar.gz) = CRsWTtD30okoxq8OdlGP9eosbDzfGiuFDTboHFLNdL4=
 SHA256 (danielrainer-fluent-rs-cf712bced280b217b6307edabc2089b3e57204ab.tar.gz) = wBCSKXS64xGAHXYMxGo5h0TvZCfb74GbrrQVl55XDFE=
-SHA256 (fish-4.8.0.tar.xz) = M69ix98vpVPg6E+oH26kis+Ywr/FADbqrMcKyLpj5wc=
+SHA256 (fish-4.8.1.tar.xz) = DrhqhR6GXpNKfCCRpz12lSJeePDgCnu5bV+HfXbGV4I=
 SHA256 (fish-shell-rust-pcre2-0.2.9-utf32.tar.gz) = 5a8G17c3tm90dqIj6KbNHiscqDSziz3liQHU288KBU0=
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/allocator-api2-0.2.21.tar.gz) = 63622
@@ -336,7 +336,7 @@ SIZE (cargo/xterm-color-1.0.2.tar.gz) = 9302
 SIZE (cargo/zerofrom-0.1.8.tar.gz) = 6156
 SIZE (cargo/zerovec-0.11.6.tar.gz) = 128583
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (danielrainer-fluent-ftl-tools-5917664c8f2e4928ef1e480ff5c13bbe1e226066.tar.gz) = 22463
+SIZE (danielrainer-fluent-ftl-tools-5917664c8f2e4928ef1e480ff5c13bbe1e226066-0.tar.gz) = 22139
 SIZE (danielrainer-fluent-rs-cf712bced280b217b6307edabc2089b3e57204ab.tar.gz) = 367920
-SIZE (fish-4.8.0.tar.xz) = 2615364
+SIZE (fish-4.8.1.tar.xz) = 2619540
 SIZE (fish-shell-rust-pcre2-0.2.9-utf32.tar.gz) = 742431

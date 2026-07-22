@@ -79,6 +79,7 @@ share/doc/fish/cmds/fish_clipboard_copy.html
 share/doc/fish/cmds/fish_clipboard_paste.html
 share/doc/fish/cmds/fish_command_not_found.html
 share/doc/fish/cmds/fish_config.html
+share/doc/fish/cmds/fish_darcs_prompt.html
 share/doc/fish/cmds/fish_default_key_bindings.html
 share/doc/fish/cmds/fish_delta.html
 share/doc/fish/cmds/fish_git_prompt.html
@@ -236,6 +237,7 @@ share/fish/man/man1/
 @man share/fish/man/man1/fish_clipboard_paste.1
 @man share/fish/man/man1/fish_command_not_found.1
 @man share/fish/man/man1/fish_config.1
+@man share/fish/man/man1/fish_darcs_prompt.1
 @man share/fish/man/man1/fish_default_key_bindings.1
 @man share/fish/man/man1/fish_delta.1
 @man share/fish/man/man1/fish_git_prompt.1
