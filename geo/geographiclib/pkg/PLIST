@@ -1,0 +1,106 @@
+@bin bin/Cart3Convert
+@bin bin/CartConvert
+@bin bin/Conformal3Proj
+@bin bin/ConicProj
+@bin bin/GeoConvert
+@bin bin/Geod3Solve
+@bin bin/GeodSolve
+@bin bin/GeodesicProj
+@bin bin/GeoidEval
+@bin bin/Gravity
+@bin bin/IntersectTool
+@bin bin/MagneticField
+@bin bin/Planimeter
+@bin bin/RhumbSolve
+@bin bin/TransverseMercatorProj
+include/GeographicLib/
+include/GeographicLib/Accumulator.hpp
+include/GeographicLib/AlbersEqualArea.hpp
+include/GeographicLib/Angle.hpp
+include/GeographicLib/AuxAngle.hpp
+include/GeographicLib/AuxLatitude.hpp
+include/GeographicLib/AzimuthalEquidistant.hpp
+include/GeographicLib/CassiniSoldner.hpp
+include/GeographicLib/CircularEngine.hpp
+include/GeographicLib/Config.h
+include/GeographicLib/Constants.hpp
+include/GeographicLib/DAuxLatitude.hpp
+include/GeographicLib/DMS.hpp
+include/GeographicLib/DST.hpp
+include/GeographicLib/Ellipsoid.hpp
+include/GeographicLib/EllipticFunction.hpp
+include/GeographicLib/GARS.hpp
+include/GeographicLib/GeoCoords.hpp
+include/GeographicLib/Geocentric.hpp
+include/GeographicLib/Geodesic.hpp
+include/GeographicLib/GeodesicExact.hpp
+include/GeographicLib/GeodesicLine.hpp
+include/GeographicLib/GeodesicLineExact.hpp
+include/GeographicLib/Geohash.hpp
+include/GeographicLib/Geoid.hpp
+include/GeographicLib/Georef.hpp
+include/GeographicLib/Gnomonic.hpp
+include/GeographicLib/GravityCircle.hpp
+include/GeographicLib/GravityModel.hpp
+include/GeographicLib/Intersect.hpp
+include/GeographicLib/LambertConformalConic.hpp
+include/GeographicLib/LocalCartesian.hpp
+include/GeographicLib/MGRS.hpp
+include/GeographicLib/MagneticCircle.hpp
+include/GeographicLib/MagneticModel.hpp
+include/GeographicLib/Math.hpp
+include/GeographicLib/NearestNeighbor.hpp
+include/GeographicLib/NormalGravity.hpp
+include/GeographicLib/OSGB.hpp
+include/GeographicLib/PolarStereographic.hpp
+include/GeographicLib/PolygonArea.hpp
+include/GeographicLib/Rhumb.hpp
+include/GeographicLib/SphericalEngine.hpp
+include/GeographicLib/SphericalHarmonic.hpp
+include/GeographicLib/SphericalHarmonic1.hpp
+include/GeographicLib/SphericalHarmonic2.hpp
+include/GeographicLib/TransverseMercator.hpp
+include/GeographicLib/TransverseMercatorExact.hpp
+include/GeographicLib/Triaxial/
+include/GeographicLib/Triaxial/Cartesian3.hpp
+include/GeographicLib/Triaxial/Conformal3.hpp
+include/GeographicLib/Triaxial/Ellipsoid3.hpp
+include/GeographicLib/Triaxial/Geodesic3.hpp
+include/GeographicLib/Triaxial/GeodesicLine3.hpp
+include/GeographicLib/Trigfun.hpp
+include/GeographicLib/UTMUPS.hpp
+include/GeographicLib/Utility.hpp
+lib/cmake/
+lib/cmake/GeographicLib/
+lib/cmake/GeographicLib/geographiclib-config-version.cmake
+lib/cmake/GeographicLib/geographiclib-config.cmake
+lib/cmake/GeographicLib/geographiclib-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/GeographicLib/geographiclib-targets.cmake
+@lib lib/libGeographicLib.so.${LIBGeographicLib_VERSION}
+lib/pkgconfig/geographiclib.pc
+@man man/man1/Cart3Convert.1
+@man man/man1/CartConvert.1
+@man man/man1/Conformal3Proj.1
+@man man/man1/ConicProj.1
+@man man/man1/GeoConvert.1
+@man man/man1/Geod3Solve.1
+@man man/man1/GeodSolve.1
+@man man/man1/GeodesicProj.1
+@man man/man1/GeoidEval.1
+@man man/man1/Gravity.1
+@man man/man1/IntersectTool.1
+@man man/man1/MagneticField.1
+@man man/man1/Planimeter.1
+@man man/man1/RhumbSolve.1
+@man man/man1/TransverseMercatorProj.1
+@man man/man8/geographiclib-get-geoids.8
+@man man/man8/geographiclib-get-gravity.8
+@man man/man8/geographiclib-get-magnetic.8
+sbin/geographiclib-get-geoids
+sbin/geographiclib-get-gravity
+sbin/geographiclib-get-magnetic
+share/doc/GeographicLib/
+share/doc/GeographicLib/html/
+share/doc/GeographicLib/html/LICENSE.txt
+share/doc/GeographicLib/html/index.html
+share/doc/GeographicLib/html/utilities.html

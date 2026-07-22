@@ -1,0 +1,21 @@
+install manpages in the right place, dont install examples
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -215,14 +215,12 @@ else ()
+ endif ()
+ set (DLLDIR "bin" CACHE STRING "Where to install dlls")
+ # Installation is to ${MANDIR}/man1 and ${MANDIR}/man8
+-set (MANDIR "share/man" CACHE STRING "Where to install the man pages")
++set (MANDIR "man" CACHE STRING "Where to install the man pages")
+ set (CMAKEDIR "lib/cmake/${PROJECT_NAME}"
+   CACHE STRING "Where to install cmake configs")
+ set (PKGDIR "lib/pkgconfig" CACHE STRING "Where to install package config")
+ set (DOCDIR "share/doc/${PROJECT_NAME}"
+   CACHE STRING "Where to install documentation")
+-set (EXAMPLEDIR "share/doc/${PROJECT_NAME}-dev"
+-  CACHE STRING "Where to install examples")
+ 
+ # The relative path to library directory from the bin directory
+ if (LIBDIR AND BINDIR)
