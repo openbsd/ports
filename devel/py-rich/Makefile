@@ -1,9 +1,8 @@
 COMMENT=	Python library for rich text and beautiful formatting
 
-MODPY_DISTV=	13.9.4
+MODPY_DISTV=	15.0.0
 DISTNAME=	rich-${MODPY_DISTV}
 PKGNAME=	py-rich-${MODPY_DISTV}
-REVISION=	1
 
 CATEGORIES=	devel
 
