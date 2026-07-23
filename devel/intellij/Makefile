@@ -1,7 +1,7 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2026.1.4
-DIST_VER=		261.26222.65
+V=			2026.2
+DIST_VER=		262.8665.258
 DISTNAME=		idea-${V}
 DISTFILES=		${DISTNAME}-1{${DISTNAME}}.tar.gz
 PKGNAME=		intellij-${V}
@@ -27,7 +27,7 @@ NO_TEST=		Yes
 
 SUBST_VARS+=		DIST_VER
 
-WRKDIST=		${WRKDIR}/idea-IC-${DIST_VER}
+WRKDIST=		${WRKDIR}/idea-oss
 IJ=			${PREFIX}/intellij
 
 do-install:
