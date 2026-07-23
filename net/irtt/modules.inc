@@ -1,0 +1,60 @@
+MODGO_MODULES =	\
+	github.com/chromedp/cdproto		 v0.0.0-20230802225258-3cf4e6d46a89 \
+	github.com/chromedp/chromedp		 v0.9.2 \
+	github.com/chromedp/sysutil		 v1.0.0 \
+	github.com/chzyer/logex			 v1.2.1 \
+	github.com/chzyer/readline		 v1.5.1 \
+	github.com/chzyer/test			 v1.0.0 \
+	github.com/davecgh/go-spew		 v1.1.1 \
+	github.com/felixge/fgprof		 v0.9.5 \
+	github.com/gobwas/httphead		 v0.1.0 \
+	github.com/gobwas/pool			 v0.2.1 \
+	github.com/gobwas/ws			 v1.2.1 \
+	github.com/google/go-cmp		 v0.6.0 \
+	github.com/google/pprof			 v0.0.0-20260709232956-b9395ee17fa0 \
+	github.com/ianlancetaylor/demangle	 v0.0.0-20250417193237-f615e6bd150b \
+	github.com/josharian/intern		 v1.0.0 \
+	github.com/ledongthuc/pdf		 v0.0.0-20220302134840-0c2507a12d80 \
+	github.com/mailru/easyjson		 v0.7.7 \
+	github.com/ogier/pflag			 v0.0.2-0.20160129220114-45c278ab3607 \
+	github.com/orisano/pixelmatch		 v0.0.0-20220722002657-fb0b55479cde \
+	github.com/pkg/profile			 v1.7.0 \
+	github.com/pmezard/go-difflib		 v1.0.0 \
+	github.com/stretchr/objx		 v0.4.0 \
+	github.com/stretchr/testify		 v1.8.0 \
+	github.com/yuin/goldmark		 v1.4.13 \
+	golang.org/x/crypto			 v0.54.0 \
+	golang.org/x/mod			 v0.37.0 \
+	golang.org/x/net			 v0.57.0 \
+	golang.org/x/sync			 v0.22.0 \
+	golang.org/x/sys			 v0.47.0 \
+	golang.org/x/telemetry			 v0.0.0-20260625142307-59b4966ccb57 \
+	golang.org/x/term			 v0.45.0 \
+	golang.org/x/text			 v0.40.0 \
+	golang.org/x/tools			 v0.47.0 \
+	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
+	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
+	gopkg.in/yaml.v3			 v3.0.1
+
+MODGO_MODFILES =	\
+	github.com/chzyer/logex			 v1.1.10 \
+	github.com/chzyer/readline		 v0.0.0-20180603132655-2972be24d48e \
+	github.com/chzyer/test			 v0.0.0-20180213035817-a1ea475d72b1 \
+	github.com/davecgh/go-spew		 v1.1.0 \
+	github.com/felixge/fgprof		 v0.9.3 \
+	github.com/google/pprof			 v0.0.0-20211214055906-6f57359322fd \
+	github.com/google/pprof			 v0.0.0-20240227163752-401108e1b7e7 \
+	github.com/ianlancetaylor/demangle	 v0.0.0-20210905161508-09a460cdf81d \
+	github.com/ianlancetaylor/demangle	 v0.0.0-20230524184225-eabc099b10ab \
+	github.com/stretchr/objx		 v0.1.0 \
+	github.com/stretchr/testify		 v1.7.1 \
+	golang.org/x/net			 v0.56.0 \
+	golang.org/x/sync			 v0.21.0 \
+	golang.org/x/sys			 v0.0.0-20211007075335-d3039528d8ac \
+	golang.org/x/sys			 v0.0.0-20220310020820-b874c991c1a5 \
+	golang.org/x/sys			 v0.32.0 \
+	golang.org/x/sys			 v0.46.0 \
+	golang.org/x/sys			 v0.6.0 \
+	golang.org/x/tools			 v0.45.0 \
+	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c
+
