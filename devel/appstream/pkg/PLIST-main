@@ -41,6 +41,7 @@ include/appstream/as-relation.h
 include/appstream/as-release-list.h
 include/appstream/as-release.h
 include/appstream/as-review.h
+include/appstream/as-reviews-client.h
 include/appstream/as-screenshot.h
 include/appstream/as-spdx.h
 include/appstream/as-suggested.h
@@ -123,6 +124,7 @@ share/doc/appstream/html/api/class.RelationCheckResult.html
 share/doc/appstream/html/api/class.Release.html
 share/doc/appstream/html/api/class.ReleaseList.html
 share/doc/appstream/html/api/class.Review.html
+share/doc/appstream/html/api/class.ReviewsClient.html
 share/doc/appstream/html/api/class.Screenshot.html
 share/doc/appstream/html/api/class.Suggested.html
 share/doc/appstream/html/api/class.SystemInfo.html
@@ -161,6 +163,7 @@ share/doc/appstream/html/api/ctor.RelationCheckResult.new.html
 share/doc/appstream/html/api/ctor.Release.new.html
 share/doc/appstream/html/api/ctor.ReleaseList.new.html
 share/doc/appstream/html/api/ctor.Review.new.html
+share/doc/appstream/html/api/ctor.ReviewsClient.new.html
 share/doc/appstream/html/api/ctor.Screenshot.new.html
 share/doc/appstream/html/api/ctor.Suggested.new.html
 share/doc/appstream/html/api/ctor.SystemInfo.new.html
@@ -204,6 +207,7 @@ share/doc/appstream/html/api/enum.RelationStatus.html
 share/doc/appstream/html/api/enum.ReleaseKind.html
 share/doc/appstream/html/api/enum.ReleaseListKind.html
 share/doc/appstream/html/api/enum.ReleaseUrlKind.html
+share/doc/appstream/html/api/enum.ReviewVoteKind.html
 share/doc/appstream/html/api/enum.ScreenshotKind.html
 share/doc/appstream/html/api/enum.ScreenshotMediaKind.html
 share/doc/appstream/html/api/enum.SizeKind.html
@@ -216,6 +220,7 @@ share/doc/appstream/html/api/enum.VideoContainerKind.html
 share/doc/appstream/html/api/error.MetadataError.html
 share/doc/appstream/html/api/error.PoolError.html
 share/doc/appstream/html/api/error.RelationError.html
+share/doc/appstream/html/api/error.ReviewsClientError.html
 share/doc/appstream/html/api/error.SystemInfoError.html
 share/doc/appstream/html/api/error.UtilsError.html
 share/doc/appstream/html/api/error.ValidatorError.html
@@ -540,6 +545,7 @@ share/doc/appstream/html/api/method.Image.set_scale.html
 share/doc/appstream/html/api/method.Image.set_url.html
 share/doc/appstream/html/api/method.Image.set_width.html
 share/doc/appstream/html/api/method.Issue.get_id.html
+share/doc/appstream/html/api/method.Issue.get_json_url.html
 share/doc/appstream/html/api/method.Issue.get_kind.html
 share/doc/appstream/html/api/method.Issue.get_url.html
 share/doc/appstream/html/api/method.Issue.set_id.html
@@ -723,6 +729,22 @@ share/doc/appstream/html/api/method.Review.set_reviewer_id.html
 share/doc/appstream/html/api/method.Review.set_reviewer_name.html
 share/doc/appstream/html/api/method.Review.set_summary.html
 share/doc/appstream/html/api/method.Review.set_version.html
+share/doc/appstream/html/api/method.ReviewsClient.fetch_rating_for_id.html
+share/doc/appstream/html/api/method.ReviewsClient.fetch_reviews.html
+share/doc/appstream/html/api/method.ReviewsClient.fetch_reviews_for_id.html
+share/doc/appstream/html/api/method.ReviewsClient.get_client_id.html
+share/doc/appstream/html/api/method.ReviewsClient.get_locale.html
+share/doc/appstream/html/api/method.ReviewsClient.get_server_url.html
+share/doc/appstream/html/api/method.ReviewsClient.get_user_agent.html
+share/doc/appstream/html/api/method.ReviewsClient.get_user_hash.html
+share/doc/appstream/html/api/method.ReviewsClient.remove_review.html
+share/doc/appstream/html/api/method.ReviewsClient.set_client_id.html
+share/doc/appstream/html/api/method.ReviewsClient.set_locale.html
+share/doc/appstream/html/api/method.ReviewsClient.set_server_url.html
+share/doc/appstream/html/api/method.ReviewsClient.set_user_agent.html
+share/doc/appstream/html/api/method.ReviewsClient.set_user_hash.html
+share/doc/appstream/html/api/method.ReviewsClient.submit_review.html
+share/doc/appstream/html/api/method.ReviewsClient.vote_review.html
 share/doc/appstream/html/api/method.Screenshot.add_image.html
 share/doc/appstream/html/api/method.Screenshot.add_video.html
 share/doc/appstream/html/api/method.Screenshot.clear_images.html
@@ -927,6 +949,7 @@ share/doc/appstream/html/api/type_func.ReleaseListKind.from_string.html
 share/doc/appstream/html/api/type_func.ReleaseListKind.to_string.html
 share/doc/appstream/html/api/type_func.ReleaseUrlKind.from_string.html
 share/doc/appstream/html/api/type_func.ReleaseUrlKind.to_string.html
+share/doc/appstream/html/api/type_func.ReviewsClientError.quark.html
 share/doc/appstream/html/api/type_func.ScreenshotKind.from_string.html
 share/doc/appstream/html/api/type_func.ScreenshotKind.to_string.html
 share/doc/appstream/html/api/type_func.SizeKind.from_string.html

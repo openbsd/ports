@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS=		${RUST_ARCHS}
 COMMENT-main=		access to machine-readable software metadata
 COMMENT-qt6=		Qt6 interface for AppStream
 
-V=			1.1.3
+V=			1.1.4
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
@@ -30,7 +30,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB-main += c cairo curl fontconfig freetype fyaml gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 intl m pango-1.0 rsvg-2
-WANTLIB-main += stemmer xml2 xmlb zstd
+WANTLIB-main += stemmer xml2 xmlb zstd gmodule-2.0
 
 WANTLIB-qt6 += ${COMPILER_LIBCXX} Qt6Core appstream gio-2.0 glib-2.0
 WANTLIB-qt6 += gobject-2.0
@@ -51,7 +51,7 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			textproc/itstool
 
 LIB_DEPENDS-main=	net/curl \
-			textproc/libfyaml \
+			textproc/libfyaml>=0.9.6 \
 			textproc/libstemmer \
 			textproc/libxml \
 			textproc/libxmlb \

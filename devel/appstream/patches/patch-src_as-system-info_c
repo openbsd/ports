@@ -12,7 +12,7 @@ Index: src/as-system-info.c
  #include <sys/types.h>
  #include <sys/sysctl.h>
  #elif defined(__GNU__)
-@@ -476,11 +476,15 @@ as_get_physical_memory_total (void)
+@@ -478,11 +478,15 @@ as_get_physical_memory_total (void)
  	if (si.mem_unit > 0)
  		return (si.totalram * si.mem_unit) / MB_IN_BYTES;
  	return 0;
