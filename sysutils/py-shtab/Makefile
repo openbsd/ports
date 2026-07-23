@@ -1,6 +1,6 @@
 COMMENT =	automagic shell tab completion for Python CLI applications
 
-MODPY_DISTV =	1.8.0
+MODPY_DISTV =	1.8.1
 DISTNAME =	shtab-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
