@@ -4,7 +4,7 @@ COMMENT=	small and fast AV1 decoder
 #  /!\ DO NOT UPDATE WITHOUT RUNNING TESTS ON ARM64 (XONLY) and AMD64 (IBT) /!\ #
 #################################################################################
 
-VER=		1.5.3
+VER=		1.5.4
 DISTNAME=	dav1d-${VER}
 CATEGORIES=	multimedia
 SITES=		https://downloads.videolan.org/pub/videolan/dav1d/${VER}/
