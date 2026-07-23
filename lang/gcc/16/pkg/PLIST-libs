@@ -1,4 +1,7 @@
 @option is-branch
+@pkgpath lang/gcc/4.9,-libs
+@pkgpath lang/gcc/8,-libs
+@pkgpath lang/gcc/15,-libs
 lib/libatomic.la
 @lib lib/libatomic.so.${LIBatomic_VERSION}
 lib/libcc1.la

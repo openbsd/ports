@@ -1,4 +1,7 @@
 @option is-branch
+@pkgpath lang/gcc/4.9,-ada
+@pkgpath lang/gcc/8,-ada
+@pkgpath lang/gcc/15,-ada
 @bin bin/gnat
 @bin bin/gnatbind
 @bin bin/gnatchop

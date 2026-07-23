@@ -8,15 +8,17 @@ GH_ACCOUNT =	rushsteve1
 GH_PROJECT =	trash-d
 GH_TAGNAME =	21
 
+REVISION =	0
+
 # MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 
-BUILD_DEPENDS =	lang/gcc/15,-dlang \
+BUILD_DEPENDS =	lang/gcc/16,-dlang \
 		textproc/scdoc
 
-TEST_DEPENDS =	lang/gcc/15,-dlang
+TEST_DEPENDS =	lang/gcc/16,-dlang
 
 do-build:
 	cd ${WRKSRC} && egdc -O -frelease -finline-functions -Isource -J. \

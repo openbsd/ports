@@ -1,5 +1,5 @@
-# When updating/switching to a new version, remember to adapt devel/llvm!
-#
+# When updating/switching to a new version, remember to adapt:
+# devel/llvm, sysutils/trash-d, devel/meson and lang/gdmd
 
 # not tested: alpha, hppa, mips64el, powerpc
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
@@ -19,7 +19,7 @@ USE_NOEXECONLY = Yes
 V = 16.1.0
 GCC_PKGSPEC = >=16,<17
 
-REVISION = 4
+REVISION = 5
 
 # aarch64, powerpc64 and sparc64 bootstrap contain only gdc
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.1.0-0.tar.xz

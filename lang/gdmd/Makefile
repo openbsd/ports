@@ -14,7 +14,7 @@ GH_COMMIT =	ff2c97a47408fb71c18a2d453294d18808a97cc5
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	lang/gcc/15,-dlang
+RUN_DEPENDS =	lang/gcc/16,-dlang
 
 USE_GMAKE =	Yes
 

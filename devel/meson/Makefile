@@ -43,7 +43,7 @@ TEST_IS_INTERACTIVE=	Yes
 TEST_DEPENDS=		devel/git \
 			devel/jdk/11 \
 			devel/mercurial \
-			lang/gcc/15,-f95 \
+			lang/gcc/16,-f95 \
 			lang/mono \
 			lang/rust \
 			lang/vala \
