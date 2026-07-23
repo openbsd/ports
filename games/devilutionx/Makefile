@@ -5,6 +5,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	diasurgical
 GH_PROJECT =	devilutionX
 GH_TAGNAME =	1.5.5
+REVISION =	0
 
 SITES =		${SITES_GITHUB}
 SITES.a =	https://github.com/diasurgical/devilutionX/releases/download/${GH_TAGNAME}/
@@ -57,6 +58,7 @@ FIX_CRLF_FILES =	3rdParty/libsmackerdec/CMakeLists.txt \
 			3rdParty/simpleini/CMakeLists.txt \
 			CMake/Dependencies.cmake \
 			Source/CMakeLists.txt \
+			Source/dvlnet/tcp_server.cpp \
 			Source/storm/storm_svid.cpp
 
 post-extract:
