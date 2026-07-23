@@ -1,0 +1,18 @@
+Index: dev/mkman.sh
+--- dev/mkman.sh.orig
++++ dev/mkman.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ 
+ # Usage: $0
+ #    builds vd(1) man page in src repo (run via `make man`)
+@@ -28,6 +28,8 @@ $MAN/parse_options.py $BUILD/vd-cli.inc $BUILD/vd-opts
+ soelim -rt -I $BUILD $BUILD/vd.inc > $BUILD/vd-pre.1
+ preconv -r -e utf8 $BUILD/vd-pre.1 > $MAN/vd.1
+ preconv -r -e utf8 $BUILD/vd-pre.1 > $MAN/visidata.1
++
++exit 0
+ MANWIDTH=80 man $MAN/vd.1 > $MAN/vd.txt
+ 
+ # build docs/man.md

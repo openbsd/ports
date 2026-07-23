@@ -5,8 +5,8 @@ Index: setup.py
          "visidata.desktop",
      ],
      data_files=[
--        ("share/man/man1", ["visidata/man/vd.1", "visidata/man/visidata.1"]),
-+        ("man/man1", ["visidata/man/vd.1", "visidata/man/visidata.1"]),
+-        ("share/man/man1", [f for f in ["visidata/man/vd.1", "visidata/man/visidata.1"] if os.path.exists(f)]),
++        ("man/man1", [f for f in ["visidata/man/vd.1", "visidata/man/visidata.1"] if os.path.exists(f)]),
          ("share/applications", ["visidata/desktop/visidata.desktop"]),
-     ],
-     extras_require={
+         ("share/metainfo", ["visidata/desktop/org.visidata.VisiData.metainfo.xml"]),
+         ("share/icons/hicolor/48x48/apps", ["visidata/desktop/icons/48x48/visidata.png"]),

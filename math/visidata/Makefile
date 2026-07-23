@@ -1,7 +1,10 @@
 COMMENT=	console-based multitool to explore and arrange tabular data
 
-MODPY_DISTV=	3.3
+MODPY_DISTV=	3.4
+DISTNAME=	visidata-${MODPY_DISTV}
+
 # use github distfile for tests
+#MODPY_PI=	Yes
 GH_ACCOUNT=	saulpw
 GH_PROJECT=	visidata
 GH_TAGNAME=	v${MODPY_DISTV}
@@ -20,8 +23,13 @@ MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-dateutil \
-		devel/py-importlib-metadata
+		devel/py-importlib-metadata \
+		x11/gtk+4,-guic
 
 PORTHOME=	${WRKDIR}
+
+BUILD_DEPENDS=	textproc/groff
+do-configure:
+	cd ${WRKSRC}; make man
 
 .include <bsd.port.mk>
