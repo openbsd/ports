@@ -17,6 +17,10 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
+# No option -Wincompatible-pointer-types
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += cairo cairo-gobject clutter-1.0 clutter-gtk-1.0 cogl
 WANTLIB += cogl-path gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-3 m pango-1.0 soup-3.0 sqlite3
