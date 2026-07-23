@@ -1,7 +1,6 @@
 COMMENT=	GNU implementation of SIP (RFC3261)
 
-DISTNAME=	libosip2-5.3.1
-REVISION=	0
+DISTNAME=	libosip2-5.3.2
 
 SHARED_LIBS +=	osipparser2          5.0      # 15.1
 SHARED_LIBS +=	osip2                5.0      # 15.1
