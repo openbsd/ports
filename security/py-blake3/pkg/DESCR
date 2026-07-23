@@ -1,0 +1,4 @@
+Python bindings for the official Rust implementation of BLAKE3, based on PyO3.
+These bindings expose all the features of BLAKE3, including extendable output,
+keying, and multithreading. The basic API matches that of Python's standard
+hashlib module.
