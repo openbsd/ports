@@ -12,6 +12,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
+# C++
+COMPILER=		base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender art_lgpl_2 atk-1.0 c cairo expat ffi fontconfig
