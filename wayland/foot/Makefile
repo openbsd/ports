@@ -1,11 +1,13 @@
-COMMENT = 	fast, lightweight and minimalistic Wayland terminal emulator
+COMMENT =	fast, lightweight and minimalistic Wayland terminal emulator
 
 DISTNAME =	foot-${V}
 V =		1.27.0
 REVISION =	0
 
 SITES =		https://codeberg.org/dnkl/foot/releases/download/${V}/
-DISTFILES =	foot-${V}${EXTRACT_SUFX}
+
+# renamed due to distfile being rerolled; remove if updating
+DISTFILES =	foot-${V}-1{foot-${V}}${EXTRACT_SUFX}
 
 CATEGORIES =	wayland
 
