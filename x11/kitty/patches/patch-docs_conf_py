@@ -4,7 +4,7 @@ remove HTML-only sphinx extensions not available in OpenBSD ports
 Index: docs/conf.py
 --- docs/conf.py.orig
 +++ docs/conf.py
-@@ -61,9 +61,6 @@ extensions = [
+@@ -65,9 +65,6 @@ extensions = [
      'sphinx.ext.viewcode',
      'sphinx.ext.githubpages',
      'sphinx.ext.extlinks',

@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64
 
 COMMENT =		fast, feature full, GPU-based terminal emulator
 
-MODPY_DISTV =		0.47.4
+MODPY_DISTV =		0.48.0
 MODGO_MODNAME =		github.com/kovidgoyal/kitty
 MODGO_VERSION =		v${MODPY_DISTV}
 DISTNAME =		kitty-${MODGO_VERSION}
@@ -20,8 +20,8 @@ PERMIT_PACKAGE =	Yes
 # canberra, fontconfig, freetype are loaded dynamically
 WANTLIB += GL X11 X11-xcb Xcursor Xinerama Xrandr c canberra cairo crypto
 WANTLIB += dbus-1 fontconfig freetype harfbuzz intl lcms2 m png pthread
-WANTLIB += util wayland-client wayland-cursor xcb xkbcommon xkbcommon-x11
-WANTLIB += xxhash z ${MODPY_WANTLIB}
+WANTLIB += util xcb xkbcommon xkbcommon-x11 xxhash z ${MODPY_WANTLIB}
+# WANTLIB += wayland-client wayland-cursor
 
 CFLAGS +=		-DOPENSSL_clear_free=freezero
 
@@ -40,8 +40,8 @@ MODGO_TYPE =		bin
 #	the terminal)
 # textproc/py-pygments (for syntax highlighting in kitty +kitten diff)
 BUILD_DEPENDS =		fonts/nerd-fonts/symbolsonly \
-			wayland/wayland-protocols \
 			textproc/py-sphinx
+# BUILD_DEPENDS +=	wayland/wayland-protocols
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 LIB_DEPENDS =		audio/libcanberra \
@@ -50,9 +50,9 @@ LIB_DEPENDS =		audio/libcanberra \
 			graphics/cairo \
 			graphics/lcms2 \
 			graphics/png \
-			wayland/wayland \
 			x11/dbus \
 			x11/xkbcommon
+# LIB_DEPENDS +=	wayland/wayland
 
 TEST_ENV =		CI=true \
 			TMPDIR=${WRKDIR}/tmp \
@@ -61,16 +61,17 @@ TEST_ENV =		CI=true \
 # needed for 'make test'
 USE_GMAKE =		Yes
 
-_ARGS =			--verbose \
+_ARGS =			--extra-include-dirs=${LOCALBASE}/include \
+			--extra-library-dirs=${LOCALBASE}/lib \
 			--ignore-compiler-warnings \
-			--extra-include-dirs=${LOCALBASE}/include \
-			--extra-library-dirs=${LOCALBASE}/lib
+			--verbose
 
 # this disables checking upstream for updates
 _ARGS +=		--update-check-interval=0
 
 # ensure parent dir exists for MODGO_SETUP_WORKSPACE symlink
-# TMPDIR must not be a parent of WRKSRC ??? Go ignores go.mod inside os.TempDir()
+# TMPDIR must not be a parent of WRKSRC
+# Go ignores go.mod inside os.TempDir()
 pre-configure:
 	mkdir -p ${WRKDIR}/${MODGO_MODNAME:H}
 	mkdir -p ${WRKDIR}/tmp

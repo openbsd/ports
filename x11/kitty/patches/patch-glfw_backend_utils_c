@@ -3,7 +3,7 @@ We don't have posix_fallocate.
 Index: glfw/backend_utils.c
 --- glfw/backend_utils.c.orig
 +++ glfw/backend_utils.c
-@@ -373,7 +373,7 @@ GLFWAPI char* utf_8_strndup(const char* source, size_t
+@@ -397,7 +397,7 @@ GLFWAPI char* utf_8_strndup(const char* source, size_t
   * receive SIGBUS on accessing mmap()'ed file contents instead.
   */
  int createAnonymousFile(off_t size) {
@@ -12,7 +12,7 @@ Index: glfw/backend_utils.c
  #ifdef HAS_MEMFD_CREATE
      fd = glfw_memfd_create("glfw-shared", MFD_CLOEXEC | MFD_ALLOW_SEALING);
      if (fd < 0) return -1;
-@@ -383,10 +383,6 @@ int createAnonymousFile(off_t size) {
+@@ -407,10 +407,6 @@ int createAnonymousFile(off_t size) {
      // There is also no need to check for the return value, we couldn’t do
      // anything with it anyway.
      fcntl(fd, F_ADD_SEALS, F_SEAL_SHRINK | F_SEAL_SEAL);
@@ -23,7 +23,7 @@ Index: glfw/backend_utils.c
  #else
      static const char template[] = "/glfw-shared-XXXXXX";
      const char* path;
-@@ -410,8 +406,7 @@ int createAnonymousFile(off_t size) {
+@@ -434,8 +430,7 @@ int createAnonymousFile(off_t size) {
      if (fd < 0)
          return -1;
  #endif
