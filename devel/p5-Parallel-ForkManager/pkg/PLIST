@@ -1,6 +1,9 @@
 ${P5SITE}/Parallel/
+${P5SITE}/Parallel/ForkManager/
 ${P5SITE}/Parallel/ForkManager.pm
+${P5SITE}/Parallel/ForkManager/Child.pm
 @man man/man3p/Parallel::ForkManager.3p
+@man man/man3p/Parallel::ForkManager::Child.3p
 share/examples/p5-Parallel-ForkManager/
 share/examples/p5-Parallel-ForkManager/callback.pl
 share/examples/p5-Parallel-ForkManager/callback_data.pl

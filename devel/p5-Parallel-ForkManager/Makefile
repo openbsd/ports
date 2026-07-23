@@ -2,14 +2,15 @@ COMMENT =	simple parallel processing fork manager
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Parallel-ForkManager-1.19
+DISTNAME =	Parallel-ForkManager-2.04
 CATEGORIES =	devel
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes
 
 MODCPAN_EXAMPLES =	Yes
+
+RUN_DEPENDS =		devel/p5-Moo
 
 TEST_DEPENDS =		devel/p5-Test-Warn
 
