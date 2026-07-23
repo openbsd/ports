@@ -2,17 +2,16 @@ COMMENT=		YAML parser and emitter
 
 GH_ACCOUNT=		pantoniou
 GH_PROJECT=		libfyaml
-GH_TAGNAME=		v0.9
-REVISION=		0
+GH_TAGNAME=		v0.9.6
 
-SHARED_LIBS +=  fyaml                0.0      # 1.4
+SHARED_LIBS +=  fyaml                0.1      # 5.0
 
 CATEGORIES=		textproc devel
 
 # MIT
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c pthread
+WANTLIB += c m pthread
 
 # uses stdatomic.h from C11
 COMPILER =		base-clang ports-gcc
@@ -28,6 +27,9 @@ CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		ac_cv_path_GIT= \
 			ac_cv_path_JQ= \
 			ac_cv_path_DOCKER=
+
+# XXX lib/fy-walk.c:4621:31: error: use of undeclared identifier 'DBL_DECIMAL_DIG'
+CFLAGS +=		-DDBL_DECIMAL_DIG=__DBL_DECIMAL_DIG__
 
 pre-configure:
 	grep -rl "#include <alloca\\.h>" ${WRKSRC} | \
