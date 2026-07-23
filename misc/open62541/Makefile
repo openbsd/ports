@@ -1,8 +1,11 @@
 COMMENT =	library implementation of OPC UA
 
 VERSION =	1.3.18
+REVISION =	0
 DISTNAME =	open62541-${VERSION}
 PKGNAME =	open62541-${VERSION}
+DIST_TUPLE +=	github open62541 open62541 v${VERSION} .
+DIST_TUPLE +=	github OPCFoundation UA-Nodeset UA-1.04.10-2021-09-15 ../UA
 
 SHARED_LIBS =	open62541	6.0
 
@@ -16,11 +19,6 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto m pthread ssl tls
-
-SITES =			https://github.com/open62541/open62541/
-SITES.ua =		https://github.com/OPCFoundation/UA-Nodeset/archive/
-DISTFILES =		open62541-{archive/refs/tags/v}${VERSION}.tar.gz
-DISTFILES.ua= 		UA-1.04.10-2021-09-15.tar.gz
 
 MODULES =		devel/cmake
 
@@ -53,10 +51,12 @@ CONFIGURE_ARGS +=	-DUA_NAMESPACE_ZERO=FULL
 CONFIGURE_ARGS +=	-DUA_NAMESPACE_ZERO=REDUCED
 .endif
 
+# additional files are installed if this dir is present.
+# avoid that for the !ns0_full build.
 .if ${FLAVOR:Mns0_full}
-post-extract:
+post-patch:
 	rmdir ${WRKSRC}/deps/ua-nodeset/
-	mv ${WRKDIR}/UA-Nodeset-UA-*/ ${WRKSRC}/deps/ua-nodeset/
+	mv ${WRKDIR}/UA ${WRKSRC}/deps/ua-nodeset
 .endif
 
 .include <bsd.port.mk>
