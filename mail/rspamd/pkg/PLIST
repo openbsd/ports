@@ -392,6 +392,7 @@ share/rspamd/lualib/plugins/neural.lua
 share/rspamd/lualib/plugins/neural/providers/
 share/rspamd/lualib/plugins/neural/providers/fasttext_embed.lua
 share/rspamd/lualib/plugins/neural/providers/llm.lua
+share/rspamd/lualib/plugins/neural/providers/static_embed.lua
 share/rspamd/lualib/plugins/neural/providers/symbols.lua
 share/rspamd/lualib/plugins/neural/providers/text_hash.lua
 share/rspamd/lualib/plugins/ratelimit.lua
@@ -529,16 +530,15 @@ share/rspamd/www/README.md
 share/rspamd/www/apple-touch-icon.png
 share/rspamd/www/browserconfig.xml
 share/rspamd/www/css/
-share/rspamd/www/css/FooTable.FontAwesome.css
 share/rspamd/www/css/bootstrap.min.css
 share/rspamd/www/css/codejar-linenumbers.css
 share/rspamd/www/css/d3evolution.css
 share/rspamd/www/css/d3pie.css
-share/rspamd/www/css/footable.standalone.min.css
 share/rspamd/www/css/nprogress.css
 share/rspamd/www/css/prism.css
 share/rspamd/www/css/rspamd.css
 share/rspamd/www/css/svg-with-js.min.css
+share/rspamd/www/css/tabulator_bs5.min.css
 share/rspamd/www/favicon-16x16.png
 share/rspamd/www/favicon-32x32.png
 share/rspamd/www/favicon.ico
@@ -553,7 +553,6 @@ share/rspamd/www/js/
 share/rspamd/www/js/app/
 share/rspamd/www/js/app/common.js
 share/rspamd/www/js/app/config.js
-share/rspamd/www/js/app/footable-fontawesome.js
 share/rspamd/www/js/app/graph.js
 share/rspamd/www/js/app/history.js
 share/rspamd/www/js/app/libft.js
@@ -561,6 +560,7 @@ share/rspamd/www/js/app/rspamd.js
 share/rspamd/www/js/app/selectors.js
 share/rspamd/www/js/app/stats.js
 share/rspamd/www/js/app/symbols.js
+share/rspamd/www/js/app/tab-utils.js
 share/rspamd/www/js/app/upload.js
 share/rspamd/www/js/lib/
 share/rspamd/www/js/lib/bootstrap.bundle.min.js
@@ -570,13 +570,13 @@ share/rspamd/www/js/lib/d3.min.js
 share/rspamd/www/js/lib/d3evolution.min.js
 share/rspamd/www/js/lib/d3pie.min.js
 share/rspamd/www/js/lib/fontawesome.min.js
-share/rspamd/www/js/lib/footable.min.js
 share/rspamd/www/js/lib/jquery-3.7.1.min.js
 share/rspamd/www/js/lib/jquery.stickytabs.min.js
 share/rspamd/www/js/lib/nprogress.min.js
 share/rspamd/www/js/lib/prism.js
 share/rspamd/www/js/lib/require.min.js
 share/rspamd/www/js/lib/solid.min.js
+share/rspamd/www/js/lib/tabulator.min.js
 share/rspamd/www/js/lib/visibility.min.js
 share/rspamd/www/js/main.js
 share/rspamd/www/mstile-150x150.png
