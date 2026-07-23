@@ -32,6 +32,8 @@ share/re2c/stdlib/ocaml
 share/re2c/stdlib/python
 share/re2c/stdlib/rust
 share/re2c/stdlib/swift
+share/re2c/stdlib/unicode_blocks.re
 share/re2c/stdlib/unicode_categories.re
+share/re2c/stdlib/unicode_properties.re
 share/re2c/stdlib/v
 share/re2c/stdlib/zig
