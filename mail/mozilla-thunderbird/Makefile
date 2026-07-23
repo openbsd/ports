@@ -3,7 +3,7 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	140.12.1esr
+MOZILLA_VERSION =	153.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -16,7 +16,7 @@ DWZ = :
 
 HOMEPAGE =	https://www.thunderbird.net/
 
-SO_VERSION =	39.0
+SO_VERSION =	40.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -30,14 +30,9 @@ PERMIT_PACKAGE=	Yes
 MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
-SITES.p =      https://bugzilla.mozilla.org/
-PATCHFILES.p=	bug-2038504-backport-bug-D262840-to-esr140.patch{attachment.cgi?id=9585442}
-PATCH_DIST_STRIP =     -p1 -f
-
 COMPILER =	ports-clang
 MODCLANG_ARCHS =	amd64 aarch64 riscv64
 MODCLANG_VERSION =	22
-USE_LLD =	ports
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
@@ -70,6 +65,8 @@ CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 CONFIGURE_ARGS +=	--with-system-ffi
 # #1732809
 CONFIGURE_ARGS +=	--with-system-librnp
+CONFIGURE_ARGS +=	--enable-release #1386371
+
 # --enable-debug does too much, this defaults to -g (which is 3 times larger than using -ggdb1)
 CONFIGURE_ARGS +=	--disable-debug-symbols
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
@@ -81,13 +78,18 @@ CONFIGURE_ENV +=	CPPFLAGS="-fno-ret-protector -Wno-backend-plugin"
 .else
 CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
 .endif
-CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=5 --ld-path=${WRKDIR}/bin/ld"
+
+# #2026497
+CONFIGURE_ENV +=	MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
 
 # detected by configure & dlopened
 BUILD_DEPENDS +=	security/rnp
 # #1885353
 RUN_DEPENDS +=	security/rnp>=0.17.1
 LIB_DEPENDS +=	devel/libffi
+MOZILLA_USE_DBUS =	Yes
+MOZILLA_USE_SYSTEM_AV1 =Yes
 
 WANTLIB +=	Xrandr ffi
 
@@ -100,12 +102,6 @@ COMMENT_FFVPX =	@comment # needs a trailing space
 .endif
 SUBST_VARS +=	COMMENT_FFVPX
 
-# workaround for #2006630
-post-patch:
-.for c in glslopt cubeb-sys minimal-lexical sfv wasi
-	sed -i -e 's/".gitmodules":"[0-9a-f]*",//' ${WRKSRC}/comm/third_party/rust/${c}/.cargo-checksum.json
-.endfor
-	cp -r ${WRKSRC}/third_party/rust/bindgen ${WRKSRC}/comm/third_party/rust/
 
 post-install:
 	# install prefs

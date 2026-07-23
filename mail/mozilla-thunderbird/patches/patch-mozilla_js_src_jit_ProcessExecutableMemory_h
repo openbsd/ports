@@ -1,7 +1,7 @@
 Index: js/src/jit/ProcessExecutableMemory.h
 --- js/src/jit/ProcessExecutableMemory.h.orig
 +++ js/src/jit/ProcessExecutableMemory.h
-@@ -14,7 +14,7 @@ namespace jit {
+@@ -16,7 +16,7 @@ namespace jit {
  
  // Limit on the number of bytes of executable memory to prevent JIT spraying
  // attacks.

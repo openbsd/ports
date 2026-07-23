@@ -1,7 +1,7 @@
 Index: js/src/ctypes/libffi/src/dlmalloc.c
 --- js/src/ctypes/libffi/src/dlmalloc.c.orig
 +++ js/src/ctypes/libffi/src/dlmalloc.c
-@@ -2525,7 +2525,6 @@ static int init_mparams(void) {
+@@ -2530,7 +2530,6 @@ static int init_mparams(void) {
  
  #if (FOOTERS && !INSECURE)
      {
@@ -9,7 +9,7 @@ Index: js/src/ctypes/libffi/src/dlmalloc.c
        int fd;
        unsigned char buf[sizeof(size_t)];
        /* Try to use /dev/urandom, else fall back on using time */
-@@ -2535,7 +2534,6 @@ static int init_mparams(void) {
+@@ -2540,7 +2539,6 @@ static int init_mparams(void) {
          close(fd);
        }
        else
