@@ -1,6 +1,6 @@
 COMMENT =	module to handle hardware MAC addresses
 
-DISTNAME =	NetAddr-MAC-1.00
+DISTNAME =	NetAddr-MAC-1.01
 
 CATEGORIES =	net
 
