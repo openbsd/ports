@@ -3,8 +3,7 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.13.1
-REVISION-main =	0
+V =		3.13.2
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}.zip
@@ -14,7 +13,7 @@ FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python
 
-SHARED_LIBS =	gdal 54.0 #39 cf gdal.cmake
+SHARED_LIBS =	gdal 54.1 #39 cf gdal.cmake
 CATEGORIES =	geo devel
 
 HOMEPAGE =	https://gdal.org/
