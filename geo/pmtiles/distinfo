@@ -1,4 +1,4 @@
-SHA256 (go-pmtiles-v1.31.1.zip) = 1OHiORkpXOSaeBhjoL7gg7Tjfr8/oxU1wYO9fshUgwE=
+SHA256 (go-pmtiles-v1.31.2.zip) = Cd6HyXE28zmz7wOffcVO8yDPzN9J+XRXXw9UZvK7UME=
 SHA256 (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.3.0.mod) = sk3x3bP2PBVMSVG84j2pGZskzyKtQGR+RRcV1Rmugi0=
 SHA256 (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.3.0.zip) = U/JVRL4bukwvZXr4orgkXbvne+KqYOOG6ZsOG8g2xWU=
 SHA256 (go_modules/4d63.com/gochecknoglobals/@v/v0.2.2.mod) = +vTMeGg/7mNwaqzultYYkgtmcYiv3ARf+MVSN0KYdBw=
@@ -1979,7 +1979,7 @@ SHA256 (go_modules/mvdan.cc/unparam/@v/v0.0.0-20250301125049-0df0534333a4.mod) =
 SHA256 (go_modules/mvdan.cc/unparam/@v/v0.0.0-20250301125049-0df0534333a4.zip) = GykA3OAfe3c5kUOFvtaoiNqpIWt+5fosiPI1wp1T0+0=
 SHA256 (go_modules/zombiezen.com/go/sqlite/@v/v1.1.2.mod) = DGqU1D/6SRLisepkGRpK26jYxKWc2QYPl0DRfHkVxes=
 SHA256 (go_modules/zombiezen.com/go/sqlite/@v/v1.1.2.zip) = B+GKFYAddRbiuA+DocIMG/4TxM+2n6bKc3/rCW6X/wg=
-SIZE (go-pmtiles-v1.31.1.zip) = 108258
+SIZE (go-pmtiles-v1.31.2.zip) = 108379
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.3.0.mod) = 198
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.3.0.zip) = 7154
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.2.2.mod) = 167
