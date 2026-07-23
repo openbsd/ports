@@ -1,0 +1,33 @@
+Force the multiprocessing "fork" start method.  Python 3.14 changed the
+POSIX default to "forkserver" (cpython gh-84559), which breaks Salt's
+fork-based process model, setproctitle output and rc.d(8) pgrep matching.
+
+Index: salt/scripts.py
+--- salt/scripts.py.orig
++++ salt/scripts.py
+@@ -5,6 +5,7 @@ This module contains the function calls to execute com
+ import contextlib
+ import functools
+ import logging
++import multiprocessing
+ import os
+ import signal
+ import subprocess
+@@ -16,6 +17,17 @@ from random import randint
+ 
+ import salt.defaults.exitcodes
+ from salt.exceptions import SaltClientError, SaltReqTimeoutError, SaltSystemExit
++
++if sys.platform != "win32":
++    # Salt's process model (ProcessManager, appendproctitle, signal
++    # escalation, daemonization) assumes fork semantics.  Python 3.14
++    # changed the default POSIX start method from "fork" to "forkserver"
++    # (https://github.com/python/cpython/issues/84559), which breaks
++    # process titles and process supervision.  Force "fork" explicitly.
++    try:
++        multiprocessing.set_start_method("fork", force=True)
++    except (RuntimeError, ValueError):
++        pass
+ 
+ log = logging.getLogger(__name__)
+ 
