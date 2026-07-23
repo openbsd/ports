@@ -1,9 +1,7 @@
-# ld.lld: error: undefined hidden symbol: __guard_local
-BROKEN-i386 =		undef __guard_local while linking ${WRKSRC}/tests/modules
-
 COMMENT =		persistent key-value database
 
 DISTNAME =		redis-8.8.0
+REVISION =		0
 
 WANTLIB +=		c crypto ssl m pthread
 

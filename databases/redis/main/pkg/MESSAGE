@@ -1,4 +1,0 @@
-Note, some tests are failing with this version of Redis on OpenBSD.
-It's not clear whether this is due to a problem with the tests or with
-Redis itself. Stick with 6.x for now if you want a more widely tested
-version.
