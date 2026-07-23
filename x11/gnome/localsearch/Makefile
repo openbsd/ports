@@ -7,6 +7,10 @@ REVISION=		0
 # LGPLv2.1+ - GPLv2+
 PERMIT_PACKAGE=		Yes
 
+# error: wrong number of arguments specified for 'deprecated' attribute
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += avformat c cue exempi gexiv2-0.16 gif gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gsf-1 gstreamer-1.0 gsttag-1.0 gupnp-dlna-2.0
 WANTLIB += gxps icui18n intl jpeg kvm m osinfo-1.0 png poppler-glib
