@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT =	library for solving sparse linear equation systems
 
 

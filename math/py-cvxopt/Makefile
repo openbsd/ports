@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 # pointer type issues in src/C/lapack.c (int* vs int_t* aka Py_ssize_t* aka long*)
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 

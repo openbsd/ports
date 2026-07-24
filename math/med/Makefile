@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT =		library for reading and writing MED files
 
 V =			5.0.0

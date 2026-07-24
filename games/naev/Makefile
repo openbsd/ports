@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 # Requires OpenGL>=3.2
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
 

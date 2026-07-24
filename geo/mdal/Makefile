@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT =	mesh data abstration library
 
 GH_ACCOUNT=	lutraconsulting

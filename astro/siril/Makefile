@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT =	astronomical image processing tool
 
 DISTNAME =	siril-1.0.6

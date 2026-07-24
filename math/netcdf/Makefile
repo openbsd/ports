@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT=	library for machine-independent, array-oriented data access
 
 V=		4.9.3

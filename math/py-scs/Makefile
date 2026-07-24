@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT =		Python interface to SCS
 
 MODPY_DISTV =		3.2.7

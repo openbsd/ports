@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT=	GNU Image Manipulation Program
 
 # needs newer librsvg

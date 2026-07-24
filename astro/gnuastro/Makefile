@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT =	GNU Astronomy Utilities
 DISTNAME =	gnuastro-0.24
 CATEGORIES =	astro

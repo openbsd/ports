@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT = 	C++ library for scientific computing
 DISTNAME = 	armadillo-9.900.4
 SHARED_LIBS = 	armadillo 3.1	# 9.900.4

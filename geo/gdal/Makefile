@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 

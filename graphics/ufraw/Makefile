@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 # XXX there are a couple of maintained forks:
 # https://sourceforge.net/projects/nufraw/
 # https://github.com/sergiomb2/ufraw

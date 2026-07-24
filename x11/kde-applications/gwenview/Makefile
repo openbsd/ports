@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11

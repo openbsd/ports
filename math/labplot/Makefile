@@ -11,7 +11,6 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # luajit (via cantorlibs)
 USE_NOBTCFI =	Yes
-USE_NOBTCFI-aarch64 =	Yes# fortran
 
 SHARED_LIBS +=	labplot                   0.1 # 0.0
 

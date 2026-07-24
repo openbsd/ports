@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT=		graph based image processing framework (API version 0.4)
 
 V=			0.4.70

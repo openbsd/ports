@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT =		pythonic interface to the HDF5 binary data format
 
 MODPY_DISTV =		3.16.0

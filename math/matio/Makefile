@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT=	library for reading and writing Matlab MAT files
 
 DISTNAME=	matio-1.5.23

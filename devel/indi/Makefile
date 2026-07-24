@@ -1,5 +1,3 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
-
 COMMENT-main=		Instrument-Neutral-Device-Interface protocol implemtation
 COMMENT-libs=		INDI client libraries
 
