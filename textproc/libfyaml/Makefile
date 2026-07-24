@@ -3,6 +3,7 @@ COMMENT=		YAML parser and emitter
 GH_ACCOUNT=		pantoniou
 GH_PROJECT=		libfyaml
 GH_TAGNAME=		v0.9.6
+REVISION=		0
 
 SHARED_LIBS +=  fyaml                0.1      # 5.0
 
@@ -14,8 +15,8 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c m pthread
 
 # uses stdatomic.h from C11
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 BUILD_DEPENDS=		devel/libyaml
 

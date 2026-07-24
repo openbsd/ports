@@ -1,0 +1,35 @@
+From 0982fcefc6a16d4c8cb5b06747d3fc8e630de3ae Mon Sep 17 00:00:00 2001
+From: Fredrik Fornwall <fredrik@fornwall.net>
+Date: Sun, 15 Mar 2026 21:47:27 +0100
+Subject: [PATCH] Fix 32-bit build by removing stray parameter to
+ fy_skip_size32()
+
+From 9192deaac095f9881cc1e5756dede683f36b09d6 Mon Sep 17 00:00:00 2001
+From: Pantelis Antoniou <pantelis.antoniou@konsulko.com>
+Date: Wed, 18 Mar 2026 15:56:10 +0200
+Subject: [PATCH] vlsize: Handle decoding when size_t < sizeof(uint64_t)
+
+Index: include/libfyaml/libfyaml-vlsize.h
+--- include/libfyaml/libfyaml-vlsize.h.orig
++++ include/libfyaml/libfyaml-vlsize.h
+@@ -810,13 +810,18 @@ fy_decode_size(const uint8_t *start, size_t bufsz, siz
+ static inline const uint8_t *
+ fy_decode_size_nocheck(const uint8_t *start, size_t *sizep)
+ {
+-	return fy_decode_size32_nocheck(start, sizep);
++	uint64_t sz;
++	const uint8_t *ret;
++
++	ret = fy_decode_size32_nocheck(start, &sz);
++	*sizep = (size_t)sz;
++	return ret;
+ }
+ 
+ static inline const uint8_t *
+ fy_skip_size(const uint8_t *start, size_t bufsz)
+ {
+-	return fy_skip_size32(start, bufsz, &sz);
++	return fy_skip_size32(start, bufsz);
+ }
+ 
+ static inline const uint8_t *
