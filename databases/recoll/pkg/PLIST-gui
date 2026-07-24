@@ -1,4 +1,4 @@
-@conflict recoll-<1.37.0p0
+@conflict recoll-<1.43.14p0
 @bin bin/recoll
 @man man/man1/recoll.1
 share/applications/

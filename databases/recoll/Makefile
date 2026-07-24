@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS-gui= aarch64 amd64 i386
 PSEUDO_FLAVORS=	no_gui
 
 MODPY_DISTV=	1.43.14
-REVISION=	0
+REVISION=	1
 DISTNAME=	recoll-${MODPY_DISTV}
 
 CATEGORIES=	databases sysutils
