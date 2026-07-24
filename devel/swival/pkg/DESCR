@@ -1,0 +1,5 @@
+Swival is a CLI coding agent built to be practical, reliable, and easy
+to use. It works with frontier models, but its main goal is to be as
+reliable as possible with smaller models, including local ones. It is
+designed from the ground up to handle tight context windows and
+limited resources without falling apart.
