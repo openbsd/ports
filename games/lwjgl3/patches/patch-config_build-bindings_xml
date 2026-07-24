@@ -1,0 +1,14 @@
+Disable llvm binding
+
+Index: config/build-bindings.xml
+--- config/build-bindings.xml.orig
++++ config/build-bindings.xml
+@@ -27,7 +27,7 @@ This script is included in /config/build-definitions.x
+     <property name="binding.jawt" value="true"/>
+     <property name="binding.jemalloc" value="true"/>
+     <property name="binding.libdivide" value="true"/>
+-    <property name="binding.llvm" value="true"/>
++    <property name="binding.llvm" value="false"/>
+     <property name="binding.lmdb" value="true"/>
+     <property name="binding.lz4" value="true"/>
+     <condition property="binding.meow" value="true" else="false">

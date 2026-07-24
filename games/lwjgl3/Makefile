@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS= amd64 aarch64
 
 V =		3.3.1.1
 DISTNAME =	lwjgl3-${V}
-REVISION =	0
+REVISION =	1
 
 KOTLIN_V =	1.6.20-M1
 

@@ -9,7 +9,6 @@ share/lwjgl3/khronos_license.txt
 share/lwjgl3/libdivide_license.txt
 share/lwjgl3/libffi_license.txt
 share/lwjgl3/liburing_license.txt
-share/lwjgl3/llvm_license.txt
 share/lwjgl3/lmdb_license.txt
 share/lwjgl3/lwjgl-assimp.jar
 share/lwjgl3/lwjgl-bgfx.jar
@@ -20,8 +19,6 @@ share/lwjgl3/lwjgl-jawt.jar
 share/lwjgl3/lwjgl-jemalloc.jar
 share/lwjgl3/lwjgl-libdivide-natives-openbsd.jar
 share/lwjgl3/lwjgl-libdivide.jar
-share/lwjgl3/lwjgl-llvm-natives-openbsd.jar
-share/lwjgl3/lwjgl-llvm.jar
 share/lwjgl3/lwjgl-lmdb-natives-openbsd.jar
 share/lwjgl3/lwjgl-lmdb.jar
 share/lwjgl3/lwjgl-lz4-natives-openbsd.jar
