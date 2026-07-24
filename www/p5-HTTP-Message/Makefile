@@ -1,6 +1,6 @@
 COMMENT =	HTTP style message
 
-DISTNAME =	HTTP-Message-7.02
+DISTNAME =	HTTP-Message-7.03
 CPAN_AUTHOR =	OALDERS
 
 CATEGORIES =	www
