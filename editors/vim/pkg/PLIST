@@ -526,6 +526,7 @@ share/vim/${P}/colors/lists/default.vim
 share/vim/${P}/colors/lunaperche.vim
 share/vim/${P}/colors/morning.vim
 share/vim/${P}/colors/murphy.vim
+share/vim/${P}/colors/novum.vim
 share/vim/${P}/colors/pablo.vim
 share/vim/${P}/colors/peachpuff.vim
 share/vim/${P}/colors/quiet.vim
@@ -974,6 +975,7 @@ share/vim/${P}/ftplugin/gitcommit.vim
 share/vim/${P}/ftplugin/gitconfig.vim
 share/vim/${P}/ftplugin/gitignore.vim
 share/vim/${P}/ftplugin/gitrebase.vim
+share/vim/${P}/ftplugin/gitrevlist.vim
 share/vim/${P}/ftplugin/gitsendemail.vim
 share/vim/${P}/ftplugin/gleam.vim
 share/vim/${P}/ftplugin/go.vim
@@ -996,6 +998,7 @@ share/vim/${P}/ftplugin/hcl.vim
 share/vim/${P}/ftplugin/heex.vim
 share/vim/${P}/ftplugin/help.vim
 share/vim/${P}/ftplugin/hgcommit.vim
+share/vim/${P}/ftplugin/hip.vim
 share/vim/${P}/ftplugin/hlsplaylist.vim
 share/vim/${P}/ftplugin/hog.vim
 share/vim/${P}/ftplugin/hostconf.vim
@@ -1018,6 +1021,7 @@ share/vim/${P}/ftplugin/java.vim
 share/vim/${P}/ftplugin/javacc.vim
 share/vim/${P}/ftplugin/javascript.vim
 share/vim/${P}/ftplugin/javascriptreact.vim
+share/vim/${P}/ftplugin/jinja.vim
 share/vim/${P}/ftplugin/jjdescription.vim
 share/vim/${P}/ftplugin/jproperties.vim
 share/vim/${P}/ftplugin/jq.vim
@@ -1354,6 +1358,7 @@ share/vim/${P}/indent/hamster.vim
 share/vim/${P}/indent/handlebars.vim
 share/vim/${P}/indent/hare.vim
 share/vim/${P}/indent/hcl.vim
+share/vim/${P}/indent/hip.vim
 share/vim/${P}/indent/hog.vim
 share/vim/${P}/indent/html.vim
 share/vim/${P}/indent/htmldjango.vim
@@ -2287,6 +2292,7 @@ share/vim/${P}/syntax/gitconfig.vim
 share/vim/${P}/syntax/gitignore.vim
 share/vim/${P}/syntax/gitolite.vim
 share/vim/${P}/syntax/gitrebase.vim
+share/vim/${P}/syntax/gitrevlist.vim
 share/vim/${P}/syntax/gitsendemail.vim
 share/vim/${P}/syntax/gkrellmrc.vim
 share/vim/${P}/syntax/gleam.vim
@@ -2327,6 +2333,7 @@ share/vim/${P}/syntax/help_ru.vim
 share/vim/${P}/syntax/hercules.vim
 share/vim/${P}/syntax/hex.vim
 share/vim/${P}/syntax/hgcommit.vim
+share/vim/${P}/syntax/hip.vim
 share/vim/${P}/syntax/hitest.vim
 share/vim/${P}/syntax/hlsplaylist.vim
 share/vim/${P}/syntax/hog.vim
@@ -2702,8 +2709,12 @@ share/vim/${P}/syntax/squirrel.vim
 share/vim/${P}/syntax/srec.vim
 share/vim/${P}/syntax/srt.vim
 share/vim/${P}/syntax/ssa.vim
+share/vim/${P}/syntax/sshallowedsigners.vim
+share/vim/${P}/syntax/sshauthorizedkeys.vim
 share/vim/${P}/syntax/sshconfig.vim
 share/vim/${P}/syntax/sshdconfig.vim
+share/vim/${P}/syntax/sshknownhosts.vim
+share/vim/${P}/syntax/sshpublickey.vim
 share/vim/${P}/syntax/st.vim
 share/vim/${P}/syntax/stata.vim
 share/vim/${P}/syntax/stp.vim
