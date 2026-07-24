@@ -78,6 +78,7 @@ lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/Main.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/Map.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/MicronParser.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/Network.py
+lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/ReadlineEdit.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Browser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -108,6 +109,8 @@ lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Micr
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}MicronParser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Network.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}Network.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}ReadlineEdit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}ReadlineEdit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nomadnet/ui/textui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nomadnet/util.py
