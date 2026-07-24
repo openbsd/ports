@@ -1,6 +1,6 @@
 COMMENT =	weather in terminal, with ANSI colors and Unicode symbols
 
-V =		1.19.0
+V =		1.19.1
 DISTNAME =	ansiweather-$V
 
 CATEGORIES =	astro

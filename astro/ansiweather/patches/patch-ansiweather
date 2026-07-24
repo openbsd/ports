@@ -1,6 +1,7 @@
---- ansiweather.orig	Tue Jan 19 23:01:25 2016
-+++ ansiweather	Wed Jan 20 19:51:27 2016
-@@ -37,7 +37,7 @@ get_config() {
+Index: ansiweather
+--- ansiweather.orig
++++ ansiweather
+@@ -43,7 +43,7 @@ get_config() {
  	fi
  }
  
