@@ -712,6 +712,7 @@
      SUBDIR += sipcalc
      SUBDIR += sipsak
      SUBDIR += slurm
+     SUBDIR += smcroute
      SUBDIR += smokeping
      SUBDIR += sniproxy
      SUBDIR += snmptt
