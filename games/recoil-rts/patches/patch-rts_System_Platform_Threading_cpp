@@ -1,16 +1,20 @@
 Index: rts/System/Platform/Threading.cpp
 --- rts/System/Platform/Threading.cpp.orig
 +++ rts/System/Platform/Threading.cpp
-@@ -492,8 +492,12 @@ namespace Threading {
- 		tracy::SetThreadName(newname.c_str());
- 	#endif
+@@ -13,6 +13,7 @@
+ 	#include "System/Sync/FPUCheck.h"
+ #endif
+ 
++#include <algorithm>
+ #include <functional>
+ #include <memory>
+ #include <numeric>
+@@ -511,6 +512,8 @@ namespace Threading {
  	#ifndef _WIN32
-+	  #ifdef __OpenBSD__
+ 	#ifdef __APPLE__
+ 		pthread_setname_np(newname.c_str());
++	#elif defined(__OpenBSD__)
 +		pthread_set_name_np(pthread_self(), newname.c_str());
-+	  #else
- 		//alternative: pthread_setname_np(pthread_self(), newname.c_str());
- 		prctl(PR_SET_NAME, newname.c_str(), 0, 0, 0);
-+	  #endif
  	#else
- 		// adapted from SDL2 code
- 		DllLib k32Lib("kernel32.dll");
+ 		prctl(PR_SET_NAME, newname.c_str(), 0, 0, 0);
+ 	#endif

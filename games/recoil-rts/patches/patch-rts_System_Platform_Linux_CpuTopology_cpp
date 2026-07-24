@@ -20,4 +20,4 @@ Index: rts/System/Platform/Linux/CpuTopology.cpp
 +#endif
  }
  
- // Detect Intel core type using CPUID 0x1A
+ // Get thread siblings for a CPU

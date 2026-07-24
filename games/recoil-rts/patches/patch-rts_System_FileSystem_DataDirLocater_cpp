@@ -4,7 +4,7 @@ use std::getenv to look up correct user directories
 Index: rts/System/FileSystem/DataDirLocater.cpp
 --- rts/System/FileSystem/DataDirLocater.cpp.orig
 +++ rts/System/FileSystem/DataDirLocater.cpp
-@@ -16,7 +16,7 @@
+@@ -17,7 +17,7 @@
  	#ifndef SHGFP_TYPE_CURRENT
  		#define SHGFP_TYPE_CURRENT 0
  	#endif
@@ -13,16 +13,16 @@ Index: rts/System/FileSystem/DataDirLocater.cpp
  	#include <wordexp.h>
  #endif
  
-@@ -135,6 +135,8 @@ std::string DataDirLocater::SubstEnvVars(const std::st
- 	char out_c[maxSize];
- 	ExpandEnvironmentStrings(in.c_str(), out_c, maxSize); // expands %HOME% etc.
- 	out = out_c;
+@@ -140,6 +140,8 @@ std::string DataDirLocater::SubstEnvVars(const std::st
+ 		return "";
+ 
+ 	out = nowide::narrow(out_ws.c_str());
 +#elif defined(__OpenBSD__)
 +	out = in;	// no expansion as we don't have wordexp
  #else
  	std::string previous = in;
  
-@@ -310,6 +312,17 @@ void DataDirLocater::AddHomeDirs()
+@@ -314,6 +316,17 @@ void DataDirLocater::AddHomeDirs()
  	AddDirs(dd_myDocs);         // "C:/.../My Documents/Spring/"
  	AddDirs(dd_appData);        // "C:/.../All Users/Applications/Spring/"
  

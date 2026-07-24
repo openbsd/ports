@@ -1,0 +1,56 @@
+Fix aligned_alloc() to call posix_memalign() instead of aligned_alloc().
+Check comments about undefined behaviour, on OpenBSD it returns NULL.
+On the other side, MIMALLOC mi_aligned_alloc() enlarge the size.
+
+There are no usable_size() consumers atm.
+OpenBSD doesn't have such feature.
+
+Index: rts/System/MemoryOverride.cpp
+--- rts/System/MemoryOverride.cpp.orig
++++ rts/System/MemoryOverride.cpp
+@@ -8,10 +8,8 @@
+ #include <cstring>
+ #include <cstdlib>
+ #include <cstdint>
+-#ifdef _WIN32
++#ifndef __OpenBSD__
+ #include <malloc.h>
+-#else
+-#include <malloc.h>  // for malloc_usable_size on Linux
+ #endif
+ #endif
+ 
+@@ -67,6 +65,16 @@ void* aligned_alloc(size_t alignment, size_t size)
+ #else
+ 	#if defined(_WIN32) || defined(__MINGW32__)
+ 		return _aligned_malloc(size, alignment);
++	#elif defined(__OpenBSD__)
++		// XXX upstream report todo, tmp workaround
++		// rts/Lua/LuaVBOImpl.cpp l1535 could ask for 8712 (% 32 = 8)
++		// on OpenBSD aligned_alloc() return NULL (crashes)
++		// partial revert of 5bf5eda51d7f11c9dc35e2d5bcaafbacb982c7eb
++		// rts/System/SpringMem.cpp used to call posix_memalign()
++		void* ptr = nullptr;
++		if (posix_memalign(&ptr, alignment, size) != 0)
++			throw std::bad_alloc();
++		return ptr;
+ 	#else
+ 		// std::aligned_alloc requires size to be a multiple of alignment (C11/C++17);
+ 		// unlike posix_memalign, passing a non-multiple is undefined behaviour
+@@ -118,6 +126,8 @@ void aligned_free(void* ptr)
+ #endif
+ }
+ 
++#ifndef __OpenBSD__
++// Openbsd doesn't provide malloc_usable_size() and no alternative
+ size_t usable_size(void* ptr)
+ {
+ #ifdef USE_MIMALLOC
+@@ -130,6 +140,7 @@ size_t usable_size(void* ptr)
+ 	#endif
+ #endif
+ }
++#endif
+ 
+ } // namespace recoil
+ 

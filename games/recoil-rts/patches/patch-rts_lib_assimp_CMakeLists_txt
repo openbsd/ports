@@ -3,7 +3,7 @@ remove hardcoded compiler optimizations and -g
 Index: rts/lib/assimp/CMakeLists.txt
 --- rts/lib/assimp/CMakeLists.txt.orig
 +++ rts/lib/assimp/CMakeLists.txt
-@@ -216,8 +216,8 @@ ENDIF()
+@@ -215,8 +215,8 @@ ENDIF()
  if (ASSIMP_COVERALLS)
      MESSAGE(STATUS "Coveralls enabled")
      INCLUDE(Coveralls)

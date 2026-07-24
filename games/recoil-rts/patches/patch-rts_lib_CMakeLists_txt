@@ -1,0 +1,49 @@
+Do not install vendored lib.
+
+Index: rts/lib/CMakeLists.txt
+--- rts/lib/CMakeLists.txt.orig
++++ rts/lib/CMakeLists.txt
+@@ -65,7 +65,7 @@ SET(GFLAGS_INSTALL_STATIC_LIBS        FALSE)
+ if (WIN32)
+ 	remove_definitions(-DUNICODE -D_UNICODE)
+ endif()
+-ADD_SUBDIRECTORY(gflags)
++ADD_SUBDIRECTORY(gflags EXCLUDE_FROM_ALL)
+ if (WIN32)
+ 	add_definitions(-DUNICODE -D_UNICODE)
+ endif()
+@@ -125,13 +125,13 @@ endif()
+ 
+ set(SIMDJSON_ENABLE_THREADS     OFF CACHE BOOL "forced by Recoil build env" FORCE)
+ set(SIMDJSON_EXCEPTIONS     ON CACHE BOOL "forced by Recoil build env" FORCE)
+-ADD_SUBDIRECTORY(simdjson)
++ADD_SUBDIRECTORY(simdjson EXCLUDE_FROM_ALL)
+ 
+ # fastgltf
+ set(FASTGLTF_COMPILE_AS_CPP20 ON CACHE BOOL "forced by Recoil build env" FORCE)
+ set(FASTGLTF_USE_64BIT_FLOAT OFF CACHE BOOL "forced by Recoil build env" FORCE)
+ set(FASTGLTF_USE_CUSTOM_SMALLVECTOR OFF CACHE BOOL "forced by Recoil build env" FORCE)
+-ADD_SUBDIRECTORY(fastgltf)
++ADD_SUBDIRECTORY(fastgltf EXCLUDE_FROM_ALL)
+ 
+ ADD_SUBDIRECTORY(squish)
+ ADD_SUBDIRECTORY(rg-etc1)
+@@ -147,7 +147,7 @@ option(TRACY_ON_DEMAND "Enable tracy profiling" ON)
+ # raw malloc have to be used with care.
+ option(TRACY_PROFILE_MEMORY "Profile memory allocations" OFF)
+ 
+-add_subdirectory(tracy)
++add_subdirectory(tracy EXCLUDE_FROM_ALL)
+ 
+ if (TRACY_ENABLE)
+ 	option(RMLUI_TRACY_PROFILING "Enable RmlUi profiling with Tracy." ON)
+@@ -168,7 +168,7 @@ find_package_static(Freetype 2.8.1 REQUIRED)
+ string(REPLACE "-fsingle-precision-constant" "" NEW_CMAKE_FLAGS ${CMAKE_CXX_FLAGS})
+ set(SAVED_CMAKE_FLAGS ${CMAKE_CXX_FLAGS})
+ set(CMAKE_CXX_FLAGS ${NEW_CMAKE_FLAGS})
+-add_subdirectory(lunasvg)
++add_subdirectory(lunasvg EXCLUDE_FROM_ALL)
+ set(CMAKE_CXX_FLAGS ${SAVED_CMAKE_FLAGS})
+ 
+-add_subdirectory(RmlUi)
++add_subdirectory(RmlUi EXCLUDE_FROM_ALL)

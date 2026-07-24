@@ -1,7 +1,7 @@
 Index: test/CMakeLists.txt
 --- test/CMakeLists.txt.orig
 +++ test/CMakeLists.txt
-@@ -5,15 +5,15 @@ endif (MINGW)
+@@ -3,15 +3,15 @@ add_definitions(-DCATCH_AMALGAMATED_CUSTOM_MAIN)
  # defines spring_test_compile_fail macro
  include(${CMAKE_CURRENT_SOURCE_DIR}/tools/CompileFailTest/CompileFailTest.cmake)
  
@@ -19,4 +19,24 @@ Index: test/CMakeLists.txt
 +endif (UNIX AND (NOT APPLE) AND (NOT MINGW) AND (NOT (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")))
  
  ADD_SUBDIRECTORY(lib/catch2)
+ 
+@@ -30,7 +30,7 @@ if (WIN32)
+ 		RESULT_VARIABLE IPV6_RET
+ 		ERROR_QUIET)
+ else(WIN32)
+-	execute_process(COMMAND ping6 ::1 -c 1
++	execute_process(COMMAND ping6 -c 1 ::1
+ 		RESULT_VARIABLE IPV6_RET
+ 		ERROR_QUIET)
+ endif (WIN32)
+@@ -402,7 +402,9 @@ endif()
+ 			${WINMM_LIBRARY}
+ 		)
+ 	if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+-		list(APPEND test_libs atomic)
++		if (NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++			list(APPEND test_libs atomic)
++		endif()
+ 	endif()
+ 	add_spring_test(${test_name} "${test_src}" "${test_libs}" "-DTHREADPOOL -DUNITSYNC")
  
