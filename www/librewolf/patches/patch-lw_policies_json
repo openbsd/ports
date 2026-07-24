@@ -3,20 +3,14 @@ perhaps send these to librewolf upstream as well
 Index: lw/policies.json
 --- lw/policies.json.orig
 +++ lw/policies.json
-@@ -13,6 +13,16 @@
+@@ -35,6 +35,10 @@
          "DisableSetDesktopBackground": false,
-         "DisableDeveloperTools": false,
-         "NoDefaultBookmarks": true,
-+        "DontCheckDefaultBrowser": true,
+         "DisableTelemetry": true,
+         "DontCheckDefaultBrowser": true,
 +        "GoToIntranetSiteForSingleWordEntryInAddressBar": true,
-+        "FirefoxHome": {
-+        "SponsoredStories": false,
-+            "SponsoredTopSites": false,
-+            "Stories": false
-+        },
 +        "GenerativeAI": {
 +            "Enabled": false
 +        },
-         "DefaultSerialGuardSetting": 3,
-         "WebsiteFilter": {
-             "Block": [
+         "EncryptedMediaExtensions": {
+             "Enabled": false
+         },

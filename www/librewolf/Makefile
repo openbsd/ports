@@ -13,7 +13,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # If upstream adds revision number -x, it will become plx in OpenBSD, e.g.
 # librewolf-149.0.2-2 (upstream) becomes librewolf-149.0.2pl2 (patch level 2)
-MOZILLA_DIST_VERSION =	152.0.6-1
+MOZILLA_DIST_VERSION =	153.0-3
 MOZILLA_VERSION =	${MOZILLA_DIST_VERSION:C/-([0-9]+)$/pl\1/}
 
 MOZILLA_PROJECT =	librewolf
@@ -21,7 +21,7 @@ MOZILLA_CODENAME =	browser
 MAINTAINER =		Leah Rowe <leah@libreboot.org>
 
 HOMEPAGE =	https://librewolf.net/
-SO_VERSION =	1.0
+SO_VERSION =	2.0
 # Bump minor ver if shlibs deleted in components dir to avoid pkg_add -r issues
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozinference mozwayland xul \
 		clearkey gkcodecs lgpllibs mozsqlite3
@@ -43,12 +43,11 @@ MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
 MODCLANG_VERSION =	22
-USE_LLD =	ports
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
+BUILD_DEPENDS +=	devel/cbindgen>=0.29.4
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt>=22.1.5p1 \
 			lang/wasi-sdk/libcxx>=21.1.5p1 \
@@ -60,7 +59,7 @@ BUILD_DEPENDS +=	devel/py-setuptools
 RUN_DEPENDS =		graphics/ffmpeg
 
 # uses pledge()
-WANTLIB += Xrandr Xtst
+WANTLIB += Xrandr Xtst freebl3
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
@@ -71,13 +70,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-fno-ret-protector -Wno-backend-plugin"
 .else
 CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
 .endif
-NCPU !!=		sysctl -n hw.ncpuonline
-.if ${NCPU} > 4
-CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=5 --ld-path=${WRKDIR}/bin/ld"
-.else
-CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} \
-			--ld-path=${WRKDIR}/bin/ld"
-.endif
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=4 --ld-path=${WRKDIR}/bin/ld"
 # 2026497
 CONFIGURE_ENV +=       MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
 
