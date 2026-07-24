@@ -1,7 +1,6 @@
 COMMENT =		persistent key-value database
 
-DISTNAME =		redis-8.8.0
-REVISION =		0
+DISTNAME =		redis-8.8.1
 
 WANTLIB +=		c crypto ssl m pthread
 
