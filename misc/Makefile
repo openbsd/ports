@@ -81,6 +81,7 @@
      SUBDIR += p5-I18N-Charset
      SUBDIR += p5-Lingua-Romana-Perligata
      SUBDIR += p5-OPCUA-Open62541
+     SUBDIR += p5-OPCUA-Open62541,ns0_full
      SUBDIR += p5-Spreadsheet-ParseExcel
      SUBDIR += p5-Spreadsheet-WriteExcel
      SUBDIR += p5-Spreadsheet-XLSX
