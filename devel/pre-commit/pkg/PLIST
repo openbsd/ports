@@ -212,7 +212,6 @@ lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/${MODPY_PYCACHE}empty_template_setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/${MODPY_PYCACHE}empty_template_setup.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_.npmignore
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_Cargo.toml
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_LICENSE.renv
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_Makefile.PL
@@ -221,7 +220,6 @@ lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_env
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_go.mod
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_main.go
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_main.rs
-lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_package.json
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_pre-commit-package-dev-1.rockspec
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_pre_commit_placeholder_package.gemspec
 lib/python${MODPY_VERSION}/site-packages/pre_commit/resources/empty_template_pubspec.yaml
