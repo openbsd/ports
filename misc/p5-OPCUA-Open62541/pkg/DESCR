@@ -1,2 +1,5 @@
 The open62541 is a library implementing an OPC UA client and server.
 This module provides access to the C functionality from Perl programs.
+
+Flavors: ns0_full - support full namespace zero, rather than the
+default reduced namespace.  open62541 flavors are not compatible.

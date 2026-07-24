@@ -1,6 +1,7 @@
 COMMENT =	Perl XS wrapper for open62541 OPC UA library
 
 DISTNAME =	OPCUA-Open62541-2.10
+REVISION =	0
 CPAN_AUTHOR =	BLUHM
 
 CATEGORIES =	misc
@@ -14,8 +15,15 @@ WANTLIB =		c crypto m open62541 perl pthread ssl tls
 
 MODULES =		cpan
 
+FLAVORS =		ns0_full
+FLAVOR ?=
+
 BUILD_DEPENDS =		devel/p5-Devel-CheckLib
-LIB_DEPENDS =		misc/open62541>=1.3.4
+.if ${FLAVOR:Mns0_full}
+LIB_DEPENDS =		open62541-*-ns0_full:misc/open62541,ns0_full
+.else
+LIB_DEPENDS =		open62541-*-!ns0_full:misc/open62541
+.endif
 TEST_DEPENDS =		devel/p5-Test-Deep \
 			devel/p5-Test-EOL \
 			devel/p5-Test-Exception \
