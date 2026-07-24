@@ -1,0 +1,14 @@
+Disable RVV code, fails to build on riscv64.
+
+Index: unac/simdutf.h
+--- unac/simdutf.h.orig
++++ unac/simdutf.h
+@@ -150,7 +150,7 @@
+ #endif
+ 
+ #if __riscv_v_intrinsic >= 11000
+-#define SIMDUTF_HAS_RVV_INTRINSICS 1
++#define SIMDUTF_HAS_RVV_INTRINSICS 0
+ #endif
+ 
+ #define SIMDUTF_HAS_ZVBB_INTRINSICS 0 // there is currently no way to detect this
