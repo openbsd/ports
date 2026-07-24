@@ -1,6 +1,6 @@
 COMMENT =		Debian Almquist shell, POSIX-compliant
 
-DISTNAME =		dash-0.5.13.4
+DISTNAME =		dash-0.5.13.5
 
 CATEGORIES =		shells
 
