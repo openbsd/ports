@@ -1,4 +1,4 @@
-# $OpenBSD: fortran.port.mk,v 1.20 2026/06/25 07:27:00 jca Exp $
+# $OpenBSD: fortran.port.mk,v 1.21 2026/07/24 17:07:57 tb Exp $
 
 MODFORTRAN_COMPILER ?= gfortran
 
@@ -13,9 +13,6 @@ MODGCC4_LANGS += fortran
 MODFORTRAN_BUILD_DEPENDS += ${MODGCC4_FORTRANDEP}
 MODFORTRAN_LIB_DEPENDS += ${MODGCC4_FORTRANLIBDEP}
 MODFORTRAN_WANTLIB += ${MODGCC4_FORTRANWANTLIB}
-# XXX revisit when we move to lang/gcc/11; also see ports which use
-# fortran libraries that have "USE_NOBTCFI-aarch64.*# fortran"
-USE_NOBTCFI-aarch64 ?=	Yes
 .else
 ERRORS += "Fatal: MODFORTRAN_COMPILER must be one of: gfortran"
 .endif
