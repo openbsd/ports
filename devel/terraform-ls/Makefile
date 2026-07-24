@@ -1,7 +1,7 @@
 COMMENT =		terraform language server
 
 MODGO_MODNAME =		github.com/hashicorp/terraform-ls
-MODGO_VERSION =		v0.38.8
+MODGO_VERSION =		v0.39.0
 
 DISTNAME =		terraform-ls-${MODGO_VERSION}
 WRKDIST =		${WRKDIR}/github.com/hashicorp/terraform-ls@${MODGO_VERSION}
