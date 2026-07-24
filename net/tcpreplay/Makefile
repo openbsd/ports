@@ -1,6 +1,6 @@
 COMMENT=	resend network traffic saved by tcpdump
 
-V=		4.5.2
+V=		4.5.5
 DISTNAME=	tcpreplay-$V
 CATEGORIES=	net
 
