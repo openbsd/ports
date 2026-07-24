@@ -2031,6 +2031,7 @@
      SUBDIR += stylua
      SUBDIR += subversion
      SUBDIR += swig
+     SUBDIR += swival
      SUBDIR += t1lib
      SUBDIR += tbb
      SUBDIR += tclap
