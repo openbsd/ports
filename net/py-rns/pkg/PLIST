@@ -1,5 +1,6 @@
 bin/git-remote-rns
 bin/rncp
+bin/rngcs
 bin/rngit
 bin/rnid
 bin/rnir
@@ -199,6 +200,8 @@ lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}__i
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}commitsigs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}commitsigs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}highlight.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}highlight.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -210,6 +213,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}ser
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/client.py
+lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/commitsigs.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/highlight.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/main.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rngit/pages.py
