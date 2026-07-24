@@ -1,6 +1,6 @@
 COMMENT =		Python module to retry code until it succeeds
 
-MODPY_DISTV =		9.1.2
+MODPY_DISTV =		9.1.4
 DISTNAME =		tenacity-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
