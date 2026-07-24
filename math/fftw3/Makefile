@@ -10,12 +10,12 @@ FULLPKGPATH-main=	math/fftw3,-main${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-common=	fftw3-common-${V}
 SHARED_LIBS=	fftw3	7.1 \
 		fftw3f	7.1 \
-		fftw3_threads	1.2 \
-		fftw3f_threads	1.2
+		fftw3_threads	1.3 \
+		fftw3f_threads	1.3
 CATEGORIES=	math
 
-REVISION-main=		1
-REVISION-common=	0
+REVISION-main=		2
+REVISION-common=	1
 
 HOMEPAGE=	https://www.fftw.org/
 
@@ -32,6 +32,8 @@ MULTI_PACKAGES=	-main -common
 
 FLAVORS=	double float
 FLAVOR?=	double
+
+MODULES +=	fortran
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
