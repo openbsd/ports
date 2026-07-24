@@ -8,6 +8,7 @@ share/corsix-th/Bitmap/aux_ui.tab
 share/corsix-th/Bitmap/bootstrap_font.dat
 share/corsix-th/Bitmap/bootstrap_font.pal
 share/corsix-th/Bitmap/bootstrap_font.tab
+share/corsix-th/Bitmap/lose.pl8
 share/corsix-th/Bitmap/mainmenu1080.dat
 share/corsix-th/Bitmap/mainmenu1080.pal
 share/corsix-th/Bitmap/mainmenu480.dat
@@ -17,6 +18,7 @@ share/corsix-th/Bitmap/mainmenu720.pal
 share/corsix-th/Bitmap/tree_ctrl.dat
 share/corsix-th/Bitmap/tree_ctrl.pal
 share/corsix-th/Bitmap/tree_ctrl.tab
+share/corsix-th/Bitmap/winlevel.pl8
 share/corsix-th/Campaigns/
 share/corsix-th/Campaigns/ChrizmanTV.campaign
 share/corsix-th/Campaigns/Coffalot.map
@@ -116,6 +118,7 @@ share/corsix-th/Lua/dialogs/place_staff.lua
 share/corsix-th/Lua/dialogs/queue_dialog.lua
 share/corsix-th/Lua/dialogs/resizable.lua
 share/corsix-th/Lua/dialogs/resizables/
+share/corsix-th/Lua/dialogs/resizables/adviser_history.lua
 share/corsix-th/Lua/dialogs/resizables/calls_dispatcher.lua
 share/corsix-th/Lua/dialogs/resizables/cheats_dialog.lua
 share/corsix-th/Lua/dialogs/resizables/customise.lua
@@ -124,6 +127,7 @@ share/corsix-th/Lua/dialogs/resizables/dropdown.lua
 share/corsix-th/Lua/dialogs/resizables/file_browser.lua
 share/corsix-th/Lua/dialogs/resizables/file_browsers/
 share/corsix-th/Lua/dialogs/resizables/file_browsers/choose_font.lua
+share/corsix-th/Lua/dialogs/resizables/file_browsers/choose_soundfont.lua
 share/corsix-th/Lua/dialogs/resizables/file_browsers/load_game.lua
 share/corsix-th/Lua/dialogs/resizables/file_browsers/load_map.lua
 share/corsix-th/Lua/dialogs/resizables/file_browsers/save_game.lua
@@ -141,10 +145,12 @@ share/corsix-th/Lua/dialogs/resizables/menu_list_dialogs/custom_game.lua
 share/corsix-th/Lua/dialogs/resizables/menu_list_dialogs/make_debug_patient.lua
 share/corsix-th/Lua/dialogs/resizables/new_game.lua
 share/corsix-th/Lua/dialogs/resizables/options.lua
+share/corsix-th/Lua/dialogs/resizables/sound_setting.lua
 share/corsix-th/Lua/dialogs/resizables/tip_of_the_day.lua
 share/corsix-th/Lua/dialogs/resizables/update.lua
 share/corsix-th/Lua/dialogs/staff_dialog.lua
 share/corsix-th/Lua/dialogs/staff_rise.lua
+share/corsix-th/Lua/dialogs/subtitles.lua
 share/corsix-th/Lua/dialogs/tree_ctrl.lua
 share/corsix-th/Lua/dialogs/watch.lua
 share/corsix-th/Lua/diseases/

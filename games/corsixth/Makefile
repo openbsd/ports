@@ -1,4 +1,4 @@
-V =		0.69.2
+V =		0.70.0
 COMMENT =	open source clone of Theme Hospital
 PKGNAME =	corsixth-${V}
 CATEGORIES =	games x11
@@ -14,14 +14,17 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer avcodec avformat
-WANTLIB += avutil c freetype m swresample swscale ${MODLUA_WANTLIB}
+WANTLIB += avutil c freetype m png swresample swscale z ${MODLUA_WANTLIB}
 
 # C++11
 COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/lua
-MODLUA_VERSION =	5.3
+
+# Lua 5.2 and 5.3 are deprecated for corsixth
+# update to Lua 5.4 when this is supported by devel/lpeg
+MODLUA_VERSION = 5.3
 
 LIB_DEPENDS =	devel/sdl2-mixer \
 		graphics/ffmpeg
@@ -32,7 +35,8 @@ RUN_DEPENDS =	audio/timidity \
 		devel/luafs,${MODLUA_FLAVOR} \
 		x11/gtk+4,-guic
 
-CONFIGURE_ARGS =	-DWITH_UPDATE_CHECK=OFF
+CONFIGURE_ARGS = -DWITH_MIDI_DEVICE=OFF \
+		-DWITH_UPDATE_CHECK=OFF
 
 NO_TEST =	Yes
 
