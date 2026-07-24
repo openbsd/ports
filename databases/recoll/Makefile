@@ -10,16 +10,17 @@ ONLY_FOR_ARCHS-gui= aarch64 amd64 i386
 PSEUDO_FLAVORS=	no_gui
 
 MODPY_DISTV=	1.43.14
+REVISION=	0
 DISTNAME=	recoll-${MODPY_DISTV}
 
 CATEGORIES=	databases sysutils
 
-HOMEPAGE=	https://www.lesbonscomptes.com/recoll/
+HOMEPAGE=	https://www.recoll.org/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://www.lesbonscomptes.com/recoll/
+SITES=		https://www.recoll.org/
 
 # C++11
 COMPILER=	base-clang ports-gcc

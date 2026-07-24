@@ -43,6 +43,7 @@ share/recoll/images/txt.png
 share/recoll/images/video.png
 share/recoll/images/wordprocessing.png
 share/recoll/translations/
+share/recoll/translations/recoll_ar.qm
 share/recoll/translations/recoll_cs.qm
 share/recoll/translations/recoll_da.qm
 share/recoll/translations/recoll_de.qm
