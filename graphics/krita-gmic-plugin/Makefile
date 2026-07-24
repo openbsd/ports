@@ -25,7 +25,8 @@ MODULES =	devel/kf6
 
 WANTLIB += ${COMPILER_LIBCXX}
 
-BUILD_DEPENDS =	shells/bash
+BUILD_DEPENDS =	devel/gmake \
+		shells/bash
 
 LIB_DEPENDS =	graphics/krita>=6.0 \
 		net/curl \
