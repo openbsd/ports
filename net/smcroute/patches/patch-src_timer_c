@@ -1,0 +1,104 @@
+Replace POSIX per-process timers timer_create()/timer_settime()
+with setitimer(ITIMER_REAL) API.
+
+https://github.com/bluhm/smcroute/commit/fc01a20bea97468fb481d45d57f28f500d1c3ac5
+
+Index: src/timer.c
+--- src/timer.c.orig
++++ src/timer.c
+@@ -26,6 +26,7 @@
+ #include <sysexits.h>
+ #include <unistd.h>		/* read()/write() */
+ #include <time.h>
++#include <sys/time.h>		/* setitimer(), struct itimerval */
+ 
+ #include "log.h"
+ #include "socket.h"
+@@ -47,7 +48,6 @@ struct timer {
+ 	void *arg;
+ };
+ 
+-static timer_t timer;
+ static int timerfd[2];
+ static LIST_HEAD(tlist, timer) timer_list = LIST_HEAD_INITIALIZER();
+ 
+@@ -107,8 +107,10 @@ static struct timer *find(void (*cb), void *arg)
+ 
+ static int start(struct timespec *now)
+ {
+-	struct itimerspec it = { 0 };
++	struct itimerval it = { 0 };
+ 	struct timer *next, *entry;
++	time_t sec;
++	long nsec;
+ 
+ 	if (LIST_EMPTY(&timer_list))
+ 		return -1;
+@@ -117,16 +119,24 @@ static int start(struct timespec *now)
+ 	LIST_FOREACH(entry, &timer_list, link)
+ 		next = compare(next, entry);
+ 
+-	it.it_value.tv_sec  = next->timeout.tv_sec - now->tv_sec;
+-	it.it_value.tv_nsec = next->timeout.tv_nsec - now->tv_nsec;
+-	if (it.it_value.tv_nsec < 0) {
+-		it.it_value.tv_sec -= 1;
+-		it.it_value.tv_nsec = 1000000000 + it.it_value.tv_nsec;
++	sec  = next->timeout.tv_sec - now->tv_sec;
++	nsec = next->timeout.tv_nsec - now->tv_nsec;
++	if (nsec < 0) {
++		sec -= 1;
++		nsec = 1000000000 + nsec;
+ 	}
+-	if (it.it_value.tv_sec < 0)
+-		it.it_value.tv_sec = 0;
++	if (sec < 0) {
++		sec  = 0;
++		nsec = 0;
++	}
+ 
+-	if (timer_settime(timer, 0, &it, NULL))
++	it.it_value.tv_sec  = sec;
++	it.it_value.tv_usec = nsec / 1000;
++
++	if (it.it_value.tv_sec == 0 && it.it_value.tv_usec == 0)
++		it.it_value.tv_usec = 1;
++
++	if (setitimer(ITIMER_REAL, &it, NULL))
+ 		smclog(LOG_ERR, "Failed starting %.1f sec period timer, errno %d: %s",
+ 		       difftime(next->timeout.tv_sec, now->tv_sec), errno, strerror(errno));
+ 
+@@ -164,9 +174,12 @@ static void run(int sd, void *arg)
+ /* write to pipe to create an event for select() on SIGALRM */
+ static void handler(int signo)
+ {
++	int save_errno = errno;
++
+ 	(void)signo;
+ 	if (write(timerfd[1], "!", 1) < 0)
+ 		smclog(LOG_DEBUG, "Failed write(pipe): %s", strerror(errno));
++	errno = save_errno;
+ }
+ 
+ /*
+@@ -189,12 +202,6 @@ int timer_init(void)
+ 	sigemptyset(&sa.sa_mask);
+ 	sigaction(SIGALRM, &sa, NULL);
+ 
+-	if (timer_create(CLOCK_MONOTONIC, NULL, &timer)) {
+-		socket_close(timerfd[0]);
+-		socket_close(timerfd[1]);
+-		return -1;
+-	}
+-
+ 	return 0;
+ }
+ 
+@@ -204,8 +211,6 @@ int timer_init(void)
+ void timer_exit(void)
+ {
+ 	struct timer *entry, *tmp;
+-
+-	timer_delete(timer);
+ 
+ 	socket_close(timerfd[0]);
+ 	socket_close(timerfd[1]);

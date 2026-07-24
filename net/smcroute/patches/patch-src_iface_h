@@ -1,0 +1,16 @@
+https://github.com/bluhm/smcroute/commit/8d8aeb5d03aeb246ba94655234a05ca27ed6cd62
+
+Index: src/iface.h
+--- src/iface.h.orig
++++ src/iface.h
+@@ -15,6 +15,10 @@
+ #define ALL_MIFS (vifi_t)-1
+ #endif
+ 
++#ifndef ALL_VIFS
++#define ALL_VIFS (vifi_t)-1
++#endif
++
+ #define DEFAULT_THRESHOLD 1		/* Packet TTL must be at least 1 to pass */
+ #define NO_VIF   ALL_VIFS
+ 

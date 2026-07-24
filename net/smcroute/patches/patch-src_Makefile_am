@@ -1,0 +1,12 @@
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -11,7 +11,7 @@ smcrouted_SOURCES    = smcrouted.c conf.c conf.h ifeve
+ smcrouted_CFLAGS     = -W -Wall -Wextra -Wno-deprecated-declarations -std=gnu99
+ smcrouted_CPPFLAGS   = -D_ATFILE_SOURCE -D_INCOMPLETE_XOPEN_C063
+ smcrouted_CPPFLAGS  += -DSYSCONFDIR=\"@sysconfdir@\" -DRUNSTATEDIR=\"@runstatedir@\"
+-smcrouted_LDADD	     = $(LIBS) $(LIBOBJS) @LIB_RT@ @LIB_PTHREAD@
++smcrouted_LDADD	     = $(LIBS) $(LIBOBJS) @LIB_PTHREAD@
+ 
+ if USE_LIBCAP
+ smcrouted_SOURCES   += cap.c cap.h

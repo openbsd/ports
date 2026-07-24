@@ -1,0 +1,21 @@
+https://github.com/troglobit/smcroute/commit/fc01a20bea97468fb481d45d57f28f500d1c3ac5
+
+Index: src/script.c
+--- src/script.c.orig
++++ src/script.c
+@@ -35,6 +35,7 @@ static pid_t script = 0;
+ 
+ static void handler(int signo)
+ {
++	int save_errno = errno;
+ 	int status;
+ 	pid_t pid = 1;
+ 
+@@ -55,6 +56,7 @@ static void handler(int signo)
+ 				smclog(LOG_WARNING, "Script %s returned error: %d", exec, status);
+ 		}
+ 	}
++	errno = save_errno;
+ }
+ 
+ int script_init(char *script)

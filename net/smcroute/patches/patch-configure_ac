@@ -1,0 +1,15 @@
+https://github.com/bluhm/smcroute/commit/595e664319cf25392f944f04f01f5d50cc92405b
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -71,7 +71,8 @@ AC_ARG_WITH([systemd],
+ 
+ # Checks for header files.
+ AC_CHECK_HEADERS([arpa/inet.h fcntl.h glob.h ifaddrs.h limits.h linux/sockios.h \
+-	net/if.h netinet/in.h netinet/in_var.h net/route.h paths.h stddef.h     \
++	net/if.h netinet/in.h netinet/in_var.h netinet6/in6_var.h net/route.h   \
++	paths.h stddef.h                                                        \
+ 	sys/capability.h sys/ioctl.h sys/param.h sys/prctl.h sys/socket.h       \
+ 	sys/stat.h sys/time.h sys/types.h syslog.h termios.h unistd.h], [], [],[
+ 	#ifdef HAVE_SYS_SOCKET_H

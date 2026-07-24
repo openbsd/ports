@@ -1,0 +1,10 @@
+@rcscript ${RCDIR}/smcrouted
+@man man/man5/smcroute.conf.5
+@man man/man8/smcroutectl.8
+@man man/man8/smcrouted.8
+@bin sbin/smcroutectl
+@bin sbin/smcrouted
+share/doc/smcroute/
+share/doc/smcroute/COPYING
+share/doc/smcroute/README.md
+share/doc/smcroute/smcroute.conf

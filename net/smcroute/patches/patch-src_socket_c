@@ -1,0 +1,13 @@
+https://github.com/troglobit/smcroute/commit/6036e4879cbb1b4a21224791fcf03b6daaa18417
+
+Index: src/socket.c
+--- src/socket.c.orig
++++ src/socket.c
+@@ -31,6 +31,7 @@
+ #include <time.h>
+ #include <unistd.h>
+ #include <netinet/in.h>
++#include <sys/select.h>
+ #include <sys/socket.h>
+ #include <sys/types.h>
+ 

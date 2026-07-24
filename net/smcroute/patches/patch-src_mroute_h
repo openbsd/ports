@@ -1,0 +1,30 @@
+https://github.com/bluhm/smcroute/commit/595e664319cf25392f944f04f01f5d50cc92405b
+
+Index: src/mroute.h
+--- src/mroute.h.orig
++++ src/mroute.h
+@@ -12,6 +12,9 @@
+ #ifdef HAVE_NETINET_IN_VAR_H
+ #include <netinet/in_var.h>
+ #endif
++#ifdef HAVE_NETINET6_IN6_VAR_H
++#include <netinet6/in6_var.h>
++#endif
+ #include <netinet/ip.h>
+ #include "queue.h"		/* Needed by netinet/ip_mroute.h on FreeBSD */
+ #include "show.h"
+@@ -80,6 +83,14 @@
+ # endif
+ #else
+ #define MAX_MC_VIFS MAXVIFS
++#endif
++
++#ifndef MRT_PIM
++#define MRT_PIM		MRT_ASSERT /* enable PIM processing */
++#endif
++
++#ifndef IGMPMSG_WHOLEPKT
++#define IGMPMSG_WHOLEPKT	3	/* PIM pkt for user level encap.    */
+ #endif
+ 
+ /* We're on a system w/o IPv6 routing, define to avoid other ifdefs */

@@ -1,0 +1,8 @@
+smcrouted is a static multicast routing daemon providing fine grained
+control over the multicast forwarding cache (MFC) in the UNIX kernel.
+Both IPv4 and IPv6 are fully supported.
+
+smcrouted can be used as an alternative to dynamic multicast daemons like
+mrouted(8), pimd(8) or pim6sd(8) in situations where static multicast
+routes should be maintained and/or no proper IGMP or MLD signaling
+exists.
