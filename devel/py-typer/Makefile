@@ -1,6 +1,6 @@
 COMMENT =		library for building CLI applications
 
-MODPY_DISTV =		0.26.8
+MODPY_DISTV =		0.27.0
 DISTNAME =		typer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -30,6 +30,7 @@ FISH_DIR =		v3
 .endif
 
 TEST_DEPENDS =		devel/py-coverage>=6.2 \
+			devel/py-installer \
 			shells/bash \
 			shells/fish/${FISH_DIR} \
 			shells/zsh
