@@ -2,7 +2,7 @@ PORTROACH=		limit:^1
 
 COMMENT=		universal command line environment for AWS
 
-MODPY_DISTV=		1.45.51
+MODPY_DISTV=		1.45.56
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
