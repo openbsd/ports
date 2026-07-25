@@ -1,6 +1,6 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-DIST_TUPLE=		github mangowm mango 0.15.4 .
+DIST_TUPLE=		github mangowm mango 0.15.5 .
 
 CATEGORIES =		wayland
 
