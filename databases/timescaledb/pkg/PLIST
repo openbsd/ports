@@ -52,6 +52,15 @@ share/postgresql/extension/timescaledb--2.25.1--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.25.2--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.26.0--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.26.1--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.26.2--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.26.3--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.26.4--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.27.0--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.27.1--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.27.2--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.28.0--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.28.1--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.28.2--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.9.0--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.9.1--${GH_TAGNAME}.sql
