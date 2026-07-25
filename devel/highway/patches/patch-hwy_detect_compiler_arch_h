@@ -1,4 +1,7 @@
-Fix build on sparc64 by not erroring out
+- Add OpenBSD detection
+  2ddca0e08c7dbc7a7c794e96c959acc2a84301bb
+
+- Fix build on sparc64 by not erroring out
 
 Index: hwy/detect_compiler_arch.h
 --- hwy/detect_compiler_arch.h.orig
@@ -12,3 +15,21 @@ Index: hwy/detect_compiler_arch.h
  #endif
  
  //------------------------------------------------------------------------------
+@@ -473,9 +471,16 @@
+ #define HWY_OS_FREEBSD 0
+ #endif
+ 
++#if defined(__OpenBSD__)
++#define HWY_OS_OPENBSD 1
++#else
++#define HWY_OS_OPENBSD 0
++#endif
++
+ // It is an error to detect multiple OSes at the same time, but OK to
+ // detect none of the above.
+-#if (HWY_OS_WIN + HWY_OS_LINUX + HWY_OS_APPLE + HWY_OS_FREEBSD) > 1
++#if (HWY_OS_WIN + HWY_OS_LINUX + HWY_OS_APPLE + HWY_OS_FREEBSD +             \
++     HWY_OS_OPENBSD) > 1
+ #error "Must not detect more than one OS"
+ #endif
+ 

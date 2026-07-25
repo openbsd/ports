@@ -4,6 +4,8 @@ GH_ACCOUNT =	google
 GH_PROJECT =	highway
 GH_TAGNAME =	1.4.0
 
+REVISION =	0
+
 CATEGORIES =	devel
 
 SHARED_LIBS +=	hwy		0.3 # 0.0

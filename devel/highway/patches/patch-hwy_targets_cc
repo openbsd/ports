@@ -1,26 +1,30 @@
+- Add runtime dispatch on FreeBSD and OpenBSD
+  e91b42110588eb0c3acda53465070afe6c6b471d
+
 Index: hwy/targets.cc
 --- hwy/targets.cc.orig
 +++ hwy/targets.cc
-@@ -29,7 +29,7 @@
+@@ -39,6 +39,12 @@
+ #include <sys/auxv.h>
+ #endif
  
- #elif (HWY_ARCH_ARM || HWY_ARCH_PPC || HWY_ARCH_S390X || HWY_ARCH_RISCV || \
-        HWY_ARCH_LOONGARCH) &&                                              \
--    HWY_OS_LINUX
-+    (HWY_OS_LINUX || HWY_OS_FREEBSD || defined(__OpenBSD__))
- // sys/auxv.h does not always include asm/hwcap.h, or define HWCAP*, hence we
- // still include this directly. See #1199.
- #if HWY_HAVE_ASM_HWCAP
-@@ -47,6 +47,26 @@
++#elif (HWY_ARCH_ARM || HWY_ARCH_PPC || HWY_ARCH_RISCV) &&                  \
++       (HWY_OS_FREEBSD || HWY_OS_OPENBSD)
++#if HWY_HAVE_ELF_AUX_INFO
++#include <sys/auxv.h>
++#endif
++
+ #endif  // HWY_ARCH_*
+ 
+ #if HWY_OS_APPLE
+@@ -47,6 +53,23 @@
  #endif  // HWY_OS_APPLE
  
  namespace hwy {
 +
-+#if (HWY_ARCH_ARM || HWY_ARCH_PPC || HWY_ARCH_S390X || HWY_ARCH_RISCV || \
-+       HWY_ARCH_LOONGARCH) &&                                            \
-+       (HWY_OS_FREEBSD || defined(__OpenBSD__))
-+#if HWY_HAVE_AUXV
-+// Implement getauxval using elf_aux_info
-+// XXX getauxval and elf_aux_info should be autodetected
++#if (HWY_ARCH_ARM || HWY_ARCH_PPC || HWY_ARCH_RISCV) &&                  \
++       (HWY_OS_FREEBSD || HWY_OS_OPENBSD)
++#if HWY_HAVE_ELF_AUX_INFO
 +static HWY_INLINE HWY_MAYBE_UNUSED unsigned long getauxval(unsigned long type) {
 +  unsigned long hwcap = 0;
 +  switch (type) {
@@ -32,7 +36,7 @@ Index: hwy/targets.cc
 +    return 0;
 +  }
 +}
-+#endif // HWY_HAVE_AUXV
++#endif // HWY_HAVE_ELF_AUX_INFO
 +#endif // HWY_ARCH_*
  
  #if HWY_OS_APPLE
