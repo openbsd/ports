@@ -4,7 +4,9 @@ include/stable-diffusion.h
 @static-lib lib/libstable-diffusion.a
 lib/pkgconfig/stable-diffusion.pc
 share/doc/stable-diffusion.cpp/
+share/doc/stable-diffusion.cpp/adetailer.md
 share/doc/stable-diffusion.cpp/anima.md
+share/doc/stable-diffusion.cpp/animatediff.md
 share/doc/stable-diffusion.cpp/backend.md
 share/doc/stable-diffusion.cpp/boogu_image.md
 share/doc/stable-diffusion.cpp/build.md
@@ -13,21 +15,26 @@ share/doc/stable-diffusion.cpp/chroma.md
 share/doc/stable-diffusion.cpp/chroma_radiance.md
 share/doc/stable-diffusion.cpp/distilled_sd.md
 share/doc/stable-diffusion.cpp/docker.md
+share/doc/stable-diffusion.cpp/edit.md
 share/doc/stable-diffusion.cpp/ernie_image.md
 share/doc/stable-diffusion.cpp/esrgan.md
 share/doc/stable-diffusion.cpp/flux.md
 share/doc/stable-diffusion.cpp/flux2.md
 share/doc/stable-diffusion.cpp/hidream_o1_image.md
 share/doc/stable-diffusion.cpp/hipBLAS_on_Windows.md
+share/doc/stable-diffusion.cpp/hunyuan_video.md
 share/doc/stable-diffusion.cpp/ideogram4.md
 share/doc/stable-diffusion.cpp/imatrix.md
+share/doc/stable-diffusion.cpp/ip_adapter.md
 share/doc/stable-diffusion.cpp/kontext.md
 share/doc/stable-diffusion.cpp/krea2.md
 share/doc/stable-diffusion.cpp/lcm.md
 share/doc/stable-diffusion.cpp/lens.md
+share/doc/stable-diffusion.cpp/lingbot_video.md
 share/doc/stable-diffusion.cpp/longcat_image.md
 share/doc/stable-diffusion.cpp/lora.md
 share/doc/stable-diffusion.cpp/ltx2.md
+share/doc/stable-diffusion.cpp/mage_flow.md
 share/doc/stable-diffusion.cpp/minit2i.md
 share/doc/stable-diffusion.cpp/model_config.md
 share/doc/stable-diffusion.cpp/ovis_image.md
