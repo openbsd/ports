@@ -1,0 +1,27 @@
+Index: codex-rs/modcargo-crates/aws-lc-sys-0.39.0/aws-lc/crypto/fipsmodule/sha/asm/keccak1600-armv8.pl
+--- codex-rs/modcargo-crates/aws-lc-sys-0.39.0/aws-lc/crypto/fipsmodule/sha/asm/keccak1600-armv8.pl.orig
++++ codex-rs/modcargo-crates/aws-lc-sys-0.39.0/aws-lc/crypto/fipsmodule/sha/asm/keccak1600-armv8.pl
+@@ -89,7 +89,7 @@ my @subrhotates = ([  64,  63, 2, 36, 37 ],
+ 
+ $code.=<<___;
+ #include <openssl/arm_arch.h>
+-.text
++.rodata
+ .align 8	// strategic alignment and padding that allows to use
+ 		// address value as loop termination condition...
+ 	.quad	0,0,0,0,0,0,0,0
+@@ -129,11 +129,13 @@ my @A = map([ "x$_", "x".($_+1), "x".($_+2), "x".($_+3
+ my @C = map("x$_", (26,27,28,30));
+ 
+ $code.=<<___;
++.text
+ .type	KeccakF1600_int,%function
+ .align	5
+ KeccakF1600_int:
+ 	AARCH64_SIGN_LINK_REGISTER
+-	adr	$C[2],iotas_hw
++	adrp	$C[2],iotas_hw
++	add	$C[2],$C[2],:lo12:iotas_hw
+ 	stp	$C[2],x30,[sp,#16]		// 32 bytes on top are mine
+ 	b	.Loop
+ .align	4
