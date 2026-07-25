@@ -1455,6 +1455,7 @@ include/duckdb/verification/parsed_statement_verifier.hpp
 include/duckdb/verification/prepared_statement_verifier.hpp
 include/duckdb/verification/statement_verifier.hpp
 include/duckdb/verification/unoptimized_statement_verifier.hpp
+include/duckdb_extension.h
 lib/cmake/
 lib/cmake/DuckDB/
 lib/cmake/DuckDB/DuckDBConfig.cmake
