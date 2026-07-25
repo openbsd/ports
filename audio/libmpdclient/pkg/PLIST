@@ -11,6 +11,7 @@ include/mpd/database.h
 include/mpd/directory.h
 include/mpd/entity.h
 include/mpd/error.h
+include/mpd/feature.h
 include/mpd/fingerprint.h
 include/mpd/idle.h
 include/mpd/list.h
@@ -40,6 +41,7 @@ include/mpd/song.h
 include/mpd/stats.h
 include/mpd/status.h
 include/mpd/sticker.h
+include/mpd/stringnormalization.h
 include/mpd/tag.h
 include/mpd/version.h
 @lib lib/libmpdclient.so.${LIBmpdclient_VERSION}
