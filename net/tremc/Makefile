@@ -2,8 +2,7 @@ COMMENT =		curses interface for transmission
 
 GH_ACCOUNT =		tremc
 GH_PROJECT =		tremc
-GH_TAGNAME =		0.9.3
-REVISION =		2
+GH_TAGNAME =		0.9.6
 
 CATEGORIES =		net
 
