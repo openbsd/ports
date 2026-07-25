@@ -45,19 +45,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    StringRef ImplicitIt;
    for (const Arg *A :
         Args.filtered(options::OPT_Wa_COMMA, options::OPT_Xassembler,
-@@ -2664,6 +2674,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
-           CmdArgs.push_back("-soft-float");
-           continue;
-         }
-+        if (Value.starts_with("-mfix-loongson2f-btb")) {
-+          CmdArgs.push_back("-mllvm");
-+          CmdArgs.push_back("-fix-loongson2f-btb");
-+          continue;
-+        }
- 
-         MipsTargetFeature = llvm::StringSwitch<const char *>(Value)
-                                 .Case("-mips1", "+mips1")
-@@ -2684,6 +2699,32 @@ static void CollectArgsForIntegratedAssembler(Compilat
+@@ -2684,6 +2694,32 @@ static void CollectArgsForIntegratedAssembler(Compilat
                                  .Default(nullptr);
          if (MipsTargetFeature)
            continue;
@@ -90,7 +78,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
        }
  
        if (Value == "-force_cpusubtype_ALL") {
-@@ -2791,6 +2832,21 @@ static void CollectArgsForIntegratedAssembler(Compilat
+@@ -2791,6 +2827,21 @@ static void CollectArgsForIntegratedAssembler(Compilat
      CmdArgs.push_back(MipsTargetFeature);
    }
  
@@ -112,7 +100,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    // forward -fembed-bitcode to assmebler
    if (C.getDriver().embedBitcodeEnabled() ||
        C.getDriver().embedBitcodeMarkerOnly())
-@@ -5799,8 +5855,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5799,8 +5850,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're Windows MSVC since MSVC
    // doesn't do any TBAA.
@@ -126,7 +114,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (Args.hasFlag(options::OPT_fpointer_tbaa, options::OPT_fno_pointer_tbaa,
                     false))
-@@ -6844,7 +6904,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6844,7 +6899,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -136,7 +124,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
  
    Args.AddLastArg(CmdArgs, options::OPT_ffinite_loops,
                    options::OPT_fno_finite_loops);
-@@ -6860,7 +6921,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6860,7 +6916,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    Args.addOptInFlag(CmdArgs, options::OPT_mspeculative_load_hardening,
                      options::OPT_mno_speculative_load_hardening);
  
@@ -196,7 +184,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    RenderSCPOptions(TC, Args, CmdArgs);
    RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
  
-@@ -6938,6 +7050,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6938,6 +7045,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    if (Arg *A = Args.getLastArg(options::OPT_fcf_protection_EQ)) {
      CmdArgs.push_back(
          Args.MakeArgString(Twine("-fcf-protection=") + A->getValue()));
@@ -208,7 +196,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    }
  
    if (Arg *A = Args.getLastArg(options::OPT_mfunction_return_EQ))
-@@ -7466,6 +7583,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -7466,6 +7578,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");

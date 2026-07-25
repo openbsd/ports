@@ -98,19 +98,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    // forward -fembed-bitcode to assmebler
    if (C.getDriver().embedBitcodeEnabled() ||
        C.getDriver().embedBitcodeMarkerOnly())
-@@ -3241,6 +3290,11 @@ static void RenderFloatingPointOptions(const ToolChain
-               << LastFpContractOverrideOption
-               << Args.MakeArgString("-ffp-contract=" + Val);
-         }
-+        if (Val.starts_with("-mfix-loongson2f-btb")) {
-+          CmdArgs.push_back("-mllvm");
-+          CmdArgs.push_back("-fix-loongson2f-btb");
-+          continue;
-+        }
- 
-         FPContract = Val;
-         LastSeenFfpContractOption = Val;
-@@ -5988,8 +6042,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5988,8 +6037,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're Windows MSVC since MSVC
    // doesn't do any TBAA.
@@ -124,7 +112,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (Args.hasFlag(options::OPT_fno_pointer_tbaa, options::OPT_fpointer_tbaa,
                     false))
-@@ -7051,7 +7109,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -7051,7 +7104,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    Args.addOptInFlag(CmdArgs, options::OPT_mspeculative_load_hardening,
                      options::OPT_mno_speculative_load_hardening);
  
@@ -184,7 +172,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    RenderSCPOptions(TC, Args, CmdArgs);
    RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
  
-@@ -7133,6 +7242,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -7133,6 +7237,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
      if (Arg *SA = Args.getLastArg(options::OPT_mcf_branch_label_scheme_EQ))
        CmdArgs.push_back(Args.MakeArgString(Twine("-mcf-branch-label-scheme=") +
                                             SA->getValue()));
@@ -196,7 +184,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    }
  
    if (Arg *A = Args.getLastArg(options::OPT_mfunction_return_EQ))
-@@ -7666,6 +7780,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -7666,6 +7775,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");
