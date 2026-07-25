@@ -1,5 +1,4 @@
 - no wordexp on OpenBSD
-- silence a noisy debug message pretending to be an error
 Index: src/mango.c
 --- src/mango.c.orig
 +++ src/mango.c
@@ -15,11 +14,3 @@ Index: src/mango.c
  #include <xkbcommon/xkbcommon.h>
  #ifdef XWAYLAND
  #include <X11/Xlib.h>
-@@ -4047,7 +4051,6 @@ void focusclient(Client *c, int32_t lift) {
- 
- 	/* Raise client in stacking order if requested */
- 	if (c && lift) {
--		wlr_log(WLR_ERROR, "%s", client_get_title(c));
- 		client_raise_group(c);
- 	}
- 

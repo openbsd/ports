@@ -1,6 +1,9 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-DIST_TUPLE=		github mangowm mango 0.15.5 .
+V =			0.15.5
+DISTNAME =		mango-${V}
+SITES =			https://github.com/mangowm/mango/archive/refs/tags/
+DISTFILES =		mangowm-mango-${V}-0{${V}}${EXTRACT_SUFX}
 
 CATEGORIES =		wayland
 
