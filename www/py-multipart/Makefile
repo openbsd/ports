@@ -1,6 +1,6 @@
 COMMENT=	parser for multipart/form-data
 
-MODPY_DISTV=	1.3.1
+MODPY_DISTV=	2.0.0
 DISTNAME=	multipart-${MODPY_DISTV}
 PKGNAME=	py-multipart-${MODPY_DISTV}
 
