@@ -1,4 +1,4 @@
-MODPY_DISTV =	317
+MODPY_DISTV =	325
 COMMENT=	in-depth comparison of files, archives, and directories
 DISTNAME=	diffoscope-${MODPY_DISTV}
 CATEGORIES=	sysutils devel
@@ -22,7 +22,7 @@ TEST_DEPENDS=	devel/dtc \
 		devel/py-argcomplete \
 		devel/py-progressbar \
 		devel/libmagic \
-		editors/vim \
+		vim-*|vim-classic-*:editors/vim \
 		sysutils/binwalk \
 		sysutils/py-distro \
 		textproc/py-defusedxml
