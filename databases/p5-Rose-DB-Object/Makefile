@@ -1,12 +1,14 @@
 COMMENT =	object-oriented database mapper
 
-DISTNAME =	Rose-DB-Object-0.822
+DISTNAME =	Rose-DB-Object-0.823
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 CATEGORIES =	databases
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		JSIRACUSA
 
 MODULES =		cpan
 
