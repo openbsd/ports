@@ -1,17 +1,18 @@
 COMMENT =		Subsonic client running in your terminal
 
-DISTNAME =		termsonic-0.2
-REVISION =		0
+DISTNAME =		termsonic-0.3
 
 CATEGORIES =		audio
 
 HOMEPAGE =		https://git.sixfoisneuf.fr/termsonic/
 
+MAINTAINER =		Russ Sharek <bsdclown@disroot.org>
+
 # tarball created with:
-# git clone --branch v0.2 --single-branch https://git.sixfoisneuf.fr/termsonic/
+# git clone --branch v0.3 --single-branch https://git.sixfoisneuf.fr/termsonic/
 # cd termsonic; go mod vendor
-# cd ../; mv termsonic termsonic-0.2
-# tar -czvf termsonic-0.2.tar.gz termsonic-0.2
+# cd ../; mv termsonic termsonic-0.3
+# tar -czvf termsonic-0.3.tar.gz termsonic-0.3
 
 SITES =	https://russ.whirling.top/distfiles/
 
@@ -36,7 +37,7 @@ do-build:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/termsonic
-	${SUBST_DATA} ${WRKSRC}/config.toml.example \
+	${SUBST_DATA} ${WRKSRC}/termsonic.toml.example \
 		${PREFIX}/share/examples/termsonic/termsonic.toml
 
 .include <bsd.port.mk>
