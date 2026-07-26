@@ -1,0 +1,30 @@
+fix deprecated FieldDescriptor.label
+https://protobuf.dev/news/2025-09-19/#python-remove-apis
+
+Index: steam/utils/proto.py
+--- steam/utils/proto.py.orig
++++ steam/utils/proto.py
+@@ -54,12 +54,12 @@ def proto_to_dict(message):
+ 
+     for desc, field in message.ListFields():
+         if desc.type == desc.TYPE_MESSAGE:
+-            if desc.label == desc.LABEL_REPEATED:
++            if desc.is_repeated:
+                 data[desc.name] = list(map(proto_to_dict, field))
+             else:
+                 data[desc.name] = proto_to_dict(field)
+         else:
+-            data[desc.name] = list(field) if desc.label == desc.LABEL_REPEATED else field
++            data[desc.name] = list(field) if desc.is_repeated else field
+ 
+     return data
+ 
+@@ -86,7 +86,7 @@ def proto_fill_from_dict(message, data, clear=True):
+         desc = field_descs[key]
+ 
+         if desc.type == desc.TYPE_MESSAGE:
+-            if desc.label == desc.LABEL_REPEATED:
++            if desc.is_repeated:
+                 if not isinstance(val, _list_types):
+                     raise TypeError("Expected %s to be of type list, got %s" % (repr(key), type(val)))
+ 

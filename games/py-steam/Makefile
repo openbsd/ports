@@ -1,9 +1,8 @@
 COMMENT =		module for interacting with various Steam features
 
-PKGNAME =		py-steam-1.5.1
-REVISION =		0
+PKGNAME =		py-steam-1.5.3
 DIST_TUPLE +=		github CFTools-Software-GmbH ValvePython-steam \
-			6e78b9c34141eaa3c00b785f12e02f47244df20c .
+			8905cffe6dae849e920bddc48de38f5807033446 .
 CATEGORIES =		games
 
 # MIT
