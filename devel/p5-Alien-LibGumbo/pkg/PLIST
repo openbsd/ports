@@ -3,9 +3,6 @@ ${P5SITE}/Alien/LibGumbo.pm
 ${P5SITE}/Alien/LibGumbo/ConfigData.pm
 ${P5SITE}/Alien/LibGumbo/Install/
 ${P5SITE}/Alien/LibGumbo/Install/Files.pm
-${P5SITE}/auto/
-${P5SITE}/auto/share/
-${P5SITE}/auto/share/dist/
 ${P5SITE}/auto/share/dist/Alien-LibGumbo/
 ${P5SITE}/auto/share/dist/Alien-LibGumbo/README
 @man man/man3p/Alien::LibGumbo.3p

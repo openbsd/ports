@@ -2,13 +2,14 @@ COMMENT =	building, finding and using the libgumbo library
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Alien-LibGumbo-0.05
-REVISION =	0
+DISTNAME =	Alien-LibGumbo-0.06
 
 CATEGORIES =	devel
 
 # perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		BPS
 
 CONFIGURE_STYLE =	modbuild
 
