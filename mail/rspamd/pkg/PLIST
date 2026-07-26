@@ -426,6 +426,7 @@ share/rspamd/lualib/rspamadm/dkim_keygen.lua
 share/rspamd/lualib/rspamadm/dmarc_report.lua
 share/rspamd/lualib/rspamadm/dns_tool.lua
 share/rspamd/lualib/rspamadm/fuzzy_convert.lua
+share/rspamd/lualib/rspamadm/fuzzy_hash.lua
 share/rspamd/lualib/rspamadm/fuzzy_ping.lua
 share/rspamd/lualib/rspamadm/fuzzy_stat.lua
 share/rspamd/lualib/rspamadm/grep.lua
@@ -534,10 +535,10 @@ share/rspamd/www/css/bootstrap.min.css
 share/rspamd/www/css/codejar-linenumbers.css
 share/rspamd/www/css/d3evolution.css
 share/rspamd/www/css/d3pie.css
+share/rspamd/www/css/icons.css
 share/rspamd/www/css/nprogress.css
 share/rspamd/www/css/prism.css
 share/rspamd/www/css/rspamd.css
-share/rspamd/www/css/svg-with-js.min.css
 share/rspamd/www/css/tabulator_bs5.min.css
 share/rspamd/www/favicon-16x16.png
 share/rspamd/www/favicon-32x32.png
@@ -546,6 +547,7 @@ share/rspamd/www/img/
 share/rspamd/www/img/asc.png
 share/rspamd/www/img/desc.png
 share/rspamd/www/img/drop-area.svg
+share/rspamd/www/img/icons.svg
 share/rspamd/www/img/rspamd_logo_navbar.png
 share/rspamd/www/img/rspamd_logo_navbar_dark.png
 share/rspamd/www/index.html
@@ -555,6 +557,7 @@ share/rspamd/www/js/app/common.js
 share/rspamd/www/js/app/config.js
 share/rspamd/www/js/app/graph.js
 share/rspamd/www/js/app/history.js
+share/rspamd/www/js/app/icons.js
 share/rspamd/www/js/app/libft.js
 share/rspamd/www/js/app/rspamd.js
 share/rspamd/www/js/app/selectors.js
@@ -569,13 +572,9 @@ share/rspamd/www/js/lib/codejar.min.js
 share/rspamd/www/js/lib/d3.min.js
 share/rspamd/www/js/lib/d3evolution.min.js
 share/rspamd/www/js/lib/d3pie.min.js
-share/rspamd/www/js/lib/fontawesome.min.js
-share/rspamd/www/js/lib/jquery-3.7.1.min.js
-share/rspamd/www/js/lib/jquery.stickytabs.min.js
 share/rspamd/www/js/lib/nprogress.min.js
 share/rspamd/www/js/lib/prism.js
 share/rspamd/www/js/lib/require.min.js
-share/rspamd/www/js/lib/solid.min.js
 share/rspamd/www/js/lib/tabulator.min.js
 share/rspamd/www/js/lib/visibility.min.js
 share/rspamd/www/js/main.js
