@@ -1,9 +1,11 @@
 @pkgpath textproc/py-mistune,python3
+bin/mistune
 lib/python${MODPY_VERSION}/site-packages/mistune/
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_DISTV}.dist-info/top_level.txt
@@ -30,6 +32,17 @@ lib/python${MODPY_VERSION}/site-packages/mistune/${MODPY_PYCACHE}toc.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/mistune/${MODPY_PYCACHE}toc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mistune/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mistune/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/__init__.py
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/${MODPY_PYCACHE}emphasis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/${MODPY_PYCACHE}emphasis.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/${MODPY_PYCACHE}links.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/${MODPY_PYCACHE}links.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/emphasis.py
+lib/python${MODPY_VERSION}/site-packages/mistune/_inline/links.py
 lib/python${MODPY_VERSION}/site-packages/mistune/block_parser.py
 lib/python${MODPY_VERSION}/site-packages/mistune/core.py
 lib/python${MODPY_VERSION}/site-packages/mistune/directives/

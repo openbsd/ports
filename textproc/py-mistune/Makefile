@@ -1,6 +1,6 @@
 COMMENT=	markdown parser for Python
 
-MODPY_DISTV=	3.2.1
+MODPY_DISTV=	3.3.4
 DISTNAME=	mistune-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
