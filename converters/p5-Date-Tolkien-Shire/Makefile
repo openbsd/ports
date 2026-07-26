@@ -1,11 +1,13 @@
-COMMENT =	convert dates into the Shire Calendar
+COMMENT =		convert dates into the Shire Calendar
 
-DISTNAME =	Date-Tolkien-Shire-1.906
+DISTNAME =		Date-Tolkien-Shire-1.907
 
-CATEGORIES =	converters
+CATEGORIES =		converters
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		WYANT
 
 MODULES =		cpan
 
