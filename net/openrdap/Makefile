@@ -1,7 +1,7 @@
 COMMENT =	command-line RDAP (Registration Data Access Protocol) client
 
 MODGO_MODNAME =	github.com/openrdap/rdap
-MODGO_VERSION =	v0.10.0
+MODGO_VERSION =	v0.10.1
 
 DISTNAME =	openrdap-${MODGO_VERSION}
 
