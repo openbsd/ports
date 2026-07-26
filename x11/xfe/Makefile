@@ -1,6 +1,6 @@
 COMMENT=	MS-Explorer like file manager for X
 
-DISTNAME=	xfe-2.1.6
+DISTNAME=	xfe-2.1.8
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	x11
 
@@ -12,13 +12,13 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} FOX-1.6 X11 X11-xcb Xft Xrandr c
 WANTLIB += fontconfig freetype iconv intl m png util xcb xcb-util
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 SITES=		${SITE_SOURCEFORGE:=xfe/}
 
 MODULES=	textproc/intltool
 
-BUILD_DEPENDS =	sysutils/polkit
+BUILD_DEPENDS=	sysutils/polkit
 
 LIB_DEPENDS=	devel/fox
 
@@ -27,13 +27,15 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/fox-1.6 \
-			-I${X11BASE}/include \
-			-I${X11BASE}/include/freetype2" \
-		LDFLAGS="-L${LOCALBASE}/lib \
-			-L${X11BASE}/lib -lXft -pthread"
+CONFIGURE_STYLE= gnu
+CPPFLAGS=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/fox-1.6 \
+		-I${X11BASE}/include \
+		-I${X11BASE}/include/freetype2
+LDFLAGS=	-L${LOCALBASE}/lib \
+		-L${X11BASE}/lib -lXft -pthread
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 pre-configure:
 	sed -i "s,-O2,,g" ${WRKSRC}/configure
