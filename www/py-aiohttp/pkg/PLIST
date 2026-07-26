@@ -117,10 +117,6 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_parser.pyx
 @so lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.pyx
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/mask.pxd.hash
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/mask.pyx.hash
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/reader_c.pxd.hash
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/__init__.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -1,6 +1,6 @@
-COMMENT=	http client/server for asyncio
+COMMENT=	HTTP client/server for asyncio
 
-MODPY_DISTV=	3.13.4
+MODPY_DISTV=	3.14.3
 DISTNAME=	aiohttp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -56,10 +56,5 @@ TEST_DEPENDS=	devel/py-freezegun \
 		security/py-trustme \
 		www/py-autobahn \
 		www/py-gunicorn
-
-# cython files relating to upstream's build environment; unsure
-# exactly what they're for but don't seem useful to package
-post-extract:
-	rm -r ${WRKSRC}/aiohttp/.hash
 
 .include <bsd.port.mk>
