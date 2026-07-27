@@ -1,6 +1,6 @@
 COMMENT =	turn-based, empire-building 4x strategy game
 
-V =		3.1.1
+V =		3.1.2
 # libertinus version taken from cmake/FreecivInstall.cmake
 LIBERTINUS =	7.040
 
