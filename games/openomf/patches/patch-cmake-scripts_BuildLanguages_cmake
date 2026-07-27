@@ -5,8 +5,8 @@ Index: cmake-scripts/BuildLanguages.cmake
  if(WIN32)
      set(LANGUAGE_INSTALL_PATH "openomf/resources/")
  else()
--    set(LANGUAGE_INSTALL_PATH "share/games/openomf/")
-+    set(LANGUAGE_INSTALL_PATH "share/openomf/")
+-    set(LANGUAGE_INSTALL_PATH "share/games/openomf/resources/")
++    set(LANGUAGE_INSTALL_PATH "share/openomf/resources/")
  endif()
  
  # generate custom target info

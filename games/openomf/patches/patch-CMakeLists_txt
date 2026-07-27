@@ -4,9 +4,9 @@ Remove hardcoded optimization flags.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -86,9 +86,9 @@ if(MSVC)
- else()
-     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wno-unused-parameter -Wformat -pedantic -Wvla")
+@@ -88,9 +88,9 @@ else()
+         set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wformat-signedness")
+     endif()
      set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -ggdb -Werror -fno-omit-frame-pointer")
 -    set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -g -O2 -fno-omit-frame-pointer -DNDEBUG")
 -    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O2 -DNDEBUG")
@@ -17,12 +17,12 @@ Index: CMakeLists.txt
  endif()
  
  # Enable AddressSanitizer if requested
-@@ -478,8 +478,8 @@ else()
-     # On unixy systems, follow standard.
+@@ -497,8 +497,8 @@ else()
      install(TARGETS openomf RUNTIME DESTINATION bin COMPONENT Binaries)
-     install(FILES ${DOC_FILES} resources/openomf.bk resources/gamecontrollerdb/gamecontrollerdb.txt resources/icons/openomf.png
--        DESTINATION share/games/openomf/
-+        DESTINATION share/openomf/
+     install(FILES ${DOC_FILES} resources/openomf.bk resources/gamecontrollerdb/gamecontrollerdb.txt
+             resources/icons/openomf.png resources/flatpak/org.openomf.OpenOMF.desktop
+-        DESTINATION share/games/openomf/resources/
++        DESTINATION share/openomf/resources/
          COMPONENT Data
      )
 -    install(DIRECTORY shaders/ DESTINATION share/games/openomf/shaders COMPONENT Data)

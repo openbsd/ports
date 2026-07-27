@@ -1,0 +1,12 @@
+Index: src/resources/resource_paths.c
+--- src/resources/resource_paths.c.orig
++++ src/resources/resource_paths.c
+@@ -148,7 +148,7 @@ static bool find_resource_path(path *dst) {
+         str_free(&tmp);
+     }
+     if(env_str(&tmp, "APPDIR")) {
+-        str_append_c(&tmp, "/usr/share/games/openomf");
++        str_append_c(&tmp, "/usr/share/openomf");
+         if(scan_potential_resource_dirs(dst, &tmp, "resources/openomf.bk", "/")) {
+             log_debug("Resources found in APPDIR: %s", path_c(dst));
+             goto ok;

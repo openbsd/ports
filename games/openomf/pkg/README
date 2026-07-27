@@ -18,9 +18,7 @@ Note that this .ZIP file will extract its contents into the working
 directory!
 
 For a global installation, the game files must be placed in
-${TRUEPREFIX}/share/openomf.
+${TRUEPREFIX}/share/openomf/resources.
 
-Alternatively, the game can be launched from any directory that holds
-the game assets. If you choose this route, the file
-${TRUEPREFIX}/share/openomf/openomf.bf must be copied to this
-directory before launching the game.
+Alternatively, set the environment variable OPENOMF_RESOURCE_PATH to
+the location of the files.
