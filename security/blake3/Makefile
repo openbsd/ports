@@ -4,12 +4,13 @@ GH_ACCOUNT=	BLAKE3-team
 GH_PROJECT=	BLAKE3
 GH_TAGNAME=	1.8.5
 PKGNAME=	${DISTNAME:L}
+REVISION=	0
 
 CATEGORIES=	security
 
 SHARED_LIBS=	blake3	0.0
 
-MAINTAINER=	Mykyta Nazarenko <mykyta@nazarenko.sbs>
+MAINTAINER=	Mykyta Nazarenko <mn@superpc.suicide.solutions>
 
 # CC0 v1.0 (or alternatively Apache 2.0 with/without LLVM exceptions)
 PERMIT_PACKAGE=	Yes

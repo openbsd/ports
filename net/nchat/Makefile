@@ -7,9 +7,10 @@ COMMENT =	CLI Telegram client
 GH_ACCOUNT =	d99kris
 GH_PROJECT =	nchat
 GH_TAGNAME =	v5.17.26
+REVISION =	0
 
 CATEGORIES =	net
-MAINTAINER =	Mykyta Nazarenko <mykyta@nazarenko.sbs>
+MAINTAINER =	Mykyta Nazarenko <mn@superpc.suicide.solutions>
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto curses execinfo m magic
 WANTLIB += png sqlite3 ssl z
