@@ -1,4 +1,15 @@
 @bin bin/pgbackrest
+share/doc/pgbackrest/
+share/doc/pgbackrest/command.html
+share/doc/pgbackrest/configuration.html
+share/doc/pgbackrest/default.css
+share/doc/pgbackrest/faq.html
+share/doc/pgbackrest/index.html
+share/doc/pgbackrest/logo.svg
+share/doc/pgbackrest/release.html
+share/doc/pgbackrest/user-guide-index.html
+share/doc/pgbackrest/user-guide-rhel.html
+share/doc/pgbackrest/user-guide.html
 share/examples/pgbackrest/
 @mode 0750
 @group _postgresql

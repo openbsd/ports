@@ -1,10 +1,8 @@
 COMMENT =		PostgreSQL backup & restore tool
 
-V =			2.58.0
+V =			2.59.0
 DISTNAME =		pgbackrest-${V}
-GH_ACCOUNT =		pgbackrest
-GH_PROJECT =		pgbackrest
-GH_TAGNAME =		release/${V}
+SITES =	https://github.com/pgbackrest/pgbackrest/releases/download/release%2F${V}/
 
 CATEGORIES = 		databases
 HOMEPAGE = 		https://pgbackrest.org/
@@ -31,11 +29,15 @@ LIB_DEPENDS = 		archivers/bzip2 \
 
 CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib
+MODMESON_CONFIGURE_ARGS +=	-Dlibsystemd=disabled
 MODMESON_CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 NO_TEST =		Yes
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pgbackrest
+	${INSTALL_DATA} ${WRKSRC}/doc/html/* \
+		${PREFIX}/share/doc/pgbackrest
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pgbackrest
 	${INSTALL_DATA} ${FILESDIR}/pgbackrest.conf \
 		${PREFIX}/share/examples/pgbackrest
