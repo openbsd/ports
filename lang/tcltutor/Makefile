@@ -1,16 +1,20 @@
 COMMENT =	learn Tcl interactively
 
+REVISION =	0
+
 DISTNAME =	tcltutor-30b7
+
 CATEGORIES =	lang lang/tcl
-HOMEPAGE =	http://www.msen.com/~clif/TclTutor.html
+HOMEPAGE =	https://noucorp.com/Self-Directed/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC
 PERMIT_PACKAGE =	Yes
 
-SITES =		http://www.msen.com/~clif/
+SITES =		${HOMEPAGE}
 DISTFILES =	tcltutor30b7.tgz
 MODULES =	x11/tk
+MODTK_VERSION =	8.6
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes
 NO_TEST =	Yes
