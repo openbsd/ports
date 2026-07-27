@@ -9,7 +9,7 @@ Index: config/hiawatha.conf.in
  ConnectionsTotal = 1000
  ConnectionsPerIP = 25
  SystemLogfile = @LOG_DIR@/system.log
-@@ -59,10 +60,10 @@ Binding {
+@@ -58,10 +59,10 @@ Binding {
  # These settings can be used to run CGI applications.
  #
  #CGIhandler = /usr/bin/perl:pl

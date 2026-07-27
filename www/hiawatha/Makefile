@@ -1,5 +1,5 @@
 COMMENT =	secure webserver
-DISTNAME =	hiawatha-12.2
+DISTNAME =	hiawatha-12.3
 CATEGORIES =	www net
 
 # updates: check if http2 became enabled by default and sync libs if needed
