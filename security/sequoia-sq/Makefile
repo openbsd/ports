@@ -3,11 +3,10 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Sequoia-PGP command line tool
 
-VERSION =		1.3.1
+VERSION =		1.4.0
 SITES =			https://gitlab.com/sequoia-pgp/sequoia-sq/-/archive/v${VERSION}/
 DISTNAME =		sequoia-sq-v${VERSION}
 PKGNAME =		${DISTNAME:S/v//}
-REVISION =		2
 
 HOMEPAGE =		https://sequoia-pgp.org/
 
@@ -25,7 +24,7 @@ CONFIGURE_STYLE =	cargo
 
 BUILD_DEPENDS =		devel/capnproto
 
-LIB_DEPENDS =		archivers/bzip2 \
+LIB_DEPENDS =		\
 			databases/sqlite3 \
 			devel/gmp \
 			security/libnettle
@@ -33,13 +32,11 @@ LIB_DEPENDS =		archivers/bzip2 \
 MAKE_ENV =		LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
 			ASSET_OUT_DIR=${WRKSRC}/assets
 
-MODCARGO_CRATES_UPDATE =	bindgen nettle-sys rustc-hash
-
 MODCARGO_RUSTFLAGS +=	-C link-arg="-Wl,-rpath,${LOCALBASE}/lib/nettle3"
 MODCARGO_RUSTFLAGS +=	-L native=${LOCALBASE}/lib/nettle3
 MAKE_ENV +=		PKG_CONFIG_PATH=${LOCALBASE}/lib/nettle3/pkgconfig
 
-WANTLIB += ${MODCARGO_WANTLIB} bz2 crypto gmp m sqlite3 ssl
+WANTLIB += ${MODCARGO_WANTLIB} crypto gmp m sqlite3 ssl
 WANTLIB += lib/nettle3/hogweed lib/nettle3/nettle
 
 .include "crates.inc"
