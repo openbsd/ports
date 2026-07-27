@@ -1,16 +1,20 @@
 COMMENT =	Tcl/Tk-based manual browser
 
+REVISION =	3
+
 DISTNAME =	tkman-2.2
-REVISION =	2
+
 CATEGORIES =	misc 
 HOMEPAGE =	https://www.sourceforge.net/projects/tkman
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # Artistic License
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
 SITES =		${SITE_SOURCEFORGE:=tkman/}
+
 MODULES =	x11/tk
+MODTK_VERSION =	8.6
 
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS} \
 		textproc/rman
