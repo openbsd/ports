@@ -34,6 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/${MODPY_PYCACHE}types.${MOD
 lib/python${MODPY_VERSION}/site-packages/novelwriter/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/
+lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_ca_ES.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_cs_CZ.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_de_DE.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_en_US.qm
@@ -47,6 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_pl_PL.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_pt_BR.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_ru_RU.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_zh_CN.qm
+lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/project_ca_ES.json
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/project_cs_CZ.json
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/project_de_DE.json
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/project_en_GB.json
@@ -64,6 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/project_ru_RU.j
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/project_zh_CN.json
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/icons/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/icons/font_awesome.icons
+lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/icons/lucide.icons
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/icons/material_filled_normal.icons
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/icons/material_filled_thin.icons
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/icons/material_rounded_normal.icons
@@ -152,6 +155,8 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/themes/sultana_light
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/themes/sultana_night.conf
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/themes/tango_dark.conf
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/themes/tango_light.conf
+lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/themes/today_deuteranopia.conf
+lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/themes/today_tritanopia.conf
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/themes/tomorrow.conf
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/themes/tomorrow_night.conf
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/themes/tomorrow_night_blue.conf
@@ -358,14 +363,14 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/shared.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/splash.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}counting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}counting.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}formats.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}formats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}patterns.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}patterns.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/novelwriter/text/comments.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/counting.py
+lib/python${MODPY_VERSION}/site-packages/novelwriter/text/formats.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/patterns.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/tools/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/tools/${MODPY_PYCACHE}/
