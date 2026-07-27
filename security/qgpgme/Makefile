@@ -1,6 +1,6 @@
 COMMENT=	GnuPG Made Easy Qt bindings
 
-VERSION =	2.1.0
+VERSION =	2.2.0
 DISTNAME =	qgpgme-${VERSION}
 
 CATEGORIES =	security devel
@@ -8,7 +8,7 @@ CATEGORIES =	security devel
 HOMEPAGE =	https://www.gnupg.org/software/gpgme/
 
 # ver from LIBQGPGME_LT_* in CMakeLists.txt
-SHARED_LIBS +=  qgpgmeqt6            2.0      # 23.8.0
+SHARED_LIBS +=  qgpgmeqt6            3.0      # 24.9.0
 
 SITES =		${SITE_GNUPG:=qgpgme/}
 EXTRACT_SUFX =	.tar.xz

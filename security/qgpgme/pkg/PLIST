@@ -2,6 +2,8 @@
 @pkgpath security/gpgme,-qt
 include/qgpgme-qt6/
 include/qgpgme-qt6/QGpgME/
+include/qgpgme-qt6/QGpgME/ADQueryJob
+include/qgpgme-qt6/QGpgME/ADQueryResult
 include/qgpgme-qt6/QGpgME/AbstractImportJob
 include/qgpgme-qt6/QGpgME/AddExistingSubkeyJob
 include/qgpgme-qt6/QGpgME/AddUserIDJob
@@ -55,6 +57,8 @@ include/qgpgme-qt6/qgpgme/
 include/qgpgme-qt6/qgpgme/abstractimportjob.h
 include/qgpgme-qt6/qgpgme/addexistingsubkeyjob.h
 include/qgpgme-qt6/qgpgme/adduseridjob.h
+include/qgpgme-qt6/qgpgme/adqueryjob.h
+include/qgpgme-qt6/qgpgme/adqueryresult.h
 include/qgpgme-qt6/qgpgme/changeexpiryjob.h
 include/qgpgme-qt6/qgpgme/changeownertrustjob.h
 include/qgpgme-qt6/qgpgme/changepasswdjob.h
