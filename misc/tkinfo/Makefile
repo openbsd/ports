@@ -1,15 +1,19 @@
 COMMENT =	read and display GNU info files in Tk
 
+REVISION =	0
+
 DISTNAME =	tkinfo-2.11
+
 CATEGORIES =	misc 
-HOMEPAGE =	http://math-www.uni-paderborn.de/~axel/tkinfo/
+HOMEPAGE =	https://axelboldt.github.io/tkinfo/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD/GPL
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
 SITES =		${HOMEPAGE}
 MODULES =	x11/tk
+MODTK_VERSION =	8.6
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes
 NO_TEST =	Yes
