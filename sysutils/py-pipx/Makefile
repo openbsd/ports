@@ -16,6 +16,8 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
 
+BUILD_DEPENDS=	textproc/py-docutils
+
 # No test suites in pypi tarball. They are in git, but require extra prep
 # (running a script to download wheels before running the tests).
 NO_TEST=	Yes
