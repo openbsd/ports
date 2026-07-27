@@ -10,6 +10,15 @@ Index: Makefile.in
  
  # End of configuration -- the rest should take care of
  # itself
+@@ -31,7 +31,7 @@ endif
+ 
+ CC ?= gcc
+ AR ?= ar
+-CFLAGS +=-Wall -O2 -DLIBPCRE -g $(CFLAGS_COV) $(CFLAGS_SAN)
++CFLAGS +=-Wall -DLIBPCRE $(CFLAGS_COV) $(CFLAGS_SAN)
+ 
+ 
+ LIBS=-lm -lpcre2-8 @LIBS@
 @@ -105,7 +105,7 @@ echosrv: version.h echosrv-conf.c echosrv.o echosrv-co
  landlock.o: config.h
  
