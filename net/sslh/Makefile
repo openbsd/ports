@@ -1,6 +1,7 @@
 COMMENT =	SSL/SSH multiplexer
 
 DISTNAME =	sslh-v2.3.1
+REVISION =	0
 PKGNAME =	${DISTNAME:S/-v/-/}
 
 CATEGORIES =	security net
@@ -11,6 +12,9 @@ HOMEPAGE =	https://www.rutschle.net/tech/sslh/README.html
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c config ev m pcre2-8
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 SITES =		https://www.rutschle.net/tech/sslh/
 
