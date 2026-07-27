@@ -2,12 +2,12 @@ COMMENT=	serialization/RPC system
 
 CATEGORIES =	devel
 
-VERSION =	1.4.0
+VERSION =	1.5.0
 DIST_TUPLE =	github capnproto capnproto v${VERSION} .
 
 HOMEPAGE =	https://capnproto.org
 
-MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
+MAINTAINER =	Volker Schlecht <volker@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =Yes
