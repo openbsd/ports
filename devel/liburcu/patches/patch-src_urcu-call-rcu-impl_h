@@ -1,0 +1,50 @@
+From ee0dc6541cf8e2566c5f6056599c218ef7410720 Mon Sep 17 00:00:00 2001
+From: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+Date: Fri, 3 Jul 2026 10:02:45 -0400
+Subject: [PATCH] Fix: workqueue leaks mutexes on FreeBSD
+
+Workqueue worker leaks mutexes on FreeBSD. pthread_mutex_init without
+matching destroy is effectless on Linux, but leaks memory on FreeBSD.
+
+Within workqueue_thread(), the internal mutex is never used because this
+is a stack-local wfcq head/tail, so change the cbs_tmp_head type to
+struct __cds_wfcq_head (no mutex), and initialize it with
+__cds_wfcq_init which does not require any matching destroy.
+
+Add the missing cds_wfcq_destroy call in urcu_workqueue_destroy.
+
+Signed-off-by: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+Change-Id: If66cf21fef8664bd36a48d629396efe5eb750af5
+---
+ src/workqueue.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+Index: src/urcu-call-rcu-impl.h
+--- src/urcu-call-rcu-impl.h.orig
++++ src/urcu-call-rcu-impl.h
+@@ -333,7 +333,7 @@ static void *call_rcu_thread(void *arg)
+ 		cmm_smp_mb();
+ 	}
+ 	for (;;) {
+-		struct cds_wfcq_head cbs_tmp_head;
++		struct __cds_wfcq_head cbs_tmp_head;
+ 		struct cds_wfcq_tail cbs_tmp_tail;
+ 		struct cds_wfcq_node *cbs, *cbs_tmp_n;
+ 		enum cds_wfcq_ret splice_ret;
+@@ -358,7 +358,7 @@ static void *call_rcu_thread(void *arg)
+ 			rcu_register_thread();
+ 		}
+ 
+-		cds_wfcq_init(&cbs_tmp_head, &cbs_tmp_tail);
++		__cds_wfcq_init(&cbs_tmp_head, &cbs_tmp_tail);
+ 		splice_ret = __cds_wfcq_splice_blocking(&cbs_tmp_head,
+ 			&cbs_tmp_tail, &crdp->cbs_head, &crdp->cbs_tail);
+ 		urcu_posix_assert(splice_ret != CDS_WFCQ_RET_WOULDBLOCK);
+@@ -796,6 +796,7 @@ void _call_rcu_data_free(struct call_rcu_data *crdp, u
+ 		if (ret)
+ 			urcu_die(ret);
+ 	}
++	cds_wfcq_destroy(&crdp->cbs_head, &crdp->cbs_tail);
+ 	free(crdp);
+ }
+ 
