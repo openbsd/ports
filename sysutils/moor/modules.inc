@@ -3,7 +3,7 @@ MODGO_MODULES =	\
 	github.com/alecthomas/assert/v2	 v2.11.0 \
 	github.com/alecthomas/chroma/v2	 v2.22.0 \
 	github.com/alecthomas/repr	 v0.5.2 \
-	github.com/charlievieth/strcase	 v0.0.5 \
+	github.com/charlievieth/strcase	 v0.0.6 \
 	github.com/davecgh/go-spew	 v1.1.1 \
 	github.com/dlclark/regexp2	 v1.11.5 \
 	github.com/go-enry/go-enry/v2	 v2.9.6 \
@@ -24,7 +24,7 @@ MODGO_MODULES =	\
 	golang.org/x/mod		 v0.14.0 \
 	golang.org/x/net		 v0.0.0-20201021035429-f5854403a974 \
 	golang.org/x/sync		 v0.20.0 \
-	golang.org/x/sys		 v0.26.0 \
+	golang.org/x/sys		 v0.47.0 \
 	golang.org/x/term		 v0.0.0-20210503060354-a79de5458b56 \
 	golang.org/x/text		 v0.3.3 \
 	golang.org/x/tools		 v0.16.0 \
@@ -57,7 +57,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys		 v0.0.0-20201119102817-f84b799fce68 \
 	golang.org/x/sys		 v0.0.0-20210119212857-b64e53b001e4 \
 	golang.org/x/sys		 v0.0.0-20220715151400-c0bba94af5f8 \
-	golang.org/x/sys		 v0.25.0 \
+	golang.org/x/sys		 v0.26.0 \
+	golang.org/x/sys		 v0.30.0 \
 	golang.org/x/text		 v0.3.0 \
 	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools		 v0.0.0-20191119224855-298f0cb1881e \
