@@ -1,7 +1,6 @@
 COMMENT=	script to update an OpenBSD CVS repository via rsync
 
-DISTNAME=	reposync-20240205
-REVISION=	0
+DISTNAME=	reposync-20260728
 
 HOMEPAGE=	https://github.com/sthen/reposync
 SITES=		https://spacehopper.org/mirrors/
