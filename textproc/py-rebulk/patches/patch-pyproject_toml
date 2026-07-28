@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -49,7 +49,7 @@ dev = [
+ ]
+ 
+ [build-system]
+-requires = ["uv_build>=0.11,<0.12"]
++requires = ["uv_build>=0.11"]
+ build-backend = "uv_build"
+ 
+ [tool.uv.build-backend]
