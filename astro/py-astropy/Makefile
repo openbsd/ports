@@ -1,7 +1,6 @@
 COMMENT=	community-developed Python astronomy tools
 
-MODPY_DISTV=	7.2.0
-REVISION=	0
+MODPY_DISTV=	8.0.1
 DISTNAME=	astropy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -52,5 +51,10 @@ TEST_DEPENDS=	astro/py-skyfield \
 		math/py-h5py \
 		math/py-pandas \
 		math/py-scikit-image
+# there are a huge number of tests, so running in parallel is helpful
+# in general, also using -n to run under xdist means that segfaulting
+# ython processes don't prevent further tests from running (there are
+# a handful).
+MODPY_PYTEST_ARGS= -n ${MAKE_JOBS}
 
 .include <bsd.port.mk>
