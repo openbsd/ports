@@ -1,6 +1,7 @@
 COMMENT =	HTTP cookie jars
 
-DISTNAME =	HTTP-Cookies-6.11
+DISTNAME =	HTTP-Cookies-6.12
+CPAN_AUTHOR =	OALDERS
 
 CATEGORIES =	www
 
