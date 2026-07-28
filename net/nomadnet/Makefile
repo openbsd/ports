@@ -1,6 +1,6 @@
 COMMENT =		Reticulum based mesh communication
 
-MODPY_DISTV =		1.2.7
+MODPY_DISTV =		1.2.8
 DISTNAME =		nomadnet-${MODPY_DISTV}
 PKGNAME =		${DISTNAME}
 
