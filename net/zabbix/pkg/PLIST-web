@@ -1325,6 +1325,7 @@ zabbix/include/classes/validators/CExpressionValidator.php
 zabbix/include/classes/validators/CHistFunctionValidator.php
 zabbix/include/classes/validators/CHtmlUrlValidator.php
 zabbix/include/classes/validators/CIdValidator.php
+zabbix/include/classes/validators/CJsRpcInputValidator.php
 zabbix/include/classes/validators/CLdapAuthValidator.php
 zabbix/include/classes/validators/CLimitedSetValidator.php
 zabbix/include/classes/validators/CMathFunctionValidator.php
