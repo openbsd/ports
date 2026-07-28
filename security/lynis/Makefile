@@ -1,6 +1,6 @@
 COMMENT=	security auditing tool
 
-DISTNAME =	lynis-3.1.6
+DISTNAME =	lynis-3.1.7
 
 CATEGORIES=	security
 
