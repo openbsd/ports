@@ -214,3 +214,8 @@ share/examples/ergo/i18n/nickserv.lang.json
 share/examples/ergo/i18n/translation.lang.yaml
 share/examples/ergo/ircd.motd
 share/examples/ergo/ircd.yaml
+@mode 440
+@group _ergo
+@sample /etc/ergo.yaml
+@mode
+@group
