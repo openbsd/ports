@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64
 
 COMMENT =		fast, feature full, GPU-based terminal emulator
 
-MODPY_DISTV =		0.48.0
+MODPY_DISTV =		0.48.1
 MODGO_MODNAME =		github.com/kovidgoyal/kitty
 MODGO_VERSION =		v${MODPY_DISTV}
 DISTNAME =		kitty-${MODGO_VERSION}
