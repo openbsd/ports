@@ -1,6 +1,7 @@
 COMMENT=	simplified packaging system for Python modules
 
 # py-types-setuptools should have a matching version
+# XXX 82.x removes pkg_resources which is still used by various ports
 MODPY_DISTV=		80.9.0
 DISTNAME=		setuptools-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
@@ -49,6 +50,8 @@ post-extract:
 	    packaging* wheel* more_itertools* backports backports.tarfile* \
 	    importlib_metadata* tomli* typing_extensions* zipp*
 
+TEST_ENV=		COHERENT_LICENSED_UNUSED_ACTION=ignore
+PORTHOME=		${WRKDIR}
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS},-tests \
 			devel/py-virtualenv \
 			devel/py-wheel \
