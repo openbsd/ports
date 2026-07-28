@@ -1,7 +1,7 @@
 COMMENT =	interactive shell for WWW::Mechanize
 
-DISTNAME =	WWW-Mechanize-Shell-0.62
-REVISION =	0
+DISTNAME =	WWW-Mechanize-Shell-0.63
+CPAN_AUTHOR =	CORION
 
 CATEGORIES =	www
 
