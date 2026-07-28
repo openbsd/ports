@@ -1,9 +1,9 @@
 COMMENT=	complexity checker for passwd(1) and password generator
 
-DISTNAME=	passwdqc-2.0.3
+DISTNAME=	passwdqc-2.1.0
 CATEGORIES=	security sysutils
 
-SHARED_LIBS=	passwdqc 0.1 # .0
+SHARED_LIBS=	passwdqc 1.0
 
 HOMEPAGE=	https://www.openwall.com/passwdqc/
 
@@ -15,7 +15,7 @@ WANTLIB=	c
 SITES=		https://www.openwall.com/passwdqc/
 FIX_EXTRACT_PERMISSIONS= Yes
 
-NO_TEST=	Yes
+TEST_TARGET=	check
 
 USE_GMAKE=	Yes
 
@@ -34,6 +34,7 @@ MAKE_FLAGS=	CC="${CC}" \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/pwqcheck.1
+	sed -i s,/bin/bash,/bin/ksh, ${WRKSRC}/tests/*.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/passwdqc

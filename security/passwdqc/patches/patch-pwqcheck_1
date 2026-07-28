@@ -1,7 +1,7 @@
 Index: pwqcheck.1
 --- pwqcheck.1.orig
 +++ pwqcheck.1
-@@ -201,7 +201,7 @@ Read just 1 line (new passphrase).
+@@ -204,7 +204,7 @@ Read just 1 line (new passphrase).
  This is needed to use
  .Nm
  as the passwordcheck program on OpenBSD - e.g., with

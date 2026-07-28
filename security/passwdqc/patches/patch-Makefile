@@ -1,0 +1,12 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -322,7 +322,7 @@ remove_lib_wrapped:
+ remove_locales_wrapped:
+ 	for f in $(LANGUAGES); do $(RM) $(DESTDIR)$(LOCALEDIR)/$$f/LC_MESSAGES/$(PACKAGE).mo; done
+ 
+-check: default
++check:
+ 	@echo "Running tests..."
+ 	@export LD_LIBRARY_PATH=.:$$LD_LIBRARY_PATH; \
+ 		set -e; \
