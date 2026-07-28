@@ -31,7 +31,7 @@ BOOTSTRAP-mips64 = gcc-bootstrap-mips64-16.1.0-0.tar.xz
 BOOTSTRAP-powerpc = adastrap-powerpc-11.2.0-4.tar.xz
 BOOTSTRAP-powerpc64 = gcc-bootstrap-powerpc64-16.1.0-0.tar.xz
 BOOTSTRAP-riscv64 = gcc-bootstrap-riscv64-16.1.0-0.tar.xz
-BOOTSTRAP-sparc64 = gcc-bootstrap-sparc64-16.1.0-0.tar.xz
+BOOTSTRAP-sparc64 = gcc-bootstrap-sparc64-16.1.0-1.tar.xz
 
 SHARED_LIBS =	estdc++		22.0 \
 		gfortran	11.0 \
