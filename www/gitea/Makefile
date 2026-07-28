@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =		arm i386
 
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.27.0
+VERSION =		1.27.1
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
 
