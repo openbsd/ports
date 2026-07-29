@@ -1,7 +1,7 @@
 COMMENT=	scripting language for reminders, with a Tk front end
 
-DISTNAME=	remind-06.02.07
-PKGNAME=	remind-6.2.7
+DISTNAME=	remind-06.02.09
+PKGNAME=	remind-6.2.9
 
 CATEGORIES=	misc
 
@@ -17,7 +17,8 @@ COMPILER_LANGS=		c
 
 WANTLIB=		c m readline
 
-SITES=			https://dianne.skoll.ca/projects/remind/download/
+SITES=			https://dianne.skoll.ca/projects/remind/download/ \
+			https://dianne.skoll.ca/projects/remind/download/OLD/
 
 TEST_ENV=		LC_ALL=en_US.UTF-8
 
