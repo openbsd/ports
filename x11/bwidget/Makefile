@@ -1,6 +1,9 @@
 COMMENT =		high-level widget set for Tcl/Tk
 
+REVISION =		0
+
 DISTNAME =		bwidget-1.10.1
+
 CATEGORIES =		x11
 HOMEPAGE =		https://core.tcl-lang.org/bwidget/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -10,11 +13,16 @@ PERMIT_PACKAGE =	Yes
 
 SITES =			${SITE_SOURCEFORGE:=tcllib/}
 FIX_EXTRACT_PERMISSIONS	=Yes
+
 MODULES =		x11/tk
+MODTK_VERSION =		8.6
+
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 TEST_DEPENDS =		${MODTK_BUILD_DEPENDS}
+
 TEST_FLAGS +=		TCLLIBPATH="${WRKSRC}"
 TEST_IS_INTERACTIVE =	X11
+
 NO_BUILD =		Yes
 PKG_ARCH =		*
 
