@@ -1,9 +1,12 @@
-Workaround a livelock issue on sparc64
+* Workaround a livelock issue on sparc64
+* Fix os::naked_short_nanosleep on OpenBSD when < 20 miliseconds.
+nanosleep(2) on OpenBSD is currently accurate down to 20 miliseconds.
+Below 20 miliseconds, use a busy loop with SpinPause.
 
 Index: src/hotspot/os/bsd/os_bsd.cpp
 --- src/hotspot/os/bsd/os_bsd.cpp.orig
 +++ src/hotspot/os/bsd/os_bsd.cpp
-@@ -2657,7 +2657,11 @@ bool os::dont_yield() {
+@@ -2657,8 +2657,41 @@ bool os::dont_yield() {
  }
  
  void os::naked_yield() {
@@ -13,5 +16,35 @@ Index: src/hotspot/os/bsd/os_bsd.cpp
 +  os::naked_short_nanosleep(512);
 +#endif
  }
++
++#ifdef __OpenBSD__
++// OpenBSD does not provide sleep functionality with nanosecond resolution, so we
++// try to approximate this with spinning combined with spin pause for sleeps
++// less then 20 ms
++void os::naked_short_nanosleep(jlong ns) {
++  assert(ns > -1 && ns < NANOUNITS, "Un-interruptable sleep, short time use only");
++
++  // if >= 20 ms use nanosleep
++  if (ns >= 20 * (NANOUNITS / MILLIUNITS)) {
++    struct timespec req, rem;
++    req.tv_sec = 0;
++    req.tv_nsec = ns;
++    while(::nanosleep(&req, &rem) == -1) {
++      if (errno == EINTR)
++        req = rem;
++      else
++        break;
++    }
++    return;
++  }
++
++  // less then 20 ms need to use busy wait
++  int64_t start = os::javaTimeNanos();
++  do {
++      SpinPause();
++  } while (os::javaTimeNanos() - start < ns);
++}
++#endif // __OpenBSD__
  
  ////////////////////////////////////////////////////////////////////////////////
+ // thread priority support

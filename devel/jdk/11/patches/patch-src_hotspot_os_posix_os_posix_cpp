@@ -1,0 +1,23 @@
+Fix os::naked_short_nanosleep on OpenBSD when < 20 miliseconds.
+nanosleep(2) on OpenBSD is currently accurate down to 20 miliseconds.
+Below 20 miliseconds, use a busy loop with SpinPause.
+
+Index: src/hotspot/os/posix/os_posix.cpp
+--- src/hotspot/os/posix/os_posix.cpp.orig
++++ src/hotspot/os/posix/os_posix.cpp
+@@ -762,6 +762,7 @@ int os::sleep(Thread* thread, jlong millis, bool inter
+   }
+ }
+ 
++#ifndef __OpenBSD__
+ void os::naked_short_nanosleep(jlong ns) {
+   struct timespec req;
+   assert(ns > -1 && ns < NANOUNITS, "Un-interruptable sleep, short time use only");
+@@ -770,6 +771,7 @@ void os::naked_short_nanosleep(jlong ns) {
+   ::nanosleep(&req, NULL);
+   return;
+ }
++#endif
+ 
+ void os::naked_short_sleep(jlong ms) {
+   assert(ms < MILLIUNITS, "Un-interruptable sleep, short time use only");
