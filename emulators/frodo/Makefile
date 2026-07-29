@@ -2,7 +2,7 @@ COMMENT=	Commodore 64 emulator
 
 DISTNAME=	FrodoV4_1b.Src
 PKGNAME=	frodo-4.1b
-REVISION=	10
+REVISION=	11
 DISTFILES=	FrodoV4_1b.Src${EXTRACT_SUFX}
 
 CATEGORIES=	emulators games
@@ -21,6 +21,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 CONFIGURE_STYLE=	gnu
 
 MODULES=	x11/tk
+MODTK_VERSION=	8.6
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 LIB_DEPENDS=	sdl-*-!no_x11:devel/sdl
 
