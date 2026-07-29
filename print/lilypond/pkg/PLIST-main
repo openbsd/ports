@@ -6,7 +6,6 @@ bin/lilymidi
 @bin bin/lilypond
 bin/lilypond-book
 bin/lilypond-invoke-editor
-bin/lilysong
 bin/midi2ly
 bin/musicxml2ly
 lib/lilypond/
@@ -25,6 +24,7 @@ lib/lilypond/${VERSION}/ccache/lily/chord-ignatzek-names.go
 lib/lilypond/${VERSION}/ccache/lily/chord-name.go
 lib/lilypond/${VERSION}/ccache/lily/clip-region.go
 lib/lilypond/${VERSION}/ccache/lily/color.go
+lib/lilypond/${VERSION}/ccache/lily/context.go
 lib/lilypond/${VERSION}/ccache/lily/curried-definitions.go
 lib/lilypond/${VERSION}/ccache/lily/define-context-properties.go
 lib/lilypond/${VERSION}/ccache/lily/define-event-classes.go
@@ -44,7 +44,6 @@ lib/lilypond/${VERSION}/ccache/lily/display-woodwind-diagrams.go
 lib/lilypond/${VERSION}/ccache/lily/file-cache.go
 lib/lilypond/${VERSION}/ccache/lily/flag-styles.go
 lib/lilypond/${VERSION}/ccache/lily/font-encodings.go
-lib/lilypond/${VERSION}/ccache/lily/font.go
 lib/lilypond/${VERSION}/ccache/lily/framework-cairo.go
 lib/lilypond/${VERSION}/ccache/lily/framework-ps.go
 lib/lilypond/${VERSION}/ccache/lily/framework-svg.go
@@ -61,6 +60,7 @@ lib/lilypond/${VERSION}/ccache/lily/markup.go
 lib/lilypond/${VERSION}/ccache/lily/midi.go
 lib/lilypond/${VERSION}/ccache/lily/modal-transforms.go
 lib/lilypond/${VERSION}/ccache/lily/music-functions.go
+lib/lilypond/${VERSION}/ccache/lily/operators.go
 lib/lilypond/${VERSION}/ccache/lily/output-lib.go
 lib/lilypond/${VERSION}/ccache/lily/output-ps.go
 lib/lilypond/${VERSION}/ccache/lily/output-svg.go
@@ -72,12 +72,11 @@ lib/lilypond/${VERSION}/ccache/lily/parser-ly-from-scheme.go
 lib/lilypond/${VERSION}/ccache/lily/part-combiner.go
 lib/lilypond/${VERSION}/ccache/lily/predefined-fretboards.go
 lib/lilypond/${VERSION}/ccache/lily/ps-to-png.go
+lib/lilypond/${VERSION}/ccache/lily/qr-code.go
 lib/lilypond/${VERSION}/ccache/lily/scheme-engravers.go
 lib/lilypond/${VERSION}/ccache/lily/scheme-performers.go
 lib/lilypond/${VERSION}/ccache/lily/script.go
 lib/lilypond/${VERSION}/ccache/lily/skyline.go
-lib/lilypond/${VERSION}/ccache/lily/song-util.go
-lib/lilypond/${VERSION}/ccache/lily/song.go
 lib/lilypond/${VERSION}/ccache/lily/stencil.go
 lib/lilypond/${VERSION}/ccache/lily/tablature.go
 lib/lilypond/${VERSION}/ccache/lily/time-signature-settings.go
@@ -92,14 +91,12 @@ lib/lilypond/${VERSION}/ccache/lily/translation-functions.go
 @man man/man1/lilypond-book.1
 @man man/man1/lilypond-invoke-editor.1
 @man man/man1/lilypond.1
-@man man/man1/lilysong.1
 @man man/man1/midi2ly.1
 @man man/man1/musicxml2ly.1
 share/emacs/site-lisp/lilypond-font-lock.el
 share/emacs/site-lisp/lilypond-indent.el
 share/emacs/site-lisp/lilypond-init.el
 share/emacs/site-lisp/lilypond-mode.el
-share/emacs/site-lisp/lilypond-song.el
 share/emacs/site-lisp/lilypond-what-beat.el
 share/emacs/site-lisp/lilypond-words.el
 share/lilypond/
@@ -107,6 +104,7 @@ share/lilypond/${VERSION}/
 share/lilypond/${VERSION}/fonts/
 share/lilypond/${VERSION}/fonts/00-lilypond-fonts.conf
 share/lilypond/${VERSION}/fonts/99-lilypond-fonts.conf
+share/lilypond/${VERSION}/fonts/emmentaler-font.conf
 share/lilypond/${VERSION}/fonts/otf/
 share/lilypond/${VERSION}/fonts/otf/C059-BdIta.otf
 share/lilypond/${VERSION}/fonts/otf/C059-Bold.otf
@@ -247,25 +245,16 @@ share/lilypond/${VERSION}/fonts/source/parmesan23.mf
 share/lilypond/${VERSION}/fonts/source/parmesan26.mf
 share/lilypond/${VERSION}/fonts/svg/
 share/lilypond/${VERSION}/fonts/svg/emmentaler-11.svg
-share/lilypond/${VERSION}/fonts/svg/emmentaler-11.woff
 share/lilypond/${VERSION}/fonts/svg/emmentaler-13.svg
-share/lilypond/${VERSION}/fonts/svg/emmentaler-13.woff
 share/lilypond/${VERSION}/fonts/svg/emmentaler-14.svg
-share/lilypond/${VERSION}/fonts/svg/emmentaler-14.woff
 share/lilypond/${VERSION}/fonts/svg/emmentaler-16.svg
-share/lilypond/${VERSION}/fonts/svg/emmentaler-16.woff
 share/lilypond/${VERSION}/fonts/svg/emmentaler-18.svg
-share/lilypond/${VERSION}/fonts/svg/emmentaler-18.woff
 share/lilypond/${VERSION}/fonts/svg/emmentaler-20.svg
-share/lilypond/${VERSION}/fonts/svg/emmentaler-20.woff
 share/lilypond/${VERSION}/fonts/svg/emmentaler-23.svg
-share/lilypond/${VERSION}/fonts/svg/emmentaler-23.woff
 share/lilypond/${VERSION}/fonts/svg/emmentaler-26.svg
-share/lilypond/${VERSION}/fonts/svg/emmentaler-26.woff
 share/lilypond/${VERSION}/fonts/svg/emmentaler-brace.svg
-share/lilypond/${VERSION}/fonts/svg/emmentaler-brace.woff
 share/lilypond/${VERSION}/ly/
-share/lilypond/${VERSION}/ly/Welcome_to_LilyPond.ly
+share/lilypond/${VERSION}/ly/ancient-init.ly
 share/lilypond/${VERSION}/ly/arabic.ly
 share/lilypond/${VERSION}/ly/articulate.ly
 share/lilypond/${VERSION}/ly/bagpipe.ly
@@ -282,7 +271,6 @@ share/lilypond/${VERSION}/ly/english.ly
 share/lilypond/${VERSION}/ly/engraver-init.ly
 share/lilypond/${VERSION}/ly/espanol.ly
 share/lilypond/${VERSION}/ly/event-listener.ly
-share/lilypond/${VERSION}/ly/festival.ly
 share/lilypond/${VERSION}/ly/generate-documentation.ly
 share/lilypond/${VERSION}/ly/grace-init.ly
 share/lilypond/${VERSION}/ly/graphviz-init.ly
@@ -290,6 +278,7 @@ share/lilypond/${VERSION}/ly/gregorian.ly
 share/lilypond/${VERSION}/ly/guile-debugger.ly
 share/lilypond/${VERSION}/ly/hel-arabic.ly
 share/lilypond/${VERSION}/ly/init.ly
+share/lilypond/${VERSION}/ly/internal-backend-test.ly
 share/lilypond/${VERSION}/ly/italiano.ly
 share/lilypond/${VERSION}/ly/lilypond-book-preamble.ly
 share/lilypond/${VERSION}/ly/lyrics-tkit.ly
@@ -347,6 +336,8 @@ share/lilypond/${VERSION}/python/${MODPY_PYCACHE}midi.${MODPY_PYC_MAGIC_TAG}pyc
 share/lilypond/${VERSION}/python/${MODPY_PYCACHE}musicexp.${MODPY_PYC_MAGIC_TAG}pyc
 share/lilypond/${VERSION}/python/${MODPY_PYCACHE}musicxml.${MODPY_PYC_MAGIC_TAG}pyc
 share/lilypond/${VERSION}/python/${MODPY_PYCACHE}musicxml2ly_conversion.${MODPY_PYC_MAGIC_TAG}pyc
+share/lilypond/${VERSION}/python/${MODPY_PYCACHE}musicxml2ly_definitions.${MODPY_PYC_MAGIC_TAG}pyc
+share/lilypond/${VERSION}/python/${MODPY_PYCACHE}musicxml2ly_globvars.${MODPY_PYC_MAGIC_TAG}pyc
 share/lilypond/${VERSION}/python/${MODPY_PYCACHE}utilities.${MODPY_PYC_MAGIC_TAG}pyc
 share/lilypond/${VERSION}/python/book_base.py
 share/lilypond/${VERSION}/python/book_docbook.py
@@ -361,6 +352,8 @@ share/lilypond/${VERSION}/python/midi.py
 share/lilypond/${VERSION}/python/musicexp.py
 share/lilypond/${VERSION}/python/musicxml.py
 share/lilypond/${VERSION}/python/musicxml2ly_conversion.py
+share/lilypond/${VERSION}/python/musicxml2ly_definitions.py
+share/lilypond/${VERSION}/python/musicxml2ly_globvars.py
 share/lilypond/${VERSION}/python/utilities.py
 share/lilypond/${VERSION}/scm/
 share/lilypond/${VERSION}/scm/lily/
@@ -376,6 +369,7 @@ share/lilypond/${VERSION}/scm/lily/chord-ignatzek-names.scm
 share/lilypond/${VERSION}/scm/lily/chord-name.scm
 share/lilypond/${VERSION}/scm/lily/clip-region.scm
 share/lilypond/${VERSION}/scm/lily/color.scm
+share/lilypond/${VERSION}/scm/lily/context.scm
 share/lilypond/${VERSION}/scm/lily/curried-definitions.scm
 share/lilypond/${VERSION}/scm/lily/define-context-properties.scm
 share/lilypond/${VERSION}/scm/lily/define-event-classes.scm
@@ -388,11 +382,14 @@ share/lilypond/${VERSION}/scm/lily/define-music-display-methods.scm
 share/lilypond/${VERSION}/scm/lily/define-music-properties.scm
 share/lilypond/${VERSION}/scm/lily/define-music-types.scm
 share/lilypond/${VERSION}/scm/lily/define-note-names.scm
+share/lilypond/${VERSION}/scm/lily/define-paper-variables.scm
 share/lilypond/${VERSION}/scm/lily/define-stencil-commands.scm
 share/lilypond/${VERSION}/scm/lily/define-woodwind-diagrams.scm
 share/lilypond/${VERSION}/scm/lily/display-lily.scm
 share/lilypond/${VERSION}/scm/lily/display-woodwind-diagrams.scm
 share/lilypond/${VERSION}/scm/lily/document-backend.scm
+share/lilypond/${VERSION}/scm/lily/document-break-align-symbols.scm
+share/lilypond/${VERSION}/scm/lily/document-colors.scm
 share/lilypond/${VERSION}/scm/lily/document-context-mods.scm
 share/lilypond/${VERSION}/scm/lily/document-functions.scm
 share/lilypond/${VERSION}/scm/lily/document-identifiers.scm
@@ -400,6 +397,8 @@ share/lilypond/${VERSION}/scm/lily/document-markup.scm
 share/lilypond/${VERSION}/scm/lily/document-music.scm
 share/lilypond/${VERSION}/scm/lily/document-outside-staff-priorities.scm
 share/lilypond/${VERSION}/scm/lily/document-paper-sizes.scm
+share/lilypond/${VERSION}/scm/lily/document-paper-variables.scm
+share/lilypond/${VERSION}/scm/lily/document-script-priorities.scm
 share/lilypond/${VERSION}/scm/lily/document-translation.scm
 share/lilypond/${VERSION}/scm/lily/document-type-predicates.scm
 share/lilypond/${VERSION}/scm/lily/documentation-generate.scm
@@ -407,7 +406,6 @@ share/lilypond/${VERSION}/scm/lily/documentation-lib.scm
 share/lilypond/${VERSION}/scm/lily/file-cache.scm
 share/lilypond/${VERSION}/scm/lily/flag-styles.scm
 share/lilypond/${VERSION}/scm/lily/font-encodings.scm
-share/lilypond/${VERSION}/scm/lily/font.scm
 share/lilypond/${VERSION}/scm/lily/framework-cairo.scm
 share/lilypond/${VERSION}/scm/lily/framework-ps.scm
 share/lilypond/${VERSION}/scm/lily/framework-svg.scm
@@ -427,6 +425,7 @@ share/lilypond/${VERSION}/scm/lily/markup.scm
 share/lilypond/${VERSION}/scm/lily/midi.scm
 share/lilypond/${VERSION}/scm/lily/modal-transforms.scm
 share/lilypond/${VERSION}/scm/lily/music-functions.scm
+share/lilypond/${VERSION}/scm/lily/operators.scm
 share/lilypond/${VERSION}/scm/lily/output-lib.scm
 share/lilypond/${VERSION}/scm/lily/output-ps.scm
 share/lilypond/${VERSION}/scm/lily/output-svg.scm
@@ -438,12 +437,11 @@ share/lilypond/${VERSION}/scm/lily/parser-ly-from-scheme.scm
 share/lilypond/${VERSION}/scm/lily/part-combiner.scm
 share/lilypond/${VERSION}/scm/lily/predefined-fretboards.scm
 share/lilypond/${VERSION}/scm/lily/ps-to-png.scm
+share/lilypond/${VERSION}/scm/lily/qr-code.scm
 share/lilypond/${VERSION}/scm/lily/scheme-engravers.scm
 share/lilypond/${VERSION}/scm/lily/scheme-performers.scm
 share/lilypond/${VERSION}/scm/lily/script.scm
 share/lilypond/${VERSION}/scm/lily/skyline.scm
-share/lilypond/${VERSION}/scm/lily/song-util.scm
-share/lilypond/${VERSION}/scm/lily/song.scm
 share/lilypond/${VERSION}/scm/lily/stencil.scm
 share/lilypond/${VERSION}/scm/lily/tablature.scm
 share/lilypond/${VERSION}/scm/lily/time-signature-settings.scm

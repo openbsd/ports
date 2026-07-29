@@ -9,6 +9,6 @@ Index: lily/include/open-type-font.hh
 -void get_glyph_index_name (char *s, FT_ULong code);
 +void get_unicode_name (char *s, size_t size, FT_ULong code);
 +void get_glyph_index_name (char *s, size_t size, FT_ULong code);
+ std::string load_font_table (FT_Face face, const std::string &tag);
  
  struct Preinit_Open_type_font
- {

@@ -1,8 +1,7 @@
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 
-VERSION=		2.24.4
-REVISION-main=		1
+VERSION=		2.26.0
 DISTNAME=		lilypond-v${VERSION}
 DISTNAME-docs=		lilypond-${VERSION}-documentation
 FULLPKGNAME-main=	lilypond-${VERSION}
@@ -51,7 +50,6 @@ CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			BASH=/bin/sh \
 			GREP=/usr/bin/grep \
-			GUILE_FLAVOR=guile-2.2 \
 			LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--disable-debugging \
 			--disable-optimising \
@@ -72,15 +70,16 @@ WANTLIB-docs =
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
-WANTLIB-main=		c fontconfig freetype gc glib-2.0 gobject-2.0 \
-			guile-2.2 harfbuzz intl m pango-1.0 \
-			pangoft2-1.0 pthread \
+WANTLIB-main=		c cairo fontconfig freetype gc glib-2.0 \
+			gobject-2.0 guile-3.0 harfbuzz intl m \
+			pango-1.0 pangoft2-1.0 png pthread z \
 			${COMPILER_LIBCXX}
 MODULES=		lang/python
 LIB_DEPENDS-main=	devel/gettext,-runtime \
-			lang/guile2 \
+			lang/guile3 \
 			devel/glib2 \
-			devel/pango
+			devel/pango \
+			graphics/png
 RUN_DEPENDS=		print/ghostscript/gnu
 BUILD_DEPENDS=		print/fontforge \
 			print/t1utils \

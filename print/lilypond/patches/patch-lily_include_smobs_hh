@@ -3,7 +3,7 @@ Horrible fix for llvm 22.
 Index: lily/include/smobs.hh
 --- lily/include/smobs.hh.orig
 +++ lily/include/smobs.hh
-@@ -251,6 +251,7 @@ class Smob_base (private)
+@@ -261,6 +261,7 @@ class Smob_base (protected)
    // least, but in emergency situations one can always use a "rest"
    // argument and take it apart manually.
  
