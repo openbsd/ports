@@ -1,12 +1,11 @@
 COMMENT =		tiling window manager
 
 MODCABAL_STEM =		xmonad
-MODCABAL_VERSION =	0.18.0
+MODCABAL_VERSION =	0.18.1
 
 PKGNAME =		${DISTNAME}
 CATEGORIES =		x11
 HOMEPAGE =		https://www.xmonad.org/
-REVISION =		0
 
 # BSD3
 PERMIT_PACKAGE =	Yes

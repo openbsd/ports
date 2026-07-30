@@ -6,7 +6,7 @@ SHA256 (hackage/hsc2hs-0.68.10.tar.gz) = b04014j+LKcJHuChAwfuinwGChuokPK/+tFqfU1
 SHA256 (hackage/hsc2hs-0.68.10_5.cabal) = ObJf2SmwKwGj/ln+x8qLLabw+eKCJ2t6hOY6RwLE1yU=
 SHA256 (hackage/setlocale-1.0.0.10.tar.gz) = OXL/EMIjGPVFEhXciGwVNf6lq33+/lzkYbFgOGVCO6c=
 SHA256 (hackage/setlocale-1.0.0.10_7.cabal) = iuAoOCQkPihFSdYgIIRonE7F2ArXZkhNJbU3swoRu1Y=
-SHA256 (hackage/xmonad-0.18.0.tar.gz) = IegOhH2y7hg9B9UKzVelskOXu/YIBkktMIGKPqfsXfs=
+SHA256 (hackage/xmonad-0.18.1.tar.gz) = mItfMQSsA6oHgkiv6n78rthmYd+yOe/USZX1jNT3ofA=
 SIZE (hackage/X11-1.10.3.tar.gz) = 192921
 SIZE (hackage/X11-1.10.3_1.cabal) = 3869
 SIZE (hackage/data-default-0.8.0.2.tar.gz) = 6138
@@ -15,4 +15,4 @@ SIZE (hackage/hsc2hs-0.68.10.tar.gz) = 40517
 SIZE (hackage/hsc2hs-0.68.10_5.cabal) = 3131
 SIZE (hackage/setlocale-1.0.0.10.tar.gz) = 2096
 SIZE (hackage/setlocale-1.0.0.10_7.cabal) = 869
-SIZE (hackage/xmonad-0.18.0.tar.gz) = 97078
+SIZE (hackage/xmonad-0.18.1.tar.gz) = 99352
