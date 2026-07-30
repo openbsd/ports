@@ -12,16 +12,13 @@ SHARED_LIBS +=	luajit-5.1 1.0 # 2.0.5
 # should do frequent snapshots of a branch. Do not attempt to cherry-pick
 # or backport individual changes, no matter how self-standing individual
 # changes look (because they often are not)."
-GH_ACCOUNT =	LuaJIT
-GH_PROJECT =	LuaJIT
-GH_COMMIT =	659a61693aa3b87661864ad0f12eee14c865cd7f
+DIST_TUPLE =	github LuaJIT LuaJIT faaf663340347a78b22ed94c63c24fe090bd9784 .
 # epoch time of the commit; easiest found in ${WRKSRC}/.relver of the
 # git-archive tar
-V =		2.1.1772619647
+V =		2.1.1785192264
 
 COMMENT =	just-in-time compiler for Lua
-DISTNAME =	LuaJIT-${V}
-PKGNAME =	${DISTNAME:L}
+PKGNAME =	luajit-$V
 
 CATEGORIES =	lang
 
