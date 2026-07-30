@@ -1,2 +1,2 @@
 MODCABAL_MANIFEST	= \
-	happy-lib	2.2	0
+	happy-lib	2.2.1	0
