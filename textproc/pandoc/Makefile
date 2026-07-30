@@ -1,8 +1,7 @@
-MODCABAL_VERSION =	3.9
+MODCABAL_VERSION =	3.10
 V =		${MODCABAL_VERSION}
 COMMENT =	convert between markup and document formats
 PKGNAME =	pandoc-${V}
-REVISION =	0
 
 CATEGORIES =	converters textproc
 
