@@ -5,12 +5,12 @@ Index: tests/src/lib.rs
  
  #[cfg(test)]
  use ::store::registry::bootstrap::Bootstrap;
--#[cfg(not(target_env = "msvc"))]
-+#[cfg(not(target_os = "openbsd"))]
+-#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
++#[cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))]
  use jemallocator::Jemalloc;
  
--#[cfg(not(target_env = "msvc"))]
-+#[cfg(not(target_os = "openbsd"))]
+-#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
++#[cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))]
  #[global_allocator]
  static GLOBAL: Jemalloc = Jemalloc;
  

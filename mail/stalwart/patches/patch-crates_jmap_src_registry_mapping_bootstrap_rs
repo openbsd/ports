@@ -3,12 +3,12 @@ Make bootstrap paths for data directory adhere to OpenBSD folder structure
 Index: crates/jmap/src/registry/mapping/bootstrap.rs
 --- crates/jmap/src/registry/mapping/bootstrap.rs.orig
 +++ crates/jmap/src/registry/mapping/bootstrap.rs
-@@ -644,7 +644,7 @@ fn build_default_bootstrap(server: &Server) -> Bootstr
+@@ -653,7 +653,7 @@ fn map_dns_server(dns_server: &DnsServerBootstrap) -> 
  
-     Bootstrap {
-         data_store: DataStore::RocksDb(RocksDbStore {
--            path: "/var/lib/stalwart/".to_string(),
-+            path: "/var/db/stalwart/".to_string(),
-             ..Default::default()
-         }),
-         blob_store: BlobStore::Default,
+ // FreeBSD keeps variable application data under /var/db (hier(7))
+ // rather than FHS /var/lib.
+-const DEFAULT_DATA_PATH: &str = if cfg!(target_os = "freebsd") {
++const DEFAULT_DATA_PATH: &str = if cfg!(target_os = "freebsd") || cfg!(target_os = "openbsd") {
+     "/var/db/stalwart/"
+ } else {
+     "/var/lib/stalwart/"

@@ -1,10 +1,10 @@
 Index: tests/Cargo.toml
 --- tests/Cargo.toml.orig
 +++ tests/Cargo.toml
-@@ -84,5 +84,5 @@ jmap-tools = { version = "0.1" }
- dns-update = { version = "0.4.0", features = ["test_provider"] }
- x509-parser = "0.18"
+@@ -89,5 +89,5 @@ time = "0.3"
+ testcontainers = { version = "0.27", features = ["reusable-containers"] }
+ rust-s3 = { version = "0.37", default-features = false, features = ["tokio-rustls-tls"] }
  
--[target.'cfg(not(target_env = "msvc"))'.dependencies]
+-[target.'cfg(not(any(target_env = "msvc", target_os = "freebsd")))'.dependencies]
 +[target.'cfg(not(target_os = "openbsd"))'.dependencies]
  jemallocator = "0.5.0"

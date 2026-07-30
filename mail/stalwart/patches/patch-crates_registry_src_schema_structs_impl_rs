@@ -3,7 +3,7 @@ Make bootstrap paths for data directory adhere to OpenBSD folder structure
 Index: crates/registry/src/schema/structs_impl.rs
 --- crates/registry/src/schema/structs_impl.rs.orig
 +++ crates/registry/src/schema/structs_impl.rs
-@@ -4100,7 +4100,7 @@ impl Default for Bootstrap {
+@@ -4121,7 +4121,7 @@ impl Default for Bootstrap {
              request_tls_certificate: true,
              generate_dkim_keys: true,
              data_store: DataStore::RocksDb(RocksDbStore {
