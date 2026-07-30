@@ -1,7 +1,7 @@
 COMMENT=	small test server for RFC 8555 (ACME)
 
 MODGO_MODNAME=	github.com/letsencrypt/pebble/v2
-MODGO_VERSION=	v2.10.0
+MODGO_VERSION=	v2.10.1
 
 DISTNAME=	pebble-${MODGO_VERSION}
 

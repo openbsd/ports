@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	github.com/go-jose/go-jose/v4		 v4.1.3 \
+	github.com/go-jose/go-jose/v4		 v4.1.4 \
 	github.com/google/go-cmp		 v0.6.0 \
 	github.com/letsencrypt/challtestsrv	 v1.4.2 \
 	github.com/miekg/dns			 v1.1.62 \
