@@ -1,7 +1,7 @@
 COMMENT =	Xfce4 power manager
 
 XFCE_PROJECT =	xfce4-power-manager
-REVISION =	0
+XFCE_VERSION =	4.20.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -26,7 +26,7 @@ CONFIGURE_ENV +=ac_cv_lib_Xext_DPMSQueryExtension=yes
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-power-manager
 
 WANTLIB += ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender XRes atk-1.0 c cairo
 WANTLIB += expat ffi fontconfig freetype atspi dbus-1
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 harfbuzz m notify

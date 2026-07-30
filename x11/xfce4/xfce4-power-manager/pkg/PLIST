@@ -139,6 +139,7 @@ share/locale/vi/LC_MESSAGES/xfce4-power-manager.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-power-manager.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-power-manager.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-power-manager.mo
+share/metainfo/
 share/metainfo/xfce4-power-manager.appdata.xml
 share/polkit-1/actions/org.xfce.power.policy
 share/xfce4/panel/plugins/power-manager-plugin.desktop
