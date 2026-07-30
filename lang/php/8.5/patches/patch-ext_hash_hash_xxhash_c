@@ -3,7 +3,7 @@ xxhash-0.8.3 renamed struct member memsize to bufferedSize.
 Index: ext/hash/hash_xxhash.c
 --- ext/hash/hash_xxhash.c.orig
 +++ ext/hash/hash_xxhash.c
-@@ -82,7 +82,7 @@ static hash_spec_result php_hash_xxh32_unserialize(
+@@ -83,7 +83,7 @@ static hash_spec_result php_hash_xxh32_unserialize(
  	hash_spec_result r = HASH_SPEC_FAILURE;
  	if (magic == PHP_HASH_SERIALIZE_MAGIC_SPEC
  		&& (r = php_hash_unserialize_spec(hash, zv, PHP_XXH32_SPEC)) == HASH_SPEC_SUCCESS
@@ -12,7 +12,7 @@ Index: ext/hash/hash_xxhash.c
  		return HASH_SPEC_SUCCESS;
  	}
  
-@@ -238,7 +238,7 @@ static hash_spec_result php_hash_xxh64_unserialize(
+@@ -241,7 +241,7 @@ static hash_spec_result php_hash_xxh64_unserialize(
  	hash_spec_result r = HASH_SPEC_FAILURE;
  	if (magic == PHP_HASH_SERIALIZE_MAGIC_SPEC
  		&& (r = php_hash_unserialize_spec(hash, zv, PHP_XXH64_SPEC)) == HASH_SPEC_SUCCESS

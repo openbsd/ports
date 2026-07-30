@@ -1,7 +1,6 @@
-PHP_VERSION=	8.5.8
-REVISION=	1
+PHP_VERSION=	8.5.9
 
-AUTOCONF_VERSION= 2.71
+AUTOCONF_VERSION= 2.73
 
 # override PORTROACH from ../Makefile.inc; no marker wanted for the highest
 # branch, to allow finding new branches
