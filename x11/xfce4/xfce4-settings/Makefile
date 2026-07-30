@@ -1,7 +1,7 @@
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
-XFCE_VERSION=	4.20.4
+XFCE_VERSION=	4.20.5
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -21,7 +21,7 @@ LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.19.5 \
 		x11/gnome/libxklavier \
 		x11/xfce4/xfconf
 
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB += ICE SM XRes X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += atk-1.0 atspi c cairo dbus-1 expat jpeg
 WANTLIB += ffi fontconfig freetype gdk_pixbuf-2.0
