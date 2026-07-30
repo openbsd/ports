@@ -3,7 +3,7 @@ This uses the no longer available X509at_* API
 Index: libyara/modules/pe/pe.c
 --- libyara/modules/pe/pe.c.orig
 +++ libyara/modules/pe/pe.c
-@@ -1735,7 +1735,7 @@ static void pe_parse_exports(PE* pe)
+@@ -1746,7 +1746,7 @@ static void pe_parse_exports(PE* pe)
  // some features used in pe_parse_certificates, if you are using BoringSSL
  // instead of OpenSSL you should define BORINGSSL for YARA to compile properly,
  // but you won't have signature-related features in the PE module.
@@ -12,7 +12,7 @@ Index: libyara/modules/pe/pe.c
  
  #define write_certificate(cert, pe, fmt, ...)                                  \
    do                                                                           \
-@@ -3902,7 +3902,7 @@ begin_declarations
+@@ -3920,7 +3920,7 @@ begin_declarations
    declare_integer("number_of_resources");
    declare_string("pdb_path");
  
@@ -21,7 +21,7 @@ Index: libyara/modules/pe/pe.c
    begin_struct_array("signatures")
      declare_string("thumbprint");
      declare_string("issuer");
-@@ -3988,7 +3988,7 @@ end_declarations
+@@ -4006,7 +4006,7 @@ end_declarations
  
  int module_initialize(YR_MODULE* module)
  {
@@ -30,7 +30,7 @@ Index: libyara/modules/pe/pe.c
    // Initialize OpenSSL global objects for the auth library before any
    // multithreaded environment as it is not thread-safe. This can
    // only be called once per process.
-@@ -4395,7 +4395,7 @@ int module_load(
+@@ -4413,7 +4413,7 @@ int module_load(
          pe_parse_rich_signature(pe, block->base);
          pe_parse_debug_directory(pe);
  

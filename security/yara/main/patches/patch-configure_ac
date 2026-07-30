@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -364,6 +364,7 @@ AS_IF([test "x$have_crypto" = "xno"],
+@@ -374,6 +374,7 @@ AS_IF([test "x$have_crypto" = "xno"],
    ])
  
  

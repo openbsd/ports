@@ -1,11 +1,11 @@
-COMMENT = pattern matching swiss knife
+COMMENT =	pattern matching swiss knife
 
 GH_PROJECT =	yara
-GH_TAGNAME =	v4.5.5
+GH_TAGNAME =	v4.5.8
 
 WANTLIB += c crypto jansson m magic pthread z
 
-SHARED_LIBS +=  yara                      2.0 # 0.0
+SHARED_LIBS +=  yara                      3.0
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--enable-cuckoo \
