@@ -18,10 +18,12 @@ Index: lld/ELF/Writer.cpp
        (ctx.arg.discard == DiscardPolicy::Locals ||
         (sym.section && (sym.section->flags & SHF_MERGE))))
      return false;
-@@ -625,7 +626,11 @@ static bool isRelroSection(Ctx &ctx, const OutputSecti
+@@ -624,8 +625,12 @@ static bool isRelroSection(Ctx &ctx, const OutputSecti
+   // by default resolved lazily, so we usually cannot put it into RELRO.
    // However, if "-z now" is given, the lazy symbol resolution is
    // disabled, which enables us to put it into RELRO.
-   if (sec == ctx.in.gotPlt->getParent())
+-  if (sec == ctx.in.gotPlt->getParent())
++  if (ctx.target->usesGotPlt && sec == ctx.in.gotPlt->getParent())
 +#ifndef __OpenBSD__
      return ctx.arg.zNow;
 +#else
@@ -43,7 +45,24 @@ Index: lld/ELF/Writer.cpp
  
    return abiAgnostic || abiSpecific;
  }
-@@ -927,6 +935,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+@@ -855,10 +863,14 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+   if (ctx.sym.globalOffsetTable) {
+     // The _GLOBAL_OFFSET_TABLE_ symbol is defined by target convention usually
+     // to the start of the .got or .got.plt section.
+-    InputSection *sec = ctx.in.gotPlt.get();
+-    if (!ctx.target->gotBaseSymInGotPlt)
++    InputSection *sec;
++    if (ctx.target->gotBaseSymInGotPlt) {
++      assert(ctx.target->usesGotPlt);
++      sec = ctx.in.gotPlt.get();
++    } else {
+       sec = ctx.in.mipsGot ? cast<InputSection>(ctx.in.mipsGot.get())
+                            : cast<InputSection>(ctx.in.got.get());
++    }
+     ctx.sym.globalOffsetTable->section = sec;
+   }
+ 
+@@ -927,6 +939,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
      ctx.sym.bss->section = sbss ? sbss : findSection(ctx, ".bss");
    }
  
@@ -53,7 +72,50 @@ Index: lld/ELF/Writer.cpp
    // Setup MIPS _gp_disp/__gnu_local_gp symbols which should
    // be equal to the _gp symbol's value.
    if (ctx.sym.mipsGp) {
-@@ -2454,34 +2465,22 @@ Writer<ELFT>::createPhdrs(Partition &part) {
+@@ -1533,9 +1548,9 @@ template <class ELFT> void Writer<ELFT>::finalizeAddre
+   };
+   finalizeOrderDependentContent();
+ 
+-  // Converts call x@GDPLT to call __tls_get_addr
+-  if (ctx.arg.emachine == EM_HEXAGON)
+-    hexagonTLSSymbolUpdate(ctx);
++  // Converts call x@GDPLT/x@TLSPLT to call __tls_get_addr.
++  if (ctx.arg.emachine == EM_HEXAGON || ctx.arg.emachine == EM_SPARCV9)
++    tlsSymbolUpdate(ctx);
+ 
+   if (ctx.arg.randomizeSectionPadding)
+     randomizeSectionPadding(ctx);
+@@ -2031,10 +2046,10 @@ template <class ELFT> void Writer<ELFT>::finalizeSecti
+       sec->addrExpr = [=] { return i->second; };
+   }
+ 
+-  // With the ctx.outputSections available check for GDPLT relocations
++  // With the ctx.outputSections available check for GDPLT/TLSPLT relocations
+   // and add __tls_get_addr symbol if needed.
+-  if (ctx.arg.emachine == EM_HEXAGON &&
+-      hexagonNeedsTLSSymbol(ctx.outputSections)) {
++  if ((ctx.arg.emachine == EM_HEXAGON || ctx.arg.emachine == EM_SPARCV9) &&
++      needsTLSSymbol(ctx.outputSections)) {
+     Symbol *sym =
+         ctx.symtab->addSymbol(Undefined{ctx.internalFile, "__tls_get_addr",
+                                         STB_GLOBAL, STV_DEFAULT, STT_NOTYPE});
+@@ -2300,6 +2315,15 @@ static bool needsPtLoad(OutputSection *sec) {
+ static uint64_t computeFlags(Ctx &ctx, uint64_t flags) {
+   if (ctx.arg.omagic)
+     return PF_R | PF_W | PF_X;
++#ifdef __OpenBSD__
++  // The sparc64 static PIE startup code reads an instruction from .text to
++  // locate _DYNAMIC before applying relocations.
++  if (ctx.arg.emachine == EM_SPARCV9 && ctx.arg.pie && !ctx.arg.shared &&
++      ctx.sharedFiles.empty() && (flags & PF_X))
++    return flags | PF_R;
++  if (ctx.arg.emachine == EM_SPARCV9 && (flags & PF_X) && (flags & PF_W))
++    return flags;
++#endif
+   if (ctx.arg.executeOnly && (flags & PF_X))
+     return flags & ~PF_R;
+   return flags;
+@@ -2454,34 +2478,22 @@ Writer<ELFT>::createPhdrs(Partition &part) {
      addHdr(PT_GNU_EH_FRAME, part.ehFrameHdr->getParent()->getPhdrFlags())
          ->add(part.ehFrameHdr->getParent());
  
@@ -101,7 +163,7 @@ Index: lld/ELF/Writer.cpp
    // PT_OPENBSD_NOBTCFI is an OpenBSD-specific header to mark that the
    // executable is expected to violate branch-target CFI checks.
    if (ctx.arg.zNoBtCfi)
-@@ -2493,7 +2492,19 @@ Writer<ELFT>::createPhdrs(Partition &part) {
+@@ -2493,7 +2505,19 @@ Writer<ELFT>::createPhdrs(Partition &part) {
    // OpenBSD.
    if (ctx.arg.zWxneeded)
      addHdr(PT_OPENBSD_WXNEEDED, PF_X);
@@ -121,7 +183,7 @@ Index: lld/ELF/Writer.cpp
    if (OutputSection *cmd = findSection(ctx, ".note.gnu.property", partNo))
      addHdr(PT_GNU_PROPERTY, PF_R)->add(cmd);
  
-@@ -2586,6 +2597,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
+@@ -2586,6 +2610,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
          };
      }
    };

@@ -33,7 +33,21 @@ Index: lld/ELF/Driver.cpp
    if (ctx.arg.emachine != EM_AARCH64 && ctx.arg.emachine != EM_ARM &&
        ctx.arg.zExecuteOnlyReport != ReportPolicy::None)
      ErrAlways(ctx)
-@@ -1420,8 +1434,6 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
+@@ -1302,9 +1316,10 @@ static SmallVector<StringRef, 0> getSymbolOrderingFile
+ 
+ static bool getIsRela(Ctx &ctx, opt::InputArgList &args) {
+   // The psABI specifies the default relocation entry format.
+-  bool rela = is_contained({EM_AARCH64, EM_AMDGPU, EM_HEXAGON, EM_LOONGARCH,
+-                            EM_PPC, EM_PPC64, EM_RISCV, EM_S390, EM_X86_64},
+-                           ctx.arg.emachine);
++  bool rela =
++      is_contained({EM_AARCH64, EM_AMDGPU, EM_HEXAGON, EM_LOONGARCH, EM_PPC,
++                    EM_PPC64, EM_RISCV, EM_S390, EM_SPARCV9, EM_X86_64},
++                   ctx.arg.emachine);
+   // If -z rel or -z rela is specified, use the last option.
+   for (auto *arg : args.filtered(OPT_z)) {
+     StringRef s(arg->getValue());
+@@ -1420,8 +1435,6 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
  
    ctx.e.errorHandlingScript = args.getLastArgValue(OPT_error_handling_script);
  
@@ -42,7 +56,7 @@ Index: lld/ELF/Driver.cpp
    ctx.arg.exportDynamic =
        args.hasFlag(OPT_export_dynamic, OPT_no_export_dynamic, false) ||
        args.hasArg(OPT_shared);
-@@ -1442,8 +1454,15 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
+@@ -1442,8 +1455,15 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
    ctx.arg.icf = getICF(args);
    ctx.arg.ignoreDataAddressEquality =
        args.hasArg(OPT_ignore_data_address_equality);
@@ -58,7 +72,7 @@ Index: lld/ELF/Driver.cpp
    ctx.arg.init = args.getLastArgValue(OPT_init, "_init");
    ctx.arg.ltoAAPipeline = args.getLastArgValue(OPT_lto_aa_pipeline);
    ctx.arg.ltoCSProfileGenerate = args.hasArg(OPT_lto_cs_profile_generate);
-@@ -1512,7 +1531,12 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
+@@ -1512,7 +1532,12 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
    ctx.arg.outputFile = args.getLastArgValue(OPT_o);
    if (auto *arg = args.getLastArg(OPT_package_metadata))
      parsePackageMetadata(ctx, *arg);
@@ -71,7 +85,7 @@ Index: lld/ELF/Driver.cpp
    ctx.arg.printIcfSections =
        args.hasFlag(OPT_print_icf_sections, OPT_no_print_icf_sections, false);
    if (auto *arg =
-@@ -1604,7 +1628,11 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
+@@ -1604,7 +1629,11 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
    ctx.arg.trace = args.hasArg(OPT_trace);
    ctx.arg.undefined = args::getStrings(args, OPT_undefined);
    ctx.arg.undefinedVersion =
@@ -83,7 +97,7 @@ Index: lld/ELF/Driver.cpp
    ctx.arg.unique = args.hasArg(OPT_unique);
    ctx.arg.useAndroidRelrTags = args.hasFlag(
        OPT_use_android_relr_tags, OPT_no_use_android_relr_tags, false);
-@@ -1851,9 +1879,9 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
+@@ -1851,9 +1880,9 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
                       << arg->getValue() << "'";
      parallel::strategy = hardware_concurrency(threads);
      ctx.arg.thinLTOJobs = v;
@@ -96,7 +110,7 @@ Index: lld/ELF/Driver.cpp
    }
    if (auto *arg = args.getLastArg(OPT_thinlto_jobs_eq))
      ctx.arg.thinLTOJobs = arg->getValue();
-@@ -2070,6 +2098,23 @@ static void setConfigs(Ctx &ctx, opt::InputArgList &ar
+@@ -2070,6 +2099,23 @@ static void setConfigs(Ctx &ctx, opt::InputArgList &ar
        ErrAlways(ctx) << "cannot open --why-extract= file " << ctx.arg.whyExtract
                       << ": " << e.message();
    }
@@ -120,7 +134,7 @@ Index: lld/ELF/Driver.cpp
  }
  
  static bool isFormatBinary(Ctx &ctx, StringRef s) {
-@@ -2234,7 +2279,7 @@ void LinkerDriver::inferMachineType() {
+@@ -2234,7 +2280,7 @@ void LinkerDriver::inferMachineType() {
  }
  
  // Parse -z max-page-size=<value>. The default value is defined by
@@ -129,7 +143,7 @@ Index: lld/ELF/Driver.cpp
  static uint64_t getMaxPageSize(Ctx &ctx, opt::InputArgList &args) {
    uint64_t val = args::getZOptionValue(args, OPT_z, "max-page-size",
                                         ctx.target->defaultMaxPageSize);
-@@ -2252,7 +2297,7 @@ static uint64_t getMaxPageSize(Ctx &ctx, opt::InputArg
+@@ -2252,7 +2298,7 @@ static uint64_t getMaxPageSize(Ctx &ctx, opt::InputArg
  }
  
  // Parse -z common-page-size=<value>. The default value is defined by
@@ -138,7 +152,7 @@ Index: lld/ELF/Driver.cpp
  static uint64_t getCommonPageSize(Ctx &ctx, opt::InputArgList &args) {
    uint64_t val = args::getZOptionValue(args, OPT_z, "common-page-size",
                                         ctx.target->defaultCommonPageSize);
-@@ -2272,6 +2317,16 @@ static uint64_t getCommonPageSize(Ctx &ctx, opt::Input
+@@ -2272,6 +2318,16 @@ static uint64_t getCommonPageSize(Ctx &ctx, opt::Input
    return val;
  }
  
@@ -155,7 +169,7 @@ Index: lld/ELF/Driver.cpp
  // Parses --image-base option.
  static std::optional<uint64_t> getImageBase(Ctx &ctx, opt::InputArgList &args) {
    // Because we are using `ctx.arg.maxPageSize` here, this function has to be
-@@ -3435,6 +3490,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
+@@ -3435,6 +3491,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
    // optimizations such as DATA_SEGMENT_ALIGN in linker scripts. LLD's use of it
    // is limited to writing trap instructions on the last executable segment.
    ctx.arg.commonPageSize = getCommonPageSize(ctx, args);
