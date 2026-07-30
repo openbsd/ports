@@ -1,7 +1,8 @@
 COMMENT=		boustrophedon text reader
 
+REVISION=		6
+
 DISTNAME=		boust-0.161
-REVISION =		5
 
 CATEGORIES=		textproc
 MAINTAINER=		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -14,6 +15,7 @@ PERMIT_PACKAGE=		Yes
 SITES=			https://spacehopper.org/mirrors/
 
 MODULES=		x11/tk
+MODTK_VERSION=		8.6
 RUN_DEPENDS=		${MODTK_RUN_DEPENDS}
 
 NO_BUILD=		Yes
