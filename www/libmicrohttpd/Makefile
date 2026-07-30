@@ -1,5 +1,5 @@
 COMMENT =	tiny embeddable httpd library written in C
-DISTNAME =	libmicrohttpd-1.0.6
+DISTNAME =	libmicrohttpd-1.0.8
 CATEGORIES =	www
 
 SHARED_LIBS +=	microhttpd                0.7 # 74.3
@@ -23,6 +23,7 @@ BUILD_DEPENDS =	${TEST_DEPENDS}
 
 LIB_DEPENDS =	security/gnutls
 
+TEST_FLAGS =	LDFLAGS=-lexecinfo
 TEST_DEPENDS =	misc/zzuf \
 		net/curl \
 		net/socat
