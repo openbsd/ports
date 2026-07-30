@@ -1,5 +1,4 @@
 COMMENT =		command-line interface for the hledger accounting system
-REVISION =		0
 
 CATEGORIES =		productivity
 
@@ -16,8 +15,7 @@ LIB_DEPENDS =		converters/libiconv \
 
 MODULES =		devel/cabal
 MODCABAL_STEM =		hledger
-MODCABAL_VERSION =	1.51.2
-MODCABAL_REVISION =	1
+MODCABAL_VERSION =	1.52.1
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/embeddedfiles/hledger.1 ${PREFIX}/man/man1

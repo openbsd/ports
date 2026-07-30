@@ -2,14 +2,14 @@ MODCABAL_MANIFEST	= \
 	Decimal	0.5.2	0	\
 	Diff	1.0.2	0	\
 	Glob	0.10.2	3	\
-	OneTuple	0.4.2.1	0	\
+	OneTuple	0.4.3	0	\
 	Only	0.1	2	\
-	QuickCheck	2.16.0.0	0	\
+	QuickCheck	2.18.0.0	0	\
 	RSA	2.4.1	2	\
 	SHA	1.6.4.4	0	\
 	StateVar	1.2.2	0	\
-	aeson	2.2.3.0	4	\
-	aeson-pretty	0.8.10	0	\
+	aeson	2.2.5.0	0	\
+	aeson-pretty	0.8.11	0	\
 	ansi-terminal	1.1.5	0	\
 	ansi-terminal-types	1.1.3	0	\
 	appar	0.1.8	0	\
@@ -18,13 +18,13 @@ MODCABAL_MANIFEST	= \
 	assoc	1.1.1	2	\
 	async	2.2.6	0	\
 	attoparsec	0.14.4	6	\
-	attoparsec-aeson	2.2.2.0	0	\
+	attoparsec-aeson	2.2.2.0	1	\
 	authenticate-oauth	1.7	1	\
 	base-compat	0.15.0	0	\
 	base-orphans	0.9.4	0	\
 	base16	1.0	4	\
 	base16-bytestring	1.0.2.0	1	\
-	base64	1.0	2	\
+	base64	1.0	3	\
 	base64-bytestring	1.2.1.0	1	\
 	basement	0.0.16	0	\
 	bifunctors	5.6.3	1	\
@@ -41,92 +41,91 @@ MODCABAL_MANIFEST	= \
 	character-ps	0.1	0	\
 	clock	0.8.4	0	\
 	cmdargs	0.10.22	0	\
-	colour	2.3.6	0	\
+	colour	2.3.7	0	\
 	comonad	5.0.10	0	\
 	contravariant	1.5.6	0	\
 	control-monad-free	0.6.2	0	\
 	cookie	0.5.1	0	\
 	crypto-api	0.13.3	1	\
 	crypto-pubkey-types	0.4.3	0	\
-	crypton	1.0.6	0	\
+	cryptohash-md5	0.11.101.0	6	\
+	crypton	1.1.4	0	\
 	crypton-asn1-encoding	0.10.0	0	\
 	crypton-asn1-parse	0.10.0	0	\
 	crypton-asn1-types	0.4.1	0	\
-	crypton-connection	0.4.5	1	\
+	crypton-connection	0.4.6	1	\
 	crypton-pem	0.3.0	0	\
 	crypton-socks	0.6.2	0	\
-	crypton-x509	1.8.0	0	\
-	crypton-x509-store	1.8.0	0	\
-	crypton-x509-system	1.8.0	0	\
-	crypton-x509-validation	1.8.0	0	\
+	crypton-x509	1.9.1	0	\
+	crypton-x509-store	1.9.0	0	\
+	crypton-x509-system	1.9.0	0	\
+	crypton-x509-validation	1.9.1	1	\
 	csv	0.1.2	0	\
 	data-default	0.8.0.2	0	\
 	data-default-class	0.2.0.0	0	\
 	data-fix	0.3.4	2	\
 	distributive	0.6.3	0	\
 	dlist	1.0	2	\
-	doclayout	0.5.0.1	0	\
-	ech-config	0.0.1	0	\
-	emojis	0.1.4.1	0	\
-	encoding	0.10.2	0	\
+	doclayout	0.5.0.3	0	\
+	ech-config	0.0.1	1	\
+	emojis	0.1.5	0	\
+	encoding	0.10.3	0	\
 	entropy	0.4.1.11	1	\
-	extensible-exceptions	0.1.1.4	0	\
 	extra	1.8.1	0	\
 	file-embed	0.0.16.0	0	\
-	generically	0.1.1	5	\
 	githash	0.1.7.0	0	\
-	half	0.3.3	1	\
+	half	0.3.3	2	\
 	hashable	1.5.1.0	0	\
 	hashtables	1.4.2	0	\
-	hledger-lib	1.51.2	0	\
+	hledger-lib	1.52.1	0	\
 	hourglass	0.2.12	1	\
-	hpke	0.0.0	0	\
+	hpke	0.1.0	0	\
 	hsc2hs	0.68.10	5	\
 	html	1.0.1.2	0	\
-	http-api-data	0.7	0	\
+	http-api-data	0.7	1	\
 	http-client	0.7.19	0	\
-	http-client-tls	0.3.6.4	2	\
-	http-types	0.12.4	0	\
-	indexed-traversable	0.1.4	1	\
-	indexed-traversable-instances	0.1.2	1	\
+	http-client-tls	0.4.0	0	\
+	http-types	0.12.5	0	\
+	indexed-traversable	0.1.5	0	\
+	indexed-traversable-instances	0.1.2.1	0	\
 	integer-conversion	0.1.1	2	\
 	integer-logarithms	1.0.5	0	\
 	iproute	1.7.15	0	\
-	lucid	2.11.20250303	0	\
+	lucid	2.11.20260427	0	\
 	math-functions	0.3.4.4	0	\
-	megaparsec	9.7.0	1	\
+	megaparsec	9.7.1	0	\
 	memory	0.18.0	1	\
 	microlens	0.5.0.0	0	\
-	microlens-th	0.4.3.18	0	\
-	mime-types	0.1.2.1	0	\
-	mmorph	1.2.2	1	\
-	modern-uri	0.3.6.1	4	\
+	microlens-th	0.4.3.18	1	\
+	mime-types	0.1.2.2	0	\
+	mlkem	0.2.2.0	0	\
+	mmorph	1.2.2	2	\
+	modern-uri	0.3.6.1	5	\
 	monad-control	1.0.3.1	0	\
 	mtl-compat	0.2.2	0	\
 	network	3.2.8.0	0	\
-	network-byte-order	0.1.7	0	\
+	network-byte-order	0.1.8	0	\
 	network-uri	2.6.4.2	1	\
-	old-locale	1.0.0.7	2	\
-	old-time	1.1.0.5	0	\
-	optparse-applicative	0.19.0.0	0	\
+	optparse-applicative	0.19.0.0	1	\
 	parser-combinators	1.3.1	0	\
 	pretty-simple	4.1.4.0	0	\
-	prettyprinter	1.7.1	0	\
-	prettyprinter-ansi-terminal	1.1.3	0	\
+	prettyprinter	1.7.2	0	\
+	prettyprinter-ansi-terminal	1.1.4	0	\
 	primitive	0.9.1.0	1	\
 	profunctors	5.6.3	0	\
 	quote-quot	0.2.1.0	0	\
+	ram	0.22.0	0	\
 	random	1.3.1	0	\
 	reflection	2.1.9	1	\
 	regex-base	0.94.0.3	0	\
 	regex-compat	0.95.2.2	0	\
 	regex-posix	0.96.0.2	0	\
 	regex-tdfa	1.3.2.5	0	\
-	req	3.13.4	7	\
+	req	3.13.4	10	\
 	retry	0.9.3.1	0	\
 	safe	0.3.21	1	\
 	scientific	0.3.8.1	0	\
-	semialign	1.3.1	2	\
+	semialign	1.4	0	\
 	semigroupoids	6.0.2	1	\
 	serialise	0.2.6.1	5	\
 	shakespeare	2.2.0	0	\
@@ -136,32 +135,32 @@ MODCABAL_MANIFEST	= \
 	strict	0.5.1	1	\
 	tabular	0.2.2.8	1	\
 	tagged	0.8.10	1	\
-	tasty	1.5.3	2	\
+	tasty	1.5.4	0	\
 	tasty-hunit	0.10.2	0	\
 	temporary	1.3	0	\
 	terminal-size	0.3.4	1	\
-	text-ansi	0.3.0.1	2	\
+	text-ansi	0.3.0.1	3	\
 	text-builder-linear	0.1.3	0	\
-	text-iso8601	0.1.1	2	\
+	text-iso8601	0.1.1.1	0	\
 	text-short	0.1.6.1	0	\
 	th-abstraction	0.7.2.0	0	\
 	th-compat	0.1.7	0	\
 	th-lift	0.8.7	0	\
-	these	1.2.1	2	\
-	time-compat	1.9.8	0	\
+	these	1.2.1	3	\
+	time-compat	1.9.9	1	\
 	time-hourglass	0.3.0	0	\
 	timeit	2.0	2	\
-	tls	2.2.2	0	\
-	transformers-base	0.4.6	0	\
+	tls	2.4.3	0	\
+	transformers-base	0.4.6.1	0	\
 	transformers-compat	0.7.2	0	\
 	uglymemo	0.1.0.1	0	\
-	unix-time	0.4.17	0	\
+	unix-time	0.5.0	0	\
 	unliftio-core	0.2.1.0	4	\
 	unordered-containers	0.2.21	2	\
 	utf8-string	1.0.2	0	\
 	utility-ht	0.0.17.2	0	\
-	uuid-types	1.0.6	3	\
-	vector	0.13.2.0	2	\
+	uuid-types	1.0.6.1	0	\
+	vector	0.13.2.0	5	\
 	vector-stream	0.1.0.1	4	\
 	witherable	0.5	2	\
 	wizards	1.0.3	3	\
