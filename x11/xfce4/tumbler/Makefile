@@ -1,8 +1,7 @@
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_PROJECT=	tumbler
-XFCE_VERSION=	4.20.1
-REVISION=	0
+XFCE_VERSION=	4.20.2
 
 SHARED_LIBS+=	tumbler-1 1.0
 
@@ -17,11 +16,11 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 gsm gthread-2.0
 WANTLIB += harfbuzz iconv intl jpeg lcms2 lzma m mp3lame nghttp2
 WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_libressl ogg openjp2 opus
 WANTLIB += pcre2-8 pixman-1 png poppler poppler-glib
-WANTLIB += speex ssl swresample swscale theoradec theoraenc tiff
+WANTLIB += speex ssl swresample swscale theoraenc tiff
 WANTLIB += unibreak va va-drm va-x11 vidstab vorbis vorbisenc
 WANTLIB += vpx x264 x265 xcb xcb-dri3 xcb-render xcb-shm xfce4util
 WANTLIB += xml2 xvidcore z zimg zstd
-WANTLIB += graphite2 sharpyuv webp webpmux
+WANTLIB += graphite2 sharpyuv webp webpmux SvtAv1Enc mpg123
 
 COMPILER =		base-clang ports-gcc base-gcc
 
