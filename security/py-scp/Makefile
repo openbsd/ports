@@ -1,9 +1,8 @@
 COMMENT =		scp module for Paramiko
 
-MODPY_DISTV =		0.15.0
+MODPY_DISTV =		0.16.1
 DISTNAME =		scp-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		security
 
