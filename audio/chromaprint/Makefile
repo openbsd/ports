@@ -1,6 +1,6 @@
 COMMENT =		audio fingerprint extraction library
 
-V =			1.6.0
+V =			1.6.1
 DISTNAME =		chromaprint-$V
 
 SHARED_LIBS =		chromaprint               3.1
