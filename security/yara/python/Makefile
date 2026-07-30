@@ -2,7 +2,7 @@ COMMENT =	Python extension that gives access to YARA
 
 GH_PROJECT =	yara-python
 
-MODPY_DISTV =	4.5.2
+MODPY_DISTV =	4.5.5
 PKGNAME =	py-yara-${MODPY_DISTV}
 GH_TAGNAME =	v${MODPY_DISTV}
 
