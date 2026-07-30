@@ -2,37 +2,38 @@ MODCABAL_MANIFEST	= \
 	DAV	1.3.4	0	\
 	HUnit	1.6.2.0	0	\
 	IfElse	0.85	0	\
-	OneTuple	0.4.2.1	0	\
+	OneTuple	0.4.3	0	\
 	QuickCheck	2.16.0.0	0	\
 	SafeSemaphore	0.10.1	1	\
 	StateVar	1.2.2	0	\
 	adjunctions	4.4.4	0	\
-	aeson	2.2.3.0	4	\
-	alex	3.5.4.0	0	\
+	aeson	2.2.5.0	0	\
+	alex	3.5.4.2	0	\
 	ansi-terminal	1.1.5	0	\
 	ansi-terminal-types	1.1.3	0	\
 	appar	0.1.8	0	\
 	assoc	1.1.1	2	\
 	async	2.2.6	0	\
 	attoparsec	0.14.4	6	\
-	attoparsec-aeson	2.2.2.0	0	\
+	attoparsec-aeson	2.2.2.0	1	\
 	auto-update	0.2.6	0	\
 	aws	0.25.2	0	\
 	base-compat	0.14.1	0	\
 	base-orphans	0.9.4	0	\
 	base16	1.0	4	\
 	base16-bytestring	1.0.2.0	1	\
-	base64	1.0	2	\
+	base64	1.0	3	\
 	base64-bytestring	1.2.1.0	1	\
 	basement	0.0.16	0	\
 	bencode	0.6.1.1	0	\
 	bifunctors	5.6.3	1	\
-	bitvec	1.1.5.0	3	\
+	bitvec	1.1.6.0	0	\
+	blake3	0.3.1	0	\
 	blaze-builder	0.4.4.1	0	\
 	blaze-html	0.9.2.0	1	\
 	blaze-markup	0.8.3.0	2	\
 	bloomfilter	2.0.1.3	0	\
-	boring	0.2.2	1	\
+	boring	0.2.2.1	0	\
 	bsb-http-chunked	0.0.0.4	4	\
 	byteable	0.1.1	0	\
 	byteorder	1.0.4	0	\
@@ -44,7 +45,7 @@ MODCABAL_MANIFEST	= \
 	character-ps	0.1	0	\
 	clientsession	0.9.3.0	0	\
 	clock	0.8.4	0	\
-	colour	2.3.6	0	\
+	colour	2.3.7	0	\
 	comonad	5.0.10	0	\
 	concurrent-output	1.10.21	0	\
 	conduit	1.3.6.1	0	\
@@ -53,62 +54,62 @@ MODCABAL_MANIFEST	= \
 	contravariant	1.5.6	0	\
 	cookie	0.5.1	0	\
 	crypto-api	0.13.3	1	\
-	crypto-token	0.1.2	0	\
+	crypto-token	0.1.2	1	\
 	cryptohash-md5	0.11.101.0	6	\
 	cryptohash-sha1	0.11.101.0	6	\
 	crypton	1.0.6	0	\
 	crypton-asn1-encoding	0.10.0	0	\
 	crypton-asn1-parse	0.10.0	0	\
 	crypton-asn1-types	0.4.1	0	\
-	crypton-conduit	0.2.3	0	\
+	crypton-conduit	0.2.3	1	\
 	crypton-connection	0.4.5	1	\
 	crypton-pem	0.3.0	0	\
 	crypton-socks	0.6.2	0	\
-	crypton-x509	1.8.0	0	\
+	crypton-x509	1.8.0	1	\
 	crypton-x509-store	1.8.0	0	\
 	crypton-x509-system	1.8.0	0	\
-	crypton-x509-validation	1.8.0	0	\
+	crypton-x509-validation	1.8.0	1	\
 	css-text	0.1.3.0	0	\
 	data-default	0.8.0.2	0	\
 	data-default-class	0.2.0.0	0	\
 	data-fix	0.3.4	2	\
-	dec	0.0.6	1	\
+	dec	0.0.6	2	\
 	disk-free-space	0.1.0.1	3	\
 	distributive	0.6.3	0	\
 	dlist	1.0	2	\
 	easy-file	0.2.5	0	\
-	ech-config	0.0.1	0	\
+	ech-config	0.0.1	1	\
 	edit-distance	0.2.2.1	1	\
 	email-validate	2.3.2.21	0	\
+	encoding	0.10.3	0	\
 	entropy	0.4.1.11	1	\
 	fast-logger	3.2.6	0	\
 	feed	1.3.2.1	5	\
 	file-embed	0.0.16.0	0	\
 	file-io	0.2.0	0	\
-	filepath-bytestring	1.5.2.0.3	0	\
+	filepath-bytestring	1.5.2.0.5	0	\
 	free	5.2	8	\
-	generically	0.1.1	5	\
 	generics-sop	0.5.1.4	3	\
 	git-lfs	1.2.5	0	\
-	half	0.3.3	1	\
+	half	0.3.3	2	\
 	happy	2.2	0	\
 	happy-lib	2.2	0	\
 	hashable	1.5.1.0	0	\
 	hjsmin	0.2.1	0	\
-	hpke	0.0.0	0	\
+	hpke	0.0.0	1	\
 	hsc2hs	0.68.10	5	\
-	http-api-data	0.6.3	0	\
+	http-api-data	0.7	1	\
 	http-client	0.7.19	0	\
-	http-client-restricted	0.1.0	0	\
-	http-client-tls	0.3.6.4	2	\
-	http-conduit	2.3.9.1	0	\
+	http-client-restricted	0.1.1	0	\
+	http-client-tls	0.3.6.4	3	\
+	http-conduit	2.3.9.1	1	\
 	http-date	0.0.11	0	\
 	http-media	0.8.1.1	2	\
-	http-semantics	0.4.0	0	\
-	http-types	0.12.4	0	\
-	http2	5.4.0	0	\
-	indexed-traversable	0.1.4	1	\
-	indexed-traversable-instances	0.1.2	1	\
+	http-semantics	0.4.1	0	\
+	http-types	0.12.5	0	\
+	http2	5.4.3	0	\
+	indexed-traversable	0.1.5	0	\
+	indexed-traversable-instances	0.1.2.1	0	\
 	integer-conversion	0.1.1	2	\
 	integer-logarithms	1.0.5	0	\
 	invariant	0.6.5	0	\
@@ -120,13 +121,13 @@ MODCABAL_MANIFEST	= \
 	libyaml-clib	0.2.5	0	\
 	lift-type	0.1.2.0	0	\
 	lifted-base	0.2.3.12	0	\
-	magic	1.1	0	\
-	megaparsec	9.7.0	1	\
+	magic	1.1.2	0	\
+	megaparsec	9.8.1	0	\
 	memory	0.18.0	1	\
 	microlens	0.5.0.0	0	\
-	microlens-th	0.4.3.18	0	\
-	mime-types	0.1.2.1	0	\
-	mmorph	1.2.2	1	\
+	microlens-th	0.4.3.18	1	\
+	mime-types	0.1.2.2	0	\
+	mmorph	1.2.2	2	\
 	monad-control	1.0.3.1	0	\
 	monad-logger	0.3.42	0	\
 	monad-loops	0.4.3	0	\
@@ -134,81 +135,83 @@ MODCABAL_MANIFEST	= \
 	mountpoints	1.0.2	0	\
 	network	3.2.8.0	0	\
 	network-bsd	2.8.1.0	6	\
-	network-byte-order	0.1.7	0	\
+	network-byte-order	0.1.8	0	\
 	network-control	0.1.7	0	\
 	network-info	0.2.1	0	\
 	network-uri	2.6.4.2	1	\
 	old-locale	1.0.0.7	2	\
-	old-time	1.1.0.5	0	\
-	optparse-applicative	0.19.0.0	0	\
+	old-time	1.1.1.0	0	\
+	optparse-applicative	0.19.0.0	1	\
 	parallel	3.3.0.0	1	\
 	parser-combinators	1.3.1	0	\
 	path-pieces	0.2.1	1	\
 	persistent	2.18.1.0	0	\
 	persistent-sqlite	2.13.3.1	0	\
 	persistent-template	2.12.0.0	0	\
-	prettyprinter	1.7.1	0	\
-	prettyprinter-ansi-terminal	1.1.3	0	\
+	prettyprinter	1.7.2	0	\
+	prettyprinter-ansi-terminal	1.1.4	0	\
 	primitive	0.9.1.0	1	\
 	profunctors	5.6.3	0	\
-	psqueues	0.2.8.3	0	\
+	psqueues	0.2.8.3	2	\
+	ram	0.22.0	0	\
 	random	1.3.1	0	\
 	recv	0.1.1	0	\
 	reflection	2.1.9	1	\
 	regex-base	0.94.0.3	0	\
+	regex-compat	0.95.2.2	0	\
+	regex-posix	0.96.0.2	0	\
 	regex-tdfa	1.3.2.5	0	\
 	replace-megaparsec	1.5.0.1	0	\
-	resource-pool	0.5.0.0	0	\
+	resource-pool	0.5.0.1	0	\
 	resourcet	1.3.0	0	\
 	safe	0.3.21	1	\
 	safe-exceptions	0.1.7.4	1	\
 	sandi	0.5	1	\
 	scientific	0.3.8.1	0	\
-	securemem	0.1.10	0	\
-	semialign	1.3.1	2	\
+	semialign	1.4	0	\
 	semigroupoids	6.0.2	1	\
 	serialise	0.2.6.1	5	\
-	servant	0.20.3.0	2	\
+	servant	0.20.3.0	4	\
 	servant-client	0.20.3.0	2	\
 	servant-client-core	0.20.3.0	2	\
-	servant-server	0.20.3.0	1	\
+	servant-server	0.20.3.0	4	\
 	setenv	0.1.1.3	1	\
 	shakespeare	2.2.0	0	\
 	silently	1.2.5.4	0	\
 	simple-sendfile	0.2.32	0	\
-	singleton-bool	0.1.8	1	\
+	singleton-bool	0.1.8	2	\
 	skein	1.0.9.4	0	\
 	socks	0.6.1	0	\
-	some	1.0.6	2	\
+	some	1.1	0	\
 	sop-core	0.5.0.2	6	\
 	split	0.2.5	0	\
 	splitmix	0.1.3.2	0	\
-	stm-chans	3.0.0.9	0	\
+	stm-chans	3.0.0.11	0	\
 	streaming-commons	0.2.3.1	0	\
 	strict	0.5.1	1	\
-	syb	0.7.3	0	\
+	syb	0.7.4	0	\
 	tagged	0.8.10	1	\
 	tagsoup	0.14.8	0	\
-	tasty	1.5.3	2	\
+	tasty	1.5.4	0	\
 	tasty-hunit	0.10.2	0	\
-	tasty-quickcheck	0.11.1	4	\
+	tasty-quickcheck	0.11.1	5	\
 	tasty-rerun	1.1.20	2	\
 	terminal-size	0.3.4	1	\
-	text-iso8601	0.1.1	2	\
+	text-iso8601	0.1.1.1	0	\
 	text-short	0.1.6.1	0	\
 	th-abstraction	0.7.2.0	0	\
 	th-compat	0.1.7	0	\
 	th-lift	0.8.7	0	\
 	th-lift-instances	0.1.20	0	\
-	these	1.2.1	2	\
-	time-compat	1.9.8	0	\
+	these	1.2.1	3	\
+	time-compat	1.9.9	1	\
 	time-hourglass	0.3.0	0	\
 	time-locale-compat	0.1.1.5	0	\
-	time-manager	0.3.1.1	0	\
-	tls	2.2.2	0	\
-	tls-session-manager	0.0.8	0	\
+	time-manager	0.3.2	0	\
+	tls	2.2.2	1	\
+	tls-session-manager	0.0.9	0	\
 	torrent	10000.1.3	0	\
-	transformers-base	0.4.6	0	\
+	transformers-base	0.4.6.1	0	\
 	transformers-compat	0.7.2	0	\
 	typed-process	0.2.13.0	0	\
 	unbounded-delays	0.1.1.1	0	\
@@ -218,18 +221,18 @@ MODCABAL_MANIFEST	= \
 	unliftio-core	0.2.1.0	4	\
 	unordered-containers	0.2.21	2	\
 	utf8-string	1.0.2	0	\
-	uuid	1.3.16	3	\
-	uuid-types	1.0.6	3	\
-	vault	0.3.1.6	0	\
-	vector	0.13.2.0	2	\
-	vector-algorithms	0.9.1.0	0	\
+	uuid	1.3.16.1	0	\
+	uuid-types	1.0.6.1	0	\
+	vault	0.3.2.0	0	\
+	vector	0.13.2.0	5	\
+	vector-algorithms	0.9.1.0	1	\
 	vector-stream	0.1.0.1	4	\
 	wai	3.2.4	0	\
-	wai-app-static	3.1.9	0	\
+	wai-app-static	3.2.1	0	\
 	wai-extra	3.1.18	0	\
 	wai-logger	2.5.0	0	\
-	warp	3.4.12	1	\
-	warp-tls	3.4.13	1	\
+	warp	3.4.14	0	\
+	warp-tls	3.4.14	0	\
 	witherable	0.5	2	\
 	word8	0.1.3	0	\
 	xml-conduit	1.10.1.0	0	\
@@ -237,9 +240,9 @@ MODCABAL_MANIFEST	= \
 	xml-types	0.3.8	0	\
 	xss-sanitize	0.3.7.2	1	\
 	yaml	0.11.11.2	2	\
-	yesod	1.6.2.1	0	\
-	yesod-core	1.6.28.1	0	\
-	yesod-form	1.7.9.2	0	\
-	yesod-persistent	1.6.0.8	0	\
-	yesod-static	1.6.1.2	0	\
-	zlib	0.7.1.1	0	\
+	yesod	1.6.2.3	0	\
+	yesod-core	1.7.0.0	0	\
+	yesod-form	1.7.9.3	0	\
+	yesod-persistent	1.6.0.9	0	\
+	yesod-static	1.6.1.3	0	\
+	zlib	0.7.1.1	0
