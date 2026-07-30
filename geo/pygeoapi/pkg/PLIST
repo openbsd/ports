@@ -318,6 +318,8 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/static/img/
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/static/img/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/static/img/logo.png
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/static/img/pygeoapi.png
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/static/js/
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/static/js/default.js
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/_base.html
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/admin/
@@ -325,6 +327,8 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/admin/index.html
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/asyncapi.html
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/collections/
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/collections/collection.html
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/collections/coverage/
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/collections/coverage/index.html
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/collections/edr/
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/collections/edr/instance.html
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/templates/collections/edr/instances.html

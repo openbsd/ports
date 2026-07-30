@@ -1,6 +1,6 @@
 COMMENT =		OGC API server implementation
 
-MODPY_DISTV =	0.23.5
+MODPY_DISTV =	0.24.0
 DISTNAME =		pygeoapi-${MODPY_DISTV}
 
 CATEGORIES =		geo devel
