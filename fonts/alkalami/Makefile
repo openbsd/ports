@@ -4,9 +4,9 @@ MODFONT_FAMILY =	alkalami
 DISTNAME =		Alkalami-${V}
 PKGNAME =		alkalami-${V}
 CATEGORIES =		fonts
+REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/alkalami/
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

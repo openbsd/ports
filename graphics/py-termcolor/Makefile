@@ -4,13 +4,11 @@ MODPY_DISTV =	2.0.1
 
 DISTNAME =	termcolor-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://github.com/termcolor/termcolor/
-
-MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

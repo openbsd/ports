@@ -4,10 +4,9 @@ MODFONT_FAMILY =	doulos
 MODFONT_VERSION =	6.101
 DISTNAME =		DoulosSIL-${MODFONT_VERSION}
 CATEGORIES =		fonts
+REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/doulos/
-
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

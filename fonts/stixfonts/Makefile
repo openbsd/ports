@@ -2,6 +2,7 @@ COMMENT =	scientific, technical and mathematical fonts
 
 V =		2.13b171
 PKGNAME =	stixfonts-${V}
+REVISION =	0
 
 GH_ACCOUNT =	stipub
 GH_PROJECT =	stixfonts
@@ -10,8 +11,6 @@ GH_TAGNAME =	v${V}
 CATEGORIES =	fonts
 
 HOMEPAGE =	https://www.stixfonts.org/
-
-MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

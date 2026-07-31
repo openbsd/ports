@@ -3,13 +3,11 @@ COMMENT =		Unicode-based font for Devanagari script
 V =			1.204
 DISTNAME =		AnnapurnaSIL-$V
 PKGNAME =		annapurna-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://software.sil.org/annapurna/
-
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

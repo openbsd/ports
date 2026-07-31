@@ -2,10 +2,9 @@ COMMENT =	modernist Arabic typeface
 
 V =		1.3
 DISTNAME =	mada-${V}
+REVISION =	0
 
 MODFONT_FAMILY =	mada
-
-MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

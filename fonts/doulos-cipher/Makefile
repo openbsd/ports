@@ -2,12 +2,11 @@ COMMENT =		Cipher music notation
 
 DISTNAME =		DoulosSILCipher-1.020
 PKGNAME =		doulos-cipher-1.020
+REVISION =		0
 
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://software.sil.org/doulos-sil-cipher/
-
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

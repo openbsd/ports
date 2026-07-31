@@ -4,13 +4,11 @@ MODPY_DISTV =	0.23.0
 
 DISTNAME =	securesystemslib-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/secure-systems-lab/securesystemslib/
-
-MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

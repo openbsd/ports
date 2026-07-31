@@ -3,8 +3,7 @@ DISTNAME =	sysmon-0.93
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://puck.nether.net/sysmon/
-MAINTAINER =	George Rosamond <george@nycbug.org>
-REVISION =	4
+REVISION =	5
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -13,7 +12,6 @@ WANTLIB +=	c crypto curses pthread ssl
 
 SITES =		ftp://puck.nether.net/pub/jared/ \
 		https://mirrors.nycbug.org/pub/distfiles/
-
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		ac_cv_header_net_snmp_version_h=no

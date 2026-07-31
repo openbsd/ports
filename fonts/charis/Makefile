@@ -4,10 +4,9 @@ MODFONT_FAMILY =	charis
 MODFONT_VERSION =	6.101
 DISTNAME =		CharisSIL-${MODFONT_VERSION}
 CATEGORIES =		fonts
+REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/charis/
-
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

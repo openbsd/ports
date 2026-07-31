@@ -8,9 +8,7 @@ GH_PROJECT =	Jaldi
 GH_TAGNAME =	${MODFONT_VERSION}
 WRKSRC =	${WRKDIST}/Fonts
 
-REVISION =	1
-
-MAINTAINER =	George Rosamond <george@nycbug.org>
+REVISION =	2
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

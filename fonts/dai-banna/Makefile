@@ -5,10 +5,9 @@ COMMENT =		New Tai Lue Unicode characters
 DISTNAME =		DaiBannaSIL-$V
 PKGNAME =		dai-banna-$V
 CATEGORIES =		fonts
+REVISION =		0
 
 HOMEPAGE =		https://scripts.sil.org/DaiBannaSIL
-
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

@@ -4,13 +4,11 @@ MODPY_DISTV =	1.2.0
 
 DISTNAME =	in-toto-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://in-toto.io/
-
-MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

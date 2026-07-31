@@ -4,13 +4,11 @@ MODPY_DISTV =	13.1
 
 DISTNAME =		websockets-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://websockets.readthedocs.io/en/stable/
-
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # BSD3
 PERMIT_PACKAGE =	Yes

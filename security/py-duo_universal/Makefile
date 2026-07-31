@@ -3,11 +3,9 @@ COMMENT =		Duo Python two-factor authentication
 MODPY_DISTV =	2.0.3
 DISTNAME =		duo_universal-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		security sysutils
-
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # BSD3
 PERMIT_PACKAGE =	Yes

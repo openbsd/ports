@@ -1,15 +1,13 @@
 COMMENT =	passphrase generator using EFF's wordlists
 
 MODPY_DISTV=	0.1.5
-REVISION =		4
+REVISION =		5
 
 GH_ACCOUNT =	micahflee
 GH_PROJECT =	passphraseme
 GH_TAGNAME =	${MODPY_DISTV}
 
 CATEGORIES =	security
-
-MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # GPLv3 only
 # EFF wordlists: CC-BY 3.0

@@ -3,10 +3,9 @@ COMMENT =		Unicode Tagmukay Shifinagh script font
 DISTNAME =		Tagmukay-${V}
 PKGNAME =		tagmukay-${V}
 CATEGORIES =		fonts
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://software.sil.org/tagmukay/
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

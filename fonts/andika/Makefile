@@ -3,10 +3,9 @@ MODFONT_VERSION =	6.101
 COMMENT =		clear sans serif, Unicode-compliant font
 DISTNAME =		Andika-${MODFONT_VERSION}
 CATEGORIES =		fonts
+REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/andika/
-
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

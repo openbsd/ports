@@ -1,7 +1,7 @@
 COMMENT =	Serif Latin and Looped Thai typeface
 
 DISTNAME =	taviraj-0.20160412
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	cadsondemak
 GH_PROJECT =	taviraj
@@ -10,8 +10,6 @@ GH_COMMIT =	8bd077c195dccf3bfc4699ec6ae9c6909bdd03a5
 CATEGORIES =	fonts
 
 HOMEPAGE =	https://cadsondemak.github.io/taviraj/
-
-MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

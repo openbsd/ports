@@ -3,12 +3,11 @@ COMMENT=	file transport adapter for requests
 MODPY_DISTV=	2.1.0
 DISTNAME=	requests_file-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	www
 
 HOMEPAGE=	https://github.com/dashea/requests-file/
-
-MAINTAINER=	George Rosamond <george@nycbug.org>
 
 # Apache2
 PERMIT_PACKAGE=	Yes

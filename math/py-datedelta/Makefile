@@ -4,12 +4,11 @@ MODPY_DISTV =	1.4
 
 DISTNAME =		datedelta-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		math
 
 HOMEPAGE =		https://github.com/aaugustin/datedelta/
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # BSD3
 PERMIT_PACKAGE =	Yes

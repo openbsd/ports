@@ -2,7 +2,7 @@ COMMENT =	open-source Grotesque sans-serif typeface family
 
 # version numbers listed in README.md
 DISTNAME =	chivo-1.007
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	fonts
 
@@ -11,7 +11,6 @@ GH_PROJECT =	Chivo
 GH_COMMIT =	d2256458207fadf0d53499caf0af16d884a2418a
 
 HOMEPAGE =	https://www.omnibus-type.com/fonts/chivo/
-MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

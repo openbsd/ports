@@ -4,10 +4,9 @@ MODFONT_FAMILY =	abyssinica
 MODFONT_VERSION =	2.100
 DISTNAME =		AbyssinicaSIL-${MODFONT_VERSION}
 CATEGORIES =		fonts
+REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/abyssinica/
-
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes

@@ -2,14 +2,12 @@ COMMENT =		Python library for interacting with Duo APIs
 
 MODPY_DISTV =	4.4.0
 
-REVISION =		5
+REVISION =		6
 
 DISTNAME =		duo_client-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		security sysutils
-
-MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # BSD3/Apache2
 PERMIT_PACKAGE =	Yes

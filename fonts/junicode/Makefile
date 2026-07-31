@@ -6,8 +6,7 @@ MODFONT_VERSION =	1.003
 GH_ACCOUNT =	psb1558
 GH_PROJECT =	Junicode-font
 GH_TAGNAME =	v${MODFONT_VERSION}
-
-MAINTAINER =	George Rosamond <george@nycbug.org>
+REVISION =	0
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
