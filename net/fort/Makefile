@@ -2,6 +2,7 @@ COMMENT =		RPKI "relying party" software
 
 V =			1.6.8
 DISTNAME =		fort-$V
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -21,12 +22,12 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-WANTLIB +=		c crypto execinfo pthread
-WANTLIB +=		curl jansson xml2
+WANTLIB += c crypto curl execinfo jansson microhttpd pthread xml2
 
 LIB_DEPENDS =		devel/jansson \
 			net/curl \
-			textproc/libxml
+			textproc/libxml \
+			www/libmicrohttpd
 
 RUN_DEPENDS =		net/rsync
 
