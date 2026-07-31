@@ -618,6 +618,7 @@ include/qgis/qgsfloatingwidget.h
 include/qgis/qgsfocuskeeper.h
 include/qgis/qgsfocuswatcher.h
 include/qgis/qgsfontbutton.h
+include/qgis/qgsfontcombobox.h
 include/qgis/qgsfontmanager.h
 include/qgis/qgsfonttextureatlasgenerator.h
 include/qgis/qgsfontutils.h
