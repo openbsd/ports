@@ -1,0 +1,14 @@
+Drop upstream/linux versions from xcb .so for dlopen(3) to find them
+
+Index: Telegram/lib_base/base/platform/linux/base_linux_xcb_library.cpp
+--- Telegram/lib_base/base/platform/linux/base_linux_xcb_library.cpp.orig
++++ Telegram/lib_base/base/platform/linux/base_linux_xcb_library.cpp
+@@ -11,7 +11,7 @@
+ namespace base::Platform::XCB::Library {
+ 
+ void *LoadSymbol(const char *name) {
+-	static const auto Handle = LoadLibrary("libxcb.so.1", RTLD_NODELETE);
++	static const auto Handle = LoadLibrary("libxcb.so", RTLD_NODELETE);
+ 	return Handle ? LoadSymbolGeneric(Handle, name) : nullptr;
+ }
+ 

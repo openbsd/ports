@@ -37,8 +37,10 @@ WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_strings
 WANTLIB += ada avcodec avfilter avformat avutil c crypto dispatch
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 hunspell-1.7 jpeg lz4
 WANTLIB += m minizip openal protobuf-lite qrcodegencpp rnnoise
-WANTLIB += swresample swscale tg_owt xcb xcb-keysyms xcb-record
-WANTLIB += xcb-screensaver xxhash z
+WANTLIB += swresample swscale tg_owt xxhash z
+
+# dlopen()ed
+WANTLIB += xcb xcb-keysyms xcb-record xcb-screensaver
 
 # C++20
 COMPILER =		base-clang ports-gcc

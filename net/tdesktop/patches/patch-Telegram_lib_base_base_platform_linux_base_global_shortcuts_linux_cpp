@@ -1,0 +1,16 @@
+Drop upstream/linux versions from xcb-{record,keysyms}.so for dlopen(3) to find them
+
+Index: Telegram/lib_base/base/platform/linux/base_global_shortcuts_linux.cpp
+--- Telegram/lib_base/base/platform/linux/base_global_shortcuts_linux.cpp.orig
++++ Telegram/lib_base/base/platform/linux/base_global_shortcuts_linux.cpp
+@@ -126,8 +126,8 @@ int (*xcb_is_private_keypad_key)(xcb_keysym_t keysym);
+ 
+ [[nodiscard]] bool Resolve() {
+ 	static const auto Result = [] {
+-		const auto record = LoadLibrary("libxcb-record.so.0", RTLD_NODELETE);
+-		const auto keysyms = LoadLibrary("libxcb-keysyms.so.1",
++		const auto record = LoadLibrary("libxcb-record.so", RTLD_NODELETE);
++		const auto keysyms = LoadLibrary("libxcb-keysyms.so",
+ 			RTLD_NODELETE);
+ 		return record
+ 			&& keysyms

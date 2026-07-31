@@ -4,7 +4,19 @@ inline 'using Fn = std::function<Signature>;' to fix the build:
 Index: Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp
 --- Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp.orig
 +++ Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp
-@@ -139,7 +139,7 @@ rpl::lifetime InstallEventHandler(
+@@ -56,6 +56,11 @@ SharedConnection::SharedConnection()
+ 
+ xcb_connection_t *GetConnectionFromQt() {
+ #if defined QT_FEATURE_xcb && QT_CONFIG(xcb)
++	// If we failed to load libxcb, we will crash anyway
++	static const auto xcb_connect = LoadSymbol("xcb_connect");
++	if (!xcb_connect) {
++		return nullptr;
++	}
+ #if QT_VERSION >= QT_VERSION_CHECK(6, 2, 0)
+ 	using namespace QNativeInterface;
+ 	const auto native = qApp->nativeInterface<QX11Application>();
+@@ -142,7 +147,7 @@ rpl::lifetime InstallEventHandler(
  		}
  	}
  
