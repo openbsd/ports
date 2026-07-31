@@ -1,6 +1,6 @@
 COMMENT =		robust, ubiquitous and massively scalable messaging platform
 
-V =			26.04
+V =			26.07
 BOOTSTRAP_V =		5.3.8
 DIST_TUPLE +=		github processone ejabberd ${V} .
 
@@ -43,7 +43,8 @@ MODERL_USE_REBAR3 =	Yes
 # jiffy and stringprep uses not specified version of C++
 COMPILER=       	base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS =		devel/rebar3
+BUILD_DEPENDS =		devel/rebar3 \
+			devel/gettext,-tools
 LIB_DEPENDS =		graphics/gd \
 			graphics/libwebp \
 			graphics/png \

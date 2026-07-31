@@ -30,9 +30,9 @@ SHA256 (hex_modules/sqlite3-1.1.15.tar) = PAuk4TMiwq1J3k4t3SgxE2at3lS+ro26nZ44iP
 SHA256 (hex_modules/stringprep-1.0.34.tar) = J+eOo3GIF2TgVvvoRdOtMEdA/14xMbwfOKZvC6qMm0c=
 SHA256 (hex_modules/stun-1.2.22.tar) = NAi0sR1SN6CI9TsmCgaUDDCxb0pICUiS1qkgThZDGIo=
 SHA256 (hex_modules/verl-1.1.1.tar) = CSXlHNkqCovicXZbAkMLLiz/isMO8k0SO9DVhRHo+xg=
-SHA256 (hex_modules/xmpp-1.13.3.tar) = BWSKpNvM/uYqqnlLKSowWEY50DyR9cCGa+jDQ0tqb0g=
+SHA256 (hex_modules/xmpp-1.13.4.tar) = SzH/TjBtpKkwzgZ1/tTzw6+D9rOalgnootR0ffvq4NQ=
 SHA256 (hex_modules/yconf-1.0.23.tar) = JbTft1MoAmrKp3TPXG+4fUi1XuvOYw3aozYkQdrDFDc=
-SHA256 (processone-ejabberd-26.04.tar.gz) = d96xBTl4rpeQ+Qm3tXOsYca5TXxGWoTFtWVoKS1J5H0=
+SHA256 (processone-ejabberd-26.07.tar.gz) = ey5O/i1chn0s7ZyxORcxxea5rM1vFm7HHnNKOul4E9c=
 SIZE (bootstrap-5.3.8-dist.zip) = 1500314
 SIZE (erlydtl-erlydtl-0.15.0.tar.gz) = 120544
 SIZE (hex_modules/cache_tab-1.0.34.tar) = 23552
@@ -65,6 +65,6 @@ SIZE (hex_modules/sqlite3-1.1.15.tar) = 1679872
 SIZE (hex_modules/stringprep-1.0.34.tar) = 91136
 SIZE (hex_modules/stun-1.2.22.tar) = 43008
 SIZE (hex_modules/verl-1.1.1.tar) = 15360
-SIZE (hex_modules/xmpp-1.13.3.tar) = 390144
+SIZE (hex_modules/xmpp-1.13.4.tar) = 392192
 SIZE (hex_modules/yconf-1.0.23.tar) = 22016
-SIZE (processone-ejabberd-26.04.tar.gz) = 2936092
+SIZE (processone-ejabberd-26.07.tar.gz) = 3008136

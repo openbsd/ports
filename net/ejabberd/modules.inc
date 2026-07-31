@@ -30,5 +30,5 @@ MODERL_MODULES =	cache_tab		1.0.34 \
 			sqlite3			1.1.15 \
 			stringprep		1.0.34 \
 			stun			1.2.22 \
-			xmpp			1.13.3 \
+			xmpp			1.13.4 \
 			yconf			1.0.23
