@@ -47,3 +47,5 @@ share/aerc/templates/quoted_reply
 share/applications/aerc.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 @tag update-desktop-database
+share/icons/hicolor/scalable/apps/aerc.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor

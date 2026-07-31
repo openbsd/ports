@@ -4,16 +4,14 @@ ONLY_FOR_ARCHS = aarch64 arm amd64 i386
 COMMENT =	terminal email client
 
 MODGO_MODNAME =	git.sr.ht/~rjarry/aerc
-MODGO_VERSION =	v0.0.0-20250828093418-5549850facc2
+MODGO_VERSION =	v0.0.0-20260728163848-c2f86b7abde3
 
-V =		0.21.0
+V =		0.22.0
 DISTNAME =	aerc-$V
 
 CATEGORIES =	mail
 
 HOMEPAGE =	https://aerc-mail.org
-
-MAINTAINER =	Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE = Yes
@@ -27,7 +25,10 @@ USE_GMAKE =	yes
 BUILD_DEPENDS =	converters/base64 \
 		textproc/scdoc
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+4,-guic
+
+TEST_DEPENDS =	security/gnupg
 
 FLAVORS =	notmuch
 FLAVOR ?=
@@ -66,6 +67,14 @@ do-install:
 post-install:
 	chmod +x ${PREFIX}/libexec/aerc/filters/*
 	cd ${PREFIX}/libexec/aerc/filters && ln -s html html-unsafe
+
+# needs network
+do-test:
+	# One test fails due to filters/vectors/wrap-asciiart.expected being
+	# missing as it is not included in the source tarball.
+	chmod +x ${WRKSRC}/filters/{test.sh,calendar}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${MAKE_FLAGS} tests LANG=C.UTF-8
 
 .include "modules.inc"
 
