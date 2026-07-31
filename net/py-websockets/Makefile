@@ -1,27 +1,30 @@
-COMMENT =	Python library for building WebSocket servers and clients
+COMMENT=	Python library for building WebSocket servers and clients
 
-MODPY_DISTV =	13.1
+MODPY_DISTV=	17.0
+GH_ACCOUNT=	python-websockets
+GH_PROJECT=	websockets
+GH_TAGNAME=	${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-DISTNAME =		websockets-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		2
+CATEGORIES=	net
 
-CATEGORIES =		net
+# https://github.com/python-websockets/websockets
+# https://websockets.readthedocs.io/en/stable/project/changelog.html
+HOMEPAGE=	https://websockets.readthedocs.io/en/stable/
 
-HOMEPAGE =		https://websockets.readthedocs.io/en/stable/
+# BSD
+PERMIT_PACKAGE=	Yes
 
-# BSD3
-PERMIT_PACKAGE =	Yes
+WANTLIB=	pthread
 
-WANTLIB +=		pthread
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
-MODULES =		lang/python
+PORTHOME=	${WRKDIR}
+TEST_DEPENDS=	security/mitmproxy \
+		devel/py-trio
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-# some test-related files are missing from the sdist on pypi; they are
-# present in github and mostly work
-NO_TEST =		Yes
+# needs unported https://pypi.org/project/python-socks/
+MODPY_PYTEST_ARGS=	-k 'not SocksProxyClientTests'
 
 .include <bsd.port.mk>
