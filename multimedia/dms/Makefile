@@ -4,6 +4,7 @@ CATEGORIES =		multimedia net
 MODGO_MODNAME =		github.com/anacrolix/dms
 MODGO_VERSION =		v1.8.0
 DISTNAME =		dms-${MODGO_VERSION}
+REVISION =		0
 
 HOMEPAGE =		https://github.com/anacrolix/dms
 

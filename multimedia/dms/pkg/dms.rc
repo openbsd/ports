@@ -2,6 +2,7 @@
 
 daemon="${TRUEPREFIX}/bin/dms"
 daemon_user="_dms"
+daemon_logger="daemon.info"
 
 . /etc/rc.d/rc.subr
 
