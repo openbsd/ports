@@ -1,8 +1,7 @@
 COMMENT =	modular and extensible wayland compositor
 
-V =		0.10.1
+V =		0.11.0
 GH_ACCOUNT =	WayfireWM
-REVISION =	0
 
 DISTNAME =	wayfire-${V}
 
@@ -14,8 +13,9 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 # git submodules when not building a release
-DIST_TUPLE +=	github ${GH_ACCOUNT} wf-utils 3ef27d1f76b5f3d1f34305bff12b3174e81727c2 subprojects/wf-utils
-DIST_TUPLE +=	github ${GH_ACCOUNT} wf-touch 093d8943df03cc8a2667990a065513c1bf2b57e0 subprojects/wf-touch
+DIST_TUPLE +=	github ${GH_ACCOUNT} wf-utils 329c3ff01724d82947f61c45332f75d3534e8454 subprojects/wf-utils
+DIST_TUPLE +=	github ${GH_ACCOUNT} wf-touch d7ae5e7fa4de9536e2de2af74f168f981eb8a77a subprojects/wf-touch
+DIST_TUPLE +=	github ${GH_ACCOUNT} wf-json 70039e13cdeaebd8ec498ed30bf5ab91c2e313ec subprojects/wf-json
 
 SITES =		https://github.com/WayfireWM/wayfire/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.xz
@@ -26,8 +26,10 @@ HOMEPAGE =	https://wayfire.org
 COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/meson wayland/wlroots
+MODWLROOTS_VERSION=	0.20
 BUILD_DEPENDS =	graphics/glm \
 		devel/cmake/core \
+		devel/gettext,-tools \
 		wayland/wayland-protocols
 
 # include/wayfire/touch/touch.hpp needs glm/vec2.hpp
@@ -46,7 +48,7 @@ LIB_DEPENDS =	devel/pango \
 		wayland/libevdev-openbsd \
 		wayland/libinput-openbsd \
 		wayland/wayland \
-		wayland/wf-config \
+		wayland/wf-config>=0.11 \
 		x11/xkbcommon
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GLESv2 c cairo evdev execinfo

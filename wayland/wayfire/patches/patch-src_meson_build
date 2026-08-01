@@ -3,16 +3,16 @@
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -65,7 +65,7 @@ wayfire_sources = ['geometry.cpp',
-                    'output/workspace-impl.cpp']
+@@ -67,7 +67,7 @@ wayfire_sources = ['geometry.cpp',
  
+ json_flags = json.partial_dependency(compile_args: true, includes: true, link_args: true)
  wayfire_dependencies = [wayland_server, wlroots, xkbcommon, libinput,
 -                       pixman, drm, egl, glesv2, glm, wf_protos, libdl,
 +                       pixman, drm, egl, glesv2, glm, wf_protos,
                         wfconfig, libinotify, backtrace, wfutils, xcb,
-                        wftouch, json, udev]
+                        wftouch, json_flags, udev]
  
-@@ -136,6 +136,7 @@ shared_module('default-config-backend', 'default-confi
+@@ -144,6 +144,7 @@ shared_module('default-config-backend', 'default-confi
      dependencies: wayfire_dependencies,
      include_directories: [wayfire_conf_inc, wayfire_api_inc],
      cpp_args: debug_arguments,

@@ -7,7 +7,7 @@ Index: meson.build
  xkbcommon      = dependency('xkbcommon')
 -libdl          = cpp.find_library('dl')
  udev           = dependency('libudev')
- json           = dependency('yyjson', required: false)
+ json           = subproject('wf-json', default_options: ['install_header=true']).get_variable('wfjson')
  
 @@ -137,7 +136,7 @@ backtrace = cpp.find_library('execinfo', required: fal
  wfutils = subproject('wf-utils').get_variable('wfutils')
