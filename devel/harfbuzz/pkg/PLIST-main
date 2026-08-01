@@ -29,6 +29,7 @@ include/harfbuzz/hb-graphite2.h
 include/harfbuzz/hb-map.h
 include/harfbuzz/hb-ot-color.h
 include/harfbuzz/hb-ot-deprecated.h
+include/harfbuzz/hb-ot-fetch.h
 include/harfbuzz/hb-ot-font.h
 include/harfbuzz/hb-ot-layout.h
 include/harfbuzz/hb-ot-math.h
@@ -45,6 +46,7 @@ include/harfbuzz/hb-set.h
 include/harfbuzz/hb-shape-plan.h
 include/harfbuzz/hb-shape.h
 include/harfbuzz/hb-style.h
+include/harfbuzz/hb-subset-depend.h
 include/harfbuzz/hb-subset-serialize.h
 include/harfbuzz/hb-subset.h
 include/harfbuzz/hb-unicode.h

@@ -1,35 +1,12 @@
 Index: src/harfbuzz-config.cmake.in
 --- src/harfbuzz-config.cmake.in.orig
 +++ src/harfbuzz-config.cmake.in
-@@ -8,19 +8,19 @@ set(HARFBUZZ_VERSION "@HARFBUZZ_VERSION@")
- add_library(harfbuzz::harfbuzz @HB_LIBRARY_TYPE@ IMPORTED)
- set_target_properties(harfbuzz::harfbuzz PROPERTIES
-   INTERFACE_INCLUDE_DIRECTORIES "@PACKAGE_INCLUDE_INSTALL_DIR@"
--  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz@HB_LIB_SUFFIX@")
-+  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBharfbuzz_VERSION}")
+@@ -6,7 +6,7 @@ set(HARFBUZZ_VERSION "@HARFBUZZ_VERSION@")
  
- add_library(harfbuzz::icu @HB_LIBRARY_TYPE@ IMPORTED)
- set_target_properties(harfbuzz::icu PROPERTIES
-   INTERFACE_INCLUDE_DIRECTORIES "@PACKAGE_INCLUDE_INSTALL_DIR@"
-   INTERFACE_LINK_LIBRARIES "harfbuzz::harfbuzz"
--  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-icu@HB_LIB_SUFFIX@")
-+  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-icu${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBharfbuzz-icu_VERSION}")
- 
- add_library(harfbuzz::subset @HB_LIBRARY_TYPE@ IMPORTED)
- set_target_properties(harfbuzz::subset PROPERTIES
-   INTERFACE_INCLUDE_DIRECTORIES "@PACKAGE_INCLUDE_INSTALL_DIR@"
-   INTERFACE_LINK_LIBRARIES "harfbuzz::harfbuzz"
--  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-subset@HB_LIB_SUFFIX@")
-+  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-subset${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBharfbuzz-subset_VERSION}")
- 
- # Only add the gobject library if it was built.
- if (@HB_HAVE_GOBJECT@)
-@@ -28,7 +28,7 @@ if (@HB_HAVE_GOBJECT@)
-   set_target_properties(harfbuzz::gobject PROPERTIES
-     INTERFACE_INCLUDE_DIRECTORIES "@PACKAGE_INCLUDE_INSTALL_DIR@"
-     INTERFACE_LINK_LIBRARIES "harfbuzz::harfbuzz"
--    IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-gobject@HB_LIB_SUFFIX@")
-+    IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-gobject${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBharfbuzz_VERSION}")
- endif ()
- 
- check_required_components(harfbuzz)
+ function(_harfbuzz_set_imported_library target library_name)
+   set_target_properties("${target}" PROPERTIES
+-    IMPORTED_LOCATION "@HB_LIB_DIR@/@HB_LIB_PREFIX@${library_name}@HB_LIB_SUFFIX@")
++    IMPORTED_LOCATION "@HB_LIB_DIR@/@HB_LIB_PREFIX@${library_name}${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBharfbuzz_VERSION}")
+   if (@HB_HAS_IMPORT_LIBRARY@)
+     set_target_properties("${target}" PROPERTIES
+       IMPORTED_IMPLIB "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_IMPLIB_PREFIX@${library_name}@HB_IMPLIB_SUFFIX@")
