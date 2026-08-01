@@ -1,10 +1,9 @@
 COMMENT =	configuration files library for wayfire
 
-V =		0.10.0
+V =		0.11.0
 DISTNAME =	wf-config-${V}
-REVISION =	3
 
-SHARED_LIBS +=	wf-config 0.2 # 0.0
+SHARED_LIBS +=	wf-config 1.0 # 0.0
 CATEGORIES =	wayland
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
