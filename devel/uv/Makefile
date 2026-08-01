@@ -3,13 +3,14 @@ NOT_FOR_ARCHS =		sparc64
 
 # aws-lc-sys has constants in .text
 # https://github.com/awslabs/s2n-bignum/pull/242
-.if ${MACHINE_ARCH} == "amd64"
+# aws-lc-rs has old Keccak perlasm
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "aarch64"
 USE_NOEXECONLY =	Yes
 .endif
 
 COMMENT =		Python package and project manager
 
-MODPY_DISTV =		0.11.32
+MODPY_DISTV =		0.12.0
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
 GH_TAGNAME =		${MODPY_DISTV}
@@ -27,10 +28,7 @@ PERMIT_PACKAGE =	Yes
 BUILD_DEPENDS =		devel/maturin \
 			devel/py-installer
 
-LIB_DEPENDS +=		archivers/bzip2 \
-			archivers/xz
-
-WANTLIB =		${MODCARGO_WANTLIB} bz2 lzma m
+WANTLIB =		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo \
 			lang/python
