@@ -5,20 +5,15 @@ COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.23
+MOZILLA_VERSION =	2.53.24
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 SITES =	https://archive.seamonkey-project.org/releases/${MOZILLA_DIST_VERSION}/source/
 
-REVISION =		2
-
-# unbreaks build with rust 1.83
+# unbreaks build with modern rust cf #1896958
 SITES.p =	https://bugzilla.mozilla.org/
-PATCHFILES.p=	bug-1896958-127a1-25322.zip{attachment.cgi?id=9520949}
-PATCH_DIST_STRIP =	-p1 -f
-# || true because third_party/rust/packed_simd/Cargo.toml fails to patch but we dont care
-PATCH_CASES += *.zip) \
-	${UNZIP} -p $$patchfile | ${PATCH} ${PATCH_DIST_ARGS} || true ;;
+PATCHFILES.p=	bug-1896958-sm25324.diff.gz{attachment.cgi?id=9620754}
+PATCH_DIST_STRIP =	-p1
 
 SITES.whl =	https://files.pythonhosted.org/packages/py3/
 WHEELS =	setuptools-70.3.0-py3-none-any.whl \
@@ -33,7 +28,7 @@ EXTRACT_ONLY =	${DISTFILES}
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.23
+PKGNAME-lightning =	lightning-seamonkey-5.8.24
 EPOCH-lightning =	0
 
 HOMEPAGE =	https://www.seamonkey-project.org/
@@ -42,7 +37,7 @@ SO_VERSION =	47.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 mozavcodec mozavutil mozgtk mozsqlite3 prldap60 suite xul lgpllibs
+MOZILLA_LIBS = ldap60 ldif60 mozavcodec mozavutil mozgtk mozsqlite3 prldap60 xul lgpllibs
 
 CATEGORIES=	www mail net news
 
@@ -84,8 +79,6 @@ WANTLIB += Xt gthread-2.0 pangoft2-1.0
 
 WANTLIB-lightning=
 
-MAKE_ENV +=	RUSTC_BOOTSTRAP="any_all_workaround,version,encoding_rs"
-
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
 # remove post 96
@@ -101,11 +94,7 @@ post-extract:
 	cd ${FULLDISTDIR}; \
 	cp ${WHEELS} ${WRKSRC}/third_party/python/virtualenv/virtualenv/seed/wheels/embed
 
-# patch doesnt grok file rename from git
-# and cargo fails to checksum those if not present
 post-patch:
-	# drop crate remnants to make sure cargo doesnt pickup packed_simd/Cargo.toml
-	rm -Rf ${WRKSRC}/third_party/rust/packed_simd/
 	${SUBST_CMD} ${WRKSRC}/third_party/python/virtualenv/virtualenv/discovery/py_info.py
 
 pre-configure:
