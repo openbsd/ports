@@ -2171,6 +2171,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/polly/2016-06-10/examples
 lib/python${MODPY_VERSION}/site-packages/botocore/data/polly/2016-06-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/polly/2016-06-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing-plan-manager/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing-plan-manager/2025-08-05/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing-plan-manager/2025-08-05/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing-plan-manager/2025-08-05/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing-plan-manager/2025-08-05/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/examples-1.json
