@@ -1,10 +1,9 @@
 COMMENT =		dotfiles manager across multiple diverse machines
 
-MODGO_MODNAME =		github.com/twpayne/chezmoi/v2
-MODGO_VERSION =		v2.62.4
+MODGO_MODNAME =		chezmoi.io/chezmoi/v2
+MODGO_VERSION =		v2.71.1
 
 DISTNAME =		chezmoi-${MODGO_VERSION}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
