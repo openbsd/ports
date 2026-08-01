@@ -160,7 +160,7 @@ libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/cpaster
 @bin libexec/qtcreator/dlwrapper
-@bin libexec/qtcreator/qmlpuppet-20.0.0
+@bin libexec/qtcreator/qmlpuppet-20.0.1
 @bin libexec/qtcreator/qmltraceviewer
 @bin libexec/qtcreator/qtc-askpass
 @bin libexec/qtcreator/qtcreator_process_stub
@@ -234,6 +234,7 @@ share/qtcreator/changelog/changes-2.7.0
 share/qtcreator/changelog/changes-2.8.0
 share/qtcreator/changelog/changes-2.8.1
 share/qtcreator/changelog/changes-20.0.0.md
+share/qtcreator/changelog/changes-20.0.1.md
 share/qtcreator/changelog/changes-3.0.0
 share/qtcreator/changelog/changes-3.0.1
 share/qtcreator/changelog/changes-3.1.0
