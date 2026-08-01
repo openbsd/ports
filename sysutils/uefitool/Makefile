@@ -2,7 +2,7 @@
 PORTROACH =		limit:^A
 
 COMMENT =		UEFI firmware image viewer and editor
-DIST_TUPLE =		github	LongSoft	UEFITool	A68	.
+DIST_TUPLE =		github	LongSoft	UEFITool	A75	.
 PKGNAME =		${DISTNAME:S/A//}
 
 CATEGORIES =		sysutils
@@ -18,8 +18,5 @@ MODULES =		devel/cmake \
 			x11/qt6
 
 NO_TEST =		Yes
-
-
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

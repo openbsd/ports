@@ -1,17 +1,15 @@
-Disable CPU detection on ARMv7 and ARM64
+- 26.00
+  839151eaaad24771892afaae6bac690e31e58384
 
 Index: common/LZMA/SDK/C/CpuArch.c
 --- common/LZMA/SDK/C/CpuArch.c.orig
 +++ common/LZMA/SDK/C/CpuArch.c
-@@ -415,9 +415,11 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
- 
- #else // __APPLE__
- 
-+#if !defined(__OpenBSD__)
- #include <sys/auxv.h>
- 
- #define USE_HWCAP
-+#endif // !defined(__OpenBSD__)
+@@ -877,7 +877,7 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
  
  #ifdef USE_HWCAP
  
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ static unsigned long MY_getauxval(int aux)
+ {
+   unsigned long val;
