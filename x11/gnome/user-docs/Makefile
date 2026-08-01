@@ -1,7 +1,7 @@
 COMMENT=		general user documentation for GNOME
 
 GNOME_PROJECT=		gnome-user-docs
-GNOME_VERSION=		50.2
+GNOME_VERSION=		50.4
 
 # CC Attribution 3.0
 PERMIT_PACKAGE=		Yes
