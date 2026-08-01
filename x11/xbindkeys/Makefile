@@ -1,4 +1,7 @@
 COMMENT =	bind keys or mouse buttons to shell commands under X11
+
+REVISION =	0
+
 DISTNAME =	xbindkeys-1.8.7
 CATEGORIES =	x11
 
@@ -13,6 +16,8 @@ WANTLIB =	X11 c
 SITES =		${HOMEPAGE:=/../}
 
 MODULES =	x11/tk
+MODTK_VERSION =	8.6
+
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS} \
 		devel/desktop-file-utils
 
