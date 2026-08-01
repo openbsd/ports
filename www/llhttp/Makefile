@@ -1,6 +1,6 @@
 COMMENT=	HTTP request/response parser
 
-V=		9.4.2
+V=		9.4.3
 GH_ACCOUNT=	nodejs
 GH_PROJECT=	llhttp
 GH_TAGNAME=	release/v$V
