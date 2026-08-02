@@ -3,7 +3,10 @@ COMMENT = 		Erlang build tool
 GH_ACCOUNT =		erlang
 GH_PROJECT =		rebar3
 GH_TAGNAME =		3.27.0
+REVISION =		0
+
 CATEGORIES =		devel
+
 HOMEPAGE =		https://www.rebar3.org
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
@@ -15,9 +18,19 @@ MODULES =		lang/erlang
 # for tests
 MODERL_MODULES += 	meck	0.8.13
 MODERL_HANDLE_FLAVORS=	Yes
+FLAVOR ?=		erlang28
+FLAVORS =		erlang27 erlang28
 CONFIGURE_STYLE =	None
 
 DISTFILES =		rebar3-{}${GH_TAGNAME}.tar.gz
+
+# To enable/disable pkgpath for erlang/26
+.if ${FLAVOR} == "erlang28"
+ERL_DEFAULT = ""
+.else
+ERL_DEFAULT = "@comment "
+.endif
+SUBST_VARS += ERL_DEFAULT
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/bootstrap \
