@@ -1,0 +1,17 @@
+@bin bin/glycin-thumbnailer
+include/glycin-2/
+include/glycin-2/glycin.h
+include/glycin-gtk4-2/
+include/glycin-gtk4-2/glycin-gtk4.h
+lib/girepository-1.0/Gly-2.typelib
+lib/girepository-1.0/GlyGtk4-2.typelib
+@lib lib/libglycin-2.so.${LIBglycin-2_VERSION}
+@lib lib/libglycin-gtk4-2.so.${LIBglycin-gtk4-2_VERSION}
+lib/pkgconfig/glycin-2.pc
+lib/pkgconfig/glycin-gtk4-2.pc
+share/gir-1.0/Gly-2.gir
+share/gir-1.0/GlyGtk4-2.gir
+share/vala/vapi/glycin-2.deps
+share/vala/vapi/glycin-2.vapi
+share/vala/vapi/glycin-gtk4-2.deps
+share/vala/vapi/glycin-gtk4-2.vapi
