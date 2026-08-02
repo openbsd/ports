@@ -36,6 +36,7 @@
      SUBDIR += ghex
      SUBDIR += gitg
      SUBDIR += gjs
+     SUBDIR += glycin
      SUBDIR += gom
      SUBDIR += grilo
      SUBDIR += grilo-plugins
