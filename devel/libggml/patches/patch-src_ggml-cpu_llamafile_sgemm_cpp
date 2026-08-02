@@ -64,7 +64,7 @@ Index: src/ggml-cpu/llamafile/sgemm.cpp
  template <typename D, typename V, typename TA, typename TB, typename TC>
  class tinyBLAS_RVV {
    public:
-@@ -3761,7 +3761,7 @@ bool llamafile_sgemm(const struct ggml_compute_params 
+@@ -3867,7 +3867,7 @@ bool llamafile_sgemm(const struct ggml_compute_params 
              params->ith, params->nth};
          tb.matmul(m, n);
          return true;
