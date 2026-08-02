@@ -2,6 +2,7 @@ COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
 GNOME_VERSION=		50.0
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -11,9 +12,9 @@ HOMEPAGE=		https://apps.gnome.org/Contacts/
 PERMIT_PACKAGE= 	Yes
 
 WANTLIB += adwaita-1 c ebook-contacts-1.2 edataserver-1.2 folks
-WANTLIB += folks-eds gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 goa-1.0
-WANTLIB += gobject-2.0 gstreamer-1.0 gtk-4 intl pango-1.0 portal
-WANTLIB += portal-gtk4 qrencode
+WANTLIB += folks-eds gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 glycin-2
+WANTLIB += glycin-gtk4-2 goa-1.0 gobject-2.0 gstreamer-1.0 gtk-4
+WANTLIB += intl pango-1.0 portal portal-gtk4 qrencode
 
 COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS=		c
@@ -33,6 +34,7 @@ LIB_DEPENDS=		graphics/libqrencode \
 			net/telepathy/folks \
 			sysutils/flatpak/libportal \
 			sysutils/flatpak/libportal,-gtk4 \
+			x11/gnome/glycin \
 			x11/gnome/libadwaita
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
