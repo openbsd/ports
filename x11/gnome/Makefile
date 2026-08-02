@@ -40,6 +40,7 @@
      SUBDIR += gom
      SUBDIR += grilo
      SUBDIR += grilo-plugins
+     SUBDIR += gst-thumbnailers
      SUBDIR += gucharmap
      SUBDIR += gvfs,
      SUBDIR += gweather-locations
