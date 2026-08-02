@@ -1,7 +1,7 @@
 COMMENT =	dictionary lookup program for X11
 
 DISTNAME =	ding-1.9
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 SITES =		https://ftp.tu-chemnitz.de/pub/Local/urz/ding/
 
 MODULES =	x11/tk
-MODTK_VERSION =	8.5
+MODTK_VERSION =	8.6
 
 LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
 
