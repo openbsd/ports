@@ -31,7 +31,7 @@ Index: src/nautilus-file-utilities.c
  char *
  nautilus_compute_title_for_location (GFile *location)
  {
-@@ -1092,36 +1085,4 @@ is_external_volume (GVolume *volume)
+@@ -1153,36 +1146,4 @@ is_external_volume (GVolume *volume)
      g_free (id);
  
      return is_external;

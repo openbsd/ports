@@ -7,7 +7,7 @@ Subject: [PATCH] file: Do not count children for autofs mountpoints
 Index: src/nautilus-file.c
 --- src/nautilus-file.c.orig
 +++ src/nautilus-file.c
-@@ -5121,17 +5121,6 @@ nautilus_file_should_show_directory_item_count (Nautil
+@@ -5089,17 +5089,6 @@ nautilus_file_should_show_directory_item_count (Nautil
  {
      g_return_val_if_fail (NAUTILUS_IS_FILE (file), FALSE);
  
