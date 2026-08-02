@@ -1,8 +1,6 @@
 COMMENT=	papirus icon theme
-DIST_TUPLE=	github PapirusDevelopmentTeam papirus-icon-theme 20250501  .
+DIST_TUPLE=	github PapirusDevelopmentTeam papirus-icon-theme 20260801 .
 CATEGORIES=	x11
-
-REVISION=	1
 
 MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
