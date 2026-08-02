@@ -7,7 +7,7 @@ USE_NOEXECONLY =	Yes
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
-V =			1.18.0
+V =			1.18.1
 DIST_TUPLE =		github gleam-lang gleam v${V} .
 
 HOMEPAGE =		https://gleam.run
