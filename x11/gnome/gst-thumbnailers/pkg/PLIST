@@ -1,0 +1,5 @@
+@bin bin/gst-audio-thumbnailer
+@bin bin/gst-video-thumbnailer
+share/thumbnailers/
+share/thumbnailers/gst-audio-thumbnailer.thumbnailer
+share/thumbnailers/gst-video-thumbnailer.thumbnailer
