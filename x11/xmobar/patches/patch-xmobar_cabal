@@ -3,19 +3,19 @@ Hook in APM bindings
 Index: xmobar.cabal
 --- xmobar.cabal.orig
 +++ xmobar.cabal
-@@ -168,6 +168,7 @@ library
-                    Xmobar.Plugins.NotmuchMail,
-                    Xmobar.Plugins.Monitors,
-                    Xmobar.Plugins.Monitors.Batt,
-+                   Xmobar.Plugins.Monitors.Batt.Binding,
-                    Xmobar.Plugins.Monitors.Batt.Common,
-                    Xmobar.Plugins.Monitors.Common.Output,
-                    Xmobar.Plugins.Monitors.Common.Parsers,
-@@ -195,6 +196,7 @@ library
-                    Xmobar.Plugins.Monitors.CatInt
- 
-     extra-libraries: Xrandr Xrender
+@@ -180,6 +180,7 @@ library
+         Xmobar.Plugins.NotmuchMail
+         Xmobar.Plugins.Monitors
+         Xmobar.Plugins.Monitors.Batt
++        Xmobar.Plugins.Monitors.Batt.Binding
+         Xmobar.Plugins.Monitors.Batt.Common
+         Xmobar.Plugins.Monitors.Common.Output
+         Xmobar.Plugins.Monitors.Common.Parsers
+@@ -210,6 +211,7 @@ library
+     extra-libraries:
+         Xrandr
+         Xrender
 +    c-sources: src/Xmobar/Plugins/Monitors/Batt/apm.c
- 
-     ghc-options: -funbox-strict-fields -Wall -fno-warn-unused-do-bind
- 
+
+     ghc-options:      -funbox-strict-fields -Wall -fno-warn-unused-do-bind
+     build-depends:

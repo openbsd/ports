@@ -1,28 +1,27 @@
 MODCABAL_MANIFEST	= \
 	HUnit	1.6.2.0	0	\
-	OneTuple	0.4.2.1	0	\
-	QuickCheck	2.16.0.0	0	\
+	OneTuple	0.4.3	0	\
+	QuickCheck	2.18.0.0	0	\
 	StateVar	1.2.2	0	\
 	X11	1.10.3	1	\
 	X11-xft	0.3.4	0	\
 	adjunctions	4.4.4	0	\
-	aeson	2.2.3.0	4	\
-	alex	3.5.4.0	0	\
+	aeson	2.3.1.0	0	\
+	alex	3.5.4.2	0	\
 	ansi-terminal	1.1.5	0	\
 	ansi-terminal-types	1.1.3	0	\
 	appar	0.1.8	0	\
 	assoc	1.1.1	2	\
 	async	2.2.6	0	\
 	attoparsec	0.14.4	6	\
-	attoparsec-aeson	2.2.2.0	0	\
+	attoparsec-aeson	2.2.2.0	1	\
 	base-orphans	0.9.4	0	\
 	base16	1.0	4	\
 	base16-bytestring	1.0.2.0	1	\
-	base64	1.0	2	\
+	base64	1.0	3	\
 	base64-bytestring	1.2.1.0	1	\
-	basement	0.0.16	0	\
 	bifunctors	5.6.3	1	\
-	bitvec	1.1.5.0	3	\
+	bitvec	1.1.6.0	0	\
 	blaze-builder	0.4.4.1	0	\
 	blaze-html	0.9.2.0	1	\
 	blaze-markup	0.8.3.0	2	\
@@ -35,55 +34,54 @@ MODCABAL_MANIFEST	= \
 	cereal	0.5.8.3	0	\
 	character-ps	0.1	0	\
 	clock	0.8.4	0	\
-	colour	2.3.6	0	\
+	colour	2.3.7	0	\
 	comonad	5.0.10	0	\
 	conduit	1.3.6.1	0	\
 	conduit-extra	1.3.8	1	\
 	contravariant	1.5.6	0	\
 	cookie	0.5.1	0	\
-	crypton	1.0.6	0	\
+	cryptohash-md5	0.11.101.0	6	\
+	crypton	1.1.4	0	\
 	crypton-asn1-encoding	0.10.0	0	\
 	crypton-asn1-parse	0.10.0	0	\
 	crypton-asn1-types	0.4.1	0	\
-	crypton-connection	0.4.5	1	\
+	crypton-connection	0.4.6	1	\
 	crypton-pem	0.3.0	0	\
 	crypton-socks	0.6.2	0	\
-	crypton-x509	1.8.0	0	\
-	crypton-x509-store	1.8.0	0	\
-	crypton-x509-system	1.8.0	0	\
-	crypton-x509-validation	1.8.0	0	\
+	crypton-x509	1.9.1	0	\
+	crypton-x509-store	1.9.0	0	\
+	crypton-x509-system	1.9.0	0	\
+	crypton-x509-validation	1.9.1	1	\
 	data-default	0.8.0.2	0	\
 	data-default-class	0.2.0.0	0	\
 	data-fix	0.3.4	2	\
-	dbus	1.4.1	0	\
+	dbus	1.4.3	0	\
 	distributive	0.6.3	0	\
 	dlist	1.0	2	\
-	ech-config	0.0.1	0	\
-	extensible-exceptions	0.1.1.4	0	\
+	ech-config	0.0.1	1	\
 	extra	1.8.1	0	\
 	free	5.2	8	\
-	generically	0.1.1	5	\
 	glib	0.13.12.0	0	\
 	gtk2hs-buildtools	0.13.12.0	0	\
-	half	0.3.3	1	\
+	half	0.3.3	2	\
 	happy	2.2	0	\
 	happy-lib	2.2	0	\
 	hashable	1.5.1.0	0	\
 	hashtables	1.4.2	0	\
 	haskell-lexer	1.2.1	0	\
 	hinotify	0.4.2	0	\
-	hpke	0.0.0	0	\
+	hpke	0.1.0	0	\
 	hsc2hs	0.68.10	5	\
-	hspec	2.11.16	0	\
-	hspec-core	2.11.16	0	\
-	hspec-discover	2.11.16	0	\
+	hspec	2.11.17	0	\
+	hspec-core	2.11.17	0	\
+	hspec-discover	2.11.17	0	\
 	hspec-expectations	0.8.4	2	\
 	http-client	0.7.19	0	\
-	http-client-tls	0.3.6.4	2	\
-	http-conduit	2.3.9.1	0	\
-	http-types	0.12.4	0	\
-	indexed-traversable	0.1.4	1	\
-	indexed-traversable-instances	0.1.2	1	\
+	http-client-tls	0.4.0	0	\
+	http-conduit	2.3.9.1	1	\
+	http-types	0.12.5	0	\
+	indexed-traversable	0.1.5	0	\
+	indexed-traversable-instances	0.1.2.1	0	\
 	integer-conversion	0.1.1	2	\
 	integer-logarithms	1.0.5	0	\
 	invariant	0.6.5	0	\
@@ -91,32 +89,33 @@ MODCABAL_MANIFEST	= \
 	kan-extensions	5.2.8	0	\
 	lens	5.3.6	0	\
 	libmpd	0.10.0.1	0	\
-	memory	0.18.0	1	\
-	mime-types	0.1.2.1	0	\
+	mime-types	0.1.2.2	0	\
+	mlkem	0.2.2.0	0	\
 	mono-traversable	1.0.21.0	0	\
 	network	3.2.8.0	0	\
-	network-byte-order	0.1.7	0	\
+	network-byte-order	0.1.8	0	\
 	network-uri	2.6.4.2	1	\
 	old-locale	1.0.0.7	2	\
-	old-time	1.1.0.5	0	\
-	optparse-applicative	0.19.0.0	0	\
+	optparse-applicative	0.19.0.0	1	\
 	pango	0.13.12.0	0	\
 	parallel	3.3.0.0	1	\
 	parsec-numbers	0.1.0	0	\
-	prettyprinter	1.7.1	0	\
-	prettyprinter-ansi-terminal	1.1.3	0	\
+	prettyprinter	1.7.2	0	\
+	prettyprinter-ansi-terminal	1.1.4	0	\
 	primitive	0.9.1.0	1	\
 	profunctors	5.6.3	0	\
 	quickcheck-io	0.2.0	0	\
+	ram	0.22.0	0	\
 	random	1.3.1	0	\
 	reflection	2.1.9	1	\
 	regex-base	0.94.0.3	0	\
 	regex-compat	0.95.2.2	0	\
 	regex-posix	0.96.0.2	0	\
+	regex-tdfa	1.3.2.5	0	\
 	resourcet	1.3.0	0	\
 	safe-exceptions	0.1.7.4	1	\
 	scientific	0.3.8.1	0	\
-	semialign	1.3.1	2	\
+	semialign	1.4	0	\
 	semigroupoids	6.0.2	1	\
 	serialise	0.2.6.1	5	\
 	split	0.2.5	0	\
@@ -124,29 +123,29 @@ MODCABAL_MANIFEST	= \
 	streaming-commons	0.2.3.1	0	\
 	strict	0.5.1	1	\
 	tagged	0.8.10	1	\
-	tasty	1.5.3	2	\
+	tasty	1.5.4	0	\
 	temporary	1.3	0	\
-	text-iso8601	0.1.1	2	\
+	text-iso8601	0.2.0.0	0	\
 	text-short	0.1.6.1	0	\
 	th-abstraction	0.7.2.0	0	\
 	th-compat	0.1.7	0	\
 	th-lift	0.8.7	0	\
-	these	1.2.1	2	\
-	time-compat	1.9.8	0	\
+	these	1.2.1	3	\
+	time-compat	1.9.9	1	\
 	time-hourglass	0.3.0	0	\
-	tls	2.2.2	0	\
-	transformers-base	0.4.6	0	\
+	tls	2.4.3	0	\
+	transformers-base	0.4.6.1	0	\
 	transformers-compat	0.8	0	\
 	typed-process	0.2.13.0	0	\
-	unix-time	0.4.17	0	\
+	unix-time	0.5.0	0	\
 	unliftio-core	0.2.1.0	4	\
 	unordered-containers	0.2.21	2	\
 	utf8-string	1.0.2	0	\
-	uuid-types	1.0.6	3	\
-	vector	0.13.2.0	2	\
-	vector-algorithms	0.9.1.0	0	\
+	uuid-types	1.0.6.1	0	\
+	vector	0.13.2.0	5	\
+	vector-algorithms	0.9.1.0	1	\
 	vector-stream	0.1.0.1	4	\
 	witherable	0.5	2	\
 	xml-conduit	1.10.1.0	0	\
 	xml-types	0.3.8	0	\
-	zlib	0.7.1.1	0	\
+	zlib	0.7.1.1	0

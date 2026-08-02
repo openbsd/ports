@@ -1,10 +1,9 @@
 COMMENT =		minimalistic text based status bar
 
 MODCABAL_STEM =		xmobar
-MODCABAL_VERSION =	0.50
-REVISION =		0
+MODCABAL_VERSION =	0.51.1
 CATEGORIES =		x11
-HOMEPAGE =		https://xmobar.org
+HOMEPAGE =		https://codeberg.org/xmobar/xmobar
 
 # BSD3
 PERMIT_PACKAGE =	Yes
@@ -18,8 +17,8 @@ WANTLIB =		X11 Xext Xft Xinerama Xrandr Xrender \
 MODULES =		devel/cabal
 MODCABAL_FLAGS =	with_xft with_mpd with_mpris with_inotify
 
-# % cabal get xmobar-0.50
-# % cd ./xmobar-0.50
+# % cabal get xmobar-0.51.1
+# % cd ./xmobar-0.51.1
 # % cabal v2-configure --flags="with_xft with_mpd with_mpris with_inotify"
 # % cabal v2-build
 # % cabal-bundler --openbsd xmobar -p ./dist-newstyle/cache/plan.json
