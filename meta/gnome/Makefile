@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		5
+REVISION-main=		6
 REVISION-extras=	0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -33,6 +33,10 @@ RUN_DEPENDS-main +=	net/avahi
 # ibus IM modules
 RUN_DEPENDS-main +=	inputmethods/ibus,-gtk3
 RUN_DEPENDS-main +=	inputmethods/ibus,-gtk4
+
+# useful thumbnailers
+RUN_DEPENDS-main +=	x11/gnome/epub-thumbnailer
+RUN_DEPENDS-main +=	x11/gnome/gst-thumbnailers
 
 # some elements from:
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core-deps/
