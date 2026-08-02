@@ -39,6 +39,7 @@ share/kicad/symbols/Connector_Generic_MountingPin.kicad_sym
 share/kicad/symbols/Connector_Generic_Shielded.kicad_sym
 share/kicad/symbols/Converter_ACDC.kicad_sym
 share/kicad/symbols/Converter_DCDC.kicad_sym
+share/kicad/symbols/Converter_DCDC_Isolated.kicad_sym
 share/kicad/symbols/DSP_AnalogDevices.kicad_sym
 share/kicad/symbols/DSP_Freescale.kicad_sym
 share/kicad/symbols/DSP_Microchip_DSPIC33.kicad_sym

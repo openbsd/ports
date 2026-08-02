@@ -1,7 +1,7 @@
 Index: pcbnew/pcb_base_frame.cpp
 --- pcbnew/pcb_base_frame.cpp.orig
 +++ pcbnew/pcb_base_frame.cpp
-@@ -71,7 +71,7 @@
+@@ -72,7 +72,7 @@
  #include <tool/grid_menu.h>
  #include <ratsnest/ratsnest_view_item.h>
  
