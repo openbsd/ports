@@ -4,6 +4,7 @@
 @conflict erlang->=28v0,<29v0
 @conflict erlang-wx->=28,<${V}
 @pkgpath lang/erlang/21,-main
+@pkgpath lang/erlang/26,-main
 @newgroup _epmd:888
 @newuser _epmd:888:_epmd::Erlang EPMD Account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/epmd28
