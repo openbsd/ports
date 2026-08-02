@@ -33,8 +33,11 @@ RUN_DEPENDS +=		misc/shared-mime-info
 
 MODGNOME_TOOLS=		docbook gobject-introspection shared-mime-info
 
-CONFIGURE_ARGS=		-Dinstalled_tests=false \
-			-Dglycin=disabled
+CONFIGURE_ARGS=		-Dinstalled_tests=false
+
+# do not enable glycin support yet; glycin loaders are not enabled on !linux and
+# this means loosing support for: heif, image-rs, jxl, raw, svg
+CONFIGURE_ARGS +=	-Dglycin=disabled
 
 # XXX should not be needed
 CONFIGURE_ARGS +=	-Dandroid=disabled
