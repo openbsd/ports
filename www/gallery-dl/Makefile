@@ -1,6 +1,6 @@
 COMMENT =		CLI program to mass download images from various websites
 
-MODPY_DISTV =		1.32.5
+MODPY_DISTV =		1.32.9
 DISTNAME =		gallery_dl-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/_/-/}
 CATEGORIES =		www
