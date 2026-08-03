@@ -1,6 +1,6 @@
 # aws-lc-sys has constants in .text
 # https://github.com/awslabs/s2n-bignum/pull/242
-.if ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "aarch64"
 USE_NOEXECONLY =	Yes
 .endif
 
@@ -8,7 +8,7 @@ COMMENT =		static analysis tool for GitHub Actions
 
 GH_ACCOUNT =		zizmorcore
 GH_PROJECT =		zizmor
-GH_TAGNAME =		v1.28.0
+GH_TAGNAME =		v1.29.0
 
 MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
