@@ -1,7 +1,7 @@
 Index: vendor/composer/autoload_classmap.php
 --- vendor/composer/autoload_classmap.php.orig
 +++ vendor/composer/autoload_classmap.php
-@@ -6,23 +6,23 @@ $vendorDir = dirname(__DIR__);
+@@ -6,24 +6,24 @@ $vendorDir = dirname(__DIR__);
  $baseDir = dirname($vendorDir);
  
  return array(
@@ -21,6 +21,7 @@ Index: vendor/composer/autoload_classmap.php
 -    'MAPIExceptionTest' => '/var/www/grommunio-mapi-header-php/tests/MAPIExceptionTest.php',
 -    'Meetingrequest' => '/var/www/grommunio-mapi-header-php/class.meetingrequest.php',
 -    'Recurrence' => '/var/www/grommunio-mapi-header-php/class.recurrence.php',
+-    'RecurrenceException' => '/var/www/grommunio-mapi-header-php/class.recurrenceexception.php',
 -    'TaskRecurrence' => '/var/www/grommunio-mapi-header-php/class.taskrecurrence.php',
 -    'TaskRequest' => '/var/www/grommunio-mapi-header-php/class.taskrequest.php',
 -    'Token' => '/var/www/grommunio-mapi-header-php/class.token.php',
@@ -36,6 +37,7 @@ Index: vendor/composer/autoload_classmap.php
 +    'MAPIExceptionTest' => UMAPI_PATH . '/tests/MAPIExceptionTest.php',
 +    'Meetingrequest' => UMAPI_PATH . '/class.meetingrequest.php',
 +    'Recurrence' => UMAPI_PATH . '/class.recurrence.php',
++    'RecurrenceException' => UMAPI_PATH . '/class.recurrenceexception.php',
 +    'TaskRecurrence' => UMAPI_PATH . '/class.taskrecurrence.php',
 +    'TaskRequest' => UMAPI_PATH . '/class.taskrequest.php',
 +    'Token' => UMAPI_PATH . '/class.token.php',

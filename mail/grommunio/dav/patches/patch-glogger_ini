@@ -2,7 +2,7 @@ Index: glogger.ini
 --- glogger.ini.orig
 +++ glogger.ini
 @@ -1,5 +1,5 @@
- ; Available log levels: FATAL ERROR WARN INFO DEBUG TRACE
+ ; Available log levels: FATAL ERROR WARNING INFO DEBUG TRACE
 -level = TRACE
 -file = "/var/log/grommunio-dav/dav.log"
 +level = INFO

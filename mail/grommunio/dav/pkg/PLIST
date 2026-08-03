@@ -22,6 +22,11 @@ grommunio-dav/lib/AuthApache.php
 grommunio-dav/lib/AuthBasicBackend.php
 grommunio-dav/lib/DAVACL.php
 grommunio-dav/lib/GLogger.php
+grommunio-dav/lib/GalAddressBook.php
+grommunio-dav/lib/GalAddressBookHome.php
+grommunio-dav/lib/GalAddressBookRoot.php
+grommunio-dav/lib/GalCache.php
+grommunio-dav/lib/GalCard.php
 grommunio-dav/lib/GrommunioCalDavBackend.php
 grommunio-dav/lib/GrommunioCardDavBackend.php
 grommunio-dav/lib/GrommunioDavBackend.php

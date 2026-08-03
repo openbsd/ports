@@ -1,8 +1,8 @@
 Index: vendor/autoload.php
 --- vendor/autoload.php.orig
 +++ vendor/autoload.php
-@@ -20,6 +20,9 @@ if (PHP_VERSION_ID < 50600) {
-     );
+@@ -17,6 +17,9 @@ if (PHP_VERSION_ID < 50600) {
+     throw new RuntimeException($err);
  }
  
 +define('GTOPDIR', realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..'])));

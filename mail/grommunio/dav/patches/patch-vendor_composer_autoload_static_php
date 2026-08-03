@@ -16,7 +16,7 @@ Index: vendor/composer/autoload_static.php
      );
  
      public static $prefixLengthsPsr4 = array (
-@@ -101,25 +101,25 @@ class ComposerStaticInit77e0a56886907409518852c12b239c
+@@ -101,26 +101,26 @@ class ComposerStaticInit77e0a56886907409518852c12b239c
      );
  
      public static $classMap = array (
@@ -36,6 +36,7 @@ Index: vendor/composer/autoload_static.php
 -        'MAPIExceptionTest' => '/var/www/grommunio-mapi-header-php/tests/MAPIExceptionTest.php',
 -        'Meetingrequest' => '/var/www/grommunio-mapi-header-php/class.meetingrequest.php',
 -        'Recurrence' => '/var/www/grommunio-mapi-header-php/class.recurrence.php',
+-        'RecurrenceException' => '/var/www/grommunio-mapi-header-php/class.recurrenceexception.php',
 -        'TaskRecurrence' => '/var/www/grommunio-mapi-header-php/class.taskrecurrence.php',
 -        'TaskRequest' => '/var/www/grommunio-mapi-header-php/class.taskrequest.php',
 -        'Token' => '/var/www/grommunio-mapi-header-php/class.token.php',
@@ -51,6 +52,7 @@ Index: vendor/composer/autoload_static.php
 +        'MAPIExceptionTest' => UMAPI_PATH . '/tests/MAPIExceptionTest.php',
 +        'Meetingrequest' => UMAPI_PATH . '/class.meetingrequest.php',
 +        'Recurrence' => UMAPI_PATH . '/class.recurrence.php',
++        'RecurrenceException' => UMAPI_PATH . '/class.recurrenceexception.php',
 +        'TaskRecurrence' => UMAPI_PATH . '/class.taskrecurrence.php',
 +        'TaskRequest' => UMAPI_PATH . '/class.taskrequest.php',
 +        'Token' => UMAPI_PATH . '/class.token.php',
