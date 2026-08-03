@@ -10,7 +10,7 @@ Index: chrome/browser/headless/headless_mode_init.cc
  
  #include "base/base_switches.h"
  #include "base/command_line.h"
-@@ -23,7 +23,7 @@
+@@ -24,7 +24,7 @@
  #include "chrome/common/chrome_switches.h"
  #include "content/public/common/content_switches.h"
  
@@ -19,7 +19,7 @@ Index: chrome/browser/headless/headless_mode_init.cc
  #include "ui/gl/gl_switches.h"               // nogncheck
  #include "ui/ozone/public/ozone_switches.h"  // nogncheck
  #endif
-@@ -92,7 +92,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
+@@ -93,7 +93,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
        command_line.AppendSwitchPath(switches::kUserDataDir, user_data_dir);
      }
  

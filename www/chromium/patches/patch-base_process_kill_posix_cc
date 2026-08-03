@@ -1,8 +1,8 @@
 Index: base/process/kill_posix.cc
 --- base/process/kill_posix.cc.orig
 +++ base/process/kill_posix.cc
-@@ -160,7 +160,7 @@ void EnsureProcessTerminated(Process process) {
-       0, new BackgroundReaper(std::move(process), Seconds(2)));
+@@ -169,7 +169,7 @@ void EnsureProcessTerminated(Process process) {
+       0, MakeSelfDeleting<BackgroundReaper>(std::move(process), Seconds(2)));
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

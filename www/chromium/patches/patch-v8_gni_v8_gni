@@ -1,7 +1,7 @@
 Index: v8/gni/v8.gni
 --- v8/gni/v8.gni.orig
 +++ v8/gni/v8.gni
-@@ -351,7 +351,7 @@ is_drumbrake_supported =
+@@ -361,7 +361,7 @@ is_drumbrake_supported =
      (v8_current_cpu == "x64" || v8_current_cpu == "arm64" ||
       v8_current_cpu == "riscv64") &&
      (target_os == "win" || target_os == "linux" || target_os == "mac" ||
