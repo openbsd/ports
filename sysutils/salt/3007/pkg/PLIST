@@ -1,3 +1,5 @@
+@option is-branch
+@pkgpath sysutils/salt
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @newgroup _salt:722
 @newuser _salt:722:722::SaltStack Daemon:${LOCALSTATEDIR}/salt:/sbin/nologin
