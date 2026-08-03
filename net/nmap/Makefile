@@ -1,9 +1,9 @@
 COMMENT=	scan ports and fingerprint stack of network hosts
 
-DISTNAME=	nmap-7.98
+DISTNAME=	nmap-7.99
 
 # "grep version ndiff/pyproject.toml" (used in ndiff-x.yz.dist-info files)
-MODPY_DISTV=	7.96
+MODPY_DISTV=	7.99
 
 CATEGORIES=	net security
 EXTRACT_SUFX=	.tgz
