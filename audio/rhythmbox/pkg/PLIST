@@ -113,6 +113,10 @@ lib/rhythmbox/plugins/dbus-media-server/dbus-media-server.plugin
 lib/rhythmbox/plugins/generic-player/
 lib/rhythmbox/plugins/generic-player/generic-player.plugin
 @so lib/rhythmbox/plugins/generic-player/libgeneric-player.so
+lib/rhythmbox/plugins/gpodder/
+lib/rhythmbox/plugins/gpodder/gpodder.plugin
+lib/rhythmbox/plugins/gpodder/gpodder.py
+lib/rhythmbox/plugins/gpodder/sync.py
 lib/rhythmbox/plugins/grilo/
 lib/rhythmbox/plugins/grilo/grilo.plugin
 @so lib/rhythmbox/plugins/grilo/libgrilo.so
@@ -129,16 +133,13 @@ lib/rhythmbox/plugins/listenbrainz/listenbrainz.py
 lib/rhythmbox/plugins/listenbrainz/queue.py
 lib/rhythmbox/plugins/listenbrainz/settings.py
 lib/rhythmbox/plugins/lyrics/
-lib/rhythmbox/plugins/lyrics/AstrawebParser.py
 lib/rhythmbox/plugins/lyrics/DarkLyricsParser.py
-lib/rhythmbox/plugins/lyrics/JetlyricsParser.py
 lib/rhythmbox/plugins/lyrics/JlyricParser.py
-lib/rhythmbox/plugins/lyrics/LyricWikiParser.py
+lib/rhythmbox/plugins/lyrics/LrclibParser.py
 lib/rhythmbox/plugins/lyrics/LyricsConfigureDialog.py
 lib/rhythmbox/plugins/lyrics/LyricsParse.py
 lib/rhythmbox/plugins/lyrics/LyricsSites.py
 lib/rhythmbox/plugins/lyrics/TerraParser.py
-lib/rhythmbox/plugins/lyrics/WinampcnParser.py
 lib/rhythmbox/plugins/lyrics/lyrics.plugin
 lib/rhythmbox/plugins/lyrics/lyrics.py
 lib/rhythmbox/plugins/magnatune/
@@ -349,6 +350,19 @@ share/help/ja/rhythmbox/figures/rb-volume-changer.png
 share/help/ja/rhythmbox/figures/rb-window.png
 share/help/ja/rhythmbox/index.docbook
 share/help/ja/rhythmbox/legal.xml
+share/help/kk/
+share/help/kk/rhythmbox/
+share/help/kk/rhythmbox/figures/
+share/help/kk/rhythmbox/figures/rb-iradio-main.png
+share/help/kk/rhythmbox/figures/rb-notification-zone.png
+share/help/kk/rhythmbox/figures/rb-podcast-main.png
+share/help/kk/rhythmbox/figures/rb-toolbar-prevplaynext.png
+share/help/kk/rhythmbox/figures/rb-toolbar-repeat.png
+share/help/kk/rhythmbox/figures/rb-toolbar-shuffle.png
+share/help/kk/rhythmbox/figures/rb-volume-changer.png
+share/help/kk/rhythmbox/figures/rb-window.png
+share/help/kk/rhythmbox/index.docbook
+share/help/kk/rhythmbox/legal.xml
 share/help/oc/
 share/help/oc/rhythmbox/
 share/help/oc/rhythmbox/figures/
@@ -425,6 +439,19 @@ share/help/sl/rhythmbox/figures/rb-volume-changer.png
 share/help/sl/rhythmbox/figures/rb-window.png
 share/help/sl/rhythmbox/index.docbook
 share/help/sl/rhythmbox/legal.xml
+share/help/sr/
+share/help/sr/rhythmbox/
+share/help/sr/rhythmbox/figures/
+share/help/sr/rhythmbox/figures/rb-iradio-main.png
+share/help/sr/rhythmbox/figures/rb-notification-zone.png
+share/help/sr/rhythmbox/figures/rb-podcast-main.png
+share/help/sr/rhythmbox/figures/rb-toolbar-prevplaynext.png
+share/help/sr/rhythmbox/figures/rb-toolbar-repeat.png
+share/help/sr/rhythmbox/figures/rb-toolbar-shuffle.png
+share/help/sr/rhythmbox/figures/rb-volume-changer.png
+share/help/sr/rhythmbox/figures/rb-window.png
+share/help/sr/rhythmbox/index.docbook
+share/help/sr/rhythmbox/legal.xml
 share/help/sv/rhythmbox/
 share/help/sv/rhythmbox/figures/
 share/help/sv/rhythmbox/figures/rb-iradio-main.png
@@ -548,7 +575,7 @@ share/locale/vi/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_CN/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_HK/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
-share/metainfo/org.gnome.Rhythmbox3.appdata.xml
+share/metainfo/org.gnome.Rhythmbox3.metainfo.xml
 share/rhythmbox/
 share/rhythmbox/plugins/
 share/rhythmbox/plugins/audioscrobbler/
@@ -559,6 +586,8 @@ share/rhythmbox/plugins/audioscrobbler/icons/hicolor/
 share/rhythmbox/plugins/audioscrobbler/icons/hicolor/scalable/
 share/rhythmbox/plugins/audioscrobbler/icons/hicolor/scalable/places/
 share/rhythmbox/plugins/audioscrobbler/icons/hicolor/scalable/places/Last.fm-symbolic.svg
+share/rhythmbox/plugins/gpodder/
+share/rhythmbox/plugins/gpodder/gpodder-prefs.ui
 share/rhythmbox/plugins/listenbrainz/
 share/rhythmbox/plugins/listenbrainz/settings.ui
 share/rhythmbox/plugins/lyrics/
