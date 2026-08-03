@@ -1,0 +1,16 @@
+Print the full command, this allows the grep to find a match when
+a proxy minion is running. Otherwise it incorrectly determine the
+given proxy isn't running and fork off another copy repeatedly.
+
+Index: salt/modules/salt_proxy.py
+--- salt/modules/salt_proxy.py.orig
++++ salt/modules/salt_proxy.py
+@@ -71,7 +71,7 @@ def _is_proxy_running(proxyname):
+     """
+     Check if proxy for this name is running
+     """
+-    cmd = 'ps ax | grep "salt-proxy --proxyid={}" | grep -v grep'.format(
++    cmd = 'ps axww | grep "salt-proxy --proxyid={}" | grep -v grep'.format(
+         shlex.quote(proxyname)
+     )
+     cmdout = __salt__["cmd.run_all"](cmd, timeout=5, python_shell=True)

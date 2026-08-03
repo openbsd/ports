@@ -1,0 +1,11 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/salt-syndic -d"
+daemon_flags="-u _salt"
+
+. /etc/rc.d/rc.subr
+
+pexp="python${MODPY_VERSION}: ${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}.*"
+rc_reload=NO
+
+rc_cmd $1

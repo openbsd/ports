@@ -1,0 +1,15 @@
+Index: salt/__init__.py
+--- salt/__init__.py.orig
++++ salt/__init__.py
+@@ -201,6 +201,11 @@ warnings.filterwarnings(
+     message=".*TripleDES has been moved.*",
+ )
+ 
++warnings.filterwarnings(
++    "ignore",
++    "datetime.datetime.utcnow().*",
++    category=DeprecationWarning,
++)
+ 
+ def __define_global_system_encoding_variable__():
+     import builtins

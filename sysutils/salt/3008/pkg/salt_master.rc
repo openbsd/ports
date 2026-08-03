@@ -1,0 +1,10 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/salt-master -d"
+
+. /etc/rc.d/rc.subr
+
+pexp="python${MODPY_VERSION}: ${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}.*"
+rc_reload=NO
+
+rc_cmd $1
