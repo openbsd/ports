@@ -1,6 +1,6 @@
 COMMENT =	ELF related utils for ELF 32/64 binaries
 
-DISTNAME =	pax-utils-1.3.10
+DISTNAME =	pax-utils-1.3.11
 
 CATEGORIES =	devel
 
