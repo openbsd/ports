@@ -13,5 +13,6 @@ WANTLIB =		c lz m pthread ${COMPILER_LIBCXX}
 COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		archivers/lzip/lzlib
+TEST_DEPENDS =		archivers/lzip/lzip
 
 .include <bsd.port.mk>
