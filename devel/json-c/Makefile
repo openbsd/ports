@@ -1,11 +1,11 @@
 COMMENT=		JSON implementation in C
 
-DISTNAME=		json-c-0.18
+DISTNAME=		json-c-0.19
 CATEGORIES=		devel
 
 WANTLIB =		m
 
-SHARED_LIBS=		json-c	2.1
+SHARED_LIBS=		json-c	2.2
 
 HOMEPAGE=		https://github.com/json-c/json-c/wiki
 
@@ -17,13 +17,5 @@ SITES =			https://s3.amazonaws.com/json-c_releases/releases/
 MODULES=		devel/cmake
 
 CONFIGURE_ARGS=		-DDISABLE_WERROR=ON
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
-
-# evertyhing except tests
-ALL_TARGET =		json-c json-c-static
-
-# build whatever is left (ca. 56 C test files)
-pre-test:
-	@${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
