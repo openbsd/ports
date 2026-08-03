@@ -12,6 +12,7 @@ grommunio-mapi-header-php/class.keycloak.php
 grommunio-mapi-header-php/class.mapiexception.php
 grommunio-mapi-header-php/class.meetingrequest.php
 grommunio-mapi-header-php/class.recurrence.php
+grommunio-mapi-header-php/class.recurrenceexception.php
 grommunio-mapi-header-php/class.taskrecurrence.php
 grommunio-mapi-header-php/class.taskrequest.php
 grommunio-mapi-header-php/class.token.php
