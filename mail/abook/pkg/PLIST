@@ -1,6 +1,12 @@
 @bin bin/abook
 @man man/man1/abook.1
 @man man/man5/abookrc.5
+share/doc/abook/
+share/doc/abook/BUGS
+share/doc/abook/ChangeLog
+share/doc/abook/FAQ
+share/doc/abook/README
+share/doc/abook/TODO
 share/examples/abook/
 share/examples/abook/sample.abookrc
 share/locale/de/LC_MESSAGES/abook.mo

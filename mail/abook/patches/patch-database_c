@@ -1,6 +1,15 @@
---- database.c.orig	Sun Oct  4 04:38:25 2015
-+++ database.c	Wed Apr 19 16:45:13 2017
-@@ -859,7 +859,7 @@ item_merge(list_item dest, list_item src)
+Index: database.c
+--- database.c.orig
++++ database.c
+@@ -7,6 +7,7 @@
+  * Copyright (C) Jaakko Heinonen
+  */
+ 
++#include <ctype.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -936,7 +937,7 @@ item_merge(list_item dest, list_item src)
   */
  
  /* quick lookup by "standard" field number */

@@ -4,7 +4,7 @@ when the enter key is pressed in some terminals (e.g., TERM=pccon0).
 Index: ui.c
 --- ui.c.orig
 +++ ui.c
-@@ -573,6 +573,7 @@ get_commands()
+@@ -598,6 +598,7 @@ get_commands()
  				  refresh_screen();
  				  break;
  			case 'a': add_item();		break;
