@@ -9,7 +9,7 @@ Index: src/dispatch/bind_define.h
  void bind_to_view(const Arg *arg) {
  	if (!selmon)
  		return;
-@@ -1117,6 +1121,7 @@ void spawn(const Arg *arg) {
+@@ -1118,6 +1122,7 @@ void spawn(const Arg *arg) {
  		dup2(STDERR_FILENO, STDOUT_FILENO);
  		setsid();
  
@@ -17,7 +17,7 @@ Index: src/dispatch/bind_define.h
  		wordexp_t p;
  		if (wordexp(arg->v, &p, 0) != 0) {
  			wlr_log(WLR_DEBUG, "mango: wordexp failed for '%s'\n",
-@@ -1129,6 +1134,35 @@ void spawn(const Arg *arg) {
+@@ -1130,6 +1135,35 @@ void spawn(const Arg *arg) {
  		wlr_log(WLR_DEBUG, "mango: execvp '%s' failed: %s\n", p.we_wordv[0],
  				strerror(errno));
  		wordfree(&p);
@@ -53,10 +53,3 @@ Index: src/dispatch/bind_define.h
  		_exit(EXIT_FAILURE);
  	}
  	return;
-@@ -2246,4 +2280,4 @@ void load_config_file(const Arg *arg) {
- 	snprintf(cli_config_path, sizeof(cli_config_path), "%s", arg->v);
- 	reload_config(arg);
- 	return;
--}
-\ No newline at end of file
-+}
