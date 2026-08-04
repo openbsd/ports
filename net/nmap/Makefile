@@ -9,7 +9,8 @@ CATEGORIES=	net security
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	https://www.nmap.org/
-SITES=		https://www.nmap.org/dist/
+SITES=		https://www.nmap.org/dist/ \
+		https://spacehopper.org/mirrors/
 
 MAINTAINER=	JR Aquino <tanawts@gmail.com>
 
