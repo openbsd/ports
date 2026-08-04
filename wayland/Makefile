@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += awww
      SUBDIR += cage
      SUBDIR += cagebreak
      SUBDIR += cliphist
