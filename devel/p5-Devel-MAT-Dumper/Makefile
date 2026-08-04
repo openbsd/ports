@@ -1,6 +1,6 @@
 COMMENT =	write a heap dump file for later analysis
 
-DISTNAME =	Devel-MAT-Dumper-0.51
+DISTNAME =	Devel-MAT-Dumper-0.52
 CPAN_AUTHOR =	PEVANS
 
 CATEGORIES =	devel
