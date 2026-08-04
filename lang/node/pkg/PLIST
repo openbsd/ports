@@ -203,6 +203,7 @@ lib/node_modules/@npmcli/arborist/lib/place-dep.js
 lib/node_modules/@npmcli/arborist/lib/printable.js
 lib/node_modules/@npmcli/arborist/lib/query-selector-all.js
 lib/node_modules/@npmcli/arborist/lib/realpath.js
+lib/node_modules/@npmcli/arborist/lib/release-age-exclude.js
 lib/node_modules/@npmcli/arborist/lib/relpath.js
 lib/node_modules/@npmcli/arborist/lib/reset-dep-flags.js
 lib/node_modules/@npmcli/arborist/lib/retire-path.js
@@ -213,6 +214,7 @@ lib/node_modules/@npmcli/arborist/lib/signals.js
 lib/node_modules/@npmcli/arborist/lib/spec-from-lock.js
 lib/node_modules/@npmcli/arborist/lib/tracker.js
 lib/node_modules/@npmcli/arborist/lib/tree-check.js
+lib/node_modules/@npmcli/arborist/lib/unreviewed-scripts.js
 lib/node_modules/@npmcli/arborist/lib/version-from-tgz.js
 lib/node_modules/@npmcli/arborist/lib/vuln.js
 lib/node_modules/@npmcli/arborist/lib/yarn-lock.js
@@ -1041,6 +1043,7 @@ lib/node_modules/libnpmexec/lib/index.js
 lib/node_modules/libnpmexec/lib/is-windows.js
 lib/node_modules/libnpmexec/lib/no-tty.js
 lib/node_modules/libnpmexec/lib/run-script.js
+lib/node_modules/libnpmexec/lib/strict-allow-scripts-preflight.js
 lib/node_modules/libnpmexec/lib/with-lock.js
 lib/node_modules/libnpmexec/package.json
 lib/node_modules/libnpmfund/
@@ -1898,6 +1901,7 @@ lib/node_modules/npm/lib/package-url-cmd.js
 lib/node_modules/npm/lib/trust-cmd.js
 lib/node_modules/npm/lib/utils/
 lib/node_modules/npm/lib/utils/allow-scripts-cmd.js
+lib/node_modules/npm/lib/utils/allow-scripts-remediation.js
 lib/node_modules/npm/lib/utils/allow-scripts-writer.js
 lib/node_modules/npm/lib/utils/audit-error.js
 lib/node_modules/npm/lib/utils/auth.js
@@ -2232,6 +2236,7 @@ lib/node_modules/postcss-selector-parser/dist/util/
 lib/node_modules/postcss-selector-parser/dist/util/ensureObject.js
 lib/node_modules/postcss-selector-parser/dist/util/getProp.js
 lib/node_modules/postcss-selector-parser/dist/util/index.js
+lib/node_modules/postcss-selector-parser/dist/util/maxNestingDepth.js
 lib/node_modules/postcss-selector-parser/dist/util/stripComments.js
 lib/node_modules/postcss-selector-parser/dist/util/unesc.js
 lib/node_modules/postcss-selector-parser/package.json

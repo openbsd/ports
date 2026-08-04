@@ -1,7 +1,7 @@
 Index: tools/v8_gypfiles/v8.gyp
 --- tools/v8_gypfiles/v8.gyp.orig
 +++ tools/v8_gypfiles/v8.gyp
-@@ -733,7 +733,7 @@
+@@ -736,7 +736,7 @@
                }],
                ['v8_enable_webassembly==1', {
                  'conditions': [
@@ -10,7 +10,7 @@ Index: tools/v8_gypfiles/v8.gyp
                      'sources': [
                        '<(V8_ROOT)/src/trap-handler/handler-inside-posix.h',
                      ],
-@@ -776,7 +776,7 @@
+@@ -779,7 +779,7 @@
                }],
                ['v8_enable_webassembly==1', {
                  'conditions': [
@@ -19,7 +19,7 @@ Index: tools/v8_gypfiles/v8.gyp
                      'sources': [
                        '<(V8_ROOT)/src/trap-handler/handler-inside-posix.h',
                      ],
-@@ -1153,7 +1153,7 @@
+@@ -1156,7 +1156,7 @@
              }],
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -28,7 +28,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1181,7 +1181,7 @@
+@@ -1184,7 +1184,7 @@
            'conditions': [
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -37,7 +37,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1229,7 +1229,7 @@
+@@ -1232,7 +1232,7 @@
            'conditions': [
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -46,7 +46,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1324,7 +1324,7 @@
+@@ -1327,7 +1327,7 @@
          # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
          # to implement atomic memory access.
          # Clang needs it for some atomic operations (https://clang.llvm.org/docs/Toolchain.html#atomics-library).

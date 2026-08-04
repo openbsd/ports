@@ -1,7 +1,7 @@
 Index: src/env.cc
 --- src/env.cc.orig
 +++ src/env.cc
-@@ -775,7 +775,7 @@ std::string Environment::GetExecPath(const std::vector
+@@ -774,7 +774,7 @@ std::string Environment::GetExecPath(const std::vector
    uv_fs_req_cleanup(&req);
  #endif
  
