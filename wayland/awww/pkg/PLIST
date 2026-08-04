@@ -1,0 +1,20 @@
+@bin bin/awww
+@bin bin/awww-daemon
+@man man/man1/awww-clear-cache.1
+@man man/man1/awww-clear.1
+@man man/man1/awww-daemon.1
+@man man/man1/awww-img.1
+@man man/man1/awww-kill.1
+@man man/man1/awww-pause.1
+@man man/man1/awww-query.1
+@man man/man1/awww-restore.1
+@man man/man1/awww.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/awww
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/awww.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_awww

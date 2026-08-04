@@ -1,0 +1,17 @@
+Index: doc/gen.sh
+--- doc/gen.sh.orig
++++ doc/gen.sh
+@@ -14,11 +14,11 @@ DIR=$(dirname "$0")
+ GEN_DIR="$DIR"/generated
+ 
+ if [ ! -d "$GEN_DIR" ]; then
+-	mkdir -v "$GEN_DIR"
++	mkdir "$GEN_DIR"
+ fi
+ 
+ for FILE in "$DIR"/*scd; do
+-	GEN="$GEN_DIR"/"$(basename -s .scd "$FILE")"
++	GEN="$GEN_DIR"/"$(basename "$FILE" .scd)"
+ 	printf "generating %s..." "$GEN"
+ 	scdoc < "$FILE" > "$GEN"
+ 	printf " ...done!\n"
