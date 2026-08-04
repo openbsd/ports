@@ -1,0 +1,2 @@
+cow is a stacking window manager. Unlike other compositors based on wlroots,
+cow is a window manager using river as the compositor.

@@ -1,0 +1,15 @@
+Index: config/river/init
+--- config/river/init.orig
++++ config/river/init
+@@ -1,5 +1,8 @@
+-systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+-systemctl --user restart xdg-desktop-portal
++#! /bin/ksh
++set -eu
++
++: ${XDG_CURRENT_DESKTOP:=river}
++
++export XDG_CURRENT_DESKTOP
+ 
+ cow-start

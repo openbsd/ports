@@ -1,0 +1,15 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+To execute CoW on OpenBSD, copy the example configurations to your ~/.config
+directory (or XDG_CONFIG_HOME) first:
+
+$ cp ${LOCALBASE}/share/examples/cow/cow.conf ~/.config/cow/
+$ cp ${LOCALBASE}/share/examples/cow/river/init ~/.config/river/
+
+CoW may then be started via:
+
+$ river
+
+For a tested waybar configuration, refer to ${LOCALBASE}/share/examples/waybar

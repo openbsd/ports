@@ -1,0 +1,30 @@
+Index: config/cow/cow.conf
+--- config/cow/cow.conf.orig
++++ config/cow/cow.conf
+@@ -326,12 +326,9 @@ bind LAS+Right window-resize -g -d right
+ bind LCA+q quit
+ 
+ # Custom bindings to run commands.
+-bind L+Return exec xterm
+-bind A+question exec rofi -levenshtein-sort -show run -bg '#66ba66' \
+-    -fg black -hlbg white -hlfg black -bc 'blue' -bw 4 \
+-    -columns 1 -lines 5 -fixed-num-lines 1 -width 40 \
+-    -terminal xterm -hide-scrollbar -font "Bitstream Vera Sans 12"
+-bind L+F12 exec systemctl suspend
++bind L+Return exec foot
++bind A+question exec fuzzel
++bind L+F12 exec apm -S
+ 
+ # Mouse bindings
+ mouse L+left   window-move
+@@ -405,9 +402,8 @@ bind LCS+Tab window-container -P
+ # Ctrl+Meta+Button1: grab and drag the desk viewport
+ #mouse CM+Left scroll -r
+ 
+-exec dunst
++exec fnott
+ exec waybar
+-exec pasystray
+ 
+ # Clipboard persistence (retain clipboard content after an app closes):
+ exec wl-clip-persist --clipboard regular
