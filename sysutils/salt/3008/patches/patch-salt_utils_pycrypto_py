@@ -1,0 +1,64 @@
+Index: salt/utils/pycrypto.py
+--- salt/utils/pycrypto.py.orig
++++ salt/utils/pycrypto.py
+@@ -42,6 +42,12 @@ except (ImportError, PermissionError):
+     HAS_CRYPT = False
+ 
+ try:
++    import hashlib
++    HAS_HASHLIB = True
++except (ImportError, PermissionError):
++    HAS_HASHLIB = False
++
++try:
+     import passlib.context
+ 
+     HAS_PASSLIB = True
+@@ -114,6 +120,8 @@ def secure_password(
+ 
+ if HAS_CRYPT:
+     methods = {m.name.lower(): m for m in crypt.methods}
++elif HAS_HASHLIB:
++    methods = {m.lower(): m for m in hashlib.algorithms_guaranteed}
+ else:
+     methods = {}
+ known_methods = ["sha512", "sha256", "blowfish", "md5", "crypt"]
+@@ -161,6 +169,19 @@ def _gen_hash_crypt(crypt_salt=None, password=None, al
+     return ret
+ 
+ 
++def _gen_hash_hashlib(crypt_salt=None, password=None, algorithm=None):
++    """
++    Generate /etc/shadow hash using the native hashlib module
++    """
++    try:
++        h = hashlib.new(methods[algorithm])
++        h.update(password.encode("utf-8"))
++        ret = h.hexdigest()
++    except OSError:
++        ret = None
++    return ret
++
++
+ def gen_hash(crypt_salt=None, password=None, algorithm=None):
+     """
+     Generate /etc/shadow hash
+@@ -170,13 +191,17 @@ def gen_hash(crypt_salt=None, password=None, algorithm
+ 
+     if algorithm is None:
+         # prefer the most secure natively supported method
+-        algorithm = crypt.methods[0].name.lower() if HAS_CRYPT else known_methods[0]
++        algorithm = crypt.methods[0].name.lower() if (HAS_CRYPT or HAS_HASHLIB) else known_methods[0]
+ 
+     if algorithm == "crypt" and crypt_salt and len(crypt_salt) != 2:
+         log.warning("Hash salt is too long for 'crypt' hash.")
+ 
+     if HAS_CRYPT and algorithm in methods:
+         return _gen_hash_crypt(
++            crypt_salt=crypt_salt, password=password, algorithm=algorithm
++        )
++    elif HAS_HASHLIB and algorithm in methods:
++        return _gen_hash_hashlib(
+             crypt_salt=crypt_salt, password=password, algorithm=algorithm
+         )
+     elif HAS_PASSLIB and algorithm in known_methods:
