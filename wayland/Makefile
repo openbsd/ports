@@ -3,6 +3,7 @@
      SUBDIR += cage
      SUBDIR += cagebreak
      SUBDIR += cliphist
+     SUBDIR += cow
      SUBDIR += dmenu-wayland
      SUBDIR += fnott
      SUBDIR += foot
