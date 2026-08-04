@@ -1,7 +1,7 @@
 Index: components/signin/public/identity_manager/account_capabilities.h
 --- components/signin/public/identity_manager/account_capabilities.h.orig
 +++ components/signin/public/identity_manager/account_capabilities.h
-@@ -89,7 +89,7 @@ class AccountCapabilities {
+@@ -93,7 +93,7 @@ class AccountCapabilities {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

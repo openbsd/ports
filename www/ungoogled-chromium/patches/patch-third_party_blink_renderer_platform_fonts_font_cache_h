@@ -28,7 +28,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -311,7 +311,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -323,7 +323,7 @@ class PLATFORM_EXPORT FontCache final {
    static int32_t status_font_height_;
  #endif  // BUILDFLAG(IS_WIN)
  

@@ -1,7 +1,7 @@
 Index: media/mojo/mojom/BUILD.gn
 --- media/mojo/mojom/BUILD.gn.orig
 +++ media/mojo/mojom/BUILD.gn
-@@ -1072,7 +1072,7 @@ source_set("test_support") {
+@@ -1101,7 +1101,7 @@ source_set("test_support") {
    sources = []
    deps = []
  

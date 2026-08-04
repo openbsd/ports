@@ -1,6 +1,6 @@
-Index: remoting/tools/magi-mode/tests/testdata/mock_app.cc
---- remoting/tools/magi-mode/tests/testdata/mock_app.cc.orig
-+++ remoting/tools/magi-mode/tests/testdata/mock_app.cc
+Index: agents/skills/magi-mode/tests/testdata/mock_app.cc
+--- agents/skills/magi-mode/tests/testdata/mock_app.cc.orig
++++ agents/skills/magi-mode/tests/testdata/mock_app.cc
 @@ -14,7 +14,7 @@
  #include "file_manager_win.h"
  #endif

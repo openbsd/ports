@@ -5,7 +5,7 @@ fatal error: error in backend: Cannot implicitly convert a scalable size to a fi
 Index: v8/src/objects/simd.cc
 --- v8/src/objects/simd.cc.orig
 +++ v8/src/objects/simd.cc
-@@ -347,7 +347,7 @@ uintptr_t fast_search_avx(T* array, uintptr_t array_le
+@@ -348,7 +348,7 @@ uintptr_t fast_search_avx(T* array, uintptr_t array_le
  }
  #endif  // ifdef __SSE3__
  
@@ -14,7 +14,7 @@ Index: v8/src/objects/simd.cc
  
  template <typename ScalarType>
  struct SVEOperations {
-@@ -637,9 +637,11 @@ template <typename T>
+@@ -638,9 +638,11 @@ template <typename T>
  inline uintptr_t search(T* array, uintptr_t array_len, uintptr_t index,
                          T search_element) {
  #ifdef NEON64
