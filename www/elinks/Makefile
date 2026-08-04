@@ -1,6 +1,6 @@
 COMMENT =		advanced text mode web browser
 
-V =			0.19.1
+V =			0.20.0
 GH_ACCOUNT =		rkd77
 GH_PROJECT =		elinks
 GH_TAGNAME =		v$V
