@@ -1,0 +1,127 @@
+rtlsdr_read_async() -> rtlsdr_read_sync()
+helps when switching frequencies in client apps
+Index: src/rtl_tcp.c
+--- src/rtl_tcp.c.orig
++++ src/rtl_tcp.c
+@@ -22,6 +22,7 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <stdatomic.h>
+ 
+ #ifndef _WIN32
+ #include <unistd.h>
+@@ -59,9 +60,11 @@ typedef int socklen_t;
+ #define DEFAULT_PORT_STR "1234"
+ #define DEFAULT_SAMPLE_RATE_HZ 2048000
+ #define DEFAULT_MAX_NUM_BUFFERS 500
++#define DEFAULT_RXBUFFER_SIZE 262144	// see "rtl-sdr.h"
+ 
+ static SOCKET s;
+ 
++static pthread_t reader_thread;
+ static pthread_t tcp_worker_thread;
+ static pthread_t command_thread;
+ static pthread_cond_t exit_cond;
+@@ -88,8 +91,9 @@ static int enable_biastee = 0;
+ static int global_numq = 0;
+ static struct llist *ll_buffers = 0;
+ static int llbuf_num = DEFAULT_MAX_NUM_BUFFERS;
++static int rxbuffer_size = DEFAULT_RXBUFFER_SIZE;
+ 
+-static volatile int do_exit = 0;
++static atomic_int do_exit = 0;
+ 
+ 
+ void usage(void)
+@@ -100,6 +104,7 @@ void usage(void)
+ 	printf("\t[-f frequency to tune to [Hz]]\n");
+ 	printf("\t[-g gain (default: 0 for auto)]\n");
+ 	printf("\t[-s samplerate in Hz (default: %d Hz)]\n", DEFAULT_SAMPLE_RATE_HZ);
++	printf("\t[-B size of buffer (default: %d kB)]\n", DEFAULT_RXBUFFER_SIZE / 1024);
+ 	printf("\t[-b number of buffers (default: 15, set by library)]\n");
+ 	printf("\t[-n max number of linked list buffers to keep (default: %d)]\n", DEFAULT_MAX_NUM_BUFFERS);
+ 	printf("\t[-d device index or serial (default: 0)]\n");
+@@ -137,7 +142,6 @@ sighandler(int signum)
+ 	if (CTRL_C_EVENT == signum) {
+ 		fprintf(stderr, "Signal caught, exiting!\n");
+ 		do_exit = 1;
+-		rtlsdr_cancel_async(dev);
+ 		return TRUE;
+ 	}
+ 	return FALSE;
+@@ -147,7 +151,6 @@ static void sighandler(int signum)
+ {
+ 	signal(SIGPIPE, SIG_IGN);
+ 	fprintf(stderr, "Signal caught, exiting!\n");
+-	rtlsdr_cancel_async(dev);
+ 	do_exit = 1;
+ }
+ #endif
+@@ -197,6 +200,34 @@ void rtlsdr_callback(unsigned char *buf, uint32_t len,
+ 	}
+ }
+ 
++static void *reader_worker(void *arg)
++{
++	int r, rxsize;
++	unsigned char *rxbuf = malloc(rxbuffer_size);
++
++	if(rxbuf == NULL) {
++		fprintf(stderr, "Failed to allocate rxbuffer\n");
++		goto out;
++	}
++
++	while(1) {
++		if(do_exit)
++			goto out;
++		
++		r = rtlsdr_read_sync(dev, rxbuf, rxbuffer_size, &rxsize);
++		if(r < 0) {
++			fprintf(stderr, "Failed to rtlsdr_read_sync %d\n", r);
++			goto out;
++		}
++
++		rtlsdr_callback(rxbuf, rxsize, NULL);
++	}
++
++out:
++	free(rxbuf);
++	pthread_exit(0);
++}
++
+ static void *tcp_worker(void *arg)
+ {
+ 	struct llist *curelem,*prev;
+@@ -415,7 +446,7 @@ int main(int argc, char **argv)
+ 	struct sigaction sigact, sigign;
+ #endif
+ 
+-	while ((opt = getopt(argc, argv, "a:p:f:g:s:b:n:d:P:TD")) != -1) {
++	while ((opt = getopt(argc, argv, "a:p:f:g:s:B:b:n:d:P:TD")) != -1) {
+ 		switch (opt) {
+ 		case 'd':
+ 			dev_index = verbose_device_search(optarg);
+@@ -436,6 +467,9 @@ int main(int argc, char **argv)
+ 		case 'p':
+ 		        port = strdup(optarg);
+ 			break;
++		case 'B':
++			rxbuffer_size = atoi(optarg) * 1024;
++			break;
+ 		case 'b':
+ 			buf_num = atoi(optarg);
+ 			break;
+@@ -634,10 +668,10 @@ int main(int argc, char **argv)
+ 		pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+ 		r = pthread_create(&tcp_worker_thread, &attr, tcp_worker, NULL);
+ 		r = pthread_create(&command_thread, &attr, command_worker, NULL);
++		r = pthread_create(&reader_thread, &attr, reader_worker, NULL);
+ 		pthread_attr_destroy(&attr);
+ 
+-		r = rtlsdr_read_async(dev, rtlsdr_callback, NULL, buf_num, 0);
+-
++		pthread_join(reader_thread, &status);
+ 		pthread_join(tcp_worker_thread, &status);
+ 		pthread_join(command_thread, &status);
+ 
