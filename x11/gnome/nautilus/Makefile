@@ -27,6 +27,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/appstream \
+			x11/blueprint-compiler \
 			devel/gsettings-desktop-schemas
 
 RUN_DEPENDS=		x11/gnome/gvfs \
