@@ -1,6 +1,6 @@
 COMMENT=	source code spelling checker
 
-MODPY_DISTV=	2.4.2
+MODPY_DISTV=	2.4.3
 DISTNAME=	codespell-${MODPY_DISTV}
 
 CATEGORIES=	devel textproc
