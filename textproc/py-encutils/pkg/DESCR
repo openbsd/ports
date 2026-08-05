@@ -1,0 +1,6 @@
+A collection of helper functions to detect encodings of text files (like
+HTML, XHTML, XML, CSS, etc.) retrieved via HTTP, file or string.
+
+getEncodingInfo is probably the main function of interest which uses
+other supplied functions itself and gathers all information together and
+supplies an EncodingInfo object.
