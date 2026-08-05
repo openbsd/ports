@@ -3,6 +3,8 @@ COMMENT=		MATE support utilities
 SHARED_LIBS +=  matedict                  6.7 # 6.7
 
 MATE_PROJECT=		mate-utils
+MATE_VERSION=		1.28.1
+MATE_GITHUB=		Yes
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -16,8 +18,11 @@ WANTLIB += atk-1.0 atk-bridge-2.0 cairo-gobject cairo
 WANTLIB += canberra-gtk3 canberra gdk-3 graphite2 gtk-3
 WANTLIB += gtop-2.0 harfbuzz ltdl mate-panel-applet-4 ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile
-WANTLIB += fribidi
-WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xdmcp
+WANTLIB += fribidi X11-xcb XRes
+WANTLIB += atspi dbus-1 dconf epoll-shim mate-desktop-2 startup-notification-1
+WANTLIB += wayland-client wayland-cursor wayland-egl xcb-util
+WANTLIB += xkbcommon
+WANTLIB += ${COMPILER_LIBCXX} jpeg Xdmcp
 
 MODULES=		devel/dconf \
 			x11/gnome
