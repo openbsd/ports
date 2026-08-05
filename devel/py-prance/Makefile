@@ -1,9 +1,8 @@
 COMMENT =		resolving Swagger/OpenAPI 2.0 and 3.0 parser
 
-MODPY_DISTV =		25.4.8.0
+MODPY_DISTV =		26.7.19.0
 DISTNAME =		prance-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
