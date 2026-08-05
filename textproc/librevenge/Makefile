@@ -1,8 +1,7 @@
 COMMENT=	base library for writing document import filters
 
-DISTNAME=	librevenge-0.0.5
+DISTNAME=	librevenge-0.0.6
 CATEGORIES=	textproc
-REVISION=	0
 
 SHARED_LIBS=	revenge-0.0		0.0 \
 		revenge-generators-0.0	0.0 \
