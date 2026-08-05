@@ -1,5 +1,6 @@
 @bin bin/mate-screensaver
 @bin bin/mate-screensaver-command
+bin/mate-screensaver-configure
 @bin bin/mate-screensaver-preferences
 lib/pkgconfig/mate-screensaver.pc
 libexec/mate-screensaver/
@@ -10,6 +11,7 @@ libexec/mate-screensaver/
 @bin libexec/mate-screensaver/floaters
 @bin libexec/mate-screensaver/popsquares
 @bin libexec/mate-screensaver/slideshow
+@bin libexec/mate-screensaver/starfield
 @man man/man1/mate-screensaver-command.1
 @man man/man1/mate-screensaver-preferences.1
 @man man/man1/mate-screensaver.1
@@ -20,6 +22,7 @@ share/applications/screensavers/footlogo-floaters.desktop
 share/applications/screensavers/gnomelogo-floaters.desktop
 share/applications/screensavers/mate-popsquares.desktop
 share/applications/screensavers/personal-slideshow.desktop
+share/applications/screensavers/starfield.desktop
 share/backgrounds/
 share/backgrounds/cosmos/
 share/backgrounds/cosmos/background-1.xml
@@ -117,6 +120,7 @@ share/locale/ml/LC_MESSAGES/mate-screensaver.mo
 share/locale/mn/LC_MESSAGES/mate-screensaver.mo
 share/locale/mr/LC_MESSAGES/mate-screensaver.mo
 share/locale/ms/LC_MESSAGES/mate-screensaver.mo
+share/locale/nan/LC_MESSAGES/mate-screensaver.mo
 share/locale/nb/LC_MESSAGES/mate-screensaver.mo
 share/locale/nds/LC_MESSAGES/mate-screensaver.mo
 share/locale/ne/LC_MESSAGES/mate-screensaver.mo
@@ -145,6 +149,7 @@ share/locale/te/LC_MESSAGES/mate-screensaver.mo
 share/locale/th/LC_MESSAGES/mate-screensaver.mo
 share/locale/tr/LC_MESSAGES/mate-screensaver.mo
 share/locale/tt/LC_MESSAGES/mate-screensaver.mo
+share/locale/tzm/LC_MESSAGES/mate-screensaver.mo
 share/locale/ug/LC_MESSAGES/mate-screensaver.mo
 share/locale/uk/LC_MESSAGES/mate-screensaver.mo
 share/locale/ur/LC_MESSAGES/mate-screensaver.mo

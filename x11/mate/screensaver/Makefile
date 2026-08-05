@@ -1,8 +1,8 @@
 COMMENT=		MATE screensaver
 
-REVISION=		0
-
 MATE_PROJECT=		mate-screensaver
+MATE_VERSION=		1.28.1
+MATE_GITHUB=		Yes
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
@@ -15,13 +15,14 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xss Xxf86vm atk-1.0 atk-bridge-2.0
 WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 dconf drm epoxy
 WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl lzma m mate-desktop-2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl m mate-desktop-2
 WANTLIB += mate-menu matekbd matekbdui notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread startup-notification-1
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-util xcb-xfixes xkbfile xklavier xml2 xshmfence
-WANTLIB += z
-WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp execinfo jpeg
+WANTLIB += LLVM XRes z
+WANTLIB += drm_amdgpu drm_intel elf pciaccess
+WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp jpeg
 WANTLIB += atspi epoll-shim wayland-client wayland-cursor wayland-egl
 WANTLIB += xcb-randr xkbcommon
 
