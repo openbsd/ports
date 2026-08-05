@@ -2,10 +2,9 @@ COMMENT=	parse and build CSS from Python
 
 CATEGORIES=	textproc
 
-MODPY_DISTV=	2.11.1
+MODPY_DISTV=	2.15.0
 DISTNAME=	cssutils-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 # LGPLv3
 PERMIT_PACKAGE=	Yes
@@ -16,9 +15,11 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
-# tests also need jaraco.test (not in ports)
-NO_TEST=	Yes
-TEST_DEPENDS=	devel/py-test-cov \
+BUILD_DEPENDS=	misc/py-coherent.licensed
+RUN_DEPENDS=	textproc/py-encutils \
+		devel/py-more-itertools
+TEST_DEPENDS=	devel/py-jaraco-test \
+		devel/py-test-cov \
 		devel/py-mock \
 		textproc/py-lxml \
 		textproc/py-cssselect
