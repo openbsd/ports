@@ -1,9 +1,8 @@
 COMMENT=	parse CSS3 Selectors and translates them to XPath 1.0
 
-MODPY_DISTV=	1.4.0
+MODPY_DISTV=	1.5.0
 DISTNAME=	cssselect-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	textproc
 
