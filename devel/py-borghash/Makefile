@@ -1,6 +1,7 @@
 COMMENT =		memory-efficient hashtable with serialization
 
 MODPY_DISTV =		0.1.1
+REVISION =		0
 DISTNAME =		borghash-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -16,6 +17,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
+
+# used if present at build time
+BUILD_DEPENDS =		lang/cython
 
 # tests not included in pypi tarball
 NO_TEST	=		Yes
