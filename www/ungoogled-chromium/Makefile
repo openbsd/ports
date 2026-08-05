@@ -82,6 +82,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
 		devel/rust-bindgen \
+		lang/go \
 		lang/rust,-rustfmt \
 		lang/node \
 		lang/rust \

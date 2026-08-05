@@ -86,6 +86,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/esbuild:patch \
 		devel/gperf \
 		devel/rust-bindgen \
+		lang/go \
 		lang/rust,-rustfmt \
 		lang/node \
 		lang/rust \
