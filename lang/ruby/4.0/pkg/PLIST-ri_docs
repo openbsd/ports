@@ -295,6 +295,7 @@ share/ri/${REV}/system/Bundler/clean_exec-c.ri
 share/ri/${REV}/system/Bundler/clean_system-c.ri
 share/ri/${REV}/system/Bundler/clear_gemspec_cache-c.ri
 share/ri/${REV}/system/Bundler/configure-c.ri
+share/ri/${REV}/system/Bundler/configure_custom_gemfile-c.ri
 share/ri/${REV}/system/Bundler/configure_gem_home-c.ri
 share/ri/${REV}/system/Bundler/configure_gem_home_and_path-c.ri
 share/ri/${REV}/system/Bundler/configure_gem_path-c.ri
@@ -2651,6 +2652,7 @@ share/ri/${REV}/system/Gem/Package/cdesc-Package.ri
 share/ri/${REV}/system/Gem/Package/checksums-i.ri
 share/ri/${REV}/system/Gem/Package/contents-i.ri
 share/ri/${REV}/system/Gem/Package/copy_to-i.ri
+share/ri/${REV}/system/Gem/Package/create_symlink-i.ri
 share/ri/${REV}/system/Gem/Package/data_mode-i.ri
 share/ri/${REV}/system/Gem/Package/dir_mode-i.ri
 share/ri/${REV}/system/Gem/Package/extract_files-i.ri

@@ -6,7 +6,7 @@ Avoid unaligned accesses on mips64 and sparc64.
 Index: compile.c
 --- compile.c.orig
 +++ compile.c
-@@ -3358,7 +3358,11 @@ static int
+@@ -3393,7 +3393,11 @@ static int
  iseq_peephole_optimize(rb_iseq_t *iseq, LINK_ELEMENT *list, const int do_tailcallopt)
  {
      INSN *const iobj = (INSN *)list;
@@ -18,7 +18,7 @@ Index: compile.c
    again:
      optimize_checktype(iseq, iobj);
  
-@@ -14438,8 +14442,11 @@ static VALUE
+@@ -14480,8 +14484,11 @@ static VALUE
  ibf_load_object_complex_rational(const struct ibf_load *load, const struct ibf_object_header *header, ibf_offset_t offset)
  {
      const struct ibf_object_complex_rational *nums = IBF_OBJBODY(struct ibf_object_complex_rational, offset);

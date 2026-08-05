@@ -4,7 +4,7 @@ in order to work with the ports system.
 Index: test/rubygems/test_gem_installer.rb
 --- test/rubygems/test_gem_installer.rb.orig
 +++ test/rubygems/test_gem_installer.rb
-@@ -1699,7 +1699,7 @@ class TestGemInstaller < Gem::InstallerTestCase
+@@ -1751,7 +1751,7 @@ class TestGemInstaller < Gem::InstallerTestCase
      end
  
      assert_path_exist extension_file, "installed"
