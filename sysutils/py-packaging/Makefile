@@ -1,6 +1,6 @@
 COMMENT=	core utilities for Python packaging
 
-MODPY_DISTV=	26.2
+MODPY_DISTV=	26.3
 DISTNAME=	packaging-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
