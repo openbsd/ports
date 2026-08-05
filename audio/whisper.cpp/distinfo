@@ -1,4 +1,4 @@
 SHA256 (ggml-base.en.bin) = oDd5yG3zMjB19eeWyyzlAp8A7Ihp7uP9+4l6/jbG0AI=
-SHA256 (whisper.cpp-1.9.1.tar.gz) = FHJnF37veyLsPSR23VFNGxLhYOF2Iwt0Dj0b1gARhEc=
+SHA256 (whisper.cpp-1.9.2.tar.gz) = pqvQZPzKi4XnlNIFq/MoxSLpRR20Oj6twXi4g7fQ6c0=
 SIZE (ggml-base.en.bin) = 147964211
-SIZE (whisper.cpp-1.9.1.tar.gz) = 9012805
+SIZE (whisper.cpp-1.9.2.tar.gz) = 9622263
