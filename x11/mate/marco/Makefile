@@ -3,9 +3,8 @@ COMMENT=		the MATE window manager
 SHARED_LIBS +=  marco-private             1.0 # 1.0
 
 MATE_PROJECT=		marco
-MATE_VERSION=		1.28.1
-
-REVISION=		1
+MATE_VERSION=		1.28.2
+MATE_GITHUB=		Yes
 
 CATEGORIES=		x11
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xpresent
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB += cairo-gobject canberra canberra-gtk3 dbus-1 epoxy execinfo
+WANTLIB += cairo-gobject canberra canberra-gtk3 dbus-1 epoxy
 WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz iconv intl jpeg
@@ -25,10 +24,12 @@ WANTLIB += pcre2-8 pixman-1 png startup-notification-1 vorbis
 WANTLIB += vorbisfile xcb xcb-render xcb-shm xcb-util z
 WANTLIB += dconf epoll-shim wayland-client wayland-cursor wayland-egl
 WANTLIB += xkbcommon
+WANTLIB += mate-desktop-2
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libgtop2 \
-			devel/startup-notification
+			devel/startup-notification \
+			x11/mate/desktop
 
 BUILD_DEPENDS=		x11/gnome/zenity \
 			x11/mate/desktop
@@ -41,6 +42,9 @@ MODULES=		devel/dconf \
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_TOOLS=		desktop-file-utils yelp
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
+AUTORECONF=		./autogen.sh
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
 
 .include <bsd.port.mk>
