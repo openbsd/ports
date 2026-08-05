@@ -4,8 +4,7 @@ SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 
 MATE_PROJECT=		mate-panel
 MATE_VERSION=		1.28.6
-
-SITES=			https://github.com/mate-desktop/${MATE_PROJECT}/releases/download/v${MATE_VERSION}/
+MATE_GITHUB=		Yes
 
 CATEGORIES=		x11
 

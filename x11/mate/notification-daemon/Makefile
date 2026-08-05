@@ -2,8 +2,7 @@ COMMENT=		MATE notification daemon
 
 MATE_PROJECT=		mate-notification-daemon
 MATE_VERSION=		1.28.5
-
-SITES=			https://github.com/mate-desktop/${MATE_PROJECT}/releases/download/v${MATE_VERSION}/
+MATE_GITHUB=		Yes
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

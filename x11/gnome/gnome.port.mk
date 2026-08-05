@@ -30,7 +30,11 @@ CATEGORIES +=		x11/gnome
 DISTNAME=		${MATE_PROJECT}-${MATE_VERSION}
 HOMEPAGE ?=		http://mate-desktop.org/
 PORTROACH +=		limitw:1,even
-SITES ?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+.    if (defined(MATE_GITHUB) && ${MATE_GITHUB:L} == "yes")
+SITES ?=		https://github.com/mate-desktop/${MATE_PROJECT}/releases/download/v${MATE_VERSION}/
+.    else
+SITES ?=		https://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+.    endif
 CATEGORIES +=		x11/mate
 .  endif
 .  if ${NO_BUILD:L} == "no"
