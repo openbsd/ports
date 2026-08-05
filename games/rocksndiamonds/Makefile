@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =	maze game resembling boulderdash
 
-DISTNAME =	rocksndiamonds-4.4.2.3
+DISTNAME =	rocksndiamonds-4.4.2.4
 EXTRACT_SUFX =	-linux.tar.gz
 CATEGORIES =	games x11
 
