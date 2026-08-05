@@ -19,6 +19,10 @@ WANTLIB +=	crypto ssl
 
 SITES=		https://github.com/ngtcp2/ngtcp2/releases/download/v$V/
 
+# C11 _Generic
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 SEPARATE_BUILD=		Yes
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
