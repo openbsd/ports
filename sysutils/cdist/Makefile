@@ -1,7 +1,6 @@
 COMMENT=	usable configuration management
 
-VERSION=	20250225
-REVISION=	2
+VERSION=	20260805
 
 DISTNAME=		cdist-${VERSION}
 
@@ -16,6 +15,10 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PYBUILD=	setuptools
+
+pre-configure:
+	grep '^[[:digit:]]' ${WRKSRC}/docs/changelog | head -n1 | \
+		sed -n 's/\(.*\):/VERSION = \"\1\"/p' > ${WRKSRC}/cdist/version.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
