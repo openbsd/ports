@@ -3,6 +3,7 @@
      SUBDIR += caja
      SUBDIR += caja-extensions
      SUBDIR += calc
+     SUBDIR += common
      SUBDIR += control-center
      SUBDIR += desktop
      SUBDIR += engrampa
