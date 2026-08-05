@@ -716,11 +716,14 @@ lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}__ini
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}detection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}detection.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}ngram_search.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}ngram_search.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}text_detection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}text_detection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/detection.py
+lib/python${MODPY_VERSION}/site-packages/dateparser/search/ngram_search.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/search.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/text_detection.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/timezone_parser.py
