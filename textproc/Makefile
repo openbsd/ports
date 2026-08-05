@@ -441,6 +441,7 @@
      SUBDIR += py-elementpath
      SUBDIR += py-emoji
      SUBDIR += py-enchant
+     SUBDIR += py-encutils
      SUBDIR += py-et_xmlfile
      SUBDIR += py-fastjsonschema
      SUBDIR += py-feedparser
