@@ -1,7 +1,7 @@
 Index: external/libstaroffice/ExternalProject_libstaroffice.mk
 --- external/libstaroffice/ExternalProject_libstaroffice.mk.orig
 +++ external/libstaroffice/ExternalProject_libstaroffice.mk
-@@ -37,8 +37,9 @@ $(call gb_ExternalProject_get_state_target,libstaroffi
+@@ -36,8 +36,9 @@ $(call gb_ExternalProject_get_state_target,libstaroffi
  			$(if $(ENABLE_DEBUG),--enable-debug,--disable-debug) \
  			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
  			--disable-werror \
