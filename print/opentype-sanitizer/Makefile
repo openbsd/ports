@@ -1,6 +1,6 @@
 COMMENT =	sanitizer for OpenType fonts
 
-V =		9.2.0
+V =		9.3.0
 DISTNAME =	ots-$V
 PKGNAME =	opentype-sanitizer-$V
 
