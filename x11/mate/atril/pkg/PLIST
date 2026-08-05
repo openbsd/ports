@@ -6305,6 +6305,7 @@ share/icons/hicolor/64x64/apps/atril.png
 share/icons/hicolor/scalable/apps/atril.svg
 share/locale/af/LC_MESSAGES/atril.mo
 share/locale/am/LC_MESSAGES/atril.mo
+share/locale/an/LC_MESSAGES/atril.mo
 share/locale/ar/LC_MESSAGES/atril.mo
 share/locale/as/LC_MESSAGES/atril.mo
 share/locale/ast/LC_MESSAGES/atril.mo
@@ -6317,9 +6318,9 @@ share/locale/br/LC_MESSAGES/atril.mo
 share/locale/bs/LC_MESSAGES/atril.mo
 share/locale/ca/LC_MESSAGES/atril.mo
 share/locale/ca@valencia/LC_MESSAGES/atril.mo
-share/locale/cmn/LC_MESSAGES/atril.mo
 share/locale/crh/LC_MESSAGES/atril.mo
 share/locale/cs/LC_MESSAGES/atril.mo
+share/locale/csb/LC_MESSAGES/atril.mo
 share/locale/cy/LC_MESSAGES/atril.mo
 share/locale/da/LC_MESSAGES/atril.mo
 share/locale/de/LC_MESSAGES/atril.mo
@@ -6345,7 +6346,6 @@ share/locale/es_DO/LC_MESSAGES/atril.mo
 share/locale/es_EC/
 share/locale/es_EC/LC_MESSAGES/
 share/locale/es_EC/LC_MESSAGES/atril.mo
-share/locale/es_ES/LC_MESSAGES/atril.mo
 share/locale/es_MX/LC_MESSAGES/atril.mo
 share/locale/es_NI/
 share/locale/es_NI/LC_MESSAGES/
@@ -6370,12 +6370,14 @@ share/locale/et/LC_MESSAGES/atril.mo
 share/locale/eu/LC_MESSAGES/atril.mo
 share/locale/fa/LC_MESSAGES/atril.mo
 share/locale/fi/LC_MESSAGES/atril.mo
+share/locale/fil/LC_MESSAGES/atril.mo
 share/locale/fr/LC_MESSAGES/atril.mo
 share/locale/fr_CA/LC_MESSAGES/atril.mo
 share/locale/frp/LC_MESSAGES/atril.mo
 share/locale/fur/LC_MESSAGES/atril.mo
 share/locale/fy/LC_MESSAGES/atril.mo
 share/locale/ga/LC_MESSAGES/atril.mo
+share/locale/gd/LC_MESSAGES/atril.mo
 share/locale/gl/LC_MESSAGES/atril.mo
 share/locale/gu/LC_MESSAGES/atril.mo
 share/locale/ha/LC_MESSAGES/atril.mo
@@ -6395,6 +6397,7 @@ share/locale/jv/LC_MESSAGES/atril.mo
 share/locale/ka/LC_MESSAGES/atril.mo
 share/locale/kab/LC_MESSAGES/atril.mo
 share/locale/kk/LC_MESSAGES/atril.mo
+share/locale/km/LC_MESSAGES/atril.mo
 share/locale/kn/LC_MESSAGES/atril.mo
 share/locale/ko/LC_MESSAGES/atril.mo
 share/locale/ks/LC_MESSAGES/atril.mo
@@ -6403,7 +6406,12 @@ share/locale/ku_IQ/LC_MESSAGES/atril.mo
 @tag update-desktop-database
 @tag glib-compile-schemas
 share/locale/ky/LC_MESSAGES/atril.mo
+share/locale/la/LC_MESSAGES/atril.mo
+share/locale/lb/
+share/locale/lb/LC_MESSAGES/
+share/locale/lb/LC_MESSAGES/atril.mo
 share/locale/li/LC_MESSAGES/atril.mo
+share/locale/lo/LC_MESSAGES/atril.mo
 share/locale/lt/LC_MESSAGES/atril.mo
 share/locale/lv/LC_MESSAGES/atril.mo
 share/locale/mai/LC_MESSAGES/atril.mo
@@ -6414,6 +6422,11 @@ share/locale/ml/LC_MESSAGES/atril.mo
 share/locale/mn/LC_MESSAGES/atril.mo
 share/locale/mr/LC_MESSAGES/atril.mo
 share/locale/ms/LC_MESSAGES/atril.mo
+share/locale/my/LC_MESSAGES/atril.mo
+share/locale/nah/LC_MESSAGES/atril.mo
+share/locale/nan/
+share/locale/nan/LC_MESSAGES/
+share/locale/nan/LC_MESSAGES/atril.mo
 share/locale/nb/LC_MESSAGES/atril.mo
 share/locale/nds/LC_MESSAGES/atril.mo
 share/locale/ne/LC_MESSAGES/atril.mo
@@ -6442,12 +6455,14 @@ share/locale/sq/LC_MESSAGES/atril.mo
 share/locale/sr/LC_MESSAGES/atril.mo
 share/locale/sr@latin/LC_MESSAGES/atril.mo
 share/locale/sv/LC_MESSAGES/atril.mo
+share/locale/sw/LC_MESSAGES/atril.mo
 share/locale/ta/LC_MESSAGES/atril.mo
 share/locale/te/LC_MESSAGES/atril.mo
 share/locale/th/LC_MESSAGES/atril.mo
 share/locale/tk/LC_MESSAGES/atril.mo
 share/locale/tr/LC_MESSAGES/atril.mo
 share/locale/tt/LC_MESSAGES/atril.mo
+share/locale/tzm/LC_MESSAGES/atril.mo
 share/locale/ug/LC_MESSAGES/atril.mo
 share/locale/uk/LC_MESSAGES/atril.mo
 share/locale/ur/LC_MESSAGES/atril.mo
@@ -6460,6 +6475,9 @@ share/locale/wa/LC_MESSAGES/atril.mo
 share/locale/xh/LC_MESSAGES/atril.mo
 share/locale/yi/LC_MESSAGES/atril.mo
 share/locale/yo/LC_MESSAGES/atril.mo
+share/locale/zh-Hans/
+share/locale/zh-Hans/LC_MESSAGES/
+share/locale/zh-Hans/LC_MESSAGES/atril.mo
 share/locale/zh_CN/LC_MESSAGES/atril.mo
 share/locale/zh_HK/LC_MESSAGES/atril.mo
 share/locale/zh_TW/LC_MESSAGES/atril.mo

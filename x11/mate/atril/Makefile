@@ -8,13 +8,13 @@ SHARED_LIBS +=  atrildocument             3.0 # 3.0
 SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
-MATE_VERSION=		1.28.1
-REVISION=		0
+MATE_VERSION=		1.28.6
+MATE_GITHUB=		Yes
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB += EGL GL ICE LLVM SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm bz2
 WANTLIB += c crypto drm epoxy expat ffi fontconfig freetype gbm
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
@@ -30,18 +30,19 @@ WANTLIB += icudata icui18n icuuc idn2 jpeg lcms2
 WANTLIB += lz4 lzma openjp2 orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 png poppler-glib poppler psl secret-1
 WANTLIB += spectre tasn1 tiff unistring webp xml2
-WANTLIB += z xslt aspell Lerc webpmux
+WANTLIB += z xslt Lerc webpmux
 WANTLIB += gstgl-1.0 kpathsea synctex
 WANTLIB += Xau Xdmcp b2
 WANTLIB += brotlicommon brotlidec fribidi webpdemux woff2common
 WANTLIB += woff2dec
 WANTLIB += xcb-dri3 xcb-present xcb-sync xshmfence zstd
 WANTLIB += execinfo gstallocators-1.0 brotlienc
-WANTLIB += aom atspi avif dav1d dconf epoll-shim gsttranscoder-1.0
+WANTLIB += aom atspi avif dav1d dconf epoll-shim
 WANTLIB += hwy javascriptcoregtk-4.1 jxl jxl_cms mate-desktop-2
 WANTLIB += nghttp2 sharpyuv soup-3.0 startup-notification-1 wayland-client
 WANTLIB += wayland-cursor wayland-egl wayland-server webkit2gtk-4.1
 WANTLIB += xcb-randr xcb-util xkbcommon
+WANTLIB += XRes drm_amdgpu drm_intel elf pciaccess
 
 COMPILER =		base-clang ports-gcc base-gcc
 
