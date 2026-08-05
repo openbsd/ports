@@ -2,16 +2,16 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		powerful text editor for the MATE desktop
 
-REVISION=		5
-
 CATEGORIES=		textproc
 
 MATE_PROJECT=		pluma
+MATE_VERSION=		1.28.1
+MATE_GITHUB=		Yes
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 X11-xcb Xext Xfixes Xrandr Xrender aspell
+WANTLIB += ICE SM X11 X11-xcb Xext Xfixes Xrandr Xrender
 WANTLIB += atk-1.0 c cairo cairo-gobject dconf enchant-2 expat
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += girepository-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
