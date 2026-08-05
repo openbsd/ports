@@ -1,6 +1,7 @@
 COMMENT =		Soapy SDR plugin for RTL-SDR
 
 V =			0.3.3
+REVISION =		0
 GH_ACCOUNT =		pothosware
 GH_PROJECT =		SoapyRTLSDR
 GH_COMMIT =		b1f568d1b57cc973a1d2ee49be68d0d748d164e4

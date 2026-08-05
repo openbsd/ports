@@ -1,0 +1,16 @@
+--- SoapyRTLSDR.hpp.orig	Mon Aug 25 17:45:34 2025
++++ SoapyRTLSDR.hpp	Fri Jul 31 20:18:53 2026
+@@ -264,9 +264,10 @@ class SoapyRTLSDR: public SoapySDR::Device (public)
+         std::vector<signed char> data;
+     };
+ 
+-    //async api usage
+-    std::thread _rx_async_thread;
+-    void rx_async_operation(void);
++    //sync api usage
++    std::atomic<bool> _rxRunning;
++    std::thread _rx_sync_thread;
++    void rx_sync_operation(void);
+     void rx_callback(unsigned char *buf, uint32_t len);
+ 
+     std::mutex _buf_mutex;

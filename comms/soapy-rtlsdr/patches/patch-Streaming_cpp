@@ -1,0 +1,75 @@
+--- Streaming.cpp.orig	Mon Aug 25 17:45:34 2025
++++ Streaming.cpp	Fri Jul 31 20:19:17 2026
+@@ -80,6 +80,7 @@ SoapySDR::ArgInfoList SoapyRTLSDR::getStreamArgsInfo(c
+ 
+     streamArgs.push_back(buffersArg);
+ 
++    // args for async no longer work, but kept for compatibility
+     SoapySDR::ArgInfo asyncbuffsArg;
+     asyncbuffsArg.key = "asyncBuffs";
+     asyncbuffsArg.value = "0";
+@@ -94,21 +95,23 @@ SoapySDR::ArgInfoList SoapyRTLSDR::getStreamArgsInfo(c
+ }
+ 
+ /*******************************************************************
+- * Async thread work
++ * Sync thread work
+  ******************************************************************/
+ 
+-static void _rx_callback(unsigned char *buf, uint32_t len, void *ctx)
++void SoapyRTLSDR::rx_sync_operation(void)
+ {
+-    //printf("_rx_callback\n");
+-    SoapyRTLSDR *self = (SoapyRTLSDR *)ctx;
+-    self->rx_callback(buf, len);
+-}
++    int rxSize;
++    unsigned char *rxBuf = new unsigned char[bufferLength];
+ 
+-void SoapyRTLSDR::rx_async_operation(void)
+-{
+-    //printf("rx_async_operation\n");
+-    rtlsdr_read_async(dev, &_rx_callback, this, asyncBuffs, bufferLength);
+-    //printf("rx_async_operation done!\n");
++    //printf("rx_sync_operation\n");
++    while (_rxRunning) {
++        if (rtlsdr_read_sync(dev, (void *)rxBuf, bufferLength, &rxSize) < 0)
++            break;
++        rx_callback(rxBuf, rxSize);
++    }
++    //printf("rx_sync_operation done!\n");
++
++    delete[] rxBuf;
+ }
+ 
+ void SoapyRTLSDR::rx_callback(unsigned char *buf, uint32_t len)
+@@ -316,11 +319,12 @@ int SoapyRTLSDR::activateStream(
+     resetBuffer = true;
+     bufferedElems = 0;
+ 
+-    //start the async thread
+-    if (not _rx_async_thread.joinable())
++    //start the sync thread
++    if (not _rx_sync_thread.joinable())
+     {
+         rtlsdr_reset_buffer(dev);
+-        _rx_async_thread = std::thread(&SoapyRTLSDR::rx_async_operation, this);
++        _rxRunning = true;
++        _rx_sync_thread = std::thread(&SoapyRTLSDR::rx_sync_operation, this);
+     }
+ 
+     return 0;
+@@ -329,10 +333,10 @@ int SoapyRTLSDR::activateStream(
+ int SoapyRTLSDR::deactivateStream(SoapySDR::Stream *stream, const int flags, const long long timeNs)
+ {
+     if (flags != 0) return SOAPY_SDR_NOT_SUPPORTED;
+-    if (_rx_async_thread.joinable())
++    if (_rx_sync_thread.joinable())
+     {
+-        rtlsdr_cancel_async(dev);
+-        _rx_async_thread.join();
++        _rxRunning = false;
++        _rx_sync_thread.join();
+     }
+     return 0;
+ }
