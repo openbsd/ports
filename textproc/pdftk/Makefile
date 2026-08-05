@@ -1,11 +1,11 @@
 COMMENT=	pdf swiss army knife
 
 V=		3.3.3
-REVISION=	1
+REVISION=	2
 # https://www.bouncycastle.org/download/bouncy-castle-java/
-BC=		1.81
+BC=		1.85
 # https://commons.apache.org/proper/commons-lang/
-CL3=		3.18.0
+CL3=		3.20.0
 DISTNAME=	pdftk-v$V
 PKGNAME=	pdftk-$V
 EXTRACT_ONLY=	pdftk-v$V.tar.gz \
