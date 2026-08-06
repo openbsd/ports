@@ -51,6 +51,7 @@ lib/gst-validate-launcher/python/launcher/utils.py
 lib/gst-validate-launcher/python/launcher/vfb_server.py
 @so lib/gstreamer-${API}/libgstvalidatetracer.so
 lib/gstreamer-${API}/validate/
+@so lib/gstreamer-${API}/validate/libgstvalidatefaultinjection.so
 @so lib/gstreamer-${API}/validate/libgstvalidategapplication.so
 @so lib/gstreamer-${API}/validate/libgstvalidategtk.so
 @so lib/gstreamer-${API}/validate/libgstvalidatessim.so
