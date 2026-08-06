@@ -1,0 +1,9 @@
+Index: tests/verify.sh
+--- tests/verify.sh.orig
++++ tests/verify.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ UGREP=${UGREP_ABS_PATH:-../src/ugrep}
+ CONFIGH=${CONFIGH_ABS_PATH:-../config.h}
