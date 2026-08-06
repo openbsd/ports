@@ -1,0 +1,12 @@
+Index: cupsfilters/ipp-options.c
+--- cupsfilters/ipp-options.c.orig
++++ cupsfilters/ipp-options.c
+@@ -16,6 +16,8 @@
+ #include <ctype.h>
+ #include <limits.h>
+ 
++#include <stdint.h> /* SIZE_MAX */
++
+ #  ifdef DEBUG
+ #    define DEBUG_puts(x) _cups_debug_puts(x)
+ #    define DEBUG_printf(...) _cups_debug_printf(__VA_ARGS__)

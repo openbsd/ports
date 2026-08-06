@@ -1,9 +1,9 @@
 COMMENT=		library for developing printing filters
 
-V=			2.1.1
+V=			2.2.0
 DISTNAME=		libcupsfilters-${V}
 
-SHARED_LIBS +=  cupsfilters          2.0      # 2.0
+SHARED_LIBS +=  cupsfilters          2.1      # 2.0
 
 CATEGORIES=		print devel
 
@@ -14,13 +14,13 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache-2.0
 PERMIT_PACKAGE=		Yes
 
-SITES=	https://github.com/OpenPrinting/libcupsfilters/releases/download/${V}/
+SITES=			https://github.com/OpenPrinting/libcupsfilters/releases/download/${V}/
 
-WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common crypto
-WANTLIB += cups dbus-1 Lerc exif expat fontconfig freetype
-WANTLIB += gmp gnutls hogweed iconv idn2 intl jpeg lcms2 lzma
-WANTLIB += m nettle openjp2 p11-kit png poppler poppler-cpp qpdf
-WANTLIB += ssl tasn1 tiff unistring z zstd
+WANTLIB += ${COMPILER_LIBCXX} Lerc avahi-client avahi-common brotlicommon
+WANTLIB += brotlidec brotlienc crypto cups dbus-1 exif expat fontconfig
+WANTLIB += freetype hwy iconv intl jpeg jxl jxl_cms lcms2 lzma
+WANTLIB += m openjp2 pdfio png poppler poppler-cpp ssl tiff z
+WANTLIB += zstd
 
 # -std=c++17
 COMPILER=		base-clang ports-gcc
@@ -31,24 +31,24 @@ USE_GMAKE=		Yes
 BUILD_DEPENDS +=	print/ghostscript/gnu
 RUN_DEPENDS +=		print/ghostscript/gnu
 
+# pdftoppm
+BUILD_DEPENDS +=	print/poppler,-utils
+RUN_DEPENDS +=		print/poppler,-utils
+
 # don't enforce dependency on colord; it'll be used if found at runtime
 #RUN_DEPENDS +=		graphics/colord
 
 LIB_DEPENDS=		graphics/libexif \
+			graphics/libjxl \
 			print/cups,-libs \
-			print/poppler \
-			print/qpdf
+			print/pdfio \
+			print/poppler
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=		--with-test-font-path=${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf \
 			--disable-mutool
-
-# XXX
-# /usr/local/include/lcms2.h:1297:44: error: ISO C++17 does not allow 'register' storage class specifier [-Wregister]
-#                                            CMSREGISTER void * Cargo);
-CXXFLAGS +=		-DCMS_NO_REGISTER_KEYWORD
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

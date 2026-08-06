@@ -1,0 +1,12 @@
+Index: cupsfilters/pdftoraster.c
+--- cupsfilters/pdftoraster.c.orig
++++ cupsfilters/pdftoraster.c
+@@ -15,6 +15,8 @@
+ #include <cupsfilters/ipp.h>
+ #include <cups/cups.h>
+ 
++#include <signal.h> /* kill(2) */
++
+ #define USE_CMS
+ 
+ #include <stdio.h>
