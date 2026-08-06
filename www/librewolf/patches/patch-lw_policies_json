@@ -11,6 +11,6 @@ Index: lw/policies.json
 +        "GenerativeAI": {
 +            "Enabled": false
 +        },
-         "EncryptedMediaExtensions": {
-             "Enabled": false
-         },
+         "WebsiteFilter": {
+             "Block": [
+                 "https://localhost/*"
