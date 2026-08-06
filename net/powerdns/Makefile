@@ -11,7 +11,7 @@ PKGSPEC-main=		powerdns-=${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
 PKGNAME-ldap=		powerdns-ldap-${V}
-#REVISION-main=		0
+REVISION-main=		0
 #REVISION-mysql=		0
 #REVISION-pgsql=		0
 #REVISION-ldap=		0
@@ -28,7 +28,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto m pthread ssl ${COMPILER_LIBCXX}
 
-WANTLIB-main += ${WANTLIB}
+WANTLIB-main += ${WANTLIB} boost_container-mt
 WANTLIB-main += boost_program_options-mt c curl nghttp2 sodium
 WANTLIB-main += sqlite3 yaml-cpp z
 WANTLIB-main += nghttp3 ngtcp2 ngtcp2_crypto_libressl
