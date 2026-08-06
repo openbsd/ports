@@ -18,6 +18,7 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/meson
 
 BUILD_DEPENDS =		\
+			devel/bison \
 			textproc/scdoc \
 			wayland/libinput-openbsd \
 			wayland/wayland-protocols
