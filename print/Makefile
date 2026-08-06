@@ -50,6 +50,7 @@
      SUBDIR += p5-PostScript-MailLabels
      SUBDIR += pdf4qt
      SUBDIR += pdfarranger
+     SUBDIR += pdfio
      SUBDIR += poppler,
      SUBDIR += poppler-data
      SUBDIR += printrun
