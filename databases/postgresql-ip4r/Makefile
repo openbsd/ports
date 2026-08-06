@@ -2,10 +2,7 @@ COMMENT=	IPv4/v6 and IPv4/v6 range index type for PostgreSQL
 
 GH_ACCOUNT=	RhodiumToad
 GH_PROJECT=	ip4r
-
-# use a slightly newer commit including the license file
-GH_TAGNAME=	2.4.2
-#DISTNAME=	ip4r-2.4.1pl1
+GH_TAGNAME=	2.4.3
 
 PKGNAME=	postgresql-${DISTNAME}
 CATEGORIES=	databases net
