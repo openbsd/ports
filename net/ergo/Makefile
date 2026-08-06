@@ -1,6 +1,6 @@
 COMMENT =	modern IRC server written in Go
 
-DIST_TUPLE +=	github ergochat ergo v2.19.0 .
+DIST_TUPLE +=	github ergochat ergo v2.19.1 .
 CATEGORIES =	net
 
 HOMEPAGE =	https://ergo.chat/
