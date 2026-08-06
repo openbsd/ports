@@ -1,0 +1,10 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["flit-core >=3.11, <4"]
++requires = ["flit-core >=3.11"]
+ build-backend = "flit_core.buildapi"
+ 
+ [project]

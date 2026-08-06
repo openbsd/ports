@@ -1,6 +1,6 @@
 COMMENT=	objects and routines pertaining to date and time
 
-MODPY_DISTV=	5.9.0
+MODPY_DISTV=	5.12.0
 DISTNAME=	tempora-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -12,10 +12,8 @@ HOMEPAGE=	https://github.com/jaraco/tempora
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools_scm
+MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
-
-BUILD_DEPENDS=	misc/py-coherent.licensed
 
 RUN_DEPENDS=	devel/py-jaraco-functools \
 		devel/py-dateutil \
