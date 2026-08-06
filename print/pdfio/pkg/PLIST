@@ -1,0 +1,27 @@
+include/pdfio-content.h
+include/pdfio.h
+@lib lib/libpdfio.so.${LIBpdfio_VERSION}
+lib/pkgconfig/pdfio.pc
+@man man/man3/pdfio.3
+share/doc/pdfio/
+share/doc/pdfio/LICENSE
+share/doc/pdfio/NOTICE
+share/doc/pdfio/examples/
+share/doc/pdfio/examples/Makefile
+share/doc/pdfio/examples/Roboto-Bold.ttf
+share/doc/pdfio/examples/Roboto-Italic.ttf
+share/doc/pdfio/examples/Roboto-LICENSE.txt
+share/doc/pdfio/examples/Roboto-Regular.ttf
+share/doc/pdfio/examples/RobotoMono-Regular.ttf
+share/doc/pdfio/examples/code128-LICENSE.txt
+share/doc/pdfio/examples/code128.c
+share/doc/pdfio/examples/code128.ttf
+share/doc/pdfio/examples/image2pdf.c
+share/doc/pdfio/examples/md2pdf.c
+share/doc/pdfio/examples/md2pdf.md
+share/doc/pdfio/examples/mmd.c
+share/doc/pdfio/examples/mmd.h
+share/doc/pdfio/examples/pdf2text.c
+share/doc/pdfio/examples/pdfioinfo.c
+share/doc/pdfio/pdfio-512.png
+share/doc/pdfio/pdfio.html

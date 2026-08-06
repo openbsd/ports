@@ -1,0 +1,23 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -159,6 +159,8 @@ install:	$(TARGETS)
+ 	if test "x$(LIBPDFIO)" = xlibpdfio.so.1; then \
+ 		$(INSTALL) -c -m 755 libpdfio.so.1 $(BUILDROOT)$(libdir); \
+ 		ln -sf libpdfio.so.1 $(BUILDROOT)$(libdir)/libpdfio.so; \
++	elif test "x$(LIBPDFIO)" = xlibpdfio.so.${LIBpdfio_VERSION}; then \
++		$(INSTALL) -c -m 755 libpdfio.so.${LIBpdfio_VERSION} $(BUILDROOT)$(libdir); \
+ 	elif test "x$(LIBPDFIO)" = xlibpdfio.1.dylib; then \
+ 		$(INSTALL) -c -m 755 libpdfio.1.dylib $(BUILDROOT)$(libdir); \
+ 		codesign -s "$(CODESIGN_IDENTITY)" -o runtime --timestamp $(BUILDROOT)$(libdir)/libpdfio.1.dylib; \
+@@ -204,6 +206,10 @@ libpdfio.a:		$(LIBOBJS)
+ 	$(RANLIB) $@
+ 
+ libpdfio.so.1:		$(LIBOBJS)
++	echo Linking $@...
++	$(CC) $(DSOFLAGS) -shared -o $@ -Wl,-soname,$@ $(LIBOBJS) $(LIBS)
++
++libpdfio.so.${LIBpdfio_VERSION}:	$(LIBOBJS)
+ 	echo Linking $@...
+ 	$(CC) $(DSOFLAGS) -shared -o $@ -Wl,-soname,$@ $(LIBOBJS) $(LIBS)
+ 

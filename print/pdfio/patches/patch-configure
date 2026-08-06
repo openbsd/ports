@@ -1,0 +1,15 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -4298,6 +4298,11 @@ then :
+ 
+ 	LIBPDFIO="libpdfio.1.dylib"
+ 
++    elif test "$host_os_name" = openbsd
++then :
++
++	LIBPDFIO="libpdfio.so.${LIBpdfio_VERSION}"
++
+ else $as_nop
+ 
+ 	LIBPDFIO="libpdfio.so.1"
