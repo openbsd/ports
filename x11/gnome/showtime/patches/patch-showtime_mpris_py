@@ -1,0 +1,22 @@
+XXX three-thread lock cycle involving playsink's reconfigure path,
+the gst-plugins-rs gtk4paintablesink state change, and a synchronous
+Gst.Play.get_volume() call made from Showtime MPRIS handler on the main context
+
+Index: showtime/mpris.py
+--- showtime/mpris.py.orig
++++ showtime/mpris.py
+@@ -152,14 +152,6 @@ class DBusInterface:
+                 args = {arg.name: arg.signature for arg in signal.args}
+                 signals[signal.name] = {"interface": interface.name, "args": args}
+ 
+-            self._con.register_object(
+-                object_path=self._path,
+-                interface_info=interface,
+-                method_call_closure=self._on_method_call,
+-                get_property_closure=None,
+-                set_property_closure=None,
+-            )
+-
+         self._method_inargs = method_inargs
+         self._method_outargs = method_outargs
+         self._signals = signals
