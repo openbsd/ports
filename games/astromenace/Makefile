@@ -1,3 +1,5 @@
+BROKEN-sparc64 = hangs during build
+
 COMMENT =	hardcore 3D space shmup
 
 V =		1.4.3
