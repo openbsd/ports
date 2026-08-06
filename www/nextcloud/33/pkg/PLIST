@@ -1,4 +1,5 @@
 @option is-branch
+@pkgpath www/nextcloud/32
 @conflict nextcloud-*
 conf/modules.sample/
 conf/modules.sample/apache-nextcloud.conf.dist
