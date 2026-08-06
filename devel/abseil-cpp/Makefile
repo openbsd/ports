@@ -3,6 +3,7 @@ CATEGORIES =	devel
 
 V =		20260107.1
 DISTNAME =	abseil-cpp-${V}
+REVISION =	0
 
 HOMEPAGE =	https://abseil.io/
 SITES =		https://github.com/abseil/abseil-cpp/releases/download/${V}/

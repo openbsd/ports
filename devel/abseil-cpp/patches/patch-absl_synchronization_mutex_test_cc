@@ -1,0 +1,27 @@
+https://github.com/abseil/abseil-cpp/issues/1992
+https://github.com/abseil/abseil-cpp/commit/28e6a799ba550f8d499bfda5e100d16937804f72
+
+Index: absl/synchronization/mutex_test.cc
+--- absl/synchronization/mutex_test.cc.orig
++++ absl/synchronization/mutex_test.cc
+@@ -993,6 +993,20 @@ TEST(Mutex, FunctionPointerConditionWithConstMethod) {
+   EXPECT_TRUE(absl::Condition(&chapman, &Constable::WotsAllThisThen).Eval());
+ }
+ 
++#ifdef __cpp_explicit_this_parameter
++struct TrueViaDeducingThis {
++  template <class This, class... Args>
++  bool operator()(this const This&, Args...) {
++    return true;
++  }
++};
++
++TEST(Mutex, FunctorConditionDeducingThis) {
++  TrueViaDeducingThis f;
++  EXPECT_TRUE(absl::Condition(&f).Eval());
++}
++#endif
++
+ struct True {
+   template <class... Args>
+   bool operator()(Args...) const {
