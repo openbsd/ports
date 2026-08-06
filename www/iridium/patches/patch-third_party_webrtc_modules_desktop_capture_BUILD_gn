@@ -1,7 +1,7 @@
 Index: third_party/webrtc/modules/desktop_capture/BUILD.gn
 --- third_party/webrtc/modules/desktop_capture/BUILD.gn.orig
 +++ third_party/webrtc/modules/desktop_capture/BUILD.gn
-@@ -429,6 +429,8 @@ rtc_library("desktop_capture") {
+@@ -712,6 +712,8 @@ rtc_library("desktop_capture") {
  
        "Xrender",
        "Xtst",

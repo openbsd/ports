@@ -1,6 +1,6 @@
-Index: components/supervised_user/core/browser/kids_chrome_management_url_checker_client.cc
---- components/supervised_user/core/browser/kids_chrome_management_url_checker_client.cc.orig
-+++ components/supervised_user/core/browser/kids_chrome_management_url_checker_client.cc
+Index: components/supervised_user/core/browser/supervised_user_url_checker_client.cc
+--- components/supervised_user/core/browser/supervised_user_url_checker_client.cc.orig
++++ components/supervised_user/core/browser/supervised_user_url_checker_client.cc
 @@ -65,7 +65,7 @@ void OnResponse(
  
  FetcherConfig GetFetcherConfig(

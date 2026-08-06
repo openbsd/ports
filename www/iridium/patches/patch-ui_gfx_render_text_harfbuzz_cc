@@ -1,7 +1,7 @@
 Index: ui/gfx/render_text_harfbuzz.cc
 --- ui/gfx/render_text_harfbuzz.cc.orig
 +++ ui/gfx/render_text_harfbuzz.cc
-@@ -184,7 +184,7 @@ const char* GetPlatformColorEmojiFontName() {
+@@ -203,7 +203,7 @@ const char* GetPlatformColorEmojiFontName() {
    return "Segoe UI Emoji";
  #elif BUILDFLAG(IS_APPLE)
    return "Apple Color Emoji";

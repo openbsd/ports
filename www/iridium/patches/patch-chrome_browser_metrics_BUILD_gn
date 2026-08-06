@@ -19,7 +19,7 @@ Index: chrome/browser/metrics/BUILD.gn
      public += [ "chrome_metrics_service_crash_reporter.h" ]
    }
  
-@@ -473,7 +473,7 @@ source_set("impl") {
+@@ -476,7 +476,7 @@ source_set("impl") {
      sources += [ "structured/chrome_structured_metrics_delegate.cc" ]
    }
  
@@ -28,7 +28,7 @@ Index: chrome/browser/metrics/BUILD.gn
      sources += [ "bluetooth_metrics_provider.cc" ]
    }
  
-@@ -488,7 +488,7 @@ source_set("impl") {
+@@ -491,7 +491,7 @@ source_set("impl") {
      deps += [ "//chrome/browser/updates:update_metrics" ]
    }
  

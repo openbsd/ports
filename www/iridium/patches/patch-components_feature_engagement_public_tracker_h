@@ -1,7 +1,7 @@
 Index: components/feature_engagement/public/tracker.h
 --- components/feature_engagement/public/tracker.h.orig
 +++ components/feature_engagement/public/tracker.h
-@@ -249,7 +249,7 @@ class Tracker : public KeyedService, public base::Supp
+@@ -260,7 +260,7 @@ class Tracker : public KeyedService, public base::Supp
      Dismissed(feature);
    }
  

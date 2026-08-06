@@ -1,7 +1,7 @@
 Index: third_party/tflite/features.gni
 --- third_party/tflite/features.gni.orig
 +++ third_party/tflite/features.gni
-@@ -14,7 +14,7 @@ declare_args() {
+@@ -15,7 +15,7 @@ declare_args() {
    use_litert_tflite = false
  
    # This enables building TFLite with XNNPACK.

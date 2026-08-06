@@ -11,7 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2026.07.150.4
+V=			2026.08.151
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -83,6 +83,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/esbuild:patch \
 		devel/gperf \
 		devel/rust-bindgen \
+		lang/go \
 		lang/rust,-rustfmt \
 		lang/node \
 		lang/rust \
@@ -116,6 +117,8 @@ USE_GMAKE=	Yes
 BUILDTYPE=	Release
 
 SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG MODCLANG_VERSION
+
+UPDATE_PLIST_ARGS+=	-i MODCLANG_VERSION
 
 ALL_TARGET=		chrome
 TEST_TARGET=		base_unittests
@@ -178,6 +181,9 @@ GN_ARGS=	is_official_build=true \
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
 		rust_sysroot_absolute=\"${LOCALBASE}\"
+
+# go
+MAKE_ENV+=	GOCACHE=${WRKDIST}/go-cache
 
 PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib(aom.*cpudetect.*|vpx.*cpudetect.*)"
 
