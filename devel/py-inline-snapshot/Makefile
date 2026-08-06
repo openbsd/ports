@@ -1,6 +1,6 @@
 COMMENT=	testing library which puts values into source code
 
-MODPY_DISTV=	0.32.7
+MODPY_DISTV=	0.35.3
 DISTNAME=	inline_snapshot-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=	devel/py-asttokens \
 		devel/py-executing \
 		devel/py-rich
 
+# also wants pyright for some tests (not ported)
 TEST_DEPENDS=	devel/py-dirty-equals \
 		devel/py-freezegun \
 		devel/py-hypothesis \

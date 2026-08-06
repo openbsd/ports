@@ -48,6 +48,8 @@ lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_rewrit
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_rewrite_code.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_sentinels.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_sentinels.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_snapshot_arg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_snapshot_arg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_snapshot_session.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_snapshot_session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_source_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,6 +62,8 @@ lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_utils.
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}extra.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}extra.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}fix_pytest_cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}fix_pytest_cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}fix_pytest_diff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}fix_pytest_diff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/${MODPY_PYCACHE}pydantic_fix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -128,6 +132,8 @@ lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/${MODPY_PYCACHE}_find_external.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/${MODPY_PYCACHE}_outsource.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/${MODPY_PYCACHE}_outsource.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/${MODPY_PYCACHE}_tracked_files.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/${MODPY_PYCACHE}_tracked_files.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_diff.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_external.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_external_base.py
@@ -145,11 +151,14 @@ lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/${MOD
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/${MODPY_PYCACHE}_json.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/${MODPY_PYCACHE}_protocol.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/${MODPY_PYCACHE}_protocol.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/${MODPY_PYCACHE}_rich_svg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/${MODPY_PYCACHE}_rich_svg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/${MODPY_PYCACHE}_text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/${MODPY_PYCACHE}_text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/_binary.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/_json.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/_protocol.py
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/_rich_svg.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_format/_text.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_outsource.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_storage/
@@ -166,6 +175,7 @@ lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_storage/${MO
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_storage/_hash.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_storage/_protocol.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_storage/_uuid.py
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_external/_tracked_files.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_fix_assert.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_flags.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_format.py
@@ -201,12 +211,14 @@ lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_snapshot/eq_value.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_snapshot/generic_value.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_snapshot/min_max_value.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_snapshot/undecided_value.py
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_snapshot_arg.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_snapshot_session.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_source_file.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_types.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_unmanaged.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/_utils.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/extra.py
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/fix_pytest_cache.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/fix_pytest_diff.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/plugin/
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/plugin/__init__.py
@@ -230,5 +242,8 @@ lib/python${MODPY_VERSION}/site-packages/inline_snapshot/testing/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/testing/${MODPY_PYCACHE}_example.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/testing/${MODPY_PYCACHE}_example.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/testing/${MODPY_PYCACHE}_terminal_svg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/testing/${MODPY_PYCACHE}_terminal_svg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/testing/_example.py
+lib/python${MODPY_VERSION}/site-packages/inline_snapshot/testing/_terminal_svg.py
 lib/python${MODPY_VERSION}/site-packages/inline_snapshot/version.py
