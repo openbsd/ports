@@ -1,3 +1,5 @@
+Add PowerPC CPU feature detection support for OpenBSD.
+
 Index: aom_ports/ppc_cpudetect.c
 --- aom_ports/ppc_cpudetect.c.orig
 +++ aom_ports/ppc_cpudetect.c

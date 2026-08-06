@@ -1,9 +1,9 @@
 ARM uses compiler intrinsics, so don't require GNU as.
 
-Index: build/cmake/aom_configure.cmake
---- build/cmake/aom_configure.cmake.orig
-+++ build/cmake/aom_configure.cmake
-@@ -194,6 +194,10 @@ elseif(AOM_TARGET_CPU MATCHES "arm")
+Index: cmake/aom_configure.cmake
+--- cmake/aom_configure.cmake.orig
++++ cmake/aom_configure.cmake
+@@ -195,6 +195,10 @@ elseif(AOM_TARGET_CPU MATCHES "arm")
      if(NOT CMAKE_ASM_COMPILER)
        set(CMAKE_ASM_COMPILER ${CMAKE_C_COMPILER} "-c -mimplicit-it=always")
      endif()
