@@ -199,7 +199,7 @@ PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib
 
 # pull in our patched sources for libaom and libvpx
 GN_ARGS+=	use_vaapi=true
-BUILD_DEPENDS+=	multimedia/aom:patch \
+BUILD_DEPENDS+=	multimedia/aom>=3.14:patch \
 		multimedia/libvpx:patch
 
 .if ${MACHINE_ARCH} == "aarch64"
@@ -304,9 +304,6 @@ post-patch:
 		${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
-	perl -pi -e 's#int eob,#uint16_t eob,#g' \
-		${WRKSRC}/third_party/libaom/source/config/linux/arm64-cpu-detect/config/av1_rtcd.h \
-		${WRKSRC}/third_party/libaom/source/config/linux/x64/config/av1_rtcd.h
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
