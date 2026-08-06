@@ -1,24 +1,19 @@
 COMMENT=	image processing tools
 
-VER=		6.9.13-48
-REVISION=	0
-DISTNAME=	ImageMagick-${VER}
-PKGNAME=	ImageMagick-${VER:S/-/./}
-PORTROACH=	site:https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/ limit:6.*
-EXTRACT_SUFX=	.tar.xz
+GH_ACCOUNT=	ImageMagick
+GH_PROJECT=	ImageMagick6
+GH_TAGNAME=	6.9.13-54
+PKGNAME=	ImageMagick-${GH_TAGNAME:S/-/./}
 
-SHARED_LIBS +=	MagickCore-6.Q16     8.2      # 7.0
-SHARED_LIBS +=	MagickWand-6.Q16     4.2      # 7.0
+SHARED_LIBS +=	MagickCore-6.Q16     8.3      # 7.1
+SHARED_LIBS +=	MagickWand-6.Q16     4.2      # 7.1
 SHARED_LIBS +=	Magick++-6.Q16       5.2      # 9.0
 
 CATEGORIES=	graphics
 
-HOMEPAGE=	https://imagemagick.org/
+HOMEPAGE=	https://legacy.imagemagick.org/
 
-SITES=		https://imagemagick.org/archive/releases/ \
-		https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/
-
-# https://imagemagick.org/script/license.php
+# https://legacy.imagemagick.org/script/license.php
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Lerc SM X11 Xau Xdmcp Xext Xt aom
@@ -38,7 +33,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		graphics/djvulibre \
 		graphics/jbigkit \
 		graphics/lcms2 \
-		graphics/libraw>=0.19.5p0 \
+		graphics/libraw \
 		graphics/libwebp \
 		graphics/openjp2 \
 		graphics/png \

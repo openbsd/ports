@@ -7,13 +7,13 @@ not seem to be a security issue".
 Index: magick/constitute.c
 --- magick/constitute.c.orig
 +++ magick/constitute.c
-@@ -1193,8 +1193,7 @@ MagickExport MagickBooleanType WriteImage(const ImageI
+@@ -1196,8 +1196,7 @@ MagickExport MagickBooleanType WriteImage(const ImageI
    if ((image->ping != MagickFalse) &&
        (SyncImagePixelCache(image,exception) == MagickFalse))
      return(MagickFalse);
 -  if (SyncImageProfiles(image) == MagickFalse)
 -    return(MagickFalse);
-+  SyncImageProfiles(image) == MagickFalse;
++  (void)SyncImageProfiles(image);
    DisassociateImageStream(image);
    option=GetImageOption(image_info,"delegate:bimodal");
    if ((option != (const char *) NULL) &&
