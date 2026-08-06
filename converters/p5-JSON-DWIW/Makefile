@@ -3,15 +3,16 @@ COMMENT =	JSON converter that Does What I Want
 MODULES =	cpan
 DISTNAME =	JSON-DWIW-0.47
 CATEGORIES =	converters
-REVISION =	1
+REVISION =	2
 
 # Perl
-PERMIT_PACKAGE =		Yes
-MAKE_ENV +=	CC='${CC}'
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl
+WANTLIB =	c perl
 
 MODULES +=	gnu
+
+MAKE_ENV =	CC='${CC}'
 
 # dirty fix to populate autoconf cache; if this is not done we miss
 # protection done by gnu.port.mk for configure detecting gmkdir, etc

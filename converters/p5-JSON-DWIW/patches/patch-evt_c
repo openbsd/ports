@@ -1,0 +1,24 @@
+https://rt.cpan.org/Ticket/Display.html?id=180690
+Fix a use-after-free, jsonevt_free_ctx() has freed the error string.
+
+Index: evt.c
+--- evt.c.orig
++++ evt.c
+@@ -1021,15 +1021,9 @@ handle_parse_result(int result, jsonevt_ctx * ctx, per
+     if (throw_exception) {
+         tmp_sv = get_sv("@", TRUE);
+         sv_setsv(tmp_sv, error_msg);
+-        SvREFCNT_dec(error_msg);
+ 
+-        if (error) {
+-            croak("%s v%s %s", MOD_NAME, XS_VERSION, error);
+-        }
+-        else {
+-            croak("%s v%s - error", MOD_NAME, XS_VERSION);
+-        }
+-
++        sv_2mortal(error_msg);
++        croak("%s", SvPV_nolen(error_msg));
+     }
+ 
+     SvREFCNT_dec(error_msg);
