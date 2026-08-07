@@ -122,6 +122,14 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_text_extractor.
 lib/python${MODPY_VERSION}/site-packages/pypdf/_utils.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_version.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_writer.py
+lib/python${MODPY_VERSION}/site-packages/pypdf/actions/
+lib/python${MODPY_VERSION}/site-packages/pypdf/actions/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pypdf/actions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pypdf/actions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pypdf/actions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypdf/actions/${MODPY_PYCACHE}_actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pypdf/actions/${MODPY_PYCACHE}_actions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypdf/actions/_actions.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/annotations/
 lib/python${MODPY_VERSION}/site-packages/pypdf/annotations/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/annotations/${MODPY_PYCACHE}/
