@@ -2,7 +2,7 @@ COMMENT =	neofetch-like tool for fetching system information
 
 GH_ACCOUNT =	fastfetch-cli
 GH_PROJECT =	fastfetch
-GH_TAGNAME=	2.65.2
+GH_TAGNAME=	2.67.0
 
 CATEGORIES =	sysutils
 
