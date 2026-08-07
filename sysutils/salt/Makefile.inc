@@ -30,7 +30,7 @@ MODPY_PYBUILD =		setuptools
 
 MODULES =		lang/python
 
-BUILD_DEPENDS =		textproc/py-yaml \
+BUILD_DEPENDS +=	textproc/py-yaml \
 			www/py-jinja2 \
 			www/py-requests
 
