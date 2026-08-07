@@ -38,6 +38,7 @@ MODGNOME_TOOLS=		shared-mime-info gobject-introspection \
 			gtk-update-icon-cache
 
 BUILD_DEPENDS=		devel/autoconf-archive \
+			x11/mate/common \
 			textproc/gtk-doc
 
 CONFIGURE_STYLE=	autoreconf

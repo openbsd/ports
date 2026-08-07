@@ -32,6 +32,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			x11/mate/desktop
 
 BUILD_DEPENDS=		x11/gnome/zenity \
+			x11/mate/common \
 			x11/mate/desktop
 
 RUN_DEPENDS=		x11/gnome/zenity
