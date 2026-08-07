@@ -262,6 +262,7 @@
      SUBDIR += powder-toy
      SUBDIR += prboom
      SUBDIR += prboom-plus
+     SUBDIR += prismlauncher
      SUBDIR += pushover
      SUBDIR += puzzles
      SUBDIR += py-chess
