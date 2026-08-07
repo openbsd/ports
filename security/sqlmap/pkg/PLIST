@@ -9,7 +9,6 @@ share/sqlmap/.github/ISSUE_TEMPLATE/bug_report.md
 share/sqlmap/.github/ISSUE_TEMPLATE/feature_request.md
 share/sqlmap/.github/workflows/
 share/sqlmap/.github/workflows/tests.yml
-share/sqlmap/.pylintrc
 share/sqlmap/LICENSE
 share/sqlmap/${MODPY_PYCACHE}/
 share/sqlmap/${MODPY_PYCACHE}sqlmap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,11 +42,13 @@ share/sqlmap/data/shell/README.txt
 share/sqlmap/data/shell/backdoors/
 share/sqlmap/data/shell/backdoors/backdoor.asp_
 share/sqlmap/data/shell/backdoors/backdoor.aspx_
+share/sqlmap/data/shell/backdoors/backdoor.cfm_
 share/sqlmap/data/shell/backdoors/backdoor.jsp_
 share/sqlmap/data/shell/backdoors/backdoor.php_
 share/sqlmap/data/shell/stagers/
 share/sqlmap/data/shell/stagers/stager.asp_
 share/sqlmap/data/shell/stagers/stager.aspx_
+share/sqlmap/data/shell/stagers/stager.cfm_
 share/sqlmap/data/shell/stagers/stager.jsp_
 share/sqlmap/data/shell/stagers/stager.php_
 share/sqlmap/data/txt/
@@ -234,14 +235,12 @@ share/sqlmap/extra/shutils/blanks.sh
 share/sqlmap/extra/shutils/drei.sh
 share/sqlmap/extra/shutils/duplicates.py
 share/sqlmap/extra/shutils/junk.sh
-share/sqlmap/extra/shutils/modernize.sh
 share/sqlmap/extra/shutils/newlines.py
 share/sqlmap/extra/shutils/postcommit-hook.sh
 share/sqlmap/extra/shutils/precommit-hook.sh
 share/sqlmap/extra/shutils/pycodestyle.sh
 share/sqlmap/extra/shutils/pydiatra.sh
 share/sqlmap/extra/shutils/pyflakes.sh
-share/sqlmap/extra/shutils/pylint.sh
 share/sqlmap/extra/shutils/pypi.sh
 share/sqlmap/extra/shutils/recloak.sh
 share/sqlmap/extra/shutils/strip.sh
@@ -306,8 +305,6 @@ share/sqlmap/lib/core/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXT
 share/sqlmap/lib/core/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/core/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/core/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}pyc
-share/sqlmap/lib/core/${MODPY_PYCACHE}gui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-share/sqlmap/lib/core/${MODPY_PYCACHE}gui.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/core/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/core/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/core/${MODPY_PYCACHE}option.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -357,7 +354,6 @@ share/sqlmap/lib/core/dicts.py
 share/sqlmap/lib/core/dump.py
 share/sqlmap/lib/core/enums.py
 share/sqlmap/lib/core/exception.py
-share/sqlmap/lib/core/gui.py
 share/sqlmap/lib/core/log.py
 share/sqlmap/lib/core/option.py
 share/sqlmap/lib/core/optiondict.py
@@ -536,6 +532,8 @@ share/sqlmap/lib/utils/${MODPY_PYCACHE}deps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXT
 share/sqlmap/lib/utils/${MODPY_PYCACHE}deps.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}getch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/utils/${MODPY_PYCACHE}getch.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/lib/utils/${MODPY_PYCACHE}gui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/sqlmap/lib/utils/${MODPY_PYCACHE}gui.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}har.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/utils/${MODPY_PYCACHE}har.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -560,6 +558,8 @@ share/sqlmap/lib/utils/${MODPY_PYCACHE}sqlalchemy.${MODPY_PYC_MAGIC_TAG}${MODPY_
 share/sqlmap/lib/utils/${MODPY_PYCACHE}sqlalchemy.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}timeout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/utils/${MODPY_PYCACHE}timeout.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/lib/utils/${MODPY_PYCACHE}tui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/sqlmap/lib/utils/${MODPY_PYCACHE}tui.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}versioncheck.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/utils/${MODPY_PYCACHE}versioncheck.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}xrange.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -569,6 +569,7 @@ share/sqlmap/lib/utils/brute.py
 share/sqlmap/lib/utils/crawler.py
 share/sqlmap/lib/utils/deps.py
 share/sqlmap/lib/utils/getch.py
+share/sqlmap/lib/utils/gui.py
 share/sqlmap/lib/utils/har.py
 share/sqlmap/lib/utils/hash.py
 share/sqlmap/lib/utils/hashdb.py
@@ -581,6 +582,7 @@ share/sqlmap/lib/utils/search.py
 share/sqlmap/lib/utils/sgmllib.py
 share/sqlmap/lib/utils/sqlalchemy.py
 share/sqlmap/lib/utils/timeout.py
+share/sqlmap/lib/utils/tui.py
 share/sqlmap/lib/utils/versioncheck.py
 share/sqlmap/lib/utils/xrange.py
 share/sqlmap/plugins/
@@ -1354,6 +1356,8 @@ share/sqlmap/tamper/${MODPY_PYCACHE}lowercase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOE
 share/sqlmap/tamper/${MODPY_PYCACHE}lowercase.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}luanginx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/tamper/${MODPY_PYCACHE}luanginx.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}luanginxmore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/sqlmap/tamper/${MODPY_PYCACHE}luanginxmore.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}misunion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/tamper/${MODPY_PYCACHE}misunion.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}modsecurityversioned.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1458,6 +1462,7 @@ share/sqlmap/tamper/informationschemacomment.py
 share/sqlmap/tamper/least.py
 share/sqlmap/tamper/lowercase.py
 share/sqlmap/tamper/luanginx.py
+share/sqlmap/tamper/luanginxmore.py
 share/sqlmap/tamper/misunion.py
 share/sqlmap/tamper/modsecurityversioned.py
 share/sqlmap/tamper/modsecurityzeroversioned.py
