@@ -59,8 +59,8 @@ additional packages to be installed:
 
  RADIUS:	   p5-Authen-Radius
  TelnetIOSPing:	   p5-Net-Telnet
- OpenSSHEOSPing:   p5-Net-OpenSSH p5-IO-Pty
- OpenSSHJunOSPing: p5-Net-OpenSSH p5-IO-Pty
+ OpenSSHEOSPing:   p5-Net-OpenSSH p5-IO-Tty
+ OpenSSHJunOSPing: p5-Net-OpenSSH p5-IO-Tty
  AnotherDNS:	   p5-Net-DNS
  LDAP:		   p5-ldap p5-IO-Socket-SSL
 

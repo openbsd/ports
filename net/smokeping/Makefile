@@ -2,7 +2,7 @@ COMMENT=	latency logging and graphing system
 
 V=		2.9.0
 DISTNAME=	smokeping-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -26,7 +26,14 @@ COMMON_DEPENDS=	devel/p5-Config-Grammar \
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		net/fping \
 		www/spawn-fcgi
-BUILD_DEPENDS=	${COMMON_DEPENDS}
+BUILD_DEPENDS=	${COMMON_DEPENDS} \
+		databases/p5-ldap \
+		devel/p5-IO-Tty \
+		net/p5-Net-DNS \
+		net/p5-Net-OpenSSH \
+		net/p5-Net-Telnet \
+		security/p5-Authen-Radius \
+		security/p5-IO-Socket-SSL
 
 SYSCONFDIR=	${BASESYSCONFDIR}/smokeping
 
