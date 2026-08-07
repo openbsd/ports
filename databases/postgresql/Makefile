@@ -7,7 +7,7 @@ COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
 VERSION=	18.4
 REVISION-main=	1
-REVISION-server=0
+REVISION-server=1
 PREV_MAJOR=	17
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
