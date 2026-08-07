@@ -1,0 +1,12 @@
+Index: launcher/minecraft/MojangVersionFormat.cpp
+--- launcher/minecraft/MojangVersionFormat.cpp.orig
++++ launcher/minecraft/MojangVersionFormat.cpp
+@@ -338,7 +338,7 @@ QJsonObject MojangVersionFormat::libraryToJson(Library
+     if (!library->m_repositoryURL.isEmpty()) {
+         libRoot.insert("url", library->m_repositoryURL);
+     }
+-    if (library->isNative()) {
++    if (library->isNative() && !library->m_nativeClassifiers.empty()) {
+         QJsonObject nativeList;
+         auto iter = library->m_nativeClassifiers.begin();
+         while (iter != library->m_nativeClassifiers.end()) {

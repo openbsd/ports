@@ -1,0 +1,27 @@
+Index: launcher/minecraft/MinecraftInstance.cpp
+--- launcher/minecraft/MinecraftInstance.cpp.orig
++++ launcher/minecraft/MinecraftInstance.cpp
+@@ -55,6 +55,9 @@
+ #include "launch/steps/PreLaunchCommand.h"
+ #include "launch/steps/QuitAfterGameStop.h"
+ #include "launch/steps/TextPrint.h"
++#ifdef Q_OS_OPENBSD
++#include "launch/steps/PatchLWJGL.h"
++#endif
+ 
+ #include "minecraft/launch/AutoInstallJava.h"
+ #include "minecraft/launch/ClaimAccount.h"
+@@ -1191,6 +1194,13 @@ LaunchTask* MinecraftInstance::createLaunchTask(AuthSe
+     } else {
+         process->appendStep(makeShared<EnsureOfflineLibraries>(pptr, this));
+     }
++
++#ifdef Q_OS_OPENBSD
++    {
++        auto mode = session->launchMode != LaunchMode::Offline ? Net::Mode::Online : Net::Mode::Offline;
++        process->appendStep(makeShared<PatchLWJGL>(pptr, mode, getPackProfile()));
++    }
++#endif
+ 
+     // if there are any jar mods
+     {

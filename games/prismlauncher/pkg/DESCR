@@ -1,0 +1,9 @@
+PrismLauncher is a free, open source launcher for Minecraft, forked from
+MultiMC.  It allows you to have multiple, cleanly separated instances of
+Minecraft (each with their own mods, resource packs, saves, etc.) and
+helps you manage them and their associated options with a simple and
+powerful interface.
+
+Features include mod management from CurseForge, Modrinth and FTB,
+automated Java installation, skin management, and support for various
+mod loaders such as Fabric, Forge, Quilt and NeoForge.

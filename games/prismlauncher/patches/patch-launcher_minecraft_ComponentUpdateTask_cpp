@@ -1,0 +1,28 @@
+Index: launcher/minecraft/ComponentUpdateTask.cpp
+--- launcher/minecraft/ComponentUpdateTask.cpp.orig
++++ launcher/minecraft/ComponentUpdateTask.cpp
+@@ -407,12 +407,20 @@ static bool getTrivialComponentChanges(const Component
+                 toAdd.insert(req);
+                 break;
+             case Decision::VersionNotSame:
+-                qCDebug(instanceProfileResolveC) << reqStr << "already has different version that can be changed.";
+-                toChange.insert(req);
++                if (req.uid == "org.lwjgl3" || req.uid == "org.lwjgl") {
++                    qCDebug(instanceProfileResolveC) << reqStr << "is a different version than required but is a platform-specific override.";
++                } else {
++                    qCDebug(instanceProfileResolveC) << reqStr << "already has different version that can be changed.";
++                    toChange.insert(req);
++                }
+                 break;
+             case Decision::LockedVersionNotSame:
+-                qCDebug(instanceProfileResolveC) << reqStr << "already has different version that cannot be changed.";
+-                succeeded = false;
++                if (req.uid == "org.lwjgl3" || req.uid == "org.lwjgl") {
++                    qCDebug(instanceProfileResolveC) << reqStr << "is a different version than required but is a platform-specific override.";
++                } else {
++                    qCDebug(instanceProfileResolveC) << reqStr << "already has different version that cannot be changed.";
++                    succeeded = false;
++                }
+                 break;
+         }
+     }

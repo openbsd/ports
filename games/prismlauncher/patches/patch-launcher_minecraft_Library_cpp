@@ -1,0 +1,35 @@
+Index: launcher/minecraft/Library.cpp
+--- launcher/minecraft/Library.cpp.orig
++++ launcher/minecraft/Library.cpp
+@@ -66,6 +66,8 @@ void Library::getApplicableFiles(const RuntimeContext&
+     bool local = isLocal();
+     // Lambda function to get the absolute file path
+     auto actualPath = [this, local, overridePath](QString relPath) {
++        if (!m_path.isEmpty())
++            return QFileInfo(m_path).absoluteFilePath();
+         relPath = FS::RemoveInvalidPathChars(relPath);
+         QFileInfo out(FS::PathCombine(storagePrefix(), relPath));
+         if (local && !overridePath.isEmpty()) {
+@@ -115,10 +117,12 @@ QList<Net::NetRequest::Ptr> Library::getDownloads(cons
+     bool local = isLocal();
+ 
+     // Lambda function to check if a local file exists
+-    auto check_local_file = [overridePath, &failedLocalFiles](QString storage) {
++    auto check_local_file = [this, overridePath, &failedLocalFiles](QString storage) {
+         QFileInfo fileinfo(storage);
+         QString fileName = fileinfo.fileName();
+         auto fullPath = FS::PathCombine(overridePath, fileName);
++        if (!m_path.isEmpty())
++            fullPath = m_path;
+         QFileInfo localFileInfo(fullPath);
+         if (!localFileInfo.exists()) {
+             failedLocalFiles.append(localFileInfo.filePath());
+@@ -251,7 +255,7 @@ bool Library::isActive(const RuntimeContext& runtimeCo
+         result = result && (ruleResult == Rule::Allow);
+     }
+     if (isNative()) {
+-        result = result && !getCompatibleNative(runtimeContext).isNull();
++        result = result && (m_isNative || !getCompatibleNative(runtimeContext).isNull());
+     }
+     return result;
+ }

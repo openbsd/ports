@@ -1,0 +1,25 @@
+Index: launcher/launch/steps/PatchLWJGL.h
+--- launcher/launch/steps/PatchLWJGL.h.orig
++++ launcher/launch/steps/PatchLWJGL.h
+@@ -0,0 +1,21 @@
++#pragma once
++
++#include <launch/LaunchStep.h>
++#include <minecraft/PackProfile.h>
++#include <net/Mode.h>
++
++class PatchLWJGL : public LaunchStep {
++    Q_OBJECT
++   public:
++    explicit PatchLWJGL(LaunchTask* parent, Net::Mode mode, PackProfile* components)
++        : LaunchStep(parent), m_mode(mode), m_components(components){};
++    virtual ~PatchLWJGL(){};
++
++    virtual void executeTask();
++    virtual bool canAbort() const;
++    virtual bool abort();
++
++   private:
++    Net::Mode m_mode = Net::Mode::Offline;
++    PackProfile* m_components = nullptr;
++};

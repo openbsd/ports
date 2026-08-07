@@ -1,0 +1,49 @@
+Index: launcher/CMakeLists.txt
+--- launcher/CMakeLists.txt.orig
++++ launcher/CMakeLists.txt
+@@ -164,6 +164,8 @@ set(LAUNCH_SOURCES
+     launch/steps/QuitAfterGameStop.h
+     launch/steps/PrintServers.cpp
+     launch/steps/PrintServers.h
++    launch/steps/PatchLWJGL.cpp
++    launch/steps/PatchLWJGL.h
+     launch/LaunchStep.cpp
+     launch/LaunchStep.h
+     launch/LaunchTask.cpp
+@@ -1426,13 +1428,29 @@ if(DEFINED Launcher_APP_BINARY_DEFS)
+     target_compile_definitions(Launcher_logic PRIVATE ${Launcher_APP_BINARY_DEFS})
+ endif()
+ 
+-install(TARGETS ${Launcher_Name}
+-    RUNTIME_DEPENDENCY_SET LAUNCHER_DEPENDENCY_SET
+-    BUNDLE DESTINATION "." COMPONENT Runtime
+-    LIBRARY DESTINATION ${LIBRARY_DEST_DIR} COMPONENT Runtime
+-    RUNTIME DESTINATION ${BINARY_DEST_DIR} COMPONENT Runtime
+-    FRAMEWORK DESTINATION ${FRAMEWORK_DEST_DIR} COMPONENT Runtime
+-)
++if(CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++    target_compile_definitions(Launcher_logic PRIVATE
++        LWJGL3_DIR="/usr/local/share/lwjgl3/"
++        LWJGL_DIR="/usr/local/share/lwjgl/"
++    )
++endif()
++
++if(WIN32 OR (UNIX AND APPLE) OR CMAKE_SYSTEM_NAME STREQUAL "Linux")
++    install(TARGETS ${Launcher_Name}
++        RUNTIME_DEPENDENCY_SET LAUNCHER_DEPENDENCY_SET
++        BUNDLE DESTINATION "." COMPONENT Runtime
++        LIBRARY DESTINATION ${LIBRARY_DEST_DIR} COMPONENT Runtime
++        RUNTIME DESTINATION ${BINARY_DEST_DIR} COMPONENT Runtime
++        FRAMEWORK DESTINATION ${FRAMEWORK_DEST_DIR} COMPONENT Runtime
++    )
++else()
++    install(TARGETS ${Launcher_Name}
++        BUNDLE DESTINATION "." COMPONENT Runtime
++        LIBRARY DESTINATION ${LIBRARY_DEST_DIR} COMPONENT Runtime
++        RUNTIME DESTINATION ${BINARY_DEST_DIR} COMPONENT Runtime
++        FRAMEWORK DESTINATION ${FRAMEWORK_DEST_DIR} COMPONENT Runtime
++    )
++endif()
+ 
+ # Deploy PDBs
+ if(CMAKE_CXX_LINKER_SUPPORTS_PDB)

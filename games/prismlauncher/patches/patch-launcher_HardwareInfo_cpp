@@ -1,0 +1,68 @@
+Index: launcher/HardwareInfo.cpp
+--- launcher/HardwareInfo.cpp.orig
++++ launcher/HardwareInfo.cpp
+@@ -315,25 +315,37 @@ QString HardwareInfo::cpuInfo()
+     return "unknown";
+ }
+ 
+-#if defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+-#include <cstdio>
++#if defined(Q_OS_OPENBSD)
++#include <sys/sysctl.h>
++#include <uvm/uvmexp.h>
+ 
+ uint64_t HardwareInfo::totalRamMiB()
+ {
+-    uint64_t out = 0;
++    uint64_t mem = 0;
++    int mib[] = { CTL_HW, HW_PHYSMEM64 };
++    size_t size = sizeof(mem);
++    if (sysctl(mib, 2, &mem, &size, nullptr, 0) == 0) {
++        return mem / 1024 / 1024;
++    }
++    qWarning() << "Could not get total RAM: sysctl HW_PHYSMEM64";
++    return 0;
++}
+ 
+-    const bool success = readFromOutput("sysctl hw.physmem", [&](const QString& str) {
+-        const uint64_t mem = str.mid(12).toULong();
++uint64_t HardwareInfo::availableRamMiB()
++{
++    uint64_t mem = 0;
++    int mib_hw[] = { CTL_HW, HW_PHYSMEM64 };
++    size_t size = sizeof(mem);
++    sysctl(mib_hw, 2, &mem, &size, nullptr, 0);
+ 
+-        // transforming kib -> mib
+-        out = mem / 1024;
+-    });
+-    if (!success) {
+-        qWarning() << "Could not get total RAM: could not read from sysctl";
+-        return 0;
++    struct uvmexp uvm;
++    int mib_vm[] = { CTL_VM, VM_UVMEXP };
++    size = sizeof(uvm);
++    if (sysctl(mib_vm, 2, &uvm, &size, nullptr, 0) == 0) {
++        uint64_t active = static_cast<uint64_t>(uvm.active) * uvm.pagesize;
++        return (mem - active) / 1024 / 1024;
+     }
+-
+-    return out;
++    return 0;
+ }
+ 
+ #else
+@@ -341,12 +353,12 @@ uint64_t HardwareInfo::totalRamMiB()
+ {
+     return 0;
+ }
+-#endif
+ 
+ uint64_t HardwareInfo::availableRamMiB()
+ {
+     return 0;
+ }
++#endif
+ 
+ QStringList HardwareInfo::gpuInfo()
+ {

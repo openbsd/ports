@@ -1,0 +1,20 @@
+Index: launcher/minecraft/launch/LauncherPartLaunch.cpp
+--- launcher/minecraft/launch/LauncherPartLaunch.cpp.orig
++++ launcher/minecraft/launch/LauncherPartLaunch.cpp
+@@ -111,10 +111,14 @@ void LauncherPartLaunch::executeTask()
+         classPath.prepend(legacyJarPath);
+ 
+     auto natPath = instance->getNativePath();
+-#ifdef Q_OS_WIN
++#if defined(Q_OS_WIN)
+     natPath = FS::getPathNameInLocal8bit(natPath);
+-#endif
+     args << "-Djava.library.path=" + natPath;
++#elif defined(Q_OS_OPENBSD)
++    args << "-Djava.library.path=" + natPath + ":" + QString(LWJGL_DIR);
++#else
++    args << "-Djava.library.path=" + natPath;
++#endif
+ 
+     args << "-cp";
+ #ifdef Q_OS_WIN

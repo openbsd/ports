@@ -1,0 +1,45 @@
+Index: launcher/minecraft/Library.h
+--- launcher/minecraft/Library.h.orig
++++ launcher/minecraft/Library.h
+@@ -69,6 +69,8 @@ class Library {
+         newlib->m_name = base->m_name;
+         newlib->m_repositoryURL = base->m_repositoryURL;
+         newlib->m_hint = base->m_hint;
++        newlib->m_path = base->m_path;
++        newlib->m_isNative = base->m_isNative;
+         newlib->m_absoluteURL = base->m_absoluteURL;
+         newlib->m_extractExcludes = base->m_extractExcludes;
+         newlib->m_nativeClassifiers = base->m_nativeClassifiers;
+@@ -97,7 +99,7 @@ class Library {
+     QString version() const { return m_name.version(); }
+ 
+     /// Returns true if the library is native
+-    bool isNative() const { return m_nativeClassifiers.size() != 0; }
++    bool isNative() const { return m_nativeClassifiers.size() != 0 || m_isNative; }
+ 
+     void setStoragePrefix(QString prefix = QString());
+ 
+@@ -128,6 +130,10 @@ class Library {
+ 
+     void setHint(const QString& hint) { m_hint = hint; }
+ 
++    void setPath(const QString& path) { m_path = path; }
++
++    void setNative(bool native) { m_isNative = native; }
++
+     /// Set the load rules
+     void setRules(QList<Rule> rules) { m_rules = rules; }
+ 
+@@ -183,6 +189,12 @@ class Library {
+      * Prism Launcher-specific type hint - modifies how the library is treated
+      */
+     QString m_hint;
++
++    /// OpenBSD extension - absolute path override
++    QString m_path;
++
++    /// OpenBSD extension - isNative override
++    bool m_isNative = false;
+ 
+     /**
+      * storage - by default the local libraries folder in Prism Launcher, but could be elsewhere

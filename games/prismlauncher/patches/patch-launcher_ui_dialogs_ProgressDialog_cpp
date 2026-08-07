@@ -1,0 +1,52 @@
+Index: launcher/ui/dialogs/ProgressDialog.cpp
+--- launcher/ui/dialogs/ProgressDialog.cpp.orig
++++ launcher/ui/dialogs/ProgressDialog.cpp
+@@ -65,6 +65,12 @@ ProgressDialog::ProgressDialog(QWidget* parent) : QDia
+     ui->taskProgressScrollArea->setHidden(true);
+     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+     setAttribute(Qt::WidgetAttribute::WA_QuitOnClose, true);
++#if defined(Q_OS_OPENBSD) || defined(Q_OS_FREEBSD)
++    // Qt6 xcb warps the pointer to the dialog center when the cursor exits a
++    // Qt::Dialog window with a transient parent. Use Qt::Window to prevent this.
++    setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::WindowCloseButtonHint);
++    setAttribute(Qt::WA_ShowWithoutActivating, true);
++#endif
+     changeProgress(0, 100);
+     updateSize(true);
+     setSkipButton(false);
+@@ -98,8 +104,6 @@ ProgressDialog::~ProgressDialog()
+ 
+ void ProgressDialog::updateSize(bool recenterParent)
+ {
+-    QSize lastSize = this->size();
+-    QPoint lastPos = this->pos();
+     int minHeight = ui->globalStatusDetailsLabel->minimumSize().height() + (ui->verticalLayout->spacing() * 2);
+     minHeight += ui->globalProgressBar->minimumSize().height() + ui->verticalLayout->spacing();
+     if (!ui->taskProgressScrollArea->isHidden())
+@@ -119,12 +123,6 @@ void ProgressDialog::updateSize(bool recenterParent)
+         auto newX = std::max(0, parent->x() + ((parent->width() - newSize.width()) / 2));
+         auto newY = std::max(0, parent->y() + ((parent->height() - newSize.height()) / 2));
+         this->move(newX, newY);
+-    } else if (lastSize != newSize) {
+-        // center on old position after resize
+-        QSize sizeDiff = lastSize - newSize;  // last size was smaller, the results should be negative
+-        auto newX = std::max(0, lastPos.x() + (sizeDiff.width() / 2));
+-        auto newY = std::max(0, lastPos.y() + (sizeDiff.height() / 2));
+-        this->move(newX, newY);
+     }
+ }
+ 
+@@ -166,7 +164,12 @@ int ProgressDialog::execWithTask(Task* task)
+         changeProgress(task->getProgress(), task->getTotalProgress());
+     }
+ 
+-    return QDialog::exec();
++    setWindowModality(Qt::NonModal);
++    show();
++    QEventLoop loop;
++    connect(this, &QDialog::finished, &loop, &QEventLoop::quit);
++    loop.exec(QEventLoop::DialogExec);
++    return QDialog::result();
+ }
+ 
+ // TODO: only provide the unique_ptr overloads
