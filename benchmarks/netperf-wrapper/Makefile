@@ -1,7 +1,7 @@
 COMMENT-main=	test network latency under load via netperf
 COMMENT-gui=	GUI for flent (test network latency under load via netperf)
 
-MODPY_DISTV=	2.2.0
+MODPY_DISTV=	2.3.0
 DISTNAME=	flent-${MODPY_DISTV}
 
 CATEGORIES=	benchmarks net
@@ -27,7 +27,7 @@ RUN_DEPENDS-gui= ${BUILD_PKGPATH} \
 		devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/py-qtpy \
-		x11/py-qt5
+		py3-qt5-*|pyside6-*:x11/py-qt5
 
 NO_TEST=	Yes
 

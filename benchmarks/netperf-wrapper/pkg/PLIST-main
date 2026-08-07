@@ -65,6 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/flent/rcparser.py
 lib/python${MODPY_VERSION}/site-packages/flent/resultset.py
 lib/python${MODPY_VERSION}/site-packages/flent/runners.py
 lib/python${MODPY_VERSION}/site-packages/flent/scripts/
+lib/python${MODPY_VERSION}/site-packages/flent/scripts/cmd_iterate.sh
 lib/python${MODPY_VERSION}/site-packages/flent/scripts/dash_client.sh
 lib/python${MODPY_VERSION}/site-packages/flent/scripts/netstat_iterate.sh
 lib/python${MODPY_VERSION}/site-packages/flent/scripts/ss_iterate.sh
@@ -79,8 +80,10 @@ lib/python${MODPY_VERSION}/site-packages/flent/tests/bursts.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/bursts_11e.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/cisco_5tcpup.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/cisco_5tcpup_2udpflood.conf
+lib/python${MODPY_VERSION}/site-packages/flent/tests/command-output.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/common.inc
 lib/python${MODPY_VERSION}/site-packages/flent/tests/cpu_stats.inc
+lib/python${MODPY_VERSION}/site-packages/flent/tests/cpu_stress.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/cubic_bbr.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/cubic_cdg.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/cubic_dctcp.conf
@@ -89,7 +92,6 @@ lib/python${MODPY_VERSION}/site-packages/flent/tests/cubic_ledbat_1.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/cubic_reno.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/cubic_westwood.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/dash_mixin.inc
-lib/python${MODPY_VERSION}/site-packages/flent/tests/dashtest.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/dslreports_8dn.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/http-1down.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/http-1up.conf
@@ -99,10 +101,12 @@ lib/python${MODPY_VERSION}/site-packages/flent/tests/http.inc
 lib/python${MODPY_VERSION}/site-packages/flent/tests/http_mixin.inc
 lib/python${MODPY_VERSION}/site-packages/flent/tests/iterated_bidirectional.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/ledbat_cubic_1.conf
+lib/python${MODPY_VERSION}/site-packages/flent/tests/mqtt_read.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/netperf_definitions.inc
 lib/python${MODPY_VERSION}/site-packages/flent/tests/netstat.inc
 lib/python${MODPY_VERSION}/site-packages/flent/tests/ping.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/ping.inc
+lib/python${MODPY_VERSION}/site-packages/flent/tests/power_usage.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/qdisc-stats.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/qdisc_stats.inc
 lib/python${MODPY_VERSION}/site-packages/flent/tests/reno_cubic_westwood_cdg.conf
@@ -147,7 +151,6 @@ lib/python${MODPY_VERSION}/site-packages/flent/tests/tcp_2up_square_westwood.con
 lib/python${MODPY_VERSION}/site-packages/flent/tests/tcp_4down.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/tcp_4up.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/tcp_4up_squarewave.conf
-lib/python${MODPY_VERSION}/site-packages/flent/tests/tcp_50up.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/tcp_6down.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/tcp_6up.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/tcp_8down.conf
@@ -198,3 +201,4 @@ share/doc/flent/misc/tcpdump-wrapper.py
 share/doc/flent/misc/test-exec.sh
 share/doc/flent/misc/testcontrol-web-service.py
 share/doc/flent/misc/wifistats_iterate.c
+share/doc/flent/power-usage.batch

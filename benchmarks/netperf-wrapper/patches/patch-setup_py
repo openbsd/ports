@@ -1,12 +1,12 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -85,7 +85,7 @@ data_files = [('share/doc/flent',
+@@ -84,7 +84,7 @@ data_files = [('share/doc/flent',
+                ['BUGS',
                  'README.rst',
-                 'CHANGES.md',
-                 'flent-paper.batch'] + glob("*.example")),
+                 'CHANGES.md'] + glob("batchfiles/*") + glob("*.example")),
 -              ('share/man/man1',
 +              ('man/man1',
                 ['man/flent.1']),
                ('share/doc/flent/misc',
-                glob("misc/*")),
+                [f for f in glob("misc/*") if "." in f or 'M' in f]),
