@@ -1,6 +1,6 @@
 COMMENT=	HTML cleaner from the lxml project
 
-MODPY_DISTV=	0.4.4
+MODPY_DISTV=	0.4.5
 DISTNAME=	lxml_html_clean-${MODPY_DISTV}
 PKGNAME=	py-lxml-html-clean-${MODPY_DISTV}
 
