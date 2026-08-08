@@ -1,14 +1,6 @@
-.if ${MACHINE_ARCH:Mi386}
-# i386 has "cargo(39428) in free(): bogus pointer (double free?) 0x7ff80a50"
-# quite often, followed by SIGABRT. This appears to be related to lack of
-# memory, and avoiding scheduling other builds alongside builds of ports using
-# cargo seems to help reduce this.
-DPB_PROPERTIES += lonesome
-.endif
-
 MODULES +=	lang/rust
 
-# List of static dependencies. The format is cratename-version.
+# List of static dependencies. The format is cratename version.
 # MODCARGO_CRATES will be downloaded from SITES_CRATESIO.
 MODCARGO_CRATES ?=
 
@@ -243,39 +235,38 @@ MODCARGO_configure = \
 	echo "[build]" >${WRKDIR}/.cargo/config.toml; \
 	echo "rustc = '${MODRUST_RUSTC_BIN}'" >>${WRKDIR}/.cargo/config.toml; \
 	echo "rustdoc = '${MODRUST_RUSTDOC_BIN}'" >>${WRKDIR}/.cargo/config.toml; \
-	\
+	echo "" >>${WRKDIR}/.cargo/config.toml; \
 	echo "[net]" >>${WRKDIR}/.cargo/config.toml; \
 	echo "offline = true" >>${WRKDIR}/.cargo/config.toml; \
-	\
+	echo "" >>${WRKDIR}/.cargo/config.toml; \
 	echo "[term]" >>${WRKDIR}/.cargo/config.toml; \
 	echo "verbose = true" >>${WRKDIR}/.cargo/config.toml; \
 	echo "color = 'never'" >>${WRKDIR}/.cargo/config.toml; \
 	echo "progress.when = 'never'" >>${WRKDIR}/.cargo/config.toml; \
-	\
+	echo "" >>${WRKDIR}/.cargo/config.toml; \
 	echo "[source.modcargo]" >>${WRKDIR}/.cargo/config.toml; \
 	echo "directory = '${MODCARGO_VENDOR_DIR}'" \
 		>>${WRKDIR}/.cargo/config.toml; \
-	\
+	echo "" >>${WRKDIR}/.cargo/config.toml; \
 	echo "[source.crates-io]" >>${WRKDIR}/.cargo/config.toml; \
-	echo "replace-with = 'modcargo'" >>${WRKDIR}/.cargo/config.toml; \
-	ln -fs ${WRKDIR}/.cargo/config.toml ${WRKDIR}/.cargo/config;
+	echo "replace-with = 'modcargo'" >>${WRKDIR}/.cargo/config.toml;
 
 # set profile (based on 'release' profile) for 'build' and 'test'
 # see https://doc.rust-lang.org/cargo/reference/profiles.html#release
 # only 'opt-level' differs from default
 .for _profile in release bench
 MODCARGO_configure += \
-	echo "" >>${WRKDIR}/.cargo/config; \
-	echo "[profile.${_profile}]" >>${WRKDIR}/.cargo/config; \
-	echo "opt-level = 2" >>${WRKDIR}/.cargo/config; \
-	echo "debug = 0" >>${WRKDIR}/.cargo/config; \
-	echo "debug-assertions = false" >>${WRKDIR}/.cargo/config; \
-	echo "overflow-checks = false" >>${WRKDIR}/.cargo/config; \
-	echo "lto = false" >>${WRKDIR}/.cargo/config; \
-	echo "panic = 'unwind'" >>${WRKDIR}/.cargo/config; \
-	echo "incremental = false" >>${WRKDIR}/.cargo/config; \
-	echo "codegen-units = 4" >>${WRKDIR}/.cargo/config; \
-	echo "rpath = false" >>${WRKDIR}/.cargo/config;
+	echo "" >>${WRKDIR}/.cargo/config.toml; \
+	echo "[profile.${_profile}]" >>${WRKDIR}/.cargo/config.toml; \
+	echo "opt-level = 2" >>${WRKDIR}/.cargo/config.toml; \
+	echo "debug = 0" >>${WRKDIR}/.cargo/config.toml; \
+	echo "debug-assertions = false" >>${WRKDIR}/.cargo/config.toml; \
+	echo "overflow-checks = false" >>${WRKDIR}/.cargo/config.toml; \
+	echo "lto = false" >>${WRKDIR}/.cargo/config.toml; \
+	echo "panic = 'unwind'" >>${WRKDIR}/.cargo/config.toml; \
+	echo "incremental = false" >>${WRKDIR}/.cargo/config.toml; \
+	echo "codegen-units = 4" >>${WRKDIR}/.cargo/config.toml; \
+	echo "rpath = false" >>${WRKDIR}/.cargo/config.toml;
 .endfor
 
 # Update crates: place all crates on the same command line.
