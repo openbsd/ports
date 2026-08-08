@@ -13,10 +13,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/abap
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/actionscript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ada
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/addmusick
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/apache
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/apex
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/apiblueprint
-${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/applescript
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/apple_script
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/armasm
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/augeas
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/awk
@@ -276,6 +277,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/abap.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/abap/builtins.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/actionscript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ada.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/addmusick.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apache/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apache/keywords.rb
