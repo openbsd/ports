@@ -1,6 +1,6 @@
 COMMENT =	planetarium simulator for KDE
 
-V =		3.8.3
+V =		3.8.4.1
 DISTNAME =	kstars-${V}
 EPOCH =		0
 
