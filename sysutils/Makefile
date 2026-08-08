@@ -269,7 +269,6 @@
      SUBDIR += openwsman
      SUBDIR += oras
      SUBDIR += p5-Capture-Tiny
-     SUBDIR += p5-Data-Entropy
      SUBDIR += p5-Data-Float
      SUBDIR += p5-File-Monitor
      SUBDIR += p5-File-NFSLock
