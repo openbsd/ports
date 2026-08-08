@@ -3,11 +3,11 @@ uses nm options that arent supported by our nm
 Index: tools/defcheck.py
 --- tools/defcheck.py.orig
 +++ tools/defcheck.py
-@@ -40,6 +40,7 @@ exclude_symbols = [
+@@ -52,6 +52,7 @@ exclude_symbols = [
  ]
  
  have_errors = 0
 +sys.exit (have_errors)
  
- libextension   = ".so"
- command        = getenv("NM", default="nm") + " --defined-only --extern-only "
+ 
+ #READ LIBRARY SYMBOLS
