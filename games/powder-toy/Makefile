@@ -1,6 +1,6 @@
 COMMENT =		physics sandbox simulation
 
-V =			99.5.394
+V =			100.1.400
 PKGNAME =		powder-toy-${V}
 DIST_TUPLE +=		github The-Powder-Toy The-Powder-Toy v${V} .
 CATEGORIES =		games
@@ -24,12 +24,12 @@ LIB_DEPENDS =		archivers/bzip2 \
 			math/fftw3,-main,float \
 			net/curl
 
-CONFIGURE_ARGS +=	-Dworkaround_elusive_bzip2=true \
+CONFIGURE_ARGS +=	-Dworkaround_elusive_bzip2=simple \
 			-Dworkaround_elusive_bzip2_lib_dir=${LOCALBASE}/lib
 CONFIGURE_ENV +=	LIBRARY_PATH=${LOCALBASE}/lib LDFLAGS="${LDFLAGS}"
 
 CXXFLAGS +=		-I${LOCALBASE}/include
-LDFLAGS +=		-lexecinfo
+LDFLAGS +=		-L${LOCALBASE}/lib -lexecinfo
 
 .if ${MACHINE_ARCH:Mi386}
 CXXFLAGS +=            -msse2
