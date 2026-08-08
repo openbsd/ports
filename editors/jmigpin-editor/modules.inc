@@ -19,28 +19,30 @@ MODGO_MODULES =	\
 	go.uber.org/atomic		 v1.9.0 \
 	go.uber.org/multierr		 v1.7.0 \
 	go.uber.org/zap			 v1.21.0 \
-	golang.org/x/crypto		 v0.48.0 \
+	golang.org/x/crypto		 v0.51.0 \
 	golang.org/x/exp		 v0.0.0-20240325151524-a685a6edb6d8 \
 	golang.org/x/exp/event		 v0.0.0-20250819193227-8b4c13bb791b \
 	golang.org/x/exp/jsonrpc2	 v0.0.0-20250911091902-df9299821621 \
-	golang.org/x/image		 v0.38.0 \
-	golang.org/x/mod		 v0.33.0 \
-	golang.org/x/net		 v0.50.0 \
-	golang.org/x/sync		 v0.20.0 \
-	golang.org/x/sys		 v0.41.0 \
-	golang.org/x/telemetry		 v0.0.0-20260209163413-e7419c687ee4 \
-	golang.org/x/term		 v0.40.0 \
-	golang.org/x/text		 v0.35.0 \
-	golang.org/x/tools		 v0.42.0 \
+	golang.org/x/image		 v0.43.0 \
+	golang.org/x/mod		 v0.36.0 \
+	golang.org/x/net		 v0.55.0 \
+	golang.org/x/sync		 v0.21.0 \
+	golang.org/x/sys		 v0.45.0 \
+	golang.org/x/telemetry		 v0.0.0-20260508192327-42602be52be6 \
+	golang.org/x/term		 v0.43.0 \
+	golang.org/x/text		 v0.38.0 \
+	golang.org/x/tools		 v0.45.0 \
 	golang.org/x/xerrors		 v0.0.0-20240903120638-7835f813f4da
 
 MODGO_MODFILES =	\
 	github.com/google/go-cmp	 v0.5.8 \
 	golang.org/x/mod		 v0.16.0 \
-	golang.org/x/sync		 v0.19.0 \
+	golang.org/x/net		 v0.54.0 \
+	golang.org/x/sync		 v0.20.0 \
 	golang.org/x/sys		 v0.13.0 \
 	golang.org/x/sys		 v0.35.0 \
-	golang.org/x/text		 v0.34.0 \
+	golang.org/x/sys		 v0.44.0 \
+	golang.org/x/text		 v0.37.0 \
 	golang.org/x/tools		 v0.19.0 \
-	golang.org/x/tools		 v0.41.0
+	golang.org/x/tools		 v0.44.0
 
