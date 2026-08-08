@@ -318,7 +318,7 @@ SHA256 (cargo/ttf-parser-0.25.1.tar.gz) = 0t+QaweFZ0j6P24K0MuqBHBS1KfdYJ4jHE9yzu
 SHA256 (cargo/two-face-0.4.3.tar.gz) = OE7aQ43fYuLG85oXRFLZUtnZ31qK1a3iIZhgn43K+FI=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
 SHA256 (cargo/typed-path-0.12.3.tar.gz) = jij4m4DIe4+wzwSrRI1d0N0K3i+IkbroeN5mp1ooYA4=
-SHA256 (cargo/typst-assets-0.15.0.tar.gz) = 2psjbTOdzg7EQ9xEr+S6TG12uJF71LGugBWNIRH2Y3s=
+SHA256 (cargo/typst-assets-0.15.1.tar.gz) = vO5QXaxnAt0cXmWqLpSmF50Z7gni5WN9cxPbkXZdxOA=
 SHA256 (cargo/unic-langid-0.9.6.tar.gz) = ooulLJsFMR9PbmLV2dRvCUvW6Ey433s++VJ0jXUqfQU=
 SHA256 (cargo/unic-langid-impl-0.9.6.tar.gz) = 3OG/CARNS3qUAoyTeG+FZgR+3BERBZWRTekzYlWbxlg=
 SHA256 (cargo/unic-langid-macros-0.9.6.tar.gz) = 1ZV+uC40bXrdFBgqMxWn4pjwThukuqw29/Db/tul/CU=
@@ -401,8 +401,8 @@ SHA256 (cargo/zlib-rs-0.5.1.tar.gz) = YmvZ+pc0dR/FDWBgdSFwmE1wU/WjkGH1JM2mgCPU24
 SHA256 (cargo/zopfli-0.8.3.tar.gz) = 8FzYeX1jhlQl/4m1xKSIBPNboM6NElgAAnrWAX0rUkk=
 SHA256 (cargo/zune-core-0.5.1.tar.gz) = y4oIB/fAFFfQN5uogLpjImYESN3ryJDOKbtk2nH7QPk=
 SHA256 (cargo/zune-jpeg-0.5.15.tar.gz) = J7ydW4FbwQPxQqoFT1YdkYfRkWkux8LR4rRzf429cpY=
-SHA256 (typst-typst-dev-assets-v0.15.0.tar.gz) = Orh2mbgreG9j+asMRFOliFT2FMOkNcYtN9mH+P/tyaI=
-SHA256 (typst-typst-v0.15.0.tar.gz) = UES9EhOEkcbogN8OCQVqmuRgfZN8c5YtWAZAKubulqY=
+SHA256 (typst-typst-dev-assets-v0.15.1.tar.gz) = fxoA23DHC1fU343W1fycsUwBUQLQzkEClO+o+Wbo99I=
+SHA256 (typst-typst-v0.15.1.tar.gz) = wHkJ4BoqaUHlLJthbkjCCcdV7tQW1ivPVYPDekrKAaM=
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
@@ -723,7 +723,7 @@ SIZE (cargo/ttf-parser-0.25.1.tar.gz) = 201121
 SIZE (cargo/two-face-0.4.3.tar.gz) = 3390549
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
 SIZE (cargo/typed-path-0.12.3.tar.gz) = 112964
-SIZE (cargo/typst-assets-0.15.0.tar.gz) = 6671606
+SIZE (cargo/typst-assets-0.15.1.tar.gz) = 6671805
 SIZE (cargo/unic-langid-0.9.6.tar.gz) = 9031
 SIZE (cargo/unic-langid-impl-0.9.6.tar.gz) = 90020
 SIZE (cargo/unic-langid-macros-0.9.6.tar.gz) = 6517
@@ -806,5 +806,5 @@ SIZE (cargo/zlib-rs-0.5.1.tar.gz) = 193055
 SIZE (cargo/zopfli-0.8.3.tar.gz) = 51589
 SIZE (cargo/zune-core-0.5.1.tar.gz) = 27883
 SIZE (cargo/zune-jpeg-0.5.15.tar.gz) = 88879
-SIZE (typst-typst-dev-assets-v0.15.0.tar.gz) = 38104625
-SIZE (typst-typst-v0.15.0.tar.gz) = 4867968
+SIZE (typst-typst-dev-assets-v0.15.1.tar.gz) = 38104634
+SIZE (typst-typst-v0.15.1.tar.gz) = 4873084
