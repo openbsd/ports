@@ -1,12 +1,16 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -19442,23 +19442,23 @@ distclean-local:
+@@ -19872,7 +19872,7 @@ distclean-local:
  # above.
  libarchive/test/list.h: $(libarchive_test_SOURCES)
  	$(MKDIR_P) libarchive/test
 -	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
 +	grep -h '^DEFINE_TEST(' $(libarchive_test_SOURCES) | LC_COLLATE=C sort > $@
+ 
+ # Embed an application manifest marking bsdtar as long-path aware.
+ @INC_WINDOWS_FILES_TRUE@tar/bsdtar_rc.$(OBJEXT): $(top_srcdir)/tar/bsdtar.rc $(top_srcdir)/tar/bsdtar.exe.manifest
+@@ -19880,15 +19880,15 @@ libarchive/test/list.h: $(libarchive_test_SOURCES)
  
  tar/test/list.h: $(bsdtar_test_SOURCES)
  	$(MKDIR_P) tar/test
@@ -22,6 +26,10 @@ Index: Makefile.in
  	$(MKDIR_P) cat/test
 -	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
 +	grep -h '^DEFINE_TEST(' $(bsdcat_test_SOURCES) | LC_COLLATE=C sort > $@
+ 
+ # Embed an application manifest marking bsdunzip as long-path aware.
+ @INC_WINDOWS_FILES_TRUE@unzip/bsdunzip_rc.$(OBJEXT): $(top_srcdir)/unzip/bsdunzip.rc $(top_srcdir)/unzip/bsdunzip.exe.manifest
+@@ -19896,7 +19896,7 @@ cat/test/list.h: $(bsdcat_test_SOURCES)
  
  unzip/test/list.h: $(bsdunzip_test_SOURCES)
  	$(MKDIR_P) unzip/test
