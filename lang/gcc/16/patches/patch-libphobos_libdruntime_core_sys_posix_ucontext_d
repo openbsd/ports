@@ -1,10 +1,35 @@
 Index: libphobos/libdruntime/core/sys/posix/ucontext.d
 --- libphobos/libdruntime/core/sys/posix/ucontext.d.orig
 +++ libphobos/libdruntime/core/sys/posix/ucontext.d
-@@ -1275,6 +1275,44 @@ else version (OpenBSD)
-             trapframe sc_frame;
+@@ -1252,6 +1252,22 @@ else version (OpenBSD)
+             void*   sc_fpstate; // union savefpu*
          }
      }
++    else version (MIPS64)
++    {
++        struct sigcontext
++        {
++            c_long     sc_cookie;
++            c_long     sc_mask;
++            c_long     sc_pc;
++            c_long[32] sc_regs;
++            c_long     mullo;
++            c_long     mulhi;
++            c_long[33] sc_fpregs;
++            c_long     sc_fpused;
++            c_long     sc_fpc_eir;
++            c_long[8]  xxx;
++        }
++    }
+     else version (PPC)
+     {
+         private struct trapframe
+@@ -1273,6 +1289,44 @@ else version (OpenBSD)
+             c_long    sc_cookie;
+             int       sc_mask;
+             trapframe sc_frame;
++        }
++    }
 +    else version (PPC64)
 +    {
 +        struct sigcontext
@@ -41,8 +66,6 @@ Index: libphobos/libdruntime/core/sys/posix/ucontext.d
 +            c_long[32] sc_f;
 +            c_long     sc_fcsr;
 +            c_long     sc_cookie;
-+        }
-+    }
+         }
+     }
      else version (SPARC64)
-     {
-         struct sigcontext

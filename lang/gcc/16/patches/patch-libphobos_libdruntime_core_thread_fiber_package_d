@@ -2,7 +2,7 @@ Add fibers for powerpc64 ELFv2, and fix fibers for 32-bit powerpc ELF.
 The old code was for some other platform (AIX?), not BSD nor Linux.
 This patch fixes OpenBSD but might break the other platform.
 
-Add fibers for riscv64 and sparc64 ELF for OpenBSD only.
+Add fibers for mips64, riscv64 and sparc64 ELF for OpenBSD only.
 
 Index: libphobos/libdruntime/core/thread/fiber/package.d
 --- libphobos/libdruntime/core/thread/fiber/package.d.orig
@@ -39,7 +39,15 @@ Index: libphobos/libdruntime/core/thread/fiber/package.d
              version = AlignFiberStackTo16Byte;
          }
      }
-@@ -182,8 +190,22 @@ package
+@@ -156,6 +164,7 @@ package
+         {
+             version = AsmMIPS_N64_Posix;
+             version = AsmExternal;
++            version = AlignFiberStackTo16Byte;
+         }
+     }
+     else version (AArch64)
+@@ -182,8 +191,22 @@ package
      }
      else version (SPARC64)
      {
@@ -62,10 +70,12 @@ Index: libphobos/libdruntime/core/thread/fiber/package.d
      else version (LoongArch64)
      {
          version (Posix)
-@@ -229,6 +251,10 @@ package
+@@ -229,6 +252,12 @@ package
          extern (C) void fiber_switchContext( void** oldp, void* newp ) nothrow @nogc;
          version (AArch64)
              extern (C) void fiber_trampoline() nothrow;
++        version (MIPS_N64)
++            extern (C) void fiber_trampoline() nothrow;
 +        version (SPARC64)
 +            extern (C) void fiber_trampoline() nothrow;
 +        version (RISCV64)
@@ -73,7 +83,7 @@ Index: libphobos/libdruntime/core/thread/fiber/package.d
      }
      else
      extern (C) void fiber_switchContext( void** oldp, void* newp ) nothrow @nogc
-@@ -1094,27 +1120,22 @@ class Fiber : FiberBase (protected)
+@@ -1094,27 +1123,22 @@ class Fiber : FiberBase (protected)
          }
          else version (AsmPPC_Posix)
          {
@@ -112,7 +122,37 @@ Index: libphobos/libdruntime/core/thread/fiber/package.d
              }
  
              assert( (cast(size_t) pstack & 0x0f) == 0 );
-@@ -1267,6 +1288,46 @@ class Fiber : FiberBase (protected)
+@@ -1195,10 +1219,10 @@ class Fiber : FiberBase (protected)
+              *     |-----------|<= frame pointer
+              *     |  $fp/$gp  |
+              *     |   $s0-7   |
+-             *     |-----------|<= stack pointer
++             *     |-----------|<= tstack
+              *     |    $ra    |
+              *     |  $f24-31  |
+-             *     |-----------|
++             *     |-----------|<= stack pointer
+              *
+              */
+             enum SZ_GP = 10 * size_t.sizeof; // $fp + $gp + $s0-7
+@@ -1214,11 +1238,13 @@ class Fiber : FiberBase (protected)
+ 
+             enum BELOW = SZ_FP + SZ_RA;
+             enum ABOVE = SZ_GP;
+-            enum SZ = BELOW + ABOVE;
++            enum TSTACK_OFFSET = (BELOW + 15) / 16 * 16;
++            enum FRAME_SIZE = TSTACK_OFFSET + ABOVE;
+ 
+-            (cast(ubyte*)pstack - SZ)[0 .. SZ] = 0;
++            (cast(ubyte*)pstack - FRAME_SIZE)[0 .. FRAME_SIZE] = 0;
+             pstack -= ABOVE;
+-            *cast(size_t*)(pstack - SZ_RA) = cast(size_t)&fiber_entryPoint;
++            *cast(size_t*)pstack = cast(size_t)&fiber_entryPoint; // $s0
++            *cast(size_t*)(pstack - SZ_RA) = cast(size_t)&fiber_trampoline;
+         }
+         else version (AsmLoongArch64_Posix)
+         {
+@@ -1267,6 +1293,46 @@ class Fiber : FiberBase (protected)
              pstack -= size_t.sizeof * 11;    // skip past x19-x29
              push(cast(size_t) &fiber_trampoline); // see threadasm.S for docs
              pstack += size_t.sizeof;         // adjust sp (newp) above lr

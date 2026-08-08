@@ -1,4 +1,4 @@
-Add fiber asm for riscv64, sparc64 and powerpc64, to avoid
+Add fiber asm for mips64, riscv64, sparc64 and powerpc64, to avoid
 "configure: error: setcontext required but not found"
 
 Index: libphobos/configure
@@ -51,18 +51,19 @@ Index: libphobos/configure
     if test "$druntime_target_cpu_parsed" = "x86"; then
    DRUNTIME_CPU_X86_TRUE=
    DRUNTIME_CPU_X86_FALSE='#'
-@@ -15813,7 +15839,9 @@ fi
+@@ -15813,7 +15839,10 @@ fi
      aarch64* | \
      arm* | \
      i[34567]86|x86_64 | \
 -    powerpc)
++    mips* | \
 +    sparc64* | \
 +    riscv64* | \
 +    powerpc*)
        druntime_fiber_asm_external=yes
        ;;
    esac
-@@ -16456,6 +16484,14 @@ if test -z "${DRUNTIME_CPU_POWERPC_TRUE}" && test -z "
+@@ -16456,6 +16485,14 @@ if test -z "${DRUNTIME_CPU_POWERPC_TRUE}" && test -z "
    as_fn_error $? "conditional \"DRUNTIME_CPU_POWERPC\" was never defined.
  Usually this means the macro was only invoked conditionally." "$LINENO" 5
  fi
@@ -77,7 +78,7 @@ Index: libphobos/configure
  if test -z "${DRUNTIME_CPU_X86_TRUE}" && test -z "${DRUNTIME_CPU_X86_FALSE}"; then
    as_fn_error $? "conditional \"DRUNTIME_CPU_X86\" was never defined.
  Usually this means the macro was only invoked conditionally." "$LINENO" 5
-@@ -18975,4 +19011,3 @@ if test -n "$ac_unrecognized_opts" && test "$enable_op
+@@ -18975,4 +19012,3 @@ if test -n "$ac_unrecognized_opts" && test "$enable_op
    { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
  $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
  fi
