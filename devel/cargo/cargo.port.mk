@@ -221,7 +221,7 @@ MODCARGO_RUSTFLAGS += "-Ctarget-cpu=pentium4"
 .for _cratename _cratever in ${MODCARGO_CRATES}
 MODCARGO_post-patch += \
 	${ECHO_MSG} "[modcargo] Generating metadata for ${_cratename}-${_cratever}" ; \
-	${LOCALBASE}/bin/cargo-generate-vendor \
+	${LOCALBASE}/bin/cargo-generate-vendor -e \
 		${FULLDISTDIR}/${_MODCARGO_DIST_SUBDIR}${_cratename}-${_cratever}.tar.gz \
 		${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever} ;
 .endfor
@@ -283,7 +283,7 @@ MODCARGO_configure += ;
 # Build dependencies.
 
 # devel/cargo-generate-vendor is mandatory for hooks.
-BUILD_DEPENDS +=	devel/cargo-generate-vendor
+BUILD_DEPENDS +=	devel/cargo-generate-vendor>=1.1
 
 # Location of cargo binary (default to devel/cargo binary)
 MODCARGO_CARGO_BIN ?=	${LOCALBASE}/bin/cargo
