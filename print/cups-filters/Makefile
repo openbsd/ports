@@ -2,7 +2,7 @@ COMMENT=		OpenPrinting CUPS filters
 
 V=			2.0.1
 DISTNAME=		cups-filters-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		print
 
@@ -14,9 +14,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += avahi-client avahi-common c crypto cups cupsfilters
-WANTLIB += dbus-1 exif expat fontconfig freetype gmp
-WANTLIB += hogweed iconv idn2 intl jpeg lcms2 m nettle p11-kit
-WANTLIB += png poppler-cpp ppd pthread qpdf ssl tasn1 tiff unistring
+WANTLIB += dbus-1 exif expat fontconfig freetype iconv intl jpeg
+WANTLIB += jxl lcms2 m pdfio png poppler-cpp ppd pthread ssl tiff
 WANTLIB += z
 
 SITES=	https://github.com/OpenPrinting/cups-filters/releases/download/${V}/
@@ -27,8 +26,7 @@ COMPILER=		base-clang ports-gcc
 USE_GMAKE=		Yes
 
 LIB_DEPENDS=		print/libcupsfilters \
-			print/libppd \
-			print/qpdf
+			print/libppd
 
 # make it easier for users: bring in foomatic-db and allow the
 # regeneration of PPD files from share/foomatic/db/source/*/*.xml
