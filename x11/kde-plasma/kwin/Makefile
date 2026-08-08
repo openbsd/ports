@@ -1,8 +1,8 @@
 COMMENT =		Wayland window manager for KDE Plasma Desktops
 DISTNAME =		kwin-${VERSION}
 
-SHARED_LIBS +=  kcmkwincommon             1.1 # 0.0
-SHARED_LIBS +=  kwin                      7.0 # 0.0
+SHARED_LIBS +=  kcmkwincommon             1.2 # 0.0
+SHARED_LIBS +=  kwin                      7.1 # 0.0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes

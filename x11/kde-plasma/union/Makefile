@@ -2,7 +2,7 @@ COMMENT =	Qt style supporting both QtQuick and QtWidgets
 DISTNAME =	union-${VERSION}
 PKGNAME =	kde-plasma-${DISTNAME}
 
-SHARED_LIBS +=	Union                     0.0 # 0.0
+SHARED_LIBS +=	Union                     0.1 # 0.0
 SHARED_LIBS +=	UnionQuickImpl            0.0 # 0.0
 SHARED_LIBS +=	UnionQuickStyle           0.0 # 0.0
 
