@@ -1,5 +1,6 @@
---- pftop.c.orig	Wed Nov  7 07:36:46 2007
-+++ pftop.c	Mon Apr 24 03:44:14 2017
+Index: pftop.c
+--- pftop.c.orig
++++ pftop.c
 @@ -55,6 +55,7 @@
  #include <err.h>
  #include <errno.h>
@@ -223,7 +224,27 @@
  int
  sort_sp_callback(const void *p1, const void *p2)
  {
-@@ -865,7 +985,48 @@ tb_print_addr(struct pf_addr * addr, struct pf_addr * 
+@@ -670,6 +790,7 @@ void
+ alloc_buf(int ns)
+ {
+ 	int len;
++	int old_len = state_buf_len;
+ 
+ 	if (ns < MIN_NUM_STATES)
+ 		ns = MIN_NUM_STATES;
+@@ -686,6 +807,11 @@ alloc_buf(int ns)
+ 		    state_cache == NULL)
+ 			err(1, "realloc");
+ 		state_buf_len = len;
++		for (int i = old_len; i < len; i++) {
++			bzero(&state_buf[i], sizeof(pf_state_t));
++			state_ord[i] = 0;
++			state_cache[i] = 0;
++		}
+ 	}
+ }
+ 
+@@ -865,7 +991,48 @@ tb_print_addr(struct pf_addr * addr, struct pf_addr * 
  			tbprintf("/%u", unmask(mask, af));
  	}
  }
@@ -272,7 +293,7 @@
  void
  print_fld_host(field_def *fld, pf_state_host_t * h, int af)
  {
-@@ -889,6 +1050,7 @@ print_fld_host(field_def *fld, pf_state_host_t * h, in
+@@ -889,6 +1056,7 @@ print_fld_host(field_def *fld, pf_state_host_t * h, in
  
  	print_fld_tb(fld);
  }
@@ -280,7 +301,7 @@
  
  void
  print_fld_state(field_def *fld, unsigned int proto,
-@@ -960,7 +1122,20 @@ print_state(pf_state_t * s, struct sc_ent * ent)
+@@ -960,7 +1128,20 @@ print_state(pf_state_t * s, struct sc_ent * ent)
  	else
  		print_fld_uint(FLD_PROTO, s->proto);
  
@@ -301,7 +322,7 @@
  		print_fld_host(FLD_SRC, &s->lan, s->af);
  		print_fld_host(FLD_DEST, &s->ext, s->af);
  	} else {
-@@ -972,6 +1147,7 @@ print_state(pf_state_t * s, struct sc_ent * ent)
+@@ -972,6 +1153,7 @@ print_state(pf_state_t * s, struct sc_ent * ent)
  	    (s->lan.port != s->gwy.port)) {
  		print_fld_host(FLD_GW, &s->gwy, s->af);
  	}
@@ -309,7 +330,7 @@
  
  	if (s->direction == PF_OUT)
  		print_fld_str(FLD_DIR, "Out");
-@@ -979,8 +1155,8 @@ print_state(pf_state_t * s, struct sc_ent * ent)
+@@ -979,8 +1161,8 @@ print_state(pf_state_t * s, struct sc_ent * ent)
  		print_fld_str(FLD_DIR, "In");
  
  	print_fld_state(FLD_STATE, s->proto, src->state, dst->state);
@@ -320,7 +341,7 @@
  #ifdef HAVE_INOUT_COUNT
  	{
  		u_int64_t sz = COUNTER(s->bytes[0]) + COUNTER(s->bytes[1]);
-@@ -988,18 +1164,18 @@ print_state(pf_state_t * s, struct sc_ent * ent)
+@@ -988,18 +1170,18 @@ print_state(pf_state_t * s, struct sc_ent * ent)
  		print_fld_size(FLD_PKTS, COUNTER(s->packets[0]) +
  			       COUNTER(s->packets[1]));
  		print_fld_size(FLD_BYTES, sz);
@@ -344,7 +365,7 @@
  #else
  #ifdef HAVE_RULE_NUMBER
  	print_fld_uint(FLD_RULE, s->rule.nr);
-@@ -1112,7 +1288,7 @@ read_anchor_rules(char *anchor)
+@@ -1112,7 +1294,7 @@ read_anchor_rules(char *anchor)
  
  #ifdef HAVE_RULESETS
  struct anchor_name {
@@ -353,7 +374,7 @@
  	struct anchor_name *next;
  	u_int32_t ref;
  };
-@@ -1458,8 +1634,9 @@ tb_print_flags(u_int8_t f)
+@@ -1458,8 +1640,9 @@ tb_print_flags(u_int8_t f)
  void
  print_rule(struct pf_rule *pr)
  {
@@ -365,7 +386,7 @@
  	int numact = sizeof(actiontypes) / sizeof(char *);
  
  #ifdef HAVE_PF_ROUTE
-@@ -1475,8 +1652,12 @@ print_rule(struct pf_rule *pr)
+@@ -1475,8 +1658,12 @@ print_rule(struct pf_rule *pr)
  	print_fld_str(FLD_LABEL, pr->label);
  #endif
  #ifdef HAVE_RULE_STATES
@@ -378,7 +399,7 @@
  
  #ifdef HAVE_INOUT_COUNT_RULES
  	print_fld_size(FLD_PKTS, pr->packets[0] + pr->packets[1]);
-@@ -1486,7 +1667,13 @@ print_rule(struct pf_rule *pr)
+@@ -1486,7 +1673,13 @@ print_rule(struct pf_rule *pr)
  	print_fld_size(FLD_BYTES, pr->bytes);
  #endif
  	print_fld_uint(FLD_RULE, pr->nr);
@@ -393,7 +414,7 @@
  	if (pr->quick)
  		print_fld_str(FLD_QUICK, "Quick");
  
-@@ -1555,7 +1742,9 @@ print_rule(struct pf_rule *pr)
+@@ -1555,7 +1748,9 @@ print_rule(struct pf_rule *pr)
  #ifdef HAVE_PF_ROUTE
  	if (pr->rt > 0 && pr->rt < numroute) {
  		tbprintf("%s ", routetypes[pr->rt]);
@@ -403,7 +424,7 @@
  			tbprintf("... ");
  	}
  #endif
-@@ -1729,12 +1918,19 @@ pfctl_insert_altq_node(struct pf_altq_node **root,
+@@ -1729,12 +1924,19 @@ pfctl_insert_altq_node(struct pf_altq_node **root,
  			prev->next = node;
  		}
  	}
@@ -429,7 +450,7 @@
  	}
  }
  
-@@ -1743,10 +1939,11 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1743,10 +1945,11 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  {
  	struct pf_altq_node	*node;
  	struct pfioc_altq	 pa;
@@ -442,7 +463,7 @@
  
  	*inserts = 0;
  	memset(&pa, 0, sizeof(pa));
-@@ -1757,13 +1954,15 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1757,13 +1960,15 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  			  strerror(errno));
  		return (-1);
  	}
@@ -459,7 +480,7 @@
  		}
  		if (pa.altq.qid > 0) {
  			pq.nr = nr;
-@@ -1773,7 +1972,8 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1773,7 +1978,8 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  			if (ioctl(pf_dev, DIOCGETQSTATS, &pq)) {
  				msgprintf("Error Reading Queue (DIOCGETQSTATS): %s",
  					  strerror(errno));
@@ -469,7 +490,7 @@
  			}
  			qstats.valid = 1;
  			gettimeofday(&qstats.timestamp, NULL);
-@@ -1794,7 +1994,10 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1794,7 +2000,10 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  		else
  			--num_queues;
  	}
