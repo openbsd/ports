@@ -1,13 +1,10 @@
 COMMENT =	python svg graph plotting library
 
-MODPY_DISTV =	3.0.5
+MODPY_DISTV =	3.1.3
 DISTNAME =	pygal-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
 
 CATEGORIES =	graphics
-
-MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # LGPLv3+
 PERMIT_PACKAGE=	Yes

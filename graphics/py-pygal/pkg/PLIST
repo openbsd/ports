@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/licenses/COPYING
+lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pygal/__about__.py
 lib/python${MODPY_VERSION}/site-packages/pygal/__init__.py
@@ -169,6 +170,8 @@ lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}test_date.${
 lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}test_date.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}test_formatters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}test_formatters.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}test_gauge.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}test_gauge.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}test_graph.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}test_graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}test_histogram.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -208,6 +211,7 @@ lib/python${MODPY_VERSION}/site-packages/pygal/test/test_colors.py
 lib/python${MODPY_VERSION}/site-packages/pygal/test/test_config.py
 lib/python${MODPY_VERSION}/site-packages/pygal/test/test_date.py
 lib/python${MODPY_VERSION}/site-packages/pygal/test/test_formatters.py
+lib/python${MODPY_VERSION}/site-packages/pygal/test/test_gauge.py
 lib/python${MODPY_VERSION}/site-packages/pygal/test/test_graph.py
 lib/python${MODPY_VERSION}/site-packages/pygal/test/test_histogram.py
 lib/python${MODPY_VERSION}/site-packages/pygal/test/test_interpolate.py
