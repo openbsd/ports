@@ -325,6 +325,7 @@ MODCARGO_CARGO_RUN = \
 MODCARGO_BUILD_ARGS ?=
 MODCARGO_INSTALL_ARGS ?=
 MODCARGO_TEST_ARGS ?=
+MODCARGO_LIBTEST_ARGS ?=
 
 # Manage crate features.
 .if !empty(MODCARGO_FEATURES)
@@ -387,7 +388,9 @@ MODCARGO_TEST_TARGET = \
 	${MODCARGO_CARGO_RUN} test \
 		--manifest-path ${MODCARGO_CARGOTOML} \
 		--release \
-		${MODCARGO_TEST_ARGS} ;
+		${MODCARGO_TEST_ARGS} \
+		-- \
+		${MODCARGO_LIBTEST_ARGS} ;
 
 .if !target(do-test) && ${MODCARGO_TEST:L} == "yes"
 do-test:
