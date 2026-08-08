@@ -8,7 +8,7 @@ COMMENT-pgsql=	postgresql monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
-V=		3.0.2
+V=		3.0.3
 SITES=		https://www.monitoring-plugins.org/download/
 
 DISTNAME=	monitoring-plugins-${V:S/rc/-rc/:S/pl0//}
