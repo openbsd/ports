@@ -145,6 +145,17 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/examples-1
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry-control/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry-control/2025-12-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry-control/2025-12-01/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry-control/2025-12-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry-control/2025-12-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry-control/2025-12-01/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry/2025-12-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry/2025-12-01/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry/2025-12-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/agent-registry/2025-12-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/aiops/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/aiops/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/aiops/2018-05-10/endpoint-rule-set-1.json
