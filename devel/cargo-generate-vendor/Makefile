@@ -1,8 +1,7 @@
 COMMENT =	help generating metadata for cargo vendoring
 
-V =		1.0
+V =		1.1
 DISTNAME =	cargo-generate-vendor-${V}
-REVISION =	1
 
 CATEGORIES =	devel
 
