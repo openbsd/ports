@@ -2,9 +2,8 @@ COMMENT=	BLAKE3 cryptographic hash function reference in C
 
 GH_ACCOUNT=	BLAKE3-team
 GH_PROJECT=	BLAKE3
-GH_TAGNAME=	1.8.5
+GH_TAGNAME=	1.8.6
 PKGNAME=	${DISTNAME:L}
-REVISION=	0
 
 CATEGORIES=	security
 
