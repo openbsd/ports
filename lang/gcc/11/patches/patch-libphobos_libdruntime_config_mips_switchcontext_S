@@ -1,0 +1,95 @@
+Index: libphobos/libdruntime/config/mips/switchcontext.S
+--- libphobos/libdruntime/config/mips/switchcontext.S.orig
++++ libphobos/libdruntime/config/mips/switchcontext.S
+@@ -99,4 +99,91 @@ fiber_switchContext:
+     .end fiber_switchContext
+     .size fiber_switchContext,.-fiber_switchContext
+ 
++#elif _MIPS_SIM == _ABI64
++
++// f24-f31 and ra are below tstack so the GC scans only s0-s8 and gp.
++#define FRAME_SIZE 160
++#define TSTACK_OFFSET 80
++#define RA_OFFSET 72
++
++    .text
++    .globl fiber_switchContext
++    .align 3
++    .ent fiber_switchContext,0
++fiber_switchContext:
++    .cfi_startproc
++    daddiu $sp, $sp, -FRAME_SIZE
++
++#ifdef __mips_hard_float
++    sdc1 $f24, 0($sp)
++    sdc1 $f25, 8($sp)
++    sdc1 $f26, 16($sp)
++    sdc1 $f27, 24($sp)
++    sdc1 $f28, 32($sp)
++    sdc1 $f29, 40($sp)
++    sdc1 $f30, 48($sp)
++    sdc1 $f31, 56($sp)
++#endif
++
++    sd $ra, RA_OFFSET($sp)
++    sd $s0, 80($sp)
++    sd $s1, 88($sp)
++    sd $s2, 96($sp)
++    sd $s3, 104($sp)
++    sd $s4, 112($sp)
++    sd $s5, 120($sp)
++    sd $s6, 128($sp)
++    sd $s7, 136($sp)
++    sd $s8, 144($sp)
++    sd $gp, 152($sp)
++
++    daddiu $v0, $sp, TSTACK_OFFSET
++    sd $v0, 0($a0)
++    daddiu $sp, $a1, -TSTACK_OFFSET
++
++#ifdef __mips_hard_float
++    ldc1 $f24, 0($sp)
++    ldc1 $f25, 8($sp)
++    ldc1 $f26, 16($sp)
++    ldc1 $f27, 24($sp)
++    ldc1 $f28, 32($sp)
++    ldc1 $f29, 40($sp)
++    ldc1 $f30, 48($sp)
++    ldc1 $f31, 56($sp)
++#endif
++
++    ld $ra, RA_OFFSET($sp)
++    ld $s0, 80($sp)
++    ld $s1, 88($sp)
++    ld $s2, 96($sp)
++    ld $s3, 104($sp)
++    ld $s4, 112($sp)
++    ld $s5, 120($sp)
++    ld $s6, 128($sp)
++    ld $s7, 136($sp)
++    ld $s8, 144($sp)
++    ld $gp, 152($sp)
++
++    daddiu $sp, $sp, FRAME_SIZE
++    jr $ra
++    nop
++    .cfi_endproc
++    .end fiber_switchContext
++    .size fiber_switchContext,.-fiber_switchContext
++
++    .text
++    .globl fiber_trampoline
++    .align 3
++    .ent fiber_trampoline,0
++fiber_trampoline:
++    .cfi_startproc
++    .cfi_undefined 31
++    move $t9, $s0
++    move $ra, $zero
++    jr $t9
++    nop
++    .cfi_endproc
++    .end fiber_trampoline
++    .size fiber_trampoline,.-fiber_trampoline
++
+ #endif

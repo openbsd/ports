@@ -1,4 +1,4 @@
-Add fiber asm for riscv64, sparc64 and powerpc64, to avoid
+Add fiber asm for mips64, riscv64, sparc64 and powerpc64, to avoid
 "configure: error: setcontext required but not found"
 
 Index: libphobos/configure
@@ -53,18 +53,19 @@ Index: libphobos/configure
     if test "$druntime_target_cpu_parsed" = "x86"; then
    DRUNTIME_CPU_X86_TRUE=
    DRUNTIME_CPU_X86_FALSE='#'
-@@ -15196,7 +15222,9 @@ fi
+@@ -15196,7 +15222,10 @@ fi
      aarch64* | \
      arm* | \
      i[34567]86|x86_64 | \
 -    powerpc)
++    mips* | \
 +    sparc64* | \
 +    riscv64* | \
 +    powerpc*)
        druntime_fiber_asm_external=yes
        ;;
    esac
-@@ -15752,6 +15780,14 @@ Usually this means the macro was only invoked conditio
+@@ -15752,6 +15781,14 @@ Usually this means the macro was only invoked conditio
  fi
  if test -z "${DRUNTIME_CPU_POWERPC_TRUE}" && test -z "${DRUNTIME_CPU_POWERPC_FALSE}"; then
    as_fn_error $? "conditional \"DRUNTIME_CPU_POWERPC\" was never defined.

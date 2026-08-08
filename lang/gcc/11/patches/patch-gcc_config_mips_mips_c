@@ -1,0 +1,45 @@
+Index: gcc/config/mips/mips.c
+--- gcc/config/mips/mips.c.orig
++++ gcc/config/mips/mips.c
+@@ -11802,6 +11802,10 @@ mips_output_function_prologue (FILE *file)
+   fnname = XSTR (XEXP (DECL_RTL (current_function_decl), 0), 0);
+   mips_start_function_definition (fnname, TARGET_MIPS16);
+ 
++  if (mips_current_loadgp_style () == LOADGP_NEWABI)
++    targetm.asm_out.internal_label (file, "LGP",
++				    current_function_funcdef_no);
++
+   /* Output MIPS-specific frame information.  */
+   if (!flag_inhibit_size_directive)
+     {
+@@ -11914,6 +11918,21 @@ mips_frame_barrier (void)
+ 
+ static GTY(()) rtx mips_gnu_local_gp;
+ 
++/* Return a locally-binding symbol for the address supplied in $25 on
++   function entry.  */
++
++static rtx
++mips_loadgp_entry_symbol (void)
++{
++  char label[64];
++  rtx symbol;
++
++  ASM_GENERATE_INTERNAL_LABEL (label, "LGP", current_function_funcdef_no);
++  symbol = gen_rtx_SYMBOL_REF (Pmode, ggc_strdup (label));
++  SYMBOL_REF_FLAGS (symbol) |= SYMBOL_FLAG_LOCAL;
++  return symbol;
++}
++
+ /* If we're generating n32 or n64 abicalls, emit instructions
+    to set up the global pointer.  */
+ 
+@@ -11940,7 +11959,7 @@ mips_emit_loadgp (void)
+       break;
+ 
+     case LOADGP_NEWABI:
+-      addr = XEXP (DECL_RTL (current_function_decl), 0);
++      addr = mips_loadgp_entry_symbol ();
+       offset = mips_unspec_address (addr, SYMBOL_GOTOFF_LOADGP);
+       incoming_address = gen_rtx_REG (Pmode, PIC_FUNCTION_ADDR_REGNUM);
+       emit_insn (PMODE_INSN (gen_loadgp_newabi,

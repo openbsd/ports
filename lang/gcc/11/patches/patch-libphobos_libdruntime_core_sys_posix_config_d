@@ -14,9 +14,16 @@ Index: libphobos/libdruntime/core/sys/posix/config.d
      else version (ARM)
      {
          enum _ALIGNBYTES = 7;
-@@ -164,6 +170,12 @@ else version (OpenBSD)
+@@ -163,7 +169,19 @@ else version (OpenBSD)
+         enum _STACKALIGNBYTES = 15;
          enum _MAX_PAGE_SHIFT = 12;
      }
++    else version (MIPS64)
++    {
++        enum _ALIGNBYTES = 7;
++        enum _STACKALIGNBYTES = 15;
++        enum _MAX_PAGE_SHIFT = 14;
++    }
      else version (PPC)
 +    {
 +        enum _ALIGNBYTES = 7;
