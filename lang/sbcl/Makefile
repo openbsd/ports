@@ -5,11 +5,11 @@ BROKEN-i386 =	fails after LLVM 22 update
 
 COMMENT =	high performance Common Lisp compiler
 
-V =		2.6.5
+V =		2.6.7
 DISTNAME =	sbcl-${V}-source
 PKGNAME =	sbcl-${V}
 
-SHARED_LIBS +=	sbcl	21.0
+SHARED_LIBS +=	sbcl	22.0
 
 CATEGORIES =	lang
 

@@ -26,6 +26,8 @@ lib/sbcl/contrib/sb-grovel.asd
 lib/sbcl/contrib/sb-grovel.fasl
 lib/sbcl/contrib/sb-introspect.asd
 lib/sbcl/contrib/sb-introspect.fasl
+lib/sbcl/contrib/sb-manual.asd
+lib/sbcl/contrib/sb-manual.fasl
 lib/sbcl/contrib/sb-md5.asd
 lib/sbcl/contrib/sb-md5.fasl
 lib/sbcl/contrib/sb-mpfr.asd
