@@ -1,6 +1,4 @@
-# !!! do not update blindly, these ports require a specific version:
-# net/py-boto3
-# sysutils/awscli/v1
+# !!! do not update blindly, net/py-boto3 depends on a specific version
 
 COMMENT=		Amazon S3 transfer manager for Python
 
