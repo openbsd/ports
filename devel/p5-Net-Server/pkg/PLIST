@@ -7,6 +7,7 @@ ${P5SITE}/Net/Server/Daemonize.pm
 ${P5SITE}/Net/Server/Fork.pm
 ${P5SITE}/Net/Server/HTTP.pm
 ${P5SITE}/Net/Server/INET.pm
+${P5SITE}/Net/Server/IP.pm
 ${P5SITE}/Net/Server/Log/
 ${P5SITE}/Net/Server/Log/Log/
 ${P5SITE}/Net/Server/Log/Log/Log4perl.pm
@@ -34,6 +35,7 @@ ${P5SITE}/Net/Server/Thread.pm
 @man man/man3p/Net::Server::Fork.3p
 @man man/man3p/Net::Server::HTTP.3p
 @man man/man3p/Net::Server::INET.3p
+@man man/man3p/Net::Server::IP.3p
 @man man/man3p/Net::Server::Log::Log::Log4perl.3p
 @man man/man3p/Net::Server::Log::Sys::Syslog.3p
 @man man/man3p/Net::Server::MultiType.3p

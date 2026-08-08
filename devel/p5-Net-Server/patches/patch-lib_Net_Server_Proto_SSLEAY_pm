@@ -1,26 +1,27 @@
 LibreSSL has no engine functions anymore.  Do not use them to check
 whether loading the Net::SSLeay module was successful.
 
-Non blocking SSL does not use read or write properly.  With TLS 1.2
-it works by accident.  Do not use TLS 1.3.
+Non blocking SSL does not use syswrite properly.
+https://github.com/rhandom/perl-net-server/pull/49
 
 Index: lib/Net/Server/Proto/SSLEAY.pm
 --- lib/Net/Server/Proto/SSLEAY.pm.orig
 +++ lib/Net/Server/Proto/SSLEAY.pm
-@@ -27,7 +27,7 @@ use Socket ();
+@@ -28,7 +28,7 @@ use Net::Server::Proto qw(SOMAXCONN AF_INET AF_INET6 A
  BEGIN {
      eval { require Net::SSLeay; 1 }
          or warn "Module Net::SSLeay is required for SSLeay.";
 -    for my $sub (qw(load_error_strings SSLeay_add_ssl_algorithms ENGINE_load_builtin_engines ENGINE_register_all_complete randomize)) {
 +    for my $sub (qw(load_error_strings SSLeay_add_ssl_algorithms randomize)) {
-         Net::SSLeay->can($sub)->();
+         my $subref = Net::SSLeay->can($sub);
+         $subref->() if $subref;
      }
-     eval { [Fcntl::F_GETFL(), Fcntl::F_SETFL(), Fcntl::O_NONBLOCK()] } || die "Could not access Fcntl constant while loading ".__PACKAGE__.": $@";
-@@ -153,6 +153,7 @@ sub bind_SSL {
-     my $ctx = Net::SSLeay::CTX_new();  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_new");
- 
-     Net::SSLeay::CTX_set_options($ctx, Net::SSLeay::OP_ALL());  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_set_options");
-+    Net::SSLeay::CTX_set_max_proto_version($ctx, Net::SSLeay::TLS1_2_VERSION());
- 
-     # 0x1:  SSL_MODE_ENABLE_PARTIAL_WRITE
-     # 0x10: SSL_MODE_RELEASE_BUFFERS (ignored before OpenSSL v1.0.0)
+@@ -376,7 +376,7 @@ sub syswrite {
+     my $tries = 5;
+     while ($tries-->0) {
+         $! = 0;
+-        my $wrote = Net::SSLeay::write($ssl, $buf);
++        my $wrote = Net::SSLeay::write($ssl, $content);
+         return $wrote if $wrote >= 0;
+         return if $client->SSLeay_check_perm("SSLEAY syswrite");
+     }

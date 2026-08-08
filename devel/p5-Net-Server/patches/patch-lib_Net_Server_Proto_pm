@@ -1,17 +1,42 @@
-We don't have the sysctl any more, resulting in this binding to v6 only.
+OpenBSD is always v6only, kernel has no mapped addresses.
+
+On OpenBSD IPv6 did not work at all.
+https://github.com/rhandom/perl-net-server/pull/50
+
+Remove test that executes code from /tmp.  Not used in OpenBSD anyway.
 
 Index: lib/Net/Server/Proto.pm
 --- lib/Net/Server/Proto.pm.orig
 +++ lib/Net/Server/Proto.pm
-@@ -163,10 +163,7 @@ sub get_addr_info {
+@@ -165,11 +165,7 @@ sub safe_addr_info {
+ 
+ # Capability test function (stolen from IO::Socket::IP in case only IO::Socket::INET6 is available)
+ sub CAN_DISABLE_V6ONLY {
+-    return $can_disable_v6only if defined $can_disable_v6only;
+-    socket my $testsock, AF_INET6, SOCK_STREAM, 0 or die "Cannot socket(PF_INET6) - $!";
+-    setsockopt $testsock, IPPROTO_IPV6, IPV6_V6ONLY, 0 and return $can_disable_v6only = 1;
+-    $!{EINVAL} || $!{EOPNOTSUPP} and return $can_disable_v6only = 0; # OpenBSD, WindowsXP, etc
+-    die "Cannot setsockopt(IPV6_V6ONLY) - $!";
++    return $can_disable_v6only = 0;
  }
  
- sub _bindv6only {
--    my $class = shift;
--    my $val = $class->_sysctl('net.ipv6.bindv6only'); # linux
--    $val = $class->_sysctl('net.inet6.ip6.v6only') if ! length($val); # bsd
--    return $val;
-+    return '1'; # OpenBSD requires separate binds for v4 and v6.
- }
- 
- sub _sysctl {
+ sub parse_info {
+@@ -223,7 +219,7 @@ sub parse_info {
+     $ipv = join '', @$ipv if ref($ipv) eq 'ARRAY';
+     $server->fatal("Invalid ipv parameter - must contain 4, 6, or *") if $ipv && $ipv !~ /[46*]/;
+     my @_info;
+-    if (!$ipv || $ipv =~ /[*]/ and eval {CAN_DISABLE_V6ONLY}) {
++    if (!$ipv || $ipv =~ /[*]/) {
+         my @rows = eval { $class->get_addr_info(@$info{qw(host port proto)}, $server) };
+         $server->fatal($@ || "Could not find valid addresses for [$info->{'host'}]:$info->{'port'} with ipv set to '*'") if ! @rows;
+         foreach my $row (@rows) {
+@@ -340,9 +336,6 @@ sub IPV6_V6ONLY () {
+     my $why = $@; # XXX: Do we need to hard-code magic numbers based on OS for old Perl < 5.14 / Socket < 1.94?
+     $IPV6_V6ONLY ||= $^O eq 'linux' ? 26 : # XXX: Why is Linux different?
+         $^O =~ /^(?:darwin|freebsd|openbsd|netbsd|dragonfly|MSWin32|solaris|svr4)$/ ? 27 : undef; # XXX: "27" everywhere else?
+-    if (!$IPV6_V6ONLY) { # XXX: Do we need to scrape it from kernel header files? Last ditch effort super ugly string-eval hack!
+-        my $d = "/tmp/IP6Cache"; !eval{$IPV6_V6ONLY=do"$d.pl"} and $IPV6_V6ONLY=do{mkdir $d;`h2ph -d $d -a netinet/in.h 2>/dev/null`;eval `echo "package _h2ph_shush_ipv6only;";grep -rl "sub IPV6_V6ONLY" $d|xargs cat|grep "sub IPV6_V6ONLY";echo "IPV6_V6ONLY()"`} and `rm -rvf $d 1>&2;echo $IPV6_V6ONLY|tee $d.pl`;
+-    }
+     if ($IPV6_V6ONLY) {
+         my $bricker=sub(){$IPV6_V6ONLY}; (my $me=(caller 0)[3])=~s/.*:://;
+         no strict 'refs';no warnings qw(redefine);*{"$_\::$me"}=$bricker foreach keys %{$exported->{$me}},__PACKAGE__;
