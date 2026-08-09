@@ -1,0 +1,5 @@
+RPKI Repository Delta Protocol (RRDP, RFC 8182) utility suite.
+- Reconstruct the files present in a delta.xml or snapshot.xml
+- Scan a set of RRDP files and print matching files and their details
+- Sync multiple RRDP repositories from a config file
+- Generate a sync config from rpki-client metrics
