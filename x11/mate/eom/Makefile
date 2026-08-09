@@ -36,7 +36,8 @@ LIB_DEPENDS=		devel/libpeas \
 			textproc/exempi \
 			x11/mate/desktop
 
-BUILD_DEPENDS=		x11/mate/common
+BUILD_DEPENDS=		textproc/gtk-doc \
+			x11/mate/common
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache yelp
