@@ -1,0 +1,2 @@
+Pluto helps users find deprecated Kubernetes apiVersions in their code
+repositories and Helm releases.
