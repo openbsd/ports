@@ -1716,6 +1716,7 @@
      SUBDIR += py-robotframework
      SUBDIR += py-rope
      SUBDIR += py-rpds-py
+     SUBDIR += py-rply
      SUBDIR += py-rtree
      SUBDIR += py-rx
      SUBDIR += py-sarif-tools
