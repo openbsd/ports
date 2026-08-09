@@ -1689,6 +1689,7 @@
      SUBDIR += py-pyproject-api
      SUBDIR += py-pyproject-metadata
      SUBDIR += py-pyproject_hooks
+     SUBDIR += py-pyrate-limiter
      SUBDIR += py-pyrsistent
      SUBDIR += py-pyte
      SUBDIR += py-python-discovery
@@ -1703,7 +1704,6 @@
      SUBDIR += py-qt-builder
      SUBDIR += py-r2pipe
      SUBDIR += py-radix
-     SUBDIR += py-pyrate-limiter
      SUBDIR += py-rcsparse
      SUBDIR += py-regex
      SUBDIR += py-rencode
