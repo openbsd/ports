@@ -31,7 +31,8 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \
 			x11/mate/desktop
 
-BUILD_DEPENDS=		x11/gnome/zenity \
+BUILD_DEPENDS=		devel/autoconf-archive \
+			x11/gnome/zenity \
 			x11/mate/common \
 			x11/mate/desktop
 
