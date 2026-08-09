@@ -1,4 +1,6 @@
 @bin bin/codex
+@bin bin/codex-code-mode-host
+@bin bin/codex-logs-client
 share/bash-completion/completions/codex
 share/doc/codex/
 share/doc/codex/CLA.md

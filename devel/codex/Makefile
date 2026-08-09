@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.146.0
+V =			0.147.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -21,8 +21,7 @@ PKGNAME =		codex-${V}
 # only build the Rust workspace (the repo also contains JS tooling).
 WRKSRC =		${WRKDIST}/codex-rs
 
-DIST_TUPLE += github nornagon crossterm 87db8bfa6dc99427fd3b071681b07fc31c6ce995 ./crossterm
-DIST_TUPLE += github nornagon ratatui 9b2ad1298408c45918ee9f8241a6f95498cdbed2 ./ratatui
+DIST_TUPLE += github nornagon crossterm f69a4a0499f2fdc7d5d222df32373ffffe9ba3f5 ./crossterm
 DIST_TUPLE += github openai-oss-forks tokio-tungstenite 0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186 ./tokio-tungstenite
 DIST_TUPLE += github openai-oss-forks tungstenite-rs 4fffad30fe373adbdcffab9545e9e9bf4f2fc19f ./tungstenite
 DIST_TUPLE += github helix-editor nucleo 4253de9faabb4e5c6d81d946a5e35a90f87347ee ./nucleo
@@ -85,22 +84,26 @@ MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 # Makes the build look more alive while compiling v8
 MODCARGO_BUILD_ARGS +=	-vv
 
-# build only the CLI crate ('codex')
-MODCARGO_INSTALL_TARGET_PATHS = cli
-MODCARGO_BUILD_ARGS +=		-p codex-cli --bin codex
+MODCARGO_INSTALL_TARGET_PATHS = cli code-mode-host
+
+MODCARGO_BUILD_ARGS +=	-p codex-cli \
+			-p codex-code-mode-host \
+			--bin codex \
+			--bin codex-code-mode-host
 
 MAKE_ENV =		${MODCARGO_ENV}
 
 # test suite expects network access and a configured OpenAI account
-NO_TEST =	Yes
+NO_TEST =		Yes
 
 DENO_CORE_ICUDATA_V =	0.77.0
-V8_CARGO_V =		149.2.0
+V8_CARGO_V =		150.4.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 
 post-patch:
 	cd ${WRKSRC} && ${SUBST_CMD} arg0/src/lib.rs \
+		install-context/src/lib.rs \
 		core/src/tools/runtimes/apply_patch.rs
 	mkdir ${V8_DISTDIR}/third_party/icu/common
 	cp ${MODCARGO_VENDOR_DIR}/deno_core_icudata-${DENO_CORE_ICUDATA_V}/src/icudtl.dat \
@@ -113,6 +116,7 @@ post-build:
 .endfor
 
 post-install:
+	mv ${PREFIX}/bin/logs_client ${PREFIX}/bin/codex-logs-client
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions \
 		${PREFIX}/share/fish/vendor_completions.d \
 		${PREFIX}/share/zsh/site-functions

@@ -1,0 +1,12 @@
+Index: codex-rs/modcargo-crates/v8-150.4.0/third_party/partition_alloc/src/partition_alloc/page_allocator.h
+--- codex-rs/modcargo-crates/v8-150.4.0/third_party/partition_alloc/src/partition_alloc/page_allocator.h.orig
++++ codex-rs/modcargo-crates/v8-150.4.0/third_party/partition_alloc/src/partition_alloc/page_allocator.h
+@@ -279,7 +279,7 @@ bool DecommitAndZeroSystemPages(void* address,
+ // recommitted. Do not assume that this will not change over time.
+ constexpr PA_COMPONENT_EXPORT(
+     PARTITION_ALLOC) bool DecommittedMemoryIsAlwaysZeroed() {
+-#if PA_BUILDFLAG(IS_APPLE)
++#if PA_BUILDFLAG(IS_APPLE) || PA_BUILDFLAG(IS_BSD)
+   return false;
+ #else
+   return true;

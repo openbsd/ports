@@ -1,0 +1,13 @@
+Index: codex-rs/modcargo-crates/v8-150.4.0/third_party/libunwind/src/src/Registers.hpp
+--- codex-rs/modcargo-crates/v8-150.4.0/third_party/libunwind/src/src/Registers.hpp.orig
++++ codex-rs/modcargo-crates/v8-150.4.0/third_party/libunwind/src/src/Registers.hpp
+@@ -23,7 +23,8 @@
+ #if defined(__APPLE__)
+ #include <sys/sysctl.h>
+ #endif
+-#if defined(_LIBUNWIND_HAVE_GETAUXVAL) || defined(_LIBUNWIND_HAVE_ELF_AUX_INFO)
++#if (defined(_LIBUNWIND_HAVE_GETAUXVAL) || defined(_LIBUNWIND_HAVE_ELF_AUX_INFO)) && \
++    !defined(__OpenBSD__) && !defined(__FreeBSD__)
+ #include <sys/auxv.h>
+ #endif
+ 

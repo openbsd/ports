@@ -1,0 +1,15 @@
+Index: codex-rs/modcargo-crates/v8-150.4.0/v8/build_overrides/partition_alloc.gni
+--- codex-rs/modcargo-crates/v8-150.4.0/v8/build_overrides/partition_alloc.gni.orig
++++ codex-rs/modcargo-crates/v8-150.4.0/v8/build_overrides/partition_alloc.gni
+@@ -22,8 +22,9 @@ _supported_compiler = is_clang || !is_win
+ # https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/free-dbg
+ _supported_build_type = !is_win || (!is_component_build && !is_debug)
+ 
+-_supported_platform =
+-    is_android || is_chromeos || is_fuchsia || is_linux || is_mac || is_win
++_supported_platform = !is_bsd &&
++                      (is_android || is_chromeos || is_fuchsia || is_linux ||
++                       is_mac || is_win)
+ 
+ # Sanitizers are already replacing the allocator with their own. We shouldn't
+ # enable partition_alloc when this happens

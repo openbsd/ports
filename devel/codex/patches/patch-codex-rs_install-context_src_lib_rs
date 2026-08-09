@@ -1,0 +1,29 @@
+Index: codex-rs/install-context/src/lib.rs
+--- codex-rs/install-context/src/lib.rs.orig
++++ codex-rs/install-context/src/lib.rs
+@@ -153,12 +153,19 @@ impl InstallContext {
+     }
+ 
+     pub fn code_mode_host_program(&self) -> PathBuf {
+-        // prefer the one packed under codex-resources
+-        self.bundled_resource(CODE_MODE_HOST_EXECUTABLE_NAME)
+-            .map_or_else(
+-                || self.code_mode_host_program_from_exe(std::env::current_exe().ok().as_deref()),
+-                AbsolutePathBuf::into_path_buf,
+-            )
++        #[cfg(target_os = "openbsd")]
++        {
++            PathBuf::from("${PREFIX}/bin/codex-code-mode-host")
++        }
++        #[cfg(not(target_os = "openbsd"))]
++        {
++            // prefer the one packed under codex-resources
++            self.bundled_resource(CODE_MODE_HOST_EXECUTABLE_NAME)
++                .map_or_else(
++                    || self.code_mode_host_program_from_exe(std::env::current_exe().ok().as_deref()),
++                    AbsolutePathBuf::into_path_buf,
++                )
++        }
+     }
+ 
+     fn code_mode_host_program_from_exe(&self, current_exe: Option<&Path>) -> PathBuf {
