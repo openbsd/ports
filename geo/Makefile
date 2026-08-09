@@ -6,10 +6,10 @@
      SUBDIR += gdal
      SUBDIR += geoclue2
      SUBDIR += geocode-glib
+     SUBDIR += geographiclib
      SUBDIR += geos
      SUBDIR += gimgtools
      SUBDIR += globe
-     SUBDIR += geographiclib
      SUBDIR += gpsbabel
      SUBDIR += gpstk
      SUBDIR += gpx-viewer

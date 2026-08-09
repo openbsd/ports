@@ -11,8 +11,8 @@
      SUBDIR += greetd
      SUBDIR += grim
      SUBDIR += gtk-layer-shell
-     SUBDIR += gtkgreet
      SUBDIR += gtk4-layer-shell
+     SUBDIR += gtkgreet
      SUBDIR += havoc
      SUBDIR += kanshi
      SUBDIR += labwc

@@ -53,9 +53,9 @@
      SUBDIR += sdrpp
      SUBDIR += sigrok
      SUBDIR += smstools
-     SUBDIR += soapysdr
      SUBDIR += soapy-hackrf
      SUBDIR += soapy-rtlsdr
+     SUBDIR += soapysdr
      SUBDIR += spisniffer
      SUBDIR += sredird
      SUBDIR += syncterm

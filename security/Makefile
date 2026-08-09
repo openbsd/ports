@@ -302,8 +302,8 @@
      SUBDIR += py-fastecdsa
      SUBDIR += py-fickling
      SUBDIR += py-fido2
-     SUBDIR += py-google-auth
      SUBDIR += py-gnupg
+     SUBDIR += py-google-auth
      SUBDIR += py-gssapi
      SUBDIR += py-hkdf
      SUBDIR += py-hvac
