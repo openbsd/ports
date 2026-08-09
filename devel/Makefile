@@ -1376,6 +1376,7 @@
      SUBDIR += py-aioresponses
      SUBDIR += py-aiosignal
      SUBDIR += py-aiostream
+     SUBDIR += py-alive-progress
      SUBDIR += py-algorithm-munkres
      SUBDIR += py-altgraph
      SUBDIR += py-ana
