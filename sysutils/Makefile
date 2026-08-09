@@ -155,6 +155,7 @@
      SUBDIR += grizzly
      SUBDIR += gsmartcontrol
      SUBDIR += hcloud
+     SUBDIR += helm
      SUBDIR += hotplug-diskmount
      SUBDIR += htop
      SUBDIR += hw-probe
@@ -169,6 +170,7 @@
      SUBDIR += iwatch
      SUBDIR += jefferson
      SUBDIR += just
+     SUBDIR += k9s
      SUBDIR += kitd
      SUBDIR += kopia
      SUBDIR += krename
@@ -308,6 +310,7 @@
      SUBDIR += pkg_mgr
      SUBDIR += plakar
      SUBDIR += planor
+     SUBDIR += pluto
      SUBDIR += polkit
      SUBDIR += portroach-cli
      SUBDIR += prometheus
