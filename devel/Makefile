@@ -30,8 +30,8 @@
      SUBDIR += arm-none-eabi
      SUBDIR += armips
      SUBDIR += asio
-     SUBDIR += asn1c
      SUBDIR += asm6
+     SUBDIR += asn1c
      SUBDIR += astyle
      SUBDIR += atf
      SUBDIR += atk2mm
@@ -549,11 +549,11 @@
      SUBDIR += p5-B-Hooks-OP-Check
      SUBDIR += p5-B-Keywords
      SUBDIR += p5-B-Utils
-     SUBDIR += p5-Badger
      SUBDIR += p5-BFD
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-BSD-arc4random
      SUBDIR += p5-BSD-stat
+     SUBDIR += p5-Badger
      SUBDIR += p5-Benchmark-Timer
      SUBDIR += p5-Best
      SUBDIR += p5-Bit-Vector-Minimal
@@ -1087,8 +1087,8 @@
      SUBDIR += p5-Return-MultiLevel
      SUBDIR += p5-Return-Value
      SUBDIR += p5-Role-Basic
-     SUBDIR += p5-Role-Tiny
      SUBDIR += p5-Role-Hooks
+     SUBDIR += p5-Role-Tiny
      SUBDIR += p5-SDL
      SUBDIR += p5-SUPER
      SUBDIR += p5-SVN-Notify
@@ -1376,8 +1376,8 @@
      SUBDIR += py-aioresponses
      SUBDIR += py-aiosignal
      SUBDIR += py-aiostream
-     SUBDIR += py-alive-progress
      SUBDIR += py-algorithm-munkres
+     SUBDIR += py-alive-progress
      SUBDIR += py-altgraph
      SUBDIR += py-ana
      SUBDIR += py-annotated_doc
