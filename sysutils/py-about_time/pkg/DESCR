@@ -1,0 +1,15 @@
+Did you ever need to measure the duration of an operation? Yeah, this is easy.
+But how to:
+
+- measure the duration of two or more blocks at the same time,
+  including the whole duration?
+- instrument a code to cleanly retrieve durations in one line,
+  to log or send to time series databases?
+- easily see human friendly durations in seconds, milliseconds, etc?
+- easily see human friendly counts with SI prefixes like k, M, G, T, etc?
+- measure the actual throughput of a block? (this is way harder, since it
+  needs to measure both duration and number of iterations)
+- easily see human friendly throughputs in "/second", "/minute", "/hour"
+  or even "/day", including SI prefixes?
+
+about-time solves these and many more.
