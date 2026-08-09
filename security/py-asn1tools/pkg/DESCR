@@ -1,0 +1,11 @@
+A Python package for ASN.1 parsing, encoding and decoding.
+
+Supported codecs:
+- Basic Encoding Rules (BER)
+- Distinguished Encoding Rules (DER)
+- Generic String Encoding Rules (GSER)
+- JSON Encoding Rules (JER)
+- Basic Octet Encoding Rules (OER)
+- Aligned Packed Encoding Rules (PER)
+- Unaligned Packed Encoding Rules (UPER)
+- XML Encoding Rules (XER)
