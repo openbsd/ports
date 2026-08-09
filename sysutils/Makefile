@@ -320,6 +320,7 @@
      SUBDIR += psrecord
      SUBDIR += pstree
      SUBDIR += pv
+     SUBDIR += py-about_time
      SUBDIR += py-analyzemft
      SUBDIR += py-ansible-compat
      SUBDIR += py-ansible-libssh
