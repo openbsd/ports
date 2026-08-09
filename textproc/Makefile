@@ -510,6 +510,7 @@
      SUBDIR += py-referencing
      SUBDIR += py-regress
      SUBDIR += py-rjsmin
+     SUBDIR += py-rnc2rng
      SUBDIR += py-roman-numerals
      SUBDIR += py-rst2ansi
      SUBDIR += py-ruamel.yaml
