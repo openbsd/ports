@@ -1,0 +1,4 @@
+This module performs conversions between Python values and C bit field
+structs represented as Python byte strings. It is intended to have a
+similar interface as the python struct module, but working on bits
+instead of primitive data types (char, int, ...).
