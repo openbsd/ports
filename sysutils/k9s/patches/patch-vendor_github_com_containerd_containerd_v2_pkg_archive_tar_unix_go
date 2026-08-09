@@ -1,0 +1,13 @@
+Index: vendor/github.com/containerd/containerd/v2/pkg/archive/tar_unix.go
+--- vendor/github.com/containerd/containerd/v2/pkg/archive/tar_unix.go.orig
++++ vendor/github.com/containerd/containerd/v2/pkg/archive/tar_unix.go
+@@ -137,7 +137,8 @@ func setxattr(path, key, value string) error {
+ 	if strings.HasPrefix(key, "trusted.") {
+ 		return fmt.Errorf("admin attributes from archive not supported: %w", unix.ENOTSUP)
+ 	}
+-	return unix.Lsetxattr(path, key, []byte(value), 0)
++	//return unix.Lsetxattr(path, key, []byte(value), 0)
++	return nil
+ }
+ 
+ func copyDirInfo(fi os.FileInfo, path string) error {

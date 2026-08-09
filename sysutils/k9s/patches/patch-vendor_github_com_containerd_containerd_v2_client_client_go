@@ -1,0 +1,38 @@
+Index: vendor/github.com/containerd/containerd/v2/client/client.go
+--- vendor/github.com/containerd/containerd/v2/client/client.go.orig
++++ vendor/github.com/containerd/containerd/v2/client/client.go
+@@ -268,14 +268,14 @@ func (c *Client) defaultRuntime(ctx context.Context) (
+ 		label, err := c.GetLabel(ctx, defaults.DefaultRuntimeNSLabel)
+ 		if err != nil {
+ 			// Don't set the runtime value if there's an error
+-			return defaults.DefaultRuntime, fmt.Errorf("failed to get default runtime label: %w", err)
++			return c.defaults.runtime, fmt.Errorf("failed to get default runtime label: %w", err)
+ 		}
+ 		if label != "" {
+ 			c.defaults.runtime = label
+ 			return label, nil
+ 		}
+ 	}
+-	c.defaults.runtime = defaults.DefaultRuntime
++	//c.defaults.runtime = defaults.DefaultRuntime
+ 	return c.defaults.runtime, nil
+ }
+ 
+@@ -720,7 +720,7 @@ func (c *Client) ContentStore() content.Store {
+ func (c *Client) SnapshotService(snapshotterName string) snapshots.Snapshotter {
+ 	snapshotterName, err := c.resolveSnapshotterName(context.Background(), snapshotterName)
+ 	if err != nil {
+-		snapshotterName = defaults.DefaultSnapshotter
++		snapshotterName = "native"
+ 	}
+ 	if c.snapshotters != nil {
+ 		return c.snapshotters[snapshotterName]
+@@ -916,7 +916,7 @@ func (c *Client) resolveSnapshotterName(ctx context.Co
+ 		if label != "" {
+ 			name = label
+ 		} else {
+-			name = defaults.DefaultSnapshotter
++			name = "native"
+ 		}
+ 	}
+ 
