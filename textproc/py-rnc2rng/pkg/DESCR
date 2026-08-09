@@ -1,0 +1,2 @@
+Converts RELAX NG schemata in Compact syntax (rnc) to the equivalent
+schema in the XML-based default RELAX NG syntax.
