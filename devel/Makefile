@@ -1371,11 +1371,11 @@
      SUBDIR += pth
      SUBDIR += ptlib
      SUBDIR += pudb
+     SUBDIR += py-acstore
      SUBDIR += py-aiocache
      SUBDIR += py-aioresponses
      SUBDIR += py-aiosignal
      SUBDIR += py-aiostream
-     SUBDIR += py-acstore
      SUBDIR += py-algorithm-munkres
      SUBDIR += py-altgraph
      SUBDIR += py-ana
