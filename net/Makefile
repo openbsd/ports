@@ -673,6 +673,7 @@
      SUBDIR += rdapper
      SUBDIR += routinator
      SUBDIR += rpkitouch
+     SUBDIR += rrdp-tools
      SUBDIR += rrdpit
      SUBDIR += rrdtool
      SUBDIR += rsnapshot
