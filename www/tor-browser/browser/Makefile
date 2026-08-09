@@ -12,6 +12,7 @@ EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
 DISTNAME =		src-firefox-tor-browser-140.13.0esr-15.0-1-build2
+REVISION =		0
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -188,6 +189,7 @@ post-install:
 	# install fonts.conf and fonts
 	cp ${WRKSRC}/tor-browser-linux64/Browser/fonts/* \
 	    ${BROWSER_DIR}/fonts
+	${SUBST_CMD} ${BROWSER_DIR}/fonts/fonts.conf
 
 	# install wrapper script (remove symlink first)
 	rm ${PREFIX}/bin/${BROWSER_NAME}

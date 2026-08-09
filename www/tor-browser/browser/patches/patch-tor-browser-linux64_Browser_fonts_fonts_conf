@@ -1,0 +1,12 @@
+Index: tor-browser-linux64/Browser/fonts/fonts.conf
+--- tor-browser-linux64/Browser/fonts/fonts.conf.orig
++++ tor-browser-linux64/Browser/fonts/fonts.conf
+@@ -39,7 +39,7 @@ PERFORMANCE OF THIS SOFTWARE.
+ 
+ <!-- Font directory list -->
+ 
+-	<dir prefix="cwd">fonts</dir>
++	<dir>${TRUEBROWSER_DIR}/fonts</dir>
+ 
+ <!--
+   Accept deprecated 'mono' alias, replacing it with 'monospace'
