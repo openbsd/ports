@@ -1,0 +1,3 @@
+Helm is the package manager for Kubernetes. It helps you define, install, and
+upgrade applications on a Kubernetes cluster, from a single container to an
+application with many interdependent parts.
