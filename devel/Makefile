@@ -1416,6 +1416,7 @@
      SUBDIR += py-bitarray
      SUBDIR += py-bitcoinlib
      SUBDIR += py-bitstring
+     SUBDIR += py-bitstruct
      SUBDIR += py-blessings
      SUBDIR += py-blinker
      SUBDIR += py-blockbuster
