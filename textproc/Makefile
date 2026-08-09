@@ -447,6 +447,7 @@
      SUBDIR += py-feedparser
      SUBDIR += py-fpdf2
      SUBDIR += py-gTTS
+     SUBDIR += py-graphemeu
      SUBDIR += py-humanfriendly
      SUBDIR += py-humanize
      SUBDIR += py-icecream
