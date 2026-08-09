@@ -335,6 +335,7 @@
      SUBDIR += py-croniter
      SUBDIR += py-daemon
      SUBDIR += py-daemonize
+     SUBDIR += py-diskcache
      SUBDIR += py-distlib
      SUBDIR += py-distro
      SUBDIR += py-dotenv
