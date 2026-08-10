@@ -1,4 +1,4 @@
-BROKEN =	fails to build after move to LLVM 22
+BROKEN-amd64 =	fails to build after move to LLVM 22
 
 # ships a dynarmic copy, and dynarmic only supports x86-64 and AArch64
 ONLY_FOR_ARCHS =	amd64 arm64
@@ -11,7 +11,7 @@ DISTNAME =	citra-unified-source-20240303-0ff3440
 
 V =		2104
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	emulators
 
