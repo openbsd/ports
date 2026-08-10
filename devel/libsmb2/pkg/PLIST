@@ -1,14 +1,23 @@
+include/dcerpc/
+include/dcerpc/dcerpc-dtyp.h
+include/dcerpc/dcerpc-epm.h
+include/dcerpc/dcerpc-lsa.h
+include/dcerpc/dcerpc-srvsvc.h
+include/dcerpc/dcerpc-winreg.h
+include/dcerpc/dcerpc-wkssvc.h
+include/dcerpc/dcerpc.h
 include/smb2/
-include/smb2/libsmb2-dcerpc-lsa.h
-include/smb2/libsmb2-dcerpc-srvsvc.h
-include/smb2/libsmb2-dcerpc.h
 include/smb2/libsmb2-raw.h
+include/smb2/libsmb2-share-enum.h
 include/smb2/libsmb2.h
 include/smb2/smb2-errors.h
+include/smb2/smb2-ioctl.h
 include/smb2/smb2.h
 lib/cmake/
 lib/cmake/libsmb2/
 lib/cmake/libsmb2/FindSMB2.cmake
 lib/cmake/libsmb2/libsmb2-config-version.cmake
+@lib lib/libdcerpc.so.${LIBdcerpc_VERSION}
 @lib lib/libsmb2.so.${LIBsmb2_VERSION}
+lib/pkgconfig/libdcerpc.pc
 lib/pkgconfig/libsmb2.pc
