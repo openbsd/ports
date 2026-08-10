@@ -1,36 +1,75 @@
-Fix build on arm64 and make use of elf_aux_info to emulate getauxval.
+- 24.05
+  fc662341e6f85da78ada0e443f6116b978f79f22
+- 26.00
+  839151eaaad24771892afaae6bac690e31e58384
 
 Index: extern/lzma/CpuArch.c
 --- extern/lzma/CpuArch.c.orig
 +++ extern/lzma/CpuArch.c
-@@ -760,13 +760,28 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
+@@ -760,32 +760,62 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
  
  #else // __APPLE__
  
 -#include <sys/auxv.h>
--
-+#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
++#if defined(__GLIBC__) && (__GLIBC__ * 100 + __GLIBC_MINOR__ >= 216)
++  #define Z7_GETAUXV_AVAILABLE
++#else
++  #if defined __has_include
++  #if __has_include (<sys/auxv.h>)
++    #define Z7_GETAUXV_AVAILABLE
++  #endif
++  #endif
++#endif
+ 
++#ifdef Z7_GETAUXV_AVAILABLE
++#include <sys/auxv.h>
  #define USE_HWCAP
 +#endif
  
  #ifdef USE_HWCAP
  
-+#include <sys/auxv.h>
-+
-+#ifdef __linux__
- #include <asm/hwcap.h>
-+#endif
-+
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+static inline
-+unsigned long getauxval(int aux) { 
-+	unsigned long val;
-+
-+	if (elf_aux_info(aux, &val, sizeof(val)) == -1)
-+		val = 0;
-+	return val;
++static unsigned long MY_getauxval(int aux)
++{
++  unsigned long val;
++  if (elf_aux_info(aux, &val, sizeof(val)))
++    return 0;
++  return val;
 +}
++#else
++#define MY_getauxval  getauxval
++  #if defined __has_include
++  #if __has_include (<asm/hwcap.h>)
+ #include <asm/hwcap.h>
++  #endif
++  #endif
 +#endif
  
    #define MY_HWCAP_CHECK_FUNC_2(name1, name2) \
-   BoolInt CPU_IsSupported_ ## name1() { return (getauxval(AT_HWCAP)  & (HWCAP_  ## name2)) ? 1 : 0; }
+-  BoolInt CPU_IsSupported_ ## name1() { return (getauxval(AT_HWCAP)  & (HWCAP_  ## name2)) ? 1 : 0; }
++  BoolInt CPU_IsSupported_ ## name1(void) { return (MY_getauxval(AT_HWCAP)  & (HWCAP_  ## name2)); }
+ 
+ #ifdef MY_CPU_ARM64
+   #define MY_HWCAP_CHECK_FUNC(name) \
+   MY_HWCAP_CHECK_FUNC_2(name, name)
++#if 1 || defined(__ARM_NEON)
++  BoolInt CPU_IsSupported_NEON(void) { return True; }
++#else
+   MY_HWCAP_CHECK_FUNC_2(NEON, ASIMD)
++#endif
+ // MY_HWCAP_CHECK_FUNC (ASIMD)
+ #elif defined(MY_CPU_ARM)
+   #define MY_HWCAP_CHECK_FUNC(name) \
+-  BoolInt CPU_IsSupported_ ## name() { return (getauxval(AT_HWCAP2) & (HWCAP2_ ## name)) ? 1 : 0; }
++  BoolInt CPU_IsSupported_ ## name(void) { return (MY_getauxval(AT_HWCAP2) & (HWCAP2_ ## name)); }
+   MY_HWCAP_CHECK_FUNC_2(NEON, NEON)
+ #endif
+ 
+ #else // USE_HWCAP
+ 
+   #define MY_HWCAP_CHECK_FUNC(name) \
+-  BoolInt CPU_IsSupported_ ## name() { return 0; }
++  BoolInt CPU_IsSupported_ ## name(void) { return 0; }
+   MY_HWCAP_CHECK_FUNC(NEON)
+ 
+ #endif // USE_HWCAP
