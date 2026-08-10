@@ -86,6 +86,7 @@ lib/pkgconfig/libqpdf.pc
 @man man/man1/fix-qdf.1
 @man man/man1/qpdf.1
 @man man/man1/zlib-flate.1
+share/bash-completion/completions/qpdf
 share/doc/qpdf/
 share/doc/qpdf/README-doc.txt
 share/doc/qpdf/examples/
@@ -114,3 +115,4 @@ share/doc/qpdf/examples/qpdfjob-c-save-attachment.c
 share/doc/qpdf/examples/qpdfjob-c.c
 share/doc/qpdf/examples/qpdfjob-remove-annotations.cc
 share/doc/qpdf/examples/qpdfjob-save-attachment.cc
+share/zsh/site-functions/_qpdf

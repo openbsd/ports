@@ -2,7 +2,7 @@
 
 COMMENT=	PDF transformation and inspection utility
 
-DISTNAME=	qpdf-12.3.2
+DISTNAME=	qpdf-12.4.0
 
 SHARED_LIBS +=  qpdf 11.1
 
@@ -27,5 +27,12 @@ LIB_DEPENDS=	graphics/jpeg \
 		security/gnutls
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{bash-completion/completions,zsh/site-functions}
+	${INSTALL_DATA} ${WRKSRC}/completions/bash/qpdf \
+		${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_qpdf \
+		${PREFIX}/share/zsh/site-functions/
 
 .include <bsd.port.mk>
