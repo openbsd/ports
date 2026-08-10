@@ -1,6 +1,5 @@
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/InnerPackage.pm
-${P5SITE}/Module/
 ${P5SITE}/Module/Pluggable/
 ${P5SITE}/Module/Pluggable.pm
 ${P5SITE}/Module/Pluggable/Object.pm

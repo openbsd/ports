@@ -1,0 +1,25 @@
+Do not let "make install" remove files outside of ${WRKINST}.
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -110,19 +110,4 @@ if (!eval { ExtUtils::MakeMaker->VERSION('6.5501') }) 
+     delete $WriteMakefileArgs{BUILD_REQUIRES};
+ }
+ 
+-
+-# On `make install`, delete any copy of this module left behind in a core
+-# Perl library directory by an old release that used INSTALLDIRS => 'perl'.
+-# Such a copy would otherwise shadow the new 'site' install (#39). Only
+-# needed when we're actually installing to 'site' this time around.
+-my $installing_to_site = $WriteMakefileArgs{INSTALLDIRS} eq 'site';
+-
+-sub MY::postamble {
+-    return '' unless $installing_to_site;
+-    return <<'MAKE_FRAG';
+-install ::
+-	$(NOECHO) $(PERL) installscripts/remove_stale_core_copies.pl
+-MAKE_FRAG
+-}
+-
+ WriteMakefile(%WriteMakefileArgs);

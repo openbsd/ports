@@ -1,0 +1,35 @@
+Index: MANIFEST
+--- MANIFEST.orig
++++ MANIFEST
+@@ -5,11 +5,11 @@ lib/Module/Pluggable.pm
+ lib/Module/Pluggable/Object.pm
+ Makefile.PL
+ MANIFEST			This list of files
++MANIFEST.orig.port
+ MANIFEST.SKIP
+ META.json
+ META.yml
+ README
+-installscripts/remove_stale_core_copies.pl
+ t/01use.t
+ t/02alsoworks.t
+ t/02works.t
+@@ -55,13 +55,8 @@ t/26inc_hook.t
+ t/27app_fatpacker.t
+ t/28appledouble.t
+ t/29unreadable.t
+-<<<<<<< HEAD
+ t/30search_dirs_strict.t
+ t/31per_path_opts.t
+-=======
+-t/30per_path_opts.t
+-t/31sort_results.t
+->>>>>>> 14fe60b (Add opt-in sort_results option.)
+ t/acme/Acme/MyTest/Plugin/Foo.pm
+ t/fp/app.pl
+ t/fp/lib/App/TestMPFP/Plugin/A.pm
+@@ -97,4 +92,3 @@ t/lib/TriggerTest/Plugin/CallbackDeny.pm
+ t/lib/TriggerTest/Plugin/Deny.pm
+ t/lib/TriggerTest/Plugin/Error.pm
+ t/lib/Zot/.Zork.pm
+-t/search_dirs_strict.t
