@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -1645,6 +1645,10 @@ else $as_nop
+@@ -1644,6 +1644,10 @@ else case e in #(
  #include <limits.h>
  #undef $2
  
