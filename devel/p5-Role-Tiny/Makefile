@@ -1,15 +1,17 @@
 COMMENT =	minimalist role composition tool
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	Role-Tiny-2.002004
-CATEGORIES =	devel
-
+DISTNAME =	Role-Tiny-2.002005
 CPAN_AUTHOR =	HAARG
+
+CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-TEST_DEPENDS =	devel/p5-Class-Method-Modifiers>=1.05
+MODULES =		cpan
+
+TEST_DEPENDS =		devel/p5-Class-Method-Modifiers>=1.05
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
