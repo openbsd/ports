@@ -1,11 +1,11 @@
 COMMENT=	extensible open standard audio/video container library
 
-DISTNAME=	libmatroska-1.7.1
+DISTNAME=	libmatroska-1.7.2
 CATEGORIES=	multimedia
 SITES=		https://dl.matroska.org/downloads/libmatroska/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	matroska	5.2
+SHARED_LIBS=	matroska	5.3
 
 HOMEPAGE=	https://www.matroska.org/
 
@@ -20,15 +20,11 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
-CFLAGS +=	-I${LOCALBASE}/include
-CXXFLAGS +=	-I${LOCALBASE}/include
-MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=On
 
 MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
-
-LIB_DEPENDS +=	textproc/libebml>=1.4.4
+LIB_DEPENDS +=	textproc/libebml
 
 NO_TEST =	Yes
 

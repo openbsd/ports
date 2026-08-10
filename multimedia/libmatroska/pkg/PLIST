@@ -35,6 +35,5 @@ lib/cmake/Matroska/MatroskaConfig.cmake
 lib/cmake/Matroska/MatroskaConfigVersion.cmake
 lib/cmake/Matroska/MatroskaTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Matroska/MatroskaTargets.cmake
-@static-lib lib/libmatroska.a
 @lib lib/libmatroska.so.${LIBmatroska_VERSION}
 lib/pkgconfig/libmatroska.pc
