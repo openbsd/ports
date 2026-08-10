@@ -1,13 +1,12 @@
 COMMENT=	client-side library to implement the iSCSI protocol
 
-DISTNAME=	libiscsi-1.20.0
-REVISION=	0
+DISTNAME=	libiscsi-1.20.3pl20260809
 GH_ACCOUNT=	sahlberg
 GH_PROJECT=	libiscsi
-GH_COMMIT=	b8d9fbf5e3120dde1a95ca7d873117f4e911b86c
+GH_COMMIT=	1985697419d25a62a04e7454ca8185b854b66ad3
 CATEGORIES=	devel net
 
-SHARED_LIBS=	iscsi	2.1
+SHARED_LIBS=	iscsi	2.2
 
 HOMEPAGE=	https://github.com/sahlberg/libiscsi
 
@@ -20,16 +19,14 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB=	c
+WANTLIB=	c pthread
 
-AUTOCONF_VERSION=	2.71
-AUTOMAKE_VERSION=	1.16
+MODULES+=	devel/cmake
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= 	autoreconf
+CONFIGURE_ARGS+=	-DENABLE_WERROR=Off \
+			-DWITH_GNUTLS=No \
+			-DWITH_LIBGCRYPT=No
 
-CONFIGURE_ARGS+=	--disable-werror \
-			--without-gnutls \
-			--without-libgcrypt
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -6,12 +6,17 @@
 @bin bin/iscsi-perf
 @bin bin/iscsi-pr
 @bin bin/iscsi-readcapacity16
+@bin bin/iscsi-rtpg
 @bin bin/iscsi-swp
 include/iscsi/
 include/iscsi/iscsi.h
 include/iscsi/scsi-lowlevel.h
-@static-lib lib/libiscsi.a
-lib/libiscsi.la
+lib/cmake/
+lib/cmake/libiscsi/
+lib/cmake/libiscsi/libiscsi-config-version.cmake
+lib/cmake/libiscsi/libiscsi-config.cmake
+lib/cmake/libiscsi/libiscsi-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libiscsi/libiscsi-targets.cmake
 @lib lib/libiscsi.so.${LIBiscsi_VERSION}
 lib/pkgconfig/libiscsi.pc
 @man man/man1/iscsi-inq.1
