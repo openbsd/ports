@@ -19,7 +19,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kChromeAppsDeprecation);
  #endif
  
-@@ -936,7 +936,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -939,7 +939,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kIsolatedWebAppBundleCache);
  #endif
  
@@ -28,7 +28,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kLinuxLowMemoryMonitor);
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorModerateLevel;
-@@ -944,7 +944,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -947,7 +947,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

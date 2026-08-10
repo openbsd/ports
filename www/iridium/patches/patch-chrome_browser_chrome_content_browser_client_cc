@@ -191,7 +191,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // This is possibly called before `g_browser_process` is initialized.
    PrefService* local_state;
    if (g_browser_process) {
-@@ -8161,7 +8163,7 @@ void ChromeContentBrowserClient::
+@@ -8179,7 +8181,7 @@ void ChromeContentBrowserClient::
      GrantAdditionalRequestPrivilegesToWorkerProcess(int child_id,
                                                      const GURL& script_url) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -200,7 +200,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // IWA Service Workers need to be explicitly granted access to their origin
    // because isolated-app: isn't a web-safe scheme that can be accessed by
    // default.
-@@ -8628,7 +8630,7 @@ ChromeContentBrowserClient::GetAlternativeErrorPageOve
+@@ -8646,7 +8648,7 @@ ChromeContentBrowserClient::GetAlternativeErrorPageOve
      content::BrowserContext* browser_context,
      int32_t error_code) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
