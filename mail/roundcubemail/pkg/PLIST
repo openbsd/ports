@@ -2839,7 +2839,6 @@ roundcubemail/vendor/guzzlehttp/guzzle/LICENSE
 roundcubemail/vendor/guzzlehttp/guzzle/README.md
 roundcubemail/vendor/guzzlehttp/guzzle/UPGRADING.md
 roundcubemail/vendor/guzzlehttp/guzzle/composer.json
-roundcubemail/vendor/guzzlehttp/guzzle/package-lock.json
 roundcubemail/vendor/guzzlehttp/guzzle/src/
 roundcubemail/vendor/guzzlehttp/guzzle/src/BodySummarizer.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/BodySummarizerInterface.php
@@ -2871,6 +2870,7 @@ roundcubemail/vendor/guzzlehttp/guzzle/src/Handler/CurlShareHandleState.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/Handler/CurlVersion.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/Handler/HeaderProcessor.php
+roundcubemail/vendor/guzzlehttp/guzzle/src/Handler/HostValidator.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/Handler/ProxyEnvironment.php
@@ -2880,6 +2880,7 @@ roundcubemail/vendor/guzzlehttp/guzzle/src/HandlerStack.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/MessageFormatter.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/MessageFormatterInterface.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/Middleware.php
+roundcubemail/vendor/guzzlehttp/guzzle/src/Multiplexing.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/Pool.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php
@@ -3192,6 +3193,9 @@ roundcubemail/vendor/league/commonmark/src/Extension/Mention/Generator/StringTem
 roundcubemail/vendor/league/commonmark/src/Extension/Mention/Mention.php
 roundcubemail/vendor/league/commonmark/src/Extension/Mention/MentionExtension.php
 roundcubemail/vendor/league/commonmark/src/Extension/Mention/MentionParser.php
+roundcubemail/vendor/league/commonmark/src/Extension/NormalizeHeadings/
+roundcubemail/vendor/league/commonmark/src/Extension/NormalizeHeadings/NormalizeHeadingsExtension.php
+roundcubemail/vendor/league/commonmark/src/Extension/NormalizeHeadings/NormalizeHeadingsProcessor.php
 roundcubemail/vendor/league/commonmark/src/Extension/SmartPunct/
 roundcubemail/vendor/league/commonmark/src/Extension/SmartPunct/DashParser.php
 roundcubemail/vendor/league/commonmark/src/Extension/SmartPunct/EllipsesParser.php

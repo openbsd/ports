@@ -1,6 +1,6 @@
 COMMENT=	IMAP4 webmail client
 
-V=		1.7.2
+V=		1.7.3
 DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-//}
 EXTRACT_SUFX=	-complete.tar.gz
