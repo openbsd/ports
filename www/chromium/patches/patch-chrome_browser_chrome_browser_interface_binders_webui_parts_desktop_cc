@@ -1,7 +1,7 @@
 Index: chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
 --- chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc.orig
 +++ chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
-@@ -144,7 +144,7 @@
+@@ -142,7 +142,7 @@
  #include "ui/webui/resources/cr_components/theme_color_picker/theme_color_picker.mojom.h"
  #include "ui/webui/resources/js/browser_command/browser_command.mojom.h"
  
@@ -10,7 +10,7 @@ Index: chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
  #include "chrome/browser/ui/webui/app_home/app_home.mojom.h"
  #include "chrome/browser/ui/webui/app_home/app_home_ui.h"
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
-@@ -354,7 +354,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -352,7 +352,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          HistoryClustersSidePanelUI, NewTabPageUI, BookmarksSidePanelUI>(map);
    }
  
@@ -19,7 +19,7 @@ Index: chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
    RegisterWebUIControllerInterfaceBinder<whats_new::mojom::PageHandlerFactory,
                                           WhatsNewUI>(map);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -381,7 +381,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -379,7 +379,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
  
    RegisterWebUIControllerInterfaceBinder<
        browser_command::mojom::CommandHandlerFactory,
@@ -28,7 +28,7 @@ Index: chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
        WhatsNewUI,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
        NewTabPageUI>(map);
-@@ -594,7 +594,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -585,7 +585,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          DrivePickerUntrustedHostUI>(map);
    }
  
@@ -37,7 +37,7 @@ Index: chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  
-@@ -618,7 +618,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -609,7 +609,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
                                           webapps::AppHomeUI>(map);
  #endif
  

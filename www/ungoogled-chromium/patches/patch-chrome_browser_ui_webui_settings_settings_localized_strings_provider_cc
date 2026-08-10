@@ -28,7 +28,7 @@ Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
        {"overscrollHistoryNavigationTitle",
         IDS_SETTINGS_OVERSCROLL_HISTORY_NAVIGATION_TITLE},
        {"overscrollHistoryNavigationSubtitle",
-@@ -607,7 +607,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -609,7 +609,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
        {"uiFeatureAlignSide", IDS_SETTINGS_UI_FEATURE_ALIGN_SIDE},
        {"uiFeatureAlignTop", IDS_SETTINGS_UI_FEATURE_ALIGN_TOP},
        {"resetToDefault", IDS_SETTINGS_RESET_TO_DEFAULT},
@@ -37,7 +37,7 @@ Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
        {"gtkTheme", IDS_SETTINGS_GTK_THEME},
        {"useGtkTheme", IDS_SETTINGS_USE_GTK_THEME},
        {"qtTheme", IDS_SETTINGS_QT_THEME},
-@@ -615,11 +615,11 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -617,11 +617,11 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
        {"classicTheme", IDS_SETTINGS_CLASSIC_THEME},
        {"useClassicTheme", IDS_SETTINGS_USE_CLASSIC_THEME},
  #endif
@@ -51,7 +51,7 @@ Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
        {"showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS},
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -660,7 +660,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -662,7 +662,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
    html_source->AddString("configurableSidePanelAlignments",
                           configurable_alignments_json);
  
@@ -60,7 +60,7 @@ Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
    bool show_custom_chrome_frame = ui::OzonePlatform::GetInstance()
                                        ->GetPlatformRuntimeProperties()
                                        .supports_server_side_window_decorations;
-@@ -1969,7 +1969,7 @@ void AddSignOutDialogStrings(content::WebUIDataSource*
+@@ -1971,7 +1971,7 @@ void AddSignOutDialogStrings(content::WebUIDataSource*
            g_browser_process->GetApplicationLocale())
            .spec();
  

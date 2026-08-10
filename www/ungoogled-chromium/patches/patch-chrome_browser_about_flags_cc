@@ -247,7 +247,7 @@ Index: chrome/browser/about_flags.cc
      {"approximate-geolocation-permission",
       flag_descriptions::kApproximateGeolocationPermissionName,
       flag_descriptions::kApproximateGeolocationPermissionDescription,
-@@ -9743,7 +9770,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -9744,7 +9771,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(
           autofill::features::kAutofillEnablePrefetchingRiskDataForRetrieval)},
  
@@ -256,7 +256,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-generic-oidc-auth-profile-management",
       flag_descriptions::kEnableGenericOidcAuthProfileManagementName,
       flag_descriptions::kEnableGenericOidcAuthProfileManagementDescription,
-@@ -9753,7 +9780,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -9754,7 +9781,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -265,7 +265,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-user-navigation-capturing-pwa",
       flag_descriptions::kPwaNavigationCapturingName,
       flag_descriptions::kPwaNavigationCapturingDescription,
-@@ -10110,7 +10137,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -10111,7 +10138,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kResponsiveIframesDescription, kOsAll,
       FEATURE_VALUE_TYPE(blink::features::kResponsiveIframes)},
  
@@ -274,7 +274,7 @@ Index: chrome/browser/about_flags.cc
      {"replace-sync-promos-with-sign-in-promos-desktop",
       flag_descriptions::kReplaceSyncPromosWithSignInPromosName,
       flag_descriptions::kReplaceSyncPromosWithSignInPromosDescription,
-@@ -10477,7 +10504,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -10478,7 +10505,7 @@ const FeatureEntry kFeatureEntries[] = {
           segmentation_platform::features::kSegmentationSurveyPage)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -283,7 +283,7 @@ Index: chrome/browser/about_flags.cc
      {"autofill-enable-buy-now-pay-later",
       flag_descriptions::kAutofillEnableBuyNowPayLaterName,
       flag_descriptions::kAutofillEnableBuyNowPayLaterDescription,
-@@ -10958,7 +10985,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -10959,7 +10986,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(ui::kUseNewEtc1Encoder)},
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -292,7 +292,7 @@ Index: chrome/browser/about_flags.cc
      {"automatic-usb-detach", flag_descriptions::kAutomaticUsbDetachName,
       flag_descriptions::kAutomaticUsbDetachDescription, kOsAndroid | kOsLinux,
       FEATURE_VALUE_TYPE(features::kAutomaticUsbDetach)},
-@@ -10981,7 +11008,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -10982,7 +11009,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // !BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -301,7 +301,7 @@ Index: chrome/browser/about_flags.cc
      {"autofill-enable-amount-extraction",
       flag_descriptions::kAutofillEnableAmountExtractionName,
       flag_descriptions::kAutofillEnableAmountExtractionDescription,
-@@ -11103,7 +11130,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11104,7 +11131,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(
           feature_engagement::kIPHAutofillCreditCardBenefitFeature)},
  
@@ -310,7 +310,7 @@ Index: chrome/browser/about_flags.cc
      {"chrome-web-store-navigation-throttle",
       flag_descriptions::kChromeWebStoreNavigationThrottleName,
       flag_descriptions::kChromeWebStoreNavigationThrottleDescription,
-@@ -11143,7 +11170,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11144,7 +11171,7 @@ const FeatureEntry kFeatureEntries[] = {
           supervised_user::kSupervisedUserUseUrlFilteringService)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -319,7 +319,7 @@ Index: chrome/browser/about_flags.cc
      {"autofill-enable-amount-extraction-testing",
       flag_descriptions::kAutofillEnableAmountExtractionTestingName,
       flag_descriptions::kAutofillEnableAmountExtractionTestingDescription,
-@@ -11153,7 +11180,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11154,7 +11181,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
  
@@ -328,7 +328,7 @@ Index: chrome/browser/about_flags.cc
      {"root-scrollbar-follows-browser-theme",
       flag_descriptions::kRootScrollbarFollowsTheme,
       flag_descriptions::kRootScrollbarFollowsThemeDescription,
-@@ -11329,7 +11356,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11330,7 +11357,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -337,7 +337,7 @@ Index: chrome/browser/about_flags.cc
      {"tab-group-home", tabs::flag_descriptions::kTabGroupHomeName,
       tabs::flag_descriptions::kTabGroupHomeDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(tabs::kTabGroupHome)},
-@@ -11363,7 +11390,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11364,7 +11391,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -346,7 +346,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-site-search-allow-user-override-policy",
       flag_descriptions::kEnableSiteSearchAllowUserOverridePolicyName,
       flag_descriptions::kEnableSiteSearchAllowUserOverridePolicyDescription,
-@@ -11447,7 +11474,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11448,7 +11475,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -355,7 +355,7 @@ Index: chrome/browser/about_flags.cc
      {"autofill-enable-buy-now-pay-later-for-klarna",
       flag_descriptions::kAutofillEnableBuyNowPayLaterForKlarnaName,
       flag_descriptions::kAutofillEnableBuyNowPayLaterForKlarnaDescription,
-@@ -11492,7 +11519,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11493,7 +11520,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -364,7 +364,7 @@ Index: chrome/browser/about_flags.cc
      {"autofill-enable-buy-now-pay-later-for-externally-linked",
       flag_descriptions::kAutofillEnableBuyNowPayLaterForExternallyLinkedName,
       flag_descriptions::
-@@ -11548,7 +11575,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11549,7 +11576,7 @@ const FeatureEntry kFeatureEntries[] = {
  
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -373,7 +373,7 @@ Index: chrome/browser/about_flags.cc
      {"cross-device-signin-from-desktop",
       flag_descriptions::kCrossDeviceSigninFromDesktopName,
       flag_descriptions::kCrossDeviceSigninFromDesktopDescription,
-@@ -11866,7 +11893,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11867,7 +11894,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -382,7 +382,7 @@ Index: chrome/browser/about_flags.cc
      {"contextual-suggestion-ui-improvements",
       flag_descriptions::kContextualSuggestionsUiImprovementsName,
       flag_descriptions::kContextualSuggestionsUiImprovementsDescription,
-@@ -12065,7 +12092,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12072,7 +12099,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kCryptographyComplianceCnsa)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -391,7 +391,7 @@ Index: chrome/browser/about_flags.cc
      {"lens-reinvocation-affordance",
       flag_descriptions::kLensSearchReinvocationAffordanceName,
       flag_descriptions::kLensSearchReinvocationAffordanceDescription,
-@@ -12109,7 +12136,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12116,7 +12143,7 @@ const FeatureEntry kFeatureEntries[] = {
       STRING_VALUE_TYPE(variations::switches::kVariationsSeedCorpus, "")},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -400,7 +400,7 @@ Index: chrome/browser/about_flags.cc
      {"passkey-unlock-error-ui", flag_descriptions::kPasskeyUnlockErrorUiName,
       flag_descriptions::kPasskeyUnlockErrorUiDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(device::kPasskeyUnlockErrorUi)},
-@@ -12149,7 +12176,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12156,7 +12183,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kHandleMdmErrorsForDasherAccountsDescription, kOsAll,
       FEATURE_VALUE_TYPE(switches::kHandleMdmErrorsForDasherAccounts)},
  
@@ -409,7 +409,7 @@ Index: chrome/browser/about_flags.cc
      {"disable-u18-feedback-desktop",
       flag_descriptions::kDisableU18FeedbackDesktopName,
       flag_descriptions::kDisableU18FeedbackDesktopDescription,
-@@ -12157,7 +12184,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12164,7 +12191,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(switches::kDisableU18FeedbackDesktop)},
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
@@ -418,7 +418,7 @@ Index: chrome/browser/about_flags.cc
      {"profile-creation-decline-signin-cta-experiment",
       flag_descriptions::kProfileCreationDeclineSigninCTAExperimentName,
       flag_descriptions::kProfileCreationDeclineSigninCTAExperimentDescription,
-@@ -12178,7 +12205,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12185,7 +12212,7 @@ const FeatureEntry kFeatureEntries[] = {
           enterprise_signals::features::kProfileSignalsReportingEnabled)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -427,7 +427,7 @@ Index: chrome/browser/about_flags.cc
      {"projects-panel", flag_descriptions::kProjectsPanelName,
       flag_descriptions::kProjectsPanelDescription, kOsDesktop,
       FEATURE_WITH_PARAMS_VALUE_TYPE(tab_groups::kProjectsPanel,
-@@ -12212,7 +12239,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12219,7 +12246,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -436,7 +436,7 @@ Index: chrome/browser/about_flags.cc
      {"lens-overlay-optimization-filter",
       flag_descriptions::kLensOverlayOptimizationFilterName,
       flag_descriptions::kLensOverlayOptimizationFilterDescription, kOsDesktop,
-@@ -12239,7 +12266,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12246,7 +12273,7 @@ const FeatureEntry kFeatureEntries[] = {
       MULTI_VALUE_TYPE(kConnectionAllowlistsChoices)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -445,7 +445,7 @@ Index: chrome/browser/about_flags.cc
      {"read-anything-with-readability-enabled",
       flag_descriptions::kReadAnythingWithReadabilityName,
       flag_descriptions::kReadAnythingWithReadabilityDescription, kOsDesktop,
-@@ -12247,7 +12274,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12254,7 +12281,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -454,7 +454,7 @@ Index: chrome/browser/about_flags.cc
      {"read-anything-omnibox-chip",
       flag_descriptions::kReadAnythingOmniboxChipName,
       flag_descriptions::kReadAnythingOmniboxChipDescription, kOsDesktop,
-@@ -12276,7 +12303,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12283,7 +12310,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -463,7 +463,7 @@ Index: chrome/browser/about_flags.cc
      {"lens-overlay-non-blocking-privacy-notice",
       flag_descriptions::kLensOverlayNonBlockingPrivacyNoticeName,
       flag_descriptions::kLensOverlayNonBlockingPrivacyNoticeDescription,
-@@ -12343,7 +12370,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12350,7 +12377,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -472,7 +472,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-your-saved-info-settings-page",
       flag_descriptions::kYourSavedInfoSettingsPageName,
       flag_descriptions::kYourSavedInfoSettingsPageDescription, kOsDesktop,
-@@ -12509,7 +12536,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12516,7 +12543,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(autofill::features::kAutofillAiWithDataSchema)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -481,7 +481,7 @@ Index: chrome/browser/about_flags.cc
      {"read-anything-line-focus", flag_descriptions::kReadAnythingLineFocusName,
       flag_descriptions::kReadAnythingLineFocusDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kReadAnythingLineFocus)},
-@@ -12533,7 +12560,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12540,7 +12567,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(payments::android::kDeduplicateNativePaymentApps)},
  #endif
  
@@ -490,7 +490,7 @@ Index: chrome/browser/about_flags.cc
      {"password-upload-ui-update",
       flag_descriptions::kPasswordUploadUiUpdateName,
       flag_descriptions::kPasswordUploadUiUpdateDescription,
-@@ -12582,7 +12609,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12589,7 +12616,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(chrome::android::kAndroidXrImmersivePlayer)},
  #endif
  
@@ -499,7 +499,7 @@ Index: chrome/browser/about_flags.cc
      {"saas-usage-reporting", flag_descriptions::kSaasUsageReportingName,
       flag_descriptions::kSaasUsageReportingDescription,
       kOsLinux | kOsMac | kOsWin,
-@@ -12989,7 +13016,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12996,7 +13023,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(blink::features::kUserMediaElementLegacy)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -508,7 +508,7 @@ Index: chrome/browser/about_flags.cc
      {"read-anything-readability-select-text",
       flag_descriptions::kReadAnythingReadabilitySelectTextName,
       flag_descriptions::kReadAnythingReadabilitySelectTextDescription,
-@@ -13295,7 +13322,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -13302,7 +13329,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kLongScreenshotsNoMemoryCheckDescription, kOsAndroid,
       FEATURE_VALUE_TYPE(chrome::android::kLongScreenshotsNoMemoryCheck)},
  #endif
