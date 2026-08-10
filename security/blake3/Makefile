@@ -14,6 +14,9 @@ MAINTAINER=	Mykyta Nazarenko <mn@superpc.suicide.solutions>
 # CC0 v1.0 (or alternatively Apache 2.0 with/without LLVM exceptions)
 PERMIT_PACKAGE=	Yes
 
+# Looks for CXX_20
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += c crypto
 
 MODULES=	devel/cmake
