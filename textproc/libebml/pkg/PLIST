@@ -35,6 +35,5 @@ lib/cmake/EBML/EBMLConfig.cmake
 lib/cmake/EBML/EBMLConfigVersion.cmake
 lib/cmake/EBML/EBMLTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/EBML/EBMLTargets.cmake
-@static-lib lib/libebml.a
 @lib lib/libebml.so.${LIBebml_VERSION}
 lib/pkgconfig/libebml.pc
