@@ -13,8 +13,12 @@ include/nfsc/libnfs-raw-rquota.h
 include/nfsc/libnfs-raw.h
 include/nfsc/libnfs-zdr.h
 include/nfsc/libnfs.h
-@static-lib lib/libnfs.a
-lib/libnfs.la
+lib/cmake/
+lib/cmake/libnfs/
+lib/cmake/libnfs/FindNFS.cmake
+lib/cmake/libnfs/libnfs-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libnfs/libnfs-config-version.cmake
+lib/cmake/libnfs/libnfs-config.cmake
 @lib lib/libnfs.so.${LIBnfs_VERSION}
 lib/pkgconfig/libnfs.pc
 @man man/man1/nfs-cat.1

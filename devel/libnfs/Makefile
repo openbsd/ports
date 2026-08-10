@@ -1,12 +1,12 @@
 COMMENT=	client library for accessing NFS
 
+DISTNAME=	libnfs-7.0.0pl20260708
 GH_ACCOUNT=	sahlberg
 GH_PROJECT=	libnfs
-GH_TAGNAME=	libnfs-5.0.2
-PKGNAME=	${GH_TAGNAME}
+GH_COMMIT=	8d4c2f6057acb6a01a316fbb7eea1c05a06e34c6
 CATEGORIES=	devel net
 
-SHARED_LIBS=	nfs	2.2
+SHARED_LIBS=	nfs	3.0
 
 HOMEPAGE=	https://github.com/sahlberg/libnfs
 
@@ -17,9 +17,11 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
+MODULES=	devel/cmake
 
-CONFIGURE_STYLE= autoreconf
+CONFIGURE_ARGS+=-DENABLE_UTILS=ON \
+		-DINSTALL_MAN_DIR="${PREFIX}/man"
+
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
