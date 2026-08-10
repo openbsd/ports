@@ -54,6 +54,7 @@ ${P5ARCH}/Crypt/Digest/BLAKE2s_128.pm
 ${P5ARCH}/Crypt/Digest/BLAKE2s_160.pm
 ${P5ARCH}/Crypt/Digest/BLAKE2s_224.pm
 ${P5ARCH}/Crypt/Digest/BLAKE2s_256.pm
+${P5ARCH}/Crypt/Digest/BLAKE3.pm
 ${P5ARCH}/Crypt/Digest/CHAES.pm
 ${P5ARCH}/Crypt/Digest/KangarooTwelve.pm
 ${P5ARCH}/Crypt/Digest/Keccak224.pm
@@ -104,6 +105,7 @@ ${P5ARCH}/Crypt/Mode/CFB.pm
 ${P5ARCH}/Crypt/Mode/CTR.pm
 ${P5ARCH}/Crypt/Mode/ECB.pm
 ${P5ARCH}/Crypt/Mode/OFB.pm
+${P5ARCH}/Crypt/Mode/XTS.pm
 ${P5ARCH}/Crypt/PK/
 ${P5ARCH}/Crypt/PK.pm
 ${P5ARCH}/Crypt/PK/DH.pm
@@ -187,6 +189,7 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::Digest::BLAKE2s_160.3p
 @man man/man3p/Crypt::Digest::BLAKE2s_224.3p
 @man man/man3p/Crypt::Digest::BLAKE2s_256.3p
+@man man/man3p/Crypt::Digest::BLAKE3.3p
 @man man/man3p/Crypt::Digest::CHAES.3p
 @man man/man3p/Crypt::Digest::KangarooTwelve.3p
 @man man/man3p/Crypt::Digest::Keccak224.3p
@@ -235,6 +238,7 @@ ${P5ARCH}/auto/CryptX/
 @man man/man3p/Crypt::Mode::CTR.3p
 @man man/man3p/Crypt::Mode::ECB.3p
 @man man/man3p/Crypt::Mode::OFB.3p
+@man man/man3p/Crypt::Mode::XTS.3p
 @man man/man3p/Crypt::PK.3p
 @man man/man3p/Crypt::PK::DH.3p
 @man man/man3p/Crypt::PK::DSA.3p
