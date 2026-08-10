@@ -3,16 +3,28 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -148,7 +148,11 @@ install-bin:
+@@ -34,7 +34,7 @@ INSTALL = install
+ INSTALL_DIR = $(INSTALL) -m755 -d
+ INSTALL_DATA = $(INSTALL) -m644
+ INSTALL_BIN = $(INSTALL) -m755
+-DESTLIBDIR := $(DESTDIR)/$(PREFIX)/lib/lfe
++DESTLIBDIR := $(PREFIX)/lib/lfe
+ DESTINCDIR := $(DESTLIBDIR)/$(INCDIR)
+ DESTEBINDIR := $(DESTLIBDIR)/$(EBINDIR)
+ DESTBINDIR := $(DESTLIBDIR)/$(BINDIR)
+@@ -148,8 +148,13 @@ install-bin:
+ 		$(BINDIR)/lfedoc \
  		$(BINDIR)/lfescript \
  		$(DESTBINDIR)
- 	$(INSTALL_DIR) $(PREFIX)/bin
--	ln -sf $(DESTBINDIR)/* $(PREFIX)/bin/
-+	ln -sf  ../lib/lfe/${BINDIR}/lfe \
+-	$(INSTALL_DIR) $(DESTDIR)/$(PREFIX)/bin
+-	ln -sf $(DESTBINDIR)/* $(DESTDIR)/$(PREFIX)/bin/
++	$(INSTALL_DIR) $(PREFIX)/bin
++	ln -sf \
++		../lib/lfe/${BINDIR}/lfe \
 +		../lib/lfe/$(BINDIR)/lfec \
 +		../lib/lfe/$(BINDIR)/lfedoc \
 +		../lib/lfe/$(BINDIR)/lfescript \
 +		$(PREFIX)/bin/
  
  clean:
- 	rm -rf $(EBINDIR)/*.beam erl_crash.dump comp_opts.mk
+ 	rm -rf $(EBINDIR)/*.beam erl_crash.dump comp_opts.mk test/*.beam
