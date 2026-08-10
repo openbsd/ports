@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-149.4.0/v8/src/api/api.cc
---- modcargo-crates/v8-149.4.0/v8/src/api/api.cc.orig
-+++ modcargo-crates/v8-149.4.0/v8/src/api/api.cc
+Index: modcargo-crates/v8-150.4.0/v8/src/api/api.cc
+--- modcargo-crates/v8-150.4.0/v8/src/api/api.cc.orig
++++ modcargo-crates/v8-150.4.0/v8/src/api/api.cc
 @@ -167,7 +167,7 @@
  
  #include "src/strings/string-hasher-inl.h"
@@ -10,7 +10,7 @@ Index: modcargo-crates/v8-149.4.0/v8/src/api/api.cc
  #include <signal.h>
  #include <unistd.h>
  
-@@ -6384,7 +6384,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -6383,7 +6383,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

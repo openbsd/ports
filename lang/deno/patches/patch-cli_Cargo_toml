@@ -4,25 +4,28 @@
 Index: cli/Cargo.toml
 --- cli/Cargo.toml.orig
 +++ cli/Cargo.toml
-@@ -24,7 +24,7 @@ path = "integration_tests_runner.rs"
- harness = false
- 
- [features]
--default = ["upgrade", "__vendored_zlib_ng"]
-+default = ["__vendored_zlib_ng"]
+@@ -29,7 +29,7 @@ default = ["v8"]
+ # crate name so the engine integration does not require source-level churn.
+ v8 = ["__runtime_defaults", "deno_core/v8", "v8/v8"]
+ quickjs = ["__runtime_defaults", "deno_core/quickjs", "v8/quickjs"]
+-__runtime_defaults = ["upgrade", "__vendored_zlib_ng"]
++__runtime_defaults = ["__vendored_zlib_ng"]
  # A feature that enables heap profiling with dhat on Linux.
  # 1. Compile with `cargo build --profile=release-with-debug --features=dhat-heap`
  # 2. Run the executable. It will output a dhat-heap.json file.
-@@ -41,7 +41,7 @@ hmr = ["deno_runtime/hmr", "deno_snapshots/disable"]
+@@ -46,9 +46,9 @@ hmr = ["deno_runtime/hmr", "deno_snapshots/disable"]
  __vendored_zlib_ng = ["flate2/zlib-ng-compat", "libz-sys/zlib-ng"]
  lsp-tracing = ["dep:tracing", "dep:tracing-subscriber", "dep:tracing-opentelemetry", "opentelemetry-otlp/grpc-tonic"]
  # Custom panic trace with `deno_panic`
 -panic-trace = ["deno_panic"]
 +# panic-trace = ["deno_panic"]
+ # Linux release builds remove DWARF unwind tables and trace with frame pointers.
+-panic-trace-frame-pointer = ["panic-trace", "deno_panic/frame-pointer"]
++# panic-trace-frame-pointer = ["panic-trace", "deno_panic/frame-pointer"]
  
  [build-dependencies]
  deno_runtime = { workspace = true }
-@@ -135,7 +135,6 @@ imara-diff.workspace = true
+@@ -144,7 +144,6 @@ imara-diff.workspace = true
  import_map.workspace = true
  indexmap.workspace = true
  jsonc-parser = { workspace = true, features = ["cst", "serde"] }

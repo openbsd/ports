@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-149.4.0/build/toolchain/toolchain.gni
---- modcargo-crates/v8-149.4.0/build/toolchain/toolchain.gni.orig
-+++ modcargo-crates/v8-149.4.0/build/toolchain/toolchain.gni
-@@ -64,7 +64,7 @@ if (host_os == "mac") {
+Index: modcargo-crates/v8-150.4.0/build/toolchain/toolchain.gni
+--- modcargo-crates/v8-150.4.0/build/toolchain/toolchain.gni.orig
++++ modcargo-crates/v8-150.4.0/build/toolchain/toolchain.gni
+@@ -69,7 +69,7 @@ if (host_os == "mac") {
    host_shlib_extension = ".dylib"
  } else if (host_os == "win") {
    host_shlib_extension = ".dll"

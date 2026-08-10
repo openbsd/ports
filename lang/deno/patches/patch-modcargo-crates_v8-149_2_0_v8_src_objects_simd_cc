@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-149.4.0/v8/src/objects/simd.cc
---- modcargo-crates/v8-149.4.0/v8/src/objects/simd.cc.orig
-+++ modcargo-crates/v8-149.4.0/v8/src/objects/simd.cc
+Index: modcargo-crates/v8-150.4.0/v8/src/objects/simd.cc
+--- modcargo-crates/v8-150.4.0/v8/src/objects/simd.cc.orig
++++ modcargo-crates/v8-150.4.0/v8/src/objects/simd.cc
 @@ -347,7 +347,7 @@ uintptr_t fast_search_avx(T* array, uintptr_t array_le
  }
  #endif  // ifdef __SSE3__
@@ -10,7 +10,7 @@ Index: modcargo-crates/v8-149.4.0/v8/src/objects/simd.cc
  
  template <typename ScalarType>
  struct SVEOperations {
-@@ -636,9 +636,11 @@ template <typename T>
+@@ -637,9 +637,11 @@ template <typename T>
  inline uintptr_t search(T* array, uintptr_t array_len, uintptr_t index,
                          T search_element) {
  #ifdef NEON64
