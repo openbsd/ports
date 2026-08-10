@@ -1,0 +1,15 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -311,11 +311,6 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libupnp.pc
+ 
+ if(BUILD_TESTING)
+ 	enable_testing()
+-	find_package(GTest CONFIG)
+-
+-	if(GTest_FOUND)
+-		add_subdirectory(gtest)
+-	endif()
+ endif()
+ 
+ if(FUZZER)

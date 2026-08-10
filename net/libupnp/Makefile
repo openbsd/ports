@@ -25,4 +25,7 @@ MODULES =	devel/cmake
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
+# more tests are available if gtest is present, but patch-CMakeLists_txt
+# will need to be removed
+
 .include <bsd.port.mk>
