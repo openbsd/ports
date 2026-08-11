@@ -4,7 +4,7 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	skim-rs
 GH_PROJECT =	skim
-GH_TAGNAME =	v4.6.1
+GH_TAGNAME =	v5.6.1
 
 MAINTAINER =            Laurence Tratt <laurie@tratt.net>
 
@@ -19,7 +19,7 @@ MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
-WANTLIB +=	${MODCARGO_WANTLIB} m
+WANTLIB +=	${MODCARGO_WANTLIB} m util
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/sk ${PREFIX}/bin/
