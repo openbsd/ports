@@ -1,10 +1,14 @@
 COMMENT =	DWARF optimization and duplicate removal tool
-PKGNAME =	dwz-0.16
-XXHASH_V =	0.8.3
-DISTFILES =	${PKGNAME}.tar.gz
-DISTFILES.h= 	xxhash-${XXHASH_V}{xxhash}.h
 
+# 0.17 requires GElf_Chdr/gelf_getchdr added in sourceware libelf 0.165
+# (we use libelf from elftoolchain instead, which doesn't have this)
+PKGNAME =	dwz-0.16
 REVISION =	2
+
+XXHASH_V =	0.8.3
+DISTFILES.xx =	xxhash-${XXHASH_V}{xxhash}.h
+DISTFILES =	${PKGNAME}.tar.gz
+EXTRACT_ONLY =	${DISTFILES}
 
 CATEGORIES =	devel
 
@@ -16,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c elf
 
 SITES =		https://sourceware.org/ftp/dwz/releases/
-SITES.h =	https://raw.githubusercontent.com/Cyan4973/xxHash/v${XXHASH_V}/
+SITES.xx =	https://raw.githubusercontent.com/Cyan4973/xxHash/v${XXHASH_V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -28,14 +32,9 @@ FAKE_FLAGS =	mandir=${TRUEPREFIX}/man prefix=${TRUEPREFIX}
 WRKDIST =	${WRKDIR}/dwz
 
 # XXX bootstrap: DEBUG_PACKAGES needs a dwz binary to work
-
-DWZ = ${WRKBUILD}/dwz
-
-EXTRACT_ONLY =	${DISTFILES}
+DWZ =		${WRKBUILD}/dwz
 
 # Cannot use sysutils/xxhash as that introduces a loop.
-# XXX: Revisit using the :patch target next update.
-# XXX: A :patch target will likely introduce the same loop.
 post-extract:
 	cp ${DISTDIR}/xxhash-${XXHASH_V}.h ${WRKSRC}/xxhash.h
 

@@ -1,7 +1,8 @@
-More portable endianness check
+hunk 1: More portable endianness check
 https://www.austingroupbugs.net/view.php?id=162#c665
 
-ANSIfy.
+rest: ANSIfy; upstream have done this as of 0.17 so can be removed
+if updating.
 
 Index: hashtab.c
 --- hashtab.c.orig
