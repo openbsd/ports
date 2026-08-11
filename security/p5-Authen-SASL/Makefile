@@ -1,15 +1,18 @@
-COMMENT=	perl interface to the SASL auth framework
+COMMENT =	perl interface to the SASL auth framework
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Authen-SASL-2.1800
-CATEGORIES=	security
+DISTNAME =	Authen-SASL-2.2000
+CPAN_AUTHOR =	EHUELS
+
+CATEGORIES =	security
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	security/p5-Digest-HMAC \
-		security/p5-Crypt-URandom
+MODULES =		cpan
+
+RUN_DEPENDS =		security/p5-Crypt-URandom \
+			security/p5-Digest-HMAC
+
+PKG_ARCH =	*
 
 .include <bsd.port.mk>
