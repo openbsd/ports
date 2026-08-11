@@ -3,6 +3,7 @@ COMMENT=	let your Python tests travel through time
 MODPY_DISTV=	1.5.5
 DISTNAME=	freezegun-${MODPY_DISTV}
 PKGNAME=	py-freezegun-${MODPY_DISTV}
+REVISION=	0
 
 HOMEPAGE=	https://github.com/spulec/freezegun
 

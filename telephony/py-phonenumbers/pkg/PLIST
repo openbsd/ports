@@ -1,4 +1,3 @@
-@pkgpath telephony/py-phonenumbers,python3
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_DISTV}.dist-info/METADATA

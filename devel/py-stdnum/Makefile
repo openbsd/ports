@@ -4,7 +4,7 @@ MODPY_DISTV=		1.20
 DISTNAME=		python-stdnum-${MODPY_DISTV}
 PKGNAME=		py-stdnum-${MODPY_DISTV}
 CATEGORIES=		devel
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		https://arthurdejong.org/python-stdnum/
 

@@ -1,4 +1,3 @@
-@pkgpath net/py-nxos,python3
 lib/python${MODPY_VERSION}/site-packages/pynxos/
 lib/python${MODPY_VERSION}/site-packages/pynxos-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pynxos-${MODPY_DISTV}.dist-info/METADATA

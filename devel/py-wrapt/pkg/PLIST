@@ -1,4 +1,3 @@
-@pkgpath devel/py-wrapt,python3
 lib/python${MODPY_VERSION}/site-packages/wrapt/
 lib/python${MODPY_VERSION}/site-packages/wrapt-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/wrapt-${MODPY_DISTV}.dist-info/METADATA

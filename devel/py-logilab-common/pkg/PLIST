@@ -1,5 +1,3 @@
-@conflict py-logilab-common-<1.4.0p3
-@pkgpath devel/py-logilab-common,python3
 bin/logilab-pytest
 lib/python${MODPY_VERSION}/site-packages/logilab/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/

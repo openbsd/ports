@@ -1,4 +1,3 @@
-@pkgpath devel/py-setuptools_trial,python3
 lib/python${MODPY_VERSION}/site-packages/setuptools_trial/
 lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_DISTV}.dist-info/METADATA

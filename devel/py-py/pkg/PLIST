@@ -1,4 +1,3 @@
-@pkgpath devel/py-py,python3
 lib/python${MODPY_VERSION}/site-packages/py/
 lib/python${MODPY_VERSION}/site-packages/py-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/py-${MODPY_DISTV}.dist-info/METADATA

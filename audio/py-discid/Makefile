@@ -3,6 +3,7 @@ COMMENT=	Python binding of libdiscid
 MODPY_DISTV=	1.4.1
 DISTNAME=	discid-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	audio
 

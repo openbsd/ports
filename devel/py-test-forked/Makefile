@@ -4,7 +4,7 @@ MODPY_DISTV =	1.6.0
 
 DISTNAME =		pytest-forked-${MODPY_DISTV}
 PKGNAME =		py-test-forked-${MODPY_DISTV}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

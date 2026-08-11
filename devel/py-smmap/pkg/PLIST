@@ -1,4 +1,3 @@
-@pkgpath devel/py-smmap,python3
 lib/python${MODPY_VERSION}/site-packages/smmap/
 lib/python${MODPY_VERSION}/site-packages/smmap-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/smmap-${MODPY_DISTV}.dist-info/METADATA

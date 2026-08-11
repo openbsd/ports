@@ -3,7 +3,7 @@ COMMENT =	Python library for the ISO 639 language code standard
 DISTNAME =	iso-639-${MODPY_DISTV}
 PKGNAME =	py-iso639-${MODPY_DISTV}
 CATEGORIES =	devel
-REVISION =	11
+REVISION =	12
 
 HOMEPAGE =	https://github.com/noumar/iso639
 

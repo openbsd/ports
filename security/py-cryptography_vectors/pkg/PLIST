@@ -1,5 +1,3 @@
-@conflict py-cryptography_vectors-*
-@pkgpath security/py-cryptography_vectors,python3
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_DISTV}.dist-info/METADATA

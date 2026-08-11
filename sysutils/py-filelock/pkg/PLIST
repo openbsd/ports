@@ -1,4 +1,3 @@
-@pkgpath sysutils/py-filelock,python3
 lib/python${MODPY_VERSION}/site-packages/filelock/
 lib/python${MODPY_VERSION}/site-packages/filelock-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/filelock-${MODPY_DISTV}.dist-info/METADATA

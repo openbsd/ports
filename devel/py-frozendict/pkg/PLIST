@@ -1,4 +1,3 @@
-@pkgpath devel/py-frozendict,python3
 lib/python${MODPY_VERSION}/site-packages/frozendict/
 lib/python${MODPY_VERSION}/site-packages/frozendict-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/frozendict-${MODPY_DISTV}.dist-info/METADATA

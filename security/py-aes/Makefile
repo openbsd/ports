@@ -3,7 +3,7 @@ COMMENT =		pure-Python implementation of AES block-cipher
 MODPY_DISTV =	1.6.1
 DISTNAME =		pyaes-${MODPY_DISTV}
 PKGNAME =		py-aes-${MODPY_DISTV}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		security
 

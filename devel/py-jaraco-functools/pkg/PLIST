@@ -1,6 +1,3 @@
-@conflict py-jaraco-functoolsjaraco.functools-*
-@conflict ${MODPY_PY_PREFIX}jaraco-functoolsjaraco.functools-*
-@pkgpath devel/py-jaraco-functools,python3
 lib/python${MODPY_VERSION}/site-packages/jaraco/
 lib/python${MODPY_VERSION}/site-packages/jaraco/functools/
 lib/python${MODPY_VERSION}/site-packages/jaraco/functools/__init__.py

@@ -1,5 +1,3 @@
-@conflict py-isort-<4.2.15p3
-@pkgpath devel/py-isort,python3
 bin/isort
 bin/isort-identify-imports
 lib/python${MODPY_VERSION}/site-packages/isort/

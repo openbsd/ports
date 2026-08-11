@@ -3,7 +3,7 @@ COMMENT =		container class boilerplate killer
 MODPY_DISTV =	5.0.0
 DISTNAME =		fields-${MODPY_DISTV}
 PKGNAME =		py-fields-${MODPY_DISTV}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		devel
 

@@ -3,7 +3,7 @@ COMMENT =		PGP packet parser library for Python
 MODPY_DISTV =	1.5
 DISTNAME =		pgpdump-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		security
 

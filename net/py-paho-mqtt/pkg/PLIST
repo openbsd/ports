@@ -1,4 +1,3 @@
-@pkgpath net/py-paho-mqtt,python3
 lib/python${MODPY_VERSION}/site-packages/paho/
 lib/python${MODPY_VERSION}/site-packages/paho/__init__.py
 lib/python${MODPY_VERSION}/site-packages/paho/${MODPY_PYCACHE}/

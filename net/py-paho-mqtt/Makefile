@@ -3,6 +3,7 @@ COMMENT=	MQTT Python client library
 MODPY_DISTV=	2.1.0
 DISTNAME=	paho_mqtt-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/g}
+REVISION=	0
 
 # https://github.com/eclipse-paho/paho.mqtt.python
 HOMEPAGE=	https://eclipse.dev/paho/clients/python/

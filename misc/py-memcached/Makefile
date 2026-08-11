@@ -4,7 +4,7 @@ MODPY_DISTV=	1.62
 DISTNAME=	python-memcached-${MODPY_DISTV}
 PKGNAME=	py-memcached-${MODPY_DISTV}
 CATEGORIES=	misc
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://github.com/linsomniac/python-memcached
 

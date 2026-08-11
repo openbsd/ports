@@ -1,4 +1,3 @@
-@pkgpath security/py-axolotl-curve25519,python3
 @so lib/python${MODPY_VERSION}/site-packages/axolotl_curve25519.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_DISTV}.post2.dist-info/
 lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_DISTV}.post2.dist-info/METADATA

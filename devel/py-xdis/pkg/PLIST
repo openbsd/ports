@@ -1,5 +1,3 @@
-@conflict py-xdis-<3.6.11p3
-@pkgpath devel/py-xdis,python3
 bin/pydisasm
 bin/roundtrip-pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/

@@ -1,4 +1,3 @@
-@pkgpath net/py-rrdtool,python3
 lib/python${MODPY_VERSION}/site-packages/rrdtool-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/rrdtool-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/rrdtool-${MODPY_DISTV}.dist-info/RECORD

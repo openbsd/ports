@@ -1,4 +1,3 @@
-@pkgpath www/py-beaker,python3
 lib/python${MODPY_VERSION}/site-packages/beaker/
 lib/python${MODPY_VERSION}/site-packages/beaker-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/beaker-${MODPY_DISTV}.dist-info/METADATA

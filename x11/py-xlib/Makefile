@@ -4,7 +4,7 @@ GH_ACCOUNT =		python-xlib
 GH_PROJECT =		python-xlib
 GH_TAGNAME =		0.33
 PKGNAME =		py-xlib-${GH_TAGNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		x11
 

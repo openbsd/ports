@@ -1,4 +1,3 @@
-@pkgpath www/py-betamax,python3
 lib/python${MODPY_VERSION}/site-packages/betamax/
 lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_DISTV}.dist-info/METADATA

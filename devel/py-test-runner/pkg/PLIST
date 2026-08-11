@@ -1,4 +1,3 @@
-@pkgpath devel/py-test-runner,python3
 lib/python${MODPY_VERSION}/site-packages/ptr/
 lib/python${MODPY_VERSION}/site-packages/ptr/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ptr/${MODPY_PYCACHE}/

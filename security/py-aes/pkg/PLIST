@@ -1,4 +1,3 @@
-@pkgpath security/py-aes,python3
 lib/python${MODPY_VERSION}/site-packages/pyaes/
 lib/python${MODPY_VERSION}/site-packages/pyaes-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pyaes-${MODPY_DISTV}.dist-info/METADATA

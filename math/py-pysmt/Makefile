@@ -1,6 +1,7 @@
 COMMENT=	library for SMT formulae manipulation and solving
 
 MODPY_DISTV=	0.9.6
+REVISION=	0
 GH_ACCOUNT=	pysmt
 GH_PROJECT=	pysmt
 GH_TAGNAME=	v${MODPY_DISTV}

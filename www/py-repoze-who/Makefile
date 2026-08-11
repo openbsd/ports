@@ -3,7 +3,7 @@ COMMENT=	identification and authentication framework for WSGI
 MODPY_DISTV=	3.0.0
 DISTNAME=	repoze.who-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/./-/}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www devel
 

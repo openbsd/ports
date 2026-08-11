@@ -4,6 +4,7 @@ MODPY_DISTV=	3.4.0
 DISTNAME=	ct3-${MODPY_DISTV}
 PKGNAME=	py-cheetah-${MODPY_DISTV}
 CATEGORIES=	devel textproc
+REVISION=	0
 
 # https://pypi.org/project/CT3/
 # https://github.com/CheetahTemplate3/cheetah3

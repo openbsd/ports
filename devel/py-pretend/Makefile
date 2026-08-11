@@ -4,7 +4,7 @@ MODPY_DISTV =	1.0.9
 DISTNAME =		pretend-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		9
+REVISION =		10
 
 HOMEPAGE =		https://github.com/alex/pretend
 

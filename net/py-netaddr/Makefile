@@ -3,6 +3,7 @@ COMMENT=	network address representation and manipulation library
 MODPY_DISTV=	1.3.0
 DISTNAME=	netaddr-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 EPOCH=		0
 

@@ -1,4 +1,3 @@
-@pkgpath devel/py-test-forked,python3
 lib/python${MODPY_VERSION}/site-packages/pytest_forked/
 lib/python${MODPY_VERSION}/site-packages/pytest_forked-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pytest_forked-${MODPY_DISTV}.dist-info/METADATA

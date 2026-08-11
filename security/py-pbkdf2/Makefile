@@ -1,7 +1,7 @@
 COMMENT =	Python implementation of PBKDF2
 
 MODPY_DISTV =	1.3
-REVISION =		12
+REVISION =		13
 DISTNAME =		pbkdf2-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security devel

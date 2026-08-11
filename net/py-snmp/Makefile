@@ -6,6 +6,7 @@ GH_PROJECT =	pysnmp
 GH_TAGNAME =	v${MODPY_DISTV}
 PKGNAME =	py-snmp-${MODPY_DISTV}
 CATEGORIES =	net
+REVISION =	0
 
 # https://github.com/lextudio/pysnmp
 HOMEPAGE =	https://pysnmp.com/

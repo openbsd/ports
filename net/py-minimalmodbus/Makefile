@@ -4,7 +4,7 @@ MODPY_DISTV=	2.1.1
 DISTNAME=	minimalmodbus-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://github.com/pyhys/minimalmodbus
 

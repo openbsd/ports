@@ -1,4 +1,3 @@
-@pkgpath net/py-dnslib,python3
 lib/python${MODPY_VERSION}/site-packages/dnslib/
 lib/python${MODPY_VERSION}/site-packages/dnslib-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/dnslib-${MODPY_DISTV}.dist-info/METADATA

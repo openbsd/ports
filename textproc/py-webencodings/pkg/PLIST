@@ -1,4 +1,3 @@
-@pkgpath textproc/py-webencodings,python3
 lib/python${MODPY_VERSION}/site-packages/webencodings/
 lib/python${MODPY_VERSION}/site-packages/webencodings-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/webencodings-${MODPY_DISTV}.dist-info/METADATA

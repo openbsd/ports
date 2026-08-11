@@ -4,7 +4,7 @@ MODPY_DISTV =	1.2.1
 DISTNAME =		mpmath-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		http://mpmath.org/
 

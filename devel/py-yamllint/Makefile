@@ -3,6 +3,7 @@ COMMENT =	linter for YAML files
 MODPY_DISTV =	1.38.0
 DISTNAME =	yamllint-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

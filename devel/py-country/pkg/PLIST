@@ -1,4 +1,3 @@
-@pkgpath devel/py-country,python3
 lib/python${MODPY_VERSION}/site-packages/pycountry/
 lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/METADATA

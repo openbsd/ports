@@ -2,7 +2,7 @@ COMMENT =		easy whitelist-based HTML-sanitizing tool
 
 # bleach is deprecated upstream
 MODPY_DISTV =		6.3.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		bleach-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 

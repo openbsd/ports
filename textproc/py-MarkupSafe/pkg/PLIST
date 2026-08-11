@@ -1,4 +1,3 @@
-@pkgpath textproc/py-MarkupSafe,python3
 lib/python${MODPY_VERSION}/site-packages/markupsafe/
 lib/python${MODPY_VERSION}/site-packages/markupsafe-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/markupsafe-${MODPY_DISTV}.dist-info/METADATA

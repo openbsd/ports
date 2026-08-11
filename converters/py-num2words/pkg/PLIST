@@ -1,5 +1,3 @@
-@conflict py-num2words-*
-@pkgpath converters/py-num2words,python3
 bin/num2words
 lib/python${MODPY_VERSION}/site-packages/num2words/
 lib/python${MODPY_VERSION}/site-packages/num2words-${MODPY_DISTV}.dist-info/

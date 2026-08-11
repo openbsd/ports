@@ -1,5 +1,3 @@
-@conflict py-bottle-<0.12.16p1
-@pkgpath www/py-bottle,python3
 bin/bottle
 bin/bottle.py
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/

@@ -3,6 +3,7 @@ COMMENT =		reusable state for writing clean Python tests
 MODPY_DISTV =		4.2.8
 DISTNAME =		fixtures-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

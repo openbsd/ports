@@ -4,6 +4,7 @@ MODPY_DISTV=	7.46.0
 DISTNAME=	pycurl-${MODPY_DISTV}
 PKGNAME=	py-curl-${MODPY_DISTV}
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	http://pycurl.io/
 

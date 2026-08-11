@@ -4,7 +4,7 @@ MODPY_DISTV =	0.1.16
 
 DISTNAME =	rrdtool-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	databases net
 

@@ -1,4 +1,3 @@
-@pkgpath devel/py-easyprocess,python3
 lib/python${MODPY_VERSION}/site-packages/easyprocess/
 lib/python${MODPY_VERSION}/site-packages/easyprocess-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/easyprocess-${MODPY_DISTV}.dist-info/METADATA

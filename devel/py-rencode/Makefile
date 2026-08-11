@@ -3,6 +3,7 @@ COMMENT=	module for fast object serialization similar to bencode
 MODPY_DISTV=	1.0.8
 DISTNAME=	rencode-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

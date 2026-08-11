@@ -1,4 +1,3 @@
-@pkgpath math/py-mpmath,python3
 lib/python${MODPY_VERSION}/site-packages/mpmath/
 lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_DISTV}.dist-info/METADATA

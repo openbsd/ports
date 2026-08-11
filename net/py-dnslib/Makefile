@@ -4,7 +4,7 @@ MODPY_DISTV=	0.9.26
 DISTNAME=	dnslib-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/paulc/dnslib
 

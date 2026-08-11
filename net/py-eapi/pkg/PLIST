@@ -1,4 +1,3 @@
-@pkgpath net/py-eapi,python3
 lib/python${MODPY_VERSION}/site-packages/pyeapi/
 lib/python${MODPY_VERSION}/site-packages/pyeapi-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pyeapi-${MODPY_DISTV}.dist-info/METADATA

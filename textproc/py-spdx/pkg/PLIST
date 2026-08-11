@@ -1,4 +1,3 @@
-@pkgpath textproc/py-spdx,python3
 lib/python${MODPY_VERSION}/site-packages/spdx/
 lib/python${MODPY_VERSION}/site-packages/spdx-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/spdx-${MODPY_DISTV}.dist-info/METADATA

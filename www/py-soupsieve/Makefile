@@ -3,6 +3,7 @@ COMMENT=	modern CSS selector implementation for Beautiful Soup
 MODPY_DISTV =	2.8.3
 DISTNAME=	soupsieve-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 EPOCH=		0
 

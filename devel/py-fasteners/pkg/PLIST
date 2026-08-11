@@ -1,4 +1,3 @@
-@pkgpath devel/py-fasteners,python3
 lib/python${MODPY_VERSION}/site-packages/fasteners/
 lib/python${MODPY_VERSION}/site-packages/fasteners-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/fasteners-${MODPY_DISTV}.dist-info/METADATA

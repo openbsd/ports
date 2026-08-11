@@ -4,7 +4,7 @@ MODPY_DISTV=	0.5.1
 DISTNAME=	webencodings-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	10
+REVISION=	11
 
 HOMEPAGE=	https://github.com/gsnedders/python-webencodings
 

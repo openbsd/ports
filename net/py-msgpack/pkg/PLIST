@@ -1,4 +1,3 @@
-@pkgpath net/py-msgpack,python3
 lib/python${MODPY_VERSION}/site-packages/msgpack/
 lib/python${MODPY_VERSION}/site-packages/msgpack-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/msgpack-${MODPY_DISTV}.dist-info/METADATA

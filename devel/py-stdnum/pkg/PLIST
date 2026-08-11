@@ -1,4 +1,3 @@
-@pkgpath devel/py-stdnum,python3
 lib/python${MODPY_VERSION}/site-packages/python_stdnum-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/python_stdnum-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/python_stdnum-${MODPY_DISTV}.dist-info/RECORD

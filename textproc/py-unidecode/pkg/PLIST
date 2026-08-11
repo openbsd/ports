@@ -1,5 +1,3 @@
-@conflict py-unidecode-<1.1.1p1
-@pkgpath textproc/py-unidecode,python3
 bin/unidecode
 lib/python${MODPY_VERSION}/site-packages/unidecode/
 lib/python${MODPY_VERSION}/site-packages/unidecode-${MODPY_DISTV}.dist-info/

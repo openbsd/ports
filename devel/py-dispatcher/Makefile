@@ -3,7 +3,7 @@ COMMENT=	multi-producer-multi-consumer signal dispatching mechanism
 MODPY_DISTV=	2.0.7
 DISTNAME=	PyDispatcher-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/Py/py-/:L}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 

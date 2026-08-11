@@ -3,6 +3,7 @@ COMMENT=	monitor TCP ports for bound or unbound states
 MODPY_DISTV=	3.2.1
 DISTNAME=	portend-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	net
 

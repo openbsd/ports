@@ -1,5 +1,3 @@
-@conflict py-tld-<0.9.3p1
-@pkgpath net/py-tld,python3
 bin/update-tld-names
 lib/python${MODPY_VERSION}/site-packages/tld/
 lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_DISTV}.dist-info/

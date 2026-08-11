@@ -1,4 +1,3 @@
-@pkgpath security/py-asn1crypto,python3
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/
 lib/python${MODPY_VERSION}/site-packages/asn1crypto-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/asn1crypto-${MODPY_DISTV}.dist-info/LICENSE

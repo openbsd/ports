@@ -3,7 +3,7 @@ COMMENT =	convert numbers to words
 MODPY_DISTV =	0.5.14
 DISTNAME=	num2words-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	converters
 

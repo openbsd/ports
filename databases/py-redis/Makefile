@@ -2,7 +2,7 @@ COMMENT =		Python interface to Redis
 
 # XXX v6+ is for redis >= 7.2 (which has new license)
 MODPY_DISTV =		5.3.1
-REVISION =		0
+REVISION =		1
 GH_ACCOUNT =		redis
 GH_PROJECT =		redis-py
 GH_TAGNAME =		v${MODPY_DISTV}

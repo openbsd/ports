@@ -1,5 +1,3 @@
-@conflict py-argcomplete-<1.9.3p2
-@pkgpath devel/py-argcomplete,python3
 bin/activate-global-python-argcomplete
 bin/register-python-argcomplete
 lib/python${MODPY_VERSION}/site-packages/argcomplete/

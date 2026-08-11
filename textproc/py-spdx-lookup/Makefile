@@ -3,7 +3,7 @@ COMMENT =		SPDX license list query tool
 MODPY_DISTV =	0.3.3
 DISTNAME =		spdx-lookup-${MODPY_DISTV}
 PKGNAME =		py-spdx-lookup-${MODPY_DISTV}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		textproc
 

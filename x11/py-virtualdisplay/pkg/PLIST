@@ -1,5 +1,3 @@
-@conflict py-virtualdisplay-*
-@pkgpath x11/py-virtualdisplay,python3
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay-${MODPY_DISTV}.dist-info/METADATA

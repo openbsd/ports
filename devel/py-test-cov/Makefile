@@ -4,6 +4,7 @@ MODPY_DISTV=	7.1.0
 DISTNAME=	pytest_cov-${MODPY_DISTV}
 PKGNAME=	py-test-cov-${MODPY_DISTV}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://pytest-cov.readthedocs.org/en/latest/
 

@@ -1,4 +1,3 @@
-@pkgpath www/py-bleach,python3
 lib/python${MODPY_VERSION}/site-packages/bleach/
 lib/python${MODPY_VERSION}/site-packages/bleach-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/bleach-${MODPY_DISTV}.dist-info/METADATA

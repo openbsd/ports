@@ -1,5 +1,3 @@
-@conflict py-spark-parser-<1.6.1p4
-@pkgpath devel/py-spark-parser,python3
 bin/spark-parser-coverage
 lib/python${MODPY_VERSION}/site-packages/spark_parser/
 lib/python${MODPY_VERSION}/site-packages/spark_parser-${MODPY_DISTV}.dist-info/

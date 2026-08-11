@@ -1,5 +1,3 @@
-@conflict py-PySMT-<0.8.0p1
-@pkgpath math/py-pysmt,python3
 bin/pysmt-install
 lib/python${MODPY_VERSION}/site-packages/pysmt/
 lib/python${MODPY_VERSION}/site-packages/pysmt-${MODPY_DISTV}.dist-info/

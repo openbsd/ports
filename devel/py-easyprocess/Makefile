@@ -3,7 +3,7 @@ COMMENT =	easy to use python subprocess interface
 MODPY_DISTV =	1.1
 DISTNAME =	EasyProcess-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 

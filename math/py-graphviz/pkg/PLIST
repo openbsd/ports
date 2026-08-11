@@ -1,4 +1,3 @@
-@pkgpath math/py-graphviz,python3
 lib/python${MODPY_VERSION}/site-packages/graphviz/
 lib/python${MODPY_VERSION}/site-packages/graphviz-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/graphviz-${MODPY_DISTV}.dist-info/METADATA

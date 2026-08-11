@@ -3,7 +3,7 @@ COMMENT =		use version control tags to discover version numbers
 MODPY_DISTV =	2.16.0.0
 DISTNAME =		vcversioner-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		devel
 

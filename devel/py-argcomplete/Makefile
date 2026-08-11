@@ -4,6 +4,7 @@ MODPY_DISTV=	3.7.0
 DISTNAME=	argcomplete-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://github.com/kislyuk/argcomplete
 

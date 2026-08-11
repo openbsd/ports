@@ -1,4 +1,3 @@
-@pkgpath www/py-requests-mock,python3
 lib/python${MODPY_VERSION}/site-packages/requests_mock/
 lib/python${MODPY_VERSION}/site-packages/requests_mock-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/requests_mock-${MODPY_DISTV}.dist-info/METADATA

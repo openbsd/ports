@@ -4,6 +4,7 @@ MODPY_DISTV =		1.1.0
 DISTNAME =		pcapy_ng-${MODPY_DISTV}
 PKGNAME =		py-pcapy-${MODPY_DISTV}
 WRKDIST =		${WRKDIR}/pcapy-ng-${MODPY_DISTV}
+REVISION =		0
 
 HOMEPAGE =		https://github.com/stamparm/pcapy-ng/
 

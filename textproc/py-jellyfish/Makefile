@@ -3,6 +3,7 @@ COMMENT =		Python library for approximate and phonetic string matching
 MODPY_DISTV =		1.2.1
 DISTNAME =		jellyfish-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
+REVISION =		0
 
 CATEGORIES =		textproc
 

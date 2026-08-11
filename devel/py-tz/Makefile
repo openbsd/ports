@@ -4,6 +4,7 @@ MODPY_DISTV=	2026.2
 DISTNAME=	pytz-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/^py/py-/:S/.post/pl/}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://pythonhosted.org/pytz/
 

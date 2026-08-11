@@ -1,4 +1,3 @@
-@pkgpath devel/py-blessings,python3
 lib/python${MODPY_VERSION}/site-packages/blessings/
 lib/python${MODPY_VERSION}/site-packages/blessings-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/blessings-${MODPY_DISTV}.dist-info/METADATA

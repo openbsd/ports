@@ -3,7 +3,7 @@ COMMENT=	parse human-readable date/time text
 MODPY_DISTV=	2.6
 DISTNAME=	parsedatetime-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	https://github.com/bear/parsedatetime
 

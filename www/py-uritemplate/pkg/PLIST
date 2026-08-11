@@ -1,4 +1,3 @@
-@pkgpath www/py-uritemplate,python3
 lib/python${MODPY_VERSION}/site-packages/uritemplate/
 lib/python${MODPY_VERSION}/site-packages/uritemplate-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/uritemplate-${MODPY_DISTV}.dist-info/METADATA

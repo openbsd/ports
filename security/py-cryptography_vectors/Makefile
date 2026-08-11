@@ -3,6 +3,7 @@ COMMENT=	test vectors for py-cryptography
 MODPY_DISTV=	49.0.0
 DISTNAME=	cryptography_vectors-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	security
 

@@ -1,4 +1,3 @@
-@pkgpath security/py-PyNaCl,python3
 lib/python${MODPY_VERSION}/site-packages/nacl/
 lib/python${MODPY_VERSION}/site-packages/nacl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}/

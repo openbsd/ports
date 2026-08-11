@@ -3,6 +3,7 @@ COMMENT =	Python plugin support for Neovim
 MODPY_DISTV =	0.6.0
 DISTNAME =	pynvim-${MODPY_DISTV}
 PKGNAME =	py-neovim-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://github.com/neovim/pynvim

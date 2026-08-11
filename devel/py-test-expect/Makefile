@@ -4,7 +4,7 @@ MODPY_DISTV =	1.1.0
 DISTNAME =		pytest-expect-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		10
+REVISION =		11
 
 HOMEPAGE =		https://github.com/gsnedders/pytest-expect
 

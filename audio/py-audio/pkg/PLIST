@@ -1,4 +1,3 @@
-@pkgpath audio/py-audio,python3
 lib/python${MODPY_VERSION}/site-packages/pyaudio/
 lib/python${MODPY_VERSION}/site-packages/pyaudio-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pyaudio-${MODPY_DISTV}.dist-info/METADATA

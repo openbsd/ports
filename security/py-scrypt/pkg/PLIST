@@ -1,4 +1,3 @@
-@pkgpath security/py-scrypt,python3
 @so lib/python${MODPY_VERSION}/site-packages/_scrypt.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/scrypt/
 lib/python${MODPY_VERSION}/site-packages/scrypt-${MODPY_DISTV}.dist-info/

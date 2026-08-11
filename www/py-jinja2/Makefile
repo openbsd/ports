@@ -1,7 +1,7 @@
 COMMENT=	fast, optionally sandboxed, Python template engine
 
 MODPY_DISTV=	3.1.6
-REVISION=	0
+REVISION=	1
 DISTNAME=	jinja2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

@@ -1,4 +1,3 @@
-@pkgpath graphics/py-cycler,python3
 lib/python${MODPY_VERSION}/site-packages/cycler/
 lib/python${MODPY_VERSION}/site-packages/cycler-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/cycler-${MODPY_DISTV}.dist-info/METADATA

@@ -4,7 +4,7 @@ MODPY_DISTV =	0.1.5
 DISTNAME =		nose_warnings_filters-${MODPY_DISTV}
 PKGNAME =		py-nose-warnings-filters-${MODPY_DISTV}
 CATEGORIES =		devel
-REVISION =		10
+REVISION =		11
 
 HOMEPAGE =		https://github.com/Carreau/nose_warnings_filters
 

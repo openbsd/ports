@@ -1,4 +1,3 @@
-@pkgpath textproc/py-pyaml,python3
 bin/pyaml
 lib/python${MODPY_VERSION}/site-packages/pyaml/
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_DISTV}.dist-info/

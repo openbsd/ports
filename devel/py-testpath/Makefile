@@ -3,7 +3,7 @@ COMMENT=	test utilities working with files and commands
 MODPY_DISTV=	0.6.0
 DISTNAME=	testpath-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	devel
 

@@ -3,7 +3,7 @@ COMMENT =		python socket.io client library
 MODPY_DISTV =	0.7.2
 DISTNAME =		socketIO-client-${MODPY_DISTV}
 PKGNAME =		py-socketIO-client-${MODPY_DISTV}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net
 

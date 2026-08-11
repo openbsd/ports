@@ -3,7 +3,7 @@ COMMENT =		Python module for file type identification using libmagic
 MODPY_DISTV =		0.4.27
 DISTNAME =		python-magic-${MODPY_DISTV}
 PKGNAME =		py-magic-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

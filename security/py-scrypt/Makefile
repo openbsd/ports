@@ -3,6 +3,7 @@ COMMENT=	support for the scrypt key derivation function
 MODPY_DISTV=	0.9.4
 DISTNAME=	scrypt-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	security
 

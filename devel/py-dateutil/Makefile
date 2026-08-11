@@ -4,7 +4,7 @@ MODPY_DISTV=	2.9.0.post0
 DISTNAME=	python-dateutil-${MODPY_DISTV}
 PKGNAME=	py-dateutil-${MODPY_DISTV:S/.post/pl/}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://dateutil.readthedocs.org/
 

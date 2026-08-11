@@ -4,7 +4,7 @@ MODPY_DISTV=	1.7.1
 DISTNAME=	cairocffi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/Kozea/cairocffi
 

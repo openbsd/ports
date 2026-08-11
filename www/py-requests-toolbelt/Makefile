@@ -3,7 +3,7 @@ COMMENT =		utility belt for advanced users of python-requests
 MODPY_DISTV =	1.0.0
 DISTNAME =		requests-toolbelt-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 

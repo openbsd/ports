@@ -1,4 +1,3 @@
-@pkgpath net/py-pcapy,python3
 @so lib/python${MODPY_VERSION}/site-packages/pcapy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pcapy_ng-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pcapy_ng-${MODPY_DISTV}.dist-info/METADATA

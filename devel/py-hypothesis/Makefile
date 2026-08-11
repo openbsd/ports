@@ -4,6 +4,7 @@ MODPY_DISTV=	6.138.14
 DISTNAME=	hypothesis-${MODPY_DISTV}
 PKGNAME=	py-hypothesis-${MODPY_DISTV}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://hypothesis.works/
 

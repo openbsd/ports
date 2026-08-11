@@ -7,6 +7,7 @@ MODPY_DISTV=	0.19.1
 DISTNAME=	ruamel_yaml-${MODPY_DISTV}
 WRKDIST=	${WRKDIR}/ruamel.yaml-${MODPY_DISTV}
 PKGNAME=	py-ruamel.yaml-${MODPY_DISTV}
+REVISION=	0
 
 # https://sourceforge.net/p/ruamel-yaml/code/
 HOMEPAGE=	https://yaml.dev/doc/ruamel.yaml/

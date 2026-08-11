@@ -1,4 +1,3 @@
-@pkgpath www/py-tempita,python3
 lib/python${MODPY_VERSION}/site-packages/tempita/
 lib/python${MODPY_VERSION}/site-packages/tempita-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/tempita-${MODPY_DISTV}.dist-info/METADATA

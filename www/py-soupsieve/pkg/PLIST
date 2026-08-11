@@ -1,4 +1,3 @@
-@pkgpath www/py-soupsieve,python3
 lib/python${MODPY_VERSION}/site-packages/soupsieve/
 lib/python${MODPY_VERSION}/site-packages/soupsieve-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/soupsieve-${MODPY_DISTV}.dist-info/METADATA

@@ -3,7 +3,7 @@ COMMENT =		distributed data storage classes
 MODPY_DISTV =	0.06
 DISTNAME =		ana-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		devel
 

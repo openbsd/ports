@@ -1,4 +1,3 @@
-@pkgpath devel/py-gitpython,python3
 lib/python${MODPY_VERSION}/site-packages/git/
 lib/python${MODPY_VERSION}/site-packages/git/__init__.py
 lib/python${MODPY_VERSION}/site-packages/git/${MODPY_PYCACHE}/

@@ -3,6 +3,7 @@ COMMENT=	powerful and lightweight Python tree data structure
 MODPY_DISTV=	2.13.0
 DISTNAME=	anytree-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

@@ -4,7 +4,7 @@ MODPY_DISTV =	0.2.14
 DISTNAME =	PyAudio-${MODPY_DISTV}
 PKGNAME =	py-audio-${MODPY_DISTV}
 CATEGORIES =	audio devel
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://people.csail.mit.edu/hubert/pyaudio/
 

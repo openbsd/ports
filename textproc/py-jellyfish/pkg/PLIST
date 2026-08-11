@@ -1,4 +1,3 @@
-@pkgpath textproc/py-jellyfish,python3
 lib/python${MODPY_VERSION}/site-packages/jellyfish/
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/METADATA

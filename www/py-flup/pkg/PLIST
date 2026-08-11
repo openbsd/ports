@@ -1,4 +1,3 @@
-@pkgpath www/py-flup,python3
 lib/python${MODPY_VERSION}/site-packages/flup/
 lib/python${MODPY_VERSION}/site-packages/flup-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/flup-${MODPY_DISTV}.dist-info/METADATA

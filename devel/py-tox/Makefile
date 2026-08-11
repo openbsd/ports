@@ -4,6 +4,7 @@ MODPY_DISTV=	4.47.0
 DISTNAME=	tox-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://tox.readthedocs.io/en/latest/
 

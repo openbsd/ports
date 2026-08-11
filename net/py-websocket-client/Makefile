@@ -3,6 +3,7 @@ COMMENT=	WebSocket client for Python
 MODPY_DISTV=	1.9.0
 DISTNAME=	websocket_client-${MODPY_DISTV}
 PKGNAME=	py-websocket-client-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	net
 

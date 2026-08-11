@@ -3,7 +3,7 @@ COMMENT=	very small text templating language
 MODPY_DISTV=	0.6.0
 DISTNAME=	tempita-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
