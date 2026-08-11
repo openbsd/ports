@@ -1,10 +1,9 @@
 COMMENT =		RAR archive reader for Python
 
-MODPY_DISTV =		4.2
+MODPY_DISTV =		4.5
 
 DISTNAME =		rarfile-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		archivers
 
