@@ -1,2 +1,7 @@
 @bin bin/xhydra
 @man man/man1/xhydra.1
+share/applications/
+share/applications/xhydra.desktop
+share/pixmaps/
+share/pixmaps/xhydra.png
+@tag update-desktop-database
