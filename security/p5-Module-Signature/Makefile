@@ -1,6 +1,7 @@
 COMMENT =	module signature file manipulation
 
-DISTNAME =	Module-Signature-0.93
+DISTNAME =	Module-Signature-0.96
+CPAN_AUTHOR =	TIMLEGGE
 
 CATEGORIES =	security
 
