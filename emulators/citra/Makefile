@@ -1,7 +1,5 @@
-BROKEN-amd64 =	fails to build after move to LLVM 22
-
 # ships a dynarmic copy, and dynarmic only supports x86-64 and AArch64
-ONLY_FOR_ARCHS =	amd64 arm64
+ONLY_FOR_ARCHS =	aarch64 amd64
 
 USE_WXNEEDED =	Yes
 
@@ -11,7 +9,7 @@ DISTNAME =	citra-unified-source-20240303-0ff3440
 
 V =		2104
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	emulators
 
@@ -22,12 +20,13 @@ PERMIT_PACKAGE =	Yes
 
 USE_NOBTCFI =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6Widgets SDL2 SoundTouch
-WANTLIB += boost_chrono-mt boost_container-mt boost_iostreams-mt
-WANTLIB += boost_locale-mt boost_random-mt boost_regex-mt boost_serialization-mt
-WANTLIB += boost_thread-mt c crypto cryptopp enet
-WANTLIB += fmt m openal ssl usb-1.0 xkbcommon
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
+WANTLIB += Qt6Multimedia Qt6Network Qt6Widgets SDL2 SoundTouch
+WANTLIB += boost_atomic-mt boost_charconv-mt boost_chrono-mt
+WANTLIB += boost_container-mt boost_date_time-mt boost_iostreams-mt
+WANTLIB += boost_locale-mt boost_random-mt boost_regex-mt
+WANTLIB += boost_serialization-mt boost_thread-mt c crypto cryptopp
+WANTLIB += enet fmt m openal ssl usb-1.0 xkbcommon
 
 # ffmpeg is loaded via dlopen(3) when dumping recorded gameplay video
 WANTLIB += avcodec avdevice avfilter avformat avutil swresample swscale
@@ -89,7 +88,7 @@ WRKDIST =		${WRKDIR}/${DISTNAME}
 
 CXXFLAGS +=		-I${LOCALBASE}/include
 
-ppost-extract:
+post-extract:
 	rm -r ${WRKSRC}/externals/cryptopp-cmake \
 		${WRKSRC}/externals/dynarmic/externals/catch/src/catch2 \
 		${WRKSRC}/externals/dynarmic/externals/fmt
