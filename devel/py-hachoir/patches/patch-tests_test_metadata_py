@@ -1,0 +1,12 @@
+Index: tests/test_metadata.py
+--- tests/test_metadata.py.orig
++++ tests/test_metadata.py
+@@ -15,7 +15,7 @@ import sys
+ import unittest
+ 
+ DATADIR = os.path.join(os.path.dirname(__file__), 'files')
+-PROGRAM = os.path.join(os.path.dirname(__file__), "..", "hachoir-metadata")
++PROGRAM = os.path.join(os.path.dirname(__file__), "..", "..", "pytest-instroot", "usr", "local", "bin", "hachoir-metadata")
+ 
+ 
+ class TestMetadata(unittest.TestCase):

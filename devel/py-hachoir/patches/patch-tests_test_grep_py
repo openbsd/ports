@@ -1,0 +1,12 @@
+Index: tests/test_grep.py
+--- tests/test_grep.py.orig
++++ tests/test_grep.py
+@@ -9,7 +9,7 @@ import unittest
+ 
+ DATADIR = os.path.join(os.path.dirname(__file__), "files")
+ GEORGIA_CAB = os.path.join(DATADIR, 'georgia.cab')
+-PROGRAM = os.path.join(os.path.dirname(__file__), "..", "hachoir-grep")
++PROGRAM = os.path.join(os.path.dirname(__file__), "..", "..", "pytest-instroot", "usr", "local", "bin", "hachoir-grep")
+ 
+ 
+ class TestGrepClass(unittest.TestCase):

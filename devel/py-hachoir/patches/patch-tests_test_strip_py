@@ -1,0 +1,12 @@
+Index: tests/test_strip.py
+--- tests/test_strip.py.orig
++++ tests/test_strip.py
+@@ -8,7 +8,7 @@ import unittest
+ 
+ DATADIR = os.path.join(os.path.dirname(__file__), "files")
+ KDE_CLICK = os.path.join(DATADIR, 'kde_click.wav')
+-PROGRAM = os.path.join(os.path.dirname(__file__), "..", "hachoir-strip")
++PROGRAM = os.path.join(os.path.dirname(__file__), "..", "..", "pytest-instroot", "usr", "local", "bin", "hachoir-strip")
+ 
+ 
+ def checksum(filename):
