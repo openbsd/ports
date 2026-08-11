@@ -1,6 +1,6 @@
 COMMENT =	run arbitrary commands when files change
 
-DISTNAME =	entr-5.7
+DISTNAME =	entr-5.8
 
 CATEGORIES =	sysutils
 
@@ -19,10 +19,11 @@ MAKE_FLAGS =	CC="${CC}" \
 		LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS =	DESTDIR=""
 
+# vim is needed for xxd
 TEST_DEPENDS =	devel/git \
-		editors/vim
+		vim-*|vim-classic-*:editors/vim
 
-# Scripts are executed from there, default /tmp may be mounted "noexec".
+# Scripts are executed from there, move in case /tmp is mounted "noexec".
 TEST_ENV =	TMPDIR=${WRKDIR}
 
 TEST_TARGET =	test check
