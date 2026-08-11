@@ -3,7 +3,7 @@
 Index: bin/netbeans
 --- bin/netbeans.orig
 +++ bin/netbeans
-@@ -149,10 +149,6 @@ launchNbexec() {
+@@ -151,10 +151,6 @@ launchNbexec() {
      done | head -n 1`
      sh=sh
      # #73162: Ubuntu uses the ancient Bourne shell, which does not implement trap well.
@@ -14,7 +14,7 @@ Index: bin/netbeans
      NETBEANS_USERDIR=`echo ${userdir} | absolutize_paths`
      export NETBEANS_USERDIR
      if [ "${founduserdir}" = "yes" ]; then
-@@ -176,6 +172,7 @@ case "`uname`" in
+@@ -178,6 +174,7 @@ case "`uname`" in
              '"-J-Xdock:icon=$basedir/nb/netbeans.icns"' \
              --branding nb \
              --clusters '"$netbeans_clusters"' \
