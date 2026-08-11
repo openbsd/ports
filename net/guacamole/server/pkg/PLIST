@@ -53,9 +53,6 @@ include/guacamole/user-types.h
 include/guacamole/user.h
 include/guacamole/wol-constants.h
 include/guacamole/wol.h
-lib/freerdp2/
-@so lib/freerdp2/libguac-common-svc-client.so
-@so lib/freerdp2/libguacai-client.so
 @lib lib/libguac-client-kubernetes.so.${LIBguac-client-kubernetes_VERSION}
 @lib lib/libguac-client-rdp.so.${LIBguac-client-rdp_VERSION}
 @lib lib/libguac-client-ssh.so.${LIBguac-client-ssh_VERSION}
