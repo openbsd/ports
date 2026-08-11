@@ -1,13 +1,15 @@
-COMMENT= 	interface to the DES encryption algorithm
+COMMENT = 	interface to the DES encryption algorithm
 
-MODULES=	cpan
-DISTNAME=	Crypt-DES-2.07
-CATEGORIES=	security
-REVISION=	2
+DISTNAME =	Crypt-DES-2.09
+CPAN_AUTHOR =	TIMLEGGE
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	security
 
-WANTLIB += c perl
+# Perl
+PERMIT_PACKAGE =	Yes
+
+WANTLIB =		c perl
+
+MODULES =		cpan
 
 .include <bsd.port.mk>
