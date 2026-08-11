@@ -11,6 +11,8 @@ MAINTAINER =            Laurence Tratt <laurie@tratt.net>
 # MIT
 PERMIT_PACKAGE =	Yes
 
+WANTLIB +=	${MODCARGO_WANTLIB} m util
+
 # -Wno-error=date-time
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
@@ -18,8 +20,6 @@ COMPILER_LANGS =	c
 MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
-SEPARATE_BUILD =	Yes
-WANTLIB +=	${MODCARGO_WANTLIB} m util
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/sk ${PREFIX}/bin/
