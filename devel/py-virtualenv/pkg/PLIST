@@ -323,9 +323,9 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/pip-26.0.1-py3-none-any.whl
-lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/pip-26.2-py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/pip-26.2.1-py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/setuptools-82.0.1-py3-none-any.whl
-lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/setuptools-83.0.0-py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/setuptools-84.0.0-py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/periodic_update.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/util.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/util/
