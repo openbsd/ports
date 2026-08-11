@@ -1,6 +1,6 @@
 COMMENT =		C implementations of functions for use within SABnzbd
 
-MODPY_DISTV =		9.4.0
+MODPY_DISTV =		9.6.3
 EPOCH =			0
 DISTNAME =		sabctools-${MODPY_DISTV}
 PKGNAME =		py-sabctools-${MODPY_DISTV}

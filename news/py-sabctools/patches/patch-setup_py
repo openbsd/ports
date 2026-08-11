@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -107,7 +107,7 @@ class SABCToolsBuild(build_ext):
+@@ -119,7 +119,7 @@ class SABCToolsBuild(build_ext):
                  log.info("==> C++17 flag not available")
          else:
              # TODO: consider -flto - may require some extra testing
@@ -10,7 +10,7 @@ Index: setup.py
              cflags = [
                  "-Wall",
                  "-Wextra",
-@@ -115,7 +115,6 @@ class SABCToolsBuild(build_ext):
+@@ -127,7 +127,6 @@ class SABCToolsBuild(build_ext):
                  "-fomit-frame-pointer",
                  "-fno-rtti",
                  "-fno-exceptions",
