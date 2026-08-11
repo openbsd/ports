@@ -1,6 +1,6 @@
 COMMENT =			retrieve and process nzb-files via web interface
 
-VERSION =			5.0.4
+VERSION =			5.1.0
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 
@@ -27,6 +27,7 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				devel/py-configobj \
 				devel/py-cparser \
 				devel/py-dateutil \
+				devel/py-hachoir \
 				devel/py-jaraco-classes \
 				devel/py-jaraco-collections \
 				devel/py-jaraco-context \
@@ -42,7 +43,7 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				net/py-apprise \
 				net/py-portend \
 				net/py-socks \
-				news/py-sabctools>=9.4.0v0 \
+				news/py-sabctools>=9.6.3v0 \
 				security/py-cryptography \
 				textproc/py-chardet \
 				textproc/py-feedparser \
