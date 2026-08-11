@@ -1,0 +1,14 @@
+Soupir.
+
+Index: cli/src/complete.rs
+--- cli/src/complete.rs.orig
++++ cli/src/complete.rs
+@@ -1138,7 +1138,7 @@ where
+ /// the preferred method, because it's more maintainable and the performance
+ /// requirements of completions aren't very high.
+ fn get_jj_command() -> Result<(JjBuilder, UserSettings), CommandError> {
+-    let current_exe = std::env::current_exe().map_err(user_error)?;
++    let current_exe = std::path::PathBuf::from("${LOCALBASE}/bin/jj");
+     let mut cmd_args = Vec::<String>::new();
+ 
+     // Snapshotting could make completions much slower in some situations

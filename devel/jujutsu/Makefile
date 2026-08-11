@@ -2,6 +2,7 @@ COMMENT =		version control system with git compatibility backend
 
 V =			0.44.0
 PKGNAME =		jujutsu-$V
+REVISION =		0
 
 DIST_TUPLE =		github jj-vcs jj v$V .
 
@@ -31,7 +32,9 @@ RUN_DEPENDS =		devel/git
 MODCARGO_INSTALL_TARGET_PATHS = cli
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/cli/src/commands/bisect/run.rs
+	${SUBST_CMD} \
+		${WRKSRC}/cli/src/commands/bisect/run.rs \
+		${WRKSRC}/cli/src/complete.rs
 
 JJ = 	${WRKBUILD}/target/release/jj
 
