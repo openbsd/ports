@@ -1,6 +1,6 @@
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-1.10.2
+DISTNAME =		goaccess-1.11
 
 CATEGORIES =		www
 
@@ -11,7 +11,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto curses intl maxminddb pthread ssl
+WANTLIB += c crypto curses intl m maxminddb pthread ssl
 
 SITES =			https://tar.goaccess.io/
 
