@@ -1,7 +1,7 @@
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	50.4
+GNOME_VERSION=	50.5
 
 CATEGORIES=	www
 
