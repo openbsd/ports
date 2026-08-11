@@ -1,7 +1,6 @@
 COMMENT=	companion library to APR
 
-V=		1.6.3
-REVISION=	0
+V=		1.6.4
 DISTNAME=	apr-util-$V
 SHARED_LIBS +=	aprutil-1          6.2     # .6.0
 
