@@ -4,8 +4,5 @@ or higher. It also solves the issue of ambiguous times at the end of
 daylight savings, which you can read more about in the Python Library
 Reference (datetime.tzinfo).
 
-Projects using Python 3.9 or later should be using the support now
-included as part of the standard library, and third party packages
-work with it such as https://pypi.org/project/tzdata/. pytz offers no
-advantages beyond backwards compatibility with code written for earlier
-versions of Python.
+pytz is only here for backwards compatibility. Newer software should
+use "zoneinfo", included in the standard library from Python 3.9 onwards.

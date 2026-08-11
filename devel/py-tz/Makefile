@@ -1,10 +1,9 @@
 COMMENT=	Python API for dealing with timezones
 
-MODPY_DISTV=	2026.2
+MODPY_DISTV=	2026.3.post1
 DISTNAME=	pytz-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/^py/py-/:S/.post/pl/}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://pythonhosted.org/pytz/
 
