@@ -1,10 +1,11 @@
 COMMENT=	specification for pythonic filesystems
 
-MODPY_DISTV =	2026.2.0
+MODPY_DISTV =	2026.7.0
 DISTNAME=	fsspec-${MODPY_DISTV}
 PKGNAME=	py-fsspec-${MODPY_DISTV}
 CATEGORIES=	sysutils
 
+# https://filesystem-spec.readthedocs.io/en/latest/changelog.html
 HOMEPAGE=	https://filesystem-spec.readthedocs.io/en/latest/
 
 # BSD
