@@ -1,4 +1,4 @@
-# ships a dynarmic copy, and dynarmic only supports x86-64 and AArch64
+# ships a copy of 'dynarmic', this only supports x86-64 and AArch64
 ONLY_FOR_ARCHS =	aarch64 amd64
 
 USE_WXNEEDED =	Yes
