@@ -1528,6 +1528,7 @@
      SUBDIR += py-gobject	# py2
      SUBDIR += py-gobject3
      SUBDIR += py-greenlet
+     SUBDIR += py-hachoir
      SUBDIR += py-hamcrest
      SUBDIR += py-hashids
      SUBDIR += py-hass-pyscript-jupyter
