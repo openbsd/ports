@@ -2,7 +2,7 @@ COMMENT=		OpenPrinting CUPS filters
 
 V=			2.0.1
 DISTNAME=		cups-filters-${V}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		print
 
@@ -19,9 +19,6 @@ WANTLIB += jxl lcms2 m pdfio png poppler-cpp ppd pthread ssl tiff
 WANTLIB += z
 
 SITES=	https://github.com/OpenPrinting/cups-filters/releases/download/${V}/
-
-# cc1plus: error: unrecognized command line option "-std=c++0x" ???
-COMPILER=		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 
