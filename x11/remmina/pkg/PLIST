@@ -63,6 +63,7 @@ share/icons/hicolor/scalable/actions/org.remmina.Remmina-password-reveal-symboli
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-pin-down-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-pin-up-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-preferences-system-symbolic.svg
+share/icons/hicolor/scalable/actions/org.remmina.Remmina-reconnect-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-scale-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-switch-page-symbolic.svg
 share/icons/hicolor/scalable/actions/org.remmina.Remmina-system-run-symbolic.svg
@@ -74,6 +75,9 @@ share/icons/hicolor/scalable/emblems/org.remmina.Remmina-sftp-symbolic.svg
 share/icons/hicolor/scalable/emblems/org.remmina.Remmina-spice-ssh-symbolic.svg
 share/icons/hicolor/scalable/emblems/org.remmina.Remmina-spice-symbolic.svg
 share/icons/hicolor/scalable/emblems/org.remmina.Remmina-ssh-symbolic.svg
+share/icons/hicolor/scalable/emblems/org.remmina.Remmina-status-green.svg
+share/icons/hicolor/scalable/emblems/org.remmina.Remmina-status-grey.svg
+share/icons/hicolor/scalable/emblems/org.remmina.Remmina-status-red.svg
 share/icons/hicolor/scalable/emblems/org.remmina.Remmina-tool-symbolic.svg
 share/icons/hicolor/scalable/emblems/org.remmina.Remmina-vnc-ssh-symbolic.svg
 share/icons/hicolor/scalable/emblems/org.remmina.Remmina-vnc-symbolic.svg
@@ -150,6 +154,7 @@ share/locale/sl/LC_MESSAGES/remmina.mo
 share/locale/sq/LC_MESSAGES/remmina.mo
 share/locale/sr/LC_MESSAGES/remmina.mo
 share/locale/sv/LC_MESSAGES/remmina.mo
+share/locale/ta/LC_MESSAGES/remmina.mo
 share/locale/te/LC_MESSAGES/remmina.mo
 share/locale/th/LC_MESSAGES/remmina.mo
 share/locale/tr/LC_MESSAGES/remmina.mo
