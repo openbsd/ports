@@ -1,6 +1,6 @@
 COMMENT=	reference implementation for Python's "wheel" package format
 
-MODPY_DISTV=	0.47.0
+MODPY_DISTV=	0.48.0
 DISTNAME=	wheel-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
