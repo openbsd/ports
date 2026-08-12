@@ -2,6 +2,7 @@ COMMENT-main=	parallelized network logon cracker
 COMMENT-gui=	GTK frontend for hydra
 
 VERSION=	9.7
+REVISION-main=	0
 PKGNAME-main=	hydra-${VERSION}
 PKGNAME-gui=	hydra-gui-${VERSION}
 
@@ -17,9 +18,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB =	c
 
 WANTLIB-main =	${WANTLIB}
-WANTLIB-main += apr-1 aprutil-1 crypto curses freerdp2 gcrypt idn m
+WANTLIB-main += apr-1 aprutil-1 crypto curses freerdp3 gcrypt idn m
 WANTLIB-main += mariadb memcached pcre2-8 pq ssh ssl svn_client-1 svn_subr-1
-WANTLIB-main += sybdb winpr2 z
+WANTLIB-main += sybdb winpr3 z
 
 WANTLIB-gui =	${WANTLIB}
 WANTLIB-gui += atk-1.0 cairo cairo-gobject gdk_pixbuf-2.0 gdk-3 gio-2.0
