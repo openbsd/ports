@@ -1,9 +1,8 @@
 COMMENT=	database toolkit for Python
 
-MODPY_DISTV=	2.0.51
+MODPY_DISTV=	2.0.52
 DISTNAME=	sqlalchemy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 # doc/build/changelog
 FIX_EXTRACT_PERMISSIONS= Yes
@@ -28,7 +27,7 @@ MODPY_PYTEST=	Yes
 
 BUILD_DEPENDS =	lang/cython
 
-RUN_DEPENDS +=	devel/py-greenlet \
+RUN_DEPENDS=	devel/py-greenlet \
 		devel/py-typing-extensions
 
 TEST_DEPENDS=	devel/py-test-xdist \
