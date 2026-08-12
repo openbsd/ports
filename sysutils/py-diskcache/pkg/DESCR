@@ -1,9 +1,0 @@
-Disk and file backed cache library, written in pure-Python, and
-compatible with Django.
-
-DiskCache efficiently makes gigabytes of storage space available for
-caching. By leveraging rock-solid database libraries and memory-mapped
-files, cache performance can match and exceed industry-standard
-solutions. There's no need for a C compiler or running another process.
-Performance is a feature and testing has 100% coverage with unit tests
-and hours of stress.
