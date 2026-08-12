@@ -9,9 +9,12 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Term/
 ${P5ARCH}/auto/Term/ReadLine/
 ${P5ARCH}/auto/Term/ReadLine/Gnu/
-${P5ARCH}/auto/Term/ReadLine/Gnu/Gnu.so
+@so ${P5ARCH}/auto/Term/ReadLine/Gnu/Gnu.so
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/ISSTATE.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/SETSTATE.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/Tk_getc.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/UNSETSTATE.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/_ch_wrapper.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/_str2fn.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/_str2map.al
@@ -36,13 +39,19 @@ ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_call_function.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_completion_mode.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_copy_keymap.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_discard_keymap.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_empty_keymap.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_filename_list.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_free_keymap.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_function_of_keyseq.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_generic_bind.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_invoking_keyseqs.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_macro_bind.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_message.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_print_keybinding.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_set_key.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_set_keymap.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_set_keymap_name.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_trim_arg_from_keyseq.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_tty_set_default_bindings.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_tty_unset_default_bindings.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/shadow_redisplay.al

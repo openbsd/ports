@@ -1,7 +1,6 @@
 COMMENT =	GNU Readline Library Wrapper Module
 
-DISTNAME =	Term-ReadLine-Gnu-1.36
-REVISION =	1
+DISTNAME =	Term-ReadLine-Gnu-1.47
 
 CATEGORIES =	devel
 
