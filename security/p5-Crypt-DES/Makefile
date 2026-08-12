@@ -5,7 +5,7 @@ CPAN_AUTHOR =	TIMLEGGE
 
 CATEGORIES =	security
 
-# Perl
+# BSD-4-Clause like
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl
