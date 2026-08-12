@@ -3,7 +3,7 @@ Allow to build against newer qt-6.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -151,7 +151,7 @@ set(GPGME_VERSION "1.19")
+@@ -152,7 +152,7 @@ set(GPGME_VERSION "1.19")
  set(LCMS2_REQUIRED_VERSION "2.14")
  set(TIFF_VERSION "4.5")
  set(QT5_VERSION "5.15")
