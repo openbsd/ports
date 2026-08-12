@@ -22,7 +22,7 @@ Index: gcc/config/sparc/openbsd64.h
  	builtin_define ("__sparc64__");		\
  	builtin_define ("__sparcv9__");		\
  	builtin_define ("__sparc_v9__");	\
-@@ -42,10 +39,17 @@ along with GCC; see the file COPYING3.  If not see
+@@ -42,11 +39,27 @@ along with GCC; see the file COPYING3.  If not see
    while (0)
  
  #undef ASM_SPEC
@@ -38,9 +38,19 @@ Index: gcc/config/sparc/openbsd64.h
  "
 +#endif
  
++/* Keep jump tables out of execute-only text segments.  */
++#define SPARC_CASE_VECTOR_IN_RODATA 1
++
++#undef ASM_OUTPUT_ADDR_VEC
++#undef ASM_OUTPUT_ADDR_DIFF_VEC
++
++#define PIC_CASE_VECTOR_ADDRESS(ADDR) \
++  sparc_pic_case_vector_address (ADDR)
++
  /* Layout of source language data types.  */
  #undef WCHAR_TYPE
-@@ -54,6 +58,15 @@ along with GCC; see the file COPYING3.  If not see
+ #define WCHAR_TYPE "int"
+@@ -54,6 +67,15 @@ along with GCC; see the file COPYING3.  If not see
  #undef WCHAR_TYPE_SIZE
  #define WCHAR_TYPE_SIZE 32
  
@@ -56,7 +66,7 @@ Index: gcc/config/sparc/openbsd64.h
  #undef SPARC_LONG_DOUBLE_TYPE_SIZE
  #define SPARC_LONG_DOUBLE_TYPE_SIZE 128
  
-@@ -63,13 +76,15 @@ along with GCC; see the file COPYING3.  If not see
+@@ -63,13 +85,15 @@ along with GCC; see the file COPYING3.  If not see
     %{shared:-shared} %{R*} \
     %{static:-Bstatic} \
     %{!static:-Bdynamic} \

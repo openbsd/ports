@@ -75,3 +75,13 @@ Index: gcc/config/sparc/sparc.md
  }
    [(set_attr "type" "load")
     (set_attr "subtype" "regular")])
+@@ -6836,6 +6860,9 @@
+     {
+       rtx tmp, tmp2;
+       tmp = gen_rtx_LABEL_REF (Pmode, operands[1]);
++#ifdef SPARC_CASE_VECTOR_IN_RODATA
++      LABEL_REF_NONLOCAL_P (tmp) = 1;
++#endif
+       tmp2 = operands[0];
+       if (CASE_VECTOR_MODE != Pmode)
+         tmp2 = gen_rtx_SIGN_EXTEND (Pmode, tmp2);
