@@ -1,8 +1,6 @@
-Missing include
-
-Index: vnc/vncsshtunnelthread.cpp
---- vnc/vncsshtunnelthread.cpp.orig
-+++ vnc/vncsshtunnelthread.cpp
+Index: core/sshtunnelthread.cpp
+--- core/sshtunnelthread.cpp.orig
++++ core/sshtunnelthread.cpp
 @@ -11,6 +11,7 @@
  #include <KLocalizedString>
  

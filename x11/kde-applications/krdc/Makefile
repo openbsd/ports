@@ -1,4 +1,4 @@
-BROKEN = Depends on FreeRDP3
+BROKEN =	krdc-26.04.3/rdp/rdpsession.cpp:727:25: error: invalid use of member 'm_thread' in static member function
 
 COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
@@ -16,9 +16,9 @@ WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
 WANTLIB += KF6StatusNotifierItem KF6Wallet KF6WidgetsAddons KF6WindowSystem
 WANTLIB += KF6XmlGui PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Qml Qt6WaylandClient Qt6Widgets Qt6Xml X11 c freerdp-client2
-WANTLIB += freerdp2 m sndio ssh vncclient wayland-client wayland-cursor
-WANTLIB += winpr2 xkbcommon
+WANTLIB += Qt6Qml Qt6WaylandClient Qt6Widgets Qt6Xml X11 c freerdp-client3
+WANTLIB += freerdp3 m sndio ssh vncclient wayland-client wayland-cursor
+WANTLIB += winpr3 xkbcommon
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_TRANSLATIONS = yes
@@ -53,6 +53,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcrash \
 		net/libvncserver \
 		security/libssh \
+		security/qtkeychain,qt6 \
 		wayland/wayland \
 		x11/freerdp \
 		x11/kde-plasma/plasma-activities \

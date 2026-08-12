@@ -1,9 +1,9 @@
 Index: rdp/rdpsession.cpp
 --- rdp/rdpsession.cpp.orig
 +++ rdp/rdpsession.cpp
-@@ -12,6 +12,10 @@
+@@ -11,6 +11,10 @@
+ 
  #include <algorithm>
- #include <memory>
  
 +#ifdef __OpenBSD__
 +#include <pthread_np.h> /* pthread_set_name_np */
@@ -12,7 +12,7 @@ Index: rdp/rdpsession.cpp
  #include <QApplication>
  #include <QKeyEvent>
  #include <QMouseEvent>
-@@ -715,7 +719,12 @@ int RdpSession::clientContextStart(rdpContext *context
+@@ -718,7 +722,12 @@ int RdpSession::clientContextStart(rdpContext *context
      }
  
      session->m_thread = std::thread(std::bind(&RdpSession::run, session));
@@ -25,10 +25,3 @@ Index: rdp/rdpsession.cpp
  
      return 0;
  }
-@@ -1228,4 +1237,4 @@ bool RdpSession::sendResizeEvent(const QSize newSize)
- void RdpSession::setRemoteCursor(const QCursor &cursor)
- {
-     Q_EMIT cursorChanged(cursor);
--}
-\ No newline at end of file
-+}
