@@ -1,10 +1,11 @@
 COMMENT=		Visual Tcl development environment
 
+REVISION=		3
+
 DISTNAME=		vtcl-1.6.1a1
-REVISION=		2
+
 CATEGORIES=		devel
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
-
 HOMEPAGE=		https://vtcl.sourceforge.net/
 
 # GPLv2+
@@ -13,8 +14,13 @@ PERMIT_PACKAGE=	Yes
 SITES=			${SITE_SOURCEFORGE:=vtcl/}
 
 MODULES=		x11/tk
-NO_BUILD=		Yes
+MODTK_VERSION=		8.6
+
 RUN_DEPENDS=		${MODTK_RUN_DEPENDS}
+
+NO_BUILD=		Yes
+
+PKG_ARCH=		*
 
 SUBST_VARS=		MODTK_BIN
 
