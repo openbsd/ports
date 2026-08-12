@@ -9,8 +9,7 @@ MULTI_PACKAGES=	-main -gui
 ONLY_FOR_ARCHS-gui= aarch64 amd64 i386
 PSEUDO_FLAVORS=	no_gui
 
-MODPY_DISTV=	1.43.14
-REVISION=	1
+MODPY_DISTV=	1.44.1
 DISTNAME=	recoll-${MODPY_DISTV}
 
 CATEGORIES=	databases sysutils
