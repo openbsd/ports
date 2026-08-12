@@ -1,16 +1,28 @@
+#1: no hotplug on openbsd
+#2: static mount table returned by getmntinfo(3) on freebsd/openbsd cannot be freed
+#3: no hotplug on openbsd
+
 Index: channels/rdpdr/client/rdpdr_main.c
 --- channels/rdpdr/client/rdpdr_main.c.orig
 +++ channels/rdpdr/client/rdpdr_main.c
-@@ -254,7 +254,7 @@ static UINT rdpdr_send_device_list_remove_request(rdpd
+@@ -247,7 +247,7 @@ static UINT rdpdr_send_device_list_remove_request(rdpd
  	return rdpdr_send(rdpdr, s);
  }
  
 -#if defined(_UWP) || defined(__IOS__)
 +#if defined(_UWP) || defined(__IOS__) || defined(__OpenBSD__)
  
- void first_hotplug(rdpdrPlugin* rdpdr)
- {
-@@ -1101,7 +1101,7 @@ out:
+ static UINT handle_hotplug(WINPR_ATTR_UNUSED RdpdrClientContext* context,
+                            WINPR_ATTR_UNUSED RdpdrHotplugEventType type)
+@@ -842,7 +842,6 @@ static UINT handle_platform_mounts_bsd(wLog* log, hotp
+ 	{
+ 		handle_mountpoint(dev_array, size, mntbuf[idx].f_mntonname);
+ 	}
+-	free(mntbuf);
+ 	return ERROR_SUCCESS;
+ }
+ #endif
+@@ -1099,7 +1098,7 @@ out:
  
  #endif
  

@@ -1,0 +1,11 @@
+Index: winpr/libwinpr/library/CMakeLists.txt
+--- winpr/libwinpr/library/CMakeLists.txt.orig
++++ winpr/libwinpr/library/CMakeLists.txt
+@@ -17,6 +17,6 @@
+ 
+ winpr_module_add(library.c)
+ 
+-if(BUILD_TESTING_INTERNAL OR BUILD_TESTING)
++if(BUILD_TESTING_INTERNAL OR BUILD_TESTING) # AND NOT OPENBSD -- no getexepath() yet
+   add_subdirectory(test)
+ endif()

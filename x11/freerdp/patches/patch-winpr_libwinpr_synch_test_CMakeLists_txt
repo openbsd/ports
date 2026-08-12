@@ -1,12 +1,19 @@
 Index: winpr/libwinpr/synch/test/CMakeLists.txt
 --- winpr/libwinpr/synch/test/CMakeLists.txt.orig
 +++ winpr/libwinpr/synch/test/CMakeLists.txt
-@@ -22,7 +22,7 @@ create_test_sourcelist(${MODULE_PREFIX}_SRCS
- 	${${MODULE_PREFIX}_DRIVER}
- 	${${MODULE_PREFIX}_TESTS})
+@@ -20,9 +20,14 @@ set(${MODULE_PREFIX}_TESTS
+     TestSynchAPC.c
+ )
+ 
++# openbsd doesn't have proper posix timers
++if(OPENBSD)
++  list(REMOVE_ITEM ${MODULE_PREFIX}_TESTS TestSynchTimerQueue.c)
++endif()
++
+ create_test_sourcelist(${MODULE_PREFIX}_SRCS ${${MODULE_PREFIX}_DRIVER} ${${MODULE_PREFIX}_TESTS})
  
 -if(FREEBSD)
 +if(EPOLLSHIM)
- 	include_directories(${EPOLLSHIM_INCLUDE_DIR})
+   include_directories(SYSTEM ${EPOLLSHIM_INCLUDE_DIR})
  endif()
  

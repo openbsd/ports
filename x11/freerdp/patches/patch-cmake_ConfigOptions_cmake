@@ -1,0 +1,16 @@
+broken upstream
+
+Index: cmake/ConfigOptions.cmake
+--- cmake/ConfigOptions.cmake.orig
++++ cmake/ConfigOptions.cmake
+@@ -181,9 +181,7 @@ endif()
+ 
+ if(OPENBSD)
+   find_package(SNDIO)
+-  option(WITH_SNDIO "use SNDIO for sound" ${SNDIO_FOUND # OpenBSD
+-         endif () }
+-  )
++  option(WITH_SNDIO "use SNDIO for sound" ${SNDIO_FOUND})
+ endif()
+ 
+ option(BUILD_FUZZERS "Use BUILD_FUZZERS to build fuzzing tests" OFF)
