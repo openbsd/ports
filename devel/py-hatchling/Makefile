@@ -1,6 +1,6 @@
 COMMENT=	modern, extensible Python build backend used by Hatch
 
-MODPY_DISTV=	1.31.0
+MODPY_DISTV=	1.32.0
 DISTNAME=	hatchling-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -22,7 +22,8 @@ RUN_DEPENDS=	devel/py-editables \
 		devel/py-pathspec \
 		devel/py-pluggy \
 		devel/py-trove-classifiers \
-		sysutils/py-packaging
+		sysutils/py-packaging \
+		textproc/py-tomlkit
 
 MODPY_PYBUILD=	other
 
