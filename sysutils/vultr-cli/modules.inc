@@ -30,7 +30,7 @@ MODGO_MODULES =	\
 	github.com/spf13/viper			 v1.21.0 \
 	github.com/stretchr/testify		 v1.11.1 \
 	github.com/subosito/gotenv		 v1.6.0 \
-	github.com/vultr/govultr/v3		 v3.28.1 \
+	github.com/vultr/govultr/v3		 v3.32.0 \
 	go.yaml.in/yaml/v3			 v3.0.4 \
 	golang.org/x/mod			 v0.26.0 \
 	golang.org/x/oauth2			 v0.36.0 \
