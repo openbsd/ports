@@ -1,6 +1,6 @@
 COMMENT=		library for developing printing filters
 
-V=			2.2.0
+V=			2.2.1
 DISTNAME=		libcupsfilters-${V}
 
 SHARED_LIBS +=  cupsfilters          2.1      # 2.0
@@ -19,11 +19,7 @@ SITES=			https://github.com/OpenPrinting/libcupsfilters/releases/download/${V}/
 WANTLIB += ${COMPILER_LIBCXX} Lerc avahi-client avahi-common brotlicommon
 WANTLIB += brotlidec brotlienc crypto cups dbus-1 exif expat fontconfig
 WANTLIB += freetype hwy iconv intl jpeg jxl jxl_cms lcms2 lzma
-WANTLIB += m openjp2 pdfio png poppler poppler-cpp ssl tiff z
-WANTLIB += zstd
-
-# -std=c++17
-COMPILER=		base-clang ports-gcc
+WANTLIB += m pdfio png ssl tiff z zstd
 
 USE_GMAKE=		Yes
 
@@ -41,8 +37,7 @@ RUN_DEPENDS +=		print/poppler,-utils
 LIB_DEPENDS=		graphics/libexif \
 			graphics/libjxl \
 			print/cups,-libs \
-			print/pdfio \
-			print/poppler
+			print/pdfio
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
