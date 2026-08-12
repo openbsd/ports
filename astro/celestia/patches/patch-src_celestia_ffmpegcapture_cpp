@@ -1,0 +1,61 @@
+https://github.com/CelestiaProject/Celestia/commit/c2152be2385429660a2c02351110a8af08db6df8
+
+Index: src/celestia/ffmpegcapture.cpp
+--- src/celestia/ffmpegcapture.cpp.orig
++++ src/celestia/ffmpegcapture.cpp
+@@ -98,7 +98,8 @@ bool FFMPEGCapturePrivate::init(const std::filesystem:
+ 
+ bool FFMPEGCapturePrivate::isSupportedPixelFormat(enum AVPixelFormat format) const
+ {
+-    const enum AVPixelFormat *p = vc->pix_fmts;
++#if (LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 19, 100)) // ffmpeg < 7.1
++    const AVPixelFormat* p = vc->pix_fmts;
+     if (p == nullptr)
+         return false;
+ 
+@@ -109,6 +110,20 @@ bool FFMPEGCapturePrivate::isSupportedPixelFormat(enum
+     }
+ 
+     return false;
++#else
++    const void* p;
++    int ret = avcodec_get_supported_config(enc, vc, AV_CODEC_CONFIG_PIX_FORMAT, 0, &p, nullptr);
++    if (ret < 0)
++        return false;
++
++    for (auto f = static_cast<const AVPixelFormat*>(p); *f != AV_PIX_FMT_NONE; ++f)
++    {
++        if (*f == format)
++            return true;
++    }
++
++    return false;
++#endif
+ }
+ 
+ #if AVCODEC_DEBUG
+@@ -268,7 +283,15 @@ bool FFMPEGCapturePrivate::addStream(int width, int he
+     }
+     else
+     {
++#if (LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 19, 100)) // ffmpeg < 7.1
+         enc->pix_fmt = avcodec_find_best_pix_fmt_of_list(vc->pix_fmts, format, 0, nullptr);
++#else
++        const void* p;
++        int ret = avcodec_get_supported_config(enc, vc, AV_CODEC_CONFIG_PIX_FORMAT, 0, &p, nullptr);
++        enc->pix_fmt = ret >= 0
++            ? avcodec_find_best_pix_fmt_of_list(static_cast<const AVPixelFormat*>(p), format, 0, nullptr)
++            : AV_PIX_FMT_NONE;
++#endif
+         if (enc->pix_fmt == AV_PIX_FMT_NONE)
+             avcodec_default_get_format(enc, &(enc->pix_fmt));
+     }
+@@ -451,7 +474,7 @@ bool FFMPEGCapturePrivate::writeVideoFrame(bool finali
+         frame->pts = nextPts++;
+     }
+ 
+-#if (LIBAVCODEC_VERSION_INT < AV_VERSION_INT(58, 133, 100))
++#if (LIBAVCODEC_VERSION_INT < AV_VERSION_INT(58, 133, 100)) // ffmpeg < 4.4
+     av_init_packet(pkt);
+ #endif
+ 

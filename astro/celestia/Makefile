@@ -5,6 +5,7 @@ GH_PROJECT=		Celestia
 GH_COMMIT=		504e54ca7decb483c81f76357ada8bd95a7b0f47
 
 DISTNAME=		celestia-1.7.0pre20260319
+REVISION=		0
 EPOCH=			0
 
 SHARED_LIBS +=	celestia                  0.0 # 0.0
