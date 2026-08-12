@@ -1,3 +1,6 @@
+# modernc.org/sqlite -> no 32-bit
+NOT_FOR_ARCHS = arm i386
+
 COMMENT =	tui to manage kubernetes cluster
 
 V =		0.51.0
