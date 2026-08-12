@@ -28,6 +28,8 @@ MAKE_CCARGS+=	-DDEF_DATA_DIR=\"/var/postfix\"
 MAKE_CCARGS+=	-DHAS_SQLITE
 MAKE_CCARGS+=	-DUSE_TLS
 MAKE_CCARGS+=	-DUSE_SASL_AUTH
+# in arpa/nameser.h on other systems
+MAKE_CCARGS+=	-DNS_INT16SZ=2
 # no UTF-8 support for now
 MAKE_CCARGS+=	-DNO_EAI
 MAKE_AUXLIBS+=	-lsqlite3 -pthread
