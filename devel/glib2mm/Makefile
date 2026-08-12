@@ -3,7 +3,7 @@ PORTROACH=		limit:^2\.66
 COMMENT=		C++ interface for glib2
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.66.9
+GNOME_VERSION=		2.66.10
 PKGNAME=		glib2mm-${GNOME_VERSION}
 
 SHARED_LIBS += glibmm_generate_extra_defs-2.4 13.4 # 1.3.0
