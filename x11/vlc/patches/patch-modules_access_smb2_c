@@ -1,3 +1,5 @@
+- smb2: support browsing IPv6 nodes
+  e02146e9235d624f2822ef461890a9c1634d27ae
 - smb2: prefix local functions with vlc_
   9adc93c1a52e02c78d395660a52d4e276c49ee1f
 - smb2: rework ShareEnum
@@ -51,12 +53,24 @@ Index: modules/access/smb2.c
  
  #define VLC_SMB2_STATUS_DENIED(x) (x == -ECONNREFUSED || x == -EACCES)
  
-@@ -501,17 +505,33 @@ ShareEnum(stream_t *access, input_item_node_t *p_node)
+@@ -413,7 +417,10 @@ vlc_smb2_get_url(vlc_url_t *url, const char *file)
+     /* smb2://<psz_host><i_port><psz_path><file>?<psz_option> */
+     struct vlc_memstream buf;
+     vlc_memstream_open(&buf);
+-    vlc_memstream_printf(&buf, "smb://%s", url->psz_host);
++    if (strchr(url->psz_host, ':') != NULL)
++        vlc_memstream_printf(&buf, "smb://[%s]", url->psz_host);
++    else
++        vlc_memstream_printf(&buf, "smb://%s", url->psz_host);
+ 
+     if (url->i_port != 0)
+         vlc_memstream_printf(&buf, ":%d", url->i_port);
+@@ -501,17 +508,33 @@ ShareEnum(stream_t *access, input_item_node_t *p_node)
      struct vlc_readdir_helper rdh;
      vlc_readdir_helper_init(&rdh, access, p_node);
  
 +#ifdef LIBSMB2_SHARE_ENUM_V2
-+    struct srvsvc_SHARE_INFO_1_CONTAINER *ctr = &sys->share_enum->ses.ShareInfo.Level1;
++    struct srvsvc_SHARE_INFO_1_CONTAINER *ctr = &sys->share_enum->ses.ShareEnum.Level1;
 +    size_t ctr_count = ctr->EntriesRead;
 +#else
      struct srvsvc_netsharectr *ctr = sys->share_enum->ctr;
@@ -68,8 +82,8 @@ Index: modules/access/smb2.c
 +         iinfo < ctr_count && ret == VLC_SUCCESS; ++iinfo)
      {
 +#ifdef LIBSMB2_SHARE_ENUM_V2
-+       struct srvsvc_SHARE_INFO_1 *info = &ctr->Buffer->share_info_1[iinfo];
-+       const char *name = info->netname.utf8;
++       struct srvsvc_SHARE_INFO_1 *info = &ctr->share_info_1[iinfo];
++       const char *name = info->netname;
 +       uint32_t type = info->type;
 +#else
         struct srvsvc_netshareinfo1 *info = &ctr->ctr1.array[iinfo];
@@ -78,18 +92,19 @@ Index: modules/access/smb2.c
 +       uint32_t type = info->type;
 +#endif
 +
-+       if (type & SHARE_TYPE_HIDDEN)
++       if (type & SRVSVC_SHARE_TYPE_HIDDEN)
             continue;
 -       switch (info->type & 0x3)
 +       switch (type & 0x3)
         {
-            case SHARE_TYPE_DISKTREE:
+-           case SHARE_TYPE_DISKTREE:
 -               ret = AddItem(access, &rdh, info->name, ITEM_TYPE_DIRECTORY);
++           case SRVSVC_SHARE_TYPE_DISKTREE:
 +               ret = AddItem(access, &rdh, name, ITEM_TYPE_DIRECTORY);
                 break;
         }
      }
-@@ -603,7 +623,13 @@ vlc_smb2_open_share(stream_t *access, struct smb2_cont
+@@ -603,7 +626,13 @@ vlc_smb2_open_share(stream_t *access, struct smb2_cont
  
      int ret;
      if (do_enum)

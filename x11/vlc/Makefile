@@ -5,7 +5,7 @@ V=		3.0.23
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	5
+REVISION-main=	6
 REVISION-jack=	1
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
@@ -70,7 +70,7 @@ WANTLIB-main += hogweed icudata icui18n icuuc idn2 ixml jpeg lz4 lzma matroska
 WANTLIB-main += mp3lame nettle nfs notify ogg opus p11-kit pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pciaccess pcre2-16 pcre2-8
 WANTLIB-main += pixman-1 png protobuf-lite rsvg-2 sharpyuv
-WANTLIB-main += smb2 sndio soxr speex speexdsp ssl swresample swscale
+WANTLIB-main += sndio soxr speex speexdsp ssl swresample swscale
 WANTLIB-main += tag tasn1 theoradec theoraenc tiff udfread unibreak
 WANTLIB-main += unistring upnp usbhid utf8_range utf8_validity va va-drm
 WANTLIB-main += va-x11 vorbis vorbisenc vpx wayland-client wayland-cursor
@@ -122,7 +122,6 @@ LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
 		devel/libidn \
 		devel/libnfs \
 		devel/libnotify \
-		devel/libsmb2 \
 		devel/protobuf \
 		devel/sdl \
 		devel/sdl-image \
@@ -220,7 +219,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-vsxu \
 		--disable-zvbi \
 		--enable-realrtsp \
-		--enable-smb2 \
+		--disable-smb2 \
 		--without-contrib \
 		--with-kde-solid=${LOCALBASE}/share/apps/solid/actions
 CONFIGURE_ENV+=	BUILDCC="${CC}" \
