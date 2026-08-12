@@ -11,16 +11,16 @@ Index: media/audio/alsa/audio_manager_alsa.cc
      void** hints = nullptr;
      int hint_result = wrapper_->DeviceNameHint(card, kPcmInterfaceName, &hints);
      if (!hint_result) {
-@@ -184,7 +186,9 @@ void AudioManagerAlsa::GetAlsaDevicesInfo(AudioManager
-       // Store the device information.
-       device_names->push_back(name);
+@@ -119,7 +121,9 @@ bool AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
+       DLOG(WARNING) << "GetAlsaAudioDevices: unable to get device hints: "
+                     << wrapper_->StrError(hint_result);
      }
-+#if !BUILDFLAG(IS_BSD) 
++#if !BUILDFLAG(IS_BSD)
    }
 +#endif
- }
  
- // static
+   if (card_next_result != 0) {
+     had_error = true;
 @@ -211,7 +215,11 @@ bool AudioManagerAlsa::IsAlsaDeviceAvailable(AudioMana
    // goes through software conversion if needed (e.g. incompatible
    // sample rate).

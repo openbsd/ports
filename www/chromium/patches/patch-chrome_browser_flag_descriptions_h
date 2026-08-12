@@ -1,7 +1,7 @@
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
 +++ chrome/browser/flag_descriptions.h
-@@ -8546,6 +8546,18 @@ inline constexpr char kAntivirusTelemetryForDownloadsD
+@@ -8551,6 +8551,18 @@ inline constexpr char kAntivirusTelemetryForDownloadsD
      "Enables antivirus product info to be included in Safe Browsing download "
      "pings.";
  
