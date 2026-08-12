@@ -2,6 +2,7 @@ COMMENT =	circuit drawing and schematic capture
 
 BASEVER =	3.7
 DISTNAME =	xcircuit-${BASEVER}.57
+
 CATEGORIES =	cad
 HOMEPAGE =	http://opencircuitdesign.com/xcircuit/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -15,6 +16,8 @@ SITES =		${HOMEPAGE:=archive/}
 EXTRACT_SUFX =	.tgz
 
 MODULES =	x11/tk
+MODTK_VERSION =	8.5
+
 LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
 
 USE_GMAKE =	Yes
