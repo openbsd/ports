@@ -46,6 +46,7 @@
      SUBDIR += macutil
      SUBDIR += makeself
      SUBDIR += minizip
+     SUBDIR += mkz
      SUBDIR += p5-Archive-Extract
      SUBDIR += p5-Archive-Zip
      SUBDIR += p5-Compress-Bzip2
