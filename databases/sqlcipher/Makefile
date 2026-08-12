@@ -2,10 +2,9 @@ COMMENT=	encrypted SQLite database
 
 GH_ACCOUNT=	sqlcipher
 GH_PROJECT=	sqlcipher
-GH_TAGNAME=	v4.16.0
-REVISION =	0
+GH_TAGNAME=	v4.17.0
 
-SHARED_LIBS +=  sqlcipher                 3.4
+SHARED_LIBS +=  sqlcipher                 3.5
 
 CATEGORIES=	databases
 
@@ -15,6 +14,10 @@ HOMEPAGE=	https://www.zetetic.net/sqlcipher/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curses m pthread readline z
+
+# TLS
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
