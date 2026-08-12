@@ -9,6 +9,9 @@ CATEGORIES=	textproc
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
+# C++11
+COMPILER=	base-clang ports-gcc
+
 MODCARGO_CARGOTOML = ${WRKSRC}/bindings/python/Cargo.toml
 
 MODULES=	lang/python
