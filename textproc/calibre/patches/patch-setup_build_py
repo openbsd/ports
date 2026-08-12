@@ -21,7 +21,7 @@ Index: setup/build.py
  
      if ishaiku:
          cflags.append('-lpthread')
-@@ -726,6 +729,7 @@ sip-file = {os.path.basename(sipf)!r}
+@@ -726,6 +728,7 @@ sip-file = {os.path.basename(sipf)!r}
  
      def build_pyqt_extension(self, ext, sbf):
          self.info(f'\n####### Building {ext.name} extension', '#'*7)
@@ -29,7 +29,7 @@ Index: setup/build.py
          src_dir = os.path.dirname(sbf)
          cwd = os.getcwd()
          try:
-@@ -733,7 +737,7 @@ sip-file = {os.path.basename(sipf)!r}
+@@ -733,7 +736,7 @@ sip-file = {os.path.basename(sipf)!r}
              env = os.environ.copy()
              if is_macos_universal_build:
                  env['ARCHS'] = 'x86_64 arm64'
