@@ -11,6 +11,7 @@ share/wycheproof/doc/aegis.md
 share/wycheproof/doc/aesgcm.md
 share/wycheproof/doc/bib.md
 share/wycheproof/doc/bugs.md
+share/wycheproof/doc/c2sp_chunked_encryption.md
 share/wycheproof/doc/dh.md
 share/wycheproof/doc/dsa.md
 share/wycheproof/doc/ecdh.md
@@ -33,6 +34,7 @@ share/wycheproof/schemas/aead_test_schema_v1.json
 share/wycheproof/schemas/bls_aggregate_verify_schema.json
 share/wycheproof/schemas/bls_hash_to_g2_schema.json
 share/wycheproof/schemas/bls_sig_verify_schema.json
+share/wycheproof/schemas/c2sp_chunked_encryption_schema.json
 share/wycheproof/schemas/common.json
 share/wycheproof/schemas/daead_test_schema_v1.json
 share/wycheproof/schemas/dsa_common.json
@@ -133,6 +135,8 @@ share/wycheproof/testvectors_v1/bls_hash_to_g2_test.json
 share/wycheproof/testvectors_v1/bls_sig_g2_aggregate_verify_test.json
 share/wycheproof/testvectors_v1/bls_sig_g2_basic_verify_test.json
 share/wycheproof/testvectors_v1/bls_sig_g2_pop_verify_test.json
+share/wycheproof/testvectors_v1/c2sp_chunked_encryption_aes_128_gcm_test.json
+share/wycheproof/testvectors_v1/c2sp_chunked_encryption_aes_256_gcm_test.json
 share/wycheproof/testvectors_v1/camellia_cbc_pkcs5_test.json
 share/wycheproof/testvectors_v1/camellia_ccm_test.json
 share/wycheproof/testvectors_v1/camellia_cmac_test.json
