@@ -1,0 +1,15 @@
+otherwise it picks up blake3 headers in /usr/local/include before the bundled
+one that it wants
+
+Index: src/a12/CMakeLists.txt
+--- src/a12/CMakeLists.txt.orig
++++ src/a12/CMakeLists.txt
+@@ -132,7 +132,7 @@ set_target_properties(arcan_a12 PROPERTIES
+ 	VERSION ${A12_VERSION_MAJOR}.${A12_VERSION_MINOR}
+ )
+ 
+-target_include_directories(arcan_a12 PRIVATE
++target_include_directories(arcan_a12 BEFORE PRIVATE
+ 	external/blake3
+ 	external/zstd
+ 	external/zstd/common
