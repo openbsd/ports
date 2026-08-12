@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -9,7 +9,7 @@ dependencies = [
+     "rnc2rng>=2.6.6",
+     "lxml>=6.0.2",
+     "aiohttp>=3.14.3",
+-    "click>=8.4.2",
++    "click",
+     "asn1crypto>=1.5.1",
+     "asn1tools>=0.167.0",
+     "alive-progress>=3.3.0",

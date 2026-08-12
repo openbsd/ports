@@ -5,6 +5,8 @@ lib/python${MODPY_VERSION}/site-packages/rrdp_tools-${MODPY_DISTV}.dist-info/MET
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/rrdp_tools-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/rrdp_tools-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
