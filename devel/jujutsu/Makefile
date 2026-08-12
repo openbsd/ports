@@ -29,14 +29,14 @@ SEPARATE_BUILD =	Yes
 
 RUN_DEPENDS =		devel/git
 
-MODCARGO_INSTALL_TARGET_PATHS = cli
+MODCARGO_INSTALL_TARGET_PATHS =	cli
 
 post-patch:
 	${SUBST_CMD} \
 		${WRKSRC}/cli/src/commands/bisect/run.rs \
 		${WRKSRC}/cli/src/complete.rs
 
-JJ = 	${WRKBUILD}/target/release/jj
+JJ =	${WRKBUILD}/target/release/jj
 
 # If jj is run from a jj work tree there are permission issues, so use /tmp
 post-build:
@@ -59,7 +59,7 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/jj.zsh \
 		${PREFIX}/share/zsh/site-functions/_jj
 
-TEST_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include "crates.inc"
 
