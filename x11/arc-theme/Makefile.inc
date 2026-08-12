@@ -11,7 +11,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://github.com/jnsh/arc-theme/releases/download/${V}/
+SITES=			https://github.com/jnsh/arc-theme/releases/download/${V}/
 EXTRACT_SUFX=		.tar.xz
 
 MODULES +=		devel/meson
@@ -27,4 +27,5 @@ CONFIGURE_ARGS +=	-Dgnome_shell_gresource=true \
 
 CHECKSUM_FILE=		${.CURDIR}/../distinfo
 DESCR=			${.CURDIR}/../DESCR
+PATCHDIR =		${.CURDIR}/../patches
 SUBST_VARS +=		ARC_TYPE

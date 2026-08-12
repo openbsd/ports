@@ -1,0 +1,17 @@
+Restrict find(1) to regular files.  Since meson 1.12.0, custom_target()
+passes depend_files through source_strings_to_files(), which rejects
+anything that is not os.path.isfile() with a misleading "does not exist"
+error.  find(1) without -type also lists the starting points and
+subdirectories, so 43/icons tripped this.
+
+Index: common/gnome-shell/meson.build
+--- common/gnome-shell/meson.build.orig
++++ common/gnome-shell/meson.build
+@@ -90,6 +90,7 @@ foreach variant : get_option('variants')
+       meson.current_source_dir() / gnome_shell_ver / 'icons',
+       meson.current_source_dir() / gnome_shell_ver / 'common-assets',
+       meson.current_source_dir() / gnome_shell_ver / variant + '-assets',
++      '-type', 'f',
+       check : true
+     ).stdout().split()
+ 
