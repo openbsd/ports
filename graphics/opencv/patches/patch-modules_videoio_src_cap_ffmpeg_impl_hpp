@@ -1,0 +1,53 @@
+compatibility with ffmpeg 9.0
+
+Index: modules/videoio/src/cap_ffmpeg_impl.hpp
+--- modules/videoio/src/cap_ffmpeg_impl.hpp.orig
++++ modules/videoio/src/cap_ffmpeg_impl.hpp
+@@ -2539,10 +2539,11 @@ static AVCodecContext * icv_configure_video_stream_FFM
+ #else
+     AVCodecContext *c = st->codec;
+ #endif
++    const AVRational *supported_framerates;
++    int frame_rate, frame_rate_base, num_supported_framerates, ret;
++
+     CV_Assert(c);
+ 
+-    int frame_rate, frame_rate_base;
+-
+     c->codec_id = codec ? codec->id : codec_id;
+ 
+ #ifndef CV_FFMPEG_CODECPAR
+@@ -2583,17 +2584,28 @@ static AVCodecContext * icv_configure_video_stream_FFM
+     c->time_base.den = frame_rate;
+     c->time_base.num = frame_rate_base;
+     /* adjust time base for supported framerates */
+-    if(codec && codec->supported_framerates){
+-        const AVRational *p= codec->supported_framerates;
++    if(codec){
++        ret = avcodec_get_supported_config(c, NULL, AV_CODEC_CONFIG_FRAME_RATE, 0,
++                                           (const void **) &supported_framerates,
++                                           &num_supported_framerates);
++        if (ret < 0)
++        {
++#ifdef CV_FFMPEG_CODECPAR
++            avcodec_free_context(&c);
++#endif
++            return NULL;
++        }
++    }
++    if(codec && supported_framerates){
+         AVRational req = {frame_rate, frame_rate_base};
+         const AVRational *best=NULL;
+         AVRational best_error= {INT_MAX, 1};
+-        for(; p->den!=0; p++){
+-            AVRational error= av_sub_q(req, *p);
++        for(int i = 0; i < num_supported_framerates; i++){
++            AVRational error= av_sub_q(req, supported_framerates[i]);
+             if(error.num <0) error.num *= -1;
+             if(av_cmp_q(error, best_error) < 0){
+                 best_error= error;
+-                best= p;
++                best= &supported_framerates[i];
+             }
+         }
+         if (best == NULL)
