@@ -10,8 +10,8 @@ download the free demo version of the game.
 
 The port comes with 2 (bash) helper scripts to assist with this:
 
-${PREFIX}/share/fheroes2/download_demo_version.sh
-${PREFIX}/share/fheroes2/extract_homm2_resources.sh
+${PREFIX}/share/doc/fheroes2/demo/download_demo_version.sh
+${PREFIX}/share/doc/fheroes2/homm2/extract_homm2_resources.sh
 
 Alternatively, you can manually copy the directories ANIM, DATA, MAPS, and MUSIC
 to ~/.fheroes2/. (Note: The GOG version keeps 'ANIM' in the DosBox emulated
