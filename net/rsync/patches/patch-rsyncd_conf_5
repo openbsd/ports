@@ -1,7 +1,7 @@
 Index: rsyncd.conf.5
 --- rsyncd.conf.5.orig
 +++ rsyncd.conf.5
-@@ -479,7 +479,7 @@ This parameter specifies the user name or user ID that
+@@ -520,7 +520,7 @@ This parameter specifies the user name or user ID that
  and from that module should take place as when the daemon was run as root.
  In combination with the "gid" parameter this determines what file
  permissions are available. The default when run by a super-user is to
@@ -10,7 +10,7 @@ Index: rsyncd.conf.5
  to not try to change the user.  See also the "gid" parameter.
  .IP
  The RSYNC_USER_NAME environment variable may be used to request that rsync
-@@ -499,7 +499,7 @@ accessing the module.  The first one will be the defau
+@@ -540,7 +540,7 @@ accessing the module.  The first one will be the defau
  extra ones be set as supplemental groups.  You may also specify a "\fB*\fP" as
  the first gid in the list, which will be replaced by all the normal groups
  for the transfer's user (see "uid").  The default when run by a super-user
@@ -19,7 +19,7 @@ Index: rsyncd.conf.5
  other supplementary groups.  The default for a non-super-user is to not
  change any group attributes (and indeed, your OS may not allow a
  non-super-user to try to change their group settings).
-@@ -1249,8 +1249,8 @@ A more sophisticated example would be:
+@@ -1432,8 +1432,8 @@ A more sophisticated example would be:
  .RS 4
  .P
  .nf

@@ -1,7 +1,7 @@
 Index: authenticate.c
 --- authenticate.c.orig
 +++ authenticate.c
-@@ -351,7 +351,7 @@ void auth_client(int fd, const char *user, const char 
+@@ -449,7 +449,7 @@ void auth_client(int fd, const char *user, const char 
  	char pass2[MAX_DIGEST_LEN*2];
  
  	if (!user || !*user)
