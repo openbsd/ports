@@ -23,6 +23,8 @@ VERSION=	1.30.4
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
+REVISION-modsecurity=	0
+
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cache_purge=	nginx-cache_purge-${VERSION}
 PKGNAME-geoip2=		nginx-geoip2-${VERSION}
