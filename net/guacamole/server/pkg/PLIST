@@ -54,7 +54,6 @@ include/guacamole/user.h
 include/guacamole/wol-constants.h
 include/guacamole/wol.h
 @lib lib/libguac-client-kubernetes.so.${LIBguac-client-kubernetes_VERSION}
-@lib lib/libguac-client-rdp.so.${LIBguac-client-rdp_VERSION}
 @lib lib/libguac-client-ssh.so.${LIBguac-client-ssh_VERSION}
 @lib lib/libguac-client-vnc.so.${LIBguac-client-vnc_VERSION}
 @lib lib/libguac-terminal.so.${LIBguac-terminal_VERSION}
