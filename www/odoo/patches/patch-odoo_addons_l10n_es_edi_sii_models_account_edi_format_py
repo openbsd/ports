@@ -1,0 +1,19 @@
+revert:
+From 763b96c55fc3fd3ed43a223933597a7ef7413faa Mon Sep 17 00:00:00 2001
+From: Josse Colpaert <jco@odoo.com>
+Date: Mon, 1 Jun 2026 14:52:55 +0200
+Subject: [PATCH] [IMP] core, l10n_es_edi_{sii/verifactu}: use ORM cache in
+ zeep
+
+Index: odoo/addons/l10n_es_edi_sii/models/account_edi_format.py
+--- odoo/addons/l10n_es_edi_sii/models/account_edi_format.py.orig
++++ odoo/addons/l10n_es_edi_sii/models/account_edi_format.py
+@@ -451,7 +451,7 @@ class AccountEdiFormat(models.Model):
+         session.cert = company.l10n_es_sii_certificate_id
+         session.mount('https://', CertificateAdapter(ciphers=EUSKADI_CIPHERS))
+ 
+-        client = company._get_zeep_client__(connection_vals['url'], session=session)
++        client = zeep.Client(connection_vals['url'], operation_timeout=60, timeout=60, session=session)
+ 
+         if connection_vals.get('custom_navarra'):
+             # We Inject the namespaces directly in the header dictionary

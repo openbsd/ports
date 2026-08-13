@@ -1,0 +1,12 @@
+Index: odoo/tools/osutil.py
+--- odoo/tools/osutil.py.orig
++++ odoo/tools/osutil.py
+@@ -82,7 +82,7 @@ def memory_info(process):
+     """
+     pmem = process.memory_info()
+     # MacOSX allocates very large vms to all processes so we only monitor the rss usage.
+-    if system_name == 'Darwin':
++    if system_name in ['Darwin', 'OpenBSD']:
+         return pmem.rss
+     return pmem.vms
+ 

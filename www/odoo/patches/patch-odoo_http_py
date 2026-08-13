@@ -35,7 +35,7 @@ Index: odoo/http.py
  MISSING_CSRF_WARNING = """\
  No CSRF validation token provided for path %r
  
-@@ -1370,6 +1394,9 @@ class GeoIP(collections.abc.Mapping):
+@@ -1418,6 +1442,9 @@ class GeoIP(collections.abc.Mapping):
  
      # Old dict API, undocumented for now, will be deprecated some day
      def __getitem__(self, item):

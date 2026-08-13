@@ -3,10 +3,8 @@ PORTROACH=		ignore:1
 COMMENT=		all-in-one management software
 
 MV=			19.0
-SV=			20251208
+SV=			20260813
 V=			${MV}.${SV}
-
-REVISION=		0
 
 DISTNAME=		odoo_${V}
 
