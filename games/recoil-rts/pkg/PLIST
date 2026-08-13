@@ -180,6 +180,8 @@ share/games/spring/examples/Widgets/download.lua
 share/games/spring/examples/Widgets/game_messages.lua
 share/games/spring/examples/Widgets/gui_autoshowmetal.lua
 share/games/spring/examples/Widgets/gui_buildspacing.lua
+share/games/spring/examples/Widgets/gui_buildsquare_gl4.lua
+share/games/spring/examples/Widgets/gui_custom_unit_color.lua
 share/games/spring/examples/Widgets/gui_hilight_unit.lua
 share/games/spring/examples/Widgets/gui_selbuttons.lua
 share/games/spring/examples/Widgets/gui_team_platter.lua

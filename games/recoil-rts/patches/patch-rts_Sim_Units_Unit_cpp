@@ -8,7 +8,7 @@ Use the same construct as older code in this file.
 Index: rts/Sim/Units/Unit.cpp
 --- rts/Sim/Units/Unit.cpp.orig
 +++ rts/Sim/Units/Unit.cpp
-@@ -964,11 +964,12 @@ static auto SplitResourcePackIntoPositiveNegative (con
+@@ -965,11 +965,12 @@ static auto SplitResourcePackIntoPositiveNegative (con
  {
  	SResourcePack positive {0.0f}, negative {0.0f};
  

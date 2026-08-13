@@ -1,5 +1,4 @@
-# heavy use of SSE with no alternative pathways for !x86 arches
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	aarch64 amd64
 
 COMMENT =		real-time strategy game engine for Beyond All Reason
 
@@ -8,7 +7,7 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
 
-V =			2026.06.12
+V =			2026.07.04
 PKGNAME =		recoil-rts-${V}
 
 DIST_TUPLE +=		github beyond-all-reason RecoilEngine ${V} .
@@ -46,19 +45,19 @@ DIST_TUPLE +=		github DLTcollab sse2neon \
 			8721e9799e0d01b80ba8e8e34636cb49997560c2 \
 			rts/lib/sse2neon # MIT
 DIST_TUPLE +=		github RecoilEngine streflop \
-			9867c6991261e102726e19dafadcc51eafb12118 \
+			570f86fb616a20179914aa7fc9645e683a3f5b4d \
 			rts/lib/streflop # LGPL
 DIST_TUPLE +=		github wolfpld tracy \
 			5d542dc09f3d9378d005092a4ad446bd405f819a \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			0ef36267633d6c1b2f6408a8d8a59fff38745dc3 \
+			e6b33037dfbe81f2b0eb289f884ed90a1718eec0 \
 			AI/Skirmish/BARb # GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
 			edc74149c281e2140f28c091ed74310c11611cc7 \
 			AI/Skirmish/CircuitAI # GPL-2.0
 DIST_TUPLE +=		github beyond-all-reason pr-downloader \
-			dc352410644b101d44609263bee398ac3305d223 \
+			09a1f37c77a014f24c3116ac7b7d2e318d0ce0de \
 			tools/pr-downloader # GPL-2.0
 DIST_TUPLE +=		github cameron314 readerwriterqueue \
 			8e7627d18c2108aca178888d88514179899a044f \

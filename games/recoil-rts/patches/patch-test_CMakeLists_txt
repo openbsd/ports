@@ -19,8 +19,8 @@ Index: test/CMakeLists.txt
 +endif (UNIX AND (NOT APPLE) AND (NOT MINGW) AND (NOT (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")))
  
  ADD_SUBDIRECTORY(lib/catch2)
- 
-@@ -30,7 +30,7 @@ if (WIN32)
+ # Engine-wide -fsingle-precision-constant (gcc) makes `0.` a float, which
+@@ -36,7 +36,7 @@ if (WIN32)
  		RESULT_VARIABLE IPV6_RET
  		ERROR_QUIET)
  else(WIN32)
@@ -29,7 +29,7 @@ Index: test/CMakeLists.txt
  		RESULT_VARIABLE IPV6_RET
  		ERROR_QUIET)
  endif (WIN32)
-@@ -402,7 +402,9 @@ endif()
+@@ -427,7 +427,9 @@ endif()
  			${WINMM_LIBRARY}
  		)
  	if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")

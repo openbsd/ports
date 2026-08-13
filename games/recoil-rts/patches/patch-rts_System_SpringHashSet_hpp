@@ -3,7 +3,7 @@ include <algorithm> for std::fill_n
 Index: rts/System/SpringHashSet.hpp
 --- rts/System/SpringHashSet.hpp.orig
 +++ rts/System/SpringHashSet.hpp
-@@ -10,6 +10,7 @@
+@@ -11,6 +11,7 @@
  #include <cstdlib> // malloc
  #include <iterator>
  #include <utility>

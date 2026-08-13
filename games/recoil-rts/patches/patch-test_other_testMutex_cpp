@@ -13,8 +13,8 @@ Index: test/other/testMutex.cpp
 +#elif !defined(_WIN32)
  	#include <sys/syscall.h>
  	#include <linux/futex.h>
- #endif
-@@ -25,34 +27,52 @@
+ 	#include <unistd.h>
+@@ -26,34 +28,52 @@
  InitSpringTime ist;
  
  #ifndef _WIN32
@@ -75,7 +75,7 @@ Index: test/other/testMutex.cpp
  		}
  	}
  #endif
-@@ -97,7 +117,7 @@ TEST_CASE("Mutex")
+@@ -98,7 +118,7 @@ TEST_CASE("Mutex")
  #endif
  
  #ifndef _WIN32

@@ -1,0 +1,18 @@
+error: no member named 'enumerate' in namespace 'std::ranges::views'
+
+https://libcxx.llvm.org/Status/Cxx23.html
+
+Workaround until clang 23.
+
+Index: rts/System/Sync/DumpState.cpp
+--- rts/System/Sync/DumpState.cpp.orig
++++ rts/System/Sync/DumpState.cpp
+@@ -251,7 +251,7 @@ void DumpState(int newMinFrameNum, int newMaxFrameNum,
+ 	#define DUMP_UNIT_SCRIPT_ANIM
+ 	#define DUMP_FEATURE_DATA
+ 	#define DUMP_PROJECTILE_DATA
+-	#define DUMP_TEAM_DATA
++	//#define DUMP_TEAM_DATA
+ 	//#define DUMP_ALLYTEAM_DATA
+ 	#define DUMP_ALLYTEAM_DATA_CHECKSUM
+ 	//#define DUMP_HEIGHTMAP

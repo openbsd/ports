@@ -1,0 +1,28 @@
+error: no member named 'enumerate' in namespace 'std::ranges::views'
+
+https://libcxx.llvm.org/Status/Cxx23.html
+
+Workaround until clang 23.
+
+Index: rts/Lua/LuaHandleSynced.cpp
+--- rts/Lua/LuaHandleSynced.cpp.orig
++++ rts/Lua/LuaHandleSynced.cpp
+@@ -55,8 +55,6 @@
+ 
+ #include "System/Misc/TracyDefs.h"
+ 
+-#include <ranges>
+-
+ LuaRulesParams::Params  CSplitLuaHandle::gameParams;
+ 
+ 
+@@ -1220,7 +1218,8 @@ bool CSyncedLuaHandle::ResourceExcess(const std::map <
+ 
+ 	for (const auto &[teamID, excess] : excesses) {
+ 		lua_createtable(L, excess.MAX_RESOURCES, 0);
+-		for (const auto &[resourceID, resource] : std::views::enumerate(excess)) {
++		for (int resourceID = 0; resourceID < excess.MAX_RESOURCES; ++resourceID) {
++			const auto resource = excess[resourceID];
+ 			lua_pushnumber(L, resource);
+ 			lua_rawseti(L, -2, resourceID + 1);
+ 		}

@@ -3,7 +3,7 @@
 Index: rts/System/SpringHashMap.hpp
 --- rts/System/SpringHashMap.hpp.orig
 +++ rts/System/SpringHashMap.hpp
-@@ -10,6 +10,7 @@
+@@ -11,6 +11,7 @@
  #include <cstdlib>
  #include <iterator>
  #include <utility>
