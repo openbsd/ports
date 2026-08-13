@@ -6,6 +6,8 @@ MV=			19.0
 SV=			20251208
 V=			${MV}.${SV}
 
+REVISION=		0
+
 DISTNAME=		odoo_${V}
 
 PKGNAME=		${DISTNAME:S/_/-/}

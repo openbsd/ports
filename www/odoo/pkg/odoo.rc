@@ -6,7 +6,7 @@ daemon_user="_odoo"
 
 . /etc/rc.d/rc.subr
 
-pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+pexp="(${TRUEPREFIX}/bin/)?python${MODPY_VERSION} ${daemon}${daemon_flags:+ ${daemon_flags}}"
  
 rc_bg=YES
 rc_reload=NO
