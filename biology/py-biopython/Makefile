@@ -1,6 +1,6 @@
 COMMENT =		Python tools for computational molecular biology
 
-MODPY_DISTV =		1.87
+MODPY_DISTV =		1.88
 DISTNAME =		biopython-${MODPY_DISTV}
 CATEGORIES =		biology
 PKGNAME =		py-${DISTNAME}
