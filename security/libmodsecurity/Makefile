@@ -1,12 +1,12 @@
 COMMENT =	intrusion detection and prevention engine
 
-VERSION =	3.0.14
+VERSION =	3.0.16
 DISTNAME =	modsecurity-v${VERSION}
 PKGNAME  =	libmodsecurity-${VERSION}
-SUPDISTFILES =	${DISTFILES:S/$/.sig/}
-REVISION  =	2
+SUPDISTFILES =	${DISTFILES:S/$/.asc/}
 
-SHARED_LIBS =	modsecurity	2.0	# 3.14
+SHARED_LIBS =	modsecurity	3.0	# 3.16
+# upstream lib version just based on release version
 
 CATEGORIES =	security
 
@@ -19,7 +19,7 @@ WANTLIB =	${COMPILER_LIBCXX} c crypto curl iconv m ssl z \
 		maxminddb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl \
 		pcre pcre2-8 xml2 yajl
 
-SITES =	https://github.com/SpiderLabs/ModSecurity/releases/download/v${VERSION}/
+SITES =	https://github.com/owasp-modsecurity/ModSecurity/releases/download/v${VERSION}/
 
 COMPILER =		base-clang ports-gcc
 

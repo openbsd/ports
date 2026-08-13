@@ -1,11 +1,11 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1189,7 +1189,6 @@ libmodsecurity_la_CPPFLAGS = \
- 	-I../others \
- 	-I../others/mbedtls/include \
+@@ -1179,7 +1179,6 @@ libmodsecurity_la_CPPFLAGS = \
+ 	-I$(top_srcdir)/others/mbedtls/tf-psa-crypto/include \
+ 	-I$(top_srcdir)/others/mbedtls/tf-psa-crypto/drivers/builtin/include \
  	-fPIC \
 -	-O3 \
- 	-I../headers \
+ 	-I$(top_srcdir)/headers \
  	$(CURL_CFLAGS) \
  	$(GEOIP_CFLAGS) \
