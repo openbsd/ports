@@ -1,0 +1,25 @@
+XXX When werror=true is set, Meson passes the appropriate fatal-warnings flag to
+the linker. We can't use it widely because of recurring:
+warning: str*() is almost always misused, please use strl*()
+
+Index: mesonbuild/linkers/linkers.py
+--- mesonbuild/linkers/linkers.py.orig
++++ mesonbuild/linkers/linkers.py
+@@ -734,7 +734,7 @@ class GnuLikeDynamicLinkerMixin(DynamicLinkerBase):
+         return self._apply_prefix('--no-undefined')
+ 
+     def fatal_warnings(self) -> T.List[str]:
+-        return self._apply_prefix('--fatal-warnings')
++        return []
+ 
+     def get_soname_args(self, prefix: str, shlib_name: str, suffix: str,
+                         soversion: str, darwin_versions: T.Tuple[str, str]
+@@ -1574,7 +1574,7 @@ class ClangClDynamicLinker(VisualStudioLikeLinkerMixin
+         return ["/lldltocache:" + path]
+ 
+     def fatal_warnings(self) -> T.List[str]:
+-        return ['-WX']
++        return []
+ 
+ 
+ class XilinkDynamicLinker(VisualStudioLikeLinkerMixin, DynamicLinker):
