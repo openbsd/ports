@@ -9,6 +9,7 @@
 @bin bin/derpprobe
 @comment bin/dist
 @comment bin/distsign
+@comment bin/fbstatus
 @comment bin/featuretags
 @comment bin/generate
 @comment bin/get-authkey
