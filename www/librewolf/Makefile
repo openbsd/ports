@@ -28,7 +28,7 @@ MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozinference mozwayland xul \
 
 CATEGORIES =	www
 
-MOZSITE =	https://codeberg.org/api/packages/librewolf/generic
+MOZSITE =	https://librewolf.dev/api/packages/librewolf/generic
 SITES =		${MOZSITE}/librewolf-source/${MOZILLA_DIST_VERSION}/
 EXTRACT_SUFX =	.tar.gz
 DIST_SUBDIR =	librewolf
