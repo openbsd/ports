@@ -1,6 +1,6 @@
 COMMENT =	API and commands for processing SPIR-V
 
-V =		1.4.341.0
+V =		1.4.357.0
 DISTNAME =	spirv-tools-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	SPIRV-Tools

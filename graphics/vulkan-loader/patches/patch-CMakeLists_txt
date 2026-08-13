@@ -3,7 +3,7 @@ disable git detection
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -58,7 +58,7 @@ include(GNUInstallDirs)
+@@ -61,7 +61,7 @@ include(GNUInstallDirs)
  
  set(GIT_BRANCH_NAME "--unknown--")
  set(GIT_TAG_INFO "--unknown--")

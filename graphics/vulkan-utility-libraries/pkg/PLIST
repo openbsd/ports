@@ -17,5 +17,6 @@ lib/cmake/VulkanUtilityLibraries/
 lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibraries-targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibraries-targets.cmake
 lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibrariesConfig.cmake
+lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibrariesConfigVersion.cmake
 @static-lib lib/libVulkanLayerSettings.a
 @static-lib lib/libVulkanSafeStruct.a
