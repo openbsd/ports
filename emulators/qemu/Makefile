@@ -6,8 +6,7 @@ USE_NOBTCFI=	Yes
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	11.0.1
-REVISION-main=	0
+VERSION=	11.1.0
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
@@ -37,7 +36,8 @@ COMPILER_LANGS=	c
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS=	devel/gettext,-tools \
+BUILD_DEPENDS=	devel/bison \
+		devel/gettext,-tools \
 		devel/meson \
 		devel/ninja \
 		devel/py-setuptools \
