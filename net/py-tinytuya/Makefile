@@ -1,6 +1,6 @@
 COMMENT =		interface with Tuya WiFi smart devices
 
-MODPY_DISTV =		1.18.1
+MODPY_DISTV =		1.20.0
 GH_ACCOUNT =		jasonacox
 GH_PROJECT =		tinytuya
 GH_TAGNAME =		v${MODPY_DISTV}

@@ -17,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/BlanketDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/ClimateDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/ColorfulX7Device.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/DoorbellDevice.py
+lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/FloorFanDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/IRRemoteControlDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/InverterHeatPumpDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/PresenceDetectorDevice.py
@@ -38,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}Colorf
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}ColorfulX7Device.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}DoorbellDevice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}DoorbellDevice.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}FloorFanDevice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}FloorFanDevice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}IRRemoteControlDevice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}IRRemoteControlDevice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}InverterHeatPumpDevice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,11 +87,14 @@ lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}wizard.${MODPY
 lib/python${MODPY_VERSION}/site-packages/tinytuya/cli.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/Device.py
+lib/python${MODPY_VERSION}/site-packages/tinytuya/core/Monitor.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/XenonDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/${MODPY_PYCACHE}Device.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/${MODPY_PYCACHE}Device.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tinytuya/core/${MODPY_PYCACHE}Monitor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tinytuya/core/${MODPY_PYCACHE}Monitor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/${MODPY_PYCACHE}XenonDevice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/${MODPY_PYCACHE}XenonDevice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
