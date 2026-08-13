@@ -26,6 +26,7 @@ share/examples/p5-GD/fills.pl
 share/examples/p5-GD/font_list.png
 share/examples/p5-GD/fonttest
 share/examples/p5-GD/gd_example.cgi
+share/examples/p5-GD/png2jpeg.pl
 share/examples/p5-GD/polyline.pl
 share/examples/p5-GD/polys.pl
 share/examples/p5-GD/shapes.pl
