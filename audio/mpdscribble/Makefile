@@ -1,6 +1,6 @@
 COMMENT =		mpd client to scrobble track info to last.fm
 
-V =			0.25
+V =			0.26
 DISTNAME =		mpdscribble-$V
 EXTRACT_SUFX = 		.tar.xz
 
@@ -16,13 +16,14 @@ PERMIT_PACKAGE =	Yes
 # C++
 COMPILER =		base-clang ports-gcc
 
-WANTLIB += c curl gcrypt mpdclient
+WANTLIB += c curl fmt gcrypt mpdclient
 WANTLIB += ${COMPILER_LIBCXX} m
 
 SITES =			http://www.musicpd.org/download/mpdscribble/$V/
 
 LIB_DEPENDS =		net/curl \
 			audio/libmpdclient \
+			devel/fmt \
 			security/libgcrypt
 
 MODULES =		devel/meson
