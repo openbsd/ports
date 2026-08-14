@@ -1,6 +1,6 @@
 COMMENT=	closed caption converter
 
-MODPY_DISTV =	2.2.26
+MODPY_DISTV =	2.3.6
 DISTNAME=	pycaption-${MODPY_DISTV}
 PKGNAME=	py-caption-${MODPY_DISTV}
 
