@@ -1,6 +1,7 @@
 COMMENT=	mirroring/synchronization over low bandwidth links
 
 DISTNAME=	rsync-3.5.0
+REVISION=	0
 
 CATEGORIES=	net
 HOMEPAGE=	https://rsync.samba.org/
@@ -19,6 +20,8 @@ SITES=		https://rsync.samba.org/ftp/rsync/src/ \
 		https://ftp.funet.fi/pub/mirrors/samba.org/pub/rsync/src/
 
 BUILD_DEPENDS=	sysutils/xxhash
+TEST_DEPENDS=	lang/python/3 \
+		shells/bash
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --disable-md2man \
@@ -37,7 +40,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DXXH_INLINE_ALL=1" \
 DEBUG_PACKAGES= ${BUILD_PACKAGES}
 
 .if ${MACHINE_ARCH} == amd64
-CONFIGURE_ARGS += --enable-md5-asm
+CONFIGURE_ARGS += --enable-md5-asm \
+		  --enable-roll-simd \
+		  --enable-roll-asm
 .endif
 
 .if !${FLAVOR:Mminimal}
