@@ -1,7 +1,7 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -115,7 +115,7 @@ zipapp = [
+@@ -116,7 +116,7 @@ zipapp = [
  version.source = "vcs"
  build.hooks.custom = {}
  build.hooks.vcs.version-file = "src/pipx/version.py"
