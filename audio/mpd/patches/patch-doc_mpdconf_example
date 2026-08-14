@@ -50,7 +50,7 @@ Index: doc/mpdconf.example
  # The location of the sticker database.  This is a database which
  # manages dynamic information attached to songs.
  #
- #sticker_file			"$XDG_CACHE_HOME/sticker.sql"
+ #sticker_file			"$XDG_CACHE_HOME/mpd/sticker.sql"
  #sticker_file			"~/.mpd/sticker.sql"
 +sticker_file			"/var/spool/mpd/sticker.sql"
  #
