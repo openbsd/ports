@@ -1,10 +1,8 @@
 COMMENT =	ruby wrapper for comrak rust crate
 
-DISTNAME =	commonmarker-2.6.0
+DISTNAME =	commonmarker-2.9.0
 CATEGORIES =	textproc
 HOMEPAGE =	https://github.com/gjtorikian/commonmarker
-
-REVISION =	0
 
 # MIT License
 PERMIT_PACKAGE =	Yes
@@ -33,7 +31,7 @@ MODCARGO_VENDOR_DIR = ${WRKDIR}/modcargo-crates
 MODCARGO_BUILD = No
 MODCARGO_INSTALL = No
 
-MODCLANG_VERSION = 21
+MODCLANG_VERSION = 22
 
 USE_GMAKE = Yes
 CONFIGURE_ENV =	MAKE=gmake
