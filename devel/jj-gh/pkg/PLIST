@@ -1,0 +1,4 @@
+@bin bin/jj-gh
+share/bash-completion/completions/jj-gh
+share/fish/vendor_completions.d/jj-gh.fish
+share/zsh/site-functions/_jj-gh

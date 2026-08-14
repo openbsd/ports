@@ -1,0 +1,13 @@
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -26,6 +26,9 @@ members = [
+   "tools/jj-gh-config-derive",
+   "tools/print-config-schema",
+ ]
++exclude = [
++  "modcargo-crates/octocrab-0.53.1"
++]
+ 
+ [workspace.dependencies]
+ clap = "4"

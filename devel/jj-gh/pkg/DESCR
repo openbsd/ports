@@ -1,0 +1,15 @@
+jj tools for working with GitHub PRs from your terminal.
+
+- Create PRs locally from your preferred editor, for any revision ID
+- Intelligently supports stacked PRs by choosing the correct base if
+  the revision has an ancestor bookmark for which an open PR exists
+- Enable auto-merge for a PR by its revision ID, without having to know
+  or find its PR number (e.g. jj pr auto-merge zqxy)
+- Create local bookmarks for PRs, including across forks
+  (e.g. jj pr fetch 1234 && jj new pr-1234/..., useful for testing PRs)
+- Show PR metadata like number and CI status in commit graph
+  (e.g. jj pr log)
+- Interactively re-stack PRs (update PR base branch based on local
+  revision graph shape)
+
+All from the comfort of your terminal, without touching GitHub's web UI. 
