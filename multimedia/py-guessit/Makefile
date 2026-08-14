@@ -1,6 +1,6 @@
 COMMENT=	guess information from video filenames
 
-MODPY_DISTV=	4.1.0
+MODPY_DISTV=	4.4.0
 DISTNAME=	guessit-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

@@ -27,8 +27,10 @@ lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}options.${MODPY
 lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}options.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}reutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}reutils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}schema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}schema.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}schema_builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}schema_builder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}schema_generated.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}schema_generated.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}yamlutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}yamlutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/__version__.py
@@ -49,6 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/data/tlds-alpha-by-domain.txt
 lib/python${MODPY_VERSION}/site-packages/guessit/jsonutils.py
 lib/python${MODPY_VERSION}/site-packages/guessit/monkeypatch.py
 lib/python${MODPY_VERSION}/site-packages/guessit/options.py
+lib/python${MODPY_VERSION}/site-packages/guessit/py.typed
 lib/python${MODPY_VERSION}/site-packages/guessit/reutils.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/__init__.py
@@ -193,7 +196,8 @@ lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/type.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/video_codec.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/volume.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/website.py
-lib/python${MODPY_VERSION}/site-packages/guessit/schema.py
+lib/python${MODPY_VERSION}/site-packages/guessit/schema_builder.py
+lib/python${MODPY_VERSION}/site-packages/guessit/schema_generated.py
 lib/python${MODPY_VERSION}/site-packages/guessit/test/
 lib/python${MODPY_VERSION}/site-packages/guessit/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}/
@@ -213,6 +217,8 @@ lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}test_bench
 lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}test_benchmark.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}test_cross_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}test_cross_parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}test_forced_type.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}test_forced_type.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}test_keys.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}test_keys.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}test_main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -277,6 +283,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/test/test_api_unicode_literals.
 lib/python${MODPY_VERSION}/site-packages/guessit/test/test_archive_metadata.py
 lib/python${MODPY_VERSION}/site-packages/guessit/test/test_benchmark.py
 lib/python${MODPY_VERSION}/site-packages/guessit/test/test_cross_parser.py
+lib/python${MODPY_VERSION}/site-packages/guessit/test/test_forced_type.py
 lib/python${MODPY_VERSION}/site-packages/guessit/test/test_keys.py
 lib/python${MODPY_VERSION}/site-packages/guessit/test/test_main.py
 lib/python${MODPY_VERSION}/site-packages/guessit/test/test_options.py
