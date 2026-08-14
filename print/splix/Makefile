@@ -1,9 +1,7 @@
 COMMENT=	CUPS drivers for SPL printers
 
-GH_ACCOUNT=	OpenPrinting
-GH_PROJECT=	splix
-GH_COMMIT=	47a05b3f98a60de8442168db8f9f12bb1c342575
-DISTNAME=	splix-2.0.2pre20251018
+V=		2.0.2
+DISTNAME=	splix-${V}
 
 CATEGORIES=	print
 
@@ -15,6 +13,9 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c cups cupsimage jbig85 m
+
+SITES=		https://github.com/OpenPrinting/splix/releases/download/${V}/
+EXTRACT_SUFX=	.tar.xz
 
 COMPILER=	base-clang ports-gcc base-gcc
 
