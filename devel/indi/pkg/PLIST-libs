@@ -10,6 +10,7 @@ include/libindi/alignment/ClientAPIForMathPluginManagement.h
 include/libindi/alignment/Common.h
 include/libindi/alignment/ConvexHull.h
 include/libindi/alignment/DriverCommon.h
+include/libindi/alignment/HaltonSequence.h
 include/libindi/alignment/InMemoryDatabase.h
 include/libindi/alignment/MapPropertiesToInMemoryDatabase.h
 include/libindi/alignment/MathPlugin.h
@@ -21,6 +22,7 @@ include/libindi/base64.h
 include/libindi/baseclient.h
 include/libindi/basedevice.h
 include/libindi/connectionplugins/
+include/libindi/connectionplugins/connectioni2c.h
 include/libindi/connectionplugins/connectioninterface.h
 include/libindi/connectionplugins/connectionserial.h
 include/libindi/connectionplugins/connectiontcp.h
@@ -36,8 +38,11 @@ include/libindi/fits.h
 include/libindi/fits_extensions.h
 include/libindi/fitsidi.h
 include/libindi/fitskeyword.h
-include/libindi/hidapi.h
+include/libindi/hotplugcapabledevice.h
+include/libindi/hotplugmanager.h
 include/libindi/httplib.h
+include/libindi/imusensorfusion.h
+include/libindi/indi_hidapi.h
 include/libindi/indiapi.h
 include/libindi/indibase.h
 include/libindi/indibasetypes.h
@@ -59,12 +64,16 @@ include/libindi/indifocuserinterface.h
 include/libindi/indigps.h
 include/libindi/indigpsinterface.h
 include/libindi/indiguiderinterface.h
+include/libindi/indiimu.h
+include/libindi/indiimuinterface.h
 include/libindi/indiinputinterface.h
 include/libindi/indijson.hpp
 include/libindi/indilightboxinterface.h
 include/libindi/indilogger.h
 include/libindi/indimacros.h
 include/libindi/indioutputinterface.h
+include/libindi/indipacinterface.h
+include/libindi/indipowerinterface.h
 include/libindi/indiproperties.h
 include/libindi/indiproperty.h
 include/libindi/indipropertybasic.h
@@ -123,6 +132,7 @@ include/libindi/v4l2_decode.h
 lib/indi/
 lib/indi/MathPlugins/
 @so lib/indi/MathPlugins/libindi_Nearest_MathPlugin.so
+@so lib/indi/MathPlugins/libindi_SPK_MathPlugin.so
 @so lib/indi/MathPlugins/libindi_SVD_MathPlugin.so
 @static-lib lib/libindiAlignmentClient.a
 @lib lib/libindiAlignmentDriver.so.${LIBindiAlignmentDriver_VERSION}

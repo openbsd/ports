@@ -1,0 +1,11 @@
+Index: libs/indicore/indicom.c
+--- libs/indicore/indicom.c.orig
++++ libs/indicore/indicom.c
+@@ -51,6 +51,7 @@
+ #include <time.h>
+ 
+ #if !defined(_WIN32) && !defined(__CYGWIN__)
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #endif
+ 

@@ -19,7 +19,7 @@ Index: drivers/telescope/CMakeLists.txt
  target_link_libraries(indi_lx200_TeenAstro indidriver)
  
  install(TARGETS indi_lx200_TeenAstro RUNTIME DESTINATION bin)
-@@ -78,6 +78,8 @@ add_executable(indi_lx200generic
+@@ -81,6 +81,8 @@ add_executable(indi_lx200generic
  
  if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
      target_compile_definitions(indi_lx200generic PRIVATE -D_XOPEN_SOURCE=700)
@@ -28,7 +28,7 @@ Index: drivers/telescope/CMakeLists.txt
  ELSE()
      target_compile_definitions(indi_lx200generic PRIVATE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200809L)
  ENDIF()
-@@ -124,7 +126,7 @@ add_executable(indi_rainbow_telescope
+@@ -130,7 +132,7 @@ add_executable(indi_rainbow_telescope
      rainbow.cpp
      lx200driver.cpp)
  

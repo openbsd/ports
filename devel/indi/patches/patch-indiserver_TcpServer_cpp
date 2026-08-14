@@ -1,0 +1,11 @@
+Index: indiserver/TcpServer.cpp
+--- indiserver/TcpServer.cpp.orig
++++ indiserver/TcpServer.cpp
+@@ -22,6 +22,7 @@
+ #include "ClInfo.hpp"
+ #include "CommandLineArgs.hpp"
+ 
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <fcntl.h>

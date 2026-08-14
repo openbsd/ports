@@ -1,28 +1,21 @@
-INDI is a standard for astronomical instrumentation control. INDI Library is an
-Open Source POSIX implementation of the Instrument-Neutral-Device-Interface
-protocol.
+The INDI (Instrument-Neutral-Device-Interface) protocol is a standard
+for controlling astronomical instruments, for example mounts, cameras
+(CCD, CMOS, DSLR, webcam), focusers, domes, filter wheels, GPS, weather
+stations, etc. The protocol is network-transparent so it can connect
+to remote devices.
 
-INDI core library is composed of the following components:
+INDI Library is an Open Source POSIX implementation of this protocol,
+composed of the following components:
 
 1. INDI Server.
-2. INDI Core Drivers: Hardware drivers that communicate with the equipment.
-Many devices are supported including:
-  - Mounts CCDs, CMOS, Webcams,
-  - DSLRs (Canon, Nikon, Sony, Pentax..etc).
-  - Focusers.
-  - Filter Wheels.
-  - Adaptive Optics.
-  - Domes.
-  - GPS.
-  - Weather Stations.
-  - Controllers.
-  - Auxiliary Devices (switches, watchdog, relays, light sources,
-                       measurement devices..etc).
-3. Client Library: Cross-platform POSIX and Qt5-based client libraries. The
-client libraries can be embedded in 3rd party applications to communicate with
-INDI server and devices.  INDI core device drivers are shipped with INDI library
-by default.
 
-INDI 3rd party drivers are available in a dedicated 3rdparty repository
+2. INDI Core Drivers: hardware drivers that communicate with many
+different pieces of equipment are included with INDI Library.
+
+3. Client Library: Cross-platform POSIX and Qt5-based client libraries.
+The client libraries can be embedded in 3rd party applications to
+communicate with INDI server and devices.
+
+Various 3rd party drivers are also available in a dedicated repository
 (https://github.com/indilib/indi-3rdparty) and maintained by their respective
 owners.

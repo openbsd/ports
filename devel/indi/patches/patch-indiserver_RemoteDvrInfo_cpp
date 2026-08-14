@@ -1,0 +1,11 @@
+Index: indiserver/RemoteDvrInfo.cpp
+--- indiserver/RemoteDvrInfo.cpp.orig
++++ indiserver/RemoteDvrInfo.cpp
+@@ -23,6 +23,7 @@
+ #include "CommandLineArgs.hpp"
+ 
+ #include <cstdio>
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <netdb.h>
+ 

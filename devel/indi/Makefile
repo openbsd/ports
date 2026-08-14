@@ -1,7 +1,7 @@
-COMMENT-main=		Instrument-Neutral-Device-Interface protocol implemtation
-COMMENT-libs=		INDI client libraries
+COMMENT-main=		astronomical instrument automation/control software
+COMMENT-libs=		Instrument-Neutral-Device-Interface protocol libraries
 
-GH_TAGNAME=		v2.1.2.1
+GH_TAGNAME=		v2.2.4.2
 GH_ACCOUNT=		indilib
 GH_PROJECT=		indi
 
@@ -9,10 +9,10 @@ HOMEPAGE =		https://indilib.org/
 
 PKGNAME-libs=		lib${PKGNAME}
 
-SHARED_LIBS +=	indiAlignmentDriver       0.2 # 0.0
-SHARED_LIBS +=	indiclient                1.0 # 0.0
-SHARED_LIBS +=	indidriver                0.2 # 0.0
-SHARED_LIBS +=	indilx200                 0.2 # 0.0
+SHARED_LIBS +=	indiAlignmentDriver       1.0
+SHARED_LIBS +=	indiclient                1.1
+SHARED_LIBS +=	indidriver                1.0
+SHARED_LIBS +=	indilx200                 1.0
 
 CATEGORIES=		devel
 

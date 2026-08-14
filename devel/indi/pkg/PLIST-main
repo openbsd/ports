@@ -1,16 +1,27 @@
 @bin bin/indi_Excalibur
 @bin bin/indi_aaf2_focus
+@bin bin/indi_aagsolo_weather
 @bin bin/indi_activefocuser_focus
 @bin bin/indi_alluna_tcs2
+@bin bin/indi_alpaca_ccd
+@bin bin/indi_alpaca_dome
+@bin bin/indi_alpaca_filterwheel
+@bin bin/indi_alpaca_focuser
+@bin bin/indi_alpaca_server
+@bin bin/indi_alpaca_telescope
 @bin bin/indi_alto
 @bin bin/indi_arduinost4
+@bin bin/indi_askar_waf_focus
 @bin bin/indi_astrolink4
 @bin bin/indi_astrolink4mini2
 @bin bin/indi_astromech_lpm
 @bin bin/indi_astromechfoc
 @bin bin/indi_astrometry
 @bin bin/indi_astrotrac_telescope
+@bin bin/indi_avalon_upas
 @bin bin/indi_baader_dome
+@bin bin/indi_camelot_rotator
+@bin bin/indi_celestron_dewpower
 @bin bin/indi_celestron_gps
 @bin bin/indi_celestron_sct_focus
 @bin bin/indi_cheapodc
@@ -36,12 +47,17 @@ bin/indi_eq500x_telescope
 @bin bin/indi_falconv2_rotator
 @bin bin/indi_fcusb_focus
 @bin bin/indi_flipflat
+@bin bin/indi_gemini_flatpanel
 @bin bin/indi_gemini_focus
+@bin bin/indi_getdevice
 @bin bin/indi_getprop
 @bin bin/indi_giotto
 @bin bin/indi_gpusb
+@bin bin/indi_hakos_roof
 @bin bin/indi_hid_test
 @bin bin/indi_hitecastrodc_focus
+@bin bin/indi_hitech_weather
+@bin bin/indi_iafscaa_focus
 @bin bin/indi_ieaf_focus
 @bin bin/indi_ieq_telescope
 @bin bin/indi_ieqlegacy_telescope
@@ -59,8 +75,10 @@ bin/indi_lx200_16
 bin/indi_lx200_OnStep
 bin/indi_lx200_OpenAstroTech
 @bin bin/indi_lx200_TeenAstro
+bin/indi_lx200_esp32go
 bin/indi_lx200_pegasus_nyx101
 bin/indi_lx200am5
+bin/indi_lx200ap_legacy
 bin/indi_lx200ap_v2
 bin/indi_lx200autostar
 @bin bin/indi_lx200basic
@@ -78,8 +96,10 @@ bin/indi_lx200zeq25
 @bin bin/indi_mbox_weather
 @bin bin/indi_meta_weather
 @bin bin/indi_microtouch_focus
+@bin bin/indi_mlastro_rpa
 @bin bin/indi_moonlite_focus
 @bin bin/indi_moonlitedro_focus
+@bin bin/indi_mxhd_telescope
 @bin bin/indi_myDewControllerPro
 @bin bin/indi_mydcp4esp32
 @bin bin/indi_myfocuserpro2_focus
@@ -93,6 +113,8 @@ bin/indi_lx200zeq25
 @bin bin/indi_optec_wheel
 @bin bin/indi_paramount_telescope
 @bin bin/indi_pegasus_flatmaster
+@bin bin/indi_pegasus_flatmaster_neo
+@bin bin/indi_pegasus_flatmaster_wifi
 @bin bin/indi_pegasus_focuscube
 @bin bin/indi_pegasus_focuscube3
 @bin bin/indi_pegasus_ppb
@@ -100,11 +122,13 @@ bin/indi_lx200zeq25
 @bin bin/indi_pegasus_prodigyMF
 @bin bin/indi_pegasus_scopsoag
 @bin bin/indi_pegasus_spb
-@bin bin/indi_pegasus_uch
 @bin bin/indi_pegasus_upb
+@bin bin/indi_pegasus_upb3
 @bin bin/indi_pegasusindigo_wheel
 @bin bin/indi_perfectstar_focus
+@bin bin/indi_pinefeat_cef_focus
 @bin bin/indi_planewave_deltat
+@bin bin/indi_planewave_rotator
 @bin bin/indi_planewave_telescope
 @bin bin/indi_pmc8_telescope
 @bin bin/indi_pyxis_rotator
@@ -114,24 +138,32 @@ bin/indi_lx200zeq25
 @bin bin/indi_quantum_wheel
 @bin bin/indi_rainbow_telescope
 @bin bin/indi_rainbowrsf_focus
+@bin bin/indi_rasa_filtercube_wheel
 @bin bin/indi_rbfocus_focus
 @bin bin/indi_rigel_dome
 @bin bin/indi_robo_focus
 @bin bin/indi_rolloff_dome
+@bin bin/indi_rti_dome
 @bin bin/indi_rtlsdr
+@bin bin/indi_safetymonitor
 @bin bin/indi_scopedome_dome
 @bin bin/indi_script_dome
 @bin bin/indi_script_telescope
+@bin bin/indi_seestar_ccd
 @bin bin/indi_sestosenso2_focus
+@bin bin/indi_sestosenso3_focus
 @bin bin/indi_sestosenso_focus
 @bin bin/indi_setprop
 @bin bin/indi_siefs_focus
 @bin bin/indi_simulator_ccd
 @bin bin/indi_simulator_dome
+@bin bin/indi_simulator_dustcover
 @bin bin/indi_simulator_focus
 @bin bin/indi_simulator_gps
 @bin bin/indi_simulator_guide
+@bin bin/indi_simulator_io
 @bin bin/indi_simulator_lightpanel
+@bin bin/indi_simulator_pac
 @bin bin/indi_simulator_receiver
 @bin bin/indi_simulator_rotator
 @bin bin/indi_simulator_sqm
@@ -146,8 +178,10 @@ bin/indi_lx200zeq25
 @bin bin/indi_spectracyber
 @bin bin/indi_sqm_weather
 @bin bin/indi_star2000
+@bin bin/indi_startech_hub
 @bin bin/indi_steeldrive2_focus
 @bin bin/indi_steeldrive_focus
+@bin bin/indi_svbony_powerbox
 @bin bin/indi_synscan_telescope
 @bin bin/indi_synscanlegacy_telescope
 bin/indi_tcfs3_focus
@@ -156,24 +190,34 @@ bin/indi_tcfs3_focus
 @bin bin/indi_temma_telescope
 @bin bin/indi_terrans_powerboxgo_v2
 @bin bin/indi_terrans_powerboxpro_v2
+bin/indi_touptek_sh20
 @bin bin/indi_trutech_wheel
 @bin bin/indi_universalror_dome
+@bin bin/indi_ups_safety
 @bin bin/indi_uranus_weather
 @bin bin/indi_usbdewpoint
 @bin bin/indi_usbfocusv3_focus
 @bin bin/indi_v4l2_ccd
 @bin bin/indi_vantage_weather
+@bin bin/indi_wake_on_lan
 @bin bin/indi_wanderer_cover
+@bin bin/indi_wanderer_dew_terminator
+@bin bin/indi_wanderer_eclipse
+@bin bin/indi_wanderer_eta
 @bin bin/indi_wanderer_lite_rotator
 @bin bin/indi_wanderer_rotator_lite_v2
 @bin bin/indi_wanderer_rotator_mini
+@bin bin/indi_wanderer_snowflake_wheel
 @bin bin/indi_wandererbox_plus_v3
 @bin bin/indi_wandererbox_pro_v3
 @bin bin/indi_wanderercover_v4_ec
+@bin bin/indi_wanderercover_v4_pro_ec
 @bin bin/indi_watchdog
 @bin bin/indi_watcher_weather
 @bin bin/indi_wavesharemodbus_relay
+@bin bin/indi_weather_safety_alpaca
 @bin bin/indi_weather_safety_proxy
+@bin bin/indi_weatherflow_weather
 @bin bin/indi_xagyl_wheel
 @bin bin/indiserver
 @bin bin/shelyak_usis
