@@ -2,6 +2,7 @@ COMMENT =	RSS/Atom feed reader for text terminals
 
 V =		2.44
 DISTNAME =	newsboat-$V
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -52,6 +53,8 @@ ALL_TARGET =	all doc
 
 CONFIGURE_STYLE = cargo simple
 CONFIGURE_SCRIPT = config.sh
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-configure:
 	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
