@@ -1,4 +1,4 @@
-VERSION =		4.24.5
+VERSION =		4.24.6
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -15,7 +15,7 @@ SHARED_LIBS =		dcerpc			3.0 \
 			dcerpc-samr		1.0 \
 			dcerpc-server-core	3.2 \
 			ldb			2.4 \
-			ndr			4.0 \
+			ndr			4.1 \
 			ndr-krb5pac		1.4 \
 			ndr-nbt			2.1 \
 			ndr-standard		6.2 \
