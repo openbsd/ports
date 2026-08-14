@@ -1,8 +1,10 @@
 COMMENT=		osinfo database files
 
-V=			20251212
+V=			20260812
 DISTNAME=		osinfo-db-${V}
 EXTRACT_SUFX=		.tar.xz
+
+SITES=			${SITE_OSINFO:=osinfo-db/-/releases/v${V}/downloads/}
 
 PKG_ARCH=		*
 NO_BUILD=		Yes
@@ -26,11 +28,11 @@ do-install:
 # cd ../../../tests/isodata/openbsd/
 # mkdir openbsdX.Y+1 && cd openbsdX.Y+1
 # - fetch amd64, arm64 and i386 install and boot-only ISOs
-# isoinfo -d -i cd79.iso >openbsd-7.9-arm64-bootonly.iso.txt
-# isoinfo -d -i install79.iso >openbsd-7.9-arm64.iso.txt
-# isoinfo -d -i cd79.iso >openbsd-7.9-amd64-bootonly.iso.txt
-# isoinfo -d -i install79.iso >openbsd-7.9-amd64.iso.txt
-# isoinfo -d -i cd79.iso >openbsd-7.9-i386-bootonly.iso.txt
-# isoinfo -d -i install79.iso >openbsd-7.9-i386.iso.txt
+# isoinfo -d -i cd80.iso >openbsd-7.9-arm64-bootonly.iso.txt
+# isoinfo -d -i install80.iso >openbsd-7.9-arm64.iso.txt
+# isoinfo -d -i cd80.iso >openbsd-7.9-amd64-bootonly.iso.txt
+# isoinfo -d -i install80.iso >openbsd-7.9-amd64.iso.txt
+# isoinfo -d -i cd80.iso >openbsd-7.9-i386-bootonly.iso.txt
+# isoinfo -d -i install80.iso >openbsd-7.9-i386.iso.txt
 
 .include <bsd.port.mk>

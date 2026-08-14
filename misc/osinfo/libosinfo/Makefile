@@ -4,6 +4,8 @@ DISTNAME=		libosinfo-${V}
 
 SHARED_LIBS += osinfo-1.0                1.6 # 0.1012.0
 
+SITES=			${SITE_OSINFO:=libosinfo/-/releases/v${V}/downloads/}
+
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl soup-3.0 xml2 xslt
 
 MODULES=		devel/meson \
