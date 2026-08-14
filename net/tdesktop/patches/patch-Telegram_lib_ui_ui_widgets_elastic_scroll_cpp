@@ -1,0 +1,62 @@
+fix scroll on X11
+https://github.com/desktop-app/lib_ui/pull/339
+
+Index: Telegram/lib_ui/ui/widgets/elastic_scroll.cpp
+--- Telegram/lib_ui/ui/widgets/elastic_scroll.cpp.orig
++++ Telegram/lib_ui/ui/widgets/elastic_scroll.cpp
+@@ -867,7 +867,7 @@ bool ElasticScroll::eventHook(QEvent *e) {
+ 	switch (e->type()) {
+ 	case QEvent::ScrollPrepare: {
+ 		QScrollPrepareEvent *se = static_cast<QScrollPrepareEvent *>(e);
+-		se->setViewportSize(QSizeF(viewport()->size()));
++		se->setViewportSize(QSizeF(size()));
+ 		se->setContentPosRange(QRectF(
+ 			0,
+ 			0,
+@@ -1029,21 +1029,29 @@ bool ElasticScroll::handleWheelEvent(not_null<QWheelEv
+ 	const auto guard = gsl::finally([&] {
+ 		_lastScroll = now;
+ 	});
+-	auto unmultiplied = ScrollDelta(e, touch);
++	if (phase == Qt::ScrollBegin) {
++		_wheelDeltaRemainder = {};
++	}
++	auto exactPixels = ScrollDeltaF(e, touch);
+ 	if (ownAxisLocked) {
+ 		if (_vertical) {
+-			unmultiplied.setX(0);
++			exactPixels.setX(0.);
++			_wheelDeltaRemainder.setX(0.);
+ 		} else {
+-			unmultiplied.setY(0);
++			exactPixels.setY(0.);
++			_wheelDeltaRemainder.setY(0.);
+ 		}
+ 	}
+ 	const auto multiply = e->modifiers()
+ 		& (Qt::ControlModifier | Qt::ShiftModifier);
+-	const auto pixels = multiply
+-		? QPoint(
+-			(unmultiplied.x() * std::max(width(), 120) / 120.),
+-			(unmultiplied.y() * std::max(height(), 120) / 120.))
+-		: unmultiplied;
++	if (multiply) {
++		exactPixels = QPointF(
++			exactPixels.x() * std::max(width(), 120) / 120.,
++			exactPixels.y() * std::max(height(), 120) / 120.);
++	}
++	exactPixels += _wheelDeltaRemainder;
++	const auto pixels = exactPixels.toPoint();
++	_wheelDeltaRemainder = exactPixels - QPointF(pixels);
+ 	auto ignore = false;
+ 	auto delta = _vertical ? -pixels.y() : -pixels.x();
+ 	if (!ownAxisLocked
+@@ -1092,7 +1100,7 @@ bool ElasticScroll::handleWheelEvent(not_null<QWheelEv
+ 		case Qt::ScrollBegin:
+ 		case Qt::ScrollUpdate: {
+ 			if (phase == Qt::ScrollBegin
+-				&& !pixels.isNull()
++				&& !exactPixels.isNull()
+ 				&& _scroller->state() == QScroller::Scrolling) {
+ 				// On macOS, when Qt loses the race detecting that a
+ 				// momentum phase follows the finger lift, the OS momentum

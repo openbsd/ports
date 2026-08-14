@@ -1,0 +1,14 @@
+fix scroll on X11
+https://github.com/desktop-app/lib_ui/pull/339
+
+Index: Telegram/lib_ui/ui/widgets/elastic_scroll.h
+--- Telegram/lib_ui/ui/widgets/elastic_scroll.h.orig
++++ Telegram/lib_ui/ui/widgets/elastic_scroll.h
+@@ -334,6 +334,7 @@ class ElasticScroll : public RpWidget { (private)
+ 
+ 	QPointer<QScroller> _scroller;
+ 	QPoint _wheelPos;
++	QPointF _wheelDeltaRemainder;
+ 
+ 	base::Timer _touchTimer;
+ 	base::Timer _touchScrollTimer;
