@@ -6,7 +6,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			7.0.6
-REVISION =		0
+REVISION =		1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -40,7 +40,7 @@ WANTLIB += m minizip openal protobuf-lite qrcodegencpp rnnoise
 WANTLIB += swresample swscale tg_owt xxhash z
 
 # dlopen()ed
-WANTLIB += xcb xcb-keysyms xcb-record xcb-screensaver
+WANTLIB += webkitgtk-6.0 xcb xcb-keysyms xcb-record xcb-screensaver
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -76,6 +76,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			www/ada \
+			www/webkitgtk4,webkitgtk60 \
 			x11/qt6/qtdeclarative \
 			x11/qt6/qtsvg \
 			x11/qt6/qtwayland
