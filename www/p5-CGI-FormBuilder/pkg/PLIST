@@ -1,4 +1,3 @@
-${P5SITE}/CGI/
 ${P5SITE}/CGI/FormBuilder/
 ${P5SITE}/CGI/FormBuilder.pm
 ${P5SITE}/CGI/FormBuilder.pod
@@ -6,9 +5,14 @@ ${P5SITE}/CGI/FormBuilder/Field/
 ${P5SITE}/CGI/FormBuilder/Field.pm
 ${P5SITE}/CGI/FormBuilder/Field/button.pm
 ${P5SITE}/CGI/FormBuilder/Field/checkbox.pm
+${P5SITE}/CGI/FormBuilder/Field/date.pm
+${P5SITE}/CGI/FormBuilder/Field/datetime.pm
+${P5SITE}/CGI/FormBuilder/Field/datetime_local.pm
+${P5SITE}/CGI/FormBuilder/Field/email.pm
 ${P5SITE}/CGI/FormBuilder/Field/file.pm
 ${P5SITE}/CGI/FormBuilder/Field/hidden.pm
 ${P5SITE}/CGI/FormBuilder/Field/image.pm
+${P5SITE}/CGI/FormBuilder/Field/number.pm
 ${P5SITE}/CGI/FormBuilder/Field/password.pm
 ${P5SITE}/CGI/FormBuilder/Field/radio.pm
 ${P5SITE}/CGI/FormBuilder/Field/select.pm
@@ -16,10 +20,13 @@ ${P5SITE}/CGI/FormBuilder/Field/static.pm
 ${P5SITE}/CGI/FormBuilder/Field/submit.pm
 ${P5SITE}/CGI/FormBuilder/Field/text.pm
 ${P5SITE}/CGI/FormBuilder/Field/textarea.pm
+${P5SITE}/CGI/FormBuilder/Field/time.pm
+${P5SITE}/CGI/FormBuilder/Field/url.pm
 ${P5SITE}/CGI/FormBuilder/Messages/
 ${P5SITE}/CGI/FormBuilder/Messages.pm
 ${P5SITE}/CGI/FormBuilder/Messages/C.pm
 ${P5SITE}/CGI/FormBuilder/Messages/_example.pm
+${P5SITE}/CGI/FormBuilder/Messages/base.pm
 ${P5SITE}/CGI/FormBuilder/Messages/da.pm
 ${P5SITE}/CGI/FormBuilder/Messages/da_DK.pm
 ${P5SITE}/CGI/FormBuilder/Messages/de.pm
@@ -35,6 +42,10 @@ ${P5SITE}/CGI/FormBuilder/Messages/ja.pm
 ${P5SITE}/CGI/FormBuilder/Messages/ja_JP.pm
 ${P5SITE}/CGI/FormBuilder/Messages/no.pm
 ${P5SITE}/CGI/FormBuilder/Messages/no_NO.pm
+${P5SITE}/CGI/FormBuilder/Messages/ru.pm
+${P5SITE}/CGI/FormBuilder/Messages/ru_RU.pm
+${P5SITE}/CGI/FormBuilder/Messages/sv.pm
+${P5SITE}/CGI/FormBuilder/Messages/sv_SE.pm
 ${P5SITE}/CGI/FormBuilder/Messages/tr.pm
 ${P5SITE}/CGI/FormBuilder/Messages/tr_TR.pm
 ${P5SITE}/CGI/FormBuilder/Multi.pm
@@ -44,6 +55,7 @@ ${P5SITE}/CGI/FormBuilder/Source/File.pm
 ${P5SITE}/CGI/FormBuilder/Template/
 ${P5SITE}/CGI/FormBuilder/Template.pm
 ${P5SITE}/CGI/FormBuilder/Template/Builtin.pm
+${P5SITE}/CGI/FormBuilder/Template/CGI_SSI.pm
 ${P5SITE}/CGI/FormBuilder/Template/Div.pm
 ${P5SITE}/CGI/FormBuilder/Template/Fast.pm
 ${P5SITE}/CGI/FormBuilder/Template/HTML.pm
@@ -59,6 +71,7 @@ ${P5SITE}/CGI/FormBuilder/Util.pm
 @man man/man3p/CGI::FormBuilder::Source::File.3p
 @man man/man3p/CGI::FormBuilder::Template.3p
 @man man/man3p/CGI::FormBuilder::Template::Builtin.3p
+@man man/man3p/CGI::FormBuilder::Template::CGI_SSI.3p
 @man man/man3p/CGI::FormBuilder::Template::Div.3p
 @man man/man3p/CGI::FormBuilder::Template::Fast.3p
 @man man/man3p/CGI::FormBuilder::Template::HTML.3p

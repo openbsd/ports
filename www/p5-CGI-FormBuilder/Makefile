@@ -1,22 +1,24 @@
-COMMENT=	easily generate and process stateful forms
+COMMENT =	easily generate and process stateful forms
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	CGI-FormBuilder-3.0501
-REVISION=	1
-CATEGORIES=	www
-EXTRACT_SUFX=	.tgz
+DISTNAME =	CGI-FormBuilder-3.20
+PKGNAME =	p5-CGI-FormBuilder-3.2000
+CPAN_AUTHOR =	BIGPRESH
 
-HOMEPAGE=	http://www.formbuilder.org/
+CATEGORIES =	www
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-TEST_DEPENDS=textproc/p5-Template \
-		textproc/p5-Text-Template \
-		www/p5-HTML-Template
+MODULES =		cpan
 
-post-extract:
-	rm ${WRKSRC}/lib/CGI/FormBuilder.pm.orig
+RUN_DEPENDS =		www/p5-CGI
+TEST_DEPENDS =		textproc/p5-CGI-FastTemplate>=1.09 \
+			textproc/p5-Template>=2.08 \
+			textproc/p5-Text-Template>=1.43 \
+			www/p5-CGI-SSI>=0.92 \
+			www/p5-CGI-Session>=3.95 \
+			www/p5-HTML-Template>=2.06
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+Remove a leftover debug warn() from the datetime-local field.
+https://github.com/formbuilder/formbuilder/pull/14
+
+Index: lib/CGI/FormBuilder/Field/datetime_local.pm
+--- lib/CGI/FormBuilder/Field/datetime_local.pm.orig
++++ lib/CGI/FormBuilder/Field/datetime_local.pm
+@@ -130,7 +130,6 @@ sub tag {
+         # setup the value, convert standard if necessary
+         if ($value=~ m/([0-9]{4,4}-[0-9]{2,2}-[0-9]{2,2}) ([0-9]{2,2}[:-][0-9]{2,2}[:-][0-9]{2,2})/){
+ 			$value=$1 . 'T' . $2;
+-			warn "### new value: $value",
+ 		}
+         $attr->{value} = $value;      # override
+         delete $attr->{value} unless defined $value;
