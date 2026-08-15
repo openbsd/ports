@@ -11,6 +11,10 @@ PKGNAME-libretro =	libretro-mgba-$V
 MULTI_PACKAGES =	-main -qt -libretro
 DEBUG_PACKAGES =	-main -qt -libretro
 
+REVISION-main =		0
+REVISION-qt =		0
+REVISION-libretro =	0
+
 .include <bsd.port.arch.mk>
 
 SHARED_LIBS +=  mgba                      2.0 # 0.1
@@ -19,7 +23,7 @@ CATEGORIES =		emulators
 
 HOMEPAGE =		https://mgba.io/
 
-MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
+MAINTAINER =		Anthony J. Bentley <bentley@openbsd.org>
 
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
@@ -50,6 +54,7 @@ RUN_DEPENDS-qt =	devel/desktop-file-utils \
 
 CONFIGURE_ARGS +=	-DBUILD_LIBRETRO=ON \
 			-DENABLE_SCRIPTING=OFF \
+			-DMARKDOWN=OFF \
 			-DUSE_DISCORD_RPC=OFF \
 			-DUSE_PLEDGE_UNVEIL=ON \
 			-DUSE_MINIZIP=OFF
