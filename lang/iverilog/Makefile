@@ -4,6 +4,7 @@ V=			13_0
 DISTNAME=		iverilog-${V}
 PKGNAME=		iverilog-${V:S/_/./}
 CATEGORIES=		lang devel
+REVISION =		0
 
 HOMEPAGE =		https://steveicarus.github.io/iverilog/
 
@@ -36,6 +37,8 @@ DOC_DIR=		${PREFIX}/share/doc/iverilog
 
 # So ports-gcc can find bzlib.h
 CFLAGS+=		-I${LOCALBASE}/include
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}

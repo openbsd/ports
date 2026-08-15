@@ -51,10 +51,6 @@ lib/ivl/vvp.conf
 @man man/man1/iverilog.1
 @man man/man1/vvp.1
 share/doc/iverilog/
-@comment share/doc/iverilog/BUGS.txt
-@comment share/doc/iverilog/cygwin.txt
 share/doc/iverilog/COPYING
 share/doc/iverilog/INSTALL
 share/doc/iverilog/README.md
-@comment share/doc/iverilog/macosx.txt
-@comment share/doc/iverilog/mingw.txt
