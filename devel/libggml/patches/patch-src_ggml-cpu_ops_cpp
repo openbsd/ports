@@ -1,7 +1,7 @@
 Index: src/ggml-cpu/ops.cpp
 --- src/ggml-cpu/ops.cpp.orig
 +++ src/ggml-cpu/ops.cpp
-@@ -9725,7 +9725,7 @@ static void ggml_compute_forward_ssm_scan_f32(
+@@ -9728,7 +9728,7 @@ static void ggml_compute_forward_ssm_scan_f32(
                          }
  
                          sumf = GGML_F32xt_REDUCE_ONE(sum);
@@ -10,7 +10,7 @@ Index: src/ggml-cpu/ops.cpp
                          // todo: RVV implementation
                          const int np = 0;
      #else
-@@ -11264,7 +11264,7 @@ static void ggml_compute_forward_rwkv_wkv7_f32(
+@@ -11274,7 +11274,7 @@ static void ggml_compute_forward_rwkv_wkv7_f32(
      int64_t h_stride_2d = head_size * head_size;
  
      #if defined(GGML_SIMD)

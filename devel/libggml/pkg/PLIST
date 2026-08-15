@@ -19,8 +19,8 @@ include/ggml-zendnn.h
 include/ggml.h
 include/gguf.h
 lib/cmake/ggml/
+lib/cmake/ggml/ggml-config-version.cmake
 lib/cmake/ggml/ggml-config.cmake
-lib/cmake/ggml/ggml-version.cmake
 @lib lib/libggml-base.so.${LIBggml-base_VERSION}
 %%cpu%%
 %%amd64%%
