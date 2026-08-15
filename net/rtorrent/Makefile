@@ -1,6 +1,7 @@
 COMMENT =		ncurses BitTorrent client based on libTorrent
 
-DISTNAME =		rtorrent-0.16.11
+V =			0.16.20
+DISTNAME =		rtorrent-$V
 CATEGORIES =		net
 
 HOMEPAGE =		https://rakshasa.github.io/rtorrent/
@@ -16,7 +17,7 @@ WANTLIB += ngtcp2_crypto_libressl ssl torrent z
 
 COMPILER =		base-clang ports-gcc
 
-SITES =			https://github.com/rakshasa/rtorrent-archive/raw/master/
+SITES =			https://github.com/rakshasa/rtorrent/releases/download/v$V/
 
 LIB_DEPENDS =		net/libtorrent \
 			net/curl
