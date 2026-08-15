@@ -8,10 +8,13 @@ MODGO_VERSION =	v0.0.0-20260728163848-c2f86b7abde3
 
 V =		0.22.0
 DISTNAME =	aerc-$V
+REVISION =	0
 
 CATEGORIES =	mail
 
 HOMEPAGE =	https://aerc-mail.org
+
+MAINTAINER =	Andrew Kloet <andrew@kloet.net>
 
 # MIT
 PERMIT_PACKAGE = Yes
