@@ -46,8 +46,8 @@ include/mtmd-debug.h
 include/mtmd-helper.h
 include/mtmd.h
 lib/cmake/llama/
+lib/cmake/llama/llama-config-version.cmake
 lib/cmake/llama/llama-config.cmake
-lib/cmake/llama/llama-version.cmake
 @so lib/libllama-batched-bench-impl.so
 @so lib/libllama-bench-impl.so
 @so lib/libllama-cli-impl.so
