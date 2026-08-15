@@ -12,7 +12,6 @@ lib/ivl/
 lib/ivl/blif-s.conf
 lib/ivl/blif.conf
 @bin lib/ivl/blif.tgt
-@bin lib/ivl/cadpli.vpl
 lib/ivl/include/
 lib/ivl/include/constants.vams
 lib/ivl/include/disciplines.vams
@@ -47,33 +46,15 @@ lib/ivl/vlog95.conf
 lib/ivl/vvp-s.conf
 lib/ivl/vvp.conf
 @bin lib/ivl/vvp.tgt
-@static-lib lib/libveriuser.a
 @static-lib lib/libvpi.a
 @man man/man1/iverilog-vpi.1
 @man man/man1/iverilog.1
 @man man/man1/vvp.1
 share/doc/iverilog/
 @comment share/doc/iverilog/BUGS.txt
-share/doc/iverilog/QUICK_START.txt
-share/doc/iverilog/attributes.txt
 @comment share/doc/iverilog/cygwin.txt
-share/doc/iverilog/developer-quick-start.txt
-share/doc/iverilog/extensions.txt
-share/doc/iverilog/glossary.txt
-share/doc/iverilog/ieee1364-notes.txt
-share/doc/iverilog/ivl_target.txt
-share/doc/iverilog/ivlpp/
-share/doc/iverilog/ivlpp/ivlpp.txt
-share/doc/iverilog/lpm.txt
+share/doc/iverilog/COPYING
+share/doc/iverilog/INSTALL
+share/doc/iverilog/README.md
 @comment share/doc/iverilog/macosx.txt
-share/doc/iverilog/mingw-cross.txt
 @comment share/doc/iverilog/mingw.txt
-share/doc/iverilog/netlist.txt
-share/doc/iverilog/swift.txt
-share/doc/iverilog/t-dll.txt
-share/doc/iverilog/va_math.txt
-share/doc/iverilog/vpi.txt
-share/doc/iverilog/vvp/
-share/doc/iverilog/vvp/README.txt
-share/doc/iverilog/vvp/opcodes.txt
-share/doc/iverilog/xilinx-hint.txt

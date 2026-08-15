@@ -1,6 +1,6 @@
 COMMENT=		Verilog simulation and synthesis tool
 
-V=			12_0
+V=			13_0
 DISTNAME=		iverilog-${V}
 PKGNAME=		iverilog-${V:S/_/./}
 CATEGORIES=		lang devel
@@ -38,9 +38,9 @@ DOC_DIR=		${PREFIX}/share/doc/iverilog
 CFLAGS+=		-I${LOCALBASE}/include
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOC_DIR}/{ivlpp,vvp}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOC_DIR}
-	${INSTALL_DATA} ${WRKSRC}/vvp/{README,opcodes}.txt ${DOC_DIR}/vvp/
-	${INSTALL_DATA} ${WRKSRC}/ivlpp/ivlpp.txt ${DOC_DIR}/ivlpp/
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOC_DIR}
 
 .include <bsd.port.mk>
