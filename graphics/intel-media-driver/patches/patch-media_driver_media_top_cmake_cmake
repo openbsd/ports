@@ -2,16 +2,16 @@ https://github.com/intel/media-driver/pull/1785
 Index: media_driver/media_top_cmake.cmake
 --- media_driver/media_top_cmake.cmake.orig
 +++ media_driver/media_top_cmake.cmake
-@@ -625,7 +625,7 @@ set_target_properties(${LIB_NAME} PROPERTIES LINK_FLAG
- set_target_properties(${LIB_NAME}        PROPERTIES PREFIX "")
- set_target_properties(${LIB_NAME_STATIC} PROPERTIES PREFIX "")
+@@ -645,7 +645,7 @@ set_target_properties(${LIB_NAME_STATIC} PROPERTIES PR
+ target_link_libraries(${LIB_NAME} ${MEDIA_GMM_INTERFACE_LIBS})
+ target_link_libraries(${LIB_NAME_STATIC} ${MEDIA_GMM_INTERFACE_LIBS})
  
 -set(MEDIA_LINK_EXTERNAL_LIBS "${PKG_PCIACCESS_LIBRARIES} m pthread dl")
 +set(MEDIA_LINK_EXTERNAL_LIBS "${PKG_PCIACCESS_LIBRARIES} m pthread")
  if(Backtrace_FOUND)
      set(MEDIA_LINK_EXTERNAL_LIBS "${MEDIA_LINK_EXTERNAL_LIBS} ${Backtrace_LIBRARY}")
  endif()
-@@ -653,7 +653,7 @@ if (NOT DEFINED INCLUDED_LIBS OR "${INCLUDED_LIBS}" ST
+@@ -673,7 +673,7 @@ if (NOT DEFINED INCLUDED_LIBS OR "${INCLUDED_LIBS}" ST
      endif()
  
      target_compile_options( ${LIB_NAME} PUBLIC ${LIBGMM_CFLAGS_OTHER})
