@@ -64,5 +64,6 @@ lib/qt6/plugins/kf6/ktexttemplate/
 @so lib/qt6/plugins/kf6/ktexttemplate/ktexttemplate_defaulttags.so
 @so lib/qt6/plugins/kf6/ktexttemplate/ktexttemplate_i18ntags.so
 @so lib/qt6/plugins/kf6/ktexttemplate/ktexttemplate_loadertags.so
+@so lib/qt6/plugins/kf6/ktexttemplate/ktexttemplate_scriptabletags.so
 share/qlogging-categories6/
 share/qlogging-categories6/ktexttemplate.categories

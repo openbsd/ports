@@ -1,8 +1,8 @@
 COMMENT =	KDE safe desktop-wide storage for passwords
 DISTNAME =	kwallet-${VERSION}
 
-SHARED_LIBS +=  KF6Wallet                 0.0 # 0.0
-SHARED_LIBS +=  KF6WalletBackend          0.0 # 0.0
+SHARED_LIBS +=  KF6Wallet                 1.0 # 0.0
+SHARED_LIBS +=  KF6WalletBackend          0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6Notifications

@@ -3,7 +3,7 @@ DISTNAME =	kcalendarcore-${VERSION}
 
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF6CalendarCore           0.1 # 0.0
+SHARED_LIBS +=  KF6CalendarCore           0.2 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Qml
 WANTLIB += ical icalss icalvcal m pyside6.abi3 ${MODPY_WANTLIB} shiboken6.abi3

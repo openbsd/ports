@@ -172,6 +172,7 @@ share/doc/ECM/html/_sources/find-module/FindIcoTool.rst.txt
 share/doc/ECM/html/_sources/find-module/FindInotify.rst.txt
 share/doc/ECM/html/_sources/find-module/FindIsoCodes.rst.txt
 share/doc/ECM/html/_sources/find-module/FindKF5.rst.txt
+share/doc/ECM/html/_sources/find-module/FindKF6.rst.txt
 share/doc/ECM/html/_sources/find-module/FindLibExiv2.rst.txt
 share/doc/ECM/html/_sources/find-module/FindLibGit2.rst.txt
 share/doc/ECM/html/_sources/find-module/FindLibMount.rst.txt
@@ -285,6 +286,7 @@ share/doc/ECM/html/find-module/FindIcoTool.html
 share/doc/ECM/html/find-module/FindInotify.html
 share/doc/ECM/html/find-module/FindIsoCodes.html
 share/doc/ECM/html/find-module/FindKF5.html
+share/doc/ECM/html/find-module/FindKF6.html
 share/doc/ECM/html/find-module/FindLibExiv2.html
 share/doc/ECM/html/find-module/FindLibGit2.html
 share/doc/ECM/html/find-module/FindLibMount.html

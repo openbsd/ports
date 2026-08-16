@@ -1,7 +1,7 @@
 COMMENT =	KDE desktop notifications framework
 DISTNAME =	knotifications-${VERSION}
 
-SHARED_LIBS +=  KF6Notifications          0.0 # 0.0
+SHARED_LIBS +=  KF6Notifications          0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6Qml canberra m

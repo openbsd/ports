@@ -12,7 +12,6 @@ lib/cmake/KF6ImageFormats/KF6ImageFormatsConfigVersion.cmake
 @so lib/qt6/plugins/imageformats/kimg_jp2.so
 @so lib/qt6/plugins/imageformats/kimg_jxl.so
 @so lib/qt6/plugins/imageformats/kimg_kra.so
-@so lib/qt6/plugins/imageformats/kimg_ora.so
 @so lib/qt6/plugins/imageformats/kimg_pcx.so
 @so lib/qt6/plugins/imageformats/kimg_pfm.so
 @so lib/qt6/plugins/imageformats/kimg_pic.so
