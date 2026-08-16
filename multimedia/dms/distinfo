@@ -1,3 +1,6 @@
+SHA256 (18d19ee076e5238875dbc9fd46a57b2c31f3b5a3.patch) = GHWesCuQTzKlRjPgvh/ZdZA+b1yTEAs5g+Bb4SLsOZg=
+SHA256 (71a9fc83eb284636ccc6813b5f73d7b3803a34d3.patch) = 1LsSN+F82eVHo7zOfN5YxsQZJpVMicFO0akBN4ZFQMg=
+SHA256 (a89307863fc69f668e7a06975dc9710c85c41841.patch) = 7TrRkrran1vpAHH+ttGpzSUq0m5wPGAxVIrAdALsZkg=
 SHA256 (dms-v1.8.0.zip) = LmSuGn//1D2WdYuuolI+eSU1HVSr+V/R3mTz3ZaAVYE=
 SHA256 (go_modules/github.com/anacrolix/envpprof/@v/v1.0.0.mod) = DvyYIC+xlI19QnUjisxre2TxKn8faLyJcs6e3ME1ky0=
 SHA256 (go_modules/github.com/anacrolix/envpprof/@v/v1.0.0.zip) = pCza9Xjf/7rNzYrwn/lDOykgDUf/cCcv8rvoS1cg76k=
@@ -25,6 +28,9 @@ SHA256 (go_modules/golang.org/x/term/@v/v0.41.0.mod) = iWigerTB3zT0t+m3b+gZlX8pX
 SHA256 (go_modules/golang.org/x/term/@v/v0.41.0.zip) = kcp1o/RU1d3t4fWMPk/I4WnG88A3IjrArHbngjTSKCg=
 SHA256 (go_modules/golang.org/x/text/@v/v0.35.0.mod) = Shcp5JFKOVFXDk5ExH/LbKC5tuB8EaoNpIcG3CleNwI=
 SHA256 (go_modules/golang.org/x/text/@v/v0.35.0.zip) = LfNu4TUhFVLR5ynSoqS1u/8r06DMUwZBUabmSV6UezI=
+SIZE (18d19ee076e5238875dbc9fd46a57b2c31f3b5a3.patch) = 1548
+SIZE (71a9fc83eb284636ccc6813b5f73d7b3803a34d3.patch) = 1472
+SIZE (a89307863fc69f668e7a06975dc9710c85c41841.patch) = 2399
 SIZE (dms-v1.8.0.zip) = 91569
 SIZE (go_modules/github.com/anacrolix/envpprof/@v/v1.0.0.mod) = 37
 SIZE (go_modules/github.com/anacrolix/envpprof/@v/v1.0.0.zip) = 2004
