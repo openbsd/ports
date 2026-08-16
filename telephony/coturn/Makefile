@@ -1,6 +1,6 @@
 COMMENT =	coturn STUN/TURN server
 
-V =		4.9.0-r0
+V =		4.16.0-r0
 GH_ACCOUNT =	coturn
 GH_PROJECT =	coturn
 GH_TAGNAME =	docker/${V}
@@ -15,12 +15,11 @@ CATEGORIES =	telephony
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto event_core event_extra event_openssl event_pthreads
-WANTLIB += hiredis intl mariadb pq pthread sqlite3 ssl m z
+WANTLIB += hiredis hiredis_ssl mariadb pq pthread sqlite3 ssl
 
 LIB_DEPENDS =		databases/mariadb \
 			databases/postgresql \
 			databases/sqlite3 \
-			devel/gettext,-runtime \
 			devel/libevent2 \
 			databases/libhiredis
 
@@ -32,6 +31,10 @@ CONFIGURE_ENV =		TURN_NO_MONGO=1 \
 			TURN_NO_SYSTEMD=1
 # Don't pick up devel/pkgconf
 CONFIGURE_ENV +=	PKGCONFIG="pkg-config"
+
+post-extract:
+	cd ${WRKSRC}; \
+		patch -Ep1 < patches/openssl-1.1.1/0001-restore-openssl-1.1.1-support.patch
 
 post-install:
 	rm -rf ${PREFIX}/etc

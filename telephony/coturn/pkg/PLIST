@@ -89,6 +89,7 @@ share/examples/turnserver/scripts/mobile/mobile_relay.sh
 share/examples/turnserver/scripts/mobile/mobile_tcp_client.sh
 share/examples/turnserver/scripts/mobile/mobile_tls_client_c2c_tcp_relay.sh
 share/examples/turnserver/scripts/mobile/mobile_udp_client.sh
+share/examples/turnserver/scripts/mobility_resume_flood.py
 share/examples/turnserver/scripts/oauth.sh
 share/examples/turnserver/scripts/pack.sh
 share/examples/turnserver/scripts/peer.sh
