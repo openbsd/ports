@@ -2,6 +2,7 @@ COMMENT-main=		astronomical instrument automation/control software
 COMMENT-libs=		Instrument-Neutral-Device-Interface protocol libraries
 
 GH_TAGNAME=		v2.2.4.2
+REVISION=		0
 GH_ACCOUNT=		indilib
 GH_PROJECT=		indi
 
@@ -25,16 +26,17 @@ MULTI_PACKAGES=		-main -libs
 COMPILER=		base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} cfitsio curl fftw3 gsl gslcblas iconv
-WANTLIB += jpeg m nova ogg theoradec theoraenc usb-1.0 z
+WANTLIB += jpeg m nova ogg theoradec theoraenc udev usb-1.0 z
 
 WANTLIB-main += ${WANTLIB} c ev indiAlignmentDriver indiclient
 WANTLIB-main += indidriver rtlsdr
 
-WANTLIB-libs += ${WANTLIB}
+WANTLIB-libs += ${WANTLIB} erfa
 
 MODULES=		devel/cmake
 
-LIB_DEPENDS=		astro/libnova \
+LIB_DEPENDS=		astro/liberfa \
+			astro/libnova \
 			converters/libiconv \
 			devel/gsl \
 			devel/libusb1 \
@@ -42,7 +44,8 @@ LIB_DEPENDS=		astro/libnova \
 			math/cfitsio \
 			math/fftw3 \
 			multimedia/libtheora \
-			net/curl
+			net/curl \
+			sysutils/libudev-openbsd
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-libs \
