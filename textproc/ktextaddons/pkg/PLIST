@@ -4,6 +4,7 @@ include/KF6/TextAddonsWidgets/TextAddonsWidgets/CompletionLineEdit
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/CompletionListView
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/ConfigurePluginsWidget
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/ExecutableUtils
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/LoadDialogSizeUtils
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/NeedUpdateCheckExistingNewVersionJob
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/NeedUpdateParseHtmlJob
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/NeedUpdateParseHtmlUtil
@@ -19,6 +20,7 @@ include/KF6/TextAddonsWidgets/TextAddonsWidgets/SaveFileUtils
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/SelectSpecialCharDialog
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/SlideContainer
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/SortFilterProxyModelBase
+include/KF6/TextAddonsWidgets/TextAddonsWidgets/TextAddonsWidgetFlowLayout
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/TextMessageWidget
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/VerifyNewVersionWidget
 include/KF6/TextAddonsWidgets/TextAddonsWidgets/WhatsNewComboBoxWidget
@@ -34,6 +36,7 @@ include/KF6/TextAddonsWidgets/textaddonswidgets/completionlineedit.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/completionlistview.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/configurepluginswidget.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/executableutils.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/loaddialogsizeutils.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/needupdatecheckexistingnewversionjob.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/needupdateparsehtmljob.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/needupdateparsehtmlutil.h
@@ -49,6 +52,7 @@ include/KF6/TextAddonsWidgets/textaddonswidgets/savefileutils.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/selectspecialchardialog.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/slidecontainer.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/sortfilterproxymodelbase.h
+include/KF6/TextAddonsWidgets/textaddonswidgets/textaddonswidgetflowlayout.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/textaddonswidgets_export.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/textmessagewidget.h
 include/KF6/TextAddonsWidgets/textaddonswidgets/verifynewversionwidget.h
@@ -934,6 +938,7 @@ share/locale/et/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/eu/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/eu/LC_MESSAGES/libtextautocorrection.mo
 share/locale/eu/LC_MESSAGES/libtextautogeneratetext.mo
+share/locale/eu/LC_MESSAGES/libtextautogeneratetextmcpprotocol.mo
 share/locale/eu/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/eu/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/eu/LC_MESSAGES/libtextemoticons.mo
