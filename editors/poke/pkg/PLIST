@@ -1,4 +1,5 @@
 bin/pk-bin2poke
+bin/pk-bpfcoredump
 bin/pk-jojopatch
 bin/pk-strings
 @bin bin/poke
@@ -6,6 +7,7 @@ bin/pk-strings
 @bin bin/pokefmt
 include/libpoke.h
 @info info/poke.info
+@info info/pokeint.info
 @static-lib lib/libpoke.a
 lib/libpoke.la
 @lib lib/libpoke.so.${LIBpoke_VERSION}
@@ -17,19 +19,15 @@ share/aclocal/
 share/aclocal/poke.m4
 share/emacs/
 share/emacs/site-lisp/
-share/emacs/site-lisp/poke-map-mode.el
 share/emacs/site-lisp/poke-ras-mode.el
 share/poke/
-share/poke/maps/
-share/poke/maps/dwarf.map
-share/poke/maps/elf.map
-share/poke/maps/mp3.map
 share/poke/pickles/
 share/poke/pickles/argp.pk
 share/poke/pickles/asn1-ber.pk
 share/poke/pickles/base64.pk
 share/poke/pickles/bmp.pk
 share/poke/pickles/bpf.pk
+share/poke/pickles/bpfcore.pk
 share/poke/pickles/btf-dump.pk
 share/poke/pickles/btf-ext.pk
 share/poke/pickles/btf.pk
@@ -37,6 +35,7 @@ share/poke/pickles/coff-aarch64.pk
 share/poke/pickles/coff-i386.pk
 share/poke/pickles/coff.pk
 share/poke/pickles/color.pk
+share/poke/pickles/crc16.pk
 share/poke/pickles/ctf-dump.pk
 share/poke/pickles/ctf.pk
 share/poke/pickles/diff.pk
@@ -90,18 +89,19 @@ share/poke/pkl-config.pk
 share/poke/pkl-rt.pk
 share/poke/poke/
 share/poke/poke/nodelist
+share/poke/poke/pk-cmd-copy.pk
+share/poke/poke/pk-cmd-diff.pk
+share/poke/poke/pk-cmd-dump.pk
+share/poke/poke/pk-cmd-extract.pk
+share/poke/poke/pk-cmd-help.pk
+share/poke/poke/pk-cmd-info.pk
+share/poke/poke/pk-cmd-ios.pk
+share/poke/poke/pk-cmd-misc.pk
+share/poke/poke/pk-cmd-save.pk
+share/poke/poke/pk-cmd-scrabble.pk
+share/poke/poke/pk-cmd-set.pk
 share/poke/poke/pk-cmd.pk
-share/poke/poke/pk-copy.pk
-share/poke/poke/pk-diff.pk
-share/poke/poke/pk-dump.pk
-share/poke/poke/pk-extract.pk
-share/poke/poke/pk-help.pk
 share/poke/poke/pk-hserver.pk
-share/poke/poke/pk-info.pk
-share/poke/poke/pk-map.pk
-share/poke/poke/pk-save.pk
-share/poke/poke/pk-scrabble.pk
-share/poke/poke/pk-settings.pk
 share/poke/poke/pk-tracer.pk
 share/poke/poke/poke-bright.css
 share/poke/poke/poke-dark.css
