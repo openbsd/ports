@@ -16,6 +16,10 @@ FLAVOR?=
 # Apache License 2.0
 PERMIT_PACKAGE=	Yes
 
+# error: missing binary operator before token "("
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += lib/db4/db>=4 crypto expat iconv pthread ssl
 
 SITES=		${SITE_APACHE:=apr/}
