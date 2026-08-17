@@ -1,7 +1,7 @@
 COMMENT=	ZBar barcode reader
 
 DISTNAME=	zbar-0.23.93
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	zbar	0.1 \
 		zbargtk	0.1
@@ -33,6 +33,7 @@ WANTLIB += xml2 z
 
 MODULES=	lang/python
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 LIB_DEPENDS=	graphics/ImageMagick \
 		x11/gtk+3
 
