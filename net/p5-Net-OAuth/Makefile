@@ -1,6 +1,7 @@
 COMMENT =	implementation of the OAuth 1.0 protocol
 
-DISTNAME =	Net-OAuth-0.31
+DISTNAME =	Net-OAuth-0.32
+CPAN_AUTHOR =	RRWO
 
 CATEGORIES =	net
 
@@ -11,7 +12,8 @@ MODULES =		cpan
 
 RUN_DEPENDS =		devel/p5-Class-Accessor>=0.31 \
 			devel/p5-Class-Data-Inheritable>=0.06 \
-			security/p5-Crypt-URandom>=0.37 \
+			security/p5-Crypt-OpenSSL-RSA>=0.38 \
+			security/p5-Crypt-SysRandom>=0.006 \
 			www/p5-URI>=5.15 \
 			www/p5-libwww
 TEST_DEPENDS =		devel/p5-Test-Warn>=0.21
