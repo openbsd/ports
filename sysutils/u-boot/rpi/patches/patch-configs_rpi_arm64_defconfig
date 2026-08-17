@@ -1,0 +1,15 @@
+Rather than allowing any input to stop autoboot, require 'space'.
+
+Index: configs/rpi_arm64_defconfig
+--- configs/rpi_arm64_defconfig.orig
++++ configs/rpi_arm64_defconfig
+@@ -15,6 +15,9 @@ CONFIG_EFI_HTTP_BOOT=y
+ CONFIG_BOOTSTD_DEFAULTS=y
+ CONFIG_OF_BOARD_SETUP=y
+ CONFIG_FDT_SIMPLEFB=y
++CONFIG_AUTOBOOT_KEYED=y
++CONFIG_AUTOBOOT_PROMPT="Autoboot in %d seconds, press <SPACE> to stop.\n"
++CONFIG_AUTOBOOT_STOP_STR=" "
+ CONFIG_USE_PREBOOT=y
+ CONFIG_PREBOOT="pci enum; usb start;"
+ CONFIG_SYS_PBSIZE=1049
