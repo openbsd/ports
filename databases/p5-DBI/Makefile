@@ -2,7 +2,7 @@ COMMENT =	the standard database interface module for Perl
 
 MODULES =	cpan
 CPAN_AUTHOR =	HMBRAND
-DISTNAME =	DBI-1.651
+DISTNAME =	DBI-1.652
 EXTRACT_SUFX =	.tgz
 FIX_EXTRACT_PERMISSIONS =	Yes
 CATEGORIES =	databases
@@ -17,7 +17,7 @@ WANTLIB += c perl
 
 MODPERL_REGEN_PPPORT =	dbipport.h
 
-RUN_DEPENDS =	net/p5-PlRPC>=0.2017 \
+RUN_DEPENDS =	net/p5-PlRPC>=0.2020 \
 		databases/p5-SQL-Statement>=1.400 \
 		devel/p5-MLDBM
 
