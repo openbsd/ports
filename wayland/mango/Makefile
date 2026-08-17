@@ -1,6 +1,6 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-V =			0.15.6
+V =			0.16.1
 DISTNAME =		mango-${V}
 SITES =			https://github.com/mangowm/mango/archive/refs/tags/
 DISTFILES =		mangowm-mango-${V}-0{${V}}${EXTRACT_SUFX}
@@ -15,8 +15,8 @@ MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c cairo cjson glib-2.0 gobject-2.0 input m pango-1.0
-WANTLIB += pangocairo-1.0 pcre2-8 pixman-1 scenefx-0.5 wayland-server
-WANTLIB += xcb-icccm xkbcommon
+WANTLIB += pangocairo-1.0 pcre2-8 pixman-1 scenefx-0.5 wayland-client
+WANTLIB += wayland-server xcb-icccm xkbcommon
 
 COMPILER =		base-clang ports-gcc
 
