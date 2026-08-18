@@ -1,6 +1,6 @@
 COMMENT =	comma-separated values manipulation routines
 
-DISTNAME =	Text-CSV_XS-1.62
+DISTNAME =	Text-CSV_XS-1.64
 CPAN_AUTHOR =	HMBRAND
 CATEGORIES =	textproc
 EXTRACT_SUFX =	.tgz
