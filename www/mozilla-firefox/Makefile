@@ -3,15 +3,15 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	153.0.4
+MOZILLA_VERSION =	154.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-MOZILLA_PROFDATA_TASKID =	MKED1kQST366ufkA0MEabQ
+MOZILLA_PROFDATA_TASKID =	aG2hePJ1SLO1hOx2WytmPQ
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	165.0
+SO_VERSION =	166.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozinference mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3
@@ -44,7 +44,7 @@ BUILD_DEPENDS +=	devel/py-setuptools
 RUN_DEPENDS =		graphics/ffmpeg
 
 # uses pledge()
-WANTLIB += Xrandr Xtst
+WANTLIB += Xrandr
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
