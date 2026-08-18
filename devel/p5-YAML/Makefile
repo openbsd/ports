@@ -3,7 +3,8 @@ COMMENT =	YAML Ain't Markup Language
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	YAML-1.31
+DISTNAME =	YAML-1.321
+CPAN_AUTHOR =	TINITA
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
