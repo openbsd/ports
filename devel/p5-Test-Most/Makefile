@@ -1,5 +1,6 @@
 COMMENT =	most commonly needed test functions and features
-DISTNAME =	Test-Most-0.38
+DISTNAME =	Test-Most-0.42
+CPAN_AUTHOR =	DCANTRELL
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
