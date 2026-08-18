@@ -1,7 +1,7 @@
 COMMENT =	set of python modules for machine learning and data mining
 
 MODPY_DISTV =		1.7.2
-REVISION =		3
+REVISION =		4
 DISTNAME =		scikit_learn-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
 
