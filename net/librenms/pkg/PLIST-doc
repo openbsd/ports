@@ -20,6 +20,7 @@ share/doc/librenms/API/Services.md
 share/doc/librenms/API/Switching.md
 share/doc/librenms/API/System.md
 share/doc/librenms/API/index.md
+share/doc/librenms/API/v1.md
 share/doc/librenms/Alerting/
 share/doc/librenms/Alerting/Creating-Transport.md
 share/doc/librenms/Alerting/Device-Dependencies.md
