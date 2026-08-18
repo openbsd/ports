@@ -9,7 +9,7 @@ Index: data/io.github.htkhiem.Euphonica.gschema.xml
  		<value nick="fifo" value="0"/>
  	</enum>
  
-@@ -92,7 +91,7 @@
+@@ -108,7 +107,7 @@
  		</key>
  
  		<key name="mpd-visualizer-pcm-source" enum='io.github.htkhiem.Euphonica.pcmsource'>
@@ -18,7 +18,7 @@ Index: data/io.github.htkhiem.Euphonica.gschema.xml
  		</key>
  
  		<key name="mpd-fifo-path" type="s">
-@@ -306,7 +305,7 @@
+@@ -329,7 +328,7 @@
  			<default>'percents'</default>
  		</key>
  		<key name="use-visualizer" type="b">

@@ -1,10 +1,10 @@
 COMMENT =		GTK4 MPD client with delusions of grandeur
 
-V =			0.99.5
+V =			0.99.6
 PKGNAME =		euphonica-${V}
 
 DIST_TUPLE =		github htkhiem euphonica v${V}-beta .
-DIST_TUPLE +=		github htkhiem rust-mpd e9f5ad589e0eaaeb1d9758cc3a6b5762bb67e4b5 ./rust-mpd
+DIST_TUPLE +=		github htkhiem rust-mpd 218e1af6c44e08101b3c99f0df0fe1d10c3702b4 ./rust-mpd
 
 MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 
