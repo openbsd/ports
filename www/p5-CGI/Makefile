@@ -1,5 +1,6 @@
 COMMENT =	handle Common Gateway Interface requests and responses
-DISTNAME =	CGI-4.71
+DISTNAME =	CGI-4.72
+CPAN_AUTHOR =	LEEJO
 CATEGORIES =	www
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
