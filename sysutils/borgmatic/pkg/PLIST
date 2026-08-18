@@ -426,8 +426,6 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}apprise.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}apprise.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}cronhub.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}cronhub.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}cronitor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}cronitor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}healthchecks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -448,10 +446,11 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}sentry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}uptime_kuma.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}uptime_kuma.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}watchgoose.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}watchgoose.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}zabbix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/${MODPY_PYCACHE}zabbix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/apprise.py
-lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/cronhub.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/cronitor.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/healthchecks.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/logs.py
@@ -462,6 +461,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/pagerduty.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/pushover.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/sentry.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/uptime_kuma.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/watchgoose.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/monitoring/zabbix.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/logger.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/signals.py

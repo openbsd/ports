@@ -1,6 +1,6 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
-MODPY_DISTV=	2.1.6
+MODPY_DISTV=	2.1.7
 DISTNAME=	borgmatic-${MODPY_DISTV}
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -29,9 +29,27 @@ RUN_DEPENDS=	borgbackup-*:sysutils/borgbackup/1.4 \
 # borgmatic script used in post-install to generate config
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-MODPY_PYTEST_ARGS= --ignore tests/unit/hooks/test_apprise.py
+# 'browse' tests need 'textual'
+MODPY_PYTEST_ARGS= --ignore tests/unit/hooks/test_apprise.py \
+		--ignore tests/integration/actions/browse/test_app.py \
+		--ignore tests/integration/actions/browse/test_archives_list.py \
+		--ignore tests/integration/actions/browse/test_carousel.py \
+		--ignore tests/integration/actions/browse/test_configuration_files_list.py \
+		--ignore tests/integration/actions/browse/test_directory_list.py \
+		--ignore tests/integration/actions/browse/test_file_preview.py \
+		--ignore tests/integration/actions/browse/test_loading.py \
+		--ignore tests/integration/actions/browse/test_logs.py \
+		--ignore tests/integration/actions/browse/test_repositories_list.py \
+		--ignore tests/integration/actions/browse/test_workers.py \
+		--ignore tests/unit/actions/browse/test_archive.py \
+		--ignore tests/unit/actions/browse/test_directory_list.py \
+		--ignore tests/unit/actions/browse/test_logs.py \
+		--ignore tests/unit/actions/browse/test_run.py \
+		--ignore tests/unit/actions/browse/test_workers.py
+
 TEST_DEPENDS=	devel/py-flexmock \
 		devel/py-test-cov \
+		devel/py-test-timeout \
 		net/py-apprise
 
 post-install:
