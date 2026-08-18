@@ -1,9 +1,10 @@
 COMMENT =	tiny replacement for Module::Build
 
-DISTNAME =	Module-Build-Tiny-0.052
+DISTNAME =	Module-Build-Tiny-0.053
+CPAN_AUTHOR =	LEONT
 CATEGORIES =	devel
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
