@@ -27,6 +27,10 @@ MODPY_PYBUILD =		mesonpy
 MODPY_PYTEST_ARGS =	-v
 MODPY_TEST_DIR =	${WRKINST}${MODPY_SITEPKG}
 
+# use xdist, partly so the (many) tests can run in parallel, partly to
+# avoid aborting the test run if the Python process crashes.
+MODPY_PYTEST_ARGS +=	-n ${MAKE_JOBS}
+
 BUILD_DEPENDS =		lang/cython \
 			math/py-numpy \
 			math/py-scipy
@@ -38,6 +42,7 @@ RUN_DEPENDS =		math/py-numpy>=1.22.0 \
 
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-test-cov \
+			devel/py-test-xdist \
 			graphics/py-matplotlib \
 			math/py-pandas \
 			math/py-scikit-image
