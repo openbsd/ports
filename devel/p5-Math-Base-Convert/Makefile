@@ -1,9 +1,8 @@
 COMMENT =	very fast base to base conversion
-DISTNAME =	Math-Base-Convert-0.11
+DISTNAME =	Math-Base-Convert-0.13
 CATEGORIES =	devel
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # perl5
 PERMIT_PACKAGE =	Yes
