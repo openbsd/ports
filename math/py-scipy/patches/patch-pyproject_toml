@@ -1,12 +1,20 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -24,7 +24,7 @@ requires = [
-     # We need at least Cython 3.1.0 for free-threaded CPython;
-     # for other CPython versions, the regular pre-emptive
-     # Cython version bounds policy applies
--    "Cython>=3.0.8,<3.2.0",
-+    "Cython>=3.0.8",
-     # The upper bound on pybind11 is pre-emptive only
-     "pybind11>=2.13.2,<3.1.0",
-     # The upper bound on pythran is pre-emptive only; 0.18.0
+@@ -23,13 +23,13 @@ requires = [
+     "meson-python>=0.15.0,<0.22.0",
+     # for Cython, 3.2.4 works at time of writing; pre-emptive
+     # guard only:
+-    "Cython>=3.2.0,<3.3.0",
++    "Cython>=3.2.0",
+     # Pre-emptive upper bound on pybind11
+     # (3.0.4 works at time of writing)
+-    "pybind11>=2.13.2,<3.1.0",
++    "pybind11>=2.13.2",
+     # Pre-emptive upper bound on pythran
+     # (0.18.1 works at time of writing)
+-    "pythran>=0.18.1,<0.19.0",
++    "pythran>=0.18.1",
+     # NOTE: need numpy>=2.1.3 for free-threaded CPython support
+     "numpy>=2.0.0,<2.8",
+ ]

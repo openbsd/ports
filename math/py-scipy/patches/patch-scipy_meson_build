@@ -1,14 +1,14 @@
 Index: scipy/meson.build
 --- scipy/meson.build.orig
 +++ scipy/meson.build
-@@ -232,8 +232,8 @@ f2py_gen = generator(generate_f2pymod,
- # For MKL and for auto-detecting one of multiple libs, we'll need a custom
- # dependency in Meson (like is done for scalapack) - see
- # https://github.com/mesonbuild/meson/issues/2835
+@@ -221,8 +221,8 @@ f2py_gen = generator(generate_f2pymod,
+ 
+ # Start of BLAS/LAPACK detection
+ 
 -blas_name = get_option('blas')
 -lapack_name = get_option('lapack')
 +blas_name = 'blas'
 +lapack_name = 'lapack'
- 
- macOS13_3_or_later = false
- if host_machine.system() == 'darwin'
+ blas_symbol_suffix = get_option('blas-symbol-suffix')
+ use_ilp64 = get_option('use-ilp64')
+ _cython_blas_abi = get_option('cython-blas-abi')

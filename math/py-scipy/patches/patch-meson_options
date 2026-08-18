@@ -8,5 +8,5 @@ Index: meson.options
 -option('lapack', type: 'string', value: 'openblas',
 +option('lapack', type: 'string', value: 'blas',
          description: 'option for LAPACK library switching')
- option('use-g77-abi', type: 'boolean', value: false,
-         description: 'If set to true, forces using g77 compatibility wrappers ' +
+ 
+ # NB ILP64 build is experimental.
