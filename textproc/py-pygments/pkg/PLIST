@@ -203,6 +203,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}berry.$
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}berry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}bibtex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}bibtex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}bitbake.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}bitbake.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}blueprint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}blueprint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}boa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -221,6 +223,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}carbon.
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}carbon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}cddl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}cddl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}cel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}cel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}chapel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}chapel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}clean.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -463,6 +467,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}prql.${
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}prql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}ptx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}ptx.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}purescript.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}purescript.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}python.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}python.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/${MODPY_PYCACHE}q.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -671,6 +677,7 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/basic.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/bdd.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/berry.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/bibtex.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/bitbake.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/blueprint.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/boa.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/bqn.py
@@ -680,6 +687,7 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/c_like.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/capnproto.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/carbon.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/cddl.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/cel.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/chapel.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/clean.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/codeql.py
@@ -801,6 +809,7 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/prolog.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/promql.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/prql.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/ptx.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/purescript.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/python.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/q.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/qlik.py
@@ -947,6 +956,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/styles/${MODPY_PYCACHE}murphy.
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/${MODPY_PYCACHE}murphy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/${MODPY_PYCACHE}native.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/${MODPY_PYCACHE}native.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/styles/${MODPY_PYCACHE}night_owl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygments/styles/${MODPY_PYCACHE}night_owl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/${MODPY_PYCACHE}nord.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/${MODPY_PYCACHE}nord.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/${MODPY_PYCACHE}onedark.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1013,6 +1024,7 @@ lib/python${MODPY_VERSION}/site-packages/pygments/styles/material.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/monokai.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/murphy.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/native.py
+lib/python${MODPY_VERSION}/site-packages/pygments/styles/night_owl.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/nord.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/onedark.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/paraiso_dark.py
