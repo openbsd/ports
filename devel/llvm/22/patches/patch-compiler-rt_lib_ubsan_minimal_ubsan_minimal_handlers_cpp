@@ -1,0 +1,12 @@
+Index: compiler-rt/lib/ubsan_minimal/ubsan_minimal_handlers.cpp
+--- compiler-rt/lib/ubsan_minimal/ubsan_minimal_handlers.cpp.orig
++++ compiler-rt/lib/ubsan_minimal/ubsan_minimal_handlers.cpp
+@@ -18,7 +18,7 @@ static void message(const char *msg) { (void)write(2, 
+ // Some architectures don't support preserve_all (but clang still has the)
+ // attribute. For now, only support x86-64 and aarch64.
+ #if defined(__clang__) && defined(__has_cpp_attribute) &&                      \
+-    (defined(__x86_64__) || defined(__aarch64__))
++    (defined(__x86_64__) || defined(__aarch64__)) && !defined(__OpenBSD__)
+ #if __has_cpp_attribute(clang::preserve_all)
+ #define PRESERVE_HANDLERS true
+ #else

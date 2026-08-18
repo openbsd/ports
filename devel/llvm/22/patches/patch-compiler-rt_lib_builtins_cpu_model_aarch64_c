@@ -1,0 +1,21 @@
+Index: compiler-rt/lib/builtins/cpu_model/aarch64.c
+--- compiler-rt/lib/builtins/cpu_model/aarch64.c.orig
++++ compiler-rt/lib/builtins/cpu_model/aarch64.c
+@@ -36,7 +36,7 @@ _Bool __aarch64_have_lse_atomics
+ 
+ // The formatter wants to re-order these includes, but doing so is incorrect:
+ // clang-format off
+-#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#if defined(__FreeBSD__)
+ #include <sys/auxv.h>
+ #include "aarch64/hwcap.inc"
+ #include "aarch64/lse_atomics/elf_aux_info.inc"
+@@ -71,7 +71,7 @@ struct {
+ // clang-format off
+ #if defined(__APPLE__)
+ #include "aarch64/fmv/apple.inc"
+-#elif defined(__FreeBSD__) || defined(__OpenBSD__)
++#elif defined(__FreeBSD__)
+ #include "aarch64/fmv/hwcap.inc"
+ #include "aarch64/fmv/elf_aux_info.inc"
+ #elif defined(__Fuchsia__)
