@@ -1158,6 +1158,7 @@ lib/rabbitmq/plugins/rabbitmq_jms_topic_exchange-${V}/include/rabbit_jms_topic_e
 lib/rabbitmq/plugins/rabbitmq_management-${V}/
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_app.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_basic_credentials_token.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_cors.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_csp.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_db.beam
