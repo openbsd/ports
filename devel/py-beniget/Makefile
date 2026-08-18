@@ -1,10 +1,9 @@
 COMMENT=	extract semantic information about static Python code
 
 # Pythran has fairly tight version spec on beniget (and gast).
-MODPY_DISTV=	0.4.2.post1
+MODPY_DISTV=	0.5.0
 DISTNAME=	beniget-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	devel
 
