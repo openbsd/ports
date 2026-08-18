@@ -1,3 +1,6 @@
+# bundled header-only library "cpp-httplib" doesn't support 32-bit
+ONLY_FOR_ARCHS=		${LP64_ARCHS}
+
 COMMENT-main=		astronomical instrument automation/control software
 COMMENT-libs=		Instrument-Neutral-Device-Interface protocol libraries
 
