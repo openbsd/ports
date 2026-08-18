@@ -1,0 +1,14 @@
+dlopen() is in libc
+
+Index: testing/cffi1/test_re_python.py
+--- testing/cffi1/test_re_python.py.orig
++++ testing/cffi1/test_re_python.py
+@@ -292,7 +292,7 @@ def test_dlopen_handle():
+     ffi1 = FFI()
+     ffi1.cdef("""void *dlopen(const char *filename, int flags);
+                  int dlclose(void *handle);""")
+-    lib1 = ffi1.dlopen('dl')
++    lib1 = ffi1.dlopen('c')
+     handle = lib1.dlopen(extmod.encode(sys.getfilesystemencoding()),
+                          _cffi_backend.RTLD_LAZY)
+     assert ffi1.typeof(handle) == ffi1.typeof("void *")

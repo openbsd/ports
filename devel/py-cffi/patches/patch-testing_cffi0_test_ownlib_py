@@ -1,0 +1,14 @@
+dlopen() is in libc
+
+Index: testing/cffi0/test_ownlib.py
+--- testing/cffi0/test_ownlib.py.orig
++++ testing/cffi0/test_ownlib.py
+@@ -397,7 +397,7 @@ class TestOwnLib:
+         ffi1 = FFI(backend=backend)
+         ffi1.cdef("""void *dlopen(const char *filename, int flags);
+                      int dlclose(void *handle);""")
+-        lib1 = ffi1.dlopen('dl')
++        lib1 = ffi1.dlopen('c')
+         handle = lib1.dlopen(self.module.encode(sys.getfilesystemencoding()),
+                              backend.RTLD_LAZY)
+         assert ffi1.typeof(handle) == ffi1.typeof("void *")

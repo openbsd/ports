@@ -1,0 +1,12 @@
+Index: testing/cffi0/test_verify.py
+--- testing/cffi0/test_verify.py.orig
++++ testing/cffi0/test_verify.py
+@@ -1836,7 +1836,7 @@ def test_callback_indirection():
+         #include <malloc.h>
+         #define alloca _alloca
+         #else
+-        # ifdef __FreeBSD__
++        # if defined(__FreeBSD__) || defined(__OpenBSD__)
+         #  include <stdlib.h>
+         # else
+         #  include <alloca.h>
