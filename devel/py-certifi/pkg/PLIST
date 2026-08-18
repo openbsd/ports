@@ -19,3 +19,11 @@ lib/python${MODPY_VERSION}/site-packages/certifi/${MODPY_PYCACHE}core.${MODPY_PY
 @comment lib/python${MODPY_VERSION}/site-packages/certifi/cacert.pem
 lib/python${MODPY_VERSION}/site-packages/certifi/core.py
 lib/python${MODPY_VERSION}/site-packages/certifi/py.typed
+lib/python${MODPY_VERSION}/site-packages/certifi/tests/
+lib/python${MODPY_VERSION}/site-packages/certifi/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/certifi/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certifi/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/certifi/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certifi/tests/${MODPY_PYCACHE}test_certify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/certifi/tests/${MODPY_PYCACHE}test_certify.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certifi/tests/test_certify.py
