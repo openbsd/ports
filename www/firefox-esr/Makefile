@@ -1,18 +1,18 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
-MOZILLA_VERSION =	140.13.0esr
+MOZILLA_VERSION =	153.1.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
 MOZILLA_DIST =		firefox
-MOZILLA_PROFDATA_TASKID = JiZ-1V_rRfaUiqbadnuoiQ
+MOZILLA_PROFDATA_TASKID = BxACjoQJQeWt_6BoS51dTQ
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
-SO_VERSION =	12.0
-MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3
+SO_VERSION =	13.0
+MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozinference mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3
 
 CATEGORIES =	www
 
@@ -24,19 +24,13 @@ MODULES =	www/mozilla lang/python
 
 MODPY_RUNDEP =	No
 
-# jumbo patch to update bindgen to a llvm22-compatible version
-SITES.p =	https://bugzilla.mozilla.org/
-PATCHFILES.p=	bug-2038504-backport-bug-D262840-to-esr140.patch{attachment.cgi?id=9585442}
-PATCH_DIST_STRIP =	-p1 -f
-
 COMPILER =	ports-clang
 MODCLANG_VERSION =	22
-USE_LLD =	ports
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
+BUILD_DEPENDS +=	devel/cbindgen>=0.29.4
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt>=22.1.5p1 \
 			lang/wasi-sdk/libcxx>=21.1.5p1 \
@@ -48,7 +42,7 @@ BUILD_DEPENDS +=	devel/py-setuptools
 RUN_DEPENDS =		graphics/ffmpeg
 
 # uses pledge()
-WANTLIB += Xrandr Xtst
+WANTLIB += Xrandr freebl3
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -71,6 +65,8 @@ CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=5 --ld-path=${WRKDIR}/bin/ld"
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
 .endif
 
+# 2026497
+CONFIGURE_ENV +=	MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
 # avoid conflict with mainline firefox
 CONFIGURE_ARGS +=	--with-app-name=${MOZILLA_PROJECT}
 
@@ -111,6 +107,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
+
+	# install policies.json
+	${INSTALL_DATA} ${FILESDIR}/policies.json \
+		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/policies.json
 
 	# make sure TwemojiMozilla.ttf is found
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/

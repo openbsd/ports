@@ -46,6 +46,7 @@ lib/${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
 lib/${MOZILLA_PROJECT}/dependentlibs.list
 lib/${MOZILLA_PROJECT}/distribution/
 lib/${MOZILLA_PROJECT}/distribution/distribution.ini
+lib/${MOZILLA_PROJECT}/distribution/policies.json
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
 @bin lib/${MOZILLA_PROJECT}/glxtest
@@ -58,6 +59,7 @@ lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/manifest.json
 ${COMMENT_FFVPX}@lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
 ${COMMENT_FFVPX}@lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozinference.so.${LIBmozinference_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozwayland.so.${LIBmozwayland_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
@@ -66,6 +68,7 @@ lib/${MOZILLA_PROJECT}/omni.ja
 lib/${MOZILLA_PROJECT}/platform.ini
 lib/${MOZILLA_PROJECT}/removed-files
 @bin lib/${MOZILLA_PROJECT}/vaapitest
+@bin lib/${MOZILLA_PROJECT}/vulkantest
 share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/fonts/
