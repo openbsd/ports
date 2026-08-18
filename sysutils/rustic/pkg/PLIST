@@ -14,6 +14,7 @@ share/examples/rustic/rustic.toml
 share/examples/rustic/services/
 share/examples/rustic/services/b2.toml
 share/examples/rustic/services/gdrive.toml
+share/examples/rustic/services/pcloud.toml
 share/examples/rustic/services/rclone_ovh-hot-cold.toml
 share/examples/rustic/services/s3_aws.toml
 share/examples/rustic/services/s3_idrive.toml
