@@ -15,7 +15,6 @@ lisp: clisp
 maxima: maxima
 octave: octave and gnuplot
 pari: pari
-R: R
 sympy: py3-sympy
 
 Usage
@@ -26,19 +25,6 @@ following menus.
 Interactive session: Insert > Session
 
 Executable folded environment: Insert > Fold > Executable
-
-Interface to R
---------------
-The TeXmacs interface to R requires additional setup. An R package for the
-interface will be built and installed. Give write permissions to the group
-(e.g., puffy) running TeXmacs:
-
-# chown root:puffy ${TRUEPREFIX}/lib/R/library/
-# chmod 775 ${TRUEPREFIX}/lib/R/library/
-
-Start an R session in TeXmacs: Insert > Session > R
-
-The tutorial can now be followed: Help > Plug-ins > R
 
 Documentation
 -------------

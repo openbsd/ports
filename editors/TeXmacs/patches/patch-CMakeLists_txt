@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -644,7 +644,7 @@ if (TEXMACS_GUI MATCHES "Qt.*")
+@@ -682,7 +682,7 @@ if (TEXMACS_GUI MATCHES "Qt.*")
  
    set (TeXmacs_All_SRCS ${TeXmacs_All_SRCS} ${TeXmacs_Qt_SRCS} ${TeXmacs_Qt_Moc_HDRS})
    set (TeXmacs_Include_Dirs ${TeXmacs_Include_Dirs} ${QT_INCLUDES})

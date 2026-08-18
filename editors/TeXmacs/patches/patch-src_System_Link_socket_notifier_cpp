@@ -1,16 +1,7 @@
---- src/System/Link/socket_notifier.cpp.orig	Mon Jun 15 10:44:50 2015
-+++ src/System/Link/socket_notifier.cpp	Sun Sep 11 11:14:49 2016
-@@ -8,7 +8,8 @@
- * It comes WITHOUT ANY WARRANTY WHATSOEVER. For details, see the file LICENSE
- * in the root directory or <http://www.gnu.org/licenses/gpl-3.0.html>.
- ******************************************************************************/
--#ifndef QTTEXMACS
-+#if defined (QTTEXMACS) && defined (QTPIPES)
-+#else
- 
- #include "config.h"
- 
-@@ -16,6 +17,7 @@
+Index: src/System/Link/socket_notifier.cpp
+--- src/System/Link/socket_notifier.cpp.orig
++++ src/System/Link/socket_notifier.cpp
+@@ -21,6 +21,7 @@
  #include <unistd.h>
  #include <fcntl.h>
  #include <sys/wait.h>

@@ -1,0 +1,12 @@
+Index: src/System/Link/cmdline_link.cpp
+--- src/System/Link/cmdline_link.cpp.orig
++++ src/System/Link/cmdline_link.cpp
+@@ -36,7 +36,7 @@ namespace wsoc {
+ #define TM_FD_SET(fd, set) FD_SET((u_int) fd, set)
+ #endif // OS_MINGW
+ 
+-#if !defined(__APPLE__) && !defined(__FreeBSD__)
++#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <malloc.h>
+ #endif
+ 

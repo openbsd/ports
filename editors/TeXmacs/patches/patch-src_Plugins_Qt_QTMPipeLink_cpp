@@ -1,0 +1,23 @@
+remove wordexp and use QProcess::splitCommand instead
+
+Index: src/Plugins/Qt/QTMPipeLink.cpp
+--- src/Plugins/Qt/QTMPipeLink.cpp.orig
++++ src/Plugins/Qt/QTMPipeLink.cpp
+@@ -17,7 +17,7 @@
+ 
+ #ifdef OS_MINGW
+ #include <windows.h>
+-#elif !defined(OS_ANDROID)
++#elif !defined(OS_ANDROID) && !defined(__OpenBSD__)
+ #include <wordexp.h>
+ #endif
+ 
+@@ -75,7 +75,7 @@ QTMPipeLink::launchCmd () {
+ 
+   LocalFree(argv);
+ 
+-#elif !defined(OS_ANDROID)
++#elif !defined(OS_ANDROID) && !defined(__OpenBSD__)
+   wordexp_t exp;
+   memset(&exp, 0, sizeof(exp));
+ 

@@ -1,7 +1,7 @@
 Index: src/Plugins/Qt/QTMSockets.cpp
 --- src/Plugins/Qt/QTMSockets.cpp.orig
 +++ src/Plugins/Qt/QTMSockets.cpp
-@@ -20,6 +20,7 @@
+@@ -31,6 +31,7 @@
  #include <unistd.h>
  #include <sys/types.h>
  #include <sys/socket.h>
