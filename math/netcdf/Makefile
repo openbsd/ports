@@ -1,14 +1,13 @@
 COMMENT=	library for machine-independent, array-oriented data access
 
-V=		4.9.3
+V=		4.10.1
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	0
 
 CATEGORIES=	math
 
-SHARED_LIBS=	netcdf		11.0 # 23.0
+SHARED_LIBS=	netcdf		12.0 # 25.0
 
 HOMEPAGE=	http://www.unidata.ucar.edu/software/netcdf/
 

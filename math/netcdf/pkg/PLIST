@@ -35,6 +35,7 @@ hdf5/lib/plugin/lib__nczhdf5filters.la
 @static-lib hdf5/lib/plugin/lib__nczstdfilters.a
 hdf5/lib/plugin/lib__nczstdfilters.la
 @so hdf5/lib/plugin/lib__nczstdfilters.so
+include/ncudfplugins.h
 include/netcdf.h
 include/netcdf_aux.h
 include/netcdf_dispatch.h
@@ -45,6 +46,7 @@ include/netcdf_json.h
 include/netcdf_mem.h
 include/netcdf_meta.h
 include/netcdf_proplist.h
+include/netcdf_vutils.h
 @static-lib lib/libnetcdf.a
 lib/libnetcdf.la
 lib/libnetcdf.settings
