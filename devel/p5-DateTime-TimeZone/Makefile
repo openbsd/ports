@@ -2,7 +2,7 @@ COMMENT =	time zone object base class and factory
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	DateTime-TimeZone-2.67
+DISTNAME =	DateTime-TimeZone-2.69
 CPAN_AUTHOR =	DROLSKY
 CATEGORIES =	devel
 
