@@ -1,7 +1,8 @@
 COMMENT =		Tk client for the Jabber instant messaging system
 
+REVISION =		4
+
 DISTNAME =		tkabber-${VERSION}
-REVISION =		3
 
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
 			devel/tcllib \
