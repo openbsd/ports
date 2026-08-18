@@ -1,11 +1,13 @@
 COMMENT=	ircII internet relay chat client
 
+REVISION=	5
+
 DISTNAME=	tkirc2.46
 PKGNAME=	tkirc-2.46
-REVISION=	4
-CATEGORIES=	net
 
+CATEGORIES=	net
 HOMEPAGE=	http://netsplit.de/tkirc2/
+MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -13,6 +15,8 @@ PERMIT_PACKAGE=	Yes
 SITES=		http://netsplit.de/tkirc2/
 
 MODULES=	x11/tk
+MODTK_VERSION=	8.6
+
 RUN_DEPENDS=	net/ircII \
 		${MODTK_RUN_DEPENDS}
 
