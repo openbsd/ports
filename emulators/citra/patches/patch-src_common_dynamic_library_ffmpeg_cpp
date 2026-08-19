@@ -1,0 +1,53 @@
+ffmpeg-9.0
+
+Index: src/common/dynamic_library/ffmpeg.cpp
+--- src/common/dynamic_library/ffmpeg.cpp.orig
++++ src/common/dynamic_library/ffmpeg.cpp
+@@ -33,14 +33,13 @@ av_hwframe_ctx_alloc_func av_hwframe_ctx_alloc;
+ av_hwframe_ctx_init_func av_hwframe_ctx_init;
+ av_hwframe_get_buffer_func av_hwframe_get_buffer;
+ av_hwframe_transfer_data_func av_hwframe_transfer_data;
+-av_int_list_length_for_size_func av_int_list_length_for_size;
+ #if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(56, 53, 100) // lavu 56.53.100
+ av_opt_child_class_iterate_func av_opt_child_class_iterate;
+ #else
+ av_opt_child_class_next_func av_opt_child_class_next;
+ #endif
+ av_opt_next_func av_opt_next;
+-av_opt_set_bin_func av_opt_set_bin;
++av_opt_set_array_func av_opt_set_array;
+ av_pix_fmt_desc_get_func av_pix_fmt_desc_get;
+ av_pix_fmt_desc_next_func av_pix_fmt_desc_next;
+ av_sample_fmt_is_planar_func av_sample_fmt_is_planar;
+@@ -65,6 +64,7 @@ avcodec_find_encoder_by_name_func avcodec_find_encoder
+ avcodec_free_context_func avcodec_free_context;
+ avcodec_get_class_func avcodec_get_class;
+ avcodec_get_hw_config_func avcodec_get_hw_config;
++avcodec_get_supported_config_func avcodec_get_supported_config;
+ avcodec_open2_func avcodec_open2;
+ avcodec_parameters_from_context_func avcodec_parameters_from_context;
+ avcodec_receive_frame_func avcodec_receive_frame;
+@@ -168,14 +168,13 @@ static bool LoadAVUtil() {
+     LOAD_SYMBOL(avutil, av_hwframe_ctx_init);
+     LOAD_SYMBOL(avutil, av_hwframe_get_buffer);
+     LOAD_SYMBOL(avutil, av_hwframe_transfer_data);
+-    LOAD_SYMBOL(avutil, av_int_list_length_for_size);
+ #if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(56, 53, 100) // lavu 56.53.100
+     LOAD_SYMBOL(avutil, av_opt_child_class_iterate);
+ #else
+     LOAD_SYMBOL(avutil, av_opt_child_class_next);
+ #endif
+     LOAD_SYMBOL(avutil, av_opt_next);
+-    LOAD_SYMBOL(avutil, av_opt_set_bin);
++    LOAD_SYMBOL(avutil, av_opt_set_array);
+     LOAD_SYMBOL(avutil, av_pix_fmt_desc_get);
+     LOAD_SYMBOL(avutil, av_pix_fmt_desc_next);
+     LOAD_SYMBOL(avutil, av_sample_fmt_is_planar);
+@@ -232,6 +231,7 @@ static bool LoadAVCodec() {
+     LOAD_SYMBOL(avcodec, avcodec_free_context);
+     LOAD_SYMBOL(avcodec, avcodec_get_class);
+     LOAD_SYMBOL(avcodec, avcodec_get_hw_config);
++    LOAD_SYMBOL(avcodec, avcodec_get_supported_config);
+     LOAD_SYMBOL(avcodec, avcodec_open2);
+     LOAD_SYMBOL(avcodec, avcodec_parameters_from_context);
+     LOAD_SYMBOL(avcodec, avcodec_receive_frame);

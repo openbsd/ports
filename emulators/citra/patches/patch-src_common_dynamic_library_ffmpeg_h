@@ -1,0 +1,55 @@
+ffmpeg-9.0
+
+Index: src/common/dynamic_library/ffmpeg.h
+--- src/common/dynamic_library/ffmpeg.h.orig
++++ src/common/dynamic_library/ffmpeg.h
+@@ -43,14 +43,14 @@ typedef AVBufferRef* (*av_hwframe_ctx_alloc_func)(AVBu
+ typedef int (*av_hwframe_ctx_init_func)(AVBufferRef*);
+ typedef int (*av_hwframe_get_buffer_func)(AVBufferRef*, AVFrame*, int);
+ typedef int (*av_hwframe_transfer_data_func)(AVFrame*, const AVFrame*, int);
+-typedef unsigned (*av_int_list_length_for_size_func)(unsigned, const void*, uint64_t);
+ #if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(56, 53, 100) // lavu 56.53.100
+ typedef const AVClass* (*av_opt_child_class_iterate_func)(const AVClass*, void**);
+ #else
+ typedef const AVClass* (*av_opt_child_class_next_func)(const AVClass*, const AVClass*);
+ #endif
+ typedef const AVOption* (*av_opt_next_func)(const void*, const AVOption*);
+-typedef int (*av_opt_set_bin_func)(void*, const char*, const uint8_t*, int, int);
++typedef int (*av_opt_set_array_func)(void*, const char*, int, unsigned, unsigned, AVOptionType,
++                                     const void*);
+ typedef const AVPixFmtDescriptor* (*av_pix_fmt_desc_get_func)(AVPixelFormat);
+ typedef const AVPixFmtDescriptor* (*av_pix_fmt_desc_next_func)(const AVPixFmtDescriptor*);
+ typedef int (*av_sample_fmt_is_planar_func)(AVSampleFormat);
+@@ -81,14 +81,13 @@ extern av_hwframe_ctx_alloc_func av_hwframe_ctx_alloc;
+ extern av_hwframe_ctx_init_func av_hwframe_ctx_init;
+ extern av_hwframe_get_buffer_func av_hwframe_get_buffer;
+ extern av_hwframe_transfer_data_func av_hwframe_transfer_data;
+-extern av_int_list_length_for_size_func av_int_list_length_for_size;
+ #if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(56, 53, 100) // lavu 56.53.100
+ extern av_opt_child_class_iterate_func av_opt_child_class_iterate;
+ #else
+ extern av_opt_child_class_next_func av_opt_child_class_next;
+ #endif
+ extern av_opt_next_func av_opt_next;
+-extern av_opt_set_bin_func av_opt_set_bin;
++extern av_opt_set_array_func av_opt_set_array;
+ extern av_pix_fmt_desc_get_func av_pix_fmt_desc_get;
+ extern av_pix_fmt_desc_next_func av_pix_fmt_desc_next;
+ extern av_sample_fmt_is_planar_func av_sample_fmt_is_planar;
+@@ -114,6 +113,8 @@ typedef const AVCodec* (*avcodec_find_encoder_by_name_
+ typedef void (*avcodec_free_context_func)(AVCodecContext**);
+ typedef const AVClass* (*avcodec_get_class_func)();
+ typedef const AVCodecHWConfig* (*avcodec_get_hw_config_func)(const AVCodec*, int);
++typedef int (*avcodec_get_supported_config_func)(const AVCodecContext*, const AVCodec*,
++                                                 enum AVCodecConfig, unsigned, const void**, int*);
+ typedef int (*avcodec_open2_func)(AVCodecContext*, const AVCodec*, AVDictionary**);
+ typedef int (*avcodec_parameters_from_context_func)(AVCodecParameters* par, const AVCodecContext*);
+ typedef int (*avcodec_receive_frame_func)(AVCodecContext*, AVFrame*);
+@@ -138,6 +139,7 @@ extern avcodec_find_encoder_by_name_func avcodec_find_
+ extern avcodec_free_context_func avcodec_free_context;
+ extern avcodec_get_class_func avcodec_get_class;
+ extern avcodec_get_hw_config_func avcodec_get_hw_config;
++extern avcodec_get_supported_config_func avcodec_get_supported_config;
+ extern avcodec_open2_func avcodec_open2;
+ extern avcodec_parameters_from_context_func avcodec_parameters_from_context;
+ extern avcodec_receive_frame_func avcodec_receive_frame;
