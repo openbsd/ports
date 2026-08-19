@@ -1,5 +1,5 @@
 - fixed encoding of silent audio file
-- added support of ffmpeg5
+- added support of ffmpeg9
 - https://sourceforge.net/p/dvdstyler/DVDStyler/ci/4e8e4aae705a9c4c7958e584015c4c1e222e96c8/
 
 Index: src/mediaenc_ffmpeg.cpp
@@ -144,7 +144,32 @@ Index: src/mediaenc_ffmpeg.cpp
  	props->buffer_size = VIDEO_BUF_SIZE;
  	props->max_bitrate = 0;
  	props->min_bitrate = 0;
-@@ -252,25 +269,21 @@ bool wxFfmpegMediaEncoder::addAudioStream(int codecId)
+@@ -236,12 +253,19 @@ bool wxFfmpegMediaEncoder::addVideoStream(int codecId,
+ }
+ 
+ bool hasSampleFmt(AVCodec* codec, AVSampleFormat sample_fmt) {
+-	if (codec != NULL && codec->sample_fmts != NULL) {
+-		int fIdx = 0;
+-		while (codec->sample_fmts[fIdx] >= 0) {
+-			if (codec->sample_fmts[fIdx] == sample_fmt)
++	const enum AVSampleFormat* sample_fmts;
++	int num_sample_fmts, ret;
++
++	if (codec != NULL) {
++		ret = avcodec_get_supported_config(NULL, codec, AV_CODEC_CONFIG_SAMPLE_FORMAT, 0,
++				(const void**) &sample_fmts, &num_sample_fmts);
++		if (ret < 0)
++			return false;
++		if (sample_fmts == NULL)
++			return true;
++		for (int fIdx = 0; fIdx < num_sample_fmts; fIdx++) {
++			if (sample_fmts[fIdx] == sample_fmt)
+ 				return true;
+-			fIdx++;
+ 		}
+ 	}
+ 	return false;
+@@ -252,25 +276,21 @@ bool wxFfmpegMediaEncoder::addAudioStream(int codecId)
  		m_audioStm = NULL;
  		return true;
  	}
@@ -180,7 +205,7 @@ Index: src/mediaenc_ffmpeg.cpp
  	} else {
  		sampleFmt = AV_SAMPLE_FMT_S16;
   		encoder = avcodec_find_encoder((AVCodecID) codecId );
-@@ -285,54 +298,60 @@ bool wxFfmpegMediaEncoder::addAudioStream(int codecId)
+@@ -285,54 +305,60 @@ bool wxFfmpegMediaEncoder::addAudioStream(int codecId)
  
  	AVCodecContext* c = m_audioCodec;
  	c->thread_count = m_threadCount;
@@ -270,7 +295,7 @@ Index: src/mediaenc_ffmpeg.cpp
  }
  
  void wxFfmpegMediaEncoder::CloseVideoEncoder() {
-@@ -345,10 +364,8 @@ void wxFfmpegMediaEncoder::CloseVideoEncoder() {
+@@ -345,10 +371,8 @@ void wxFfmpegMediaEncoder::CloseVideoEncoder() {
  		av_freep(&m_picture);
  	}
  	av_freep(&m_videoOutbuf);
@@ -282,7 +307,7 @@ Index: src/mediaenc_ffmpeg.cpp
  }
  
  bool wxFfmpegMediaEncoder::EncodeImage(wxImage image, int frames, AbstractProgressDialog* progressDialog) {
-@@ -390,20 +407,77 @@ bool wxFfmpegMediaEncoder::EncodeImage(wxImage image, 
+@@ -390,20 +414,77 @@ bool wxFfmpegMediaEncoder::EncodeImage(wxImage image, 
  	return true;
  }
  
@@ -370,7 +395,7 @@ Index: src/mediaenc_ffmpeg.cpp
  	}
  	return true;
  }
-@@ -429,32 +503,30 @@ int encode(AVCodecContext *avctx, AVPacket *pkt, AVFra
+@@ -429,32 +510,30 @@ int encode(AVCodecContext *avctx, AVPacket *pkt, AVFra
  	return ret;
  }
  
@@ -412,7 +437,7 @@ Index: src/mediaenc_ffmpeg.cpp
  	return true;
  }
  
-@@ -463,46 +535,48 @@ bool wxFfmpegMediaEncoder::writeVideoFrame() {
+@@ -463,46 +542,48 @@ bool wxFfmpegMediaEncoder::writeVideoFrame() {
  	
  	// encode the image
  	m_picture->pts = m_nextVideoPts++;
