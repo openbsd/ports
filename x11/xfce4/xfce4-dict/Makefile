@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 dictionary application
 
-XFCE_VERSION=	0.8.9
+XFCE_VERSION=	0.8.10
 XFCE_GOODIE=	xfce4-dict
 
 # GPLv2
