@@ -23,7 +23,7 @@ VERSION=	1.30.4
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
-REVISION-modsecurity=	0
+REVISION=		1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cache_purge=	nginx-cache_purge-${VERSION}
@@ -48,15 +48,19 @@ SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/
 DIST_TUPLE=	\
 	github FRiCKLE ngx_cache_purge 2.3 ngx_cache_purge \
 	github leev ngx_http_geoip2_module 3.4 ngx_http_geoip2_module \
-	github openresty headers-more-nginx-module v0.34 headers-more-nginx-module \
+	github openresty headers-more-nginx-module v0.40 headers-more-nginx-module \
 	github kvspb nginx-auth-ldap 83c059b73566c2ee9cbda920d91b66657cf120b7 nginx-auth-ldap \
 	github openresty lua-nginx-module v0.10.11 lua-nginx-module \
-	github vision5 ngx_devel_kit v0.3.3 ngx_devel_kit \
+	github vision5 ngx_devel_kit v0.3.4 ngx_devel_kit \
 	github nbs-system naxsi d714f1636ea49a9a9f4f06dba14aee003e970834 naxsi \
-	github nginx njs 0.9.1 njs \
+	github nginx njs 1.0.0 njs \
 	github arut nginx-rtmp-module v1.2.2 nginx-rtmp-module \
-	github nginx-modules ngx_http_hmac_secure_link_module 48c4625fbbf51ed5a95bfec23fa444f6c3702e50 ngx_http_hmac_secure_link_module \
-	github owasp-modsecurity ModSecurity-nginx v1.0.3 ModSecurity-nginx
+	github nginx-modules ngx_http_hmac_secure_link_module 2.0.0 ngx_http_hmac_secure_link_module \
+	github owasp-modsecurity ModSecurity-nginx v1.0.4 ModSecurity-nginx
+# newer naxsi needs libinjection
+#	github wargio naxsi 7e867e20e282bd8cf6bbe99ff6207139422988f5 naxsi \
+# newer lua-nginx-module wants patched luajit-2.0; maybe add openresty as a
+# separate port instead?
 
 HOMEPAGE=	https://nginx.org/
 
