@@ -1,15 +1,15 @@
 COMMENT =	unicode validator and transcoder with SIMD
 
-VERSION =	9.0.0
+VERSION =	9.1.0
 DIST_TUPLE +=	github simdutf simdutf v${VERSION} .
 
-SHARED_LIBS =	simdutf 0.5 # 34.0.0
+SHARED_LIBS =	simdutf 0.6 # 35.0.0
 
 CATEGORIES =	textproc devel
 
 HOMEPAGE =	https://simdutf.github.io/simdutf/
 
-MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
+MAINTAINER =	Volker Schlecht <volker@openbsd.org>
 
 # Apache 2.0, MIT
 PERMIT_PACKAGE =	Yes
