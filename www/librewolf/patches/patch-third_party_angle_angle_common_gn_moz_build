@@ -1,0 +1,17 @@
+https://github.com/mozilla-firefox/firefox/commit/436819179bb0797bd04ff661ec4a12b64034ce93
+https://bugzilla.mozilla.org/show_bug.cgi?id=2057158
+
+Index: third_party/angle/angle_common_gn/moz.build
+--- third_party/angle/angle_common_gn/moz.build.orig
++++ third_party/angle/angle_common_gn/moz.build
+@@ -144,6 +144,10 @@ if CONFIG["OS_TARGET"] == "OpenBSD":
+     DEFINES["__STDC_CONSTANT_MACROS"] = True
+     DEFINES["__STDC_FORMAT_MACROS"] = True
+ 
++    UNIFIED_SOURCES += [
++        "/third_party/angle/src/common/system_utils_posix.cpp"
++    ]
++
+ if CONFIG["OS_TARGET"] == "WINNT":
+ 
+     DEFINES["ANGLE_IS_WIN"] = True

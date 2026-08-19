@@ -13,7 +13,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # If upstream adds revision number -x, it will become plx in OpenBSD, e.g.
 # librewolf-149.0.2-2 (upstream) becomes librewolf-149.0.2pl2 (patch level 2)
-MOZILLA_DIST_VERSION =	153.0.4-1
+MOZILLA_DIST_VERSION =	154.0-2
 MOZILLA_VERSION =	${MOZILLA_DIST_VERSION:C/-([0-9]+)$/pl\1/}
 
 MOZILLA_PROJECT =	librewolf
@@ -21,7 +21,7 @@ MOZILLA_CODENAME =	browser
 MAINTAINER =		Leah Rowe <leah@libreboot.org>
 
 HOMEPAGE =	https://librewolf.net/
-SO_VERSION =	2.0
+SO_VERSION =	3.0
 # Bump minor ver if shlibs deleted in components dir to avoid pkg_add -r issues
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozinference mozwayland xul \
 		clearkey gkcodecs lgpllibs mozsqlite3
