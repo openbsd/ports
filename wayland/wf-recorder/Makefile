@@ -1,7 +1,7 @@
 COMMENT =	Utility program for screen recording of wayland compositors
 
 V =		0.6.0
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT = ammen99
 GH_PROJECT = wf-recorder
