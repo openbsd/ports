@@ -4,7 +4,7 @@ MODGO_MODULES =	\
 	github.com/gdamore/tcell/v2		 v2.9.0 \
 	github.com/junegunn/go-shellwords	 v0.0.0-20250127100254-2aa3b3277741 \
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
-	github.com/mattn/go-isatty		 v0.0.22 \
+	github.com/mattn/go-isatty		 v0.0.24 \
 	github.com/mattn/go-runewidth		 v0.0.16 \
 	github.com/rivo/uniseg			 v0.4.7 \
 	github.com/yuin/goldmark		 v1.4.13 \
