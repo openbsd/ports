@@ -4,7 +4,7 @@ DISTNAME =		retroarch-sourceonly-$V
 PKGNAME =		retroarch-$V
 
 V =			1.21.0
-REVISION =		0
+REVISION =		1
 
 # crashes when recording videos due to ffmpeg
 USE_NOBTCFI-amd64 =	Yes
