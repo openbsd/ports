@@ -7,6 +7,7 @@ include/thrift/TDispatchProcessor.h
 include/thrift/TLogging.h
 include/thrift/TNonCopyable.h
 include/thrift/TOutput.h
+include/thrift/TPrintTo.h
 include/thrift/TProcessor.h
 include/thrift/TToString.h
 include/thrift/TUuid.h
@@ -144,7 +145,6 @@ include/thrift/windows/Sync.h
 include/thrift/windows/TWinsockSingleton.h
 include/thrift/windows/WinFcntl.h
 include/thrift/windows/config.h
-lib/cmake/
 lib/cmake/thrift/
 lib/cmake/thrift/ThriftConfig.cmake
 lib/cmake/thrift/ThriftConfigVersion.cmake

@@ -1,7 +1,7 @@
 Index: lib/cpp/src/thrift/transport/TServerSocket.cpp
 --- lib/cpp/src/thrift/transport/TServerSocket.cpp.orig
 +++ lib/cpp/src/thrift/transport/TServerSocket.cpp
-@@ -421,7 +421,7 @@ void TServerSocket::listen() {
+@@ -446,7 +446,7 @@ void TServerSocket::listen() {
  #ifdef ANDROID
                                   AI_PASSIVE | AI_ADDRCONFIG);
  #else
@@ -9,4 +9,4 @@ Index: lib/cpp/src/thrift/transport/TServerSocket.cpp
 +                                 AI_PASSIVE);
  #endif
      } catch (const std::system_error& e) {
-       GlobalOutput.printf("getaddrinfo() -> %d; %s", e.code().value(), e.what());
+       TOutput::instance().printf("getaddrinfo() -> %d; %s", e.code().value(), e.what());
