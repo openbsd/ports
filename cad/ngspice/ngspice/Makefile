@@ -1,4 +1,4 @@
-REVISION =	0
+REVISION =	1
 
 COMMENT =	circuit simulator, based on Berkeley SPICE
 
