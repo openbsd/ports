@@ -1,6 +1,7 @@
 COMMENT-main =	multimedia transformations framework
 COMMENT-gpl2 =	GPLv2-licensed modules for mlt
 V =		7.38.0
+REVISION =	0
 DISTNAME =	mlt-${V}
 PKGNAME-main =	mlt7-${V}
 PKGNAME-gpl2 =	mlt7-gpl2-${V}
