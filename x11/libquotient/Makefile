@@ -3,6 +3,7 @@ COMMENT =	Qt6 library for writing cross-platform Matrix clients
 GH_ACCOUNT =	quotient-im
 GH_PROJECT =	libQuotient
 GH_TAGNAME =	0.9.5
+REVISION =	0
 
 SHARED_LIBS +=  QuotientQt6               3.0 # 0.0
 
@@ -26,10 +27,9 @@ LIB_DEPENDS =	devel/olm \
 		security/qtkeychain,qt6 \
 
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
-			-DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
+			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
-# XXX C++20 vs. libstd++ in quotest.cpp
+# Tests require a matrix server on localhost:1234
 CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 
 # XXX unpackaged quotest is still built when disabling tests

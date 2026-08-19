@@ -3,7 +3,7 @@ COMMENT =	desktop client for Matrix
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	nheko
 GH_TAGNAME =	v0.12.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	net
 
@@ -47,6 +47,5 @@ LIB_DEPENDS =	databases/lmdb \
 
 # -DCMAKE_DISABLE_FIND_PACKAGE_GIT=ON (or _Git or _git) do not work
 CONFIGURE_ARGS +=	-DGIT=OFF
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
 
 .include <bsd.port.mk>
