@@ -428,10 +428,8 @@ lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/
 lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/limited_api1.c
-lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/limited_api2.pyx
-lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/limited_api_latest.c
-lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/limited_api_opaque.c
+lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/limited_api.c
+lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/limited_api_cython.pyx
 lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/meson.build
 lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/examples/limited_api/setup.py
 lib/python${MODPY_VERSION}/site-packages/numpy/_core/tests/test__exceptions.py
