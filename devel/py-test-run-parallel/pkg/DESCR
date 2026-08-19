@@ -1,8 +1,18 @@
-This pytest plugin takes a set of tests that would be normally be run serially
-and execute them in parallel.
+This pytest plugin takes a set of tests that would be normally be run
+serially and execute them in parallel.
 
-The main goal of pytest-run-parallel is to discover thread-safety issues that
-could exist when using C libraries, this is of vital importance after PEP703,
-which provides a path for a CPython implementation without depending on the
-Global Interpreter Lock (GIL), thus allowing for proper parallelism in programs
-that make use of the CPython interpreter.
+If your tests are unable to find "pytest.mark.parallel_threads", you want
+this.
+
+The main goal of pytest-run-parallel is to discover thread-safety issues
+that could exist when using C libraries, this is of vital importance
+after PEP703, which provides a path for a CPython implementation without
+depending on the Global Interpreter Lock (GIL), thus allowing for proper
+parallelism in programs that make use of the CPython interpreter.
+
+This plugin is not an alternative to pytest-xdist and does not run all
+of the tests in a test suite simultaneously in a thread pool. Instead,
+it runs many instances of the same test in a thread pool. It is only
+useful as a tool to do multithreaded stress tests using an existing test
+suite and is not useful to speed up the execution of a test suite via
+multithreaded parallelism.
