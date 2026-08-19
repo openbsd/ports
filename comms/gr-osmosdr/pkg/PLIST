@@ -1,0 +1,22 @@
+bin/osmocom_fft
+bin/osmocom_siggen_nogui
+include/osmosdr/
+include/osmosdr/api.h
+include/osmosdr/device.h
+include/osmosdr/pimpl.h
+include/osmosdr/ranges.h
+include/osmosdr/sink.h
+include/osmosdr/source.h
+include/osmosdr/time_spec.h
+lib/cmake/osmosdr/
+lib/cmake/osmosdr/gnuradio-osmosdrConfig.cmake
+lib/cmake/osmosdr/gnuradio-osmosdrTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/osmosdr/gnuradio-osmosdrTargets.cmake
+@lib lib/libgnuradio-osmosdr.so.${LIBgnuradio-osmosdr_VERSION}
+lib/python${MODPY_VERSION}/site-packages/osmosdr/
+lib/python${MODPY_VERSION}/site-packages/osmosdr/__init__.py
+lib/python${MODPY_VERSION}/site-packages/osmosdr/osmocom_siggen_base.py
+@so lib/python${MODPY_VERSION}/site-packages/osmosdr/osmosdr_python.${MODPY_PYC_MAGIC_TAG}so
+share/gnuradio/grc/blocks/osmosdr_sink.block.yml
+share/gnuradio/grc/blocks/osmosdr_source.block.yml
+share/gnuradio/grc/blocks/rtlsdr_source.block.yml
