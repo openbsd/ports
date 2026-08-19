@@ -1,0 +1,21 @@
+Fix build with libcxx22.
+
+/usr/ports/pobj/fmt-11.2.0/fmt-11.2.0/include/fmt/format.h:747:28: error: use of undeclared identifier 'malloc'
+  747 |     T* p = static_cast<T*>(malloc(n * sizeof(T)));
+      |                            ^~~~~~
+/usr/ports/pobj/fmt-11.2.0/fmt-11.2.0/include/fmt/format.h:752:35: error: use of undeclared identifier 'free'
+  752 |   void deallocate(T* p, size_t) { free(p); }
+      |                                   ^~~~
+
+Index: include/fmt/format.h
+--- include/fmt/format.h.orig
++++ include/fmt/format.h
+@@ -41,6 +41,8 @@
+ #include "base.h"
+ 
+ #ifndef FMT_MODULE
++#  include <stdlib.h> // malloc, free
++
+ #  include <cmath>    // std::signbit
+ #  include <cstddef>  // std::byte
+ #  include <cstdint>  // uint32_t
