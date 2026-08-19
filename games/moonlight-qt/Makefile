@@ -5,7 +5,7 @@ PKGNAME =		moonlight-qt-${V}
 
 DISTNAME =		MoonlightSrc-${V}
 SITES =			https://github.com/moonlight-stream/moonlight-qt/releases/download/v${V}/
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
