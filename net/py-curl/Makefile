@@ -1,10 +1,9 @@
 COMMENT=	Python interface to cURL library
 
-MODPY_DISTV=	7.46.0
+MODPY_DISTV=	7.47.0
 DISTNAME=	pycurl-${MODPY_DISTV}
 PKGNAME=	py-curl-${MODPY_DISTV}
 CATEGORIES=	net
-REVISION=	0
 
 HOMEPAGE=	http://pycurl.io/
 
@@ -21,6 +20,8 @@ LIB_DEPENDS=	net/curl
 
 TEST_DEPENDS=	${BUILD_PKGPATH} \
 		devel/py-flaky \
+		devel/py-test-run-parallel \
+		net/py-websockets \
 		www/py-bottle \
 		www/py-flask
 

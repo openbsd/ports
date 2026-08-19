@@ -3,6 +3,7 @@ lib/python${MODPY_VERSION}/site-packages/curl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/curl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/curl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/curl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pycurl/
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/RECORD
@@ -11,7 +12,15 @@ lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/licenses/COPYING-LGPL
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/licenses/COPYING-MIT
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/top_level.txt
-@so lib/python${MODPY_VERSION}/site-packages/pycurl.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pycurl/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pycurl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pycurl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pycurl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pycurl/${MODPY_PYCACHE}async_multi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pycurl/${MODPY_PYCACHE}async_multi.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/pycurl/_pycurl.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pycurl/_pycurl.pyi
+lib/python${MODPY_VERSION}/site-packages/pycurl/async_multi.py
 share/doc/py-curl/
 share/doc/py-curl/AUTHORS
 share/doc/py-curl/COPYING-LGPL
@@ -21,9 +30,9 @@ share/doc/py-curl/INSTALL.rst
 share/doc/py-curl/README.rst
 share/doc/py-curl/RELEASE-NOTES.rst
 share/examples/py-curl/
+share/examples/py-curl/async_multi.py
 share/examples/py-curl/basicfirst.py
 share/examples/py-curl/file_upload.py
-share/examples/py-curl/linksys.py
 share/examples/py-curl/multi-socket_action-select.py
 share/examples/py-curl/opensocketexception.py
 share/examples/py-curl/quickstart/
