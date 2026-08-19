@@ -22,6 +22,8 @@
      SUBDIR += gammu
      SUBDIR += gnuradio
      SUBDIR += gpsk31
+     SUBDIR += gqrx
+     SUBDIR += gr-osmosdr
      SUBDIR += hackrf
      SUBDIR += hamlib
      SUBDIR += hylafax
