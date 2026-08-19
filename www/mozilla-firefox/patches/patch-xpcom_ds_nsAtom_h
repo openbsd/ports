@@ -1,0 +1,29 @@
+fix build with libcxx22
+https://phabricator.services.mozilla.com/D316723
+
+Index: xpcom/ds/nsAtom.h
+--- xpcom/ds/nsAtom.h.orig
++++ xpcom/ds/nsAtom.h
+@@ -36,11 +36,19 @@ class nsDynamicAtom;
+ class nsAtom {
+  public:
+   // Returns true if ToLowercaseASCII would return the string unchanged.
++  //
++  // This is deliberately a plain loop rather than std::all_of: gGkAtoms calls
++  // this for every static atom within a single constant expression, and
++  // std::all_of costs enough extra constexpr steps to exceed the default
++  // -fconstexpr-steps budget with some standard library implementations.
+   static constexpr bool ComputeIsAsciiLowercase(const char16_t* aString,
+                                                 const uint32_t aLength) {
+-    return std::all_of(aString, aString + aLength, [](char16_t c) {
+-      return !mozilla::IsAsciiUppercaseAlpha(c);
+-    });
++    for (uint32_t i = 0; i < aLength; ++i) {
++      if (mozilla::IsAsciiUppercaseAlpha(aString[i])) {
++        return false;
++      }
++    }
++    return true;
+   }
+ 
+   template <size_t N>
