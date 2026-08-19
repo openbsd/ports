@@ -1,6 +1,6 @@
 COMMENT =	atom/rss feed reader web application
 
-V =		2.3.2
+V =		2.3.3
 
 MODGO_MODNAME =	miniflux.app/v2
 MODGO_VERSION =	v${V}
@@ -24,7 +24,7 @@ MODULES =	lang/go
 ALL_TARGET =	${MODGO_MODNAME}/...
 
 MODGO_LDFLAGS +=	-X miniflux.app/v2/internal/version.Version=${V}
-MODGO_LDFLAGS +=	-X miniflux.app/v2/internal/version.Commit=51f2e0d8
+MODGO_LDFLAGS +=	-X miniflux.app/v2/internal/version.Commit=c4d54f87
 MODGO_LDFLAGS +=	-X miniflux.app/v2/internal/version.BuildDate=`date -u +%FT%T%z`
 
 do-install:
