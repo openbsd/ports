@@ -1,6 +1,6 @@
 COMMENT=	IDNA internationalized domain names for Python
 
-MODPY_DISTV=	3.18
+MODPY_DISTV=	3.19
 DISTNAME=	idna-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
