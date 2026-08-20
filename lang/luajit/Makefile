@@ -12,10 +12,10 @@ SHARED_LIBS +=	luajit-5.1 1.0 # 2.0.5
 # should do frequent snapshots of a branch. Do not attempt to cherry-pick
 # or backport individual changes, no matter how self-standing individual
 # changes look (because they often are not)."
-DIST_TUPLE =	github LuaJIT LuaJIT faaf663340347a78b22ed94c63c24fe090bd9784 .
+DIST_TUPLE =	github LuaJIT LuaJIT 27f169c6c64175896d86e14f0d23c8d85c119c2c .
 # epoch time of the commit; easiest found in ${WRKSRC}/.relver of the
 # git-archive tar
-V =		2.1.1785192264
+V =		2.1.1787058514
 
 COMMENT =	just-in-time compiler for Lua
 PKGNAME =	luajit-$V
