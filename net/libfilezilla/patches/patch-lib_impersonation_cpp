@@ -1,16 +1,16 @@
 Index: lib/impersonation.cpp
 --- lib/impersonation.cpp.orig
 +++ lib/impersonation.cpp
-@@ -27,7 +27,7 @@ impersonation_token::impersonation_token(fz::native_st
- #include <optional>
- #include <tuple>
+@@ -81,7 +81,7 @@ impersonation_token::impersonation_token(fz::user cons
+ 
+ #include "libfilezilla/buffer.hpp"
  
 -#if FZ_UNIX
 +#if FZ_UNIX && !__OpenBSD__
  #include <crypt.h>
  #include <shadow.h>
  #endif
-@@ -118,7 +118,7 @@ std::optional<gid_t> get_group(native_string const& gn
+@@ -177,7 +177,7 @@ std::optional<gid_t> get_group(native_string const& gn
  	return {};
  }
  
@@ -19,7 +19,7 @@ Index: lib/impersonation.cpp
  struct shadow_holder {
  	shadow_holder() = default;
  	shadow_holder(shadow_holder const&) = delete;
-@@ -206,7 +206,7 @@ std::vector<gid_t> get_supplementary(std::string const
+@@ -265,7 +265,7 @@ std::vector<gid_t> get_supplementary(std::string const
  
  bool check_auth(native_string const& username, native_string const& password)
  {
