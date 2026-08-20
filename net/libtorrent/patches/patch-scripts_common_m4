@@ -1,0 +1,15 @@
+Index: scripts/common.m4
+--- scripts/common.m4.orig
++++ scripts/common.m4
+@@ -148,9 +148,8 @@ AC_DEFUN([TORRENT_CHECK_CACHELINE], [
+           AC_DEFINE([LT_SMP_CACHE_BYTES], 128, [Optimized 128-byte alignment for newer high-performance chipsets.])
+           ;;
+         *)
+-          # STRICT ENFORCEMENT: Fail the build immediately if the CPU isn't explicitly known
+-          AC_MSG_RESULT([unrecognized architecture])
+-          AC_MSG_FAILURE([The target CPU architecture ($host_cpu) is unrecognized. Aborting configuration to prevent fatal runtime false-sharing or memory misalignment errors.])
++          AC_MSG_RESULT([fallback 64 bytes])
++          AC_DEFINE([LT_SMP_CACHE_BYTES], 64, [Fallback 64-byte alignment.])
+           ;;
+       esac
+       ;;

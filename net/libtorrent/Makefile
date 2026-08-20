@@ -6,6 +6,7 @@ BROKEN-sh =		undefined references to __sync atomic ops
 V =			0.16.20
 DISTNAME=		libtorrent-$V
 EPOCH=			0
+REVISION=		0
 SHARED_LIBS +=  	torrent 25.0	# .18.0
 CATEGORIES=		net devel
 
@@ -24,7 +25,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 LIB_DEPENDS =		net/curl
 TEST_DEPENDS =		devel/cppunit
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.72
 CONFIGURE_ARGS =	--disable-debug \
 			--disable-instrumentation \
 			--disable-mincore \

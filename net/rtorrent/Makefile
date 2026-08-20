@@ -1,12 +1,12 @@
 COMMENT =		ncurses BitTorrent client based on libTorrent
 
 V =			0.16.20
+EPOCH =			0
+REVISION =		0
 DISTNAME =		rtorrent-$V
 CATEGORIES =		net
 
 HOMEPAGE =		https://rakshasa.github.io/rtorrent/
-
-EPOCH =			0
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -23,7 +23,8 @@ LIB_DEPENDS =		net/libtorrent \
 			net/curl
 TEST_DEPENDS =		devel/cppunit
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.72
 CONFIGURE_ENV +=	LDFLAGS=-pthread
 CONFIGURE_ARGS =	--disable-debug
 
