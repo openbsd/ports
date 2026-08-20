@@ -1,3 +1,5 @@
+https://gitlab.xfce.org/apps/xfce4-dict/-/merge_requests/29
+
 Index: lib/common.c
 --- lib/common.c.orig
 +++ lib/common.c
