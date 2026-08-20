@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.118 2026/07/24 17:12:30 tb Exp $
+# $OpenBSD: arch-defines.mk,v 1.119 2026/08/20 21:24:01 kirill Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -20,7 +20,7 @@ APM_ARCHS = arm64 amd64 i386 macppc riscv64 sparc64
 BE_ARCHS = hppa m88k mips64 powerpc powerpc64 sparc64
 LE_ARCHS = aarch64 alpha amd64 arm i386 mips64el riscv64 sh
 LP64_ARCHS = aarch64 alpha amd64 mips64 mips64el powerpc64 riscv64 sparc64
-GCC4_ARCHS = alpha hppa m88k sh sparc64
+GCC4_ARCHS = alpha hppa m88k sh
 
 # arches where certain ports are available
 MONO_ARCHS = aarch64 amd64 i386
@@ -32,9 +32,9 @@ OCAML_NATIVE_ARCHS = aarch64 amd64 i386
 OCAML_NATIVE_DYNLINK_ARCHS = aarch64 amd64 i386
 
 # arches where the base compiler is clang
-CLANG_ARCHS = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64
+CLANG_ARCHS = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64 sparc64
 # arches using LLVM's linker (ld.lld); others use binutils' ld.bfd
-LLD_ARCHS = aarch64 amd64 arm i386 powerpc powerpc64 riscv64
+LLD_ARCHS = aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 
 # arches where ports devel/llvm builds - populates llvm ONLY_FOR_ARCHS
 # as well as available for PROPERTIES checks.
