@@ -1,6 +1,6 @@
 COMMENT=		network analysis and security monitoring framework
 
-V =			8.2.1
+V =			8.2.2
 
 DISTNAME =		zeek-${V}
 

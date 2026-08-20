@@ -819,6 +819,7 @@ include/zeek/packet_analysis/Analyzer.h
 include/zeek/packet_analysis/Component.h
 include/zeek/packet_analysis/Dispatcher.h
 include/zeek/packet_analysis/Manager.h
+include/zeek/packet_analysis/consts.bif.h
 include/zeek/packet_analysis/protocol/
 include/zeek/packet_analysis/protocol/arp/
 include/zeek/packet_analysis/protocol/arp/ARP.h
@@ -1307,6 +1308,7 @@ share/zeek/base/bif/cluster.bif.zeek
 share/zeek/base/bif/comm.bif.zeek
 share/zeek/base/bif/communityid.bif.zeek
 share/zeek/base/bif/const.bif.zeek
+share/zeek/base/bif/consts.bif.zeek
 share/zeek/base/bif/data.bif.zeek
 share/zeek/base/bif/event.bif.zeek
 share/zeek/base/bif/file_analysis.bif.zeek
