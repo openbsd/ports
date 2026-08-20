@@ -15684,6 +15684,7 @@ go/test/fixedbugs/issue79182.go
 go/test/fixedbugs/issue79186.go
 go/test/fixedbugs/issue7921.go
 go/test/fixedbugs/issue7944.go
+go/test/fixedbugs/issue79874.go
 go/test/fixedbugs/issue7995.go
 go/test/fixedbugs/issue7995b.dir/
 go/test/fixedbugs/issue7995b.dir/x1.go
@@ -15694,8 +15695,11 @@ go/test/fixedbugs/issue7997.go
 go/test/fixedbugs/issue7998.go
 go/test/fixedbugs/issue80004.go
 go/test/fixedbugs/issue8004.go
+go/test/fixedbugs/issue80097.go
 go/test/fixedbugs/issue8011.go
+go/test/fixedbugs/issue80127.go
 go/test/fixedbugs/issue8017.go
+go/test/fixedbugs/issue80188.go
 go/test/fixedbugs/issue8028.go
 go/test/fixedbugs/issue8036.go
 go/test/fixedbugs/issue8039.go
@@ -15703,6 +15707,10 @@ go/test/fixedbugs/issue8042.go
 go/test/fixedbugs/issue8047.go
 go/test/fixedbugs/issue8047b.go
 go/test/fixedbugs/issue8048.go
+go/test/fixedbugs/issue80517_1.go
+go/test/fixedbugs/issue80517_2.go
+go/test/fixedbugs/issue80517_3.go
+go/test/fixedbugs/issue80577.go
 go/test/fixedbugs/issue8060.dir/
 go/test/fixedbugs/issue8060.dir/a.go
 go/test/fixedbugs/issue8060.dir/b.go
