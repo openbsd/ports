@@ -5,7 +5,7 @@ COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 V=		2025-09-R1
 DISTNAME=	kismet-${V}
 PKGNAME=	kismet-${V:S,-,,g}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net security
 
