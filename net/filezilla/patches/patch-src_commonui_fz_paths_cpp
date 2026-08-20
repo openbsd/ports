@@ -1,7 +1,7 @@
 Index: src/commonui/fz_paths.cpp
 --- src/commonui/fz_paths.cpp.orig
 +++ src/commonui/fz_paths.cpp
-@@ -15,7 +15,7 @@
+@@ -16,7 +16,7 @@
  	#include <objbase.h>
  #else
  	#include <unistd.h>
@@ -10,7 +10,7 @@ Index: src/commonui/fz_paths.cpp
  #endif
  
  using namespace std::literals;
-@@ -498,12 +498,12 @@ std::string ShellUnescape(std::string const& path)
+@@ -512,12 +512,12 @@ std::string ShellUnescape(std::string const& path)
  {
  	std::string ret;
  
