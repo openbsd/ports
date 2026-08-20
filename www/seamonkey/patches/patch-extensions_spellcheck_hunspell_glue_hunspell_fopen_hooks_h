@@ -1,0 +1,17 @@
+libcxx22 calls std::fopen() rather than plain fopen(), so this
+preprocessor hack no longer works and breaks the build
+
+/usr/include/c++/v1/fstream:716:20: error: no member named 'hunspell_fopen_readahead' in namespace 'std'; did you mean simply 'hunspell_fopen_readahead'?
+  716 |   return __do_open(std::fopen(__s, __mdstr), __mode);
+
+Index: extensions/spellcheck/hunspell/glue/hunspell_fopen_hooks.h
+--- extensions/spellcheck/hunspell/glue/hunspell_fopen_hooks.h.orig
++++ extensions/spellcheck/hunspell/glue/hunspell_fopen_hooks.h
+@@ -78,7 +78,6 @@ hunspell_fopen_readahead(const char* filename, const c
+   return file;
+ }
+ 
+-#define fopen(filename, mode) hunspell_fopen_readahead(filename, mode)
+ 
+ #endif /* fopen_hooks_h__ */
+ 
