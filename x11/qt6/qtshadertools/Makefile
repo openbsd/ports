@@ -1,6 +1,7 @@
 QT6NAME =	QtShaderTools
 COMMENT =	Qt6 shader tools module
 PKGSPEC =	qt6-qtshadertools-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS =  Qt6ShaderTools              3.0 # 6.7
 

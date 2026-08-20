@@ -1,0 +1,13 @@
+build with libcxx22 runs out of memory with -O2
+
+Index: src/glslang/CMakeLists.txt
+--- src/glslang/CMakeLists.txt.orig
++++ src/glslang/CMakeLists.txt
+@@ -31,6 +31,7 @@ qt_internal_add_3rdparty_library(BundledGlslang_Spirv
+ )
+ qt_disable_warnings(BundledGlslang_Spirv)
+ qt_set_symbol_visibility_hidden(BundledGlslang_Spirv)
++set_source_files_properties(../3rdparty/glslang/SPIRV/doc.cpp PROPERTIES COMPILE_OPTIONS "-O1")
+ 
+ ## Scopes:
+ #####################################################################
