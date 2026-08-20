@@ -30,6 +30,7 @@ include/ada/url_base-inl.h
 include/ada/url_base.h
 include/ada/url_components-inl.h
 include/ada/url_components.h
+include/ada/url_ip-inl.h
 include/ada/url_pattern-inl.h
 include/ada/url_pattern.h
 include/ada/url_pattern_helpers-inl.h
