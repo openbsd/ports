@@ -1,0 +1,23 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: hw/mips/Kconfig
+--- hw/mips/Kconfig.orig
++++ hw/mips/Kconfig
+@@ -67,6 +67,17 @@ config LOONGSON3V
+     select FW_CFG_MIPS
+     select UNIMP
+ 
++config MIPS_OCTEON
++    bool
++    default y
++    depends on MIPS64 && TARGET_BIG_ENDIAN
++    imply E1000_PCI
++    imply PCI_DEVICES
++    select PCI
++    select PFLASH_CFI02
++    select SERIAL_MM
++    select USB_DWC3
++
+ config MIPS_CPS
+     bool
+     select MIPS_ITU if TCG

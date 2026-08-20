@@ -1,0 +1,46 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: hw/mips/mips_int.c
+--- hw/mips/mips_int.c.orig
++++ hw/mips/mips_int.c
+@@ -21,30 +21,33 @@
+  */
+ 
+ #include "qemu/osdep.h"
+-#include "qemu/main-loop.h"
+ #include "hw/core/irq.h"
+ #include "target/mips/cpu.h"
++#include "target/mips/internal.h"
+ 
+ static void cpu_mips_irq_request(void *opaque, int irq, int level)
+ {
+     MIPSCPU *cpu = opaque;
+     CPUMIPSState *env = &cpu->env;
+     CPUState *cs = CPU(cpu);
++    int32_t irq_bit;
+ 
+     if (irq < 0 || irq > 7) {
+         return;
+     }
+ 
+-    BQL_LOCK_GUARD();
+-
++    irq_bit = 1 << (irq + CP0Ca_IP);
+     if (level) {
+-        env->CP0_Cause |= 1 << (irq + CP0Ca_IP);
++        qatomic_or(&env->CP0_Cause, irq_bit);
+     } else {
+-        env->CP0_Cause &= ~(1 << (irq + CP0Ca_IP));
++        qatomic_and(&env->CP0_Cause, ~irq_bit);
+     }
+ 
+-    if (env->CP0_Cause & CP0Ca_IP_mask) {
+-        cpu_interrupt(cs, CPU_INTERRUPT_HARD);
++    if (qatomic_read(&env->CP0_Cause) & CP0Ca_IP_mask) {
++        cpu_set_interrupt(cs, CPU_INTERRUPT_HARD);
++        if (!qemu_cpu_is_self(cs)) {
++            qemu_cpu_kick(cs);
++        }
+     } else {
+         cpu_reset_interrupt(cs, CPU_INTERRUPT_HARD);
+     }

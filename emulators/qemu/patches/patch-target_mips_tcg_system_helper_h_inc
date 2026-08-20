@@ -1,0 +1,13 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: target/mips/tcg/system_helper.h.inc
+--- target/mips/tcg/system_helper.h.inc.orig
++++ target/mips/tcg/system_helper.h.inc
+@@ -31,6 +31,7 @@ DEF_HELPER_1(mftc0_tcschedule, tl, env)
+ DEF_HELPER_1(mfc0_tcschefback, tl, env)
+ DEF_HELPER_1(mftc0_tcschefback, tl, env)
+ DEF_HELPER_1(mfc0_count, tl, env)
++DEF_HELPER_1(mfc0_cvmcount, tl, env)
+ DEF_HELPER_1(mftc0_entryhi, tl, env)
+ DEF_HELPER_1(mftc0_status, tl, env)
+ DEF_HELPER_1(mftc0_cause, tl, env)

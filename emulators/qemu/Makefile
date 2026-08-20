@@ -7,6 +7,7 @@ COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
 VERSION=	11.1.0
+REVISION-main=	0
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/

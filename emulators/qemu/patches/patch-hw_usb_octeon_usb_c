@@ -1,0 +1,325 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: hw/usb/octeon_usb.c
+--- hw/usb/octeon_usb.c.orig
++++ hw/usb/octeon_usb.c
+@@ -0,0 +1,319 @@
++/*
++ * QEMU Cavium Octeon USB controller model.
++ *
++ * Copyright (c) 2026 Kirill A. Korinsky
++ *
++ * SPDX-License-Identifier: GPL-2.0-or-later
++ */
++
++#include "qemu/osdep.h"
++#include "qemu/bswap.h"
++#include "qapi/error.h"
++#include "hw/core/irq.h"
++#include "hw/core/qdev-properties.h"
++#include "hw/core/resettable.h"
++#include "hw/core/sysbus.h"
++#include "hw/mips/octeon_internal.h"
++#include "hw/usb/hcd-dwc3.h"
++#include "system/address-spaces.h"
++#include "system/memory.h"
++
++#define OCTEON_UCTL_SIZE            0x100
++#define OCTEON_USB0_UCTL_BASE       0x1180068000000ULL
++#define OCTEON_USB1_UCTL_BASE       0x1180069000000ULL
++#define OCTEON_USB0_DWC3_BASE       0x1680000000000ULL
++#define OCTEON_USB1_DWC3_BASE       0x1690000000000ULL
++#define OCTEON_UCTL_SHIM_CFG        0xe8
++#define OCTEON_UCTL_SHIM_CFG_CSR_BYTE_SWAP 0x3
++#define OCTEON_UCTL_SHIM_CFG_CSR_NATIVE    0x3
++
++#define TYPE_OCTEON_USB "octeon-usb"
++OBJECT_DECLARE_TYPE(OcteonUsbState, OcteonUsbClass, OCTEON_USB)
++
++struct OcteonUsbState {
++    SysBusDevice parent_obj;
++    USBDWC3 dwc3;
++    unsigned int index;
++    MemoryRegion uctl;
++    MemoryRegion dwc3_window;
++    AddressSpace dwc3_as;
++    GHashTable *regs;
++    bool dwc3_as_initialized;
++};
++
++struct OcteonUsbClass {
++    SysBusDeviceClass parent_class;
++    ResettablePhases parent_phases;
++};
++
++static uint64_t octeon_uctl_read(void *opaque, hwaddr addr, unsigned size)
++{
++    OcteonUsbState *usb = opaque;
++    hwaddr reg = addr & ~7ULL;
++    uint64_t value;
++
++    if (!octeon_reg_lookup(usb->regs, reg, &value)) {
++        value = 0;
++    }
++
++    return octeon_read64(value, addr, size);
++}
++
++static void octeon_uctl_write(void *opaque, hwaddr addr,
++                              uint64_t value, unsigned size)
++{
++    OcteonUsbState *usb = opaque;
++    hwaddr reg = addr & ~7ULL;
++    uint64_t old;
++
++    if (!octeon_reg_lookup(usb->regs, reg, &old)) {
++        old = 0;
++    }
++
++    octeon_reg_store(usb->regs, reg, octeon_write64(old, addr, value, size));
++}
++
++static const MemoryRegionOps octeon_uctl_ops = {
++    .read = octeon_uctl_read,
++    .write = octeon_uctl_write,
++    .endianness = DEVICE_BIG_ENDIAN,
++    .valid = {
++        .min_access_size = 4,
++        .max_access_size = 8,
++    },
++};
++
++static bool octeon_usb_csr_needs_swap(OcteonUsbState *usb)
++{
++#if TARGET_BIG_ENDIAN
++    uint64_t value;
++
++    if (!octeon_reg_lookup(usb->regs, OCTEON_UCTL_SHIM_CFG, &value)) {
++        return true;
++    }
++
++    return (value & OCTEON_UCTL_SHIM_CFG_CSR_BYTE_SWAP) !=
++           OCTEON_UCTL_SHIM_CFG_CSR_NATIVE;
++#else
++    return false;
++#endif
++}
++
++static uint64_t octeon_usb_swap(uint64_t value, unsigned size)
++{
++    switch (size) {
++    case 2:
++        return bswap16(value);
++    case 4:
++        return bswap32(value);
++    case 8:
++        return bswap64(value);
++    default:
++        return value;
++    }
++}
++
++static uint64_t octeon_dwc3_window_read(void *opaque, hwaddr addr,
++                                        unsigned size)
++{
++    OcteonUsbState *usb = opaque;
++    uint64_t value;
++
++    switch (size) {
++    case 1:
++        value = address_space_ldub(&usb->dwc3_as, addr,
++                                   MEMTXATTRS_UNSPECIFIED, NULL);
++        break;
++    case 2:
++        value = address_space_lduw_le(&usb->dwc3_as, addr,
++                                      MEMTXATTRS_UNSPECIFIED, NULL);
++        break;
++    case 4:
++        value = address_space_ldl_le(&usb->dwc3_as, addr,
++                                     MEMTXATTRS_UNSPECIFIED, NULL);
++        break;
++    case 8:
++        value = address_space_ldq_le(&usb->dwc3_as, addr,
++                                     MEMTXATTRS_UNSPECIFIED, NULL);
++        break;
++    default:
++        g_assert_not_reached();
++    }
++
++    if (octeon_usb_csr_needs_swap(usb)) {
++        value = octeon_usb_swap(value, size);
++    }
++
++    return value;
++}
++
++static void octeon_dwc3_window_write(void *opaque, hwaddr addr,
++                                     uint64_t value, unsigned size)
++{
++    OcteonUsbState *usb = opaque;
++
++    if (octeon_usb_csr_needs_swap(usb)) {
++        value = octeon_usb_swap(value, size);
++    }
++
++    switch (size) {
++    case 1:
++        address_space_stb(&usb->dwc3_as, addr, value,
++                          MEMTXATTRS_UNSPECIFIED, NULL);
++        break;
++    case 2:
++        address_space_stw_le(&usb->dwc3_as, addr, value,
++                             MEMTXATTRS_UNSPECIFIED, NULL);
++        break;
++    case 4:
++        address_space_stl_le(&usb->dwc3_as, addr, value,
++                             MEMTXATTRS_UNSPECIFIED, NULL);
++        break;
++    case 8:
++        address_space_stq_le(&usb->dwc3_as, addr, value,
++                             MEMTXATTRS_UNSPECIFIED, NULL);
++        break;
++    default:
++        g_assert_not_reached();
++    }
++}
++
++static const MemoryRegionOps octeon_dwc3_window_ops = {
++    .read = octeon_dwc3_window_read,
++    .write = octeon_dwc3_window_write,
++    .endianness = DEVICE_BIG_ENDIAN,
++    .valid = {
++        .min_access_size = 1,
++        .max_access_size = 8,
++    },
++};
++
++static void octeon_usb_reset_hold(Object *obj, ResetType type)
++{
++    OcteonUsbClass *ouc = OCTEON_USB_GET_CLASS(obj);
++    OcteonUsbState *usb = OCTEON_USB(obj);
++
++    if (ouc->parent_phases.hold) {
++        ouc->parent_phases.hold(obj, type);
++    }
++
++    g_hash_table_remove_all(usb->regs);
++}
++
++static void octeon_usb_realize(DeviceState *dev, Error **errp)
++{
++    OcteonUsbState *usb = OCTEON_USB(dev);
++    static const char * const uctl_name[OCTEON_USB_COUNT] = {
++        "octeon.usb0-uctl",
++        "octeon.usb1-uctl",
++    };
++    static const char * const dwc3_window_name[OCTEON_USB_COUNT] = {
++        "octeon.usb0-dwc3-window",
++        "octeon.usb1-dwc3-window",
++    };
++    static const char * const dwc3_as_name[OCTEON_USB_COUNT] = {
++        "octeon.usb0-dwc3-as",
++        "octeon.usb1-dwc3-as",
++    };
++    USBDWC3 *dwc3 = &usb->dwc3;
++    SysBusDevice *sbd = SYS_BUS_DEVICE(dev);
++    MemoryRegion *dwc3_mr;
++
++    object_property_set_link(OBJECT(&dwc3->sysbus_xhci), "dma",
++                             OBJECT(get_system_memory()), &error_abort);
++    qdev_prop_set_uint32(DEVICE(&dwc3->sysbus_xhci), "intrs", 1);
++    if (!sysbus_realize(SYS_BUS_DEVICE(dwc3), errp)) {
++        return;
++    }
++
++    dwc3_mr = sysbus_mmio_get_region(SYS_BUS_DEVICE(dwc3), 0);
++    address_space_init(&usb->dwc3_as, dwc3_mr,
++                       dwc3_as_name[usb->index]);
++    usb->dwc3_as_initialized = true;
++    memory_region_init_io(&usb->uctl, OBJECT(dev), &octeon_uctl_ops, usb,
++                          uctl_name[usb->index], OCTEON_UCTL_SIZE);
++    sysbus_init_mmio(sbd, &usb->uctl);
++    memory_region_init_io(&usb->dwc3_window, OBJECT(dev),
++                          &octeon_dwc3_window_ops, usb,
++                          dwc3_window_name[usb->index], DWC3_SIZE);
++    sysbus_init_mmio(sbd, &usb->dwc3_window);
++    sysbus_pass_irq(sbd, SYS_BUS_DEVICE(&dwc3->sysbus_xhci));
++}
++
++static void octeon_usb_init(Object *obj)
++{
++    OcteonUsbState *usb = OCTEON_USB(obj);
++
++    usb->regs = g_hash_table_new_full(octeon_uint64_hash,
++                                      octeon_uint64_equal,
++                                      g_free, g_free);
++    object_initialize_child(obj, "dwc3", &usb->dwc3, TYPE_USB_DWC3);
++}
++
++static void octeon_usb_finalize(Object *obj)
++{
++    OcteonUsbState *usb = OCTEON_USB(obj);
++
++    if (usb->dwc3_as_initialized) {
++        address_space_destroy(&usb->dwc3_as);
++    }
++    g_hash_table_destroy(usb->regs);
++}
++
++static void octeon_usb_class_init(ObjectClass *klass, const void *data)
++{
++    DeviceClass *dc = DEVICE_CLASS(klass);
++    OcteonUsbClass *ouc = OCTEON_USB_CLASS(klass);
++    ResettableClass *rc = RESETTABLE_CLASS(klass);
++
++    dc->realize = octeon_usb_realize;
++    dc->user_creatable = false;
++    resettable_class_set_parent_phases(rc, NULL, octeon_usb_reset_hold, NULL,
++                                       &ouc->parent_phases);
++}
++
++static const TypeInfo octeon_usb_type_info = {
++    .name = TYPE_OCTEON_USB,
++    .parent = TYPE_SYS_BUS_DEVICE,
++    .instance_size = sizeof(OcteonUsbState),
++    .instance_init = octeon_usb_init,
++    .instance_finalize = octeon_usb_finalize,
++    .class_size = sizeof(OcteonUsbClass),
++    .class_init = octeon_usb_class_init,
++};
++
++static void octeon_usb_register_types(void)
++{
++    type_register_static(&octeon_usb_type_info);
++}
++
++type_init(octeon_usb_register_types)
++
++void octeon_init_usb(OcteonState *s)
++{
++    static const uint64_t uctl_base[OCTEON_USB_COUNT] = {
++        OCTEON_USB0_UCTL_BASE,
++        OCTEON_USB1_UCTL_BASE,
++    };
++    static const uint64_t dwc3_base[OCTEON_USB_COUNT] = {
++        OCTEON_USB0_DWC3_BASE,
++        OCTEON_USB1_DWC3_BASE,
++    };
++    static const OcteonIRQ irq[OCTEON_USB_COUNT] = {
++        OCTEON_IRQ_USB0,
++        OCTEON_IRQ_USB1,
++    };
++    unsigned int i;
++
++    for (i = 0; i < OCTEON_USB_COUNT; i++) {
++        DeviceState *dev = qdev_new(TYPE_OCTEON_USB);
++        OcteonUsbState *usb = OCTEON_USB(dev);
++
++        usb->index = i;
++        sysbus_realize_and_unref(SYS_BUS_DEVICE(dev), &error_fatal);
++        sysbus_mmio_map(SYS_BUS_DEVICE(dev), 0, uctl_base[i]);
++        sysbus_mmio_map(SYS_BUS_DEVICE(dev), 1, dwc3_base[i]);
++        sysbus_connect_irq(SYS_BUS_DEVICE(dev), 0,
++                           qemu_allocate_irq(octeon_irq_set, s, irq[i]));
++    }
++}

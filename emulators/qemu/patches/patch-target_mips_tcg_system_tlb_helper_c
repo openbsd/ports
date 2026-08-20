@@ -1,0 +1,87 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: target/mips/tcg/system/tlb_helper.c
+--- target/mips/tcg/system/tlb_helper.c.orig
++++ target/mips/tcg/system/tlb_helper.c
+@@ -165,7 +165,7 @@ static void r4k_helper_tlbwr(CPUMIPSState *env)
+ {
+     int r = cpu_mips_get_random(env);
+ 
+-    r4k_invalidate_tlb(env, r, 1);
++    r4k_invalidate_tlb(env, r, 0);
+     r4k_fill_tlb(env, r);
+ }
+ 
+@@ -877,7 +877,7 @@ refill:
+         }
+     }
+     pw_pagemask = m >> TARGET_PAGE_BITS;
+-    pw_pagemask = compute_pagemask(pw_pagemask << CP0PM_MASK);
++    pw_pagemask = compute_pagemask(env, pw_pagemask << CP0PM_MASK);
+     pw_entryhi = (address & ~0x1fff) | (env->CP0_EntryHi & 0xFF);
+     {
+         target_ulong tmp_entryhi = env->CP0_EntryHi;
+@@ -1106,7 +1106,7 @@ void mips_cpu_do_interrupt(CPUState *cs)
+         env->hflags &= ~(MIPS_HFLAG_KSU);
+         /* EJTAG probe trap enable is not implemented... */
+         if (!(env->CP0_Status & (1 << CP0St_EXL))) {
+-            env->CP0_Cause &= ~(1U << CP0Ca_BD);
++            qatomic_and(&env->CP0_Cause, (int32_t)~(1U << CP0Ca_BD));
+         }
+         env->active_tc.PC = env->exception_base + 0x480;
+         set_hflags_for_handler(env);
+@@ -1134,7 +1134,7 @@ void mips_cpu_do_interrupt(CPUState *cs)
+         env->hflags |= MIPS_HFLAG_CP0;
+         env->hflags &= ~(MIPS_HFLAG_KSU);
+         if (!(env->CP0_Status & (1 << CP0St_EXL))) {
+-            env->CP0_Cause &= ~(1U << CP0Ca_BD);
++            qatomic_and(&env->CP0_Cause, (int32_t)~(1U << CP0Ca_BD));
+         }
+         env->active_tc.PC = env->exception_base;
+         set_hflags_for_handler(env);
+@@ -1148,7 +1148,9 @@ void mips_cpu_do_interrupt(CPUState *cs)
+                 offset = 0x200;
+             } else {
+                 uint32_t vector = 0;
+-                uint32_t pending = (env->CP0_Cause & CP0Ca_IP_mask) >> CP0Ca_IP;
++                uint32_t pending =
++                    (qatomic_read(&env->CP0_Cause) & CP0Ca_IP_mask) >>
++                    CP0Ca_IP;
+ 
+                 if (env->CP0_Config3 & (1 << CP0C3_VEIC)) {
+                     /*
+@@ -1246,8 +1248,9 @@ void mips_cpu_do_interrupt(CPUState *cs)
+     case EXCP_CpU:
+         cause = 11;
+         update_badinstr = 1;
+-        env->CP0_Cause = (env->CP0_Cause & ~(0x3 << CP0Ca_CE)) |
+-                         (env->error_code << CP0Ca_CE);
++        qatomic_and(&env->CP0_Cause, (int32_t)~(0x3U << CP0Ca_CE));
++        qatomic_or(&env->CP0_Cause,
++                   (int32_t)(env->error_code << CP0Ca_CE));
+         goto set_EPC;
+     case EXCP_OVERFLOW:
+         cause = 12;
+@@ -1305,9 +1308,9 @@ void mips_cpu_do_interrupt(CPUState *cs)
+                 set_badinstr_registers(env);
+             }
+             if (env->hflags & MIPS_HFLAG_BMASK) {
+-                env->CP0_Cause |= (1U << CP0Ca_BD);
++                qatomic_or(&env->CP0_Cause, (int32_t)(1U << CP0Ca_BD));
+             } else {
+-                env->CP0_Cause &= ~(1U << CP0Ca_BD);
++                qatomic_and(&env->CP0_Cause, (int32_t)~(1U << CP0Ca_BD));
+             }
+             env->CP0_Status |= (1 << CP0St_EXL);
+             if (env->insn_flags & ISA_MIPS3) {
+@@ -1333,8 +1336,8 @@ void mips_cpu_do_interrupt(CPUState *cs)
+ 
+         env->active_tc.PC += offset;
+         set_hflags_for_handler(env);
+-        env->CP0_Cause = (env->CP0_Cause & ~(0x1f << CP0Ca_EC)) |
+-                         (cause << CP0Ca_EC);
++        qatomic_and(&env->CP0_Cause, (int32_t)~(0x1f << CP0Ca_EC));
++        qatomic_or(&env->CP0_Cause, cause << CP0Ca_EC);
+         break;
+     default:
+         abort();

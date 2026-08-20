@@ -1,0 +1,13 @@
+https://patchew.org/QEMU/20260719215455.96122-1-kirill@korins.ky/
+
+Index: MAINTAINERS
+--- MAINTAINERS.orig
++++ MAINTAINERS
+@@ -2381,6 +2381,7 @@ USB
+ S: Orphan
+ F: hw/usb/*
+ F: tests/qtest/usb-*-test.c
++F: tests/qtest/xhci-*-test.c
+ F: docs/system/devices/usb.rst
+ F: include/hw/usb/usb.h
+ F: include/hw/usb/

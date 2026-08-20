@@ -1,0 +1,140 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: hw/mips/octeon_internal.h
+--- hw/mips/octeon_internal.h.orig
++++ hw/mips/octeon_internal.h
+@@ -0,0 +1,134 @@
++/*
++ * QEMU Cavium Octeon board model internal declarations.
++ *
++ * Copyright (c) 2026 Kirill A. Korinsky
++ *
++ * SPDX-License-Identifier: GPL-2.0-or-later
++ */
++
++#ifndef HW_MIPS_OCTEON_INTERNAL_H
++#define HW_MIPS_OCTEON_INTERNAL_H
++
++#include "qemu/typedefs.h"
++#include "hw/char/serial-mm.h"
++#include "system/memory.h"
++#include "target/mips/cpu.h"
++
++#define OCTEON_MAX_CPUS             16
++#define OCTEON_CIU_GPIO_COUNT       32
++#define OCTEON_CIU3_CP0_IRQ_COUNT   4
++#define OCTEON_CIU3_IDT_COUNT       (OCTEON_MAX_CPUS * 4)
++#define OCTEON_PEXP_BASE            0x11f0000000000ULL
++#define OCTEON_PEXP_SIZE            0x40000
++#define OCTEON_MIO_BOOT_REG_CFG_COUNT 8
++#define OCTEON_MIO_BOOT_LOC_SIZE    0x100
++#define OCTEON_MIO_EMM_BUF_SIZE     512
++#define OCTEON_LMC_COUNT            4
++#define OCTEON_USB_COUNT            2
++#define OCTEON_TWSI_COUNT           2
++#define OCTEON_TWSI_STAT_IDLE       0xf8
++#define OCTEON_SPD_EEPROM_SIZE      139
++#define OCTEON_SPD_EEPROM_COUNT     1
++
++typedef enum OcteonIRQ {
++    OCTEON_IRQ_UART,
++    OCTEON_IRQ_PCI,
++    OCTEON_IRQ_USB0,
++    OCTEON_IRQ_USB1,
++    OCTEON_IRQ_COUNT,
++} OcteonIRQ;
++
++typedef enum OcteonCiu3Source {
++    OCTEON_CIU3_SRC_PCI_INTA,
++    OCTEON_CIU3_SRC_UART0,
++    OCTEON_CIU3_SRC_USB0,
++    OCTEON_CIU3_SRC_USB1,
++    OCTEON_CIU3_SRC_MBOX0,
++    OCTEON_CIU3_SRC_COUNT = OCTEON_CIU3_SRC_MBOX0 + OCTEON_MAX_CPUS,
++} OcteonCiu3Source;
++
++typedef struct OcteonState OcteonState;
++typedef struct OcteonMioState OcteonMioState;
++typedef struct OcteonEmmState OcteonEmmState;
++typedef struct OcteonRstState OcteonRstState;
++typedef struct OcteonIntcState OcteonIntcState;
++typedef struct OcteonLmcState OcteonLmcState;
++typedef struct OcteonCsrBankState OcteonCsrBankState;
++
++typedef struct OcteonCPUState {
++    OcteonState *board;
++    MIPSCPU *cpu;
++    bool boot_cpu;
++} OcteonCPUState;
++
++typedef struct OcteonSpdEepromState OcteonSpdEepromState;
++
++struct OcteonState {
++    MachineState *machine;
++    Clock *cpuclk;
++    uint64_t cpu_hz;
++    uint64_t ref_hz;
++    uint64_t io_hz;
++    uint64_t ddr_hz;
++    OcteonCPUState cpu[OCTEON_MAX_CPUS];
++    unsigned int cpu_count;
++    uint64_t firmware_entry;
++
++    MemoryRegion dr0;
++    MemoryRegion dr1;
++    MemoryRegion *flash;
++    MemoryRegion boot_flash;
++    MemoryRegion boot_flash_alias;
++    MemoryRegion cvmseg;
++    MemoryRegion pexp;
++    MemoryRegion dpi;
++    MemoryRegion fpa;
++    MemoryRegion ipd;
++    MemoryRegion pko;
++    MemoryRegion rng;
++    MemoryRegion pow;
++    OcteonMioState *mio;
++    OcteonEmmState *emm;
++    OcteonRstState *rst;
++    OcteonIntcState *intc;
++    OcteonLmcState *lmc[OCTEON_LMC_COUNT];
++    OcteonCsrBankState *csr_bank;
++    OcteonSpdEepromState *spd[OCTEON_SPD_EEPROM_COUNT];
++    SerialMM *uart;
++    MemoryRegion uart_alias;
++    MemoryRegion uart_tx;
++    MemoryRegion uart_alias_tx;
++    MemoryRegion pcie_cfg;
++    MemoryRegion pcie_sli_cfg;
++    MemoryRegion pcie0_io;
++    MemoryRegion pcie0_mem;
++    AddressSpace pcie0_mem_as;
++
++    DeviceState *pci_host;
++    PCIBus *pci_bus;
++};
++
++guint octeon_uint64_hash(gconstpointer v);
++gboolean octeon_uint64_equal(gconstpointer a, gconstpointer b);
++uint64_t octeon_read64(uint64_t value, hwaddr addr, unsigned size);
++uint64_t octeon_write64(uint64_t old, hwaddr addr,
++                        uint64_t value, unsigned size);
++bool octeon_reg_lookup(GHashTable *regs, uint64_t reg, uint64_t *value);
++void octeon_reg_store(GHashTable *regs, uint64_t reg, uint64_t value);
++bool octeon_csr_lookup(OcteonState *s, uint64_t reg, uint64_t *value);
++void octeon_irq_set(void *opaque, int irq, int level);
++
++void octeon_validate_ram_size(uint64_t ram_size);
++void octeon_init_spd(OcteonState *s);
++void octeon_init_twsi(OcteonState *s);
++void octeon_init_usb(OcteonState *s);
++void octeon_init_pci(OcteonState *s);
++uint64_t octeon_pci_pem_read(OcteonState *s, hwaddr reg,
++                             hwaddr addr, unsigned size);
++void octeon_pci_pem_write(OcteonState *s, hwaddr reg, hwaddr addr,
++                          uint64_t value, unsigned size);
++uint64_t octeon_pci_pexp_read(OcteonState *s, hwaddr addr, unsigned size);
++void octeon_pci_pexp_write(OcteonState *s, hwaddr addr,
++                           uint64_t value, unsigned size);
++
++#endif

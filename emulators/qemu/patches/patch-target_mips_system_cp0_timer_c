@@ -1,0 +1,102 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: target/mips/system/cp0_timer.c
+--- target/mips/system/cp0_timer.c.orig
++++ target/mips/system/cp0_timer.c
+@@ -23,6 +23,7 @@
+ #include "qemu/osdep.h"
+ #include "hw/core/irq.h"
+ #include "qemu/timer.h"
++#include "qemu/atomic.h"
+ #include "internal.h"
+ 
+ /* MIPS R4K timer */
+@@ -31,7 +32,7 @@ static uint32_t cpu_mips_get_count_val(CPUMIPSState *e
+     MIPSCPU *cpu = env_archcpu(env);
+     int64_t now_ns;
+     now_ns = qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL);
+-    return env->CP0_Count +
++    return qatomic_read(&env->CP0_Count) +
+             (uint32_t)clock_ns_to_ticks(cpu->count_clock, now_ns);
+ }
+ 
+@@ -56,15 +57,15 @@ static void cpu_mips_timer_expire(CPUMIPSState *env)
+ {
+     cpu_mips_timer_update(env);
+     if (env->insn_flags & ISA_MIPS_R2) {
+-        env->CP0_Cause |= 1 << CP0Ca_TI;
++        qatomic_or(&env->CP0_Cause, 1 << CP0Ca_TI);
+     }
+     qemu_irq_raise(env->irq[(env->CP0_IntCtl >> CP0IntCtl_IPTI) & 0x7]);
+ }
+ 
+ uint32_t cpu_mips_get_count(CPUMIPSState *env)
+ {
+-    if (env->CP0_Cause & (1 << CP0Ca_DC)) {
+-        return env->CP0_Count;
++    if (qatomic_read(&env->CP0_Cause) & (1 << CP0Ca_DC)) {
++        return qatomic_read(&env->CP0_Count);
+     } else {
+         uint64_t now_ns;
+ 
+@@ -86,12 +87,13 @@ void cpu_mips_store_count(CPUMIPSState *env, uint32_t 
+      * So env->timer may be NULL, so treat timer as disabled in that case.
+      */
+     MIPSCPU *cpu = env_archcpu(env);
+-    if (env->CP0_Cause & (1 << CP0Ca_DC) || !env->timer) {
+-        env->CP0_Count = count;
++    if ((qatomic_read(&env->CP0_Cause) & (1 << CP0Ca_DC)) || !env->timer) {
++        qatomic_set(&env->CP0_Count, count);
+     } else {
+         /* Store new count register */
+-        env->CP0_Count = count - (uint32_t)clock_ns_to_ticks(cpu->count_clock,
+-                        qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL));
++        qatomic_set(&env->CP0_Count,
++                    count - (uint32_t)clock_ns_to_ticks(cpu->count_clock,
++                            qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL)));
+         /* Update timer timer */
+         cpu_mips_timer_update(env);
+     }
+@@ -100,26 +102,28 @@ void cpu_mips_store_count(CPUMIPSState *env, uint32_t 
+ void cpu_mips_store_compare(CPUMIPSState *env, uint32_t value)
+ {
+     env->CP0_Compare = value;
+-    if (!(env->CP0_Cause & (1 << CP0Ca_DC))) {
++    if (!(qatomic_read(&env->CP0_Cause) & (1 << CP0Ca_DC))) {
+         cpu_mips_timer_update(env);
+     }
+     if (env->insn_flags & ISA_MIPS_R2) {
+-        env->CP0_Cause &= ~(1 << CP0Ca_TI);
++        qatomic_and(&env->CP0_Cause, ~(1 << CP0Ca_TI));
+     }
+     qemu_irq_lower(env->irq[(env->CP0_IntCtl >> CP0IntCtl_IPTI) & 0x7]);
+ }
+ 
+ void cpu_mips_start_count(CPUMIPSState *env)
+ {
+-    cpu_mips_store_count(env, env->CP0_Count);
++    cpu_mips_store_count(env, qatomic_read(&env->CP0_Count));
+ }
+ 
+ void cpu_mips_stop_count(CPUMIPSState *env)
+ {
+     /* Store the current value */
+     MIPSCPU *cpu = env_archcpu(env);
+-    env->CP0_Count += (uint32_t)clock_ns_to_ticks(cpu->count_clock,
+-                        qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL));
++
++    qatomic_add(&env->CP0_Count,
++                (uint32_t)clock_ns_to_ticks(cpu->count_clock,
++                        qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL)));
+ }
+ 
+ static void mips_timer_cb(void *opaque)
+@@ -128,7 +132,7 @@ static void mips_timer_cb(void *opaque)
+ 
+     env = opaque;
+ 
+-    if (env->CP0_Cause & (1 << CP0Ca_DC)) {
++    if (qatomic_read(&env->CP0_Cause) & (1 << CP0Ca_DC)) {
+         return;
+     }
+ 

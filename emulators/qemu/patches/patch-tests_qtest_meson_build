@@ -1,10 +1,19 @@
 Index: tests/qtest/meson.build
 --- tests/qtest/meson.build.orig
 +++ tests/qtest/meson.build
-@@ -418,23 +418,6 @@ qtests = {
+@@ -326,6 +326,7 @@ qos_test_ss.add(
+   'tmp105-test.c',
+   'emc141x-test.c',
+   'usb-hcd-ohci-test.c',
++  'xhci-event-ring-test.c',
+   'virtio-test.c',
+   'virtio-blk-test.c',
+   'virtio-net-test.c',
+@@ -417,23 +418,6 @@ qtests = {
+   'vmgenid-test': files('boot-sector.c', 'acpi-utils.c'),
    'netdev-socket': files('netdev-socket.c', '../unit/socket-helpers.c'),
  }
- 
+-
 -if vnc.found()
 -  gvnc = dependency('gvnc-1.0', method: 'pkg-config', required: false)
 -  if gvnc.found()
@@ -21,7 +30,6 @@ Index: tests/qtest/meson.build
 -    endif
 -  endif
 -endif
--
+ 
  if dbus_display
    qtests += {'dbus-display-test': [dbus_display1, gio]}
- endif

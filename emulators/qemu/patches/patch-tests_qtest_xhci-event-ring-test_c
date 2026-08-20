@@ -1,0 +1,566 @@
+https://patchew.org/QEMU/20260719215455.96122-1-kirill@korins.ky/
+
+Index: tests/qtest/xhci-event-ring-test.c
+--- tests/qtest/xhci-event-ring-test.c.orig
++++ tests/qtest/xhci-event-ring-test.c
+@@ -0,0 +1,560 @@
++/*
++ * QTest testcase for the xHCI event ring
++ *
++ * Copyright (c) 2026 Kirill A. Korinsky
++ *
++ * SPDX-License-Identifier: GPL-2.0-or-later
++ */
++
++#include "qemu/osdep.h"
++#include "qemu/bswap.h"
++#include "qemu/module.h"
++#include "hw/pci/pci.h"
++#include "libqtest.h"
++#include "libqos/qgraph.h"
++#include "libqos/pci.h"
++
++#define XHCI_CAPLENGTH                0x00
++#define XHCI_DBOFF                    0x14
++#define XHCI_RTSOFF                   0x18
++
++#define XHCI_USBCMD                   0x00
++#define XHCI_USBSTS                   0x04
++#define XHCI_CRCR_LOW                 0x18
++#define XHCI_CRCR_HIGH                0x1c
++
++#define XHCI_INTR0_OFFSET             0x20
++#define XHCI_ERSTSZ                   (XHCI_INTR0_OFFSET + 0x08)
++#define XHCI_ERSTBA_LOW               (XHCI_INTR0_OFFSET + 0x10)
++#define XHCI_ERSTBA_HIGH              (XHCI_INTR0_OFFSET + 0x14)
++#define XHCI_ERDP_LOW                 (XHCI_INTR0_OFFSET + 0x18)
++#define XHCI_ERDP_HIGH                (XHCI_INTR0_OFFSET + 0x1c)
++
++#define XHCI_USBCMD_RUN               (1U << 0)
++#define XHCI_USBCMD_RESET             (1U << 1)
++#define XHCI_USBSTS_HALTED             (1U << 0)
++#define XHCI_CRCR_RCS                 (1U << 0)
++#define XHCI_CRCR_CS                  (1U << 1)
++
++#define XHCI_TRB_CYCLE                (1U << 0)
++#define XHCI_TRB_TYPE_SHIFT           10
++#define XHCI_TRB_TYPE_MASK            0x3f
++#define XHCI_TRB_DEV_SPEED_SHIFT      16
++#define XHCI_CR_GET_PORT_BANDWIDTH    21
++#define XHCI_CR_NOOP                  23
++#define XHCI_CR_RESERVED              63
++#define XHCI_ER_COMMAND_COMPLETE      33
++#define XHCI_ER_HOST_CONTROLLER       37
++#define XHCI_CC_SUCCESS               1
++#define XHCI_CC_EVENT_RING_FULL       21
++#define XHCI_CC_COMMAND_RING_STOPPED  24
++#define XHCI_SPEED_SUPER              4
++
++#define XHCI_EVENT_RING_SIZE          16
++#define XHCI_DMA_PAGE_SIZE            0x1000
++#define XHCI_DMA_SIZE                 (4 * XHCI_DMA_PAGE_SIZE)
++
++typedef struct QXHCITRB {
++    uint64_t parameter;
++    uint32_t status;
++    uint32_t control;
++} QXHCITRB;
++
++typedef struct QXHCIEventRingSegment {
++    uint32_t addr_low;
++    uint32_t addr_high;
++    uint32_t size;
++    uint32_t reserved;
++} QXHCIEventRingSegment;
++
++typedef struct QXHCI QXHCI;
++
++struct QXHCI {
++    QTestState *qts;
++    uint32_t (*readl)(QXHCI *xhci, uint64_t offset);
++    void (*writel)(QXHCI *xhci, uint64_t offset, uint32_t value);
++};
++
++typedef struct QXHCIPCI {
++    QOSGraphObject obj;
++    QXHCI xhci;
++    QPCIDevice dev;
++    QPCIBar bar;
++} QXHCIPCI;
++
++typedef struct QXHCITest {
++    QXHCI *xhci;
++    QGuestAllocator *alloc;
++    uint64_t dma_base;
++    uint64_t event_ring_addr;
++    uint64_t erst_addr;
++    uint64_t command_ring_addr;
++    uint64_t bandwidth_addr;
++    uint32_t oper;
++    uint32_t runtime;
++    uint32_t doorbell;
++} QXHCITest;
++
++static uint32_t qxhci_pci_readl(QXHCI *xhci, uint64_t offset)
++{
++    QXHCIPCI *pci = container_of(xhci, QXHCIPCI, xhci);
++
++    return qpci_io_readl(&pci->dev, pci->bar, offset);
++}
++
++static void qxhci_pci_writel(QXHCI *xhci, uint64_t offset, uint32_t value)
++{
++    QXHCIPCI *pci = container_of(xhci, QXHCIPCI, xhci);
++
++    qpci_io_writel(&pci->dev, pci->bar, offset, value);
++}
++
++static void *qxhci_pci_get_driver(void *obj, const char *interface)
++{
++    QXHCIPCI *pci = obj;
++
++    if (!g_strcmp0(interface, "xhci")) {
++        return &pci->xhci;
++    }
++
++    g_assert_not_reached();
++}
++
++static void qxhci_pci_start_hw(QOSGraphObject *obj)
++{
++    QXHCIPCI *pci = (QXHCIPCI *)obj;
++
++    qpci_device_enable(&pci->dev);
++}
++
++static void qxhci_pci_destructor(QOSGraphObject *obj)
++{
++    QXHCIPCI *pci = (QXHCIPCI *)obj;
++
++    qpci_iounmap(&pci->dev, pci->bar);
++}
++
++static void *qxhci_pci_create(void *pci_bus, QGuestAllocator *alloc,
++                              void *addr)
++{
++    QXHCIPCI *pci = g_new0(QXHCIPCI, 1);
++    QPCIBus *bus = pci_bus;
++
++    qpci_device_init(&pci->dev, bus, addr);
++    pci->bar = qpci_iomap(&pci->dev, 0, NULL);
++    pci->xhci.qts = bus->qts;
++    pci->xhci.readl = qxhci_pci_readl;
++    pci->xhci.writel = qxhci_pci_writel;
++    pci->obj.get_driver = qxhci_pci_get_driver;
++    pci->obj.start_hw = qxhci_pci_start_hw;
++    pci->obj.destructor = qxhci_pci_destructor;
++
++    return &pci->obj;
++}
++
++static uint32_t qxhci_readl(QXHCITest *test, uint64_t offset)
++{
++    return test->xhci->readl(test->xhci, offset);
++}
++
++static void qxhci_writel(QXHCITest *test, uint64_t offset, uint32_t value)
++{
++    test->xhci->writel(test->xhci, offset, value);
++}
++
++static void qxhci_init(QXHCITest *test, QXHCI *xhci,
++                       QGuestAllocator *alloc)
++{
++    test->xhci = xhci;
++    test->alloc = alloc;
++    test->dma_base = guest_alloc(alloc, XHCI_DMA_SIZE);
++    test->event_ring_addr = test->dma_base;
++    test->erst_addr = test->dma_base + XHCI_DMA_PAGE_SIZE;
++    test->command_ring_addr = test->dma_base + 2 * XHCI_DMA_PAGE_SIZE;
++    test->bandwidth_addr = test->dma_base + 3 * XHCI_DMA_PAGE_SIZE;
++
++    test->oper = qxhci_readl(test, XHCI_CAPLENGTH) & 0xff;
++    test->runtime = qxhci_readl(test, XHCI_RTSOFF) & ~0x1fU;
++    test->doorbell = qxhci_readl(test, XHCI_DBOFF) & ~0x3U;
++
++    qxhci_writel(test, test->oper + XHCI_USBCMD, XHCI_USBCMD_RESET);
++    g_assert_cmphex(qxhci_readl(test, test->oper + XHCI_USBSTS) &
++                    XHCI_USBSTS_HALTED, ==, XHCI_USBSTS_HALTED);
++}
++
++static void qxhci_deinit(QXHCITest *test)
++{
++    qxhci_writel(test, test->oper + XHCI_USBCMD, 0);
++    g_assert_cmphex(qxhci_readl(test, test->oper + XHCI_USBSTS) &
++                    XHCI_USBSTS_HALTED, ==, XHCI_USBSTS_HALTED);
++    qxhci_writel(test, test->oper + XHCI_USBCMD, XHCI_USBCMD_RESET);
++    guest_free(test->alloc, test->dma_base);
++}
++
++static void qxhci_write_command(QXHCITRB *trb, uint32_t type,
++                                uint64_t parameter)
++{
++    trb->parameter = cpu_to_le64(parameter);
++    trb->status = 0;
++    trb->control = cpu_to_le32((type << XHCI_TRB_TYPE_SHIFT) |
++                               XHCI_TRB_CYCLE);
++}
++
++static void qxhci_write_bandwidth_command(QXHCITRB *trb, uint64_t parameter)
++{
++    qxhci_write_command(trb, XHCI_CR_GET_PORT_BANDWIDTH, parameter);
++    trb->control |= cpu_to_le32(XHCI_SPEED_SUPER <<
++                                XHCI_TRB_DEV_SPEED_SHIFT);
++}
++
++static void qxhci_start(QXHCITest *test, const QXHCITRB *commands,
++                        size_t commands_size)
++{
++    QXHCIEventRingSegment segment = {
++        .addr_low = cpu_to_le32(test->event_ring_addr),
++        .addr_high = cpu_to_le32(test->event_ring_addr >> 32),
++        .size = cpu_to_le32(XHCI_EVENT_RING_SIZE),
++    };
++
++    qtest_memset(test->xhci->qts, test->event_ring_addr, 0,
++                 XHCI_EVENT_RING_SIZE * sizeof(QXHCITRB));
++    qtest_memwrite(test->xhci->qts, test->erst_addr, &segment,
++                   sizeof(segment));
++    qtest_memwrite(test->xhci->qts, test->command_ring_addr, commands,
++                   commands_size);
++
++    qxhci_writel(test, test->runtime + XHCI_ERSTSZ, 1);
++    qxhci_writel(test, test->runtime + XHCI_ERDP_LOW,
++                 test->event_ring_addr);
++    qxhci_writel(test, test->runtime + XHCI_ERDP_HIGH,
++                 test->event_ring_addr >> 32);
++    qxhci_writel(test, test->runtime + XHCI_ERSTBA_LOW,
++                 test->erst_addr);
++    qxhci_writel(test, test->runtime + XHCI_ERSTBA_HIGH,
++                 test->erst_addr >> 32);
++    qxhci_writel(test, test->oper + XHCI_CRCR_LOW,
++                 test->command_ring_addr | XHCI_CRCR_RCS);
++    qxhci_writel(test, test->oper + XHCI_CRCR_HIGH,
++                 test->command_ring_addr >> 32);
++    qxhci_writel(test, test->oper + XHCI_USBCMD, XHCI_USBCMD_RUN);
++    g_assert_cmphex(qxhci_readl(test, test->oper + XHCI_USBSTS) &
++                    XHCI_USBSTS_HALTED, ==, 0);
++}
++
++static QXHCITRB qxhci_read_event(QXHCITest *test, unsigned int index)
++{
++    QXHCITRB event;
++
++    qtest_memread(test->xhci->qts,
++                  test->event_ring_addr + index * sizeof(event),
++                  &event, sizeof(event));
++    event.parameter = le64_to_cpu(event.parameter);
++    event.status = le32_to_cpu(event.status);
++    event.control = le32_to_cpu(event.control);
++    return event;
++}
++
++static void qxhci_stop_command_ring(QXHCITest *test)
++{
++    qxhci_writel(test, test->oper + XHCI_CRCR_LOW,
++                 test->command_ring_addr | XHCI_CRCR_RCS | XHCI_CRCR_CS);
++    qxhci_writel(test, test->oper + XHCI_CRCR_HIGH,
++                 test->command_ring_addr >> 32);
++}
++
++static void qxhci_assert_event(QXHCITest *test, unsigned int index,
++                               uint32_t type, uint32_t completion_code,
++                               uint64_t parameter, bool cycle)
++{
++    QXHCITRB event = qxhci_read_event(test, index);
++
++    g_assert_cmpuint((event.control >> XHCI_TRB_TYPE_SHIFT) &
++                     XHCI_TRB_TYPE_MASK, ==, type);
++    g_assert_cmpuint(event.status >> 24, ==, completion_code);
++    g_assert_cmphex(event.parameter, ==, parameter);
++    g_assert_cmphex(event.control & XHCI_TRB_CYCLE, ==,
++                    cycle ? XHCI_TRB_CYCLE : 0);
++}
++
++static void qxhci_assert_full_error_present(QXHCITest *test)
++{
++    unsigned int i;
++
++    for (i = 0; i < XHCI_EVENT_RING_SIZE; i++) {
++        QXHCITRB event = qxhci_read_event(test, i);
++
++        if (((event.control >> XHCI_TRB_TYPE_SHIFT) &
++             XHCI_TRB_TYPE_MASK) == XHCI_ER_HOST_CONTROLLER &&
++            event.status >> 24 == XHCI_CC_EVENT_RING_FULL) {
++            return;
++        }
++    }
++
++    g_assert_not_reached();
++}
++
++static void test_xhci_event_ring_full_layout(void *obj, void *data,
++                                             QGuestAllocator *alloc)
++{
++    QXHCITest test = { 0 };
++    QXHCITRB commands[XHCI_EVENT_RING_SIZE + 1] = { 0 };
++    unsigned int i;
++
++    for (i = 0; i < XHCI_EVENT_RING_SIZE; i++) {
++        qxhci_write_command(&commands[i], XHCI_CR_NOOP, 0);
++    }
++
++    qxhci_init(&test, obj, alloc);
++    qxhci_start(&test, commands, sizeof(commands));
++    qxhci_writel(&test, test.doorbell, 0);
++
++    /* xHCI 1.2c 4.9.4 Figure 4-12 reserves one entry for Full Error. */
++    for (i = 0; i < XHCI_EVENT_RING_SIZE - 1; i++) {
++        qxhci_assert_event(&test, i, XHCI_ER_COMMAND_COMPLETE,
++                           XHCI_CC_SUCCESS,
++                           test.command_ring_addr + i * sizeof(QXHCITRB),
++                           true);
++    }
++    qxhci_assert_event(&test, XHCI_EVENT_RING_SIZE - 1,
++                       XHCI_ER_HOST_CONTROLLER,
++                       XHCI_CC_EVENT_RING_FULL, 0, true);
++    qxhci_deinit(&test);
++}
++
++static void test_xhci_event_ring_full_replay(void *obj, void *data,
++                                             QGuestAllocator *alloc)
++{
++    QXHCITest test = { 0 };
++    QXHCITRB commands[XHCI_EVENT_RING_SIZE + 1] = { 0 };
++    unsigned int i;
++
++    for (i = 0; i < XHCI_EVENT_RING_SIZE; i++) {
++        qxhci_write_command(&commands[i], XHCI_CR_NOOP, 0);
++    }
++
++    qxhci_init(&test, obj, alloc);
++    qxhci_start(&test, commands, sizeof(commands));
++    qxhci_writel(&test, test.doorbell, 0);
++
++    qxhci_assert_full_error_present(&test);
++    qxhci_stop_command_ring(&test);
++
++    /*
++     * xHCI 1.2c 5.5.2.3.3 permits the repeated ERDP for Full-to-Empty;
++     * 4.9.4 Figure 4-12 resumes the Event Ring on that write.
++     */
++    qxhci_writel(&test, test.runtime + XHCI_ERDP_LOW,
++                 test.event_ring_addr);
++    qxhci_writel(&test, test.runtime + XHCI_ERDP_HIGH,
++                 test.event_ring_addr >> 32);
++
++    qxhci_assert_event(&test, 0, XHCI_ER_COMMAND_COMPLETE,
++                       XHCI_CC_SUCCESS,
++                       test.command_ring_addr +
++                       (XHCI_EVENT_RING_SIZE - 1) * sizeof(QXHCITRB),
++                       false);
++    qxhci_assert_event(&test, 1, XHCI_ER_COMMAND_COMPLETE,
++                       XHCI_CC_COMMAND_RING_STOPPED, 0, false);
++    qxhci_deinit(&test);
++}
++
++static void test_xhci_event_ring_full_refill(void *obj, void *data,
++                                             QGuestAllocator *alloc)
++{
++    QXHCITest test = { 0 };
++    QXHCITRB commands[XHCI_EVENT_RING_SIZE + 1] = { 0 };
++    uint64_t erdp;
++    unsigned int i;
++
++    for (i = 0; i < XHCI_EVENT_RING_SIZE; i++) {
++        qxhci_write_command(&commands[i], XHCI_CR_NOOP, 0);
++    }
++
++    qxhci_init(&test, obj, alloc);
++    qxhci_start(&test, commands, sizeof(commands));
++    qxhci_writel(&test, test.doorbell, 0);
++    qxhci_assert_full_error_present(&test);
++    qxhci_stop_command_ring(&test);
++
++    /* Leave one replay credit, forcing a new Full Error in the reserve. */
++    erdp = test.event_ring_addr + 2 * sizeof(QXHCITRB);
++    qxhci_writel(&test, test.runtime + XHCI_ERDP_LOW, erdp);
++    qxhci_writel(&test, test.runtime + XHCI_ERDP_HIGH, erdp >> 32);
++
++    qxhci_assert_event(&test, 0, XHCI_ER_COMMAND_COMPLETE,
++                       XHCI_CC_SUCCESS,
++                       test.command_ring_addr +
++                       (XHCI_EVENT_RING_SIZE - 1) * sizeof(QXHCITRB),
++                       false);
++    qxhci_assert_event(&test, 1, XHCI_ER_HOST_CONTROLLER,
++                       XHCI_CC_EVENT_RING_FULL, 0, false);
++
++    qxhci_writel(&test, test.runtime + XHCI_ERDP_LOW, erdp);
++    qxhci_writel(&test, test.runtime + XHCI_ERDP_HIGH, erdp >> 32);
++    qxhci_assert_event(&test, 2, XHCI_ER_COMMAND_COMPLETE,
++                       XHCI_CC_COMMAND_RING_STOPPED, 0, false);
++    qxhci_deinit(&test);
++}
++
++static void test_xhci_event_ring_full_stop(void *obj, void *data,
++                                           QGuestAllocator *alloc)
++{
++    QXHCITest test = { 0 };
++    QXHCITRB commands[XHCI_EVENT_RING_SIZE + 2] = { 0 };
++    uint64_t stopped_bandwidth_addr;
++    uint8_t bandwidth;
++    unsigned int i;
++
++    for (i = 0; i < XHCI_EVENT_RING_SIZE - 1; i++) {
++        qxhci_write_command(&commands[i], XHCI_CR_NOOP, 0);
++    }
++
++    qxhci_init(&test, obj, alloc);
++    stopped_bandwidth_addr = test.bandwidth_addr + 0x100;
++    qxhci_write_bandwidth_command(&commands[XHCI_EVENT_RING_SIZE - 1],
++                                  test.bandwidth_addr);
++    qxhci_write_bandwidth_command(&commands[XHCI_EVENT_RING_SIZE],
++                                  stopped_bandwidth_addr);
++    qtest_memset(test.xhci->qts, test.bandwidth_addr, 0xa5, 1);
++    qtest_memset(test.xhci->qts, stopped_bandwidth_addr, 0xa5, 1);
++    qxhci_start(&test, commands, sizeof(commands));
++    qxhci_writel(&test, test.doorbell, 0);
++
++    qxhci_assert_full_error_present(&test);
++
++    /* The triggering command completes before its Event Ring Full check. */
++    qtest_memread(test.xhci->qts, test.bandwidth_addr,
++                  &bandwidth, sizeof(bandwidth));
++    g_assert_cmphex(bandwidth, !=, 0xa5);
++
++    /* xHCI 1.2c 4.9.4 Figure 4-12 stops before the following command. */
++    qtest_memread(test.xhci->qts, stopped_bandwidth_addr,
++                  &bandwidth, sizeof(bandwidth));
++    g_assert_cmphex(bandwidth, ==, 0xa5);
++
++    qxhci_writel(&test, test.runtime + XHCI_ERDP_LOW,
++                 test.event_ring_addr);
++    qxhci_writel(&test, test.runtime + XHCI_ERDP_HIGH,
++                 test.event_ring_addr >> 32);
++    qtest_memread(test.xhci->qts, stopped_bandwidth_addr,
++                  &bandwidth, sizeof(bandwidth));
++    g_assert_cmphex(bandwidth, !=, 0xa5);
++    qxhci_deinit(&test);
++}
++
++static void test_xhci_event_ring_full_reset(void *obj, void *data,
++                                            QGuestAllocator *alloc)
++{
++    QXHCITest blocked = { 0 };
++    QXHCITest control = { 0 };
++    QXHCITRB blocked_commands[XHCI_EVENT_RING_SIZE + 1] = { 0 };
++    QXHCITRB control_commands[XHCI_EVENT_RING_SIZE + 1] = { 0 };
++    unsigned int i;
++
++    for (i = 0; i < XHCI_EVENT_RING_SIZE - 1; i++) {
++        qxhci_write_command(&blocked_commands[i], XHCI_CR_NOOP, 0);
++    }
++    /* A leaked pre-reset completion has TRB Error, not Success. */
++    qxhci_write_command(&blocked_commands[XHCI_EVENT_RING_SIZE - 1],
++                        XHCI_CR_RESERVED, 0);
++
++    qxhci_init(&blocked, obj, alloc);
++    qxhci_start(&blocked, blocked_commands, sizeof(blocked_commands));
++    qxhci_writel(&blocked, blocked.doorbell, 0);
++    qxhci_assert_full_error_present(&blocked);
++    qxhci_deinit(&blocked);
++
++    /* HCRST must discard the blocked ring and its pending work. */
++    for (i = 0; i < XHCI_EVENT_RING_SIZE; i++) {
++        qxhci_write_command(&control_commands[i], XHCI_CR_NOOP, 0);
++    }
++    qxhci_init(&control, obj, alloc);
++    qxhci_start(&control, control_commands, sizeof(control_commands));
++    qxhci_writel(&control, control.doorbell, 0);
++    qxhci_assert_full_error_present(&control);
++    qxhci_writel(&control, control.runtime + XHCI_ERDP_LOW,
++                 control.event_ring_addr);
++    qxhci_writel(&control, control.runtime + XHCI_ERDP_HIGH,
++                 control.event_ring_addr >> 32);
++    qxhci_assert_event(&control, 0, XHCI_ER_COMMAND_COMPLETE,
++                       XHCI_CC_SUCCESS,
++                       control.command_ring_addr +
++                       (XHCI_EVENT_RING_SIZE - 1) * sizeof(QXHCITRB),
++                       false);
++    qxhci_deinit(&control);
++}
++
++static void test_xhci_event_ring_full_reprogram(void *obj, void *data,
++                                                QGuestAllocator *alloc)
++{
++    QXHCITest test = { 0 };
++    QXHCITRB commands[XHCI_EVENT_RING_SIZE + 1] = { 0 };
++    unsigned int i;
++
++    for (i = 0; i < XHCI_EVENT_RING_SIZE; i++) {
++        qxhci_write_command(&commands[i], XHCI_CR_NOOP, 0);
++    }
++
++    qxhci_init(&test, obj, alloc);
++    qxhci_start(&test, commands, sizeof(commands));
++    qxhci_writel(&test, test.doorbell, 0);
++    qxhci_assert_full_error_present(&test);
++
++    qxhci_writel(&test, test.oper + XHCI_USBCMD, 0);
++    qxhci_writel(&test, test.runtime + XHCI_ERSTSZ, 0);
++    qxhci_writel(&test, test.runtime + XHCI_ERSTBA_HIGH,
++                 test.erst_addr >> 32);
++
++    qtest_memset(test.xhci->qts, test.event_ring_addr, 0,
++                 XHCI_EVENT_RING_SIZE * sizeof(QXHCITRB));
++    qxhci_writel(&test, test.runtime + XHCI_ERSTSZ, 1);
++    qxhci_writel(&test, test.runtime + XHCI_ERDP_LOW,
++                 test.event_ring_addr);
++    qxhci_writel(&test, test.runtime + XHCI_ERDP_HIGH,
++                 test.event_ring_addr >> 32);
++    qxhci_writel(&test, test.runtime + XHCI_ERSTBA_LOW,
++                 test.erst_addr);
++    qxhci_writel(&test, test.runtime + XHCI_ERSTBA_HIGH,
++                 test.erst_addr >> 32);
++    qxhci_writel(&test, test.oper + XHCI_USBCMD, XHCI_USBCMD_RUN);
++
++    qxhci_assert_event(&test, 0, XHCI_ER_COMMAND_COMPLETE,
++                       XHCI_CC_SUCCESS,
++                       test.command_ring_addr +
++                       (XHCI_EVENT_RING_SIZE - 1) * sizeof(QXHCITRB),
++                       true);
++    qxhci_deinit(&test);
++}
++
++static void qxhci_register_nodes(void)
++{
++    QOSGraphEdgeOptions opts = {
++        .before_cmd_line = "-global pci-host-bridge.bypass-iommu=on",
++        .extra_device_opts = "addr=04.0",
++    };
++    QPCIAddress addr = {
++        .devfn = QPCI_DEVFN(4, 0),
++        .vendor_id = PCI_VENDOR_ID_REDHAT,
++        .device_id = PCI_DEVICE_ID_REDHAT_XHCI,
++    };
++
++    add_qpci_address(&opts, &addr);
++    qos_node_create_driver("qemu-xhci", qxhci_pci_create);
++    qos_node_consumes("qemu-xhci", "pci-bus", &opts);
++    qos_node_produces("qemu-xhci", "xhci");
++
++    qos_add_test("event-ring-full/layout", "xhci",
++                 test_xhci_event_ring_full_layout, NULL);
++    qos_add_test("event-ring-full/replay", "xhci",
++                 test_xhci_event_ring_full_replay, NULL);
++    qos_add_test("event-ring-full/refill", "xhci",
++                 test_xhci_event_ring_full_refill, NULL);
++    qos_add_test("event-ring-full/stop", "xhci",
++                 test_xhci_event_ring_full_stop, NULL);
++    qos_add_test("event-ring-full/reset", "xhci",
++                 test_xhci_event_ring_full_reset, NULL);
++    qos_add_test("event-ring-full/reprogram", "xhci",
++                 test_xhci_event_ring_full_reprogram, NULL);
++}
++
++libqos_init(qxhci_register_nodes);

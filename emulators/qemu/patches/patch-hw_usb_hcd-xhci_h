@@ -1,0 +1,73 @@
+https://patchew.org/QEMU/20260719215455.96122-1-kirill@korins.ky/
+
+Index: hw/usb/hcd-xhci.h
+--- hw/usb/hcd-xhci.h.orig
++++ hw/usb/hcd-xhci.h
+@@ -25,16 +25,24 @@
+ 
+ #include "hw/usb/usb.h"
+ #include "hw/usb/xhci.h"
++#include "qemu/queue.h"
+ #include "system/dma.h"
+ 
+ OBJECT_DECLARE_SIMPLE_TYPE(XHCIState, XHCI)
+ 
+-/* Very pessimistic, let's hope it's enough for all cases */
++/* Kept for live migration compatibility only. */
+ #define EV_QUEUE (((3 * 24) + 16) * XHCI_MAXSLOTS)
+ 
++#define XHCI_MAX_ENDPOINT_CONTEXTS (XHCI_MAXSLOTS * 31)
++#define XHCI_MAX_STREAMS 256
++#define XHCI_DEFERRED_KICK_WORDS (XHCI_MAX_STREAMS / 64)
++
+ typedef struct XHCIStreamContext XHCIStreamContext;
+ typedef struct XHCIEPContext XHCIEPContext;
++typedef struct XHCIDeferredKick XHCIDeferredKick;
+ 
++QTAILQ_HEAD(XHCIDeferredKickList, XHCIDeferredKick);
++
+ enum xhci_flags {
+     XHCI_FLAG_ENABLE_STREAMS = 1,
+ };
+@@ -149,6 +157,13 @@ typedef struct XHCIEvent {
+     uint8_t epid;
+ } XHCIEvent;
+ 
++typedef struct XHCIPendingEvent {
++    XHCIEvent event;
++    QTAILQ_ENTRY(XHCIPendingEvent) next;
++} XHCIPendingEvent;
++
++QTAILQ_HEAD(XHCIPendingEventList, XHCIPendingEvent);
++
+ typedef struct XHCIInterrupter {
+     uint32_t iman;
+     uint32_t imod;
+@@ -164,6 +179,12 @@ typedef struct XHCIInterrupter {
+     uint32_t er_size;
+     unsigned int er_ep_idx;
+ 
++    bool er_full;
++    bool erdp_pending;
++    uint32_t pending_port_events;
++    bool pending_command_ring_stopped;
++    union XHCIPendingEventList pending_events;
++
+     /* kept for live migration compat only */
+     bool er_full_unused;
+     XHCIEvent ev_buffer[EV_QUEUE];
+@@ -219,6 +240,14 @@ typedef struct XHCIState {
+     int64_t mfindex_start;
+     QEMUTimer *mfwrap_timer;
+     XHCIInterrupter intr[XHCI_MAXINTRS];
++
++    unsigned int er_full_count;
++    unsigned int deferred_kick_count;
++    uint64_t deferred_kicks[XHCI_MAX_ENDPOINT_CONTEXTS]
++                           [XHCI_DEFERRED_KICK_WORDS];
++    QEMUBH *deferred_kick_bh;
++    union XHCIDeferredKickList deferred_kick_queue;
++    XHCIDeferredKick *deferred_kick_eps[XHCI_MAX_ENDPOINT_CONTEXTS];
+ 
+     XHCIRing cmd_ring;
+ 

@@ -1,0 +1,60 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: tests/functional/mips64/test_octeon3.py
+--- tests/functional/mips64/test_octeon3.py.orig
++++ tests/functional/mips64/test_octeon3.py
+@@ -0,0 +1,54 @@
++#!/usr/bin/env python3
++#
++# Functional test for the Cavium Octeon III / EBB7304 machine.
++#
++# SPDX-License-Identifier: GPL-2.0-or-later
++
++import os
++import shutil
++
++from qemu_test import QemuSystemTest, Asset
++from qemu_test import wait_for_console_pattern
++from qemu_test import exec_command_and_wait_for_pattern as ec_and_wait
++
++
++class Octeon3Machine(QemuSystemTest):
++
++    ASSET_UBOOT = Asset(
++        'https://kirill.korins.ky/pub/qemu-mips64-openbsd/u-boot.bin',
++        '7e519b2e52ba44b27bfafd16738c8f485e9eda5438b4899cf6a70520a6d34396')
++
++    ASSET_BSD_RD = Asset(
++        'https://kirill.korins.ky/pub/qemu-mips64-openbsd/bsd.rd',
++        '907f26f0ff67390dd21dc85e2c854fc0e65db295b15d47ae92e1927f98ac5872')
++
++    def test_openbsd_ramdisk_tftp(self):
++        self.require_netdev('user')
++        self.require_device('e1000')
++        self.set_machine('octeon3')
++
++        tftp_dir = self.scratch_file('tftp')
++        os.mkdir(tftp_dir)
++        shutil.copy(self.ASSET_BSD_RD.fetch(),
++                    os.path.join(tftp_dir, 'bsd.rd'))
++
++        self.vm.set_console()
++        self.vm.add_args('-bios', self.ASSET_UBOOT.fetch(),
++                         '-m', '1G',
++                         '-smp', '4',
++                         '-no-reboot',
++                         '-netdev',
++                         f'user,id=net0,tftp={tftp_dir},bootfile=bsd.rd',
++                         '-device', 'e1000,netdev=net0')
++        self.vm.launch()
++
++        wait_for_console_pattern(self, '=> ')
++        ec_and_wait(self, 'pci enum', '=> ')
++        ec_and_wait(self, 'dhcp', 'Bytes transferred')
++        wait_for_console_pattern(self, '=> ')
++        ec_and_wait(self, 'bootoctlinux ${loadaddr} numcores=4',
++                    'Welcome to the OpenBSD/octeon 7.9 installation program.')
++
++
++if __name__ == '__main__':
++    QemuSystemTest.main()

@@ -1,0 +1,39 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: target/mips/internal.h
+--- target/mips/internal.h.orig
++++ target/mips/internal.h
+@@ -8,6 +8,7 @@
+ #ifndef MIPS_INTERNAL_H
+ #define MIPS_INTERNAL_H
+ 
++#include "qemu/atomic.h"
+ #include "exec/memattrs.h"
+ #ifdef CONFIG_TCG
+ #include "tcg/tcg-internal.h"
+@@ -167,9 +168,11 @@ extern const VMStateDescription vmstate_mips_cpu;
+ 
+ static inline bool cpu_mips_hw_interrupts_enabled(CPUMIPSState *env)
+ {
+-    return (env->CP0_Status & (1 << CP0St_IE)) &&
+-        !(env->CP0_Status & (1 << CP0St_EXL)) &&
+-        !(env->CP0_Status & (1 << CP0St_ERL)) &&
++    int32_t status = qatomic_read(&env->CP0_Status);
++
++    return (status & (1 << CP0St_IE)) &&
++        !(status & (1 << CP0St_EXL)) &&
++        !(status & (1 << CP0St_ERL)) &&
+         !(env->hflags & MIPS_HFLAG_DM) &&
+         /*
+          * Note that the TCStatus IXMT field is initialized to zero,
+@@ -186,8 +189,8 @@ static inline bool cpu_mips_hw_interrupts_pending(CPUM
+     int32_t status;
+     bool r;
+ 
+-    pending = env->CP0_Cause & CP0Ca_IP_mask;
+-    status = env->CP0_Status & CP0Ca_IP_mask;
++    pending = qatomic_read(&env->CP0_Cause) & CP0Ca_IP_mask;
++    status = qatomic_read(&env->CP0_Status) & CP0Ca_IP_mask;
+ 
+     if (env->CP0_Config3 & (1 << CP0C3_VEIC)) {
+         /*

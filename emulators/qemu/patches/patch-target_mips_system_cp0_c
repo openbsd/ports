@@ -1,0 +1,76 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: target/mips/system/cp0.c
+--- target/mips/system/cp0.c.orig
++++ target/mips/system/cp0.c
+@@ -22,6 +22,7 @@
+ #include "cpu.h"
+ #include "internal.h"
+ #include "exec/cputlb.h"
++#include "qemu/atomic.h"
+ 
+ /* Called for updates to CP0_Status.  */
+ void sync_c0_status(CPUMIPSState *env, CPUMIPSState *cpu, int tc)
+@@ -61,7 +62,8 @@ void sync_c0_status(CPUMIPSState *env, CPUMIPSState *c
+ void cpu_mips_store_status(CPUMIPSState *env, target_ulong val)
+ {
+     uint32_t mask = env->CP0_Status_rw_bitmask;
+-    target_ulong old = env->CP0_Status;
++    target_ulong old;
++    target_ulong status;
+ 
+     if (env->insn_flags & ISA_MIPS_R6) {
+         bool has_supervisor = extract32(mask, CP0St_KSU, 2) == 0x3;
+@@ -77,9 +79,11 @@ void cpu_mips_store_status(CPUMIPSState *env, target_u
+         mask &= ~(((1 << CP0St_SR) | (1 << CP0St_NMI)) & val);
+     }
+ 
+-    env->CP0_Status = (old & ~mask) | (val & mask);
++    old = qatomic_read(&env->CP0_Status);
++    status = (old & ~mask) | (val & mask);
++    qatomic_set(&env->CP0_Status, status);
+ #if defined(TARGET_MIPS64)
+-    if ((env->CP0_Status ^ old) & (old & (7 << CP0St_UX))) {
++    if ((status ^ old) & (old & (7 << CP0St_UX))) {
+         /* Access to at least one of the 64-bit segments has been disabled */
+         tlb_flush(env_cpu(env));
+     }
+@@ -93,8 +97,9 @@ void cpu_mips_store_status(CPUMIPSState *env, target_u
+ 
+ void cpu_mips_store_cause(CPUMIPSState *env, target_ulong val)
+ {
+-    uint32_t mask = 0x00C00300;
+-    uint32_t old = env->CP0_Cause;
++    int32_t mask = 0x00C00300;
++    int32_t old;
++    int32_t cause;
+     int i;
+ 
+     if (env->insn_flags & ISA_MIPS_R2) {
+@@ -104,10 +109,12 @@ void cpu_mips_store_cause(CPUMIPSState *env, target_ul
+         mask &= ~((1 << CP0Ca_WP) & val);
+     }
+ 
+-    env->CP0_Cause = (env->CP0_Cause & ~mask) | (val & mask);
++    old = qatomic_fetch_and(&env->CP0_Cause, ~mask);
++    qatomic_or(&env->CP0_Cause, (int32_t)(val & mask));
++    cause = qatomic_read(&env->CP0_Cause);
+ 
+-    if ((old ^ env->CP0_Cause) & (1 << CP0Ca_DC)) {
+-        if (env->CP0_Cause & (1 << CP0Ca_DC)) {
++    if ((old ^ cause) & (1 << CP0Ca_DC)) {
++        if (cause & (1 << CP0Ca_DC)) {
+             cpu_mips_stop_count(env);
+         } else {
+             cpu_mips_start_count(env);
+@@ -116,8 +123,8 @@ void cpu_mips_store_cause(CPUMIPSState *env, target_ul
+ 
+     /* Set/reset software interrupts */
+     for (i = 0 ; i < 2 ; i++) {
+-        if ((old ^ env->CP0_Cause) & (1 << (CP0Ca_IP + i))) {
+-            cpu_mips_soft_irq(env, i, env->CP0_Cause & (1 << (CP0Ca_IP + i)));
++        if ((old ^ cause) & (1 << (CP0Ca_IP + i))) {
++            cpu_mips_soft_irq(env, i, cause & (1 << (CP0Ca_IP + i)));
+         }
+     }
+ }

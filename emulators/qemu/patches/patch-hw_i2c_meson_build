@@ -1,0 +1,14 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: hw/i2c/meson.build
+--- hw/i2c/meson.build.orig
++++ hw/i2c/meson.build
+@@ -20,3 +20,8 @@ i2c_ss.add(when: 'CONFIG_PCA954X', if_true: files('i2c
+ i2c_ss.add(when: 'CONFIG_PMBUS', if_true: files('pmbus_device.c'))
+ i2c_ss.add(when: 'CONFIG_BCM2835_I2C', if_true: files('bcm2835_i2c.c'))
+ system_ss.add_all(when: 'CONFIG_I2C', if_true: i2c_ss)
++
++if 'CONFIG_TCG' in config_all_accel
++  mips_ss.add(when: 'CONFIG_MIPS_OCTEON',
++              if_true: files('octeon_twsi.c'))
++endif

@@ -1,4 +1,4 @@
-https://marc.info/?l=qemu-devel&m=178447293031762&w=2
+https://patchew.org/QEMU/20260719145559.94342-1-kirill@korins.ky/
 
 Index: hw/ppc/pnv_psi.c
 --- hw/ppc/pnv_psi.c.orig

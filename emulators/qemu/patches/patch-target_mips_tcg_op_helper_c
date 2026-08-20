@@ -1,0 +1,14 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: target/mips/tcg/op_helper.c
+--- target/mips/tcg/op_helper.c.orig
++++ target/mips/tcg/op_helper.c
+@@ -268,7 +268,7 @@ target_ulong helper_rdhwr_cvmcount(CPUMIPSState *env)
+ #ifdef CONFIG_USER_ONLY
+     return cpu_get_host_ticks();
+ #else
+-    return (uint32_t)cpu_mips_get_count(env);
++    return helper_mfc0_cvmcount(env);
+ #endif
+ }
+ 

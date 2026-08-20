@@ -1,0 +1,32 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: target/mips/system/machine.c
+--- target/mips/system/machine.c.orig
++++ target/mips/system/machine.c
+@@ -372,6 +372,18 @@ static const VMStateDescription mips_vmstate_octeon_cr
+     }
+ };
+ 
++static const VMStateDescription mips_vmstate_octeon_cp0 = {
++    .name = "cpu/octeon_cp0",
++    .version_id = 1,
++    .minimum_version_id = 1,
++    .needed = mips_octeon_needed,
++    .fields = (const VMStateField[]) {
++        VMSTATE_UINTTL(env.CP0_CvmCtl, MIPSCPU),
++        VMSTATE_UINTTL(env.CP0_CvmMemCtl, MIPSCPU),
++        VMSTATE_END_OF_LIST()
++    }
++};
++
+ const VMStateDescription vmstate_mips_cpu = {
+     .name = "cpu",
+     .version_id = 21,
+@@ -490,6 +502,7 @@ const VMStateDescription vmstate_mips_cpu = {
+         &mips_vmstate_timer,
+         &mips_vmstate_octeon_multiplier,
+         &mips_vmstate_octeon_crypto,
++        &mips_vmstate_octeon_cp0,
+         NULL
+     }
+ };

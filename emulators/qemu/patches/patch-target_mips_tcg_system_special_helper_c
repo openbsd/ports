@@ -1,0 +1,51 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: target/mips/tcg/system/special_helper.c
+--- target/mips/tcg/system/special_helper.c.orig
++++ target/mips/tcg/system/special_helper.c
+@@ -24,21 +24,22 @@
+ #include "exec/helper-proto.h"
+ #include "exec/translation-block.h"
+ #include "internal.h"
++#include "qemu/atomic.h"
+ 
+ /* Specials */
+ target_ulong helper_di(CPUMIPSState *env)
+ {
+-    target_ulong t0 = env->CP0_Status;
++    target_ulong t0 = qatomic_read(&env->CP0_Status);
+ 
+-    env->CP0_Status = t0 & ~(1 << CP0St_IE);
++    qatomic_set(&env->CP0_Status, t0 & ~(1 << CP0St_IE));
+     return t0;
+ }
+ 
+ target_ulong helper_ei(CPUMIPSState *env)
+ {
+-    target_ulong t0 = env->CP0_Status;
++    target_ulong t0 = qatomic_read(&env->CP0_Status);
+ 
+-    env->CP0_Status = t0 | (1 << CP0St_IE);
++    qatomic_set(&env->CP0_Status, t0 | (1 << CP0St_IE));
+     return t0;
+ }
+ 
+@@ -103,13 +104,15 @@ bool mips_io_recompile_replay_branch(CPUState *cs, con
+ 
+ static inline void exception_return(CPUMIPSState *env)
+ {
++    target_ulong status = qatomic_read(&env->CP0_Status);
++
+     debug_pre_eret(env);
+-    if (env->CP0_Status & (1 << CP0St_ERL)) {
++    if (status & (1 << CP0St_ERL)) {
+         mips_env_set_pc(env, env->CP0_ErrorEPC);
+-        env->CP0_Status &= ~(1 << CP0St_ERL);
++        qatomic_set(&env->CP0_Status, status & ~(1 << CP0St_ERL));
+     } else {
+         mips_env_set_pc(env, env->CP0_EPC);
+-        env->CP0_Status &= ~(1 << CP0St_EXL);
++        qatomic_set(&env->CP0_Status, status & ~(1 << CP0St_EXL));
+     }
+     compute_hflags(env);
+     debug_post_eret(env);

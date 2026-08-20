@@ -1,0 +1,62 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: target/mips/tcg/system/cp0_helper.c
+--- target/mips/tcg/system/cp0_helper.c.orig
++++ target/mips/tcg/system/cp0_helper.c
+@@ -23,6 +23,8 @@
+ #include "qemu/osdep.h"
+ #include "qemu/log.h"
+ #include "qemu/main-loop.h"
++#include "qemu/timer.h"
++#include "hw/core/clock.h"
+ #include "cpu.h"
+ #include "internal.h"
+ #include "qemu/host-utils.h"
+@@ -374,6 +376,14 @@ target_ulong helper_mfc0_count(CPUMIPSState *env)
+     return (int32_t)cpu_mips_get_count(env);
+ }
+ 
++target_ulong helper_mfc0_cvmcount(CPUMIPSState *env)
++{
++    MIPSCPU *cpu = env_archcpu(env);
++
++    return clock_ns_to_ticks(cpu->clock,
++                             qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL));
++}
++
+ target_ulong helper_mftc0_entryhi(CPUMIPSState *env)
+ {
+     int other_tc = env->CP0_VPEControl & (0xff << CP0VPECo_TargTC);
+@@ -872,14 +882,19 @@ void helper_mtc0_memorymapid(CPUMIPSState *env, target
+     }
+ }
+ 
+-uint32_t compute_pagemask(uint32_t val)
++uint32_t compute_pagemask(CPUMIPSState *env, uint32_t val)
+ {
+     /* Don't care MASKX as we don't support 1KB page */
+-    uint32_t mask = extract32(val, CP0PM_MASK, 16);
++    uint32_t mask = val >> CP0PM_MASK;
+     int maskbits = cto32(mask);
+ 
+-    /* Ensure no more set bit after first zero, and maskbits even. */
+-    if ((mask >> maskbits) == 0 && maskbits % 2 == 0) {
++    /*
++     * Generic R4K PageMask values use two mask bits per size step.
++     * Octeon accepts contiguous byte masks such as 0x003fffff for
++     * two 2 MiB pages.
++     */
++    if ((mask & (mask + 1)) == 0 &&
++        ((env->insn_flags & INSN_OCTEON) || maskbits % 2 == 0)) {
+         return mask << CP0PM_MASK;
+     } else {
+         /* When invalid, set to default target page size. */
+@@ -889,7 +904,7 @@ uint32_t compute_pagemask(uint32_t val)
+ 
+ void helper_mtc0_pagemask(CPUMIPSState *env, target_ulong arg1)
+ {
+-    env->CP0_PageMask = compute_pagemask(arg1);
++    env->CP0_PageMask = compute_pagemask(env, arg1);
+ }
+ 
+ void helper_mtc0_pagegrain(CPUMIPSState *env, target_ulong arg1)

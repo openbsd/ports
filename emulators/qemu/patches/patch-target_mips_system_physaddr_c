@@ -1,0 +1,63 @@
+https://patchew.org/QEMU/20260715134447.56007-1-kirill%40korins.ky/
+
+Index: target/mips/system/physaddr.c
+--- target/mips/system/physaddr.c.orig
++++ target/mips/system/physaddr.c
+@@ -21,6 +21,14 @@
+ #include "exec/page-protection.h"
+ #include "../internal.h"
+ 
++/*
++ * QEMU-only backing for per-core CVMSEG. Keep it outside guest DRAM;
++ * the guest sees the virtual CVMSEG window, not this physical address.
++ */
++#define OCTEON_CVMSEG_BASE 0x10000000000ULL
++#define OCTEON_CVMSEG_SIZE 0x4000ULL
++#define OCTEON_CVMSEG_MASK 0x3fffULL
++
+ static int is_seg_am_mapped(unsigned int am, bool eu, int mmu_idx)
+ {
+     /*
+@@ -128,6 +136,20 @@ int get_physical_address(CPUMIPSState *env, hwaddr *ph
+     int ret = TLBRET_MATCH;
+     target_ulong address = real_address;
+ 
++#if defined(TARGET_MIPS64)
++    if ((env->insn_flags & INSN_OCTEON) && (env->CP0_CvmMemCtl & 0x100) &&
++        address >= 0xffffffffffff8000ULL &&
++        address <= 0xffffffffffffbfffULL) {
++        MIPSCPU *cpu = env_archcpu(env);
++
++        *physical = OCTEON_CVMSEG_BASE +
++                    CPU(cpu)->cpu_index * OCTEON_CVMSEG_SIZE +
++                    (address & OCTEON_CVMSEG_MASK);
++        *prot = PAGE_READ | PAGE_WRITE;
++        return TLBRET_MATCH;
++    }
++#endif
++
+     if (address <= USEG_LIMIT) {
+         /* useg */
+         uint16_t segctl;
+@@ -143,7 +165,9 @@ int get_physical_address(CPUMIPSState *env, hwaddr *ph
+ #if defined(TARGET_MIPS64)
+     } else if (address < 0x4000000000000000ULL) {
+         /* xuseg */
+-        if (UX && address <= (0x3FFFFFFFFFFFFFFFULL & env->SEGMask)) {
++        if (((user_mode && UX) || (supervisor_mode && SX) ||
++             (kernel_mode && KX)) &&
++            address <= (0x3FFFFFFFFFFFFFFFULL & env->SEGMask)) {
+             ret = env->tlb->map_address(env, physical, prot,
+                                         real_address, access_type);
+         } else {
+@@ -151,8 +175,8 @@ int get_physical_address(CPUMIPSState *env, hwaddr *ph
+         }
+     } else if (address < 0x8000000000000000ULL) {
+         /* xsseg */
+-        if ((supervisor_mode || kernel_mode) &&
+-            SX && address <= (0x7FFFFFFFFFFFFFFFULL & env->SEGMask)) {
++        if (((supervisor_mode && SX) || (kernel_mode && KX)) &&
++            address <= (0x7FFFFFFFFFFFFFFFULL & env->SEGMask)) {
+             ret = env->tlb->map_address(env, physical, prot,
+                                         real_address, access_type);
+         } else {
