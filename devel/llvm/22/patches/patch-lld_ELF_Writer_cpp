@@ -183,11 +183,10 @@ Index: lld/ELF/Writer.cpp
    if (OutputSection *cmd = findSection(ctx, ".note.gnu.property", partNo))
      addHdr(PT_GNU_PROPERTY, PF_R)->add(cmd);
  
-@@ -2586,6 +2610,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
-         };
+@@ -2587,6 +2611,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
      }
    };
-+
+ 
 +#ifndef __OpenBSD__
 +  // On i386, produce binaries that are compatible with our W^X implementation
 +  if (ctx.arg.emachine == EM_386) {
@@ -212,6 +211,24 @@ Index: lld/ELF/Writer.cpp
 +    }
 +  }
 +#endif
- 
++
    for (Partition &part : ctx.partitions) {
      prev = nullptr;
+     for (auto &p : part.phdrs)
+@@ -2651,6 +2700,16 @@ static std::string rangeToString(uint64_t addr, uint64
+ template <class ELFT> void Writer<ELFT>::assignFileOffsets() {
+   ctx.out.programHeaders->offset = ctx.out.elfHeader->size;
+   uint64_t off = ctx.out.elfHeader->size + ctx.out.programHeaders->size;
++
++#ifdef __OpenBSD__
++  // BFD's implicit script reserves 0x200 bytes before fixed-address SPARCV9
++  // -N payloads consumed by OpenFirmware.
++  if (!ctx.arg.relocatable && ctx.arg.omagic &&
++      ctx.arg.emachine == EM_SPARCV9 &&
++      ctx.arg.sectionStartMap.count(".text") &&
++      !ctx.script->hasSectionsCommand && !ctx.script->hasPhdrsCommands())
++    off = std::max<uint64_t>(off, 0x200);
++#endif
+ 
+   PhdrEntry *lastRX = nullptr;
+   for (Partition &part : ctx.partitions)
