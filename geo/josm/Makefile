@@ -1,6 +1,6 @@
 COMMENT=		OpenStreetMap map editor
 
-SVN_REV=		19439
+SVN_REV=		19613
 DISTNAME=		josm-snapshot-${SVN_REV}
 EXTRACT_SUFX =		.jar
 EXTRACT_CASES+=		*.jar) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIST};;
