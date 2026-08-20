@@ -1,4 +1,54 @@
-share/nginx/naxsi_core.rules
+share/doc/naxsi/
+share/doc/naxsi/assets/
+share/doc/naxsi/assets/munin_integration.png
+share/doc/naxsi/basic-configuration.md
+share/doc/naxsi/build-naxsi.md
+share/doc/naxsi/directives.md
+share/doc/naxsi/index.md
+share/doc/naxsi/integration_with_naxsi.md
+share/doc/naxsi/internal_rules.md
+share/doc/naxsi/logs.md
+share/doc/naxsi/matchzones.md
+share/doc/naxsi/packaging-naxsi.md
+share/doc/naxsi/rules.md
+share/doc/naxsi/whitelist.md
+share/examples/naxsi/
+@sample ${SYSCONFDIR}/nginx/naxsi/
+share/examples/naxsi/blocking/
+@sample ${SYSCONFDIR}/nginx/naxsi/blocking/
+share/examples/naxsi/blocking/10000000_scanner.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/blocking/10000000_scanner.rules
+share/examples/naxsi/blocking/20000000_web_security.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/blocking/20000000_web_security.rules
+share/examples/naxsi/blocking/30000000_wordpress.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/blocking/30000000_wordpress.rules
+share/examples/naxsi/blocking/40000000_php_security.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/blocking/40000000_php_security.rules
+share/examples/naxsi/blocking/50000000_sql_injection.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/blocking/50000000_sql_injection.rules
+share/examples/naxsi/naxsi_core.rules
 @sample ${SYSCONFDIR}/nginx/naxsi_core.rules
+share/examples/naxsi/whitelists/
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/
+share/examples/naxsi/whitelists/dokuwiki.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/dokuwiki.rules
+share/examples/naxsi/whitelists/drupal.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/drupal.rules
+share/examples/naxsi/whitelists/etherpad-lite.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/etherpad-lite.rules
+share/examples/naxsi/whitelists/generic.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/generic.rules
+share/examples/naxsi/whitelists/iris.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/iris.rules
+share/examples/naxsi/whitelists/jellyfin.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/jellyfin.rules
+share/examples/naxsi/whitelists/rutorrent.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/rutorrent.rules
+share/examples/naxsi/whitelists/wordpress-minimal.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/wordpress-minimal.rules
+share/examples/naxsi/whitelists/wordpress.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/wordpress.rules
+share/examples/naxsi/whitelists/zerobin.rules
+@sample ${SYSCONFDIR}/nginx/naxsi/whitelists/zerobin.rules
 @cwd ${NGINX_DIR}/modules
 @so ngx_http_naxsi_module.so

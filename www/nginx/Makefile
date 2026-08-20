@@ -24,6 +24,7 @@ DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
 REVISION=		1
+REVISION-naxsi=		2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cache_purge=	nginx-cache_purge-${VERSION}
@@ -52,13 +53,12 @@ DIST_TUPLE=	\
 	github kvspb nginx-auth-ldap 83c059b73566c2ee9cbda920d91b66657cf120b7 nginx-auth-ldap \
 	github openresty lua-nginx-module v0.10.11 lua-nginx-module \
 	github vision5 ngx_devel_kit v0.3.4 ngx_devel_kit \
-	github nbs-system naxsi d714f1636ea49a9a9f4f06dba14aee003e970834 naxsi \
+	github wargio naxsi 7e867e20e282bd8cf6bbe99ff6207139422988f5 naxsi \
+	github libinjection libinjection b9fcaaf9e50e9492807b23ffcc6af46ee1f203b9 naxsi/naxsi_src/libinjection \
 	github nginx njs 1.0.0 njs \
 	github arut nginx-rtmp-module v1.2.2 nginx-rtmp-module \
 	github nginx-modules ngx_http_hmac_secure_link_module 2.0.0 ngx_http_hmac_secure_link_module \
 	github owasp-modsecurity ModSecurity-nginx v1.0.4 ModSecurity-nginx
-# newer naxsi needs libinjection
-#	github wargio naxsi 7e867e20e282bd8cf6bbe99ff6207139422988f5 naxsi \
 # newer lua-nginx-module wants patched luajit-2.0; maybe add openresty as a
 # separate port instead?
 
@@ -124,7 +124,8 @@ LIB_DEPENDS-image_filter=graphics/gd
 LIB_DEPENDS-ldap_auth=	databases/openldap
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS} \
 			devel/pcre
-LIB_DEPENDS-modsecurity=	security/libmodsecurity
+LIB_DEPENDS-modsecurity=security/libmodsecurity
+LIB_DEPENDS-naxsi=
 LIB_DEPENDS-njs=	devel/pcre2 \
 			textproc/libxslt \
 			textproc/libxml
@@ -237,8 +238,9 @@ do-install:
 	fastcgi_params scgi_params uwsgi_params
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/share/nginx/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/naxsi/naxsi_config/naxsi_core.rules \
-		${PREFIX}/share/nginx/
+	cp -r ${WRKSRC}/naxsi/naxsi_rules ${PREFIX}/share/examples/naxsi
+	cp -r ${WRKSRC}/naxsi/docs ${PREFIX}/share/doc/naxsi
+	rm -r ${PREFIX}/share/doc/naxsi/old
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx/html/
 	${INSTALL_DATA} ${WRKSRC}/html/* ${PREFIX}/share/nginx/html/
 	${INSTALL_DATA_DIR} ${WRKINST}/var/www/modules/
