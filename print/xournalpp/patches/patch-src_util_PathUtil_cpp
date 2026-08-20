@@ -1,0 +1,19 @@
+Assumes the system has /proc. Fails to find resources due to this.
+
+Index: src/util/PathUtil.cpp
+--- src/util/PathUtil.cpp.orig
++++ src/util/PathUtil.cpp
+@@ -99,9 +99,13 @@ auto Util::getExePath() -> fs::path {
+     // allocating the buffer.
+ #define PATH_MAX 4096
+ #endif
++#ifdef __OpenBSD__
++    return fs::path{"${PREFIX}/bin/xournalpp"};
++#else
+     std::array<char, PATH_MAX> result{};
+     ssize_t count = readlink("/proc/self/exe", result.data(), PATH_MAX);
+     return fs::path{std::string(result.data(), as_unsigned(std::max(ssize_t{0}, count)))}.parent_path();
++#endif
+ }
+ #endif
+ #endif

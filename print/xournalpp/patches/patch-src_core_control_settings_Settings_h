@@ -3,7 +3,7 @@ Make audio work by default on OpenBSD.
 Index: src/core/control/settings/Settings.h
 --- src/core/control/settings/Settings.h.orig
 +++ src/core/control/settings/Settings.h
-@@ -393,11 +393,11 @@ class Settings { (public)
+@@ -417,11 +417,11 @@ class Settings { (public)
      fs::path const& getAudioFolder() const;
      void setAudioFolder(fs::path audioFolder);
  
