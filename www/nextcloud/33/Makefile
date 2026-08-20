@@ -1,5 +1,5 @@
-NC_VERSION=	33.0.7
+NC_VERSION=	33.0.8
 # keep REVISION above 7.9-stable
-REVISION=	1
+REVISION=	0
 
 .include <bsd.port.mk>
