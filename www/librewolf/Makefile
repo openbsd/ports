@@ -15,6 +15,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 # librewolf-149.0.2-2 (upstream) becomes librewolf-149.0.2pl2 (patch level 2)
 MOZILLA_DIST_VERSION =	154.0-2
 MOZILLA_VERSION =	${MOZILLA_DIST_VERSION:C/-([0-9]+)$/pl\1/}
+REVISION =		0
 
 MOZILLA_PROJECT =	librewolf
 MOZILLA_CODENAME =	browser
