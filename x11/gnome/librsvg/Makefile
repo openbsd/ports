@@ -1,4 +1,4 @@
-PORTROACH=		skipv:2.62.90
+PORTROACH=		skipv:2.62.90,2.62.91
 
 COMMENT=		SAX-based render library for SVG files
 
