@@ -1,0 +1,20 @@
+fix build with libcxx22
+
+In file included from /usr/ports/pobj/labplot-2.12.1/labplot-2.12.1/src/backend/nsl/nsl_peak.cpp:10:
+/usr/ports/pobj/labplot-2.12.1/labplot-2.12.1/src/backend/nsl/nsl_peak.h:16:1: error: unknown type name 'size_t'; did you mean 'std::size_t'?
+   16 | size_t* nsl_peak_detect(T* data, size_t n, size_t& np, T height = -INFINITY, size_t distance = 0);
+      | ^~~~~~
+      | std::size_t
+
+Index: src/backend/nsl/nsl_peak.h
+--- src/backend/nsl/nsl_peak.h.orig
++++ src/backend/nsl/nsl_peak.h
+@@ -12,6 +12,8 @@
+ 
+ #include <cmath>
+ 
++#include <stddef.h>
++
+ template<typename T>
+ size_t* nsl_peak_detect(T* data, size_t n, size_t& np, T height = -INFINITY, size_t distance = 0);
+ 
