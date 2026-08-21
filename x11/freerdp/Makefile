@@ -77,8 +77,7 @@ CONFIGURE_ARGS += -DWITH_CLIENT_SDL=OFF
 # wants at least LDEP on wayland/wayland x11/xkbcommon
 CONFIGURE_ARGS += -DWITH_WAYLAND=OFF
 
-# might no longer be needed
-.if ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS += -DWITH_SIMD=OFF
 .endif
 
