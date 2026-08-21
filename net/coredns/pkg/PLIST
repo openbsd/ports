@@ -52,6 +52,7 @@
 @man man/man7/coredns-root.7
 @man man/man7/coredns-route53.7
 @man man/man7/coredns-secondary.7
+@man man/man7/coredns-shed.7
 @man man/man7/coredns-sign.7
 @man man/man7/coredns-template.7
 @man man/man7/coredns-timeouts.7
