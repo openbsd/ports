@@ -584,7 +584,7 @@ MODGO_MODULES =	\
 	k8s.io/klog/v2											 v2.130.1 \
 	k8s.io/kube-openapi										 v0.0.0-20250910181357-589584f1c912 \
 	k8s.io/utils											 v0.0.0-20260210185600-b8788abfbbc2 \
-	oras.land/oras-go/v2										 v2.6.0 \
+	oras.land/oras-go/v2										 v2.6.1 \
 	rsc.io/pdf											 v0.1.1 \
 	sigs.k8s.io/json										 v0.0.0-20250730193827-2d320260d730 \
 	sigs.k8s.io/randfill										 v1.0.0 \
@@ -1081,7 +1081,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sync									 v0.0.0-20210220032951-036812b2e83c \
 	golang.org/x/sync									 v0.1.0 \
 	golang.org/x/sync									 v0.10.0 \
-	golang.org/x/sync									 v0.14.0 \
 	golang.org/x/sync									 v0.16.0 \
 	golang.org/x/sync									 v0.17.0 \
 	golang.org/x/sync									 v0.18.0 \

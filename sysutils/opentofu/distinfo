@@ -1573,7 +1573,6 @@ SHA256 (go_modules/golang.org/x/sync/@v/v0.0.0-20201207232520-09787c993a3a.mod) 
 SHA256 (go_modules/golang.org/x/sync/@v/v0.0.0-20210220032951-036812b2e83c.mod) = Qh9hOWhtWJHz3FpWPQmVeA0yefZcrU0iXOpSaGeUFhw=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.1.0.mod) = Qh9hOWhtWJHz3FpWPQmVeA0yefZcrU0iXOpSaGeUFhw=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.10.0.mod) = cA5dsA3SaqGaF9zl/FUkNtYPaMVgbIW4IfJMPWByoVE=
-SHA256 (go_modules/golang.org/x/sync/@v/v0.14.0.mod) = cguY8b8DPWtkpFTKjCnNym6SZat9cNs7g03/SVYPFYc=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.16.0.mod) = cguY8b8DPWtkpFTKjCnNym6SZat9cNs7g03/SVYPFYc=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.17.0.mod) = 0zPFS3SviguOx0jTfFly0nudCIueRci/XDq1INIRMJA=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.18.0.mod) = 0zPFS3SviguOx0jTfFly0nudCIueRci/XDq1INIRMJA=
@@ -1902,8 +1901,8 @@ SHA256 (go_modules/k8s.io/utils/@v/v0.0.0-20240711033017-18e509b52bc8.mod) = 8HH
 SHA256 (go_modules/k8s.io/utils/@v/v0.0.0-20251002143259-bc988d571ff4.mod) = 8HHdebV0bvcgLz+iczFyoGeX2vHcEco4MmwhOiLpj7E=
 SHA256 (go_modules/k8s.io/utils/@v/v0.0.0-20260210185600-b8788abfbbc2.mod) = EYB3l66PNckqb/7wQLaOlrzmwwr5SaWV/nL8ezXRK8A=
 SHA256 (go_modules/k8s.io/utils/@v/v0.0.0-20260210185600-b8788abfbbc2.zip) = Sm6G6yZoIb6YQMlcDvOgBEGkNsFAbW1I3MXKko5+N+M=
-SHA256 (go_modules/oras.land/oras-go/v2/@v/v2.6.0.mod) = IsPHT5RuWIaNcsXKzjF4bU4xweePkkXg1VzKTnYTSSU=
-SHA256 (go_modules/oras.land/oras-go/v2/@v/v2.6.0.zip) = HICBwxT1NthEaSNd1dj2+LwFaG3yGgNGxmJzPb4PVGg=
+SHA256 (go_modules/oras.land/oras-go/v2/@v/v2.6.1.mod) = yfOp1Kje6x4V8xa/JTb28FxUA1Cu7PXqUW4ddAD6TMA=
+SHA256 (go_modules/oras.land/oras-go/v2/@v/v2.6.1.zip) = k9pFMETBjxl3Bog9U0HDON/MNWFLjXFHp0OCdWznMVw=
 SHA256 (go_modules/rsc.io/pdf/@v/v0.1.1.mod) = /ofZECCWyHkA0bShBtm9WPYMBoCaTvedgEv/BoT1y+c=
 SHA256 (go_modules/rsc.io/pdf/@v/v0.1.1.zip) = eb8xDjmc8OLYqmFTZ1DSppmcXKiE56J/r4jTcBzVuo8=
 SHA256 (go_modules/sigs.k8s.io/json/@v/v0.0.0-20221116044647-bc3834ca7abd.mod) = n3/JcQGaDtaBtn4WrNT+N7MQVqMwFtP8/2zNOJQCo/c=
@@ -1919,7 +1918,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7Uv
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SHA256 (opentofu-v1.12.5.zip) = Wv0UuJJ0HypMQ8VRSvn+nxl5k5F8o3xwopVm1vti9WU=
+SHA256 (opentofu-v1.12.6.zip) = A/GOPoCDami2vUSYny3w1OB7BAnWck06WcpfgzG8Zvs=
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.mod) = 96
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.zip) = 239588
@@ -3495,7 +3494,6 @@ SIZE (go_modules/golang.org/x/sync/@v/v0.0.0-20201207232520-09787c993a3a.mod) = 
 SIZE (go_modules/golang.org/x/sync/@v/v0.0.0-20210220032951-036812b2e83c.mod) = 25
 SIZE (go_modules/golang.org/x/sync/@v/v0.1.0.mod) = 25
 SIZE (go_modules/golang.org/x/sync/@v/v0.10.0.mod) = 34
-SIZE (go_modules/golang.org/x/sync/@v/v0.14.0.mod) = 36
 SIZE (go_modules/golang.org/x/sync/@v/v0.16.0.mod) = 36
 SIZE (go_modules/golang.org/x/sync/@v/v0.17.0.mod) = 36
 SIZE (go_modules/golang.org/x/sync/@v/v0.18.0.mod) = 36
@@ -3824,8 +3822,8 @@ SIZE (go_modules/k8s.io/utils/@v/v0.0.0-20240711033017-18e509b52bc8.mod) = 153
 SIZE (go_modules/k8s.io/utils/@v/v0.0.0-20251002143259-bc988d571ff4.mod) = 153
 SIZE (go_modules/k8s.io/utils/@v/v0.0.0-20260210185600-b8788abfbbc2.mod) = 153
 SIZE (go_modules/k8s.io/utils/@v/v0.0.0-20260210185600-b8788abfbbc2.zip) = 241159
-SIZE (go_modules/oras.land/oras-go/v2/@v/v2.6.0.mod) = 188
-SIZE (go_modules/oras.land/oras-go/v2/@v/v2.6.0.zip) = 391005
+SIZE (go_modules/oras.land/oras-go/v2/@v/v2.6.1.mod) = 168
+SIZE (go_modules/oras.land/oras-go/v2/@v/v2.6.1.zip) = 400103
 SIZE (go_modules/rsc.io/pdf/@v/v0.1.1.mod) = 18
 SIZE (go_modules/rsc.io/pdf/@v/v0.1.1.zip) = 50919
 SIZE (go_modules/sigs.k8s.io/json/@v/v0.0.0-20221116044647-bc3834ca7abd.mod) = 33
@@ -3841,4 +3839,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = 162
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = 60719
-SIZE (opentofu-v1.12.5.zip) = 7711058
+SIZE (opentofu-v1.12.6.zip) = 7860906
