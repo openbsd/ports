@@ -1,0 +1,13 @@
+Index: codex-rs/config/src/loader/mod.rs
+--- codex-rs/config/src/loader/mod.rs.orig
++++ codex-rs/config/src/loader/mod.rs
+@@ -166,6 +166,9 @@ pub async fn load_config_layers_state(
+             resolve_relative_paths_in_config_toml(config, base_dir)?,
+         )
+     } else {
++        #[cfg(target_os = "openbsd")]
++        let file = AbsolutePathBuf::from_absolute_path("${PREFIX}/bin/codex")?;
++        #[cfg(not(target_os = "openbsd"))]
+         let file = AbsolutePathBuf::from_absolute_path(std::env::current_exe()?)?;
+         let raw_toml = include_str!("../../defaults.toml");
+         let config = toml::from_str(raw_toml).map_err(|error| {

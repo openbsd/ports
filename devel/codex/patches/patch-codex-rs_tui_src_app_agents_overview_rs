@@ -1,0 +1,33 @@
+Index: codex-rs/tui/src/app/agents_overview.rs
+--- codex-rs/tui/src/app/agents_overview.rs.orig
++++ codex-rs/tui/src/app/agents_overview.rs
+@@ -698,15 +698,20 @@ impl App {
+         let app_event_tx = self.app_event_tx.clone();
+         tokio::spawn(async move {
+             let result = async {
+-                let current_executable =
+-                    std::env::current_exe().map_err(|error| error.to_string())?;
+-                let executable = if current_executable
+-                    .file_stem()
+-                    .is_some_and(|name| name == "codex-tui")
+-                {
+-                    current_executable.with_file_name("codex")
+-                } else {
+-                    current_executable
++                #[cfg(target_os = "openbsd")]
++                let executable = std::path::PathBuf::from("${PREFIX}/bin/codex");
++                #[cfg(not(target_os = "openbsd"))]
++                let executable = {
++                    let current_executable =
++                        std::env::current_exe().map_err(|error| error.to_string())?;
++                    if current_executable
++                        .file_stem()
++                        .is_some_and(|name| name == "codex-tui")
++                    {
++                        current_executable.with_file_name("codex")
++                    } else {
++                        current_executable
++                    }
+                 };
+                 let output = tokio::process::Command::new(executable)
+                     .args(["app-server", "daemon", "start"])

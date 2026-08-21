@@ -1,7 +1,7 @@
 Index: codex-rs/install-context/src/lib.rs
 --- codex-rs/install-context/src/lib.rs.orig
 +++ codex-rs/install-context/src/lib.rs
-@@ -153,12 +153,19 @@ impl InstallContext {
+@@ -170,12 +170,19 @@ impl InstallContext {
      }
  
      pub fn code_mode_host_program(&self) -> PathBuf {

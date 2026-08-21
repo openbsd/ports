@@ -1,0 +1,119 @@
+Index: codex-rs/modcargo-crates/kqueue-1.1.1/src/lib.rs
+--- codex-rs/modcargo-crates/kqueue-1.1.1/src/lib.rs.orig
++++ codex-rs/modcargo-crates/kqueue-1.1.1/src/lib.rs
+@@ -7,6 +7,7 @@ use std::os::unix::io::{AsRawFd, IntoRawFd, RawFd};
+ use std::path::Path;
+ use std::ptr;
+ use std::time::Duration;
++use std::time::Instant;
+ 
+ pub use kqueue_sys::constants::*;
+ 
+@@ -390,14 +391,14 @@ impl Watcher {
+         filename: P,
+         filter: EventFilter,
+     ) -> Result<()> {
+-        let mut fd: RawFd = 0;
++        let mut fd = None;
+         let new_watched = self
+             .watched
+             .drain(..)
+             .filter(|x| {
+                 if let Ident::Filename(iterfd, ref iterfile) = x.ident {
+                     if iterfile == filename.as_ref().to_str().unwrap() {
+-                        fd = iterfd;
++                        fd = Some(iterfd);
+                         false
+                     } else {
+                         true
+@@ -408,14 +409,15 @@ impl Watcher {
+             })
+             .collect();
+ 
+-        if fd == 0 {
++        self.watched = new_watched;
++
++        let Some(fd) = fd else {
+             return Err(Error::new(
+                 io::ErrorKind::NotFound,
+                 format!("{filename:?} was not being watched"),
+             ));
+-        }
++        };
+ 
+-        self.watched = new_watched;
+         let ret = self.delete_kevents(Ident::Fd(fd), filter);
+         let close_err = unsafe { close(fd) };
+         if close_err != 0 {
+@@ -575,31 +577,47 @@ fn find_file_ident(watcher: &Watcher, fd: RawFd) -> Op
+ }
+ 
+ fn get_event(watcher: &Watcher, timeout: Option<Duration>) -> Option<Event> {
+-    let mut kev = kevent::new(
+-        0,
+-        EventFilter::EVFILT_SYSCOUNT,
+-        EventFlag::empty(),
+-        FilterFlag::empty(),
+-    );
+-    let ret = if let Some(ts) = timeout {
+-        unsafe {
+-            kevent(
+-                watcher.queue,
+-                ptr::null(),
+-                0,
+-                &mut kev,
+-                1,
+-                &duration_to_timespec(ts),
+-            )
+-        }
+-    } else {
+-        unsafe { kevent(watcher.queue, ptr::null(), 0, &mut kev, 1, ptr::null()) }
+-    };
++    let started_at = Instant::now();
+ 
+-    match ret {
+-        -1 => Some(Event::from_error(kev, watcher)),
+-        0 => None, // timeout expired
+-        _ => Some(Event::new(kev, watcher)),
++    loop {
++        let mut kev = kevent::new(
++            0,
++            EventFilter::EVFILT_SYSCOUNT,
++            EventFlag::empty(),
++            FilterFlag::empty(),
++        );
++        let remaining = timeout.map(|timeout| timeout.saturating_sub(started_at.elapsed()));
++        let ret = if let Some(ts) = remaining {
++            unsafe {
++                kevent(
++                    watcher.queue,
++                    ptr::null(),
++                    0,
++                    &mut kev,
++                    1,
++                    &duration_to_timespec(ts),
++                )
++            }
++        } else {
++            unsafe { kevent(watcher.queue, ptr::null(), 0, &mut kev, 1, ptr::null()) }
++        };
++
++        match ret {
++            -1 => return Some(Event::from_error(kev, watcher)),
++            0 => return None, // timeout expired
++            _ => {
++                if matches!(
++                    kev.filter,
++                    EventFilter::EVFILT_READ
++                        | EventFilter::EVFILT_WRITE
++                        | EventFilter::EVFILT_VNODE
++                ) && find_file_ident(watcher, kev.ident as RawFd).is_none()
++                {
++                    continue;
++                }
++                return Some(Event::new(kev, watcher));
++            }
++        }
+     }
+ }
+ 

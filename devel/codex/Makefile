@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.147.0
+V =			0.149.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -21,7 +21,7 @@ PKGNAME =		codex-${V}
 # only build the Rust workspace (the repo also contains JS tooling).
 WRKSRC =		${WRKDIST}/codex-rs
 
-DIST_TUPLE += github nornagon crossterm f69a4a0499f2fdc7d5d222df32373ffffe9ba3f5 ./crossterm
+DIST_TUPLE += github nornagon crossterm 45fecb9508105988f42fe6ff0441783ed3717f92 ./crossterm
 DIST_TUPLE += github openai-oss-forks tokio-tungstenite 0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186 ./tokio-tungstenite
 DIST_TUPLE += github openai-oss-forks tungstenite-rs 4fffad30fe373adbdcffab9545e9e9bf4f2fc19f ./tungstenite
 DIST_TUPLE += github helix-editor nucleo 4253de9faabb4e5c6d81d946a5e35a90f87347ee ./nucleo
@@ -37,12 +37,13 @@ HOMEPAGE =		https://github.com/openai/codex
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODCARGO_WANTLIB} bz2 crypto dbus-1 execinfo lzma
-WANTLIB += m onig ssl util z
+WANTLIB += m onig ssl util
 
 BUILD_DEPENDS =		devel/cmake/core \
 			devel/git \
 			devel/gn \
 			devel/ninja \
+			devel/protobuf \
 			databases/sqlite3
 
 LIB_DEPENDS =		textproc/oniguruma \
@@ -102,9 +103,18 @@ V8_CARGO_V =		150.4.0
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 
 post-patch:
-	cd ${WRKSRC} && ${SUBST_CMD} arg0/src/lib.rs \
+	cd ${WRKSRC} && ${SUBST_CMD} \
+		app-server-daemon/src/update_loop.rs \
+		app-server/src/request_processors/feedback_doctor_report.rs \
+		arg0/src/lib.rs \
+		cli/src/doctor.rs \
+		cli/src/doctor/runtime.rs \
+		cli/src/doctor/updates.rs \
+		cli/src/main.rs \
+		config/src/loader/mod.rs \
+		core/src/tools/runtimes/apply_patch.rs \
 		install-context/src/lib.rs \
-		core/src/tools/runtimes/apply_patch.rs
+		tui/src/app/agents_overview.rs
 	mkdir ${V8_DISTDIR}/third_party/icu/common
 	cp ${MODCARGO_VENDOR_DIR}/deno_core_icudata-${DENO_CORE_ICUDATA_V}/src/icudtl.dat \
 	    ${V8_DISTDIR}/third_party/icu/common/

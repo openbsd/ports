@@ -1,0 +1,13 @@
+Index: codex-rs/cli/src/doctor.rs
+--- codex-rs/cli/src/doctor.rs.orig
++++ codex-rs/cli/src/doctor.rs
+@@ -850,6 +850,9 @@ fn generated_at() -> String {
+ 
+ fn installation_check(show_details: bool) -> DoctorCheck {
+     let mut details = Vec::new();
++    #[cfg(target_os = "openbsd")]
++    let current_exe = Some(PathBuf::from("${PREFIX}/bin/codex"));
++    #[cfg(not(target_os = "openbsd"))]
+     let current_exe = env::current_exe().ok();
+     push_path_detail(&mut details, "current executable", current_exe.as_deref());
+     let inherited_managed_env = inherited_managed_env_for_cargo_binary(current_exe.as_deref());

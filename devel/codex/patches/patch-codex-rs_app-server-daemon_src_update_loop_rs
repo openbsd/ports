@@ -1,0 +1,13 @@
+Index: codex-rs/app-server-daemon/src/update_loop.rs
+--- codex-rs/app-server-daemon/src/update_loop.rs.orig
++++ codex-rs/app-server-daemon/src/update_loop.rs
+@@ -132,6 +132,9 @@ async fn update_once(
+ 
+ #[cfg(unix)]
+ async fn current_updater_identity() -> Result<ExecutableIdentity> {
++    #[cfg(target_os = "openbsd")]
++    let current_exe = std::path::PathBuf::from("${PREFIX}/bin/codex");
++    #[cfg(not(target_os = "openbsd"))]
+     let current_exe =
+         std::env::current_exe().context("failed to resolve current updater executable")?;
+     executable_identity(&current_exe).await
