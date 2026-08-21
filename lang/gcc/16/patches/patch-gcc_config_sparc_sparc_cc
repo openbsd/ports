@@ -26,7 +26,27 @@ Index: gcc/config/sparc/sparc.cc
  /* Expand a move instruction.  Return true if all work is done.  */
  
  bool
-@@ -6207,6 +6218,9 @@ sparc_flat_expand_prologue (void)
+@@ -5015,13 +5026,18 @@ sparc_delegitimize_address (rtx x)
+     switch (XINT (x, 1))
+       {
+       case UNSPEC_MOVE_PIC:
++	x = XVECEXP (x, 0, 0);
++	gcc_assert (GET_CODE (x) == SYMBOL_REF
++		    || GET_CODE (x) == LABEL_REF);
++	break;
+       case UNSPEC_TLSLE:
+ 	x = XVECEXP (x, 0, 0);
+ 	gcc_assert (GET_CODE (x) == SYMBOL_REF);
+ 	break;
+       case UNSPEC_MOVE_GOTDATA:
+ 	x = XVECEXP (x, 0, 2);
+-	gcc_assert (GET_CODE (x) == SYMBOL_REF);
++	gcc_assert (GET_CODE (x) == SYMBOL_REF
++		    || GET_CODE (x) == LABEL_REF);
+ 	break;
+       default:
+ 	break;
+@@ -6207,6 +6223,9 @@ sparc_flat_expand_prologue (void)
  				         sparc_frame_base_offset
  					   - sparc_apparent_frame_size,
  					 SORR_SAVE);
