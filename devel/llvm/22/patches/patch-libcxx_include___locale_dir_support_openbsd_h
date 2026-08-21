@@ -1,13 +1,10 @@
 - [libc++] Port The OpenBSD localization to the new locale API
   182ae96a82fc355eca89d12c179d6a0961c653d8
 
-- bring back strtof_l, strtod_l and strtold_l from the removed
-  __strtonum_fallback.h header as we need those on OpenBSD
-
 Index: libcxx/include/__locale_dir/support/openbsd.h
 --- libcxx/include/__locale_dir/support/openbsd.h.orig
 +++ libcxx/include/__locale_dir/support/openbsd.h
-@@ -0,0 +1,241 @@
+@@ -0,0 +1,229 @@
 +// -*- C++ -*-
 +//===-----------------------------------------------------------------------===//
 +//
@@ -38,18 +35,6 @@ Index: libcxx/include/__locale_dir/support/openbsd.h
 +#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
 +#  pragma GCC system_header
 +#endif
-+
-+inline _LIBCPP_HIDE_FROM_ABI float strtof_l(const char* __nptr, char** __endptr, locale_t) {
-+  return ::strtof(__nptr, __endptr);
-+}
-+
-+inline _LIBCPP_HIDE_FROM_ABI double strtod_l(const char* __nptr, char** __endptr, locale_t) {
-+  return ::strtod(__nptr, __endptr);
-+}
-+
-+inline _LIBCPP_HIDE_FROM_ABI long double strtold_l(const char* __nptr, char** __endptr, locale_t) {
-+  return ::strtold(__nptr, __endptr);
-+}
 +
 +_LIBCPP_BEGIN_NAMESPACE_STD
 +namespace __locale {
