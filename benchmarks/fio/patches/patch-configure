@@ -3,19 +3,15 @@ GnuTLS is Linux-specific.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -2363,8 +2363,13 @@ print_config "DAOS File System (dfs) Engine" "$dfs"
- if test "$libnfs" != "no" ; then
-   if $(pkg-config libnfs > /dev/null 2>&1); then
-     libnfs="yes"
--    libnfs_cflags=$(pkg-config --cflags libnfs gnutls)
--    libnfs_libs=$(pkg-config --libs libnfs gnutls)
-+    if test "$targetos" = "Linux" ; then
-+      libnfs_cflags=$(pkg-config --cflags libnfs gnutls)
-+      libnfs_libs=$(pkg-config --libs libnfs gnutls)
-+    else
-+      libnfs_cflags=$(pkg-config --cflags libnfs)
-+      libnfs_libs=$(pkg-config --libs libnfs)
-+    fi
-   else
-     if test "$libnfs" = "yes" ; then
-       feature_not_found "libnfs" "libnfs"
+@@ -2396,9 +2396,9 @@ if test "$libnfs" != "no" ; then
+     libnfs_cflags=$(pkg-config --cflags libnfs)
+     libnfs_libs=$(pkg-config --libs libnfs)
+ 
+-    # libnfs >= 6.0.0 requires gnutls for TLS support
++    # libnfs >= 6.0.0 on Linux requires gnutls for TLS support
+     libnfs_version=$(pkg-config --modversion libnfs 2>/dev/null)
+-    if test -n "$libnfs_version" ; then
++    if test -n "$libnfs_version" -a "$targetos" = "Linux" ; then
+       libnfs_major=$(echo $libnfs_version | cut -d. -f1)
+       if test "$libnfs_major" -ge 6 ; then
+         if $(pkg-config gnutls > /dev/null 2>&1); then
