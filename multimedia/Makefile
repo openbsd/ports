@@ -54,6 +54,7 @@
      SUBDIR += mpgtx
      SUBDIR += mpv
      SUBDIR += mpvqt
+     SUBDIR += obs-studio
      SUBDIR += oggz
      SUBDIR += ogmtools
      SUBDIR += openh264
