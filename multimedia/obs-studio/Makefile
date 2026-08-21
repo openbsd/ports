@@ -60,6 +60,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/qt6/qtdeclarative \
 			x11/qt6/qtwayland
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -L/usr/X11R6/lib
 CONFIGURE_ARGS +=	-DENABLE_BROWSER=OFF \
 			-DENABLE_PIPEWIRE=ON \
 			-DENABLE_PULSEAUDIO=OFF \
@@ -87,9 +88,6 @@ CONFIGURE_ARGS +=	-DENABLE_BROWSER=OFF \
 			-DOpenGL_GL_PREFERENCE=LEGACY \
 			-DOPENGL_opengl_LIBRARY=GL \
 			-DLibva_INCLUDE_DIR=/usr/X11R6/include \
-			-DCMAKE_SHARED_LINKER_FLAGS="-L${LOCALBASE}/lib -L/usr/X11R6/lib" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -L/usr/X11R6/lib" \
-			-DCMAKE_MODULE_LINKER_FLAGS="-L${LOCALBASE}/lib -L/usr/X11R6/lib" \
 			-DLibUUID_LIBRARY=uuid \
 			-DLibUUID_INCLUDE_DIR=${LOCALBASE}/include \
 			-DSIMDe_INCLUDE_DIR=${WRKSRC}/simde
