@@ -10,7 +10,7 @@ GH_PROJECT =		stalwart
 CATEGORIES =		mail
 # AGPLv3
 PERMIT_PACKAGE =	Yes
-GH_TAGNAME =		v0.16.15
+GH_TAGNAME =		v0.16.18
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
 
 HOMEPAGE =	https://stalw.art/
@@ -27,7 +27,9 @@ DPB_PROPERTIES =	parallel
 
 # for https://github.com/open-telemetry/opentelemetry-rust/pull/3457
 DIST_TUPLE += github stalwartlabs opentelemetry-rust 274b4d324794280ce6f4def095a3428197a9e6e3 ../opentelemetry
-
+# since https://github.com/stalwartlabs/stalwart/commit/1a6c8d009b3c1f73e8d5c9115c6d92b2781c2454
+# for https://github.com/hickory-dns/hickory-dns/commit/e645086f7863eaab8d961421a348b06ea613ebd3
+DIST_TUPLE += github hickory-dns hickory-dns e645086f7863eaab8d961421a348b06ea613ebd3 ../hickory-dns
 # otherwise blows because rocksdb wants to statically links against libz ?
 MODCARGO_CRATES_KEEP +=	libz-sys
 MODCARGO_CRATES_KEEP +=	zstd-sys
@@ -54,7 +56,7 @@ post-install:
 # only used for tests but MODCARGO_TEST_TARGET doesnt use TEST_ENV
 MAKE_ENV+=	STORE=RocksDb
 # most test suites pass, except the last one:
-# test result: FAILED. 48 passed; 10 failed; 3 ignored; 0 measured; 0 filtered out;
+# test result: FAILED. 77 passed; 10 failed; 4 ignored; 0 measured; 0 filtered out; finished in 61.55s
 do-test:
 	ulimit -n 1024 && ${MODCARGO_TEST_TARGET}
 

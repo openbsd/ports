@@ -7,4 +7,4 @@ Index: tests/Cargo.toml
  
 -[target.'cfg(not(any(target_env = "msvc", target_os = "freebsd")))'.dependencies]
 +[target.'cfg(not(target_os = "openbsd"))'.dependencies]
- jemallocator = "0.5.0"
+ tikv-jemallocator = "0.7"

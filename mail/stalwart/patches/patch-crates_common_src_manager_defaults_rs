@@ -3,7 +3,7 @@ Listen on ipv4, no automagic v6-to-v4 mapping
 Index: crates/common/src/manager/defaults.rs
 --- crates/common/src/manager/defaults.rs.orig
 +++ crates/common/src/manager/defaults.rs
-@@ -473,7 +473,7 @@ async fn insert_safe_defaults(bp: &mut Bootstrap) -> t
+@@ -475,7 +475,7 @@ async fn insert_safe_defaults(bp: &mut Bootstrap) -> t
                  .write(RegistryWrite::insert(
                      &NetworkListener {
                          bind: Map::new(vec![

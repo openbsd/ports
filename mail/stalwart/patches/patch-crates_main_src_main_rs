@@ -7,7 +7,7 @@ Index: crates/main/src/main.rs
  
 -#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
 +#[cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))]
- use jemallocator::Jemalloc;
+ use tikv_jemallocator::Jemalloc;
  
 -#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
 +#[cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))]
