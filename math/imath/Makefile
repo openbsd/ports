@@ -1,7 +1,6 @@
 COMMENT=		C++ and python library of 2D and 3D vector & matrix
 
-V=			3.2.2
-REVISION=		1
+V=			3.2.3
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		Imath
 GH_TAGNAME=		v${V}
@@ -35,9 +34,9 @@ LIB_DEPENDS=		devel/boost
 CXXFLAGS +=		-mxgot
 .endif
 
-CONFIGURE_ARGS =	-DPYTHON=ON
+CONFIGURE_ARGS=		-DPYTHON=ON
 
-MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
+MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
