@@ -1,0 +1,45 @@
+Index: plugins/obs-ffmpeg/obs-ffmpeg-vaapi.c
+--- plugins/obs-ffmpeg/obs-ffmpeg-vaapi.c.orig
++++ plugins/obs-ffmpeg/obs-ffmpeg-vaapi.c
+@@ -40,7 +40,9 @@
+ #include <libavformat/avformat.h>
+ #include <libavfilter/avfilter.h>
+ 
++#if !defined(__OpenBSD__)
+ #include <pci/pci.h>
++#endif
+ 
+ #include "vaapi-utils.h"
+ #include "obs-ffmpeg-formats.h"
+@@ -983,6 +985,7 @@ static bool rate_control_modified(obs_properties_t *pp
+ 	return true;
+ }
+ 
++#if !defined(__OpenBSD__)
+ static bool get_device_name_from_pci(struct pci_access *pacc, char *pci_slot, char *buf, int size)
+ {
+ 	struct pci_filter filter;
+@@ -1004,6 +1007,7 @@ static bool get_device_name_from_pci(struct pci_access
+ 	}
+ 	return false;
+ }
++#endif
+ 
+ static bool vaapi_device_codec_supported(const char *path, enum codec_type codec)
+ {
+@@ -1026,6 +1030,7 @@ static obs_properties_t *vaapi_properties_internal(enu
+ 
+ 	list = obs_properties_add_list(props, "vaapi_device", obs_module_text("VAAPI.Device"), OBS_COMBO_TYPE_LIST,
+ 				       OBS_COMBO_FORMAT_STRING);
++#if !defined(__OpenBSD__)
+ 	if (os_file_exists("/dev/dri/by-path")) {
+ 		os_dir_t *by_path_dir = os_opendir("/dev/dri/by-path");
+ 		struct pci_access *pacc = pci_alloc();
+@@ -1072,6 +1077,7 @@ static obs_properties_t *vaapi_properties_internal(enu
+ 		pci_cleanup(pacc);
+ 		os_closedir(by_path_dir);
+ 	}
++#endif
+ 	if (obs_property_list_item_count(list) == 0) {
+ 		char path[32];
+ 		for (int i = 28;; i++) {

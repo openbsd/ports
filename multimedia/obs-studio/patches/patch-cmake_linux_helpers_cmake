@@ -1,0 +1,12 @@
+Index: cmake/linux/helpers.cmake
+--- cmake/linux/helpers.cmake.orig
++++ cmake/linux/helpers.cmake
+@@ -86,7 +86,7 @@ function(set_target_properties_obs target)
+       VERBATIM
+     )
+ 
+-    if(target STREQUAL libobs OR target STREQUAL obs-frontend-api)
++    if((target STREQUAL libobs OR target STREQUAL obs-frontend-api) AND NOT OS_OPENBSD)
+       install(
+         FILES "$<TARGET_FILE_DIR:${target}>/$<TARGET_FILE_PREFIX:${target}>$<TARGET_FILE_BASE_NAME:${target}>.so.0"
+         DESTINATION "${OBS_LIBRARY_DESTINATION}"

@@ -1,0 +1,16 @@
+Index: frontend/CMakeLists.txt
+--- frontend/CMakeLists.txt.orig
++++ frontend/CMakeLists.txt
+@@ -82,7 +82,11 @@ elseif(OS_MACOS)
+ elseif(OS_LINUX)
+   include(cmake/os-linux.cmake)
+ elseif(OS_FREEBSD OR OS_OPENBSD)
+-  include(cmake/os-freebsd.cmake)
++  if(OS_OPENBSD)
++    include(cmake/os-openbsd.cmake)
++  else()
++    include(cmake/os-freebsd.cmake)
++  endif()
+ endif()
+ 
+ foreach(graphics_library IN ITEMS opengl metal d3d11)

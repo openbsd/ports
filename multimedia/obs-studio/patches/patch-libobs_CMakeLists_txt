@@ -1,0 +1,16 @@
+Index: libobs/CMakeLists.txt
+--- libobs/CMakeLists.txt.orig
++++ libobs/CMakeLists.txt
+@@ -259,7 +259,11 @@ elseif(OS_MACOS)
+ elseif(OS_LINUX)
+   include(cmake/os-linux.cmake)
+ elseif(OS_FREEBSD OR OS_OPENBSD)
+-  include(cmake/os-freebsd.cmake)
++  if(OS_OPENBSD)
++    include(cmake/os-openbsd.cmake)
++  else()
++    include(cmake/os-freebsd.cmake)
++  endif()
+ endif()
+ 
+ configure_file(obsconfig.h.in "${CMAKE_BINARY_DIR}/config/obsconfig.h" @ONLY)

@@ -1,0 +1,15 @@
+Index: plugins/linux-v4l2/v4l2-output.c
+--- plugins/linux-v4l2/v4l2-output.c.orig
++++ plugins/linux-v4l2/v4l2-output.c
+@@ -3,7 +3,11 @@
+ #include <obs-module.h>
+ #include <util/dstr.h>
+ #include <util/platform.h>
++#ifdef __OpenBSD__
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ #include <sys/ioctl.h>
+ #include <fcntl.h>
+ #include <unistd.h>

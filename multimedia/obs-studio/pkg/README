@@ -1,0 +1,34 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Audio capture with sndio
+========================
+
+OBS uses the "Sndio Input Client" source to read audio through sndio(7).
+There is no automatic device list; you must type the device name manually:
+
+    snd/0     First audio device (see sndiod(8)).
+    snd/1     Second audio device, if present (see sndiod(8)).
+    snd/mon   Monitor sub-device (desktop audio loopback, NOT a microphone).
+
+To set up snd/mon for desktop audio capture, refer to the "Recording a
+Monitor Mix" section of the OpenBSD FAQ and sndiod(8):
+
+    https://www.openbsd.org/faq/faq13.html
+
+OpenBSD disables audio and video recording at the kernel level by default.
+If a microphone source produces silence or a webcam source shows a black
+or blue frame, enable recording with:
+
+    # sysctl kern.audio.record=1
+    # sysctl kern.video.record=1
+
+To persist across reboots, add both lines to /etc/sysctl.conf.
+
+Disabled features
+=================
+
+The following upstream features are not built in this port:
+browser source, WebRTC output, MPEG-TS/SRT/RIST
+output, obs-websocket, and virtual camera output.

@@ -1,0 +1,20 @@
+Index: frontend/utility/platform-x11.cpp
+--- frontend/utility/platform-x11.cpp.orig
++++ frontend/utility/platform-x11.cpp
+@@ -179,6 +179,16 @@ void CheckIfAlreadyRunning(bool &already_running)
+ 	close(fd);
+ }
+ #endif
++#if defined(__OpenBSD__)
++#include <fcntl.h>
++void CheckIfAlreadyRunning(bool &already_running)
++{
++	static int lock_fd = -1;
++	std::string tmpfile_name = "/tmp/obs-studio.lock." + std::to_string(geteuid());
++	lock_fd = open(tmpfile_name.c_str(), O_RDWR | O_CREAT | O_EXLOCK | O_NONBLOCK, 0600);
++	already_running = (lock_fd == -1);
++}
++#endif
+ 
+ static inline bool check_path(const char *data, const char *path, string &output)
+ {

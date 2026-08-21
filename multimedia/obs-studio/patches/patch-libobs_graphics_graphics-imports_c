@@ -1,0 +1,22 @@
+Index: libobs/graphics/graphics-imports.c
+--- libobs/graphics/graphics-imports.c.orig
++++ libobs/graphics/graphics-imports.c
+@@ -241,6 +241,18 @@ bool load_graphics_imports(struct gs_exports *exports,
+ 	GRAPHICS_IMPORT_OPTIONAL(device_stagesurface_create_p010);
+ 	GRAPHICS_IMPORT_OPTIONAL(device_register_loss_callbacks);
+ 	GRAPHICS_IMPORT_OPTIONAL(device_unregister_loss_callbacks);
++#elif defined(__OpenBSD__)
++	GRAPHICS_IMPORT_OPTIONAL(device_texture_create_from_dmabuf);
++	GRAPHICS_IMPORT_OPTIONAL(device_query_dmabuf_capabilities);
++	GRAPHICS_IMPORT_OPTIONAL(device_query_dmabuf_modifiers_for_format);
++	GRAPHICS_IMPORT_OPTIONAL(device_texture_create_from_pixmap);
++	GRAPHICS_IMPORT_OPTIONAL(device_query_sync_capabilities);
++	GRAPHICS_IMPORT_OPTIONAL(device_sync_create);
++	GRAPHICS_IMPORT_OPTIONAL(device_sync_create_from_syncobj_timeline_point);
++	GRAPHICS_IMPORT_OPTIONAL(device_sync_destroy);
++	GRAPHICS_IMPORT_OPTIONAL(device_sync_export_syncobj_timeline_point);
++	GRAPHICS_IMPORT_OPTIONAL(device_sync_signal_syncobj_timeline_point);
++	GRAPHICS_IMPORT_OPTIONAL(device_sync_wait);
+ #elif defined(__linux__) || defined(__FreeBSD__) || defined(__DragonFly__)
+ 	GRAPHICS_IMPORT(device_texture_create_from_dmabuf);
+ 	GRAPHICS_IMPORT(device_query_dmabuf_capabilities);

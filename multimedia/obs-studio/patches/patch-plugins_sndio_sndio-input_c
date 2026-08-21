@@ -1,0 +1,17 @@
+Index: plugins/sndio/sndio-input.c
+--- plugins/sndio/sndio-input.c.orig
++++ plugins/sndio/sndio-input.c
+@@ -265,7 +265,12 @@ static void sndio_apply(struct sndio_data *data, obs_d
+ 	thrdata->sock = socks[1];
+ 	thrdata->source = data->source;
+ 
+-	thrdata->hdl = sio_open(devname, SIO_REC, 0);
++	for (int i = 0; i < 10; i++) {
++		thrdata->hdl = sio_open(devname[0] ? devname : SIO_DEVANY, SIO_REC, 0);
++		if (thrdata->hdl)
++			break;
++		usleep(100000);
++	}
+ 	if (!thrdata->hdl) {
+ 		berr(LOG_ERROR, "could not open %s sndio device", devname);
+ 		goto error;

@@ -1,0 +1,41 @@
+Index: plugins/linux-capture/xshm-input.c
+--- plugins/linux-capture/xshm-input.c.orig
++++ plugins/linux-capture/xshm-input.c
+@@ -494,17 +494,35 @@ static void xshm_video_tick(void *vptr, float seconds)
+ 	if (!obs_source_showing(data->source))
+ 		return;
+ 
++	if (xcb_connection_has_error(data->xcb)) {
++		blog(LOG_WARNING, "XCB connection lost, reconnecting...");
++		xshm_capture_stop(data);
++		xshm_capture_start(data);
++		return;
++	}
++
+ 	xcb_shm_get_image_cookie_t img_c;
+ 	xcb_shm_get_image_reply_t *img_r;
++	xcb_generic_error_t *img_err = NULL;
+ 
+ 	img_c = xcb_shm_get_image_unchecked(data->xcb, data->xcb_screen->root, data->adj_x_org, data->adj_y_org,
+ 					    data->adj_width, data->adj_height, ~0, XCB_IMAGE_FORMAT_Z_PIXMAP,
+ 					    data->xshm->seg, 0);
+ 
+-	img_r = xcb_shm_get_image_reply(data->xcb, img_c, NULL);
++	img_r = xcb_shm_get_image_reply(data->xcb, img_c, &img_err);
+ 
+-	if (!img_r)
++	if (!img_r) {
++		if (img_err) {
++			blog(LOG_DEBUG, "xcb_shm_get_image error %d", img_err->error_code);
++			free(img_err);
++		}
++		if (xcb_connection_has_error(data->xcb)) {
++			blog(LOG_WARNING, "XCB connection lost, reconnecting...");
++			xshm_capture_stop(data);
++			xshm_capture_start(data);
++		}
+ 		goto exit;
++	}
+ 
+ 	obs_enter_graphics();
+ 

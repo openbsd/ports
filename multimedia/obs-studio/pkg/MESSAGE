@@ -1,0 +1,6 @@
+When running under a Wayland compositor, OBS must be started with:
+
+    $ obs --platform xcb
+
+Qt6 defaults to the Wayland platform, which currently fails to
+initialize OpenGL on OpenBSD. Using --platform xcb forces X11/XWayland.

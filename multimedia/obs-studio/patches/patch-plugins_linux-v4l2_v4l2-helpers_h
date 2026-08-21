@@ -1,0 +1,24 @@
+Index: plugins/linux-v4l2/v4l2-helpers.h
+--- plugins/linux-v4l2/v4l2-helpers.h.orig
++++ plugins/linux-v4l2/v4l2-helpers.h
+@@ -17,8 +17,20 @@ along with this program.  If not, see <http://www.gnu.
+ 
+ #pragma once
+ 
++#ifdef __OpenBSD__
++#include <sys/videoio.h>
++#include <fcntl.h>
++#include <sys/ioctl.h>
++#include <sys/mman.h>
++#define v4l2_open   open
++#define v4l2_close  close
++#define v4l2_ioctl  ioctl
++#define v4l2_mmap   mmap
++#define v4l2_munmap munmap
++#else
+ #include <linux/videodev2.h>
+ #include <libv4l2.h>
++#endif
+ #include <inttypes.h>
+ 
+ #include <obs-module.h>

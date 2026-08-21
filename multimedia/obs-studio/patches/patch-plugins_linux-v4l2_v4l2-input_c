@@ -1,0 +1,32 @@
+Index: plugins/linux-v4l2/v4l2-input.c
+--- plugins/linux-v4l2/v4l2-input.c.orig
++++ plugins/linux-v4l2/v4l2-input.c
+@@ -26,8 +26,10 @@ along with this program.  If not, see <http://www.gnu.
+ #include <sys/ioctl.h>
+ #include <sys/select.h>
+ 
++#ifndef __OpenBSD__
+ #include <linux/videodev2.h>
+ #include <libv4l2.h>
++#endif
+ 
+ #include <util/threading.h>
+ #include <util/bmem.h>
+@@ -339,7 +341,7 @@ static void v4l2_device_list(obs_property_t *prop, obs
+ 	size_t cur_device_index;
+ 	const char *cur_device_name;
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	dirp = opendir("/dev");
+ #else
+ 	dirp = opendir("/sys/class/video4linux");
+@@ -359,7 +361,7 @@ static void v4l2_device_list(obs_property_t *prop, obs
+ 		uint32_t caps;
+ 		struct v4l2_capability video_cap;
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 		if (strstr(dp->d_name, "video") == NULL)
+ 			continue;
+ #endif

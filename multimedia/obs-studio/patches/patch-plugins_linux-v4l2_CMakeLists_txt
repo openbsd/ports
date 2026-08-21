@@ -1,0 +1,58 @@
+Index: plugins/linux-v4l2/CMakeLists.txt
+--- plugins/linux-v4l2/CMakeLists.txt.orig
++++ plugins/linux-v4l2/CMakeLists.txt
+@@ -8,20 +8,28 @@ if(NOT ENABLE_V4L2)
+   return()
+ endif()
+ 
+-find_package(Libv4l2 REQUIRED)
+ find_package(FFmpeg REQUIRED COMPONENTS avcodec avutil avformat)
+ 
+-if(OS_FREEBSD OR OS_OPENBSD)
+-  set(CMAKE_REQUIRED_INCLUDES "/usr/local/include")
++if(OS_OPENBSD)
++  include(CheckIncludeFile)
++  check_include_file("sys/videoio.h" HAVE_VIDEODEV2_HEADER)
++  if(NOT HAVE_VIDEODEV2_HEADER)
++    message(FATAL_ERROR "Required system header <sys/videoio.h> not found.")
++  endif()
++  set(ENABLE_UDEV OFF)
++else()
++  find_package(Libv4l2 REQUIRED)
++  if(OS_FREEBSD)
++    set(CMAKE_REQUIRED_INCLUDES "/usr/local/include")
++  endif()
++  include(CheckCSourceCompiles)
++  set(V4L_TEST_SOURCE "#include<linux/videodev2.h>\nint main(){return 0;}")
++  check_c_source_compiles("${V4L_TEST_SOURCE}" HAVE_VIDEODEV2_HEADER)
++  if(NOT HAVE_VIDEODEV2_HEADER)
++    message(FATAL_ERROR "Required system header <linux/videodev2.h> not found.")
++  endif()
+ endif()
+-include(CheckCSourceCompiles)
+-set(V4L_TEST_SOURCE "#include<linux/videodev2.h>\nint main(){return 0;}")
+-check_c_source_compiles("${V4L_TEST_SOURCE}" HAVE_VIDEODEV2_HEADER)
+ 
+-if(NOT HAVE_VIDEODEV2_HEADER)
+-  message(FATAL_ERROR "Required system header <linux/videodev2.h> not found.")
+-endif()
+-
+ add_library(linux-v4l2 MODULE)
+ add_library(OBS::v4l2 ALIAS linux-v4l2)
+ 
+@@ -30,10 +38,11 @@ target_sources(
+   PRIVATE linux-v4l2.c v4l2-controls.c v4l2-decoder.c v4l2-helpers.c v4l2-input.c v4l2-output.c
+ )
+ 
+-target_link_libraries(
+-  linux-v4l2
+-  PRIVATE OBS::libobs Libv4l2::Libv4l2 FFmpeg::avcodec FFmpeg::avformat FFmpeg::avutil
+-)
++if(OS_OPENBSD)
++  target_link_libraries(linux-v4l2 PRIVATE OBS::libobs FFmpeg::avcodec FFmpeg::avformat FFmpeg::avutil)
++else()
++  target_link_libraries(linux-v4l2 PRIVATE OBS::libobs Libv4l2::Libv4l2 FFmpeg::avcodec FFmpeg::avformat FFmpeg::avutil)
++endif()
+ 
+ if(ENABLE_UDEV)
+   find_package(Libudev REQUIRED)

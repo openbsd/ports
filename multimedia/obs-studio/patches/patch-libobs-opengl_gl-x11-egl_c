@@ -1,0 +1,26 @@
+Index: libobs-opengl/gl-x11-egl.c
+--- libobs-opengl/gl-x11-egl.c.orig
++++ libobs-opengl/gl-x11-egl.c
+@@ -256,17 +256,14 @@ static void gl_x11_egl_windowinfo_destroy(struct gl_wi
+ 
+ static Display *open_windowless_display(bool *should_close)
+ {
+-	Display *platform_display = obs_get_nix_platform_display();
+ 	Display *display;
+ 	xcb_connection_t *xcb_conn;
+ 
+-	if (platform_display) {
+-		display = platform_display;
+-		*should_close = false;
+-	} else {
+-		display = XOpenDisplay(NULL);
+-		*should_close = true;
+-	}
++	/* Always open a separate display to avoid sharing Qt's XCB connection.
++	 * Sharing would cause XSetEventQueueOwner + xcb_poll_for_event in
++	 * device_present to drain Qt's events, breaking its XCB connection. */
++	display = XOpenDisplay(NULL);
++	*should_close = true;
+ 
+ 	if (!display) {
+ 		blog(LOG_ERROR, "Unable to open new X connection!");
