@@ -1,4 +1,4 @@
-VER =		5.2.0
+VER =		5.2.3
 DISTNAME =	qbittorrent-${VER}
 
 DIST_SUBDIR =	qbittorrent
@@ -23,7 +23,6 @@ BUILD_DEPENDS +=	devel/boost
 LIB_DEPENDS +=		net/libtorrent-rasterbar>=2
 
 CONFIGURE_STYLE =	cmake
-CONFIGURE_ARGS +=	-DQT6=ON
 
 # #error "Boost.Stacktrace requires `_Unwind_Backtrace` function.             \
 #    Define `_GNU_SOURCE` macro or `BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED` \
