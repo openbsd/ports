@@ -1,7 +1,7 @@
 Index: frontend/utility/platform-x11.cpp
 --- frontend/utility/platform-x11.cpp.orig
 +++ frontend/utility/platform-x11.cpp
-@@ -179,6 +179,16 @@ void CheckIfAlreadyRunning(bool &already_running)
+@@ -179,6 +179,22 @@ void CheckIfAlreadyRunning(bool &already_running)
  	close(fd);
  }
  #endif
@@ -10,8 +10,14 @@ Index: frontend/utility/platform-x11.cpp
 +void CheckIfAlreadyRunning(bool &already_running)
 +{
 +	static int lock_fd = -1;
-+	std::string tmpfile_name = "/tmp/obs-studio.lock." + std::to_string(geteuid());
-+	lock_fd = open(tmpfile_name.c_str(), O_RDWR | O_CREAT | O_EXLOCK | O_NONBLOCK, 0600);
++	std::string lock_p;
++	const char *xdg_rd = std::getenv("XDG_RUNTIME_DIR");
++	if (xdg_rd && xdg_rd[0] != '\0') {
++	        lock_p = std::string(xdg_rd) + "/obs-studio.lock";
++	} else {
++	        lock_p = "/tmp/obs-studio.lock." + std::to_string(geteuid());
++	}
++	lock_fd = open(lock_p.c_str(), O_RDWR | O_CREAT | O_EXLOCK | O_NONBLOCK, 0600);
 +	already_running = (lock_fd == -1);
 +}
 +#endif

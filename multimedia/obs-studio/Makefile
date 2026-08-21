@@ -1,6 +1,7 @@
 COMMENT =		free live streaming and screen recording
 
 V =			32.1.2
+REVISION =		0
 DIST_TUPLE =		github obsproject obs-studio ${V} .
 DIST_TUPLE +=		github simd-everywhere simde v0.8.2 simde
 
