@@ -9,7 +9,7 @@ COMMENT =	3D creation software
 VERSION =	4.5.3
 V =		${VERSION:R}
 DISTNAME =	blender-${VERSION}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	graphics
 
