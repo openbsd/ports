@@ -1,0 +1,25 @@
+fix build with libcxx22:
+
+/usr/include/c++/v1/__utility/lazy_synth_three_way_comparator.h:52:21: error: no matching function for call to object of type 'const ModelNameComparator'
+   52 |     bool __result = __comp_(__rhs_, __lhs_);
+      |                     ^~~~~~~
+
+[...]
+
+/usr/ports/pobj/pioneer-20190203/pioneer-20190203/src/CityOnPlanet.cpp:152:7: note: candidate function not viable: 'this' argument has type 'const ModelNameComparator', but method is not marked const
+  152 |         bool operator()(SceneGraph::Model *lhs, SceneGraph::Model *rhs)
+      |              ^
+3 warnings and 2 errors generated.
+
+Index: src/CityOnPlanet.cpp
+--- src/CityOnPlanet.cpp.orig
++++ src/CityOnPlanet.cpp
+@@ -149,7 +149,7 @@ bool setcomp(SceneGraph::Model *mlhs, SceneGraph::Mode
+ bool (*fn_pt)(SceneGraph::Model *mlhs, SceneGraph::Model *mrhs) = setcomp;
+ 
+ struct ModelNameComparator {
+-	bool operator()(SceneGraph::Model *lhs, SceneGraph::Model *rhs)
++	bool operator()(SceneGraph::Model *lhs, SceneGraph::Model *rhs) const
+ 	{
+ 		return lhs->GetName() < rhs->GetName();
+ 	}

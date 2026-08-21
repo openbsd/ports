@@ -16,7 +16,7 @@ WANTLIB += sigc-2.0 vorbisfile z
 GH_ACCOUNT =		pioneerspacesim
 GH_PROJECT =		pioneer
 GH_TAGNAME =		20190203
-REVISION =		1
+REVISION =		2
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
