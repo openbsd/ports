@@ -46,6 +46,15 @@ Index: llvm/lib/Target/Sparc/AsmParser/SparcAsmParser.cpp
    // Let the MC layer to handle other directives.
    return ParseStatus::NoMatch;
  }
+@@ -1591,7 +1614,7 @@ MCRegister SparcAsmParser::matchRegisterName(const Asm
+   // %r0 - %r31
+   int64_t RegNo = 0;
+   if (Name.starts_with_insensitive("r") &&
+-      !Name.substr(1, 2).getAsInteger(10, RegNo) && RegNo < 31) {
++      !Name.substr(1, 2).getAsInteger(10, RegNo) && RegNo <= 31) {
+     RegKind = SparcOperand::rk_IntReg;
+     return IntRegs[RegNo];
+   }
 @@ -1686,7 +1709,9 @@ SparcAsmParser::adjustPICRelocation(uint16_t RelType, 
    // actually a %pc10 or %pc22 relocation. Otherwise, they are interpreted
    // as %got10 or %got22 relocation.
