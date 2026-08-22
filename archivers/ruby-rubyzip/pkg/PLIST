@@ -5,6 +5,7 @@ ${GEM_LIB}/gems/${DISTNAME}/LICENSE.md
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/rubyzip.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zip/
 ${GEM_LIB}/gems/${DISTNAME}/lib/zip.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zip/central_directory.rb

@@ -1,6 +1,6 @@
 COMMENT =	Ruby module for reading and writing zip files
 
-DISTNAME =	rubyzip-3.3.1
+DISTNAME =	rubyzip-3.5.0
 CATEGORIES =	archivers
 
 HOMEPAGE =	https://github.com/rubyzip/rubyzip
