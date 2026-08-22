@@ -1,0 +1,21 @@
+@bin bin/gmpack
+@bin bin/gmunpack
+share/prjpeppercorn/
+${SHAREDIR}/
+${SHAREDIR}/decompress.py
+${SHAREDIR}/delay/
+${SHAREDIR}/delay.sh
+${SHAREDIR}/delay/cc_best_eco_dly.dly
+${SHAREDIR}/delay/cc_best_lpr_dly.dly
+${SHAREDIR}/delay/cc_best_spd_dly.dly
+${SHAREDIR}/delay/cc_typ_eco_dly.dly
+${SHAREDIR}/delay/cc_typ_lpr_dly.dly
+${SHAREDIR}/delay/cc_typ_spd_dly.dly
+${SHAREDIR}/delay/cc_worst_eco_dly.dly
+${SHAREDIR}/delay/cc_worst_lpr_dly.dly
+${SHAREDIR}/delay/cc_worst_spd_dly.dly
+${SHAREDIR}/gatemate/
+${SHAREDIR}/gatemate/__init__.py
+${SHAREDIR}/gatemate/chip.py
+${SHAREDIR}/gatemate/die.py
+${SHAREDIR}/gatemate/timing.py

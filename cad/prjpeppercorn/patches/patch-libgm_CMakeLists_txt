@@ -1,0 +1,32 @@
+- don't override standard opt level
+- drop unnecessary dependency on git
+
+Index: libgm/CMakeLists.txt
+--- libgm/CMakeLists.txt.orig
++++ libgm/CMakeLists.txt
+@@ -13,7 +13,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ if (MSVC)
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -bigobj -EHsc")
+ else()
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra -O3")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra")
+ endif()
+ set(CMAKE_DEFIN)
+ set(link_param "")
+@@ -88,7 +88,8 @@ string(STRIP "${CURRENT_GIT_VERSION}" CURRENT_GIT_VERS
+ if (EXISTS "${CMAKE_BINARY_DIR}/generated/last_git_version")
+     file(READ "${CMAKE_BINARY_DIR}/generated/last_git_version" LAST_GIT_VERSION)
+ endif()
+-if (NOT ("${LAST_GIT_VERSION}" STREQUAL "${CURRENT_GIT_VERSION}") OR NOT GIT_EXECUTABLE)
++#if (NOT ("${LAST_GIT_VERSION}" STREQUAL "${CURRENT_GIT_VERSION}") OR NOT GIT_EXECUTABLE)
++if (TRUE)
+     configure_file(
+       ${CMAKE_SOURCE_DIR}/tools/version.cpp.in
+       ${CMAKE_BINARY_DIR}/generated/version.cpp
+@@ -132,4 +133,4 @@ add_custom_target(
+     -style=file
+     -i
+     ${CLANGFORMAT_FILES}
+-)
+\ No newline at end of file
++)
