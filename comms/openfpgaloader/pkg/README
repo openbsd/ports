@@ -1,0 +1,73 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Note about uftdi(4)
+===================
+On OpenBSD, libusb/libftdi cannot correctly access some devices if they're
+attached to the uftdi driver. You might see error messages like this:
+
+  fail to read data usb bulk read failed
+  JTAG init failed with: low level FTDI init failed
+
+OpenBSD does not allow detaching a device from a driver at runtime, so you
+will need to modify the kernel or kernel configuration to prevent uftdi(4)
+from attaching to the device.
+
+uftdi(4) can be disabled completely without a kernel recompile, or the
+driver can be modified to avoid attaching to a device with a specific
+vendor/product id (this requires kernel sources and a recompile).
+In either case, the device will attach to ugen(4) as a fallback.
+
+Disabling as a one-off from the boot loader
+-------------------------------------------
+  boot> boot -c
+  ...
+  User Kernel Config
+  UKC> disable uftdi
+  360 uftdi* disabled
+  UKC> quit
+
+Disabling uftdi(4) with bsd.re-config(5)
+----------------------------------------
+This can be done with the following commands:
+
+  echo "disable uftdi" >>/etc/bsd.re-config
+  /usr/libexec/reorder_kernel
+  reboot
+
+Patching the kernel
+-------------------
+This method is only recommended if developing your FPGA project on a
+machine with an additional FTDI USB to UART adapter with different ID
+that needs to connect as a serial port, otherwise it is simpler to
+disable ftdi(4).
+
+Obtain source for your version of OpenBSD and prepare to
+compile a kernel, see https://www.openbsd.org/faq/faq5.html#Options
+
+Identify the vendor and product code of your device and look up the
+definitions:
+
+  $ usbdevs -v
+  ...
+  addr 06: 0403:6010 Future Technology Devices, 2232C Serial
+           ...
+           driver: uftdi0
+  ...
+
+  $ grep ^vendor.*0x0403 /sys/dev/usb/usbdevs
+  vendor FTDI		0x0403	Future Technology Devices
+
+  $ grep "^product.*0x6010" /sys/dev/usb/usbdevs
+  product FTDI SERIAL_2232C	0x6010	2232C Serial
+
+Edit /sys/dev/usb/uftdi.c and comment-out the entry for your vendor/product
+codes in the uftdi_devs[] array. The above device would be USB_VENDOR_FTDI
+and USB_PRODUCT_FTDI_SERIAL_2232C, so you could edit as follows:
+
+  { USB_VENDOR_FTDI, USB_PRODUCT_FTDI_SEMC_DSS20 },
+  // { USB_VENDOR_FTDI, USB_PRODUCT_FTDI_SERIAL_2232C },
+  { USB_VENDOR_FTDI, USB_PRODUCT_FTDI_SERIAL_2232L },
+
+Rebuild the kernel as shown in faq5 and reboot.
