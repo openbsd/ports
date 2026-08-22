@@ -2,6 +2,7 @@ COMMENT=		library for developing printing filters
 
 V=			2.2.1
 DISTNAME=		libcupsfilters-${V}
+REVISION=		0
 
 SHARED_LIBS +=  cupsfilters          2.1      # 2.0
 
