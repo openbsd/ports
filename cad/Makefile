@@ -28,6 +28,7 @@
      SUBDIR += opensta
      SUBDIR += pcb
      SUBDIR += pcb2gcode
+     SUBDIR += prjpeppercorn
      SUBDIR += prusaslicer
      SUBDIR += qcad
      SUBDIR += qelectrotech
