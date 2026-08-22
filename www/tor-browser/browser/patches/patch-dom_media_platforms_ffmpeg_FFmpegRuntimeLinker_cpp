@@ -1,0 +1,49 @@
+Index: dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
+--- dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp.orig
++++ dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
+@@ -35,6 +35,7 @@ static FFmpegLibWrapper sLibAV;
+ static const char* sLibs[] = {
+ // clang-format off
+ #if defined(XP_DARWIN)
++  "libavcodec.63.dylib",
+   "libavcodec.62.dylib",
+   "libavcodec.61.dylib",
+   "libavcodec.60.dylib",
+@@ -49,6 +50,7 @@ static const char* sLibs[] = {
+   "libavcodec.so", // OpenBSD hardly controls the major/minor library version
+                    // of ffmpeg and update it regulary on ABI/API changes
+ #else
++  "libavcodec.so.63",
+   "libavcodec.so.62",
+   "libavcodec.so.61",
+   "libavcodec.so.60",
+@@ -120,6 +122,9 @@ bool FFmpegRuntimeLinker::Init() {
+             case 62:
+               FFmpegDecoderModule<62>::Init(&sLibAV);
+               break;
++            case 63:
++              FFmpegDecoderModule<63>::Init(&sLibAV);
++              break;
+           }
+           return true;
+         case FFmpegLibWrapper::LinkResult::NoProvidedLib:
+@@ -213,6 +218,9 @@ already_AddRefed<PlatformDecoderModule> FFmpegRuntimeL
+     case 62:
+       module = FFmpegDecoderModule<62>::Create(&sLibAV);
+       break;
++    case 63:
++      module = FFmpegDecoderModule<63>::Create(&sLibAV);
++      break;
+     default:
+       module = nullptr;
+   }
+@@ -253,6 +261,9 @@ already_AddRefed<PlatformEncoderModule> FFmpegRuntimeL
+       break;
+     case 62:
+       module = FFmpegEncoderModule<62>::Create(&sLibAV);
++      break;
++    case 63:
++      module = FFmpegEncoderModule<63>::Create(&sLibAV);
+       break;
+     default:
+       module = nullptr;

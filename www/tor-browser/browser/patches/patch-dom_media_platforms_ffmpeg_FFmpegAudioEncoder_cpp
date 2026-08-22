@@ -1,0 +1,35 @@
+Index: dom/media/platforms/ffmpeg/FFmpegAudioEncoder.cpp
+--- dom/media/platforms/ffmpeg/FFmpegAudioEncoder.cpp.orig
++++ dom/media/platforms/ffmpeg/FFmpegAudioEncoder.cpp
+@@ -74,7 +74,21 @@ MediaResult FFmpegAudioEncoder<LIBAV_VER>::InitEncoder
+   // Find a compatible input rate for the codec, update the encoder config, and
+   // note the rate at which this instance was configured.
+   mInputSampleRate = AssertedCast<int>(mConfig.mSampleRate);
+-  if (codec->supported_samplerates) {
++  const int* supportedSampleRatesList = nullptr;
++#if LIBAVCODEC_VERSION_MAJOR >= 63
++  // FFmpeg 63 replaced AVCodec::supported_samplerates with this query API.
++  if (mLib->avcodec_get_supported_config) {
++    const void* configs = nullptr;
++    if (mLib->avcodec_get_supported_config(mCodecContext, codec,
++                                           AV_CODEC_CONFIG_SAMPLE_RATE, 0,
++                                           &configs, nullptr) >= 0) {
++      supportedSampleRatesList = static_cast<const int*>(configs);
++    }
++  }
++#else
++  supportedSampleRatesList = codec->supported_samplerates;
++#endif
++  if (supportedSampleRatesList) {
+     // Ensure the sample-rate list is sorted, iterate and either find that the
+     // sample rate is supported, or pick the same rate just above the audio
+     // input sample-rate (as to not lose information). If the audio is higher
+@@ -82,7 +96,7 @@ MediaResult FFmpegAudioEncoder<LIBAV_VER>::InitEncoder
+     // sample-rate supported by the codec. This is the case when encoding high
+     // samplerate audio to opus.
+     AutoTArray<int, 16> supportedSampleRates;
+-    IterateZeroTerminated(codec->supported_samplerates,
++    IterateZeroTerminated(supportedSampleRatesList,
+                           [&supportedSampleRates](int aRate) mutable {
+                             supportedSampleRates.AppendElement(aRate);
+                           });
