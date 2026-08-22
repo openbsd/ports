@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 COMMENT-main =	2D and 3D game engine
 COMMENT-editor=	2D and 3D game engine (with the editor)
 
-VERSION =	4.7.1
+VERSION =	4.7.2
 PKGNAME =	godot-${VERSION}
 DIST_TUPLE +=	codeberg godotsteam godotsteam v4.5.4 godotsteam
 

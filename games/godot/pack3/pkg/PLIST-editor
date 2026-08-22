@@ -2,7 +2,6 @@
 @pkgpath games/godot,-tools
 @pkgpath games/godot4,-editor
 @bin bin/godot-editor
-share/applications/
 share/applications/org.godotengine.Godot.desktop
 share/metainfo/
 share/metainfo/org.godotengine.Godot.appdata.xml
