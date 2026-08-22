@@ -22,6 +22,7 @@
      SUBDIR += necpp
      SUBDIR += netgen
      SUBDIR += netgen-mesher
+     SUBDIR += nextpnr
      SUBDIR += ngspice
      SUBDIR += opencascade
      SUBDIR += openscad
