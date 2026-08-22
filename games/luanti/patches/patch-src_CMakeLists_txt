@@ -10,7 +10,7 @@ Index: src/CMakeLists.txt
  	set(CMAKE_REQUIRED_LIBRARIES "-latomic")
  	check_c_source_compiles("int main(){}" HAVE_LINK_ATOMIC)
  	set(CMAKE_REQUIRED_LIBRARIES "")
-@@ -972,7 +972,7 @@ else()
+@@ -994,7 +994,7 @@ else()
  		endif()
  	endif()
  
