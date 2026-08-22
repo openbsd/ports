@@ -36,6 +36,7 @@
      SUBDIR += mgetty+sendfax
      SUBDIR += minicom
      SUBDIR += minimodem
+     SUBDIR += openfpgaloader
      SUBDIR += owx
      SUBDIR += p5-Device-Gsm
      SUBDIR += p5-Device-Modem
