@@ -24,6 +24,10 @@ WANTLIB += c pthread
 
 MODULES=	lang/go
 
+# XXX check if still needed at next release
+# https://github.com/cockroachdb/swiss/commit/aa852fb3c14e2d34704a42ee989711108b6f4200; go1.27
+MODGO_FLAGS +=  -tags untested_go_version
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/kapsule.1 ${PREFIX}/man/man1/kapsul.1
 
