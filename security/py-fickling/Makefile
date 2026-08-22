@@ -1,6 +1,6 @@
 COMMENT =	analyze Python pickle object serializations
 
-MODPY_DISTV =	0.1.11
+MODPY_DISTV =	0.1.12
 DISTNAME =	fickling-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
