@@ -1,0 +1,7 @@
+@bin bin/nextpnr-generic
+@bin bin/nextpnr-himbaechel
+share/nextpnr/
+share/nextpnr/himbaechel/
+share/nextpnr/himbaechel/gatemate/
+share/nextpnr/himbaechel/gatemate/chipdb-CCGM1A1.bin
+share/nextpnr/himbaechel/gatemate/chipdb-CCGM1A2.bin
