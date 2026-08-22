@@ -1,6 +1,6 @@
 COMMENT =		parallel HTTP requests
 
-DISTNAME =		typhoeus-1.4.1
+DISTNAME =		typhoeus-1.6.0
 
 CATEGORIES =		www
 HOMEPAGE =		https://github.com/typhoeus/typhoeus
