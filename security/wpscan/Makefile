@@ -1,7 +1,6 @@
 COMMENT =	WordPress security scanner
 
-REVISION =	0
-DISTNAME =	wpscan-4.0.0
+DISTNAME =	wpscan-4.1.0
 CATEGORIES =	security
 
 HOMEPAGE =	https://wpscan.org/
@@ -10,9 +9,6 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # https://github.com/wpscanteam/wpscan/issues/1304
 # Free for non-commercial use
 PERMIT_PACKAGE=	Yes
-
-#BUILD_DEPENDS +=	${RUN_DEPENDS}
-#RUN_DEPENDS +=		security/ruby-cms_scanner,${MODRUBY_FLAVOR},>=0.15.0,<0.16
 
 BUILD_DEPENDS +=        ${RUN_DEPENDS}
 RUN_DEPENDS +=          devel/ruby-activesupport,${MODRUBY_FLAVOR},>=7.1,<8.2 \
