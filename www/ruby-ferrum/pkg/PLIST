@@ -5,6 +5,9 @@ ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/accessibility/
+${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/accessibility.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/accessibility/ax_node.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/browser/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/browser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/browser/binary.rb
@@ -34,6 +37,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/frame.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/frame/dom.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/frame/runtime.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/headers.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/interceptable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/keyboard.json
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/keyboard.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/mouse.rb
@@ -65,4 +69,5 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/utils/event.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/utils/platform.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/utils/thread.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ferrum/worker.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
