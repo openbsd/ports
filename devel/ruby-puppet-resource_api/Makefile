@@ -1,6 +1,6 @@
 COMMENT =		simple way to write new native resources for Puppet
 
-DISTNAME =		puppet-resource_api-2.0.0
+DISTNAME =		puppet-resource_api-2.0.1
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/puppetlabs/puppet-resource_api
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
