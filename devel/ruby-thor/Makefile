@@ -1,6 +1,6 @@
 COMMENT =		scripting framework to replace rake/sake/rubigen
 
-DISTNAME =		thor-1.2.1
+DISTNAME =		thor-1.5.0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://whatisthor.com/

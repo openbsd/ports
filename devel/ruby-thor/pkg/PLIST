@@ -42,7 +42,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/thor/shell/
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/shell.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/shell/basic.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/shell/color.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/thor/shell/column_printer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/shell/html.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/thor/shell/lcs_diff.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/thor/shell/table_printer.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/thor/shell/terminal.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/thor/shell/wrapped_printer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/thor.gemspec
