@@ -1,38 +1,104 @@
 ${P5SITE}/DBIx/DataModel/
 ${P5SITE}/DBIx/DataModel.pm
-${P5SITE}/DBIx/DataModel/Base.pm
+${P5SITE}/DBIx/DataModel/Carp.pm
+${P5SITE}/DBIx/DataModel/Compatibility/
+${P5SITE}/DBIx/DataModel/Compatibility/V0.pm
+${P5SITE}/DBIx/DataModel/Compatibility/V1.pm
 ${P5SITE}/DBIx/DataModel/Doc/
 ${P5SITE}/DBIx/DataModel/Doc/Cookbook.pod
-${P5SITE}/DBIx/DataModel/Doc/Delta_1.0.pod
+${P5SITE}/DBIx/DataModel/Doc/Delta_v1.pod
+${P5SITE}/DBIx/DataModel/Doc/Delta_v2.pod
+${P5SITE}/DBIx/DataModel/Doc/Delta_v3.pod
 ${P5SITE}/DBIx/DataModel/Doc/Design.pod
 ${P5SITE}/DBIx/DataModel/Doc/Glossary.pod
 ${P5SITE}/DBIx/DataModel/Doc/Internals.pod
-${P5SITE}/DBIx/DataModel/Doc/Misc.pod
 ${P5SITE}/DBIx/DataModel/Doc/Quickstart.pod
 ${P5SITE}/DBIx/DataModel/Doc/Reference.pod
+${P5SITE}/DBIx/DataModel/Meta/
+${P5SITE}/DBIx/DataModel/Meta.pm
+${P5SITE}/DBIx/DataModel/Meta/Association.pm
+${P5SITE}/DBIx/DataModel/Meta/Path.pm
+${P5SITE}/DBIx/DataModel/Meta/Schema.pm
+${P5SITE}/DBIx/DataModel/Meta/Source/
+${P5SITE}/DBIx/DataModel/Meta/Source.pm
+${P5SITE}/DBIx/DataModel/Meta/Source/Join.pm
+${P5SITE}/DBIx/DataModel/Meta/Source/Table.pm
+${P5SITE}/DBIx/DataModel/Meta/Type.pm
+${P5SITE}/DBIx/DataModel/Meta/Utils.pm
 ${P5SITE}/DBIx/DataModel/Schema/
 ${P5SITE}/DBIx/DataModel/Schema.pm
 ${P5SITE}/DBIx/DataModel/Schema/Generator.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/
+${P5SITE}/DBIx/DataModel/Schema/ResultAs.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Categorize.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Correlated_update.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Count.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Fast_statement.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/File_tabular.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Firstrow.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Flat_arrayref.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Hashref.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Json.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Rows.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Sql.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Statement.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Sth.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Subquery.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Table.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Tsv.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Xlsx.pm
+${P5SITE}/DBIx/DataModel/Schema/ResultAs/Yaml.pm
+${P5SITE}/DBIx/DataModel/Source/
 ${P5SITE}/DBIx/DataModel/Source.pm
+${P5SITE}/DBIx/DataModel/Source/Join.pm
+${P5SITE}/DBIx/DataModel/Source/Table.pm
 ${P5SITE}/DBIx/DataModel/Statement/
 ${P5SITE}/DBIx/DataModel/Statement.pm
 ${P5SITE}/DBIx/DataModel/Statement/JDBC.pm
-${P5SITE}/DBIx/DataModel/Table.pm
-${P5SITE}/DBIx/DataModel/View.pm
+${P5SITE}/DBIx/DataModel/Statement/Oracle.pm
 @man man/man3p/DBIx::DataModel.3p
-@man man/man3p/DBIx::DataModel::Base.3p
+@man man/man3p/DBIx::DataModel::Carp.3p
+@man man/man3p/DBIx::DataModel::Compatibility::V0.3p
+@man man/man3p/DBIx::DataModel::Compatibility::V1.3p
 @man man/man3p/DBIx::DataModel::Doc::Cookbook.3p
-@man man/man3p/DBIx::DataModel::Doc::Delta_1.0.3p
+@man man/man3p/DBIx::DataModel::Doc::Delta_v1.3p
+@man man/man3p/DBIx::DataModel::Doc::Delta_v2.3p
+@man man/man3p/DBIx::DataModel::Doc::Delta_v3.3p
 @man man/man3p/DBIx::DataModel::Doc::Design.3p
 @man man/man3p/DBIx::DataModel::Doc::Glossary.3p
 @man man/man3p/DBIx::DataModel::Doc::Internals.3p
-@man man/man3p/DBIx::DataModel::Doc::Misc.3p
 @man man/man3p/DBIx::DataModel::Doc::Quickstart.3p
 @man man/man3p/DBIx::DataModel::Doc::Reference.3p
+@man man/man3p/DBIx::DataModel::Meta.3p
+@man man/man3p/DBIx::DataModel::Meta::Association.3p
+@man man/man3p/DBIx::DataModel::Meta::Path.3p
+@man man/man3p/DBIx::DataModel::Meta::Schema.3p
+@man man/man3p/DBIx::DataModel::Meta::Type.3p
+@man man/man3p/DBIx::DataModel::Meta::Utils.3p
 @man man/man3p/DBIx::DataModel::Schema.3p
 @man man/man3p/DBIx::DataModel::Schema::Generator.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Categorize.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Correlated_update.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Count.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Fast_statement.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::File_tabular.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Firstrow.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Flat_arrayref.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Hashref.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Json.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Rows.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Sql.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Statement.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Sth.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Subquery.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Table.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Tsv.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Xlsx.3p
+@man man/man3p/DBIx::DataModel::Schema::ResultAs::Yaml.3p
 @man man/man3p/DBIx::DataModel::Source.3p
+@man man/man3p/DBIx::DataModel::Source::Join.3p
+@man man/man3p/DBIx::DataModel::Source::Table.3p
 @man man/man3p/DBIx::DataModel::Statement.3p
 @man man/man3p/DBIx::DataModel::Statement::JDBC.3p
-@man man/man3p/DBIx::DataModel::Table.3p
-@man man/man3p/DBIx::DataModel::View.3p
+@man man/man3p/DBIx::DataModel::Statement::Oracle.3p

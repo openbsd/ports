@@ -1,20 +1,34 @@
-COMMENT=	classes and UML-style associations on top of DBI
+COMMENT =	classes and UML-style associations on top of DBI
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	DBIx-DataModel-1.09
-REVISION=	3
-CATEGORIES=	databases
+DISTNAME =	DBIx-DataModel-3.14
+CPAN_AUTHOR =	DAMI
+
+CATEGORIES =	databases
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS=	databases/p5-DBI \
-		databases/p5-SQL-Abstract
-TEST_DEPENDS=databases/p5-DBD-Mock
+MODULES =		cpan
 
-CONFIGURE_STYLE=modbuild
+RUN_DEPENDS =		databases/p5-DBI \
+			databases/p5-SQL-Abstract-Classic>=1.91 \
+			databases/p5-SQL-Abstract-More>=1.41 \
+			devel/p5-Carp-Object \
+			devel/p5-Clone \
+			devel/p5-Data-Structure-Util \
+			devel/p5-List-MoreUtils \
+			devel/p5-MRO-Compat \
+			devel/p5-Module-Build \
+			devel/p5-Params-Validate \
+			devel/p5-Try-Tiny \
+			devel/p5-namespace-clean \
+			textproc/p5-Lingua-EN-Inflect-Phrase
+TEST_DEPENDS =		databases/p5-DBD-Mock>=1.39 \
+			databases/p5-DBD-SQLite>=1.38 \
+			databases/p5-SQL-Abstract \
 
-MAKE_ENV+=	TEST_POD=1
+CONFIGURE_STYLE =	modbuild
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
