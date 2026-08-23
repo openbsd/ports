@@ -576,6 +576,7 @@
      SUBDIR += p5-Carp-Assert-More
      SUBDIR += p5-Carp-Clan
      SUBDIR += p5-Carp-Datum
+     SUBDIR += p5-Carp-Object
      SUBDIR += p5-Carp-REPL
      SUBDIR += p5-Catalyst-Manual
      SUBDIR += p5-Catalyst-Plugin-C3
