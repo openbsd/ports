@@ -1,0 +1,4 @@
+This is an object-oriented alternative to "croak" in Carp or "croak" in
+Carp::Clan, for reporting errors in modules from the perspective of the
+caller instead of reporting the internal implementation line where the
+error occurs.
