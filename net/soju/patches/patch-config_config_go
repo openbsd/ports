@@ -1,11 +1,13 @@
 Index: config/config.go
 --- config/config.go.orig
 +++ config/config.go
-@@ -14,7 +14,7 @@ import (
+@@ -13,8 +13,8 @@ import (
+ )
  
  var (
- 	DefaultPath          string
+-	DefaultPath          string
 -	DefaultUnixAdminPath = "/run/soju/admin"
++	DefaultPath          = "/etc/soju/config"
 +	DefaultUnixAdminPath = "/var/run/soju/admin"
  )
  

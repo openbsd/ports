@@ -8,7 +8,7 @@ Creating a database
 soju requires a database to be created before starting the daemon.
 This can be done as follows:
 
-$ doas -u _soju sojudb -config ${SYSCONFDIR}/soju/config create-user <username> -admin
+$ doas -u _soju sojudb create-user <username> -admin
 
 This will create the database under ${LOCALSTATEDIR}/soju/main.db or as specified
 in ${SYSCONFDIR}/soju/config.
@@ -23,7 +23,7 @@ under ${SYSCONFDIR}/soju/config e.g.:
 
 ...
 listen ircs://
-tls ${SYSCONFDIR}/ssl/example.com.fullchain.pem ${SYSCONFDIR}/ssl/private/example.com.key
+tls ${SYSCONFDIR}/soju/example.com.fullchain.pem ${SYSCONFDIR}/soju/example.com.key
 ...
 
 Note that certificate and key should be readable by the _soju user.
