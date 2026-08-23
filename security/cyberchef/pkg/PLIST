@@ -1,6 +1,6 @@
 cyberchef/
 cyberchef/ChefWorker.js.LICENSE.txt
-cyberchef/CyberChef_v11.0.0.html
+cyberchef/CyberChef_v11.4.0.html
 cyberchef/DishWorker.js.LICENSE.txt
 cyberchef/InputWorker.js.LICENSE.txt
 cyberchef/LoaderWorker.js.LICENSE.txt
@@ -79,6 +79,10 @@ cyberchef/modules/Encodings.js
 cyberchef/modules/Encodings.js.LICENSE.txt
 cyberchef/modules/Encodings.js.br
 cyberchef/modules/Encodings.js.gz
+cyberchef/modules/File.js
+cyberchef/modules/File.js.LICENSE.txt
+cyberchef/modules/File.js.br
+cyberchef/modules/File.js.gz
 cyberchef/modules/Handlebars.js
 cyberchef/modules/Handlebars.js.LICENSE.txt
 cyberchef/modules/Handlebars.js.br

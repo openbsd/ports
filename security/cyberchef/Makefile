@@ -1,7 +1,8 @@
 COMMENT =	cyber swiss army knife
 
-V =		11.0.0
-DISTNAME =	CyberChef_v$V
+V =		11.4.0
+HASH =		49d1a5634a67a3b806c6db0fdca7dcecb41a776c
+DISTNAME =	CyberChef_${HASH}
 PKGNAME =	cyberchef-$V
 
 PREFIX =	${VARBASE}/www
