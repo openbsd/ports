@@ -9,7 +9,7 @@ GH_TAGNAME =	2.0.76
 PKGNAME-main =	munin-node-${GH_TAGNAME}
 PKGNAME-server =munin-server-${GH_TAGNAME}
 CATEGORIES =	net
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://munin-monitoring.org/
 

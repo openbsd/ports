@@ -26,7 +26,7 @@ Index: plugins/node.d/amavis.in
       group adm
  
  =head1 INTERPRETATION
-@@ -74,8 +74,8 @@ GPLv2
+@@ -74,14 +74,14 @@ GPLv2
  =cut
  
  
@@ -37,3 +37,8 @@ Index: plugins/node.d/amavis.in
  STATEFILE=$MUNIN_PLUGSTATE/amavis.offset
  
  if [ "$1" = "autoconf" ]; then
+-	if [ -f "${AMAVIS_LOG}" ] && [ -n "${LOGTAIL}" ] && [ -x "${LOGTAIL}" ] ; then
++	if [ -x /usr/local/sbin/amavisd ] && [ -f "${AMAVIS_LOG}" ] && [ -n "${LOGTAIL}" ] && [ -x "${LOGTAIL}" ] ; then
+ 		echo yes
+ 		exit 0
+ 	else
