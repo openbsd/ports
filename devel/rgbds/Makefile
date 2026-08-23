@@ -1,6 +1,6 @@
 COMMENT =	Game Boy development system
 
-V =		1.0.1
+V =		1.0.3
 DISTNAME =	rgbds-$V
 DISTFILES =	rgbds-$V{rgbds-source}${EXTRACT_SUFX}
 
@@ -8,13 +8,13 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://rgbds.gbdev.io/
 
-MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
+MAINTAINER =	Anthony J. Bentley <bentley@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB += ${COMPILER_LIBCXX} c m png
+WANTLIB += ${COMPILER_LIBCXX} c m png z
 
 SITES =		https://github.com/gbdev/rgbds/releases/download/v$V/
 
