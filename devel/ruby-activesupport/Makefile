@@ -1,6 +1,6 @@
 COMMENT =		support libraries and Ruby extensions extracted from Rails
 
-DISTNAME =		activesupport-8.1.3
+DISTNAME =		activesupport-8.1.3.1
 CATEGORIES =		devel
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
