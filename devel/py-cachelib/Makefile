@@ -1,6 +1,6 @@
 COMMENT =		collection of cache libraries
 
-MODPY_DISTV =		0.14.0
+MODPY_DISTV =		0.16.1
 DISTNAME =		cachelib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -13,11 +13,16 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		flit_core
 
-# Needs pkg_add mongodb and rcctl start mongod
-# to make the mongodb tests work
-# 157 passed, 66 skipped, 11 warnings
+# Needs pkg_add mongodb redis memcached and those daemons started
+# to make the related tests work
+# 443 passed, 40 skipped
 TEST_DEPENDS =		devel/py-test-xprocess \
-			databases/py-mongo
-MODPY_PYTEST_ARGS =	--ignore tests/test_dynamodb_cache.py
+			databases/py-mongo \
+			databases/py-redis \
+			misc/py-memcached
+# dynamodb cache needs boto3 and a running dynamodb, valkey
+# we don't have in ports
+MODPY_PYTEST_ARGS =	--ignore tests/test_dynamodb_cache.py \
+			--ignore tests/test_valkey_cache.py
 
 .include <bsd.port.mk>
