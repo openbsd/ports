@@ -1,6 +1,6 @@
 COMMENT =	Software-Defined Radio Digital Signal Processing library
 
-V =		1.7.0
+V =		1.8.2
 GH_ACCOUNT =	jgaeddert
 GH_PROJECT =	liquid-dsp
 GH_TAGNAME =	v${V}
@@ -8,7 +8,7 @@ GH_TAGNAME =	v${V}
 HOMEPAGE =	https://liquidsdr.org/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
-SHARED_LIBS +=  liquid                    0.0 # 0.0
+SHARED_LIBS +=  liquid                    0.1 # 0.0
 
 CATEGORIES =	comms
 
@@ -28,10 +28,6 @@ MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS +=	-DENABLE_SIMD=OFF
 
-# test results:
-# 1:  WARNINGS : 57
-# 1: ==================================
-# 1:  PASSED ALL 716451 CHECKS
-# 1/1 Test #1: test .............................   Passed  106.46 sec
+# 100% tests passed, 0 tests failed out of 192
 
 .include <bsd.port.mk>

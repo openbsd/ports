@@ -1,9 +1,9 @@
 Index: src/nco/src/nco.proto.c
 --- src/nco/src/nco.proto.c.orig
 +++ src/nco/src/nco.proto.c
-@@ -32,6 +32,11 @@
+@@ -31,6 +31,11 @@
+ #include <stdio.h>
  #include <string.h>
- #include <assert.h>
  
 +#ifdef M_PI
 +#undef M_PI

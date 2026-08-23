@@ -1,3 +1,10 @@
 include/liquid/
 include/liquid/liquid.h
+lib/cmake/
+lib/cmake/liquid/
+lib/cmake/liquid/liquidConfig.cmake
+lib/cmake/liquid/liquidConfigVersion.cmake
+lib/cmake/liquid/liquidTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/liquid/liquidTargets.cmake
 @lib lib/libliquid.so.${LIBliquid_VERSION}
+lib/pkgconfig/liquid-dsp.pc
