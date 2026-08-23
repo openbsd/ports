@@ -1,6 +1,6 @@
 COMMENT =	HTTP/REST API client library
 
-DISTNAME =	faraday-2.14.2
+DISTNAME =	faraday-2.14.3
 CATEGORIES =	www
 HOMEPAGE =	https://github.com/lostisland/faraday
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
