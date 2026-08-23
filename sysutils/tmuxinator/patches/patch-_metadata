@@ -1,0 +1,22 @@
+Relax devel/ruby-thor version spec
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -29,14 +29,14 @@ dependencies:
+   name: thor
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">="
+       - !ruby/object:Gem::Version
+         version: 1.2.1
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">="
+       - !ruby/object:Gem::Version
+         version: 1.2.1
+ - !ruby/object:Gem::Dependency

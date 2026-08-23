@@ -1,7 +1,7 @@
 COMMENT =		create and manage complex tmux sessions easily
 
 DISTNAME =		tmuxinator-3.0.5
-REVISION =		3
+REVISION =		4
 CATEGORIES =		sysutils
 
 # MIT
