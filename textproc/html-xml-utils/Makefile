@@ -1,12 +1,12 @@
 COMMENT =		simple utilities for manipulating HTML and XML files
 
-DISTNAME =		html-xml-utils-8.7
+DISTNAME =		html-xml-utils-8.8
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://www.w3.org/Tools/HTML-XML-utils/
 
-MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
+MAINTAINER =		Anthony J. Bentley <bentley@openbsd.org>
 
 # W3C license
 PERMIT_PACKAGE =	Yes
