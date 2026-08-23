@@ -1,6 +1,6 @@
 COMMENT =	Perl interface to the libgd graphics library
 
-DISTNAME =	GD-2.86
+DISTNAME =	GD-2.91
 CPAN_AUTHOR =	RURBAN
 
 CATEGORIES =	graphics
