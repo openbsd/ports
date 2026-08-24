@@ -35,7 +35,7 @@ MODGO_MODULES =	\
 	golang.org/x/crypto					 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/net					 v0.0.0-20190613194153-d28f0bde5980 \
 	golang.org/x/sync					 v0.0.0-20190911185100-cd5d95a43a6e \
-	golang.org/x/sys					 v0.0.0-20200420163511-1957bb5e6d1f \
+	golang.org/x/sys					 v0.24.0 \
 	golang.org/x/text					 v0.3.0 \
 	golang.org/x/xerrors					 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/protobuf				 v1.21.0 \
@@ -85,6 +85,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys			 v0.0.0-20190422165155-953cdadca894 \
 	golang.org/x/sys			 v0.0.0-20200106162015-b016eb3dc98e \
+	golang.org/x/sys			 v0.0.0-20200420163511-1957bb5e6d1f \
 	google.golang.org/protobuf		 v0.0.0-20200109180630-ec00e32a8dfd \
 	google.golang.org/protobuf		 v0.0.0-20200221191635-4d8936d0db64 \
 	google.golang.org/protobuf		 v0.0.0-20200228230310-ab0ca4ff8a60 \

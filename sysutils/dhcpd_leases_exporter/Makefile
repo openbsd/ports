@@ -1,7 +1,7 @@
 COMMENT =		prometheus exporter for dhcpd(8) leases file
 
 MODGO_MODNAME =		github.com/DRuggeri/dhcpd_leases_exporter
-MODGO_VERSION =		v0.2.3
+MODGO_VERSION =		v0.3.0
 
 DISTNAME =		dhcpd_leases_exporter-${MODGO_VERSION}
 

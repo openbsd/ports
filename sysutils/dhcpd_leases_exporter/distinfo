@@ -1,4 +1,4 @@
-SHA256 (dhcpd_leases_exporter-v0.2.3.zip) = FWzgHTdP9KZXxRRKrlsxgEjRwYXPiueT6/VuKlzvvzE=
+SHA256 (dhcpd_leases_exporter-v0.3.0.zip) = h8uQaZUCbaNrLOKUYs4/df0HRQ8yQSSuHDW4U8v0f/I=
 SHA256 (go_modules/github.com/!d!ruggeri/dhcpdleasesreader/@v/v0.0.0-20200525013329-49a203fff0b3.mod) = ggrfWx/MZzJwz4KsSMJ14SDDPsL/tYKu1dqBkwdT2S8=
 SHA256 (go_modules/github.com/!d!ruggeri/dhcpdleasesreader/@v/v0.0.0-20200525013329-49a203fff0b3.zip) = Xm9KaNWKQQxcciZiq3IpnXaJxLqkAcLg/yJ0GISm6DM=
 SHA256 (go_modules/github.com/alecthomas/template/@v/v0.0.0-20160405071501-a0175ee3bccc.mod) = wCGTza/yP3AiRZc5CDL1aCUK84T5jcQ3iutb+P7GkPw=
@@ -113,7 +113,8 @@ SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20190215142949-d0b11bdaac8a.mod) =
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20190422165155-953cdadca894.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20200106162015-b016eb3dc98e.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20200420163511-1957bb5e6d1f.mod) = GBl56L1X0tngZBgtqGyaYRGqaXVeiI8IQx7OR0Kuw0M=
-SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20200420163511-1957bb5e6d1f.zip) = 4igAspncD8CZVwocxnu5AKZeAtVmd2UFHn0kjT73L44=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.24.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.24.0.zip) = +8g92wruI27oXA+ClOfJtvedKHlNIufQlX/NZMolKWA=
 SHA256 (go_modules/golang.org/x/text/@v/v0.3.0.mod) = NoedWG/YAB6E2oeHGQoR5PeHSeKoHf6Lm2kxiZ//Mc8=
 SHA256 (go_modules/golang.org/x/text/@v/v0.3.0.zip) = 6jBoOVUD08fvjOFqKG91yMk4gsJaZsKqbI4q1Np6muA=
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20191204190536-9bdfabe68543.mod) = ql4+ybt7n2gWCe+sAZ2d4ae6dxkkj/Hqon54iC2z1/U=
@@ -134,7 +135,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.2.2.mod) = iNl50vCT0jl/dWvIbvosoD9zpg1
 SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.2.4.mod) = iNl50vCT0jl/dWvIbvosoD9zpg1mjOs5GzUQAp8/fPw=
 SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.2.5.mod) = iNl50vCT0jl/dWvIbvosoD9zpg1mjOs5GzUQAp8/fPw=
 SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.2.5.zip) = 4pL8AOcH0W6dapLdvII7vlHt/lshZYZP0/gq0OiKIZI=
-SIZE (dhcpd_leases_exporter-v0.2.3.zip) = 20458
+SIZE (dhcpd_leases_exporter-v0.3.0.zip) = 21517
 SIZE (go_modules/github.com/!d!ruggeri/dhcpdleasesreader/@v/v0.0.0-20200525013329-49a203fff0b3.mod) = 45
 SIZE (go_modules/github.com/!d!ruggeri/dhcpdleasesreader/@v/v0.0.0-20200525013329-49a203fff0b3.zip) = 4431
 SIZE (go_modules/github.com/alecthomas/template/@v/v0.0.0-20160405071501-a0175ee3bccc.mod) = 38
@@ -249,7 +250,8 @@ SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20190215142949-d0b11bdaac8a.mod) = 2
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20190422165155-953cdadca894.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20200106162015-b016eb3dc98e.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20200420163511-1957bb5e6d1f.mod) = 33
-SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20200420163511-1957bb5e6d1f.zip) = 1471954
+SIZE (go_modules/golang.org/x/sys/@v/v0.24.0.mod) = 33
+SIZE (go_modules/golang.org/x/sys/@v/v0.24.0.zip) = 1962535
 SIZE (go_modules/golang.org/x/text/@v/v0.3.0.mod) = 25
 SIZE (go_modules/golang.org/x/text/@v/v0.3.0.zip) = 6349244
 SIZE (go_modules/golang.org/x/xerrors/@v/v0.0.0-20191204190536-9bdfabe68543.mod) = 37
