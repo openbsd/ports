@@ -24,6 +24,7 @@
      SUBDIR += libass
      SUBDIR += libbdplus
      SUBDIR += libbluray
+     SUBDIR += libcamera
      SUBDIR += libde265
      SUBDIR += libdv
      SUBDIR += libdvdnav
@@ -39,6 +40,7 @@
      SUBDIR += libv4l
      SUBDIR += libvidstab
      SUBDIR += libvpx
+     SUBDIR += libyuv
      SUBDIR += lsdvd
      SUBDIR += mat2
      SUBDIR += mediainfo
