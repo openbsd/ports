@@ -1,0 +1,3 @@
+This small low-level module only has one purpose: pass a file descriptor
+to another process, using a (streaming) unix domain socket (on POSIX
+systems) or any (streaming) socket (on WIN32 systems).
