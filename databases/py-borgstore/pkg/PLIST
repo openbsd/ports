@@ -69,6 +69,9 @@ lib/python${MODPY_VERSION}/site-packages/borgstore/utils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}hashing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}hashing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}nesting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}nesting.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgstore/utils/hashing.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/nesting.py

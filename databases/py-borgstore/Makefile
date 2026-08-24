@@ -1,6 +1,6 @@
 COMMENT =		key/value store implementation in Python
 
-MODPY_DISTV =		0.5.5
+MODPY_DISTV =		0.6.1
 DISTNAME =		borgstore-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -17,7 +17,8 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 
-RUN_DEPENDS =		www/py-requests
+RUN_DEPENDS =		security/py-blake3 \
+			www/py-requests
 
 # tests not included in pypi tarball
 NO_TEST	=		Yes
