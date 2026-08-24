@@ -1,55 +1,64 @@
 OpenBSD does not support memfd_create.
+Use shm_mkstemp(3) + shm_unlink(3) to get an anonymous shm fd:
+shm_open(2) without O_CREAT always fails with ENOENT, and a fixed
+name would collide between processes and leak persistent objects.
 
 Index: libportal/notification.c
 --- libportal/notification.c.orig
 +++ libportal/notification.c
-@@ -82,7 +82,12 @@ bytes_to_memfd (const gchar  *name,
+@@ -82,7 +82,18 @@ bytes_to_memfd (const gchar  *name,
    gpointer shm;
    gsize bytes_len;
  
 +#ifndef __OpenBSD__
    fd = memfd_create (name, MFD_ALLOW_SEALING);
 +#else
-+  /* XXX no sealing support */
-+  fd = shm_open (name, O_RDWR, 0600);
++  /* XXX no memfd_create/sealing support */
++  {
++    char shm_name[] = "/libportal.XXXXXXXXXX";
++
++    fd = shm_mkstemp (shm_name);
++    if (fd != -1)
++      shm_unlink (shm_name);
++  }
 +#endif
    if (fd == -1)
      {
        int saved_errno = errno;
-@@ -90,7 +95,11 @@ bytes_to_memfd (const gchar  *name,
+@@ -90,7 +101,7 @@ bytes_to_memfd (const gchar  *name,
        g_set_error (error,
                     G_IO_ERROR,
                     g_io_error_from_errno (saved_errno),
-+#ifndef __OpenBSD__
-                    "memfd_create: %s", g_strerror (saved_errno));
-+#else
-+                   "shm_open: %s", g_strerror (saved_errno));
-+#endif
+-                   "memfd_create: %s", g_strerror (saved_errno));
++                   "cannot create anonymous shm fd: %s", g_strerror (saved_errno));
        return -1;
      }
  
-@@ -328,7 +337,12 @@ parse_media (GVariant            *media,
+@@ -328,7 +339,18 @@ parse_media (GVariant            *media,
          {
            g_autofd int fd = -1;
  
 +#ifndef __OpenBSD__
            fd = memfd_create ("notification-media", MFD_ALLOW_SEALING);
 +#else
-+          /* XXX no sealing support */
-+          fd = shm_open ("notification-media", O_RDWR, 0600);
++          /* XXX no memfd_create/sealing support */
++          {
++            char shm_name[] = "/libportal.XXXXXXXXXX";
++
++            fd = shm_mkstemp (shm_name);
++            if (fd != -1)
++              shm_unlink (shm_name);
++          }
 +#endif
            if (fd == -1)
              {
                int saved_errno = errno;
-@@ -336,7 +350,11 @@ parse_media (GVariant            *media,
+@@ -336,7 +358,7 @@ parse_media (GVariant            *media,
                g_task_return_new_error (task,
                                         G_IO_ERROR,
                                         g_io_error_from_errno (saved_errno),
-+#ifndef __OpenBSD__
-                                        "memfd_create: %s", g_strerror (saved_errno));
-+#else
-+                                       "shm_open: %s", g_strerror (saved_errno));
-+#endif
+-                                       "memfd_create: %s", g_strerror (saved_errno));
++                                       "cannot create anonymous shm fd: %s", g_strerror (saved_errno));
                return;
              }
  

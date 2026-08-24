@@ -7,6 +7,8 @@ COMMENT-qt6=		Qt6 backend for libportal
 V=			0.10.0
 DISTNAME=		libportal-${V}
 
+REVISION-main=		0
+
 PKGNAME-gtk3=		libportal-gtk3-${V}
 PKGNAME-gtk4=		libportal-gtk4-${V}
 PKGNAME-qt5=		libportal-qt5-${V}
