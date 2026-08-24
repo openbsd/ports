@@ -25,7 +25,8 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://chromium.googlesource.com/libyuv/libyuv/+archive/
+#SITES=		https://chromium.googlesource.com/libyuv/libyuv/+archive/
+SITES=		https://distfiles.bsdfrog.org/
 
 WANTLIB += ${COMPILER_LIBCXX} c jpeg m
 
