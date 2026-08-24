@@ -1,20 +1,23 @@
 XXX Needs fuse3.
+Set the GError before returning NULL: callers dereference error->message.
 
 Index: src/xdp-documents.c
 --- src/xdp-documents.c.orig
 +++ src/xdp-documents.c
-@@ -73,6 +73,10 @@ xdp_register_document (const char        *uri,
+@@ -73,6 +73,12 @@ xdp_register_document (const char
                         XdpDocumentFlags   flags,
                         GError           **error)
  {
 +#if defined(__OpenBSD__)
-+  g_warning("%s: unsupported on OpenBSD", __FUNCTION__);
++  /* XXX Needs fuse3. */
++  g_set_error (error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,
++               "%s: unsupported on OpenBSD", __FUNCTION__);
 +  return NULL;
 +#else
    g_autofree char *doc_id = NULL;
    g_auto(GStrv) doc_ids = NULL;
    g_autofree char *path = NULL;
-@@ -215,6 +219,7 @@ xdp_register_document (const char        *uri,
+@@ -215,6 +221,7 @@ xdp_register_document (const char
  
    doc_path = g_build_filename (documents_mountpoint, doc_id, basename, NULL);
    return g_filename_to_uri (doc_path, NULL, NULL);
