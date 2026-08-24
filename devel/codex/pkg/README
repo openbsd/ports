@@ -13,3 +13,10 @@ one you should add into ~/.codex/config.toml:
 	name = "llama-server"
 	base_url = "http://127.0.0.1:8080/v1"
 	wire_api = "responses"
+
+${PKGSTEM} uses a lot of memory, it starts with 256Mb per agent/worker
+thread, and you may need to bump your limits (`ulimit -d`) or raise
+datasize limit in used login class..
+
+Also, ${PKGSTEM} may use a lot of open files, you may need to raise both
+the system-wide maxfiles and used login class limits.
