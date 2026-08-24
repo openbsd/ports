@@ -1,0 +1,25 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -25,7 +25,7 @@ DIALECT = -std=c11
+ CFLAGS = $(DIALECT) -W -Wall -Werror -fno-common -O2
+ CFLAGS += -DMODES_READSB_VERSION=\"$(READSB_VERSION)\"
+ CFLAGS += -DREADSB_SHORT_VERSION=\"$(shell cat version)\"
+-CFLAGS += -DREADSB_SHORT_COMMIT=\"$(shell git describe --abbrev --dirty --always || echo nogit)\"
++CFLAGS += -DREADSB_SHORT_COMMIT=\"$(shell git describe --abbrev --dirty --always 2>>/dev/null || echo nogit)\"
+ CFLAGS += -Wdate-time -fstack-protector-strong -Wformat -Werror=format-security
+ 
+ # Platform-specific settings
+@@ -41,6 +41,12 @@ else ifeq ($(UNAME), Darwin)
+     LDFLAGS += -L/opt/homebrew/lib
+     LIBS = -pthread -lpthread -lm -lzstd
+     COMPAT += compat/apple/epoll_shim.o
++else ifeq ($(UNAME), OpenBSD)
++    CFLAGS += -D_BSD_SOURCE
++    CFLAGS += -I/usr/local/include
++    CFLAGS += -I/usr/local/include/libepoll-shim
++    LDFLAGS += -L/usr/local/lib
++    LIBS = -pthread -lm -lzstd -lepoll-shim
+ else
+     LIBS = -pthread -lpthread -lm -lrt -lzstd
+ endif

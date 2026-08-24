@@ -1,0 +1,49 @@
+Index: sdr_hackrf.c
+--- sdr_hackrf.c.orig
++++ sdr_hackrf.c
+@@ -46,6 +46,9 @@ void hackRFInitConfig() {
+     hackRF.device = NULL;
+     hackRF.rf_gain = false;
+     hackRF.vga_gain = 48;
++
++    // Set 256 KiB BEFORE readsb allocates mag_buffers
++    Modes.sdr_buf_size = 256 * 1024;
+ }
+ 
+ bool hackRFHandleOption(int key, char *arg) {
+@@ -70,12 +73,12 @@ bool hackRFOpen() {
+     int status;
+ 
+     status = hackrf_init();
+-    if ((status = hackrf_init()) != HACKRF_SUCCESS) {
++    if (status != HACKRF_SUCCESS) {
+         fprintf(stderr, "hackrf_init failed: %s\n", hackrf_error_name(status));
+ 	goto error;
+     }
+ 
+-    fprintf(stderr, "Opening HackRF: %s\n", Modes.dev_name);
++    fprintf(stderr, "Opening HackRF: %s\n", Modes.dev_name ? Modes.dev_name : "default");
+     if (Modes.dev_name) {
+ 	status = hackrf_open_by_serial(Modes.dev_name, &hackRF.device);
+     } else {
+@@ -217,7 +220,7 @@ static int hackrfCallback(hackrf_transfer *transfer) {
+         sampleCounter += slen;
+         // make extra sure that the decode thread isn't sleeping
+         unlockReader();
+-        return 1;
++        return 0;
+     }
+ 
+     dropping = 0;
+@@ -274,10 +277,8 @@ void hackRFRun() {
+         fprintf(stderr, "hackrf_start_rx failed: %s\n", hackrf_error_name(status));
+     }
+ 
+-    struct timespec ts;
+-    clock_gettime(CLOCK_REALTIME, &ts);
+     while (!Modes.exit) {
+-        threadTimedWait(&Threads.reader, &ts, 50);
++        usleep(50000); // 50ms pause
+     }
+ }
+ 

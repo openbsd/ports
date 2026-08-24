@@ -1,0 +1,34 @@
+Index: compat/compat.h
+--- compat/compat.h.orig
++++ compat/compat.h
+@@ -30,6 +30,30 @@
+ #include "apple/stat_compat.h"
+ #include "apple/thread_compat.h"
+ 
++#elif defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
++
++/*
++ * BSD Endian Conversion
++ */
++#include <sys/types.h>
++#include <sys/endian.h>
++
++#ifndef bswap_16
++#define bswap_16(x) bswap16(x)
++#endif
++#ifndef bswap_32
++#define bswap_32(x) bswap32(x)
++#endif
++#ifndef bswap_64
++#define bswap_64(x) bswap64(x)
++#endif
++
++#include "bsd/clock_compat.h"
++#include "bsd/cpu_compat.h"
++#include "bsd/net_compat.h"
++#include "bsd/serial_compat.h"
++//#include "bsd/thread_compat.h"
++
+ #else // other platforms
+ 
+ # include <endian.h>

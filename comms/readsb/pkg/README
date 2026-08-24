@@ -1,0 +1,52 @@
+i+-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Using RTL-SDR Blog
+==================
+
+Best results with rtl-sdr blog:
+
+sudo /usr/local/bin/readsb --device-type rtlsdr \
+--gain 42.1 \
+--sdr-buffer-size 256 \
+--interactive
+
+Using HackRF
+============
+
+Tested with HackRF Pro, but barely seen planes:
+
+sudo /usr/local/bin/readsb \
+  --device-type hackrf \
+  --sdr-buffer-size 256 \
+  --hackrf-vgagain 32 \
+  --interactive
+
+Using SoapySDR
+==============
+
+Plug in your device, and soapysdr will find it:
+
+HackRF or RTLSDR via SoapySDR
+=============================
+
+Works similarly well/bad like above:
+sudo /usr/local/bin/readsb \
+  --device-type soapysdr \
+  --gain 40 \
+  --interactive
+
+stream output to dump1090 to monitor planes on its map
+======================================================
+
+Run dump1090 in net only mode in one console:
+dump1090 --net --net-only --interactive
+
+Stream data over to dump1090:
+sudo /usr/local/bin/readsb --device-type rtlsdr \
+--gain 42.1 \
+--sdr-buffer-size 256 \
+--net \
+--net-connector 127.0.0.1,30001,raw_out
+

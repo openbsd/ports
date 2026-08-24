@@ -1,0 +1,23 @@
+Index: anet.c
+--- anet.c.orig
++++ anet.c
+@@ -73,6 +73,10 @@
+ #include "compat/apple/net_compat.h"
+ #endif
+ 
++#if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
++#include "compat/bsd/net_compat.h"
++#endif
++
+ #include "anet.h"
+ 
+ #define _UNUSED(V) ((void) V)
+@@ -135,7 +139,7 @@ int anetTcpKeepAlive(char *err, int fd)
+     int interval = 2;
+     int count = 3;
+ 
+-    #ifdef __APPLE__
++    #if defined(__APPLE__) || defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
+     _UNUSED(yes);
+     if (set_tcp_keepalive(fd, idle, interval, count) == -1) {
+         anetSetError(err, "setsockopt tcp keepalive: %s", strerror(errno));

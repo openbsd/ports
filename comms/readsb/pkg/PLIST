@@ -1,0 +1,8 @@
+@bin bin/readsb
+@bin bin/viewadsb
+@sample /var/run/readsb
+share/doc/pkg-readmes/${PKGSTEM}
+share/doc/readsb/
+share/doc/readsb/README-api.md
+share/doc/readsb/README-json.md
+share/doc/readsb/README.md

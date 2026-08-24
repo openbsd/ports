@@ -1,0 +1,12 @@
+Index: sdr.c
+--- sdr.c.orig
++++ sdr.c
+@@ -206,7 +206,7 @@ void sdrClose() {
+     pthread_mutex_lock(&Modes.sdrControlMutex);
+ 
+     Modes.sdrInitialized = 0;
+-    current_handler()->close();
++    (current_handler()->close)();
+ 
+     pthread_mutex_unlock(&Modes.sdrControlMutex);
+ }
