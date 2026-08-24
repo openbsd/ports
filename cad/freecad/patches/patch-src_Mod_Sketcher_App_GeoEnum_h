@@ -1,0 +1,19 @@
+Fix build with libcxx22
+
+See https://github.com/FreeCAD/FreeCAD/issues/28726
+
+Index: src/Mod/Sketcher/App/GeoEnum.h
+--- src/Mod/Sketcher/App/GeoEnum.h.orig
++++ src/Mod/Sketcher/App/GeoEnum.h
+@@ -129,6 +129,11 @@ class SketcherExport GeoElementId (public)
+ 
+     int posIdAsInt() const;
+ 
++    inline bool operator<(const GeoElementId& rhs) const {
++        return (GeoId != rhs.GeoId) ? (GeoId < rhs.GeoId)
++                                    : (static_cast<int>(Pos) < static_cast<int>(rhs.Pos));
++    }
++
+     /** @brief GeoElementId of the Root Point
+      */
+     static const GeoElementId RtPnt;

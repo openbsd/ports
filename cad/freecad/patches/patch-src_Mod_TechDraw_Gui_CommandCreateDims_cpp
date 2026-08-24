@@ -1,0 +1,16 @@
+Fix build with libcxx22
+
+See https://github.com/FreeCAD/FreeCAD/pull/28985
+
+Index: src/Mod/TechDraw/Gui/CommandCreateDims.cpp
+--- src/Mod/TechDraw/Gui/CommandCreateDims.cpp.orig
++++ src/Mod/TechDraw/Gui/CommandCreateDims.cpp
+@@ -1097,7 +1097,7 @@ class TDHandlerDimension : public TechDrawHandler, (pr
+             TechDraw::pointPair pp = dim->getLinearPoints();
+             float dx = pp.first().x - pp.second().x;
+             float dy = pp.first().y - pp.second().y;
+-            int alpha = std::round(Base::toDegrees(std::abs<float>(std::atan(type == "DistanceY" ? (dx / dy) : (dy / dx)))));
++            int alpha = std::round(Base::toDegrees(std::abs(std::atan(type == "DistanceY" ? (dx / dy) : (dy / dx)))));
+             std::string sAlpha = std::to_string(alpha);
+             std::string formatSpec = dim->FormatSpec.getStrValue();
+             formatSpec = formatSpec + " x" + sAlpha + "°";

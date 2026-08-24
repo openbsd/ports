@@ -7,7 +7,7 @@ COMMENT =		general purpose parametric 3D CAD modeler
 V =			1.1.0
 DISTNAME =		freecad_source_${V}
 PKGNAME =		freecad-${V}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		OndselSolver              2.0 # 0.0
 SHARED_LIBS +=		E57Format                 0.0 # 0.0
@@ -48,7 +48,8 @@ WANTLIB += xerces-c yaml-cpp z
 SITES =			https://github.com/FreeCAD/FreeCAD/releases/download/${V}/
 
 FIX_CRLF_FILES =	src/Gui/View3DInventor.cpp \
-			src/Gui/ViewProvider.h
+			src/Gui/ViewProvider.h \
+			src/Mod/Sketcher/App/GeoEnum.h
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
