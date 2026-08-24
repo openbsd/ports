@@ -3,6 +3,7 @@ COMMENT=		take pictures and videos
 GNOME_PROJECT=		snapshot
 GNOME_VERSION=		51.beta
 PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION:S/.//}0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -30,6 +31,12 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 			x11/gnome/glycin \
 			x11/gnome/libadwaita
+
+# gtk4paintablesink
+RUN_DEPENDS +=		multimedia/gstreamer1/plugins-rs
+
+# libgstpipewire
+RUN_DEPENDS +=		multimedia/pipewire/pipewire
 
 # needed for camerabin
 BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-bad
