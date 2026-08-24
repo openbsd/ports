@@ -1,9 +1,8 @@
 COMMENT =		command line tool for working with Cooklang recipes
 
-V =			0.32.0
-GH_ACCOUNT =		cooklang
-GH_PROJECT =		cookcli
-GH_TAGNAME =		v${V}
+V =			0.34.0
+DISTNAME =		cook-$V-source
+PKGNAME =		cookcli-$V
 
 CATEGORIES =		textproc
 
@@ -20,10 +19,7 @@ COMPILER_LANGS =	c
 
 WANTLIB += ${MODCARGO_WANTLIB} m sqlite3
 
-DISTFILES.css =		cookcli-$V-output.css
-SITES.css =		https://distfiles.stumpf.co/
-
-EXTRACT_CASES =		*.css) cp ${FULLDISTDIR}/$$archive ${WRKSRC}/static/css/output.css ;;
+SITES =			https://github.com/cooklang/cookcli/releases/download/v${V}/
 
 MODULES =		devel/cargo
 LIB_DEPENDS =		databases/sqlite3
@@ -33,9 +29,7 @@ SEPARATE_BUILD =	Yes
 
 NO_TEST =		Yes
 
-output.css:
-#	maintainer target to regenerate output.css
-	cd ${WRKSRC} && npm i -dd . && npm run -dd build-css
+WRKDIST =		${WRKDIR}/cookcli-$V
 
 .include "crates.inc"
 .include <bsd.port.mk>
