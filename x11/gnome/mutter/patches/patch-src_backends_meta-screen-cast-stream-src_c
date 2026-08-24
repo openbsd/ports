@@ -1,0 +1,56 @@
+Screen cast: memfd_create(2) and file sealing do not exist on OpenBSD;
+use shm_mkstemp(3) + shm_unlink(3) instead (same approach as Mesa's
+util/anon_file.c). shm fds are close-on-exec by default and can be
+passed over the PipeWire socket like a memfd.
+
+Index: src/backends/meta-screen-cast-stream-src.c
+--- src/backends/meta-screen-cast-stream-src.c.orig
++++ src/backends/meta-screen-cast-stream-src.c
+@@ -1996,7 +1996,11 @@
+     }
+   else
+     {
++#ifdef HAVE_MEMFD_CREATE
+       unsigned int seals;
++#else
++      char template[] = "/mutter-screen-cast-XXXXXXXXXX";
++#endif
+ 
+       priv->uses_dma_bufs = FALSE;
+ 
+@@ -2014,6 +2018,7 @@
+       /* Fallback to a memfd buffer */
+       spa_data->type = SPA_DATA_MemFd;
+       spa_data->flags = SPA_DATA_FLAG_READABLE | SPA_DATA_FLAG_MAPPABLE;
++#ifdef HAVE_MEMFD_CREATE
+       spa_data->fd = memfd_create ("mutter-screen-cast-memfd",
+                                    MFD_CLOEXEC | MFD_ALLOW_SEALING);
+       if (spa_data->fd == -1)
+@@ -2021,6 +2026,15 @@
+           g_critical ("Can't create memfd: %m");
+           return;
+         }
++#else
++      spa_data->fd = shm_mkstemp (template);
++      if (spa_data->fd == -1)
++        {
++          g_critical ("Can't create shm object: %m");
++          return;
++        }
++      shm_unlink (template);
++#endif
+ 
+       stride = meta_screen_cast_stream_src_calculate_stride (src, spa_data);
+       spa_data->maxsize = stride * priv->video_format.size.height;
+@@ -2033,9 +2047,11 @@
+           return;
+         }
+ 
++#ifdef HAVE_MEMFD_CREATE
+       seals = F_SEAL_GROW | F_SEAL_SHRINK | F_SEAL_SEAL;
+       if (fcntl (spa_data->fd, F_ADD_SEALS, seals) == -1)
+         g_warning ("Failed to add seals: %m");
++#endif
+ 
+       spa_data->data = mmap (NULL,
+                              spa_data->maxsize,
