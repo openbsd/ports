@@ -1,0 +1,128 @@
+eventfd emulation that survives SCM_RIGHTS.
+
+Index: spa/plugins/support/system.c
+--- spa/plugins/support/system.c.orig
++++ spa/plugins/support/system.c
+@@ -30,6 +30,69 @@ SPA_LOG_TOPIC_DEFINE_STATIC(log_topic, "spa.system");
+ #  define TFD_TIMER_CANCEL_ON_SET (1 << 1)
+ #endif
+ 
++#ifdef __OpenBSD__
++/*
++ * eventfd(2) emulation with a descriptor that can cross process
++ * boundaries.
++ *
++ * epoll-shim's eventfd() returns a kqueue descriptor with read/write
++ * emulated in the creating process. That breaks PipeWire's node
++ * transport twice over: the kernel refuses to pass kqueue descriptors
++ * over SCM_RIGHTS (unp_internalize() returns EINVAL), and even if it
++ * did, the receiving process would lack the process-local state that
++ * makes such an fd readable and writable.
++ *
++ * Instead, use a self-connected loopback datagram socket: one real
++ * kernel object that any holder can write(2) to, poll and read, and
++ * that survives SCM_RIGHTS. write() queues a datagram on the socket's
++ * own receive buffer; read() drains and sums all pending datagrams,
++ * mimicking the eventfd counter. If the receive buffer is full a
++ * wakeup is already pending, so a failed write can be reported as
++ * success.
++ *
++ * Semaphore-style eventfds (SPA_FD_EVENT_SEMAPHORE) keep using
++ * epoll-shim: they are only ever used process-internally (loop.c
++ * invoke ack) and dgram sockets cannot provide read-one-at-a-time
++ * semantics. Dispatch in read/write is done via the ENOTSOCK errno
++ * so that the hot (socket) path costs a single system call.
++ */
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <fcntl.h>
++
++static int dgram_eventfd_create(int flags)
++{
++	struct sockaddr_in sin;
++	socklen_t len = sizeof(sin);
++	int fd, err;
++
++	if ((fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0)
++		return -errno;
++
++	spa_zero(sin);
++	sin.sin_family = AF_INET;
++	sin.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
++	sin.sin_port = 0;
++
++	if (bind(fd, (struct sockaddr *)&sin, sizeof(sin)) < 0 ||
++	    getsockname(fd, (struct sockaddr *)&sin, &len) < 0 ||
++	    connect(fd, (struct sockaddr *)&sin, len) < 0)
++		goto error;
++	if ((flags & SPA_FD_CLOEXEC) &&
++	    fcntl(fd, F_SETFD, fcntl(fd, F_GETFD) | FD_CLOEXEC) < 0)
++		goto error;
++	if ((flags & SPA_FD_NONBLOCK) &&
++	    fcntl(fd, F_SETFL, fcntl(fd, F_GETFL) | O_NONBLOCK) < 0)
++		goto error;
++
++	return fd;
++error:
++	err = -errno;
++	close(fd);
++	return err;
++}
++#endif
++
+ struct impl {
+ 	struct spa_handle handle;
+ 	struct spa_system system;
+@@ -198,6 +261,14 @@ static int impl_eventfd_create(void *object, int flags
+ 		fl |= EFD_NONBLOCK;
+ 	if (flags & SPA_FD_EVENT_SEMAPHORE)
+ 		fl |= EFD_SEMAPHORE;
++#ifdef __OpenBSD__
++	if (!(flags & SPA_FD_EVENT_SEMAPHORE)) {
++		res = dgram_eventfd_create(flags);
++		err = res < 0 ? res : 0;
++		spa_log_debug(impl->log, "%p: new dgram eventfd:%d", impl, res);
++		return res < 0 ? err : res;
++	}
++#endif
+ 	res = eventfd(0, fl);
+ 	err = -errno; /* save errno in case it is overwritten before return */
+ 	spa_log_debug(impl->log, "%p: new fd:%d", impl, res);
+@@ -206,6 +277,15 @@ static int impl_eventfd_create(void *object, int flags
+ 
+ static int impl_eventfd_write(void *object, int fd, uint64_t count)
+ {
++#ifdef __OpenBSD__
++	if (send(fd, &count, sizeof(uint64_t), MSG_DONTWAIT) == sizeof(uint64_t))
++		return 0;
++	if (errno == EAGAIN || errno == EWOULDBLOCK || errno == ENOBUFS)
++		return 0; /* receive queue full: a wakeup is already pending */
++	if (errno != ENOTSOCK)
++		return -errno;
++	/* semaphore eventfd from epoll-shim, fall through */
++#endif
+ 	if (write(fd, &count, sizeof(uint64_t)) != sizeof(uint64_t))
+ 		return -errno;
+ 	return 0;
+@@ -213,6 +293,21 @@ static int impl_eventfd_write(void *object, int fd, ui
+ 
+ static int impl_eventfd_read(void *object, int fd, uint64_t *count)
+ {
++#ifdef __OpenBSD__
++	uint64_t v, total;
++
++	if (recv(fd, &v, sizeof(v), 0) == sizeof(v)) {
++		total = v;
++		/* drain coalesced wakeups, mimicking the eventfd counter */
++		while (recv(fd, &v, sizeof(v), MSG_DONTWAIT) == sizeof(v))
++			total += v;
++		*count = total;
++		return 0;
++	}
++	if (errno != ENOTSOCK)
++		return -errno;
++	/* semaphore eventfd from epoll-shim, fall through */
++#endif
+ 	if (read(fd, count, sizeof(uint64_t)) != sizeof(uint64_t))
+ 		return -errno;
+ 	return 0;

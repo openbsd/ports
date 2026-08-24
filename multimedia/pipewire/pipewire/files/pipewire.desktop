@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=PipeWire Multimedia Service
+Comment=Multimedia processing and routing daemon
+Exec=pipewire
+NoDisplay=true
+X-GNOME-Autostart-Phase=Initialization
+X-GNOME-AutoRestart=true
+X-GNOME-Autostart-Notify=false

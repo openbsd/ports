@@ -1,0 +1,20 @@
+Don't kill clients at connect time with "connection_data: client error -22".
+
+Index: src/modules/module-protocol-native/connection.c
+--- src/modules/module-protocol-native/connection.c.orig
++++ src/modules/module-protocol-native/connection.c
+@@ -800,7 +800,14 @@ int pw_protocol_native_connection_flush(struct pw_prot
+ 			cmsg->cmsg_type = SCM_RIGHTS;
+ 			cmsg->cmsg_len = CMSG_LEN(fds_len);
+ 			memcpy(CMSG_DATA(cmsg), fds, fds_len);
++#ifndef __OpenBSD__
++			/* Linux and FreeBSD accept a msg_controllen without the
++			 * trailing padding; OpenBSD's unp_internalize() requires
++			 * CMSG_ALIGN(cmsg_len) == msg_controllen, i.e. the
++			 * CMSG_SPACE() value already set above, and returns
++			 * EINVAL otherwise (any message with an odd fd count). */
+ 			msg.msg_controllen = cmsg->cmsg_len;
++#endif
+ 		} else {
+ 			msg.msg_control = NULL;
+ 			msg.msg_controllen = 0;

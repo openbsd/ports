@@ -1,0 +1,15 @@
+Nothing in this plugin seems to use the Linux media controller API;
+camera enumeration goes through libcamera itself.
+
+Index: spa/plugins/libcamera/libcamera.h
+--- spa/plugins/libcamera/libcamera.h.orig
++++ spa/plugins/libcamera/libcamera.h
+@@ -4,8 +4,6 @@
+ 
+ #include <errno.h>
+ 
+-#include <linux/media.h>
+-
+ #include <spa/support/log.h>
+ #include <spa/support/system.h>
+ 
