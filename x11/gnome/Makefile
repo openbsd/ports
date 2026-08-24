@@ -87,6 +87,7 @@
      SUBDIR += shell
      SUBDIR += shell-extensions
      SUBDIR += showtime
+     SUBDIR += snapshot
      SUBDIR += sushi
      SUBDIR += system-monitor
      SUBDIR += tecla
