@@ -50,6 +50,7 @@
      SUBDIR += qodem
      SUBDIR += qpage
      SUBDIR += qrq
+     SUBDIR += readsb
      SUBDIR += rtl-sdr
      SUBDIR += rtl_433
      SUBDIR += scmxx
