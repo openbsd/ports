@@ -33,7 +33,7 @@ Index: aom_ports/ppc_cpudetect.c
  int ppc_simd_caps(void) {
    int flags;
    int mask;
-@@ -76,7 +79,40 @@ out_close:
+@@ -76,7 +79,41 @@ out_close:
    close(fd);
    return flags & mask;
  }
@@ -58,8 +58,9 @@ Index: aom_ports/ppc_cpudetect.c
 +  mask = cpu_env_mask();
 +
 +#ifdef __OpenBSD__
-+  unsigned long hwcap = 0;
-+  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
++  unsigned long hwcap;
++  if (elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap)) != 0)
++	hwcap = 0;
  #else
 +  unsigned long hwcap = getauxval(AT_HWCAP);
 +#endif

@@ -12,13 +12,14 @@ Index: vpx_ports/aarch32_cpudetect.c
  
  #include <sys/auxv.h>
  
-@@ -67,7 +67,12 @@ static int arm_get_cpu_caps(void) {
+@@ -67,7 +67,13 @@ static int arm_get_cpu_caps(void) {
  
  static int arm_get_cpu_caps(void) {
    int flags = 0;
 +#ifdef __OpenBSD__
-+  unsigned long hwcap = 0;
-+  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
++  unsigned long hwcap;
++  if (elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap)) != 0)
++	hwcap = 0;
 +#else
    unsigned long hwcap = getauxval(AT_HWCAP);
 +#endif

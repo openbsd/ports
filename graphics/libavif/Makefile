@@ -5,6 +5,7 @@ DIST_TUPLE+=	github lemenkov libyuv \
 		deeb764bb92b6305ee0cb5dae7a5940fdb457fa9 ext/libyuv
 DIST_TUPLE+=	github kmurray libargparse \
 		81998ffafb9c2ac8cf488d31e536a2e6fd6b3fdf ext/libargparse
+REVISION=	0
 CATEGORIES=	graphics
 
 SHARED_LIBS=	avif	9.0

@@ -3,13 +3,14 @@ Add RISC-V CPU feature detection support for OpenBSD.
 Index: aom_ports/riscv_cpudetect.c
 --- aom_ports/riscv_cpudetect.c.orig
 +++ aom_ports/riscv_cpudetect.c
-@@ -26,7 +26,12 @@
+@@ -26,7 +26,13 @@
  int riscv_simd_caps(void) {
    int flags = 0;
  #if HAVE_RVV
 +#ifdef __OpenBSD__
-+  unsigned long hwcap = 0;
-+  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
++  unsigned long hwcap;
++  if (elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap)) != 0)
++	hwcap = 0;
 +#else
    unsigned long hwcap = getauxval(AT_HWCAP);
 +#endif
