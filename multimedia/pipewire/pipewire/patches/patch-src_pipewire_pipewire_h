@@ -1,9 +1,10 @@
+Rename pw_init()/pw_deinit(): they clash with libutil on OpenBSD and FreeBSD.
 https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
 
 Index: src/pipewire/pipewire.h
 --- src/pipewire/pipewire.h.orig
 +++ src/pipewire/pipewire.h
-@@ -53,9 +53,15 @@ extern "C" {
+@@ -53,9 +53,12 @@ extern "C" {
   * \{
   */
  void
@@ -12,12 +13,9 @@ Index: src/pipewire/pipewire.h
 +void pipewire_deinit(void);
  
 -void pw_deinit(void);
-+/* BSD has pw_init already */
++/* BSD libutil already has pw_init()/pw_deinit() */
 +#define pw_init pipewire_init
 +#define pw_deinit pipewire_deinit
-+
-+unsigned int
-+pw_if_nametoindex(const char *ifname, int fd);
  
  bool
  pw_debug_is_category_enabled(const char *name);

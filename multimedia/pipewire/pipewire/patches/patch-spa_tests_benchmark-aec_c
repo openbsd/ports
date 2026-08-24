@@ -1,0 +1,14 @@
+linux/limits.h is not used for anything; limits.h is enough.
+
+Index: spa/tests/benchmark-aec.c
+--- spa/tests/benchmark-aec.c.orig
++++ spa/tests/benchmark-aec.c
+@@ -6,7 +6,7 @@
+ 
+ #include <dlfcn.h>
+ #include <fcntl.h>
+-#include <linux/limits.h>
++#include <limits.h>
+ #include <stdlib.h>
+ #include <stdint.h>
+ #include <stdio.h>

@@ -1,9 +1,11 @@
-Middle chunks: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
+No prctl(2). No EBADFD. Rename pw_init()/pw_deinit(): they clash with
+libutil on OpenBSD and FreeBSD.
+https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
 
 Index: src/pipewire/pipewire.c
 --- src/pipewire/pipewire.c.orig
 +++ src/pipewire/pipewire.c
-@@ -7,9 +7,13 @@
+@@ -7,7 +7,7 @@
  #include <unistd.h>
  #include <limits.h>
  #include <stdio.h>
@@ -11,14 +13,8 @@ Index: src/pipewire/pipewire.c
 +#if !defined(__FreeBSD__) && !defined(__MidnightBSD__) && !defined(__OpenBSD__) && !defined(__GNU__)
  #include <sys/prctl.h>
  #endif
-+#include <sys/types.h>
-+#include <sys/socket.h>
-+#include <sys/ioctl.h>
-+#include <net/if.h>
  #include <pwd.h>
- #include <errno.h>
- #include <dlfcn.h>
-@@ -310,7 +314,11 @@ struct spa_handle *pw_load_spa_handle(const char *lib,
+@@ -310,7 +310,11 @@ struct spa_handle *pw_load_spa_handle(const char *lib,
  error:
  	pw_log_error("load lib: pw_init() was not called");
  	pthread_mutex_unlock(&support_lock);
@@ -30,7 +26,7 @@ Index: src/pipewire/pipewire.c
  	return NULL;
  }
  
-@@ -495,7 +503,7 @@ static struct spa_log *load_journal_logger(struct supp
+@@ -495,7 +499,7 @@ static struct spa_log *load_journal_logger(struct supp
   * This function can be called multiple times.
   */
  SPA_EXPORT
@@ -39,7 +35,7 @@ Index: src/pipewire/pipewire.c
  {
  	const char *str;
  	struct spa_dict_item items[6];
-@@ -610,7 +618,7 @@ done:
+@@ -610,7 +614,7 @@ done:
   * used again after being deinitialized with a new pw_init() call.
   */
  SPA_EXPORT
@@ -48,7 +44,7 @@ Index: src/pipewire/pipewire.c
  {
  	struct support *support = &global_support;
  	struct registry *registry = &support->registry;
-@@ -636,6 +644,21 @@ done:
+@@ -636,6 +640,21 @@ done:
  
  }
  
@@ -70,7 +66,7 @@ Index: src/pipewire/pipewire.c
  /** Check if a debug category is enabled
   *
   * \param name the name of the category to check
-@@ -683,7 +706,7 @@ static void init_prgname(void)
+@@ -683,7 +702,7 @@ static void init_prgname(void)
  		}
  	}
  #endif
@@ -79,25 +75,3 @@ Index: src/pipewire/pipewire.c
  	{
  		if (prctl(PR_GET_NAME, (unsigned long) name, 0, 0, 0) == 0) {
  			prgname = name;
-@@ -801,4 +824,21 @@ SPA_EXPORT
- const struct spa_type_info * pw_type_info(void)
- {
- 	return type_info;
-+}
-+
-+SPA_EXPORT
-+unsigned int pw_if_nametoindex(const char *ifname, int fd)
-+{
-+#ifdef SIOCGIFINDEX
-+	struct ifreq ifr;
-+	snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);
-+	if (ioctl(fd, SIOCGIFINDEX, &ifr) < 0)
-+		return -1;
-+	return ifr.ifr_ifindex;
-+#else
-+	int res;
-+	if ((res = if_nametoindex(ifname)) == 0)
-+		return -1;
-+	return res;
-+#endif
- }

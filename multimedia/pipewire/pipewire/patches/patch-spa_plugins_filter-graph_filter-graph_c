@@ -1,15 +1,31 @@
+No strdupa() on OpenBSD; provide the usual alloca(3)-based fallback
+(same idiom as src/pipewire/utils.h) instead of a leaking strdup().
+
 Index: spa/plugins/filter-graph/filter-graph.c
 --- spa/plugins/filter-graph/filter-graph.c.orig
 +++ spa/plugins/filter-graph/filter-graph.c
-@@ -384,7 +384,11 @@ static struct port *find_port(struct node *node, const
- 	const struct spa_fga_descriptor *d;
- 	uint32_t i, n_ports, port_id = SPA_ID_INVALID;
+@@ -6,6 +6,7 @@
  
-+#ifndef __OpenBSD__
- 	str = strdupa(name);
-+#else
-+	str = strdup(name);
+ #include <string.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <errno.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+@@ -30,6 +31,16 @@
+ #include <spa/debug/types.h>
+ #include <spa/debug/log.h>
+ #include <spa/filter-graph/filter-graph.h>
++
++#ifndef strdupa
++# define strdupa(s)								      \
++	({									      \
++		const char *__old = (s);					      \
++		size_t __len = strlen(__old) + 1;				      \
++		char *__new = (char *) alloca(__len);				      \
++		(char *) memcpy(__new, __old, __len);				      \
++	})
 +#endif
- 	col = strchr(str, ':');
- 	if (col != NULL) {
- 		struct node *find;
+ 
+ #include "audio-plugin.h"
+ #include "audio-dsp-impl.h"

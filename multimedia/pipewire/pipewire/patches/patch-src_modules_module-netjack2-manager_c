@@ -1,17 +1,18 @@
+No SIOCGIFINDEX on OpenBSD; use POSIX if_nametoindex(3) and store the
+index where the multicast join code expects it.
+
 Index: src/modules/module-netjack2-manager.c
 --- src/modules/module-netjack2-manager.c.orig
 +++ src/modules/module-netjack2-manager.c
-@@ -882,8 +882,13 @@ static int make_announce_socket(struct sockaddr_storag
- 	}
+@@ -883,9 +883,9 @@ static int make_announce_socket(struct sockaddr_storag
  	spa_zero(req);
  	if (ifname) {
-+#ifdef SIOCGIFINDEX
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);
- 		res = ioctl(fd, SIOCGIFINDEX, &req);
-+#else
-+		if ((res = if_nametoindex(ifname)) == 0)
-+			res = -1;
-+#endif
+-		res = ioctl(fd, SIOCGIFINDEX, &req);
++		res = (req.ifr_ifindex = if_nametoindex(ifname)) == 0 ? -1 : 0;
  	        if (res < 0)
- 	                pw_log_warn("SIOCGIFINDEX %s failed: %m", ifname);
+-	                pw_log_warn("SIOCGIFINDEX %s failed: %m", ifname);
++	                pw_log_warn("if_nametoindex %s failed: %m", ifname);
  	}
+ 	res = 0;
+ 	if (af == AF_INET) {

@@ -1,3 +1,6 @@
+No SIOCGIFINDEX on OpenBSD; use POSIX if_nametoindex(3) and store the
+index where the multicast join code expects it.
+
 Index: src/modules/module-vban-recv.c
 --- src/modules/module-vban-recv.c.orig
 +++ src/modules/module-vban-recv.c
@@ -6,10 +9,10 @@ Index: src/modules/module-vban-recv.c
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);
 -		res = ioctl(fd, SIOCGIFINDEX, &req);
-+		res = pw_if_nametoindex(ifname, fd);
++		res = (req.ifr_ifindex = if_nametoindex(ifname)) == 0 ? -1 : 0;
  	        if (res < 0)
 -	                pw_log_warn("SIOCGIFINDEX %s failed: %m", ifname);
-+	                pw_log_warn("pw_if_nametoindex %s failed: %m", ifname);
++	                pw_log_warn("if_nametoindex %s failed: %m", ifname);
  	}
  	res = 0;
  	if (af == AF_INET) {

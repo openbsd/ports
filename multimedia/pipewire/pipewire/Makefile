@@ -5,7 +5,10 @@ PW_PROJECT=		pipewire
 PW_VERSION=		1.6.8
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-SHARED_LIBS += pipewire-0.3              0.4 # 0.1608.0
+REVISION-main=		0
+REVISION-libs=		0
+
+SHARED_LIBS += pipewire-0.3              1.0 # 0.1608.0
 
 MULTI_PACKAGES=		-main -libs
 
@@ -40,8 +43,6 @@ LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 			x11/dbus
 
 LIB_DEPENDS-libs=	devel/gettext,-runtime
-
-RUN_DEPENDS-main=	${MODDCONF_RUN_DEPENDS}
 
 # needs a pipewire-session-manager; see patch-src_daemon_pipewire_conf_in
 RUN_DEPENDS-main +=	multimedia/pipewire/wireplumber
@@ -84,7 +85,7 @@ CONFIGURE_ARGS +=	-Drlimits-install=false
 # only useful for examples which we don't install
 CONFIGURE_ARGS +=	-Dsdl2=disabled
 
-# only usesul for bluez5 which we disable above
+# only useful for bluez5 which we disable above
 CONFIGURE_ARGS +=	-Dlibusb=disabled
 
 # needs udev
@@ -99,8 +100,6 @@ CONFIGURE_ARGS +=	-Djack=disabled
 # Jack3 server
 CONFIGURE_ARGS +=	-Dpipewire-jack=disabled
 
-CFLAGS +=		-DECHRNG=ERANGE
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/daemon/pipewire.conf.in
 
@@ -108,7 +107,8 @@ pre-configure:
 # (audio/pulseaudio) but it seems to depend on systemd activation for now
 CONFIGURE_ARGS +=	-Dlibpulse=disabled
 # XXX prevent conflict with audio/pulseaudio that installs the same gschema;
-# add devel/dconf to MODULES once we enable pulse support
+# add devel/dconf to MODULES once we enable pulse support and
+# RUN_DEPENDS-main +=	${MODDCONF_RUN_DEPENDS}
 post-install:
 	rm -f ${PREFIX}/share/glib-2.0/schemas/org.freedesktop.pulseaudio.gschema.xml
 

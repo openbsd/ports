@@ -1,4 +1,6 @@
-No SO_PASSCRED on OpenBSD.
+No SIOCGIFINDEX and no SO_PASSCRED on OpenBSD; if_nametoindex(3) is POSIX
+and, unlike the previous approach, actually stores the index into the
+ifreq that the multicast join code reads below.
 
 Index: src/modules/module-rtp-sap.c
 --- src/modules/module-rtp-sap.c.orig
@@ -7,7 +9,7 @@ Index: src/modules/module-rtp-sap.c
  		return -1;
  	}
  
-+#ifndef __OpenBSD__
++#ifdef SO_PASSCRED
  	int val = 1;
  	if (setsockopt(fd, SOL_SOCKET, SO_PASSCRED, &val, sizeof(val)) < 0) {
  		pw_log_warn("Failed to bind PTP management socket");
@@ -22,10 +24,10 @@ Index: src/modules/module-rtp-sap.c
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);
 -		res = ioctl(fd, SIOCGIFINDEX, &req);
-+		res = pw_if_nametoindex(ifname, fd);
++		res = (req.ifr_ifindex = if_nametoindex(ifname)) == 0 ? -1 : 0;
  	        if (res < 0)
 -	                pw_log_warn("SIOCGIFINDEX %s failed: %m", ifname);
-+	                pw_log_warn("pw_if_nametoindex %s failed: %m", ifname);
++	                pw_log_warn("if_nametoindex %s failed: %m", ifname);
  	}
  	res = 0;
  	if (af == AF_INET) {
