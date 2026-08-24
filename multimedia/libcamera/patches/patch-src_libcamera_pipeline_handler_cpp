@@ -1,0 +1,18 @@
+makedev(2) lives in <sys/types.h> on OpenBSD; there is no
+<sys/sysmacros.h>.
+
+Index: src/libcamera/pipeline_handler.cpp
+--- src/libcamera/pipeline_handler.cpp.orig
++++ src/libcamera/pipeline_handler.cpp
+@@ -9,7 +9,11 @@
+ 
+ #include <chrono>
+ #include <sys/stat.h>
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#else
+ #include <sys/sysmacros.h>
++#endif
+ 
+ #include <libcamera/base/log.h>
+ #include <libcamera/base/mutex.h>

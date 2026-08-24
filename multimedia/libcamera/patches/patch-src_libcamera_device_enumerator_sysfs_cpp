@@ -1,0 +1,22 @@
+The absence of media devices is not an error; pipeline handlers that do
+not use media devices (virtual) can still register cameras.
+
+Index: src/libcamera/device_enumerator_sysfs.cpp
+--- src/libcamera/device_enumerator_sysfs.cpp.orig
++++ src/libcamera/device_enumerator_sysfs.cpp
+@@ -48,9 +48,15 @@ int DeviceEnumeratorSysfs::enumerate()
+ 	}
+ 
+ 	if (!dir) {
++#ifdef __OpenBSD__
++		/* No media controller support; the virtual pipeline handler
++		 * does not use media devices. */
++		return 0;
++#else
+ 		LOG(DeviceEnumerator, Error)
+ 			<< "No valid sysfs media device directory";
+ 		return -ENODEV;
++#endif
+ 	}
+ 
+ 	while ((ent = readdir(dir)) != nullptr) {

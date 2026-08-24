@@ -1,0 +1,14 @@
+strchrnul() is a GNU extension.
+
+Index: src/libcamera/base/log.cpp
+--- src/libcamera/base/log.cpp.orig
++++ src/libcamera/base/log.cpp
+@@ -645,7 +645,7 @@ void Logger::parseLogLevels()
+ 		return;
+ 
+ 	for (const char *pair = debug; *debug != '\0'; pair = debug) {
+-		const char *comma = strchrnul(debug, ',');
++		const char *comma = debug + strcspn(debug, ",");
+ 		size_t len = comma - pair;
+ 
+ 		/* Skip over the comma. */

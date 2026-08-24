@@ -1,0 +1,27 @@
+Fix for undefined symbol 'backtrace'.
+eventfd(2) is provided by epoll-shim.
+
+Index: src/libcamera/base/meson.build
+--- src/libcamera/base/meson.build.orig
++++ src/libcamera/base/meson.build
+@@ -31,6 +31,7 @@ libunwind = dependency('libunwind', required : get_opt
+ 
+ if cc.has_header_symbol('execinfo.h', 'backtrace')
+     config_h.set('HAVE_BACKTRACE', 1)
++    libexecinfo = cc.find_library('libexecinfo', required : false)
+ endif
+ 
+ if libdw.found()
+@@ -46,7 +47,12 @@ libcamera_base_deps = [
+     libdw,
+     libthreads,
+     libunwind,
++    libexecinfo,
+ ]
++
++if host_machine.system() != 'linux'
++    libcamera_base_deps += dependency('epoll-shim')
++endif
+ 
+ # Internal components must use the libcamera_base_private dependency to enable
+ # the use of headers which must not be exposed to the libcamera public api.

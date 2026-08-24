@@ -1,0 +1,69 @@
+COMMENT=	complex camera support library
+
+V=		0.7.2
+DISTNAME=	libcamera-${V}
+WRKDIST=	${WRKDIR}/libcamera-v${V}-191e202178f02430b5942397c70d215cdd2056fa
+
+SHARED_LIBS += camera-base               0.0 # 0.7.2
+SHARED_LIBS += camera                    0.0 # 0.7.2
+
+CATEGORIES=	multimedia devel
+
+HOMEPAGE=	https://libcamera.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# BSD, GPLv2+, LGPLv2.1+, MIT...
+# see ${WRKSRC}/LICENSES/*
+PERMIT_PACKAGE=	Yes
+
+SITES=		https://gitlab.freedesktop.org/camera/libcamera/-/archive/v${V}/
+
+WANTLIB += ${COMPILER_LIBCXX} epoll-shim execinfo glib-2.0 gnutls
+WANTLIB += gobject-2.0 gstallocators-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB += gstvideo-1.0 m yaml-0 yuv
+
+MODULES=	devel/meson
+
+BUILD_DEPENDS=	devel/py-ply \
+		textproc/py-yaml \
+		www/py-jinja2
+
+LIB_DEPENDS=	devel/epoll-shim \
+		devel/libyaml \
+		multimedia/gstreamer1/plugins-base \
+		multimedia/libyuv \
+		security/gnutls
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+CONFIGURE_ARGS=	-Dqcam=disabled \
+		-Dudev=disabled \
+		-Dlibdw=disabled \
+		-Dlibunwind=disabled \
+		-Ddocumentation=disabled \
+		-Dlc-compliance=disabled \
+		-Dcam=disabled \
+		-Dqcam=disabled \
+		-Dpycamera=disabled \
+		-Dv4l2=disabled
+
+# no media controller API on OpenBSD: the virtual pipeline handler and the
+# OpenBSD specific uvcbsd handler (video(4) webcams) are the only ones that
+# can work; neither uses an IPA module
+CONFIGURE_ARGS +=	-Dpipelines=virtual,uvcbsd \
+			-Dipas=[]
+
+# needs lttng-ust
+CONFIGURE_ARGS +=	-Dtracing=disabled
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
+# compat shims for the Linux UAPI headers bundled in include/linux/, and
+# the OpenBSD specific uvcbsd pipeline handler
+post-extract:
+	cp ${FILESDIR}/*.h ${WRKDIST}/include/linux/
+	cp -R ${FILESDIR}/uvcbsd ${WRKDIST}/src/libcamera/pipeline/
+
+.include <bsd.port.mk>

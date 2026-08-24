@@ -1,0 +1,60 @@
+No memfd_create(2) on OpenBSD; create an anonymous shared memory file
+with shm_mkstemp(3) instead. File sealing is not supported.
+
+Index: src/libcamera/base/memfd.cpp
+--- src/libcamera/base/memfd.cpp.orig
++++ src/libcamera/base/memfd.cpp
+@@ -30,12 +30,14 @@ namespace {
+ #define F_SEAL_GROW		0x0004
+ #endif
+ 
++#ifndef __OpenBSD__
+ #if not HAVE_MEMFD_CREATE
+ int memfd_create(const char *name, unsigned int flags)
+ {
+ 	return syscall(SYS_memfd_create, name, flags);
+ }
+ #endif
++#endif
+ 
+ } /* namespace */
+ #endif /* __DOXYGEN__ */
+@@ -83,7 +85,22 @@ LOG_DECLARE_CATEGORY(File)
+  */
+ UniqueFD MemFd::create(const char *name, std::size_t size, Seals seals)
+ {
++#ifdef __OpenBSD__
++	/*
++	 * OpenBSD has no memfd_create(); create an anonymous file backed
++	 * by shared memory instead.
++	 */
++	char tmpl[] = "/tmp/libcamera-XXXXXXXXXX";
++
++	(void)seals;
++	int ret = shm_mkstemp(tmpl);
++	if (ret >= 0) {
++		shm_unlink(tmpl);
++		fcntl(ret, F_SETFD, FD_CLOEXEC);
++	}
++#else
+ 	int ret = memfd_create(name, MFD_ALLOW_SEALING | MFD_CLOEXEC);
++#endif
+ 	if (ret < 0) {
+ 		ret = errno;
+ 		LOG(File, Error)
+@@ -103,6 +120,7 @@ UniqueFD MemFd::create(const char *name, std::size_t s
+ 		return {};
+ 	}
+ 
++#ifndef __OpenBSD__
+ 	if (seals) {
+ 		int fileSeals = (seals & Seal::Shrink ? F_SEAL_SHRINK : 0)
+ 			      | (seals & Seal::Grow ? F_SEAL_GROW : 0);
+@@ -116,6 +134,7 @@ UniqueFD MemFd::create(const char *name, std::size_t s
+ 			return {};
+ 		}
+ 	}
++#endif
+ 
+ 	return memfd;
+ }

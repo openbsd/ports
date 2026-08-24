@@ -1,0 +1,154 @@
+- No indirect syscall(2) interface on OpenBSD. The raw SYS_openat is only
+  used to bypass the v4l2-compat LD_PRELOAD interposer.
+- video(4) does not implement the extended control ioctls
+  (VIDIOC_QUERY_EXT_CTRL, VIDIOC_G/S_EXT_CTRLS) nor control enumeration
+  with V4L2_CTRL_FLAG_NEXT_CTRL; enumerate the user and camera control
+  classes with the classic VIDIOC_QUERYCTRL ioctl and read/write control
+  values one by one with VIDIOC_G/S_CTRL.
+
+Index: src/libcamera/v4l2_device.cpp
+--- src/libcamera/v4l2_device.cpp.orig
++++ src/libcamera/v4l2_device.cpp
+@@ -85,8 +85,13 @@ int V4L2Device::open(unsigned int flags)
+ 		return -EBUSY;
+ 	}
+ 
++#ifdef __OpenBSD__
++	UniqueFD fd(::open(deviceNode_.c_str(),
++			   static_cast<int>(flags | O_CLOEXEC)));
++#else
+ 	UniqueFD fd(syscall(SYS_openat, AT_FDCWD, deviceNode_.c_str(),
+ 			    flags | O_CLOEXEC));
++#endif
+ 	if (!fd.isValid()) {
+ 		int ret = -errno;
+ 		LOG(V4L2, Error) << "Failed to open V4L2 device '"
+@@ -245,6 +250,30 @@ ControlList V4L2Device::getControls(Span<const uint32_
+ 		}
+ 	}
+ 
++#ifdef __OpenBSD__
++	/* No VIDIOC_G_EXT_CTRLS; read the controls one by one. */
++	int ret = 0;
++	unsigned int errorIdx = 0;
++
++	if (request) {
++		LOG(V4L2, Error) << "The request API is not supported";
++		return {};
++	}
++
++	for (v4l2_ext_control &v4l2Ctrl : v4l2Ctrls) {
++		struct v4l2_control clsCtrl = {};
++
++		clsCtrl.id = v4l2Ctrl.id;
++		ret = ioctl(VIDIOC_G_CTRL, &clsCtrl);
++		if (ret)
++			break;
++
++		v4l2Ctrl.value = clsCtrl.value;
++		errorIdx++;
++	}
++
++	if (ret) {
++#else
+ 	struct v4l2_ext_controls v4l2ExtCtrls = {};
+ 	v4l2ExtCtrls.controls = v4l2Ctrls.data();
+ 	v4l2ExtCtrls.count = v4l2Ctrls.size();
+@@ -259,6 +288,7 @@ ControlList V4L2Device::getControls(Span<const uint32_
+ 	int ret = ioctl(VIDIOC_G_EXT_CTRLS, &v4l2ExtCtrls);
+ 	if (ret) {
+ 		unsigned int errorIdx = v4l2ExtCtrls.error_idx;
++#endif
+ 
+ 		/* Generic validation error. */
+ 		if (errorIdx >= v4l2Ctrls.size()) {
+@@ -390,6 +420,31 @@ int V4L2Device::setControls(ControlList *ctrls, const 
+ 		}
+ 	}
+ 
++#ifdef __OpenBSD__
++	/* No VIDIOC_S_EXT_CTRLS; write the controls one by one. */
++	int ret = 0;
++	unsigned int errorIdx = 0;
++
++	if (request) {
++		LOG(V4L2, Error) << "The request API is not supported";
++		return -EINVAL;
++	}
++
++	for (v4l2_ext_control &v4l2Ctrl : v4l2Ctrls) {
++		struct v4l2_control clsCtrl = {};
++
++		clsCtrl.id = v4l2Ctrl.id;
++		clsCtrl.value = v4l2Ctrl.value;
++		ret = ioctl(VIDIOC_S_CTRL, &clsCtrl);
++		if (ret)
++			break;
++
++		v4l2Ctrl.value = clsCtrl.value;
++		errorIdx++;
++	}
++
++	if (ret) {
++#else
+ 	struct v4l2_ext_controls v4l2ExtCtrls = {};
+ 	v4l2ExtCtrls.controls = v4l2Ctrls.data();
+ 	v4l2ExtCtrls.count = v4l2Ctrls.size();
+@@ -404,6 +459,7 @@ int V4L2Device::setControls(ControlList *ctrls, const 
+ 	int ret = ioctl(VIDIOC_S_EXT_CTRLS, &v4l2ExtCtrls);
+ 	if (ret) {
+ 		unsigned int errorIdx = v4l2ExtCtrls.error_idx;
++#endif
+ 
+ 		/* Generic validation error. */
+ 		if (errorIdx >= v4l2Ctrls.size()) {
+@@ -708,11 +764,49 @@ void V4L2Device::listControls()
+ 	ControlInfoMap::Map ctrls;
+ 	struct v4l2_query_ext_ctrl ctrl = {};
+ 
++#ifdef __OpenBSD__
++	/*
++	 * There is no VIDIOC_QUERY_EXT_CTRL nor V4L2_CTRL_FLAG_NEXT_CTRL
++	 * based enumeration; scan the user and camera control classes with
++	 * the classic VIDIOC_QUERYCTRL ioctl and convert the result.
++	 */
++	std::vector<uint32_t> candidates;
++
++	for (uint32_t id = V4L2_CID_BASE; id < V4L2_CID_LASTP1; id++)
++		candidates.push_back(id);
++	for (uint32_t id = V4L2_CID_CAMERA_CLASS_BASE + 1;
++	     id < V4L2_CID_CAMERA_CLASS_BASE + 64; id++)
++		candidates.push_back(id);
++
++	for (uint32_t id : candidates) {
++		struct v4l2_queryctrl qc = {};
++
++		qc.id = id;
++		if (ioctl(VIDIOC_QUERYCTRL, &qc))
++			continue;
++
++		if (qc.flags & V4L2_CTRL_FLAG_DISABLED)
++			continue;
++
++		ctrl = {};
++		ctrl.id = qc.id;
++		ctrl.type = qc.type;
++		static_assert(sizeof(ctrl.name) >= sizeof(qc.name));
++		memcpy(ctrl.name, qc.name, sizeof(qc.name));
++		ctrl.minimum = qc.minimum;
++		ctrl.maximum = qc.maximum;
++		ctrl.step = qc.step;
++		ctrl.default_value = qc.default_value;
++		ctrl.flags = qc.flags;
++		ctrl.elems = 1;
++		ctrl.elem_size = sizeof(int32_t);
++#else
+ 	while (1) {
+ 		ctrl.id |= V4L2_CTRL_FLAG_NEXT_CTRL |
+ 			   V4L2_CTRL_FLAG_NEXT_COMPOUND;
+ 		if (ioctl(VIDIOC_QUERY_EXT_CTRL, &ctrl))
+ 			break;
++#endif
+ 
+ 		if (ctrl.type == V4L2_CTRL_TYPE_CTRL_CLASS ||
+ 		    ctrl.flags & V4L2_CTRL_FLAG_DISABLED)

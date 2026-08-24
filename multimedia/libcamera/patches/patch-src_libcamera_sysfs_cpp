@@ -1,0 +1,18 @@
+major(2)/minor(2) live in <sys/types.h> on OpenBSD; there is no
+<sys/sysmacros.h>.
+
+Index: src/libcamera/sysfs.cpp
+--- src/libcamera/sysfs.cpp.orig
++++ src/libcamera/sysfs.cpp
+@@ -10,7 +10,11 @@
+ #include <fstream>
+ #include <sstream>
+ #include <sys/stat.h>
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#else
+ #include <sys/sysmacros.h>
++#endif
+ 
+ #include <libcamera/base/file.h>
+ #include <libcamera/base/log.h>

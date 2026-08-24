@@ -1,0 +1,19 @@
+Do not build the (uninstalled) apps helper library when all applications
+are disabled; it drags in optional dependencies (libtiff, libevent)
+found on the build host.
+
+Index: src/apps/meson.build
+--- src/apps/meson.build.orig
++++ src/apps/meson.build
+@@ -3,6 +3,11 @@
+ opt_cam = get_option('cam')
+ opt_lc_compliance = get_option('lc-compliance')
+ 
++if not opt_cam.allowed() and not opt_lc_compliance.allowed() and \
++   not get_option('qcam').allowed()
++    subdir_done()
++endif
++
+ # libevent is needed by cam and lc-compliance. As they are both feature options,
+ # they can't be combined with simple boolean logic.
+ libevent = dependency('libevent_pthreads', required : opt_cam)

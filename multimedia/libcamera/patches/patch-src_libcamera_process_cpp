@@ -1,0 +1,140 @@
+No clone3()/pidfd on OpenBSD. Use fork(2) and monitor the child with a
+kqueue(2) EVFILT_PROC/NOTE_EXIT filter, whose descriptor stands in for
+the pidfd. Note that the CLONE_NEWUSER/CLONE_NEWNET based sandboxing of
+IPA proxy workers is not available. Use closefrom(2) as there is no
+close_range(2) nor /proc/self/fd.
+
+Index: src/libcamera/process.cpp
+--- src/libcamera/process.cpp.orig
++++ src/libcamera/process.cpp
+@@ -12,6 +12,9 @@
+ #include <fcntl.h>
+ #include <signal.h>
+ #include <string.h>
++#ifdef __OpenBSD__
++#include <sys/event.h>
++#endif
+ #include <sys/socket.h>
+ #include <sys/syscall.h>
+ #include <sys/types.h>
+@@ -20,8 +23,10 @@
+ #include <utility>
+ #include <vector>
+ 
++#ifndef __OpenBSD__
+ #include <linux/sched.h>
+ #include <linux/wait.h> /* glibc only provides `P_PIDFD` in `sys/wait.h` since 2.36 */
++#endif
+ 
+ #include <libcamera/base/event_notifier.h>
+ #include <libcamera/base/log.h>
+@@ -44,6 +49,18 @@ void closeAllFdsExcept(std::vector<int> v)
+ 
+ 	ASSERT(v.empty() || v.front() >= 0);
+ 
++#ifdef __OpenBSD__
++	unsigned int prev = 0;
++
++	for (unsigned int curr : v) {
++		while (prev < curr)
++			close(prev++);
++		prev = curr + 1;
++	}
++
++	closefrom(prev);
++	return;
++#else
+ #if HAVE_CLOSE_RANGE
+ 	/*
+ 	 * At the moment libcamera does not require at least Linux 5.9,
+@@ -88,6 +105,7 @@ void closeAllFdsExcept(std::vector<int> v)
+ 	}
+ 
+ 	closedir(dir);
++#endif
+ }
+ 
+ } /* namespace */
+@@ -150,6 +168,39 @@ int Process::start(const std::string &path,
+ 			return -EINVAL;
+ 	}
+ 
++#ifdef __OpenBSD__
++	/*
++	 * OpenBSD has no clone3()/pidfd. Use fork() and monitor the child
++	 * with a kqueue EVFILT_PROC filter, whose file descriptor is used
++	 * in place of the pidfd. Note that the CLONE_NEWUSER/CLONE_NEWNET
++	 * based sandboxing of the child process is not available.
++	 */
++	int pidfd = kqueue();
++	if (pidfd < 0) {
++		int ret = -errno;
++		LOG(Process, Error)
++			<< "Failed to create kqueue: " << strerror(-ret);
++		return ret;
++	}
++
++	long childPid = fork();
++	if (childPid < 0) {
++		int ret = -errno;
++		close(pidfd);
++		LOG(Process, Error) << "Failed to fork: " << strerror(-ret);
++		return ret;
++	}
++
++	if (childPid) {
++		struct kevent kev;
++
++		EV_SET(&kev, childPid, EVFILT_PROC, EV_ADD, NOTE_EXIT, 0, nullptr);
++		if (kevent(pidfd, &kev, 1, nullptr, 0, nullptr) < 0)
++			LOG(Process, Warning)
++				<< "Failed to monitor child process: "
++				<< strerror(errno);
++	}
++#else
+ 	clone_args cargs = {};
+ 	int pidfd;
+ 
+@@ -163,6 +214,7 @@ int Process::start(const std::string &path,
+ 		LOG(Process, Error) << "Failed to fork: " << strerror(-ret);
+ 		return ret;
+ 	}
++#endif
+ 
+ 	if (childPid) {
+ 		pid_ = childPid;
+@@ -221,11 +273,20 @@ void Process::onPidfdNotify()
+ 
+ 	siginfo_t info;
+ 
++#ifdef __OpenBSD__
++	struct kevent kev;
++	const struct timespec ts = {};
++
++	kevent(pidfd.get(), nullptr, 0, &kev, 1, &ts);
++
++	if (waitid(P_PID, pid, &info, WNOHANG | WEXITED) >= 0) {
++#else
+ 	/*
+ 	 * `static_cast` is needed because `P_PIDFD` is not defined in `sys/wait.h` if the C standard library
+ 	 * is old enough. So `P_PIDFD` is taken from `linux/wait.h`, where it is just an integer #define.
+ 	 */
+ 	if (waitid(static_cast<idtype_t>(P_PIDFD), pidfd.get(), &info, WNOHANG | WEXITED) >= 0) {
++#endif
+ 		ASSERT(info.si_pid == pid);
+ 
+ 		LOG(Process, Debug)
+@@ -280,8 +341,13 @@ void Process::onPidfdNotify()
+  */
+ void Process::kill()
+ {
++#ifdef __OpenBSD__
++	if (pid_ > 0)
++		::kill(pid_, SIGKILL);
++#else
+ 	if (pidfd_.isValid())
+ 		syscall(SYS_pidfd_send_signal, pidfd_.get(), SIGKILL, nullptr, 0);
++#endif
+ }
+ 
+ } /* namespace libcamera */

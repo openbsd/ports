@@ -1,0 +1,23 @@
+Iterate over a copy of the request buffer map: as soon as the last
+bufferCompleted signal is emitted, the camera manager thread can
+complete the request and the application may reuse() it, clearing the
+map while it is still being iterated here.
+
+Index: src/libcamera/pipeline/virtual/virtual.cpp
+--- src/libcamera/pipeline/virtual/virtual.cpp.orig
++++ src/libcamera/pipeline/virtual/virtual.cpp
+@@ -130,7 +130,13 @@ VirtualCameraData::VirtualCameraData(PipelineHandler *
+ 
+ void VirtualCameraData::processRequest(Request *request)
+ {
+-	for (const auto &[stream, buffer] : request->buffers()) {
++	/*
++	 * Iterate over a copy; emitting the last bufferCompleted signal
++	 * allows the request to complete and be reused concurrently,
++	 * invalidating iterators into its buffer map.
++	 */
++	const Request::BufferMap buffers = request->buffers();
++	for (const auto &[stream, buffer] : buffers) {
+ 		bool found = false;
+ 		/* map buffer and fill test patterns */
+ 		for (auto &streamConfig : streamConfigs_) {

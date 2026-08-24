@@ -1,0 +1,14 @@
+strchrnul() is a GNU extension.
+
+Index: src/apps/common/options.cpp
+--- src/apps/common/options.cpp.orig
++++ src/apps/common/options.cpp
+@@ -364,7 +364,7 @@ KeyValueParser::Options KeyValueParser::parse(const ch
+ 	Options options;
+ 
+ 	for (const char *pair = arguments; *arguments != '\0'; pair = arguments) {
+-		const char *comma = strchrnul(arguments, ',');
++		const char *comma = arguments + strcspn(arguments, ",");
+ 		size_t len = comma - pair;
+ 
+ 		/* Skip over the comma. */

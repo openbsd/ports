@@ -1,0 +1,23 @@
+No dma-buf providers (dma-heap, udmabuf) on OpenBSD; fall back to plain
+shared memory backed buffers.
+
+Index: include/libcamera/internal/dma_buf_allocator.h
+--- include/libcamera/internal/dma_buf_allocator.h.orig
++++ include/libcamera/internal/dma_buf_allocator.h
+@@ -33,7 +33,7 @@ class DmaBufAllocator (public)
+ 
+ 	DmaBufAllocator(DmaBufAllocatorFlags flags = DmaBufAllocatorFlag::CmaHeap);
+ 	~DmaBufAllocator();
+-	bool isValid() const { return providerHandle_.isValid(); }
++	bool isValid() const { return providerHandle_.isValid() || memfdFallback_; }
+ 	UniqueFD alloc(const char *name, std::size_t size);
+ 
+ 	int exportBuffers(unsigned int count,
+@@ -48,6 +48,7 @@ class DmaBufAllocator (public)
+ 	UniqueFD allocFromUDmaBuf(const char *name, std::size_t size);
+ 	UniqueFD providerHandle_;
+ 	DmaBufAllocatorFlag type_;
++	bool memfdFallback_ = false;
+ };
+ 
+ class DmaSyncer final

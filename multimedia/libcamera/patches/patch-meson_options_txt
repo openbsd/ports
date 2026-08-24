@@ -1,0 +1,13 @@
+Register the OpenBSD uvcbsd pipeline handler.
+
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -85,6 +85,7 @@ option('pipelines',
+             'rpi/pisp',
+             'rpi/vc4',
+             'simple',
++            'uvcbsd',
+             'uvcvideo',
+             'vimc',
+             'virtual'

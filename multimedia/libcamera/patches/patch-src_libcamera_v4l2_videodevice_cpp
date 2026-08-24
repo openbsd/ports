@@ -1,0 +1,195 @@
+- No indirect syscall(2) interface on OpenBSD. The raw SYS_openat is only
+  used to bypass the v4l2-compat LD_PRELOAD interposer.
+- The V4L2 API version reported by video(4) is not a Linux kernel
+  version; skip the kernel 5.0 uAPI check.
+- uvideo(4) does not report bytesperline; compute the stride from the
+  pixel format when the driver leaves it unset, otherwise consumers end
+  up with a zero stride.
+- video(4) requires the memory type to be set in VIDIOC_QUERYBUF, does
+  not support freeing buffers with VIDIOC_REQBUFS(0) (buffers are freed
+  on close(2)), and rejects VIDIOC_DQBUF until mmap(2) has been called
+  on the device (VIDIOC_STREAMOFF resets that state).
+- video(4) has no dma-buf support (VIDIOC_EXPBUF); reference the video
+  device fd itself in FrameBuffer planes, at the mmap offset reported by
+  VIDIOC_QUERYBUF. This matches the video(4) mmap contract where MMAP
+  buffers are mapped through the device fd. Only single-planar buffer
+  types are supported, which is all video(4) provides.
+
+Index: src/libcamera/v4l2_videodevice.cpp
+--- src/libcamera/v4l2_videodevice.cpp.orig
++++ src/libcamera/v4l2_videodevice.cpp
+@@ -15,6 +15,9 @@
+ #include <sys/ioctl.h>
+ #include <sys/syscall.h>
+ #include <sys/time.h>
++#ifdef __OpenBSD__
++#include <sys/mman.h>
++#endif
+ #include <unistd.h>
+ #include <vector>
+ 
+@@ -583,6 +586,7 @@ int V4L2VideoDevice::open()
+ 		return ret;
+ 	}
+ 
++#ifndef __OpenBSD__
+ 	if (caps_.version < KERNEL_VERSION(5, 0, 0)) {
+ 		LOG(V4L2, Error)
+ 			<< "V4L2 API v" << (caps_.version >> 16)
+@@ -591,6 +595,7 @@ int V4L2VideoDevice::open()
+ 			<< " too old, v5.0.0 or later is required";
+ 		return -EINVAL;
+ 	}
++#endif
+ 
+ 	if (!caps_.hasStreaming()) {
+ 		LOG(V4L2, Error) << "Device does not support streaming I/O";
+@@ -1066,6 +1071,15 @@ int V4L2VideoDevice::getFormatSingleplane(V4L2DeviceFo
+ 	format->fourcc = V4L2PixelFormat(pix->pixelformat);
+ 	format->planesCount = 1;
+ 	format->planes[0].bpl = pix->bytesperline;
++#ifdef __OpenBSD__
++	/* uvideo(4) does not report bytesperline. */
++	if (!format->planes[0].bpl) {
++		const PixelFormatInfo &info =
++			PixelFormatInfo::info(format->fourcc);
++		if (info.isValid())
++			format->planes[0].bpl = info.stride(pix->width, 0);
++	}
++#endif
+ 	format->planes[0].size = pix->sizeimage;
+ 	format->colorSpace = toColorSpace(*pix);
+ 
+@@ -1108,6 +1122,15 @@ int V4L2VideoDevice::trySetFormatSingleplane(V4L2Devic
+ 	format->fourcc = V4L2PixelFormat(pix->pixelformat);
+ 	format->planesCount = 1;
+ 	format->planes[0].bpl = pix->bytesperline;
++#ifdef __OpenBSD__
++	/* uvideo(4) does not report bytesperline. */
++	if (!format->planes[0].bpl) {
++		const PixelFormatInfo &info =
++			PixelFormatInfo::info(format->fourcc);
++		if (info.isValid())
++			format->planes[0].bpl = info.stride(pix->width, 0);
++	}
++#endif
+ 	format->planes[0].size = pix->sizeimage;
+ 	format->colorSpace = toColorSpace(*pix);
+ 
+@@ -1313,6 +1336,15 @@ int V4L2VideoDevice::requestBuffers(unsigned int count
+ 	struct v4l2_requestbuffers rb = {};
+ 	int ret;
+ 
++#ifdef __OpenBSD__
++	/*
++	 * video(4) does not support freeing buffers with VIDIOC_REQBUFS(0);
++	 * they are freed when the device is closed.
++	 */
++	if (count == 0)
++		return 0;
++#endif
++
+ 	rb.count = count;
+ 	rb.type = bufferType_;
+ 	rb.memory = memoryType;
+@@ -1463,6 +1495,10 @@ std::unique_ptr<FrameBuffer> V4L2VideoDevice::createBu
+ 
+ 	buf.index = index;
+ 	buf.type = bufferType_;
++#ifdef __OpenBSD__
++	/* video(4) validates the memory type in VIDIOC_QUERYBUF. */
++	buf.memory = V4L2_MEMORY_MMAP;
++#endif
+ 	buf.length = std::size(v4l2Planes);
+ 	buf.m.planes = v4l2Planes;
+ 
+@@ -1483,6 +1519,30 @@ std::unique_ptr<FrameBuffer> V4L2VideoDevice::createBu
+ 	}
+ 
+ 	std::vector<FrameBuffer::Plane> planes;
++#ifdef __OpenBSD__
++	/*
++	 * There is no dma-buf support (VIDIOC_EXPBUF); reference the video
++	 * device fd itself. V4L2 MMAP buffers are mapped through the device
++	 * fd at the offset reported by VIDIOC_QUERYBUF.
++	 */
++	if (multiPlanar) {
++		LOG(V4L2, Error)
++			<< "Multi-planar buffers are not supported";
++		return nullptr;
++	}
++
++	UniqueFD devFd(::dup(fd()));
++	if (!devFd.isValid()) {
++		LOG(V4L2, Error) << "Failed to duplicate the device fd";
++		return nullptr;
++	}
++
++	FrameBuffer::Plane devPlane;
++	devPlane.fd = SharedFD(std::move(devFd));
++	devPlane.offset = buf.m.offset;
++	devPlane.length = buf.length;
++	planes.push_back(std::move(devPlane));
++#else
+ 	for (unsigned int nplane = 0; nplane < numPlanes; nplane++) {
+ 		UniqueFD fd = exportDmabufFd(buf.index, nplane);
+ 		if (!fd.isValid())
+@@ -1500,6 +1560,7 @@ std::unique_ptr<FrameBuffer> V4L2VideoDevice::createBu
+ 
+ 		planes.push_back(std::move(plane));
+ 	}
++#endif
+ 
+ 	/*
+ 	 * If we have a multi-planar format with a V4L2 single-planar buffer,
+@@ -1519,7 +1580,12 @@ std::unique_ptr<FrameBuffer> V4L2VideoDevice::createBu
+ 
+ 		planes.resize(formatInfo_->numPlanes());
+ 		const SharedFD &fd = planes[0].fd;
+-		size_t offset = 0;
++		/*
++		 * Start at the offset of the V4L2 buffer within the file
++		 * referenced by the fd (non-zero when the fd is the video
++		 * device itself rather than a per-buffer dmabuf).
++		 */
++		size_t offset = planes[0].offset;
+ 
+ 		for (auto [i, plane] : utils::enumerate(planes)) {
+ 			/*
+@@ -2000,6 +2066,23 @@ int V4L2VideoDevice::streamOn()
+ 		return ret;
+ 	}
+ 
++#ifdef __OpenBSD__
++	/*
++	 * video(4) rejects VIDIOC_DQBUF until mmap(2) has been called on the
++	 * device, and the kernel also uses the mapping at offset 0 to blank
++	 * frames when recording is disabled. VIDIOC_STREAMOFF resets the
++	 * device to non-mmap mode, so this must be redone at every stream
++	 * start. The mode sticks after munmap(2).
++	 */
++	long pageSize = sysconf(_SC_PAGESIZE);
++	void *mem = mmap(nullptr, pageSize, PROT_READ, MAP_SHARED, fd(), 0);
++	if (mem == MAP_FAILED)
++		LOG(V4L2, Warning)
++			<< "Failed to switch the device to mmap mode";
++	else
++		munmap(mem, pageSize);
++#endif
++
+ 	state_ = State::Streaming;
+ 	if (watchdogDuration_ && !queuedBuffers_.empty())
+ 		watchdog_.start(std::chrono::duration_cast<std::chrono::milliseconds>(watchdogDuration_));
+@@ -2219,8 +2302,12 @@ int V4L2M2MDevice::open()
+ 	 * The output and capture V4L2VideoDevice instances use the same file
+ 	 * handle for the same device node.
+ 	 */
++#ifdef __OpenBSD__
++	SharedFD fd(::open(deviceNode_.c_str(), O_RDWR | O_NONBLOCK));
++#else
+ 	SharedFD fd(syscall(SYS_openat, AT_FDCWD, deviceNode_.c_str(),
+ 			    O_RDWR | O_NONBLOCK));
++#endif
+ 	if (!fd.isValid()) {
+ 		ret = -errno;
+ 		LOG(V4L2, Error) << "Failed to open V4L2 M2M device: "

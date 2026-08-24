@@ -1,0 +1,65 @@
+strverscmp() is a GNU extension not available on OpenBSD; provide a
+local version-aware comparator.
+
+Index: src/libcamera/pipeline/virtual/config_parser.cpp
+--- src/libcamera/pipeline/virtual/config_parser.cpp.orig
++++ src/libcamera/pipeline/virtual/config_parser.cpp
+@@ -20,6 +20,46 @@
+ 
+ #include "virtual.h"
+ 
++#ifdef __OpenBSD__
++namespace {
++
++/*
++ * Compare strings while treating runs of digits as numbers, so that e.g.
++ * "frame2" sorts before "frame10". Simplified strverscmp(3) replacement.
++ */
++int versionCompare(const char *a, const char *b)
++{
++	while (*a && *b) {
++		if (*a >= '0' && *a <= '9' && *b >= '0' && *b <= '9') {
++			while (*a == '0')
++				a++;
++			while (*b == '0')
++				b++;
++
++			size_t la = strspn(a, "0123456789");
++			size_t lb = strspn(b, "0123456789");
++			if (la != lb)
++				return la < lb ? -1 : 1;
++
++			int cmp = strncmp(a, b, la);
++			if (cmp)
++				return cmp;
++
++			a += la;
++			b += lb;
++		} else {
++			if (*a != *b)
++				return (unsigned char)*a - (unsigned char)*b;
++			a++;
++			b++;
++		}
++	}
++	return (unsigned char)*a - (unsigned char)*b;
++}
++
++} /* namespace */
++#endif
++
+ namespace libcamera {
+ 
+ LOG_DECLARE_CATEGORY(Virtual)
+@@ -212,7 +252,11 @@ int ConfigParser::parseFrameGenerator(const ValueNode 
+ 		}
+ 
+ 		std::sort(files.begin(), files.end(), [](const auto &a, const auto &b) {
++#ifdef __OpenBSD__
++			return versionCompare(a.c_str(), b.c_str()) < 0;
++#else
+ 			return ::strverscmp(a.c_str(), b.c_str()) < 0;
++#endif
+ 		});
+ 
+ 		if (files.empty()) {

@@ -1,0 +1,38 @@
+No dma-buf providers (dma-heap, udmabuf) on OpenBSD; fall back to plain
+shared memory backed buffers, which is all software pipeline handlers
+such as virtual need.
+
+Index: src/libcamera/dma_buf_allocator.cpp
+--- src/libcamera/dma_buf_allocator.cpp.orig
++++ src/libcamera/dma_buf_allocator.cpp
+@@ -116,7 +116,18 @@ DmaBufAllocator::DmaBufAllocator(DmaBufAllocatorFlags 
+ 	}
+ 
+ 	if (!providerHandle_.isValid())
++#ifdef __OpenBSD__
++	{
++		/*
++		 * There are no dma-buf providers; fall back to plain shared
++		 * memory backed buffers.
++		 */
++		LOG(DmaBufAllocator, Debug) << "Using plain memfd buffers";
++		memfdFallback_ = true;
++	}
++#else
+ 		LOG(DmaBufAllocator, Error) << "Could not open any dma-buf provider";
++#endif
+ }
+ 
+ /**
+@@ -201,6 +212,11 @@ UniqueFD DmaBufAllocator::alloc(const char *name, std:
+ {
+ 	if (!name)
+ 		return {};
++
++#ifdef __OpenBSD__
++	if (memfdFallback_)
++		return MemFd::create(name, size);
++#endif
+ 
+ 	if (type_ == DmaBufAllocator::DmaBufAllocatorFlag::UDmaBuf)
+ 		return allocFromUDmaBuf(name, size);

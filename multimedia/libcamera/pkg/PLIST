@@ -1,0 +1,45 @@
+bin/libcamera-bug-report
+include/libcamera/
+include/libcamera/libcamera/
+include/libcamera/libcamera/base/
+include/libcamera/libcamera/base/bound_method.h
+include/libcamera/libcamera/base/class.h
+include/libcamera/libcamera/base/flags.h
+include/libcamera/libcamera/base/object.h
+include/libcamera/libcamera/base/shared_fd.h
+include/libcamera/libcamera/base/signal.h
+include/libcamera/libcamera/base/span.h
+include/libcamera/libcamera/base/unique_fd.h
+include/libcamera/libcamera/camera.h
+include/libcamera/libcamera/camera_manager.h
+include/libcamera/libcamera/color_space.h
+include/libcamera/libcamera/control_ids.h
+include/libcamera/libcamera/controls.h
+include/libcamera/libcamera/fence.h
+include/libcamera/libcamera/formats.h
+include/libcamera/libcamera/framebuffer.h
+include/libcamera/libcamera/framebuffer_allocator.h
+include/libcamera/libcamera/geometry.h
+include/libcamera/libcamera/ipa/
+include/libcamera/libcamera/ipa/core_ipa_interface.h
+include/libcamera/libcamera/ipa/ipa_controls.h
+include/libcamera/libcamera/ipa/ipa_interface.h
+include/libcamera/libcamera/ipa/ipa_module_info.h
+include/libcamera/libcamera/libcamera.h
+include/libcamera/libcamera/logging.h
+include/libcamera/libcamera/orientation.h
+include/libcamera/libcamera/pixel_format.h
+include/libcamera/libcamera/property_ids.h
+include/libcamera/libcamera/request.h
+include/libcamera/libcamera/stream.h
+include/libcamera/libcamera/transform.h
+include/libcamera/libcamera/version.h
+@so lib/gstreamer-1.0/libgstlibcamera.so
+@lib lib/libcamera-base.so.${LIBcamera-base_VERSION}
+@lib lib/libcamera.so.${LIBcamera_VERSION}
+lib/pkgconfig/libcamera-base.pc
+lib/pkgconfig/libcamera.pc
+share/libcamera/
+share/libcamera/pipeline/
+share/libcamera/pipeline/virtual/
+share/libcamera/pipeline/virtual/virtual.yaml.example

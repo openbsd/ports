@@ -1,0 +1,91 @@
+- use getthrid(2) instead of gettid()
+- use pthread_set_name_np(3) from <pthread_np.h>
+- no thread affinity support (no cpu_set_t / pthread_setaffinity_np)
+
+Index: src/libcamera/base/thread.cpp
+--- src/libcamera/base/thread.cpp.orig
++++ src/libcamera/base/thread.cpp
+@@ -11,6 +11,10 @@
+ #include <list>
+ #include <optional>
+ #include <pthread.h>
++#ifdef __OpenBSD__
++#include <errno.h>
++#include <pthread_np.h>
++#endif
+ #include <sys/syscall.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+@@ -135,7 +139,9 @@ class ThreadData (private)
+ 
+ 	MessageQueue messages_;
+ 
++#ifndef __OpenBSD__
+ 	std::optional<cpu_set_t> cpuset_;
++#endif
+ };
+ 
+ /**
+@@ -174,7 +180,11 @@ ThreadData *ThreadData::current()
+ 	 * started, set it here.
+ 	 */
+ 	ThreadData *data = mainThread.data_.get();
++#ifdef __OpenBSD__
++	data->tid_ = getthrid();
++#else
+ 	data->tid_ = syscall(SYS_gettid);
++#endif
+ 	currentThreadData = data;
+ 	return data;
+ }
+@@ -288,11 +298,19 @@ void Thread::startThread()
+ 	 */
+ 	thread_local ThreadCleaner cleaner(this, &Thread::finishThread);
+ 
++#ifdef __OpenBSD__
++	data_->tid_ = getthrid();
++#else
+ 	data_->tid_ = syscall(SYS_gettid);
++#endif
+ 	currentThreadData = data_.get();
+ 
+ 	if (!name_.empty())
++#ifdef __OpenBSD__
++		pthread_set_name_np(pthread_self(), name_.substr(0, 15).c_str());
++#else
+ 		pthread_setname_np(pthread_self(), name_.substr(0, 15).c_str());
++#endif
+ 
+ 	run();
+ }
+@@ -435,6 +453,11 @@ bool Thread::wait(utils::duration duration)
+  */
+ int Thread::setThreadAffinity(const Span<const unsigned int> &cpus)
+ {
++#ifdef __OpenBSD__
++	/* Thread affinity is not supported. */
++	(void)cpus;
++	return -ENOTSUP;
++#else
+ 	const unsigned int numCpus = std::thread::hardware_concurrency();
+ 
+ 	MutexLocker locker(data_->mutex_);
+@@ -454,15 +477,18 @@ int Thread::setThreadAffinity(const Span<const unsigne
+ 		setThreadAffinityInternal();
+ 
+ 	return 0;
++#endif
+ }
+ 
+ void Thread::setThreadAffinityInternal()
+ {
++#ifndef __OpenBSD__
+ 	if (!data_->cpuset_)
+ 		return;
+ 
+ 	const cpu_set_t &cpuset = data_->cpuset_.value();
+ 	pthread_setaffinity_np(thread_.native_handle(), sizeof(cpuset), &cpuset);
++#endif
+ }
+ 
+ /**

@@ -1,0 +1,20 @@
+glibc's ElfW() macro is not available on OpenBSD.
+
+Index: src/libcamera/ipa_module.cpp
+--- src/libcamera/ipa_module.cpp.orig
++++ src/libcamera/ipa_module.cpp
+@@ -19,6 +19,14 @@
+ #include <sys/types.h>
+ #include <unistd.h>
+ 
++#ifdef __OpenBSD__
++#ifdef __LP64__
++#define ElfW(type)	Elf64_##type
++#else
++#define ElfW(type)	Elf32_##type
++#endif
++#endif
++
+ #include <libcamera/base/file.h>
+ #include <libcamera/base/log.h>
+ #include <libcamera/base/span.h>
