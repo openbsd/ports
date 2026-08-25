@@ -1,0 +1,11 @@
+Index: src/apps/cam/file_sink.cpp
+--- src/apps/cam/file_sink.cpp.orig
++++ src/apps/cam/file_sink.cpp
+@@ -14,6 +14,7 @@
+ #include <iostream>
+ #include <sstream>
+ #include <string.h>
++#include <sys/stat.h> /* S_IRUSR and friends */
+ #include <unistd.h>
+ #include <utility>
+ 

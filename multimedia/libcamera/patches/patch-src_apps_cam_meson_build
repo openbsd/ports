@@ -1,0 +1,17 @@
+signalfd(3) is provided by epoll-shim.
+
+Index: src/apps/cam/meson.build
+--- src/apps/cam/meson.build.orig
++++ src/apps/cam/meson.build
+@@ -28,6 +28,11 @@ cam_deps = [
+     libtiff,
+ ]
+ 
++# signalfd(3) is provided by epoll-shim
++if host_machine.system() != 'linux'
++    cam_deps += dependency('epoll-shim')
++endif
++
+ libdrm = dependency('libdrm', required : get_option('cam-output-kms'))
+ libsdl2 = dependency('SDL2', required : get_option('cam-output-sdl2'))
+ libjpeg = dependency('libjpeg', required : get_option('cam-jpeg'))

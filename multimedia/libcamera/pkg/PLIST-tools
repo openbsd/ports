@@ -1,0 +1,3 @@
+@conflict libcamera-<0.7.2p0
+@bin bin/cam
+bin/libcamera-bug-report

@@ -1,0 +1,28 @@
+lseek(2) cannot report a size for character devices such as video(4),
+which back the planes of V4L2 MMAP buffers; trust the plane extents.
+
+Index: src/apps/common/image.cpp
+--- src/apps/common/image.cpp.orig
++++ src/apps/common/image.cpp
+@@ -41,7 +41,20 @@ std::unique_ptr<Image> Image::fromFrameBuffer(const Fr
+ 	for (const FrameBuffer::Plane &plane : buffer->planes()) {
+ 		const int fd = plane.fd.get();
+ 		if (mappedBuffers.find(fd) == mappedBuffers.end()) {
+-			const size_t length = lseek(fd, 0, SEEK_END);
++			size_t length = lseek(fd, 0, SEEK_END);
++#ifdef __OpenBSD__
++			/*
++			 * lseek(2) cannot report a size for character
++			 * devices such as video(4); use the largest plane
++			 * extent referencing this file descriptor instead.
++			 */
++			if (length == 0 || length == static_cast<size_t>(-1)) {
++				length = 0;
++				for (const FrameBuffer::Plane &p : buffer->planes())
++					if (p.fd.get() == fd && p.offset + p.length > length)
++						length = p.offset + p.length;
++			}
++#endif
+ 			mappedBuffers[fd] = MappedBufferInfo{ nullptr, 0, length };
+ 		}
+ 

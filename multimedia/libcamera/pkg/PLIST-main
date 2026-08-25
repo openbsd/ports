@@ -1,4 +1,3 @@
-bin/libcamera-bug-report
 include/libcamera/
 include/libcamera/libcamera/
 include/libcamera/libcamera/base/
