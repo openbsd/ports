@@ -3,7 +3,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6076,7 +6076,6 @@ case $target_os in
+@@ -6159,7 +6159,6 @@ case $target_os in
          enable section_data_rel_ro
          striptype=""
          SHFLAGS='-shared'
@@ -11,7 +11,7 @@ Index: configure
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -6451,7 +6450,7 @@ set_default libdir
+@@ -6534,7 +6533,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  
@@ -20,7 +20,7 @@ Index: configure
  
  enable_weak_pic() {
      disabled pic && return
-@@ -6745,11 +6744,19 @@ elif enabled x86; then
+@@ -6830,11 +6829,19 @@ elif enabled x86; then
      # As 'i' is stored on the stack, this program will crash
      # if the base pointer is used to access it because the
      # base pointer is cleared in the inline assembly code.
@@ -41,7 +41,7 @@ Index: configure
  
      # check whether EBX is available on x86
      check_inline_asm ebx_available '""::"b"(0)' &&
-@@ -7002,7 +7009,7 @@ check_headers asm/types.h
+@@ -7090,7 +7097,7 @@ check_headers asm/types.h
  #
  # some configurations also require linking to libatomic, so try
  # both with -latomic and without
@@ -50,22 +50,12 @@ Index: configure
      check_builtin stdatomic stdatomic.h                                \
          "atomic_int foo, bar = -1; atomic_store(&foo, 0); foo += bar"  \
          $LATOMIC && eval stdatomic_extralibs="\$LATOMIC" && break
-@@ -7489,13 +7496,13 @@ enabled omx_rpi           && { test_code cc OMX_Core.h
- enabled omx               && require_headers OMX_Core.h && \
-     warn "The OpenMAX encoders are deprecated and will be removed in future versions"
- 
--enabled openssl           && { { check_pkg_config openssl "openssl >= 3.0.0" openssl/ssl.h DTLS_get_data_mtu &&
-+enabled openssl           && { { check_pkg_config openssl "openssl >= 3.0.0" openssl/ssl.h OPENSSL_init_ssl &&
+@@ -7551,7 +7558,7 @@ enabled opengl            && { check_lib opengl GL/glx
+ enabled openssl           && { { check_pkg_config openssl "openssl >= 3.0.0" openssl/ssl.h DTLS_get_data_mtu &&
                                   { enabled gplv3 || ! enabled gpl || enabled nonfree || die "ERROR: OpenSSL >=3.0.0 requires --enable-version3"; }; } ||
                                 { enabled gpl && ! enabled nonfree && die "ERROR: OpenSSL <3.0.0 is incompatible with the gpl"; } ||
 -                               check_pkg_config openssl "openssl >= 1.1.1" openssl/ssl.h DTLS_get_data_mtu ||
--                               check_lib openssl openssl/ssl.h DTLS_get_data_mtu -lssl -lcrypto ||
--                               check_lib openssl openssl/ssl.h DTLS_get_data_mtu -lssl -lcrypto -lws2_32 -lgdi32 ||
--                               die "ERROR: openssl (>= 1.1.1) not found"; }
 +                               check_pkg_config openssl "openssl >= 1.1.0" openssl/ssl.h OPENSSL_init_ssl ||
-+                               check_lib openssl openssl/ssl.h OPENSSL_init_ssl -lssl -lcrypto ||
-+                               check_lib openssl openssl/ssl.h OPENSSL_init_ssl -lssl -lcrypto -lws2_32 -lgdi32 ||
-+                               die "ERROR: openssl (>= 1.1.0) not found"; }
- enabled pocketsphinx      && require_pkg_config pocketsphinx pocketsphinx pocketsphinx/pocketsphinx.h ps_init
- enabled rkmpp             && { require_pkg_config rkmpp "rockchip_mpp >= 1.3.8" "rockchip/rk_mpi.h rockchip/mpp_buffer.h" "mpp_create mpp_buffer_sync_begin_f" &&
-                                { enabled libdrm ||
+                                check_lib openssl openssl/ssl.h DTLS_get_data_mtu -lssl -lcrypto ||
+                                check_lib openssl openssl/ssl.h DTLS_get_data_mtu -lssl -lcrypto -lws2_32 -lgdi32 ||
+                                die "ERROR: openssl (>= 1.1.1) not found"; }

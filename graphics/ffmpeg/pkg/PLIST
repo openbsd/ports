@@ -122,6 +122,7 @@ include/libavutil/pixelutils.h
 include/libavutil/pixfmt.h
 include/libavutil/random_seed.h
 include/libavutil/rational.h
+include/libavutil/raw_color_params.h
 include/libavutil/rc4.h
 include/libavutil/refstruct.h
 include/libavutil/replaygain.h

@@ -1,0 +1,24 @@
+Index: libavutil/aarch64/tx_float_neon.S
+--- libavutil/aarch64/tx_float_neon.S.orig
++++ libavutil/aarch64/tx_float_neon.S
+@@ -439,7 +439,8 @@ FFT16_FN float,    0
+ FFT16_FN ns_float, 1
+ 
+ .macro SETUP_SR_RECOMB len, re, im, dec
+-        ldr             w5, =(\len - 4*7)
++        mov             w5, #(\len)
++        sub             w5, w5, #(4*7)
+         movrel          \re, X(ff_tx_tab_\len\()_float)
+         add             \im, \re, x5
+         mov             \dec, #-32
+@@ -928,8 +929,8 @@ FFT32_FN ns_float, 1
+         bl              32b
+         ldp             x20, x30, [sp], #16
+         AARCH64_VALIDATE_LINK_REGISTER
+-        ldr             w5, =(\len*6 + \len/2)
+-        sub             x1, x1, x5
++        sub             x1, x1, #(\len*6)
++        sub             x1, x1, #(\len/2)
+ 
+         SETUP_SR_RECOMB \len, x7, x8, x9
+ 

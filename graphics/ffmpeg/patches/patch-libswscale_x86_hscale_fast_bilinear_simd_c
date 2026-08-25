@@ -1,0 +1,35 @@
+Index: libswscale/x86/hscale_fast_bilinear_simd.c
+--- libswscale/x86/hscale_fast_bilinear_simd.c.orig
++++ libswscale/x86/hscale_fast_bilinear_simd.c
+@@ -53,6 +53,7 @@ av_cold int ff_init_hscaler_mmxext(int dstW, int xInc,
+     // code fragment
+ 
+     __asm__ volatile (
++        ".pushsection .rodata                           \n\t"
+         "jmp                         9f                 \n\t"
+         // Begin
+         "0:                                             \n\t"
+@@ -76,6 +77,7 @@ av_cold int ff_init_hscaler_mmxext(int dstW, int xInc,
+         "add                         $8, %%"FF_REG_a"   \n\t"
+         // End
+         "9:                                             \n\t"
++        ".popsection                                    \n\t"
+         "lea       " LOCAL_MANGLE(0b) ", %0             \n\t"
+         "lea       " LOCAL_MANGLE(1b) ", %1             \n\t"
+         "lea       " LOCAL_MANGLE(2b) ", %2             \n\t"
+@@ -92,6 +94,7 @@ av_cold int ff_init_hscaler_mmxext(int dstW, int xInc,
+         );
+ 
+     __asm__ volatile (
++        ".pushsection .rodata                           \n\t"
+         "jmp                         9f                 \n\t"
+         // Begin
+         "0:                                             \n\t"
+@@ -113,6 +116,7 @@ av_cold int ff_init_hscaler_mmxext(int dstW, int xInc,
+         "add                         $8, %%"FF_REG_a"   \n\t"
+         // End
+         "9:                                             \n\t"
++        ".popsection                                    \n\t"
+         "lea       " LOCAL_MANGLE(0b) ", %0             \n\t"
+         "lea       " LOCAL_MANGLE(1b) ", %1             \n\t"
+         "lea       " LOCAL_MANGLE(2b) ", %2             \n\t"

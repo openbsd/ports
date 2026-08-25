@@ -1,7 +1,7 @@
 Index: ffbuild/library.mak
 --- ffbuild/library.mak.orig
 +++ ffbuild/library.mak
-@@ -96,8 +96,6 @@ clean::
+@@ -113,8 +113,6 @@ clean::
  install-lib$(NAME)-shared: $(SUBDIR)$(SLIBNAME)
  	$(Q)mkdir -p "$(SHLIBDIR)"
  	$$(INSTALL) -m 755 $$< "$(SHLIBDIR)/$(SLIB_INSTALL_NAME)"

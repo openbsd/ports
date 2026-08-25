@@ -1,17 +1,16 @@
 Index: libavformat/tls_openssl.c
 --- libavformat/tls_openssl.c.orig
 +++ libavformat/tls_openssl.c
-@@ -32,13 +32,18 @@
- #include <openssl/ssl.h>
- #include <openssl/err.h>
- #include <openssl/x509v3.h>
-+#include <string.h>
+@@ -39,6 +39,8 @@
+ #endif
+ #include <string.h>
  
 +#define TLS_ST_OK SSL_ST_OK
 +
+ #define DTLS_HANDSHAKE_TIMEOUT_US 30000000
  /**
   * Convert an EVP_PKEY to a PEM string.
-  */
+@@ -46,6 +48,8 @@
  static int pkey_to_pem_string(EVP_PKEY *pkey, char *out, size_t out_sz)
  {
      BIO *mem = NULL;
@@ -20,7 +19,7 @@ Index: libavformat/tls_openssl.c
      size_t read_bytes = 0;
  
      if (!pkey || !out || !out_sz)
-@@ -50,9 +55,13 @@ static int pkey_to_pem_string(EVP_PKEY *pkey, char *ou
+@@ -57,9 +61,13 @@ static int pkey_to_pem_string(EVP_PKEY *pkey, char *ou
      if (!PEM_write_bio_PrivateKey(mem, pkey, NULL, NULL, 0, NULL, NULL))
          goto done;
  
@@ -35,7 +34,7 @@ Index: libavformat/tls_openssl.c
  done:
      BIO_free(mem);
      if (out && out_sz)
-@@ -66,6 +75,8 @@ done:
+@@ -73,6 +81,8 @@ done:
  static int cert_to_pem_string(X509 *cert, char *out, size_t out_sz)
  {
      BIO *mem = NULL;
@@ -44,7 +43,7 @@ Index: libavformat/tls_openssl.c
      size_t read_bytes = 0;
  
      if (!cert || !out || !out_sz)
-@@ -77,9 +88,13 @@ static int cert_to_pem_string(X509 *cert, char *out, s
+@@ -84,9 +94,13 @@ static int cert_to_pem_string(X509 *cert, char *out, s
      if (!PEM_write_bio_X509(mem, cert))
          goto done;
  
@@ -59,21 +58,21 @@ Index: libavformat/tls_openssl.c
  done:
      BIO_free(mem);
      if (out && out_sz)
-@@ -801,7 +816,9 @@ static int dtls_start(URLContext *h, const char *url, 
-         s->mtu = 1096;
-     SSL_set_options(c->ssl, SSL_OP_NO_QUERY_MTU);
-     SSL_set_mtu(c->ssl, s->mtu);
+@@ -847,7 +861,9 @@ static int tls_open(URLContext *h, const char *uri, in
+             s->mtu = 1096;
+         SSL_set_options(c->ssl, SSL_OP_NO_QUERY_MTU);
+         SSL_set_mtu(c->ssl, s->mtu);
 +#ifdef DTLS_set_link_mtu
-     DTLS_set_link_mtu(c->ssl, s->mtu);
+         DTLS_set_link_mtu(c->ssl, s->mtu);
 +#endif
-     init_bio_method(h);
+     }
  
-     /* This seems to be necessary despite explicitly setting client/server method above. */
-@@ -925,10 +942,12 @@ static int tls_write(URLContext *h, const uint8_t *buf
+     init_bio_method(h);
+@@ -960,10 +976,12 @@ static int tls_write(URLContext *h, const uint8_t *buf
      uc->flags &= ~AVIO_FLAG_NONBLOCK;
      uc->flags |= h->flags & AVIO_FLAG_NONBLOCK;
  
-+#ifdef DTLS_get_link_mtu
++#ifdef DTLS_get_data_mtu
      if (s->is_dtls) {
          const size_t mtu_size = DTLS_get_data_mtu(c->ssl);
          size = FFMIN(size, mtu_size);
