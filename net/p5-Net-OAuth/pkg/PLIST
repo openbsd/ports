@@ -12,6 +12,7 @@ ${P5SITE}/Net/OAuth/RequestTokenRequest.pm
 ${P5SITE}/Net/OAuth/RequestTokenResponse.pm
 ${P5SITE}/Net/OAuth/Response.pm
 ${P5SITE}/Net/OAuth/SignatureMethod/
+${P5SITE}/Net/OAuth/SignatureMethod.pm
 ${P5SITE}/Net/OAuth/SignatureMethod/HMAC_SHA1.pm
 ${P5SITE}/Net/OAuth/SignatureMethod/HMAC_SHA256.pm
 ${P5SITE}/Net/OAuth/SignatureMethod/PLAINTEXT.pm
@@ -37,6 +38,7 @@ ${P5SITE}/Net/OAuth/YahooAccessTokenRefreshRequest.pm
 @man man/man3p/Net::OAuth::RequestTokenRequest.3p
 @man man/man3p/Net::OAuth::RequestTokenResponse.3p
 @man man/man3p/Net::OAuth::Response.3p
+@man man/man3p/Net::OAuth::SignatureMethod.3p
 @man man/man3p/Net::OAuth::SignatureMethod::HMAC_SHA1.3p
 @man man/man3p/Net::OAuth::SignatureMethod::HMAC_SHA256.3p
 @man man/man3p/Net::OAuth::SignatureMethod::PLAINTEXT.3p

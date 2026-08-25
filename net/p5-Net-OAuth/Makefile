@@ -1,6 +1,6 @@
 COMMENT =	implementation of the OAuth 1.0 protocol
 
-DISTNAME =	Net-OAuth-0.32
+DISTNAME =	Net-OAuth-0.33
 CPAN_AUTHOR =	RRWO
 
 CATEGORIES =	net
