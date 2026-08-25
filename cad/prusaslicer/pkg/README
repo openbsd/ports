@@ -1,0 +1,31 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Program Name
+============
+
+The program's name is PrusaSlicer, but for historical reasons the binary is
+named prusa-slicer. The desktop file appears under Graphics because cad is not
+an available option on some window managers.
+
+Memory limits
+=============
+
+The initial setup wizard is known to use more memory than the limits set by the
+user's default login class, causing PrusaSlicer to crash with a 'std::bad_alloc'
+error. To avoid this, increase datasize memory limits in
+${SYSCONFDIR}/login.conf or make sure your user is in the 'staff' class, and
+bump the limits with 'ulimit'. Setting the datasize to 2048M (ulimit -d 2097152)
+should be enough when using default options with all standard printers, but you
+may need to bump it up even further depending your configuration.
+
+Font issues - Fixed in 2.9.6
+============================
+
+Before version 2.9.6, the mechanism for adding text to an object didn't work,
+e.g. the "Add Object->Text" or "Add Negative Space->Text" context-menu items.
+This release contains a fix for font selection.  If you are upgrading from an
+older version and fonts are not loading properly, e.g., the Add...Text item
+pop-up neither shows, nor lets you choose, a font name, try deleting
+"~/.config/PrusaSlicer/cache/fonts.cereal" and restarting PrusaSlicer.

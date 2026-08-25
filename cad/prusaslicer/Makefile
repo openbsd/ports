@@ -2,8 +2,7 @@ COMMENT =	g-code generator for 3D printers
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 DPB_PROPERTIES = parallel
 
-V =		2.9.4
-REVISION =	3
+V =		2.9.6
 PKGNAME =	prusaslicer-${V}
 
 GH_ACCOUNT =	prusa3d
@@ -74,6 +73,7 @@ LIB_DEPENDS = 		cad/opencascade \
 			x11/wxWidgets,-webview
 
 CONFIGURE_ARGS +=	-DCMAKE_MODULE_PATH=${PREFIX}/lib/cmake/OpenVDB \
+			-DCMAKE_DISABLE_FIND_PACKAGE_libigl=ON \
 			-DSLIC3R_FHS=1 \
 			-DSLIC3R_GTK=3 \
 			-DSLIC3R_PCH=OFF
