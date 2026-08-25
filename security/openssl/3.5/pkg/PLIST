@@ -2681,6 +2681,8 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/MDC2_Final.3
 @man lib/${EOPENSSL_V}/man/man3/MDC2_Init.3
 @man lib/${EOPENSSL_V}/man/man3/MDC2_Update.3
+@man lib/${EOPENSSL_V}/man/man3/NAME_CONSTRAINTS_check.3
+@man lib/${EOPENSSL_V}/man/man3/NAME_CONSTRAINTS_check_CN.3
 @man lib/${EOPENSSL_V}/man/man3/NAME_CONSTRAINTS_free.3
 @man lib/${EOPENSSL_V}/man/man3/NAME_CONSTRAINTS_new.3
 @man lib/${EOPENSSL_V}/man/man3/NAMING_AUTHORITY.3
@@ -2849,6 +2851,7 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/OPENSSL_VERSION_PRE_RELEASE.3
 @man lib/${EOPENSSL_V}/man/man3/OPENSSL_VERSION_TEXT.3
 @man lib/${EOPENSSL_V}/man/man3/OPENSSL_aligned_alloc.3
+@man lib/${EOPENSSL_V}/man/man3/OPENSSL_armcap.3
 @man lib/${EOPENSSL_V}/man/man3/OPENSSL_atexit.3
 @man lib/${EOPENSSL_V}/man/man3/OPENSSL_buf2hexstr.3
 @man lib/${EOPENSSL_V}/man/man3/OPENSSL_buf2hexstr_ex.3
@@ -4724,6 +4727,7 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/SSL_VALUE_EVENT_HANDLING_MODE_IMPLICIT.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_VALUE_EVENT_HANDLING_MODE_INHERIT.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_VALUE_QUIC_IDLE_TIMEOUT.3
+@man lib/${EOPENSSL_V}/man/man3/SSL_VALUE_QUIC_MAX_PENDING_CONNS.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_VALUE_QUIC_STREAM_BIDI_LOCAL_AVAIL.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_VALUE_QUIC_STREAM_BIDI_REMOTE_AVAIL.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_VALUE_QUIC_STREAM_UNI_LOCAL_AVAIL.3
