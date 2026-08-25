@@ -2,7 +2,7 @@ COMMENT =	name-based proxying of HTTPS without decrypting traffic
 
 GH_ACCOUNT =	renaudallard
 GH_PROJECT =	sniproxy
-GH_TAGNAME =	0.13.2
+GH_TAGNAME =	0.14.0
 
 CATEGORIES =	net
 
