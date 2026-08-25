@@ -1,7 +1,6 @@
 COMMENT =	interact with OpenVox Server's CA
 
-DISTNAME =	openvoxserver-ca-3.2.0
-REVISION =	0
+DISTNAME =	openvoxserver-ca-3.3.0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/OpenVoxProject/openvoxserver-ca/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
@@ -15,7 +14,7 @@ GEM_FLAGS =		--no-format-executable
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-RUN_DEPENDS =		sysutils/ruby-openfact>=5,<6
+RUN_DEPENDS =		sysutils/ruby-openfact>=5,<7
 
 CONFIGURE_STYLE =	ruby gem
 
