@@ -1,6 +1,6 @@
 COMMENT =	network neighbor monitoring daemon
 
-V =		0.5.5
+V =		0.5.16
 DISTNAME =	neighbot-${V}
 
 CATEGORIES =	net
