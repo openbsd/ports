@@ -1,6 +1,6 @@
 COMMENT =		high resolution timer library
 
-DISTNAME =		hitimes-3.1.0
+DISTNAME =		hitimes-3.2.0
 CATEGORIES =		devel
 HOMEPAGE =		http://github.com/copiousfreetime/hitimes
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
