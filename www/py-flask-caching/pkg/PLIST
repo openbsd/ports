@@ -12,6 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/flask_caching/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/flask_caching/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_caching/${MODPY_PYCACHE}jinja2ext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_caching/${MODPY_PYCACHE}jinja2ext.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_caching/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/flask_caching/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_caching/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_caching/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/
@@ -31,15 +33,12 @@ lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/${MODPY_PYCACHE}rediscache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/${MODPY_PYCACHE}simplecache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/${MODPY_PYCACHE}simplecache.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/${MODPY_PYCACHE}uwsgicache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/${MODPY_PYCACHE}uwsgicache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/base.py
 lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/filesystemcache.py
 lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/memcache.py
 lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/nullcache.py
 lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/rediscache.py
 lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/simplecache.py
-lib/python${MODPY_VERSION}/site-packages/flask_caching/backends/uwsgicache.py
 lib/python${MODPY_VERSION}/site-packages/flask_caching/contrib/
 lib/python${MODPY_VERSION}/site-packages/flask_caching/contrib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/flask_caching/contrib/${MODPY_PYCACHE}/
@@ -53,4 +52,5 @@ lib/python${MODPY_VERSION}/site-packages/flask_caching/contrib/googlecloudstorag
 lib/python${MODPY_VERSION}/site-packages/flask_caching/contrib/uwsgicache.py
 lib/python${MODPY_VERSION}/site-packages/flask_caching/jinja2ext.py
 lib/python${MODPY_VERSION}/site-packages/flask_caching/py.typed
+lib/python${MODPY_VERSION}/site-packages/flask_caching/signals.py
 lib/python${MODPY_VERSION}/site-packages/flask_caching/utils.py
