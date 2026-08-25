@@ -1,16 +1,19 @@
-COMMENT =	Guess url media type
+COMMENT =	guess media type for a file or a URL
 
-DISTNAME =	LWP-MediaTypes-6.02
+DISTNAME =	LWP-MediaTypes-6.04
+CPAN_AUTHOR =	OALDERS
+
 CATEGORIES =	www
-CPAN_AUTHOR =	GAAS
-REVISION =	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-MODULES =	cpan
-PKG_ARCH =	*
+MODULES =		cpan
+
+TEST_DEPENDS =		devel/p5-Test-Fatal
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
