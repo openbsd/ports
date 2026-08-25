@@ -1,0 +1,11 @@
+Index: include/liquid.h
+--- include/liquid.h.orig
++++ include/liquid.h
+@@ -33,6 +33,7 @@ extern "C" {
+ #include <inttypes.h>
+ #include <stdbool.h>
+ #include <stdlib.h>
++#include <stdarg.h>
+ #include <stdio.h>
+ #include <time.h>
+ 
