@@ -1,6 +1,6 @@
 COMMENT =		collection of cache libraries
 
-MODPY_DISTV =		0.16.1
+MODPY_DISTV =		0.17.0
 DISTNAME =		cachelib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -15,7 +15,7 @@ MODPY_PYBUILD =		flit_core
 
 # Needs pkg_add mongodb redis memcached and those daemons started
 # to make the related tests work
-# 443 passed, 40 skipped
+# 457 passed, 80 skipped
 TEST_DEPENDS =		devel/py-test-xprocess \
 			databases/py-mongo \
 			databases/py-redis \
