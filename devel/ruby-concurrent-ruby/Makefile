@@ -1,6 +1,6 @@
 COMMENT=	concurrency tools and patterns for Ruby
 
-DISTNAME=	concurrent-ruby-1.3.6
+DISTNAME=	concurrent-ruby-1.3.8
 CATEGORIES=	devel
 HOMEPAGE=	http://www.concurrent-ruby.com/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
