@@ -1,0 +1,121 @@
+Index: libavcodec/aarch64/vc1dsp_neon.S
+--- libavcodec/aarch64/vc1dsp_neon.S.orig
++++ libavcodec/aarch64/vc1dsp_neon.S
+@@ -37,7 +37,8 @@ function ff_vc1_inv_trans_8x8_neon, export=1
+         shl             v7.8h, v2.8h, #4        //          16 * src[8]
+         shl             v18.8h, v2.8h, #2       //           4 * src[8]
+         shl             v19.8h, v4.8h, #4       //                        16 * src[24]
+-        ldr             d0, .Lcoeffs_it8
++        adrp            x0, .Lcoeffs_it8
++        ldr             d0, [x0, :lo12:.Lcoeffs_it8]
+         shl             v5.8h, v5.8h, #2        //                                      8/2 * src[32]
+         shl             v20.8h, v6.8h, #4       //                                       16 * src[40]
+         shl             v21.8h, v6.8h, #2       //                                        4 * src[40]
+@@ -190,7 +191,8 @@ function ff_vc1_inv_trans_8x4_neon, export=1
+         ld1             {v1.8b, v2.8b, v3.8b, v4.8b}, [x2], #32
+         mov             x3, x0
+         ld1             {v16.8b, v17.8b, v18.8b, v19.8b}, [x2]
+-        ldr             q0, .Lcoeffs_it8        // includes 4-point coefficients in upper half of vector
++        adrp            x4, .Lcoeffs_it8
++        ldr             q0, [x4, :lo12:.Lcoeffs_it8]        // includes 4-point coefficients in upper half of vector
+         ld1             {v5.8b}, [x0], x1
+         trn2            v6.4h, v1.4h, v3.4h
+         trn2            v7.4h, v2.4h, v4.4h
+@@ -318,7 +320,8 @@ endfunc
+ //   array at x0 updated by saturated addition of (narrowed) transformed block
+ function ff_vc1_inv_trans_4x8_neon, export=1
+         mov             x3, #16
+-        ldr             q0, .Lcoeffs_it8        // includes 4-point coefficients in upper half of vector
++        adrp            x4, .Lcoeffs_it8
++        ldr             q0, [x4, :lo12:.Lcoeffs_it8]        // includes 4-point coefficients in upper half of vector
+         mov             x4, x0
+         ld1             {v1.d}[0], [x2], x3     // 00 01 02 03
+         ld1             {v2.d}[0], [x2], x3     // 10 11 12 13
+@@ -459,7 +462,8 @@ endfunc
+ //   array at x0 updated by saturated addition of (narrowed) transformed block
+ function ff_vc1_inv_trans_4x4_neon, export=1
+         mov             x3, #16
+-        ldr             d0, .Lcoeffs_it4
++        adrp            x4, .Lcoeffs_it4
++        ldr             d0, [x4, :lo12:.Lcoeffs_it4]
+         mov             x4, x0
+         ld1             {v1.d}[0], [x2], x3     // 00 01 02 03
+         ld1             {v2.d}[0], [x2], x3     // 10 11 12 13
+@@ -696,6 +700,8 @@ function ff_vc1_inv_trans_4x4_dc_neon, export=1
+         ret
+ endfunc
+ 
++.section .rodata
++
+ .align  5
+ .Lcoeffs_it8:
+ .quad   0x000F00090003
+@@ -704,6 +710,8 @@ endfunc
+ .Lcoeffs:
+ .quad   0x00050002
+ 
++.previous
++
+ // VC-1 in-loop deblocking filter for 4 pixel pairs at boundary of vertically-neighbouring blocks
+ // On entry:
+ //   x0 -> top-left pel of lower block
+@@ -711,7 +719,8 @@ endfunc
+ //   w2 = PQUANT bitstream parameter
+ function ff_vc1_v_loop_filter4_neon, export=1
+         sub             x3, x0, w1, sxtw #2
+-        ldr             d0, .Lcoeffs
++        adrp            x4, .Lcoeffs
++        ldr             d0, [x4, :lo12:.Lcoeffs]
+         ld1             {v1.s}[0], [x0], x1     // P5
+         ld1             {v2.s}[0], [x3], x1     // P1
+         ld1             {v3.s}[0], [x3], x1     // P2
+@@ -783,7 +792,8 @@ endfunc
+ //   w2 = PQUANT bitstream parameter
+ function ff_vc1_h_loop_filter4_neon, export=1
+         sub             x3, x0, #4              // where to start reading
+-        ldr             d0, .Lcoeffs
++        adrp            x4, .Lcoeffs
++        ldr             d0, [x4, :lo12:.Lcoeffs]
+         ld1             {v1.8b}, [x3], x1
+         sub             x0, x0, #1              // where to start writing
+         ld1             {v2.8b}, [x3], x1
+@@ -856,7 +866,8 @@ endfunc
+ //   w2 = PQUANT bitstream parameter
+ function ff_vc1_v_loop_filter8_neon, export=1
+         sub             x3, x0, w1, sxtw #2
+-        ldr             d0, .Lcoeffs
++        adrp            x4, .Lcoeffs
++        ldr             d0, [x4, :lo12:.Lcoeffs]
+         ld1             {v1.8b}, [x0], x1       // P5
+         movi            v2.2d, #0x0000ffff00000000
+         ld1             {v3.8b}, [x3], x1       // P1
+@@ -933,7 +944,8 @@ endfunc
+ //   w2 = PQUANT bitstream parameter
+ function ff_vc1_h_loop_filter8_neon, export=1
+         sub             x3, x0, #4              // where to start reading
+-        ldr             d0, .Lcoeffs
++        adrp            x4, .Lcoeffs
++        ldr             d0, [x4, :lo12:.Lcoeffs]
+         ld1             {v1.8b}, [x3], x1       // P1[0], P2[0]...
+         sub             x0, x0, #1              // where to start writing
+         ld1             {v2.8b}, [x3], x1
+@@ -1041,7 +1053,8 @@ endfunc
+ //   w2 = PQUANT bitstream parameter
+ function ff_vc1_v_loop_filter16_neon, export=1
+         sub             x3, x0, w1, sxtw #2
+-        ldr             d0, .Lcoeffs
++        adrp            x4, .Lcoeffs
++        ldr             d0, [x4, :lo12:.Lcoeffs]
+         ld1             {v1.16b}, [x0], x1      // P5
+         movi            v2.2d, #0x0000ffff00000000
+         ld1             {v3.16b}, [x3], x1      // P1
+@@ -1172,7 +1185,8 @@ endfunc
+ //   w2 = PQUANT bitstream parameter
+ function ff_vc1_h_loop_filter16_neon, export=1
+         sub             x3, x0, #4              // where to start reading
+-        ldr             d0, .Lcoeffs
++        adrp            x4, .Lcoeffs
++        ldr             d0, [x4, :lo12:.Lcoeffs]
+         ld1             {v1.8b}, [x3], x1       // P1[0], P2[0]...
+         sub             x0, x0, #1              // where to start writing
+         ld1             {v2.8b}, [x3], x1
