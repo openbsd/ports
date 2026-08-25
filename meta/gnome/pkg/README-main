@@ -50,6 +50,22 @@ will not work at all without it (e.g. seahorse-sharing(1)).
 To make use of it, multicast and avahi-daemon must be enabled:
     # rcctl enable multicast avahi_daemon
 
+Audio/Video capture
+===================
+
+OpenBSD disables audio and video recording at the kernel level by default. If a
+microphone source produces silence or a webcam source shows a black or blue
+frame, enable recording with:
+    # sysctl kern.audio.record=1
+    # sysctl kern.video.record=1
+To persist across reboots, add both lines to /etc/sysctl.conf.
+
+The video(4) device also needs to be accessible by the user:
+    # chown $USER /dev/video0
+To persist across reboots, add the line to /etc/rc.local.
+
+See https://www.openbsd.org/faq/faq13.html for details.
+
 Google account integration
 ==========================
 
