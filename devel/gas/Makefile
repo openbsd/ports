@@ -1,7 +1,7 @@
 COMMENT =		GNU assembler
 
 # keep version synchronized with devel/binutils
-V =			2.46.1
+V =			2.47
 DISTNAME =		binutils-$V
 PKGNAME =		gas-$V
 
@@ -28,6 +28,9 @@ CONFIGURE_ARGS +=	--disable-ld \
 			--disable-install-libbfd \
 			--disable-shared \
 			--disable-host-shared
+
+# 2.47 release contains development=true, supress -Werror
+CONFIGURE_ARGS +=	--disable-werror
 
 USE_GMAKE =		yes
 
