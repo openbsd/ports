@@ -3,7 +3,7 @@ Drop OpenSSL version spec to find LibreSSL
 Index: lib/libelectronic-id/CMakeLists.txt
 --- lib/libelectronic-id/CMakeLists.txt.orig
 +++ lib/libelectronic-id/CMakeLists.txt
-@@ -46,7 +46,7 @@ target_include_directories(${PROJECT_NAME}
+@@ -47,7 +47,7 @@ target_include_directories(${PROJECT_NAME}
    include
  )
  
