@@ -1,12 +1,12 @@
 COMMENT=	client library for accessing NFS
 
-DISTNAME=	libnfs-7.0.0pl20260708
+DISTNAME=	libnfs-7.0.0pl20260825
 GH_ACCOUNT=	sahlberg
 GH_PROJECT=	libnfs
-GH_COMMIT=	8d4c2f6057acb6a01a316fbb7eea1c05a06e34c6
+GH_COMMIT=	1ba86c2183fd247417bc75d41586d5460d3065fe
 CATEGORIES=	devel net
 
-SHARED_LIBS=	nfs	3.0
+SHARED_LIBS=	nfs	4.0
 
 HOMEPAGE=	https://github.com/sahlberg/libnfs
 
