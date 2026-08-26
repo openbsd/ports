@@ -1,0 +1,18 @@
+Use libc++abi also for sparc64
+
+Index: library/unwind/src/lib.rs
+--- library/unwind/src/lib.rs.orig
++++ library/unwind/src/lib.rs
+@@ -169,11 +169,7 @@ unsafe extern "C" {}
+ #[link(name = "gcc_s", cfg(not(target_feature = "crt-static")))]
+ unsafe extern "C" {}
+ 
+-#[cfg(all(target_os = "openbsd", target_arch = "sparc64"))]
+-#[link(name = "gcc")]
+-unsafe extern "C" {}
+-
+-#[cfg(all(target_os = "openbsd", not(target_arch = "sparc64")))]
++#[cfg(target_os = "openbsd")]
+ #[link(name = "c++abi")]
+ unsafe extern "C" {}
+ 

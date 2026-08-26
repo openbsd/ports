@@ -12,7 +12,7 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.97.1
+V =			1.98.0
 DISTNAME =		rustc-${V}-src
 
 # always keep REVISION-bootstrap in sync with REVISION-main (if defined)
@@ -22,11 +22,11 @@ REVISION-bootstrap =	${REVISION-main}
 .endif
 
 # rustc bootstrap version
-BV-aarch64 =		1.96.0
-BV-amd64 =		1.97.0
+BV-aarch64 =		1.97.1
+BV-amd64 =		1.98.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.96.0
-BV-sparc64 =		1.96.0
+BV-riscv64 =		1.97.1
+BV-sparc64 =		1.98.0
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -253,6 +253,7 @@ do-configure:
 	echo 'verbose-tests = true' >>${WRKBUILD}/config.toml
 	echo 'deny-warnings = false' >>${WRKBUILD}/config.toml
 	echo 'lld = false' >>${WRKBUILD}/config.toml
+	echo 'compress-debuginfo = "off"' >>${WRKBUILD}/config.toml
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'compression-formats = ["gz"]' >>${WRKBUILD}/config.toml
