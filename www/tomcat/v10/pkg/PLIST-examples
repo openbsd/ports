@@ -232,6 +232,7 @@ webapps/docs/api/org/apache/catalina/ant/package-summary.html
 webapps/docs/api/org/apache/catalina/ant/package-tree.html
 webapps/docs/api/org/apache/catalina/authenticator/
 webapps/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.AllowCorsPreflight.html
+webapps/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.AuthenticationResult.html
 webapps/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.SsoReauthenticationMode.html
 webapps/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.html
 webapps/docs/api/org/apache/catalina/authenticator/BasicAuthenticator.BasicCredentials.html
@@ -1727,6 +1728,7 @@ webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharOutputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharsetCache.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharsetUtil.html
+webapps/docs/api/org/apache/tomcat/util/buf/CloseableURLConnection.html
 webapps/docs/api/org/apache/tomcat/util/buf/EncodedSolidusHandling.html
 webapps/docs/api/org/apache/tomcat/util/buf/HexUtils.html
 webapps/docs/api/org/apache/tomcat/util/buf/MessageBytes.html
@@ -2230,11 +2232,11 @@ webapps/docs/api/org/apache/tomcat/websocket/server/WsContextListener.html
 webapps/docs/api/org/apache/tomcat/websocket/server/WsFilter.html
 webapps/docs/api/org/apache/tomcat/websocket/server/WsFrameServer.html
 webapps/docs/api/org/apache/tomcat/websocket/server/WsHandshakeRequest.html
+webapps/docs/api/org/apache/tomcat/websocket/server/WsHttpSessionBindingListener.html
 webapps/docs/api/org/apache/tomcat/websocket/server/WsHttpUpgradeHandler.html
 webapps/docs/api/org/apache/tomcat/websocket/server/WsRemoteEndpointImplServer.html
 webapps/docs/api/org/apache/tomcat/websocket/server/WsSci.html
 webapps/docs/api/org/apache/tomcat/websocket/server/WsServerContainer.html
-webapps/docs/api/org/apache/tomcat/websocket/server/WsSessionListener.html
 webapps/docs/api/org/apache/tomcat/websocket/server/WsWriteTimeout.html
 webapps/docs/api/org/apache/tomcat/websocket/server/package-summary.html
 webapps/docs/api/org/apache/tomcat/websocket/server/package-tree.html
