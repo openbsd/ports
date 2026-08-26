@@ -1,7 +1,7 @@
 COMMENT =	GNU binary utilities
 
 # keep version synchronized with devel/gas
-V =		2.46.1
+V =		2.47
 DISTNAME =	binutils-${V}
 
 CATEGORIES =	devel
@@ -34,6 +34,9 @@ CONFIGURE_ARGS +=	--disable-gas \
 			--program-prefix=g \
 			--without-msgpack \
 			--with-system-zlib
+
+# 2.47 release contains development=true, supress -Werror
+CONFIGURE_ARGS +=	--disable-werror
 
 USE_GMAKE =	Yes
 
