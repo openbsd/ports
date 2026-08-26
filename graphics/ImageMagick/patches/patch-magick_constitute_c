@@ -7,7 +7,7 @@ not seem to be a security issue".
 Index: magick/constitute.c
 --- magick/constitute.c.orig
 +++ magick/constitute.c
-@@ -1196,8 +1196,7 @@ MagickExport MagickBooleanType WriteImage(const ImageI
+@@ -1225,8 +1225,7 @@ MagickExport MagickBooleanType WriteImage(const ImageI
    if ((image->ping != MagickFalse) &&
        (SyncImagePixelCache(image,exception) == MagickFalse))
      return(MagickFalse);

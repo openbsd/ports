@@ -2,7 +2,7 @@ COMMENT=	image processing tools
 
 GH_ACCOUNT=	ImageMagick
 GH_PROJECT=	ImageMagick6
-GH_TAGNAME=	6.9.13-54
+GH_TAGNAME=	6.9.13-55
 PKGNAME=	ImageMagick-${GH_TAGNAME:S/-/./}
 
 SHARED_LIBS +=	MagickCore-6.Q16     8.3      # 7.1
