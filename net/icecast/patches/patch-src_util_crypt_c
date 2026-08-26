@@ -1,0 +1,18 @@
+Avoid NULL pointer dereference.
+XXX would it be useful to add support for bcrypt(2) in that file?
+
+Index: src/util_crypt.c
+--- src/util_crypt.c.orig
++++ src/util_crypt.c
+@@ -241,7 +241,10 @@ bool   util_crypt_is_new_secure(void)
+ {
+ #ifdef HAVE_new_algo
+     if (pthread_once(&crypt_detect, crypt_detect_run) != 0)
+-        return NULL;
++        return false;
++
++    if (new_algo == NULL)
++        return false;
+ 
+     return new_algo->secure;
+ #else

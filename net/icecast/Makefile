@@ -2,6 +2,7 @@ COMMENT=	server for streaming various media formats
 CATEGORIES=	net audio
 
 DISTNAME=	icecast-2.5.0
+REVISION=	0
 
 HOMEPAGE=	https://icecast.org/
 
@@ -17,6 +18,8 @@ WANTLIB += ngtcp2_crypto_libressl ogg pthread rhash speex>=3 ssl
 WANTLIB += theora>=1 vorbis>=3 xml2 xslt>=3 z
 
 SITES=		https://downloads.xiph.org/releases/icecast/
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-theora=${LOCALBASE}
