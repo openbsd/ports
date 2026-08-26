@@ -2,7 +2,7 @@ COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		49.7
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += mutter-mtk-17             0.0 # 0.0.0
 SHARED_LIBS += mutter-cogl-17            0.0 # 0.0.0
@@ -48,6 +48,7 @@ LIB_DEPENDS=		audio/libcanberra \
 			devel/startup-notification \
 			graphics/colord \
 			graphics/graphene \
+			multimedia/pipewire/pipewire,-libs \
 			sysutils/libdisplay-info \
 			wayland/libei \
 			wayland/wayland \
