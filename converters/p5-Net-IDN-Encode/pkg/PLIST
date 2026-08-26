@@ -17,7 +17,7 @@ ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/IDN/
 ${P5ARCH}/auto/Net/IDN/Punycode/
 ${P5ARCH}/auto/Net/IDN/Punycode/Punycode.bs
-${P5ARCH}/auto/Net/IDN/Punycode/Punycode.so
+@so ${P5ARCH}/auto/Net/IDN/Punycode/Punycode.so
 @man man/man3p/Net::IDN::Encode.3p
 @man man/man3p/Net::IDN::Overview.3p
 @man man/man3p/Net::IDN::Punycode.3p
