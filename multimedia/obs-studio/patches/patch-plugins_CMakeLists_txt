@@ -18,3 +18,12 @@ Index: plugins/CMakeLists.txt
    endif()
  endmacro()
  
+@@ -55,7 +57,7 @@ add_obs_plugin(
+ )
+ add_obs_plugin(
+     frontend-tools
+-    PLATFORMS WINDOWS MACOS LINUX
++    PLATFORMS WINDOWS MACOS LINUX OPENBSD
+     WITH_MESSAGE
+ )
+ add_obs_plugin(image-source)

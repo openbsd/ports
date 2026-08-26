@@ -1,7 +1,7 @@
 Index: frontend/CMakeLists.txt
 --- frontend/CMakeLists.txt.orig
 +++ frontend/CMakeLists.txt
-@@ -82,7 +82,11 @@ elseif(OS_MACOS)
+@@ -78,7 +78,11 @@ elseif(OS_MACOS)
  elseif(OS_LINUX)
    include(cmake/os-linux.cmake)
  elseif(OS_FREEBSD OR OS_OPENBSD)

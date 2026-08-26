@@ -1,7 +1,6 @@
 COMMENT =		free live streaming and screen recording
 
-V =			32.1.2
-REVISION =		0
+V =			32.2.2
 DIST_TUPLE =		github obsproject obs-studio ${V} .
 DIST_TUPLE +=		github simd-everywhere simde v0.8.2 simde
 
@@ -11,11 +10,14 @@ HOMEPAGE =		https://obsproject.com/
 
 MAINTAINER =		Daniil Ryvkin <mail@leinadr.com>
 
+# upstream dropped support for 32-bit builds
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-SHARED_LIBS +=		obs                  0.0
-SHARED_LIBS +=		obs-frontend-api     0.0
+SHARED_LIBS +=		obs                  0.1
+SHARED_LIBS +=		obs-frontend-api     0.1
 SHARED_LIBS +=		obs-opengl           0.0
 SHARED_LIBS +=		obs-scripting        0.0
 
