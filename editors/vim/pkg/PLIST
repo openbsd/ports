@@ -593,6 +593,7 @@ share/vim/${P}/compiler/groff.vim
 share/vim/${P}/compiler/haml.vim
 share/vim/${P}/compiler/hare.vim
 share/vim/${P}/compiler/hp_acc.vim
+share/vim/${P}/compiler/iar.vim
 share/vim/${P}/compiler/icc.vim
 share/vim/${P}/compiler/icon.vim
 share/vim/${P}/compiler/ifort.vim
@@ -872,6 +873,7 @@ share/vim/${P}/ftplugin/autopkgtest.vim
 share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bash.vim
 share/vim/${P}/ftplugin/basic.vim
+share/vim/${P}/ftplugin/bazelrc.vim
 share/vim/${P}/ftplugin/bdf.vim
 share/vim/${P}/ftplugin/beancount.vim
 share/vim/${P}/ftplugin/bicep-params.vim
@@ -999,6 +1001,7 @@ share/vim/${P}/ftplugin/heex.vim
 share/vim/${P}/ftplugin/help.vim
 share/vim/${P}/ftplugin/hgcommit.vim
 share/vim/${P}/ftplugin/hip.vim
+share/vim/${P}/ftplugin/hlsl.vim
 share/vim/${P}/ftplugin/hlsplaylist.vim
 share/vim/${P}/ftplugin/hog.vim
 share/vim/${P}/ftplugin/hostconf.vim
@@ -1028,6 +1031,7 @@ share/vim/${P}/ftplugin/jq.vim
 share/vim/${P}/ftplugin/json.vim
 share/vim/${P}/ftplugin/json5.vim
 share/vim/${P}/ftplugin/jsonc.vim
+share/vim/${P}/ftplugin/jsonld.vim
 share/vim/${P}/ftplugin/jsonnet.vim
 share/vim/${P}/ftplugin/jsp.vim
 share/vim/${P}/ftplugin/julia.vim
@@ -1359,6 +1363,7 @@ share/vim/${P}/indent/handlebars.vim
 share/vim/${P}/indent/hare.vim
 share/vim/${P}/indent/hcl.vim
 share/vim/${P}/indent/hip.vim
+share/vim/${P}/indent/hlsl.vim
 share/vim/${P}/indent/hog.vim
 share/vim/${P}/indent/html.vim
 share/vim/${P}/indent/htmldjango.vim
@@ -1372,6 +1377,7 @@ share/vim/${P}/indent/javascriptreact.vim
 share/vim/${P}/indent/json.vim
 share/vim/${P}/indent/json5.vim
 share/vim/${P}/indent/jsonc.vim
+share/vim/${P}/indent/jsonld.vim
 share/vim/${P}/indent/jsp.vim
 share/vim/${P}/indent/julia.vim
 share/vim/${P}/indent/just.vim
@@ -2117,6 +2123,7 @@ share/vim/${P}/syntax/b.vim
 share/vim/${P}/syntax/baan.vim
 share/vim/${P}/syntax/bash.vim
 share/vim/${P}/syntax/basic.vim
+share/vim/${P}/syntax/bazelrc.vim
 share/vim/${P}/syntax/bc.vim
 share/vim/${P}/syntax/bdf.vim
 share/vim/${P}/syntax/beancount.vim
@@ -2237,6 +2244,7 @@ share/vim/${P}/syntax/dylan.vim
 share/vim/${P}/syntax/dylanintr.vim
 share/vim/${P}/syntax/dylanlid.vim
 share/vim/${P}/syntax/ecd.vim
+share/vim/${P}/syntax/ed.vim
 share/vim/${P}/syntax/edif.vim
 share/vim/${P}/syntax/editorconfig.vim
 share/vim/${P}/syntax/eiffel.vim
@@ -2335,6 +2343,7 @@ share/vim/${P}/syntax/hex.vim
 share/vim/${P}/syntax/hgcommit.vim
 share/vim/${P}/syntax/hip.vim
 share/vim/${P}/syntax/hitest.vim
+share/vim/${P}/syntax/hlsl.vim
 share/vim/${P}/syntax/hlsplaylist.vim
 share/vim/${P}/syntax/hog.vim
 share/vim/${P}/syntax/hollywood.vim
@@ -2383,6 +2392,7 @@ share/vim/${P}/syntax/jq.vim
 share/vim/${P}/syntax/json.vim
 share/vim/${P}/syntax/json5.vim
 share/vim/${P}/syntax/jsonc.vim
+share/vim/${P}/syntax/jsonld.vim
 share/vim/${P}/syntax/jsp.vim
 share/vim/${P}/syntax/julia.vim
 share/vim/${P}/syntax/just.vim
@@ -2449,6 +2459,7 @@ share/vim/${P}/syntax/manconf.vim
 share/vim/${P}/syntax/manual.vim
 share/vim/${P}/syntax/maple.vim
 share/vim/${P}/syntax/markdown.vim
+share/vim/${P}/syntax/marko.vim
 share/vim/${P}/syntax/masm.vim
 share/vim/${P}/syntax/mason.vim
 share/vim/${P}/syntax/master.vim
