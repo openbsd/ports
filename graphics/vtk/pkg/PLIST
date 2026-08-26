@@ -64,6 +64,7 @@ include/vtk/vtkABINamespace.h
 include/vtk/vtkAMRBaseParticlesReader.h
 include/vtk/vtkAMRBaseReader.h
 include/vtk/vtkAMRBox.h
+include/vtk/vtkAMRContourFilter.h
 include/vtk/vtkAMRCutPlane.h
 include/vtk/vtkAMRDataInternals.h
 include/vtk/vtkAMRDataObject.h
@@ -74,6 +75,7 @@ include/vtk/vtkAMRFlashParticlesReader.h
 include/vtk/vtkAMRFlashReader.h
 include/vtk/vtkAMRGaussianPulseSource.h
 include/vtk/vtkAMRInformation.h
+include/vtk/vtkAMRInterfaceFilter.h
 include/vtk/vtkAMRInterpolatedVelocityField.h
 include/vtk/vtkAMRMetaData.h
 include/vtk/vtkAMRResampleFilter.h
@@ -88,6 +90,7 @@ include/vtk/vtkAOSDataArrayTemplate.txx
 include/vtk/vtkASCIITextCodec.h
 include/vtk/vtkAVSucdReader.h
 include/vtk/vtkAbstractArray.h
+include/vtk/vtkAbstractBuffer.h
 include/vtk/vtkAbstractCellArray.h
 include/vtk/vtkAbstractCellLinks.h
 include/vtk/vtkAbstractCellLocator.h
@@ -124,6 +127,7 @@ include/vtk/vtkAddMembershipArray.h
 include/vtk/vtkAdjacencyMatrixToEdgeTable.h
 include/vtk/vtkAdjacentVertexIterator.h
 include/vtk/vtkAffineArray.h
+include/vtk/vtkAffineArray.txx
 include/vtk/vtkAffineCharArray.h
 include/vtk/vtkAffineDoubleArray.h
 include/vtk/vtkAffineFloatArray.h
@@ -174,6 +178,7 @@ include/vtk/vtkAnnotation.h
 include/vtk/vtkAnnotationLayers.h
 include/vtk/vtkAnnotationLayersAlgorithm.h
 include/vtk/vtkAnnotationLink.h
+include/vtk/vtkAnnularBinIterator.h
 include/vtk/vtkAnnulus.h
 include/vtk/vtkAppendArcLength.h
 include/vtk/vtkAppendCompositeDataLeaves.h
@@ -277,6 +282,7 @@ include/vtk/vtkBase64InputStream.h
 include/vtk/vtkBase64OutputStream.h
 include/vtk/vtkBase64Utilities.h
 include/vtk/vtkBatch.h
+include/vtk/vtkBatchedLabeledDataMapper.h
 include/vtk/vtkBatchedSurfaceLICMapper.h
 include/vtk/vtkBezierContourLineInterpolator.h
 include/vtk/vtkBezierCurve.h
@@ -346,10 +352,6 @@ include/vtk/vtkCONVERGECFDCGNSReader.h
 include/vtk/vtkCONVERGECFDReader.h
 include/vtk/vtkCPExodusIIElementBlock.h
 include/vtk/vtkCPExodusIIInSituReader.h
-include/vtk/vtkCPExodusIINodalCoordinatesTemplate.h
-include/vtk/vtkCPExodusIINodalCoordinatesTemplate.txx
-include/vtk/vtkCPExodusIIResultsArrayTemplate.h
-include/vtk/vtkCPExodusIIResultsArrayTemplate.txx
 include/vtk/vtkCachedStreamingDemandDrivenPipeline.h
 include/vtk/vtkCallbackCommand.h
 include/vtk/vtkCamera.h
@@ -358,6 +360,7 @@ include/vtk/vtkCamera3DWidget.h
 include/vtk/vtkCameraActor.h
 include/vtk/vtkCameraHandleSource.h
 include/vtk/vtkCameraInterpolator.h
+include/vtk/vtkCameraManipulator.h
 include/vtk/vtkCameraNode.h
 include/vtk/vtkCameraOrientationRepresentation.h
 include/vtk/vtkCameraOrientationWidget.h
@@ -411,6 +414,7 @@ include/vtk/vtkCellGridResponders.h
 include/vtk/vtkCellGridSampleQuery.h
 include/vtk/vtkCellGridSidesCache.h
 include/vtk/vtkCellGridSidesQuery.h
+include/vtk/vtkCellGridSummaryInformationQuery.h
 include/vtk/vtkCellGridToUnstructuredGrid.h
 include/vtk/vtkCellGridTransform.h
 include/vtk/vtkCellGridWarp.h
@@ -493,6 +497,7 @@ include/vtk/vtkColorTransferControlPointsItem.h
 include/vtk/vtkColorTransferFunction.h
 include/vtk/vtkColorTransferFunctionItem.h
 include/vtk/vtkCommand.h
+include/vtk/vtkCommonCacheModule.h
 include/vtk/vtkCommonColorModule.h
 include/vtk/vtkCommonComputationalGeometryModule.h
 include/vtk/vtkCommonCoreModule.h
@@ -509,6 +514,7 @@ include/vtk/vtkCompassRepresentation.h
 include/vtk/vtkCompassWidget.h
 include/vtk/vtkCompiler.h
 include/vtk/vtkCompositeArray.h
+include/vtk/vtkCompositeArray.txx
 include/vtk/vtkCompositeCellGridMapper.h
 include/vtk/vtkCompositeCellGridReader.h
 include/vtk/vtkCompositeCharArray.h
@@ -567,6 +573,7 @@ include/vtk/vtkConeSource.h
 include/vtk/vtkConnectedPointsFilter.h
 include/vtk/vtkConnectivityFilter.h
 include/vtk/vtkConstantArray.h
+include/vtk/vtkConstantArray.txx
 include/vtk/vtkConstantCharArray.h
 include/vtk/vtkConstantDoubleArray.h
 include/vtk/vtkConstantFloatArray.h
@@ -632,6 +639,7 @@ include/vtk/vtkConvertToMultiBlockDataSet.h
 include/vtk/vtkConvertToPartitionedDataSetCollection.h
 include/vtk/vtkConvertToPointCloud.h
 include/vtk/vtkConvertToPolyhedra.h
+include/vtk/vtkConvexHull.h
 include/vtk/vtkConvexHull2D.h
 include/vtk/vtkConvexPointSet.h
 include/vtk/vtkCookieCutter.h
@@ -691,6 +699,7 @@ include/vtk/vtkDGQuad.h
 include/vtk/vtkDGRangeResponder.h
 include/vtk/vtkDGRenderResponder.h
 include/vtk/vtkDGSidesResponder.h
+include/vtk/vtkDGSummaryInformationResponder.h
 include/vtk/vtkDGTet.h
 include/vtk/vtkDGTranscribeCellGridCells.h
 include/vtk/vtkDGTranscribeUnstructuredCells.h
@@ -956,6 +965,7 @@ include/vtk/vtkFast2DLayoutStrategy.h
 include/vtk/vtkFastLabeledDataMapper.h
 include/vtk/vtkFastSplatter.h
 include/vtk/vtkFeatureEdges.h
+include/vtk/vtkFeatureEdgesDispatcher.h
 include/vtk/vtkFeatures.h
 include/vtk/vtkFiberSurface.h
 include/vtk/vtkFieldData.h
@@ -965,6 +975,7 @@ include/vtk/vtkFieldDataToDataSetAttribute.h
 include/vtk/vtkFileOutputWindow.h
 include/vtk/vtkFileResourceStream.h
 include/vtk/vtkFillHolesFilter.h
+include/vtk/vtkFillPointCloud.h
 include/vtk/vtkFilteringInformationKeyManager.h
 include/vtk/vtkFiltersAMRModule.h
 include/vtk/vtkFiltersCellGrid.h
@@ -979,6 +990,7 @@ include/vtk/vtkFiltersGeometryPreviewModule.h
 include/vtk/vtkFiltersHybridModule.h
 include/vtk/vtkFiltersHyperTreeModule.h
 include/vtk/vtkFiltersImagingModule.h
+include/vtk/vtkFiltersMeshingModule.h
 include/vtk/vtkFiltersModelingModule.h
 include/vtk/vtkFiltersParallelImagingModule.h
 include/vtk/vtkFiltersParallelModule.h
@@ -1064,6 +1076,7 @@ include/vtk/vtkGaussianRandomSequence.h
 include/vtk/vtkGaussianSplatter.h
 include/vtk/vtkGeneralTransform.h
 include/vtk/vtkGeneralizedKernel.h
+include/vtk/vtkGeneralizedSurfaceNets3D.h
 include/vtk/vtkGenerateIds.h
 include/vtk/vtkGenerateIndexArray.h
 include/vtk/vtkGenerateProcessIds.h
@@ -1107,6 +1120,7 @@ include/vtk/vtkGeoTransform.h
 include/vtk/vtkGeodesicPath.h
 include/vtk/vtkGeometricErrorMetric.h
 include/vtk/vtkGeometryFilter.h
+include/vtk/vtkGeometryFilterDispatcher.h
 include/vtk/vtkGeovisCoreModule.h
 include/vtk/vtkGlobFileNames.h
 include/vtk/vtkGlyph2D.h
@@ -1164,16 +1178,14 @@ include/vtk/vtkHausdorffDistancePointSetFilter.h
 include/vtk/vtkHeap.h
 include/vtk/vtkHeatmapItem.h
 include/vtk/vtkHedgeHog.h
+include/vtk/vtkHexagonalBokehBlurPass.h
 include/vtk/vtkHexagonalPrism.h
 include/vtk/vtkHexahedron.h
 include/vtk/vtkHiddenLineRemovalPass.h
 include/vtk/vtkHierarchicalBinningFilter.h
-include/vtk/vtkHierarchicalBoxDataSet.h
-include/vtk/vtkHierarchicalBoxDataSetAlgorithm.h
 include/vtk/vtkHierarchicalDataExtractDataSets.h
 include/vtk/vtkHierarchicalDataExtractLevel.h
 include/vtk/vtkHierarchicalDataLevelFilter.h
-include/vtk/vtkHierarchicalDataSetGeometryFilter.h
 include/vtk/vtkHierarchicalGraphPipeline.h
 include/vtk/vtkHierarchicalGraphView.h
 include/vtk/vtkHierarchicalPolyDataMapper.h
@@ -1185,6 +1197,7 @@ include/vtk/vtkHigherOrderTetra.h
 include/vtk/vtkHigherOrderTriangle.h
 include/vtk/vtkHigherOrderWedge.h
 include/vtk/vtkHighestDensityRegionsStatistics.h
+include/vtk/vtkHilbertCurveSorter.h
 include/vtk/vtkHomogeneousTransform.h
 include/vtk/vtkHoudiniPolyDataWriter.h
 include/vtk/vtkHoverWidget.h
@@ -1247,7 +1260,6 @@ include/vtk/vtkHyperTreeGridToUnstructuredGrid.h
 include/vtk/vtkHyperTreeGridTools.h
 include/vtk/vtkHyperTreeGridTotalVisibleVolumeStrategy.h
 include/vtk/vtkHyperTreeGridValidCellStrategy.h
-include/vtk/vtkHyperTreeGridVisibleLeavesSize.h
 include/vtk/vtkIOAMRModule.h
 include/vtk/vtkIOAsynchronousModule.h
 include/vtk/vtkIOAvmeshModule.h
@@ -1319,6 +1331,7 @@ include/vtk/vtkImageAppendComponents.h
 include/vtk/vtkImageBSplineCoefficients.h
 include/vtk/vtkImageBSplineInternals.h
 include/vtk/vtkImageBSplineInterpolator.h
+include/vtk/vtkImageBinaryThreshold.h
 include/vtk/vtkImageBlend.h
 include/vtk/vtkImageButterworthHighPass.h
 include/vtk/vtkImageButterworthLowPass.h
@@ -1520,6 +1533,7 @@ include/vtk/vtkIncrementalOctreePointLocator.h
 include/vtk/vtkIncrementalPointLocator.h
 include/vtk/vtkIndent.h
 include/vtk/vtkIndexedArray.h
+include/vtk/vtkIndexedArray.txx
 include/vtk/vtkIndexedCharArray.h
 include/vtk/vtkIndexedDoubleArray.h
 include/vtk/vtkIndexedFloatArray.h
@@ -1599,6 +1613,7 @@ include/vtk/vtkInteractorStyleFlight.h
 include/vtk/vtkInteractorStyleImage.h
 include/vtk/vtkInteractorStyleJoystickActor.h
 include/vtk/vtkInteractorStyleJoystickCamera.h
+include/vtk/vtkInteractorStyleManipulator.h
 include/vtk/vtkInteractorStyleMultiTouchCamera.h
 include/vtk/vtkInteractorStyleRubberBand2D.h
 include/vtk/vtkInteractorStyleRubberBand3D.h
@@ -1629,8 +1644,13 @@ include/vtk/vtkJSONImageWriter.h
 include/vtk/vtkJSONRenderWindowExporter.h
 include/vtk/vtkJSONSceneExporter.h
 include/vtk/vtkJavaScriptDataWriter.h
+include/vtk/vtkJogglePoints.h
 include/vtk/vtkJoinTables.h
 include/vtk/vtkJoinTables.txx
+include/vtk/vtkJoystickFly.h
+include/vtk/vtkJoystickFlyIn.h
+include/vtk/vtkJoystickFlyOut.h
+include/vtk/vtkJumpAndWalkCellLocator.h
 include/vtk/vtkKCoreDecomposition.h
 include/vtk/vtkKCoreLayout.h
 include/vtk/vtkKMeansDistanceFunctor.h
@@ -1664,6 +1684,7 @@ include/vtk/vtkLabeledContourMapper.h
 include/vtk/vtkLabeledContourPolyDataItem.h
 include/vtk/vtkLabeledDataMapper.h
 include/vtk/vtkLabeledDatatypeDefinitions.h
+include/vtk/vtkLabeledImagePointSampler.h
 include/vtk/vtkLabeledTreeMapDataMapper.h
 include/vtk/vtkLagrangeCurve.h
 include/vtk/vtkLagrangeHexahedron.h
@@ -1748,8 +1769,6 @@ include/vtk/vtkMRCReader.h
 include/vtk/vtkMagnifierRepresentation.h
 include/vtk/vtkMagnifierWidget.h
 include/vtk/vtkMapArrayValues.h
-include/vtk/vtkMappedDataArray.h
-include/vtk/vtkMappedDataArray.txx
 include/vtk/vtkMappedUnstructuredGrid.h
 include/vtk/vtkMappedUnstructuredGrid.txx
 include/vtk/vtkMappedUnstructuredGridCellIterator.h
@@ -1758,6 +1777,8 @@ include/vtk/vtkMapper.h
 include/vtk/vtkMapper2D.h
 include/vtk/vtkMapperCollection.h
 include/vtk/vtkMapperNode.h
+include/vtk/vtkMarchingCellsClipCases.h
+include/vtk/vtkMarchingCellsContourCases.h
 include/vtk/vtkMarchingContourFilter.h
 include/vtk/vtkMarchingCubes.h
 include/vtk/vtkMarchingCubesPolygonCases.h
@@ -1804,6 +1825,7 @@ include/vtk/vtkMergeTables.h
 include/vtk/vtkMergeTimeFilter.h
 include/vtk/vtkMergeVectorComponents.h
 include/vtk/vtkMersenneTwister.h
+include/vtk/vtkMeshCacheRunner.h
 include/vtk/vtkMeshQuality.h
 include/vtk/vtkMeta.h
 include/vtk/vtkMetaImageReader.h
@@ -1898,6 +1920,8 @@ include/vtk/vtkOpaquePass.h
 include/vtk/vtkOpenFOAMReader.h
 include/vtk/vtkOpenGLActor.h
 include/vtk/vtkOpenGLArrayTextureBufferAdapter.h
+include/vtk/vtkOpenGLArrayTextureBufferCache.h
+include/vtk/vtkOpenGLBatchedLabeledDataMapper.h
 include/vtk/vtkOpenGLBatchedPolyDataMapper.h
 include/vtk/vtkOpenGLBillboardTextActor3D.h
 include/vtk/vtkOpenGLBufferObject.h
@@ -1962,6 +1986,10 @@ include/vtk/vtkOpenGLTextActor.h
 include/vtk/vtkOpenGLTextActor3D.h
 include/vtk/vtkOpenGLTextMapper.h
 include/vtk/vtkOpenGLTexture.h
+include/vtk/vtkOpenGLTextureCPUNormalization.h
+include/vtk/vtkOpenGLTextureComputeShaderNormalization.h
+include/vtk/vtkOpenGLTextureFramebufferNormalization.h
+include/vtk/vtkOpenGLTextureNormalizationHelper.h
 include/vtk/vtkOpenGLUniforms.h
 include/vtk/vtkOpenGLVertexArrayObject.h
 include/vtk/vtkOpenGLVertexBufferObject.h
@@ -2000,6 +2028,7 @@ include/vtk/vtkOverlappingAMRAlgorithm.h
 include/vtk/vtkOverlappingAMRLevelIdScalars.h
 include/vtk/vtkOverlappingAMRMetaData.h
 include/vtk/vtkOverlayPass.h
+include/vtk/vtkOverrideAttribute.h
 include/vtk/vtkOverrideInformation.h
 include/vtk/vtkOverrideInformationCollection.h
 include/vtk/vtkPAxisAlignedReflectionFilter.h
@@ -2051,6 +2080,7 @@ include/vtk/vtkPResampleFilter.h
 include/vtk/vtkPSphereSource.h
 include/vtk/vtkPSystemTools.h
 include/vtk/vtkPTSReader.h
+include/vtk/vtkPTemporalPathLineFilter.h
 include/vtk/vtkPTextureMapToSphere.h
 include/vtk/vtkPYoungsMaterialInterface.h
 include/vtk/vtkPackLabels.h
@@ -2219,6 +2249,7 @@ include/vtk/vtkPolyDataItem.h
 include/vtk/vtkPolyDataMapper.h
 include/vtk/vtkPolyDataMapper2D.h
 include/vtk/vtkPolyDataMapperNode.h
+include/vtk/vtkPolyDataMaterial.h
 include/vtk/vtkPolyDataNormals.h
 include/vtk/vtkPolyDataPlaneClipper.h
 include/vtk/vtkPolyDataPlaneCutter.h
@@ -2246,6 +2277,7 @@ include/vtk/vtkPolygonalHandleRepresentation3D.h
 include/vtk/vtkPolygonalSurfaceContourLineInterpolator.h
 include/vtk/vtkPolygonalSurfacePointPlacer.h
 include/vtk/vtkPolyhedron.h
+include/vtk/vtkPolyhedronContour.h
 include/vtk/vtkPolyhedronUtilities.h
 include/vtk/vtkPolynomialSolversUnivariate.h
 include/vtk/vtkPostScriptWriter.h
@@ -2367,6 +2399,7 @@ include/vtk/vtkRemoveIsolatedVertices.h
 include/vtk/vtkRemovePolyData.h
 include/vtk/vtkRemoveUnusedPoints.h
 include/vtk/vtkRenderLargeImage.h
+include/vtk/vtkRenderMaterialLibrary.h
 include/vtk/vtkRenderPass.h
 include/vtk/vtkRenderPassCollection.h
 include/vtk/vtkRenderState.h
@@ -2529,6 +2562,7 @@ include/vtk/vtkShaderProgram.h
 include/vtk/vtkShaderProperty.h
 include/vtk/vtkShadowMapBakerPass.h
 include/vtk/vtkShadowMapPass.h
+include/vtk/vtkShellBinIterator.h
 include/vtk/vtkShepardKernel.h
 include/vtk/vtkShepardMethod.h
 include/vtk/vtkShortArray.h
@@ -2624,6 +2658,7 @@ include/vtk/vtkStatisticalOutlierRemoval.h
 include/vtk/vtkStatisticsAlgorithm.h
 include/vtk/vtkStatisticsAlgorithmPrivate.h
 include/vtk/vtkStdFunctionArray.h
+include/vtk/vtkStdFunctionArray.txx
 include/vtk/vtkStdFunctionTypeFloat32Array.h
 include/vtk/vtkStdFunctionTypeFloat64Array.h
 include/vtk/vtkStdFunctionTypeInt16Array.h
@@ -2646,6 +2681,7 @@ include/vtk/vtkStreamingDemandDrivenPipeline.h
 include/vtk/vtkStreamingStatistics.h
 include/vtk/vtkStreamingTessellator.h
 include/vtk/vtkStridedArray.h
+include/vtk/vtkStridedArray.txx
 include/vtk/vtkStridedImplicitBackend.h
 include/vtk/vtkStridedImplicitBackend.txx
 include/vtk/vtkStridedTypeFloat32Array.h
@@ -2686,8 +2722,19 @@ include/vtk/vtkStructuredGridReader.h
 include/vtk/vtkStructuredGridWriter.h
 include/vtk/vtkStructuredNeighbor.h
 include/vtk/vtkStructuredPointArray.h
+include/vtk/vtkStructuredPointArray.txx
 include/vtk/vtkStructuredPointBackend.h
 include/vtk/vtkStructuredPointBackend.txx
+include/vtk/vtkStructuredPointTypeFloat32Array.h
+include/vtk/vtkStructuredPointTypeFloat64Array.h
+include/vtk/vtkStructuredPointTypeInt16Array.h
+include/vtk/vtkStructuredPointTypeInt32Array.h
+include/vtk/vtkStructuredPointTypeInt64Array.h
+include/vtk/vtkStructuredPointTypeInt8Array.h
+include/vtk/vtkStructuredPointTypeUInt16Array.h
+include/vtk/vtkStructuredPointTypeUInt32Array.h
+include/vtk/vtkStructuredPointTypeUInt64Array.h
+include/vtk/vtkStructuredPointTypeUInt8Array.h
 include/vtk/vtkStructuredPoints.h
 include/vtk/vtkStructuredPointsCollection.h
 include/vtk/vtkStructuredPointsGeometryFilter.h
@@ -2707,6 +2754,7 @@ include/vtk/vtkSurfaceLICInterface.h
 include/vtk/vtkSurfaceLICMapper.h
 include/vtk/vtkSurfaceNets2D.h
 include/vtk/vtkSurfaceNets3D.h
+include/vtk/vtkSurfaceNetsAtlas.h
 include/vtk/vtkSurfaceReconstructionFilter.h
 include/vtk/vtkSynchronizeTimeFilter.h
 include/vtk/vtkSynchronizedTemplates2D.h
@@ -2734,6 +2782,7 @@ include/vtk/vtkTableToSQLiteWriter.h
 include/vtk/vtkTableToSparseArray.h
 include/vtk/vtkTableToStructuredGrid.h
 include/vtk/vtkTableToTreeFilter.h
+include/vtk/vtkTableTopRotate.h
 include/vtk/vtkTableWriter.h
 include/vtk/vtkTanglegramItem.h
 include/vtk/vtkTecplotReader.h
@@ -2826,6 +2875,14 @@ include/vtk/vtkToImplicitStrategy.h
 include/vtk/vtkToImplicitTypeErasureStrategy.h
 include/vtk/vtkToneMappingPass.h
 include/vtk/vtkTooltipItem.h
+include/vtk/vtkTrackballEnvironmentRotate.h
+include/vtk/vtkTrackballMoveActor.h
+include/vtk/vtkTrackballMultiRotate.h
+include/vtk/vtkTrackballPan.h
+include/vtk/vtkTrackballRoll.h
+include/vtk/vtkTrackballRotate.h
+include/vtk/vtkTrackballZoom.h
+include/vtk/vtkTrackballZoomToMouse.h
 include/vtk/vtkTransferAttributes.h
 include/vtk/vtkTransform.h
 include/vtk/vtkTransform2D.h
@@ -2900,9 +2957,6 @@ include/vtk/vtkTypeUInt64Array.h
 include/vtk/vtkTypeUInt8Array.h
 include/vtk/vtkTypedArray.h
 include/vtk/vtkTypedArray.txx
-include/vtk/vtkTypedDataArray.h
-include/vtk/vtkTypedDataArray.txx
-include/vtk/vtkTypedDataArrayIterator.h
 include/vtk/vtkURI.h
 include/vtk/vtkURILoader.h
 include/vtk/vtkUTF16TextCodec.h
@@ -3008,7 +3062,17 @@ include/vtk/vtkVolumeReader.h
 include/vtk/vtkVolumeTexture.h
 include/vtk/vtkVolumetricPass.h
 include/vtk/vtkVoronoi2D.h
+include/vtk/vtkVoronoiCore.h
+include/vtk/vtkVoronoiCore.txx
+include/vtk/vtkVoronoiCore2D.h
+include/vtk/vtkVoronoiCore2D.txx
+include/vtk/vtkVoronoiCore3D.h
+include/vtk/vtkVoronoiCore3D.txx
+include/vtk/vtkVoronoiFlower2D.h
+include/vtk/vtkVoronoiFlower3D.h
+include/vtk/vtkVoronoiHull.h
 include/vtk/vtkVoronoiKernel.h
+include/vtk/vtkVoronoiTile.h
 include/vtk/vtkVortexCore.h
 include/vtk/vtkVoxel.h
 include/vtk/vtkVoxelContoursToSurfaceFilter.h
@@ -3023,6 +3087,7 @@ include/vtk/vtkWarpTransform.h
 include/vtk/vtkWarpVector.h
 include/vtk/vtkWeakPointer.h
 include/vtk/vtkWeakPointerBase.h
+include/vtk/vtkWeakPtr.h
 include/vtk/vtkWeakReference.h
 include/vtk/vtkWedge.h
 include/vtk/vtkWeightedTransformFilter.h
@@ -3066,22 +3131,17 @@ include/vtk/vtkXMLFileOutputWindow.h
 include/vtk/vtkXMLFileReadTester.h
 include/vtk/vtkXMLGenericDataObjectReader.h
 include/vtk/vtkXMLHierarchicalBoxDataFileConverter.h
-include/vtk/vtkXMLHierarchicalBoxDataReader.h
-include/vtk/vtkXMLHierarchicalBoxDataWriter.h
-include/vtk/vtkXMLHierarchicalDataReader.h
 include/vtk/vtkXMLHyperTreeGridReader.h
 include/vtk/vtkXMLHyperTreeGridWriter.h
 include/vtk/vtkXMLImageDataReader.h
 include/vtk/vtkXMLImageDataWriter.h
 include/vtk/vtkXMLMultiBlockDataReader.h
 include/vtk/vtkXMLMultiBlockDataWriter.h
-include/vtk/vtkXMLMultiGroupDataReader.h
 include/vtk/vtkXMLPDataObjectReader.h
 include/vtk/vtkXMLPDataObjectWriter.h
 include/vtk/vtkXMLPDataReader.h
 include/vtk/vtkXMLPDataSetWriter.h
 include/vtk/vtkXMLPDataWriter.h
-include/vtk/vtkXMLPHierarchicalBoxDataWriter.h
 include/vtk/vtkXMLPHyperTreeGridReader.h
 include/vtk/vtkXMLPHyperTreeGridWriter.h
 include/vtk/vtkXMLPImageDataReader.h
@@ -3138,6 +3198,7 @@ include/vtk/vtkXYPlotActor.h
 include/vtk/vtkXYPlotWidget.h
 include/vtk/vtkXYZMolReader.h
 include/vtk/vtkXYZMolReader2.h
+include/vtk/vtkXlibHardwareWindow.h
 include/vtk/vtkYieldCriteria.h
 include/vtk/vtkYoungsMaterialInterface.h
 include/vtk/vtkZLibDataCompressor.h
@@ -3702,11 +3763,16 @@ lib/cmake/vtk/vtkTestingDriver.cmake
 lib/cmake/vtk/vtkTestingRenderingDriver.cmake
 lib/cmake/vtk/vtkTopologicalSort.cmake
 lib/cmake/vtk/wasm/
+lib/cmake/vtk/wasm/IWER/
+lib/cmake/vtk/wasm/IWER/LICENSE
+lib/cmake/vtk/wasm/IWER/README.md
+lib/cmake/vtk/wasm/IWER/iwer.js
 lib/cmake/vtk/wasm/README.md
 lib/cmake/vtk/wasm/server.js
 lib/cmake/vtk/wasm/vtkWasmTest.html.in
 lib/cmake/vtk/wasm/vtkWasmTestRunner.cmake
 @lib lib/libvtkChartsCore.so.${LIBvtkChartsCore_VERSION}
+@lib lib/libvtkCommonCache.so.${LIBvtkCommonCache_VERSION}
 @lib lib/libvtkCommonColor.so.${LIBvtkCommonColor_VERSION}
 @lib lib/libvtkCommonComputationalGeometry.so.${LIBvtkCommonComputationalGeometry_VERSION}
 @lib lib/libvtkCommonCore.so.${LIBvtkCommonCore_VERSION}
@@ -3731,6 +3797,7 @@ lib/cmake/vtk/wasm/vtkWasmTestRunner.cmake
 @lib lib/libvtkFiltersHybrid.so.${LIBvtkFiltersHybrid_VERSION}
 @lib lib/libvtkFiltersHyperTree.so.${LIBvtkFiltersHyperTree_VERSION}
 @lib lib/libvtkFiltersImaging.so.${LIBvtkFiltersImaging_VERSION}
+@lib lib/libvtkFiltersMeshing.so.${LIBvtkFiltersMeshing_VERSION}
 @lib lib/libvtkFiltersModeling.so.${LIBvtkFiltersModeling_VERSION}
 @lib lib/libvtkFiltersParallel.so.${LIBvtkFiltersParallel_VERSION}
 @lib lib/libvtkFiltersParallelImaging.so.${LIBvtkFiltersParallelImaging_VERSION}

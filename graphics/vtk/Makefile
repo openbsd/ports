@@ -4,18 +4,19 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		visualization toolkit
 
-V =			9.6.2
+V =			9.7.0
 DISTNAME =		VTK-${V}
 PKGNAME =		${DISTNAME:L}
 
-.for LIB in vtkChartsCore vtkCommonColor vtkCommonComputationalGeometry \
-	vtkCommonCore vtkCommonDataModel vtkCommonExecutionModel vtkCommonMath \
-	vtkCommonMisc vtkCommonSystem vtkCommonTransforms vtkDICOMParser \
-	vtkDomainsChemistry vtkDomainsChemistryOpenGL2 vtkFiltersAMR \
-	vtkFiltersCellGrid vtkFiltersCore vtkFiltersExtraction \
-	vtkFiltersFlowPaths vtkFiltersGeneral vtkFiltersGeneric \
-	vtkFiltersGeometry vtkFiltersGeometryPreview vtkFiltersHybrid \
-	vtkFiltersHyperTree vtkFiltersImaging vtkFiltersModeling \
+.for LIB in vtkChartsCore vtkCommonCache vtkCommonColor \
+	vtkCommonComputationalGeometry vtkCommonCore vtkCommonDataModel \
+	vtkCommonExecutionModel vtkCommonMath vtkCommonMisc vtkCommonSystem \
+	vtkCommonTransforms vtkDICOMParser vtkDomainsChemistry \
+	vtkDomainsChemistryOpenGL2 vtkFiltersAMR vtkFiltersCellGrid \
+	vtkFiltersCore vtkFiltersExtraction vtkFiltersFlowPaths \
+	vtkFiltersGeneral vtkFiltersGeneric vtkFiltersGeometry \
+	vtkFiltersGeometryPreview vtkFiltersHybrid vtkFiltersHyperTree \
+	vtkFiltersImaging vtkFiltersMeshing vtkFiltersModeling \
 	vtkFiltersParallel vtkFiltersParallelImaging vtkFiltersPoints \
 	vtkFiltersProgrammable vtkFiltersReduction vtkFiltersSMP \
 	vtkFiltersSelection vtkFiltersSources vtkFiltersStatistics \
@@ -42,9 +43,8 @@ PKGNAME =		${DISTNAME:L}
 	vtkRenderingSceneGraph vtkRenderingUI vtkRenderingVolume \
 	vtkRenderingVolumeOpenGL2 vtkRenderingVtkJS vtkTestingCore \
 	vtkTestingRendering vtkViewsContext2D vtkViewsCore vtkViewsInfovis \
-	vtkexodusII vtkglad vtkioss vtkkissfft vtkmetaio vtksys vtktoken \
-	vtkx11
-SHARED_LIBS += ${LIB} 5.0 # 0.0
+	vtkexodusII vtkglad vtkioss vtkkissfft vtkmetaio vtksys vtktoken vtkx11
+SHARED_LIBS += ${LIB} 6.0 # 0.0
 .endfor
 
 CATEGORIES =		graphics
@@ -98,7 +98,6 @@ LIB_DEPENDS =		archivers/lz4 \
 # token: a vtk utility
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
 			-DVTK_FORBID_DOWNLOADS=ON \
-			-DVTK_LEGACY_REMOVE=ON \
 			-DVTK_VERSIONED_INSTALL=OFF \
 			-DVTK_BUILD_DOCUMENTATION=OFF \
 			-DVTK_BUILD_TESTING=OFF \
