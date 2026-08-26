@@ -1,3 +1,6 @@
+BROKEN-sparc64 = 	lean SIGBUS during build
+BROKEN-mips64 =		lean SIGBUS during build
+
 COMMENT =		interactive and automated theorem prover
 
 GH_ACCOUNT =		leanprover-community
