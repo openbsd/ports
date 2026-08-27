@@ -2,7 +2,7 @@ COMMENT=	RPKI Repository Delta Protocol (RRDP) utilities
 
 CATEGORIES=	net
 
-MODPY_DISTV=	0.4.1
+MODPY_DISTV=	0.5.0
 GH_ACCOUNT=	ties
 GH_PROJECT=	rpki-rrdp-tools-py
 GH_TAGNAME=	v${MODPY_DISTV}
