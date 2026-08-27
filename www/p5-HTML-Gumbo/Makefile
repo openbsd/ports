@@ -1,6 +1,6 @@
 COMMENT =	HTML5 parser based on gumbo C library
 
-DISTNAME =	HTML-Gumbo-0.19
+DISTNAME =	HTML-Gumbo-0.20
 CPAN_AUTHOR =	BPS
 
 CATEGORIES =	www
