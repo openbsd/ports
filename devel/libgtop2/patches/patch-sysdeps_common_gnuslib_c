@@ -1,17 +1,33 @@
 XXX push upstream
 libgtop-daemon[]: Can't resolve 'foo.example.com': Undefined error: 0
+getaddrinfo(3) was called with host and service swapped and with an
+addrinfo hints structure initialized with misordered fields; zero it and
+restrict lookups to IPv4/TCP since the result is stored in an IPv4
+address.
 
 Index: sysdeps/common/gnuslib.c
 --- sysdeps/common/gnuslib.c.orig
 +++ sysdeps/common/gnuslib.c
-@@ -207,7 +207,9 @@ glibtop_internet_addr (const char *host)
+@@ -202,14 +202,18 @@ connect_to_unix_server (void)
+ long
+ glibtop_internet_addr (const char *host)
+ {
+-	/* specify IPv4 and TCP */
+-	struct addrinfo hints = { AF_INET, SOCK_STREAM, };
++	struct addrinfo hints;
  	struct addrinfo *result;/* pointer to host info for remote host */
  	IN_ADDR numeric_addr;	/* host address */
  
 -	if (getaddrinfo (NULL, host, &hints, &result) == 0) {
 +	memset (&hints, 0, sizeof hints);
++	hints.ai_family = AF_INET;
++	hints.ai_socktype = SOCK_STREAM;
 +
 +	if (getaddrinfo (host, NULL, &hints, &result) == 0) {
  		/* Take only the first address. */
- 		struct sockaddr_in *res = (struct sockaddr_in *)result->ai_addr;
+-		struct sockaddr_in *res = (struct sockaddr_in *)result->ai_addr;
++		struct sockaddr_in *res =
++		    (struct sockaddr_in *)(void *)result->ai_addr;
  		numeric_addr = res->sin_addr.s_addr;
+ 		freeaddrinfo (result);
+ 		return numeric_addr;

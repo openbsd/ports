@@ -3,6 +3,8 @@ From: Adam Sampson <ats@offog.org>
 Date: Sun, 13 Jul 2025 03:35:48 +0100
 Subject: [PATCH] Use G_*_FORMAT when formatting 64-bit types
 
+XXX push upstream: g_free(3) takes a non-const pointer.
+
 Index: src/daemon/slave.c
 --- src/daemon/slave.c.orig
 +++ src/daemon/slave.c
@@ -39,6 +41,33 @@ Index: src/daemon/slave.c
  					       "but buffer is %lu",
  					       cmnd->size, (unsigned long)BUFSIZ);
  
+@@ -80,7 +81,7 @@ handle_slave_connection (int input, int output)
+ 				 proc_which, proc_arg);
+ 			do_output (output, resp, _offset_data (proclist),
+ 				   resp->u.data.proclist.total, ptr);
+-			g_free (ptr);
++			g_free ((gpointer) ptr);
+ 			break;
+ #endif
+ #if GLIBTOP_SUID_PROC_ARGS
+@@ -94,7 +95,7 @@ handle_slave_connection (int input, int output)
+ 			do_output (output, resp, _offset_data (proc_args),
+ 				   ptr ? resp->u.data.proc_args.size+1 : 0,
+ 				   ptr);
+-			g_free (ptr);
++			g_free ((gpointer) ptr);
+ 			break;
+ #endif
+ #if GLIBTOP_SUID_PROC_MAP
+@@ -105,7 +106,7 @@ handle_slave_connection (int input, int output)
+ 						      pid);
+ 			do_output (output, resp, _offset_data (proc_map),
+ 				   resp->u.data.proc_map.total, ptr);
+-			g_free (ptr);
++			g_free ((gpointer) ptr);
+ 			break;
+ #endif
+ 		default:
 @@ -265,7 +266,7 @@ handle_slave_command (glibtop_command *cmnd, glibtop_r
  		break;
  #endif

@@ -21,7 +21,7 @@ Index: sysdeps/openbsd/suid_open.c
 -	server->machine->kd = kvm_openfiles (NULL, NULL, NULL, KVM_NO_FILES, errbuf);
 +	server->machine->kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, errbuf);
 +	/* kern.allowkmem sysctl(2) is not set, fallback to a limited subset of
-+	   kvm(3) operations; kvm_nlist(3) will not be usable but most other 
++	   kvm(3) operations; kvm_nlist(3) will not be usable but most other
 +	   processes and system information will and this is enough for
 +	   day-to-day usage of libgtop */
 +	if (server->machine->kd == NULL)

@@ -3,9 +3,22 @@ From: Adam Sampson <ats@offog.org>
 Date: Sun, 13 Jul 2025 03:35:48 +0100
 Subject: [PATCH] Use G_*_FORMAT when formatting 64-bit types
 
+XXX push upstream: do_output() prints an off_t with %lu.
+
 Index: src/daemon/io.c
 --- src/daemon/io.c.orig
 +++ src/daemon/io.c
+@@ -27,8 +27,8 @@ void
+ do_output (int s, glibtop_response *resp, off_t offset,
+ 	   size_t data_size, const void *data)
+ {
+-	glibtop_debug ("Really writing %zu bytes at offset %lu.",
+-		 sizeof (glibtop_response), offset);
++	glibtop_debug ("Really writing %zu bytes at offset %" G_GINT64_FORMAT ".",
++		 sizeof (glibtop_response), (gint64) offset);
+ 
+ 	resp->offset = offset;
+ 	resp->data_size = data_size;
 @@ -42,7 +42,7 @@ do_output (int s, glibtop_response *resp, off_t offset
  	}
  

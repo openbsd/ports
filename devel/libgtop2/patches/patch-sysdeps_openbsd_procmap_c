@@ -1,0 +1,50 @@
+XXX push upstream
+g_array_free(3) returns gchar *; GArray element data is allocated with
+g_malloc() alignment, cast through void * to appease -Wcast-align.
+
+Index: sysdeps/openbsd/procmap.c
+--- sysdeps/openbsd/procmap.c.orig
++++ sysdeps/openbsd/procmap.c
+@@ -192,7 +192,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 	memset (buf, 0, sizeof (glibtop_proc_map));
+ 
+ 	/* It does not work for the swapper task. */
+-	if (pid == 0) return (glibtop_map_entry*) g_array_free(maps, TRUE);
++	if (pid == 0) return (glibtop_map_entry *)(void *) g_array_free(maps, TRUE);
+ 
+ 	glibtop_suid_enter (server);
+ 
+@@ -201,7 +201,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 	if (pinfo == NULL) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		glibtop_suid_leave (server);
+-		return (glibtop_map_entry*) g_array_free(maps, TRUE);
++		return (glibtop_map_entry *)(void *) g_array_free(maps, TRUE);
+ 	}
+ 
+ 	/* Now we get the memory maps. */
+@@ -257,7 +257,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 			glibtop_warn_io_r (server, "kvm_read (vnode)");
+ 			unload_vmmap_entries(RBT_ROOT(uvm_map_addr, &root));
+ 			glibtop_suid_leave (server);
+-			return (glibtop_map_entry*) g_array_free(maps, TRUE);
++			return (glibtop_map_entry *)(void *) g_array_free(maps, TRUE);
+ 		}
+ 
+ #if defined(UVM_VNODE_VALID)
+@@ -273,7 +273,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 			glibtop_warn_io_r (server, "kvm_read (inode)");
+ 			unload_vmmap_entries(RBT_ROOT(uvm_map_addr, &root));
+ 			glibtop_suid_leave (server);
+-			return (glibtop_map_entry*) g_array_free(maps, TRUE);
++			return (glibtop_map_entry *)(void *) g_array_free(maps, TRUE);
+ 		}
+ 
+ 		inum  = inode.i_number;
+@@ -310,5 +310,5 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 	buf->total = buf->number * buf->size;
+ 
+ 	unload_vmmap_entries(RBT_ROOT(uvm_map_addr, &root));
+-	return (glibtop_map_entry*) g_array_free(maps, FALSE);
++	return (glibtop_map_entry *)(void *) g_array_free(maps, FALSE);
+ }

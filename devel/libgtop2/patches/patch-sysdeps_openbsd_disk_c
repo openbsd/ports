@@ -1,0 +1,98 @@
+XXX push upstream
+Implement glibtop_get_disk() using the hw.diskstats sysctl(2).
+The kernel only exports an aggregate busy time per disk, so only the
+transfer counters are advertised; consumers see 512-byte sectors as on
+Linux (examples/disk.c multiplies by 512).
+
+Index: sysdeps/openbsd/disk.c
+--- sysdeps/openbsd/disk.c.orig
++++ sysdeps/openbsd/disk.c
+@@ -21,10 +21,24 @@
+ 
+ #include <config.h>
+ #include <glibtop.h>
++#include <glibtop/error.h>
+ #include <glibtop/disk.h>
+ 
+-static const unsigned long _glibtop_sysdeps_disk = 0;
++#include <sys/param.h>
++#include <sys/types.h>
++#include <sys/time.h>
++#include <sys/sysctl.h>
++#include <sys/disk.h>
+ 
++#include <errno.h>
++#include <string.h>
++
++/* The kernel only exports an aggregate busy time per disk (ds_time),
++ * it cannot be split into read and write time, so only advertise the
++ * transfer counters; xdisk_time_read/xdisk_time_write stay zero. */
++static const unsigned long _glibtop_sysdeps_disk =
++(1L << GLIBTOP_XDISK_SECTORS_READ) + (1L << GLIBTOP_XDISK_SECTORS_WRITE);
++
+ /* Init function. */
+ 
+ void
+@@ -38,5 +52,62 @@ _glibtop_init_disk_s (glibtop *server)
+ void
+ glibtop_get_disk_s (glibtop *server, glibtop_disk *buf)
+ {
++	struct diskstats *stats = NULL;
++	size_t size;
++	int mib[2], ndisk, i, tries;
++
+ 	memset (buf, 0, sizeof (glibtop_disk));
++
++	mib[0] = CTL_HW;
++
++	/* A disk may be attached between the two sysctl(2) calls, in
++	 * which case hw.diskstats fails with ENOMEM; retry. */
++	for (tries = 0; tries < 3; tries++) {
++		mib[1] = HW_DISKCOUNT;
++		size = sizeof (ndisk);
++		if (sysctl (mib, 2, &ndisk, &size, NULL, 0) < 0) {
++			glibtop_warn_io_r (server, "sysctl (hw.diskcount)");
++			g_free (stats);
++			return;
++		}
++
++		if (ndisk <= 0) {
++			g_free (stats);
++			return;
++		}
++		if (ndisk > GLIBTOP_NDISK)
++			ndisk = GLIBTOP_NDISK;
++
++		size = ndisk * sizeof (*stats);
++		stats = g_realloc (stats, size);
++
++		mib[1] = HW_DISKSTATS;
++		if (sysctl (mib, 2, stats, &size, NULL, 0) == 0)
++			break;
++
++		if (errno != ENOMEM) {
++			glibtop_warn_io_r (server, "sysctl (hw.diskstats)");
++			g_free (stats);
++			return;
++		}
++	}
++
++	if (tries == 3) {
++		g_free (stats);
++		return;
++	}
++
++	ndisk = MIN (ndisk, (int)(size / sizeof (*stats)));
++	server->ndisk = ndisk;
++
++	for (i = 0; i < ndisk; i++) {
++		buf->xdisk_sectors_read [i] =
++		    stats [i].ds_rbytes / DEV_BSIZE;
++		buf->xdisk_sectors_write [i] =
++		    stats [i].ds_wbytes / DEV_BSIZE;
++	}
++
++	buf->flags = _glibtop_sysdeps_disk;
++
++	g_free (stats);
+ }

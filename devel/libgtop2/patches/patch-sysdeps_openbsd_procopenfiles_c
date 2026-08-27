@@ -1,0 +1,14 @@
+XXX push upstream
+g_array_free(3) returns gchar *; GArray element data is allocated with
+g_malloc() alignment, cast through void * to appease -Wcast-align.
+
+Index: sysdeps/openbsd/procopenfiles.c
+--- sysdeps/openbsd/procopenfiles.c.orig
++++ sysdeps/openbsd/procopenfiles.c
+@@ -194,5 +194,5 @@ glibtop_get_proc_open_files_s (glibtop *server, glibto
+ 	buf->size = sizeof(glibtop_open_files_entry);
+ 	buf->total = buf->number * buf->size;
+ 
+-	return (glibtop_open_files_entry*)g_array_free(entries, FALSE);
++	return (glibtop_open_files_entry *)(void *) g_array_free(entries, FALSE);
+ }

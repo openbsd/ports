@@ -1,0 +1,14 @@
+XXX push upstream
+g_array_free(3) returns gchar *; GArray element data is allocated with
+g_malloc() alignment, cast through void * to appease -Wcast-align.
+
+Index: sysdeps/openbsd/mountlist.c
+--- sysdeps/openbsd/mountlist.c.orig
++++ sysdeps/openbsd/mountlist.c
+@@ -164,5 +164,5 @@ glibtop_get_mountlist_s (glibtop *server, glibtop_moun
+ 	  | (1 << GLIBTOP_MOUNTLIST_NUMBER)
+ 	  | (1 << GLIBTOP_MOUNTLIST_TOTAL);
+ 
+-	return (glibtop_mountentry*) g_array_free(mount_array, FALSE);
++	return (glibtop_mountentry *)(void *) g_array_free(mount_array, FALSE);
+ }
