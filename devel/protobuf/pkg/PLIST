@@ -20,6 +20,7 @@ include/google/protobuf/arena_cleanup.h
 include/google/protobuf/arenastring.h
 include/google/protobuf/arenaz_sampler.h
 include/google/protobuf/c_sharp_features.proto
+include/google/protobuf/class_data.h
 include/google/protobuf/compiler/
 include/google/protobuf/compiler/code_generator.h
 include/google/protobuf/compiler/code_generator_lite.h
@@ -59,11 +60,15 @@ include/google/protobuf/compiler/zip_writer.h
 include/google/protobuf/cpp_edition_defaults.h
 include/google/protobuf/cpp_features.pb.h
 include/google/protobuf/cpp_features.proto
+include/google/protobuf/cpp_file_options.pb.h
+include/google/protobuf/cpp_file_options.proto
+include/google/protobuf/cpp_options.proto
 include/google/protobuf/descriptor.h
 include/google/protobuf/descriptor.pb.h
 include/google/protobuf/descriptor.proto
 include/google/protobuf/descriptor.upb.h
 include/google/protobuf/descriptor.upb_minitable.h
+include/google/protobuf/descriptor_builder.h
 include/google/protobuf/descriptor_database.h
 include/google/protobuf/descriptor_legacy.h
 include/google/protobuf/descriptor_lite.h
@@ -122,6 +127,11 @@ include/google/protobuf/json/internal/untyped_message.h
 include/google/protobuf/json/internal/writer.h
 include/google/protobuf/json/internal/zero_copy_buffered_stream.h
 include/google/protobuf/json/json.h
+include/google/protobuf/json_enumvalue_options.pb.h
+include/google/protobuf/json_enumvalue_options.proto
+include/google/protobuf/json_enumvalue_options.upb.h
+include/google/protobuf/json_enumvalue_options.upb_minitable.h
+include/google/protobuf/json_options.proto
 include/google/protobuf/map.h
 include/google/protobuf/map_entry.h
 include/google/protobuf/map_field.h
@@ -129,9 +139,11 @@ include/google/protobuf/map_field_lite.h
 include/google/protobuf/map_type_handler.h
 include/google/protobuf/message.h
 include/google/protobuf/message_lite.h
+include/google/protobuf/message_traits.h
 include/google/protobuf/metadata.h
 include/google/protobuf/metadata_lite.h
 include/google/protobuf/micro_string.h
+include/google/protobuf/naming_style.h
 include/google/protobuf/os_macros_restore.inc
 include/google/protobuf/os_macros_undef.inc
 include/google/protobuf/parse_context.h
@@ -164,6 +176,7 @@ include/google/protobuf/stubs/common.h
 include/google/protobuf/stubs/platform_macros.h
 include/google/protobuf/stubs/port.h
 include/google/protobuf/stubs/status_macros.h
+include/google/protobuf/symbol.h
 include/google/protobuf/symbol_checker.h
 include/google/protobuf/text_format.h
 include/google/protobuf/thread_safe_arena.h
@@ -171,6 +184,7 @@ include/google/protobuf/timestamp.pb.h
 include/google/protobuf/timestamp.proto
 include/google/protobuf/type.pb.h
 include/google/protobuf/type.proto
+include/google/protobuf/type_id.h
 include/google/protobuf/unknown_field_set.h
 include/google/protobuf/util/
 include/google/protobuf/util/delimited_message_util.h
@@ -210,7 +224,6 @@ include/upb/json/encode.h
 include/upb/lex/
 include/upb/lex/atoi.h
 include/upb/lex/round_trip.h
-include/upb/lex/strtod.h
 include/upb/lex/unicode.h
 include/upb/mem/
 include/upb/mem/alloc.h
@@ -223,6 +236,7 @@ include/upb/message/accessors.h
 include/upb/message/array.h
 include/upb/message/compare.h
 include/upb/message/compat.h
+include/upb/message/convert.h
 include/upb/message/copy.h
 include/upb/message/internal/
 include/upb/message/internal/accessors.h
@@ -239,6 +253,7 @@ include/upb/message/map.h
 include/upb/message/map_gencode_util.h
 include/upb/message/merge.h
 include/upb/message/message.h
+include/upb/message/unknown_fields.h
 include/upb/message/value.h
 include/upb/mini_descriptor/
 include/upb/mini_descriptor/build_enum.h
@@ -305,6 +320,7 @@ include/upb/reflection/internal/method_def.h
 include/upb/reflection/internal/oneof_def.h
 include/upb/reflection/internal/service_def.h
 include/upb/reflection/internal/upb_edition_defaults.h
+include/upb/reflection/json_enumvalue_options_bootstrap.h
 include/upb/reflection/message.h
 include/upb/reflection/message.hpp
 include/upb/reflection/message_def.h
@@ -331,7 +347,10 @@ include/upb/wire/decode_fast/select.h
 include/upb/wire/encode.h
 include/upb/wire/eps_copy_input_stream.h
 include/upb/wire/internal/
+include/upb/wire/internal/back_alloc.h
+include/upb/wire/internal/constants.h
 include/upb/wire/internal/decoder.h
+include/upb/wire/internal/encoder.h
 include/upb/wire/internal/eps_copy_input_stream.h
 include/upb/wire/internal/reader.h
 include/upb/wire/reader.h
