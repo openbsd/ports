@@ -1,17 +1,17 @@
 Index: cmake/rapidyenc.cmake
 --- cmake/rapidyenc.cmake.orig
 +++ cmake/rapidyenc.cmake
-@@ -51,8 +51,7 @@ endif()
+@@ -55,8 +55,7 @@ endif()
  ExternalProject_add(
  	rapidyenc
  	PREFIX			rapidyenc
 -	GIT_REPOSITORY	https://github.com/nzbgetcom/rapidyenc.git
--	GIT_TAG			v1.1.1-20260217
+-	GIT_TAG			v1.1.1-20260821
 +	SOURCE_DIR		${CMAKE_SOURCE_DIR}/rapidyenc
  	TLS_VERIFY		TRUE
  	GIT_SHALLOW		TRUE
  	GIT_PROGRESS	TRUE
-@@ -63,4 +62,4 @@ ExternalProject_add(
+@@ -67,4 +66,4 @@ ExternalProject_add(
  )
  
  set(LIBS ${LIBS} ${RAPIDYENC_LIBS})
