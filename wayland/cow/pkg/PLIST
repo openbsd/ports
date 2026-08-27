@@ -18,6 +18,7 @@ bin/cow-start
 share/cow/
 share/cow/icons/
 share/cow/icons/default.png
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/cow/
 share/examples/cow/after-start.sh
 share/examples/cow/cow.conf
@@ -62,6 +63,8 @@ share/examples/cow/themes/brushedmetal/png/decor/
 share/examples/cow/themes/brushedmetal/png/decor/title-activeup.png
 share/examples/cow/themes/brushedmetal/png/decor/title-inactive.png
 share/examples/cow/themes/brushedmetal/theme.conf
+share/examples/cow/themes/canoe/
+share/examples/cow/themes/canoe/theme.conf
 share/examples/cow/themes/cde/
 share/examples/cow/themes/cde/svg/
 share/examples/cow/themes/cde/svg/button-max.svg

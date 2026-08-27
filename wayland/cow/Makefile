@@ -1,7 +1,8 @@
 COMMENT =		stacking window manager for wayland
 
-DIST_TUPLE =		codeberg thomasadam cow db9b7a6c0ff37f5e1d7b5602f57fdb31d0941255 .
-PKGNAME =		cow-0.0.0pl20260801
+V =			0.2
+DISTNAME =		cow-${V}
+SITES =			https://codeberg.org/thomasadam/cow/releases/download/${V}/
 
 CATEGORIES =		wayland
 
@@ -10,8 +11,9 @@ HOMEPAGE =		https://codeberg.org/thomasadam/cow
 # ISC
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c cairo event_core gobject-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pthread util wayland-client wayland-cursor xkbcommon
+WANTLIB += c cairo event_core glib-2.0 gobject-2.0 m pango-1.0
+WANTLIB += pangocairo-1.0 pthread util wayland-client wayland-cursor
+WANTLIB += xkbcommon
 
 COMPILER =		base-clang ports-gcc
 
@@ -37,11 +39,13 @@ RUN_DEPENDS =		\
 			wayland/fuzzel \
 			wayland/river \
 			wayland/waybar \
+			wayland/wl-clipboard \
+			wayland/wlr-randr \
 			wayland/xwayland
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I/usr/include"
 
-WRKDIST =		${WRKDIR}/cow
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
 	rm -rf ${PREFIX}/etc
