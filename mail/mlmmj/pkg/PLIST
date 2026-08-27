@@ -20,18 +20,18 @@ bin/mlmmj-recieve
 @man man/man1/mlmmj-sub.1
 @man man/man1/mlmmj-unsub.1
 share/doc/mlmmj/
-share/doc/mlmmj/README
-share/doc/mlmmj/README.access
-share/doc/mlmmj/README.archives
-share/doc/mlmmj/README.exim4
-share/doc/mlmmj/README.footers
-share/doc/mlmmj/README.listtexts
-share/doc/mlmmj/README.postfix
-share/doc/mlmmj/README.qmail
-share/doc/mlmmj/README.receive-strip
-share/doc/mlmmj/README.security
-share/doc/mlmmj/README.sendmail
-share/doc/mlmmj/TUNABLES
+share/doc/mlmmj/FAQ
+share/doc/mlmmj/README.access.md
+share/doc/mlmmj/README.archives.md
+share/doc/mlmmj/README.exim4.md
+share/doc/mlmmj/README.footers.md
+share/doc/mlmmj/README.listtexts.md
+share/doc/mlmmj/README.md
+share/doc/mlmmj/README.postfix.md
+share/doc/mlmmj/README.qmail.md
+share/doc/mlmmj/README.receive-strip.md
+share/doc/mlmmj/README.sendmail.md
+share/doc/mlmmj/TUNABLES.md
 share/mlmmj/
 share/mlmmj/text.skel/
 share/mlmmj/text.skel/ast/

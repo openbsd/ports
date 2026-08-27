@@ -1,0 +1,13 @@
+Index: mk/common.mk
+--- mk/common.mk.orig
++++ mk/common.mk
+@@ -13,7 +13,8 @@ CFLAGS+=	-Werror=return-type
+ # Work around this quirky behaviour by adding an extra entry that should never
+ # exist and then normalize its whitespace during substitution with :=.
+ DEPFILES_NONEMPTY=	$(DEPFILES) /nonexistent
+--include $(DEPFILES_NONEMPTY:=)
++DEPFILES_NONEMPTY_NORM=	$(DEPFILES_NONEMPTY:=)
++-include $(DEPFILES_NONEMPTY_NORM)
+ 
+ .SUFFIXES: .pico
+ 
