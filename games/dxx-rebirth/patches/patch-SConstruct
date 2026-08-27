@@ -1,7 +1,29 @@
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -2179,7 +2179,7 @@ help:assume compiler supports __attribute__((unused))
+@@ -601,8 +601,8 @@ struct A_%(N)s
+ 		Cxx20RequiredFeature('std::make_unique_for_overwrite', '''
+ #include <memory>
+ ''', '''
+-	std::make_unique_for_overwrite<int>();
+-	std::make_unique_for_overwrite<int[]>(1);
++	(void)std::make_unique_for_overwrite<int>();
++	(void)std::make_unique_for_overwrite<int[]>(1);
+ '''),
+ 		Cxx20RequiredFeature('requires clause', '''
+ template <typename T>
+@@ -754,8 +754,8 @@ int a_%(N)s = U_%(N)s + 1;
+ 		Cxx14RequiredFeature('std::make_unique', '''
+ #include <memory>
+ ''', '''
+-	std::make_unique<int>(0);
+-	std::make_unique<int[]>(1);
++	(void)std::make_unique<int>(0);
++	(void)std::make_unique<int[]>(1);
+ '''),
+ 		Cxx11RequiredFeature('std::addressof', '''
+ #include <memory>
+@@ -2254,7 +2254,7 @@ help:assume compiler supports __attribute__((unused))
  		self._check_macro(context,macro_name=macro_name,macro_value=macro_value,test="""
  dxx_compiler_attribute_unused
  static void a(){}
@@ -10,7 +32,7 @@ Index: SConstruct
  
  	@_custom_test
  	def check_cxx11_static_assert(self,context,_f='''
-@@ -2495,7 +2495,7 @@ $ x86_64-pc-linux-gnu-g++-5.4.0 -x c++ -S -Wformat -o 
+@@ -2570,7 +2570,7 @@ $ x86_64-pc-linux-gnu-g++-5.4.0 -x c++ -S -Wformat -o 
  	@_custom_test
  	def check_compiler_useless_cast(self,context):
  		Compile = self.Compile
@@ -19,7 +41,7 @@ Index: SConstruct
  		if Compile(context, text='''
  /*
   * SDL on Raspbian provokes a warning from -Wuseless-cast
-@@ -4723,11 +4723,6 @@ class DXXCommon(LazyObjectConstructor):
+@@ -4882,11 +4882,6 @@ class DXXCommon(LazyObjectConstructor):
  		env = self.env
  		user_settings = self.user_settings
  

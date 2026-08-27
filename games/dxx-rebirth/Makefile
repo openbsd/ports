@@ -1,8 +1,8 @@
 COMMENT =	source port of Descent, a 6-degrees-of-freedom shooter
 GH_ACCOUNT =	dxx-rebirth
 GH_PROJECT =	dxx-rebirth
-GH_COMMIT =	b749eadb4080f596ce90ef7b2be97d7c1213567f
-DISTNAME =	dxx-rebirth-0.60pl20260412
+GH_COMMIT =	cb0473dbd5fb6e261223080ba1e60b6d7a228954
+DISTNAME =	dxx-rebirth-0.60pl20260823
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://www.dxx-rebirth.com/
