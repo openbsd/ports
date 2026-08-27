@@ -1,14 +1,12 @@
 COMMENT =	generate and manipulate images
 
-DISTNAME =	Imager-1.034
+DISTNAME =	Imager-1.035
 CPAN_AUTHOR =	TONYC
-REVISION =	0
 
 CATEGORIES =	graphics
 
 # Perl
 PERMIT_PACKAGE =	Yes
-
 
 WANTLIB =		c freetype gif jpeg m perl png t1 tiff z
 
