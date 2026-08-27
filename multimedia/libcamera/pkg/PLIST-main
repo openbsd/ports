@@ -1,3 +1,4 @@
+@pkgpath multimedia/libcamera
 include/libcamera/
 include/libcamera/libcamera/
 include/libcamera/libcamera/base/
