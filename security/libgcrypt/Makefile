@@ -5,12 +5,11 @@ USE_NOEXECONLY=		Yes
 
 COMMENT=		crypto library based on code used in GnuPG
 
-DISTNAME=		libgcrypt-1.12.2
-REVISION=		0
+DISTNAME=		libgcrypt-1.12.3
 
 CATEGORIES=		security
 
-SHARED_LIBS +=  gcrypt               22.0     # 27.2
+SHARED_LIBS +=  gcrypt               22.1     # 28.8
 
 HOMEPAGE=		https://www.gnupg.org/software/libgcrypt/index.html
 
