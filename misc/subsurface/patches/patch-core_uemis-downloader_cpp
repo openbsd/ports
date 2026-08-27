@@ -1,0 +1,30 @@
+Index: core/uemis-downloader.cpp
+--- core/uemis-downloader.cpp.orig
++++ core/uemis-downloader.cpp
+@@ -194,7 +194,7 @@ static struct dive *get_dive_by_uemis_diveid(device_da
+ 		if (object_id == d->dcs[0].diveid)
+ 			return d.get();
+ 	}
+-	return NULL;
++	return nullptr;
+ }
+ 
+ /* send text to the importer progress bar */
+@@ -431,7 +431,7 @@ static std::string first_object_id_val(std::string_vie
+ 			return res;
+ 		}
+ 	}
+-	return NULL;
++	return {};
+ }
+ 
+ /* ultra-simplistic; it doesn't deal with the case when the object_id is
+@@ -914,7 +914,7 @@ static bool process_raw_buffer(device_data_t *devdata,
+ 				int diveid = 0;
+ 				from_chars(val, diveid);
+ 				non_owned_dive = get_dive_by_uemis_diveid(devdata, diveid);
+-				if (dive_no != 0)
++				if (non_owned_dive && dive_no != 0)
+ 					non_owned_dive->number = dive_no;
+ 				if (for_dive)
+ 					*for_dive = diveid;
