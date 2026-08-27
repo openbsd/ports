@@ -1,9 +1,11 @@
 COMMENT-main=	complex camera support library
 COMMENT-tools=	tools for libcamera
+COMMENT-qcam=	qcam test application for libcamera
 
 V=		0.7.2
 DISTNAME=	libcamera-${V}
 PKGNAME-tools=	libcamera-tools-${V}
+PKGNAME-qcam=	libcamera-qcam-${V}
 WRKDIST=	${WRKDIR}/libcamera-v${V}-191e202178f02430b5942397c70d215cdd2056fa
 
 REVISION-main=	0
@@ -23,7 +25,7 @@ PERMIT_PACKAGE=	Yes
 
 SITES=		https://gitlab.freedesktop.org/camera/libcamera/-/archive/v${V}/
 
-MULTI_PACKAGES=	-main -tools
+MULTI_PACKAGES=	-main -qcam -tools
 
 WANTLIB-main += ${COMPILER_LIBCXX} epoll-shim execinfo glib-2.0 gnutls
 WANTLIB-main += gobject-2.0 gstallocators-1.0 gstbase-1.0 gstreamer-1.0
@@ -31,6 +33,9 @@ WANTLIB-main += gstvideo-1.0 m yaml-0 yuv
 
 WANTLIB-tools += ${COMPILER_LIBCXX} SDL2 c camera camera-base epoll-shim
 WANTLIB-tools += event_core event_pthreads jpeg tiff yaml-0
+
+WANTLIB-qcam += ${COMPILER_LIBCXX} Qt6Core Qt6Gui Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB-qcam += Qt6Widgets c camera camera-base m tiff
 
 MODULES=	devel/meson
 
@@ -49,11 +54,13 @@ LIB_DEPENDS-tools=	${BASE_PKGPATH},-main \
 			devel/sdl2 \
 			graphics/tiff
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+LIB_DEPENDS-qcam=	${BASE_PKGPATH},-main \
+			x11/qt6/qtbase
+
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=	-Dqcam=disabled \
-		-Dudev=disabled \
+CONFIGURE_ARGS=	-Dudev=disabled \
 		-Dlibdw=disabled \
 		-Dlibunwind=disabled \
 		-Ddocumentation=disabled \
