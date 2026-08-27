@@ -1,0 +1,12 @@
+Fix build with libc++22
+Index: lttoolbox/ustring.h
+--- lttoolbox/ustring.h.orig
++++ lttoolbox/ustring.h
+@@ -26,6 +26,7 @@
+ #include <vector>
+ #include <cstdint>
+ #include <iomanip>
++#include <ostream>
+ 
+ typedef std::basic_string<UChar> UString;
+ typedef std::basic_string_view<UChar> UStringView;
