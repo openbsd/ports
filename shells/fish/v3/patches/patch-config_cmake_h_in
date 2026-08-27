@@ -1,0 +1,19 @@
+libcxx22 uses [[__fallthrough__]] in a couple of headers, so defining
+__fallthrough__ to __attribute__((fallthrough)) is a syntax error.
+
+/usr/include/c++/v1/__functional/hash.h:70:24: error: expected expression
+   70 |       [[__fallthrough__]];
+      |                        ^
+
+Index: config_cmake.h.in
+--- config_cmake.h.in.orig
++++ config_cmake.h.in
+@@ -181,7 +181,7 @@
+ #define __warn_unused_type
+ #endif
+ 
+-#if __has_attribute(fallthrough)
++#if 0
+ #define __fallthrough__ __attribute__ ((fallthrough));
+ #else
+ #define __fallthrough__
