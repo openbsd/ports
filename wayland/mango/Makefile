@@ -1,6 +1,6 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-V =			0.16.1
+V =			0.16.2
 DISTNAME =		mango-${V}
 SITES =			https://github.com/mangowm/mango/archive/refs/tags/
 DISTFILES =		mangowm-mango-${V}-0{${V}}${EXTRACT_SUFX}
@@ -27,7 +27,9 @@ MODWLROOTS_VERSION =	0.20
 BUILD_DEPENDS =		wayland/wayland-protocols
 
 LIB_DEPENDS =		devel/cjson \
+			devel/pango \
 			devel/pcre2 \
+			graphics/cairo \
 			wayland/libinput-openbsd \
 			wayland/scenefx \
 			wayland/wayland \
