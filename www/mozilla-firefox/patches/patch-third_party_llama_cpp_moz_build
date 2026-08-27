@@ -1,0 +1,38 @@
+Forcefully disable RVV intrinsics usage in llama.cpp/libggml.
+The code assumes that if __riscv_v_intrinsic is defined the various RVV
+intrinsics are available and usable.
+
+With clang the intrinsics may be available even though actual usage of
+said intrinsics has to be allowed with clang -march=... or function
+annotations.
+
+Also the code assumes that if it can use said intrinsics at compile
+time then they ought to be used at runtime.  This is false on
+OpenBSD which doesn't require the cpu to support the V extension.
+
+Example error at compile time:
+.../firefox-154.0/third_party/llama.cpp/ggml/src/ggml-cpu/vec.cpp:407:22: error: RISC-V type 'vfloat32m2_t' (aka '__rvv_float32m2_t') requires the 'zve32f' extension
+  407          vfloat32m2_t vx = __riscv_vle32_v_f32m2(&x[i], vl);
+
+Index: third_party/llama.cpp/moz.build
+--- third_party/llama.cpp/moz.build.orig
++++ third_party/llama.cpp/moz.build
+@@ -135,6 +135,18 @@ if CONFIG["OS_TARGET"] == "Linux":
+   OS_LIBS += [
+       "dl",
+   ]
++
++if CONFIG["OS_TARGET"] == "OpenBSD":
++  if CONFIG['TARGET_CPU'] == 'riscv64':
++    # OpenBSD/riscv64 doesn't assume RVV/RVA23 contrary to the code
++    # in libggml
++    CXXFLAGS += [
++      "-U__riscv_v_intrinsic"
++    ]
++    CFLAGS += [
++      "-U__riscv_v_intrinsic"
++    ]
++
+ if CONFIG["OS_TARGET"] == "WINNT":
+   OS_LIBS += [
+     "advapi32",
