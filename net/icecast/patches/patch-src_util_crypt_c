@@ -1,5 +1,5 @@
 Avoid NULL pointer dereference.
-XXX would it be useful to add support for bcrypt(2) in that file?
+XXX would it be useful to add support for bcrypt in that file?
 
 Index: src/util_crypt.c
 --- src/util_crypt.c.orig
