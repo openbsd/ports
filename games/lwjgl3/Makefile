@@ -2,11 +2,10 @@ COMMENT =	lightweight game library for java
 
 ONLY_FOR_ARCHS= amd64 aarch64
 
-V =		3.3.1.1
+V =		3.3.2.0
 DISTNAME =	lwjgl3-${V}
-REVISION =	1
 
-KOTLIN_V =	1.6.20-M1
+KOTLIN_V =	1.8.10
 
 .if ${MACHINE_ARCH} == "amd64"
 PKG_ARGS +=	-Dx86=1
