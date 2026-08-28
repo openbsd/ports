@@ -1,18 +1,16 @@
-COMMENT=		GLib wrapper around libarchive
+COMMENT=		automatic archives creating and extracting library
 
 GNOME_PROJECT=		gnome-autoar
-GNOME_VERSION=		0.4.5
-REVISION=		0
+GNOME_VERSION=		0.5.0
 
 SHARED_LIBS += gnome-autoar-0            0.0 # 0.2.1
-SHARED_LIBS += gnome-autoar-gtk-0        0.0 # 0.2.1
 
 CATEGORIES=		archivers
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += archive gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl
+WANTLIB += archive gio-2.0 glib-2.0 gobject-2.0
 
 MODULES=		devel/meson \
 			x11/gnome
@@ -20,7 +18,7 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS= 	gobject-introspection
 
 LIB_DEPENDS=		archivers/libarchive \
-			x11/gtk+3
+			devel/glib2
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
