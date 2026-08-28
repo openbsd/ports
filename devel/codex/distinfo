@@ -788,8 +788,8 @@ SHA256 (cargo/resb-0.1.2.tar.gz) = ItOSeR88aAKhkFpQnp0aYDnLvLXp4A5abTZh98h085A=
 SHA256 (cargo/resolv-conf-0.7.6.tar.gz) = HgYdG0jLjTgELeSuCnpkAQCdYUPcgNLi1vMfC91kcMc=
 SHA256 (cargo/rfc6979-0.4.0.tar.gz) = +N0qgI1FbEpU4wCiPp9aZ+EiwwJBGay/1z479mRJHLI=
 SHA256 (cargo/ring-0.17.14.tar.gz) = pGiebCKU2B6I3GJhx2i2O8T824Ur5tE1JJixFPYTg7c=
-SHA256 (cargo/rmcp-3.1.2.tar.gz) = yN3cWxkkuaWfukIBZhYMosRmOk4BgD5S7aMwcPVtY8g=
-SHA256 (cargo/rmcp-macros-3.1.2.tar.gz) = aJjiTNFjQrWb+opTwsBLnPYvyKLP6le5wDiwmYS/xSE=
+SHA256 (cargo/rmcp-3.1.3.tar.gz) = XxcHKvl3sPhvcU29ZLPTfQcVu2MGT50TSD8KF3WBM3Q=
+SHA256 (cargo/rmcp-macros-3.1.3.tar.gz) = VIFyMdY6NTMNXDpXgqShZvvjuRSp+qtEDT3YvTeXGJA=
 SHA256 (cargo/rust-embed-8.11.0.tar.gz) = BBE8uTVaN32D8G7x8KRbirjNfYsSiBYHF9Zt9ceYjSc=
 SHA256 (cargo/rust-embed-impl-8.11.0.tar.gz) = 2gkC5MfI6ZcVmrOE5tD8kcIhN19olDRq4Qf0fdDzzKo=
 SHA256 (cargo/rust-embed-utils-8.11.0.tar.gz) = W83vC+b+f2+jM7EHPJSXKSdLBfEjoK1+/Ljv2Hjlw7E=
@@ -1210,7 +1210,7 @@ SHA256 (cargo/zune-jpeg-0.5.12.tar.gz) = QQ6ezvY0xwnjgxws/bjZwyFk+uHGdJbVto//co7
 SHA256 (cargo/zvariant-4.2.0.tar.gz) = IIQpCrmhxHHDj8UklFg3c0+/EkSH4QXa7Cu1f9SMgf4=
 SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3MgDSACxEk=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
-SHA256 (codex-rust-v0.149.1.tar.gz) = hROfQFzkVb8U/0UmFc2yVy11LjGh4NpokayDJZFdEM4=
+SHA256 (codex-rust-v0.150.1.tar.gz) = G1DZp7l44nxR6AORJCm41+C3Mcpb/XELpdGOGIlw3TQ=
 SHA256 (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3b30DbjfaF32fDJg3+Wc9/+ksZOpMk4Qs1m76JgdueA=
 SHA256 (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 0WdqwzqCxZA//t5oznPJ2SRmaqihArtkmo+5JqemHOE=
 SHA256 (nornagon-crossterm-45fecb9508105988f42fe6ff0441783ed3717f92.tar.gz) = QI3swnEChfAeahVOJgWJHhryl5Yf1OZRfcv7lJHrbG8=
@@ -2006,8 +2006,8 @@ SIZE (cargo/resb-0.1.2.tar.gz) = 163418
 SIZE (cargo/resolv-conf-0.7.6.tar.gz) = 17955
 SIZE (cargo/rfc6979-0.4.0.tar.gz) = 9140
 SIZE (cargo/ring-0.17.14.tar.gz) = 1502610
-SIZE (cargo/rmcp-3.1.2.tar.gz) = 508353
-SIZE (cargo/rmcp-macros-3.1.2.tar.gz) = 18773
+SIZE (cargo/rmcp-3.1.3.tar.gz) = 513181
+SIZE (cargo/rmcp-macros-3.1.3.tar.gz) = 18807
 SIZE (cargo/rust-embed-8.11.0.tar.gz) = 901130
 SIZE (cargo/rust-embed-impl-8.11.0.tar.gz) = 9286
 SIZE (cargo/rust-embed-utils-8.11.0.tar.gz) = 5729
@@ -2428,7 +2428,7 @@ SIZE (cargo/zune-jpeg-0.5.12.tar.gz) = 86116
 SIZE (cargo/zvariant-4.2.0.tar.gz) = 82180
 SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
-SIZE (codex-rust-v0.149.1.tar.gz) = 12123063
+SIZE (codex-rust-v0.150.1.tar.gz) = 12517575
 SIZE (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3951333
 SIZE (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 86782
 SIZE (nornagon-crossterm-45fecb9508105988f42fe6ff0441783ed3717f92.tar.gz) = 144786

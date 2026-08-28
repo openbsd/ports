@@ -1,7 +1,7 @@
 Index: codex-rs/config/src/loader/mod.rs
 --- codex-rs/config/src/loader/mod.rs.orig
 +++ codex-rs/config/src/loader/mod.rs
-@@ -166,6 +166,9 @@ pub async fn load_config_layers_state(
+@@ -170,6 +170,9 @@ pub async fn load_config_layers_state(
              resolve_relative_paths_in_config_toml(config, base_dir)?,
          )
      } else {
