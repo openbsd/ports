@@ -13,8 +13,8 @@ lib/libfsfat.la
 @lib lib/libfsfat.so.${LIBfsfat_VERSION}
 lib/pkgconfig/libfsfat.pc
 lib/python${MODPY_VERSION}/site-packages/pyfsfat.a
+@so lib/python${MODPY_VERSION}/site-packages/pyfsfat.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyfsfat.la
-@so lib/python${MODPY_VERSION}/site-packages/pyfsfat.so
 @man man/man1/fsfatinfo.1
 @man man/man1/fsfatmount.1
 @man man/man3/libfsfat.3
