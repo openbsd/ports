@@ -1,6 +1,7 @@
 COMMENT=	tools and library routines for working with GIF images
 
 DISTNAME=	giflib-6.1.3
+REVISION=	0
 SHARED_LIBS +=	gif                  10.0
 CATEGORIES=	graphics
 

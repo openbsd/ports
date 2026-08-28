@@ -1,0 +1,50 @@
+Index: gifalloc.c
+--- gifalloc.c.orig
++++ gifalloc.c
+@@ -114,6 +114,10 @@ ColorMapObject *GifUnionColorMap(const ColorMapObject 
+ 	int i, j, CrntSlot, RoundUpTo, NewGifBitSize;
+ 	ColorMapObject *ColorUnion;
+ 
++	if (ColorIn1 == NULL || ColorIn2 == NULL) {
++		return (NULL);
++	}
++
+ 	/*
+ 	 * We don't worry about duplicates within either color map; if
+ 	 * the caller wants to resolve those, he can perform unions
+@@ -210,9 +214,9 @@ ColorMapObject *GifUnionColorMap(const ColorMapObject 
+  Apply a given color translation to the raster bits of an image
+ *******************************************************************************/
+ void GifApplyTranslation(SavedImage *Image, const GifPixelType Translation[]) {
+-	register int i;
+-	register int RasterSize =
+-	    Image->ImageDesc.Height * Image->ImageDesc.Width;
++	size_t i;
++	size_t RasterSize =
++		(size_t)Image->ImageDesc.Height * Image->ImageDesc.Width;
+ 
+ 	for (i = 0; i < RasterSize; i++) {
+ 		Image->RasterBits[i] = Translation[Image->RasterBits[i]];
+@@ -371,17 +375,17 @@ SavedImage *GifMakeSavedImage(GifFileType *GifFile,
+ 			/* next, the raster */
+ 			sp->RasterBits = (unsigned char *)reallocarray(
+ 			    NULL,
+-			    (CopyFrom->ImageDesc.Height *
+-			     CopyFrom->ImageDesc.Width),
++				(size_t)CopyFrom->ImageDesc.Height *
++					CopyFrom->ImageDesc.Width,
+ 			    sizeof(GifPixelType));
+ 			if (sp->RasterBits == NULL) {
+ 				FreeLastSavedImage(GifFile);
+ 				return (SavedImage *)(NULL);
+ 			}
+ 			memcpy(sp->RasterBits, CopyFrom->RasterBits,
+-			       sizeof(GifPixelType) *
+-			           CopyFrom->ImageDesc.Height *
+-			           CopyFrom->ImageDesc.Width);
++				(size_t)CopyFrom->ImageDesc.Height *
++					CopyFrom->ImageDesc.Width *
++					sizeof(GifPixelType));
+ 
+ 			/* finally, the extension blocks */
+ 			if (CopyFrom->ExtensionBlocks != NULL) {

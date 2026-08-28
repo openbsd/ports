@@ -1,0 +1,41 @@
+Index: egif_lib.c
+--- egif_lib.c.orig
++++ egif_lib.c
+@@ -448,7 +448,8 @@ int EGifPutImageDesc(GifFileType *GifFile, const int L
+ 
+ 	/* Mark this file as has screen descriptor: */
+ 	Private->FileState |= FILE_STATE_IMAGE;
+-	Private->PixelCount = (long)Width * (long)Height;
++	Private->PixelCount =
++		(unsigned long)Width * (unsigned long)Height;
+ 
+ 	/* Reset compress algorithm parameters. */
+ 	(void)EGifSetupCompress(GifFile);
+@@ -690,6 +691,9 @@ int EGifGCBToSavedExtension(const GraphicsControlBlock
+ 		ExtensionBlock *ep =
+ 		    &GifFile->SavedImages[ImageIndex].ExtensionBlocks[i];
+ 		if (ep->Function == GRAPHICS_EXT_FUNC_CODE) {
++			if (ep->ByteCount < 4) {
++				return GIF_ERROR;
++			}
+ 			EGifGCBToExtension(GCB, ep->Bytes);
+ 			return GIF_OK;
+ 		}
+@@ -1151,7 +1155,7 @@ int EGifSpew(GifFileType *GifFileOut, int *ErrorCode) 
+ 				     j += InterlacedJumps[k]) {
+ 					if (EGifPutLine(
+ 					        GifFileOut,
+-					        sp->RasterBits + j * SavedWidth,
++						sp->RasterBits + (size_t)j * SavedWidth,
+ 					        SavedWidth) == GIF_ERROR) {
+ 						status = GIF_ERROR;
+ 						err = GifFileOut->Error;
+@@ -1162,7 +1166,7 @@ int EGifSpew(GifFileType *GifFileOut, int *ErrorCode) 
+ 		} else {
+ 			for (j = 0; j < SavedHeight; j++) {
+ 				if (EGifPutLine(GifFileOut,
+-				                sp->RasterBits + j * SavedWidth,
++						sp->RasterBits + (size_t)j * SavedWidth,
+ 				                SavedWidth) == GIF_ERROR) {
+ 					status = GIF_ERROR;
+ 					err = GifFileOut->Error;
