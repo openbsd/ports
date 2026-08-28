@@ -55,8 +55,6 @@ lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}test_mem
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}test_memory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}unique_domains_visited.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}unique_domains_visited.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}viper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}viper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}virustotal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}virustotal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/bloom.py
@@ -73,7 +71,6 @@ lib/python${MODPY_VERSION}/site-packages/plaso/analysis/sessionize.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/tagging.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/test_memory.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/unique_domains_visited.py
-lib/python${MODPY_VERSION}/site-packages/plaso/analysis/viper.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/virustotal.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/__init__.py
@@ -216,8 +213,6 @@ lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}tempo
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}temporary_directory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}vfs_backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}vfs_backend.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}viper_analysis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}viper_analysis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}virustotal_analysis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}virustotal_analysis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}workers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -255,7 +250,6 @@ lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/storage_format.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/tagging_analysis.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/temporary_directory.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/vfs_backend.py
-lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/viper_analysis.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/virustotal_analysis.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/workers.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/xlsx_output.py
@@ -444,6 +438,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}logger
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}msie_zones.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}msie_zones.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}msiecf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}msiecf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}shell_items.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -466,6 +462,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/formatters/firefox.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/logger.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/manager.py
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/msie_zones.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/msiecf.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/shell_items.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/winevt.py
@@ -712,6 +709,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}interface
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}ios_discord.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}ios_discord.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}ivanti_vc0.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}ivanti_vc0.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}java_idx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}java_idx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}jsonl_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -881,6 +880,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/fseventsd.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/fseventsd.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/ios_discord.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/ivanti_vc0.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/java_idx.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/java_idx.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/jsonl_parser.py
@@ -1121,6 +1121,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}ios_accounts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}ios_datausage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}ios_datausage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}ios_health.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}ios_health.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}ios_imohdchat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}ios_imohdchat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}ios_instagram.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1196,6 +1198,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/imessage.p
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/ios_accounts.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/ios_datausage.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/ios_health.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/ios_imohdchat.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/ios_instagram.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/ios_kik.py
@@ -1433,6 +1436,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}timezone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}typedurls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}typedurls.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}typedurlstime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}typedurlstime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}usb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}usb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}usbstor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1479,6 +1484,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/task_sched
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/terminal_server.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/timezone.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/typedurls.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/typedurlstime.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/usb.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/usbstor.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/usbstor.yaml

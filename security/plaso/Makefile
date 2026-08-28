@@ -1,6 +1,6 @@
 COMMENT =	engine and tools to automate creation of super timeline
 
-MODPY_DISTV =	20260512
+MODPY_DISTV =	20260720
 DISTNAME =	plaso-${MODPY_DISTV}
 
 CATEGORIES =	security
@@ -50,12 +50,12 @@ RUN_DEPENDS +=	archivers/py-lz4 \
 		sysutils/libyal/libfsext \
 		sysutils/libyal/libfsfat \
 		sysutils/libyal/libfshfs \
+		sysutils/libyal/libfsntfs \
 		sysutils/libyal/libfsxfs \
 		sysutils/libyal/libmodi \
 		sysutils/libyal/libphdi \
 		sysutils/libyal/libvsapm \
 		sysutils/libyal/libvsgpt \
-		sysutils/libfsntfs \
 		sysutils/libfvde \
 		sysutils/libfwnt \
 		sysutils/libfwsi \
@@ -81,7 +81,7 @@ RUN_DEPENDS +=	archivers/py-lz4 \
 TEST_DEPENDS +=	devel/py-test \
 		devel/py-mock
 
-# Ran 1523 tests in 747.746s
+# Ran 1542 tests in 535.668s
 # FAILED (errors=1, skipped=21)
 # testGetAttributeNames: Unsupported UUID version
 pre-test:
