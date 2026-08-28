@@ -12,7 +12,7 @@ lib/libvsapm.la
 @lib lib/libvsapm.so.${LIBvsapm_VERSION}
 lib/pkgconfig/libvsapm.pc
 lib/python${MODPY_VERSION}/site-packages/pyvsapm.a
+@so lib/python${MODPY_VERSION}/site-packages/pyvsapm.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyvsapm.la
-@so lib/python${MODPY_VERSION}/site-packages/pyvsapm.so
 @man man/man1/vsapminfo.1
 @man man/man3/libvsapm.3

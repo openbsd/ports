@@ -1,6 +1,6 @@
 COMMENT =	library to access the Apple Partition Map volumes
 
-VERSION =	20240503
+VERSION =	20260713
 BASENAME =	libvsapm
 DISTNAME =	${BASENAME}-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
@@ -17,9 +17,8 @@ CONFIGURE_ARGS +=	--enable-python \
 
 LIB_DEPENDS +=	devel/libbfio
 
-TEST_DEPENDS +=	shells/bash
-
-pre-test:
-	sed -i s,#!/bin/bash,#!/${LOCALBASE}/bin/bash, ${WRKSRC}/tests/test_*.sh
+# Tests use autoconf
+AUTOCONF_VERSION =	2.72
+TEST_DEPENDS +=		devel/autoconf/${AUTOCONF_VERSION}
 
 .include <bsd.port.mk>
