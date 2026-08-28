@@ -2,10 +2,10 @@ COMMENT =	lightweight game library for java
 
 ONLY_FOR_ARCHS= amd64 aarch64
 
-V =		3.3.2.0
+V =		3.3.3.0
 DISTNAME =	lwjgl3-${V}
 
-KOTLIN_V =	1.8.10
+KOTLIN_V =	1.9.0
 
 .if ${MACHINE_ARCH} == "amd64"
 PKG_ARGS +=	-Dx86=1
@@ -48,7 +48,7 @@ WANTLIB += 	${COMPILER_LIBCXX} GL X11 Xcursor Xext Xrandr Xxf86vm assimp \
 		opus pthread xxhash
 
 MODULES =	java
-MODJAVA_VER =	11
+MODJAVA_VER =	17
 MODJAVA_BUILD =	ant
 
 BUILD_DEPENDS =	archivers/unzip
