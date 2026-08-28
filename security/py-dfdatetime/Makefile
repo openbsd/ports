@@ -1,6 +1,6 @@
 COMMENT =	Digital Forensics date and time
 
-MODPY_DISTV =	20260411
+MODPY_DISTV =	20260730
 DISTNAME =	dfdatetime-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 
-# Ran 288 tests in 0.064
+# Ran 328 tests in 0.054
 TEST_DEPENDS +=	devel/py-mock
 
 # make it possible to install both (un)FLAVORed packages alongside
