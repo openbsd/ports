@@ -1,11 +1,12 @@
---- xboard.conf.orig	Wed Oct 22 17:37:26 2014
-+++ xboard.conf	Mon Nov 10 09:33:04 2014
+Index: xboard.conf
+--- xboard.conf.orig
++++ xboard.conf
 @@ -41,7 +41,7 @@
  -pieceMenu false
  -showTargetSquares true
  -seekGraph true
 --soundProgram "aplay -q"
-+-soundProgram "play -q"
++-soundProgram "aucat -i"
  -soundDirectory "~~/sounds"
  -soundTell phone.wav
  -soundChallenge gong.wav
