@@ -1,6 +1,6 @@
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
-MODPY_DISTV =	20260411
+MODPY_DISTV =	20260731
 DISTNAME =	dfvfs-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
@@ -24,7 +24,6 @@ RUN_DEPENDS += 	devel/py-dtfabric \
 		security/libewf \
 		security/py-dfdatetime \
 		sysutils/libfsapfs \
-		sysutils/libfsntfs \
 		sysutils/libfvde \
 		sysutils/libfwnt \
 		sysutils/libluksde \
@@ -40,6 +39,7 @@ RUN_DEPENDS += 	devel/py-dtfabric \
 		sysutils/libyal/libfsext \
 		sysutils/libyal/libfsfat \
 		sysutils/libyal/libfshfs \
+		sysutils/libyal/libfsntfs \
 		sysutils/libyal/libfsxfs \
 		sysutils/libyal/libmodi \
 		sysutils/libyal/libphdi \
@@ -50,8 +50,7 @@ RUN_DEPENDS += 	devel/py-dtfabric \
 
 TEST_DEPENDS +=	devel/py-mock
 
-# Ran 1387 tests in 285.353s
-# OK (skipped=8)
+# Ran 1411 tests in 202.803s
 do-test:
 	touch ${WRKSRC}/utils/__init__.py
 	cd ${WRKSRC} && LC_CTYPE='en_US.UTF-8' ${MODPY_BIN} run_tests.py

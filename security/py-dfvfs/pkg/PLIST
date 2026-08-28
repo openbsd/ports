@@ -66,8 +66,6 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}tar_anal
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}tar_analyzer_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}tsk_analyzer_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}tsk_analyzer_helper.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}tsk_partition_analyzer_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}tsk_partition_analyzer_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}vhdi_analyzer_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}vhdi_analyzer_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/${MODPY_PYCACHE}vmdk_analyzer_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -104,7 +102,6 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/qcow_analyzer_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/specification.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/tar_analyzer_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/tsk_analyzer_helper.py
-lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/tsk_partition_analyzer_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/vhdi_analyzer_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/vmdk_analyzer_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/analyzer/vshadow_analyzer_helper.py
@@ -383,6 +380,8 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}tsk_image.${M
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}tsk_image.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}tsk_partition.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}tsk_partition.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}tsk_time.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}tsk_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}vshadow_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/${MODPY_PYCACHE}vshadow_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/apfs_helper.py
@@ -405,6 +404,7 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/raw_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/sqlite_database.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/tsk_image.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/tsk_partition.py
+lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/tsk_time.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/lib/vshadow_helper.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/mount/
 lib/python${MODPY_VERSION}/site-packages/dfvfs/mount/__init__.py
