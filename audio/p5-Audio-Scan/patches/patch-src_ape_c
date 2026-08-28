@@ -1,0 +1,15 @@
+Prevent out-of-bounds read
+https://rt.cpan.org/Ticket/Display.html?id=181107
+
+Index: src/ape.c
+--- src/ape.c.orig
++++ src/ape.c
+@@ -307,7 +307,7 @@ int _ape_parse_field(ApeTag* tag) {
+ 
+   // Bug 9942, APE tags can contain multiple items with a null separator
+   tmp_ptr = buffer_ptr(&tag->tag_data);
+-  while (tmp_ptr[0] != '\0' && val_length <= size) {
++  while (val_length <= size && tmp_ptr[0] != '\0') {
+     val_length += 1;
+     tmp_ptr    += 1;
+   }

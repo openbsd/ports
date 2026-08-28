@@ -1,20 +1,20 @@
-COMMENT=	fast audio metadata and tag reader for Perl
+COMMENT =	fast audio metadata and tag reader for Perl
 
-DISTNAME=	Audio-Scan-1.13
-CPAN_AUTHOR=	ELBRUS
+DISTNAME =	Audio-Scan-1.13
+CPAN_AUTHOR =	ELBRUS
+REVISION =	0
 
-CATEGORIES=	audio
+CATEGORIES =	audio
 
 # GPLv2
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl z
+WANTLIB =		c perl z
 
-MODULES=	cpan
-#MODPERL_REGEN_PPPORT =	include/ppport.h
+MODULES =		cpan
 
-TEST_DEPENDS=	devel/p5-Test-Warn
+TEST_DEPENDS =		devel/p5-Test-Warn
 
-MAKE_ENV=	TEST_POD=Yes
+MAKE_ENV =		TEST_POD=Yes
 
 .include <bsd.port.mk>
