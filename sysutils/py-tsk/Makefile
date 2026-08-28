@@ -1,6 +1,6 @@
 COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 
-MODPY_DISTV =	20260418
+MODPY_DISTV =	20260715
 DISTNAME =	pytsk3-${MODPY_DISTV}
 PKGNAME =	py-tsk-${MODPY_DISTV}
 
@@ -32,7 +32,7 @@ COMPILER=	base-clang ports-gcc
 post-extract:
 	mv ${WRKDIR}/pytsk-${MODPY_DISTV}/tests/* ${WRKSRC}/tests/
 
-# Ran 30 tests in 0.094s
+# Ran 64 tests in 14.230s
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${MODPY_BIN} run_tests.py
 
