@@ -4,6 +4,7 @@
     SUBDIR += libfsext
     SUBDIR += libfsfat
     SUBDIR += libfshfs
+    SUBDIR += libfsntfs
     SUBDIR += libfsxfs
     SUBDIR += libmodi
     SUBDIR += libphdi
