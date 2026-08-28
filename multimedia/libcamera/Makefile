@@ -77,7 +77,7 @@ CONFIGURE_ARGS +=	-Dpipelines=virtual,uvcbsd \
 # needs lttng-ust
 CONFIGURE_ARGS +=	-Dtracing=disabled
 
-# needs YUYV support, but UVC seems RGB-only; also no dmabuf for the zero-copy
+# display planes are RGB-plus-NV12 while UVC is YUYV/MJPEG-only
 CONFIGURE_ARGS +=	-Dcam-output-kms=disabled
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
