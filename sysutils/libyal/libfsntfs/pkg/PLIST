@@ -1,0 +1,21 @@
+@pkgpath sysutils/libfsntfs
+@bin bin/fsntfsinfo
+@bin bin/fsntfsmount
+include/libfsntfs/
+include/libfsntfs.h
+include/libfsntfs/codepage.h
+include/libfsntfs/definitions.h
+include/libfsntfs/error.h
+include/libfsntfs/extern.h
+include/libfsntfs/features.h
+include/libfsntfs/types.h
+@static-lib lib/libfsntfs.a
+lib/libfsntfs.la
+@lib lib/libfsntfs.so.${LIBfsntfs_VERSION}
+lib/pkgconfig/libfsntfs.pc
+lib/python${MODPY_VERSION}/site-packages/pyfsntfs.a
+@so lib/python${MODPY_VERSION}/site-packages/pyfsntfs.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyfsntfs.la
+@man man/man1/fsntfsinfo.1
+@man man/man1/fsntfsmount.1
+@man man/man3/libfsntfs.3
