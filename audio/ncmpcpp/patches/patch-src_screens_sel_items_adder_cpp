@@ -1,0 +1,16 @@
+Fix build with libc++22: Boost operator[] proxy breaks template argument
+deduction in LocaleBasedSorting.
+Index: src/screens/sel_items_adder.cpp
+--- src/screens/sel_items_adder.cpp.orig
++++ src/screens/sel_items_adder.cpp
+@@ -254,7 +254,9 @@ void SelectedItemsAdder::populatePlaylistSelector(Base
+ 			));
+ 		};
+ 		std::sort(m_playlist_selector.beginV()+begin, m_playlist_selector.endV(),
+-			LocaleBasedSorting(std::locale(), Config.ignore_leading_the));
++			[cmp = LocaleBasedSorting(std::locale(), Config.ignore_leading_the)]
++			(const Entry &a, const Entry &b) { return cmp(a, b); });
++
+ 		if (begin < m_playlist_selector.size())
+ 			m_playlist_selector.addSeparator();
+ 	}

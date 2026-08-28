@@ -1,0 +1,16 @@
+Fix build with libc++22: Boost operator[] proxy breaks template argument
+deduction in LocaleBasedSorting.
+Index: src/screens/tag_editor.cpp
+--- src/screens/tag_editor.cpp.orig
++++ src/screens/tag_editor.cpp
+@@ -289,7 +289,9 @@ void TagEditor::update()
+ 				Dirs->highlight(Dirs->size()-1);
+ 		};
+ 		std::sort(Dirs->beginV()+1, Dirs->endV(),
+-			LocaleBasedSorting(std::locale(), Config.ignore_leading_the));
++			[cmp = LocaleBasedSorting(std::locale(), Config.ignore_leading_the)]
++			(const std::pair<std::string, std::string> &a,
++			 const std::pair<std::string, std::string> &b) { return cmp(a, b); });
+ 		Dirs->display();
+ 	}
+ 	
