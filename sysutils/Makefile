@@ -182,7 +182,6 @@
      SUBDIR += libevt
      SUBDIR += libevtx
      SUBDIR += libfsapfs
-     SUBDIR += libfsntfs
      SUBDIR += libfvde
      SUBDIR += libfwnt
      SUBDIR += libfwsi
