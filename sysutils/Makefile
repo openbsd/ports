@@ -485,7 +485,6 @@
      SUBDIR += testdisk
      SUBDIR += tflint
      SUBDIR += tkdvd
-     SUBDIR += tmate
      SUBDIR += tmux-mem-cpu-load
      SUBDIR += tmuxinator
      SUBDIR += toad
