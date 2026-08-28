@@ -40,9 +40,9 @@ MODMESON_CONFIGURE_ENV +=	TERM="dumb"
 MODMESON_CONFIGURE_ENV +=	LIB${solib}_VERSION=${sover}
 .endfor
 
-_MODMESON_STRIP = --strip
+_MODMESON_STRIP =	--strip
 .if !empty(INSTALL_STRIP)
-MODMESON_CONFIGURE_ARGS += ${_MODMESON_STRIP${DEBUG_PACKAGES}}
+MODMESON_CONFIGURE_ARGS +=	${_MODMESON_STRIP${DEBUG_PACKAGES}}
 .endif
 
 .if ${CONFIGURE_STYLE} == "meson"
@@ -52,9 +52,9 @@ MODMESON_CONFIGURE_ARGS += ${_MODMESON_STRIP${DEBUG_PACKAGES}}
 # foo.cmake and junking it if cmake is found & used);
 # also the devel/cmake module makes sure not to pick up llvm-ar-${LLVM_VERSION}
 # which is not the case here since we're not using the module; so disable cmake
-.if !empty(BUILD_DEPENDS) && !${BUILD_DEPENDS:Mdevel/cmake/core*}
+.   if !empty(BUILD_DEPENDS) && !${BUILD_DEPENDS:Mdevel/cmake/core*}
 MODMESON_post-patch=	@ln -sf /usr/bin/false ${WRKDIR}/bin/cmake
-.endif
+.   endif
 
 CONFIGURE_ARGS +=	${MODMESON_CONFIGURE_ARGS}
 CONFIGURE_ENV +=	${MODMESON_CONFIGURE_ENV}
