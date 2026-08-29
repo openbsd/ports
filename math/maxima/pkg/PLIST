@@ -23,9 +23,6 @@ lib/maxima/
 lib/maxima/${VERSION}/
 lib/maxima/${VERSION}/binary-ecl/
 @bin lib/maxima/${VERSION}/binary-ecl/maxima
-libexec/maxima/
-libexec/maxima/${VERSION}/
-libexec/maxima/${VERSION}/mgnuplot
 man/de/
 man/de/man1/
 @man man/de/man1/maxima.1
@@ -60,6 +57,7 @@ share/icons/xmaxima.svg
 share/maxima/
 share/maxima/${VERSION}/
 share/maxima/${VERSION}/demo/
+share/maxima/${VERSION}/demo/at_difference.demo
 share/maxima/${VERSION}/demo/cf.dem
 share/maxima/${VERSION}/demo/demo.dem
 share/maxima/${VERSION}/demo/eaton1.dem
@@ -162,6 +160,7 @@ share/maxima/${VERSION}/doc/html/Package-pslq.html
 share/maxima/${VERSION}/doc/html/Package-pytranslate.html
 share/maxima/${VERSION}/doc/html/Package-quantum_005fcomputing.html
 share/maxima/${VERSION}/doc/html/Package-ratpow.html
+share/maxima/${VERSION}/doc/html/Package-rk_005fadaptive.html
 share/maxima/${VERSION}/doc/html/Package-romberg.html
 share/maxima/${VERSION}/doc/html/Package-simplex.html
 share/maxima/${VERSION}/doc/html/Package-simplification.html
@@ -356,6 +355,15 @@ share/maxima/${VERSION}/doc/html/figures/graphs12.png
 share/maxima/${VERSION}/doc/html/figures/graphs13.png
 share/maxima/${VERSION}/doc/html/figures/graphs14.png
 share/maxima/${VERSION}/doc/html/figures/graphs15.png
+share/maxima/${VERSION}/doc/html/figures/interpol1.png
+share/maxima/${VERSION}/doc/html/figures/interpol2.png
+share/maxima/${VERSION}/doc/html/figures/interpol3.png
+share/maxima/${VERSION}/doc/html/figures/interpol4.png
+share/maxima/${VERSION}/doc/html/figures/interpol5.png
+share/maxima/${VERSION}/doc/html/figures/interpol6.png
+share/maxima/${VERSION}/doc/html/figures/interpol7.png
+share/maxima/${VERSION}/doc/html/figures/interpol8.png
+share/maxima/${VERSION}/doc/html/figures/interpol9.png
 share/maxima/${VERSION}/doc/html/figures/introduction1.png
 share/maxima/${VERSION}/doc/html/figures/introduction2.png
 share/maxima/${VERSION}/doc/html/figures/introduction3.png
@@ -666,6 +674,7 @@ share/maxima/${VERSION}/share/combinatorics/
 share/maxima/${VERSION}/share/combinatorics/README
 share/maxima/${VERSION}/share/combinatorics/combinatorics.dem
 share/maxima/${VERSION}/share/combinatorics/combinatorics.lisp
+share/maxima/${VERSION}/share/combinatorics/rtest_combinatorics.mac
 share/maxima/${VERSION}/share/contrib/
 share/maxima/${VERSION}/share/contrib/Eulix/
 share/maxima/${VERSION}/share/contrib/Eulix/Eulix.html
@@ -807,10 +816,11 @@ share/maxima/${VERSION}/share/contrib/diffequations/tests/rtestode_utils.mac
 share/maxima/${VERSION}/share/contrib/diffequations/tests/setup_tests.mac
 share/maxima/${VERSION}/share/contrib/elliptic_curves/
 share/maxima/${VERSION}/share/contrib/elliptic_curves/curve_parameters.mac
+share/maxima/${VERSION}/share/contrib/elliptic_curves/doc/
+share/maxima/${VERSION}/share/contrib/elliptic_curves/doc/elliptic_curves.texi
 share/maxima/${VERSION}/share/contrib/elliptic_curves/ec2.lisp
 share/maxima/${VERSION}/share/contrib/elliptic_curves/elliptic_curves.lisp
 share/maxima/${VERSION}/share/contrib/elliptic_curves/elliptic_curves.mac
-share/maxima/${VERSION}/share/contrib/elliptic_curves/elliptic_curves.texi
 share/maxima/${VERSION}/share/contrib/elliptic_curves/figures/
 share/maxima/${VERSION}/share/contrib/elliptic_curves/figures/ec_Z13.pdf
 share/maxima/${VERSION}/share/contrib/elliptic_curves/figures/ec_Z13.png
@@ -914,24 +924,26 @@ share/maxima/${VERSION}/share/contrib/gf/rtest_gf.mac
 share/maxima/${VERSION}/share/contrib/gf/whatsnew.txt
 share/maxima/${VERSION}/share/contrib/ggf.mac
 share/maxima/${VERSION}/share/contrib/graph2d.lisp
-@info share/maxima/${VERSION}/share/contrib/guess/
-share/maxima/${VERSION}/share/contrib/guess/guess-index.lisp
-@info share/maxima/${VERSION}/share/contrib/guess/guess.info
+share/maxima/${VERSION}/share/contrib/guess/
+@info share/maxima/${VERSION}/share/contrib/guess/doc/
+share/maxima/${VERSION}/share/contrib/guess/doc/guess-index.lisp
+@info share/maxima/${VERSION}/share/contrib/guess/doc/guess.info
+share/maxima/${VERSION}/share/contrib/guess/doc/guess.texi
+share/maxima/${VERSION}/share/contrib/guess/doc/texinfo.tex
 share/maxima/${VERSION}/share/contrib/guess/guess.mac
-share/maxima/${VERSION}/share/contrib/guess/guess.texi
-share/maxima/${VERSION}/share/contrib/guess/texinfo.tex
 share/maxima/${VERSION}/share/contrib/impdiff.mac
 share/maxima/${VERSION}/share/contrib/implicit_plot.lisp
-@info share/maxima/${VERSION}/share/contrib/integration/
-@info share/maxima/${VERSION}/share/contrib/integration/abs_integrate.info
+share/maxima/${VERSION}/share/contrib/integration/
 share/maxima/${VERSION}/share/contrib/integration/abs_integrate.lisp
 share/maxima/${VERSION}/share/contrib/integration/abs_integrate.mac
-share/maxima/${VERSION}/share/contrib/integration/abs_integrate.texi
+@info share/maxima/${VERSION}/share/contrib/integration/doc/
+@info share/maxima/${VERSION}/share/contrib/integration/doc/abs_integrate.info
+share/maxima/${VERSION}/share/contrib/integration/doc/abs_integrate.texi
+share/maxima/${VERSION}/share/contrib/integration/doc/integration-index.lisp
+share/maxima/${VERSION}/share/contrib/integration/doc/texinfo.tex
 share/maxima/${VERSION}/share/contrib/integration/hyperint.mac
-share/maxima/${VERSION}/share/contrib/integration/integration-index.lisp
 share/maxima/${VERSION}/share/contrib/integration/partition.mac
 share/maxima/${VERSION}/share/contrib/integration/rtest_abs_integrate.mac
-share/maxima/${VERSION}/share/contrib/integration/texinfo.tex
 share/maxima/${VERSION}/share/contrib/levin/
 share/maxima/${VERSION}/share/contrib/levin/levin.dem
 share/maxima/${VERSION}/share/contrib/levin/levin.mac
@@ -939,23 +951,27 @@ share/maxima/${VERSION}/share/contrib/levin/rtest_levin.mac
 share/maxima/${VERSION}/share/contrib/lindstedt.mac
 share/maxima/${VERSION}/share/contrib/lll.lisp
 share/maxima/${VERSION}/share/contrib/log10.mac
-@info share/maxima/${VERSION}/share/contrib/lurkmathml/
-share/maxima/${VERSION}/share/contrib/lurkmathml/README
+share/maxima/${VERSION}/share/contrib/lurkmathml/
+share/maxima/${VERSION}/share/contrib/lurkmathml/README.md
+@info share/maxima/${VERSION}/share/contrib/lurkmathml/doc/
+share/maxima/${VERSION}/share/contrib/lurkmathml/doc/mathml-index.lisp
+@info share/maxima/${VERSION}/share/contrib/lurkmathml/doc/mathml.info
+share/maxima/${VERSION}/share/contrib/lurkmathml/doc/mathml.texi
+share/maxima/${VERSION}/share/contrib/lurkmathml/doc/texinfo.tex
 share/maxima/${VERSION}/share/contrib/lurkmathml/example.mac
-share/maxima/${VERSION}/share/contrib/lurkmathml/mathml-index.lisp
-@info share/maxima/${VERSION}/share/contrib/lurkmathml/mathml.info
 share/maxima/${VERSION}/share/contrib/lurkmathml/mathml.lisp
-share/maxima/${VERSION}/share/contrib/lurkmathml/mathml.texi
 share/maxima/${VERSION}/share/contrib/lurkmathml/mathmltest
-share/maxima/${VERSION}/share/contrib/lurkmathml/texinfo.tex
+share/maxima/${VERSION}/share/contrib/lurkmathml/mathmltest.mac
+share/maxima/${VERSION}/share/contrib/lurkmathml/mathmltest.sh
 share/maxima/${VERSION}/share/contrib/makeOrders.mac
-@info share/maxima/${VERSION}/share/contrib/maxima-odesolve/
+share/maxima/${VERSION}/share/contrib/maxima-odesolve/
 share/maxima/${VERSION}/share/contrib/maxima-odesolve/README
-@info share/maxima/${VERSION}/share/contrib/maxima-odesolve/kovacicODE.info
+@info share/maxima/${VERSION}/share/contrib/maxima-odesolve/doc/
+@info share/maxima/${VERSION}/share/contrib/maxima-odesolve/doc/kovacicODE.info
+share/maxima/${VERSION}/share/contrib/maxima-odesolve/doc/kovacicODE.texi
+share/maxima/${VERSION}/share/contrib/maxima-odesolve/doc/maxima-odesolve-index.lisp
+share/maxima/${VERSION}/share/contrib/maxima-odesolve/doc/texinfo.tex
 share/maxima/${VERSION}/share/contrib/maxima-odesolve/kovacicODE.mac
-share/maxima/${VERSION}/share/contrib/maxima-odesolve/kovacicODE.texi
-share/maxima/${VERSION}/share/contrib/maxima-odesolve/maxima-odesolve-index.lisp
-share/maxima/${VERSION}/share/contrib/maxima-odesolve/texinfo.tex
 share/maxima/${VERSION}/share/contrib/maxima-server.lisp
 share/maxima/${VERSION}/share/contrib/maximaMathML/
 share/maxima/${VERSION}/share/contrib/maximaMathML/CtMathML.lisp
@@ -1049,6 +1065,7 @@ share/maxima/${VERSION}/share/contrib/rand/twovar.usg
 share/maxima/${VERSION}/share/contrib/rand/vandpol.mac
 share/maxima/${VERSION}/share/contrib/rand/vandpol.usg
 share/maxima/${VERSION}/share/contrib/ratpow.lisp
+share/maxima/${VERSION}/share/contrib/rk_adaptive.mac
 share/maxima/${VERSION}/share/contrib/rkf45/
 share/maxima/${VERSION}/share/contrib/rkf45/rkf45.dem
 share/maxima/${VERSION}/share/contrib/rkf45/rkf45.mac
@@ -1057,6 +1074,7 @@ share/maxima/${VERSION}/share/contrib/rkf45/rtest_rkf45.mac
 share/maxima/${VERSION}/share/contrib/rtest_augmented_lagrangian.mac
 share/maxima/${VERSION}/share/contrib/rtest_engineering_format.mac
 share/maxima/${VERSION}/share/contrib/rtest_ggf.mac
+share/maxima/${VERSION}/share/contrib/rtest_rk_adaptive.mac
 share/maxima/${VERSION}/share/contrib/rtest_wrstcse.mac
 share/maxima/${VERSION}/share/contrib/sarag/
 share/maxima/${VERSION}/share/contrib/sarag/aliases.mac
@@ -1093,13 +1111,15 @@ share/maxima/${VERSION}/share/contrib/state/state.mac
 share/maxima/${VERSION}/share/contrib/state/tree.mac
 share/maxima/${VERSION}/share/contrib/stirling.mac
 @info share/maxima/${VERSION}/share/contrib/symplectic_ode/
+@info share/maxima/${VERSION}/share/contrib/symplectic_ode/doc/
+share/maxima/${VERSION}/share/contrib/symplectic_ode/doc/symplectic_ode-index.lisp
+share/maxima/${VERSION}/share/contrib/symplectic_ode/doc/symplectic_ode.html
+@info share/maxima/${VERSION}/share/contrib/symplectic_ode/doc/symplectic_ode.info
+share/maxima/${VERSION}/share/contrib/symplectic_ode/doc/symplectic_ode.texi
+share/maxima/${VERSION}/share/contrib/symplectic_ode/doc/texinfo.tex
 share/maxima/${VERSION}/share/contrib/symplectic_ode/rtest_symplectic_ode.mac
-share/maxima/${VERSION}/share/contrib/symplectic_ode/symplectic_ode-index.lisp
-share/maxima/${VERSION}/share/contrib/symplectic_ode/symplectic_ode.html
 @info share/maxima/${VERSION}/share/contrib/symplectic_ode/symplectic_ode.info
 share/maxima/${VERSION}/share/contrib/symplectic_ode/symplectic_ode.lisp
-share/maxima/${VERSION}/share/contrib/symplectic_ode/symplectic_ode.texi
-share/maxima/${VERSION}/share/contrib/symplectic_ode/texinfo.tex
 share/maxima/${VERSION}/share/contrib/tex2ooo.lisp
 share/maxima/${VERSION}/share/contrib/timeout.lisp
 share/maxima/${VERSION}/share/contrib/tocl.lisp
@@ -1168,14 +1188,16 @@ share/maxima/${VERSION}/share/distrib/
 share/maxima/${VERSION}/share/distrib/distrib.mac
 share/maxima/${VERSION}/share/distrib/numdistrib.lisp
 share/maxima/${VERSION}/share/distrib/rtest_distrib.mac
-@info share/maxima/${VERSION}/share/draw/
-share/maxima/${VERSION}/share/draw/draw-index.lisp
+share/maxima/${VERSION}/share/draw/
+@info share/maxima/${VERSION}/share/draw/doc/
+share/maxima/${VERSION}/share/draw/doc/draw-index.lisp
+@info share/maxima/${VERSION}/share/draw/doc/drawutils.info
+share/maxima/${VERSION}/share/draw/doc/drawutils.texi
+share/maxima/${VERSION}/share/draw/doc/texinfo.tex
 share/maxima/${VERSION}/share/draw/draw.lisp
 share/maxima/${VERSION}/share/draw/draw.system
 share/maxima/${VERSION}/share/draw/draw_gnuplot.dem
-@info share/maxima/${VERSION}/share/draw/drawutils.info
 share/maxima/${VERSION}/share/draw/drawutils.mac
-share/maxima/${VERSION}/share/draw/drawutils.texi
 share/maxima/${VERSION}/share/draw/gnuplot.lisp
 share/maxima/${VERSION}/share/draw/grcommon.lisp
 share/maxima/${VERSION}/share/draw/picture.lisp
@@ -1183,7 +1205,6 @@ share/maxima/${VERSION}/share/draw/rtest_draw.mac
 share/maxima/${VERSION}/share/draw/rtest_picture.mac
 share/maxima/${VERSION}/share/draw/test-example-rgba.csv
 share/maxima/${VERSION}/share/draw/test-example.xpm
-share/maxima/${VERSION}/share/draw/texinfo.tex
 share/maxima/${VERSION}/share/draw/vtk.lisp
 share/maxima/${VERSION}/share/draw/wbd.lisp
 share/maxima/${VERSION}/share/draw/worldmap.mac
@@ -1202,6 +1223,7 @@ share/maxima/${VERSION}/share/ezunits/ezunits_db.mac
 share/maxima/${VERSION}/share/ezunits/ezunits_functions.mac
 share/maxima/${VERSION}/share/ezunits/physical_constants.mac
 share/maxima/${VERSION}/share/ezunits/rtest_ezunits_frink.mac
+share/maxima/${VERSION}/share/ezunits/rtest_ezunits_mroz_examples.mac
 share/maxima/${VERSION}/share/ezunits/rtest_ezunits_solve.mac
 share/maxima/${VERSION}/share/ezunits/rtestezunits.mac
 share/maxima/${VERSION}/share/fftpack5/
@@ -1718,18 +1740,24 @@ share/maxima/${VERSION}/share/linearalgebra/rtest_lu.mac
 share/maxima/${VERSION}/share/linearalgebra/rtest_matrixexp.mac
 share/maxima/${VERSION}/share/lisp-utils/
 share/maxima/${VERSION}/share/lisp-utils/defsystem.lisp
-@info share/maxima/${VERSION}/share/logic/
+share/maxima/${VERSION}/share/list_operations/
+share/maxima/${VERSION}/share/list_operations/accumulate.mac
+share/maxima/${VERSION}/share/list_operations/list_operations.mac
+share/maxima/${VERSION}/share/list_operations/rtest_accumulate.mac
+share/maxima/${VERSION}/share/list_operations/rtest_list_operations.mac
+share/maxima/${VERSION}/share/logic/
 share/maxima/${VERSION}/share/logic/COPYING
 share/maxima/${VERSION}/share/logic/Ksimplifier.lisp
 share/maxima/${VERSION}/share/logic/TODO
-share/maxima/${VERSION}/share/logic/logic-index.lisp
+@info share/maxima/${VERSION}/share/logic/doc/
+share/maxima/${VERSION}/share/logic/doc/logic-index.lisp
+@info share/maxima/${VERSION}/share/logic/doc/logic.info
+share/maxima/${VERSION}/share/logic/doc/logic.texi
+share/maxima/${VERSION}/share/logic/doc/texinfo.tex
 share/maxima/${VERSION}/share/logic/logic.dem
-@info share/maxima/${VERSION}/share/logic/logic.info
 share/maxima/${VERSION}/share/logic/logic.lisp
 share/maxima/${VERSION}/share/logic/logic.mac
-share/maxima/${VERSION}/share/logic/logic.texi
 share/maxima/${VERSION}/share/logic/rtest_logic.mac
-share/maxima/${VERSION}/share/logic/texinfo.tex
 share/maxima/${VERSION}/share/lsquares/
 share/maxima/${VERSION}/share/lsquares/lsquares.mac
 share/maxima/${VERSION}/share/lsquares/plsquares.mac
@@ -1813,23 +1841,24 @@ share/maxima/${VERSION}/share/multiadditive/bilinear.mac
 share/maxima/${VERSION}/share/multiadditive/multiadditive.lisp
 share/maxima/${VERSION}/share/multiadditive/multiadditive.mac
 share/maxima/${VERSION}/share/multiadditive/rtest_opproperties.mac
-@info share/maxima/${VERSION}/share/nelder_mead/
+share/maxima/${VERSION}/share/nelder_mead/
 share/maxima/${VERSION}/share/nelder_mead/COPYING.txt
 share/maxima/${VERSION}/share/nelder_mead/README.txt
 share/maxima/${VERSION}/share/nelder_mead/defpackage.lisp
+@info share/maxima/${VERSION}/share/nelder_mead/doc/
+share/maxima/${VERSION}/share/nelder_mead/doc/nelder_mead-index.lisp
+@info share/maxima/${VERSION}/share/nelder_mead/doc/nelder_mead.info
+share/maxima/${VERSION}/share/nelder_mead/doc/nelder_mead.texi
+share/maxima/${VERSION}/share/nelder_mead/doc/texinfo.tex
 share/maxima/${VERSION}/share/nelder_mead/la.lisp
 share/maxima/${VERSION}/share/nelder_mead/load-neldermead.lisp
-share/maxima/${VERSION}/share/nelder_mead/nelder_mead-index.lisp
-@info share/maxima/${VERSION}/share/nelder_mead/nelder_mead.info
 share/maxima/${VERSION}/share/nelder_mead/nelder_mead.mac
 share/maxima/${VERSION}/share/nelder_mead/nelder_mead.system
-share/maxima/${VERSION}/share/nelder_mead/nelder_mead.texi
 share/maxima/${VERSION}/share/nelder_mead/nelder_mead.txt
 share/maxima/${VERSION}/share/nelder_mead/neldermead.asd
 share/maxima/${VERSION}/share/nelder_mead/neldermead.lisp
 share/maxima/${VERSION}/share/nelder_mead/nm-maxima.lisp
 share/maxima/${VERSION}/share/nelder_mead/rtest_nelder_mead.mac
-share/maxima/${VERSION}/share/nelder_mead/texinfo.tex
 share/maxima/${VERSION}/share/numeric/
 share/maxima/${VERSION}/share/numeric/bffac.mac
 share/maxima/${VERSION}/share/numeric/brmbrg.lisp
@@ -2045,15 +2074,16 @@ share/maxima/${VERSION}/share/pytranslate/pytranslate.py
 share/maxima/${VERSION}/share/pytranslate/rtest_pytranslate.mac
 share/maxima/${VERSION}/share/quantum/
 share/maxima/${VERSION}/share/quantum/quantum_computing.mac
-@info share/maxima/${VERSION}/share/raddenest/
+share/maxima/${VERSION}/share/raddenest/
 share/maxima/${VERSION}/share/raddenest/README.md
-share/maxima/${VERSION}/share/raddenest/raddenest-index.lisp
+@info share/maxima/${VERSION}/share/raddenest/doc/
+share/maxima/${VERSION}/share/raddenest/doc/raddenest-index.lisp
+@info share/maxima/${VERSION}/share/raddenest/doc/raddenest.info
+share/maxima/${VERSION}/share/raddenest/doc/raddenest.texi
+share/maxima/${VERSION}/share/raddenest/doc/texinfo.tex
 share/maxima/${VERSION}/share/raddenest/raddenest.dem
-@info share/maxima/${VERSION}/share/raddenest/raddenest.info
 share/maxima/${VERSION}/share/raddenest/raddenest.mac
-share/maxima/${VERSION}/share/raddenest/raddenest.texi
 share/maxima/${VERSION}/share/raddenest/rtest_raddenest.mac
-share/maxima/${VERSION}/share/raddenest/texinfo.tex
 share/maxima/${VERSION}/share/readme-share.txt
 share/maxima/${VERSION}/share/simplex/
 share/maxima/${VERSION}/share/simplex/Readme.txt
@@ -2220,6 +2250,7 @@ share/maxima/${VERSION}/share/tensor/helicity.dem
 share/maxima/${VERSION}/share/tensor/hodge.dem
 share/maxima/${VERSION}/share/tensor/hydro.dem
 share/maxima/${VERSION}/share/tensor/iframe.mac
+share/maxima/${VERSION}/share/tensor/isimplify.mac
 share/maxima/${VERSION}/share/tensor/itensor.lisp
 share/maxima/${VERSION}/share/tensor/itensor1.dem
 share/maxima/${VERSION}/share/tensor/itensor2.dem
@@ -2320,6 +2351,7 @@ share/maxima/${VERSION}/share/trigonometry/trgsmp.mac
 share/maxima/${VERSION}/share/trigonometry/trigrat.lisp
 share/maxima/${VERSION}/share/utils/
 share/maxima/${VERSION}/share/utils/mactex-utilities.lisp
+share/maxima/${VERSION}/share/utils/sloop.lisp
 share/maxima/${VERSION}/share/vector/
 share/maxima/${VERSION}/share/vector/rtest_vect.mac
 share/maxima/${VERSION}/share/vector/rtest_vector_rebuild.mac
@@ -2346,6 +2378,7 @@ share/maxima/${VERSION}/src/askp.lisp
 share/maxima/${VERSION}/src/asum.lisp
 share/maxima/${VERSION}/src/autoconf-variables.lisp
 share/maxima/${VERSION}/src/autol.lisp
+share/maxima/${VERSION}/src/basic-util.lisp
 share/maxima/${VERSION}/src/bessel.lisp
 share/maxima/${VERSION}/src/buildq.lisp
 share/maxima/${VERSION}/src/cl-info.lisp
@@ -2372,11 +2405,13 @@ share/maxima/${VERSION}/src/dskfn.lisp
 share/maxima/${VERSION}/src/ecl-port.lisp
 share/maxima/${VERSION}/src/elim.lisp
 share/maxima/${VERSION}/src/ellipt.lisp
+share/maxima/${VERSION}/src/errset.lisp
 share/maxima/${VERSION}/src/evalw.lisp
 share/maxima/${VERSION}/src/expintegral.lisp
 share/maxima/${VERSION}/src/ezgcd.lisp
 share/maxima/${VERSION}/src/factor.lisp
 share/maxima/${VERSION}/src/fcall.lisp
+share/maxima/${VERSION}/src/float-format.lisp
 share/maxima/${VERSION}/src/float-properties.lisp
 share/maxima/${VERSION}/src/float.lisp
 share/maxima/${VERSION}/src/fortra.lisp
@@ -2389,6 +2424,7 @@ share/maxima/${VERSION}/src/getopt.lisp
 share/maxima/${VERSION}/src/globals.lisp
 share/maxima/${VERSION}/src/gnuplot_def.lisp
 share/maxima/${VERSION}/src/grind.lisp
+share/maxima/${VERSION}/src/halfangle.lisp
 share/maxima/${VERSION}/src/hayat.lisp
 share/maxima/${VERSION}/src/homog.lisp
 share/maxima/${VERSION}/src/hstep.lisp
@@ -2428,6 +2464,7 @@ share/maxima/${VERSION}/src/mdot.lisp
 share/maxima/${VERSION}/src/merror.lisp
 share/maxima/${VERSION}/src/mforma.lisp
 share/maxima/${VERSION}/src/mformt.lisp
+share/maxima/${VERSION}/src/mgrind.lisp
 share/maxima/${VERSION}/src/mhayat.lisp
 share/maxima/${VERSION}/src/mlisp.lisp
 share/maxima/${VERSION}/src/mload.lisp
@@ -2437,6 +2474,7 @@ share/maxima/${VERSION}/src/mormac.lisp
 share/maxima/${VERSION}/src/mrgmac.lisp
 share/maxima/${VERSION}/src/mstuff.lisp
 share/maxima/${VERSION}/src/mtrace.lisp
+share/maxima/${VERSION}/src/mutils-fn.lisp
 share/maxima/${VERSION}/src/mutils.lisp
 share/maxima/${VERSION}/src/nalgfa.lisp
 share/maxima/${VERSION}/src/newdet.lisp
@@ -2449,6 +2487,7 @@ share/maxima/${VERSION}/src/nrat4.lisp
 share/maxima/${VERSION}/src/nset.lisp
 share/maxima/${VERSION}/src/numeric.lisp
 share/maxima/${VERSION}/src/numerical/
+share/maxima/${VERSION}/src/numerical-utils.lisp
 share/maxima/${VERSION}/src/numerical/f2cl-lib-package.lisp
 share/maxima/${VERSION}/src/numerical/f2cl-lib.lisp
 share/maxima/${VERSION}/src/numerical/slatec/
@@ -2578,17 +2617,20 @@ share/maxima/${VERSION}/src/numerical/slatec/zwrsk.lisp
 share/maxima/${VERSION}/src/nummod.lisp
 share/maxima/${VERSION}/src/numth.lisp
 share/maxima/${VERSION}/src/opers.lisp
+share/maxima/${VERSION}/src/opr-util.lisp
 share/maxima/${VERSION}/src/optim.lisp
 share/maxima/${VERSION}/src/optimize.lisp
 share/maxima/${VERSION}/src/outmis.lisp
 share/maxima/${VERSION}/src/pade.lisp
 share/maxima/${VERSION}/src/plasma.lisp
 share/maxima/${VERSION}/src/plot.lisp
+share/maxima/${VERSION}/src/plotcolors.lisp
 share/maxima/${VERSION}/src/pois2.lisp
 share/maxima/${VERSION}/src/pois3.lisp
 share/maxima/${VERSION}/src/polynomialp.lisp
 share/maxima/${VERSION}/src/polyrz.lisp
 share/maxima/${VERSION}/src/pregexp.lisp
+share/maxima/${VERSION}/src/prompt-util.lisp
 share/maxima/${VERSION}/src/psolve.lisp
 share/maxima/${VERSION}/src/rand-mt19937.lisp
 share/maxima/${VERSION}/src/rat3a.lisp
@@ -2604,14 +2646,18 @@ share/maxima/${VERSION}/src/risch.lisp
 share/maxima/${VERSION}/src/rpart.lisp
 share/maxima/${VERSION}/src/rzmac.lisp
 share/maxima/${VERSION}/src/safe-recursion.lisp
+share/maxima/${VERSION}/src/schatc-util.lisp
 share/maxima/${VERSION}/src/schatc.lisp
 share/maxima/${VERSION}/src/scs.lisp
 share/maxima/${VERSION}/src/series.lisp
 share/maxima/${VERSION}/src/server.lisp
+share/maxima/${VERSION}/src/simp-fn.lisp
+share/maxima/${VERSION}/src/simp-utils.lisp
 share/maxima/${VERSION}/src/simp.lisp
+share/maxima/${VERSION}/src/sin-util.lisp
 share/maxima/${VERSION}/src/sin.lisp
+share/maxima/${VERSION}/src/sinc.lisp
 share/maxima/${VERSION}/src/sinint.lisp
-share/maxima/${VERSION}/src/sloop.lisp
 share/maxima/${VERSION}/src/solve.lisp
 share/maxima/${VERSION}/src/specfn.lisp
 share/maxima/${VERSION}/src/spgcd.lisp
@@ -2645,6 +2691,7 @@ share/maxima/${VERSION}/src/trprop.lisp
 share/maxima/${VERSION}/src/trutil.lisp
 share/maxima/${VERSION}/src/ufact.lisp
 share/maxima/${VERSION}/src/utils.lisp
+share/maxima/${VERSION}/src/var-predicate.lisp
 share/maxima/${VERSION}/src/verify-html-index.lisp
 share/maxima/${VERSION}/src/xmaxima_def.lisp
 share/maxima/${VERSION}/src/zero.lisp
@@ -2716,6 +2763,7 @@ share/maxima/${VERSION}/tests/rtest_maxmin.mac
 share/maxima/${VERSION}/tests/rtest_mset.mac
 share/maxima/${VERSION}/tests/rtest_nfloat.mac
 share/maxima/${VERSION}/tests/rtest_numth.mac
+share/maxima/${VERSION}/tests/rtest_operators.mac
 share/maxima/${VERSION}/tests/rtest_plot.mac
 share/maxima/${VERSION}/tests/rtest_plotoptions.mac
 share/maxima/${VERSION}/tests/rtest_polynomialp.mac
@@ -2727,6 +2775,7 @@ share/maxima/${VERSION}/tests/rtest_scalarp.mac
 share/maxima/${VERSION}/tests/rtest_setvar.mac
 share/maxima/${VERSION}/tests/rtest_sign.mac
 share/maxima/${VERSION}/tests/rtest_signum.mac
+share/maxima/${VERSION}/tests/rtest_sinc.mac
 share/maxima/${VERSION}/tests/rtest_sqdnst.mac
 share/maxima/${VERSION}/tests/rtest_sqrt.mac
 share/maxima/${VERSION}/tests/rtest_taylor.mac
