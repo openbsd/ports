@@ -843,6 +843,7 @@ include/qgis/qgslayermetadatavalidator.h
 include/qgis/qgslayernotesutils.h
 include/qgis/qgslayerpropertiesdialog.h
 include/qgis/qgslayerpropertieswidget.h
+include/qgis/qgslayerrenderingsettings.h
 include/qgis/qgslayerstylewatcher.h
 include/qgis/qgslayertree.h
 include/qgis/qgslayertreecustomnode.h
@@ -9339,6 +9340,8 @@ share/qgis/resources/data/README_world_map.md
 share/qgis/resources/data/contributors.json
 share/qgis/resources/data/contributors.qml
 share/qgis/resources/data/contributors_map.qml
+share/qgis/resources/data/coordinate_reference_system_legacy.json
+share/qgis/resources/data/google_fonts.json
 share/qgis/resources/data/qgis-hackfests.json
 share/qgis/resources/data/qgis-hackfests.qml
 share/qgis/resources/data/user_groups.qml
