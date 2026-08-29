@@ -10,6 +10,7 @@ include/wireplumber-0.5/wp/conf.h
 include/wireplumber-0.5/wp/core.h
 include/wireplumber-0.5/wp/defs.h
 include/wireplumber-0.5/wp/device.h
+include/wireplumber-0.5/wp/dynamic-rules.h
 include/wireplumber-0.5/wp/error.h
 include/wireplumber-0.5/wp/event-dispatcher.h
 include/wireplumber-0.5/wp/event-hook.h
@@ -188,7 +189,6 @@ share/wireplumber/scripts/linking/find-defined-target.lua
 share/wireplumber/scripts/linking/find-filter-target.lua
 share/wireplumber/scripts/linking/find-media-role-sink-target.lua
 share/wireplumber/scripts/linking/find-media-role-target.lua
-share/wireplumber/scripts/linking/find-user-target.lua.example
 share/wireplumber/scripts/linking/get-filter-from-target.lua
 share/wireplumber/scripts/linking/link-target.lua
 share/wireplumber/scripts/linking/mpris-pause.lua
@@ -200,8 +200,18 @@ share/wireplumber/scripts/metadata.lua
 share/wireplumber/scripts/monitors/
 share/wireplumber/scripts/monitors/alsa-midi.lua
 share/wireplumber/scripts/monitors/alsa.lua
+share/wireplumber/scripts/monitors/bluez/
 share/wireplumber/scripts/monitors/bluez-midi.lua
-share/wireplumber/scripts/monitors/bluez.lua
+share/wireplumber/scripts/monitors/bluez/create-device.lua
+share/wireplumber/scripts/monitors/bluez/create-loopback-node.lua
+share/wireplumber/scripts/monitors/bluez/create-node.lua
+share/wireplumber/scripts/monitors/bluez/create-offload-node.lua
+share/wireplumber/scripts/monitors/bluez/create-set-node.lua
+share/wireplumber/scripts/monitors/bluez/enumerate-device.lua
+share/wireplumber/scripts/monitors/bluez/name-device.lua
+share/wireplumber/scripts/monitors/bluez/name-node.lua
+share/wireplumber/scripts/monitors/bluez/remove-device.lua
+share/wireplumber/scripts/monitors/bluez/remove-node.lua
 share/wireplumber/scripts/monitors/libcamera/
 share/wireplumber/scripts/monitors/libcamera/create-device.lua
 share/wireplumber/scripts/monitors/libcamera/create-node.lua
@@ -217,7 +227,6 @@ share/wireplumber/scripts/monitors/v4l2/name-node.lua
 share/wireplumber/scripts/node/
 share/wireplumber/scripts/node/audio-group.lua
 share/wireplumber/scripts/node/create-item.lua
-share/wireplumber/scripts/node/filter-forward-format.lua
 share/wireplumber/scripts/node/filter-graph.lua
 share/wireplumber/scripts/node/find-media-role-default-volume.lua
 share/wireplumber/scripts/node/software-dsp.lua

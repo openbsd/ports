@@ -1,9 +1,9 @@
 COMMENT=		modular session / policy manager for PipeWire
 
 PW_PROJECT=		wireplumber
-PW_VERSION=		0.5.15
+PW_VERSION=		0.5.16
 
-SHARED_LIBS += wireplumber-0.5           1.0 # 0.515.0
+SHARED_LIBS += wireplumber-0.5           2.0 # 0.516.0
 
 WANTLIB += ${MODLUA_WANTLIB} c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += intl m pipewire-0.3
@@ -28,12 +28,10 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=		-Dsystem-lua=true \
+			-Ddoc=disabled \
 			-Delogind=disabled \
 			-Dsystemd=disabled \
 			-Dsystemd-user-service=false
-
-# needs the breathe pyhton module
-CONFIGURE_ARGS +=	-Ddoc=disabled
 
 # needs sys/inotify.h (devel/libinotify)
 CONFIGURE_ARGS +=	-Dtests=false

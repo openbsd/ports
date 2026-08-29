@@ -1,14 +1,17 @@
+gettid() does not exist on OpenBSD; use getthrid(2) which returns the
+kernel thread ID, keeping the numeric TID journald field semantics.
+
 Index: lib/wp/log.c
 --- lib/wp/log.c.orig
 +++ lib/wp/log.c
-@@ -777,7 +777,11 @@ wp_log_fields_write_to_journal (WpLogFields *lf)
+@@ -791,7 +791,11 @@ wp_log_fields_write_to_journal (WpLogFields *lf)
    g_autofree gchar *full_message = NULL;
    const gchar *message = lf->message ? lf->message : "";
    g_autofree gchar *pid = g_strdup_printf("%d", getpid());
-+#ifndef __OpenBSD__
-   g_autofree gchar *tid = g_strdup_printf("%d", gettid());
++#ifdef __OpenBSD__
++  g_autofree gchar *tid = g_strdup_printf("%d", getthrid());
 +#else
-+  g_autofree gchar *tid = g_strdup_printf("%p", pthread_self());
+   g_autofree gchar *tid = g_strdup_printf("%d", gettid());
 +#endif
  #ifdef HAS_SHORT_NAME
    const gchar *syslog_identifier = program_invocation_short_name;
