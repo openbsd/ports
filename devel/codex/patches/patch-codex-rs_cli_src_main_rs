@@ -7,7 +7,7 @@ Index: codex-rs/cli/src/main.rs
  use clap::Args;
  use clap::CommandFactory;
  use clap::Parser;
-@@ -974,6 +976,9 @@ fn delete_action(target: &str, force: bool) -> anyhow:
+@@ -948,6 +950,9 @@ fn delete_action(target: &str, force: bool) -> anyhow:
  async fn run_debug_app_server_command(cmd: DebugAppServerCommand) -> anyhow::Result<()> {
      match cmd.subcommand {
          DebugAppServerSubcommand::SendMessageV2(cmd) => {

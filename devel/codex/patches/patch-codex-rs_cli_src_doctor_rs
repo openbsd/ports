@@ -1,7 +1,7 @@
 Index: codex-rs/cli/src/doctor.rs
 --- codex-rs/cli/src/doctor.rs.orig
 +++ codex-rs/cli/src/doctor.rs
-@@ -850,6 +850,9 @@ fn generated_at() -> String {
+@@ -854,6 +854,9 @@ fn generated_at() -> String {
  
  fn installation_check(show_details: bool) -> DoctorCheck {
      let mut details = Vec::new();
