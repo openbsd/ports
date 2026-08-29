@@ -2,6 +2,7 @@ COMMENT=		modular session / policy manager for PipeWire
 
 PW_PROJECT=		wireplumber
 PW_VERSION=		0.5.16
+REVISION=		0
 
 SHARED_LIBS += wireplumber-0.5           2.0 # 0.516.0
 
@@ -35,5 +36,10 @@ CONFIGURE_ARGS=		-Dsystem-lua=true \
 
 # needs sys/inotify.h (devel/libinotify)
 CONFIGURE_ARGS +=	-Dtests=false
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pipewire/pipewire.conf.d/
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/10-wireplumber.conf.in \
+		${PREFIX}/share/pipewire/pipewire.conf.d/10-wireplumber.conf
 
 .include <bsd.port.mk>

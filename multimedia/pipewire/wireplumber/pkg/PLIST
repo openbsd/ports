@@ -143,6 +143,9 @@ share/locale/tr/LC_MESSAGES/wireplumber.mo
 share/locale/uk/LC_MESSAGES/wireplumber.mo
 share/locale/zh_CN/LC_MESSAGES/wireplumber.mo
 share/locale/zh_TW/LC_MESSAGES/wireplumber.mo
+share/pipewire/
+share/pipewire/pipewire.conf.d/
+share/pipewire/pipewire.conf.d/10-wireplumber.conf
 share/wireplumber/
 share/wireplumber/scripts/
 share/wireplumber/scripts/client/

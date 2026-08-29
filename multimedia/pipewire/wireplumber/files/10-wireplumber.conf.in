@@ -1,0 +1,5 @@
+# make pipewire automatically start wireplumber;
+# upstream leans on systemd user units which we don't support.
+context.exec = [
+    { path = "${TRUEPREFIX}/bin/wireplumber" args = "" }
+]
