@@ -1,0 +1,17 @@
+XXX push upstream: no RLIMIT_AS on OpenBSD.
+
+Index: compose/worker/asw-worker.c
+--- compose/worker/asw-worker.c.orig
++++ compose/worker/asw-worker.c
+@@ -37,6 +37,11 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ 
++/* no RLIMIT_AS on OpenBSD; RLIMIT_DATA is the closest match */
++#ifndef RLIMIT_AS
++#define RLIMIT_AS RLIMIT_DATA
++#endif
++
+ #include "as-utils-private.h"
+ #include "asc-globals.h"
+ #include "asc-media.h"

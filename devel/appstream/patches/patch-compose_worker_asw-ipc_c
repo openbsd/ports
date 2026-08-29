@@ -1,0 +1,31 @@
+XXX push upstream: no file sealing on OpenBSD, skip seal verification.
+
+Index: compose/worker/asw-ipc.c
+--- compose/worker/asw-ipc.c.orig
++++ compose/worker/asw-ipc.c
+@@ -52,7 +52,9 @@ gboolean
+ asw_memfd_verify_sealed (gint fd, gsize *size_out, GError **error)
+ {
+ 	struct stat st;
++#ifdef F_GET_SEALS
+ 	gint seals;
++#endif
+ 
+ 	if (fstat (fd, &st) != 0) {
+ 		g_set_error (error,
+@@ -70,6 +72,7 @@ asw_memfd_verify_sealed (gint fd, gsize *size_out, GEr
+ 		return FALSE;
+ 	}
+ 
++#ifdef F_GET_SEALS
+ 	seals = fcntl (fd, F_GET_SEALS);
+ 	if (seals < 0) {
+ 		g_set_error (error,
+@@ -87,6 +90,7 @@ asw_memfd_verify_sealed (gint fd, gsize *size_out, GEr
+ 				     "Received data fd is not properly sealed.");
+ 		return FALSE;
+ 	}
++#endif
+ 
+ 	if (size_out != NULL)
+ 		*size_out = st.st_size;

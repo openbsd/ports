@@ -1,0 +1,66 @@
+XXX push upstream: no memfd_create() nor file sealing on OpenBSD,
+fall back to an unlinked temporary shared memory object.
+
+Index: compose/asc-media-ipc.c
+--- compose/asc-media-ipc.c.orig
++++ compose/asc-media-ipc.c
+@@ -41,7 +41,9 @@
+ #include <gio/gunixfdmessage.h>
+ 
+ /* all seals we apply to data passed between the processes */
++#ifdef F_ADD_SEALS
+ #define ASC_MEMFD_DATA_SEALS (F_SEAL_SHRINK | F_SEAL_GROW | F_SEAL_WRITE | F_SEAL_SEAL)
++#endif
+ 
+ /**
+  * asc_memfd_new_sealed:
+@@ -60,7 +62,11 @@ asc_memfd_new_sealed (const gchar *name, gconstpointer
+ {
+ 	gint fd;
+ 	gsize written = 0;
++#ifndef MFD_CLOEXEC
++	char tmpl[] = "/tmp/asc-memfd-XXXXXXXXXX";
++#endif
+ 
++#ifdef MFD_CLOEXEC
+ 	fd = memfd_create (name, MFD_CLOEXEC | MFD_ALLOW_SEALING);
+ 	if (fd < 0) {
+ 		g_set_error (error,
+@@ -70,6 +76,21 @@ asc_memfd_new_sealed (const gchar *name, gconstpointer
+ 			     g_strerror (errno));
+ 		return -1;
+ 	}
++#else
++	/* no memfd_create() nor file sealing on OpenBSD; use an unlinked
++	 * shared memory object instead */
++	fd = shm_mkstemp (tmpl);
++	if (fd < 0) {
++		g_set_error (error,
++			     ASC_MEDIA_ERROR,
++			     ASC_MEDIA_ERROR_FAILED,
++			     "Unable to create shm object: %s",
++			     g_strerror (errno));
++		return -1;
++	}
++	shm_unlink (tmpl);
++	(void) fcntl (fd, F_SETFD, FD_CLOEXEC);
++#endif
+ 
+ 	while (written < len) {
+ 		gssize ret = write (fd, ((const guint8 *) data) + written, len - written);
+@@ -87,6 +108,7 @@ asc_memfd_new_sealed (const gchar *name, gconstpointer
+ 		written += ret;
+ 	}
+ 
++#ifdef F_ADD_SEALS
+ 	if (fcntl (fd, F_ADD_SEALS, ASC_MEMFD_DATA_SEALS) != 0) {
+ 		g_set_error (error,
+ 			     ASC_MEDIA_ERROR,
+@@ -96,6 +118,7 @@ asc_memfd_new_sealed (const gchar *name, gconstpointer
+ 		close (fd);
+ 		return -1;
+ 	}
++#endif
+ 
+ 	return fd;
+ }

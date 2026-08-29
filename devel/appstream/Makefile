@@ -1,6 +1,3 @@
-# needs rust-only librsvg
-ONLY_FOR_ARCHS=		${RUST_ARCHS}
-
 # XXX if we start providing OpenBSD appstream data files into
 # PREFIX/share/app-info, turn the @exec into a @tag (and add to portcheck);
 # for an example, see:
@@ -9,14 +6,14 @@ ONLY_FOR_ARCHS=		${RUST_ARCHS}
 COMMENT-main=		access to machine-readable software metadata
 COMMENT-qt6=		Qt6 interface for AppStream
 
-V=			1.1.6
+V=			1.2.0
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
 PKGNAME-qt6=		appstream-qt6-${V}
 
 SHARED_LIBS += appstream                 1.2 # 1.1.6
-SHARED_LIBS += appstream-compose         1.1 # 1.1.6
+SHARED_LIBS += appstream-compose         1.2 # 1.1.6
 SHARED_LIBS += AppStreamQt               1.1 # 1.1.6
 
 CATEGORIES=		devel
@@ -28,9 +25,9 @@ HOMEPAGE=		https://www.freedesktop.org/wiki/Distributions/AppStream/
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB-main += c cairo curl fontconfig freetype fyaml gdk_pixbuf-2.0
-WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 intl m pango-1.0 rsvg-2
-WANTLIB-main += stemmer xml2 xmlb zstd gmodule-2.0
+WANTLIB-main += c cairo curl fontconfig freetype fyaml gio-2.0 glib-2.0
+WANTLIB-main += gmodule-2.0 gobject-2.0 intl m pango-1.0 stemmer vips
+WANTLIB-main += xml2 xmlb zstd
 
 WANTLIB-qt6 += ${COMPILER_LIBCXX} Qt6Core appstream gio-2.0 glib-2.0
 WANTLIB-qt6 += gobject-2.0
@@ -50,12 +47,13 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			textproc/gi-docgen \
 			textproc/itstool
 
-LIB_DEPENDS-main=	net/curl \
-			textproc/libfyaml>=0.9.6 \
+LIB_DEPENDS-main=	devel/pango \
+			graphics/libvips>=8.18.6 \
+			net/curl \
+			textproc/libfyaml \
 			textproc/libstemmer \
 			textproc/libxml \
-			textproc/libxmlb \
-			x11/gnome/librsvg
+			textproc/libxmlb
 
 LIB_DEPENDS-qt6=	${BASE_PKGPATH},-main \
 			${MODQT6_LIB_DEPENDS}

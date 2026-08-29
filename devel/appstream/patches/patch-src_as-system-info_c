@@ -12,7 +12,7 @@ Index: src/as-system-info.c
  #include <sys/types.h>
  #include <sys/sysctl.h>
  #elif defined(__GNU__)
-@@ -481,11 +481,15 @@ as_get_physical_memory_total (void)
+@@ -481,10 +481,15 @@ as_get_physical_memory_total (void)
  	if (si.mem_unit > 0)
  		return (si.totalram * si.mem_unit) / MB_IN_BYTES;
  	return 0;
@@ -21,13 +21,12 @@ Index: src/as-system-info.c
 +#if defined(__NetBSD__) || defined(__OpenBSD__)
 +	int64_t physmem;
 +	int mib[2] = { CTL_HW, HW_PHYSMEM64 };
-+#elif defined(__FreeBSD__)
++#else
  	unsigned long physmem;
 -	size_t len = sizeof (physmem);
  	int mib[2] = { CTL_HW, HW_PHYSMEM };
--
 +#endif
 +	size_t len = sizeof (physmem);
+ 
  	if (sysctl (mib, 2, &physmem, &len, NULL, 0) == -1) {
  		g_warning ("Unable to determine physical memory size: %s", g_strerror (errno));
- 		return 0;
