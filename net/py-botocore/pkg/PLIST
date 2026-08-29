@@ -1392,6 +1392,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/pag
 lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iam-toolbox/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iam-toolbox/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iam-toolbox/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iam-toolbox/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iam-toolbox/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iam-toolbox/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/examples-1.json
