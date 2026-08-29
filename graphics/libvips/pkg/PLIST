@@ -1,7 +1,6 @@
 @bin bin/vips
 @bin bin/vipsedit
 @bin bin/vipsheader
-bin/vipsprofile
 @bin bin/vipsthumbnail
 include/vips/
 include/vips/VConnection8.h
@@ -68,8 +67,7 @@ lib/pkgconfig/vips.pc
 @man man/man1/vips.1
 @man man/man1/vipsedit.1
 @man man/man1/vipsheader.1
-@man man/man1/vipsprofile.1
 @man man/man1/vipsthumbnail.1
 share/gir-1.0/Vips-8.0.gir
-share/locale/de/LC_MESSAGES/vips8.14.mo
-share/locale/en_GB/LC_MESSAGES/vips8.14.mo
+share/locale/de/LC_MESSAGES/vips8.18.mo
+share/locale/en_GB/LC_MESSAGES/vips8.18.mo
