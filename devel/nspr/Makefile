@@ -1,6 +1,6 @@
 COMMENT =		Netscape Portable Runtime
 
-VER=			4.39
+VER=			4.40
 DISTNAME=		nspr-${VER}
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
@@ -11,7 +11,7 @@ SHARED_LIBS+=		${_lib} ${SO_VERSION}
 
 CATEGORIES=		devel
 
-HOMEPAGE=		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSPR
+HOMEPAGE=		https://firefox-source-docs.mozilla.org/nspr/index.html
 
 MAINTAINER=		Landry Breuil <landry@openbsd.org>
 

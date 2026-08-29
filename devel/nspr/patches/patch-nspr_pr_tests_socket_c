@@ -3,19 +3,20 @@ disable ipv6 socket tests, they hang ?
 Index: nspr/pr/tests/socket.c
 --- nspr/pr/tests/socket.c.orig
 +++ nspr/pr/tests/socket.c
-@@ -2083,6 +2083,7 @@ int main(int argc, char** argv) {
-   /*
-    * client-server test, Ipv6-Ipv4
-    */
-+  #if !defined(__OpenBSD__)
-   client_domain = PR_AF_INET6;
-   printf("TCP Client/Server Test - IPv6/Ipv4\n");
-   if (TCP_Socket_Client_Server_Test() < 0) {
-@@ -2117,6 +2118,7 @@ int main(int argc, char** argv) {
-   }
-   test_cancelio = 0;
- 
-+  #endif
-   /*
-    * Misc socket tests - including transmitfile, etc.
-    */
+@@ -2118,6 +2118,7 @@ main(int argc, char** argv)
+     /*
+      * client-server test, Ipv6-Ipv4
+      */
++    #if !defined(__OpenBSD__)
+     client_domain = PR_AF_INET6;
+     printf("TCP Client/Server Test - IPv6/Ipv4\n");
+     if (TCP_Socket_Client_Server_Test() < 0) {
+@@ -2151,7 +2152,7 @@ main(int argc, char** argv)
+         printf("TCP_Socket_Client_Server_Test Passed\n");
+     }
+     test_cancelio = 0;
+-
++    #endif
+     /*
+      * Misc socket tests - including transmitfile, etc.
+      */

@@ -30,7 +30,7 @@ Index: nspr/pr/tests/runtests.sh
  poll_nm
  poll_to
  pollable
-@@ -172,9 +176,6 @@ selct_er
+@@ -173,9 +177,6 @@ selct_er
  selct_nm
  selct_to
  selintr

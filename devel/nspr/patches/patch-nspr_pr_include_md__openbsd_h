@@ -13,15 +13,15 @@ Index: nspr/pr/include/md/_openbsd.h
 +#define _PR_SI_ARCHITECTURE "riscv64"
  #endif
  
- #define PR_DLL_SUFFIX       ".so"
+ #define PR_DLL_SUFFIX ".so"
 @@ -34,7 +40,11 @@
- #define _MD_DEFAULT_STACK_SIZE  65536L
- #define _MD_MMAP_FLAGS          MAP_PRIVATE
+ #define _MD_DEFAULT_STACK_SIZE 65536L
+ #define _MD_MMAP_FLAGS MAP_PRIVATE
  
 +#if defined(__hppa__)
 +#define HAVE_STACK_GROWING_UP
 +#else
- #undef  HAVE_STACK_GROWING_UP
+ #undef HAVE_STACK_GROWING_UP
 +#endif
  #define HAVE_DLL
  #define USE_DLFCN
