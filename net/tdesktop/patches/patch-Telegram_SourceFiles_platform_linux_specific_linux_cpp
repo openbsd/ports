@@ -1,8 +1,5 @@
 /usr/ports/pobj/tdesktop-6.2.5/tdesktop-6.2.5-full/Telegram/SourceFiles/platform/linux/specific_linux.cpp:71:7: error: reference to 'GObject' is ambiguous
 
-plus fix scroll on X11
-https://github.com/desktop-app/lib_ui/pull/339
-
 Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
 --- Telegram/SourceFiles/platform/linux/specific_linux.cpp.orig
 +++ Telegram/SourceFiles/platform/linux/specific_linux.cpp

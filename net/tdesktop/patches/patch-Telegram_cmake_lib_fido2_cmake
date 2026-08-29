@@ -1,0 +1,19 @@
+Fix libfido2 detection on OpenBSD
+
+Index: Telegram/cmake/lib_fido2.cmake
+--- Telegram/cmake/lib_fido2.cmake.orig
++++ Telegram/cmake/lib_fido2.cmake
+@@ -9,6 +9,13 @@
+ # On Windows it serves only systems without webauthn.dll (Win7/8/8.1,
+ # Win10 < 1903); winhello.c is left out.
+ 
++if (CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++   add_library(lib_fido2 INTERFACE)
++   add_library(tdesktop::lib_fido2 ALIAS lib_fido2)
++   target_link_libraries(lib_fido2 INTERFACE fido2)
++   return()
++endif()
++
+ if (DESKTOP_APP_USE_PACKAGED)
+     find_package(PkgConfig)
+     if (PkgConfig_FOUND)

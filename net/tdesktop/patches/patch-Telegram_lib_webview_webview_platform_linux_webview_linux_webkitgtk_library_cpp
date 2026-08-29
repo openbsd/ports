@@ -5,7 +5,7 @@ Index: Telegram/lib_webview/webview/platform/linux/webview_linux_webkitgtk_libra
 +++ Telegram/lib_webview/webview/platform/linux/webview_linux_webkitgtk_library.cpp
 @@ -14,10 +14,10 @@ ResolveResult Resolve(Platform platform, WindowMode mo
  	const auto gtkPlug = (platform == Platform::X11)
- 		&& (mode != WindowMode::External);
+ 		&& (mode == WindowMode::Embedded);
  	const auto lib = (!gtkPlug
 -			? base::Platform::LoadLibrary("libwebkitgtk-6.0.so.4", RTLD_NODELETE)
 +			? base::Platform::LoadLibrary("libwebkitgtk-6.0.so", RTLD_NODELETE)

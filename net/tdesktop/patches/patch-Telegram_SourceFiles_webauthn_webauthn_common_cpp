@@ -1,0 +1,17 @@
+Replace `raw_ptr` and `raw_len` with `_ptr` and `_len` to ensure
+compatibility with old libfido2 in base.
+
+Index: Telegram/SourceFiles/webauthn/webauthn_common.cpp
+--- Telegram/SourceFiles/webauthn/webauthn_common.cpp.orig
++++ Telegram/SourceFiles/webauthn/webauthn_common.cpp
+@@ -353,8 +353,8 @@ void CloseBox(const std::shared_ptr<State> &state) {
+ 				fido_assert_id_len(assert, 0));
+ 			out.authenticatorData = QByteArray(
+ 				reinterpret_cast<const char*>(
+-					fido_assert_authdata_raw_ptr(assert, 0)),
+-				fido_assert_authdata_raw_len(assert, 0));
++					fido_assert_authdata_ptr(assert, 0)),
++				fido_assert_authdata_len(assert, 0));
+ 			out.signature = QByteArray(
+ 				reinterpret_cast<const char*>(fido_assert_sig_ptr(assert, 0)),
+ 				fido_assert_sig_len(assert, 0));
