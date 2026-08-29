@@ -1,8 +1,8 @@
 COMMENT=		Microsoft TrueType core fonts
 
-DISTNAME=		msttcorefonts-2.0
-REVISION=		4
-CATEGORIES=		fonts x11
+MODFONT_FAMILY =	msttcorefonts
+MODFONT_VERSION =	2.0
+REVISION=		5
 
 HOMEPAGE=		https://corefonts.sourceforge.net/
 
@@ -11,13 +11,15 @@ PERMIT_PACKAGE=		Restrictive license, can't distribute modified files
 PERMIT_DISTFILES=	Yes
 
 SITES=			${SITE_SOURCEFORGE:=corefonts/}
-DIST_SUBDIR=		${DISTNAME}
+DIST_SUBDIR=		${PKGNAME}
 
-BUILD_DEPENDS=		archivers/cabextract
+MODULES =		font
+
+BUILD_DEPENDS =		archivers/cabextract \
+			converters/libiconv
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
-PKG_ARCH=		*
 
 FLAVORS=		no_comic
 FLAVOR?=
@@ -35,17 +37,16 @@ DISTFILES=		andale32.exe \
 			wd97vwr32.exe \
 			webdin32.exe
 
-INST_DIR=		${PREFIX}/share/fonts/mscorefonts
+MODFONT_FONTDIR =	${PREFIX}/share/fonts/mscorefonts
+MODFONT_DOCFILES =	eula.txt
+
+FIX_CRLF_FILES =	eula.txt
 
 EXTRACT_CASES=		*.exe) cabextract --lowercase --quiet \
 			--directory=${WRKDIST} ${FULLDISTDIR}/$$archive ;;
 
 post-extract:
 	@cabextract --lowercase --directory=${WRKDIST} ${WRKDIST}/viewer1.cab
-
-do-install:
-	${INSTALL_DATA_DIR} ${INST_DIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${INST_DIR}
-	tr -d \\015 < ${WRKDIST}/licen.txt > ${INST_DIR}/eula.txt
+	@iconv -f iso-8859-1 -t utf-8 ${WRKSRC}/licen.txt > ${WRKSRC}/eula.txt
 
 .include <bsd.port.mk>

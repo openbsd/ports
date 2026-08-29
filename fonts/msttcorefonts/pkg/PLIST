@@ -1,4 +1,6 @@
 @pkgpath x11/msttcorefonts
+share/doc/msttcorefonts/
+share/doc/msttcorefonts/eula.txt
 share/fonts/
 @fontdir share/fonts/mscorefonts/
 !%%no_comic%%
@@ -12,7 +14,6 @@ share/fonts/mscorefonts/cour.ttf
 share/fonts/mscorefonts/courbd.ttf
 share/fonts/mscorefonts/courbi.ttf
 share/fonts/mscorefonts/couri.ttf
-share/fonts/mscorefonts/eula.txt
 share/fonts/mscorefonts/georgia.ttf
 share/fonts/mscorefonts/georgiab.ttf
 share/fonts/mscorefonts/georgiai.ttf
