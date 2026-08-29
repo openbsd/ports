@@ -1,0 +1,22 @@
+https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/10304
+
+Index: gdk/gdk.c
+--- gdk/gdk.c.orig
++++ gdk/gdk.c
+@@ -628,6 +628,16 @@ gdk_display_should_use_portal (GdkDisplay *display,
+   if (gdk_display_get_debug_flags (display) & GDK_DEBUG_PORTALS)
+     return TRUE;
+ 
++  /* xdg-desktop-portal resolves the file descriptor passed to
++   * OpenURI.OpenFile()/OpenDirectory() through /proc/self/fd, and rejects
++   * file: URIs outright.  Without procfs the request can only fail, and
++   * we do not fall back once a portal is available, so never pick the
++   * OpenURI portal here.
++   */
++  if (g_strcmp0 (portal_interface, "org.freedesktop.portal.OpenURI") == 0 &&
++      !g_file_test ("/proc/self/fd", G_FILE_TEST_IS_DIR))
++    return FALSE;
++
+   if (portals_disabled)
+     return FALSE;
+ 
