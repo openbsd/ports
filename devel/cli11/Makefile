@@ -1,6 +1,7 @@
 COMMENT =		command line parser for C++11
 
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 GH_ACCOUNT =		CLIUtils
 GH_PROJECT =		CLI11
