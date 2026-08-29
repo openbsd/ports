@@ -1,8 +1,12 @@
+# needs newer librsvg
+ONLY_FOR_ARCHS = ${RUST_ARCHS}
+
 COMMENT =	handwriting notetaking with PDF annotation support
 
 GH_ACCOUNT =	xournalpp
 GH_PROJECT =	xournalpp
 GH_TAGNAME =	v1.3.7
+REVISION =	0
 
 CATEGORIES =	print graphics productivity
 
@@ -26,6 +30,8 @@ MODULES =		devel/cmake \
 			lang/lua
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
+			-DCMAKE_STRIP=/usr/bin/true \
+			-DCPACK_STRIP_FILES=OFF \
 			-DDISTRO_CODENAME=OpenBSD \
 			-DMAN_COMPRESS=OFF
 
@@ -47,6 +53,8 @@ LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+4,-guic
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/core/control/settings/LatexSettings.h
