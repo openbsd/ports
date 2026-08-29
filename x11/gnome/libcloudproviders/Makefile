@@ -1,9 +1,9 @@
 COMMENT=		library for integration of cloud storage providers
 
 GNOME_PROJECT=		libcloudproviders
-GNOME_VERSION=		0.4.0
+GNOME_VERSION=		0.4.1
 
-SHARED_LIBS += cloudproviders            0.0 # 0.4.0
+SHARED_LIBS += cloudproviders            0.0 # 0.4.1
 
 # LGPLv3
 PERMIT_PACKAGE=		Yes
