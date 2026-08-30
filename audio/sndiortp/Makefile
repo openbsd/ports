@@ -2,7 +2,7 @@ COMMENT=	play RTP streams or send recorded audio over RTP
 
 GH_ACCOUNT=	ratchov
 GH_PROJECT=	sndiortp
-GH_TAGNAME=     v1.0.1
+GH_TAGNAME=     v1.1.0
 
 CATEGORIES=	audio
 MAINTAINER=	Alexandre Ratchov <alex@caoua.org>
