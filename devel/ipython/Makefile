@@ -1,13 +1,11 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_DISTV =		9.14.1
+MODPY_DISTV =		9.17.0
 DISTNAME =		ipython-${MODPY_DISTV}
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://ipython.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -18,7 +16,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/py-decorator>=5.1.0 \
 			devel/py-jedi>=0.18.2 \
 			devel/py-pexpect>=4.6 \
 			devel/py-prompt_toolkit>=3.0.41v1,<3.1.0v1 \
