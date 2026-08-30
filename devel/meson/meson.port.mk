@@ -56,6 +56,19 @@ MODMESON_CONFIGURE_ARGS +=	${_MODMESON_STRIP${DEBUG_PACKAGES}}
 MODMESON_post-patch=	@ln -sf /usr/bin/false ${WRKDIR}/bin/cmake
 .   endif
 
+# interaction with the devel/cargo MODULE
+.   if ${MODULES:Mdevel/cargo}
+MOD_ORDER != echo '${MODULES}' | grep -qE 'devel/meson.*devel/cargo' || echo KO
+.     if ${MOD_ORDER} == "KO"
+ERRORS +=	"Fatal: devel/meson must be listed before devel/cargo in MODULES"
+.     endif
+MODCARGO_BUILD=		No
+MODCARGO_INSTALL=	No
+MODCARGO_TEST=		No
+MAKE_ENV +=		${MODCARGO_ENV}
+MODMESON_pre-configure +=	@${MODCARGO_configure}
+.   endif
+
 CONFIGURE_ARGS +=	${MODMESON_CONFIGURE_ARGS}
 CONFIGURE_ENV +=	${MODMESON_CONFIGURE_ENV}
 MODMESON_configure=	${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/meson setup \
