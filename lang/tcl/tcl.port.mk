@@ -24,6 +24,18 @@ MODTCL_RUN_DEPENDS ?=	${_MODTCL_SPEC}:lang/tcl/${MODTCL_VERSION}
 MODTCL_LIB_DEPENDS ?=	${_MODTCL_SPEC}:lang/tcl/${MODTCL_VERSION}
 MODTCL_WANTLIB ?= 	${MODTCL_LIB}
 
+# For Tcl 8/9 ports.
+.if "${MODTCL_VERSION}" == "9"
+MODTCL_EXTLIB =		tcl9
+MODTCL_EXT8 =		"@comment "
+MODTCL_EXT9 =
+MODTCL_COMMENT =	(Tcl9)
+.else
+MODTCL_EXTLIB =
+MODTCL_EXT8 =
+MODTCL_EXT9 =		"@comment "
+MODTCL_COMMENT =	(Tcl8)
+.endif
 
 # Handle the two most commonly used methods
 # for starting up executable Tcl scripts.
