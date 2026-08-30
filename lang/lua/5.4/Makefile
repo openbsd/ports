@@ -1,8 +1,7 @@
-# uncomment when 5.5 is added to ports
-#PORTROACH=	limit:^5\.4
+PORTROACH=	limit:^5\.4
 
 VERSION=	5.4.8
-REVISION=	1
+REVISION=	2
 PKGSPEC=	lua->=5.4,<5.5
 
 SHARED_LIBS=	lua5.4 ${VERSION:R}
