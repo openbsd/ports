@@ -1,0 +1,68 @@
+OpenBSD-specific build-time configuration for the LibreWolf Web Browser port
+
+The mozconfig is conditionally modified at build time, by the OpenBSD LibreWolf
+port Makefile, e.g. add --enable-dbus if MOZILLA_USE_DBUS is set.
+
+Makefile-based configuration is done in pre-configure, on a copy of mozconfig
+created when the build is first conducted. The originally patched mozconfig is
+restored on re-builds, matching what was produced by this patch.
+
+Index: mozconfig
+--- mozconfig.orig
++++ mozconfig
+@@ -1,20 +1,29 @@
++# %%VARIABLE%% is replaced with a string set by the
++# OpenBSD port Makefile at build time. In addition to
++# these changes, the LibreWolf OpenBSD port Makefile
++# inserts conditional changes at build-time.
++
+ ac_add_options --enable-application=browser
+ 
+ ac_add_options --disable-crashreporter
+-ac_add_options --disable-debug
++# OpenBSD configures this in the port Makefile:
++# ac_add_options --disable-debug
+ ac_add_options --disable-default-browser-agent
+-ac_add_options --disable-tests
++# OpenBSD configures this in the port Makefile:
++# ac_add_options --disable-tests
+ ac_add_options --disable-updater
+ ac_add_options --disable-cargo-incremental
+ ac_add_options --enable-hardening
+ ac_add_options --enable-stl-hardening
+ ac_add_options --enable-optimize
+ ac_add_options --enable-release
+-ac_add_options --enable-rust-simd
++# Rust SIMD option causes build errors on OpenBSD:
++# ac_add_options --enable-rust-simd
+ # allow replacing malloc manually, will not affect regular systems
+ # not compatible with ac_add_options --disable-jemalloc, which only works when preloading custom malloc
+-ac_add_options --enable-replace-malloc
+-ac_add_options --enable-jemalloc
++# NOTE: mozjemalloc is broken on OpenBSD, so we disable it there.
++# ac_add_options --enable-replace-malloc
++# ac_add_options --enable-jemalloc
+ 
+ ac_add_options --with-app-name=librewolf
+ ac_add_options --with-branding=browser/branding/librewolf
+@@ -33,7 +42,19 @@
+ 
+ export CFLAGS="-ftrivial-auto-var-init=zero -fwrapv -Wno-backend-plugin $CFLAGS"
+ export CXXFLAGS="-ftrivial-auto-var-init=zero -fwrapv -Wno-backend-plugin $CXXFLAGS"
+-#export LDFLAGS=
++# Uncommented and populated for the ports system
++export LDFLAGS="$LDFLAGS"
+ 
+ # Add your own stuff, libraries, architecture, etc..
+ # ex: `cat mozconfig.orig mozconfig.my > mozconfig`
++
++# OpenBSD uses e.g. -fno-ret-protector
++export CPPFLAGS="$CPPFLAGS"
++
++ac_add_options --prefix=%%PREFIX%%
++ac_add_options --enable-sandbox
++ac_add_options --enable-forkserver
++ac_add_options --with-wasi-sysroot=%%LOCALBASE%%/share/wasi-sysroot
++
++# ff/lw >= 46 defaults to gtk+3
++ac_add_options --enable-default-toolkit=cairo-gtk3

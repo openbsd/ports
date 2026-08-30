@@ -15,6 +15,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 # librewolf-149.0.2-2 (upstream) becomes librewolf-149.0.2pl2 (patch level 2)
 MOZILLA_DIST_VERSION =	154.0.1-3
 MOZILLA_VERSION =	${MOZILLA_DIST_VERSION:C/-([0-9]+)$/pl\1/}
+REVISION = 0
 
 MOZILLA_PROJECT =	librewolf
 MOZILLA_CODENAME =	browser
@@ -59,7 +60,7 @@ BUILD_DEPENDS +=	devel/py-setuptools
 RUN_DEPENDS =		graphics/ffmpeg
 
 # uses pledge()
-WANTLIB += Xrandr Xtst freebl3
+WANTLIB += Xrandr
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
@@ -126,9 +127,14 @@ do-test:
 		    ./mach xpcshell-test --sequential --keep-going
 
 MOZCONFIG = ${WRKSRC}/mozconfig
+MOZCONFIG_ORIG = ${WRKSRC}/mozconfig.obsd
 pre-configure:
-	cp "${FILESDIR}/mozconfig-openbsd" "${MOZCONFIG}"
-	sed -i -e "s,%%MOZILLA_PROJECT%%,${MOZILLA_PROJECT},g" "${MOZCONFIG}"
+	if [ ! -f "${MOZCONFIG_ORIG}" ]; \
+	then \
+		cp "${MOZCONFIG}" "${MOZCONFIG_ORIG}" ; \
+	fi
+
+	cp "${MOZCONFIG_ORIG}" "${MOZCONFIG}"
 	sed -i -e "s,%%PREFIX%%,${PREFIX},g" "${MOZCONFIG}"
 	sed -i -e "s,%%LOCALBASE%%,${LOCALBASE},g" "${MOZCONFIG}"
 .if defined(DEBUG)

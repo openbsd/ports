@@ -3,14 +3,79 @@ perhaps send these to librewolf upstream as well
 Index: lw/policies.json
 --- lw/policies.json.orig
 +++ lw/policies.json
-@@ -30,6 +30,10 @@
-         "DisableSetDesktopBackground": false,
-         "DisableTelemetry": true,
-         "DontCheckDefaultBrowser": true,
+@@ -1,26 +1,47 @@
+ {
+     "__COMMENT__ More Information": "https://github.com/mozilla/policy-templates/blob/master/README.md",
+     "policies": {
+-        "AIControls": {
++
++      "GenerativeAI": {
++        "Enabled": false,
++        "Chatbot": false,
++        "LinkPreviews": false,
++        "TabGroups": false,
++        "Locked": true
++      },
++      "AIControls": {
++            "Default": {
++              "Value": "blocked",
++              "Locked": true
++            },
+             "Translations": {
+-                "Value": "available"
++              "Value": "blocked",
++              "Locked": false
+             },
+             "PDFAltText": {
+-                "Value": "blocked"
++              "Value": "blocked",
++              "Locked": false
+             },
+             "SmartTabGroups": {
+-                "Value": "blocked"
++              "Value": "blocked",
++              "Locked": true
+             },
+             "LinkPreviewKeyPoints": {
+-                "Value": "blocked"
++              "Value": "blocked",
++              "Locked": true
+             },
+             "SidebarChatbot": {
+-                "Value": "blocked"
++              "Value": "blocked",
++              "Locked": true
+             },
+             "SmartWindow": {
+-                "Value": "blocked"
++              "Value": "blocked",
++              "Locked": true
+             }
+-        },
++
++          },
++
++
+         "AppUpdateURL": "https://localhost",
+         "DisableAppUpdate": true,
+         "DisableDefaultBrowserAgent": true,
+@@ -73,6 +94,7 @@
+             "EnablePrompting": true
+         },
+         "NoDefaultBookmarks": true,
 +        "GoToIntranetSiteForSingleWordEntryInAddressBar": true,
-+        "GenerativeAI": {
-+            "Enabled": false
+         "OverridePostUpdatePage": "",
+         "SkipTermsOfUse": true,
+         "SupportMenu": {
+@@ -84,6 +106,11 @@
+             "SkipOnboarding": true,
+             "MoreFromMozilla": false,
+             "FirefoxLabs": false
 +        },
-         "WebsiteFilter": {
-             "Block": [
-                 "https://localhost/*"
++        "SearchEngines": {
++          "Remove": [
++            "Perplexity"
++          ]
+         }
+     }
+ }
