@@ -1,11 +1,12 @@
-lib/tcl/dbus-tcl/
-@so lib/tcl/dbus-tcl/libdbus${VER}.so
-lib/tcl/dbus-tcl/pkgIndex.tcl
-@man man/mann/dbus.n
-share/doc/dbus-tcl/
-share/doc/dbus-tcl/dbus.html
-share/doc/dbus-tcl/license.terms
-share/doc/pkg-readmes/${PKGSTEM}
-share/examples/dbus-tcl/
-share/examples/dbus-tcl/dbusmon.tcl
-share/examples/dbus-tcl/qdbus.tcl
+@option no-default-conflict
+${MODTCL_EXT8}lib/tcl/dbus-tcl/
+@so lib/tcl/dbus-tcl/lib${MODTCL_EXTLIB}dbus${VER}.so
+${MODTCL_EXT8}lib/tcl/dbus-tcl/pkgIndex.tcl
+${MODTCL_EXT8}@man man/mann/dbus.n
+${MODTCL_EXT8}share/doc/dbus-tcl/
+${MODTCL_EXT8}share/doc/dbus-tcl/dbus.html
+${MODTCL_EXT8}share/doc/dbus-tcl/license.terms
+${MODTCL_EXT8}share/doc/pkg-readmes/${PKGSTEM}
+${MODTCL_EXT9}share/examples/dbus-tcl/
+${MODTCL_EXT9}share/examples/dbus-tcl/dbusmon.tcl
+${MODTCL_EXT9}share/examples/dbus-tcl/qdbus.tcl
