@@ -1,4 +1,4 @@
-lib/tcl/modules/${MTCL_VER}/dbif-${V}.tm
+lib/tcl/modules/86/dbif-${V}.tm
 @man man/mann/dbif.n
 share/doc/dbus-intf/
 share/doc/dbus-intf/dbif.html
