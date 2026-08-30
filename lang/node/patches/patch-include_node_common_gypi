@@ -1,7 +1,7 @@
 Index: include/node/common.gypi
 --- include/node/common.gypi.orig
 +++ include/node/common.gypi
-@@ -199,7 +199,6 @@
+@@ -200,7 +200,6 @@
              }],
            ],
          },
@@ -9,7 +9,7 @@ Index: include/node/common.gypi
          'conditions': [
            ['enable_lto=="true"', {
              'cflags': ['<(lto)'],
-@@ -589,7 +588,6 @@
+@@ -590,7 +589,6 @@
              'standalone_static_library': 1,
            }],
            ['OS=="openbsd"', {
@@ -17,7 +17,7 @@ Index: include/node/common.gypi
              'ldflags': [ '-Wl,-z,wxneeded' ],
            }],
            ['_toolset=="host"', {
-@@ -602,7 +600,7 @@
+@@ -603,7 +601,7 @@
                  'cflags': [ '-m64' ],
                  'ldflags': [ '-m64' ],
                }],
@@ -26,7 +26,7 @@ Index: include/node/common.gypi
                  'conditions': [
                    [ 'clang==0', {
                      'cflags': [ '-mminimal-toc' ],
-@@ -627,7 +625,7 @@
+@@ -628,7 +626,7 @@
                  'cflags': [ '-m64' ],
                  'ldflags': [ '-m64' ],
                }],

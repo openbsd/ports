@@ -1637,6 +1637,7 @@ lib/node_modules/npm/docs/content/commands/npm-help-search.md
 lib/node_modules/npm/docs/content/commands/npm-help.md
 lib/node_modules/npm/docs/content/commands/npm-init.md
 lib/node_modules/npm/docs/content/commands/npm-install-ci-test.md
+lib/node_modules/npm/docs/content/commands/npm-install-scripts.md
 lib/node_modules/npm/docs/content/commands/npm-install-test.md
 lib/node_modules/npm/docs/content/commands/npm-install.md
 lib/node_modules/npm/docs/content/commands/npm-link.md
@@ -1733,6 +1734,7 @@ lib/node_modules/npm/docs/output/commands/npm-help-search.html
 lib/node_modules/npm/docs/output/commands/npm-help.html
 lib/node_modules/npm/docs/output/commands/npm-init.html
 lib/node_modules/npm/docs/output/commands/npm-install-ci-test.html
+lib/node_modules/npm/docs/output/commands/npm-install-scripts.html
 lib/node_modules/npm/docs/output/commands/npm-install-test.html
 lib/node_modules/npm/docs/output/commands/npm-install.html
 lib/node_modules/npm/docs/output/commands/npm-link.html
@@ -1838,6 +1840,7 @@ lib/node_modules/npm/lib/commands/help-search.js
 lib/node_modules/npm/lib/commands/help.js
 lib/node_modules/npm/lib/commands/init.js
 lib/node_modules/npm/lib/commands/install-ci-test.js
+lib/node_modules/npm/lib/commands/install-scripts.js
 lib/node_modules/npm/lib/commands/install-test.js
 lib/node_modules/npm/lib/commands/install.js
 lib/node_modules/npm/lib/commands/link.js
@@ -1901,6 +1904,7 @@ lib/node_modules/npm/lib/package-url-cmd.js
 lib/node_modules/npm/lib/trust-cmd.js
 lib/node_modules/npm/lib/utils/
 lib/node_modules/npm/lib/utils/allow-scripts-cmd.js
+lib/node_modules/npm/lib/utils/allow-scripts-prune.js
 lib/node_modules/npm/lib/utils/allow-scripts-remediation.js
 lib/node_modules/npm/lib/utils/allow-scripts-writer.js
 lib/node_modules/npm/lib/utils/audit-error.js
@@ -1973,6 +1977,7 @@ lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/npm-help.1
 @man lib/node_modules/npm/man/man1/npm-init.1
 @man lib/node_modules/npm/man/man1/npm-install-ci-test.1
+@man lib/node_modules/npm/man/man1/npm-install-scripts.1
 @man lib/node_modules/npm/man/man1/npm-install-test.1
 @man lib/node_modules/npm/man/man1/npm-install.1
 @man lib/node_modules/npm/man/man1/npm-link.1
