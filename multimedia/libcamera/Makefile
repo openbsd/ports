@@ -8,7 +8,9 @@ PKGNAME-tools=	libcamera-tools-${V}
 PKGNAME-qcam=	libcamera-qcam-${V}
 WRKDIST=	${WRKDIR}/libcamera-v${V}-191e202178f02430b5942397c70d215cdd2056fa
 
-REVISION-main=	1
+REVISION-main=	2
+REVISION-tools=	0
+REVISION-qcam=	0
 
 SHARED_LIBS += camera-base               0.0 # 0.7.2
 SHARED_LIBS += camera                    0.0 # 0.7.2

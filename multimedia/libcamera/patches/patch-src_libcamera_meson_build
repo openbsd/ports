@@ -1,0 +1,15 @@
+Disable libatomic, no need to depends on gcc-libs.
+
+Index: src/libcamera/meson.build
+--- src/libcamera/meson.build.orig
++++ src/libcamera/meson.build
+@@ -68,7 +68,8 @@ includes = [
+ 
+ libcamera_deps = []
+ 
+-libatomic = cc.find_library('atomic', required : false)
++#libatomic = cc.find_library('atomic', required : false)
++libatomic = []
+ libthreads = dependency('threads')
+ 
+ subdir('base')
