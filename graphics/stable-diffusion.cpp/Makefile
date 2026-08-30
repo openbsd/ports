@@ -6,12 +6,12 @@ COMMENT =		diffusion model inference system
 
 GH_ACCOUNT =		leejet
 GH_PROJECT =		stable-diffusion.cpp
-GH_TAGNAME =		master-795-87a0177
+GH_TAGNAME =		master-829-0a565f2
 PKGNAME =		stable-diffusion.cpp-0.0.${GH_TAGNAME:S/master-//:C/-.+//g}
 
-VERSION.ggml =		eced84c86f8b012c752c016f7fe789adea168e1e
+VERSION.ggml =		8e800cef2948046cc47f9db6090491c6128ca42c
 DISTFILES.ggml =	${VERSION.ggml}.tar.gz
-SITES.ggml =		https://github.com/ggml-org/ggml/archive/
+SITES.ggml =		https://github.com/leejet/ggml/archive/
 
 CATEGORIES =		graphics
 

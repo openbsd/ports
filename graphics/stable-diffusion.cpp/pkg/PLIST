@@ -25,6 +25,7 @@ share/doc/stable-diffusion.cpp/hipBLAS_on_Windows.md
 share/doc/stable-diffusion.cpp/hunyuan_video.md
 share/doc/stable-diffusion.cpp/ideogram4.md
 share/doc/stable-diffusion.cpp/imatrix.md
+share/doc/stable-diffusion.cpp/int8_convrot.md
 share/doc/stable-diffusion.cpp/ip_adapter.md
 share/doc/stable-diffusion.cpp/kontext.md
 share/doc/stable-diffusion.cpp/krea2.md
@@ -35,6 +36,7 @@ share/doc/stable-diffusion.cpp/longcat_image.md
 share/doc/stable-diffusion.cpp/lora.md
 share/doc/stable-diffusion.cpp/ltx2.md
 share/doc/stable-diffusion.cpp/mage_flow.md
+share/doc/stable-diffusion.cpp/minimax_h3.md
 share/doc/stable-diffusion.cpp/minit2i.md
 share/doc/stable-diffusion.cpp/model_config.md
 share/doc/stable-diffusion.cpp/ovis_image.md
