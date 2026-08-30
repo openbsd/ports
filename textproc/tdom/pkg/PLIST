@@ -1,18 +1,21 @@
-include/tdom.h
-@lib lib/libtdom${VER}.so.${LIBtdom${VER}_VERSION}
-@static-lib lib/libtdomstub${VER}.a
-lib/tcl/modules/86/tdomhtml-0.1.0.tm
-lib/tcl/tdom/
-lib/tcl/tdom/pkgIndex.tcl
-lib/tcl/tdom/tdom.tcl
-lib/tcl/tdom/tdomConfig.sh
-@man man/mann/dom.n
-@man man/mann/domDoc.n
-@man man/mann/domNode.n
-@man man/mann/expat.n
-@man man/mann/expatapi.n
-@man man/mann/pullparser.n
-@man man/mann/schema.n
-@man man/mann/tdomcmd.n
-@man man/mann/tnc.n
-@man man/mann/xpathFunc.n
+@option no-default-conflict
+${MODTCL_EXT8}include/tdom.h
+@lib lib/lib${MODTCL_EXTLIB}tdom${VER}.so.${LIB${MODTCL_EXTLIB}tdom${VER}_VERSION}
+@static-lib lib/lib${MODTCL_EXTLIB}tdomstub${VER}.a
+${MODTCL_EXT8}lib/tcl/modules/86/tdomhtml-0.1.0.tm
+${MODTCL_EXT8}lib/tcl/tdom/pkgIndex.tcl
+${MODTCL_EXT8}lib/tcl/tdom/tdom.tcl
+${MODTCL_EXT8}lib/tcl/tdom/tdomConfig.sh
+${MODTCL_EXT8}@man man/mann/dom.n
+${MODTCL_EXT8}@man man/mann/domDoc.n
+${MODTCL_EXT8}@man man/mann/domNode.n
+${MODTCL_EXT8}@man man/mann/expat.n
+${MODTCL_EXT8}@man man/mann/expatapi.n
+${MODTCL_EXT8}@man man/mann/pullparser.n
+${MODTCL_EXT8}@man man/mann/schema.n
+${MODTCL_EXT8}@man man/mann/tdomcmd.n
+${MODTCL_EXT8}@man man/mann/tnc.n
+${MODTCL_EXT8}@man man/mann/xpathFunc.n
+${MODTCL_EXT8}lib/tcl/tdom/
+${MODTCL_EXT9}lib/tcl/tdom/tcl9/
+${MODTCL_EXT9}lib/tcl/tdom/tcl9/tdomConfig.sh

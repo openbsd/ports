@@ -1,8 +1,20 @@
-Set this here so it propagates through everything.
+Libs go in ${LOCALBASE}/lib.
+Consistent naming convention for stub libs.
+Set here to propagate through everything.
+
 
 Index: configure
 --- configure.orig
 +++ configure
+@@ -9066,7 +9066,7 @@ $as_echo "#define TCL_MAJOR_VERSION 8" >>confdefs.h
+ 	fi
+ 	# Some packages build their own stubs libraries
+ 	if test "${TCL_MAJOR_VERSION}" -gt 8 -a x"${with_tcl8}" = x; then
+-	    eval eval "PKG_STUB_LIB_FILE=lib${PACKAGE_LIB_PREFIX8}${PACKAGE_NAME}stub.a"
++	    eval eval "PKG_STUB_LIB_FILE=lib${PACKAGE_LIB_PREFIX9}${PACKAGE_NAME}stub${UNSHARED_LIB_SUFFIX}"
+ 	else
+ 	    eval eval "PKG_STUB_LIB_FILE=lib${PACKAGE_LIB_PREFIX8}${PACKAGE_NAME}stub${UNSHARED_LIB_SUFFIX}"
+ 	fi
 @@ -9322,7 +9322,7 @@ TDOMSHELL=tcldomsh
      #--------------------------------------------------------------------
  
@@ -12,3 +24,13 @@ Index: configure
      if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
  	eval tdom_LIB_FLAG="-ltdom${PACKAGE_VERSION}"
  	eval tdom_STUB_LIB_FLAG="-ltdomstub${PACKAGE_VERSION}"
+@@ -9331,7 +9331,8 @@ TDOMSHELL=tcldomsh
+ 	eval tdom_STUB_LIB_FLAG="-ltdomstub`echo ${PACKAGE_VERSION} | tr -d .`"
+     fi
+     if test "${TCL_MAJOR_VERSION}" -gt 8 -a x"${with_tcl8}" = x; then
+-	eval tdom_STUB_LIB_FLAG="-ltdomstub"
++	eval tdom_LIB_FLAG="-ltcl9tdom`echo ${PACKAGE_VERSION} | tr -d .`"
++	eval tdom_STUB_LIB_FLAG="-ltcl9tdomstub`echo ${PACKAGE_VERSION} | tr -d .`"
+     fi
+ 
+     tdom_BUILD_LIB_SPEC="-L`$CYGPATH $(pwd)` ${tdom_LIB_FLAG}"
