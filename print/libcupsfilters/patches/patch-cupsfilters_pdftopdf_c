@@ -1,28 +1,4 @@
-Fix printing of PDFs that carry annotations (hyperlinks, form widgets).
-
-Since libcupsfilters 2.2.0 any PDF with a non-empty /Annots array is sent
-through flatten_pdf(), which has some memory bugs.  For annotations with
-no appearance stream at all (/Link, /Popup, ...) it hands a malloc()'ed
-buffer to pdfioDictSetObj() as the /XObject key and frees it immediately
-afterwards; PDFio stores the key pointer rather than a copy, so the name is
-written from freed memory.  It also registers form XObjects that are never
-given a stream and therefore never written to the file, leaving dangling
-indirect objects, and it never increments noAppearanceobjectCount in that
-branch so the dropped annotations are still counted and their content
-emitted.  The scratch xform_page_ext_t and the annotation bookkeeping arrays
-are allocated with malloc() and used uninitialised.
-
-The result is a flattened temporary file that cannot be reopened, so
-cfFilterPDFToPDF() returns 1 and the job dies with "cfFilterChain: pdftopdf
-stopped with status 1".  On OpenBSD malloc(3) junk-fills the freed key with
-0xdf, which makes it reproduce on essentially every duplex job; on glibc it
-is intermittent.
-
-Also close the flattened page directly instead of through pdfio_end_page(),
-which tests the page count of the output file rather than of the flattened
-file the page belongs to and so emitted an unbalanced Q operator, and
-re-enable the error reporting in prepare_log() so PDFio failures are no
-longer swallowed silently.
+https://github.com/OpenPrinting/libcupsfilters/issues/220
 
 Index: cupsfilters/pdftopdf.c
 --- cupsfilters/pdftopdf.c.orig
