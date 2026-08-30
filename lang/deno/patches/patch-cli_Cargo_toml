@@ -25,7 +25,7 @@ Index: cli/Cargo.toml
  
  [build-dependencies]
  deno_runtime = { workspace = true }
-@@ -144,7 +144,6 @@ imara-diff.workspace = true
+@@ -142,7 +142,6 @@ imara-diff.workspace = true
  import_map.workspace = true
  indexmap.workspace = true
  jsonc-parser = { workspace = true, features = ["cst", "serde"] }

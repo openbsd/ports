@@ -7,9 +7,9 @@ Index: ext/os/lib.rs
  use std::ops::ControlFlow;
 +use std::path::PathBuf;
  use std::sync::Arc;
- use std::sync::atomic::AtomicI32;
- use std::sync::atomic::Ordering;
-@@ -149,7 +150,8 @@ pub enum OsError {
+ use std::sync::LazyLock;
+ use std::sync::Mutex;
+@@ -152,7 +153,8 @@ pub enum OsError {
  #[op2]
  #[string]
  fn op_exec_path() -> Result<String, OsError> {
