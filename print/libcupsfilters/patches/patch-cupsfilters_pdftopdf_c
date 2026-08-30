@@ -1,0 +1,169 @@
+Fix printing of PDFs that carry annotations (hyperlinks, form widgets).
+
+Since libcupsfilters 2.2.0 any PDF with a non-empty /Annots array is sent
+through flatten_pdf(), which has some memory bugs.  For annotations with
+no appearance stream at all (/Link, /Popup, ...) it hands a malloc()'ed
+buffer to pdfioDictSetObj() as the /XObject key and frees it immediately
+afterwards; PDFio stores the key pointer rather than a copy, so the name is
+written from freed memory.  It also registers form XObjects that are never
+given a stream and therefore never written to the file, leaving dangling
+indirect objects, and it never increments noAppearanceobjectCount in that
+branch so the dropped annotations are still counted and their content
+emitted.  The scratch xform_page_ext_t and the annotation bookkeeping arrays
+are allocated with malloc() and used uninitialised.
+
+The result is a flattened temporary file that cannot be reopened, so
+cfFilterPDFToPDF() returns 1 and the job dies with "cfFilterChain: pdftopdf
+stopped with status 1".  On OpenBSD malloc(3) junk-fills the freed key with
+0xdf, which makes it reproduce on essentially every duplex job; on glibc it
+is intermittent.
+
+Also close the flattened page directly instead of through pdfio_end_page(),
+which tests the page count of the output file rather than of the flattened
+file the page belongs to and so emitted an unbalanced Q operator, and
+re-enable the error reporting in prepare_log() so PDFio failures are no
+longer swallowed silently.
+
+Index: cupsfilters/pdftopdf.c
+--- cupsfilters/pdftopdf.c.orig
++++ cupsfilters/pdftopdf.c
+@@ -273,12 +273,10 @@
+ 
+   cupsArrayAdd(p->errors, buffer);
+ 
+-  /*
+   if (error)
+-    fprintf(stderr, _("%s: %s"), Prefix, buffer + 1);
++    fprintf(stderr, "ERROR: %s\n", buffer + 1);
+   else
+     fprintf(stderr, "INFO: %s\n", buffer + 1);
+-    */
+ }
+ 
+ //
+@@ -1521,9 +1519,9 @@
+   rotate_val = (int)pdfioDictGetNumber(idict, "Rotate"); 
+   count = pdfioArrayGetSize(annotsArray); 
+   
+-  p->annotation_contents = (char**)malloc(count * sizeof(char*)); 
++  p->annotation_contents = (char **)calloc(count + 1, sizeof(char *)); 
+   
+-  int* noAppearanceobjectIndex = (int *)malloc(count * sizeof(int)); 
++  int* noAppearanceobjectIndex = (int *)calloc(count + 1, sizeof(int)); 
+   noAppearanceobjectCount = 0; 
+   
+   for(i = 0; i<count; i++) 
+@@ -1796,6 +1794,8 @@
+       pdfioDictSetName(form_xobj_dict, "Type", "XObject");
+       pdfioDictSetName(form_xobj_dict, "Subtype", "Form");
+ 
++      bool have_xobj_stream = false;
++
+       char *content = special_pdfio_annotation_get_content(Annot_obj, name, rotate_val, forbidden_flags, required_flags);
+       p->annotation_contents[i-noAppearanceobjectCount] = content;
+ 
+@@ -1895,18 +1895,44 @@
+ 
+ 	      }
+ 	      pdfioStreamClose(dst_stream);
++	      have_xobj_stream = true;
+ 	    }
+ 	  } 
+         }
+       
+-        pdfioDictSetObj(xobj_dict, name, form_xobj);
+-        next_fx++; 
++        if (have_xobj_stream)
++        {
++	  // The dictionary keeps a pointer to the key, it does not copy it, so
++	  // the name has to outlive this iteration.
++	  pdfioDictSetObj(xobj_dict, pdfioStringCreate(outpage->pdf, name), form_xobj);
++	  next_fx++; 
++	}
++	else
++	{
++	  // Nothing was ever written to this form XObject.  PDFio only emits
++	  // objects that have been closed, so referencing it here would leave a
++	  // dangling indirect object behind and the flattened file could no
++	  // longer be reopened.  Drop the annotation instead, like the branch
++	  // above does for annotations whose appearance is not selected.
++	  pdfioObjClose(form_xobj);
++	  free(content);
++	  p->annotation_contents[i-noAppearanceobjectCount] = NULL;
++	  noAppearanceobjectIndex[noAppearanceobjectCount] = i;
++	  noAppearanceobjectCount++;
++	}
++      }
++      else
++      {
++	// No content to draw for this annotation either.
++	free(content);
++	p->annotation_contents[i-noAppearanceobjectCount] = NULL;
++	noAppearanceobjectIndex[noAppearanceobjectCount] = i;
++	noAppearanceobjectCount++;
+       }
+       
+       //Annot_dict
+       free(name);
+       fprintf(stderr, "DEBUG: special case ignore annotation with no appearance\n");
+-      noAppearanceobjectIndex[noAppearanceobjectCount] = i;
+     } 
+     if(N_stream)
+       pdfioStreamClose(N_stream);
+@@ -1914,12 +1940,15 @@
+   p->num_annotations = count-noAppearanceobjectCount;
+  
+   // Start output page content
++  bool duplex_saved = false;
++
+   if ((outpage->output = pdfioFileCreatePage(outpage->pdf, outpage->pagedict)) != NULL)
+   {
+     if (p->use_duplex_xform && !(pdfioFileGetNumPages(outpage->pdf) & 1))
+     {
+       pdfioContentSave(outpage->output);
+       pdfioContentMatrixConcat(outpage->output, p->duplex_xform);
++      duplex_saved = true;
+     }
+   }
+   else 
+@@ -1963,6 +1992,9 @@
+   // Restore state...
+   pdfioStreamPuts(outpage->output, "\n");
+   pdfioContentRestore(outpage->output);
++
++  if (duplex_saved)
++    pdfioContentRestore(outpage->output);
+ }
+ 
+   
+@@ -2477,11 +2509,11 @@
+       if ((flattened_pdf = pdfioFileCreateTemporary(flattened_pdf_file, sizeof(flattened_pdf_file), "1.7", &p.media, &p.media, pdfio_error_cb, &p)) == NULL)
+ 	return (false);
+ 
+-      xform_page_ext_t *flattened_page = (xform_page_ext_t*)malloc(sizeof(xform_page_ext_t));
++      xform_page_ext_t *flattened_page = (xform_page_ext_t*)calloc(1, sizeof(xform_page_ext_t));
+       flattened_page->pdf = flattened_pdf;
+       size_t npages = pdfioFileGetNumPages(d->pdf);
+ 
+-      flattened_page->input = (pdfio_obj_t**)malloc(npages * sizeof(pdfio_obj_t*));
++      flattened_page->input = (pdfio_obj_t**)calloc(npages + 1, sizeof(pdfio_obj_t*));
+ 
+       for (size_t pg = 0; pg < npages; pg++)
+       {
+@@ -2517,12 +2549,15 @@
+ 
+ 	flatten_pdf(&p, flattened_page, pg, an_print, 0);
+ 
+-	pdfio_end_page(&p, flattened_page->output);
++	pdfioStreamClose(flattened_page->output);
+       }
+ 
+       pdfioFileClose(d->pdf);
+       pdfioFileClose(flattened_pdf);
+ 
++      free(flattened_page->input);
++      free(flattened_page);
++
+       if ((d->pdf = pdfioFileOpen(flattened_pdf_file, NULL, &documents, pdfio_error_cb, &p)) == NULL)
+       goto done;
+       p.inpdf = d->pdf;
