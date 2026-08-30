@@ -1,0 +1,17 @@
+Index: src/luaconf.h
+--- src/luaconf.h.orig
++++ src/luaconf.h
+@@ -89,6 +89,13 @@
+ #endif
+ 
+ 
++#if defined(LUA_USE_BSD)
++#define LUA_USE_POSIX
++#define LUA_USE_DLOPEN
++#define LUA_READLINELIB		"libedit.so"
++#endif
++
++
+ #if defined(LUA_USE_C89) && defined(LUA_USE_POSIX)
+ #error "POSIX is not compatible with C89"
+ #endif

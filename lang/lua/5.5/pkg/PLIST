@@ -1,0 +1,23 @@
+@option no-default-conflict
+@option is-branch
+@conflict lua->=5.5,<5.6
+@bin bin/lua5.5
+@bin bin/lua55
+@bin bin/luac5.5
+@bin bin/luac55
+include/lua-5.5/
+include/lua-5.5/lauxlib.h
+include/lua-5.5/lua.h
+include/lua-5.5/lua.hpp
+include/lua-5.5/luaconf.h
+include/lua-5.5/lualib.h
+@static-lib lib/liblua5.5.a
+@lib lib/liblua5.5.so.${LIBlua5.5_VERSION}
+lib/lua/
+lib/lua/5.5/
+lib/pkgconfig/lua5.5.pc
+lib/pkgconfig/lua55.pc
+@man man/man1/lua55.1
+@man man/man1/luac55.1
+share/lua/
+share/lua/5.5/
