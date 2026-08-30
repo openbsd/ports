@@ -13,13 +13,10 @@ WANTLIB += ${MODCARGO_WANTLIB} cairo dav1d gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += graphene-1.0 gstbase-1.0 gstgl-1.0 gstreamer-1.0 gstrtp-1.0
 WANTLIB += gstvideo-1.0 gtk-4 m pango-1.0 pangocairo-1.0 webpdemux
 
-MODULES=		devel/cargo \
-			devel/meson
+MODULES=		devel/meson \
+			devel/cargo
 
 MODCARGO_DIST_SUBDIR=	../cargo
-MODCARGO_BUILD=		No
-MODCARGO_INSTALL=	No
-MODCARGO_TEST=		No
 
 # needs libclang.so
 MODULES +=		lang/clang
@@ -59,9 +56,6 @@ DISABLED +=	cdg ffv1 gif hsv png rav1e debugseimetainserter vvdec skia
 CONFIGURE_ARGS +=   -D${d}=disabled
 .endfor
 ###
-
-pre-configure:
-	${MODCARGO_configure}
 
 .include "crates.inc"
 

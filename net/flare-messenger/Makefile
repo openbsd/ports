@@ -28,17 +28,11 @@ WANTLIB += ${MODCARGO_WANTLIB} adwaita-1 crypto gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-4 gtksourceview-5
 WANTLIB += intl m pango-1.0 spelling-1
 
-MODULES=	devel/cargo \
+MODULES=	devel/meson \
 		devel/dconf \
-		devel/meson
+		devel/cargo
 
-MODCARGO_BUILD=		No
-MODCARGO_INSTALL=	No
-MODCARGO_TEST=		No
 MODCARGO_CRATES_KEEP=	libsqlite3-sys
-
-MAKE_ENV=	${MODCARGO_ENV}
-MAKE_FLAGS=	V=1
 
 BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/protobuf \
@@ -54,9 +48,6 @@ LIB_DEPENDS=	textproc/libspelling \
 
 post-extract:
 	mv ${WRKDIR}/flare-* ${WRKSRC}
-
-pre-configure:
-	@${MODCARGO_configure}
 
 .include "crates.inc"
 

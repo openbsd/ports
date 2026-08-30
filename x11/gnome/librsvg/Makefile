@@ -31,19 +31,14 @@ GNOME_VERSION=		${STABLE_VERSION}
 MODULES +=		lang/clang
 MODCLANG_COMPILER_LINKS=	No
 MODCLANG_RUNDEP=	No
-MODULES +=		devel/cargo \
-			devel/meson
-MODCARGO_BUILD=		No
-MODCARGO_INSTALL=	No
-MODCARGO_TEST=		No
+MODULES +=		devel/meson \
+			devel/cargo
 MODGNOME_TOOLS +=	gi-docgen
 BUILD_DEPENDS=		devel/cargo-c
 # rst2man
 BUILD_DEPENDS +=	textproc/py-docutils
 LIB_DEPENDS +=		multimedia/dav1d
 PKG_ARGS=		-Dold=0 -Dstable=1
-MAKE_ENV +=		${MODCARGO_ENV}
-MAKE_FLAGS +=		V=1
 WANTLIB += ${MODCARGO_WANTLIB} cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 xml2
 WANTLIB += dav1d fontconfig harfbuzz
@@ -98,7 +93,6 @@ LIB_DEPENDS +=		devel/pango \
 .include "crates.inc"
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/llvm-nm-${MODCLANG_VERSION} ${WRKDIR}/bin/llvm-nm
-	@${MODCARGO_configure}
 .else
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}

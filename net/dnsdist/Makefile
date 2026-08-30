@@ -21,19 +21,15 @@ SYSCONFDIR=		${BASESYSCONFDIR}/dnsdist
 
 COMPILER =		base-clang ports-gcc
 
+MODULES=		devel/meson
+
 .include <bsd.port.arch.mk>
 
 .if ${PROPERTIES:Mrust}
 MODULES+=		devel/cargo
 MODCARGO_CARGOTOML=	${WRKSRC}/dnsdist-rust-lib/rust/Cargo.toml
 MODCARGO_TARGET_DIR=	${WRKSRC}/dnsdist-rust-lib/rust/target
-MODCARGO_BUILD=		No
-MODCARGO_INSTALL=	No
-MODCARGO_TEST=		No
 CONFIGURE_ARGS=		-Dyaml=enabled
-
-pre-configure:
-			@${MODCARGO_configure}
 .else
 CONFIGURE_ARGS=		-Dyaml=disabled
 # Needed for SUPDISTFILES
@@ -55,9 +51,6 @@ LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS}
 WANTLIB+=		${MODLUA_WANTLIB}
 .endif
 
-MODULES+=		devel/meson
-
-CONFIGURE_STYLE=	meson
 CONFIGURE_ARGS+=	-Dcdb=enabled \
 			-Ddns-over-https=enabled \
 			-Ddns-over-http3=disabled \
@@ -76,8 +69,6 @@ CONFIGURE_ARGS+=	-Dcdb=enabled \
 			-Dsystemd-service=disabled \
 			-Dtls-gnutls=disabled \
 			-Dxsk=disabled \
-
-MAKE_ENV+=		${MODCARGO_ENV}
 
 BUILD_DEPENDS=		devel/boost \
 			textproc/py-yaml

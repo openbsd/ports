@@ -16,25 +16,17 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += ${MODCARGO_WANTLIB} gio-2.0 glib-2.0 gobject-2.0 gtk-4
 WANTLIB += m
 
-MODULES=		devel/cargo \
-			devel/meson \
+MODULES=		devel/meson \
+			devel/cargo \
 			x11/gnome
-
-MODCARGO_BUILD=		No
-MODCARGO_INSTALL=	No
-MODCARGO_TEST=		No
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
-MAKE_ENV +=		${MODCARGO_ENV}
 MAKE_FLAGS +=		V=1
 
 LIB_DEPENDS=		x11/gtk+4
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-pre-configure:
-	@${MODCARGO_configure}
 
 .include "crates.inc"
 

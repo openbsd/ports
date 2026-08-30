@@ -31,20 +31,13 @@ MULTI_PACKAGES=		-main -nautilus
 COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS=		c
 
-MODULES=		devel/cargo \
+MODULES=		devel/meson \
 			devel/dconf \
-			devel/meson \
+			devel/cargo \
 			x11/gnome
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection gi-docgen \
 			gtk-update-icon-cache yelp
-
-MODCARGO_BUILD=		No
-MODCARGO_INSTALL=	No
-MODCARGO_TEST=		No
-
-MAKE_ENV +=		${MODCARGO_ENV}
-MAKE_FLAGS +=		V=1
 
 BUILD_DEPENDS=		devel/appstream \
 			x11/blueprint-compiler
@@ -65,9 +58,6 @@ RUN_DEPENDS-nautilus=	# empty
 CONFIGURE_ARGS=		-Dsysprof=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-pre-configure:
-	@${MODCARGO_configure}
 
 .include "crates.inc"
 

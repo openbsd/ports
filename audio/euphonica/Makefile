@@ -19,8 +19,8 @@ WANTLIB += ${MODCARGO_WANTLIB} adwaita-1 cairo crypto gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 graphene-1.0 gtk-4 intl m pipewire-0.3
 WANTLIB += secret-1 sqlite3 ssl
 
-MODULES =		devel/cargo \
-			devel/meson
+MODULES =		devel/meson \
+			devel/cargo
 
 BUILD_DEPENDS =		devel/gettext,-tools
 
@@ -41,17 +41,6 @@ MODULES +=		lang/clang
 MODCARGO_ENV +=		CLANG_BASE_PATH=/usr \
 			LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
 			LD_LIBRARY_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
-
-CONFIGURE_STYLE =	meson
-
-MODCARGO_BUILD =	No
-MODCARGO_INSTALL =	No
-MODCARGO_TEST =		No
-
-MAKE_ENV +=		${MODCARGO_ENV}
-
-pre-configure:
-	@${MODCARGO_configure}
 
 .include "crates.inc"
 

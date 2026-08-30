@@ -25,6 +25,8 @@ MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 
 COMPILER =		base-clang ports-gcc
 
+MODULES=		devel/meson
+
 NO_TEST=		Yes
 
 LIB_DEPENDS=		devel/boost \
@@ -36,9 +38,6 @@ LIB_DEPENDS=		devel/boost \
 MODULES+=		devel/cargo
 MODCARGO_CARGOTOML=	${WRKSRC}/rec-rust-lib/rust/Cargo.toml
 MODCARGO_TARGET_DIR=	${WRKSRC}/rec-rust-lib/rust/target 
-MODCARGO_BUILD=		No
-MODCARGO_INSTALL=	No
-MODCARGO_TEST=		No
 
 .include <bsd.port.arch.mk>
 
@@ -57,13 +56,6 @@ WANTLIB+=		${MODLUA_WANTLIB}
 SYSCONFDIR=		${BASESYSCONFDIR}/pdns
 SUBST_VARS+=		BASESYSCONFDIR
 
-MODULES+=		devel/meson
-
-pre-configure:
-			@${MODCARGO_configure}
-
-CONFIGURE_STYLE=	meson
-
 CONFIGURE_ARGS+=	-Dhardening=disabled \
 			-Ddns-over-tls=enabled \
 			-Ddnstap=enabled \
@@ -72,8 +64,6 @@ CONFIGURE_ARGS+=	-Dhardening=disabled \
 			-Dsystemd-service=disabled \
 			-Dlibcap=disabled \
 			-Dtls-gnutls=disabled
-
-MAKE_ENV+=		${MODCARGO_ENV}
 
 EXAMPLE_DIR=		${PREFIX}/share/examples/pdns/
 
