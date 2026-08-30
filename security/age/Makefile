@@ -1,7 +1,7 @@
 COMMENT =	simple, modern and secure file encryption tool
 
 MODGO_MODNAME =	filippo.io/age
-MODGO_VERSION =	v1.3.1
+MODGO_VERSION =	v1.3.2
 
 DISTNAME =	age-${MODGO_VERSION}
 
@@ -9,7 +9,7 @@ CATEGORIES =	security
 
 HOMEPAGE =	https://age-encryption.org/
 
-MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
+MAINTAINER =	Volker Schlecht <volker@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE =	Yes
