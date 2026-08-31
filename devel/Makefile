@@ -1340,6 +1340,7 @@
      SUBDIR += p5-lib-abs
      SUBDIR += p5-libintl
      SUBDIR += p5-local-lib
+     SUBDIR += p5-meta
      SUBDIR += p5-namespace-autoclean
      SUBDIR += p5-namespace-clean
      SUBDIR += p5-prefork
