@@ -4,13 +4,13 @@
 
 COMMENT =	C++ unit test framework
 
-V =		1.15.2
+V =		1.18.0
 DIST_TUPLE =	github	google	googletest	v${V}	.
 PKGNAME =	gtest-${V}
 
-SHARED_LIBS +=	gmock		2.0
+SHARED_LIBS +=	gmock		3.0
 SHARED_LIBS +=	gmock_main	1.0
-SHARED_LIBS +=	gtest		4.0
+SHARED_LIBS +=	gtest		5.0
 SHARED_LIBS +=	gtest_main	2.0
 
 CATEGORIES =	devel

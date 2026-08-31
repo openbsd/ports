@@ -4,7 +4,7 @@ GH_ACCOUNT =	google
 GH_PROJECT =	draco
 GH_TAGNAME =	1.5.7
 SHARED_LIBS =	draco 0.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	archivers
 HOMEPAGE =	https://google.github.io/draco/
@@ -20,7 +20,7 @@ MODULES =	devel/cmake
 BUILD_DEPENDS =	devel/gtest:patch
 CONFIGURE_ARGS =-DBUILD_SHARED_LIBS=ON \
 		-DDRACO_TESTS=ON \
-		-DDRACO_GOOGLETEST_PATH=${WRKDIR}/devel/gtest/googletest-1.15.2
+		-DDRACO_GOOGLETEST_PATH=${WRKDIR}/devel/gtest/googletest-1.18.0
 
 # everything but tests
 ALL_TARGET =	draco_encoder draco_decoder
