@@ -1,0 +1,7 @@
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/meta/
+@comment ${P5ARCH}/auto/meta/meta.bs
+@so ${P5ARCH}/auto/meta/meta.so
+${P5ARCH}/meta.pm
+@man man/man3p/meta.3p
