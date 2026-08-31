@@ -1,0 +1,51 @@
+OpenBSD does not have strtod_l(3) support and libcxx removed
+compat shims for it
+
+Index: provider/libserver/ECDatabaseUtils.cpp
+--- provider/libserver/ECDatabaseUtils.cpp.orig
++++ provider/libserver/ECDatabaseUtils.cpp
+@@ -422,7 +422,7 @@ ECRESULT CopyDatabasePropValToSOAPPropVal(struct soap 
+ 			goto exit;
+ 		}
+ 		lpPropVal->__union = SOAP_UNION_propValData_flt;
+-		lpPropVal->Value.flt = (float)strtod_l(lpRow[FIELD_NR_DOUBLE], NULL, loc);
++		lpPropVal->Value.flt = (float)strtod(lpRow[FIELD_NR_DOUBLE], NULL);
+ 		break;
+ 	case PT_BOOLEAN:
+ 		if(lpRow[FIELD_NR_ULONG] == NULL) {
+@@ -438,7 +438,7 @@ ECRESULT CopyDatabasePropValToSOAPPropVal(struct soap 
+ 			goto exit;
+ 		}
+ 		lpPropVal->__union = SOAP_UNION_propValData_dbl;
+-		lpPropVal->Value.dbl = strtod_l(lpRow[FIELD_NR_DOUBLE], NULL, loc);
++		lpPropVal->Value.dbl = strtod(lpRow[FIELD_NR_DOUBLE], NULL);
+ 		break;
+ 	case PT_CURRENCY:
+ 		if(lpRow[FIELD_NR_HI] == NULL || lpRow[FIELD_NR_LO] == NULL) {
+@@ -456,7 +456,7 @@ ECRESULT CopyDatabasePropValToSOAPPropVal(struct soap 
+ 			goto exit;
+ 		}
+ 		lpPropVal->__union = SOAP_UNION_propValData_dbl;
+-		lpPropVal->Value.dbl = strtod_l(lpRow[FIELD_NR_DOUBLE], NULL, loc);
++		lpPropVal->Value.dbl = strtod(lpRow[FIELD_NR_DOUBLE], NULL);
+ 		break;
+ 	case PT_SYSTIME:
+ 		if(lpRow[FIELD_NR_HI] == NULL || lpRow[FIELD_NR_LO] == NULL) {
+@@ -551,7 +551,7 @@ ECRESULT CopyDatabasePropValToSOAPPropVal(struct soap 
+ 		ulLastPos = 0;
+ 		for (gsoap_size_t i = 0; i < lpPropVal->Value.mvflt.__size; ++i) {
+ 			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
+-			lpPropVal->Value.mvflt.__ptr[i] = (float)strtod_l(strData.c_str(), NULL, loc);
++			lpPropVal->Value.mvflt.__ptr[i] = (float)strtod(strData.c_str(), NULL);
+ 		}
+ 		break;
+ 	case PT_MV_DOUBLE:
+@@ -567,7 +567,7 @@ ECRESULT CopyDatabasePropValToSOAPPropVal(struct soap 
+ 		ulLastPos = 0;
+ 		for (gsoap_size_t i = 0; i < lpPropVal->Value.mvdbl.__size; ++i) {
+ 			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
+-			lpPropVal->Value.mvdbl.__ptr[i] = strtod_l(strData.c_str(), NULL, loc);
++			lpPropVal->Value.mvdbl.__ptr[i] = strtod(strData.c_str(), NULL);
+ 		}
+ 		break;
+ 	case PT_MV_CURRENCY:

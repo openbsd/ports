@@ -1,0 +1,42 @@
+OpenBSD does not have strtod_l(3) support and libcxx removed
+compat shims for it
+
+Index: provider/libserver/StreamUtil.cpp
+--- provider/libserver/StreamUtil.cpp.orig
++++ provider/libserver/StreamUtil.cpp
+@@ -406,7 +406,7 @@ static ECRESULT SerializeDatabasePropVal(const StreamC
+ 			er = KCERR_NOT_FOUND;
+ 			goto exit;
+ 		}
+-		float flt = strtod_l(lpRow[FIELD_NR_DOUBLE], nullptr, loc);
++		float flt = strtod(lpRow[FIELD_NR_DOUBLE], nullptr);
+ 		er = lpSink->Write(&flt, sizeof(flt), 1);
+ 		break;
+ 	}
+@@ -425,7 +425,7 @@ static ECRESULT SerializeDatabasePropVal(const StreamC
+ 			er = KCERR_NOT_FOUND;
+ 			goto exit;
+ 		}
+-		double dbl = strtod_l(lpRow[FIELD_NR_DOUBLE], nullptr, loc);
++		double dbl = strtod(lpRow[FIELD_NR_DOUBLE], nullptr);
+ 		er = lpSink->Write(&dbl, sizeof(dbl), 1);
+ 		break;
+ 	}
+@@ -512,7 +512,7 @@ static ECRESULT SerializeDatabasePropVal(const StreamC
+ 		er = lpSink->Write(&ulCount, sizeof(ulCount), 1);
+ 		for (unsigned int x = 0; er == erSuccess && x < ulCount; ++x) {
+ 			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
+-			float flt = strtod_l(strData.c_str(), nullptr, loc);
++			float flt = strtod(strData.c_str(), nullptr);
+ 			er = lpSink->Write(&flt, sizeof(flt), 1);
+ 		}
+ 		break;
+@@ -527,7 +527,7 @@ static ECRESULT SerializeDatabasePropVal(const StreamC
+ 		er = lpSink->Write(&ulCount, sizeof(ulCount), 1);
+ 		for (unsigned int x = 0; er == erSuccess && x < ulCount; ++x) {
+ 			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
+-			double dbl = strtod_l(strData.c_str(), nullptr, loc);
++			double dbl = strtod(strData.c_str(), nullptr);
+ 			er = lpSink->Write(&dbl, sizeof(dbl), 1);
+ 		}
+ 		break;
