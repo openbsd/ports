@@ -1,0 +1,15 @@
+Fix build with libcxx22
+https://github.com/llvm/llvm-project/pull/160804
+
+Index: llvm/include/llvm/CodeGen/RDFGraph.h
+--- llvm/include/llvm/CodeGen/RDFGraph.h.orig
++++ llvm/include/llvm/CodeGen/RDFGraph.h
+@@ -447,7 +447,7 @@ struct NodeAllocator { (private)
+   AllocatorTy MemPool;
+ };
+ 
+-using RegisterSet = std::set<RegisterRef>;
++using RegisterSet = std::set<RegisterRef, RegisterRefLess>;
+ 
+ struct TargetOperandInfo {
+   TargetOperandInfo(const TargetInstrInfo &tii) : TII(tii) {}
