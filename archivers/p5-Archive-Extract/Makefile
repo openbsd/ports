@@ -1,13 +1,15 @@
-COMMENT=	generic archive extracting mechanism for Perl
+COMMENT =	generic archive extracting mechanism for Perl
 
-MODULES=	cpan
-PKG_ARCH=	*
+DISTNAME =	Archive-Extract-0.90
+CPAN_AUTHOR =	BINGOS
 
-DISTNAME =	Archive-Extract-0.88
+CATEGORIES =	archivers
 
-CATEGORIES=	archivers
+# Perl
+PERMIT_PACKAGE =	Yes
 
-# perl
-PERMIT_PACKAGE=	Yes
+MODULES =		cpan
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
