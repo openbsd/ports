@@ -1,10 +1,12 @@
 COMMENT =		framework for more readable interactive test scripts
 
-DISTNAME =		Test-Inter-1.12
+DISTNAME =		Test-Inter-1.13
 CATEGORIES =		devel
 
 # perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		SBECK
 
 MODULES =		cpan
 PKG_ARCH =		*
