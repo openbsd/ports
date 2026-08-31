@@ -1,14 +1,16 @@
-COMMENT=		parse and format W3CDTF datetime strings
+COMMENT =		parse and format W3CDTF datetime strings
 
-MODULES=		cpan
-PKG_ARCH=		*
-DISTNAME =		DateTime-Format-W3CDTF-0.08
-CATEGORIES=		devel converters
+MODULES =		cpan
+PKG_ARCH =		*
+DISTNAME =		DateTime-Format-W3CDTF-0.09
+CATEGORIES =		devel converters
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS=		devel/p5-DateTime
-BUILD_DEPENDS=		${RUN_DEPENDS}
+CPAN_AUTHOR =		GWILLIAMS
+
+RUN_DEPENDS =		devel/p5-DateTime
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
