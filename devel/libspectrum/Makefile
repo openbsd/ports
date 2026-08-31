@@ -1,6 +1,6 @@
 COMMENT =		ZX Spectrum emulator file format library
-DISTNAME =		libspectrum-1.6.3
-SHARED_LIBS =		spectrum 10.1	# 19.0
+DISTNAME =		libspectrum-1.6.4
+SHARED_LIBS =		spectrum 11.0	# 20.0
 CATEGORIES =		devel
 
 HOMEPAGE =		https://fuse-emulator.sourceforge.net/libspectrum.php
