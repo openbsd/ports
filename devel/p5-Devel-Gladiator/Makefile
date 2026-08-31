@@ -1,10 +1,10 @@
 COMMENT =	walk all of perl memory arena
 
 MODULES =	cpan
-DISTNAME =	Devel-Gladiator-0.07
+DISTNAME =	Devel-Gladiator-0.08
+FIX_EXTRACT_PERMISSIONS = Yes
 CATEGORIES =	devel
 MAINTAINER =	Marc Espie <espie@openbsd.org>
-REVISION =	0
 
 TEST_DEPENDS =	devel/p5-PadWalker
 # perl
