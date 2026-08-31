@@ -2,12 +2,13 @@ COMMENT =	XS for C++
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	ExtUtils-XSpp-0.18
+DISTNAME =	ExtUtils-XSpp-0.19
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		MBARBON
 
 CONFIGURE_STYLE =	modbuild
 TEST_DEPENDS =		devel/p5-Test-Base \
