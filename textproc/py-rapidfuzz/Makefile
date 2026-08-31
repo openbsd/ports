@@ -1,7 +1,7 @@
 COMMENT=	fast fuzzy string matching library for Python
 
-MODPY_DISTV=	3.14.5
-REVISION=	0
+MODPY_DISTV=	3.14.6
+
 DISTNAME=	rapidfuzz-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
