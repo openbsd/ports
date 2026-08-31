@@ -1,6 +1,6 @@
 COMMENT =		guess C++ compiler and flags
 
-DISTNAME =		ExtUtils-CppGuess-0.27
+DISTNAME =		ExtUtils-CppGuess-0.271
 
 CATEGORIES =		devel
 
@@ -9,6 +9,8 @@ CATEGORIES =		devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
+
+CPAN_AUTHOR =		ETJ
 
 RUN_DEPENDS =		sysutils/p5-Capture-Tiny
 
