@@ -1,8 +1,7 @@
 COMMENT =	module for reading .ini-style configuration files
 
-DISTNAME =	Config-IniFiles-3.000003
+DISTNAME =	Config-IniFiles-3.003000
 CATEGORIES =	devel
-REVISION =	0
 
 MODULES =	cpan
 PKG_ARCH =	*
