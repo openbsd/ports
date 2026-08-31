@@ -3,12 +3,11 @@ COMMENT =		web-based notebook for interactive computing
 MODPY_DISTV =		7.5.7
 DISTNAME =		notebook-${MODPY_DISTV}
 PKGNAME =		jupyter-notebook-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		www devel
 
 HOMEPAGE =		https://github.com/jupyter/notebook
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

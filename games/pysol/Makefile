@@ -4,12 +4,11 @@ MODPY_DISTV =		3.6.0
 V_CARDSETS =		3.1
 DISTNAME =		PySolFC-${MODPY_DISTV}
 PKGNAME =		pysol-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		games
 
 HOMEPAGE =		https://pysolfc.sourceforge.net/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # GPLv3+
 # Many cardsets are GPLv2; see individual COPYRIGHT files

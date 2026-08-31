@@ -3,12 +3,11 @@ COMMENT =		fully featured HTTP client library
 MODPY_DISTV =		0.28.1
 DISTNAME =		httpx-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://www.python-httpx.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

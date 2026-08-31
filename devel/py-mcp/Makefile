@@ -3,12 +3,11 @@ COMMENT=	model context protocol SDK
 MODPY_DISTV=	1.28.1
 DISTNAME=	mcp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://modelcontextprotocol.io/
-
-MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

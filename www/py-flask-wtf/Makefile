@@ -3,11 +3,9 @@ COMMENT=	simple integration of Flask and WTForms
 MODPY_DISTV=	1.2.2
 DISTNAME=	flask_wtf-${MODPY_DISTV}
 PKGNAME=	py-flask-wtf-${MODPY_DISTV}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

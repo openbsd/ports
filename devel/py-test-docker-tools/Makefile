@@ -3,11 +3,9 @@ COMMENT =		pytest plugin for docker
 MODPY_DISTV =		3.1.9
 DISTNAME =		pytest_docker_tools-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/pytest_/py-test-/:S/_/-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

@@ -3,11 +3,9 @@ COMMENT =		unix to RFC3339 conversion functions
 MODPY_DISTV =		0.7
 DISTNAME =		strict-rfc3339-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/-/_/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

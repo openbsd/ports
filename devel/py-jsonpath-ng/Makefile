@@ -4,12 +4,10 @@ MODPY_DISTV=	1.7.0
 DISTNAME=	jsonpath-ng-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
+REVISION=	2
 
 # https://github.com/h2non/jsonpath-ng/blob/master/History.md
 HOMEPAGE=	https://github.com/h2non/jsonpath-ng
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE=	yes

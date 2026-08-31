@@ -3,12 +3,11 @@ COMMENT =		client library for executing notebooks
 MODPY_DISTV =		0.10.4
 DISTNAME =		nbclient-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

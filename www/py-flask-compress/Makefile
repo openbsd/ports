@@ -4,11 +4,9 @@ COMMENT=	compress Flask app responses
 MODPY_DISTV =	1.23
 DISTNAME=	flask_compress-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

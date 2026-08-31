@@ -3,11 +3,9 @@ COMMENT =		black plugin for the Python Language Server
 MODPY_DISTV =	2.0.0
 DISTNAME =		python-lsp-black-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

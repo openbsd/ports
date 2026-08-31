@@ -3,11 +3,9 @@ COMMENT =		Qt stylesheet generation utility for PyQT/PySide
 MODPY_DISTV =		0.2.4
 DISTNAME =		qstylizer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

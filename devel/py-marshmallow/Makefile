@@ -3,11 +3,9 @@ COMMENT =	marshmallow serialization library
 MODPY_DISTV =	4.0.1
 DISTNAME =	marshmallow-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE = Yes

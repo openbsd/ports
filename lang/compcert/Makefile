@@ -13,12 +13,11 @@ GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		lang
 
 HOMEPAGE =		https://compcert.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # INRIA Non-Commercial License Agreement.
 PERMIT_PACKAGE =	Yes

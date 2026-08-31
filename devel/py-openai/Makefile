@@ -3,10 +3,9 @@ COMMENT=	OpenAI API client library for Python
 MODPY_DISTV=	2.43.0
 DISTNAME=	openai-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
-
-MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes

@@ -3,10 +3,9 @@ COMMENT =		Jupyter Qt console
 MODPY_DISTV =		5.7.2
 DISTNAME =		qtconsole-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		shells
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

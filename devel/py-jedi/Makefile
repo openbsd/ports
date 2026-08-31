@@ -3,13 +3,11 @@ COMMENT =		autocompletion tool for Python
 MODPY_DISTV =		0.19.2
 DISTNAME =		jedi-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://jedi.readthedocs.io
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

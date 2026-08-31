@@ -4,10 +4,9 @@ MODPY_DISTV =		1.6.1
 
 DISTNAME =		sse-starlette-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -3,13 +3,11 @@ COMMENT =		pygments theme using jupyterlab CSS variables
 MODPY_DISTV =		0.3.0
 DISTNAME =		jupyterlab_pygments-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://jupyter.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -3,12 +3,11 @@ COMMENT =		Jupyter core package
 MODPY_DISTV =		5.9.1
 DISTNAME =		jupyter_core-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

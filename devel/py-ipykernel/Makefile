@@ -4,12 +4,11 @@ COMMENT =		IPython kernel for Jupyter
 MODPY_DISTV =		6.31.0
 DISTNAME =		ipykernel-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://ipython.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

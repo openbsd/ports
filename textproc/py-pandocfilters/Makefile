@@ -4,11 +4,9 @@ MODPY_DISTV =	1.4.2
 DISTNAME =		pandocfilters-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://github.com/jgm/pandocfilters
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -3,12 +3,11 @@ COMMENT =		FontAwesome icons in PyQt and PySide applications
 MODPY_DISTV =		1.4.1
 DISTNAME =		qtawesome-${MODPY_DISTV}
 PKGNAME =		py-qtawesome-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		x11
 
 HOMEPAGE =		https://github.com/spyder-ide/qtawesome
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

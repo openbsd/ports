@@ -3,11 +3,9 @@ COMMENT=	distributed task queue
 MODPY_DISTV =		5.5.3
 DISTNAME =		celery-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -3,11 +3,9 @@ COMMENT=	compute distance between texts
 MODPY_DISTV=	4.6.3
 DISTNAME=	textdistance-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	textproc
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

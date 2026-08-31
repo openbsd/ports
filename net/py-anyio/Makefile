@@ -3,12 +3,11 @@ COMMENT =		async library on top of asyncio or trio
 MODPY_DISTV =		4.10.0
 DISTNAME =		anyio-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/agronholm/anyio
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

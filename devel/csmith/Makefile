@@ -6,12 +6,11 @@ GH_COMMIT=	0cdc710315cfee9035e22ef4363ca479270d1934
 
 DISTNAME=	csmith-2.4.0
 PKGNAME=	csmith-2.4.0
+REVISION=	0
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://embed.cs.utah.edu/csmith/
-
-MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

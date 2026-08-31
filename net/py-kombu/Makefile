@@ -3,11 +3,9 @@ COMMENT=	messaging library for Python
 MODPY_DISTV =	5.5.2
 DISTNAME=	kombu-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

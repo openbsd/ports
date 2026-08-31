@@ -3,13 +3,12 @@ COMMENT=	Python code formatter
 MODPY_DISTV=	26.1.0
 DISTNAME=	black-${MODPY_DISTV}
 PKGNAME=	py-black-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc devel
 
 # https://github.com/psf/black
 HOMEPAGE=	https://black.readthedocs.io/
-
-MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

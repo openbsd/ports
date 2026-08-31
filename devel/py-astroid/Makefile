@@ -4,11 +4,9 @@ COMMENT=	common base representation of Python source code
 MODPY_DISTV=	3.3.11
 DISTNAME=	astroid-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
-
-MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes

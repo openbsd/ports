@@ -3,11 +3,9 @@ COMMENT =	sqlalchemy utility functions
 MODPY_DISTV =	0.42.0
 DISTNAME =	sqlalchemy_utils-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/_/-/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

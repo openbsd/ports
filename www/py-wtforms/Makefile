@@ -3,14 +3,12 @@ COMMENT=	flexible forms validation and rendering library
 MODPY_DISTV=	3.2.1
 DISTNAME=	wtforms-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	www
 
 # https://github.com/pallets-eco/wtforms
 HOMEPAGE=	https://wtforms.readthedocs.io/
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

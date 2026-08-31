@@ -2,15 +2,13 @@ COMMENT =		easy whitelist-based HTML-sanitizing tool
 
 # bleach is deprecated upstream
 MODPY_DISTV =		6.3.0
-REVISION =		1
+REVISION =		2
 DISTNAME =		bleach-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://github.com/mozilla/bleach
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

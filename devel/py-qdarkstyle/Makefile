@@ -3,11 +3,9 @@ COMMENT =		dark style sheet for QtWidgets apps
 MODPY_DISTV =		3.2.3
 DISTNAME =		QDarkStyle-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 # CC BY 4.0

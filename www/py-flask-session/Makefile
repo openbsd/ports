@@ -4,11 +4,9 @@ COMMENT =		server-side session support for Flask
 MODPY_DISTV =		0.8.0
 DISTNAME =		flask_session-${MODPY_DISTV}
 PKGNAME =		py-flask-session-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

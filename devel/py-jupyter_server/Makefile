@@ -3,12 +3,11 @@ COMMENT =		backend for Jupyter web applications
 MODPY_DISTV =		2.17.0
 DISTNAME =		jupyter_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

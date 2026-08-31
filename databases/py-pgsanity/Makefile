@@ -3,11 +3,9 @@ COMMENT=		PostgreSQL SQL syntax checker
 MODPY_DISTV =		0.2.9
 DISTNAME =		pgsanity-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		databases
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

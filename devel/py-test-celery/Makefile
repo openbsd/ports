@@ -3,11 +3,9 @@ COMMENT =		pytest plugin for Celery
 MODPY_DISTV =		1.2.1
 DISTNAME =		pytest_celery-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/pytest_/py-test-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

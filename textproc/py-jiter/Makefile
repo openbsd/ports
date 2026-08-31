@@ -3,10 +3,9 @@ COMMENT =		fast iterable JSON parser
 MODPY_DISTV =		0.14.0
 DISTNAME =		jiter-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

@@ -3,10 +3,9 @@ COMMENT =		components for JupyterLab and similar applications
 MODPY_DISTV =		2.28.0
 DISTNAME =		jupyterlab_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 HOMEPAGE =		https://jupyterlab-server.readthedocs.io
 

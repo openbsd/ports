@@ -3,12 +3,11 @@ COMMENT =		consume Server-Sent Events (SSE) with HTTPX
 MODPY_DISTV =		0.4.3
 DISTNAME =		httpx_sse-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://github.com/florimondmanca/httpx-sse
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -3,13 +3,12 @@ COMMENT=	microframework based on Werkzeug and Jinja 2
 MODPY_DISTV=	3.1.3
 DISTNAME=	flask-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www devel
 
 # https://github.com/pallets/flask
 HOMEPAGE=	https://flask.palletsprojects.com/
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

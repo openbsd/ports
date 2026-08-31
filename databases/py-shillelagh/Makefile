@@ -3,10 +3,9 @@ COMMENT=		query APIs via SQL
 MODPY_DISTV =		1.4.4
 DISTNAME =		shillelagh-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		databases
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

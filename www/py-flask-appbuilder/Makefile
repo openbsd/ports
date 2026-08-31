@@ -3,11 +3,9 @@ COMMENT=	rapid application development framework for Flask
 MODPY_DISTV =	5.1.0
 DISTNAME=	flask_appbuilder-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

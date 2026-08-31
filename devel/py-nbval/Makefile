@@ -3,12 +3,11 @@ COMMENT =		py.test plugin to validate Jupyter notebooks
 MODPY_DISTV =		0.11.0
 DISTNAME =		nbval-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/computationalmodelling/nbval
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

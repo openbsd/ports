@@ -3,13 +3,11 @@ COMMENT=	capture c-level output in context managers
 MODPY_DISTV =	3.1.1
 DISTNAME=	wurlitzer-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/minrk/wurlitzer
-
-MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

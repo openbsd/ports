@@ -3,12 +3,11 @@ COMMENT=	uniform API for multiple LLM providers
 MODPY_DISTV=	1.90.2
 DISTNAME=	litellm-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://litellm.ai/
-
-MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

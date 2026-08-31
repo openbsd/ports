@@ -3,12 +3,11 @@ COMMENT =		Python library for managing github repos
 MODPY_DISTV =		2.9.1
 DISTNAME =		pygithub-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://pygithub.readthedocs.io/en/stable/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes

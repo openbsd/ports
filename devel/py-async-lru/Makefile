@@ -3,11 +3,9 @@ COMMENT=	simple LRU cache for asyncio
 MODPY_DISTV=	2.2.0
 DISTNAME=	async_lru-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
-
-MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

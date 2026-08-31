@@ -3,11 +3,9 @@ COMMENT =		json rpc server library
 MODPY_DISTV =	1.1.2
 DISTNAME =		python-lsp-jsonrpc-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

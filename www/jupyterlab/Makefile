@@ -2,12 +2,11 @@ COMMENT =		Jupyterlab computational environment
 
 MODPY_DISTV =		4.5.8
 DISTNAME =		jupyterlab-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		www devel
 
 HOMEPAGE =		https://jupyter.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -3,13 +3,11 @@ COMMENT =		high-performance web framework for building APIs with Python
 MODPY_DISTV =		0.139.0
 DISTNAME =		fastapi-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://fastapi.tiangolo.com/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

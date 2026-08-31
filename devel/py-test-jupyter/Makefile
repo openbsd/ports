@@ -3,12 +3,11 @@ COMMENT =		pytest plugin for Jupyter libraries and extensions
 MODPY_DISTV =		0.10.1
 DISTNAME =		pytest_jupyter-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/pytest_/py-test-/}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

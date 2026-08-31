@@ -2,13 +2,12 @@ COMMENT=	modular python code checker wrapping pep8 and pyflakes
 
 MODPY_DISTV=	7.3.0
 DISTNAME=	flake8-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 
 # https://github.com/pycqa/flake8
 HOMEPAGE=	https://flake8.pycqa.org
-
-MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

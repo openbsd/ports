@@ -2,10 +2,9 @@ COMMENT=		daemontools alike replacement for init
 
 DISTNAME=		runit-2.3.1
 CATEGORIES=		sysutils
+REVISION=		0
 
 HOMEPAGE=		http://www.smarden.org/runit/
-
-MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c

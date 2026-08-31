@@ -2,13 +2,11 @@ COMMENT =	convert .py files to jupyter .ipynb notebooks and vice versa
 
 MODPY_DISTV =	0.4.6
 DISTNAME =	ipynb-py-convert-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 
 HOMEPAGE =	https://github.com/kiwi0fruit/ipynb-py-convert
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

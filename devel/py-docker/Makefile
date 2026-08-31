@@ -3,11 +3,9 @@ COMMENT =		library for the docker engine API
 MODPY_DISTV =		7.1.0
 DISTNAME =		docker-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

@@ -4,13 +4,11 @@ COMMENT =	Python module for creating Excel XLSX files
 MODPY_DISTV =	3.0.9
 DISTNAME =	XlsxWriter-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://xlsxwriter.readthedocs.io/
-
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

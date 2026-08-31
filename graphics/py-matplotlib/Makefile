@@ -6,12 +6,11 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 MODPY_DISTV =		3.10.8
 DISTNAME =		matplotlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		graphics devel math
 
 HOMEPAGE =		https://matplotlib.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE =	Yes

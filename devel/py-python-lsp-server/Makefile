@@ -3,11 +3,9 @@ COMMENT =		Python Language Server
 MODPY_DISTV =		1.14.0
 DISTNAME =		python_lsp_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

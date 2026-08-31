@@ -1,15 +1,13 @@
 COMMENT =	set of python modules for machine learning and data mining
 
 MODPY_DISTV =		1.7.2
-REVISION =		4
+REVISION =		5
 DISTNAME =		scikit_learn-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
 
 CATEGORIES =		math
 
 HOMEPAGE =		https://scikit-learn.org
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD-3
 PERMIT_PACKAGE =	Yes

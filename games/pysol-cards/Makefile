@@ -3,11 +3,9 @@ COMMENT =		deal pysol cards
 MODPY_DISTV =		0.24.0
 DISTNAME =		pysol_cards-${MODPY_DISTV}
 PKGNAME =		pysol-cards-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

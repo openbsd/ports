@@ -4,12 +4,11 @@ MODPY_DISTV =		1.3.1
 
 DISTNAME =		starlette-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://www.starlette.io/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

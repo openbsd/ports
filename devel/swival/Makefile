@@ -2,12 +2,11 @@ COMMENT =		coding agent for AI models
 
 MODPY_DISTV =		1.0.37
 DISTNAME =		swival-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://pypi.org/project/swival/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

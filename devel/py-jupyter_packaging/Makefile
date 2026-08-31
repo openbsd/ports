@@ -3,13 +3,11 @@ COMMENT =		Jupyter packaging utilities
 MODPY_DISTV =	0.12.3
 DISTNAME =		jupyter_packaging-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org/
-
-MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
