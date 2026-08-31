@@ -1,0 +1,24 @@
+Python compat for Python 3.8+
+
+Index: fabricate.py
+--- fabricate.py.orig
++++ fabricate.py
+@@ -378,10 +378,6 @@ class AtimesRunner(Runner):
+         """ Run command and return its dependencies and outputs, using before
+             and after access times to determine dependencies. """
+ 
+-        # For Python pre-2.5, ensure os.stat() returns float atimes
+-        old_stat_float = os.stat_float_times()
+-        os.stat_float_times(True)
+-
+         originals = self.file_times()
+         if self.atimes == 2:
+             befores = originals
+@@ -425,7 +421,6 @@ class AtimesRunner(Runner):
+                 if original != afters.get(name, None):
+                     self._utime(name, original[0], original[1])
+ 
+-        os.stat_float_times(old_stat_float)  # restore stat_float_times value
+         return deps, outputs
+ 
+ class StraceProcess(object):

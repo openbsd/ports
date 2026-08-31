@@ -1,0 +1,12 @@
+Index: make.py
+--- make.py.orig
++++ make.py
+@@ -55,7 +55,7 @@ sources = find('engine', '*.cpp')
+ 
+ def tolist(x):
+     if isinstance(x, str):
+-        return x.split(' ')
++        return x.split()
+     else:
+         return list(x)
+ 
