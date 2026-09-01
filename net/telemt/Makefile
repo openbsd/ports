@@ -1,6 +1,6 @@
 COMMENT =		MTProxy for Telegram
 CATEGORIES =		net
-DIST_TUPLE =		github	telemt	telemt	3.5.2	.
+DIST_TUPLE =		github	telemt	telemt	3.5.5	.
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

@@ -223,7 +223,7 @@ SHA256 (cargo/quinn-udp-0.5.14.tar.gz) = rd7GoNytio2Wp3H4FfDq9V+dGAV1ZBCzn1+oEzJ
 SHA256 (cargo/quote-1.0.46.tar.gz) = 37xFfQx6B1mmFFUbEaZAnllR9sdTe+Hxt2grmukjA2g=
 SHA256 (cargo/r-efi-5.3.0.tar.gz) = ac2zTBWM6yiN8R4YtL053plPZlfYOEe9/9vX80Z1Sw8=
 SHA256 (cargo/r-efi-6.0.0.tar.gz) = +NzJx9UqgRaX0hUccB4NCJVvkrDiQTbPTPJ7V6ag2b8=
-SHA256 (cargo/rand-0.10.1.tar.gz) = 0ujovMeWGvH9rEASeMaoMWFJQfYWTuO/TOYbftsWIgc=
+SHA256 (cargo/rand-0.10.2.tar.gz) = x/X6OgWM01Vn75v6XnVzK+4PnkxV+pBHe+8t/NvEvoA=
 SHA256 (cargo/rand-0.9.4.tar.gz) = RMWvBrsbfTIW2RkyrtUmUWS/OE3InNa6Bc9Zo19fduo=
 SHA256 (cargo/rand_chacha-0.9.0.tar.gz) = 0wIrXx32Dybh/93Wxm6KoV3jgq5js6DBv8Dk0+PzJcs=
 SHA256 (cargo/rand_core-0.10.1.tar.gz) = Y7gXYQPhmiZDl4Vlyhi1BUn2EBiBxENZBCDk3JmKPGk=
@@ -309,6 +309,7 @@ SHA256 (cargo/tokio-rustls-0.26.4.tar.gz) = FymqlF8p2RulQSWMjfiQJ9V5LYWohB+2Xovw
 SHA256 (cargo/tokio-stream-0.1.18.tar.gz) = MtpJgJqrXDvGeK8DkC1Mzd6iqH0CjYY5KksVYMaQbHA=
 SHA256 (cargo/tokio-test-0.4.5.tar.gz) = P20keQoQp69zdpOj6PHQP6735soMyZquUGb1M3Zt5UU=
 SHA256 (cargo/tokio-tfo-0.4.3.tar.gz) = 5q0sOzu5WK2ZI1Sn68Ro/A983Jr0mXv00/08soutNtw=
+SHA256 (cargo/tokio-tungstenite-0.30.0.tar.gz) = F6Bzv+1WP6I2aXoGgDFAipPNlSLgir+ZM+rT5zQRvXE=
 SHA256 (cargo/tokio-util-0.7.18.tar.gz) = munOyAWwHo/D/S/iifiRSam2bdFnhqvYsZz6e0jLAJg=
 SHA256 (cargo/toml-1.1.2+spec-1.1.0.tar.gz) = gfPRXoTLzYljduZzAxTVn7WofzHksDhFQYRDXNV97+4=
 SHA256 (cargo/toml_datetime-1.1.1+spec-1.1.0.tar.gz) = MWX2X2LijgEVoAsuvdN+tvO2QYVfnWNtPNQQN2cVmtc=
@@ -326,6 +327,7 @@ SHA256 (cargo/tracing-log-0.2.0.tar.gz) = 7oVfH0AL0OXALRUK5d44QAOaP1SwJRVkBONMI8
 SHA256 (cargo/tracing-subscriber-0.3.23.tar.gz) = y39XjllF+yQlOJZcLQsEQY047CXHnRYM0nm/BzHI0xk=
 SHA256 (cargo/trait-variant-0.1.2.tar.gz) = cJd3BzBBmEAOtINaePap+Si/QbukIN64/bF1zZZdd6c=
 SHA256 (cargo/try-lock-0.2.5.tar.gz) = 5CGrrdQaQiUnVQTqTWVmkjQYt/BVBvvJwP6GunOWEUs=
+SHA256 (cargo/tungstenite-0.30.0.tar.gz) = 5IrHcXSxnBEKUKshKLJCFayctA4OEuCT+2AtF1xWnSI=
 SHA256 (cargo/typenum-1.20.1.tar.gz) = tvXocL5sOzcbd/4O4Lr7hZ+klktEBMJ94dOABDxN2iA=
 SHA256 (cargo/unarray-0.1.4.tar.gz) = 6uqFszTbWD/jJ00StM0YgAMr6rQJwNd0vgRNRICrmpQ=
 SHA256 (cargo/unicode-ident-1.0.24.tar.gz) = 5uQxPNX809rVyvoXlwLiskT3YJkfRTl9FNTr84JH2nU=
@@ -400,7 +402,7 @@ SHA256 (cargo/zerotrie-0.2.4.tar.gz) = D5FS0x2weS+oP3D7L4MUjv+1wfW4x2hsNFnjYdm8I
 SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXsjk=
 SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhNvVKpLEBVU=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (telemt-telemt-3.5.2.tar.gz) = n2vyc3DpHAhQS30ggCptRcguRpIqBAtm28IMdmDmDwA=
+SHA256 (telemt-telemt-3.5.5.tar.gz) = Qq5s3YAIarOHUOcowNDa9oxTnEkhc0tsuTl1HiMO4aw=
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (cargo/aes-gcm-0.10.3.tar.gz) = 148991
@@ -626,7 +628,7 @@ SIZE (cargo/quinn-udp-0.5.14.tar.gz) = 33436
 SIZE (cargo/quote-1.0.46.tar.gz) = 31628
 SIZE (cargo/r-efi-5.3.0.tar.gz) = 64532
 SIZE (cargo/r-efi-6.0.0.tar.gz) = 65303
-SIZE (cargo/rand-0.10.1.tar.gz) = 105801
+SIZE (cargo/rand-0.10.2.tar.gz) = 104493
 SIZE (cargo/rand-0.9.4.tar.gz) = 99786
 SIZE (cargo/rand_chacha-0.9.0.tar.gz) = 18258
 SIZE (cargo/rand_core-0.10.1.tar.gz) = 22833
@@ -712,6 +714,7 @@ SIZE (cargo/tokio-rustls-0.26.4.tar.gz) = 35430
 SIZE (cargo/tokio-stream-0.1.18.tar.gz) = 44366
 SIZE (cargo/tokio-test-0.4.5.tar.gz) = 16197
 SIZE (cargo/tokio-tfo-0.4.3.tar.gz) = 17230
+SIZE (cargo/tokio-tungstenite-0.30.0.tar.gz) = 29413
 SIZE (cargo/tokio-util-0.7.18.tar.gz) = 140550
 SIZE (cargo/toml-1.1.2+spec-1.1.0.tar.gz) = 56327
 SIZE (cargo/toml_datetime-1.1.1+spec-1.1.0.tar.gz) = 17982
@@ -729,6 +732,7 @@ SIZE (cargo/tracing-log-0.2.0.tar.gz) = 17561
 SIZE (cargo/tracing-subscriber-0.3.23.tar.gz) = 213773
 SIZE (cargo/trait-variant-0.1.2.tar.gz) = 6008
 SIZE (cargo/try-lock-0.2.5.tar.gz) = 4314
+SIZE (cargo/tungstenite-0.30.0.tar.gz) = 71531
 SIZE (cargo/typenum-1.20.1.tar.gz) = 105479
 SIZE (cargo/unarray-0.1.4.tar.gz) = 12895
 SIZE (cargo/unicode-ident-1.0.24.tar.gz) = 49298
@@ -803,4 +807,4 @@ SIZE (cargo/zerotrie-0.2.4.tar.gz) = 83690
 SIZE (cargo/zerovec-0.11.6.tar.gz) = 128583
 SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (telemt-telemt-3.5.2.tar.gz) = 2630355
+SIZE (telemt-telemt-3.5.5.tar.gz) = 2800844
