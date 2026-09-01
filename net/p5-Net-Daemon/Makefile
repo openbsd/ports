@@ -1,11 +1,15 @@
-COMMENT=	extension for portable daemons
+COMMENT =	extension for portable daemons
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Net-Daemon-0.49
-CATEGORIES=	net
+DISTNAME =	Net-Daemon-0.52
+CPAN_AUTHOR =	TODDR
+
+CATEGORIES =	net
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
