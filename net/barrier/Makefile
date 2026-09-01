@@ -1,3 +1,4 @@
+BROKEN =		needs old gtest, cannot be disabled, last commit 4y ago
 COMMENT =		mouse and keyboard sharing utility
 
 GH_ACCOUNT =		debauchee
