@@ -59,7 +59,7 @@ lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 lib/${MOZILLA_PROJECT}/distribution/policies.json
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
-@bin lib/${MOZILLA_PROJECT}/glxtest
+@bin lib/${MOZILLA_PROJECT}/gfxtest
 lib/${MOZILLA_PROJECT}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/
 @lib lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
@@ -77,8 +77,6 @@ lib/${MOZILLA_PROJECT}/omni.ja
 @bin lib/${MOZILLA_PROJECT}/pingsender
 lib/${MOZILLA_PROJECT}/platform.ini
 lib/${MOZILLA_PROJECT}/removed-files
-@bin lib/${MOZILLA_PROJECT}/vaapitest
-@bin lib/${MOZILLA_PROJECT}/vulkantest
 @man man/man1/${MOZILLA_PROJECT}.1
 share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${PKGSTEM}
