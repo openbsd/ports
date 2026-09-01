@@ -10,7 +10,7 @@ Index: chrome/browser/ui/webui/cr_components/searchbox/searchbox_handler.cc
  constexpr char kLinuxShareIconResourceName[] =
      "//resources/cr_components/searchbox/icons/share_cr23.svg";
  #else
-@@ -740,7 +740,7 @@ std::string SearchboxHandler::AutocompleteIconToResour
+@@ -748,7 +748,7 @@ std::string SearchboxHandler::AutocompleteIconToResour
                          : omnibox::kShareWinChromeRefreshOldIcon.name)) {
      return kWinShareIconResourceName;
    }

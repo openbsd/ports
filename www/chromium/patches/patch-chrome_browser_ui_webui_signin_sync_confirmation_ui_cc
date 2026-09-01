@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/webui/signin/sync_confirmation_ui.cc
 --- chrome/browser/ui/webui/signin/sync_confirmation_ui.cc.orig
 +++ chrome/browser/ui/webui/signin/sync_confirmation_ui.cc
-@@ -166,7 +166,7 @@ SyncConfirmationUI::SyncConfirmationUI(content::WebUI*
+@@ -179,7 +179,7 @@ SyncConfirmationUI::SyncConfirmationUI(content::WebUI*
                      IDS_SYNC_LOADING_CONFIRMATION_TITLE);
  
    bool is_first_run_desktop_refresh_enabled = false;

@@ -109,9 +109,9 @@ Index: extensions/common/api/_permission_features.json
 -    "platforms": ["chromeos", "linux", "mac", "win"]
 +    "platforms": ["chromeos", "linux", "mac", "win", "openbsd", "freebsd"]
    },
-   // Note: runtime is not actually a permission, but some systems check these
-   // values to verify restrictions.
-@@ -581,7 +581,7 @@
+   "proxy": [{
+     "channel": "stable",
+@@ -592,7 +592,7 @@
      "channel": "stable",
      "extension_types": ["platform_app"],
      // "desktop_android" is not supported.
@@ -120,7 +120,7 @@ Index: extensions/common/api/_permission_features.json
    },
    "storage": [
      {
-@@ -651,7 +651,7 @@
+@@ -662,7 +662,7 @@
      "channel": "stable",
      "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
      // "desktop_android" is not supported.

@@ -1,7 +1,7 @@
 Index: build/modules/unified/modulemap_config.py
 --- build/modules/unified/modulemap_config.py.orig
 +++ build/modules/unified/modulemap_config.py
-@@ -57,7 +57,7 @@ class AllowedHeader(Header):
+@@ -63,7 +63,7 @@ class AllowedHeader(Header):
  
  
  def headers(os):

@@ -7,7 +7,7 @@ Index: chrome/browser/process_singleton_posix.cc
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/ui/process_singleton_dialog_linux.h"
+ #include "chrome/browser/ui/dialogs/process_singleton_dialog_linux.h"
  #endif
  
 @@ -367,7 +367,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo

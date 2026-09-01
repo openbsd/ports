@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/profiles/profile_picker_view.cc
 --- chrome/browser/ui/views/profiles/profile_picker_view.cc.orig
 +++ chrome/browser/ui/views/profiles/profile_picker_view.cc
-@@ -87,7 +87,7 @@
+@@ -89,7 +89,7 @@
  #include "chrome/browser/global_keyboard_shortcuts_mac.h"
  #endif
  

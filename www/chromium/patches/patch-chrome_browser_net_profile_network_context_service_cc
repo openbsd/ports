@@ -19,7 +19,7 @@ Index: chrome/browser/net/profile_network_context_service.cc
  std::unique_ptr<net::ClientCertStore> GetWrappedCertStore(
      Profile* profile,
      std::unique_ptr<net::ClientCertStore> platform_store) {
-@@ -1290,7 +1290,7 @@ ProfileNetworkContextService::CreateClientCertStore() 
+@@ -1292,7 +1292,7 @@ ProfileNetworkContextService::CreateClientCertStore() 
        std::make_unique<net::ClientCertStoreNSS>(
            base::BindRepeating(&CreateCryptoModuleBlockingPasswordDelegate,
                                kCryptoModulePasswordClientAuth));

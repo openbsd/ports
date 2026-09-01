@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/modules/webgpu/gpu.cc
 --- third_party/blink/renderer/modules/webgpu/gpu.cc.orig
 +++ third_party/blink/renderer/modules/webgpu/gpu.cc
-@@ -427,7 +427,7 @@ V8GPUTextureFormat GPU::getPreferredCanvasFormat() {
+@@ -417,7 +417,7 @@ V8GPUTextureFormat GPU::getPreferredCanvasFormat() {
  }
  
  wgpu::TextureFormat GPU::GetPreferredCanvasFormat() {

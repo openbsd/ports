@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
 --- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -449,7 +449,7 @@
+@@ -459,7 +459,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIPromptAPIParams",
@@ -10,7 +10,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        origin_trial_allows_third_party: true,
      },
      {
-@@ -481,7 +481,7 @@
+@@ -491,7 +491,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIProofreaderAPI",
@@ -19,7 +19,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -496,7 +496,7 @@
+@@ -506,7 +506,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIRewriterAPI",
@@ -28,7 +28,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -532,7 +532,7 @@
+@@ -542,7 +542,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIWriterAPI",
@@ -37,7 +37,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -688,7 +688,7 @@
+@@ -698,7 +698,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -46,7 +46,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1489,7 +1489,7 @@
+@@ -1507,7 +1507,7 @@
        name: "CSPHashesV1",
        base_feature: "none",
        origin_trial_feature_name: "CSPExtendedScriptSrcHashes",
@@ -55,7 +55,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: "experimental",
        public: true,
      },
-@@ -2437,7 +2437,7 @@
+@@ -2477,7 +2477,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -64,7 +64,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        base_feature: "none",
      },
      {
-@@ -2625,7 +2625,7 @@
+@@ -2675,7 +2675,7 @@
        public: true,
        origin_trial_feature_name: "EmailVerificationProtocol",
        origin_trial_allows_third_party: true,
@@ -73,7 +73,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: {
          "Win": "experimental",
          "Mac": "experimental",
-@@ -2802,7 +2802,7 @@
+@@ -2867,7 +2867,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -82,7 +82,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3662,7 +3662,7 @@
+@@ -3764,7 +3764,7 @@
        name: "InstallElement",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "InstallElement",
@@ -91,7 +91,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6500,7 +6500,7 @@
+@@ -6661,7 +6661,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -100,7 +100,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -6725,7 +6725,7 @@
+@@ -6889,7 +6889,7 @@
        name: "WebAppInstallation",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "WebAppInstallation",
@@ -109,7 +109,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6739,7 +6739,7 @@
+@@ -6903,7 +6903,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
