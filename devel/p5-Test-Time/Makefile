@@ -1,16 +1,21 @@
-COMMENT =		overrides time()/sleep() core functions for testing
+COMMENT =	overrides time() and sleep() core functions for testing
 
-MODULES =		cpan
-PKG_ARCH =		*
-DISTNAME =		Test-Time-0.08
-CATEGORIES =		devel
-REVISION =		1
+DISTNAME =	Test-Time-0.092
+CPAN_AUTHOR =	ANATOFUZ
+
+CATEGORIES =	devel
 
 MAINTAINER =		Julien Dhaille <julien.dhaille@gmail.com>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-TEST_DEPENDS =		devel/p5-File-Slurp
+MODULES =		cpan
+
+PKG_ARCH =		*
+
+post-extract:
+	# remove dead code that is not needed
+	rm -r -- ${WRKSRC}/inc
 
 .include <bsd.port.mk>
