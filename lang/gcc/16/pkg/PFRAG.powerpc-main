@@ -18,6 +18,7 @@ lib/gcc/${CONFIG}/${V}/include/smmintrin.h
 lib/gcc/${CONFIG}/${V}/include/spu2vmx.h
 lib/gcc/${CONFIG}/${V}/include/tmmintrin.h
 lib/gcc/${CONFIG}/${V}/include/vec_types.h
+lib/gcc/${CONFIG}/${V}/include/x86gprintrin.h
 lib/gcc/${CONFIG}/${V}/include/x86intrin.h
 lib/gcc/${CONFIG}/${V}/include/xmmintrin.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/freebsd-spec.h
