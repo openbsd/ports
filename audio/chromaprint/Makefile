@@ -24,8 +24,10 @@ BUILD_DEPENDS =		audio/taglib
 
 LIB_DEPENDS =		graphics/ffmpeg
 
+# XXX bundled gtest ends up using now too new system new gtest headers,
+# try reenabling tests with >1.6.1
 CONFIGURE_ARGS =	-DBUILD_TOOLS=ON \
-			-DBUILD_TESTS=ON \
+			-DBUILD_TESTS=OFF \
 			-DFFT_LIB=avtx
 
 CXXFLAGS +=		-I${LOCALBASE}/include
