@@ -19,6 +19,7 @@ MOZILLA_VERSION =	${MOZILLA_DIST_VERSION:C/-([0-9]+)$/pl\1/}
 MOZILLA_PROJECT =	librewolf
 MOZILLA_CODENAME =	browser
 MAINTAINER =		Leah Rowe <leah@libreboot.org>
+REVISION = 0
 
 # LibreWolf doesn't provide PGO data, but we use the data
 # provided by FireFox releases, re-using the OpenBSD distfile
@@ -28,7 +29,7 @@ FFDIST =			firefox-${FFVERSION}.source
 DISTFILES.profdata = ${FFDIST}-profdata.tar.xz{profdata.tar.xz}
 
 HOMEPAGE =	https://librewolf.net/
-SO_VERSION =	3.0
+SO_VERSION =	4.0
 # Bump minor ver if shlibs deleted in components dir to avoid pkg_add -r issues
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozinference mozwayland xul \
 		clearkey gkcodecs lgpllibs mozsqlite3
