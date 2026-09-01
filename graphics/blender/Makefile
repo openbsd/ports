@@ -9,7 +9,7 @@ COMMENT =	3D creation software
 VERSION =	4.5.3
 V =		${VERSION:R}
 DISTNAME =	blender-${VERSION}
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	graphics
 
@@ -18,15 +18,15 @@ HOMEPAGE =	https://www.blender.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Alembic Iex-3_4 IlmThread-3_4 Imath-3_2
-WANTLIB += OpenColorIO OpenEXR-3_4 OpenEXRCore-3_4 OpenImageIO
-WANTLIB += OpenImageIO_Util X11 Xfixes Xi Xrender atomic avcodec
-WANTLIB += avdevice avfilter avformat avutil c epoxy execinfo
-WANTLIB += fftw3 fftw3f fftw3f_threads freetype gmp gmpxx hpdf
-WANTLIB += jpeg m manifold openal openjp2 openvdb osdCPU osdGPU
-WANTLIB += pipewire-0.3 png potrace pugixml ${MODPY_WANTLIB}
-WANTLIB += shaderc_shared sharpyuv sndfile swresample swscale tbb tiff
-WANTLIB += util vulkan webp webpdemux webpmux z zstd
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} Alembic Iex-3_4
+WANTLIB += IlmThread-3_4 Imath-3_2 OpenColorIO OpenEXR-3_4 OpenEXRCore-3_4
+WANTLIB += OpenImageIO OpenImageIO_Util X11 Xfixes Xi Xrender
+WANTLIB += atomic avcodec avdevice avfilter avformat avutil c
+WANTLIB += epoxy execinfo fftw3 fftw3f fftw3f_threads freetype
+WANTLIB += gmp gmpxx hpdf jpeg m manifold openal openjp2 openvdb
+WANTLIB += osdCPU osdGPU pipewire-0.3 png potrace pugixml shaderc_shared
+WANTLIB += sharpyuv sndfile spnav swresample swscale tbb util
+WANTLIB += vulkan webp webpdemux webpmux z zstd
 
 SITES =		https://download.blender.org/source/ \
 
@@ -37,18 +37,32 @@ MODULES =	devel/cmake \
 
 COMPILER =	base-clang ports-gcc
 
-CONFIGURE_ARGS =	-DWITH_PYTHON_INSTALL=OFF \
-			-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
+CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
+			-DWITH_BUILDINFO=OFF \
+			-DWITH_CYCLES_DEVICE_CUDA=OFF \
+			-DWITH_CYCLES_DEVICE_HIP=OFF \
+			-DWITH_CYCLES_DEVICE_OPTIX=OFF \
 			-DWITH_CYCLES_EMBREE=OFF \
+			-DWITH_CYCLES_HIP_BINARIES=OFF \
+			-DWITH_CYCLES_OSL=OFF \
+			-DWITH_CYCLES_PATH_GUIDING=OFF \
+			-DWITH_GHOST_WAYLAND=OFF \
+			-DWITH_HYDRA=OFF \
 			-DWITH_INSTALL_PORTABLE=OFF \
 			-DWITH_INTERNATIONAL=OFF \
-			-DWITH_SYSTEM_FREETYPE=ON \
 			-DWITH_JACK=OFF \
-			-DWITH_OPENMP=OFF \
+			-DWITH_LIBS_PRECOMPILED=OFF \
+			-DWITH_MATERIALX=OFF \
+			-DWITH_MEM_JEMALLOC=OFF \
+			-DWITH_NANOVDB=OFF \
+			-DWITH_OPENCOLLADA=OFF \
+			-DWITH_OPENIMAGEDENOISE=OFF \
 			-DWITH_PULSEAUDIO=OFF \
-			-DWITH_SYSTEM_GLEW=ON \
-			-DWITH_GHOST_WAYLAND=OFF
+			-DWITH_PYTHON_INSTALL=OFF \
+			-DWITH_SYSTEM_FREETYPE=ON \
+			-DWITH_USD=OFF \
+			-DWITH_XR_OPENXR=OFF
 
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+=	-DWITH_CPU_SIMD=OFF
@@ -68,6 +82,7 @@ BUILD_DEPENDS += archivers/woff2>=1.0.2p1
 LIB_DEPENDS =	archivers/zstd \
 		audio/libsndfile \
 		audio/openal \
+		cad/libspnav \
 		cad/manifold \
 		devel/gmp,-cxx \
 		devel/tbb \
