@@ -1,6 +1,6 @@
 COMMENT=	Perl implementation of DMARC
 
-DISTNAME=	Mail-DMARC-1.20260621
+DISTNAME=	Mail-DMARC-2.20260827
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 CATEGORIES=	mail
@@ -28,17 +28,9 @@ RUN_DEPENDS=	converters/p5-JSON \
 		mail/p5-Mail-DKIM \
 		net/p5-Net-DNS \
 		net/p5-Net-HTTP \
-		net/p5-Net-IP \
-		net/p5-Net-SMTPS \
-		net/p5-Socket6>=0.23 \
-		security/p5-IO-Socket-SSL \
-		security/p5-Net-SSLeay \
-		textproc/p5-Regexp-Common>=2013031301 \
 		textproc/p5-XML-LibXML \
-		www/p5-CGI \
 		www/p5-HTTP-Message \
-		www/p5-URI \
-		www/p5-libwww
+		www/p5-URI
 
 TEST_DEPENDS=	${RUN_DEPENDS} \
 		databases/p5-DBD-SQLite \
