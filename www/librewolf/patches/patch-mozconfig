@@ -10,7 +10,7 @@ restored on re-builds, matching what was produced by this patch.
 Index: mozconfig
 --- mozconfig.orig
 +++ mozconfig
-@@ -1,20 +1,29 @@
+@@ -1,9 +1,16 @@
 +# %%VARIABLE%% is replaced with a string set by the
 +# OpenBSD port Makefile at build time. In addition to
 +# these changes, the LibreWolf OpenBSD port Makefile
@@ -29,12 +29,8 @@ Index: mozconfig
  ac_add_options --disable-updater
  ac_add_options --disable-cargo-incremental
  ac_add_options --enable-hardening
- ac_add_options --enable-stl-hardening
- ac_add_options --enable-optimize
- ac_add_options --enable-release
--ac_add_options --enable-rust-simd
-+# Rust SIMD option causes build errors on OpenBSD:
-+# ac_add_options --enable-rust-simd
+@@ -13,8 +20,9 @@
+ ac_add_options --enable-rust-simd
  # allow replacing malloc manually, will not affect regular systems
  # not compatible with ac_add_options --disable-jemalloc, which only works when preloading custom malloc
 -ac_add_options --enable-replace-malloc
@@ -45,7 +41,7 @@ Index: mozconfig
  
  ac_add_options --with-app-name=librewolf
  ac_add_options --with-branding=browser/branding/librewolf
-@@ -33,7 +42,19 @@
+@@ -33,7 +41,19 @@
  
  export CFLAGS="-ftrivial-auto-var-init=zero -fwrapv -Wno-backend-plugin $CFLAGS"
  export CXXFLAGS="-ftrivial-auto-var-init=zero -fwrapv -Wno-backend-plugin $CXXFLAGS"
