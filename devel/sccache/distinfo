@@ -355,7 +355,7 @@ SHA256 (cargo/tokio-macros-2.6.0.tar.gz) = r0B4VyCVNqlcjlb4Ix7ywuKv+DmyLgeh/8vGF
 SHA256 (cargo/tokio-native-tls-0.3.1.tar.gz) = u652q5M8hXdu+ryXFWndYRnFgNj11Eh2newXZL95bvI=
 SHA256 (cargo/tokio-rustls-0.26.0.tar.gz) = DHvEDQ5al2lbuW4nmVzToIU4VBsKhG9lu6ejWfNnANQ=
 SHA256 (cargo/tokio-serde-0.9.0.tar.gz) = yvYA5wNrF3glcd1E+gpc6jyC9g21E393SjJadqDWhSs=
-SHA256 (cargo/tokio-util-0.7.10.tar.gz) = VBnzRzLZ627kw1eLeYkHhXm38DnLu5yixNoBV0k3HhU=
+SHA256 (cargo/tokio-util-0.7.18.tar.gz) = munOyAWwHo/D/S/iifiRSam2bdFnhqvYsZz6e0jLAJg=
 SHA256 (cargo/toml-0.9.11+spec-1.1.0.tar.gz) = 86/JqEgwn+Gq/67W4VRqehTeH5NdydidMq/ZpEurfEY=
 SHA256 (cargo/toml_datetime-0.7.5+spec-1.1.0.tar.gz) = kuHP7UowOLxaEn41otNg8UXh9LlxtVGiul/Xrt9+E0c=
 SHA256 (cargo/toml_edit-0.23.10+spec-1.0.0.tar.gz) = hMi591fgKM7p+iRK6hR6qyqewJ1TJamwHgpJcwwrUmk=
@@ -454,7 +454,7 @@ SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
 SHA256 (cargo/zstd-0.13.1.tar.gz) = LXibFRQgOhEgrSQp6uQ6e9MrkJdqe7igX37AL6iMwjo=
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
-SHA256 (sccache-0.16.0.tar.gz) = kX/U1+WEwj3Tz5yi85TCygPFfHPi1geXcPB9kAgXav4=
+SHA256 (sccache-0.17.0.tar.gz) = SZSa0c8XXEnaEm27DC5qVr2dH2JujMC+F7lmi5FBRcY=
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
@@ -812,7 +812,7 @@ SIZE (cargo/tokio-macros-2.6.0.tar.gz) = 16505
 SIZE (cargo/tokio-native-tls-0.3.1.tar.gz) = 20676
 SIZE (cargo/tokio-rustls-0.26.0.tar.gz) = 34253
 SIZE (cargo/tokio-serde-0.9.0.tar.gz) = 16122
-SIZE (cargo/tokio-util-0.7.10.tar.gz) = 110508
+SIZE (cargo/tokio-util-0.7.18.tar.gz) = 140550
 SIZE (cargo/toml-0.9.11+spec-1.1.0.tar.gz) = 56484
 SIZE (cargo/toml_datetime-0.7.5+spec-1.1.0.tar.gz) = 17975
 SIZE (cargo/toml_edit-0.23.10+spec-1.0.0.tar.gz) = 66420
@@ -911,4 +911,4 @@ SIZE (cargo/zip-0.6.6.tar.gz) = 65789
 SIZE (cargo/zstd-0.13.1.tar.gz) = 29805
 SIZE (cargo/zstd-safe-7.1.0.tar.gz) = 20792
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
-SIZE (sccache-0.16.0.tar.gz) = 476256
+SIZE (sccache-0.17.0.tar.gz) = 489499
