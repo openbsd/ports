@@ -1,6 +1,6 @@
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
-DISTNAME=	freeipmi-1.6.18
+DISTNAME=	freeipmi-1.6.19
 
 SHARED_LIBS +=  freeipmi             7.1      # 19.16
 SHARED_LIBS +=  ipmiconsole          3.1      # 5.7
