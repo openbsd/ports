@@ -1,0 +1,18 @@
+https://github.com/redis/redis/commit/1de65ebff644189631acf4d6ebd9f25c53f6a494
+is broken with BSD ps(1).
+
+Index: tests/support/util.tcl
+--- tests/support/util.tcl.orig
++++ tests/support/util.tcl
+@@ -585,9 +585,9 @@ proc process_is_alive pid {
+ proc pause_process pid {
+     exec kill -SIGSTOP $pid
+     wait_for_condition 50 100 {
+-        [string match {*T*} [lindex [exec ps j $pid] 16]]
++        [string match {*T*} [lindex [exec ps j -p $pid] 16]]
+     } else {
+-        puts [exec ps j $pid]
++        puts [exec ps j -p $pid]
+         fail "process didn't stop"
+     }
+ }
