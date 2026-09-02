@@ -3,11 +3,9 @@ NOT_FOR_ARCHS=	${BE_ARCHS}
 
 COMMENT=	free audio editor
 
-V=		3.7.8
+V=		3.7.9
 DISTNAME=	audacity-sources-${V}
 PKGNAME=	audacity-${V}
-
-REVISION=	0
 
 CATEGORIES=	audio
 
