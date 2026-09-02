@@ -140,6 +140,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/index_caching.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/inflector.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/integer64.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/is_distinct_from.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/lit_require_frozen.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/looser_typecasting.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/migration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/mssql_emulate_lateral_with_apply.rb
