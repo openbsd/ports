@@ -2,7 +2,7 @@ COMMENT =		pan-unicode font family
 
 MODFONT_FAMILY =	noto-fonts
 
-MODFONT_VERSION =	2026.08.01
+MODFONT_VERSION =	2026.09.01
 GH_ACCOUNT =		notofonts
 GH_PROJECT =		notofonts.github.io
 GH_TAGNAME =		noto-monthly-release-${MODFONT_VERSION}

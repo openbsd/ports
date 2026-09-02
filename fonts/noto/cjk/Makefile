@@ -3,6 +3,7 @@ COMMENT =		east asian fonts for the noto font family
 MODFONT_FAMILY =	noto-cjk
 
 MODFONT_VERSION =	20240730
+REVISION =		0
 
 SITES.sans =		https://github.com/googlefonts/noto-cjk/releases/download/Sans2.004/
 SITES.serif =		https://github.com/googlefonts/noto-cjk/releases/download/Serif2.003/
