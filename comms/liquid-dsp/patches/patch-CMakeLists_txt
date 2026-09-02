@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -117,7 +117,7 @@ if (MSVC)
+     add_compile_options(/W4)
+ else()
+     # additional warnings
+-    add_compile_options(-Wall -fPIC -O3)
++    add_compile_options(-Wall -fPIC)
+ endif()
+ 
+ if (ENABLE_STRICT)
