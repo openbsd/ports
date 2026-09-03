@@ -1,7 +1,7 @@
 COMMENT=		automatic archives creating and extracting library
 
 GNOME_PROJECT=		gnome-autoar
-GNOME_VERSION=		0.5.0
+GNOME_VERSION=		0.5.2
 
 SHARED_LIBS += gnome-autoar-0            0.0 # 0.2.1
 
