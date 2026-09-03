@@ -2,7 +2,7 @@ COMMENT=	BLAKE3 cryptographic hash function reference in C
 
 GH_ACCOUNT=	BLAKE3-team
 GH_PROJECT=	BLAKE3
-GH_TAGNAME=	1.8.6
+GH_TAGNAME=	1.8.7
 PKGNAME=	${DISTNAME:L}
 
 CATEGORIES=	security
@@ -16,8 +16,6 @@ PERMIT_PACKAGE=	Yes
 
 # Looks for CXX_20
 COMPILER=	base-clang ports-gcc
-
-WANTLIB += c crypto
 
 MODULES=	devel/cmake
 CONFIGURE_ARGS=	-DBUILD_SHARED_LIBS=ON
