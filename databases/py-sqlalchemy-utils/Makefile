@@ -1,23 +1,22 @@
-COMMENT =	sqlalchemy utility functions
+COMMENT=	sqlalchemy utility functions
 
-MODPY_DISTV =	0.42.0
-DISTNAME =	sqlalchemy_utils-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME:S/_/-/}
-REVISION =	1
+MODPY_DISTV=	0.42.1
+DISTNAME=	sqlalchemy_utils-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME:S/_/-/}
 
-CATEGORIES =	databases
+CATEGORIES=	databases
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS =		databases/py-sqlalchemy
+RUN_DEPENDS=	databases/py-sqlalchemy
 
-TEST_DEPENDS =		databases/py-psycopg2 \
+TEST_DEPENDS=	databases/py-psycopg2 \
 			databases/py-pymysql \
 			devel/py-dateutil \
 			devel/py-flexmock \
