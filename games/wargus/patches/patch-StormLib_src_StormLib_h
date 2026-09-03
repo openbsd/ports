@@ -1,0 +1,16 @@
+- Apply StormLib big-endian build fixes to the vendored copy
+  cde1a0718a0058cc651ecd56ff8149fc39f624e9
+
+Index: StormLib/src/StormLib.h
+--- StormLib/src/StormLib.h.orig
++++ StormLib/src/StormLib.h
+@@ -631,8 +631,8 @@ typedef struct _TMPQHash
+ 
+ #else
+ 
+-    BYTE   Platform;
+     BYTE   Reserved;
++    BYTE   Platform;
+     USHORT lcLocale;
+ 
+ #endif

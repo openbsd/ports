@@ -1,0 +1,24 @@
+- Apply StormLib big-endian build fixes to the vendored copy
+  cde1a0718a0058cc651ecd56ff8149fc39f624e9
+
+Index: StormLib/src/SFileAttributes.cpp
+--- StormLib/src/SFileAttributes.cpp.orig
++++ StormLib/src/SFileAttributes.cpp
+@@ -180,7 +180,7 @@ static DWORD LoadAttributesFile(TMPQArchive * ha, LPBY
+         if((pbAttrPtr + cbArraySize) > pbAttrFileEnd)
+             return ERROR_FILE_CORRUPT;
+ 
+-        BSWAP_ARRAY32_UNSIGNED(ArrayCRC32, cbCRC32Size);
++        BSWAP_ARRAY32_UNSIGNED(ArrayCRC32, cbArraySize);
+         for(i = 0; i < dwAttributesEntries; i++)
+             ha->pFileTable[i].dwCrc32 = ArrayCRC32[i];
+         pbAttrPtr += cbArraySize;
+@@ -196,7 +196,7 @@ static DWORD LoadAttributesFile(TMPQArchive * ha, LPBY
+         if((pbAttrPtr + cbArraySize) > pbAttrFileEnd)
+             return ERROR_FILE_CORRUPT;
+ 
+-        BSWAP_ARRAY64_UNSIGNED(ArrayFileTime, cbFileTimeSize);
++        BSWAP_ARRAY64_UNSIGNED(ArrayFileTime, cbArraySize);
+         for(i = 0; i < dwAttributesEntries; i++)
+             ha->pFileTable[i].FileTime = ArrayFileTime[i];
+         pbAttrPtr += cbArraySize;

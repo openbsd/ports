@@ -3,6 +3,7 @@ COMMENT=		Warcraft 2 Mod
 GH_ACCOUNT=		Wargus
 GH_PROJECT=		wargus
 GH_TAGNAME=		v3.3.2
+REVISION=		0
 CATEGORIES=		games
 
 HOMEPAGE=		http://stratagus.com/
@@ -33,7 +34,11 @@ MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 MODCMAKE_LDFLAGS+=	-L${LOCALBASE}/lib
 
-FIX_CRLF_FILES=		StormLib/src/FileStream.cpp
+FIX_CRLF_FILES=		StormLib/src/SBaseCommon.cpp \
+			StormLib/src/SFileAttributes.cpp \
+			StormLib/src/SFilePatchArchives.cpp \
+			StormLib/src/StormLib.h \
+			StormLib/src/StormPort.h \
 
 pre-configure:
 	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
