@@ -3,7 +3,7 @@ Use correct version of BIO_info_cb (we may need to fix this in libcrypto)
 Index: libfreerdp/crypto/tls.c
 --- libfreerdp/crypto/tls.c.orig
 +++ libfreerdp/crypto/tls.c
-@@ -536,7 +536,7 @@ static int bio_rdp_tls_free(BIO* bio)
+@@ -629,7 +629,7 @@ static int bio_rdp_tls_free(BIO* bio)
  	return 1;
  }
  
@@ -12,7 +12,7 @@ Index: libfreerdp/crypto/tls.c
  {
  	long status = 0;
  
-@@ -555,7 +555,7 @@ static long bio_rdp_tls_callback_ctrl(BIO* bio, int cm
+@@ -648,7 +648,7 @@ static long bio_rdp_tls_callback_ctrl(BIO* bio, int cm
  			typedef void (*fkt_t)(const SSL*, int, int);
  
  			/* Documented since https://www.openssl.org/docs/man1.1.1/man3/BIO_set_callback.html

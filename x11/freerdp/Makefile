@@ -1,15 +1,15 @@
 COMMENT =	client for Microsoft RDP (remote desktop protocol)
 
-DISTNAME =	freerdp-3.30.0
+DISTNAME =	freerdp-3.31.1
 
 CATEGORIES =	x11 net
 
 DPB_PROPERTIES = parallel
 
-SHARED_LIBS +=	freerdp-client3           0.0 # 0.0
-SHARED_LIBS +=	freerdp3                  0.0 # 0.0
-SHARED_LIBS +=	winpr-tools3              0.0 # 0.0
-SHARED_LIBS +=	winpr3                    0.0 # 0.0
+SHARED_LIBS +=	freerdp-client3           0.1
+SHARED_LIBS +=	freerdp3                  0.1
+SHARED_LIBS +=	winpr-tools3              0.0
+SHARED_LIBS +=	winpr3                    0.1
 
 HOMEPAGE =	https://www.freerdp.com/
 SITES =		https://pub.freerdp.com/releases/

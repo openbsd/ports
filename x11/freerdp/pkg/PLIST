@@ -135,6 +135,9 @@ include/freerdp3/freerdp/peer.h
 include/freerdp3/freerdp/pointer.h
 include/freerdp3/freerdp/primary.h
 include/freerdp3/freerdp/primitives.h
+include/freerdp3/freerdp/private/
+include/freerdp3/freerdp/private/proxy_client.h
+include/freerdp3/freerdp/private/proxy_server.h
 include/freerdp3/freerdp/rail.h
 include/freerdp3/freerdp/redirection.h
 include/freerdp3/freerdp/scancode.h
@@ -208,6 +211,7 @@ include/freerdp3/freerdp/version.h
 include/freerdp3/freerdp/window.h
 include/winpr3/
 include/winpr3/winpr/
+include/winpr3/winpr/Pathcch.h
 include/winpr3/winpr/asn1.h
 include/winpr3/winpr/assert-api.h
 include/winpr3/winpr/assert.h
@@ -282,7 +286,6 @@ include/winpr3/winpr/winsock.h
 include/winpr3/winpr/wlog.h
 include/winpr3/winpr/wtsapi.h
 include/winpr3/winpr/wtypes.h
-lib/cmake/
 lib/cmake/FreeRDP-Client3/
 lib/cmake/FreeRDP-Client3/FreeRDP-ClientConfig.cmake
 lib/cmake/FreeRDP-Client3/FreeRDP-ClientConfigVersion.cmake
