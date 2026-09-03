@@ -2,11 +2,11 @@ COMMENT =	git remote helper to interact with mercurial repositories
 
 GH_ACCOUNT =	glandium
 GH_PROJECT =	git-cinnabar
-GH_TAGNAME =	0.7.3
+GH_TAGNAME =	0.7.5
 CATEGORIES =	devel
 
 # patches are applied to this version
-DIST_TUPLE +=	github git-for-windows git 4d32d83913170b86f9753fca10e75cdb2223d1cc git-core
+DIST_TUPLE +=	github git-for-windows git 33e5ecf213705eb0047434cc23f8196fa31028dd git-core
 
 # MPL-2.0
 PERMIT_PACKAGE =	Yes
