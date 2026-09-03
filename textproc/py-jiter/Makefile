@@ -1,24 +1,25 @@
-COMMENT =		fast iterable JSON parser
+COMMENT=	fast iterable JSON parser
 
-MODPY_DISTV =		0.14.0
-DISTNAME =		jiter-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+MODPY_DISTV=	0.16.0
+DISTNAME=	jiter-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	maturin
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		maturin
+TEST_DEPENDS=	devel/py-dirty-equals
 
 # needs pytest-examples
 MODPY_PYTEST_ARGS= --ignore tests/test_docs.py
 
-WRKSRC = ${WRKDIST}/crates/jiter-python
+WRKSRC=		${WRKDIST}/crates/jiter-python
+MODCARGO_CARGOLOCK=	${WRKDIST}/Cargo.lock
 
 .include "crates.inc"
 .include <bsd.port.mk>
