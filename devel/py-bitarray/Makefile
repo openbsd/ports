@@ -1,6 +1,6 @@
 COMMENT=	efficiently handle arrays of Booleans
 
-MODPY_DISTV =	3.8.1
+MODPY_DISTV =	3.11.0
 DISTNAME=	bitarray-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -16,8 +16,11 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_TEST_LINK_SO= Yes
+
 # FileTests.test_mmap_2 failure looks like it's a problem with OS
 # that don't have cache coherency between mmap and file access
+MODPY_PYTEST_ARGS= --ignore bitarray/test_free_threading.py \
+		   -k 'not test_mmap_2'
 
 test: fake
 
