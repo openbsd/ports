@@ -141,6 +141,7 @@ SHA256 (cargo/chacha20poly1305-0.10.1.tar.gz) = EM15QyGS0cD04aD++VJ2lswDkWXXKftB
 SHA256 (cargo/chardetng-0.1.17.tar.gz) = FLjwtlt7CK48gYfo13F03iDLZ3eGTGuDLYrTZZmc8eo=
 SHA256 (cargo/chrono-0.4.43.tar.gz) = +sR0T7Fa6DN9yFP+5/s/TkjA+6oj0K/knER7T6sSYRg=
 SHA256 (cargo/chunked_transfer-1.5.0.tar.gz) = bk3jvE6iZ5hb7PcS3G2e7YsEyVOz/PsznryHrNmASQE=
+SHA256 (cargo/cidr-0.3.2.tar.gz) = V5UEVgOU44gIXQwIDqWH36XBX34lG01SR9Hhph0daSg=
 SHA256 (cargo/cipher-0.4.4.tar.gz) = dz87mvZER9LOmFAzDEc1FQFKojXmp4OwLbgf855KPa0=
 SHA256 (cargo/clang-sys-1.8.1.tar.gz) = CwI5R4EXWMl8Wb+dHBiP1hmtRxjcqnZ5R98crbFPOfQ=
 SHA256 (cargo/clap-4.5.58.tar.gz) = Y76XlhrN45MClJLOC+ehr34yPmuulRHr+sM3Ub5eaAY=
@@ -316,6 +317,7 @@ SHA256 (cargo/finl_unicode-1.4.0.tar.gz) = mETdw6blM9YrunJ+tsKLXTYJIdUXXp/w8eYhp
 SHA256 (cargo/fixed_decimal-0.7.2.tar.gz) = ecPIkvEh//QG5d1rKMGzAJa5URHDBwGomdTysY2m0b0=
 SHA256 (cargo/fixedbitset-0.4.2.tar.gz) = DOcTS5mZ7K+LzWVULkNnNu8y3cobPgYJTLbsV1UgO4A=
 SHA256 (cargo/fixedbitset-0.5.7.tar.gz) = HWdOgTkdHhq2gaKNmd8HknxtSqWwJ9faFroy0dIezZk=
+SHA256 (cargo/flatbuffers-25.12.19.tar.gz) = NfaDnXs7mK3eUx7/rzTwwrrcb0c10m/nRwnY5ROpbvM=
 SHA256 (cargo/flate2-1.1.8.tar.gz) = s3XWRluYCQpfJbHHcD84WXg3VaqagEM7NuA3mj7C82k=
 SHA256 (cargo/float-cmp-0.10.0.tar.gz) = sJzzFVMy6USZAUDZZ/9ezrcN93izT3fYB120bkcE5tg=
 SHA256 (cargo/fluent-0.16.1.tar.gz) = u3RjRwe+vQzmRamBFI6PuMe8zUwzxlKu/9KL8vltVVo=
@@ -999,6 +1001,8 @@ SHA256 (cargo/tower-0.5.3.tar.gz) = 6+XvY1EVlfE0Ti1c+mNtlzKSrcDuwfCtRfrp8IUasdQ=
 SHA256 (cargo/tower-http-0.6.8.tar.gz) = 1OZVnVPMJo5QMc2EKdBUFbxMtK78SqXWzDX79bkkofg=
 SHA256 (cargo/tower-layer-0.3.3.tar.gz) = EhwqbNpGmAuw/NFkf/r2zT/HmgE94oh4KDb235xIeA4=
 SHA256 (cargo/tower-service-0.3.3.tar.gz) = jfm24T8tMskbm9cZwA0ZWIN7x97EdNlJUnmMyOae7sM=
+SHA256 (cargo/tracelogging-1.2.3.tar.gz) = 5DFEcPP1SynVgv9ndvzrfIGbAjFBgo1VnxnHkM7kDpQ=
+SHA256 (cargo/tracelogging_macros-1.2.3.tar.gz) = leLYkUZP8zvBgUxMu7JRuueABFix79tqyLfAHuY4JWM=
 SHA256 (cargo/tracing-0.1.44.tar.gz) = Y+cWYvpLKiw6JvVw8DfrlbsfhTl/PNgHbK7S8Cam0QA=
 SHA256 (cargo/tracing-appender-0.2.4.tar.gz) = eG1IC85iR6t18AWxSuFiStl40wKdkRPwoi+hrHc/rq8=
 SHA256 (cargo/tracing-attributes-0.1.31.tar.gz) = dJDPpeyWN0ZWh0BlGsZ4H3AcnF6iV8WOBX87qM9p6No=
@@ -1032,6 +1036,7 @@ SHA256 (cargo/unic-langid-impl-0.9.6.tar.gz) = 3OG/CARNS3qUAoyTeG+FZgR+3BERBZWRT
 SHA256 (cargo/unicase-2.9.0.tar.gz) = 28S8Op90bYYsRcuJ1wWqEPGHu5bHYAGvqweg01zmAUI=
 SHA256 (cargo/unicode-bidi-0.3.18.tar.gz) = XBy12zkVKJinkWiXFUOxy1Ag3/f+Q8jcRosIhfXinfU=
 SHA256 (cargo/unicode-bom-2.0.3.tar.gz) = fuxdESEgg2T2eT99LiIr91qRXBlVdTd0WxlbJT3WQhc=
+SHA256 (cargo/unicode-general-category-1.1.0.tar.gz) = C5k73cGTrlvQ1iO0nsBqw+kxKHX9rnJal1xR2xzBZ38=
 SHA256 (cargo/unicode-ident-1.0.22.tar.gz) = kxL3xPb/kGmxZUmCNM6L5lgFnGcoYzZnxSbifcLPHfU=
 SHA256 (cargo/unicode-linebreak-0.1.5.tar.gz) = OwnIPDwp03UGo+JgwIwDdDprtmqc1DLGk0q1AaGQVx8=
 SHA256 (cargo/unicode-normalization-0.1.25.tar.gz) = X9T2h4ycso2HSwCdqejRg7WryAEXxAu9GHof3jNr5ug=
@@ -1159,6 +1164,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.53.1.tar.gz) = 1rv/XwqtpCeh5abaXx+YFYGC8mVW8
 SHA256 (cargo/winnow-0.7.14.tar.gz) = WlNk6dd/ze6qYGLO2SbuM4H6ou4C0+uDpcJ6iCVUCCk=
 SHA256 (cargo/winreg-0.10.1.tar.gz) = gND04nLIXe8TlHY4CxL5rGCSZondLgHUkjIi9AWAhp0=
 SHA256 (cargo/winreg-0.50.0.tar.gz) = Uk5XssU3wPmx5p8ZZTEewSGCtBIuRQNbFQjNJNKtrbE=
+SHA256 (cargo/winreg-0.55.0.tar.gz) = y1p2UzfFDp7CUsIGm+m/kcffR6+xA7ZCujpTv4EBvpc=
 SHA256 (cargo/winsafe-0.0.19.tar.gz) = 0TXRerdwJSrZXpqHLTZc8wkOO+hko0q0b0hVWZPvyQQ=
 SHA256 (cargo/winsplit-0.1.0.tar.gz) = OrcDNS2mpy81w5pTNSY5NyVkBXW7IR9hmHonSDI62VY=
 SHA256 (cargo/wiremock-0.6.5.tar.gz) = CNse37BdmzwVQuUhrqB0RCCIKS8AtfKOQ1xxSpj4UDE=
@@ -1210,9 +1216,10 @@ SHA256 (cargo/zune-jpeg-0.5.12.tar.gz) = QQ6ezvY0xwnjgxws/bjZwyFk+uHGdJbVto//co7
 SHA256 (cargo/zvariant-4.2.0.tar.gz) = IIQpCrmhxHHDj8UklFg3c0+/EkSH4QXa7Cu1f9SMgf4=
 SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3MgDSACxEk=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
-SHA256 (codex-rust-v0.152.1.tar.gz) = U0g2AK5qlU9UyBEqrncCpjB4ESt/2jX/DCaF1KOaWFY=
+SHA256 (codex-rust-v0.153.1.tar.gz) = ZHuFYFCAvXljOinShMnM1wqoHEBGINb+uNzgdc3V28s=
 SHA256 (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3b30DbjfaF32fDJg3+Wc9/+ksZOpMk4Qs1m76JgdueA=
 SHA256 (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 0WdqwzqCxZA//t5oznPJ2SRmaqihArtkmo+5JqemHOE=
+SHA256 (microsoft-mxc-6cd3d58f05d3447e67109cfb75e042803b843ca4.tar.gz) = fNUbeETOP2JEnGCm1gKZaZL2RKsB1JbhfqWz/SoY/Dg=
 SHA256 (nornagon-crossterm-45fecb9508105988f42fe6ff0441783ed3717f92.tar.gz) = QI3swnEChfAeahVOJgWJHhryl5Yf1OZRfcv7lJHrbG8=
 SHA256 (openai-oss-forks-tokio-tungstenite-0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186.tar.gz) = odi/7fQepZ1e03XrwoDa1wmdDDOY6RQGxR1IUnAZaj0=
 SHA256 (openai-oss-forks-tungstenite-rs-4fffad30fe373adbdcffab9545e9e9bf4f2fc19f.tar.gz) = 2FOTRn3VhDaIBZuyBKYbdFDc4RZqLIqrPIdHiVX/zkg=
@@ -1359,6 +1366,7 @@ SIZE (cargo/chacha20poly1305-0.10.1.tar.gz) = 68485
 SIZE (cargo/chardetng-0.1.17.tar.gz) = 56362
 SIZE (cargo/chrono-0.4.43.tar.gz) = 240392
 SIZE (cargo/chunked_transfer-1.5.0.tar.gz) = 9779
+SIZE (cargo/cidr-0.3.2.tar.gz) = 39302
 SIZE (cargo/cipher-0.4.4.tar.gz) = 19073
 SIZE (cargo/clang-sys-1.8.1.tar.gz) = 44009
 SIZE (cargo/clap-4.5.58.tar.gz) = 61991
@@ -1534,6 +1542,7 @@ SIZE (cargo/finl_unicode-1.4.0.tar.gz) = 66414
 SIZE (cargo/fixed_decimal-0.7.2.tar.gz) = 49222
 SIZE (cargo/fixedbitset-0.4.2.tar.gz) = 15954
 SIZE (cargo/fixedbitset-0.5.7.tar.gz) = 26537
+SIZE (cargo/flatbuffers-25.12.19.tar.gz) = 27421
 SIZE (cargo/flate2-1.1.8.tar.gz) = 80972
 SIZE (cargo/float-cmp-0.10.0.tar.gz) = 10702
 SIZE (cargo/fluent-0.16.1.tar.gz) = 8323
@@ -2217,6 +2226,8 @@ SIZE (cargo/tower-0.5.3.tar.gz) = 110488
 SIZE (cargo/tower-http-0.6.8.tar.gz) = 135827
 SIZE (cargo/tower-layer-0.3.3.tar.gz) = 6180
 SIZE (cargo/tower-service-0.3.3.tar.gz) = 6950
+SIZE (cargo/tracelogging-1.2.3.tar.gz) = 37737
+SIZE (cargo/tracelogging_macros-1.2.3.tar.gz) = 29048
 SIZE (cargo/tracing-0.1.44.tar.gz) = 463135
 SIZE (cargo/tracing-appender-0.2.4.tar.gz) = 29738
 SIZE (cargo/tracing-attributes-0.1.31.tar.gz) = 39733
@@ -2250,6 +2261,7 @@ SIZE (cargo/unic-langid-impl-0.9.6.tar.gz) = 90020
 SIZE (cargo/unicase-2.9.0.tar.gz) = 24368
 SIZE (cargo/unicode-bidi-0.3.18.tar.gz) = 58300
 SIZE (cargo/unicode-bom-2.0.3.tar.gz) = 10773
+SIZE (cargo/unicode-general-category-1.1.0.tar.gz) = 36486
 SIZE (cargo/unicode-ident-1.0.22.tar.gz) = 47919
 SIZE (cargo/unicode-linebreak-0.1.5.tar.gz) = 15324
 SIZE (cargo/unicode-normalization-0.1.25.tar.gz) = 128462
@@ -2377,6 +2389,7 @@ SIZE (cargo/windows_x86_64_msvc-0.53.1.tar.gz) = 837950
 SIZE (cargo/winnow-0.7.14.tar.gz) = 184718
 SIZE (cargo/winreg-0.10.1.tar.gz) = 25725
 SIZE (cargo/winreg-0.50.0.tar.gz) = 29703
+SIZE (cargo/winreg-0.55.0.tar.gz) = 31048
 SIZE (cargo/winsafe-0.0.19.tar.gz) = 492820
 SIZE (cargo/winsplit-0.1.0.tar.gz) = 7046
 SIZE (cargo/wiremock-0.6.5.tar.gz) = 60561
@@ -2428,9 +2441,10 @@ SIZE (cargo/zune-jpeg-0.5.12.tar.gz) = 86116
 SIZE (cargo/zvariant-4.2.0.tar.gz) = 82180
 SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
-SIZE (codex-rust-v0.152.1.tar.gz) = 13063579
+SIZE (codex-rust-v0.153.1.tar.gz) = 13319775
 SIZE (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3951333
 SIZE (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 86782
+SIZE (microsoft-mxc-6cd3d58f05d3447e67109cfb75e042803b843ca4.tar.gz) = 5985947
 SIZE (nornagon-crossterm-45fecb9508105988f42fe6ff0441783ed3717f92.tar.gz) = 144786
 SIZE (openai-oss-forks-tokio-tungstenite-0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186.tar.gz) = 33055
 SIZE (openai-oss-forks-tungstenite-rs-4fffad30fe373adbdcffab9545e9e9bf4f2fc19f.tar.gz) = 293806
