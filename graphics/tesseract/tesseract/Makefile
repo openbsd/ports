@@ -1,7 +1,7 @@
 COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract
-GH_TAGNAME=	5.5.2
+GH_TAGNAME=	5.5.3
 
 SHARED_LIBS +=  tesseract            8.0      # 5.5
 
@@ -20,6 +20,8 @@ COMPILER=		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 
+BUILD_DEPENDS=		textproc/asciidoctor
+
 LIB_DEPENDS=		archivers/libarchive \
 			devel/pango \
 			graphics/leptonica>=1.83.0 \
@@ -36,8 +38,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 ALL_TARGET=		all training
 INSTALL_TARGET=		install training-install
 
-AUTOCONF_VERSION=	2.72
-AUTOMAKE_VERSION=	1.17
-BUILD_DEPENDS +=	textproc/asciidoc
+AUTOCONF_VERSION=	2.73
+AUTOMAKE_VERSION=	1.18
 
 .include <bsd.port.mk>
