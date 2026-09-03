@@ -1,6 +1,6 @@
 COMMENT =	automagic shell tab completion for Python CLI applications
 
-MODPY_DISTV =	1.11.0
+MODPY_DISTV =	1.12.1
 DISTNAME =	shtab-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
@@ -17,7 +17,8 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools_scm
 
-TEST_DEPENDS =	devel/py-test-cov \
+TEST_DEPENDS =	devel/py-click \
+		devel/py-test-cov \
 		devel/py-test-timeout \
 		shells/bash
 
