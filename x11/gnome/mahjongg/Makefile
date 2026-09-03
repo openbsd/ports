@@ -1,5 +1,8 @@
 COMMENT =		mahjongg game for GNOME
 
+# needs new librsvg
+ONLY_FOR_ARCHS =	${RUST_ARCHS}
+
 GNOME_PROJECT =		gnome-mahjongg
 GNOME_VERSION =		49.1.1
 
