@@ -6,6 +6,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			7.1.3
+REVISION =		0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -53,7 +54,6 @@ BUILD_DEPENDS =		devel/boost,-main \
 			devel/crc32c \
 			devel/fmt \
 			devel/gobject-introspection \
-			devel/microsoft-gsl \
 			devel/range-v3>=0.11.0p0 \
 			devel/tl-expected \
 			net/tdlib/tde2e \
@@ -106,6 +106,10 @@ NEEDED_BUNDLES =	cld3 libprisma rlottie tgcalls MicroTeX cmark-gfm
 
 # ported but CMake code hardcodes bundled file paths
 NEEDED_BUNDLES +=	xdg-desktop-portal
+
+# 7.1.3 wants ==4.1.0, wait for upstream to catch up with 5.0.0
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Microsoft.GSL=True
+NEEDED_BUNDLES +=	GSL
 
 post-extract:
 	# All bundles:
