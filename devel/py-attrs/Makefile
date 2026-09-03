@@ -1,9 +1,8 @@
 COMMENT=	classes without boilerplate
 
-MODPY_DISTV=	25.4.0
+MODPY_DISTV=	26.1.0
 DISTNAME=	attrs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
