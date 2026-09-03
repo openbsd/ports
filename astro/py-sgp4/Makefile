@@ -1,6 +1,6 @@
 COMMENT=	Python implementation of SGP4 satellite tracking algorithm
 
-MODPY_DISTV=	2.25
+MODPY_DISTV=	2.27
 DISTNAME=	sgp4-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

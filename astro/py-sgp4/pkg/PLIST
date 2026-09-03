@@ -51,11 +51,8 @@ lib/python${MODPY_VERSION}/site-packages/sgp4/io.py
 lib/python${MODPY_VERSION}/site-packages/sgp4/model.py
 lib/python${MODPY_VERSION}/site-packages/sgp4/omm.py
 lib/python${MODPY_VERSION}/site-packages/sgp4/propagation.py
-lib/python${MODPY_VERSION}/site-packages/sgp4/sample_omm.csv
-lib/python${MODPY_VERSION}/site-packages/sgp4/sample_omm.json
-lib/python${MODPY_VERSION}/site-packages/sgp4/sample_omm.xml
 lib/python${MODPY_VERSION}/site-packages/sgp4/tcppver.out
 lib/python${MODPY_VERSION}/site-packages/sgp4/tests.py
-@so lib/python${MODPY_VERSION}/site-packages/sgp4/vallado_cpp.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sgp4/vallado_cpp${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/sgp4/wrapper.py
 lib/python${MODPY_VERSION}/site-packages/sgp4/wulfgar.py
