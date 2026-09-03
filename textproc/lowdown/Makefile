@@ -1,8 +1,8 @@
 COMMENT =	simple markdown translator
-DISTNAME =	lowdown-3.0.1
+DISTNAME =	lowdown-3.1.1
 CATEGORIES =	textproc
 
-SHARED_LIBS =	lowdown		4.0	# 3
+SHARED_LIBS =	lowdown		5.0	# 4
 
 # base-gcc doesn't support deprecation attribute with message
 COMPILER =	base-clang ports-gcc
