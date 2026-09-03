@@ -1,40 +1,24 @@
-- remove -Werror to unbreak test build
-- fix gtest include and library paths
+- fix gtest include dir
+- link correct libs
 
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt
-@@ -131,7 +131,6 @@ else()
-         -Wcast-align
-         -Wconversion
-         -Wctor-dtor-privacy
--        -Werror
-         -Wextra
-         -Wpedantic
-         -Wshadow
-@@ -196,7 +195,7 @@ endif()
+@@ -201,7 +201,7 @@ endif()
  
  # for tests to find the gtest header
  target_include_directories(gsl_tests_config SYSTEM INTERFACE
 -    googletest/googletest/include
-+    ${GTestMain_INCLUDE_DIRS}
++    /usr/local/include
  )
  
- add_executable(gsl_tests
-@@ -218,7 +217,7 @@ add_executable(gsl_tests
- target_link_libraries(gsl_tests
+ # Individually build and register each test source (except no_exception_ensure_tests.cpp)
+@@ -215,7 +215,7 @@ foreach(src IN LISTS GSL_TEST_SOURCES)
+   target_link_libraries(${test_name}
      Microsoft.GSL::GSL
      gsl_tests_config
 -    ${GTestMain_LIBRARIES}
 +    ${GTestMain_LINK_LIBRARIES}
- )
- add_test(gsl_tests gsl_tests)
- 
-@@ -273,7 +272,6 @@ else()
-         -Wcast-align
-         -Wconversion
-         -Wctor-dtor-privacy
--        -Werror
-         -Wextra
-         -Wpedantic
-         -Wshadow
+   )
+   add_test(NAME ${test_name} COMMAND ${test_name})
+   set_target_properties(${test_name} PROPERTIES FOLDER "tests")

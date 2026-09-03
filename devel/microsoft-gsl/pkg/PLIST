@@ -3,6 +3,7 @@ include/gsl/
 include/gsl/algorithm
 include/gsl/assert
 include/gsl/byte
+include/gsl/dyn_array
 include/gsl/gsl
 include/gsl/narrow
 include/gsl/pointers
