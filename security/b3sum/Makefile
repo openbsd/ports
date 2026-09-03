@@ -1,6 +1,6 @@
 COMMENT =		command line BLAKE3 checksum utility
 
-V =			1.8.6
+V =			1.8.7
 PKGNAME =		b3sum-${V}
 
 DIST_TUPLE =		github BLAKE3-team BLAKE3 ${V} .
