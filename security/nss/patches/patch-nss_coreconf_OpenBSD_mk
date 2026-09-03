@@ -12,3 +12,18 @@ Index: nss/coreconf/OpenBSD.mk
  
  OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -Wall -Wno-switch -pipe -DOPENBSD
  
+@@ -41,6 +41,14 @@ ifdef MAPFILE
+ endif
+ PROCESS_MAP_FILE = grep -v ';-' $< | \
+         sed -e 's,;+,,' -e 's; DATA ;;' -e 's,;;,,' -e 's,;.*,;,' > $@
++
++# Test toolchain for endianness and set LITTLE_ENDIAN variable accordingly
++ENDIANNESS := $(shell echo | $(CC) -dM -E - | grep __BYTE_ORDER__)
++ifeq ($(findstring __ORDER_LITTLE_ENDIAN__,$(ENDIANNESS)),__ORDER_LITTLE_ENDIAN__)
++    LITTLE_ENDIAN := 1
++else
++    LITTLE_ENDIAN := 0
++endif
+ 
+ USE_SYSTEM_ZLIB		= 1
+ ZLIB_LIBS		= -lz
