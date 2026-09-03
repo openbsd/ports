@@ -1,7 +1,7 @@
 Index: res/res_pjsip/config_transport.c
 --- res/res_pjsip/config_transport.c.orig
 +++ res/res_pjsip/config_transport.c
-@@ -867,6 +867,10 @@ static int transport_apply(const struct ast_sorcery *s
+@@ -876,6 +876,10 @@ static int transport_apply(const struct ast_sorcery *s
  			cfg.sockopt_params.options[sockopt_count].optlen = sizeof(option);
  			sockopt_count++;
  
@@ -12,7 +12,7 @@ Index: res/res_pjsip/config_transport.c
  			cfg.sockopt_params.options[sockopt_count].level = pj_SOL_TCP();
  			cfg.sockopt_params.options[sockopt_count].optname = TCP_KEEPIDLE;
  			cfg.sockopt_params.options[sockopt_count].optval = &transport->tcp_keepalive_idle_time;
-@@ -884,6 +888,16 @@ static int transport_apply(const struct ast_sorcery *s
+@@ -893,6 +897,16 @@ static int transport_apply(const struct ast_sorcery *s
  			cfg.sockopt_params.options[sockopt_count].optval = &transport->tcp_keepalive_probe_count;
  			cfg.sockopt_params.options[sockopt_count].optlen = sizeof(transport->tcp_keepalive_probe_count);
  			sockopt_count++;
@@ -29,7 +29,7 @@ Index: res/res_pjsip/config_transport.c
  #else
  			ast_log(LOG_WARNING, "TCP keepalive settings for '%s' not set due to PJSIP built without support for setting all options. Consider using bundled PJSIP.\n",
  				ast_sorcery_object_get_id(obj));
-@@ -934,6 +948,10 @@ static int transport_apply(const struct ast_sorcery *s
+@@ -943,6 +957,10 @@ static int transport_apply(const struct ast_sorcery *s
  			temp_state->state->tls.sockopt_params.options[sockopt_count].optlen = sizeof(option);
  			sockopt_count++;
  
@@ -40,7 +40,7 @@ Index: res/res_pjsip/config_transport.c
  			temp_state->state->tls.sockopt_params.options[sockopt_count].level = pj_SOL_TCP();
  			temp_state->state->tls.sockopt_params.options[sockopt_count].optname = TCP_KEEPIDLE;
  			temp_state->state->tls.sockopt_params.options[sockopt_count].optval = &transport->tcp_keepalive_idle_time;
-@@ -951,6 +969,7 @@ static int transport_apply(const struct ast_sorcery *s
+@@ -960,6 +978,7 @@ static int transport_apply(const struct ast_sorcery *s
  			temp_state->state->tls.sockopt_params.options[sockopt_count].optval = &transport->tcp_keepalive_probe_count;
  			temp_state->state->tls.sockopt_params.options[sockopt_count].optlen = sizeof(transport->tcp_keepalive_probe_count);
  			sockopt_count++;
