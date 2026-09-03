@@ -1,10 +1,11 @@
 COMMENT=	library for reading music meta data
 
-MODPY_DISTV=	2.2.1
+MODPY_DISTV=	2.3.1
 GH_ACCOUNT=	tinytag
 GH_PROJECT=	tinytag
 GH_TAGNAME=	${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+
 CATEGORIES=	audio textproc
 
 HOMEPAGE=	https://github.com/tinytag/tinytag
@@ -16,7 +17,6 @@ MODULES=	lang/python
 MODPY_PYBUILD=	flit_core
 
 post-install:
-	rm -r ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/tinytag/tests/
-#NO_TEST=	Yes
+	rm -r ${WRKINST}${MODPY_SITEPKG}/tinytag/tests/
 
 .include <bsd.port.mk>
