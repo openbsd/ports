@@ -3,7 +3,7 @@ Soupir.
 Index: cli/src/complete.rs
 --- cli/src/complete.rs.orig
 +++ cli/src/complete.rs
-@@ -1138,7 +1138,7 @@ where
+@@ -1172,7 +1172,7 @@ where
  /// the preferred method, because it's more maintainable and the performance
  /// requirements of completions aren't very high.
  fn get_jj_command() -> Result<(JjBuilder, UserSettings), CommandError> {

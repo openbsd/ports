@@ -24,6 +24,7 @@
 @man man/man1/jj-config-set.1
 @man man/man1/jj-config-unset.1
 @man man/man1/jj-config.1
+@man man/man1/jj-converge.1
 @man man/man1/jj-describe.1
 @man man/man1/jj-diff.1
 @man man/man1/jj-diffedit.1
