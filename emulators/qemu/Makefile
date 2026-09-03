@@ -6,8 +6,7 @@ USE_NOBTCFI=	Yes
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	11.1.0
-REVISION-main=	0
+VERSION=	11.1.1
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
@@ -20,10 +19,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2, LGPLv2 and BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c glib-2.0 pthread
+WANTLIB=	c glib-2.0 pixman-1 pthread
 WANTLIB-main=	${WANTLIB} SDL2 X11 bz2 cairo capstone curl curses epoxy fdt \
 		gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 gnutls gobject-2.0 \
-		gtk-3 iconv intl iscsi jpeg lzo2 m nfs pixman-1 png slirp sndio \
+		gtk-3 iconv intl iscsi jpeg lzo2 m nfs png slirp sndio \
 		ssh usb-1.0 util vte-2.91 xkbcommon z zstd
 WANTLIB-ga=	${WANTLIB}
 

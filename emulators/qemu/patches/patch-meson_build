@@ -4,7 +4,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -2387,7 +2387,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
+@@ -2392,7 +2392,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
  config_host_data.set_quoted('CONFIG_QEMU_HELPERDIR', get_option('prefix') / get_option('libexecdir'))
  config_host_data.set_quoted('CONFIG_QEMU_ICONDIR', get_option('prefix') / qemu_icondir)
  config_host_data.set_quoted('CONFIG_QEMU_LOCALEDIR', get_option('prefix') / get_option('localedir'))
@@ -13,7 +13,7 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -4748,9 +4748,6 @@ if have_rust
+@@ -4753,9 +4753,6 @@ if have_rust
    summary_info += {'bindgen version': bindgen.version()}
  endif
  option_cflags = (get_option('debug') ? ['-g'] : [])
