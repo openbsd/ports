@@ -1,10 +1,11 @@
 COMMENT =		arc4random for Tcl
 
+REVISION =		1
+
 GH_ACCOUNT =		aryler
 GH_PROJECT =		Tclarc4random
 GH_TAGNAME =		0.3
 DISTNAME =		tclarc4random-${GH_TAGNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -13,6 +14,7 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/tcl
+MODTCL_VERSION =	8.6
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
 SEPARATE_BUILD =	Yes

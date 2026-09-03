@@ -1,5 +1,5 @@
 lib/tcl/tclarc4random/
-lib/tcl/tclarc4random/libta4r.so
+@so lib/tcl/tclarc4random/libta4r.so
 lib/tcl/tclarc4random/pkgIndex.tcl
 share/doc/tclarc4random/
 share/doc/tclarc4random/LICENSE
