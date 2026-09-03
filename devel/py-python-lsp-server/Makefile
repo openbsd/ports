@@ -1,9 +1,8 @@
 COMMENT =		Python Language Server
 
-MODPY_DISTV =		1.14.0
+MODPY_DISTV =		1.15.0
 DISTNAME =		python_lsp_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
-REVISION =		2
 
 CATEGORIES =		devel
 
@@ -21,7 +20,7 @@ RUN_DEPENDS =		devel/autopep8 \
 			devel/pylint>=3.1,<4 \
 			devel/py-codestyle>=2.12.0,<2.13.0 \
 			devel/py-docstring-to-markdown \
-			devel/py-jedi>=0.17.2,<0.20.0 \
+			devel/py-jedi>=0.17.2,<0.21.0 \
 			devel/py-mccabe>=0.7.0,<0.8.0 \
 			devel/py-pluggy>=1.0.0 \
 			devel/py-pydocstyle>=6.3.0,<6.4.0 \

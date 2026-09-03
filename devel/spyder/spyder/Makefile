@@ -4,7 +4,7 @@ COMMENT =	Scientific PYthon Development EnviRonment
 # stick to qt5 and qtwebengine. (See issue #20201).
 
 MODULES =	lang/python
-MODPY_DISTV =	6.1.4
+MODPY_DISTV =	6.1.7
 DISTNAME =	spyder-${MODPY_DISTV}
 
 HOMEPAGE =	https://github.com/spyder-ide/spyder
@@ -16,7 +16,7 @@ RUN_DEPENDS =	databases/py-pickleshare>=0.4 \
 		devel/py-cookiecutter>=1.6.0 \
 		devel/py-pygithub>=2.3.0 \
 		devel/py-intervaltree>=3.0.2 \
-		devel/py-jedi>=0.17.2,<0.20.0 \
+		devel/py-jedi>=0.17.2,<0.21.0 \
 		devel/py-jsonschema>=3.2.0 \
 		devel/py-nbconvert>=4.0 \
 		devel/py-parso>=0.7.0,<0.9.0 \
@@ -24,7 +24,7 @@ RUN_DEPENDS =	databases/py-pickleshare>=0.4 \
 		devel/py-python-lsp-black>=2.0.0,<3.0.0 \
 		devel/py-pylint_venv>=3.0.2 \
 		devel/py-pyls-spyder>=0.4.0 \
-		devel/py-python-lsp-server>=1.14.0,<1.15.0 \
+		devel/py-python-lsp-server>=1.15.0,<1.16.0 \
 		devel/py-python-lsp-ruff>=2.3.0,<3.0.0 \
 		devel/py-qdarkstyle>=3.2.0,<3.3.0 \
 		devel/py-qstylizer>=0.2.2 \
@@ -56,7 +56,7 @@ RUN_DEPENDS =	databases/py-pickleshare>=0.4 \
 		www/py-yarl>=1.9.4 \
 		x11/py-qtpy>=2.4.0 \
 		x11/py-qtawesome>=1.4.1,<1.5.0 \
-		devel/spyder/py-spyder-kernels>=3.1.4,<3.2.0
+		devel/spyder/py-spyder-kernels>=3.1.6,<3.2.0
 
 TEST_DEPENDS =	devel/py-importlib-metadata
 

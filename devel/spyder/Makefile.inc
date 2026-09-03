@@ -2,8 +2,6 @@ DIST_SUBDIR=	spyder
 
 CATEGORIES ?=	devel/spyder
 
-MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
-
 # MIT
 PERMIT_PACKAGE =	Yes
 

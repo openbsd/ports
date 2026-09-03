@@ -131,4 +131,6 @@ lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-i
 lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/scm_file_list.json
+lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/scm_version.json
 lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/top_level.txt
