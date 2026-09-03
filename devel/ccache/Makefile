@@ -1,9 +1,8 @@
 COMMENT=	C/C++ compiler front-end to cache compiled object code
 
-V=		4.13.6
+V=		4.14
 DISTNAME=	ccache-$V
 SITES=		https://github.com/ccache/ccache/releases/download/v$V/
-REVISION=	0
 
 D=		2.4.12
 DISTFILES.dt=	doctest-$D{doctest}.h
