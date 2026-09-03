@@ -12,8 +12,8 @@ SHA256 (cargo/bytemuck-1.25.0.tar.gz) = yO+2S9cGoWob3eMQroazUeTSFVDZjQVvIvin96IY
 SHA256 (cargo/byteorder-lite-0.1.0.tar.gz) = jx/pSP8H9L0GwwmE5p9bSJnFFqPvdPNN+Sot8qtTVJU=
 SHA256 (cargo/cc-1.2.60.tar.gz) = Q8VwPalGa2apRoFOGt9T6iyQ8QBjuGKQzJ62fONHiiA=
 SHA256 (cargo/cfg-if-1.0.4.tar.gz) = kzD4sv8T80VAtE6UbvNREYJXJ7ONMyhu+YYUJhUSGAE=
-SHA256 (cargo/clap-4.6.4.tar.gz) = 2R4MFFeS73OmrTbSfHWsCfGDIiKjwglonZD1NGhe5bc=
-SHA256 (cargo/clap_builder-4.6.2.tar.gz) = 8JYor9zFOLV/PGNB6cjplw8Y5KSBaQpkl01wI70zVIs=
+SHA256 (cargo/clap-4.6.6.tar.gz) = Rzx+B/QJqNdyFhckqo22p2WiUypw+WZ+63tJ09Avvco=
+SHA256 (cargo/clap_builder-4.6.6.tar.gz) = e0j+paiOmucooty+2/wOcw99YNpC4csEmoPJ+4t4mIk=
 SHA256 (cargo/clap_lex-1.1.0.tar.gz) = yNSju4seDBBQSZ0YFfWrFtBPCVmyMwhfsxZT+/ydmPk=
 SHA256 (cargo/colorchoice-1.0.5.tar.gz) = HQdVDJA2vyrgxoTEKX1QP4OCh8g8U2htBTcNDhOa5XA=
 SHA256 (cargo/crc32fast-1.5.0.tar.gz) = lIHByQy/KslT8HyNSliqOUXEJbcYXJFU1npl5CMNpRE=
@@ -35,10 +35,10 @@ SHA256 (cargo/indexmap-2.14.0.tar.gz) = 1GbpRU8I5KkR4UgGwk4W+6G0wSHR6kdDlvOWBpz5
 SHA256 (cargo/is_terminal_polyfill-1.70.2.tar.gz) = pssTi7eaFGwb1GAAViPhQu8BgePQIZy0k+AvfQijVpU=
 SHA256 (cargo/itoa-1.0.18.tar.gz) = j0KmDL35qX9dIwXwiofcTgkwjRJ20oyGnGhNd3doVoI=
 SHA256 (cargo/libc-0.2.185.tar.gz) = Uv8sD+m8bLaxSgWSwv9Pqc64PuqduXmwSHzQVJRqK48=
-SHA256 (cargo/libdeflate-sys-1.25.2.tar.gz) = cnU+AAjqh5Y9LwdwBC0N96vlH6+7jcr2GKxEDy8f7Ao=
-SHA256 (cargo/libdeflater-1.25.2.tar.gz) = 0e5Bz2+xu2Aw37Wf+3vAGrJqreRBQghMh/D8ehZY/nE=
+SHA256 (cargo/libdeflate-sys-1.26.0.tar.gz) = aUnXNxS6jDLSdXQFuJyU5Cf2TweKQEHevgfhuOnoUOk=
+SHA256 (cargo/libdeflater-1.26.0.tar.gz) = C3KydBBPdHy2U1jJGOOMbNSmmTeTejbIrTz9UWycRx4=
 SHA256 (cargo/linux-raw-sys-0.12.1.tar.gz) = MqZpSeAw2gDox9RDSyUWcKkVVvQUSUHTdFJ2nCXVilM=
-SHA256 (cargo/log-0.4.33.tar.gz) = DO7FvBF3iXTRvLBVsYAC66f0s1GLagCBs69fIWZtqa0=
+SHA256 (cargo/log-0.4.34.tar.gz) = +fi9PlbOTfwVPPRw//v6mMdiCVizEspcOkuNUYH9E8Y=
 SHA256 (cargo/memchr-2.8.0.tar.gz) = +MpY9EfwbtF9X8QEPOGxDdIF4GD7POW5ebjtjln/P3k=
 SHA256 (cargo/miniz_oxide-0.8.9.tar.gz) = H6dqLIb3BL2yItZpZfs9Yyac44UYuDywV1/KhV67YxY=
 SHA256 (cargo/moxcms-0.8.1.tar.gz) = u4XBVLpInwGyXA02rmmofkocc6cmMfxsDrbd40pz5Es=
@@ -73,7 +73,7 @@ SHA256 (cargo/windows-link-0.2.1.tar.gz) = 8IBSIuV/dSHWpi42+pFjvIkazUIvlx3v6X1k5
 SHA256 (cargo/windows-sys-0.61.2.tar.gz) = rhNyKby9bN8Pe4CjHfYXZhRQd930lBanKLAss5If8/w=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
 SHA256 (cargo/zopfli-0.8.3.tar.gz) = 8FzYeX1jhlQl/4m1xKSIBPNboM6NElgAAnrWAX0rUkk=
-SHA256 (oxipng-10.2.0.tar.gz) = DQ2l8kXtOmabzmPTyjaNR2uuZ7ABSpJ8AN+RLJ2WSkQ=
+SHA256 (oxipng-10.2.1.tar.gz) = RgzPzcycOHe59/rh39Tyo/k9Oyoq8+O2LKMrFj+SPMo=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/anstream-1.0.0.tar.gz) = 28916
@@ -88,8 +88,8 @@ SIZE (cargo/bytemuck-1.25.0.tar.gz) = 53466
 SIZE (cargo/byteorder-lite-0.1.0.tar.gz) = 15909
 SIZE (cargo/cc-1.2.60.tar.gz) = 97051
 SIZE (cargo/cfg-if-1.0.4.tar.gz) = 9360
-SIZE (cargo/clap-4.6.4.tar.gz) = 63677
-SIZE (cargo/clap_builder-4.6.2.tar.gz) = 170802
+SIZE (cargo/clap-4.6.6.tar.gz) = 64815
+SIZE (cargo/clap_builder-4.6.6.tar.gz) = 171756
 SIZE (cargo/clap_lex-1.1.0.tar.gz) = 13470
 SIZE (cargo/colorchoice-1.0.5.tar.gz) = 8187
 SIZE (cargo/crc32fast-1.5.0.tar.gz) = 40723
@@ -111,10 +111,10 @@ SIZE (cargo/indexmap-2.14.0.tar.gz) = 104085
 SIZE (cargo/is_terminal_polyfill-1.70.2.tar.gz) = 7548
 SIZE (cargo/itoa-1.0.18.tar.gz) = 15935
 SIZE (cargo/libc-0.2.185.tar.gz) = 821775
-SIZE (cargo/libdeflate-sys-1.25.2.tar.gz) = 202542
-SIZE (cargo/libdeflater-1.25.2.tar.gz) = 23437
+SIZE (cargo/libdeflate-sys-1.26.0.tar.gz) = 203743
+SIZE (cargo/libdeflater-1.26.0.tar.gz) = 23831
 SIZE (cargo/linux-raw-sys-0.12.1.tar.gz) = 3006116
-SIZE (cargo/log-0.4.33.tar.gz) = 52997
+SIZE (cargo/log-0.4.34.tar.gz) = 53395
 SIZE (cargo/memchr-2.8.0.tar.gz) = 97780
 SIZE (cargo/miniz_oxide-0.8.9.tar.gz) = 67132
 SIZE (cargo/moxcms-0.8.1.tar.gz) = 188252
@@ -149,4 +149,4 @@ SIZE (cargo/windows-link-0.2.1.tar.gz) = 6133
 SIZE (cargo/windows-sys-0.61.2.tar.gz) = 2517186
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
 SIZE (cargo/zopfli-0.8.3.tar.gz) = 51589
-SIZE (oxipng-10.2.0.tar.gz) = 18414800
+SIZE (oxipng-10.2.1.tar.gz) = 18417330
