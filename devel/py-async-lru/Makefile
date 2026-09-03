@@ -1,9 +1,8 @@
 COMMENT=	simple LRU cache for asyncio
 
-MODPY_DISTV=	2.2.0
+MODPY_DISTV=	2.3.0
 DISTNAME=	async_lru-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	1
 
 CATEGORIES=	devel
 
