@@ -1,7 +1,7 @@
 Index: sample/sample-config-files/client.conf
 --- sample/sample-config-files/client.conf.orig
 +++ sample/sample-config-files/client.conf
-@@ -58,8 +58,8 @@ resolv-retry infinite
+@@ -60,8 +60,8 @@ resolv-retry infinite
  nobind
  
  # Downgrade privileges after initialization (non-Windows only)

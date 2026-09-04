@@ -12,7 +12,7 @@ Index: src/openvpn/crypto_openssl.c
  #if OPENSSL_VERSION_NUMBER >= 0x30000000L
  #include <openssl/provider.h>
  #include <openssl/core_names.h>
-@@ -1406,7 +1403,7 @@ ssl_tls1_PRF(const uint8_t *label, size_t label_len, c
+@@ -1410,7 +1407,7 @@ ssl_tls1_PRF(const uint8_t *label, size_t label_len, c
      return CRYPTO_tls1_prf(EVP_md5_sha1(), out1, olen, sec, slen,
                             (const char *)label, label_len, NULL, 0, NULL, 0);
  }
