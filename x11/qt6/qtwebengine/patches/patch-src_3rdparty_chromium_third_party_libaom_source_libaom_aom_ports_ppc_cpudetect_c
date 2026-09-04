@@ -1,35 +1,40 @@
 Index: src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/ppc_cpudetect.c
 --- src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/ppc_cpudetect.c.orig
 +++ src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/ppc_cpudetect.c
-@@ -9,11 +9,8 @@
+@@ -9,7 +9,7 @@
   * PATENTS file, you can obtain it at www.aomedia.org/license/patent.
   */
  
 -#include <fcntl.h>
++
  #include <unistd.h>
  #include <stdint.h>
+ 
+@@ -17,9 +17,6 @@
+ 
+ #include "aom_ports/ppc.h"
+ 
+-#if CONFIG_RUNTIME_CPU_DETECT
 -#include <asm/cputable.h>
 -#include <linux/auxvec.h>
  
- #include "config/aom_config.h"
- 
-@@ -37,6 +34,12 @@ static int cpu_env_mask(void) {
+ static int cpu_env_flags(int *flags) {
+   char *env;
+@@ -38,6 +35,10 @@ static int cpu_env_mask(void) {
    return env && *env ? (int)strtol(env, NULL, 0) : ~0;
  }
  
-+#if defined(__linux__)
-+
++#if defined(CONFIG_RUNTIME_CPU_DETECT) && defined(__linux__)
 +#include <fcntl.h>
 +#include <asm/cputable.h>
 +#include <linux/auxvec.h>
-+
  int ppc_simd_caps(void) {
    int flags;
    int mask;
-@@ -76,6 +79,39 @@ out_close:
+@@ -76,6 +77,39 @@ out_close:
+   close(fd);
    return flags & mask;
  }
- #else
 +#elif defined(__OpenBSD__)
 +
 +#include <sys/auxv.h>
@@ -63,6 +68,6 @@ Index: src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/ppc_cpud
 +  return flags & mask;
 +}
 +#endif
+ #else
  // If there is no RTCD the function pointers are not used and can not be
  // changed.
- int ppc_simd_caps(void) { return 0; }

@@ -7,13 +7,13 @@ PKGSPEC =	qt6-qtdeclarative-${QT6_PKGSPEC}
 
 DPB_PROPERTIES = parallel
 
-SHARED_LIBS =   Qt6Qml                    8.0 # 6.7
+SHARED_LIBS =   Qt6Qml                    9.0 # 6.7
 SHARED_LIBS +=  Qt6Quick                  9.0 # 6.7
-SHARED_LIBS +=  Qt6QuickParticles         3.0 # 6.7
+SHARED_LIBS +=  Qt6QuickParticles         3.1 # 6.7
 SHARED_LIBS +=  Qt6QuickTest              3.0 # 6.7
 SHARED_LIBS +=  Qt6QuickWidgets           5.0 # 6.7
 SHARED_LIBS +=  Qt6QuickShapes            3.1 # 6.7
-SHARED_LIBS +=  Qt6QmlModels              6.0 # 6.7
+SHARED_LIBS +=  Qt6QmlModels              7.0 # 6.7
 SHARED_LIBS +=  Qt6QmlWorkerScript        2.0 # 6.7
 SHARED_LIBS +=  Qt6LabsAnimation          2.0 # 6.7
 SHARED_LIBS +=  Qt6LabsFolderListModel    2.0 # 6.7
@@ -30,8 +30,8 @@ SHARED_LIBS +=  Qt6QuickDialogs2          3.0 # 6.7
 SHARED_LIBS +=  Qt6QuickDialogs2QuickImpl 4.2 # 6.7
 SHARED_LIBS +=  Qt6QuickDialogs2Utils     2.0 # 6.7
 SHARED_LIBS +=  Qt6QuickLayouts           4.0 # 6.7
-SHARED_LIBS +=  Qt6QuickTemplates2        8.0 # 6.7
-SHARED_LIBS +=  Qt6QmlCompiler            6.0 # 6.7
+SHARED_LIBS +=  Qt6QuickTemplates2        8.1 # 6.7
+SHARED_LIBS +=  Qt6QmlCompiler            6.1 # 6.7
 SHARED_LIBS +=  Qt6QuickEffects           2.1 # 6.7
 SHARED_LIBS +=	Qt6QmlNetwork             2.1 # 6.7
 
@@ -55,7 +55,7 @@ SHARED_LIBS +=  Qt6QuickVectorImageGenerator 2.0 # 0.0
 SHARED_LIBS +=	Qt6LabsSynchronizer       0.0 # 0.0
 SHARED_LIBS +=	Qt6QuickShapesDesignHelpers 1.0 # 0.0
 SHARED_LIBS +=	Qt6QuickVectorImageHelpers 0.1 # 0.0
-SHARED_LIBS +=	Qt6LabsStyleKit           0.0 # 0.0
+SHARED_LIBS +=	Qt6LabsStyleKit           0.1 # 0.0
 SHARED_LIBS +=	Qt6LabsStyleKitImpl       0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL

@@ -851,6 +851,23 @@ include/X11/qt6/QtQmlXmlListModel/QtQmlXmlListModelDepends
 include/X11/qt6/QtQmlXmlListModel/QtQmlXmlListModelVersion
 include/X11/qt6/QtQmlXmlListModel/qtqmlxmllistmodelexports.h
 include/X11/qt6/QtQmlXmlListModel/qtqmlxmllistmodelversion.h
+include/X11/qt6/QtQmltc/
+include/X11/qt6/QtQmltc/${VERSION}/
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/private/
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/private/qqmltccodewriter_p.h
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/private/qqmltccommandlineutils_p.h
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/private/qqmltccompiler_p.h
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/private/qqmltccompilerpieces_p.h
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/private/qqmltcoutputir_p.h
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/private/qqmltcoutputprimitives_p.h
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/private/qqmltcpropertyutils_p.h
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/private/qqmltctyperesolver_p.h
+include/X11/qt6/QtQmltc/${VERSION}/QtQmltc/private/qqmltcvisitor_p.h
+include/X11/qt6/QtQmltc/QtQmltc
+include/X11/qt6/QtQmltc/QtQmltcDepends
+include/X11/qt6/QtQmltc/QtQmltcVersion
+include/X11/qt6/QtQmltc/qtqmltcversion.h
 include/X11/qt6/QtQuick/
 include/X11/qt6/QtQuick/${VERSION}/
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/
@@ -2728,6 +2745,17 @@ lib/cmake/Qt6QmlXmlListModelPrivate/Qt6QmlXmlListModelPrivateTargets.cmake
 lib/cmake/Qt6QmlXmlListModelPrivate/Qt6QmlXmlListModelPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6QmlXmlListModelPrivate/Qt6QmlXmlListModelPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6QmlXmlListModelPrivate/Qt6QmlXmlListModelPrivateVersionlessTargets.cmake
+lib/cmake/Qt6QmltcPrivate/
+lib/cmake/Qt6QmltcPrivate/Qt6QmltcPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6QmltcPrivate/Qt6QmltcPrivateConfig.cmake
+lib/cmake/Qt6QmltcPrivate/Qt6QmltcPrivateConfigVersion.cmake
+lib/cmake/Qt6QmltcPrivate/Qt6QmltcPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6QmltcPrivate/Qt6QmltcPrivateDependencies.cmake
+lib/cmake/Qt6QmltcPrivate/Qt6QmltcPrivateTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QmltcPrivate/Qt6QmltcPrivateTargets.cmake
+lib/cmake/Qt6QmltcPrivate/Qt6QmltcPrivateTargetsPrecheck.cmake
+lib/cmake/Qt6QmltcPrivate/Qt6QmltcPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6QmltcPrivate/Qt6QmltcPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Quick/
 lib/cmake/Qt6Quick/Qt6QuickAdditionalTargetInfo.cmake
 lib/cmake/Qt6Quick/Qt6QuickConfig.cmake
@@ -3362,6 +3390,8 @@ lib/libQt6QmlWorkerScript.prl
 @lib lib/libQt6QmlWorkerScript.so.${LIBQt6QmlWorkerScript_VERSION}
 lib/libQt6QmlXmlListModel.prl
 @lib lib/libQt6QmlXmlListModel.so.${LIBQt6QmlXmlListModel_VERSION}
+@static-lib lib/libQt6Qmltc.a
+lib/libQt6Qmltc.prl
 lib/libQt6Quick.prl
 @lib lib/libQt6Quick.so.${LIBQt6Quick_VERSION}
 lib/libQt6QuickControls2.prl
@@ -3514,6 +3544,7 @@ lib/qt6/metatypes/qt6qmllsprivate_metatypes.json
 lib/qt6/metatypes/qt6qmlmeta_metatypes.json
 lib/qt6/metatypes/qt6qmlmodels_metatypes.json
 lib/qt6/metatypes/qt6qmlnetwork_metatypes.json
+lib/qt6/metatypes/qt6qmltcprivate_metatypes.json
 lib/qt6/metatypes/qt6qmltoolingsettingsprivate_metatypes.json
 lib/qt6/metatypes/qt6qmltyperegistrarprivate_metatypes.json
 lib/qt6/metatypes/qt6qmlworkerscript_metatypes.json
@@ -3591,6 +3622,7 @@ lib/qt6/mkspecs/modules/qt_lib_qmlmodels.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlmodels_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlnetwork.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlnetwork_private.pri
+lib/qt6/mkspecs/modules/qt_lib_qmltc_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmltest.pri
 lib/qt6/mkspecs/modules/qt_lib_qmltest_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmltoolingsettings_private.pri
@@ -3678,6 +3710,7 @@ lib/qt6/modules/QmlToolingSettingsPrivate.json
 lib/qt6/modules/QmlTypeRegistrarPrivate.json
 lib/qt6/modules/QmlWorkerScript.json
 lib/qt6/modules/QmlXmlListModel.json
+lib/qt6/modules/QmltcPrivate.json
 lib/qt6/modules/Quick.json
 lib/qt6/modules/QuickControls2.json
 lib/qt6/modules/QuickControls2Basic.json
@@ -4884,6 +4917,8 @@ lib/qt6/qml/QtQuick/Controls/Imagine/HorizontalHeaderViewDelegate.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/ItemDelegate.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/Label.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/Menu.qml
+lib/qt6/qml/QtQuick/Controls/Imagine/MenuBar.qml
+lib/qt6/qml/QtQuick/Controls/Imagine/MenuBarItem.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/MenuItem.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/MenuSeparator.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/Page.qml

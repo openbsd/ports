@@ -1,7 +1,7 @@
 Index: sources/shiboken6/libshiboken/helper.h
 --- sources/shiboken6/libshiboken/helper.h.orig
 +++ sources/shiboken6/libshiboken/helper.h
-@@ -7,6 +7,9 @@
+@@ -8,6 +8,9 @@
  #include "sbkpython.h"
  #include "shibokenmacros.h"
  
@@ -11,7 +11,7 @@ Index: sources/shiboken6/libshiboken/helper.h
  #include <iosfwd>
  
  #define SBK_UNUSED(x)   (void)(x);
-@@ -73,7 +76,7 @@ class ArrayPointer
+@@ -74,7 +77,7 @@ class ArrayPointer
  template <class T>
  using AutoArrayPointer = ArrayPointer<T>; // deprecated
  

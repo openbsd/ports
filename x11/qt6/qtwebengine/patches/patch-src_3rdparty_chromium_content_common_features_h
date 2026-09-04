@@ -1,12 +1,15 @@
 Index: src/3rdparty/chromium/content/common/features.h
 --- src/3rdparty/chromium/content/common/features.h.orig
 +++ src/3rdparty/chromium/content/common/features.h
-@@ -61,7 +61,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kCommittedOriginTr
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kCriticalClientHint);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kWorkerOrWorkletAgentDoubleReleaseFix);
+@@ -63,9 +63,9 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kWorkerOrWorkletAg
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDumpOnOriginHeaderMismatch);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDumpOnUnexpectedOriginHeader);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+-#endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnforceSameDocumentOriginInvariants);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnforceFileSystemManagerOpenOrigin);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kEmbeddingRequiresOptIn);

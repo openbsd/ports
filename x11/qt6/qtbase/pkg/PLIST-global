@@ -43,7 +43,7 @@ share/doc/qt6/config/exampleurl-qtxmlpatterns.qdocconf
 share/doc/qt6/global/
 share/doc/qt6/global/app-examples-template/
 share/doc/qt6/global/app-examples-template/README.md
-share/doc/qt6/global/app-examples-template/app-examples-template.qdoc
+share/doc/qt6/global/app-examples-template/app-examples.qdoc.template
 share/doc/qt6/global/compat.qdocconf
 share/doc/qt6/global/config.qdocconf
 share/doc/qt6/global/cpp-doc-macros.qdocconf
@@ -55,6 +55,7 @@ share/doc/qt6/global/externalsites/qt-webpages.qdoc
 share/doc/qt6/global/externalsites/qtcreator.qdoc
 share/doc/qt6/global/externalsites/qtdesignstudio.qdoc
 share/doc/qt6/global/externalsites/rfc.qdoc
+share/doc/qt6/global/externalsites/vscodeext.qdoc
 share/doc/qt6/global/fileextensions.qdocconf
 share/doc/qt6/global/grid.qdocconf
 share/doc/qt6/global/html-config.qdocconf

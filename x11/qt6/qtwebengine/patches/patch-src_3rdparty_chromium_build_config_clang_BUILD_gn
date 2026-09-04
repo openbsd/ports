@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/build/config/clang/BUILD.gn
 --- src/3rdparty/chromium/build/config/clang/BUILD.gn.orig
 +++ src/3rdparty/chromium/build/config/clang/BUILD.gn
-@@ -268,7 +268,12 @@ template("clang_lib") {
+@@ -274,7 +274,12 @@ template("clang_lib") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {

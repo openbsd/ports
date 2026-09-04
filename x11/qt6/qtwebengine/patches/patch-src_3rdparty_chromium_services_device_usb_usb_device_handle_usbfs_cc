@@ -37,7 +37,7 @@ Index: src/3rdparty/chromium/services/device/usb/usb_device_handle_usbfs.cc
    if (base::FeatureList::IsEnabled(features::kAutomaticUsbDetach)) {
      const mojom::UsbConfigurationInfo* config =
          device_->GetActiveConfiguration();
-@@ -979,7 +979,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
+@@ -986,7 +986,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
      return;
    }
  #endif

@@ -1,9 +1,8 @@
 QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
-REVISION =	0
 
-SHARED_LIBS +=  Qt6Multimedia             10.0 # 6.7
+SHARED_LIBS +=  Qt6Multimedia             11.0 # 6.7
 SHARED_LIBS +=  Qt6MultimediaQuick        7.0 # 6.7
 SHARED_LIBS +=  Qt6MultimediaWidgets      1.0 # 6.7
 SHARED_LIBS +=  Qt6SpatialAudio           2.0 # 6.7

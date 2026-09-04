@@ -18,7 +18,7 @@ Index: cmake/QtToolchainHelpers.cmake
          use_custom_libcxx_for_host=false
          enable_constraints=false
      )
-@@ -367,7 +370,7 @@ macro(append_build_type_setup)
+@@ -368,7 +371,7 @@ macro(append_build_type_setup)
  
      extend_gn_list(gnArgArg
          ARGS enable_precompiled_headers
@@ -27,7 +27,7 @@ Index: cmake/QtToolchainHelpers.cmake
      )
      extend_gn_list(gnArgArg
          ARGS dcheck_always_on
-@@ -393,7 +396,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -394,7 +397,7 @@ macro(append_compiler_linker_sdk_setup)
      extend_gn_list(gnArgArg ARGS is_clang CONDITION CLANG)
      extend_gn_list(gnArgArg ARGS is_mingw CONDITION MINGW)
      extend_gn_list(gnArgArg ARGS is_msvc CONDITION MSVC)
@@ -36,7 +36,7 @@ Index: cmake/QtToolchainHelpers.cmake
  
      if(CLANG)
          get_clang_runtime_path_version(clang_runtime_path_version)
-@@ -487,7 +490,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -492,7 +495,7 @@ macro(append_compiler_linker_sdk_setup)
          )
      endif()
      get_gn_arch(cpu ${TEST_architecture_arch})
@@ -45,7 +45,7 @@ Index: cmake/QtToolchainHelpers.cmake
  
          extend_gn_list_cflag(gnArgArg
              ARG arm_tune
-@@ -596,7 +599,7 @@ macro(append_toolchain_setup)
+@@ -601,7 +604,7 @@ macro(append_toolchain_setup)
          endif()
          unset(host_cpu)
          unset(target_cpu)

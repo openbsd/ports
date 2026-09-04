@@ -545,6 +545,7 @@ include/X11/qt6/QtCore/QTransposeProxyModel
 include/X11/qt6/QtCore/QTypeInfo
 include/X11/qt6/QtCore/QTypeInfoMerger
 include/X11/qt6/QtCore/QTypeRevision
+include/X11/qt6/QtCore/QTypedArrayAllocationResult
 include/X11/qt6/QtCore/QTypedArrayData
 include/X11/qt6/QtCore/QUnhandledException
 include/X11/qt6/QtCore/QUntypedBindable
@@ -1691,6 +1692,7 @@ include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhostaddress_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhostinfo_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhsts_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhstsstore_p.h
+include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhttp2configuration_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhttp2connection_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhttp2protocolhandler_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhttpheaderparser_p.h
@@ -2866,6 +2868,7 @@ lib/cmake/Qt6/FindWrapSystemJpeg.cmake
 lib/cmake/Qt6/FindWrapSystemMd4c.cmake
 lib/cmake/Qt6/FindWrapSystemPCRE2.cmake
 lib/cmake/Qt6/FindWrapSystemPNG.cmake
+lib/cmake/Qt6/FindWrapSystemSQLite3.cmake
 lib/cmake/Qt6/FindWrapSystemZLIB.cmake
 lib/cmake/Qt6/FindWrapVulkan.cmake
 lib/cmake/Qt6/FindWrapVulkanHeaders.cmake
@@ -2962,12 +2965,14 @@ lib/cmake/Qt6/QtPublicAndroidHelpers.cmake
 lib/cmake/Qt6/QtPublicAppleHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeHelpers.cmake
+lib/cmake/Qt6/QtPublicCMakeIncludeGuardHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake
 lib/cmake/Qt6/QtPublicDependencyHelpers.cmake
 lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake
 lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake
 lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake
 lib/cmake/Qt6/QtPublicGitHelpers.cmake
+lib/cmake/Qt6/QtPublicJsonHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake
 lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake

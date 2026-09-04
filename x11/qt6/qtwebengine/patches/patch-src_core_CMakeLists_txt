@@ -41,7 +41,7 @@ Index: src/core/CMakeLists.txt
                  ozone/egl_helper.cpp ozone/egl_helper.h
          )
 @@ -452,7 +452,7 @@ foreach(arch ${archs})
-             CONDITION QT_FEATURE_webenginedriver
+             CONDITION QT_FEATURE_webengine_extensions
          )
  
 -        if(LINUX)

@@ -342,6 +342,7 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/support/generate_pyi.py
 share/PySide6/
 share/PySide6/doc/
 share/PySide6/doc/qtcore.rst
+share/PySide6/doc/qtgui.rst
 share/PySide6/doc/qtqml.rst
 share/PySide6/doc/qtquicktest.rst
 share/PySide6/doc/qtuitools.rst

@@ -37,7 +37,7 @@ Index: src/3rdparty/chromium/content/gpu/gpu_main.cc
      return StartSandboxWindows(sandbox_info_);
 @@ -306,7 +310,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
-               gpu_preferences.message_pump_type);
+               gpu_preferences.message_pump_type, /*is_main_thread=*/true);
      }
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

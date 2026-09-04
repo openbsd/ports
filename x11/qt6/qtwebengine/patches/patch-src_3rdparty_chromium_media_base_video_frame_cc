@@ -37,7 +37,7 @@ Index: src/3rdparty/chromium/media/base/video_frame.cc
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -1548,7 +1548,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
+@@ -1568,7 +1568,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
    return wrapped_frame_ ? wrapped_frame_->shared_image() : shared_image_;
  }
  

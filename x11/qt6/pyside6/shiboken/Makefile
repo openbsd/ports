@@ -1,6 +1,5 @@
 COMMENT =		Python binding generator for C++ libraries
 PKGNAME =		shiboken6-${VERSION}
-REVISION =		0
 
 SHARED_LIBS +=		shiboken6.abi3	2.0 # 0.0
 

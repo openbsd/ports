@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/components/viz/service/gl/gpu_service_impl.cc
    gpu_extra_info_.is_gmb_nv12_supported = IsGMBNV12Supported();
  #endif
  
-@@ -1276,7 +1276,7 @@ bool GpuServiceImpl::OnBeginFrameDerivedImpl(const Beg
+@@ -1277,7 +1277,7 @@ bool GpuServiceImpl::OnBeginFrameDerivedImpl(const Beg
    return true;
  }
  

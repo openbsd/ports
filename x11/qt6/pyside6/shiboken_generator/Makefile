@@ -1,6 +1,5 @@
 COMMENT =		Python binding generator for C++ libraries
 PKGNAME =		shiboken6-generator-${VERSION}
-REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core c m xml2 xslt
 WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
