@@ -1,21 +1,37 @@
-argv0 isn't suitable as current_exe() in all cases.
+Implement support of getexecpath()
 
 Index: library/std/src/sys/paths/unix.rs
 --- library/std/src/sys/paths/unix.rs.orig
 +++ library/std/src/sys/paths/unix.rs
-@@ -240,13 +240,13 @@ pub fn current_exe() -> io::Result<PathBuf> {
-         cvt(libc::sysctl(mib, 4, argv.as_mut_ptr() as *mut _, &mut argv_len, ptr::null_mut(), 0))?;
-         argv.set_len(argv_len as usize);
-         if argv[0].is_null() {
+@@ -231,23 +231,15 @@ pub fn current_exe() -> io::Result<PathBuf> {
+ 
+ #[cfg(target_os = "openbsd")]
+ pub fn current_exe() -> io::Result<PathBuf> {
++    unsafe extern "C" {
++        fn getexecpath(buf: *mut c_char, bufsize: libc::size_t) -> c_int;
++    }
++
++    let mut path = vec![0; libc::PATH_MAX as usize];
+     unsafe {
+-        let mut mib = [libc::CTL_KERN, libc::KERN_PROC_ARGS, libc::getpid(), libc::KERN_PROC_ARGV];
+-        let mib = mib.as_mut_ptr();
+-        let mut argv_len = 0;
+-        cvt(libc::sysctl(mib, 4, ptr::null_mut(), &mut argv_len, ptr::null_mut(), 0))?;
+-        let mut argv = Vec::<*const libc::c_char>::with_capacity(argv_len as usize);
+-        cvt(libc::sysctl(mib, 4, argv.as_mut_ptr() as *mut _, &mut argv_len, ptr::null_mut(), 0))?;
+-        argv.set_len(argv_len as usize);
+-        if argv[0].is_null() {
 -            return Err(io::const_error!(io::ErrorKind::Uncategorized, "no current exe available"));
-+            return Err(io::const_error!(io::ErrorKind::Uncategorized, "no current exe available (null)"));
-         }
-         let argv0 = CStr::from_ptr(argv[0]).to_bytes();
-         if argv0[0] == b'.' || argv0.iter().any(|b| *b == b'/') {
-             crate::fs::canonicalize(OsStr::from_bytes(argv0))
-         } else {
+-        }
+-        let argv0 = CStr::from_ptr(argv[0]).to_bytes();
+-        if argv0[0] == b'.' || argv0.iter().any(|b| *b == b'/') {
+-            crate::fs::canonicalize(OsStr::from_bytes(argv0))
+-        } else {
 -            Ok(PathBuf::from(OsStr::from_bytes(argv0)))
-+            Err(io::const_error!(io::ErrorKind::Uncategorized, "no current exe available (short)"))
-         }
+-        }
++        cvt(getexecpath(path.as_mut_ptr(), path.len()))?;
++        let path = CStr::from_ptr(path.as_ptr()).to_bytes();
++        Ok(PathBuf::from(OsStr::from_bytes(path)))
      }
  }
+ 
