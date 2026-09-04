@@ -1,3 +1,2 @@
-${P5SITE}/Crypt/
 ${P5SITE}/Crypt/SaltedHash.pm
 @man man/man3p/Crypt::SaltedHash.3p

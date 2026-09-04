@@ -1,17 +1,18 @@
 COMMENT =	object oriented interface to create salted hashes
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	Crypt-SaltedHash-0.09
-CATEGORIES =	security
-REVISION =	1
+DISTNAME =	Crypt-SaltedHash-0.12
+CPAN_AUTHOR =	RRWO
 
-CPAN_AUTHOR =	GSHANK
+CATEGORIES =	security
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-TEST_DEPENDS =	devel/p5-Test-Fatal
-MAKE_ENV +=	TEST_POD=1
+MODULES =		cpan
+
+RUN_DEPENDS =		security/p5-Crypt-SysRandom
+TEST_DEPENDS =		devel/p5-Test-Fatal
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
