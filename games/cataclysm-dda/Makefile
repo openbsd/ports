@@ -1,11 +1,10 @@
-BROKEN-sparc64= strtoll_l strtoull_l strtod_l strtof_l not declared this scope
-
 COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
 
 V=			0.I
 DIST_TUPLE+=		github CleverRaven Cataclysm-DDA ${V} .
 PKGNAME=		cataclysm-dda-${V:S/-RELEASE//}
+REVISION=		0
 
 HOMEPAGE=		https://cataclysmdda.org
 MAINTAINER=		Kirill Bychkov <kirby@openbsd.org>
@@ -37,13 +36,14 @@ CONFIGURE_ARGS = 	-DLOCALIZE=ON \
 			-DBACKTRACE=OFF \
 			-DGIT_VERSION=${V} \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include \
-				-I${X11BASE}/include -I${X11BASE}/include/freetype2 \
-				-DCATCH_CONFIG_NO_COUNTER" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
-				-L${X11BASE}/lib -lintl -liconv" \
 			-DCMAKE_INSTALL_LOCALEDIR="${PREFIX}/share/locale" \
 			-Wno_dev
+
+CXXFLAGS += 		-I${LOCALBASE}/include -I${X11BASE}/include
+CXXFLAGS += 		-I${X11BASE}/include/freetype2
+CXXFLAGS += 		-DCATCH_CONFIG_NO_COUNTER
+
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -L${X11BASE}/lib -lintl -liconv
 
 SUBST_VARS += 		V
 
@@ -59,10 +59,15 @@ LIB_DEPENDS+=		devel/sdl2-mixer \
 
 CONFIGURE_ARGS+=       -DCURSES=OFF -DTILES=ON -DSOUND=ON
 
+# The use of ccache(1) is managed by the ports infrastructure
+CONFIGURE_ARGS +=	-DCATA_CCACHE=OFF
+
 MAN_TILES=		-tiles
 .endif
 
 NO_TEST=		Yes
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 post-extract:
 	mv ${WRKSRC}/src/third-party/flatbuffers/ \
@@ -102,9 +107,5 @@ post-install:
 		${PREFIX}/share/icons/hicolor/scalable/apps/
 	${INSTALL_DATA} ${WRKSRC}/data/xdg/org.cataclysmdda.CataclysmDDA.appdata.xml \
 		${PREFIX}/share/metainfo/
-
-
-
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

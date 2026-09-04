@@ -1,0 +1,13 @@
+Index: tests/new_character_test.cpp
+--- tests/new_character_test.cpp.orig
++++ tests/new_character_test.cpp
+@@ -90,6 +90,9 @@ struct failure {
+     std::vector<trait_id> mut;
+     itype_id item_name;
+     std::string reason;
++    bool operator<( const failure &rhs ) const {
++        return prof < rhs.prof;
++    }
+ };
+ 
+ namespace std
