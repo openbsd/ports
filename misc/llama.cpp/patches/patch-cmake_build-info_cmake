@@ -1,0 +1,12 @@
+Index: cmake/build-info.cmake
+--- cmake/build-info.cmake.orig
++++ cmake/build-info.cmake
+@@ -6,7 +6,7 @@ set(BUILD_TARGET "unknown")
+ # Look for git
+ find_package(Git)
+ if(NOT Git_FOUND)
+-    find_program(GIT_EXECUTABLE NAMES git git.exe)
++    #find_program(GIT_EXECUTABLE NAMES git git.exe)
+     if(GIT_EXECUTABLE)
+         set(Git_FOUND TRUE)
+         message(STATUS "Found Git: ${GIT_EXECUTABLE}")

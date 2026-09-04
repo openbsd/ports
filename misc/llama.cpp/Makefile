@@ -2,12 +2,12 @@ COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggml-org
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		b10433
-PKGNAME =		llama.cpp-0.0.${GH_TAGNAME:S/b//}
+GH_TAGNAME =		v0.4.0
+BUILD_NUMBER =		10809
 
-SHARED_LIBS +=		llama 14.0
-SHARED_LIBS +=		llama-common 13.0
-SHARED_LIBS +=		mtmd 9.0
+SHARED_LIBS +=		llama 15.0
+SHARED_LIBS +=		llama-common 14.0
+SHARED_LIBS +=		mtmd 10.0
 
 CATEGORIES =		misc
 
@@ -18,13 +18,14 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto ggml ggml-base m ssl
 
-SITES.ui =		https://huggingface.co/buckets/ggml-org/llama-ui/resolve/${GH_TAGNAME}/
+SITES.ui =		https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b${BUILD_NUMBER}/
 DISTFILES.ui =		${DISTNAME}-ui-dist{dist}.tar.gz
 
 EXTRACT_CASES =	*-ui-dist.tar.gz) \
 			mkdir -p ${WRKBUILD}/tools/ui/dist ; \
 			tar -C ${WRKBUILD}/tools/ui/dist \
-				-xzf ${FULLDISTDIR}/${DISTNAME}-ui-dist.tar.gz ;;
+				-xzf ${FULLDISTDIR}/${DISTNAME}-ui-dist.tar.gz; \
+			echo b${BUILD_NUMBER} > ${WRKBUILD}/tools/ui/.ui-stamp;;
 
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc
@@ -35,7 +36,8 @@ LIB_DEPENDS =		devel/libggml
 TEST_DEPENDS =		www/py-jinja2
 
 CONFIGURE_ARGS +=	-DLLAMA_USE_SYSTEM_GGML=on \
-			-DUI_SOURCE_DIR=${WRKSRC}/tools/server/public
+			-DLLAMA_BUILD_IS_DEV=off \
+			-DLLAMA_BUILD_NUMBER=${BUILD_NUMBER}
 CFLAGS +=		-I${LOCALBASE}/include
 CXXFLAGS +=		-I${LOCALBASE}/include
 

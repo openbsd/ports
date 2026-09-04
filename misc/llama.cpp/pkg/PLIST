@@ -8,7 +8,6 @@
 @bin bin/llama-cli
 @bin bin/llama-completion
 @bin bin/llama-debug
-@bin bin/llama-debug-template-parser
 @bin bin/llama-diffusion-cli
 @bin bin/llama-embedding
 @bin bin/llama-eval-callback
@@ -37,7 +36,6 @@
 @bin bin/llama-simple-chat
 @bin bin/llama-speculative
 @bin bin/llama-speculative-simple
-@bin bin/llama-template-analysis
 @bin bin/llama-tokenize
 @bin bin/llama-tts
 include/llama-cpp.h
