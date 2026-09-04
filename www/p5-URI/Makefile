@@ -1,6 +1,6 @@
 COMMENT =	library to parse Uniform Resource Identifiers
 
-DISTNAME =	URI-5.36
+DISTNAME =	URI-5.37
 CPAN_AUTHOR =	OALDERS
 
 CATEGORIES =	www
