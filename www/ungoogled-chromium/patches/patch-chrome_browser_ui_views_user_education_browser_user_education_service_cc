@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/user_education/browser_user_education_service.cc
 --- chrome/browser/ui/views/user_education/browser_user_education_service.cc.orig
 +++ chrome/browser/ui/views/user_education/browser_user_education_service.cc
-@@ -289,7 +289,7 @@ CreateNavigationAction(GURL target) {
+@@ -290,7 +290,7 @@ CreateNavigationAction(GURL target) {
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/views/user_education/browser_user_education_service.cc
  void NavigateToSettingsPage(ContextPtr ctx,
                              user_education::FeaturePromoHandle promo_handle) {
    BrowserWindowInterface* const browser = GetBrowser(ctx);
-@@ -1447,7 +1447,7 @@ void MaybeRegisterChromeFeaturePromos(
+@@ -1437,7 +1437,7 @@ void MaybeRegisterChromeFeaturePromos(
                  "Triggered when a shared tab becomes the active tab.")));
    }
  
@@ -19,7 +19,7 @@ Index: chrome/browser/ui/views/user_education/browser_user_education_service.cc
    // kIPHSupervisedUserProfileSigninFeature:
    registry.RegisterFeature(std::move(
        FeaturePromoSpecification::CreateForCustomAction(
-@@ -1740,7 +1740,7 @@ void MaybeRegisterChromeFeaturePromos(
+@@ -1730,7 +1730,7 @@ void MaybeRegisterChromeFeaturePromos(
                         "new translate screen feature on the Lens Overlay.")));
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
@@ -28,8 +28,8 @@ Index: chrome/browser/ui/views/user_education/browser_user_education_service.cc
    // kIPHDesktopPWAsLinkCapturingLaunch:
    registry.RegisterFeature(std::move(
        FeaturePromoSpecification::CreateForCustomAction(
-@@ -2473,7 +2473,7 @@ void MaybeRegisterChromeNewBadges(user_education::NewB
-           151, "mtatarski@9oo91e.qjz9zk",
+@@ -2485,7 +2485,7 @@ void MaybeRegisterChromeNewBadges(user_education::NewB
+           153, "mtatarski@9oo91e.qjz9zk",
            "Show the new badge on Send to Your Devices context menu items.")));
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

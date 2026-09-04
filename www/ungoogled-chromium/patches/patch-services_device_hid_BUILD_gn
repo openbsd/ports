@@ -1,7 +1,7 @@
 Index: services/device/hid/BUILD.gn
 --- services/device/hid/BUILD.gn.orig
 +++ services/device/hid/BUILD.gn
-@@ -36,7 +36,26 @@ source_set("hid") {
+@@ -32,7 +32,26 @@ source_set("hid") {
      "//third_party/protobuf:protobuf_lite",
    ]
  

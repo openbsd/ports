@@ -1,7 +1,7 @@
 Index: ui/gl/BUILD.gn
 --- ui/gl/BUILD.gn.orig
 +++ ui/gl/BUILD.gn
-@@ -429,7 +429,7 @@ component("gl") {
+@@ -432,7 +432,7 @@ component("gl") {
      ]
    }
  

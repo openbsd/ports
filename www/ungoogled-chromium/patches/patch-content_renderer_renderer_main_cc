@@ -1,7 +1,7 @@
 Index: content/renderer/renderer_main.cc
 --- content/renderer/renderer_main.cc.orig
 +++ content/renderer/renderer_main.cc
-@@ -180,7 +180,7 @@ int RendererMain(MainFunctionParams parameters) {
+@@ -181,7 +181,7 @@ int RendererMain(MainFunctionParams parameters) {
  
    InitializeSkia();
  

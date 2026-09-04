@@ -1,7 +1,7 @@
-Index: remoting/host/client_session.cc
---- remoting/host/client_session.cc.orig
-+++ remoting/host/client_session.cc
-@@ -225,7 +225,7 @@ void ClientSession::NotifyClientResolution(
+Index: remoting/host/peer_session_impl.cc
+--- remoting/host/peer_session_impl.cc.orig
++++ remoting/host/peer_session_impl.cc
+@@ -307,7 +307,7 @@ void PeerSessionImpl::NotifyClientResolution(
    if (effective_policies_.curtain_required.value_or(false)) {
      dpi_vector.set(resolution.x_dpi(), resolution.y_dpi());
    }
