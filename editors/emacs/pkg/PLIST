@@ -11,7 +11,6 @@
 %%gtk3%%
 !%%no_x11%%
 %%pgtk%%
-@bin bin/ctags
 @bin bin/ebrowse
 bin/emacs
 @bin bin/emacs-${VERSION}
@@ -24,8 +23,15 @@ include/emacs-module.h
 @info info/calc.info
 @info info/ccmode.info
 @info info/cl.info
+info/cons-1.png
+info/cons-2.png
+info/cons-2a.png
+info/cons-3.png
+info/cons-4.png
+info/cons-5.png
 @info info/dbus.info
 @info info/dired-x.info
+info/drawers.png
 @info info/ebrowse.info
 @info info/ede.info
 @info info/ediff.info
@@ -51,6 +57,9 @@ include/emacs-module.h
 @info info/idlwave.info
 @info info/ido.info
 @info info/info.info
+info/lambda-1.png
+info/lambda-2.png
+info/lambda-3.png
 @info info/mairix-el.info
 @info info/message.info
 @info info/mh-e.info
@@ -78,7 +87,6 @@ include/emacs-module.h
 @info info/url.info
 @info info/use-package.info
 @info info/vhdl-mode.info
-@info info/vip.info
 @info info/viper.info
 @info info/vtable.info
 @info info/widget.info
@@ -94,7 +102,6 @@ libexec/emacs/${VERSION}/${GCCARCH}/emacs.pdmp
 @bin libexec/emacs/${VERSION}/${GCCARCH}/hexl
 @bin libexec/emacs/${VERSION}/${GCCARCH}/movemail
 libexec/emacs/${VERSION}/${GCCARCH}/rcs2log
-@man man/man1/ctags.1
 @man man/man1/ebrowse.1
 @man man/man1/emacs.1
 @man man/man1/emacsclient.1
@@ -133,7 +140,7 @@ share/emacs/${VERSION}/etc/NEWS.26
 share/emacs/${VERSION}/etc/NEWS.27
 share/emacs/${VERSION}/etc/NEWS.28
 share/emacs/${VERSION}/etc/NEWS.29
-share/emacs/${VERSION}/etc/NEWS.unknown
+share/emacs/${VERSION}/etc/NEWS.30
 share/emacs/${VERSION}/etc/NEXTSTEP
 share/emacs/${VERSION}/etc/NXML-NEWS
 share/emacs/${VERSION}/etc/ORG-NEWS
@@ -594,6 +601,7 @@ share/emacs/${VERSION}/etc/images/ins-changelog.pbm
 share/emacs/${VERSION}/etc/images/ins-changelog.xpm
 share/emacs/${VERSION}/etc/images/jump-to.pbm
 share/emacs/${VERSION}/etc/images/jump-to.xpm
+share/emacs/${VERSION}/etc/images/kitchen-sink.xpm
 share/emacs/${VERSION}/etc/images/last-page.pbm
 share/emacs/${VERSION}/etc/images/last-page.xpm
 share/emacs/${VERSION}/etc/images/left-arrow.pbm
@@ -718,6 +726,22 @@ share/emacs/${VERSION}/etc/images/outline-close.pbm
 share/emacs/${VERSION}/etc/images/outline-close.svg
 share/emacs/${VERSION}/etc/images/outline-open.pbm
 share/emacs/${VERSION}/etc/images/outline-open.svg
+share/emacs/${VERSION}/etc/images/package-menu/
+share/emacs/${VERSION}/etc/images/package-menu/README
+share/emacs/${VERSION}/etc/images/package-menu/delete.pbm
+share/emacs/${VERSION}/etc/images/package-menu/delete.xpm
+share/emacs/${VERSION}/etc/images/package-menu/execute.pbm
+share/emacs/${VERSION}/etc/images/package-menu/execute.xpm
+share/emacs/${VERSION}/etc/images/package-menu/info.pbm
+share/emacs/${VERSION}/etc/images/package-menu/info.xpm
+share/emacs/${VERSION}/etc/images/package-menu/install.pbm
+share/emacs/${VERSION}/etc/images/package-menu/install.xpm
+share/emacs/${VERSION}/etc/images/package-menu/unmark.pbm
+share/emacs/${VERSION}/etc/images/package-menu/unmark.xpm
+share/emacs/${VERSION}/etc/images/package-menu/upgrade.pbm
+share/emacs/${VERSION}/etc/images/package-menu/upgrade.xpm
+share/emacs/${VERSION}/etc/images/package-menu/url.pbm
+share/emacs/${VERSION}/etc/images/package-menu/url.xpm
 share/emacs/${VERSION}/etc/images/paste.pbm
 share/emacs/${VERSION}/etc/images/paste.xpm
 share/emacs/${VERSION}/etc/images/preferences.pbm
@@ -877,6 +901,7 @@ share/emacs/${VERSION}/etc/images/symbols/star_half_16.pbm
 share/emacs/${VERSION}/etc/images/symbols/star_half_16.svg
 share/emacs/${VERSION}/etc/images/tabs/
 share/emacs/${VERSION}/etc/images/tabs/README
+share/emacs/${VERSION}/etc/images/tabs/close-modified.xpm
 share/emacs/${VERSION}/etc/images/tabs/close.xpm
 share/emacs/${VERSION}/etc/images/tabs/left-arrow.xpm
 share/emacs/${VERSION}/etc/images/tabs/new.xpm
@@ -955,6 +980,7 @@ share/emacs/${VERSION}/etc/org/csl/
 share/emacs/${VERSION}/etc/org/csl/README
 share/emacs/${VERSION}/etc/org/csl/chicago-author-date.csl
 share/emacs/${VERSION}/etc/org/csl/locales-en-US.xml
+share/emacs/${VERSION}/etc/package-autosuggest.eld
 share/emacs/${VERSION}/etc/package-keyring.gpg
 share/emacs/${VERSION}/etc/ps-prin0.ps
 share/emacs/${VERSION}/etc/ps-prin1.ps
@@ -975,6 +1001,12 @@ share/emacs/${VERSION}/etc/refcards/de-refcard.tex
 share/emacs/${VERSION}/etc/refcards/dired-ref.pdf
 share/emacs/${VERSION}/etc/refcards/dired-ref.tex
 share/emacs/${VERSION}/etc/refcards/emacsver.tex
+share/emacs/${VERSION}/etc/refcards/es-dired-ref.pdf
+share/emacs/${VERSION}/etc/refcards/es-dired-ref.tex
+share/emacs/${VERSION}/etc/refcards/es-refcard.pdf
+share/emacs/${VERSION}/etc/refcards/es-refcard.tex
+share/emacs/${VERSION}/etc/refcards/es-survival.pdf
+share/emacs/${VERSION}/etc/refcards/es-survival.tex
 share/emacs/${VERSION}/etc/refcards/fr-dired-ref.pdf
 share/emacs/${VERSION}/etc/refcards/fr-dired-ref.tex
 share/emacs/${VERSION}/etc/refcards/fr-refcard.pdf
@@ -1005,8 +1037,6 @@ share/emacs/${VERSION}/etc/refcards/sk-survival.pdf
 share/emacs/${VERSION}/etc/refcards/sk-survival.tex
 share/emacs/${VERSION}/etc/refcards/survival.pdf
 share/emacs/${VERSION}/etc/refcards/survival.tex
-share/emacs/${VERSION}/etc/refcards/vipcard.pdf
-share/emacs/${VERSION}/etc/refcards/vipcard.tex
 share/emacs/${VERSION}/etc/refcards/viperCard.pdf
 share/emacs/${VERSION}/etc/refcards/viperCard.tex
 share/emacs/${VERSION}/etc/rgb.txt
@@ -1025,6 +1055,7 @@ share/emacs/${VERSION}/etc/schema/dotnet-appconfig.rnc
 share/emacs/${VERSION}/etc/schema/dotnet-packages-config.rnc
 share/emacs/${VERSION}/etc/schema/dotnet-packages-props.rnc
 share/emacs/${VERSION}/etc/schema/dotnet-resx.rnc
+share/emacs/${VERSION}/etc/schema/dotnet-slnx.rnc
 share/emacs/${VERSION}/etc/schema/locate.rnc
 share/emacs/${VERSION}/etc/schema/msbuild.rnc
 share/emacs/${VERSION}/etc/schema/nuget.rnc
@@ -1087,6 +1118,7 @@ share/emacs/${VERSION}/etc/srecode/template.srt
 share/emacs/${VERSION}/etc/srecode/test.srt
 share/emacs/${VERSION}/etc/srecode/texi.srt
 share/emacs/${VERSION}/etc/srecode/wisent.srt
+share/emacs/${VERSION}/etc/symbol-releases.eld
 share/emacs/${VERSION}/etc/themes/
 share/emacs/${VERSION}/etc/themes/adwaita-theme.el
 share/emacs/${VERSION}/etc/themes/deeper-blue-theme.el
@@ -1105,6 +1137,7 @@ share/emacs/${VERSION}/etc/themes/modus-vivendi-deuteranopia-theme.el
 share/emacs/${VERSION}/etc/themes/modus-vivendi-theme.el
 share/emacs/${VERSION}/etc/themes/modus-vivendi-tinted-theme.el
 share/emacs/${VERSION}/etc/themes/modus-vivendi-tritanopia-theme.el
+share/emacs/${VERSION}/etc/themes/newcomers-presets-theme.el
 share/emacs/${VERSION}/etc/themes/tango-dark-theme.el
 share/emacs/${VERSION}/etc/themes/tango-theme.el
 share/emacs/${VERSION}/etc/themes/tsdh-dark-theme.el
@@ -1140,7 +1173,6 @@ share/emacs/${VERSION}/etc/tutorials/TUTORIAL.translators
 share/emacs/${VERSION}/etc/tutorials/TUTORIAL.uk
 share/emacs/${VERSION}/etc/tutorials/TUTORIAL.zh
 share/emacs/${VERSION}/etc/w32-feature.el
-share/emacs/${VERSION}/etc/yow.lines
 share/emacs/${VERSION}/lisp/
 share/emacs/${VERSION}/lisp/COPYING
 share/emacs/${VERSION}/lisp/README
@@ -1316,6 +1348,8 @@ share/emacs/${VERSION}/lisp/calendar/cal-x.el.gz
 share/emacs/${VERSION}/lisp/calendar/cal-x.elc
 share/emacs/${VERSION}/lisp/calendar/calendar.el.gz
 share/emacs/${VERSION}/lisp/calendar/calendar.elc
+share/emacs/${VERSION}/lisp/calendar/diary-icalendar.el.gz
+share/emacs/${VERSION}/lisp/calendar/diary-icalendar.elc
 share/emacs/${VERSION}/lisp/calendar/diary-lib.el.gz
 share/emacs/${VERSION}/lisp/calendar/diary-lib.elc
 share/emacs/${VERSION}/lisp/calendar/diary-loaddefs.el.gz
@@ -1324,6 +1358,20 @@ share/emacs/${VERSION}/lisp/calendar/holiday-loaddefs.el.gz
 share/emacs/${VERSION}/lisp/calendar/holiday-loaddefs.elc
 share/emacs/${VERSION}/lisp/calendar/holidays.el.gz
 share/emacs/${VERSION}/lisp/calendar/holidays.elc
+share/emacs/${VERSION}/lisp/calendar/icalendar-ast.el.gz
+share/emacs/${VERSION}/lisp/calendar/icalendar-ast.elc
+share/emacs/${VERSION}/lisp/calendar/icalendar-macs.el.gz
+share/emacs/${VERSION}/lisp/calendar/icalendar-macs.elc
+share/emacs/${VERSION}/lisp/calendar/icalendar-mode.el.gz
+share/emacs/${VERSION}/lisp/calendar/icalendar-mode.elc
+share/emacs/${VERSION}/lisp/calendar/icalendar-parser.el.gz
+share/emacs/${VERSION}/lisp/calendar/icalendar-parser.elc
+share/emacs/${VERSION}/lisp/calendar/icalendar-recur.el.gz
+share/emacs/${VERSION}/lisp/calendar/icalendar-recur.elc
+share/emacs/${VERSION}/lisp/calendar/icalendar-shortdoc.el.gz
+share/emacs/${VERSION}/lisp/calendar/icalendar-shortdoc.elc
+share/emacs/${VERSION}/lisp/calendar/icalendar-utils.el.gz
+share/emacs/${VERSION}/lisp/calendar/icalendar-utils.elc
 share/emacs/${VERSION}/lisp/calendar/icalendar.el.gz
 share/emacs/${VERSION}/lisp/calendar/icalendar.elc
 share/emacs/${VERSION}/lisp/calendar/iso8601.el.gz
@@ -1342,8 +1390,6 @@ share/emacs/${VERSION}/lisp/calendar/todo-mode.el.gz
 share/emacs/${VERSION}/lisp/calendar/todo-mode.elc
 share/emacs/${VERSION}/lisp/case-table.el.gz
 share/emacs/${VERSION}/lisp/case-table.elc
-share/emacs/${VERSION}/lisp/cdl.el.gz
-share/emacs/${VERSION}/lisp/cdl.elc
 share/emacs/${VERSION}/lisp/cedet/
 share/emacs/${VERSION}/lisp/cedet/cedet-cscope.el.gz
 share/emacs/${VERSION}/lisp/cedet/cedet-cscope.elc
@@ -1436,8 +1482,6 @@ share/emacs/${VERSION}/lisp/cedet/ede/util.el.gz
 share/emacs/${VERSION}/lisp/cedet/ede/util.elc
 share/emacs/${VERSION}/lisp/cedet/mode-local.el.gz
 share/emacs/${VERSION}/lisp/cedet/mode-local.elc
-share/emacs/${VERSION}/lisp/cedet/pulse.el.gz
-share/emacs/${VERSION}/lisp/cedet/pulse.elc
 share/emacs/${VERSION}/lisp/cedet/semantic/
 share/emacs/${VERSION}/lisp/cedet/semantic.el.gz
 share/emacs/${VERSION}/lisp/cedet/semantic.elc
@@ -1738,8 +1782,6 @@ share/emacs/${VERSION}/lisp/dynamic-setting.el.gz
 share/emacs/${VERSION}/lisp/dynamic-setting.elc
 share/emacs/${VERSION}/lisp/ebuff-menu.el.gz
 share/emacs/${VERSION}/lisp/ebuff-menu.elc
-share/emacs/${VERSION}/lisp/echistory.el.gz
-share/emacs/${VERSION}/lisp/echistory.elc
 share/emacs/${VERSION}/lisp/ecomplete.el.gz
 share/emacs/${VERSION}/lisp/ecomplete.elc
 share/emacs/${VERSION}/lisp/editorconfig-conf-mode.el.gz
@@ -1819,6 +1861,8 @@ share/emacs/${VERSION}/lisp/emacs-lisp/comp.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/comp.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/compat.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/compat.elc
+share/emacs/${VERSION}/lisp/emacs-lisp/cond-star.el.gz
+share/emacs/${VERSION}/lisp/emacs-lisp/cond-star.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/copyright.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/copyright.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/crm.el.gz
@@ -1855,8 +1899,8 @@ share/emacs/${VERSION}/lisp/emacs-lisp/eieio.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/eieio.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/eldoc.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/eldoc.elc
-share/emacs/${VERSION}/lisp/emacs-lisp/elint.el.gz
-share/emacs/${VERSION}/lisp/emacs-lisp/elint.elc
+share/emacs/${VERSION}/lisp/emacs-lisp/elisp-scope.el.gz
+share/emacs/${VERSION}/lisp/emacs-lisp/elisp-scope.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/elp.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/elp.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/ert-font-lock.el.gz
@@ -1913,10 +1957,10 @@ share/emacs/${VERSION}/lisp/emacs-lisp/nadvice.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/nadvice.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/oclosure.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/oclosure.elc
+share/emacs/${VERSION}/lisp/emacs-lisp/package-activate.el.gz
+share/emacs/${VERSION}/lisp/emacs-lisp/package-activate.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/package-vc.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/package-vc.elc
-share/emacs/${VERSION}/lisp/emacs-lisp/package-x.el.gz
-share/emacs/${VERSION}/lisp/emacs-lisp/package-x.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/package.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/package.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/pcase.el.gz
@@ -1943,6 +1987,8 @@ share/emacs/${VERSION}/lisp/emacs-lisp/seq.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/seq.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/shadow.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/shadow.elc
+share/emacs/${VERSION}/lisp/emacs-lisp/shortdoc-doc.el.gz
+share/emacs/${VERSION}/lisp/emacs-lisp/shortdoc-doc.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/shortdoc.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/shortdoc.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/shorthands.el.gz
@@ -1963,6 +2009,8 @@ share/emacs/${VERSION}/lisp/emacs-lisp/text-property-search.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/text-property-search.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/thunk.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/thunk.elc
+share/emacs/${VERSION}/lisp/emacs-lisp/timeout.el.gz
+share/emacs/${VERSION}/lisp/emacs-lisp/timeout.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/timer-list.el.gz
 share/emacs/${VERSION}/lisp/emacs-lisp/timer-list.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/timer.el.gz
@@ -2264,8 +2312,6 @@ share/emacs/${VERSION}/lisp/gnus/gnus-cloud.el.gz
 share/emacs/${VERSION}/lisp/gnus/gnus-cloud.elc
 share/emacs/${VERSION}/lisp/gnus/gnus-cus.el.gz
 share/emacs/${VERSION}/lisp/gnus/gnus-cus.elc
-share/emacs/${VERSION}/lisp/gnus/gnus-dbus.el.gz
-share/emacs/${VERSION}/lisp/gnus/gnus-dbus.elc
 share/emacs/${VERSION}/lisp/gnus/gnus-delay.el.gz
 share/emacs/${VERSION}/lisp/gnus/gnus-delay.elc
 share/emacs/${VERSION}/lisp/gnus/gnus-demon.el.gz
@@ -2641,8 +2687,6 @@ share/emacs/${VERSION}/lisp/json.el.gz
 share/emacs/${VERSION}/lisp/json.elc
 share/emacs/${VERSION}/lisp/jsonrpc.el.gz
 share/emacs/${VERSION}/lisp/jsonrpc.elc
-share/emacs/${VERSION}/lisp/kermit.el.gz
-share/emacs/${VERSION}/lisp/kermit.elc
 share/emacs/${VERSION}/lisp/keymap.el.gz
 share/emacs/${VERSION}/lisp/keymap.elc
 share/emacs/${VERSION}/lisp/kmacro.el.gz
@@ -2773,6 +2817,8 @@ share/emacs/${VERSION}/lisp/leim/quail/ZOZY.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/ZOZY.elc
 share/emacs/${VERSION}/lisp/leim/quail/arabic.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/arabic.elc
+share/emacs/${VERSION}/lisp/leim/quail/burmese.el.gz
+share/emacs/${VERSION}/lisp/leim/quail/burmese.elc
 share/emacs/${VERSION}/lisp/leim/quail/cham.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/cham.elc
 share/emacs/${VERSION}/lisp/leim/quail/compose.el.gz
@@ -2811,6 +2857,8 @@ share/emacs/${VERSION}/lisp/leim/quail/ipa-praat.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/ipa-praat.elc
 share/emacs/${VERSION}/lisp/leim/quail/ipa.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/ipa.elc
+share/emacs/${VERSION}/lisp/leim/quail/iroquoian.el.gz
+share/emacs/${VERSION}/lisp/leim/quail/iroquoian.elc
 share/emacs/${VERSION}/lisp/leim/quail/japanese.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/japanese.elc
 share/emacs/${VERSION}/lisp/leim/quail/lao.el.gz
@@ -2855,12 +2903,16 @@ share/emacs/${VERSION}/lisp/leim/quail/slovak.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/slovak.elc
 share/emacs/${VERSION}/lisp/leim/quail/symbol-ksc.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/symbol-ksc.elc
+share/emacs/${VERSION}/lisp/leim/quail/syriac.el.gz
+share/emacs/${VERSION}/lisp/leim/quail/syriac.elc
 share/emacs/${VERSION}/lisp/leim/quail/tamil-dvorak.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/tamil-dvorak.elc
 share/emacs/${VERSION}/lisp/leim/quail/thai.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/thai.elc
 share/emacs/${VERSION}/lisp/leim/quail/tibetan.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/tibetan.elc
+share/emacs/${VERSION}/lisp/leim/quail/tifinagh.el.gz
+share/emacs/${VERSION}/lisp/leim/quail/tifinagh.elc
 share/emacs/${VERSION}/lisp/leim/quail/tsang-b5.el.gz
 share/emacs/${VERSION}/lisp/leim/quail/tsang-b5.elc
 share/emacs/${VERSION}/lisp/leim/quail/tsang-cns.el.gz
@@ -2900,8 +2952,6 @@ share/emacs/${VERSION}/lisp/mail/flow-fill.el.gz
 share/emacs/${VERSION}/lisp/mail/flow-fill.elc
 share/emacs/${VERSION}/lisp/mail/footnote.el.gz
 share/emacs/${VERSION}/lisp/mail/footnote.elc
-share/emacs/${VERSION}/lisp/mail/hashcash.el.gz
-share/emacs/${VERSION}/lisp/mail/hashcash.elc
 share/emacs/${VERSION}/lisp/mail/ietf-drums-date.el.gz
 share/emacs/${VERSION}/lisp/mail/ietf-drums-date.elc
 share/emacs/${VERSION}/lisp/mail/ietf-drums.el.gz
@@ -3282,30 +3332,48 @@ share/emacs/${VERSION}/lisp/obsolete/autoload.el.gz
 share/emacs/${VERSION}/lisp/obsolete/autoload.elc
 share/emacs/${VERSION}/lisp/obsolete/bruce.el.gz
 share/emacs/${VERSION}/lisp/obsolete/bruce.elc
-share/emacs/${VERSION}/lisp/obsolete/cc-compat.el.gz
-share/emacs/${VERSION}/lisp/obsolete/cc-compat.elc
+share/emacs/${VERSION}/lisp/obsolete/cdl.el.gz
+share/emacs/${VERSION}/lisp/obsolete/cdl.elc
 share/emacs/${VERSION}/lisp/obsolete/cl-compat.el.gz
 share/emacs/${VERSION}/lisp/obsolete/cl-compat.elc
 share/emacs/${VERSION}/lisp/obsolete/cl.el.gz
 share/emacs/${VERSION}/lisp/obsolete/cl.elc
 share/emacs/${VERSION}/lisp/obsolete/crisp.el.gz
 share/emacs/${VERSION}/lisp/obsolete/crisp.elc
+share/emacs/${VERSION}/lisp/obsolete/echistory.el.gz
+share/emacs/${VERSION}/lisp/obsolete/echistory.elc
 share/emacs/${VERSION}/lisp/obsolete/eieio-compat.el.gz
 share/emacs/${VERSION}/lisp/obsolete/eieio-compat.elc
+share/emacs/${VERSION}/lisp/obsolete/elint.el.gz
+share/emacs/${VERSION}/lisp/obsolete/elint.elc
 share/emacs/${VERSION}/lisp/obsolete/eudcb-ph.el.gz
 share/emacs/${VERSION}/lisp/obsolete/eudcb-ph.elc
+share/emacs/${VERSION}/lisp/obsolete/gnus-dbus.el.gz
+share/emacs/${VERSION}/lisp/obsolete/gnus-dbus.elc
 share/emacs/${VERSION}/lisp/obsolete/gs.el.gz
 share/emacs/${VERSION}/lisp/obsolete/gs.elc
 share/emacs/${VERSION}/lisp/obsolete/gulp.el.gz
 share/emacs/${VERSION}/lisp/obsolete/gulp.elc
+share/emacs/${VERSION}/lisp/obsolete/hashcash.el.gz
+share/emacs/${VERSION}/lisp/obsolete/hashcash.elc
 share/emacs/${VERSION}/lisp/obsolete/html2text.el.gz
 share/emacs/${VERSION}/lisp/obsolete/html2text.elc
-share/emacs/${VERSION}/lisp/obsolete/info-edit.el.gz
-share/emacs/${VERSION}/lisp/obsolete/info-edit.elc
+share/emacs/${VERSION}/lisp/obsolete/idlw-complete-structtag.el.gz
+share/emacs/${VERSION}/lisp/obsolete/idlw-complete-structtag.elc
+share/emacs/${VERSION}/lisp/obsolete/idlw-help.el.gz
+share/emacs/${VERSION}/lisp/obsolete/idlw-help.elc
+share/emacs/${VERSION}/lisp/obsolete/idlw-shell.el.gz
+share/emacs/${VERSION}/lisp/obsolete/idlw-shell.elc
+share/emacs/${VERSION}/lisp/obsolete/idlw-toolbar.el.gz
+share/emacs/${VERSION}/lisp/obsolete/idlw-toolbar.elc
+share/emacs/${VERSION}/lisp/obsolete/idlwave.el.gz
+share/emacs/${VERSION}/lisp/obsolete/idlwave.elc
 share/emacs/${VERSION}/lisp/obsolete/inversion.el.gz
 share/emacs/${VERSION}/lisp/obsolete/inversion.elc
 share/emacs/${VERSION}/lisp/obsolete/iswitchb.el.gz
 share/emacs/${VERSION}/lisp/obsolete/iswitchb.elc
+share/emacs/${VERSION}/lisp/obsolete/kermit.el.gz
+share/emacs/${VERSION}/lisp/obsolete/kermit.elc
 share/emacs/${VERSION}/lisp/obsolete/landmark.el.gz
 share/emacs/${VERSION}/lisp/obsolete/landmark.elc
 share/emacs/${VERSION}/lisp/obsolete/linum.el.gz
@@ -3316,8 +3384,6 @@ share/emacs/${VERSION}/lisp/obsolete/makesum.el.gz
 share/emacs/${VERSION}/lisp/obsolete/makesum.elc
 share/emacs/${VERSION}/lisp/obsolete/mantemp.el.gz
 share/emacs/${VERSION}/lisp/obsolete/mantemp.elc
-share/emacs/${VERSION}/lisp/obsolete/meese.el.gz
-share/emacs/${VERSION}/lisp/obsolete/meese.elc
 share/emacs/${VERSION}/lisp/obsolete/messcompat.el
 share/emacs/${VERSION}/lisp/obsolete/metamail.el.gz
 share/emacs/${VERSION}/lisp/obsolete/metamail.elc
@@ -3327,8 +3393,8 @@ share/emacs/${VERSION}/lisp/obsolete/netrc.el.gz
 share/emacs/${VERSION}/lisp/obsolete/netrc.elc
 share/emacs/${VERSION}/lisp/obsolete/nnir.el.gz
 share/emacs/${VERSION}/lisp/obsolete/nnir.elc
-share/emacs/${VERSION}/lisp/obsolete/otodo-mode.el.gz
-share/emacs/${VERSION}/lisp/obsolete/otodo-mode.elc
+share/emacs/${VERSION}/lisp/obsolete/package-x.el.gz
+share/emacs/${VERSION}/lisp/obsolete/package-x.elc
 share/emacs/${VERSION}/lisp/obsolete/pgg-def.el.gz
 share/emacs/${VERSION}/lisp/obsolete/pgg-def.elc
 share/emacs/${VERSION}/lisp/obsolete/pgg-gpg.el.gz
@@ -3345,8 +3411,6 @@ share/emacs/${VERSION}/lisp/obsolete/ps-def.el.gz
 share/emacs/${VERSION}/lisp/obsolete/ps-def.elc
 share/emacs/${VERSION}/lisp/obsolete/quickurl.el.gz
 share/emacs/${VERSION}/lisp/obsolete/quickurl.elc
-share/emacs/${VERSION}/lisp/obsolete/rcompile.el.gz
-share/emacs/${VERSION}/lisp/obsolete/rcompile.elc
 share/emacs/${VERSION}/lisp/obsolete/rfc2368.el.gz
 share/emacs/${VERSION}/lisp/obsolete/rfc2368.elc
 share/emacs/${VERSION}/lisp/obsolete/rlogin.el.gz
@@ -3355,10 +3419,6 @@ share/emacs/${VERSION}/lisp/obsolete/sb-image.el.gz
 share/emacs/${VERSION}/lisp/obsolete/sb-image.elc
 share/emacs/${VERSION}/lisp/obsolete/starttls.el.gz
 share/emacs/${VERSION}/lisp/obsolete/starttls.elc
-share/emacs/${VERSION}/lisp/obsolete/sup-mouse.el.gz
-share/emacs/${VERSION}/lisp/obsolete/sup-mouse.elc
-share/emacs/${VERSION}/lisp/obsolete/terminal.el.gz
-share/emacs/${VERSION}/lisp/obsolete/terminal.elc
 share/emacs/${VERSION}/lisp/obsolete/thumbs.el.gz
 share/emacs/${VERSION}/lisp/obsolete/thumbs.elc
 share/emacs/${VERSION}/lisp/obsolete/tls.el.gz
@@ -3379,20 +3439,14 @@ share/emacs/${VERSION}/lisp/obsolete/url-ns.el.gz
 share/emacs/${VERSION}/lisp/obsolete/url-ns.elc
 share/emacs/${VERSION}/lisp/obsolete/vc-arch.el.gz
 share/emacs/${VERSION}/lisp/obsolete/vc-arch.elc
+share/emacs/${VERSION}/lisp/obsolete/vc-dav.el.gz
+share/emacs/${VERSION}/lisp/obsolete/vc-dav.elc
 share/emacs/${VERSION}/lisp/obsolete/vc-mtn.el.gz
 share/emacs/${VERSION}/lisp/obsolete/vc-mtn.elc
-share/emacs/${VERSION}/lisp/obsolete/vi.el.gz
-share/emacs/${VERSION}/lisp/obsolete/vi.elc
-share/emacs/${VERSION}/lisp/obsolete/vip.el.gz
-share/emacs/${VERSION}/lisp/obsolete/vip.elc
 share/emacs/${VERSION}/lisp/obsolete/vt-control.el.gz
 share/emacs/${VERSION}/lisp/obsolete/vt-control.elc
 share/emacs/${VERSION}/lisp/obsolete/vt100-led.el.gz
 share/emacs/${VERSION}/lisp/obsolete/vt100-led.elc
-share/emacs/${VERSION}/lisp/obsolete/ws-mode.el.gz
-share/emacs/${VERSION}/lisp/obsolete/ws-mode.elc
-share/emacs/${VERSION}/lisp/obsolete/yow.el.gz
-share/emacs/${VERSION}/lisp/obsolete/yow.elc
 share/emacs/${VERSION}/lisp/org/
 share/emacs/${VERSION}/lisp/org/ob-C.el.gz
 share/emacs/${VERSION}/lisp/org/ob-C.elc
@@ -3408,6 +3462,8 @@ share/emacs/${VERSION}/lisp/org/ob-comint.el.gz
 share/emacs/${VERSION}/lisp/org/ob-comint.elc
 share/emacs/${VERSION}/lisp/org/ob-core.el.gz
 share/emacs/${VERSION}/lisp/org/ob-core.elc
+share/emacs/${VERSION}/lisp/org/ob-csharp.el.gz
+share/emacs/${VERSION}/lisp/org/ob-csharp.elc
 share/emacs/${VERSION}/lisp/org/ob-css.el.gz
 share/emacs/${VERSION}/lisp/org/ob-css.elc
 share/emacs/${VERSION}/lisp/org/ob-ditaa.el.gz
@@ -3857,16 +3913,6 @@ share/emacs/${VERSION}/lisp/progmodes/hideshow.el.gz
 share/emacs/${VERSION}/lisp/progmodes/hideshow.elc
 share/emacs/${VERSION}/lisp/progmodes/icon.el.gz
 share/emacs/${VERSION}/lisp/progmodes/icon.elc
-share/emacs/${VERSION}/lisp/progmodes/idlw-complete-structtag.el.gz
-share/emacs/${VERSION}/lisp/progmodes/idlw-complete-structtag.elc
-share/emacs/${VERSION}/lisp/progmodes/idlw-help.el.gz
-share/emacs/${VERSION}/lisp/progmodes/idlw-help.elc
-share/emacs/${VERSION}/lisp/progmodes/idlw-shell.el.gz
-share/emacs/${VERSION}/lisp/progmodes/idlw-shell.elc
-share/emacs/${VERSION}/lisp/progmodes/idlw-toolbar.el.gz
-share/emacs/${VERSION}/lisp/progmodes/idlw-toolbar.elc
-share/emacs/${VERSION}/lisp/progmodes/idlwave.el.gz
-share/emacs/${VERSION}/lisp/progmodes/idlwave.elc
 share/emacs/${VERSION}/lisp/progmodes/inf-lisp.el.gz
 share/emacs/${VERSION}/lisp/progmodes/inf-lisp.elc
 share/emacs/${VERSION}/lisp/progmodes/java-ts-mode.el.gz
@@ -3877,6 +3923,8 @@ share/emacs/${VERSION}/lisp/progmodes/json-ts-mode.el.gz
 share/emacs/${VERSION}/lisp/progmodes/json-ts-mode.elc
 share/emacs/${VERSION}/lisp/progmodes/ld-script.el.gz
 share/emacs/${VERSION}/lisp/progmodes/ld-script.elc
+share/emacs/${VERSION}/lisp/progmodes/lua-mode.el.gz
+share/emacs/${VERSION}/lisp/progmodes/lua-mode.elc
 share/emacs/${VERSION}/lisp/progmodes/lua-ts-mode.el.gz
 share/emacs/${VERSION}/lisp/progmodes/lua-ts-mode.elc
 share/emacs/${VERSION}/lisp/progmodes/m4-mode.el.gz
@@ -3953,6 +4001,8 @@ share/emacs/${VERSION}/lisp/ps-print.el.gz
 share/emacs/${VERSION}/lisp/ps-print.elc
 share/emacs/${VERSION}/lisp/ps-samp.el.gz
 share/emacs/${VERSION}/lisp/ps-samp.elc
+share/emacs/${VERSION}/lisp/pulse.el.gz
+share/emacs/${VERSION}/lisp/pulse.elc
 share/emacs/${VERSION}/lisp/recentf.el.gz
 share/emacs/${VERSION}/lisp/recentf.elc
 share/emacs/${VERSION}/lisp/rect.el.gz
@@ -3971,6 +4021,8 @@ share/emacs/${VERSION}/lisp/reveal.el.gz
 share/emacs/${VERSION}/lisp/reveal.elc
 share/emacs/${VERSION}/lisp/rfn-eshadow.el.gz
 share/emacs/${VERSION}/lisp/rfn-eshadow.elc
+share/emacs/${VERSION}/lisp/ring-bell-fns.el.gz
+share/emacs/${VERSION}/lisp/ring-bell-fns.elc
 share/emacs/${VERSION}/lisp/rot13.el.gz
 share/emacs/${VERSION}/lisp/rot13.elc
 share/emacs/${VERSION}/lisp/rtree.el.gz
@@ -3989,6 +4041,8 @@ share/emacs/${VERSION}/lisp/scroll-lock.el.gz
 share/emacs/${VERSION}/lisp/scroll-lock.elc
 share/emacs/${VERSION}/lisp/select.el.gz
 share/emacs/${VERSION}/lisp/select.elc
+share/emacs/${VERSION}/lisp/send-to.el.gz
+share/emacs/${VERSION}/lisp/send-to.elc
 share/emacs/${VERSION}/lisp/server.el.gz
 share/emacs/${VERSION}/lisp/server.elc
 share/emacs/${VERSION}/lisp/ses.el.gz
@@ -4022,6 +4076,10 @@ share/emacs/${VERSION}/lisp/subr.el.gz
 share/emacs/${VERSION}/lisp/subr.elc
 share/emacs/${VERSION}/lisp/svg.el.gz
 share/emacs/${VERSION}/lisp/svg.elc
+share/emacs/${VERSION}/lisp/system-sleep.el.gz
+share/emacs/${VERSION}/lisp/system-sleep.elc
+share/emacs/${VERSION}/lisp/system-taskbar.el.gz
+share/emacs/${VERSION}/lisp/system-taskbar.elc
 share/emacs/${VERSION}/lisp/t-mouse.el.gz
 share/emacs/${VERSION}/lisp/t-mouse.elc
 share/emacs/${VERSION}/lisp/tab-bar.el.gz
@@ -4090,6 +4148,8 @@ share/emacs/${VERSION}/lisp/term/vt100.el.gz
 share/emacs/${VERSION}/lisp/term/vt100.elc
 share/emacs/${VERSION}/lisp/term/vt200.el.gz
 share/emacs/${VERSION}/lisp/term/vt200.elc
+share/emacs/${VERSION}/lisp/term/w32-nt.el.gz
+share/emacs/${VERSION}/lisp/term/w32-nt.elc
 share/emacs/${VERSION}/lisp/term/w32-win.el.gz
 share/emacs/${VERSION}/lisp/term/w32-win.elc
 share/emacs/${VERSION}/lisp/term/w32console.el.gz
@@ -4135,8 +4195,14 @@ share/emacs/${VERSION}/lisp/textmodes/less-css-mode.el.gz
 share/emacs/${VERSION}/lisp/textmodes/less-css-mode.elc
 share/emacs/${VERSION}/lisp/textmodes/makeinfo.el.gz
 share/emacs/${VERSION}/lisp/textmodes/makeinfo.elc
+share/emacs/${VERSION}/lisp/textmodes/markdown-ts-mode-x.el.gz
+share/emacs/${VERSION}/lisp/textmodes/markdown-ts-mode-x.elc
+share/emacs/${VERSION}/lisp/textmodes/markdown-ts-mode.el.gz
+share/emacs/${VERSION}/lisp/textmodes/markdown-ts-mode.elc
 share/emacs/${VERSION}/lisp/textmodes/mhtml-mode.el.gz
 share/emacs/${VERSION}/lisp/textmodes/mhtml-mode.elc
+share/emacs/${VERSION}/lisp/textmodes/mhtml-ts-mode.el.gz
+share/emacs/${VERSION}/lisp/textmodes/mhtml-ts-mode.elc
 share/emacs/${VERSION}/lisp/textmodes/nroff-mode.el.gz
 share/emacs/${VERSION}/lisp/textmodes/nroff-mode.elc
 share/emacs/${VERSION}/lisp/textmodes/page-ext.el.gz
@@ -4238,8 +4304,12 @@ share/emacs/${VERSION}/lisp/transient.el.gz
 share/emacs/${VERSION}/lisp/transient.elc
 share/emacs/${VERSION}/lisp/tree-widget.el.gz
 share/emacs/${VERSION}/lisp/tree-widget.elc
+share/emacs/${VERSION}/lisp/treesit-x.el.gz
+share/emacs/${VERSION}/lisp/treesit-x.elc
 share/emacs/${VERSION}/lisp/treesit.el.gz
 share/emacs/${VERSION}/lisp/treesit.elc
+share/emacs/${VERSION}/lisp/tty-tip.el.gz
+share/emacs/${VERSION}/lisp/tty-tip.elc
 share/emacs/${VERSION}/lisp/tutorial.el.gz
 share/emacs/${VERSION}/lisp/tutorial.elc
 share/emacs/${VERSION}/lisp/type-break.el.gz
@@ -4385,8 +4455,6 @@ share/emacs/${VERSION}/lisp/vc/vc-bzr.el.gz
 share/emacs/${VERSION}/lisp/vc/vc-bzr.elc
 share/emacs/${VERSION}/lisp/vc/vc-cvs.el.gz
 share/emacs/${VERSION}/lisp/vc/vc-cvs.elc
-share/emacs/${VERSION}/lisp/vc/vc-dav.el.gz
-share/emacs/${VERSION}/lisp/vc/vc-dav.elc
 share/emacs/${VERSION}/lisp/vc/vc-dir.el.gz
 share/emacs/${VERSION}/lisp/vc/vc-dir.elc
 share/emacs/${VERSION}/lisp/vc/vc-dispatcher.el.gz
@@ -4437,6 +4505,8 @@ share/emacs/${VERSION}/lisp/windmove.el.gz
 share/emacs/${VERSION}/lisp/windmove.elc
 share/emacs/${VERSION}/lisp/window-tool-bar.el.gz
 share/emacs/${VERSION}/lisp/window-tool-bar.elc
+share/emacs/${VERSION}/lisp/window-x.el.gz
+share/emacs/${VERSION}/lisp/window-x.elc
 share/emacs/${VERSION}/lisp/window.el.gz
 share/emacs/${VERSION}/lisp/window.elc
 share/emacs/${VERSION}/lisp/winner.el.gz
