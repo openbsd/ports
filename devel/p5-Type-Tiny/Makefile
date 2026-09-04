@@ -1,6 +1,6 @@
 COMMENT =	tiny, yet Moo(se)-compatible type constraint
 
-DISTNAME =	Type-Tiny-2.008006
+DISTNAME =	Type-Tiny-2.010001
 CPAN_AUTHOR =	TOBYINK
 
 CATEGORIES =	devel
@@ -14,7 +14,8 @@ RUN_DEPENDS =		devel/p5-Class-XSAccessor>=1.17 \
 			devel/p5-Devel-LexAlias>=0.05 \
 			devel/p5-Devel-StackTrace \
 			devel/p5-Exporter-Tiny>=1.0060 \
-			devel/p5-Ref-Util-XS>=0.100
+			devel/p5-Ref-Util-XS>=0.100 \
+			devel/p5-namespace-clean
 TEST_DEPENDS =		devel/p5-Class-InsideOut \
 			devel/p5-Devel-Hide \
 			devel/p5-Devel-Refcount \
