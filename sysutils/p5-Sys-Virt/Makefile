@@ -1,6 +1,6 @@
 COMMENT=		represent and manage a libvirt hypervisor connection
 
-V=			12.6.0
+V=			12.7.0
 DISTNAME=		Sys-Virt-v${V}
 PKGNAME=		p5-Sys-Virt-${V}
 
