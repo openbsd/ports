@@ -279,13 +279,9 @@ share/icons/rawtherapee/scalable/apps/square-toggle-theme-off-narrow.svg
 share/icons/rawtherapee/scalable/apps/square-toggle-theme-on-narrow.svg
 share/icons/rawtherapee/scalable/apps/square-toggle-white-off-narrow.svg
 share/icons/rawtherapee/scalable/apps/square-toggle-white-on-narrow.svg
-share/icons/rawtherapee/scalable/apps/star-gold-hollow-narrow.svg
 share/icons/rawtherapee/scalable/apps/star-gold-hollow-small.svg
-share/icons/rawtherapee/scalable/apps/star-gold-narrow.svg
 share/icons/rawtherapee/scalable/apps/star-gold-small.svg
-share/icons/rawtherapee/scalable/apps/star-hollow-narrow.svg
 share/icons/rawtherapee/scalable/apps/star-hollow-small.svg
-share/icons/rawtherapee/scalable/apps/star-narrow.svg
 share/icons/rawtherapee/scalable/apps/star-small.svg
 share/icons/rawtherapee/scalable/apps/star.svg
 share/icons/rawtherapee/scalable/apps/template-16.svg
@@ -587,8 +583,10 @@ share/rawtherapee/languages/English (US)
 share/rawtherapee/languages/Espanol (Castellano)
 share/rawtherapee/languages/Espanol (Latin America)
 share/rawtherapee/languages/Francais
+share/rawtherapee/languages/Hebrew
 share/rawtherapee/languages/Italiano
 share/rawtherapee/languages/Japanese
+share/rawtherapee/languages/Korean
 share/rawtherapee/languages/LICENSE
 share/rawtherapee/languages/Magyar
 share/rawtherapee/languages/Nederlands

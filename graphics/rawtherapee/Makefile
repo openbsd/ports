@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		RAW image processing application
 
-V = 			5.12
+V = 			5.13
 DISTNAME =		rawtherapee-${V}
 
 CATEGORIES =		graphics
@@ -16,7 +16,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 atk-1.0 atkmm-1.6 c cairo cairo-gobject cairomm-1.0
-WANTLIB += canberra canberra-gtk3 exiv2 expat fftw3f gdk-3 gdk_pixbuf-2.0
+WANTLIB += canberra canberra-gtk3 exiv2 expat fftw3f fmt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz intl iptcdata jpeg jxl
 WANTLIB += jxl_threads lcms2 lensfun m pango-1.0 pangocairo-1.0 pangomm-1.4
@@ -35,6 +35,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/libcanberra,-gtk3 \
+			devel/fmt \
 			graphics/exiv2 \
 			graphics/libiptcdata \
 			graphics/lcms2 \
@@ -47,6 +48,7 @@ LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 CONFIGURE_ARGS =	-DBUILD_SHARED=ON \
 			-DOPTION_OMP=OFF \
 			-DWITH_SYSTEM_LIBRAW=ON \
+			-DWITH_SYSTEM_FMT=ON \
 			-Wno-dev
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib
