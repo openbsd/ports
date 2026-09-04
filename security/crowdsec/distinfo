@@ -1,4 +1,4 @@
-SHA256 (crowdsec-v1.8.0.zip) = CFEryXHAKN8wpqcaUVC5E97h5x4w1uQ7q+x6GnMNI+w=
+SHA256 (crowdsec-v1.8.1.zip) = MVq5zi8WBfi2N85QKjZHKJ6xLM2mZfpVNjx8eKtYY/k=
 SHA256 (go_modules/ariga.io/atlas/@v/v0.36.2-0.20250730182955-2c6300d0a3e1.mod) = LqjpI/4iXrLg40JIJoghGX3fbfMgAfG0eebAxZj//Hc=
 SHA256 (go_modules/ariga.io/atlas/@v/v1.1.0.mod) = 0laVy0LXTHtjOGD6//yaz/uvEkhN0JCiScMUPMHifl8=
 SHA256 (go_modules/ariga.io/atlas/@v/v1.1.0.zip) = HoFh2R+PByBO2zX+QEjPdWBeN431v9xgtqkXTXpX6DM=
@@ -1382,7 +1382,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v6/@v/v6.3.3.zip) = zHYEZgQ
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SIZE (crowdsec-v1.8.0.zip) = 7127013
+SIZE (crowdsec-v1.8.1.zip) = 7130932
 SIZE (go_modules/ariga.io/atlas/@v/v0.36.2-0.20250730182955-2c6300d0a3e1.mod) = 953
 SIZE (go_modules/ariga.io/atlas/@v/v1.1.0.mod) = 1044
 SIZE (go_modules/ariga.io/atlas/@v/v1.1.0.zip) = 529477
