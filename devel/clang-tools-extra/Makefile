@@ -12,8 +12,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT=	Clang extra tools
 
-LLVM_V =	22.1.6
-REVISION =	1
+LLVM_V =	22.1.8
 DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
 
