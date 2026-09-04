@@ -32,6 +32,7 @@ BUILD_DEPENDS=		devel/protobuf
 # No tests in sources on PyPi
 NO_TEST=		Yes
 
+# https://github.com/protocolbuffers/protobuf/issues/29578
 post-extract:
 	cp ${FILESDIR}/port.c ${WRKSRC}/upb/port/
 
