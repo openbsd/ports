@@ -1,34 +1,37 @@
-COMMENT =		command line tool for controlling OpenShift clusters
+COMMENT =	command line tool for controlling OpenShift clusters
 
-GH_ACCOUNT =		openshift
-GH_PROJECT =		oc
-VERSION =		4.7.7
-GH_COMMIT =		2513fdbb36e2ddf13bc0b17460151c03eb3a3547
-DISTNAME =		oc-${VERSION}
+COMMIT =	062bc5449c49
+DATE =		20260522200906
+VERSION =	4.22.0
 
-CATEGORIES =		sysutils
+MODGO_MODNAME =	github.com/openshift/oc
+MODGO_VERSION =	v0.0.0-alpha.0.0.${DATE}-${COMMIT}
 
-HOMEPAGE =		https://www.openshift.com
+DISTNAME =	oc-${MODGO_VERSION}
+PKGNAME =	oc-${VERSION}
 
-MAINTAINER =		Luca De Pandis <luca.depandis@protonmail.com>
+CATEGORIES =	sysutils
+
+HOMEPAGE =	https://www.openshift.com
 
 # Apache License 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c pthread
+WANTLIB += c gpgme pthread
 
+LIB_DEPENDS +=	security/gpgme
 
-MODULES =		lang/go
+MODULES =	lang/go
 
-GO_PKGNAME =		github.com/openshift/oc
-WRKSRC =		${MODGO_WORKSPACE}/src/${GO_PKGNAME}
-ALL_TARGET =		${GO_PKGNAME}/cmd/oc
+GO_PKGNAME = github.com/openshift/oc
 
 MODGO_LDFLAGS += \
-	-X ${GO_PKGNAME}/pkg/version.commitFromGit=${GH_COMMIT} \
+	-X ${GO_PKGNAME}/pkg/version.commitFromGit=${COMMIT} \
 	-X ${GO_PKGNAME}/pkg/version.versionFromGit=${VERSION} \
 	-X ${GO_PKGNAME}/pkg/version.majorFromGit=${VERSION:R:R} \
 	-X ${GO_PKGNAME}/pkg/version.minorFromGit=${VERSION:R:E} \
 	-X ${GO_PKGNAME}/pkg/version.gitTreeState=clean
+
+.include <modules.inc>
 
 .include <bsd.port.mk>
