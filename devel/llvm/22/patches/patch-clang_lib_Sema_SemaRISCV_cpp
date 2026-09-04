@@ -1,0 +1,33 @@
+- [RISCV] Use correct type for (u)int64_t in RVV intrinsics on OpenBSD
+  fd6d7a608909dc4ecea57e0155042d16f7b4e61a
+
+Index: clang/lib/Sema/SemaRISCV.cpp
+--- clang/lib/Sema/SemaRISCV.cpp.orig
++++ clang/lib/Sema/SemaRISCV.cpp
+@@ -132,10 +132,24 @@ static QualType RVVType2Qual(ASTContext &Context, cons
+     QT = Context.BoolTy;
+     break;
+   case ScalarTypeKind::SignedInteger:
+-    QT = Context.getIntTypeForBitwidth(Type->getElementBitwidth(), true);
++    // getIntTypeForBitwidth() picks a type purely by matching bit width, so
++    // on LP64 targets a 64-bit element would resolve to "long" even if the
++    // target's actual int64_t is "long long" (e.g. OpenBSD). Go through the
++    // target's Int64Type so this matches int64_t/uint64_t.
++    if (Type->getElementBitwidth() == 64)
++      QT = Context.getTargetInfo().getInt64Type() == TargetInfo::SignedLong
++               ? Context.LongTy
++               : Context.LongLongTy;
++    else
++      QT = Context.getIntTypeForBitwidth(Type->getElementBitwidth(), true);
+     break;
+   case ScalarTypeKind::UnsignedInteger:
+-    QT = Context.getIntTypeForBitwidth(Type->getElementBitwidth(), false);
++    if (Type->getElementBitwidth() == 64)
++      QT = Context.getTargetInfo().getInt64Type() == TargetInfo::SignedLong
++               ? Context.UnsignedLongTy
++               : Context.UnsignedLongLongTy;
++    else
++      QT = Context.getIntTypeForBitwidth(Type->getElementBitwidth(), false);
+     break;
+   case ScalarTypeKind::FloatE4M3:
+   case ScalarTypeKind::FloatE5M2:

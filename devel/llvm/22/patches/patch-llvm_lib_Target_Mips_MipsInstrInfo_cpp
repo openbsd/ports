@@ -1,0 +1,17 @@
+- [Mips] Fix getInstSizeInBytes for instructions with delay slots
+  a97f512d71574c0b9adc9bc6216909387499e0e8
+
+Index: llvm/lib/Target/Mips/MipsInstrInfo.cpp
+--- llvm/lib/Target/Mips/MipsInstrInfo.cpp.orig
++++ llvm/lib/Target/Mips/MipsInstrInfo.cpp
+@@ -708,6 +708,10 @@ bool MipsInstrInfo::isAsCheapAsAMove(const MachineInst
+ unsigned MipsInstrInfo::getInstSizeInBytes(const MachineInstr &MI) const {
+   switch (MI.getOpcode()) {
+   default:
++    if (MI.hasDelaySlot()) {
++      // instr + 1 nop
++      return MI.getDesc().getSize() + 4;
++    }
+     return MI.getDesc().getSize();
+   case  TargetOpcode::INLINEASM:
+   case  TargetOpcode::INLINEASM_BR: {       // Inline Asm: Variable size.
