@@ -1,0 +1,29 @@
+From 04979429b8e46db7304660264c22e5ac7c57fd1b Mon Sep 17 00:00:00 2001
+From: Jan Engelhardt <jengelh@inai.de>
+Date: Tue, 1 Sep 2026 14:06:16 +0000
+Subject: [PATCH] build: resolve build failure on libc++'s coarse timestamps
+
+Index: exch/ews/serialization.cpp
+--- exch/ews/serialization.cpp.orig
++++ exch/ews/serialization.cpp
+@@ -118,7 +118,7 @@ XMLError ExplicitConvert<EWS::time_point>::deserialize
+ 	if (timestamp == static_cast<time_t>(-1))
+ 		return tinyxml2::XML_CAN_NOT_CONVERT_TEXT;
+ 	value = clock::from_time_t(timestamp);
+-	value += std::chrono::duration_cast<time_point::duration>(std::chrono::duration<double>(seconds));
++	value += std::chrono::duration_cast<time_point::duration>(std::chrono::duration<double>(seconds)); /* LIBCXX-GRANULARITY */
+ 	return tinyxml2::XML_SUCCESS;
+ }
+ 
+@@ -375,8 +375,10 @@ sTimePoint::sTimePoint(const tinyxml2::XMLElement *xml
+ 
+ void sTimePoint::serialize(XMLElement *xml) const
+ {
++	auto tmo = std::chrono::time_point_cast<time_point::duration>(time - offset); /* LIBCXX-GRANULARITY */
++	auto timestamp = clock::to_time_t(tmo);
++
+ 	tm t;
+-	auto timestamp = clock::to_time_t(time - offset);
+ 	if (gmtime_r(&timestamp, &t) == nullptr)
+ 		t = {};
+ 	auto frac = time.time_since_epoch() % std::chrono::seconds(1);

@@ -1,0 +1,40 @@
+From 04979429b8e46db7304660264c22e5ac7c57fd1b Mon Sep 17 00:00:00 2001
+From: Jan Engelhardt <jengelh@inai.de>
+Date: Tue, 1 Sep 2026 14:06:16 +0000
+Subject: [PATCH] build: resolve build failure on libc++'s coarse timestamps
+
+Index: lib/mapi/rop_util.cpp
+--- lib/mapi/rop_util.cpp.orig
++++ lib/mapi/rop_util.cpp
+@@ -156,7 +156,13 @@ uint64_t rop_util_unix_to_nttime(time_t unix_time)
+ }
+ 
+ uint64_t rop_util_unix_to_nttime(std::chrono::system_clock::time_point unix_time)
+-{return (std::chrono::duration_cast<nt_dur>(unix_time.time_since_epoch())+nt_offset).count();}
++{
++	/*
++	 * LIBCXX-GRANULARITY: time_point has a coarser resolution than
++	 * intermediate results, and so needs an extra duration_cast<>.
++	 */
++	return (std::chrono::duration_cast<nt_dur>(unix_time.time_since_epoch()) + nt_offset).count();
++}
+ 
+ time_t rop_util_nttime_to_unix(uint64_t nt_time)
+ {
+@@ -182,12 +188,14 @@ time_t rop_util_nttime_to_unix(uint64_t nt_time)
+ 
+ std::chrono::system_clock::time_point rop_util_nttime_to_unix2(uint64_t nt_time)
+ {
+-	return std::chrono::system_clock::time_point(std::chrono::duration_cast<std::chrono::system_clock::duration>(nt_dur(nt_time) - nt_offset));
++	using namespace std::chrono;
++	return system_clock::time_point(duration_cast<system_clock::duration>(nt_dur(nt_time) - nt_offset)); /* LIBCXX-GRANULARITY */
+ }
+ 
+ std::chrono::system_clock::time_point rop_util_rtime_to_unix2(uint32_t t)
+ {
+-	return std::chrono::system_clock::time_point(std::chrono::duration_cast<std::chrono::system_clock::duration>(nt_dur(rop_util_rtime_to_nttime(t)) - nt_offset));
++	using namespace std::chrono;
++	return system_clock::time_point(duration_cast<system_clock::duration>(nt_dur(rop_util_rtime_to_nttime(t)) - nt_offset)); /* LIBCXX-GRANULARITY */
+ }
+ 
+ time_t rop_util_rtime_to_unix(uint32_t t)
