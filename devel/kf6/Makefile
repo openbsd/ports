@@ -88,6 +88,10 @@ SUBDIR += kdav
 # PackageKit for the Qt 6 library.
 SUBDIR += frameworkintegration
 
+# XXX keep in sync
+# life outside of x11/kde-plasma
+# x11/oxygen-icons
+
 # corresponding software isn't ported
 #SUBDIR += modemmanager-qt
 #SUBDIR += network-manager-qt
