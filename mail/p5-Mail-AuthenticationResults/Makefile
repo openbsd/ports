@@ -1,6 +1,7 @@
 COMMENT =	object oriented Authentication-Results headers
 
-DISTNAME =	Mail-AuthenticationResults-2.20250709
+DISTNAME =	Mail-AuthenticationResults-2.20260216
+CPAN_AUTHOR =	MBRADSHAW
 
 CATEGORIES =	mail
 
