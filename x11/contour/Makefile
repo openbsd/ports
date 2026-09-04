@@ -46,6 +46,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			multimedia/gstreamer1/plugins-good
 
 CONFIGURE_ARGS =	-DQt5_DIR=${LOCALBASE}/lib/qt5/cmake/Qt5 \
+			-DCCACHE=OFF \
 			-DCONTOUR_QT_VERSION=5
 
 .include <bsd.port.mk>
