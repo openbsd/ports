@@ -1,6 +1,6 @@
 COMMENT =	distribution of modules to handle locale codes
 
-DISTNAME =	Locale-Codes-3.90
+DISTNAME =	Locale-Codes-3.91
 CPAN_AUTHOR =	SBECK
 
 CATEGORIES =	devel
