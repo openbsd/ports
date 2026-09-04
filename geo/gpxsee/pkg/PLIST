@@ -24,13 +24,6 @@ share/gpxsee/style/COROS/sprite@2x.png
 share/gpxsee/style/COROS/style.json
 share/gpxsee/style/Mapsforge/
 share/gpxsee/style/Mapsforge/GPXSee.xml
-share/gpxsee/style/Mapsforge/patterns/
-share/gpxsee/style/Mapsforge/patterns/cemetery.svg
-share/gpxsee/style/Mapsforge/patterns/military-area.svg
-share/gpxsee/style/Mapsforge/patterns/nature-reserve.svg
-share/gpxsee/style/Mapsforge/patterns/orchard.svg
-share/gpxsee/style/Mapsforge/patterns/vineyard.svg
-share/gpxsee/style/Mapsforge/patterns/wetland.svg
 share/gpxsee/style/OpenMapTiles/
 share/gpxsee/style/OpenMapTiles/LICENCE.md
 share/gpxsee/style/OpenMapTiles/sprite.json
