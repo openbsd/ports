@@ -1,6 +1,7 @@
 COMMENT =	HTML forms using Moose
 
-DISTNAME =	HTML-FormHandler-0.40068
+DISTNAME =	HTML-FormHandler-0.410001
+CPAN_AUTHOR =	ABRAXXA
 
 CATEGORIES =	www
 
@@ -39,6 +40,7 @@ TEST_DEPENDS =		converters/p5-JSON \
 			devel/p5-Test-Differences \
 			devel/p5-Test-Exception \
 			devel/p5-Test-Memory-Cycle>=1.04 \
+			devel/p5-Test-Needs \
 			devel/p5-Test-Warn \
 			devel/p5-Type-Tiny \
 			devel/p5-YAML-XS \
