@@ -8,6 +8,6 @@ Index: src/ggml-backend-reg.cpp
 +#ifndef __OpenBSD__
          search_paths.push_back(get_executable_path());
 +#endif
-         search_paths.push_back(fs::current_path());
-     } else {
-         search_paths.push_back(fs::u8path(user_search_path));
+         std::error_code cwd_ec;
+         const fs::path cwd = fs::current_path(cwd_ec);
+         if (cwd_ec) {
