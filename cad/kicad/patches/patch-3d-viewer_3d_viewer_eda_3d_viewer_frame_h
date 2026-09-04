@@ -10,7 +10,7 @@ Index: 3d-viewer/3d_viewer/eda_3d_viewer_frame.h
  class SPNAV_VIEWER_PLUGIN;
  #else
  class NL_3D_VIEWER_PLUGIN;
-@@ -280,7 +280,7 @@ class EDA_3D_VIEWER_FRAME : public KIWAY_PLAYER (priva
+@@ -282,7 +282,7 @@ class EDA_3D_VIEWER_FRAME : public KIWAY_PLAYER (priva
  
      bool                           m_disable_ray_tracing;
  

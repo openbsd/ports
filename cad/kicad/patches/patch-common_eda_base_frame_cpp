@@ -1,7 +1,7 @@
 Index: common/eda_base_frame.cpp
 --- common/eda_base_frame.cpp.orig
 +++ common/eda_base_frame.cpp
-@@ -1588,7 +1588,7 @@ void EDA_BASE_FRAME::ShowPreferences( wxString aStartP
+@@ -1593,7 +1593,7 @@ void EDA_BASE_FRAME::ShowPreferences( wxString aStartP
                      return new PANEL_MOUSE_SETTINGS( aParent );
                  }, _( "Mouse and Touchpad" ) );
  

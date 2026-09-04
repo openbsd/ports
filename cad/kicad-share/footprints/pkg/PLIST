@@ -8347,6 +8347,7 @@ share/kicad/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMG_151xx_THT.
 share/kicad/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMLM-04_THT.kicad_mod
 share/kicad/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMLM-05_THT.kicad_mod
 share/kicad/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMLM-10-20_THT.kicad_mod
+share/kicad/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMPS03-1xx_THT.kicad_mod
 share/kicad/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMPW10_1xx_THT.kicad_mod
 share/kicad/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMPW25_1xx_THT.kicad_mod
 share/kicad/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMPW5-1xx_THT.kicad_mod
@@ -14548,7 +14549,9 @@ share/kicad/footprints/Symbol.pretty/Symbol_HighVoltage_NoTriangle_2x5mm_Copper.
 share/kicad/footprints/Symbol.pretty/Symbol_HighVoltage_NoTriangle_6x15mm_Copper.kicad_mod
 share/kicad/footprints/Symbol.pretty/Symbol_HighVoltage_Triangle_17x15mm_Copper.kicad_mod
 share/kicad/footprints/Symbol.pretty/Symbol_HighVoltage_Triangle_6x6mm_Copper.kicad_mod
+share/kicad/footprints/Symbol.pretty/Symbol_HighVoltage_Triangle_6x6mm_SilkScreen.kicad_mod
 share/kicad/footprints/Symbol.pretty/Symbol_HighVoltage_Triangle_8x7mm_Copper.kicad_mod
+share/kicad/footprints/Symbol.pretty/Symbol_HighVoltage_Triangle_8x7mm_SilkScreen.kicad_mod
 share/kicad/footprints/Symbol.pretty/UKCA-Logo_12x12mm_SilkScreen.kicad_mod
 share/kicad/footprints/Symbol.pretty/UKCA-Logo_20x20mm_SilkScreen.kicad_mod
 share/kicad/footprints/Symbol.pretty/UKCA-Logo_30x30mm_SilkScreen.kicad_mod

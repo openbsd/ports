@@ -10,7 +10,7 @@ Index: include/pcb_base_frame.h
  class SPNAV_2D_PLUGIN;
  #else
  class NL_PCBNEW_PLUGIN;
-@@ -437,7 +437,7 @@ class PCB_BASE_FRAME : public EDA_DRAW_FRAME (protecte
+@@ -445,7 +445,7 @@ class PCB_BASE_FRAME : public EDA_DRAW_FRAME (protecte
      PCB_ORIGIN_TRANSFORMS   m_originTransforms;
  
  private:
