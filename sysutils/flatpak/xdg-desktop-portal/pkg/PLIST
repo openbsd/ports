@@ -48,7 +48,6 @@ share/dbus-1/interfaces/org.freedesktop.portal.Location.xml
 share/dbus-1/interfaces/org.freedesktop.portal.MemoryMonitor.xml
 share/dbus-1/interfaces/org.freedesktop.portal.NetworkMonitor.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Notification.xml
-share/dbus-1/interfaces/org.freedesktop.portal.OpenURI.xml
 share/dbus-1/interfaces/org.freedesktop.portal.PowerProfileMonitor.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Print.xml
 share/dbus-1/interfaces/org.freedesktop.portal.ProxyResolver.xml

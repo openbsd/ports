@@ -5,7 +5,7 @@ shm_open(2) without O_CREAT always fails with ENOENT.
 Index: src/xdp-sealed-fd.c
 --- src/xdp-sealed-fd.c.orig
 +++ src/xdp-sealed-fd.c
-@@ -80,6 +80,7 @@ xdp_sealed_fd_new_take_memfd (int      m
+@@ -80,6 +80,7 @@ xdp_sealed_fd_new_take_memfd (int      memfd,
  
    g_return_val_if_fail (fd != -1, NULL);
  
@@ -13,7 +13,7 @@ Index: src/xdp-sealed-fd.c
    seals = fcntl (fd, F_GET_SEALS);
    if (seals == -1)
     {
-@@ -106,6 +107,7 @@ xdp_sealed_fd_new_take_memfd (int      m
+@@ -106,6 +107,7 @@ xdp_sealed_fd_new_take_memfd (int      memfd,
                     "fcntl F_ADD_SEALS: %s", g_strerror (saved_errno));
        return NULL;
      }
@@ -21,14 +21,13 @@ Index: src/xdp-sealed-fd.c
  
    sealed_fd = g_object_new (XDP_TYPE_SEALED_FD, NULL);
    sealed_fd->fd = g_steal_fd (&fd);
-@@ -127,7 +129,18 @@ xdp_sealed_fd_new_from_bytes (GBytes  *b
+@@ -127,7 +129,17 @@ xdp_sealed_fd_new_from_bytes (GBytes  *bytes,
  
    g_return_val_if_fail (bytes != NULL, NULL);
  
 +#ifndef __OpenBSD__
    fd = memfd_create ("xdp-sealed-fd", MFD_ALLOW_SEALING);
 +#else
-+  /* XXX no memfd_create/sealing support */
 +  {
 +    char shm_name[] = "/xdp-sealed-fd.XXXXXXXXXX";
 +
@@ -40,7 +39,7 @@ Index: src/xdp-sealed-fd.c
    if (fd == -1)
      {
        int saved_errno;
-@@ -136,7 +149,7 @@ xdp_sealed_fd_new_from_bytes (GBytes  *b
+@@ -136,7 +148,7 @@ xdp_sealed_fd_new_from_bytes (GBytes  *bytes,
        g_set_error (error,
                     G_IO_ERROR,
                     g_io_error_from_errno (saved_errno),
@@ -49,7 +48,7 @@ Index: src/xdp-sealed-fd.c
        return NULL;
      }
  
-@@ -181,6 +194,7 @@ xdp_sealed_fd_new_from_bytes (GBytes  *b
+@@ -181,6 +193,7 @@ xdp_sealed_fd_new_from_bytes (GBytes  *bytes,
        return NULL;
      }
  
@@ -57,7 +56,7 @@ Index: src/xdp-sealed-fd.c
    if (fcntl (fd, F_ADD_SEALS, REQUIRED_SEALS) == -1)
      {
        saved_errno = errno;
-@@ -190,6 +204,7 @@ xdp_sealed_fd_new_from_bytes (GBytes  *b
+@@ -190,6 +203,7 @@ xdp_sealed_fd_new_from_bytes (GBytes  *bytes,
                     "fcntl F_ADD_SEALS: %s", g_strerror (saved_errno));
        return NULL;
      }

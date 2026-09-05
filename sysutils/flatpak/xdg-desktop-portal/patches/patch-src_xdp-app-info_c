@@ -1,16 +1,15 @@
-XXX No /proc filesystem nor a way to get a path back from a fd on OpenBSD.
-Set the GError before returning NULL: all callers (open-uri.c, trash.c,
-wallpaper.c, email.c) dereference error->message when this returns NULL.
+XXX No /proc filesystem, no O_PATH, and no way to get a path back from a
+fd on OpenBSD.  Fail with a GError, as callers (trash.c, wallpaper.c,
+email.c) dereference error->message when this returns NULL.
 
 Index: src/xdp-app-info.c
 --- src/xdp-app-info.c.orig
 +++ src/xdp-app-info.c
-@@ -512,6 +512,12 @@ xdp_app_info_get_path_for_fd (XdpAppInfo
+@@ -512,6 +512,11 @@ xdp_app_info_get_path_for_fd (XdpAppInfo   *app_info,
                                gboolean     *writable_out,
                                GError      **error)
  {
 +#ifdef __OpenBSD__
-+  /* XXX No way to resolve a path from a file descriptor. */
 +  g_set_error_literal (error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,
 +                       "Cannot resolve path from fd on OpenBSD");
 +  return NULL;
@@ -18,7 +17,7 @@ Index: src/xdp-app-info.c
    XdpAppInfoPrivate *priv = xdp_app_info_get_instance_private (app_info);
    g_autofree char *proc_path = NULL;
    int fd_flags;
-@@ -676,6 +682,7 @@ xdp_app_info_get_path_for_fd (XdpAppInfo
+@@ -676,6 +681,7 @@ xdp_app_info_get_path_for_fd (XdpAppInfo   *app_info,
      *writable_out = writable;
  
    return g_steal_pointer (&path);

@@ -4,7 +4,7 @@ COMMENT=		portal frontend service for desktop containment frameworks
 
 V=			1.20.3
 DISTNAME=		xdg-desktop-portal-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -56,10 +56,12 @@ CONFIGURE_ARGS +=	-Ddocumentation=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-# XXX No fuse3 on OpenBSD.
+# XXX No fuse3 on OpenBSD (Documents), no way to resolve a path from a fd
+# (OpenURI); see the corresponding patches.
 post-install:
 	rm ${PREFIX}/lib/systemd/user/xdg-document-portal.service \
 		${PREFIX}/share/dbus-1/interfaces/org.freedesktop.portal.Documents.xml \
+		${PREFIX}/share/dbus-1/interfaces/org.freedesktop.portal.OpenURI.xml \
 		${PREFIX}/share/dbus-1/services/org.freedesktop.portal.Documents.service
 
 .include <bsd.port.mk>

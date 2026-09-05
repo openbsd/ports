@@ -1,0 +1,24 @@
+XXX Do not export the OpenURI portal interface.
+OpenFile()/OpenDirectory() must resolve the caller's fd to a path, which
+needs procfs (or an F_GETPATH-style fcntl); neither exists on OpenBSD, so
+every request for a local file is rejected and GTK4 (GtkFileLauncher,
+GtkUriLauncher, gtk_show_uri()) reports "The application launch failed"
+instead of falling back.  GTK only uses the in-process GAppInfo path when
+the interface is absent from the bus, so drop it entirely.
+
+Index: src/xdg-desktop-portal.c
+--- src/xdg-desktop-portal.c.orig
++++ src/xdg-desktop-portal.c
+@@ -298,10 +298,12 @@ on_bus_acquired (GDBusConnection *connection,
+     export_portal_implementation (connection,
+                                   file_chooser_create (connection, implementation->dbus_name, lockdown));
+ 
++#ifndef __OpenBSD__
+   implementation = find_portal_implementation ("org.freedesktop.impl.portal.AppChooser");
+   if (implementation != NULL)
+     export_portal_implementation (connection,
+                                   open_uri_create (connection, implementation->dbus_name, lockdown));
++#endif
+ 
+   implementation = find_portal_implementation ("org.freedesktop.impl.portal.Print");
+   if (implementation != NULL)
