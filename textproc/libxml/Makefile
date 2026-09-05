@@ -1,10 +1,10 @@
 COMMENT=		XML parsing library
 
-GNOME_VERSION=		2.15.3
+GNOME_VERSION=		2.15.4
 GNOME_PROJECT=		libxml2
 PKGNAME=		libxml-${GNOME_VERSION}
 
-SHARED_LIBS += xml2                      22.1 # 16.1.2
+SHARED_LIBS += xml2                      22.1 # 16.1.4
 
 CATEGORIES=		textproc
 
