@@ -33,6 +33,7 @@
      SUBDIR += bitlbee,otr,libpurple
      SUBDIR += bitlbee-facebook
      SUBDIR += bitlbee-mastodon
+     SUBDIR += bitmagnet
      SUBDIR += blaeu
      SUBDIR += bnc
      SUBDIR += bombadillo
