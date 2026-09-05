@@ -4,6 +4,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}_modifiers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}_modifiers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}affinity.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}affinity.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,6 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}target.
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}target.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}transport_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}transport_config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/_modifiers.py
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/affinity.py
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/compat/
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/compat/__init__.py
@@ -236,10 +239,13 @@ lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py2.${
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py314.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py314.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py315.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py315.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py36.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py36.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/_py2.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/_py314.py
+lib/python${MODPY_VERSION}/site-packages/mitogen/imports/_py315.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/_py36.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/incus.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/jail.py
