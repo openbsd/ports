@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.153.3
+V =			0.153.4
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -104,18 +104,6 @@ V8_CARGO_V =		150.4.0
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 
 post-patch:
-	cd ${WRKSRC} && ${SUBST_CMD} \
-		app-server-daemon/src/update_loop.rs \
-		app-server/src/request_processors/feedback_doctor_report.rs \
-		arg0/src/lib.rs \
-		cli/src/doctor.rs \
-		cli/src/doctor/runtime.rs \
-		cli/src/doctor/updates.rs \
-		cli/src/main.rs \
-		config/src/loader/mod.rs \
-		core/src/tools/runtimes/apply_patch.rs \
-		install-context/src/lib.rs \
-		tui/src/app/agents_overview.rs
 	mkdir ${V8_DISTDIR}/third_party/icu/common
 	cp ${MODCARGO_VENDOR_DIR}/deno_core_icudata-${DENO_CORE_ICUDATA_V}/src/icudtl.dat \
 	    ${V8_DISTDIR}/third_party/icu/common/
