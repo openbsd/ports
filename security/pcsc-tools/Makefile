@@ -1,10 +1,11 @@
 COMMENT=	tools for use with PC/SC drivers, cards, readers
 
-DISTNAME=	pcsc-tools-1.7.4
+DISTNAME=	pcsc-tools-1.7.5
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security sysutils
 
+# https://github.com/LudovicRousseau/pcsc-tools
 HOMEPAGE=	https://pcsc-tools.apdu.fr/
 
 # GPLv2+

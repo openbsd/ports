@@ -8,6 +8,7 @@ bin/scriptor
 @man man/man1/scriptor.1
 share/applications/gscriptor.desktop
 share/locale/fr/LC_MESSAGES/pcsc-tools.mo
+share/locale/ka/LC_MESSAGES/pcsc-tools.mo
 share/locale/ru/LC_MESSAGES/pcsc-tools.mo
 share/pcsc/
 share/pcsc/gscriptor.png
