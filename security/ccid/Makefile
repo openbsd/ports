@@ -2,7 +2,7 @@ COMMENT =	USB Chip/Smart Card Interface Devices driver
 
 # portroach only identifies the previous release on https://ccid.apdu.fr/files/
 PORTROACH =	site:https://github.com/LudovicRousseau/CCID/releases/
-DISTNAME =	ccid-1.8.2
+DISTNAME =	ccid-1.8.3
 
 CATEGORIES =	security
 
