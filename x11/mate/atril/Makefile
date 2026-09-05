@@ -42,7 +42,12 @@ WANTLIB += hwy javascriptcoregtk-4.1 jxl jxl_cms mate-desktop-2
 WANTLIB += nghttp2 sharpyuv soup-3.0 startup-notification-1 wayland-client
 WANTLIB += wayland-cursor wayland-egl wayland-server webkit2gtk-4.1
 WANTLIB += xcb-randr xcb-util xkbcommon
-WANTLIB += XRes drm_amdgpu drm_intel elf pciaccess
+WANTLIB += XRes drm_amdgpu elf pciaccess
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+WANTLIB += drm_intel
+.endif
+
 
 COMPILER =		base-clang ports-gcc base-gcc
 

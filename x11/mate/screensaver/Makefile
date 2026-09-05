@@ -21,10 +21,14 @@ WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread startup-notification-1
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-util xcb-xfixes xkbfile xklavier xml2 xshmfence
 WANTLIB += LLVM XRes z
-WANTLIB += drm_amdgpu drm_intel elf pciaccess
+WANTLIB += drm_amdgpu elf pciaccess
 WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp jpeg
 WANTLIB += atspi epoll-shim wayland-client wayland-cursor wayland-egl
 WANTLIB += xcb-randr xkbcommon
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+WANTLIB += drm_intel
+.endif
 
 MODULES=		devel/dconf \
 			x11/gnome
