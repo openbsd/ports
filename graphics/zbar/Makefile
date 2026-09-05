@@ -1,7 +1,7 @@
 COMMENT=	ZBar barcode reader
 
 DISTNAME=	zbar-0.23.93
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	zbar	0.1 \
 		zbargtk	0.1

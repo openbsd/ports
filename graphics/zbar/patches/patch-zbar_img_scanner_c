@@ -1,0 +1,22 @@
+https://github.com/mchehab/zbar/pull/329, plus pull in stddef.h
+
+Index: zbar/img_scanner.c
+--- zbar/img_scanner.c.orig
++++ zbar/img_scanner.c
+@@ -33,6 +33,7 @@
+ #endif
+
+ #include <assert.h>
++#include <stddef.h> /* ptrdiff_t */
+ #include <stdlib.h> /* malloc, free */
+ #include <string.h> /* memcmp, memset, memcpy */
+
+@@ -862,7 +863,7 @@ static void zbar_send_code_via_dbus(zbar_image_scanner
+     do {                                 \
+ 	x += (dx);                       \
+ 	y += (dy);                       \
+-	p += (dx) + ((uintptr_t)(dy)*w); \
++	p += (ptrdiff_t)(dx) + (intptr_t)(dy) * (intptr_t)w; \
+     } while (0);
+
+ static void *_zbar_scan_image(zbar_image_scanner_t *iscn, zbar_image_t *img)
