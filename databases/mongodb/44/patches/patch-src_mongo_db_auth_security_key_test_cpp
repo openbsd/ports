@@ -1,0 +1,14 @@
+Explicitly include boost/filesystem/fstream.hpp to fix missing template
+declaration for boost::filesystem::ofstream.
+
+Index: src/mongo/db/auth/security_key_test.cpp
+--- src/mongo/db/auth/security_key_test.cpp.orig
++++ src/mongo/db/auth/security_key_test.cpp
+@@ -30,6 +30,7 @@
+ #include "mongo/platform/basic.h"
+ 
+ #include <boost/filesystem.hpp>
++#include <boost/filesystem/fstream.hpp>
+ 
+ #include "mongo/base/string_data.h"
+ #include "mongo/db/auth/authorization_manager.h"

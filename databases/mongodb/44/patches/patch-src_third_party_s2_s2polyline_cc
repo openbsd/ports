@@ -1,0 +1,17 @@
+Provide strict weak ordering for SearchState to fix compilation errors.
+
+Index: src/third_party/s2/s2polyline.cc
+--- src/third_party/s2/s2polyline.cc.orig
++++ src/third_party/s2/s2polyline.cc
+@@ -470,6 +470,11 @@ struct SearchState {
+   int i;
+   int j;
+   bool i_in_progress;
++
++  bool operator<(const SearchState& other) const {
++    return std::tie(i, j, i_in_progress) <
++           std::tie(other.i, other.j, other.i_in_progress);
++  }
+ };
+ }  // namespace
+ 

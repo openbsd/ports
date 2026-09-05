@@ -1,0 +1,14 @@
+Explicitly include boost/filesystem/fstream.hpp to fix missing template
+declaration for boost::filesystem::ofstream.
+
+Index: src/mongo/db/storage/wiredtiger/wiredtiger_kv_engine_test.cpp
+--- src/mongo/db/storage/wiredtiger/wiredtiger_kv_engine_test.cpp.orig
++++ src/mongo/db/storage/wiredtiger/wiredtiger_kv_engine_test.cpp
+@@ -35,6 +35,7 @@
+ 
+ #include <boost/filesystem.hpp>
+ #include <boost/filesystem/path.hpp>
++#include <boost/filesystem/fstream.hpp>
+ #include <memory>
+ 
+ #include "mongo/base/init.h"
