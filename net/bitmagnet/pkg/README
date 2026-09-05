@@ -1,0 +1,19 @@
+${PKGSTEM} requires no special privileges and writes no files (other than logs).
+
+Its configuration, including PostgreSQL credentials, is read as config.yml
+in the current working directory, the user's home directory and separate
+per-key environment variables, in that order.
+
+Secrets and the rc.subr(8) service may thus be limited with an unprivileged user
+and a dedicated configuration directory:
+
+	# useradd -g =uid -s /sbin/nologin -d /nonexistent ${USER}
+	# install -d -m 750 ${CONF_DIR}
+	# rcctl enable ${SVC}
+	# rcctl set ${SVC} execdir ${CONF_DIR}
+	# rcctl set ${SVC} user ${USER}
+
+To avoid colours in the default format:
+
+log:
+  json: true
