@@ -1,10 +1,10 @@
 COMMENT=		string processing library
 
-V=			1.1.0
+V=			1.1.1
 DISTNAME=		bstring-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += bstring                   0.1 # 1.1.0
+SHARED_LIBS += bstring                   0.1 # 1.1.1
 
 CATEGORIES=		devel
 
