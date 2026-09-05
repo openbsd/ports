@@ -120,6 +120,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/r/auto_increment_table_param.res
 share/mysql-test/plugin/mroonga/mroonga/storage/r/auto_increment_text.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/binlog_TODO_SPLIT_ME.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/check_table_broken.result
+share/mysql-test/plugin/mroonga/mroonga/storage/r/check_table_innodb.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/check_table_not_broken.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/collation_utf8_general_ci_french.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/collation_utf8_unicode_520_ci_french.result
@@ -723,6 +724,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/t/auto_increment_table_param.tes
 share/mysql-test/plugin/mroonga/mroonga/storage/t/auto_increment_text.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/binlog_TODO_SPLIT_ME.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/check_table_broken.test
+share/mysql-test/plugin/mroonga/mroonga/storage/t/check_table_innodb.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/check_table_not_broken.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/collation_utf8_general_ci_french.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/collation_utf8_unicode_520_ci_french.test

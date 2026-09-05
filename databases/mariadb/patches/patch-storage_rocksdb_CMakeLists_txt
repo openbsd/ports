@@ -6,7 +6,7 @@ https://jira.mariadb.org/browse/MDEV-29875
 Index: storage/rocksdb/CMakeLists.txt
 --- storage/rocksdb/CMakeLists.txt.orig
 +++ storage/rocksdb/CMakeLists.txt
-@@ -38,6 +38,11 @@ IF(HAVE_AUXV_GETAUXVAL)
+@@ -34,6 +34,11 @@ IF(HAVE_AUXV_GETAUXVAL)
    ADD_DEFINITIONS(-DROCKSDB_AUXV_GETAUXVAL_PRESENT)
  ENDIF()
  

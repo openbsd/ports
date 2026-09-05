@@ -1,7 +1,7 @@
 Index: libmariadb/libmariadb/CMakeLists.txt
 --- libmariadb/libmariadb/CMakeLists.txt.orig
 +++ libmariadb/libmariadb/CMakeLists.txt
-@@ -477,15 +477,6 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
+@@ -452,15 +452,6 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
  # of the config program. To make sure these programs can
  # use mariadb client library we provide libmysql symlinks
  
@@ -14,6 +14,6 @@ Index: libmariadb/libmariadb/CMakeLists.txt
 -  ENDIF()
 -ENDIF()
 -
- create_symlink(libmariadb${CMAKE_STATIC_LIBRARY_SUFFIX} mariadbclient ${INSTALL_LIBDIR})
- 
- SET_TARGET_PROPERTIES(libmariadb PROPERTIES VERSION
+ # In DEB layout, mariadbclient is already named libmariadb.a — skip the symlink.
+ IF(NOT INSTALL_LAYOUT STREQUAL "DEB")
+   create_symlink(libmariadb${CMAKE_STATIC_LIBRARY_SUFFIX} mariadbclient ${INSTALL_LIBDIR})

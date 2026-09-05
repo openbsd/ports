@@ -3,7 +3,7 @@ Avoid use of long-deprecated functions.
 Index: libmariadb/libmariadb/secure/openssl.c
 --- libmariadb/libmariadb/secure/openssl.c.orig
 +++ libmariadb/libmariadb/secure/openssl.c
-@@ -285,7 +285,6 @@ void ma_tls_end()
+@@ -397,7 +397,6 @@ void ma_tls_end()
      {
        int i;
        CRYPTO_set_locking_callback(NULL);
@@ -11,7 +11,7 @@ Index: libmariadb/libmariadb/secure/openssl.c
  
        for (i=0; i < CRYPTO_num_locks(); i++)
          pthread_mutex_destroy(&LOCK_crypto[i]);
-@@ -842,7 +841,7 @@ int ma_tls_verify_server_cert(MARIADB_TLS *ctls, unsig
+@@ -905,7 +904,7 @@ int ma_tls_verify_server_cert(MARIADB_TLS *ctls, unsig
        goto error;
      }
  
