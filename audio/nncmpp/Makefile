@@ -1,6 +1,6 @@
 COMMENT=		terminal/X11 MPD client
 
-V=			2.3.0
+V=			2.3.1
 DISTNAME=		nncmpp-${V}
 EXTRACT_SUFX=		.tar.zst
 CATEGORIES=		audio
@@ -11,8 +11,8 @@ SITES=			https://git.janouch.name/p/nncmpp/releases/download/v$V/
 # ISC
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xft Xrender c curl curses fontconfig freetype iconv
-WANTLIB += m png pthread unistring
+WANTLIB += X11 Xft Xrender c curl curses fftw3 fftw3f fontconfig
+WANTLIB += freetype iconv m png pthread unistring
 
 MODULES=		devel/cmake
 
@@ -26,6 +26,8 @@ BUILD_DEPENDS=		textproc/asciidoctor \
 
 LIB_DEPENDS =		converters/libunistring \
 			graphics/png \
+			math/fftw3 \
+			math/fftw3,float \
 			net/curl
 
 RUN_DEPENDS =		devel/desktop-file-utils \
