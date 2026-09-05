@@ -7,7 +7,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 GNOME_PROJECT=		gtk
 GNOME_VERSION=		4.22.4
 
-REVISION-main=		0
+REVISION-main=		1
 
 # gtk+4 wants librsvg 2.48+ (rust-only), but if not available it is prepared
 # to fallback to 2.40.23. there's no actual release of 2.40.23 yet, so use
