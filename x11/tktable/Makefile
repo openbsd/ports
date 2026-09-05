@@ -4,7 +4,7 @@ V =			2.10
 
 DISTNAME =		Tktable${V}
 PKGNAME =		Tktable-${V}
-REVISION =		6
+REVISION =		7
 CATEGORIES =		x11
 HOMEPAGE =		https://tktable.sourceforge.net/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -15,6 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		X11
 SITES =			${SITE_SOURCEFORGE:=tktable/}
 MODULES =		x11/tk
+MODTK_VERSION =		8.6
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 FAKE_FLAGS =		INSTALL_PROGRAM="${INSTALL_DATA}"

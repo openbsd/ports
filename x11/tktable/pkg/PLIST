@@ -1,5 +1,5 @@
 lib/tcl/tktable/
-lib/tcl/tktable/libTktable${TKTABLE_VER}.so
+@so lib/tcl/tktable/libTktable${TKTABLE_VER}.so
 lib/tcl/tktable/pkgIndex.tcl
 lib/tcl/tktable/tkTable.tcl
 lib/tcl/tktable/tktable.py
