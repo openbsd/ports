@@ -5,7 +5,7 @@ V=		2.6.14
 DISTNAME=	oath-toolkit-$V
 PKGNAME-main=	oath-toolkit-$V
 PKGNAME-pskc=	oath-toolkit-pskc-$V
-REVISION-pskc=	0
+REVISION-pskc=	1
 
 SHARED_LIBS +=  oath                      0.2 # 1.3
 SHARED_LIBS +=  pskc                      0.1 # 0.1
