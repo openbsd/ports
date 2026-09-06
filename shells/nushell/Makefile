@@ -5,6 +5,7 @@ COMMENT =		new type of shell
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
 GH_TAGNAME =		0.114.1
+REVISION =		0
 
 MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 
