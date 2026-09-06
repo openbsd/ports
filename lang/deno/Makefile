@@ -10,6 +10,7 @@ USE_WXNEEDED =		Yes
 COMMENT =		runtime for JavaScript and TypeScript
 
 V =			2.9.6
+REVISION =		0
 DIST_TUPLE =		github denoland deno v${V} .
 
 HOMEPAGE =		https://deno.com
@@ -94,10 +95,6 @@ SUBST_VARS +=		WRKBUILD WRKSRC
 post-patch:
 	mkdir -p ${V8_BPGO_DIR}/{x64.profile,arm64.profile}
 	${SUBST_CMD} ${V8_DISTDIR}/v8/tools/run.py
-	cd ${WRKSRC} && ${SUBST_CMD} \
-	    cli/task_runner.rs \
-	    cli/tools/jupyter/install.rs \
-	    ext/os/lib.rs
 	cp ${WRKSRC}/ext/napi/generated_symbol_exports_list_linux.def \
 	    ${WRKSRC}/ext/napi/generated_symbol_exports_list_openbsd.def
 	mkdir ${V8_DISTDIR}/third_party/icu/common
