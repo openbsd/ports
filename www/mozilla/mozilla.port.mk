@@ -68,7 +68,7 @@ MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.115
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.128
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
@@ -122,6 +122,7 @@ MODMOZ_BUILD_DEPENDS +=	devel/nasm
 # 53 needs rust
 MODULES +=		lang/rust
 MODMOZ_WANTLIB +=	${MODRUST_WANTLIB}
+CONFIGURE_ARGS +=	--enable-rust-simd
 #1670807
 MODMOZ_BUILD_DEPENDS +=	devel/m4
 
