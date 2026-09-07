@@ -1,12 +1,12 @@
 COMMENT=	GnuPG Made Easy C++ bindings
 
-VERSION=	2.1.0
+VERSION=	2.2.0
 DISTNAME=	gpgmepp-${VERSION}
 
 CATEGORIES=	security devel
 
 # ver from LIBGPGMEPP_LT_* in CMakeLists.txt
-SHARED_LIBS +=  gpgmepp              5.0      # 8.1.0
+SHARED_LIBS +=  gpgmepp              5.1      # 9.2.0
 
 HOMEPAGE=	https://www.gnupg.org/software/gpgme/
 
@@ -23,5 +23,6 @@ MODULES=	devel/cmake
 COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	security/gpgme>=2.1.00
+# security/libgpg-error
 
 .include <bsd.port.mk>
