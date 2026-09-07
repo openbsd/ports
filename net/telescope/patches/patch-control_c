@@ -1,0 +1,21 @@
+Index: control.c
+--- control.c.orig
++++ control.c
+@@ -231,7 +231,7 @@ control_dispatch_imsg(int fd, int event, void *bula)
+ {
+ 	struct ctl_conn	*c;
+ 	struct imsg	 imsg;
+-	ssize_t		 n;
++	int		 n;
+ 
+ 	if ((c = control_connbyfd(fd)) == NULL) {
+ 		message("%s: fd %d: not found", __func__, fd);
+@@ -252,7 +252,7 @@ control_dispatch_imsg(int fd, int event, void *bula)
+ 	}
+ 
+ 	for (;;) {
+-		if ((n = imsg_get(&c->iev.ibuf, &imsg)) == -1) {
++		if ((n = imsgbuf_get(&c->iev.ibuf, &imsg)) == -1) {
+ 			control_close(fd);
+ 			return;
+ 		}
