@@ -1,6 +1,6 @@
 COMMENT=	bindings for ECMA regular expressions in the regress crate
 
-MODPY_DISTV=	2025.10.1
+MODPY_DISTV=	2026.9.1
 DISTNAME=	regress-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
