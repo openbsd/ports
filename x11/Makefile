@@ -5,6 +5,7 @@
      SUBDIR += abclock
      SUBDIR += adwaita-qt
      SUBDIR += adwaita-qt,qt6
+     SUBDIR += adwaita-xfce-icon-theme
      SUBDIR += aewm
      SUBDIR += afterstep
      SUBDIR += agar
