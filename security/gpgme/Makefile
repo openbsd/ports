@@ -2,12 +2,12 @@ COMMENT=	GnuPG Made Easy
 
 # check updates with security/gpgmepp, security/qgpgme - they often need to
 # be done in-sync.
-VERSION=	2.1.2
+VERSION=	2.2.0
 DISTNAME=	gpgme-${VERSION}
 
 CATEGORIES=	security devel
 
-SHARED_LIBS +=  gpgme                25.0     # 45.1
+SHARED_LIBS +=  gpgme                25.1     # 47.0
 
 HOMEPAGE=	https://www.gnupg.org/software/gpgme/
 
