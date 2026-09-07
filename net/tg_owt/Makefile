@@ -12,12 +12,13 @@ COMMENT =		WebRTC build for Telegram
 DIST_TUPLE =		github	desktop-app	tg_owt	\
 			89df288dd6ba5b2ec95b3c5eaf1e7e0c3a870fc4	.
 PKGNAME =		tg_owt-0.0.0.20260409
+REVISION =		0
 
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	13.0	# upstream is static only
+SHARED_LIBS =		tg_owt	14.0	# upstream is static only
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
@@ -36,25 +37,26 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xdamage Xext Xfixes
-WANTLIB += Xrandr Xrender Xtst absl_base absl_city absl_civil_time
-WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
-WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
-WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
-WANTLIB += absl_demangle_internal absl_demangle_rust absl_exponential_biased
-WANTLIB += absl_flags_commandlineflag absl_flags_commandlineflag_internal
-WANTLIB += absl_flags_config absl_flags_internal absl_flags_marshalling
-WANTLIB += absl_flags_parse absl_flags_private_handle_accessor
-WANTLIB += absl_flags_program_name absl_flags_reflection absl_flags_usage
-WANTLIB += absl_flags_usage_internal absl_graphcycles_internal
-WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
+WANTLIB += Xrandr Xrender Xtst absl_base absl_base_cpu_detect
+WANTLIB += absl_city absl_civil_time absl_cord absl_cord_internal
+WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
+WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_internal absl_debugging_internal
+WANTLIB += absl_decode_rust_punycode absl_demangle_internal absl_demangle_rust
+WANTLIB += absl_exponential_biased absl_flags_commandlineflag
+WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
+WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_parse
+WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
+WANTLIB += absl_flags_reflection absl_flags_usage absl_flags_usage_internal
+WANTLIB += absl_graphcycles_internal absl_hardening absl_hash
+WANTLIB += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
 WANTLIB += absl_log_severity absl_malloc_internal absl_raw_hash_set
-WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
-WANTLIB += absl_str_format_internal absl_borrowed_fixup_buffer absl_strings
+WANTLIB += absl_raw_logging_internal absl_source_location absl_spinlock_wait
+WANTLIB += absl_stacktrace absl_str_format_internal absl_strings
 WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
 WANTLIB += absl_utf8_for_code_point avcodec avformat avutil crc32c
-WANTLIB += crypto jpeg m openh264 opus ssl swresample swscale
-WANTLIB += srtp2 vpx
+WANTLIB += crypto jpeg m openh264 opus srtp2 ssl swresample swscale
+WANTLIB += vpx
 
 # C++20
 COMPILER =		base-clang ports-gcc

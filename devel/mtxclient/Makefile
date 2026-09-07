@@ -1,39 +1,40 @@
 COMMENT =	client API for Matrix, built on libcurl
 CATEGORIES =	devel
 
-SHARED_LIBS +=  matrix_client	4.0
+SHARED_LIBS +=  matrix_client	5.0
 
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	mtxclient
 GH_TAGNAME =	v0.10.1
-REVISION =	0
+REVISION =	1
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} absl_base absl_city absl_civil_time
-WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
-WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB += ${COMPILER_LIBCXX} absl_base absl_base_cpu_detect absl_city
+WANTLIB += absl_civil_time absl_cord absl_cord_internal absl_cordz_functions
+WANTLIB += absl_cordz_handle absl_cordz_info absl_crc32c absl_crc_cord_state
 WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
 WANTLIB += absl_demangle_internal absl_demangle_rust absl_examine_stack
 WANTLIB += absl_exponential_biased absl_flags_commandlineflag
 WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
 WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_private_handle_accessor
 WANTLIB += absl_flags_program_name absl_flags_reflection absl_graphcycles_internal
-WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_internal_check_op
-WANTLIB += absl_log_internal_conditions absl_log_internal_fnmatch
-WANTLIB += absl_log_internal_format absl_log_internal_globals
-WANTLIB += absl_log_internal_log_sink_set absl_log_internal_message
-WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
-WANTLIB += absl_log_internal_structured_proto absl_log_severity
-WANTLIB += absl_log_sink absl_malloc_internal absl_raw_hash_set
-WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
-WANTLIB += absl_str_format_internal absl_strerror absl_borrowed_fixup_buffer
-WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
-WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
-WANTLIB += absl_utf8_for_code_point absl_vlog_config_internal
-WANTLIB += coeurl crypto execinfo fmt m olm re2 spdlog ssl
+WANTLIB += absl_hardening absl_hash absl_hashtablez_sampler absl_int128
+WANTLIB += absl_kernel_timeout_internal absl_leak_check absl_log_entry
+WANTLIB += absl_log_globals absl_log_internal_check_op absl_log_internal_conditions
+WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
+WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
+WANTLIB += absl_log_internal_message absl_log_internal_nullguard
+WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
+WANTLIB += absl_log_severity absl_log_sink absl_malloc_internal
+WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_source_location
+WANTLIB += absl_spinlock_wait absl_stacktrace absl_str_format_internal
+WANTLIB += absl_strerror absl_strings absl_strings_internal absl_symbolize
+WANTLIB += absl_synchronization absl_throw_delegate absl_time
+WANTLIB += absl_time_zone absl_tracing_internal absl_utf8_for_code_point
+WANTLIB += absl_vlog_config_internal coeurl crypto execinfo fmt
+WANTLIB += m olm re2 spdlog ssl
 
 MODULES =	devel/cmake
 
