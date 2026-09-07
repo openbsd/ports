@@ -1,0 +1,22 @@
+Index: player.c
+--- player.c.orig
++++ player.c
+@@ -114,15 +114,14 @@ player_dispatch(int64_t *s, int wait)
+ 	struct player_seek seek;
+ 	struct pollfd	pfd;
+ 	struct imsg	imsg;
+-	ssize_t		n;
+-	int		ret;
++	int		n, ret;
+ 
+ 	if (halted != 0)
+ 		return IMSG_STOP;
+ 
+ again:
+-	if ((n = imsg_get(imsgbuf, &imsg)) == -1)
+-		fatal("imsg_get");
++	if ((n = imsgbuf_get(imsgbuf, &imsg)) == -1)
++		fatal("imsgbuf_get");
+ 	if (n == 0) {
+ 		if (!wait)
+ 			return -1;

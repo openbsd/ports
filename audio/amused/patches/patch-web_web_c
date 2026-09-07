@@ -1,0 +1,25 @@
+Index: web/web.c
+--- web/web.c.orig
++++ web/web.c
+@@ -470,9 +470,8 @@ imsg_dispatch(int fd, int ev, void *d)
+ 	struct player_status	 ps;
+ 	struct player_event	 event;
+ 	const char		*msg;
+-	ssize_t			 n;
+ 	size_t			 datalen;
+-	int			 r;
++	int			 n, r;
+ 
+ 	if (ev & EV_READ) {
+ 		if ((n = imsgbuf_read(&imsgbuf)) == -1)
+@@ -486,8 +485,8 @@ imsg_dispatch(int fd, int ev, void *d)
+ 	}
+ 
+ 	for (;;) {
+-		if ((n = imsg_get(&imsgbuf, &imsg)) == -1)
+-			fatal("imsg_get");
++		if ((n = imsgbuf_get(&imsgbuf, &imsg)) == -1)
++			fatal("imsgbuf_get");
+ 		if (n == 0)
+ 			break;
+ 

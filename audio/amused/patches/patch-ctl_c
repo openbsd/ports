@@ -1,0 +1,24 @@
+Index: ctl.c
+--- ctl.c.orig
++++ ctl.c
+@@ -417,8 +417,7 @@ ctlaction(struct parse_result *res)
+ 	struct imsg imsg;
+ 	struct player_status ps;
+ 	struct player_event ev;
+-	ssize_t n;
+-	int i, type, ret = 0, done = 1;
++	int i, n, type, ret = 0, done = 1;
+ 
+ 	if (pledge("stdio", NULL) == -1)
+ 		fatal("pledge");
+@@ -544,8 +543,8 @@ ctlaction(struct parse_result *res)
+ 			fatalx("pipe closed");
+ 
+ 		while (!done) {
+-			if ((n = imsg_get(imsgbuf, &imsg)) == -1)
+-				fatalx("imsg_get error");
++			if ((n = imsgbuf_get(imsgbuf, &imsg)) == -1)
++				fatalx("imsgbuf_get error");
+ 			if (n == 0)
+ 				break;
+ 
