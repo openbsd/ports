@@ -10,7 +10,7 @@ Index: meson.build
  fontconfig = dependency('fontconfig')
  pixman = dependency('pixman-1', version: '>=0.46.0')
  # Cairo is required for librsvg but not for resvg/nanosvg
-@@ -216,7 +216,7 @@ fuzzel = executable(
+@@ -225,7 +225,7 @@ fuzzel = executable(
    'timing.c', 'timing.h',
    wl_proto_src + wl_proto_headers, version, srgb_funcs,
    dependencies: [math,

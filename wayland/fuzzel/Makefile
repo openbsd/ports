@@ -1,8 +1,7 @@
 COMMENT =		app launcher and fuzzy finder for wayland
 
-V =			1.14.1
+V =			1.15.0
 DISTNAME=		fuzzel-${V}
-REVISION=		1
 
 SITES =			https://codeberg.org/dnkl/fuzzel/releases/download/${V}/
 DISTFILES =		fuzzel-${V}${EXTRACT_SUFX}
