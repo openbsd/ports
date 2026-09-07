@@ -1,0 +1,22 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -1,6 +1,6 @@
+ PREFIX=@prefix@
+ DESTDIR=
+-CC?=gcc
++CC?=cc
+ 
+ builddir:
+ 	mkdir -p build
+@@ -8,9 +8,7 @@ builddir:
+ 
+ install:
+ 	install -d $(DESTDIR)/$(PREFIX)/share/icons
+-	cp -rf build/adwaita-xfce $(DESTDIR)/$(PREFIX)/share/icons
+-	@echo
+-	@echo The icon-theme cache has not yet been regenerated, which means your changes may not be visible yet. Please run 'make icon-caches' next.
++	cp -rf ./adwaita-xfce $(DESTDIR)/$(PREFIX)/share/icons
+ 
+ uninstall:
+ 	rm -rf $(DESTDIR)/$(PREFIX)/share/icons/adwaita-xfce

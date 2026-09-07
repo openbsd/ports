@@ -1,0 +1,6 @@
+Extension to Adwaita icon theme adding missing Xfce icons.
+
+In Xfce, Open Xfce Settings > Appearance > Icons then select Adwaita-Xfce
+
+On other non-desktop systems, add "gtk-icon-theme-name=adwaita-xfce" to
+~/.config/gtk-3.0/settings.ini and ~/.config/gtk-4.0/settings.ini
