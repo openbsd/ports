@@ -2,6 +2,7 @@ COMMENT =		version control system with git compatibility backend
 
 V =			0.45.1
 PKGNAME =		jujutsu-$V
+REVISION =		0
 
 DIST_TUPLE =		github jj-vcs jj v$V .
 
@@ -41,7 +42,6 @@ JJ =	${WRKBUILD}/target/release/jj
 post-build:
 	cd /tmp && ${JJ} util install-man-pages ${WRKBUILD}
 	cd /tmp && ${JJ} util completion bash > ${WRKBUILD}/jj.bash
-	cd /tmp && ${JJ} util completion fish > ${WRKBUILD}/jj.fish
 	cd /tmp && ${JJ} util completion zsh > ${WRKBUILD}/jj.zsh
 
 post-install:
@@ -49,12 +49,9 @@ post-install:
 	${INSTALL_MAN} ${WRKBUILD}/man1/* ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} \
 		${PREFIX}/share/bash-completion/completions \
-		${PREFIX}/share/fish/vendor_completions.d \
 		${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKBUILD}/jj.bash \
 		${PREFIX}/share/bash-completion/completions/jj
-	${INSTALL_DATA} ${WRKBUILD}/jj.fish \
-		${PREFIX}/share/fish/vendor_completions.d/jj.fish
 	${INSTALL_DATA} ${WRKBUILD}/jj.zsh \
 		${PREFIX}/share/zsh/site-functions/_jj
 
