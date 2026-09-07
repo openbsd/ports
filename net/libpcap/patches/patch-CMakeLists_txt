@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -3493,7 +3493,7 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/pcap-namedb.
+@@ -3489,7 +3489,7 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/pcap-namedb.
  if(NOT MSVC)
      set(prefix ${CMAKE_INSTALL_PREFIX})
      set(exec_prefix "\${prefix}")
@@ -10,7 +10,7 @@ Index: CMakeLists.txt
      set(libdir "\${exec_prefix}/${CMAKE_INSTALL_LIBDIR}")
  
      #
-@@ -3558,10 +3558,10 @@ if(NOT MSVC)
+@@ -3554,10 +3554,10 @@ if(NOT MSVC)
              set(RPATH "")
          endif()
      endif()

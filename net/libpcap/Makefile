@@ -1,6 +1,6 @@
 COMMENT=	packet capture library
 
-DISTNAME=	libpcap-1.10.6
+DISTNAME=	libpcap-1.10.7
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	pcap 0.0
