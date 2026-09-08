@@ -3225,6 +3225,7 @@ roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/
 roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/Node/
 roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/Node/TableOfContents.php
 roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/Node/TableOfContentsPlaceholder.php
+roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/Node/TableOfContentsReference.php
 roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/
 roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/AsIsNormalizerStrategy.php
 roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/FlatNormalizerStrategy.php
@@ -3236,6 +3237,8 @@ roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/TableOfCont
 roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsGeneratorInterface.php
 roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsPlaceholderParser.php
 roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsPlaceholderRenderer.php
+roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsReferenceRenderer.php
+roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsRenderCache.php
 roundcubemail/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsRenderer.php
 roundcubemail/vendor/league/commonmark/src/Extension/TaskList/
 roundcubemail/vendor/league/commonmark/src/Extension/TaskList/TaskListExtension.php
