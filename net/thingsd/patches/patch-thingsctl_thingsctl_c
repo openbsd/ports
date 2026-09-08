@@ -27,6 +27,17 @@ Index: thingsctl/thingsctl.c
  			errx(1, "imsg_read error");
  		if (n == 0) {
  			if (res->action == SHOW_PACKETS)
+@@ -202,8 +202,8 @@ main(int argc, char *argv[])
+ 		}
+ 
+ 		while (!done) {
+-			if ((n = imsg_get(ibuf, &imsg)) == -1)
+-				errx(1, "imsg_get error");
++			if ((n = imsgbuf_get(ibuf, &imsg)) == -1)
++				errx(1, "imsgbuf_get error");
+ 			if (n == 0)
+ 				break;
+ 
 @@ -226,7 +226,7 @@ main(int argc, char *argv[])
  					done = 1;
  					break;

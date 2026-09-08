@@ -33,7 +33,17 @@ Index: thingsd/proc.c
  			close(pp->pp_pipes[dst][n]);
  			pp->pp_pipes[dst][n] = -1;
  		}
-@@ -625,7 +630,7 @@ proc_dispatch(int fd, short event, void *arg)
+@@ -616,8 +621,7 @@ proc_dispatch(int fd, short event, void *arg)
+ 	struct privsep		*ps = p->p_ps;
+ 	struct imsgbuf		*ibuf;
+ 	struct imsg		 imsg;
+-	ssize_t			 n;
+-	int			 verbose;
++	int			 n, verbose;
+ 	const char		*title;
+ 	struct privsep_fd	 pf;
+ 
+@@ -625,7 +629,7 @@ proc_dispatch(int fd, short event, void *arg)
  	ibuf = &iev->ibuf;
  
  	if (event & EV_READ) {
@@ -42,7 +52,7 @@ Index: thingsd/proc.c
  			fatal("%s: imsg_read", __func__);
  		if (n == 0) {
  			/* this pipe is dead, so remove the event handler */
-@@ -636,13 +641,14 @@ proc_dispatch(int fd, short event, void *arg)
+@@ -636,19 +640,20 @@ proc_dispatch(int fd, short event, void *arg)
  	}
  
  	if (event & EV_WRITE) {
@@ -63,7 +73,15 @@ Index: thingsd/proc.c
  		}
  	}
  
-@@ -679,7 +685,7 @@ proc_dispatch(int fd, short event, void *arg)
+ 	for (;;) {
+-		if ((n = imsg_get(ibuf, &imsg)) == -1)
+-			fatal("%s: imsg_get", __func__);
++		if ((n = imsgbuf_get(ibuf, &imsg)) == -1)
++			fatal("%s: imsgbuf_get", __func__);
+ 		if (n == 0)
+ 			break;
+ 
+@@ -679,7 +684,7 @@ proc_dispatch(int fd, short event, void *arg)
  		case IMSG_CTL_PROCFD:
  			IMSG_SIZE_CHECK(&imsg, &pf);
  			memcpy(&pf, imsg.data, sizeof(pf));
@@ -72,7 +90,7 @@ Index: thingsd/proc.c
  			    pf.pf_instance);
  			break;
  		default:
-@@ -712,12 +718,12 @@ void
+@@ -712,12 +717,12 @@ void
  imsg_event_add(struct imsgev *iev)
  {
  	if (iev->handler == NULL) {
@@ -87,7 +105,7 @@ Index: thingsd/proc.c
  		iev->events |= EV_WRITE;
  
  	event_del(&iev->ev);
-@@ -814,7 +820,8 @@ proc_forward_imsg(struct privsep *ps, struct imsg *ims
+@@ -814,7 +819,8 @@ proc_forward_imsg(struct privsep *ps, struct imsg *ims
      enum privsep_procid id, int n)
  {
  	return (proc_compose_imsg(ps, id, n, imsg->hdr.type,
@@ -97,7 +115,7 @@ Index: thingsd/proc.c
  }
  
  struct imsgbuf *
-@@ -847,7 +854,7 @@ proc_flush_imsg(struct privsep *ps, enum privsep_proci
+@@ -847,7 +853,7 @@ proc_flush_imsg(struct privsep *ps, enum privsep_proci
  		if ((ibuf = proc_ibuf(ps, id, n)) == NULL)
  			return (-1);
  		do {

@@ -24,7 +24,7 @@ Index: thingsd/control.c
  	TAILQ_REMOVE(&ctl_conns, c, entry);
  
  	event_del(&c->iev.ev);
-@@ -397,15 +402,15 @@ control_dispatch_imsg(int fd, short event, void *arg)
+@@ -397,22 +402,22 @@ control_dispatch_imsg(int fd, short event, void *arg)
  	}
  
  	if (event & EV_READ) {
@@ -43,6 +43,14 @@ Index: thingsd/control.c
  			control_close(ps, &imsg, fd, cs);
  			return;
  		}
+ 	}
+ 
+ 	for (;;) {
+-		n = imsg_get(&c->iev.ibuf, &imsg);
++		n = imsgbuf_get(&c->iev.ibuf, &imsg);
+ 		if (n == -1) {
+ 			control_close(ps, &imsg, fd, cs);
+ 			return;
 @@ -505,7 +510,7 @@ control_dispatch_imsg(int fd, short event, void *arg)
  fail:
  	imsg_compose_event(&c->iev, IMSG_CTL_FAIL,
