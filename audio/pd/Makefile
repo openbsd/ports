@@ -1,7 +1,7 @@
 COMMENT =		real-time graphical programming language for multimedia
 
-DISTNAME =		pd-0.56-3.src
-PKGNAME =		pd-0.56.3
+DISTNAME =		pd-0.56-5.src
+PKGNAME =		pd-0.56.5
 
 CATEGORIES =		audio multimedia
 
@@ -18,6 +18,7 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 MODULES =		x11/tk
+MODTK_VERSION =		8.6
 
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS} \
 			devel/gettext,-tools \
