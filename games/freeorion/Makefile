@@ -1,4 +1,5 @@
 V =		0.5.1.2
+REVISION =	0
 COMMENT =	turn-based space empire and galactic conquest computer game
 PKGNAME =	freeorion-${V}
 DIST_TUPLE +=	github freeorion freeorion 1d4211edeab19cf5f5096cda7c9f54e7b3b3dbf7 .

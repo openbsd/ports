@@ -1,9 +1,18 @@
 Remove hardcoded optimisation option.
+Disable ccache detection.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -518,7 +518,6 @@ target_compile_options(freeorionparseobj
+@@ -31,7 +31,6 @@ ENDIF(NOT CMAKE_BUILD_TYPE)
+ message(STATUS "Build type CMAKE_BUILD_TYPE set to ${CMAKE_BUILD_TYPE}")
+ 
+ include(UseCompilerCache)
+-find_compiler_cache(PROGRAM ccache)
+ 
+ list(APPEND GODOT_CPP_CMAKE_VARS "CMAKE_BUILD_TYPE;CMAKE_CONFIGURATION_TYPES;CMAKE_TOOLCHAIN_FILE;PYTHON_EXECUTABLE;Python3_EXECUTABLE")
+ get_cmake_property(vars CACHE_VARIABLES)
+@@ -518,7 +517,6 @@ target_compile_options(freeorionparseobj
      PRIVATE
          $<$<CXX_COMPILER_ID:Clang>:-ftemplate-depth=512>
          $<$<CXX_COMPILER_ID:AppleClang>:-ftemplate-depth=512>
