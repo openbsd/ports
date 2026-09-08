@@ -10,4 +10,4 @@ share/doc/midish/manual.html
 share/examples/midish/
 share/examples/midish/midishrc
 @sample ${SYSCONFDIR}/midishrc
-share/examples/midish/sample.sng
+share/examples/midish/sample.msh

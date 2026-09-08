@@ -1,5 +1,5 @@
 COMMENT=		command line MIDI sequencer and filter
-DISTNAME=		midish-1.3.2
+DISTNAME=		midish-1.5.0
 CATEGORIES=		audio
 HOMEPAGE=		https://midish.org/
 MAINTAINER=		Alexandre Ratchov <alex@caoua.org>
@@ -13,6 +13,7 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--prefix=${PREFIX}
 NO_TEST=		Yes
 MAKE_FLAGS=		CC="${CC}"
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/midish ${PREFIX}/bin
@@ -23,7 +24,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/manual.html \
 	        ${PREFIX}/share/doc/midish
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/midish
-	${INSTALL_DATA} ${WRKSRC}/midishrc ${WRKSRC}/sample.sng \
+	${INSTALL_DATA} ${WRKSRC}/midishrc ${WRKSRC}/sample.msh \
 		${PREFIX}/share/examples/midish
 
 .include <bsd.port.mk>
