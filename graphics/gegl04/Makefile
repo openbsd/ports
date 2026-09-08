@@ -1,11 +1,11 @@
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.70
+V=			0.4.72
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += gegl-0.4                  0.5 # 0.469.1
+SHARED_LIBS += gegl-0.4                  0.5 # 0.471.1
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
@@ -60,7 +60,8 @@ CONFIGURE_ARGS=		-Ddocs=false \
 			-Dmrg=disabled \
 			-Dopenmp=disabled \
 			-Dsdl1=disabled \
-			-Dsdl2=disabled
+			-Dsdl2=disabled \
+			-Dsdl3=disabled
 
 # needs /proc/self/exe
 CONFIGURE_ARGS +=	-Drelocatable-bundle=no

@@ -4,12 +4,12 @@ implicit declaration of function 'strptime' is invalid in C99 [-Wimplicit-functi
 Index: operations/external/png-load.c
 --- operations/external/png-load.c.orig
 +++ operations/external/png-load.c
-@@ -20,7 +20,7 @@
+@@ -25,7 +25,7 @@
+ #endif
  
- #include "config.h"
  #ifdef HAVE_STRPTIME
 -#define _XOPEN_SOURCE
 +#define _XOPEN_SOURCE 700
  #include <time.h>
  #endif
- #include <glib/gi18n-lib.h>
+ 
