@@ -26,6 +26,8 @@ lib/coccinelle/ocaml/flag.cmi
 lib/coccinelle/ocaml/flag.cmx
 lib/coccinelle/ocaml/flag_parsing_c.cmi
 lib/coccinelle/ocaml/flag_parsing_c.cmx
+lib/coccinelle/ocaml/internal_print_c.cmi
+lib/coccinelle/ocaml/internal_print_c.cmx
 lib/coccinelle/ocaml/iteration.cmi
 lib/coccinelle/ocaml/iteration.cmx
 lib/coccinelle/ocaml/lexer_c.cmi
@@ -83,7 +85,7 @@ lib/coccinelle/python/coccilib/trac.py
 lib/coccinelle/python/coccilib/xml_firehose.py
 lib/coccinelle/standard.h
 lib/coccinelle/standard.iso
-@so lib/ocaml/stublibs/dllpcre_stubs.so
+@so lib/ocaml/stublibs/dllpcre2_stubs.so
 @so lib/ocaml/stublibs/dllpyml_stubs.so
 @man man/man1/pycocci.1
 @man man/man1/spatch.1
