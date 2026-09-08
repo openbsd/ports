@@ -5,8 +5,8 @@ PW_PROJECT=		pipewire
 PW_VERSION=		1.6.8
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-REVISION-main=		2
-REVISION-libs=		1
+REVISION-main=		5
+REVISION-libs=		2
 
 SHARED_LIBS += pipewire-0.3              1.0 # 0.1608.0
 
