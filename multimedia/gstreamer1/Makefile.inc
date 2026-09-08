@@ -13,7 +13,7 @@
 
 PORTROACH=		limitw:1,even
 
-V ?=			1.28.6
+V ?=			1.28.7
 API=			1.0
 SUBST_VARS +=		API
 
@@ -28,7 +28,7 @@ MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE ?=	Yes
 
 DIST_SUBDIR=		gstreamer
-SITE_GST=		http://gstreamer.freedesktop.org/src/
+SITE_GST=		https://gstreamer.freedesktop.org/src/
 EXTRACT_SUFX ?=		.tar.xz
 
 COMPILER=		base-clang ports-gcc

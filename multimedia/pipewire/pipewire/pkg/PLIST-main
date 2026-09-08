@@ -81,6 +81,8 @@ lib/spa-0.2/filter-graph/
 lib/spa-0.2/libcamera/
 @so lib/spa-0.2/libcamera/libspa-libcamera.so
 @so lib/spa-0.2/libspa.so
+lib/spa-0.2/sndio/
+@so lib/spa-0.2/sndio/libspa-sndio.so
 lib/spa-0.2/support/
 @so lib/spa-0.2/support/libspa-dbus.so
 @so lib/spa-0.2/support/libspa-support.so
@@ -291,6 +293,8 @@ share/pipewire/pipewire.conf.avail/
 share/pipewire/pipewire.conf.avail/10-rates.conf
 share/pipewire/pipewire.conf.avail/20-upmix.conf
 share/pipewire/pipewire.conf.avail/50-raop.conf
+share/pipewire/pipewire.conf.d/
+share/pipewire/pipewire.conf.d/10-sndio.conf
 @sample ${SYSCONFDIR}/pipewire/
 @sample ${SYSCONFDIR}/pipewire/client-rt.conf.d/
 @sample ${SYSCONFDIR}/pipewire/client.conf.d/

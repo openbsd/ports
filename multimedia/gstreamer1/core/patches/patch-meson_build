@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -596,12 +596,14 @@ if nsl_lib.found()
+@@ -599,12 +599,14 @@ if nsl_lib.found()
    network_deps += nsl_lib
  endif
  

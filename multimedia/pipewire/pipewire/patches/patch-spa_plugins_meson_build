@@ -1,0 +1,15 @@
+Hook the sndio spa plugin into the build; to be sent upstream.
+
+Index: spa/plugins/meson.build
+--- spa/plugins/meson.build.orig
++++ spa/plugins/meson.build
+@@ -25,6 +25,9 @@ endif
+ if jack_dep.found()
+   subdir('jack')
+ endif
++if sndio_dep.found()
++  subdir('sndio')
++endif
+ if get_option('support').allowed()
+   subdir('support')
+ endif

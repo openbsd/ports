@@ -5,8 +5,8 @@ PW_PROJECT=		pipewire
 PW_VERSION=		1.6.8
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-REVISION-main=		4
-REVISION-libs=		1
+REVISION-main=		5
+REVISION-libs=		2
 
 SHARED_LIBS += pipewire-0.3              1.0 # 0.1608.0
 
@@ -16,7 +16,7 @@ WANTLIB-main += ${COMPILER_LIBCXX} X11 Xfixes c camera camera-base
 WANTLIB-main += canberra curses dbus-1 ebur128 epoll-shim fftw3f gio-2.0
 WANTLIB-main += glib-2.0 gobject-2.0 gstallocators-1.0 gstaudio-1.0
 WANTLIB-main += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 m opus pipewire-0.3
-WANTLIB-main += readline sndfile
+WANTLIB-main += readline sndfile sndio
 
 WANTLIB-libs += intl pthread
 
@@ -101,8 +101,12 @@ CONFIGURE_ARGS +=	-Djack=disabled
 # Jack3 server
 CONFIGURE_ARGS +=	-Dpipewire-jack=disabled
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/daemon/pipewire.conf.in
+# sndio SPA plugin; XXX to be sent upstream
+CONFIGURE_ARGS +=	-Dsndio=enabled
+post-extract:
+	mkdir -p ${WRKSRC}/spa/plugins/sndio
+	cp ${FILESDIR}/sndio/*.{c,h} ${FILESDIR}/sndio/meson.build \
+		${WRKSRC}/spa/plugins/sndio
 
 # XXX to be revisited; useful to replace the pulseaudio daemon
 # (audio/pulseaudio) but it seems to depend on systemd activation for now
@@ -112,6 +116,11 @@ CONFIGURE_ARGS +=	-Dlibpulse=disabled
 # RUN_DEPENDS-main +=	${MODDCONF_RUN_DEPENDS}
 post-install:
 	rm -f ${PREFIX}/share/glib-2.0/schemas/org.freedesktop.pulseaudio.gschema.xml
+
+# load the sndio spa plugin and create default sndio nodes
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pipewire/pipewire.conf.d
+	${INSTALL_DATA} ${FILESDIR}/10-sndio.conf \
+		${PREFIX}/share/pipewire/pipewire.conf.d/
 
 # systemd socket activation is not supported on OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pipewire/xdg/autostart
