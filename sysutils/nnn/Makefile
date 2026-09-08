@@ -1,6 +1,7 @@
 COMMENT =		the missing terminal file browser for X
 
 V =			5.3
+REVISION =		0
 DISTNAME =		nnn-v${V}
 PKGNAME =		nnn-${V}
 
@@ -38,6 +39,8 @@ USE_GMAKE =		Yes
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/nnn-${V}
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
