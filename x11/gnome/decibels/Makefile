@@ -2,6 +2,7 @@ COMMENT=		play audio files
 
 GNOME_PROJECT=		decibels
 GNOME_VERSION=		49.6.1
+REVISION=		0
 
 CATEGORIES=		audio multimedia
 

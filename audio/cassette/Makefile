@@ -3,6 +3,7 @@ COMMENT =		unofficial Yandex Music client
 V =			0.2.4
 DISTNAME =		Cassette-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		audio x11
 

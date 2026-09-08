@@ -12,6 +12,7 @@ DIST_TUPLE= \
 	github signalapp SparsePostQuantumRatchet v1.5.1 deps/spqr
 
 PKGNAME=	${DISTNAME:S/flare/flare-messenger/}
+REVISION=	0
 
 CATEGORIES=	net
 

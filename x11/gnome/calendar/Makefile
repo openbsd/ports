@@ -2,6 +2,7 @@ COMMENT=		GNOME calendar
 
 GNOME_PROJECT=		gnome-calendar
 GNOME_VERSION=		50.0
+REVISION=		0
 
 HOMEPAGE=		https://apps.gnome.org/Calendar/
 

@@ -5,6 +5,7 @@ GNOME_VERSION=		2.9.2
 DISTFILES=		diebahn-${GNOME_VERSION}${EXTRACT_SUFX}
 WRKDIST=		${WRKDIR}/diebahn-${GNOME_VERSION}
 SITES=			https://gitlab.com/api/v4/projects/34570753/packages/generic/railway/${GNOME_VERSION}/
+REVISION=		0
 
 CATEGORIES=		productivity
 
