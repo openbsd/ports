@@ -23,7 +23,7 @@ Index: control.c
  	TAILQ_REMOVE(&ctl_conns, c, entry);
  
  	event_del(&c->iev.ev);
-@@ -247,14 +251,13 @@ control_dispatch_imsg(int fd, short event, void *arg)
+@@ -247,21 +251,20 @@ control_dispatch_imsg(int fd, short event, void *arg)
  	}
  
  	if (event & EV_READ) {
@@ -37,6 +37,14 @@ Index: control.c
  	if (event & EV_WRITE) {
 -		if (msgbuf_write(&c->iev.ibuf.w) <= 0 && errno != EAGAIN) {
 +		if (imsgbuf_write(&c->iev.ibuf) == -1) {
+ 			control_close(fd, cs);
+ 			return;
+ 		}
+ 	}
+ 
+ 	for (;;) {
+-		if ((n = imsg_get(&c->iev.ibuf, &imsg)) == -1) {
++		if ((n = imsgbuf_get(&c->iev.ibuf, &imsg)) == -1) {
  			control_close(fd, cs);
  			return;
  		}
