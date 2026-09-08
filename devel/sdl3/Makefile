@@ -1,9 +1,8 @@
 COMMENT =		cross-platform multimedia library
 
-V =			3.4.2
+V =			3.4.16
 DISTNAME =		SDL3-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		2
 
 SHARED_LIBS +=		SDL3                      0.1 # 3.4.0
 
@@ -24,9 +23,9 @@ SITES =			https://libsdl.org/release/ \
 MODULES =		devel/cmake
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv
 
+BUILD_DEPENDS =		wayland/libinput-openbsd
 LIB_DEPENDS =		converters/libiconv \
 			devel/fribidi \
-			wayland/libinput-openbsd \
 			wayland/wayland \
 			x11/xkbcommon
 
