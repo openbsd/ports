@@ -1,23 +1,12 @@
-Adapt to OpenBSD. Also provide the glibc-style __BYTE_ORDER macros used
-throughout the tree: without them every '#if __BYTE_ORDER == __BIG_ENDIAN'
-silently evaluates to true (undefined macros are 0 in #if context) and all
-native sample formats are mislabeled as big-endian, resulting in
-byte-swapped (garbled) audio. To be sent upstream.
-
 Index: spa/include/spa/utils/endian.h
 --- spa/include/spa/utils/endian.h.orig
 +++ spa/include/spa/utils/endian.h
-@@ -10,6 +10,16 @@
+@@ -10,6 +10,11 @@
  #define bswap_16 bswap16
  #define bswap_32 bswap32
  #define bswap_64 bswap64
 +#elif defined(__OpenBSD__)
 +#include <endian.h>
-+#ifndef __BYTE_ORDER
-+#define __LITTLE_ENDIAN	_LITTLE_ENDIAN
-+#define __BIG_ENDIAN	_BIG_ENDIAN
-+#define __BYTE_ORDER	_BYTE_ORDER
-+#endif
 +#define bswap_16 swap16
 +#define bswap_32 swap32
 +#define bswap_64 swap64
