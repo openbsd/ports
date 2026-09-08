@@ -22,7 +22,16 @@ Index: libmdns/mdnsl.c
  }
  
  void
-@@ -329,7 +330,7 @@ mdns_read(struct mdns *m)
+@@ -321,21 +322,20 @@ mdns_service_init(struct mdns_service *ms, const char 
+ ssize_t
+ mdns_read(struct mdns *m)
+ {
+-	int			ev;
+-	size_t			r;
++	int			ev, r;
+ 	ssize_t			n;
+ 	struct imsg		imsg;
+ 	struct rr		rr;
  	struct mdns_service	ms;
  	char			groupname[MAXHOSTNAMELEN];
  
@@ -31,7 +40,14 @@ Index: libmdns/mdnsl.c
  
  	if (n == -1 || n == 0)
  		return (n);
-@@ -514,7 +515,7 @@ ibuf_send_imsg(struct imsgbuf *ibuf, u_int32_t type,
+ 
+ 	/* TODO call imsgctl_to_event() */
+-	while ((r = imsg_get(&m->ibuf, &imsg)) > 0) {
++	while ((r = imsgbuf_get(&m->ibuf, &imsg)) > 0) {
+ 		switch (imsg.hdr.type) {
+ 		case IMSG_CTL_LOOKUP: /* FALLTHROUGH */
+ 		case IMSG_CTL_LOOKUP_FAILURE:
+@@ -514,7 +514,7 @@ ibuf_send_imsg(struct imsgbuf *ibuf, u_int32_t type,
  
  	imsg_close(ibuf, wbuf);
  
