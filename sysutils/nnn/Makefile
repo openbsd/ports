@@ -1,6 +1,6 @@
 COMMENT =		the missing terminal file browser for X
 
-V =			5.2
+V =			5.3
 DISTNAME =		nnn-v${V}
 PKGNAME =		nnn-${V}
 
@@ -13,7 +13,7 @@ MAINTAINER =		Martin Ziemer <horrad@horrad.de>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c curses pthread readline
+WANTLIB =		c curses pthread
 
 SITES =			https://github.com/jarun/nnn/releases/download/v${V}/
 
