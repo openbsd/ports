@@ -2,7 +2,7 @@
 # https://github.com/OpenVoxProject/openfact/issues/47
 
 COMMENT =		system inventory tool
-DISTNAME =		openfact-5.7.0
+DISTNAME =		openfact-6.0.0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://github.com/OpenVoxProject/openfact/
@@ -18,7 +18,7 @@ MODRUBY_HANDLE_FLAVORS =No
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/ruby-ffi,${MODRUBY_FLAVOR}>=1.15.5 \
 			devel/ruby-hocon,${MODRUBY_FLAVOR}>=1.3 \
-			devel/ruby-thor,${MODRUBY_FLAVOR}>=1.0.1
+			devel/ruby-thor,${MODRUBY_FLAVOR}>=1.5
 
 CONFIGURE_STYLE =	ruby gem
 GEM_FLAGS =		--no-format-executable
