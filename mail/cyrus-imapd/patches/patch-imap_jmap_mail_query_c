@@ -3,7 +3,7 @@
 Index: imap/jmap_mail_query.c
 --- imap/jmap_mail_query.c.orig
 +++ imap/jmap_mail_query.c
-@@ -901,11 +901,11 @@ static void _matchmime_query_serialize(matchmime_query
+@@ -900,11 +900,11 @@ static void _matchmime_query_serialize(matchmime_query
          break;
      case MATCHMIME_OP_BEFORE:
          buf_appendcstr(buf, "BEFORE");
