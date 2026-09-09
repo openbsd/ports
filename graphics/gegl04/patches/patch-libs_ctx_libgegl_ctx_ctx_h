@@ -1,0 +1,15 @@
+Index: libs/ctx/libgegl_ctx/ctx.h
+--- libs/ctx/libgegl_ctx/ctx.h.orig
++++ libs/ctx/libgegl_ctx/ctx.h
+@@ -51,7 +51,11 @@ extern "C" {
+ #include <string.h>
+ #ifndef _WIN32
+ #include <strings.h>
++#ifdef __OpenBSD__
++#include <stdlib.h>
++#else
+ #include <alloca.h>
++#endif
+ #else
+ #include <malloc.h>
+ #endif
