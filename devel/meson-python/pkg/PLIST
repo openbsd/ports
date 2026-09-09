@@ -10,8 +10,6 @@ lib/python${MODPY_VERSION}/site-packages/mesonpy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}_editable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}_editable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}_rpath.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -22,7 +20,6 @@ lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}_util.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}_wheelfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}_wheelfile.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/mesonpy/_compat.py
 lib/python${MODPY_VERSION}/site-packages/mesonpy/_editable.py
 lib/python${MODPY_VERSION}/site-packages/mesonpy/_rpath.py
 lib/python${MODPY_VERSION}/site-packages/mesonpy/_tags.py
