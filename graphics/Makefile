@@ -268,6 +268,7 @@
      SUBDIR += pqiv
      SUBDIR += pstoedit
      SUBDIR += py-Pillow
+     SUBDIR += py-art
      SUBDIR += py-bdfparser
      SUBDIR += py-blurhash
      SUBDIR += py-cairo
