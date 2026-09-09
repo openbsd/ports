@@ -22,7 +22,7 @@ include/libpcap/pcap/vlan.h
 lib/libpcap/
 @static-lib lib/libpcap/libpcap.a
 @lib lib/libpcap/libpcap.so.${LIBpcap_VERSION}
-lib/libpcap/man/
+@mandir lib/libpcap/man/
 lib/libpcap/man/man3/
 lib/libpcap/man/man3/pcap.3pcap
 lib/libpcap/man/man3/pcap_activate.3pcap
