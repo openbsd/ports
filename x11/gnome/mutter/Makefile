@@ -2,7 +2,7 @@ COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		49.7
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS += mutter-mtk-17             0.0 # 0.0.0
 SHARED_LIBS += mutter-cogl-17            0.0 # 0.0.0
@@ -36,7 +36,6 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-argcomplete \
 			shells/bash-completion \
 			sysutils/consolekit \
-			wayland/libevdev-openbsd \
 			wayland/libinput-openbsd \
 			wayland/wayland-protocols \
 			wayland/xwayland \

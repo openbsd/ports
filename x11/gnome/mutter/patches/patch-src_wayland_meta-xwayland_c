@@ -1,3 +1,5 @@
+Based on https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=258042
+No abstract unix sockets and no getrandom(2) on OpenBSD.
 XXX push upstream
 
 Index: src/wayland/meta-xwayland.c
@@ -12,7 +14,7 @@ Index: src/wayland/meta-xwayland.c
  #endif
  #include <unistd.h>
  #include <X11/extensions/Xrandr.h>
-@@ -599,17 +601,25 @@ open_display_sockets (MetaXWaylandManager  *manager,
+@@ -599,17 +601,35 @@ open_display_sockets (MetaXWaylandManager  *manager,
  {
    int abstract_fd, unix_fd;
  
@@ -32,13 +34,23 @@ Index: src/wayland/meta-xwayland.c
      }
  
 +#ifndef __linux__
-+  abstract_fd = unix_fd;
++  /* No abstract sockets: hand out a second reference to the unix socket so
++   * both fds have independent ownership (they are both passed to Xwayland
++   * and both watched in the on-demand policy). */
++  abstract_fd = dup (unix_fd);
++  if (abstract_fd < 0)
++    {
++      g_set_error (error, G_IO_ERROR, g_io_error_from_errno (errno),
++                   "Failed to dup X11 socket: %s", g_strerror (errno));
++      close (unix_fd);
++      return FALSE;
++    }
 +#endif
 +
    *abstract_fd_out = abstract_fd;
    *unix_fd_out = unix_fd;
  
-@@ -687,12 +697,16 @@ prepare_auth_file (MetaXWaylandManager  *manager,
+@@ -687,12 +707,16 @@ prepare_auth_file (MetaXWaylandManager  *manager,
                                           ".mutter-Xwaylandauth.XXXXXX",
                                           NULL);
  
@@ -50,7 +62,7 @@ Index: src/wayland/meta-xwayland.c
        return FALSE;
      }
 +#else /* HAVE_ARC4RANDOM_BUF */
-+  arc4random_buf(auth_data, sizeof (auth_data));
++  arc4random_buf (auth_data, sizeof (auth_data));
 +#endif
  
    auth_entry.family = FamilyLocal;
