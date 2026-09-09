@@ -142,12 +142,19 @@ PKG_ARGS+=	-Drocksdb=1
 PKG_ARGS+=	-Drocksdb=0
 .endif
 
+# for libfmt patch
+SUBST_VARS +=	FILESDIR
+
 pre-configure:
 	mkdir -p ${WRKBUILD}/extra/libfmt/src
 	cp -f ${DISTDIR}/fmt-${FMT_V}.zip ${WRKBUILD}/extra/libfmt/src
 	@${SUBST_CMD} ${WRKSRC}/cmake/mysql_version.cmake \
 	    ${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c.in \
 	    ${WRKSRC}/scripts/mysql_config.sh
+
+	# patch to apply ${FILESDIR}/libfmt-588b3a0f8.patch to copy of libfmt
+	# extracted during build to fix https://github.com/fmtlib/fmt/issues/4811
+	${SUBST_CMD} ${WRKSRC}/cmake/libfmt.cmake
 
 post-install:
 	@cd ${PREFIX}/lib && \

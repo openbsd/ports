@@ -1,0 +1,11 @@
+Index: cmake/libfmt.cmake
+--- cmake/libfmt.cmake.orig
++++ cmake/libfmt.cmake
+@@ -26,6 +26,7 @@ MACRO(BUNDLE_LIBFMT)
+     libfmt
+     PREFIX   "${dir}"
+     ${source}
++    PATCH_COMMAND patch -Ep1 < ${FILESDIR}/libfmt-588b3a0f8.patch
+     INSTALL_COMMAND ""
+     CONFIGURE_COMMAND ""
+     BUILD_COMMAND ""
