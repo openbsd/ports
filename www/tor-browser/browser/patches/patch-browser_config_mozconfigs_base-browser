@@ -1,5 +1,3 @@
-Don't use --enable-rust-simd, fails to build.
-
 Don't use --disable-zucchini, not a supported flag on OpenBSD.
 
 Remove $WASI_SYSROOT test, it breaks the build for us. Not sure if the test
@@ -9,11 +7,7 @@ https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41406
 Index: browser/config/mozconfigs/base-browser
 --- browser/config/mozconfigs/base-browser.orig
 +++ browser/config/mozconfigs/base-browser
-@@ -11,18 +11,16 @@ mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUES
- export MOZILLA_OFFICIAL=1
- 
- ac_add_options --enable-optimize
--ac_add_options --enable-rust-simd
+@@ -15,14 +15,13 @@ ac_add_options --enable-rust-simd
  
  ac_add_options --disable-unverified-updates
  ac_add_options --enable-base-browser-update
@@ -30,7 +24,7 @@ Index: browser/config/mozconfigs/base-browser
  
  ac_add_options --disable-crashreporter
  # Before removing, please notice that WebRTC does not work on mingw (Bug 1393901)
-@@ -44,7 +42,3 @@ ac_add_options MOZ_TELEMETRY_REPORTING=
+@@ -44,7 +43,3 @@ ac_add_options MOZ_TELEMETRY_REPORTING=
  # Disable the creation of a <something>.default that Firefox by default creates
  # for old version that could not use dedicated profiles. See tor-browser#41542.
  ac_add_options --disable-legacy-profile-creation
