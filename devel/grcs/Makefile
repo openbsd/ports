@@ -1,8 +1,9 @@
 COMMENT=	GNU versions of the rcs utilities
 
-DISTNAME=	rcs-5.9.4
+DISTNAME=	rcs-5.10.1
+EXTRACT_SUFX=	.tar.lz
+
 PKGNAME=	g${DISTNAME}
-REVISION=	4
 
 CATEGORIES=	devel
 
@@ -14,7 +15,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c
 
 SITES=		${SITE_GNU:=rcs/}
-EXTRACT_SUFX=	.tar.xz
 
 RUN_DEPENDS=	textproc/gdiff
 BUILD_DEPENDS=	textproc/gdiff
@@ -27,13 +27,19 @@ BUILD_DEPENDS+=	textproc/groff
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.69
+AUTOCONF_VERSION=2.71
 CONFIGURE_ARGS= --program-prefix=g
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		DIFF="${LOCALBASE}/bin/gdiff" \
 		DIFF3="${LOCALBASE}/bin/gdiff3"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
+
+# if regenerating rcs.info from rcs.texi (done in "make fake"), newer
+# texinfo is needed. afaik shouldn't normally happen, however thfr has
+# seen this in his builds...
+#BUILD_DEPENDS+= print/texinfo
+#FAKE_FLAGS=	MAKEINFO=gmakeinfo
 
 pre-install:
 .for f in ci co rcsclean rcsdiff rcsmerge rlog
