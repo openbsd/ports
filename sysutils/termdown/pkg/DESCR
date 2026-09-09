@@ -1,0 +1,3 @@
+Runs a countdown timer in the terminal, or stopwatch if no duration is
+given. Several aspects of the countdown and display can be configured
+with CLI arguments.
