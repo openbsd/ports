@@ -1,19 +1,19 @@
 the configure script tries to use pkg-config to get the LDFLAGS for
 ncurses, but we don't have .pc files for libncurses, so fall back to the
-hardcoded -lncurses.
+hardcoded -lncurses
 
-Index: configure.in
---- configure.in.orig
-+++ configure.in
-@@ -2929,17 +2929,7 @@ AC_SUBST(CI_SUPPORT_OBJS)
- AC_SUBST(EXPORT_DYNAMIC)
+Index: bochs/configure.ac
+--- bochs/configure.ac.orig
++++ bochs/configure.ac
+@@ -3204,17 +3204,7 @@ AC_SUBST(EXPORT_DYNAMIC)
+ AC_SUBST(DLLTOOL)
  
  if test "$use_curses" = yes; then
--  if test "$PKGCONFIG" != not_found; then
--    AC_CHECK_LIB(curses, mvaddch, GUI_LINK_OPTS_TERM="`pkg-config --libs curses`")
--    AC_CHECK_LIB(ncurses, mvaddch, GUI_LINK_OPTS_TERM="`pkg-config --libs ncurses`")
--    AC_CHECK_LIB(termlib, mvaddch, GUI_LINK_OPTS_TERM="`pkg-config --libs termlib`")
--    AC_CHECK_LIB(pdcurses, mvaddch, GUI_LINK_OPTS_TERM="`pkg-config --libs pdcurses`")
+-  if test "x$PKG_CONFIG" != x; then
+-    AC_CHECK_LIB(curses, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs curses`")
+-    AC_CHECK_LIB(ncurses, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs ncurses`")
+-    AC_CHECK_LIB(termlib, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs termlib`")
+-    AC_CHECK_LIB(pdcurses, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs pdcurses`")
 -  else
 -    AC_CHECK_LIB(curses, mvaddch, GUI_LINK_OPTS_TERM='-lcurses')
      AC_CHECK_LIB(ncurses, mvaddch, GUI_LINK_OPTS_TERM='-lncurses')

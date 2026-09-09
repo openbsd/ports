@@ -2,23 +2,30 @@
 @bin bin/bxhub
 @bin bin/bximage
 @man man/man1/bochs.1
+@man man/man1/bxhub.1
 @man man/man1/bximage.1
 @man man/man5/bochsrc.5
 share/bochs/
 share/bochs/BIOS-bochs-latest
 share/bochs/BIOS-bochs-legacy
+share/bochs/OVMF-pure-efi.fd
+share/bochs/README-i440fx
+share/bochs/RELEASEX64_OVMF.fd
 share/bochs/SeaBIOS-README
 share/bochs/SeaVGABIOS-README
 share/bochs/VGABIOS-elpin-2.40
 share/bochs/VGABIOS-elpin-LICENSE
 share/bochs/VGABIOS-lgpl-README
-share/bochs/VGABIOS-lgpl-latest
-share/bochs/VGABIOS-lgpl-latest-banshee
-share/bochs/VGABIOS-lgpl-latest-cirrus
-share/bochs/VGABIOS-lgpl-latest-cirrus-debug
-share/bochs/VGABIOS-lgpl-latest-debug
-share/bochs/bios.bin-1.13.0
+share/bochs/VGABIOS-lgpl-latest-banshee-debug.bin
+share/bochs/VGABIOS-lgpl-latest-banshee.bin
+share/bochs/VGABIOS-lgpl-latest-cirrus-debug.bin
+share/bochs/VGABIOS-lgpl-latest-cirrus-vesa3.bin
+share/bochs/VGABIOS-lgpl-latest-cirrus.bin
+share/bochs/VGABIOS-lgpl-latest-debug.bin
+share/bochs/VGABIOS-lgpl-latest.bin
+share/bochs/bios.bin-1.16.0
 share/bochs/bochsrc
+share/bochs/i440fx.bin
 share/bochs/keymaps/
 share/bochs/keymaps/sdl-pc-de.map
 share/bochs/keymaps/sdl-pc-us.map
@@ -44,5 +51,6 @@ share/doc/bochs/LICENSE
 share/doc/bochs/README
 share/doc/bochs/TODO
 share/doc/bochs/bxdebugger.html
+share/doc/bochs/cpu_configurability.txt
 share/doc/bochs/slirp.conf
 share/doc/bochs/vnet.conf

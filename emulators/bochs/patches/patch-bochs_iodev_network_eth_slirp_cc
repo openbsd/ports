@@ -1,0 +1,13 @@
+Index: bochs/iodev/network/eth_slirp.cc
+--- bochs/iodev/network/eth_slirp.cc.orig
++++ bochs/iodev/network/eth_slirp.cc
+@@ -66,6 +66,9 @@ typedef ssize_t slirp_ssize_t;
+ #endif
+ #include <signal.h>
+ 
++#include <sys/socket.h>
++#include <sys/wait.h>
++
+ static unsigned int bx_slirp_instances = 0;
+ 
+ // network driver plugin entry point

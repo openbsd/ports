@@ -1,0 +1,12 @@
+Index: bochs/gui/keymap.cc
+--- bochs/gui/keymap.cc.orig
++++ bochs/gui/keymap.cc
+@@ -34,6 +34,8 @@
+ #include <libgen.h>
+ #endif
+ 
++#include <libgen.h>
++
+ // Table of bochs "BX_KEY_*" symbols
+ // the table must be in BX_KEY_* order
+ const char *bx_key_symbol[BX_KEY_NBKEYS] = {

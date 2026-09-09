@@ -1,6 +1,6 @@
-Index: gui/textconfig.cc
---- gui/textconfig.cc.orig
-+++ gui/textconfig.cc
+Index: bochs/gui/textconfig.cc
+--- bochs/gui/textconfig.cc.orig
++++ bochs/gui/textconfig.cc
 @@ -36,6 +36,7 @@
  // isn't even defined in this context.
  //

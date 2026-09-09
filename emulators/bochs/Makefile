@@ -1,16 +1,19 @@
 COMMENT=	x86 machine simulator
 
-DISTNAME=	bochs-2.7
-REVISION=	1
+V =		3.1
+GH_ACCOUNT =	bochs-emu
+GH_PROJECT =	Bochs
+GH_TAGNAME =	REL_3_1_FINAL
+DISTNAME =	${GH_PROJECT:L}-${V}
+
 CATEGORIES=	emulators
-SITES=		${SITE_SOURCEFORGE:=bochs/}
 
 HOMEPAGE=	https://bochs.sourceforge.io/
 
 # LGPLv2.1+ and MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c curses m pthread
+WANTLIB += ${COMPILER_LIBCXX} c curses m pthread slirp
 
 COMPILER =	base-clang ports-gcc base-gcc
 
@@ -32,12 +35,15 @@ CONFIGURE_ARGS=	--disable-docbook \
 		--enable-vmx=2 \
 		--with-term \
 		--enable-cet \
-		--enable-evex
+		--enable-evex \
+		--enable-using-libslirp
 
-AUTOCONF_VERSION = 2.69
+AUTOCONF_VERSION = 2.72
 
 FLAVORS=	debug no_x11
 FLAVOR?=
+
+LIB_DEPENDS +=	net/libslirp
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=--disable-debugger-gui \
@@ -58,6 +64,12 @@ WANTLIB+=	SDL X11 Xext Xpm Xrandr Xrender iconv sndio usbhid xcb
 .endif
 
 NO_TEST=	Yes
+
+WRKSRC =	${WRKDIST}/bochs
+
+USE_GMAKE =	Yes
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${PREFIX}/share/doc/bochs

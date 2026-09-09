@@ -1,0 +1,14 @@
+fix format string
+
+Index: bochs/cpu/apic.cc
+--- bochs/cpu/apic.cc.orig
++++ bochs/cpu/apic.cc
+@@ -32,6 +32,8 @@
+ #include "pc_system.h"
+ #include "iodev/iodev.h"
+ 
++#include <inttypes.h>
++
+ extern bool simulate_xapic;
+ 
+ #define LOG_THIS this->

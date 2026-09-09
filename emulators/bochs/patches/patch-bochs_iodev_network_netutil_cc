@@ -1,8 +1,8 @@
 fix format string
 
-Index: iodev/network/netutil.cc
---- iodev/network/netutil.cc.orig
-+++ iodev/network/netutil.cc
+Index: bochs/iodev/network/netutil.cc
+--- bochs/iodev/network/netutil.cc.orig
++++ bochs/iodev/network/netutil.cc
 @@ -1671,11 +1671,11 @@ void vnet_server_c::ftp_list_directory(tcp_conn_t *tcp
                  strftime(tmptime, 20, "%b %d %H:%M", localtime(&st.st_mtime));
                }
@@ -10,7 +10,7 @@ Index: iodev/network/netutil.cc
 -                sprintf(linebuf, "drwxrwxr-x 1 ftp ftp %ld %s %s%c%c", st.st_size,
 -                        tmptime, dent->d_name, 13, 10);
 +                sprintf(linebuf, "drwxrwxr-x 1 ftp ftp %lld %s %s%c%c",
-+			(long long) st.st_size, tmptime, dent->d_name, 13, 10);
++			(long long)st.st_size, tmptime, dent->d_name, 13, 10);
                } else {
 -                sprintf(linebuf, "-rw-rw-r-- 1 ftp ftp %ld %s %s%c%c", st.st_size,
 -                        tmptime, dent->d_name, 13, 10);

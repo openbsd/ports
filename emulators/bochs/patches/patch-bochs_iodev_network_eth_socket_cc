@@ -1,6 +1,6 @@
-Index: iodev/network/eth_socket.cc
---- iodev/network/eth_socket.cc.orig
-+++ iodev/network/eth_socket.cc
+Index: bochs/iodev/network/eth_socket.cc
+--- bochs/iodev/network/eth_socket.cc.orig
++++ bochs/iodev/network/eth_socket.cc
 @@ -93,7 +93,6 @@ extern "C" {
  #include <sys/socket.h>
  #include <sys/ioctl.h>
