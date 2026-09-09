@@ -1,0 +1,14 @@
+# force PSL to use local file, avoid networking at build stage
+
+Index: src/common/meson.build
+--- src/common/meson.build.orig
++++ src/common/meson.build
+@@ -106,7 +106,7 @@ python3 = find_program('python3', required: true)
+ 
+ public_suffix_data = custom_target('public_suffix_data_h',
+   output: 'public_suffix_data.h',
+-  command: [python3, files('gen-public-suffix.py'), '@OUTPUT@']
++  command: [python3, files('gen-public-suffix.py'), '@OUTPUT@', files('publicsuffix/public_suffix_list.dat')]
+ )
+ 
+ textevents = custom_target('textevents',

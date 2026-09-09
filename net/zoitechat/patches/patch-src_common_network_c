@@ -1,0 +1,11 @@
+Index: src/common/network.c
+--- src/common/network.c.orig
++++ src/common/network.c
+@@ -17,7 +17,6 @@
+  */
+ 
+ /* ipv4 and ipv6 networking functions with a common interface */
+-#define _POSIX_C_SOURCE 200112L
+ #ifdef _WIN32
+ #  include <ws2tcpip.h>
+ #else
