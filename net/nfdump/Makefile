@@ -1,6 +1,6 @@
 COMMENT =	tools to collect and process netflow data
 
-V =		1.7.8
+V =		1.7.10
 GH_ACCOUNT =	phaag
 GH_PROJECT =	nfdump
 GH_TAGNAME =	v$V
@@ -29,14 +29,12 @@ AUTORECONF =		./autogen.sh
 
 CONFIGURE_ARGS +=	--enable-ftconv \
 			--enable-ja4 \
-			--enable-maxmind \
+			--enable-readpcap \
 			--enable-nfpcapd \
 			--enable-nfprofile \
-			--enable-nftrack \
-			--enable-sflow \
-			--enable-tor \
-			--with-rrdpath=${LOCALBASE} \
-			--with-ftpath=${LOCALBASE}
+			--with-bz2=${LOCALBASE} \
+			--with-rrd=${LOCALBASE} \
+			--with-ft=${LOCALBASE}
 
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/lz4 \
