@@ -835,6 +835,7 @@
      SUBDIR += zeromq
      SUBDIR += ziproxy
      SUBDIR += znc
+     SUBDIR += zoitechat
      SUBDIR += zsync
 
 .include <bsd.port.subdir.mk>
