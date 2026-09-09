@@ -1,6 +1,6 @@
 COMMENT =	scheme subset for atmel microcontrollers
 DISTNAME =	microscheme-0.9.4
-REVISION =	0
+REVISION =	1
 CATEGORIES =	lang
 
 GH_ACCOUNT =	ryansuchocki
@@ -8,7 +8,6 @@ GH_PROJECT =	microscheme
 GH_TAGNAME =	v0.9.4
 
 HOMEPAGE =	https://ryansuchocki.github.io/microscheme/
-MAINTAINER =	James Turner <james@calminferno.net>
 
 # MIT
 PERMIT_PACKAGE =	Yes

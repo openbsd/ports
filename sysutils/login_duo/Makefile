@@ -3,9 +3,8 @@ COMMENT =		two-factor authentication for unix systems
 V =			2.2.3
 PKGNAME =		login_duo-${V}
 DISTNAME =		duo_unix-${V}
+REVISION =		0
 CATEGORIES =		sysutils
-
-MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://duo.com/docs/loginduo/
 SITES =			https://dl.duosecurity.com/

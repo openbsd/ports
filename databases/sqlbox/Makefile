@@ -1,9 +1,8 @@
 COMMENT =		database access library
 
 DISTNAME =		sqlbox-0.2.1
+REVISION =		0
 CATEGORIES =		databases
-
-MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://kristaps.bsd.lv/sqlbox/
 SITES =			https://kristaps.bsd.lv/sqlbox/snapshots/

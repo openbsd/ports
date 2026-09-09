@@ -4,11 +4,11 @@ CATEGORIES =	lang
 GH_ACCOUNT =	janet-lang
 GH_PROJECT =	janet
 GH_TAGNAME =	v1.41.2
+REVISION =	0
 
 SHARED_LIBS +=	janet		8.0 # 1.20
 
 HOMEPAGE =	https://www.janet-lang.org/
-MAINTAINER =	James Turner <james@calminferno.net>
 
 # MIT
 PERMIT_PACKAGE =	Yes

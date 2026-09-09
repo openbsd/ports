@@ -1,9 +1,8 @@
 COMMENT =		utility for creating secure pipes between socket addresses
 
 DISTNAME =		spiped-1.6.4
+REVISION =		0
 CATEGORIES =		security sysutils
-
-MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://www.tarsnap.com/spiped.html
 SITES =			https://www.tarsnap.com/spiped/

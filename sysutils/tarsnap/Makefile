@@ -2,9 +2,9 @@ COMMENT=		client for the tarsnap.com online encrypted backup service
 V=			1.0.41
 DISTNAME=		tarsnap-autoconf-${V}
 PKGNAME=		tarsnap-${V}
+REVISION=		0
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.tarsnap.com/
-MAINTAINER=		James Turner <james@calminferno.net>
 
 # May not be modified and may only be used with tarsnap.com
 # see http://www.tarsnap.com/legal.html

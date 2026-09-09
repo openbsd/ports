@@ -1,11 +1,9 @@
 COMMENT =		create and verify cryptographic signatures
 
 VERSION =		2.1.1
-REVISION =		0
+REVISION =		1
 DISTNAME =		reop-${VERSION}
 CATEGORIES =		security sysutils
-
-MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		http://www.tedunangst.com/flak/post/reop
 SITES =			http://www.tedunangst.com/flak/files/
