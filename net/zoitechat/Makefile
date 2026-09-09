@@ -1,11 +1,9 @@
 COMMENT =		GTK+ IRC Client
-V =			2.19.0
 PSL_COMMIT =		d91e55ea128af6218897d3b3723b28af7138c3d6
-DIST_TUPLE +=		github ZoiteChat zoitechat v${V} .
+DIST_TUPLE +=		github ZoiteChat zoitechat v2.19.0 .
 DIST_TUPLE +=		github publicsuffix list ${PSL_COMMIT} \
 			src/common/publicsuffix
 CATEGORIES =		net x11
-PKGNAME =		zoitechat-${V}
 
 HOMEPAGE =		https://zoitechat.org/
 
@@ -26,6 +24,9 @@ MODULES =		devel/meson \
 			lang/python \
 			textproc/intltool
 
+CONFIGURE_ARGS +=	-Dwith-sysinfo=false \
+			-Dappindicator=disabled
+
 BUILD_DEPENDS =		devel/iso-codes \
 			devel/py-cffi
 
@@ -41,15 +42,11 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/iso-codes \
 			x11/gtk+4,-guic
 
-TEST_DEPENDS =		archivers/gtar \
-			devel/harfbuzz,-main
+TEST_DEPENDS =		archivers/gtar
 
 TEST_ENV +=		AS_VALIDATE_NONET=1
 
 pre-test:
 	ln -fs ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
-
-CONFIGURE_ARGS +=	-Dwith-sysinfo=false \
-			-Dappindicator=disabled
 
 .include <bsd.port.mk>
