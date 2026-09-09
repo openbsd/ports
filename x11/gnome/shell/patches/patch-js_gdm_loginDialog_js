@@ -1,4 +1,5 @@
 No SessionId with ConsoleKit.
+ConsoleKit exposes the session 'active' property in lowercase.
 
 Index: js/gdm/loginDialog.js
 --- js/gdm/loginDialog.js.orig
@@ -14,7 +15,20 @@ Index: js/gdm/loginDialog.js
  export const UserListItem = GObject.registerClass({
      Signals: {'activate': {}},
  }, class UserListItem extends St.Button {
-@@ -1266,6 +1270,7 @@ export const LoginDialog = GObject.registerClass({
+@@ -1195,8 +1199,10 @@ export const LoginDialog = GObject.registerClass({
+         const loginManager = LoginManager.getLoginManager();
+         this._greeterSessionProxy = await loginManager.getCurrentSessionProxy();
+         this._greeterSessionProxy?.connectObject('g-properties-changed', (proxy, properties) => {
+-            const activeChanged = !!properties.lookup_value('Active', null);
+-            if (activeChanged && proxy.Active)
++            // logind exposes 'Active', ConsoleKit exposes 'active'
++            const activeChanged = !!properties.lookup_value('Active', null) ||
++                                  !!properties.lookup_value('active', null);
++            if (activeChanged && (proxy.Active ?? proxy.active))
+                 this._loginScreenSessionActivated();
+         }, this);
+     }
+@@ -1266,6 +1272,7 @@ export const LoginDialog = GObject.registerClass({
      }
  
      async _findConflictingSession(startingSessionId) {
@@ -22,7 +36,7 @@ Index: js/gdm/loginDialog.js
          const loginManager = LoginManager.getLoginManager();
          const sessions = await loginManager.listSessions();
          const [, , startingSessionOwner, ,] = sessions.find(([id, , , ,]) => id === startingSessionId);
-@@ -1285,6 +1290,7 @@ export const LoginDialog = GObject.registerClass({
+@@ -1285,6 +1292,7 @@ export const LoginDialog = GObject.registerClass({
                  continue;
  
              return sessionProxy;

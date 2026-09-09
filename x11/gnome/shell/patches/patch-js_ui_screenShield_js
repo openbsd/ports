@@ -1,0 +1,17 @@
+ConsoleKit exposes the session 'active' property in lowercase; without this
+the lock-before-suspend inhibitor is never taken.
+
+Index: js/ui/screenShield.js
+--- js/ui/screenShield.js.orig
++++ js/ui/screenShield.js
+@@ -209,7 +209,9 @@ export class ScreenShield extends Signals.EventEmitter
+     async _syncInhibitor() {
+         const lockEnabled = this._settings.get_boolean(LOCK_ENABLED_KEY);
+         const lockLocked = this._lockSettings.get_boolean(DISABLE_LOCK_KEY);
+-        const inhibit = !!this._loginSession && this._loginSession.Active &&
++        // logind exposes 'Active', ConsoleKit exposes 'active'
++        const sessionActive = this._loginSession?.Active ?? this._loginSession?.active;
++        const inhibit = !!this._loginSession && sessionActive &&
+                          !this._isActive && lockEnabled && !lockLocked &&
+                          !!Main.sessionMode.unlockDialog;
+ 

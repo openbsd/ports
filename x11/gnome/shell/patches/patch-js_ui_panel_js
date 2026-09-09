@@ -9,10 +9,21 @@ https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/commit/08ae6461a824d244ea
 
 (gnome-shell:10821): GNOME Shell-CRITICAL **: 09:02:24.828: Failed to setup quick settings: TypeError: can't access property "connectObject", this._manager is null
 
+External indicators (extensions) are now inserted before the thunderbolt
+indicator, which was the one following brightness.
+
 Index: js/ui/panel.js
 --- js/ui/panel.js.orig
 +++ js/ui/panel.js
-@@ -322,7 +322,6 @@ class QuickSettings extends PanelMenu.Button {
+@@ -20,7 +20,6 @@ import * as PowerProfileStatus from './status/powerPro
+ import * as RFKillStatus from './status/rfkill.js';
+ import * as CameraStatus from './status/camera.js';
+ import * as VolumeStatus from './status/volume.js';
+-import * as BrightnessStatus from './status/brightness.js';
+ import * as SystemStatus from './status/system.js';
+ import * as LocationStatus from './status/location.js';
+ import * as NightLightStatus from './status/nightLight.js';
+@@ -322,7 +321,6 @@ class QuickSettings extends PanelMenu.Button {
          this._camera = new CameraStatus.Indicator();
          this._volumeOutput = new VolumeStatus.OutputIndicator();
          this._volumeInput = new VolumeStatus.InputIndicator();
@@ -20,7 +31,7 @@ Index: js/ui/panel.js
          this._remoteAccess = new RemoteAccessStatus.RemoteAccessApplet();
          this._location = new LocationStatus.Indicator();
          this._thunderbolt = new ThunderboltStatus.Indicator();
-@@ -344,7 +343,6 @@ class QuickSettings extends PanelMenu.Button {
+@@ -344,7 +342,6 @@ class QuickSettings extends PanelMenu.Button {
          this._indicators.insert_child_at_index(this._location, pos++);
  
          // append all other indicators
@@ -28,7 +39,7 @@ Index: js/ui/panel.js
          this._indicators.add_child(this._thunderbolt);
          this._indicators.add_child(this._nightLight);
          if (this._network)
-@@ -369,8 +367,6 @@ class QuickSettings extends PanelMenu.Button {
+@@ -369,8 +366,6 @@ class QuickSettings extends PanelMenu.Button {
              sibling, N_QUICK_SETTINGS_COLUMNS);
          this._addItemsBefore(this._volumeInput.quickSettingsItems,
              sibling, N_QUICK_SETTINGS_COLUMNS);
@@ -37,14 +48,12 @@ Index: js/ui/panel.js
  
          this._addItemsBefore(this._camera.quickSettingsItems, sibling);
          this._addItemsBefore(this._remoteAccess.quickSettingsItems, sibling);
-@@ -406,10 +402,6 @@ class QuickSettings extends PanelMenu.Button {
-      * @param {number=} colSpan
+@@ -407,7 +402,7 @@ class QuickSettings extends PanelMenu.Button {
       */
      addExternalIndicator(indicator, colSpan = 1) {
--        // Insert before first non-privacy indicator if it exists
+         // Insert before first non-privacy indicator if it exists
 -        let sibling = this._brightness ?? null;
--        this._indicators.insert_child_below(indicator, sibling);
--
++        let sibling = this._thunderbolt ?? null;
+         this._indicators.insert_child_below(indicator, sibling);
+ 
          // Insert before background apps if it exists
-         sibling = this._backgroundApps?.quickSettingsItems?.at(-1) ?? null;
-         this._addItemsBefore(indicator.quickSettingsItems, sibling, colSpan);
