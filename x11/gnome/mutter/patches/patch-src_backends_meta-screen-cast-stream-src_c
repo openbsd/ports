@@ -6,7 +6,7 @@ passed over the PipeWire socket like a memfd.
 Index: src/backends/meta-screen-cast-stream-src.c
 --- src/backends/meta-screen-cast-stream-src.c.orig
 +++ src/backends/meta-screen-cast-stream-src.c
-@@ -1996,7 +1996,11 @@
+@@ -1996,7 +1996,11 @@ on_stream_add_buffer (void             *data,
      }
    else
      {
@@ -18,7 +18,7 @@ Index: src/backends/meta-screen-cast-stream-src.c
  
        priv->uses_dma_bufs = FALSE;
  
-@@ -2014,6 +2018,7 @@
+@@ -2014,6 +2018,7 @@ on_stream_add_buffer (void             *data,
        /* Fallback to a memfd buffer */
        spa_data->type = SPA_DATA_MemFd;
        spa_data->flags = SPA_DATA_FLAG_READABLE | SPA_DATA_FLAG_MAPPABLE;
@@ -26,7 +26,7 @@ Index: src/backends/meta-screen-cast-stream-src.c
        spa_data->fd = memfd_create ("mutter-screen-cast-memfd",
                                     MFD_CLOEXEC | MFD_ALLOW_SEALING);
        if (spa_data->fd == -1)
-@@ -2021,6 +2026,15 @@
+@@ -2021,6 +2026,15 @@ on_stream_add_buffer (void             *data,
            g_critical ("Can't create memfd: %m");
            return;
          }
@@ -42,7 +42,7 @@ Index: src/backends/meta-screen-cast-stream-src.c
  
        stride = meta_screen_cast_stream_src_calculate_stride (src, spa_data);
        spa_data->maxsize = stride * priv->video_format.size.height;
-@@ -2033,9 +2047,11 @@
+@@ -2033,9 +2047,11 @@ on_stream_add_buffer (void             *data,
            return;
          }
  

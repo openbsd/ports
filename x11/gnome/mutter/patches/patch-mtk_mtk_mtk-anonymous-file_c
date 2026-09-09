@@ -1,0 +1,18 @@
+XXX push upstream
+Needed to have a proper separator, otherwise it will try to write sth like:
+/var/run/user/1000mutter-anonymous-file-selection-source-XXXXXX
+and fail with:
+"Failed to create MetaAnonymousFile"
+
+Index: mtk/mtk/mtk-anonymous-file.c
+--- mtk/mtk/mtk-anonymous-file.c.orig
++++ mtk/mtk/mtk-anonymous-file.c
+@@ -128,7 +128,7 @@ create_anonymous_file (const char *name,
+         }
+ 
+       template = g_strdup_printf ("mutter-anonymous-file-%s-XXXXXX", name);
+-      filename = g_strconcat (path, template, NULL);
++      filename = g_build_filename (path, template, NULL);
+       fd = create_tmpfile_cloexec (filename);
+ 
+       if (fd < 0)
