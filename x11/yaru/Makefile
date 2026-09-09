@@ -1,6 +1,6 @@
 COMMENT=		Ubuntu GNOME theme
 
-GH_TAGNAME=		26.10.1
+GH_TAGNAME=		26.10.2
 GH_ACCOUNT=		ubuntu
 GH_PROJECT=		yaru
 
@@ -33,6 +33,6 @@ post-install:
 	rm -r ${PREFIX}/share/gnome-shell/extensions/ubuntu-dock@ubuntu.com
 	rmdir ${PREFIX}/share/gnome-shell/extensions/
 	rm -r ${PREFIX}/share/glib-2.0/schemas/99_Yaru.gschema.override \
-		${PREFIX}/share/{wayland-,x}sessions/
+		${PREFIX}/share/wayland-sessions/
 
 .include <bsd.port.mk>

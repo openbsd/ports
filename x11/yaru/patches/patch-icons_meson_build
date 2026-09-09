@@ -1,7 +1,7 @@
 Index: icons/meson.build
 --- icons/meson.build.orig
 +++ icons/meson.build
-@@ -311,7 +311,7 @@ foreach flavour: icon_flavors
+@@ -312,7 +312,7 @@ foreach flavour: icon_flavors
          endif
        endforeach
  
@@ -10,7 +10,7 @@ Index: icons/meson.build
          '-type', 'd',
          included_names.length() > 0 ? ['('] + included_names + [')'] : [],
          '-printf', '%P\\n',
-@@ -339,7 +339,7 @@ foreach flavour: icon_flavors
+@@ -340,7 +340,7 @@ foreach flavour: icon_flavors
        # the default dark theme as fallback, while the base flavour theme
        # is still inherited as primary.
        dark_categories = run_command(

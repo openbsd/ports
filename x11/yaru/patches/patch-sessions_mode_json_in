@@ -1,15 +1,21 @@
 Index: sessions/mode.json.in
 --- sessions/mode.json.in.orig
 +++ sessions/mode.json.in
-@@ -3,10 +3,5 @@
-     "colorScheme": "prefer-@DefaultVariant@",
+@@ -4,14 +4,5 @@
      "stylesheetName": "@ThemeName@/gnome-shell.css",
      "themeResourceName": "@ThemeResourcePath@gnome-shell-theme.gresource",
--    "iconsResourceName": "@ThemeResourcePath@gnome-shell-icons.gresource",
+     "iconsResourceName": "@ThemeResourcePath@gnome-shell-icons.gresource",
+-    "debugFlags": ["backtrace-crashes-all"],
 -    "enabledExtensions": [
 -        "ubuntu-dock@ubuntu.com",
 -        "ubuntu-appindicators@ubuntu.com",
--        "ding@rastersoft.com"
+-        "ding@rastersoft.com",
+-        "tiling-assistant@ubuntu.com",
+-        "snapd-prompting@canonical.com",
+-        "snapd-search-provider@canonical.com",
+-        "web-search-provider@ubuntu.com"
 -    ]
-+    "iconsResourceName": "@ThemeResourcePath@gnome-shell-icons.gresource"
- }
+-}
+\ No newline at end of file
++    "debugFlags": ["backtrace-crashes-all"]
++}

@@ -1,7 +1,7 @@
 Index: cinnamon-shell/src/meson.build
 --- cinnamon-shell/src/meson.build.orig
 +++ cinnamon-shell/src/meson.build
-@@ -54,7 +54,7 @@ foreach src: theme_sources
+@@ -53,7 +53,7 @@ foreach src: theme_sources
      command: [
        'bash', '-c',
        ';'.join([
