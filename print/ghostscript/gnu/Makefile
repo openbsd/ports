@@ -1,6 +1,6 @@
 COMMENT =	PostScript and PDF interpreter
 
-VERSION =	10.07.1
+VERSION =	10.08.0
 DISTNAME =	ghostpdl-${VERSION}
 PKGNAME =	ghostscript-${VERSION}
 EXTRACT_SUFX =	.tar.xz
