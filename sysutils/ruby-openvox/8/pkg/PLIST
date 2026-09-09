@@ -1182,11 +1182,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/psych_support.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc/code_objects.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc/generators/
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc/generators/puppet_generator.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc/generators/template/
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc/generators/template/puppet/
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc/generators/template/puppet/puppet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc/parser/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc/parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/util/rdoc/parser/puppet_parser_core.rb

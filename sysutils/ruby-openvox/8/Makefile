@@ -1,4 +1,4 @@
-VERSION =		8.28.1
+VERSION =		8.29.0
 
 RUN_DEPENDS =		converters/ruby-multi_json,${MODRUBY_FLAVOR}>=1.13,<2 \
 			devel/ruby-concurrent-ruby,${MODRUBY_FLAVOR}>=1,<2 \
@@ -9,7 +9,7 @@ RUN_DEPENDS =		converters/ruby-multi_json,${MODRUBY_FLAVOR}>=1.13,<2 \
 			devel/ruby-scanf,${MODRUBY_FLAVOR}>=1,<2 \
 			devel/ruby-semantic_puppet,${MODRUBY_FLAVOR}>=1,<2 \
 			net/ruby-msgpack,${MODRUBY_FLAVOR} \
-			sysutils/ruby-openfact>=5.2.1p0
+			sysutils/ruby-openfact>=6.0.0
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/puppet/provider/package/gem.rb \
