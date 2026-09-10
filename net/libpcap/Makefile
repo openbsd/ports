@@ -1,7 +1,7 @@
 COMMENT=	packet capture library
 
 DISTNAME=	libpcap-1.10.7
-REVISIOM=	0
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.xz
 
