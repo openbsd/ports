@@ -1,10 +1,19 @@
 @bin bin/lf
 @man man/man1/lf.1
 share/applications/lf.desktop
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/lf
 share/examples/lf/
 @sample ${SYSCONFDIR}/lf/
 share/examples/lf/lfrc.example
 @sample ${SYSCONFDIR}/lf/lfrc
 share/examples/lf/ruler.default
 @sample ${SYSCONFDIR}/lf/ruler
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/lf.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_lf
 @tag update-desktop-database

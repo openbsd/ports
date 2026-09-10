@@ -1,9 +1,9 @@
 COMMENT =	terminal file manager inspired by ranger written in Go
 
 MODGO_MODNAME =	github.com/gokcehan/lf
-MODGO_VERSION =	v0.0.0-20260204053052-18ab3cf6500d
+MODGO_VERSION =	v0.0.0-20260731071221-5b6c393d5479
 
-R =	41
+R =	42
 DISTNAME =	lf-${R}
 
 CATEGORIES =	sysutils
@@ -15,7 +15,7 @@ MAINTAINER =	Igor Zornik <mocheryl@mocheryl.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c pthread
+WANTLIB += c pthread
 
 MODGO_LDFLAGS +=	-X 'main.gVersion=r${R}'
 
@@ -26,10 +26,18 @@ RUN_DEPENDS =	devel/desktop-file-utils
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lf
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/ \
+		${PREFIX}/share/fish/vendor_completions.d/ \
+		${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_MAN} ${WRKSRC}/lf.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/etc/lfrc.example ${PREFIX}/share/examples/lf
 	${INSTALL_DATA} ${WRKSRC}/etc/ruler.default ${PREFIX}/share/examples/lf
+	${INSTALL_DATA} ${WRKSRC}/etc/lf.bash \
+		${PREFIX}/share/bash-completion/completions/lf
+	${INSTALL_DATA} ${WRKSRC}/etc/lf.fish \
+		${PREFIX}/share/fish/vendor_completions.d/
+	${INSTALL_DATA} ${WRKSRC}/etc/lf.zsh ${PREFIX}/share/zsh/site-functions/_lf
 	${INSTALL_DATA} ${WRKSRC}/lf.desktop ${PREFIX}/share/applications
 
 .include "modules.inc"
