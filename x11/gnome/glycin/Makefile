@@ -1,9 +1,7 @@
 COMMENT=		sandboxed and extendable image loading and editing
 
 GNOME_PROJECT=		glycin
-GNOME_VERSION=		2.2.beta.1
-PKGNAME=		${GNOME_PROJECT}-2.2beta1
-REVISION=		0
+GNOME_VERSION=		2.2.0
 
 CATEGORIES=		graphics
 
