@@ -1,0 +1,60 @@
+Index: source/makefile
+--- source/makefile.orig
++++ source/makefile
+@@ -40,7 +40,7 @@ CC=g++
+ 
+ # Standard optimization settings, with support for
+ # default compilation flags
+-CFLAGS+=-O2 -I.
++CPPFLAGS+=-I.
+ 
+ # Standard optimization settings,
+ # tested also on Mac OS X
+@@ -86,7 +86,9 @@ CFLAGS+=-O2 -I.
+ GLSCFLAGS=$(CFLAGS)
+ 
+ # DRC sources
+-DRCSRC=baselib.cpp drc.cpp fft.cpp hd.cpp slprefilt.cpp bwprefilt.cpp convol.cpp dspwind.cpp spline.cpp fir.cpp level.cpp toeplitz.cpp kirkebyfd.cpp drccfg.cpp psychoacoustic.cpp cmdline.cpp cfgparse.cpp fftsg.c gsl/gsl_fft.c gsl/error.c gsl/stream.c minIni/minIni.c
++DRCCXXSRC=baselib.cpp drc.cpp fft.cpp hd.cpp slprefilt.cpp bwprefilt.cpp convol.cpp dspwind.cpp spline.cpp fir.cpp level.cpp toeplitz.cpp kirkebyfd.cpp drccfg.cpp psychoacoustic.cpp cmdline.cpp cfgparse.cpp
++DRCCSRC=fftsg.c gsl/gsl_fft.c gsl/error.c gsl/stream.c minIni/minIni.c
++DRCCOBJ=$(DRCCSRC:.c=.o)
+ 
+ # DRC sources for debug and warning checks
+ # DRCSRC=baselib.cpp drc.cpp fft.cpp hd.cpp slprefilt.cpp bwprefilt.cpp convol.cpp dspwind.cpp spline.cpp fir.cpp level.cpp toeplitz.cpp kirkebyfd.cpp drccfg.cpp psychoacoustic.cpp cmdline.cpp cfgparse.cpp fftsg.c gsl/gsl_fft.c gsl/error.c gsl/stream.c minIni/minIni.c MLeaks/debug_new.cpp
+@@ -114,17 +116,32 @@ BIN_TARGETS=drc lsconv glsweep
+ 
+ ALL: drc glsweep lsconv
+ 
+-drc: $(DRCSRC)
+-	$(CC) $(LDFLAGS) $(CPPFLAGS) $(CFLAGS) -o drc $(DRCSRC) -lm -lstdc++
++drc: $(DRCCXXSRC) $(DRCCOBJ)
++	$(CXX) $(LDFLAGS) $(CPPFLAGS) $(CXXFLAGS) -o drc $(DRCCXXSRC) $(DRCCOBJ) -lm
+ 
+ glsweep: $(GLSWEEPSRC)
+-	$(CC) $(LDFLAGS) $(CPPFLAGS) $(GLSCFLAGS) -o glsweep $(GLSWEEPSRC) -lm
++	$(CC) $(LDFLAGS) $(CPPFLAGS) $(CFLAGS) -o glsweep $(GLSWEEPSRC) -lm
+ 
+ lsconv: $(LSCONVSRC)
+ 	$(CC) $(LDFLAGS) $(CPPFLAGS) $(CFLAGS) -o lsconv $(LSCONVSRC) -lm
+ 
++fftsg.o: fftsg.c
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c ${.ALLSRC} -o ${.TARGET}
++
++gsl/gsl_fft.o: gsl/gsl_fft.c
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c ${.ALLSRC} -o ${.TARGET}
++
++gsl/error.o: gsl/error.c
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c ${.ALLSRC} -o ${.TARGET}
++
++gsl/stream.o: gsl/stream.c
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c ${.ALLSRC} -o ${.TARGET}
++
++minIni/minIni.o: minIni/minIni.c
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c ${.ALLSRC} -o ${.TARGET}
++
+ clean:
+-	rm -f $(OBJS)
++	rm -f $(OBJS) $(DRCCOBJ)
+ 
+ install: $(CONFIG_TARGETS) $(TARGET_TARGETS) $(MIC_TARGETS) $(DOC_TARGETS) $(BIN_TARGETS)
+ 	install -d $(INSTALL_PREFIX)/bin

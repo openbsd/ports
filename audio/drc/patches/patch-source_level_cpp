@@ -1,0 +1,100 @@
+Index: source/level.cpp
+--- source/level.cpp.orig
++++ source/level.cpp
+@@ -283,7 +283,7 @@ Boolean SigNormalize(DLReal * Sig,const int SigLen,con
+ 						NormBase = (DLReal) 0.0;
+ 						for (I = 0; I < SigLen / 2; I++)
+ 							{
+-								CAV = std::abs<DLReal>(PFA[I]);
++								CAV = std::abs(PFA[I]);
+ 								if (CAV > NormBase)
+ 									NormBase = CAV;
+ 							}
+@@ -571,7 +571,7 @@ Boolean HMPDipLimit(DLReal * Sig,const int SigLen,cons
+ 				LogLimit = False;
+ 				for (I = 0;I < FS;I++)
+ 					{
+-						DLAbs = std::abs<DLReal>(FFTArray1[I]);
++						DLAbs = std::abs(FFTArray1[I]);
+ 						if (DLAbs <= 0)
+ 							{
+ 								LogLimit = True;
+@@ -603,7 +603,7 @@ Boolean HMPDipLimit(DLReal * Sig,const int SigLen,cons
+ 				LogLimit = False;
+ 				for (I = 0; I < FS; I++)
+ 					{
+-						DLAbs = std::abs<DLReal>(FFTArray1[I]);
++						DLAbs = std::abs(FFTArray1[I]);
+ 						if (DLAbs < DLSLevel)
+ 							{
+ 								/* Verifica se è già disponibile il minimo locale */
+@@ -616,7 +616,7 @@ Boolean HMPDipLimit(DLReal * Sig,const int SigLen,cons
+ 											{
+ 												if (DLLevel < DLMin)
+ 													DLMin = DLLevel;
+-												DLLevel = std::abs<DLReal>(FFTArray1[J]);
++												DLLevel = std::abs(FFTArray1[J]);
+ 											}
+ 
+ 										/* Verifica se il minimo locale è inferiore
+@@ -744,7 +744,7 @@ Boolean C1HMPDipLimit(DLReal * Sig,const int SigLen,co
+ 				LogLimit = False;
+ 				for (I = 0;I < FS;I++)
+ 					{
+-						DLAbs = std::abs<DLReal>(FFTArray1[I]);
++						DLAbs = std::abs(FFTArray1[I]);
+ 						if (DLAbs <= 0)
+ 							{
+ 								LogLimit = True;
+@@ -1102,7 +1102,7 @@ Boolean HMPPeakLimit(DLReal * Sig,const int SigLen,con
+ 				LogLimit = False;
+ 				for (I = 0;I < FS;I++)
+ 					{
+-						PLAbs = std::abs<DLReal>(FFTArray1[I]);
++						PLAbs = std::abs(FFTArray1[I]);
+ 						if (PLAbs <= 0)
+ 							{
+ 								LogLimit = True;
+@@ -1275,7 +1275,7 @@ Boolean C1HMPPeakLimit(DLReal * Sig,const int SigLen,c
+ 				LogLimit = False;
+ 				for (I = 0;I < FS;I++)
+ 					{
+-						PLAbs = std::abs<DLReal>(FFTArray1[I]);
++						PLAbs = std::abs(FFTArray1[I]);
+ 						if (PLAbs <= 0)
+ 							{
+ 								LogLimit = True;
+@@ -1458,13 +1458,13 @@ Boolean CMPNormFlat(DLReal * Sig,const int SigLen,cons
+ 		G = OGainFactor * GetRMSLevel(Sig,SigLen);
+ 		LogLimit = False;
+ 		for (I = 0;I < FS;I++)
+-			if (std::abs<DLReal>(FFTArray1[I]) <= 0)
++			if (std::abs(FFTArray1[I]) <= 0)
+ 				{
+ 					LogLimit = True;
+ 					FFTArray2[I] = DRCMaxFloat;
+ 				}
+ 			else
+-				FFTArray2[I] = std::log<DLReal>(Gain / (G + (1 - OGainFactor) * std::abs<DLReal>(FFTArray1[I])));
++				FFTArray2[I] = std::log<DLReal>(Gain / (G + (1 - OGainFactor) * std::abs(FFTArray1[I])));
+ 
+ 		/* Verifica se si è raggiunto il limite */
+ 		if (LogLimit == True)
+@@ -1546,7 +1546,7 @@ Boolean HMPNormFlat(DLReal * Sig,const int SigLen,cons
+ 		G = OGainFactor * GetRMSLevel(Sig,SigLen);
+ 		LogLimit = False;
+ 		for (I = 0;I < FS;I++)
+-			if (std::abs<DLReal>(FFTArray1[I]) <= 0)
++			if (std::abs(FFTArray1[I]) <= 0)
+ 				{
+ 					LogLimit = True;
+ 					FFTArray2[I] = DRCMaxFloat;
+@@ -1554,7 +1554,7 @@ Boolean HMPNormFlat(DLReal * Sig,const int SigLen,cons
+ 				}
+ 			else
+ 				{
+-					FFTArray3[I] = (DLReal) Gain / (G + (1 - OGainFactor) * std::abs<DLReal>(FFTArray1[I]));
++					FFTArray3[I] = (DLReal) Gain / (G + (1 - OGainFactor) * std::abs(FFTArray1[I]));
+ 					FFTArray2[I] = std::log<DLReal>(FFTArray3[I]);
+ 				}
+ 

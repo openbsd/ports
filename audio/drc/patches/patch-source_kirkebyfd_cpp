@@ -1,0 +1,21 @@
+Index: source/kirkebyfd.cpp
+--- source/kirkebyfd.cpp.orig
++++ source/kirkebyfd.cpp
+@@ -239,7 +239,7 @@ Boolean PEISMPKirkebyFDInvert(const DLReal * MPSig, in
+ 
+ 		/* Estrae l'array valori assoluti */
+ 		for (I = 0;I < FS;I++)
+-			AEPAbs[I] = std::abs<DLReal>(FFTArray2[I]);
++			AEPAbs[I] = std::abs(FFTArray2[I]);
+ 
+ 		/* Calcola il valore massimo della componente EP */
+ 		EMax = 0;
+@@ -399,7 +399,7 @@ Boolean PEMSMPKirkebyFDInvert(const DLReal * MPSig, in
+ 
+ 		/* Estrae l'array valori assoluti porzione di pre-echo */
+ 		for (I = 0;I < FS;I++)
+-			AEPAbs[I] = std::abs<DLReal>(FFTArray2[I]);
++			AEPAbs[I] = std::abs(FFTArray2[I]);
+ 
+ 		/* Copia l'array sorgente in quello temporaneo */
+ 		for (I = 0;I < EPSigLen;I++)

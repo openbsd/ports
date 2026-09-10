@@ -1,0 +1,12 @@
+Index: source/baselib.cpp
+--- source/baselib.cpp.orig
++++ source/baselib.cpp
+@@ -502,7 +502,7 @@ DLReal LinearDelay(DLReal * Hn,unsigned int N,unsigned
+       }
+ 
+     for(I = 0;I < Np;I++)
+-      if (std::abs<DLReal>(H[I]) <= MZE)
++      if (std::abs(H[I]) <= MZE)
+         {
+           H[I] = 1;
+           H1[I] = 0;

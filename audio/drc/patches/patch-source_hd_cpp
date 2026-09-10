@@ -1,0 +1,21 @@
+Index: source/hd.cpp
+--- source/hd.cpp.orig
++++ source/hd.cpp
+@@ -80,7 +80,7 @@ Boolean CepstrumHD(const DLReal * In, DLReal * MPOut, 
+ 		LogLimit = False;
+ 		for (I = 0;I < FS;I++)
+ 			{
+-				CV = std::abs<DLReal>(FFTArray1[I]);
++				CV = std::abs(FFTArray1[I]);
+ 				if (CV <= 0)
+ 					{
+ 						LogLimit = True;
+@@ -191,7 +191,7 @@ Boolean HilbertHD(const DLReal * In, DLReal * MPOut, D
+ 		LogLimit = False;
+ 		for (I = 0;I < FS;I++)
+ 			{
+-				CV = std::abs<DLReal>(FFTArray1[I]);
++				CV = std::abs(FFTArray1[I]);
+ 				if (CV <= DRCMinFloat)
+ 					{
+ 						LogLimit = True;

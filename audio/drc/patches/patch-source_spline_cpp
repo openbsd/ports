@@ -1,0 +1,43 @@
+Index: source/spline.cpp
+--- source/spline.cpp.orig
++++ source/spline.cpp
+@@ -861,7 +861,7 @@ void APCHIPSplineValue(const DLReal * XN, const DLReal
+ 									if (CHST(DK,DN) < 0)
+ 										{
+ 											DMAX = 3 * DK;
+-											if (std::abs<DLReal>(ML) > std::abs<DLReal>(DMAX))
++											if (std::abs(ML) > std::abs(DMAX))
+ 												ML = DMAX;
+ 										}
+ 							}
+@@ -873,8 +873,8 @@ void APCHIPSplineValue(const DLReal * XN, const DLReal
+ 
+ 								if (CHST(DP,DK) > 0)
+ 									{
+-										C1 = std::abs<DLReal>(DP);
+-										C2 = std::abs<DLReal>(DK);
++										C1 = std::abs(DP);
++										C2 = std::abs(DK);
+ 										if (C1 < C2)
+ 											{
+ 												DMIN = C1;
+@@ -913,7 +913,7 @@ void APCHIPSplineValue(const DLReal * XN, const DLReal
+ 									if (CHST(DP,DK) < 0)
+ 										{
+ 											DMAX = 3 * DK;
+-											if (std::abs<DLReal>(MU) > std::abs<DLReal>(DMAX))
++											if (std::abs(MU) > std::abs(DMAX))
+ 												MU = DMAX;
+ 										}
+ 							}
+@@ -925,8 +925,8 @@ void APCHIPSplineValue(const DLReal * XN, const DLReal
+ 
+ 								if (CHST(DK,DN) > 0)
+ 									{
+-										C1 = std::abs<DLReal>(DK);
+-										C2 = std::abs<DLReal>(DN);
++										C1 = std::abs(DK);
++										C2 = std::abs(DN);
+ 										if (C1 < C2)
+ 											{
+ 												DMIN = C1;

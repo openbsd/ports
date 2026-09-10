@@ -1,0 +1,4 @@
+DRC is used to generate correction filters for acoustic compensation of HiFi
+and audio systems in general, including listening room compensation. DRC
+generates just the FIR correction filters, which can be used with a real time
+or offline convolver to provide real time or offline correction.

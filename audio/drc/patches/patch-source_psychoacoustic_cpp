@@ -1,0 +1,12 @@
+Index: source/psychoacoustic.cpp
+--- source/psychoacoustic.cpp.orig
++++ source/psychoacoustic.cpp
+@@ -209,7 +209,7 @@ Boolean SpectralEnvelope(const DLReal * S,const int N,
+ 		/* Estrae l'ampiezza del segnale */
+ 		SP[0] = (SEFloat) 0.0;
+ 		for (I = 0,J = 1;I < N;I++,J++)
+-			SP[J] = std::abs<DLReal>(CSP[I]);
++			SP[J] = std::abs(CSP[I]);
+ 
+ 		/* Normalizza l'ampiezza */
+ 		NF = (SEFloat) 0.0;
