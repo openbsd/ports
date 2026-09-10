@@ -1,9 +1,0 @@
-Index: nDPI/autogen.sh
---- nDPI/autogen.sh.orig
-+++ nDPI/autogen.sh
-@@ -38,5 +38,4 @@ autoreconf -ivf
- 
- echo "./configure $@"
- chmod +x configure
--./configure $@
- 
