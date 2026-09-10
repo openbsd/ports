@@ -13,9 +13,6 @@ ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
 # .sdata.DW.ref.__gxx_personality_v0
 .if ${MACHINE_ARCH:Mpowerpc}
 USE_LLD = No
-.elif ${MACHINE_ARCH:Mi386}
-USE_LLD = No
-# ld.lld: error: relocation R_386_PC32 cannot be used against symbol 'hash_set<nofree_string_hash, false, default_hash_traits<nofree_string_hash>>::hash_set(unsigned long, bool)'; recompile with -fPIC, etc.
 .endif
 
 DPB_PROPERTIES = parallel
@@ -24,7 +21,7 @@ USE_NOEXECONLY = Yes
 
 V = 8.4.0
 GCC_PKGSPEC = >=8,<9
-REVISION = 31
+REVISION = 32
 
 ADASTRAP-amd64 = adastrap-amd64-$V-4.tar.xz
 ADASTRAP-hppa = adastrap-hppa-$V-1.tar.xz

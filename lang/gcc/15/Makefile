@@ -17,7 +17,7 @@ USE_NOEXECONLY = Yes
 V = 15.2.0
 GCC_PKGSPEC = >=15,<16
 
-REVISION = 9
+REVISION = 10
 
 # aarch64 and sparc64 bootstrap contain only gdc
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-15.2.0-0.tar.xz
@@ -122,9 +122,6 @@ MAKE_ENV += ${EXTRA_ENV}
 # .sdata.DW.ref.__gxx_personality_v0
 USE_LLD = No
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
-.elif ${MACHINE_ARCH:Mi386}
-USE_LLD = No
-# ld.lld: error: relocation R_386_PC32 cannot be used against symbol 'hash_set<nofree_string_hash, false, default_hash_traits<nofree_string_hash>>::hash_set(unsigned long, bool)'; recompile with -fPIC, etc.
 .endif
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
