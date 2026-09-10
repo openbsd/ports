@@ -36,6 +36,7 @@
      SUBDIR += d11amp
      SUBDIR += deadbeef
      SUBDIR += disc-cover
+     SUBDIR += drc
      SUBDIR += dumb
      SUBDIR += easytag
      SUBDIR += espeak
