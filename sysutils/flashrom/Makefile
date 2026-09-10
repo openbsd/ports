@@ -2,8 +2,7 @@ COMMENT=	flash ROM programmer for BIOS etc
 
 SHARED_LIBS +=  flashrom                  0.0 # 0.0
 
-V=		1.7.0
-REVISION=	0
+V=		1.8.0
 DISTNAME=	flashrom-v${V}
 PKGNAME=	flashrom-${V}
 EXTRACT_SUFX=	.tar.xz
