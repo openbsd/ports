@@ -1,6 +1,7 @@
 COMMENT =	client for Microsoft RDP (remote desktop protocol)
 
 DISTNAME =	freerdp-3.31.1
+REVISION =	0
 
 CATEGORIES =	x11 net
 
@@ -13,6 +14,8 @@ SHARED_LIBS +=	winpr3                    0.1
 
 HOMEPAGE =	https://www.freerdp.com/
 SITES =		https://pub.freerdp.com/releases/
+
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # Apache 2.0
 PERMIT_PACKAGE = Yes
@@ -31,17 +34,14 @@ COMPILER_LANGS = c
 
 MODULES =	devel/cmake
 
-CFLAGS +=	-I${X11BASE}/include \
-		-I${LOCALBASE}/include
-
 BUILD_DEPENDS =	security/pcsc-lite \
 		textproc/xmlto
 
-LIB_DEPENDS =	devel/libusb1 \
-		print/cups,-libs \
+LIB_DEPENDS =	devel/jansson \
+		devel/libusb1 \
 		graphics/ffmpeg \
+		print/cups,-libs \
 		textproc/icu4c \
-		devel/jansson \
 		www/uriparser
 
 # used to work-around lack of posix timers.

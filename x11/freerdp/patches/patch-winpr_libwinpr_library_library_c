@@ -1,0 +1,38 @@
+- [winpr,library] implement GetModuleFileNameA on OpenBSD with getexecpath()
+
+Index: winpr/libwinpr/library/library.c
+--- winpr/libwinpr/library/library.c.orig
++++ winpr/libwinpr/library/library.c
+@@ -349,6 +349,32 @@ DWORD GetModuleFileNameA(HMODULE hModule, LPSTR lpFile
+ 	return module_from_proc("/proc/curproc/exe", lpFilename, nSize);
+ #elif defined(__DragonFly__)
+ 	return module_from_proc("/proc/curproc/file", lpFilename, nSize);
++#elif defined(__OpenBSD__)
++	char path[PATH_MAX] = WINPR_C_ARRAY_INIT;
++	const int status = getexecpath(path, sizeof(path));
++
++	if (status != 0)
++	{
++		SetLastError(ERROR_INTERNAL_ERROR);
++		return 0;
++	}
++
++	const size_t length = strlen(path);
++
++	if (length < nSize)
++	{
++		CopyMemory(lpFilename, path, length + 1);
++		return (DWORD)length;
++	}
++
++	if (nSize > 0)
++	{
++		CopyMemory(lpFilename, path, nSize - 1);
++		lpFilename[nSize - 1] = '\0';
++	}
++
++	SetLastError(ERROR_INSUFFICIENT_BUFFER);
++	return nSize;
+ #elif defined(__MACOSX__)
+ 	char path[4096] = WINPR_C_ARRAY_INIT;
+ 	char buffer[4096] = WINPR_C_ARRAY_INIT;
