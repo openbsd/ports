@@ -7,6 +7,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 DIST_TUPLE=	gnome World AbiWord f9794331a94f0837214a2e85a07ef8ddf5339f38 .
 WRKDIST=	${WRKDIR}/AbiWord-f9794331a94f0837214a2e85a07ef8ddf5339f38
+REVISION=	0
 
 DISTNAME=	abiword-3.0.9pre20260116
 
@@ -21,20 +22,20 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 XRes Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += aspell atk-1.0 atk-bridge-2.0 atspi avahi-common bz2
-WANTLIB += c cairo cairo-gobject crypto curl dbus-1 enchant-2
-WANTLIB += epoll-shim epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gobject-2.0 goffice-0.10 gpg-error
-WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz iconv
-WANTLIB += icudata icuuc intl jpeg ltdl dav1d m mpfr nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_libressl pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png raptor2 rasqal
-WANTLIB += rdf rsvg-2 spectre ssl uuid wayland-client wayland-cursor
-WANTLIB += wayland-egl wmf-0.2 wmflite-0.2 wv-1.2 xcb xcb-render
-WANTLIB += xcb-shm xkbcommon xml2 xslt yajl z
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi avahi-common bz2 c cairo
+WANTLIB += cairo-gobject crypto curl dav1d dbus-1 enchant-2 epoll-shim
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp
+WANTLIB += gobject-2.0 goffice-0.10 gpg-error graphite2 gs gsf-1
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv icudata icuuc intl
+WANTLIB += jpeg ltdl m mpfr nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pcre2-8
+WANTLIB += pixman-1 png raptor2 rasqal rdf rsvg-2 spectre ssl
+WANTLIB += wayland-client wayland-cursor wayland-egl wmf-0.2 wmflite-0.2
+WANTLIB += wv-1.2 xcb xcb-render xcb-shm xkbcommon xml2 xslt yajl
+WANTLIB += z
 
 MODULES=	lang/python
 

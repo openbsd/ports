@@ -1,0 +1,27 @@
+XXX push upstream
+Drop the BSD special case in ucs2Internal()/ucs4Internal(). iconv is
+reached through glib's g_iconv(), so _LIBICONV_H is never defined and
+the hardcoded "UCS2"/"UCS4" names are unknown to GNU libiconv, leaving
+imported .rtf/.odt text empty. Use the generic runtime probe instead.
+
+Index: src/af/util/xp/ut_iconv.cpp
+--- src/af/util/xp/ut_iconv.cpp.orig
++++ src/af/util/xp/ut_iconv.cpp
+@@ -244,7 +244,7 @@ const char * ucs2Internal ()
+ #elif defined(_LIBICONV_H)
+   // libiconv seems to prefer UCS-2-INTERNAL to UCS-2BE and UCS-2LE
+   return "UCS-2-INTERNAL";
+-#elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__) || defined(__NetBSD__)
+   // we special case the BSDs since spelling just doesn't work
+   return "UCS2";
+ #else
+@@ -267,7 +267,7 @@ const char * ucs4Internal ()
+ #elif defined(_LIBICONV_H)
+   // libiconv seems to prefer UCS-4-INTERNAL to UCS-4BE and UCS-4LE
+   return "UCS-4-INTERNAL";
+-#elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__) || defined(__NetBSD__)
+   // we special case the BSDs since spelling just doesn't work
+   return "UCS4";
+ #else
