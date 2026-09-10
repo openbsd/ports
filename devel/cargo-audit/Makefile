@@ -4,6 +4,7 @@ NOT_FOR_ARCHS =		sparc64
 COMMENT =		audit Cargo.lock files for security vulnerabilities
 
 V =			0.22.0
+REVISION =		0
 CRATE =			cargo-audit
 DISTNAME =		${CRATE}-${V}
 
