@@ -1,8 +1,27 @@
-Look in correct GeoIP directory first.
+Use DB-IP files by default.
 
 Index: scripts/base/init-bare.zeek
 --- scripts/base/init-bare.zeek.orig
 +++ scripts/base/init-bare.zeek
+@@ -1609,14 +1609,14 @@ type geo_autonomous_system: record {
+ } &log;
+ 
+ ## The directory containing MaxMind DB (.mmdb) files to use for GeoIP support.
+-const mmdb_dir: string = "" &redef;
++const mmdb_dir: string = "/var/db/dbip" &redef;
+ 
+ ## Default name of the MaxMind City database file:
+-const mmdb_city_db: string = "GeoLite2-City.mmdb" &redef;
++const mmdb_city_db: string = "dbip-city-lite.mmdb" &redef;
+ ## Default name of the MaxMind Country database file:
+-const mmdb_country_db: string = "GeoLite2-Country.mmdb" &redef;
++const mmdb_country_db: string = "dbip-country-lite.mmdb" &redef;
+ ## Default name of the MaxMind ASN database file:
+-const mmdb_asn_db: string = "GeoLite2-ASN.mmdb" &redef;
++const mmdb_asn_db: string = "dbip-asn-lite.mmdb" &redef;
+ 
+ ## Fallback locations for MaxMind databases. Zeek attempts these when
+ ## :zeek:see:`mmdb_dir` is not set, or it cannot read a DB file from it. For
 @@ -1624,6 +1624,7 @@ const mmdb_asn_db: string = "GeoLite2-ASN.mmdb" &redef
  ## each of the fallback locations, and should this fail, attempt to locate the
  ## country one.

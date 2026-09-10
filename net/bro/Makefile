@@ -1,6 +1,7 @@
 COMMENT=		network analysis and security monitoring framework
 
 V =			8.2.2
+REVISION =		0
 
 DISTNAME =		zeek-${V}
 
@@ -48,9 +49,9 @@ LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 RUN_DEPENDS =		devel/py-gitpython \
 			devel/py-semantic-version \
 			net/py-websockets \
-			net/libmaxminddb,-asn \
-			net/libmaxminddb,-city \
-			net/libmaxminddb,-db
+			net/dbip/asn \
+			net/dbip/city \
+			net/dbip/country
 
 # share/zeekctl/scripts
 BUILD_DEPENDS +=	shells/bash
@@ -67,10 +68,10 @@ WANTLIB +=		atomic
 .endif
 
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib -lcares \
-	   		-Wl,-rpath ${LOCALBASE}/lib
+			-Wl,-rpath ${LOCALBASE}/lib
 CXXFLAGS +=		-I${LOCALBASE}/include
 
-# Pass cmake/CheckNameserCompat.cmake for src/3rdparty/zeek_inet_ntop.c 
+# Pass cmake/CheckNameserCompat.cmake for src/3rdparty/zeek_inet_ntop.c
 .for _macro in IN6ADDRSZ INT16SZ
 CFLAGS +=		-DNS_${_macro}=${_macro}
 .endfor
