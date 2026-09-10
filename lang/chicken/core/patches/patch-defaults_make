@@ -24,7 +24,7 @@ Index: defaults.make
  endif
  endif
  LIBCHICKEN_SO_LIBRARIES ?= $(LIBRARIES)
-@@ -281,8 +281,8 @@ DYNAMIC_CHICKEN_UNIT_IMPORT_LIBRARIES = continuation e
+@@ -280,8 +280,8 @@ DYNAMIC_CHICKEN_UNIT_IMPORT_LIBRARIES = continuation e
  # targets
  
  CHICKEN_PROGRAM = $(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)

@@ -1,6 +1,6 @@
 COMMENT=	practical and portable Scheme system
 
-V=		5.4.0
+V=		6.0.0
 DISTNAME=	chicken-${V}
 
 MAINTAINER=	Timo Myyra <timo.myyra@bittivirhe.fi>
@@ -25,7 +25,7 @@ MAKE_FILE=	GNUmakefile
 
 FAKE_FLAGS=	PREFIX=${TRUEPREFIX}
 
-BINARYVERSION=	11
+BINARYVERSION=	12
 SUBST_VARS+=	BINARYVERSION
 
 # Based on param.h:MACHINE_STACK_GROWS_UP

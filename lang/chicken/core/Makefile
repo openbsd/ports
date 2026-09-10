@@ -1,4 +1,4 @@
-SHARED_LIBS=	chicken	8.1 # 11
+SHARED_LIBS=	chicken	9.0 # 12
 
 TEST_TARGET=	check
 TEST_DEPENDS=	${BUILD_PKGPATH}

@@ -1,7 +1,7 @@
 Index: tests/runtests.sh
 --- tests/runtests.sh.orig
 +++ tests/runtests.sh
-@@ -44,10 +44,10 @@ export CHICKEN_INSTALL_REPOSITORY CHICKEN_REPOSITORY_P
+@@ -46,10 +46,10 @@ export CHICKEN_INSTALL_REPOSITORY CHICKEN_REPOSITORY_P
  TYPESDB=../types.db
  COMPILE_OPTIONS="-v -compiler ${CHICKEN} -I${TEST_DIR}/.. -L${TEST_DIR}/.. -include-path ${TEST_DIR}/.. -libdir ${TEST_DIR}/.. -rpath ${TEST_DIR}/.."
  

@@ -6,7 +6,6 @@
 @bin bin/chicken-profile
 @bin bin/chicken-status
 @bin bin/chicken-uninstall
-bin/feathers
 include/chicken/
 include/chicken/chicken-config.h
 include/chicken/chicken.h
@@ -14,7 +13,7 @@ lib/chicken/
 lib/chicken/${BINARYVERSION}/
 @so lib/chicken/${BINARYVERSION}/chicken.base.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.bitwise.import.so
-@so lib/chicken/${BINARYVERSION}/chicken.blob.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.bytevector.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.compiler.user-pass.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.condition.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.continuation.import.so
@@ -36,6 +35,7 @@ lib/chicken/${BINARYVERSION}/
 @so lib/chicken/${BINARYVERSION}/chicken.locative.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.memory.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.memory.representation.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.number-vector.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.pathname.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.platform.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.plist.import.so
@@ -54,9 +54,14 @@ lib/chicken/${BINARYVERSION}/
 @so lib/chicken/${BINARYVERSION}/chicken.tcp.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.time.import.so
 @so lib/chicken/${BINARYVERSION}/chicken.time.posix.import.so
+@so lib/chicken/${BINARYVERSION}/chicken.version.import.so
+@so lib/chicken/${BINARYVERSION}/scheme.file.import.so
+@so lib/chicken/${BINARYVERSION}/scheme.process-context.import.so
+@so lib/chicken/${BINARYVERSION}/scheme.time.import.so
+@so lib/chicken/${BINARYVERSION}/scheme.write.import.so
 @so lib/chicken/${BINARYVERSION}/srfi-4.import.so
 lib/chicken/${BINARYVERSION}/types.db
-@static-lib lib/libchicken.a
+@static-lib lib/libchicken-static.a
 @lib lib/libchicken.so.${LIBchicken_VERSION}
 @man man/man1/chicken-csc.1
 @man man/man1/chicken-csi.1
@@ -66,9 +71,7 @@ lib/chicken/${BINARYVERSION}/types.db
 @man man/man1/chicken-status.1
 @man man/man1/chicken-uninstall.1
 @man man/man1/chicken.1
-@man man/man1/feathers.1
 share/chicken/
-share/chicken/feathers.tcl
 share/chicken/setup.defaults
 share/doc/chicken/
 share/doc/chicken/DEPRECATED
@@ -82,7 +85,6 @@ share/doc/chicken/manual/Bugs and limitations.html
 share/doc/chicken/manual/C interface.html
 share/doc/chicken/manual/Cross development.html
 share/doc/chicken/manual/Data representation.html
-share/doc/chicken/manual/Debugging.html
 share/doc/chicken/manual/Declarations.html
 share/doc/chicken/manual/Deployment.html
 share/doc/chicken/manual/Deviations from the standard.html
@@ -97,7 +99,7 @@ share/doc/chicken/manual/Included modules.html
 share/doc/chicken/manual/Interface to external functions and variables.html
 share/doc/chicken/manual/Module (chicken base).html
 share/doc/chicken/manual/Module (chicken bitwise).html
-share/doc/chicken/manual/Module (chicken blob).html
+share/doc/chicken/manual/Module (chicken bytevector).html
 share/doc/chicken/manual/Module (chicken condition).html
 share/doc/chicken/manual/Module (chicken continuation).html
 share/doc/chicken/manual/Module (chicken csi).html
@@ -137,8 +139,24 @@ share/doc/chicken/manual/Module (chicken tcp).html
 share/doc/chicken/manual/Module (chicken time posix).html
 share/doc/chicken/manual/Module (chicken time).html
 share/doc/chicken/manual/Module (chicken type).html
-share/doc/chicken/manual/Module r4rs.html
-share/doc/chicken/manual/Module r5rs.html
+share/doc/chicken/manual/Module (chicken version).html
+share/doc/chicken/manual/Module (scheme base).html
+share/doc/chicken/manual/Module (scheme case-lambda).html
+share/doc/chicken/manual/Module (scheme char).html
+share/doc/chicken/manual/Module (scheme complex).html
+share/doc/chicken/manual/Module (scheme cxr).html
+share/doc/chicken/manual/Module (scheme eval).html
+share/doc/chicken/manual/Module (scheme file).html
+share/doc/chicken/manual/Module (scheme inexact).html
+share/doc/chicken/manual/Module (scheme lazy).html
+share/doc/chicken/manual/Module (scheme load).html
+share/doc/chicken/manual/Module (scheme process-context).html
+share/doc/chicken/manual/Module (scheme r4rs).html
+share/doc/chicken/manual/Module (scheme r5rs).html
+share/doc/chicken/manual/Module (scheme read).html
+share/doc/chicken/manual/Module (scheme repl).html
+share/doc/chicken/manual/Module (scheme time).html
+share/doc/chicken/manual/Module (scheme write).html
 share/doc/chicken/manual/Module scheme.html
 share/doc/chicken/manual/Module srfi-4.html
 share/doc/chicken/manual/Modules.html
