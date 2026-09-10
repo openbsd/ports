@@ -5,7 +5,7 @@ fix "filelist.c:253:45: error: use of undeclared identifier 'alphasort'"
 Index: config.mk
 --- config.mk.orig
 +++ config.mk
-@@ -37,10 +37,6 @@ scalable_icon_dir = ${icon_dir}/scalable/apps
+@@ -40,10 +40,6 @@ INSTALL_TARGETS = man doc bin img icon examples applic
  
  # default CFLAGS
  CFLAGS ?= -g -O2

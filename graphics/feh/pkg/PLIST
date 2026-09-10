@@ -18,8 +18,7 @@ share/examples/feh/themes
 @sample ${SYSCONFDIR}/feh/themes
 share/feh/
 share/feh/fonts/
-share/feh/fonts/black.style
-share/feh/fonts/menu.style
+share/feh/fonts/NotoSans-Medium.ttf
 share/feh/fonts/yudit.ttf
 share/feh/images/
 share/feh/images/feh.png

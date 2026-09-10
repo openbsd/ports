@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -76,6 +76,7 @@ install-examples:
+@@ -75,6 +75,7 @@ install-examples:
  	@echo installing examples to ${example_dir}
  	@mkdir -p ${example_dir}
  	@cp examples/* ${example_dir}
