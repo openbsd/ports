@@ -6,7 +6,7 @@ when there are security patches to libxml, especially in
 Index: lib/nokogiri/version/info.rb
 --- lib/nokogiri/version/info.rb.orig
 +++ lib/nokogiri/version/info.rb
-@@ -72,6 +72,7 @@ module Nokogiri
+@@ -80,6 +80,7 @@ module Nokogiri
      def warnings
        warnings = []
  
@@ -14,7 +14,7 @@ Index: lib/nokogiri/version/info.rb
        if libxml2?
          if compiled_libxml_version != loaded_libxml_version
            warnings << "Nokogiri was built against libxml version #{compiled_libxml_version}, but has dynamically loaded #{loaded_libxml_version}"
-@@ -81,6 +82,7 @@ module Nokogiri
+@@ -89,6 +90,7 @@ module Nokogiri
            warnings << "Nokogiri was built against libxslt version #{compiled_libxslt_version}, but has dynamically loaded #{loaded_libxslt_version}"
          end
        end

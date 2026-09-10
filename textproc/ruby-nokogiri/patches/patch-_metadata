@@ -4,7 +4,7 @@ the extension.
 Index: .metadata
 --- .metadata.orig
 +++ .metadata
-@@ -29,7 +29,7 @@ dependencies:
+@@ -28,7 +28,7 @@ dependencies:
      - - "~>"
        - !ruby/object:Gem::Version
          version: 2.8.2
