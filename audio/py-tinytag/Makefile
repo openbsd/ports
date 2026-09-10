@@ -1,6 +1,6 @@
 COMMENT=	library for reading music meta data
 
-MODPY_DISTV=	2.3.1
+MODPY_DISTV=	2.3.2
 GH_ACCOUNT=	tinytag
 GH_PROJECT=	tinytag
 GH_TAGNAME=	${MODPY_DISTV}
