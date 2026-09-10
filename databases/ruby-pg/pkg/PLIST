@@ -52,6 +52,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pg/type_map_by_column.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/version.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/pg_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/misc/
+${GEM_LIB}/gems/${DISTNAME}/misc/glibc/
+${GEM_LIB}/gems/${DISTNAME}/misc/glibc/Dockerfile
+${GEM_LIB}/gems/${DISTNAME}/misc/glibc/docker-compose.yml
+${GEM_LIB}/gems/${DISTNAME}/misc/glibc/glibc_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/misc/openssl-pg-segfault.rb
 ${GEM_LIB}/gems/${DISTNAME}/misc/postgres/
 ${GEM_LIB}/gems/${DISTNAME}/misc/postgres/History.txt
@@ -68,7 +72,24 @@ ${GEM_LIB}/gems/${DISTNAME}/misc/ruby-pg/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/misc/ruby-pg/lib/
 ${GEM_LIB}/gems/${DISTNAME}/misc/ruby-pg/lib/ruby/
 ${GEM_LIB}/gems/${DISTNAME}/misc/ruby-pg/lib/ruby/pg.rb
+${GEM_LIB}/gems/${DISTNAME}/misc/yugabyte/
+${GEM_LIB}/gems/${DISTNAME}/misc/yugabyte/Dockerfile
+${GEM_LIB}/gems/${DISTNAME}/misc/yugabyte/docker-compose.yml
+${GEM_LIB}/gems/${DISTNAME}/misc/yugabyte/pg-test.rb
 ${GEM_LIB}/gems/${DISTNAME}/pg.gemspec
+${GEM_LIB}/gems/${DISTNAME}/ports/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/krb5/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/krb5/1.22.1/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/krb5/1.22.1/0001-Allow-static-linking-krb5-library.patch
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/krb5/1.22.1/0002-unknown-command-line-option-on-clang.patch
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/openssl/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/openssl/3.5.2/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/openssl/3.5.2/0001-aarch64-mingw.patch
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/postgresql/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/postgresql/18.1/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/postgresql/18.1/0001-Use-workaround-of-__builtin_setjmp-only-on-MINGW-on-.patch
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/postgresql/18.1/0001-libpq-Process-buffered-SSL-read-bytes-to-support-rec.patch
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/pg_gem_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/task_extension.rb
