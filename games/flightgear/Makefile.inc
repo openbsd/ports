@@ -1,3 +1,5 @@
+BROKEN =		undeclared identifier 'strtod_l'
+
 ONLY_FOR_ARCHS =	amd64 i386
 
 V =			2024.1.3
