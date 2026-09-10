@@ -1,10 +1,9 @@
-COMMENT=	multidict implementation
+COMMENT=	dict-like collection, but with multiple values for a key
 
-MODPY_DISTV=	6.7.1
+MODPY_DISTV=	6.8.0
 DISTNAME=	multidict-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www devel
-REVISION=	0
 
 WANTLIB +=	pthread ${MODPY_WANTLIB}
 
