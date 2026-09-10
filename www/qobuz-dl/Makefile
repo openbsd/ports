@@ -1,6 +1,6 @@
 COMMENT =		music downloader for Qobuz
 
-MODPY_DISTV =		2.3.4
+MODPY_DISTV =		2.3.9
 
 DISTNAME =		qobuz_dl_ultimate-${MODPY_DISTV}
 PKGNAME=		qobuz-dl-${MODPY_DISTV}
