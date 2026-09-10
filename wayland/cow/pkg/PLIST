@@ -2,14 +2,19 @@
 bin/cow-start
 @bin bin/cowbar
 @bin bin/cowbuttons
+@bin bin/cowclock
+@bin bin/cowdiag
 @bin bin/cowiconman
 @bin bin/cowident
 @bin bin/cowpager
 @bin bin/cowrearrange
 @bin bin/moocow
+@man man/man1/cow-module-cmd.1
 @man man/man1/cow.1
 @man man/man1/cowbar.1
 @man man/man1/cowbuttons.1
+@man man/man1/cowclock.1
+@man man/man1/cowdiag.1
 @man man/man1/cowiconman.1
 @man man/man1/cowident.1
 @man man/man1/cowpager.1
@@ -327,6 +332,13 @@ share/examples/cow/themes/steel/svg/title-inactive.svg
 share/examples/cow/themes/steel/theme.conf
 share/examples/cow/themes/transparent/
 share/examples/cow/themes/transparent/theme.conf
+share/examples/cow/themes/twm/
+share/examples/cow/themes/twm/cowiconman.conf
+share/examples/cow/themes/twm/theme.conf
+share/examples/cow/themes/twm/xpm/
+share/examples/cow/themes/twm/xpm/border-stipple.xpm
+share/examples/cow/themes/twm/xpm/button-iconify.xpm
+share/examples/cow/themes/twm/xpm/button-resize.xpm
 share/examples/cow/themes/unsafe/
 share/examples/cow/themes/unsafe/png/
 share/examples/cow/themes/unsafe/png/button/

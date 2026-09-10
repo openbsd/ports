@@ -1,6 +1,6 @@
 COMMENT =		stacking window manager for wayland
 
-V =			0.2
+V =			0.3
 DISTNAME =		cow-${V}
 SITES =			https://codeberg.org/thomasadam/cow/releases/download/${V}/
 

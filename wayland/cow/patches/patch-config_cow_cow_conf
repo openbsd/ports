@@ -1,7 +1,7 @@
 Index: config/cow/cow.conf
 --- config/cow/cow.conf.orig
 +++ config/cow/cow.conf
-@@ -356,12 +356,9 @@ bind LCA+q quit
+@@ -381,12 +381,9 @@ bind LCA+q quit
  
  # Run external commands.  Replace these examples with the terminal, launcher,
  # and power-management commands available on your system.
@@ -17,7 +17,7 @@ Index: config/cow/cow.conf
  
  # -----------------------------------------------------------------------------
  # Mouse and decoration bindings
-@@ -460,9 +457,8 @@ bind LCS+Tab window-container -P
+@@ -488,9 +485,8 @@ bind LCS+Tab window-container -P
  # your system.  Programs which do not replace an existing instance should also
  # be added to the on-restart cleanup rule above.
  
