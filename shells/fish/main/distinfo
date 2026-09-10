@@ -33,7 +33,6 @@ SHA256 (cargo/dirs-sys-0.5.0.tar.gz) = 4BozZtJ+6YkAIkUu5hsrY6Z+bxP1iQC2Uf9WZfC7H
 SHA256 (cargo/displaydoc-0.2.6.tar.gz) = GscKpVAX4QgAf7r1qg9UsCHJj5L/ivWdQu2p2pbj3U8=
 SHA256 (cargo/either-1.16.0.tar.gz) = kWIv9ecWIBgQHy/qQNbr9KeLvlpJc2ogIGSe35aTZ54=
 SHA256 (cargo/equivalent-1.0.2.tar.gz) = h3pKzocTsLzypOfuyCUpwCnx0GGYhtGBRf6pbD/+XA8=
-SHA256 (cargo/errno-0.3.14.tar.gz) = Ocq3FheuDWP1GjbWn4ZjkXNbUWkdvaY89vltBCtj7+s=
 SHA256 (cargo/fastrand-2.4.1.tar.gz) = nx8idFKjkIBM22N7dKhpkPKn17pLfVaTqsm03W3v2NY=
 SHA256 (cargo/find-msvc-tools-0.1.9.tar.gz) = W668B3QVH5BaGizEGYkwCx5vuymv8M7/oQZP3TCI1YI=
 SHA256 (cargo/fluent-langneg-0.13.1.tar.gz) = fuu+WUULrugoLXFnbzv+1Wia6rALJ1Reg+XxSxGV6LA=
@@ -167,7 +166,7 @@ SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXs
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
 SHA256 (danielrainer-fluent-ftl-tools-5917664c8f2e4928ef1e480ff5c13bbe1e226066-0.tar.gz) = CRsWTtD30okoxq8OdlGP9eosbDzfGiuFDTboHFLNdL4=
 SHA256 (danielrainer-fluent-rs-cf712bced280b217b6307edabc2089b3e57204ab.tar.gz) = wBCSKXS64xGAHXYMxGo5h0TvZCfb74GbrrQVl55XDFE=
-SHA256 (fish-4.8.1.tar.xz) = DrhqhR6GXpNKfCCRpz12lSJeePDgCnu5bV+HfXbGV4I=
+SHA256 (fish-4.9.3.tar.xz) = IJmKJfcyF93MGfSZBV/Vh+mRLRrW5xCRIPvPKHHwuYw=
 SHA256 (fish-shell-rust-pcre2-0.2.9-utf32.tar.gz) = 5a8G17c3tm90dqIj6KbNHiscqDSziz3liQHU288KBU0=
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/allocator-api2-0.2.21.tar.gz) = 63622
@@ -204,7 +203,6 @@ SIZE (cargo/dirs-sys-0.5.0.tar.gz) = 10157
 SIZE (cargo/displaydoc-0.2.6.tar.gz) = 21191
 SIZE (cargo/either-1.16.0.tar.gz) = 21248
 SIZE (cargo/equivalent-1.0.2.tar.gz) = 7419
-SIZE (cargo/errno-0.3.14.tar.gz) = 12002
 SIZE (cargo/fastrand-2.4.1.tar.gz) = 20773
 SIZE (cargo/find-msvc-tools-0.1.9.tar.gz) = 31493
 SIZE (cargo/fluent-langneg-0.13.1.tar.gz) = 11383
@@ -338,5 +336,5 @@ SIZE (cargo/zerovec-0.11.6.tar.gz) = 128583
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
 SIZE (danielrainer-fluent-ftl-tools-5917664c8f2e4928ef1e480ff5c13bbe1e226066-0.tar.gz) = 22139
 SIZE (danielrainer-fluent-rs-cf712bced280b217b6307edabc2089b3e57204ab.tar.gz) = 367920
-SIZE (fish-4.8.1.tar.xz) = 2619540
+SIZE (fish-4.9.3.tar.xz) = 2628460
 SIZE (fish-shell-rust-pcre2-0.2.9-utf32.tar.gz) = 742431

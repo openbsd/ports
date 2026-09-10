@@ -33,7 +33,6 @@ MODCARGO_CRATES +=	dirs-sys	0.5.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	displaydoc	0.2.6	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	either	1.16.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	equivalent	1.0.2	# Apache-2.0 OR MIT
-MODCARGO_CRATES +=	errno	0.3.14	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	fastrand	2.4.1	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	find-msvc-tools	0.1.9	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	fluent-langneg	0.13.1	# Apache-2.0 OR MIT

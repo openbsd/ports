@@ -1,6 +1,6 @@
 COMMENT =		friendly interactive shell
 
-V =			4.8.1
+V =			4.9.3
 
 DISTNAME =		fish-${V}
 
