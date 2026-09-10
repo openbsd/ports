@@ -1,6 +1,6 @@
 COMMENT =		filter to convert between UTF-8 and other locales
 
-DISTNAME =		luit-20250912
+DISTNAME =		luit-20260907
 
 CATEGORIES =		converters
 
