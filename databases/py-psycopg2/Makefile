@@ -1,6 +1,6 @@
 COMMENT=	PostgreSQL database adapter for Python
 
-MODPY_DISTV=	2.9.12
+MODPY_DISTV=	2.9.13
 DISTNAME=	psycopg2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	databases
@@ -23,18 +23,9 @@ LIB_DEPENDS=	databases/postgresql
 RUN_DEPENDS=	databases/postgresql
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 
-# To run the tests, create and start a test database as follows:
-#     createdb psycopg2_test
-# The test target will use the PSYCOPG2_TESTDB environment
-# variable to connect to the database; see below for defaults. The
-# user running the test test will be used to make the connection
-# and should own the database:
-#     echo "ALTER DATABASE psycopg2_test OWNER TO ${USER};" | \
-#         psql -U postgres
 MODPOSTGRESQL_TEST_DBNAME=	psycopg2_test
 PSYCOPG2_TESTDB_USER ?=	"postgres"
 PSYCOPG2_TESTDB_PASSWORD ?= "postgres"
-#		PSYCOPG2_TESTDB_PASSWORD=postgres 
 
 TEST_DEPENDS=	devel/gmake
 TEST_ENV=	PSYCOPG2_TESTDB=${MODPOSTGRESQL_TEST_DBNAME} \
