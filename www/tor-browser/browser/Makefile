@@ -7,7 +7,6 @@ COMMENT =		modified version of Firefox ESR for browsing over Tor
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
-REVISION =	1
 
 EXTRACT_SUFX =		.tar.xz
 
@@ -98,7 +97,7 @@ MAKE_ENV +=		BUILD_OPT=1 \
 
 RUN_DEPENDS +=		net/lyrebird \
 			net/snowflake_proxy>=2.4.1 \
-			net/tor>=0.4.8.7
+			net/tor>=0.4.9.12
 
 MOZILLA_USE_SYSTEM_AV1	=Yes
 CONFIGURE_ARGS +=	--enable-release #1386371

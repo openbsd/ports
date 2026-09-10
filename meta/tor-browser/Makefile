@@ -2,11 +2,11 @@ COMMENT=	Tor Browser meta package
 
 MAINTAINER=	Caspar Schutijser <caspar@schutijser.com>
 
-PKGNAME=	tor-browser-15.0.21
+PKGNAME=	tor-browser-15.0.22
 ONLY_FOR_ARCHS =	aarch64 amd64
 
-RUN_DEPENDS=	www/tor-browser/browser>=15.0.21 \
+RUN_DEPENDS=	www/tor-browser/browser>=15.0.22 \
 		www/tor-browser/noscript>=13.6.19.1984 \
-		net/tor>=0.4.8.7
+		net/tor>=0.4.9.12
 
 .include <bsd.port.mk>
