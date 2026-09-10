@@ -6,7 +6,7 @@ https://github.com/sqlcipher/sqlcipher/commit/801b81a8d0c42c13f66de89805c3bfa0d1
 Index: src/crypto_openssl.c
 --- src/crypto_openssl.c.orig
 +++ src/crypto_openssl.c
-@@ -156,6 +156,76 @@ static int sqlcipher_openssl_hmac(
+@@ -172,6 +172,76 @@ static int sqlcipher_openssl_hmac(
  ) {
    int rc = 0;
  
@@ -83,7 +83,7 @@ Index: src/crypto_openssl.c
    size_t outlen;
    EVP_MAC *mac = NULL;
    EVP_MAC_CTX *hctx = NULL;
-@@ -241,6 +311,8 @@ error:
+@@ -257,6 +327,8 @@ error:
  cleanup:
    if(hctx) EVP_MAC_CTX_free(hctx);
    if(mac) EVP_MAC_free(mac);
