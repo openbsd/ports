@@ -1,6 +1,6 @@
 COMMENT =	ruby SQLite3 embedded database library
 
-DISTNAME =	amalgalite-1.9.4
+DISTNAME =	amalgalite-2.0.0
 CATEGORIES =	databases
 
 HOMEPAGE =	https://github.com/copiousfreetime/amalgalite
@@ -17,15 +17,7 @@ CONFIGURE_STYLE =	ruby gem ext
 CONFIGURE_ARGS = --with-cflags="-O1"
 .endif
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/ruby-arrayfields,${MODRUBY_FLAVOR}>=4.9,<5.0
-
 AMALGALITE_SO_DIR =	amalgalite/${MODRUBY_REV}
 SUBST_VARS +=		AMALGALITE_SO_DIR
-
-TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
-MODRUBY_TEST =	rspec3
-MODRUBY_TEST_TARGET =	spec
-MODRUBY_TEST_ENV =	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
 .include <bsd.port.mk>
