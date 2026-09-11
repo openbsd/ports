@@ -772,7 +772,7 @@ SHA256 (go_modules/modernc.org/token/@v/v1.1.0.mod) = evOzXO1S6tSw7Q4iEB2VvABh0g
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.zip) = Pvqknp+xBWnangnnhfojDNXA9Q/PYF87VDnfzWFXfFg=
 SHA256 (go_modules/zombiezen.com/go/sqlite/@v/v0.12.0.mod) = aEj1p50kLesr2ER3zjE1mC9ot1ygh8q5nLsD/ipmVuE=
 SHA256 (go_modules/zombiezen.com/go/sqlite/@v/v0.12.0.zip) = yFHj9iOdcLLYVQG5TbpKZvSuUxj8O3cou+UMMuUAcPo=
-SHA256 (plakar-v1.1.5.zip) = GJRd/MO/ES2FkHdVLYkZ3o9OGu9BxVtelJcwFSsef/w=
+SHA256 (plakar-v1.1.6.zip) = 33ppBuQXXTfpC9wCmv7cSb4wmK5tyQgi/eHWmqOM1+I=
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.mod) = 96
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.zip) = 239588
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.9.0.mod) = 127
@@ -1547,4 +1547,4 @@ SIZE (go_modules/modernc.org/token/@v/v1.1.0.mod) = 25
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.zip) = 6860
 SIZE (go_modules/zombiezen.com/go/sqlite/@v/v0.12.0.mod) = 315
 SIZE (go_modules/zombiezen.com/go/sqlite/@v/v0.12.0.zip) = 117366
-SIZE (plakar-v1.1.5.zip) = 6644744
+SIZE (plakar-v1.1.6.zip) = 6647049
