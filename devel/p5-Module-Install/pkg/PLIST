@@ -20,7 +20,6 @@ ${P5SITE}/Module/Install/Base.pm
 ${P5SITE}/Module/Install/Bundle.pm
 ${P5SITE}/Module/Install/Can.pm
 ${P5SITE}/Module/Install/Compiler.pm
-${P5SITE}/Module/Install/DSL.pm
 ${P5SITE}/Module/Install/Deprecated.pm
 ${P5SITE}/Module/Install/External.pm
 ${P5SITE}/Module/Install/FAQ.pod
@@ -40,9 +39,7 @@ ${P5SITE}/Module/Install/With.pm
 ${P5SITE}/Module/Install/WriteAll.pm
 ${P5SITE}/inc/
 ${P5SITE}/inc/Module/
-${P5SITE}/inc/Module/Install/
 ${P5SITE}/inc/Module/Install.pm
-${P5SITE}/inc/Module/Install/DSL.pm
 @man man/man3p/Module::AutoInstall.3p
 @man man/man3p/Module::Install.3p
 @man man/man3p/Module::Install::API.3p
@@ -62,4 +59,3 @@ ${P5SITE}/inc/Module/Install/DSL.pm
 @man man/man3p/Module::Install::Share.3p
 @man man/man3p/Module::Install::With.3p
 @man man/man3p/inc::Module::Install.3p
-@man man/man3p/inc::Module::Install::DSL.3p

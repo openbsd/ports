@@ -1,4 +1,5 @@
 Fix whatis information.
+
 Index: lib/Module/Install/Admin/Include.pm
 --- lib/Module/Install/Admin/Include.pm.orig
 +++ lib/Module/Install/Admin/Include.pm

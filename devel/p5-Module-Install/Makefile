@@ -1,34 +1,34 @@
-COMMENT=	standalone extensible Perl module installer
+COMMENT =	standalone, extensible Perl module installer
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME =	Module-Install-1.19
-CATEGORIES=	devel
-FIX_EXTRACT_PERMISSIONS=	Yes
+DISTNAME =	Module-Install-1.21
+CPAN_AUTHOR =	ETHER
+FIX_EXTRACT_PERMISSIONS =	Yes
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-RUN_DEPENDS+=	devel/p5-Module-ScanDeps \
-		devel/p5-File-Remove \
-		devel/p5-PAR-Dist \
-		devel/p5-YAML-Tiny \
-		converters/p5-JSON
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+BUILD_DEPENDS =		devel/p5-YAML-Tiny>=1.33
+RUN_DEPENDS =		converters/p5-JSON>=2.9 \
+			devel/p5-File-Remove>=1.42 \
+			devel/p5-Module-Build>=0.29 \
+			devel/p5-Module-ScanDeps>=1.09 \
+			devel/p5-PAR-Dist>=0.29 \
+			devel/p5-YAML-Tiny>=1.38
+TEST_DEPENDS =		devel/p5-Module-Install-AuthorTests
 
 # special case; this is *not* a CONFIGURE_STYLE=modbuild port
-RUN_DEPENDS+=	devel/p5-Module-Build
-BUILD_DEPENDS=	devel/p5-File-Remove \
-		devel/p5-YAML-Tiny
+CONFIGURE_ARGS =	--skipdeps
 
-CONFIGURE_ARGS=	--skipdeps
+PKG_ARCH =		*
+
+PORTHOME =		${WRKDIR}/home
 
 # for the CPAN regression test
 pre-test:
-	mkdir -p ${WRKDIR}/home
-
-TEST_DEPENDS=	devel/p5-Module-Install-AuthorTests
-
-PORTHOME=	${WRKDIR}/home
-MAKE_ENV=	TEST_POD=Yes
+	mkdir -p ${PORTHOME}
 
 .include <bsd.port.mk>
