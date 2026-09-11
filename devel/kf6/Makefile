@@ -40,6 +40,7 @@ SUBDIR += kglobalaccel
 SUBDIR += kirigami
 SUBDIR += kstatusnotifieritem
 SUBDIR += ktexttemplate
+SUBDIR += kmime
 
 # tier 2
 SUBDIR += kauth
