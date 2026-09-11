@@ -232,7 +232,7 @@
      SUBDIR += kldap
      SUBDIR += kmbox
      SUBDIR += kopeninghours
-     SUBDIR += kmime
+     #SUBDIR += kmime
      SUBDIR += kpublictransport
      SUBDIR += kosmindoormap
      SUBDIR += kontactinterface
