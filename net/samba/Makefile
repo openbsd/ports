@@ -1,4 +1,4 @@
-VERSION =		4.24.6
+VERSION =		4.24.7
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
