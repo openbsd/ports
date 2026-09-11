@@ -1,0 +1,13 @@
+Make sure entry (*pathname) exists before we call realpath.
+Index: src/corelib/io/qfilesystemengine_unix.cpp
+--- src/corelib/io/qfilesystemengine_unix.cpp.orig
++++ src/corelib/io/qfilesystemengine_unix.cpp
+@@ -716,7 +716,7 @@ QFileSystemEntry QFileSystemEngine::canonicalName(cons
+     auto freer = qScopeGuard([&] { free(resolved_name); });
+ #endif
+ 
+-# if defined(Q_OS_DARWIN) || defined(Q_OS_ANDROID)
++# if defined(Q_OS_DARWIN) || defined(Q_OS_ANDROID) || defined(Q_OS_OPENBSD)
+     // On some Android and macOS versions, realpath() will return a path even if
+     // it does not exist. To work around this, we check existence in advance.
+     if (!data.hasFlags(QFileSystemMetaData::ExistsAttribute))
