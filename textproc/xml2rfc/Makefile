@@ -3,7 +3,7 @@ COMMENT=	convert memos written in XML to the RFC format
 GH_ACCOUNT=	ietf-tools
 GH_PROJECT=	xml2rfc
 GH_TAGNAME=	v${MODPY_DISTV}
-MODPY_DISTV=	3.32.0
+MODPY_DISTV=	3.34.1
 
 CATEGORIES=	textproc
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	sysutils/py-platformdirs \
 		devel/py-intervaltree \
 		www/py-jinja2 \
 		textproc/py-lxml \
+		textproc/py-natsort \
 		devel/py-country \
 		textproc/py-yaml \
 		www/py-requests \
