@@ -1,6 +1,6 @@
 COMMENT =	HTML forms using Moose
 
-DISTNAME =	HTML-FormHandler-0.410001
+DISTNAME =	HTML-FormHandler-0.410002
 CPAN_AUTHOR =	ABRAXXA
 
 CATEGORIES =	www
