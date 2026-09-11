@@ -1,6 +1,6 @@
 COMMENT=		Free Unix Spectrum Emulator utilities
 
-DISTNAME=		fuse-utils-1.4.6
+DISTNAME=		fuse-utils-1.4.7
 CATEGORIES=		emulators
 HOMEPAGE=		https://fuse-emulator.sourceforge.net/
 
