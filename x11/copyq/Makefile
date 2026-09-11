@@ -22,6 +22,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 LIB_DEPENDS =		devel/kf6/knotifications \
 			devel/kf6/kstatusnotifieritem \
+			devel/kf6/kguiaddons \
 			x11/qt6/qtdeclarative \
 			x11/qt6/qtsvg \
 			x11/xkbcommon \
@@ -32,5 +33,4 @@ CONFIGURE_ENV +=	GITHUB_SHA=unknown
 CONFIGURE_ARGS =	-DWITH_QT6=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
-LIB_DEPENDS += devel/kf6/kguiaddons
 .include <bsd.port.mk>
