@@ -86,6 +86,8 @@ LIB_DEPENDS = 	archivers/libarchive \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtquick3d \
 		x11/qt6/qtserialport \
+		x11/qt6/qthttpserver \
+		x11/qt6/qtwebsockets \
 		x11/qt6/qtshadertools \
 		x11/qt6/qtsvg \
 		x11/qt6/qttools \
@@ -120,6 +122,4 @@ post-install:
 .endfor
 	${MODPY_COMPILEALL} ${PREFIX}/share/qtcreator/debugger/
 
-LIB_DEPENDS += x11/qt6/qthttpserver
-LIB_DEPENDS += x11/qt6/qtwebsockets 
 .include <bsd.port.mk>
