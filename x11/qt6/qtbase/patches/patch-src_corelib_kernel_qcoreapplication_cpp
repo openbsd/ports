@@ -1,0 +1,18 @@
+Index: src/corelib/kernel/qcoreapplication.cpp
+--- src/corelib/kernel/qcoreapplication.cpp.orig
++++ src/corelib/kernel/qcoreapplication.cpp
+@@ -2435,6 +2435,14 @@ static QString qAppFileName()
+ #  elif defined(Q_OS_LINUX)
+     // this includes the Embedded Android builds
+     return QFile::decodeName(qt_readlink("/proc/self/exe"));
++#  elif defined(Q_OS_OPENBSD)
++    char buffer[PATH_MAX];
++    qsizetype len = 0;
++    if (getexecpath(buffer, sizeof buffer) == 0) {
++    	len = strlen(buffer);
++	return QFile::decodeName(QByteArray::fromRawData(buffer, len));
++    }
++    return QString();
+ #  elif defined(AT_EXECPATH)
+     // seen on FreeBSD, but I suppose the other BSDs could adopt this API
+     char execfn[PATH_MAX];
