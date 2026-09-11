@@ -5,8 +5,8 @@ SHARED_LIBS +=  KF6FileMetaData           0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Codecs KF6CoreAddons
 WANTLIB += KF6I18n QMobipocket6 Qt6Core Qt6Gui Qt6Xml avcodec
-WANTLIB += avformat avutil c epub exiv2 m poppler poppler-qt6
-WANTLIB += tag xml2 zip
+WANTLIB += avformat avutil c epub exiv2 m poppler-qt6 tag xml2
+WANTLIB += zip
 
 # needs c++ and python
 COMPILER =	base-clang ports-gcc

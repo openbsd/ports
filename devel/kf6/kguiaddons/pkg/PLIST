@@ -55,6 +55,7 @@ lib/qt6/qml/org/kde/guiaddons/kde-qmlmodule.version
 lib/qt6/qml/org/kde/guiaddons/kguiaddonsqml.qmltypes
 @so lib/qt6/qml/org/kde/guiaddons/libkguiaddonsqml.so
 lib/qt6/qml/org/kde/guiaddons/qmldir
+share/applications/cartes-geo-handler.desktop
 share/applications/google-maps-geo-handler.desktop
 share/applications/openstreetmap-geo-handler.desktop
 share/applications/wheelmap-geo-handler.desktop

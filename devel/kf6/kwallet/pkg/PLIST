@@ -16,6 +16,7 @@ lib/cmake/KF6Wallet/KF6WalletTargets.cmake
 @lib lib/libKF6WalletBackend.so.${LIBKF6WalletBackend_VERSION}
 @man man/man1/kwallet-query.1
 share/applications/org.kde.ksecretd.desktop
+share/applications/org.kde.kwalletd.desktop
 share/config.kcfg/
 share/config.kcfg/kwalletsettings.kcfg
 share/dbus-1/interfaces/kf6_org.kde.KWallet.xml

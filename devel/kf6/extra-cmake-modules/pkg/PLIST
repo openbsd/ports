@@ -105,6 +105,7 @@ share/ECM/modules/ECMGeneratePythonBindings.toml.in.license
 share/ECM/modules/ECMGenerateQDoc.cmake
 share/ECM/modules/ECMGenerateQmlTypes.cmake
 share/ECM/modules/ECMInstallIcons.cmake
+share/ECM/modules/ECMInstalledLibraryCheck.cmake
 share/ECM/modules/ECMMarkAsTest.cmake
 share/ECM/modules/ECMMarkNonGuiExecutable.cmake
 share/ECM/modules/ECMOptionalAddSubdirectory.cmake
@@ -138,6 +139,7 @@ share/ECM/modules/${MODPY_PYCACHE}/
 share/ECM/modules/${MODPY_PYCACHE}check-outbound-license.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ECM/modules/${MODPY_PYCACHE}check-outbound-license.${MODPY_PYC_MAGIC_TAG}pyc
 share/ECM/modules/check-outbound-license.py
+share/ECM/modules/ecm_create_installed_library_check.cmake
 share/ECM/modules/ecm_uninstall.cmake.in
 share/ECM/test-modules/
 share/ECM/test-modules/test_execute_and_compare.cmake
@@ -238,6 +240,7 @@ share/doc/ECM/html/_sources/module/ECMGeneratePythonBindings.rst.txt
 share/doc/ECM/html/_sources/module/ECMGenerateQDoc.rst.txt
 share/doc/ECM/html/_sources/module/ECMGenerateQmlTypes.rst.txt
 share/doc/ECM/html/_sources/module/ECMInstallIcons.rst.txt
+share/doc/ECM/html/_sources/module/ECMInstalledLibraryCheck.rst.txt
 share/doc/ECM/html/_sources/module/ECMMarkAsTest.rst.txt
 share/doc/ECM/html/_sources/module/ECMMarkNonGuiExecutable.rst.txt
 share/doc/ECM/html/_sources/module/ECMOptionalAddSubdirectory.rst.txt
@@ -353,6 +356,7 @@ share/doc/ECM/html/module/ECMGeneratePythonBindings.html
 share/doc/ECM/html/module/ECMGenerateQDoc.html
 share/doc/ECM/html/module/ECMGenerateQmlTypes.html
 share/doc/ECM/html/module/ECMInstallIcons.html
+share/doc/ECM/html/module/ECMInstalledLibraryCheck.html
 share/doc/ECM/html/module/ECMMarkAsTest.html
 share/doc/ECM/html/module/ECMMarkNonGuiExecutable.html
 share/doc/ECM/html/module/ECMOptionalAddSubdirectory.html
