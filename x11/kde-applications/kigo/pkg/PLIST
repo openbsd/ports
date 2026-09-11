@@ -1,7 +1,6 @@
 @pkgpath x11/kde4/kigo
 @bin bin/kigo
 share/applications/org.kde.kigo.desktop
-share/config.kcfg/
 share/config.kcfg/kigo.kcfg
 share/doc/HTML/ca/kigo/
 share/doc/HTML/ca/kigo/index.cache.bz2

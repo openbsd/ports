@@ -7,9 +7,9 @@ CATEGORIES =	graphics devel
 
 MODKDE_KF5 =	Yes
 
-SHARED_LIBS +=  KF5KExiv2                 3.0 # 5.0
+SHARED_LIBS +=	KExiv2Qt6                 0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui exiv2 m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui exiv2 m
 
 LIB_DEPENDS =	graphics/exiv2
 

@@ -2,7 +2,7 @@ COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6CalendarSupport      1.0 # 0.0
+SHARED_LIBS +=	KPim6CalendarSupport      2.0 # 0.0
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -10,12 +10,13 @@ MODKF5_L10N_CONFLICT = yes
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6CoreAddons KF6GuiAddons KF6Holidays KF6I18n KF6ItemModels
-WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service
-WANTLIB += KF6TextCustomEditor KF6WidgetsAddons KPim6AkonadiCalendar
-WANTLIB += KPim6AkonadiCalendarCore KPim6AkonadiCore KPim6AkonadiPrivate
-WANTLIB += KPim6AkonadiWidgets KPim6CalendarUtils KPim6IdentityManagementCore
-WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport
-WANTLIB += Qt6Widgets m
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Mime
+WANTLIB += KF6Service KF6SonnetUi KF6SyntaxHighlighting KF6TextCustomEditor
+WANTLIB += KF6WidgetsAddons KPim6AkonadiCalendar KPim6AkonadiCalendarCore
+WANTLIB += KPim6AkonadiCore KPim6AkonadiPrivate KPim6AkonadiWidgets
+WANTLIB += KPim6CalendarUtils KPim6IdentityManagementCore Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
+WANTLIB += m
 
 BUILD_DEPENDS =	devel/boost
 
@@ -34,14 +35,16 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kio \
 		devel/kf6/kitemmodels \
 		devel/kf6/kjobwidgets \
+		devel/kf6/kmime \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
+		devel/kf6/sonnet \
+		devel/kf6/syntax-highlighting \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-calendar>=${VERSION} \
 		x11/kde-applications/akonadi>=${VERSION} \
 		x11/kde-applications/kcalutils>=${VERSION} \
-		x11/kde-applications/kidentitymanagement>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION}
+		x11/kde-applications/kidentitymanagement>=${VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -4,7 +4,7 @@ CATEGORIES =	devel mail
 
 HOMEPAGE =	https://kontact.kde.org/
 
-SHARED_LIBS +=	KPim6SMTP                 0.0 # 0.0
+SHARED_LIBS +=	KPim6SMTP                 0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF6CoreAddons KF6I18n KF6KIOCore
 WANTLIB += Qt6Core Qt6DBus Qt6Network m sasl2

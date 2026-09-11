@@ -10,7 +10,6 @@ include/cantor/cantor_export.h
 include/cantor/cantor_macros.h
 include/cantor/cantorlibs_version.h
 include/cantor/defaultvariablemodel.h
-include/cantor/epsresult.h
 include/cantor/expression.h
 include/cantor/extension.h
 include/cantor/graphicpackage.h
@@ -23,6 +22,7 @@ include/cantor/latexresult.h
 include/cantor/mimeresult.h
 include/cantor/panelplugin.h
 include/cantor/panelpluginhandler.h
+include/cantor/pdfresult.h
 include/cantor/renderer.h
 include/cantor/result.h
 include/cantor/session.h
@@ -85,7 +85,6 @@ share/cantor/python/
 share/cantor/python/graphic_packages.xml
 share/cantor/xslt/
 share/cantor/xslt/latex.xsl
-share/config.kcfg/
 share/config.kcfg/cantor.kcfg
 share/config.kcfg/cantor_libs.kcfg
 share/config.kcfg/kalgebrabackend.kcfg

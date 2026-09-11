@@ -5,14 +5,14 @@ include/audiocdplugins/audiocdencoder.h
 include/audiocdplugins/audiocdplugins_export.h
 include/audiocdplugins/audiocdplugins_version.h
 @lib lib/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
+lib/qt6/plugins/audiocd/
+@so lib/qt6/plugins/audiocd/libaudiocd_encoder_flac.so
+@so lib/qt6/plugins/audiocd/libaudiocd_encoder_lame.so
+@so lib/qt6/plugins/audiocd/libaudiocd_encoder_opus.so
+@so lib/qt6/plugins/audiocd/libaudiocd_encoder_wav.so
 @so lib/qt6/plugins/kf6/kio/audiocd.so
-@so lib/qt6/plugins/libaudiocd_encoder_flac.so
-@so lib/qt6/plugins/libaudiocd_encoder_lame.so
-@so lib/qt6/plugins/libaudiocd_encoder_opus.so
-@so lib/qt6/plugins/libaudiocd_encoder_wav.so
 @so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_audiocd.so
 share/applications/kcm_audiocd.desktop
-share/config.kcfg/
 share/config.kcfg/audiocd_flac_encoder.kcfg
 share/config.kcfg/audiocd_lame_encoder.kcfg
 share/config.kcfg/audiocd_opus_encoder.kcfg
@@ -501,7 +501,9 @@ share/locale/tr/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/tr/LC_MESSAGES/kcmaudiocd.mo
 share/locale/tr/LC_MESSAGES/kio_audiocd.mo
+share/locale/ug/LC_MESSAGES/audiocd_encoder_flac.mo
 share/locale/ug/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/ug/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/ug/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ug/LC_MESSAGES/kcmaudiocd.mo
 share/locale/ug/LC_MESSAGES/kio_audiocd.mo

@@ -4,7 +4,7 @@ COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
 
-SHARED_LIBS +=  cantorlibs                56.0 # 17.08
+SHARED_LIBS +=  cantorlibs                57.0 # 17.08
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} Analitza AnalitzaGui
 WANTLIB += GL KF6Archive KF6Attica KF6Bookmarks KF6ColorScheme
@@ -18,11 +18,11 @@ WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Help
 WANTLIB += Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6Quick Qt6Sql Qt6Svg Qt6WebChannel Qt6WebEngineCore
 WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c intl luajit-5.1
-WANTLIB += m poppler poppler-qt6 qalculate spectre util xml2 xslt
-
+WANTLIB += m poppler poppler-qt6 qalculate util xml2 xslt
 WANTLIB += lib/R/lib/R
 WANTLIB += lib/R/lib/Rblas
 WANTLIB += lib/R/lib/Rlapack
+
 
 MODULES +=	fortran \
 		lang/lua \
@@ -68,7 +68,6 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/kf6/syntax-highlighting \
 		lang/luajit \
 		math/libqalculate \
-		print/libspectre \
 		print/poppler,-qt6 \
 		textproc/libxml \
 		textproc/libxslt \

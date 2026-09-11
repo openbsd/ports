@@ -4,7 +4,7 @@ COMMENT =	KDE File Manager & Web Browser
 DISTNAME =	konqueror-${VERSION}
 CATEGORIES =	www
 
-SHARED_LIBS += KF6Konq                   2.0 # 0.0
+SHARED_LIBS += KF6Konq                   2.1 # 0.0
 SHARED_LIBS += konquerorprivate          1.2 # 5.97.0
 SHARED_LIBS += konqsidebarplugin         1.1 # 20.08.0
 SHARED_LIBS += KF6KonqSettings           0.1 # 0.0

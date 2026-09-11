@@ -1,4 +1,7 @@
 COMMENT =	KDE software for music education
+
+# New verison depends on Aubio
+VERSION =	26.04.3
 DISTNAME =	minuet-${VERSION}
 CATEGORIES =	audio education
 

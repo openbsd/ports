@@ -5,7 +5,7 @@ PKGNAME =	kf6-libkexiv2-${VERSION}
 
 CATEGORIES =	graphics devel
 
-SHARED_LIBS +=  KExiv2Qt6                 0.0 # 0.0
+SHARED_LIBS +=  KExiv2Qt6                 0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui exiv2 m
 

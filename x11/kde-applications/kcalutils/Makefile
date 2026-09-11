@@ -2,7 +2,7 @@ COMMENT =	library for the handling of calendar data.
 DISTNAME =	kcalutils-${VERSION}
 CATEGORIES =	productivity
 
-SHARED_LIBS +=	KPim6CalendarUtils        0.0 # 0.0
+SHARED_LIBS +=	KPim6CalendarUtils        0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6CoreAddons
 WANTLIB += KF6I18n KF6IconThemes KF6TextTemplate KF6WidgetsAddons

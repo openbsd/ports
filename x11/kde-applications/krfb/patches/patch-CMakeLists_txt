@@ -1,10 +1,10 @@
-Stop trying to find libinpu
+Stop trying to find libinput
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -25,7 +25,7 @@ include(ECMDeprecationSettings)
- include(FeatureSummary)
- include(CheckIncludeFile)
+@@ -33,7 +33,7 @@ file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp 
+ kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+ kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
  
 -check_include_file("linux/input.h" HAVE_LINUX_INPUT_H)
 +#check_include_file("linux/input.h" HAVE_LINUX_INPUT_H)

@@ -278,7 +278,6 @@ share/applications/marble_shp.desktop
 share/applications/org.kde.marble.behaim.desktop
 share/applications/org.kde.marble.desktop
 share/applications/org.kde.marble.maps.desktop
-share/config.kcfg/
 share/config.kcfg/marble.kcfg
 share/doc/HTML/ca/marble/
 share/doc/HTML/ca/marble/configure-cacheproxy.png
@@ -783,10 +782,13 @@ share/locale/tr/LC_MESSAGES/marble_qt.qm
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_marble.mo
 share/locale/tr/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
+share/locale/ug/LC_MESSAGES/marble-behaim.mo
 share/locale/ug/LC_MESSAGES/marble-maps.mo
 share/locale/ug/LC_MESSAGES/marble.mo
 share/locale/ug/LC_MESSAGES/marble_qt.qm
+share/locale/ug/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/ug/LC_MESSAGES/plasma_runner_marble.mo
+share/locale/ug/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/uk/LC_MESSAGES/marble-behaim.mo
 share/locale/uk/LC_MESSAGES/marble-maps.mo
 share/locale/uk/LC_MESSAGES/marble.mo

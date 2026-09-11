@@ -1,7 +1,6 @@
 @pkgpath x11/kde4/kjumpingcube
 @bin bin/kjumpingcube
 share/applications/org.kde.kjumpingcube.desktop
-share/config.kcfg/
 share/config.kcfg/kjumpingcube.kcfg
 share/doc/HTML/ca/kjumpingcube/
 share/doc/HTML/ca/kjumpingcube/index.cache.bz2

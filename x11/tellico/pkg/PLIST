@@ -2,7 +2,6 @@
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
 share/applications/org.kde.tellico.desktop
-share/config.kcfg/
 share/config.kcfg/tellico_config.kcfg
 share/doc/HTML/ca/tellico/
 share/doc/HTML/ca/tellico/advanced.docbook

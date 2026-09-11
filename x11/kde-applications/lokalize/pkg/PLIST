@@ -1,7 +1,6 @@
 @pkgpath x11/kde4/kmix
 @bin bin/lokalize
 share/applications/org.kde.lokalize.desktop
-share/config.kcfg/
 share/config.kcfg/lokalize.kcfg
 share/doc/HTML/ca/lokalize/
 share/doc/HTML/ca/lokalize/index.cache.bz2

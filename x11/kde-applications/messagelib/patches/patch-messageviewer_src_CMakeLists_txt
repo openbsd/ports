@@ -1,7 +1,7 @@
 Index: messageviewer/src/CMakeLists.txt
 --- messageviewer/src/CMakeLists.txt.orig
 +++ messageviewer/src/CMakeLists.txt
-@@ -435,7 +435,7 @@ target_link_libraries(
+@@ -443,7 +443,7 @@ target_link_libraries(
          KF6::Notifications
          KF6::TextAddonsWidgets
          KF6::ColorScheme

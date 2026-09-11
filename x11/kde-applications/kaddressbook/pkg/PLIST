@@ -42,6 +42,7 @@ lib/qt6/plugins/pim6/kontact/
 share/applications/kaddressbook-importer.desktop
 share/applications/kaddressbook-view.desktop
 share/applications/org.kde.kaddressbook.desktop
+share/config.kcfg/kaddressbook.kcfg
 share/doc/HTML/ca/kaddressbook/
 share/doc/HTML/ca/kaddressbook/docbook-reference.docbook
 share/doc/HTML/ca/kaddressbook/index.cache.bz2

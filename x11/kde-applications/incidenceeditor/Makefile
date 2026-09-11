@@ -2,23 +2,23 @@ COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6IncidenceEditor      1.0 # 0.0
+SHARED_LIBS +=	KPim6IncidenceEditor      1.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6Contacts KF6CoreAddons KF6GuiAddons KF6I18n KF6IconThemes
-WANTLIB += KF6ItemModels KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Service KF6SonnetUi KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
-WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6TextWidgets
-WANTLIB += KF6WidgetsAddons KF6XmlGui KGantt6 KPim6AkonadiCalendar
+WANTLIB += KF6Contacts KF6CoreAddons KF6GuiAddons KF6Holidays
+WANTLIB += KF6I18n KF6IconThemes KF6ItemModels KF6JobWidgets KF6KIOCore
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Mime KF6Service KF6SonnetUi
+WANTLIB += KF6SyntaxHighlighting KF6TextAddonsWidgets KF6TextAutoCorrectionCore
+WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
+WANTLIB += KF6TextWidgets KF6WidgetsAddons KF6XmlGui KGantt6 KPim6AkonadiCalendar
 WANTLIB += KPim6AkonadiCalendarCore KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiPrivate
-WANTLIB += KPim6AkonadiWidgets KPim6CalendarSupport KPim6CalendarUtils
-WANTLIB += KPim6EventViews KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
-WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6Mime
-WANTLIB += KPim6PimCommon KPim6PimCommonAkonadi KPim6TextEdit
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
-WANTLIB += Qt6Xml m
+WANTLIB += KPim6AkonadiMime KPim6AkonadiPrivate KPim6CalendarSupport
+WANTLIB += KPim6CalendarUtils KPim6EventViews KPim6GrantleeTheme
+WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6LdapCore
+WANTLIB += KPim6LdapWidgets KPim6Libkdepim KPim6PimCommon KPim6PimCommonAkonadi
+WANTLIB += KPim6TextEdit Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport
+WANTLIB += Qt6Widgets Qt6Xml m
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -40,8 +40,11 @@ LIB_DEPENDS =	graphics/kdiagram \
 		devel/kf6/kitemmodels \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kservice \
+		devel/kf6/kmime \
 		devel/kf6/ktexttemplate \
 		devel/kf6/ktextwidgets \
+		devel/kf6/kholidays \
+		devel/kf6/syntax-highlighting \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/sonnet \
@@ -58,7 +61,6 @@ LIB_DEPENDS =	graphics/kdiagram \
 		x11/kde-applications/kidentitymanagement>=${VERSION} \
 		x11/kde-applications/kimap>=${VERSION} \
 		x11/kde-applications/kldap>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/kpimtextedit>=${VERSION} \
 		x11/kde-applications/libkdepim>=${VERSION} \
 		x11/kde-applications/pimcommon>=${VERSION}

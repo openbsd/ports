@@ -7,6 +7,7 @@ include/KPim6/KPkPass/Field
 include/KPim6/KPkPass/Location
 include/KPim6/KPkPass/Pass
 include/KPim6/KPkPass/Passes
+include/KPim6/KPkPass/Seat
 include/KPim6/KPkPass/barcode.h
 include/KPim6/KPkPass/boardingpass.h
 include/KPim6/KPkPass/field.h
@@ -15,12 +16,14 @@ include/KPim6/KPkPass/kpkpass_version.h
 include/KPim6/KPkPass/location.h
 include/KPim6/KPkPass/pass.h
 include/KPim6/KPkPass/passes.h
+include/KPim6/KPkPass/seat.h
 lib/cmake/KPim6PkPass/
 lib/cmake/KPim6PkPass/KPim6PkPassConfig.cmake
 lib/cmake/KPim6PkPass/KPim6PkPassConfigVersion.cmake
 lib/cmake/KPim6PkPass/KPim6PkPassTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPim6PkPass/KPim6PkPassTargets.cmake
 @lib lib/libKPim6PkPass.so.${LIBKPim6PkPass_VERSION}
+lib/qt6/metatypes/qt6kpim6pkpass_metatypes.json
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/pkpass/

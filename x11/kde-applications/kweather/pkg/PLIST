@@ -1,4 +1,6 @@
 @bin bin/kweather
+lib/qt6/plugins/kf6/krunner/
+@so lib/qt6/plugins/kf6/krunner/krunnerkweather.so
 lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/applets/
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.kweather_1x4.so
@@ -47,6 +49,7 @@ share/locale/sk/LC_MESSAGES/kweather.mo
 share/locale/sl/LC_MESSAGES/kweather.mo
 share/locale/sv/LC_MESSAGES/kweather.mo
 share/locale/tr/LC_MESSAGES/kweather.mo
+share/locale/ug/LC_MESSAGES/kweather.mo
 share/locale/uk/LC_MESSAGES/kweather.mo
 share/locale/zh_CN/LC_MESSAGES/kweather.mo
 share/locale/zh_TW/LC_MESSAGES/kweather.mo

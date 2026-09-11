@@ -72,7 +72,6 @@ share/applications/okularApplication_tiff.desktop
 share/applications/okularApplication_txt.desktop
 share/applications/okularApplication_xps.desktop
 share/applications/org.kde.okular.desktop
-share/config.kcfg/
 share/config.kcfg/gssettings.kcfg
 share/config.kcfg/okular.kcfg
 share/config.kcfg/okular_core.kcfg
@@ -103,7 +102,6 @@ share/doc/HTML/en/okular/bookmark-management.png
 share/doc/HTML/en/okular/bookmarks.png
 share/doc/HTML/en/okular/config-pdf-digital-signatures.png
 share/doc/HTML/en/okular/configure-annotations.png
-share/doc/HTML/en/okular/configure-backends.png
 share/doc/HTML/en/okular/configure-editor.png
 share/doc/HTML/en/okular/configure.png
 share/doc/HTML/en/okular/embedded-files-bar.png
@@ -1273,8 +1271,10 @@ share/locale/ug/LC_MESSAGES/okular_fax.mo
 share/locale/ug/LC_MESSAGES/okular_fictionbook.mo
 share/locale/ug/LC_MESSAGES/okular_ghostview.mo
 share/locale/ug/LC_MESSAGES/okular_kimgio.mo
+share/locale/ug/LC_MESSAGES/okular_markdown.mo
 share/locale/ug/LC_MESSAGES/okular_mobi.mo
 share/locale/ug/LC_MESSAGES/okular_poppler.mo
+share/locale/ug/LC_MESSAGES/okular_tiff.mo
 share/locale/ug/LC_MESSAGES/okular_txt.mo
 share/locale/ug/LC_MESSAGES/okular_xps.mo
 share/locale/ug/LC_MESSAGES/org.kde.active.documentviewer.mo

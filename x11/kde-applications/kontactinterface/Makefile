@@ -2,7 +2,7 @@ COMMENT =	KDE PIM kontact plugin interface library
 DISTNAME =	kontactinterface-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=	KPim6KontactInterface     0.0 # 0.0
+SHARED_LIBS +=	KPim6KontactInterface     0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons

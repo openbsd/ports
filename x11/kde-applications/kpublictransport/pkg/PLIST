@@ -97,6 +97,8 @@ lib/cmake/KPublicTransport/KPublicTransportTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPublicTransport/KPublicTransportTargets.cmake
 @lib lib/libKPublicTransport.so.${LIBKPublicTransport_VERSION}
 @lib lib/libKPublicTransportOnboard.so.${LIBKPublicTransportOnboard_VERSION}
+lib/qt6/metatypes/qt6kpublictransport_metatypes.json
+lib/qt6/metatypes/qt6kpublictransportonboard_metatypes.json
 lib/qt6/qml/org/kde/kpublictransport/
 lib/qt6/qml/org/kde/kpublictransport/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kpublictransport/kpublictransportqmlplugin.qmltypes
@@ -116,6 +118,7 @@ lib/qt6/qml/org/kde/kpublictransport/ui/JourneyHorizontalBar.qml
 lib/qt6/qml/org/kde/kpublictransport/ui/OccupancyDelegate.qml
 lib/qt6/qml/org/kde/kpublictransport/ui/OccupancyIndicator.qml
 lib/qt6/qml/org/kde/kpublictransport/ui/StopPickerPage.qml
+lib/qt6/qml/org/kde/kpublictransport/ui/StopoverFormDelegate.qml
 lib/qt6/qml/org/kde/kpublictransport/ui/StopoverInformationView.qml
 lib/qt6/qml/org/kde/kpublictransport/ui/TransportIcon.qml
 lib/qt6/qml/org/kde/kpublictransport/ui/TransportNameControl.qml
@@ -161,6 +164,7 @@ share/locale/sk/LC_MESSAGES/kpublictransport.mo
 share/locale/sl/LC_MESSAGES/kpublictransport.mo
 share/locale/sv/LC_MESSAGES/kpublictransport.mo
 share/locale/tr/LC_MESSAGES/kpublictransport.mo
+share/locale/ug/LC_MESSAGES/kpublictransport.mo
 share/locale/uk/LC_MESSAGES/kpublictransport.mo
 share/locale/zh_CN/LC_MESSAGES/kpublictransport.mo
 share/locale/zh_TW/LC_MESSAGES/kpublictransport.mo

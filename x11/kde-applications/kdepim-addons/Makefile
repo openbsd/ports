@@ -18,11 +18,12 @@ SHARED_LIBS +=  adblockplugin                            0.0 # 0.0
 WANTLIB += ${MODCARGO_WANTLIB} GL KF6Archive KF6CalendarCore KF6CalendarEvents
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
-WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemModels KF6ItemViews
-WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
-WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Prison KF6Service
-WANTLIB += KF6SyntaxHighlighting KF6TextAddonsWidgets KF6TextAutoCorrectionCore
-WANTLIB += KF6TextAutoCorrectionWidgets KF6TextAutoGenerateText
+WANTLIB += KF6GuiAddons KF6Holidays KF6I18n KF6IconThemes KF6ItemModels
+WANTLIB += KF6ItemViews KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Mime KF6Prison KF6Service KF6SonnetUi KF6SyntaxHighlighting
+WANTLIB += KF6TextAddonsWidgets KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextAutoGenerateText KF6TextAutoGenerateTextMcpProtocolCore
 WANTLIB += KF6TextCustomEditor KF6TextGrammarCheck KF6TextTemplate
 WANTLIB += KF6TextTranslator KF6TextUtils KF6WidgetsAddons KF6XmlGui
 WANTLIB += KPim6AddressbookImportExport KPim6AkonadiCalendar KPim6AkonadiCalendarCore
@@ -36,14 +37,14 @@ WANTLIB += KPim6KManageSieve KPim6KSieve KPim6KSieveCore KPim6KSieveUi
 WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6Libkleo
 WANTLIB += KPim6MailCommon KPim6MailImporter KPim6MailImporterAkonadi
 WANTLIB += KPim6MailTransport KPim6MessageComposer KPim6MessageCore
-WANTLIB += KPim6MessageViewer KPim6Mime KPim6MimeTreeParser KPim6PimCommon
-WANTLIB += KPim6PimCommonActivities KPim6PimCommonAkonadi KPim6PkPass
-WANTLIB += KPim6TemplateParser KPim6TextEdit KPim6Tnef KPim6WebEngineViewer
-WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick
-WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml c++ execinfo gpg-error gpgme gpgmepp
-WANTLIB += m markdown qgpgmeqt6 util
+WANTLIB += KPim6MessageList KPim6MessageViewer KPim6MimeTreeParser
+WANTLIB += KPim6PimCommon KPim6PimCommonActivities KPim6PimCommonAkonadi
+WANTLIB += KPim6PkPass KPim6TemplateParser KPim6TextEdit KPim6Tnef
+WANTLIB += KPim6WebEngineViewer PlasmaActivities Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6Quick Qt6Sql Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c++ execinfo
+WANTLIB += gpg-error gpgme gpgmepp m markdown qgpgmeqt6 util
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -72,10 +73,13 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kservice \
+		devel/kf6/kmime \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/prison \
+		devel/kf6/kholidays \
+		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		security/qgpgme \
 		textproc/discount \
@@ -95,16 +99,15 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/kde-applications/kaddressbook>=${VERSION} \
 		x11/kde-applications/kcalutils>=${VERSION} \
 		x11/kde-applications/kidentitymanagement>=${VERSION} \
-		x11/kde-applications/kimap>=${VERSION} \
 		x11/kde-applications/kitinerary>=${VERSION} \
 		x11/kde-applications/kmailtransport>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/kpimtextedit>=${VERSION} \
 		x11/kde-applications/kpkpass>=${VERSION} \
 		x11/kde-applications/ktnef>=${VERSION} \
+		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/libgravatar>=${VERSION} \
 		x11/kde-applications/libkdepim>=${VERSION} \
-		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/libksieve>=${VERSION} \
 		x11/kde-applications/mailcommon>=${VERSION} \
 		x11/kde-applications/mailimporter>=${VERSION} \

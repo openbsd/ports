@@ -3,7 +3,6 @@
 @bin bin/ktouch
 @man man/man1/ktouch.1
 share/applications/org.kde.ktouch.desktop
-share/config.kcfg/
 share/config.kcfg/ktouch.kcfg
 share/doc/HTML/ca/ktouch/
 share/doc/HTML/ca/ktouch/index.cache.bz2

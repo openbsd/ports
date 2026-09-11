@@ -15,7 +15,6 @@ lib/qt6/plugins/rocs/editorplugins/
 @so lib/qt6/plugins/rocs/editorplugins/graphlayoutplugin.so
 @so lib/qt6/plugins/rocs/editorplugins/transformedgesplugin.so
 share/applications/org.kde.rocs.desktop
-share/config.kcfg/
 share/config.kcfg/rocs.kcfg
 share/doc/HTML/ca/rocs/
 share/doc/HTML/ca/rocs/index.cache.bz2

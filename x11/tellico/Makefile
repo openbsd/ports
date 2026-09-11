@@ -21,11 +21,12 @@ WANTLIB += KF6IconWidgets KF6ItemModels KF6ItemViews KF6JobWidgets
 WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Service KF6Solid
 WANTLIB += KF6SonnetCore KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
-WANTLIB += KF6XmlGui KSaneWidgets6 Qt6Charts Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c cdio exempi
-WANTLIB += exslt m poppler poppler-qt6 tag xml2 xslt yaz
+WANTLIB += KF6XmlGui KSaneWidgets6 Qt6Charts Qt6Concurrent Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += c cdio exempi exslt m poppler poppler-qt6 tag xml2
+WANTLIB += xslt yaz
 
 SITES =		http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.xz

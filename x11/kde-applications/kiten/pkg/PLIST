@@ -19,7 +19,6 @@ include/libkiten/historyptrlist.h
 share/applications/org.kde.kiten.desktop
 share/applications/org.kde.kitenkanjibrowser.desktop
 share/applications/org.kde.kitenradselect.desktop
-share/config.kcfg/
 share/config.kcfg/kiten.kcfg
 share/doc/HTML/ca/kiten/
 share/doc/HTML/ca/kiten/index.cache.bz2

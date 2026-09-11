@@ -44,7 +44,6 @@ lib/cmake/KPim6MailTransport/KPim6MailTransportTargets.cmake
 lib/qt6/plugins/pim6/
 lib/qt6/plugins/pim6/mailtransport/
 @so lib/qt6/plugins/pim6/mailtransport/mailtransport_smtpplugin.so
-share/config.kcfg/
 share/config.kcfg/mailtransport.kcfg
 share/locale/ar/LC_MESSAGES/libmailtransport6.mo
 share/locale/ast/LC_MESSAGES/libmailtransport6.mo

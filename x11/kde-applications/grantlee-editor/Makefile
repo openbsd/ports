@@ -10,12 +10,13 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
 WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
 WANTLIB += KF6ItemModels KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Service KF6SyntaxHighlighting KF6TextAutoCorrectionCore
-WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
-WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
-WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
-WANTLIB += KPim6AkonadiPrivate KPim6GrantleeTheme KPim6Libkleo
-WANTLIB += KPim6MessageCore KPim6MessageViewer KPim6Mime KPim6MimeTreeParser
+WANTLIB += KF6Mime KF6Service KF6SonnetUi KF6SyntaxHighlighting
+WANTLIB += KF6TextAddonsWidgets KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
+WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiPrivate
+WANTLIB += KPim6GrantleeTheme KPim6IdentityManagementCore KPim6Libkleo
+WANTLIB += KPim6MessageCore KPim6MessageViewer KPim6MimeTreeParser
 WANTLIB += KPim6PimCommon Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel
 WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
@@ -48,19 +49,21 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kservice \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kwidgetsaddons \
+		devel/kf6/kmime \
+		devel/kf6/sonnet \
 		devel/kf6/kxmlgui \
 		devel/kf6/kguiaddons \
 		devel/kf6/syntax-highlighting \
 		security/qgpgme \
 		textproc/ktextaddons \
+		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \
 		x11/kde-applications/akonadi>=${VERSION} \
 		x11/kde-applications/grantleetheme>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION} \
-		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/messagelib>=${VERSION} \
 		x11/kde-applications/pimcommon>=${VERSION} \
+		x11/kde-applications/kidentitymanagement>=${VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \

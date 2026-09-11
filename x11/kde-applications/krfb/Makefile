@@ -47,7 +47,9 @@ LIB_DEPENDS +=	archivers/lzo2 \
 		graphics/png \
 		multimedia/pipewire/pipewire,-libs \
 		net/libvncserver \
+		security/cyrus-sasl2 \
 		security/gnutls \
+		security/libgcrypt \
 		wayland/wayland \
 		x11/kde-plasma/kpipewire \
 		x11/kde-plasma/kwayland \

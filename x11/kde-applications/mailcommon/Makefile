@@ -8,7 +8,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6Contacts KF6CoreAddons KF6GuiAddons KF6I18n KF6IconThemes
 WANTLIB += KF6IconWidgets KF6ItemModels KF6ItemViews KF6JobWidgets
-WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service KF6SyntaxHighlighting
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Mime KF6Service
+WANTLIB += KF6SonnetUi KF6SyntaxHighlighting KF6TextAddonsWidgets
 WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
@@ -17,7 +18,7 @@ WANTLIB += KPim6AkonadiWidgets KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagem
 WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
 WANTLIB += KPim6MailImporter KPim6MailTransport KPim6MessageComposer
 WANTLIB += KPim6MessageCore KPim6MessageList KPim6MessageViewer
-WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
+WANTLIB += KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
 WANTLIB += KPim6PimCommonAkonadi KPim6TemplateParser KPim6TextEdit
 WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6Widgets Qt6Xml gpg-error gpgme gpgmepp
@@ -45,6 +46,8 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kservice \
+		devel/kf6/sonnet \
+		devel/kf6/kmime \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
@@ -53,16 +56,15 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		security/qgpgme \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
+		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \
 		x11/kde-applications/akonadi>=${VERSION} \
 		x11/kde-applications/grantleetheme>=${VERSION} \
 		x11/kde-applications/kidentitymanagement>=${VERSION} \
-		x11/kde-applications/kimap>=${VERSION} \
 		x11/kde-applications/kmailtransport>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/kpimtextedit>=${VERSION} \
 		x11/kde-applications/libkdepim>=${VERSION} \
-		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/mailimporter>=${VERSION} \
 		x11/kde-applications/messagelib>=${VERSION} \
 		x11/kde-applications/pimcommon>=${VERSION} \

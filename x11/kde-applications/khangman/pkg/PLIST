@@ -2,7 +2,6 @@
 @bin bin/khangman
 @man man/man6/khangman.6
 share/applications/org.kde.khangman.desktop
-share/config.kcfg/
 share/config.kcfg/khangman.kcfg
 share/doc/HTML/ca/khangman/
 share/doc/HTML/ca/khangman/index.cache.bz2

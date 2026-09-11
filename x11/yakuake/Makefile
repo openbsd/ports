@@ -22,8 +22,9 @@ WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6GuiAddons
 WANTLIB += KF6I18n KF6IconThemes KF6KIOCore KF6NewStuffCore KF6NewStuffWidgets
 WANTLIB += KF6Notifications KF6NotifyConfig KF6Parts KF6StatusNotifierItem
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KWaylandClient
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
-WANTLIB += X11 c m xkbcommon
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6WaylandClient
+WANTLIB += Qt6Widgets Qt6Xml X11 c m wayland-client wayland-cursor
+WANTLIB += xcb xcb-randr xcb-util xkbcommon
 
 MODULES =	x11/kde
 
@@ -58,6 +59,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
 		x11/kde-plasma/kwayland \
+		wayland/wayland \
 		x11/xkbcommon
 
 

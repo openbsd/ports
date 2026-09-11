@@ -1,7 +1,6 @@
 @pkgpath x11/kde4/kwordquiz
 @bin bin/kwordquiz
 share/applications/org.kde.kwordquiz.desktop
-share/config.kcfg/
 share/config.kcfg/kwordquiz.kcfg
 share/doc/HTML/ca/kwordquiz/
 share/doc/HTML/ca/kwordquiz/index.cache.bz2

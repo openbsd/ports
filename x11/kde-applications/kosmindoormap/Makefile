@@ -6,7 +6,7 @@ HOMEPAGE =	https://invent.kde.org/libraries/kosmindoormap
 
 SHARED_LIBS +=	KOSM                      0.0 # 0.0
 SHARED_LIBS +=	KOSMIndoorMap             2.0 # 0.0
-SHARED_LIBS +=	KOSMIndoorRouting         0.0 # 0.0
+SHARED_LIBS +=	KOSMIndoorRouting         0.1 # 0.0
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

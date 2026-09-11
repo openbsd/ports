@@ -15,11 +15,12 @@ WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
 WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes
 WANTLIB += KF6IconWidgets KF6ItemModels KF6ItemViews KF6JobWidgets
 WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
-WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Mime KF6Notifications
 WANTLIB += KF6NotifyConfig KF6Parts KF6Service KF6Solid KF6SonnetUi
-WANTLIB += KF6StatusNotifierItem KF6SyntaxHighlighting KF6TextAutoCorrectionCore
-WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextEditTextToSpeech
-WANTLIB += KF6TextTemplate KF6TextUtils KF6UserFeedbackCore KF6UserFeedbackWidgets
+WANTLIB += KF6StatusNotifierItem KF6SyntaxHighlighting KF6TextAddonsWidgets
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextEditTextToSpeech KF6TextTemplate
+WANTLIB += KF6TextUtils KF6UserFeedbackCore KF6UserFeedbackWidgets
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPim6AkonadiAgentBase
 WANTLIB += KPim6AkonadiAgentWidgetBase KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
@@ -31,13 +32,13 @@ WANTLIB += KPim6KSieveCore KPim6KSieveUi KPim6KontactInterface
 WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6Libkleo
 WANTLIB += KPim6MailCommon KPim6MailTransport KPim6MessageComposer
 WANTLIB += KPim6MessageCore KPim6MessageList KPim6MessageViewer
-WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
+WANTLIB += KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
 WANTLIB += KPim6PimCommonAkonadi KPim6TemplateParser KPim6TextEdit
 WANTLIB += KPim6Tnef KPim6WebEngineViewer PlasmaActivities Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml X11 c gpg-error
-WANTLIB += gpgme gpgmepp m qgpgmeqt6 qt6keychain
+WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Positioning
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6Quick Qt6TextToSpeech Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += X11 c gpg-error gpgme gpgmepp m qgpgmeqt6 qt6keychain
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
@@ -68,6 +69,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcontacts \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
+		devel/kf6/kmime \
 		devel/kf6/kdbusaddons \
 		devel/kf6/kguiaddons \
 		devel/kf6/ki18n \
@@ -102,22 +104,23 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		x11/kde-applications/grantleetheme \
 		x11/kde-applications/kcalutils>=${VERSION} \
 		x11/kde-applications/kidentitymanagement>=${VERSION} \
-		x11/kde-applications/kimap>=${VERSION} \
 		x11/kde-applications/kldap>=${VERSION} \
 		x11/kde-applications/kmailtransport>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/kontactinterface>=${VERSION} \
+		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/kpimtextedit>=${VERSION} \
 		x11/kde-applications/ktnef>=${VERSION} \
 		x11/kde-applications/libgravatar>=${VERSION} \
 		x11/kde-applications/libkdepim>=${VERSION} \
-		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/libksieve>=${VERSION} \
 		x11/kde-applications/mailcommon>=${VERSION} \
 		x11/kde-applications/messagelib>=${VERSION} \
 		x11/kde-applications/pimcommon>=${VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtspeech \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 

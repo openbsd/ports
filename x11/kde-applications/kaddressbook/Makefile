@@ -10,16 +10,17 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
 WANTLIB += KF6CoreAddons KF6Crash KF6GuiAddons KF6I18n KF6IconThemes
 WANTLIB += KF6ItemModels KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Parts KF6Service KF6TextAddonsWidgets KF6TextAutoCorrectionCore
-WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
-WANTLIB += KF6UserFeedbackCore KF6UserFeedbackWidgets KF6WidgetsAddons
-WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6AkonadiPrivate KPim6AkonadiSearchDebug
-WANTLIB += KPim6AkonadiWidgets KPim6GrantleeTheme KPim6IMAP KPim6KontactInterface
-WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6Mime
-WANTLIB += KPim6PimCommon KPim6PimCommonActivities KPim6PimCommonAkonadi
-WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6Widgets Qt6Xml c m
+WANTLIB += KF6Mime KF6Parts KF6Service KF6SonnetUi KF6SyntaxHighlighting
+WANTLIB += KF6TextAddonsWidgets KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6UserFeedbackCore
+WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiPrivate
+WANTLIB += KPim6AkonadiSearchDebug KPim6AkonadiWidgets KPim6GrantleeTheme
+WANTLIB += KPim6IMAP KPim6KontactInterface KPim6LdapCore KPim6LdapWidgets
+WANTLIB += KPim6Libkdepim KPim6PimCommon KPim6PimCommonActivities
+WANTLIB += KPim6PimCommonAkonadi PlasmaActivities Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6Qml Qt6Widgets
+WANTLIB += Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -47,9 +48,12 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kparts \
 		devel/kf6/kservice \
+		devel/kf6/kmime \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kguiaddons \
 		devel/kf6/kuserfeedback \
+		devel/kf6/sonnet \
+		devel/kf6/syntax-highlighting \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/kiconthemes \
@@ -60,7 +64,6 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		x11/kde-applications/grantleetheme>=${VERSION} \
 		x11/kde-applications/kimap>=${VERSION} \
 		x11/kde-applications/kldap>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/kontactinterface>=${VERSION} \
 		x11/kde-applications/libkdepim>=${VERSION} \
 		x11/kde-applications/pimcommon>=${VERSION} \

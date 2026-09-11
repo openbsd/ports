@@ -178,6 +178,9 @@ share/KPim6Libkleo/
 share/KPim6Libkleo/find-modules/
 share/KPim6Libkleo/find-modules/FindLibAssuan.cmake
 share/KPim6Libkleo/find-modules/FindLibGpgError.cmake
+share/KPim6Libkleo/modules/
+share/KPim6Libkleo/modules/KleoAddGpgCryptoTest.cmake
+share/KPim6Libkleo/modules/KleoGenerateCryptoTestWrapper.cmake
 share/examples/libkleo/
 share/examples/libkleo/xdg/
 share/examples/libkleo/xdg/libkleopatrarc

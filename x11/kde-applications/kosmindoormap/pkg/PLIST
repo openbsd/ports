@@ -90,6 +90,8 @@ lib/cmake/KOSMIndoorMap/KOSMIndoorMapTargets.cmake
 @lib lib/libKOSM.so.${LIBKOSM_VERSION}
 @lib lib/libKOSMIndoorMap.so.${LIBKOSMIndoorMap_VERSION}
 @lib lib/libKOSMIndoorRouting.so.${LIBKOSMIndoorRouting_VERSION}
+lib/qt6/metatypes/qt6kosmindoormap_metatypes.json
+lib/qt6/metatypes/qt6kosmindoorrouting_metatypes.json
 lib/qt6/qml/org/kde/kosmindoormap/
 lib/qt6/qml/org/kde/kosmindoormap/AmenityListDelegate.qml
 lib/qt6/qml/org/kde/kosmindoormap/AmenitySearchDialog.qml
@@ -158,6 +160,7 @@ share/locale/sk/LC_MESSAGES/kosmindoormap.mo
 share/locale/sl/LC_MESSAGES/kosmindoormap.mo
 share/locale/sv/LC_MESSAGES/kosmindoormap.mo
 share/locale/tr/LC_MESSAGES/kosmindoormap.mo
+share/locale/ug/LC_MESSAGES/kosmindoormap.mo
 share/locale/uk/LC_MESSAGES/kosmindoormap.mo
 share/locale/zh_CN/LC_MESSAGES/kosmindoormap.mo
 share/locale/zh_TW/LC_MESSAGES/kosmindoormap.mo

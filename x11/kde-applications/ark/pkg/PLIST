@@ -21,11 +21,14 @@ man/sr@latin/
 man/sr@latin/man1/
 @man man/sr@latin/man1/ark.1
 share/applications/org.kde.ark.desktop
-share/config.kcfg/
 share/config.kcfg/ark.kcfg
 share/doc/HTML/ca/ark/
 share/doc/HTML/ca/ark/index.cache.bz2
 share/doc/HTML/ca/ark/index.docbook
+share/doc/HTML/de/ark/
+share/doc/HTML/de/ark/ark-mainwindow.png
+share/doc/HTML/de/ark/index.cache.bz2
+share/doc/HTML/de/ark/index.docbook
 share/doc/HTML/en/ark/
 share/doc/HTML/en/ark/ark-comment.png
 share/doc/HTML/en/ark/ark-mainwindow.png
@@ -99,6 +102,9 @@ share/icons/hicolor/128x128/apps/ark.png
 share/icons/hicolor/48x48/apps/ark.png
 share/icons/hicolor/64x64/apps/ark.png
 share/icons/hicolor/scalable/apps/ark.svgz
+share/kconf_update/
+share/kconf_update/ark_move_dirhistory_to_state_config.py
+share/kconf_update/ark_move_dirhistory_to_state_config.upd
 share/locale/af/LC_MESSAGES/ark.mo
 share/locale/ar/LC_MESSAGES/ark.mo
 share/locale/ast/LC_MESSAGES/ark.mo

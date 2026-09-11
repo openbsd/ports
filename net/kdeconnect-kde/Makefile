@@ -2,7 +2,7 @@ COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_GEAR_VERSION}
 
-SHARED_LIBS +=	kdeconnectcore		8.0 # 1.4
+SHARED_LIBS +=	kdeconnectcore		9.0 # 1.4
 
 CATEGORIES =	net
 

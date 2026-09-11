@@ -23,6 +23,7 @@ share/locale/ka/LC_MESSAGES/kalm.mo
 share/locale/ko/LC_MESSAGES/kalm.mo
 share/locale/lt/LC_MESSAGES/kalm.mo
 share/locale/nl/LC_MESSAGES/kalm.mo
+share/locale/nn/LC_MESSAGES/kalm.mo
 share/locale/pl/LC_MESSAGES/kalm.mo
 share/locale/pt_BR/LC_MESSAGES/kalm.mo
 share/locale/ru/LC_MESSAGES/kalm.mo
@@ -31,6 +32,7 @@ share/locale/sk/LC_MESSAGES/kalm.mo
 share/locale/sl/LC_MESSAGES/kalm.mo
 share/locale/sv/LC_MESSAGES/kalm.mo
 share/locale/tr/LC_MESSAGES/kalm.mo
+share/locale/ug/LC_MESSAGES/kalm.mo
 share/locale/uk/LC_MESSAGES/kalm.mo
 share/locale/zh_CN/LC_MESSAGES/kalm.mo
 share/locale/zh_TW/LC_MESSAGES/kalm.mo

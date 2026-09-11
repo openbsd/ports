@@ -4,7 +4,6 @@ libexec/khc_mansearch.py
 @bin libexec/khc_xapianindexer
 @bin libexec/khc_xapiansearch
 share/applications/org.kde.khelpcenter.desktop
-share/config.kcfg/
 share/config.kcfg/khelpcenter.kcfg
 share/dbus-1/services/org.kde.khelpcenter.service
 share/doc/HTML/ca/fundamentals/
@@ -71,6 +70,10 @@ share/doc/HTML/de/fundamentals/install.docbook
 share/doc/HTML/de/fundamentals/tasks.docbook
 share/doc/HTML/de/fundamentals/ui.docbook
 share/doc/HTML/de/khelpcenter/
+share/doc/HTML/de/khelpcenter/glossary/
+share/doc/HTML/de/khelpcenter/glossary/index.cache.bz2
+share/doc/HTML/de/khelpcenter/glossary/index.docbook
+share/doc/HTML/de/khelpcenter/glossary/kdeprintingglossary.docbook
 share/doc/HTML/de/khelpcenter/index.cache.bz2
 share/doc/HTML/de/khelpcenter/index.docbook
 share/doc/HTML/de/onlinehelp/

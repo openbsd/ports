@@ -4,7 +4,6 @@ lib/qt6/plugins/kf6/parts/
 @so lib/qt6/plugins/kf6/parts/kmplotpart.so
 @man man/man1/kmplot.1
 share/applications/org.kde.kmplot.desktop
-share/config.kcfg/
 share/config.kcfg/kmplot.kcfg
 share/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
 share/dbus-1/interfaces/org.kde.kmplot.MainDlg.xml

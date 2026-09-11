@@ -4,8 +4,10 @@ CATEGORIES =	devel mail
 
 SHARED_LIBS +=	KPim6Mbox                 1.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KPim6Mime Qt6Core m
+MODULES =	lang/python
 
-LIB_DEPENDS =	x11/kde-applications/kmime>=${VERSION}
+WANTLIB += ${COMPILER_LIBCXX} KF6Mime Qt6Core m
+
+LIB_DEPENDS = devel/kf6/kmime
 
 .include <bsd.port.mk>

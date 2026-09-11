@@ -1,7 +1,6 @@
 @pkgpath x11/kde4/kanagram
 @bin bin/kanagram
 share/applications/org.kde.kanagram.desktop
-share/config.kcfg/
 share/config.kcfg/kanagram.kcfg
 share/doc/HTML/ca/kanagram/
 share/doc/HTML/ca/kanagram/general-settings.png

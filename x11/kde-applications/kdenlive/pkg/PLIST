@@ -6,7 +6,6 @@ lib/qt6/plugins/kf6/thumbcreator/
 @so lib/qt6/plugins/kf6/thumbcreator/mltpreview.so
 lib/qt6/qml/org/kde/kdenlive/
 lib/qt6/qml/org/kde/kdenlive/AssetMenu.qml
-lib/qt6/qml/org/kde/kdenlive/AssetView.qml
 lib/qt6/qml/org/kde/kdenlive/AudioLevels.qml
 lib/qt6/qml/org/kde/kdenlive/AudioRecordButton.qml
 lib/qt6/qml/org/kde/kdenlive/AudioRecordingControls.qml
@@ -17,10 +16,10 @@ lib/qt6/qml/org/kde/kdenlive/ClipAudioThumbs.qml
 lib/qt6/qml/org/kde/kdenlive/ClipMonitor.qml
 lib/qt6/qml/org/kde/kdenlive/ClipThumbs.qml
 lib/qt6/qml/org/kde/kdenlive/Composition.qml
-lib/qt6/qml/org/kde/kdenlive/CornerSelectionShadow.qml
 lib/qt6/qml/org/kde/kdenlive/Countdown.qml
 lib/qt6/qml/org/kde/kdenlive/EffectToolBar.qml
 lib/qt6/qml/org/kde/kdenlive/GuidesMenu.qml
+lib/qt6/qml/org/kde/kdenlive/KeyframeDelegate.qml
 lib/qt6/qml/org/kde/kdenlive/KeyframeView.qml
 lib/qt6/qml/org/kde/kdenlive/MaskToolBar.qml
 lib/qt6/qml/org/kde/kdenlive/MixShape.qml
@@ -70,7 +69,6 @@ lib/qt6/qml/org/kde/kdenlive/qmldir
 @man man/man1/kdenlive.1
 @man man/man1/kdenlive_render.1
 share/applications/org.kde.kdenlive.desktop
-share/config.kcfg/
 share/config.kcfg/kdenlivesettings.kcfg
 share/doc/HTML/ca/kdenlive/
 share/doc/HTML/ca/kdenlive/index.cache.bz2
@@ -269,6 +267,7 @@ share/kdenlive/effects/avfilter_compand.xml
 share/kdenlive/effects/avfilter_compensationdelay.xml
 share/kdenlive/effects/avfilter_crossfeed.xml
 share/kdenlive/effects/avfilter_crystalizer.xml
+share/kdenlive/effects/avfilter_curves.xml
 share/kdenlive/effects/avfilter_datascope.xml
 share/kdenlive/effects/avfilter_dblur.xml
 share/kdenlive/effects/avfilter_dcshift.xml
@@ -338,6 +337,7 @@ share/kdenlive/effects/avfilter_phase.xml
 share/kdenlive/effects/avfilter_photosensitivity.xml
 share/kdenlive/effects/avfilter_pixelize.xml
 share/kdenlive/effects/avfilter_prewitt.xml
+share/kdenlive/effects/avfilter_pseudocolor.xml
 share/kdenlive/effects/avfilter_random.xml
 share/kdenlive/effects/avfilter_removegrain.xml
 share/kdenlive/effects/avfilter_rgbashift.xml
@@ -349,6 +349,7 @@ share/kdenlive/effects/avfilter_selectivecolor.xml
 share/kdenlive/effects/avfilter_separatefields.xml
 share/kdenlive/effects/avfilter_setrange.xml
 share/kdenlive/effects/avfilter_shear.xml
+share/kdenlive/effects/avfilter_shufflepixels.xml
 share/kdenlive/effects/avfilter_shuffleplanes.xml
 share/kdenlive/effects/avfilter_smartblur.xml
 share/kdenlive/effects/avfilter_sobel.xml
@@ -426,6 +427,7 @@ share/kdenlive/effects/frei0r_cluster.xml
 share/kdenlive/effects/frei0r_colgate.xml
 share/kdenlive/effects/frei0r_coloradj_rgb.xml
 share/kdenlive/effects/frei0r_colordistance.xml
+share/kdenlive/effects/frei0r_colorenhance.xml
 share/kdenlive/effects/frei0r_colorize.xml
 share/kdenlive/effects/frei0r_colortap.xml
 share/kdenlive/effects/frei0r_contrast0r.xml
@@ -512,6 +514,50 @@ share/kdenlive/effects/greyscale.xml
 share/kdenlive/effects/hsl_primaries.xml
 share/kdenlive/effects/hsl_range.xml
 share/kdenlive/effects/invert.xml
+share/kdenlive/effects/ladspa_1185.xml
+share/kdenlive/effects/ladspa_1190.xml
+share/kdenlive/effects/ladspa_1191.xml
+share/kdenlive/effects/ladspa_1192.xml
+share/kdenlive/effects/ladspa_1195.xml
+share/kdenlive/effects/ladspa_1196.xml
+share/kdenlive/effects/ladspa_1202.xml
+share/kdenlive/effects/ladspa_1203.xml
+share/kdenlive/effects/ladspa_1207.xml
+share/kdenlive/effects/ladspa_1213.xml
+share/kdenlive/effects/ladspa_1219.xml
+share/kdenlive/effects/ladspa_1402.xml
+share/kdenlive/effects/ladspa_1403.xml
+share/kdenlive/effects/ladspa_1404.xml
+share/kdenlive/effects/ladspa_1407.xml
+share/kdenlive/effects/ladspa_1408.xml
+share/kdenlive/effects/ladspa_1410.xml
+share/kdenlive/effects/ladspa_1411.xml
+share/kdenlive/effects/ladspa_1415.xml
+share/kdenlive/effects/ladspa_1423.xml
+share/kdenlive/effects/ladspa_1430.xml
+share/kdenlive/effects/ladspa_1431.xml
+share/kdenlive/effects/ladspa_1432.xml
+share/kdenlive/effects/ladspa_1433.xml
+share/kdenlive/effects/ladspa_1438.xml
+share/kdenlive/effects/ladspa_1886.xml
+share/kdenlive/effects/ladspa_1887.xml
+share/kdenlive/effects/ladspa_1888.xml
+share/kdenlive/effects/ladspa_1889.xml
+share/kdenlive/effects/ladspa_1890.xml
+share/kdenlive/effects/ladspa_1891.xml
+share/kdenlive/effects/ladspa_1892.xml
+share/kdenlive/effects/ladspa_1893.xml
+share/kdenlive/effects/ladspa_1895.xml
+share/kdenlive/effects/ladspa_1896.xml
+share/kdenlive/effects/ladspa_1897.xml
+share/kdenlive/effects/ladspa_1900.xml
+share/kdenlive/effects/ladspa_1901.xml
+share/kdenlive/effects/ladspa_1902.xml
+share/kdenlive/effects/ladspa_1903.xml
+share/kdenlive/effects/ladspa_1904.xml
+share/kdenlive/effects/ladspa_1905.xml
+share/kdenlive/effects/ladspa_1907.xml
+share/kdenlive/effects/ladspa_1913.xml
 share/kdenlive/effects/ladspa_2141.xml
 share/kdenlive/effects/ladspa_2142.xml
 share/kdenlive/effects/ladspa_2143.xml

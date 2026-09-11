@@ -10,16 +10,16 @@ HOMEPAGE =	https://www.kdevelop.org/
 SHARED_LIBS +=  KDevPlatformDebugger      10.0 # 6.0
 SHARED_LIBS +=  KDevPlatformDocumentation 4.1 # 6.0
 SHARED_LIBS +=  KDevPlatformInterfaces    6.0 # 6.0
-SHARED_LIBS +=  KDevPlatformLanguage      9.0 # 6.0
+SHARED_LIBS +=  KDevPlatformLanguage      10.0 # 6.0
 SHARED_LIBS +=  KDevPlatformOutputView    4.0 # 6.0
-SHARED_LIBS +=  KDevPlatformProject       5.0 # 6.0
-SHARED_LIBS +=  KDevPlatformSerialization 6.0 # 6.0
+SHARED_LIBS +=  KDevPlatformProject       6.0 # 6.0
+SHARED_LIBS +=  KDevPlatformSerialization 7.0 # 6.0
 SHARED_LIBS +=  KDevPlatformShell         10.0 # 6.0
 SHARED_LIBS +=  KDevPlatformSublime       6.0 # 6.0
-SHARED_LIBS +=  KDevPlatformUtil          5.1 # 6.0
-SHARED_LIBS +=  KDevPlatformVcs           5.0 # 6.0
+SHARED_LIBS +=  KDevPlatformUtil          6.0 # 6.0
+SHARED_LIBS +=  KDevPlatformVcs           6.0 # 6.0
 SHARED_LIBS +=  KDevClangPrivate          4.0 # 6.0
-SHARED_LIBS +=  KDevCMakeCommon           3.0 # 6.0
+SHARED_LIBS +=  KDevCMakeCommon           3.1 # 6.0
 SHARED_LIBS +=  KDevCompileAnalyzerCommon 1.0 # 6.0
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
@@ -38,14 +38,15 @@ WANTLIB += KF6Notifications KF6NotifyConfig KF6Parts KF6Purpose
 WANTLIB += KF6PurposeWidgets KF6Runner KF6Service KF6Solid KF6SonnetUi
 WANTLIB += KF6SyntaxHighlighting KF6TextEditor KF6TextTemplate
 WANTLIB += KF6TextWidgets KF6ThreadWeaver KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KF6XmlGui Plasma Qt6Concurrent Qt6Core Qt6Core5Compat
-WANTLIB += Qt6DBus Qt6Gui Qt6Help Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6Quick Qt6Sql Qt6WebChannel
-WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += X11 apr-1 aprutil-1 c komparediff2 m svn_client-1 svn_fs-1
-WANTLIB += svn_ra-1 svn_repos-1 svn_subr-1 svn_wc-1
-
+WANTLIB += KF6XmlGui KirigamiPlatform Plasma Qt6Concurrent Qt6Core
+WANTLIB += Qt6Core5Compat Qt6DBus Qt6Gui Qt6Help Qt6Network Qt6OpenGL
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6Sql
+WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml X11 apr-1 aprutil-1 c komparediff2
+WANTLIB += m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1
+WANTLIB += svn_wc-1
 WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
+
 
 SITES =	${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX = .tar.xz
@@ -113,6 +114,7 @@ LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		devel/kf6/ktextwidgets \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
+		devel/kf6/kirigami \
 		devel/kf6/kxmlgui \
 		devel/kf6/purpose \
 		devel/kf6/solid \
@@ -129,7 +131,7 @@ LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
-PLUGIN_V =	65
+PLUGIN_V =	66
 SUBST_VARS =	PLUGIN_V
 
 TEST_IS_INTERACTIVE =	X11

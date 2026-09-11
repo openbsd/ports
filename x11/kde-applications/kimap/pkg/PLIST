@@ -1,3 +1,4 @@
+include/KPim6/
 include/KPim6/KIMAP/
 include/KPim6/KIMAP/KIMAP/
 include/KPim6/KIMAP/KIMAP/Acl
@@ -29,7 +30,6 @@ include/KPim6/KIMAP/KIMAP/MoveJob
 include/KPim6/KIMAP/KIMAP/MyRightsJob
 include/KPim6/KIMAP/KIMAP/NamespaceJob
 include/KPim6/KIMAP/KIMAP/QuotaJobBase
-include/KPim6/KIMAP/KIMAP/RFCCodecs
 include/KPim6/KIMAP/KIMAP/RenameJob
 include/KPim6/KIMAP/KIMAP/SearchJob
 include/KPim6/KIMAP/KIMAP/SelectJob
@@ -72,7 +72,6 @@ include/KPim6/KIMAP/kimap/MoveJob
 include/KPim6/KIMAP/kimap/MyRightsJob
 include/KPim6/KIMAP/kimap/NamespaceJob
 include/KPim6/KIMAP/kimap/QuotaJobBase
-include/KPim6/KIMAP/kimap/RFCCodecs
 include/KPim6/KIMAP/kimap/RenameJob
 include/KPim6/KIMAP/kimap/SearchJob
 include/KPim6/KIMAP/kimap/SelectJob
@@ -116,7 +115,6 @@ include/KPim6/KIMAP/kimap/myrightsjob.h
 include/KPim6/KIMAP/kimap/namespacejob.h
 include/KPim6/KIMAP/kimap/quotajobbase.h
 include/KPim6/KIMAP/kimap/renamejob.h
-include/KPim6/KIMAP/kimap/rfccodecs.h
 include/KPim6/KIMAP/kimap/searchjob.h
 include/KPim6/KIMAP/kimap/selectjob.h
 include/KPim6/KIMAP/kimap/session.h

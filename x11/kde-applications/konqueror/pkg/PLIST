@@ -100,7 +100,6 @@ share/applications/kfmclient_war.desktop
 share/applications/konqbrowser.desktop
 share/applications/org.kde.konqueror.desktop
 share/applications/speeddial.desktop
-share/config.kcfg/
 share/config.kcfg/kcreatewebarchive.kcfg
 share/config.kcfg/konqueror.kcfg
 share/dbus-1/interfaces/org.kde.Konqueror.Main.xml
@@ -1896,6 +1895,7 @@ share/locale/lt/LC_MESSAGES/konqueror.mo
 share/locale/lt/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/lt/LC_MESSAGES/libkonq.mo
 share/locale/lt/LC_MESSAGES/searchbarplugin.mo
+share/locale/lt/LC_MESSAGES/speeddial.mo
 share/locale/lt/LC_MESSAGES/temporarysavedir.mo
 share/locale/lt/LC_MESSAGES/uachangerplugin.mo
 share/locale/lt/LC_MESSAGES/webarchiver.mo
@@ -2660,11 +2660,15 @@ share/locale/ug/LC_MESSAGES/kgetplugin.mo
 share/locale/ug/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ug/LC_MESSAGES/khtmltts.mo
 share/locale/ug/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/ug/LC_MESSAGES/konqsidebar.mo
 share/locale/ug/LC_MESSAGES/konqueror.mo
 share/locale/ug/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ug/LC_MESSAGES/libkonq.mo
 share/locale/ug/LC_MESSAGES/searchbarplugin.mo
+share/locale/ug/LC_MESSAGES/speeddial.mo
+share/locale/ug/LC_MESSAGES/temporarysavedir.mo
 share/locale/ug/LC_MESSAGES/uachangerplugin.mo
+share/locale/ug/LC_MESSAGES/webarchiver.mo
 share/locale/ug/LC_MESSAGES/webenginepart.mo
 share/locale/uk/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/uk/LC_MESSAGES/autorefresh.mo

@@ -8,7 +8,7 @@ REVISION =	0
 HOMEPAGE =	https://marble.kde.org/
 
 SHARED_LIBS +=  astro                     3.0
-SHARED_LIBS +=  marblewidget-qt6          5.0
+SHARED_LIBS +=  marblewidget-qt6          5.1
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

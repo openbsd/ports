@@ -7,7 +7,6 @@ man/sr@latin/
 man/sr@latin/man1/
 @man man/sr@latin/man1/kbookmarkmerger.1
 share/applications/org.kde.keditbookmarks.desktop
-share/config.kcfg/
 share/config.kcfg/keditbookmarks.kcfg
 share/doc/HTML/ca/keditbookmarks/
 share/doc/HTML/ca/keditbookmarks/index.cache.bz2

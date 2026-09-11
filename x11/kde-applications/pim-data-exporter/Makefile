@@ -9,16 +9,17 @@ WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigWidgets KF6Contacts KF6CoreAddons KF6Crash
 WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes KF6ItemModels
 WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Service
-WANTLIB += KF6Solid KF6StatusNotifierItem KF6TextAddonsWidgets
-WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Mime KF6Notifications KF6Service
+WANTLIB += KF6Solid KF6SonnetUi KF6StatusNotifierItem KF6SyntaxHighlighting
+WANTLIB += KF6TextAddonsWidgets KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6UserFeedbackCore
 WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
 WANTLIB += KPim6AkonadiPrivate KPim6AkonadiWidgets KPim6GrantleeTheme
 WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IdentityManagementWidgets
 WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MailCommon KPim6MailTransport
-WANTLIB += KPim6MessageComposer KPim6MessageCore KPim6Mime KPim6PimCommon
+WANTLIB += KPim6MessageComposer KPim6MessageCore KPim6MessageList
+WANTLIB += KPim6MessageViewer KPim6MimeTreeParser KPim6PimCommon
 WANTLIB += KPim6PimCommonAkonadi KPim6TextEdit Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6Widgets Qt6Xml c gpg-error gpgme
 WANTLIB += gpgmepp m qgpgmeqt6
@@ -50,23 +51,25 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kguiaddons \
 		devel/kf6/kuserfeedback \
+		devel/kf6/kmime \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
+		devel/kf6/sonnet \
+		devel/kf6/syntax-highlighting \
 		security/qgpgme \
 		textproc/ktextaddons \
 		devel/kf6/kiconthemes \
+		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \
 		x11/kde-applications/akonadi>=${VERSION} \
 		x11/kde-applications/grantleetheme>=${VERSION} \
 		x11/kde-applications/kidentitymanagement>=${VERSION} \
-		x11/kde-applications/kimap>=${VERSION} \
 		x11/kde-applications/kmailtransport>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/kpimtextedit>=${VERSION} \
 		x11/kde-applications/libkdepim>=${VERSION} \
-		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/mailcommon>=${VERSION} \
 		x11/kde-applications/messagelib>=${VERSION} \
 		x11/kde-applications/pimcommon>=${VERSION}

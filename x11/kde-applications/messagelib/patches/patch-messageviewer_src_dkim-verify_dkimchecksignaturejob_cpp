@@ -1,7 +1,7 @@
 Index: messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp
 --- messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp.orig
 +++ messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp
-@@ -21,8 +21,12 @@ using namespace Qt::Literals::StringLiterals;
+@@ -20,8 +20,12 @@
  #include <QRegularExpression>
  
  #include <openssl/bn.h>

@@ -19,15 +19,15 @@ WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
 WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6GuiAddons
 WANTLIB += KF6Holidays KF6I18n KF6IconThemes KF6ItemModels KF6ItemViews
 WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Notifications KF6NotifyConfig KF6Service
-WANTLIB += KF6Solid KF6SonnetUi KF6StatusNotifierItem KF6TextEditTextToSpeech
-WANTLIB += KF6TextTemplate KF6TextWidgets KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiPrivate
-WANTLIB += KPim6AkonadiWidgets KPim6CalendarUtils KPim6GrantleeTheme
-WANTLIB += KPim6IdentityManagementCore KPim6IdentityManagementWidgets
-WANTLIB += KPim6MailTransport KPim6Mime Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Network Qt6Widgets Qt6Xml X11 c m mpv vlc
+WANTLIB += KF6KIOWidgets KF6Mime KF6Notifications KF6NotifyConfig
+WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
+WANTLIB += KF6TextEditTextToSpeech KF6TextTemplate KF6TextWidgets
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiMime KPim6AkonadiPrivate
+WANTLIB += KPim6CalendarUtils KPim6GrantleeTheme KPim6IdentityManagementCore
+WANTLIB += KPim6IdentityManagementWidgets KPim6MailTransport Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6TextToSpeech
+WANTLIB += Qt6Widgets Qt6Xml X11 c m mpv vlc
 
 BUILD_DEPENDS =	devel/boost \
 		x11/kde-applications/mailcommon>=${VERSION}
@@ -67,17 +67,19 @@ LIB_DEPENDS =	devel/kf6/kauth \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
+		devel/kf6/kmime \
 		textproc/ktextaddons \
 		devel/kf6/kiconthemes \
 		x11/vlc \
 		multimedia/mpv \
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtspeech \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \
 		x11/kde-applications/akonadi>=${VERSION} \
 		x11/kde-applications/grantleetheme>=${VERSION} \
 		x11/kde-applications/kcalutils>=${VERSION} \
 		x11/kde-applications/kidentitymanagement>=${VERSION} \
-		x11/kde-applications/kmailtransport>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION}
+		x11/kde-applications/kmailtransport>=${VERSION}
 
 .include <bsd.port.mk>

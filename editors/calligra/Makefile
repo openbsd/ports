@@ -6,7 +6,7 @@ DISTNAME =	calligra-${MODKDE_GEAR_VERSION}
 
 CATEGORIES =	editors
 
-SHARED_LIBS =   RtfReader                 52.0 # 0.0
+SHARED_LIBS =   RtfReader                 53.0 # 0.0
 SHARED_LIBS +=  basicflakes               51.0 # 0.0
 SHARED_LIBS +=  calligrastageprivate      52.0 # 0.0
 SHARED_LIBS +=  flake                     52.0 # 0.0

@@ -1,14 +1,13 @@
 COMMENT =	KDE itinerary data model and itinerary extraction library
 DISTNAME =	kitinerary-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/itinerary
 
-SHARED_LIBS +=	KPim6Itinerary            4.0 # 0.0
+SHARED_LIBS +=	KPim6Itinerary            4.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6CalendarCore KF6Codecs
-WANTLIB += KF6Contacts KF6I18n KF6I18nLocaleData KPim6Mime KPim6PkPass
+WANTLIB += KF6Contacts KF6I18n KF6I18nLocaleData KF6Mime KPim6PkPass
 WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6Qml ZXing absl_base absl_base_cpu_detect
 WANTLIB += absl_city absl_civil_time absl_cord absl_cord_internal
 WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
@@ -30,7 +29,8 @@ WANTLIB += absl_synchronization absl_throw_delegate absl_time
 WANTLIB += absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_container-mt boost_date_time-mt boost_thread-mt
-WANTLIB += c crypto icui18n icuuc m poppler xml2 z
+WANTLIB += c crypto icui18n icuuc m phonenumber poppler protobuf
+WANTLIB += xml2 z
 
 MODKDE_TRANSLATIONS = yes
 
@@ -43,13 +43,13 @@ LIB_DEPENDS =	devel/abseil-cpp \
 		devel/kf6/kcodecs \
 		devel/kf6/kcontacts \
 		devel/kf6/ki18n \
+		devel/kf6/kmime \
 		devel/protobuf \
 		graphics/zxing-cpp \
 		print/poppler \
 		productivity/libphonenumber \
 		textproc/icu4c \
 		textproc/libxml \
-		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/kpkpass>=${VERSION} \
 		x11/qt6/qtdeclarative
 

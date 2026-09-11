@@ -2,12 +2,12 @@ COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6MessageComposer      3.0 # 0.0
+SHARED_LIBS +=	KPim6MessageComposer      4.0 # 0.0
 SHARED_LIBS +=	KPim6MessageCore          3.0 # 0.0
 SHARED_LIBS +=	KPim6MessageList          4.0 # 0.0
-SHARED_LIBS +=	KPim6MessageViewer        4.0 # 0.0
+SHARED_LIBS +=	KPim6MessageViewer        5.0 # 0.0
 SHARED_LIBS +=	KPim6MimeTreeParser       3.0 # 0.0
-SHARED_LIBS +=	KPim6TemplateParser       2.0 # 0.0
+SHARED_LIBS +=	KPim6TemplateParser       3.0 # 0.0
 SHARED_LIBS +=	KPim6WebEngineViewer      2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6CalendarCore
@@ -15,7 +15,7 @@ WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
 WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets KF6ItemModels
 WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Service
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Mime KF6Notifications KF6Service
 WANTLIB += KF6Solid KF6SonnetCore KF6SonnetUi KF6SyntaxHighlighting
 WANTLIB += KF6TextAddonsWidgets KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextEditTextToSpeech KF6TextTemplate
@@ -25,14 +25,14 @@ WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiPrivate
 WANTLIB += KPim6AkonadiSearchPIM KPim6AkonadiWidgets KPim6GrantleeTheme
 WANTLIB += KPim6Gravatar KPim6IMAP KPim6IdentityManagementCore
 WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
-WANTLIB += KPim6MailTransport KPim6Mbox KPim6Mime KPim6PimCommon
-WANTLIB += KPim6PimCommonAkonadi KPim6TextEdit Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml crypto gpg-error gpgme gpgmepp m
-WANTLIB += qgpgmeqt6
-
+WANTLIB += KPim6MailTransport KPim6Mbox KPim6PimCommon KPim6PimCommonAkonadi
+WANTLIB += KPim6TextEdit Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6Quick Qt6TextToSpeech Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml crypto gpg-error
+WANTLIB += gpgme gpgmepp m qgpgmeqt6
 WANTLIB += lib/inotify/inotify
+
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -66,6 +66,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
+		devel/kf6/kmime \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		security/qgpgme \
@@ -78,15 +79,16 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/kde-applications/kidentitymanagement>=${VERSION} \
 		x11/kde-applications/kimap>=${VERSION} \
 		x11/kde-applications/kmailtransport>=${VERSION} \
+		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/kmbox>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/kpimtextedit>=${VERSION} \
 		x11/kde-applications/libgravatar>=${VERSION} \
 		x11/kde-applications/libkdepim>=${VERSION} \
-		x11/kde-applications/libkleo>=${VERSION} \
 		x11/kde-applications/pimcommon>=${VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtspeech \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 

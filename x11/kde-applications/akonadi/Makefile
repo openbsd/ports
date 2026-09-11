@@ -4,10 +4,10 @@ CATEGORIES =	databases productivity
 
 HOMEPAGE =	https://kontact.kde.org
 
-SHARED_LIBS +=	KPim6AkonadiAgentBase     2.0 # 0.0
-SHARED_LIBS +=	KPim6AkonadiCore          4.0 # 0.0
+SHARED_LIBS +=	KPim6AkonadiAgentBase     3.0 # 0.0
+SHARED_LIBS +=	KPim6AkonadiCore          5.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiPrivate       1.0 # 0.0
-SHARED_LIBS +=	KPim6AkonadiWidgets       1.0 # 0.0
+SHARED_LIBS +=	KPim6AkonadiWidgets       2.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiXml           0.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiAgentWidgetBase 0.0 # 0.0
 
@@ -60,6 +60,7 @@ LIB_DEPENDS =		archivers/xz \
 			x11/qt6/qtdeclarative
 
 CONFIGURE_ARGS =	-DDATABASE_BACKEND=SQLITE
+CONFIGURE_ARGS +=	-DBUILD_PYTHON_BINDINGS=OFF
 
 TEST_IS_INTERACTIVE =	X11
 

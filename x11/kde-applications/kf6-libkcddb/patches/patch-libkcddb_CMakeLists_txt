@@ -1,7 +1,7 @@
 Index: libkcddb/CMakeLists.txt
 --- libkcddb/CMakeLists.txt.orig
 +++ libkcddb/CMakeLists.txt
-@@ -137,7 +137,9 @@ install(FILES
+@@ -134,7 +134,9 @@ install(FILES
  
  set(KCDDB_INCLUDE_DESTINATION "${KDE_INSTALL_INCLUDEDIR}/KCddb6")
  

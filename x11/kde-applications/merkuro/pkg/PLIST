@@ -19,8 +19,10 @@ lib/qt6/qml/org/kde/merkuro/components/MerkuroComponents.qmltypes
 lib/qt6/qml/org/kde/merkuro/components/NativeEditMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/NativeFileMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/NativeHelpMenu.qml
+lib/qt6/qml/org/kde/merkuro/components/NativeSettingsMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/NativeWindowMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/SettingsMenu.qml
+lib/qt6/qml/org/kde/merkuro/components/SystemAccountsForm.qml
 lib/qt6/qml/org/kde/merkuro/components/WindowMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/merkuro/components/libMerkuroComponentsplugin.so
@@ -190,6 +192,9 @@ share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/tr/LC_MESSAGES/merkuro.mo
 share/locale/tr/LC_MESSAGES/merkurolauncher.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
+share/locale/ug/LC_MESSAGES/merkuro.mo
+share/locale/ug/LC_MESSAGES/merkurolauncher.mo
+share/locale/ug/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/uk/LC_MESSAGES/merkuro.mo
 share/locale/uk/LC_MESSAGES/merkurolauncher.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo

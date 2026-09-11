@@ -18,8 +18,9 @@ WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
 WANTLIB += KF6DAV KF6GuiAddons KF6I18n KF6ItemModels KF6ItemViews
 WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
 WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
-WANTLIB += KF6TextAddonsWidgets KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6Mime KF6Notifications KF6NotifyConfig KF6Service
+WANTLIB += KF6Solid KF6SonnetUi KF6SyntaxHighlighting KF6TextAddonsWidgets
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiAgentBase KPim6AkonadiAgentWidgetBase
 WANTLIB += KPim6AkonadiCalendar KPim6AkonadiCalendarCore KPim6AkonadiContactCore
@@ -28,12 +29,12 @@ WANTLIB += KPim6AkonadiPrivate KPim6AkonadiWidgets KPim6GAPICalendar
 WANTLIB += KPim6GAPICore KPim6GAPIPeople KPim6GAPITasks KPim6GrantleeTheme
 WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IdentityManagementWidgets
 WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6MailTransport
-WANTLIB += KPim6Mbox KPim6Mime KPim6PimCommon KPim6PimCommonActivities
-WANTLIB += KPim6PimCommonAkonadi PlasmaActivities Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6NetworkAuth Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6TextToSpeech
-WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml X11 c m qca-qt6 qt6keychain sasl2
+WANTLIB += KPim6Mbox KPim6PimCommon KPim6PimCommonActivities KPim6PimCommonAkonadi
+WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6NetworkAuth Qt6OpenGL Qt6Positioning
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6Quick Qt6TextToSpeech Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += X11 c m qca-qt6 qt6keychain sasl2
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -66,10 +67,13 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/knotifyconfig \
 		devel/kf6/kservice \
 		devel/kf6/ktexttemplate \
+		devel/kf6/kmime \
 		devel/kf6/kguiaddons \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
+		devel/kf6/sonnet \
+		devel/kf6/syntax-highlighting \
 		devel/kf6/solid \
 		security/cyrus-sasl2 \
 		security/qca-qt6 \
@@ -83,12 +87,11 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		x11/kde-applications/akonadi-mime>=${VERSION} \
 		x11/kde-applications/akonadi>=${VERSION} \
 		x11/kde-applications/grantleetheme>=${VERSION} \
-		x11/kde-applications/kidentitymanagement>=${VERSION} \
 		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/kidentitymanagement>=${VERSION} \
 		x11/kde-applications/kldap>=${VERSION} \
 		x11/kde-applications/kmailtransport>=${VERSION} \
 		x11/kde-applications/kmbox>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/libkgapi>=${VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
