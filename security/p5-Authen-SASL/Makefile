@@ -1,6 +1,6 @@
 COMMENT =	perl interface to the SASL auth framework
 
-DISTNAME =	Authen-SASL-2.2000
+DISTNAME =	Authen-SASL-2.2100
 CPAN_AUTHOR =	EHUELS
 
 CATEGORIES =	security
