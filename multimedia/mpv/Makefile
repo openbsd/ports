@@ -5,7 +5,7 @@ USE_NOBTCFI =		Yes
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.41.0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		mpv		2.1
 
@@ -53,7 +53,6 @@ LIB_DEPENDS =		archivers/libarchive \
 MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
 			graphics/vulkan-loader \
-			www/yt-dlp \
 			x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-Daaudio=disabled \
