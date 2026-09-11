@@ -83,6 +83,7 @@ share/icons/oxygen/applets/22x22/camera-web-symbolic.svg
 share/icons/oxygen/applets/22x22/car-symbolic.svg
 share/icons/oxygen/applets/22x22/com.kdab.trinket-active_white.svg
 share/icons/oxygen/applets/22x22/com.kdab.trinket-inactive_white.svg
+share/icons/oxygen/applets/22x22/com.obsproject.Studio-symbolic.svg
 share/icons/oxygen/applets/22x22/computer-laptop-symbolic.svg
 share/icons/oxygen/applets/22x22/contacts-symbolic.svg
 share/icons/oxygen/applets/22x22/device-notifier-symbolic.svg
@@ -105,6 +106,7 @@ share/icons/oxygen/applets/22x22/go-next-symbolic.svg
 share/icons/oxygen/applets/22x22/go-previous-symbolic.svg
 share/icons/oxygen/applets/22x22/go-up-symbolic.svg
 share/icons/oxygen/applets/22x22/handset-symbolic.svg
+share/icons/oxygen/applets/22x22/im-user-symbolic.svg
 share/icons/oxygen/applets/22x22/input-caps-on-symbolic.svg
 share/icons/oxygen/applets/22x22/input-combo-on-symbolic.svg
 share/icons/oxygen/applets/22x22/input-keyboard-symbolic.svg
@@ -120,6 +122,7 @@ share/icons/oxygen/applets/22x22/kdeconnect-tray-symbolic.svg
 share/icons/oxygen/applets/22x22/kget-symbolic.svg
 share/icons/oxygen/applets/22x22/kgpg-symbolic.svg
 share/icons/oxygen/applets/22x22/klipper-symbolic.svg
+share/icons/oxygen/applets/22x22/ktimer-symbolic.svg
 share/icons/oxygen/applets/22x22/ktorrent-symbolic.svg
 share/icons/oxygen/applets/22x22/mark-location-symbolic.svg
 share/icons/oxygen/applets/22x22/media-playback-paused-symbolic.svg
@@ -216,7 +219,6 @@ share/icons/oxygen/applets/22x22/notifications-disabled-symbolic.svg
 share/icons/oxygen/applets/22x22/notifications-disabled.svg
 share/icons/oxygen/applets/22x22/notifications-enabled-symbolic.svg
 share/icons/oxygen/applets/22x22/notifications-enabled.svg
-share/icons/oxygen/applets/22x22/obs-symbolic.svg
 share/icons/oxygen/applets/22x22/org.kde.neochat.tray.svg
 share/icons/oxygen/applets/22x22/org.kde.tokodon-symbolic.svg
 share/icons/oxygen/applets/22x22/pamac-tray-no-update.svg
@@ -384,6 +386,7 @@ share/icons/oxygen/applets/24x24/camera-ready-symbolic.svg
 share/icons/oxygen/applets/24x24/camera-video-symbolic.svg
 share/icons/oxygen/applets/24x24/camera-web-symbolic.svg
 share/icons/oxygen/applets/24x24/car-symbolic.svg
+share/icons/oxygen/applets/24x24/com.obsproject.Studio-symbolic.svg
 share/icons/oxygen/applets/24x24/computer-laptop-symbolic.svg
 share/icons/oxygen/applets/24x24/contacts-symbolic.svg
 share/icons/oxygen/applets/24x24/device-notifier-symbolic.svg
@@ -406,6 +409,7 @@ share/icons/oxygen/applets/24x24/go-next-symbolic.svg
 share/icons/oxygen/applets/24x24/go-previous-symbolic.svg
 share/icons/oxygen/applets/24x24/go-up-symbolic.svg
 share/icons/oxygen/applets/24x24/handset-symbolic.svg
+share/icons/oxygen/applets/24x24/im-user-symbolic.svg
 share/icons/oxygen/applets/24x24/input-caps-on-symbolic.svg
 share/icons/oxygen/applets/24x24/input-combo-on-symbolic.svg
 share/icons/oxygen/applets/24x24/input-keyboard-symbolic.svg
@@ -421,6 +425,7 @@ share/icons/oxygen/applets/24x24/kdeconnect-tray-symbolic.svg
 share/icons/oxygen/applets/24x24/kget-symbolic.svg
 share/icons/oxygen/applets/24x24/kgpg-symbolic.svg
 share/icons/oxygen/applets/24x24/klipper-symbolic.svg
+share/icons/oxygen/applets/24x24/ktimer-symbolic.svg
 share/icons/oxygen/applets/24x24/ktorrent-symbolic.svg
 share/icons/oxygen/applets/24x24/mark-location-symbolic.svg
 share/icons/oxygen/applets/24x24/media-playback-paused-symbolic.svg
@@ -517,7 +522,6 @@ share/icons/oxygen/applets/24x24/notifications-disabled-symbolic.svg
 share/icons/oxygen/applets/24x24/notifications-disabled.svg
 share/icons/oxygen/applets/24x24/notifications-enabled-symbolic.svg
 share/icons/oxygen/applets/24x24/notifications-enabled.svg
-share/icons/oxygen/applets/24x24/obs-symbolic.svg
 share/icons/oxygen/applets/24x24/org.kde.neochat.tray.svg
 share/icons/oxygen/applets/24x24/org.kde.tokodon-symbolic.svg
 share/icons/oxygen/applets/24x24/pamac-tray-no-update.svg
@@ -630,6 +634,8 @@ share/icons/oxygen/applets/32x32/audio-volume-low-symbolic.svg
 share/icons/oxygen/applets/32x32/audio-volume-medium-symbolic.svg
 share/icons/oxygen/applets/32x32/audio-volume-muted-symbolic.svg
 share/icons/oxygen/applets/32x32/camera-photo-symbolic.svg
+share/icons/oxygen/applets/32x32/com.obsproject.Studio-symbolic.svg
+share/icons/oxygen/applets/32x32/contacts-symbolic.svg
 share/icons/oxygen/applets/32x32/device-notifier-symbolic.svg
 share/icons/oxygen/applets/32x32/disk-quota-critical-symbolic.svg
 share/icons/oxygen/applets/32x32/disk-quota-high-symbolic.svg
@@ -647,11 +653,13 @@ share/icons/oxygen/applets/32x32/go-next-symbolic.svg
 share/icons/oxygen/applets/32x32/go-previous-symbolic.svg
 share/icons/oxygen/applets/32x32/go-up-symbolic.svg
 share/icons/oxygen/applets/32x32/handset-symbolic.svg
+share/icons/oxygen/applets/32x32/im-user-symbolic.svg
 share/icons/oxygen/applets/32x32/juk-symbolic.svg
 share/icons/oxygen/applets/32x32/kdeconnect-tray-symbolic.svg
 share/icons/oxygen/applets/32x32/kget-symbolic.svg
 share/icons/oxygen/applets/32x32/kgpg-symbolic.svg
 share/icons/oxygen/applets/32x32/klipper-symbolic.svg
+share/icons/oxygen/applets/32x32/ktimer-symbolic.svg
 share/icons/oxygen/applets/32x32/ktorrent-symbolic.svg
 share/icons/oxygen/applets/32x32/mark-location-symbolic.svg
 share/icons/oxygen/applets/32x32/media-playback-paused-symbolic.svg
@@ -692,7 +700,6 @@ share/icons/oxygen/applets/32x32/notifications-disabled-symbolic.svg
 share/icons/oxygen/applets/32x32/notifications-disabled.svg
 share/icons/oxygen/applets/32x32/notifications-enabled-symbolic.svg
 share/icons/oxygen/applets/32x32/notifications-enabled.svg
-share/icons/oxygen/applets/32x32/obs-symbolic.svg
 share/icons/oxygen/applets/32x32/org.kde.neochat.tray.svg
 share/icons/oxygen/applets/32x32/org.kde.tokodon-symbolic.svg
 share/icons/oxygen/applets/32x32/pamac-tray-no-update.svg
@@ -895,6 +902,7 @@ share/icons/oxygen/base/128x128/apps/kcolorchooser.png
 share/icons/oxygen/base/128x128/apps/kde-gtk-config.png
 share/icons/oxygen/base/128x128/apps/kde-windows.png
 share/icons/oxygen/base/128x128/apps/kde.png
+share/icons/oxygen/base/128x128/apps/kdebugsettings.png
 share/icons/oxygen/base/128x128/apps/kdeconnect.png
 share/icons/oxygen/base/128x128/apps/kdevelop.png
 share/icons/oxygen/base/128x128/apps/kdf.png
@@ -913,6 +921,7 @@ share/icons/oxygen/base/128x128/apps/kmplayer.png
 share/icons/oxygen/base/128x128/apps/knewsticker.png
 share/icons/oxygen/base/128x128/apps/knotes.png
 share/icons/oxygen/base/128x128/apps/kolf.png
+share/icons/oxygen/base/128x128/apps/kolourpaint.png
 share/icons/oxygen/base/128x128/apps/kommit.png
 share/icons/oxygen/base/128x128/apps/konqueror.png
 share/icons/oxygen/base/128x128/apps/kontact-import-wizard.png
@@ -927,10 +936,12 @@ share/icons/oxygen/base/128x128/apps/korganizer.png
 share/icons/oxygen/base/128x128/apps/krdc.png
 share/icons/oxygen/base/128x128/apps/krfb.png
 share/icons/oxygen/base/128x128/apps/krita.png
+share/icons/oxygen/base/128x128/apps/kronometer.png
 share/icons/oxygen/base/128x128/apps/ksnapshot.png
 share/icons/oxygen/base/128x128/apps/ksniffer.png
 share/icons/oxygen/base/128x128/apps/ksudoku.png
 share/icons/oxygen/base/128x128/apps/kthesaurus.png
+share/icons/oxygen/base/128x128/apps/ktimer.png
 share/icons/oxygen/base/128x128/apps/ktip.png
 share/icons/oxygen/base/128x128/apps/ktorrent.png
 share/icons/oxygen/base/128x128/apps/kuickshow.png
@@ -2733,6 +2744,7 @@ share/icons/oxygen/base/16x16/apps/knetattach.png
 share/icons/oxygen/base/16x16/apps/knewsticker.png
 share/icons/oxygen/base/16x16/apps/knotes.png
 share/icons/oxygen/base/16x16/apps/kolf.png
+share/icons/oxygen/base/16x16/apps/kolourpaint.png
 share/icons/oxygen/base/16x16/apps/kommit.png
 share/icons/oxygen/base/16x16/apps/konqueror.png
 share/icons/oxygen/base/16x16/apps/kontact.png
@@ -3984,6 +3996,7 @@ share/icons/oxygen/base/22x22/actions/go-next-use.png
 share/icons/oxygen/base/22x22/actions/go-next-view-page.png
 share/icons/oxygen/base/22x22/actions/go-next-view.png
 share/icons/oxygen/base/22x22/actions/go-next.png
+share/icons/oxygen/base/22x22/actions/go-parent-folder.png
 share/icons/oxygen/base/22x22/actions/go-previous-context.png
 share/icons/oxygen/base/22x22/actions/go-previous-use.png
 share/icons/oxygen/base/22x22/actions/go-previous-view-page.png
@@ -4673,6 +4686,7 @@ share/icons/oxygen/base/22x22/apps/kmplayer.png
 share/icons/oxygen/base/22x22/apps/knetattach.png
 share/icons/oxygen/base/22x22/apps/knotes.png
 share/icons/oxygen/base/22x22/apps/kolf.png
+share/icons/oxygen/base/22x22/apps/kolourpaint.png
 share/icons/oxygen/base/22x22/apps/kommit.png
 share/icons/oxygen/base/22x22/apps/konqueror.png
 share/icons/oxygen/base/22x22/apps/kontact.png
@@ -5700,6 +5714,7 @@ share/icons/oxygen/base/256x256/apps/calligrastage.png
 share/icons/oxygen/base/256x256/apps/calligrawords.png
 share/icons/oxygen/base/256x256/apps/clock.png
 share/icons/oxygen/base/256x256/apps/digikam.png
+share/icons/oxygen/base/256x256/apps/filelight.png
 share/icons/oxygen/base/256x256/apps/help-browser.png
 share/icons/oxygen/base/256x256/apps/hotspot.png
 share/icons/oxygen/base/256x256/apps/internet-web-browser.png
@@ -5709,6 +5724,7 @@ share/icons/oxygen/base/256x256/apps/kamoso.png
 share/icons/oxygen/base/256x256/apps/kbruch.png
 share/icons/oxygen/base/256x256/apps/kchart.png
 share/icons/oxygen/base/256x256/apps/kde-windows.png
+share/icons/oxygen/base/256x256/apps/kdebugsettings.png
 share/icons/oxygen/base/256x256/apps/kdeconnect.png
 share/icons/oxygen/base/256x256/apps/kdevelop.png
 share/icons/oxygen/base/256x256/apps/kdf.png
@@ -5720,10 +5736,13 @@ share/icons/oxygen/base/256x256/apps/kivio.png
 share/icons/oxygen/base/256x256/apps/kmag.png
 share/icons/oxygen/base/256x256/apps/kmail2.png
 share/icons/oxygen/base/256x256/apps/knetattach.png
+share/icons/oxygen/base/256x256/apps/kolourpaint.png
 share/icons/oxygen/base/256x256/apps/kommit.png
 share/icons/oxygen/base/256x256/apps/konqueror.png
 share/icons/oxygen/base/256x256/apps/kontact-import-wizard.png
 share/icons/oxygen/base/256x256/apps/korgac.png
+share/icons/oxygen/base/256x256/apps/kronometer.png
+share/icons/oxygen/base/256x256/apps/ktimer.png
 share/icons/oxygen/base/256x256/apps/kwalletmanager.png
 share/icons/oxygen/base/256x256/apps/lokalize.png
 share/icons/oxygen/base/256x256/apps/mameexecutor.png
@@ -5770,6 +5789,7 @@ share/icons/oxygen/base/256x256/categories/applications-office.png
 share/icons/oxygen/base/256x256/categories/applications-other.png
 share/icons/oxygen/base/256x256/categories/applications-science.png
 share/icons/oxygen/base/256x256/categories/applications-system.png
+share/icons/oxygen/base/256x256/categories/preferences-applications-permissions.png
 share/icons/oxygen/base/256x256/categories/preferences-desktop.png
 share/icons/oxygen/base/256x256/categories/preferences-devices-printer.png
 share/icons/oxygen/base/256x256/categories/preferences-kde-connect.png
@@ -6613,6 +6633,7 @@ share/icons/oxygen/base/32x32/actions/go-next-use.png
 share/icons/oxygen/base/32x32/actions/go-next-view-page.png
 share/icons/oxygen/base/32x32/actions/go-next-view.png
 share/icons/oxygen/base/32x32/actions/go-next.png
+share/icons/oxygen/base/32x32/actions/go-parent-folder.png
 share/icons/oxygen/base/32x32/actions/go-previous-context.png
 share/icons/oxygen/base/32x32/actions/go-previous-use.png
 share/icons/oxygen/base/32x32/actions/go-previous-view-page.png
@@ -7111,6 +7132,7 @@ share/icons/oxygen/base/32x32/apps/knetattach.png
 share/icons/oxygen/base/32x32/apps/knewsticker.png
 share/icons/oxygen/base/32x32/apps/knotes.png
 share/icons/oxygen/base/32x32/apps/kolf.png
+share/icons/oxygen/base/32x32/apps/kolourpaint.png
 share/icons/oxygen/base/32x32/apps/kommit.png
 share/icons/oxygen/base/32x32/apps/konqueror.png
 share/icons/oxygen/base/32x32/apps/kontact.png
@@ -7128,6 +7150,7 @@ share/icons/oxygen/base/32x32/apps/ksnapshot.png
 share/icons/oxygen/base/32x32/apps/ksniffer.png
 share/icons/oxygen/base/32x32/apps/ksudoku.png
 share/icons/oxygen/base/32x32/apps/kthesaurus.png
+share/icons/oxygen/base/32x32/apps/ktimer.png
 share/icons/oxygen/base/32x32/apps/ktip.png
 share/icons/oxygen/base/32x32/apps/ktorrent.png
 share/icons/oxygen/base/32x32/apps/kuickshow.png
@@ -8277,6 +8300,7 @@ share/icons/oxygen/base/48x48/actions/go-next-use.png
 share/icons/oxygen/base/48x48/actions/go-next-view-page.png
 share/icons/oxygen/base/48x48/actions/go-next-view.png
 share/icons/oxygen/base/48x48/actions/go-next.png
+share/icons/oxygen/base/48x48/actions/go-parent-folder.png
 share/icons/oxygen/base/48x48/actions/go-previous-context.png
 share/icons/oxygen/base/48x48/actions/go-previous-use.png
 share/icons/oxygen/base/48x48/actions/go-previous-view-page.png
@@ -8751,6 +8775,7 @@ share/icons/oxygen/base/48x48/apps/knetattach.png
 share/icons/oxygen/base/48x48/apps/knewsticker.png
 share/icons/oxygen/base/48x48/apps/knotes.png
 share/icons/oxygen/base/48x48/apps/kolf.png
+share/icons/oxygen/base/48x48/apps/kolourpaint.png
 share/icons/oxygen/base/48x48/apps/kommit.png
 share/icons/oxygen/base/48x48/apps/konqueror.png
 share/icons/oxygen/base/48x48/apps/kontact.png
@@ -8767,6 +8792,7 @@ share/icons/oxygen/base/48x48/apps/ksnapshot.png
 share/icons/oxygen/base/48x48/apps/ksniffer.png
 share/icons/oxygen/base/48x48/apps/ksudoku.png
 share/icons/oxygen/base/48x48/apps/kthesaurus.png
+share/icons/oxygen/base/48x48/apps/ktimer.png
 share/icons/oxygen/base/48x48/apps/ktip.png
 share/icons/oxygen/base/48x48/apps/ktorrent.png
 share/icons/oxygen/base/48x48/apps/kuickshow.png
@@ -9782,6 +9808,7 @@ share/icons/oxygen/base/64x64/apps/kcolorchooser.png
 share/icons/oxygen/base/64x64/apps/kde-gtk-config.png
 share/icons/oxygen/base/64x64/apps/kde-windows.png
 share/icons/oxygen/base/64x64/apps/kde.png
+share/icons/oxygen/base/64x64/apps/kdebugsettings.png
 share/icons/oxygen/base/64x64/apps/kdeconnect.png
 share/icons/oxygen/base/64x64/apps/kdevelop.png
 share/icons/oxygen/base/64x64/apps/kdf.png
@@ -9799,6 +9826,7 @@ share/icons/oxygen/base/64x64/apps/kmplayer.png
 share/icons/oxygen/base/64x64/apps/knewsticker.png
 share/icons/oxygen/base/64x64/apps/knotes.png
 share/icons/oxygen/base/64x64/apps/kolf.png
+share/icons/oxygen/base/64x64/apps/kolourpaint.png
 share/icons/oxygen/base/64x64/apps/kommit.png
 share/icons/oxygen/base/64x64/apps/konqueror.png
 share/icons/oxygen/base/64x64/apps/kontact-import-wizard.png
@@ -9813,10 +9841,12 @@ share/icons/oxygen/base/64x64/apps/korganizer.png
 share/icons/oxygen/base/64x64/apps/krdc.png
 share/icons/oxygen/base/64x64/apps/krfb.png
 share/icons/oxygen/base/64x64/apps/krita.png
+share/icons/oxygen/base/64x64/apps/kronometer.png
 share/icons/oxygen/base/64x64/apps/ksnapshot.png
 share/icons/oxygen/base/64x64/apps/ksniffer.png
 share/icons/oxygen/base/64x64/apps/ksudoku.png
 share/icons/oxygen/base/64x64/apps/kthesaurus.png
+share/icons/oxygen/base/64x64/apps/ktimer.png
 share/icons/oxygen/base/64x64/apps/ktip.png
 share/icons/oxygen/base/64x64/apps/ktorrent.png
 share/icons/oxygen/base/64x64/apps/kuickshow.png
