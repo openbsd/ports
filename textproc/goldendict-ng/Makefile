@@ -4,24 +4,20 @@ USE_NOBTCFI =		Yes
 COMMENT =		next generation GoldenDict
 CATEGORIES =		textproc education x11
 
-DIST_TUPLE =		github	xiaoyifang	goldendict-ng	\
-				v25.05.0-Release.2a2b0e16	.
-PKGNAME =		${DISTNAME:C/-[[:alnum:].]*$//}
-REVISION =		1
+DIST_TUPLE =		github	xiaoyifang	goldendict-ng	v26.8.0	.
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-WANTLIB += ${COMPILER_LIBCXX} GL ICE Qt6Concurrent Qt6Core Qt6Core5Compat
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Core5Compat
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6Svg Qt6TextToSpeech Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml SM X11 Xext Xtst
-WANTLIB += avcodec avformat avutil bz2 c fmt hunspell-1.7 iconv
-WANTLIB += icudata icui18n icuuc lzma lzo2 m opencc swresample
-WANTLIB += tomlplusplus vorbis vorbisfile xapian z zim zstd
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6Quick Qt6Svg Qt6TextToSpeech
+WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml X11 Xtst avcodec avformat avutil
+WANTLIB += bz2 c fmt hunspell-1.7 iconv lzma lzo2 m opencc swresample
+WANTLIB += tomlplusplus vorbis vorbisfile xapian z zim
 
 # C++17
 COMPILER =		base-clang ports-gcc
@@ -33,14 +29,12 @@ LIB_DEPENDS =		archivers/bzip2 \
 			archivers/libzim \
 			archivers/lzo2 \
 			archivers/xz \
-			archivers/zstd \
 			audio/libvorbis \
 			converters/libiconv \
 			converters/opencc \
 			devel/fmt \
 			graphics/ffmpeg \
 			textproc/hunspell \
-			textproc/icu4c \
 			textproc/tomlplusplus \
 			x11/qt6/qt5compat \
 			x11/qt6/qtmultimedia \
