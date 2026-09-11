@@ -1,7 +1,7 @@
 COMMENT =		command line tool to interact with Gitea
 
 MODGO_MODNAME =		gitea.dev/tea
-MODGO_VERSION =		v0.15.1
+MODGO_VERSION =		v0.16.0
 
 DISTNAME =		tea-${MODGO_VERSION}
 WRKDIST =		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}

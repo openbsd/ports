@@ -87,17 +87,17 @@ MODGO_MODULES =	\
 	github.com/yuin/goldmark			 v1.8.2 \
 	github.com/yuin/goldmark-emoji			 v1.0.6 \
 	github.com/zalando/go-keyring			 v0.2.8 \
-	golang.org/x/crypto				 v0.54.0 \
+	golang.org/x/crypto				 v0.56.0 \
 	golang.org/x/exp				 v0.0.0-20260410095643-746e56fc9e2f \
-	golang.org/x/mod				 v0.37.0 \
-	golang.org/x/net				 v0.56.0 \
+	golang.org/x/mod				 v0.38.0 \
+	golang.org/x/net				 v0.57.0 \
 	golang.org/x/oauth2				 v0.36.0 \
 	golang.org/x/sync				 v0.22.0 \
 	golang.org/x/sys				 v0.47.0 \
-	golang.org/x/telemetry				 v0.0.0-20260625142307-59b4966ccb57 \
+	golang.org/x/telemetry				 v0.0.0-20260708182218-49f421fb7959 \
 	golang.org/x/term				 v0.45.0 \
-	golang.org/x/text				 v0.40.0 \
-	golang.org/x/tools				 v0.47.0 \
+	golang.org/x/text				 v0.41.0 \
+	golang.org/x/tools				 v0.48.0 \
 	golang.org/x/tools/go/expect			 v0.1.1-deprecated \
 	golang.org/x/tools/go/packages/packagestest	 v0.1.1-deprecated \
 	golang.org/x/xerrors				 v0.0.0-20191204190536-9bdfabe68543 \
@@ -156,6 +156,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.0.0-20210513164829-c07d793c2f9a \
 	golang.org/x/crypto			 v0.49.0 \
 	golang.org/x/crypto			 v0.53.0 \
+	golang.org/x/crypto			 v0.54.0 \
 	golang.org/x/exp			 v0.0.0-20220909182711-5c715a9e8561 \
 	golang.org/x/exp			 v0.0.0-20231006140011-7918f672742d \
 	golang.org/x/mod			 v0.2.0 \
@@ -190,11 +191,10 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.45.0 \
 	golang.org/x/sys			 v0.46.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
-	golang.org/x/term			 v0.44.0 \
 	golang.org/x/text			 v0.24.0 \
 	golang.org/x/text			 v0.3.0 \
 	golang.org/x/text			 v0.3.3 \
-	golang.org/x/text			 v0.38.0 \
+	golang.org/x/text			 v0.40.0 \
 	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools			 v0.0.0-20191119224855-298f0cb1881e \
 	golang.org/x/tools			 v0.0.0-20200325010219-a49f79bcc224 \
@@ -202,4 +202,3 @@ MODGO_MODFILES =	\
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
 	golang.org/x/xerrors			 v0.0.0-20191011141410-1b5146add898 \
 	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c
-
