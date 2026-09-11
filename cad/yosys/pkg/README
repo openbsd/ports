@@ -1,0 +1,21 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+High RAM consumption
+====================
+
+Synthesizing FPGAs is a memory intensive task. Even relatively small designs
+might lead to errors such as
+
+  libc++abi: terminating due to uncaught exception of type std::bad_alloc
+  Abort trap (core dumped)
+
+In this case, editing /etc/login.conf(5), to increase the parameters
+
+  default:\
+    datasize-max=8192M:\
+    datasize-cur=8192M
+
+helps. Obviously, it is required to log off and on again, before it has any
+effect on re-running YoSys.

@@ -1,0 +1,12 @@
+Do not set the M4 evironmental variable.
+--- cmake/FindBISON.cmake.orig
++++ cmake/FindBISON.cmake
+@@ -315,7 +315,7 @@ if(BISON_EXECUTABLE)
+       unset(_BISON_CMP0088)
+ 
+       add_custom_command(OUTPUT ${BISON_TARGET_outputs}
+-        COMMAND ${CMAKE_COMMAND} -E env "M4=${BISON_M4_EXECUTABLE}"
++        COMMAND ${CMAKE_COMMAND} -E env "HOTFIXM4=${BISON_M4_EXECUTABLE}"
+           ${BISON_EXECUTABLE} ${BISON_TARGET_cmdopt} -o ${BisonOutput} ${_BisonInput}
+         VERBATIM
+         DEPENDS ${_BisonInput}

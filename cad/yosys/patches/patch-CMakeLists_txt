@@ -1,0 +1,12 @@
+Relax the requirment for the latest flex version.
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -174,7 +174,7 @@ if (APPLE)
+ 	use_homebrew()
+ endif()
+ 
+-find_package(FLEX 2.6)
++find_package(FLEX 2.5.39)
+ set_package_properties(FLEX PROPERTIES
+ 	URL "https://github.com/westes/flex"
+ 	DESCRIPTION "The Fast Lexical Analyzer"
