@@ -1,6 +1,7 @@
+# -z wxneeded and -z nobtcfi are also propagated to consumers via:
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
-# patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
-# patches/patch-Source_WebKit_gtk_webkit2gtk_pc_in
+# patches/patch-Source_WebKit_gtk_webkitgtk-web-process-extension_pc_in
+# patches/patch-Source_WebKit_gtk_webkitgtk_pc_in
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
@@ -16,7 +17,7 @@ DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
 
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
@@ -115,10 +116,11 @@ CONFIGURE_ARGS +=	-DUSER_AGENT_BRANDING="Linux ${CPUARCH}"
 # Needs GUdev
 CONFIGURE_ARGS +=	-DENABLE_GAMEPAD=OFF
 
-# sync with Source/JavaScriptCore/assembler/MacroAssembler.h
+# sync with Source/JavaScriptCore/assembler/MacroAssembler.h:
+# riscv64 is deliberately left out until its JIT is usable, see
+# patches/patch-Source_cmake_WebKitFeatures_cmake.
 .if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \
-    ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "mips64" && \
-    ${MACHINE_ARCH} != "mips64el"
+    ${MACHINE_ARCH} != "arm"
 # #error "The MacroAssembler is not supported on this platform."
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_C_LOOP=ON
@@ -146,7 +148,6 @@ CXXFLAGS +=		-I${X11BASE}/include
 
 # needs sys/eventfd.h
 # patch-Source_WebCore_CMakeLists_txt
-# patch-Source_WebCore_SourcesGTK_txt
 LIB_DEPENDS +=		devel/epoll-shim
 CXXFLAGS +=		$$(pkg-config --cflags epoll-shim)
 

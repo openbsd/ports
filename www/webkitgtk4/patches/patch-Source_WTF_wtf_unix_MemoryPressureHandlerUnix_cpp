@@ -20,21 +20,27 @@ Index: Source/WTF/wtf/unix/MemoryPressureHandlerUnix.cpp
  #include <sys/sysctl.h>
  #include <sys/types.h>
  #include <sys/user.h>
-@@ -117,7 +119,7 @@ static size_t processMemoryUsage()
+@@ -117,6 +119,23 @@ static size_t processMemoryUsage()
      ProcessMemoryStatus memoryStatus;
      currentProcessMemoryStatus(memoryStatus);
      return (memoryStatus.resident - memoryStatus.shared);
--#elif OS(FREEBSD)
-+#elif OS(FREEBSD) || OS(OPENBSD)
++#elif OS(OPENBSD)
++    static size_t pageSize = sysconf(_SC_PAGE_SIZE);
++    struct kinfo_proc info;
++    size_t infolen = sizeof(info);
++
++    int mib[6];
++    mib[0] = CTL_KERN;
++    mib[1] = KERN_PROC;
++    mib[2] = KERN_PROC_PID;
++    mib[3] = getpid();
++    mib[4] = sizeof(struct kinfo_proc);
++    mib[5] = 1;
++
++    if (sysctl(mib, 6, &info, &infolen, nullptr, 0))
++        return 0;
++
++    return static_cast<size_t>(info.p_vm_rssize - info.p_vm_tsize) * pageSize;
+ #elif OS(FREEBSD)
      static size_t pageSize = sysconf(_SC_PAGE_SIZE);
      struct kinfo_proc info;
-     size_t infolen = sizeof(info);
-@@ -131,7 +133,7 @@ static size_t processMemoryUsage()
-     if (sysctl(mib, 4, &info, &infolen, nullptr, 0))
-         return 0;
- 
--    return static_cast<size_t>(info.ki_rssize - info.ki_tsize) * pageSize;
-+    return static_cast<size_t>(info.p_vm_rssize - info.p_vm_tsize) * pageSize;
- #elif OS(QNX)
-     int fd = open("/proc/self/ctl", O_RDONLY);
-     if (fd == -1)

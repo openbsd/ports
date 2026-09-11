@@ -1,5 +1,4 @@
 Until we have eventfd, we need to link with epoll-shim.
-See patch-Source_WebCore_SourcesGTK_txt
 
 Index: Source/WebCore/CMakeLists.txt
 --- Source/WebCore/CMakeLists.txt.orig
