@@ -3,10 +3,9 @@ CATEGORIES =	lang
 
 GH_ACCOUNT =	janet-lang
 GH_PROJECT =	janet
-GH_TAGNAME =	v1.41.2
-REVISION =	0
+GH_TAGNAME =	v1.42.1
 
-SHARED_LIBS +=	janet		8.0 # 1.20
+SHARED_LIBS +=	janet		8.1 # 1.42
 
 HOMEPAGE =	https://www.janet-lang.org/
 

@@ -3,7 +3,7 @@ Use more generic and more accurate tests for LP64 and endianness.
 Index: src/include/janet.h
 --- src/include/janet.h.orig
 +++ src/include/janet.h
-@@ -113,47 +113,18 @@ extern "C" {
+@@ -118,47 +118,18 @@ extern "C" {
  #endif
  
  /* Check 64-bit vs 32-bit */
