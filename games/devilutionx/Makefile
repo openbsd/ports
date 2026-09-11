@@ -11,7 +11,7 @@ SITES =		${SITES_GITHUB}
 SITES.a =	https://github.com/diasurgical/devilutionX/releases/download/${GH_TAGNAME}/
 
 DISTFILES =	${GH_DISTFILE}
-DISTFILES.a = 	devilutionx-src-${GH_TAGNAME}{devilutionx-src}.tar.xz
+DISTFILES.a =	devilutionx-src-${GH_TAGNAME}{devilutionx-src}.tar.xz
 
 # Sustainable Use License 1.0
 PERMIT_PACKAGE =	Yes
@@ -54,7 +54,8 @@ CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=Release \
 
 NO_TEST =	Yes
 
-FIX_CRLF_FILES =	3rdParty/libsmackerdec/CMakeLists.txt \
+FIX_CRLF_FILES =	CMakeLists.txt \
+			3rdParty/libsmackerdec/CMakeLists.txt \
 			3rdParty/simpleini/CMakeLists.txt \
 			CMake/Dependencies.cmake \
 			Source/CMakeLists.txt \

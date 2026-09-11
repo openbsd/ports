@@ -1,0 +1,16 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -219,12 +219,6 @@ if(PIE)
+   set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
+ endif()
+ 
+-find_program(CCACHE_PROGRAM ccache)
+-if(CCACHE_PROGRAM)
+-  set(CMAKE_C_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+-  set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+-endif()
+-
+ if(DEVILUTIONX_DISABLE_RTTI)
+   if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")

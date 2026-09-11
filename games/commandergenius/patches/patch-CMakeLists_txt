@@ -17,7 +17,21 @@ Index: CMakeLists.txt
  SET(DOCDIR ${DATADIR} CACHE PATH "Docs destination")
  SET(ICONDIR "${SHAREDIR}/icons/hicolor" CACHE PATH "Standard icon installation dir")
  SET(DESKTOPFILESDIR "${SHAREDIR}/applications" CACHE PATH "Application installation dir")
-@@ -230,7 +232,7 @@ endif(GIT_FOUND)
+@@ -202,13 +204,6 @@ IF (DUMP_MTCS)
+     ADD_DEFINITIONS(-DDUMP_MTCS)
+ endif(DUMP_MTCS)
+ 
+-find_program(CCACHE_FOUND ccache)
+-if(CCACHE_FOUND)
+-    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
+-    set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK ccache) # Less useful to do it for linking, see edit2
+-    message(STATUS "Using ccache for faster builds")
+-endif(CCACHE_FOUND)
+-
+ # Will pass the SHA and branch strings to the executable
+ find_program(GIT_FOUND git)
+ if(GIT_FOUND)
+@@ -230,7 +225,7 @@ endif(GIT_FOUND)
  
  # Pass correct definition for SYSTEM_DATA_DIR so packager or distributors can decide where the app should land in
  if(UNIX AND NOT IOS)

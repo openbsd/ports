@@ -33,6 +33,7 @@ WANTLIB += boost_program_options-mt boost_serialization-mt boost_thread-mt
 WANTLIB += boost_timer-mt boost_unit_test_framework-mt gmp gmpxx
 WANTLIB += m mpfr
 
-CONFIGURE_ARGS +=	-DSFCGAL_BUILD_TESTS:BOOL=ON
+CONFIGURE_ARGS +=	-DSFCGAL_BUILD_TESTS:BOOL=ON \
+			-DUSE_CCACHE=OFF
 
 .include <bsd.port.mk>

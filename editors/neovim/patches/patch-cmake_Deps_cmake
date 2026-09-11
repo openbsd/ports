@@ -1,0 +1,20 @@
+don't pick up ccache; ports is capable of using ccache by itself, and doing
+it this way breaks PORTS_PRIVSEP
+
+Index: cmake/Deps.cmake
+--- cmake/Deps.cmake.orig
++++ cmake/Deps.cmake
+@@ -17,13 +17,6 @@ if(APPLE)
+   list(APPEND DEPS_CMAKE_ARGS -D CMAKE_FIND_FRAMEWORK=${CMAKE_FIND_FRAMEWORK})
+ endif()
+ 
+-find_program(CACHE_PRG NAMES ccache sccache)
+-mark_as_advanced(CACHE_PRG)
+-if(CACHE_PRG)
+-  set(CMAKE_C_COMPILER_LAUNCHER ${CMAKE_COMMAND} -E env CCACHE_SLOPPINESS=pch_defines,time_macros ${CACHE_PRG})
+-  list(APPEND DEPS_CMAKE_CACHE_ARGS -DCMAKE_C_COMPILER_LAUNCHER:STRING=${CMAKE_C_COMPILER_LAUNCHER})
+-endif()
+-
+ # MAKE_PRG
+ if(UNIX)
+   find_program(MAKE_PRG NAMES gmake make)

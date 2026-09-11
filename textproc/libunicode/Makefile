@@ -30,7 +30,8 @@ CONFIGURE_STYLE =	cmake
 # to avoid "Can not find target to add properties to: Catch2" error,
 # set LIBUNICODE_TESTING=OFF (and Catch2 is not used)
 
-CONFIGURE_ARGS =	-DLIBUNICODE_TESTING=OFF \
+CONFIGURE_ARGS =	-DCCACHE=OFF \
+			-DLIBUNICODE_TESTING=OFF \
 			-DLIBUNICODE_UCD_DIR=${LOCALBASE}/share/unicode/ucd
 
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "aarch64"

@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -27,8 +27,6 @@ if(CMAKE_VERSION VERSION_LESS 3.14)
+     list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/libutil/cmake/cmake_3.14")
+ endif()
+ 
+-include(EnableCCache)
+-
+ set(checkSubmodules FALSE)
+ # Figure out RTTR_REVISION (git hash) and RTTR_VERSION (date)
+ # Those can be manually set to override the default values
