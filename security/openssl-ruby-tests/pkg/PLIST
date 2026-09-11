@@ -112,6 +112,7 @@ share/openssl-ruby-tests/test/openssl/test_pkey_rsa.rb
 share/openssl-ruby-tests/test/openssl/test_provider.rb
 share/openssl-ruby-tests/test/openssl/test_random.rb
 share/openssl-ruby-tests/test/openssl/test_ssl.rb
+share/openssl-ruby-tests/test/openssl/test_ssl_server.rb
 share/openssl-ruby-tests/test/openssl/test_ssl_session.rb
 share/openssl-ruby-tests/test/openssl/test_ts.rb
 share/openssl-ruby-tests/test/openssl/test_x509attr.rb
