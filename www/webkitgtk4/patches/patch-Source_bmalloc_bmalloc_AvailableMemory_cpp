@@ -40,19 +40,7 @@ Index: Source/bmalloc/bmalloc/AvailableMemory.cpp
  #elif BOS(UNIX)
      long pages = sysconf(_SC_PHYS_PAGES);
      long pageSize = sysconf(_SC_PAGE_SIZE);
-@@ -180,14 +196,19 @@ static size_t computeAvailableMemory()
- size_t availableMemory()
- {
-     static size_t availableMemory;
-+#if BOS(OPENBSD)
-+    // We always calculate the available memory because we take care...
-+    availableMemory = computeAvailableMemory();
-+#else
-     static std::once_flag onceFlag;
-     std::call_once(onceFlag, [] {
-         availableMemory = computeAvailableMemory();
-     });
-+#endif
+@@ -187,7 +203,7 @@ size_t availableMemory()
      return availableMemory;
  }
  
@@ -61,7 +49,7 @@ Index: Source/bmalloc/bmalloc/AvailableMemory.cpp
  MemoryStatus memoryStatus()
  {
  #if BPLATFORM(IOS_FAMILY)
-@@ -213,6 +234,15 @@ MemoryStatus memoryStatus()
+@@ -213,6 +229,15 @@ MemoryStatus memoryStatus()
      size_t memoryFootprint = 0;
      if (!sysctl(mib, 4, &info, &infolen, nullptr, 0))
          memoryFootprint = static_cast<size_t>(info.ki_rssize) * vmPageSize();
