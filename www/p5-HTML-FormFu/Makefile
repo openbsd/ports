@@ -1,16 +1,16 @@
 COMMENT =	HTML form creation, rendering and validation framework
 
-MODULES =	cpan
-PKG_ARCH =	*
 DISTNAME =	HTML-FormFu-2.07
+REVISION =	1
+
 CATEGORIES =	www textproc
-REVISION =	0
 
 # Perl
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
 
 BUILD_DEPENDS =		devel/p5-File-ShareDir-Install>=0.06
-
 RUN_DEPENDS =		converters/p5-JSON-MaybeXS \
 			devel/p5-Class-Accessor-Chained \
 			devel/p5-Clone>=0.31 \
@@ -25,6 +25,7 @@ RUN_DEPENDS =		converters/p5-JSON-MaybeXS \
 			devel/p5-File-ShareDir \
 			devel/p5-Hash-Flatten \
 			devel/p5-List-MoreUtils \
+			devel/p5-Module-Pluggable \
 			devel/p5-MRO-Compat \
 			devel/p5-Moose>=1.0 \
 			devel/p5-MooseX-Aliases \
@@ -32,7 +33,7 @@ RUN_DEPENDS =		converters/p5-JSON-MaybeXS \
 			devel/p5-Path-Class \
 			devel/p5-Readonly \
 			devel/p5-Task-Weaken \
-			devel/p5-YAML-XS \
+			devel/p5-YAML-XS>=0.32 \
 			graphics/p5-Captcha-reCAPTCHA \
 			mail/p5-Email-Valid \
 			security/p5-Crypt-CBC \
@@ -44,12 +45,13 @@ RUN_DEPENDS =		converters/p5-JSON-MaybeXS \
 			www/p5-HTML-TokeParser-Simple>=3.14 \
 			www/p5-HTTP-Message>=1.64 \
 			www/p5-libwww
-
 TEST_DEPENDS =		devel/p5-Test-Exception \
 			devel/p5-Test-Memory-Cycle \
 			devel/p5-Test-RequiresInternet \
 			textproc/p5-Regexp-Assemble \
 			www/p5-CGI>=3.37 \
 			www/p5-CGI-Simple
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

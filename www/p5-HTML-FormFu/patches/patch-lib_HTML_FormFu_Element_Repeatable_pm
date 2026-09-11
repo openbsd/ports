@@ -1,0 +1,75 @@
+https://github.com/FormFu/HTML-FormFu/issues/71
+https://security.metacpan.org/patches/H/HTML-FormFu/2.08/CVE-2026-19873-r1.patch
+
+From f04c57ca5f65b179b70ce13422df1aa0788fb849 Mon Sep 17 00:00:00 2001
+From: Robert Rothenberg <rrwo@cpansec.org>
+Date: Fri, 21 Aug 2026 12:05:00 +0100
+Subject: [PATCH] Bound the Repeatable counter taken from the query string
+
+The counter_name query parameter was passed to repeat() with no upper
+bound, so a single request could ask for an arbitrary number of copies
+of the block's child subtree. (CVE-2026-19873)
+
+Add a max_counter attribute, defaulting to 100, that clamps the value
+read from the query. A count passed to repeat() by application code is
+not affected.
+
+Assisted-by: Claude Opus 5 (1M context)
+
+Signed-off-by: Robert Rothenberg <rrwo@cpansec.org>
+
+Index: lib/HTML/FormFu/Element/Repeatable.pm
+--- lib/HTML/FormFu/Element/Repeatable.pm.orig
++++ lib/HTML/FormFu/Element/Repeatable.pm
+@@ -14,6 +14,13 @@ use Carp qw( croak );
+ 
+ has counter_name => ( is => 'rw', traits => ['Chained'] );
+ 
++has max_counter => (
++    is      => 'rw',
++    default => 100,
++    lazy    => 1,
++    traits  => ['Chained'],
++);
++
+ has _original_elements => ( is => 'rw' );
+ 
+ has increment_field_names => (
+@@ -280,6 +287,15 @@ sub process {
+ 
+         if ( defined $input && $input =~ /^[1-9][0-9]*\z/ ) {
+             $count = $input;
++
++            my $max = $self->max_counter;
++
++            if ( defined $max && $count > $max ) {
++                DEBUG_PROCESS
++                    && debug("clamping counter $count to max_counter $max");
++
++                $count = $max;
++            }
+         }
+     }
+ 
+@@ -441,6 +457,21 @@ elements corresponding to the new fieldnames (foo_1, b
+ present on the form during L<HTML::FormFu/process>, no Processors
+ (Constraints, etc.) will be run on the fields, and their values will not
+ be returned by L<HTML::FormFu/params> or L<HTML::FormFu/param>.
++
++=head2 max_counter
++
++Arguments: $count
++
++Default Value: 100
++
++The largest value that will be taken from the L</counter_name> query
++parameter. A larger value in the query is clamped to this limit, so the
++number of copies created from untrusted input is bounded.
++
++Set to C<undef> to restore the previous unbounded behaviour.
++
++This limit applies only to counts read from the query. A count passed
++directly to L</repeat> by application code is not affected.
+ 
+ =head2 increment_field_names
+ 
