@@ -1,22 +1,22 @@
-COMMENT =	port of Google's libphonenumber library
+COMMENT=	port of Google's libphonenumber library
 
-MODPY_DISTV =	9.0.28
-DISTNAME =	phonenumbers-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME}
-REVISION =	1
+MODPY_DISTV=	9.0.39
+DISTNAME=	phonenumbers-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	telephony devel
+CATEGORIES=	telephony devel
 
-HOMEPAGE =	https://github.com/daviddrysdale/python-phonenumbers
+HOMEPAGE=	https://github.com/daviddrysdale/python-phonenumbers
 
 # Apache 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	tests/*.py
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-MAKE_ENV +=	LC_CTYPE=C.UTF-8
+MODPY_PYTEST_ARGS= tests/*.py
+
+MAKE_ENV=	LC_CTYPE=C.UTF-8
 
 .include <bsd.port.mk>
