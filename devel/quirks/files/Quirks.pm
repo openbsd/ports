@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1826 2026/09/10 10:33:26 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1827 2026/09/11 17:41:13 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -630,6 +630,7 @@ setup_obsolete_reason(
 	9 => 'libpgmath',
 	3 => 'p5-Data-Entropy',
 	3 => 'tmate',
+	45 => 'ntopng',
 );
 # beware, if ports with an RDEP on Python 3 are removed, they need to be listed
 # as @conflict/pkgpath in lang/python/3 and not here, otherwise an update from a
