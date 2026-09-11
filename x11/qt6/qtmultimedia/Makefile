@@ -1,6 +1,7 @@
 QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt6Multimedia             11.0 # 6.7
 SHARED_LIBS +=  Qt6MultimediaQuick        7.0 # 6.7
@@ -32,6 +33,7 @@ LIB_DEPENDS =	audio/pulseaudio \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtquick3d \
 		x11/qt6/qtshadertools \
+		wayland/wayland \
 		x11/xkbcommon
 
 CONFIGURE_ARGS =	-DQT_FEATURE_ffmpeg=ON \
@@ -49,5 +51,4 @@ CFLAGS +=	-msse2
 CXXFLAGS +=	-msse2
 .endif
 
-LIB_DEPENDS += devel/gettext,-runtime wayland/wayland 
 .include <bsd.port.mk>
