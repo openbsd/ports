@@ -1699,6 +1699,7 @@
      SUBDIR += py-pyrate-limiter
      SUBDIR += py-pyrsistent
      SUBDIR += py-pyte
+     SUBDIR += py-pytest-factoryboy
      SUBDIR += py-python-discovery
      SUBDIR += py-python-lsp-black
      SUBDIR += py-python-lsp-ruff
