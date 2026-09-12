@@ -1,6 +1,6 @@
 COMMENT=	CLI tools to manage music collections
 
-MODPY_DISTV=	2.12.0
+MODPY_DISTV=	2.14.0
 DISTNAME=	beets-${MODPY_DISTV}
 CATEGORIES=	audio
 
@@ -12,7 +12,7 @@ MAINTAINER=	Kirill A. Korinsky <kirill@korins.ky>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	poetry-core
+MODPY_PYBUILD=	hatchling
 MODPY_PI=	Yes
 
 RUN_DEPENDS+=	textproc/py-confuse \
@@ -34,14 +34,19 @@ RUN_DEPENDS+=	textproc/py-confuse \
 		audio/py-discogs-client \
 		devel/py-xdg \
 		archivers/py-rarfile \
+		textproc/py-titlecase \
 		www/py-requests \
 		www/py-requests-oauthlib \
 		www/py-requests-ratelimiter
 
+# some tests need network access and here missed py7zr
 TEST_DEPENDS=	archivers/py-rarfile \
 		audio/py-mpd2 \
 		devel/py-test-cov \
+		devel/py-pytest-factoryboy \
 		www/py-flask \
+		www/py-pytest-flask \
+		www/py-requests-mock \
 		www/py-requests-oauthlib \
 		www/py-responses
 
