@@ -3,6 +3,7 @@ COMMENT =	libtls library used with OpenSSL 4 for testing
 V =		3.8.1
 DISTNAME =	libretls-$V
 PKGNAME =	libretls4-$V
+REVISION =	0
 
 EOPENSSL_V =	eopenssl40
 LDEP_V =	4.0
