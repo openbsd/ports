@@ -1,7 +1,7 @@
 Index: bundled_deps/CMakeLists.txt
 --- bundled_deps/CMakeLists.txt.orig
 +++ bundled_deps/CMakeLists.txt
-@@ -48,5 +48,4 @@ target_include_directories(tcbspan INTERFACE tcbspan)
+@@ -50,5 +50,4 @@ add_subdirectory(prusa_fdm_mixer)
  
  if (SLIC3R_GUI)
      add_subdirectory(imgui)

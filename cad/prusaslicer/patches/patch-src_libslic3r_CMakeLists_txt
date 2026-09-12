@@ -1,7 +1,7 @@
 Index: src/libslic3r/CMakeLists.txt
 --- src/libslic3r/CMakeLists.txt.orig
 +++ src/libslic3r/CMakeLists.txt
-@@ -606,6 +606,7 @@ endif ()
+@@ -616,6 +616,7 @@ endif ()
  
  encoding_check(libslic3r)
  

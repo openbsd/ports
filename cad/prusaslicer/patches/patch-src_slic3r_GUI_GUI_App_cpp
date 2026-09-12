@@ -1,0 +1,17 @@
+segfault in ImFont::CalcTextSizeA
+
+see:
+https://github.com/prusa3d/PrusaSlicer/issues/9774
+
+Index: src/slic3r/GUI/GUI_App.cpp
+--- src/slic3r/GUI/GUI_App.cpp.orig
++++ src/slic3r/GUI/GUI_App.cpp
+@@ -1660,7 +1660,7 @@ bool GUI_App::on_init_inner()
+         // and wxEVT_SET_FOCUS before GUI_App::post_init is called) wasn't called before GUI_App::post_init and OpenGL wasn't initialized.
+         // Since issue #9774 Where same problem occured on MacOS Ventura, we decided to have this check on MacOS as well.
+ 
+-#if defined(__linux__) || defined(__APPLE__)
++#if defined(__linux__) || defined(__APPLE__) || defined(__OpenBSD__)
+         if (!m_post_initialized && m_opengl_initialized) {
+ #else
+         if (!m_post_initialized) {

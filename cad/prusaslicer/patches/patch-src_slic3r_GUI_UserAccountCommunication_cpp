@@ -28,7 +28,7 @@ Index: src/slic3r/GUI/UserAccountCommunication.cpp
              // If we can't store the tokens in secret store, store them in file with chmod 600
              boost::filesystem::path target(boost::filesystem::path(Slic3r::data_dir()) / "UserAccount.dat") ;
              std::string data = "||||";
-@@ -640,7 +640,7 @@ void UserAccountCommunication::read_stored_data(UserAc
+@@ -663,7 +663,7 @@ void UserAccountCommunication::read_stored_data(UserAc
          }
          result.shared_session_key = key0;
      } else {
