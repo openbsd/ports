@@ -1,0 +1,4 @@
+factory_boy is a fixtures replacement based on thoughtbot's factory_bot.
+
+As a fixtures replacement tool, it aims to replace static, hard to
+maintain fixtures with easy-to-use factories for complex objects.
