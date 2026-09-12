@@ -286,7 +286,6 @@ RUN_DEPENDS-development = \
 	x11/kde-applications/kitinerary \
 	x11/kde-applications/kldap \
 	x11/kde-applications/kmbox \
-	x11/kde-applications/kmime \
 	x11/kde-applications/kontactinterface \
 	x11/kde-applications/kopeninghours \
 	x11/kde-applications/kpkpass \
