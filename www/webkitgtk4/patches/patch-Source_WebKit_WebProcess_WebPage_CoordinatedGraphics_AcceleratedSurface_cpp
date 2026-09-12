@@ -1,0 +1,36 @@
+Accelerated compositing uses the upstream DMA-BUF renderer: the web process
+renders with GL/Skia into GBM buffers exported as dma-buf (PRIME) fds, and
+the UI process imports them as EGLImages. PRIME export/import, dma_resv and
+sync_file all exist in our drm(4); what is missing is mmap(2)/ioctl(2) on
+dma-buf fds (linux/dma-buf.h) and poll(2)/kqueue(2) on sync_file fds.
+
+Do not use explicit sync (exported sync_file fences) on OpenBSD. drm(4) can
+export a syncobj as a sync_file fd (EGL_ANDROID_native_fence_sync works), but
+syncfile_kqfilter() returns EINVAL and DTYPE_SYNC fds have no poll handler,
+so poll(2) yields POLLNVAL immediately and the UI process FenceMonitor would
+consider every frame complete before the GPU finished rendering it. Wait
+client-side with GLFence::clientWait() instead.
+
+Runtime knobs for testing:
+WEBKIT_DMABUF_RENDERER_FORCE_SHM=1
+WEBKIT_DISABLE_DMABUF_RENDERER=1
+WEBKIT_DISABLE_COMPOSITING_MODE=1
+
+Index: Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/AcceleratedSurface.cpp
+--- Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/AcceleratedSurface.cpp.orig
++++ Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/AcceleratedSurface.cpp
+@@ -108,6 +108,14 @@ Ref<AcceleratedSurface> AcceleratedSurface::create(Web
+ 
+ static bool useExplicitSync()
+ {
++#if OS(OPENBSD)
++    // OpenBSD's drm(4) can export a syncobj as a sync_file fd
++    // (EGL_ANDROID_native_fence_sync works), but neither kqueue(2) nor
++    // poll(2) are implemented for DTYPE_SYNC fds (POLLNVAL is returned
++    // immediately), so the UI process FenceMonitor would consider the frame
++    // ready before the GPU is done with it.  Wait client-side instead.
++    return false;
++#endif
+     auto& display = PlatformDisplay::sharedDisplay();
+     auto& extensions = display.eglExtensions();
+     return extensions.ANDROID_native_fence_sync && (display.eglCheckVersion(1, 5) || extensions.KHR_fence_sync);
