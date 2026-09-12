@@ -1,0 +1,10 @@
+Python library to capitalize strings as specified by the New York Times
+Manual of Style.
+
+This filter changes a given text to Title Caps, and attempts to be
+clever about SMALL words like a/an/the in the input. The list of "SMALL
+words" which are not capped comes from the New York Times Manual of
+Style, plus some others like 'vs' and 'v'.
+
+The filter employs some heuristics to guess abbreviations that don't
+need conversion.
