@@ -1,15 +1,20 @@
-Index: src/dispatch/bind_define.h
---- src/dispatch/bind_define.h.orig
-+++ src/dispatch/bind_define.h
-@@ -1,3 +1,7 @@
-+#ifdef __OpenBSD__
+Index: src/dispatch/bind.c
+--- src/dispatch/bind.c.orig
++++ src/dispatch/bind.c
+@@ -33,7 +33,12 @@
+ #include <wlr/types/wlr_keyboard_group.h>
+ #include <wlr/types/wlr_output.h>
+ #include <wlr/types/wlr_seat.h>
++#ifndef __OpenBSD__
+ #include <wordexp.h>
++#else
++#include <glob.h>
 +#define SPAWN_MAX_ARGS 64
 +#endif
-+
+ 
  void bind_to_view(const Arg *arg) {
- 	if (!selmon)
- 		return;
-@@ -1164,6 +1168,7 @@ void spawn(const Arg *arg) {
+ 	if (!server.selected_monitor)
+@@ -1277,6 +1282,7 @@ void spawn(const Arg *arg) {
  		dup2(STDERR_FILENO, STDOUT_FILENO);
  		setsid();
  
@@ -17,7 +22,7 @@ Index: src/dispatch/bind_define.h
  		wordexp_t p;
  		if (wordexp(arg->v, &p, 0) != 0) {
  			mango_error(true, WLR_DEBUG, "mango: wordexp failed for '%s'\n",
-@@ -1176,6 +1181,35 @@ void spawn(const Arg *arg) {
+@@ -1289,6 +1295,34 @@ void spawn(const Arg *arg) {
  		mango_error(true, WLR_DEBUG, "mango: execvp '%s' failed: %s\n",
  					p.we_wordv[0], strerror(errno));
  		wordfree(&p);
@@ -37,14 +42,13 @@ Index: src/dispatch/bind_define.h
 +			argc++;
 +			token = strtok_r(NULL, " ", &last);
 +		}
-+
 +		if (argc == 0) {
 +			return;
 +		}
 +		argv[argc] = NULL;
 +		execvp(argv[0], argv);
 +		wlr_log(WLR_ERROR, "mango: execvp '%s' failed: %s\n",
-+				argv[0] ? argv[0] : "NULL", strerror(errno));
++						argv[0] ? argv[0] : "NULL", strerror(errno));
 +		/* Cleanup */
 +		for (int i = 0; i < argc; i++) {
 +			free(argv[i]);
