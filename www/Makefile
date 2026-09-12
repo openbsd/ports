@@ -493,6 +493,7 @@
      SUBDIR += py-ndg-httpsclient
      SUBDIR += py-nh3
      SUBDIR += py-openapi-core
+     SUBDIR += py-pytest-flask
      SUBDIR += py-python-multipart
      SUBDIR += py-qt6webengine
      SUBDIR += py-qtwebengine
