@@ -238,6 +238,10 @@ share/doc/libshumate-1.0/method.Map.set_zoom_on_double_click.html
 share/doc/libshumate-1.0/method.Map.stop_go_to.html
 share/doc/libshumate-1.0/method.Map.zoom_in.html
 share/doc/libshumate-1.0/method.Map.zoom_out.html
+share/doc/libshumate-1.0/method.MapLayer.get_map_source.html
+share/doc/libshumate-1.0/method.MapLayer.refresh.html
+share/doc/libshumate-1.0/method.MapLayer.retry_failed.html
+share/doc/libshumate-1.0/method.MapLayer.set_map_source.html
 share/doc/libshumate-1.0/method.MapSource.fill_tile_async.html
 share/doc/libshumate-1.0/method.MapSource.fill_tile_finish.html
 share/doc/libshumate-1.0/method.MapSource.get_column_count.html
@@ -507,6 +511,7 @@ share/doc/libshumate-1.0/signal.Map.animation-completed.html
 share/doc/libshumate-1.0/signal.MapLayer.map-loaded.html
 share/doc/libshumate-1.0/signal.MapLayer.symbol-clicked.html
 share/doc/libshumate-1.0/signal.MapLayer.tile-error.html
+share/doc/libshumate-1.0/signal.MapSource.modified.html
 share/doc/libshumate-1.0/signal.MarkerLayer.marker-selected.html
 share/doc/libshumate-1.0/signal.MarkerLayer.marker-unselected.html
 share/doc/libshumate-1.0/signal.SimpleMap.symbol-clicked.html
@@ -556,6 +561,7 @@ share/locale/id/LC_MESSAGES/shumate1.mo
 share/locale/ie/LC_MESSAGES/shumate1.mo
 share/locale/is/LC_MESSAGES/shumate1.mo
 share/locale/it/LC_MESSAGES/shumate1.mo
+share/locale/ja/LC_MESSAGES/shumate1.mo
 share/locale/ka/LC_MESSAGES/shumate1.mo
 share/locale/kab/LC_MESSAGES/shumate1.mo
 share/locale/kk/LC_MESSAGES/shumate1.mo

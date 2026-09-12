@@ -1,9 +1,9 @@
-COMMENT=		GTK4 widget to display maps
+COMMENT=		map widget
 
 GNOME_PROJECT=		libshumate
-GNOME_VERSION=		1.6.3
+GNOME_VERSION=		1.7.0
 
-SHARED_LIBS += shumate-1.0               0.2 # 1.0
+SHARED_LIBS += shumate-1.0               0.3 # 1.0
 
 CATEGORIES=		geo
 
