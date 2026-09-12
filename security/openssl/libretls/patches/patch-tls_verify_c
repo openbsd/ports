@@ -3,7 +3,67 @@ const correctness fixes for OpenSSL 4
 Index: tls_verify.c
 --- tls_verify.c.orig
 +++ tls_verify.c
-@@ -213,11 +213,11 @@ tls_check_common_name(struct tls *ctx, X509 *cert, con
+@@ -90,6 +90,7 @@ tls_check_subject_altname(struct tls *ctx, X509 *cert,
+ {
+ 	STACK_OF(GENERAL_NAME) *altname_stack = NULL;
+ 	union tls_addr addrbuf;
++	char *datastr = NULL;
+ 	int addrlen, type;
+ 	int count, i;
+ 	int critical = 0;
+@@ -140,7 +141,8 @@ tls_check_subject_altname(struct tls *ctx, X509 *cert,
+ 				data = ASN1_STRING_get0_data(altname->d.dNSName);
+ 				len = ASN1_STRING_length(altname->d.dNSName);
+ 
+-				if (len < 0 || (size_t)len != strlen(data)) {
++				if (len < 0 ||
++				    (size_t)len != strnlen(data, len)) {
+ 					tls_set_errorx(ctx,
+ 					    "error verifying name '%s': "
+ 					    "NUL byte in subjectAltName, "
+@@ -149,12 +151,17 @@ tls_check_subject_altname(struct tls *ctx, X509 *cert,
+ 					goto err;
+ 				}
+ 
++				if ((datastr = strndup(data, len)) == NULL) {
++					tls_set_errorx(ctx, "out of memory");
++					goto err;
++				}
++
+ 				/*
+ 				 * Per RFC 5280 section 4.2.1.6:
+ 				 * " " is a legal domain name, but that
+ 				 * dNSName must be rejected.
+ 				 */
+-				if (strcmp(data, " ") == 0) {
++				if (strcmp(datastr, " ") == 0) {
+ 					tls_set_errorx(ctx,
+ 					    "error verifying name '%s': "
+ 					    "a dNSName of \" \" must not be "
+@@ -162,10 +169,13 @@ tls_check_subject_altname(struct tls *ctx, X509 *cert,
+ 					goto err;
+ 				}
+ 
+-				if (tls_match_name(data, name) == 0) {
++				if (tls_match_name(datastr, name) == 0) {
+ 					*alt_match = 1;
+ 					goto done;
+ 				}
++
++				free(datastr);
++				datastr = NULL;
+ 			} else {
+ #ifdef DEBUG
+ 				fprintf(stdout, "%s: unhandled subjectAltName "
+@@ -205,6 +215,7 @@ tls_check_subject_altname(struct tls *ctx, X509 *cert,
+ 
+  err:
+ 	sk_GENERAL_NAME_pop_free(altname_stack, GENERAL_NAME_free);
++	free(datastr);
+ 	return rv;
+ }
+ 
+@@ -213,11 +224,11 @@ tls_check_common_name(struct tls *ctx, X509 *cert, con
      int *cn_match)
  {
  	unsigned char *utf8_bytes = NULL;
