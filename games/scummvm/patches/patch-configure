@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5446,16 +5446,14 @@ if test "$_vorbis" = auto ; then
+@@ -5505,16 +5505,14 @@ if test "$_vorbis" = auto ; then
  int main(void) { vorbis_packet_blocksize(0,0); return 0; }
  EOF
  	if test "$_ogg" = yes ; then
@@ -22,7 +22,7 @@ Index: configure
  fi
  define_in_config_if_yes "$_vorbis" 'USE_VORBIS'
  echo "$_vorbis"
-@@ -5557,16 +5555,14 @@ int main(void) {
+@@ -5616,16 +5614,14 @@ int main(void) {
  }
  EOF
  	if test "$_ogg" = yes ; then

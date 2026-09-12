@@ -1,5 +1,5 @@
 COMMENT=	game interpreter
-V=		2026.2.0
+V=		2026.3.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 SITES=		https://downloads.scummvm.org/frs/scummvm/${V}/
