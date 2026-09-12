@@ -73,7 +73,16 @@ Index: components/autofill/core/common/autofill_payments_features.cc
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -183,7 +183,7 @@ BASE_FEATURE(kAutofillEnableFlatRateCardBenefitsBlockl
+@@ -173,7 +173,7 @@ BASE_FEATURE(kAutofillEnableCvcStorageAndFillingStanda
+ // outside of Chrome appears in Autofill card suggestions.
+ BASE_FEATURE(kAutofillEnableDownstreamCardAwarenessIph,
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT);
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -189,7 +189,7 @@ BASE_FEATURE(kAutofillEnableFlatRateCardBenefitsBlockl
  // Payments Autofill UI.
  BASE_FEATURE(kAutofillEnableFlatRateCardBenefitsFromCurinos,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -82,7 +91,7 @@ Index: components/autofill/core/common/autofill_payments_features.cc
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -271,7 +271,7 @@ BASE_FEATURE(kAutofillEnableTravelCategoryAndMerchantB
+@@ -285,7 +285,7 @@ BASE_FEATURE(kAutofillEnableTravelCategoryAndMerchantB
  // the card, and FIDO is not.
  BASE_FEATURE(kAutofillEnableVcn3dsAuthentication,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -91,7 +100,7 @@ Index: components/autofill/core/common/autofill_payments_features.cc
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -313,7 +313,7 @@ BASE_FEATURE(kAutofillIgnoreEmptyCvcsInSyncBridge,
+@@ -348,7 +348,7 @@ BASE_FEATURE(kAutofillParseLegalMessageLines, base::FE
  // eligibility.
  BASE_FEATURE(kAutofillPreferBuyNowPayLaterBlocklists,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -100,7 +109,7 @@ Index: components/autofill/core/common/autofill_payments_features.cc
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -371,7 +371,7 @@ BASE_FEATURE(kAutofillUpstreamEnforceStrikeDelay,
+@@ -401,7 +401,7 @@ BASE_FEATURE(kAutofillUpstreamEnforceStrikeDelay,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {

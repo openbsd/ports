@@ -1,7 +1,7 @@
 Index: third_party/libc++/src/include/__locale_dir/support/bsd_like.h
 --- third_party/libc++/src/include/__locale_dir/support/bsd_like.h.orig
 +++ third_party/libc++/src/include/__locale_dir/support/bsd_like.h
-@@ -61,22 +61,22 @@ inline _LIBCPP_HIDE_FROM_ABI char* __setlocale(int __c
+@@ -62,22 +62,22 @@ inline _LIBCPP_HIDE_FROM_ABI char* __setlocale(int __c
    return ::setlocale(__category, __locale);
  }
  
@@ -28,7 +28,7 @@ Index: third_party/libc++/src/include/__locale_dir/support/bsd_like.h
  }
  
  //
-@@ -141,43 +141,43 @@ inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_ATTRIBUTE_FORMAT(
+@@ -142,43 +142,43 @@ inline _LIBCPP_HIDE_FROM_ABI _LIBCPP_ATTRIBUTE_FORMAT(
  //
  // Other functions
  //
@@ -81,8 +81,8 @@ Index: third_party/libc++/src/include/__locale_dir/support/bsd_like.h
 +  return ::mbsrtowcs(__dest, __src, __len, __ps);
  }
  #  endif // _LIBCPP_HAS_WIDE_CHARACTERS
- #endif   // _LIBCPP_BUILDING_LIBRARY
-@@ -194,13 +194,13 @@ _LIBCPP_GCC_DIAGNOSTIC_IGNORED("-Wformat-nonliteral") 
+ 
+@@ -199,13 +199,13 @@ _LIBCPP_GCC_DIAGNOSTIC_IGNORED("-Wformat-nonliteral") 
  template <class... _Args>
  _LIBCPP_HIDE_FROM_ABI _LIBCPP_VARIADIC_ATTRIBUTE_FORMAT(__printf__, 4, 5) int __snprintf(
      char* __s, size_t __n, __locale_t __loc, const char* __format, _Args&&... __args) {

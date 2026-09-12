@@ -28,7 +28,7 @@ Index: third_party/blink/renderer/core/exported/web_view_impl.cc
  void UpdateUseOverlayScrollbar(bool use_overlay_scrollbar) {
    ui::NativeTheme::GetInstanceForWeb()->set_use_overlay_scrollbar(
        use_overlay_scrollbar);
-@@ -3675,7 +3675,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
+@@ -3676,7 +3676,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
        gfx::FontRenderParams::SUBPIXEL_RENDERING_NONE);
    WebFontRenderStyle::SetSubpixelPositioning(
        renderer_preferences_.use_subpixel_positioning);
@@ -37,7 +37,7 @@ Index: third_party/blink/renderer/core/exported/web_view_impl.cc
    if (!renderer_preferences_.system_font_family_name.empty()) {
      WebFontRenderStyle::SetSystemFontFamily(blink::WebString::FromUtf8(
          renderer_preferences_.system_font_family_name));
-@@ -3815,7 +3815,7 @@ void WebViewImpl::UpdateRendererPreferences(
+@@ -3820,7 +3820,7 @@ void WebViewImpl::UpdateRendererPreferences(
        renderer_preferences_.selection_clipboard_buffer_available);
  #endif  // BUILDFLAG(IS_OZONE)
  
@@ -46,7 +46,7 @@ Index: third_party/blink/renderer/core/exported/web_view_impl.cc
    GetSettings()->SetMiddleClickPasteAllowed(
        renderer_preferences_.middle_click_paste_allowed);
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -3823,7 +3823,7 @@ void WebViewImpl::UpdateRendererPreferences(
+@@ -3828,7 +3828,7 @@ void WebViewImpl::UpdateRendererPreferences(
    SetExplicitlyAllowedPorts(
        renderer_preferences_.explicitly_allowed_network_ports);
  

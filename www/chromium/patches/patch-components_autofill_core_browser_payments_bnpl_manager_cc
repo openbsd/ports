@@ -1,8 +1,8 @@
 Index: components/autofill/core/browser/payments/bnpl_manager.cc
 --- components/autofill/core/browser/payments/bnpl_manager.cc.orig
 +++ components/autofill/core/browser/payments/bnpl_manager.cc
-@@ -1113,7 +1113,7 @@ void BnplManager::MaybeUpdateDesktopSuggestionsWithBnp
-       .OnBnplSuggestionShown();
+@@ -1177,7 +1177,7 @@ void BnplManager::MaybeUpdateDesktopSuggestionsWithBnp
+           /*suggestion_contains_pay_later_tab_entry=*/false);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)

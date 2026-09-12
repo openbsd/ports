@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/frame/system_menu_model_builder.cc
 --- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
-@@ -133,7 +133,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -134,7 +134,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
    }
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/views/frame/system_menu_model_builder.cc
    AddItemWithIconMaybe(model, IDC_MINIMIZE_WINDOW, IDS_MINIMIZE_WINDOW_MENU,
                         views::kChromeMinimizeIcon);
    AddItemWithIconMaybe(model, IDC_MAXIMIZE_WINDOW, IDS_MAXIMIZE_WINDOW_MENU,
-@@ -237,7 +237,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -234,7 +234,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
      model->AddSeparator(ui::NORMAL_SEPARATOR);
      model->AddItemWithStringId(IDC_TASK_MANAGER_CONTEXT_MENU, IDS_TASK_MANAGER);
    }

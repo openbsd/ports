@@ -1,7 +1,7 @@
 Index: tools/generate_shim_headers/generate_shim_headers.py
 --- tools/generate_shim_headers/generate_shim_headers.py.orig
 +++ tools/generate_shim_headers/generate_shim_headers.py
-@@ -18,7 +18,7 @@ import sys
+@@ -17,7 +17,7 @@ import sys
  
  
  SHIM_TEMPLATE = """

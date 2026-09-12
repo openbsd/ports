@@ -1,7 +1,7 @@
 Index: printing/backend/cups_weak_functions.h
 --- printing/backend/cups_weak_functions.h.orig
 +++ printing/backend/cups_weak_functions.h
-@@ -6,7 +6,7 @@
+@@ -9,7 +9,7 @@
  
  #include "build/build_config.h"
  

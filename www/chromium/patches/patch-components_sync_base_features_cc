@@ -1,7 +1,7 @@
 Index: components/sync/base/features.cc
 --- components/sync/base/features.cc.orig
 +++ components/sync/base/features.cc
-@@ -79,7 +79,7 @@ BASE_FEATURE(kReplaceSyncPromosWithSignInPromos,
+@@ -81,7 +81,7 @@ BASE_FEATURE(kReplaceSyncPromosWithSignInPromos,
  );
  
  BASE_FEATURE(kReplaceSyncPromosWithSigninPromosNewSignin,

@@ -12,16 +12,19 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			152.0.7977.82
+V=			153.0.8010.36
 
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
-DISTFILES.a=		${REGRESS_DISTFILES.a}
+DISTFILES.a=		${REGRESS_DISTFILES.a} \
+			${PROFILE_DISTFILES.a} \
+			${CHROMIUM_DISTFILES.a}
 
 CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
+PROFILE_DISTFILES.a=	chromium-${V}-profdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz
 
 DIST_TUPLE+=		github rollup rollup v4.60.4 rollup
@@ -66,7 +69,7 @@ WANTLIB+=	GL X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr Xrender Xtst
 WANTLIB+=	atk-1.0 atk-bridge-2.0 atspi c cairo cbor crypto cups
 WANTLIB+=	dav1d dbus-1 drm epoll-shim execinfo expat fido2 fontconfig
 WANTLIB+=	gbm gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB+=	harfbuzz harfbuzz-subset icudata icui18n icuuc intl jpeg kvm
+WANTLIB+=	harfbuzz harfbuzz-subset icudata icui18n icuuc intl jpeg
 WANTLIB+=	m nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
 WANTLIB+=	plc4 plds4 png pthread pthread smime3 sndio udev usbhid util
 WANTLIB+=	xcb xkbcommon xml2 xshmfence xslt z
@@ -90,6 +93,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		lang/rust,-rustfmt \
 		lang/node \
 		lang/rust \
+		lang/typescript \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
@@ -196,7 +200,8 @@ GN_ARGS=	is_official_build=true \
 		use_qt5=true \
 		use_qt6=true \
 		moc_qt5_path=\"${MODQT5_MOC}\" \
-		moc_qt6_path=\"${MODQT6_MOC}\"
+		moc_qt6_path=\"${MODQT6_MOC}\" \
+		use_typescript_go=false
 
 # rust
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
@@ -313,6 +318,8 @@ do-configure:
 	)
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	# @cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
+	@cd ${WRKSRC}/chrome/build/pgo_profiles && _p=$$(echo *.profdata) && \
+		${LOCALBASE}/bin/llvm-profdata-${MODCLANG_VERSION} merge $${_p}.txt --output=$${_p}
 	@cd ${WRKSRC}/media/ffmpeg && \
 		${MODPY_BIN} scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
 	@cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h

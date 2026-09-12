@@ -1,0 +1,12 @@
+Index: components/notebooks/internal/notebooks_network_service_impl.cc
+--- components/notebooks/internal/notebooks_network_service_impl.cc.orig
++++ components/notebooks/internal/notebooks_network_service_impl.cc
+@@ -175,7 +175,7 @@ Device GetDevice() {
+   return Device::kMobileAndroid;
+ #elif BUILDFLAG(IS_IOS)
+   return Device::kMobileIos;
+-#elif BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#elif BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   return Device::kDesktop;
+ #else
+   return Device::kOther;

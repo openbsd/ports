@@ -1,7 +1,7 @@
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -1195,11 +1195,26 @@ component("base") {
+@@ -1204,11 +1204,26 @@ component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -11,10 +11,9 @@ Index: base/BUILD.gn
      libs += [ "atomic" ]
    }
  
-+  # *BSD needs libkvm
++  # *BSD needs epoll-shim
 +  if (is_bsd) {
 +    libs += [
-+      "kvm",
 +      "epoll-shim",
 +    ]
 +  }
@@ -22,6 +21,7 @@ Index: base/BUILD.gn
 +  if (is_freebsd) {
 +    libs += [
 +      "execinfo",
++      "kvm",
 +      "util",
 +    ]
 +  }
@@ -29,7 +29,7 @@ Index: base/BUILD.gn
    if (use_allocator_shim) {
      if (is_apple) {
        sources += [ "allocator/early_zone_registration_apple.h" ]
-@@ -1219,7 +1234,7 @@ component("base") {
+@@ -1228,7 +1243,7 @@ component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -38,7 +38,7 @@ Index: base/BUILD.gn
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2243,6 +2258,22 @@ component("base") {
+@@ -2259,6 +2274,22 @@ component("base") {
      ]
    }
  
@@ -61,7 +61,7 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      sources += [
-@@ -2417,6 +2448,33 @@ component("base") {
+@@ -2433,6 +2464,33 @@ component("base") {
      }
    }
  
@@ -95,7 +95,7 @@ Index: base/BUILD.gn
    if (use_blink) {
      sources += [
        "files/file_path_watcher.cc",
-@@ -2986,7 +3044,7 @@ buildflag_header("protected_memory_buildflags") {
+@@ -3014,7 +3072,7 @@ buildflag_header("protected_memory_buildflags") {
    header = "protected_memory_buildflags.h"
    header_dir = "base/memory"
  
@@ -104,7 +104,7 @@ Index: base/BUILD.gn
                               (is_win || is_linux || is_android || is_mac)
  
    flags = [ "PROTECTED_MEMORY_ENABLED=$protected_memory_enabled" ]
-@@ -3499,7 +3557,7 @@ if (is_apple) {
+@@ -3526,7 +3584,7 @@ if (is_apple) {
    }
  }
  
@@ -113,7 +113,7 @@ Index: base/BUILD.gn
    # This test must compile with -fstack-protector-all
    source_set("stack_canary_linux_unittests") {
      testonly = true
-@@ -4267,7 +4325,7 @@ test("base_unittests") {
+@@ -4318,7 +4376,7 @@ test("base_unittests") {
      configs += [ ":delayload_esent_dll" ]
    }
  
@@ -122,7 +122,7 @@ Index: base/BUILD.gn
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -4290,7 +4348,7 @@ test("base_unittests") {
+@@ -4341,7 +4399,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -131,7 +131,7 @@ Index: base/BUILD.gn
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -4301,7 +4359,7 @@ test("base_unittests") {
+@@ -4352,7 +4410,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -140,7 +140,7 @@ Index: base/BUILD.gn
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -4485,7 +4543,7 @@ test("base_unittests") {
+@@ -4536,7 +4594,7 @@ test("base_unittests") {
      deps += [ ":base_profiler_test_support_library" ]
    }
  
