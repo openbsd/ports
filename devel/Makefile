@@ -1505,6 +1505,7 @@
      SUBDIR += py-executing
      SUBDIR += py-extension-helpers
      SUBDIR += py-extras
+     SUBDIR += py-factory-boy
      SUBDIR += py-faker
      SUBDIR += py-fasteners
      SUBDIR += py-fastimport
