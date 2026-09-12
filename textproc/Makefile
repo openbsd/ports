@@ -535,6 +535,7 @@
      SUBDIR += py-textdistance
      SUBDIR += py-textfsm
      SUBDIR += py-texttable
+     SUBDIR += py-titlecase
      SUBDIR += py-tiktoken
      SUBDIR += py-tinycss2
      SUBDIR += py-tokenizers
