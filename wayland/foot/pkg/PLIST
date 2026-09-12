@@ -27,6 +27,7 @@ share/foot/themes/
 share/foot/themes/aeroroot
 share/foot/themes/alacritty
 share/foot/themes/apprentice
+share/foot/themes/ayu-dark
 share/foot/themes/ayu-mirage
 share/foot/themes/catppuccin-frappe
 share/foot/themes/catppuccin-latte
@@ -38,6 +39,7 @@ share/foot/themes/deus
 share/foot/themes/dracula
 share/foot/themes/dracula-iterm
 share/foot/themes/electrophoretic
+share/foot/themes/ferra
 share/foot/themes/gruvbox
 share/foot/themes/gruvbox-dark
 share/foot/themes/gruvbox-light
