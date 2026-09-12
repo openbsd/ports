@@ -60,6 +60,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
 		devel/kf6/kio \
+		devel/kf6/kirigami \
 		devel/kf6/kitemmodels \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
@@ -69,7 +70,6 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kpackage \
 		devel/kf6/krunner \
 		devel/kf6/kservice \
-		devel/kf6/kirigami \
 		devel/kf6/ksvg \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \

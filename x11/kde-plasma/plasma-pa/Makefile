@@ -9,9 +9,9 @@ MODKDE_DOCS = Yes
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6DBusAddons KF6GlobalAccel KF6I18n KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6PulseAudioQt KF6StatusNotifierItem
-WANTLIB += Plasma Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6Quick Qt6Widgets canberra gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 intl m pulse pulse-mainloop-glib
+WANTLIB += KirigamiPlatform Plasma Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6Widgets canberra gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 intl m pulse pulse-mainloop-glib
 
 BUILD_DEPENDS =	devel/kf6/kitemmodels \
 		devel/kf6/kdeclarative \
@@ -30,6 +30,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		audio/pulseaudio-qt \
 		devel/gettext,-runtime \
 		devel/glib2 \
+		devel/kf6/kirigami \
 		devel/kf6/kcmutils \
 		devel/kf6/kconfig \
 		devel/kf6/kcoreaddons \

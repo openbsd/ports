@@ -17,26 +17,26 @@ MODULES +=	lang/python
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6GuiAddons
-WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Notifications KF6PrisonScanner KF6Purpose KF6PurposeWidgets
-WANTLIB += KF6Service KF6StatusNotifierItem KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KF6XmlGui KPipeWire KPipeWireRecord KQuickImageEditor
-WANTLIB += KirigamiPlatform LayerShellQtInterface Qt6Concurrent
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6QuickTemplates2 Qt6WaylandClient Qt6Widgets Qt6Xml
-WANTLIB += X11 c m opencv_core opencv_imgproc wayland-client wayland-cursor
-WANTLIB += xcb xcb-cursor xcb-image xcb-randr xcb-render xcb-shape
-WANTLIB += xcb-shm xcb-util xcb-xfixes xkbcommon
+WANTLIB += KF6I18n KF6I18nQml KF6JobWidgets KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6PrisonScanner KF6Purpose
+WANTLIB += KF6PurposeWidgets KF6Service KF6StatusNotifierItem
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPipeWire
+WANTLIB += KPipeWireRecord KQuickImageEditor KirigamiPlatform
+WANTLIB += LayerShellQtInterface Qt6Concurrent Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6QuickTemplates2
+WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml X11 archive c curl
+WANTLIB += m opencv_core opencv_imgproc tesseract wayland-client
+WANTLIB += wayland-cursor xcb xcb-cursor xcb-image xcb-randr xcb-render
+WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes xkbcommon
 
-BUILD_DEPENDS =	graphics/tesseract/tesseract \
-		wayland/libinput-openbsd \
+BUILD_DEPENDS =	wayland/libinput-openbsd \
 		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
-RUN_DEPENDS =	graphics/tesseract/tesseract
 
-LIB_DEPENDS =	devel/kf6/kcolorscheme \
+LIB_DEPENDS =	archivers/libarchive \
+		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
@@ -57,9 +57,11 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kxmlgui \
 		devel/kf6/prison \
 		devel/kf6/purpose \
-		wayland/wayland \
-		graphics/opencv \
 		graphics/kquickimageeditor \
+		graphics/opencv \
+		graphics/tesseract/tesseract \
+		net/curl \
+		wayland/wayland \
 		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/layer-shell-qt>=${VERSION} \
 		x11/qt6/qtdeclarative \

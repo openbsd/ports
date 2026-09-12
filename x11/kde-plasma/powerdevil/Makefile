@@ -6,8 +6,8 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6GuiAddons
 WANTLIB += KF6I18n KF6IdleTime KF6ItemModels KF6JobWidgets KF6KCMUtils
 WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Notifications KF6Runner KF6Screen
-WANTLIB += KF6ScreenDpms KF6Service KF6Solid KF6WidgetsAddons
+WANTLIB += KF6KIOWidgets KF6Notifications KF6Package KF6Runner
+WANTLIB += KF6Screen KF6ScreenDpms KF6Service KF6Solid KF6WidgetsAddons
 WANTLIB += KF6XmlGui Kirigami KirigamiPlatform Plasma PlasmaActivities
 WANTLIB += QCoro6Core QCoro6DBus Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6WaylandClient Qt6Widgets
@@ -60,4 +60,5 @@ LIB_DEPENDS =	devel/kf6/kauth \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+LIB_DEPENDS += devel/kf6/kpackage
 .include <bsd.port.mk>

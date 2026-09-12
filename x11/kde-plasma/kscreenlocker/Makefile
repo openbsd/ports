@@ -10,10 +10,11 @@ WANTLIB += KF6ConfigGui KF6ConfigQml KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6GlobalAccel KF6GuiAddons KF6I18n KF6I18nQml
 WANTLIB += KF6IdleTime KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
 WANTLIB += KF6Notifications KF6Package KF6ScreenDpms KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui LayerShellQtInterface Plasma
-WANTLIB += PlasmaQuick Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6Quick Qt6Widgets Qt6Xml X11 Xext Xi c m pam
-WANTLIB += wayland-client wayland-server xcb xcb-keysyms
+WANTLIB += KF6WindowSystem KF6XmlGui KirigamiPlatform LayerShellQtInterface
+WANTLIB += Plasma PlasmaQuick Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6Widgets Qt6Xml X11 Xext
+WANTLIB += Xi c m pam wayland-client wayland-server xcb xcb-keysyms
+WANTLIB += xcb-util
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		sysutils/consolekit
@@ -37,6 +38,7 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kpackage \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kguiaddons \
+		devel/kf6/kirigami \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
 		security/openpam \

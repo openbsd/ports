@@ -406,7 +406,6 @@ share/applications/kcm_kwinxwayland.desktop
 share/applications/kcm_virtualkeyboard.desktop
 share/applications/org.kde.kwin.dialoghelper.desktop
 share/applications/org.kde.kwin.killer.desktop
-share/config.kcfg/
 share/config.kcfg/kwin.kcfg
 share/config.kcfg/kwindecorationsettings.kcfg
 share/config.kcfg/nightlightsettings.kcfg
@@ -1440,6 +1439,7 @@ share/locale/hr/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/hr/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/hr/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/hr/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/hr/LC_MESSAGES/kcmkwincommon.mo
 share/locale/hr/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/hr/LC_MESSAGES/kcmkwm.mo
 share/locale/hr/LC_MESSAGES/kwin.mo
