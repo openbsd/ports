@@ -2,11 +2,12 @@ COMMENT =		stacking window manager for wayland
 
 V =			0.3
 DISTNAME =		cow-${V}
-SITES =			https://codeberg.org/thomasadam/cow/releases/download/${V}/
+SITES =			https://codeberg.org/cow-wm/cow/releases/download/${V}/
+REVISION =		0
 
 CATEGORIES =		wayland
 
-HOMEPAGE =		https://codeberg.org/thomasadam/cow
+HOMEPAGE =		https://cow-wm.codeberg.page/cow/
 
 # ISC
 PERMIT_PACKAGE =	Yes
