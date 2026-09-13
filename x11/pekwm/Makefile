@@ -1,6 +1,6 @@
 COMMENT=	aewm++ based pretty themable window manager
 
-V=		0.4.2
+V=		0.4.4
 DISTNAME=	pekwm-${V}
 
 CATEGORIES=	x11
