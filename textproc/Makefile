@@ -87,6 +87,7 @@
      SUBDIR += gtkspell3
      SUBDIR += gtranslator
      SUBDIR += halibut
+     SUBDIR += harper
      SUBDIR += heirloom-doctools
      SUBDIR += hevea
      SUBDIR += hexyl
