@@ -9,11 +9,11 @@ bin/whisper.cpp-download-ggml-model
 include/parakeet.h
 include/whisper.h
 lib/cmake/parakeet/
+lib/cmake/parakeet/parakeet-config-version.cmake
 lib/cmake/parakeet/parakeet-config.cmake
-lib/cmake/parakeet/parakeet-version.cmake
 lib/cmake/whisper/
+lib/cmake/whisper/whisper-config-version.cmake
 lib/cmake/whisper/whisper-config.cmake
-lib/cmake/whisper/whisper-version.cmake
 @lib lib/libparakeet.so.${LIBparakeet_VERSION}
 @lib lib/libwhisper.so.${LIBwhisper_VERSION}
 lib/pkgconfig/parakeet.pc
