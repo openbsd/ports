@@ -40,6 +40,7 @@
      SUBDIR += wayvnc
      SUBDIR += wcm
      SUBDIR += wdisplays
+     SUBDIR += weston
      SUBDIR += wev
      SUBDIR += wf-config
      SUBDIR += wf-recorder
