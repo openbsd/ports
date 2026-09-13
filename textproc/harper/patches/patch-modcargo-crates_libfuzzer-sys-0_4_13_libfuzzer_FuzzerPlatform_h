@@ -1,0 +1,12 @@
+Index: modcargo-crates/libfuzzer-sys-0.4.13/libfuzzer/FuzzerPlatform.h
+--- modcargo-crates/libfuzzer-sys-0.4.13/libfuzzer/FuzzerPlatform.h.orig
++++ modcargo-crates/libfuzzer-sys-0.4.13/libfuzzer/FuzzerPlatform.h
+@@ -36,7 +36,7 @@
+ #define LIBFUZZER_FREEBSD 0
+ #define LIBFUZZER_WINDOWS 0
+ #define LIBFUZZER_EMSCRIPTEN 0
+-#elif __FreeBSD__
++#elif __OpenBSD__
+ #define LIBFUZZER_APPLE 0
+ #define LIBFUZZER_FUCHSIA 0
+ #define LIBFUZZER_LINUX 0
