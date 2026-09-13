@@ -4,17 +4,15 @@ COMMENT-gtk4=		GTK4 backend for libportal
 COMMENT-qt5=		Qt5 backend for libportal
 COMMENT-qt6=		Qt6 backend for libportal
 
-V=			0.10.0
+V=			0.11.0
 DISTNAME=		libportal-${V}
-
-REVISION-main=		0
 
 PKGNAME-gtk3=		libportal-gtk3-${V}
 PKGNAME-gtk4=		libportal-gtk4-${V}
 PKGNAME-qt5=		libportal-qt5-${V}
 PKGNAME-qt6=		libportal-qt6-${V}
 
-SHARED_LIBS += portal                    0.2 # 1.0.0
+SHARED_LIBS += portal                    0.3 # 1.0.0
 SHARED_LIBS += portal-gtk3               0.0 # 1.0.0
 SHARED_LIBS += portal-gtk4               0.0 # 1.0.0
 SHARED_LIBS += portal-qt5                0.0 # 1.0.0
