@@ -2,10 +2,10 @@ COMMENT =	OCaml graph library
 CATEGORIES =	devel
 
 V =		1.8.8
-REVISION =	8
+REVISION =	9
 DISTNAME =	ocamlgraph-${V}
 PKGNAME =	ocaml-graph-${V}
-SITES =		http://ocamlgraph.lri.fr/download/
+SITES =		http://github.com/backtracking/ocamlgraph/releases/download/v${V}/
 
 HOMEPAGE =	http://ocamlgraph.lri.fr/index.en.html
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
