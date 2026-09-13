@@ -11,7 +11,7 @@ Index: launcher/minecraft/MinecraftInstance.cpp
  
  #include "minecraft/launch/AutoInstallJava.h"
  #include "minecraft/launch/ClaimAccount.h"
-@@ -1191,6 +1194,13 @@ LaunchTask* MinecraftInstance::createLaunchTask(AuthSe
+@@ -1193,6 +1196,13 @@ LaunchTask* MinecraftInstance::createLaunchTask(AuthSe
      } else {
          process->appendStep(makeShared<EnsureOfflineLibraries>(pptr, this));
      }

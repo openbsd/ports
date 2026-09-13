@@ -1,7 +1,7 @@
 Index: launcher/HardwareInfo.cpp
 --- launcher/HardwareInfo.cpp.orig
 +++ launcher/HardwareInfo.cpp
-@@ -315,25 +315,37 @@ QString HardwareInfo::cpuInfo()
+@@ -317,25 +317,37 @@ QString HardwareInfo::cpuInfo()
      return "unknown";
  }
  
@@ -52,7 +52,7 @@ Index: launcher/HardwareInfo.cpp
  }
  
  #else
-@@ -341,12 +353,12 @@ uint64_t HardwareInfo::totalRamMiB()
+@@ -343,12 +355,12 @@ uint64_t HardwareInfo::totalRamMiB()
  {
      return 0;
  }

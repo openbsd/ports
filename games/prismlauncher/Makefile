@@ -1,6 +1,6 @@
 COMMENT =		free and open-source launcher for Minecraft
 
-V =			11.0.3
+V =			11.1.0
 DISTNAME =		PrismLauncher-${V}
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		games

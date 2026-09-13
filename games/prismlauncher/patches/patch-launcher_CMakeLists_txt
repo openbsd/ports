@@ -10,7 +10,7 @@ Index: launcher/CMakeLists.txt
      launch/LaunchStep.cpp
      launch/LaunchStep.h
      launch/LaunchTask.cpp
-@@ -1426,13 +1428,29 @@ if(DEFINED Launcher_APP_BINARY_DEFS)
+@@ -1429,13 +1431,29 @@ if(DEFINED Launcher_APP_BINARY_DEFS)
      target_compile_definitions(Launcher_logic PRIVATE ${Launcher_APP_BINARY_DEFS})
  endif()
  
