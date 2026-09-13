@@ -1,0 +1,15 @@
+Fix OpenBSD link_all_deplibs default so libtool doesn't embed .la
+paths for CMake-built deps (hdf5 etc.) that don't have .la files,
+which breaks downstream consumers like nco.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -17877,6 +17877,7 @@ printf '%s\n' "$lt_cv_irix_exported_symbol" >&6; }
+       ;;
+ 
+     openbsd*)
++      link_all_deplibs=no
+       if test -f /usr/libexec/ld.so; then
+ 	hardcode_direct=yes
+ 	hardcode_shlibpath_var=no
