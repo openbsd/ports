@@ -1,3 +1,5 @@
+@comment bin/mirror_server
+@comment bin/mirror_server_stop
 bin/h5c++
 bin/h5cc
 @bin bin/h5clear
@@ -8,22 +10,19 @@ bin/h5cc
 @bin bin/h5dump
 bin/h5fc
 @bin bin/h5format_convert
-bin/h5fuse
 @bin bin/h5import
 @bin bin/h5jam
 @bin bin/h5ls
 @bin bin/h5mkgrp
 @bin bin/h5perf_serial
-bin/h5redeploy
 @bin bin/h5repack
 @bin bin/h5repart
 @bin bin/h5stat
 @bin bin/h5unjam
 @bin bin/h5watch
-@comment bin/mirror_server
-@comment bin/mirror_server_stop
 include/H5ACpublic.h
 include/H5AbstractDs.h
+include/H5Alltypes.h
 include/H5Apublic.h
 include/H5ArrayType.h
 include/H5AtomType.h
@@ -32,7 +31,6 @@ include/H5Classes.h
 include/H5CommonFG.h
 include/H5CompType.h
 include/H5Cpp.h
-include/H5CppDoc.h
 include/H5Cpublic.h
 include/H5DOpublic.h
 include/H5DSpublic.h
@@ -118,8 +116,10 @@ include/H5Zdevelop.h
 include/H5Zpublic.h
 include/H5api_adpt.h
 include/H5config_f.inc
+include/H5f90.h
 include/H5f90i.h
 include/H5f90i_gen.h
+include/H5f90proto.h
 include/H5overflow.h
 include/H5pubconf.h
 include/H5public.h
@@ -132,6 +132,7 @@ include/h5ds.mod
 include/h5e.mod
 include/h5es.mod
 include/h5f.mod
+include/h5fd.mod
 include/h5fortkit.mod
 include/h5fortran_types.mod
 include/h5g.mod
@@ -154,25 +155,106 @@ include/h5z.mod
 include/hdf5.h
 include/hdf5.mod
 include/hdf5_hl.h
+include/mod/
+include/mod/shared/
+include/mod/shared/h5_gen.mod
+include/mod/shared/h5a.mod
+include/mod/shared/h5d.mod
+include/mod/shared/h5do.mod
+include/mod/shared/h5ds.mod
+include/mod/shared/h5e.mod
+include/mod/shared/h5es.mod
+include/mod/shared/h5f.mod
+include/mod/shared/h5fd.mod
+include/mod/shared/h5fortkit.mod
+include/mod/shared/h5fortran_types.mod
+include/mod/shared/h5g.mod
+include/mod/shared/h5global.mod
+include/mod/shared/h5i.mod
+include/mod/shared/h5im.mod
+include/mod/shared/h5l.mod
+include/mod/shared/h5lib.mod
+include/mod/shared/h5lt.mod
+include/mod/shared/h5lt_const.mod
+include/mod/shared/h5o.mod
+include/mod/shared/h5p.mod
+include/mod/shared/h5r.mod
+include/mod/shared/h5s.mod
+include/mod/shared/h5t.mod
+include/mod/shared/h5tb.mod
+include/mod/shared/h5tb_const.mod
+include/mod/shared/h5vl.mod
+include/mod/shared/h5z.mod
+include/mod/shared/hdf5.mod
+include/mod/static/
+include/mod/static/h5_gen.mod
+include/mod/static/h5a.mod
+include/mod/static/h5d.mod
+include/mod/static/h5do.mod
+include/mod/static/h5ds.mod
+include/mod/static/h5e.mod
+include/mod/static/h5es.mod
+include/mod/static/h5f.mod
+include/mod/static/h5fd.mod
+include/mod/static/h5fortkit.mod
+include/mod/static/h5fortran_types.mod
+include/mod/static/h5g.mod
+include/mod/static/h5global.mod
+include/mod/static/h5i.mod
+include/mod/static/h5im.mod
+include/mod/static/h5l.mod
+include/mod/static/h5lib.mod
+include/mod/static/h5lt.mod
+include/mod/static/h5lt_const.mod
+include/mod/static/h5o.mod
+include/mod/static/h5p.mod
+include/mod/static/h5r.mod
+include/mod/static/h5s.mod
+include/mod/static/h5t.mod
+include/mod/static/h5tb.mod
+include/mod/static/h5tb_const.mod
+include/mod/static/h5vl.mod
+include/mod/static/h5z.mod
+include/mod/static/hdf5.mod
+lib/cmake/
+lib/cmake/hdf5/
+lib/cmake/hdf5/Modules/
+lib/cmake/hdf5/Modules/FindZLIBNG.cmake
+lib/cmake/hdf5/Modules/Findlibaec.cmake
+lib/cmake/hdf5/hdf5-config-version.cmake
+lib/cmake/hdf5/hdf5-config.cmake
+lib/cmake/hdf5/hdf5-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/hdf5/hdf5-targets.cmake
+lib/cmake/hdf5/hdf5_static-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/hdf5/hdf5_static-targets.cmake
 @static-lib lib/libhdf5.a
-lib/libhdf5.la
 lib/libhdf5.settings
 @lib lib/libhdf5.so.${LIBhdf5_VERSION}
 @static-lib lib/libhdf5_cpp.a
-lib/libhdf5_cpp.la
 @lib lib/libhdf5_cpp.so.${LIBhdf5_cpp_VERSION}
+@static-lib lib/libhdf5_f90cstub.a
+@lib lib/libhdf5_f90cstub.so.${LIBhdf5_f90cstub_VERSION}
 @static-lib lib/libhdf5_fortran.a
-lib/libhdf5_fortran.la
 @lib lib/libhdf5_fortran.so.${LIBhdf5_fortran_VERSION}
 @static-lib lib/libhdf5_hl.a
-lib/libhdf5_hl.la
 @lib lib/libhdf5_hl.so.${LIBhdf5_hl_VERSION}
 @static-lib lib/libhdf5_hl_cpp.a
-lib/libhdf5_hl_cpp.la
 @lib lib/libhdf5_hl_cpp.so.${LIBhdf5_hl_cpp_VERSION}
+@static-lib lib/libhdf5_hl_f90cstub.a
+@lib lib/libhdf5_hl_f90cstub.so.${LIBhdf5_hl_f90cstub_VERSION}
 @static-lib lib/libhdf5_hl_fortran.a
-@static-lib lib/libhdf5hl_fortran.a
-lib/libhdf5hl_fortran.la
-@lib lib/libhdf5hl_fortran.so.${LIBhdf5hl_fortran_VERSION}
+@lib lib/libhdf5_hl_fortran.so.${LIBhdf5_hl_fortran_VERSION}
+@static-lib lib/libhdf5_tools.a
+@lib lib/libhdf5_tools.so.${LIBhdf5_tools_VERSION}
+lib/pkgconfig/hdf5.pc
+lib/pkgconfig/hdf5_cpp.pc
+lib/pkgconfig/hdf5_fortran.pc
+lib/pkgconfig/hdf5_hl.pc
+lib/pkgconfig/hdf5_hl_cpp.pc
+lib/pkgconfig/hdf5_hl_fortran.pc
+@comment share/LICENSE
+share/doc/HDF5/
+share/doc/HDF5/CHANGELOG.md
+share/doc/HDF5/USING_HDF5_CMake.md
 share/doc/hdf5/
-share/doc/hdf5/COPYING
+share/doc/hdf5/LICENSE
