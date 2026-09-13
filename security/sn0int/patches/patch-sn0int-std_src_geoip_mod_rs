@@ -1,0 +1,30 @@
+Index: sn0int-std/src/geoip/mod.rs
+--- sn0int-std/src/geoip/mod.rs.orig
++++ sn0int-std/src/geoip/mod.rs
+@@ -23,7 +23,7 @@ pub trait Maxmind: Sized {
+             // Archlinux
+             "/usr/share/GeoIP/",
+             // OpenBSD
+-            "/usr/local/share/examples/libmaxminddb/",
++            "/var/db/dbip/",
+             // geoipupdate
+             "/var/lib/GeoIP/",
+         ] {
+@@ -109,7 +109,7 @@ impl fmt::Debug for GeoIP {
+ impl Maxmind for GeoIP {
+     #[inline]
+     fn filename() -> &'static str {
+-        "GeoLite2-City.mmdb"
++        "dbip-city-lite.mmdb"
+     }
+ 
+     #[inline]
+@@ -139,7 +139,7 @@ impl fmt::Debug for AsnDB {
+ impl Maxmind for AsnDB {
+     #[inline]
+     fn filename() -> &'static str {
+-        "GeoLite2-ASN.mmdb"
++        "dbip-asn-lite.mmdb"
+     }
+ 
+     #[inline]

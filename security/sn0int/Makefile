@@ -10,6 +10,7 @@ COMMENT =	semi-automatic OSINT framework and package manager
 GH_ACCOUNT =	kpcyrd
 GH_PROJECT =	sn0int
 GH_TAGNAME =	v0.26.1
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -32,8 +33,8 @@ MODULES =		devel/cargo \
 			lang/lua
 BUILD_DEPENDS =		security/rust-ring \
 			textproc/py-sphinx
-RUN_DEPENDS =		net/libmaxminddb,-asn \
-			net/libmaxminddb,-city
+RUN_DEPENDS =		net/dbip/asn \
+			net/dbip/city
 
 .include "crates.inc"
 
