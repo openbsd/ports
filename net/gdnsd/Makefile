@@ -1,7 +1,7 @@
 COMMENT=		geographically-aware, authoritative-only DNS server
 
 V=			2.4.3
-REVISION=		2
+REVISION=		3
 DISTNAME=		gdnsd-$V
 EXTRACT_SUFX=		.tar.xz
 
@@ -29,8 +29,8 @@ BUILD_DEPENDS+=		archivers/xz \
 			net/curl
 LIB_DEPENDS=		devel/libev \
 			net/libmaxminddb
-RUN_DEPENDS=		net/libmaxminddb,-city \
-			net/libmaxminddb,-db
+RUN_DEPENDS=		net/dbip/city \
+			net/dbip/country
 TEST_DEPENDS=		${BUILD_DEPENDS} \
 			www/p5-libwww \
 			net/p5-Socket6 \
