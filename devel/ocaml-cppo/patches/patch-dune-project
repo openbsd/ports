@@ -1,0 +1,12 @@
+if /usr/ports is a git repo checkout, dune will look into
+/usr/ports/.git for a version string.
+
+fix this by adding a version string to dune-project.
+
+Index: dune-project
+--- dune-project.orig
++++ dune-project
+@@ -1,2 +1,3 @@
+ (lang dune 1.0)
+ (name cppo)
++(version 1.6.6)
