@@ -1,20 +1,18 @@
 COMMENT =		user-level RCU implementation
 
-V =			0.15.6
-REVISION =		0
-
+V =			0.15.7
 DISTNAME =		userspace-rcu-$V
 EXTRACT_SUFX =		.tar.bz2
 
 PKGNAME =		liburcu-$V
 
-SHARED_LIBS +=  urcu-bp                   3.0 # 9.0
-SHARED_LIBS +=  urcu-cds                  2.1 # 9.0
-SHARED_LIBS +=  urcu-common               2.0 # 9.0
-SHARED_LIBS +=  urcu-mb                   3.0 # 9.0
-SHARED_LIBS +=  urcu-memb                 1.0 # 9.0
-SHARED_LIBS +=  urcu-qsbr                 2.0 # 9.0
-SHARED_LIBS +=  urcu                      3.0 # 9.0
+SHARED_LIBS +=  urcu-bp                   3.1 # 10.0
+SHARED_LIBS +=  urcu-cds                  2.1 # 10.0
+SHARED_LIBS +=  urcu-common               2.0 # 10.0
+SHARED_LIBS +=  urcu-mb                   3.1 # 10.0
+SHARED_LIBS +=  urcu-memb                 1.1 # 10.0
+SHARED_LIBS +=  urcu-qsbr                 2.1 # 10.0
+SHARED_LIBS +=  urcu                      3.1 # 10.0
 
 CATEGORIES =		devel
 
