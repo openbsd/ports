@@ -81,7 +81,7 @@ share/abaddon/res/twitter.png
 share/abaddon/res/typing_indicator.gif
 share/abaddon/res/xbox.png
 share/abaddon/res/youtube.png
-share/applications/icon.svg
 share/applications/io.github.uowuo.abaddon.desktop
-share/applications/io.github.uowuo.abaddon.metainfo.xml
 share/doc/pkg-readmes/${PKGSTEM}
+share/icons/hicolor/scalable/apps/io.github.uowuo.abaddon.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor

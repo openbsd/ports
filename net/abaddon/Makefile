@@ -2,6 +2,7 @@ COMMENT =	alternative & light Discord client
 
 V =	0.2.4
 PKGNAME =	abaddon-${V}
+REVISION =	0
 
 DIST_TUPLE +=	github uowuo abaddon v${V} .
 DIST_TUPLE +=	github machinezone IXWebSocket \
