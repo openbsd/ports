@@ -1,0 +1,116 @@
+@bin bin/weston
+@bin bin/weston-calibrator
+@bin bin/weston-clickdot
+@bin bin/weston-cliptest
+@bin bin/weston-color
+@bin bin/weston-constraints
+@bin bin/weston-content_protection
+@bin bin/weston-debug
+@bin bin/weston-dnd
+@bin bin/weston-editor
+@bin bin/weston-eventdemo
+@bin bin/weston-flower
+@bin bin/weston-fullscreen
+@bin bin/weston-image
+@bin bin/weston-multi-resource
+@bin bin/weston-presentation-shm
+@bin bin/weston-resizor
+@bin bin/weston-scaler
+@bin bin/weston-screenshooter
+@bin bin/weston-simple-damage
+@bin bin/weston-simple-dmabuf-egl
+@bin bin/weston-simple-dmabuf-feedback
+@bin bin/weston-simple-egl
+@bin bin/weston-simple-shm
+@bin bin/weston-simple-touch
+@bin bin/weston-smoke
+@bin bin/weston-stacking
+@bin bin/weston-subsurfaces
+@bin bin/weston-tablet
+@bin bin/weston-terminal
+@bin bin/weston-touch-calibrator
+@bin bin/weston-transformed
+include/libweston-${V_MAJOR}/
+include/libweston-${V_MAJOR}/libweston/
+include/libweston-${V_MAJOR}/libweston/backend-headless.h
+include/libweston-${V_MAJOR}/libweston/backend-wayland.h
+include/libweston-${V_MAJOR}/libweston/backend-x11.h
+include/libweston-${V_MAJOR}/libweston/colorimetry.h
+include/libweston-${V_MAJOR}/libweston/config-parser.h
+include/libweston-${V_MAJOR}/libweston/desktop.h
+include/libweston-${V_MAJOR}/libweston/libweston.h
+include/libweston-${V_MAJOR}/libweston/linalg-3.h
+include/libweston-${V_MAJOR}/libweston/linalg-4.h
+include/libweston-${V_MAJOR}/libweston/linalg-types.h
+include/libweston-${V_MAJOR}/libweston/linalg.h
+include/libweston-${V_MAJOR}/libweston/matrix.h
+include/libweston-${V_MAJOR}/libweston/pipewire-plugin.h
+include/libweston-${V_MAJOR}/libweston/plugin-registry.h
+include/libweston-${V_MAJOR}/libweston/remoting-plugin.h
+include/libweston-${V_MAJOR}/libweston/shell-utils.h
+include/libweston-${V_MAJOR}/libweston/version.h
+include/libweston-${V_MAJOR}/libweston/weston-log.h
+include/libweston-${V_MAJOR}/libweston/windowed-output-api.h
+include/libweston-${V_MAJOR}/libweston/xwayland-api.h
+include/libweston-${V_MAJOR}/libweston/zalloc.h
+include/weston/
+include/weston/ivi-layout-export.h
+include/weston/weston.h
+lib/libweston-${V_MAJOR}/
+@lib lib/libweston-${V_MAJOR}.so.${LIBweston-${V_MAJOR}_VERSION}
+@so lib/libweston-${V_MAJOR}/gl-renderer.so
+@so lib/libweston-${V_MAJOR}/headless-backend.so
+@so lib/libweston-${V_MAJOR}/wayland-backend.so
+@so lib/libweston-${V_MAJOR}/x11-backend.so
+@so lib/libweston-${V_MAJOR}/xwayland.so
+lib/pkgconfig/libweston-${V_MAJOR}.pc
+lib/pkgconfig/weston.pc
+lib/weston/
+@so lib/weston/desktop-shell.so
+@so lib/weston/hmi-controller.so
+@so lib/weston/ivi-shell.so
+@so lib/weston/kiosk-shell.so
+@lib lib/weston/libexec_weston.so.${LIBexec_weston_VERSION}
+@bin libexec/weston-desktop-shell
+@bin libexec/weston-ivi-shell-user-interface
+@bin libexec/weston-keyboard
+@bin libexec/weston-simple-im
+@man man/man1/weston-debug.1
+@man man/man1/weston.1
+@man man/man5/weston.ini.5
+@man man/man7/weston-bindings.7
+share/libweston-${V_MAJOR}/
+share/libweston-${V_MAJOR}/protocols/
+share/libweston-${V_MAJOR}/protocols/weston-content-protection.xml
+share/libweston-${V_MAJOR}/protocols/weston-debug.xml
+share/libweston-${V_MAJOR}/protocols/weston-direct-display.xml
+share/libweston-${V_MAJOR}/protocols/weston-output-capture.xml
+share/pkgconfig/libweston-${V_MAJOR}-protocols.pc
+share/wayland-sessions/
+share/wayland-sessions/weston.desktop
+share/weston/
+share/weston/background.png
+share/weston/border.png
+share/weston/fullscreen.png
+share/weston/home.png
+share/weston/icon_editor.png
+share/weston/icon_flower.png
+share/weston/icon_ivi_clickdot.png
+share/weston/icon_ivi_flower.png
+share/weston/icon_ivi_simple-egl-vertical.png
+share/weston/icon_ivi_simple-egl.png
+share/weston/icon_ivi_simple-shm.png
+share/weston/icon_ivi_smoke.png
+share/weston/icon_terminal.png
+share/weston/icon_window.png
+share/weston/panel.png
+share/weston/pattern.png
+share/weston/random.png
+share/weston/sidebyside.png
+share/weston/sign_close.png
+share/weston/sign_maximize.png
+share/weston/sign_minimize.png
+share/weston/terminal.png
+share/weston/tiling.png
+share/weston/wayland.png
+share/weston/wayland.svg

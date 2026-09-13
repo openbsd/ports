@@ -1,0 +1,16 @@
+- PTY functions in <util.h>, not <pty.h>
+- Use <sys/ioctl.h> for struct winsize and TIOCSWINSZ.
+
+Index: clients/terminal.c
+--- clients/terminal.c.orig
++++ clients/terminal.c
+@@ -33,7 +33,8 @@
+ #include <unistd.h>
+ #include <math.h>
+ #include <time.h>
+-#include <pty.h>
++#include <util.h>
++#include <sys/ioctl.h>
+ #include <ctype.h>
+ #include <cairo.h>
+ #include <sys/epoll.h>

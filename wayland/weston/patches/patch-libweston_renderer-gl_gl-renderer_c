@@ -1,0 +1,16 @@
+No strchrnul() on OpenBSD
+
+Index: libweston/renderer-gl/gl-renderer.c
+--- libweston/renderer-gl/gl-renderer.c.orig
++++ libweston/renderer-gl/gl-renderer.c
+@@ -4684,7 +4684,9 @@ gl_renderer_log_extensions(struct gl_renderer *gr,
+ 	l = weston_log_scope_printf(gr->extensions_scope, "%s:", name);
+ 	p = extensions;
+ 	while (*p) {
+-		end = strchrnul(p, ' ');
++		end = strchr(p, ' ');
++		if (!end)
++			end = p + strlen(p);
+ 		len = end - p;
+ 		if (l + len > 78) {
+ 			l = weston_log_scope_printf(gr->extensions_scope,

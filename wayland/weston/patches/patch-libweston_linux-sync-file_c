@@ -1,0 +1,64 @@
+- Linux sync-file ioctls are only for Linux
+- reject explicit-sync file descriptors on !Linux, but keep the symbols
+  used by libweston and gl-renderer.
+
+Index: libweston/linux-sync-file.c
+--- libweston/linux-sync-file.c.orig
++++ libweston/linux-sync-file.c
+@@ -32,11 +32,13 @@
+ #include <sys/ioctl.h>
+ #include <wayland-server-core.h>
+ 
++#ifdef __linux__
+ #ifdef HAVE_LINUX_SYNC_FILE_H
+ #include <linux/sync_file.h>
+ #else
+ #include "linux-sync-file-uapi.h"
+ #endif
++#endif
+ 
+ #include "linux-sync-file.h"
+ #include "shared/timespec-util.h"
+@@ -47,6 +49,7 @@
+  * \return true if fd is a valid sync file, false otherwise
+  */
+ bool
++#ifdef __linux__
+ linux_sync_file_is_valid(int fd)
+ {
+ 	struct sync_file_info file_info = { { 0 } };
+@@ -56,6 +59,13 @@ linux_sync_file_is_valid(int fd)
+ 
+ 	return file_info.num_fences > 0;
+ }
++#else
++linux_sync_file_is_valid(int fd)
++{
++	(void)fd;
++	return false;
++}
++#endif
+ 
+ /* Read the timestamp stored in a sync file
+  *
+@@ -64,6 +74,7 @@ linux_sync_file_is_valid(int fd)
+  * \return 0 if a timestamp was read, -1 on error
+  */
+ WL_EXPORT int
++#ifdef __linux__
+ weston_linux_sync_file_read_timestamp(int fd, struct timespec *ts)
+ {
+ 	struct sync_file_info file_info = { { 0 } };
+@@ -81,3 +92,12 @@ weston_linux_sync_file_read_timestamp(int fd, struct t
+ 
+ 	return 0;
+ }
++#else
++weston_linux_sync_file_read_timestamp(int fd, struct timespec *ts)
++{
++	(void)fd;
++	assert(ts != NULL);
++	errno = ENOTSUP;
++	return -1;
++}
++#endif

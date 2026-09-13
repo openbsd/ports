@@ -1,0 +1,5 @@
+Weston is the reference implementation of a Wayland compositor. It is a
+lean, fast compositor with a modular architecture supporting multiple
+backends (X11, Wayland, headless) and a plugin-based shell interface.
+It includes a set of demo and test clients demonstrating the Wayland
+protocol, as well as XWayland support for running X11 applications.

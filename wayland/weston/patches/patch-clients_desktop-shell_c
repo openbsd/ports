@@ -1,0 +1,23 @@
+use __progname on BSD.
+
+Index: clients/desktop-shell.c
+--- clients/desktop-shell.c.orig
++++ clients/desktop-shell.c
+@@ -40,6 +40,8 @@
+ #include <time.h>
+ #include <assert.h>
+ 
++extern char *__progname;
++
+ #include <wayland-client.h>
+ 
+ #include <libweston/config-parser.h>
+@@ -1253,7 +1255,7 @@ background_create(struct desktop *desktop, struct outp
+ 	weston_config_section_get_string(s, "background-type",
+ 					 &type, "tile");
+ 	if (type == NULL) {
+-		fprintf(stderr, "%s: out of memory\n", program_invocation_short_name);
++		fprintf(stderr, "%s: out of memory\n", __progname);
+ 		exit(EXIT_FAILURE);
+ 	}
+ 

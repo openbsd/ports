@@ -1,0 +1,31 @@
+- use <limits.h> instead of <linux/limits.h>
+- OpenBSD does not have CLOCK_MONOTONIC_RAW, etc.
+
+Index: frontend/main.c
+--- frontend/main.c.orig
++++ frontend/main.c
+@@ -46,7 +46,7 @@
+ #include <linux/input.h>
+ #include <sys/time.h>
+ #include <libdisplay-info/info.h>
+-#include <linux/limits.h>
++#include <limits.h>
+ 
+ #include "weston.h"
+ #include <libweston/libweston.h>
+@@ -865,9 +865,15 @@ clock_name(clockid_t clk_id)
+ 	static const char *names[] = {
+ 		[CLOCK_REALTIME] =		"CLOCK_REALTIME",
+ 		[CLOCK_MONOTONIC] =		"CLOCK_MONOTONIC",
++#ifdef CLOCK_MONOTONIC_RAW
+ 		[CLOCK_MONOTONIC_RAW] =		"CLOCK_MONOTONIC_RAW",
++#endif
++#ifdef CLOCK_REALTIME_COARSE
+ 		[CLOCK_REALTIME_COARSE] =	"CLOCK_REALTIME_COARSE",
++#endif
++#ifdef CLOCK_MONOTONIC_COARSE
+ 		[CLOCK_MONOTONIC_COARSE] =	"CLOCK_MONOTONIC_COARSE",
++#endif
+ #ifdef CLOCK_BOOTTIME
+ 		[CLOCK_BOOTTIME] =		"CLOCK_BOOTTIME",
+ #endif

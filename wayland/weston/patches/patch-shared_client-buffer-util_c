@@ -1,0 +1,50 @@
+guard Linux headers and stub out the functionality
+
+Index: shared/client-buffer-util.c
+--- shared/client-buffer-util.c.orig
++++ shared/client-buffer-util.c
+@@ -28,8 +28,10 @@
+ #include "client-buffer-util.h"
+ 
+ #include <fcntl.h>
++#if defined(__linux__)
+ #include <linux/dma-buf.h>
+ #include <linux/udmabuf.h>
++#endif
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
+ #include <wayland-client.h>
+@@ -305,6 +307,7 @@ static const struct zwp_linux_buffer_params_v1_listene
+ 	create_failed
+ };
+ 
++#if defined(__linux__)
+ struct client_buffer *
+ client_buffer_util_create_dmabuf_buffer(struct wl_display *display,
+ 					struct zwp_linux_dmabuf_v1 *dmabuf,
+@@ -451,3 +454,25 @@ client_buffer_util_maybe_sync_dmabuf_end(struct client
+ 		ret = ioctl(buf->dmabuf_fd, DMA_BUF_IOCTL_SYNC, &sync);
+ 	} while (ret && (errno == EINTR || errno == EAGAIN));
+ }
++#else
++struct client_buffer *
++client_buffer_util_create_dmabuf_buffer(struct wl_display *display,
++                                        struct zwp_linux_dmabuf_v1 *dmabuf,
++                                        const struct pixel_format_info *fmt,
++                                        int width,
++                                        int height)
++{
++        fprintf(stderr, "udmabuf not supported on this platform\n");
++        return NULL;
++}
++
++void
++client_buffer_util_maybe_sync_dmabuf_start(struct client_buffer *buf)
++{
++}
++
++void
++client_buffer_util_maybe_sync_dmabuf_end(struct client_buffer *buf)
++{
++}
++#endif

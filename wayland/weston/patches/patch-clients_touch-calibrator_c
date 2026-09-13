@@ -1,0 +1,32 @@
+use __progname on BSD.
+
+Index: clients/touch-calibrator.c
+--- clients/touch-calibrator.c.orig
++++ clients/touch-calibrator.c
+@@ -36,6 +36,8 @@
+ #include <getopt.h>
+ #include <errno.h>
+ 
++extern char *__progname;
++
+ #include <wayland-client.h>
+ 
+ #include "clients/window.h"
+@@ -871,7 +873,7 @@ pr_err(const char *fmt, ...)
+ 	va_list argp;
+ 
+ 	va_start(argp, fmt);
+-	fprintf(stderr, "%s error: ", program_invocation_short_name);
++	fprintf(stderr, "%s error: ", __progname);
+ 	vfprintf(stderr, fmt, argp);
+ 	va_end(argp);
+ }
+@@ -883,7 +885,7 @@ help(void)
+ 		"a Wayland compositor by\n"
+ 		"having the user touch points on the screen.\n\n");
+ 	fprintf(stderr, "Usage: %s [options...] name\n\n",
+-		program_invocation_short_name);
++		__progname);
+ 	fprintf(stderr,
+ 		"Where 'name' can be a touch device sys path or a head name.\n"
+ 		"If 'name' is not given, all devices available for "

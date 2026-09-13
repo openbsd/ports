@@ -1,0 +1,54 @@
+No fopencookie() on OpenBSD. Use fwopen() instead.
+
+Index: libweston/weston-log.c
+--- libweston/weston-log.c.orig
++++ libweston/weston-log.c
+@@ -578,6 +578,7 @@ weston_log_scope_do_write(struct weston_log_scope *sco
+ 		weston_log_subscription_write(sub, data, len);
+ }
+ 
++#if defined(__linux__)
+ static ssize_t
+ input_stream_write(void *cookie, const char *buf, size_t size)
+ {
+@@ -586,7 +587,17 @@ input_stream_write(void *cookie, const char *buf, size
+ 	weston_log_scope_do_write(scope, buf, size);
+ 	return size;
+ }
++#else
++static int
++input_stream_write(void *cookie, const char *buf, int size)
++{
++	struct weston_log_scope *scope = cookie;
+ 
++	weston_log_scope_do_write(scope, buf, size);
++	return size;
++}
++#endif
++
+ static int
+ input_stream_close(void *cookie)
+ {
+@@ -653,10 +664,12 @@ weston_log_ctx_add_log_scope(struct weston_log_context
+ {
+ 	struct weston_log_scope *scope;
+ 	struct weston_log_subscription *pending_sub = NULL;
++#if defined(__linux__)
+ 	const cookie_io_functions_t input_stream_io_funcs = {
+ 		.write = input_stream_write,
+ 		.close = input_stream_close,
+ 	};
++#endif
+ 
+ 	if (!name || !description) {
+ 		fprintf(stderr, "Error: cannot add a debug scope without name or description.\n");
+@@ -689,7 +702,8 @@ weston_log_ctx_add_log_scope(struct weston_log_context
+ 	scope->user_data = user_data;
+ 	wl_list_init(&scope->subscription_list);
+ 
+-	scope->input_stream = fopencookie(scope, "w", input_stream_io_funcs);
++	//scope->input_stream = fopencookie(scope, "w", input_stream_io_funcs);
++	scope->input_stream = fwopen(scope, input_stream_write);
+ 
+ 	if (!scope->name || !scope->desc || !scope->input_stream) {
+ 		fprintf(stderr, "Error adding debug scope '%s': out of memory or cookie.\n",

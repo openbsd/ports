@@ -1,0 +1,13 @@
+- needs <sys/stat.h> on OpenBSD
+
+Index: libweston/backend-x11/x11.c
+--- libweston/backend-x11/x11.c.orig
++++ libweston/backend-x11/x11.c
+@@ -37,6 +37,7 @@
+ #include <errno.h>
+ #include <sys/time.h>
+ #include <sys/shm.h>
++#include <sys/stat.h>
+ #include <linux/input.h>
+ 
+ #include <xcb/xcb.h>

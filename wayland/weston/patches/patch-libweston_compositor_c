@@ -1,0 +1,15 @@
+CLOCK_MONOTONIC_RAW and CLOCK_MONOTONIC_COARSE are Linux-only; remove them
+from the clock preference list.
+
+Index: libweston/compositor.c
+--- libweston/compositor.c.orig
++++ libweston/compositor.c
+@@ -10651,8 +10651,6 @@ weston_compositor_set_presentation_clock(struct weston
+ {
+ 	/* In order of preference */
+ 	static const clockid_t clocks[] = {
+-		CLOCK_MONOTONIC_RAW,	/* no jumps, no crawling */
+-		CLOCK_MONOTONIC_COARSE,	/* no jumps, may crawl, fast & coarse */
+ 		CLOCK_MONOTONIC,	/* no jumps, may crawl */
+ 	};
+ 	struct timespec ts;

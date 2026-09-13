@@ -1,0 +1,16 @@
+No CLOCK_MONOTONIC_RAW on OpenBSD.
+
+Index: libweston/backend.h
+--- libweston/backend.h.orig
++++ libweston/backend.h
+@@ -33,9 +33,7 @@
+ #define LIBWESTON_BACKEND_INTERNAL_H
+ 
+ #define WESTON_PRESENTATION_CLOCKS_SOFTWARE \
+-	((1 << CLOCK_MONOTONIC) | \
+-	 (1 << CLOCK_MONOTONIC_RAW) | \
+-	 (1 << CLOCK_MONOTONIC_COARSE))
++	(1 << CLOCK_MONOTONIC)
+ 
+ struct weston_hdr_metadata_type1;
+ 

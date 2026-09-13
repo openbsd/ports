@@ -1,0 +1,13 @@
+No strchrnul() on OpenBSD, but weston supplies a compat implementation.
+
+Index: shared/config-parser.c
+--- shared/config-parser.c.orig
++++ shared/config-parser.c
+@@ -44,6 +44,7 @@
+ #include <libweston/libweston.h>
+ #include "helpers.h"
+ #include "string-helpers.h"
++#include "os-compatibility.h"
+ 
+ /**
+  * \defgroup weston-config Weston configuration

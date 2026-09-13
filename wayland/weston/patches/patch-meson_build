@@ -1,0 +1,24 @@
+- OpenBSD fixups for libdl
+- Add epoll-shim for OpenBSD
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -167,7 +167,8 @@ endif
+ 
+ dep_libevdev = dependency('libevdev')
+ dep_libm = cc.find_library('m')
+-dep_libdl = cc.find_library('dl')
++dep_libdl = cc.find_library('dl', required: false)
++dep_epoll_shim = dependency('epoll-shim', required: false)
+ dep_libdrm = dependency('libdrm', version: '>= 2.4.108')
+ dep_libdrm_headers = dep_libdrm.partial_dependency(compile_args: true)
+ dep_threads = dependency('threads')
+@@ -195,6 +196,7 @@ deps_for_libweston_users = [
+ 	dep_wayland_server,
+ 	dep_pixman,
+ 	dep_xkbcommon,
++	dep_epoll_shim,
+ ]
+ 
+ if get_option('renderer-gl')
