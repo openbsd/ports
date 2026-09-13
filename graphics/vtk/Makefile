@@ -7,6 +7,7 @@ COMMENT =		visualization toolkit
 V =			9.7.0
 DISTNAME =		VTK-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 .for LIB in vtkChartsCore vtkCommonCache vtkCommonColor \
 	vtkCommonComputationalGeometry vtkCommonCore vtkCommonDataModel \
@@ -97,6 +98,7 @@ LIB_DEPENDS =		archivers/lz4 \
 # ioss: part of seacas suite and difficult to package
 # token: a vtk utility
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
+			-DHDF5_IS_PARALLEL=OFF \
 			-DVTK_FORBID_DOWNLOADS=ON \
 			-DVTK_VERSIONED_INSTALL=OFF \
 			-DVTK_BUILD_DOCUMENTATION=OFF \
