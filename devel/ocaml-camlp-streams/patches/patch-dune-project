@@ -1,0 +1,16 @@
+if /usr/ports is a git repo checkout, dune will look into
+/usr/ports/.git for a version string.
+
+fix this by adding a version string to dune-project.
+
+Index: dune-project
+--- dune-project.orig
++++ dune-project
+@@ -1,6 +1,7 @@
+ (lang dune 2.7)
+ (generate_opam_files true)
+ (formatting disabled)
++(version 5.0.1)
+ 
+ (name camlp-streams)
+ (source (github ocaml/camlp-streams))
