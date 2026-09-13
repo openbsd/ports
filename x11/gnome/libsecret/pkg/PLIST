@@ -382,6 +382,12 @@ share/locale/ka/LC_MESSAGES/libsecret.mo
 share/locale/kab/LC_MESSAGES/libsecret.mo
 share/locale/kk/LC_MESSAGES/libsecret.mo
 share/locale/ko/LC_MESSAGES/libsecret.mo
+share/locale/kw/
+share/locale/kw/LC_MESSAGES/
+share/locale/kw/LC_MESSAGES/libsecret.mo
+share/locale/lo/
+share/locale/lo/LC_MESSAGES/
+share/locale/lo/LC_MESSAGES/libsecret.mo
 share/locale/lt/LC_MESSAGES/libsecret.mo
 share/locale/lv/LC_MESSAGES/libsecret.mo
 share/locale/ml/LC_MESSAGES/libsecret.mo
@@ -403,8 +409,13 @@ share/locale/sr@latin/LC_MESSAGES/libsecret.mo
 share/locale/sv/LC_MESSAGES/libsecret.mo
 share/locale/ta/LC_MESSAGES/libsecret.mo
 share/locale/tg/LC_MESSAGES/libsecret.mo
+share/locale/th/LC_MESSAGES/libsecret.mo
 share/locale/tr/LC_MESSAGES/libsecret.mo
+share/locale/ug/LC_MESSAGES/libsecret.mo
 share/locale/uk/LC_MESSAGES/libsecret.mo
+share/locale/uz/
+share/locale/uz/LC_MESSAGES/
+share/locale/uz/LC_MESSAGES/libsecret.mo
 share/locale/vi/LC_MESSAGES/libsecret.mo
 share/locale/zh_CN/LC_MESSAGES/libsecret.mo
 share/locale/zh_HK/LC_MESSAGES/libsecret.mo
