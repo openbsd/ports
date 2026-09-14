@@ -1,12 +1,12 @@
 COMMENT =		count lines of codes in many languages
 
 V =			2.16
+REVISION =		0
 DISTNAME =		loccount-${V}
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://gitlab.com/esr/loccount
 
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 # statically linked
