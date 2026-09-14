@@ -1,0 +1,2 @@
+yc-dyndns is a Dynamic DNS client for Yandex Cloud that updates A and AAAA
+records with global IPv4 and IPv6 addresses found on local interfaces.
