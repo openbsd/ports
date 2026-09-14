@@ -1,0 +1,52 @@
+- fix include paths to find ports
+- fix include order to find bundled protobuf before port
+- find versioned abseil libraries globbing
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -349,27 +349,27 @@ if BUILD_WITH_SYSTEM_ZLIB:
+ 
+ if BUILD_WITH_SYSTEM_CARES:
+     CORE_C_FILES = filter(lambda x: "third_party/cares" not in x, CORE_C_FILES)
+-    CARES_INCLUDE = (os.path.join("/usr", "include"),)
++    CARES_INCLUDE = (os.path.join("/usr", "local", "include"),)
+ 
+ if BUILD_WITH_SYSTEM_RE2:
+     CORE_C_FILES = filter(lambda x: "third_party/re2" not in x, CORE_C_FILES)
+-    RE2_INCLUDE = (os.path.join("/usr", "include", "re2"),)
++    RE2_INCLUDE = (os.path.join("/usr", "local", "include", "re2"),)
+ 
+ if BUILD_WITH_SYSTEM_ABSL:
+     CORE_C_FILES = filter(
+         lambda x: "third_party/abseil-cpp" not in x, CORE_C_FILES
+     )
+-    ABSL_INCLUDE = (os.path.join("/usr", "include"),)
++    ABSL_INCLUDE = (os.path.join("/usr", "local", "include"),)
+ 
+ EXTENSION_INCLUDE_DIRECTORIES = (
+     (PYTHON_STEM,)
+     + CORE_INCLUDE
++    + UPB_INCLUDE
+     + ABSL_INCLUDE
+     + ADDRESS_SORTING_INCLUDE
+     + CARES_INCLUDE
+     + RE2_INCLUDE
+     + SSL_INCLUDE
+-    + UPB_INCLUDE
+     + UPB_GRPC_GENERATED_INCLUDE
+     + UPBDEFS_GRPC_GENERATED_INCLUDE
+     + UTF8_RANGE_INCLUDE
+@@ -402,8 +402,10 @@ if BUILD_WITH_SYSTEM_RE2:
+     EXTENSION_LIBRARIES += ("re2",)
+ if BUILD_WITH_SYSTEM_ABSL:
+     EXTENSION_LIBRARIES += tuple(
+-        lib.stem[3:]
+-        for lib in sorted(pathlib.Path("/usr").glob("lib*/libabsl_*.so"))
++        sorted(set(
++        lib.stem[3:].split(".", maxsplit=1)[0]
++        for lib in sorted(pathlib.Path("/usr/local/lib").glob("libabsl_*.so.*"))
++        ))
+     )
+ 
+ DEFINE_MACROS = (("_WIN32_WINNT", 0x600),)

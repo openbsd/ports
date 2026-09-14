@@ -1,0 +1,13 @@
+Our ancient <arpa/nameser.h> lacks ns_*
+
+Index: src/core/lib/event_engine/ares_resolver.cc
+--- src/core/lib/event_engine/ares_resolver.cc.orig
++++ src/core/lib/event_engine/ares_resolver.cc
+@@ -38,6 +38,7 @@
+ 
+ #if ARES_VERSION >= 0x011200
+ // c-ares 1.18.0 or later starts to provide ares_nameser.h as a public header.
++#undef CARES_HAVE_ARPA_NAMESER_H
+ #include <ares_nameser.h>
+ #else
+ #include "src/core/lib/event_engine/nameser.h"  // IWYU pragma: keep
