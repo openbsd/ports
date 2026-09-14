@@ -1,0 +1,23 @@
+- shebang is done in do-install
+- neuter .pyc write attempts (-B) for early "[wc]path"
+- ignore env vars changing Python behaviour (-E)
+- specify site-package path for narrow unveil
+
+Index: yc-dyndns
+--- yc-dyndns.orig
++++ yc-dyndns
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/python3 -BE
++#!${MODPY_BIN} -BE
+ 
+ from psutil import OPENBSD
+ 
+@@ -141,7 +141,7 @@ if OPENBSD:
+         "/dev/urandom",
+         "/etc/hosts",
+         "/etc/resolv.conf",
+-        "/usr/local/lib",
++        "${MODPY_SITEPKG}/grpc",
+         "/usr/share/zoneinfo",
+     ):
+         unveil(rpath, "r")
