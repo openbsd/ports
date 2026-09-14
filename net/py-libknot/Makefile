@@ -1,6 +1,6 @@
 COMMENT =	Python bindings for libknot
 
-MODPY_DISTV =	3.4.5
+MODPY_DISTV =	3.4.11
 
 DISTNAME =	libknot-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
