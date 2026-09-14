@@ -1,0 +1,51 @@
+Missing ibt landing pads
+https://github.com/rust-lang/stacker/pull/81
+
+Index: modcargo-crates/psm-0.1.32/src/arch/x86_64.s
+--- modcargo-crates/psm-0.1.32/src/arch/x86_64.s.orig
++++ modcargo-crates/psm-0.1.32/src/arch/x86_64.s
+@@ -2,6 +2,12 @@
+ #include "gnu_stack_note.s"
+ /* NOTE: sysv64 calling convention is used on all x86_64 targets, including Windows! */
+ 
++#ifdef __CET__
++#include <cet.h>
++#else
++#define _CET_ENDBR
++#endif
++
+ .text
+ 
+ #if defined(CFG_TARGET_OS_darwin) || defined(CFG_TARGET_OS_macos) || defined(CFG_TARGET_OS_ios) || defined(CFG_TARGET_OS_tvos)
+@@ -27,6 +33,7 @@ TYPE(rust_psm_stack_direction)
+ FUNCTION(rust_psm_stack_direction):
+ /* extern "sysv64" fn() -> u8 (%al) */
+ .cfi_startproc
++    _CET_ENDBR
+     movb $STACK_DIRECTION_DESCENDING, %al # always descending on x86_64
+     retq
+ END_FUNCTION(rust_psm_stack_direction)
+@@ -39,6 +46,7 @@ TYPE(rust_psm_stack_pointer)
+ FUNCTION(rust_psm_stack_pointer):
+ /* extern "sysv64" fn() -> *mut u8 (%rax) */
+ .cfi_startproc
++    _CET_ENDBR
+     leaq 8(%rsp), %rax
+     retq
+ .rust_psm_stack_pointer_end:
+@@ -58,6 +66,7 @@ FUNCTION(rust_psm_replace_stack):
+     8-byte offset necessary to account for the "return" pointer that would otherwise be placed onto
+     stack with a regular call
+ */
++    _CET_ENDBR
+     leaq -8(%rdx), %rsp
+     jmpq *%rsi
+ .rust_psm_replace_stack_end:
+@@ -71,6 +80,7 @@ TYPE(rust_psm_on_stack)
+ FUNCTION(rust_psm_on_stack):
+ /* extern "sysv64" fn(%rdi: usize, %rsi: usize, %rdx: extern "sysv64" fn(usize, usize), %rcx: *mut u8) */
+ .cfi_startproc
++    _CET_ENDBR
+     pushq %rbp
+     .cfi_def_cfa %rsp, 16
+     .cfi_offset %rbp, -16

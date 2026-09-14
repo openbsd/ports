@@ -4,6 +4,7 @@ NOT_FOR_ARCHS =	sparc64
 COMMENT =	Python linter and code formatter
 
 MODPY_DISTV =	0.16.6
+REVISION =	0
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
