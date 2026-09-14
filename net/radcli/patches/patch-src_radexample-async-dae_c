@@ -1,0 +1,11 @@
+Index: src/radexample-async-dae.c
+--- src/radexample-async-dae.c.orig
++++ src/radexample-async-dae.c
+@@ -29,6 +29,7 @@
+  *  plus a Disconnect-Request (Dynamic Authorization) listener.
+  */
+ 
++#include	<sys/socket.h>
+ #include	<config.h>
+ #include	<stdio.h>
+ #include	<syslog.h>

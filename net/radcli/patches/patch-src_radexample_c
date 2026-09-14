@@ -1,0 +1,11 @@
+Index: src/radexample.c
+--- src/radexample.c.orig
++++ src/radexample.c
+@@ -10,6 +10,7 @@
+  * @brief Minimal example of using the radcli2.h library for authentication.
+  */
+ 
++#include	<sys/socket.h>
+ #include	<config.h>
+ #include	<stdio.h>
+ #include	<syslog.h>
