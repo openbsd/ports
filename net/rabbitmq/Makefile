@@ -1,6 +1,6 @@
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		4.3.5
+V =		4.3.6
 DISTNAME =	rabbitmq-server-${V}
 PKGNAME =	rabbitmq-${V}
 
@@ -64,10 +64,10 @@ EETCD_VSN	0.5.0 \
 ENOUGH_VSN	0.1.0 \
 GEN_BATCH_SERVER_VSN	0.10.0 \
 GETOPT_VSN	1.0.3 \
-GUN_VSN		2.5.0 \
-HORUS_VSN	0.4.0 \
+GUN_VSN		2.6.0 \
+HORUS_VSN	0.5.0 \
 JOSE_VSN	1.11.12 \
-KHEPRI_VSN	0.18.0 \
+KHEPRI_VSN	0.18.1 \
 KHEPRI_MNESIA_MIGRATION_VSN	0.8.1 \
 OBSERVER_CLI_VSN	1.8.2 \
 OSIRIS_VSN	1.13.1 \
