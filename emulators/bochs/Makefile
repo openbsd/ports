@@ -5,6 +5,7 @@ GH_ACCOUNT =	bochs-emu
 GH_PROJECT =	Bochs
 GH_TAGNAME =	REL_3_1_FINAL
 DISTNAME =	${GH_PROJECT:L}-${V}
+REVISION =	0
 
 CATEGORIES=	emulators
 
@@ -13,7 +14,7 @@ HOMEPAGE=	https://bochs.sourceforge.io/
 # LGPLv2.1+ and MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c curses m pthread slirp
+WANTLIB += ${COMPILER_LIBCXX} c curses m pthread pulse pulse-simple slirp
 
 COMPILER =	base-clang ports-gcc base-gcc
 
@@ -43,7 +44,7 @@ AUTOCONF_VERSION = 2.72
 FLAVORS=	debug no_x11
 FLAVOR?=
 
-LIB_DEPENDS +=	net/libslirp
+LIB_DEPENDS +=	net/libslirp audio/pulseaudio
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=--disable-debugger-gui \
