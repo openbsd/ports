@@ -601,6 +601,9 @@
      SUBDIR += py-ftpdlib
      SUBDIR += py-gevent-websocket
      SUBDIR += py-geventhttpclient
+     SUBDIR += py-googleapis-common-protos
+     SUBDIR += py-grpcio
+     SUBDIR += py-grpcio-tools
      SUBDIR += py-idna
      SUBDIR += py-ifaddr
      SUBDIR += py-impacket
@@ -657,6 +660,7 @@
      SUBDIR += py-websocket-client
      SUBDIR += py-websockets
      SUBDIR += py-wsproto
+     SUBDIR += py-yandexcloud
      SUBDIR += py-zeroconf
      SUBDIR += py-zmq
      SUBDIR += py2-dnspython
@@ -822,6 +826,7 @@
      SUBDIR += xmlrpc-epi
      SUBDIR += yafc
      SUBDIR += yaz
+     SUBDIR += yc-dyndns
      SUBDIR += yersinia
      SUBDIR += yggdrasil-go
      SUBDIR += ysmv7
