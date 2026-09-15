@@ -1,6 +1,7 @@
-COMMENT =	Recursively copy Perl datatypes
+COMMENT =	recursively copy Perl datatypes
 
-DISTNAME =	Clone-PP-1.08
+DISTNAME =	Clone-PP-1.09
+CPAN_AUTHOR =	NEILB
 
 CATEGORIES =	devel
 
