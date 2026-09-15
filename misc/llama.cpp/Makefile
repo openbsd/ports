@@ -2,11 +2,11 @@ COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggml-org
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		v0.4.0
-BUILD_NUMBER =		10809
+GH_TAGNAME =		v0.4.1
+BUILD_NUMBER =		10964
 
-SHARED_LIBS +=		llama 15.0
-SHARED_LIBS +=		llama-common 14.0
+SHARED_LIBS +=		llama 15.1
+SHARED_LIBS +=		llama-common 15.0
 SHARED_LIBS +=		mtmd 10.0
 
 CATEGORIES =		misc
@@ -25,7 +25,7 @@ EXTRACT_CASES =	*-ui-dist.tar.gz) \
 			mkdir -p ${WRKBUILD}/tools/ui/dist ; \
 			tar -C ${WRKBUILD}/tools/ui/dist \
 				-xzf ${FULLDISTDIR}/${DISTNAME}-ui-dist.tar.gz; \
-			echo b${BUILD_NUMBER} > ${WRKBUILD}/tools/ui/.ui-stamp;;
+			echo "ggml-org/llama-ui|b${BUILD_NUMBER}" > ${WRKBUILD}/tools/ui/.ui-stamp;;
 
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc
