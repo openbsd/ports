@@ -1049,6 +1049,7 @@
      SUBDIR += p5-Params-CallbackRequest
      SUBDIR += p5-Params-Classify
      SUBDIR += p5-Params-Coerce
+     SUBDIR += p5-Params-SomeUtil
      SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Params-ValidationCompiler
