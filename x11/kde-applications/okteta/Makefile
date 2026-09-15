@@ -1,5 +1,5 @@
 COMMENT =	Hex Editor
-VERSION =	0.26.27
+VERSION =	0.26.28
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 EPOCH =		0
@@ -8,7 +8,7 @@ MODKDE_KF5 =	Yes
 
 SHARED_LIBS +=  Kasten4Controllers        0.4 # 0.4
 SHARED_LIBS +=  Kasten4Core               1.0 # 0.4
-SHARED_LIBS +=  Kasten4Gui                1.2 # 0.4
+SHARED_LIBS +=  Kasten4Gui                1.3 # 0.4
 SHARED_LIBS +=  Kasten4Okteta2Controllers 1.1 # 0.4
 SHARED_LIBS +=  Kasten4Okteta2Core        1.0 # 0.4
 SHARED_LIBS +=  Kasten4Okteta2Gui         1.1 # 0.4
