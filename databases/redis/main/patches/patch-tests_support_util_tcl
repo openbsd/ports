@@ -1,0 +1,21 @@
+Index: tests/support/util.tcl
+--- tests/support/util.tcl.orig
++++ tests/support/util.tcl
+@@ -776,7 +776,7 @@ proc get_proc_job {pid} {
+     if {[get_system_name] eq {sunos}} {
+         return [exec ps -l -p $pid]
+     } else {
+-        return [exec ps j $pid]
++        return [exec ps j -p $pid]
+     }
+ }
+ 
+@@ -815,7 +815,7 @@ proc resume_process {pid} {
+         [string match "R*" [exec ps -o state= -p $pid]] ||
+         [string match "S*" [exec ps -o state= -p $pid]]
+     } else {
+-        puts [exec ps j $pid]
++        puts [exec ps j -p $pid]
+         fail "process was not resumed"
+     }
+ }

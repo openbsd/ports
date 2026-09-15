@@ -1,7 +1,7 @@
 Index: src/server.h
 --- src/server.h.orig
 +++ src/server.h
-@@ -133,7 +133,7 @@ struct hdr_histogram;
+@@ -134,7 +134,7 @@ struct hdr_histogram;
  #define RDB_EOF_MARK_SIZE 40
  #define CONFIG_REPL_BACKLOG_MIN_SIZE (1024*16)          /* 16k */
  #define CONFIG_BGSAVE_RETRY_DELAY 5 /* Wait a few secs before trying again. */

@@ -1,9 +1,10 @@
 ld.lld: error: undefined hidden symbol: __guard_local
+seen on at least i386, sparc64
 
 Index: tests/modules/Makefile
 --- tests/modules/Makefile.orig
 +++ tests/modules/Makefile
-@@ -99,7 +99,7 @@ all: $(TEST_MODULES)
+@@ -101,7 +101,7 @@ all: $(TEST_MODULES)
  	$(CC) -I../../src $(CFLAGS) $(SHOBJ_CFLAGS) -fPIC -c $< -o $@
  
  %.so: %.xo

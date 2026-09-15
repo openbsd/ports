@@ -17,8 +17,8 @@ Index: src/Makefile
  # Backwards compatibility for selecting an allocator
  ifeq ($(USE_TCMALLOC),yes)
  	MALLOC=tcmalloc
-@@ -154,11 +149,6 @@ FINAL_LDFLAGS=$(LDFLAGS) $(OPT) $(REDIS_LDFLAGS) $(DEB
- FINAL_LIBS=-lm
+@@ -171,11 +166,6 @@ ifeq ($(BUILD_COMPRESSION),yes)
+ endif
  DEBUG=-g -ggdb
  
 -# Linux ARM32 needs -latomic at linking time
@@ -29,7 +29,7 @@ Index: src/Makefile
  ifeq ($(uname_S),SunOS)
  	# SunOS
  	ifeq ($(findstring -m32,$(FINAL_CFLAGS)),)
-@@ -509,7 +499,7 @@ distclean: clean
+@@ -527,7 +517,7 @@ distclean: clean
  .PHONY: distclean
  
  test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME) $(REDIS_CLI_NAME) $(REDIS_BENCHMARK_NAME) module_tests
