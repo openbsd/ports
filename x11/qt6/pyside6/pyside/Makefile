@@ -69,8 +69,11 @@ CONFIGURE_ENV =		LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
 
 WRKSRC =		${WRKDIST}/sources/pyside6
 
+PORTHOME =		${WRKBUILD}
+
 TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		${BUILD_PKGPATH}
+TEST_ENV +=		PYTHONPATH=${WRKBUILD}/tests/pysidetest
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/cmake/Macros/PySideModules.cmake \
