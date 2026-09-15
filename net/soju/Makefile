@@ -1,9 +1,8 @@
 COMMENT =		user-friendly IRC bouncer
 
 MODGO_MODNAME =		codeberg.org/emersion/soju
-MODGO_VERSION =		v0.10.1
+MODGO_VERSION =		v0.11.0
 DISTNAME =		soju-${MODGO_VERSION}
-REVISION =		0
 
 CATEGORIES =		net
 HOMEPAGE =		https://soju.im/

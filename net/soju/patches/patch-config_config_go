@@ -1,7 +1,7 @@
 Index: config/config.go
 --- config/config.go.orig
 +++ config/config.go
-@@ -13,8 +13,8 @@ import (
+@@ -18,8 +18,8 @@ import (
  )
  
  var (
