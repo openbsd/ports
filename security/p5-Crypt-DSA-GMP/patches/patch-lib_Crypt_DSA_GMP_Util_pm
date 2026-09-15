@@ -1,0 +1,47 @@
+Unix::OpenBSD::Random - interface to arc4random(3) on OpenBSD
+
+Index: lib/Crypt/DSA/GMP/Util.pm
+--- lib/Crypt/DSA/GMP/Util.pm.orig
++++ lib/Crypt/DSA/GMP/Util.pm
+@@ -9,7 +9,7 @@ BEGIN {
+ 
+ use Carp qw( croak );
+ use Math::BigInt lib => "GMP";
+-use Crypt::Random::Seed;
++use Unix::OpenBSD::Random;
+ 
+ use base qw( Exporter );
+ our @EXPORT_OK = qw( bitsize bin2mp mp2bin mod_inverse mod_exp randombytes makerandom makerandomrange );
+@@ -57,20 +57,9 @@ sub mod_inverse {
+     $a->copy->bmodinv($n);
+ }
+ 
+-{
+-  my ($crs, $crs_best);
+-  sub _setup_rng {
+-    $crs_best = Crypt::Random::Seed->new();
+-    $crs = ($crs_best->is_blocking())
+-           ? Crypt::Random::Seed->new(NonBlocking=>1)
+-           : $crs_best;
+-  }
+-  sub randombytes {
+-    my($bytes, $keygen) = @_;
+-    _setup_rng() unless defined $crs;
+-    my $src = ($keygen) ? $crs_best : $crs;
+-    return $src->random_bytes($bytes);
+-  }
++sub randombytes {
++  my($bytes, $keygen) = @_;
++  return Unix::OpenBSD::Random::arc4random_buf($bytes);
+ }
+ 
+ # Generate uniform random number in range [2^(bits-1),2^bits-1]
+@@ -152,7 +141,7 @@ value.
+ =head2 randombytes($n)
+ 
+ Returns I<$n> random bytes from the entropy source.  The entropy
+-source is a L<Crypt::Random::Seed> source.
++source is a L<Unix::OpenBSD::Random> source.
+ 
+ An optional boolean second argument indicates whether the data
+ is being used for key generation, hence the best possible

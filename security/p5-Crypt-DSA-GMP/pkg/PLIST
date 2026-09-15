@@ -1,0 +1,17 @@
+${P5SITE}/Crypt/DSA/
+${P5SITE}/Crypt/DSA/GMP/
+${P5SITE}/Crypt/DSA/GMP.pm
+${P5SITE}/Crypt/DSA/GMP/Key/
+${P5SITE}/Crypt/DSA/GMP/Key.pm
+${P5SITE}/Crypt/DSA/GMP/Key/PEM.pm
+${P5SITE}/Crypt/DSA/GMP/Key/SSH2.pm
+${P5SITE}/Crypt/DSA/GMP/KeyChain.pm
+${P5SITE}/Crypt/DSA/GMP/Signature.pm
+${P5SITE}/Crypt/DSA/GMP/Util.pm
+@man man/man3p/Crypt::DSA::GMP.3p
+@man man/man3p/Crypt::DSA::GMP::Key.3p
+@man man/man3p/Crypt::DSA::GMP::Key::PEM.3p
+@man man/man3p/Crypt::DSA::GMP::Key::SSH2.3p
+@man man/man3p/Crypt::DSA::GMP::KeyChain.3p
+@man man/man3p/Crypt::DSA::GMP::Signature.3p
+@man man/man3p/Crypt::DSA::GMP::Util.3p
