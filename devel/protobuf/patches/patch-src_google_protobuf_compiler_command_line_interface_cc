@@ -1,15 +1,16 @@
 Index: src/google/protobuf/compiler/command_line_interface.cc
 --- src/google/protobuf/compiler/command_line_interface.cc.orig
 +++ src/google/protobuf/compiler/command_line_interface.cc
-@@ -235,6 +235,11 @@ bool GetProtocAbsolutePath(std::string* path) {
+@@ -235,6 +235,12 @@ bool GetProtocAbsolutePath(std::string* path) {
    if (sysctl(mib, 4, &buffer, &len, nullptr, 0) != 0) {
      len = 0;
    }
 +#elif defined(__OpenBSD__)
-+  std::string protocpath("${LOCALBASE}/bin/protoc");
 +  char buffer[PATH_MAX]{};
-+  protocpath.copy(buffer, sizeof buffer - 1);
-+  int len = protocpath.length();
++  size_t len = 0;
++  if (getexecpath(buffer, sizeof buffer) == 0) {
++    len = strlen(buffer);
++  }
  #else
    char buffer[PATH_MAX];
    int len = readlink("/proc/self/exe", buffer, PATH_MAX);

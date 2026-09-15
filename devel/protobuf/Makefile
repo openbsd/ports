@@ -2,7 +2,7 @@ COMMENT =		c++ protocol buffers
 
 CPPMAJOR =		7
 PROTOBUF_VERSION =	36.1
-REVISION =		0
+REVISION =		1
 
 # Keep PROTOBUF_VERSION in devel/py-protobuf and devel/protobuf-java
 # in sync with this port.
@@ -77,8 +77,5 @@ CONFIGURE_ARGS +=	-Dprotobuf_BUILD_SHARED_LIBS=ON
 # Tests have been broken for a long time.
 CONFIGURE_ARGS +=	-Dprotobuf_BUILD_TESTS=OFF
 NO_TEST =		Yes
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/google/protobuf/compiler/command_line_interface.cc
 
 .include <bsd.port.mk>
