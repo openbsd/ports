@@ -1,0 +1,3 @@
+Params::SomeUtil provides a basic set of importable functions that
+makes checking parameters a hell of a lot easier. This module is a fork
+of version 1.07 of Params::Util with some additional bug fixes.
