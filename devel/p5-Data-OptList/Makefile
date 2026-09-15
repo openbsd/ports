@@ -1,18 +1,18 @@
-COMMENT=	parse and validate simple name/value option pairs
+COMMENT =	parse and validate simple name/value option pairs
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME =	Data-OptList-0.114
-CATEGORIES=	devel
+DISTNAME =	Data-OptList-0.115
+CPAN_AUTHOR =	RJBS
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-RUN_DEPENDS=	devel/p5-Params-Util \
-		devel/p5-Sub-Install
-TEST_DEPENDS=devel/p5-Test-Perl-Critic
+# Perl
+PERMIT_PACKAGE =	Yes
 
-MAKE_ENV=	TEST_POD=Yes \
-		PERL_TEST_CRITIC=Yes
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-Params-SomeUtil \
+			devel/p5-Sub-Install>=0.921
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
