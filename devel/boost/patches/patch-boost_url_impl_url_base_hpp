@@ -1,0 +1,49 @@
+Fix for URL corruption bug on url.params().append() in Boost 1.91.0
+
+https://github.com/boostorg/url/issues/990
+https://github.com/boostorg/url/pull/990
+
+Index: boost/url/impl/url_base.hpp
+--- boost/url/impl/url_base.hpp.orig
++++ boost/url/impl/url_base.hpp
+@@ -3159,7 +3159,12 @@ edit_params(
+     BOOST_ASSERT(pos1 <= impl_.offset(id_frag));
+ 
+     // calc decoded size of old range,
+-    // minus one if '?' or '&' prefixed
++    // minus one for the leading '?' which is
++    // not counted in decoded_[id_query].
++    // dn0 may be -1 here when the old range is
++    // empty and the query was non-empty; the
++    // matching subtraction on dn below cancels
++    // that out when the delta is taken.
+     auto dn0 =
+         static_cast<std::ptrdiff_t>(
+             detail::decode_bytes_unsafe(
+@@ -3168,8 +3173,6 @@ edit_params(
+                     pos1 - pos0)));
+     if(impl_.len(id_query) > 0)
+         dn0 -= 1;
+-    if(dn0 < 0)
+-        dn0 = 0;
+ 
+ //------------------------------------------------
+ //
+@@ -3267,16 +3270,13 @@ edit_params(
+         }
+     }
+ 
+-    // calc decoded size of new range,
+-    // minus one if '?' or '&' prefixed
++    // calc decoded size of new range; see dn0.
+     auto dn =
+         static_cast<std::ptrdiff_t>(
+             detail::decode_bytes_unsafe(
+                 core::string_view(dest0, dest - dest0)));
+     if(impl_.len(id_query) > 0)
+         dn -= 1;
+-    if(dn < 0)
+-        dn = 0;
+ 
+     if(dn >= dn0)
+         impl_.decoded_[id_query] +=
