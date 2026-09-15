@@ -183,6 +183,7 @@
      SUBDIR += p5-Crypt-DES
      SUBDIR += p5-Crypt-DES-EDE3
      SUBDIR += p5-Crypt-DSA
+     SUBDIR += p5-Crypt-DSA-GMP
      SUBDIR += p5-Crypt-Ed25519
      SUBDIR += p5-Crypt-Eksblowfish
      SUBDIR += p5-Crypt-IDEA
