@@ -15,8 +15,8 @@ SHA256 (go_modules/github.com/dlclark/regexp2/@v/v1.12.0.zip) = 2sk9dZi5WmosizNP
 SHA256 (go_modules/github.com/dlclark/regexp2/v2/@v/v2.2.1.mod) = Nptvpg38VyVMwbruK+z/5ZTsG07E9j9Go8cU+x4usQc=
 SHA256 (go_modules/github.com/dlclark/regexp2/v2/@v/v2.2.1.zip) = sQXqus/BtuDdSLIiDumFqARzkmEKs13SeVakncRN2c0=
 SHA256 (go_modules/github.com/ebitengine/purego/@v/v0.10.0.mod) = SSDsxSOdeURtm2FULDdJxzidIXjToULlV+A3kFGGZRQ=
-SHA256 (go_modules/github.com/ebitengine/purego/@v/v0.10.1.mod) = SSDsxSOdeURtm2FULDdJxzidIXjToULlV+A3kFGGZRQ=
-SHA256 (go_modules/github.com/ebitengine/purego/@v/v0.10.1.zip) = NiL7lAy2yZmx6dExRfyseUAdOovyypr3HeSGUzEZoSA=
+SHA256 (go_modules/github.com/ebitengine/purego/@v/v0.10.2.mod) = SSDsxSOdeURtm2FULDdJxzidIXjToULlV+A3kFGGZRQ=
+SHA256 (go_modules/github.com/ebitengine/purego/@v/v0.10.2.zip) = 57O+Ff9V9DJE8JYqbP0O7EqYiWxE3OC1cOwFziKxpQQ=
 SHA256 (go_modules/github.com/emmansun/base64/@v/v0.10.0.mod) = 7Qg8Bh+3CQFhjyazliAI1kQEl3Aa5XiEGdgx0N9XcWo=
 SHA256 (go_modules/github.com/emmansun/base64/@v/v0.10.0.zip) = rfmIaZkMrs9x8vjYop2/5gUuwrOrhKKg8+Okgfm/wdQ=
 SHA256 (go_modules/github.com/go-ole/go-ole/@v/v1.2.6.mod) = 3n2lmFjWEhlW2gAt7XESQswU7PWX6TKoYlJGQY/Tu6o=
@@ -111,7 +111,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHd
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
 SHA256 (go_modules/howett.net/plist/@v/v1.0.1.mod) = yCzVtVedg9sbqQjwQYS1bAT7SpBSBC6DLOaPetxzkzU=
 SHA256 (go_modules/howett.net/plist/@v/v1.0.1.zip) = pz2ibXFdKNYIZBGJPRDZ7998Aj8ghRgYCursfadIWiE=
-SHA256 (kitty-v0.48.1.zip) = NZ24ZaZ0fM1UvzmpAY0O939+7oEnmiEgD6EQkWi7Eqg=
+SHA256 (kitty-v0.48.2.zip) = 84dJCshgoaOEhVXv2CsR5aXWnDgA72P4JuVXxiWSORs=
 SIZE (go_modules/github.com/!a!l!tree/bigfloat/@v/v0.2.0.mod) = 43
 SIZE (go_modules/github.com/!a!l!tree/bigfloat/@v/v0.2.0.zip) = 16636
 SIZE (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.mod) = 133
@@ -129,8 +129,8 @@ SIZE (go_modules/github.com/dlclark/regexp2/@v/v1.12.0.zip) = 704800
 SIZE (go_modules/github.com/dlclark/regexp2/v2/@v/v2.2.1.mod) = 46
 SIZE (go_modules/github.com/dlclark/regexp2/v2/@v/v2.2.1.zip) = 897401
 SIZE (go_modules/github.com/ebitengine/purego/@v/v0.10.0.mod) = 45
-SIZE (go_modules/github.com/ebitengine/purego/@v/v0.10.1.mod) = 45
-SIZE (go_modules/github.com/ebitengine/purego/@v/v0.10.1.zip) = 219128
+SIZE (go_modules/github.com/ebitengine/purego/@v/v0.10.2.mod) = 45
+SIZE (go_modules/github.com/ebitengine/purego/@v/v0.10.2.zip) = 219238
 SIZE (go_modules/github.com/emmansun/base64/@v/v0.10.0.mod) = 79
 SIZE (go_modules/github.com/emmansun/base64/@v/v0.10.0.zip) = 92489
 SIZE (go_modules/github.com/go-ole/go-ole/@v/v1.2.6.mod) = 102
@@ -225,4 +225,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/howett.net/plist/@v/v1.0.1.mod) = 218
 SIZE (go_modules/howett.net/plist/@v/v1.0.1.zip) = 72046
-SIZE (kitty-v0.48.1.zip) = 10025169
+SIZE (kitty-v0.48.2.zip) = 10334225
