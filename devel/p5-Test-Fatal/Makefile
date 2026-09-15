@@ -1,8 +1,10 @@
 COMMENT =	incredibly simple helpers for testing code with exceptions
 
-DISTNAME =	Test-Fatal-0.018
+DISTNAME =	Test-Fatal-0.019
 
 CATEGORIES =	devel
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
