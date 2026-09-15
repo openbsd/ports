@@ -1,6 +1,7 @@
 COMMENT =	Perl extension for formatting numbers
 
-DISTNAME =	Number-Format-1.76
+DISTNAME =	Number-Format-1.78
+CPAN_AUTHOR =	RJBS
 
 CATEGORIES =	textproc
 
