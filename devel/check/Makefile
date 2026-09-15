@@ -1,6 +1,7 @@
 COMMENT =	unit test framework for C programs
 
 V =		0.15.2
+REVISION =	0
 DISTNAME =	check-$V
 SHARED_LIBS +=  check                3.1      # unknown
 
