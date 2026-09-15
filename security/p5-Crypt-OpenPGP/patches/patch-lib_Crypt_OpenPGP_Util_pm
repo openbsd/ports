@@ -1,40 +1,59 @@
-We can provide better random bytes than these other modules,
-and fortunately someone gave us a way to get to arc4random_buf from perl.
+Unix::OpenBSD::Random - interface to arc4random(3) on OpenBSD
 
 Index: lib/Crypt/OpenPGP/Util.pm
 --- lib/Crypt/OpenPGP/Util.pm.orig
 +++ lib/Crypt/OpenPGP/Util.pm
-@@ -7,6 +7,8 @@ our $VERSION = '1.19'; # VERSION
+@@ -6,6 +6,7 @@ our $VERSION = '1.21'; # VERSION
+ 
  # For some reason, FastCalc causes problems. Restrict to one of these 3 backends
  use Math::BigInt only => 'Pari,GMP,Calc';
++use Unix::OpenBSD::Random;
  
-+use Unix::OpenBSD::Random qw( arc4random_buf );
-+
- use Exporter;
+ use Exporter qw( import );
  our @EXPORT_OK = qw( bitsize bin2bigint bin2mp bigint2bin mp2bin mod_exp mod_inverse
-                      dash_escape dash_unescape canonical_text );
-@@ -103,6 +105,8 @@ sub _ensure_bigint {
+@@ -102,35 +103,20 @@ sub _ensure_bigint {
  
  sub get_random_bytes {
  	my $length = shift;
-+	return arc4random_buf($length);
-+
- 	if (eval 'require Crypt::Random; 1;') {
- 		return Crypt::Random::makerandom_octet( Length => $length);
- 	}
-@@ -116,6 +120,15 @@ sub get_random_bytes {
+-	if (eval 'require Crypt::Random; 1;') {
+-		return Crypt::Random::makerandom_octet( Length => $length);
+-	}
+-	elsif (eval 'require Bytes::Random::Secure; 1;') {
+-		return Bytes::Random::Secure::random_bytes($length);
+-	}
+-	else {
+-		die "No random source available!";
+-	}
++	return Unix::OpenBSD::Random::arc4random_buf($length);
+ }
  
  sub get_random_bigint {
  	my $bits = shift;
+-	if (eval 'require Crypt::Random; 1;') {
+-		my $pari = Crypt::Random::makerandom( Size => $bits, Strength => 0 );
+-		return Math::BigInt->new($pari);
+-	}
+-	elsif (eval 'require Bytes::Random::Secure; 1;') {
+-		my $hex = Bytes::Random::Secure::random_bytes_hex(int(($bits + 7) / 8));
+-		my $val = Math::BigInt->new("0x$hex");
+-		# Get exactly the correct number of bits.
+-		$val->brsft(8 - ($bits & 7)) if ($bits & 7);
+-		# Make sure the top bit is set.
+-		$val->bior(Math::BigInt->bone->blsft($bits-1));
+-		return $val;
+-	}
+-	else {
+-		die "No random source available!";
+-	}
 +
-+	my $hex = unpack "H*", arc4random_buf( int(($bits + 7) / 8) );
++	my $hex = unpack "H*",
++	    Unix::OpenBSD::Random::arc4random_buf(int(($bits + 7) / 8));
 +	my $val = Math::BigInt->new("0x$hex");
 +	# Get exactly the correct number of bits.
 +	$val->brsft(8 - ($bits & 7)) if ($bits & 7);
 +	# Make sure the top bit is set.
 +	$val->bior(Math::BigInt->bone->blsft($bits-1));
 +	return $val;
-+
- 	if (eval 'require Crypt::Random; 1;') {
- 		my $pari = Crypt::Random::makerandom( Size => $bits, Strength => 0 );
- 		return Math::BigInt->new($pari);
+ }
+ 
+ 1;
