@@ -1,0 +1,14 @@
+Accept the relative fmt include added by
+patch-js_public_experimental_LoggingInterface_h and patch-mfbt_Casting_h
+
+Index: config/check_spidermonkey_style.py
+--- config/check_spidermonkey_style.py.orig
++++ config/check_spidermonkey_style.py
+@@ -115,6 +115,7 @@ included_inclnames_to_ignore = set(
+         "zydis/ZydisAPI.h",  # Zydis
+         "xsum/xsum.h",  # xsum
+         "fmt/format.h",  # {fmt} main header
++        "../../fmt/format.h",  # {fmt} main header, relative to js/public/experimental/
+     ]
+ )
+ 

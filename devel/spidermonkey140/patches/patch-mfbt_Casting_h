@@ -1,0 +1,21 @@
+Prevent the vendored fmt headers from being shadowed by devel/fmt.
+
+Consumers pass -isystem ${LOCALBASE}/include/mozjs-140, which is
+searched after every -I directory, so a bare "fmt/format.h" resolves
+to ${LOCALBASE}/include/fmt/format.h whenever devel/fmt happens to be
+installed. Use a path relative to this header so the copy shipped with
+mozjs is always picked; the quoted include still falls back to the
+regular search path within the mozjs build tree.
+
+Index: mfbt/Casting.h
+--- mfbt/Casting.h.orig
++++ mfbt/Casting.h
+@@ -12,7 +12,7 @@
+ #include "mozilla/Assertions.h"
+ #include "mozilla/Sprintf.h"
+ 
+-#include "fmt/format.h"
++#include "../fmt/format.h"
+ 
+ #include <cinttypes>
+ #include <cstring>

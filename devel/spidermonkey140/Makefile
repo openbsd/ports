@@ -18,6 +18,8 @@ PKGNAME-main =		spidermonkey${MOZILLA_VERSION}-${V}
 PKGNAME-js =		js${MOZILLA_VERSION}-${V}
 EPOCH =			1
 
+REVISION =		0
+
 MULTI_PACKAGES =	-main -js
 SHARED_LIBS =		mozjs-140 0.0
 
