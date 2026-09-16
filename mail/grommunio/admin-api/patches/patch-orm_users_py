@@ -1,16 +1,20 @@
 Index: orm/users.py
 --- orm/users.py.orig
 +++ orm/users.py
-@@ -16,7 +16,7 @@ from sqlalchemy.exc import IntegrityError
+@@ -16,11 +16,7 @@ from sqlalchemy.exc import IntegrityError
  from sqlalchemy.ext.hybrid import hybrid_property
  from sqlalchemy.orm import column_property, relationship, selectinload, validates
  
--import crypt
+-try:
+-    # python 3.13
+-    import legacycrypt as crypt
+-except ImportError:
+-    import crypt as crypt
 +import bcrypt
+ 
  import json
  import sys
- 
-@@ -354,15 +354,12 @@ class Users(DataModel, DB.Base, NotifyTable):
+@@ -360,15 +356,12 @@ class Users(DataModel, DB.Base, NotifyTable):
  
      @password.setter
      def password(self, pw):
