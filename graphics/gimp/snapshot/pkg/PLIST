@@ -1899,7 +1899,6 @@ share/gimp/${GIMP_API_V}/icons/Legacy/12x12/apps/gimp-menu-right.png
 share/gimp/${GIMP_API_V}/icons/Legacy/12x12/apps/gimp-quick-mask-off.png
 share/gimp/${GIMP_API_V}/icons/Legacy/12x12/apps/gimp-quick-mask-on.png
 share/gimp/${GIMP_API_V}/icons/Legacy/12x12/apps/gimp-swap-colors.png
-share/gimp/${GIMP_API_V}/icons/Legacy/12x12/apps/gimp-visible.png
 share/gimp/${GIMP_API_V}/icons/Legacy/12x12/apps/gimp-zoom-follow-window.png
 share/gimp/${GIMP_API_V}/icons/Legacy/16x16/
 share/gimp/${GIMP_API_V}/icons/Legacy/16x16/apps/
@@ -1958,7 +1957,6 @@ share/gimp/${GIMP_API_V}/icons/Legacy/16x16/apps/gimp-grid.png
 share/gimp/${GIMP_API_V}/icons/Legacy/16x16/apps/gimp-histogram-linear.png
 share/gimp/${GIMP_API_V}/icons/Legacy/16x16/apps/gimp-histogram-logarithmic.png
 share/gimp/${GIMP_API_V}/icons/Legacy/16x16/apps/gimp-histogram.png
-share/gimp/${GIMP_API_V}/icons/Legacy/16x16/apps/gimp-image.png
 share/gimp/${GIMP_API_V}/icons/Legacy/16x16/apps/gimp-images.png
 share/gimp/${GIMP_API_V}/icons/Legacy/16x16/apps/gimp-input-device.png
 share/gimp/${GIMP_API_V}/icons/Legacy/16x16/apps/gimp-invert.png
@@ -2052,7 +2050,6 @@ share/gimp/${GIMP_API_V}/icons/Legacy/192x192/apps/gimp-wilber.png
 share/gimp/${GIMP_API_V}/icons/Legacy/20x20/
 share/gimp/${GIMP_API_V}/icons/Legacy/20x20/apps/
 share/gimp/${GIMP_API_V}/icons/Legacy/20x20/apps/gimp-linked.png
-share/gimp/${GIMP_API_V}/icons/Legacy/20x20/apps/gimp-visible.png
 share/gimp/${GIMP_API_V}/icons/Legacy/22x22/
 share/gimp/${GIMP_API_V}/icons/Legacy/22x22/apps/
 share/gimp/${GIMP_API_V}/icons/Legacy/22x22/apps/gimp-char-picker.png
@@ -2142,7 +2139,6 @@ share/gimp/${GIMP_API_V}/icons/Legacy/24x24/apps/gimp-hcenter.png
 share/gimp/${GIMP_API_V}/icons/Legacy/24x24/apps/gimp-hchain-broken.png
 share/gimp/${GIMP_API_V}/icons/Legacy/24x24/apps/gimp-hchain.png
 share/gimp/${GIMP_API_V}/icons/Legacy/24x24/apps/gimp-hfill.png
-share/gimp/${GIMP_API_V}/icons/Legacy/24x24/apps/gimp-image.png
 share/gimp/${GIMP_API_V}/icons/Legacy/24x24/apps/gimp-images.png
 share/gimp/${GIMP_API_V}/icons/Legacy/24x24/apps/gimp-layer-mask.png
 share/gimp/${GIMP_API_V}/icons/Legacy/24x24/apps/gimp-layer.png
@@ -2181,7 +2177,6 @@ share/gimp/${GIMP_API_V}/icons/Legacy/32x32/apps/gimp-channel-indexed.png
 share/gimp/${GIMP_API_V}/icons/Legacy/32x32/apps/gimp-channel-red.png
 share/gimp/${GIMP_API_V}/icons/Legacy/32x32/apps/gimp-channel.png
 share/gimp/${GIMP_API_V}/icons/Legacy/32x32/apps/gimp-floating-selection.png
-share/gimp/${GIMP_API_V}/icons/Legacy/32x32/apps/gimp-image.png
 share/gimp/${GIMP_API_V}/icons/Legacy/32x32/apps/gimp-layer-mask.png
 share/gimp/${GIMP_API_V}/icons/Legacy/32x32/apps/gimp-layer.png
 share/gimp/${GIMP_API_V}/icons/Legacy/32x32/apps/gimp-text-layer.png
@@ -2256,6 +2251,7 @@ share/gimp/${GIMP_API_V}/icons/Legacy/index.theme
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-business-card.svg
+share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-close-all.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-color-cmyk.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-color-space-linear.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-color-space-non-linear.svg
@@ -2273,6 +2269,9 @@ share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-even-vertical-gap.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-file-manager.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-gegl.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-group-layer.svg
+share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-image-open.svg
+share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-image-reload.svg
+share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-image.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-lock-alpha-symbolic.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-lock-alpha.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-lock-content-symbolic.svg
@@ -2369,6 +2368,7 @@ share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-tool-zoom.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-transform-3d-camera.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-transform-3d-move.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-transform-3d-rotate.svg
+share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gimp-visible.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gtk-cancel.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gtk-no.svg
 share/gimp/${GIMP_API_V}/icons/Legacy/scalable/apps/gtk-ok.svg

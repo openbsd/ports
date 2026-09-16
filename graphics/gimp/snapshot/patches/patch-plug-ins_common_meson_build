@@ -1,7 +1,7 @@
 Index: plug-ins/common/meson.build
 --- plug-ins/common/meson.build.orig
 +++ plug-ins/common/meson.build
-@@ -175,7 +175,7 @@ if platform_windows
+@@ -178,7 +178,7 @@ if platform_windows
    endif
  endif
  

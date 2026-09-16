@@ -11,7 +11,7 @@ Index: app/main.c
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -570,11 +571,17 @@ main (int    argc,
+@@ -623,6 +624,7 @@ main (int    argc,
  #endif
    gint            retval;
    gint            i;
@@ -19,13 +19,15 @@ Index: app/main.c
  #if defined(ENABLE_RELOCATABLE_RESOURCES) && defined(__APPLE__)
    gint            newargc;
  #endif
- 
+@@ -635,6 +637,11 @@ main (int    argc,
+ #if defined(GIMP_UNSTABLE) || !defined(GIMP_RELEASE)
    gimp_attach_console_window ();
+ #endif
 +
 +  if (getrlimit (RLIMIT_DATA, &limit) != -1) {
 +    limit.rlim_cur = limit.rlim_max;
 +    (void)setrlimit (RLIMIT_DATA, &limit);
 +  }
  
- #if defined(ENABLE_RELOCATABLE_RESOURCES) && defined(__APPLE__)
-   /* remove MacOS session identifier from the command line args */
+ #if defined(__APPLE__)
+ #if defined(ENABLE_RELOCATABLE_RESOURCES)

@@ -12,7 +12,7 @@ Index: app/core/gimptagcache.c
        g_free (identifier_string);
  
        for (tag_iterator = cache_rec->tags;
-@@ -608,7 +608,7 @@ gimp_tag_cache_load_text (GMarkupParseContext  *contex
+@@ -612,7 +612,7 @@ gimp_tag_cache_load_text (GMarkupParseContext  *contex
        else
          {
            g_warning ("dropping invalid tag '%s' from '%s'\n", buffer,

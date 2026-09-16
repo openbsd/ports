@@ -4,18 +4,18 @@ And we don't want to BDEP on egdb.
 Index: tools/in-build-gimp.py
 --- tools/in-build-gimp.py.orig
 +++ tools/in-build-gimp.py
-@@ -81,12 +81,8 @@ try:
-         os.symlink(os.environ.get("GIMP_PYTHON_WITH_GI"), tmp_symlink)
-       os.environ["PATH"] = tmp_path + os.pathsep + os.environ.get("PATH", "")
+@@ -144,13 +144,7 @@ try:
  
--  if "GIMP_DEBUG_SELF_WRAPPER" in os.environ and shutil.which("gdb"):
--    sys.stderr.write(f"RUNNING: {os.environ['GIMP_DEBUG_SELF_WRAPPER']} --batch -x {os.environ['GIMP_GLOBAL_SOURCE_ROOT']}/tools/debug-in-build-gimp.py --args {os.environ['GIMP_SELF_IN_BUILD']} {' '.join(sys.argv[1:])}\n")
--    subprocess.run([os.environ["GIMP_DEBUG_SELF_WRAPPER"],"--return-child-result","--batch","-x",f"{os.environ['GIMP_GLOBAL_SOURCE_ROOT']}/tools/debug-in-build-gimp.py","--args", os.environ["GIMP_SELF_IN_BUILD"]] + sys.argv[1:], stdin=sys.stdin, check=True)
+   # Finally, run gimp!
+   gimp_self = os.path.relpath(os.environ.get("GIMP_SELF_IN_BUILD"))
+-  gimp_debug_self = os.environ.get("GIMP_DEBUG_SELF_WRAPPER")
+-  if gimp_debug_self and "gdb" in gimp_debug_self and shutil.which("gdb"):
+-    cmd = [gimp_debug_self,"--return-child-result","--batch","-x",f"{os.path.relpath(os.environ['GIMP_GLOBAL_SOURCE_ROOT'])}/tools/debug-in-build-gimp.py","--args", gimp_self] + sys.argv[1:]
+-  elif gimp_debug_self and "lldb" in gimp_debug_self and shutil.which("lldb"):
+-    cmd = [gimp_debug_self, "--batch", "-o", f"target create {gimp_self}", "-o", f"settings set -- target.run-args {' '.join(sys.argv[1:])}", "-o", f"script import importlib.util; spec = importlib.util.spec_from_file_location('debug_in_build_gimp', '{os.path.relpath(Path(os.environ['GIMP_GLOBAL_SOURCE_ROOT']))}/tools/debug-in-build-gimp.py'); m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)"]
 -  else:
--    sys.stderr.write(f"RUNNING: {os.environ['GIMP_SELF_IN_BUILD']} {' '.join(sys.argv[1:])}\n")
--    subprocess.run([os.environ["GIMP_SELF_IN_BUILD"]] + sys.argv[1:],stdin=sys.stdin, check=True)
-+  sys.stderr.write(f"RUNNING: {os.environ['GIMP_SELF_IN_BUILD']} {' '.join(sys.argv[1:])}\n")
-+  subprocess.run([os.environ["GIMP_SELF_IN_BUILD"]] + sys.argv[1:],stdin=sys.stdin, check=True)
+-    cmd = [gimp_self] + sys.argv[1:]
++  cmd = [gimp_self] + sys.argv[1:]
+   sys.stderr.write(f"RUNNING: {shlex.join(cmd)}\n")
+   subprocess.run(cmd, stdin=sys.stdin, check=True)
  
-   if sys.platform not in ['win32', 'cygwin'] and different_python:
-     os.environ["PATH"] = os.pathsep.join([p for p in os.environ["PATH"].split(os.pathsep) if p != tmp_path])
