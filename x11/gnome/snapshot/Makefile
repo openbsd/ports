@@ -1,9 +1,7 @@
 COMMENT=		take pictures and videos
 
 GNOME_PROJECT=		snapshot
-GNOME_VERSION=		51.beta
-PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION:S/.//}0
-REVISION=		0
+GNOME_VERSION=		51.0
 
 CATEGORIES=		graphics
 
