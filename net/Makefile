@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += 64gram
      SUBDIR += abaddon
      SUBDIR += accounts-qml-module
      SUBDIR += adns
