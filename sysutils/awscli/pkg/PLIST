@@ -1,4 +1,6 @@
-@option is-branch
+@conflict awscli-<2
+@pkgpath sysutils/awscli/v1
+@pkgpath sysutils/awscli/v2
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
