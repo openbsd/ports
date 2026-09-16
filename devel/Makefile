@@ -1896,6 +1896,7 @@
      SUBDIR += readline
      SUBDIR += rebar3,erlang27
      SUBDIR += rebar3,erlang28
+     SUBDIR += rebar3,erlang29
      SUBDIR += reflection-cpp
      SUBDIR += remake
      SUBDIR += reposurgeon
