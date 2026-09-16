@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.38
 PKGSPEC =	gimp->=2,<2.99
-REVISION =	8
+REVISION =	9
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -40,7 +40,7 @@ WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
 WANTLIB += xcb-render xcb-shm xml2 z zstd sharpyuv deflate
 WANTLIB += INIReader inih jxl_cms Lerc openjph
 WANTLIB += curl nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
-WANTLIB += openh264
+WANTLIB += openh264 dav1d harfbuzz-subset x264
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -94,8 +94,10 @@ LIB_DEPENDS=	archivers/bzip2 \
 		x11/gnome/librsvg \
 		x11/gtk+2>=2.24.10
 
+# graphics/libgexiv2 installs its headers under a versionned directory;
+# use pkg-config(1) to get the proper flags, since configure does not
 CONFIGURE_ENV=	CC_FOR_BUILD="${CC}" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		CPPFLAGS="$$(pkg-config --cflags gexiv2) -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 USE_GMAKE=		Yes
