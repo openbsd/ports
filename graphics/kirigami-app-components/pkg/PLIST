@@ -1,0 +1,21 @@
+include/KF6/Kirigami/ActionCollection/
+include/KF6/Kirigami/ActionCollection/ActionCollection
+include/KF6/Kirigami/ActionCollection/ActionCollections
+include/KF6/Kirigami/ActionCollection/actioncollection.h
+include/KF6/Kirigami/ActionCollection/actioncollections.h
+include/KF6/Kirigami/ActionCollection/kirigamiactioncollection_export.h
+include/KF6/Kirigami/ActionCollection/kirigamiactioncollection_version.h
+lib/cmake/KF6KirigamiAppComponents/
+lib/cmake/KF6KirigamiAppComponents/KF6KirigamiAppComponentsConfig.cmake
+lib/cmake/KF6KirigamiAppComponents/KirigamiAppComponentsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6KirigamiAppComponents/KirigamiAppComponentsTargets.cmake
+@lib lib/libKirigamiActionCollection.so.${LIBKirigamiActionCollection_VERSION}
+lib/qt6/qml/org/kde/kirigami/actioncollection/
+lib/qt6/qml/org/kde/kirigami/actioncollection/ActionCollectionManager.qml
+lib/qt6/qml/org/kde/kirigami/actioncollection/ActionsExplorer.qml
+lib/qt6/qml/org/kde/kirigami/actioncollection/KeySequenceItem.qml
+lib/qt6/qml/org/kde/kirigami/actioncollection/KirigamiActionCollection.qmltypes
+lib/qt6/qml/org/kde/kirigami/actioncollection/ShortcutsEditor.qml
+lib/qt6/qml/org/kde/kirigami/actioncollection/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigami/actioncollection/libKirigamiActionCollectionplugin.so
+lib/qt6/qml/org/kde/kirigami/actioncollection/qmldir
