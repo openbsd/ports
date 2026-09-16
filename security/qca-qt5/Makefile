@@ -1,12 +1,11 @@
 COMMENT =	Qt Cryptographic Architecture
 
-V =		2.3.10
+V =		2.3.12
 DISTNAME =	qca-${V}
 PKGNAME =	qca-qt5-${V}
 CATEGORIES =	security
-REVISION =	0
 
-SHARED_LIBS =	qca-qt5		2.0
+SHARED_LIBS =	qca-qt5		3.0
 
 HOMEPAGE =	https://userbase.kde.org/QCA
 
