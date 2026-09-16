@@ -1,0 +1,9 @@
+Index: mapitags.php
+--- mapitags.php.orig
++++ mapitags.php
+@@ -36,3 +36,5 @@ define('PR_EC_ARCHIVE_SERVERS', mapi_prop_tag(PT_MV_TS
+ 
+ define('PR_EC_WA_ATTACHMENT_ID', mapi_prop_tag(PT_STRING8, 0x67E1));
+ define('PR_EC_WA_FILES_ENCRYPTION_KEY', mapi_prop_tag(PT_BINARY, 0x67E2));
++
++define('PR_ROAMING_XMLSTREAM', mapi_prop_tag(PT_BINARY, 0x7C08));
