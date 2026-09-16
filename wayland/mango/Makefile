@@ -1,6 +1,6 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-V =			0.17.0
+V =			0.17.1
 DIST_TUPLE =		github mangowm mango ${V} .
 
 CATEGORIES =		wayland
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c cairo cjson glib-2.0 gobject-2.0 input m pango-1.0
 WANTLIB += pangocairo-1.0 pcre2-8 pixman-1 scenefx-0.5 wayland-client
-WANTLIB += wayland-server xcb-icccm xkbcommon
+WANTLIB += wayland-server xcb xcb-icccm xcb-randr xkbcommon
 
 COMPILER =		base-clang ports-gcc
 

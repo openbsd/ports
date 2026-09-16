@@ -1,0 +1,11 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -73,7 +73,6 @@ c_args = [
+   '-Wno-unused-function',
+   '-Wno-unused-result',
+   '-DWLR_USE_UNSTABLE',
+-  '-D_POSIX_C_SOURCE=200809L',
+   '-DVERSION="@0@"'.format(version_with_hash),
+   '-DSYSCONFDIR="@0@"'.format('/etc'),
+ ]
