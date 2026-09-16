@@ -30,6 +30,10 @@ CONFIGURE_ENV +=	CFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -I${LOCALBASE}/incl
 			CXXFLAGS="-L${X11BASE}/lib -I${LOCALBASE}/include/mapnik"
 MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp docbook
 
+# graphics/libgexiv2 installs its headers under a versionned directory;
+# use pkg-config(1) to get the proper flags, since configure does not
+MODGNOME_CPPFLAGS=	$$(pkg-config --cflags gexiv2)
+
 USE_GMAKE =	Yes
 
 LIB_DEPENDS =	archivers/bzip2 \
