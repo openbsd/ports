@@ -1,0 +1,14 @@
+- fs: Follow up to the initial getexecpath() support
+  c545b20bd7fbd536a37c00271e6d474acc861a34
+
+Index: include/build_config/SDL_build_config.h.cmake
+--- include/build_config/SDL_build_config.h.cmake.orig
++++ include/build_config/SDL_build_config.h.cmake
+@@ -73,6 +73,7 @@
+ #cmakedefine HAVE_DLOPEN 1
+ #cmakedefine HAVE_MALLOC 1
+ #cmakedefine HAVE_FDATASYNC 1
++#cmakedefine HAVE_GETEXECPATH 1
+ #cmakedefine HAVE_GETENV 1
+ #cmakedefine HAVE_GETHOSTNAME 1
+ #cmakedefine HAVE_SETENV 1

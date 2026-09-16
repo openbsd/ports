@@ -3,6 +3,7 @@ COMMENT =		cross-platform multimedia library
 V =			3.4.16
 DISTNAME =		SDL3-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 SHARED_LIBS +=		SDL3                      0.1 # 3.4.0
 

@@ -1,0 +1,44 @@
+- fs: Use getexecpath() on OpenBSD for GetExePath().
+  b7606be372bff4f434d0e2e06ca8a1edd249cde4
+- fs: Follow up to the initial getexecpath() support
+  c545b20bd7fbd536a37c00271e6d474acc861a34
+
+XXX: remove or neuter the workarounds in search_path_for_binary() and
+GetExePath after getexecpath(3) is universal.
+
+Index: src/filesystem/unix/SDL_sysfilesystem.c
+--- src/filesystem/unix/SDL_sysfilesystem.c.orig
++++ src/filesystem/unix/SDL_sysfilesystem.c
+@@ -71,7 +71,7 @@ static char *readSymLink(const char *path)
+     return NULL;
+ }
+ 
+-#ifdef SDL_PLATFORM_OPENBSD
++#if defined(SDL_PLATFORM_OPENBSD) && !defined(HAVE_GETEXECPATH)
+ static char *search_path_for_binary(const char *bin)
+ {
+     const char *envr_real = SDL_getenv("PATH");
+@@ -138,6 +138,15 @@ static char *GetExePath(void)
+     }
+ #endif
+ #ifdef SDL_PLATFORM_OPENBSD
++#ifdef HAVE_GETEXECPATH
++    char fullpath[PATH_MAX];
++    if (getexecpath(fullpath, sizeof(fullpath)) == 0) {
++        result = SDL_strdup(fullpath);
++        if (!result) {
++            return NULL;
++        }
++    }
++#else
+     // Please note that this will fail if the process was launched with a relative path and $PWD + the cwd have changed, or argv is altered. So don't do that. Or add a new sysctl to OpenBSD.
+     char **cmdline;
+     size_t len;
+@@ -193,6 +202,7 @@ static char *GetExePath(void)
+ 
+         SDL_free(cmdline);
+     }
++#endif
+ #endif
+ 
+     // is a Linux-style /proc filesystem available?
