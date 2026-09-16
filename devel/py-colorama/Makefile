@@ -1,5 +1,3 @@
-# !!! do not update blindly: sysutils/awscli/v1 requires a specific version
-
 COMMENT=		print colored terminal text from Python apps
 
 MODPY_DISTV=		0.4.6

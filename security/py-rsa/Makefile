@@ -1,8 +1,6 @@
-# !!! do not update blindly: sysutils/awscli/v1 requires a specific version
-
 COMMENT=		Python RSA implementation
 
-MODPY_DISTV=	4.7.2
+MODPY_DISTV=		4.7.2
 DISTNAME=		rsa-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 REVISION=		6
