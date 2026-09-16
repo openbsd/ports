@@ -1,0 +1,33 @@
+On OpenBSD we expect an error instead of a silently truncated result in
+all cases in which the buffer size is too small to hold the path.
+
+Index: test/test-get-currentexe.c
+--- test/test-get-currentexe.c.orig
++++ test/test-get-currentexe.c
+@@ -75,18 +75,26 @@ TEST_IMPL(get_currentexe) {
+ 
+   size = 1;
+   r = uv_exepath(buffer, &size);
++#ifndef __OpenBSD__
+   ASSERT_OK(r);
+   ASSERT_OK(size);
+   ASSERT_EQ(buffer[0], '\0');
++#else
++  ASSERT(r);
++#endif
+ 
+   memset(buffer, -1, sizeof(buffer));
+ 
+   size = 2;
+   r = uv_exepath(buffer, &size);
++#ifndef __OpenBSD__
+   ASSERT_OK(r);
+   ASSERT_EQ(1, size);
+   ASSERT_NE(buffer[0], '\0');
+   ASSERT_EQ(buffer[1], '\0');
++#else
++  ASSERT(r);
++#endif
+ 
+   /* Verify uv_exepath is not affected by uv_set_process_title(). */
+   r = uv_set_process_title("foobar");

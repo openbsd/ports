@@ -1,0 +1,25 @@
+Index: src/unix/openbsd.c
+--- src/unix/openbsd.c.orig
++++ src/unix/openbsd.c
+@@ -59,15 +59,17 @@ void uv_loadavg(double avg[3]) {
+ 
+ 
+ int uv_exepath(char* buffer, size_t* size) {
++  
+   if (buffer == NULL || size == NULL || *size == 0)
+     return UV_EINVAL;
+ 
+-  if (uv_saved_argv0 == NULL)
+-    return UV_EINVAL;
++  if (getexecpath(buffer, *size) == -1) 
++    return UV__ERR(errno);
+ 
+-  return uv__search_path(uv_saved_argv0, buffer, size);
+-}
++  *size = strlen(buffer);
+ 
++  return 0;
++}
+ 
+ uint64_t uv_get_free_memory(void) {
+   struct uvmexp info;

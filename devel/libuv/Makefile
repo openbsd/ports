@@ -4,6 +4,7 @@ VER =		1.52.1
 DISTNAME =	libuv-v${VER}
 PKGNAME =	libuv-${VER}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  uv                   5.3      # 1.0
 
