@@ -1,13 +1,10 @@
 COMMENT=		Python RSA implementation
 
-MODPY_DISTV=		4.7.2
+MODPY_DISTV=		4.9.1
 DISTNAME=		rsa-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		6
 
 CATEGORIES=		security
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
@@ -15,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_PYBUILD=		setuptools
+MODPY_PYBUILD=		poetry-core
 
 RUN_DEPENDS=		devel/py-asn1
 
