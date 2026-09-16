@@ -29,6 +29,8 @@ LIB_DEPENDS=	archivers/blosc \
 		devel/boost \
 		devel/tbb
 
+CONFIGURE_ARGS =	-DUSE_CCACHE=OFF
+
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
