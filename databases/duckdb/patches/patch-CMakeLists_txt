@@ -1,6 +1,27 @@
+Disable -O3.
+Disable ccache and sccache.
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -61,7 +61,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ set(CMAKE_MACOSX_RPATH 1)
+ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+ 
+-if(NOT DEFINED CMAKE_C_COMPILER_LAUNCHER)
++if(FALSE)
+     find_program(COMPILER_LAUNCHER NAMES ccache sccache)
+     if(COMPILER_LAUNCHER)
+         message(STATUS "Using ${COMPILER_LAUNCHER} as C compiler launcher")
+@@ -71,7 +71,7 @@ if(NOT DEFINED CMAKE_C_COMPILER_LAUNCHER)
+     endif()
+ endif()
+ 
+-if(NOT DEFINED CMAKE_CXX_COMPILER_LAUNCHER)
++if(FALSE)
+     find_program(COMPILER_LAUNCHER NAMES ccache sccache)
+     if(COMPILER_LAUNCHER)
+         message(STATUS "Using ${COMPILER_LAUNCHER} as C++ compiler launcher")
 @@ -662,7 +662,7 @@ if(NOT MSVC)
    set(CMAKE_CXX_FLAGS_DEBUG
        "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -DDEBUG -Wall ${M32_FLAG} ${CXX_EXTRA}")
