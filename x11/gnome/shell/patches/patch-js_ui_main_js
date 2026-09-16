@@ -1,3 +1,8 @@
+From d38ced06dda65073c7df38b2612833508dc0664d Mon Sep 17 00:00:00 2001
+From: Sebastian Keller <skeller@gnome.org>
+Date: Fri, 11 Sep 2026 13:05:50 +0200
+Subject: [PATCH] main: Initialize brightnessManager before panel
+
 REVERT:
 From d697bdceaefeae49ad0e03df7352884899c3e14a Mon Sep 17 00:00:00 2001
 From: Adrian Vovk <adrianvovk@gmail.com>
@@ -7,6 +12,26 @@ Subject: [PATCH] Revert "main: Notify gnome-session when we're ready"
 Index: js/ui/main.js
 --- js/ui/main.js.orig
 +++ js/ui/main.js
+@@ -246,6 +246,9 @@ async function _initializeUI() {
+ 
+     screenshotUI = new Screenshot.ScreenshotUI();
+ 
++    brightnessManager = new BrightnessManager.BrightnessManager();
++    brightnessDBus = new ShellDBus.BrightnessDBus(brightnessManager);
++
+     messageTray = new MessageTray.MessageTray();
+     panel = new Panel.Panel();
+     keyboard = new Keyboard.KeyboardManager();
+@@ -262,9 +265,6 @@ async function _initializeUI() {
+     breakManagerDispatcher = new BreakManager.BreakDispatcher(breakManager);
+     timeLimitsDispatcher = new TimeLimitsManager.TimeLimitsDispatcher(timeLimitsManager);
+ 
+-    brightnessManager = new BrightnessManager.BrightnessManager();
+-    brightnessDBus = new ShellDBus.BrightnessDBus(brightnessManager);
+-
+     global.connect('shutdown', () => {
+         // Block shutdown until the session history file has been written
+         const loop = new GLib.MainLoop(null, false);
 @@ -326,6 +326,7 @@ async function _initializeUI() {
      GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
          Shell.util_sd_notify();
