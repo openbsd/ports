@@ -234,6 +234,7 @@ lib/pkgconfig/libmutter-17.pc
 lib/pkgconfig/mutter-clutter-17.pc
 lib/pkgconfig/mutter-cogl-17.pc
 lib/pkgconfig/mutter-mtk-17.pc
+@bin libexec/mutter-restart-helper
 @bin libexec/mutter-x11-frames
 @man man/man1/gdctl.1
 @man man/man1/gnome-service-client.1
