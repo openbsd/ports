@@ -19,6 +19,7 @@ V =		2.1.1787058514
 
 COMMENT =	just-in-time compiler for Lua
 PKGNAME =	luajit-$V
+REVISION =	0
 
 CATEGORIES =	lang
 
@@ -50,6 +51,8 @@ MAKE_FLAGS += \
 .endif
 
 USE_GMAKE =	Yes
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 SUBST_VARS =	V
 
