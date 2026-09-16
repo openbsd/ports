@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1827 2026/09/11 17:41:13 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1828 2026/09/16 15:23:12 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -269,6 +269,7 @@ my $stem_extensions = {
 	'vegastrike-music' => 'vegastrike-utcs',
 	'vegastrike-speech' => 'vegastrike-utcs',
 	'erl26-rebar3' => 'erl28-rebar3',
+	'kmime' => 'kf6-kmime',
 
 };
 
