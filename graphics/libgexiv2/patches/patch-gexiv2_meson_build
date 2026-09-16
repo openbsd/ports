@@ -1,0 +1,38 @@
+Install headers under a versioned directory (include/gexiv2-0.14) so that
+this package can coexist with graphics/gexiv2 (0.16+, which uses
+include/gexiv2-0.16). Without this, include/gexiv2/ shadows the 0.16
+headers for any consumer whose -I/usr/local/include precedes
+-I/usr/local/include/gexiv2-0.16 (e.g. all Vala consumers).
+pkg-config name, vapi and GIR namespace are unchanged, so existing
+consumers of gexiv2.pc need no modification.
+
+Index: gexiv2/meson.build
+--- gexiv2/meson.build.orig
++++ gexiv2/meson.build
+@@ -13,7 +13,8 @@ darwin_version_minor = libversion_arr[1].to_int()
+ darwin_version_micro = libversion_arr[2].to_int()
+ darwin_versions = [darwin_version_major + darwin_version_minor + 1, '@0@.@1@'.format(darwin_version_major + darwin_version_minor + 1, darwin_version_micro)]
+ 
+-gexiv2_include_dir = join_paths(get_option('includedir'), 'gexiv2')
++header_folder = join_paths('gexiv2-0.14', 'gexiv2')
++gexiv2_include_dir = join_paths(get_option('includedir'), header_folder)
+ 
+ config = configuration_data()
+ config.set('GEXIV2_MAJOR_VERSION', as_version[0])
+@@ -42,7 +43,7 @@ enum_sources = gnome.mkenums('gexiv2-enums',
+                              install_header : true,
+                              install_dir : gexiv2_include_dir)
+ 
+-install_headers(gexiv2_headers, subdir : 'gexiv2')
++install_headers(gexiv2_headers, subdir : header_folder)
+ 
+ gexiv2 = library('gexiv2',
+                  ['gexiv2-metadata.cpp',
+@@ -93,6 +94,7 @@ pkg.generate(
+     libraries : gexiv2,
+     version : meson.project_version(),
+     name : 'GExiv2',
++    subdirs : ['gexiv2-0.14'],
+     filebase : 'gexiv2',
+     requires_private : 'exiv2',
+     requires : pc_deps

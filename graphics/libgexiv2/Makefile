@@ -6,6 +6,7 @@ COMMENT=		GObject wrapper around exiv2
 GNOME_VERSION=		0.14.7
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -35,5 +36,10 @@ LIB_DEPENDS=		devel/glib2 \
 # import gi
 BUILD_DEPENDS=		devel/py-gobject3
 RUN_DEPENDS=		devel/py-gobject3
+
+post-install:
+# XXX prevent conflict with graphics/gexiv2;
+# see https://gitlab.gnome.org/GNOME/gexiv2/-/issues/88
+	rm -r ${PREFIX}/lib/python${MODPY_VERSION}/
 
 .include <bsd.port.mk>
