@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/arm64/asm.go
 --- src/cmd/link/internal/arm64/asm.go.orig
 +++ src/cmd/link/internal/arm64/asm.go
-@@ -1139,6 +1139,9 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r
+@@ -1145,6 +1145,9 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r
  
  func elfsetupplt(ctxt *ld.Link, ldr *loader.Loader, plt, gotplt *loader.SymbolBuilder, dynamic loader.Sym) {
  	if plt.Size() == 0 {
@@ -11,7 +11,7 @@ Index: src/cmd/link/internal/arm64/asm.go
  		// stp     x16, x30, [sp, #-16]!
  		// identifying information
  		plt.AddUint32(ctxt.Arch, 0xa9bf7bf0)
-@@ -1191,6 +1194,9 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, 
+@@ -1197,6 +1200,9 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, 
  			panic("plt is not set up")
  		}
  
@@ -21,7 +21,7 @@ Index: src/cmd/link/internal/arm64/asm.go
  		// adrp    x16, &got.plt[0]
  		plt.AddAddrPlus4(target.Arch, gotplt.Sym(), gotplt.Size())
  		plt.SetUint32(target.Arch, plt.Size()-4, 0x90000010)
-@@ -1223,7 +1229,7 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, 
+@@ -1229,7 +1235,7 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, 
  		rela.AddUint64(target.Arch, elf.R_INFO(uint32(sDynid), uint32(elf.R_AARCH64_JUMP_SLOT)))
  		rela.AddUint64(target.Arch, 0)
  

@@ -1,7 +1,7 @@
 Index: src/cmd/internal/obj/x86/asm6.go
 --- src/cmd/internal/obj/x86/asm6.go.orig
 +++ src/cmd/internal/obj/x86/asm6.go
-@@ -618,6 +618,10 @@ var ycall = []ytab{
+@@ -617,6 +617,10 @@ var ycall = []ytab{
  	{Zcallcon, 1, argList{Yi32}},
  }
  
@@ -12,7 +12,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  var yduff = []ytab{
  	{Zcallduff, 1, argList{Yi32}},
  }
-@@ -1085,6 +1089,7 @@ var optab =
+@@ -1084,6 +1088,7 @@ var optab =
  	{ADECL, yincl, Px1, opBytes{0x48, 0xff, 01}},
  	{ADECQ, yincq, Pw, opBytes{0xff, 01}},
  	{ADECW, yincq, Pe, opBytes{0xff, 01}},
@@ -20,7 +20,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  	{ADIVB, ydivb, Pb, opBytes{0xf6, 06}},
  	{ADIVL, ydivl, Px, opBytes{0xf7, 06}},
  	{ADIVPD, yxm, Pe, opBytes{0x5e}},
-@@ -1859,7 +1864,8 @@ func spadjop(ctxt *obj.Link, l, q obj.As) obj.As {
+@@ -1858,7 +1863,8 @@ func spadjop(ctxt *obj.Link, l, q obj.As) obj.As {
  // or end on a 32 byte boundary by inserting NOPs before the jumps.
  func isJump(p *obj.Prog) bool {
  	return p.To.Target() != nil || p.As == obj.AJMP || p.As == obj.ACALL ||
@@ -30,7 +30,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  }
  
  // lookForJCC returns the first real instruction starting from p, if that instruction is a conditional
-@@ -2037,6 +2043,24 @@ type nopPad struct {
+@@ -2036,6 +2042,24 @@ type nopPad struct {
  	n int32     // Size of the pad
  }
  
@@ -55,7 +55,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.ProgAlloc) {
  	if ctxt.Retpoline && ctxt.Arch.Family == sys.I386 {
  		ctxt.Diag("-spectre=ret not supported on 386")
-@@ -2053,6 +2077,7 @@ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.Pr
+@@ -2052,6 +2076,7 @@ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.Pr
  		ctxt.Diag("x86 tables not initialized, call x86.instinit first")
  	}
  
@@ -63,7 +63,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  	for p := s.Func().Text; p != nil; p = p.Link {
  		if p.To.Type == obj.TYPE_BRANCH && p.To.Target() == nil {
  			p.To.SetTarget(p)
-@@ -2085,6 +2110,19 @@ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.Pr
+@@ -2084,6 +2109,19 @@ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.Pr
  			p.To.Reg = 0
  			p.To.Offset = 0
  		}
@@ -83,7 +83,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  	}
  
  	var count int64 // rough count of number of instructions
-@@ -4849,7 +4887,12 @@ func (ab *AsmBuf) doasm(ctxt *obj.Link, cursym *obj.LS
+@@ -4857,7 +4895,12 @@ func (ab *AsmBuf) doasm(ctxt *obj.Link, cursym *obj.LS
  					ctxt.Diag("directly calling duff when dynamically linking Go")
  				}
  
