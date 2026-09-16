@@ -12,20 +12,18 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.52.6
+V =			2.54.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
-
-REVISION =		3
 
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     4.4
-SHARED_LIBS +=  webkit2gtk-${API}            4.4
-SHARED_LIBS +=  webkitgtk-6.0                0.6
+SHARED_LIBS +=  javascriptcoregtk-${API}     4.5
+SHARED_LIBS +=  webkit2gtk-${API}            4.5
+SHARED_LIBS +=  webkitgtk-6.0                0.7
 
 CATEGORIES =		www
 
@@ -62,8 +60,6 @@ MODGNOME_TOOLS =	gi-docgen gobject-introspection
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 
-SUBST_VARS +=		MODRUBY_REV
-
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 NO_TEST =		Yes
@@ -96,7 +92,8 @@ CONFIGURE_ARGS =	-DPORT=GTK \
 			-DUSE_SYSTEM_SYSPROF_CAPTURE=NO \
 			-DUSE_SYSPROF_CAPTURE=OFF \
 			-DENABLE_SPEECH_SYNTHESIS=OFF \
-			-DUSE_FLITE=OFF
+			-DUSE_FLITE=OFF \
+			-DRUBY_EXECUTABLE=${RUBY}
 
 # XXX revisit at next release if execinfo can be used
 CONFIGURE_ARGS +=	-DUSE_LIBBACKTRACE=OFF
@@ -184,11 +181,5 @@ LIB_DEPENDS +=		x11/gtk+3
 CONFIGURE_ARGS +=	-DENABLE_WEBDRIVER=OFF \
 			-DUSE_GTK4=OFF
 .endif
-
-post-extract:
-	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Source/cmake/WebKitCommon.cmake
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 Index: Source/bmalloc/libpas/src/libpas/pas_platform.h
 --- Source/bmalloc/libpas/src/libpas/pas_platform.h.orig
 +++ Source/bmalloc/libpas/src/libpas/pas_platform.h
-@@ -140,6 +140,10 @@
+@@ -149,6 +149,10 @@
  #define PAS_OS_FREEBSD 1
  #endif
  

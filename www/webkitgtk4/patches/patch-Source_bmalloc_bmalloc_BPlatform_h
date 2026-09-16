@@ -12,12 +12,12 @@ Index: Source/bmalloc/bmalloc/BPlatform.h
  #if defined(WIN32) || defined(_WIN32)
  #define BOS_WINDOWS 1
  #endif
-@@ -379,7 +383,7 @@
+@@ -397,7 +401,7 @@
  
  /* BENABLE(LIBPAS) is enabling libpas build. But this does not mean we use libpas for bmalloc replacement. */
  #if !defined(BENABLE_LIBPAS)
--#if BCPU(ADDRESS64) && (BOS(DARWIN) || BOS(WINDOWS) || (BOS(LINUX) && (BCPU(X86_64) || BCPU(ARM64))) || BPLATFORM(PLAYSTATION))
-+#if BCPU(ADDRESS64) && (BOS(DARWIN) || BOS(WINDOWS) || (BOS(LINUX) && (BCPU(X86_64) || BCPU(ARM64))) || (BOS(OPENBSD) && (BCPU(X86_64) || BCPU(ARM64))) || BPLATFORM(PLAYSTATION))
+-#if (!BUSE(MIMALLOC) && !BUSE(SYSTEM_MALLOC)) && BCPU(ADDRESS64) && (BOS(DARWIN) || BOS(WINDOWS) || (BOS(LINUX) && (BCPU(X86_64) || BCPU(ARM64))) || BPLATFORM(PLAYSTATION))
++#if (!BUSE(MIMALLOC) && !BUSE(SYSTEM_MALLOC)) && BCPU(ADDRESS64) && (BOS(DARWIN) || BOS(WINDOWS) || (BOS(LINUX) && (BCPU(X86_64) || BCPU(ARM64))) || (BOS(OPENBSD) && (BCPU(X86_64) || BCPU(ARM64))) || BPLATFORM(PLAYSTATION))
  #define BENABLE_LIBPAS 1
  #ifndef PAS_BMALLOC
  #define PAS_BMALLOC 1

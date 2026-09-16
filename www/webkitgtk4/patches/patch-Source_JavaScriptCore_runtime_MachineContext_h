@@ -5,7 +5,7 @@ arm r11/r10/r8.  The armv7 mapping is untested (BROKEN-arm).
 Index: Source/JavaScriptCore/runtime/MachineContext.h
 --- Source/JavaScriptCore/runtime/MachineContext.h.orig
 +++ Source/JavaScriptCore/runtime/MachineContext.h
-@@ -187,6 +187,22 @@ static inline void*& stackPointerImpl(mcontext_t& mach
+@@ -189,6 +189,22 @@ static inline void*& stackPointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -28,7 +28,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  #if CPU(X86_64)
-@@ -304,6 +320,22 @@ static inline void*& framePointerImpl(mcontext_t& mach
+@@ -308,6 +324,22 @@ static inline void*& framePointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -51,7 +51,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -462,6 +494,22 @@ static inline void*& instructionPointerImpl(mcontext_t
+@@ -468,6 +500,22 @@ static inline void*& instructionPointerImpl(mcontext_t
  #error Unknown Architecture
  #endif
  
@@ -74,7 +74,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -634,6 +682,22 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
+@@ -644,6 +692,22 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
  #error Unknown Architecture
  #endif
  
@@ -97,7 +97,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -691,6 +755,22 @@ inline void* wasmInstancePointer(const mcontext_t& mac
+@@ -701,6 +765,22 @@ inline void* wasmInstancePointer(const mcontext_t& mac
  #error Unknown Architecture
  #endif
  
@@ -120,7 +120,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -804,6 +884,22 @@ inline void*& llintInstructionPointer(mcontext_t& mach
+@@ -817,6 +897,22 @@ inline void*& llintInstructionPointer(mcontext_t& mach
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_R8]);
  #elif CPU(ARM64)
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_X4]);

@@ -3883,3 +3883,12 @@ share/locale/tr/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/uk/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/vi/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/zh_CN/LC_MESSAGES/WebKitGTK-${API}.mo
+share/doc/webkit2gtk-${API}/method.FeatureList.find.html
+share/doc/webkit2gtk-${API}/method.WebView.get_magnification.html
+share/doc/webkit2gtk-${API}/method.WebView.set_magnification.html
+share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_favicon_database.html
+share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_favicons_enabled.html
+share/doc/webkit2gtk-${API}/method.WebsiteDataManager.set_favicons_enabled.html
+share/doc/webkit2gtk-${API}/method.WebsitePolicies.get_custom_user_agent.html
+share/doc/webkit2gtk-${API}/property.WebView.magnification.html
+share/doc/webkit2gtk-${API}/property.WebsitePolicies.custom-user-agent.html

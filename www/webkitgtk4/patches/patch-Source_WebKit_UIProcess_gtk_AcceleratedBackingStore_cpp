@@ -1,22 +1,65 @@
 XXX revisit when our gtk4 supports dma-buf.
-Fall back to gdk_gl_texture_new() when GDK lacks dmabuf support. GTK only
-implements GdkDmabufTexture when built with <linux/dma-buf.h> (HAVE_DMABUF),
-which is not the case on OpenBSD: gdk_dmabuf_texture_builder_build() always
-fails and GDK advertises no dmabuf formats. Import the buffer as an EGLImage
-ourselves instead.
+GTK implements GdkDmabufTexture only when built with <linux/dma-buf.h>
+(HAVE_DMABUF = cc.has_header('linux/dma-buf.h') in gtk's meson.build), which is
+not the case on OpenBSD: gdk_dmabuf_texture_builder_build() always fails with
+"dmabuf support disabled at compile-time" and GDK advertises no dmabuf formats,
+which since 2.54 also empties the negotiated buffer format list.  Negotiate
+against the GL display and use the EGLImage import path (gdk_gl_texture_new)
+when that is the case.
 
 Index: Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp
 --- Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp.orig
 +++ Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp
-@@ -670,9 +670,11 @@ void AcceleratedBackingStore::didCreateDMABufBuffer(ui
+@@ -181,21 +181,27 @@ Vector<RendererBufferFormat> AcceleratedBackingStore::
+     const auto& glDisplayFormats = display.glDisplay()->bufferFormats();
+     Vector<RendererBufferFormat::Format> formats;
+ #if GTK_CHECK_VERSION(4, 13, 4)
++    // GTK implements GdkDmabufTexture only when built with <linux/dma-buf.h> (HAVE_DMABUF).
++    // Otherwise it advertises no dmabuf formats and gdk_dmabuf_texture_builder_build() always
++    // fails, so negotiate against the GL display only and import EGLImages ourselves.
+     auto* gdkFormats = gdk_display_get_dmabuf_formats(display.gdkDisplay());
+-    for (const auto& format : glDisplayFormats) {
+-        Vector<uint64_t, 1> modifiers;
+-        for (auto modifier : format.modifiers) {
+-            if (gdk_dmabuf_formats_contains(gdkFormats, format.fourcc.value, modifier))
+-                modifiers.append(modifier);
++    if (gdk_dmabuf_formats_get_n_formats(gdkFormats)) {
++        for (const auto& format : glDisplayFormats) {
++            Vector<uint64_t, 1> modifiers;
++            for (auto modifier : format.modifiers) {
++                if (gdk_dmabuf_formats_contains(gdkFormats, format.fourcc.value, modifier))
++                    modifiers.append(modifier);
++            }
++            if (!modifiers.isEmpty())
++                formats.append({ format.fourcc.value, WTF::move(modifiers) });
+         }
+-        if (!modifiers.isEmpty())
+-            formats.append({ format.fourcc.value, WTF::move(modifiers) });
+-    }
+-#else
+-    formats = glDisplayFormats.map([](const auto& format) -> RendererBufferFormat::Format {
+-        return { format.fourcc.value, format.modifiers };
+-    });
++    } else
+ #endif
++    {
++        formats = glDisplayFormats.map([](const auto& format) -> RendererBufferFormat::Format {
++            return { format.fourcc.value, format.modifiers };
++        });
++    }
+ 
+     RendererBufferFormat format;
+     format.usage = RendererBufferFormat::Usage::Rendering;
+@@ -735,9 +741,12 @@ void AcceleratedBackingStore::didCreateDMABufBuffer(ui
  #endif
  
  #if GTK_CHECK_VERSION(4, 13, 4)
--    if (auto buffer = BufferDMABuf::create(*webPage, id, m_surfaceID, size, usage, format, WTF::move(fds), WTF::move(offsets), WTF::move(strides), modifier)) {
+-    if (RefPtr buffer = BufferDMABuf::create(*webPage, id, m_surfaceID, usage, WTF::move(dmaBufAttributes))) {
 -        m_buffers.add(id, WTF::move(buffer));
 -        return;
-+    if (gdk_dmabuf_formats_get_n_formats(gdk_display_get_dmabuf_formats(gtk_widget_get_display(webPage->viewWidget())))) {
-+        if (auto buffer = BufferDMABuf::create(*webPage, id, m_surfaceID, size, usage, format, WTF::move(fds), WTF::move(offsets), WTF::move(strides), modifier)) {
++    // See preferredBufferFormats(): GdkDmabufTexture is unusable when GDK advertises no formats.
++    if (gdk_dmabuf_formats_get_n_formats(gdk_display_get_dmabuf_formats(Display::singleton().gdkDisplay()))) {
++        if (RefPtr buffer = BufferDMABuf::create(*webPage, id, m_surfaceID, usage, WTF::move(dmaBufAttributes))) {
 +            m_buffers.add(id, WTF::move(buffer));
 +            return;
 +        }

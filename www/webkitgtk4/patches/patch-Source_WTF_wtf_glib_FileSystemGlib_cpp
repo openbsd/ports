@@ -1,7 +1,7 @@
 Index: Source/WTF/wtf/glib/FileSystemGlib.cpp
 --- Source/WTF/wtf/glib/FileSystemGlib.cpp.orig
 +++ Source/WTF/wtf/glib/FileSystemGlib.cpp
-@@ -89,6 +89,17 @@ CString currentExecutablePath()
+@@ -87,6 +87,17 @@ CString currentExecutablePath()
          return { };
      return CString(unsafeMakeSpan(readBuffer, static_cast<size_t>(result)));
  }

@@ -3,20 +3,21 @@ riscv64 JIT/Wasm etc support isn't ready for prime time.
 Index: Source/cmake/WebKitFeatures.cmake
 --- Source/cmake/WebKitFeatures.cmake.orig
 +++ Source/cmake/WebKitFeatures.cmake
-@@ -106,12 +106,6 @@ macro(WEBKIT_OPTION_BEGIN)
-         set(USE_SYSTEM_MALLOC_DEFAULT OFF)
+@@ -110,13 +110,6 @@ macro(WEBKIT_OPTION_BEGIN)
+         set(USE_MIMALLOC_DEFAULT ON)
          set(ENABLE_C_LOOP_DEFAULT ON)
          set(ENABLE_SAMPLING_PROFILER_DEFAULT OFF)
 -    elseif (WTF_CPU_RISCV64)
 -        set(ENABLE_JIT_DEFAULT ON)
 -        set(ENABLE_FTL_DEFAULT ON)
 -        set(USE_SYSTEM_MALLOC_DEFAULT OFF)
+-        set(USE_MIMALLOC_DEFAULT ON)
 -        set(ENABLE_C_LOOP_DEFAULT OFF)
 -        set(ENABLE_SAMPLING_PROFILER_DEFAULT OFF)
      else ()
          set(ENABLE_JIT_DEFAULT OFF)
          set(ENABLE_FTL_DEFAULT OFF)
-@@ -457,7 +451,7 @@ macro(GET_WEBKIT_CONFIG_VARIABLES _var_name)
+@@ -608,7 +601,7 @@ macro(GET_WEBKIT_CONFIG_VARIABLES _set_vars)
  endmacro()
  
  macro(WEBKIT_CHECK_HAVE_INCLUDE _variable _header)

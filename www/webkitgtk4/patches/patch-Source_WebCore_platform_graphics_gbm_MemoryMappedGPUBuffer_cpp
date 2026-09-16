@@ -10,8 +10,8 @@ Index: Source/WebCore/platform/graphics/gbm/MemoryMappedGPUBuffer.cpp
 +#endif
  #include <sys/ioctl.h>
  #include <sys/mman.h>
- #include <wtf/SafeStrerror.h>
-@@ -406,6 +408,7 @@ std::unique_ptr<MemoryMappedGPUBuffer::AccessScope> Me
+ #include <unistd.h>
+@@ -508,6 +510,7 @@ std::unique_ptr<MemoryMappedGPUBuffer::AccessScope> Me
  
  bool MemoryMappedGPUBuffer::performDMABufSyncSystemCall(OptionSet<DMABufSyncFlag> flags)
  {
@@ -19,7 +19,7 @@ Index: Source/WebCore/platform/graphics/gbm/MemoryMappedGPUBuffer.cpp
      constexpr unsigned maxRetries = 10;
  
      struct dma_buf_sync sync;
-@@ -435,6 +438,9 @@ bool MemoryMappedGPUBuffer::performDMABufSyncSystemCal
+@@ -537,6 +540,9 @@ bool MemoryMappedGPUBuffer::performDMABufSyncSystemCal
      }
  
      return true;

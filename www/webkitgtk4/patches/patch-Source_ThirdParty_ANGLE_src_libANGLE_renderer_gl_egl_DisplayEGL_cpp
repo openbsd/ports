@@ -1,7 +1,7 @@
 Index: Source/ThirdParty/ANGLE/src/libANGLE/renderer/gl/egl/DisplayEGL.cpp
 --- Source/ThirdParty/ANGLE/src/libANGLE/renderer/gl/egl/DisplayEGL.cpp.orig
 +++ Source/ThirdParty/ANGLE/src/libANGLE/renderer/gl/egl/DisplayEGL.cpp
-@@ -113,6 +113,8 @@ const char *DisplayEGL::getEGLPath() const
+@@ -116,6 +116,8 @@ const char *DisplayEGL::getEGLPath() const
  #    else
      return "/system/lib/libEGL.so";
  #    endif

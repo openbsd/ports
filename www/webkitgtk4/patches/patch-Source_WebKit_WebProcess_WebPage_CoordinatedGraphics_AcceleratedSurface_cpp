@@ -19,7 +19,7 @@ WEBKIT_DISABLE_COMPOSITING_MODE=1
 Index: Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/AcceleratedSurface.cpp
 --- Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/AcceleratedSurface.cpp.orig
 +++ Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/AcceleratedSurface.cpp
-@@ -108,6 +108,14 @@ Ref<AcceleratedSurface> AcceleratedSurface::create(Web
+@@ -107,6 +107,14 @@ static uint64_t generateID()
  
  static bool useExplicitSync()
  {

@@ -17,10 +17,10 @@ Index: Source/WTF/wtf/unix/MemoryPressureHandlerUnix.cpp
  #include <wtf/haiku/CurrentProcessMemoryStatus.h>
 -#elif OS(FREEBSD)
 +#elif (OS(FREEBSD) || OS(OPENBSD))
+ #include <array>
  #include <sys/sysctl.h>
  #include <sys/types.h>
- #include <sys/user.h>
-@@ -117,6 +119,23 @@ static size_t processMemoryUsage()
+@@ -118,6 +120,23 @@ static size_t processMemoryUsage()
      ProcessMemoryStatus memoryStatus;
      currentProcessMemoryStatus(memoryStatus);
      return (memoryStatus.resident - memoryStatus.shared);

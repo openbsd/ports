@@ -4,13 +4,13 @@ build with an older webkitgtk4 package installed.
 Index: Source/cmake/OptionsCommon.cmake
 --- Source/cmake/OptionsCommon.cmake.orig
 +++ Source/cmake/OptionsCommon.cmake
-@@ -292,6 +292,9 @@ elseif (NOT ENABLE_ASSERTS)
+@@ -301,6 +301,9 @@ elseif (NOT ENABLE_ASSERTS)
      WEBKIT_PREPEND_GLOBAL_COMPILER_FLAGS(-DASSERT_ENABLED=0)
  endif ()
  
 +# make sure that the internal library dir is the first in the path
 +link_directories("${CMAKE_BINARY_DIR}/lib")
 +
- # Check whether features.h header exists.
- # Including glibc's one defines __GLIBC__, that is used in Platform.h
- WEBKIT_CHECK_HAVE_INCLUDE(HAVE_FEATURES_H features.h)
+ if (NOT APPLE)
+     # Check whether features.h header exists.
+     # Including glibc's one defines __GLIBC__, that is used in Platform.h

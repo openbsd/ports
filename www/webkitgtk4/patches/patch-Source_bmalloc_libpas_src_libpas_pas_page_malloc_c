@@ -1,21 +1,21 @@
 Index: Source/bmalloc/libpas/src/libpas/pas_page_malloc.c
 --- Source/bmalloc/libpas/src/libpas/pas_page_malloc.c.orig
 +++ Source/bmalloc/libpas/src/libpas/pas_page_malloc.c
-@@ -368,7 +368,7 @@ static void commit_impl(void* ptr, size_t size, bool d
-     }
+@@ -422,7 +422,7 @@ static void commit_impl(void* ptr, size_t size, bool d
  #elif PAS_PLATFORM(PLAYSTATION)
-     // We don't need to call madvise to map page.
+     /* We don't need to call madvise to map page. */
+     PAS_ASSERT(!is_symmetric);
 -#elif PAS_OS(FREEBSD)
 +#elif PAS_OS(FREEBSD) || PAS_OS(OPENBSD)
+     PAS_ASSERT(!is_symmetric);
      PAS_SYSCALL(madvise(ptr, size, MADV_NORMAL));
- #endif
- }
-@@ -411,7 +411,7 @@ static void decommit_impl(void* ptr, size_t size,
+ #else
+@@ -473,7 +473,7 @@ static void decommit_impl(void* ptr, size_t size,
          pas_page_malloc_zero_fill(ptr, size);
      else
          PAS_SYSCALL(madvise(ptr, size, MADV_FREE_REUSABLE));
 -#elif PAS_OS(FREEBSD)
 +#elif PAS_OS(FREEBSD) || PAS_OS(OPENBSD)
+     PAS_ASSERT(!is_symmetric);
      PAS_SYSCALL(madvise(ptr, size, MADV_FREE));
  #elif PAS_OS(LINUX)
-     PAS_SYSCALL(madvise(ptr, size, MADV_DONTNEED));

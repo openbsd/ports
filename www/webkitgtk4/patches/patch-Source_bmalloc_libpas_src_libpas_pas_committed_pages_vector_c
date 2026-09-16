@@ -3,7 +3,7 @@ No mincore(2) on OpenBSD.
 Index: Source/bmalloc/libpas/src/libpas/pas_committed_pages_vector.c
 --- Source/bmalloc/libpas/src/libpas/pas_committed_pages_vector.c.orig
 +++ Source/bmalloc/libpas/src/libpas/pas_committed_pages_vector.c
-@@ -68,6 +68,10 @@ void pas_committed_pages_vector_construct(pas_committe
+@@ -72,6 +72,10 @@ void pas_committed_pages_vector_construct(pas_committe
          if (result && (mem_info.State & MEM_COMMIT))
              vector->raw_data[i] = (unsigned char) 1;
      }

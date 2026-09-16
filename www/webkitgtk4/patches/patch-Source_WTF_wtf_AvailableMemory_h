@@ -1,0 +1,21 @@
+Index: Source/WTF/wtf/AvailableMemory.h
+--- Source/WTF/wtf/AvailableMemory.h.orig
++++ Source/WTF/wtf/AvailableMemory.h
+@@ -32,7 +32,7 @@ namespace WTF {
+ 
+ WTF_EXPORT_PRIVATE size_t availableMemory();
+ 
+-#if PLATFORM(IOS_FAMILY) || OS(LINUX) || OS(FREEBSD)
++#if PLATFORM(IOS_FAMILY) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+ struct MemoryStatus {
+     MemoryStatus(size_t memoryFootprint, double percentAvailableMemoryInUse)
+         : memoryFootprint(memoryFootprint)
+@@ -55,7 +55,7 @@ inline double percentAvailableMemoryInUse()
+ 
+ inline bool isUnderMemoryPressure()
+ {
+-#if PLATFORM(IOS_FAMILY) || OS(LINUX) || OS(FREEBSD)
++#if PLATFORM(IOS_FAMILY) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+     constexpr double memoryPressureThreshold = 0.75;
+     return percentAvailableMemoryInUse() > memoryPressureThreshold;
+ #else

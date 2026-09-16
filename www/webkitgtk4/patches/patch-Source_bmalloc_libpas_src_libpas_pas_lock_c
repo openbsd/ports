@@ -1,0 +1,48 @@
+Use futex(2) for the libpas lock slow path, like Linux does.
+
+Index: Source/bmalloc/libpas/src/libpas/pas_lock.c
+--- Source/bmalloc/libpas/src/libpas/pas_lock.c.orig
++++ Source/bmalloc/libpas/src/libpas/pas_lock.c
+@@ -33,7 +33,7 @@
+ #include <mach/thread_switch.h>
+ #endif
+ 
+-#if PAS_OS(LINUX) || PAS_OS(WINDOWS) || PAS_OS(FREEBSD)
++#if PAS_OS(LINUX) || PAS_OS(WINDOWS) || PAS_OS(FREEBSD) || PAS_OS(OPENBSD)
+ 
+ #if PAS_OS(LINUX)
+ #include <linux/futex.h>
+@@ -43,6 +43,8 @@
+ #include <synchapi.h>
+ #elif PAS_OS(FREEBSD)
+ #include <sys/umtx.h>
++#elif PAS_OS(OPENBSD)
++#include <sys/futex.h>
+ #endif
+ 
+ #if PAS_OS(LINUX)
+@@ -85,6 +87,16 @@ static inline long pas_lock_futex_wake(unsigned* addr)
+ {
+     return _umtx_op(addr, UMTX_OP_WAKE_PRIVATE, 1, NULL, NULL);
+ }
++#elif PAS_OS(OPENBSD)
++static inline long pas_lock_futex_wait(unsigned* addr, unsigned val)
++{
++    return futex((volatile uint32_t*)addr, FUTEX_WAIT | FUTEX_PRIVATE_FLAG, (int)val, NULL, NULL);
++}
++
++static inline long pas_lock_futex_wake(unsigned* addr)
++{
++    return futex((volatile uint32_t*)addr, FUTEX_WAKE | FUTEX_PRIVATE_FLAG, 1, NULL, NULL);
++}
+ #endif
+ 
+ void pas_lock_lock_slow(pas_lock* lock, unsigned expected)
+@@ -115,6 +127,6 @@ void pas_lock_unlock_slow(pas_lock* lock)
+     pas_lock_futex_wake(&lock->futex);
+ }
+ 
+-#endif /* PAS_OS(LINUX) || PAS_OS(WINDOWS) || PAS_OS(FREEBSD) */
++#endif /* PAS_OS(LINUX) || PAS_OS(WINDOWS) || PAS_OS(FREEBSD) || PAS_OS(OPENBSD) */
+ 
+ #endif /* LIBPAS_ENABLED */

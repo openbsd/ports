@@ -1,30 +1,29 @@
 Total memory from uvmexp(VM_UVMEXP), process footprint (RSS) from KERN_PROC.
 
-Index: Source/bmalloc/bmalloc/AvailableMemory.cpp
---- Source/bmalloc/bmalloc/AvailableMemory.cpp.orig
-+++ Source/bmalloc/bmalloc/AvailableMemory.cpp
-@@ -50,12 +50,15 @@
- #if BOS(LINUX)
- #include <algorithm>
+Index: Source/WTF/wtf/AvailableMemory.cpp
+--- Source/WTF/wtf/AvailableMemory.cpp.orig
++++ Source/WTF/wtf/AvailableMemory.cpp
+@@ -46,11 +46,14 @@
+ #endif
+ #if OS(LINUX)
  #include <fcntl.h>
--#elif BOS(FREEBSD)
-+#elif BOS(FREEBSD) || BOS(OPENBSD)
- #include "VMAllocate.h"
+-#elif OS(FREEBSD)
++#elif OS(FREEBSD) || OS(OPENBSD)
  #include <sys/sysctl.h>
  #include <sys/types.h>
  #include <sys/user.h>
-+#if BOS(OPENBSD)
++#if OS(OPENBSD)
 +#include <uvm/uvmexp.h>
  #endif
 +#endif
  #include <unistd.h>
- #endif
- 
-@@ -166,6 +169,19 @@ static size_t computeAvailableMemory()
+ #elif OS(WINDOWS)
+ #include <windows.h>
+@@ -154,6 +157,19 @@ static size_t computeAvailableMemory()
      if (!sysinfo(&info))
          return info.totalram * info.mem_unit;
      return availableMemoryGuess;
-+#elif BOS(OPENBSD)
++#elif OS(OPENBSD)
 +    struct uvmexp uvmexp;
 +    size_t length = sizeof(uvmexp);
 +    static const int uvmexp_mib[] = { CTL_VM, VM_UVMEXP };
@@ -37,31 +36,32 @@ Index: Source/bmalloc/bmalloc/AvailableMemory.cpp
 +    if (pages == -1)
 +        return availableMemoryGuess;
 +    return static_cast<size_t>(pages) * pageSize;
- #elif BOS(UNIX)
+ #elif OS(UNIX) || OS(HAIKU)
      long pages = sysconf(_SC_PHYS_PAGES);
      long pageSize = sysconf(_SC_PAGE_SIZE);
-@@ -187,7 +203,7 @@ size_t availableMemory()
+@@ -182,7 +198,7 @@ size_t availableMemory()
      return availableMemory;
  }
  
--#if BPLATFORM(IOS_FAMILY) || BOS(LINUX) || BOS(FREEBSD)
-+#if BPLATFORM(IOS_FAMILY) || BOS(LINUX) || BOS(FREEBSD) || BOS(OPENBSD)
+-#if PLATFORM(IOS_FAMILY) || OS(LINUX) || OS(FREEBSD)
++#if PLATFORM(IOS_FAMILY) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
  MemoryStatus memoryStatus()
  {
- #if BPLATFORM(IOS_FAMILY)
-@@ -213,6 +229,15 @@ MemoryStatus memoryStatus()
+ #if PLATFORM(IOS_FAMILY)
+@@ -204,6 +220,16 @@ MemoryStatus memoryStatus()
      size_t memoryFootprint = 0;
-     if (!sysctl(mib, 4, &info, &infolen, nullptr, 0))
-         memoryFootprint = static_cast<size_t>(info.ki_rssize) * vmPageSize();
-+#elif BOS(OPENBSD)
+     if (!sysctl(mib.data(), mib.size(), &info, &infolen, nullptr, 0))
+         memoryFootprint = static_cast<size_t>(info.ki_rssize) * pageSize();
++#elif OS(OPENBSD)
 +    struct kinfo_proc info;
 +    size_t infolen = sizeof(info);
-+    int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid(), static_cast<int>(sizeof(info)), 1 };
++
++    std::array<int, 6> mib { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid(), static_cast<int>(sizeof(info)), 1 };
 +
 +    // Resident set size, like the FreeBSD code above (ki_rssize).
 +    size_t memoryFootprint = 0;
-+    if (!sysctl(mib, std::size(mib), &info, &infolen, nullptr, 0))
-+        memoryFootprint = static_cast<size_t>(info.p_vm_rssize) * vmPageSize();
++    if (!sysctl(mib.data(), mib.size(), &info, &infolen, nullptr, 0))
++        memoryFootprint = static_cast<size_t>(info.p_vm_rssize) * pageSize();
  #endif
  
      double percentInUse = static_cast<double>(memoryFootprint) / static_cast<double>(availableMemory());

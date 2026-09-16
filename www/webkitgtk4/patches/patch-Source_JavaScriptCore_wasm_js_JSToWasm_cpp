@@ -7,7 +7,7 @@ Upstream discussion: https://bugs.webkit.org/show_bug.cgi?id=282677
 Index: Source/JavaScriptCore/wasm/js/JSToWasm.cpp
 --- Source/JavaScriptCore/wasm/js/JSToWasm.cpp.orig
 +++ Source/JavaScriptCore/wasm/js/JSToWasm.cpp
-@@ -41,6 +41,7 @@
+@@ -39,6 +39,7 @@
  #include "WasmThunks.h"
  #include "WasmToJS.h"
  #include "WebAssemblyFunctionBase.h"

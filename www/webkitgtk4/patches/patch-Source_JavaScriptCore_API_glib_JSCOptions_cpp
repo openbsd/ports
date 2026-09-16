@@ -5,7 +5,7 @@ Unbreak i386:
 Index: Source/JavaScriptCore/API/glib/JSCOptions.cpp
 --- Source/JavaScriptCore/API/glib/JSCOptions.cpp.orig
 +++ Source/JavaScriptCore/API/glib/JSCOptions.cpp
-@@ -73,7 +73,6 @@ static void valueToGValue(int32_t value, GValue* gValu
+@@ -74,7 +74,6 @@ static void valueToGValue(int32_t value, GValue* gValu
      g_value_set_int(gValue, value);
  }
  
@@ -13,7 +13,7 @@ Index: Source/JavaScriptCore/API/glib/JSCOptions.cpp
  static bool valueFromGValue(const GValue* gValue, unsigned& value)
  {
      value = g_value_get_uint(gValue);
-@@ -84,7 +83,6 @@ static void valueToGValue(unsigned value, GValue* gVal
+@@ -85,7 +84,6 @@ static void valueToGValue(unsigned value, GValue* gVal
  {
      g_value_set_uint(gValue, value);
  }
@@ -21,7 +21,7 @@ Index: Source/JavaScriptCore/API/glib/JSCOptions.cpp
  
  static bool valueFromGValue(const GValue* gValue, size_t& value)
  {
-@@ -560,12 +558,10 @@ static JSCOptionType jscOptionsType(int)
+@@ -561,12 +559,10 @@ static JSCOptionType jscOptionsType(int)
      return JSC_OPTION_INT;
  }
  
