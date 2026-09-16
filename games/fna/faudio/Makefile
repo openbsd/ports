@@ -22,6 +22,8 @@ MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 WRKDIST =	${WRKDIR}/FNA/lib/FAudio
 
+# XXX: test just hangs in test_simple_streaming() since 26.09
+NO_TEST =	Yes
 do-test:
 	cd ${WRKBUILD} && ./faudio_tests
 

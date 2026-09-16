@@ -1,4 +1,4 @@
-V ?=		26.07
+V ?=		26.09
 DISTNAME ?=	fna-${V:S/.//g}
 
 CATEGORIES =	games

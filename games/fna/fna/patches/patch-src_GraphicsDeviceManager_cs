@@ -4,7 +4,7 @@ https://gist.github.com/flibitijibibo/ffdd7c6fe32b9846a83807dab24be8fd
 Index: src/GraphicsDeviceManager.cs
 --- src/GraphicsDeviceManager.cs.orig
 +++ src/GraphicsDeviceManager.cs
-@@ -30,6 +30,12 @@ namespace Microsoft.Xna.Framework
+@@ -32,6 +32,12 @@ namespace Microsoft.Xna.Framework
  		{
  			get
  			{
