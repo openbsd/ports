@@ -1,12 +1,23 @@
 Index: src/env.cc
 --- src/env.cc.orig
 +++ src/env.cc
-@@ -774,7 +774,7 @@ std::string Environment::GetExecPath(const std::vector
-   uv_fs_req_cleanup(&req);
- #endif
+@@ -810,19 +810,6 @@ std::string Environment::GetExecPath(const std::vector
+     exec_path = argv[0];
+   }
  
--  return exec_path;
-+  return "${LOCALBASE}/bin/node";
+-  // On OpenBSD process.execPath will be relative unless we
+-  // get the full path before process.execPath is used.
+-#if defined(__OpenBSD__)
+-  uv_fs_t req;
+-  req.ptr = nullptr;
+-  if (0 ==
+-      uv_fs_realpath(nullptr, &req, exec_path.c_str(), nullptr)) {
+-    CHECK_NOT_NULL(req.ptr);
+-    exec_path = std::string(static_cast<char*>(req.ptr));
+-  }
+-  uv_fs_req_cleanup(&req);
+-#endif
+-
+   return exec_path;
  }
  
- Environment::Environment(IsolateData* isolate_data,
