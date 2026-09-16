@@ -1,5 +1,5 @@
 COMMENT=	XMPP real time collaboration server
-V=		4.6.8
+V=		5.1.2
 DISTNAME=	openfire_${V:S/./_/g}
 PKGNAME=	openfire-$V
 CATEGORIES=	net
