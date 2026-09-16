@@ -16,7 +16,7 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		gtk-update-icon-cache
 
-# XXX cyclic dep: gtk+4->adwaita-icon-theme->gtk+4;
+# XXX cyclic dep: gtk+4->adwaita-icon-theme->adwaita-icon-theme-legacy->gtk+4;
 # meson will not run gtk-update-icon-cache when DESTDIR is set anyway
 pre-configure:
 	ln -sf /usr/bin/true ${WRKDIR}/bin/gtk4-update-icon-cache
