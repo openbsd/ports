@@ -4,7 +4,7 @@ COMMENT = 	image processing framework
 
 V = 3.0.2
 DISTNAME = 	gmic-$V
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  gmic 1.0 # 1
 

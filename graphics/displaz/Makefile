@@ -2,7 +2,7 @@ COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
 GH_PROJECT =	displaz
 GH_TAGNAME =	v0.4.0
-REVISION =	10
+REVISION =	11
 
 HOMEPAGE =	http://c42f.github.io/displaz/
 

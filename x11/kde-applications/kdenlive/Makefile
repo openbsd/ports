@@ -1,6 +1,7 @@
 COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU Imath-3_2 KF6Archive KF6Attica
 WANTLIB += KF6Bookmarks KF6Codecs KF6ColorScheme KF6Completion

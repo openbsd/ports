@@ -3,6 +3,7 @@ COMMENT=	3D image rendering package
 V=		3.7.0.10
 DISTNAME=	povunix-v$V-src
 PKGNAME=	povray-$V
+REVISION=	0
 
 CATEGORIES=	graphics
 

@@ -4,7 +4,7 @@ GH_ACCOUNT =		ampas
 GH_PROJECT =		CTL
 GH_TAGNAME =		ctl-1.5.3
 DISTNAME =		${GH_TAGNAME}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=  IlmCtl               2.0      # .2.0
 SHARED_LIBS +=  IlmCtlMath           1.0      # .2.0

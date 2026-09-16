@@ -1,6 +1,6 @@
 COMMENT =	KDE plugins for QImage supporting extra file formats
 DISTNAME =	kimageformats-${VERSION}
-REVISION =	3
+REVISION =	4
 
 WANTLIB += ${COMPILER_LIBCXX} Iex-3_4 IlmThread-3_4 Imath-3_2
 WANTLIB += KF5Archive OpenEXR-3_4 Qt5Core Qt5Gui Qt5PrintSupport

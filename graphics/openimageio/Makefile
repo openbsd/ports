@@ -6,7 +6,7 @@ COMMENT =		library for reading and writing images
 GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenImageIO
 GH_TAGNAME =		v3.1.9.0
-REVISION =		0
+REVISION =		1
 PKGNAME =		${DISTNAME:L}
 
 SHARED_LIBS +=		OpenImageIO		19.0

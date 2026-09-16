@@ -8,8 +8,8 @@ V =			4.13.0
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
-REVISION-main =		2
-REVISION-java =		0
+REVISION-main =		3
+REVISION-java =		1
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}

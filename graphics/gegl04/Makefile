@@ -4,6 +4,7 @@ V=			0.4.72
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS += gegl-0.4                  0.5 # 0.471.1
 

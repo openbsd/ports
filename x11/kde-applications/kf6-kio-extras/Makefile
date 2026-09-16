@@ -1,6 +1,7 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 PKGNAME =	kf6-kio-extras-${VERSION}
+REVISION =	0
 
 CATEGORIES =	productivity net
 
