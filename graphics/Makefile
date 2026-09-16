@@ -128,6 +128,7 @@
      SUBDIR += kdiagram
      SUBDIR += kimageannotator
      SUBDIR += kirigami-addons
+     SUBDIR += kirigami-app-components
      SUBDIR += kplot
      SUBDIR += kquickimageeditor
      SUBDIR += krita
