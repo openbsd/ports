@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -290,11 +290,11 @@ else()
+@@ -337,9 +337,9 @@ else()
  endif()
  
  # install catalogs and tutorial
@@ -11,7 +11,7 @@ Index: CMakeLists.txt
  # install example files
  file(GLOB EXAMPLE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/examples/*/*.xpf)
 -install(FILES ${EXAMPLE_FILES} DESTINATION examples)
+-endif(EMSCRIPTEN)
+\ No newline at end of file
 +install(FILES ${EXAMPLE_FILES} DESTINATION share/XaoS/examples)
- endif(EMSCRIPTEN)
- 
- 
++endif(EMSCRIPTEN)
