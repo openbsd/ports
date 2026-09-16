@@ -2,7 +2,7 @@ COMMENT=		service endpoint configuration per service on profile
 
 MODPY_DISTV=		0.4
 DISTNAME=		awscli-plugin-endpoint-${MODPY_DISTV}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		sysutils
 
@@ -16,7 +16,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-RUN_DEPENDS=		sysutils/awscli/v1
+RUN_DEPENDS=		sysutils/awscli
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/awscli-plugin-endpoint
