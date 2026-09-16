@@ -4,7 +4,7 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		litecoin-project
 GH_PROJECT =		litecoin
-GH_TAGNAME =		v0.21.5.6
+GH_TAGNAME =		v0.21.5.8
 
 SHARED_LIBS +=  bitcoinconsensus          4.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
@@ -20,12 +20,20 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 
-LIB_DEPENDS =		databases/db/v4 \
+LIB_DEPENDS =		converters/libiconv \
+			databases/db/v4 \
 			databases/sqlite3 \
 			devel/boost \
 			devel/fmt \
+			devel/glib2 \
+			devel/harfbuzz \
 			devel/libevent2 \
-			net/zeromq
+			graphics/graphite2 \
+			graphics/png \
+			net/zeromq \
+			security/libsodium \
+			textproc/icu4c \
+			x11/dbus
 
 USE_GMAKE =		Yes
 
