@@ -5,7 +5,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v24.20.0
+NODE_VERSION =		v24.21.0
 DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
 DIST_TUPLE =		github qbit node-pledge 1.1.3 \
@@ -91,7 +91,6 @@ TEST_ENV+=		CI_SKIP_TESTS=test-snapshot-reproducible
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/common.gypi \
 		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/install.js \
-		${WRKDIST}/src/env.cc \
 		${WRKDIST}/tools/test.py
 
 post-install:
