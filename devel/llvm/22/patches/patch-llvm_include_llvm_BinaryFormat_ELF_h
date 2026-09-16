@@ -11,3 +11,11 @@ Index: llvm/include/llvm/BinaryFormat/ELF.h
    // AMDGPU symbol types
    STT_AMDGPU_HSA_KERNEL = 10
  };
+@@ -1961,6 +1964,7 @@ enum {
+   NT_OPENBSD_FPREGS = 21,
+   NT_OPENBSD_XFPREGS = 22,
+   NT_OPENBSD_WCOOKIE = 23,
++  NT_OPENBSD_PACMASK = 24,
+ };
+ 
+ // AMDGPU-specific section indices.
