@@ -1,3 +1,4 @@
+@conflict libgexiv2-<0.14.7p0
 include/gexiv2-0.16/
 include/gexiv2-0.16/gexiv2/
 include/gexiv2-0.16/gexiv2/gexiv2-enums.h
@@ -11,6 +12,8 @@ include/gexiv2-0.16/gexiv2/gexiv2.h
 lib/girepository-1.0/GExiv2-0.16.typelib
 @lib lib/libgexiv2-0.16.so.${LIBgexiv2-0.16_VERSION}
 lib/pkgconfig/gexiv2-0.16.pc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GExiv2.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GExiv2.${MODPY_PYC_MAGIC_TAG}pyc
 share/gir-1.0/GExiv2-0.16.gir
 share/vala/
 share/vala/vapi/

@@ -2,6 +2,7 @@ COMMENT=		GObject-based wrapper around the Exiv2 library
 
 GNOME_VERSION=		0.16.2
 GNOME_PROJECT=		gexiv2
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -31,12 +32,5 @@ LIB_DEPENDS=		devel/glib2 \
 # import gi
 BUILD_DEPENDS=		devel/py-gobject3
 RUN_DEPENDS=		devel/py-gobject3
-
-post-install:
-# XXX prevent conflict with graphics/libgexiv2;
-# lib/python${MODPY_VERSION}/site-packages/gi/overrides/GExiv2.py
-# lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GExiv2.${MODPY_PYC_MAGIC_TAG}pyc
-# see https://gitlab.gnome.org/GNOME/gexiv2/-/issues/88
-	rm -r ${PREFIX}/lib/python${MODPY_VERSION}/
 
 .include <bsd.port.mk>
