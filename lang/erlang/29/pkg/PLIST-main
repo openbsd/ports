@@ -1813,6 +1813,7 @@ lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/runtime_tools_sup.beam
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/scheduler.beam
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/system_information.beam
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/ttb_autostart.beam
+lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/ebin/versions.beam
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/include/
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/include/observer_backend.hrl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/priv/
@@ -1833,6 +1834,7 @@ lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/runtime_tools_sup.erl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/scheduler.erl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/system_information.erl
 lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/ttb_autostart.erl
+lib/${ERLANG_V}/lib/${ERL_RUNTIME_TOOLS}/src/versions.erl
 lib/${ERLANG_V}/lib/${ERL_SASL}/
 lib/${ERLANG_V}/lib/${ERL_SASL}/ebin/
 lib/${ERLANG_V}/lib/${ERL_SASL}/ebin/alarm_handler.beam
@@ -3148,6 +3150,7 @@ lib/${ERLANG_V}/man/man3/
 @man lib/${ERLANG_V}/man/man3/unicode.3
 @man lib/${ERLANG_V}/man/man3/unix_telnet.3
 @man lib/${ERLANG_V}/man/man3/uri_string.3
+@man lib/${ERLANG_V}/man/man3/versions.3
 @man lib/${ERLANG_V}/man/man3/win32reg.3
 @man lib/${ERLANG_V}/man/man3/wrap_log_reader.3
 @man lib/${ERLANG_V}/man/man3/xmerl.3
