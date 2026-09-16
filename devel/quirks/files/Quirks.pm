@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1828 2026/09/16 15:23:12 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1829 2026/09/16 20:11:23 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -632,6 +632,7 @@ setup_obsolete_reason(
 	3 => 'p5-Data-Entropy',
 	3 => 'tmate',
 	45 => 'ntopng',
+	3 => 'awscli-plugin-endpoint',
 );
 # beware, if ports with an RDEP on Python 3 are removed, they need to be listed
 # as @conflict/pkgpath in lang/python/3 and not here, otherwise an update from a
