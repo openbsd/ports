@@ -1,7 +1,7 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2026.2.1
-DIST_VER=		262.9437.185
+V=			2026.2.3
+DIST_VER=		262.10968.63
 DISTNAME=		idea-${V}
 DISTFILES=		${DISTNAME}-1{${DISTNAME}}.tar.gz
 PKGNAME=		intellij-${V}
@@ -52,5 +52,7 @@ do-install:
 	@ln -s ${TRUEPREFIX}/bin/idea-lightedit \
 		${PREFIX}/bin/intellij-lightedit
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${PREFIX}/man/man1
+
+	@echo "-Dide.browser.jcef.enabled=false" >> ${IJ}/bin/idea64.vmoptions
 
 .include <bsd.port.mk>

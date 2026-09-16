@@ -265,6 +265,7 @@ intellij/lib/intellij.platform.jewel.foundation.jar
 intellij/lib/intellij.platform.jewel.ideLafBridge.jar
 intellij/lib/intellij.platform.jewel.markdown.core.jar
 intellij/lib/intellij.platform.jewel.markdown.extensions.autolink.jar
+intellij/lib/intellij.platform.jewel.markdown.extensions.frontMatter.jar
 intellij/lib/intellij.platform.jewel.markdown.extensions.gfmAlerts.jar
 intellij/lib/intellij.platform.jewel.markdown.extensions.gfmStrikethrough.jar
 intellij/lib/intellij.platform.jewel.markdown.extensions.gfmTables.jar
@@ -450,6 +451,8 @@ intellij/plugins/Kotlin/kotlinc/bin/kotlinc-js
 intellij/plugins/Kotlin/kotlinc/bin/kotlinc-js.bat
 intellij/plugins/Kotlin/kotlinc/bin/kotlinc-jvm
 intellij/plugins/Kotlin/kotlinc/bin/kotlinc-jvm.bat
+intellij/plugins/Kotlin/kotlinc/bin/kotlinc-wasm
+intellij/plugins/Kotlin/kotlinc/bin/kotlinc-wasm.bat
 intellij/plugins/Kotlin/kotlinc/bin/kotlinc.bat
 intellij/plugins/Kotlin/kotlinc/build.txt
 intellij/plugins/Kotlin/kotlinc/lib/
@@ -457,6 +460,7 @@ intellij/plugins/Kotlin/kotlinc/lib/allopen-compiler-plugin.jar
 intellij/plugins/Kotlin/kotlinc/lib/annotations-13.0.jar
 intellij/plugins/Kotlin/kotlinc/lib/assignment-compiler-plugin.jar
 intellij/plugins/Kotlin/kotlinc/lib/compose-compiler-plugin.jar
+intellij/plugins/Kotlin/kotlinc/lib/jklib-compiler.jar
 intellij/plugins/Kotlin/kotlinc/lib/jvm-abi-gen.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-annotation-processing-cli.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-annotation-processing-runtime.jar
@@ -487,6 +491,7 @@ intellij/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-jdk8.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-js-sources.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-js.klib
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-sources.jar
+intellij/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-wasm-js.klib
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-stdlib.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-test-js-sources.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-test-js.klib
@@ -739,7 +744,6 @@ intellij/plugins/java-aetherDependencyResolver-plugin/lib/
 intellij/plugins/java-aetherDependencyResolver-plugin/lib/intellij.libraries.maven.resolver.provider.jar
 intellij/plugins/java-aetherDependencyResolver-plugin/lib/intellij.libraries.plexus.utils.jar
 intellij/plugins/java-aetherDependencyResolver-plugin/lib/java-aetherDependencyResolver-plugin.jar
-intellij/plugins/java-aetherDependencyResolver-plugin/lib/maven-artifact.jar
 intellij/plugins/java-aetherDependencyResolver-plugin/lib/maven-builder-support.jar
 intellij/plugins/java-aetherDependencyResolver-plugin/lib/maven-model-builder.jar
 intellij/plugins/java-aetherDependencyResolver-plugin/lib/maven-model.jar
@@ -1157,6 +1161,7 @@ intellij/plugins/markdown/lib/modules/intellij.markdown.backend.jar
 intellij/plugins/markdown/lib/modules/intellij.markdown.compose.preview.jar
 intellij/plugins/markdown/lib/modules/intellij.markdown.fenceInjection.jar
 intellij/plugins/markdown/lib/modules/intellij.markdown.fenceInjector.textMate.jar
+intellij/plugins/markdown/lib/modules/intellij.markdown.figmaAdvertiser.jar
 intellij/plugins/markdown/lib/modules/intellij.markdown.frontend.jar
 intellij/plugins/markdown/lib/modules/intellij.markdown.frontmatter.jar
 intellij/plugins/markdown/lib/modules/intellij.markdown.frontmatter.toml.jar
