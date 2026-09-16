@@ -9,8 +9,8 @@
      #SUBDIR +=  keysmith
 
      # New in KDE Gear/26.08
-     #SUBDIR += kdominate
-     #SUBDIR += keepsecret
+     SUBDIR += kdominate
+     SUBDIR += keepsecret
 
      # New in KDE Gear/24.12
      SUBDIR += kunifiedpush
