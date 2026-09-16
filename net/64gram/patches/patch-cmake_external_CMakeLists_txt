@@ -1,0 +1,12 @@
+Skip unused TooManyCooks, it requires newer libcxx
+
+--- cmake/external/CMakeLists.txt.orig	Tue Aug  4 12:34:45 2026
++++ cmake/external/CMakeLists.txt	Tue Aug  4 12:35:00 2026
+@@ -49,7 +49,6 @@
+ add_checked_subdirectory(rlottie)
+ add_checked_subdirectory(rnnoise)
+ add_checked_subdirectory(tde2e)
+-add_checked_subdirectory(tmc)
+ add_checked_subdirectory(ton)
+ add_checked_subdirectory(variant)
+ add_checked_subdirectory(vpx)

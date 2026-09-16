@@ -1,0 +1,135 @@
+# the MTProto implementation does not support big-endian
+# https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
+# build uses too much memory on i386 (noticed in calls_group_menu.cpp)
+NOT_FOR_ARCHS =		${BE_ARCHS} i386
+
+V =			1.2.8
+COMMENT =		64Gram unofficial Telegram Desktop
+PORTROACH =		limit:-full$$
+DISTNAME =		64Gram-${V}-full
+PKGNAME =		${DISTNAME:L:-full=}
+CATEGORIES =		net
+
+DPB_PROPERTIES =	parallel
+
+# XXX Telegram is too big;  first it needs dwz(1) -L bumping to 150 million,
+# then it dies with "elf_update failed" (most likely OOM).
+# DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+HOMEPAGE =		https://64gr.am
+SITES =			https://github.com/TDesktop-x64/tdesktop/releases/download/v${V}/
+MAINTAINER =		Mykyta Nazarenko <mn@superpc.suicide.solutions>
+
+# tdesktop:		GPLv3 with OpenSSL exception
+# cld3:			Apache 2.0
+# libprisma:		MIT
+# rlottie:		LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
+# tgcalls:		LGPL 3
+# xdg-desktop-portal:	LGPL 2.1
+PERMIT_PACKAGE =	Yes
+
+WANTLIB += ${COMPILER_LIBCXX} KF6CoreAddons Qt6Core Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6QuickWidgets
+WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_strings
+WANTLIB += ada avcodec avfilter avformat avutil c cairo crypto
+WANTLIB += dispatch fido2 fontconfig gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += hunspell-1.7 jpeg lz4 m minizip openal pango-1.0 pangocairo-1.0
+WANTLIB += protobuf-lite qrcodegencpp rnnoise swresample swscale
+WANTLIB += tg_owt xxhash z
+
+# dlopen()ed
+WANTLIB += webkitgtk-6.0 xcb xcb-keysyms xcb-record xcb-screensaver
+
+# C++20
+COMPILER =		base-clang ports-gcc
+
+MODULES =		devel/cmake \
+			lang/python \
+			x11/qt6
+MODPY_RUNDEP =		No
+
+BUILD_DEPENDS =		devel/boost,-main \
+			devel/crc32c \
+			devel/fmt \
+			devel/gobject-introspection \
+			devel/range-v3>=0.11.0p0 \
+			devel/tl-expected \
+			net/tdlib/tde2e \
+			x11/qt6/qtshadertools
+
+LIB_DEPENDS =		archivers/lz4 \
+			archivers/minizip \
+			audio/openal \
+			audio/rnnoise \
+			devel/abseil-cpp \
+			devel/glib2>=2.78.0 \
+			devel/kf6/kcoreaddons \
+			devel/libdispatch \
+			devel/protobuf \
+			graphics/ffmpeg>=8.1.1p0v1 \
+			graphics/jpeg \
+			graphics/qr-code-generator>=1.7.0p1 \
+			net/tg_owt>=0.0.0.20260409 \
+			sysutils/xxhash \
+			textproc/hunspell \
+			www/ada \
+			www/webkitgtk4,webkitgtk60 \
+			x11/qt6/qtdeclarative \
+			x11/qt6/qtsvg \
+			x11/qt6/qtwayland
+
+RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/kf6/kimageformats \
+			x11/gtk+4,-guic \
+			x11/qt6/qtimageformats
+
+# opt-out since 5.15, requires more bundled stuff like fcitx5-qt, hime, nimf
+CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_QT_PLUGINS=ON
+
+# Follow suit with most other distribution packages, i.e. use the token from
+# Telegram's official Snap package
+# https://github.com/telegramdesktop/tdesktop/issues/17435
+CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
+			-DTDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c
+
+# Since cmake 3.25.1, BSDs are no longer recognised as Linux (in this port).
+# Upstream should probably become BSD aware, but until that happens,
+# pretend we're Linux to keep building...
+CONFIGURE_ARGS +=	-DLINUX=true
+
+NO_TEST =		Yes
+
+# unported and required
+NEEDED_BUNDLES =	cld3 libprisma rlottie tgcalls MicroTeX cmark-gfm
+
+# ported but CMake code hardcodes bundled file paths
+NEEDED_BUNDLES +=	xdg-desktop-portal
+
+# 7.1.3 wants ==4.1.0, wait for upstream to catch up with 5.0.0
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Microsoft.GSL=True
+NEEDED_BUNDLES +=	GSL
+
+post-extract:
+	# All bundles:
+	@cd ${WRKSRC}/Telegram/ThirdParty/ && ls -x
+	# Needed bundles (others are removed to prevent accidential use):
+	@cd ${WRKSRC}/Telegram/ThirdParty/ && mkdir .need/ && \
+		mv ${NEEDED_BUNDLES} .need/ && rm -fr -- ./* && \
+		mv .need/* . && rmdir .need/ && ls -x
+
+post-patch:
+	# XXX fix the following on every source file
+	# warning: unknown warning option '-Wno-maybe-uninitialized'
+	# warning: argument unused during compilation: '-fstack-clash-protection'
+	sed -i -e /-Wno-maybe-uninitialized/d -e /-fstack-clash-protection/d \
+	    ${WRKSRC}/cmake/options_linux.cmake
+
+pre-configure:
+	# ignore everything that can possibly be ignored by cppgir
+	@cat ${FILESDIR}/cppgir_extra_ignore >> ${WRKSRC}/cmake/external/glib/cppgir/data/cppgir.ignore
+
+# reduce binary size fromm +660M to ~250M
+do-install:
+	${MODCMAKE_INSTALL_TARGET} --strip
+
+.include <bsd.port.mk>

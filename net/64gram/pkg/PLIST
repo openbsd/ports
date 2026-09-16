@@ -1,0 +1,25 @@
+@conflict tdesktop-*
+@bin bin/Telegram
+share/applications/io.github.tdesktop_x64.TDesktop.desktop
+share/dbus-1/services/io.github.tdesktop_x64.TDesktop.service
+share/icons/hicolor/128x128/apps/org.telegram.desktop.png
+share/icons/hicolor/128x128@2/apps/org.telegram.desktop.png
+share/icons/hicolor/16x16/apps/org.telegram.desktop.png
+share/icons/hicolor/16x16@2/apps/org.telegram.desktop.png
+share/icons/hicolor/256x256/apps/org.telegram.desktop.png
+share/icons/hicolor/256x256@2/apps/org.telegram.desktop.png
+share/icons/hicolor/32x32/apps/org.telegram.desktop.png
+share/icons/hicolor/32x32@2/apps/org.telegram.desktop.png
+share/icons/hicolor/48x48/apps/org.telegram.desktop.png
+share/icons/hicolor/48x48@2/apps/org.telegram.desktop.png
+share/icons/hicolor/512x512/apps/org.telegram.desktop.png
+share/icons/hicolor/512x512@2/apps/org.telegram.desktop.png
+share/icons/hicolor/64x64/apps/org.telegram.desktop.png
+share/icons/hicolor/64x64@2/apps/org.telegram.desktop.png
+share/icons/hicolor/symbolic/apps/org.telegram.desktop-attention-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.telegram.desktop-mute-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.telegram.desktop-symbolic.svg
+share/metainfo/
+share/metainfo/io.github.tdesktop_x64.TDesktop.metainfo.xml
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

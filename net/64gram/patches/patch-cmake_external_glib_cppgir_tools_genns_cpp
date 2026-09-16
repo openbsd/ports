@@ -1,0 +1,20 @@
+Do not generate `C_STD_VERSION`, `LOG_DOMAN`, `WIN32_MSG_HANDLE`, `macro__`,
+`MODULE_IMPL`, they don't make any sense, but they'll break the build.
+
+--- cmake/external/glib/cppgir/tools/genns.cpp.orig	Tue Sep 15 23:56:28 2026
++++ cmake/external/glib/cppgir/tools/genns.cpp	Wed Sep 16 00:05:06 2026
+@@ -329,6 +329,14 @@
+     auto name = get_name(node);
+     std::ostringstream oss;
+     try {
++      if (name.find("C_STD_VERSION") != name.npos ||
++	  name.find("LOG_DOMAIN") != name.npos ||
++	  name.find("WIN32_MSG_HANDLE") != name.npos ||
++	  name.find("macro__") != name.npos ||
++	  name.find("MODULE_IMPL") != name.npos) {
++	 throw skip("these wrappers are guaranteed to break the build", skip::OK);
++      }
++
+       ArgInfo tinfo = parse_arginfo(node);
+       auto cpptype = tinfo.cpptype;
+ 

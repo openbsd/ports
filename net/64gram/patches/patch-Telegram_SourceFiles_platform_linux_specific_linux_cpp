@@ -1,0 +1,58 @@
+/usr/ports/pobj/tdesktop-6.2.5/tdesktop-6.2.5-full/Telegram/SourceFiles/platform/linux/specific_linux.cpp:71:7: error: reference to 'GObject' is ambiguous
+
+--- Telegram/SourceFiles/platform/linux/specific_linux.cpp.orig	Thu Aug  6 22:50:07 2026
++++ Telegram/SourceFiles/platform/linux/specific_linux.cpp	Thu Aug  6 22:53:03 2026
+@@ -66,7 +66,7 @@
+ 		Gio::DBusProxyFlags::NONE_,
+ 		base::Platform::XDP::kService,
+ 		base::Platform::XDP::kObjectPath,
+-		[=](GObject::Object, Gio::AsyncResult res) {
++		[=](auto, Gio::AsyncResult res) {
+ 			auto proxy = XdpBackground::BackgroundProxy::new_for_bus_finish(
+ 				res);
+ 
+@@ -119,7 +119,7 @@
+ 					+ '/'
+ 					+ handleToken,
+ 				nullptr,
+-				[=](GObject::Object, Gio::AsyncResult res) mutable {
++				[=](auto, Gio::AsyncResult res) mutable {
+ 					auto requestProxy = XdpRequest::RequestProxy::new_finish(
+ 						res);
+ 
+@@ -194,7 +194,7 @@
+ 								GLib::Variant::new_variant(
+ 									GLib::Variant::new_boolean(false))),
+ 						}),
+-						[=](GObject::Object, Gio::AsyncResult res) mutable {
++						[=](auto, Gio::AsyncResult res) mutable {
+ 							auto &sandbox = Core::Sandbox::Instance();
+ 							sandbox.customEnterFromEventLoop([&] {
+ 								const auto result =
+@@ -447,7 +447,7 @@
+ 		Gio::DBusProxyFlags::NONE_,
+ 		base::Platform::DBus::kService,
+ 		base::Platform::DBus::kObjectPath,
+-		[=](GObject::Object, Gio::AsyncResult res) {
++		[=](auto, Gio::AsyncResult res) {
+ 			auto interface = XdgDBus::DBus(
+ 				XdgDBus::DBusProxy::new_for_bus_finish(res, nullptr));
+ 
+@@ -548,7 +548,7 @@
+ 		Gio::DBusProxyFlags::NONE_,
+ 		base::Platform::XDP::kService,
+ 		base::Platform::XDP::kObjectPath,
+-		[=](GObject::Object, Gio::AsyncResult res) {
++		[=](auto, Gio::AsyncResult res) {
+ 			auto interface = XdpOpenURI::OpenURI(
+ 				XdpOpenURI::OpenURIProxy::new_for_bus_finish(res, nullptr));
+ 
+@@ -562,7 +562,7 @@
+ 				GLib::Variant::new_array(
+ 					GLib::VariantType::new_("{sv}"),
+ 					{}),
+-				[=](GObject::Object, Gio::AsyncResult res) mutable {
++				[=](auto, Gio::AsyncResult res) mutable {
+ 					const auto result
+ 						= interface.call_scheme_supported_finish(res);
+ 

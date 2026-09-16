@@ -1,0 +1,26 @@
+inline 'using Fn = std::function<Signature>;' to fix the build:
+.../base_linux_xcb_utilities.cpp:158:54: error: alias template 'Fn' requires template arguments; argument deduction only allowed for class templates
+
+--- Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp.orig	Thu Aug  6 23:02:59 2026
++++ Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp	Thu Aug  6 23:05:31 2026
+@@ -56,6 +56,11 @@
+ 
+ xcb_connection_t *GetConnectionFromQt() {
+ #if defined QT_FEATURE_xcb && QT_CONFIG(xcb)
++	// If we failed to load libxcb, we will crash anyway
++	static const auto xcb_connect = LoadSymbol("xcb_connect");
++	if (!xcb_connect) {
++		return nullptr;
++	}
+ #if QT_VERSION >= QT_VERSION_CHECK(6, 2, 0)
+ 	using namespace QNativeInterface;
+ 	const auto native = qApp->nativeInterface<QX11Application>();
+@@ -142,7 +147,7 @@
+ 		}
+ 	}
+ 
+-	const auto ptr = it->second.second.emplace_back(new Fn(handler)).get();
++	const auto ptr = it->second.second.emplace_back(new std::function(handler)).get();
+ 	return rpl::lifetime([=] {
+ 		const auto it = EventHandlers.find(connection);
+ 		it->second.second.erase(

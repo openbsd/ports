@@ -1,0 +1,3 @@
+A fork of the official Telegram Desktop client, with some improvements
+and additional features, such as voice chat radio mode, manual bitrate
+configuration and extended message timestamps.

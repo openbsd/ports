@@ -1,0 +1,14 @@
+inline 'using Fn = std::function<Signature>;' to fix the build
+.../Telegram/SourceFiles/platform/linux/current_geo_location_linux.cpp:121:7: error: alias template 'Fn' requires template arguments; argument deduction only allowed for class templates
+
+--- Telegram/SourceFiles/platform/linux/current_geo_location_linux.cpp.orig	Thu Aug  6 22:41:13 2026
++++ Telegram/SourceFiles/platform/linux/current_geo_location_linux.cpp	Thu Aug  6 22:41:38 2026
+@@ -92,7 +92,7 @@
+ 				.accuracy = Core::GeoLocationAccuracy::Exact,
+ 			});
+ 		}),
+-		new Fn(callback));
++		new std::function(callback));
+ }
+ 
+ void ResolveLocationAddress(

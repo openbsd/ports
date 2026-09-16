@@ -1,0 +1,7 @@
+GLib:function:unichar_to_utf8
+Gio:.*:ThreadedResolver
+Gio:function:networking_init
+GLib:record:Array
+GLib:record:PtrArray
+Gio:class:TlsCertificate
+GObject:bitfield:IOCondition
