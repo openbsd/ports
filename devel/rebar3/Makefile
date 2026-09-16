@@ -3,7 +3,7 @@ COMMENT = 		Erlang build tool
 GH_ACCOUNT =		erlang
 GH_PROJECT =		rebar3
 GH_TAGNAME =		3.27.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -18,8 +18,7 @@ MODULES =		lang/erlang
 # for tests
 MODERL_MODULES += 	meck	0.8.13
 MODERL_HANDLE_FLAVORS=	Yes
-FLAVOR ?=		erlang28
-FLAVORS =		erlang27 erlang28
+FLAVOR ?=
 CONFIGURE_STYLE =	None
 
 DISTFILES =		rebar3-{}${GH_TAGNAME}.tar.gz

@@ -1,0 +1,12 @@
+Index: apps/rebar/rebar.config
+--- apps/rebar/rebar.config.orig
++++ apps/rebar/rebar.config
+@@ -34,7 +34,7 @@
+ 
+ {overrides, [{add, relx, [{erl_opts, [{d, 'RLX_LOG', rebar_log}]}]}]}.
+ 
+-{erl_opts, [warnings_as_errors]}.
++%% {erl_opts, [warnings_as_errors]}.
+ 
+ {edoc_opts, [preprocess]}.
+ 

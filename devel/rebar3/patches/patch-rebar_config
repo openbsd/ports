@@ -1,4 +1,6 @@
-set main module name for escript
+- set main module name for escript
+- disable warnings_as_errors as this prevents rebar3 from building
+  with erlang/29
 
 Index: rebar.config
 --- rebar.config.orig
@@ -12,3 +14,13 @@ Index: rebar.config
  %% escript_incl_priv is for internal rebar-private use only.
  %% Do not use outside rebar. Config interface is not stable.
  {escript_incl_priv, [{relx, "templates/*"},
+@@ -49,8 +49,7 @@
+         {erl_opts, [no_debug_info]},
+         {overrides, [
+             {override, erlware_commons, [
+-                {erl_opts, [no_debug_info,
+-                            warnings_as_errors]},
++                {erl_opts, [no_debug_info]},
+                 {deps, []}, {plugins, []}]},
+             {add, ssl_verify_hostname, [{erl_opts, [no_debug_info]}]},
+             {add, certifi, [{erl_opts, [no_debug_info]}]},
