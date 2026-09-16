@@ -892,6 +892,7 @@ webapps/docs/api/org/apache/catalina/util/RateLimiterBase.html
 webapps/docs/api/org/apache/catalina/util/RequestUtil.html
 webapps/docs/api/org/apache/catalina/util/ResourceSet.html
 webapps/docs/api/org/apache/catalina/util/ServerInfo.html
+webapps/docs/api/org/apache/catalina/util/SessionComparators.html
 webapps/docs/api/org/apache/catalina/util/SessionConfig.html
 webapps/docs/api/org/apache/catalina/util/SessionIdGeneratorBase.html
 webapps/docs/api/org/apache/catalina/util/StandardSessionIdGenerator.html
