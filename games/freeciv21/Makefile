@@ -1,6 +1,6 @@
 COMMENT =	turn-based, empire-building 4x strategy game
 
-V =		3.1.2
+V =		3.1.3
 # libertinus version taken from cmake/FreecivInstall.cmake
 LIBERTINUS =	7.040
 
@@ -32,7 +32,9 @@ MODULES =	devel/cmake \
 
 MODLUA_VERSION = 5.3
 
+# git is not easily disentangled from the build
 BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/git \
 		textproc/py-sphinx
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	devel/kf5/karchive \
