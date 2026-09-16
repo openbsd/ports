@@ -1,4 +1,5 @@
 @conflict OpenEXR-<=1.2.2p0
+@conflict OpenEXR-doc-*
 share/doc/OpenEXR/
 share/doc/OpenEXR/examples/
 share/doc/OpenEXR/examples/deepExamples.cpp

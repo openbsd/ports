@@ -7,9 +7,13 @@ GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		openexr
 GH_TAGNAME=		v${V}
 
-PKGNAME-main=		OpenEXR-${V}
-PKGNAME-tools=		OpenEXR-tools-${V}
-PKGNAME-doc=		OpenEXR-doc-${V}
+PKGNAME-main=		openexr-${V}
+PKGNAME-tools=		openexr-tools-${V}
+PKGNAME-doc=		openexr-doc-${V}
+
+REVISION-main=		0
+REVISION-tools=		0
+REVISION-doc=		0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

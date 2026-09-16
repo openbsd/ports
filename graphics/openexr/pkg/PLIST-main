@@ -1,4 +1,5 @@
 @conflict ilmbase-*
+@conflict OpenEXR-*
 @pkgpath graphics/openexr
 @pkgpath graphics/ilmbase
 include/OpenEXR/
