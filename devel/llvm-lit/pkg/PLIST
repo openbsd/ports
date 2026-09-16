@@ -11,6 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/lit-${LLVM_VERSION}.dev0.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/lit-${LLVM_VERSION}.dev0.dist-info/licenses/LICENSE.TXT
 lib/python${MODPY_VERSION}/site-packages/lit-${LLVM_VERSION}.dev0.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/lit/BooleanExpression.py
+lib/python${MODPY_VERSION}/site-packages/lit/DiffUpdater.py
 lib/python${MODPY_VERSION}/site-packages/lit/LitConfig.py
 lib/python${MODPY_VERSION}/site-packages/lit/LitTestCase.py
 lib/python${MODPY_VERSION}/site-packages/lit/ProgressBar.py
@@ -24,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/lit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/lit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lit/${MODPY_PYCACHE}BooleanExpression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lit/${MODPY_PYCACHE}BooleanExpression.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lit/${MODPY_PYCACHE}DiffUpdater.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/lit/${MODPY_PYCACHE}DiffUpdater.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lit/${MODPY_PYCACHE}LitConfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lit/${MODPY_PYCACHE}LitConfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lit/${MODPY_PYCACHE}LitTestCase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,10 +68,13 @@ lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/__init__.py
 lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/${MODPY_PYCACHE}_launch_with_limit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/${MODPY_PYCACHE}_launch_with_limit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/${MODPY_PYCACHE}cat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/${MODPY_PYCACHE}cat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/_launch_with_limit.py
 lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/cat.py
 lib/python${MODPY_VERSION}/site-packages/lit/builtin_commands/diff.py
 lib/python${MODPY_VERSION}/site-packages/lit/cl_arguments.py
