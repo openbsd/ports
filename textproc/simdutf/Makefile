@@ -1,9 +1,9 @@
 COMMENT =	unicode validator and transcoder with SIMD
 
-VERSION =	9.1.2
+VERSION =	9.2.0
 DIST_TUPLE +=	github simdutf simdutf v${VERSION} .
 
-SHARED_LIBS =	simdutf 0.6 # 35.0.0
+SHARED_LIBS =	simdutf 0.7 # 36.0.0
 
 CATEGORIES =	textproc devel
 
