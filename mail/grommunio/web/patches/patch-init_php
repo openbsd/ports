@@ -1,7 +1,7 @@
 Index: init.php
 --- init.php.orig
 +++ init.php
-@@ -8,5 +8,6 @@ define("LOAD_DEBUG", 2);
+@@ -15,5 +15,6 @@ define("LOAD_DEBUG", 2);
  define("LOAD_SOURCE", 3);
  // Defines the base path on the server, terminated by a slash
  define('BASE_PATH', realpath(__DIR__) . '/');

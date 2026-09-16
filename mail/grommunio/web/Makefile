@@ -1,11 +1,11 @@
 COMMENT=	web user interface for grommunio
 
-V=		3.19
+V=		5.0
 DISTNAME=	grommunio-web-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-web
-GH_COMMIT=	6e2e6da49bebd0e62d391a0f94fb23bca45c2400
+GH_COMMIT=	2f45dd0dbf3b487fe56dce1730c7e818eee8a0f9
 
 SITES=		https://nerd.hu/distfiles/
 
@@ -17,6 +17,7 @@ MODPHP_BUILDDEP=Yes
 MODPHP_RUNDEP=	No
 
 BUILD_DEPENDS=	lang/node \
+		shells/bash \
 		devel/gettext,-tools
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \

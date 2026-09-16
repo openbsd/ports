@@ -1,7 +1,16 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -7,7 +7,9 @@ PHP ?= php
+@@ -5,7 +5,7 @@
+ 
+ # Tools
+ 
+-SHELL := /bin/bash
++SHELL := /usr/local/bin/bash
+ 
+ PHPMD ?= phpmd
+ PHPDOC ?= phpdoc
+@@ -17,7 +17,9 @@ PHP ?= php
  
  # Variables
  
@@ -12,38 +21,8 @@ Index: Makefile
  
  # Javascript compiler
  
-@@ -63,9 +65,9 @@ JSFILES = $(sort $(shell find client/zarafa -name '*.j
- 
- .PHONY: deploy server client all
- 
--all: deploy
-+all: deploy clearartifacts
- 
--deploy: node_modules server client plugins css clearartifacts
-+deploy: node_modules server client plugins css
- 
- build: node_modules deploy
- 
-@@ -104,20 +106,20 @@ sync-images: node_modules
- sync-images-report: node_modules
- 	node tools/sync-images.js --report
- 
--clearartifacts:
-+clearartifacts: deploy
- 	find $(DESTDIR) -iname "*readme*" -exec rm -f {} \;
- 	find $(DESTDIR) -iname "*license*.txt" -exec rm -f {} \;
- 	find $(DESTDIR) -iname "*gpl*.txt" -exec rm -f {} \;
- 
- js: $(JSDEPLOY)/fingerprint.js $(JSDEPLOY)/resize.js $(JSDEPLOY)/grommunio.js $(JSDEPLOY)/extjs-mod/extjs-mod.js $(JSDEPLOY)/extjs/ext-base-all.js $(DESTDIR)/client/third-party/ux-thirdparty.js $(DEPLOYPURIFYJS) $(JSDEPLOY)/filepreviewer/ViewerJS/ImageViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/MultimediaViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/ODFViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/DocxViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/XlsxViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/vendor/jszip.min.js $(JSDEPLOY)/filepreviewer/ViewerJS/vendor/docx-preview.min.js $(JSDEPLOY)/filepreviewer/ViewerJS/vendor/xlsx.full.min.js $(JSDEPLOY)/filepreviewer/ViewerJS/UnknownFilePlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/viewer.js $(JSDEPLOY)/filepreviewer/ViewerJS/video-js/video.js
--	cp -rn client/tinymce $(DESTDIR)/client/
--	cp -rn client/tinymce-languages $(DESTDIR)/client/
--	cp -rn client/extjs $(DESTDIR)/client/
--	cp -rn client/filepreviewer $(DESTDIR)/client/
-+	cp -r client/tinymce $(DESTDIR)/client/
-+	cp -r client/tinymce-languages $(DESTDIR)/client/
-+	cp -r client/extjs $(DESTDIR)/client/
-+	cp -r client/filepreviewer $(DESTDIR)/client/
- 	rm $(DESTDIR)/client/extjs/ext-base.js $(DESTDIR)/client/extjs/ext-base-debug.js $(DESTDIR)/client/extjs/ext-all.js
+@@ -143,7 +145,7 @@ $(eval $(call vendor_tree,filepreviewer,ViewerJS/webod
+ js: $(VENDORED) $(JSDEPLOY)/fingerprint.js $(JSDEPLOY)/resize.js $(JSDEPLOY)/grommunio.js $(JSDEPLOY)/extjs-mod/extjs-mod.js $(JSDEPLOY)/extjs/ext-base-all.js $(JSDEPLOY)/extjs/ext-base-all-debug.js $(DESTDIR)/client/third-party/ux-thirdparty.js $(DEPLOYPURIFYJS) $(addprefix $(JSDEPLOY)/filepreviewer/,$(VIEWERJS))
  
  $(DESTDIR)/%.php: %.php
 -	${PHP} -l $<
