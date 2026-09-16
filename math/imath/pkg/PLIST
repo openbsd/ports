@@ -1,4 +1,5 @@
 @conflict OpenEXR-<3
+@conflict Imath-*
 include/Imath/
 include/Imath/ImathBox.h
 include/Imath/ImathBoxAlgo.h
