@@ -1,6 +1,7 @@
---- fax/backend/hpfax.py.orig	Thu Jan 29 13:20:35 2015
-+++ fax/backend/hpfax.py	Thu Feb  5 14:28:00 2015
-@@ -49,7 +49,7 @@ PIPE_BUF = 4096
+Index: fax/backend/hpfax.py
+--- fax/backend/hpfax.py.orig
++++ fax/backend/hpfax.py
+@@ -50,7 +50,7 @@ PIPE_BUF = 4096
  
  job_id = 0
  pid = os.getpid()
@@ -9,7 +10,7 @@
  home_dir = ''
  
  
-@@ -68,7 +68,7 @@ if os.path.exists(config_file):
+@@ -69,7 +69,7 @@ if os.path.exists(config_file):
          bug("Error setting home directory: home= under [dirs] not found.")
          sys.exit(1)
  else:

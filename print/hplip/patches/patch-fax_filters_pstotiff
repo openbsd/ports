@@ -1,6 +1,7 @@
---- fax/filters/pstotiff.orig	Thu Jan 29 13:20:35 2015
-+++ fax/filters/pstotiff	Thu Feb  5 14:28:00 2015
-@@ -18,10 +18,10 @@ if (len(sys.argv) > 6):
+Index: fax/filters/pstotiff
+--- fax/filters/pstotiff.orig
++++ fax/filters/pstotiff
+@@ -19,10 +19,10 @@ if (len(sys.argv) > 6):
  
  temp_out_handle, temp_out_fname = tempfile.mkstemp()
  

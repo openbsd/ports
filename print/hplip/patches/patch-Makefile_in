@@ -4,33 +4,33 @@ Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
 @@ -113,7 +113,7 @@ DIST_COMMON = $(am__configure_deps) \
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_TRUE@am__append_5 = io/hpmud/musb_libusb01.c 
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_TRUE@am__append_6 = -lusb
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_7 = io/hpmud/musb.c 
--@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_8 = -I/usr/include/libusb-1.0
-+@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_8 = -I${LOCALBASE}/include/libusb-1.0
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_9 = -lusb-1.0
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_10 = -Iprotocol/discovery
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_11 = -l$(SNMPLIB) -lcrypto
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_TRUE@am__append_9 = io/hpmud/musb_libusb01.c 
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_TRUE@am__append_10 = -lusb
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_11 = io/hpmud/musb.c 
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_12 = -I/usr/include/libusb-1.0
++@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_12 = -I${LOCALBASE}/include/libusb-1.0
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_13 = -lusb-1.0
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_14 = -Iprotocol/discovery
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_15 = -l$(SNMPLIB) -lcrypto
 @@ -122,8 +122,6 @@ DIST_COMMON = $(am__configure_deps) \
- @HPLIP_BUILD_TRUE@am__append_12 = libhpip.la
- @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_13 = prnt/drv/hpijs.drv.in.template \
+ @HPLIP_BUILD_TRUE@am__append_16 = libhpip.la
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_17 = prnt/drv/hpijs.drv.in.template \
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/drv/hpcups.drv.in.template \
 -@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/hpcups/libImageProcessor-x86_64.so \
 -@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/hpcups/libImageProcessor-x86_32.so \
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/ipp-usb/HPLIP.conf
- @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_14 = dat2drv.py install.py  hplip-install init-suse-firewall init-iptables-firewall class_rpm_build.sh hplipclassdriver.spec createPPD.sh Makefile_dat2drv hpijs-drv
- @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@am__append_15 = scan/sane/hpaio.desc \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_18 = dat2drv.py install.py  hplip-install init-suse-firewall init-iptables-firewall class_rpm_build.sh hplipclassdriver.spec createPPD.sh Makefile_dat2drv hpijs-drv
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@am__append_19 = scan/sane/hpaio.desc \
 @@ -142,7 +140,7 @@ DIST_COMMON = $(am__configure_deps) \
- @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@am__append_17 = libhpipp.la
- @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_18 = libhpdiscovery.la
- @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_19 = -Iprotocol/discovery
--@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_20 = -I/usr/include/libusb-1.0 
-+@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_20 = -I${LOCALBASE}/include/libusb-1.0 
- @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@am__append_21 = ui/colorcalform2_base.ui ui/settingsdialog_base.ui ui/aligntype6form1_base.ui \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@am__append_21 = libhpipp.la
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_22 = libhpdiscovery.la
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_23 = -Iprotocol/discovery
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_24 = -I/usr/include/libusb-1.0 
++@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_24 = -I${LOCALBASE}/include/libusb-1.0 
+ @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@am__append_25 = ui/colorcalform2_base.ui ui/settingsdialog_base.ui ui/aligntype6form1_base.ui \
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@	ui/aboutdlg_base.ui ui/imagepropertiesdlg_base.ui ui/paperedgealignform_base.ui ui/aligntype6form2_base.ui \
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@	ui/nodevicesform_base.ui ui/cleaningform_base.ui ui/colorcalform_base.ui ui/devmgr4_base.ui ui/loadpaperform_base.ui \
-@@ -774,8 +772,6 @@ am__dist_locatedriver_DATA_DIST = locatedriver
+@@ -776,8 +774,6 @@ am__dist_locatedriver_DATA_DIST = locatedriver
  am__dist_models_DATA_DIST = data/models/models.dat
  am__dist_noinst_DATA_DIST = prnt/drv/hpijs.drv.in.template \
  	prnt/drv/hpcups.drv.in.template \
@@ -39,32 +39,34 @@ Index: Makefile.in
  	prnt/ipp-usb/HPLIP.conf scan/sane/hpaio.desc \
  	installer/text_install.py data/localization/hplip_de.ts \
  	data/localization/hplip_es.ts data/localization/hplip_fr.ts \
-@@ -4968,7 +4964,7 @@ dist_unrel_DATA = 
+@@ -4979,8 +4975,8 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/orblitei.h scan/sane/orblite.h scan/sane/orblite.c \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/OrbliteScan/LinuxCommon.h scan/sane/OrbliteScan/MacCommon.h
  
--@DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -version-info 1:0:0
-+@DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -module -avoid-version
- @DARWIN_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -module -framework CoreFoundation -version-info 1:0:0
- # The following is a interlibrary dependency that must be compiled first.
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LIBADD = libhpip.la \
-@@ -4976,7 +4972,6 @@ dist_unrel_DATA = 
+-@DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -version-info \
+-@DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	1:0:0 \
++@DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -module \
++@DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	-avoid-version \
+ @DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(am__append_4)
+ @DARWIN_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -module \
+ @DARWIN_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	-framework \
+@@ -4994,7 +4990,6 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	libhpipp.la \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(DBUS_LIBS) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	-lcups \
 -@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	-ldl \
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(am__append_1)
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(am__append_5)
  #libsane_hpaio_la_CFLAGS = -DWITH_NONAMESPACES -DSOAP_DEBUG
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_CFLAGS = $(DBUS_CFLAGS) \
-@@ -4998,7 +4993,6 @@ dist_unrel_DATA = 
+@@ -5017,7 +5012,6 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@libhpmud_la_LDFLAGS =  \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	-version-info \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	0:6:0 -lpthread \
 -@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	-ldl \
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_6) \
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_9) \
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_11)
-@@ -5052,7 +5046,7 @@ dist_unrel_DATA = 
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_10) \
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_13) \
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_15)
+@@ -5071,7 +5065,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@pstotiff_SCRIPTS = fax/filters/pstotiff
  
  # hplip.state
@@ -73,7 +75,7 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@dist_hplip_state_DATA = 
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@dist_hplip_SCRIPTS = hpssd.py __init__.py hpdio.py
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@cmddir = $(hplipdir)
-@@ -5250,7 +5244,7 @@ dist_unrel_DATA = 
+@@ -5262,7 +5256,7 @@ dist_unrel_DATA = 
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_SOURCES = prnt/hpijs/PrinterProperties.cpp prnt/hpijs/PrinterProperties.h prnt/hpijs/bug.h
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CFLAGS = $(libapdk_la_CFLAGS)
@@ -82,7 +84,7 @@ Index: Makefile.in
  
  # hplip.desktop
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@hplip_desktopdir = $(icondir)
-@@ -5319,8 +5313,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5331,8 +5325,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  
  @HPIJS_INSTALL_TRUE@hpijs_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @HPIJS_INSTALL_TRUE@hpijs_CFLAGS = $(libapdk_la_CFLAGS)
@@ -93,16 +95,16 @@ Index: Makefile.in
  
  # hpcups
  #if NEW_HPCUPS
-@@ -5364,7 +5358,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
- @HPCUPS_INSTALL_TRUE@	prnt/hpcups/ImageProcessor.h
- 
- @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
+@@ -5378,7 +5372,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+ @HPCUPS_INSTALL_TRUE@hpcups_CPPFLAGS = -I$(srcdir)/prnt/hpcups -I$(srcdir)/prnt -I$(srcdir)/common -D_GNU_SOURCE
+ @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS) $(AM_CXXFLAGS)
+ @HPCUPS_INSTALL_TRUE@hpcups_LDFLAGS = $(AM_LDFLAGS)
 -@HPCUPS_INSTALL_TRUE@hpcups_LDADD = -L./prnt/hpcups/ -ljpeg -ldl -lImageProcessor -lcups -lcupsimage -lz $(DBUS_LIBS)
 +@HPCUPS_INSTALL_TRUE@hpcups_LDADD = -L./prnt/hpcups/ -ljpeg -lcups -lcupsimage -lz $(DBUS_LIBS)
  #else
  #hpcupsdir = $(cupsfilterdir)
  #hpcups_PROGRAMS = hpcups
-@@ -5372,21 +5366,21 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5386,21 +5380,21 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  #hpcups_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  #hpcups_CFLAGS = $(libapdk_la_CFLAGS)
  #if HPCUPS_ONLY_BUILD
@@ -128,7 +130,7 @@ Index: Makefile.in
  dat2drvdir = $(hplipdir)
  dat2drv_SOURCES = Common.h  Dat2drv.cpp  Dat2drv.h Normalize.cpp  Normalize.h
  @GCC_GE_47_TRUE@dat2drv_CXXFLAGS = -std=c++11
-@@ -10336,19 +10330,9 @@ uninstall-am: uninstall-apparmor_abstractionDATA \
+@@ -10292,19 +10286,9 @@ uninstall-am: uninstall-apparmor_abstractionDATA \
  
  
  install-data-hook:

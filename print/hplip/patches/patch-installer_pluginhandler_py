@@ -9,8 +9,8 @@ Index: installer/pluginhandler.py
 +PLUGIN_STATE_FILE = '/var/db/hp/hplip.state'
  PLUGIN_FALLBACK_LOCATION = 'https://developers.hp.com/sites/default/files/'
  
- 
-@@ -90,11 +90,11 @@ class PluginHandle(object):
+ # Versions where the HP Developer Portal CDN uses a YYYY-MM date subdirectory.
+@@ -106,11 +106,11 @@ class PluginHandle(object):
              ARCH = 'x86_%d' % BITNESS
  
          if BITNESS == 64:
@@ -24,9 +24,9 @@ Index: installer/pluginhandler.py
 +            SANELIBDIR = '${LOCALBASE}/lib/sane'
 +            LIBDIR = '${LOCALBASE}/lib'
  
-         copies = []
- 
-@@ -232,8 +232,8 @@ class PluginHandle(object):
+         # Read allowed plugin directories from configuration (hplip.conf).
+         # Config values are colon-separated directory paths. If not configured,
+@@ -278,8 +278,8 @@ class PluginHandle(object):
      def __setPluginConfFile(self):
          home = sys_conf.get('dirs', 'home')
  

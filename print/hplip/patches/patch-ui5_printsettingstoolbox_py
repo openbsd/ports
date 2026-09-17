@@ -1,12 +1,12 @@
 Index: ui5/printsettingstoolbox.py
 --- ui5/printsettingstoolbox.py.orig
 +++ ui5/printsettingstoolbox.py
-@@ -247,9 +247,9 @@ class PrintSettingsToolbox(QToolBox):
+@@ -264,9 +264,9 @@ class PrintSettingsToolbox(QToolBox):
  
              if utils.which('lpr'):
                  if alt_nup:
--                    cmd = ' '.join(['psnup', '-%d' % nup, ''.join(['"', p, '"']), '| lpr -P', self.cur_printer])
-+                    cmd = ' '.join(['psnup', '-%d' % nup, ''.join(['"', p, '"']), '| ${LOCALBASE}/bin/lpr -P', self.cur_printer])
+-                    cmd = ' '.join(['psnup', '-%d' % nup, shlex.quote(p), '| lpr -P', self.cur_printer])
++                    cmd = ' '.join(['psnup', '-%d' % nup, shlex.quote(p), '| ${LOCALBASE}/bin/lpr -P', self.cur_printer])
                  else:
 -                    cmd = ' '.join(['lpr -P', self.cur_printer])
 +                    cmd = ' '.join(['${LOCALBASE}/bin/lpr -P', self.cur_printer])

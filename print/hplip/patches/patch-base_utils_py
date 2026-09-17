@@ -85,7 +85,7 @@ Index: base/utils.py
  def find_browser():
      if platform_avail and platform.system() == 'Darwin':
          return "open"
-@@ -2090,46 +2086,47 @@ def chunk_write(response, out_fd, chunk_size =8192, st
+@@ -2116,46 +2112,47 @@ def chunk_write(response, out_fd, chunk_size =8192, st
  def download_from_network(weburl, outputFile = None, useURLLIB=False):
      retValue = -1
  
@@ -166,7 +166,7 @@ Index: base/utils.py
  
  
  
-@@ -2230,7 +2227,7 @@ def check_user_groups(required_grps_str, avl_grps):
+@@ -2266,7 +2263,7 @@ def check_user_groups(required_grps_str, avl_grps):
          grps =re.sub(r'\s', '', str(grps))
          exp_grp_list = grps.split(',')
      else:
@@ -175,7 +175,7 @@ Index: base/utils.py
  
      log.debug("Requied groups list =[%s]"%exp_grp_list)
  
-@@ -2663,6 +2660,8 @@ def readAuthType():
+@@ -2789,6 +2786,8 @@ def readAuthType():
              authType = 'sudo'
          else:
              authType = 'su'

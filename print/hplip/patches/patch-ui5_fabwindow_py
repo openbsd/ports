@@ -1,4 +1,3 @@
-1st chunk:
 From 95a73bbc9bd65602a0f9411469ab511bc80a01d0 Mon Sep 17 00:00:00 2001
 From: Till Kamppeter <till.kamppeter@gmail.com>
 Date: Wed, 3 Oct 2018 15:13:00 +0200
@@ -18,12 +17,3 @@ Index: ui5/fabwindow.py
  
                      self.db.rename(self.name, new_name)
                      log.debug("Rename %s to %s" % (self.name, new_name))
-@@ -518,7 +518,7 @@ class FABWindow(QMainWindow,  Ui_MainWindow):
-                          self.__tr("Import fax addresses from LDIF or vCard"),
-                          #user_conf.workingDirectory(),
-                          self.user_settings.working_dir,
--                         "vCard (*.vcf);;LDIF (*.ldif *.ldi)"))
-+                         "vCard (*.vcf);;LDIF (*.ldif *.ldi)")[0])
-         result = (eval(result)[0])
-         if result:
-             working_directory = to_unicode(os.path.dirname(result))
