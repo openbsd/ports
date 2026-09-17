@@ -32,6 +32,7 @@ LIB_DEPENDS =		audio/libvorbis \
 CONFIGURE_ARGS +=	-DReleaseBuild=ON \
 			-DDATA_PATH=${PREFIX}/share/dustrac \
 			-DDOC_PATH=${PREFIX}/share/dustrac \
+			-DUSE_CCACHE=OFF \
 			-DQOpenGLFunctions=OFF
 
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
