@@ -26,7 +26,7 @@ Index: plugins/node.d/amavis.in
       group adm
  
  =head1 INTERPRETATION
-@@ -74,14 +74,14 @@ GPLv2
+@@ -74,12 +74,12 @@ GPLv2
  =cut
  
  
