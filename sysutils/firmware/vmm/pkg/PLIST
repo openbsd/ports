@@ -1,2 +1,7 @@
 firmware/vmm-bios
 firmware/vmm-bios-license
+firmware/vmm-uefi
+firmware/vmm-uefi-code
+firmware/vmm-uefi-license
+firmware/vmm-uefi-vars
+firmware/vmm.dsdt

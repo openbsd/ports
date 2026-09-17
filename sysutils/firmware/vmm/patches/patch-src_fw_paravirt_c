@@ -1,9 +1,34 @@
+- Recognize vmd's host bridge so SeaBIOS probes fw_cfg and loads vmd's ACPI
+  tables.
 - Don't use 'rep insb' to read IO ports, vmm does not support that yet.
 
 Index: src/fw/paravirt.c
 --- src/fw/paravirt.c.orig
 +++ src/fw/paravirt.c
-@@ -379,7 +379,9 @@ qemu_cfg_read(void *buf, int len)
+@@ -202,8 +202,10 @@ static void qemu_detect(void)
+     u16 sv = pci_config_readw(0, PCI_SUBSYSTEM_VENDOR_ID);
+     u16 sd = pci_config_readw(0, PCI_SUBSYSTEM_ID);
+ 
+-    if (sv != 0x1af4 || /* Red Hat, Inc */
+-        sd != 0x1100)   /* Qemu virtual machine */
++    if ((sv != 0x1af4 || /* Red Hat, Inc */
++         sd != 0x1100) && /* Qemu virtual machine */
++        (v != 0x0b5d || /* OpenBSD */
++         d != 0x0666))  /* OpenBSD vmm PCHB */
+         return;
+ 
+     PlatformRunningOn |= PF_QEMU;
+@@ -214,6 +216,9 @@ static void qemu_detect(void)
+     case 0x29c0:
+         dprintf(1, "Running on QEMU (q35)\n");
+         break;
++    case 0x0666:
++        dprintf(1, "Running on OpenBSD vmm\n");
++        break;
+     default:
+         dprintf(1, "Running on QEMU (unknown nb: %04x:%04x)\n", v, d);
+         break;
+@@ -379,7 +384,9 @@ qemu_cfg_read(void *buf, int len)
      if (qemu_cfg_dma_enabled()) {
          qemu_cfg_dma_transfer(buf, len, QEMU_CFG_DMA_CTL_READ);
      } else {

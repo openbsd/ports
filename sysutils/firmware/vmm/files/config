@@ -1,6 +1,9 @@
 #
-# Automatically generated file; DO NOT EDIT.
-# SeaBIOS Configuration
+# SeaBIOS configuration for OpenBSD vmm.
+#
+# The romfile loader installs the ACPI RSDP supplied by vmd through fw_cfg.
+# SeaBIOS's built-in ACPI table generator remains disabled: vmd owns and
+# supplies the complete ACPI table set.
 #
 
 #
@@ -75,7 +78,7 @@ CONFIG_KBD_CALL_INT15_4F=y
 # CONFIG_MPTABLE is not set
 CONFIG_SMBIOS=y
 # CONFIG_ACPI is not set
-# CONFIG_FW_ROMFILE_LOAD is not set
+CONFIG_FW_ROMFILE_LOAD=y
 # CONFIG_ACPI_PARSE is not set
 
 #

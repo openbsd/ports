@@ -1,0 +1,70 @@
+Use the SerialDxe console alongside the normal graphical console for vmd.
+vmd already supplies each device's PCI interrupt line; enable ACPI at its
+PM1A control port without writing QEMU PIIX or Q35 routing registers.
+
+Index: edk2/OvmfPkg/Library/PlatformBootManagerLib/BdsPlatform.c
+--- edk2/OvmfPkg/Library/PlatformBootManagerLib/BdsPlatform.c.orig
++++ edk2/OvmfPkg/Library/PlatformBootManagerLib/BdsPlatform.c
+@@ -222,10 +222,18 @@ PlatformBootManagerBeforeConsole (
+   UINT16         FrontPageTimeout;
+   RETURN_STATUS  PcdStatus;
+   BOOLEAN        FirmwareSetupEnabled;
++  BOOLEAN        SerialConsole;
++  BOOLEAN        VmdHost;
+ 
+   DEBUG ((DEBUG_INFO, "PlatformBootManagerBeforeConsole\n"));
+   InstallDevicePathCallback ();
+ 
++  VmdHost = (PcdGet16 (PcdOvmfHostBridgePciDevId) ==
++             VMD_HOSTBRIDGE_DEVICE_ID);
++  SerialConsole = XenDetected () || VmdHost ||
++                  (PcdGet16 (PcdOvmfHostBridgePciDevId) ==
++                   CLOUDHV_DEVICE_ID);
++
+   VisitAllInstancesOfProtocol (
+     &gEfiPciRootBridgeIoProtocolGuid,
+     ConnectRootBridge,
+@@ -258,13 +266,15 @@ PlatformBootManagerBeforeConsole (
+   // We need to connect all trusted consoles for TCG PP. Here we treat all
+   // consoles in OVMF to be trusted consoles.
+   //
+-  // Cloud Hypervisor doesn't emulate any LPC bridge, which is why it must
+-  // rely on the serial I/O port to be connected as a console. It reuses the
+-  // definition from Xen as it is very generic.
++  // Cloud Hypervisor and vmd use Xen's generic SerialDxe device path.
++  // vmd also exposes QEMU ramfb, so add the normal console set as well.
+   //
+   PlatformInitializeConsole (
+-    (XenDetected () || PcdGet16 (PcdOvmfHostBridgePciDevId) == CLOUDHV_DEVICE_ID) ? gXenPlatformConsole : gPlatformConsole
++    SerialConsole ? gXenPlatformConsole : gPlatformConsole
+     );
++  if (VmdHost) {
++    PlatformInitializeConsole (gPlatformConsole);
++  }
+ 
+   //
+   // Process TPM PPI request; this may require keyboard input
+@@ -294,8 +304,11 @@ PlatformBootManagerBeforeConsole (
+   // GPU passthrough only allows Console enablement after ROM image load
+   //
+   PlatformInitializeConsole (
+-    XenDetected () ? gXenPlatformConsole : gPlatformConsole
++    SerialConsole ? gXenPlatformConsole : gPlatformConsole
+     );
++  if (VmdHost) {
++    PlatformInitializeConsole (gPlatformConsole);
++  }
+ 
+   FrontPageTimeout = GetFrontPageTimeoutFromQemu ();
+   PcdStatus        = PcdSet16S (PcdPlatformBootTimeOut, FrontPageTimeout);
+@@ -1339,6 +1352,10 @@ PciAcpiInitialization (
+   //
+   mHostBridgeDevId = PcdGet16 (PcdOvmfHostBridgePciDevId);
+   switch (mHostBridgeDevId) {
++    case VMD_HOSTBRIDGE_DEVICE_ID:
++      // vmd assigns PCI interrupt lines itself.
++      IoOr16 (VMD_PM1A_CNT_IO_ADDRESS, BIT0);
++      return;
+     case INTEL_82441_DEVICE_ID:
+       Pmba = POWER_MGMT_REGISTER_PIIX4 (PIIX4_PMBA);
+       //

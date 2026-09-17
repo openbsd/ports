@@ -1,0 +1,66 @@
+Teach generic OVMF about vmd's fixed PCI aperture.  vmd's E820 map accurately
+reports the conventional-memory hole below 1MB, so find the highest RAM end
+below 4GB instead of applying OVMF's QEMU-specific "first RAM record" rule.
+vmd presently exposes only 32-bit PCI BARs.
+
+Index: edk2/OvmfPkg/Library/PlatformInitLib/MemDetect.c
+--- edk2/OvmfPkg/Library/PlatformInitLib/MemDetect.c.orig
++++ edk2/OvmfPkg/Library/PlatformInitLib/MemDetect.c
+@@ -40,6 +40,7 @@ Module Name:
+ #include <Library/QemuFwCfgLib.h>
+ #include <Library/QemuFwCfgSimpleParserLib.h>
+ #include <Library/TdxLib.h>
++#include <OvmfPlatforms.h>
+ 
+ #include <Library/PlatformInitLib.h>
+ 
+@@ -64,6 +65,12 @@ PlatformQemuUc32BaseInitialization (
+     return;
+   }
+ 
++  if (PlatformInfoHob->HostBridgeDevId == VMD_HOSTBRIDGE_DEVICE_ID) {
++    PlatformInfoHob->Uc32Base = VMD_PCI_MMIO32_BASE;
++    PlatformInfoHob->Uc32Size = (UINT32)(SIZE_4GB - VMD_PCI_MMIO32_BASE);
++    return;
++  }
++
+   ASSERT (
+     PlatformInfoHob->HostBridgeDevId == INTEL_Q35_MCH_DEVICE_ID ||
+     PlatformInfoHob->HostBridgeDevId == INTEL_82441_DEVICE_ID
+@@ -172,10 +179,22 @@ PlatformGetLowMemoryCB (
+   IN OUT EFI_HOB_PLATFORM_INFO  *PlatformInfoHob
+   )
+ {
++  UINT64  Candidate;
++
+   if (E820Entry->Type != EfiAcpiAddressRangeMemory) {
+     return;
+   }
+ 
++  if (PlatformInfoHob->HostBridgeDevId == VMD_HOSTBRIDGE_DEVICE_ID) {
++    Candidate = E820Entry->BaseAddr + E820Entry->Length;
++    if ((Candidate <= BASE_4GB) && (Candidate > PlatformInfoHob->LowMemory)) {
++      DEBUG ((DEBUG_INFO, "%a: LowMemory=0x%Lx\n", __func__, Candidate));
++      PlatformInfoHob->LowMemory = (UINT32)Candidate;
++    }
++
++    return;
++  }
++
+   if (E820Entry->BaseAddr != 0) {
+     return;
+   }
+@@ -809,6 +828,13 @@ PlatformDynamicMmioWindow (
+   )
+ {
+   UINT64  AddrSpace, MmioSpace;
++
++  // vmd currently has no 64-bit PCI BAR aperture.
++  if (PlatformInfoHob->HostBridgeDevId == VMD_HOSTBRIDGE_DEVICE_ID) {
++    PlatformInfoHob->PcdPciMmio64Base = 0;
++    PlatformInfoHob->PcdPciMmio64Size = 0;
++    return;
++  }
+ 
+   AddrSpace = LShiftU64 (1, PlatformInfoHob->PhysMemAddressWidth);
+   MmioSpace = LShiftU64 (1, PlatformInfoHob->PhysMemAddressWidth - 3);

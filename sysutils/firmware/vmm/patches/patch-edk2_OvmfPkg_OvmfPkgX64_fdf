@@ -1,0 +1,13 @@
+Include SerialDxe in the firmware volume for vmd's interactive COM1 console.
+
+Index: edk2/OvmfPkg/OvmfPkgX64.fdf
+--- edk2/OvmfPkg/OvmfPkgX64.fdf.orig
++++ edk2/OvmfPkg/OvmfPkgX64.fdf
+@@ -227,6 +227,7 @@ INF  MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleR
+ INF  MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
+ INF  MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
+ INF  MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
++INF  MdeModulePkg/Universal/SerialDxe/SerialDxe.inf
+ INF  MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
+ INF  MdeModulePkg/Universal/DriverHealthManagerDxe/DriverHealthManagerDxe.inf
+ INF  MdeModulePkg/Universal/BdsDxe/BdsDxe.inf

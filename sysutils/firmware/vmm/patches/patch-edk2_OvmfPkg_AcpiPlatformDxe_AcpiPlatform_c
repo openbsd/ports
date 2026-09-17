@@ -1,0 +1,66 @@
+Install vmd's ACPI tables from the RSDP it publishes through fw_cfg.  Unlike
+QEMU, vmd creates the final tables at fixed reserved guest addresses, so no
+loader relocation script is needed.
+
+Index: edk2/OvmfPkg/AcpiPlatformDxe/AcpiPlatform.c
+--- edk2/OvmfPkg/AcpiPlatformDxe/AcpiPlatform.c.orig
++++ edk2/OvmfPkg/AcpiPlatformDxe/AcpiPlatform.c
+@@ -7,13 +7,49 @@
+   SPDX-License-Identifier: BSD-2-Clause-Patent
+ **/
+ 
++#include <IndustryStandard/Acpi.h>
+ #include <OvmfPlatforms.h> // CLOUDHV_DEVICE_ID
+ #include <ConfidentialComputingGuestAttr.h>
+ 
+ #include <Library/AcpiPlatformLib.h>
++#include <Library/MemoryAllocationLib.h>
++#include <Library/QemuFwCfgLib.h>
+ 
+ #include "AcpiPlatform.h"
+ 
++STATIC
++EFI_STATUS
++InstallVmdTables (
++  IN EFI_ACPI_TABLE_PROTOCOL  *AcpiTable
++  )
++{
++  EFI_ACPI_2_0_ROOT_SYSTEM_DESCRIPTION_POINTER  *Rsdp;
++  FIRMWARE_CONFIG_ITEM                           Item;
++  EFI_STATUS                                     Status;
++  UINTN                                          Size;
++
++  Status = QemuFwCfgFindFile ("etc/acpi/rsdp", &Item, &Size);
++  if (EFI_ERROR (Status)) {
++    return Status;
++  }
++
++  if (Size != sizeof (*Rsdp)) {
++    return EFI_PROTOCOL_ERROR;
++  }
++
++  Rsdp = AllocatePool (Size);
++  if (Rsdp == NULL) {
++    return EFI_OUT_OF_RESOURCES;
++  }
++
++  QemuFwCfgSelectItem (Item);
++  QemuFwCfgReadBytes (Size, Rsdp);
++  Status = InstallAcpiTablesFromRsdp (AcpiTable, Rsdp);
++  FreePool (Rsdp);
++
++  return Status;
++}
++
+ /**
+   Effective entrypoint of Acpi Platform driver.
+ 
+@@ -41,6 +77,8 @@ InstallAcpiTables (
+     } else {
+       Status = InstallCloudHvTables (AcpiTable);
+     }
++  } else if (HostBridgeDevId == VMD_HOSTBRIDGE_DEVICE_ID) {
++    Status = InstallVmdTables (AcpiTable);
+   } else {
+     Status = InstallQemuFwCfgTables (AcpiTable);
+   }

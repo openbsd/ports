@@ -1,0 +1,141 @@
+Let vmd choose the single fixed GOP mode through a versioned, read-only
+fw_cfg file.  Keep etc/ramfb for the existing firmware-to-host framebuffer
+configuration message.
+
+Index: edk2/OvmfPkg/QemuRamfbDxe/QemuRamfb.c
+--- edk2/OvmfPkg/QemuRamfbDxe/QemuRamfb.c.orig
++++ edk2/OvmfPkg/QemuRamfbDxe/QemuRamfb.c
+@@ -24,6 +24,15 @@
+ #define RAMFB_FORMAT  0x34325258 /* DRM_FORMAT_XRGB8888 */
+ #define RAMFB_BPP     4
+ 
++#define VMD_DISPLAY_CONFIG_FILE     "opt/org.openbsd.vmd/display"
++#define VMD_DISPLAY_CONFIG_VERSION  1
++#define VMD_DISPLAY_DEFAULT_WIDTH   1024
++#define VMD_DISPLAY_DEFAULT_HEIGHT  768
++#define VMD_DISPLAY_MIN_WIDTH       640
++#define VMD_DISPLAY_MIN_HEIGHT      480
++#define VMD_DISPLAY_MAX_WIDTH       4096
++#define VMD_DISPLAY_MAX_HEIGHT      2160
++
+ #pragma pack (1)
+ typedef struct RAMFB_CONFIG {
+   UINT64    Address;
+@@ -33,6 +42,13 @@ typedef struct RAMFB_CONFIG {
+   UINT32    Height;
+   UINT32    Stride;
+ } RAMFB_CONFIG;
++
++typedef struct VMD_DISPLAY_CONFIG {
++  UINT32    Version;
++  UINT32    Width;
++  UINT32    Height;
++} VMD_DISPLAY_CONFIG;
++
+ #pragma pack ()
+ 
+ STATIC EFI_HANDLE              mRamfbHandle;
+@@ -44,16 +60,8 @@ STATIC FIRMWARE_CONFIG_ITEM    mRamfbFwCfgItem;
+ STATIC EFI_GRAPHICS_OUTPUT_MODE_INFORMATION  mQemuRamfbModeInfo[] = {
+   {
+     0,    // Version
+-    640,  // HorizontalResolution
+-    480,  // VerticalResolution
+-  },{
+-    0,    // Version
+-    800,  // HorizontalResolution
+-    600,  // VerticalResolution
+-  },{
+-    0,    // Version
+-    1024, // HorizontalResolution
+-    768,  // VerticalResolution
++    VMD_DISPLAY_DEFAULT_WIDTH,
++    VMD_DISPLAY_DEFAULT_HEIGHT,
+   }
+ };
+ 
+@@ -234,6 +242,64 @@ STATIC EFI_GRAPHICS_OUTPUT_PROTOCOL  mQemuRamfbGraphic
+   &mQemuRamfbMode,
+ };
+ 
++STATIC
++VOID
++QemuRamfbConfigureMode (
++  VOID
++  )
++{
++  VMD_DISPLAY_CONFIG   Config;
++  FIRMWARE_CONFIG_ITEM Item;
++  EFI_STATUS           Status;
++  UINTN                FwCfgSize;
++  UINT32               Version;
++  UINT32               Width;
++  UINT32               Height;
++
++  Status = QemuFwCfgFindFile (
++             VMD_DISPLAY_CONFIG_FILE,
++             &Item,
++             &FwCfgSize
++             );
++  if (EFI_ERROR (Status)) {
++    return;
++  }
++
++  if (FwCfgSize != sizeof (Config)) {
++    DEBUG ((
++      DEBUG_WARN,
++      "Ramfb: vmd display config size mismatch (expected %lu, got %lu)\n",
++      (UINT64)sizeof (Config),
++      (UINT64)FwCfgSize
++      ));
++    return;
++  }
++
++  QemuFwCfgSelectItem (Item);
++  QemuFwCfgReadBytes (sizeof (Config), &Config);
++  Version = SwapBytes32 (Config.Version);
++  Width   = SwapBytes32 (Config.Width);
++  Height  = SwapBytes32 (Config.Height);
++  if ((Version != VMD_DISPLAY_CONFIG_VERSION) ||
++      (Width < VMD_DISPLAY_MIN_WIDTH) ||
++      (Width > VMD_DISPLAY_MAX_WIDTH) ||
++      (Height < VMD_DISPLAY_MIN_HEIGHT) ||
++      (Height > VMD_DISPLAY_MAX_HEIGHT))
++  {
++    DEBUG ((
++      DEBUG_WARN,
++      "Ramfb: ignoring invalid vmd display config v%u %ux%u\n",
++      Version,
++      Width,
++      Height
++      ));
++    return;
++  }
++
++  mQemuRamfbModeInfo[0].HorizontalResolution = Width;
++  mQemuRamfbModeInfo[0].VerticalResolution   = Height;
++}
++
+ EFI_STATUS
+ EFIAPI
+ InitializeQemuRamfb (
+@@ -272,6 +338,7 @@ InitializeQemuRamfb (
+     return EFI_PROTOCOL_ERROR;
+   }
+ 
++  QemuRamfbConfigureMode ();
+   MaxFbSize = 0;
+   for (Index = 0; Index < ARRAY_SIZE (mQemuRamfbModeInfo); Index++) {
+     mQemuRamfbModeInfo[Index].PixelsPerScanLine =
+@@ -313,10 +380,7 @@ InitializeQemuRamfb (
+   mQemuRamfbMode.FrameBufferSize = MaxFbSize;
+   mQemuRamfbMode.FrameBufferBase = FbBase;
+ 
+-  //
+-  // 800 x 600
+-  //
+-  QemuRamfbGraphicsOutputSetMode (&mQemuRamfbGraphicsOutput, 1);
++  QemuRamfbGraphicsOutputSetMode (&mQemuRamfbGraphicsOutput, 0);
+ 
+   //
+   // ramfb vendor devpath

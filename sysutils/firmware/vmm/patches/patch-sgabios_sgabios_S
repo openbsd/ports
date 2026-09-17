@@ -1,6 +1,15 @@
 Index: sgabios/sgabios.S
 --- sgabios/sgabios.S.orig
 +++ sgabios/sgabios.S
+@@ -15,7 +15,7 @@
+  */
+ 
+ #include "sgabios.h"
+-#define BUILD_CL  "$Id: patch-sgabios_sgabios_S,v 1.5 2026/09/17 22:17:14 ajacoutot Exp $"
++#define BUILD_CL "20180715"
+ 
+ .code16
+ .text
 @@ -2362,6 +2362,7 @@ resize_end:
    popw %ds                             /* ds = cs */
    call get_byte                        /* flush any remaining "wrong" input */

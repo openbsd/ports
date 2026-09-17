@@ -1,0 +1,20 @@
+Describe the OpenBSD vmd platform's PCI apertures and ACPI control port.
+
+Index: edk2/OvmfPkg/Include/OvmfPlatforms.h
+--- edk2/OvmfPkg/Include/OvmfPlatforms.h.orig
++++ edk2/OvmfPkg/Include/OvmfPlatforms.h
+@@ -23,6 +23,14 @@
+ #define OVMF_HOSTBRIDGE_DID \
+   PCI_LIB_ADDRESS (0, 0, 0, PCI_DEVICE_ID_OFFSET)
+ 
++// OpenBSD vmd(8) platform constants.
++#define VMD_HOSTBRIDGE_DEVICE_ID  0x0666
++#define VMD_PCI_MMIO32_BASE       0xF0000000U
++#define VMD_PCI_MMIO32_SIZE       0x0FC00000U
++#define VMD_PCI_IO_BASE           0x1000U
++#define VMD_PCI_IO_SIZE           0xF000U
++#define VMD_PM1A_CNT_IO_ADDRESS   0xB008U
++
+ //
+ // Values we program into the PM base address registers
+ //

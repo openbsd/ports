@@ -1,0 +1,14 @@
+OpenBSD provides the UUID API in <uuid.h>, like FreeBSD.
+
+Index: edk2/BaseTools/Source/C/GenFv/GenFvInternalLib.c
+--- edk2/BaseTools/Source/C/GenFv/GenFvInternalLib.c.orig
++++ edk2/BaseTools/Source/C/GenFv/GenFvInternalLib.c
+@@ -14,7 +14,7 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
+ // Include files
+ //
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <uuid.h>
+ #elif defined(__GNUC__) && !defined(_WIN32)
+ #if !defined(__CROSS_LIB_UUID__)

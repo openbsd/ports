@@ -1,0 +1,97 @@
+vmd does not yet implement the free-running ACPI PM timer.  Use the CPU/APIC
+timer library, which is initialized by OVMF SEC, rather than attempting to
+program a QEMU PIIX or Q35 timer.  Build SerialDxe so vmd's COM1 can be used
+as an interactive UEFI console.
+
+Index: edk2/OvmfPkg/OvmfPkgX64.dsc
+--- edk2/OvmfPkg/OvmfPkgX64.dsc.orig
++++ edk2/OvmfPkg/OvmfPkgX64.dsc
+@@ -152,7 +152,7 @@
+ [LibraryClasses]
+   SmmRelocationLib|OvmfPkg/Library/SmmRelocationLib/SmmRelocationLib.inf
+   PcdLib|MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
+-  TimerLib|OvmfPkg/Library/AcpiTimerLib/BaseAcpiTimerLib.inf
++  TimerLib|MdePkg/Library/SecPeiDxeTimerLibCpu/SecPeiDxeTimerLibCpu.inf
+   ResetSystemLib|OvmfPkg/Library/ResetSystemLib/BaseResetSystemLib.inf
+   PrintLib|MdePkg/Library/BasePrintLib/BasePrintLib.inf
+   BaseMemoryLib|MdePkg/Library/BaseMemoryLibRepStr/BaseMemoryLibRepStr.inf
+@@ -283,7 +283,7 @@
+ !endif
+ 
+ [LibraryClasses.common.SEC]
+-  TimerLib|OvmfPkg/Library/AcpiTimerLib/BaseRomAcpiTimerLib.inf
++  TimerLib|MdePkg/Library/SecPeiDxeTimerLibCpu/SecPeiDxeTimerLibCpu.inf
+   QemuFwCfgLib|OvmfPkg/Library/QemuFwCfgLib/QemuFwCfgSecLib.inf
+ !ifdef $(DEBUG_ON_SERIAL_PORT)
+   DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
+@@ -390,7 +390,7 @@
+ 
+ [LibraryClasses.common.DXE_RUNTIME_DRIVER]
+   PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+-  TimerLib|OvmfPkg/Library/AcpiTimerLib/DxeAcpiTimerLib.inf
++  TimerLib|MdePkg/Library/SecPeiDxeTimerLibCpu/SecPeiDxeTimerLibCpu.inf
+   ResetSystemLib|OvmfPkg/Library/ResetSystemLib/DxeResetSystemLib.inf
+   HobLib|MdePkg/Library/DxeHobLib/DxeHobLib.inf
+   DxeCoreEntryPoint|MdePkg/Library/DxeCoreEntryPoint/DxeCoreEntryPoint.inf
+@@ -415,7 +415,7 @@
+ 
+ [LibraryClasses.common.UEFI_DRIVER]
+   PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+-  TimerLib|OvmfPkg/Library/AcpiTimerLib/DxeAcpiTimerLib.inf
++  TimerLib|MdePkg/Library/SecPeiDxeTimerLibCpu/SecPeiDxeTimerLibCpu.inf
+   ResetSystemLib|OvmfPkg/Library/ResetSystemLib/DxeResetSystemLib.inf
+   HobLib|MdePkg/Library/DxeHobLib/DxeHobLib.inf
+   DxeCoreEntryPoint|MdePkg/Library/DxeCoreEntryPoint/DxeCoreEntryPoint.inf
+@@ -432,7 +432,7 @@
+ [LibraryClasses.common.DXE_DRIVER]
+   AcpiPlatformLib|OvmfPkg/Library/AcpiPlatformLib/DxeAcpiPlatformLib.inf
+   PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+-  TimerLib|OvmfPkg/Library/AcpiTimerLib/DxeAcpiTimerLib.inf
++  TimerLib|MdePkg/Library/SecPeiDxeTimerLibCpu/SecPeiDxeTimerLibCpu.inf
+   ResetSystemLib|OvmfPkg/Library/ResetSystemLib/DxeResetSystemLib.inf
+   HobLib|MdePkg/Library/DxeHobLib/DxeHobLib.inf
+   MemoryAllocationLib|MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
+@@ -467,7 +467,7 @@
+ 
+ [LibraryClasses.common.UEFI_APPLICATION]
+   PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+-  TimerLib|OvmfPkg/Library/AcpiTimerLib/DxeAcpiTimerLib.inf
++  TimerLib|MdePkg/Library/SecPeiDxeTimerLibCpu/SecPeiDxeTimerLibCpu.inf
+   ResetSystemLib|OvmfPkg/Library/ResetSystemLib/DxeResetSystemLib.inf
+   HobLib|MdePkg/Library/DxeHobLib/DxeHobLib.inf
+   MemoryAllocationLib|MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
+@@ -481,7 +481,7 @@
+ 
+ [LibraryClasses.common.DXE_SMM_DRIVER]
+   PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+-  TimerLib|OvmfPkg/Library/AcpiTimerLib/DxeAcpiTimerLib.inf
++  TimerLib|MdePkg/Library/SecPeiDxeTimerLibCpu/SecPeiDxeTimerLibCpu.inf
+   ResetSystemLib|OvmfPkg/Library/ResetSystemLib/DxeResetSystemLib.inf
+   MemoryAllocationLib|MdePkg/Library/SmmMemoryAllocationLib/SmmMemoryAllocationLib.inf
+   ReportStatusCodeLib|MdeModulePkg/Library/DxeReportStatusCodeLib/DxeReportStatusCodeLib.inf
+@@ -504,7 +504,7 @@
+ 
+ [LibraryClasses.common.SMM_CORE]
+   PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+-  TimerLib|OvmfPkg/Library/AcpiTimerLib/DxeAcpiTimerLib.inf
++  TimerLib|MdePkg/Library/SecPeiDxeTimerLibCpu/SecPeiDxeTimerLibCpu.inf
+   ResetSystemLib|OvmfPkg/Library/ResetSystemLib/DxeResetSystemLib.inf
+   SmmCorePlatformHookLib|MdeModulePkg/Library/SmmCorePlatformHookLibNull/SmmCorePlatformHookLibNull.inf
+   MemoryAllocationLib|MdeModulePkg/Library/PiSmmCoreMemoryAllocationLib/PiSmmCoreMemoryAllocationLib.inf
+@@ -526,7 +526,7 @@
+   DebugLib|OvmfPkg/Library/PlatformDebugLibIoPort/PlatformDebugLibIoPort.inf
+ !endif
+   StandaloneMmDriverEntryPoint|MdePkg/Library/DynamicStackCookieEntryPointLib/StandaloneMmDriverEntryPoint.inf
+-  TimerLib|OvmfPkg/Library/AcpiTimerLib/DxeAcpiTimerLib.inf
++  TimerLib|MdePkg/Library/SecPeiDxeTimerLibCpu/SecPeiDxeTimerLibCpu.inf
+   MemoryAllocationLib|StandaloneMmPkg/Library/StandaloneMmMemoryAllocationLib/StandaloneMmMemoryAllocationLib.inf
+   MmServicesTableLib|MdePkg/Library/StandaloneMmServicesTableLib/StandaloneMmServicesTableLib.inf
+   HobLib|StandaloneMmPkg/Library/StandaloneMmHobLib/StandaloneMmHobLib.inf
+@@ -961,6 +961,7 @@
+     <LibraryClasses>
+       PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+   }
++  MdeModulePkg/Universal/SerialDxe/SerialDxe.inf
+   MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
+   MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf {
+     <LibraryClasses>
