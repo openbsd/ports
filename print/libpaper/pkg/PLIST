@@ -1,5 +1,4 @@
 @bin bin/paper
-@bin bin/paperconf
 include/paper.h
 @static-lib lib/libpaper.a
 lib/libpaper.la
@@ -9,7 +8,5 @@ lib/libpaper.la
 share/doc/libpaper/
 share/doc/libpaper/README.md
 share/examples/libpaper/
-share/examples/libpaper/papersize
-@sample ${SYSCONFDIR}/papersize
 share/examples/libpaper/paperspecs
 @sample ${SYSCONFDIR}/paperspecs
