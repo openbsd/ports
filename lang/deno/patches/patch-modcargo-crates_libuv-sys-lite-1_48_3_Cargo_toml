@@ -1,9 +1,9 @@
 Fix build with llvm 22.
 Obtained from FreeBSD (Mikael Urankar)
 
-Index: modcargo-crates/libuv-sys-lite-1.48.3/Cargo.toml
---- modcargo-crates/libuv-sys-lite-1.48.3/Cargo.toml.orig
-+++ modcargo-crates/libuv-sys-lite-1.48.3/Cargo.toml
+Index: modcargo-crates/libuv-sys-lite-1.48.4/Cargo.toml
+--- modcargo-crates/libuv-sys-lite-1.48.4/Cargo.toml.orig
++++ modcargo-crates/libuv-sys-lite-1.48.4/Cargo.toml
 @@ -47,4 +47,4 @@ version = "0.8.5"
  optional = true
  

@@ -1,0 +1,21 @@
+rusts libc bindings don't define RTLD_NOLOAD ...
+
+Index: cli/rt_desktop/lib.rs
+--- cli/rt_desktop/lib.rs.orig
++++ cli/rt_desktop/lib.rs
+@@ -1056,7 +1056,6 @@ fn promote_dylib_symbols_to_global() {
+   }
+   use libc::RTLD_GLOBAL;
+   use libc::RTLD_LAZY;
+-  use libc::RTLD_NOLOAD;
+ 
+   // SAFETY:
+   // - `dladdr` reads the metadata of the function passed in; a known
+@@ -1070,6 +1069,7 @@ fn promote_dylib_symbols_to_global() {
+   //   and any NAPI addon needing those symbols will fail with a
+   //   clear "symbol not found" later.
+   unsafe {
++    let RTLD_NOLOAD = 0x800;
+     let mut info: DlInfo = std::mem::zeroed();
+     let addr = promote_dylib_symbols_to_global as *const std::ffi::c_void;
+     if dladdr(addr, &mut info) != 0 && !info.dli_fname.is_null() {
