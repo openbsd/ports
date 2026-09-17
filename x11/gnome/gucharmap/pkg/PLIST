@@ -127,6 +127,12 @@ share/help/id/gucharmap/figures/
 share/help/id/gucharmap/figures/gucharmap_window.png
 share/help/id/gucharmap/index.docbook
 share/help/id/gucharmap/legal.xml
+share/help/kk/
+share/help/kk/gucharmap/
+share/help/kk/gucharmap/figures/
+share/help/kk/gucharmap/figures/gucharmap_window.png
+share/help/kk/gucharmap/index.docbook
+share/help/kk/gucharmap/legal.xml
 share/help/ko/
 share/help/ko/gucharmap/
 share/help/ko/gucharmap/figures/
@@ -163,6 +169,12 @@ share/help/sl/gucharmap/figures/
 share/help/sl/gucharmap/figures/gucharmap_window.png
 share/help/sl/gucharmap/index.docbook
 share/help/sl/gucharmap/legal.xml
+share/help/sr/
+share/help/sr/gucharmap/
+share/help/sr/gucharmap/figures/
+share/help/sr/gucharmap/figures/gucharmap_window.png
+share/help/sr/gucharmap/index.docbook
+share/help/sr/gucharmap/legal.xml
 share/help/sv/
 share/help/sv/gucharmap/
 share/help/sv/gucharmap/figures/
