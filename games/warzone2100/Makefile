@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 COMMENT=	3D realtime strategy on a future earth
 
 V=		4.3.2
-REVISION=	3
+REVISION=	4
 
 # shouldn't be needed after updating
 MODCMAKE_POLICY_VERSION_OVERRIDE= Yes
@@ -45,7 +45,7 @@ LIB_DEPENDS=	audio/libogg \
 		net/miniupnp/miniupnpc \
 		security/libsodium
 
-BUILD_DEPENDS=	archivers/p7zip \
+BUILD_DEPENDS=	archivers/7zip \
 		devel/gettext,-tools \
 		devel/sdl2 \
 		graphics/shaderc \

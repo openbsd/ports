@@ -1,6 +1,7 @@
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
 CATEGORIES =	archivers
+REVISION =	0
 
 SHARED_LIBS +=  kerfuffle                 9.3 # 17.08
 
@@ -20,18 +21,18 @@ MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 
-BUILD_DEPENDS =	archivers/bzip2 \
+BUILD_DEPENDS =	archivers/7zip \
+		archivers/bzip2 \
 		archivers/lzo2 \
-		archivers/p7zip \
 		archivers/rzip \
 		archivers/unrar \
 		archivers/zstd
 
-RUN_DEPENDS =	archivers/bzip2 \
-		archivers/unrar \
-		archivers/p7zip \
+RUN_DEPENDS =	archivers/7zip \
+		archivers/bzip2 \
 		archivers/lzo2 \
 		archivers/rzip \
+		archivers/unrar \
 		archivers/zstd \
 		misc/shared-mime-info
 

@@ -1,6 +1,7 @@
 USE_WXNEEDED=		Yes
 
 COMMENT=		file archiver for the MATE desktop
+REVISION=		0
 
 CATEGORIES=		archivers
 
@@ -25,8 +26,8 @@ WANTLIB += wayland-egl xkbcommon
 MODULES=		devel/dconf \
 			x11/gnome
 
-RUN_DEPENDS=		archivers/gtar \
-			archivers/p7zip \
+RUN_DEPENDS=		archivers/7zip \
+			archivers/gtar \
 			archivers/unrar \
 			archivers/unzip \
 			archivers/zip

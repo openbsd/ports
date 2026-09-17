@@ -1,0 +1,14 @@
+No 7z -l after switch from p7zip to 7zip.
+https://gitlab.gnome.org/GNOME/file-roller/-/commit/0fafd8fd7ba1da4f1c4c67c9dacf8af985ad2641
+
+Index: src/fr-command-tar.c
+--- src/fr-command-tar.c.orig
++++ src/fr-command-tar.c
+@@ -755,7 +755,6 @@ fr_command_tar_recompress (FrCommand *comm)
+ 		fr_process_add_arg (comm->process, "a");
+ 		fr_process_add_arg (comm->process, "-bd");
+ 		fr_process_add_arg (comm->process, "-y");
+-		fr_process_add_arg (comm->process, "-l");
+ 
+ 		new_name = g_strconcat (c_tar->uncomp_filename, ".7z", NULL);
+ 		fr_process_add_arg_concat (comm->process, new_name, NULL);

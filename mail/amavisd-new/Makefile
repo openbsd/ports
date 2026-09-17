@@ -6,6 +6,7 @@ DISTNAME=		amavis-v${V}
 PKGNAME-main=		amavisd-new-${V}
 PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
+REVISION-main=		0
 
 HOMEPAGE=		https://www.amavis.org/
 
@@ -16,12 +17,12 @@ SITES=			https://gitlab.com/amavis/amavis/-/archive/v${V}/
 
 EXTRACT_SUFX=		.tar.bz2
 
-RUN_DEPENDS=		archivers/arc \
+RUN_DEPENDS=		archivers/7zip,-rar \
+			archivers/arc \
 			archivers/bzip2 \
 			archivers/cabextract \
 			archivers/lzop \
 			archivers/p5-Archive-Zip>=1.14 \
-			archivers/p7zip,-rar \
 			archivers/ripole \
 			archivers/unzip \
 			archivers/zoo \

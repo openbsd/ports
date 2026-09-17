@@ -4,6 +4,7 @@ COMMENT =		statically typed systems programming language
 
 DISTNAME =		nim-2.2.10
 EXTRACT_SUFX =		.tar.xz
+REVISION =		0
 
 CATEGORIES =		lang
 
@@ -38,7 +39,7 @@ ATLAS_SSL_FLAGS =	-d:libressl --dynlibOverride:ssl \
 MODULES =		lang/python
 
 PORTHOME =		${WRKDIR}
-TEST_DEPENDS =		archivers/p7zip,-main \
+TEST_DEPENDS =		archivers/7zip,-main \
 			archivers/unzip \
 			devel/boehm-gc \
 			devel/pcre \

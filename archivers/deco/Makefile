@@ -3,7 +3,7 @@ COMMENT=	extract various archive file formats
 V=		1.6.4
 ARCHIVE_V=	1.7
 PKGNAME=	deco-archive-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	archivers
 
@@ -20,10 +20,10 @@ DISTFILES=	deco-{deco/archive/}${V}${EXTRACT_SUFX} \
 DECO=		${WRKDIR}/deco-${V}
 ARCHIVE=	${WRKDIR}/deco-archive-${ARCHIVE_V}
 
-RUN_DEPENDS=	archivers/arc \
+RUN_DEPENDS=	archivers/7zip \
+		archivers/arc \
 		archivers/bzip2 \
 		archivers/cabextract \
-		archivers/p7zip \
 		archivers/lzop \
 		archivers/rzip \
 		archivers/unzip \

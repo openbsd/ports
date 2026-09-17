@@ -1,7 +1,7 @@
 COMMENT=		rar, 7zip and zip password bruteforcer
 
 DISTNAME=		rarcrack-0.2
-REVISION =		9
+REVISION =		10
 CATEGORIES=		security
 
 HOMEPAGE=		https://rarcrack.sourceforge.net/
@@ -16,7 +16,7 @@ WANTLIB+= c iconv m pthread xml2 z
 LIB_DEPENDS=		converters/libiconv \
 			textproc/libxml
 
-RUN_DEPENDS=		archivers/p7zip \
+RUN_DEPENDS=		archivers/7zip \
 			archivers/unrar \
 			archivers/unzip
 

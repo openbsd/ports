@@ -3,6 +3,7 @@ COMMENT =	highly reliable Enterprise Messaging System
 V =		4.3.6
 DISTNAME =	rabbitmq-server-${V}
 PKGNAME =	rabbitmq-${V}
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -22,7 +23,7 @@ MODULES =	lang/erlang \
 USE_GMAKE =	Yes
 CONFIGURE_STYLE = none
 
-BUILD_DEPENDS =	archivers/p7zip \
+BUILD_DEPENDS =	archivers/7zip \
 		archivers/unzip \
 		archivers/zip \
 		devel/gmake \

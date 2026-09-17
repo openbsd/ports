@@ -3,6 +3,7 @@ COMMENT =	launch independent games
 V =		0.3
 DISTNAME =	IndieRunner-v${V}
 PKGNAME =	indierunner-${V}
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -17,7 +18,7 @@ SITES =		https://github.com/IndieRunner/IndieRunner/releases/download/v${V}/
 MODULES =	perl
 
 BUILD_DEPENDS=	devel/p5-File-ShareDir-Install
-RUN_DEPENDS =	archivers/p7zip \
+RUN_DEPENDS =	archivers/7zip \
 		converters/p5-JSON \
 		devel/p5-File-Share \
 		devel/p5-File-Find-Rule \

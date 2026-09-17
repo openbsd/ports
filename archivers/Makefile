@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += 7zip
      SUBDIR += ancient
      SUBDIR += arc
      SUBDIR += blosc
@@ -53,7 +54,6 @@
      SUBDIR += p5-Compress-LZO
      SUBDIR += p5-POE-Filter-Zlib
      SUBDIR += p5-PerlIO-gzip
-     SUBDIR += p7zip
      SUBDIR += par1cmdline
      SUBDIR += par2cmdline
      SUBDIR += pecl-lzf,php83

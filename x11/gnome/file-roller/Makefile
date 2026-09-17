@@ -3,6 +3,7 @@ COMMENT-nautilus=	file-roller extension for Nautilus
 
 GNOME_PROJECT=		file-roller
 GNOME_VERSION=		44.7
+REVISION-main=		0
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
 
@@ -25,9 +26,9 @@ MODULES=		devel/dconf \
 BUILD_DEPENDS=		archivers/gcpio
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			archivers/7zip \
 			archivers/gcpio \
 			archivers/gtar \
-			archivers/p7zip \
 			archivers/unzip \
 			archivers/xz \
 			archivers/zip \

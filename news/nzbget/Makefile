@@ -1,4 +1,5 @@
 COMMENT =	binary newsreader supporting NZB files
+REVISION =	0
 
 DIST_TUPLE +=	github nzbgetcom nzbget v26.3 .
 DIST_TUPLE +=	github nzbgetcom par2cmdline-turbo v1.4.0-20260803 par2cmdline-turbo
@@ -24,7 +25,7 @@ MODULES =	devel/cmake
 MODCMAKE_DEBUG =	Yes
 .endif
 
-RUN_DEPENDS =	archivers/p7zip \
+RUN_DEPENDS =	archivers/7zip \
 		archivers/unrar
 LIB_DEPENDS =	devel/boost \
 		textproc/libxml

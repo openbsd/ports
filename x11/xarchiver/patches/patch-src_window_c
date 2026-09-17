@@ -1,0 +1,16 @@
+Find 7zCon.sfx from archivers/7zip
+
+Index: src/window.c
+--- src/window.c.orig
++++ src/window.c
+@@ -1578,7 +1578,9 @@ end_zip:
+ 			if (archive_name == NULL)
+ 				return;
+ 
+-			if (g_file_test ( "/usr/lib/p7zip/7zCon.sfx",G_FILE_TEST_EXISTS))
++			if (g_file_test ( "/usr/local/lib/7zip/7zCon.sfx",G_FILE_TEST_EXISTS))
++				sfx_path = g_strdup("/usr/local/lib/7zip/7zCon.sfx");
++			else if (g_file_test ( "/usr/lib/p7zip/7zCon.sfx",G_FILE_TEST_EXISTS))
+ 				sfx_path = g_strdup("/usr/lib/p7zip/7zCon.sfx");
+ 			else if (g_file_test ( "/usr/local/lib/p7zip/7zCon.sfx",G_FILE_TEST_EXISTS))
+ 				sfx_path = g_strdup ("/usr/local/lib/p7zip/7zCon.sfx");

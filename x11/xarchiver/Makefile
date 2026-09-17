@@ -1,6 +1,7 @@
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
 DIST_TUPLE =	github	ib	xarchiver	0.5.4.23	.
+REVISION =	0
 
 HOMEPAGE =	https://xarchiver.sourceforge.net
 
@@ -32,7 +33,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 RUN_DEPENDS =	archivers/zip \
 		archivers/unzip \
 		archivers/gtar \
-		archivers/p7zip \
+		archivers/7zip \
 		devel/xdg-utils \
 		devel/desktop-file-utils \
 		x11/gtk+4,-guic

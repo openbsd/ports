@@ -9,7 +9,7 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 
 V =			2026.07.04
 PKGNAME =		recoil-rts-${V}
-REVISION =		0
+REVISION =		1
 
 DIST_TUPLE +=		github beyond-all-reason RecoilEngine ${V} .
 DIST_TUPLE +=		github mikke89 RmlUi \
@@ -84,7 +84,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		archivers/p7zip \
+BUILD_DEPENDS =		archivers/7zip \
 			converters/libiconv \
 			devel/boost \
 			shells/bash \
