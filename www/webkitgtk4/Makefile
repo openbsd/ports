@@ -70,6 +70,9 @@ BUILD_DEPENDS =		devel/bison \
 			geo/geoclue2 \
 			wayland/wayland-protocols
 
+# XXX tmp
+BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-bad
+
 RUN_DEPENDS =		geo/geoclue2 \
 			multimedia/gstreamer1/plugins-good
 
