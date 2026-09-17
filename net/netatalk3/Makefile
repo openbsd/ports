@@ -6,6 +6,8 @@ EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
 
+REVISION=		0
+
 SHARED_LIBS += atalk                     18.0 # 19.0.0
 
 CATEGORIES=		net
@@ -17,8 +19,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += avahi-client avahi-common bstring c crack db event_core
-WANTLIB += gcrypt iconv iniparser pthread rpcsvc
+WANTLIB += avahi-client avahi-common bstring c crack event_core
+WANTLIB += gcrypt iconv iniparser pthread rpcsvc sqlite3
 
 SITES=			https://github.com/Netatalk/Netatalk/releases/download/netatalk-${V:S/./-/g}/
 
@@ -32,7 +34,7 @@ BUILD_DEPENDS=		textproc/pandoc
 # don't pick up UnicodeData.txt from texlive_texmf-buildset
 BUILD_DEPENDS +=	textproc/unicode/ucd
 
-LIB_DEPENDS=		databases/db/v4 \
+LIB_DEPENDS=		databases/sqlite3 \
 			devel/bstring \
 			devel/iniparser \
 			devel/libevent2 \
@@ -46,7 +48,7 @@ RUN_DEPENDS=		net/avahi
 RUN_DEPENDS +=		net/p5-Net-DBus
 
 CONFIGURE_ARGS=		-Dwith-acls=false \
-			-Dwith-cnid-backends=dbd \
+			-Dwith-cnid-backends=sqlite \
 			-Dwith-dtrace=false \
 			-Dwith-gssapi=false \
 			-Dwith-kerberos=false \

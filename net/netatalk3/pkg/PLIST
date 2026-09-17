@@ -70,13 +70,9 @@ libexec/netatalk/fce_ev_script
 @man man/man5/afp_voluuid.conf.5
 @man man/man5/extmap.conf.5
 @man man/man8/afpd.8
-@man man/man8/cnid_dbd.8
-@man man/man8/cnid_metad.8
 @man man/man8/fce_ev_script.8
 @man man/man8/netatalk.8
 @bin sbin/afpd
-@bin sbin/cnid_dbd
-@bin sbin/cnid_metad
 @bin sbin/netatalk
 share/examples/netatalk/
 share/examples/netatalk/netatalk/
