@@ -1,7 +1,7 @@
 COMMENT=		sandboxed and extendable image loading and editing
 
 GNOME_PROJECT=		glycin
-GNOME_VERSION=		2.2.0
+GNOME_VERSION=		2.2.1
 
 CATEGORIES=		graphics
 

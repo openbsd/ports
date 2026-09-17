@@ -117,7 +117,7 @@ SHA256 (gnome/../cargo/glycin-core-4.0.0.tar.gz) = lGbk8YpTMS+u5BTqhYE9ZnTUy1utr
 SHA256 (gnome/../cargo/glycin-external-4.0.0.tar.gz) = p9M1d4sUQ34TOdcDr9HOaeYd+KtUIIgrS3ghuaLKnUo=
 SHA256 (gnome/../cargo/glycin-image-rs-2.2.0.tar.gz) = PfDLwR/l1VI1dbBPckyC2NUOLAODBiK2VefUAV66ZHI=
 SHA256 (gnome/../cargo/glycin-test-2.2.0.tar.gz) = YUEuqi69sYsbK56FBndphqqIjU7UfjcEfTAqDtIjhks=
-SHA256 (gnome/../cargo/glycin-utils-5.0.0.tar.gz) = aLES3bhL2cFFOxGSkuOHiKoYAV1cEhWMHW+rG541Puc=
+SHA256 (gnome/../cargo/glycin-utils-5.0.1.tar.gz) = Q6k8bf3nqym448mETLnlmlvNWP/dmySqtQDTp4pLTLA=
 SHA256 (gnome/../cargo/gobject-sys-0.22.6.tar.gz) = IqhhhZuIennPRhNZwZLJelfY+wIp3SkSMuV6oR9vpyw=
 SHA256 (gnome/../cargo/gufo-0.5.0.tar.gz) = ahbX+u6wPiklrGsPQGMLFbGZLQjFCt1ALzX95JXkT2Q=
 SHA256 (gnome/../cargo/gufo-common-2.0.0.tar.gz) = 1YPN3p62mF27blltJ2d+XTU9Xu5Edjy/fH6tMUfTN78=
@@ -324,7 +324,7 @@ SHA256 (gnome/../cargo/zune-jpeg-0.5.15.tar.gz) = J7ydW4FbwQPxQqoFT1YdkYfRkWkux8
 SHA256 (gnome/../cargo/zvariant-5.13.1.tar.gz) = vuKgvNKpB3hqRW//Raqq9UybpfULca6ewaTt0gDJSRE=
 SHA256 (gnome/../cargo/zvariant_derive-5.13.1.tar.gz) = OKcIIWoYeAeWdwv+P0c5x8g6Po94m3VVNLu8BuTiPhI=
 SHA256 (gnome/../cargo/zvariant_utils-3.5.0.tar.gz) = kMuTg/m0UpBAehJYsgLT+PAdtxnrYLTkBVxjda9Px8c=
-SHA256 (gnome/glycin-2.2.0.tar.xz) = oL8XO/kwK1COtYJVtk645G3DRaySsNiDzjP1/EeswGg=
+SHA256 (gnome/glycin-2.2.1.tar.xz) = k3rlcddsDeXlnblE0RlJgTYL437peHVyl4G8OBbd6v4=
 SIZE (gnome/../cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (gnome/../cargo/ahash-0.8.12.tar.gz) = 43413
 SIZE (gnome/../cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -444,7 +444,7 @@ SIZE (gnome/../cargo/glycin-core-4.0.0.tar.gz) = 85799
 SIZE (gnome/../cargo/glycin-external-4.0.0.tar.gz) = 32238
 SIZE (gnome/../cargo/glycin-image-rs-2.2.0.tar.gz) = 39410
 SIZE (gnome/../cargo/glycin-test-2.2.0.tar.gz) = 25612
-SIZE (gnome/../cargo/glycin-utils-5.0.0.tar.gz) = 44037
+SIZE (gnome/../cargo/glycin-utils-5.0.1.tar.gz) = 44050
 SIZE (gnome/../cargo/gobject-sys-0.22.6.tar.gz) = 23697
 SIZE (gnome/../cargo/gufo-0.5.0.tar.gz) = 22997
 SIZE (gnome/../cargo/gufo-common-2.0.0.tar.gz) = 30567
@@ -651,4 +651,4 @@ SIZE (gnome/../cargo/zune-jpeg-0.5.15.tar.gz) = 88879
 SIZE (gnome/../cargo/zvariant-5.13.1.tar.gz) = 96839
 SIZE (gnome/../cargo/zvariant_derive-5.13.1.tar.gz) = 17734
 SIZE (gnome/../cargo/zvariant_utils-3.5.0.tar.gz) = 16990
-SIZE (gnome/glycin-2.2.0.tar.xz) = 7765216
+SIZE (gnome/glycin-2.2.1.tar.xz) = 7766436
