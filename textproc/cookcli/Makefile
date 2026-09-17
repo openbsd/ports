@@ -1,6 +1,6 @@
 COMMENT =		command line tool for working with Cooklang recipes
 
-V =			0.34.0
+V =			0.35.0
 DISTNAME =		cook-$V-source
 PKGNAME =		cookcli-$V
 
@@ -26,8 +26,6 @@ LIB_DEPENDS =		databases/sqlite3
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
-
-NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/cookcli-$V
 

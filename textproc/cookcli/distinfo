@@ -69,7 +69,7 @@ SHA256 (cargo/cooklang-find-0.6.1.tar.gz) = 1YUMtjH9zTa6O7dfA2ECD4I9KGEZ+oBKNJ7W
 SHA256 (cargo/cooklang-import-0.9.14.tar.gz) = gJKMT7Q9U+rPEoCovGmFotG35dQk0orES2EMMCfuezo=
 SHA256 (cargo/cooklang-language-server-0.2.4.tar.gz) = GT67cSG91V/Bibrr281on9xjiCD8e4JrAf4+Gspsd8A=
 SHA256 (cargo/cooklang-reports-0.5.1.tar.gz) = g0Y9vcP0Gudb4TLSoTiaHePdY5WyCd0ychyoeIFZ3aU=
-SHA256 (cargo/cooklang-sync-client-0.5.0.tar.gz) = CRqXkDQidCiamp25pkQUiKNkMjoxMS7wQOklqACV6cw=
+SHA256 (cargo/cooklang-sync-client-0.6.0.tar.gz) = iLjkm6+IiGJEGgCP2M9x9IlWr42trkSAwewLP8hZW0g=
 SHA256 (cargo/core-foundation-0.10.1.tar.gz) = sqbNmuIz5/YrpOk1PoGojff8ilmHuNRFtNkMh5vRVvY=
 SHA256 (cargo/core-foundation-sys-0.8.7.tar.gz) = dzZIuU0OXWIPZPKAd3RFdA5h/nAQJQh+yLV/RceRiIs=
 SHA256 (cargo/cpufeatures-0.2.17.tar.gz) = We1YOO67JqK7Llj21bUxaYmunQi6sQ4ObRA+ZW0bAoA=
@@ -536,7 +536,7 @@ SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhN
 SHA256 (cargo/zip-6.0.0.tar.gz) = 6yoFx8Nv3mwJsIV2yff7TNpwWZD3O1j+ARq/ffskFos=
 SHA256 (cargo/zipsign-api-0.1.5.tar.gz) = 26YGP/gs29mnZa3RbTaavoHlIPg2BU6ZfC2yF87KQMA=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
-SHA256 (cook-0.34.0-source.tar.gz) = 8x542gaxxXnvXyH2SoAUPOoiDzrCogoWs+nU2w4bMDA=
+SHA256 (cook-0.35.0-source.tar.gz) = 9c6JvRF09kMrbnquyUpbsv0UQIeVJv72dYD6sb4PP54=
 SIZE (cargo/accept-language-3.1.0.tar.gz) = 9269
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -608,7 +608,7 @@ SIZE (cargo/cooklang-find-0.6.1.tar.gz) = 73714
 SIZE (cargo/cooklang-import-0.9.14.tar.gz) = 136814
 SIZE (cargo/cooklang-language-server-0.2.4.tar.gz) = 40529
 SIZE (cargo/cooklang-reports-0.5.1.tar.gz) = 43383
-SIZE (cargo/cooklang-sync-client-0.5.0.tar.gz) = 69872
+SIZE (cargo/cooklang-sync-client-0.6.0.tar.gz) = 70383
 SIZE (cargo/core-foundation-0.10.1.tar.gz) = 28886
 SIZE (cargo/core-foundation-sys-0.8.7.tar.gz) = 37712
 SIZE (cargo/cpufeatures-0.2.17.tar.gz) = 13466
@@ -1075,4 +1075,4 @@ SIZE (cargo/zerovec-derive-0.11.3.tar.gz) = 22115
 SIZE (cargo/zip-6.0.0.tar.gz) = 128541
 SIZE (cargo/zipsign-api-0.1.5.tar.gz) = 17451
 SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
-SIZE (cook-0.34.0-source.tar.gz) = 6110032
+SIZE (cook-0.35.0-source.tar.gz) = 6116734
