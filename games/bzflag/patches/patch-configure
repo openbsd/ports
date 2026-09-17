@@ -1,10 +1,24 @@
+Disable ccache.
 Disable libinput support for now:
  - Disable linux rumble joystick support
  - Disable linux force feedback joystick support
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -21475,7 +21475,6 @@ for ac_header in \
+@@ -7691,11 +7691,6 @@ $as_echo "no" >&6; }
+ fi
+ 
+ 
+-if test "$CCACHE" ; then
+-    CC="ccache $CC"
+-    CXX="ccache $CXX"
+-fi
+-
+ if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}windres", so it can be a program name with args.
+ set dummy ${ac_tool_prefix}windres; ac_word=$2
+@@ -21475,7 +21470,6 @@ for ac_header in \
  	fcntl.h \
  	inttypes.h \
  	limits.h \
@@ -12,7 +26,7 @@ Index: configure
  	process.h \
  	sched.h \
  	stdint.h \
-@@ -23897,7 +23896,7 @@ struct ff_effect x; x.u.rumble.weak_magnitude = 42; re
+@@ -23897,7 +23891,7 @@ struct ff_effect x; x.u.rumble.weak_magnitude = 42; re
  }
  _ACEOF
  if ac_fn_cxx_try_compile "$LINENO"; then :
@@ -21,7 +35,7 @@ Index: configure
  else
    ac_ff_effect_rumble=no
  fi
-@@ -23925,7 +23924,7 @@ struct ff_effect x; x.direction = 0x4000; return 0;
+@@ -23925,7 +23919,7 @@ struct ff_effect x; x.direction = 0x4000; return 0;
  }
  _ACEOF
  if ac_fn_cxx_try_compile "$LINENO"; then :
