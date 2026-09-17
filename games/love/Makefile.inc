@@ -12,7 +12,7 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 # zlib
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://github.com/love2d/love/releases/download/${VERSION}/
+SITES ?=		https://github.com/love2d/love/releases/download/${VERSION}/
 
 COMPILER =		base-clang ports-gcc
 
@@ -22,7 +22,9 @@ SUFFIX =		-${VERSION:R}
 SUBST_VARS +=		SUFFIX VERSION
 
 CONFIGURE_STYLE ?=	autoreconf
+.if ${VERSION} != 12.0
 CONFIGURE_ARGS +=	--program-suffix=${SUFFIX}
+.endif
 CONFIGURE_ENV ?=	CPPFLAGS='-I${LOCALBASE}/include' \
 			LDFLAGS='-L${LOCALBASE}/lib'
 
@@ -46,6 +48,6 @@ CONFIGURE_ARGS +=	--with-lua=lua \
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.14
 
-WRKDIST =		${WRKDIR}/love-${VERSION}
+WRKDIST ?=		${WRKDIR}/love-${VERSION}
 
 PORTROACH ?=		limit:^${VERSION}
