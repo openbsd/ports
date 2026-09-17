@@ -2,14 +2,15 @@ COMMENT =	extensible and flexible object relational mapper
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	DBIx-Class-0.082843
-CATEGORIES =	databases devel
+DISTNAME =	DBIx-Class-0.082844
+CATEGORIES =	databases
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
+CONFIGURE_STYLE =	modinst
 CONFIGURE_ARGS =	--skipdeps
 
 RUN_DEPENDS =	databases/p5-DBI>=1.57 \
@@ -74,14 +75,14 @@ MODPOSTGRESQL_TEST_DBNAME =	${DATABASE}
 MAKE_ENV +=	DBICTEST_PG_DSN='dbi:Pg:dbname=${DATABASE}' \
 		DBICTEST_PG_USER=${USER} \
 		DBICTEST_PG_PASS=1
-TEST_DEPENDS += databases/p5-DBD-Pg
+TEST_DEPENDS +=	databases/p5-DBD-Pg
 
 MODULES +=	databases/mariadb
 MODMARIADB_TEST_DBNAME =	${DATABASE}
 MAKE_ENV +=	DBICTEST_MYSQL_DSN='dbi:mysql:database=${DATABASE};mysql_socket=${MODMARIADB_TEST_SOCKET}' \
 		DBICTEST_MYSQL_USER=root \
 		DBICTEST_MYSQL_PASS=1
-TEST_DEPENDS += databases/p5-DBD-mysql
+TEST_DEPENDS +=	databases/p5-DBD-mysql
 
 MODPOSTGRESQL_TEST_CMD =	${MODMARIADB_TEST_TARGET}
 do-test:
