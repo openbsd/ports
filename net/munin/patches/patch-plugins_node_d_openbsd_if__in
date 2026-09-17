@@ -13,24 +13,36 @@ Index: plugins/node.d.openbsd/if_.in
  #
  # To aggregate all network interfaces on the system (except lo0),
  # link if_aggregated to this file.
-@@ -31,13 +31,15 @@ if [ "$1" = "autoconf" ]; then
+@@ -19,8 +19,6 @@
+ #%# family=auto
+ #%# capabilities=autoconf suggest
+ 
+-INTERFACE=${0##*if_}
+-
+ if [ "$1" = "autoconf" ]; then
+ 	if [ -x /sbin/ifconfig -o -x /usr/bin/netstat ]; then
+ 		echo yes
+@@ -32,26 +30,29 @@ if [ "$1" = "autoconf" ]; then
+ fi
+ 
+ if [ "$1" = "suggest" ]; then
+-	if [ -x /sbin/ifconfig ]
+-	then
+-		ifconfig -l | sed -Ee 's/[[:<:]](pfsync|faith|pf(log|sync)|lo|plip|carp|enc|fwe)[^ ]*//g' | xargs -n 1 echo
++	if [ -x /usr/bin/netstat ]; then
++		netstat -i -b -n | sed -n -E -e '/^faith/d' -e '/^(enc|lo)[0-9]/d' -e '/^pf(log|sync)/d' -e '/<Link>/s/\** .*//p'
+ 		exit 0
+-	elif [ -x /usr/bin/netstat ]; then
+-		netstat -i -b -n | sed -n -e '/^faith/d' -e '/^lo[0-9]/d' -e '/^pf(log|sync)/d' -e '/<Link#[0-9]*>/s/\** .*//p'
+-		exit 0
+ 	else
+ 		exit 1
  	fi
  fi
  
++INTERFACE=${0##*if_}
 +DESCR=$(/sbin/ifconfig ${INTERFACE} | /usr/bin/awk -F ': ' '/description:(.*)$/ {print substr($2, 1, 12);}')
 +
- if [ "$1" = "suggest" ]; then
- 	if [ -x /sbin/ifconfig ]
- 	then
- 		ifconfig -l | sed -Ee 's/[[:<:]](pfsync|faith|pf(log|sync)|lo|plip|carp|enc|fwe)[^ ]*//g' | xargs -n 1 echo
- 		exit 0
- 	elif [ -x /usr/bin/netstat ]; then
--		netstat -i -b -n | sed -n -e '/^faith/d' -e '/^lo[0-9]/d' -e '/^pf(log|sync)/d' -e '/<Link#[0-9]*>/s/\** .*//p'
-+		netstat -i -b -n | sed -n -e '/^faith/d' -e '/^lo[0-9]/d' -e '/^pf(log|sync)/d' -e '/<Link>/s/\** .*//p'
- 		exit 0
- 	else
- 		exit 1
-@@ -47,11 +49,15 @@ fi
  if [ "$1" = "config" ]; then
  
  	echo "graph_order rbytes obytes"
@@ -48,7 +60,7 @@ Index: plugins/node.d.openbsd/if_.in
  	echo 'rbytes.label received'
          echo 'rbytes.type DERIVE'
          echo 'rbytes.graph no'
-@@ -69,9 +75,11 @@ fi
+@@ -69,9 +70,11 @@ fi
  if [ "$INTERFACE" = "aggregated" ]; then
  	/usr/bin/netstat -i -b -n | grep -v '^lo' | awk '
  BEGIN { rsum = 0; osum = 0; }
@@ -63,7 +75,7 @@ Index: plugins/node.d.openbsd/if_.in
  	} else if (NF == 11) {
  		if ($4 ~ /:/) {
  			rsum += $7; osum += $10;
-@@ -79,7 +87,7 @@ BEGIN { rsum = 0; osum = 0; }
+@@ -79,7 +82,7 @@ BEGIN { rsum = 0; osum = 0; }
  			rsum += $7; osum += $10;
  		}
  	} else { # NF == 12
@@ -72,7 +84,7 @@ Index: plugins/node.d.openbsd/if_.in
  	}
  }
  END {
-@@ -89,17 +97,20 @@ END {
+@@ -89,17 +92,20 @@ END {
  
  else
  	/usr/bin/netstat -i -b -n -I $INTERFACE | awk '

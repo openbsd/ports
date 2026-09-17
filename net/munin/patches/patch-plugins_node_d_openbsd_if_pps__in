@@ -1,17 +1,31 @@
 Index: plugins/node.d.openbsd/if_pps_.in
 --- plugins/node.d.openbsd/if_pps_.in.orig
 +++ plugins/node.d.openbsd/if_pps_.in
-@@ -31,6 +31,8 @@ if [ "$1" = "autoconf" ]; then
+@@ -18,9 +18,6 @@
+ #%# family=auto
+ #%# capabilities=autoconf suggest
+ 
+-
+-INTERFACE=`basename $0 | sed 's/^if_pps_//g'`
+-
+ if [ "$1" = "autoconf" ]; then
+ 	if [ -x /usr/bin/netstat ]; then
+ 		echo yes
+@@ -33,16 +30,23 @@ fi
+ 
+ if [ "$1" = "suggest" ]; then
+ 	if [ -x /usr/bin/netstat ]; then
+-		netstat -i -n | sed -n -e '/^faith/d' -e '/^lo[0-9]/d' -e '/^pflog/d' -e '/<Link>/s/\** .*//p'
++		netstat -i -n | sed -n -E -e '/^faith/d' -e '/^(enc|lo)[0-9]/d' -e '/^pf(log|sync)/d' -e '/<Link>/s/\** .*//p'
+ 		exit 0
+ 	else
+ 		exit 1
  	fi
  fi
  
++INTERFACE=`basename $0 | sed 's/^if_pps_//g'`
 +DESCR=$(/sbin/ifconfig ${INTERFACE} | /usr/bin/awk -F ': ' '/description:(.*)$/ {print substr($2, 1, 12);}')
 +
- if [ "$1" = "suggest" ]; then
- 	if [ -x /usr/bin/netstat ]; then
- 		netstat -i -n | sed -n -e '/^faith/d' -e '/^lo[0-9]/d' -e '/^pflog/d' -e '/<Link>/s/\** .*//p'
-@@ -42,7 +44,11 @@ fi
- 
  if [ "$1" = "config" ]; then
  	echo "graph_order rpkt opkt"
 -	echo "graph_title $INTERFACE packets"

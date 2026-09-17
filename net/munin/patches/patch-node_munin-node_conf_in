@@ -1,5 +1,6 @@
---- node/munin-node.conf.in.orig	Fri May 10 22:59:50 2013
-+++ node/munin-node.conf.in	Sun May 26 22:02:43 2013
+Index: node/munin-node.conf.in
+--- node/munin-node.conf.in.orig
++++ node/munin-node.conf.in
 @@ -10,7 +10,7 @@ background 1
  setsid 1
  
@@ -9,3 +10,14 @@
  
  # This is the timeout for the whole transaction.
  # Units are in sec. Default is 15 min
+@@ -56,8 +56,8 @@ allow ^::1$
+ # cidr_deny  192.0.2.42/32
+ 
+ # Which address to bind to;
+-host *
+-# host 127.0.0.1
++# host *
++host 127.0.0.1
+ 
+ # And which port
+ port 4949
