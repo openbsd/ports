@@ -22,6 +22,7 @@ MODULES=	devel/cmake
 COMPILER=	base-clang ports-gcc
 
 CONFIGURE_ARGS+=-DBUILD_SHARED_LIBS=ON \
+		-DCCACHE_FOUND=OFF \
 		-DVVDEC_ENABLE_WERROR=FALSE
 
 .include <bsd.port.arch.mk>
