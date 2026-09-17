@@ -1,12 +1,12 @@
 COMMENT =		C++ API for Pango
 
 GNOME_PROJECT =		pangomm
-GNOME_VERSION =		2.56.2
+GNOME_VERSION =		2.58.0
 PKGNAME =		pangomm248-${GNOME_VERSION}
 
 CATEGORIES =		devel x11
 
-SHARED_LIBS += pangomm-2.48              0.3 # 1.0.30
+SHARED_LIBS += pangomm-2.48              0.4 # 1.0.30
 
 HOMEPAGE =		http://gtkmm.gnome.org/
 
