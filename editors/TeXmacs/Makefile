@@ -52,6 +52,7 @@ NO_TEST=		Yes
 
 # needed for execinfo
 CONFIGURE_ARGS=	-DUSE_STACK_TRACE=ON \
+		-DCCACHE_FOUND=OFF \
 		-DTEXMACS_GUI=Qt6
 
 post-extract:
