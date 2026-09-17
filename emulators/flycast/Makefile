@@ -57,7 +57,8 @@ LIB_DEPENDS =	archivers/libzip \
 		net/miniupnp/miniupnpc \
 		sysutils/xxhash
 
-CONFIGURE_ARGS +=	-DUSE_VULKAN=OFF
+CONFIGURE_ARGS +=	-DCCACHE_PROGRAM=OFF \
+			-DUSE_VULKAN=OFF
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
