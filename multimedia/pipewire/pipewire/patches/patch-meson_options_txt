@@ -1,0 +1,16 @@
+Add an option for the sndio spa plugin; to be sent upstream.
+
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -173,6 +173,10 @@ option('jack',
+        description: 'Enable jack spa plugin integration',
+        type: 'feature',
+        value: 'auto')
++option('sndio',
++       description: 'Enable sndio spa plugin integration',
++       type: 'feature',
++       value: 'auto')
+ option('support',
+        description: 'Enable support spa plugin integration',
+        type: 'feature',

@@ -50,7 +50,6 @@ bin/pw-sysex
 @so lib/pipewire-0.3/libpipewire-module-protocol-native.so
 @so lib/pipewire-0.3/libpipewire-module-protocol-pulse.so
 @so lib/pipewire-0.3/libpipewire-module-protocol-simple.so
-@so lib/pipewire-0.3/libpipewire-module-rt.so
 @so lib/pipewire-0.3/libpipewire-module-rtp-sap.so
 @so lib/pipewire-0.3/libpipewire-module-rtp-sink.so
 @so lib/pipewire-0.3/libpipewire-module-rtp-source.so
@@ -81,6 +80,8 @@ lib/spa-0.2/filter-graph/
 lib/spa-0.2/libcamera/
 @so lib/spa-0.2/libcamera/libspa-libcamera.so
 @so lib/spa-0.2/libspa.so
+lib/spa-0.2/sndio/
+@so lib/spa-0.2/sndio/libspa-sndio.so
 lib/spa-0.2/support/
 @so lib/spa-0.2/support/libspa-dbus.so
 @so lib/spa-0.2/support/libspa-support.so
@@ -148,7 +149,6 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/libpipewire-module-raop-sink.7
 @man man/man7/libpipewire-module-roc-sink.7
 @man man/man7/libpipewire-module-roc-source.7
-@man man/man7/libpipewire-module-rt.7
 @man man/man7/libpipewire-module-rtp-sap.7
 @man man/man7/libpipewire-module-rtp-session.7
 @man man/man7/libpipewire-module-rtp-sink.7
@@ -261,7 +261,6 @@ share/locale/tr/LC_MESSAGES/pipewire.mo
 share/locale/uk/LC_MESSAGES/pipewire.mo
 share/locale/zh_CN/LC_MESSAGES/pipewire.mo
 share/locale/zh_TW/LC_MESSAGES/pipewire.mo
-share/pipewire/
 share/pipewire/client.conf
 share/pipewire/client.conf.avail/
 share/pipewire/client.conf.avail/20-upmix.conf
@@ -291,6 +290,7 @@ share/pipewire/pipewire.conf.avail/
 share/pipewire/pipewire.conf.avail/10-rates.conf
 share/pipewire/pipewire.conf.avail/20-upmix.conf
 share/pipewire/pipewire.conf.avail/50-raop.conf
+share/pipewire/pipewire.conf.d/10-sndio.conf
 @sample ${SYSCONFDIR}/pipewire/
 @sample ${SYSCONFDIR}/pipewire/client-rt.conf.d/
 @sample ${SYSCONFDIR}/pipewire/client.conf.d/

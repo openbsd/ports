@@ -1,0 +1,19 @@
+Add sndio api keys; to be sent upstream.
+
+Index: spa/include/spa/utils/keys.h
+--- spa/include/spa/utils/keys.h.orig
++++ spa/include/spa/utils/keys.h
+@@ -127,6 +127,13 @@ extern "C" {
+ #define SPA_KEY_API_JACK_SERVER		"api.jack.server"		/**< a jack server name */
+ #define SPA_KEY_API_JACK_CLIENT		"api.jack.client"		/**< an internal jack client */
+ 
++/** keys for sndio api */
++#define SPA_KEY_API_SNDIO		"api.sndio"			/**< key for the sndio api */
++#define SPA_KEY_API_SNDIO_PATH		"api.sndio.path"		/**< sndio device name as used by
++									  *  sio_open(3); empty or "default"
++									  *  selects $AUDIODEVICE or the
++									  *  system default */
++
+ /** keys for glib api */
+ #define SPA_KEY_API_GLIB_MAINLOOP	"api.glib.mainloop"		/**< whether glib mainloop runs
+ 									 * in same thread as PW loop */
