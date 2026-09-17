@@ -14,8 +14,8 @@ SHARED_LIBS=	fftw3	7.1 \
 		fftw3f_threads	1.3
 CATEGORIES=	math
 
-REVISION-main=		2
-REVISION-common=	1
+REVISION-main=		3
+REVISION-common=	2
 
 HOMEPAGE=	https://www.fftw.org/
 
@@ -50,7 +50,12 @@ FULLPKGNAME-main=	fftw3-float-${V}
 FULLPKGPATH-common=	math/fftw3,-common
 RUN_DEPENDS-main=	${FULLPKGPATH-common}
 WANTLIB-main=		c m pthread
+WANTLIB-common=		#empty
 PKG_ARCH-common=	*
+
+
+LIB_DEPENDS-main=	#empty
+LIB_DEPENDS-common=	#empty
 
 SUBST_VARS +=	FFTW3_SUFX
 
