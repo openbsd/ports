@@ -1,13 +1,15 @@
-no KERN_PROC_PATHNAME on OpenBSD
-
 Index: vm/main.c
 --- vm/main.c.orig
 +++ vm/main.c
-@@ -85,7 +85,6 @@ static char *executable_path() {
+@@ -81,6 +81,11 @@ static char *executable_path() {
+ 	if ( _NSGetExecutablePath(path, &path_len) )
+ 		return NULL;
+ 	return path;
++#elif defined(__OpenBSD__)
++	static char path[PATH_MAX];
++	if (getexecpath(path, sizeof(path)) != 0)
++		return NULL;
++	return path;
+ #elif defined(NEKO_BSD)
          int mib[4];
          mib[0] = CTL_KERN;
-         mib[1] = KERN_PROC;
--        mib[2] = KERN_PROC_PATHNAME;
-         mib[3] = -1;
- 	static char path[MAXPATHLEN];
-         size_t cb = sizeof(path);
