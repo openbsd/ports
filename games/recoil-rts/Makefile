@@ -9,7 +9,7 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 
 V =			2026.07.04
 PKGNAME =		recoil-rts-${V}
-REVISION =		1
+REVISION =		2
 
 DIST_TUPLE +=		github beyond-all-reason RecoilEngine ${V} .
 DIST_TUPLE +=		github mikke89 RmlUi \

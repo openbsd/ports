@@ -1,5 +1,5 @@
 missing ifaddrs.h header
-use argv[0] for executable path
+use getexecpath(3)
 
 Index: rts/System/Platform/Misc.cpp
 --- rts/System/Platform/Misc.cpp.orig
@@ -17,32 +17,23 @@ Index: rts/System/Platform/Misc.cpp
  #else
  
  #endif
-@@ -222,7 +228,24 @@ namespace Platform
+@@ -222,7 +228,15 @@ namespace Platform
  		if (sysctl(mib, sizeof(mib) / sizeof(mib[0]), buf, &cb, nullptr, 0) == 0)
  			procExeFilePath = buf;
  
 +		#elif defined(__OpenBSD__)
-+		size_t ret;
++		char file[PATH_MAX];
  
-+		if (argv0[0] == '/') {
-+    			// absolute path
-+    			procExeFilePath = argv0;
++		if (getexecpath(file, sizeof(file)) != 0) {
++			error = "[OpenBSD] getexecpath(3) failed";
 +		} else {
-+    			// The binary is assumed to be in /usr/local/bin
-+    			char buf[PATH_MAX] = "";
-+    			ret = strlcpy(buf, "/usr/local/bin/", sizeof(buf));
-+    			if (ret >= sizeof(buf))
-+				LOG_L(L_WARNING, "[%s] executable directory truncated: %s", __func__, buf);
-+    			strlcat(buf, argv0, sizeof(buf));
-+    			if (ret >= sizeof(buf))
-+				LOG_L(L_WARNING, "[%s] executable path truncated: %s", __func__, buf);
-+    			procExeFilePath = buf;
++			procExeFilePath = file;
 +		}
 +
  		#else
  		#error implement this
  		#endif
-@@ -749,7 +772,7 @@ namespace Platform
+@@ -749,7 +763,7 @@ namespace Platform
  		return (GetMacType(macAddr, 0), macAddr);
  	}
  
@@ -51,15 +42,3 @@ Index: rts/System/Platform/Misc.cpp
  
  	std::array<uint8_t, 6> GetRawMacAddr() {
  		// TODO: http://lists.freebsd.org/pipermail/freebsd-hackers/2004-June/007415.html
-@@ -796,4 +819,11 @@ namespace Platform
- 		snprintf(hexAddr.data(), hexAddr.size(), "%02x:%02x:%02x:%02x:%02x:%02x", rawAddr[0], rawAddr[1], rawAddr[2], rawAddr[3], rawAddr[4], rawAddr[5]);
- 		return hexAddr;
- 	}
-+
-+#ifdef __OpenBSD__
-+	void SetArgv0(const char *s) {
-+    		argv0 = s;
-+	}
-+#endif
-+
- } // namespace Platform
