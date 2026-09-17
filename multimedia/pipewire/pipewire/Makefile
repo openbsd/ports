@@ -46,7 +46,7 @@ LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 
 LIB_DEPENDS-libs=	devel/gettext,-runtime
 
-# needs a pipewire-session-manager; see patch-src_daemon_pipewire_conf_in
+# needs a pipewire-session-manager
 RUN_DEPENDS-main +=	multimedia/pipewire/wireplumber
 
 RUN_DEPENDS-libs=	# empty
