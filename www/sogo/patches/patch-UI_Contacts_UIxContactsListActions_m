@@ -1,7 +1,7 @@
 Index: UI/Contacts/UIxContactsListActions.m
 --- UI/Contacts/UIxContactsListActions.m.orig
 +++ UI/Contacts/UIxContactsListActions.m
-@@ -141,8 +141,8 @@
+@@ -147,8 +147,8 @@
  {
    id <SOGoContactFolder> folder, sourceFolder;
    NSString *ascending, *valueText;

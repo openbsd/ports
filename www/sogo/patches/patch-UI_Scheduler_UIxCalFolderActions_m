@@ -1,0 +1,12 @@
+Index: UI/Scheduler/UIxCalFolderActions.m
+--- UI/Scheduler/UIxCalFolderActions.m.orig
++++ UI/Scheduler/UIxCalFolderActions.m
+@@ -153,7 +153,7 @@
+   unsigned int httpCode;
+ 
+   httpCode = 200;
+-  results = [[self clientObject] loadWebCalendar];
++  results = (NSMutableDictionary*)[[self clientObject] loadWebCalendar];
+ 
+   
+   if ([results objectForKey: @"status"])

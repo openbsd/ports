@@ -1,0 +1,50 @@
+revert bits of https://github.com/Alinto/sogo/commit/78807d01aee9195b95e2ed21344f260aadb2faef to fix build with llvm 22
+
+just return nil in case of exception..
+Index: SOPE/GDLContentStore/GCSFolderManager.m
+--- SOPE/GDLContentStore/GCSFolderManager.m.orig
++++ SOPE/GDLContentStore/GCSFolderManager.m
+@@ -745,9 +745,7 @@ static BOOL       _singleStoreMode           = NO;
+   if (fnames)
+   {
+     if ((channel = [self acquireOpenChannel]) == nil) {
+-      return [NSException exceptionWithName:@"GCSNoChannel"
+-        reason:@"could not "
+-        userInfo:nil];
++      return nil;
+     }
+     sql = [self generateSQLPathFetchForInternalNames: fnames 
+                                           exactMatch: YES
+@@ -799,9 +797,7 @@ static BOOL       _singleStoreMode           = NO;
+   }
+   
+   if ((channel = [self acquireOpenChannel]) == nil) {
+-    return [NSException exceptionWithName:@"GCSNoChannel"
+-			reason:@"could not "
+-			userInfo:nil];
++    return nil;
+   }
+   sql = [self generateSQLPathFetchForInternalNames:fnames 
+ 	      exactMatch:NO orDirectSubfolderMatch:(_recursive ? NO : YES) withChannel: channel];
+@@ -866,9 +862,7 @@ static BOOL       _singleStoreMode           = NO;
+   }
+   
+   if ((channel = [self acquireOpenChannel]) == nil) {
+-    return [NSException exceptionWithName:@"GCSNoChannel"
+-			reason:@"could not "
+-			userInfo:nil];
++    return nil;
+   }
+   sql = [self generateSQLPathAndNameFetchForInternalNames:fnames 
+ 	      exactMatch:NO orDirectSubfolderMatch:(_recursive ? NO : YES) withChannel: channel];
+@@ -942,9 +936,7 @@ static BOOL       _singleStoreMode           = NO;
+   
+   /* generate SQL to fetch folder attributes */
+   if ((channel = [self acquireOpenChannel]) == nil) {
+-    return [NSException exceptionWithName:@"GCSNoChannel"
+-			reason:@"could not "
+-			userInfo:nil];
++    return nil;
+   }
+   
+   ws = [self generateSQLWhereForInternalNames:fnames 
