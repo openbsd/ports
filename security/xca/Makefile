@@ -30,6 +30,8 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info
 BUILD_DEPENDS=	textproc/py-sphinx
 
+CONFIGURE_ARGS =	-DCCACHE_EXECUTABLE=OFF
+
 NO_TEST=	Yes
 
 post-install:
