@@ -1,0 +1,10 @@
+@option no-default-conflict
+@option is-branch
+@conflict love->=12,<13
+@tag update-desktop-database
+@bin bin/love${SUFFIX}
+@lib lib/liblove-${VERSION}.so.${LIBlove-${VERSION}_VERSION}
+@man man/man1/love.1
+share/applications/love-${VERSION}.desktop
+share/pixmaps/
+share/pixmaps/love-${VERSION}.svg

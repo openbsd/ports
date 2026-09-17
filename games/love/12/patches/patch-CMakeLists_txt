@@ -1,0 +1,21 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -66,7 +66,7 @@ message(STATUS "Version: ${LOVE_VERSION_STR}")
+ set(LOVE_EXE_NAME love CACHE STRING "The name of the executable, usually 'love'")
+ 
+ set(LOVE_DEFAULT_LIB_NAME liblove)
+-if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
++if(("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux") OR ("${CMAKE_SYSTEM_NAME}" STREQUAL "OpenBSD"))
+ 	set(LOVE_DEFAULT_LIB_NAME "${LOVE_EXE_NAME}-${LOVE_VERSION_STR}")
+ endif()
+ 
+@@ -2162,7 +2162,7 @@ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+ 	")
+ 
+ 	include(CPack)
+-elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
++elseif(("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux") OR ("${CMAKE_SYSTEM_NAME}" STREQUAL "OpenBSD"))
+ 	include(GNUInstallDirs)
+ 
+ 	string(TIMESTAMP LOVE_CONFIGURE_TIMESTAMP "%a, %d %b %Y %H:%M:%S +0000" UTC)

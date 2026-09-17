@@ -1,0 +1,13 @@
+Index: src/libraries/luahttps/src/common/config.h
+--- src/libraries/luahttps/src/common/config.h.orig
++++ src/libraries/luahttps/src/common/config.h
+@@ -43,6 +43,9 @@
+ 		#define HTTPS_BACKEND_CURL
+ 		#define HTTPS_BACKEND_OPENSSL
+ 	#endif
++#elif defined(__OpenBSD__)
++	#define HTTPS_BACKEND_OPENSSL
++	#define HTTPS_LIBRARY_LOADER_UNIX
+ #endif
+ 
+ #if defined(WIN32) || defined(_WIN32) || defined(__CYGWIN__)
