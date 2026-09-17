@@ -69,7 +69,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHd
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
 SHA256 (go_modules/gotest.tools/v3/@v/v3.5.2.mod) = 6TU82IDTmK+qywulThJXUhO5dfPNeZHXtCqjv+X2+dY=
 SHA256 (go_modules/gotest.tools/v3/@v/v3.5.2.zip) = 18QK4TXko03unKSEetGCCPE4hHch5pNke4lyWSh6HUs=
-SHA256 (moor-v2.19.0.zip) = t/33Nbl6KXzHh9egL+hh7G++fqd/sbb7mXzOP+kZACE=
+SHA256 (moor-v2.19.1.zip) = TQetbWfF1ynP2sXOZ5NpqrnAZHlsf3Wu0giyBmBScWY=
 SIZE (go_modules/github.com/adrg/xdg/@v/v0.5.3.mod) = 258
 SIZE (go_modules/github.com/adrg/xdg/@v/v0.5.3.zip) = 37913
 SIZE (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.mod) = 133
@@ -141,4 +141,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/gotest.tools/v3/@v/v3.5.2.mod) = 195
 SIZE (go_modules/gotest.tools/v3/@v/v3.5.2.zip) = 101104
-SIZE (moor-v2.19.0.zip) = 5715424
+SIZE (moor-v2.19.1.zip) = 5719618
