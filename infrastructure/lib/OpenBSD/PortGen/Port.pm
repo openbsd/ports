@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.25 2022/06/18 19:32:19 kirby Exp $
+# $OpenBSD: Port.pm,v 1.26 2026/09/17 19:15:37 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -313,7 +313,7 @@ sub parse_makefile
 		if ( $line =~ /^
 		    (?<comment> \#?       ) \s*
 		    (?<key>     (?<name>[\p{Upper}_]+) (?<package>-\w+)? )
-		    (?<equal>   \s* \?? = )
+		    (?<equal>   \s* (?:\?|\+|!!?|:)? = )
 		    (?<spaces>  \s*       )
 		    (?<value>   .*        )
 		/xms ) {
