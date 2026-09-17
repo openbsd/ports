@@ -2,13 +2,10 @@ COMMENT-main=		low-level multimedia framework - client & server
 COMMENT-libs=		low-level multimedia framework - libraries
 
 PW_PROJECT=		pipewire
-PW_VERSION=		1.6.8
+PW_VERSION=		1.6.9
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-REVISION-main=		9
-REVISION-libs=		3
-
-SHARED_LIBS += pipewire-0.3              1.0 # 0.1608.0
+SHARED_LIBS += pipewire-0.3              1.0 # 0.1609.0
 
 MULTI_PACKAGES=		-main -libs
 
@@ -127,9 +124,11 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/pipewire.desktop \
 		${PREFIX}/share/examples/pipewire/xdg/autostart
 
-# RTKit and rtprio(2)-style scheduling are not available; all configs load this
-# module with "ifexists nofail" so its absence is skipped
-	rm ${PREFIX}/lib/pipewire-0.3/libpipewire-module-rt.so \
-		${PREFIX}/man/man7/libpipewire-module-rt.7
+# RTKit and rtprio(2)-style scheduling are not available on OpenBSD
+.for _confd in client jack pipewire-pulse pipewire
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pipewire/${_confd}.conf.d/
+	${INSTALL_DATA} ${FILESDIR}/10-no-rtkit.conf \
+		${PREFIX}/share/pipewire/${_confd}.conf.d/
+.endfor
 
 .include <bsd.port.mk>

@@ -21,7 +21,7 @@ handlers and session managers.
 Index: spa/plugins/libcamera/libcamera-source.cpp
 --- spa/plugins/libcamera/libcamera-source.cpp.orig
 +++ spa/plugins/libcamera/libcamera-source.cpp
-@@ -166,6 +166,7 @@ struct impl {
+@@ -167,6 +167,7 @@ struct impl {
  	impl(spa_log *log, spa_loop *data_loop, spa_system *system,
  	     std::shared_ptr<CameraManager> manager, std::shared_ptr<Camera> camera,
  	     std::unique_ptr<CameraConfiguration> config);
@@ -29,7 +29,7 @@ Index: spa/plugins/libcamera/libcamera-source.cpp
  
  	struct spa_dll dll;
  
-@@ -1096,6 +1097,8 @@ void handle_completed_request(struct impl *impl, libca
+@@ -1097,6 +1098,8 @@ void handle_completed_request(struct impl *impl, libca
  		b->h->dts_offset = 0;
  	}
  
@@ -38,7 +38,7 @@ Index: spa/plugins/libcamera/libcamera-source.cpp
  	for (std::size_t i = 0; i < b->outbuf->n_datas; i++) {
  		auto *d = &b->outbuf->datas[i];
  
-@@ -1103,6 +1106,21 @@ void handle_completed_request(struct impl *impl, libca
+@@ -1104,6 +1107,21 @@ void handle_completed_request(struct impl *impl, libca
  
  		if (fmd.status != libcamera::FrameMetadata::Status::FrameSuccess)
  			d->chunk->flags |= SPA_CHUNK_FLAG_CORRUPTED;
@@ -60,7 +60,7 @@ Index: spa/plugins/libcamera/libcamera-source.cpp
  	}
  
  	request->reuse(libcamera::Request::ReuseFlag::ReuseBuffers);
-@@ -1253,19 +1271,22 @@ spa_libcamera_alloc_buffers(struct impl *impl, struct 
+@@ -1254,19 +1272,22 @@ spa_libcamera_alloc_buffers(struct impl *impl, struct 
  			d[j].type = memtype;
  			d[j].flags = SPA_DATA_FLAG_READABLE;
  			d[j].fd = -1;
@@ -86,7 +86,7 @@ Index: spa/plugins/libcamera/libcamera-source.cpp
  					for (uint8_t k = j; k < numPlanes; k++) {
  						d[j].maxsize += planes[k].length;
  						d[j].chunk->size += planes[k].length;
-@@ -1273,7 +1294,6 @@ spa_libcamera_alloc_buffers(struct impl *impl, struct 
+@@ -1274,7 +1295,6 @@ spa_libcamera_alloc_buffers(struct impl *impl, struct 
  				}
  			} else if (buffers[i]->n_datas == numPlanes) {
  				d[j].maxsize = planes[j].length;
@@ -94,7 +94,7 @@ Index: spa/plugins/libcamera/libcamera-source.cpp
  				d[j].chunk->size = planes[j].length;
  			} else {
  				spa_log_warn(impl->log, "buffer index: i: %d, data member "
-@@ -1748,12 +1768,26 @@ next:
+@@ -1749,12 +1769,26 @@ next:
  		 * so that exact number of buffers are allocated
  		 */
  		uint32_t n_buffers = port->streamConfig.bufferCount;
@@ -122,7 +122,7 @@ Index: spa/plugins/libcamera/libcamera-source.cpp
  			SPA_PARAM_BUFFERS_stride,  SPA_POD_Int(port->streamConfig.stride));
  		break;
  	}
-@@ -1946,6 +1980,9 @@ int impl_node_port_use_buffers(void *object,
+@@ -1947,6 +1981,9 @@ int impl_node_port_use_buffers(void *object,
  		spa_libcamera_stream_off(impl);
  		if ((res = spa_libcamera_clear_buffers(port)) < 0)
  			return res;
@@ -132,7 +132,7 @@ Index: spa/plugins/libcamera/libcamera-source.cpp
  	}
  	if (n_buffers > 0 && !port->current_format)
  		return -EIO;
-@@ -2132,6 +2169,22 @@ int impl_get_interface(struct spa_handle *handle, cons
+@@ -2133,6 +2170,22 @@ int impl_get_interface(struct spa_handle *handle, cons
  		return -ENOENT;
  
  	return 0;

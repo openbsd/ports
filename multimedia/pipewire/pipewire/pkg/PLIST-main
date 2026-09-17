@@ -50,6 +50,7 @@ bin/pw-sysex
 @so lib/pipewire-0.3/libpipewire-module-protocol-native.so
 @so lib/pipewire-0.3/libpipewire-module-protocol-pulse.so
 @so lib/pipewire-0.3/libpipewire-module-protocol-simple.so
+@so lib/pipewire-0.3/libpipewire-module-rt.so
 @so lib/pipewire-0.3/libpipewire-module-rtp-sap.so
 @so lib/pipewire-0.3/libpipewire-module-rtp-sink.so
 @so lib/pipewire-0.3/libpipewire-module-rtp-source.so
@@ -149,6 +150,7 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/libpipewire-module-raop-sink.7
 @man man/man7/libpipewire-module-roc-sink.7
 @man man/man7/libpipewire-module-roc-source.7
+@man man/man7/libpipewire-module-rt.7
 @man man/man7/libpipewire-module-rtp-sap.7
 @man man/man7/libpipewire-module-rtp-session.7
 @man man/man7/libpipewire-module-rtp-sink.7
@@ -264,6 +266,8 @@ share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 share/pipewire/client.conf
 share/pipewire/client.conf.avail/
 share/pipewire/client.conf.avail/20-upmix.conf
+share/pipewire/client.conf.d/
+share/pipewire/client.conf.d/10-no-rtkit.conf
 share/pipewire/filter-chain/
 share/pipewire/filter-chain.conf
 share/pipewire/filter-chain/demonic.conf
@@ -279,25 +283,25 @@ share/pipewire/filter-chain/sink-virtual-surround-7.1-hesuvi.conf
 share/pipewire/filter-chain/source-duplicate-FL.conf
 share/pipewire/filter-chain/source-rnnoise.conf
 share/pipewire/jack.conf
+share/pipewire/jack.conf.d/
+share/pipewire/jack.conf.d/10-no-rtkit.conf
 share/pipewire/minimal.conf
 share/pipewire/pipewire-aes67.conf
 share/pipewire/pipewire-avb.conf
 share/pipewire/pipewire-pulse.conf
 share/pipewire/pipewire-pulse.conf.avail/
 share/pipewire/pipewire-pulse.conf.avail/20-upmix.conf
+share/pipewire/pipewire-pulse.conf.d/
+share/pipewire/pipewire-pulse.conf.d/10-no-rtkit.conf
 share/pipewire/pipewire.conf
 share/pipewire/pipewire.conf.avail/
 share/pipewire/pipewire.conf.avail/10-rates.conf
 share/pipewire/pipewire.conf.avail/20-upmix.conf
 share/pipewire/pipewire.conf.avail/50-raop.conf
+share/pipewire/pipewire.conf.d/10-no-rtkit.conf
 share/pipewire/pipewire.conf.d/10-sndio.conf
 @sample ${SYSCONFDIR}/pipewire/
-@sample ${SYSCONFDIR}/pipewire/client-rt.conf.d/
 @sample ${SYSCONFDIR}/pipewire/client.conf.d/
-@sample ${SYSCONFDIR}/pipewire/filter-chain.conf.d/
 @sample ${SYSCONFDIR}/pipewire/jack.conf.d/
-@sample ${SYSCONFDIR}/pipewire/minimal.conf.d/
-@sample ${SYSCONFDIR}/pipewire/pipewire-aes67.conf.d/
-@sample ${SYSCONFDIR}/pipewire/pipewire-avb.conf.d/
 @sample ${SYSCONFDIR}/pipewire/pipewire-pulse.conf.d/
 @sample ${SYSCONFDIR}/pipewire/pipewire.conf.d/
