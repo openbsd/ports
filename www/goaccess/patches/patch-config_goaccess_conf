@@ -18,15 +18,31 @@ Index: config/goaccess.conf
  ######################################
  # Date Format Options (required)
  ######################################
-@@ -771,7 +781,10 @@ static-file .zst
- # Download the GeoLite2-Country.mmdb.gz
- # gunzip GeoLite2-Country.mmdb.gz
- #
--#geoip-database /usr/local/share/GeoIP/GeoLiteCity.dat
-+
-+# Free GeoLite2 databases are available in the geolite2-city/country packages.
-+#geoip-database /var/db/GeoIP/GeoLite2-City.mmdb
-+geoip-database /var/db/GeoIP/GeoLite2-Country.mmdb
+@@ -771,23 +781,11 @@ static-file .zst
+ # DB-IP is licensed under a Creative Commons Attribution 4.0 International License.
+ # https://db-ip.com/db/lite.php
  
- ######################################
- # Persistence Options
+-# Or you can download them from MaxMind
+-# https://dev.maxmind.com/geoip/geoip2/geolite2/
++# Free GeoLite2 databases are available in the geolite2-{asn,city,country} packages.
++#geoip-database /var/db/GeoIP/GeoLite2-ASN.mmdb
++#geoip-database /var/db/GeoIP/GeoLite2-City.mmdb
++#geoip-database /var/db/GeoIP/GeoLite2-Country.mmdb
+ 
+-# For GeoIP2 City database:
+-# Download the GeoLite2-City.mmdb.gz
+-# gunzip GeoLite2-City.mmdb.gz
+-#
+-# For GeoIP2 Country database:
+-# Download the GeoLite2-Country.mmdb.gz
+-# gunzip GeoLite2-Country.mmdb.gz
+-#
+-# For GeoIP2 ASN database:
+-# Download the GeoLite2-ASN.mmdb.gz
+-# gunzip GeoLite2-ASN.mmdb.gz
+-#
+-#geoip-database /usr/local/share/GeoIP/GeoLite2-City.mmdb
+-#geoip-database /usr/local/share/GeoIP/GeoLite2-ASN.mmdb
+ 
+ # Exclude requests whose client address resolves to an ASN. This option can be
+ # repeated and accepts either 8075 or AS8075. It requires a GeoIP2 ASN database
