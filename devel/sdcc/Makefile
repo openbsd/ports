@@ -33,7 +33,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 RUN_DEPENDS=		devel/gputils
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	docdir=${PREFIX}/share/doc/sdcc
+CONFIGURE_ARGS+=	docdir=${PREFIX}/share/doc/sdcc \
+			--without-ccache
 CONFIGURE_ENV+=		sdcc_cv_c_ggdb=no \
 			sdcc_cv_cxx_ggdb=no \
 			bor_cv_c_ggdb=no \
