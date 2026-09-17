@@ -31,7 +31,8 @@ LIB_DEPENDS =		comms/gnuradio \
 
 RUN_DEPENDS =		devel/desktop-file-utils
 
-CONFIGURE_ARGS +=	-DLINUX_AUDIO_BACKEND=OFF \
+CONFIGURE_ARGS +=	-DCCACHE=OFF \
+			-DLINUX_AUDIO_BACKEND=OFF \
 			-DPULSEAUDIO_FOUND=OFF
 
 CONFIGURE_ARGS +=	-Dgr-osmosdr_DIR=${LOCALBASE}/lib/cmake/gr-osmosdr
