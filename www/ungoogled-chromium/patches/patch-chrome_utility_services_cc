@@ -19,7 +19,7 @@ Index: chrome/utility/services.cc
  auto RunSystemSignalsService(
      mojo::PendingReceiver<device_signals::mojom::SystemSignalsService>
          receiver) {
-@@ -503,7 +503,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -507,7 +507,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunWindowsIconReader);
  #endif  // BUILDFLAG(IS_WIN)
  

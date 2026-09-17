@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/tabs/public/tab_features.h
 --- chrome/browser/ui/tabs/public/tab_features.h.orig
 +++ chrome/browser/ui/tabs/public/tab_features.h
-@@ -155,7 +155,7 @@ class TabContextualizationController;
+@@ -185,7 +185,7 @@ class TabContextualizationController;
  }  // namespace lens
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/tabs/public/tab_features.h
  namespace wallet {
  class ChromeWalletablePassClient;
  }  // namespace wallet
-@@ -587,7 +587,7 @@ class TabFeatures {
+@@ -641,7 +641,7 @@ class TabFeatures {
        page_context_eligibility_helper_;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -19,7 +19,7 @@ Index: chrome/browser/ui/tabs/public/tab_features.h
    std::unique_ptr<wallet::ChromeWalletablePassClient> walletable_pass_client_;
  #endif
  
-@@ -595,7 +595,7 @@ class TabFeatures {
+@@ -649,7 +649,7 @@ class TabFeatures {
        contextual_tasks_tab_visit_tracker_;
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \

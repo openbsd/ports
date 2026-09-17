@@ -13,16 +13,18 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			152.0.7977.82
+V=			153.0.8010.47
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
+DISTFILES.b+=		${CHROMIUM_DISTFILES.b}
 
-CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
-REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
+#CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
+CHROMIUM_DISTFILES.b+=	chromium-${V}-linux${EXTRACT_SUFX}
+#REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 
 DIST_TUPLE=		github ungoogled-software ungoogled-chromium ${UGV} .
 
@@ -45,6 +47,7 @@ PERMIT_PACKAGE =	Yes
 
 SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
 SITES.a=	http://nerd.hu/distfiles/
+SITES.b=	https://github.com/chromium-linux-tarballs/chromium-tarballs/releases/download/${V}/
 
 MODULES=	lang/clang lang/python x11/qt5 x11/qt6
 
@@ -61,7 +64,7 @@ WANTLIB+=	Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB+=	cbor crypto cups dav1d dbus-1 drm event execinfo expat ffi fido2
 WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
-WANTLIB+=	harfbuzz-subset icudata icui18n icuuc intl jpeg kvm m
+WANTLIB+=	harfbuzz-subset icudata icui18n icuuc intl jpeg m
 WANTLIB+=	nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
 WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
 WANTLIB+=	sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
@@ -86,6 +89,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		lang/rust,-rustfmt \
 		lang/node \
 		lang/rust \
+		lang/typescript \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
@@ -185,7 +189,8 @@ GN_ARGS=	is_official_build=true \
 		use_qt6=true \
 		moc_qt5_path=\"${MODQT5_MOC}\" \
 		moc_qt6_path=\"${MODQT6_MOC}\" \
-		v8_enable_cet_ibt=true
+		v8_enable_cet_ibt=true \
+		use_typescript_go=false
 
 # rust
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1

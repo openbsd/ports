@@ -1,7 +1,7 @@
 Index: chrome/browser/glic/host/guest_util.cc
 --- chrome/browser/glic/host/guest_util.cc.orig
 +++ chrome/browser/glic/host/guest_util.cc
-@@ -453,7 +453,7 @@ mojom::Platform GetGlicPlatform() {
+@@ -542,7 +542,7 @@ mojom::Platform GetGlicPlatform() {
    return mojom::Platform::kMacOS;
  #elif BUILDFLAG(IS_WIN)
    return mojom::Platform::kWindows;

@@ -10,8 +10,8 @@ Index: chrome/browser/sharing/sharing_handler_registry_impl.cc
  #include "chrome/browser/sharing/shared_clipboard/remote_copy_message_handler.h"
  #endif
  
-@@ -74,7 +74,7 @@ SharingHandlerRegistryImpl::SharingHandlerRegistryImpl
- #endif  // !BUILDFLAG(IS_ANDROID)
+@@ -62,7 +62,7 @@ SharingHandlerRegistryImpl::SharingHandlerRegistryImpl
+   }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)

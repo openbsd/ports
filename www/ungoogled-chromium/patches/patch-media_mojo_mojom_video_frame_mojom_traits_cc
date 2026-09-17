@@ -37,7 +37,7 @@ Index: media/mojo/mojom/video_frame_mojom_traits.cc
        // TODO(crbug.com/513289253): Avoid CloneGpuMemoryBufferHandle() only for
        // validation.
        const auto video_pixel_format =
-@@ -477,7 +477,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+@@ -480,7 +480,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
      frame = media::VideoFrame::WrapTrackingToken(
          format, *metadata.tracking_token, coded_size, visible_rect,
          natural_size, timestamp);

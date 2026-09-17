@@ -10,7 +10,7 @@ Index: chrome/browser/global_features.cc
  // This causes a gn error on Android builds, because gn does not understand
  // buildflags, so we include it only on platforms where it is used.
  #include "chrome/browser/default_browser/default_browser_manager.h"
-@@ -195,7 +195,7 @@ void GlobalFeatures::PostBrowserProcessInitCore() {
+@@ -194,7 +194,7 @@ void GlobalFeatures::PostBrowserProcessInitCore() {
    }
  #endif
    system_permissions_platform_handle_ = CreateSystemPermissionsPlatformHandle();
@@ -19,7 +19,7 @@ Index: chrome/browser/global_features.cc
    // TODO(crbug.com/463742800): Migrate WhatsNewRegistry (and other non-core
    // features) to Init().
    whats_new_registry_ = CreateWhatsNewRegistry();
-@@ -281,7 +281,7 @@ void GlobalFeatures::PostMainMessageLoopRun() {
+@@ -277,7 +277,7 @@ void GlobalFeatures::PostMainMessageLoopRun() {
  
    glass_frame_service_.reset();
  
@@ -28,7 +28,7 @@ Index: chrome/browser/global_features.cc
    DefaultBrowserPromptManager::GetInstance()->CloseAllPrompts(
        DefaultBrowserPromptManager::CloseReason::kDismiss);
  #endif
-@@ -300,7 +300,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
+@@ -296,7 +296,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
    return system_permission_settings::PlatformHandle::Create();
  }
  
