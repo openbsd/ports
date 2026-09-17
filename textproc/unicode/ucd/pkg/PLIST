@@ -22,6 +22,7 @@ share/unicode/ucd/Index.txt
 share/unicode/ucd/IndicPositionalCategory.txt
 share/unicode/ucd/IndicSyllabicCategory.txt
 share/unicode/ucd/Jamo.txt
+share/unicode/ucd/JurchenSources.txt
 share/unicode/ucd/LineBreak.txt
 share/unicode/ucd/NameAliases.txt
 share/unicode/ucd/NamedSequences.txt
@@ -37,12 +38,11 @@ share/unicode/ucd/PropertyValueAliases.txt
 share/unicode/ucd/ReadMe.txt
 share/unicode/ucd/ScriptExtensions.txt
 share/unicode/ucd/Scripts.txt
+share/unicode/ucd/SealSources.txt
 share/unicode/ucd/SpecialCasing.txt
 share/unicode/ucd/StandardizedVariants.txt
 share/unicode/ucd/TangutSources.txt
 share/unicode/ucd/USourceData.txt
-share/unicode/ucd/USourceGlyphs.pdf
-share/unicode/ucd/USourceRSChart.pdf
 share/unicode/ucd/UnicodeData.txt
 share/unicode/ucd/Unihan.zip
 share/unicode/ucd/Unihan_DictionaryIndices.txt

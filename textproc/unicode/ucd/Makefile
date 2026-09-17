@@ -1,7 +1,7 @@
 COMMENT =		Unicode Character Database (UCD)
 
 # !!! keep in sync major $V with x11/gnome/gucharmap
-V =			17.0.0
+V =			18.0.0
 UNICODE_DATA_NAME =	ucd
 
 SITES =			${UNICODE_SITES}/${V}/ucd/
@@ -10,7 +10,7 @@ DISTFILES =		UCD${EXTRACT_SUFX} \
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/unicode/ucd/{auxiliary,emoji,extracted}/
-	${INSTALL_DATA} ${WRKSRC}/*.{txt,html,pdf} ${PREFIX}/share/unicode/ucd/
+	${INSTALL_DATA} ${WRKSRC}/*.{txt,html} ${PREFIX}/share/unicode/ucd/
 	${INSTALL_DATA} ${WRKSRC}/auxiliary/* ${PREFIX}/share/unicode/ucd/auxiliary/
 	${INSTALL_DATA} ${WRKSRC}/emoji/* ${PREFIX}/share/unicode/ucd/emoji/
 	${INSTALL_DATA} ${WRKSRC}/extracted/* ${PREFIX}/share/unicode/ucd/extracted/
