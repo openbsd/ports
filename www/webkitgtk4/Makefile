@@ -17,6 +17,8 @@ DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
 
+REVISION =		0
+
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
@@ -70,7 +72,7 @@ BUILD_DEPENDS =		devel/bison \
 			geo/geoclue2 \
 			wayland/wayland-protocols
 
-# XXX tmp
+# XXX LDEP or RDEP?
 BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-bad
 
 RUN_DEPENDS =		geo/geoclue2 \

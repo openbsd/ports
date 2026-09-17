@@ -482,6 +482,7 @@ share/doc/webkit2gtk-${API}/method.Feature.get_name.html
 share/doc/webkit2gtk-${API}/method.Feature.get_status.html
 share/doc/webkit2gtk-${API}/method.Feature.ref.html
 share/doc/webkit2gtk-${API}/method.Feature.unref.html
+share/doc/webkit2gtk-${API}/method.FeatureList.find.html
 share/doc/webkit2gtk-${API}/method.FeatureList.get.html
 share/doc/webkit2gtk-${API}/method.FeatureList.get_length.html
 share/doc/webkit2gtk-${API}/method.FeatureList.ref.html
@@ -946,6 +947,7 @@ share/doc/webkit2gtk-${API}/method.WebView.get_inspector.html
 share/doc/webkit2gtk-${API}/method.WebView.get_is_muted.html
 share/doc/webkit2gtk-${API}/method.WebView.get_is_web_process_responsive.html
 share/doc/webkit2gtk-${API}/method.WebView.get_javascript_global_context.html
+share/doc/webkit2gtk-${API}/method.WebView.get_magnification.html
 share/doc/webkit2gtk-${API}/method.WebView.get_main_resource.html
 share/doc/webkit2gtk-${API}/method.WebView.get_microphone_capture_state.html
 share/doc/webkit2gtk-${API}/method.WebView.get_page_id.html
@@ -1003,6 +1005,7 @@ share/doc/webkit2gtk-${API}/method.WebView.set_display_capture_state.html
 share/doc/webkit2gtk-${API}/method.WebView.set_editable.html
 share/doc/webkit2gtk-${API}/method.WebView.set_input_method_context.html
 share/doc/webkit2gtk-${API}/method.WebView.set_is_muted.html
+share/doc/webkit2gtk-${API}/method.WebView.set_magnification.html
 share/doc/webkit2gtk-${API}/method.WebView.set_microphone_capture_state.html
 share/doc/webkit2gtk-${API}/method.WebView.set_settings.html
 share/doc/webkit2gtk-${API}/method.WebView.set_zoom_level.html
@@ -1028,6 +1031,8 @@ share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_base_data_directory.ht
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_cookie_manager.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_disk_cache_directory.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_dom_cache_directory.html
+share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_favicon_database.html
+share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_favicons_enabled.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_hsts_cache_directory.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_indexeddb_directory.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_itp_directory.html
@@ -1043,11 +1048,13 @@ share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_websql_directory.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.is_ephemeral.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.remove.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.remove_finish.html
+share/doc/webkit2gtk-${API}/method.WebsiteDataManager.set_favicons_enabled.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.set_itp_enabled.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.set_network_proxy_settings.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.set_persistent_credential_storage_enabled.html
 share/doc/webkit2gtk-${API}/method.WebsiteDataManager.set_tls_errors_policy.html
 share/doc/webkit2gtk-${API}/method.WebsitePolicies.get_autoplay_policy.html
+share/doc/webkit2gtk-${API}/method.WebsitePolicies.get_custom_user_agent.html
 share/doc/webkit2gtk-${API}/method.WindowProperties.get_fullscreen.html
 share/doc/webkit2gtk-${API}/method.WindowProperties.get_geometry.html
 share/doc/webkit2gtk-${API}/method.WindowProperties.get_locationbar_visible.html
@@ -1210,6 +1217,7 @@ share/doc/webkit2gtk-${API}/property.WebView.is-loading.html
 share/doc/webkit2gtk-${API}/property.WebView.is-muted.html
 share/doc/webkit2gtk-${API}/property.WebView.is-playing-audio.html
 share/doc/webkit2gtk-${API}/property.WebView.is-web-process-responsive.html
+share/doc/webkit2gtk-${API}/property.WebView.magnification.html
 share/doc/webkit2gtk-${API}/property.WebView.microphone-capture-state.html
 share/doc/webkit2gtk-${API}/property.WebView.page-id.html
 share/doc/webkit2gtk-${API}/property.WebView.related-view.html
@@ -1237,6 +1245,7 @@ share/doc/webkit2gtk-${API}/property.WebsiteDataManager.service-worker-registrat
 share/doc/webkit2gtk-${API}/property.WebsiteDataManager.total-storage-ratio.html
 share/doc/webkit2gtk-${API}/property.WebsiteDataManager.websql-directory.html
 share/doc/webkit2gtk-${API}/property.WebsitePolicies.autoplay.html
+share/doc/webkit2gtk-${API}/property.WebsitePolicies.custom-user-agent.html
 share/doc/webkit2gtk-${API}/property.WindowProperties.fullscreen.html
 share/doc/webkit2gtk-${API}/property.WindowProperties.geometry.html
 share/doc/webkit2gtk-${API}/property.WindowProperties.locationbar-visible.html
@@ -3883,12 +3892,3 @@ share/locale/tr/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/uk/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/vi/LC_MESSAGES/WebKitGTK-${API}.mo
 share/locale/zh_CN/LC_MESSAGES/WebKitGTK-${API}.mo
-share/doc/webkit2gtk-${API}/method.FeatureList.find.html
-share/doc/webkit2gtk-${API}/method.WebView.get_magnification.html
-share/doc/webkit2gtk-${API}/method.WebView.set_magnification.html
-share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_favicon_database.html
-share/doc/webkit2gtk-${API}/method.WebsiteDataManager.get_favicons_enabled.html
-share/doc/webkit2gtk-${API}/method.WebsiteDataManager.set_favicons_enabled.html
-share/doc/webkit2gtk-${API}/method.WebsitePolicies.get_custom_user_agent.html
-share/doc/webkit2gtk-${API}/property.WebView.magnification.html
-share/doc/webkit2gtk-${API}/property.WebsitePolicies.custom-user-agent.html
