@@ -26,6 +26,7 @@ WANTLIB =		c crypto fuse m ssl z
 
 CONFIGURE_STYLE =	simple
 CONFLICT_MARKER =	fossil-*-!static
+CONFIGURE_ENV =		CCACHE=none
 
 .if ${FLAVOR} == "static"
 CONFIGURE_ARGS +=	--static
