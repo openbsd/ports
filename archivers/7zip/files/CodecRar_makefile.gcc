@@ -1,0 +1,57 @@
+# CodecRar must be built after Format7zF DISABLE_RAR_COMPRESS=1,
+# because it reuses some .o files.
+
+PROG = Rar
+DEF_FILE = ../../Codec/Codec.def
+
+# $R has everything but Rar*.o and DllExportsCompress.o.
+R = ../Format7zF/$O
+
+# If CRC.o is missing, some RAR files get "ERROR: Unsupported Method".
+COMMON_OBJS = \
+  $R/CRC.o \
+
+7ZIP_COMMON_OBJS = \
+  $R/InBuffer.o \
+  $R/OutBuffer.o \
+  $R/StreamUtils.o \
+
+COMPRESS_OBJS = \
+  $R/LzOutWindow.o \
+  $O/Rar1Decoder.o \
+  $O/Rar2Decoder.o \
+  $O/Rar3Decoder.o \
+  $O/Rar3Vm.o \
+  $O/Rar5Decoder.o \
+  $O/RarCodecsRegister.o \
+
+# 7zCrc.o might use CpuArch.o on arm64.
+C_OBJS = \
+  $R/7zCrc.o \
+  $R/7zCrcOpt.o \
+  $R/Alloc.o \
+  $R/CpuArch.o \
+  $R/Ppmd7.o \
+  $R/Ppmd7aDec.o \
+
+SYS_OBJS = \
+  $R/MyWindows.o \
+
+# DllExportsCompress.o is a smaller replacement for both CreateCoder.o
+# and DllExports2.o.
+COMPRESS_OBJS_2 = \
+  $R/CodecExports.o \
+  $O/DllExportsCompress.o \
+
+OBJS = \
+  $(COMMON_OBJS) \
+  $(7ZIP_COMMON_OBJS) \
+  $(COMPRESS_OBJS) \
+  $(C_OBJS) \
+  $(SYS_OBJS) \
+  $(COMPRESS_OBJS_2) \
+
+LOCAL_FLAGS = \
+  -DZ7_EXTERNAL_CODECS \
+
+include ../../7zip_gcc.mak

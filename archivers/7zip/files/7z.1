@@ -1,0 +1,400 @@
+.\" Copyright (c) 2026 George Koehler <gkoehler@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: September 17 2026 $
+.Dt 7Z 1
+.Os
+.Sh NAME
+.Nm 7z
+.Nd 7-Zip file archiver
+.Sh SYNOPSIS
+.Nm 7z
+.Op Cm a | b | d | e | h | i | l | rn | t | u | x
+.Op Fl ai Ns Oo Ar markers Oc Ns Cm \&! Ns Ar archive
+.Op Fl ax Ns Oo Ar markers Oc Ns Cm \&! Ns Ar archive
+.Op Fl h
+.Op Fl i Ns Oo Ar markers Oc Ns Cm \&! Ns Ar file
+.Op Fl o Ns Ar directory
+.Op Fl p
+.Op Fl r
+.Op Fl sae
+.Op Fl scrc Ns Ar hasher
+.Op Fl sdel
+.Op Fl sfx Ns Op Ar module
+.Op Fl si Ns Op Ar name
+.Op Fl slt
+.Op Fl snoi
+.Op Fl snon
+.Op Fl so
+.Op Fl spd
+.Op Fl stx Ns Ar type
+.Op Fl t Ns Ar type
+.Op Fl x Ns Oo Ar markers Oc Ns Cm \&! Ns Ar file
+.Op Fl an | Ar archive
+.Oo
+.Ar file |
+.Cm @ Ns
+.Ar listfile ...
+.Oc
+.Sh DESCRIPTION
+.Nm
+compresses and archives files.
+It can create archives of type 7z, bz2, gz, tar, wim, xz and zip.
+It can extract several more formats.
+.Pp
+The first argument is a command:
+.Bl -tag -width Ds
+.It Cm a
+Add files to an
+.Ar archive .
+It may overwrite files in the archive.
+.It Cm b
+Benchmark LZMA compression and decompression.
+It does not take
+.Ar archive
+nor
+.Ar file
+arguments.
+.Cm 7z b
+.Ar count
+runs the benchmark for
+.Ar count
+iterations.
+.It Cm d
+Delete files from an
+.Ar archive .
+.It Cm e
+Extract without path.
+.Cm 7z e
+.Ar archive
+.Cm a/b/c.d
+would put
+.Pa c.d
+in the current directory, while
+.Cm 7z x
+.Ar archive
+.Cm a/b/c.d
+would put
+.Pa a/b/c.d
+instead.
+.It Cm h
+Hash files.
+The default hash is crc32.
+This command does not take an
+.Ar archive
+argument.
+.It Cm i
+Show info about supported formats
+.Pq for Fl t ,
+codecs and hashers
+.Pq for Fl scrc .
+.It Cm l
+List files in an
+.Ar archive .
+.It Cm rn
+Rename files in an
+.Ar archive .
+It takes an even number of
+.Ar file
+arguments in pairs
+.Ar source target ,
+and renames each
+.Ar source
+to
+.Ar target .
+.It Cm t
+Test extraction of files in an
+.Ar archive .
+.It Cm u
+Update files in an
+.Ar archive .
+It adds a file that is not in the archive, and overwrites a file that
+has an older timestamp in the archive, but does not overwrite a file
+that has an equal or newer timestamp.
+.It Cm x
+Extract with full path.
+It extracts files with their directories from an
+.Ar archive .
+.El
+.Pp
+.Cm e , l , t
+and
+.Cm x
+can operate on multiple archives and allow wildcards in the
+.Ar archive
+name.
+.Cm a , d , rn
+and
+.Cm u
+operate on one
+.Ar archive
+and create it if it does not exist.
+On creation, the suffix of
+.Ar archive
+picks its type.
+If
+.Ar archive
+has no suffix,
+.Nm
+appends the default suffix
+.Cm .7z
+before creating it.
+.Pp
+A
+.Ar file
+argument may have wildcards
+.Sq *
+and
+.Sq \&? ,
+where
+.Sq *
+matches any sequence of characters
+.Pq including Sq \&.
+and
+.Sq \&?
+matches any one character.
+A
+.Cm @ Ns
+.Ar listfile
+argument
+tells
+.Nm
+to open
+.Ar listfile
+and read a list of files, one per line.
+If no
+.Ar file
+nor
+.Cm @ Ns
+.Ar listfile
+is given, then
+.Nm
+operates on all files in the
+.Ar archive
+or all files in the current directory.
+.Pp
+These are some of the many switches:
+.Bl -tag -width Ds
+.It Fl -
+Stop processing switches and
+.Cm @ Ns
+.Ar listfile
+arguments.
+.It Fl ai Ns Oo Ar markers Oc Ns Cm \&! Ns Ar archive
+Include another
+.Ar archive
+.Pq for commands that operate on multiple archives .
+This switch takes the same
+.Ar markers
+as
+.Fl i .
+.It Fl an
+Have no
+.Ar archive
+argument before the
+.Ar file
+arguments.
+.It Fl ax Ns Oo Ar markers Oc Ns Cm \&! Ns Ar archive
+Exclude the
+.Ar archive ,
+even if the
+.Ar archive
+argument or an
+.Fl ai
+switch would have included it.
+This switch takes the same
+.Ar markers
+as
+.Fl i .
+.It Fl h
+Show help and exit.
+Also works as
+.Fl -help
+or
+.Fl \&?
+or by running
+.Nm
+without arguments.
+.It Fl i Ns Oo Ar markers Oc Ns Cm \&! Ns Ar file
+Include a
+.Ar file
+in this operation, like a plain
+.Ar file
+argument, but with optional
+.Ar markers .
+This switch can also take
+.Cm @ Ns Ar listfile
+instead of
+.Cm \&! Ns Ar file .
+These are some of the
+.Ar markers :
+.Bl -tag -width Ds
+.It Cm r
+Recurse into subdirectories to look for
+.Ar file .
+.It Cm r-
+Don't recurse.
+.It Cm w
+Enable wildcards in
+.Ar file .
+.It Cm w-
+Disable wildcards.
+.El
+.It Fl o Ns Ar directory
+When extracting files, put them in
+.Ar directory
+instead of the current directory.
+.It Fl p
+Encrypt files with a password when adding them to an archive.
+.Nm
+will prompt for a password.
+.It Fl r
+Recurse into subdirectories when looking for each
+.Ar file .
+.It Fl sae
+Use the exact
+.Ar archive
+name when creating it.
+Don't append a default suffix.
+.It Fl scrc Ns Ar hasher
+For
+.Cm 7z h ,
+set the
+.Ar hasher
+.Pq like Fl scrcsha256 .
+Multiple
+.Fl scrc
+switches set multiple hashers.
+.It Fl sdel
+Delete files after adding them to the archive.
+.It Fl sfx Ns Op Ar module
+Create a self-extracting archive.
+If
+.Ar module
+is given,
+use it instead of the default
+.Pa 7zCon.sfx .
+.It Fl si Ns Op Ar name
+Read a file or archive from standard input.
+It can read a file to add to an archive, or read an archive to
+extract or list files.
+When reading an archive,
+.Fl si
+needs
+.Fl t ,
+as
+.Nm
+can't guess the type.
+Only a few archive types work on stdin.
+.It Fl slt
+For
+.Cm 7z l ,
+list more metadata about each file.
+.It Fl snoi
+Store each file's user ID and group numbers in the archive, or set
+them on the extracted file, if the archive type can store them.
+.It Fl snon
+Store each file's user and group names in the archive, if the archive
+type can store them.
+.It Fl so
+Write files or an archive to standard output.
+Extracted files are concatenated to stdout.
+An archive on stdout gets its type from the suffix of the
+.Ar archive
+argument.
+Only a few archive types work on stdout.
+.It Fl spd
+Disable wildcards in the
+.Ar file
+arguments.
+.It Fl stx Ns Ar type
+Stop opening archives of
+.Ar type .
+.It Fl t Ns Ar type
+Set the archive
+.Ar type
+.Po
+like
+.Fl t7z
+or
+.Fl tzip
+.Pc .
+It changes the format and the default suffix of new archives, and
+refuses to open any other type of archive.
+.It Fl x Ns Oo Ar markers Oc Ns Cm \&! Ns Ar file
+Exclude a
+.Ar file ,
+even if a
+.Ar file
+argument or
+.Fl i
+switch would have included it.
+This switch takes the same
+.Ar markers
+as
+.Fl i .
+.El
+.Sh EXAMPLES
+To create a .tar.gz with
+.Nm ,
+first create a .tar, then compress it:
+.Pp
+.Dl $ 7z a thing.tar thing
+.Dl $ 7z a -sdel thing.tar.gz thing.tar
+.Pp
+Or use a pipe:
+.Pp
+.Dl $ 7z a -so .tar thing | 7z a -si thing.tar.gz
+.Pp
+To list its files, use a pipe:
+.Pp
+.Dl $ 7z x -so thing.tar.gz | 7z l -si -ttar
+.Pp
+To convert an archive to a different type, extract it in an empty
+directory, then move the extracted files to a new archive:
+.Pp
+.Dl $ mkdir empty
+.Dl $ cd empty
+.Dl $ 7z x ../files.zip
+.Dl $ 7z a ../files.7z -sdel
+.Dl $ cd ..
+.Dl $ rmdir empty
+.Sh SEE ALSO
+The HTML manual at
+.Pa ${TRUEPREFIX}/share/doc/7zip/MANUAL/start.htm
+.Sh CAVEATS
+Wildcards for
+.Nm
+must be quoted from the shell.
+Suppose that there are at least 2 archives named
+.Li '*.7z' .
+These commands are different:
+.Pp
+.Dl $ 7z l '*.7z'
+.Dl $ 7z l *.7z
+.Pp
+The first command, with
+.Li '*.7z'
+in quotes, lists all files in all archives, because the
+.Ar archive
+argument has a wildcard.
+The second command, with
+.Li *.7z
+expanded by the shell, lists only files in the first archive with the
+same names as the other archives, because the shell passes the first
+archive as
+.Ar archive
+and the other archives as
+.Ar file
+arguments.

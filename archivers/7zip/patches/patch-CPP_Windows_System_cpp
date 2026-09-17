@@ -1,0 +1,12 @@
+Index: CPP/Windows/System.cpp
+--- CPP/Windows/System.cpp.orig
++++ CPP/Windows/System.cpp
+@@ -194,7 +194,7 @@ BOOL CProcessAffinity::Get()
+ UInt32 GetNumberOfProcessors()
+ {
+   #ifndef Z7_ST
+-  long n = sysconf(_SC_NPROCESSORS_CONF);  // The number of processors configured
++  long n = sysconf(_SC_NPROCESSORS_ONLN);
+   if (n < 1)
+     n = 1;
+   return (UInt32)n;

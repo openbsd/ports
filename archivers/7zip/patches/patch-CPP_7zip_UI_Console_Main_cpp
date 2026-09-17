@@ -1,0 +1,88 @@
+Pledge the "7z" executable
+
+Index: CPP/7zip/UI/Console/Main.cpp
+--- CPP/7zip/UI/Console/Main.cpp.orig
++++ CPP/7zip/UI/Console/Main.cpp
+@@ -33,6 +33,7 @@ typedef PROCESS_MEMORY_COUNTERS *PPROCESS_MEMORY_COUNT
+ #endif // Z7_OLD_WIN_SDK
+ 
+ #else // _WIN32
++#include <stdlib.h>
+ #include <unistd.h>
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
+@@ -843,6 +844,20 @@ int Main2(
+   }
+ #endif
+ 
++  #ifdef Z7_EXTERNAL_CODECS
++  if (pledge("stdio rpath wpath cpath fattr getpw tty prot_exec", NULL) == -1)
++  {
++    perror("pledge");
++    exit(2);
++  }
++  #else
++  if (pledge("stdio rpath wpath cpath fattr getpw tty", NULL) == -1)
++  {
++    perror("pledge");
++    exit(2);
++  }
++  #endif
++
+   #ifdef ENV_HAVE_LOCALE
+   // printf("\nBefore SetLocale() : %s\n", IsNativeUtf8() ? "NATIVE UTF-8" : "IS NOT NATIVE UTF-8");
+   MY_SetLocale();
+@@ -1012,6 +1027,53 @@ int Main2(
+   codecs->CaseSensitive_Change = options.CaseSensitive_Change;
+   codecs->CaseSensitive = options.CaseSensitive;
+   ThrowException_if_Error(codecs->Load());
++  switch ((int)options.Command.CommandType)
++  {
++    case NCommandType::kBenchmark:
++    case NCommandType::kInfo:
++      if (pledge("stdio", NULL) == -1)
++      {
++        perror("pledge");
++        exit(2);
++      }
++      break;
++    case NCommandType::kHash:
++    case NCommandType::kList:
++    case NCommandType::kTest:
++      if (pledge("stdio rpath tty", NULL) == -1)
++      {
++        perror("pledge");
++        exit(2);
++      }
++      break;
++    case NCommandType::kExtract:
++    case NCommandType::kExtractFull:
++      if (options.StdOutMode)
++      {
++        if (pledge("stdio rpath tty", NULL) == -1)
++        {
++          perror("pledge");
++          exit(2);
++        }
++      }
++      else
++      {
++        if (pledge("stdio rpath wpath cpath fattr tty", NULL) == -1)
++        {
++          perror("pledge");
++          exit(2);
++        }
++      }
++      break;
++    default:
++      // "7z a -snon archive.tar" needs getpw for YP.
++      if (pledge("stdio rpath wpath cpath getpw tty", NULL) == -1)
++      {
++        perror("pledge");
++        exit(2);
++      }
++      break;
++  }
+   Codecs_AddHashArcHandler(codecs);
+ 
+   #ifdef Z7_EXTERNAL_CODECS

@@ -1,0 +1,90 @@
+@conflict p7zip-*
+@pkgpath archivers/p7zip,-main
+@bin bin/7z
+@bin bin/7za
+@bin bin/7zr
+lib/7zip/
+@so lib/7zip/7z.so
+@bin lib/7zip/7zCon.sfx
+@man man/man1/7z.1
+share/doc/7zip/
+share/doc/7zip/7zC.txt
+share/doc/7zip/7zFormat.txt
+share/doc/7zip/License.txt
+share/doc/7zip/MANUAL/
+share/doc/7zip/MANUAL/cmdline/
+share/doc/7zip/MANUAL/cmdline/commands/
+share/doc/7zip/MANUAL/cmdline/commands/add.htm
+share/doc/7zip/MANUAL/cmdline/commands/bench.htm
+share/doc/7zip/MANUAL/cmdline/commands/delete.htm
+share/doc/7zip/MANUAL/cmdline/commands/extract.htm
+share/doc/7zip/MANUAL/cmdline/commands/extract_full.htm
+share/doc/7zip/MANUAL/cmdline/commands/hash.htm
+share/doc/7zip/MANUAL/cmdline/commands/index.htm
+share/doc/7zip/MANUAL/cmdline/commands/list.htm
+share/doc/7zip/MANUAL/cmdline/commands/rename.htm
+share/doc/7zip/MANUAL/cmdline/commands/style.css
+share/doc/7zip/MANUAL/cmdline/commands/test.htm
+share/doc/7zip/MANUAL/cmdline/commands/update.htm
+share/doc/7zip/MANUAL/cmdline/exit_codes.htm
+share/doc/7zip/MANUAL/cmdline/index.htm
+share/doc/7zip/MANUAL/cmdline/style.css
+share/doc/7zip/MANUAL/cmdline/switches/
+share/doc/7zip/MANUAL/cmdline/switches/ar_exclude.htm
+share/doc/7zip/MANUAL/cmdline/switches/ar_include.htm
+share/doc/7zip/MANUAL/cmdline/switches/ar_no.htm
+share/doc/7zip/MANUAL/cmdline/switches/bb.htm
+share/doc/7zip/MANUAL/cmdline/switches/bs.htm
+share/doc/7zip/MANUAL/cmdline/switches/charset.htm
+share/doc/7zip/MANUAL/cmdline/switches/email.htm
+share/doc/7zip/MANUAL/cmdline/switches/exclude.htm
+share/doc/7zip/MANUAL/cmdline/switches/include.htm
+share/doc/7zip/MANUAL/cmdline/switches/index.htm
+share/doc/7zip/MANUAL/cmdline/switches/large_pages.htm
+share/doc/7zip/MANUAL/cmdline/switches/list_tech.htm
+share/doc/7zip/MANUAL/cmdline/switches/method.htm
+share/doc/7zip/MANUAL/cmdline/switches/output_dir.htm
+share/doc/7zip/MANUAL/cmdline/switches/overwrite.htm
+share/doc/7zip/MANUAL/cmdline/switches/password.htm
+share/doc/7zip/MANUAL/cmdline/switches/recurse.htm
+share/doc/7zip/MANUAL/cmdline/switches/sa.htm
+share/doc/7zip/MANUAL/cmdline/switches/scc.htm
+share/doc/7zip/MANUAL/cmdline/switches/scrc.htm
+share/doc/7zip/MANUAL/cmdline/switches/sdel.htm
+share/doc/7zip/MANUAL/cmdline/switches/sfx.htm
+share/doc/7zip/MANUAL/cmdline/switches/shared.htm
+share/doc/7zip/MANUAL/cmdline/switches/sni.htm
+share/doc/7zip/MANUAL/cmdline/switches/sns.htm
+share/doc/7zip/MANUAL/cmdline/switches/spf.htm
+share/doc/7zip/MANUAL/cmdline/switches/spm.htm
+share/doc/7zip/MANUAL/cmdline/switches/ssc.htm
+share/doc/7zip/MANUAL/cmdline/switches/stdin.htm
+share/doc/7zip/MANUAL/cmdline/switches/stdout.htm
+share/doc/7zip/MANUAL/cmdline/switches/stl.htm
+share/doc/7zip/MANUAL/cmdline/switches/stop_switch.htm
+share/doc/7zip/MANUAL/cmdline/switches/stx.htm
+share/doc/7zip/MANUAL/cmdline/switches/style.css
+share/doc/7zip/MANUAL/cmdline/switches/type.htm
+share/doc/7zip/MANUAL/cmdline/switches/update.htm
+share/doc/7zip/MANUAL/cmdline/switches/volume.htm
+share/doc/7zip/MANUAL/cmdline/switches/working_dir.htm
+share/doc/7zip/MANUAL/cmdline/switches/yes.htm
+share/doc/7zip/MANUAL/cmdline/syntax.htm
+share/doc/7zip/MANUAL/general/
+share/doc/7zip/MANUAL/general/7z.htm
+share/doc/7zip/MANUAL/general/faq.htm
+share/doc/7zip/MANUAL/general/formats.htm
+share/doc/7zip/MANUAL/general/index.htm
+share/doc/7zip/MANUAL/general/license.htm
+share/doc/7zip/MANUAL/general/performance.htm
+share/doc/7zip/MANUAL/general/register.htm
+share/doc/7zip/MANUAL/general/style.css
+share/doc/7zip/MANUAL/general/thanks.htm
+share/doc/7zip/MANUAL/start.htm
+share/doc/7zip/MANUAL/style.css
+share/doc/7zip/Methods.txt
+share/doc/7zip/copying.txt
+share/doc/7zip/lzma.txt
+share/doc/7zip/readme.txt
+share/doc/7zip/src-history.txt
+share/doc/7zip/unRarLicense.txt

@@ -1,0 +1,30 @@
+Rar.so uses this file.  Copy these extern declarations from
+CreateCoder.cpp to silence -Wmissing-variable-declarations.
+
+Index: CPP/7zip/Compress/DllExportsCompress.cpp
+--- CPP/7zip/Compress/DllExportsCompress.cpp.orig
++++ CPP/7zip/Compress/DllExportsCompress.cpp
+@@ -9,7 +9,11 @@
+ #include "../Common/RegisterCodec.h"
+ 
+ static const unsigned kNumCodecsMax = 48;
++extern
++unsigned g_NumCodecs;
+ unsigned g_NumCodecs = 0;
++extern
++const CCodecInfo *g_Codecs[];
+ const CCodecInfo *g_Codecs[kNumCodecsMax];
+ void RegisterCodec(const CCodecInfo *codecInfo) throw()
+ {
+@@ -18,7 +22,11 @@ void RegisterCodec(const CCodecInfo *codecInfo) throw(
+ }
+ 
+ static const unsigned kNumHashersMax = 16;
++extern
++unsigned g_NumHashers;
+ unsigned g_NumHashers = 0;
++extern
++const CHasherInfo *g_Hashers[];
+ const CHasherInfo *g_Hashers[kNumHashersMax];
+ void RegisterHasher(const CHasherInfo *hashInfo) throw()
+ {

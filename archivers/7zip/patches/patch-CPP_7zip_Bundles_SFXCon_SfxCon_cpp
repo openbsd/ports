@@ -1,0 +1,50 @@
+Pledge self-extracting archives
+
+Index: CPP/7zip/Bundles/SFXCon/SfxCon.cpp
+--- CPP/7zip/Bundles/SFXCon/SfxCon.cpp.orig
++++ CPP/7zip/Bundles/SFXCon/SfxCon.cpp
+@@ -2,6 +2,9 @@
+ 
+ #include "StdAfx.h"
+ 
++#include <stdlib.h>
++#include <unistd.h> // pledge
++
+ #include "../../../../C/CpuArch.h"
+ #include "../../../../C/DllSecur.h"
+ 
+@@ -274,6 +277,20 @@ int Main2(
+   SetFileApisToOEM();
+   #endif
+   
++  #ifdef Z7_EXTERNAL_CODECS
++  if (pledge("stdio rpath wpath cpath fattr prot_exec tty", NULL) == -1)
++  {
++    perror("pledge");
++    exit(2);
++  }
++  #else
++  if (pledge("stdio rpath wpath cpath fattr tty", NULL) == -1)
++  {
++    perror("pledge");
++    exit(2);
++  }
++  #endif
++
+   #ifdef ENV_HAVE_LOCALE
+   MY_SetLocale();
+   #endif
+@@ -417,6 +434,13 @@ int Main2(
+       if (result != S_OK)
+         throw CSystemException(result);
+     }
++    #ifdef Z7_EXTERNAL_CODECS
++    if (pledge("stdio rpath wpath cpath fattr tty", NULL) == -1)
++    {
++      perror("pledge");
++      exit(2);
++    }
++    #endif
+ 
+     if (command.CommandType != NCommandType::kList)
+     {

@@ -1,0 +1,2 @@
+This package enables 7z to decompress RAR files.  See unRAR license
+restriction in ${PREFIX}/share/doc/7zip/License.txt

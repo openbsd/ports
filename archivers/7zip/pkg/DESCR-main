@@ -1,0 +1,8 @@
+7-Zip is a file archiver with a high compression ratio.
+
+The main features of 7-Zip are:
+- High compression ratio in 7z format with LZMA and LZMA2 compression
+- Multiple supported formats (7z, XZ, BZIP2, GZIP, TAR, ZIP, WIM, etc.)
+- Strong AES-256 encryption in 7z and ZIP formats
+
+RAR decompression is in a subpackage, 7zip-rar, because of its license.

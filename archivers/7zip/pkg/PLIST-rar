@@ -1,0 +1,4 @@
+@conflict p7zip-rar-*
+@pkgpath archivers/p7zip,-rar
+lib/7zip/Codecs/
+@so lib/7zip/Codecs/Rar.so
