@@ -59,11 +59,11 @@ LIB_DEPENDS+=		devel/sdl2-mixer \
 
 CONFIGURE_ARGS+=       -DCURSES=OFF -DTILES=ON -DSOUND=ON
 
-# The use of ccache(1) is managed by the ports infrastructure
-CONFIGURE_ARGS +=	-DCATA_CCACHE=OFF
-
 MAN_TILES=		-tiles
 .endif
+
+# The use of ccache(1) is managed by the ports infrastructure
+CONFIGURE_ARGS +=	-DCATA_CCACHE=OFF
 
 NO_TEST=		Yes
 
