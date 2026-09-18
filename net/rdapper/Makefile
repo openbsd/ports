@@ -2,7 +2,7 @@ COMMENT=	Perl interface to the Registration Data Access Protocol
 
 MODULES=	cpan
 CPAN_AUTHOR=	GBROWN
-PKGNAME=	rdapper-1.24
+PKGNAME=	rdapper-1.25
 DISTNAME=	App-${PKGNAME}
 CATEGORIES=	net
 PKG_ARCH=	*
@@ -19,7 +19,7 @@ RUN_DEPENDS=	devel/p5-File-ShareDir \
 		net/p5-Net-DNS \
 		net/p5-Net-IDN-PP \
 		net/p5-Net-IP \
-		net/p5-Net-RDAP>=0.41 \
+		net/p5-Net-RDAP>=0.42 \
 		devel/p5-Term-Size \
 		www/p5-URI
 
