@@ -1,6 +1,7 @@
 COMMENT=	powerful programming editor
 
 V=		1.6.9
+REVISION=	0
 DISTNAME=	xwpe-$V
 CATEGORIES=	editors
 
@@ -12,6 +13,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ICE SM X11 Xext Xft c cairo curses execinfo fontconfig
 WANTLIB += freetype glib-2.0 gobject-2.0 harfbuzz intl json-c
 WANTLIB += pango-1.0 pangocairo-1.0 pthread util vterm z
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 LIB_DEPENDS=	devel/json-c \
 		devel/libvterm \
