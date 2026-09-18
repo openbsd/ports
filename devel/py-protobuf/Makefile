@@ -1,7 +1,7 @@
 COMMENT=		Google data interchange format (protocol buffers)
 
 PYMAJOR=		7
-PROTOBUF_VERSION=	36.1
+PROTOBUF_VERSION=	36.2
 
 V=			${PYMAJOR}.${PROTOBUF_VERSION}
 MODPY_DISTV=		${V:S/-//g}
@@ -30,9 +30,5 @@ BUILD_DEPENDS=		devel/protobuf
 
 # No tests in sources on PyPi
 NO_TEST=		Yes
-
-# https://github.com/protocolbuffers/protobuf/issues/29578
-post-extract:
-	cp ${FILESDIR}/port.c ${WRKSRC}/upb/port/
 
 .include <bsd.port.mk>
