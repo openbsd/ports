@@ -13,12 +13,13 @@ MAINTAINER=	Tobias Heider <tobhe@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-BUILD_DEPENDS+=	archivers/zopfli \
+BUILD_DEPENDS=	archivers/zopfli \
 		devel/arm-none-eabi/gcc,aarch64 \
 		graphics/ImageMagick
 
-MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-" \
-		M1N1_VERSION_TAG="${GH_TAGNAME:S/v//}"
+MAKE_ENV=	CROSS_COMPILE="aarch64-none-elf-" \
+		M1N1_VERSION_TAG="${GH_TAGNAME:S/v//}" \
+		V=1
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
