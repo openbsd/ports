@@ -1,3 +1,5 @@
+Disable ccache.
+
 Index: modcargo-crates/v8-150.4.0/build.rs
 --- modcargo-crates/v8-150.4.0/build.rs.orig
 +++ modcargo-crates/v8-150.4.0/build.rs
@@ -10,7 +12,20 @@ Index: modcargo-crates/v8-150.4.0/build.rs
  
    // `#[cfg(...)]` attributes don't work as expected from build.rs -- they refer to the configuration
    // of the host system which the build.rs script will be running on. In short, `cfg!(target_<os/arch>)`
-@@ -504,7 +504,6 @@ fn build_v8(is_asan: bool) {
+@@ -377,12 +377,8 @@ fn build_v8(is_asan: bool) {
+ 
+   if let Some(p) = env::var_os("SCCACHE") {
+     cc_wrapper(&mut gn_args, Path::new(&p));
+-  } else if let Ok(p) = which("sccache") {
+-    cc_wrapper(&mut gn_args, &p);
+   } else if let Some(p) = env::var_os("CCACHE") {
+     cc_wrapper(&mut gn_args, Path::new(&p));
+-  } else if let Ok(p) = which("ccache") {
+-    cc_wrapper(&mut gn_args, &p);
+   } else {
+     println!("cargo:warning=Not using sccache or ccache");
+   }
+@@ -504,7 +500,6 @@ fn build_v8(is_asan: bool) {
      gn_args.push(format!(r#"target_cpu="{arch}""#).to_string());
      gn_args.push(r#"target_os="android""#.to_string());
      gn_args.push("treat_warnings_as_errors=false".to_string());
