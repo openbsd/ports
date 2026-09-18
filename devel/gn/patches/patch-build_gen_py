@@ -3,7 +3,7 @@ Set version based on port version, remove usage of -O3
 Index: build/gen.py
 --- build/gen.py.orig
 +++ build/gen.py
-@@ -241,25 +241,16 @@ def is_gcc(cxx):
+@@ -245,25 +245,16 @@ def is_gcc(cxx):
    return ret.returncode == 0 and "#define __GNUC__" in ret.stdout and not "#define __clang__" in ret.stdout
  
  def GenerateLastCommitPosition(host, header):
@@ -31,7 +31,7 @@ Index: build/gen.py
  
    # Only write/touch this file if the commit position has changed.
    old_contents = ''
-@@ -432,10 +423,8 @@ def WriteGNNinja(path, platform, host, options, args_l
+@@ -441,10 +432,8 @@ def WriteGNNinja(path, platform, host, options, args_l
          cflags.extend(['-D_LIBCPP_DEBUG=1', '-D_GLIBCXX_DEBUG=1'])
      else:
        cflags.append('-DNDEBUG')

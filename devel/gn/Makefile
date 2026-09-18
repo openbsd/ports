@@ -9,6 +9,7 @@ DATE =		20251214
 VERSION =	0.0.${DATE}
 DISTNAME =	gn-${DATE}
 PKGNAME =	gn-${VERSION}
+REVISION =	0
 
 # gn.googlesource.com does not provide stable snapshots
 SITES =		https://codeberg.org/vlkrs/gn/archive/
@@ -34,8 +35,7 @@ WRKDIST =	${WRKDIR}/gn
 WANTLIB += ${COMPILER_LIBCXX} c m
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/src/util/exe_path.cc \
-		${WRKSRC}/src/gn/command_format_unittest.cc
+	${SUBST_CMD} ${WRKSRC}/src/gn/command_format_unittest.cc
 
 do-build:
 	${SETENV} ${MAKE_ENV} ninja -C${WRKSRC}/out -j${MAKE_JOBS} -v

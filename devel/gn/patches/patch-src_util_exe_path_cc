@@ -1,20 +1,19 @@
-Use hardcoded path to gn binary
-
 Index: src/util/exe_path.cc
 --- src/util/exe_path.cc.orig
 +++ src/util/exe_path.cc
-@@ -117,13 +117,7 @@ base::FilePath GetExePath() {
- #else
- 
- base::FilePath GetExePath() {
--  base::FilePath result;
--  const char kProcSelfExe[] = "/proc/self/exe";
--  if (!ReadSymbolicLink(base::FilePath(kProcSelfExe), &result)) {
--    NOTREACHED() << "Unable to resolve " << kProcSelfExe << ".";
--    return base::FilePath();
--  }
--  return result;
-+  return base::FilePath("${LOCALBASE}/bin/gn");
+@@ -81,6 +81,15 @@ base::FilePath GetExePath() {
+   return base::FilePath(buf);
  }
  
- #endif
++#elif defined(OS_OPENBSD)
++
++base::FilePath GetExePath() {
++  char execpath[PATH_MAX];
++  if (getexecpath(execpath, sizeof(execpath)) != 0)
++    return base::FilePath();
++  return base::FilePath(execpath);
++}
++
+ #elif defined(OS_HAIKU)
+ 
+ base::FilePath GetExePath() {
