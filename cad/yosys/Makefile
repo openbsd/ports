@@ -2,6 +2,7 @@ COMMENT=	Yosys Open SYnthesis Suite
 CATEGORIES=	cad
 V=		0.67
 DISTNAME=	yosys-${V}
+REVISION=	0
 
 GH_ACCOUNT=	YosysHQ
 GH_PROJECT=	yosys
@@ -24,13 +25,17 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c ${COMPILER_LIBCXX} m z ffi
 
 MODULES=	devel/cmake
-NO_TEST=	Yes
 
 LIB_DEPENDS=	devel/libffi
-BUILD_DEPENDS=	devel/bison
+BUILD_DEPENDS=	devel/bison \
+		devel/gtest
 
 CONFIGURE_ARGS= -DYOSYS_WITHOUT_SLANG=On
 CXX_FLAGS += -DFMT_DEPRECATED_HEAVY_CORE
+
+do-test:
+	cd ${WRKSRC} && \
+		MAKE=gmake cmake --build ${WRKBUILD} --target test
 
 
 .include <bsd.port.mk>
