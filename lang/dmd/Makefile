@@ -1,20 +1,15 @@
 # Backend only supports amd64 and i386
 ONLY_FOR_ARCHS =	amd64 i386
 
-BROKEN =	bootstrap needs updating
-
 # No BT CFI yet.
 USE_NOBTCFI =	Yes
 
-V =		2.109.0
-BOOTSTRAP =	2.109.0
+V =		2.113.0
 COMMENT =	reference compiler for the D programming language
 PKGNAME =	dmd-${V}
 CATEGORIES =	lang
-REVISION =	0
 
 DISTFILES =		dmd-${V}{v${V}}.tar.gz
-DISTFILES.boot =	dmd-${BOOTSTRAP}-bootstrap.tar.gz
 DISTFILES.phobos =	phobos-${V}{v${V}}.tar.gz
 
 HOMEPAGE =	https://dlang.org/
@@ -22,15 +17,15 @@ HOMEPAGE =	https://dlang.org/
 # Boost Software License 1.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi execinfo m pthread
+WANTLIB += c m pthread
 
-SITES.boot =	https://github.com/ibara/dmd/releases/download/bootstrap-${BOOTSTRAP}/
+BUILD_DEPENDS =	lang/gdmd
+
 SITES =		https://github.com/dlang/dmd/archive/refs/tags/
 SITES.phobos =	https://github.com/dlang/phobos/archive/refs/tags/
 
 USE_GMAKE =	Yes
-MAKE_ENV =	HOST_CXX="${CXX}" \
-		HOST_DMD="${WRKDIR}/dmd-bootstrap/openbsd/bin${MODEL}/dmd"
+MAKE_ENV =	HOST_DMD="${TRUEPREFIX}/bin/gdmd"
 
 NO_TEST =	Yes
 
@@ -76,8 +71,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dmd
 	${INSTALL_DATA} ${WRKDIR}/install/phobos-LICENSE.txt \
 		${PREFIX}/share/doc/dmd/LICENSE.txt
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dmd
-	cp -R ${WRKDIR}/dmd/compiler/samples/* ${PREFIX}/share/examples/dmd
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dmd
 	${SUBST_CMD} -c -m 444 ${FILESDIR}/dmd.conf \
 		${PREFIX}/share/dmd/dmd.conf

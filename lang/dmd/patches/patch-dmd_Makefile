@@ -1,7 +1,7 @@
 Index: dmd/Makefile
 --- dmd/Makefile.orig
 +++ dmd/Makefile
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  
  include compiler/src/osmodel.mak
  

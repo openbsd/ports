@@ -1,0 +1,17 @@
+Index: dmd/compiler/src/dmd/cpreprocess.d
+--- dmd/compiler/src/dmd/cpreprocess.d.orig
++++ dmd/compiler/src/dmd/cpreprocess.d
+@@ -131,13 +131,6 @@ private const(char)[] cppCommand()
+         // Perhaps we are cross-compiling.
+         return "cpp";
+     }
+-    else version (OpenBSD)
+-    {
+-        // On OpenBSD, we need to use the actual binary /usr/libexec/cpp
+-        // rather than the shell script wrapper /usr/bin/cpp ...
+-        // Turns out the shell script doesn't really understand -o
+-        return "/usr/libexec/cpp";
+-    }
+     else version (OSX)
+     {
+         return "clang";
