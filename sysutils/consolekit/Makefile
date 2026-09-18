@@ -36,8 +36,7 @@ CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS=		--disable-pam-module \
 			--disable-libudev \
 			--disable-libevdev \
-			--with-pam-module-dir=${LOCALBASE}/lib/security \
-			--enable-tests
+			--with-pam-module-dir=${LOCALBASE}/lib/security
 
 CONFIGURE_ENV +=	ac_cv_header_linux_input_h=no
 
