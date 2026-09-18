@@ -1,0 +1,3 @@
+${P5SITE}/File/
+${P5SITE}/File/XDG.pm
+@man man/man3p/File::XDG.3p

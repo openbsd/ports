@@ -1,0 +1,4 @@
+This module provides a basic implementation of the XDG base directory
+specification as exists by the Free Desktop Organization (FDO). It
+supports all XDG directories except for the runtime directories, which
+require session management support in order to function.
