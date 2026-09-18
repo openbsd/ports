@@ -1,14 +1,19 @@
-COMMENT=	allow your classes to do coercion of parameters
+COMMENT =	allows your classes to do coercion of parameters
 
 DISTNAME =	Params-Coerce-0.15
-CATEGORIES=	devel
+CPAN_AUTHOR =	ETHER
+REVISION =	0
+FIX_EXTRACT_PERMISSIONS =	Yes
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-MODULES=	cpan
-PKG_ARCH=	*
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Params-Util
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-Params-Util>=0.05
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
