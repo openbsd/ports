@@ -31,6 +31,7 @@
      SUBDIR += clamav
      SUBDIR += clusterssh
      SUBDIR += corkscrew
+     SUBDIR += cosign
      SUBDIR += cracklib
      SUBDIR += crowdsec
      SUBDIR += crowdsec-firewall-bouncer
