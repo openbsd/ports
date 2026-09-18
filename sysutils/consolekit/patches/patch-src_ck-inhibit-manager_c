@@ -1,27 +1,13 @@
 Index: src/ck-inhibit-manager.c
 --- src/ck-inhibit-manager.c.orig
 +++ src/ck-inhibit-manager.c
-@@ -150,9 +150,20 @@ cb_changed_event (CkInhibit *inhibit,
-                                       FALSE);
-                 }
+@@ -152,7 +152,8 @@ cb_changed_event (CkInhibit *inhibit,
  
--                /* When an inhibitor loses it lockes, remove the inhibitor from
--                 * the list */
+                 /* When an inhibitor loses it lockes, remove the inhibitor from
+                  * the list */
 -                ck_inhibit_manager_remove_lock (manager, ck_inhibit_get_named_pipe_path (inhibit));
-+                /* When an inhibitor loses all its locks, remove the inhibitor
-+                 * from the list. Doing so on the first released event would
-+                 * disconnect this handler before the remaining events of a
-+                 * multi-event inhibitor (e.g. "sleep:shutdown") are emitted,
-+                 * leaking their counters for good. */
-+                if (!ck_inhibit_is_shutdown_inhibited (inhibit) &&
-+                    !ck_inhibit_is_suspend_inhibited (inhibit) &&
-+                    !ck_inhibit_is_idle_inhibited (inhibit) &&
-+                    !ck_inhibit_is_power_key_inhibited (inhibit) &&
-+                    !ck_inhibit_is_suspend_key_inhibited (inhibit) &&
-+                    !ck_inhibit_is_hibernate_key_inhibited (inhibit) &&
-+                    !ck_inhibit_is_lid_switch_inhibited (inhibit)) {
++                if (priv->inhibit_list == NULL)
 +                        ck_inhibit_manager_remove_lock (manager, ck_inhibit_get_named_pipe_path (inhibit));
-+                }
          }
  }
-
+ 

@@ -6,7 +6,7 @@ GH_TAGNAME=		1.2.6
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 PKGNAME=		${DISTNAME:L}
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		sysutils	
 
@@ -37,6 +37,7 @@ CONFIGURE_ARGS=		--disable-pam-module \
 			--disable-libudev \
 			--disable-libevdev \
 			--with-pam-module-dir=${LOCALBASE}/lib/security \
+			--enable-tests
 
 CONFIGURE_ENV +=	ac_cv_header_linux_input_h=no
 
