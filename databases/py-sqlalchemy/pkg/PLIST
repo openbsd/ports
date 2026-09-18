@@ -4,6 +4,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy-${MODPY_DISTV}.dist-info/MET
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy-${MODPY_DISTV}.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/__init__.py
@@ -678,6 +679,8 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}asse
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}assertsql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}cancellation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}cancellation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}engines.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -703,6 +706,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/${MODPY_PYCACHE}warn
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/assertions.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/assertsql.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/asyncio.py
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/cancellation.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/config.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/engines.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/testing/entities.py
