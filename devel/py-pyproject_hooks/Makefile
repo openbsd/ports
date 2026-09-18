@@ -1,13 +1,12 @@
 COMMENT=	wrappers to call pyproject.toml-based build backend hooks
 
-MODPY_DISTV=	1.2.0
-EPOCH=		0
-
+MODPY_DISTV=	1.3.3
 DISTNAME=	pyproject_hooks-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
+
+EPOCH=		0
 
 # https://github.com/pypa/pyproject-hooks
 # https://pyproject-hooks.readthedocs.io/en/latest/changelog.html
