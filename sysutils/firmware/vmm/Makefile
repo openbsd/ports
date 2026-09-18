@@ -85,6 +85,8 @@ post-extract:
 	cp ${FILESDIR}/config ${WRKSRC}/.config
 
 post-patch:
+	sed -i 's,^#define BUILD_CL.*,#define BUILD_CL "${SB_VER}",' \
+	    ${WRKSRC}/sgabios/sgabios.S{,${PATCHORIG}}
 	cp -Rp ${EDK2_WRKSRC}/BaseTools/Source/C/BrotliCompress/brotli \
 	    ${EDK2_WRKSRC}/MdeModulePkg/Library/BrotliCustomDecompressLib/
 	mkdir -p ${EDK2_TOOLBIN}
@@ -128,8 +130,6 @@ post-build:
 	cat ${EDK2_WRKSRC}/SecurityPkg/DeviceSecurity/SpdmLib/libspdm/LICENSE.md \
 	    >> ${WRKDIR}/vmm-uefi-license
 
-	sed -i 's,^#define BUILD_CL.*,#define BUILD_CL "${SB_VER}",' \
-	    ${WRKSRC}/sgabios/sgabios.S
 	cd ${WRKSRC}/sgabios; env ${MAKE_ENV} ${MAKE_PROGRAM} \
 	    BUILD_USER='\"_<vmm\"' BUILD_HOST='\"OpenBSD>\"' \
 	    CC="x86_64-none-elf-gcc -Wa,--divide" LD=x86_64-none-elf-ld \
