@@ -1,8 +1,7 @@
 COMMENT =		c++ protocol buffers
 
 CPPMAJOR =		7
-PROTOBUF_VERSION =	36.1
-REVISION =		1
+PROTOBUF_VERSION =	36.2
 
 # Keep PROTOBUF_VERSION in devel/py-protobuf and devel/protobuf-java
 # in sync with this port.
