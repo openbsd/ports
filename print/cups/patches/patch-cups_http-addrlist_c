@@ -1,0 +1,27 @@
+Fix TCP_NODELAY on an AF_UNIX socket.
+
+Index: cups/http-addrlist.c
+--- cups/http-addrlist.c.orig
++++ cups/http-addrlist.c
+@@ -164,13 +164,14 @@ httpAddrConnect2(
+       setsockopt(fds[nfds], SOL_SOCKET, SO_NOSIGPIPE, CUPS_SOCAST &val, sizeof(val));
+ #endif /* SO_NOSIGPIPE */
+ 
+-     /*
+-      * Using TCP_NODELAY improves responsiveness, especially on systems
+-      * with a slow loopback interface...
+-      */
+-
+-      val = 1;
+-      setsockopt(fds[nfds], IPPROTO_TCP, TCP_NODELAY, CUPS_SOCAST &val, sizeof(val));
++      if (httpAddrFamily(&(addrlist->addr)) != AF_UNIX) {
++       /*
++	* Using TCP_NODELAY improves responsiveness, especially on systems
++	* with a slow loopback interface...
++	*/
++        val = 1;
++        setsockopt(fds[nfds], IPPROTO_TCP, TCP_NODELAY, CUPS_SOCAST &val, sizeof(val));
++      }
+ 
+ #ifdef FD_CLOEXEC
+      /*
