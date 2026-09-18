@@ -12,18 +12,18 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			153.0.8010.47
+V=			153.0.8010.52
 
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
 DISTFILES.a=		${REGRESS_DISTFILES.a} \
-			${PROFILE_DISTFILES.a}
-DISTFILES.b=		${CHROMIUM_DISTFILES.b}
+			${PROFILE_DISTFILES.a} \
+			${CHROMIUM_DISTFILES.a}
 
 #CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
-CHROMIUM_DISTFILES.b+=	chromium-${V}-linux${EXTRACT_SUFX}
+CHROMIUM_DISTFILES.a+=	chromium-${V}-linux${EXTRACT_SUFX}
 #REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 PROFILE_DISTFILES.a=	chromium-${V}-profdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz
@@ -49,7 +49,6 @@ PERMIT_PACKAGE =	Yes
 
 SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
 SITES.a=	https://nerd.hu/distfiles/
-#SITES.b=	https://github.com/chromium-linux-tarballs/chromium-tarballs/releases/download/153.0.8010.47/chromium-153.0.8010.47-linux.tar.xz
 SITES.b=	https://github.com/chromium-linux-tarballs/chromium-tarballs/releases/download/${V}/
 
 MODULES=	devel/cargo lang/clang lang/python x11/qt5 x11/qt6
