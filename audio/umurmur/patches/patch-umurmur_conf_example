@@ -4,14 +4,14 @@ Index: umurmur.conf.example
 @@ -1,7 +1,7 @@
  max_bandwidth = 48000;
  welcometext = "Welcome to uMurmur!";
--certificate = "/etc/umurmur/cert.crt";
--private_key = "/etc/umurmur/key.key";
+-certificate = "/etc/umurmur/certificate.crt";
+-private_key = "/etc/umurmur/private_key.key";
 +certificate = "${SYSCONFDIR}/umurmur/certificate.crt";
 +private_key = "${SYSCONFDIR}/umurmur/private_key.key";
  password = "";
  # admin_password = "test";   # Set to enable admin functionality.
  # ban_length = 0;            # Length in seconds for a ban. Default is 0. 0 = forever.
-@@ -18,9 +18,9 @@ max_users = 10;
+@@ -17,9 +17,9 @@ max_users = 10;
  
  # username and groupname for privilege dropping.
  # Will attempt to switch user if set.

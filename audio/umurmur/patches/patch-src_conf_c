@@ -1,7 +1,7 @@
 Index: src/conf.c
 --- src/conf.c.orig
 +++ src/conf.c
-@@ -90,23 +90,23 @@ const char *getStrConf(param_t param)
+@@ -89,23 +89,23 @@ const char *getStrConf(param_t param)
  		case CERTIFICATE:
  			setting = config_lookup(&configuration, "certificate");
  			if (!setting)

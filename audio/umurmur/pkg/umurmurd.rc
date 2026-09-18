@@ -1,8 +1,12 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/sbin/umurmurd"
+daemon="${TRUEPREFIX}/bin/umurmurd"
 
 . /etc/rc.d/rc.subr
+
+rc_configtest() {
+	rc_exec "${daemon} -t ${daemon_flags}"
+}
 
 rc_reload=NO
 
