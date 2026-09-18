@@ -1,0 +1,39 @@
+Index: src/filesystem/unix/SDL_sysfilesystem.c
+--- src/filesystem/unix/SDL_sysfilesystem.c.orig
++++ src/filesystem/unix/SDL_sysfilesystem.c
+@@ -77,7 +77,7 @@ static char *readSymLink(const char *path)
+ #endif
+ 
+ 
+-#if defined(__OPENBSD__)
++#if defined(__OPENBSD__) && !defined(HAVE_GETEXECPATH)
+ static char *search_path_for_binary(const char *bin)
+ {
+     char *envr = SDL_getenv("PATH");
+@@ -145,7 +145,17 @@ char *SDL_GetBasePath(void)
+     }
+ #endif
+ #if defined(__OPENBSD__)
+-    /* Please note that this will fail if the process was launched with a relative path and $PWD + the cwd have changed, or argv is altered. So don't do that. Or add a new sysctl to OpenBSD. */
++#ifdef HAVE_GETEXECPATH
++    char fullpath[PATH_MAX];
++    if (getexecpath(fullpath, sizeof(fullpath)) == 0) {
++        retval = SDL_strdup(fullpath);
++        if (!retval) {
++            SDL_OutOfMemory();
++            return NULL;
++        }
++    }
++#else
++    /* Please note that this will fail if the process was launched with a relative path and $PWD + the cwd have changed, or argv is altered. So don't do that. Or add a new sysctl to openBSD. */
+     char **cmdline;
+     size_t len;
+     const int mib[] = { CTL_KERN, KERN_PROC_ARGS, getpid(), KERN_PROC_ARGV };
+@@ -202,6 +212,7 @@ char *SDL_GetBasePath(void)
+ 
+         SDL_free(cmdline);
+     }
++#endif
+ #endif
+ 
+     /* is a Linux-style /proc filesystem available? */

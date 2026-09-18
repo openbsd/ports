@@ -1,7 +1,7 @@
 COMMENT=	cross-platform multimedia library
 
 V=		2.32.10
-REVISION=	0
+REVISION=	1
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 
@@ -27,9 +27,13 @@ WANTLIB+=	GL
 LIB_DEPENDS=	audio/libsamplerate \
 		converters/libiconv
 
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
+
 USE_GMAKE=		Yes
 SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
+AUTORECONF=		./autogen.sh
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build-scripts
 CONFIGURE_ARGS+= --disable-alsa \
 		 --disable-arts \
