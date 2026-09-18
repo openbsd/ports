@@ -1,3 +1,5 @@
+Disable ccache/sccache.
+
 Index: codex-rs/modcargo-crates/v8-150.4.0/build.rs
 --- codex-rs/modcargo-crates/v8-150.4.0/build.rs.orig
 +++ codex-rs/modcargo-crates/v8-150.4.0/build.rs
@@ -20,7 +22,20 @@ Index: codex-rs/modcargo-crates/v8-150.4.0/build.rs
  
    let extra_args = {
      if env::var("CARGO_FEATURE_V8_ENABLE_SANDBOX").is_ok() {
-@@ -419,9 +422,11 @@ fn build_v8(is_asan: bool) {
+@@ -377,12 +380,8 @@ fn build_v8(is_asan: bool) {
+ 
+   if let Some(p) = env::var_os("SCCACHE") {
+     cc_wrapper(&mut gn_args, Path::new(&p));
+-  } else if let Ok(p) = which("sccache") {
+-    cc_wrapper(&mut gn_args, &p);
+   } else if let Some(p) = env::var_os("CCACHE") {
+     cc_wrapper(&mut gn_args, Path::new(&p));
+-  } else if let Ok(p) = which("ccache") {
+-    cc_wrapper(&mut gn_args, &p);
+   } else {
+     println!("cargo:warning=Not using sccache or ccache");
+   }
+@@ -419,9 +418,11 @@ fn build_v8(is_asan: bool) {
    if target_arch == "arm" {
      gn_args.push(r#"target_cpu="arm""#.to_string());
      gn_args.push(r#"v8_target_cpu="arm""#.to_string());
@@ -35,7 +50,7 @@ Index: codex-rs/modcargo-crates/v8-150.4.0/build.rs
    }
    if target_arch == "riscv64" {
      gn_args.push(r#"target_cpu="riscv64""#.to_string());
-@@ -504,7 +509,6 @@ fn build_v8(is_asan: bool) {
+@@ -504,7 +505,6 @@ fn build_v8(is_asan: bool) {
      gn_args.push(format!(r#"target_cpu="{arch}""#).to_string());
      gn_args.push(r#"target_os="android""#.to_string());
      gn_args.push("treat_warnings_as_errors=false".to_string());
