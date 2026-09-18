@@ -1,15 +1,12 @@
 COMMENT =	dmd-like wrapper for gdc
 DISTNAME =	${GH_PROJECT}-0.1.0
-PKGNAME =	${DISTNAME}pl20210818
-CATEGORIES =	lang
-REVISION =	0
+PKGNAME =	${DISTNAME}pl20260801
 
-# can't be built by default, because gcc-11 hangs
-UNLINKED =	gdmd
+CATEGORIES =	lang
 
 GH_ACCOUNT =	D-Programming-GDC
 GH_PROJECT =	gdmd
-GH_COMMIT =	ff2c97a47408fb71c18a2d453294d18808a97cc5
+GH_COMMIT =	d14f7301b4bbae44996bc962121c9a1e7f7e3f12
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
