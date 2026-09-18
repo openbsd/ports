@@ -3,7 +3,7 @@ COMMENT =	port of Quake 1 using Vulkan instead of OpenGL
 PKGNAME =	vkquake-${GH_TAGNAME}
 GH_ACCOUNT =	Novum
 GH_PROJECT =	vkQuake
-GH_TAGNAME =	1.34.1
+GH_TAGNAME =	1.36.0
 
 CATEGORIES =	games x11
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
@@ -11,7 +11,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += SDL2 c execinfo m mpg123 ogg pthread vorbis vorbisfile vulkan
+WANTLIB += SDL3 c execinfo m mpg123 ogg pthread vorbis vorbisfile vulkan
 
 # C11
 COMPILER =	base-clang ports-gcc
@@ -21,7 +21,7 @@ BUILD_DEPENDS =	graphics/glslang
 LIB_DEPENDS =	audio/mpg123 \
 		audio/libogg \
 		audio/libvorbis \
-		devel/sdl2 \
+		devel/sdl3 \
 		graphics/vulkan-loader
 
 MAKE_FLAGS =	bindir=${PREFIX}/share/vkquake \

@@ -6,7 +6,7 @@ make -> gmake
 Index: Quake/common.make
 --- Quake/common.make.orig
 +++ Quake/common.make
-@@ -1,18 +1,18 @@
+@@ -1,9 +1,9 @@
  HOST_OS =$(shell uname|sed -e s/_.*//|tr '[:upper:]' '[:lower:]')
  
 -CC = gcc
@@ -18,18 +18,19 @@ Index: Quake/common.make
  LINKER = $(CC)
  STRIP ?= strip
  WINDRES ?= windres
- GLSLANG = glslangValidator
- DEBUG ?= 0
+@@ -15,9 +15,9 @@ ifeq ($(USE_SDL3),1)
+ CFLAGS += -DUSE_SDL3
+ endif
  
 -CHECK_GCC = $(shell if echo | $(CC) $(1) -Werror -S -o /dev/null -xc - > /dev/null 2>&1; then echo "$(1)"; else echo "$(2)"; fi;)
 +CHECK_GCC = $(shell if echo | $(CC) $(1) -S -o /dev/null -xc - > /dev/null 2>&1; then echo "$(1)"; else echo "$(2)"; fi;)
  
--CFLAGS += -MMD -Wall -Wno-trigraphs -Werror -std=gnu11
-+CFLAGS += -MMD -Wall -Wno-trigraphs -std=gnu11
+-CFLAGS += -MMD -Wall -Wno-trigraphs -Werror -std=gnu11 -fno-common
++CFLAGS += -MMD -Wall -Wno-trigraphs -std=gnu11 -fno-common
  ifneq ($(HOST_OS),darwin)
  CFLAGS += -D_FILE_OFFSET_BITS=64
  endif
-@@ -24,12 +24,9 @@ CFLAGS += -fno-omit-frame-pointer
+@@ -29,12 +29,9 @@ CFLAGS += -fno-omit-frame-pointer
  DO_STRIP=
  else
  DFLAGS += -DNDEBUG
@@ -42,7 +43,7 @@ Index: Quake/common.make
  #CFLAGS += $(call CHECK_GCC,-fno-asynchronous-unwind-tables,)
  CFLAGS += $(call CHECK_GCC,-fno-ident,)
  CMD_STRIP=$(STRIP) $(1)
-@@ -244,7 +241,7 @@ OBJS := strlcat.o \
+@@ -283,7 +280,7 @@ OBJS := strlcat.o \
  	$(SYSOBJ_SYS) $(SYSOBJ_MAIN)
  
  $(BINTOC_EXE): ../Shaders/bintoc.c
