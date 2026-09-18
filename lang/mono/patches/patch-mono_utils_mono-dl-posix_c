@@ -1,0 +1,17 @@
+Index: mono/utils/mono-dl-posix.c
+--- mono/utils/mono-dl-posix.c.orig
++++ mono/utils/mono-dl-posix.c
+@@ -68,7 +68,12 @@ mono_dl_get_so_suffixes (void)
+ int
+ mono_dl_get_executable_path (char *buf, int buflen)
+ {
+-#if defined(HAVE_READLINK)
++#if defined(HAVE_GETEXECPATH)
++	if (getexecpath(buf, buflen) != 0) {
++		return -1;
++	}
++	return strnlen(buf, buflen);
++#elif defined(HAVE_READLINK)
+ 	return readlink ("/proc/self/exe", buf, buflen - 1);
+ #else
+ 	return -1;

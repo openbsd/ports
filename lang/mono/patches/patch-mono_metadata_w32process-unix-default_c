@@ -1,0 +1,16 @@
+Index: mono/metadata/w32process-unix-default.c
+--- mono/metadata/w32process-unix-default.c.orig
++++ mono/metadata/w32process-unix-default.c
+@@ -77,7 +77,11 @@ mono_w32process_get_name (pid_t pid)
+ #else
+ 	memset (buf, '\0', sizeof(buf));
+ 	filename = g_strdup_printf ("/proc/%d/exe", pid);
+-#if defined(HAVE_READLINK)
++#if defined(HAVE_GETEXECPATH)
++	if (getexecpath(buf, sizeof(buf)) == 0) {
++		ret = g_strdup (buf);
++	}
++#elif defined(HAVE_READLINK)
+ 	if (readlink (filename, buf, 255) > 0) {
+ 		ret = g_strdup (buf);
+ 	}

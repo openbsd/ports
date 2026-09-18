@@ -4,6 +4,7 @@ USE_NOBTCFI=	Yes
 COMMENT=	cross platform, open source .NET developement framework
 
 V=		6.14.1
+REVISION=	0
 
 DISTNAME=	mono-${V}
 
