@@ -2,6 +2,7 @@
 bin/wpe
 bin/xwe
 bin/xwpe
+@info info/xwpe.info
 lib/xwpe/
 lib/xwpe/help.key
 lib/xwpe/help.xwpe
@@ -10,3 +11,35 @@ lib/xwpe/syntax_def
 @man man/man1/wpe.1
 @man man/man1/xwe.1
 @man man/man1/xwpe.1
+share/applications/
+share/applications/xwpe.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/xwpe.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/xwpe.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/xwpe.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
+share/icons/hicolor/256x256/apps/xwpe.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/xwpe.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/xwpe.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/xwpe.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/xwpe.svg
+share/metainfo/
+share/metainfo/io.codeberg.mendezr.xwpe.metainfo.xml
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

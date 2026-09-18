@@ -1,16 +1,12 @@
---- we_fl_unix.c.orig	Tue Dec  9 11:35:46 2008
-+++ we_fl_unix.c	Tue Dec  9 11:36:54 2008
-@@ -3532,7 +3532,12 @@ struct dirfile *e_make_funct(char *man)
+Index: we_fl_unix.c
+--- we_fl_unix.c.orig
++++ we_fl_unix.c
+@@ -3661,7 +3661,7 @@ struct dirfile *e_make_funct(char *man)
   }
   if ((!manpath) || (manpath[0] == '\0'))
   {
 -  manpath = strdup("/usr/man:/usr/share/man:/usr/X11R6/man:/usr/local/man");
-+  manpath = strdup(
-+#if (defined(BSD) && (BSD >= 199306)) || (defined(sun) && defined(__svr4__))
-+               "/usr/share/man:/usr/local/man");
-+#else
-+               "/usr/man:/usr/local/man");
-+#endif
++  manpath = strdup("/usr/share/man:/usr/X11R6/man:/usr/local/man");
   }
   /* Allocate the maximum possible rather than continually realloc. */
   sustr = malloc(strlen(manpath) + 10);

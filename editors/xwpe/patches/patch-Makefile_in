@@ -1,15 +1,12 @@
---- Makefile.in.orig	Mon Dec 27 00:11:38 1999
-+++ Makefile.in	Fri Oct 26 22:47:33 2007
-@@ -13,10 +13,11 @@ DESTDIR=@bindir@
- LIBDIR=@libdir@
- XWPELIBDIR=	$(LIBDIR)/xwpe
- MANDIR=@mandir@
-+INFODIR=$(prefix)/info
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -882,7 +882,7 @@ AM_CFLAGS = $(XWPE_STDFLAG) $(NCURSESW_CFLAGS) $(X_CFL
+ 	$(JSONC_CFLAGS) -DLIBRARY_DIR=\"$(pkglibdir)\" \
+ 	-DXWPE_INFODIR=\"$(infodir)\" -Wno-incompatible-pointer-types \
+ 	-Wno-implicit-function-declaration -Wno-int-conversion \
+-	-Wno-old-style-declaration $(am__append_2)
++	$(am__append_2)
  
- LIBS=@LIBS@
- XLIBS=@X_LIBS@ @X_PRE_LIBS@ @X_EXTRA_LIBS@
--DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DSELECTION
-+DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DSELECTION -DX_INC=\"@X_INC@\"
- INSTALL=	cp
- LN_S=	@LN_S@
- 
+ # Force-include config.h without modifying every .c file
+ AM_CPPFLAGS = -include config.h
