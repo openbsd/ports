@@ -1,10 +1,8 @@
 COMMENT=	safely evaluate AST nodes without side effects
 
-MODPY_DISTV=	0.2.3
-
+MODPY_DISTV=	0.2.4
 DISTNAME=	pure_eval-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -14,8 +12,7 @@ HOMEPAGE=	https://github.com/alexmojaki/executing
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
