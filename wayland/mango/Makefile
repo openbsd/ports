@@ -1,6 +1,6 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-V =			0.17.1
+V =			0.17.2
 DIST_TUPLE =		github mangowm mango ${V} .
 
 CATEGORIES =		wayland
@@ -38,6 +38,7 @@ RUN_DEPENDS =		sysutils/rofi \
 			wayland/xwayland
 
 post-install:
+	rm -r ${PREFIX}/lib/systemd
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mango/
 	${INSTALL_DATA} ${WRKSRC}/assets/config.conf \
 		${PREFIX}/share/examples/mango/

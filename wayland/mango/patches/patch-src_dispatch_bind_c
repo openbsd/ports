@@ -1,15 +1,7 @@
 Index: src/dispatch/bind.c
 --- src/dispatch/bind.c.orig
 +++ src/dispatch/bind.c
-@@ -21,7 +21,6 @@
- #include "mango/manage/monitor.h"
- #include "mango/overview/overview.h"
- #include <fcntl.h>
--#include <sys/syscall.h>
- #include <unistd.h>
- #include <wlr/backend.h>
- #include <wlr/backend/headless.h>
-@@ -34,7 +33,12 @@
+@@ -33,7 +33,12 @@
  #include <wlr/types/wlr_keyboard_group.h>
  #include <wlr/types/wlr_output.h>
  #include <wlr/types/wlr_seat.h>
@@ -20,26 +12,9 @@ Index: src/dispatch/bind.c
 +#define SPAWN_MAX_ARGS 64
 +#endif
  
- void bind_to_view(const Arg *arg) {
+ int32_t bind_to_view(const Arg *arg) {
  	if (!server.selected_monitor)
-@@ -1243,8 +1247,15 @@ void center_window(const Arg *arg) {
- }
- 
- static void close_inherited_fds(void) {
-+#ifdef SYS_close_range
- 	extern long syscall(long number, ...);
--	syscall(SYS_close_range, 3, ~0U, 0);
-+	if (syscall(SYS_close_range, 3, ~0U, 0) == 0)
-+		return;
-+#endif
-+	int fd_max = sysconf(_SC_OPEN_MAX);
-+	for (int i = 3; i < fd_max; i++) {
-+		close(i);
-+	}
- }
- 
- void spawn_shell(const Arg *arg) {
-@@ -1290,6 +1301,7 @@ void spawn(const Arg *arg) {
+@@ -1284,6 +1289,7 @@ int32_t spawn(const Arg *arg) {
  		dup2(STDERR_FILENO, STDOUT_FILENO);
  		setsid();
  
@@ -47,7 +22,7 @@ Index: src/dispatch/bind.c
  		wordexp_t p;
  		if (wordexp(arg->v, &p, 0) != 0) {
  			mango_error(true, WLR_DEBUG, "mango: wordexp failed for '%s'\n",
-@@ -1302,6 +1314,34 @@ void spawn(const Arg *arg) {
+@@ -1296,6 +1302,35 @@ int32_t spawn(const Arg *arg) {
  		mango_error(true, WLR_DEBUG, "mango: execvp '%s' failed: %s\n",
  					p.we_wordv[0], strerror(errno));
  		wordfree(&p);
@@ -68,17 +43,18 @@ Index: src/dispatch/bind.c
 +			token = strtok_r(NULL, " ", &last);
 +		}
 +		if (argc == 0) {
-+			return;
++			return 0;
 +		}
 +		argv[argc] = NULL;
 +		execvp(argv[0], argv);
 +		wlr_log(WLR_ERROR, "mango: execvp '%s' failed: %s\n",
-+						argv[0] ? argv[0] : "NULL", strerror(errno));
++		        argv[0] ? argv[0] : "NULL", strerror(errno));
 +		/* Cleanup */
 +		for (int i = 0; i < argc; i++) {
 +			free(argv[i]);
 +		}
++
 +#endif
  		_exit(EXIT_FAILURE);
  	}
- 	return;
+ 	return 0;
