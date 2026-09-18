@@ -45,8 +45,6 @@ lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/__init__.p
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}check_constraints.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}check_constraints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}constraints.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -61,7 +59,6 @@ lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/check_constraints.py
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/comments.py
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/constraints.py
 lib/python${MODPY_VERSION}/site-packages/alembic/autogenerate/compare/schema.py
@@ -105,6 +102,14 @@ lib/python${MODPY_VERSION}/site-packages/alembic/ddl/oracle.py
 lib/python${MODPY_VERSION}/site-packages/alembic/ddl/postgresql.py
 lib/python${MODPY_VERSION}/site-packages/alembic/ddl/sqlite.py
 lib/python${MODPY_VERSION}/site-packages/alembic/environment.py
+lib/python${MODPY_VERSION}/site-packages/alembic/ext/
+lib/python${MODPY_VERSION}/site-packages/alembic/ext/__init__.py
+lib/python${MODPY_VERSION}/site-packages/alembic/ext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/alembic/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/alembic/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/alembic/ext/${MODPY_PYCACHE}checkconstraint_byname.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/alembic/ext/${MODPY_PYCACHE}checkconstraint_byname.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/alembic/ext/checkconstraint_byname.py
 lib/python${MODPY_VERSION}/site-packages/alembic/migration.py
 lib/python${MODPY_VERSION}/site-packages/alembic/op.py
 lib/python${MODPY_VERSION}/site-packages/alembic/op.pyi
