@@ -274,6 +274,7 @@
      SUBDIR += p5-File-NFSLock
      SUBDIR += p5-File-Rename
      SUBDIR += p5-File-Which
+     SUBDIR += p5-File-XDG
      SUBDIR += p5-Filesys-Df
      SUBDIR += p5-Filesys-DiskSpace
      SUBDIR += p5-Filesys-Notify-Simple
