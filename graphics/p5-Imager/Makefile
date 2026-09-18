@@ -1,6 +1,6 @@
 COMMENT =	generate and manipulate images
 
-DISTNAME =	Imager-1.035
+DISTNAME =	Imager-1.036
 CPAN_AUTHOR =	TONYC
 
 CATEGORIES =	graphics
