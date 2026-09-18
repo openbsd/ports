@@ -1,0 +1,4 @@
+@comment @bin bin/conformance
+@bin bin/cosign
+@comment bin/help
+@comment bin/sample
