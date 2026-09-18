@@ -12,7 +12,7 @@ COMMENT =	virtual machine for Haxe
 V =		1.15pl0
 COMMIT =	109f831769ab26a6fa0cf08ef1b926776a77c372
 PKGNAME =	hashlink-${V}
-REVISION =	1
+REVISION =	2
 
 # commit from 2026-01-05; tagged as 'latest'
 DIST_TUPLE +=	github HaxeFoundation hashlink ${COMMIT} .
@@ -52,6 +52,7 @@ FIX_CRLF_FILES = libs/uv/uv.c \
 		src/hl.h \
 		src/jit.c \
 		src/std/socket.c \
+		src/std/sys.c \
 		src/std/thread.c
 
 NO_TEST =	Yes

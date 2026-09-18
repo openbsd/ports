@@ -1,0 +1,15 @@
+Index: src/std/sys.c
+--- src/std/sys.c.orig
++++ src/std/sys.c
+@@ -616,6 +616,11 @@ HL_PRIM vbyte *hl_sys_exe_path() {
+ 	if( _NSGetExecutablePath(path, &path_len) )
+ 		return NULL;
+ 	return (vbyte*)pstrdup(path,-1);
++#elif defined(HL_OPENBSD)
++	pchar path[PATH_MAX];
++	if (getexecpath(path, sizeof(path)) != 0)
++		return NULL;
++	return (vbyte*)pstrdup(path,-1);
+ #elif defined(HL_CONSOLE)
+ 	return sys_exe_path();
+ #else
