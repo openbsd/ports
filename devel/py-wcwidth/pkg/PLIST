@@ -150,5 +150,6 @@ lib/python${MODPY_VERSION}/site-packages/wcwidth/table_wide.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/table_zero.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/text_sizing.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/textwrap.py
+lib/python${MODPY_VERSION}/site-packages/wcwidth/textwrap.py,cover
 lib/python${MODPY_VERSION}/site-packages/wcwidth/unicode_versions.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/wcwidth.py
