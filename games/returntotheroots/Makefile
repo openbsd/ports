@@ -2,6 +2,7 @@ V =		0.9.5
 COMMENT =	open source engine remake of The Settlers 2 (s25client)
 DISTNAME =	s25client_src_v${V}
 PKGNAME =	returntotheroots-${V}
+REVISION =	0
 
 CATEGORIES =	games x11
 
@@ -47,8 +48,5 @@ CONFIGURE_ARGS =	-DRTTR_BUILD_UPDATER=OFF \
 			-DRTTR_USE_SYSTEM_LIBSAMPLERATE=ON
 
 WRKDIST =		${WRKDIR}/s25client_v${V}
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/external/libutil/libs/common/src/getExecutablePath.cpp
 
 .include <bsd.port.mk>
