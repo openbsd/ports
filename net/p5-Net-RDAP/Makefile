@@ -1,7 +1,7 @@
 COMMENT=	Perl interface to the Registration Data Access Protocol
 
 MODULES=	cpan
-DISTNAME=	Net-RDAP-0.41
+DISTNAME=	Net-RDAP-0.43
 CPAN_AUTHOR=	GBROWN
 CATEGORIES=	net
 PKG_ARCH=	*
@@ -19,6 +19,7 @@ RUN_DEPENDS=	devel/p5-DateTime-Tiny \
 		www/p5-libwww \
 		mail/p5-MIME-Types \
 		security/p5-Mozilla-CA-Fake \
+		sysutils/p5-File-XDG \
 		net/p5-Net-ASN \
 		net/p5-Net-DNS \
 		net/p5-Net-IP \
