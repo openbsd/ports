@@ -43,10 +43,8 @@ SHARED_LIBS+=		asteriskssl ${SHLIB_V}
 SHARED_LIBS+=		asteriskpj ${SHLIB_V}
 
 MULTI_PACKAGES=		-main -calendar -fax -http_post -kqueue \
-			-ldap -lua -odbc -pgsql -snmp -speex -tds
-.if ${SHORTVER} != 16 && ${SHORTVER} != 13
-MULTI_PACKAGES+=	-vm_imap -vm_odbc
-.endif
+			-ldap -lua -odbc -pgsql -snmp -speex -tds \
+			-vm_imap -vm_odbc
 
 # can't disable main/kqueue
 PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:N-kqueue:C/-/no_/g}

@@ -1,4 +1,6 @@
 @option is-branch
+@pkgpath telephony/asterisk/16,-tds
+@pkgpath telephony/asterisk/18,-tds
 @pkgpath telephony/asterisk/19,-tds
 @so lib/asterisk/modules/cdr_tds.so
 @so lib/asterisk/modules/cel_tds.so

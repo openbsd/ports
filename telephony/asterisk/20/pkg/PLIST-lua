@@ -1,4 +1,6 @@
 @option is-branch
+@pkgpath telephony/asterisk/16,-lua
+@pkgpath telephony/asterisk/18,-lua
 @pkgpath telephony/asterisk/19,-lua
 @so lib/asterisk/modules/pbx_lua.so
 share/examples/asterisk/default/extensions.lua

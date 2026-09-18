@@ -1,3 +1,5 @@
 @option is-branch
+@pkgpath telephony/asterisk/16,-kqueue
+@pkgpath telephony/asterisk/18,-kqueue
 @pkgpath telephony/asterisk/19,-kqueue
 @so lib/asterisk/modules/res_timing_kqueue.so

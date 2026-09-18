@@ -1,6 +1,0 @@
-ODBC functions for Asterisk. This includes:
-
-res_odbc: Basic ODBC functions, used by other modules
-cdr_odbc: Database-backed CDR logging
-func_odbc: Set and query variables in the dialplan
-res_config_odbc: Asterisk ODBC RealTime configuration

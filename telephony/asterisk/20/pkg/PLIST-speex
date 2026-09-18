@@ -1,4 +1,6 @@
 @option is-branch
+@pkgpath telephony/asterisk/16,-speex
+@pkgpath telephony/asterisk/18,-speex
 @pkgpath telephony/asterisk/19,-speex
 @so lib/asterisk/modules/codec_speex.so
 @so lib/asterisk/modules/format_ogg_speex.so

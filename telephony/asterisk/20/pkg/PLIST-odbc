@@ -2,6 +2,8 @@
 @conflict asterisk->=13.8.0,<16.30.1p0
 @conflict asterisk->=18,<18.20.0
 @conflict asterisk->=19,<20.5.0
+@pkgpath telephony/asterisk/16,-odbc
+@pkgpath telephony/asterisk/18,-odbc
 @pkgpath telephony/asterisk/19,-odbc
 include/asterisk/res_odbc.h
 include/asterisk/res_odbc_transaction.h

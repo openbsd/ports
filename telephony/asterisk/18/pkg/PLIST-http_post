@@ -1,3 +1,0 @@
-@option is-branch
-@pkgpath telephony/asterisk,-http_post
-@so lib/asterisk/modules/res_http_post.so

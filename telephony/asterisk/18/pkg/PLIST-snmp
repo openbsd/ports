@@ -1,4 +1,0 @@
-@option is-branch
-@pkgpath telephony/asterisk,-snmp
-@so lib/asterisk/modules/res_snmp.so
-share/examples/asterisk/default/res_snmp.conf
