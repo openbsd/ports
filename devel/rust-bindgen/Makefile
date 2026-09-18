@@ -20,10 +20,10 @@ MODCARGO_INSTALL_TARGET_PATHS =	bindgen-cli
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-TEST_DEPENDS +=	devel/llvm/19
+TEST_DEPENDS +=	devel/llvm/22
 
 # for tests
-MAKE_ENV +=	LIBCLANG_PATH=${LOCALBASE}/llvm19/lib
+MAKE_ENV +=	LIBCLANG_PATH=${LOCALBASE}/llvm22/lib
 
 post-install:
 	mv ${PREFIX}/bin/bindgen ${PREFIX}/libexec/rust-bindgen
