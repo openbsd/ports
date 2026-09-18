@@ -669,6 +669,7 @@ SHA256 (cargo/objc2-core-text-0.3.2.tar.gz) = DN4N+0jSXStIYhYaTV/MDjwkNnhprTBrDJ
 SHA256 (cargo/objc2-encode-4.1.0.tar.gz) = 7yWrvNdPsmCUU+tpW9L4YNOJ5Ff2fcF8r8i4y8idDDM=
 SHA256 (cargo/objc2-foundation-0.3.2.tar.gz) = 4+Ct71PCH4iN60+ln8WffrF0BJJu6Kb1n13w/X+fMnI=
 SHA256 (cargo/objc2-io-surface-0.3.2.tar.gz) = GAeIEQk21Zura9g7YGD/3/+zuSK6E5azEq55Xh3p2B0=
+SHA256 (cargo/objc2-local-authentication-0.3.2.tar.gz) = 5I4LizOeDZ0u1EFrf5P51Nqt/31N15f4mGfN4Rrqxgc=
 SHA256 (cargo/objc2-quartz-core-0.3.2.tar.gz) = lsE1hFKzcb+fEE4h7FNtN6ZQ6xD37jef/2fS4I1Tfx8=
 SHA256 (cargo/objc2-ui-kit-0.3.2.tar.gz) = 2H1jjjPAb1d0mMvMUEkUlqPtQkaZin+7p8y5ix5+qyI=
 SHA256 (cargo/objc2-user-notifications-0.3.2.tar.gz) = nfkSjLv+9zzaFoQWzPf4N7YnN9dIMzv+mrccJF12YT4=
@@ -820,6 +821,7 @@ SHA256 (cargo/rand_chacha-0.9.0.tar.gz) = 0wIrXx32Dybh/93Wxm6KoV3jgq5js6DBv8Dk0+
 SHA256 (cargo/rand_core-0.10.1.tar.gz) = Y7gXYQPhmiZDl4Vlyhi1BUn2EBiBxENZBCDk3JmKPGk=
 SHA256 (cargo/rand_core-0.6.4.tar.gz) = 7AvkeV4vaigGm+wLX/PirJuvyZ5qmn3DVHmWxcgWkiw=
 SHA256 (cargo/rand_core-0.9.5.tar.gz) = dq/IJt4UI45ujDdN3MH6GeN0/Y3ZhrDSrw0CN3Jh2Dw=
+SHA256 (cargo/rand_regex-0.18.1.tar.gz) = BNsuOC0TZ5oeQkAOkOMGzbt53FzUG7A1uk6ucueM3zc=
 SHA256 (cargo/rand_xorshift-0.4.0.tar.gz) = UTlikZ78Mw+CntslNYRNG5ErD74soWXWE+ToeIuwWlo=
 SHA256 (cargo/ratatui-0.30.2.tar.gz) = MnS6CixeG8rSogBdIPTcWdrSay6wlA+wlFANukCZ1X0=
 SHA256 (cargo/ratatui-core-0.1.2.tar.gz) = y7F1xDPI4oqAnR9Xc6KuluaMDOQNuGXLqxAgvzOuR5w=
@@ -1315,7 +1317,7 @@ SHA256 (cargo/zune-jpeg-0.5.12.tar.gz) = QQ6ezvY0xwnjgxws/bjZwyFk+uHGdJbVto//co7
 SHA256 (cargo/zvariant-4.2.0.tar.gz) = IIQpCrmhxHHDj8UklFg3c0+/EkSH4QXa7Cu1f9SMgf4=
 SHA256 (cargo/zvariant_derive-4.2.0.tar.gz) = c+K6VGvaaDqQZSusSiebwUatrROG8lN5z3MgDSACxEk=
 SHA256 (cargo/zvariant_utils-2.1.0.tar.gz) = xRvP98w9u1BVOWvPd0dIw9q0JrS4ZZBGljUjzuSAg0A=
-SHA256 (codex-rust-v0.154.0.tar.gz) = HEzcO4e6KQtdEQQltPb/IWY+I2WAvHYNHhSb0tn5UZ8=
+SHA256 (codex-rust-v0.155.0.tar.gz) = i7O1pWk0kpJrU8Ue4uaIIrBX1xKyyhoK5nh4VX/Wouo=
 SHA256 (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3b30DbjfaF32fDJg3+Wc9/+ksZOpMk4Qs1m76JgdueA=
 SHA256 (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 0WdqwzqCxZA//t5oznPJ2SRmaqihArtkmo+5JqemHOE=
 SHA256 (microsoft-mxc-6cd3d58f05d3447e67109cfb75e042803b843ca4.tar.gz) = fNUbeETOP2JEnGCm1gKZaZL2RKsB1JbhfqWz/SoY/Dg=
@@ -1993,6 +1995,7 @@ SIZE (cargo/objc2-core-text-0.3.2.tar.gz) = 96485
 SIZE (cargo/objc2-encode-4.1.0.tar.gz) = 21004
 SIZE (cargo/objc2-foundation-0.3.2.tar.gz) = 345384
 SIZE (cargo/objc2-io-surface-0.3.2.tar.gz) = 11722
+SIZE (cargo/objc2-local-authentication-0.3.2.tar.gz) = 19753
 SIZE (cargo/objc2-quartz-core-0.3.2.tar.gz) = 30036
 SIZE (cargo/objc2-ui-kit-0.3.2.tar.gz) = 551453
 SIZE (cargo/objc2-user-notifications-0.3.2.tar.gz) = 12257
@@ -2144,6 +2147,7 @@ SIZE (cargo/rand_chacha-0.9.0.tar.gz) = 18258
 SIZE (cargo/rand_core-0.10.1.tar.gz) = 22833
 SIZE (cargo/rand_core-0.6.4.tar.gz) = 22666
 SIZE (cargo/rand_core-0.9.5.tar.gz) = 24129
+SIZE (cargo/rand_regex-0.18.1.tar.gz) = 20166
 SIZE (cargo/rand_xorshift-0.4.0.tar.gz) = 10262
 SIZE (cargo/ratatui-0.30.2.tar.gz) = 72412
 SIZE (cargo/ratatui-core-0.1.2.tar.gz) = 191181
@@ -2639,7 +2643,7 @@ SIZE (cargo/zune-jpeg-0.5.12.tar.gz) = 86116
 SIZE (cargo/zvariant-4.2.0.tar.gz) = 82180
 SIZE (cargo/zvariant_derive-4.2.0.tar.gz) = 11057
 SIZE (cargo/zvariant_utils-2.1.0.tar.gz) = 7043
-SIZE (codex-rust-v0.154.0.tar.gz) = 13861439
+SIZE (codex-rust-v0.155.0.tar.gz) = 14486537
 SIZE (dzbarsky-rules_rust-b56cbaa8465e74127f1ea216f813cd377295ad81.tar.gz) = 3951333
 SIZE (helix-editor-nucleo-4253de9faabb4e5c6d81d946a5e35a90f87347ee.tar.gz) = 86782
 SIZE (microsoft-mxc-6cd3d58f05d3447e67109cfb75e042803b843ca4.tar.gz) = 5985947
