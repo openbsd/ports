@@ -1,4 +1,7 @@
 ONLY_FOR_ARCHS=	amd64
+DPB_PROPERTIES=	parallel
+
+COMMENT=	SeaBIOS and EDK II binary images for vmd(8)
 
 FW_DRIVER=	vmm
 FW_VER=		1.16.3
@@ -14,7 +17,7 @@ DIST_TUPLE=	github qemu sgabios 72f39d48bedf044e202fd51fecf3e2218fc2ae66 sgabios
 		github openssl openssl aea7aaf2abb04789f5868cbabec406ea43aa84bf edk2/CryptoPkg/Library/OpensslLib/openssl \
 		github ARMmbed mbedtls 0bebf8b8c7f07abe3571ded48a11aa907a1ffb20 edk2/CryptoPkg/Library/MbedTlsLib/mbedtls \
 		github DMTF libspdm 1be116c7b7713fa9003e1bd53b53a34758549eb9 edk2/SecurityPkg/DeviceSecurity/SpdmLib/libspdm
-REVISION=	11
+REVISION=	12
 
 HOMEPAGE=	https://www.seabios.org/
 
@@ -43,7 +46,7 @@ EDK2_BASETOOLS=	${EDK2_WRKSRC}/BaseTools
 EDK2_PATH_A=	${EDK2_BASETOOLS}/BinWrappers/PosixLike
 EDK2_PATH_B=	${EDK2_BASETOOLS}/Source/C/bin:${EDK2_TOOLBIN}
 EDK2_PATH_C=	${LOCALBASE}/bin
-EDK2_BUILD_PATH=	${EDK2_PATH_A}:${EDK2_PATH_B}:${EDK2_PATH_C}:/usr/bin:/bin
+EDK2_BUILD_PATH= ${WRKDIR}/bin:${EDK2_PATH_A}:${EDK2_PATH_B}:${EDK2_PATH_C}:/usr/bin:/bin
 EDK2_BUILD_ENV=	WORKSPACE=${EDK2_WRKSRC} \
 		EDK_TOOLS_PATH=${EDK2_WRKSRC}/BaseTools \
 		BASE_TOOLS_PATH=${EDK2_WRKSRC}/BaseTools \
@@ -93,10 +96,14 @@ post-patch:
 	ln -s ${LOCALBASE}/bin/gmake ${EDK2_TOOLBIN}/make
 	ln -s ${LOCALBASE}/bin/nasm ${EDK2_TOOLBIN}/nasm
 
+	# pre-create, otherwise this happens too late for parallel builds
+	cd ${WRKSRC}; mkdir -p out/src out/src/hw out/src/fw out/vgasrc
+
 post-build:
+	@echo '== Building EDK II'
 	cd ${EDK2_WRKSRC} && env ${EDK2_BUILD_ENV} \
-	    CC=${CC} CXX=${CXX} ${MAKE_PROGRAM} -C BaseTools \
-	    -j${MAKE_JOBS}
+	    ${MAKE_PROGRAM} -C BaseTools -j${MAKE_JOBS} \
+	    CC=${CC} CXX=${CXX}
 	cd ${EDK2_WRKSRC} && env ${EDK2_BUILD_ENV} \
 	    ${LOCALBASE}/bin/bash -c \
 	    '. ./edksetup.sh BaseTools && build -n ${MAKE_JOBS} -a X64 \
@@ -130,6 +137,7 @@ post-build:
 	cat ${EDK2_WRKSRC}/SecurityPkg/DeviceSecurity/SpdmLib/libspdm/LICENSE.md \
 	    >> ${WRKDIR}/vmm-uefi-license
 
+	@echo '== Building SGABIOS'
 	cd ${WRKSRC}/sgabios; env ${MAKE_ENV} ${MAKE_PROGRAM} \
 	    BUILD_USER='\"_<vmm\"' BUILD_HOST='\"OpenBSD>\"' \
 	    CC="x86_64-none-elf-gcc -Wa,--divide" LD=x86_64-none-elf-ld \
