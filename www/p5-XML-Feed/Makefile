@@ -1,6 +1,7 @@
 COMMENT = 	interface to RSS and Atom feeds
 
-DISTNAME =	XML-Feed-0.65
+DISTNAME =	XML-Feed-1.0.1
+CPAN_AUTHOR =	DAVECROSS
 
 CATEGORIES =	www textproc
 
