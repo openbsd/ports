@@ -1,11 +1,9 @@
 COMMENT=	packet capture library
 
-DISTNAME=	libpcap-1.10.7
-REVISION=	0
-
+DISTNAME=	libpcap-1.11.0
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	pcap 0.0
+SHARED_LIBS=	pcap 1.0
 
 CATEGORIES=	net
 
