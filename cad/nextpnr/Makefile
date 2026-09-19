@@ -1,10 +1,11 @@
 COMMENT=	portable FPGA place and route tool
 CATEGORIES=	cad
+V=		0.11.1
+DISTNAME=	nextpnr-${V}
 
 GH_ACCOUNT=	YosysHQ
 GH_PROJECT=	nextpnr
-GH_COMMIT=	da46844ca67f0c5eca59351164a507fce504eaa2
-DISTNAME=	nextpnr-0.10pl20260722
+GH_TAGNAME=	nextpnr-${V}
 
 HOMEPAGE=	https://github.com/YosysHQ/nextpnr
 MAINTAINER=	Thomas Dettbarn <dettus@dettus.net>
