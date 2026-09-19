@@ -27,8 +27,15 @@ RUN_DEPENDS +=		security/pinentry,-gnome3,
 
 CONFIGURE_ARGS=		-Dselinux=disabled \
 			-Dsystemd=disabled \
-			-Dpam=false \
 			-Dlibcap-ng=disabled
+
+# pam_keyring is used to automatically unlock the "login" keyring if the user
+# password and the keyring passwords are the same; PAM stashes and passes the
+# password (pam_bsdauth does _not_ stash it, so some work would be needed);
+# while "convenient", we don't want to play this game, meaning a user may need
+# to enter 3 passwords at login:
+# login -> "Defaut" keyring (secret storage) -> "Default" keyring (SSH agent)
+CONFIGURE_ARGS +=	-Dpam=false
 
 # XXX x11/gnome/gcr4 should be used to provide the ssh-agent functionality;
 # however it requires systemctl to export SSH_AUTH_SOCK and activate
