@@ -2,11 +2,10 @@ PORTROACH=		limit:^1
 
 COMMENT=		framework for defining and tracking users, sessions & seats
 
-GH_TAGNAME=		1.2.6
+GH_TAGNAME=		1.2.7
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 PKGNAME=		${DISTNAME:L}
-REVISION=		9
 
 CATEGORIES=		sysutils	
 
