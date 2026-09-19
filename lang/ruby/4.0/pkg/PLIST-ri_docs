@@ -1727,6 +1727,7 @@ share/ri/${REV}/system/Gem/BasicSpecification/gems_dir-i.ri
 share/ri/${REV}/system/Gem/BasicSpecification/have_extensions%3f-i.ri
 share/ri/${REV}/system/Gem/BasicSpecification/have_file%3f-i.ri
 share/ri/${REV}/system/Gem/BasicSpecification/ignored%3f-i.ri
+share/ri/${REV}/system/Gem/BasicSpecification/lib_dirs-i.ri
 share/ri/${REV}/system/Gem/BasicSpecification/lib_dirs_glob-i.ri
 share/ri/${REV}/system/Gem/BasicSpecification/loaded_from-i.ri
 share/ri/${REV}/system/Gem/BasicSpecification/matches_for_glob-i.ri
@@ -2247,6 +2248,7 @@ share/ri/${REV}/system/Gem/Ext/Builder/ruby-c.ri
 share/ri/${REV}/system/Gem/Ext/Builder/run-c.ri
 share/ri/${REV}/system/Gem/Ext/Builder/shelljoin-c.ri
 share/ri/${REV}/system/Gem/Ext/Builder/shellsplit-c.ri
+share/ri/${REV}/system/Gem/Ext/Builder/shellsplit_command-c.ri
 share/ri/${REV}/system/Gem/Ext/CargoBuilder/
 share/ri/${REV}/system/Gem/Ext/CargoBuilder/DylibNotFoundError/
 share/ri/${REV}/system/Gem/Ext/CargoBuilder/DylibNotFoundError/cdesc-DylibNotFoundError.ri
@@ -3212,6 +3214,8 @@ share/ri/${REV}/system/Gem/SafeMarshal/Reader/EOFError/
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/EOFError/cdesc-EOFError.ri
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/Error/
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/Error/cdesc-Error.ri
+share/ri/${REV}/system/Gem/SafeMarshal/Reader/LengthTooLongError/
+share/ri/${REV}/system/Gem/SafeMarshal/Reader/LengthTooLongError/cdesc-LengthTooLongError.ri
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/NegativeLengthError/
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/NegativeLengthError/cdesc-NegativeLengthError.ri
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/NotImplementedError/
@@ -3229,6 +3233,7 @@ share/ri/${REV}/system/Gem/SafeMarshal/Reader/read_byte-i.ri
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/read_bytes-i.ri
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/read_class-i.ri
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/read_class_or_module-i.ri
+share/ri/${REV}/system/Gem/SafeMarshal/Reader/read_count-i.ri
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/read_data-i.ri
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/read_element-i.ri
 share/ri/${REV}/system/Gem/SafeMarshal/Reader/read_extended_object-i.ri
