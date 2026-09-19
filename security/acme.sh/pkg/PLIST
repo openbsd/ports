@@ -21,6 +21,8 @@ share/acme.sh/deploy/fritzbox.sh
 share/acme.sh/deploy/gcore_cdn.sh
 share/acme.sh/deploy/gitlab.sh
 share/acme.sh/deploy/haproxy.sh
+share/acme.sh/deploy/ikuai.sh
+share/acme.sh/deploy/jetkvm.sh
 share/acme.sh/deploy/kemplm.sh
 share/acme.sh/deploy/keychain.sh
 share/acme.sh/deploy/keyhelp.sh
@@ -46,12 +48,15 @@ share/acme.sh/deploy/pureftpd.sh
 share/acme.sh/deploy/qiniu.sh
 share/acme.sh/deploy/routeros.sh
 share/acme.sh/deploy/ruckus.sh
+share/acme.sh/deploy/shelly.sh
 share/acme.sh/deploy/ssh.sh
 share/acme.sh/deploy/strongswan.sh
 share/acme.sh/deploy/synology_dsm.sh
 share/acme.sh/deploy/truenas.sh
+share/acme.sh/deploy/truenas_websocat.sh
 share/acme.sh/deploy/truenas_ws.sh
 share/acme.sh/deploy/unifi.sh
+share/acme.sh/deploy/unifios.sh
 share/acme.sh/deploy/vault.sh
 share/acme.sh/deploy/vault_cli.sh
 share/acme.sh/deploy/vsftpd.sh
@@ -103,6 +108,7 @@ share/acme.sh/dnsapi/dns_dgon.sh
 share/acme.sh/dnsapi/dns_dnsexit.sh
 share/acme.sh/dnsapi/dns_dnshome.sh
 share/acme.sh/dnsapi/dns_dnsimple.sh
+share/acme.sh/dnsapi/dns_dnsmint.sh
 share/acme.sh/dnsapi/dns_dnsservices.sh
 share/acme.sh/dnsapi/dns_doapi.sh
 share/acme.sh/dnsapi/dns_domeneshop.sh
@@ -135,12 +141,14 @@ share/acme.sh/dnsapi/dns_gname.sh
 share/acme.sh/dnsapi/dns_googledomains.sh
 share/acme.sh/dnsapi/dns_he.sh
 share/acme.sh/dnsapi/dns_he_ddns.sh
+share/acme.sh/dnsapi/dns_hestiacp.sh
 share/acme.sh/dnsapi/dns_hetznercloud.sh
 share/acme.sh/dnsapi/dns_hexonet.sh
 share/acme.sh/dnsapi/dns_hostingde.sh
 share/acme.sh/dnsapi/dns_hostinger.sh
 share/acme.sh/dnsapi/dns_hostup.sh
 share/acme.sh/dnsapi/dns_huaweicloud.sh
+share/acme.sh/dnsapi/dns_hw.sh
 share/acme.sh/dnsapi/dns_infoblox.sh
 share/acme.sh/dnsapi/dns_infoblox_uddi.sh
 share/acme.sh/dnsapi/dns_infomaniak.sh
@@ -163,7 +171,6 @@ share/acme.sh/dnsapi/dns_leaseweb.sh
 share/acme.sh/dnsapi/dns_level27.sh
 share/acme.sh/dnsapi/dns_lexicon.sh
 share/acme.sh/dnsapi/dns_limacity.sh
-share/acme.sh/dnsapi/dns_linode.sh
 share/acme.sh/dnsapi/dns_linode_v4.sh
 share/acme.sh/dnsapi/dns_loopia.sh
 share/acme.sh/dnsapi/dns_lua.sh
@@ -177,6 +184,7 @@ share/acme.sh/dnsapi/dns_muumuu.sh
 share/acme.sh/dnsapi/dns_myapi.sh
 share/acme.sh/dnsapi/dns_mydevil.sh
 share/acme.sh/dnsapi/dns_mydnsjp.sh
+share/acme.sh/dnsapi/dns_myloc.sh
 share/acme.sh/dnsapi/dns_mythic_beasts.sh
 share/acme.sh/dnsapi/dns_namecheap.sh
 share/acme.sh/dnsapi/dns_namecom.sh
@@ -186,6 +194,7 @@ share/acme.sh/dnsapi/dns_nederhost.sh
 share/acme.sh/dnsapi/dns_neodigit.sh
 share/acme.sh/dnsapi/dns_netcup.sh
 share/acme.sh/dnsapi/dns_netlify.sh
+share/acme.sh/dnsapi/dns_nexdns.sh
 share/acme.sh/dnsapi/dns_nic.sh
 share/acme.sh/dnsapi/dns_njalla.sh
 share/acme.sh/dnsapi/dns_nm.sh
@@ -201,6 +210,8 @@ share/acme.sh/dnsapi/dns_openprovider.sh
 share/acme.sh/dnsapi/dns_openprovider_rest.sh
 share/acme.sh/dnsapi/dns_openstack.sh
 share/acme.sh/dnsapi/dns_opnsense.sh
+share/acme.sh/dnsapi/dns_opteamax.sh
+share/acme.sh/dnsapi/dns_optidata.sh
 share/acme.sh/dnsapi/dns_opusdns.sh
 share/acme.sh/dnsapi/dns_ovh.sh
 share/acme.sh/dnsapi/dns_pdns.sh
@@ -214,6 +225,7 @@ share/acme.sh/dnsapi/dns_rackspace.sh
 share/acme.sh/dnsapi/dns_rage4.sh
 share/acme.sh/dnsapi/dns_rcode0.sh
 share/acme.sh/dnsapi/dns_regru.sh
+share/acme.sh/dnsapi/dns_rltx.sh
 share/acme.sh/dnsapi/dns_scaleway.sh
 share/acme.sh/dnsapi/dns_schlundtech.sh
 share/acme.sh/dnsapi/dns_selectel.sh
