@@ -1,7 +1,6 @@
 COMMENT =		Dynamic DNS client for Yandex Cloud
-DIST_TUPLE =		codeberg	kn	yc-dyndns	0.3.1	.
+DIST_TUPLE =		codeberg	kn	yc-dyndns	0.4	.
 CATEGORIES =		net
-REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@opensd.org>
 
