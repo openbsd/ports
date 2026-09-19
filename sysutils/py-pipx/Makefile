@@ -1,7 +1,6 @@
 COMMENT=	install and run Python applications in isolated environments
 
-MODPY_DISTV=	1.17.3
-REVISION=	0
+MODPY_DISTV=	1.17.4
 DISTNAME=	pipx-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
