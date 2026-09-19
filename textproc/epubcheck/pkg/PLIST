@@ -25,9 +25,9 @@ share/epubcheck/lib/imageio-jpeg-3.9.4.jar
 share/epubcheck/lib/imageio-metadata-3.9.4.jar
 share/epubcheck/lib/isorelax-20030108.jar
 share/epubcheck/lib/j2objc-annotations-3.0.0.jar
-share/epubcheck/lib/jackson-annotations-2.18.2.jar
-share/epubcheck/lib/jackson-core-2.18.2.jar
-share/epubcheck/lib/jackson-databind-2.18.2.jar
+share/epubcheck/lib/jackson-annotations-2.18.9.jar
+share/epubcheck/lib/jackson-core-2.18.8.jar
+share/epubcheck/lib/jackson-databind-2.18.9.jar
 share/epubcheck/lib/jing-20181222.jar
 share/epubcheck/lib/json-path-2.8.0.jar
 share/epubcheck/lib/json-path-assert-2.8.0.jar
