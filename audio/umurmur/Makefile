@@ -2,7 +2,7 @@ COMMENT =		minimalistic Mumble server
 
 GH_ACCOUNT =		umurmur
 GH_PROJECT =		umurmur
-GH_TAGNAME =		v0.5.0
+GH_TAGNAME =		v0.5.1
 
 CATEGORIES =		audio
 
