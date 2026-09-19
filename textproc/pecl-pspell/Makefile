@@ -1,7 +1,7 @@
 COMMENT=	spelling checker extension for PHP
 
 DISTNAME=	pspell-1.0.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

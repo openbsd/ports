@@ -1,6 +1,7 @@
 COMMENT=	in-memory key-value store for PHP
 
 DISTNAME=	apcu-5.1.28
+REVISION=	0
 
 # PHP
 PERMIT_PACKAGE=	Yes

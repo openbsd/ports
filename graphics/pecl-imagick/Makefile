@@ -2,6 +2,7 @@ COMMENT=	PHP support for the ImageMagick library
 
 DISTNAME=	imagick-3.8.1
 CATEGORIES=	graphics
+REVISION=	0
 
 # PHP
 PERMIT_PACKAGE=	Yes
