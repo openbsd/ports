@@ -1,5 +1,5 @@
 COMMENT =	module audio player
-DISTNAME =	mikmod-3.2.9
+DISTNAME =	mikmod-3.2.10
 
 CATEGORIES =	audio
 

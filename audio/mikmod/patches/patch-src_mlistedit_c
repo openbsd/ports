@@ -1,7 +1,7 @@
 Index: src/mlistedit.c
 --- src/mlistedit.c.orig
 +++ src/mlistedit.c
-@@ -944,7 +944,7 @@ void freq_open (const char *title, const char *path, i
+@@ -946,7 +946,7 @@ void freq_open (const char *title, const char *path, i
  static BOOL cb_list_scan_dir (char *path, int added, int removed, void *data)
  {
  	BOOL quiet = (BOOL)(SINTPTR_T)data;
