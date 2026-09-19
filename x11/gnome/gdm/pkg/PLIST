@@ -23,7 +23,7 @@ lib/pkgconfig/gdm.pc
 @bin sbin/gdm
 share/dconf/
 share/dconf/profile/
-share/dconf/profile/gdm
+share/dconf/profile/_gdm
 share/examples/gdm/
 share/examples/gdm/etc/
 share/examples/gdm/etc/dbus-1/

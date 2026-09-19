@@ -6,7 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		48.0
-REVISION=		12
+REVISION=		13
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
@@ -119,5 +119,7 @@ post-install:
 	${SUBST_CMD} -m 0555 -c -o ${BINOWN} -g ${BINGRP} \
 		${FILESDIR}/Xsession \
 		${PREFIX}/share/examples/gdm/etc/gdm/Xsession
+# the dconf profile should match the user name
+	mv ${PREFIX}/share/dconf/profile/{,_}gdm
 
 .include <bsd.port.mk>
