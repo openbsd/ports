@@ -17,6 +17,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pthread util vterm z
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
+BUILD_DEPENDS=	x11/gnome/librsvg
 LIB_DEPENDS=	devel/json-c \
 		devel/libvterm \
 		devel/pango \
