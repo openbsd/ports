@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1651 2026/05/18 23:38:23 kirill Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1652 2026/09/19 23:17:29 bentley Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -452,7 +452,8 @@ CCACHE_DIR ?= ${WRKOBJDIR_${PKGPATH}}/.ccache
 MAKE_ENV += CCACHE_DIR=${CCACHE_DIR} ${CCACHE_ENV}
 CONFIGURE_ENV += CCACHE_DIR=${CCACHE_DIR}
 # scons cleans the environment when calling the compiler
-COMPILER_WRAPPER += env CCACHE_DIR=${CCACHE_DIR} ${CCACHE_ENV} ccache
+COMPILER_WRAPPER += env CCACHE_DIR=${CCACHE_DIR} ${CCACHE_ENV} \
+	${LOCALBASE}/bin/ccache
 .  if !exists(${LOCALBASE}/bin/ccache)
 ERRORS += "Fatal: USE_CCACHE is set, but ccache is not installed."
 .  endif
@@ -2783,6 +2784,14 @@ ${_WRKDIR_COOKIE}:
 	@${_PBUILD} mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_wrap_install_commands}
 # poison some common binaries unless the relevant BUILD_DEPENDS is used
+	@printf '#!/bin/sh\n\
+		echo "*** $$0 was called directly ***" >&2\n\
+		exit 1\n' ${_PREDIR} ${WRKDIR}/bin/ccache
+	@${_PBUILD} chmod 555 ${WRKDIR}/bin/ccache
+	@printf '#!/bin/sh\n\
+		echo "*** $$0 was called directly ***" >&2\n\
+		exit 1\n' ${_PREDIR} ${WRKDIR}/bin/sccache
+	@${_PBUILD} chmod 555 ${WRKDIR}/bin/sccache
 .if empty(_BUILD_DEP:Mdevel/gettext,-tools) && \
 		empty(_BUILD_DEP:Mtextproc/intltool)
 	@printf '#!/bin/sh\n\
