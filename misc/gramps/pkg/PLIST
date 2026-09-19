@@ -4021,6 +4021,9 @@ share/icons/hicolor/scalable/mimetypes/application-x-gramps-package.svg
 share/icons/hicolor/scalable/mimetypes/application-x-gramps-xml.svg
 share/icons/hicolor/scalable/mimetypes/application-x-gramps.svg
 share/locale/ar/LC_MESSAGES/gramps.mo
+share/locale/ba/
+share/locale/ba/LC_MESSAGES/
+share/locale/ba/LC_MESSAGES/gramps.mo
 share/locale/bg/LC_MESSAGES/gramps.mo
 share/locale/ca/LC_MESSAGES/gramps.mo
 share/locale/cs/LC_MESSAGES/gramps.mo
