@@ -1,6 +1,7 @@
 COMMENT =		Dynamic DNS client for Yandex Cloud
 DIST_TUPLE =		codeberg	kn	yc-dyndns	0.3.1	.
 CATEGORIES =		net
+REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@opensd.org>
 
@@ -19,7 +20,9 @@ NO_BUILD =		Yes
 WRKDIST =		${WRKDIR}/${PKGSTEM}
 
 PROG =			yc-dyndns
-SUBST_VARS =		MODPY_SITEPKG
+USER =			_dyndns
+SUBST_VARS =		MODPY_SITEPKG \
+			USER
 
 do-install:
 	${SUBST_PROGRAM}  ${WRKSRC}/${PROG}   ${PREFIX}/bin/${PROG}

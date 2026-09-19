@@ -1,0 +1,4 @@
+${PKGSTEM} requires no special privileges and writes no files
+and may thus be run as unprivileged user, e.g. via crontab(5):
+
+	# useradd -g =uid -s /sbin/nologin -d /nonexistent ${USER}
