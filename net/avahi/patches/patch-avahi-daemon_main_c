@@ -1,3 +1,7 @@
+OpenBSD has no NSS, so the nss-mdns lookup can never succeed and the
+startup warning is just noise. Keep nss_support (still reported over D-Bus
+by dbus-protocol.c) at its default of 0.
+
 Index: avahi-daemon/main.c
 --- avahi-daemon/main.c.orig
 +++ avahi-daemon/main.c

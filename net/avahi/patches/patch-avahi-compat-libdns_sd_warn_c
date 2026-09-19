@@ -1,19 +1,20 @@
-Stop polluting syslog(3).
+Stop polluting syslog(3): a library must not openlog(3)/closelog(3) behind
+the application's back (it clobbers the caller's own ident and facility),
+and the compat-layer nag is of no use to the end user. Keep the stderr
+output; AVAHI_COMPAT_NOWARN still silences it entirely.
+Shared with avahi-compat-howl/warn.c which #includes this file.
 
 Index: avahi-compat-libdns_sd/warn.c
 --- avahi-compat-libdns_sd/warn.c.orig
 +++ avahi-compat-libdns_sd/warn.c
-@@ -110,11 +110,13 @@ void avahi_warn_linkage(void) {
-     linkage_warning = 1;
-     pthread_mutex_unlock(&linkage_mutex);
+@@ -96,10 +96,6 @@ void avahi_warn(const char *fmt, ...) {
+     va_end(ap);
  
-+#if 0
-     if (!w && !getenv("AVAHI_COMPAT_NOWARN")) {
-         avahi_warn("The program '%s' uses the "COMPAT_LAYER" compatibility layer of Avahi.", avahi_exe_name());
-         avahi_warn("Please fix your application to use the native API of Avahi!");
-         avahi_warn("For more information see <http://0pointer.de/blog/projects/avahi-compat.html>");
-     }
-+#endif
+     fprintf(stderr, "%s\n", msg);
+-
+-    openlog(avahi_exe_name(), LOG_PID, LOG_USER);
+-    syslog(LOG_WARNING, "%s", msg);
+-    closelog();
  }
  
- void avahi_warn_unsupported(const char *function) {
+ void avahi_warn_linkage(void) {

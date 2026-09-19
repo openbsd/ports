@@ -16,6 +16,8 @@ PKGNAME-gui=		avahi-gui-${_GH_TAG_DIST:S/-//}
 PKGNAME-libs=		avahi-libs-${_GH_TAG_DIST:S/-//}
 PKGNAME-python=		py3-avahi-${_GH_TAG_DIST:S/-//}
 
+REVISION=		0
+
 CATEGORIES=		net devel
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -30,7 +32,7 @@ SHARED_LIBS +=  howl                 0.3      # 0.0
 SHARED_LIBS +=  avahi-ui-gtk3        0.3      # 1.4
 SHARED_LIBS +=  avahi-libevent       0.1      # 1.0
 
-HOMEPAGE=		http://www.avahi.org/
+HOMEPAGE=		https://avahi.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
@@ -41,9 +43,9 @@ FLAVOR?=		no_gui bootstrap
 MULTI_PACKAGES= 	-main -glib -gui -gtk3 -libs -python
 DEBUG_PACKAGES=		-main -glib -gui -gtk3 -libs
 
-MODULES=		textproc/intltool
-
+# autopoint
 BUILD_DEPENDS=		converters/xmltoman \
+			devel/gettext,-tools \
 			devel/gobject-introspection
 
 WANTLIB-main += avahi-client avahi-common c dbus-1 gdbm iconv
@@ -133,8 +135,7 @@ RUN_DEPENDS-python=	${BUILD_PKGPATH},-libs \
 WANTLIB-python +=	#empty
 
 .else
-CONFIGURE_ARGS+=	--disable-gtk \
-			--disable-gtk3 \
+CONFIGURE_ARGS+=	--disable-gtk3 \
 			--disable-python \
 			--disable-pygobject \
 			--disable-python-dbus
@@ -147,13 +148,11 @@ MODPY_RUNDEP=		No
 CFLAGS+=		-D_BSD_SOURCE
 
 CONFIGURE_STYLE=	autoreconf
-AUTORECONF=		/bin/sh ./autogen.sh
 AUTOCONF_VERSION=	2.72
 AUTOMAKE_VERSION=	1.18
 
-# ld: error: undefined symbol: libintl_dgettext
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -lintl -L${X11BASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 CONFIGURE_ARGS+=	--with-dbus-sys="${SYSCONFDIR}/dbus-1/system.d" \
 			--with-avahi-user=_avahi \
@@ -176,8 +175,8 @@ CONFIGURE_ARGS+=	--with-dbus-sys="${SYSCONFDIR}/dbus-1/system.d" \
 			--disable-doxygen-xml \
 			--disable-doxygen-html
 
-# don't link with libssp from the gcc4 port
-# __guard and __stack_smash_handler are part of libc
+# don't link with libssp on gcc archs (configure already skips this with
+# clang); __guard and __stack_smash_handler are part of libc
 CONFIGURE_ARGS +=	--disable-stack-protector
 
 FAKE_FLAGS=		SYSCONFDIR=${SYSCONFDIR}
