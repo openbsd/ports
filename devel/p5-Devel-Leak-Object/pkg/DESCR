@@ -5,7 +5,7 @@ Object tracking can be enabled on a per object basis. Any objects
 thus tracked are remembered until DESTROYed; details of any objects
 left are printed out to STDERR at END-time.
 
-Of particular interest is 
+Of particular interest is
 
 use Devel::Leak::Object qw{ GLOBAL_bless };
 
