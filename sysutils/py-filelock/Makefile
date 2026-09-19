@@ -1,6 +1,6 @@
 COMMENT=	platform independent file lock
 
-MODPY_DISTV=	3.32.6
+MODPY_DISTV=	3.32.7
 DISTNAME=	filelock-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
