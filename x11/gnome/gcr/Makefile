@@ -32,7 +32,7 @@ RUN_DEPENDS=		security/gnupg
 
 CONFIGURE_ARGS=		-Dsystemd=disabled
 
-# XXX conflict with x11/gnome/gcr4
+# see x11/gnome/keyring
 CONFIGURE_ARGS +=	-Dssh_agent=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
