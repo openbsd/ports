@@ -1,6 +1,7 @@
 COMMENT=	install and run Python applications in isolated environments
 
 MODPY_DISTV=	1.17.3
+REVISION=	0
 DISTNAME=	pipx-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
@@ -23,6 +24,7 @@ BUILD_DEPENDS=	textproc/py-docutils
 NO_TEST=	Yes
 
 RUN_DEPENDS=	devel/py-argcomplete \
+		sysutils/py-filelock \
 		sysutils/py-packaging \
 		sysutils/py-platformdirs \
 		sysutils/py-userpath
