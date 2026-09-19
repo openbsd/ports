@@ -1,10 +1,9 @@
 BROKEN-sparc64 = error libdispatch requires C11 with stdatomic.h
 
-COMMENT =	Grand Central Dispatch
+COMMENT =	support for concurrent code execution on multicore hardware
 
 PKGNAME =	libdispatch-$V
-V =		6.0.3
-REVISION =	1
+V =		6.4.0
 
 GH_ACCOUNT =	apple
 GH_PROJECT =	swift-corelibs-libdispatch
@@ -21,13 +20,8 @@ PERMIT_PACKAGE = Yes
 # C++11 (gnu++11)
 WANTLIB += ${COMPILER_LIBCXX} m
 
+COMPILER =	ports-clang base-gcc
+
 MODULES =	devel/cmake
-
-# evertyhing except tests
-ALL_TARGET =	BlocksRuntime dispatch
-
-# build whatever is left (ca. 35 C++ test files)
-pre-test:
-	@${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>

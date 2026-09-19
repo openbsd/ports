@@ -5,9 +5,9 @@ Index: cmake/modules/DispatchCompilerWarnings.cmake
 +++ cmake/modules/DispatchCompilerWarnings.cmake
 @@ -6,7 +6,6 @@ elseif(WIN32)
    # so that we can use __popcnt64
-   add_compile_options($<$<OR:$<COMPILE_LANGUAGE:C>,$<COMPILE_LANGUAGE:CXX>>:-fms-extensions>)
+   add_compile_options($<$<COMPILE_LANGUAGE:C,CXX>:-fms-extensions>)
  else()
--  add_compile_options($<$<OR:$<COMPILE_LANGUAGE:C>,$<COMPILE_LANGUAGE:CXX>>:-Werror>)
-   add_compile_options($<$<OR:$<COMPILE_LANGUAGE:C>,$<COMPILE_LANGUAGE:CXX>>:-Wall>)
-   add_compile_options($<$<OR:$<COMPILE_LANGUAGE:C>,$<COMPILE_LANGUAGE:CXX>>:-Wextra>)
+-  add_compile_options($<$<COMPILE_LANGUAGE:C,CXX>:-Werror>)
+   add_compile_options($<$<COMPILE_LANGUAGE:C,CXX>:-Wall>)
+   add_compile_options($<$<COMPILE_LANGUAGE:C,CXX>:-Wextra>)
  
