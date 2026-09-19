@@ -1,7 +1,7 @@
 COMMENT =	SVG vector drawing application
 
 VERSION =	1.4.4
-REVISION =	0
+REVISION =	1
 DISTNAME =	inkscape-${VERSION}
 
 CATEGORIES =	graphics
