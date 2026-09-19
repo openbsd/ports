@@ -134,7 +134,11 @@ share/locale/cs/LC_MESSAGES/bash.mo
 share/locale/da/LC_MESSAGES/bash.mo
 share/locale/de/LC_MESSAGES/bash.mo
 share/locale/el/LC_MESSAGES/bash.mo
+share/locale/en@boldquot/
+share/locale/en@boldquot/LC_MESSAGES/
 share/locale/en@boldquot/LC_MESSAGES/bash.mo
+share/locale/en@quot/
+share/locale/en@quot/LC_MESSAGES/
 share/locale/en@quot/LC_MESSAGES/bash.mo
 share/locale/eo/LC_MESSAGES/bash.mo
 share/locale/es/LC_MESSAGES/bash.mo

@@ -14,6 +14,11 @@ SHA256 (bash/bash53-012) = 1xN5s5vrrtrxI0FEFOd/tFigpDua0xFllMbffKZ1RXM=
 SHA256 (bash/bash53-013) = BC+c2pZ+JL9CEZRGl0Qek9Bv9CtLmYYpqYobJJJ58gA=
 SHA256 (bash/bash53-014) = vUNgtAHThQfjWHg9ythTapnGeJ8NOlvQz7jEo0FEaWw=
 SHA256 (bash/bash53-015) = Vbec7uL8J/Z2fu1pfpOafrL+KijAFVa9dfGNWBAU9G4=
+SHA256 (bash/bash53-016) = nqKbJmt9JMs00P8/HEYx5NUnv+LR7xXRfNuSS/Me92c=
+SHA256 (bash/bash53-017) = RDuSe0XBVYynIFJBD4uPblFSthftcHBhongdQ3Ww0cM=
+SHA256 (bash/bash53-018) = rnFddsUDQdfXCV6ajS7u0cqVRhUsKscokgb5DPMKxpc=
+SHA256 (bash/bash53-019) = olxYHk0AV96jgzkYQ4qTDi6G7kxtwX/hUme38Ey8Tj0=
+SHA256 (bash/bash53-020) = 3yF+06kSKqIobZtnu+NIZhtqnbJitYDCkVDa5V1TKJY=
 SIZE (bash/bash-5.3-0.tar.gz) = 11355854
 SIZE (bash/bash53-001) = 1531
 SIZE (bash/bash53-002) = 2635
@@ -30,3 +35,8 @@ SIZE (bash/bash53-012) = 2378
 SIZE (bash/bash53-013) = 1467
 SIZE (bash/bash53-014) = 2229
 SIZE (bash/bash53-015) = 2151
+SIZE (bash/bash53-016) = 4185
+SIZE (bash/bash53-017) = 2229
+SIZE (bash/bash53-018) = 2660
+SIZE (bash/bash53-019) = 5061
+SIZE (bash/bash53-020) = 1591
