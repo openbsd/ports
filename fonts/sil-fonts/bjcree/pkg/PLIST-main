@@ -1,0 +1,11 @@
+share/doc/bjcree/
+share/doc/bjcree/FONTLOG.txt
+share/doc/bjcree/OFL-FAQ.txt
+share/doc/bjcree/OFL.txt
+share/doc/bjcree/README.txt
+share/fonts/
+@fontdir share/fonts/bjcree/
+share/fonts/bjcree/BJCree-Bold.ttf
+share/fonts/bjcree/BJCree-Medium.ttf
+share/fonts/bjcree/BJCree-Regular.ttf
+share/fonts/bjcree/BJCree-SemiBold.ttf

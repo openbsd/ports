@@ -1,0 +1,12 @@
+share/doc/padauk/
+share/doc/padauk/FONTLOG.txt
+share/doc/padauk/OFL-FAQ.txt
+share/doc/padauk/OFL.txt
+share/doc/padauk/README.txt
+share/fonts/
+@fontdir share/fonts/padauk/
+share/fonts/padauk/Padauk-Bold.ttf
+share/fonts/padauk/Padauk-ExtraBold.ttf
+share/fonts/padauk/Padauk-Medium.ttf
+share/fonts/padauk/Padauk-Regular.ttf
+share/fonts/padauk/Padauk-SemiBold.ttf

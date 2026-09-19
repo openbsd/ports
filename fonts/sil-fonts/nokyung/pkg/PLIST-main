@@ -1,0 +1,11 @@
+share/doc/nokyung/
+share/doc/nokyung/FONTLOG.txt
+share/doc/nokyung/OFL-FAQ.txt
+share/doc/nokyung/OFL.txt
+share/doc/nokyung/README.txt
+share/fonts/
+@fontdir share/fonts/nokyung/
+share/fonts/nokyung/Nokyung-Bold.ttf
+share/fonts/nokyung/Nokyung-Medium.ttf
+share/fonts/nokyung/Nokyung-Regular.ttf
+share/fonts/nokyung/Nokyung-SemiBold.ttf

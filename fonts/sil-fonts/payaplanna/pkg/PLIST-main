@@ -1,0 +1,9 @@
+share/doc/payaplanna/
+share/doc/payaplanna/FONTLOG.txt
+share/doc/payaplanna/OFL-FAQ.txt
+share/doc/payaplanna/OFL.txt
+share/doc/payaplanna/README.txt
+share/fonts/
+@fontdir share/fonts/payaplanna/
+share/fonts/payaplanna/PayapLanna-Bold.ttf
+share/fonts/payaplanna/PayapLanna-Regular.ttf

@@ -1,0 +1,13 @@
+share/doc/busra/
+share/doc/busra/FONTLOG.txt
+share/doc/busra/OFL-FAQ.txt
+share/doc/busra/OFL.txt
+share/doc/busra/README.txt
+share/fonts/
+@fontdir share/fonts/busra/
+share/fonts/busra/Busra-Bold.ttf
+share/fonts/busra/Busra-ExtraLight.ttf
+share/fonts/busra/Busra-Light.ttf
+share/fonts/busra/Busra-Medium.ttf
+share/fonts/busra/Busra-Regular.ttf
+share/fonts/busra/Busra-SemiBold.ttf

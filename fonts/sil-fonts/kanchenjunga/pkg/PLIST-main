@@ -1,0 +1,11 @@
+share/doc/kanchenjunga/
+share/doc/kanchenjunga/FONTLOG.txt
+share/doc/kanchenjunga/OFL-FAQ.txt
+share/doc/kanchenjunga/OFL.txt
+share/doc/kanchenjunga/README.txt
+share/fonts/
+@fontdir share/fonts/kanchenjunga/
+share/fonts/kanchenjunga/Kanchenjunga-Bold.ttf
+share/fonts/kanchenjunga/Kanchenjunga-Medium.ttf
+share/fonts/kanchenjunga/Kanchenjunga-Regular.ttf
+share/fonts/kanchenjunga/Kanchenjunga-SemiBold.ttf

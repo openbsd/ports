@@ -1,0 +1,37 @@
+     SUBDIR =
+     SUBDIR += abyssinica
+     SUBDIR += alkalami
+     SUBDIR += akatab
+     SUBDIR += andika
+     SUBDIR += annapurna
+     SUBDIR += awami
+     SUBDIR += bjcree
+     SUBDIR += busra
+     SUBDIR += charis
+     SUBDIR += dai-banna
+     SUBDIR += doulos
+     SUBDIR += doulos-cipher
+     SUBDIR += ezra
+     SUBDIR += galatia
+     SUBDIR += gentium
+     SUBDIR += harmattan
+     SUBDIR += idiqlat
+     SUBDIR += kanchenjunga
+     SUBDIR += kayphodu
+     SUBDIR += kedebideri
+     SUBDIR += lateef
+     SUBDIR += lisubosa
+     SUBDIR += mingzat
+     SUBDIR += namdhinggo
+     SUBDIR += narnoor
+     SUBDIR += nokyung
+     SUBDIR += nuosu
+     SUBDIR += padauk
+     SUBDIR += payaplanna
+     SUBDIR += ruwudu
+     SUBDIR += scheherazade
+     SUBDIR += tagmukay
+     SUBDIR += taiheritage
+     SUBDIR += tirra
+
+.include <bsd.port.subdir.mk>

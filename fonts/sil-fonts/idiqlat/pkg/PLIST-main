@@ -1,0 +1,10 @@
+share/doc/idiqlat/
+share/doc/idiqlat/FONTLOG.txt
+share/doc/idiqlat/OFL-FAQ.txt
+share/doc/idiqlat/OFL.txt
+share/doc/idiqlat/README.txt
+share/fonts/
+@fontdir share/fonts/idiqlat/
+share/fonts/idiqlat/Idiqlat-ExtraLight.ttf
+share/fonts/idiqlat/Idiqlat-Light.ttf
+share/fonts/idiqlat/Idiqlat-Regular.ttf

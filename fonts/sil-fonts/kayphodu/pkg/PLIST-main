@@ -1,0 +1,11 @@
+share/doc/kayphodu/
+share/doc/kayphodu/FONTLOG.txt
+share/doc/kayphodu/OFL-FAQ.txt
+share/doc/kayphodu/OFL.txt
+share/doc/kayphodu/README.txt
+share/fonts/
+@fontdir share/fonts/kayphodu/
+share/fonts/kayphodu/KayPhoDu-Bold.ttf
+share/fonts/kayphodu/KayPhoDu-Medium.ttf
+share/fonts/kayphodu/KayPhoDu-Regular.ttf
+share/fonts/kayphodu/KayPhoDu-SemiBold.ttf

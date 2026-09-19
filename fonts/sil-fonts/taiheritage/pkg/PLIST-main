@@ -1,0 +1,9 @@
+share/doc/taiheritage/
+share/doc/taiheritage/FONTLOG.txt
+share/doc/taiheritage/OFL-FAQ.txt
+share/doc/taiheritage/OFL.txt
+share/doc/taiheritage/README.txt
+share/fonts/
+@fontdir share/fonts/taiheritage/
+share/fonts/taiheritage/TaiHeritagePro-Bold.ttf
+share/fonts/taiheritage/TaiHeritagePro-Regular.ttf

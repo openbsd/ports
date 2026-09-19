@@ -1,0 +1,12 @@
+share/doc/narnoor/
+share/doc/narnoor/FONTLOG.txt
+share/doc/narnoor/OFL-FAQ.txt
+share/doc/narnoor/OFL.txt
+share/doc/narnoor/README.txt
+share/fonts/
+@fontdir share/fonts/narnoor/
+share/fonts/narnoor/Narnoor-Bold.ttf
+share/fonts/narnoor/Narnoor-ExtraBold.ttf
+share/fonts/narnoor/Narnoor-Medium.ttf
+share/fonts/narnoor/Narnoor-Regular.ttf
+share/fonts/narnoor/Narnoor-SemiBold.ttf

@@ -1,0 +1,13 @@
+share/doc/tirra/
+share/doc/tirra/FONTLOG.txt
+share/doc/tirra/OFL-FAQ.txt
+share/doc/tirra/OFL.txt
+share/doc/tirra/README.txt
+share/fonts/
+@fontdir share/fonts/tirra/
+share/fonts/tirra/Tirra-Black.ttf
+share/fonts/tirra/Tirra-Bold.ttf
+share/fonts/tirra/Tirra-ExtraBold.ttf
+share/fonts/tirra/Tirra-Medium.ttf
+share/fonts/tirra/Tirra-Regular.ttf
+share/fonts/tirra/Tirra-SemiBold.ttf

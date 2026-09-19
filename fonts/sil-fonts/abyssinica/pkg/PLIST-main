@@ -1,0 +1,7 @@
+@pkgpath fonts/abyssinica
+share/doc/abyssinica/
+share/doc/abyssinica/OFL.txt
+share/doc/abyssinica/README.txt
+share/fonts/
+@fontdir share/fonts/abyssinica/
+share/fonts/abyssinica/AbyssinicaSIL-Regular.ttf

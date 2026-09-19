@@ -1,0 +1,12 @@
+share/doc/awami/
+share/doc/awami/FONTLOG.txt
+share/doc/awami/OFL-FAQ.txt
+share/doc/awami/OFL.txt
+share/doc/awami/README.txt
+share/fonts/
+@fontdir share/fonts/awami/
+share/fonts/awami/AwamiNastaliq-Bold.ttf
+share/fonts/awami/AwamiNastaliq-ExtraBold.ttf
+share/fonts/awami/AwamiNastaliq-Medium.ttf
+share/fonts/awami/AwamiNastaliq-Regular.ttf
+share/fonts/awami/AwamiNastaliq-SemiBold.ttf

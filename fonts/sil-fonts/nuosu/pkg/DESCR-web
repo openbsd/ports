@@ -1,0 +1,18 @@
+Nuosu SIL is a single Unicode font for the standardized Yi script used by a
+large ethnic group in southwestern China. The traditional Yi scripts have
+been in use for centuries, and have a tremendous number of local variants.
+The script was standardized in the 1970s by the Chinese government. In the
+process of standardization, 820 symbols from the traditional scripts of the
+Liangshan region were chosen to form a syllabary.
+
+The syllable inventory of a speech variety from Xide County, Sichuan was
+used as the phonological basis for standardization. For the most part there
+is one symbol per phonologically-distinct syllable and vice-versa. The
+direction of writing and reading was standardized as left-to-right.
+Punctuation symbols were borrowed from Chinese, and a diacritic was
+incorporated into the system to mark one of the tones.
+
+Nuosu SIL includes a complete set of Yi syllables and radicals as defined in
+the Unicode Standard, plus a basic set of Latin characters and punctuation.
+Yi radicals which were added to Unicode 3.2 (U+A4A2..U+A4A3, U+A4B4, U+A4C1,
+U+A4C5) are also included in the font.

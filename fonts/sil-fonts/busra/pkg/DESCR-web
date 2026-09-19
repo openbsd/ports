@@ -1,0 +1,16 @@
+The Busra font family is the latest version of the popular Khmer Busra font
+first released as part of the Mondulkiri project. This Khmer font has been
+improved and updated for a wide range of uses, from print to web, and to
+support the latest Khmer text encoding best practices.
+
+There are now six weights in the Busra family: ExtraLight, Light, Regular,
+Medium, SemiBold, and Bold. This new range of weights replaces the lighter
+weight Khmer Mondulkiri font family.
+
+The fonts also conform to the latest Khmer Encoding Structure specification
+(Unicode Technical Note #61). This encoding prevents ambiguity and ensures
+that any given visual form has only one encoding, which will improve text
+portability between technical platforms.
+
+The family is named after the Bou Sra waterfall in Mondulkiri Province. It
+supports most of the Cambodian languages written in the Khmer script.

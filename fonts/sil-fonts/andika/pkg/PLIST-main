@@ -1,0 +1,16 @@
+@pkgpath fonts/andika
+share/doc/andika/
+share/doc/andika/FONTLOG.txt
+share/doc/andika/OFL-FAQ.txt
+share/doc/andika/OFL.txt
+share/doc/andika/README.txt
+share/fonts/
+@fontdir share/fonts/andika/
+share/fonts/andika/Andika-Bold.ttf
+share/fonts/andika/Andika-BoldItalic.ttf
+share/fonts/andika/Andika-Italic.ttf
+share/fonts/andika/Andika-Medium.ttf
+share/fonts/andika/Andika-MediumItalic.ttf
+share/fonts/andika/Andika-Regular.ttf
+share/fonts/andika/Andika-SemiBold.ttf
+share/fonts/andika/Andika-SemiBoldItalic.ttf

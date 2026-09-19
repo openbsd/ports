@@ -1,0 +1,23 @@
+share/doc/lisubosa/
+share/doc/lisubosa/FONTLOG.txt
+share/doc/lisubosa/OFL-FAQ.txt
+share/doc/lisubosa/OFL.txt
+share/doc/lisubosa/README.txt
+share/fonts/
+@fontdir share/fonts/lisubosa/
+share/fonts/lisubosa/LisuBosa-Black.ttf
+share/fonts/lisubosa/LisuBosa-BlackItalic.ttf
+share/fonts/lisubosa/LisuBosa-Bold.ttf
+share/fonts/lisubosa/LisuBosa-BoldItalic.ttf
+share/fonts/lisubosa/LisuBosa-ExtraBold.ttf
+share/fonts/lisubosa/LisuBosa-ExtraBoldItalic.ttf
+share/fonts/lisubosa/LisuBosa-ExtraLight.ttf
+share/fonts/lisubosa/LisuBosa-ExtraLightItalic.ttf
+share/fonts/lisubosa/LisuBosa-Italic.ttf
+share/fonts/lisubosa/LisuBosa-Light.ttf
+share/fonts/lisubosa/LisuBosa-LightItalic.ttf
+share/fonts/lisubosa/LisuBosa-Medium.ttf
+share/fonts/lisubosa/LisuBosa-MediumItalic.ttf
+share/fonts/lisubosa/LisuBosa-Regular.ttf
+share/fonts/lisubosa/LisuBosa-SemiBold.ttf
+share/fonts/lisubosa/LisuBosa-SemiBoldItalic.ttf

@@ -1,0 +1,8 @@
+share/doc/mingzat/
+share/doc/mingzat/FONTLOG.txt
+share/doc/mingzat/OFL-FAQ.txt
+share/doc/mingzat/OFL.txt
+share/doc/mingzat/README.txt
+share/fonts/
+@fontdir share/fonts/mingzat/
+share/fonts/mingzat/Mingzat-Regular.ttf

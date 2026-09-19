@@ -1,0 +1,13 @@
+share/doc/akatab/
+share/doc/akatab/FONTLOG.txt
+share/doc/akatab/OFL-FAQ.txt
+share/doc/akatab/OFL.txt
+share/doc/akatab/README.txt
+share/fonts/
+@fontdir share/fonts/akatab/
+share/fonts/akatab/Akatab-Black.ttf
+share/fonts/akatab/Akatab-Bold.ttf
+share/fonts/akatab/Akatab-ExtraBold.ttf
+share/fonts/akatab/Akatab-Medium.ttf
+share/fonts/akatab/Akatab-Regular.ttf
+share/fonts/akatab/Akatab-SemiBold.ttf

@@ -1,0 +1,9 @@
+Scheherazade is a TrueType extended Unicode Arabic font.
+
+Scheherazade supports most of the Unicode 8.0 Arabic character
+repertoire (excluding the Arabic Presentation Forms blocks, which
+are not recommended for normal use).
+
+Font smarts are implemented using OpenType and Graphite technologies.
+A number of glyph variations are accessible through font features
+available via both OpenType and Graphite technologies.

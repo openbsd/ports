@@ -1,0 +1,11 @@
+share/doc/harmattan/
+share/doc/harmattan/FONTLOG.txt
+share/doc/harmattan/OFL-FAQ.txt
+share/doc/harmattan/OFL.txt
+share/doc/harmattan/README.txt
+share/fonts/
+@fontdir share/fonts/harmattan/
+share/fonts/harmattan/Harmattan-Bold.ttf
+share/fonts/harmattan/Harmattan-Medium.ttf
+share/fonts/harmattan/Harmattan-Regular.ttf
+share/fonts/harmattan/Harmattan-SemiBold.ttf

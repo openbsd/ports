@@ -1,0 +1,16 @@
+@pkgpath fonts/charis
+share/doc/charis/
+share/doc/charis/FONTLOG.txt
+share/doc/charis/OFL-FAQ.txt
+share/doc/charis/OFL.txt
+share/doc/charis/README.txt
+share/fonts/
+@fontdir share/fonts/charis/
+share/fonts/charis/Charis-Bold.ttf
+share/fonts/charis/Charis-BoldItalic.ttf
+share/fonts/charis/Charis-Italic.ttf
+share/fonts/charis/Charis-Medium.ttf
+share/fonts/charis/Charis-MediumItalic.ttf
+share/fonts/charis/Charis-Regular.ttf
+share/fonts/charis/Charis-SemiBold.ttf
+share/fonts/charis/Charis-SemiBoldItalic.ttf

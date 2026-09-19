@@ -1,0 +1,13 @@
+share/doc/kedebideri/
+share/doc/kedebideri/FONTLOG.txt
+share/doc/kedebideri/OFL-FAQ.txt
+share/doc/kedebideri/OFL.txt
+share/doc/kedebideri/README.txt
+share/fonts/
+@fontdir share/fonts/kedebideri/
+share/fonts/kedebideri/Kedebideri-Black.ttf
+share/fonts/kedebideri/Kedebideri-Bold.ttf
+share/fonts/kedebideri/Kedebideri-ExtraBold.ttf
+share/fonts/kedebideri/Kedebideri-Medium.ttf
+share/fonts/kedebideri/Kedebideri-Regular.ttf
+share/fonts/kedebideri/Kedebideri-SemiBold.ttf

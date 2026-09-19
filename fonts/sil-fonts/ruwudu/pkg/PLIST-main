@@ -1,0 +1,11 @@
+share/doc/ruwudu/
+share/doc/ruwudu/FONTLOG.txt
+share/doc/ruwudu/OFL-FAQ.txt
+share/doc/ruwudu/OFL.txt
+share/doc/ruwudu/README.txt
+share/fonts/
+@fontdir share/fonts/ruwudu/
+share/fonts/ruwudu/Ruwudu-Bold.ttf
+share/fonts/ruwudu/Ruwudu-Medium.ttf
+share/fonts/ruwudu/Ruwudu-Regular.ttf
+share/fonts/ruwudu/Ruwudu-SemiBold.ttf

@@ -1,0 +1,12 @@
+share/doc/namdhinggo/
+share/doc/namdhinggo/FONTLOG.txt
+share/doc/namdhinggo/OFL-FAQ.txt
+share/doc/namdhinggo/OFL.txt
+share/doc/namdhinggo/README.txt
+share/fonts/
+@fontdir share/fonts/namdhinggo/
+share/fonts/namdhinggo/Namdhinggo-Bold.ttf
+share/fonts/namdhinggo/Namdhinggo-ExtraBold.ttf
+share/fonts/namdhinggo/Namdhinggo-Medium.ttf
+share/fonts/namdhinggo/Namdhinggo-Regular.ttf
+share/fonts/namdhinggo/Namdhinggo-SemiBold.ttf

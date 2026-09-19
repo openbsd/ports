@@ -1,0 +1,17 @@
+Akatab is a complete Unicode font for rendering Tifinagh characters in the
+Tamahaq, Tamashek, and Tawallammat languages. Akatab ("writing") is designed
+to reflect a handwriting style and even the "writing in sand" effect.
+
+This font uses state-of-the-art OpenType font technology to provide accurate
+typography, including the formation of bi-consonant ligatures. Variations of
+characters are included in the font to meet personal and regional
+preferences. Documentation included with the font package shows these
+variants and how to access them.
+
+Historically, this writing system has been written in both right-to-left and
+left-to-right orientations. Akatab has all the necessary characters and
+technical features to write in both directions.
+
+Inclusion of basic Latin repertoire is provided as a convenience, e.g., for
+use in menus or for displaying markup in text files. This font is not
+intended for extensive Latin script use.

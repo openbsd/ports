@@ -1,0 +1,14 @@
+share/doc/lateef/
+share/doc/lateef/FONTLOG.txt
+share/doc/lateef/OFL-FAQ.txt
+share/doc/lateef/OFL.txt
+share/doc/lateef/README.txt
+share/fonts/
+@fontdir share/fonts/lateef/
+share/fonts/lateef/Lateef-Bold.ttf
+share/fonts/lateef/Lateef-ExtraBold.ttf
+share/fonts/lateef/Lateef-ExtraLight.ttf
+share/fonts/lateef/Lateef-Light.ttf
+share/fonts/lateef/Lateef-Medium.ttf
+share/fonts/lateef/Lateef-Regular.ttf
+share/fonts/lateef/Lateef-SemiBold.ttf

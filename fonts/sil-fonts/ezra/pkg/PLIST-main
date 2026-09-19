@@ -1,0 +1,10 @@
+share/doc/ezra/
+share/doc/ezra/FONTLOG.txt
+share/doc/ezra/Filelist.txt
+share/doc/ezra/Licenses.txt
+share/doc/ezra/OFL-FAQ.txt
+share/doc/ezra/README.txt
+share/fonts/
+@fontdir share/fonts/ezra/
+share/fonts/ezra/SILEOT.ttf
+share/fonts/ezra/SILEOTSR.ttf

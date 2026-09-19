@@ -1,0 +1,10 @@
+@pkgpath fonts/tagmukay
+share/doc/tagmukay/
+share/doc/tagmukay/FONTLOG.txt
+share/doc/tagmukay/OFL-FAQ.txt
+share/doc/tagmukay/OFL.txt
+share/doc/tagmukay/README.txt
+share/fonts/
+@fontdir share/fonts/tagmukay/
+share/fonts/tagmukay/Tagmukay-Bold.ttf
+share/fonts/tagmukay/Tagmukay-Regular.ttf

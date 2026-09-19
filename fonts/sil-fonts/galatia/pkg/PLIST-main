@@ -1,0 +1,8 @@
+share/doc/galatia/
+share/doc/galatia/FONTLOG.txt
+share/doc/galatia/OFL-FAQ.txt
+share/doc/galatia/OFL.txt
+share/fonts/
+@fontdir share/fonts/galatia/
+share/fonts/galatia/GalSILB.ttf
+share/fonts/galatia/GalSILR.ttf

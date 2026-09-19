@@ -1,0 +1,18 @@
+@pkgpath fonts/gentium
+share/doc/gentium/
+share/doc/gentium/FONTLOG.txt
+share/doc/gentium/OFL-FAQ.txt
+share/doc/gentium/OFL.txt
+share/doc/gentium/README.txt
+share/fonts/
+@fontdir share/fonts/gentium/
+share/fonts/gentium/Gentium-Bold.ttf
+share/fonts/gentium/Gentium-BoldItalic.ttf
+share/fonts/gentium/Gentium-ExtraBold.ttf
+share/fonts/gentium/Gentium-ExtraBoldItalic.ttf
+share/fonts/gentium/Gentium-Italic.ttf
+share/fonts/gentium/Gentium-Medium.ttf
+share/fonts/gentium/Gentium-MediumItalic.ttf
+share/fonts/gentium/Gentium-Regular.ttf
+share/fonts/gentium/Gentium-SemiBold.ttf
+share/fonts/gentium/Gentium-SemiBoldItalic.ttf
