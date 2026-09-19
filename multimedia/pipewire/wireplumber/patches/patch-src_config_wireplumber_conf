@@ -1,0 +1,26 @@
+RTKit, the realtime portal and rtprio(2)-style scheduling are not
+available on OpenBSD; lowering the nice level requires root, so leave
+it alone instead of failing on every client (20 is out of the valid
+-20..19 range, which makes module-rt skip setpriority(2) altogether).
+
+Index: src/config/wireplumber.conf
+--- src/config/wireplumber.conf.orig
++++ src/config/wireplumber.conf
+@@ -37,7 +37,7 @@ context.modules = [
+   {
+     name = libpipewire-module-rt
+     args = {
+-        nice.level   = -11
++        nice.level   = 20
+         # rt.prio      = 88
+         # rt.time.soft = -1
+         # rt.time.hard = -1
+@@ -210,7 +210,7 @@ wireplumber.components = [
+         {
+           name = libpipewire-module-rt
+           args = {
+-              nice.level   = -11
++              nice.level   = 20
+               # rt.prio      = 88
+               # rt.time.soft = -1
+               # rt.time.hard = -1

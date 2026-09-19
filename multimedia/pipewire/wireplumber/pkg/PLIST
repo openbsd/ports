@@ -145,7 +145,6 @@ share/locale/zh_CN/LC_MESSAGES/wireplumber.mo
 share/locale/zh_TW/LC_MESSAGES/wireplumber.mo
 share/pipewire/
 share/pipewire/pipewire.conf.d/
-share/pipewire/pipewire.conf.d/10-openbsd.conf
 share/pipewire/pipewire.conf.d/10-wireplumber.conf
 share/wireplumber/
 share/wireplumber/scripts/
@@ -240,6 +239,7 @@ share/wireplumber/scripts/session-services.lua
 share/wireplumber/scripts/sm-objects.lua
 share/wireplumber/wireplumber.conf
 share/wireplumber/wireplumber.conf.d/
+share/wireplumber/wireplumber.conf.d/10-openbsd.conf
 share/wireplumber/wireplumber.conf.d/alsa-vm.conf
 share/zsh/
 share/zsh/site-functions/
