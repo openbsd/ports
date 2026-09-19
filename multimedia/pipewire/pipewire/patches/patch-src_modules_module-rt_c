@@ -10,3 +10,18 @@ Index: src/modules/module-rt.c
  #elif defined(__GNU__)
         mach_port_t thread = hurd_thread_self();
         return (pid_t)thread;
+@@ -615,7 +617,14 @@ static int set_nice(struct impl *impl, int nice_level,
+ 	else
+ #endif
+ 	if (impl->rlimits_enabled) {
++#ifdef __linux__
++		/* Linux nice levels are per-thread and threads are addressable
++		 * as processes; elsewhere nice is per-process as POSIX requires
++		 * and a thread id is not a valid setpriority(2) target. */
+ 		if (setpriority(PRIO_PROCESS, impl->main_tid, nice_level) < 0)
++#else
++		if (setpriority(PRIO_PROCESS, getpid(), nice_level) < 0)
++#endif
+ 			res = -errno;
+ 	}
+ 	else
