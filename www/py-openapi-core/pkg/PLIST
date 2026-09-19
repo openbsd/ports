@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/openapi_core/__init__.py
 lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}_jsonschema_path_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}_jsonschema_path_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}configurations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,6 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}typing.${M
 lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openapi_core/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/openapi_core/_jsonschema_path_compat.py
 lib/python${MODPY_VERSION}/site-packages/openapi_core/app.py
 lib/python${MODPY_VERSION}/site-packages/openapi_core/casting/
 lib/python${MODPY_VERSION}/site-packages/openapi_core/casting/__init__.py

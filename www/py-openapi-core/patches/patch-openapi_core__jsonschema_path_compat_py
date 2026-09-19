@@ -1,0 +1,15 @@
+Index: openapi_core/_jsonschema_path_compat.py
+--- openapi_core/_jsonschema_path_compat.py.orig
++++ openapi_core/_jsonschema_path_compat.py
+@@ -0,0 +1,11 @@
++"""Compatibility shim for jsonschema-path >= 0.4."""
++
++from jsonschema_path import SchemaPath
++
++if not hasattr(SchemaPath, "getkey"):
++    def _getkey(self, key, default=None):
++        try:
++            return self[key]
++        except KeyError:
++            return default
++    SchemaPath.getkey = _getkey
