@@ -1,0 +1,26 @@
+Index: src/util/path.cpp
+--- src/util/path.cpp.orig
++++ src/util/path.cpp
+@@ -72,6 +72,22 @@ std::string get_exe_location() {
+     return std::string(buf2);
+ }
+ bool is_path_sep(char c) { return c == g_path_sep; }
++#elif defined(__OpenBSD__)
++// OpenBSD version
++#include <unistd.h>
++#include <string.h>
++#include <limits.h> // NOLINT
++#include <stdio.h>
++static char g_path_sep     = ':';
++static constexpr char g_sep          = '/';
++static char g_bad_sep      = '\\';
++std::string get_exe_location() {
++    char buf[PATH_MAX];
++    if (getexecpath(buf, sizeof(buf)) != 0)
++        throw exception("failed to locate Lean executable location");
++    return std::string(buf);
++}
++bool is_path_sep(char c) { return c == g_path_sep; }
+ #else
+ // Linux version
+ #include <unistd.h>

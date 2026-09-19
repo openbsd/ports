@@ -6,7 +6,7 @@ COMMENT =		interactive and automated theorem prover
 GH_ACCOUNT =		leanprover-community
 GH_PROJECT =		lean
 GH_TAGNAME =		v3.48.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		math lang
 
@@ -22,7 +22,7 @@ LIB_DEPENDS = 		devel/gmp,-main
 
 SUBST_VARS +=		CXXFLAGS
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/util/lean_path.cpp ${WRKSRC}/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 # C++11
 COMPILER =		base-clang ports-gcc
