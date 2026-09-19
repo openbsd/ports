@@ -18,10 +18,8 @@ lib/pkgconfig/libgeoclue-2.0.pc
 @bin libexec/geoclue
 libexec/geoclue-2.0/
 libexec/geoclue-2.0/demos/
-@bin libexec/geoclue-2.0/demos/agent
 @bin libexec/geoclue-2.0/demos/where-am-i
 @man man/man5/geoclue.5
-share/applications/geoclue-demo-agent.desktop
 share/applications/geoclue-where-am-i.desktop
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Agent.xml
@@ -39,12 +37,6 @@ share/examples/geoclue2/geoclue/conf.d/
 @sample ${SYSCONFDIR}/geoclue/conf.d/
 share/examples/geoclue2/geoclue/geoclue.conf
 @sample ${SYSCONFDIR}/geoclue/geoclue.conf
-share/examples/geoclue2/xdg/
-@sample ${SYSCONFDIR}/xdg/
-share/examples/geoclue2/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/geoclue2/xdg/autostart/geoclue-demo-agent.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/geoclue-demo-agent.desktop
 share/gir-1.0/Geoclue-2.0.gir
 share/locale/ka/LC_MESSAGES/geoclue-2.0.mo
 share/locale/oc/LC_MESSAGES/geoclue-2.0.mo
