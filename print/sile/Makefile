@@ -2,13 +2,13 @@ COMMENT =	typesetting system and improved layout engine
 
 V =		0.9.4
 PKGNAME =	sile-$V
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  texpdf                    0.0 # 0.0
 
 CATEGORIES =	print
 
-HOMEPAGE =	http://sile-typesetter.org/
+HOMEPAGE =	https://sile-typesetter.org/
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -19,8 +19,8 @@ WANTLIB += png pthread z ${MODLUA_WANTLIB}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-SITES =		https://github.com/simoncozens/sile/releases/download/v$V/
-SITES.pdf =	http://sile-typesetter.org/images/
+SITES =		https://github.com/sile-typesetter/sile/releases/download/v$V/
+SITES.pdf =	https://sile-typesetter.org/images/
 
 DISTFILES =		sile-$V.tar.bz2
 DISTFILES.pdf = 	sile-$V.pdf
@@ -38,7 +38,7 @@ LIB_DEPENDS =		converters/libiconv \
 			devel/harfbuzz \
 			graphics/png \
 			textproc/icu4c
-RUN_DEPENDS =		fonts/gentium
+RUN_DEPENDS =		fonts/sil-fonts/gentium,-main
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${MODLUA_INCL_DIR} `pkg-config --cflags libpng`" \
