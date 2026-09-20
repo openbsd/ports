@@ -101,10 +101,6 @@ BUILD_DEPENDS +=	devel/swig \
 			textproc/py-sphinx \
 			textproc/py-recommonmark
 
-.if !${PROPERTIES:Mclang}
-RUN_DEPENDS +=	lang/gcc/${MODGCC4_VERSION},-c++
-.endif
-
 CONFIGURE_STYLE +=	cmake
 CONFIGURE_ARGS +=	\
 	-DCMAKE_INSTALL_PREFIX="${LOCALBASE}/${LLVM_BASE}" \
@@ -171,13 +167,8 @@ MODPY_ADJ_FILES +=	\
 	../clang/tools/scan-view/bin/scan-view \
 	../clang/utils/hmaptool/hmaptool
 
-# XXX sync
-GCC_VER =		15.2.0
-# do not include OSREV
-GCC_CONFIG =		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd
-
 CLANG_INCLUDE_PATH =	${LLVM_BASE}/lib/clang/${LLVM_MAJOR}/include
-SUBST_VARS +=		CLANG_INCLUDE_PATH GCC_VER GCC_CONFIG
+SUBST_VARS +=		CLANG_INCLUDE_PATH
 
 # hack to disable the use of -Bsymbolic-functions
 .if ${PROPERTIES:Mlld}
@@ -188,8 +179,7 @@ OPENBSD_LD_IS_LLD =	FALSE
 SUBST_VARS +=		OPENBSD_LD_IS_LLD
 
 pre-configure:
-	${SUBST_CMD} ${WRKDIST}/clang/lib/Driver/ToolChains/OpenBSD.cpp \
-		${WRKDIST}/clang/tools/clang-shlib/CMakeLists.txt \
+	${SUBST_CMD} ${WRKDIST}/clang/tools/clang-shlib/CMakeLists.txt \
 		${WRKDIST}/clang/tools/clang-format/clang-format-sublime.py \
 		${WRKDIST}/clang/tools/clang-format/clang-format.py \
 		${WRKDIST}/clang/tools/clang-format/git-clang-format \
