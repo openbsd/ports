@@ -1,9 +1,8 @@
 COMMENT=	scalable, non-blocking web server
 
-MODPY_DISTV=	6.5.5
+MODPY_DISTV=	6.5.10
 DISTNAME=	tornado-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	www
 
