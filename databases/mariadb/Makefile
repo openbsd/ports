@@ -7,7 +7,7 @@ COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 VERSION=	12.3.3
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
-REVISION=	0
+REVISION=	1
 EPOCH=		1
 
 CATEGORIES=	databases
@@ -36,6 +36,7 @@ WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy xml2 zstd
 WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
 
 MULTI_PACKAGES=	-main -server -tests
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # C++11, atomic ops
 .if ${MACHINE_ARCH} == "mips64"
