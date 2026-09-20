@@ -1,8 +1,7 @@
-V =		2.8.1
+V =		2.8.2
 COMMENT =	SDL2 multi-channel audio mixer library
 DISTNAME =	SDL2_mixer-${V}
 PKGNAME =	sdl2-mixer-${V}
-REVISION =	1
 CATEGORIES =	devel audio
 
 SHARED_LIBS +=  SDL2_mixer		1.1	# 2.8.0
