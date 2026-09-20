@@ -16,23 +16,30 @@ MODKDE_DOCS = yes
 MODKDE_ICON_CACHE = yes
 
 BUILD_DEPENDS =	devel/kf6/ktextwidgets \
+ 		devel/kf6/qqc2-desktop-style \
+ 		graphics/kirigami-addons \
 		graphics/kirigami-app-components
 
 RUN_DEPENDS =	devel/kf6/ktextwidgets \
+ 		devel/kf6/qqc2-desktop-style \
+ 		graphics/kirigami-addons \
 		graphics/kirigami-app-components \
 		x11/dbus,-suid
 
-LIB_DEPENDS =	devel/gettext,-runtime \
-		devel/glib2 \
-		devel/glib2,bootstrap \
+
+LIB_DEPENDS =	devel/gettext \
+		devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
-		devel/gettext \
-		x11/gnome/libsecret \
-		x11/qt6/qtsvg \
 		devel/kf6/ki18n \
-		x11/qt6/qtdeclarative
+		devel/kf6/kiconthemes \
+		devel/kf6/kirigami \
+		devel/kf6/kitemmodels \
+		graphics/kirigami-app-components \
+		x11/gnome/libsecret \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtsvg
 
 .include <bsd.port.mk>
