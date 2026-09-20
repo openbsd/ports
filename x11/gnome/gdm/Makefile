@@ -6,11 +6,11 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		48.0
-REVISION=		13
+REVISION=		14
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
-GH_COMMIT=		420619cb717e09c5e97962aa1b9c8d65b97144b8
+GH_COMMIT=		0d3321f6c4aba584097d2bd02ffbd700f1e04422
 EXTRACT_SUFX=		.tar.gz
 
 DISTFILES=		${GH_DISTFILE}
@@ -91,11 +91,9 @@ CONFIGURE_ARGS=		-Ddefault-pam-config=none \
 			-Dplymouth=disabled \
 			-Dlibaudit=disabled \
 			-Dselinux=disabled \
-			-Dscreenshot-dir=/var/run/gdm/greeter \
 			-Dsysconfsubdir=gdm \
 			-Dsystemd-journal=false \
-			-Dworking-dir=/var/db/gdm \
-			-Dxauth-dir=/var/run/gdm
+			-Dworking-dir=/var/db/gdm
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
