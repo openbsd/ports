@@ -1,4 +1,3 @@
-BROKEN-sparc64 = error: comparison of integer expressions of different signedness
 COMMENT =	reference implementation of the ZIM specification
 
 DISTNAME =	libzim-9.5.1
