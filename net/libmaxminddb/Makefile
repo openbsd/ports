@@ -1,6 +1,6 @@
 COMMENT-main=	library for MaxMind GeoIP2/GeoLite2 IP geolocation databases
 
-V=		1.14.0
+V=		1.14.1
 DISTNAME=	libmaxminddb-${V}
 PKGNAME-main=	libmaxminddb-${V}
 
