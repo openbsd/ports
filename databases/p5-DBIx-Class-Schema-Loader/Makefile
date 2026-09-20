@@ -2,7 +2,7 @@ COMMENT =	create a DBIx::Class::Schema based on a database
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	DBIx-Class-Schema-Loader-0.07052
+DISTNAME =	DBIx-Class-Schema-Loader-0.07053
 CATEGORIES =	databases
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -45,7 +45,7 @@ MODPOSTGRESQL_TEST_DBNAME =	${DATABASE}
 MAKE_ENV +=	DBICTEST_PG_DSN='dbi:Pg:dbname=${DATABASE}' \
 		DBICTEST_PG_USER=${USER} \
 		DBICTEST_PG_PASS=1
-TEST_DEPENDS += databases/p5-DBD-Pg
+TEST_DEPENDS +=	databases/p5-DBD-Pg
 
 MODULES +=	databases/mariadb
 MODMARIADB_TEST_DBNAME =	${DATABASE}
@@ -53,7 +53,7 @@ MAKE_ENV +=	DBICTEST_MYSQL_DSN='dbi:mysql:database=${DATABASE};mysql_socket=${MO
 		DBICTEST_MYSQL_USER=root \
 		DBICTEST_MYSQL_PASS=1 \
 		DBICTEST_MYSQL_INNODB=1
-TEST_DEPENDS += databases/p5-DBD-mysql
+TEST_DEPENDS +=	databases/p5-DBD-mysql
 
 MODPOSTGRESQL_TEST_CMD =	${MODMARIADB_TEST_TARGET}
 do-test:
