@@ -368,6 +368,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}keepassxc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}keepassxc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}onepassword.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}onepassword.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}parse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}parse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}systemd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -375,6 +377,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/container.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/file.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/keepassxc.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/onepassword.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/parse.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/systemd.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/
@@ -390,6 +393,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}dump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}dump.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}influxdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}influxdb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}lvm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}lvm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}mariadb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -398,6 +403,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}mongodb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}mysql.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}mysql.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}openldap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}openldap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}snapshot.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -410,10 +417,12 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/bootstrap.p
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/btrfs.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/config.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/dump.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/influxdb.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/lvm.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/mariadb.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/mongodb.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/mysql.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/openldap.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/postgresql.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/snapshot.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/sqlite.py
