@@ -1,5 +1,3 @@
-BROKEN-sparc64 = error libdispatch requires C11 with stdatomic.h
-
 COMMENT =	support for concurrent code execution on multicore hardware
 
 PKGNAME =	libdispatch-$V
