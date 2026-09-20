@@ -1,10 +1,9 @@
 COMMENT=		library implementing the Unicode Bidirectional Algorithm
 
-V=			1.0.16
+V=			1.0.17
 GH_PROJECT=		fribidi
 GH_ACCOUNT=		fribidi
 GH_TAGNAME=		v${V}
-REVISION=		0
 
 CATEGORIES=		devel
 
