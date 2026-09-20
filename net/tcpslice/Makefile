@@ -3,7 +3,7 @@ COMMENT=	tool for extracting and gluing pcap (tcpdump) files
 V=		1.7
 GH_ACCOUNT=	the-tcpdump-group
 GH_PROJECT=	tcpslice
-GH_COMMIT=	tcpslice-${V}
+GH_TAGNAME=	tcpslice-${V}
 REVISION=	0
 
 DISTNAME=	tcpslice-${V}

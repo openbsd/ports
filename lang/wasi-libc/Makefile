@@ -2,7 +2,7 @@ COMMENT =	C standard library for WebAssembly System Interface
 
 GH_ACCOUNT =	WebAssembly
 GH_PROJECT =	wasi-libc
-GH_COMMIT =	wasi-sdk-29
+GH_TAGNAME =	wasi-sdk-29
 DISTNAME =	wasi-libc-0.20251114
 REVISION =	1
 
