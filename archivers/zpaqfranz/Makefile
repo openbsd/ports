@@ -1,5 +1,5 @@
 COMMENT =	journaling archiver for incremental backup, fork of ZPAQ
-DIST_TUPLE =	github fcorbelli zpaqfranz 64.8 .
+DIST_TUPLE =	github fcorbelli zpaqfranz 65.1 .
 CATEGORIES =	archivers
 MAINTAINER =	tux0r <tux0r@rosaelefanten.org>
 
