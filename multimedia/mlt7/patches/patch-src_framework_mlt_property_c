@@ -1,7 +1,7 @@
 Index: src/framework/mlt_property.c
 --- src/framework/mlt_property.c.orig
 +++ src/framework/mlt_property.c
-@@ -567,8 +567,10 @@ static double mlt_property_atof(mlt_property self, dou
+@@ -572,8 +572,10 @@ static double mlt_property_atof(mlt_property self, dou
              // Protect damaging the global locale from a temporary locale on another thread.
              pthread_mutex_lock(&self->mutex);
  
@@ -12,7 +12,7 @@ Index: src/framework/mlt_property.c
  
              // Set the new locale
              setlocale(LC_NUMERIC, locale);
-@@ -1123,8 +1125,10 @@ char *mlt_property_get_time(mlt_property self,
+@@ -1142,8 +1144,10 @@ char *mlt_property_get_time(mlt_property self,
          // Protect damaging the global locale from a temporary locale on another thread.
          pthread_mutex_lock(&self->mutex);
  
@@ -23,7 +23,7 @@ Index: src/framework/mlt_property.c
  
          // Set the new locale
          setlocale(LC_NUMERIC, localename);
-@@ -1203,8 +1207,10 @@ int mlt_property_is_numeric(mlt_property self, mlt_loc
+@@ -1222,8 +1226,10 @@ int mlt_property_is_numeric(mlt_property self, mlt_loc
              // Protect damaging the global locale from a temporary locale on another thread.
              pthread_mutex_lock(&self->mutex);
  

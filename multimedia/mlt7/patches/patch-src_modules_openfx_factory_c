@@ -35,7 +35,7 @@ Index: src/modules/openfx/factory.c
  #endif
      }
  }
-@@ -256,7 +264,7 @@ MLT_REPOSITORY
+@@ -312,7 +320,7 @@ MLT_REPOSITORY
      int dli = 0;
  
      // Scan standard platform default paths per the OpenFX specification

@@ -82,6 +82,7 @@ lib/mlt-7/
 @so lib/mlt-7/libmltoldfilm.so
 @so lib/mlt-7/libmltopenfx.so
 @so lib/mlt-7/libmltplus.so
+@so lib/mlt-7/libmltrnnoise.so
 @so lib/mlt-7/libmltsdl2.so
 @so lib/mlt-7/libmltsox.so
 @so lib/mlt-7/libmltvorbis.so
@@ -95,6 +96,7 @@ share/mlt-7/avformat/blacklist.txt
 share/mlt-7/avformat/consumer_avformat.yml
 share/mlt-7/avformat/filter_avcolour_space.yml
 share/mlt-7/avformat/filter_avdeinterlace.yml
+share/mlt-7/avformat/filter_info.yml
 share/mlt-7/avformat/filter_swresample.yml
 share/mlt-7/avformat/filter_sws_colortransform.yml
 share/mlt-7/avformat/filter_swscale.yml
@@ -481,6 +483,9 @@ share/mlt-7/profiles/vcd_ntsc
 share/mlt-7/profiles/vcd_pal
 share/mlt-7/profiles/vertical_hd_30
 share/mlt-7/profiles/vertical_hd_60
+share/mlt-7/rnnoise/
+share/mlt-7/rnnoise/filter_rnnoise.yml
+share/mlt-7/rnnoise/link_rnnoise.yml
 share/mlt-7/sdl2/
 share/mlt-7/sdl2/consumer_sdl2.yml
 share/mlt-7/sdl2/consumer_sdl2_audio.yml
