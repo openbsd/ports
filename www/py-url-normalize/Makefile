@@ -1,7 +1,6 @@
 COMMENT=	URL normalization for Python
 
-MODPY_DISTV=	2.2.1
-
+MODPY_DISTV=	3.0.0
 DISTNAME=	url_normalize-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
@@ -13,9 +12,8 @@ HOMEPAGE=	https://github.com/niksite/url-normalize
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	net/py-idna
 

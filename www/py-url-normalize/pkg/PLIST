@@ -38,6 +38,8 @@ lib/python${MODPY_VERSION}/site-packages/url_normalize/${MODPY_PYCACHE}provide_u
 lib/python${MODPY_VERSION}/site-packages/url_normalize/${MODPY_PYCACHE}provide_url_scheme.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/url_normalize/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/url_normalize/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/url_normalize/${MODPY_PYCACHE}url_humanize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/url_normalize/${MODPY_PYCACHE}url_humanize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/url_normalize/${MODPY_PYCACHE}url_normalize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/url_normalize/${MODPY_PYCACHE}url_normalize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/url_normalize/cli.py
@@ -54,4 +56,5 @@ lib/python${MODPY_VERSION}/site-packages/url_normalize/provide_url_domain.py
 lib/python${MODPY_VERSION}/site-packages/url_normalize/provide_url_scheme.py
 lib/python${MODPY_VERSION}/site-packages/url_normalize/py.typed
 lib/python${MODPY_VERSION}/site-packages/url_normalize/tools.py
+lib/python${MODPY_VERSION}/site-packages/url_normalize/url_humanize.py
 lib/python${MODPY_VERSION}/site-packages/url_normalize/url_normalize.py
