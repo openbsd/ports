@@ -1,7 +1,7 @@
 Index: sslscan.c
 --- sslscan.c.orig
 +++ sslscan.c
-@@ -102,9 +102,7 @@
+@@ -103,9 +103,7 @@
  #include <openssl/x509.h>
  #include <openssl/x509v3.h>
  #include <openssl/ocsp.h>
