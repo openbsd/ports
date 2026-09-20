@@ -1,6 +1,6 @@
 COMMENT =	module to handle hardware MAC addresses
 
-DISTNAME =	NetAddr-MAC-1.03
+DISTNAME =	NetAddr-MAC-1.04
 CPAN_AUTHOR =	DJZORT
 
 CATEGORIES =	net
