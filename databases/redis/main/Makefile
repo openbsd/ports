@@ -1,6 +1,6 @@
 COMMENT=	persistent key-value database
 
-DISTNAME=	redis-8.10.1
+DISTNAME=	redis-8.10.2
 FIX_EXTRACT_PERMISSIONS= Yes
 
 WANTLIB +=	c crypto ssl m pthread

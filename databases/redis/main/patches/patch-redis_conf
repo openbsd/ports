@@ -26,7 +26,7 @@ Index: redis.conf
  # tls-ca-cert-dir /etc/ssl/certs
  
  # By default, clients (including replica servers) on a TLS port are required
-@@ -320,14 +321,14 @@ tcp-keepalive 300
+@@ -329,14 +330,14 @@ tcp-keepalive 300
  #
  # tls-protocols "TLSv1.2 TLSv1.3"
  
@@ -43,7 +43,7 @@ Index: redis.conf
  # information about the syntax of this string, and specifically for TLSv1.3
  # ciphersuites.
  #
-@@ -357,9 +358,9 @@ tcp-keepalive 300
+@@ -366,9 +367,9 @@ tcp-keepalive 300
  ################################# GENERAL #####################################
  
  # By default Redis does not run as a daemon. Use 'yes' if you need it.
@@ -55,7 +55,7 @@ Index: redis.conf
  
  # If you run Redis from upstart or systemd, Redis can interact with your
  # supervision tree. Options:
-@@ -384,14 +385,14 @@ daemonize no
+@@ -393,14 +394,14 @@ daemonize no
  #
  # When the server runs non daemonized, no pid file is created if none is
  # specified in the configuration. When the server is daemonized, the pid file
@@ -72,7 +72,7 @@ Index: redis.conf
  
  # Specify the server verbosity level.
  # This can be one of:
-@@ -405,17 +406,18 @@ loglevel notice
+@@ -414,17 +415,18 @@ loglevel notice
  # Specify the log file name. Also the empty string can be used to force
  # Redis to log on the standard output. Note that if you use standard
  # output for logging but daemonize, logs will be sent to /dev/null
@@ -96,7 +96,7 @@ Index: redis.conf
  
  # To disable the built in crash log, which will possibly produce cleaner core
  # dumps when they are needed, uncomment the following:
-@@ -565,7 +567,7 @@ rdb-del-sync-files no
+@@ -574,7 +576,7 @@ rdb-del-sync-files no
  # The Append Only File will also be created inside this directory.
  #
  # Note that you must specify a directory here, not a file name.
@@ -105,7 +105,7 @@ Index: redis.conf
  
  ################################# REPLICATION #################################
  
-@@ -1190,6 +1192,7 @@ acllog-max-len 128
+@@ -1199,6 +1201,7 @@ acllog-max-len 128
  # limit accordingly in case of very large clusters.
  #
  # maxclients 10000
