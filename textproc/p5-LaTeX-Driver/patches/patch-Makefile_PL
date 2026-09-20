@@ -1,11 +1,11 @@
---- Makefile.PL.orig	Sun May 10 11:04:05 2015
-+++ Makefile.PL	Sun May 10 11:04:29 2015
-@@ -10,7 +10,7 @@ license 'perl';
- all_from    'lib/LaTeX/Driver.pm';
- readme_from 'lib/LaTeX/Driver.pm';
- 
--requires_external_bin 'latex';
-+#requires_external_bin 'latex';
- 
- requires 'Class::Accessor';
- requires 'Cwd';
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -16,6 +16,7 @@ my %WriteMakefileArgs = (
+   "LICENSE" => "perl",
+   "MIN_PERL_VERSION" => "5.008001",
+   "NAME" => "LaTeX::Driver",
++  "EXE_FILES" => [qw< script/latex2dvi script/latex2pdf script/latex2ps >],
+   "PREREQ_PM" => {
+     "Capture::Tiny" => 0,
+     "Class::Accessor" => 0,
