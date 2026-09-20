@@ -1,4 +1,3 @@
-BROKEN-sparc64= relocation truncated to fit: R_SPARC_GOT13 against symbol...
 COMMENT=		GNU units conversion program
 
 DISTNAME=		units-2.27
