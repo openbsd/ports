@@ -1,18 +1,19 @@
 Index: src/path-prefix.cpp
 --- src/path-prefix.cpp.orig
 +++ src/path-prefix.cpp
-@@ -31,6 +31,10 @@
+@@ -31,6 +31,11 @@
  #include <sys/sysctl.h>
  #endif
  
 +#ifdef __OpenBSD__
 +#include <stdlib.h>
++#include <unistd.h>
 +#endif
 +
  #include <cassert>
  #include <glib.h>
  #include <glibmm.h>
-@@ -217,6 +221,13 @@ char const *get_program_name()
+@@ -217,6 +222,13 @@ char const *get_program_name()
          program_name = g_file_read_link("/proc/self/exe", NULL);
          if (!program_name) {
              g_warning("get_program_name() - g_file_read_link failed");
