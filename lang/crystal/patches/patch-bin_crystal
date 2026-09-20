@@ -7,7 +7,7 @@ Index: bin/crystal
  
  ################## https://github.com/mkropat/sh-realpath #####################
  #
-@@ -193,6 +193,8 @@ export CRYSTAL_EXEC_PATH
+@@ -192,6 +192,8 @@ export CRYSTAL_EXEC_PATH
  
  if [ -x "$CRYSTAL_DIR/${CRYSTAL_BIN}" ]; then
    __warning_msg "Using compiled compiler at ${CRYSTAL_DIR#"$PWD/"}/${CRYSTAL_BIN}"

@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	amd64
 
 USE_NOBTCFI =	Yes
 
-V =		1.20.1
+V =		1.21.0
 V_SHARDS =	0.20.0
 V_MOLINILLO =	0.2.2
 
@@ -17,6 +17,8 @@ CATEGORIES =	lang
 
 HOMEPAGE =	https://crystal-lang.org/
 
+MAINTAINER =	izzy Meyer <izder456@disroot.org>
+
 # Apache 2.0
 PERMIT_PACKAGE = Yes
 
@@ -29,13 +31,12 @@ WANTLIB +=	iconv m pcre2-8 yaml-0 llvm${MODCLANG_VERSION}/lib/LLVM
 # current version of Crystal there, then checking out the source for that
 # version, applying patches included in this port, and running:
 #
-# 	make crystal FLAGS="--cross-compile --target amd64-unknown-openbsd7.9"
+# 	make crystal FLAGS="--cross-compile --target amd64-unknown-openbsd8.0"
 #
 # The result will be built at .build/crystal.o
 #
-
-SITES =		https://jcs.org/distfiles/
-DISTFILES =	crystal-${V}-OpenBSD7.9.tar.gz
+SITES =		https://izder456.cgx.li/distfiles/
+DISTFILES =	crystal-${V}-OpenBSD8.0.tar.gz
 
 # Build requires llvm-config from ports, not from base.  When changing
 # MODCLANG_VERSION, keep paths in patches/ in sync here and in bootstrap
