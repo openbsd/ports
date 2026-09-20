@@ -1,5 +1,3 @@
-BROKEN-sparc64 = "error[E0412]: cannot find type c_char in this scope"
-
 COMMENT =	lightweight color picker
 
 GH_ACCOUNT =	Soft
