@@ -2,7 +2,7 @@ COMMENT =	the standard database interface module for Perl
 
 MODULES =	cpan
 CPAN_AUTHOR =	HMBRAND
-DISTNAME =	DBI-1.652
+DISTNAME =	DBI-1.653
 EXTRACT_SUFX =	.tgz
 FIX_EXTRACT_PERMISSIONS =	Yes
 CATEGORIES =	databases
@@ -13,7 +13,7 @@ MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 # Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl
+WANTLIB +=	perl
 
 MODPERL_REGEN_PPPORT =	dbipport.h
 
