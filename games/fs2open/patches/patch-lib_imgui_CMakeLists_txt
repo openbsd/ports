@@ -9,4 +9,4 @@ Index: lib/imgui/CMakeLists.txt
 +TARGET_LINK_LIBRARIES(imgui PUBLIC SDL2)
  target_link_libraries(imgui PUBLIC compiler)
  
- if (FSO_BUILD_WITH_VULKAN)
+ if(FSO_BUILD_WITH_OPENGL_ES)

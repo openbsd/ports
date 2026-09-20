@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =	open source game engine based on FreeSpace 2
 
-V =		25.0.0
+V =		26.0.1
 PKGNAME =	fs2open-${V}
 
 CATEGORIES =	games
@@ -24,7 +24,7 @@ DIST_TUPLE +=	github asarium cmake-modules \
 		7cef9577d6fc35057ea57f46b4986a8a28aeff50 \
 		cmake/external/rpavlik-cmake-modules # Boost License 1.0
 DIST_TUPLE +=	github asarium libRocket \
-		ae8a8d98ae4801e6539ceeda377bb03028ce3334 \
+		b0c18e17d257a46db8395485895185915f483ede \
 		lib/libRocket # MIT
 
 COMPILER =		base-clang ports-gcc
@@ -47,26 +47,13 @@ CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/fs2open \
 			-DFSO_BUILD_WITH_OPENXR=OFF \
 			-DFSO_BUILD_WITH_VULKAN=ON
 
-#CONFIGURE_ENV +=	C_OPT_FLAG_DEBUG="${CFLAGS}" \
-#			C_OPT_FLAG_RELEASE="${CFLAGS}" \
-#			CXX_OPT_FLAG_DEBUG="${CXXFLAGS}" \
-#			CXX_OPT_FLAG_RELEASE="${CXXFLAGS}"
-
-#MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
-
 # currently not building; would be ${WRKBUILD}/bin/unittests
 NO_TEST =		Yes
 
-#CFLAGS +=		-I${LOCALBASE}/include
 CXXFLAGS +=		-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/SDL2
 
 WRKDIST =		${WRKDIR}/fs2open.github.com-release_${V:S/./_/g}
-
-#pre-configure:
-#	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
-#	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
-#	{} \;
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
