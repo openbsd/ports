@@ -2,7 +2,7 @@ Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
 @@ -139,7 +139,7 @@ tree-sitter-zig = "1.1.2"
- ts-parser-perl = "1.0.1"
+ ts-parser-perl = "1.2.0"
  
  
 -[target.'cfg(not(any(windows, target_os = "illumos", target_os = "freebsd")))'.dependencies]
