@@ -81,7 +81,6 @@
      SUBDIR += py-atspi
      SUBDIR += quadrapassel
      SUBDIR += seahorse
-     SUBDIR += secrets
      SUBDIR += session
      SUBDIR += settings-daemon
      SUBDIR += shell
