@@ -515,6 +515,7 @@ include/mapnik/mapnik/util/noncopyable.hpp
 include/mapnik/mapnik/util/path_iterator.hpp
 include/mapnik/mapnik/util/rounding_cast.hpp
 include/mapnik/mapnik/util/singleton.hpp
+include/mapnik/mapnik/util/sort_by.hpp
 include/mapnik/mapnik/util/spatial_index.hpp
 include/mapnik/mapnik/util/timer.hpp
 include/mapnik/mapnik/util/trim.hpp
@@ -618,12 +619,10 @@ lib/mapnik/fonts/DejaVuSerifCondensed-Italic.ttf
 lib/mapnik/fonts/DejaVuSerifCondensed.ttf
 lib/mapnik/input/
 lib/mapnik/input/csv.input
-lib/mapnik/input/gdal.input
+lib/mapnik/input/gdal+ogr.input
 lib/mapnik/input/geobuf.input
 lib/mapnik/input/geojson.input
-lib/mapnik/input/ogr.input
-lib/mapnik/input/pgraster.input
-lib/mapnik/input/postgis.input
+lib/mapnik/input/postgis+pgraster.input
 lib/mapnik/input/raster.input
 lib/mapnik/input/shape.input
 lib/mapnik/input/sqlite.input

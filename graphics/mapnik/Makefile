@@ -1,16 +1,16 @@
 COMMENT =	toolkit for developing mapping applications
 
-V =		4.1.2
+V =		4.3.1
 DISTNAME =	mapnik-v${V}
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
 
 DIST_TUPLE +=	github mapbox geometry.hpp c83a2ab18a225254f128b6f5115aa39d04f2de21 deps/mapbox/geometry
 DIST_TUPLE +=	github mapbox mapnik-vector-tile 5a0cfbb6b909ae945f4a9e40777772a2b1c8fe9b deps/mapbox/mapnik-vector-tile
-DIST_TUPLE +=	github mapbox polylabel 01218208b6d42543d612e4ce18ac1005851a2ce4 deps/mapbox/polylabel
+DIST_TUPLE +=	github mapbox polylabel 1edc1679eb84f9770e41cbf9c9b56736081af510 deps/mapbox/polylabel
 DIST_TUPLE +=	github mapbox protozero 89a55ad2962cca3adbe8383a4b6d9a8411352ef2 deps/mapbox/protozero
 DIST_TUPLE +=	github mapbox variant a2a4858345423a760eca300ec42acad1ad123aa3 deps/mapbox/variant
-SHARED_LIBS =	mapnik 4.0 #3.0
+SHARED_LIBS =	mapnik 5.0 #3.0
 CATEGORIES =	graphics geo
 
 HOMEPAGE =	https://mapnik.org/
@@ -21,8 +21,10 @@ DPB_PROPERTIES = nojunk parallel
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} avif boost_program_options-mt boost_regex-mt
-WANTLIB += c cairo freetype gdal harfbuzz icudata icui18n icuuc
-WANTLIB += jpeg m png pq proj sqlite3 tiff webp xml2 z
+WANTLIB += boost_container-mt boost_context-mt boost_url-mt
+WANTLIB += c cairo crypto freetype gdal harfbuzz icudata icui18n icuuc
+WANTLIB += jpeg m png pq proj sqlite3 ssl tiff webp xml2 z
+
 
 SITES =		https://github.com/mapnik/mapnik/releases/download/v${V}/
 MODULES =	devel/cmake
@@ -34,7 +36,7 @@ COMPILER =	base-clang ports-gcc
 TEST_DEPENDS =	shells/bash \
 		${BUILD_PKGPATH}
 
-LIB_DEPENDS =	devel/boost \
+LIB_DEPENDS =	devel/boost,-md \
 		databases/sqlite3 \
 		graphics/cairo \
 		graphics/libwebp \
