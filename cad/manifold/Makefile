@@ -1,7 +1,7 @@
 COMMENT =	geometry library for topological robustness
 GH_ACCOUNT =	elalish
 GH_PROJECT =	manifold
-GH_TAGNAME =	v3.5.1
+GH_TAGNAME =	v3.5.3
 
 CATEGORIES =	cad
 
