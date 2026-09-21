@@ -1,6 +1,6 @@
 COMMENT =		programmers solid 3D CAD modeller
 
-V =			2026.06.21
+V =			2026.09.17
 DISTNAME =		openscad-${V}
 
 CATEGORIES =		cad
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =	openscad
 GH_PROJECT =	openscad
-GH_COMMIT =	fb3d125fc17debb48080cd3551e944fcb8d97701
+GH_COMMIT =	033ddb6f6aafa7f3042b6ff2b7f60c5ecf59f926
 
 MCAD_COMMIT =	1ea402208c3127ffb443931e9bb1681c191dacca
 SITES.mcad =	https://github.com/${GH_ACCOUNT}/MCAD/archive/
@@ -82,12 +82,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 # Make about say the "right" thing
 CONFIGURE_ARGS +=	-DOPENSCAD_VERSION=${V}
 
-# OpenSCAD uses the program_location (see patch-src_openscad_cc) to
-# figure out resource paths, but on OpenBSD that doesn't work when
-# launched from the PATH.
-# In post-install we add a shell script shim to provide the full path.
-CONFIGURE_ARGS +=	-DCMAKE_INSTALL_BINDIR=${PREFIX}/libexec
-
 # Don't use the included stuff, use ours
 CONFIGURE_ARGS +=	-DUSE_BUILTIN_CLIPPER2=OFF \
 			-DUSE_BUILTIN_MANIFOLD=OFF
@@ -111,7 +105,7 @@ PORTHOME =	${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
 
 # Tests need the shaders somewhere they can be found
-#SHAREDIRS = color-schemes examples fonts libraries locale shaders templates 
+#SHAREDIRS = color-schemes examples fonts libraries locale shaders templates
 SHAREDIRS =	color-schemes locale shaders
 
 pre-test:
@@ -123,7 +117,6 @@ post-extract:
 	cp -a ${WRKDIR}/MCAD-${MCAD_COMMIT} ${WRKSRC}/libraries/MCAD
 
 post-install:
-	${SUBST_PROGRAM} ${FILESDIR}/openscad ${PREFIX}/bin/openscad
 	${MODPY_COMPILEALL} ${PREFIX}/share/openscad/libraries/MCAD/
 
 .include <bsd.port.mk>

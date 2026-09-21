@@ -1,5 +1,4 @@
-bin/openscad
-@bin libexec/openscad
+@bin bin/openscad
 @man man/man1/openscad.1
 share/applications/openscad.desktop
 share/icons/hicolor/128x128/apps/openscad.png
@@ -18,6 +17,8 @@ share/openscad/color-schemes/editor/high-contrast-dark.json
 share/openscad/color-schemes/editor/high-contrast-light.json
 share/openscad/color-schemes/editor/light-background.json
 share/openscad/color-schemes/editor/monokai.json
+share/openscad/color-schemes/editor/nord-dark.json
+share/openscad/color-schemes/editor/nord-light.json
 share/openscad/color-schemes/editor/solarized-dark.json
 share/openscad/color-schemes/editor/solarized-light.json
 share/openscad/color-schemes/editor/tomorrow-night.json
@@ -34,6 +35,8 @@ share/openscad/color-schemes/render/metallic.json
 share/openscad/color-schemes/render/monotone.json
 share/openscad/color-schemes/render/nature.json
 share/openscad/color-schemes/render/nocturnal-gem.json
+share/openscad/color-schemes/render/nord-dark.json
+share/openscad/color-schemes/render/nord-light.json
 share/openscad/color-schemes/render/solarized.json
 share/openscad/color-schemes/render/starnight.json
 share/openscad/color-schemes/render/sunset.json
@@ -229,6 +232,9 @@ share/openscad/locale/pt_BR/LC_MESSAGES/openscad.mo
 share/openscad/locale/ru/
 share/openscad/locale/ru/LC_MESSAGES/
 share/openscad/locale/ru/LC_MESSAGES/openscad.mo
+share/openscad/locale/sv/
+share/openscad/locale/sv/LC_MESSAGES/
+share/openscad/locale/sv/LC_MESSAGES/openscad.mo
 share/openscad/locale/tr/
 share/openscad/locale/tr/LC_MESSAGES/
 share/openscad/locale/tr/LC_MESSAGES/openscad.mo
