@@ -17,4 +17,8 @@ rc_reload() {
 	rc_exec "${daemon} reload --force ${daemon_flags}"
 }
 
+rc_configtest() {
+	rc_exec "${daemon} validate ${daemon_flags}"
+}
+
 rc_cmd $1
