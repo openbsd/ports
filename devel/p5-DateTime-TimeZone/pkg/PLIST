@@ -252,7 +252,9 @@ ${P5SITE}/DateTime/TimeZone/Australia/Lord_Howe.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Melbourne.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Perth.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Sydney.pm
+${P5SITE}/DateTime/TimeZone/CST6CDT.pm
 ${P5SITE}/DateTime/TimeZone/Catalog.pm
+${P5SITE}/DateTime/TimeZone/EST5EDT.pm
 ${P5SITE}/DateTime/TimeZone/Europe/
 ${P5SITE}/DateTime/TimeZone/Europe/Andorra.pm
 ${P5SITE}/DateTime/TimeZone/Europe/Astrakhan.pm
@@ -302,6 +304,7 @@ ${P5SITE}/DateTime/TimeZone/Local.pm
 ${P5SITE}/DateTime/TimeZone/Local/Android.pm
 ${P5SITE}/DateTime/TimeZone/Local/Unix.pm
 ${P5SITE}/DateTime/TimeZone/Local/VMS.pm
+${P5SITE}/DateTime/TimeZone/MST7MDT.pm
 ${P5SITE}/DateTime/TimeZone/OffsetOnly.pm
 ${P5SITE}/DateTime/TimeZone/OlsonDB/
 ${P5SITE}/DateTime/TimeZone/OlsonDB.pm
@@ -309,6 +312,7 @@ ${P5SITE}/DateTime/TimeZone/OlsonDB/Change.pm
 ${P5SITE}/DateTime/TimeZone/OlsonDB/Observance.pm
 ${P5SITE}/DateTime/TimeZone/OlsonDB/Rule.pm
 ${P5SITE}/DateTime/TimeZone/OlsonDB/Zone.pm
+${P5SITE}/DateTime/TimeZone/PST8PDT.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/
 ${P5SITE}/DateTime/TimeZone/Pacific/Apia.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Auckland.pm

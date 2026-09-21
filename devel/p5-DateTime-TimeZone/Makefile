@@ -1,9 +1,8 @@
 COMMENT =	time zone object base class and factory
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	DateTime-TimeZone-2.69
+DISTNAME =	DateTime-TimeZone-2.70
 CPAN_AUTHOR =	DROLSKY
+
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -11,21 +10,22 @@ MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 # Perl
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	devel/p5-Class-Singleton>=1.03 \
-		devel/p5-Module-Runtime \
-		devel/p5-Params-ValidationCompiler>=0.13 \
-		devel/p5-Specio \
-		devel/p5-Try-Tiny \
-		devel/p5-namespace-autoclean
+MODULES =		cpan
 
-BUILD_DEPENDS =	devel/p5-File-ShareDir-Install
-
-TEST_DEPENDS =	devel/p5-Test-Fatal \
-		devel/p5-Test-Requires
+RUN_DEPENDS =		devel/p5-Class-Singleton>=1.03 \
+			devel/p5-Module-Runtime \
+			devel/p5-Params-ValidationCompiler>=0.13 \
+			devel/p5-Specio \
+			devel/p5-Try-Tiny \
+			devel/p5-namespace-autoclean
+TEST_DEPENDS =		devel/p5-Test-Fatal \
+			devel/p5-Test-Requires
 
 # Additional DEPENDS to avoid skipping tests
-TEST_DEPENDS +=	devel/p5-DateTime \
-		devel/p5-Test-Output \
-		devel/p5-Test-Taint
+TEST_DEPENDS +=		devel/p5-DateTime \
+			devel/p5-Test-Output \
+			devel/p5-Test-Taint
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
