@@ -1,6 +1,7 @@
-Adapted from https://github.com/aborche/qemu-guest-agent
-
-Adds support for "guest-get-fsinfo" and "guest-get-vcpus"
+- qga: implement 'guest-get-fsinfo' for FreeBSD
+  2a454b5391ad4241c8d59d8325d8bacac9af7a8c
+- qga: implement 'guest-get-fsinfo' for NetBSD and OpenBSD
+- qga: implement 'guest-get-vcpus' for the BSDs
 
 Index: qga/qapi-schema.json
 --- qga/qapi-schema.json.orig

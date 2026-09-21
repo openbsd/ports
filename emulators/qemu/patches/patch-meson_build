@@ -1,3 +1,5 @@
+- util/cutils: Use getexecpath() on OpenBSD for qemu_init_exec_dir()
+
 - localstatedir does not belong under prefix
 - remove hardcoding of optimization
 
@@ -13,7 +15,22 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -4753,9 +4753,6 @@ if have_rust
+@@ -3030,6 +3030,14 @@ config_host_data.set('CONFIG_ELF_AUX_INFO', cc.links(o
+     return hwcap;
+   }'''))
+ 
++config_host_data.set('CONFIG_GETEXECPATH', cc.links(osdep_prefix + '''
++  #include <limits.h>
++  #include <unistd.h>
++  int main(void) {
++    char buf[PATH_MAX];
++    getexecpath(buf, sizeof(buf));
++  }'''))
++
+ config_host_data.set('CONFIG_USBFS', have_linux_user and cc.compiles('''
+   #include <linux/usbdevice_fs.h>
+ 
+@@ -4753,9 +4761,6 @@ if have_rust
    summary_info += {'bindgen version': bindgen.version()}
  endif
  option_cflags = (get_option('debug') ? ['-g'] : [])
