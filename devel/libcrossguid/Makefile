@@ -1,5 +1,3 @@
-BROKEN-sparc64=	SIBGUS in std::_Hashtable
-
 COMMENT=	minimal and cross platform C++ GUID library
 
 DISTNAME=	libcrossguid-0.2.3.20211002
