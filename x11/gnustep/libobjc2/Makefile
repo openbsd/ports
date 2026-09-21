@@ -25,12 +25,6 @@ LIB_DEPENDS +=	devel/libdispatch
 COMPILER =	base-clang
 MODULES =	devel/cmake
 
-# clang on sparc64 doesn't use the integrated assembler by default
-# gas(1), in turn, doesn't support the generated assembly
-.if ${MACHINE_ARCH} == "sparc64"
-CFLAGS +=	-fintegrated-as
-.endif
-
 BUILD_DEPENDS +=	devel/robin-map
 BUILD_DEPENDS +=	devel/libdispatch:patch
 MAKE_FLAGS +=	LIBOBJCLIBNAME=objc2 \
