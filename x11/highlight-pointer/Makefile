@@ -1,7 +1,7 @@
 COMMENT =	highlight mouse pointer using a dot
 GH_ACCOUNT =	swillner
 GH_PROJECT =	highlight-pointer
-GH_TAGNAME =	v1.2
+GH_TAGNAME =	v1.3
 CATEGORIES =	x11
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
@@ -9,9 +9,16 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xext Xfixes Xi c
+
 USE_GMAKE =	Yes
 NO_TEST =	Yes
-CFLAGS +=	-I/usr/X11R6/include -L/usr/X11R6/lib
+
+MAKE_FLAGS +=	LDFLAGS="${LDFLAGS}"
+
+# -flto and -std=c99 taken from ${WRKSRC}/makefile
+CFLAGS +=	-flto -std=c99 -I${X11BASE}/include
+LDFLAGS +=	-L${X11BASE}/lib
+
 MAKE_FILE =	makefile
 ALL_TARGET =	highlight-pointer
 
