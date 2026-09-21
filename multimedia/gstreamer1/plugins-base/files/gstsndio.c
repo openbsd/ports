@@ -61,11 +61,36 @@ GST_PLUGIN_DEFINE (GST_VERSION_MAJOR,
 void
 gst_sndio_init (struct gstsndio *sio, GObject *obj)
 {
+  g_mutex_init (&sio->lock);
   sio->obj = obj;
   sio->hdl = NULL;
+  sio->started = FALSE;
+  sio->notify_volume = FALSE;
   sio->device = g_strdup (SIO_DEVANY);
+  sio->volume = SIO_MAXVOL;
+  sio->mute = FALSE;
+  sio->volume_set = FALSE;
+  sio->volume_retry = 0;
+  sio->eof = FALSE;
   /* XXX not implemented; only used for src, not sink */
   // sio->driver_timestamps = FALSE;
+}
+
+#define GST_SNDIO_VOLUME_RETRIES 3
+
+static inline unsigned int
+gst_sndio_wanted_volume (struct gstsndio *sio)
+{
+  return sio->mute ? 0 : sio->volume;
+}
+
+/* lock held */
+static void
+gst_sndio_apply_volume (struct gstsndio *sio)
+{
+  if (sio->hdl == NULL || sio->eof)
+    return;
+  sio_setvol (sio->hdl, gst_sndio_wanted_volume (sio));
 }
 
 void
@@ -73,6 +98,57 @@ gst_sndio_finalize (struct gstsndio *sio)
 {
   gst_caps_replace (&sio->cur_caps, NULL);
   g_free (sio->device);
+  g_mutex_clear (&sio->lock);
+}
+
+/* g_object_notify() may re-enter set_property(): call with lock released */
+static void
+gst_sndio_emit_notify (struct gstsndio *sio)
+{
+  if (sio->notify_volume) {
+    sio->notify_volume = FALSE;
+    g_object_notify (G_OBJECT (sio->obj), "volume");
+  }
+}
+
+/* lock held */
+static void
+gst_sndio_reapply_volume (struct gstsndio *sio)
+{
+  if (!sio->volume_set || sio->volume_retry == 0)
+    return;
+  GST_DEBUG_OBJECT (sio->obj, "re-applying volume %u (attempt %d)",
+      gst_sndio_wanted_volume (sio), sio->volume_retry);
+  gst_sndio_apply_volume (sio);
+}
+
+/* lock held; on failure the caller posts the error after unlocking */
+static gboolean
+gst_sndio_do_start (struct gstsndio *sio)
+{
+  if (sio->started)
+    return TRUE;
+  sio->delay = 0;
+  if (!sio_start (sio->hdl)) {
+    sio->eof = TRUE;
+    return FALSE;
+  }
+  sio->started = TRUE;
+  return TRUE;
+}
+
+/* lock held; sio_flush() discards, sio_stop() would drain */
+static void
+gst_sndio_do_flush (struct gstsndio *sio)
+{
+  if (!sio->started)
+    return;
+  if (!sio_flush (sio->hdl)) {
+    sio->eof = TRUE;
+    GST_WARNING_OBJECT (sio->obj, "sio_flush failed");
+  }
+  sio->started = FALSE;
+  sio->delay = 0;
 }
 
 GstCaps *
@@ -98,9 +174,34 @@ static void
 gst_sndio_onvol (void *arg, unsigned int vol)
 {
   struct gstsndio *sio = arg;
+
+  /*
+   * sndiod pushes the volume it remembers for this application on
+   * connect, and libsndio overwrites a pending sio_setvol() with it.
+   * The user's property wins: re-apply from write()/read().
+   */
+  if (sio->volume_set) {
+    if (vol == gst_sndio_wanted_volume (sio)) {
+      sio->volume_retry = 0;
+      return;
+    }
+    if (sio->volume_retry < GST_SNDIO_VOLUME_RETRIES) {
+      sio->volume_retry++;
+      return;
+    }
+    GST_WARNING_OBJECT (sio->obj, "device keeps volume %u, wanted %u",
+	vol, gst_sndio_wanted_volume (sio));
+    sio->volume_set = FALSE;
+    sio->volume_retry = 0;
+  }
+
+  /* muted: device reports 0, keep the volume for unmute */
+  if (sio->mute)
+    return;
+  if (sio->volume == vol)
+    return;
   sio->volume = vol;
-  g_object_notify (G_OBJECT (sio->obj), "mute");
-  g_object_notify (G_OBJECT (sio->obj), "volume");
+  sio->notify_volume = TRUE;
 }
 
 gboolean
@@ -109,6 +210,7 @@ gst_sndio_open (struct gstsndio *sio, gint mode)
   GValue list = G_VALUE_INIT, item = G_VALUE_INIT;
   GstStructure *s;
   GstCaps *caps;
+  GstPadTemplate *templ;
   struct sio_enc *enc;
   struct sio_cap cap;
   char fmt[16];
@@ -116,29 +218,39 @@ gst_sndio_open (struct gstsndio *sio, gint mode)
 
   GST_DEBUG_OBJECT (sio->obj, "open");
 
+  g_mutex_lock (&sio->lock);
   sio->hdl = sio_open (sio->device, mode, 0);
   if (sio->hdl == NULL) {
+    g_mutex_unlock (&sio->lock);
     GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_READ_WRITE,
 	("Couldn't open sndio device"), (NULL));
     return FALSE;
   }
   sio->mode = mode;
+  sio->eof = FALSE;
+  sio->started = FALSE;
+  sio->volume_retry = 0;
 
   if (!sio_getcap(sio->hdl, &cap)) {
-    GST_ELEMENT_ERROR (sio, RESOURCE, OPEN_WRITE,
-	("Couldn't get device capabilities"), (NULL));
     sio_close(sio->hdl);
     sio->hdl = NULL;
+    g_mutex_unlock (&sio->lock);
+    GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_READ_WRITE,
+	("Couldn't get device capabilities"), (NULL));
     return FALSE;
   }
   if (cap.nconf == 0) {
-    GST_ELEMENT_ERROR (sio, RESOURCE, OPEN_WRITE,
-	("Device has empty capabilities"), (NULL));
     sio_close(sio->hdl);
     sio->hdl = NULL;
+    g_mutex_unlock (&sio->lock);
+    GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_READ_WRITE,
+	("Device has empty capabilities"), (NULL));
     return FALSE;
   }
   sio_onvol (sio->hdl, gst_sndio_onvol, sio);
+  gst_sndio_apply_volume (sio);
+  g_mutex_unlock (&sio->lock);
+  gst_sndio_emit_notify (sio);
 
   caps = gst_caps_new_empty ();
   s = gst_structure_new ("audio/x-raw", (char *)NULL, (void *)NULL);
@@ -215,8 +327,20 @@ gst_sndio_open (struct gstsndio *sio, gint mode)
   g_value_unset (&item);
 
   gst_caps_append_structure (caps, s);
-  sio->cur_caps = caps;
-  GST_DEBUG ("caps are %s", gst_caps_to_string(caps));
+
+  /* restrict to the pad template, as alsasink does */
+  templ = gst_element_class_get_pad_template (GST_ELEMENT_GET_CLASS (sio->obj),
+      mode == SIO_PLAY ? "sink" : "src");
+  if (templ) {
+    GstCaps *tcaps = gst_pad_template_get_caps (templ);
+    GstCaps *icaps = gst_caps_intersect (caps, tcaps);
+    gst_caps_unref (tcaps);
+    gst_caps_unref (caps);
+    caps = icaps;
+  }
+  gst_caps_replace (&sio->cur_caps, caps);
+  gst_caps_unref (caps);
+  GST_DEBUG_OBJECT (sio->obj, "caps are %" GST_PTR_FORMAT, sio->cur_caps);
   return TRUE;
 }
 
@@ -226,8 +350,12 @@ gst_sndio_close (struct gstsndio *sio)
   GST_DEBUG_OBJECT (sio->obj, "close");
 
   gst_caps_replace (&sio->cur_caps, NULL);
-  sio_close (sio->hdl);
+  g_mutex_lock (&sio->lock);
+  if (sio->hdl)
+    sio_close (sio->hdl);
   sio->hdl = NULL;
+  sio->started = FALSE;
+  g_mutex_unlock (&sio->lock);
   return TRUE;
 }
 
@@ -249,20 +377,20 @@ gst_sndio_prepare (struct gstsndio *sio, GstAudioRingBufferSpec *spec)
   struct sio_par par, retpar;
   unsigned nchannels;
 
-  GST_DEBUG_OBJECT (sio, "prepare");
+  GST_DEBUG_OBJECT (sio->obj, "prepare");
 
   if (spec->type != GST_AUDIO_RING_BUFFER_FORMAT_TYPE_RAW) {
-      GST_ELEMENT_ERROR (sio, RESOURCE, OPEN_READ_WRITE,
+      GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_READ_WRITE,
 	("Only raw buffer format supported by sndio"), (NULL));
       return FALSE;
   }
   if (!GST_AUDIO_INFO_IS_INTEGER(&spec->info)) {
-      GST_ELEMENT_ERROR (sio, RESOURCE, OPEN_READ_WRITE,
+      GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_READ_WRITE,
 	("Only integer format supported"), (NULL));
       return FALSE;
   }
   if (GST_AUDIO_INFO_DEPTH(&spec->info) % 8) {
-      GST_ELEMENT_ERROR (sio, RESOURCE, OPEN_READ_WRITE,
+      GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_READ_WRITE,
 	("Only depths multiple of 8 are supported"), (NULL));
       return FALSE;
   }
@@ -289,7 +417,7 @@ gst_sndio_prepare (struct gstsndio *sio, GstAudioRingBufferSpec *spec)
   case GST_AUDIO_FORMAT_U24BE:
       break;
   default:
-      GST_ELEMENT_ERROR (sio, RESOURCE, OPEN_READ_WRITE,
+      GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_READ_WRITE,
 	  ("Unsupported audio format"),
 	  ("format = %d", GST_AUDIO_INFO_FORMAT (&spec->info)));
       return FALSE;
@@ -309,16 +437,20 @@ gst_sndio_prepare (struct gstsndio *sio, GstAudioRingBufferSpec *spec)
   par.round = par.rate / 1000000. * spec->latency_time;
   par.appbufsz = par.rate / 1000000. * spec->buffer_time;
 
+  g_mutex_lock (&sio->lock);
   if (!sio_setpar (sio->hdl, &par)) {
-      GST_ELEMENT_ERROR (sio, RESOURCE, OPEN_WRITE,
+      g_mutex_unlock (&sio->lock);
+      GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_WRITE,
 	("Unsupported audio encoding"), (NULL));
       return FALSE;
   }
   if (!sio_getpar (sio->hdl, &retpar)) {
-      GST_ELEMENT_ERROR (sio, RESOURCE, OPEN_WRITE,
+      g_mutex_unlock (&sio->lock);
+      GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_WRITE,
 	("Couldn't get audio device parameters"), (NULL));
       return FALSE;
   }
+  g_mutex_unlock (&sio->lock);
 #if 0
   GST_DEBUG ("format = %s, "
          "requested: sig = %d, bits = %d, bps = %d, le = %d, msb = %d, "
@@ -338,7 +470,7 @@ gst_sndio_prepare (struct gstsndio *sio, GstAudioRingBufferSpec *spec)
       (sio->mode == SIO_REC && par.rchan != retpar.rchan) ||
       (par.bps > 1 && par.le != retpar.le) ||
       (par.bits < par.bps * 8 && par.msb != retpar.msb)) {
-      GST_ELEMENT_ERROR (sio, RESOURCE, OPEN_WRITE,
+      GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_WRITE,
 	("Audio device refused requested parameters"), (NULL));
       return FALSE;
   }
@@ -348,22 +480,120 @@ gst_sndio_prepare (struct gstsndio *sio, GstAudioRingBufferSpec *spec)
   spec->segtotal = retpar.bufsz / retpar.round;
   sio->bpf = retpar.bps * nchannels;
   sio->delay = 0;
+  g_mutex_lock (&sio->lock);
   sio_onmove (sio->hdl, gst_sndio_cb, sio);
+  g_mutex_unlock (&sio->lock);
 
-  if (!sio_start (sio->hdl)) {
-    GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_READ_WRITE,
-      ("Could not start sndio"), (NULL));
-    return FALSE;
-  }
+  /* started by the first write()/read() */
   return TRUE;
 }
 
 gboolean
 gst_sndio_unprepare (struct gstsndio *sio)
 {
+  g_mutex_lock (&sio->lock);
   if (sio->hdl)
-    sio_stop (sio->hdl);
+    gst_sndio_do_flush (sio);
+  g_mutex_unlock (&sio->lock);
   return TRUE;
+}
+
+/*
+ * Device is started on first use; the error is posted once and the
+ * segment skipped (as alsasink), further calls fail silently.
+ */
+gint
+gst_sndio_write (struct gstsndio *sio, gpointer data, guint length)
+{
+  gint done;
+
+  if (length == 0)
+    return 0;
+
+  g_mutex_lock (&sio->lock);
+  if (sio->eof) {
+    g_mutex_unlock (&sio->lock);
+    return length;
+  }
+  if (!gst_sndio_do_start (sio)) {
+    g_mutex_unlock (&sio->lock);
+    GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_WRITE,
+	("Could not start sndio"), (NULL));
+    return length;
+  }
+  done = sio_write (sio->hdl, data, length);
+  if (done == 0) {
+    sio->eof = TRUE;
+    g_mutex_unlock (&sio->lock);
+    GST_ELEMENT_ERROR (sio->obj, RESOURCE, WRITE,
+	("Failed to write data to sndio"), (NULL));
+    return length;
+  }
+  sio->delay += done;
+  gst_sndio_reapply_volume (sio);
+  g_mutex_unlock (&sio->lock);
+  gst_sndio_emit_notify (sio);
+  return done;
+}
+
+gint
+gst_sndio_read (struct gstsndio *sio, gpointer data, guint length)
+{
+  gint done;
+
+  if (length == 0)
+    return 0;
+
+  g_mutex_lock (&sio->lock);
+  if (sio->eof) {
+    g_mutex_unlock (&sio->lock);
+    return -1;
+  }
+  if (!gst_sndio_do_start (sio)) {
+    g_mutex_unlock (&sio->lock);
+    GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_READ,
+	("Could not start sndio"), (NULL));
+    return -1;
+  }
+  done = sio_read (sio->hdl, data, length);
+  if (done == 0) {
+    sio->eof = TRUE;
+    g_mutex_unlock (&sio->lock);
+    GST_ELEMENT_ERROR (sio->obj, RESOURCE, READ,
+	("Failed to read data from sndio"), (NULL));
+    return -1;
+  }
+  sio->delay -= done;
+  gst_sndio_reapply_volume (sio);
+  g_mutex_unlock (&sio->lock);
+  gst_sndio_emit_notify (sio);
+  return done;
+}
+
+/* pause/stop/reset; waits for a blocking sio_write() to return: one round */
+void
+gst_sndio_pause (struct gstsndio *sio)
+{
+  GST_DEBUG_OBJECT (sio->obj, "pause (flush)");
+  g_mutex_lock (&sio->lock);
+  if (sio->hdl && !sio->eof)
+    gst_sndio_do_flush (sio);
+  g_mutex_unlock (&sio->lock);
+}
+
+void
+gst_sndio_resume (struct gstsndio *sio)
+{
+  gboolean ok = TRUE;
+
+  GST_DEBUG_OBJECT (sio->obj, "resume");
+  g_mutex_lock (&sio->lock);
+  if (sio->hdl && !sio->eof)
+    ok = gst_sndio_do_start (sio);
+  g_mutex_unlock (&sio->lock);
+  if (!ok)
+    GST_ELEMENT_ERROR (sio->obj, RESOURCE, OPEN_READ_WRITE,
+	("Could not start sndio"), (NULL));
 }
 
 void
@@ -376,14 +606,25 @@ gst_sndio_set_property (struct gstsndio *sio, guint prop_id,
       sio->device = g_value_dup_string (value);
       break;
     case PROP_VOLUME:
-      sio_setvol (sio->hdl, g_value_get_double (value) * SIO_MAXVOL);
+      g_mutex_lock (&sio->lock);
+      sio->volume = g_value_get_double (value) * SIO_MAXVOL + 0.5;
+      sio->volume_set = TRUE;
+      sio->volume_retry = 0;
+      gst_sndio_apply_volume (sio);
+      g_mutex_unlock (&sio->lock);
+      gst_sndio_emit_notify (sio);
       break;
     case PROP_MUTE:
-      if (g_value_get_boolean (value))
-        sio_setvol (sio->hdl, 0);
+      g_mutex_lock (&sio->lock);
+      sio->mute = g_value_get_boolean (value);
+      sio->volume_set = TRUE;
+      sio->volume_retry = 0;
+      gst_sndio_apply_volume (sio);
+      g_mutex_unlock (&sio->lock);
+      gst_sndio_emit_notify (sio);
       break;
     default:
-      break;
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (sio->obj, prop_id, pspec);
   }
 }
 
@@ -399,7 +640,7 @@ gst_sndio_get_property (struct gstsndio *sio, guint prop_id,
       g_value_set_double (value, (gdouble)sio->volume / SIO_MAXVOL);
       break;
     case PROP_MUTE:
-      g_value_set_boolean (value, (sio->volume == 0));
+      g_value_set_boolean (value, sio->mute);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (sio->obj, prop_id, pspec);

@@ -12,7 +12,6 @@ gst_sndio_device_provider_probe (GstDeviceProvider *provider)
 {
   GList *list = NULL;
   GstDevice *device;
-  struct sio_hdl *hdl;
 
   /*
    * There's no way to discover all devices on the network, so

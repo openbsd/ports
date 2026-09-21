@@ -63,7 +63,9 @@ static gboolean gst_sndiosink_unprepare (GstAudioSink * asink);
 static gint gst_sndiosink_write (GstAudioSink * asink, gpointer data,
     guint length);
 static guint gst_sndiosink_delay (GstAudioSink * asink);
-static void gst_sndiosink_reset (GstAudioSink * asink);
+static void gst_sndiosink_pause (GstAudioSink * asink);
+static void gst_sndiosink_resume (GstAudioSink * asink);
+static void gst_sndiosink_stop (GstAudioSink * asink);
 static void gst_sndiosink_set_property (GObject * object, guint prop_id,
     const GValue * value, GParamSpec * pspec);
 static void gst_sndiosink_get_property (GObject * object, guint prop_id,
@@ -128,18 +130,8 @@ static gint
 gst_sndiosink_write (GstAudioSink * asink, gpointer data, guint length)
 {
   GstSndioSink *sink = GST_SNDIOSINK (asink);
-  guint done;
 
-  if (length == 0)
-    return 0;
-  done = sio_write (sink->sndio.hdl, data, length);
-  if (done == 0) {
-      GST_ELEMENT_ERROR (sink, RESOURCE, WRITE,
-	("Failed to write data to sndio"), (NULL));
-      return 0;
-  }
-  sink->sndio.delay += done;
-  return done;
+  return gst_sndio_write (&sink->sndio, data, length);
 }
 
 static guint
@@ -151,8 +143,27 @@ gst_sndiosink_delay (GstAudioSink * asink)
 }
 
 static void
-gst_sndiosink_reset (GstAudioSink * asink)
+gst_sndiosink_pause (GstAudioSink * asink)
 {
+  GstSndioSink *sink = GST_SNDIOSINK (asink);
+
+  gst_sndio_pause (&sink->sndio);
+}
+
+static void
+gst_sndiosink_resume (GstAudioSink * asink)
+{
+  GstSndioSink *sink = GST_SNDIOSINK (asink);
+
+  gst_sndio_resume (&sink->sndio);
+}
+
+static void
+gst_sndiosink_stop (GstAudioSink * asink)
+{
+  GstSndioSink *sink = GST_SNDIOSINK (asink);
+
+  gst_sndio_pause (&sink->sndio);
 }
 
 static void
@@ -179,13 +190,11 @@ gst_sndiosink_class_init (GstSndioSinkClass * klass)
   GObjectClass *gobject_class;
   GstElementClass *gstelement_class;
   GstBaseSinkClass *gstbasesink_class;
-  GstAudioBaseSinkClass *gstbaseaudiosink_class;
   GstAudioSinkClass *gstaudiosink_class;
 
   gobject_class = (GObjectClass *) klass;
   gstelement_class = (GstElementClass *) klass;
   gstbasesink_class = (GstBaseSinkClass *) klass;
-  gstbaseaudiosink_class = (GstAudioBaseSinkClass *) klass;
   gstaudiosink_class = (GstAudioSinkClass *) klass;
 
   parent_class = g_type_class_peek_parent (klass);
@@ -209,7 +218,9 @@ gst_sndiosink_class_init (GstSndioSinkClass * klass)
   gstaudiosink_class->close = GST_DEBUG_FUNCPTR (gst_sndiosink_close);
   gstaudiosink_class->write = GST_DEBUG_FUNCPTR (gst_sndiosink_write);
   gstaudiosink_class->delay = GST_DEBUG_FUNCPTR (gst_sndiosink_delay);
-  gstaudiosink_class->reset = GST_DEBUG_FUNCPTR (gst_sndiosink_reset);
+  gstaudiosink_class->pause = GST_DEBUG_FUNCPTR (gst_sndiosink_pause);
+  gstaudiosink_class->resume = GST_DEBUG_FUNCPTR (gst_sndiosink_resume);
+  gstaudiosink_class->stop = GST_DEBUG_FUNCPTR (gst_sndiosink_stop);
 
   g_object_class_install_property (gobject_class, PROP_DEVICE,
       g_param_spec_string ("device", "Device",

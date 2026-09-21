@@ -47,12 +47,19 @@ enum
  * data common to src and sink
  */
 struct gstsndio {
+    GMutex lock;	/* libsndio is not thread-safe: held around every sio_*() */
     struct sio_hdl *hdl;
     gchar *device;
     gint mode;
+    gboolean started;	/* between sio_start() and sio_flush() */
+    gboolean notify_volume; /* set by onvol, notified outside the lock */
     gint bpf;		/* bytes per frame */
     gint delay;		/* bytes stored in the audio fifo */
-    guint volume;	/* volume level */
+    guint volume;	/* volume level (SIO_MAXVOL scale), cached until open */
+    gboolean mute;	/* mute state, independent of volume */
+    gboolean volume_set; /* volume/mute set by the user: overrides sndiod's */
+    gint volume_retry;	/* device disagrees with volume_set value: re-apply */
+    gboolean eof;	/* device reported an error, don't post again */
     GstCaps *cur_caps;  /* saved capabilities of opened device */
     GObject *obj;	/* for logging */
     gboolean driver_timestamps;
@@ -67,13 +74,13 @@ gboolean gst_sndio_open (struct gstsndio *sio, gint mode);
 gboolean gst_sndio_close (struct gstsndio *sio);
 gboolean gst_sndio_prepare (struct gstsndio *sio, GstAudioRingBufferSpec *spec);
 gboolean gst_sndio_unprepare (struct gstsndio *sio);
+gint gst_sndio_write (struct gstsndio *sio, gpointer data, guint length);
+gint gst_sndio_read (struct gstsndio *sio, gpointer data, guint length);
+void gst_sndio_pause (struct gstsndio *sio);
+void gst_sndio_resume (struct gstsndio *sio);
 void gst_sndio_set_property (struct gstsndio *sio, guint prop_id,
      const GValue * value, GParamSpec * pspec);
 void gst_sndio_get_property (struct gstsndio *sio, guint prop_id,
      GValue * value,  GParamSpec * pspec);
-
-int gst_sndio_setpar(gpointer sio, GstAudioRingBufferSpec * spec,
-     int mode, struct sio_hdl *hdl);
-GstCaps *gst_sndio_caps (gpointer sio, int mode, struct sio_hdl *hdl);
 
 #endif

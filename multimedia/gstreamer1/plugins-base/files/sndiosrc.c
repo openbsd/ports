@@ -131,18 +131,9 @@ gst_sndiosrc_read (GstAudioSrc * asrc, gpointer data, guint length,
     GstClockTime * timestamp)
 {
   GstSndioSrc *src = GST_SNDIOSRC (asrc);
-  guint done;
 
-  if (length == 0)
-    return 0;
-  done = sio_read (src->sndio.hdl, data, length);
-  if (done == 0) {
-      GST_ELEMENT_ERROR (src, RESOURCE, READ,
-	("Failed to read data from sndio"), (NULL));
-      return 0;
-  }
-  src->sndio.delay -= done;
-  return done;
+  /* -1 is stored into a gint by the base class and read as an error */
+  return (guint) gst_sndio_read (&src->sndio, data, length);
 }
 
 static guint
@@ -156,6 +147,11 @@ gst_sndiosrc_delay (GstAudioSrc * asrc)
 static void
 gst_sndiosrc_reset (GstAudioSrc * asrc)
 {
+  GstSndioSrc *src = GST_SNDIOSRC (asrc);
+
+  /* GstAudioSrc has no pause/resume pair: drop what was captured, the
+   * next read() restarts the device */
+  gst_sndio_pause (&src->sndio);
 }
 
 static void
@@ -182,12 +178,10 @@ gst_sndiosrc_class_init (GstSndioSrcClass * klass)
   GObjectClass *gobject_class;
   GstElementClass *gstelement_class;
   GstBaseSrcClass *gstbasesrc_class;
-  GstAudioBaseSrcClass *gstbaseaudiosrc_class;
   GstAudioSrcClass *gstaudiosrc_class;
   gobject_class = (GObjectClass *) klass;
   gstelement_class = (GstElementClass *) klass;
   gstbasesrc_class = (GstBaseSrcClass *) klass;
-  gstbaseaudiosrc_class = (GstAudioBaseSrcClass *) klass;
   gstaudiosrc_class = (GstAudioSrcClass *) klass;
 
   parent_class = g_type_class_peek_parent (klass);
