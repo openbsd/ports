@@ -1,6 +1,7 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
 MODPY_DISTV=	2.1.8
+REVISION=	0
 DISTNAME=	borgmatic-${MODPY_DISTV}
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -21,9 +22,9 @@ MODPY_PI=	Yes
 
 # XXX new 'browse' ui needs devel/py-binaryornot and 'textual' (wip)
 RUN_DEPENDS=	borgbackup-*:sysutils/borgbackup/1.4 \
-		devel/py-colorama<0.5 \
 		devel/py-jsonschema \
 		sysutils/py-packaging \
+		sysutils/py-psutil \
 		www/py-requests \
 		textproc/py-ruamel.yaml
 # borgmatic script used in post-install to generate config
