@@ -163,6 +163,8 @@ share/liblouis/tables/en-gb-comp8.ctb
 share/liblouis/tables/en-gb-g1.utb
 share/liblouis/tables/en-in-g1.ctb
 share/liblouis/tables/en-nabcc.utb
+share/liblouis/tables/en-nz-g1.utb
+share/liblouis/tables/en-nz-g2.ctb
 share/liblouis/tables/en-ueb-chardefs.uti
 share/liblouis/tables/en-ueb-g1.ctb
 share/liblouis/tables/en-ueb-g2.ctb
@@ -189,11 +191,11 @@ share/liblouis/tables/es-chardefs.cti
 share/liblouis/tables/es-g1.ctb
 share/liblouis/tables/es-g2.ctb
 share/liblouis/tables/es-new.dis
+share/liblouis/tables/es-no.utb
 share/liblouis/tables/es-old.dis
 share/liblouis/tables/es.tbl
+share/liblouis/tables/et-6dot.utb
 share/liblouis/tables/et-g0.utb
-share/liblouis/tables/et.ctb
-share/liblouis/tables/et.tbl
 share/liblouis/tables/ethio-g1.ctb
 share/liblouis/tables/eurodefs.cti
 share/liblouis/tables/fa-ir-comp8.ctb
@@ -201,6 +203,7 @@ share/liblouis/tables/fa-ir-g1.utb
 share/liblouis/tables/fi-fi-8dot.ctb
 share/liblouis/tables/fi.utb
 share/liblouis/tables/fil-g2.ctb
+share/liblouis/tables/fr-bfu-comp6-puncs-math.uti
 share/liblouis/tables/fr-bfu-comp6.utb
 share/liblouis/tables/fr-bfu-comp68.cti
 share/liblouis/tables/fr-bfu-comp8.utb
@@ -244,6 +247,8 @@ share/liblouis/tables/hr-digits.uti
 share/liblouis/tables/hr-g1.ctb
 share/liblouis/tables/hr-g1.tbl
 share/liblouis/tables/hr-translation.cti
+share/liblouis/tables/ht-frenchcompatibility.uti
+share/liblouis/tables/ht-g1.utb
 share/liblouis/tables/hu-backtranslate-correction.dis
 share/liblouis/tables/hu-backtranslate-word-corrections.cti
 share/liblouis/tables/hu-chardefs.cti
@@ -253,7 +258,6 @@ share/liblouis/tables/hu-hu-g1.ctb
 share/liblouis/tables/hu-hu-g1_braille_input.cti
 share/liblouis/tables/hu-hu-g2.ctb
 share/liblouis/tables/hu-hu-g2_exceptions.cti
-share/liblouis/tables/hu.tbl
 share/liblouis/tables/hy.ctb
 share/liblouis/tables/hy.tbl
 share/liblouis/tables/hyph_cs_CZ.dic
@@ -278,7 +282,6 @@ share/liblouis/tables/is.ctb
 share/liblouis/tables/is.tbl
 share/liblouis/tables/it-it-comp6.utb
 share/liblouis/tables/it-it-comp8.utb
-share/liblouis/tables/it.tbl
 share/liblouis/tables/iu-ca-g1.ctb
 share/liblouis/tables/ja-kantenji-ucs2.utb
 share/liblouis/tables/ja-kantenji.utb
@@ -373,6 +376,8 @@ share/liblouis/tables/ny-mw.utb
 share/liblouis/tables/or-in-g1.utb
 share/liblouis/tables/or.tbl
 share/liblouis/tables/oriya.cti
+share/liblouis/tables/ovd-6g0.utb
+share/liblouis/tables/ovd-8g0.utb
 share/liblouis/tables/pa.tbl
 share/liblouis/tables/pi.ctb
 share/liblouis/tables/pi.tbl
@@ -395,6 +400,7 @@ share/liblouis/tables/ru-comp8.utb
 share/liblouis/tables/ru-letters.dis
 share/liblouis/tables/ru-litbrl-detailed.utb
 share/liblouis/tables/ru-litbrl.ctb
+share/liblouis/tables/ru-math.uti
 share/liblouis/tables/ru-ru-g1.ctb
 share/liblouis/tables/ru-unicode.dis
 share/liblouis/tables/rw-rw-g1.utb
@@ -413,6 +419,8 @@ share/liblouis/tables/sk-sk.utb
 share/liblouis/tables/sl-si-comp8.ctb
 share/liblouis/tables/sl-si-g1.utb
 share/liblouis/tables/sl.tbl
+share/liblouis/tables/smi-6g0.utb
+share/liblouis/tables/smi-8g0.utb
 share/liblouis/tables/sot-za-g1.ctb
 share/liblouis/tables/sot-za-g2.ctb
 share/liblouis/tables/spaces.uti
@@ -423,9 +431,25 @@ share/liblouis/tables/sr-g1.ctb
 share/liblouis/tables/sr-latletters.cti
 share/liblouis/tables/sv-1989.ctb
 share/liblouis/tables/sv-1996.ctb
+share/liblouis/tables/sv-6common.uti
+share/liblouis/tables/sv-6g0d.utb
+share/liblouis/tables/sv-6g0p.utb
+share/liblouis/tables/sv-6g1.uti
+share/liblouis/tables/sv-6g1d.ctb
+share/liblouis/tables/sv-6g2.uti
+share/liblouis/tables/sv-6g2d.ctb
+share/liblouis/tables/sv-8g0d.utb
+share/liblouis/tables/sv-8g0n.utb
+share/liblouis/tables/sv-8g1.uti
+share/liblouis/tables/sv-8g1d.ctb
+share/liblouis/tables/sv-8g1n.ctb
+share/liblouis/tables/sv-8g2.uti
+share/liblouis/tables/sv-8g2d.ctb
+share/liblouis/tables/sv-8g2n.ctb
 share/liblouis/tables/sv-g0.utb
 share/liblouis/tables/sv-g1.ctb
 share/liblouis/tables/sv-g2.ctb
+share/liblouis/tables/sv-phon.uti
 share/liblouis/tables/sw-ke-g1-2.ctb
 share/liblouis/tables/sw-ke-g1-3.ctb
 share/liblouis/tables/sw-ke-g1-4.ctb
