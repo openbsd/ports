@@ -1,10 +1,10 @@
 GOFFICE_API_VERSION=	0.10
-GOFFICE_VERSION=	0.10.61
+GOFFICE_VERSION=	0.10.62
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
-GNOME_VERSION=		1.12.61
+GNOME_VERSION=		1.12.62
 
 GNUMERIC_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION GNUMERIC_API_VERSION
@@ -18,7 +18,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi avahi-common bz2 c cairo
+WANTLIB += XRes atk-1.0 atk-bridge-2.0 atspi avahi-common bz2 c cairo
 WANTLIB += cairo-gobject dbus-1 epoll-shim epoxy expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 goffice-0.10 graphite2 gs gsf-1
@@ -49,6 +49,10 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-gda \
 			--without-psiconv \
 			--without-paradox
+
+# XXX libintl.a v.s. libiconv.a
+# ld: error: duplicate symbol: locale_charset
+MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
