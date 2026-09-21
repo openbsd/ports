@@ -6,7 +6,7 @@ GH_PROJECT=	Xastir
 GH_TAGNAME=	Release-${VERSION}
 DISTNAME=	${GH_PROJECT}-${VERSION}
 PKGNAME=	xastir-${VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	comms geo
 
@@ -24,9 +24,6 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
-.if ${MACHINE} == "sparc64"
-CFLAGS +=		-fno-tree-ter
-.endif
 
 CONFIGURE_ARGS=		--with-shapelib					\
 			--with-pcre					\
