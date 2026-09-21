@@ -1,6 +1,3 @@
-# Dlang
-ONLY_FOR_ARCHS =	amd64
-
 COMMENT =	commandline FreeDesktop trash bin utility
 CATEGORIES =	sysutils
 
