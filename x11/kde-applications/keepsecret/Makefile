@@ -1,6 +1,7 @@
 COMMENT =	KDE password manager
 DISTNAME =	keepsecret-${VERSION}
 CATEGORIES =	x11 security
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/keepsecret/
 
