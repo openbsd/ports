@@ -1,23 +1,27 @@
 COMMENT-main=		low-level multimedia framework - client & server
 COMMENT-libs=		low-level multimedia framework - libraries
+COMMENT-gst=		GStreamer elements for PipeWire
 
 PW_PROJECT=		pipewire
 PW_VERSION=		1.6.9
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
+PKGNAME-gst=		gst-plugin-pipewire-${PW_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 SHARED_LIBS += pipewire-0.3              1.0 # 0.1609.0
 
-MULTI_PACKAGES=		-main -libs
+MULTI_PACKAGES=		-main -libs -gst
 
 WANTLIB-main += ${COMPILER_LIBCXX} X11 Xfixes c camera camera-base
 WANTLIB-main += canberra curses dbus-1 ebur128 epoll-shim fftw3f gio-2.0
-WANTLIB-main += glib-2.0 gobject-2.0 gstallocators-1.0 gstaudio-1.0
-WANTLIB-main += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 m opus pipewire-0.3
-WANTLIB-main += readline sndfile sndio
+WANTLIB-main += glib-2.0 gobject-2.0 m opus pipewire-0.3 readline sndfile
+WANTLIB-main += sndio
 
 WANTLIB-libs += intl pthread
+
+WANTLIB-gst += glib-2.0 gobject-2.0 gstallocators-1.0 gstaudio-1.0
+WANTLIB-gst += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 m pipewire-0.3
 
 # needs -std=c++17 (during configure)
 COMPILER=		base-clang ports-gcc
@@ -39,11 +43,13 @@ LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 			audio/libsndfile \
 			devel/epoll-shim \
 			math/fftw3,-main,float \
-			multimedia/gstreamer1/plugins-base \
 			multimedia/libcamera \
 			x11/dbus
 
 LIB_DEPENDS-libs=	devel/gettext,-runtime
+
+LIB_DEPENDS-gst=	${BASE_PKGPATH},-libs \
+			multimedia/gstreamer1/plugins-base
 
 # needs a pipewire-session-manager
 RUN_DEPENDS-main +=	multimedia/pipewire/wireplumber

@@ -29,7 +29,6 @@ bin/pw-sysex
 @bin bin/spa-json-dump
 @bin bin/spa-monitor
 @bin bin/spa-resample
-@so lib/gstreamer-1.0/libgstpipewire.so
 @so lib/pipewire-0.3/libpipewire-module-access.so
 @so lib/pipewire-0.3/libpipewire-module-adapter.so
 @so lib/pipewire-0.3/libpipewire-module-client-device.so
