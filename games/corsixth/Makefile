@@ -1,4 +1,4 @@
-V =		0.70.0
+V =		0.70.1
 COMMENT =	open source clone of Theme Hospital
 PKGNAME =	corsixth-${V}
 CATEGORIES =	games x11
