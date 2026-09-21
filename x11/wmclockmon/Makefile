@@ -1,5 +1,4 @@
 COMMENT=		WindowMaker dock.app clock
-BROKEN-sparc64 =	ICE in change_address_1, at emit-rtl.c:1784
 
 DISTNAME=		wmclockmon-0.8.1
 CATEGORIES=		x11 x11/windowmaker
