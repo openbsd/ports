@@ -1,5 +1,3 @@
-BROKEN-sparc64 = ring-core/target.h:64:2: error: #error Unknown target CPU
-
 COMMENT =		Spotify TUI client
 
 GH_ACCOUNT =		aome510
