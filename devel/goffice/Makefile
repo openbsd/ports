@@ -1,7 +1,7 @@
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.10.61
+GNOME_VERSION=	0.10.62
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -9,7 +9,7 @@ GNOME_VERSION=	0.10.61
 GOFFICE_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_API_VERSION
 
-SHARED_LIBS +=  goffice-0.10         0.3      # 10.60
+SHARED_LIBS +=  goffice-0.10         0.3      # 10.62
 
 CATEGORIES=	devel
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi avahi-common bz2 cairo
+WANTLIB += XRes atk-1.0 atk-bridge-2.0 atspi avahi-common bz2 cairo
 WANTLIB += cairo-gobject dav1d dbus-1 epoll-shim epoxy expat ffi
 WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gs gsf-1
