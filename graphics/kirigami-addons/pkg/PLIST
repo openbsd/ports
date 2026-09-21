@@ -13,8 +13,10 @@ include/KirigamiAddons/Components/kirigamiaddonscomponents_version.h
 include/KirigamiAddons/Components/nameutils.h
 include/KirigamiAddonsStatefulApp/
 include/KirigamiAddonsStatefulApp/AbstractKirigamiApplication
+include/KirigamiAddonsStatefulApp/ActionMenu
 include/KirigamiAddonsStatefulApp/KirigamiActionCollection
 include/KirigamiAddonsStatefulApp/abstractkirigamiapplication.h
+include/KirigamiAddonsStatefulApp/actionmenu.h
 include/KirigamiAddonsStatefulApp/kirigamiactioncollection.h
 include/KirigamiAddonsStatefulApp/kirigamiaddonsstatefulapp_export.h
 lib/cmake/KF6KirigamiAddons/
@@ -27,6 +29,22 @@ lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets.cmake
 @lib lib/libKirigamiAddonsStatefulApp.so.${LIBKirigamiAddonsStatefulApp_VERSION}
 @lib lib/libKirigamiApp.so.${LIBKirigamiApp_VERSION}
 lib/qt6/qml/org/kde/kirigamiaddons/
+lib/qt6/qml/org/kde/kirigamiaddons/actions/
+lib/qt6/qml/org/kde/kirigamiaddons/actions/ActionMenu.qml
+lib/qt6/qml/org/kde/kirigamiaddons/actions/ActionMenuBar.qml
+lib/qt6/qml/org/kde/kirigamiaddons/actions/ActionMenuPopup.qml
+lib/qt6/qml/org/kde/kirigamiaddons/actions/KirigamiAddonsActionsQml.qmltypes
+lib/qt6/qml/org/kde/kirigamiaddons/actions/StatefulWindow.qml
+lib/qt6/qml/org/kde/kirigamiaddons/actions/kde-qmlmodule.version
+lib/qt6/qml/org/kde/kirigamiaddons/actions/labs/
+lib/qt6/qml/org/kde/kirigamiaddons/actions/labs/NativeMenuBar.qml
+lib/qt6/qml/org/kde/kirigamiaddons/actions/labs/NativeMenuItem.qml
+lib/qt6/qml/org/kde/kirigamiaddons/actions/labs/actionslabsplugin.qmltypes
+lib/qt6/qml/org/kde/kirigamiaddons/actions/labs/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigamiaddons/actions/labs/libactionslabsplugin.so
+lib/qt6/qml/org/kde/kirigamiaddons/actions/labs/qmldir
+@so lib/qt6/qml/org/kde/kirigamiaddons/actions/libKirigamiAddonsActionsQml.so
+lib/qt6/qml/org/kde/kirigamiaddons/actions/qmldir
 lib/qt6/qml/org/kde/kirigamiaddons/components/
 lib/qt6/qml/org/kde/kirigamiaddons/components/Avatar.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/AvatarButton.qml
@@ -88,6 +106,7 @@ lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormColorDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormComboBoxDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDateTimeDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDelegateBackground.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDelegateCollapsible.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDelegateSeparator.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormFileDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormFolderDelegate.qml
@@ -109,9 +128,11 @@ lib/qt6/qml/org/kde/kirigamiaddons/formcard/formcardplugin.qmltypes
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigamiaddons/formcard/libformcardplugin.so
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/
-lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/ContentItemLoader.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormCardBackground.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormCardUnits.qml
-lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/SpinButton.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormChoiceDelegateLayout.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormDelegateLayout.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormInfoGrid.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/qmldir
 lib/qt6/qml/org/kde/kirigamiaddons/labs/
 lib/qt6/qml/org/kde/kirigamiaddons/labs/components/
@@ -165,10 +186,14 @@ lib/qt6/qml/org/kde/kirigamiaddons/sounds/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kirigamiaddons/sounds/qmldir
 lib/qt6/qml/org/kde/kirigamiaddons/sounds/soundsplugin.qmltypes
 lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/ActionMenu.qml
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/ActionMenuBar.qml
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/ActionMenuPopup.qml
 lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/KirigamiAddonsStatefulApp.qmltypes
 lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/StatefulWindow.qml
 lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/NativeMenuBar.qml
 lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/NativeMenuItem.qml
 lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/libstatefulapplabsplugin.so
