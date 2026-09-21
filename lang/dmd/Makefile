@@ -1,4 +1,4 @@
-# Backend only supports amd64 and i386
+# Backend only supports amd64 and i386, keep it synced with devel/dub
 ONLY_FOR_ARCHS =	amd64 i386
 
 # No BT CFI yet.
