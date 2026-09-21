@@ -3,7 +3,7 @@ COMMENT =		cross-platform multimedia library
 V =			3.4.16
 DISTNAME =		SDL3-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		SDL3                      0.1 # 3.4.0
 
@@ -24,7 +24,8 @@ SITES =			https://libsdl.org/release/ \
 MODULES =		devel/cmake
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv
 
-BUILD_DEPENDS =		wayland/libinput-openbsd
+BUILD_DEPENDS =		devel/sdl2:patch \
+			wayland/libinput-openbsd
 LIB_DEPENDS =		converters/libiconv \
 			devel/fribidi \
 			wayland/wayland \
@@ -52,5 +53,11 @@ CONFIGURE_ARGS =	-DSDL_ALSA=OFF \
 CONFIGURE_ARGS +=	-DSDL_TESTS=OFF
 
 CFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
+
+post-extract:
+	ln -sf ${WRKDIR}/devel/sdl2/*/src/joystick/SDL_gamecontrollerdb.h \
+		${WRKSRC}/src/joystick/SDL_gamepad_db.h
+	sed -i 's/s_ControllerMappings/s_GamepadMappings/g' \
+		${WRKSRC}/src/joystick/SDL_gamepad_db.h
 
 .include <bsd.port.mk>
