@@ -1,0 +1,2 @@
+libgudev is a library with GObject bindings to libudev, now made independent,
+after being part of udev itself, and later systemd.
