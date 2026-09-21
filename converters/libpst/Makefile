@@ -4,7 +4,7 @@ COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
 
 DISTNAME=		libpst-0.6.76
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=  pst                  3.0      # 5.17
 
@@ -58,7 +58,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			PYTHON_BIN="python${MODPY_VERSION}"
 
 # XXX eats all memory
-.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "hppa"
+.if ${MACHINE_ARCH} == "hppa"
 CFLAGS+=	-O0
 .endif
 
