@@ -6,7 +6,7 @@ GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
 GNOME_VERSION=		49.10
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -60,7 +60,7 @@ RUN_DEPENDS +=		sysutils/consolekit
 RUN_DEPENDS +=		devel/py-gobject3
 
 # needs libgstpipewire.so for screencast recorder
-RUN_DEPENDS +=		multimedia/pipewire/pipewire
+RUN_DEPENDS +=		multimedia/pipewire/pipewire,-gst
 
 # Don't depend on evolution to lower down the amount of dependencies and
 # because most users want to be able to choose their PIM. Evolution can

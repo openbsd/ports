@@ -2,6 +2,7 @@ COMMENT=		take pictures and videos
 
 GNOME_PROJECT=		snapshot
 GNOME_VERSION=		51.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -28,7 +29,7 @@ LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-rs
 
 # libgstpipewire
-RUN_DEPENDS +=		multimedia/pipewire/pipewire
+RUN_DEPENDS +=		multimedia/pipewire/pipewire,-gst
 
 # needed for camerabin
 BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-bad

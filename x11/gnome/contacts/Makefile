@@ -2,7 +2,7 @@ COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
 GNOME_VERSION=		50.0
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		productivity
 
@@ -41,7 +41,7 @@ LIB_DEPENDS=		graphics/libqrencode \
 # gtk4paintablesink
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-rs
 # libgstpipewire
-RUN_DEPENDS +=		multimedia/pipewire/pipewire
+RUN_DEPENDS +=		multimedia/pipewire/pipewire,-gst
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
