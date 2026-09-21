@@ -1,6 +1,7 @@
 COMMENT =	multiplayer server for the game Terraria
 
-V =		1.4.5.6
+# Check for new versions at https://terraria.wiki.gg/wiki/Server#Downloads
+V =		1.4.5.8
 DISTNAME =	terraria-server-${V:S/.//g}
 PKGNAME =	terraria-server-$V
 
