@@ -1,6 +1,6 @@
 COMMENT=		Ubuntu GNOME theme
 
-GH_TAGNAME=		26.10.2
+GH_TAGNAME=		26.10.3
 GH_ACCOUNT=		ubuntu
 GH_PROJECT=		yaru
 
