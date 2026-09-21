@@ -1,5 +1,3 @@
-BROKEN-sparc64 = Uses clang-cpp libraries and fails to link with either ports-gcc or ports-clang
-
 COMMENT =	static source code analyzer for Qt-based C++
 
 V =		1.17.1
