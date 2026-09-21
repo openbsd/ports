@@ -1,5 +1,3 @@
-BROKEN-sparc64 =	treesitter-yaml build fails with SIGABRT
-
 COMMENT =		syntax-aware git merge driver
 
 V =			0.19.1
