@@ -1,5 +1,3 @@
-BROKEN-sparc64 = error: 'u8string' in namespace 'std' does not name a type
-
 COMMENT =	sequel to the family-friendly 3D action adventure
 
 V =		4.0.0

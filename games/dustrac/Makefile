@@ -1,5 +1,3 @@
-BROKEN-sparc64 = error: runtime_error is not a member of std
-
 COMMENT =		traditional top-down car racing game
 
 PKGNAME =		dustrac-${GH_TAGNAME}

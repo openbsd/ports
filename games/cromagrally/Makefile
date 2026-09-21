@@ -1,5 +1,3 @@
-BROKEN-sparc64 = error: 'u8string' in namespace 'std' does not name a type
-
 COMMENT =	family-friendly bronze age kart game
 
 V =		3.0.1
