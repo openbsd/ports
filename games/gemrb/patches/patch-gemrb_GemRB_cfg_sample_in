@@ -1,7 +1,7 @@
 Index: gemrb/GemRB.cfg.sample.in
 --- gemrb/GemRB.cfg.sample.in.orig
 +++ gemrb/GemRB.cfg.sample.in
-@@ -197,10 +197,10 @@ VitaKeepAspectRatio=1
+@@ -203,10 +203,10 @@ VitaKeepAspectRatio=1
  #  You may need to specify this path if running GemRB without installing it.  #
  ###############################################################################
  
@@ -14,7 +14,7 @@ Index: gemrb/GemRB.cfg.sample.in
  
  # The path where GemRB looks for non-BAM fonts (eg. TTF)
  #CustomFontPath=
-@@ -229,7 +229,7 @@ CachePath=@DEFAULT_CACHE_DIR@
+@@ -235,7 +235,7 @@ CachePath=@DEFAULT_CACHE_DIR@
  #  'GUIScript' subdirectory.                                                  #
  ###############################################################################
  
@@ -23,7 +23,7 @@ Index: gemrb/GemRB.cfg.sample.in
  
  ###############################################################################
  #  Game Data Path [String]                                                    #
-@@ -257,7 +257,7 @@ CachePath=@DEFAULT_CACHE_DIR@
+@@ -263,7 +263,7 @@ CachePath=@DEFAULT_CACHE_DIR@
  ###############################################################################
  
  #GemRBOverridePath=@DATA_DIR@

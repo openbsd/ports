@@ -2,8 +2,8 @@ SHARED_LIBS += 		gemrb_core 0.0
 
 COMMENT =		open-source implementation of Bioware's Infinity Engine
 
-V =			0.9.4
-DISTNAME =		gemrb-sources-${V}
+V =			0.9.5
+DISTNAME =		gemrb-${V}-sources
 PKGNAME =		gemrb-${V}
 
 CATEGORIES =		games emulators x11
