@@ -1,5 +1,3 @@
-BROKEN-sparc64 = Error: can't resolve .L.str.48
-
 COMMENT =	binutils for ${CONFIG} cross-development
 
 VERSION =	2.32
