@@ -3,6 +3,7 @@
 @rcscript ${RCDIR}/uptermd
 @bin bin/upterm
 @bin bin/uptermd
+@man man/man1/upterm-attach.1
 @man man/man1/upterm-config-edit.1
 @man man/man1/upterm-config-path.1
 @man man/man1/upterm-config-view.1
@@ -12,6 +13,7 @@
 @man man/man1/upterm-session-current.1
 @man man/man1/upterm-session-info.1
 @man man/man1/upterm-session-list.1
+@man man/man1/upterm-session-stop.1
 @man man/man1/upterm-session.1
 @man man/man1/upterm-upgrade.1
 @man man/man1/upterm-version.1
