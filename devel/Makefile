@@ -149,7 +149,7 @@
      SUBDIR += droplet
      SUBDIR += dtc
      SUBDIR += dtools
-#    SUBDIR += dub
+     SUBDIR += dub
      SUBDIR += dub,dmd
      SUBDIR += dune
      SUBDIR += dwz

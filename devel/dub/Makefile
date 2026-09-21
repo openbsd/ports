@@ -3,8 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	dlang
 GH_PROJECT =	dub
-GH_TAGNAME =	v1.37.0
-REVISION =	0
+GH_TAGNAME =	v1.40.0
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -13,7 +12,7 @@ FLAVORS =	dmd
 FLAVOR ?=	dmd
 
 .if ${FLAVOR:Mdmd}
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	amd64 i386
 
 WANTLIB += c c++abi execinfo m pthread
 
@@ -28,7 +27,7 @@ WANTLIB += c m pthread
 
 BUILD_DEPENDS =	lang/gdmd
 
-RUN_DEPENDS =	lang/gcc/11,-dlang
+RUN_DEPENDS =	lang/gcc/16,-dlang
 
 DC =	${LOCALBASE}/bin/egdc
 DMD =	${LOCALBASE}/bin/gdmd
