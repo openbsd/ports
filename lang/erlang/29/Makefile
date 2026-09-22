@@ -7,7 +7,7 @@ USE_WXNEEDED=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		29.1
+V=		29.1.1
 DISTNAME=	otp_src_${V}
 PORTROACH=	limit:^OTP-${MAJ_V}\.
 PKGNAME=	erlang-${V}
@@ -59,9 +59,9 @@ UPDATE_PLIST_ARGS = -i V
 
 # Use the target 'gen-versions' to update this list
 ERL_VERSIONS=	\
-ASN1_VSN        5.5.1 \
+ASN1_VSN        5.5.2 \
 COMMON_TEST_VSN 1.31.2 \
-COMPILER_VSN    10.0.5 \
+COMPILER_VSN    10.0.6 \
 CRYPTO_VSN      5.10 \
 DEBUGGER_VSN    7.0 \
 DIALYZER_VSN    6.0.3 \
@@ -80,13 +80,13 @@ OBSERVER_VSN    2.19 \
 ODBC_VSN	2.17.1 \
 OS_MON_VSN      2.12 \
 PARSETOOLS_VSN  2.8 \
-PUBLIC_KEY_VSN  1.21.6 \
+PUBLIC_KEY_VSN  1.21.7 \
 RELTOOL_VSN     1.1 \
 RUNTIME_TOOLS_VSN       2.5 \
 SASL_VSN        4.4 \
 SNMP_VSN        5.20.5 \
-SSH_VSN         6.0.5 \
-SSL_VSN         11.7.6 \
+SSH_VSN         6.0.6 \
+SSL_VSN         11.7.7 \
 STDLIB_VSN      8.1 \
 SYNTAX_TOOLS_VSN        4.1.1 \
 TFTP_VSN        1.3 \
