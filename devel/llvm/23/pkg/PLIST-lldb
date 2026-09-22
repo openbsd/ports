@@ -1,7 +1,7 @@
 @option no-default-conflict
 @option is-branch
 @conflict lldb-${LLVM_PKGSPEC}
-@conflict lldb-<22
+@conflict lldb-<21
 @pkgpath devel/llvm/13,-lldb
 @pkgpath devel/llvm/16,-lldb
 @pkgpath devel/llvm/18,-lldb
