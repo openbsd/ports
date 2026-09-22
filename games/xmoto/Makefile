@@ -1,8 +1,6 @@
 COMMENT =	challenging 2D motocross platform game
 REVISION =	0
 
-BROKEN-sparc64 = Always hangs for 8 hours and gets killed
-
 DIST_TUPLE = 	github xmoto xmoto v0.6.3 .
 
 CATEGORIES =	games
