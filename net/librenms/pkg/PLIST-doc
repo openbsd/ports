@@ -76,6 +76,7 @@ share/doc/librenms/Alerting/Transports/SMS-Feedback.md
 share/doc/librenms/Alerting/Transports/SMS-mode.md
 share/doc/librenms/Alerting/Transports/Sensu.md
 share/doc/librenms/Alerting/Transports/Signal-CLI.md
+share/doc/librenms/Alerting/Transports/Signalgrid.md
 share/doc/librenms/Alerting/Transports/Signl4.md
 share/doc/librenms/Alerting/Transports/Slack.md
 share/doc/librenms/Alerting/Transports/Snmptrap.md
@@ -100,6 +101,8 @@ share/doc/librenms/Developing/Application-Notes.md
 share/doc/librenms/Developing/Code-Structure.md
 share/doc/librenms/Developing/Creating-Documentation.md
 share/doc/librenms/Developing/Creating-Release.md
+share/doc/librenms/Developing/Design/
+share/doc/librenms/Developing/Design/Config-Backups-UI-UX.md
 share/doc/librenms/Developing/Dynamic-Config.md
 share/doc/librenms/Developing/Getting-Started.md
 share/doc/librenms/Developing/Localization.md
@@ -201,6 +204,7 @@ share/doc/librenms/Extensions/Applications/Squid.md
 share/doc/librenms/Extensions/Applications/Supervisord.md
 share/doc/librenms/Extensions/Applications/Suricata Extract.md
 share/doc/librenms/Extensions/Applications/Suricata.md
+share/doc/librenms/Extensions/Applications/Syslog-NG.md
 share/doc/librenms/Extensions/Applications/Systemd.md
 share/doc/librenms/Extensions/Applications/TinyDNS aka djbdns.md
 share/doc/librenms/Extensions/Applications/UPS-apcups.md
@@ -253,7 +257,6 @@ share/doc/librenms/Extensions/Syslog.md
 share/doc/librenms/Extensions/Two-Factor-Auth.md
 share/doc/librenms/Extensions/Unimus.md
 share/doc/librenms/Extensions/Varnish.md
-share/doc/librenms/Extensions/VisJS-Config.md
 share/doc/librenms/Extensions/Weathermap.md
 share/doc/librenms/Extensions/World-Map.md
 share/doc/librenms/Extensions/metrics/

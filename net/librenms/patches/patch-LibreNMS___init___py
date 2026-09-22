@@ -10,7 +10,7 @@ Index: LibreNMS/__init__.py
      try:
          exit_code, output = command_runner(config_cmd, timeout=300, stderr=False)
          if exit_code != 0:
-@@ -204,7 +204,7 @@ def call_script(script, args=(), log_dest=None):
+@@ -263,7 +263,7 @@ def call_script(script, args=(), log_dest=None):
      """
      if script.endswith(".php"):
          # save calling the sh process
