@@ -1,5 +1,3 @@
-BROKEN-sparc64=	relocation truncated to fit: R_SPARC_GOT13 against symbol
-
 V =			2.54
 REVISION=		1
 COMMENT=		interpreter for Infocom-compatible games
