@@ -4,7 +4,7 @@ V=			0.4.72
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += gegl-0.4                  0.5 # 0.471.1
 
@@ -20,7 +20,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3/LGPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} OpenEXR-3_4 babl-0.1 c cairo gdk_pixbuf-2.0
+WANTLIB += ${COMPILER_LIBCXX} OpenEXR-3_5 babl-0.1 c cairo gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl jasper
 WANTLIB += jpeg json-glib-1.0 lcms2 m nsgif pango-1.0 pangocairo-1.0
 WANTLIB += png poppler-glib raw rsvg-2 tiff umfpack webp

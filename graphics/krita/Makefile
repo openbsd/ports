@@ -2,7 +2,7 @@ COMMENT =	advanced drawing and image manipulation
 
 VERSION =	6.0.3
 DISTNAME =	krita-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  kritabasicflakes          5.0 # 16.0
 SHARED_LIBS +=  kritaflake                15.1 # 16.0
@@ -46,11 +46,11 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Iex-3_4 IlmThread-3_4 Imath-3_2
+WANTLIB += ${COMPILER_LIBCXX} GL Iex-3_5 IlmThread-3_5 Imath-3_2
 WANTLIB += KDcrawQt6 KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6CoreAddons KF6Crash KF6GuiAddons KF6I18n
-WANTLIB += KF6ItemViews KF6WidgetsAddons OpenColorIO OpenEXR-3_4
-WANTLIB += OpenEXRCore-3_4 Qt6Concurrent Qt6Core Qt6Core5Compat
+WANTLIB += KF6ItemViews KF6WidgetsAddons OpenColorIO OpenEXR-3_5
+WANTLIB += OpenEXRCore-3_5 Qt6Concurrent Qt6Core Qt6Core5Compat
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Sql
 WANTLIB += Qt6Svg Qt6SvgWidgets Qt6WaylandClient Qt6Widgets Qt6Xml

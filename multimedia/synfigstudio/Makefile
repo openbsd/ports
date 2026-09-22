@@ -8,6 +8,8 @@ V =			1.5.5
 DISTNAME =		synfigstudio-$V
 API_V =			0.0
 
+REVISION =		0
+
 SHARED_LIBS +=  synfigapp                 4.0 # 0.0
 
 CATEGORIES =		multimedia
@@ -17,9 +19,9 @@ HOMEPAGE =		https://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_4 IlmThread-3_4 Imath-3_2
-WANTLIB += Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16 OpenEXR-3_4
-WANTLIB += OpenEXRCore-3_4 OpenEXRUtil-3_4 SM SvtAv1Enc X11 X11-xcb
+WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_5 IlmThread-3_5 Imath-3_2
+WANTLIB += Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16 OpenEXR-3_5
+WANTLIB += OpenEXRCore-3_5 OpenEXRUtil-3_5 SM SvtAv1Enc X11 X11-xcb
 WANTLIB += XRes Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt aom atk-1.0 atk-bridge-2.0
 WANTLIB += atkmm-1.6 atspi avcodec avformat avutil bz2 c cairo
@@ -35,7 +37,7 @@ WANTLIB += sharpyuv sigc-2.0 speex ssl swresample swscale synfig
 WANTLIB += theoraenc tiff va va-drm va-x11 vorbis vorbisenc vpx
 WANTLIB += wayland-client wayland-cursor wayland-egl webp webpdemux
 WANTLIB += webpmux x264 x265 xcb xcb-dri3 xcb-render xcb-shm xkbcommon
-WANTLIB += xml++-2.6 xml2 xvidcore z
+WANTLIB += xml++-2.6 xml2 xvidcore z jasper zstd
 
 SITES=		https://github.com/synfig/synfig/releases/download/v${V}/
 

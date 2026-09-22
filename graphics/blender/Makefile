@@ -9,7 +9,7 @@ COMMENT =	3D creation software
 VERSION =	4.5.3
 V =		${VERSION:R}
 DISTNAME =	blender-${VERSION}
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	graphics
 
@@ -18,8 +18,8 @@ HOMEPAGE =	https://www.blender.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} Alembic Iex-3_4
-WANTLIB += IlmThread-3_4 Imath-3_2 OpenColorIO OpenEXR-3_4 OpenEXRCore-3_4
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} Alembic Iex-3_5
+WANTLIB += IlmThread-3_5 Imath-3_2 OpenColorIO OpenEXR-3_5 OpenEXRCore-3_5
 WANTLIB += OpenImageIO OpenImageIO_Util X11 Xfixes Xi Xrender
 WANTLIB += atomic avcodec avdevice avfilter avformat avutil c
 WANTLIB += epoxy execinfo fftw3 fftw3f fftw3f_threads freetype
@@ -139,7 +139,6 @@ post-install:
 	find ${PREFIX}/share/blender/${V}/datafiles/fonts -name '*.woff2' \
 		-exec ${LOCALBASE}/bin/woff2_decompress {} \;
 	rm ${PREFIX}/share/blender/${V}/datafiles/fonts/*.woff2
-	#
 	mv ${PREFIX}/bin/blender ${PREFIX}/bin/blender-bin
 	${INSTALL_SCRIPT} ${FILESDIR}/blender ${PREFIX}/bin
 	${SUBST_CMD} ${PREFIX}/bin/blender

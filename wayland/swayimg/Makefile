@@ -6,7 +6,7 @@ COMMENT =	image display utility for Wayland
 GH_ACCOUNT =	artemsen
 GH_PROJECT =	swayimg
 GH_TAGNAME =	v5.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	wayland
 
@@ -18,11 +18,11 @@ COMPILER_LANGS =	c
 
 MODULES =	devel/meson
 
-WANTLIB += ${COMPILER_LIBCXX} Imath-3_2 OpenEXR-3_4 avif c cairo
+WANTLIB += ${COMPILER_LIBCXX} Imath-3_2 OpenEXR-3_5 avif c cairo
 WANTLIB += drm epoll-shim exiv2 fontconfig freetype gif gobject-2.0
 WANTLIB += heif jpeg jxl jxl_threads luajit-5.1 m png raw rsvg-2
 WANTLIB += sixel tiff wayland-client webp webpdemux xkbcommon
-WANTLIB += lib/inotify/inotify
+WANTLIB += lib/inotify/inotify Iex-3_5
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"

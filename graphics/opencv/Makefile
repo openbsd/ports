@@ -8,7 +8,7 @@ V =			4.13.0
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
-REVISION-main =		3
+REVISION-main =		4
 REVISION-java =		1
 
 PKGNAME-main =		opencv-${V}
@@ -25,7 +25,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 SHARED_LIBS += $i 16.0
 .endfor
 
-WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_4 absl_hash absl_log_internal_message
+WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_5 absl_hash absl_log_internal_message
 WANTLIB-main += avcodec avdevice avformat avif avutil c cairo cblas
 WANTLIB-main += gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gstapp-1.0
 WANTLIB-main += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0

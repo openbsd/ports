@@ -3,7 +3,7 @@ COMMENT=	3D image rendering package
 V=		3.7.0.10
 DISTNAME=	povunix-v$V-src
 PKGNAME=	povray-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	graphics
 
@@ -18,8 +18,8 @@ PORTROACH=	site:https://github.com/POV-Ray/povray/releases/
 # AGPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Iex-3_4 IlmThread-3_4 Imath-3_2
-WANTLIB += OpenEXR-3_4 OpenEXRCore-3_4 OpenEXRUtil-3_4 boost_thread-mt
+WANTLIB += ${COMPILER_LIBCXX} Iex-3_5 IlmThread-3_5 Imath-3_2
+WANTLIB += OpenEXR-3_5 OpenEXRCore-3_5 OpenEXRUtil-3_5 boost_thread-mt
 WANTLIB += c jpeg m png tiff z
 
 COMPILER=		base-clang ports-gcc

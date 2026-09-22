@@ -6,7 +6,7 @@ COMMENT =		2D animation software
 V=			1.5.5
 DISTNAME =		synfig-$V
 API_V =			1.0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  synfig                    3.0 # 0.0
 
@@ -17,9 +17,9 @@ HOMEPAGE =		https://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_4 IlmThread-3_4 Imath-3_2
-WANTLIB += Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16 OpenEXR-3_4
-WANTLIB += OpenEXRCore-3_4 OpenEXRUtil-3_4 SM SvtAv1Enc X11 X11-xcb
+WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_5 IlmThread-3_5 Imath-3_2
+WANTLIB += Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16 OpenEXR-3_5
+WANTLIB += OpenEXRCore-3_5 OpenEXRUtil-3_5 SM SvtAv1Enc X11 X11-xcb
 WANTLIB += Xext Xfixes Xt aom avcodec avformat avutil bz2 c crypto
 WANTLIB += dav1d deflate djvulibre drm expat ffi fftw3 fontconfig
 WANTLIB += freetype fribidi gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4
@@ -29,7 +29,7 @@ WANTLIB += mlt-7 mng mp3lame mpg123 ogg openjp2 openjph opus pcre2-8
 WANTLIB += png raw_r sharpyuv sigc-2.0 speex ssl swresample swscale
 WANTLIB += theoraenc tiff va va-drm va-x11 vorbis vorbisenc vpx
 WANTLIB += webp webpdemux webpmux x264 x265 xcb xcb-dri3 xml++-2.6
-WANTLIB += xml2 xvidcore z
+WANTLIB += xml2 xvidcore z jasper zstd
 
 SITES=			https://github.com/synfig/synfig/releases/download/v${V}/
 
