@@ -10,12 +10,12 @@
 
 COMMENT =	library to access udev device information
 
-VERSION =	20260920
+VERSION =	20260922
 DISTNAME =	libudev-openbsd-${VERSION}
 
 GH_ACCOUNT =	rnagy
 GH_PROJECT =	libudev-openbsd
-GH_COMMIT =	b52ecedf0eb07b2af1fe599c114ed121bed4b092
+GH_COMMIT =	b890234eb229a2a9d988f510fc27a9df7dd4c059
 
 SHARED_LIBS += udev                      0.0 # 0.0.0
 
