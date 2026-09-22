@@ -525,7 +525,10 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/trust
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/vfsevents.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/regexscan.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/renderers/
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/renderers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/renderers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/renderers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/renderers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/renderers/${MODPY_PYCACHE}parquet_renderer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/renderers/${MODPY_PYCACHE}parquet_renderer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/renderers/parquet_renderer.py

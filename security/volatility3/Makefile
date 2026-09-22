@@ -1,6 +1,6 @@
 COMMENT =		volatile memory extraction framework
 
-MODPY_DISTV =	2.28.0
+MODPY_DISTV =	2.28.2
 DISTNAME =		volatility3-${MODPY_DISTV}
 PKGNAME =		${DISTNAME}
 
