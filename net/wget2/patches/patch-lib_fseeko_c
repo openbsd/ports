@@ -1,6 +1,7 @@
---- lib/fseeko.c.orig.port	Mon Nov 10 19:51:33 2025
-+++ lib/fseeko.c	Sat Jan  3 11:54:53 2026
-@@ -76,6 +76,8 @@
+Index: lib/fseeko.c
+--- lib/fseeko.c.orig
++++ lib/fseeko.c
+@@ -76,6 +76,8 @@ fseeko (FILE *fp, off_t offset, int whence)
                       ? fp_->_bf._size
                       : 0)
        && fp_ub._base == NULL)
