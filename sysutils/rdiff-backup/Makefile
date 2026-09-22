@@ -1,6 +1,7 @@
 COMMENT =	reverse differential backup tool, over a network or locally
 
 MODPY_DISTV =	2.2.6
+REVISION =	0
 DISTNAME =	rdiff-backup-${MODPY_DISTV}
 
 CATEGORIES =	sysutils
@@ -21,8 +22,7 @@ CFLAGS +=		-I${LOCALBASE}/include
 
 LIB_DEPENDS =		net/librsync
 
-RUN_DEPENDS =		devel/py-importlib-metadata \
-			textproc/py-yaml
+RUN_DEPENDS =		textproc/py-yaml
 
 # tests are present but are intended to run via Tox in a Docker container
 NO_TEST =		Yes
