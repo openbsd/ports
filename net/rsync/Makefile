@@ -1,7 +1,6 @@
 COMMENT=	mirroring/synchronization over low bandwidth links
 
-DISTNAME=	rsync-3.5.0
-REVISION=	0
+DISTNAME=	rsync-3.5.1
 
 CATEGORIES=	net
 HOMEPAGE=	https://rsync.samba.org/
@@ -25,8 +24,7 @@ TEST_DEPENDS=	lang/python/3 \
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --disable-md2man \
-		--disable-lz4 \
-		--disable-zstd \
+		--disable-idn \
 		--with-included-popt \
 		--with-included-zlib \
 		--with-rrsync \
@@ -53,6 +51,9 @@ LIB_DEPENDS +=	archivers/lz4 \
 		archivers/zstd \
 		converters/libiconv
 WANTLIB +=	iconv lz4 zstd
+.else
+CONFIGURE_ARGS += --disable-lz4 \
+		--disable-zstd
 .endif
 
 pre-configure:
