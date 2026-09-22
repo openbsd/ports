@@ -1,5 +1,3 @@
-BROKEN-sparc64= Multiple definition of various std::
-
 COMMENT=	2.5 dimensional tetris-like game
 
 DISTNAME=	xwelltris-1.0.1
