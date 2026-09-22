@@ -1,5 +1,3 @@
-BROKEN-sparc64 = cc1plus: out of memory allocating 883432 bytes after a total of 0 bytes
-
 V =		13.0i
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
