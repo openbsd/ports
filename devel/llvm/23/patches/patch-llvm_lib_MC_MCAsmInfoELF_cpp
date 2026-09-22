@@ -1,0 +1,12 @@
+Index: llvm/lib/MC/MCAsmInfoELF.cpp
+--- llvm/lib/MC/MCAsmInfoELF.cpp.orig
++++ llvm/lib/MC/MCAsmInfoELF.cpp
+@@ -42,7 +42,7 @@ bool MCAsmInfoELF::useCodeAlign(const MCSection &Sec) 
+ 
+ MCAsmInfoELF::MCAsmInfoELF(const MCTargetOptions &Options)
+     : MCAsmInfo(Options) {
+-  HasIdentDirective = true;
++  HasIdentDirective = false;
+   HasPreferredAlignment = true;
+   WeakRefDirective = "\t.weak\t";
+   InternalSymbolPrefix = ".L";

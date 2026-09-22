@@ -1,0 +1,22 @@
+Index: libcxx/include/__locale_dir/support/openbsd.h
+--- libcxx/include/__locale_dir/support/openbsd.h.orig
++++ libcxx/include/__locale_dir/support/openbsd.h
+@@ -16,6 +16,7 @@
+ #include <__utility/forward.h>
+ #include <clocale> // std::lconv
+ #include <ctype.h>
++#include <langinfo.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -194,6 +195,10 @@ inline size_t __mbrlen(const char* __s, size_t __n, mb
+ inline size_t __mbsrtowcs(wchar_t* __dest, const char** __src, size_t __len, mbstate_t* __ps, __locale_t __loc) {
+   __locale_guard __current(__loc);
+   return mbsrtowcs(__dest, __src, __len, __ps);
++}
++
++inline _LIBCPP_HIDE_FROM_ABI const char* __get_locale_encoding(__locale_t __loc) {
++  return ::nl_langinfo_l(CODESET, __loc);
+ }
+ #  endif // _LIBCPP_HAS_WIDE_CHARACTERS
+ #endif   // _LIBCPP_BUILDING_LIBRARY

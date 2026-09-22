@@ -1,0 +1,11 @@
+Index: llvm/lib/Target/AArch64/AArch64TargetMachine.cpp
+--- llvm/lib/Target/AArch64/AArch64TargetMachine.cpp.orig
++++ llvm/lib/Target/AArch64/AArch64TargetMachine.cpp
+@@ -400,6 +400,7 @@ AArch64TargetMachine::AArch64TargetMachine(const Targe
+     this->Options.TLSSize = 24;
+ 
+   const bool TargetSupportsGISel =
++      !getTargetTriple().isOSOpenBSD() &&
+       TT.getArch() != Triple::aarch64_32 &&
+       TT.getEnvironment() != Triple::GNUILP32 &&
+       !(getCodeModel() == CodeModel::Large && TT.isOSBinFormatMachO());

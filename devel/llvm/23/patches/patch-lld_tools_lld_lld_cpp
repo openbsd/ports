@@ -1,0 +1,31 @@
+Index: lld/tools/lld/lld.cpp
+--- lld/tools/lld/lld.cpp.orig
++++ lld/tools/lld/lld.cpp
+@@ -66,11 +66,27 @@ static unsigned inTestVerbosity() {
+   return v;
+ }
+ 
++#ifdef LLD_ENABLE_COFF
+ LLD_HAS_DRIVER(coff)
++#else
++LLD_HAS_DRIVER_DUMMY(coff)
++#endif
+ LLD_HAS_DRIVER(elf)
++#ifdef LLD_ENABLE_MINGW
+ LLD_HAS_DRIVER(mingw)
++#else
++LLD_HAS_DRIVER_DUMMY(mingw)
++#endif
++#ifdef LLD_ENABLE_MACHO
+ LLD_HAS_DRIVER(macho)
++#else
++LLD_HAS_DRIVER_DUMMY(macho)
++#endif
++#ifdef LLD_ENABLE_WASM
+ LLD_HAS_DRIVER(wasm)
++#else
++LLD_HAS_DRIVER_DUMMY(wasm)
++#endif
+ 
+ int lld_main(int argc, char **argv, const llvm::ToolContext &) {
+   sys::Process::UseANSIEscapeCodes(true);

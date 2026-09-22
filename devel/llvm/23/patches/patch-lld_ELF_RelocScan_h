@@ -1,0 +1,12 @@
+Index: lld/ELF/RelocScan.h
+--- lld/ELF/RelocScan.h.orig
++++ lld/ELF/RelocScan.h
+@@ -195,6 +195,8 @@ void RelocScan::scan(typename Relocs<RelTy>::const_ite
+   RelExpr expr =
+       ctx.target->getRelExpr(type, sym, sec->content().data() + offset);
+ 
++  reportGNUWarning(ctx, sym, *sec, rel.r_offset);
++
+   // Error if the target symbol is undefined. Symbol index 0 may be used by
+   // marker relocations, e.g. R_*_NONE and R_ARM_V4BX. Don't error on them.
+   if (sym.isUndefined() && symIdx != 0 &&

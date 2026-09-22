@@ -1,0 +1,11 @@
+Index: lld/ELF/SymbolTable.cpp
+--- lld/ELF/SymbolTable.cpp.orig
++++ lld/ELF/SymbolTable.cpp
+@@ -88,6 +88,7 @@ Symbol *SymbolTable::insert(StringRef name) {
+   // make<SymbolUnion>() value-initializes the storage, so the Symbol fields
+   // are zero. Set the ones that need a non-zero value.
+   sym->setName(name);
++  sym->gwarn = false;
+   sym->versionId = VER_NDX_GLOBAL;
+   if (pos != StringRef::npos)
+     sym->hasVersionSuffix = true;

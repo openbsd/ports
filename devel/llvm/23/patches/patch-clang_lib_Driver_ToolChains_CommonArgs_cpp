@@ -1,0 +1,35 @@
+Index: clang/lib/Driver/ToolChains/CommonArgs.cpp
+--- clang/lib/Driver/ToolChains/CommonArgs.cpp.orig
++++ clang/lib/Driver/ToolChains/CommonArgs.cpp
+@@ -92,6 +92,9 @@ static bool useFramePointerForTargetByDefault(const ll
+   if (Triple.isAndroid())
+     return true;
+ 
++  if (Triple.isOSOpenBSD())
++    return true;
++
+   switch (Triple.getArch()) {
+   case llvm::Triple::xcore:
+   case llvm::Triple::wasm32:
+@@ -224,6 +227,9 @@ static bool mustMaintainValidFrameChain(const llvm::op
+ // cause frame records to be created in leaf functions.
+ static bool framePointerImpliesLeafFramePointer(const llvm::opt::ArgList &Args,
+                                                 const llvm::Triple &Triple) {
++  if (Triple.isOSOpenBSD())
++    return true;
++
+   if (Triple.isARM() || Triple.isThumb()) {
+     // For 32-bit Arm, the -mframe-chain=aapcs+leaf option causes the
+     // -fno-omit-frame-pointer optiion to imply -mno-omit-leaf-frame-pointer,
+@@ -3437,7 +3443,11 @@ void tools::renderGlobalISelOptions(const Driver &D, c
+ void tools::renderCommonIntegerOverflowOptions(const ArgList &Args,
+                                                ArgStringList &CmdArgs,
+                                                bool IsMSVCCompat) {
++#ifdef __OpenBSD__
++  bool use_fwrapv = true;
++#else
+   bool use_fwrapv = IsMSVCCompat;
++#endif
+   bool use_fwrapv_pointer = false;
+   for (const Arg *A : Args.filtered(
+            options::OPT_fstrict_overflow, options::OPT_fno_strict_overflow,

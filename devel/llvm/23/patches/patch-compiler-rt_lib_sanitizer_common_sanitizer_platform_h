@@ -1,0 +1,39 @@
+Index: compiler-rt/lib/sanitizer_common/sanitizer_platform.h
+--- compiler-rt/lib/sanitizer_common/sanitizer_platform.h.orig
++++ compiler-rt/lib/sanitizer_common/sanitizer_platform.h
+@@ -16,7 +16,7 @@
+     !defined(__APPLE__) && !defined(_WIN32) && !defined(__Fuchsia__) &&     \
+     !(defined(__sun__) && defined(__svr4__)) && !defined(__HAIKU__) &&      \
+     !defined(__wasi__) && !defined(__NVPTX__) && !defined(__AMDGPU__) &&    \
+-    !defined(__SPIRV__) && !defined(_AIX)
++    !defined(__SPIRV__) && !defined(_AIX) && !defined(__OpenBSD__)
+ #  error "This operating system is not supported"
+ #endif
+ 
+@@ -57,6 +57,12 @@
+ #  define SANITIZER_NETBSD 0
+ #endif
+ 
++#if defined(__OpenBSD__)
++# define SANITIZER_OPENBSD 1
++#else
++# define SANITIZER_OPENBSD 0
++#endif
++
+ #if defined(__sun__) && defined(__svr4__)
+ #  define SANITIZER_SOLARIS 1
+ #else
+@@ -156,9 +162,10 @@
+ #  define SANITIZER_MUSL 0
+ #endif
+ 
+-#define SANITIZER_POSIX                                       \
+-  (SANITIZER_FREEBSD || SANITIZER_LINUX || SANITIZER_APPLE || \
+-   SANITIZER_NETBSD || SANITIZER_SOLARIS || SANITIZER_HAIKU || SANITIZER_AIX)
++#define SANITIZER_POSIX                                        \
++  (SANITIZER_FREEBSD || SANITIZER_LINUX || SANITIZER_APPLE ||  \
++   SANITIZER_NETBSD || SANITIZER_SOLARIS || SANITIZER_HAIKU || \
++   SANITIZER_AIX || SANITIZER_OPENBSD)
+ 
+ #if __LP64__ || defined(_WIN64)
+ #  define SANITIZER_WORDSIZE 64

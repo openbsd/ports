@@ -1,0 +1,11 @@
+Index: llvm/lib/Target/PowerPC/CMakeLists.txt
+--- llvm/lib/Target/PowerPC/CMakeLists.txt.orig
++++ llvm/lib/Target/PowerPC/CMakeLists.txt
+@@ -44,6 +44,7 @@ add_llvm_target(PowerPCCodeGen
+   PPCMIPeephole.cpp
+   PPCPrepareIFuncsOnAIX.cpp
+   PPCRegisterInfo.cpp
++  PPCReturnProtectorLowering.cpp
+   PPCSelectionDAGInfo.cpp
+   PPCSubtarget.cpp
+   PPCTargetMachine.cpp

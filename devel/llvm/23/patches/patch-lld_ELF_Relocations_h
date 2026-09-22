@@ -1,0 +1,13 @@
+Index: lld/ELF/Relocations.h
+--- lld/ELF/Relocations.h.orig
++++ lld/ELF/Relocations.h
+@@ -162,6 +162,9 @@ void addGotEntry(Ctx &ctx, Symbol &sym);
+ 
+ bool isAbsolute(const Symbol &sym);
+ 
++void reportGNUWarning(Ctx &ctx, Symbol &sym, InputSectionBase &sec,
++                      uint64_t offset);
++
+ class ThunkSection;
+ class Thunk;
+ class InputSectionDescription;

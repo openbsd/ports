@@ -1,0 +1,11 @@
+Index: llvm/lib/ObjectYAML/ELFYAML.cpp
+--- llvm/lib/ObjectYAML/ELFYAML.cpp.orig
++++ llvm/lib/ObjectYAML/ELFYAML.cpp
+@@ -175,6 +175,7 @@ void ScalarEnumerationTraits<ELFYAML::ELF_NT>::enumera
+   ECase(NT_OPENBSD_FPREGS);
+   ECase(NT_OPENBSD_XFPREGS);
+   ECase(NT_OPENBSD_WCOOKIE);
++  ECase(NT_OPENBSD_PACMASK);
+   // AMD specific notes. (Code Object V2)
+   ECase(NT_AMD_HSA_CODE_OBJECT_VERSION);
+   ECase(NT_AMD_HSA_HSAIL);
