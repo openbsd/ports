@@ -7,7 +7,7 @@ Index: llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
      } else {
 -      emitAlignment(PrefAlign, &F);
 +// XXX      emitAlignment(PrefAlign, &F);
-+      emitTrapAlignment(MF->getAlignment(), &F);
++      emitTrapAlignment(PrefAlign, &F);
      }
    }
  
