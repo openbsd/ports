@@ -48,3 +48,4 @@ lib/cmake/KF6PulseAudioQt/KF6PulseAudioQtTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6PulseAudioQt/KF6PulseAudioQtTargets.cmake
 @lib lib/libKF6PulseAudioQt.so.${LIBKF6PulseAudioQt_VERSION}
 lib/pkgconfig/KF6PulseAudioQt.pc
+lib/qt6/metatypes/qt6kf6pulseaudioqt_metatypes.json
