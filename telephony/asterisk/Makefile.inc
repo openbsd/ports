@@ -29,7 +29,10 @@ WANTLIB-main += sqlite3 srtp2 ssl uriparser unbound uuid
 WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-DPB_PROPERTIES=	parallel
+
+# XXX naddy saw an odd build error which could conceivably be related
+# to parallel build
+#DPB_PROPERTIES=	parallel
 
 # Asterisk requires either nested functions (gcc extension), or -fblocks (clang).
 
