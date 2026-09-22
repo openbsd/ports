@@ -8,4 +8,4 @@ Index: Makefile.am
 +SUBDIRS = . include src test platform
  EXTRA_DIST = CHANGELOG.md README.md LICENSE
  
- pkgconfigdir = $(libdir)/pkgconfig
+ ACLOCAL_AMFLAGS = -I m4

@@ -1,13 +1,9 @@
 Index: src/Makefile.am
 --- src/Makefile.am.orig
 +++ src/Makefile.am
-@@ -1,7 +1,7 @@
--AM_CFLAGS =-std=gnu99 --pedantic -Wall -Werror -g -O2 -I$(top_builddir)/include
-+AM_CFLAGS =-std=gnu99 --pedantic -Wall -I$(top_builddir)/include
+@@ -1,4 +1,4 @@
+-AM_CFLAGS =-std=gnu99 --pedantic -Wall -Werror -g -O2 -DOPENSSL_API_COMPAT=0x10100000L -I$(top_builddir)/include
++AM_CFLAGS =-std=gnu99 --pedantic -Wall -DOPENSSL_API_COMPAT=0x10100000L -I$(top_builddir)/include
  
  lib_LTLIBRARIES=libcjose.la
--libcjose_la_CPPFLAGS= -I$(topdir)/include
-+libcjose_la_CPPFLAGS= -I$(top_builddir)/include
- libcjose_la_LDFLAGS= -lm
- libcjose_la_SOURCES=version.c \
- 					util.c \
+ libcjose_la_CPPFLAGS= -I$(top_srcdir)/include

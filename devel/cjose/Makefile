@@ -2,10 +2,9 @@ COMMENT =		Javascript Object Signing and Encryption library
 
 GH_ACCOUNT =		cisco
 GH_PROJECT =		cjose
-GH_COMMIT =		db7d26ef2bd02572128c7cdaa4066f39af2b42da
-DISTNAME =		cjose-0.6.1pl20260427
+GH_TAGNAME =		0.8.1
 
-SHARED_LIBS =		cjose 0.1
+SHARED_LIBS =		cjose 0.2
 
 CATEGORIES =		devel
 
