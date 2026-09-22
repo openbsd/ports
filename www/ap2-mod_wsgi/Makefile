@@ -2,11 +2,11 @@ COMMENT=	Python WSGI compliant interface module for Apache2
 
 CATEGORIES=	www
 
-GH_ACCOUNT=	GrahamDumpleton
-GH_PROJECT=	mod_wsgi
-GH_TAGNAME=	5.0.2
+V=		6.0.6
+DISTNAME=	mod_wsgi-$V
 PKGNAME=	ap2-${DISTNAME}
 
+SITES=		https://github.com/GrahamDumpleton/mod_wsgi/releases/download/${DISTNAME}/
 HOMEPAGE=	https://modwsgi.readthedocs.io/
 
 # Apache License 2.0
