@@ -1,6 +1,6 @@
-Index: codex-rs/modcargo-crates/aws-lc-sys-0.39.0/aws-lc/crypto/fipsmodule/sha/asm/keccak1600-armv8.pl
---- codex-rs/modcargo-crates/aws-lc-sys-0.39.0/aws-lc/crypto/fipsmodule/sha/asm/keccak1600-armv8.pl.orig
-+++ codex-rs/modcargo-crates/aws-lc-sys-0.39.0/aws-lc/crypto/fipsmodule/sha/asm/keccak1600-armv8.pl
+Index: codex-rs/modcargo-crates/aws-lc-sys-0.45.0/aws-lc/crypto/fipsmodule/sha/asm/keccak1600-armv8.pl
+--- codex-rs/modcargo-crates/aws-lc-sys-0.45.0/aws-lc/crypto/fipsmodule/sha/asm/keccak1600-armv8.pl.orig
++++ codex-rs/modcargo-crates/aws-lc-sys-0.45.0/aws-lc/crypto/fipsmodule/sha/asm/keccak1600-armv8.pl
 @@ -89,7 +89,7 @@ my @subrhotates = ([  64,  63, 2, 36, 37 ],
  
  $code.=<<___;

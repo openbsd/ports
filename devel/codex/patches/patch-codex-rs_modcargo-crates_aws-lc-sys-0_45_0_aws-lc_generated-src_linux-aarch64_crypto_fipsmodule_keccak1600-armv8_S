@@ -1,6 +1,6 @@
-Index: codex-rs/modcargo-crates/aws-lc-sys-0.39.0/aws-lc/generated-src/linux-aarch64/crypto/fipsmodule/keccak1600-armv8.S
---- codex-rs/modcargo-crates/aws-lc-sys-0.39.0/aws-lc/generated-src/linux-aarch64/crypto/fipsmodule/keccak1600-armv8.S.orig
-+++ codex-rs/modcargo-crates/aws-lc-sys-0.39.0/aws-lc/generated-src/linux-aarch64/crypto/fipsmodule/keccak1600-armv8.S
+Index: codex-rs/modcargo-crates/aws-lc-sys-0.45.0/aws-lc/generated-src/linux-aarch64/crypto/fipsmodule/keccak1600-armv8.S
+--- codex-rs/modcargo-crates/aws-lc-sys-0.45.0/aws-lc/generated-src/linux-aarch64/crypto/fipsmodule/keccak1600-armv8.S.orig
++++ codex-rs/modcargo-crates/aws-lc-sys-0.45.0/aws-lc/generated-src/linux-aarch64/crypto/fipsmodule/keccak1600-armv8.S
 @@ -5,7 +5,7 @@
  
  #if !defined(OPENSSL_NO_ASM) && defined(OPENSSL_AARCH64) && defined(__ELF__)
