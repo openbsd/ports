@@ -1,20 +1,18 @@
-COMMENT =		extract Python environment information
+COMMENT=	extract Python environment information
 
-MODPY_DISTV =	0.7.1
-DISTNAME =		helpdev-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-CATEGORIES =		devel
-REVISION =		2
+MODPY_DISTV=	0.7.1
+DISTNAME=	helpdev-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+CATEGORIES=	devel
+REVISION=	3
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-RUN_DEPENDS =		devel/py-importlib-metadata \
-			sysutils/py-psutil>=5.6
+RUN_DEPENDS=	sysutils/py-psutil>=5.6
 
 .include <bsd.port.mk>
