@@ -1,9 +1,7 @@
-Putting openbsd*aarch64 in non-alphabetical order for patch/diff context
-
 Index: configure
 --- configure.orig
 +++ configure
-@@ -7454,6 +7454,9 @@ printf "%s\n" "$PTHREAD_LIBS" >&6; }
+@@ -7514,6 +7514,9 @@ printf "%s\n" "$PTHREAD_LIBS" >&6; }
  
  openbsd*)
      using_freetype_fontconfig=yes
@@ -13,7 +11,7 @@ Index: configure
      using_x11=yes
      PTHREAD_CFLAGS="-D_THREAD_SAFE"
      PTHREAD_LIBS="-pthread"
-@@ -16238,6 +16241,11 @@ openbsd*)
+@@ -16355,6 +16358,11 @@ openbsd*)
          RTL_ARCH=X86_64
          PLATFORMID=openbsd_x86_64
          ;;
@@ -25,7 +23,7 @@ Index: configure
      *)
          as_fn_error $? "Unsupported host_cpu $host_cpu for host_os $host_os" "$LINENO" 5
          ;;
-@@ -23611,9 +23619,6 @@ _ACEOF
+@@ -23747,9 +23755,6 @@ _ACEOF
          rm -fr libconftest*
          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gccvisinlineshiddenok" >&5
  printf "%s\n" "$gccvisinlineshiddenok" >&6; }
@@ -35,7 +33,7 @@ Index: configure
      fi
  
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if $CXX_BASE has a visibility bug with class-level attributes (GCC bug 26905)" >&5
-@@ -31193,7 +31198,7 @@ then :
+@@ -31468,7 +31473,7 @@ then :
    printf %s "(cached) " >&6
  else case e in #(
    e)
@@ -44,7 +42,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -31626,7 +31631,7 @@ then :
+@@ -31901,7 +31906,7 @@ then :
    printf %s "(cached) " >&6
  else case e in #(
    e)
@@ -53,7 +51,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -32104,7 +32109,7 @@ then :
+@@ -32379,7 +32384,7 @@ then :
    printf %s "(cached) " >&6
  else case e in #(
    e)
@@ -62,7 +60,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -32536,7 +32541,7 @@ then :
+@@ -32811,7 +32816,7 @@ then :
    printf %s "(cached) " >&6
  else case e in #(
    e)
@@ -71,7 +69,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -33024,7 +33029,7 @@ then :
+@@ -33299,7 +33304,7 @@ then :
    printf %s "(cached) " >&6
  else case e in #(
    e)
@@ -80,7 +78,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -33456,7 +33461,7 @@ then :
+@@ -33731,7 +33736,7 @@ then :
    printf %s "(cached) " >&6
  else case e in #(
    e)
@@ -89,7 +87,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -42699,7 +42704,7 @@ printf "%s\n" "internal" >&6; }
+@@ -43407,7 +43412,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          HYPHEN_LIB='$(gb_StaticLibrary_WORKDIR)/hyphen.lib'
      else
@@ -98,7 +96,7 @@ Index: configure
      fi
  fi
  
-@@ -42909,7 +42914,7 @@ printf "%s\n" "internal" >&6; }
+@@ -43617,7 +43622,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS='$(gb_StaticLibrary_WORKDIR)/mythes.lib'
      else
@@ -107,7 +105,7 @@ Index: configure
      fi
  fi
  
-@@ -44010,7 +44015,7 @@ else
+@@ -44718,7 +44723,7 @@ else
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking the flex version" >&5
  printf %s "checking the flex version... " >&6; }
      _flex_version=$($FLEX --version | $SED -e 's/^.*\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*$/\1/')
@@ -116,16 +114,16 @@ Index: configure
          as_fn_error $? "failed ($FLEX $_flex_version found, but need at least 2.6.0)" "$LINENO" 5
      fi
  fi
-@@ -48961,7 +48966,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
- printf %s "checking for Qt6 libraries... " >&6; }
-     qt6_libdir="no"
+@@ -49711,7 +49716,7 @@ printf %s "checking for Qt6 libraries... " >&6; }
      for lib_dir in $qt6_libdirs; do
--        if test -r "$lib_dir/$qt6_test_library"; then
-+        if ls $lib_dir/$qt6_test_library* /dev/null 2>&1 >/dev/null; then
-             qt6_libdir="$lib_dir"
-             break
-         fi
-@@ -49350,7 +49355,7 @@ printf "%s\n" "$kf6_incdir" >&6; }
+         for suffix in $qt6_library_suffixes; do
+             PathFormat "$lib_dir"
+-            if test -r ${formatted_path_unix}/${qt6_library_prefix}${qt6_test_library}${suffix}; then
++	    if ls ${formatted_path_unix}/${qt6_library_prefix}${qt6_test_library}${suffix}*  /dev/null 2>&1 >/dev/null; then
+                 qt6_libdir="$lib_dir"
+                 qt6_library_suffix="$suffix"
+                 break
+@@ -50116,7 +50121,7 @@ printf "%s\n" "$kf6_incdir" >&6; }
  printf %s "checking for KF6 libraries... " >&6; }
      kf6_libdir="no"
      for kf6_check in $kf6_libdirs; do
@@ -134,7 +132,7 @@ Index: configure
              kf6_libdir="$kf6_check"
              break
          fi
-@@ -50262,16 +50267,7 @@ if test "$USING_X11" = TRUE; then
+@@ -51028,16 +51033,7 @@ if test "$USING_X11" = TRUE; then
      else
          XINERAMALIB="$x_libraries"
      fi
@@ -152,7 +150,7 @@ Index: configure
          # we have only the dynamic version
          USE_XINERAMA=TRUE
          XINERAMA_LINK=dynamic
-@@ -51918,7 +51914,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -52684,7 +52680,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
  done
  
  if test -z "$SHA256SUM"; then

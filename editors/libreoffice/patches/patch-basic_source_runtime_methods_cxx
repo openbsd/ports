@@ -1,7 +1,7 @@
 Index: basic/source/runtime/methods.cxx
 --- basic/source/runtime/methods.cxx.orig
 +++ basic/source/runtime/methods.cxx
-@@ -87,6 +87,7 @@
+@@ -89,6 +89,7 @@
  #include <vector>
  #include <stdio.h>
  #include <errno.h>

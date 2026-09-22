@@ -1,11 +1,12 @@
 Index: external/xmlsec/UnpackedTarball_xmlsec.mk
 --- external/xmlsec/UnpackedTarball_xmlsec.mk.orig
 +++ external/xmlsec/UnpackedTarball_xmlsec.mk
-@@ -15,6 +15,7 @@ $(eval $(call gb_UnpackedTarball_update_autoconf_confi
+@@ -13,4 +13,8 @@ $(eval $(call gb_UnpackedTarball_set_tarball,xmlsec,$(
  
- $(eval $(call gb_UnpackedTarball_add_patches,xmlsec,\
- 	external/xmlsec/xmlsec-msvc.patch \
+ $(eval $(call gb_UnpackedTarball_update_autoconf_configs,xmlsec))
+ 
++$(eval $(call gb_UnpackedTarball_add_patches,xmlsec,\
 +	external/xmlsec/openbsd.patch \
- ))
- 
++))
++
  # vim: set noet sw=4 ts=4:

@@ -14,7 +14,7 @@ Index: external/skia/Library_skia.mk
      -lX11-xcb \
      -lX11 \
  ))
-@@ -216,9 +216,9 @@ $(eval $(call gb_Library_add_generated_exception_objec
+@@ -217,9 +217,9 @@ $(eval $(call gb_Library_add_generated_exception_objec
      UnpackedTarball/skia/src/utils/SkGetExecutablePath_mac \
  ))
  else

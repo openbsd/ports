@@ -33,6 +33,7 @@ lib/libreoffice/help/ar/text/sbasic/python/python_programming.html
 lib/libreoffice/help/ar/text/sbasic/python/python_screen.html
 lib/libreoffice/help/ar/text/sbasic/python/python_session.html
 lib/libreoffice/help/ar/text/sbasic/python/python_shell.html
+lib/libreoffice/help/ar/text/sbasic/python/running_scripts.html
 lib/libreoffice/help/ar/text/sbasic/shared/
 lib/libreoffice/help/ar/text/sbasic/shared/00000002.html
 lib/libreoffice/help/ar/text/sbasic/shared/00000003.html
@@ -98,6 +99,7 @@ lib/libreoffice/help/ar/text/sbasic/shared/03/sf_base.html
 lib/libreoffice/help/ar/text/sbasic/shared/03/sf_basic.html
 lib/libreoffice/help/ar/text/sbasic/shared/03/sf_calc.html
 lib/libreoffice/help/ar/text/sbasic/shared/03/sf_chart.html
+lib/libreoffice/help/ar/text/sbasic/shared/03/sf_contextmenu.html
 lib/libreoffice/help/ar/text/sbasic/shared/03/sf_database.html
 lib/libreoffice/help/ar/text/sbasic/shared/03/sf_dataset.html
 lib/libreoffice/help/ar/text/sbasic/shared/03/sf_datasheet.html
@@ -846,6 +848,7 @@ lib/libreoffice/help/ar/text/scalc/05/02140000.html
 lib/libreoffice/help/ar/text/scalc/05/empty_cells.html
 lib/libreoffice/help/ar/text/scalc/06/
 lib/libreoffice/help/ar/text/scalc/06/calcsamplefiles.html
+lib/libreoffice/help/ar/text/scalc/06/mathmlfunc.html
 lib/libreoffice/help/ar/text/scalc/guide/
 lib/libreoffice/help/ar/text/scalc/guide/address_auto.html
 lib/libreoffice/help/ar/text/scalc/guide/auto_off.html
@@ -876,6 +879,7 @@ lib/libreoffice/help/ar/text/scalc/guide/database_define.html
 lib/libreoffice/help/ar/text/scalc/guide/database_filter.html
 lib/libreoffice/help/ar/text/scalc/guide/database_sort.html
 lib/libreoffice/help/ar/text/scalc/guide/datapilot.html
+lib/libreoffice/help/ar/text/scalc/guide/datapilot_calculatedfield.html
 lib/libreoffice/help/ar/text/scalc/guide/datapilot_createtable.html
 lib/libreoffice/help/ar/text/scalc/guide/datapilot_deletetable.html
 lib/libreoffice/help/ar/text/scalc/guide/datapilot_edittable.html
@@ -900,6 +904,7 @@ lib/libreoffice/help/ar/text/scalc/guide/fraction_enter.html
 lib/libreoffice/help/ar/text/scalc/guide/goalseek.html
 lib/libreoffice/help/ar/text/scalc/guide/html_doc.html
 lib/libreoffice/help/ar/text/scalc/guide/integer_leading_zero.html
+lib/libreoffice/help/ar/text/scalc/guide/json.html
 lib/libreoffice/help/ar/text/scalc/guide/keyboard.html
 lib/libreoffice/help/ar/text/scalc/guide/line_fix.html
 lib/libreoffice/help/ar/text/scalc/guide/main.html
@@ -2096,7 +2101,6 @@ lib/libreoffice/help/ar/text/shared/optionen/macrosecurity_sl.html
 lib/libreoffice/help/ar/text/shared/optionen/macrosecurity_ts.html
 lib/libreoffice/help/ar/text/shared/optionen/mailmerge.html
 lib/libreoffice/help/ar/text/shared/optionen/online_update.html
-lib/libreoffice/help/ar/text/shared/optionen/opencl.html
 lib/libreoffice/help/ar/text/shared/optionen/securityoptionsdialog.html
 lib/libreoffice/help/ar/text/shared/optionen/serverauthentication.html
 lib/libreoffice/help/ar/text/shared/optionen/testaccount.html
@@ -2269,6 +2273,7 @@ lib/libreoffice/help/ar/text/simpress/guide/presenter_console.html
 lib/libreoffice/help/ar/text/simpress/guide/print_tofit.html
 lib/libreoffice/help/ar/text/simpress/guide/printing.html
 lib/libreoffice/help/ar/text/simpress/guide/rehearse_timings.html
+lib/libreoffice/help/ar/text/simpress/guide/sections.html
 lib/libreoffice/help/ar/text/simpress/guide/select_object.html
 lib/libreoffice/help/ar/text/simpress/guide/show.html
 lib/libreoffice/help/ar/text/simpress/guide/table_insert.html
@@ -2537,8 +2542,10 @@ lib/libreoffice/help/ar/text/swriter/01/TableInsertMenu.html
 lib/libreoffice/help/ar/text/swriter/01/TableNumberRecognition.html
 lib/libreoffice/help/ar/text/swriter/01/TableSelectMenu.html
 lib/libreoffice/help/ar/text/swriter/01/accessibility_check.html
+lib/libreoffice/help/ar/text/swriter/01/baseline_grid.html
 lib/libreoffice/help/ar/text/swriter/01/contentcontrol00.html
 lib/libreoffice/help/ar/text/swriter/01/copyfielddialog.html
+lib/libreoffice/help/ar/text/swriter/01/draft_layout.html
 lib/libreoffice/help/ar/text/swriter/01/format_frame.html
 lib/libreoffice/help/ar/text/swriter/01/format_object.html
 lib/libreoffice/help/ar/text/swriter/01/goto.html
@@ -2630,7 +2637,6 @@ lib/libreoffice/help/ar/text/swriter/02/18130000.html
 lib/libreoffice/help/ar/text/swriter/02/19010000.html
 lib/libreoffice/help/ar/text/swriter/02/19020000.html
 lib/libreoffice/help/ar/text/swriter/02/19030000.html
-lib/libreoffice/help/ar/text/swriter/02/19050000.html
 lib/libreoffice/help/ar/text/swriter/02/add_to_list.html
 lib/libreoffice/help/ar/text/swriter/02/word_count_stb.html
 lib/libreoffice/help/ar/text/swriter/04/
@@ -2662,6 +2668,7 @@ lib/libreoffice/help/ar/text/swriter/guide/conditional_text.html
 lib/libreoffice/help/ar/text/swriter/guide/conditional_text2.html
 lib/libreoffice/help/ar/text/swriter/guide/contentcontrols.html
 lib/libreoffice/help/ar/text/swriter/guide/delete_from_dict.html
+lib/libreoffice/help/ar/text/swriter/guide/dragdrop_navigator.html
 lib/libreoffice/help/ar/text/swriter/guide/dragdroptext.html
 lib/libreoffice/help/ar/text/swriter/guide/even_odd_sdw.html
 lib/libreoffice/help/ar/text/swriter/guide/field_convert.html
@@ -2707,6 +2714,7 @@ lib/libreoffice/help/ar/text/swriter/guide/jump2statusbar.html
 lib/libreoffice/help/ar/text/swriter/guide/keyboard.html
 lib/libreoffice/help/ar/text/swriter/guide/load_styles.html
 lib/libreoffice/help/ar/text/swriter/guide/main.html
+lib/libreoffice/help/ar/text/swriter/guide/markdown.html
 lib/libreoffice/help/ar/text/swriter/guide/navigator.html
 lib/libreoffice/help/ar/text/swriter/guide/nonprintable_text.html
 lib/libreoffice/help/ar/text/swriter/guide/number_date_conv.html
@@ -2871,20 +2879,14 @@ lib/libreoffice/help/media/screenshots/cui/ui/optctlpage/ar/
 lib/libreoffice/help/media/screenshots/cui/ui/optctlpage/ar/OptCTLPage.png
 lib/libreoffice/help/media/screenshots/cui/ui/optfltrpage/ar/
 lib/libreoffice/help/media/screenshots/cui/ui/optfltrpage/ar/OptFltrPage.png
-lib/libreoffice/help/media/screenshots/cui/ui/optgeneralpage/ar/
-lib/libreoffice/help/media/screenshots/cui/ui/optgeneralpage/ar/OptGeneralPage.png
 lib/libreoffice/help/media/screenshots/cui/ui/opthtmlpage/ar/
 lib/libreoffice/help/media/screenshots/cui/ui/opthtmlpage/ar/OptHtmlPage.png
 lib/libreoffice/help/media/screenshots/cui/ui/optlanguagespage/ar/
 lib/libreoffice/help/media/screenshots/cui/ui/optlanguagespage/ar/OptLanguagesPage.png
 lib/libreoffice/help/media/screenshots/cui/ui/optsecuritypage/ar/
 lib/libreoffice/help/media/screenshots/cui/ui/optsecuritypage/ar/OptSecurityPage.png
-lib/libreoffice/help/media/screenshots/cui/ui/pageformatpage/ar/
-lib/libreoffice/help/media/screenshots/cui/ui/pageformatpage/ar/PageFormatPage.png
 lib/libreoffice/help/media/screenshots/cui/ui/slantcornertabpage/ar/
 lib/libreoffice/help/media/screenshots/cui/ui/slantcornertabpage/ar/SlantAndCornerRadius.png
-lib/libreoffice/help/media/screenshots/filter/ui/pdfgeneralpage/ar/
-lib/libreoffice/help/media/screenshots/filter/ui/pdfgeneralpage/ar/PdfGeneralPage.png
 lib/libreoffice/help/media/screenshots/filter/ui/pdflinkspage/ar/
 lib/libreoffice/help/media/screenshots/filter/ui/pdflinkspage/ar/PdfLinksPage.png
 lib/libreoffice/help/media/screenshots/filter/ui/pdfsecuritypage/ar/
