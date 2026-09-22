@@ -1,5 +1,3 @@
-BROKEN-sparc64 =	Illegal operands error building SDL_gfxPrimitives.cpp
-
 COMMENT =		blinkensisters - hunt for the lost pixels
 
 V =			0.5.3

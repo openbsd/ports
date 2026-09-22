@@ -1,5 +1,3 @@
-BROKEN-sparc64 =	undefined reference to XRRConfigRotations, etc.
-
 COMMENT =	roguelite dungeon crawler game
 
 GH_ACCOUNT =	Cirrus-Minor
