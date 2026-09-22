@@ -4,10 +4,12 @@ MODPY_DISTV=	3.4
 DISTNAME=	visidata-${MODPY_DISTV}
 
 # use github distfile for tests
-#MODPY_PI=	Yes
 GH_ACCOUNT=	saulpw
 GH_PROJECT=	visidata
 GH_TAGNAME=	v${MODPY_DISTV}
+
+DISTFILES=	visidata-3.4pl1{visidata-3.4}.tar.gz
+PKGNAME=	visidata-3.4pl1
 
 CATEGORIES=	math textproc
 
@@ -23,7 +25,6 @@ MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-dateutil \
-		devel/py-importlib-metadata \
 		x11/gtk+4,-guic
 
 PORTHOME=	${WRKDIR}

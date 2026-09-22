@@ -905,13 +905,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/wrappers.py
 @man man/man1/visidata.1
 share/applications/visidata.desktop
 share/doc/pkg-readmes/${PKGSTEM}
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/visidata.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/visidata.png
 share/metainfo/
 share/metainfo/org.visidata.VisiData.metainfo.xml
