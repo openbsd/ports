@@ -2,7 +2,7 @@ COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
 COMMENT-daemon =stand-alone daemon/cmdline for amule
 
-V =		3.0.1
+V =		3.1.0
 GH_ACCOUNT =	amule-org
 GH_PROJECT =	amule
 GH_TAGNAME =	$V
@@ -20,14 +20,16 @@ PKGNAME-daemon = amuled-$V
 # GPLv2+
 PERMIT_PACKAGE = Yes
 
-WANTLIB =	${COMPILER_LIBCXX} \
-		c m pthread z \
-		cryptopp intl ixml upnp \
-		wx_baseu-3.2 wx_baseu_net-3.2 wx_gtk3u_core-3.2
-
-WANTLIB-main =	${WANTLIB} cryptopp curl gd glib-2.0 maxminddb
-WANTLIB-web =	${WANTLIB} png readline
-WANTLIB-daemon = ${WANTLIB} cryptopp curl glib-2.0 readline
+WANTLIB =	${COMPILER_LIBCXX} c cryptopp execinfo intl ixml \
+		m upnp z
+WANTLIB-main =	${WANTLIB} curl gd gio-2.0 glib-2.0 gobject-2.0 maxminddb \
+		wx_baseu-3.2 wx_baseu_net-3.2 wx_gtk3u_core-3.2 \
+		wx_gtk3u_stc-3.2
+WANTLIB-web =	${WANTLIB} png readline wx_baseu-3.2 wx_baseu_net-3.2 \
+		wx_gtk3u_core-3.2 wx_gtk3u_stc-3.2
+WANTLIB-daemon = ${WANTLIB} curl gio-2.0 glib-2.0 gobject-2.0 \
+		maxminddb readline wx_baseu-3.2 wx_baseu_net-3.2 \
+		wx_gtk3u_core-3.2 wx_gtk3u_stc-3.2
 
 COMPILER =	base-clang ports-gcc
 
@@ -46,6 +48,9 @@ LIB_DEPENDS =	devel/cryptopp \
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		devel/cryptopp \
 		graphics/gd \
+		net/libmaxminddb
+
+LIB_DEPENDS-daemon = ${LIB_DEPENDS} \
 		net/libmaxminddb
 
 LIB_DEPENDS-web = ${LIB_DEPENDS} \
@@ -70,6 +75,7 @@ CONFIGURE_ARGS = \
 	-D DEFAULT_VERSION_CHECK=OFF
 
 CXXFLAGS +=	-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS = -lexecinfo
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/src/utils/scripts/mldonkey_importer.pl \

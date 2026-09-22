@@ -40,7 +40,11 @@ share/doc/amule/LICENSE.md
 share/doc/amule/README.md
 share/doc/amule/amulesig.md
 share/icons/hicolor/128x128/apps/org.amule.aMule.png
+share/icons/hicolor/128x128/mimetypes/application-x-emule-collection.png
 share/icons/hicolor/256x256/apps/org.amule.aMule.png
+share/icons/hicolor/256x256/mimetypes/application-x-emule-collection.png
+share/icons/hicolor/scalable/apps/org.amule.aMule.svg
+share/icons/hicolor/scalable/mimetypes/application-x-emule-collection.svg
 share/locale/ar/LC_MESSAGES/amule.mo
 share/locale/ast/LC_MESSAGES/amule.mo
 share/locale/bg/LC_MESSAGES/amule.mo
@@ -63,9 +67,6 @@ share/locale/he/LC_MESSAGES/amule.mo
 share/locale/hr/LC_MESSAGES/amule.mo
 share/locale/hu/LC_MESSAGES/amule.mo
 share/locale/it/LC_MESSAGES/amule.mo
-share/locale/it_CH/
-share/locale/it_CH/LC_MESSAGES/
-share/locale/it_CH/LC_MESSAGES/amule.mo
 share/locale/ja/LC_MESSAGES/amule.mo
 share/locale/ko_KR/LC_MESSAGES/amule.mo
 share/locale/lt/LC_MESSAGES/amule.mo
@@ -85,13 +86,14 @@ share/locale/sv/LC_MESSAGES/amule.mo
 share/locale/ta/LC_MESSAGES/amule.mo
 share/locale/tr/LC_MESSAGES/amule.mo
 share/locale/uk/LC_MESSAGES/amule.mo
+share/locale/vi/LC_MESSAGES/amule.mo
 share/locale/zh_CN/LC_MESSAGES/amule.mo
 share/locale/zh_TW/LC_MESSAGES/amule.mo
-share/metainfo/
-share/metainfo/org.amule.aMule.metainfo.xml
+share/mime/packages/org.amule.aMule.xml
 share/pixmaps/
 share/pixmaps/alc.xpm
 share/pixmaps/org.amule.aMule.png
 share/pixmaps/wxcas.xpm
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database
