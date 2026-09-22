@@ -49,6 +49,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/zip/ioextras/
 ${GEM_LIB}/gems/${DISTNAME}/lib/zip/ioextras.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zip/ioextras/abstract_input_stream.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zip/ioextras/abstract_output_stream.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zip/ioextras/fake_io.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zip/null_compressor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zip/null_decompressor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zip/null_input_stream.rb
