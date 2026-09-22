@@ -2,8 +2,7 @@ COMMENT = 		Erlang build tool
 
 GH_ACCOUNT =		erlang
 GH_PROJECT =		rebar3
-GH_TAGNAME =		3.27.0
-REVISION =		1
+GH_TAGNAME =		3.27.1
 
 CATEGORIES =		devel
 
