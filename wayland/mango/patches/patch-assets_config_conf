@@ -1,0 +1,12 @@
+Index: assets/config.conf
+--- assets/config.conf.orig
++++ assets/config.conf
+@@ -167,7 +167,7 @@ tagrule=id:9,layout_name:tile
+ bind=SUPER,r,reload_config
+ 
+ # menu and terminal
+-bind=Alt,space,spawn,rofi -show drun
++bind=Alt,space,spawn,fuzzel
+ bind=Alt,Return,spawn,foot
+ 
+ # exit

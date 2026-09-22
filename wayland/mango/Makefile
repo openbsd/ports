@@ -1,6 +1,6 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-V =			0.17.2
+V =			0.17.3
 DIST_TUPLE =		github mangowm mango ${V} .
 
 CATEGORIES =		wayland
@@ -24,7 +24,8 @@ MODWLROOTS_VERSION =	0.20
 
 BUILD_DEPENDS =		wayland/wayland-protocols
 
-LIB_DEPENDS =		devel/cjson \
+LIB_DEPENDS =		\
+			devel/cjson \
 			devel/pango \
 			devel/pcre2 \
 			graphics/cairo \
@@ -33,8 +34,9 @@ LIB_DEPENDS =		devel/cjson \
 			wayland/wayland \
 			x11/xkbcommon
 
-RUN_DEPENDS =		sysutils/rofi \
+RUN_DEPENDS =		\
 			wayland/foot \
+			wayland/fuzzel \
 			wayland/xwayland
 
 post-install:
