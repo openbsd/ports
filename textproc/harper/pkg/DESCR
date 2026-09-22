@@ -1,3 +1,4 @@
 Harper is an English grammar checker designed to be just right.
 
-At the moment, only the Language Server harper-ls is being built.
+This package provides both the Language Server (harper-ls) and the
+command-line tool (harper-cli).

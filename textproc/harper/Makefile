@@ -2,7 +2,7 @@ COMMENT=	offline, privacy-first grammar checker
 
 GH_ACCOUNT=	Automattic
 GH_PROJECT=	harper
-GH_TAGNAME=	v2.10.0
+GH_TAGNAME=	v2.11.0
 
 CATEGORIES=	textproc
 
@@ -22,9 +22,9 @@ CONFIGURE_STYLE= cargo
 
 LIB_DEPENDS=	archivers/zstd
 
-MODCARGO_CARGOTOML=	${WRKDIST}/harper-ls/Cargo.toml
 MODCARGO_CRATES_KEEP=	zstd-sys
-MODCARGO_INSTALL_TARGET_PATHS=	harper-ls
+MODCARGO_BUILD_ARGS=	-p harper-cli -p harper-ls
+MODCARGO_INSTALL_TARGET_PATHS=	harper-cli harper-ls
 
 .include "crates.inc"
 
