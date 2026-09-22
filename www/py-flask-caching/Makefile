@@ -1,6 +1,6 @@
 COMMENT=	easy cache support for Flask
 
-MODPY_DISTV=	2.5.0
+MODPY_DISTV=	2.5.1
 DISTNAME=	flask_caching-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 CATEGORIES=	www
@@ -17,7 +17,7 @@ RUN_DEPENDS=		devel/py-cachelib \
 			www/py-flask
 
 # some tests fail (with longish delays) if redis is running on the machine
-# 274 passed, 16 skipped
+# 214 passed, 78 skipped
 TEST_DEPENDS=		databases/py-redis \
 			devel/py-test-cov \
 			devel/py-test-asyncio \
