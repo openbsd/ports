@@ -1,19 +1,20 @@
 Index: llvm/include/llvm/CodeGen/AsmPrinter.h
 --- llvm/include/llvm/CodeGen/AsmPrinter.h.orig
 +++ llvm/include/llvm/CodeGen/AsmPrinter.h
-@@ -572,6 +572,11 @@ class LLVM_ABI AsmPrinter : public MachineFunctionPass
+@@ -572,6 +572,12 @@ class LLVM_ABI AsmPrinter : public MachineFunctionPass
    Align emitAlignment(Align Alignment, const GlobalObject *GV = nullptr,
                        unsigned MaxBytesToEmit = 0) const;
  
 +  /// Emit an alignment directive to the specified power of two boundary,
 +  /// like emitAlignment, but call emitTrapToAlignment to fill with
 +  /// trap instructions instead of NOPs.
-+  void emitTrapAlignment(Align Alignment, const GlobalObject *GO = nullptr) const;
++  /// Returns the effective alignment that was emitted, like emitAlignment.
++  Align emitTrapAlignment(Align Alignment, const GlobalObject *GO = nullptr) const;
 +
    /// Lower the specified LLVM Constant to an MCExpr.
    /// When BaseCV is present, we are lowering the element at BaseCV plus Offset.
    virtual const MCExpr *lowerConstant(const Constant *CV,
-@@ -638,6 +643,11 @@ class LLVM_ABI AsmPrinter : public MachineFunctionPass
+@@ -638,6 +644,11 @@ class LLVM_ABI AsmPrinter : public MachineFunctionPass
    virtual void emitInstruction(const MachineInstr *) {
      llvm_unreachable("EmitInstruction not implemented");
    }

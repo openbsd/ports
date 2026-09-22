@@ -8,7 +8,7 @@ Index: llvm/lib/MC/MCAsmInfoELF.cpp
 -  HasIdentDirective = true;
 -  HasPreferredAlignment = true;
 +  HasIdentDirective = false;
-+  HasPreferredAlignment = false; // XXX llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp:1044 
++  HasPreferredAlignment = true; // XXX llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp:1044 
    WeakRefDirective = "\t.weak\t";
    InternalSymbolPrefix = ".L";
  }
