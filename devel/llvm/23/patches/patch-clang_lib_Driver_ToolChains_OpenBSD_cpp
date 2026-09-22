@@ -1,7 +1,7 @@
 Index: clang/lib/Driver/ToolChains/OpenBSD.cpp
 --- clang/lib/Driver/ToolChains/OpenBSD.cpp.orig
 +++ clang/lib/Driver/ToolChains/OpenBSD.cpp
-@@ -278,6 +278,19 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -282,6 +282,19 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
      CmdArgs.push_back(Args.MakeArgString(ToolChain.GetFilePath(crtend)));
    }
  
