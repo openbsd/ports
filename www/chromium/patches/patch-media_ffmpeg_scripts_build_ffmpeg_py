@@ -63,3 +63,13 @@ Index: media/ffmpeg/scripts/build_ffmpeg.py
          if target_arch == 'x64':
              if target_os == 'android':
                  configure_flags['Common'].extend([
+@@ -824,9 +825,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+ 
+                 configure_flags['Common'].extend([
+                     '--target-os=linux',
+-                    '--sysroot=' +
+-                    os.path.join(CHROMIUM_ROOT_DIR,
+-                                 'build/linux/debian_bullseye_arm64-sysroot'),
+                 ])
+             configure_flags['Common'].extend([
+                 '--arch=aarch64',
