@@ -1,5 +1,4 @@
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
-BROKEN-sparc64 =	infinite loop or aborts during build
 
 COMMENT =		Prolog for the real world
 
