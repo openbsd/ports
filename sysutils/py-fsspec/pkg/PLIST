@@ -44,6 +44,8 @@ lib/python${MODPY_VERSION}/site-packages/fsspec/${MODPY_PYCACHE}mapping.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/fsspec/${MODPY_PYCACHE}mapping.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fsspec/${MODPY_PYCACHE}parquet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fsspec/${MODPY_PYCACHE}parquet.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fsspec/${MODPY_PYCACHE}prefetcher.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fsspec/${MODPY_PYCACHE}prefetcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fsspec/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fsspec/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fsspec/${MODPY_PYCACHE}spec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -152,6 +154,7 @@ lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/zip.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/json.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/mapping.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/parquet.py
+lib/python${MODPY_VERSION}/site-packages/fsspec/prefetcher.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/registry.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/spec.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/
