@@ -2597,7 +2597,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SHA256 (terragrunt-v1.1.5.zip) = Wgkyahv6o3EKsEpoR0PWe/cg50Id1SOcFdQqV0oi5Rg=
+SHA256 (terragrunt-v1.1.6.zip) = TPkkpiawf1yA3jJCLbNpoRbI8vcmMc5uCiBPWvg8QiE=
 SIZE (go_modules/c2sp.org/!c!c!t!v/age/@v/v0.0.0-20251208015420-e9274a7bdbfd.mod) = 159
 SIZE (go_modules/c2sp.org/!c!c!t!v/age/@v/v0.0.0-20251208015420-e9274a7bdbfd.zip) = 242327
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
@@ -5197,4 +5197,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = 162
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = 60719
-SIZE (terragrunt-v1.1.5.zip) = 14530254
+SIZE (terragrunt-v1.1.6.zip) = 14531588
