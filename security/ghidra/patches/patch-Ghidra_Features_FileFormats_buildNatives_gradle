@@ -3,7 +3,7 @@ Add OpenBSD
 Index: Ghidra/Features/FileFormats/buildNatives.gradle
 --- Ghidra/Features/FileFormats/buildNatives.gradle.orig
 +++ Ghidra/Features/FileFormats/buildNatives.gradle
-@@ -35,6 +35,8 @@ model {
+@@ -36,6 +36,8 @@ model {
  			targetPlatform "mac_arm_64"
  			targetPlatform "freebsd_x86_64"
  			targetPlatform "freebsd_arm_64"

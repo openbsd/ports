@@ -2,8 +2,8 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 COMMENT =	software reverse engineering (SRE) framework
 
-VERSION = 	12.0.4
-GHIDRA_DATE =	20260210
+VERSION = 	12.1.4
+GHIDRA_DATE =	20260921
 
 GH_ACCOUNT =	NationalSecurityAgency
 GH_PROJECT =	ghidra
@@ -25,9 +25,9 @@ SITES.a =		https://www.intricatesoftware.com/distfiles/
 
 # sync with java/jna and devel/protobuf when updating VERSION
 JNA_VER =		5.18.1
-PROTOBUF_VER =		6.34.0
-PROTOBUF_JAVA_VER =	4.34.0
-PY_PROTOBUF_VER =	7.34.0
+PROTOBUF_VER =		7.36.2
+PROTOBUF_JAVA_VER =	4.36.2
+PY_PROTOBUF_VER =	7.36.2
 
 DISTFILES.a +=		ghidra-Ghidra_${VERSION}_build_dependencies${EXTRACT_SUFX}
 
@@ -66,7 +66,7 @@ NO_TEST =		Yes
 SUBST_VARS +=		GHIDRA_DATE GHIDRA_ARCH VERSION \
 			JNA_VER PROTOBUF_JAVA_VER
 
-EXTENSIONS =		BSimElasticPlugin GnuDisassembler Lisa \
+EXTENSIONS =		BSimElasticPlugin GnuDisassembler Jython Lisa \
 			MachineLearning SampleTablePlugin SleighDevTools \
 			SymbolicSummaryZ3 bundle_examples sample
 

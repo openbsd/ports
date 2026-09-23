@@ -14,7 +14,7 @@ Index: Ghidra/Debug/Debugger-agent-gdb/src/main/py/src/ghidragdb/util.py
  
  import gdb
  
-@@ -410,7 +411,7 @@ class RegisterDesc:
+@@ -465,7 +466,7 @@ class RegisterDesc:
  
  def get_register_descs(arch: gdb.Architecture, group: str = 'all') -> List[
          Union[RegisterDesc, gdb.RegisterDescriptor]]:
@@ -23,7 +23,7 @@ Index: Ghidra/Debug/Debugger-agent-gdb/src/main/py/src/ghidragdb/util.py
          try:
              return list(arch.registers(group))
          except ValueError:  # No such group, or version too old
-@@ -424,7 +425,7 @@ def get_register_descs(arch: gdb.Architecture, group: 
+@@ -479,7 +480,7 @@ def get_register_descs(arch: gdb.Architecture, group: 
              regset = gdb.execute(
                  f"info registers", to_string=True).strip().split('\n')
          for line in regset:

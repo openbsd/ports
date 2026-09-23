@@ -3,7 +3,7 @@ Add support for OpenBSD
 Index: GPL/nativePlatforms.gradle
 --- GPL/nativePlatforms.gradle.orig
 +++ GPL/nativePlatforms.gradle
-@@ -26,7 +26,9 @@ project.ext.PLATFORMS = [
+@@ -27,7 +27,9 @@ project.ext.PLATFORMS = [
  	[name: "mac_x86_64", os: "osx", arch: "x86_64"],
  	[name: "mac_arm_64", os: "osx", arch: "arm64"],
  	[name: "freebsd_x86_64", os: "freebsd", arch: "x86_64"],
@@ -14,7 +14,7 @@ Index: GPL/nativePlatforms.gradle
  ]
  
  /*********************************************************************************
-@@ -56,6 +58,9 @@ ext.getCurrentPlatformName = {
+@@ -57,6 +59,9 @@ ext.getCurrentPlatformName = {
  		case ~/FreeBSD.*/:
  			os = "freebsd"
  			break
@@ -24,7 +24,7 @@ Index: GPL/nativePlatforms.gradle
  		default:
  			throw new GradleException("Unrecognized platform operating system: $os")
  	}
-@@ -129,6 +134,20 @@ ext.isFreeBSD = { platform_name ->
+@@ -130,6 +135,20 @@ ext.isFreeBSD = { platform_name ->
   *********************************************************************************/
  ext.isCurrentFreeBSD = {
  	return isFreeBSD(getCurrentPlatformName())

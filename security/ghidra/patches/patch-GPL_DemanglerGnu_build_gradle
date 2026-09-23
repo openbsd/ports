@@ -3,7 +3,7 @@ From https://github.com/NationalSecurityAgency/ghidra/pull/490
 Index: GPL/DemanglerGnu/build.gradle
 --- GPL/DemanglerGnu/build.gradle.orig
 +++ GPL/DemanglerGnu/build.gradle
-@@ -83,6 +83,8 @@ model {
+@@ -84,6 +84,8 @@ model {
  			targetPlatform "mac_arm_64"
  			targetPlatform "freebsd_x86_64"
  			targetPlatform "freebsd_arm_64"
@@ -12,7 +12,7 @@ Index: GPL/DemanglerGnu/build.gradle
  			sources {
  				c {
  					source {
-@@ -106,6 +108,8 @@ model {
+@@ -108,6 +110,8 @@ model {
  			targetPlatform "mac_arm_64"
  			targetPlatform "freebsd_x86_64"
  			targetPlatform "freebsd_arm_64"
