@@ -1,6 +1,6 @@
 COMMENT =		HTTP library inspired by requests on top of Twisted Agents
 
-MODPY_DISTV =		25.5.0
+MODPY_DISTV =		26.7.0
 DISTNAME =		treq-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -19,8 +19,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
 BUILD_DEPENDS =		devel/py-incremental
-RUN_DEPENDS =		www/py-requests \
-			devel/py-twisted \
+RUN_DEPENDS =		devel/py-twisted \
 			devel/py-incremental \
 			devel/py-attrs \
 			devel/py-typing-extensions \
