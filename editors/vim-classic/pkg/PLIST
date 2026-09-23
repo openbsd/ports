@@ -383,7 +383,6 @@ share/vim/${P}/autoload/netrw_gitignore.vim
 share/vim/${P}/autoload/paste.vim
 share/vim/${P}/autoload/phpcomplete.vim
 share/vim/${P}/autoload/python3complete.vim
-share/vim/${P}/autoload/pythoncomplete.vim
 share/vim/${P}/autoload/rubycomplete.vim
 share/vim/${P}/autoload/rust.vim
 share/vim/${P}/autoload/rustfmt.vim
