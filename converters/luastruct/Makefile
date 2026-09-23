@@ -14,7 +14,7 @@ SITES=		${HOMEPAGE}
 
 MODULES=	lang/lua
 
-FLAVORS=	lua52 lua53 lua54
+FLAVORS=	lua52 lua53 lua54 lua55
 FLAVOR?=
 
 WRKDIST=	${WRKDIR}

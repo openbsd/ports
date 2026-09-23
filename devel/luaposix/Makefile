@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/lua
 
-FLAVORS=		lua52 lua53 lua54
+FLAVORS=		lua52 lua53 lua54 lua55
 FLAVOR?=
 
 # lua51 needs the bit32 library

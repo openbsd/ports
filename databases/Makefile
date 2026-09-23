@@ -32,6 +32,7 @@
      SUBDIR += luadbi,lua52
      SUBDIR += luadbi,lua53
      SUBDIR += luadbi,lua54
+     SUBDIR += luadbi,lua55
      SUBDIR += lualdap
      SUBDIR += luasqlite3
      SUBDIR += luasqlite3,lua52

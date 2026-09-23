@@ -26,7 +26,7 @@ PERMIT_PACKAGE=	Yes
 MULTI_PACKAGES=	-main -mysql -pgsql -duckdb
 
 MODULES=	lang/lua
-FLAVORS=	lua52 lua53 lua54
+FLAVORS=	lua52 lua53 lua54 lua55
 FLAVOR?=
 
 WANTLIB-main=		sqlite3

@@ -19,7 +19,7 @@ WANTLIB+=	crypto ssl
 MODULES=	lang/lua
 MODLUA_RUN_DEPENDS+=	net/luasocket
 
-FLAVORS=	lua52 lua53 lua54
+FLAVORS=	lua52 lua53 lua54 lua55
 FLAVOR?=
 
 MAKE_ENV+=	INC_PATH="-I${MODLUA_INCL_DIR}" SAVECFLAGS="${CFLAGS}" LD="${CC}"

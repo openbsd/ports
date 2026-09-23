@@ -22,14 +22,17 @@
      SUBDIR += lua-iconv,lua52
      SUBDIR += lua-iconv,lua53
      SUBDIR += lua-iconv,lua54
+     SUBDIR += lua-iconv,lua55
      SUBDIR += lua-utf8
      SUBDIR += lua-utf8,lua52
      SUBDIR += lua-utf8,lua53
      SUBDIR += lua-utf8,lua54
+     SUBDIR += lua-utf8,lua55
      SUBDIR += luastruct
      SUBDIR += luastruct,lua52
      SUBDIR += luastruct,lua53
      SUBDIR += luastruct,lua54
+     SUBDIR += luastruct,lua55
      SUBDIR += luit
      SUBDIR += mimepp
      SUBDIR += mpack

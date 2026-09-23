@@ -25,7 +25,7 @@ MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" \
 
 USE_GMAKE =	Yes
 
-FLAVORS =	lua52 lua53 lua54
+FLAVORS =	lua52 lua53 lua54 lua55
 FLAVOR ?=
 
 NO_TEST =	Yes

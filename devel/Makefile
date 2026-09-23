@@ -397,6 +397,7 @@
      SUBDIR += lua-cmsgpack,lua52
      SUBDIR += lua-cmsgpack,lua53
      SUBDIR += lua-cmsgpack,lua54
+     SUBDIR += lua-cmsgpack,lua55
      SUBDIR += lua-compat53
      SUBDIR += lua-compat53,lua52
      SUBDIR += lua-language-server
@@ -420,10 +421,12 @@
      SUBDIR += lua-term,lua52
      SUBDIR += lua-term,lua53
      SUBDIR += lua-term,lua54
+     SUBDIR += lua-term,lua55
      SUBDIR += lua-tz
      SUBDIR += lua-tz,lua52
      SUBDIR += lua-tz,lua53
      SUBDIR += lua-tz,lua54
+     SUBDIR += lua-tz,lua55
      SUBDIR += luaalarm
      SUBDIR += luaalarm,lua52
      SUBDIR += luaalarm,lua53
@@ -444,6 +447,7 @@
      SUBDIR += luaposix,lua52
      SUBDIR += luaposix,lua53
      SUBDIR += luaposix,lua54
+     SUBDIR += luaposix,lua55
      SUBDIR += luaprofiler
      SUBDIR += luaprofiler,lua52
      SUBDIR += luarexlib

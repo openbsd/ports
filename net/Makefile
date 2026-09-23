@@ -206,7 +206,6 @@
      SUBDIR += kdsoap
      SUBDIR += kdsoap-ws-discovery-client
      SUBDIR += kea
-     SUBDIR += kea,mysql
      SUBDIR += kismet
      SUBDIR += kissd
      SUBDIR += knot
@@ -273,10 +272,12 @@
      SUBDIR += luasocket,lua52
      SUBDIR += luasocket,lua53
      SUBDIR += luasocket,lua54
+     SUBDIR += luasocket,lua55
      SUBDIR += luaunbound
      SUBDIR += luaunbound,lua52
      SUBDIR += luaunbound,lua53
      SUBDIR += luaunbound,lua54
+     SUBDIR += luaunbound,lua55
      SUBDIR += lyrebird
      SUBDIR += mac-telnet
      SUBDIR += maclookup

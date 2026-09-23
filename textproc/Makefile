@@ -174,6 +174,7 @@
      SUBDIR += luaexpat,lua52
      SUBDIR += luaexpat,lua53
      SUBDIR += luaexpat,lua54
+     SUBDIR += luaexpat,lua55
      SUBDIR += luceneplusplus
      SUBDIR += mdbook
      SUBDIR += mdp

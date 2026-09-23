@@ -13,7 +13,7 @@ WANTLIB +=	c ${MODLUA_WANTLIB}
 
 MODULES =	lang/lua
 
-FLAVORS =	lua52 lua53 lua54
+FLAVORS =	lua52 lua53 lua54 lua55
 FLAVOR ?=
 
 NO_TEST =	Yes
