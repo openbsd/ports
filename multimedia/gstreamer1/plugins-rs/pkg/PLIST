@@ -1,6 +1,10 @@
 @so lib/gstreamer-${API}/libgstdav1d.so
+@so lib/gstreamer-${API}/libgstgif.so
 @so lib/gstreamer-${API}/libgstgtk4.so
+@so lib/gstreamer-${API}/libgstisobmff.so
+@so lib/gstreamer-${API}/libgstrsaudiofx.so
 @so lib/gstreamer-${API}/libgstrsclosedcaption.so
 @so lib/gstreamer-${API}/libgstrsonvif.so
+@so lib/gstreamer-${API}/libgstrstracers.so
 @so lib/gstreamer-${API}/libgstrsvideofx.so
 @so lib/gstreamer-${API}/libgstrswebp.so

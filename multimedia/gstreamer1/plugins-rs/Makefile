@@ -3,6 +3,7 @@ COMMENT=		GStreamer bindings for Rust
 V=			0.15.4
 DIST_TUPLE=		fdo gstreamer gst-plugins-rs ${V} .
 WRKDIST=		${WRKDIR}/gst-plugins-rs-${V}-1afff3711855238433862c0ce3bf34918e500386
+REVISION=		0
 
 # see patch-Cargo_toml;
 # grep git+https Cargo.lock | sort -u
@@ -13,8 +14,9 @@ DIST_TUPLE +=		github rust-av flavors 833508af656d298c269f2397c8541a084264d992 .
 DIST_TUPLE +=		fdo gstreamer gstreamer-rs 50d71e64ce6153a4dda06fc03f09eb2755fb9285 ../gstreamer-rs
 
 WANTLIB += ${MODCARGO_WANTLIB} cairo dav1d gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += graphene-1.0 gstbase-1.0 gstgl-1.0 gstreamer-1.0 gstrtp-1.0
-WANTLIB += gstvideo-1.0 gtk-4 m pango-1.0 pangocairo-1.0 webpdemux
+WANTLIB += graphene-1.0 gstaudio-1.0 gstbase-1.0 gstgl-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gstrtp-1.0 gsttag-1.0 gstvideo-1.0 gtk-4
+WANTLIB += m pango-1.0 pangocairo-1.0 webpdemux
 
 MODULES=		devel/meson \
 			devel/cargo
@@ -37,23 +39,23 @@ LIB_DEPENDS=		graphics/libwebp \
 # analytics
 DISABLED +=	analytics burn
 # audio
-DISABLED +=	audiofx claxon csound lewton spotify elevenlabs speechmatics
+DISABLED +=	claxon csound lewton spotify elevenlabs speechmatics
 DISABLED +=	demucs audioparsers whisper
 # generic -- -Dsodium-source=system
 DISABLED +=	file originalbuffer gopbuffer sodium threadshare inter
 DISABLED +=	streamgrouper
 # mux
-DISABLED +=	flavors isobmff
+DISABLED +=	flavors
 # net
 DISABLED +=	aws hlssink3 mpegtslive ndi raptorq reqwest rtsp rtp icecast
 DISABLED +=	webrtc webrtchttp quinn hlsmultivariantsink deepgram
 # text
 DISABLED +=	textahead json regex textwrap textaccumulate
 # utils
-DISABLED +=	fallbackswitch livesync togglerecord tracers uriplaylistbin
+DISABLED +=	fallbackswitch livesync togglerecord uriplaylistbin
 DISABLED +=	validate
 # video
-DISABLED +=	cdg ffv1 gif hsv png rav1e debugseimetainserter vvdec skia
+DISABLED +=	cdg ffv1 hsv png rav1e debugseimetainserter vvdec skia
 
 .for d in ${DISABLED}
 CONFIGURE_ARGS +=   -D${d}=disabled
