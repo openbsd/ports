@@ -1,7 +1,17 @@
 Index: llvm/include/llvm/BinaryFormat/ELF.h
 --- llvm/include/llvm/BinaryFormat/ELF.h.orig
 +++ llvm/include/llvm/BinaryFormat/ELF.h
-@@ -1970,6 +1970,7 @@ enum {
+@@ -1434,6 +1434,9 @@ enum {
+   STT_LOPROC = 13,    // Lowest processor-specific symbol type
+   STT_HIPROC = 15,    // Highest processor-specific symbol type
+ 
++  // SPARC symbol types
++  STT_SPARC_REGISTER = 13,
++
+   // AMDGPU symbol types
+   STT_AMDGPU_HSA_KERNEL = 10
+ };
+@@ -1970,6 +1973,7 @@ enum {
    NT_OPENBSD_FPREGS = 21,
    NT_OPENBSD_XFPREGS = 22,
    NT_OPENBSD_WCOOKIE = 23,

@@ -1,13 +1,21 @@
 Index: lld/ELF/Relocations.h
 --- lld/ELF/Relocations.h.orig
 +++ lld/ELF/Relocations.h
-@@ -162,6 +162,9 @@ void addGotEntry(Ctx &ctx, Symbol &sym);
+@@ -61,6 +61,7 @@ enum RelExpr {
+   R_PLT_GOTPLT,
+   R_PLT_GOTREL,
+   R_RELAX_HINT,
++  R_RELAX_GOT_OFF,
+   R_RELAX_GOT_PC,
+   R_RELAX_GOT_PC_NOPIC,
+   R_RELAX_TLS_GD_TO_IE,
+@@ -161,6 +162,9 @@ void postScanRelocations(Ctx &ctx);
+ void addGotEntry(Ctx &ctx, Symbol &sym);
  
  bool isAbsolute(const Symbol &sym);
- 
++
 +void reportGNUWarning(Ctx &ctx, Symbol &sym, InputSectionBase &sec,
 +                      uint64_t offset);
-+
+ 
  class ThunkSection;
  class Thunk;
- class InputSectionDescription;

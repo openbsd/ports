@@ -18,10 +18,12 @@ Index: lld/ELF/Writer.cpp
        (ctx.arg.discard == DiscardPolicy::Locals ||
         (sym.section && (sym.section->flags & SHF_MERGE))))
      return false;
-@@ -587,7 +588,11 @@ static bool isRelroSection(Ctx &ctx, const OutputSecti
+@@ -586,8 +587,12 @@ static bool isRelroSection(Ctx &ctx, const OutputSecti
+   // by default resolved lazily, so we usually cannot put it into RELRO.
    // However, if "-z now" is given, the lazy symbol resolution is
    // disabled, which enables us to put it into RELRO.
-   if (sec == ctx.in.gotPlt->getParent())
+-  if (sec == ctx.in.gotPlt->getParent())
++  if (ctx.target->usesGotPlt && sec == ctx.in.gotPlt->getParent())
 +#ifndef __OpenBSD__
      return ctx.arg.zNow;
 +#else
@@ -43,7 +45,24 @@ Index: lld/ELF/Writer.cpp
  
    return abiAgnostic || abiSpecific;
  }
-@@ -891,6 +899,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+@@ -828,10 +836,14 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+   if (ctx.sym.globalOffsetTable) {
+     // The _GLOBAL_OFFSET_TABLE_ symbol is defined by target convention usually
+     // to the start of the .got or .got.plt section.
+-    InputSection *sec = ctx.in.gotPlt.get();
+-    if (!ctx.target->gotBaseSymInGotPlt)
++    InputSection *sec;
++    if (ctx.target->gotBaseSymInGotPlt) {
++      assert(ctx.target->usesGotPlt);
++      sec = ctx.in.gotPlt.get();
++    } else {
+       sec = ctx.in.mipsGot ? cast<InputSection>(ctx.in.mipsGot.get())
+                            : cast<InputSection>(ctx.in.got.get());
++    }
+     ctx.sym.globalOffsetTable->section = sec;
+   }
+ 
+@@ -891,6 +903,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
      ctx.sym.bss->section = sbss ? sbss : findSection(ctx, ".bss");
    }
  
@@ -53,7 +72,23 @@ Index: lld/ELF/Writer.cpp
    // Setup MIPS _gp_disp/__gnu_local_gp symbols which should
    // be equal to the _gp symbol's value.
    if (ctx.sym.mipsGp) {
-@@ -2377,34 +2388,22 @@ SmallVector<std::unique_ptr<PhdrEntry>, 0> Writer<ELFT
+@@ -2246,6 +2261,15 @@ static bool needsPtLoad(OutputSection *sec) {
+ static uint64_t computeFlags(Ctx &ctx, uint64_t flags) {
+   if (ctx.arg.omagic)
+     return PF_R | PF_W | PF_X;
++#ifdef __OpenBSD__
++  // The sparc64 static PIE startup code reads an instruction from .text to
++  // locate _DYNAMIC before applying relocations.
++  if (ctx.arg.emachine == EM_SPARCV9 && ctx.arg.pie && !ctx.arg.shared &&
++      ctx.sharedFiles.empty() && (flags & PF_X))
++    return flags | PF_R;
++  if (ctx.arg.emachine == EM_SPARCV9 && (flags & PF_X) && (flags & PF_W))
++    return flags;
++#endif
+   if (ctx.arg.executeOnly && (flags & PF_X))
+     return flags & ~PF_R;
+   return flags;
+@@ -2377,34 +2401,22 @@ SmallVector<std::unique_ptr<PhdrEntry>, 0> Writer<ELFT
      addHdr(PT_GNU_EH_FRAME, ctx.in.ehFrameHdr->getParent()->getPhdrFlags())
          ->add(ctx.in.ehFrameHdr->getParent());
  
@@ -101,7 +136,7 @@ Index: lld/ELF/Writer.cpp
    // PT_OPENBSD_NOBTCFI is an OpenBSD-specific header to mark that the
    // executable is expected to violate branch-target CFI checks.
    if (ctx.arg.zNoBtCfi)
-@@ -2416,7 +2415,19 @@ SmallVector<std::unique_ptr<PhdrEntry>, 0> Writer<ELFT
+@@ -2416,7 +2428,19 @@ SmallVector<std::unique_ptr<PhdrEntry>, 0> Writer<ELFT
    // OpenBSD.
    if (ctx.arg.zWxneeded)
      addHdr(PT_OPENBSD_WXNEEDED, PF_X);
@@ -121,7 +156,7 @@ Index: lld/ELF/Writer.cpp
    if (OutputSection *cmd = findSection(ctx, ".note.gnu.property"))
      addHdr(PT_GNU_PROPERTY, PF_R)->add(cmd);
  
-@@ -2500,6 +2511,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
+@@ -2500,6 +2524,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
      }
    };
  
@@ -153,7 +188,7 @@ Index: lld/ELF/Writer.cpp
    prev = nullptr;
    for (auto &ph : ctx.phdrs)
      if (ph->p_type == PT_LOAD && ph->firstSec) {
-@@ -2562,6 +2598,16 @@ static std::string rangeToString(uint64_t addr, uint64
+@@ -2562,6 +2611,16 @@ static std::string rangeToString(uint64_t addr, uint64
  template <class ELFT> void Writer<ELFT>::assignFileOffsets() {
    ctx.out.programHeaders->offset = ctx.out.elfHeader->size;
    uint64_t off = ctx.out.elfHeader->size + ctx.out.programHeaders->size;
