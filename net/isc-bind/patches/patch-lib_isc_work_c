@@ -1,0 +1,45 @@
+From c312299fb5159c19b622f8e9d850e304b64aedda Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ond=C5=99ej=20Sur=C3=BD?= <ondrej@isc.org>
+Date: Thu, 17 Sep 2026 16:06:55 +0200
+Subject: [PATCH] Retry FUTEX_WAIT on ECANCELED in the worker threads
+
+OpenBSD's futex(2) returns ECANCELED rather than EINTR when FUTEX_WAIT
+is interrupted by a signal with SA_RESTART set, and liburcu passes that
+errno through unchanged.  The worker slumber loop only retried on EINTR
+and treated anything else as fatal, so such a signal delivered to a
+sleeping worker aborted the process.  Retry on ECANCELED as well.
+
+(cherry picked from commit cbe48b391e427b8f70669310e57fe65c06b509e6)
+---
+ lib/isc/work.c | 14 +++++++++++---
+ 1 file changed, 11 insertions(+), 3 deletions(-)
+
+Index: lib/isc/work.c
+--- lib/isc/work.c.orig
++++ lib/isc/work.c
+@@ -110,14 +110,22 @@ workthread_slumber(isc__workthread_t *thread) {
+ 	while (futex_noasync(&thread->state, FUTEX_WAIT, THREAD_WAITING, NULL,
+ 			     NULL, 0) != 0)
+ 	{
+-		if (errno == EWOULDBLOCK) {
++		switch (errno) {
++		case EWOULDBLOCK:
++			goto out;
++		case EINTR:
++		case ECANCELED:
++			/*
++			 * Retry if interrupted by a signal.  OpenBSD returns
++			 * ECANCELED instead of EINTR when SA_RESTART is set.
++			 */
+ 			break;
+-		} else if (errno != EINTR) {
++		default:
+ 			FATAL_ERROR("futex_noasync(FUTEX_WAIT): %s",
+ 				    strerror(errno));
+ 		}
+-		/* Or retry if interrupted by signal. */
+ 	}
++out:
+ 	rcu_thread_online();
+ }
+ 
