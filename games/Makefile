@@ -278,6 +278,7 @@
      SUBDIR += quakespasm
      SUBDIR += recoil-rts
      SUBDIR += redeclipse
+     SUBDIR += renpy
      SUBDIR += returntotheroots
      SUBDIR += rftg
      SUBDIR += ri-li

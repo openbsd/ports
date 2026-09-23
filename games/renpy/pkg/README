@@ -1,0 +1,19 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Getting started
+===============
+Run `renpy` to start the Ren'Py launcher, or `renpy /path/to/project`
+to skip the launcher and run one project directly.
+
+On first use the launcher asks for a projects directory; creating and
+choosing it uses a dialog helper (x11/Xdialog, installed as a
+dependency).
+
+Live2D
+======
+Ren'Py's optional Live2D animation support requires Live2D Cubism
+Core, a proprietary binary-only library with no OpenBSD version.
+Games that use Live2D animations will not be able to display them,
+and typically will not run at all.

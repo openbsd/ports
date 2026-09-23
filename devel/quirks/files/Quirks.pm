@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1832 2026/09/21 18:24:44 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1833 2026/09/23 16:47:23 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -575,7 +575,6 @@ setup_obsolete_reason(
 	3 => 'forcedattack',
 	3 => 'pathological',
 	3 => 'pyganim',
-	4 => 'renpy',
 	5 => 'pygame_sdl2',
 	3 => 'dynagen',
 	3 => 'termshark',

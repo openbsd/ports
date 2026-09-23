@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Ren'Py
+GenericName=Visual Novel Engine
+Comment=Create and play visual novels
+Exec=renpy
+Icon=renpy
+Terminal=false
+Categories=Development;Game;
+StartupWMClass=renpy
