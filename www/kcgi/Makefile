@@ -1,7 +1,7 @@
 COMMENT =		minimal CGI library for web applications
 
 DISTNAME =		kcgi-1.0.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		www
 
 SHARED_LIBS +=		kcgi		1.1 # 1.1
@@ -25,5 +25,8 @@ MAKE_FLAGS =		PREFIX="${PREFIX}"
 
 TEST_DEPENDS =		net/curl
 TEST_TARGET =		regress
+
+post-install:
+	rm ${PREFIX}/lib/lib*.so
 
 .include <bsd.port.mk>

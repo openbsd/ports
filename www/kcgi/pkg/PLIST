@@ -4,19 +4,14 @@ include/kcgijson.h
 include/kcgiregress.h
 include/kcgixml.h
 @static-lib lib/libkcgi.a
-@so lib/libkcgi.so
 @lib lib/libkcgi.so.${LIBkcgi_VERSION}
 @static-lib lib/libkcgihtml.a
-@so lib/libkcgihtml.so
 @lib lib/libkcgihtml.so.${LIBkcgihtml_VERSION}
 @static-lib lib/libkcgijson.a
-@so lib/libkcgijson.so
 @lib lib/libkcgijson.so.${LIBkcgijson_VERSION}
 @static-lib lib/libkcgiregress.a
-@so lib/libkcgiregress.so
 @lib lib/libkcgiregress.so.${LIBkcgiregress_VERSION}
 @static-lib lib/libkcgixml.a
-@so lib/libkcgixml.so
 @lib lib/libkcgixml.so.${LIBkcgixml_VERSION}
 lib/pkgconfig/kcgi-html.pc
 lib/pkgconfig/kcgi-json.pc

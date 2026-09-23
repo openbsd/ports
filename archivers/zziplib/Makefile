@@ -5,6 +5,7 @@ CATEGORIES=	archivers
 GH_ACCOUNT =	gdraheim
 GH_PROJECT =	zziplib
 GH_TAGNAME =	v0.13.80
+REVISION =	0
 
 SHARED_LIBS +=  zzip                      16.1 # 0.0
 SHARED_LIBS +=  zzipfseeko                14.0 # 0.0
@@ -34,5 +35,8 @@ CONFIGURE_ARGS +=	-DZZIP_LIBTOOL=OFF \
 			-DZZIP_COMPAT=OFF
 
 TEST_TARGET =		tests
+
+post-install:
+	rm ${PREFIX}/lib/libzzipwrap.so
 
 .include <bsd.port.mk>

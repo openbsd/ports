@@ -40,7 +40,6 @@ lib/cmake/zziplib/zziplibTargets.cmake
 @lib lib/libzzip.so.${LIBzzip_VERSION}
 @lib lib/libzzipfseeko.so.${LIBzzipfseeko_VERSION}
 @lib lib/libzzipmmapped.so.${LIBzzipmmapped_VERSION}
-@so lib/libzzipwrap.so
 @lib lib/libzzipwrap.so.${LIBzzipwrap_VERSION}
 lib/pkgconfig/zzipfseeko.pc
 lib/pkgconfig/zziplib.pc
