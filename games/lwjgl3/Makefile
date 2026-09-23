@@ -2,7 +2,7 @@ COMMENT =	lightweight game library for java
 
 ONLY_FOR_ARCHS= amd64 aarch64
 
-V =		3.3.3.1
+V =		3.3.3.2
 DISTNAME =	lwjgl3-${V}
 
 KOTLIN_V =	1.9.0
