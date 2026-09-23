@@ -1,6 +1,6 @@
 COMMENT=	GNU awk
 
-V=		5.4.0
+V=		5.4.1
 DISTNAME=	gawk-$V
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	lang
@@ -32,10 +32,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 # to no effect.
 CONFIGURE_ENV+=	ac_cv_path_XGETTEXT=:
 TEST_ENV=	PAGER=cat
-
-# known test failures:
-#  "commas" due to not having a GNU extended printf format string.
-#  "mpfrnegzero", "mpfrnegzero2" on aarch64: ?
 
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man3am

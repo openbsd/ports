@@ -12,8 +12,8 @@ info/gawk_general-program.png
 info/gawk_process-flow.png
 info/gawk_statist.jpg
 @info info/gawkinet.info
+@info info/gawknotes.info
 @info info/gawkworkflow.info
-@info info/notes.info
 @info info/pm-gawk.info
 lib/gawk/
 @so lib/gawk/filefuncs.so
@@ -39,6 +39,7 @@ man/man3am/
 @man man/man3am/fnmatch.3am
 @man man/man3am/fork.3am
 @man man/man3am/inplace.3am
+@man man/man3am/intdiv.3am
 @man man/man3am/ordchr.3am
 @man man/man3am/readdir.3am
 @man man/man3am/readfile.3am
@@ -86,6 +87,7 @@ share/locale/fr/LC_MESSAGES/gawk.mo
 share/locale/he/LC_MESSAGES/gawk.mo
 share/locale/id/LC_MESSAGES/gawk.mo
 share/locale/it/LC_MESSAGES/gawk.mo
+share/locale/ka/LC_MESSAGES/gawk.mo
 share/locale/ko/LC_MESSAGES/gawk.mo
 share/locale/nl/LC_MESSAGES/gawk.mo
 share/locale/pl/LC_MESSAGES/gawk.mo
