@@ -1,6 +1,6 @@
 COMMENT=	educational game for children
 
-V=		26.1
+V=		26.2
 DISTNAME=	gcompris-qt-${V}
 PKGNAME=	gcompris-${V}
 EPOCH=		0
