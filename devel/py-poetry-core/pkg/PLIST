@@ -25,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/${MO
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/${MODPY_PYCACHE}draft06.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/${MODPY_PYCACHE}draft07.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/${MODPY_PYCACHE}draft07.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/${MODPY_PYCACHE}draft2019.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/${MODPY_PYCACHE}draft2019.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/${MODPY_PYCACHE}generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -38,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/${MO
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/draft04.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/draft06.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/draft07.py
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/draft2019.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/generator.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/fastjsonschema/indent.py
@@ -180,6 +183,8 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}_musllinux.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}_parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}_ranges.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}_ranges.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}_structures.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}_structures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}_tokenizer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -196,6 +201,8 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}pylock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}pylock.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}ranges.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}ranges.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}requirements.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}requirements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/${MODPY_PYCACHE}specifiers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -210,6 +217,7 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_elffile.
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_manylinux.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_musllinux.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_parser.py
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_ranges.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_structures.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_tokenizer.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/dependency_groups.py
@@ -227,6 +235,7 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/markers.p
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/metadata.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/py.typed
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/pylock.py
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/ranges.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/requirements.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/specifiers.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/tags.py
