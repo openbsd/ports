@@ -1,8 +1,8 @@
 COMMENT =		iterative JSON parser
 
-MODPY_DISTV =		3.4.0.post0
+MODPY_DISTV =		3.5.1
 DISTNAME =		ijson-${MODPY_DISTV}
-PKGNAME =		py-ijson-${MODPY_DISTV:S/.post/pl/}
+PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		textproc
 
