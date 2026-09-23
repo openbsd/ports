@@ -1,23 +1,22 @@
-COMMENT =		pure-Python HTTP/2 Header Encoding
+COMMENT=	pure-Python HTTP/2 Header Encoding
 
-MODPY_DISTV =		4.1.0
-DISTNAME =		hpack-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+MODPY_DISTV=	4.2.0
+GH_ACCOUNT=	python-hyper
+GH_PROJECT=	hpack
+GH_TAGNAME=	v${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		www
+CATEGORIES=	www
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+HOMEPAGE=	https://github.com/python-hyper/hpack
 
-HOMEPAGE =		https://github.com/python-hyper/hpack
-
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
 # pypi archive hasn't got test data
-NO_TEST =		Yes
+#NO_TEST=	Yes
 
 .include <bsd.port.mk>
