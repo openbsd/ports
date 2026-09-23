@@ -1,6 +1,6 @@
 COMMENT =		library providing an API for accessing packages metadata
 
-MODPY_DISTV =		8.7.1
+MODPY_DISTV =		9.0.1
 DISTNAME =		importlib_metadata-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -23,8 +23,6 @@ MODPY_PYBUILD =		setuptools_scm
 # disables tests needing pyfakefs, pytest-perf, jaraco.test (not in ports)
 MODPY_PYTEST_ARGS =	--ignore exercises.py \
 			--ignore tests/compat/py312.py \
-			--ignore tests/compat/py39.py \
-			--ignore tests/compat/test_py39_compat.py \
 			--ignore tests/fixtures.py \
 			--ignore tests/test_api.py \
 			--ignore tests/test_integration.py \

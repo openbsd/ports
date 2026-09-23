@@ -6,6 +6,8 @@ lib/python${MODPY_VERSION}/site-packages/importlib_metadata-${MODPY_DISTV}.dist-
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/importlib_metadata-${MODPY_DISTV}.dist-info/scm_file_list.json
+lib/python${MODPY_VERSION}/site-packages/importlib_metadata-${MODPY_DISTV}.dist-info/scm_version.json
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/__init__.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}/
@@ -17,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_col
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_collections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_functools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_functools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_itertools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -25,18 +29,16 @@ lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_met
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_meta.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_text.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}diagnose.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/${MODPY_PYCACHE}diagnose.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/_adapters.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/_collections.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/_compat.py
+lib/python${MODPY_VERSION}/site-packages/importlib_metadata/_context.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/_functools.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/_itertools.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/_meta.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/_text.py
-lib/python${MODPY_VERSION}/site-packages/importlib_metadata/_typing.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/__init__.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/${MODPY_PYCACHE}/
@@ -44,9 +46,6 @@ lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/${MODPY_PYCACHE}py311.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/${MODPY_PYCACHE}py311.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/${MODPY_PYCACHE}py39.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/${MODPY_PYCACHE}py39.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/py311.py
-lib/python${MODPY_VERSION}/site-packages/importlib_metadata/compat/py39.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/diagnose.py
 lib/python${MODPY_VERSION}/site-packages/importlib_metadata/py.typed
