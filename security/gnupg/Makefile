@@ -1,6 +1,6 @@
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.5.22
+DISTNAME =	gnupg-2.5.24
 
 CATEGORIES =	security
 
@@ -29,7 +29,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			devel/npth>=1.5 \
 			security/gnutls \
 			security/libassuan>=3.0.0 \
-			security/libgcrypt \
+			security/libgcrypt>=1.12.0 \
 			security/libksba>=1.6.3
 
 .if ${FLAVOR:Mldap}
