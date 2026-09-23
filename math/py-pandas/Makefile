@@ -1,6 +1,7 @@
 COMMENT=	data analysis and manipulation library
 
 MODPY_DISTV=	2.3.3
+REVISION=	0
 DISTNAME=	pandas-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -11,12 +12,13 @@ HOMEPAGE=	https://pandas.pydata.org/
 # BSD 3-Clause
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
+WANTLIB +=	${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	mesonpy
+MODPY_PI=	Yes
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 COMPILER=	base-clang ports-gcc
 
