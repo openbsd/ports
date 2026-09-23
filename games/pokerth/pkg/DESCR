@@ -1,3 +1,7 @@
 This is the client package for pokerth, written in C++/Qt.
 Play with bots, or play online with public or private
 servers.
+
+Flavour: legacy - only include the old wxWidgets-based client.
+This is used by default on i386 where the newer QML-based client
+uses too much memory.

@@ -1,7 +1,6 @@
 @bin bin/pokerth_client
-@bin bin/pokerth_qml-client
+!%%legacy%%
 share/applications/pokerth.desktop
-share/applications/pokerth_qml.desktop
 share/pixmaps/
 share/pixmaps/pokerth.png
 share/pokerth/
@@ -1465,6 +1464,8 @@ share/pokerth/data/misc/
 share/pokerth/data/misc/ChangeLog
 share/pokerth/data/misc/agpl.html
 share/pokerth/data/misc/cacert.pem
+share/pokerth/data/misc/gpl-3.0.txt
+share/pokerth/data/misc/lgpl-3.0.txt
 share/pokerth/data/misc/third_party_libs.txt
 share/pokerth/data/sounds/
 share/pokerth/data/sounds/default/
