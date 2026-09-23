@@ -3,7 +3,6 @@
 @newuser _hylafax:902:_hylafax::HylaFAX Server:/var/spool/hylafax:/sbin/nologin
 @rcscript ${RCDIR}/faxq
 @rcscript ${RCDIR}/hfaxd
-@mode 555
 @bin bin/faxalter
 @bin bin/faxcover
 @bin bin/faxmail
@@ -11,20 +10,15 @@
 @bin bin/faxstat
 @bin bin/sendfax
 @bin bin/sendpage
-@mode
 @owner _hylafax
 @group dialer
 libdata/hylafax/
 libdata/hylafax/COPYRIGHT
 libdata/hylafax/archive/
 libdata/hylafax/bin/
-@mode 555
 libdata/hylafax/bin/archive
-@mode
 libdata/hylafax/bin/auto-rotate.ps
-@mode 555
 libdata/hylafax/bin/common-functions
-@mode
 libdata/hylafax/bin/dict/
 libdata/hylafax/bin/dict/de
 libdata/hylafax/bin/dict/en
@@ -42,12 +36,9 @@ libdata/hylafax/bin/dict/sr
 libdata/hylafax/bin/dict/tr
 libdata/hylafax/bin/dict/uk
 libdata/hylafax/bin/dict/zh
-@mode 555
 libdata/hylafax/bin/dictionary
 libdata/hylafax/bin/faxrcvd
-@mode
 libdata/hylafax/bin/genfontmap.ps
-@mode 555
 libdata/hylafax/bin/mkcover
 libdata/hylafax/bin/notify
 libdata/hylafax/bin/pcl2fax
@@ -56,14 +47,11 @@ libdata/hylafax/bin/pollrcvd
 libdata/hylafax/bin/ps2fax.dps
 libdata/hylafax/bin/ps2fax.gs
 libdata/hylafax/bin/ps2fax.imp
-@mode
 libdata/hylafax/bin/qp-encode.awk
 libdata/hylafax/bin/rfc2047-encode.awk
-@mode 555
 libdata/hylafax/bin/tiff2fax
 libdata/hylafax/bin/tiff2pdf
 libdata/hylafax/bin/wedged
-@mode
 libdata/hylafax/client/
 libdata/hylafax/config/
 libdata/hylafax/config/att-dataport
@@ -164,7 +152,6 @@ libdata/hylafax/etc/faxmail/application/octet-stream
 libdata/hylafax/etc/faxmail/application/pdf
 libdata/hylafax/etc/faxmail/image/
 libdata/hylafax/etc/faxmail/image/tiff
-@mode 644
 libdata/hylafax/etc/hfaxd.conf
 @mode 600
 libdata/hylafax/etc/hosts.hfaxd
@@ -254,7 +241,6 @@ libdata/hylafax/tmp/
 @man man/man8/typetest.8c
 @man man/man8/wedged.8c
 @man man/man8/xferfaxstats.8c
-@mode 555
 @bin sbin/choptest
 @bin sbin/cqtest
 @bin sbin/dialtest
@@ -295,9 +281,8 @@ sbin/recvstats
 @bin sbin/tsitest
 @bin sbin/typetest
 sbin/xferfaxstats
-@mode
 share/doc/pkg-readmes/${PKGSTEM}
-@exec ln -sf %D/libdata/hylafax /var/spool/hylafax
+@exec [ -e /var/spool/hylafax ] || ln -sf %D/libdata/hylafax /var/spool/hylafax
 @exec mkfifo %D/libdata/hylafax/FIFO; chown _hylafax:dialer %D/libdata/hylafax/FIFO; chmod 600 %D/libdata/hylafax/FIFO
 @unexec rm %D/libdata/hylafax/FIFO
 @extraunexec rm -f /var/spool/hylafax

@@ -1,0 +1,4 @@
+If you've updated your installation from an earlier version of HylaFAX 7.0.11,
+update your Fontmap.HylaFAX file by running:
+
+	# ${PREFIX}/sbin/faxsetup -client

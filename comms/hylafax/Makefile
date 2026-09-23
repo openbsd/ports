@@ -1,14 +1,14 @@
 COMMENT=		send/receive faxes and share modems
 
 DISTNAME=		hylafax-7.0.11
-REVISION=		0
+REVISION=		1
 CATEGORIES=		comms
 
 HOMEPAGE=		https://hylafax.sourceforge.io/
 SITES=			${SITE_SOURCEFORGE:=hylafax/}
 
 # License: BSD
-# http://www.hylafax.org/HylaFAQ/copyright.html
+# https://sourceforge.net/p/hylafax/HylaFAX+/HEAD/tree/trunk/COPYRIGHT
 PERMIT_PACKAGE=		Yes
 
 FLAVORS=		a4
@@ -47,7 +47,8 @@ CONFIGURE_ARGS=		--nointeractive \
 			--with-SCRIPT_SH="/bin/ksh" \
 			--with-INSTALLROOT="${DESTDIR}" \
 			--with-DIR_MAN="${TRUEPREFIX}/man" \
-			--with-DIR_LIBDATA="${TRUEPREFIX}/libdata/hylafax/etc"
+			--with-DIR_LIBDATA="${TRUEPREFIX}/libdata/hylafax/etc" \
+			--with-PATH_AFM="${TRUEPREFIX}/share/fonts/ghostscript"
 
 CONFIGURE_ENV+=		DISABLE_PODOFO=yes
 

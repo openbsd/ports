@@ -10,3 +10,11 @@ Index: faxd/sslfaxproxy.c++
      timeval curTime;
      gettimeofday(&curTime, 0);
      return curTime;
+@@ -94,6 +94,7 @@ sslFaxThread(void* sd)
+ done:
+     Sys::close(s->wfd);
+     Sys::close(s->rfd);
++    free(sd);
+     return (NULL);
+ }
+ 

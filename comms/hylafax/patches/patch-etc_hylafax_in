@@ -1,0 +1,38 @@
+--- etc/hylafax.in.orig	Wed Oct 13 03:42:48 2021
++++ etc/hylafax.in	Sat Jul 11 07:20:51 2026
+@@ -90,9 +90,6 @@ fi
+ if [ -z "$HFAXD_SNPP_SERVER" ]; then
+     HFAXD_SNPP_SERVER=@HFAXD_SNPP_SERVER@
+ fi
+-if [ -z "$HFAXD_ARGS" ]; then
+-    HFAXD_ARGS=
+-fi
+ 
+ IS_ON=/etc/chkconfig		# NB: chkconfig is IRIX- and Linux-specific
+ FAXQ=$SBIN/faxq
+@@ -101,6 +98,10 @@ FAXQUIT=$SBIN/faxquit
+ FAXPORT=hylafax			# designated port for new protocol
+ SNPPPORT=444			# official port for SNPP
+ 
++if [ -z "$HFAXD_ARGS" ]; then
++    HFAXD_ARGS="-f all -l 0.0.0.0 -i $FAXPORT -l ::0 "
++fi
++
+ if test ! -x $IS_ON ; then
+     IS_ON=true
+ fi
+@@ -150,13 +151,7 @@ fi
+ #
+ killall()
+ {
+-	# NB: ps ax should give an error on System V, so we try it first!
+-	pid="`ps ax 2>/dev/null | $AWK \"\
+-		/[\/ (]$2[ )]/	{print \\$1;}
+-		/[\/ ]$2\$/	{print \\$1;}\"`"
+-	test "$pid" ||
+-	    pid="`ps -e 2>/dev/null | $AWK \"/ $2[ ]*\$/ {print \\$1;}\"`"
+-	test "$pid" && kill $1 $pid; return
++	/usr/bin/pkill $1 $2
+ }
+ 
+ do_start()

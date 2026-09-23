@@ -1,0 +1,12 @@
+Index: port/install.sh.in
+--- port/install.sh.in.orig
++++ port/install.sh.in
+@@ -213,7 +213,7 @@ install()
+ 	    do_chXXX $CHGRP $target
+ 	fi
+ 	$VERBOSE "$CHMOD $target"
+-	do_chXXX $CHMOD $target
++	$CHMOD $target
+ 	if [ $STRIP != ":" ] && [ -x $ROOT$DESTDIR$f ]; then
+ 	    $STRIP $target >/dev/null 2>&1 || true
+ 	    $VERBOSE "$STRIP $target"

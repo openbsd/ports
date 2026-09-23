@@ -25,12 +25,20 @@ something like this:
 and send a SIGHUP to init(8).
 
 
+Updating HylaFAX+ fontmap file
+==============================
+To refresh or create a missing HylaFAX fontmap file after an update simply run;
+
+    # ${TRUEPREFIX}/sbin/faxsetup -client
+
+
 Updating file ownership to use the new _hylafax account
 =======================================================
-To update the ownership of directories and files in the HylaFAX spool directory,
-perform one of the following.
+Old versions (6.x) of this package used the legacy UUCP account. This was
+changed to _hylafax when moving to 7.x. If your HylaFAX spool directory
+still contains files owned by _uucp / uid 66, update the ownership as follows.
 
-If the legacy UUCP account is still registerd;
+If the legacy UUCP account is still registered;
 
     find ${TRUEPREFIX}/libdata/hylafax -user uucp -exec /sbin/chown 902 {} \;
 or
