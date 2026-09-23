@@ -1,0 +1,56 @@
+Add support for getexecpath()
+
+Index: libs/log/src/process_name.cpp
+--- libs/log/src/process_name.cpp.orig
++++ libs/log/src/process_name.cpp
+@@ -26,6 +26,10 @@
+ #define PATH_MAX 1024
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <sys/param.h>
++#endif
++
+ #if defined(BOOST_WINDOWS)
+ 
+ #include <windows.h>
+@@ -138,6 +142,39 @@ BOOST_LOG_API std::string get_process_name()
+         return filesystem::read_symlink("/proc/curproc/file").filename().string();
+ 
+     return std::to_string(getpid());
++}
++
++} // namespace aux
++
++BOOST_LOG_CLOSE_NAMESPACE // namespace log
++
++} // namespace boost
++
++#include <boost/log/detail/footer.hpp>
++
++#elif defined(__OpenBSD__) && OpenBSD >= 202610
++
++#include <unistd.h>
++#include <boost/log/detail/header.hpp>
++
++namespace boost {
++
++BOOST_LOG_OPEN_NAMESPACE
++
++namespace aux {
++
++//! The function returns the current process name
++BOOST_LOG_API std::string get_process_name()
++{
++    std::string buf(PATH_MAX, '\0');
++
++    if (getexecpath(&buf[0], buf.size()) == 0)
++    {
++        buf.resize(std::strlen(&buf[0]));
++        return filesystem::path(buf).filename().string();
++    }
++
++    return std::string();
+ }
+ 
+ } // namespace aux

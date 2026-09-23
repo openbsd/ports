@@ -13,7 +13,7 @@ CATEGORIES=	devel
 SITES=		https://archives.boost.io/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION-main=	0
+REVISION=	1
 
 SO_VERSION=	27.0
 BOOST_LIBS=	boost_atomic-mt \

@@ -1,19 +1,28 @@
-Add support of getexecpath()
+Add support for getexecpath()
 
 Index: boost/dll/detail/posix/program_location_impl.hpp
 --- boost/dll/detail/posix/program_location_impl.hpp.orig
 +++ boost/dll/detail/posix/program_location_impl.hpp
-@@ -96,6 +96,30 @@ namespace boost { namespace dll { namespace detail {
+@@ -16,6 +16,10 @@
+ # pragma once
+ #endif
  
- 
- 
-+#elif BOOST_OS_BSD_OPEN
++#if BOOST_OS_BSD_OPEN
++#include <sys/param.h>
++#endif
 +
-+#if !defined(BOOST_DLL_INTERFACE_UNIT)
+ #if BOOST_OS_MACOS || BOOST_OS_IOS
+ 
+ #include <string>
+@@ -94,7 +98,27 @@ namespace boost { namespace dll { namespace detail {
+     }
+ }}} // namespace boost::dll::detail
+ 
++#elif BOOST_OS_BSD_OPEN && OpenBSD >= 202610
+ 
 +#include <errno.h>
 +#include <limits.h>
 +#include <unistd.h>
-+#endif // !defined(BOOST_DLL_INTERFACE_UNIT)
 +
 +namespace boost { namespace dll { namespace detail {
 +    inline boost::dll::fs::path program_location_impl(std::error_code& ec) {
@@ -30,7 +39,6 @@ Index: boost/dll/detail/posix/program_location_impl.hpp
 +        return boost::dll::fs::path(path);
 +    }
 +}}} // namespace boost::dll::detail
-+
+ 
  #elif BOOST_OS_BSD_NET
  
- namespace boost { namespace dll { namespace detail {
