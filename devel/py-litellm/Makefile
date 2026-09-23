@@ -3,7 +3,7 @@ COMMENT=	uniform API for multiple LLM providers
 MODPY_DISTV=	1.90.2
 DISTNAME=	litellm-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -19,7 +19,7 @@ MODPY_PYBUILD=	uv_build
 
 RUN_DEPENDS =	devel/py-click<9.0 \
 		devel/py-fastuuid<1.0 \
-		devel/py-importlib-metadata<9.0 \
+		devel/py-importlib-metadata \
 		devel/py-jsonschema<5.0 \
 		devel/py-pydantic<3.0.0 \
 		sysutils/py-dotenv<2.0 \
