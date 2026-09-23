@@ -1,11 +1,72 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -190,3 +190,9 @@ gst-plugin-isobmff = { path="mux/isobmff", version = "
- gst-plugin-gtk4 = { path="video/gtk4", version = "0.15.0" }
- gst-plugin-rtp = { path="net/rtp", version = "0.15.0" }
- gst-plugin-hlssink3 = { path="net/hlssink3", version = "0.15.0" }
+@@ -199,3 +199,70 @@ gst-plugin-hlssink3 = { path="net/hlssink3", version =
+ lru = "0.18"
+ rustls = { version = "0.23", default-features = false, features = ["std"] }
+ rustls-platform-verifier = "0.7"
 +
++# Release tarball: root manifest was converted to crates.io deps
++# (replace_git_deps.py) but Cargo.lock still pins git sources, so
++# crates.inc lacks them; feed the git DIST_TUPLEs in as crates.io.
++[patch.crates-io]
++gstreamer = {path = "../gstreamer-rs/gstreamer" }
++gstreamer-allocators = {path = "../gstreamer-rs/gstreamer-allocators" }
++gstreamer-analytics = {path = "../gstreamer-rs/gstreamer-analytics" }
++gstreamer-app = {path = "../gstreamer-rs/gstreamer-app" }
++gstreamer-audio = {path = "../gstreamer-rs/gstreamer-audio" }
++gstreamer-base = {path = "../gstreamer-rs/gstreamer-base" }
++gstreamer-check = {path = "../gstreamer-rs/gstreamer-check" }
++gstreamer-gl = {path = "../gstreamer-rs/gstreamer-gl" }
++gstreamer-gl-egl = {path = "../gstreamer-rs/gstreamer-gl/egl" }
++gstreamer-gl-wayland = {path = "../gstreamer-rs/gstreamer-gl/wayland" }
++gstreamer-gl-x11 = {path = "../gstreamer-rs/gstreamer-gl/x11" }
++gstreamer-net = {path = "../gstreamer-rs/gstreamer-net" }
++gstreamer-pbutils = {path = "../gstreamer-rs/gstreamer-pbutils" }
++gstreamer-rtp = {path = "../gstreamer-rs/gstreamer-rtp" }
++gstreamer-sdp = {path = "../gstreamer-rs/gstreamer-sdp" }
++gstreamer-tag = {path = "../gstreamer-rs/gstreamer-tag" }
++gstreamer-utils = {path = "../gstreamer-rs/gstreamer-utils" }
++gstreamer-validate = {path = "../gstreamer-rs/gstreamer-validate" }
++gstreamer-video = {path = "../gstreamer-rs/gstreamer-video" }
++gstreamer-webrtc = {path = "../gstreamer-rs/gstreamer-webrtc" }
++glib = {path = "../gtk-rs-core/glib" }
++gio = {path = "../gtk-rs-core/gio" }
++cairo-rs = {path = "../gtk-rs-core/cairo" }
++pango = {path = "../gtk-rs-core/pango" }
++pangocairo = {path = "../gtk-rs-core/pangocairo" }
++gdk-pixbuf = {path = "../gtk-rs-core/gdk-pixbuf" }
++graphene-rs = {path = "../gtk-rs-core/graphene" }
++glib-sys = {path = "../gtk-rs-core/glib/sys" }
++gobject-sys = {path = "../gtk-rs-core/glib/gobject-sys" }
++gio-sys = {path = "../gtk-rs-core/gio/sys" }
++cairo-sys-rs = {path = "../gtk-rs-core/cairo/sys" }
++gdk-pixbuf-sys = {path = "../gtk-rs-core/gdk-pixbuf/sys" }
++graphene-sys = {path = "../gtk-rs-core/graphene/sys" }
++pango-sys = {path = "../gtk-rs-core/pango/sys" }
++gtk4 = {path = "../gtk4-rs/gtk4" }
++gdk4-wayland = {path = "../gtk4-rs/gdk4-wayland" }
++gdk4-x11 = {path = "../gtk4-rs/gdk4-x11" }
++gdk4-win32 = {path = "../gtk4-rs/gdk4-win32" }
++
++# gtk4-rs (and gstreamer-rs) still reference gtk-rs-core by git
++[patch."https://github.com/gtk-rs/gtk-rs-core"]
++glib = {path = "../gtk-rs-core/glib" }
++gio = {path = "../gtk-rs-core/gio" }
++cairo-rs = {path = "../gtk-rs-core/cairo" }
++pango = {path = "../gtk-rs-core/pango" }
++pangocairo = {path = "../gtk-rs-core/pangocairo" }
++gdk-pixbuf = {path = "../gtk-rs-core/gdk-pixbuf" }
++graphene-rs = {path = "../gtk-rs-core/graphene" }
++glib-sys = {path = "../gtk-rs-core/glib/sys" }
++gobject-sys = {path = "../gtk-rs-core/glib/gobject-sys" }
++gio-sys = {path = "../gtk-rs-core/gio/sys" }
++cairo-sys-rs = {path = "../gtk-rs-core/cairo/sys" }
++gdk-pixbuf-sys = {path = "../gtk-rs-core/gdk-pixbuf/sys" }
++graphene-sys = {path = "../gtk-rs-core/graphene/sys" }
++pango-sys = {path = "../gtk-rs-core/pango/sys" }
++
++# mux/flavors and video/ffv1 use git deps directly
 +[patch."https://github.com/rust-av/flavors"]
 +flavors = {path = "../flavors" }
 +
