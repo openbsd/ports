@@ -1102,6 +1102,7 @@ share/vim/${P}/ftplugin/mss.vim
 share/vim/${P}/ftplugin/muttrc.vim
 share/vim/${P}/ftplugin/mysql.vim
 share/vim/${P}/ftplugin/nanorc.vim
+share/vim/${P}/ftplugin/nasm.vim
 share/vim/${P}/ftplugin/neomuttrc.vim
 share/vim/${P}/ftplugin/netrc.vim
 share/vim/${P}/ftplugin/nginx.vim
@@ -1160,6 +1161,7 @@ share/vim/${P}/ftplugin/quarto.vim
 share/vim/${P}/ftplugin/r.vim
 share/vim/${P}/ftplugin/racc.vim
 share/vim/${P}/ftplugin/racket.vim
+share/vim/${P}/ftplugin/radvd.vim
 share/vim/${P}/ftplugin/raku.vim
 share/vim/${P}/ftplugin/rasi.vim
 share/vim/${P}/ftplugin/readline.vim
@@ -1172,6 +1174,7 @@ share/vim/${P}/ftplugin/rhelp.vim
 share/vim/${P}/ftplugin/rmd.vim
 share/vim/${P}/ftplugin/rnc.vim
 share/vim/${P}/ftplugin/rnoweb.vim
+share/vim/${P}/ftplugin/robot.vim
 share/vim/${P}/ftplugin/roc.vim
 share/vim/${P}/ftplugin/routeros.vim
 share/vim/${P}/ftplugin/rpl.vim
@@ -2605,6 +2608,7 @@ share/vim/${P}/syntax/r.vim
 share/vim/${P}/syntax/racc.vim
 share/vim/${P}/syntax/racket.vim
 share/vim/${P}/syntax/radiance.vim
+share/vim/${P}/syntax/radvd.vim
 share/vim/${P}/syntax/raku.vim
 share/vim/${P}/syntax/raml.vim
 share/vim/${P}/syntax/rapid.vim
@@ -2733,6 +2737,7 @@ share/vim/${P}/syntax/strace.vim
 share/vim/${P}/syntax/structurizr.vim
 share/vim/${P}/syntax/stylus.vim
 share/vim/${P}/syntax/sudoers.vim
+share/vim/${P}/syntax/svelte.vim
 share/vim/${P}/syntax/svg.vim
 share/vim/${P}/syntax/svn.vim
 share/vim/${P}/syntax/swayconfig.vim
