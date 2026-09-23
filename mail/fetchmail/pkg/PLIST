@@ -32,4 +32,6 @@ share/locale/ro/LC_MESSAGES/fetchmail.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/fetchmail.mo
+share/locale/sr/LC_MESSAGES/fetchmail.mo
 share/locale/sv/LC_MESSAGES/fetchmail.mo
+share/locale/zh_TW/LC_MESSAGES/fetchmail.mo
