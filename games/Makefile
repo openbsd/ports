@@ -257,6 +257,7 @@
      SUBDIR += pioneer
      SUBDIR += pioneers
      SUBDIR += pokerth
+     SUBDIR += pokerth,legacy
      SUBDIR += polymorphable
      SUBDIR += postal
      SUBDIR += powder-toy
