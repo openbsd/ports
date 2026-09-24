@@ -1,14 +1,14 @@
 COMMENT=	dict-like collection, but with multiple values for a key
 
-MODPY_DISTV=	6.8.0
+MODPY_DISTV=	6.9.1
 DISTNAME=	multidict-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www devel
 
-WANTLIB +=	pthread ${MODPY_WANTLIB}
-
 # Apache2
 PERMIT_PACKAGE=	Yes
+
+WANTLIB +=	pthread ${MODPY_WANTLIB}
 
 # -std=c11
 COMPILER=	base-clang ports-gcc
