@@ -14,6 +14,7 @@
 @man man/man1/upterm-session-info.1
 @man man/man1/upterm-session-list.1
 @man man/man1/upterm-session-stop.1
+@man man/man1/upterm-session-wait.1
 @man man/man1/upterm-session.1
 @man man/man1/upterm-upgrade.1
 @man man/man1/upterm-version.1

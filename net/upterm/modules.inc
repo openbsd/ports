@@ -1,13 +1,13 @@
 MODGO_MODULES =	\
 	cel.dev/expr									 v0.25.2 \
 	charm.land/ssh									 v0.4.3 \
-	cloud.google.com/go/auth							 v0.18.2 \
+	cloud.google.com/go/auth							 v0.20.0 \
 	cloud.google.com/go/compute/metadata						 v0.9.0 \
 	dario.cat/mergo									 v1.0.1 \
 	git.sr.ht/~jackmordaunt/go-toast						 v1.1.2 \
 	github.com/!alec!aivazis/survey/v2						 v2.3.7 \
 	github.com/!data!dog/datadog-go							 v4.8.3+incompatible \
-	github.com/!google!cloud!platform/opentelemetry-operations-go/detectors/gcp	 v1.33.0 \
+	github.com/!google!cloud!platform/opentelemetry-operations-go/detectors/gcp	 v1.34.0 \
 	github.com/!hdr!histogram/hdrhistogram-go					 v1.1.2 \
 	github.com/!knetic/govaluate							 v3.0.1-0.20171022003610-9aa49832a739+incompatible \
 	github.com/!make!now!just/heredoc						 v1.0.0 \
@@ -69,7 +69,7 @@ MODGO_MODULES =	\
 	github.com/circonus-labs/circonusllhist						 v0.1.3 \
 	github.com/clbanning/mxj							 v1.8.4 \
 	github.com/cli/browser								 v1.3.0 \
-	github.com/cli/go-gh/v2								 v2.16.0 \
+	github.com/cli/go-gh/v2								 v2.16.1 \
 	github.com/cli/safeexec								 v1.0.1 \
 	github.com/cli/shurcoo!l-graphql						 v0.0.4 \
 	github.com/clipperhouse/displaywidth						 v0.9.0 \
@@ -95,7 +95,7 @@ MODGO_MODULES =	\
 	github.com/erikgeiser/coninput							 v0.0.0-20211004153227-1c3628e74d0f \
 	github.com/esiqveland/notify							 v0.13.3 \
 	github.com/fatih/color								 v1.19.0 \
-	github.com/felixge/httpsnoop							 v1.0.4 \
+	github.com/felixge/httpsnoop							 v1.1.0 \
 	github.com/franela/goreq							 v0.0.0-20171204163338-bcd34c9993f8 \
 	github.com/frankban/quicktest							 v1.14.6 \
 	github.com/fsnotify/fsnotify							 v1.10.1 \
@@ -129,8 +129,8 @@ MODGO_MODULES =	\
 	github.com/google/s2a-go							 v0.1.9 \
 	github.com/google/shlex								 v0.0.0-20191202100458-e7afc7fbc510 \
 	github.com/google/uuid								 v1.6.0 \
-	github.com/googleapis/enterprise-certificate-proxy				 v0.3.11 \
-	github.com/googleapis/gax-go/v2							 v2.17.0 \
+	github.com/googleapis/enterprise-certificate-proxy				 v0.3.15 \
+	github.com/googleapis/gax-go/v2							 v2.22.0 \
 	github.com/gorilla/css								 v1.0.1 \
 	github.com/gorilla/websocket							 v1.5.3 \
 	github.com/gosuri/uilive							 v0.0.4 \
@@ -236,7 +236,7 @@ MODGO_MODULES =	\
 	github.com/pires/go-proxyproto							 v0.15.0 \
 	github.com/pkg/browser								 v0.0.0-20180916011732-0a3d74bf9ce4 \
 	github.com/pkg/errors								 v0.9.1 \
-	github.com/pkg/sftp								 v1.13.10 \
+	github.com/pkg/sftp								 v1.13.11 \
 	github.com/planetscale/vtprotobuf						 v0.6.1-0.20240319094008-0393e58bdf10 \
 	github.com/pmezard/go-difflib							 v1.0.1-0.20181226105442-5d4384ee4fb2 \
 	github.com/posener/complete							 v1.2.3 \
@@ -273,7 +273,7 @@ MODGO_MODULES =	\
 	github.com/spf13/cobra								 v1.10.2 \
 	github.com/spf13/pflag								 v1.0.10 \
 	github.com/spf13/viper								 v1.21.0 \
-	github.com/spiffe/go-spiffe/v2							 v2.7.0 \
+	github.com/spiffe/go-spiffe/v2							 v2.8.1 \
 	github.com/streadway/handy							 v0.0.0-20200128134331-0f66f006fb2e \
 	github.com/stretchr/objx							 v0.5.3 \
 	github.com/stretchr/testify							 v1.12.1 \
@@ -302,7 +302,7 @@ MODGO_MODULES =	\
 	go.opencensus.io								 v0.23.0 \
 	go.opentelemetry.io/auto/sdk							 v1.2.1 \
 	go.opentelemetry.io/contrib/detectors/gcp					 v1.44.0 \
-	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp			 v0.61.0 \
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp			 v0.69.0 \
 	go.opentelemetry.io/otel							 v1.44.0 \
 	go.opentelemetry.io/otel/metric							 v1.44.0 \
 	go.opentelemetry.io/otel/sdk							 v1.44.0 \
@@ -330,11 +330,12 @@ MODGO_MODULES =	\
 	golang.org/x/tools/go/packages/packagestest					 v0.1.1-deprecated \
 	golang.org/x/xerrors								 v0.0.0-20191204190536-9bdfabe68543 \
 	gonum.org/v1/gonum								 v0.17.0 \
+	google.golang.org/api								 v0.278.0 \
 	google.golang.org/appengine							 v1.6.7 \
 	google.golang.org/genproto							 v0.0.0-20210917145530-b395a37504d4 \
-	google.golang.org/genproto/googleapis/api					 v0.0.0-20260526163538-3dc84a4a5aaa \
-	google.golang.org/genproto/googleapis/rpc					 v0.0.0-20260526163538-3dc84a4a5aaa \
-	google.golang.org/grpc								 v1.83.2 \
+	google.golang.org/genproto/googleapis/api					 v0.0.0-20260706201446-f0a921348800 \
+	google.golang.org/genproto/googleapis/rpc					 v0.0.0-20260706201446-f0a921348800 \
+	google.golang.org/grpc								 v1.84.0 \
 	google.golang.org/protobuf							 v1.36.12 \
 	gopkg.in/alecthomas/kingpin.v2							 v2.2.6 \
 	gopkg.in/check.v1								 v1.0.0-20201130134442-10cb98267c6c \
@@ -517,7 +518,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.0.0-20190426145343-a29dc8fdc734 \
 	golang.org/x/crypto			 v0.0.0-20210817164053-32db794688a5 \
 	golang.org/x/crypto			 v0.0.0-20220315160706-3147a52a75dd \
-	golang.org/x/crypto			 v0.41.0 \
 	golang.org/x/crypto			 v0.52.0 \
 	golang.org/x/crypto			 v0.53.0 \
 	golang.org/x/crypto			 v0.54.0 \
