@@ -2,7 +2,7 @@
 # https://github.com/OpenVoxProject/openfact/issues/47
 
 COMMENT =		system inventory tool
-DISTNAME =		openfact-6.0.0
+DISTNAME =		openfact-6.2.0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://github.com/OpenVoxProject/openfact/
