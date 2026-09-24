@@ -31,7 +31,6 @@ CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 
 .if ${FLAVOR} == "db4"
-BROKEN-aarch64 =	configure stuck on testing if BDB supports shared environments
 DB_DIR =		db4
 LIB_DEPENDS +=		databases/db/v4
 WANTLIB +=		lib/db4/db>=4
@@ -49,7 +48,6 @@ LIB_DEPENDS +=		databases/lmdb
 WANTLIB +=		lmdb
 .else
 BROKEN-hppa =		configure stuck on testing if BDB supports shared environments
-BROKEN-aarch64 =	configure stuck on testing if BDB supports shared environments
 DB_DIR =		db
 LIB_DEPENDS +=		databases/db/v3
 WANTLIB +=		lib/db/db=3
