@@ -22,6 +22,7 @@ grommunio-mapi-header-php/dev/php-mapi-stub.php
 grommunio-mapi-header-php/doc/
 grommunio-mapi-header-php/doc/API.rst
 grommunio-mapi-header-php/doc/changelog.rst
+grommunio-mapi-header-php/gettext.php
 grommunio-mapi-header-php/mapi.util.php
 grommunio-mapi-header-php/mapidefs.php
 grommunio-mapi-header-php/mapiguid.php
