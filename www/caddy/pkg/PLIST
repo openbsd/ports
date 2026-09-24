@@ -9,6 +9,33 @@
 @owner
 @group
 @bin bin/caddy
+@man man/man8/caddy-adapt.8
+@man man/man8/caddy-add-package.8
+@man man/man8/caddy-build-info.8
+@man man/man8/caddy-completion.8
+@man man/man8/caddy-environ.8
+@man man/man8/caddy-file-server-export-template.8
+@man man/man8/caddy-file-server.8
+@man man/man8/caddy-fmt.8
+@man man/man8/caddy-hash-password.8
+@man man/man8/caddy-list-modules.8
+@man man/man8/caddy-manpage.8
+@man man/man8/caddy-reload.8
+@man man/man8/caddy-remove-package.8
+@man man/man8/caddy-respond.8
+@man man/man8/caddy-reverse-proxy.8
+@man man/man8/caddy-run.8
+@man man/man8/caddy-start.8
+@man man/man8/caddy-stop.8
+@man man/man8/caddy-storage-export.8
+@man man/man8/caddy-storage-import.8
+@man man/man8/caddy-storage.8
+@man man/man8/caddy-trust.8
+@man man/man8/caddy-untrust.8
+@man man/man8/caddy-upgrade.8
+@man man/man8/caddy-validate.8
+@man man/man8/caddy-version.8
+@man man/man8/caddy.8
 share/examples/caddy/
 @sample ${SYSCONFDIR}/caddy/
 share/examples/caddy/Caddyfile
