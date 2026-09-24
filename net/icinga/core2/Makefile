@@ -3,6 +3,7 @@ COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
 V =		2.16.5
+REVISION =	0
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
@@ -61,7 +62,8 @@ CONFIGURE_ARGS += \
 	-DICINGA2_USER=_icinga \
 	-DICINGA2_GROUP=_icinga \
 	-DICINGA2_GIT_VERSION_INFO=OFF \
-	-DICINGA2_PLUGINDIR=${LOCALBASE}/libexec/nagios
+	-DICINGA2_PLUGINDIR=${LOCALBASE}/libexec/nagios \
+	-DICINGA2_DATADIR=${LOCALSTATEDIR}/db/icinga2
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
 
 # "undefined reference to `__atomic_fetch_sub_8'"
@@ -92,5 +94,7 @@ post-install:
 .endfor
 	sed -i "s,/usr/share/icinga2,${TRUEPREFIX}/share/icinga2,g" \
 		${PREFIX}/share/doc/icinga2/markdown/*.md
+	${SUBST_PROGRAM} ${FILESDIR}/icinga2-move-dir \
+		${PREFIX}/libexec/icinga2-move-dir
 
 .include <bsd.port.mk>

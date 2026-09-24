@@ -2,7 +2,7 @@
 @newgroup _icingaweb2:762
 @newuser _icinga:667:_icinga::Icinga user:/var/icinga:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/icinga2/*
-@extraunexec rm -rf ${LOCALSTATEDIR}/lib/icinga2/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/db/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/spool/icinga2/*
 @extraunexec rm -f ${SYSCONFDIR}/icinga2/features-enabled/*
@@ -18,6 +18,8 @@ lib/icinga2/
 lib/icinga2/sbin/
 @bin lib/icinga2/sbin/icinga2
 @bin libexec/nagios/check_nscp_api
+libexec/icinga2-move-dir
+@exec %D/libexec/icinga2-move-dir
 @man man/man8/icinga2.8
 sbin/icinga2
 share/doc/icinga2/
@@ -262,17 +264,16 @@ share/vim/vimfiles/syntax/icinga2.vim
 @owner _icinga
 @group _icinga
 @sample ${LOCALSTATEDIR}/cache/icinga2/
-@sample ${LOCALSTATEDIR}/lib/
-@sample ${LOCALSTATEDIR}/lib/icinga2/
-@sample ${LOCALSTATEDIR}/lib/icinga2/api/
-@sample ${LOCALSTATEDIR}/lib/icinga2/api/log/
-@sample ${LOCALSTATEDIR}/lib/icinga2/api/repository/
-@sample ${LOCALSTATEDIR}/lib/icinga2/api/zones/
-@sample ${LOCALSTATEDIR}/lib/icinga2/api/zones-stage/
+@sample ${LOCALSTATEDIR}/db/icinga2/
+@sample ${LOCALSTATEDIR}/db/icinga2/api/
+@sample ${LOCALSTATEDIR}/db/icinga2/api/log/
+@sample ${LOCALSTATEDIR}/db/icinga2/api/repository/
+@sample ${LOCALSTATEDIR}/db/icinga2/api/zones/
+@sample ${LOCALSTATEDIR}/db/icinga2/api/zones-stage/
 @mode 700
-@sample ${LOCALSTATEDIR}/lib/icinga2/certificate-requests/
-@sample ${LOCALSTATEDIR}/lib/icinga2/certs/
-@sample ${LOCALSTATEDIR}/lib/icinga2/pki/
+@sample ${LOCALSTATEDIR}/db/icinga2/certificate-requests/
+@sample ${LOCALSTATEDIR}/db/icinga2/certs/
+@sample ${LOCALSTATEDIR}/db/icinga2/pki/
 @mode 755
 @sample ${LOCALSTATEDIR}/log/icinga2/
 @sample ${LOCALSTATEDIR}/log/icinga2/compat/

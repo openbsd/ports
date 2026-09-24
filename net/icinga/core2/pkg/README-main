@@ -10,6 +10,9 @@ Use them in conjunction with the main Icinga 2 documentation available
 in ${PREFIX}/share/doc/icinga2/markdown or online at
 https://icinga.com/docs/icinga-2/latest/.
 
+OpenBSD now uses ${LOCALSTATEDIR}/db/icinga2 rather than ${LOCALSTATEDIR}/lib/icinga2 as used
+in upstream documentation.
+
 The included sample configuration carries out some simple checks
 on the local machine; these should work as-is.
 

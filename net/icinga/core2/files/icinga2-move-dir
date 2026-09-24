@@ -1,0 +1,9 @@
+#!/bin/ksh
+if [ ! -d ${LOCALSTATEDIR}/db/icinga2 ]; then
+	if [ -d ${LOCALSTATEDIR}/lib/icinga2 ]; then
+		echo "* moving data directory from ${LOCALSTATEDIR}/lib/icinga2 to ${LOCALSTATEDIR}/db/icinga2" >&2
+		mv ${LOCALSTATEDIR}/lib/icinga2 ${LOCALSTATEDIR}/db/icinga2
+		echo "* pkg_add will show some 'Error deleting directory ${LOCALSTATEDIR}/lib/icinga2/...:" >&2
+		echo "No such file or directory' messages, which should be ignored." >&2
+	fi
+fi
