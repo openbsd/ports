@@ -1,12 +1,11 @@
-ONLY_FOR_ARCHS=	amd64 aarch64
+ONLY_FOR_ARCHS=	amd64 aarch64 riscv64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
-V=		4.8.1
+V=		5.6.1
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	7
 
 CATEGORIES=	graphics x11
 
@@ -15,16 +14,16 @@ HOMEPAGE=	https://www.darktable.org/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} GraphicsMagick ICE
-WANTLIB += Iex-3_5 IlmThread-3_5 Imath-3_2 OpenEXR-3_5 SDL2 SM X11 Xext
-WANTLIB += Xrandr atk-1.0 avif c cairo cairo-gobject cups curl exiv2
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gphoto2 gphoto2_port gthread-2.0 gtk-3 harfbuzz
-WANTLIB += heif icudata icui18n icuuc intl jpeg json-glib-1.0 jxl
-WANTLIB += jxl_threads lcms2 lensfun m openjp2 pango-1.0 pangocairo-1.0
-WANTLIB += png portmidi pugixml raw rsvg-2 secret-1 sqlite3 tiff webp
-WANTLIB += webpmux xml2 z OpenEXRCore-3_5
-
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} GraphicsMagick
+WANTLIB += ICE Iex-3_5 IlmThread-3_5 Imath-3_2 OpenEXR-3_5 OpenEXRCore-3_5
+WANTLIB += SDL2 SM X11 Xext Xrandr atk-1.0 avif c cairo cairo-gobject
+WANTLIB += cups curl exiv2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port gthread-2.0
+WANTLIB += gtk-3 harfbuzz heif icudata icui18n icuuc intl jpeg
+WANTLIB += json-glib-1.0 jxl jxl_threads lcms2 lensfun m openjp2
+WANTLIB += pango-1.0 pangocairo-1.0 png portmidi potrace pugixml
+WANTLIB += raw rsvg-2 secret-1 sqlite3 tiff webp webpmux xml2
+WANTLIB += z
 
 SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/
 
@@ -62,6 +61,7 @@ LIB_DEPENDS=	audio/portmidi \
 		graphics/libraw \
 		graphics/openexr \
 		graphics/openjp2 \
+		graphics/potrace \
 		net/curl \
 		print/cups,-libs \
 		textproc/pugixml \

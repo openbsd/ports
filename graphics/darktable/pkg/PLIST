@@ -12,6 +12,7 @@ lib/darktable/plugins/imageio/format/
 @so lib/darktable/plugins/imageio/format/libavif.so
 @so lib/darktable/plugins/imageio/format/libcopy.so
 @so lib/darktable/plugins/imageio/format/libexr.so
+@so lib/darktable/plugins/imageio/format/libheif.so
 @so lib/darktable/plugins/imageio/format/libj2k.so
 @so lib/darktable/plugins/imageio/format/libjpeg.so
 @so lib/darktable/plugins/imageio/format/libjpegxl.so
@@ -28,6 +29,7 @@ lib/darktable/plugins/imageio/storage/
 @so lib/darktable/plugins/imageio/storage/libgallery.so
 @so lib/darktable/plugins/imageio/storage/liblatex.so
 @so lib/darktable/plugins/imageio/storage/libpiwigo.so
+@so lib/darktable/plugins/libagx.so
 @so lib/darktable/plugins/libashift.so
 @so lib/darktable/plugins/libatrous.so
 @so lib/darktable/plugins/libbasecurve.so
@@ -51,6 +53,7 @@ lib/darktable/plugins/imageio/storage/
 @so lib/darktable/plugins/libcolorcontrast.so
 @so lib/darktable/plugins/libcolorcorrection.so
 @so lib/darktable/plugins/libcolorequal.so
+@so lib/darktable/plugins/libcolorharmonizer.so
 @so lib/darktable/plugins/libcolorin.so
 @so lib/darktable/plugins/libcolorize.so
 @so lib/darktable/plugins/libcolormapping.so
@@ -94,6 +97,7 @@ lib/darktable/plugins/imageio/storage/
 @so lib/darktable/plugins/liboverlay.so
 @so lib/darktable/plugins/libprimaries.so
 @so lib/darktable/plugins/libprofile_gamma.so
+@so lib/darktable/plugins/librasterfile.so
 @so lib/darktable/plugins/librawdenoise.so
 @so lib/darktable/plugins/librawoverexposed.so
 @so lib/darktable/plugins/librawprepare.so
@@ -143,6 +147,7 @@ lib/darktable/plugins/lighttable/
 @so lib/darktable/plugins/lighttable/libioporder.so
 @so lib/darktable/plugins/lighttable/liblighttable_mode.so
 @so lib/darktable/plugins/lighttable/liblive_view.so
+@so lib/darktable/plugins/lighttable/liblog_history.so
 @so lib/darktable/plugins/lighttable/libmasks.so
 @so lib/darktable/plugins/lighttable/libmetadata.so
 @so lib/darktable/plugins/lighttable/libmetadata_view.so
@@ -181,11 +186,214 @@ share/darktable/gdb_commands
 share/darktable/latex/
 share/darktable/latex/photobook.cls
 share/darktable/lua/
+share/darktable/lua-scripts/
+share/darktable/lua-scripts/ChangeLog.md
+share/darktable/lua-scripts/README.md
+share/darktable/lua-scripts/contrib/
+share/darktable/lua-scripts/contrib/AutoGrouper.lua
+share/darktable/lua-scripts/contrib/CollectHelper.lua
+share/darktable/lua-scripts/contrib/HDRMerge.lua
+share/darktable/lua-scripts/contrib/LabelsToTags.lua
+share/darktable/lua-scripts/contrib/OpenInExplorer.lua
+share/darktable/lua-scripts/contrib/README
+share/darktable/lua-scripts/contrib/RL_out_sharp.lua
+share/darktable/lua-scripts/contrib/auto_snapshot.lua
+share/darktable/lua-scripts/contrib/auto_tag_modified.lua
+share/darktable/lua-scripts/contrib/autostyle.lua
+share/darktable/lua-scripts/contrib/change_group_leader.lua
+share/darktable/lua-scripts/contrib/clear_GPS.lua
+share/darktable/lua-scripts/contrib/color_profile_manager.lua
+share/darktable/lua-scripts/contrib/copy_attach_detach_tags.lua
+share/darktable/lua-scripts/contrib/cr2hdr.lua
+share/darktable/lua-scripts/contrib/cycle_group_leader.lua
+share/darktable/lua-scripts/contrib/dbmaint.lua
+share/darktable/lua-scripts/contrib/enfuseAdvanced.lua
+share/darktable/lua-scripts/contrib/exportLUT.lua
+share/darktable/lua-scripts/contrib/ext_editor.lua
+share/darktable/lua-scripts/contrib/face_recognition.lua
+share/darktable/lua-scripts/contrib/fujifilm_dynamic_range.lua
+share/darktable/lua-scripts/contrib/fujifilm_ratings.lua
+share/darktable/lua-scripts/contrib/geoJSON_export.lua
+share/darktable/lua-scripts/contrib/geoToolbox.lua
+share/darktable/lua-scripts/contrib/gimp.lua
+share/darktable/lua-scripts/contrib/gpx_export.lua
+share/darktable/lua-scripts/contrib/harmonic_armature_guide.lua
+share/darktable/lua-scripts/contrib/hif_group_leader.lua
+share/darktable/lua-scripts/contrib/hugin.lua
+share/darktable/lua-scripts/contrib/image_stack.lua
+share/darktable/lua-scripts/contrib/image_time.lua
+share/darktable/lua-scripts/contrib/jpg_group_leader.lua
+share/darktable/lua-scripts/contrib/kml_export.lua
+share/darktable/lua-scripts/contrib/passport_guide.lua
+share/darktable/lua-scripts/contrib/passport_guide_germany.lua
+share/darktable/lua-scripts/contrib/pdf_slideshow.lua
+share/darktable/lua-scripts/contrib/photils.lua
+share/darktable/lua-scripts/contrib/quicktag.lua
+share/darktable/lua-scripts/contrib/rate_group.lua
+share/darktable/lua-scripts/contrib/rename-tags.lua
+share/darktable/lua-scripts/contrib/rename_images.lua
+share/darktable/lua-scripts/contrib/select_non_existing.lua
+share/darktable/lua-scripts/contrib/select_untagged.lua
+share/darktable/lua-scripts/contrib/selected_image_visible.lua
+share/darktable/lua-scripts/contrib/slideshowMusic.lua
+share/darktable/lua-scripts/contrib/toggle_group_view.lua
+share/darktable/lua-scripts/contrib/transfer_hierarchy.lua
+share/darktable/lua-scripts/contrib/ultrahdr.lua
+share/darktable/lua-scripts/contrib/video_ffmpeg.lua
+share/darktable/lua-scripts/contrib/website_gallery_export.lua
+share/darktable/lua-scripts/data/
+share/darktable/lua-scripts/data/icons/
+share/darktable/lua-scripts/data/icons/blank20.png
+share/darktable/lua-scripts/data/icons/path20.png
+share/darktable/lua-scripts/data/website_gallery/
+share/darktable/lua-scripts/data/website_gallery/css/
+share/darktable/lua-scripts/data/website_gallery/css/gallery.css
+share/darktable/lua-scripts/data/website_gallery/css/modal.css
+share/darktable/lua-scripts/data/website_gallery/css/style.css
+share/darktable/lua-scripts/data/website_gallery/index.html
+share/darktable/lua-scripts/data/website_gallery/js/
+share/darktable/lua-scripts/data/website_gallery/js/fullscreen.js
+share/darktable/lua-scripts/data/website_gallery/js/gallery.js
+share/darktable/lua-scripts/data/website_gallery/js/modal.js
+share/darktable/lua-scripts/examples/
+share/darktable/lua-scripts/examples/ai_denoise.lua
+share/darktable/lua-scripts/examples/ai_raw_denoise.lua
+share/darktable/lua-scripts/examples/api_version.lua
+share/darktable/lua-scripts/examples/darkroom_demo.lua
+share/darktable/lua-scripts/examples/de_DE/
+share/darktable/lua-scripts/examples/de_DE/LC_MESSAGES/
+share/darktable/lua-scripts/examples/de_DE/LC_MESSAGES/gettextExample.po
+share/darktable/lua-scripts/examples/gettextExample.lua
+share/darktable/lua-scripts/examples/gui_action.lua
+share/darktable/lua-scripts/examples/hello_world.lua
+share/darktable/lua-scripts/examples/lighttable_demo.lua
+share/darktable/lua-scripts/examples/moduleExample.lua
+share/darktable/lua-scripts/examples/multi_os.lua
+share/darktable/lua-scripts/examples/panels_demo.lua
+share/darktable/lua-scripts/examples/preferenceExamples.lua
+share/darktable/lua-scripts/examples/printExamples.lua
+share/darktable/lua-scripts/examples/running_os.lua
+share/darktable/lua-scripts/examples/x-touch.lua
+share/darktable/lua-scripts/lib/
+share/darktable/lua-scripts/lib/dtutils/
+share/darktable/lua-scripts/lib/dtutils.lua
+share/darktable/lua-scripts/lib/dtutils/debug.lua
+share/darktable/lua-scripts/lib/dtutils/file.lua
+share/darktable/lua-scripts/lib/dtutils/log.lua
+share/darktable/lua-scripts/lib/dtutils/string.lua
+share/darktable/lua-scripts/lib/dtutils/system.lua
+share/darktable/lua-scripts/locale/
+share/darktable/lua-scripts/locale/de_DE/
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/OpenInExplorer.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/calcDistance.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/clear_GPS.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/copy_attach_detach_tags.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/geo_uri.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/gimp.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/gps_select.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/hugin.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/kml_export.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/photils.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/quicktag.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/select_non_existing.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/select_untagged.po
+share/darktable/lua-scripts/locale/de_DE/LC_MESSAGES/slideshowMusic.po
+share/darktable/lua-scripts/locale/fr_FR/
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/OpenInExplorer.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/calcDistance.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/clear_GPS.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/copy_attach_detach_tags.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/copy_paste_metadata.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/geo_uri.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/gimp.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/gps_select.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/hugin.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/kml_export.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/pdf_slideshow.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/photils.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/script_manager.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/select_untagged.po
+share/darktable/lua-scripts/locale/fr_FR/LC_MESSAGES/slideshowMusic.po
+share/darktable/lua-scripts/locale/it_IT/
+share/darktable/lua-scripts/locale/it_IT/LC_MESSAGES/
+share/darktable/lua-scripts/locale/it_IT/LC_MESSAGES/executable_manager.po
+share/darktable/lua-scripts/locale/it_IT/LC_MESSAGES/ext_editor.po
+share/darktable/lua-scripts/locale/it_IT/LC_MESSAGES/script_manager.po
+share/darktable/lua-scripts/locale/pt_BR/
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/AutoGrouper.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/CollectHelper.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/HDRMerge.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/OpenInExplorer.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/RL_out_sharp.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/clear_GPS.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/color_profile_manager.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/copy_attach_detach_tags.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/copy_paste_metadata.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/enfuse.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/enfuseAdvanced.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/executable_manager.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/exportLUT.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/ext_editor.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/face_recognition.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/fujifilm_ratings.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/geoJSON_export.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/geoToolbox.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/gimp.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/gpx_export.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/harmonic_armature_guide.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/hugin.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/image_stack.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/image_time.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/kml_export.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/passport_guide.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/pdf_slideshow.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/photils.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/quicktag.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/rename_images.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/script_manager.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/select_untagged.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/slideshowMusic.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/transfer_hierarchy.po
+share/darktable/lua-scripts/locale/pt_BR/LC_MESSAGES/video_ffmpeg.po
+share/darktable/lua-scripts/official/
+share/darktable/lua-scripts/official/README
+share/darktable/lua-scripts/official/apply_camera_style.lua
+share/darktable/lua-scripts/official/auto_straighten.lua
+share/darktable/lua-scripts/official/check_for_updates.lua
+share/darktable/lua-scripts/official/copy_paste_metadata.lua
+share/darktable/lua-scripts/official/delete_long_tags.lua
+share/darktable/lua-scripts/official/delete_unused_tags.lua
+share/darktable/lua-scripts/official/enfuse.lua
+share/darktable/lua-scripts/official/extract_burst_roll_images.lua
+share/darktable/lua-scripts/official/generate_image_txt.lua
+share/darktable/lua-scripts/official/group_persistence.lua
+share/darktable/lua-scripts/official/image_path_in_ui.lua
+share/darktable/lua-scripts/official/import_filter_manager.lua
+share/darktable/lua-scripts/official/import_filters.lua
+share/darktable/lua-scripts/official/recent_bookmarks.lua
+share/darktable/lua-scripts/official/regenerate_thumbnails.lua
+share/darktable/lua-scripts/official/save_selection.lua
+share/darktable/lua-scripts/official/scheduler.lua
+share/darktable/lua-scripts/official/select_duplicates.lua
+share/darktable/lua-scripts/official/select_raw_non_raw.lua
+share/darktable/lua-scripts/official/select_unaltered.lua
+share/darktable/lua-scripts/official/selection2collection.lua
+share/darktable/lua-scripts/official/selection_to_pdf.lua
+share/darktable/lua-scripts/official/use_paired_jpg_as_mipmap.lua
+share/darktable/lua-scripts/tools/
+share/darktable/lua-scripts/tools/executable_manager.lua
+share/darktable/lua-scripts/tools/get_lib_manpages.lua
+share/darktable/lua-scripts/tools/get_libdoc.lua
+share/darktable/lua-scripts/tools/script_manager.lua
 share/darktable/lua/darktable/
 share/darktable/lua/darktable/debug.lua
 share/darktable/luarc
 share/darktable/noiseprofiles.json
 share/darktable/pixmaps/
+share/darktable/pixmaps/darktable.svg
 share/darktable/pixmaps/dt_logo_128x128.png
 share/darktable/pixmaps/dt_text.svg
 share/darktable/pixmaps/idbutton-1.png
@@ -196,6 +404,7 @@ share/darktable/pixmaps/idbutton-3.png
 share/darktable/pixmaps/idbutton-3.svg
 share/darktable/pixmaps/idbutton.png
 share/darktable/pixmaps/idbutton.svg
+share/darktable/pixmaps/macos_install_background.svg
 share/darktable/pixmaps/plugins/
 share/darktable/pixmaps/plugins/darkroom/
 share/darktable/pixmaps/plugins/darkroom/ashift.png
@@ -309,6 +518,11 @@ share/darktable/pixmaps/plugins/darkroom/watermark.png
 share/darktable/pixmaps/plugins/darkroom/watermark.svg
 share/darktable/pixmaps/plugins/darkroom/zonesystem.png
 share/darktable/pixmaps/plugins/darkroom/zonesystem.svg
+share/darktable/pixmaps/splashscreen-01.jpg
+share/darktable/pixmaps/splashscreen-02.jpg
+share/darktable/pixmaps/splashscreen-03.jpg
+share/darktable/pixmaps/splashscreen-04.jpg
+share/darktable/pixmaps/splashscreen.png
 share/darktable/pswp/
 share/darktable/pswp/LICENSE
 share/darktable/pswp/default-skin/
@@ -324,6 +538,8 @@ share/darktable/pswp/photoswipe.min.js
 share/darktable/rawspeed/
 share/darktable/rawspeed/cameras.xml
 share/darktable/rawspeed/showcameras.xsl
+share/darktable/shortcutsrc
+share/darktable/shortcutsrc.de
 share/darktable/style/
 share/darktable/style/bullet.gif
 share/darktable/style/close.gif
@@ -338,13 +554,552 @@ share/darktable/style/nextlabel.gif
 share/darktable/style/prevlabel.gif
 share/darktable/style/style.css
 share/darktable/style/thumb-1.jpg
+share/darktable/styles/
+share/darktable/styles/darktable_Canon_EOS 10D.dtstyle
+share/darktable/styles/darktable_Canon_EOS 1100D.dtstyle
+share/darktable/styles/darktable_Canon_EOS 2000D.dtstyle
+share/darktable/styles/darktable_Canon_EOS 4000D.dtstyle
+share/darktable/styles/darktable_Canon_EOS 5D Mark II.dtstyle
+share/darktable/styles/darktable_Canon_EOS 5D Mark III.dtstyle
+share/darktable/styles/darktable_Canon_EOS 5D Mark IV.dtstyle
+share/darktable/styles/darktable_Canon_EOS 5D.dtstyle
+share/darktable/styles/darktable_Canon_EOS 60D.dtstyle
+share/darktable/styles/darktable_Canon_EOS 6D.dtstyle
+share/darktable/styles/darktable_Canon_EOS 70D.dtstyle
+share/darktable/styles/darktable_Canon_EOS 7D Mark II.dtstyle
+share/darktable/styles/darktable_Canon_EOS 7D.dtstyle
+share/darktable/styles/darktable_Canon_EOS 80D.dtstyle
+share/darktable/styles/darktable_Canon_EOS D30.dtstyle
+share/darktable/styles/darktable_Canon_EOS Digital Rebel XT.dtstyle
+share/darktable/styles/darktable_Canon_EOS Kiss Digital N.dtstyle
+share/darktable/styles/darktable_Canon_EOS Kiss M.dtstyle
+share/darktable/styles/darktable_Canon_EOS Kiss X3.dtstyle
+share/darktable/styles/darktable_Canon_EOS M.dtstyle
+share/darktable/styles/darktable_Canon_EOS M10.dtstyle
+share/darktable/styles/darktable_Canon_EOS M2.dtstyle
+share/darktable/styles/darktable_Canon_EOS M3.dtstyle
+share/darktable/styles/darktable_Canon_EOS M50 Mark II.dtstyle
+share/darktable/styles/darktable_Canon_EOS M50.dtstyle
+share/darktable/styles/darktable_Canon_EOS M6.dtstyle
+share/darktable/styles/darktable_Canon_EOS R-series.dtstyle
+share/darktable/styles/darktable_Canon_EOS R3.dtstyle
+share/darktable/styles/darktable_Canon_EOS R50.dtstyle
+share/darktable/styles/darktable_Canon_EOS R6 Mark II.dtstyle
+share/darktable/styles/darktable_Canon_EOS R6.dtstyle
+share/darktable/styles/darktable_Canon_EOS R7.dtstyle
+share/darktable/styles/darktable_Canon_EOS RP.dtstyle
+share/darktable/styles/darktable_Canon_EOS Rebel SL1.dtstyle
+share/darktable/styles/darktable_Canon_EOS Rebel T3.dtstyle
+share/darktable/styles/darktable_Canon_EOS Rebel T5.dtstyle
+share/darktable/styles/darktable_Canon_EOS Rebel T_ series.dtstyle
+share/darktable/styles/darktable_Canon_EOS _200D Mark II,250D_.dtstyle
+share/darktable/styles/darktable_Canon_EOS-1D Mark II.dtstyle
+share/darktable/styles/darktable_Canon_EOS-1D Mark IV.dtstyle
+share/darktable/styles/darktable_Canon_EOS-1D X Mark _II,III_.dtstyle
+share/darktable/styles/darktable_Canon_EOS-1D X.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G1.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G10.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G11.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G15.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G16.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G2.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G3.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G5 X Mark II.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G5 X.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G5.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G6.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G7 X Mark III.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G9 X Mark II.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot G9.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot S110.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot S95.dtstyle
+share/darktable/styles/darktable_Canon_PowerShot SX70 HS.dtstyle
+share/darktable/styles/darktable_Canon__l10n_generic.dtstyle
+share/darktable/styles/darktable_DJI_DJI Osmo Action.dtstyle
+share/darktable/styles/darktable_DJI_FC350.dtstyle
+share/darktable/styles/darktable_DJI_FC7303.dtstyle
+share/darktable/styles/darktable_Epson_R-D1.dtstyle
+share/darktable/styles/darktable_Epson_R-D1x.dtstyle
+share/darktable/styles/darktable_Fujifilm_FinePix E550.dtstyle
+share/darktable/styles/darktable_Fujifilm_FinePix E900.dtstyle
+share/darktable/styles/darktable_Fujifilm_FinePix F600EXR.dtstyle
+share/darktable/styles/darktable_Fujifilm_FinePix F770EXR.dtstyle
+share/darktable/styles/darktable_Fujifilm_FinePix HS30EXR.dtstyle
+share/darktable/styles/darktable_Fujifilm_FinePix S5000.dtstyle
+share/darktable/styles/darktable_Fujifilm_FinePix S5Pro.dtstyle
+share/darktable/styles/darktable_Fujifilm_FinePix S6000fd.dtstyle
+share/darktable/styles/darktable_Fujifilm_FinePix X10.dtstyle
+share/darktable/styles/darktable_Fujifilm_FinePix X100.dtstyle
+share/darktable/styles/darktable_Fujifilm_GFX 100.dtstyle
+share/darktable/styles/darktable_Fujifilm_GFX 50R.dtstyle
+share/darktable/styles/darktable_Fujifilm_GFX 50S.dtstyle
+share/darktable/styles/darktable_Fujifilm_GFX100 II.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-A1.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-A2.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-A5.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-A_ series.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-E1.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-E_ series.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-H_ series.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-M1.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-Pro1.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-Pro_ series.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-S1.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-S10.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-S20.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-T10.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-T100.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-T2.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-T3.dtstyle
+share/darktable/styles/darktable_Fujifilm_X-T5.dtstyle
+share/darktable/styles/darktable_Fujifilm_X100F.dtstyle
+share/darktable/styles/darktable_Fujifilm_X100S.dtstyle
+share/darktable/styles/darktable_Fujifilm_X100T.dtstyle
+share/darktable/styles/darktable_Fujifilm_X100V.dtstyle
+share/darktable/styles/darktable_Fujifilm_X20.dtstyle
+share/darktable/styles/darktable_Fujifilm_X30.dtstyle
+share/darktable/styles/darktable_Fujifilm_X70.dtstyle
+share/darktable/styles/darktable_Fujifilm_XF1.dtstyle
+share/darktable/styles/darktable_Fujifilm_XQ1.dtstyle
+share/darktable/styles/darktable_Fujifilm_XQ2.dtstyle
+share/darktable/styles/darktable_Fujifilm__l10n_generic.dtstyle
+share/darktable/styles/darktable_Hasselblad_CFV.dtstyle
+share/darktable/styles/darktable_Hasselblad_H3D.dtstyle
+share/darktable/styles/darktable_Hasselblad_X1D.dtstyle
+share/darktable/styles/darktable_Hasselblad__l10n_generic.dtstyle
+share/darktable/styles/darktable_Leaf_Credo 40.dtstyle
+share/darktable/styles/darktable_Leica_C (Typ 112).dtstyle
+share/darktable/styles/darktable_Leica_C-Lux.dtstyle
+share/darktable/styles/darktable_Leica_D-LUX (Typ 109).dtstyle
+share/darktable/styles/darktable_Leica_D-LUX 5.dtstyle
+share/darktable/styles/darktable_Leica_D-LUX 6.dtstyle
+share/darktable/styles/darktable_Leica_D-Lux 7.dtstyle
+share/darktable/styles/darktable_Leica_M Monochrom (Typ 246).dtstyle
+share/darktable/styles/darktable_Leica_M9.dtstyle
+share/darktable/styles/darktable_Leica_Q (Typ 116).dtstyle
+share/darktable/styles/darktable_Leica_Q2.dtstyle
+share/darktable/styles/darktable_Leica_SL (Typ 601).dtstyle
+share/darktable/styles/darktable_Leica_V-LUX (Typ 114).dtstyle
+share/darktable/styles/darktable_Leica_V-Lux 4.dtstyle
+share/darktable/styles/darktable_Leica_X2.dtstyle
+share/darktable/styles/darktable_Minolta_A2.dtstyle
+share/darktable/styles/darktable_Minolta_DiMAGE 7.dtstyle
+share/darktable/styles/darktable_Minolta_DiMAGE 7Hi.dtstyle
+share/darktable/styles/darktable_Minolta_DiMAGE 7i.dtstyle
+share/darktable/styles/darktable_Minolta_DiMAGE A1.dtstyle
+share/darktable/styles/darktable_Minolta_DiMAGE A200.dtstyle
+share/darktable/styles/darktable_Minolta_Dynax 5D.dtstyle
+share/darktable/styles/darktable_Minolta_Dynax 7D.dtstyle
+share/darktable/styles/darktable_Minolta_Maxxum 7D.dtstyle
+share/darktable/styles/darktable_Nikon_1 AW1.dtstyle
+share/darktable/styles/darktable_Nikon_1 J1.dtstyle
+share/darktable/styles/darktable_Nikon_1 J2.dtstyle
+share/darktable/styles/darktable_Nikon_1 J3.dtstyle
+share/darktable/styles/darktable_Nikon_1 J4.dtstyle
+share/darktable/styles/darktable_Nikon_1 J5.dtstyle
+share/darktable/styles/darktable_Nikon_1 S1.dtstyle
+share/darktable/styles/darktable_Nikon_1 V1.dtstyle
+share/darktable/styles/darktable_Nikon_1 V2.dtstyle
+share/darktable/styles/darktable_Nikon_1 V3.dtstyle
+share/darktable/styles/darktable_Nikon_Coolpix A.dtstyle
+share/darktable/styles/darktable_Nikon_Coolpix A1000.dtstyle
+share/darktable/styles/darktable_Nikon_Coolpix B700.dtstyle
+share/darktable/styles/darktable_Nikon_Coolpix P1000.dtstyle
+share/darktable/styles/darktable_Nikon_Coolpix P330.dtstyle
+share/darktable/styles/darktable_Nikon_Coolpix P6000.dtstyle
+share/darktable/styles/darktable_Nikon_Coolpix P7700.dtstyle
+share/darktable/styles/darktable_Nikon_Coolpix P7800.dtstyle
+share/darktable/styles/darktable_Nikon_Coolpix P950.dtstyle
+share/darktable/styles/darktable_Nikon_D1.dtstyle
+share/darktable/styles/darktable_Nikon_D100.dtstyle
+share/darktable/styles/darktable_Nikon_D1H.dtstyle
+share/darktable/styles/darktable_Nikon_D1X.dtstyle
+share/darktable/styles/darktable_Nikon_D200.dtstyle
+share/darktable/styles/darktable_Nikon_D2H.dtstyle
+share/darktable/styles/darktable_Nikon_D2X.dtstyle
+share/darktable/styles/darktable_Nikon_D3.dtstyle
+share/darktable/styles/darktable_Nikon_D300.dtstyle
+share/darktable/styles/darktable_Nikon_D3000 series.dtstyle
+share/darktable/styles/darktable_Nikon_D300S.dtstyle
+share/darktable/styles/darktable_Nikon_D3100.dtstyle
+share/darktable/styles/darktable_Nikon_D3200.dtstyle
+share/darktable/styles/darktable_Nikon_D3300.dtstyle
+share/darktable/styles/darktable_Nikon_D3400.dtstyle
+share/darktable/styles/darktable_Nikon_D3500.dtstyle
+share/darktable/styles/darktable_Nikon_D3S.dtstyle
+share/darktable/styles/darktable_Nikon_D3X.dtstyle
+share/darktable/styles/darktable_Nikon_D4.dtstyle
+share/darktable/styles/darktable_Nikon_D40.dtstyle
+share/darktable/styles/darktable_Nikon_D40X.dtstyle
+share/darktable/styles/darktable_Nikon_D4S.dtstyle
+share/darktable/styles/darktable_Nikon_D5.dtstyle
+share/darktable/styles/darktable_Nikon_D50.dtstyle
+share/darktable/styles/darktable_Nikon_D500.dtstyle
+share/darktable/styles/darktable_Nikon_D5000 series.dtstyle
+share/darktable/styles/darktable_Nikon_D5100.dtstyle
+share/darktable/styles/darktable_Nikon_D5200.dtstyle
+share/darktable/styles/darktable_Nikon_D5500.dtstyle
+share/darktable/styles/darktable_Nikon_D6.dtstyle
+share/darktable/styles/darktable_Nikon_D60.dtstyle
+share/darktable/styles/darktable_Nikon_D600.dtstyle
+share/darktable/styles/darktable_Nikon_D610.dtstyle
+share/darktable/styles/darktable_Nikon_D70.dtstyle
+share/darktable/styles/darktable_Nikon_D700.dtstyle
+share/darktable/styles/darktable_Nikon_D7000 series.dtstyle
+share/darktable/styles/darktable_Nikon_D7000.dtstyle
+share/darktable/styles/darktable_Nikon_D70s.dtstyle
+share/darktable/styles/darktable_Nikon_D7200.dtstyle
+share/darktable/styles/darktable_Nikon_D750.dtstyle
+share/darktable/styles/darktable_Nikon_D7500.dtstyle
+share/darktable/styles/darktable_Nikon_D780.dtstyle
+share/darktable/styles/darktable_Nikon_D80.dtstyle
+share/darktable/styles/darktable_Nikon_D800.dtstyle
+share/darktable/styles/darktable_Nikon_D800E.dtstyle
+share/darktable/styles/darktable_Nikon_D810.dtstyle
+share/darktable/styles/darktable_Nikon_D850.dtstyle
+share/darktable/styles/darktable_Nikon_D90.dtstyle
+share/darktable/styles/darktable_Nikon_Df.dtstyle
+share/darktable/styles/darktable_Nikon_E5400.dtstyle
+share/darktable/styles/darktable_Nikon_E5700.dtstyle
+share/darktable/styles/darktable_Nikon_Z 30.dtstyle
+share/darktable/styles/darktable_Nikon_Z 5.dtstyle
+share/darktable/styles/darktable_Nikon_Z 50.dtstyle
+share/darktable/styles/darktable_Nikon_Z 6.dtstyle
+share/darktable/styles/darktable_Nikon_Z 6_2.dtstyle
+share/darktable/styles/darktable_Nikon_Z 7.dtstyle
+share/darktable/styles/darktable_Nikon_Z 7_2.dtstyle
+share/darktable/styles/darktable_Nikon_Z 8.dtstyle
+share/darktable/styles/darktable_Nikon_Z 9.dtstyle
+share/darktable/styles/darktable_Nikon_Z f.dtstyle
+share/darktable/styles/darktable_Nikon_Z series.dtstyle
+share/darktable/styles/darktable_Nikon_Z50_2.dtstyle
+share/darktable/styles/darktable_Nikon_Z6_3.dtstyle
+share/darktable/styles/darktable_Nikon__l10n_generic.dtstyle
+share/darktable/styles/darktable_OM System_OM-1 Mark II.dtstyle
+share/darktable/styles/darktable_OM System_OM-1.dtstyle
+share/darktable/styles/darktable_OM System_OM-5.dtstyle
+share/darktable/styles/darktable_OM System_TG-7.dtstyle
+share/darktable/styles/darktable_Olympus_C7070WZ.dtstyle
+share/darktable/styles/darktable_Olympus_E-1.dtstyle
+share/darktable/styles/darktable_Olympus_E-3.dtstyle
+share/darktable/styles/darktable_Olympus_E-300.dtstyle
+share/darktable/styles/darktable_Olympus_E-330.dtstyle
+share/darktable/styles/darktable_Olympus_E-400.dtstyle
+share/darktable/styles/darktable_Olympus_E-5.dtstyle
+share/darktable/styles/darktable_Olympus_E-500.dtstyle
+share/darktable/styles/darktable_Olympus_E-620.dtstyle
+share/darktable/styles/darktable_Olympus_E-M1.dtstyle
+share/darktable/styles/darktable_Olympus_E-M10 Mark II.dtstyle
+share/darktable/styles/darktable_Olympus_E-M10 Mark III.dtstyle
+share/darktable/styles/darktable_Olympus_E-M10 Mark IIIs.dtstyle
+share/darktable/styles/darktable_Olympus_E-M10 Mark IV.dtstyle
+share/darktable/styles/darktable_Olympus_E-M10.dtstyle
+share/darktable/styles/darktable_Olympus_E-M1MarkII.dtstyle
+share/darktable/styles/darktable_Olympus_E-M1MarkIII.dtstyle
+share/darktable/styles/darktable_Olympus_E-M1X.dtstyle
+share/darktable/styles/darktable_Olympus_E-M5 Mark II.dtstyle
+share/darktable/styles/darktable_Olympus_E-M5 Mark III.dtstyle
+share/darktable/styles/darktable_Olympus_E-M5.dtstyle
+share/darktable/styles/darktable_Olympus_E-P1.dtstyle
+share/darktable/styles/darktable_Olympus_E-P5.dtstyle
+share/darktable/styles/darktable_Olympus_E-P7.dtstyle
+share/darktable/styles/darktable_Olympus_E-PL1.dtstyle
+share/darktable/styles/darktable_Olympus_E-PL10.dtstyle
+share/darktable/styles/darktable_Olympus_E-PL2.dtstyle
+share/darktable/styles/darktable_Olympus_E-PL7.dtstyle
+share/darktable/styles/darktable_Olympus_E-PL_ series.dtstyle
+share/darktable/styles/darktable_Olympus_E-PM1.dtstyle
+share/darktable/styles/darktable_Olympus_PEN-F.dtstyle
+share/darktable/styles/darktable_Olympus_SH-2.dtstyle
+share/darktable/styles/darktable_Olympus_Stylus1.dtstyle
+share/darktable/styles/darktable_Olympus_TG-4.dtstyle
+share/darktable/styles/darktable_Olympus_TG-5.dtstyle
+share/darktable/styles/darktable_Olympus_TG-6.dtstyle
+share/darktable/styles/darktable_Olympus_XZ-1.dtstyle
+share/darktable/styles/darktable_Olympus_XZ-2.dtstyle
+share/darktable/styles/darktable_OnePlus_One.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-FZ10002.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-FZ80.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-FZ82.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-G100.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-G110.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-G9.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-G90.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-G91.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-G95.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-G95D.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-GH5.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-GH5M2.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-GH5S.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-GX7MK3.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-GX800.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-GX850.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-GX880.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-GX9.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-LX100M2.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-S1.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-S1H.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-S1R.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-S5.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-TZ200.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-TZ200D.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-TZ202.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-TZ90.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-TZ91.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-TZ95.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-TZ95D.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-TZ96.dtstyle
+share/darktable/styles/darktable_Panasonic_DC-ZS200D.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ100.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ1000.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ150.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ18.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ200.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ2000.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ2500.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ28.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ300.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ330.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ35.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ38.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-FZ45.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G1.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G10.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G2.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G3.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G5.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G6.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G7.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G70.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G80.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G81.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-G85.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GF1.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GF2.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GF3.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GF6.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GF7.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GF8.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GH1.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GH2.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GH3.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GH4.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GM1.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GM1S.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GX1.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GX7.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GX7MK2.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GX8.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GX80.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-GX85.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-LF1.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-LX10.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-LX100.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-LX15.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-LX3.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-LX5.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-LX7.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-TX1.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-TZ100.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-TZ101.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-TZ110.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-TZ61.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-TZ70.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-TZ71.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-TZ80.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-TZ81.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-ZS100.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-ZS40.dtstyle
+share/darktable/styles/darktable_Panasonic_DMC-ZS60.dtstyle
+share/darktable/styles/darktable_Pentax_645D.dtstyle
+share/darktable/styles/darktable_Pentax_645Z.dtstyle
+share/darktable/styles/darktable_Pentax_K-01.dtstyle
+share/darktable/styles/darktable_Pentax_K-1 Mark II.dtstyle
+share/darktable/styles/darktable_Pentax_K-1.dtstyle
+share/darktable/styles/darktable_Pentax_K-3 II.dtstyle
+share/darktable/styles/darktable_Pentax_K-3 Mark III.dtstyle
+share/darktable/styles/darktable_Pentax_K-3.dtstyle
+share/darktable/styles/darktable_Pentax_K-30.dtstyle
+share/darktable/styles/darktable_Pentax_K-5 II s.dtstyle
+share/darktable/styles/darktable_Pentax_K-5 II.dtstyle
+share/darktable/styles/darktable_Pentax_K-5.dtstyle
+share/darktable/styles/darktable_Pentax_K-50.dtstyle
+share/darktable/styles/darktable_Pentax_K-500.dtstyle
+share/darktable/styles/darktable_Pentax_K-S1.dtstyle
+share/darktable/styles/darktable_Pentax_K-S2.dtstyle
+share/darktable/styles/darktable_Pentax_K-m.dtstyle
+share/darktable/styles/darktable_Pentax_K-r.dtstyle
+share/darktable/styles/darktable_Pentax_K1000.dtstyle
+share/darktable/styles/darktable_Pentax_K100D Super.dtstyle
+share/darktable/styles/darktable_Pentax_K10D.dtstyle
+share/darktable/styles/darktable_Pentax_K110D.dtstyle
+share/darktable/styles/darktable_Pentax_K2000.dtstyle
+share/darktable/styles/darktable_Pentax_K200D.dtstyle
+share/darktable/styles/darktable_Pentax_K20D.dtstyle
+share/darktable/styles/darktable_Pentax_KF.dtstyle
+share/darktable/styles/darktable_Pentax_KP.dtstyle
+share/darktable/styles/darktable_Pentax_Q.dtstyle
+share/darktable/styles/darktable_Pentax_Q7.dtstyle
+share/darktable/styles/darktable_Pentax__ist D.dtstyle
+share/darktable/styles/darktable_Pentax__ist DL.dtstyle
+share/darktable/styles/darktable_Pentax__ist DS.dtstyle
+share/darktable/styles/darktable_Phase One_IQ180.dtstyle
+share/darktable/styles/darktable_Phase One_P65+.dtstyle
+share/darktable/styles/darktable_Samsung_EK-GN120.dtstyle
+share/darktable/styles/darktable_Samsung_EX2F.dtstyle
+share/darktable/styles/darktable_Samsung_G935F.dtstyle
+share/darktable/styles/darktable_Samsung_GX10.dtstyle
+share/darktable/styles/darktable_Samsung_NX mini.dtstyle
+share/darktable/styles/darktable_Samsung_NX1.dtstyle
+share/darktable/styles/darktable_Samsung_NX10.dtstyle
+share/darktable/styles/darktable_Samsung_NX11.dtstyle
+share/darktable/styles/darktable_Samsung_NX1100.dtstyle
+share/darktable/styles/darktable_Samsung_NX20.dtstyle
+share/darktable/styles/darktable_Samsung_NX200.dtstyle
+share/darktable/styles/darktable_Samsung_NX2000.dtstyle
+share/darktable/styles/darktable_Samsung_NX210.dtstyle
+share/darktable/styles/darktable_Samsung_NX30.dtstyle
+share/darktable/styles/darktable_Samsung_NX300.dtstyle
+share/darktable/styles/darktable_Samsung_NX3000.dtstyle
+share/darktable/styles/darktable_Samsung_NX300M.dtstyle
+share/darktable/styles/darktable_Samsung_NX3300.dtstyle
+share/darktable/styles/darktable_Samsung_NX5.dtstyle
+share/darktable/styles/darktable_Samsung_NX500.dtstyle
+share/darktable/styles/darktable_Samsung_WB2000.dtstyle
+share/darktable/styles/darktable_Sigma_fp L.dtstyle
+share/darktable/styles/darktable_Sigma_fp.dtstyle
+share/darktable/styles/darktable_Sony_DSC-F828.dtstyle
+share/darktable/styles/darktable_Sony_DSC-HX95.dtstyle
+share/darktable/styles/darktable_Sony_DSC-HX99.dtstyle
+share/darktable/styles/darktable_Sony_DSC-R1.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX0.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX0M2.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX1.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX10.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX100.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX100M2.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX100M3.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX100M4.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX100M5.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX100M5A.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX100M6.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX100M7.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX10M2.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX10M3.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX10M4.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX1R.dtstyle
+share/darktable/styles/darktable_Sony_DSC-RX1RM2.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A100.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A200.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A230.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A290.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A300.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A330.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A350.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A380.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A390.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A450.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A500.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A550.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A560.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A580.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A700.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A850.dtstyle
+share/darktable/styles/darktable_Sony_DSLR-A900.dtstyle
+share/darktable/styles/darktable_Sony_ILCA-68.dtstyle
+share/darktable/styles/darktable_Sony_ILCA-77M2.dtstyle
+share/darktable/styles/darktable_Sony_ILCA-99M2.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-1.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-3000.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-3500.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-5000.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-5100.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-6000.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-6100.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-6300.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-6400.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-6500.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-6600.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-6700.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7C.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7CM2.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7CR.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7M2.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7M3.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7M4.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7R.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7RM2.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7RM3.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7RM4.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7RM4A.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7RM5.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7S.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7SM2.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-7SM3.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-9 series.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-9.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-9M3.dtstyle
+share/darktable/styles/darktable_Sony_ILCE-QX1.dtstyle
+share/darktable/styles/darktable_Sony_ILME-FX3.dtstyle
+share/darktable/styles/darktable_Sony_ILME-FX30.dtstyle
+share/darktable/styles/darktable_Sony_NEX-3N.dtstyle
+share/darktable/styles/darktable_Sony_NEX-5.dtstyle
+share/darktable/styles/darktable_Sony_NEX-5N.dtstyle
+share/darktable/styles/darktable_Sony_NEX-5R.dtstyle
+share/darktable/styles/darktable_Sony_NEX-5T.dtstyle
+share/darktable/styles/darktable_Sony_NEX-6.dtstyle
+share/darktable/styles/darktable_Sony_NEX-C3.dtstyle
+share/darktable/styles/darktable_Sony_NEX-F3.dtstyle
+share/darktable/styles/darktable_Sony_SLT-A33.dtstyle
+share/darktable/styles/darktable_Sony_SLT-A35.dtstyle
+share/darktable/styles/darktable_Sony_SLT-A37.dtstyle
+share/darktable/styles/darktable_Sony_SLT-A55.dtstyle
+share/darktable/styles/darktable_Sony_SLT-A57.dtstyle
+share/darktable/styles/darktable_Sony_SLT-A58.dtstyle
+share/darktable/styles/darktable_Sony_SLT-A65.dtstyle
+share/darktable/styles/darktable_Sony_SLT-A77.dtstyle
+share/darktable/styles/darktable_Sony_SLT-A99.dtstyle
+share/darktable/styles/darktable_Sony_UMC-R10C.dtstyle
+share/darktable/styles/darktable_Sony_ZV-1.dtstyle
+share/darktable/styles/darktable_Sony_ZV-E1.dtstyle
+share/darktable/styles/darktable_Sony_ZV-E10.dtstyle
+share/darktable/styles/darktable__l10n_generic.dtstyle
+share/darktable/styles/examples_colors_autumn.dtstyle
+share/darktable/styles/examples_colors_blue LED lighting fix (strong).dtstyle
+share/darktable/styles/examples_colors_blue LED lighting fix.dtstyle
+share/darktable/styles/examples_colors_extreme saturation.dtstyle
+share/darktable/styles/examples_colors_faded.dtstyle
+share/darktable/styles/examples_colors_pastels.dtstyle
+share/darktable/styles/examples_colors_sepia.dtstyle
+share/darktable/styles/examples_contrast and sharpness_dehaze (strong, luminance only).dtstyle
+share/darktable/styles/examples_contrast and sharpness_extreme local contrast.dtstyle
+share/darktable/styles/examples_contrast and sharpness_sharpen finest details.dtstyle
+share/darktable/styles/examples_effects_4-up on US Letter paper.dtstyle
+share/darktable/styles/examples_effects_day for night.dtstyle
+share/darktable/styles/examples_effects_day for twilight.dtstyle
+share/darktable/styles/examples_effects_fog.dtstyle
+share/darktable/styles/examples_effects_motion blur.dtstyle
+share/darktable/styles/examples_effects_red-eye reduction.dtstyle
+share/darktable/styles/examples_spot color_blue.dtstyle
+share/darktable/styles/examples_spot color_cyan.dtstyle
+share/darktable/styles/examples_spot color_green.dtstyle
+share/darktable/styles/examples_spot color_magenta.dtstyle
+share/darktable/styles/examples_spot color_orange.dtstyle
+share/darktable/styles/examples_spot color_purple.dtstyle
+share/darktable/styles/examples_spot color_red.dtstyle
+share/darktable/styles/examples_spot color_yellow.dtstyle
 share/darktable/themes/
+share/darktable/themes/chunk-condensed.css
+share/darktable/themes/chunk-fonts.css
 share/darktable/themes/darktable-elegant-dark.css
 share/darktable/themes/darktable-elegant-darker.css
 share/darktable/themes/darktable-elegant-grey.css
+share/darktable/themes/darktable-elegant-highcontrast.css
 share/darktable/themes/darktable-icons-dark.css
 share/darktable/themes/darktable-icons-darker.css
 share/darktable/themes/darktable-icons-grey.css
+share/darktable/themes/darktable-icons-highcontrast.css
 share/darktable/themes/darktable-icons.css
 share/darktable/themes/darktable.css
 share/darktable/tools/
@@ -365,8 +1120,6 @@ share/darktable/wb_presets.json
 share/doc/darktable/
 share/doc/darktable/AUTHORS
 share/doc/darktable/LICENSE
-share/doc/darktable/README.md
-share/doc/darktable/TRANSLATORS.md
 share/icons/hicolor/16x16/apps/darktable.png
 share/icons/hicolor/22x22/apps/darktable.png
 share/icons/hicolor/24x24/apps/darktable.png
@@ -378,6 +1131,7 @@ share/icons/hicolor/scalable/apps/darktable-1.svg
 share/icons/hicolor/scalable/apps/darktable-2.svg
 share/icons/hicolor/scalable/apps/darktable-3.svg
 share/icons/hicolor/scalable/apps/darktable.svg
+share/icons/hicolor/scalable/apps/darktable_macos_icon.svg
 share/locale/cs/LC_MESSAGES/darktable.mo
 share/locale/de/LC_MESSAGES/darktable.mo
 share/locale/en@truecase/
@@ -387,14 +1141,19 @@ share/locale/es/LC_MESSAGES/darktable.mo
 share/locale/fi/LC_MESSAGES/darktable.mo
 share/locale/fr/LC_MESSAGES/darktable.mo
 share/locale/hu/LC_MESSAGES/darktable.mo
-share/locale/it/LC_MESSAGES/darktable.mo
 share/locale/ja/LC_MESSAGES/darktable.mo
+share/locale/ko_KR/
+share/locale/ko_KR/LC_MESSAGES/
+share/locale/ko_KR/LC_MESSAGES/darktable.mo
+share/locale/lo/LC_MESSAGES/darktable.mo
+share/locale/nb/LC_MESSAGES/darktable.mo
 share/locale/nl/LC_MESSAGES/darktable.mo
 share/locale/pl/LC_MESSAGES/darktable.mo
 share/locale/pt_BR/LC_MESSAGES/darktable.mo
 share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sl/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
+share/locale/sv/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo
 share/locale/zh_CN/LC_MESSAGES/darktable.mo
 share/locale/zh_TW/LC_MESSAGES/darktable.mo

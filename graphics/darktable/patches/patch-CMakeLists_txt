@@ -6,12 +6,12 @@ fails with _XOPEN_SOURCE set;
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -463,6 +463,8 @@ endif(BUILD_TESTING)
- if(NOT WIN32)
+@@ -434,7 +434,7 @@ if(BUILD_TESTING)
+ endif(BUILD_TESTING)
+ 
+ # we need some specific functions:
+-if(NOT WIN32)
++if(NOT WIN32 AND NOT CMAKE_SYSTEM MATCHES "OpenBSD.*")
      if(CMAKE_SYSTEM MATCHES "SunOS.*")
          add_definitions("-D_XOPEN_SOURCE=600")
-+    elseif(CMAKE_SYSTEM MATCHES "OpenBSD.*")
-+        # ...
      else()
-         add_definitions("-D_XOPEN_SOURCE=700")
-     endif(CMAKE_SYSTEM MATCHES "SunOS.*")

@@ -1,0 +1,13 @@
+Fill in dt_pthread_setname() support for BSD's.
+
+Index: src/config.cmake.h
+--- src/config.cmake.h.orig
++++ src/config.cmake.h
+@@ -69,6 +69,7 @@ static const char *dt_supported_extensions[] __attribu
+ 
+ #cmakedefine HAVE_CPUID_H 1
+ #cmakedefine HAVE___GET_CPUID 1
++#cmakedefine HAVE_PTHREAD_NP_H 1
+ 
+ #cmakedefine HAVE_OMP_FIRSTPRIVATE_WITH_CONST 1
+ 

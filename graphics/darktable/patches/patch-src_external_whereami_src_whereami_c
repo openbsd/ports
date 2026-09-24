@@ -1,0 +1,73 @@
+- added support for OpenBSD using getexecpath()
+  https://github.com/gpakosz/whereami/pull/45
+
+Index: src/external/whereami/src/whereami.c
+--- src/external/whereami/src/whereami.c.orig
++++ src/external/whereami/src/whereami.c
+@@ -563,7 +563,8 @@ int WAI_PREFIX(getModulePath)(char* out, int capacity,
+ }
+ 
+ #elif defined(__DragonFly__) || defined(__FreeBSD__) || \
+-      defined(__FreeBSD_kernel__) || defined(__NetBSD__)
++      defined(__FreeBSD_kernel__) || defined(__NetBSD__) || \
++      defined(__OpenBSD__)
+ 
+ #include <limits.h>
+ #include <stdlib.h>
+@@ -572,9 +573,47 @@ int WAI_PREFIX(getModulePath)(char* out, int capacity,
+ #include <sys/sysctl.h>
+ #include <dlfcn.h>
+ 
++#if defined(__OpenBSD__)
++
++#include <unistd.h>
++
+ WAI_FUNCSPEC
+ int WAI_PREFIX(getExecutablePath)(char* out, int capacity, int* dirname_length)
+ {
++  char path[PATH_MAX];
++  int length;
++  int i;
++
++  if (getexecpath(path, sizeof(path)) == -1)
++    return -1;
++
++  length = (int)strlen(path);
++
++  if (length <= capacity)
++  {
++    memcpy(out, path, length);
++
++    if (dirname_length)
++    {
++      for (i = length - 1; i >= 0; --i)
++      {
++        if (out[i] == '/')
++        {
++          *dirname_length = i;
++          break;
++        }
++      }
++    }
++  }
++
++  return length;
++}
++
++#else
++
++WAI_FUNCSPEC
++int WAI_PREFIX(getExecutablePath)(char* out, int capacity, int* dirname_length)
++{
+   char buffer1[PATH_MAX];
+   char buffer2[PATH_MAX];
+   char* path = buffer1;
+@@ -625,6 +664,8 @@ int WAI_PREFIX(getExecutablePath)(char* out, int capac
+ 
+   return length;
+ }
++
++#endif
+ 
+ WAI_NOINLINE WAI_FUNCSPEC
+ int WAI_PREFIX(getModulePath)(char* out, int capacity, int* dirname_length)
