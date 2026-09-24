@@ -146,6 +146,8 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}pdb_never_via_route_servers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}registrobr_db_dump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}registrobr_db_dump.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}rpki_aspas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}rpki_aspas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}rpki_roas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}rpki_roas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}rtt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -158,6 +160,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/pdb_as_se
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/pdb_max_prefix.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/pdb_never_via_route_servers.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/registrobr_db_dump.py
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/rpki_aspas.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/rpki_roas.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/rtt.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/errors.py
@@ -226,15 +229,15 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}instances.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}openbgpd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}openbgpd.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}routinator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}routinator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}rtrtr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}rtrtr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/base.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/bird.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/docker.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/exabgp.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/instances.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/openbgpd.py
-lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/routinator.py
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/rtrtr.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/AS1.j2
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/AS2.j2
