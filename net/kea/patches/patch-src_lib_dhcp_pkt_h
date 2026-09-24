@@ -1,0 +1,21 @@
+Index: src/lib/dhcp/pkt.h
+--- src/lib/dhcp/pkt.h.orig
++++ src/lib/dhcp/pkt.h
+@@ -13,6 +13,7 @@
+ #include <dhcp/hwaddr.h>
+ #include <dhcp/classify.h>
+ #include <hooks/callout_handle_associate.h>
++#include <net/bpf.h>
+ 
+ #include <boost/date_time/posix_time/posix_time.hpp>
+ #include <boost/shared_ptr.hpp>
+@@ -540,6 +541,9 @@ class Pkt : public hooks::CalloutHandleAssociate { (pu
+     /// to be in UTC/microseconds.  Defaults to the current time.
+     void addPktEvent(const std::string& label,
+                      const boost::posix_time::ptime& timestamp = PktEvent::now());
++
++    void addPktEvent(const std::string& label,
++                     const struct bpf_timeval& tv);
+ 
+     /// @brief Adds an event to the end of the event stack with the timestamp
+     /// specified as a struct timeval.

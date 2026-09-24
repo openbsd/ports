@@ -1,0 +1,19 @@
+Index: src/lib/dhcp/pkt.cc
+--- src/lib/dhcp/pkt.cc.orig
++++ src/lib/dhcp/pkt.cc
+@@ -342,6 +342,15 @@ Pkt::setPktEvent(const std::string& label, const ptime
+ }
+ 
+ void
++Pkt::addPktEvent(const std::string& label, const struct bpf_timeval& tv) {
++    time_t time_t_secs = tv.tv_sec;
++    ptime timestamp = from_time_t(time_t_secs);
++    time_duration usecs(0, 0, 0, tv.tv_usec);
++    timestamp += usecs;
++    addPktEvent(label, timestamp);
++}
++
++void
+ Pkt::addPktEvent(const std::string& label, const struct timeval& tv) {
+     time_t time_t_secs = tv.tv_sec;
+     ptime timestamp = from_time_t(time_t_secs);

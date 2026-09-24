@@ -3,10 +3,10 @@ COMMENT-mysql=	MySQL/MariaDB support for Kea
 COMMENT-pgsql=	PostgreSQL support for Kea
 
 VERSION=	3.2.0
+REVISION=	0
 PORTROACH=	limitw:1,even
 
 DISTNAME=	kea-${VERSION}
-PKGNAME-main=	kea-${VERSION:S/-P/pl/}
 EXTRACT_SUFX=	.tar.xz
 
 LV=		12.0
