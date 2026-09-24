@@ -3,6 +3,7 @@
 daemon="${TRUEPREFIX}/bin/caddy"
 daemon_flags="--config /etc/caddy/Caddyfile"
 daemon_user="_caddy"
+daemon_logger="daemon.info"
 
 . /etc/rc.d/rc.subr
 
