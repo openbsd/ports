@@ -1,5 +1,5 @@
 COMMENT =	journaling archiver for incremental backup, fork of ZPAQ
-DIST_TUPLE =	github fcorbelli zpaqfranz 65.1 .
+DIST_TUPLE =	github fcorbelli zpaqfranz 65.3 .
 CATEGORIES =	archivers
 MAINTAINER =	tux0r <tux0r@rosaelefanten.org>
 
@@ -8,18 +8,19 @@ PERMIT_PACKAGE =	yes
 
 COMPILER=	base-clang ports-gcc base-gcc
 
-WANTLIB =	${COMPILER_LIBCXX} c m
+WANTLIB +=	${COMPILER_LIBCXX} c fuse m
 
 USE_WXNEEDED =	Yes
 
 CPPFLAGS +=	-Dunix
+CPPFLAGS +=	-DZPAQMOUNT
 .if ${MACHINE_ARCH:Mamd64}
 CPPFLAGS +=	-DHWSHA2
 .endif
 
 do-build:
 	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} \
-	    ${CXX} ${CXXFLAGS} ${CPPFLAGS} -o zpaqfranz zpaqfranz.cpp -lm -lpthread
+	    ${CXX} ${CXXFLAGS} ${CPPFLAGS} -o zpaqfranz zpaqfranz.cpp -lm -lpthread -lfuse
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zpaqfranz ${PREFIX}/bin/
