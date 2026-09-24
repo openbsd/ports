@@ -46,6 +46,7 @@ include/freerdp3/freerdp/channels/video.h
 include/freerdp3/freerdp/channels/wtsvc.h
 include/freerdp3/freerdp/client/
 include/freerdp3/freerdp/client.h
+include/freerdp3/freerdp/client/aad_helper.h
 include/freerdp3/freerdp/client/ainput.h
 include/freerdp3/freerdp/client/audin.h
 include/freerdp3/freerdp/client/channels.h
@@ -317,4 +318,5 @@ lib/pkgconfig/winpr3.pc
 @man man/man1/winpr-hash.1
 @man man/man1/winpr-makecert.1
 @man man/man1/xfreerdp.1
+@man man/man7/freerdp.7
 @man man/man7/wlog.7

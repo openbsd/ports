@@ -1,0 +1,16 @@
+- Have Libs.private entry even for a shared library
+
+Index: winpr/CMakeLists.txt
+--- winpr/CMakeLists.txt.orig
++++ winpr/CMakeLists.txt
+@@ -402,7 +402,9 @@ endif()
+ # Do not set Requires.Private if not a static build
+ if(BUILD_SHARED_LIBS)
+   set(WINPR_PC_REQUIRES_PRIVATE "")
+-  set(WINPR_PC_LIBRARY_PRIVATE "")
++  if(NOT OPENBSD)
++    set(WINPR_PC_LIBRARY_PRIVATE "")
++  endif()
+ endif()
+ 
+ if(WITH_WINPR_TOOLS)
