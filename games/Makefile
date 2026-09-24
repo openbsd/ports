@@ -210,6 +210,7 @@
      SUBDIR += megaglest
      SUBDIR += micropolis
      SUBDIR += mightymike
+     SUBDIR += minecraft-server
      SUBDIR += mirrormagic
      SUBDIR += mnemosyne
      SUBDIR += moon-buggy
