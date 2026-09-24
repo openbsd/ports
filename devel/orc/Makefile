@@ -1,6 +1,6 @@
 COMMENT=	library and toolset to operate arrays of data
 
-DISTNAME=	orc-0.4.43
+DISTNAME=	orc-0.4.44
 CATEGORIES=	devel
 SITES=		https://gstreamer.freedesktop.org/src/orc/
 EXTRACT_SUFX=	.tar.xz
