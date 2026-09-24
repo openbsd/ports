@@ -1,21 +1,19 @@
 COMMENT =		pure-Python HTTP/2 State-Machine based protocol
 
-MODPY_DISTV =		4.3.0
+MODPY_DISTV =		4.4.1
 DISTNAME =		h2-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
-
 HOMEPAGE =		https://github.com/python-hyper/h2
 
-MODPY_PI =		Yes
+MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
+MODPY_PI =		Yes
 
 RUN_DEPENDS =		www/py-hpack \
 			www/py-hyperframe
