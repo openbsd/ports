@@ -2,7 +2,7 @@ COMMENT =	C++ library to parse/format/validate phone numbers
 
 GH_ACCOUNT =	google
 GH_PROJECT =	libphonenumber
-GH_TAGNAME =	v9.0.39
+GH_TAGNAME =	v9.0.40
 
 SHARED_LIBS +=  geocoding                 1.0 # 8.12
 SHARED_LIBS +=  phonenumber               4.0 # 8.12
