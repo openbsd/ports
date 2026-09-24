@@ -1,0 +1,50 @@
+.\"	$OpenBSD: minecraft-server.6,v 1.1.1.1 2026/09/24 09:47:10 bentley Exp $
+.\"
+.\" Copyright (c) 2026 Anthony J. Bentley <bentley@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: September 24 2026 $
+.Dt MINECRAFT-SERVER 6
+.Os
+.Sh NAME
+.Nm minecraft-server
+.Nd multiplayer server for the game Minecraft
+.Sh SYNOPSIS
+.\" For a program:  program [-abc] file ...
+.Nm minecraft-server
+.Ar
+.Sh DESCRIPTION
+.Nm
+is a wrapper script that executes the Minecraft Java Edition server jar.
+.Pp
+The accepted options
+.Pq Ar args
+are not described in this manual;
+check the output of
+.Cm minecraft-server --help
+or the official Minecraft documentation instead.
+.Sh ENVIRONMENT
+.Bl -tag -width Ds
+.It Ev JAVAFLAGS
+The flags to pass to
+.Xr java 1 .
+Defaults to
+.Ql -Xmx1024M -Xms1024M .
+.El
+.Sh EXAMPLES
+Start the server in console mode, without a graphical window:
+.Pp
+.Dl $ minecraft-server --nogui
+.Sh SEE ALSO
+.Xr prismlauncher 6

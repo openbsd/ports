@@ -1,0 +1,3 @@
+#!/bin/sh
+JAVACMD=$(javaPathHelper -c minecraft-server)
+exec ${JAVACMD} ${JAVAFLAGS:--Xmx1024M -Xms1024M} -jar ${TRUEPREFIX}/share/minecraft-server/server.jar "$@"

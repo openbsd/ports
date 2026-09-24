@@ -1,0 +1,4 @@
+bin/minecraft-server
+@man man/man6/minecraft-server.6
+share/minecraft-server/
+share/minecraft-server/server.jar
