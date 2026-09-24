@@ -1,13 +1,7 @@
 COMMENT=	logging API for C++
 
-# XXX tried updating to various 2.0/2.1 releases but net/kea doesn't exit
-# properly (no config needed; just install kea and start/stop). logs report
-# server shutdown, but the processes don't exit. tested with kea 2.4.2 with
-# both syslog and file logging and 2.5.3 with syslog.
-V=		1_2_2
+V=		2_2_0_1
 DISTNAME=	log4cplus-${V:S/_/./g}
-
-REVISION=	1
 
 SITES=		https://github.com/log4cplus/log4cplus/releases/download/REL_$V/
 EXTRACT_SUFX=	.tar.bz2
