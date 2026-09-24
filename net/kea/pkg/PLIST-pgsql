@@ -1,11 +1,8 @@
-include/kea/dhcpsrv/pgsql_host_data_source.h
-include/kea/dhcpsrv/pgsql_lease_mgr.h
+@conflict kea-*-postgreesql
 include/kea/pgsql/
 include/kea/pgsql/pgsql_connection.h
 include/kea/pgsql/pgsql_exchange.h
-lib/kea/hooks/libdhcp_pgsql_cb.la
-@so lib/kea/hooks/libdhcp_pgsql_cb.so
-lib/libkea-pgsql.la
+@so lib/kea/hooks/libdhcp_pgsql.so
 @lib lib/libkea-pgsql.so.${LIBkea-pgsql_VERSION}
 share/doc/kea/examples/kea4/pgsql-reservations.json
 share/doc/kea/examples/kea6/pgsql-reservations.json
@@ -35,4 +32,20 @@ share/kea/scripts/pgsql/upgrade_014_to_015.sh
 share/kea/scripts/pgsql/upgrade_015_to_016.sh
 share/kea/scripts/pgsql/upgrade_016_to_017.sh
 share/kea/scripts/pgsql/upgrade_017_to_018.sh
+share/kea/scripts/pgsql/upgrade_018_to_019.sh
+share/kea/scripts/pgsql/upgrade_019_to_020.sh
+share/kea/scripts/pgsql/upgrade_020_to_021.sh
+share/kea/scripts/pgsql/upgrade_021_to_022.sh
+share/kea/scripts/pgsql/upgrade_022_to_023.sh
+share/kea/scripts/pgsql/upgrade_023_to_024.sh
+share/kea/scripts/pgsql/upgrade_024_to_025.sh
+share/kea/scripts/pgsql/upgrade_025_to_026.sh
+share/kea/scripts/pgsql/upgrade_026_to_027.sh
+share/kea/scripts/pgsql/upgrade_027_to_028.sh
+share/kea/scripts/pgsql/upgrade_028_to_029.sh
+share/kea/scripts/pgsql/upgrade_029_to_030.sh
+share/kea/scripts/pgsql/upgrade_030_to_031.sh
+share/kea/scripts/pgsql/upgrade_031_to_032.sh
+share/kea/scripts/pgsql/upgrade_032_to_033.sh
+share/kea/scripts/pgsql/upgrade_033_to_034.sh
 share/kea/scripts/pgsql/wipe_data.sh

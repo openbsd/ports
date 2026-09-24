@@ -1,0 +1,5 @@
+Kea had a major update with incompatible changes. If updating from Kea 2.4:
+- review upstream's documentation.
+- if you were using MySQL/MariaDB support, pkg_add kea-mysql.
+- paths have changed from ${LOCALSTATEDIR}/lib/kea to ${LOCALSTATEDIR}/db/kea; move/update files
+as necessary.

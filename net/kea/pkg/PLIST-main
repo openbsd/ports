@@ -1,3 +1,4 @@
+@pkgpath net/kea[,mysql][,postgresql]
 @newgroup _kea:763
 @newuser _kea:763:_kea::Kea user:/nonexistent:/sbin/nologin
 @mode 0750
@@ -6,6 +7,7 @@
 @mode
 @group
 @rcscript ${RCDIR}/kea
+@bin bin/kea-msg-compiler
 include/kea/
 include/kea/asiodns/
 include/kea/asiodns/asiodns_messages.h
@@ -15,9 +17,8 @@ include/kea/asiolink/
 include/kea/asiolink/addr_utilities.h
 include/kea/asiolink/asio_wrapper.h
 include/kea/asiolink/asiolink.h
-include/kea/asiolink/botan_boost_tls.h
-include/kea/asiolink/botan_boost_wrapper.h
 include/kea/asiolink/botan_tls.h
+include/kea/asiolink/botan_wrapper.h
 include/kea/asiolink/common_tls.h
 include/kea/asiolink/crypto_tls.h
 include/kea/asiolink/dummy_io_cb.h
@@ -28,6 +29,7 @@ include/kea/asiolink/io_asio_socket.h
 include/kea/asiolink/io_endpoint.h
 include/kea/asiolink/io_error.h
 include/kea/asiolink/io_service.h
+include/kea/asiolink/io_service_mgr.h
 include/kea/asiolink/io_service_signal.h
 include/kea/asiolink/io_service_thread_pool.h
 include/kea/asiolink/io_socket.h
@@ -48,6 +50,7 @@ include/kea/cc/base_stamped_element.h
 include/kea/cc/cfg_to_element.h
 include/kea/cc/command_interpreter.h
 include/kea/cc/data.h
+include/kea/cc/default_credentials.h
 include/kea/cc/dhcp_config_error.h
 include/kea/cc/element_value.h
 include/kea/cc/json_feed.h
@@ -56,37 +59,49 @@ include/kea/cc/simple_parser.h
 include/kea/cc/stamped_element.h
 include/kea/cc/stamped_value.h
 include/kea/cc/user_context.h
-include/kea/cfgrpt/
-include/kea/cfgrpt/config_report.h
 include/kea/config/
 include/kea/config.h
 include/kea/config/base_command_mgr.h
 include/kea/config/client_connection.h
+include/kea/config/cmd_http_listener.h
+include/kea/config/cmd_response_creator.h
+include/kea/config/cmd_response_creator_factory.h
 include/kea/config/cmds_impl.h
 include/kea/config/command_mgr.h
 include/kea/config/config_log.h
 include/kea/config/config_messages.h
 include/kea/config/hooked_command_mgr.h
+include/kea/config/http_command_config.h
+include/kea/config/http_command_mgr.h
+include/kea/config/http_command_response_creator.h
+include/kea/config/http_command_response_creator_factory.h
 include/kea/config/timeouts.h
 include/kea/config/unix_command_config.h
+include/kea/config/unix_command_mgr.h
 include/kea/config_backend/
 include/kea/config_backend/base_config_backend.h
 include/kea/config_backend/base_config_backend_mgr.h
 include/kea/config_backend/base_config_backend_pool.h
 include/kea/config_backend/constants.h
 include/kea/cryptolink/
+include/kea/cryptolink/botan_common.h
 include/kea/cryptolink/crypto_hash.h
 include/kea/cryptolink/crypto_hmac.h
 include/kea/cryptolink/crypto_rng.h
 include/kea/cryptolink/cryptolink.h
 include/kea/cryptolink/openssl_common.h
-include/kea/cryptolink/openssl_compat.h
 include/kea/d2srv/
 include/kea/d2srv/d2_cfg_mgr.h
 include/kea/d2srv/d2_config.h
 include/kea/d2srv/d2_log.h
 include/kea/d2srv/d2_messages.h
 include/kea/d2srv/d2_simple_parser.h
+include/kea/d2srv/d2_stats.h
+include/kea/d2srv/d2_tsig_key.h
+include/kea/d2srv/d2_update_message.h
+include/kea/d2srv/d2_zone.h
+include/kea/d2srv/dns_client.h
+include/kea/d2srv/nc_trans.h
 include/kea/database/
 include/kea/database/audit_entry.h
 include/kea/database/backend_selector.h
@@ -102,6 +117,8 @@ include/kea/dhcp/
 include/kea/dhcp/classify.h
 include/kea/dhcp/dhcp4.h
 include/kea/dhcp/dhcp6.h
+include/kea/dhcp/dhcp_log.h
+include/kea/dhcp/dhcp_messages.h
 include/kea/dhcp/docsis3_option_defs.h
 include/kea/dhcp/duid.h
 include/kea/dhcp/duid_factory.h
@@ -113,14 +130,17 @@ include/kea/dhcp/opaque_data_tuple.h
 include/kea/dhcp/option.h
 include/kea/dhcp/option4_addrlst.h
 include/kea/dhcp/option4_client_fqdn.h
+include/kea/dhcp/option4_dnr.h
 include/kea/dhcp/option6_addrlst.h
 include/kea/dhcp/option6_auth.h
 include/kea/dhcp/option6_client_fqdn.h
+include/kea/dhcp/option6_dnr.h
 include/kea/dhcp/option6_ia.h
 include/kea/dhcp/option6_iaaddr.h
 include/kea/dhcp/option6_iaprefix.h
 include/kea/dhcp/option6_pdexclude.h
 include/kea/dhcp/option6_status_code.h
+include/kea/dhcp/option_classless_static_route.h
 include/kea/dhcp/option_custom.h
 include/kea/dhcp/option_data_types.h
 include/kea/dhcp/option_definition.h
@@ -146,6 +166,7 @@ include/kea/dhcp/pkt_filter6.h
 include/kea/dhcp/pkt_filter_bpf.h
 include/kea/dhcp/pkt_filter_inet.h
 include/kea/dhcp/pkt_filter_inet6.h
+include/kea/dhcp/pkt_filter_lpf.h
 include/kea/dhcp/pkt_template.h
 include/kea/dhcp/protocol_util.h
 include/kea/dhcp/socket_info.h
@@ -199,12 +220,15 @@ include/kea/dhcpsrv/csv_lease_file6.h
 include/kea/dhcpsrv/d2_client_cfg.h
 include/kea/dhcpsrv/d2_client_mgr.h
 include/kea/dhcpsrv/db_type.h
+include/kea/dhcpsrv/ddns_params.h
 include/kea/dhcpsrv/dhcp4o6_ipc.h
 include/kea/dhcpsrv/dhcpsrv_exceptions.h
 include/kea/dhcpsrv/dhcpsrv_log.h
 include/kea/dhcpsrv/dhcpsrv_messages.h
 include/kea/dhcpsrv/flq_allocation_state.h
 include/kea/dhcpsrv/flq_allocator.h
+include/kea/dhcpsrv/fuzz_log.h
+include/kea/dhcpsrv/fuzz_messages.h
 include/kea/dhcpsrv/host.h
 include/kea/dhcpsrv/host_container.h
 include/kea/dhcpsrv/host_data_source_factory.h
@@ -221,12 +245,16 @@ include/kea/dhcpsrv/lease_file_loader.h
 include/kea/dhcpsrv/lease_file_stats.h
 include/kea/dhcpsrv/lease_mgr.h
 include/kea/dhcpsrv/lease_mgr_factory.h
+include/kea/dhcpsrv/legal_log_db_log.h
+include/kea/dhcpsrv/legal_log_mgr.h
+include/kea/dhcpsrv/legal_log_mgr_factory.h
 include/kea/dhcpsrv/memfile_lease_limits.h
 include/kea/dhcpsrv/memfile_lease_mgr.h
 include/kea/dhcpsrv/memfile_lease_storage.h
 include/kea/dhcpsrv/ncr_generator.h
 include/kea/dhcpsrv/network.h
 include/kea/dhcpsrv/network_state.h
+include/kea/dhcpsrv/packet_fuzzer.h
 include/kea/dhcpsrv/parsers/
 include/kea/dhcpsrv/parsers/base_network_parser.h
 include/kea/dhcpsrv/parsers/client_class_def_parser.h
@@ -249,6 +277,8 @@ include/kea/dhcpsrv/random_allocation_state.h
 include/kea/dhcpsrv/random_allocator.h
 include/kea/dhcpsrv/resource_handler.h
 include/kea/dhcpsrv/sanity_checker.h
+include/kea/dhcpsrv/sflq_allocation_state.h
+include/kea/dhcpsrv/sflq_allocator.h
 include/kea/dhcpsrv/shared_network.h
 include/kea/dhcpsrv/srv_config.h
 include/kea/dhcpsrv/subnet.h
@@ -259,7 +289,7 @@ include/kea/dhcpsrv/tracking_lease_mgr.h
 include/kea/dhcpsrv/utils.h
 include/kea/dhcpsrv/writable_host_data_source.h
 include/kea/dns/
-include/kea/dns/dns_fwd.h
+include/kea/dns/char_string.h
 include/kea/dns/edns.h
 include/kea/dns/exceptions.h
 include/kea/dns/labelsequence.h
@@ -268,33 +298,26 @@ include/kea/dns/master_lexer_inputsource.h
 include/kea/dns/master_lexer_state.h
 include/kea/dns/master_loader.h
 include/kea/dns/master_loader_callbacks.h
-include/kea/dns/masterload.h
 include/kea/dns/message.h
 include/kea/dns/messagerenderer.h
 include/kea/dns/name.h
-include/kea/dns/nsec3hash.h
 include/kea/dns/opcode.h
-include/kea/dns/qid_gen.h
 include/kea/dns/question.h
 include/kea/dns/rcode.h
 include/kea/dns/rdata.h
-include/kea/dns/rdata_pimpl_holder.h
 include/kea/dns/rdataclass.h
-include/kea/dns/rdatafields.h
 include/kea/dns/rrclass.h
-include/kea/dns/rrcollator.h
 include/kea/dns/rrparamregistry.h
 include/kea/dns/rrset.h
-include/kea/dns/rrset_collection.h
-include/kea/dns/rrset_collection_base.h
 include/kea/dns/rrttl.h
 include/kea/dns/rrtype.h
 include/kea/dns/serial.h
+include/kea/dns/time_utils.h
 include/kea/dns/tsig.h
 include/kea/dns/tsigerror.h
 include/kea/dns/tsigkey.h
 include/kea/dns/tsigrecord.h
-include/kea/dns/zone_checker.h
+include/kea/dns/txt_like.h
 include/kea/eval/
 include/kea/eval/dependency.h
 include/kea/eval/eval_context.h
@@ -302,6 +325,7 @@ include/kea/eval/eval_context_decl.h
 include/kea/eval/eval_log.h
 include/kea/eval/eval_messages.h
 include/kea/eval/evaluate.h
+include/kea/eval/location.hh
 include/kea/eval/parser.h
 include/kea/eval/token.h
 include/kea/exceptions/
@@ -330,6 +354,7 @@ include/kea/http/auth_log.h
 include/kea/http/auth_messages.h
 include/kea/http/basic_auth.h
 include/kea/http/basic_auth_config.h
+include/kea/http/cfg_http_header.h
 include/kea/http/client.h
 include/kea/http/connection.h
 include/kea/http/connection_pool.h
@@ -386,6 +411,8 @@ include/kea/log/message_types.h
 include/kea/log/output_option.h
 include/kea/process/
 include/kea/process/cb_ctl_base.h
+include/kea/process/cfgrpt/
+include/kea/process/cfgrpt/config_report.h
 include/kea/process/config_base.h
 include/kea/process/config_ctl_info.h
 include/kea/process/config_ctl_parser.h
@@ -404,6 +431,7 @@ include/kea/stats/observation.h
 include/kea/stats/stats_mgr.h
 include/kea/tcp/
 include/kea/tcp/mt_tcp_listener_mgr.h
+include/kea/tcp/tcp_client.h
 include/kea/tcp/tcp_connection.h
 include/kea/tcp/tcp_connection_acceptor.h
 include/kea/tcp/tcp_connection_pool.h
@@ -411,31 +439,27 @@ include/kea/tcp/tcp_listener.h
 include/kea/tcp/tcp_log.h
 include/kea/tcp/tcp_messages.h
 include/kea/tcp/tcp_stream_msg.h
+include/kea/tcp/wire_data.h
 include/kea/util/
 include/kea/util/bigints.h
 include/kea/util/boost_time_utils.h
 include/kea/util/buffer.h
+include/kea/util/chrono_time_utils.h
 include/kea/util/csv_file.h
 include/kea/util/dhcp_space.h
 include/kea/util/doubles.h
 include/kea/util/encode/
-include/kea/util/encode/base16_from_binary.h
-include/kea/util/encode/base32hex.h
-include/kea/util/encode/base32hex_from_binary.h
-include/kea/util/encode/base64.h
-include/kea/util/encode/binary_from_base16.h
-include/kea/util/encode/binary_from_base32hex.h
-include/kea/util/encode/hex.h
+include/kea/util/encode/encode.h
 include/kea/util/encode/utf8.h
-include/kea/util/filename.h
+include/kea/util/fd_event_handler.h
+include/kea/util/fd_event_handler_factory.h
 include/kea/util/filesystem.h
 include/kea/util/hash.h
 include/kea/util/io/
+include/kea/util/io.h
 include/kea/util/io/fd.h
-include/kea/util/io/fd_share.h
 include/kea/util/io/pktinfo_utilities.h
 include/kea/util/io/sockaddr_util.h
-include/kea/util/io_utilities.h
 include/kea/util/labeled_value.h
 include/kea/util/memory_segment.h
 include/kea/util/memory_segment_local.h
@@ -443,16 +467,18 @@ include/kea/util/multi_threading_mgr.h
 include/kea/util/optional.h
 include/kea/util/pid_file.h
 include/kea/util/pointer_util.h
+include/kea/util/poll_event_handler.h
 include/kea/util/range_utilities.h
 include/kea/util/readwrite_mutex.h
+include/kea/util/ready_check.h
 include/kea/util/reconnect_ctl.h
+include/kea/util/select_event_handler.h
 include/kea/util/staged_value.h
 include/kea/util/state_model.h
 include/kea/util/stopwatch.h
 include/kea/util/stopwatch_impl.h
-include/kea/util/strutil.h
+include/kea/util/str.h
 include/kea/util/thread_pool.h
-include/kea/util/time_utilities.h
 include/kea/util/triplet.h
 include/kea/util/unlock_guard.h
 include/kea/util/versioned_csv_file.h
@@ -460,62 +486,56 @@ include/kea/util/watch_socket.h
 include/kea/util/watched_thread.h
 lib/kea/
 lib/kea/hooks/
-lib/kea/hooks/libdhcp_bootp.la
 @so lib/kea/hooks/libdhcp_bootp.so
-lib/kea/hooks/libdhcp_flex_option.la
+@so lib/kea/hooks/libdhcp_class_cmds.so
+@so lib/kea/hooks/libdhcp_ddns_tuning.so
+@so lib/kea/hooks/libdhcp_flex_id.so
 @so lib/kea/hooks/libdhcp_flex_option.so
-lib/kea/hooks/libdhcp_ha.la
 @so lib/kea/hooks/libdhcp_ha.so
-lib/kea/hooks/libdhcp_lease_cmds.la
+@so lib/kea/hooks/libdhcp_host_cache.so
+@so lib/kea/hooks/libdhcp_host_cmds.so
 @so lib/kea/hooks/libdhcp_lease_cmds.so
-lib/kea/hooks/libdhcp_run_script.la
+@so lib/kea/hooks/libdhcp_lease_query.so
+@so lib/kea/hooks/libdhcp_legal_log.so
+@so lib/kea/hooks/libdhcp_limits.so
+@so lib/kea/hooks/libdhcp_perfmon.so
+@so lib/kea/hooks/libdhcp_ping_check.so
+@so lib/kea/hooks/libdhcp_radius.so
 @so lib/kea/hooks/libdhcp_run_script.so
-lib/kea/hooks/libdhcp_stat_cmds.la
 @so lib/kea/hooks/libdhcp_stat_cmds.so
-lib/libkea-asiodns.la
+@so lib/kea/hooks/libdhcp_subnet_cmds.so
 @lib lib/libkea-asiodns.so.${LIBkea-asiodns_VERSION}
-lib/libkea-asiolink.la
 @lib lib/libkea-asiolink.so.${LIBkea-asiolink_VERSION}
-lib/libkea-cc.la
 @lib lib/libkea-cc.so.${LIBkea-cc_VERSION}
-lib/libkea-cfgclient.la
-@lib lib/libkea-cfgclient.so.${LIBkea-cfgclient_VERSION}
-lib/libkea-cryptolink.la
+@lib lib/libkea-cfgrpt.so.${LIBkea-cfgrpt_VERSION}
+@lib lib/libkea-config.so.${LIBkea-config_VERSION}
 @lib lib/libkea-cryptolink.so.${LIBkea-cryptolink_VERSION}
-lib/libkea-d2srv.la
 @lib lib/libkea-d2srv.so.${LIBkea-d2srv_VERSION}
-lib/libkea-database.la
 @lib lib/libkea-database.so.${LIBkea-database_VERSION}
-lib/libkea-dhcp++.la
-@lib lib/libkea-dhcp++.so.${LIBkea-dhcp++_VERSION}
-lib/libkea-dhcp_ddns.la
+@lib lib/libkea-dhcp.so.${LIBkea-dhcp_VERSION}
 @lib lib/libkea-dhcp_ddns.so.${LIBkea-dhcp_ddns_VERSION}
-lib/libkea-dhcpsrv.la
 @lib lib/libkea-dhcpsrv.so.${LIBkea-dhcpsrv_VERSION}
-lib/libkea-dns++.la
-@lib lib/libkea-dns++.so.${LIBkea-dns++_VERSION}
-lib/libkea-eval.la
+@lib lib/libkea-dns.so.${LIBkea-dns_VERSION}
 @lib lib/libkea-eval.so.${LIBkea-eval_VERSION}
-lib/libkea-exceptions.la
 @lib lib/libkea-exceptions.so.${LIBkea-exceptions_VERSION}
-lib/libkea-hooks.la
 @lib lib/libkea-hooks.so.${LIBkea-hooks_VERSION}
-lib/libkea-http.la
 @lib lib/libkea-http.so.${LIBkea-http_VERSION}
-lib/libkea-log.la
+@lib lib/libkea-log-interprocess.so.${LIBkea-log-interprocess_VERSION}
 @lib lib/libkea-log.so.${LIBkea-log_VERSION}
-lib/libkea-process.la
 @lib lib/libkea-process.so.${LIBkea-process_VERSION}
-lib/libkea-stats.la
 @lib lib/libkea-stats.so.${LIBkea-stats_VERSION}
-lib/libkea-tcp.la
 @lib lib/libkea-tcp.so.${LIBkea-tcp_VERSION}
-lib/libkea-util-io.la
 @lib lib/libkea-util-io.so.${LIBkea-util-io_VERSION}
-lib/libkea-util.la
 @lib lib/libkea-util.so.${LIBkea-util_VERSION}
+lib/pkgconfig/kea.pc
+lib/python${MODPY_VERSION}/site-packages/kea/
+lib/python${MODPY_VERSION}/site-packages/kea/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kea/${MODPY_PYCACHE}kea_conn.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kea/${MODPY_PYCACHE}kea_connector3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/kea/kea_conn.py
+lib/python${MODPY_VERSION}/site-packages/kea/kea_connector3.py
+@man man/man1/kea-arm.1
 @man man/man8/kea-admin.8
-@man man/man8/kea-ctrl-agent.8
 @man man/man8/kea-dhcp-ddns.8
 @man man/man8/kea-dhcp4.8
 @man man/man8/kea-dhcp6.8
@@ -525,11 +545,11 @@ lib/libkea-util.la
 @man man/man8/keactrl.8
 @man man/man8/perfdhcp.8
 sbin/kea-admin
-@bin sbin/kea-ctrl-agent
 @bin sbin/kea-dhcp-ddns
 @bin sbin/kea-dhcp4
 @bin sbin/kea-dhcp6
 @bin sbin/kea-lfc
+sbin/kea-shell
 sbin/keactrl
 @bin sbin/perfdhcp
 share/doc/kea/
@@ -538,13 +558,9 @@ share/doc/kea/CONTRIBUTING.md
 share/doc/kea/COPYING
 share/doc/kea/ChangeLog
 share/doc/kea/README
+share/doc/kea/SECURITY.md
 share/doc/kea/code_of_conduct.md
 share/doc/kea/examples/
-share/doc/kea/examples/agent/
-share/doc/kea/examples/agent/comments.json
-share/doc/kea/examples/agent/https.json
-share/doc/kea/examples/agent/rbac.json
-share/doc/kea/examples/agent/simple.json
 share/doc/kea/examples/ddns/
 share/doc/kea/examples/ddns/all-keys-netconf.json
 share/doc/kea/examples/ddns/all-keys.json
@@ -570,11 +586,11 @@ share/doc/kea/examples/kea4/classify2.json
 share/doc/kea/examples/kea4/comments.json
 share/doc/kea/examples/kea4/config-backend.json
 share/doc/kea/examples/kea4/dhcpv4-over-dhcpv6.json
-share/doc/kea/examples/kea4/dnr.json
 share/doc/kea/examples/kea4/global-reservations.json
 share/doc/kea/examples/kea4/ha-load-balancing-server1-mt-with-tls.json
 share/doc/kea/examples/kea4/ha-load-balancing-server2-mt.json
 share/doc/kea/examples/kea4/hooks-radius.json
+share/doc/kea/examples/kea4/hooks-rbac.json
 share/doc/kea/examples/kea4/hooks.json
 share/doc/kea/examples/kea4/leases-expiration.json
 share/doc/kea/examples/kea4/multiple-options.json
@@ -596,11 +612,11 @@ share/doc/kea/examples/kea6/classify2.json
 share/doc/kea/examples/kea6/comments.json
 share/doc/kea/examples/kea6/config-backend.json
 share/doc/kea/examples/kea6/dhcpv4-over-dhcpv6.json
-share/doc/kea/examples/kea6/dnr.json
 share/doc/kea/examples/kea6/duid.json
 share/doc/kea/examples/kea6/global-reservations.json
 share/doc/kea/examples/kea6/ha-hot-standby-server1-with-tls.json
 share/doc/kea/examples/kea6/ha-hot-standby-server2.json
+share/doc/kea/examples/kea6/hooks-rbac.json
 share/doc/kea/examples/kea6/hooks.json
 share/doc/kea/examples/kea6/iPXE.json
 share/doc/kea/examples/kea6/leases-expiration.json
@@ -626,20 +642,14 @@ share/doc/kea/examples/netconf/simple-dhcp4.json
 share/doc/kea/examples/netconf/simple-dhcp6.json
 share/doc/kea/examples/template-ha-mt-tls/
 share/doc/kea/examples/template-ha-mt-tls/info.md
-share/doc/kea/examples/template-ha-mt-tls/kea-ca-1.conf
-share/doc/kea/examples/template-ha-mt-tls/kea-ca-2.conf
 share/doc/kea/examples/template-ha-mt-tls/kea-dhcp4-1.conf
 share/doc/kea/examples/template-ha-mt-tls/kea-dhcp4-2.conf
 share/doc/kea/examples/template-power-user-home/
 share/doc/kea/examples/template-power-user-home/info.md
-share/doc/kea/examples/template-power-user-home/kea-ca-1.conf
-share/doc/kea/examples/template-power-user-home/kea-ca-2.conf
 share/doc/kea/examples/template-power-user-home/kea-dhcp4-1.conf
 share/doc/kea/examples/template-power-user-home/kea-dhcp4-2.conf
 share/doc/kea/platforms.rst
 share/examples/kea/
-share/examples/kea/kea-ctrl-agent.conf
-@sample ${SYSCONFDIR}/kea/kea-ctrl-agent.conf
 share/examples/kea/kea-dhcp-ddns.conf
 @sample ${SYSCONFDIR}/kea/kea-dhcp-ddns.conf
 share/examples/kea/kea-dhcp4.conf
@@ -648,6 +658,8 @@ share/examples/kea/kea-dhcp6.conf
 @sample ${SYSCONFDIR}/kea/kea-dhcp6.conf
 share/examples/kea/keactrl.conf
 @sample ${SYSCONFDIR}/kea/keactrl.conf
+share/examples/kea/radius/
+share/examples/kea/radius/dictionary
 share/kea/
 share/kea/api/
 share/kea/api/build-report.json
@@ -675,6 +687,7 @@ share/kea/api/config-write.json
 share/kea/api/dhcp-disable.json
 share/kea/api/dhcp-enable.json
 share/kea/api/extended-info4-upgrade.json
+share/kea/api/extended-info6-upgrade.json
 share/kea/api/gss-tsig-get-all.json
 share/kea/api/gss-tsig-get.json
 share/kea/api/gss-tsig-key-del.json
@@ -694,12 +707,17 @@ share/kea/api/ha-reset.json
 share/kea/api/ha-scopes.json
 share/kea/api/ha-sync-complete-notify.json
 share/kea/api/ha-sync.json
+share/kea/api/interface-add.json
+share/kea/api/interface-list.json
+share/kea/api/interface-redetect.json
+share/kea/api/kea-lfc-start.json
 share/kea/api/lease4-add.json
 share/kea/api/lease4-del.json
 share/kea/api/lease4-get-all.json
 share/kea/api/lease4-get-by-client-id.json
 share/kea/api/lease4-get-by-hostname.json
 share/kea/api/lease4-get-by-hw-address.json
+share/kea/api/lease4-get-by-state.json
 share/kea/api/lease4-get-page.json
 share/kea/api/lease4-get.json
 share/kea/api/lease4-resend-ddns.json
@@ -712,6 +730,8 @@ share/kea/api/lease6-del.json
 share/kea/api/lease6-get-all.json
 share/kea/api/lease6-get-by-duid.json
 share/kea/api/lease6-get-by-hostname.json
+share/kea/api/lease6-get-by-hw-address.json
+share/kea/api/lease6-get-by-state.json
 share/kea/api/lease6-get-page.json
 share/kea/api/lease6-get.json
 share/kea/api/lease6-resend-ddns.json
@@ -719,7 +739,6 @@ share/kea/api/lease6-update.json
 share/kea/api/lease6-wipe.json
 share/kea/api/lease6-write.json
 share/kea/api/leases-reclaim.json
-share/kea/api/libreload.json
 share/kea/api/list-commands.json
 share/kea/api/network4-add.json
 share/kea/api/network4-del.json
@@ -733,6 +752,8 @@ share/kea/api/network6-get.json
 share/kea/api/network6-list.json
 share/kea/api/network6-subnet-add.json
 share/kea/api/network6-subnet-del.json
+share/kea/api/perfmon-control.json
+share/kea/api/perfmon-get-all-durations.json
 share/kea/api/remote-class4-del.json
 share/kea/api/remote-class4-get-all.json
 share/kea/api/remote-class4-get.json
@@ -817,11 +838,22 @@ share/kea/api/reservation-get-page.json
 share/kea/api/reservation-get.json
 share/kea/api/reservation-update.json
 share/kea/api/server-tag-get.json
+share/kea/api/sflq-pool4-del.json
+share/kea/api/sflq-pool4-get-all.json
+share/kea/api/sflq-pool4-get-by-range.json
+share/kea/api/sflq-pool4-get-by-subnet.json
+share/kea/api/sflq-pool4-rebuild.json
+share/kea/api/sflq-pool6-del.json
+share/kea/api/sflq-pool6-get-all.json
+share/kea/api/sflq-pool6-get-by-range.json
+share/kea/api/sflq-pool6-get-by-subnet.json
+share/kea/api/sflq-pool6-rebuild.json
 share/kea/api/shutdown.json
 share/kea/api/stat-lease4-get.json
 share/kea/api/stat-lease6-get.json
 share/kea/api/statistic-get-all.json
 share/kea/api/statistic-get.json
+share/kea/api/statistic-global-get-all.json
 share/kea/api/statistic-remove-all.json
 share/kea/api/statistic-remove.json
 share/kea/api/statistic-reset-all.json
@@ -837,20 +869,22 @@ share/kea/api/subnet4-delta-add.json
 share/kea/api/subnet4-delta-del.json
 share/kea/api/subnet4-get.json
 share/kea/api/subnet4-list.json
+share/kea/api/subnet4-select-test.json
 share/kea/api/subnet4-update.json
+share/kea/api/subnet4o6-select-test.json
 share/kea/api/subnet6-add.json
 share/kea/api/subnet6-del.json
 share/kea/api/subnet6-delta-add.json
 share/kea/api/subnet6-delta-del.json
 share/kea/api/subnet6-get.json
 share/kea/api/subnet6-list.json
+share/kea/api/subnet6-select-test.json
 share/kea/api/subnet6-update.json
 share/kea/api/version-get.json
 share/kea/scripts/
 share/kea/scripts/admin-utils.sh
-%%mysql%%
-@sample ${LOCALSTATEDIR}/lib/
+@sample ${LOCALSTATEDIR}/db/
 @mode 0770
 @group _kea
-@sample ${LOCALSTATEDIR}/lib/kea/
+@sample ${LOCALSTATEDIR}/db/kea/
 @sample /var/log/kea/

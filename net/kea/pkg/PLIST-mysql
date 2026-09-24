@@ -1,12 +1,9 @@
-include/kea/dhcpsrv/mysql_host_data_source.h
-include/kea/dhcpsrv/mysql_lease_mgr.h
+@conflict kea-*-mysql
 include/kea/mysql/
 include/kea/mysql/mysql_binding.h
 include/kea/mysql/mysql_connection.h
 include/kea/mysql/mysql_constants.h
-lib/kea/hooks/libdhcp_mysql_cb.la
-@so lib/kea/hooks/libdhcp_mysql_cb.so
-lib/libkea-mysql.la
+@so lib/kea/hooks/libdhcp_mysql.so
 @lib lib/libkea-mysql.so.${LIBkea-mysql_VERSION}
 share/doc/kea/examples/kea4/mysql-reservations.json
 share/doc/kea/examples/kea6/mysql-reservations.json
@@ -42,4 +39,20 @@ share/kea/scripts/mysql/upgrade_015_to_016.sh
 share/kea/scripts/mysql/upgrade_016_to_017.sh
 share/kea/scripts/mysql/upgrade_017_to_018.sh
 share/kea/scripts/mysql/upgrade_018_to_019.sh
+share/kea/scripts/mysql/upgrade_019_to_020.sh
+share/kea/scripts/mysql/upgrade_020_to_021.sh
+share/kea/scripts/mysql/upgrade_021_to_022.sh
+share/kea/scripts/mysql/upgrade_022_to_023.sh
+share/kea/scripts/mysql/upgrade_023_to_024.sh
+share/kea/scripts/mysql/upgrade_024_to_025.sh
+share/kea/scripts/mysql/upgrade_025_to_026.sh
+share/kea/scripts/mysql/upgrade_026_to_027.sh
+share/kea/scripts/mysql/upgrade_027_to_028.sh
+share/kea/scripts/mysql/upgrade_028_to_029.sh
+share/kea/scripts/mysql/upgrade_029_to_030.sh
+share/kea/scripts/mysql/upgrade_030_to_031.sh
+share/kea/scripts/mysql/upgrade_031_to_032.sh
+share/kea/scripts/mysql/upgrade_032_to_033.sh
+share/kea/scripts/mysql/upgrade_033_to_034.sh
+share/kea/scripts/mysql/upgrade_034_to_035.sh
 share/kea/scripts/mysql/wipe_data.sh
