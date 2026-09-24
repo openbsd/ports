@@ -4,6 +4,7 @@
 NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 V =			1.2.8
+REVISION =		0
 COMMENT =		64Gram unofficial Telegram Desktop
 PORTROACH =		limit:-full$$
 DISTNAME =		64Gram-${V}-full
