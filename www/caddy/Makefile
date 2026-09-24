@@ -15,12 +15,13 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c pthread
 
 MODULES=	lang/go
-MODGO_LDFLAGS=	-X "github.com/caddyserver/caddy/v2.CustomVersion=${MODGO_VERSION}"
+MODGO_LDFLAGS=	-X "${MODGO_MODNAME}.CustomVersion=${MODGO_VERSION}"
+
+EXAMPLES_DIR=	${PREFIX}/share/examples/${PKGSTEM}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/caddy
-	${INSTALL_DATA} files/Caddyfile \
-		${PREFIX}/share/examples/caddy
+	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
+	${INSTALL_DATA} files/Caddyfile ${EXAMPLES_DIR}/
 
 .include "modules.inc"
 .include <bsd.port.mk>
