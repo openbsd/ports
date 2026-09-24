@@ -333,6 +333,7 @@
      SUBDIR += tiff2png
      SUBDIR += tkimg
      SUBDIR += tkpng
+     SUBDIR += tlottie
      SUBDIR += ttfautohint
      SUBDIR += tumble
      SUBDIR += ufraw
