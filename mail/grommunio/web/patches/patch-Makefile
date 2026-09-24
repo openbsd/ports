@@ -21,7 +21,7 @@ Index: Makefile
  
  # Javascript compiler
  
-@@ -143,7 +145,7 @@ $(eval $(call vendor_tree,filepreviewer,ViewerJS/webod
+@@ -139,7 +141,7 @@ $(eval $(call vendor_tree,filepreviewer,ViewerJS/webod
  js: $(VENDORED) $(JSDEPLOY)/fingerprint.js $(JSDEPLOY)/resize.js $(JSDEPLOY)/grommunio.js $(JSDEPLOY)/extjs-mod/extjs-mod.js $(JSDEPLOY)/extjs/ext-base-all.js $(JSDEPLOY)/extjs/ext-base-all-debug.js $(DESTDIR)/client/third-party/ux-thirdparty.js $(DEPLOYPURIFYJS) $(addprefix $(JSDEPLOY)/filepreviewer/,$(VIEWERJS))
  
  $(DESTDIR)/%.php: %.php

@@ -4229,6 +4229,7 @@ grommunio-web/server/includes/exceptions/class.GrommunioException.php
 grommunio-web/server/includes/exceptions/class.JSONException.php
 grommunio-web/server/includes/exceptions/class.SearchException.php
 grommunio-web/server/includes/exceptions/class.SettingsException.php
+grommunio-web/server/includes/external-strings.php
 grommunio-web/server/includes/gettext.php
 grommunio-web/server/includes/load.php
 grommunio-web/server/includes/loader.php
