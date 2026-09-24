@@ -12,7 +12,7 @@ FLAVORS =	dmd
 FLAVOR ?=	dmd
 
 .if ${FLAVOR:Mdmd}
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	amd64
 
 WANTLIB += c c++abi execinfo m pthread
 
