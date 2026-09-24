@@ -3,8 +3,7 @@
 # build uses too much memory on i386 (noticed in calls_group_menu.cpp)
 NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
-V =			1.2.8
-REVISION =		0
+V =			1.2.10
 COMMENT =		64Gram unofficial Telegram Desktop
 PORTROACH =		limit:-full$$
 DISTNAME =		64Gram-${V}-full
@@ -24,7 +23,6 @@ MAINTAINER =		Mykyta Nazarenko <mn@superpc.suicide.solutions>
 # tdesktop:		GPLv3 with OpenSSL exception
 # cld3:			Apache 2.0
 # libprisma:		MIT
-# rlottie:		LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 # tgcalls:		LGPL 3
 # xdg-desktop-portal:	LGPL 2.1
 PERMIT_PACKAGE =	Yes
@@ -35,8 +33,8 @@ WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_strings
 WANTLIB += ada avcodec avfilter avformat avutil c cairo crypto
 WANTLIB += dispatch fido2 fontconfig gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += hunspell-1.7 jpeg lz4 m minizip openal pango-1.0 pangocairo-1.0
-WANTLIB += protobuf-lite qrcodegencpp rnnoise swresample swscale
-WANTLIB += tg_owt xxhash z
+WANTLIB += pangoft2-1.0 qrcodegencpp rnnoise swresample swscale
+WANTLIB += tg_owt tlottie xxhash z
 
 # dlopen()ed
 WANTLIB += webkitgtk-6.0 xcb xcb-keysyms xcb-record xcb-screensaver
@@ -53,6 +51,7 @@ BUILD_DEPENDS =		devel/boost,-main \
 			devel/crc32c \
 			devel/fmt \
 			devel/gobject-introspection \
+			devel/protobuf \
 			devel/range-v3>=0.11.0p0 \
 			devel/tl-expected \
 			net/tdlib/tde2e \
@@ -66,10 +65,11 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/glib2>=2.78.0 \
 			devel/kf6/kcoreaddons \
 			devel/libdispatch \
-			devel/protobuf \
+			devel/pango \
 			graphics/ffmpeg>=8.1.1p0v1 \
 			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
+			graphics/tlottie \
 			net/tg_owt>=0.0.0.20260409 \
 			sysutils/xxhash \
 			textproc/hunspell \
@@ -101,7 +101,7 @@ CONFIGURE_ARGS +=	-DLINUX=true
 NO_TEST =		Yes
 
 # unported and required
-NEEDED_BUNDLES =	cld3 libprisma rlottie tgcalls MicroTeX cmark-gfm
+NEEDED_BUNDLES =	cld3 libprisma tgcalls MicroTeX cmark-gfm
 
 # ported but CMake code hardcodes bundled file paths
 NEEDED_BUNDLES +=	xdg-desktop-portal
