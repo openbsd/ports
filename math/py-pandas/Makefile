@@ -1,7 +1,6 @@
 COMMENT=	data analysis and manipulation library
 
-MODPY_DISTV=	2.3.3
-REVISION=	0
+MODPY_DISTV=	3.0.6
 DISTNAME=	pandas-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
