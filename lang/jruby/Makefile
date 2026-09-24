@@ -1,13 +1,13 @@
 # Runtime failures on i386 in IO#pos and IO#rewind
-ONLY_FOR_ARCHS = amd64
+ONLY_FOR_ARCHS = amd64 aarch64
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		10.1.1.0
+V =		10.1.2.0
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
-DISTFILES.jffi =jffi-1.3.15.tar.gz
+DISTFILES.jffi = jffi-1.4.0{1.4.0}.tar.gz
 DISTFILES.gem =	${JRUBY_LAUNCHER_GEM}
 
 HOMEPAGE =	http://www.jruby.org/
@@ -50,7 +50,7 @@ MODJAVA_BUILD_DIR = ${JFFI_HOME}
 MODJAVA_BUILD_TARGET_NAME = jar
 
 post-extract:
-	mv ${WRKDIR}/jffi-jffi* ${JFFI_HOME}
+	mv ${WRKDIR}/jffi* ${JFFI_HOME}
 	# Unpack the jruby-launcher gem, since it needs to be patched
 	cd ${WRKSRC} && mkdir jruby-launcher \
 		&& cd jruby-launcher && tar zxf ../../data.tar.gz \
