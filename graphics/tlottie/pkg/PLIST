@@ -1,0 +1,2 @@
+include/tlottie.h
+@lib lib/libtlottie.so.${LIBtlottie_VERSION}

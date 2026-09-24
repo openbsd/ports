@@ -1,0 +1,2 @@
+Superfast library for drawing lottie animations, inspired by rlottie,
+micro-optimized, using SIMD, SSE2, AVX2 and AVX512 insturctions.
