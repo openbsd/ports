@@ -2,11 +2,11 @@ COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggml-org
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		v0.4.1
-BUILD_NUMBER =		10964
+GH_TAGNAME =		v0.5.0
+BUILD_NUMBER =		11146
 
-SHARED_LIBS +=		llama 15.1
-SHARED_LIBS +=		llama-common 15.0
+SHARED_LIBS +=		llama 15.2
+SHARED_LIBS +=		llama-common 16.0
 SHARED_LIBS +=		mtmd 10.0
 
 CATEGORIES =		misc
@@ -30,9 +30,11 @@ EXTRACT_CASES =	*-ui-dist.tar.gz) \
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc
 
-# some tests need network access
 LIB_DEPENDS =		devel/libggml
 
+RUN_DEPENDS =		graphics/ffmpeg
+
+# some tests need network access
 TEST_DEPENDS =		www/py-jinja2
 
 CONFIGURE_ARGS +=	-DLLAMA_USE_SYSTEM_GGML=on \
