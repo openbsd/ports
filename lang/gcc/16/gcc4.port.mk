@@ -5,7 +5,7 @@ MODGCC4_LANGS ?=
 # Always include support for this
 MODGCC4_LANGS +=	c
 
-_MODGCC4_OKAY = c c++ fortran
+_MODGCC4_OKAY = c c++ d fortran
 .for _l in ${MODGCC4_LANGS:L}
 .  if !${_MODGCC4_OKAY:M${_l}}
 ERRORS += "Fatal: unknown language ${_l}"
@@ -28,6 +28,8 @@ MODGCC4_CPPLIBDEP = lang/gcc/16,-libs>=16,<17
 MODGCC4_CPPDEP =    lang/gcc/16,-c++>=16,<17
 MODGCC4_CPPWANTLIB = estdc++>=22 pthread
 MODGCC4_ATOMICWANTLIB = atomic
+
+MODGCC4_DLANGDEP = lang/gcc/16,-dlang>=16,<17
 
 MODGCC4_FORTRANDEP = lang/gcc/16,-f95>=16,<17
 MODGCC4_FORTRANLIBDEP = lang/gcc/16,-libs>=16,<17
@@ -55,6 +57,11 @@ LIBECXX = ${MODGCC4_CPPWANTLIB}
 .    if !${COMPILER_LINKS:Mg++}
 COMPILER_LINKS += c++ ${LOCALBASE}/bin/eg++ g++ ${LOCALBASE}/bin/eg++
 .    endif
+.  endif
+
+.  if ${MODGCC4_LANGS:L:Md}
+BUILD_DEPENDS += ${MODGCC4_DLANGDEP}
+COMPILER_LINKS += gdc ${LOCALBASE}/bin/egdc
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mfortran}

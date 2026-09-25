@@ -5,17 +5,19 @@ GH_ACCOUNT =	rushsteve1
 GH_PROJECT =	trash-d
 GH_TAGNAME =	21
 
-REVISION =	0
+REVISION =	1
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 
-BUILD_DEPENDS =	lang/gcc/16,-dlang \
-		textproc/scdoc
+MODULES =		gcc4
+MODGCC4_LANGS =		d
 
-TEST_DEPENDS =	lang/gcc/16,-dlang
+BUILD_DEPENDS +=	textproc/scdoc
+
+TEST_DEPENDS =		${MODGCC4_DLANGDEP}
 
 do-build:
 	cd ${WRKSRC} && egdc -O -frelease -finline-functions -Isource -J. \

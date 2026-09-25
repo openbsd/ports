@@ -1,5 +1,4 @@
-# When updating/switching to a new version, remember to adapt:
-# sysutils/trash-d, devel/meson, lang/gdmd and devel/dub
+# When updating/switching to a new version, remember to adapt: devel/meson
 
 # not tested: alpha, hppa, mips64el
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \

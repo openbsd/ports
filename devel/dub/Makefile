@@ -4,6 +4,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	dlang
 GH_PROJECT =	dub
 GH_TAGNAME =	v1.40.0
+REVISION =	0
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -25,9 +26,12 @@ DMD =	${LOCALBASE}/bin/dmd
 .else
 WANTLIB += c m pthread
 
+MODULES =	gcc4
+MODGCC4_LANGS =	d
+
 BUILD_DEPENDS =	lang/gdmd
 
-RUN_DEPENDS =	lang/gcc/16,-dlang
+RUN_DEPENDS =	${MODGCC4_DLANGDEP}
 
 DC =	${LOCALBASE}/bin/egdc
 DMD =	${LOCALBASE}/bin/gdmd
