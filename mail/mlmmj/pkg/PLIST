@@ -5,7 +5,6 @@ bin/mlmmj-make-ml
 @comment bin/mlmmj-make-ml.sh
 @bin bin/mlmmj-process
 @bin bin/mlmmj-receive
-@bin bin/mlmmj-receive-strip
 bin/mlmmj-recieve
 @bin bin/mlmmj-send
 @bin bin/mlmmj-sub

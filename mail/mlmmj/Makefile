@@ -1,12 +1,12 @@
 COMMENT=	mailing list manager
 
-V=		2.1.0
+V=		2.2.0
 
 DISTNAME=	mlmmj-${V}
 
 CATEGORIES=	mail
 
-HOMEPAGE=	https://codeberg.org/mlmmj/mlmmj
+HOMEPAGE=	https://mlmmj.org/
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -23,11 +23,12 @@ BUILD_DEPENDS=	devel/kyua-cli \
 
 LIB_DEPENDS=	converters/libiconv
 
+# XXX some test failures due to old kyua; update pending
+# 293/304 passed (11 failed)
 TEST_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--enable-receive-strip=yes \
-		--enable-tests
+CONFIGURE_ARGS+=--enable-tests
 
 CONFIGURE_ENV=	TMPDIR="${WRKBUILD}"
 
