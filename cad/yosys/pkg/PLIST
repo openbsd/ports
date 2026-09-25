@@ -44,12 +44,6 @@ share/yosys/choices/sklansky.v
 share/yosys/cmp2lcu.v
 share/yosys/cmp2lut.v
 share/yosys/cmp2softlogic.v
-share/yosys/coolrunner2/
-share/yosys/coolrunner2/cells_counter_map.v
-share/yosys/coolrunner2/cells_latch.v
-share/yosys/coolrunner2/cells_sim.v
-share/yosys/coolrunner2/tff_extract.v
-share/yosys/coolrunner2/xc2_dff.lib
 share/yosys/dff2ff.v
 share/yosys/ecp5/
 share/yosys/ecp5/ccu2c_sim.vh
@@ -95,15 +89,6 @@ share/yosys/gowin/cells_xtra_gw5a.v
 share/yosys/gowin/dsp_map.v
 share/yosys/gowin/lutrams.txt
 share/yosys/gowin/lutrams_map.v
-share/yosys/greenpak4/
-share/yosys/greenpak4/cells_blackbox.v
-share/yosys/greenpak4/cells_latch.v
-share/yosys/greenpak4/cells_map.v
-share/yosys/greenpak4/cells_sim.v
-share/yosys/greenpak4/cells_sim_ams.v
-share/yosys/greenpak4/cells_sim_digital.v
-share/yosys/greenpak4/cells_sim_wip.v
-share/yosys/greenpak4/gp_dff.lib
 share/yosys/ice40/
 share/yosys/ice40/abc9_model.v
 share/yosys/ice40/arith_map.v
@@ -169,6 +154,7 @@ share/yosys/include/kernel/sexpr.h
 share/yosys/include/kernel/sigtools.h
 share/yosys/include/kernel/threading.h
 share/yosys/include/kernel/timinginfo.h
+share/yosys/include/kernel/unused_bits.h
 share/yosys/include/kernel/utils.h
 share/yosys/include/kernel/yosys.h
 share/yosys/include/kernel/yosys_common.h
