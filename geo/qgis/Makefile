@@ -6,8 +6,7 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel parallel2
 
-DISTNAME =	qgis-4.2.2
-REVISION =	0
+DISTNAME =	qgis-4.2.3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
@@ -102,7 +101,7 @@ WANTLIB += ${UQTV}WebEngineWidgets ${UQTV}QuickControls2
 WANTLIB += c draco exiv2 expat fcgi freexl gdal geos_c gsl gslcblas iconv intl m
 WANTLIB += mdal minizip pdalcpp pq proj protobuf-lite ${MODPY_WANTLIB}
 WANTLIB += qca-${QTVER} qscintilla2_${QTVER} ${QTVER}keychain rttopo spatialindex
-WANTLIB += spatialite sqlite3 sz util zip hdf5 xml2 z zstd GeographicLib GL SFCGAL
+WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z zstd GeographicLib GL SFCGAL
 WANTLIB += Pdf4QtLibCore
 
 # absl wantlibs
