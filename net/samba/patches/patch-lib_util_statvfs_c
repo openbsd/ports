@@ -1,0 +1,15 @@
+Fix a type mismatch by passing OpenBSD's native struct statfs—which contains
+non-standard fields like f_iosize and f_flags—instead of POSIX struct statvfs.
+
+Index: lib/util/statvfs.c
+--- lib/util/statvfs.c.orig
++++ lib/util/statvfs.c
+@@ -79,7 +79,7 @@ static int darwin_fs_capabilities(const char * path)
+ 
+ #if defined(BSD_STYLE_STATVFS)
+ 
+-static void bsd_init_statvfs(const struct statvfs *src,
++static void bsd_init_statvfs(const struct statfs *src,
+ 			     struct vfs_statvfs_struct *dst)
+ {
+ 	dst->OptimalTransferSize = src->f_iosize;

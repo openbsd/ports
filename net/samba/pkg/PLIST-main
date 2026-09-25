@@ -319,10 +319,12 @@ lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/${MODPY_PYCACHE}__init__.$
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/drsuapi.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/echo.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/epmapper.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/file_id.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/gkdi.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/gmsa.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/idmap.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/initshutdown.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/ioctl.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/irpc.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/keycredlink.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/krb5ccache.${MODPY_PYC_MAGIC_TAG}so
@@ -1117,6 +1119,10 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}netcmd.${MO
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}netcmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}netlogonsvc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}netlogonsvc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}nps_echo_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}nps_echo_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}ntacl_resource_attr_ace.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}ntacl_resource_attr_ace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}ntacls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}ntacls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}ntacls_backup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1652,6 +1658,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/net_join_no_spnego.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/netbios.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/netcmd.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/netlogonsvc.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/nps_echo_test.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/nss/
 lib/python${MODPY_VERSION}/site-packages/samba/tests/nss/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/samba/tests/nss/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1660,6 +1667,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/nss/${MODPY_PYCACHE}group.$
 lib/python${MODPY_VERSION}/site-packages/samba/tests/nss/${MODPY_PYCACHE}group.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/nss/base.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/nss/group.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/ntacl_resource_attr_ace.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntacls.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntacls_backup.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlm_auth.py

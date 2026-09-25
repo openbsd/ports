@@ -4,7 +4,7 @@
 Index: source3/wscript
 --- source3/wscript.orig
 +++ source3/wscript
-@@ -97,6 +97,7 @@ def options(opt):
+@@ -102,6 +102,7 @@ def options(opt):
      # default = None means autodetection
      opt.samba_add_onoff_option('spotlight', with_name="enable", without_name="disable", default=None)
      opt.samba_add_onoff_option('wsp', with_name="enable", without_name="disable", default=True)
@@ -12,7 +12,7 @@ Index: source3/wscript
  
  def configure(conf):
      default_static_modules = []
-@@ -105,7 +106,7 @@ def configure(conf):
+@@ -110,7 +111,7 @@ def configure(conf):
      forced_static_modules = []
      forced_shared_modules = []
  
