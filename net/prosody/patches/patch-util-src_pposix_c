@@ -16,7 +16,7 @@ Index: util-src/pposix.c
  
  #if ! defined(__FreeBSD__)
  #ifndef _POSIX_C_SOURCE
-@@ -662,6 +667,7 @@ static int lc_abort(lua_State *L) {
+@@ -663,6 +668,7 @@ static int lc_abort(lua_State *L) {
  	return 0;
  }
  
@@ -24,7 +24,7 @@ Index: util-src/pposix.c
  const char *pipe_flag_names[] = {
  	"cloexec",
  	"direct",
-@@ -672,6 +678,7 @@ const int pipe_flag_values[] = {
+@@ -673,6 +679,7 @@ const int pipe_flag_values[] = {
  	O_DIRECT,
  	O_NONBLOCK
  };

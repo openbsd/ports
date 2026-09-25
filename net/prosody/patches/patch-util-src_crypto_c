@@ -23,7 +23,7 @@ Index: util-src/crypto.c
  #if (LUA_VERSION_NUM == 501)
  #define luaL_setfuncs(L, R, N) luaL_register(L, NULL, R)
  #endif
-@@ -199,6 +208,7 @@ cleanup:
+@@ -196,6 +205,7 @@ cleanup:
  }
  
  static int Lpkey_meth_public_raw(lua_State *L) {
@@ -31,7 +31,7 @@ Index: util-src/crypto.c
  	OSSL_PARAM *params;
  	EVP_PKEY *pkey = pkey_from_arg(L, 1, 0, 0);
  
-@@ -218,6 +228,12 @@ static int Lpkey_meth_public_raw(lua_State *L) {
+@@ -215,6 +225,12 @@ static int Lpkey_meth_public_raw(lua_State *L) {
  	}
  
  	return 1;
@@ -44,7 +44,7 @@ Index: util-src/crypto.c
  }
  
  static int Lpkey_meth_public_pem(lua_State *L) {
-@@ -334,6 +350,7 @@ static int Limport_private_pem(lua_State *L) {
+@@ -331,6 +347,7 @@ static int Limport_private_pem(lua_State *L) {
  }
  
  static int Limport_public_ec_raw(lua_State *L) {
@@ -52,7 +52,7 @@ Index: util-src/crypto.c
  	OSSL_PARAM_BLD *param_bld = NULL;
  	OSSL_PARAM *params = NULL;
  	EVP_PKEY_CTX *ctx = NULL;
-@@ -367,6 +384,15 @@ err:
+@@ -364,6 +381,15 @@ err:
  	if (param_bld) OSSL_PARAM_BLD_free(param_bld);
  	lua_pushnil(L);
  	return 1;
