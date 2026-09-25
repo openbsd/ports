@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.156.1
+V =			0.157.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -21,7 +21,7 @@ PKGNAME =		codex-${V}
 # only build the Rust workspace (the repo also contains JS tooling).
 WRKSRC =		${WRKDIST}/codex-rs
 
-DIST_TUPLE += github nornagon crossterm 45fecb9508105988f42fe6ff0441783ed3717f92 ./crossterm
+DIST_TUPLE += github nornagon crossterm efa177859fd9623d57b9fe7ae9bf491ae1ac6ec4 ./crossterm
 DIST_TUPLE += github openai-oss-forks tokio-tungstenite 0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186 ./tokio-tungstenite
 DIST_TUPLE += github openai-oss-forks tungstenite-rs 4fffad30fe373adbdcffab9545e9e9bf4f2fc19f ./tungstenite
 DIST_TUPLE += github helix-editor nucleo 4253de9faabb4e5c6d81d946a5e35a90f87347ee ./nucleo
