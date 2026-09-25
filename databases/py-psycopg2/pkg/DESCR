@@ -1,4 +1,18 @@
-Psycopg2 is a PostgreSQL database adapter for the Python programming
-language.  It was written from scratch with the aim of being small,
-fast and stable. It supports the full Python DBAPI-2.0 and is thread
-safe.
+Psycopg is the most popular PostgreSQL database adapter for the Python
+programming language.  Its main features are the complete implementation of
+the Python DB API 2.0 specification and the thread safety (several threads can
+share the same connection).  It was designed for heavily multi-threaded
+applications that create and destroy lots of cursors and make a large number
+of concurrent "INSERT"s or "UPDATE"s.
+
+Psycopg 2 is mostly implemented in C as a libpq wrapper, resulting in being
+both efficient and secure.  It features client-side and server-side cursors,
+asynchronous communication and notifications, "COPY TO/COPY FROM" support.
+Many Python types are supported out-of-the-box and adapted to matching
+PostgreSQL data types; adaptation can be extended and customized thanks to a
+flexible objects adaptation system.
+
+Note that while Psycopg 2 is still widely used and actively maintained,
+it is not expected to receive new features; these are developed in
+Psycopg 3 which is developed in parallel.  If you are starting a new
+project you should probably start from 3.
