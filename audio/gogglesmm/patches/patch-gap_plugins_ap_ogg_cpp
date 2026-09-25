@@ -1,0 +1,37 @@
+- Fix big endian support
+  19a326bd053b7514949dd29f21beb81184f919d4
+
+Index: gap/plugins/ap_ogg.cpp
+--- gap/plugins/ap_ogg.cpp.orig
++++ gap/plugins/ap_ogg.cpp
+@@ -589,11 +589,8 @@ ReadStatus OggReader::parse_opus_stream() {
+     return ReadError;
+     }
+ 
+-#if FOX_BIGENDIAN == 0
+-  stream_offset_start = (op.packet[10] | op.packet[11]<<8);
+-#else
+-  stream_offset_start = (op.packet[10]<<8 | op.packet[11]);
+-#endif
++  // OpusHead 'Pre-skip' 16 bits unsigned in Little-Endian
++  stream_offset_start = static_cast<FXuint>(op.packet[10]) | (static_cast<FXuint>(op.packet[11])<<8);
+ 
+   // channel mapping family
+   switch(op.packet[18]) {
+@@ -669,11 +666,11 @@ ReadStatus OggReader::parse_vorbis_stream() {
+   FXASSERT(op.packet[0]==1);
+ 
+   // Vorbis Info Packet
+-#ifdef FOX_BIGENDIAN
+-  FXuint rate = (op.packet[15] << 24 | op.packet[14] << 16 | op.packet[13] << 8 | op.packet[12]);
+-#else
+-  FXuint rate = (op.packet[12] << 24 | op.packet[13] << 16 | op.packet[14] << 8 | op.packet[15]);
+-#endif
++  FXuint rate = (static_cast<FXuint>(op.packet[15]) << 24 |
++                 static_cast<FXuint>(op.packet[14]) << 16 |
++                 static_cast<FXuint>(op.packet[13]) << 8 |
++                 static_cast<FXuint>(op.packet[12]));
++
+   FXuchar channels = op.packet[11];
+ 
+   if (channels<1 || channels>8) {

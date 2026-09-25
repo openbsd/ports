@@ -1,0 +1,60 @@
+Index: gap/plugins/ap_flac.cpp
+--- gap/plugins/ap_flac.cpp.orig
++++ gap/plugins/ap_flac.cpp
+@@ -272,13 +272,13 @@ FXbool FlacReader::sync(FXlong & offset,FXlong & sampl
+ 
+         // read frame or sample
+         if (minblocksize==maxblocksize) {
+-          FXint n = parse_utf_value(bytes+h,framenumber);
++          const FXint n = parse_utf_value(bytes+h,framenumber);
+           if (n==0) continue;
+           h+=n;
+           sample=minblocksize*framenumber;
+           }
+         else {
+-          FXint n = parse_utf_value(bytes+h,sample);
++          const FXint n = parse_utf_value(bytes+h,sample);
+           if (n==0) continue;
+           h+=n;
+           }
+@@ -291,11 +291,7 @@ FXbool FlacReader::sync(FXlong & offset,FXlong & sampl
+           if (minblocksize==maxblocksize && blocksize!=minblocksize) continue;
+           }
+         else if (bs==7) { // read 16-bit blocksize
+-#if FOX_BIGENDIAN == 0
+-          blocksize = 1 + ((bytes[h]<<8) | (bytes[h+1]));
+-#else
+-          blocksize = 1 + ((bytes[h]) | (bytes[h+1]<<8));
+-#endif
++          blocksize = 1 + (static_cast<FXuint>(bytes[h]) << 8 | static_cast<FXuint>(bytes[h+1]));
+           h+=2;
+           if (minblocksize==maxblocksize && blocksize!=minblocksize) continue;
+           }
+@@ -305,11 +301,7 @@ FXbool FlacReader::sync(FXlong & offset,FXlong & sampl
+           if (samplerate!=af.rate) continue;
+           }
+         else if (sr>=13) { // read 16-bit samplerate
+-#if FOX_BIGENDIAN == 0
+-          samplerate = (bytes[h]<<8) | (bytes[h+1]);
+-#else
+-          samplerate = (bytes[h]) | (bytes[h+1]<<8);
+-#endif
++          samplerate = (static_cast<FXuint>(bytes[h]) << 8 | static_cast<FXuint>(bytes[h+1]));
+           h+=2;
+           if (sr==14) samplerate *= 10;
+           if (samplerate!=af.rate) continue;
+@@ -439,11 +431,9 @@ FXbool FlacReader::parse_blockheader(FXuchar & type,FX
+ 
+   last = header[0]&0x80;
+   type = header[0]&0x7f;
+-#if FOX_BIGENDIAN == 0
+-  size = (header[3]) | (header[2]<<8) | (header[1]<<16);
+-#else
+-  size = (header[3]<<16) | (header[2]<<8) | (header[1]);
+-#endif
++  size = (static_cast<FXuint>(header[1]<<16) |
++          static_cast<FXuint>(header[2]<<8) |
++          static_cast<FXuint>(header[3]));
+   if (type==127)
+     return false;
+   return true;

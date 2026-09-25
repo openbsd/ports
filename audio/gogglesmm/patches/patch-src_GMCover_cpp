@@ -1,0 +1,27 @@
+- Fix big endian support
+  19a326bd053b7514949dd29f21beb81184f919d4
+
+Index: src/GMCover.cpp
+--- src/GMCover.cpp.orig
++++ src/GMCover.cpp
+@@ -22,13 +22,13 @@
+ #include "GMCover.h"
+ #include "GMTag.h"
+ 
+-#if FOX_BIGENDIAN == 0
+-#define MSB_UINT(x) ((x)[3]) | ((x)[2]<<8) | ((x)[1]<<16) | ((x)[0]<<24)
+-#define MSB_SHORT(x) ((x)[0]<<8) | ((x)[1])
+-#else
+-#define MSB_UINT(data) (data[0]) | (data[1]<<8) | (data[2]<<16) | (data[3]<<24)
+-#define MSB_SHORT(data) (data[1]<<8) | (data[0])
+-#endif
++#define MSB_UINT(x) ((((FXuint)(FXuchar)(x)[0]) << 24) | \
++                     (((FXuint)(FXuchar)(x)[1]) << 16) | \
++                     (((FXuint)(FXuchar)(x)[2]) << 8) | \
++                     (((FXuint)(FXuchar)(x)[3]) ))
++
++#define MSB_SHORT(x) ((((FXuint)(FXuchar)(x)[0]) << 8) | \
++                      (((FXuint)(FXuchar)(x)[1]) ))
+ 
+ 
+ FXbool gm_meta_png(const FXuchar * data,FXival size,GMImageInfo & info) {

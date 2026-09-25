@@ -3,6 +3,7 @@ COMMENT =	music collection manager and player
 GH_ACCOUNT =	gogglesmm
 GH_PROJECT =	gogglesmm
 GH_TAGNAME =	1.2.5
+REVISION =	0
 
 CATEGORIES =	audio x11
 

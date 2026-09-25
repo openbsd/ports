@@ -1,0 +1,61 @@
+- Fix big endian support
+  19a326bd053b7514949dd29f21beb81184f919d4
+
+Index: gap/ap_input_plugin.cpp
+--- gap/ap_input_plugin.cpp.orig
++++ gap/ap_input_plugin.cpp
+@@ -56,12 +56,8 @@ InputPlugin* InputPlugin::open(IOContext * ctx,const F
+ 
+ FXbool InputPlugin::read_uint24_be(FXuint & value) {
+   FXuchar v[3];
+-  if (read(&v,3)==3) {
+-#if FOX_BIGENDIAN == 0
+-    value = (v[0]<<16) | (v[1]<<8) | v[2];
+-#else
+-    value = v[0] | (v[1]<<8) | (v[2]<<16);
+-#endif
++  if (read(v,3)==3) {
++    value = (static_cast<FXuint>(v[0]) << 16) | (static_cast<FXuint>(v[1]) << 8) | static_cast<FXuint>(v[2]);
+     return true;
+     }
+   return false;
+@@ -146,15 +142,9 @@ FXbool InputPlugin::read_int16_be(FXshort & value) {
+ 
+ 
+ FXbool InputPlugin::read_float_be(FXfloat & value) {
+-  FXuchar v[4];
+-  if (read(&v,4)==4) {
++  if (read(&value,4)==4) {
+ #if FOX_BIGENDIAN == 0
+-    reinterpret_cast<FXuchar*>(&value)[0] = v[3];
+-    reinterpret_cast<FXuchar*>(&value)[1] = v[2];
+-    reinterpret_cast<FXuchar*>(&value)[2] = v[1];
+-    reinterpret_cast<FXuchar*>(&value)[3] = v[0];
+-#else
+-    value = 0;
++    reinterpret_cast<FXuint&>(value) = swap32(reinterpret_cast<FXuint&>(value));
+ #endif
+     return true;
+     }
+@@ -163,19 +153,9 @@ FXbool InputPlugin::read_float_be(FXfloat & value) {
+ 
+ 
+ FXbool InputPlugin::read_double_be(FXdouble & value) {
+-  FXuchar v[8];
+-  if (read(&v,8)==8) {
++  if (read(&value,8)==8) {
+ #if FOX_BIGENDIAN == 0
+-    reinterpret_cast<FXuchar*>(&value)[0] = v[7];
+-    reinterpret_cast<FXuchar*>(&value)[1] = v[6];
+-    reinterpret_cast<FXuchar*>(&value)[2] = v[5];
+-    reinterpret_cast<FXuchar*>(&value)[3] = v[4];
+-    reinterpret_cast<FXuchar*>(&value)[4] = v[3];
+-    reinterpret_cast<FXuchar*>(&value)[5] = v[2];
+-    reinterpret_cast<FXuchar*>(&value)[6] = v[1];
+-    reinterpret_cast<FXuchar*>(&value)[7] = v[0];
+-#else
+-    value = 0;
++    reinterpret_cast<FXulong&>(value) = swap64(reinterpret_cast<FXulong&>(value));
+ #endif
+     return true;
+     }

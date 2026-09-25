@@ -1,0 +1,48 @@
+- Fix big endian support
+  19a326bd053b7514949dd29f21beb81184f919d4
+
+Index: gap/ap_defs.h
+--- gap/ap_defs.h.orig
++++ gap/ap_defs.h
+@@ -52,27 +52,22 @@
+ 
+ #include "fox.h"
+ 
+-#if FOX_BIGENDIAN == 0
+-#define INT32_LE(x) (((x)[3]<<24) | ((x)[2]<<16) | ((x)[1]<<8) |  ((x)[0]))
+-#define INT32_BE(x) ((((FXuint)(x)[0]) << 24) | \
+-                     (((FXuint)(x)[1]) << 16) | \
+-                     (((FXuint)(x)[2]) << 8) | \
+-                     (((FXuint)(x)[3]) ))
++#define INT32_LE(x) ((((FXuint)(FXuchar)(x)[3]) << 24) | \
++                     (((FXuint)(FXuchar)(x)[2]) << 16) | \
++                     (((FXuint)(FXuchar)(x)[1]) << 8) | \
++                     (((FXuint)(FXuchar)(x)[0]) ))
+ 
+-#define INT16_BE(x) ((((FXshort)(x)[0]) << 8) | \
+-                     (((FXshort)(x)[1]) ))
++#define INT32_BE(x) ((((FXuint)(FXuchar)(x)[0]) << 24) | \
++                     (((FXuint)(FXuchar)(x)[1]) << 16) | \
++                     (((FXuint)(FXuchar)(x)[2]) << 8) | \
++                     (((FXuint)(FXuchar)(x)[3]) ))
+ 
+-#define INT24_BE(x) ((((FXuint)(x)[0]) << 16) | \
+-                     (((FXuint)(x)[1]) << 8) | \
+-                     (((FXuint)(x)[2]) ))
+-#else
+-#define INT32_LE(x) ((((FXuint)(x)[0]) << 24) | \
+-                     (((FXuint)(x)[1]) << 16) | \
+-                     (((FXuint)(x)[2]) << 8) | \
+-                     (((FXuint)(x)[3]) ))
+-#define INT32_BE(x) (((x)[3]<<24) | ((x)[2]<<16) | ((x)[1]<<8) |  ((x)[0]))
+-#define INT16_BE(x) (((x)[1]<<8) | ((x)[0]))
+-#endif
++#define INT24_BE(x) ((((FXuint)(FXuchar)(x)[0]) << 16) | \
++                     (((FXuint)(FXuchar)(x)[1]) << 8) | \
++                     (((FXuint)(FXuchar)(x)[2]) ))
++
++#define INT16_BE(x) ((((FXuint)(FXuchar)(x)[0]) << 8) | \
++                     (((FXuint)(FXuchar)(x)[1]) ))
+ 
+ 
+ #include "ap_config.h"

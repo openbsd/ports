@@ -1,0 +1,85 @@
+- Fix big endian support
+  19a326bd053b7514949dd29f21beb81184f919d4
+
+Index: src/GMTag.cpp
+--- src/GMTag.cpp.orig
++++ src/GMTag.cpp
+@@ -93,20 +93,12 @@ struct FlacPictureBlock{
+ 
+ #if TAGLIB_VERSION < TAGVERSION(1,11,0)
+ 
+-static FXbool gm_uint32_be(const FXuchar * block,FXuint & v) {
+-#if FOX_BIGENDIAN == 0
+-  ((FXuchar*)&v)[3]=block[0];
+-  ((FXuchar*)&v)[2]=block[1];
+-  ((FXuchar*)&v)[1]=block[2];
+-  ((FXuchar*)&v)[0]=block[3];
+-#else
+-  ((FXuchar*)&v)[3]=block[3];
+-  ((FXuchar*)&v)[2]=block[2];
+-  ((FXuchar*)&v)[1]=block[1];
+-  ((FXuchar*)&v)[0]=block[0];
+-#endif
+-  return true;
+-  }
++static void gm_uint32_be(const FXuchar * block,FXuint & v) {
++  v = (static_cast<FXuint>(x[0]) << 24 |
++       static_cast<FXuint>(x[1]) << 16 |
++       static_cast<FXuint>(x[2] << 8) |
++       static_cast<FXuint>(x[3]));
++}
+ 
+ 
+ static FXbool xiph_decode_bytevector(const TagLib::ByteVector & bytevector,FXuchar *& buffer,FXint & length) {
+@@ -1324,6 +1316,13 @@ void GMFileTag::clearCovers() {
+   }
+ 
+ 
++#if FOX_BIGENDIAN == 0
++#define TO_BE32(x) swap32(x)
++#else
++#define TO_BE32(x) (x)
++#endif
++
++
+ void GMFileTag::appendCover(GMCover* cover){
+   GMImageInfo info;
+ 
+@@ -1359,29 +1358,16 @@ void GMFileTag::appendCover(GMCover* cover){
+       FXString mimetype = cover->mimeType();
+       FXint nbytes = 32 + cover->description.length() + mimetype.length() + cover->size;
+       Base64Encoder base64(nbytes);
+-#if FOX_BIGENDIAN == 0
+-      base64.encode(swap32(cover->type));
+-      base64.encode(swap32(mimetype.length()));
++      base64.encode(TO_BE32(cover->type));
++      base64.encode(TO_BE32(mimetype.length()));
+       base64.encode((const FXuchar*)mimetype.text(),mimetype.length());
+-      base64.encode(swap32(cover->description.length()));
++      base64.encode(TO_BE32(cover->description.length()));
+       base64.encode((const FXuchar*)cover->description.text(),cover->description.length());
+-      base64.encode(swap32(info.width));
+-      base64.encode(swap32(info.height));
+-      base64.encode(swap32(info.bps));
+-      base64.encode(swap32(info.colors));
+-      base64.encode(swap32(cover->size));
+-#else
+-      base64.encode(cover->type);
+-      base64.encode(mimetype.length());
+-      base64.encode((const FXuchar*)mimetype.text(),mimetype.length());
+-      base64.encode(cover->description.length());
+-      base64.encode(cover->description.text(),cover->description.length());
+-      base64.encode(info.width);
+-      base64.encode(info.height);
+-      base64.encode(info.bps);
+-      base64.encode(info.colors);
+-      base64.encode(cover->size);
+-#endif
++      base64.encode(TO_BE32(info.width));
++      base64.encode(TO_BE32(info.height));
++      base64.encode(TO_BE32(info.bps));
++      base64.encode(TO_BE32(info.colors));
++      base64.encode(TO_BE32(cover->size));
+       base64.encode(cover->data,cover->size);
+       base64.finish();
+       xiph_add_field("METADATA_BLOCK_PICTURE",base64.getOutput());
