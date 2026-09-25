@@ -1,6 +1,6 @@
 COMMENT=	header-only C++ library for asynchronous I/O programming
 
-DISTNAME=	asio-1.30.2
+DISTNAME=	asio-1.36.0
 CATEGORIES=	devel
 SITES=		${SITE_SOURCEFORGE:=asio/}
 EXTRACT_SUFX=	.tar.bz2
