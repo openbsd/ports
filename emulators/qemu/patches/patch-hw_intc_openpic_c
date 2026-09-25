@@ -1,4 +1,4 @@
-https://patchew.org/QEMU/20260827155310.7223-1-kirill@korins.ky/
+https://patchew.org/QEMU/20260923230452.3765-1-kirill@korins.ky/
 
 Index: hw/intc/openpic.c
 --- hw/intc/openpic.c.orig

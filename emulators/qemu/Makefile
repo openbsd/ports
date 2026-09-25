@@ -8,7 +8,7 @@ COMMENT-ga=	QEMU guest agent
 
 VERSION=	11.1.1
 DISTNAME=	qemu-${VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz

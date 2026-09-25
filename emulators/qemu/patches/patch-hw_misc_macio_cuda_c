@@ -1,4 +1,4 @@
-https://patchew.org/QEMU/20260827155310.7223-1-kirill@korins.ky/
+https://patchew.org/QEMU/20260923230452.3765-1-kirill@korins.ky/
 
 Index: hw/misc/macio/cuda.c
 --- hw/misc/macio/cuda.c.orig
@@ -30,7 +30,7 @@ Index: hw/misc/macio/cuda.c
  
  static const Property cuda_properties[] = {
      DEFINE_PROP_UINT64("timebase-frequency", CUDAState, tb_frequency, 0),
-+    DEFINE_PROP_UINT64("sr-delay-ns", CUDAState, sr_delay_ns,
++    DEFINE_PROP_UINT64("x-sr-delay-ns", CUDAState, sr_delay_ns,
 +                       20 * SCALE_US),
  };
  

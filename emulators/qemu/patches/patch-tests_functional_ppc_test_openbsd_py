@@ -1,4 +1,4 @@
-https://patchew.org/QEMU/20260827155310.7223-1-kirill@korins.ky/
+https://patchew.org/QEMU/20260923230452.3765-1-kirill@korins.ky/
 
 Index: tests/functional/ppc/test_openbsd.py
 --- tests/functional/ppc/test_openbsd.py.orig
@@ -33,7 +33,7 @@ Index: tests/functional/ppc/test_openbsd.py
 +                         '-m', '2g',
 +                         '-nic', 'none',
 +                         '-device', 'VGA',
-+                         '-global', 'cuda.sr-delay-ns=0',
++                         '-global', 'cuda.x-sr-delay-ns=0',
 +                         '-prom-env', 'input-device=ttya',
 +                         '-prom-env', 'output-device=ttya',
 +                         '-cdrom', cdrom_path,
