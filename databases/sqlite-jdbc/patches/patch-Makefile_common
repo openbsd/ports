@@ -1,0 +1,60 @@
+Dont download slf4j
+Add other OpenBSD archs
+Use cc over gcc
+
+Index: Makefile.common
+--- Makefile.common.orig
++++ Makefile.common
+@@ -19,7 +19,7 @@ ifeq ("$(wildcard $(OSINFO_PROG))","")
+ $(info Building OSInfo tool)
+ $(shell mkdir -p $(dir $(JAVA_CLASSPATH)))
+ ifeq ("$(wildcard $(JAVA_CLASSPATH))","")
+-$(shell curl -L -f -o$(JAVA_CLASSPATH) https://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar)
++#$(shell curl -L -f -o$(JAVA_CLASSPATH) https://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar)
+ endif
+ $(shell $(JAVAC) -cp $(JAVA_CLASSPATH) -sourcepath $(SRC) -d lib src/main/java/org/sqlite/util/OSInfo.java)
+ endif
+@@ -54,7 +54,7 @@ endif
+ 
+ # os=Default is meant to be generic unix/linux
+ 
+-known_targets := Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-Android-arm Linux-Android-aarch64 Linux-Android-x86 Linux-Android-x86_64 Linux-ppc64 Linux-riscv64 Mac-x86 Mac-x86_64 Mac-aarch64 DragonFly-x86_64 FreeBSD-x86 FreeBSD-x86_64 FreeBSD-aarch64 OpenBSD-x86_64 Windows-x86 Windows-x86_64 Windows-armv7 Windows-aarch64 SunOS-sparcv9 HPUX-ia64_32
++known_targets := Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-Android-arm Linux-Android-aarch64 Linux-Android-x86 Linux-Android-x86_64 Linux-ppc64 Linux-riscv64 Mac-x86 Mac-x86_64 Mac-aarch64 DragonFly-x86_64 FreeBSD-x86 FreeBSD-x86_64 FreeBSD-aarch64 OpenBSD-x86_64 OpenBSD_x86 OpenBSD_aarch64 OpenBSD_sparcv9 Windows-x86 Windows-x86_64 Windows-armv7 Windows-aarch64 SunOS-sparcv9 HPUX-ia64_32
+ target := $(OS_NAME)-$(OS_ARCH)
+ 
+ ifeq (,$(findstring $(strip $(target)),$(known_targets)))
+@@ -178,12 +178,33 @@ FreeBSD-aarch64_LINKFLAGS := -shared
+ FreeBSD-aarch64_LIBNAME   := libsqlitejdbc.so
+ FreeBSD-aarch64_SQLITE_FLAGS  :=
+ 
+-OpenBSD-x86_64_CC        := $(CROSS_PREFIX)gcc
++OpenBSD-x86_64_CC        := $(CROSS_PREFIX)cc
+ OpenBSD-x86_64_STRIP     := $(CROSS_PREFIX)strip
+ OpenBSD-x86_64_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -fvisibility=hidden
+ OpenBSD-x86_64_LINKFLAGS := -shared
+ OpenBSD-x86_64_LIBNAME   := libsqlitejdbc.so
+ OpenBSD-x86_64_SQLITE_FLAGS  := 
++
++OpenBSD-x86_CC        := $(CROSS_PREFIX)cc
++OpenBSD-x86_STRIP     := $(CROSS_PREFIX)strip
++OpenBSD-x86_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -fvisibility=hidden
++OpenBSD-x86_LINKFLAGS := -shared
++OpenBSD-x86_LIBNAME   := libsqlitejdbc.so
++OpenBSD-x86_SQLITE_FLAGS  := 
++
++OpenBSD-aarch64_CC        := $(CROSS_PREFIX)cc
++OpenBSD-aarch64_STRIP     := $(CROSS_PREFIX)strip
++OpenBSD-aarch64_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -fvisibility=hidden
++OpenBSD-aarch64_LINKFLAGS := -shared
++OpenBSD-aarch64_LIBNAME   := libsqlitejdbc.so
++OpenBSD-aarch64_SQLITE_FLAGS  := 
++
++OpenBSD-sparcv9_CC        := $(CROSS_PREFIX)cc
++OpenBSD-sparcv9_STRIP     := $(CROSS_PREFIX)strip
++OpenBSD-sparcv9_CCFLAGS   := -I$(JAVA_HOME)/include -Ilib/inc_linux -Os -fPIC -fvisibility=hidden
++OpenBSD-sparcv9_LINKFLAGS := -shared
++OpenBSD-sparcv9_LIBNAME   := libsqlitejdbc.so
++OpenBSD-sparcv9_SQLITE_FLAGS  := 
+ 
+ SunOS-sparcv9_CC        := $(CROSS_PREFIX)gcc
+ SunOS-sparcv9_STRIP     := $(CROSS_PREFIX)strip

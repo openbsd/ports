@@ -1,0 +1,39 @@
+Insert prototype for RegisterExtensionFunctions into sqlite3.c to fix:
+    sqlite3.c:188541:48: warning: call to undeclared function 
+    'RegisterExtensionFunctions'; ISO C99 and later do not support implicit
+    function declarations [-Wimplicit-function-declaration]
+Strip inplace
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -41,7 +41,7 @@ $(SQLITE_SRC_ARCHIVE):
+ 
+ $(SQLITE_SRC): $(SQLITE_SRC_ARCHIVE)
+ 	unzip -qo $< -d $(TARGET)/tmp-src.$(version)
+-	((cd $(SQLITE_SRC_TMP) && ./configure --update-limit && make sqlite3.c) | tee $@)
++	((cd $(SQLITE_SRC_TMP) && ./configure --update-limit && $(MAKE) sqlite3.c) | tee $@)
+ 
+ $(SQLITE_AMALGAMATION_ZIP_FROM_SRC): $(SQLITE_SRC)
+ 	mkdir -p $(SQLITE_AMALGAMATION_FROM_SRC)
+@@ -100,6 +100,8 @@ $(SQLITE_OUT)/sqlite3.o : $(SQLITE_UNPACKED)
+ # insert a code for loading extension functions
+ 	perl -p -e "s/^opendb_out:/  if(!db->mallocFailed && rc==SQLITE_OK){ rc = RegisterExtensionFunctions(db); }\nopendb_out:/;" \
+ 	    $(SQLITE_SOURCE)/sqlite3.c > $(SQLITE_OUT)/sqlite3.c.tmp
++	perl -pi -e "s/^typedef struct sqlite3 sqlite3;/typedef struct sqlite3 sqlite3;\nint RegisterExtensionFunctions(sqlite3 *);/;" \
++	    $(SQLITE_OUT)/sqlite3.c.tmp
+ # register compile option 'JDBC_EXTENSIONS'
+ # limits defined here: https://www.sqlite.org/limits.html
+ 	perl -p -e "s/^(static const char \* const sqlite3azCompileOpt.+)$$/\1\n\n\/* This has been automatically added by sqlite-jdbc *\/\n  \"JDBC_EXTENSIONS\",/;" \
+@@ -141,10 +143,7 @@ $(SQLITE_OUT)/$(LIBNAME): $(SQLITE_HEADER) $(SQLITE_OB
+ 	@mkdir -p $(@D)
+ 	$(CC) $(CCFLAGS) -I $(TARGET)/common-lib -c -o $(SQLITE_OUT)/NativeDB.o $(SRC)/org/sqlite/core/NativeDB.c
+ 	$(CC) $(CCFLAGS) -o $@ $(SQLITE_OUT)/NativeDB.o $(SQLITE_OBJ) $(LINKFLAGS)
+-# Workaround for strip Protocol error when using VirtualBox on Mac
+-	cp $@ /tmp/$(@F)
+-	$(STRIP) /tmp/$(@F)
+-	cp /tmp/$(@F) $@
++	$(STRIP) $@
+ 
+ NATIVE_DIR=src/main/resources/org/sqlite/native/$(OS_NAME)/$(OS_ARCH)
+ NATIVE_TARGET_DIR:=$(TARGET)/classes/org/sqlite/native/$(OS_NAME)/$(OS_ARCH)
