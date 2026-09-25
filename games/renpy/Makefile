@@ -22,7 +22,8 @@ EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	lang/python
 
-BUILD_DEPENDS =	lang/cython
+BUILD_DEPENDS =	lang/cython \
+		devel/py-setuptools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/py-six \
