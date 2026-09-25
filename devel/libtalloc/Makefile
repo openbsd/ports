@@ -2,7 +2,7 @@ COMMENT-main=	hierarchical memory pool system with destructors
 COMMENT-python=	Python ${MODPY_VERSION} bindings for talloc
 
 # Keep in sync with the version bundled in net/samba
-V=		2.4.4
+V=		2.5.0
 
 DISTNAME=	talloc-$V
 PKGNAME-main=	lib${DISTNAME}
@@ -10,7 +10,7 @@ PKGNAME-python=	py3-${DISTNAME}
 
 MULTI_PACKAGES=	-main -python
 
-SHARED_LIBS+=	talloc		1.3
+SHARED_LIBS+=	talloc		1.4
 SHARED_LIBS+=	${PYTALLOC_UTIL_LIBNAME}	0.0
 
 PYTALLOC_UTIL_LIBNAME =		pytalloc-util.cpython-${MODPY_MAJORMINOR}
@@ -34,6 +34,8 @@ WANTLIB-main=	# empty
 WANTLIB-python=	intl m pthread talloc util ${MODPY_WANTLIB}
 
 SITES=		https://download.samba.org/pub/talloc/
+
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
