@@ -226,6 +226,7 @@
      SUBDIR += sharedance
      SUBDIR += sqlbox
      SUBDIR += sqlcipher
+     SUBDIR += sqlite-jdbc
      SUBDIR += sqlite3
      SUBDIR += sqlite3-odbc
      SUBDIR += sqlite3-tcl
