@@ -1,0 +1,14 @@
+- Fix building on OpenBSD/sparc64
+
+Index: eval_defs.h
+--- eval_defs.h.orig
++++ eval_defs.h
+@@ -5,7 +5,7 @@
+ #if defined(__sgi) || defined(__hpux)
+ #include <alloca.h>
+ #endif
+-#ifdef sparc
++#if defined(__sparc) && defined(__sun) && defined(__SVR4)
+ #include <malloc.h>
+ #endif
+ #include "fitsio2.h"
