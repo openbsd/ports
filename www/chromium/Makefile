@@ -12,8 +12,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			153.0.8010.52
-REVISION=		0
+V=			154.0.8037.57
 
 DISTNAME=		chromium-${V}
 
@@ -21,15 +20,26 @@ DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
 DISTFILES.a=		${REGRESS_DISTFILES.a} \
 			${PROFILE_DISTFILES.a} \
-			${CHROMIUM_DISTFILES.a}
+			${CHROMIUM_DISTFILES.a} \
+			${VENDOR_DISTFILES.a}
+DISTFILES.b=		${CHROMIUM_DISTFILES.b}
 
 #CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
-CHROMIUM_DISTFILES.a+=	chromium-${V}-linux${EXTRACT_SUFX}
+CHROMIUM_DISTFILES.b=	chromium-${V}-linux${EXTRACT_SUFX}
 #REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 PROFILE_DISTFILES.a=	chromium-${V}-profdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz
 
+TS_VERSION=		7.0.2
+
 DIST_TUPLE+=		github rollup rollup v4.60.4 rollup
+DIST_TUPLE+=		github microsoft TypeScript v${TS_VERSION} typescript
+
+# ftp https://github.com/microsoft/TypeScript/archive/refs/tags/v${TS_VERSION}.tar.gz
+# tar xzf v${V}.tar.gz
+# cd TypeScript-${TS_VERSION}/tsc && go mod tidy && go mod vendor
+# cd ../../ && tar czf TypeScript-${TS_VERSION}-vendor.tar.gz TypeScript-${TS_VERSION}-vendor/tsc/vendor
+VENDOR_DISTFILES.a=	TypeScript-${TS_VERSION}-vendor.tar.gz
 
 EXTRACT_ONLY=		${ALL_DISTFILES:N*test*}
 
@@ -213,6 +223,7 @@ GN_ARGS+=	enable_rust=true \
 
 # go
 MAKE_ENV+=	GOCACHE=${WRKDIST}/go-cache
+PORTHOME=	${WRKDIR}
 
 PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib(aom.*cpudetect.*|vpx.*cpudetect.*)"
 
@@ -305,6 +316,8 @@ post-patch:
 		${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+	patch -d ${WRKSRC}/typescript/tsc/internal/bundled/libs -Ep2 < \
+		${WRKSRC}/third_party/typescript/linux-amd64/3pp/patches/typescript_native_preview.patch
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
@@ -338,6 +351,10 @@ do-configure:
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
 do-build:
+	cd ${WRKSRC}/typescript/tsc && \
+		${SETENV} ${MAKE_ENV} go build -v -p ${MAKE_JOBS} -mod=vendor ./cmd/tsgo && \
+		ln -sf ${WRKSRC}/typescript/tsc/tsgo \
+		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc 
 	@${MODCARGO_BUILD_TARGET}
 	(cd ${WRKSRC}/third_party/devtools-frontend/src/node_modules/@rollup && \
 		mkdir -p rollup-openbsd && \

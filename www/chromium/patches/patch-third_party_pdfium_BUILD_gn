@@ -1,0 +1,12 @@
+Index: third_party/pdfium/BUILD.gn
+--- third_party/pdfium/BUILD.gn.orig
++++ third_party/pdfium/BUILD.gn
+@@ -172,7 +172,7 @@ config("pdfium_core_config") {
+     "//build/config/compiler:noshadowing",
+   ]
+   defines = []
+-  if (is_clang) {
++  if (is_clang && !is_bsd) {
+     cflags += [
+       "-Wcovered-switch-default",
+       "-Wlifetime-safety-permissive",

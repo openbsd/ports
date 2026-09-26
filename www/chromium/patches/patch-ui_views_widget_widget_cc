@@ -1,7 +1,7 @@
 Index: ui/views/widget/widget.cc
 --- ui/views/widget/widget.cc.orig
 +++ ui/views/widget/widget.cc
-@@ -75,7 +75,7 @@
+@@ -76,7 +76,7 @@
  #include "ui/views/window/dialog_delegate.h"
  #include "ui/wm/core/window_properties.h"
  
@@ -10,7 +10,7 @@ Index: ui/views/widget/widget.cc
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -2819,7 +2819,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
+@@ -2841,7 +2841,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
      return parent_->GetNativeTheme();
    }
  

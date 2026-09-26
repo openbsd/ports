@@ -1,7 +1,7 @@
 Index: extensions/common/features/feature.cc
 --- extensions/common/features/feature.cc.orig
 +++ extensions/common/features/feature.cc
-@@ -30,6 +30,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
+@@ -32,6 +32,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return WIN_PLATFORM;
  #elif BUILDFLAG(ENABLE_DESKTOP_ANDROID_EXTENSIONS)
    return DESKTOP_ANDROID_PLATFORM;

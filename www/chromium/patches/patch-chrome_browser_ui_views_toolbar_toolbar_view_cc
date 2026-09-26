@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/toolbar/toolbar_view.cc
 --- chrome/browser/ui/views/toolbar/toolbar_view.cc.orig
 +++ chrome/browser/ui/views/toolbar/toolbar_view.cc
-@@ -399,7 +399,7 @@ void ToolbarView::Init() {
+@@ -412,7 +412,7 @@ void ToolbarView::Init() {
    }
  
    std::unique_ptr<MediaToolbarButtonView> media_button;

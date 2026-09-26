@@ -16,4 +16,4 @@ Index: remoting/host/base/switches.h
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Used to record client sessions to wtmpd.
  extern const char kEnableWtmpdb[];
- #endif
+ 

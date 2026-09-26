@@ -52,13 +52,13 @@ Index: v8/src/base/platform/platform-posix.cc
  
  namespace {
  #if DEBUG
-@@ -1486,21 +1494,20 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackStart(
+@@ -1485,19 +1493,13 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackStart(
+   return stack_start;
  #endif  // V8_OS_ZOS
  }
- 
 +#endif  // !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) &&
 +        // !defined(_AIX) && !defined(V8_OS_SOLARIS)
-+
+ 
  // static
  Stack::StackSlot Stack::ObtainCurrentThreadStackReservedLimit() {
  #if V8_OS_ZOS
@@ -72,6 +72,11 @@ Index: v8/src/base/platform/platform-posix.cc
 -  }
 -  return stack.ss_sp;
  #else
+ // For most libcs, pthread_getattr_np() returns the the stack reserved
+ // limit on the main thread, but musl only returns the current high-water
+@@ -1508,7 +1510,11 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackReserv
+   if (syscall(__NR_gettid) == getpid()) return nullptr;
+ #endif
    pthread_attr_t attr;
 +#if V8_OS_BSD
 +  int error = pthread_attr_init(&attr);
@@ -81,7 +86,7 @@ Index: v8/src/base/platform/platform-posix.cc
    if (error) {
      DCHECK(MainThreadIsCurrentThread());
      return nullptr;
-@@ -1513,10 +1520,6 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackReserv
+@@ -1521,10 +1527,6 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackReserv
    return base;
  #endif  // V8_OS_ZOS
  }

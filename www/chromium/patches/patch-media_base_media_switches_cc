@@ -10,7 +10,7 @@ Index: media/base/media_switches.cc
  #include "base/cpu.h"
  #include "components/system_media_controls/linux/buildflags/buildflags.h"
  #endif
-@@ -643,7 +643,7 @@ BASE_FEATURE(kH264IDRKeyframeRequiresParameterSets,
+@@ -640,7 +640,7 @@ BASE_FEATURE(kH264IDRKeyframeRequiresParameterSets,
  BASE_FEATURE(kHardwareMediaKeyHandling,
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
               base::FEATURE_ENABLED_BY_DEFAULT
@@ -19,7 +19,7 @@ Index: media/base/media_switches.cc
  #if BUILDFLAG(USE_MPRIS)
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1127,7 +1127,7 @@ BASE_FEATURE(kFileDialogsTuckPictureInPicture,
+@@ -1124,7 +1124,7 @@ BASE_FEATURE(kFileDialogsTuckPictureInPicture,
  
  // If enabled, users can request Media Remoting without fullscreen-in-tab.
  BASE_FEATURE(kMediaRemotingWithoutFullscreen,
@@ -28,7 +28,7 @@ Index: media/base/media_switches.cc
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1444,7 +1444,7 @@ BASE_FEATURE(kShowForceRespectUiGainsToggle, base::FEA
+@@ -1453,7 +1453,7 @@ BASE_FEATURE(kShowForceRespectUiGainsToggle, base::FEA
  
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -37,7 +37,7 @@ Index: media/base/media_switches.cc
  // Reduces the number of buffers needed in the output video frame pool to
  // populate the Renderer pipeline for hardware accelerated VideoDecoder in
  // non-low latency scenarios.
-@@ -1471,7 +1471,7 @@ BASE_FEATURE(kFuchsiaMediacodecVideoEncoder, base::FEA
+@@ -1480,7 +1480,7 @@ BASE_FEATURE(kFuchsiaMediacodecVideoEncoder, base::FEA
  
  #endif  // BUILDFLAG(IS_FUCHSIA)
  
@@ -46,7 +46,7 @@ Index: media/base/media_switches.cc
  // Enable vaapi/v4l2 video decoding on linux. This is already enabled by default
  // on chromeos, but needs an experiment on linux.
  BASE_FEATURE(kAcceleratedVideoDecodeLinux,
-@@ -1502,6 +1502,27 @@ BASE_FEATURE(kPulseaudioLoopbackForScreenShare,
+@@ -1511,6 +1511,27 @@ BASE_FEATURE(kPulseaudioLoopbackForScreenShare,
  // implementations.
  BASE_FEATURE(kVaapiIgnoreDriverChecks, base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -74,7 +74,7 @@ Index: media/base/media_switches.cc
  #endif  // BUILDFLAG(IS_LINUX)
  
  #if BUILDFLAG(IS_MAC)
-@@ -1939,7 +1960,7 @@ bool IsSystemLoopbackCaptureSupported() {
+@@ -1948,7 +1969,7 @@ bool IsSystemLoopbackCaptureSupported() {
  #elif BUILDFLAG(IS_MAC)
    return (IsMacSckSystemLoopbackCaptureSupported() ||
            IsMacCatapSystemLoopbackCaptureSupported());

@@ -19,7 +19,7 @@ Index: chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_de
  void CollaborationControllerDelegateDesktop::
      MaybeShowSignInUiForHistorySyncOptin() {
    collaboration::ServiceStatus status = GetServiceStatus();
-@@ -519,7 +519,7 @@ void CollaborationControllerDelegateDesktop::
+@@ -520,7 +520,7 @@ void CollaborationControllerDelegateDesktop::
    }
  
    AccountInfo account_for_promo =
@@ -28,7 +28,7 @@ Index: chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_de
        signin_ui_util::GetSingleAccountForPromos(
            IdentityManagerFactory::GetForProfile(browser_->GetProfile()),
            AccountPreviewDataServiceFactory::GetForProfile(
-@@ -556,7 +556,7 @@ void CollaborationControllerDelegateDesktop::
+@@ -557,7 +557,7 @@ void CollaborationControllerDelegateDesktop::
                .SetLabel(dialog_text.ok_button_text)
                .SetEnabled(true));
  
@@ -37,7 +37,7 @@ Index: chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_de
    if (syncer::IsReplaceSyncPromosWithSignInPromosEnabled()) {
      dialog_builder.SetFootnote(ui::DialogModelLabel(dialog_text.footnote));
  
-@@ -605,7 +605,7 @@ void CollaborationControllerDelegateDesktop::OnPromptD
+@@ -606,7 +606,7 @@ void CollaborationControllerDelegateDesktop::OnPromptD
          .Run(CollaborationControllerDelegate::Outcome::kSuccess);
    }
  

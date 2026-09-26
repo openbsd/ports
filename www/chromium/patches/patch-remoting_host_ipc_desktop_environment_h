@@ -1,7 +1,7 @@
 Index: remoting/host/ipc_desktop_environment.h
 --- remoting/host/ipc_desktop_environment.h.orig
 +++ remoting/host/ipc_desktop_environment.h
-@@ -184,7 +184,7 @@ class IpcDesktopEnvironmentFactory : public DesktopEnv
+@@ -175,7 +175,7 @@ class IpcDesktopEnvironmentFactory : public DesktopEnv
                                          ErrorCode error_code,
                                          const std::string& error_details,
                                          const SourceLocation& error_location);

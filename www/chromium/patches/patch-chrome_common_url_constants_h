@@ -1,7 +1,7 @@
 Index: chrome/common/url_constants.h
 --- chrome/common/url_constants.h.orig
 +++ chrome/common/url_constants.h
-@@ -707,7 +707,7 @@ inline constexpr char kProcessIsolationLearnMoreUrl[] 
+@@ -721,7 +721,7 @@ inline constexpr char kProcessIsolationLearnMoreUrl[] 
      "https://support.google.com/chrome?p=process_isolation";
  #endif
  

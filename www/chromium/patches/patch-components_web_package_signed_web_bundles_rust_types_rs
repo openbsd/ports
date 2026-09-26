@@ -1,0 +1,63 @@
+revert:
+
+commit b2c9d9c61c9fefca5f64e702b330686e44eefb78
+Author: Zgroza Klimek <zgroza@chromium.org>
+Date:   Mon Aug 24 07:31:33 2026 -0700
+
+commit e85da0b2f2dc794473fe83c53cbee97311cf9fe1
+Author: Zgroza Klimek <zgroza@chromium.org>
+Date:   Mon Aug 24 07:17:59 2026 -0700
+
+Index: components/web_package/signed_web_bundles/rust/types.rs
+--- components/web_package/signed_web_bundles/rust/types.rs.orig
++++ components/web_package/signed_web_bundles/rust/types.rs
+@@ -1,49 +0,0 @@
+-// Copyright 2026 The Chromium Authors
+-// Use of this source code is governed by a BSD-style license that can be
+-// found in the LICENSE file.
+-
+-use alloc::string::String;
+-use alloc::vec::Vec;
+-
+-#[repr(C)]
+-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+-pub enum SignatureType {
+-    Ed25519 = 0,
+-    EcdsaP256SHA256 = 1,
+-    Unknown = 2,
+-}
+-
+-#[repr(C)]
+-#[derive(Debug, PartialEq, Clone)]
+-pub struct SignatureStackEntry<'a> {
+-    pub attributes_cbor: Vec<u8>,
+-    pub signature_type: SignatureType,
+-    pub public_key: &'a [u8],
+-    pub signature: &'a [u8],
+-}
+-
+-#[repr(C)]
+-#[derive(Debug, PartialEq, Clone)]
+-pub struct IntegrityBlock<'a> {
+-    pub size: usize,
+-    pub web_bundle_id: &'a str,
+-    pub attributes_cbor: Vec<u8>,
+-    pub signature_stack: Vec<SignatureStackEntry<'a>>,
+-}
+-
+-#[repr(C)]
+-#[derive(Debug, PartialEq, Eq, Clone)]
+-pub struct ParseError {
+-    pub is_version_error: bool,
+-    pub message: String,
+-}
+-
+-impl ParseError {
+-    pub(crate) fn format(message: impl Into<String>) -> Self {
+-        Self { is_version_error: false, message: message.into() }
+-    }
+-
+-    pub(crate) fn version(message: impl Into<String>) -> Self {
+-        Self { is_version_error: true, message: message.into() }
+-    }
+-}
