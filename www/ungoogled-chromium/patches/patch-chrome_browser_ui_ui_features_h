@@ -10,7 +10,7 @@ Index: chrome/browser/ui/ui_features.h
  BASE_DECLARE_FEATURE(kDseIntegrity);
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  BASE_DECLARE_FEATURE(kLegacySearchIntegrityCheck);
-@@ -85,7 +85,7 @@ BASE_DECLARE_FEATURE_PARAM(int,
+@@ -87,7 +87,7 @@ BASE_DECLARE_FEATURE_PARAM(int,
  BASE_DECLARE_FEATURE_PARAM(int, kSeparateDefaultAndPinPromptMessageVersion);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  

@@ -1,7 +1,7 @@
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -628,7 +628,7 @@
+@@ -635,7 +635,7 @@
  #include "third_party/cros_system_api/switches/chrome_switches.h"
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -10,7 +10,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "components/crash/core/app/crash_switches.h"
  #include "components/crash/core/app/crashpad.h"
  #endif
-@@ -641,7 +641,7 @@
+@@ -648,7 +648,7 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -46,7 +46,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // If a user requests Read Aloud audio playbaback through the "Listen to this
    // page" entry point in the context menu, page distillation and TTS engine
    // readiness may take longer than the user gesture timeout. Thus, we allow
-@@ -1601,7 +1601,7 @@ void ChromeContentBrowserClient::RegisterLocalStatePre
+@@ -1579,7 +1579,7 @@ void ChromeContentBrowserClient::RegisterLocalStatePre
    registry->RegisterBooleanPref(prefs::kDataURLWhitespacePreservationEnabled,
                                  true);
    registry->RegisterBooleanPref(prefs::kEnableUnsafeSwiftShader, false);
@@ -55,25 +55,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    registry->RegisterBooleanPref(prefs::kOutOfProcessSystemDnsResolutionEnabled,
                                  true);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_ANDROID)
-@@ -1820,7 +1820,7 @@ ChromeContentBrowserClient::GetStoragePartitionConfigF
- 
- #if BUILDFLAG(ENABLE_EXTENSIONS)
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   if (content::SiteIsolationPolicy::ShouldUrlUseApplicationIsolationLevel(
-           browser_context, site)) {
-     CHECK(IsIsolatedWebAppUrl(site));
-@@ -2769,7 +2769,7 @@ bool ChromeContentBrowserClient::ShouldUrlUseApplicati
-     const GURL& url) {
- #if BUILDFLAG(ENABLE_EXTENSIONS)
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- 
-   if (!content::AreIsolatedWebAppsEnabled(browser_context)) {
-     return false;
-@@ -2892,7 +2892,9 @@ void MaybeAppendBlinkSettingsSwitchForFieldTrial(
+@@ -2874,7 +2874,9 @@ void MaybeAppendBlinkSettingsSwitchForFieldTrial(
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
      base::CommandLine* command_line,
      int child_process_id) {
@@ -83,7 +65,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #if BUILDFLAG(IS_MAC)
    std::unique_ptr<metrics::ClientInfo> client_info =
        GoogleUpdateSettings::LoadMetricsClientInfo();
-@@ -2901,7 +2903,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2883,7 +2885,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
                                      client_info->client_id);
    }
  #elif BUILDFLAG(IS_POSIX)
@@ -92,7 +74,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    pid_t pid;
    if (crash_reporter::GetHandlerSocket(nullptr, &pid)) {
      command_line->AppendSwitchASCII(
-@@ -3261,7 +3263,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -3243,7 +3245,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      }
    }
  
@@ -101,7 +83,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // Opt into a hardened stack canary mitigation if it hasn't already been
    // force-disabled.
    if (!browser_command_line.HasSwitch(switches::kChangeStackGuardOnFork)) {
-@@ -4111,7 +4113,7 @@ GetPreferredColorScheme(const WebPreferences& web_pref
+@@ -4052,7 +4054,7 @@ GetPreferredColorScheme(const WebPreferences& web_pref
  
  std::optional<SkColor> GetRootScrollbarThemeColor(WebContents* web_contents) {
    bool root_scrollbar_follows_browser_theme = false;
@@ -110,7 +92,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    root_scrollbar_follows_browser_theme = base::FeatureList::IsEnabled(
        blink::features::kRootScrollbarFollowsBrowserTheme);
  #endif
-@@ -4914,7 +4916,7 @@ void ChromeContentBrowserClient::OverrideWebPreference
+@@ -4855,7 +4857,7 @@ void ChromeContentBrowserClient::OverrideWebPreference
    web_prefs->touch_drag_drop_enabled =
        base::FeatureList::IsEnabled(features::kTouchDragAndDrop);
  
@@ -119,7 +101,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    web_prefs->touch_dragend_context_menu =
        base::FeatureList::IsEnabled(features::kTouchDragAndDrop);
  #endif
-@@ -5154,7 +5156,7 @@ void ChromeContentBrowserClient::GetAdditionalAllowedS
+@@ -5095,7 +5097,7 @@ void ChromeContentBrowserClient::GetAdditionalAllowedS
    additional_allowed_schemes->push_back(content::kChromeUIScheme);
    additional_allowed_schemes->push_back(content::kChromeUIUntrustedScheme);
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -128,7 +110,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    additional_allowed_schemes->push_back(webapps::kIsolatedAppScheme);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -5208,7 +5210,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -5149,7 +5151,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -137,7 +119,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -6142,7 +6144,7 @@ ChromeContentBrowserClient::CreateNonNetworkNavigation
+@@ -6111,7 +6113,7 @@ ChromeContentBrowserClient::CreateNonNetworkNavigation
    }
  #endif  // BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -146,7 +128,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    if (scheme == webapps::kIsolatedAppScheme) {
      if (content::AreIsolatedWebAppsEnabled(browser_context) &&
          !browser_context->ShutdownStarted()) {
-@@ -6214,7 +6216,7 @@ void ChromeContentBrowserClient::
+@@ -6183,7 +6185,7 @@ void ChromeContentBrowserClient::
    DCHECK(factories);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -155,7 +137,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    if (content::AreIsolatedWebAppsEnabled(browser_context) &&
        !browser_context->ShutdownStarted()) {
      std::optional<url::Origin> app_origin;
-@@ -6260,7 +6262,7 @@ void ChromeContentBrowserClient::
+@@ -6229,7 +6231,7 @@ void ChromeContentBrowserClient::
    DCHECK(factories);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -164,7 +146,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    if (content::AreIsolatedWebAppsEnabled(browser_context) &&
        !browser_context->ShutdownStarted()) {
      factories->emplace(webapps::kIsolatedAppScheme,
-@@ -6533,7 +6535,7 @@ void ChromeContentBrowserClient::
+@@ -6508,7 +6510,7 @@ void ChromeContentBrowserClient::
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -173,7 +155,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    {
      auto* rph = content::RenderProcessHost::FromID(render_process_id);
      content::BrowserContext* browser_context = rph->GetBrowserContext();
-@@ -6645,7 +6647,7 @@ void ChromeContentBrowserClient::WillCreateURLLoaderFa
+@@ -6627,7 +6629,7 @@ void ChromeContentBrowserClient::WillCreateURLLoaderFa
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -182,7 +164,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // Install the HTTP Header Injection proxying factory.
    enterprise_custom_headers::HttpHeaderInjectionProxyingURLLoaderFactory::
        MaybeProxyRequest(browser_context, factory_builder);
-@@ -6691,7 +6693,7 @@ void ChromeContentBrowserClient::WillCreateURLLoaderFa
+@@ -6673,7 +6675,7 @@ void ChromeContentBrowserClient::WillCreateURLLoaderFa
                          factory_builder, is_for_network_service);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -191,7 +173,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // WARNING: This must be the last wrapper in the chain for
    // TrustedURLLoaderHeaderClient. This ensures that our client is the outermost
    // wrapper of `header_client`, allowing us to apply enterprise headers AFTER
-@@ -6798,7 +6800,7 @@ ChromeContentBrowserClient::GetWebSocketOptions(
+@@ -6780,7 +6782,7 @@ ChromeContentBrowserClient::GetWebSocketOptions(
    options.options = network::mojom::kWebSocketOptionNone;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -200,7 +182,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    if (frame) {
      enterprise_custom_headers::MaybeCreateWebSocketHeaderClient(
          frame->GetBrowserContext(), &options.header_client);
-@@ -7218,7 +7220,7 @@ bool ChromeContentBrowserClient::HandleExternalProtoco
+@@ -7189,7 +7191,7 @@ bool ChromeContentBrowserClient::HandleExternalProtoco
    CHECK(content::BrowserThread::CurrentlyOn(content::BrowserThread::UI));
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -209,7 +191,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // Handle the google-chrome:// scheme (and chromium://).
    // If the scheme is present, we strip it and navigate to the inner URL.
    // This avoids launching a new browser instance via the OS handler.
-@@ -7370,7 +7372,7 @@ bool ChromeContentBrowserClient::HandleWebUI(
+@@ -7335,7 +7337,7 @@ bool ChromeContentBrowserClient::HandleWebUI(
    }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -218,7 +200,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  
    // Rewrite chrome://settings/addresses to chrome://settings/contactInfo.
    if (url->SchemeIs(content::kChromeUIScheme) &&
-@@ -7646,7 +7648,7 @@ bool ChromeContentBrowserClient::ShouldSandboxNetworkS
+@@ -7610,7 +7612,7 @@ bool ChromeContentBrowserClient::ShouldSandboxNetworkS
  bool ChromeContentBrowserClient::ShouldRunOutOfProcessSystemDnsResolution() {
  // This enterprise policy is supported on Android, but the feature will not be
  // launched there.
@@ -227,7 +209,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // This is possibly called before `g_browser_process` is initialized.
    PrefService* local_state;
    if (g_browser_process) {
-@@ -8077,7 +8079,7 @@ void ChromeContentBrowserClient::
+@@ -8023,7 +8025,7 @@ void ChromeContentBrowserClient::
      GrantAdditionalRequestPrivilegesToWorkerProcess(int child_id,
                                                      const GURL& script_url) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -236,7 +218,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    // IWA Service Workers need to be explicitly granted access to their origin
    // because isolated-app: isn't a web-safe scheme that can be accessed by
    // default.
-@@ -8604,7 +8606,7 @@ ChromeContentBrowserClient::GetAlternativeErrorPageOve
+@@ -8550,7 +8552,7 @@ ChromeContentBrowserClient::GetAlternativeErrorPageOve
    }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

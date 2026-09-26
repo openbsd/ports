@@ -9,7 +9,7 @@ Index: third_party/vulkan-loader/src/loader/vk_loader_platform.h
  #endif
  
  #include <assert.h>
-@@ -360,7 +361,23 @@ static inline char *loader_platform_executable_path(ch
+@@ -361,7 +362,23 @@ static inline char *loader_platform_executable_path(ch
  
      return buffer;
  }

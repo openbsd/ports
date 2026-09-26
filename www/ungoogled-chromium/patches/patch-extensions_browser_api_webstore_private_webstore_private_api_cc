@@ -1,7 +1,7 @@
 Index: extensions/browser/api/webstore_private/webstore_private_api.cc
 --- extensions/browser/api/webstore_private/webstore_private_api.cc.orig
 +++ extensions/browser/api/webstore_private/webstore_private_api.cc
-@@ -1149,7 +1149,7 @@ void WebstorePrivateBeginInstallWithManifest3Function:
+@@ -1190,7 +1190,7 @@ void WebstorePrivateBeginInstallWithManifest3Function:
  #if BUILDFLAG(IS_CHROMEOS)
        RequestExtensionApproval(contents);
        return;

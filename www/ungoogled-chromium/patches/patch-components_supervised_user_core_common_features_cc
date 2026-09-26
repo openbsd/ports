@@ -10,9 +10,9 @@ Index: components/supervised_user/core/common/features.cc
  const int kLocalWebApprovalBottomSheetLoadTimeoutDefaultValueMs = 5000;
  
  const base::FeatureParam<int> kLocalWebApprovalBottomSheetLoadTimeoutMs{
-@@ -68,7 +68,7 @@ bool IsLocalWebApprovalsEnabledForSubframes() {
-   return base::FeatureList::IsEnabled(kAllowSubframeLocalWebApprovals);
- }
+@@ -74,7 +74,7 @@ BASE_FEATURE(kSupervisedUserVerificationPageOnAndroid,
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)

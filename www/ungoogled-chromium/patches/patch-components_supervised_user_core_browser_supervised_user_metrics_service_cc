@@ -1,7 +1,7 @@
 Index: components/supervised_user/core/browser/supervised_user_metrics_service.cc
 --- components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig
 +++ components/supervised_user/core/browser/supervised_user_metrics_service.cc
-@@ -100,7 +100,7 @@ SupervisedUserMetricsService::SupervisedUserMetricsSer
+@@ -119,7 +119,7 @@ SupervisedUserMetricsService::SupervisedUserMetricsSer
    DCHECK(pref_service_);
    url_filtering_service_observation_.Observe(&url_filtering_service);
  

@@ -13,21 +13,33 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			153.0.8010.52
+V=			154.0.8037.57
 UGV=			${V}-1
-REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
-			${REGRESS_DISTFILES}
+			${REGRESS_DISTFILES} \
+			${CHROMIUM_DISTFILES.a} \
+			${VENDOR_DISTFILES.a}
+DISTFILES.b=		${CHROMIUM_DISTFILES.b}
+
 DISTFILES.a+=		${CHROMIUM_DISTFILES.a}
 
 #CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
 CHROMIUM_DISTFILES.a+=	chromium-${V}-linux${EXTRACT_SUFX}
 #REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 
+TS_VERSION=		7.0.2
+
 DIST_TUPLE=		github ungoogled-software ungoogled-chromium ${UGV} .
+DIST_TUPLE+=		github microsoft TypeScript v${TS_VERSION} typescript
+
+# ftp https://github.com/microsoft/TypeScript/archive/refs/tags/v${TS_VERSION}.tar.gz
+# tar xzf v${V}.tar.gz
+# cd TypeScript-${TS_VERSION}/tsc && go mod tidy && go mod vendor
+# cd ../../ && tar czf TypeScript-${TS_VERSION}-vendor.tar.gz TypeScript-${TS_VERSION}-vendor/tsc/vendor
+VENDOR_DISTFILES.a=	TypeScript-${TS_VERSION}-vendor.tar.gz
 
 EXTRACT_ONLY=		${ALL_DISTFILES:N*testdata*}
 
@@ -85,6 +97,8 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gpatch \
 		devel/gperf \
 		devel/bison \
+		devel/esbuild \
+		devel/esbuild:patch \
 		devel/rust-bindgen \
 		lang/go \
 		lang/rust,-rustfmt \
@@ -200,6 +214,7 @@ GN_ARGS+=	enable_rust=true \
 
 # go
 MAKE_ENV+=	GOCACHE=${WRKDIST}/go-cache
+PORTHOME=	${WRKDIR}
 
 PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib(aom.*cpudetect.*|vpx.*cpudetect.*)"
 
@@ -279,6 +294,8 @@ GN_ARGS+=	chrome_pgo_phase=0 \
 		use_unofficial_version_number=false
 
 pre-patch:
+	perl -pi -e "s#'third_party/typescript/linux-amd64/',##g" \
+		${WRKDIR}/ungoogled-chromium-${UGV}/utils/prune_binaries.py	
 	cd ${WRKDIR}/ungoogled-chromium-${UGV} && \
 		utils/prune_binaries.py ${WRKSRC} pruning.list
 	cd ${WRKDIR}/ungoogled-chromium-${UGV} && \
@@ -302,6 +319,7 @@ post-patch:
 		${WRKSRC}/third_party/gperf/cipd/bin
 	@ln -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	@ln -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+	@ln -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 	@ln -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/third_party/gperf/cipd/bin/gperf
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
 		${WRKSRC}/build/linux/strip_binary.gni \
@@ -310,12 +328,21 @@ post-patch:
 		${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+	patch -d ${WRKSRC}/typescript/tsc/internal/bundled/libs -Ep2 < \
+		${WRKSRC}/third_party/typescript/linux-amd64/3pp/patches/typescript_native_preview.patch
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
+	(cd ${WRKDIR}/devel/esbuild/github.com/evanw/esbuild@*/ && \
+		${LOCALBASE}/bin/node scripts/esbuild.js \
+		/usr/local/bin/esbuild --neutral && \
+		rm -rf ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild && \
+		ln -sf ${WRKDIR}/devel/esbuild/github.com/evanw/esbuild@*/npm/esbuild \
+		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
+	)
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	# @cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	cd ${WRKSRC}/media/ffmpeg && \
@@ -333,6 +360,10 @@ do-configure:
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
 do-build:
+	cd ${WRKSRC}/typescript/tsc && \
+		${SETENV} ${MAKE_ENV} go build -v -p ${MAKE_JOBS} -mod=vendor ./cmd/tsgo && \
+		ln -sf ${WRKSRC}/typescript/tsc/tsgo \
+		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 

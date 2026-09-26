@@ -1,7 +1,7 @@
 Index: gpu/command_buffer/client/test_shared_image_interface.h
 --- gpu/command_buffer/client/test_shared_image_interface.h.orig
 +++ gpu/command_buffer/client/test_shared_image_interface.h
-@@ -136,7 +136,7 @@ class TestSharedImageInterface : public SharedImageInt
+@@ -138,7 +138,7 @@ class TestSharedImageInterface : public SharedImageInt
        bool premapped,
        const ClientSharedImage::AsyncMapInvokedCallback& callback);
  

@@ -1,7 +1,7 @@
 Index: tools/json_schema_compiler/feature_compiler.py
 --- tools/json_schema_compiler/feature_compiler.py.orig
 +++ tools/json_schema_compiler/feature_compiler.py
-@@ -239,6 +239,8 @@ FEATURE_GRAMMAR = {
+@@ -250,6 +250,8 @@ FEATURE_GRAMMAR = {
          'linux': 'Feature::LINUX_PLATFORM',
          'mac': 'Feature::MACOSX_PLATFORM',
          'win': 'Feature::WIN_PLATFORM',

@@ -1,7 +1,7 @@
 Index: chrome/test/supervised_user/google_auth_state_waiter_mixin.cc
 --- chrome/test/supervised_user/google_auth_state_waiter_mixin.cc.orig
 +++ chrome/test/supervised_user/google_auth_state_waiter_mixin.cc
-@@ -24,7 +24,7 @@ GoogleAuthStateWaiterMixin::GoogleAuthStateWaiterMixin
+@@ -23,7 +23,7 @@ GoogleAuthStateWaiterMixin::GoogleAuthStateWaiterMixin
  GoogleAuthStateWaiterMixin::~GoogleAuthStateWaiterMixin() = default;
  
  void GoogleAuthStateWaiterMixin::SetUpOnMainThread() {

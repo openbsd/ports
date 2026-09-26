@@ -19,7 +19,7 @@ Index: content/browser/network_service_instance_impl.cc
  // Runs a self-owned SystemDnsResolverMojoImpl. This is meant to run on a
  // high-priority thread pool.
  void RunSystemDnsResolverOnThreadPool(
-@@ -431,7 +431,7 @@ network::mojom::NetworkServiceParamsPtr CreateNetworkS
+@@ -429,7 +429,7 @@ network::mojom::NetworkServiceParamsPtr CreateNetworkS
    }
  #endif  // BUILDFLAG(IS_POSIX)
  

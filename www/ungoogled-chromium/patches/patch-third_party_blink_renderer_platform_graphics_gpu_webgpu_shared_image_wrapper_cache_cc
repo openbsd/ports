@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_wrapper_cache.cc
 --- third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_wrapper_cache.cc.orig
 +++ third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_wrapper_cache.cc
-@@ -397,7 +397,7 @@ WebGpuSharedImageWrapperCache::LeaseWebGpuSharedImageW
+@@ -398,7 +398,7 @@ WebGpuSharedImageWrapperCache::LeaseWebGpuSharedImageW
        return nullptr;
      }
  

@@ -19,7 +19,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
  #include "chrome/browser/ui/shortcuts/desktop_shortcuts_utils.h"
  #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  
-@@ -504,7 +504,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -505,7 +505,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  #endif
    }
  
@@ -28,7 +28,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    auto* linux_ui = ui::LinuxUi::instance();
-@@ -867,7 +867,7 @@ void BrowserCommandController::HandleCommandWithDispos
+@@ -871,7 +871,7 @@ void BrowserCommandController::HandleCommandWithDispos
        break;
  #endif
  
@@ -37,7 +37,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
      case IDC_MINIMIZE_WINDOW:
        browser_->GetWindow()->Minimize();
        break;
-@@ -880,7 +880,7 @@ void BrowserCommandController::HandleCommandWithDispos
+@@ -884,7 +884,7 @@ void BrowserCommandController::HandleCommandWithDispos
  
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  
@@ -46,7 +46,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
      case IDC_USE_SYSTEM_TITLE_BAR: {
        PrefService* prefs = profile()->GetPrefs();
        prefs->SetBoolean(prefs::kUseCustomChromeFrame,
-@@ -1128,7 +1128,7 @@ void BrowserCommandController::HandleCommandWithDispos
+@@ -1130,7 +1130,7 @@ void BrowserCommandController::HandleCommandWithDispos
        break;
      case IDC_CREATE_SHORTCUT:
        base::RecordAction(base::UserMetricsAction("CreateShortcut"));
@@ -55,7 +55,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
        chrome::CreateDesktopShortcutForActiveWebContents(browser_);
  #else
        web_app::CreateWebAppFromCurrentWebContents(
-@@ -1343,7 +1343,7 @@ void BrowserCommandController::HandleCommandWithDispos
+@@ -1345,7 +1345,7 @@ void BrowserCommandController::HandleCommandWithDispos
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
      case IDC_CHROME_WHATS_NEW:
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING) && \
@@ -64,7 +64,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
        ShowChromeWhatsNew(browser_);
        break;
  #else
-@@ -1771,13 +1771,13 @@ void BrowserCommandController::InitCommandState() {
+@@ -1777,13 +1777,13 @@ void BrowserCommandController::InitCommandState() {
    command_updater_->UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_4, true);
    command_updater_->UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_5, true);
  #endif
@@ -80,7 +80,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
    bool use_system_title_bar = true;
  #if BUILDFLAG(IS_OZONE)
    use_system_title_bar = ui::OzonePlatform::GetInstance()
-@@ -2191,7 +2191,7 @@ void BrowserCommandController::UpdateCommandsForTabSta
+@@ -2199,7 +2199,7 @@ void BrowserCommandController::UpdateCommandsForTabSta
    bool can_create_web_app = web_app::CanCreateWebApp(browser_);
    command_updater_->UpdateCommandEnabled(IDC_INSTALL_PWA, can_create_web_app);
  

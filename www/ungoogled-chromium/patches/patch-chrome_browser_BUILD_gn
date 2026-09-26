@@ -1,7 +1,7 @@
 Index: chrome/browser/BUILD.gn
 --- chrome/browser/BUILD.gn.orig
 +++ chrome/browser/BUILD.gn
-@@ -1961,8 +1961,13 @@ source_set("core") {
+@@ -1979,8 +1979,13 @@ source_set("core") {
  
    if (is_chrome_for_testing) {
      deps += [ "//chrome/browser/chrome_for_testing:browser" ]
@@ -15,7 +15,7 @@ Index: chrome/browser/BUILD.gn
    if (safe_browsing_mode == 1) {
      deps += [ "//chrome/browser/ui/webui/reset_password" ]
    }
-@@ -3752,10 +3757,6 @@ source_set("browser") {
+@@ -3242,10 +3247,6 @@ source_set("browser") {
        # ... get modularized.
        "//chrome/browser/ui/extensions:impl",
      ]

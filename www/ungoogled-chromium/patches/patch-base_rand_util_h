@@ -5,8 +5,8 @@ Index: base/rand_util.h
    return r[base::RandGenerator(r.size())];
  }
  
--#if BUILDFLAG(IS_POSIX)
-+#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE)
++#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_BSD)
  BASE_EXPORT int GetUrandomFD();
  #endif
  
