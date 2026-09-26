@@ -1,6 +1,7 @@
 COMMENT=	mailing list manager
 
 V=		2.2.0
+REVISION=	0
 
 DISTNAME=	mlmmj-${V}
 
@@ -18,13 +19,11 @@ WANTLIB += c iconv
 
 SITES=		https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_${V:S/./_/g}/
 
-BUILD_DEPENDS=	devel/kyua-cli \
+BUILD_DEPENDS=	devel/kyua \
 		devel/atf
 
 LIB_DEPENDS=	converters/libiconv
 
-# XXX some test failures due to old kyua; update pending
-# 293/304 passed (11 failed)
 TEST_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE=gnu
