@@ -1,4 +1,4 @@
-SHA256 (crush-v0.95.0.zip) = IizHELj+95cYFxl3/Ah/9zSQMeCgIPjw/YyPpxeCCjA=
+SHA256 (crush-v0.96.1.zip) = ecbK8Qw9+c/vK4pbhjN6OaSjndRjLCmL6Ib4H50gk1k=
 SHA256 (go_modules/cel.dev/expr/@v/v0.24.0.mod) = wMexfwVuWHervPsGdEz1I4y5oLChoI4ThM8mhaIhFNE=
 SHA256 (go_modules/cel.dev/expr/@v/v0.25.2.mod) = Z0UnUNV+zK4mM7F05mRotyYy7edErdtN4sCybd04qOE=
 SHA256 (go_modules/cel.dev/expr/@v/v0.25.3.mod) = Z0UnUNV+zK4mM7F05mRotyYy7edErdtN4sCybd04qOE=
@@ -262,8 +262,8 @@ SHA256 (go_modules/github.com/charmbracelet/x/editor/@v/v0.2.0.zip) = R0PCgDv8Ci
 SHA256 (go_modules/github.com/charmbracelet/x/etag/@v/v0.2.0.mod) = Iz4YV/ll4kubhl76NbvAuqe9wkAeoRUxpJ656No4TiI=
 SHA256 (go_modules/github.com/charmbracelet/x/etag/@v/v0.2.0.zip) = XA51uyZgQCyr6YdmOBtRZNlpEMk5ySUXKfHseVAXPIY=
 SHA256 (go_modules/github.com/charmbracelet/x/exp/charmtone/@v/v0.0.0-20250603201427-c31516f43444.mod) = 9FKGgeUaG4abAAfEJZM9yI0G7QJOycqltyBQXJ/jBCk=
-SHA256 (go_modules/github.com/charmbracelet/x/exp/charmtone/@v/v0.0.0-20260527151214-009e6338d40d.mod) = mud6AvGtjnoO01Iw/u1ShI9wqCVm1ja5ldFvcnK0/p4=
-SHA256 (go_modules/github.com/charmbracelet/x/exp/charmtone/@v/v0.0.0-20260527151214-009e6338d40d.zip) = UCsyv63yywcr0SDRJ2Shm1M2zA7UU63K/13JciYg2x8=
+SHA256 (go_modules/github.com/charmbracelet/x/exp/charmtone/@v/v0.0.0-20260602025833-85a30b5e440a.mod) = mud6AvGtjnoO01Iw/u1ShI9wqCVm1ja5ldFvcnK0/p4=
+SHA256 (go_modules/github.com/charmbracelet/x/exp/charmtone/@v/v0.0.0-20260602025833-85a30b5e440a.zip) = GxbxWWn/IpZ8xVv9opJoCgTp9lUqZC6F0wb4tQYjrb8=
 SHA256 (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20241212170349-ad4b7ae0f25f.mod) = qOQi7fNKC26E5mkaeXSSaknqW54R3uh7Auc32goAc0s=
 SHA256 (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20250806222409-83e3a29d542f.mod) = G5O7ToP7cdWGmo3H9l73FikbKK9UB9aTCcbPlayXiAU=
 SHA256 (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20250806222409-83e3a29d542f.zip) = aGNrbN7A5PwLvgtQxO/FLILy4XXRGKkDNjGr3ZWUtSc=
@@ -1272,7 +1272,7 @@ SHA256 (go_modules/mvdan.cc/sh/x/@v/v0.0.0-20260907232430-b5028a3332a4.mod) = bv
 SHA256 (go_modules/mvdan.cc/sh/x/@v/v0.0.0-20260907232430-b5028a3332a4.zip) = ihOUHozHP5hCTNIWJospN3T+SncrIUvrYra2L1LqlnU=
 SHA256 (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.mod) = VLlRy6/uldG7KTMZ+Tv09LQC1u1/6WsX67Gt9e3n6N8=
 SHA256 (go_modules/pack.ag/tftp/@v/v1.0.1-0.20181129014014-07909dfbde3c.zip) = EKKXbL6XnK6qqLJeM2X4BPxgi5er2IJEjs3r83uGeE0=
-SIZE (crush-v0.95.0.zip) = 2889019
+SIZE (crush-v0.96.1.zip) = 2932953
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.25.2.mod) = 96
 SIZE (go_modules/cel.dev/expr/@v/v0.25.3.mod) = 96
@@ -1536,8 +1536,8 @@ SIZE (go_modules/github.com/charmbracelet/x/editor/@v/v0.2.0.zip) = 3694
 SIZE (go_modules/github.com/charmbracelet/x/etag/@v/v0.2.0.mod) = 50
 SIZE (go_modules/github.com/charmbracelet/x/etag/@v/v0.2.0.zip) = 3197
 SIZE (go_modules/github.com/charmbracelet/x/exp/charmtone/@v/v0.0.0-20250603201427-c31516f43444.mod) = 110
-SIZE (go_modules/github.com/charmbracelet/x/exp/charmtone/@v/v0.0.0-20260527151214-009e6338d40d.mod) = 59
-SIZE (go_modules/github.com/charmbracelet/x/exp/charmtone/@v/v0.0.0-20260527151214-009e6338d40d.zip) = 5982
+SIZE (go_modules/github.com/charmbracelet/x/exp/charmtone/@v/v0.0.0-20260602025833-85a30b5e440a.mod) = 59
+SIZE (go_modules/github.com/charmbracelet/x/exp/charmtone/@v/v0.0.0-20260602025833-85a30b5e440a.zip) = 6626
 SIZE (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20241212170349-ad4b7ae0f25f.mod) = 103
 SIZE (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20250806222409-83e3a29d542f.mod) = 105
 SIZE (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20250806222409-83e3a29d542f.zip) = 5037
