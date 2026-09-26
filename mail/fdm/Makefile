@@ -2,6 +2,7 @@ COMMENT=	fetch, filter and deliver mail
 
 V=		2.2
 DISTNAME=	fdm-$V
+REVISION=	0
 CATEGORIES=	mail
 
 MAINTAINER=	Nicholas Marriott <nicm@openbsd.org>

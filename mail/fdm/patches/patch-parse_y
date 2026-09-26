@@ -1,0 +1,12 @@
+Index: parse.y
+--- parse.y.orig
++++ parse.y
+@@ -981,7 +981,7 @@ localgid: replstrv
+ 	  {
+ 		  struct group	*gr;
+ 
+-		  if ($1 > GID_MAX)
++		  if ($1 >= UINT_MAX)
+ 			  yyerror("invalid gid: %llu", $1);
+ 		  gr = getgrgid($1);
+ 		  if (gr == NULL)

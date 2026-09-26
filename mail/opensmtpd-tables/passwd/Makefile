@@ -1,6 +1,7 @@
 COMMENT =	passwd(5) table for OpenSMTPD
 TABLE =		passwd
 V =		1.0.2
+REVISION =	0
 
 WANTLIB += c
 

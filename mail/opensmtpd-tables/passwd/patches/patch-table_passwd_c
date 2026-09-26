@@ -1,0 +1,20 @@
+Index: table_passwd.c
+--- table_passwd.c.orig
++++ table_passwd.c
+@@ -54,14 +54,14 @@ parse_passwd_entry(int service, struct passwd *pw, cha
+ 	/* uid */
+ 	if (!(p = strsep(&buf, ":")))
+ 		return 0;
+-	pw->pw_uid = strtonum(p, 0, UID_MAX, &e);
++	pw->pw_uid = strtonum(p, 0, UINT_MAX - 1, &e);
+ 	if (service == K_USERINFO && (!strlen(p) || e))
+ 		return 0;
+ 
+ 	/* gid */
+ 	if (!(p = strsep(&buf, ":")))
+ 		return 0;
+-	pw->pw_gid = strtonum(p, 0, GID_MAX, &e);
++	pw->pw_gid = strtonum(p, 0, UINT_MAX - 1, &e);
+ 	if (service == K_USERINFO && (!strlen(p) || e))
+ 		return 0;
+ 

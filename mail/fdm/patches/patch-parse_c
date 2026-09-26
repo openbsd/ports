@@ -1,0 +1,12 @@
+Index: parse.c
+--- parse.c.orig
++++ parse.c
+@@ -2810,7 +2810,7 @@ case 110:
+ {
+ 		  struct group	*gr;
+ 
+-		  if (yyvsp[0].number > GID_MAX)
++		  if (yyvsp[0].number >= UINT_MAX)
+ 			  yyerror("invalid gid: %llu", yyvsp[0].number);
+ 		  gr = getgrgid(yyvsp[0].number);
+ 		  if (gr == NULL)

@@ -1,0 +1,12 @@
+Index: lookup-passwd.c
+--- lookup-passwd.c.orig
++++ lookup-passwd.c
+@@ -33,7 +33,7 @@ passwd_lookup(const char *user)
+ 
+ 	if ((pw = getpwnam(user)) == NULL) {
+ 		endpwent();
+-		uid = strtonum(user, 0, UID_MAX, &errstr);
++		uid = strtonum(user, 0, UINT_MAX - 1, &errstr);
+ 		if (errstr != NULL)
+ 			return (NULL);
+ 		if ((pw = getpwuid(uid)) == NULL) {

@@ -1,0 +1,18 @@
+Index: compat.h
+--- compat.h.orig
++++ compat.h
+@@ -1,14 +1,6 @@
+ #include "config.h"
+ 
+ #include <stddef.h>
+-#include <limits.h>
+-
+-#ifndef UID_MAX
+-#define UID_MAX UINT_MAX
+-#endif
+-#ifndef GID_MAX
+-#define GID_MAX UINT_MAX
+-#endif
+ 
+ #ifndef __dead
+ #define __dead __attribute__((noreturn))

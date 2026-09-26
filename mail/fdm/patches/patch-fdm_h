@@ -1,0 +1,17 @@
+Index: fdm.h
+--- fdm.h.orig
++++ fdm.h
+@@ -73,13 +73,6 @@
+ extern char	*__progname;
+ 
+ /* Various compatibility stuff. */
+-#ifndef UID_MAX
+-#define UID_MAX UINT_MAX
+-#endif
+-#ifndef GID_MAX
+-#define GID_MAX UINT_MAX
+-#endif
+-
+ #ifndef INFTIM
+ #define INFTIM -1
+ #endif
