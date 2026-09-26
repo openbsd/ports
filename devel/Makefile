@@ -271,8 +271,6 @@
      SUBDIR += knfmt
      SUBDIR += kproperty
      SUBDIR += kreport
-     SUBDIR += kyua-cli
-     SUBDIR += kyua-testers
      SUBDIR += lager
      SUBDIR += legit
      SUBDIR += leiningen
