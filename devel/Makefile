@@ -271,6 +271,7 @@
      SUBDIR += knfmt
      SUBDIR += kproperty
      SUBDIR += kreport
+     SUBDIR += kyua
      SUBDIR += lager
      SUBDIR += legit
      SUBDIR += leiningen
