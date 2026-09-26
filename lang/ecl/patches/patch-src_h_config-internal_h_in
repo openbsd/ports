@@ -3,7 +3,7 @@ Define FILE_CNT() macro on OpenBSD (FILE is opaque)
 Index: src/h/config-internal.h.in
 --- src/h/config-internal.h.in.orig
 +++ src/h/config-internal.h.in
-@@ -178,6 +178,9 @@
+@@ -175,6 +175,9 @@
  #endif
  
  #undef FILE_CNT
@@ -11,5 +11,5 @@ Index: src/h/config-internal.h.in
 +#  define FILE_CNT(fp)  (__freadahead((fp)))
 +#endif
  #if @ECL_FILE_CNT@ == 1
- #  define FILE_CNT(fp)  ((fp)->_IO_read_end - (fp)->_IO_read_ptr)
- #endif
+ #  include <stdio_ext.h>
+ #  define FILE_CNT(fp)  (__freadahead((fp)))

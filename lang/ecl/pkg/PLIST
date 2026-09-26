@@ -23,6 +23,7 @@ include/ecl/impl/math_fenv.h
 include/ecl/impl/math_fenv_msvc.h
 include/ecl/internal.h
 include/ecl/legacy.h
+include/ecl/nucleus.h
 include/ecl/number.h
 include/ecl/object.h
 include/ecl/page.h
@@ -32,7 +33,9 @@ include/ecl/threads.h
 lib/ecl/
 lib/ecl/COPYING
 lib/ecl/LICENSE
+lib/ecl/TAGS
 @bin lib/ecl/asdf.fas
+lib/ecl/build-stamp
 lib/ecl/cmp.asd
 @bin lib/ecl/cmp.fas
 lib/ecl/deflate.asd

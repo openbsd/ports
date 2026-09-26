@@ -1,7 +1,7 @@
 Index: src/compile.lsp.in
 --- src/compile.lsp.in.orig
 +++ src/compile.lsp.in
-@@ -91,21 +91,21 @@
+@@ -118,21 +118,21 @@
  (setf c::*ld-libs* "@LIBPREFIX@ecl.@LIBEXT@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@")
  #+(and :wants-dlopen (not nonstop))
  (setf c::*ld-libs*
@@ -30,7 +30,7 @@ Index: src/compile.lsp.in
  
  ;;;
  ;;; * Avoid name clashes with user supplied code.
-@@ -199,7 +199,7 @@
+@@ -226,7 +226,7 @@
  (si::pathname-translations "SYS" '(("**;*.*.*" "@ecldir\@/**/*.*")))
  
  #+WANTS-CMP

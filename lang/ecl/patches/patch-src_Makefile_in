@@ -1,13 +1,10 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -201,29 +201,13 @@ install:
- 	  $(INSTALL_DATA) ecl/$$i $(DESTDIR)$(includedir)/ecl/$$i; \
- 	done
- 	$(INSTALL_SCRIPT) bin/ecl-config $(DESTDIR)$(bindir)
--	for i in build-stamp help.doc TAGS ; do \
--	  $(INSTALL_DATA) $$i $(DESTDIR)$(ecldir); \
--	done
+@@ -207,26 +207,12 @@ install:
+ 	if [ -f target-info.lsp ]; then \
+ 	  $(INSTALL_DATA) target-info.lsp $(DESTDIR)$(ecldir); \
+ 	fi
 -	for i in $(LSP_LIBRARIES) $(LIBRARIES); do \
 -	  if test -s $$i ; then \
 -	   if echo $$i | grep dll; then \
@@ -23,7 +20,6 @@ Index: src/Makefile.in
 -	    $(LN_S) @SONAME3@ @SONAME1@ && \
 -	    $(LN_S) @SONAME3@ @SONAME@ ) \
 -	fi
-+	$(INSTALL_DATA) help.doc $(DESTDIR)$(ecldir)
 +	${INSTALL_LIBRARY} libecl.so $(DESTDIR)$(libdir)/$(LSP_LIBRARIES)
  	$(INSTALL_PROGRAM) c/$(DPP) $(DESTDIR)$(ecldir)
  	$(INSTALL_PROGRAM) $(ECL_MIN) $(DESTDIR)$(ecldir)

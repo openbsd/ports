@@ -1,11 +1,9 @@
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
 
-V =		24.5.10
+V =		26.5.5
 DISTNAME =	ecl-$V
-SHARED_LIBS +=	ecl	9.0
-
-REVISION =	2
+SHARED_LIBS +=	ecl	10.0
 
 HOMEPAGE =	https://common-lisp.net/project/ecl/
 MAINTAINER =	Timo Myyra <timo.myyra@bittivirhe.fi>
