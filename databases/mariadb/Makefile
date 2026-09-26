@@ -7,7 +7,7 @@ COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 VERSION=	12.3.3
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
-REVISION=	1
+REVISION=	2
 EPOCH=		1
 
 CATEGORIES=	databases
@@ -39,13 +39,7 @@ MULTI_PACKAGES=	-main -server -tests
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # C++11, atomic ops
-.if ${MACHINE_ARCH} == "mips64"
-# "error: out of range PC16 fixup"
-# https://github.com/llvm/llvm-project/issues/112010 
-COMPILER=	ports-gcc
-.else
 COMPILER=	base-clang ports-gcc
-.endif
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
 SOCKET_DIR=	/var/run/mysql
