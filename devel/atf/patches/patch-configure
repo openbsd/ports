@@ -1,7 +1,8 @@
 Don't clutter build logs.
---- configure.orig	Sat Nov 16 21:03:37 2013
-+++ configure	Fri Jan 24 15:53:12 2014
-@@ -16178,7 +16178,6 @@ fi
+Index: configure
+--- configure.orig
++++ configure
+@@ -21035,7 +21035,6 @@ fi
                       -Wcast-qual \
                       -Wextra \
                       -Wpointer-arith \
@@ -9,3 +10,12 @@ Don't clutter build logs.
                       -Wreturn-type \
                       -Wshadow \
                       -Wsign-compare \
+@@ -22139,7 +22138,7 @@ fi
+ if test -z "${ATF_TARGET_OS}"; then
+     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: Checking target OS" >&5
+ printf '%s\n' "$as_me: Checking target OS" >&6;}
+-    ATF_TARGET_OS="$(uname -o)"
++    ATF_TARGET_OS="$(uname -s)"
+ fi
+ 
+  if test "${ATF_TARGET_OS}" = "FreeBSD"; then

@@ -4,15 +4,12 @@ include/atf-c++/
 include/atf-c++.hpp
 include/atf-c++/build.hpp
 include/atf-c++/check.hpp
-include/atf-c++/config.hpp
 include/atf-c++/macros.hpp
-include/atf-c++/noncopyable.hpp
 include/atf-c++/tests.hpp
 include/atf-c++/utils.hpp
 include/atf-c.h
 include/atf-c/build.h
 include/atf-c/check.h
-include/atf-c/config.h
 include/atf-c/defs.h
 include/atf-c/error.h
 include/atf-c/error_fwd.h
@@ -20,10 +17,10 @@ include/atf-c/macros.h
 include/atf-c/tc.h
 include/atf-c/tp.h
 include/atf-c/utils.h
-lib/libatf-c++.a
+@static-lib lib/libatf-c++.a
 lib/libatf-c++.la
 @lib lib/libatf-c++.so.${LIBatf-c++_VERSION}
-lib/libatf-c.a
+@static-lib lib/libatf-c.a
 lib/libatf-c.la
 @lib lib/libatf-c.so.${LIBatf-c_VERSION}
 lib/pkgconfig/atf-c++.pc
@@ -33,10 +30,11 @@ lib/pkgconfig/atf-sh.pc
 @man man/man1/atf-check.1
 @man man/man1/atf-sh.1
 @man man/man1/atf-test-program.1
-@man man/man3/atf-c++-api.3
-@man man/man3/atf-c-api.3
-@man man/man3/atf-sh-api.3
-@man man/man4/atf-test-case.4
+@man man/man3/atf-c++.3
+@man man/man3/atf-c.3
+@man man/man3/atf-sh.3
+@man man/man7/atf-test-case.7
+@man man/man7/atf.7
 share/aclocal/
 share/aclocal/atf-c++.m4
 share/aclocal/atf-c.m4
@@ -48,46 +46,36 @@ share/doc/atf/
 share/doc/atf/AUTHORS
 share/doc/atf/COPYING
 share/doc/atf/NEWS
-share/doc/atf/README
+share/doc/atf/README.md
 tests/
 tests/atf/
 tests/atf/Kyuafile
 tests/atf/atf-c/
 tests/atf/atf-c++/
-tests/atf/atf-c++/Atffile
 tests/atf/atf-c++/Kyuafile
 @bin tests/atf/atf-c++/atf_c++_test
 @bin tests/atf/atf-c++/build_test
 @bin tests/atf/atf-c++/check_test
-@bin tests/atf/atf-c++/config_test
 tests/atf/atf-c++/detail/
-tests/atf/atf-c++/detail/Atffile
 tests/atf/atf-c++/detail/Kyuafile
 @bin tests/atf/atf-c++/detail/application_test
-@bin tests/atf/atf-c++/detail/auto_array_test
 @bin tests/atf/atf-c++/detail/env_test
 @bin tests/atf/atf-c++/detail/exceptions_test
-@bin tests/atf/atf-c++/detail/expand_test
 @bin tests/atf/atf-c++/detail/fs_test
-@bin tests/atf/atf-c++/detail/parser_test
 @bin tests/atf/atf-c++/detail/process_test
-@bin tests/atf/atf-c++/detail/sanity_test
 @bin tests/atf/atf-c++/detail/text_test
-@bin tests/atf/atf-c++/detail/ui_test
+@bin tests/atf/atf-c++/detail/version_helper
 tests/atf/atf-c++/macros_hpp_test.cpp
 @bin tests/atf/atf-c++/macros_test
 tests/atf/atf-c++/pkg_config_test
 @bin tests/atf/atf-c++/tests_test
 tests/atf/atf-c++/unused_test.cpp
 @bin tests/atf/atf-c++/utils_test
-tests/atf/atf-c/Atffile
 tests/atf/atf-c/Kyuafile
 @bin tests/atf/atf-c/atf_c_test
 @bin tests/atf/atf-c/build_test
 @bin tests/atf/atf-c/check_test
-@bin tests/atf/atf-c/config_test
 tests/atf/atf-c/detail/
-tests/atf/atf-c/detail/Atffile
 tests/atf/atf-c/detail/Kyuafile
 @bin tests/atf/atf-c/detail/dynstr_test
 @bin tests/atf/atf-c/detail/env_test
@@ -99,6 +87,7 @@ tests/atf/atf-c/detail/Kyuafile
 @bin tests/atf/atf-c/detail/sanity_test
 @bin tests/atf/atf-c/detail/text_test
 @bin tests/atf/atf-c/detail/user_test
+@bin tests/atf/atf-c/detail/version_helper
 @bin tests/atf/atf-c/error_test
 tests/atf/atf-c/macros_h_test.c
 @bin tests/atf/atf-c/macros_test
@@ -108,7 +97,6 @@ tests/atf/atf-c/pkg_config_test
 tests/atf/atf-c/unused_test.c
 @bin tests/atf/atf-c/utils_test
 tests/atf/atf-sh/
-tests/atf/atf-sh/Atffile
 tests/atf/atf-sh/Kyuafile
 tests/atf/atf-sh/atf-check_test
 tests/atf/atf-sh/atf_check_test
@@ -119,7 +107,6 @@ tests/atf/atf-sh/normalize_test
 tests/atf/atf-sh/tc_test
 tests/atf/atf-sh/tp_test
 tests/atf/test-programs/
-tests/atf/test-programs/Atffile
 tests/atf/test-programs/Kyuafile
 @bin tests/atf/test-programs/c_helpers
 tests/atf/test-programs/config_test
