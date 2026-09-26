@@ -19,8 +19,6 @@ include/repro/CommandServerThread.hxx
 include/repro/ConfigStore.hxx
 include/repro/FilterStore.hxx
 include/repro/ForkControlMessage.hxx
-include/repro/HttpBase.hxx
-include/repro/HttpConnection.hxx
 include/repro/MySqlDb.hxx
 include/repro/OutboundTarget.hxx
 include/repro/PersistentMessageQueue.hxx
@@ -39,10 +37,8 @@ include/repro/RegSyncServerThread.hxx
 include/repro/Registrar.hxx
 include/repro/ReproAuthenticatorFactory.hxx
 include/repro/ReproRADIUSServerAuthManager.hxx
-include/repro/ReproRunner.hxx
 include/repro/ReproServerAuthManager.hxx
 include/repro/ReproTlsPeerAuthManager.hxx
-include/repro/ReproVersion.hxx
 include/repro/RequestContext.hxx
 include/repro/ResponseContext.hxx
 include/repro/RouteStore.hxx
@@ -57,8 +53,6 @@ include/repro/TlsPeerIdentityStore.hxx
 include/repro/UserAuthGrabber.hxx
 include/repro/UserInfoMessage.hxx
 include/repro/UserStore.hxx
-include/repro/WebAdmin.hxx
-include/repro/WebAdminThread.hxx
 include/repro/XmlRpcConnection.hxx
 include/repro/XmlRpcServerBase.hxx
 include/repro/monkeys/

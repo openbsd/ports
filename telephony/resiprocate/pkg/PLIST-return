@@ -49,6 +49,7 @@ lib/resiprocate/reTurnServer/
 lib/resiprocate/reTurnServer/psql-user-extract
 @man man/man8/reTurnServer.8
 @bin sbin/reTurnServer
+share/doc/resiprocate/reTurn/
 share/examples/resiprocate/
 share/examples/resiprocate/reTurn/
 @sample ${SYSCONFDIR}/reTurn/

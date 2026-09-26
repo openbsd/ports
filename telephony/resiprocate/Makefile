@@ -2,7 +2,7 @@ COMMENT-main =		reSIProcate SIP stack
 COMMENT-repro =		reSIProcate SIP proxy/registrar server
 COMMENT-return =	reSIProcate STUN/TURN client and server
 
-V =			1.13.2
+V =			1.14.0
 GH_ACCOUNT =		resiprocate
 GH_PROJECT =		resiprocate
 GH_TAGNAME =		resiprocate-${V}
@@ -11,12 +11,13 @@ PKGNAME-main =		resiprocate-${V}
 PKGNAME-repro =		resiprocate-repro-${V}
 PKGNAME-return =	resiprocate-return-${V}
 
-SHARED_LIBS +=	dum		0.0
-SHARED_LIBS +=	reTurnClient	0.0
-SHARED_LIBS +=	reTurnCommon	0.0
-SHARED_LIBS +=	reprolib	0.0
-SHARED_LIBS +=	resip		0.0
-SHARED_LIBS +=	rutil		0.0
+SHARED_LIBS +=	dum		1.0
+SHARED_LIBS +=	reTurnClient	1.0
+SHARED_LIBS +=	reTurnCommon	1.0
+SHARED_LIBS +=	reprolib	1.0
+SHARED_LIBS +=	resip		1.0
+SHARED_LIBS +=	resipmedia	0.0
+SHARED_LIBS +=	rutil		1.0
 
 CATEGORIES =		telephony
 
@@ -57,6 +58,9 @@ CONFIGURE_ARGS =	-DUSE_MAXMIND_GEOIP=FALSE \
 			-DBERKELEYDB_INCLUDE_DIR=${LOCALBASE}/include/db4 \
 			-DENABLE_LOG_REPOSITORY_DETAILS=OFF \
 			-DVERSIONED_SONAME=OFF
+
+# XXX errors building media/sdpcontainer/test/testSdpHelper.cxx
+CONFIGURE_ARGS +=	-DBUILD_TESTING=FALSE
 
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 CXXFLAGS =		-I${LOCALBASE}/include

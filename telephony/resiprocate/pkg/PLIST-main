@@ -1,5 +1,15 @@
 @bin bin/sipdialer
+include/media/
+include/media/RTPPortManager.hxx
+include/media/sdpcontainer/
+include/media/sdpcontainer/Sdp.hxx
+include/media/sdpcontainer/SdpCandidate.hxx
+include/media/sdpcontainer/SdpCandidatePair.hxx
+include/media/sdpcontainer/SdpCodec.hxx
+include/media/sdpcontainer/SdpHelper.hxx
+include/media/sdpcontainer/SdpMediaLine.hxx
 include/resip/
+include/resip/config.h
 include/resip/dum/
 include/resip/dum/AppDialog.hxx
 include/resip/dum/AppDialogSet.hxx
@@ -167,6 +177,7 @@ include/resip/stack/HeaderHash.hxx
 include/resip/stack/HeaderTypes.hxx
 include/resip/stack/Headers.hxx
 include/resip/stack/Helper.hxx
+include/resip/stack/IdentityCategory.hxx
 include/resip/stack/IntegerCategory.hxx
 include/resip/stack/IntegerParameter.hxx
 include/resip/stack/InternalTransport.hxx
@@ -202,7 +213,6 @@ include/resip/stack/ParserCategories.hxx
 include/resip/stack/ParserCategory.hxx
 include/resip/stack/ParserContainer.hxx
 include/resip/stack/ParserContainerBase.hxx
-include/resip/stack/Pidf.hxx
 include/resip/stack/Pkcs7Contents.hxx
 include/resip/stack/Pkcs8Contents.hxx
 include/resip/stack/PlainContents.hxx
@@ -271,6 +281,7 @@ include/resip/stack/UnknownHeaderType.hxx
 include/resip/stack/UnknownParameter.hxx
 include/resip/stack/UnknownParameterType.hxx
 include/resip/stack/Uri.hxx
+include/resip/stack/UriParameter.hxx
 include/resip/stack/ValueFifo.hxx
 include/resip/stack/Via.hxx
 include/resip/stack/WarningCategory.hxx
@@ -412,6 +423,7 @@ include/sipdial/DialerConfiguration.hxx
 include/sipdial/MyInviteSessionHandler.hxx
 @lib lib/libdum.so.${LIBdum_VERSION}
 @lib lib/libresip.so.${LIBresip_VERSION}
+@lib lib/libresipmedia.so.${LIBresipmedia_VERSION}
 @lib lib/librutil.so.${LIBrutil_VERSION}
 @so lib/libsipdial.so
 lib/resiprocate/

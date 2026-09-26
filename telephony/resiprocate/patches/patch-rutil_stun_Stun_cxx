@@ -1,21 +1,21 @@
 Index: rutil/stun/Stun.cxx
 --- rutil/stun/Stun.cxx.orig
 +++ rutil/stun/Stun.cxx
-@@ -905,6 +905,9 @@ stunRand()
- {
-    // return 32 bits of random stuff
-    resip_assert(sizeof(int) == 4);
-+#if defined(__OpenBSD__)
-+   return arc4random();
-+#else
-    static bool init = false;
-    if (!init)
+@@ -909,6 +909,9 @@ namespace resip
     {
-@@ -960,6 +963,7 @@ stunRand()
-    return ret;
+       // return 32 bits of random stuff
+       resip_assert(sizeof(int) == 4);
++#if defined(__OpenBSD__)
++      return arc4random();
++#else
+       static bool init = false;
+       if (!init)
+       {
+@@ -964,6 +967,7 @@ namespace resip
+       return ret;
  #else
-    return random();
+       return random();
 +#endif
  #endif
- }
+    }
  
