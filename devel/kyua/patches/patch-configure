@@ -1,0 +1,21 @@
+Don't clutter build logs.
+Index: configure
+--- configure.orig
++++ configure
+@@ -6289,7 +6289,6 @@ fi
+                      -Wcast-qual \
+                      -Wextra \
+                      -Wpointer-arith \
+-                     -Wredundant-decls \
+                      -Wreturn-type \
+                      -Wshadow \
+                      -Wsign-compare \
+@@ -21020,7 +21019,7 @@ fi
+ 
+ 
+ 
+- if test "$(uname -o)" = "FreeBSD"; then
++ if test "$(uname -s)" = "FreeBSD"; then
+   FreeBSD_TRUE=
+   FreeBSD_FALSE='#'
+ else

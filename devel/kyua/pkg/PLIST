@@ -1,0 +1,38 @@
+@conflict kyua-cli-*
+@conflict kyua-testers-*
+@pkgpath devel/kyua-cli
+@pkgpath devel/kyua-testers
+@bin bin/kyua
+@man man/man1/kyua-about.1
+@man man/man1/kyua-config.1
+@man man/man1/kyua-db-exec.1
+@man man/man1/kyua-db-migrate.1
+@man man/man1/kyua-debug.1
+@man man/man1/kyua-help.1
+@man man/man1/kyua-list.1
+@man man/man1/kyua-report-html.1
+@man man/man1/kyua-report-junit.1
+@man man/man1/kyua-report.1
+@man man/man1/kyua-test.1
+@man man/man1/kyua.1
+@man man/man5/kyua.conf.5
+@man man/man5/kyuafile.5
+share/doc/kyua/
+share/doc/kyua/AUTHORS
+share/doc/kyua/CONTRIBUTING.md
+share/doc/kyua/CONTRIBUTORS
+share/doc/kyua/LICENSE
+share/doc/kyua/NEWS
+share/kyua/
+share/kyua/examples/
+share/kyua/examples/Kyuafile.top
+share/kyua/examples/kyua.conf
+share/kyua/misc/
+share/kyua/misc/context.html
+share/kyua/misc/index.html
+share/kyua/misc/report.css
+share/kyua/misc/test_result.html
+share/kyua/store/
+share/kyua/store/migrate_v1_v2.sql
+share/kyua/store/migrate_v2_v3.sql
+share/kyua/store/schema_v3.sql
