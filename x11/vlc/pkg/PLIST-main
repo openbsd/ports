@@ -157,7 +157,6 @@ lib/vlc/lua/playlist/soundcloud.luac
 lib/vlc/lua/playlist/twitch.luac
 lib/vlc/lua/playlist/vimeo.luac
 lib/vlc/lua/playlist/vocaroo.luac
-lib/vlc/lua/playlist/youtube.luac
 lib/vlc/lua/sd/
 lib/vlc/lua/sd/icecast.luac
 lib/vlc/lua/sd/jamendo.luac
@@ -180,7 +179,6 @@ lib/vlc/plugins/access/
 @so lib/vlc/plugins/access/libimem_plugin.so
 @so lib/vlc/plugins/access/liblibbluray_plugin.so
 @so lib/vlc/plugins/access/libnfs_plugin.so
-@so lib/vlc/plugins/access/librist_plugin.so
 @so lib/vlc/plugins/access/librtp_plugin.so
 @so lib/vlc/plugins/access/libsatip_plugin.so
 @so lib/vlc/plugins/access/libsdp_plugin.so
@@ -198,7 +196,6 @@ lib/vlc/plugins/access_output/
 @so lib/vlc/plugins/access_output/libaccess_output_file_plugin.so
 @so lib/vlc/plugins/access_output/libaccess_output_http_plugin.so
 @so lib/vlc/plugins/access_output/libaccess_output_livehttp_plugin.so
-@so lib/vlc/plugins/access_output/libaccess_output_rist_plugin.so
 @so lib/vlc/plugins/access_output/libaccess_output_udp_plugin.so
 lib/vlc/plugins/audio_filter/
 @so lib/vlc/plugins/audio_filter/libaudio_format_plugin.so
@@ -521,6 +518,10 @@ lib/vlc/plugins/visualization/
 @bin lib/vlc/vlc-cache-gen
 @man man/man1/vlc-wrapper.1
 @man man/man1/vlc.1
+share/applications/vlc-openbd.desktop
+share/applications/vlc-opencda.desktop
+share/applications/vlc-opendvd.desktop
+share/applications/vlc-openvcd.desktop
 share/applications/vlc.desktop
 share/apps/
 share/apps/solid/
@@ -567,7 +568,6 @@ share/doc/vlc/lua/meta/reader/filename.lua
 share/doc/vlc/lua/playlist/
 share/doc/vlc/lua/playlist/README.txt
 share/doc/vlc/lua/playlist/liveleak.lua
-share/doc/vlc/lua/playlist/youtube.lua
 share/doc/vlc/lua/sd/
 share/doc/vlc/lua/sd/README.txt
 share/doc/vlc/lua/sd/icast.lua
@@ -661,8 +661,6 @@ share/locale/ku_IQ/LC_MESSAGES/
 share/locale/ku_IQ/LC_MESSAGES/vlc.mo
 share/locale/ky/LC_MESSAGES/vlc.mo
 share/locale/lg/LC_MESSAGES/vlc.mo
-share/locale/lo/
-share/locale/lo/LC_MESSAGES/
 share/locale/lo/LC_MESSAGES/vlc.mo
 share/locale/lt/LC_MESSAGES/vlc.mo
 share/locale/lv/LC_MESSAGES/vlc.mo

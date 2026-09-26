@@ -1,12 +1,10 @@
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		3.0.23
+V=		3.0.24
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	8
-REVISION-jack=	1
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -89,7 +87,7 @@ WANTLIB-main+=	v4l2
 
 WANTLIB-jack=	db jack vlccore ${WANTLIB-common}
 
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.71
 AUTOMAKE_VERSION= 1.16
 AUTORECONF=	./bootstrap
 
@@ -123,7 +121,7 @@ LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
 		devel/libidn \
 		devel/libnfs \
 		devel/libnotify \
-		devel/libsmb2 \
+		devel/libsmb2>=6.2.0pl20260809 \
 		devel/protobuf \
 		devel/sdl \
 		devel/sdl-image \
@@ -186,6 +184,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-kate \
 		--disable-kwallet \
 		--disable-libplacebo \
+		--disable-librist \
 		--disable-linsys \
 		--disable-live555 \
 		--disable-mad \

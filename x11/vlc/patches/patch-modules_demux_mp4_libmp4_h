@@ -12,10 +12,10 @@ Index: modules/demux/mp4/libmp4.h
  #define ATOM_vpcC VLC_FOURCC( 'v', 'p', 'c', 'C' )
 +#define ATOM_vvc1 VLC_FOURCC( 'v', 'v', 'c', '1' )
 +#define ATOM_vvcC VLC_FOURCC( 'v', 'v', 'c', 'C' )
+ #define ATOM_apv1 VLC_FOURCC( 'a', 'p', 'v', '1' )
+ #define ATOM_apvC VLC_FOURCC( 'a', 'p', 'v', 'C' )
  #define ATOM_m4ds VLC_FOURCC( 'm', '4', 'd', 's' )
- 
- #define ATOM_fiel VLC_FOURCC( 'f', 'i', 'e', 'l' )
-@@ -1322,14 +1324,14 @@ typedef struct
+@@ -1324,14 +1326,14 @@ typedef struct
  {
      WAVEFORMATEX Format;
      uint32_t i_extra;

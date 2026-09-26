@@ -142,10 +142,10 @@ Index: modules/demux/mp4/essetup.c
 +            break;
 +        }
 +
-         /* avc1: send avcC (h264 without annexe B, ie without start code)*/
-         case VLC_FOURCC( 'a', 'v', 'c', '3' ):
-         case VLC_FOURCC( 'a', 'v', 'c', '1' ):
-@@ -562,13 +563,11 @@ int SetupVideoES( demux_t *p_demux, mp4_track_t *p_tra
+         case ATOM_apv1:
+         {
+             const MP4_Box_t *p_binary = MP4_BoxGet(  p_sample, "apvC" );
+@@ -580,13 +581,11 @@ int SetupVideoES( demux_t *p_demux, mp4_track_t *p_tra
  
              if( p_avcC && BOXDATA(p_avcC) )
              {
@@ -164,7 +164,7 @@ Index: modules/demux/mp4/essetup.c
              }
              else
              {
-@@ -587,15 +586,11 @@ int SetupVideoES( demux_t *p_demux, mp4_track_t *p_tra
+@@ -605,15 +604,11 @@ int SetupVideoES( demux_t *p_demux, mp4_track_t *p_tra
              if( p_sample->i_type == VLC_FOURCC( 'd', 'v', 'h', '1' ) )
                  p_track->fmt.i_codec = VLC_FOURCC( 'd', 'v', 'h', 'e' );
  
@@ -184,7 +184,7 @@ Index: modules/demux/mp4/essetup.c
              }
              else
              {
-@@ -655,16 +650,9 @@ int SetupVideoES( demux_t *p_demux, mp4_track_t *p_tra
+@@ -673,16 +668,9 @@ int SetupVideoES( demux_t *p_demux, mp4_track_t *p_tra
                  p_track->fmt.video.b_color_range_full = p_data->i_fullrange;
                  p_track->fmt.video.i_bits_per_pixel = p_data->i_bit_depth;
  
@@ -204,7 +204,7 @@ Index: modules/demux/mp4/essetup.c
  
                  const MP4_Box_t *p_SmDm = MP4_BoxGet( p_sample, "SmDm" );
                  if( p_SmDm && BOXDATA(p_SmDm) )
-@@ -701,13 +689,9 @@ int SetupVideoES( demux_t *p_demux, mp4_track_t *p_tra
+@@ -719,13 +707,9 @@ int SetupVideoES( demux_t *p_demux, mp4_track_t *p_tra
                  p_track->fmt.video.i_height = BOXDATA(p_strf)->bmiHeader.biHeight;
                  p_track->fmt.video.i_visible_height =p_track->fmt.video.i_height;
                  p_track->fmt.video.i_bits_per_pixel = BOXDATA(p_strf)->bmiHeader.biBitCount;
@@ -221,7 +221,7 @@ Index: modules/demux/mp4/essetup.c
              }
              break;
          }
-@@ -753,12 +737,9 @@ static bool SetupAudioFromWaveFormatEx( es_format_t *p
+@@ -771,12 +755,9 @@ static bool SetupAudioFromWaveFormatEx( es_format_t *p
          p_fmt->i_bitrate = BOXDATA(p_WMA2)->Format.nAvgBytesPerSec * 8;
          p_fmt->audio.i_blockalign = BOXDATA(p_WMA2)->Format.nBlockAlign;
          p_fmt->audio.i_bitspersample = BOXDATA(p_WMA2)->Format.wBitsPerSample;
@@ -237,7 +237,7 @@ Index: modules/demux/mp4/essetup.c
          return true;
      }
      return false;
-@@ -1246,15 +1227,9 @@ int SetupAudioES( demux_t *p_demux, mp4_track_t *p_tra
+@@ -1267,15 +1248,9 @@ int SetupAudioES( demux_t *p_demux, mp4_track_t *p_tra
          case VLC_CODEC_QDM2:
          case VLC_CODEC_ALAC:
          {

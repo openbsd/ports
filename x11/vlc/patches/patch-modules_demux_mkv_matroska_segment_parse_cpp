@@ -4,7 +4,7 @@
 Index: modules/demux/mkv/matroska_segment_parse.cpp
 --- modules/demux/mkv/matroska_segment_parse.cpp.orig
 +++ modules/demux/mkv/matroska_segment_parse.cpp
-@@ -1572,6 +1572,10 @@ bool matroska_segment_c::TrackInit( mkv_track_t * p_tk
+@@ -1640,6 +1640,10 @@ bool matroska_segment_c::TrackInit( mkv_track_t * p_tk
  
              fill_extra_data( vars.p_tk, 0 );
          }
