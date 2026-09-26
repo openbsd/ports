@@ -1,6 +1,6 @@
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-3.2.23
+DISTNAME =	haproxy-3.2.24
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
 MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
@@ -15,7 +15,7 @@ DEBUG_PACKAGES = ${BUILD_PACKAGES}
 SITES =		${HOMEPAGE}/download/3.2/src/
 
 USE_GMAKE =	Yes
-MAKE_FLAGS +=	CPU_CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_FLAGS +=	OPT_CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_FLAGS +=	CC="${CC}" LD="${CC}" TARGET="openbsd"
 MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE2=1 USE_PROMEX=1 USE_QUIC=1 USE_ZLIB=1 V=1
 MAKE_FLAGS +=	USE_LIBATOMIC=
