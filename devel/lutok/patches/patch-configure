@@ -1,7 +1,8 @@
 Don't clutter build logs.
---- configure.orig	Sat Dec  7 20:14:13 2013
-+++ configure	Fri Jan 24 16:13:42 2014
-@@ -15377,7 +15377,6 @@ fi
+Index: configure
+--- configure.orig
++++ configure
+@@ -20933,7 +20933,6 @@ fi
                       -Wcast-qual \
                       -Wextra \
                       -Wpointer-arith \
@@ -9,3 +10,23 @@ Don't clutter build logs.
                       -Wreturn-type \
                       -Wshadow \
                       -Wsign-compare \
+@@ -22122,19 +22121,6 @@ fi
+             break
+         fi
+     done
+-
+-    if test "${lua_found}" = no
+-then :
+-
+-else case e in #(
+-  e)
+-        LUA_CFLAGS=$(${PKG_CONFIG} --cflags ${lua_found})
+-
+-        LUA_LIBS=$(${PKG_CONFIG} --libs ${lua_found})
+-
+-         ;;
+-esac
+-fi
+ 
+     if test "${lua_found}" = no
+ then :

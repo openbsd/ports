@@ -1,38 +1,34 @@
 COMMENT =		lightweight C++ API for Lua
-DISTNAME =		lutok-0.4
-REVISION =		3
+DISTNAME =		lutok-0.6.3
 
 SHARED_LIBS +=		lutok                     0.0 # 2.0
+
 CATEGORIES =		devel
-HOMEPAGE =		https://github.com/jmmv/lutok/
+HOMEPAGE =		https://github.com/freebsd/lutok/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += atf-c atf-c++ c ${MODLUA_WANTLIB} m ${COMPILER_LIBCXX}
+WANTLIB +=		${MODLUA_WANTLIB} m ${COMPILER_LIBCXX}
 
-SITES =		https://github.com/jmmv/lutok/releases/download/${DISTNAME}/
+SITES =			https://github.com/freebsd/lutok/releases/download/${DISTNAME}/
 
-COMPILER =		base-clang ports-gcc base-gcc
-CXXFLAGS_base-clang =	-std=gnu++14
+COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/lua
+MODLUA_VERSION =	5.4
 MODLUA_SA =		Yes
 
-LIB_DEPENDS =		devel/atf
-
-TEST_DEPENDS =		devel/kyua-cli
+# Test if files are installed correctly
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_TARGET =		installcheck
 
 CONFIGURE_STYLE  =	gnu
-CONFIGURE_ARGS =	--without-doxygen
+CONFIGURE_ARGS =	--with-doxygen=no
 CONFIGURE_ENV =		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
 			LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
-
-# Install the package and use the following TEST_TARGET if you want to
-# perform the tests on the installed files.
-#TEST_TARGET =		installcheck
 
 PORTHOME =		${WRKDIR}
 
