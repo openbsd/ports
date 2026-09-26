@@ -374,6 +374,24 @@ Index: pftop.c
  	struct anchor_name *next;
  	u_int32_t ref;
  };
+@@ -1429,7 +1611,7 @@ tb_print_fromto(struct pf_rule_addr *src, struct pf_ru
+ #ifdef HAVE_RULE_UGID
+ void
+ tb_print_ugid(u_int8_t op, unsigned u1, unsigned u2,
+-	      const char *t, unsigned umax)
++	      const char *t)
+ {
+ 	char	a1[11], a2[11];
+ 
+@@ -1437,7 +1619,7 @@ tb_print_ugid(u_int8_t op, unsigned u1, unsigned u2,
+ 	snprintf(a2, sizeof(a2), "%u", u2);
+ 
+ 	tbprintf("%s ", t);
+-	if (u1 == umax && (op == PF_OP_EQ || op == PF_OP_NE))
++	if (u1 == -1 && (op == PF_OP_EQ || op == PF_OP_NE))
+ 		tb_print_op(op, "unknown", a2);
+ 	else
+ 		tb_print_op(op, a1, a2);
 @@ -1458,8 +1640,9 @@ tb_print_flags(u_int8_t f)
  void
  print_rule(struct pf_rule *pr)
@@ -424,6 +442,19 @@ Index: pftop.c
  			tbprintf("... ");
  	}
  #endif
+@@ -1570,10 +1765,10 @@ print_rule(struct pf_rule *pr)
+ #ifdef HAVE_RULE_UGID
+ 	if (pr->uid.op)
+ 		tb_print_ugid(pr->uid.op, pr->uid.uid[0], pr->uid.uid[1],
+-		        "user", UID_MAX);
++		        "user");
+ 	if (pr->gid.op)
+ 		tb_print_ugid(pr->gid.op, pr->gid.gid[0], pr->gid.gid[1],
+-		        "group", GID_MAX);
++		        "group");
+ #endif
+ 
+ 	if (pr->flags || pr->flagset) {
 @@ -1729,12 +1924,19 @@ pfctl_insert_altq_node(struct pf_altq_node **root,
  			prev->next = node;
  		}
