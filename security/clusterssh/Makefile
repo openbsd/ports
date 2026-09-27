@@ -1,6 +1,6 @@
 COMMENT=	secure concurrent multi-server terminal control
 
-V=		4.18
+V=		4.19
 DISTNAME=	App-ClusterSSH-$V
 PKGNAME=	clusterssh-${V:S/_/./}
 
@@ -20,6 +20,7 @@ GH_TAGNAME=	v${V}
 WRKDIST=	${WRKDIR}/${DISTNAME}
 
 MODULES=	cpan
+CPAN_AUTHOR=	DUNCS
 PKG_ARCH=	*
 CONFIGURE_STYLE = modbuild
 RUN_DEPENDS=	x11/p5-Tk \
@@ -28,7 +29,8 @@ RUN_DEPENDS=	x11/p5-Tk \
 		devel/p5-Try-Tiny \
 		devel/p5-Exception-Class \
 		devel/p5-Readonly \
-		sysutils/p5-File-Which
+		sysutils/p5-File-Which \
+		textproc/p5-XML-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 TEST_DEPENDS=devel/p5-Test-Trap \
