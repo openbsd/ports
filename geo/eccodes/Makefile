@@ -3,7 +3,7 @@ COMMENT =	API and tools for decoding and encoding GRIB and BUFR
 # "ecCodes only supports 64 bit platforms"
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
-VERSION =	2.44.0
+VERSION =	2.48.0
 DISTNAME =	eccodes-${VERSION}-Source
 PKGNAME =	eccodes-${VERSION}
 
@@ -46,7 +46,8 @@ LIB_DEPENDS =	archivers/libaec \
 SEPARATE_BUILD = Yes
 CONFIGURE_ARGS = -DENABLE_NETCDF=ON \
 		-DENABLE_AEC=ON \
-		-DENABLE_MEMFS=ON
+		-DENABLE_MEMFS=ON \
+		-DECCODES_INSTALL_EXTRA_TOOLS=ON
 
 TEST_ENV =	LD_LIBRARY_PATH=${WRKBUILD}/lib
 
