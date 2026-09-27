@@ -2,6 +2,7 @@ COMMENT=		meson PEP 517 Python build backend
 
 MODPY_DISTV=		0.22.0
 DIST_TUPLE=		github mesonbuild meson-python ${MODPY_DISTV} .
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -20,7 +21,8 @@ BUILD_DEPENDS=		devel/meson \
 			devel/py-pyproject-metadata
 
 RUN_DEPENDS=		devel/meson \
-			devel/py-pyproject-metadata
+			devel/py-pyproject-metadata \
+			sysutils/patchelf
 
 TEST_DEPENDS=		lang/cython
 
