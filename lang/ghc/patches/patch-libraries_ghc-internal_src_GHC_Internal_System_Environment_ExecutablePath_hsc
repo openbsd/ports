@@ -1,0 +1,57 @@
+Implement executablePath on OpenBSD using getexecpath(3), new in OpenBSD 8.0.
+Without it OpenBSD falls through to the argv[0] fallback and executablePath is
+Nothing.
+
+Index: libraries/ghc-internal/src/GHC/Internal/System/Environment/ExecutablePath.hsc
+--- libraries/ghc-internal/src/GHC/Internal/System/Environment/ExecutablePath.hsc.orig
++++ libraries/ghc-internal/src/GHC/Internal/System/Environment/ExecutablePath.hsc
+@@ -82,6 +82,15 @@ import GHC.Internal.System.IO.Error (isDoesNotExistErr
+ import GHC.Internal.System.Posix.Internals
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
++#elif defined(openbsd_HOST_OS)
++import GHC.Internal.Control.Exception (catch, throw)
++import GHC.Internal.Foreign.C.Types
++import GHC.Internal.Foreign.C.Error
++import GHC.Internal.Foreign.C.String
++import GHC.Internal.Foreign.Marshal.Alloc
++import GHC.Internal.System.IO.Error (isDoesNotExistError)
++import GHC.Internal.System.Posix.Internals
++#include <limits.h>
+ #elif defined(mingw32_HOST_OS)
+ import GHC.Internal.Control.Exception
+ import GHC.Internal.Control.Monad.Fail
+@@ -296,6 +305,33 @@ executablePath = Just (fmap Just getExecutablePath `ca
+ 
+   -- As far as I know, ENOENT is the only kind of failure that should be
+   -- expected and handled.  Re-throw other errors.
++      | otherwise             = throw e
++
++
++--------------------------------------------------------------------------------
++-- OpenBSD
++
++#elif defined(openbsd_HOST_OS)
++
++foreign import ccall unsafe "getexecpath"
++  c_getexecpath :: CString -> CSize -> IO CInt
++
++-- getexecpath(3), new in OpenBSD 8.0, returns the pathname recorded by
++-- execve(2), already canonicalized as by realpath(3).  PATH_MAX is the buffer
++-- size the manual recommends, and also bounds the recorded path, so the ERANGE
++-- failure cannot happen here.
++getExecutablePath =
++    allocaBytes (#const PATH_MAX) $ \buf -> do
++      throwErrnoIfMinus1_ "getExecutablePath" $
++        c_getexecpath buf (#const PATH_MAX)
++      peekFilePath buf
++
++-- ENOENT means execve(2) could not determine the pathname.  Unlinking the
++-- running executable is not such a case: as on NetBSD, the path captured at
++-- execve(2) time keeps being returned.
++executablePath = Just (fmap Just getExecutablePath `catch` f)
++  where
++  f e | isDoesNotExistError e = pure Nothing
+       | otherwise             = throw e
+ 
+ 

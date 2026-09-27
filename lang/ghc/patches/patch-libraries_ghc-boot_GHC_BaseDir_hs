@@ -1,0 +1,47 @@
+Let ghc-boot use base's executablePath where base has one, while still building
+with a bootstrap compiler whose base predates getexecpath(3).  See the comment
+in the hunk for why MIN_VERSION_base cannot express this.
+
+Index: libraries/ghc-boot/GHC/BaseDir.hs
+--- libraries/ghc-boot/GHC/BaseDir.hs.orig
++++ libraries/ghc-boot/GHC/BaseDir.hs
+@@ -24,11 +24,8 @@ import Data.List (stripPrefix)
+ import Data.Maybe (listToMaybe)
+ import System.FilePath
+ 
+-#if MIN_VERSION_base(4,17,0) && !defined(openbsd_HOST_OS)
+-import System.Environment (executablePath)
+-#else
+ import System.Environment (getExecutablePath)
+-#endif
++import qualified System.Environment as Base (executablePath)
+ 
+ -- | Expand occurrences of the @$topdir@ interpolation in a string.
+ expandTopDir :: FilePath -> String -> String
+@@ -45,17 +42,16 @@ expandPathVar var value str
+ expandPathVar var value (x:xs) = x : expandPathVar var value xs
+ expandPathVar _ _ [] = []
+ 
+-#if !MIN_VERSION_base(4,17,0) || defined(openbsd_HOST_OS)
+--- Polyfill for base-4.17 executablePath and OpenBSD which doesn't
+--- have executablePath. The best it can do is use argv[0] which is
+--- good enough for most uses of getBaseDir.
++-- ghc-boot is compiled both by the bootstrap compiler and in tree, and only
++-- the in-tree base knows that OpenBSD has a working executablePath: OpenBSD
++-- gained one, via getexecpath(3), without a base version bump, so no
++-- MIN_VERSION_base test can tell the two apart.  Pick at run time instead.
++-- Without the argv[0] fallback a stage0 ghc cannot locate its own topdir and
++-- dies with "missing -B<dir> option" part way through building stage1.
+ executablePath :: Maybe (IO (Maybe FilePath))
+-executablePath = Just (Just <$> getExecutablePath)
+-#elif !MIN_VERSION_base(4,18,0) && defined(js_HOST_ARCH)
+--- executablePath is missing from base < 4.18.0 on js_HOST_ARCH
+-executablePath :: Maybe (IO (Maybe FilePath))
+-executablePath = Nothing
+-#endif
++executablePath = case Base.executablePath of
++  Just query -> Just query
++  Nothing    -> Just (Just <$> getExecutablePath)
+ 
+ -- | Calculate the location of the base dir
+ getBaseDir :: IO (Maybe String)

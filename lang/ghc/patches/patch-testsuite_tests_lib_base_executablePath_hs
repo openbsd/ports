@@ -1,0 +1,19 @@
+OpenBSD can query the executable path via getexecpath(3), and like NetBSD keeps
+returning the original path after the executable has been unlinked.
+
+Index: testsuite/tests/lib/base/executablePath.hs
+--- testsuite/tests/lib/base/executablePath.hs.orig
++++ testsuite/tests/lib/base/executablePath.hs
+@@ -5,9 +5,9 @@ import System.FilePath ((</>), dropExtension, equalFil
+ import System.Exit (exitSuccess, die)
+ 
+ canQuery, canDelete, canQueryAfterDelete :: [String]
+-canQuery = ["mingw32", "freebsd", "linux", "darwin", "netbsd"]
+-canDelete = ["freebsd", "linux", "darwin", "netbsd"]
+-canQueryAfterDelete = ["netbsd"]
++canQuery = ["mingw32", "freebsd", "linux", "darwin", "netbsd", "openbsd"]
++canDelete = ["freebsd", "linux", "darwin", "netbsd", "openbsd"]
++canQueryAfterDelete = ["netbsd", "openbsd"]
+ 
+ 
+ main :: IO ()

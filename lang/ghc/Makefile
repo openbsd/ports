@@ -15,6 +15,7 @@ USE_NOBTCFI =		Yes
 
 GHC_VERSION =		9.10.3
 DISTNAME =		ghc-${GHC_VERSION}
+REVISION =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
