@@ -1,6 +1,6 @@
 COMMENT =		manipulate and analyse climate and NWP model data
 
-DISTNAME =		cdo-2.6.0
+DISTNAME =		cdo-2.6.4
 
 CATEGORIES =		geo
 
@@ -12,7 +12,7 @@ MAINTAINER =		Marco van Hulten <marco@hulten.org>
 PERMIT_PACKAGE =	Yes
 
 # number changes at newer version
-SITES =			https://code.mpimet.mpg.de/attachments/download/30182/
+SITES =			https://code.mpimet.mpg.de/attachments/download/30242/
 
 COMPILER =		base-clang ports-gcc
 
@@ -22,9 +22,9 @@ LIB_DEPENDS =		math/netcdf \
 			geo/eccodes
 
 WANTLIB += ${COMPILER_LIBCXX} aec blosc bz2 c crypto curl eccodes
-WANTLIB += eccodes_memfs execinfo expat hdf5 hdf5_hl jasper jpeg
-WANTLIB += m netcdf nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
-WANTLIB += openjp2 ssl sz udunits2 xml2 z zip zstd
+WANTLIB += eccodes_memfs execinfo expat hdf5 hdf5_hl iconv jasper jpeg
+WANTLIB += lz4 lzma m netcdf nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
+WANTLIB += openjp2 snappy ssl sz udunits2 xml2 z zip zstd
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
