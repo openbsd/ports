@@ -1,6 +1,6 @@
 COMMENT=		modules for parsing (and creating) MIME entities
 
-DISTNAME=		MIME-tools-5.518
+DISTNAME=		MIME-tools-5.519
 CATEGORIES=		mail
 CPAN_AUTHOR=		DSKOLL
 
