@@ -1,9 +1,9 @@
 COMMENT =	command-line interface for Cabal and Hackage
 
-DISTNAME =	cabal-install-3.16.1.0
+DISTNAME =	cabal-install-3.18.1.0
 CATEGORIES =	devel
 GH_ACCOUNT =	haskell
-GH_TAGNAME =	cabal-install-v3.16.1.0
+GH_TAGNAME =	cabal-install-v3.18.1.0
 GH_PROJECT =	cabal
 
 HOMEPAGE =	https://github.com/haskell/cabal
@@ -27,17 +27,28 @@ DISTFILES =		${EXTRACT_ONLY}
 DIST_SUBDIR =		hackage
 SITES.hs =		https://hackage.haskell.org/package/
 
+# files/openbsd.json is upstream's bootstrap/linux-${ghc}.json for the GHC
+# lang/ghc provides, with "builtin" emptied out: that list is exactly this
+# GHC's boot packages, and dropping it reduces brittleness across GHC
+# upgrades while losing some safety.
+#
+# _MANIFEST below is the hackage dependencies of that file in plan order,
+# with repeated components (e.g. tar/tar-internal) collapsed:
 # import json
-# deps = json.load(open("files/openbsd.json"))["dependencies"]
-# for d in sorted(deps, key=lambda p: p['package']):
-#     print(f"\t{d['package']}\t{d['version']}\t{d['revision'] or 0}\t\\")
+# seen = []
+# for d in json.load(open("files/openbsd.json"))["dependencies"]:
+#     e = (d['package'], d['version'], d['revision'] or 0)
+#     if d['source'] == 'hackage' and e not in seen:
+#         seen.append(e)
+#         print(f"\t{e[0]}\t{e[1]}\t{e[2]}\t\\")
 _MANIFEST = \
-	alex	3.5.4.0	0	\
+	alex	3.5.4.2	0	\
+	process	1.6.30.0	0	\
 	hsc2hs	0.68.10	5	\
 	network	3.2.8.0	0	\
 	th-compat	0.1.7	0	\
 	network-uri	2.6.4.2	1	\
-	HTTP	4000.4.1	6	\
+	HTTP	4000.5.0	1	\
 	hashable	1.5.1.0	0	\
 	unordered-containers	0.2.21	2	\
 	async	2.2.6	0	\
@@ -49,18 +60,18 @@ _MANIFEST = \
 	edit-distance	0.2.2.1	1	\
 	cryptohash-sha256	0.11.102.1	6	\
 	echo	0.1.4	0	\
-	githash	0.1.7.0	0	\
 	ed25519	0.0.5.0	9	\
 	directory-ospath-streaming	0.3	1	\
-	file-io	0.1.5	0	\
-	tar	0.7.0.0	2	\
+	file-io	0.2.0	0	\
+	tar	0.7.1.0	1	\
 	zlib	0.7.1.1	0	\
-	hackage-security	0.6.3.2	1	\
-	open-browser	0.4.0.0	0	\
+	hackage-security	0.6.3.3	0	\
+	open-browser	0.5.1.0	0	\
 	regex-base	0.94.0.3	0	\
 	regex-posix	0.96.0.2	0	\
 	resolv	0.2.0.3	0	\
 	safe-exceptions	0.1.7.4	1	\
+	semaphore-compat	2.0.1	0	\
 
 .for _package _version _revision in ${_MANIFEST}
 DISTFILES.hs += {${_package}-${_version}/}${_package}-${_version}.tar.gz
