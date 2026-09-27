@@ -34,7 +34,8 @@ WANTLIB-return =	${WANTLIB} c rutil
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		devel/asio \
+BUILD_DEPENDS =		audio/sox \
+			devel/asio \
 			devel/boost \
 			devel/gperf \
 			devel/popt
