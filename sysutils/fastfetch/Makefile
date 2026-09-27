@@ -2,7 +2,7 @@ COMMENT =	neofetch-like tool for fetching system information
 
 GH_ACCOUNT =	fastfetch-cli
 GH_PROJECT =	fastfetch
-GH_TAGNAME=	2.68.1
+GH_TAGNAME=	2.69.0
 
 CATEGORIES =	sysutils
 
@@ -13,7 +13,7 @@ MAINTAINER =	Kevin Lo <kevlo@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	c kvm m pthread sndio util
+WANTLIB +=	c m pthread sndio util
 
 MODULES =	devel/cmake \
 		devel/dconf \
