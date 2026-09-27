@@ -1,6 +1,6 @@
 COMMENT =	fast lossless compression, implementing Golomb-Rice coding
 
-VERSION =	1.1.4
+VERSION =	1.1.7
 DISTNAME =	libaec-$(VERSION)
 
 SHARED_LIBS +=	aec                  0.0      # 1.4
@@ -17,8 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 SITES =			https://github.com/MathisRosenhauer/libaec/releases/download/v$(VERSION)/
 
-SEPARATE_BUILD =	Yes
-
-CONFIGURE_STYLE =	gnu
+MODULES =		devel/cmake
+CONFIGURE_ARGS +=	-DBUILD_STATIC_LIBS=OFF
 
 .include <bsd.port.mk>
