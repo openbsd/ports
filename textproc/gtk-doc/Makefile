@@ -3,7 +3,7 @@ PKG_ARCH=		*
 
 COMMENT=		GTK C code documentation system
 
-GNOME_VERSION=		1.36.1
+GNOME_VERSION=		1.37.0
 GNOME_PROJECT=		gtk-doc
 
 CATEGORIES=		textproc devel
@@ -18,10 +18,9 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		docbook yelp
 
-# glib2 and py-parameterized needed to build regression tests
-BUILD_DEPENDS=		devel/glib2 \
-			devel/py-parameterized \
-			textproc/py-pygments
+# needed to build tests
+BUILD_DEPENDS +=	devel/glib2 \
+			devel/py-parameterized
 
 RUN_DEPENDS=		devel/py-anytree \
 			textproc/docbook-xsl \
@@ -29,5 +28,7 @@ RUN_DEPENDS=		devel/py-anytree \
 			textproc/py-pygments
 
 TEST_DEPENDS=		devel/py-parameterized
+
+CONFIGURE_ARGS =	-Dcheck_runtime_deps=false
 
 .include <bsd.port.mk>
