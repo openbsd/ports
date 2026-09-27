@@ -4,7 +4,7 @@ V=		4.10.1
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	math
 
@@ -51,5 +51,8 @@ TEST_ENV=		CC=cc
 
 USE_GMAKE=		Yes
 SEPARATE_BUILD=		Yes
+
+post-install:
+	rm -f ${PREFIX}/lib/libnetcdf.la
 
 .include <bsd.port.mk>

@@ -48,7 +48,6 @@ include/netcdf_meta.h
 include/netcdf_proplist.h
 include/netcdf_vutils.h
 @static-lib lib/libnetcdf.a
-lib/libnetcdf.la
 lib/libnetcdf.settings
 @lib lib/libnetcdf.so.${LIBnetcdf_VERSION}
 lib/pkgconfig/netcdf.pc
