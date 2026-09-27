@@ -1,7 +1,6 @@
 # powerpc - tbb 64-bit atomics
-# sparc64 - openexr linking failure
 # 32-bit archs - static assert in cuda that a pointer is the same size as ULL
-ONLY_FOR_ARCHS = aarch64 amd64 powerpc64 riscv64
+ONLY_FOR_ARCHS = aarch64 amd64 powerpc64 riscv64 sparc64
 DPB_PROPERTIES = parallel
 
 COMMENT =	3D creation software
