@@ -39,6 +39,3 @@ FIX_CRLF_FILES=		cmake/compilerFlags.cmake
 NO_TEST=		Yes
 
 .include <bsd.port.mk>
-.if ${USE_CCACHE:L} == "yes"
-CONFIGURE_ARGS +=	-DBUILD_WITH_CCACHE=0N
-.endif

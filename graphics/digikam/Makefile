@@ -152,7 +152,3 @@ TEST_IS_INTERACTIVE =	X11
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
-
-.if ${USE_CCACHE:L} == "yes"
-CONFIGURE_ARGS +=	-DBUILD_WITH_CCACHE=0N
-.endif

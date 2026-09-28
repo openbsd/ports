@@ -73,8 +73,3 @@ WANTLIB +=		atomic
 .endif
 
 .include <bsd.port.mk>
-
-# fix build when ccache is installed but not enabled
-.if ${USE_CCACHE:L} != "yes"
-CONFIGURE_ARGS +=	-DWITH_CCACHE=OFF
-.endif

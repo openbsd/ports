@@ -36,7 +36,8 @@ WANTLIB += m sqlite3 zmq
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Python3=ON
+			-DCMAKE_DISABLE_FIND_PACKAGE_Python3=ON \
+			-DWITH_CCACHE=OFF
 
 CONFIGURE_ARGS +=	-DWITH_ZMQ=ON
 
@@ -86,8 +87,3 @@ post-install:
 .endif
 
 .include <bsd.port.mk>
-
-# fix build when ccache is installed but not enabled
-.if ${USE_CCACHE:L} != "yes"
-CONFIGURE_ARGS +=	-DWITH_CCACHE=OFF
-.endif

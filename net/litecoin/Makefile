@@ -45,7 +45,8 @@ AUTOMAKE_VERSION =	1.16
 AUTORECONF =		./autogen.sh
 CONFIGURE_ARGS +=	--with-incompatible-bdb \
 			--with-sqlite=yes \
-			--disable-bip70
+			--disable-bip70 \
+			--disable-ccache
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib"
@@ -127,8 +128,3 @@ post-install:
 .endif
 
 .include <bsd.port.mk>
-
-# fix build when ccache is installed but not enabled
-.if ${USE_CCACHE:L} != "yes"
-CONFIGURE_ARGS +=	--disable-ccache
-.endif
