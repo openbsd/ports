@@ -1,0 +1,17 @@
+Index: src/corelib/kernel/qcoreapplication.cpp
+--- src/corelib/kernel/qcoreapplication.cpp.orig
++++ src/corelib/kernel/qcoreapplication.cpp
+@@ -2343,6 +2343,13 @@ QString QCoreApplication::applicationFilePath()
+         QCoreApplicationPrivate::setApplicationFilePath(pfi.canonicalFilePath());
+         return *QCoreApplicationPrivate::cachedApplicationFilePath;
+     }
++#  elif defined(Q_OS_OPENBSD)
++    char buffer[PATH_MAX];
++    qsizetype len = 0;
++    if (getexecpath(buffer, sizeof buffer) == 0) {
++        len = strlen(buffer);
++        return QFile::decodeName(QByteArray::fromRawData(buffer, len));
++    }
+ #  endif
+     if (!arguments().isEmpty()) {
+         QString argv0 = QFile::decodeName(arguments().at(0).toLocal8Bit());

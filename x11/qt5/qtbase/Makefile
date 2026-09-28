@@ -2,6 +2,7 @@ QT5NAME =		QtBase
 
 KDE_COMMIT =		c68297f66533200c9ff626b056d096c78b4b94db
 KDE_VERSION =		0
+REVISION-main =		0
 
 COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt5 documentation internals
@@ -179,6 +180,7 @@ CONFIGURE_ARGS +=	-accessibility \
 			-dbus-linked \
 			-glib \
 			-icu \
+			-no-ccache \
 			-opengl desktop \
 			-openssl-linked \
 			-pkg-config \
@@ -249,9 +251,3 @@ post-install:
 		cd ${PREFIX}/lib/qt5 && ln -sf ../../include/X11/qt5 include
 
 .include <bsd.port.mk>
-
-.if ${USE_CCACHE:L} == "yes"
-CONFIGURE_ARGS +=	-ccache
-.else
-CONFIGURE_ARGS +=	-no-ccache
-.endif
