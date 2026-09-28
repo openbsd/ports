@@ -1,8 +1,14 @@
 COMMENT=		library for developing printing filters
 
-V=			2.2.1
-DISTNAME=		libcupsfilters-${V}
-REVISION=		1
+#V=			2.2.1
+#DISTNAME=		libcupsfilters-${V}
+#REVISION=		2
+
+GH_ACCOUNT=		OpenPrinting
+GH_PROJECT=		libcupsfilters
+# Date: Tue, 22 Sep 2026 01:52:16 +0800
+GH_COMMIT=		3b7b574e4080ec06f508c8886b9371a00e6630a5
+DISTNAME=		libcupsfilters-2.2.2pre0
 
 SHARED_LIBS +=  cupsfilters          2.1      # 2.0
 
@@ -15,7 +21,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache-2.0
 PERMIT_PACKAGE=		Yes
 
-SITES=			https://github.com/OpenPrinting/libcupsfilters/releases/download/${V}/
+#SITES=			https://github.com/OpenPrinting/libcupsfilters/releases/download/${V}/
 
 WANTLIB += ${COMPILER_LIBCXX} Lerc avahi-client avahi-common brotlicommon
 WANTLIB += brotlidec brotlienc crypto cups dbus-1 exif expat fontconfig
@@ -40,7 +46,11 @@ LIB_DEPENDS=		graphics/libexif \
 			print/cups,-libs \
 			print/pdfio
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.73
+AUTOMAKE_VERSION=	1.19
+BUILD_DEPENDS +=	devel/gettext,-tools
+
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=		--with-test-font-path=${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf \
