@@ -38,7 +38,8 @@ BUILD_DEPENDS =		audio/sox \
 			devel/asio \
 			devel/boost \
 			devel/gperf \
-			devel/popt
+			devel/popt \
+			vim-*|vim-classic-*:editors/vim # for xxd
 LIB_DEPENDS-main =	net/libcares \
 			net/radcli
 LIB_DEPENDS-repro =	${BUILD_PKGPATH},-main=${V} \
