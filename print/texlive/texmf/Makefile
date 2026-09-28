@@ -4,6 +4,8 @@ COMMENT-full =		texlive texmf for extra macros
 COMMENT-main =		texlive texmf for basic functionality
 COMMENT-buildset =	smallest texlive texmf for building ports
 
+REVISION-full =		0
+
 # Please do not directly edit the PLIST files. They are auto-generated.
 #
 # If you move things out of another texmf into the buildset, don't forget to:
@@ -13,9 +15,16 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 DISTNAME =		texlive-${DIST_V}-texmf
 
 SITES.pregen =		http://theunixzoo.co.uk/distfiles/
+SITES.minted =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 DISTFILES.pregen = 	texmf-var-pregen-${V}${EXTRACT_SUFX}
+
+# A patched minted that works for python>=3.14.
+# https://github.com/gpoore/minted/commit/2a7b3a48e47b834bbc4a616679a0ef9710896a16.patch
+DISTFILES.minted =	latexminted-0.6.0p0-py3-none-any.whl
+
+EXTRACT_ONLY =         ${DISTFILES} ${DISTFILES.pregen}
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -115,6 +124,10 @@ pre-configure:
 	    -e '$$. == 1 && s|^.*fontforge([\s].*)?$$|\#!${LOCALBASE}/bin/fontforge$$1|;' \
 	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
+
+	# overwrite the minted wheel with our patched one.
+	cp ${DISTDIR}/${DISTFILES.minted} \
+		${WRKSRC}/texmf-dist/scripts/minted/latexminted-0.6.0-py3-none-any.whl
 
 # Note that the engine symlinks will cause warnings about dead symlinks at
 # package time. This is because the symlinks point outside of the texmf
