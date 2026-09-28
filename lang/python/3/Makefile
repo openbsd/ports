@@ -3,12 +3,10 @@
 # requirement of the PSF license, if it constitutes a change to
 # Python itself.
 
-FULL_VERSION =		3.14.6
+FULL_VERSION =		3.14.7
 SHARED_LIBS =		python3.14 0.0
 VERSION_SPEC =		>=3.14
 PORTROACH =		limit:^3\.14
-
-REVISION-main =		0
 
 AUTOCONF_VERSION =	2.72
 

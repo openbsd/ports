@@ -6,23 +6,20 @@ ports infrastructure, configure.ac was patched to do this.
 
 2.  Disable scrypt, which is not currently available in LibreSSL.
 
-3.  Disable libuuid, otherwise Python prefers it over the libc uuid
-functions.
-
-4.  Disable MULTIARCH check in configure.ac since OpenBSD is not a
+3.  Disable MULTIARCH check in configure.ac since OpenBSD is not a
 multi-arch platform and it causes build problems.
 
-5.  Allow Python to build with LTO on OpenBSD clang architectures.
+4.  Allow Python to build with LTO on OpenBSD clang architectures.
 OpenBSD's version of llvm-ar is installed as /usr/bin/ar, and the
 compiler as passed to ports builds is /usr/bin/cc.
 
-6.  ctypes' find_library is modified to pass "libc.so" to dlopen() rather
+5.  ctypes' find_library is modified to pass "libc.so" to dlopen() rather
 than attempting to resolve a version number by parsing ldconfig -r output,
 which results in loading an incorrect version in some cases.
 
-7.  Adjust #ifdef to use LibreSSL's version of X509_STORE_get1_objects().
+6.  Adjust #ifdef to use LibreSSL's version of X509_STORE_get1_objects().
 
-8.  Work around expat_config.h missing from base.
+7.  Work around expat_config.h missing from base.
 
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.

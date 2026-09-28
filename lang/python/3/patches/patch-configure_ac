@@ -1,8 +1,7 @@
 #1: Set ports library version
-#2: Don't pick up an installed linux/e2fsprogs libuuid.so
+#2: OpenBSD isn't multi-arch
 #3: llvm-ar (used for LTO) is installed as ar
-#4: OpenBSD isn't multi-arch
-#5: Try only the right tcl/tk string
+#4: Try only the right tcl/tk string
 
 Index: configure.ac
 --- configure.ac.orig
@@ -49,7 +48,7 @@ Index: configure.ac
      # Any changes made here should be reflected in the GCC+Darwin case below
      PGO_PROF_GEN_FLAG="-fprofile-instr-generate"
      PGO_PROF_USE_FLAG="-fprofile-instr-use=\"\$(shell pwd)/code.profclangd\""
-@@ -4439,11 +4440,7 @@ dnl Detect Tcl/Tk. Use pkg-config if available.
+@@ -4492,11 +4493,7 @@ dnl Detect Tcl/Tk. Use pkg-config if available.
  dnl
  found_tcltk=no
  for _QUERY in \

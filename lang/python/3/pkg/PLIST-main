@@ -1918,7 +1918,7 @@ lib/${PY_VERSION}/ensurepip/__pycache__/_uninstall.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/ensurepip/__pycache__/_uninstall.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/ensurepip/__pycache__/_uninstall.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/ensurepip/_bundled/
-lib/${PY_VERSION}/ensurepip/_bundled/pip-26.1.2-py3-none-any.whl
+lib/${PY_VERSION}/ensurepip/_bundled/pip-26.2.1-py3-none-any.whl
 lib/${PY_VERSION}/ensurepip/_uninstall.py
 lib/${PY_VERSION}/enum.py
 lib/${PY_VERSION}/filecmp.py
@@ -2164,7 +2164,6 @@ lib/${PY_VERSION}/lib-dynload/
 @so lib/${PY_VERSION}/lib-dynload/_testlimitedcapi.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_testmultiphase.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_testsinglephase.${PYC_MAGIC_TAG}.so
-@so lib/${PY_VERSION}/lib-dynload/_uuid.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_xxtestfuzz.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_zoneinfo.${PYC_MAGIC_TAG}.so
 @so lib/${PY_VERSION}/lib-dynload/_zstd.${PYC_MAGIC_TAG}.so
