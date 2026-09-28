@@ -1,0 +1,12 @@
+Index: third_party/devtools-frontend/src/front_end/models/ai_assistance/BUILD.gn
+--- third_party/devtools-frontend/src/front_end/models/ai_assistance/BUILD.gn.orig
++++ third_party/devtools-frontend/src/front_end/models/ai_assistance/BUILD.gn
+@@ -115,6 +115,8 @@ devtools_entrypoint("bundle") {
+   split_compilation = true
+   entrypoint = "ai_assistance.ts"
+ 
++  deps = [ "skills:generate_skills" ]
++
+   ts_deps = [ ":ai_assistance" ]
+ 
+   visibility = [
