@@ -100,6 +100,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/esbuild \
 		devel/esbuild:patch \
 		devel/rust-bindgen \
+		graphics/vulkan-headers \
 		lang/go \
 		lang/rust,-rustfmt \
 		lang/node \
