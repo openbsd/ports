@@ -1,6 +1,6 @@
 COMMENT=	general purpose TCP-IP emulator library
 
-VER=		4.9.3
+VER=		4.9.5
 DISTNAME=	libslirp-v${VER}
 PKGNAME=	libslirp-${VER}
 CATEGORIES=	net
