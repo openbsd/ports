@@ -5237,6 +5237,8 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/USERNOTICE_new.3
 @man lib/${EOPENSSL_V}/man/man3/X509V3_EXT_d2i.3
 @man lib/${EOPENSSL_V}/man/man3/X509V3_EXT_i2d.3
+@man lib/${EOPENSSL_V}/man/man3/X509V3_EXT_nconf.3
+@man lib/${EOPENSSL_V}/man/man3/X509V3_EXT_nconf_nid.3
 @man lib/${EOPENSSL_V}/man/man3/X509V3_EXT_print.3
 @man lib/${EOPENSSL_V}/man/man3/X509V3_EXT_print_fp.3
 @man lib/${EOPENSSL_V}/man/man3/X509V3_add1_i2d.3
