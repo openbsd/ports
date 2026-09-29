@@ -5,7 +5,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	diasurgical
 GH_PROJECT =	devilutionX
 GH_TAGNAME =	1.5.5
-REVISION =	0
+REVISION =	1
 
 SITES =		${SITES_GITHUB}
 SITES.a =	https://github.com/diasurgical/devilutionX/releases/download/${GH_TAGNAME}/
