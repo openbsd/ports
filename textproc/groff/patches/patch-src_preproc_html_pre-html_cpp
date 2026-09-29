@@ -1,0 +1,39 @@
+Fix command injection vulnerability in grohtml(1) by rejecting
+shell-significant syntax characters in raster image file names.
+
+This security vulnerability existed since the pre-grohtml preprocessor
+was first checked in on January 7, 2001, first released with groff-1.17.
+Problem reported by Pavol Sloboda (Redhat).
+Fix by G. Branden Robinson (GNU roff maintainer).
+Together with the troff/input.cpp patch,
+this fixes <https://savannah.gnu.org/bugs/?68688>.
+Backported from the Savannah ticket to 1.22.4 by schwarze@
+with one correction by schwarze@: added exit(3) in the new NULL branch.
+
+Index: src/preproc/html/pre-html.cpp
+--- src/preproc/html/pre-html.cpp.orig
++++ src/preproc/html/pre-html.cpp
+@@ -1020,6 +1020,23 @@ void imageList::createImage(imageItem *i)
+ 	     + max(i->Y1, i->Y2) * image_res / postscriptRes
+ 	     + 1 + IMAGE_BOARDER_PIXELS;
+     if (createPage(i->pageNo) == 0) {
++      if (0 /* nullptr */ == i->imageName) {
++        fprintf(stderr, "%s: error: unable to generate raster image"
++                " of page %d\n", program_name, i->pageNo);
++        fflush(stderr);
++        exit(EXIT_FAILURE);
++      }
++      for (const char *p = i->imageName; *p != '\0'; p++) {
++        if (strchr(";&|*?~<>^()[]{}'$`\"\\#", *p)) {
++          char q = '\'';
++          if ('\'' == *p)
++            q = '\"';
++          fprintf(stderr, "%s: fatal error: unsafe shell character"
++                  " %c%c%c in raster image file name", q, *p, q);
++          fflush(stderr);
++          exit(EXIT_FAILURE);
++        }
++      }
+       s = make_message("pnmcut%s %d %d %d %d < %s "
+ 		       "| pnmcrop -quiet | pnmtopng%s %s > %s\n",
+ 		       EXE_EXT,

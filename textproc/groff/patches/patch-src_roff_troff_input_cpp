@@ -1,0 +1,35 @@
+Fix command injection vulnerability in grohtml(1) by rejecting
+shell-significant syntax characters in raster image file names.
+
+This security vulnerability existed since the pre-grohtml preprocessor
+was first checked in on January 7, 2001, first released with groff-1.17.
+Problem reported by Pavol Sloboda (Redhat).
+Fix by G. Branden Robinson (GNU roff maintainer).
+Together with the preproc/html/pre-html.cpp patch,
+this fixes <https://savannah.gnu.org/bugs/?68688>.
+Backported from groff-1.24.2 to 1.22.4 by schwarze@.
+
+Index: src/roff/troff/input.cpp
+--- src/roff/troff/input.cpp.orig
++++ src/roff/troff/input.cpp
+@@ -5507,6 +5507,20 @@ static node *do_suppress(symbol nm)
+ 	error("missing image name for \\O");
+ 	return 0;
+       }
++      // pre-grohtml runs troff (using the "ps" output device).  It also
++      // has a function called `html_system()` that calls the dreaded
++      // system(3).
++      for (const char *p = s; *p != '\0'; p++) {
++        if (strchr(";&|*?~<>^()[]{}'$`\"\\#", *p) != 0 /* nullptr */) {
++          char q = '\'';
++          if ('\'' == *p)
++            q = '\"';
++          error("rejecting image file name argument"
++                " containing unsafe shell character %1%2%3"
++                " in output suppression escape sequence", q, *p, q);
++          return 0 /* nullptr */;
++        }
++      }
+       image_no++;
+       if (begin_level == 0)
+ 	return new suppress_node(symbol(s), position, image_no);

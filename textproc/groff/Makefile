@@ -2,7 +2,7 @@ COMMENT =		GNU troff typesetter
 VERSION =		1.22.4
 SUBST_VARS =		VERSION
 DISTNAME =		groff-${VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		textproc
 DPB_PROPERTIES =	parallel

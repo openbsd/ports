@@ -1,0 +1,82 @@
+Fix command injection vulnerability in pdfmom(1)
+by sanitizing command-line arguments.
+
+This security vulnerability existed since the pdfmom command script
+was first checked in on August 31, 2012, first released with groff-1.22.1.
+Problem reported by Pavol Sloboda (Redhat).
+The fix is joint work by G. Branden Robinson (GNU roff maintainer)
+and Deri James (groff PDF maintainer).
+Fixes <https://savannah.gnu.org/bugs/?68687>.
+Backported from groff-1.24.2 to 1.22.4 by schwarze@.
+
+Index: src/devices/gropdf/pdfmom.pl
+--- src/devices/gropdf/pdfmom.pl.orig
++++ src/devices/gropdf/pdfmom.pl
+@@ -33,9 +33,20 @@ my $RT_SEP='@RT_SEP@';
+ $ENV{PATH}=$ENV{GROFF_BIN_PATH}.$RT_SEP.$ENV{PATH} if exists($ENV{GROFF_BIN_PATH});
+ $ENV{TMPDIR}=$ENV{GROFF_TMPDIR} if exists($ENV{GROFF_TMPDIR});
+ 
+-while (my $c=shift)
++sub Clean
+ {
+-    $c=~s/(?<!\\)"/\\"/g;
++    my $c=shift;
++
++    if (defined($c))
++    {
++        $c=~s/'/'\\''/g;
++    }
++
++    return $c;
++}
++
++while (my $c=Clean(shift))
++{
+     
+     if (substr($c,0,2) eq '-T')
+     {
+@@ -45,7 +56,7 @@ while (my $c=shift)
+ 	}
+ 	else
+ 	{
+-	    $dev=shift;
++	    $dev=Clean(shift);
+ 	}
+ 	next;
+     }
+@@ -53,12 +64,12 @@ while (my $c=shift)
+     {
+ 	if (length($c) > 2)
+ 	{
+-	    $preconv=$c;
++	    $preconv.=" '$c'";
+ 	}
+ 	else
+ 	{
+-	    $preconv=$c;
+-	    $preconv.=shift;
++	    $preconv.=" '$c";
++	    $preconv.=Clean(shift)."'";
+ 	}
+ 	next;
+     }
+@@ -81,8 +92,8 @@ while (my $c=shift)
+     {
+ 	if (length($c) > 1)
+ 	{
+-	    push(@cmd,"\"$c\"");
+-	    push(@cmd,"'".(shift)."'") if length($c)==2 and index('dDfFIKLmMnoPrwW',substr($c,-1)) >= 0;
++	    push(@cmd,"'$c'");
++	    push(@cmd,"'".Clean(shift)."'") if length($c)==2 and index('dDfFIKLmMnoPrwW',substr($c,-1)) >= 0;
+ 	}
+ 	else
+ 	{
+@@ -96,7 +107,7 @@ while (my $c=shift)
+     {
+ 	# Got a filename?
+ 	
+-	push(@cmd,"\"$c\"");
++	push(@cmd,"'$c'");
+ 	$readstdin=0 if $readstdin == 1;
+ 	
+     }

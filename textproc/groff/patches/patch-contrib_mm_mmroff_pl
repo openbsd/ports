@@ -1,0 +1,24 @@
+Prevent a shell-command-injection vulnerability in mmroff(1)
+when a malicious input file inserts a specially crafted comment line into
+the standard output or standard error output of the first groff(1) pass. 
+
+This security vulnerability existed since mmroff.pl was first
+checked in on February 6, 2000, first released with groff-1.16.
+Problem reported by Pavol Sloboda (Redhat).  The fix is joint work
+by G. Branden Robinson (GNU roff maintainer) and schwarze@.
+Fixes <https://savannah.gnu.org/bugs/?68689>.
+Backported from groff-1.24.2 to 1.22.4,
+with one quoting error corrected by schwarze@.
+
+Index: contrib/mm/mmroff.pl
+--- contrib/mm/mmroff.pl.orig
++++ contrib/mm/mmroff.pl
+@@ -76,7 +76,7 @@ while(<MACRO>) {
+ 		next;
+ 	}
+ 	if (m#^\.\\" PIC (\w+)\s+(\S+)#) {
+-		eval "\$cur{'$1'} = '$2'";
++		$cur{"$1"} = $2;
+ 		next;
+ 	}
+ 	s#\\ \\ $##;
