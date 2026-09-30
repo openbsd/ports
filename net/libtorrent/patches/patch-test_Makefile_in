@@ -1,0 +1,27 @@
+link tests with static archive due to undefined symbol
+
+Index: test/Makefile.in
+--- test/Makefile.in.orig
++++ test/Makefile.in
+@@ -140,9 +140,7 @@ am_LibTorrent_Test_OBJECTS = $(am__objects_1) \
+ 	protocol/LibTorrent_Test-test_protocol_buffer.$(OBJEXT) \
+ 	protocol/LibTorrent_Test-test_request_list.$(OBJEXT)
+ LibTorrent_Test_OBJECTS = $(am_LibTorrent_Test_OBJECTS)
+-LibTorrent_Test_DEPENDENCIES = ../src/libtorrent.la \
+-	../src/libtorrent_other.la \
+-	../src/torrent/libtorrent_torrent.la
++LibTorrent_Test_DEPENDENCIES = ../src/.libs/libtorrent.a
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+@@ -683,9 +681,7 @@ top_srcdir = @top_srcdir@
+ 
+ # LibTorrent_Test_LDADD = ../src/libtorrent.la
+ LibTorrent_Test_LDADD = \
+-	../src/libtorrent.la \
+-	../src/libtorrent_other.la \
+-	../src/torrent/libtorrent_torrent.la
++	../src/.libs/libtorrent.a
+ 
+ LibTorrent_Test_Torrent_Net_LDADD = $(LibTorrent_Test_LDADD)
+ LibTorrent_Test_Torrent_Runtime_LDADD = $(LibTorrent_Test_LDADD)
