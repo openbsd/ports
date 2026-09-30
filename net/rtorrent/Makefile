@@ -1,8 +1,7 @@
 COMMENT =		ncurses BitTorrent client based on libTorrent
 
-V =			0.16.20
+V =			0.16.24
 EPOCH =			0
-REVISION =		0
 DISTNAME =		rtorrent-$V
 CATEGORIES =		net
 
