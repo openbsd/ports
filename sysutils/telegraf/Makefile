@@ -14,6 +14,8 @@ MAINTAINER =	Lucas Raab <tuftedocelot@fastmail.fm>
 
 CATEGORIES =		sysutils
 
+REVISION =	0
+
 # MIT
 PERMIT_PACKAGE =	Yes
 

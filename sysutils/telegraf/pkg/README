@@ -13,9 +13,12 @@ install and configure sudo:
 * OpenSMTPD
 * Unbound
 
-Below are some example doas.conf(5) lines which could be used. If you
-have a nonstandard configuration of those daemons, adjustments to the
-location of binaries and arguments may be needed.
+Below are some example doas.conf(5) lines which could be used.
+Set use_sudo = true in the plugin configuration so telegraf invokes
+doas(1). If you have a nonstandard configuration of those daemons,
+adjustments to the location of binaries and arguments may be needed.
+The Unbound and NSD plugins run the control commands as _unbound
+and _nsd.
 
 permit nopass _telegraf as _unbound cmd /usr/sbin/unbound-control \
 	args stats_noreset

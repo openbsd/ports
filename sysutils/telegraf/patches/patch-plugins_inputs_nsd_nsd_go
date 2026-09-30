@@ -1,11 +1,13 @@
 Index: plugins/inputs/nsd/nsd.go
 --- plugins/inputs/nsd/nsd.go.orig
 +++ plugins/inputs/nsd/nsd.go
-@@ -120,7 +120,7 @@ func nsdRunner(cmdName string, timeout config.Duration
+@@ -119,8 +119,8 @@ func nsdRunner(cmdName string, timeout config.Duration
+ 	cmd := exec.Command(cmdName, cmdArgs...)
  
  	if useSudo {
- 		cmdArgs = append([]string{cmdName}, cmdArgs...)
+-		cmdArgs = append([]string{cmdName}, cmdArgs...)
 -		cmd = exec.Command("sudo", cmdArgs...)
++		cmdArgs = append([]string{"-u", "_nsd", cmdName}, cmdArgs...)
 +		cmd = exec.Command("doas", cmdArgs...)
  	}
  
