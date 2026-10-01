@@ -10,7 +10,7 @@ Index: content/browser/web_contents/web_contents_impl.cc
    renderer_preferences_.use_overlay_scrollbar =
        native_theme->use_overlay_scrollbar();
  #endif
-@@ -12694,7 +12694,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
+@@ -12704,7 +12704,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
  
    const auto caret_blink_interval = observed_theme->caret_blink_interval();
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -19,7 +19,7 @@ Index: content/browser/web_contents/web_contents_impl.cc
    const auto use_overlay_scrollbar = observed_theme->use_overlay_scrollbar();
  #endif
    bool renderer_preference_changed = false;
-@@ -12703,7 +12703,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
+@@ -12713,7 +12713,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
      renderer_preference_changed = true;
    }
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
