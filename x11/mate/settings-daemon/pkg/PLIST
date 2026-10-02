@@ -80,6 +80,7 @@ share/examples/mate-settings-daemon/dbus-1/
 @sample ${SYSCONFDIR}/mate-settings-daemon/dbus-1/
 share/examples/mate-settings-daemon/dbus-1/system.d/
 share/examples/mate-settings-daemon/dbus-1/system.d/org.mate.SettingsDaemon.DateTimeMechanism.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.mate.SettingsDaemon.DateTimeMechanism.conf
 share/examples/mate-settings-daemon/mate-settings-daemon/
 share/examples/mate-settings-daemon/mate-settings-daemon/xrandr/
 share/examples/mate-settings-daemon/xdg/

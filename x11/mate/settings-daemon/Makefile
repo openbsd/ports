@@ -1,6 +1,6 @@
 COMMENT=		MATE settings daemon
 
-REVISION=		2
+REVISION=		3
 
 MATE_PROJECT=		mate-settings-daemon
 
