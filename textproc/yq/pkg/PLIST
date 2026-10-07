@@ -22,6 +22,8 @@ lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}loader.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}stream_wrappers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}stream_wrappers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}toml_support.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}toml_support.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -31,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/yq/${MODPY_PYCACHE}yaml_support.${MODPY
 lib/python${MODPY_VERSION}/site-packages/yq/dumper.py
 lib/python${MODPY_VERSION}/site-packages/yq/loader.py
 lib/python${MODPY_VERSION}/site-packages/yq/parser.py
+lib/python${MODPY_VERSION}/site-packages/yq/stream_wrappers.py
 lib/python${MODPY_VERSION}/site-packages/yq/toml_support.py
 lib/python${MODPY_VERSION}/site-packages/yq/tomlq/
 lib/python${MODPY_VERSION}/site-packages/yq/tomlq/__init__.py
