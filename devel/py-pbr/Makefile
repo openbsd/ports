@@ -1,10 +1,9 @@
 COMMENT=	manage setuptools packaging needs in a consistent manner
 
-MODPY_DISTV=	7.0.3
+MODPY_DISTV=	7.1.1
 DISTNAME=	pbr-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 # https://github.com/openstack-dev/pbr
 HOMEPAGE=	https://docs.openstack.org/pbr/latest/
