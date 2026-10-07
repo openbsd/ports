@@ -549,7 +549,7 @@ share/rspamd/www/css/icons.css
 share/rspamd/www/css/nprogress.css
 share/rspamd/www/css/prism.css
 share/rspamd/www/css/rspamd.css
-share/rspamd/www/css/tabulator_bs5.min.css
+share/rspamd/www/css/tabulator_bootstrap5.min.css
 share/rspamd/www/favicon-16x16.png
 share/rspamd/www/favicon-32x32.png
 share/rspamd/www/favicon.ico
