@@ -47,6 +47,10 @@ ERRORS += "Fatal: MODPY_SETUPTOOLS is only for python 2 ports."
 # If MODPY_PYTEST_ARGS are set, or if using MODPY_PYBUILD, it implies that
 # we want MODPY_PYTEST = Yes
 MODPY_PYTEST_ARGS ?=
+MODPY_PYTEST_IGNORE ?=
+.for _pytest_ignore in ${MODPY_PYTEST_IGNORE}
+MODPY_PYTEST_ARGS +=	--ignore ${_pytest_ignore}
+.endfor
 .if empty(MODPY_PYTEST_ARGS) && ${MODPY_PYBUILD} == No
 MODPY_PYTEST ?=		No
 .else
