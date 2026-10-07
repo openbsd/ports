@@ -1,6 +1,6 @@
 COMMENT=	character set detector library
 
-MODPY_DISTV=	3.4.9
+MODPY_DISTV=	3.5.2
 DISTNAME=	charset_normalizer-${MODPY_DISTV}
 PKGNAME=	py-charset-normalizer-${MODPY_DISTV}
 
@@ -16,8 +16,7 @@ WANTLIB += m
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-BUILD_DEPENDS=	devel/py-mypy<=1.18.2 \
-		devel/py-setuptools<=81v0
+BUILD_DEPENDS=	lang/cython
 
 MODULES=	lang/python
 # uses own backend wrapping setuptools
@@ -26,6 +25,6 @@ MODPY_PI=	Yes
 
 TEST_DEPENDS=	devel/py-test-cov
 
-MAKE_ENV=	CHARSET_NORMALIZER_USE_MYPYC=1
+MAKE_ENV=	CHARSET_NORMALIZER_USE_CYTHON=1
 
 .include <bsd.port.mk>

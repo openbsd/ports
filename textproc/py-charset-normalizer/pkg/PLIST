@@ -1,6 +1,5 @@
 @pkgpath textproc/py-charset-normalizer,python3
 bin/normalizer
-@so lib/python${MODPY_VERSION}/site-packages/81d243bd2c585b0f4821__mypyc.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/charset_normalizer/
 lib/python${MODPY_VERSION}/site-packages/charset_normalizer-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/charset_normalizer-${MODPY_DISTV}.dist-info/METADATA
