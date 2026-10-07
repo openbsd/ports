@@ -1,6 +1,6 @@
 COMMENT =		decode AArch64 ESR register values
 
-V =			0.2.4
+V =			0.2.5
 GH_ACCOUNT =		google
 GH_PROJECT =		aarch64-esr-decoder
 GH_TAGNAME =		$V
