@@ -3,6 +3,7 @@ COMMENT=	safely evaluate AST nodes without side effects
 MODPY_DISTV=	0.2.4
 DISTNAME=	pure_eval-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

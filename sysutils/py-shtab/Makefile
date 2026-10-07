@@ -3,6 +3,7 @@ COMMENT =	automagic shell tab completion for Python CLI applications
 MODPY_DISTV =	1.12.1
 DISTNAME =	shtab-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

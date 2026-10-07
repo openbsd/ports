@@ -3,6 +3,7 @@ COMMENT=	community-developed Python astronomy tools
 MODPY_DISTV=	8.0.1
 DISTNAME=	astropy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	astro
 

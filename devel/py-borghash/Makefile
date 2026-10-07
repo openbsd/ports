@@ -3,6 +3,7 @@ COMMENT =		memory-efficient hashtable with serialization
 MODPY_DISTV =		0.2.1
 DISTNAME =		borghash-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

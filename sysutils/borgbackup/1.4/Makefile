@@ -1,5 +1,6 @@
 MODULES =	lang/python
 MODPY_DISTV =	1.4.5
+REVISION =	0
 
 WANTLIB =	crypto xxhash zstd
 

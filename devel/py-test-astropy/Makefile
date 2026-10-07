@@ -3,7 +3,7 @@ COMMENT=	metapackage for testing machinery used by Astropy
 MODPY_DISTV=	0.11.0
 DISTNAME=	pytest-astropy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

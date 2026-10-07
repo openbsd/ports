@@ -3,6 +3,7 @@ COMMENT =		Python Language Server
 MODPY_DISTV =		1.15.0
 DISTNAME =		python_lsp_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -1,8 +1,6 @@
 bin/csscapture
 bin/csscombine
 bin/cssparse
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/cssutils/
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/METADATA

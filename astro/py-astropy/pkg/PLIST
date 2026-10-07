@@ -33,8 +33,6 @@ lib/python${MODPY_VERSION}/site-packages/astropy-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/astropy-${MODPY_DISTV}.dist-info/licenses/licenses/PYTHON.rst
 lib/python${MODPY_VERSION}/site-packages/astropy-${MODPY_DISTV}.dist-info/licenses/licenses/README.rst
 lib/python${MODPY_VERSION}/site-packages/astropy-${MODPY_DISTV}.dist-info/licenses/licenses/WCSLIB_LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/astropy-${MODPY_DISTV}.dist-info/scm_file_list.json
-lib/python${MODPY_VERSION}/site-packages/astropy-${MODPY_DISTV}.dist-info/scm_version.json
 lib/python${MODPY_VERSION}/site-packages/astropy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/astropy/CITATION
 lib/python${MODPY_VERSION}/site-packages/astropy/__init__.py
