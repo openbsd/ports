@@ -1,11 +1,12 @@
 COMMENT=	convert between Python values and C bit field structs
 
-CATEGORIES=	devel
-
-MODPY_DISTV=	8.22.1
+MODPY_DISTV=	8.23.0
 DISTNAME=	bitstruct-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
+CATEGORIES=	devel
+
+# https://github.com/eerimoq/bitstruct
 HOMEPAGE=	https://bitstruct.readthedocs.io/
 
 # MIT
