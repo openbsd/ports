@@ -4,8 +4,7 @@ ONLY_FOR_ARCHS=		${LP64_ARCHS}
 COMMENT-main=		astronomical instrument automation/control software
 COMMENT-libs=		Instrument-Neutral-Device-Interface protocol libraries
 
-GH_TAGNAME=		v2.2.4.2
-REVISION=		0
+GH_TAGNAME=		v2.2.5
 GH_ACCOUNT=		indilib
 GH_PROJECT=		indi
 
@@ -13,10 +12,10 @@ HOMEPAGE =		https://indilib.org/
 
 PKGNAME-libs=		lib${PKGNAME}
 
-SHARED_LIBS +=	indiAlignmentDriver       1.0
-SHARED_LIBS +=	indiclient                1.1
-SHARED_LIBS +=	indidriver                1.0
-SHARED_LIBS +=	indilx200                 1.0
+SHARED_LIBS +=	indiAlignmentDriver       1.1
+SHARED_LIBS +=	indiclient                1.2
+SHARED_LIBS +=	indidriver                1.1
+SHARED_LIBS +=	indilx200                 1.1
 
 CATEGORIES=		devel
 
@@ -38,8 +37,7 @@ WANTLIB-libs += ${WANTLIB} erfa
 
 MODULES=		devel/cmake
 
-LIB_DEPENDS=		astro/liberfa \
-			astro/libnova \
+LIB_DEPENDS=		astro/libnova \
 			converters/libiconv \
 			devel/gsl \
 			devel/libusb1 \
@@ -55,6 +53,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			comms/rtl-sdr \
 			devel/libev
 
-LIB_DEPENDS-libs=	${LIB_DEPENDS}
+LIB_DEPENDS-libs=	${LIB_DEPENDS} \
+			astro/liberfa
 
 .include <bsd.port.mk>
