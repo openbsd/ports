@@ -3,8 +3,9 @@ COMMENT=	high performance, multi-platform VNC client and server
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
 GH_TAGNAME=	v1.16.2
+REVISION=	0
 
-XORG_V=		21.1.23
+XORG_V=		21.1.25
 
 # update the patch filename in the post-patch target if moving to a new
 # major branch of xorg-server
