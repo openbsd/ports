@@ -1,11 +1,11 @@
 COMMENT =	intrusion detection and prevention engine
 
-VERSION =	3.0.16
+VERSION =	3.0.17
 DISTNAME =	modsecurity-v${VERSION}
 PKGNAME  =	libmodsecurity-${VERSION}
 SUPDISTFILES =	${DISTFILES:S/$/.asc/}
 
-SHARED_LIBS =	modsecurity	3.0	# 3.16
+SHARED_LIBS =	modsecurity	4.0
 # upstream lib version just based on release version
 
 CATEGORIES =	security
