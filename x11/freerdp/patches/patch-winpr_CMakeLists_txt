@@ -3,7 +3,7 @@
 Index: winpr/CMakeLists.txt
 --- winpr/CMakeLists.txt.orig
 +++ winpr/CMakeLists.txt
-@@ -402,7 +402,9 @@ endif()
+@@ -484,7 +484,9 @@ endif()
  # Do not set Requires.Private if not a static build
  if(BUILD_SHARED_LIBS)
    set(WINPR_PC_REQUIRES_PRIVATE "")
