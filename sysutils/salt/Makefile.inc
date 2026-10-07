@@ -17,6 +17,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_DISTV =		${SALT_MAJOR}.${SALT_MINOR}
 DISTNAME =		salt-${MODPY_DISTV}
+PORTROACH ?=		limit:^${SALT_MAJOR}\.
 
 CATEGORIES =		sysutils net devel
 
