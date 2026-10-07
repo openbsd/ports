@@ -1846,6 +1846,7 @@
      SUBDIR += py-uv-dynamic-versioning
      SUBDIR += py-uvloop
      SUBDIR += py-validators
+     SUBDIR += py-vcs-versioning
      SUBDIR += py-vcversioner
      SUBDIR += py-versioneer
      SUBDIR += py-vine
