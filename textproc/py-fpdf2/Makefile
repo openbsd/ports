@@ -1,6 +1,6 @@
 COMMENT=	PDF creation library for Python
 
-MODPY_DISTV=	2.8.7
+MODPY_DISTV=	2.8.9
 GH_ACCOUNT=	py-pdf
 GH_PROJECT=	fpdf2
 GH_TAGNAME=	${MODPY_DISTV}
