@@ -4,16 +4,14 @@ USE_NOEXECONLY=		Yes
 .endif
 
 MODULES =		lang/python
-MODPY_DISTV =		2.0.0b24
+MODPY_DISTV =		2.0.0b25
 PKGNAME =		borgbackup-${MODPY_DISTV:S/b/beta/}
 EPOCH =			0
-
-REVISION =		0
 
 # OpenSSL used for EVP_aes_256_ocb. It is linked statically to avoid conflicting
 # with shared libcrypto from the base OS pulled in via dependencies.
 BUILD_DEPENDS =		security/openssl/3.5
-RUN_DEPENDS =		databases/py-borgstore>=0.6.1 \
+RUN_DEPENDS =		databases/py-borgstore>=0.7.0 \
 			devel/py-borghash>=0.2.0 \
 			devel/py-jsonargparse \
 			security/py-blake3 \

@@ -510,6 +510,8 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}return_codes_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}serve_cmd_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}serve_cmd_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}store_objects_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}store_objects_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}tag_cmd_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}tag_cmd_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}tar_cmds_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -563,6 +565,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/repo_space_cmd_
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/restricted_permissions_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/return_codes_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/serve_cmd_test.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/store_objects_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/tag_cmd_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/tar_cmds_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/transfer_cmd_test.py
