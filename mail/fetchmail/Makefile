@@ -1,6 +1,6 @@
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
-DISTNAME=	fetchmail-6.6.8
+DISTNAME=	fetchmail-6.6.9
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail
