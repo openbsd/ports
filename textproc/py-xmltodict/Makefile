@@ -1,13 +1,12 @@
-COMMENT =		makes working with XML feel like orking with JSON
+COMMENT =		makes working with XML feel like working with JSON
 
-MODPY_DISTV =	0.12.0
+MODPY_DISTV =		1.0.4
 DISTNAME =		xmltodict-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		10
 
 CATEGORIES =		textproc
 
-MAINTAINER =		Joerg Jung <jung@openbsd.org>
+HOMEPAGE =		https://github.com/martinblech/xmltodict
 
 # MIT
 PERMIT_PACKAGE =	Yes
