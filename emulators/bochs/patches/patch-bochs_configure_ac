@@ -1,25 +1,25 @@
-the configure script tries to use pkg-config to get the LDFLAGS for
-ncurses, but we don't have .pc files for libncurses, so fall back to the
-hardcoded -lncurses
+- disable pulseaudio, this already has audio support via sdl
+- don't reset GUI_LINK_OPTS_TERM to an empty string
 
 Index: bochs/configure.ac
 --- bochs/configure.ac.orig
 +++ bochs/configure.ac
-@@ -3204,17 +3204,7 @@ AC_SUBST(EXPORT_DYNAMIC)
- AC_SUBST(DLLTOOL)
- 
- if test "$use_curses" = yes; then
--  if test "x$PKG_CONFIG" != x; then
--    AC_CHECK_LIB(curses, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs curses`")
--    AC_CHECK_LIB(ncurses, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs ncurses`")
+@@ -2245,7 +2245,7 @@ if test "$soundcard_present" = 1; then
+   if test "$cross_configure" = 0 -a "$DEFAULT_GUI" != win32; then
+     if test "x$PKG_CONFIG" != x; then
+       $PKG_CONFIG --exists libpulse-simple
+-      if test x$? = x0; then
++      if false; then
+         SOUNDLOW_OBJS="$SOUNDLOW_OBJS soundpulse.o"
+         soundlow_drivers="$soundlow_drivers pulse"
+         AC_DEFINE(BX_HAVE_SOUND_PULSE, 1)
+@@ -3207,7 +3207,8 @@ if test "$use_curses" = yes; then
+   if test "x$PKG_CONFIG" != x; then
+     AC_CHECK_LIB(curses, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs curses`")
+     AC_CHECK_LIB(ncurses, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs ncurses`")
 -    AC_CHECK_LIB(termlib, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs termlib`")
--    AC_CHECK_LIB(pdcurses, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs pdcurses`")
--  else
--    AC_CHECK_LIB(curses, mvaddch, GUI_LINK_OPTS_TERM='-lcurses')
-     AC_CHECK_LIB(ncurses, mvaddch, GUI_LINK_OPTS_TERM='-lncurses')
--    AC_CHECK_LIB(termlib, mvaddch, GUI_LINK_OPTS_TERM='-ltermlib')
--    AC_CHECK_LIB(pdcurses, mvaddch, GUI_LINK_OPTS_TERM='-lpdcurses')
--  fi
-   if test "$GUI_LINK_OPTS_TERM" = ""; then
-     echo Curses library not found: tried curses, ncurses, termlib and pdcurses.
-     exit 1
++    dnl this is broken if termlib cintains mvaddch() but there's no termlib.pc file
++    dnl AC_CHECK_LIB(termlib, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs termlib`")
+     AC_CHECK_LIB(pdcurses, mvaddch, GUI_LINK_OPTS_TERM="`$PKG_CONFIG --libs pdcurses`")
+   else
+     AC_CHECK_LIB(curses, mvaddch, GUI_LINK_OPTS_TERM='-lcurses')
