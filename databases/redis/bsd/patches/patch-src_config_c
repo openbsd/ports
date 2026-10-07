@@ -3,7 +3,7 @@ Recognize LOG_DAEMON as a valid facility
 Index: src/config.c
 --- src/config.c.orig
 +++ src/config.c
-@@ -56,6 +56,7 @@ configEnum maxmemory_policy_enum[] = {
+@@ -64,6 +64,7 @@ configEnum maxmemory_policy_enum[] = {
  };
  
  configEnum syslog_facility_enum[] = {

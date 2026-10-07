@@ -4,7 +4,7 @@ is broken with BSD ps(1).
 Index: tests/support/util.tcl
 --- tests/support/util.tcl.orig
 +++ tests/support/util.tcl
-@@ -585,9 +585,9 @@ proc process_is_alive pid {
+@@ -648,9 +648,9 @@ proc process_is_alive pid {
  proc pause_process pid {
      exec kill -SIGSTOP $pid
      wait_for_condition 50 100 {

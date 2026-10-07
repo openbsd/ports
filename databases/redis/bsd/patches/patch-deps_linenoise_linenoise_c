@@ -7,7 +7,7 @@ https://github.com/antirez/linenoise/pull/188
 Index: deps/linenoise/linenoise.c
 --- deps/linenoise/linenoise.c.orig
 +++ deps/linenoise/linenoise.c
-@@ -819,7 +819,7 @@ static int linenoiseEdit(int stdin_fd, int stdout_fd, 
+@@ -822,7 +822,7 @@ static int linenoiseEdit(int stdin_fd, int stdout_fd, 
  
      if (write(l.ofd,prompt,l.plen) == -1) return -1;
      while(1) {

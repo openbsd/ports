@@ -7,7 +7,7 @@ Main changes in this file:
 Index: redis.conf
 --- redis.conf.orig
 +++ redis.conf
-@@ -112,8 +112,8 @@ tcp-backlog 511
+@@ -152,8 +152,8 @@ tcp-backlog 511
  # incoming connections. There is no default, so Redis will not listen
  # on a unix socket when not specified.
  #
@@ -18,7 +18,7 @@ Index: redis.conf
  
  # Close the connection after a client is idle for N seconds (0 to disable)
  timeout 0
-@@ -184,6 +184,7 @@ tcp-keepalive 300
+@@ -234,6 +234,7 @@ tcp-keepalive 300
  # of these, and will not implicitly use the system wide configuration.
  #
  # tls-ca-cert-file ca.crt
@@ -26,7 +26,7 @@ Index: redis.conf
  # tls-ca-cert-dir /etc/ssl/certs
  
  # By default, clients (including replica servers) on a TLS port are required
-@@ -217,14 +218,14 @@ tcp-keepalive 300
+@@ -267,14 +268,14 @@ tcp-keepalive 300
  #
  # tls-protocols "TLSv1.2 TLSv1.3"
  
@@ -43,7 +43,7 @@ Index: redis.conf
  # information about the syntax of this string, and specifically for TLSv1.3
  # ciphersuites.
  #
-@@ -254,9 +255,9 @@ tcp-keepalive 300
+@@ -304,9 +305,9 @@ tcp-keepalive 300
  ################################# GENERAL #####################################
  
  # By default Redis does not run as a daemon. Use 'yes' if you need it.
@@ -55,7 +55,7 @@ Index: redis.conf
  
  # If you run Redis from upstart or systemd, Redis can interact with your
  # supervision tree. Options:
-@@ -281,14 +282,14 @@ daemonize no
+@@ -331,14 +332,14 @@ daemonize no
  #
  # When the server runs non daemonized, no pid file is created if none is
  # specified in the configuration. When the server is daemonized, the pid file
@@ -72,7 +72,7 @@ Index: redis.conf
  
  # Specify the server verbosity level.
  # This can be one of:
-@@ -301,17 +302,18 @@ loglevel notice
+@@ -352,17 +353,18 @@ loglevel notice
  # Specify the log file name. Also the empty string can be used to force
  # Redis to log on the standard output. Note that if you use standard
  # output for logging but daemonize, logs will be sent to /dev/null
@@ -96,7 +96,7 @@ Index: redis.conf
  
  # To disable the built in crash log, which will possibly produce cleaner core
  # dumps when they are needed, uncomment the following:
-@@ -453,7 +455,7 @@ rdb-del-sync-files no
+@@ -507,7 +509,7 @@ rdb-del-sync-files no
  # The Append Only File will also be created inside this directory.
  #
  # Note that you must specify a directory here, not a file name.
@@ -105,7 +105,7 @@ Index: redis.conf
  
  ################################# REPLICATION #################################
  
-@@ -965,6 +967,7 @@ acllog-max-len 128
+@@ -1098,6 +1100,7 @@ acllog-max-len 128
  # limit accordingly in case of very large clusters.
  #
  # maxclients 10000

@@ -1,7 +1,7 @@
 Index: sentinel.conf
 --- sentinel.conf.orig
 +++ sentinel.conf
-@@ -21,14 +21,14 @@
+@@ -10,14 +10,14 @@ protected-mode no
  port 26379
  
  # By default Redis Sentinel does not run as a daemon. Use 'yes' if you need it.
@@ -17,9 +17,9 @@ Index: sentinel.conf
 -pidfile /var/run/redis-sentinel.pid
 +pidfile /var/run/redis/redis-sentinel.pid
  
- # Specify the log file name. Also the empty string can be used to force
- # Sentinel to log on the standard output. Note that if you use standard
-@@ -261,7 +261,7 @@ sentinel failover-timeout mymaster 180000
+ # Specify the server verbosity level.
+ # This can be one of:
+@@ -269,7 +269,7 @@ sentinel failover-timeout mymaster 180000
  #
  # Example:
  #
@@ -28,7 +28,7 @@ Index: sentinel.conf
  
  # CLIENTS RECONFIGURATION SCRIPT
  #
-@@ -286,7 +286,7 @@ sentinel failover-timeout mymaster 180000
+@@ -294,7 +294,7 @@ sentinel failover-timeout mymaster 180000
  #
  # Example:
  #
