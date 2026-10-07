@@ -1,6 +1,6 @@
 COMMENT =	Python bindings for the Rust blake3 crate
 
-MODPY_DISTV =	1.0.9
+MODPY_DISTV =	1.0.10
 DISTNAME =	blake3-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
