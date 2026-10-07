@@ -1,6 +1,6 @@
 COMMENT=	parse dates from HTML pages
 
-MODPY_DISTV=	1.4.2
+MODPY_DISTV=	1.4.3
 DISTNAME=	dateparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
