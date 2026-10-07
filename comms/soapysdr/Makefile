@@ -25,7 +25,8 @@ MODULES =		devel/cmake \
 			lang/python
 
 CONFIGURE_ARGS +=	-DENABLE_PYTHON2=NO \
-			-DENABLE_PYTHON3=YES
+			-DENABLE_PYTHON3=YES \
+			-DENABLE_DOCS=NO
 
 BUILD_DEPENDS =		devel/swig \
 			lang/luajit
