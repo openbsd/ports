@@ -2,11 +2,18 @@
 NOT_FOR_ARCHS =		sparc64
 BROKEN-i386 =		compile fails, possibly out of memory ("fatal runtime error: Rust cannot catch foreign exception")
 
+# aws-lc-sys has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "aarch64"
+USE_NOEXECONLY =	Yes
+.endif
+
 COMMENT =		matrix client for vim addicts
 
 GH_ACCOUNT =		ulyssa
 GH_PROJECT =		iamb
 GH_TAGNAME =		v0.0.12
+REVISION =		0
 
 HOMEPAGE =		https://iamb.chat
 
