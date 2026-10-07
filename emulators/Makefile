@@ -4,6 +4,8 @@
      SUBDIR += atari800
      SUBDIR += bochs
      SUBDIR += bochs,debug
+     SUBDIR += bochs,no_x11
+     SUBDIR += bochs,debug,no_x11
      SUBDIR += citra
      SUBDIR += coldfire
      SUBDIR += desmume
