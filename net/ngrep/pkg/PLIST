@@ -2,3 +2,6 @@
 @newuser _ngrep:622:_ngrep::ngrep user:/nonexistent:/sbin/nologin
 @man man/man8/ngrep.8
 @bin sbin/ngrep
+share/doc/ngrep/
+share/doc/ngrep/EXAMPLES.md
+share/doc/ngrep/README.md
