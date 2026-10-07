@@ -1,10 +1,10 @@
 COMMENT=	MPEG-2 and MPEG-4 AAC decoder
 
-V=		2.11.2
 GH_ACCOUNT=	knik0
 GH_PROJECT=	faad2
-GH_TAGNAME=	${V}
-PKGNAME=	faad-${V}
+GH_TAGNAME=	2.11.4
+PKGNAME=	faad-${GH_TAGNAME}
+
 CATEGORIES=	audio
 
 SHARED_LIBS=	faad		4.0 \
