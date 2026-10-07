@@ -15,7 +15,7 @@ Index: configure.ac
  
  # The later definition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables
  # certain features on NetBSD, so we need _NETBSD_SOURCE to re-enable
-@@ -1173,6 +1173,7 @@ AS_CASE([$ac_sys_system],
+@@ -1177,6 +1177,7 @@ AS_CASE([$ac_sys_system],
    [Darwin*], [MULTIARCH=""],
    [iOS], [MULTIARCH=""],
    [FreeBSD*], [MULTIARCH=""],
@@ -23,7 +23,7 @@ Index: configure.ac
    [MULTIARCH=$($CC --print-multiarch 2>/dev/null)]
  )
  AC_SUBST([MULTIARCH])
-@@ -1922,13 +1923,13 @@ esac
+@@ -1926,13 +1927,13 @@ esac
  [AC_MSG_RESULT([no])])
  if test "$Py_LTO" = 'true' ; then
    case $ac_cv_cc_name in
@@ -39,7 +39,7 @@ Index: configure.ac
        AC_SUBST([LLVM_AR_FOUND])
        if test -n "${LLVM_AR}" -a -x "${LLVM_AR}"
        then
-@@ -2052,7 +2053,7 @@ fi
+@@ -2056,7 +2057,7 @@ fi
  LLVM_PROF_ERR=no
  
  case "$ac_cv_cc_name" in
@@ -48,7 +48,7 @@ Index: configure.ac
      # Any changes made here should be reflected in the GCC+Darwin case below
      PGO_PROF_GEN_FLAG="-fprofile-instr-generate"
      PGO_PROF_USE_FLAG="-fprofile-instr-use=\"\$(shell pwd)/code.profclangd\""
-@@ -4492,11 +4493,7 @@ dnl Detect Tcl/Tk. Use pkg-config if available.
+@@ -4496,11 +4497,7 @@ dnl Detect Tcl/Tk. Use pkg-config if available.
  dnl
  found_tcltk=no
  for _QUERY in \

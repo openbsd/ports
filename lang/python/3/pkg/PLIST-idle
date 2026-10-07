@@ -444,9 +444,6 @@ lib/${PY_VERSION}/idlelib/idle_test/__pycache__/test_zoomheight.${PYC_MAGIC_TAG}
 lib/${PY_VERSION}/idlelib/idle_test/__pycache__/test_zzdummy.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/idlelib/idle_test/__pycache__/test_zzdummy.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/idlelib/idle_test/__pycache__/test_zzdummy.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/idlelib/idle_test/__pycache__/test_zzdummy_user.${PYC_MAGIC_TAG}.opt-1.pyc
-lib/${PY_VERSION}/idlelib/idle_test/__pycache__/test_zzdummy_user.${PYC_MAGIC_TAG}.opt-2.pyc
-lib/${PY_VERSION}/idlelib/idle_test/__pycache__/test_zzdummy_user.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/idlelib/idle_test/__pycache__/tkinter_testing_utils.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/idlelib/idle_test/__pycache__/tkinter_testing_utils.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/idlelib/idle_test/__pycache__/tkinter_testing_utils.${PYC_MAGIC_TAG}.pyc
@@ -515,7 +512,6 @@ lib/${PY_VERSION}/idlelib/idle_test/test_warning.py
 lib/${PY_VERSION}/idlelib/idle_test/test_window.py
 lib/${PY_VERSION}/idlelib/idle_test/test_zoomheight.py
 lib/${PY_VERSION}/idlelib/idle_test/test_zzdummy.py
-lib/${PY_VERSION}/idlelib/idle_test/test_zzdummy_user.py
 lib/${PY_VERSION}/idlelib/idle_test/tkinter_testing_utils.py
 lib/${PY_VERSION}/idlelib/iomenu.py
 lib/${PY_VERSION}/idlelib/macosx.py

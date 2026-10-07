@@ -2324,6 +2324,9 @@ lib/${PY_VERSION}/test/test_capi/__pycache__/test_run.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_set.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_set.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_set.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_capi/__pycache__/test_slice.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_capi/__pycache__/test_slice.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_capi/__pycache__/test_slice.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_structmembers.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_structmembers.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_structmembers.${PYC_MAGIC_TAG}.pyc
@@ -2379,6 +2382,7 @@ lib/${PY_VERSION}/test/test_capi/test_opt.py
 lib/${PY_VERSION}/test/test_capi/test_pyatomic.py
 lib/${PY_VERSION}/test/test_capi/test_run.py
 lib/${PY_VERSION}/test/test_capi/test_set.py
+lib/${PY_VERSION}/test/test_capi/test_slice.py
 lib/${PY_VERSION}/test/test_capi/test_structmembers.py
 lib/${PY_VERSION}/test/test_capi/test_sys.py
 lib/${PY_VERSION}/test/test_capi/test_time.py
@@ -3035,6 +3039,9 @@ lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_code.${PYC_MAGIC_TAG
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_collections.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_collections.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_collections.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_context.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_context.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_context.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_cprofile.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_cprofile.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_cprofile.${PYC_MAGIC_TAG}.pyc
@@ -3156,6 +3163,7 @@ lib/${PY_VERSION}/test/test_free_threading/test_bisect.py
 lib/${PY_VERSION}/test/test_free_threading/test_capi.py
 lib/${PY_VERSION}/test/test_free_threading/test_code.py
 lib/${PY_VERSION}/test/test_free_threading/test_collections.py
+lib/${PY_VERSION}/test/test_free_threading/test_context.py
 lib/${PY_VERSION}/test/test_free_threading/test_cprofile.py
 lib/${PY_VERSION}/test/test_free_threading/test_csv.py
 lib/${PY_VERSION}/test/test_free_threading/test_dbm_gnu.py
