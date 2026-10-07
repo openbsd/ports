@@ -162,7 +162,7 @@ BUILD_DEPENDS +=	py3-setuptools->=79v0:devel/py-setuptools \
 			devel/py-wheel
 _MODPY_EXPECTED_BACKEND = setuptools
 .    if ${MODPY_PYBUILD} == setuptools_scm
-BUILD_DEPENDS +=	devel/py-setuptools_scm
+BUILD_DEPENDS +=	devel/py-setuptools_scm->=10
 .    elif ${MODPY_PYBUILD} == setuptools-rust
 BUILD_DEPENDS +=	devel/py-setuptools-rust
 _MODPY_USE_CARGO =	Yes
