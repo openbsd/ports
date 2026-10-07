@@ -1,8 +1,7 @@
 COMMENT=	Python module for GnuPG interface
 
-MODPY_DISTV=	0.5.6
+MODPY_DISTV=	0.5.7
 DISTNAME=	python_gnupg-${MODPY_DISTV}
-WRKDIST=	${WRKDIR}/${DISTNAME:S/_/-/}
 PKGNAME=	py-gnupg-${MODPY_DISTV}
 
 CATEGORIES=	security devel
