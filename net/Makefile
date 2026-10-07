@@ -340,6 +340,7 @@
      SUBDIR += ngircd
      SUBDIR += ngircd,ident
      SUBDIR += ngrep
+     SUBDIR += ngrep,tcpkill
      SUBDIR += ngtcp2
      SUBDIR += nheko
      SUBDIR += nicotine-plus
