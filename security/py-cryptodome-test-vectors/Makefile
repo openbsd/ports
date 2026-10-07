@@ -1,10 +1,9 @@
 COMMENT=	test vectors for pycryptodome
 
-MODPY_DISTV=	1.0.20
-DISTNAME=	pycryptodome-test-vectors-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:S/py//}
-EXTRACT_SUFX=	.zip
-REVISION=	1
+MODPY_DISTV=	1.0.22
+DISTNAME=	pycryptodome_test_vectors-${MODPY_DISTV}
+PKGNAME=	py-cryptodome-test-vectors-${MODPY_DISTV}
+#EXTRACT_SUFX=	.zip
 
 CATEGORIES=	security
 

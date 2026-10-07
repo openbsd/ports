@@ -129,6 +129,8 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wychep
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_gcm_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_siv_cmac_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/chacha20_poly1305_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/kw_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/kwp_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/rsa_oaep_2048_sha1_mgf1sha1_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/rsa_oaep_2048_sha224_mgf1sha1_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/rsa_oaep_2048_sha224_mgf1sha224_test.json
@@ -197,6 +199,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/KAS_ECC_CDH_PrimitiveTest.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/KDF_SP800_108_COUNTER.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/HPKE-test-vectors.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp224r1_ecpoint_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp224r1_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp256r1_ecpoint_test.json
