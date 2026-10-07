@@ -37,6 +37,8 @@ lib/python${MODPY_VERSION}/site-packages/rrdp_tools/${MODPY_PYCACHE}sync_config.
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/${MODPY_PYCACHE}sync_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/${MODPY_PYCACHE}sync_rrdp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/${MODPY_PYCACHE}sync_rrdp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rrdp_tools/${MODPY_PYCACHE}workers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rrdp_tools/${MODPY_PYCACHE}workers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/cli.py
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/http_client.py
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/import_metrics.py
@@ -51,3 +53,4 @@ lib/python${MODPY_VERSION}/site-packages/rrdp_tools/sharding.py
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/snapshot_rrdp.py
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/sync_config.py
 lib/python${MODPY_VERSION}/site-packages/rrdp_tools/sync_rrdp.py
+lib/python${MODPY_VERSION}/site-packages/rrdp_tools/workers.py

@@ -2,7 +2,7 @@ COMMENT=	RPKI Repository Delta Protocol (RRDP) utilities
 
 CATEGORIES=	net
 
-MODPY_DISTV=	0.5.0
+MODPY_DISTV=	0.5.1
 GH_ACCOUNT=	ties
 GH_PROJECT=	rpki-rrdp-tools-py
 GH_TAGNAME=	v${MODPY_DISTV}
@@ -21,7 +21,8 @@ RUN_DEPENDS=	textproc/py-rnc2rng \
 		devel/py-click \
 		security/py-asn1crypto \
 		security/py-asn1tools \
-		devel/py-alive-progress
+		devel/py-alive-progress \
+		textproc/py-tomlkit
 
 # one test requires network
 TEST_DEPENDS=	devel/py-test-asyncio \
