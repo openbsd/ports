@@ -1,9 +1,8 @@
 COMMENT=		query APIs via SQL
 
-MODPY_DISTV =		1.4.4
+MODPY_DISTV =		1.4.5
 DISTNAME =		shillelagh-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		databases
 
@@ -23,7 +22,8 @@ RUN_DEPENDS =		databases/py-apsw \
 			www/py-requests \
 			www/py-requests-cache
 
-# XXX: needs fakefs
+# XXX: also needs pyfakefs, pytest-integration, sqlglot, multicorn and probably more
+NO_TEST =		Yes
 TEST_DEPENDS =		devel/py-freezegun \
 			devel/py-holidays \
 			devel/py-prison \
