@@ -1,6 +1,6 @@
 COMMENT=	best practices checker for ansible
 
-MODPY_DISTV=	25.12.1
+MODPY_DISTV=	26.1.1
 DISTNAME=	ansible_lint-${MODPY_DISTV}
 PKGNAME=	ansible-lint-${MODPY_DISTV}
 
