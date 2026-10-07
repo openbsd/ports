@@ -1,6 +1,6 @@
 COMMENT =		krb5 API interface
 
-MODPY_DISTV =		0.8.0
+MODPY_DISTV =		0.10.0
 DISTNAME =		krb5-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -20,5 +20,6 @@ MODPY_PYBUILD =		setuptools
 BUILD_DEPENDS =		lang/cython
 
 # tests need missing k5test
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
