@@ -1,6 +1,6 @@
 COMMENT=	measures number of terminal column cells of wide-char code
 
-MODPY_DISTV=	0.8.3
+MODPY_DISTV=	0.9.2
 DISTNAME=	wcwidth-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -16,5 +16,6 @@ MODPY_PYBUILD=	hatchling
 MODPY_PI=	Yes
 
 TEST_DEPENDS=	devel/py-test-cov
+MODPY_TEST_LINK_SO= Yes
 
 .include <bsd.port.mk>
