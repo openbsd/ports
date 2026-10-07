@@ -4,6 +4,7 @@ lib/python${MODPY_VERSION}/site-packages/platformdirs-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/platformdirs-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/platformdirs-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/platformdirs-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/platformdirs-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/platformdirs-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/platformdirs-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/platformdirs/__init__.py
@@ -19,8 +20,14 @@ lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}android.${
 lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}android.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}ios.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}ios.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}macos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}macos.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}pytest_plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}pytest_plugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}unix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}unix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,8 +37,11 @@ lib/python${MODPY_VERSION}/site-packages/platformdirs/${MODPY_PYCACHE}windows.${
 lib/python${MODPY_VERSION}/site-packages/platformdirs/_xdg.py
 lib/python${MODPY_VERSION}/site-packages/platformdirs/android.py
 lib/python${MODPY_VERSION}/site-packages/platformdirs/api.py
+lib/python${MODPY_VERSION}/site-packages/platformdirs/ios.py
 lib/python${MODPY_VERSION}/site-packages/platformdirs/macos.py
 lib/python${MODPY_VERSION}/site-packages/platformdirs/py.typed
+lib/python${MODPY_VERSION}/site-packages/platformdirs/pytest_plugin.py
+lib/python${MODPY_VERSION}/site-packages/platformdirs/testing.py
 lib/python${MODPY_VERSION}/site-packages/platformdirs/unix.py
 lib/python${MODPY_VERSION}/site-packages/platformdirs/version.py
 lib/python${MODPY_VERSION}/site-packages/platformdirs/windows.py
