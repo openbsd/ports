@@ -1,9 +1,8 @@
 COMMENT=	testing frameworks from Zope 3
 
-MODPY_DISTV=	5.0.1
-DISTNAME=	zope.testing-${MODPY_DISTV}
+MODPY_DISTV=	6.2
+DISTNAME=	zope_testing-${MODPY_DISTV}
 PKGNAME=	py-zopetesting-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,8 +12,7 @@ HOMEPAGE=	https://github.com/zopefoundation/zope.testing
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-TEST_ENV=	PY_IGNORE_IMPORTMISMATCH=1
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
