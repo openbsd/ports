@@ -12,10 +12,10 @@ MODERL_MODULES =	cache_tab		1.0.34 \
 			epam			1.0.14 \
 			eredis			1.7.1 \
 			erlydtl			_none \
-			esip			1.0.60 \
+			esip			1.0.61 \
 			ezlib			1.0.16 \
 			fast_tls		1.1.26 \
-			fast_xml		1.1.60 \
+			fast_xml		1.1.61 \
 			fast_yaml		1.0.40 \
 			idna			7.1.0 \
 			jose			1.11.12 \
@@ -29,6 +29,6 @@ MODERL_MODULES =	cache_tab		1.0.34 \
 			pkix			1.0.10 \
 			sqlite3			1.1.15 \
 			stringprep		1.0.34 \
-			stun			1.2.22 \
-			xmpp			1.13.4 \
+			stun			1.2.23 \
+			xmpp			1.13.5 \
 			yconf			1.0.23

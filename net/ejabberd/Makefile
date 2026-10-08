@@ -1,6 +1,6 @@
 COMMENT =		robust, ubiquitous and massively scalable messaging platform
 
-V =			26.07
+V =			26.09
 BOOTSTRAP_V =		5.3.8
 DIST_TUPLE +=		github processone ejabberd ${V} .
 
