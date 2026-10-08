@@ -254,6 +254,8 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_cy
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_cyclic_reference.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_datetime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_datetime.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_dbconnection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_dbconnection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_decimal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_decimal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}test_declarative.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -382,6 +384,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_csvexport.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_csvimport.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_cyclic_reference.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_datetime.py
+lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_dbconnection.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_decimal.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_declarative.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_default_style.py
