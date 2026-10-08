@@ -1,6 +1,6 @@
 COMMENT=	lightweight feed reader for text terminals
 
-DISTNAME=	newsraft-0.37
+DISTNAME=	newsraft-0.38
 WRKDIST=	${WRKDIR}/newsraft
 
 CATEGORIES=	www
@@ -18,6 +18,8 @@ BUILD_DEPENDS=	textproc/scdoc
 LIB_DEPENDS=	databases/sqlite3 \
 		net/curl \
 		www/gumbo
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+4,-guic
 
 NO_TEST=	Yes
 
