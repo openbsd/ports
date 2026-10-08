@@ -1,9 +1,12 @@
 COMMENT =	bencoding and bdecoding implementation
 
-MODPY_DISTV =	4.0.0
-DISTNAME =	bencode.py-${MODPY_DISTV}
+MODPY_DISTV =	4.1.0
+GH_ACCOUNT =	fuzeman
+GH_PROJECT =	bencode.py
+GH_TAGNAME =	${MODPY_DISTV}
+
+#DISTNAME =	bencode_py-${MODPY_DISTV}
 PKGNAME =	py-bencode-${MODPY_DISTV}
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -13,7 +16,7 @@ HOMEPAGE =	https://github.com/fuzeman/bencode.py
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PI =		Yes
+#MODPY_PI =		Yes
 MODPY_PYBUILD =		pbr
 
 .include <bsd.port.mk>
