@@ -286,8 +286,6 @@
      SUBDIR += py-asn1crypto
      SUBDIR += py-asn1tools
      SUBDIR += py-asyncssh
-     SUBDIR += py-axolotl
-     SUBDIR += py-axolotl-curve25519
      SUBDIR += py-bcrypt
      SUBDIR += py-blake3
      SUBDIR += py-cryptodome
