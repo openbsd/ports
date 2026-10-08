@@ -33,6 +33,8 @@
 @man man/man1/jj-evolog.1
 @man man/man1/jj-file-annotate.1
 @man man/man1/jj-file-chmod.1
+@man man/man1/jj-file-delete.1
+@man man/man1/jj-file-edit.1
 @man man/man1/jj-file-list.1
 @man man/man1/jj-file-search.1
 @man man/man1/jj-file-show.1
@@ -106,6 +108,7 @@
 @man man/man1/jj-util-backend.1
 @man man/man1/jj-util-completion.1
 @man man/man1/jj-util-config-schema.1
+@man man/man1/jj-util-diff.1
 @man man/man1/jj-util-exec.1
 @man man/man1/jj-util-gc.1
 @man man/man1/jj-util-install-man-pages.1
@@ -116,6 +119,7 @@
 @man man/man1/jj-workspace-add.1
 @man man/man1/jj-workspace-forget.1
 @man man/man1/jj-workspace-list.1
+@man man/man1/jj-workspace-remove.1
 @man man/man1/jj-workspace-rename.1
 @man man/man1/jj-workspace-root.1
 @man man/man1/jj-workspace-update-stale.1
