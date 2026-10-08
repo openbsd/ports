@@ -44,8 +44,8 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.1.mod) = rxpdyzMazno/n8G1
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = wKZIoDfaVKawLoqBGx05F9SdxOGEHNdW8o8MTxWTkzw=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.16.mod) = LkapvtvtFBezR5NwVwVMRjpemrYvT/vVEtnIu3bpjbI=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.16.zip) = Cn4BkIkkmD35EY5iwfSRMeHjZfF7Tk4wIIBej9/mMHo=
-SHA256 (go_modules/github.com/walles/twin/@v/v0.9.3.mod) = Nm+WK+5pJ29UxBGQKaCRmtDiO8f3q9GU17aR6RSXvQg=
-SHA256 (go_modules/github.com/walles/twin/@v/v0.9.3.zip) = 8Ua7ejNMFS3pqOT2NjcKTnyL994AcynzXz976yo1WWU=
+SHA256 (go_modules/github.com/walles/twin/@v/v0.9.4.mod) = Nm+WK+5pJ29UxBGQKaCRmtDiO8f3q9GU17aR6RSXvQg=
+SHA256 (go_modules/github.com/walles/twin/@v/v0.9.4.zip) = 14YT0c/2C5l/KfMoBF61hnP9kWXmWFd5aF/Ho/JDAbo=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.12.0.mod) = YkVnRZxumUesSr3gtwNO5h3Ltqk3P1lwCUwLs+gSGWQ=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.12.0.zip) = ebf3n2i8gt/V3l9Yxam0dQEgvBsV+yAaGfJ/HX+071U=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.12.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
@@ -69,7 +69,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHd
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
 SHA256 (go_modules/gotest.tools/v3/@v/v3.5.2.mod) = 6TU82IDTmK+qywulThJXUhO5dfPNeZHXtCqjv+X2+dY=
 SHA256 (go_modules/gotest.tools/v3/@v/v3.5.2.zip) = 18QK4TXko03unKSEetGCCPE4hHch5pNke4lyWSh6HUs=
-SHA256 (moor-v2.19.1.zip) = TQetbWfF1ynP2sXOZ5NpqrnAZHlsf3Wu0giyBmBScWY=
+SHA256 (moor-v2.19.2.zip) = Do0qF9fx5gw+GpDIiP3cSA9H2WhpS/0w7JCYStoNWXM=
 SIZE (go_modules/github.com/adrg/xdg/@v/v0.5.3.mod) = 258
 SIZE (go_modules/github.com/adrg/xdg/@v/v0.5.3.zip) = 37913
 SIZE (go_modules/github.com/alecthomas/assert/v2/@v/v2.11.0.mod) = 133
@@ -116,8 +116,8 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.1.mod) = 188
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = 417
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.16.mod) = 40
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.16.zip) = 4247946
-SIZE (go_modules/github.com/walles/twin/@v/v0.9.3.mod) = 411
-SIZE (go_modules/github.com/walles/twin/@v/v0.9.3.zip) = 1007829
+SIZE (go_modules/github.com/walles/twin/@v/v0.9.4.mod) = 411
+SIZE (go_modules/github.com/walles/twin/@v/v0.9.4.zip) = 1009836
 SIZE (go_modules/golang.org/x/mod/@v/v0.12.0.mod) = 84
 SIZE (go_modules/golang.org/x/mod/@v/v0.12.0.zip) = 166176
 SIZE (go_modules/golang.org/x/sys/@v/v0.12.0.mod) = 33
@@ -141,4 +141,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/gotest.tools/v3/@v/v3.5.2.mod) = 195
 SIZE (go_modules/gotest.tools/v3/@v/v3.5.2.zip) = 101104
-SIZE (moor-v2.19.1.zip) = 5719618
+SIZE (moor-v2.19.2.zip) = 5719070

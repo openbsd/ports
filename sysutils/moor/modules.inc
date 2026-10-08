@@ -18,7 +18,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx	 v0.5.0 \
 	github.com/stretchr/testify	 v1.10.0 \
 	github.com/ulikunitz/xz		 v0.5.16 \
-	github.com/walles/twin		 v0.9.3 \
+	github.com/walles/twin		 v0.9.4 \
 	golang.org/x/mod		 v0.12.0 \
 	golang.org/x/sys		 v0.47.0 \
 	golang.org/x/term		 v0.45.0 \
