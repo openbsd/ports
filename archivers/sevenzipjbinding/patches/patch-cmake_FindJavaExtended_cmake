@@ -1,0 +1,11 @@
+Index: cmake/FindJavaExtended.cmake
+--- cmake/FindJavaExtended.cmake.orig
++++ cmake/FindJavaExtended.cmake
+@@ -83,6 +83,7 @@ IF(NOT JAVA_INCLUDE_PATH2)
+                 "${JAVA_INCLUDE_PATH}/linux"
+                 "${JAVA_INCLUDE_PATH}/freebsd"
+                 "${JAVA_INCLUDE_PATH}/netbsd"
++                "${JAVA_INCLUDE_PATH}/openbsd"
+             NO_CMAKE_FIND_ROOT_PATH
+     )
+ 

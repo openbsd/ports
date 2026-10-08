@@ -1,0 +1,129 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -107,7 +107,7 @@ MACRO(CREATE_COMPILE_JAVA_CUSTOM_COMMAND 
+     SET(JAVAC_ARGS_FILE ${PROJECT_BINARY_DIR}/javac-args-${P_BUILD_NAME}.tmp)
+     FILE(GLOB_RECURSE JAVA_SOURCE_FILES RELATIVE ${P_SRC_DIR} ${P_SRC_DIR}/*.java)
+ 
+-    FILE(WRITE ${JAVAC_ARGS_FILE} "-source 1.5 -target 1.5\n")
++    #FILE(WRITE ${JAVAC_ARGS_FILE} "-source 1.5 -target 1.5\n")
+     FILE(APPEND ${JAVAC_ARGS_FILE} "-encoding UTF-8\n")
+     FILE(APPEND ${JAVAC_ARGS_FILE} "-d ${BIN_DIR}\n")
+     IF(NOT "${ARGN}" STREQUAL "")
+@@ -129,7 +129,7 @@ MACRO(CREATE_COMPILE_JAVA_CUSTOM_COMMAND 
+     ENDFOREACH(F)
+ 
+     ADD_CUSTOM_COMMAND(OUTPUT "${P_JAR_FILE}"
+-        COMMAND ${JAVA_COMPILE} @${JAVAC_ARGS_FILE}
++	COMMAND ${JAVA_COMPILE} -h "${PROJECT_BINARY_DIR}/jbinding-cpp/javah" @${JAVAC_ARGS_FILE}
+         COMMAND ${JAVA_ARCHIVE} cfm "${P_JAR_FILE}" "${P_MANIFEST_MF}" -C "${BIN_DIR}" .
+         DEPENDS ${JAVA_SOURCE_FILES_FULL}
+         WORKING_DIRECTORY "${P_SRC_DIR}"
+@@ -154,15 +154,32 @@ ENDIF()
+ 
+ ADD_DEPENDENCIES(7-Zip-JBinding sevenzipjbinding-jar)
+ 
+-cmake_policy(SET CMP0026 OLD)
++# Modern target directory setup
++file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/${PLATFORM})
++string(RANDOM LENGTH 12 BUILD_REF)
++
++# Write static platform property file
++file(WRITE ${PROJECT_BINARY_DIR}/sevenzipjbinding-platforms.properties "platform.1=${PLATFORM}\n")
++
++# Use file(GENERATE) to safely resolve target file names/paths at build time without LOCATION
++set(SEVENZIPJBINDING_LIB_PROPERTY_FILE ${PROJECT_BINARY_DIR}/${PLATFORM}/sevenzipjbinding-lib.properties)
++
++file(GENERATE 
++    OUTPUT ${SEVENZIPJBINDING_LIB_PROPERTY_FILE}
++    CONTENT "lib.filename=$<TARGET_FILE_NAME:7-Zip-JBinding>\nlib.path=$<TARGET_FILE:7-Zip-JBinding>\nbuild.ref=${BUILD_REF}\n"
++)
++
++#cmake_policy(SET CMP0026 OLD)
+ # TODO: Not allowed due to policy CMP0026
+-GET_TARGET_PROPERTY(SEVENZIP_JBINDING_LIB 7-Zip-JBinding LOCATION)
+-GET_FILENAME_COMPONENT(SEVENZIP_JBINDING_LIB_FILENAME "${SEVENZIP_JBINDING_LIB}" NAME)
++#GET_TARGET_PROPERTY(SEVENZIP_JBINDING_LIB 7-Zip-JBinding LOCATION)
++#GET_FILENAME_COMPONENT(SEVENZIP_JBINDING_LIB_FILENAME "${SEVENZIP_JBINDING_LIB}" NAME)
+ 
+-FILE(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/${PLATFORM})
+-STRING(RANDOM LENGTH 12 BUILD_REF)
++set(SEVENZIP_JBINDING_LIB_FILENAME "$<TARGET_FILE_NAME:7-Zip-JBinding>")
+ 
+-SET(SEVENZIPJBINDING_LIB_PROPERTY_FILE ${PROJECT_BINARY_DIR}/${PLATFORM}/sevenzipjbinding-lib.properties)
++#FILE(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/${PLATFORM})
++#STRING(RANDOM LENGTH 12 BUILD_REF)
++
++#SET(SEVENZIPJBINDING_LIB_PROPERTY_FILE ${PROJECT_BINARY_DIR}/${PLATFORM}/sevenzipjbinding-lib.properties)
+ SET(SEVENZIPJBINDING_PLATFORMS_PROPERTY_FILE sevenzipjbinding-platforms.properties)
+ FILE(WRITE ${PROJECT_BINARY_DIR}/${SEVENZIPJBINDING_PLATFORMS_PROPERTY_FILE} "platform.1=${PLATFORM}\n")
+ 
+@@ -201,21 +218,28 @@ ADD_CUSTOM_TARGET(sevenzipjbinding-lib-jar ALL
+ ADD_DEPENDENCIES(sevenzipjbinding-lib-jar 7-Zip-JBinding) #sevenzipjbinding-jar
+ 
+ SET(LIB_PROPERTY_FILE_CREATOR ${PROJECT_BINARY_DIR}/LibPropertyFileCreator.cmake)
+-FILE(WRITE ${LIB_PROPERTY_FILE_CREATOR} "
+-    FILE(SHA1 \"${PROJECT_BINARY_DIR}/jbinding-cpp/${SEVENZIP_JBINDING_LIB_FILENAME}\" HASH1)
+-    FILE(WRITE  \"${SEVENZIPJBINDING_LIB_PROPERTY_FILE}\" \"build.ref=${BUILD_REF}\\n\\n\")
+-    FILE(APPEND \"${SEVENZIPJBINDING_LIB_PROPERTY_FILE}\" \"lib.1.name=${SEVENZIP_JBINDING_LIB_FILENAME}\\n\")
+-    FILE(APPEND \"${SEVENZIPJBINDING_LIB_PROPERTY_FILE}\" \"lib.1.hash=\${HASH1}\\n\")
+-")
+ 
++# Prepare runtime library logic if enabled
++SET(RUNTIME_LIB_LOGIC "")
+ IF(RUNTIME_LIB)
+-    FILE(APPEND ${LIB_PROPERTY_FILE_CREATOR} "
+-        FILE(SHA1 \"${RUNTIME_LIB_FILENAME}\" HASH2)
+-        FILE(APPEND \"${SEVENZIPJBINDING_LIB_PROPERTY_FILE}\" \"lib.2.name=${RUNTIME_LIB}\\n\")
+-        FILE(APPEND \"${SEVENZIPJBINDING_LIB_PROPERTY_FILE}\" \"lib.2.hash=\${HASH2}\\n\")
+-    ")
++    SET(RUNTIME_LIB_LOGIC "
++FILE(SHA1 \"${RUNTIME_LIB_FILENAME}\" HASH2)
++FILE(APPEND \"${SEVENZIPJBINDING_LIB_PROPERTY_FILE}\" \"lib.2.name=${RUNTIME_LIB}\\n\")
++FILE(APPEND \"${SEVENZIPJBINDING_LIB_PROPERTY_FILE}\" \"lib.2.hash=\${HASH2}\\n\")
++")
+ ENDIF(RUNTIME_LIB)
+ 
++# Use file(GENERATE) to evaluate $<TARGET_FILE_NAME:7-Zip-JBinding> safely
++FILE(GENERATE 
++    OUTPUT "${LIB_PROPERTY_FILE_CREATOR}"
++    CONTENT "
++FILE(SHA1 \"${PROJECT_BINARY_DIR}/jbinding-cpp/$<TARGET_FILE_NAME:7-Zip-JBinding>\" HASH1)
++FILE(WRITE  \"${SEVENZIPJBINDING_LIB_PROPERTY_FILE}\" \"build.ref=${BUILD_REF}\\n\\n\")
++FILE(APPEND \"${SEVENZIPJBINDING_LIB_PROPERTY_FILE}\" \"lib.1.name=$<TARGET_FILE_NAME:7-Zip-JBinding>\\n\")
++FILE(APPEND \"${SEVENZIPJBINDING_LIB_PROPERTY_FILE}\" \"lib.1.hash=\${HASH1}\\n\")
++${RUNTIME_LIB_LOGIC}
++"
++)
+ 
+ ADD_CUSTOM_COMMAND(OUTPUT ${SEVENZIPJBINDING_LIB_PROPERTY_FILE}
+                    COMMAND ${CMAKE_COMMAND} -P ${LIB_PROPERTY_FILE_CREATOR}
+@@ -224,18 +248,19 @@ ADD_CUSTOM_COMMAND(OUTPUT ${SEVENZIPJBINDING_LIB_PROPE
+                    COMMENT Calculating hash of the native libraries)
+ 
+ ADD_CUSTOM_COMMAND(OUTPUT ${SEVENZIPJBINDING_LIB_JAR}
++                   # Copy the compiled .so into the OpenBSD-amd64 directory
+                    COMMAND ${CMAKE_COMMAND} -E copy
+-                                           ${PROJECT_BINARY_DIR}/jbinding-cpp/${SEVENZIP_JBINDING_LIB_FILENAME}
+-                                           ${PLATFORM}
++                           $<TARGET_FILE:7-Zip-JBinding>
++                           ${PLATFORM}/${SEVENZIP_JBINDING_LIB_FILENAME}
+                    COMMAND ${JAVA_ARCHIVE} cfm "${SEVENZIPJBINDING_LIB_JAR}" "${SEVENZIPJBINDING_LIB_MANIFEST}"
+-                                           -C ${PROJECT_BINARY_DIR}
+-                                           ${PLATFORM}
+-                   COMMAND ${JAVA_ARCHIVE} uf ${SEVENZIPJBINDING_LIB_JAR} 
+-                                           -C ${PROJECT_BINARY_DIR}
+-                                           ${SEVENZIPJBINDING_PLATFORMS_PROPERTY_FILE}
+-                   DEPENDS ${SEVENZIPJBINDING_LIB_PROPERTY_FILE}
++                           -C ${PROJECT_BINARY_DIR}
++                           ${PLATFORM}
++                   COMMAND ${JAVA_ARCHIVE} uf ${SEVENZIPJBINDING_LIB_JAR}
++                           -C ${PROJECT_BINARY_DIR}
++                           ${SEVENZIPJBINDING_PLATFORMS_PROPERTY_FILE}
++                   DEPENDS 7-Zip-JBinding ${SEVENZIPJBINDING_LIB_PROPERTY_FILE}
+                    WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+-                   COMMENT Building Platformdependend jar)
++                   COMMENT "Building platform-dependent JAR with embedded native library")
+ 
+ IF(RUNTIME_LIB)
+     ADD_CUSTOM_COMMAND(TARGET sevenzipjbinding-lib-jar POST_BUILD

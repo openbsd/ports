@@ -1,0 +1,4 @@
+share/java/
+share/java/classes/
+share/java/classes/sevenzipjbinding-OpenBSD-${JAR_ARCH}.jar
+share/java/classes/sevenzipjbinding.jar

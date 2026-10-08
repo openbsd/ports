@@ -1,0 +1,31 @@
+Index: jbinding-cpp/CMakeLists.txt
+--- jbinding-cpp/CMakeLists.txt.orig
++++ jbinding-cpp/CMakeLists.txt
+@@ -479,12 +479,15 @@ SET(JAVAH_JAVA_CLASS_LIST
+     net.sf.sevenzipjbinding.impl.OutArchiveImpl
+ )
+ 
+-
+ add_custom_command(OUTPUT ${JBINDING_JAVAH_H_FILES}
+-                   COMMAND ${JAVA_HEADER_COMPILE} -jni -d . -classpath ${SEVENZIPJBINDING_JAR} ${JAVAH_JAVA_CLASS_LIST}  
++                   COMMAND ${JAVA_COMPILE} -h . -d . 
++                           -sourcepath "${CMAKE_SOURCE_DIR}/jbinding-java/src"
++                           ${CMAKE_SOURCE_DIR}/jbinding-java/src/net/sf/sevenzipjbinding/SevenZip.java
++                           ${CMAKE_SOURCE_DIR}/jbinding-java/src/net/sf/sevenzipjbinding/impl/InArchiveImpl.java
++                           ${CMAKE_SOURCE_DIR}/jbinding-java/src/net/sf/sevenzipjbinding/impl/OutArchiveImpl.java
+                    DEPENDS ${SEVENZIPJBINDING_JAR}
+                    WORKING_DIRECTORY ${JAVAH_OUTPUT_DIR}
+-                   COMMENT "javah: generating h-files from java classes ${JAVAH_JAVA_CLASS_LIST}"
++                   COMMENT "javac -h: generating h-files from java sources"
+ )
+ 
+ add_library(7-Zip-JBinding
+@@ -505,7 +508,7 @@ ENDIF()
+ IF(MINGW)
+ #   TARGET_LINK_LIBRARIES(7-Zip-JBinding c)
+ ELSE(MINGW)
+-    TARGET_LINK_LIBRARIES(7-Zip-JBinding dl c pthread)
++    TARGET_LINK_LIBRARIES(7-Zip-JBinding c pthread)
+ ENDIF(MINGW)
+ 
+ 
