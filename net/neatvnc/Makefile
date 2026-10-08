@@ -1,6 +1,6 @@
 COMMENT = liberally licensed VNC server library
 
-V =		1.0.1
+V =		1.0.3
 DIST_TUPLE =	github any1 neatvnc v${V} .
 
 SHARED_LIBS =	neatvnc 0.0 # 1.0.0
