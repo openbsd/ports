@@ -1,5 +1,4 @@
 @pkgpath devel/py-zopecomponent,python3
-lib/python${MODPY_VERSION}/site-packages/zope.component-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/zope/component/
 lib/python${MODPY_VERSION}/site-packages/zope/component/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/${MODPY_PYCACHE}/
@@ -56,10 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/zope/component/registry.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/security.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/standalonetests.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/testfiles/
-lib/python${MODPY_VERSION}/site-packages/zope/component/testfiles/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/testfiles/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/zope/component/testfiles/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/zope/component/testfiles/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/component/testfiles/${MODPY_PYCACHE}adapter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/component/testfiles/${MODPY_PYCACHE}adapter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/component/testfiles/${MODPY_PYCACHE}components.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -129,5 +125,4 @@ lib/python${MODPY_VERSION}/site-packages/zope_component-${MODPY_DISTV}.dist-info
 lib/python${MODPY_VERSION}/site-packages/zope_component-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/zope_component-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/zope_component-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/zope_component-${MODPY_DISTV}.dist-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/zope_component-${MODPY_DISTV}.dist-info/top_level.txt
