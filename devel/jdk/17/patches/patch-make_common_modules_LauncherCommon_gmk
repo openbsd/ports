@@ -1,0 +1,40 @@
+We support $ORIGIN fully now. Remove static linking work-around.
+
+Index: make/common/modules/LauncherCommon.gmk
+--- make/common/modules/LauncherCommon.gmk.orig
++++ make/common/modules/LauncherCommon.gmk
+@@ -51,14 +51,6 @@ LAUNCHER_CFLAGS += -I$(TOPDIR)/src/java.base/share/nat
+ MACOSX_PLIST_DIR := $(TOPDIR)/src/java.base/macosx/native/launcher
+ JAVA_MANIFEST := $(TOPDIR)/src/java.base/windows/native/launcher/java.manifest
+ 
+-ifeq ($(call isTargetOs, bsd), true)
+-  ifeq ($(OPENJDK_TARGET_OS_ENV), bsd.openbsd)
+-    BSD_JLI_LIB := -ljli_static
+-  else
+-    BSD_JLI_LIB := -ljli
+-  endif
+-endif
+-
+ ################################################################################
+ # Build standard launcher.
+ 
+@@ -175,7 +167,7 @@ define SetupBuildLauncherBody
+       LIBS_linux := -ljli -lpthread $(LIBDL), \
+       LIBS_macosx := -ljli -framework Cocoa -framework Security \
+           -framework ApplicationServices, \
+-      LIBS_bsd := $(BSD_JLI_LIB) -pthread $(LIBDL), \
++      LIBS_bsd := -ljli -pthread $(LIBDL), \
+       LIBS_aix := -ljli_static, \
+       LIBS_windows := $$($1_WINDOWS_JLI_LIB) \
+           $(SUPPORT_OUTPUTDIR)/native/java.base/libjava/java.lib, \
+@@ -192,10 +184,6 @@ define SetupBuildLauncherBody
+   $$(BUILD_LAUNCHER_$1): $$(BUILD_PLIST_$1)
+ 
+   ifeq ($(call isTargetOs, aix), true)
+-    $$(BUILD_LAUNCHER_$1): $(call FindStaticLib, java.base, jli_static)
+-  endif
+-
+-  ifeq ($(OPENJDK_TARGET_OS_ENV), bsd.openbsd)
+     $$(BUILD_LAUNCHER_$1): $(call FindStaticLib, java.base, jli_static)
+   endif
+ 

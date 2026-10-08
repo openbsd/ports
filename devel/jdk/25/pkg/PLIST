@@ -575,6 +575,7 @@ jdk-25/lib/jvm.cfg
 @so jdk-25/lib/libjawt.so
 @so jdk-25/lib/libjdwp.so
 @so jdk-25/lib/libjimage.so
+@so jdk-25/lib/libjli.so
 @so jdk-25/lib/libjsig.so
 @so jdk-25/lib/liblcms.so
 @so jdk-25/lib/libmanagement.so

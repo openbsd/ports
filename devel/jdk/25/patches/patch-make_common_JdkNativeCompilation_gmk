@@ -1,0 +1,16 @@
+We support $ORIGIN fully now. Remove static linking work-around.
+
+Index: make/common/JdkNativeCompilation.gmk
+--- make/common/JdkNativeCompilation.gmk.orig
++++ make/common/JdkNativeCompilation.gmk
+@@ -193,10 +193,6 @@ define AddJdkLibrary
+   ifeq ($(call isTargetOs, aix)+$$($1_$2_MODULE):$$($1_$2_NAME), true+java.base:jli)
+     $1_$2_STATIC_LIBRARY := true
+   endif
+-  ifeq ($(call isTargetOsEnv, bsd.openbsd)+$$($1_$2_MODULE):$$($1_$2_NAME), true+java.base:jli)
+-    $1_$2_STATIC_LIBRARY := true
+-    $1_LIBS += $(LIBZ_LIBS) $(LIBPTHREAD)
+-  endif
+   ifeq ($$($1_$2_MODULE):$$($1_$2_NAME), gtest:gtest)
+     $1_$2_STATIC_LIBRARY := true
+   endif

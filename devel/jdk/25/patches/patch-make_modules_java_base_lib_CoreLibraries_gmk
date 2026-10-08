@@ -1,0 +1,18 @@
+We support $ORIGIN fully now. Remove static linking work-around.
+
+Index: make/modules/java.base/lib/CoreLibraries.gmk
+--- make/modules/java.base/lib/CoreLibraries.gmk.orig
++++ make/modules/java.base/lib/CoreLibraries.gmk
+@@ -178,12 +178,6 @@ ifeq ($(call isTargetOs, aix), true)
+   LIBJLI_STATIC_EXCLUDE_OBJS += java_md_aix.o
+ endif
+ 
+-ifeq ($(call isTargetOsEnv, bsd.openbsd), true)
+-  # OpenBSD requires a static libjli because the runtime linker doesn't fully
+-  # support $ORIGIN in '-rpath'
+-  BUILD_LIBJLI_TYPE := STATIC_LIBRARY
+-endif
+-
+ $(eval $(call SetupJdkLibrary, BUILD_LIBJLI, \
+     NAME := jli, \
+     TYPE := $(BUILD_LIBJLI_TYPE), \

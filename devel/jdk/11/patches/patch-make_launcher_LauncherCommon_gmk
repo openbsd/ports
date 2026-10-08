@@ -1,0 +1,46 @@
+We support $ORIGIN fully now. Remove static linking work-around.
+
+Index: make/launcher/LauncherCommon.gmk
+--- make/launcher/LauncherCommon.gmk.orig
++++ make/launcher/LauncherCommon.gmk
+@@ -31,7 +31,7 @@ ORIGIN_ARG := $(call SET_EXECUTABLE_ORIGIN,/../lib/jli
+ # Applications expect to be able to link against libjawt without invoking
+ # System.loadLibrary("jawt") first. This was the behaviour described in the
+ # devloper documentation of JAWT and what worked with OpenJDK6.
+-ifneq ($(findstring $(OPENJDK_TARGET_OS), linux solaris), )
++ifneq ($(findstring $(OPENJDK_TARGET_OS), linux solaris bsd), )
+   ORIGIN_ARG += $(call SET_EXECUTABLE_ORIGIN,/../lib)
+ endif
+ 
+@@ -155,7 +155,7 @@ define SetupBuildLauncherBody
+         -framework ApplicationServices
+   endif
+ 
+-  ifneq ($(findstring $(OPENJDK_TARGET_OS), aix bsd), )
++  ifeq ($(OPENJDK_TARGET_OS), aix)
+     $1_LDFLAGS += -L$(SUPPORT_OUTPUTDIR)/native/java.base
+     $1_LIBS += -ljli_static
+   endif
+@@ -187,10 +187,12 @@ define SetupBuildLauncherBody
+           -L$(call FindLibDirForModule, java.base)/jli, \
+       LDFLAGS_solaris := $$($1_LDFLAGS_solaris) \
+           -L$(call FindLibDirForModule, java.base)/jli, \
++      LDFLAGS_bsd := \
++          -L$(call FindLibDirForModule, java.base)/jli, \
+       LIBS := $(JDKEXE_LIBS) $$($1_LIBS), \
+       LIBS_unix := $$($1_LIBS_unix), \
+       LIBS_linux := -lpthread -ljli $(LIBDL), \
+-      LIBS_bsd := -pthread, \
++      LIBS_bsd := -ljli -pthread $(LIBDL), \
+       LIBS_macosx := -ljli, \
+       LIBS_solaris := -ljli -lthread $(LIBDL), \
+       LIBS_windows := $$($1_WINDOWS_JLI_LIB) \
+@@ -208,7 +210,7 @@ define SetupBuildLauncherBody
+ 
+   $$(BUILD_LAUNCHER_$1): $$(BUILD_PLIST_$1)
+ 
+-  ifeq ($(call isTargetOs, aix bsd), true)
++  ifeq ($(call isTargetOs, aix), true)
+     $$(BUILD_LAUNCHER_$1): $(call FindStaticLib, java.base, jli_static)
+   endif
+ 

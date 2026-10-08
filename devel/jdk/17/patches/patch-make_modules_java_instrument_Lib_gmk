@@ -1,0 +1,41 @@
+We support $ORIGIN fully now. Remove static linking work-around.
+
+Index: make/modules/java.instrument/Lib.gmk
+--- make/modules/java.instrument/Lib.gmk.orig
++++ make/modules/java.instrument/Lib.gmk
+@@ -35,11 +35,6 @@ endif
+ 
+ ifeq ($(call isTargetOs, bsd), true)
+   LIBINSTRUMENT_CFLAGS += $(ICONV_CFLAGS)
+-  ifeq ($(OPENJDK_TARGET_OS_ENV), bsd.openbsd)
+-    BSD_JLI_LIB := -ljli_static
+-  else
+-    BSD_JLI_LIB := -ljli
+-  endif
+ endif
+ 
+ $(eval $(call SetupJdkLibrary, BUILD_LIBINSTRUMENT, \
+@@ -56,12 +51,12 @@ $(eval $(call SetupJdkLibrary, BUILD_LIBINSTRUMENT, \
+     LDFLAGS_linux := -L$(call FindLibDirForModule, java.base), \
+     LDFLAGS_macosx := -L$(call FindLibDirForModule, java.base), \
+     LDFLAGS_aix := -L$(SUPPORT_OUTPUTDIR)/native/java.base, \
+-    LDFLAGS_bsd := -L$(SUPPORT_OUTPUTDIR)/native/java.base \
++    LDFLAGS_bsd := -L$(call FindLibDirForModule, java.base) \
+         $(ICONV_LDFLAGS), \
+     LIBS := $(JDKLIB_LIBS), \
+     LIBS_unix := -ljava -ljvm $(LIBZ_LIBS), \
+     LIBS_linux := -ljli $(LIBDL), \
+-    LIBS_bsd := $(ICONV_LIBS) $(BSD_JLI_LIB) $(LIBDL), \
++    LIBS_bsd := $(ICONV_LIBS) -ljli $(LIBDL), \
+     LIBS_aix := -liconv -ljli_static $(LIBDL), \
+     LIBS_macosx := -ljli -liconv -framework Cocoa -framework Security \
+         -framework ApplicationServices, \
+@@ -70,8 +65,6 @@ $(eval $(call SetupJdkLibrary, BUILD_LIBINSTRUMENT, \
+ ))
+ 
+ ifeq ($(call isTargetOs, aix), true)
+-  $(BUILD_LIBINSTRUMENT): $(call FindStaticLib, java.base, jli_static)
+-else ifeq ($(OPENJDK_TARGET_OS_ENV), bsd.openbsd)
+   $(BUILD_LIBINSTRUMENT): $(call FindStaticLib, java.base, jli_static)
+ else
+   $(BUILD_LIBINSTRUMENT): $(call FindLib, java.base, jli)

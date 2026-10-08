@@ -1,0 +1,31 @@
+We support $ORIGIN fully now. Remove static linking work-around.
+
+Index: make/lib/Lib-java.instrument.gmk
+--- make/lib/Lib-java.instrument.gmk.orig
++++ make/lib/Lib-java.instrument.gmk
+@@ -57,13 +57,14 @@ $(eval $(call SetupJdkLibrary, BUILD_LIBINSTRUMENT, \
+     LDFLAGS_macosx := $(call SET_SHARED_LIBRARY_ORIGIN,/jli) \
+         -L$(call FindLibDirForModule, java.base)/jli, \
+     LDFLAGS_aix := -L$(SUPPORT_OUTPUTDIR)/native/java.base, \
+-    LDFLAGS_bsd := -L$(SUPPORT_OUTPUTDIR)/native/java.base \
++    LDFLAGS_bsd := $(call SET_SHARED_LIBRARY_ORIGIN,/jli) \
++        -L$(call FindLibDirForModule, java.base)/jli \
+         $(ICONV_LDFLAGS), \
+     LIBS := $(JDKLIB_LIBS), \
+     LIBS_unix := -ljava -ljvm $(LIBZ_LIBS), \
+     LIBS_linux := -ljli $(LIBDL), \
+     LIBS_solaris := -ljli $(LIBDL), \
+-    LIBS_bsd := $(ICONV_LIBS) -ljli_static $(LIBDL), \
++    LIBS_bsd := $(ICONV_LIBS) -ljli $(LIBDL), \
+     LIBS_aix := -liconv -ljli_static $(LIBDL), \
+     LIBS_macosx := -ljli -liconv -framework Cocoa -framework Security \
+         -framework ApplicationServices, \
+@@ -71,7 +72,7 @@ $(eval $(call SetupJdkLibrary, BUILD_LIBINSTRUMENT, \
+         $(WINDOWS_JLI_LIB), \
+ ))
+ 
+-ifeq ($(call isTargetOs, aix bsd), true)
++ifeq ($(call isTargetOs, aix), true)
+   $(BUILD_LIBINSTRUMENT): $(call FindStaticLib, java.base, jli_static)
+ else ifeq ($(OPENJDK_TARGET_OS), windows)
+   $(BUILD_LIBINSTRUMENT): $(call FindLib, java.base, jli)

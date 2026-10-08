@@ -1,0 +1,30 @@
+We support $ORIGIN fully now. Remove static linking work-around.
+
+Index: make/modules/java.base/lib/CoreLibraries.gmk
+--- make/modules/java.base/lib/CoreLibraries.gmk.orig
++++ make/modules/java.base/lib/CoreLibraries.gmk
+@@ -242,24 +242,3 @@ ifeq ($(call isTargetOs, aix), true)
+   TARGETS += $(BUILD_LIBJLI_STATIC)
+ 
+ endif
+-
+-ifeq ($(OPENJDK_TARGET_OS_ENV), bsd.openbsd)
+-  # OpenBSD also requires a static libjli because the compiler doesn't fully
+-  # support $ORIGIN in '-rpath'
+-  $(eval $(call SetupNativeCompilation, BUILD_LIBJLI_STATIC, \
+-      NAME := jli_static, \
+-      TYPE := STATIC_LIBRARY, \
+-      OUTPUT_DIR := $(SUPPORT_OUTPUTDIR)/native/$(MODULE), \
+-      SRC := $(LIBJLI_SRC_DIRS), \
+-      EXCLUDE_FILES := $(LIBJLI_EXCLUDE_FILES), \
+-      EXTRA_FILES := $(LIBJLI_EXTRA_FILES), \
+-      OPTIMIZATION := HIGH, \
+-      CFLAGS := $(STATIC_LIBRARY_FLAGS) $(CFLAGS_JDKLIB) $(LIBJLI_CFLAGS) \
+-          $(addprefix -I, $(LIBJLI_SRC_DIRS)), \
+-      DISABLED_WARNINGS_clang := format-nonliteral, \
+-      ARFLAGS := $(ARFLAGS), \
+-      OBJECT_DIR := $(SUPPORT_OUTPUTDIR)/native/$(MODULE)/libjli_static))
+-
+-  TARGETS += $(BUILD_LIBJLI_STATIC)
+-
+-endif

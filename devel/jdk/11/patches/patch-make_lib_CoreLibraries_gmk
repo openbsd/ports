@@ -1,0 +1,22 @@
+We support $ORIGIN fully now. Remove static linking work-around.
+
+Index: make/lib/CoreLibraries.gmk
+--- make/lib/CoreLibraries.gmk.orig
++++ make/lib/CoreLibraries.gmk
+@@ -256,6 +256,7 @@ $(eval $(call SetupJdkLibrary, BUILD_LIBJLI, \
+         $(call SET_SHARED_LIBRARY_ORIGIN), \
+     LDFLAGS_linux := $(call SET_SHARED_LIBRARY_ORIGIN,/..), \
+     LDFLAGS_solaris := $(call SET_SHARED_LIBRARY_ORIGIN,/..), \
++    LDFLAGS_bsd := $(call SET_SHARED_LIBRARY_ORIGIN,/..), \
+     LIBS_unix := $(LIBZ_LIBS), \
+     LIBS_linux := $(LIBDL) -lpthread, \
+     LIBS_solaris := $(LIBDL), \
+@@ -269,7 +270,7 @@ TARGETS += $(BUILD_LIBJLI)
+ 
+ LIBJLI_SRC_DIRS := $(call FindSrcDirsForComponent, java.base, libjli)
+ 
+-ifeq ($(call isTargetOs, aix bsd), true)
++ifeq ($(call isTargetOs, aix), true)
+   # AIX also requires a static libjli because the compiler doesn't support '-rpath'
+   $(eval $(call SetupNativeCompilation, BUILD_LIBJLI_STATIC, \
+       NAME := jli_static, \
