@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1834 2026/09/26 15:28:26 jtt Exp $
+# $OpenBSD: Quirks.pm,v 1.1835 2026/10/08 17:16:06 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -638,6 +638,8 @@ setup_obsolete_reason(
 	3 => 'awscli-plugin-endpoint',
 	1 => 'gemini-cli',
 	16 => 'secrets',
+	0 => 'py3-axolotl',
+	0 => 'py3-axolotl-curve25519',
 );
 # beware, if ports with an RDEP on Python 3 are removed, they need to be listed
 # as @conflict/pkgpath in lang/python/3 and not here, otherwise an update from a
