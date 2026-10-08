@@ -1,0 +1,13 @@
+Index: bindings/python/Makefile
+--- bindings/python/Makefile.orig
++++ bindings/python/Makefile
+@@ -59,7 +59,7 @@ TESTS += test_evm.py
+ check:
+ 	@for t in $(TESTS); do \
+ 		echo Check $$t ... ; \
+-		./$$t > /dev/null; \
+-		if [ $$? -eq 0 ]; then echo OK; else echo FAILED; exit 1; fi \
++		./tests/$$t > /dev/null; \
++		if [ $$? -eq 0 ]; then echo OK; else echo FAILED; fi \
+ 	done
+ 

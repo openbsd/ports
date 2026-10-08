@@ -1,23 +1,18 @@
 COMMENT =	Python bindings for capstone
 
 MODPY_DISTV =	${GH_TAGNAME}
-REVISION =	3
-
 PKGNAME =	py-${DISTNAME}
 
 MODULES =	lang/python
+MODPY_PYBUILD =	setuptools
 USE_GMAKE =	Yes
 
 WRKSRC =	${WRKDIST}/bindings/python
 
-RUN_DEPENDS =	devel/capstone/main \
-		devel/py-setuptools
+RUN_DEPENDS =	devel/capstone/main=${GH_TAGNAME}
 
-TEST_DEPENDS =  devel/capstone/python
+TEST_DEPENDS =  ${FULLPKGNAME}:${BUILD_PKGPATH}
 TEST_TARGET =	check
-
-MODPY_ADJ_FILES = test*.py
-MODPY_PYBUILD =	setuptools
 
 MAKE_ENV =	LIBCAPSTONE_PATH=${LOCALBASE}/lib/
 

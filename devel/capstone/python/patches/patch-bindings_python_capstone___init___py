@@ -1,21 +1,21 @@
 Index: bindings/python/capstone/__init__.py
 --- bindings/python/capstone/__init__.py.orig
 +++ bindings/python/capstone/__init__.py
-@@ -335,7 +335,7 @@ if sys.platform == 'darwin':
+@@ -367,7 +367,7 @@ if sys.platform == 'darwin':
  elif sys.platform in ('win32', 'cygwin'):
      _lib = "capstone.dll"
  else:
 -    _lib = "libcapstone.so"
 +    _lib = "libcapstone.so.${_SHLIB_VERSION}"
+     mode = getattr(os, 'RTLD_DEEPBIND', 0)
  
  _found = False
+@@ -401,7 +401,7 @@ _path_list = [os.getenv('LIBCAPSTONE_PATH', None),
+               join(split(__file__)[0], 'lib'),
+               '',
+               sysconfig.get_path('platlib'),
+-              "/usr/local/lib/" if sys.platform == 'darwin' else '/usr/lib64']
++              "${LOCALBASE}/lib" if sys.platform.startswith("openbsd") or sys.platform == 'darwin' else '/usr/lib64']
  
-@@ -367,7 +367,7 @@ _path_list = [os.getenv('LIBCAPSTONE_PATH', None),
-               distutils.sysconfig.get_python_lib(),
-               "/usr/local/lib/" if sys.platform == 'darwin' else '/usr/lib64']
- 
--for _path in _path_list:
-+for _path in ['${LOCALBASE}/lib']:
+ for _path in _path_list:
      if _path is None: continue
-     _cs = _load_lib(_path)
-     if _cs is not None: break

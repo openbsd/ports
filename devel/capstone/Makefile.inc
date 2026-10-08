@@ -1,4 +1,4 @@
-GH_TAGNAME =	5.0
+GH_TAGNAME =	5.0.9
 GH_ACCOUNT =	aquynh
 GH_PROJECT =	capstone
 
