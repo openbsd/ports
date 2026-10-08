@@ -3,12 +3,12 @@ Don't create symbolic links pointing to the shared lib.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -625,8 +625,6 @@ install_libxxhash: libxxhash
+@@ -681,8 +681,6 @@ install_libxxhash: libxxhash
  	@echo Installing libxxhash
- 	$(Q)$(MAKE_DIR) $(DESTDIR)$(LIBDIR)
- 	$(Q)$(INSTALL_PROGRAM) $(LIBXXH) $(DESTDIR)$(LIBDIR)
--	$(Q)ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT_MAJOR)
--	$(Q)ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT)
+ 	$(MAKE_DIR) $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL_PROGRAM) $(LIBXXH) $(DESTDIR)$(LIBDIR)
+-	ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT_MAJOR)
+-	ln -sf libxxhash.$(SHARED_EXT_MAJOR) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT)
  
  install_libxxhash.includes:
- 	$(Q)$(INSTALL) -d -m 755 $(DESTDIR)$(INCLUDEDIR)   # includes
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(INCLUDEDIR)   # includes
