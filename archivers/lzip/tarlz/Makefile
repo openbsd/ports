@@ -1,6 +1,6 @@
 COMMENT =		archiver based on tar and lzip multimembers
 
-DISTNAME =		tarlz-0.30
+DISTNAME =		tarlz-0.31
 
 HOMEPAGE =		https://lzip.nongnu.org/tarlz.html
 SITES =			${SITE_SAVANNAH:=lzip/tarlz/}
