@@ -1,11 +1,14 @@
-MODPY_DISTV =		1.2.3
-COMMENT =		Python bindings for libssh specific to Ansible use case
-DIST_TUPLE =		github ansible pylibssh baa2ab830d44760c95348081603fbde3e23507a4 .
-PKGNAME =		py-ansible-libssh-${MODPY_DISTV}pre20250327
+COMMENT =		Ansible connection plugin using libssh
+
+MODPY_DISTV =		1.4.0
+DISTNAME =		ansible_pylibssh-${MODPY_DISTV}
+PKGNAME =		py-ansible-libssh-${MODPY_DISTV}
 CATEGORIES =		sysutils
-REVISION =		1
 
 MAINTAINER =		Denis Fondras <denis@openbsd.org>
+
+# https://github.com/ansible/pylibssh
+HOMEPAGE =		https://ansible-pylibssh.readthedocs.io/
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -24,11 +27,13 @@ BUILD_DEPENDS =		sysutils/py-expandvars \
 			lang/cython
 LIB_DEPENDS =		security/libssh
 
-TEST_IS_INTERACTIVE =	hangs
 TEST_DEPENDS =		devel/py-test-cov \
 			devel/py-test-xdist
-
-do-test:
-	cd ${WRKSRC}/src; ${SETENV} ${ALL_TEST_ENV} py.test ../tests
+# disable running tests in parallel, so we can see which ones hang
+MODPY_PYTEST_ARGS =	-v -n0
+# these tests (which call ssh/sshd) hang; disable them for now
+MODPY_PYTEST_IGNORE =	tests/integration/sshd_test.py \
+			tests/unit/channel_test.py \
+			tests/unit/scp_test.py
 
 .include <bsd.port.mk>
