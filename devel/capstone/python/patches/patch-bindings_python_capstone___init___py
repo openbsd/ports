@@ -1,6 +1,6 @@
-Index: capstone/__init__.py
---- capstone/__init__.py.orig
-+++ capstone/__init__.py
+Index: bindings/python/capstone/__init__.py
+--- bindings/python/capstone/__init__.py.orig
++++ bindings/python/capstone/__init__.py
 @@ -335,7 +335,7 @@ if sys.platform == 'darwin':
  elif sys.platform in ('win32', 'cygwin'):
      _lib = "capstone.dll"

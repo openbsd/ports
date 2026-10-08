@@ -8,7 +8,7 @@ PKGNAME =	py-${DISTNAME}
 MODULES =	lang/python
 USE_GMAKE =	Yes
 
-WRKDIST =	${WRKDIR}/${DISTNAME}/bindings/python
+WRKSRC =	${WRKDIST}/bindings/python
 
 RUN_DEPENDS =	devel/capstone/main \
 		devel/py-setuptools
