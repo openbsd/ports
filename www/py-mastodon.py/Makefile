@@ -1,6 +1,7 @@
 COMMENT =		python wrapper for the Mastodon API
 
-MODPY_DISTV =	1.5.1
+MODPY_DISTV =		1.5.1
+# new versions are named mastodon_py-${MODPY_DISTV}
 DISTNAME =		Mastodon.py-${MODPY_DISTV}
 PKGNAME =		py-mastodon.py-${MODPY_DISTV}
 REVISION =		6
