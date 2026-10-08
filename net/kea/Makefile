@@ -2,14 +2,13 @@ COMMENT-main=	high-performance and extensible DHCP server engine from ISC
 COMMENT-mysql=	MySQL/MariaDB support for Kea
 COMMENT-pgsql=	PostgreSQL support for Kea
 
-VERSION=	3.2.0
-REVISION=	0
+VERSION=	3.2.1
 PORTROACH=	limitw:1,even
 
 DISTNAME=	kea-${VERSION}
 EXTRACT_SUFX=	.tar.xz
 
-LV=		12.0
+LV=		13.0
 SHARED_LIBS +=	kea-asiodns ${LV}
 SHARED_LIBS +=	kea-asiolink ${LV}
 SHARED_LIBS +=	kea-cc ${LV}
