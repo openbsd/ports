@@ -1,0 +1,14 @@
+https://hg.mozilla.org/mozilla-central/rev/b3a14f8efa23
+
+Index: js/src/wasm/WasmStacks.cpp
+--- js/src/wasm/WasmStacks.cpp.orig
++++ js/src/wasm/WasmStacks.cpp
+@@ -874,7 +874,7 @@ ContStackArena::~ContStackArena() {
+ /* static */
+ UniqueContStackArena ContStackArena::create(ContStackAllocator* owner) {
+   size_t arenaSize = owner->arenaSize();
+-  void* arenaBase = gc::MapAlignedPages(arenaSize, ContStackAlignment);
++  void* arenaBase = gc::MapAlignedPagesAsStack(arenaSize, ContStackAlignment);
+   if (!arenaBase) {
+     return nullptr;
+   }
