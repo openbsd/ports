@@ -1,18 +1,19 @@
-MODPY_DISTV =	0.4.5
-COMMENT =	Python library for the ISO 639 language code standard
-DISTNAME =	iso-639-${MODPY_DISTV}
-PKGNAME =	py-iso639-${MODPY_DISTV}
-CATEGORIES =	devel
-REVISION =	12
+MODPY_DISTV=	2026.7.23
 
-HOMEPAGE =	https://github.com/noumar/iso639
+COMMENT=	ISO 639 language codes, names, etc
 
-# AGPLv3 only
-PERMIT_PACKAGE =	Yes
+DISTNAME=	python_iso639-${MODPY_DISTV}
+PKGNAME=	py-iso639-${MODPY_DISTV}
 
-MODPY_PI =	Yes
+CATEGORIES=	devel
 
-MODULES =	lang/python
-MODPY_PYBUILD =	setuptools
+HOMEPAGE=	https://github.com/jacksonllee/iso639
+
+# Apache 2.0
+PERMIT_PACKAGE=	Yes
+
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>

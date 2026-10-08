@@ -1,3 +1,9 @@
-iso-639 is a Python library for the ISO 639 standard. It supports
-ISO 639-1 for two-letter language codes, ISO 639-2 and ISO 639-3 for
-three-letter language codes, and ISO 639-5 for language group codes.
+python-iso639 is a Python package for ISO 639 language codes, names,
+and other associated information.
+
+Current features:
+* A representation of languages mapped across ISO 639-1, 639-2, and
+639-3.
+* Functionality to "guess" what a language is for a given unknown
+language code or name.
+* Optimized for speed in retrieving language information.
