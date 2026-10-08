@@ -1,0 +1,14 @@
+Index: unittest/test_argprocessing.cpp
+--- unittest/test_argprocessing.cpp.orig
++++ unittest/test_argprocessing.cpp
+@@ -35,6 +35,10 @@
+ #include <algorithm>
+ #include <vector>
+ 
++#ifdef HAVE_UNISTD_H
++#  include <unistd.h>
++#endif
++
+ namespace fs = util::filesystem;
+ 
+ using core::Statistic;

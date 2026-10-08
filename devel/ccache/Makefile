@@ -1,6 +1,6 @@
 COMMENT=	C/C++ compiler front-end to cache compiled object code
 
-V=		4.14
+V=		4.14.1
 DISTNAME=	ccache-$V
 SITES=		https://github.com/ccache/ccache/releases/download/v$V/
 
