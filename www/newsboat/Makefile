@@ -1,8 +1,7 @@
 COMMENT =	RSS/Atom feed reader for text terminals
 
-V =		2.44
+V =		2.45
 DISTNAME =	newsboat-$V
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -41,6 +40,8 @@ LIB_DEPENDS =	databases/sqlite3 \
 		devel/json-c \
 		textproc/libxml \
 		net/curl
+
+CXXFLAGS +=	-DNCURSES_WIDECHAR
 
 MAKE_ENV =	${MODCARGO_ENV} \
 		CXX="${CXX}" \

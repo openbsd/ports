@@ -3,12 +3,12 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -22,10 +22,10 @@ CXX_FOR_BUILD?=$(CXX)
- # compiler and linker flags
- DEFINES=-DLOCALEDIR='"$(localedir)"' -DCATCH_AMALGAMATED_CUSTOM_MAIN
+@@ -24,10 +24,10 @@ DEFINES=-DLOCALEDIR='"$(localedir)"' -DCATCH_AMALGAMAT
  
--WARNFLAGS=-Werror -Wall -Wextra -Wunreachable-code
-+WARNFLAGS=-Wall -Wextra -Wunreachable-code
+ # `-Wno-unused-function` specified to work around json-c 0.19
+ # https://github.com/json-c/json-c/issues/941
+-WARNFLAGS=-Werror -Wall -Wextra -Wunreachable-code -Wno-unused-function
++WARNFLAGS=-Wall -Wextra -Wunreachable-code -Wno-unused-function
  INCLUDES=-Iinclude -Istfl -Ifilter -I. -Irss -I$(CARGO_TARGET_DIR)/cxxbridge/
  # Keep in sync with c++ version specified in FFI build.rs
 -BARE_CXXFLAGS=-std=c++17 -O2 -ggdb $(INCLUDES)
@@ -16,7 +16,7 @@ Index: Makefile
  LDFLAGS+=-L.
  
  # Constants
-@@ -57,7 +57,7 @@ FILTERLIB_OUTPUT=libfilter.a
+@@ -59,7 +59,7 @@ FILTERLIB_OUTPUT=libfilter.a
  NEWSBOAT=newsboat
  NEWSBOAT_SRCS:=$(shell cat mk/newsboat.deps)
  NEWSBOAT_OBJS:=$(patsubst %.cpp,%.o,$(NEWSBOAT_SRCS))
@@ -25,7 +25,7 @@ Index: Makefile
  
  RSSPPLIB_SRCS=$(sort $(wildcard rss/*.cpp))
  RSSPPLIB_OBJS=$(patsubst rss/%.cpp,rss/%.o,$(RSSPPLIB_SRCS))
-@@ -66,7 +66,7 @@ RSSPPLIB_OUTPUT=librsspp.a
+@@ -68,7 +68,7 @@ RSSPPLIB_OUTPUT=librsspp.a
  PODBOAT=podboat
  PODBOAT_SRCS:=$(shell cat mk/podboat.deps)
  PODBOAT_OBJS:=$(patsubst %.cpp,%.o,$(PODBOAT_SRCS))
@@ -34,7 +34,7 @@ Index: Makefile
  
  TEST_SRCS:=$(wildcard test/*.cpp test/test_helpers/*.cpp)
  TEST_OBJS:=$(patsubst %.cpp,%.o,$(TEST_SRCS))
-@@ -123,7 +123,6 @@ CLANG_TIDY?=clang-tidy
+@@ -125,7 +125,6 @@ CLANG_TIDY?=clang-tidy
  
  TEXTCONV=./txt2h
  RM=rm -f
