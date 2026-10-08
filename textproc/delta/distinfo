@@ -274,7 +274,7 @@ SHA256 (cargo/xdg-2.5.2.tar.gz) = ITtzJDNrU9JBSy24U35WVE2YGAMTkVWvqE927uu3pUY=
 SHA256 (cargo/xterm-color-1.0.1.tar.gz) = TeXwVvudyLeQh1SGdUTiYUV2cYeqrFqYSV6IrXy4qA8=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
 SHA256 (cargo/yansi-1.0.1.tar.gz) = z+U6Zlf9KA6qiQo7xZFSiS/6PjAQExnRaLeB7WUpsEk=
-SHA256 (delta-0.19.1.tar.gz) = ogia8bhiZNRaK1hycIcBrKRQbRwJK+IwF7thCvNp8oM=
+SHA256 (delta-0.20.1.tar.gz) = 2dUCOW41le6P2Sbx7S5UrJk1uqvTVpo3U++rNjBPkPo=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
@@ -551,4 +551,4 @@ SIZE (cargo/xdg-2.5.2.tar.gz) = 14394
 SIZE (cargo/xterm-color-1.0.1.tar.gz) = 9185
 SIZE (cargo/yaml-rust-0.4.5.tar.gz) = 47783
 SIZE (cargo/yansi-1.0.1.tar.gz) = 75497
-SIZE (delta-0.19.1.tar.gz) = 543285
+SIZE (delta-0.20.1.tar.gz) = 559203
