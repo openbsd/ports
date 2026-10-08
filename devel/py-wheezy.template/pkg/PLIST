@@ -1,7 +1,6 @@
 @pkgpath devel/py-wheezy.template,python3
 bin/wheezy.template
 lib/python${MODPY_VERSION}/site-packages/wheezy/
-lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/__init__.py
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}/
@@ -29,14 +28,19 @@ lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}typing.
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/builder.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/builder.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/builder.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/comp.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/comp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/comp.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/compiler.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/compiler.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/compiler.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/console.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/console.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/console.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/engine.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/engine.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/engine.py
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/
@@ -50,23 +54,32 @@ lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}cor
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}determined.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}determined.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/code.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/code.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/code.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/core.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/core.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/core.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/determined.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/determined.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/determined.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/lexer.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/lexer.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/lexer.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/loader.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/loader.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/loader.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/parser.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/parser.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/parser.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/preprocessor.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/preprocessor.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/preprocessor.py
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/py.typed
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/typing.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/typing.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/typing.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/utils.c
 @so lib/python${MODPY_VERSION}/site-packages/wheezy/template/utils.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/utils.py
 lib/python${MODPY_VERSION}/site-packages/wheezy_template-${MODPY_DISTV}.dist-info/
@@ -76,5 +89,4 @@ lib/python${MODPY_VERSION}/site-packages/wheezy_template-${MODPY_DISTV}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/wheezy_template-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/wheezy_template-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/wheezy_template-${MODPY_DISTV}.dist-info/licenses/LICENSE
-lib/python${MODPY_VERSION}/site-packages/wheezy_template-${MODPY_DISTV}.dist-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/wheezy_template-${MODPY_DISTV}.dist-info/top_level.txt
