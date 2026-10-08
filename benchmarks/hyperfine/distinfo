@@ -39,6 +39,7 @@ SHA256 (cargo/getrandom-0.2.17.tar.gz) = /yq8AL5/ym68R0UkaXridq2EetCms/qkvLAn6aR
 SHA256 (cargo/getrandom-0.3.4.tar.gz) = iZ3vXDfE/XsmZGSMKBIOzsE45NOVtFnlyjT5zOLdd/0=
 SHA256 (cargo/getrandom-0.4.3.tar.gz) = MA6IPXVrLk7JTgJ5HzmwS1IidhOIUs/EHZ+36QQQYJk=
 SHA256 (cargo/hashbrown-0.17.1.tar.gz) = 7VkJtuiaLbRFblTNX2c3kdfspnMiArvyqcxQT+L5uEo=
+SHA256 (cargo/humantime-2.4.0.tar.gz) = Fc3SZwdwHFMpfi+mr7Mj1V+8HQgQw67AeK4+8EJMPBU=
 SHA256 (cargo/indexmap-2.14.2.tar.gz) = zE4ZD10mynBRZCYp2ixS/AO96FoDGXyZQI3NKRc0yFU=
 SHA256 (cargo/indicatif-0.17.4.tar.gz) = 20UxfzfvRU5lGbbD7X03fl8jNG8II/huZco2kS0dDvg=
 SHA256 (cargo/insta-1.48.0.tar.gz) = hvD4/ujJJkFcWNauQ6CFI6JvrMsjI/XmtkT+fdTva4I=
@@ -55,6 +56,8 @@ SHA256 (cargo/num-traits-0.2.19.tar.gz) = Bx38BiaQ6QtzTAsic85yrQ/6lfDHRZa8JQ3P2W
 SHA256 (cargo/number_prefix-0.4.0.tar.gz) = gwskag5fIK+HFBslwXPNG2Cb13eaRhfW7FgquvkIcPM=
 SHA256 (cargo/once_cell-1.21.4.tar.gz) = n3w+S+sz+F1Frj46F5IYVwbI4W0EMjjFkzMcx80xO1A=
 SHA256 (cargo/once_cell_polyfill-1.70.2.tar.gz) = OEuKttNyFfPFMBqVpKzLXWSqYH8fyyahG1MDh4RRtP4=
+SHA256 (cargo/perf-event-open-sys-6.0.0.tar.gz) = pfjRSHpP+iPIChw1XdJyNfm2b7cboPJh60F+T+hFE0c=
+SHA256 (cargo/platform-info-2.2.0.tar.gz) = unw/WvANNZahSMyAF4rGkBUrccKD0VqLzqDN3+p1mjY=
 SHA256 (cargo/portable-atomic-1.15.0.tar.gz) = Bci2Po2WCds4fwMkkY+B1o/id0jwhO8JL7NZVNBTmoU=
 SHA256 (cargo/ppv-lite86-0.2.21.tar.gz) = herjxO0vUNz+cmQ9pL78MN6ttFiptZDXIM3i8rHpfak=
 SHA256 (cargo/predicates-3.1.4.tar.gz) = rajyky8oon7ntw3WwcOeoGdcVaNoeauS86cV6qHmPP4=
@@ -129,7 +132,7 @@ SHA256 (cargo/wit-bindgen-0.57.1.tar.gz) = Hr+UToenwlMjOtZ2bgguPNcUtdA4EqzCTDGPV
 SHA256 (cargo/zerocopy-0.8.58.tar.gz) = wX6Pr62CtUL/Nxchfs3HNiMbWeOHdoyWMBI7TOTS20Q=
 SHA256 (cargo/zerocopy-derive-0.8.58.tar.gz) = WV9W4ETfT0agyaYm9lw9meuEiPfoqLqhLddjJtlxC/I=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
-SHA256 (hyperfine-1.21.0.tar.gz) = ruARJQdP1aalVoGNt7ugV37a6Uy+hRZdquDneKooNI0=
+SHA256 (hyperfine-2.0.0.tar.gz) = 9Lcd88eOTPdSym+268SwJffqalylxI/qdfih/bTH1yE=
 SIZE (cargo/aho-corasick-1.1.5.tar.gz) = 184315
 SIZE (cargo/anstream-1.0.0.tar.gz) = 28916
 SIZE (cargo/anstyle-1.0.14.tar.gz) = 17787
@@ -171,6 +174,7 @@ SIZE (cargo/getrandom-0.2.17.tar.gz) = 40780
 SIZE (cargo/getrandom-0.3.4.tar.gz) = 50932
 SIZE (cargo/getrandom-0.4.3.tar.gz) = 52437
 SIZE (cargo/hashbrown-0.17.1.tar.gz) = 155512
+SIZE (cargo/humantime-2.4.0.tar.gz) = 23251
 SIZE (cargo/indexmap-2.14.2.tar.gz) = 103014
 SIZE (cargo/indicatif-0.17.4.tar.gz) = 57454
 SIZE (cargo/insta-1.48.0.tar.gz) = 121313
@@ -187,6 +191,8 @@ SIZE (cargo/num-traits-0.2.19.tar.gz) = 51631
 SIZE (cargo/number_prefix-0.4.0.tar.gz) = 6922
 SIZE (cargo/once_cell-1.21.4.tar.gz) = 35010
 SIZE (cargo/once_cell_polyfill-1.70.2.tar.gz) = 7448
+SIZE (cargo/perf-event-open-sys-6.0.0.tar.gz) = 78544
+SIZE (cargo/platform-info-2.2.0.tar.gz) = 32529
 SIZE (cargo/portable-atomic-1.15.0.tar.gz) = 202705
 SIZE (cargo/ppv-lite86-0.2.21.tar.gz) = 22522
 SIZE (cargo/predicates-3.1.4.tar.gz) = 24327
@@ -261,4 +267,4 @@ SIZE (cargo/wit-bindgen-0.57.1.tar.gz) = 71227
 SIZE (cargo/zerocopy-0.8.58.tar.gz) = 283856
 SIZE (cargo/zerocopy-derive-0.8.58.tar.gz) = 136881
 SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
-SIZE (hyperfine-1.21.0.tar.gz) = 196342
+SIZE (hyperfine-2.0.0.tar.gz) = 213948
