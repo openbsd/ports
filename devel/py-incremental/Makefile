@@ -16,7 +16,7 @@ MODPY_PYBUILD=	hatchling
 
 MODPY_PYTEST_ARGS= --ignore tests/test_examples.py
 
-RUN_DEPENDS=	devel/py-packaging
+RUN_DEPENDS=	sysutils/py-packaging
 TEST_DEPENDS=	devel/py-twisted
 
 .include <bsd.port.mk>
