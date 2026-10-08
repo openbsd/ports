@@ -1,13 +1,13 @@
 COMMENT =		everyday-use client-side map-aware mirror ranking tool
 
-DIST_TUPLE +=		github westandskif rate-mirrors v0.22.0 .
+DIST_TUPLE +=		github westandskif rate-mirrors v0.33.0 .
 
 CATEGORIES =		net
 
 # CC-BY-NC-SA 3.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		${MODCARGO_WANTLIB} crypto m ssl
+WANTLIB =		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
 
