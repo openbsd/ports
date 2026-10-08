@@ -42,13 +42,9 @@ lib/python${MODPY_VERSION}/site-packages/screenlayout/xrandr.py
 @man man/man1/unxrandr.1
 share/applications/arandr.desktop
 share/locale/ar/LC_MESSAGES/arandr.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/arandr.mo
 share/locale/bs/LC_MESSAGES/arandr.mo
 share/locale/ca/LC_MESSAGES/arandr.mo
-share/locale/ckb/
-share/locale/ckb/LC_MESSAGES/
 share/locale/ckb/LC_MESSAGES/arandr.mo
 share/locale/cs/LC_MESSAGES/arandr.mo
 share/locale/da/LC_MESSAGES/arandr.mo
