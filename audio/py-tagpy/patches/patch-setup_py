@@ -1,0 +1,14 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -29,8 +29,8 @@ from setuptools import setup, Extension
+ 
+ def main():
+ 
+-    INCLUDE_DIRS = ""  # conf["TAGLIB_INC_DIR"] + conf["BOOST_INC_DIR"]
+-    LIBRARY_DIRS = ""  # conf["TAGLIB_LIB_DIR"] + conf["BOOST_LIB_DIR"]
++    INCLUDE_DIRS = []  # conf["TAGLIB_INC_DIR"] + conf["BOOST_INC_DIR"]
++    LIBRARY_DIRS = []  # conf["TAGLIB_LIB_DIR"] + conf["BOOST_LIB_DIR"]
+ 
+     boost_name = None
+ 
