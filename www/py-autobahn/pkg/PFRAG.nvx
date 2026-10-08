@@ -1,1 +1,2 @@
-@so lib/python${MODPY_VERSION}/site-packages/_nvx_utf8validator${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/_nvx_utf8validator.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/_nvx_xormasker.${MODPY_PYC_MAGIC_TAG}so

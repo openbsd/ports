@@ -1,9 +1,8 @@
 COMMENT =	WebSocket client & server library, WAMP real-time framework
 
-MODPY_DISTV =	24.4.2
+MODPY_DISTV =	26.7.1
 DISTNAME =	autobahn-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -13,13 +12,12 @@ HOMEPAGE =	https://github.com/crossbario/autobahn-python
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =	hatchling
 MODPY_PI =	Yes
 
 RUN_DEPENDS =	devel/py-txaio \
 		security/py-cryptography \
-		www/py-hyperlink \
-		devel/py-setuptools # uses pkg_resources
+		www/py-hyperlink
 
 BUILD_DEPENDS =	devel/py-txaio \
 		devel/py-cffi
