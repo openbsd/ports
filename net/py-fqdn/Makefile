@@ -1,6 +1,7 @@
 COMMENT=	validates that domain names are acceptable to browsers
 
 MODPY_DISTV=	1.6.0
+REVISION=	0
 DISTNAME=	fqdn-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
