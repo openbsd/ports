@@ -12,7 +12,7 @@ MODGO_MODULES =	\
 	github.com/bits-and-blooms/bitset	 v1.24.6 \
 	github.com/charmbracelet/colorprofile	 v0.4.3 \
 	github.com/charmbracelet/harmonica	 v0.2.0 \
-	github.com/charmbracelet/ultraviolet	 v0.0.0-20260906173415-0277a179edd9 \
+	github.com/charmbracelet/ultraviolet	 v0.0.0-20260910203606-6c9e17dc7a16 \
 	github.com/charmbracelet/x/ansi		 v0.11.8 \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20250806222409-83e3a29d542f \
 	github.com/charmbracelet/x/term		 v0.2.2 \
@@ -30,15 +30,15 @@ MODGO_MODULES =	\
 	github.com/hexops/gotextdiff		 v1.0.3 \
 	github.com/kylelemons/godebug		 v1.1.0 \
 	github.com/lucasb-eyer/go-colorful	 v1.4.1 \
-	github.com/mattn/go-runewidth		 v0.0.29 \
-	github.com/mattn/go-shellwords		 v1.0.14 \
+	github.com/mattn/go-runewidth		 v0.0.30 \
+	github.com/mattn/go-shellwords		 v1.0.15 \
 	github.com/muesli/cancelreader		 v0.2.2 \
 	github.com/rivo/uniseg			 v0.4.7 \
 	github.com/sahilm/fuzzy			 v0.1.3 \
 	github.com/stretchr/objx		 v0.5.3 \
 	github.com/stretchr/testify		 v1.12.1 \
 	github.com/tailscale/peercred		 v0.0.0-20250107143737-35a0c7bd7edc \
-	github.com/xo/terminfo			 v1.0.0 \
+	github.com/xo/terminfo			 v1.2.0 \
 	github.com/yuin/goldmark		 v1.4.13 \
 	github.com/yuin/gopher-lua		 v1.1.2 \
 	go.yaml.in/yaml/v3			 v3.0.5 \
@@ -73,7 +73,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-runewidth		 v0.0.24 \
 	github.com/mattn/go-runewidth		 v0.0.27 \
 	github.com/xo/terminfo			 v0.0.0-20220910002029-abceb7e1c41e \
-	golang.org/x/exp			 v0.0.0-20220909182711-5c715a9e8561 \
+	github.com/xo/terminfo			 v1.0.0 \
 	golang.org/x/mod			 v0.26.0 \
 	golang.org/x/net			 v0.56.0 \
 	golang.org/x/sync			 v0.16.0 \
