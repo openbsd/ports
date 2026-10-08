@@ -3,7 +3,7 @@ COMMENT=	versioning library for Python projects
 MODPY_DISTV=	24.11.0
 DISTNAME=	incremental-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -16,7 +16,7 @@ MODPY_PYBUILD=	hatchling
 
 MODPY_PYTEST_ARGS= --ignore tests/test_examples.py
 
-RUN_DEPENDS=	devel/py-setuptools
+RUN_DEPENDS=	devel/py-packaging
 TEST_DEPENDS=	devel/py-twisted
 
 .include <bsd.port.mk>
