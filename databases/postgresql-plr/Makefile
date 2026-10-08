@@ -1,6 +1,6 @@
 COMMENT =		R procedural language for PostgreSQL
 
-VERSION =		8.4.8.6
+VERSION =		8.4.8.9
 GH_ACCOUNT =		postgres-plr
 GH_PROJECT =		plr
 GH_TAGNAME =		REL${VERSION:S/./_/g}
