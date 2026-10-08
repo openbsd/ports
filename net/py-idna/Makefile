@@ -1,6 +1,6 @@
 COMMENT=	IDNA internationalized domain names for Python
 
-MODPY_DISTV=	3.19
+MODPY_DISTV=	3.20
 DISTNAME=	idna-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
@@ -13,5 +13,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
+
+TEST_DEPENDS=	devel/py-hypothesis
 
 .include <bsd.port.mk>
