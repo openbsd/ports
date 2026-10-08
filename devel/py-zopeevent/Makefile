@@ -1,10 +1,9 @@
 COMMENT=	very basic event publishing system from Zope
 
-MODPY_DISTV=	5.0
-DISTNAME=	zope.event-${MODPY_DISTV}
+MODPY_DISTV=	6.2
+DISTNAME=	zope_event-${MODPY_DISTV}
 PKGNAME=	py-zopeevent-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://github.com/zopefoundation/zope.event
 

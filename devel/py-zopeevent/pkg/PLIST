@@ -1,6 +1,5 @@
 @pkgpath devel/py-zopeevent,python3
 lib/python${MODPY_VERSION}/site-packages/zope/
-lib/python${MODPY_VERSION}/site-packages/zope.event-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/zope/event/
 lib/python${MODPY_VERSION}/site-packages/zope/event/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zope/event/${MODPY_PYCACHE}/
@@ -18,5 +17,4 @@ lib/python${MODPY_VERSION}/site-packages/zope_event-${MODPY_DISTV}.dist-info/REC
 lib/python${MODPY_VERSION}/site-packages/zope_event-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/zope_event-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/zope_event-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/zope_event-${MODPY_DISTV}.dist-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/zope_event-${MODPY_DISTV}.dist-info/top_level.txt
