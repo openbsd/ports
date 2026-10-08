@@ -1,6 +1,10 @@
 Do not dynamically try to get the version from package metadata,
 that fails the way we install the package.
 
+XXX this will work properly if the port is changed to use
+MODPY_PYBUILD=poetry-core, drop PKG_ARCH=*, and install to the
+standard location under usr/local/lib/pythonX.XX/site-packages
+
 Index: puppetboard/version.py
 --- puppetboard/version.py.orig
 +++ puppetboard/version.py

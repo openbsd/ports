@@ -1,6 +1,7 @@
 COMMENT=		web interface to PuppetDB
 
 MODPY_DISTV=		7.0.2
+REVISION=		0
 DISTNAME=		puppetboard-${MODPY_DISTV}
 CATEGORIES=		www
 
@@ -17,7 +18,6 @@ NO_TEST=		Yes
 PKG_ARCH=		*
 
 RUN_DEPENDS=		databases/py-puppetdb>=3.2 \
-			devel/py-setuptools \
 			sysutils/py-packaging \
 			textproc/py-commonmark \
 			textproc/py-yaml \
