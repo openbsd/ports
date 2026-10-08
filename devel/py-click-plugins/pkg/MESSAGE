@@ -1,0 +1,3 @@
+"click-plugins" is deprecated as a standalone distribution.
+Downstream users should vendor it instead.
+See https://github.com/click-contrib/click-plugins
