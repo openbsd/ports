@@ -4,7 +4,7 @@ https://github.com/openai/codex/issues/48050
 Index: codex-rs/features/src/lib.rs
 --- codex-rs/features/src/lib.rs.orig
 +++ codex-rs/features/src/lib.rs
-@@ -941,7 +941,7 @@ pub const FEATURES: &[FeatureSpec] = &[
+@@ -967,7 +967,7 @@ pub const FEATURES: &[FeatureSpec] = &[
          id: Feature::DaemonAutoStart,
          key: "daemon_auto_start",
          stage: Stage::Stable,
