@@ -1,23 +1,23 @@
-COMMENT =		windowing and multimedia library for Python
+COMMENT=	windowing and multimedia library for Python
 
-MODPY_DISTV =	1.4.11
-DISTNAME =		pyglet-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-EXTRACT_SUFX =		.zip
-REVISION =		8
+MODPY_DISTV=	1.4.11
+DISTNAME=	pyglet-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+EXTRACT_SUFX=	.zip
+REVISION=	9
 
-CATEGORIES =		x11 multimedia
+CATEGORIES=	x11 multimedia
 
-HOMEPAGE =		http://www.pyglet.org
+# https://github.com/pyglet/pyglet
+HOMEPAGE=	https://www.pyglet.org
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-NO_TEST =		Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
