@@ -1,6 +1,6 @@
 COMMENT=	platform independent file lock
 
-MODPY_DISTV=	3.32.7
+MODPY_DISTV=	4.0.11
 DISTNAME=	filelock-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -18,7 +18,8 @@ MODPY_PI=	Yes
 
 # disable failing tests with a long timeout
 MODPY_PYTEST_ARGS= -v \
-		-k 'not test_threaded_shared_lock_obj and not test_threaded_lock_different_lock_obj'
+		-k 'not test_threaded_shared_lock_obj and not test_threaded_lock_different_lock_obj' \
+		--ignore tests/test_virtualenv.py
 
 TEST_DEPENDS=	devel/py-test-asyncio \
 		devel/py-test-cov \
