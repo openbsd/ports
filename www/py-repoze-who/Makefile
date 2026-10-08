@@ -1,9 +1,8 @@
 COMMENT=	identification and authentication framework for WSGI
 
-MODPY_DISTV=	3.0.0
-DISTNAME=	repoze.who-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:S/./-/}
-REVISION=	2
+MODPY_DISTV=	3.2.0
+DISTNAME=	repoze_who-${MODPY_DISTV}
+PKGNAME=	py-repoze-who-${MODPY_DISTV}
 
 CATEGORIES=	www devel
 
@@ -15,6 +14,7 @@ MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-zopeinterface \
+		www/py-legacy-cgi \
 		www/py-webob
 
 .include <bsd.port.mk>
