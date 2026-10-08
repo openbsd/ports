@@ -1,9 +1,8 @@
 COMMENT=	toolkit for generation of output for the web
 
-MODPY_DISTV=	0.7.9
-DISTNAME=	Genshi-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:L}
-REVISION=	3
+MODPY_DISTV=	0.7.11
+DISTNAME=	genshi-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	www
 
@@ -20,14 +19,7 @@ WANTLIB += pthread
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
-MODPY_PYTEST_ARGS=	genshi/
 
 CONFIGURE_ENV=	GENSHI_BUILD_SPEEDUP=1
-
-RUN_DEPENDS =	devel/py-six
-
-post-install:
-	cp -r ${WRKSRC}/doc ${PREFIX}/share/doc/py-genshi
-	cp -r ${WRKSRC}/examples ${PREFIX}/share/examples/py-genshi
 
 .include <bsd.port.mk>
