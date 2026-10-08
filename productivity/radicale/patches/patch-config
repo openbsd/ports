@@ -1,57 +1,52 @@
 Index: config
 --- config.orig
 +++ config
-@@ -28,10 +28,10 @@
+@@ -3,7 +3,7 @@
+ 
+ # Config file for Radicale - A simple calendar server
+ #
+-# Place it into /etc/radicale/config (global)
++# Place it into ${SYSCONFDIR}/radicale/config (global)
+ # or ~/.config/radicale/config (user)
+ #
+ # The current values are the default ones
+@@ -36,10 +36,10 @@
  #ssl = False
  
  # SSL certificate path
--#certificate = /etc/apache2/ssl/server.crt
-+certificate = ${SYSCONFDIR}/radicale/server.crt
+-#certificate = /etc/ssl/radicale.cert.pem
++#certificate = ${SYSCONFDIR}/radicale/server.crt
  
  # SSL private key
--#key = /etc/apache2/ssl/server.key
-+key = ${SYSCONFDIR}/radicale/private/server.key
+-#key = /etc/ssl/radicale.key.pem
++#key = ${SYSCONFDIR}/radicale/private/server.key
  
- # SSL Protocol used. See python's ssl module for available values
- #protocol = PROTOCOL_SSLv23
-@@ -84,11 +84,11 @@
- #custom_handler =
+ # CA certificate for validating clients. This can be used to secure
+ # TCP traffic between Radicale and a reverse proxy
+@@ -74,7 +74,7 @@
+ #type = none
  
  # Htpasswd filename
 -#htpasswd_filename = /etc/radicale/users
-+htpasswd_filename = ${SYSCONFDIR}/radicale/users
++#htpasswd_filename = ${SYSCONFDIR}/radicale/users
  
  # Htpasswd encryption method
  # Value: plain | sha1 | ssha | crypt | bcrypt | md5
--#htpasswd_encryption = crypt
-+htpasswd_encryption = bcrypt
- 
- # LDAP server URL, with protocol and port
- #ldap_url = ldap://localhost:389/
-@@ -150,7 +150,7 @@
- #custom_handler =
+@@ -93,7 +93,7 @@
+ #type = owner_only
  
  # File for rights management from_file
--#file = ~/.config/radicale/rights
-+file = ${SYSCONFDIR}/radicale/rights
+-#file = /etc/radicale/rights
++#file = ${SYSCONFDIR}/radicale/rights
  
  
  [storage]
-@@ -167,7 +167,7 @@
- #custom_handler =
+@@ -103,7 +103,7 @@
+ #type = multifilesystem
  
  # Folder for storing local collections, created if not present
--#filesystem_folder = ~/.config/radicale/collections
-+filesystem_folder = ${LOCALSTATEDIR}/db/radicale/calendars
+-#filesystem_folder = /var/lib/radicale/collections
++#filesystem_folder = ${LOCALSTATEDIR}/db/radicale/collections
  
- # Database URL for SQLAlchemy
- # dialect+driver://user:password@host/dbname[?key=value..]
-@@ -182,7 +182,7 @@
- # If no config is given, simple information is printed on the standard output
- # For more information about the syntax of the configuration file, see:
- # http://docs.python.org/library/logging.config.html
--#config = /etc/radicale/logging
-+config = ${SYSCONFDIR}/radicale/logging
- # Set the default logging level to debug
- #debug = False
- # Store all environment variables (including those set in the shell)
+ # Lock the storage. Never start multiple instances of Radicale or edit the
+ # storage externally while Radicale is running if disabled.

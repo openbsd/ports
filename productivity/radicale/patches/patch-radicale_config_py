@@ -1,45 +1,45 @@
---- radicale/config.py.orig	Wed Aug 19 15:06:33 2015
-+++ radicale/config.py	Fri Nov 27 22:06:38 2015
-@@ -43,8 +43,8 @@ INITIAL_CONFIG = {
-         "daemon": "False",
-         "pid": "",
-         "ssl": "False",
--        "certificate": "/etc/apache2/ssl/server.crt",
--        "key": "/etc/apache2/ssl/server.key",
-+        "certificate": "${SYSCONFDIR}/radicale/server.crt",
-+        "key": "${SYSCONFDIR}/radicale/private/server.key",
-         "protocol": "PROTOCOL_SSLv23",
-         "ciphers": "",
-         "dns_lookup": "True",
-@@ -60,7 +60,7 @@ INITIAL_CONFIG = {
-     "auth": {
-         "type": "None",
-         "custom_handler": "",
--        "htpasswd_filename": "/etc/radicale/users",
-+        "htpasswd_filename": "${SYSCONFDIR}/radicale/users",
-         "htpasswd_encryption": "crypt",
-         "imap_hostname": "localhost",
-         "imap_port": "143",
-@@ -86,11 +86,10 @@ INITIAL_CONFIG = {
-     "storage": {
-         "type": "filesystem",
-         "custom_handler": "",
--        "filesystem_folder": os.path.expanduser(
--            "~/.config/radicale/collections"),
-+        "filesystem_folder": "/var/db/radicale/calendars",
-         "database_url": ""},
-     "logging": {
--        "config": "/etc/radicale/logging",
-+        "config": "${SYSCONFDIR}/radicale/logging",
-         "debug": "False",
-         "full_environment": "False"}}
- 
-@@ -102,7 +101,7 @@ for section, values in INITIAL_CONFIG.items():
-     for key, value in values.items():
-         _CONFIG_PARSER.set(section, key, value)
- 
--_CONFIG_PARSER.read("/etc/radicale/config")
-+_CONFIG_PARSER.read("${SYSCONFDIR}/radicale/config")
- _CONFIG_PARSER.read(os.path.expanduser("~/.config/radicale/config"))
- if "RADICALE_CONFIG" in os.environ:
-     _CONFIG_PARSER.read(os.environ["RADICALE_CONFIG"])
+Index: radicale/config.py
+--- radicale/config.py.orig
++++ radicale/config.py
+@@ -87,12 +87,12 @@ INITIAL_CONFIG = OrderedDict([
+             "opposite": ["-S", "--no-ssl"],
+             "type": bool}),
+         ("certificate", {
+-            "value": "/etc/ssl/radicale.cert.pem",
++            "value": "${SYSCONFDIR}/radicale/server.crt",
+             "help": "set certificate file",
+             "aliases": ["-c", "--certificate"],
+             "type": str}),
+         ("key", {
+-            "value": "/etc/ssl/radicale.key.pem",
++            "value": "${SYSCONFDIR}/radicale/private/server.key",
+             "help": "set private key file",
+             "aliases": ["-k", "--key"],
+             "type": str}),
+@@ -133,7 +133,7 @@ INITIAL_CONFIG = OrderedDict([
+             "type": str,
+             "internal": auth.INTERNAL_TYPES}),
+         ("htpasswd_filename", {
+-            "value": "/etc/radicale/users",
++            "value": "${SYSCONFDIR}/radicale/users",
+             "help": "htpasswd filename",
+             "type": str}),
+         ("htpasswd_encryption", {
+@@ -151,7 +151,7 @@ INITIAL_CONFIG = OrderedDict([
+             "type": str,
+             "internal": rights.INTERNAL_TYPES}),
+         ("file", {
+-            "value": "/etc/radicale/rights",
++            "value": "${SYSCONFDIR}/radicale/rights",
+             "help": "file for rights management from_file",
+             "type": str})])),
+     ("storage", OrderedDict([
+@@ -162,7 +162,7 @@ INITIAL_CONFIG = OrderedDict([
+             "internal": storage.INTERNAL_TYPES}),
+         ("filesystem_folder", {
+             "value": os.path.expanduser(
+-                "/var/lib/radicale/collections"),
++                "${LOCALSTATEDIR}/db/radicale/collections"),
+             "help": "path where collections are stored",
+             "type": str}),
+         ("max_sync_token_age", {

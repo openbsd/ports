@@ -40,7 +40,6 @@
      SUBDIR += py-x-wr-timezone
      SUBDIR += qbirthday
      SUBDIR += radicale
-     SUBDIR += radicale2
      SUBDIR += railway
      SUBDIR += rednotebook
      SUBDIR += rubrica2
