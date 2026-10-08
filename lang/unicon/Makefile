@@ -4,8 +4,8 @@ CATEGORIES=	lang
 GH_ACCOUNT =	uniconproject
 # XXX switched to commit because I'm upstreaming patches
 # GH_TAGNAME =	13.2
-DISTNAME =	unicon-13.3beta1
-GH_COMMIT =	0b8f99c2affe981f87639fc2577d2a68d05739ba
+DISTNAME =	unicon-13.3beta2
+GH_COMMIT =	788a535d0909e4487e797cc8c9218d7470ba2ae7
 GH_PROJECT =	unicon
 
 HOMEPAGE=	https://unicon.sourceforge.net/
@@ -40,6 +40,7 @@ CONFIGURE_ARGS +=	--with-Xft=${X11BASE}
 CONFIGURE_ARGS +=	--without-zlib
 # we don't have this, so avoid it entirely
 CONFIGURE_ARGS +=	--without-voip
+#CONFIGURE_ARGS +=	--disable-graphics3d
 
 
 # in case something breaks

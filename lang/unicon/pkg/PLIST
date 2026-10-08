@@ -5,12 +5,14 @@ bin/ivib
 @bin bin/iyacc
 @bin bin/patchstr
 bin/udb
+bin/uflex
 bin/ui
 bin/ulsp
 bin/unicon
 bin/unidep
 bin/unidoc
 bin/uprof
+bin/uscribe
 lib/unicon/
 lib/unicon/ipl/
 lib/unicon/ipl/gincl/
@@ -693,6 +695,7 @@ lib/unicon/ipl/procs/ximage.icn
 lib/unicon/ipl/procs/xoptions.icn
 lib/unicon/ipl/procs/xrotate.icn
 lib/unicon/ipl/procs/zipread.icn
+@so lib/unicon/libcfunc.so
 lib/unicon/plugins/
 lib/unicon/plugins/lib/
 @so lib/unicon/plugins/lib/bitman.so
@@ -853,6 +856,7 @@ lib/unicon/uni/gui/menucomponent.u
 lib/unicon/uni/gui/menuseparator.icn
 lib/unicon/uni/gui/menuseparator.u
 lib/unicon/uni/gui/messagebox.icn
+lib/unicon/uni/gui/messagebox.u
 lib/unicon/uni/gui/migration.icn
 lib/unicon/uni/gui/migration.u
 lib/unicon/uni/gui/node.icn
@@ -907,6 +911,8 @@ lib/unicon/uni/gui/textlist.icn
 lib/unicon/uni/gui/textlist.u
 lib/unicon/uni/gui/textmenuitem.icn
 lib/unicon/uni/gui/textmenuitem.u
+lib/unicon/uni/gui/theme.icn
+lib/unicon/uni/gui/theme.u
 lib/unicon/uni/gui/ticker.icn
 lib/unicon/uni/gui/ticker.u
 lib/unicon/uni/gui/toggle.icn
@@ -976,6 +982,8 @@ lib/unicon/uni/lib/contentdisposition.icn
 lib/unicon/uni/lib/contentdisposition.u
 lib/unicon/uni/lib/contenttype.icn
 lib/unicon/uni/lib/contenttype.u
+lib/unicon/uni/lib/crypto.icn
+lib/unicon/uni/lib/crypto.u
 lib/unicon/uni/lib/cvsuser.icn
 lib/unicon/uni/lib/cvsuser.u
 lib/unicon/uni/lib/cvsutil.icn
@@ -1025,8 +1033,12 @@ lib/unicon/uni/lib/httprequest.icn
 lib/unicon/uni/lib/httprequest.u
 lib/unicon/uni/lib/httpresponse.icn
 lib/unicon/uni/lib/httpresponse.u
+lib/unicon/uni/lib/icmp.icn
+lib/unicon/uni/lib/icmp.u
 lib/unicon/uni/lib/icon.icn
 lib/unicon/uni/lib/iconbutton.icn
+lib/unicon/uni/lib/igmp.icn
+lib/unicon/uni/lib/igmp.u
 lib/unicon/uni/lib/json.icn
 lib/unicon/uni/lib/json.u
 lib/unicon/uni/lib/jsonrpc.icn
@@ -1081,6 +1093,8 @@ lib/unicon/uni/lib/object.icn
 lib/unicon/uni/lib/object.u
 lib/unicon/uni/lib/overlayitem.icn
 lib/unicon/uni/lib/overlayset.icn
+lib/unicon/uni/lib/packetspec.icn
+lib/unicon/uni/lib/packetspec.u
 lib/unicon/uni/lib/pdb_util.icn
 lib/unicon/uni/lib/pdb_util.u
 lib/unicon/uni/lib/popclient.icn
@@ -1128,6 +1142,8 @@ lib/unicon/uni/lib/soap_util.icn
 lib/unicon/uni/lib/soapclient.icn
 lib/unicon/uni/lib/soapserver.icn
 lib/unicon/uni/lib/sql.icn
+lib/unicon/uni/lib/ssh.icn
+lib/unicon/uni/lib/ssh.u
 lib/unicon/uni/lib/str_replacer.icn
 lib/unicon/uni/lib/str_replacer.u
 lib/unicon/uni/lib/str_util.icn
@@ -1289,6 +1305,53 @@ lib/unicon/uni/unidoc/buildDocs.sh
 lib/unicon/uni/unidoc/buildIPLdoc.sh
 lib/unicon/uni/unidoc/uniclass.dir
 lib/unicon/uni/unidoc/uniclass.pag
+lib/unicon/uni/uscribe/
+lib/unicon/uni/uscribe/README.md
+lib/unicon/uni/uscribe/bib.icn
+lib/unicon/uni/uscribe/bib.u
+lib/unicon/uni/uscribe/config.icn
+lib/unicon/uni/uscribe/config.u
+lib/unicon/uni/uscribe/directive.icn
+lib/unicon/uni/uscribe/directive.u
+lib/unicon/uni/uscribe/inline.icn
+lib/unicon/uni/uscribe/inline.u
+lib/unicon/uni/uscribe/labeltable.icn
+lib/unicon/uni/uscribe/labeltable.u
+lib/unicon/uni/uscribe/latexout.icn
+lib/unicon/uni/uscribe/latexout.u
+lib/unicon/uni/uscribe/main.icn
+lib/unicon/uni/uscribe/main.u
+lib/unicon/uni/uscribe/manifest.icn
+lib/unicon/uni/uscribe/manifest.u
+lib/unicon/uni/uscribe/node.icn
+lib/unicon/uni/uscribe/node.u
+lib/unicon/uni/uscribe/outputter.icn
+lib/unicon/uni/uscribe/outputter.u
+lib/unicon/uni/uscribe/parser.icn
+lib/unicon/uni/uscribe/parser.u
+lib/unicon/uni/uscribe/scan.icn
+lib/unicon/uni/uscribe/scan.u
+lib/unicon/uni/uscribe/themes/
+lib/unicon/uni/uscribe/themes/README.md
+lib/unicon/uni/uscribe/themes/_shared/
+lib/unicon/uni/uscribe/themes/_shared/highlight-unicon.js
+lib/unicon/uni/uscribe/themes/_shared/highlight.css
+lib/unicon/uni/uscribe/themes/_shared/search.js
+lib/unicon/uni/uscribe/themes/_shared/theme-switcher.js
+lib/unicon/uni/uscribe/themes/basic/
+lib/unicon/uni/uscribe/themes/basic/static/
+lib/unicon/uni/uscribe/themes/basic/static/book.css
+lib/unicon/uni/uscribe/themes/basic/theme.conf
+lib/unicon/uni/uscribe/themes/classic/
+lib/unicon/uni/uscribe/themes/classic/static/
+lib/unicon/uni/uscribe/themes/classic/static/book.css
+lib/unicon/uni/uscribe/themes/classic/theme.conf
+lib/unicon/uni/uscribe/themes/dark/
+lib/unicon/uni/uscribe/themes/dark/static/
+lib/unicon/uni/uscribe/themes/dark/static/book.css
+lib/unicon/uni/uscribe/themes/dark/theme.conf
+lib/unicon/uni/uscribe/uniclass.dir
+lib/unicon/uni/uscribe/uniclass.pag
 lib/unicon/uni/xml/
 lib/unicon/uni/xml/attlist.icn
 lib/unicon/uni/xml/attlist.u

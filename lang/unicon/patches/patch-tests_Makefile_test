@@ -1,7 +1,7 @@
 Index: tests/Makefile.test
 --- tests/Makefile.test.orig
 +++ tests/Makefile.test
-@@ -85,14 +85,14 @@ endif
+@@ -89,14 +89,14 @@ endif
  	diff -wq stand/$@.wstd local/$@.nr >/dev/null; \
  	if [ $$? -eq 0 ] ; then echo "w pass"; \
  	else echo "w FAIL"; \
