@@ -79,6 +79,7 @@
      SUBDIR += ruby-minitar
      SUBDIR += ruby-rubyzip
      SUBDIR += rzip
+     SUBDIR += sevenzipjbinding
      SUBDIR += sltar
      SUBDIR += snappy
      SUBDIR += ucl
