@@ -36,7 +36,6 @@
      SUBDIR += broot
      SUBDIR += btop
      SUBDIR += bubblemon-dockapp
-     SUBDIR += bupstash
      SUBDIR += burp
      SUBDIR += cdist
      SUBDIR += cdrtools
