@@ -1,6 +1,7 @@
 COMMENT =	open network for secure, decentralized communication
 
 MODPY_DISTV =	1.161.0
+REVISION =	0
 
 GH_ACCOUNT =	element-hq
 GH_PROJECT =	synapse
@@ -57,7 +58,6 @@ RUN_DEPENDS =	devel/py-jsonschema>=3.0.0 \
 		sysutils/py-packaging \
 		www/py-python-multipart
 
-RUN_DEPENDS +=	devel/py-setuptools
 # optional section
 RUN_DEPENDS +=	textproc/py-lxml
 # not listed but used in some scripts/ files
