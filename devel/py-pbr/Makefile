@@ -1,6 +1,6 @@
 COMMENT=	manage setuptools packaging needs in a consistent manner
 
-MODPY_DISTV=	7.1.1
+MODPY_DISTV=	7.1.3
 DISTNAME=	pbr-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
