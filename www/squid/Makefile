@@ -5,8 +5,6 @@ V=		7.7
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 DPB_PROPERTIES=	parallel
-
-# keep above 7.9-stable; security/libnettle -> security/nettle
 REVISION-main=	0
 
 # subpackages aren't flavoured, so overwrite the default name/path

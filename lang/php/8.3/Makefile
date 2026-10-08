@@ -1,6 +1,4 @@
 PHP_VERSION=	8.3.33
-
-# keep above 7.9-stable
 REVISION=	0
 
 AUTOCONF_VERSION= 2.73

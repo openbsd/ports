@@ -4,7 +4,6 @@ COMMENT=	vi clone with many additional features
 # if there are new languages for manpages, "make fix-plist" will add the
 # ${GUI_ONLY} markers as needed for gui-only tools.
 V=		9.2.1125
-# keep package version above 7.9-stable
 REVISION=	0
 
 GH_ACCOUNT=	vim
