@@ -1,13 +1,12 @@
 COMMENT=	set of Python modules designed for writing games
 
-# XXX check "Skipping Cython compilation"?
-
 MODPY_DISTV=	2.6.1
 DISTNAME=	pygame-${MODPY_DISTV}
 PKGNAME=	py-game-${MODPY_DISTV}
 CATEGORIES=	devel games
-REVISION=	4
+REVISION=	5
 
+# https://github.com/pygame/pygame
 HOMEPAGE=	https://www.pygame.org/
 
 # LGPLv2.1
@@ -20,9 +19,8 @@ WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf X11 freetype jpeg
 WANTLIB += png portmidi ${MODPY_WANTLIB}
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 BUILD_DEPENDS=	lang/cython
 LIB_DEPENDS=	audio/portmidi \
@@ -38,6 +36,7 @@ MAKE_ENV+=	LOCALBASE="${LOCALBASE}" \
 
 TEST_IS_INTERACTIVE=	x11
 TEST_ENV=	PYTHONPATH=${WRKSRC}
+MODPY_PYTEST_IGNORE= test/run_tests__tests/run_tests__test.py
 
 .if ${MACHINE_ARCH:Mi386}
 CFLAGS+=	-msse2

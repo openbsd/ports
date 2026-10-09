@@ -1,0 +1,12 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -228,7 +228,7 @@ if consume_arg('-enable-arm-neon'):
+     cflags += '-mfpu=neon'
+     os.environ['CFLAGS'] = cflags
+ 
+-compile_cython = False
++compile_cython = True
+ cython_only = False
+ if consume_arg('cython'):
+     compile_cython = True
