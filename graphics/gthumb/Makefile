@@ -27,9 +27,6 @@ BUILD_DEPENDS=		devel/appstream \
 			devel/gsettings-desktop-schemas \
 			multimedia/gstreamer1/plugins-base
 
-# web albums
-#BUILD_DEPENDS +=	devel/bison
-
 LIB_DEPENDS=	graphics/exiv2 \
 		graphics/libjxl \
 		graphics/libwebp \
