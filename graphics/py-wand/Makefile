@@ -1,9 +1,8 @@
 COMMENT=	ctypes-based simple MagickWand API binding for Python
 
-MODPY_DISTV=	0.6.13
-DISTNAME=	Wand-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:L}
-REVISION=	2
+MODPY_DISTV=	0.7.2
+DISTNAME=	wand-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	graphics
 
@@ -11,9 +10,8 @@ CATEGORIES=	graphics
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	graphics/ImageMagick
 
