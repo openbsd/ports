@@ -4,7 +4,7 @@ CardDAV (contacts) server, that:
 - Shares calendars and contact lists through CalDAV, CardDAV and HTTP.
 - Supports events, todos, journal entries and business cards.
 - Works out-of-the-box, no complicated setup or configuration required.
-- Offers flexible authentication options.
+- Offers flexible authentication options (including Dovecot SASL).
 - Can limit access by authorization.
 - Can secure connections with TLS.
 - Works with many CalDAV and CardDAV clients.
