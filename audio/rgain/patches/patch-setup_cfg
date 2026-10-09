@@ -1,7 +1,7 @@
 Index: setup.cfg
 --- setup.cfg.orig
 +++ setup.cfg
-@@ -14,7 +14,7 @@ multi_line_output = 3
+@@ -14,6 +14,6 @@ multi_line_output = 3
  not_skip = __init__.py
  
  [tool:pytest]
@@ -9,4 +9,3 @@ Index: setup.cfg
 +addopts = --showlocals --full-trace --cov rgain3 --cov-report term-missing
  flake8-max-line-length = 80
  flake8-max-complexity = 20
- 
