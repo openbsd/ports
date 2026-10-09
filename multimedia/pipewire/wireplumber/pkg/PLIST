@@ -121,6 +121,7 @@ share/locale/mr/LC_MESSAGES/wireplumber.mo
 share/locale/my/
 share/locale/my/LC_MESSAGES/
 share/locale/my/LC_MESSAGES/wireplumber.mo
+share/locale/nb/LC_MESSAGES/wireplumber.mo
 share/locale/nl/LC_MESSAGES/wireplumber.mo
 share/locale/nn/LC_MESSAGES/wireplumber.mo
 share/locale/oc/LC_MESSAGES/wireplumber.mo
@@ -184,6 +185,7 @@ share/wireplumber/scripts/lib/filter-utils.lua
 share/wireplumber/scripts/lib/linking-utils.lua
 share/wireplumber/scripts/lib/monitor-utils.lua
 share/wireplumber/scripts/lib/node-utils.lua
+share/wireplumber/scripts/lib/profile-utils.lua
 share/wireplumber/scripts/linking/
 share/wireplumber/scripts/linking/find-audio-group-target.lua
 share/wireplumber/scripts/linking/find-best-target.lua
