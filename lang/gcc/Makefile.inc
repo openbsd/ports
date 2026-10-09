@@ -60,7 +60,8 @@ DIST_SUBDIR =		gcc
 SITES ?=		${SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
 SITES.strap ?=		https://distfiles.stumpf.co/ \
 			https://spacehopper.org/mirrors/ \
-			https://distfiles.bsdfrog.org/
+			https://distfiles.bsdfrog.org/ \
+			https://kirill.korins.ky/pub/distfiles/
 
 # do not include OSREV
 CONFIG=${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd
