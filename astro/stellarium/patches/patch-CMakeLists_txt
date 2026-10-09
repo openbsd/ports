@@ -7,6 +7,6 @@ Index: CMakeLists.txt
  IF(ENABLE_QT6)
 -     FIND_PACKAGE(Qt6 COMPONENTS Core QUIET)
 +     FIND_PACKAGE(Qt6 COMPONENTS Core GuiPrivate QUIET)
+      # Suppressing warning for GuiPrivate component (required since Qt 6.10+)
+      SET(QT_NO_PRIVATE_MODULE_WARNING ON)
  ENDIF()
- if (NOT Qt6_FOUND)
-      FIND_PACKAGE(Qt5 REQUIRED COMPONENTS Core)
