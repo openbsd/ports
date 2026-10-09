@@ -1,22 +1,20 @@
-COMMENT =		python wrapper for spatial index
+COMMENT=	python wrapper for spatial index
 
-MODPY_DISTV =	1.2.0
-DISTNAME =		Rtree-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME:L}
-REVISION =		2
+MODPY_DISTV=	1.4.1
+DISTNAME=	rtree-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+RUN_DEPENDS=	geo/spatialindex
 
-RUN_DEPENDS =		geo/spatialindex
-
-TEST_DEPENDS =		math/py-numpy
+TEST_DEPENDS=	math/py-numpy
 
 .include <bsd.port.mk>
