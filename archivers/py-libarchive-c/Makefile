@@ -1,9 +1,12 @@
-MODPY_DISTV =	5.1
+MODPY_DISTV =	5.3
+
 COMMENT =	Python interface to libarchive
-DISTNAME =	libarchive-c-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME}
+DISTNAME =	libarchive_c-${MODPY_DISTV}
+PKGNAME =	py-libarchive-c-${MODPY_DISTV}
+
 CATEGORIES =	archivers devel
-REVISION =	4
+
+HOMEPAGE =	https://github.com/Changaco/python-libarchive-c
 
 # CC0
 PERMIT_PACKAGE =	Yes
@@ -13,6 +16,5 @@ MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	archivers/libarchive
-TEST_DEPENDS =	devel/py-mock
 
 .include <bsd.port.mk>
