@@ -1083,6 +1083,7 @@ share/doc/appstream/html/compose-api/method.Compose.get_media_result_dir.html
 share/doc/appstream/html/compose-api/method.Compose.get_origin.html
 share/doc/appstream/html/compose-api/method.Compose.get_prefix.html
 share/doc/appstream/html/compose-api/method.Compose.get_results.html
+share/doc/appstream/html/compose-api/method.Compose.get_user_agent.html
 share/doc/appstream/html/compose-api/method.Compose.has_errors.html
 share/doc/appstream/html/compose-api/method.Compose.remove_custom_allowed.html
 share/doc/appstream/html/compose-api/method.Compose.remove_flags.html
@@ -1105,6 +1106,7 @@ share/doc/appstream/html/compose-api/method.Compose.set_media_baseurl.html
 share/doc/appstream/html/compose-api/method.Compose.set_media_result_dir.html
 share/doc/appstream/html/compose-api/method.Compose.set_origin.html
 share/doc/appstream/html/compose-api/method.Compose.set_prefix.html
+share/doc/appstream/html/compose-api/method.Compose.set_user_agent.html
 share/doc/appstream/html/compose-api/method.DirectoryUnit.get_root.html
 share/doc/appstream/html/compose-api/method.Hint.add_explanation_var.html
 share/doc/appstream/html/compose-api/method.Hint.format_explanation.html
@@ -1307,6 +1309,8 @@ share/locale/he/LC_MESSAGES/appstream.mo
 share/locale/hi/LC_MESSAGES/appstream.mo
 share/locale/hr/LC_MESSAGES/appstream.mo
 share/locale/hu/LC_MESSAGES/appstream.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/appstream.mo
 share/locale/id/LC_MESSAGES/appstream.mo
 share/locale/it/LC_MESSAGES/appstream.mo
@@ -1343,6 +1347,8 @@ share/locale/zh_TW/LC_MESSAGES/appstream.mo
 share/metainfo/
 share/metainfo/org.freedesktop.appstream.cli.metainfo.xml
 share/metainfo/org.freedesktop.appstream.compose.metainfo.xml
+share/vala/
+share/vala/vapi/
 share/vala/vapi/appstream.deps
 share/vala/vapi/appstream.vapi
 @exec %D/bin/appstreamcli refresh --force >/dev/null 2>&1 || true

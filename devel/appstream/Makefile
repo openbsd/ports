@@ -6,15 +6,15 @@
 COMMENT-main=		access to machine-readable software metadata
 COMMENT-qt6=		Qt6 interface for AppStream
 
-V=			1.2.0
+V=			1.2.1
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
 PKGNAME-qt6=		appstream-qt6-${V}
 
-SHARED_LIBS += appstream                 1.2 # 1.1.6
-SHARED_LIBS += appstream-compose         1.2 # 1.1.6
-SHARED_LIBS += AppStreamQt               1.1 # 1.1.6
+SHARED_LIBS += appstream                 1.2 # 1.2.1
+SHARED_LIBS += appstream-compose         1.2 # 1.2.1
+SHARED_LIBS += AppStreamQt               1.1 # 1.2.1
 
 CATEGORIES=		devel
 
