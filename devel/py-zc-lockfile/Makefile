@@ -15,7 +15,6 @@ MODPY_PI =		Yes
 
 MODPY_PYTEST_ARGS =	src/zc/lockfile/tests.py
 
-RUN_DEPENDS =		sysutils/py-standard-pkg-resources
 TEST_DEPENDS =		devel/py-zopetesting
 
 .include <bsd.port.mk>
