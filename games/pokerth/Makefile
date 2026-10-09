@@ -28,6 +28,8 @@ FLAVOR?=
 .if ${FLAVOR:Mlegacy}
 ALL_TARGET =	pokerth_client
 .else
+# needs too much memory for smaller archs
+ONLY_FOR_ARCHS = ${LP64_ARCHS}
 WANTLIB +=	Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Svg
 ALL_TARGET =	pokerth_client pokerth_qml-client
 .endif
@@ -45,12 +47,5 @@ RUN_DEPENDS +=	devel/desktop-file-utils
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/pokerth.desktop ${WRKSRC}/pokerth_qml.desktop
-
-.include <bsd.port.arch.mk>
-
-.if !${PROPERTIES:Mlp64}
-# memory is too limited for the QML-based client
-FLAVOR =	legacy
-.endif
 
 .include <bsd.port.mk>
