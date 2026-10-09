@@ -1,30 +1,30 @@
-COMMENT =		stylish PDF presentation generator
+COMMENT=	stylish PDF presentation generator
 
-MODPY_DISTV =	0.13.2
-DISTNAME =		Impressive-${MODPY_DISTV}
-PKGNAME =		impressive-${MODPY_DISTV}
-REVISION =		1
+MODPY_DISTV=	0.13.2
+DISTNAME=	Impressive-${MODPY_DISTV}
+PKGNAME=	impressive-${MODPY_DISTV}
+REVISION=	2
 
-CATEGORIES =		productivity
-HOMEPAGE =		https://impressive.sourceforge.net/
-SITES =			${SITE_SOURCEFORGE:=impressive/}
+CATEGORIES=	productivity
+HOMEPAGE=	https://impressive.sourceforge.net/
+SITES=		${SITE_SOURCEFORGE:=impressive/}
 
 # GPLv2 only
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-NO_BUILD =		Yes
-NO_TEST =		Yes
+MODULES=	lang/python
+NO_BUILD=	Yes
+NO_TEST=	Yes
 
-RUN_DEPENDS =		devel/pygame \
-			devel/xdg-utils \
-			graphics/py-Pillow \
-			graphics/py-opengl \
-			print/poppler,-utils \
-			textproc/pdftk \
-			x11/mplayer
+RUN_DEPENDS=	devel/pygame \
+		devel/xdg-utils \
+		graphics/py-Pillow \
+		graphics/py-opengl \
+		print/poppler,-utils \
+		textproc/pdftk \
+		x11/mplayer
 
-MODPY_ADJ_FILES =	impressive.py
+MODPY_ADJ_FILES=impressive.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/impressive.py ${PREFIX}/bin/impressive
