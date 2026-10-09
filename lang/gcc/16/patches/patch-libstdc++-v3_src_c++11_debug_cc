@@ -5,7 +5,7 @@ programs with libestdc++.
 Index: libstdc++-v3/src/c++11/debug.cc
 --- libstdc++-v3/src/c++11/debug.cc.orig
 +++ libstdc++-v3/src/c++11/debug.cc
-@@ -869,7 +869,7 @@ namespace
+@@ -868,7 +868,7 @@ namespace
    print_address(PrintContext& ctx, const char* fmt, const void* address)
    {
      char buf[128];
@@ -14,7 +14,7 @@ Index: libstdc++-v3/src/c++11/debug.cc
      print_word(ctx, buf, written);
    }
  
-@@ -881,7 +881,7 @@ namespace
+@@ -880,7 +880,7 @@ namespace
    print_integer(PrintContext& ctx, long integer)
    {
      char buf[64];
@@ -23,7 +23,7 @@ Index: libstdc++-v3/src/c++11/debug.cc
      print_word(ctx, buf, written);
    }
  
-@@ -1264,7 +1264,7 @@ namespace
+@@ -1263,7 +1263,7 @@ namespace
  
      PrintContext& ctx = *static_cast<PrintContext*>(data);
  
@@ -32,7 +32,7 @@ Index: libstdc++-v3/src/c++11/debug.cc
      print_word(ctx, buf, written);
  
      int ret = 0;
-@@ -1292,7 +1292,7 @@ namespace
+@@ -1291,7 +1291,7 @@ namespace
  
  	if (lineno)
  	  {
@@ -41,7 +41,7 @@ Index: libstdc++-v3/src/c++11/debug.cc
  	    print_word(ctx, buf, written);
  	  }
  	else
-@@ -1315,7 +1315,7 @@ namespace
+@@ -1314,7 +1314,7 @@ namespace
      if (errnum > 0)
        {
  	char buf[64];

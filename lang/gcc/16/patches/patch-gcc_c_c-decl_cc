@@ -3,7 +3,7 @@ Revert turning -Wimplicit-function-declaration into a permerror
 Index: gcc/c/c-decl.cc
 --- gcc/c/c-decl.cc.orig
 +++ gcc/c/c-decl.cc
-@@ -3709,13 +3709,13 @@ implicit_decl_permerror (location_t loc, tree id, tree
+@@ -3710,13 +3710,13 @@ implicit_decl_permerror (location_t loc, tree id, tree
  	{
  	  gcc_rich_location richloc (loc);
  	  richloc.add_fixit_replace (suggestion);
@@ -19,7 +19,7 @@ Index: gcc/c/c-decl.cc
  				"implicit declaration of function %qE", id);
      }
    else if (const char *suggestion = hint.suggestion ())
-@@ -6726,6 +6726,8 @@ warn_variable_length_array (tree name, tree size)
+@@ -6728,6 +6728,8 @@ warn_variable_length_array (tree name, tree size)
  	pedwarn_c90 (input_location, OPT_Wvla, "ISO C90 forbids variable "
  		     "length array");
      }

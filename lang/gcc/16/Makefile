@@ -1,6 +1,5 @@
 # When updating/switching to a new version, remember to adapt: devel/meson
 
-# not tested: alpha, hppa, mips64el
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
@@ -16,10 +15,8 @@ USE_NOEXECONLY = Yes
 # - default to gnu17 (instead of gnu23)
 # - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
 #   into simple warnings.
-V = 16.1.0
+V = 16.2.0
 GCC_PKGSPEC = >=16,<17
-
-REVISION = 12
 
 # aarch64, powerpc64 and sparc64 bootstrap contain only gdc
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.1.0-0.tar.xz
@@ -33,18 +30,18 @@ BOOTSTRAP-powerpc64 = gcc-bootstrap-powerpc64-16.1.0-0.tar.xz
 BOOTSTRAP-riscv64 = gcc-bootstrap-riscv64-16.1.0-0.tar.xz
 BOOTSTRAP-sparc64 = gcc-bootstrap-sparc64-16.1.0-1.tar.xz
 
-SHARED_LIBS =	estdc++		22.0 \
-		gfortran	11.0 \
-		objc		11.0 \
-		lto_plugin      8.0 \
-		itm		7.0 \
-		atomic		6.0 \
-		quadmath	6.0 \
-		cc1		4.0 \
-		cc1plugin	4.0 \
-		cp1plugin	3.0 \
-		gphobos		2.0 \
-		gdruntime	2.0
+SHARED_LIBS =	estdc++		22.1 \
+		gfortran	11.1 \
+		objc		11.1 \
+		lto_plugin      8.1 \
+		itm		7.1 \
+		atomic		6.1 \
+		quadmath	6.1 \
+		cc1		4.1 \
+		cc1plugin	4.1 \
+		cp1plugin	3.1 \
+		gphobos		2.1 \
+		gdruntime	2.1
 
 PSEUDO_FLAVORS = no_ada full
 FLAVOR ?=

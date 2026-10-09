@@ -1,0 +1,13 @@
+Index: gcc/doc/invoke.texi
+--- gcc/doc/invoke.texi.orig
++++ gcc/doc/invoke.texi
+@@ -21142,8 +21142,8 @@ problems or, in some cases, to provide workarounds for
+ for documentation of these internal parameters.
+ @end table
+ 
+-@node Target-Specific Options
+ @anchor{Submodel Options}
++@node Target-Specific Options
+ @section Target-Specific Options
+ @cindex submodel options
+ @cindex hardware-specific options

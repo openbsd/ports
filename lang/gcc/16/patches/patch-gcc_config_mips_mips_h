@@ -11,7 +11,7 @@ Index: gcc/config/mips/mips.h
  
  /* This macro defines names of additional specifications to put in the specs
     that can be used in various specifications like CC1_SPEC.  Its definition
-@@ -3491,18 +3493,6 @@ struct GTY(())  machine_function {
+@@ -3487,18 +3489,6 @@ struct GTY(())  machine_function {
     with arguments ARGS.  */
  #define PMODE_INSN(NAME, ARGS) \
    (Pmode == SImode ? NAME ## _si ARGS : NAME ## _di ARGS)

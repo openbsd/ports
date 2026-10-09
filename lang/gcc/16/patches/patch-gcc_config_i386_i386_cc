@@ -1,7 +1,7 @@
 Index: gcc/config/i386/i386.cc
 --- gcc/config/i386/i386.cc.orig
 +++ gcc/config/i386/i386.cc
-@@ -7061,6 +7061,7 @@ ix86_compute_frame_layout (void)
+@@ -7063,6 +7063,7 @@ ix86_compute_frame_layout (void)
  	}
      }
  
@@ -9,7 +9,7 @@ Index: gcc/config/i386/i386.cc
    frame->nregs = ix86_nsaved_regs ();
    frame->nsseregs = ix86_nsaved_sseregs ();
  
-@@ -9447,6 +9448,9 @@ ix86_expand_prologue (void)
+@@ -9493,6 +9494,9 @@ ix86_expand_prologue (void)
  	  RTX_FRAME_RELATED_P (insn) = 1;
  	}
      }

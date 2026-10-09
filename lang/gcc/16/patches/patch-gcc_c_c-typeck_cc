@@ -3,7 +3,7 @@ Revert turning -Wincompatible-pointer-types into a permerror.
 Index: gcc/c/c-typeck.cc
 --- gcc/c/c-typeck.cc.orig
 +++ gcc/c/c-typeck.cc
-@@ -9152,7 +9152,7 @@ convert_for_assignment (location_t location, location_
+@@ -9169,7 +9169,7 @@ convert_for_assignment (location_t location, location_
  		gcc_rich_location richloc (expr_loc, &rhs_label,
  					   highlight_colors::actual);
  		warned
@@ -12,7 +12,7 @@ Index: gcc/c/c-typeck.cc
  				   "passing argument %d of %qE from "
  				   "incompatible pointer type",
  				   parmnum, rname);
-@@ -9163,13 +9163,13 @@ convert_for_assignment (location_t location, location_
+@@ -9180,13 +9180,13 @@ convert_for_assignment (location_t location, location_
  	    case ic_assign:
  	      if (bltin)
  		warned
@@ -28,7 +28,7 @@ Index: gcc/c/c-typeck.cc
  				   "assignment to %e from incompatible "
  				   "pointer type %e",
  				   &e_type, &e_rhstype);
-@@ -9178,13 +9178,13 @@ convert_for_assignment (location_t location, location_
+@@ -9195,13 +9195,13 @@ convert_for_assignment (location_t location, location_
  	    case ic_init_const:
  	      if (bltin)
  		warned
@@ -44,7 +44,7 @@ Index: gcc/c/c-typeck.cc
  				    "initialization of %e from incompatible "
  				    "pointer type %e",
  				    &e_type, &e_rhstype);
-@@ -9192,13 +9192,13 @@ convert_for_assignment (location_t location, location_
+@@ -9209,13 +9209,13 @@ convert_for_assignment (location_t location, location_
  	    case ic_return:
  	      if (bltin)
  		warned

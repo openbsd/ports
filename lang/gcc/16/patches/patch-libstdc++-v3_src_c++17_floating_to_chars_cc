@@ -5,7 +5,7 @@ programs with libestdc++.
 Index: libstdc++-v3/src/c++17/floating_to_chars.cc
 --- libstdc++-v3/src/c++17/floating_to_chars.cc.orig
 +++ libstdc++-v3/src/c++17/floating_to_chars.cc
-@@ -1073,14 +1073,14 @@ namespace
+@@ -1076,14 +1076,14 @@ namespace
  	  {
  	    // strfromf128 unfortunately doesn't allow .*
  	    char fmt[3 * sizeof(int) + 6];

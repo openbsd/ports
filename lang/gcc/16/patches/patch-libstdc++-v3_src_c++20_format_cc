@@ -5,7 +5,7 @@ programs with libestdc++.
 Index: libstdc++-v3/src/c++20/format.cc
 --- libstdc++-v3/src/c++20/format.cc.orig
 +++ libstdc++-v3/src/c++20/format.cc
-@@ -189,8 +189,9 @@ __with_encoding_conversion(const locale& loc)
+@@ -199,8 +199,9 @@ __with_encoding_conversion(const locale& loc)
    // just don't delete[] it in the locale(locale, Facet*) constructor.
    if (const char* name = loc._M_impl->_M_names[0])
      {
