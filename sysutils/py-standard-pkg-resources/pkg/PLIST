@@ -1,0 +1,13 @@
+@conflict ${MODPY_PY_PREFIX}setuptools-<81v0
+lib/python${MODPY_VERSION}/site-packages/pkg_resources/
+lib/python${MODPY_VERSION}/site-packages/pkg_resources/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pkg_resources/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pkg_resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pkg_resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pkg_resources/api_tests.txt
+lib/python${MODPY_VERSION}/site-packages/pkg_resources/py.typed
+lib/python${MODPY_VERSION}/site-packages/standard_pkg_resources-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/standard_pkg_resources-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/standard_pkg_resources-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/standard_pkg_resources-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/standard_pkg_resources-${MODPY_DISTV}.dist-info/top_level.txt

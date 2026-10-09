@@ -1,0 +1,3 @@
+Redistribution of the pkg_resources library previously provided by
+setuptools. This was removed in setuptools 82, but quite a range of
+Python software still needs it.
