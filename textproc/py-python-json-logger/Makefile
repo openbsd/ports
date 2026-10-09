@@ -1,18 +1,20 @@
-COMMENT =		Python library adding a json log formatter
+COMMENT=	Python library adding a json log formatter
 
-MODPY_DISTV =	2.0.7
-DISTNAME =		python-json-logger-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		2
+MODPY_DISTV=	4.2.0
+DISTNAME=	python_json_logger-${MODPY_DISTV}
+PKGNAME=	py-python-json-logger-${MODPY_DISTV}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
+
+# https://github.com/nhairs/python-json-logger
+# https://nhairs.github.io/python-json-logger/latest/changelog/
+HOMEPAGE=	https://nhairs.github.io/python-json-logger
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
- 
 .include <bsd.port.mk>
