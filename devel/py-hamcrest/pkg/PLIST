@@ -4,6 +4,9 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hamcrest/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hamcrest/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hamcrest/_version.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}/
@@ -39,6 +42,8 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}anyo
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}anyof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}described_as.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}described_as.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}future.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}future.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}is_.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}is_.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}isanything.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,6 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}rais
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/allof.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/anyof.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/described_as.py
+lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/future.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/is_.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/isanything.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/isequal.py
@@ -194,4 +200,3 @@ lib/python${MODPY_VERSION}/site-packages/pyhamcrest-${MODPY_DISTV}.dist-info/REC
 lib/python${MODPY_VERSION}/site-packages/pyhamcrest-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pyhamcrest-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/pyhamcrest-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/pyhamcrest-${MODPY_DISTV}.dist-info/top_level.txt

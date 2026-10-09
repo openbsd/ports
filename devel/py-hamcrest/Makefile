@@ -1,9 +1,8 @@
 COMMENT =	Hamcrest matchers for Python
 
-MODPY_DISTV =	2.0.3
-DISTNAME =	PyHamcrest-${MODPY_DISTV}
+MODPY_DISTV =	2.1.0
+DISTNAME =	pyhamcrest-${MODPY_DISTV}
 PKGNAME =	py-hamcrest-${MODPY_DISTV}
-REVISION =	3
 
 CATEGORIES =	devel
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE =Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =	hatchling
 
 TEST_DEPENDS =	devel/py-test-xdist \
 		devel/py-coverage
