@@ -7,6 +7,7 @@ PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
 MAINTAINER =		Florian Viehweger <openbsd@out-of-creativity.de>
 
+# https://github.com/sethmlarson/truststore
 HOMEPAGE =		https://truststore.readthedocs.io/
 
 # MIT
@@ -18,12 +19,8 @@ MODPY_PYBUILD =		flit_core
 
 TEST_DEPENDS =		devel/py-test-asyncio \
 			devel/py-test-httpserver \
-			devel/py-test-rerunfailures \
-			security/py-axolotl \
-			security/py-axolotl-curve25519 \
 			www/py-httpx \
 			www/py-aiohttp \
 			www/py-requests
-
 
 .include <bsd.port.mk>
