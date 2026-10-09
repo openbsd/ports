@@ -5,6 +5,8 @@ DISTNAME =		grpcio-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
 
+REVISION =		0
+
 HOMEPAGE =		https://grpc.io/docs/languages/python/
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
