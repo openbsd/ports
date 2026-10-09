@@ -1,7 +1,7 @@
 Index: exch/exmdb/db_engine.cpp
 --- exch/exmdb/db_engine.cpp.orig
 +++ exch/exmdb/db_engine.cpp
-@@ -53,6 +53,8 @@
+@@ -52,6 +52,8 @@
  #include "notification_agent.hpp"
  #define MAX_DYNAMIC_NODES				100
  
@@ -10,7 +10,7 @@ Index: exch/exmdb/db_engine.cpp
  using LLD = long long;
  using LLU = unsigned long long;
  using GCV_ARRAY = LONGLONG_ARRAY;
-@@ -99,7 +101,7 @@ static gromox::atomic_bool g_dbeng_stop; /* stop signa
+@@ -98,7 +100,7 @@ static gromox::atomic_bool g_dbeng_stop; /* stop signa
  static pthread_t g_scan_tid;
  static gromox::time_duration g_cache_interval; /* maximum living interval in table */
  static std::vector<pthread_t> g_sfpop_thrids;

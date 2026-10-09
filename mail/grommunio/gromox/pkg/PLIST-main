@@ -125,7 +125,6 @@ libexec/gromox/kdb-uidextract-limited
 @bin libexec/gromox/oxdisco
 @bin libexec/gromox/pop3
 @bin libexec/gromox/shmget
-@bin libexec/gromox/textmapquery
 @bin libexec/gromox/timer
 @bin libexec/gromox/zcore
 man/man1/ddbg.1gx
@@ -232,6 +231,7 @@ sbin/gromox-mbox2mt
 @bin sbin/gromox-mkprivate
 @bin sbin/gromox-mkpublic
 sbin/gromox-mt2exm
+sbin/gromox-rtftohtml
 sbin/gromox-tnef2mt
 sbin/gromox-vcf2mt
 share/doc/pkg-readmes/${PKGSTEM}
@@ -294,6 +294,7 @@ share/gromox/local_bounce/shift-jis/BOUNCE_MAILBOX_FULL
 share/gromox/local_bounce/shift-jis/BOUNCE_MAIL_DELIVERED
 share/gromox/local_bounce/shift-jis/BOUNCE_NO_USER
 share/gromox/local_bounce/shift-jis/BOUNCE_OPERATION_ERROR
+share/gromox/logrotate-gromox.conf.sample
 share/gromox/mail_bounce/
 share/gromox/mail_bounce/ascii/
 share/gromox/mail_bounce/ascii/BOUNCE_AUTO_RESPONSE

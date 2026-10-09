@@ -3,8 +3,8 @@ avoid UB where mres is optimized away
 Index: mda/exmdb_local/exmdb_local.cpp
 --- mda/exmdb_local/exmdb_local.cpp.orig
 +++ mda/exmdb_local/exmdb_local.cpp
-@@ -326,6 +326,7 @@ delivery_status exmdb_local_deliverquota(MESSAGE_CONTE
- 		return delivery_status::no_user;
+@@ -331,6 +331,7 @@ delivery_status exmdb_local_deliverquota(MESSAGE_CONTE
+ 		return delivery_status::temp_fail;
  	}
  	auto home_dir = mres.maildir.c_str();
 +	mlog(LV_DEBUG, "<%s> mailbox is in %s", address, home_dir);
