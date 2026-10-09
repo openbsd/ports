@@ -9,5 +9,5 @@ Index: components/private_verification_tokens/BUILD.gn
 +  # XXX crubit
 +  if (enable_rust && !is_bsd) {
      deps += [
-       "//components/private_verification_tokens/common:athm_test_issuer_unittest",
        "//components/private_verification_tokens/common:privacy_pass_athm_batch_request_unittest",
+       "//components/private_verification_tokens/common/athm_ffi:privacy_pass_unittests",

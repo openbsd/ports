@@ -1,7 +1,7 @@
 Index: gpu/command_buffer/service/dawn_context_provider.cc
 --- gpu/command_buffer/service/dawn_context_provider.cc.orig
 +++ gpu/command_buffer/service/dawn_context_provider.cc
-@@ -447,7 +447,7 @@ wgpu::BackendType DawnContextProvider::GetDefaultBacke
+@@ -484,7 +484,7 @@ wgpu::BackendType DawnContextProvider::GetDefaultBacke
    }
  #if BUILDFLAG(IS_WIN)
    return wgpu::BackendType::D3D11;

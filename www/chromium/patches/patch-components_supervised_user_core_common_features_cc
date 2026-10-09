@@ -10,7 +10,7 @@ Index: components/supervised_user/core/common/features.cc
  const int kLocalWebApprovalBottomSheetLoadTimeoutDefaultValueMs = 5000;
  
  const base::FeatureParam<int> kLocalWebApprovalBottomSheetLoadTimeoutMs{
-@@ -74,7 +74,7 @@ BASE_FEATURE(kSupervisedUserVerificationPageOnAndroid,
+@@ -69,7 +69,7 @@ BASE_FEATURE(kSupervisedUserVerificationPageOnAndroid,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

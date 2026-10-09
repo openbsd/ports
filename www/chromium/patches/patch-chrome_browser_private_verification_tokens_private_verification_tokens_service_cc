@@ -9,7 +9,7 @@ Index: chrome/browser/private_verification_tokens/private_verification_tokens_se
  #include "chrome/browser/private_verification_tokens/private_verification_tokens_service.h"
  
  #include <map>
-@@ -440,3 +441,4 @@ void PrivateVerificationTokensService::OnStoreInitiali
+@@ -587,3 +588,4 @@ void PrivateVerificationTokensService::OnStoreInitiali
      std::move(operation).Run();
    }
  }

@@ -2,7 +2,7 @@ Index: chrome/browser/ui/views/frame/contents_web_view.cc
 --- chrome/browser/ui/views/frame/contents_web_view.cc.orig
 +++ chrome/browser/ui/views/frame/contents_web_view.cc
 @@ -169,7 +169,7 @@ void ContentsWebView::SetWebContents(content::WebConte
-   }
+       .Then(&web_modal::WebContentsModalDialogManager::UpdateDialogHost);
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

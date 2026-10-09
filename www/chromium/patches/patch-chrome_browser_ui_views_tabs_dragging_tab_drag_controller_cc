@@ -37,7 +37,7 @@ Index: chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc
      const bool is_dragging_all_tabs =
          source_context_ && drag_data_.num_dragging_tabs() ==
                                 source_context_->GetTabStripModel()->count();
-@@ -1796,7 +1796,7 @@ TabDragController::DetachIntoNewBrowserAndRunMoveLoop(
+@@ -1813,7 +1813,7 @@ TabDragController::DetachIntoNewBrowserAndRunMoveLoop(
        current_state_ = DragState::kWaitingForWindowToShow;
        VisibilityWaiter waiter(dragged_widget);
  
@@ -46,7 +46,7 @@ Index: chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc
        // VisibilityWaiter runs a kNestableTasksAllowed loop while the user holds
        // the pointer button, before the move loop's own suppression scope is
        // established; suppress data drags for its duration as well.
-@@ -2426,7 +2426,7 @@ void TabDragController::CompleteDrag() {
+@@ -2462,7 +2462,7 @@ void TabDragController::CompleteDrag() {
      }
  
      // If source window was maximized - maximize the new window as well.
@@ -55,7 +55,7 @@ Index: chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc
      // Keeping maximized state breaks snap to Grid on Windows when dragging
      // tabs from maximized windows. TODO:(crbug.com/41321838) Explore doing this
      // for other desktop OS's. kMaximizedStateRetainedOnTabDrag in
-@@ -2854,7 +2854,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -2890,7 +2890,7 @@ TabDragController::Liveness TabDragController::GetLoca
      }
    }
  

@@ -1,7 +1,7 @@
 Index: chrome/browser/browser_process_impl.cc
 --- chrome/browser/browser_process_impl.cc.orig
 +++ chrome/browser/browser_process_impl.cc
-@@ -270,7 +270,7 @@ void OnLocalStatePrefsLoaded();
+@@ -271,7 +271,7 @@ void OnLocalStatePrefsLoaded();
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif
  
@@ -10,7 +10,7 @@ Index: chrome/browser/browser_process_impl.cc
  #include "chrome/browser/browser_features.h"
  #include "components/os_crypt/async/browser/freedesktop_secret_key_provider.h"
  #include "components/os_crypt/async/browser/secret_portal_key_provider.h"
-@@ -291,7 +291,7 @@ void OnLocalStatePrefsLoaded();
+@@ -292,7 +292,7 @@ void OnLocalStatePrefsLoaded();
  #include "components/os_crypt/async/common/encryptor.h"
  #endif
  

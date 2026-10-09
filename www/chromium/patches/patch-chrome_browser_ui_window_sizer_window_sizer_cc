@@ -6,7 +6,7 @@ Index: chrome/browser/ui/window_sizer/window_sizer.cc
  }
  
 -#if !BUILDFLAG(IS_LINUX)
-+#if !BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
  // Linux has its own implementation, see WindowSizerLinux.
  // static
  void WindowSizer::GetBrowserWindowBoundsAndShowState(

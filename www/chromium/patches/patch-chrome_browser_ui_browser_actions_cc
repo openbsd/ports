@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/browser_actions.cc
 --- chrome/browser/ui/browser_actions.cc.orig
 +++ chrome/browser/ui/browser_actions.cc
-@@ -242,7 +242,7 @@
+@@ -246,7 +246,7 @@
  #include "chrome/browser/ui/views/download/bubble/download_toolbar_ui_controller.h"
  #endif
  
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/browser_actions.cc
  #include "chrome/common/pref_names.h"
  #include "components/prefs/pref_service.h"
  #endif
-@@ -2609,7 +2609,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
+@@ -2624,7 +2624,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
            .Build());
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -19,7 +19,7 @@ Index: chrome/browser/ui/browser_actions.cc
    root_action_item_->AddChild(
        actions::ActionItem::Builder(
            base::BindRepeating(
-@@ -2769,7 +2769,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
+@@ -2784,7 +2784,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
            .SetAccelerator(GetAcceleratorForCommandId(IDC_EXIT))
            .Build());
  
@@ -28,7 +28,7 @@ Index: chrome/browser/ui/browser_actions.cc
    root_action_item_->AddChild(
        actions::ActionItem::Builder(
            base::BindRepeating(
-@@ -3766,7 +3766,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
+@@ -3734,7 +3734,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
                [](BrowserWindowInterface* bwi, actions::ActionItem* item,
                   actions::ActionInvocationContext context) {
                  base::RecordAction(base::UserMetricsAction("CreateShortcut"));
@@ -37,7 +37,7 @@ Index: chrome/browser/ui/browser_actions.cc
                  chrome::CreateDesktopShortcutForActiveWebContents(bwi);
  #else
                  web_app::CreateWebAppFromCurrentWebContents(
-@@ -4628,7 +4628,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
+@@ -4651,7 +4651,7 @@ void BrowserActions::InitializeToolbarAndMiscActions()
  #endif
  
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING) && \

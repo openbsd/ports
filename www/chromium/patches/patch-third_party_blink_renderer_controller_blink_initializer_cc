@@ -17,8 +17,8 @@ Index: third_party/blink/renderer/controller/blink_initializer.cc
  #endif
  
 @@ -260,7 +260,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
+           CrossThreadBindRepeating(&CrashMemoryMetricsReporterImpl::Bind)),
        main_thread_task_runner);
- #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

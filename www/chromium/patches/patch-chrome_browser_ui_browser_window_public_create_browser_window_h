@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/browser_window/public/create_browser_window.h
 --- chrome/browser/ui/browser_window/public/create_browser_window.h.orig
 +++ chrome/browser/ui/browser_window/public/create_browser_window.h
-@@ -181,7 +181,7 @@ struct BrowserWindowCreateParams {
+@@ -180,7 +180,7 @@ struct BrowserWindowCreateParams {
    std::optional<int64_t> display_id;
  #endif
  

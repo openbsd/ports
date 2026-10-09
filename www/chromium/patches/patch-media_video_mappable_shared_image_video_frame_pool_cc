@@ -1,7 +1,7 @@
 Index: media/video/mappable_shared_image_video_frame_pool.cc
 --- media/video/mappable_shared_image_video_frame_pool.cc.orig
 +++ media/video/mappable_shared_image_video_frame_pool.cc
-@@ -685,7 +685,7 @@ void MappableSharedImageVideoFramePool::PoolImpl::Crea
+@@ -684,7 +684,7 @@ void MappableSharedImageVideoFramePool::PoolImpl::Crea
    }
  
    bool is_software_backed_video_frame = !video_frame->HasSharedImage();

@@ -1,7 +1,7 @@
 Index: v8/BUILD.gn
 --- v8/BUILD.gn.orig
 +++ v8/BUILD.gn
-@@ -1088,6 +1088,8 @@ external_v8_defines = [
+@@ -1112,6 +1112,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
    "V8_TARGET_OS_WIN",
    "V8_TARGET_OS_CHROMEOS",
@@ -10,7 +10,7 @@ Index: v8/BUILD.gn
    "V8_TARGET_ARCH_ARM64",
    "V8_TARGET_ARCH_PPC64",
    "V8_TARGET_ARCH_MIPS64",
-@@ -1179,6 +1181,12 @@ if (target_os == "android") {
+@@ -1201,6 +1203,12 @@ if (target_os == "android") {
  } else if (target_os == "chromeos") {
    enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
    enabled_external_v8_defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -23,7 +23,7 @@ Index: v8/BUILD.gn
  }
  
  # Some V8_TARGET_ARCH_ defines that affect Api constants (see usages of
-@@ -1877,7 +1885,7 @@ config("toolchain") {
+@@ -1897,7 +1905,7 @@ config("toolchain") {
      # don't block compiler updates in Chromium. We'll resolve these when
      # rolling the compiler update into V8 instead.
      if (!build_with_chromium && v8_current_cpu != "ppc64" &&
@@ -32,7 +32,24 @@ Index: v8/BUILD.gn
        cflags += [ "-Wlifetime-safety-permissive" ]
      }
  
-@@ -2911,6 +2919,12 @@ template("run_mksnapshot") {
+@@ -2485,7 +2493,7 @@ if (v8_use_metagen_instance_types) {
+ 
+   # The clang toolchain's resource dir contains builting headers
+   # include/{stddef.h,stdarg.h,...}.
+-  _metagen_clang_resource_dir = "$clang_base_path/lib/clang/$clang_version"
++  _metagen_clang_resource_dir = "${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}"
+   _metagen_flags_target = ":v8_base_without_compiler"
+   _metagen_flags_target_ninja =
+       get_label_info(_metagen_flags_target, "target_out_dir") +
+@@ -2531,7 +2539,6 @@ if (v8_use_metagen_instance_types) {
+                # Proxy for the whole builtin-header directory, which has no
+                # GN glob: a toolchain roll rewrites stddef.h along with the
+                # rest, and the harvest cannot parse without it.
+-               "$_metagen_clang_resource_dir/include/stddef.h",
+              ] + _metagen_libclang_files
+ 
+     outputs = [ "$_metagen_out_dir/instance-types.h" ]
+@@ -3128,6 +3135,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -45,7 +62,7 @@ Index: v8/BUILD.gn
      }
  
      # This is needed to distinguish between generating code for the simulator
-@@ -7398,7 +7412,7 @@ v8_component("v8_libbase") {
+@@ -7615,7 +7628,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -54,7 +71,7 @@ Index: v8/BUILD.gn
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -7409,6 +7423,18 @@ v8_component("v8_libbase") {
+@@ -7626,6 +7639,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

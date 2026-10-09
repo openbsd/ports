@@ -1,7 +1,7 @@
 Index: components/autofill/content/renderer/at_memory_handler.cc
 --- components/autofill/content/renderer/at_memory_handler.cc.orig
 +++ components/autofill/content/renderer/at_memory_handler.cc
-@@ -65,7 +65,7 @@ bool IsPrintable(const WebKeyboardEvent& event) {
+@@ -62,7 +62,7 @@ bool IsPrintable(const WebKeyboardEvent& event) {
    if (base::IsAsciiControl(event.text[0]) || event.text[1] != 0) {
      return false;
    }

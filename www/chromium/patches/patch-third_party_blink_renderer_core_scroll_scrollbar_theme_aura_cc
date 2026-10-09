@@ -10,7 +10,7 @@ Index: third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
    return false;
  #else
    return true;
-@@ -402,7 +402,7 @@ ScrollbarPart ScrollbarThemeAura::PartsToInvalidateOnT
+@@ -385,7 +385,7 @@ ScrollbarPart ScrollbarThemeAura::PartsToInvalidateOnT
  
  bool ScrollbarThemeAura::ShouldCenterOnThumb(const Scrollbar& scrollbar,
                                               const WebMouseEvent& event) const {
