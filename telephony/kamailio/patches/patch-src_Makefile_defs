@@ -14,6 +14,15 @@ Index: src/Makefile.defs
  
  alpha_macros= __alpha__ __alpha _M_ALPHA_
  
+@@ -866,7 +866,7 @@ ifeq ($(ARCH), x86_64)
+ endif
+ 
+ ifeq ($(ARCH), sparc64)
+-ifeq 	($(CC_NAME), gcc)
++ifeq	($(CC_NAME),$(filter $(CC_NAME),gcc clang))
+ 	use_fast_lock=yes
+ endif
+ endif
 @@ -946,8 +946,7 @@ $(call				set_if_empty,CPUTYPE,generic)
  					CFLAGS+=-m32 -minline-all-stringops \
  							-falign-loops \
@@ -43,6 +52,15 @@ Index: src/Makefile.defs
  					LDFLAGS+=-m64
  else
  			#if gcc 4.0+
+@@ -1101,7 +1099,7 @@ endif	#ARCH, x86_64
+ 	#if sparc64
+ ifeq	($(ARCH), sparc64)
+ 			#if gcc
+-ifeq		($(CC_NAME), gcc)
++ifeq		($(CC_NAME),$(filter $(CC_NAME),gcc clang))
+ 				C_DEFS+=-DCC_GCC_LIKE_ASM -DSPARC64_MODE
+ 				#common stuff
+ 				CFLAGS+=$(CC_OPT) -funroll-loops  $(PROFILE) \
 @@ -1112,7 +1110,6 @@ ifeq (,$(strip $(filter-out 4.2+ 4.5+ 5.0+ 6.0+ 7.0+ 8
  $(call				set_if_empty,CPUTYPE,ultrasparc)
  					#use 32bit for now
@@ -51,6 +69,24 @@ Index: src/Makefile.defs
  							-fno-strict-overflow \
  							-ftree-vectorize
  					# use -m64 to force 64 bit (but add it also to LDFLAGS and
+@@ -1154,7 +1151,7 @@ $(warning 			Old gcc detected ($(CC_SHORTVER)), use  g
+ ifneq				($(OS), netbsd)
+ 						# on netbsd/sparc64,  gcc 2.95.3 does not compile
+ 						# ser with -mv8
+-						CFLAGS+= -mv9
++						# CFLAGS+= -mv9
+ 						# -m64/-m32 on sparc works starting with gcc 3.0
+ endif
+ ifeq					($(ASTYPE), solaris)
+@@ -1165,7 +1162,7 @@ else			#CC_SHORTVER, 2.9x
+ $(warning			You are using an old and unsupported gcc \
+ 					 version ($(CC_SHORTVER)), compile at your own risk!)
+ 
+-					CFLAGS+= -mv9
++					# CFLAGS+= -mv9
+ ifeq					($(ASTYPE), solaris)
+ 							CFLAGS+= -Wa,-xarch=v8plus
+ endif
 @@ -1604,7 +1601,6 @@ ifeq 				($(NOALTIVEC),)
  						CFLAGS += -ftree-vectorize
  						CFLAGS += -maltivec
