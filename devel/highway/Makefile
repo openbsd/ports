@@ -4,7 +4,7 @@ GH_ACCOUNT =	google
 GH_PROJECT =	highway
 GH_TAGNAME =	1.4.0
 
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -28,8 +28,6 @@ CONFIGURE_ARGS +=	-DHWY_SYSTEM_GTEST=ON \
 			-DBUILD_SHARED_LIBS=ON
 
 .if ${MACHINE_ARCH} == riscv64
-# The riscv Vector code does not build because of a long vs long long mismatch
-CXXFLAGS +=		-DHWY_BROKEN_RVV=HWY_RVV
 # Don't assume risc-v Vector support
 CONFIGURE_ARGS+=	-DHWY_CMAKE_RVV=OFF
 .endif
