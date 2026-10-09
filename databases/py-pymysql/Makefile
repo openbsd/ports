@@ -1,10 +1,8 @@
 COMMENT=	MySQL driver in pure Python
 
-MODPY_DISTV=	1.1.0
-
-DISTNAME=	PyMySQL-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:L}
-REVISION=	2
+MODPY_DISTV=	1.2.3
+DISTNAME=	pymysql-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	databases
 
@@ -14,12 +12,11 @@ HOMEPAGE=	https://github.com/PyMySQL/PyMySQL/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-# only tests specific newer auth methods, one of which we don't have deps
-# for, and doesn't seem to fit the mariadb.port.mk framework too well
+# only tests specific newer auth methods, and doesn't fit the
+# mariadb.port.mk framework well
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
