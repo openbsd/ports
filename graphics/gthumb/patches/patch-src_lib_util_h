@@ -1,0 +1,15 @@
+GCC 15 defaults to -std=gnu23, where bool is a real keyword, while Clang still
+defaults to gnu17:
+src/lib/util.h:68:1: error: unknown type name 'bool'
+
+Index: src/lib/util.h
+--- src/lib/util.h.orig
++++ src/lib/util.h
+@@ -5,6 +5,7 @@
+ #include <glib.h>
+ #include <glib/gi18n-lib.h>
+ #include <gio/gio.h>
++#include <stdbool.h>
+ #include "lib/types.h"
+ 
+ G_BEGIN_DECLS

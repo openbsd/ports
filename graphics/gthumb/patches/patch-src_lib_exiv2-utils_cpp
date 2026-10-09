@@ -1,0 +1,20 @@
+Index: src/lib/exiv2-utils.cpp
+--- src/lib/exiv2-utils.cpp.orig
++++ src/lib/exiv2-utils.cpp
+@@ -20,6 +20,16 @@
+ #define INVALID_VALUE N_("(invalid value)")
+ #define EXPOSURE_SEPARATOR " · "
+ 
++static char * strchrnul(const char *s, int c);
++
++static char *
++strchrnul(const char *s, int c)
++{
++	while (*s != '\0' && *s != (char)c)
++		s++;
++	return (char *)s;
++}
++
+ using namespace std;
+ 
+ // Some bits of information may be contained in more than one metadata tag.
