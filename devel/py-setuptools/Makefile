@@ -1,8 +1,7 @@
 COMMENT=	simplified packaging system for Python modules
 
 # py-types-setuptools should have a matching version
-# XXX 82.x removes pkg_resources which is still used by various ports
-MODPY_DISTV=		80.9.0
+MODPY_DISTV=		84.0.0
 DISTNAME=		setuptools-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 
@@ -13,7 +12,7 @@ CATEGORIES=		devel
 # https://github.com/pypa/setuptools
 HOMEPAGE=		https://setuptools.readthedocs.io/en/latest/
 
-MAINTAINER=		Kurt Mosiejczuk <kmos@openbsd.org>
+MAINTAINER=		Stuart Henderson <stu.ports@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=		Yes
@@ -48,7 +47,7 @@ RUN_DEPENDS=		sysutils/py-packaging \
 post-extract:
 	cd ${WRKSRC}/setuptools/_vendor; rm -r \
 	    packaging* wheel* more_itertools* backports backports.tarfile* \
-	    importlib_metadata* tomli* typing_extensions* zipp*
+	    importlib_metadata* tomli* zipp*
 
 TEST_ENV=		COHERENT_LICENSED_UNUSED_ACTION=ignore
 PORTHOME=		${WRKDIR}
@@ -69,10 +68,6 @@ TEST_DEPENDS=		${MODPY_RUN_DEPENDS},-tests \
 			devel/py-jaraco-test
 
 post-install:
-	cd ${WRKINST}${MODPY_SITEPKG}; \
-	rm -r pkg_resources/tests \
-		setuptools/tests \
-		setuptools/_distutils/tests; \
-	rm setuptools/{cli,gui}*.exe
+	rm ${WRKINST}${MODPY_SITEPKG}/setuptools/{cli,gui}*.exe
 
 .include <bsd.port.mk>

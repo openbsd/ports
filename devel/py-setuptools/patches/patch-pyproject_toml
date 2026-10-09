@@ -1,0 +1,13 @@
+include tests; standard-pkg-resources wants them for its own tests
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -215,7 +215,6 @@ namespaces = true
+ # Remove ruff.toml when installing vendored packages (#4652)
+ "*" = ["ruff.toml"]
+ # Avoid shipping setuptools' own test suite in wheels (#5212)
+-"setuptools" = ["tests/*"]
+ "setuptools._distutils" = ["tests/*"]
+ "setuptools._distutils.compilers.C" = ["tests/*"]
+ 
