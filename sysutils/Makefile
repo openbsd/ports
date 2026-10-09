@@ -358,6 +358,7 @@
      SUBDIR += py-pyperclip
      SUBDIR += py-schedule
      SUBDIR += py-shtab
+     SUBDIR += py-standard-pkg-resources
      SUBDIR += py-statgrab
      SUBDIR += py-subprocess-tee
      SUBDIR += py-threadpoolctl
