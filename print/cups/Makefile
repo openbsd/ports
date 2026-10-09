@@ -8,10 +8,9 @@ COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
 VERSION=		${GH_TAGNAME:S/v//:S/op/./}
-REVISION=		0
 GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		cups
-GH_TAGNAME=		v2.4.19
+GH_TAGNAME=		v2.4.20
 
 CATEGORIES=		print sysutils
 
