@@ -110,11 +110,11 @@ SHA256 (gnome/../cargo/gio-unix-sys-0.22.0.tar.gz) = RLq5fOOREgQCFuJo8HRkX1CzHK6
 SHA256 (gnome/../cargo/glib-0.22.8.tar.gz) = 3bz1FL0Ygfwblg5OUrToKHP02jvO3b1Y1CgntQiIgQA=
 SHA256 (gnome/../cargo/glib-macros-0.22.6.tar.gz) = UG0jSZcHxxQomEKXV+jZo4cdllI5ostm36BQUr5tbxk=
 SHA256 (gnome/../cargo/glib-sys-0.22.8.tar.gz) = AwlnRZ+fZ2hRhyxjBK3qeCXG1GLsm3JVTHM88MWVIjM=
-SHA256 (gnome/../cargo/glycin-4.0.0.tar.gz) = 3Ju5z6PU256rDiOU8OYP5Acf0xr/0XBPLszMa90kx7k=
-SHA256 (gnome/../cargo/glycin-builtin-4.0.0.tar.gz) = uAGzJkJqDMthiZF0sKCMIxbe/TI8/ni+mqYjKi79/qw=
+SHA256 (gnome/../cargo/glycin-4.0.2.tar.gz) = GixPCxXY7HNHug5n0MXIBTOnmUkp8+AuKAHVsi6JRtw=
+SHA256 (gnome/../cargo/glycin-builtin-4.0.2.tar.gz) = LJF5y45V9m0K46MjThr8rHf0qpW36HnSg5VeufbBPOU=
 SHA256 (gnome/../cargo/glycin-common-2.0.0.tar.gz) = 80aS+nMU5RCOr6unYhRg2VjKuoOabVBA8cq6mNe0ppI=
-SHA256 (gnome/../cargo/glycin-core-4.0.0.tar.gz) = lGbk8YpTMS+u5BTqhYE9ZnTUy1utrQWTZcSIKYS0AgE=
-SHA256 (gnome/../cargo/glycin-external-4.0.0.tar.gz) = p9M1d4sUQ34TOdcDr9HOaeYd+KtUIIgrS3ghuaLKnUo=
+SHA256 (gnome/../cargo/glycin-core-4.0.2.tar.gz) = aIbzq2vzo1h5KH+HXnbcpY3wUIeYVPq/7K3Nat0bBUU=
+SHA256 (gnome/../cargo/glycin-external-4.0.2.tar.gz) = s7MWHoRz1H9FZW6PsykD+KKeC9LpfmMUQ7T4sVuGTvA=
 SHA256 (gnome/../cargo/glycin-image-rs-2.2.0.tar.gz) = PfDLwR/l1VI1dbBPckyC2NUOLAODBiK2VefUAV66ZHI=
 SHA256 (gnome/../cargo/glycin-test-2.2.0.tar.gz) = YUEuqi69sYsbK56FBndphqqIjU7UfjcEfTAqDtIjhks=
 SHA256 (gnome/../cargo/glycin-utils-5.0.1.tar.gz) = Q6k8bf3nqym448mETLnlmlvNWP/dmySqtQDTp4pLTLA=
@@ -324,7 +324,7 @@ SHA256 (gnome/../cargo/zune-jpeg-0.5.15.tar.gz) = J7ydW4FbwQPxQqoFT1YdkYfRkWkux8
 SHA256 (gnome/../cargo/zvariant-5.13.1.tar.gz) = vuKgvNKpB3hqRW//Raqq9UybpfULca6ewaTt0gDJSRE=
 SHA256 (gnome/../cargo/zvariant_derive-5.13.1.tar.gz) = OKcIIWoYeAeWdwv+P0c5x8g6Po94m3VVNLu8BuTiPhI=
 SHA256 (gnome/../cargo/zvariant_utils-3.5.0.tar.gz) = kMuTg/m0UpBAehJYsgLT+PAdtxnrYLTkBVxjda9Px8c=
-SHA256 (gnome/glycin-2.2.1.tar.xz) = k3rlcddsDeXlnblE0RlJgTYL437peHVyl4G8OBbd6v4=
+SHA256 (gnome/glycin-2.2.2.tar.xz) = N3Gt8CbYdUWtvFlpTuiwWCSik4s3mZ+N1w5s86X30xw=
 SIZE (gnome/../cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (gnome/../cargo/ahash-0.8.12.tar.gz) = 43413
 SIZE (gnome/../cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -437,11 +437,11 @@ SIZE (gnome/../cargo/gio-unix-sys-0.22.0.tar.gz) = 13482
 SIZE (gnome/../cargo/glib-0.22.8.tar.gz) = 302887
 SIZE (gnome/../cargo/glib-macros-0.22.6.tar.gz) = 71919
 SIZE (gnome/../cargo/glib-sys-0.22.8.tar.gz) = 66714
-SIZE (gnome/../cargo/glycin-4.0.0.tar.gz) = 35639
-SIZE (gnome/../cargo/glycin-builtin-4.0.0.tar.gz) = 34368
+SIZE (gnome/../cargo/glycin-4.0.2.tar.gz) = 35644
+SIZE (gnome/../cargo/glycin-builtin-4.0.2.tar.gz) = 34376
 SIZE (gnome/../cargo/glycin-common-2.0.0.tar.gz) = 26676
-SIZE (gnome/../cargo/glycin-core-4.0.0.tar.gz) = 85799
-SIZE (gnome/../cargo/glycin-external-4.0.0.tar.gz) = 32238
+SIZE (gnome/../cargo/glycin-core-4.0.2.tar.gz) = 85815
+SIZE (gnome/../cargo/glycin-external-4.0.2.tar.gz) = 32240
 SIZE (gnome/../cargo/glycin-image-rs-2.2.0.tar.gz) = 39410
 SIZE (gnome/../cargo/glycin-test-2.2.0.tar.gz) = 25612
 SIZE (gnome/../cargo/glycin-utils-5.0.1.tar.gz) = 44050
@@ -651,4 +651,4 @@ SIZE (gnome/../cargo/zune-jpeg-0.5.15.tar.gz) = 88879
 SIZE (gnome/../cargo/zvariant-5.13.1.tar.gz) = 96839
 SIZE (gnome/../cargo/zvariant_derive-5.13.1.tar.gz) = 17734
 SIZE (gnome/../cargo/zvariant_utils-3.5.0.tar.gz) = 16990
-SIZE (gnome/glycin-2.2.1.tar.xz) = 7766436
+SIZE (gnome/glycin-2.2.2.tar.xz) = 7765992
