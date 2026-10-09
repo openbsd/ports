@@ -1,0 +1,22 @@
+Index: cmake/asio.cmake
+--- cmake/asio.cmake.orig
++++ cmake/asio.cmake
+@@ -13,6 +13,9 @@ macro(CHECK_ASIO_VERSION)
+ #if ASIO_VERSION < 102201
+ #error Included asio version is too old
+ #endif
++#if ASIO_VERSION > 103200
++#error Included asio version is too new
++#endif
+ 
+ int main()
+ {
+@@ -37,7 +40,7 @@ endif()
+ 
+ if(NOT ASIO_VERSION_OK)
+   message(STATUS "Using bundled asio")
+-  include_directories(SYSTEM ${PROJECT_SOURCE_DIR}/asio)
++  include_directories(BEFORE ${PROJECT_SOURCE_DIR}/asio)
+ endif()
+ 
+ add_definitions(-DHAVE_ASIO_HPP)
