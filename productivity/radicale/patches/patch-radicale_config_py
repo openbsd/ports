@@ -1,45 +1,63 @@
 Index: radicale/config.py
 --- radicale/config.py.orig
 +++ radicale/config.py
-@@ -87,12 +87,12 @@ INITIAL_CONFIG = OrderedDict([
-             "opposite": ["-S", "--no-ssl"],
-             "type": bool}),
+@@ -45,7 +45,7 @@ from radicale.hook import email
+ from radicale.item import check_and_sanitize_props
+ 
+ DEFAULT_CONFIG_PATH: str = os.pathsep.join([
+-    "?/etc/radicale/config",
++    "?${SYSCONFDIR}/radicale/config",
+     "?~/.config/radicale/config"])
+ 
+ PROFILING: Sequence[str] = ("per_request", "per_request_method", "none")
+@@ -277,12 +277,12 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
+             "help": "SSL/TLS Cipher Suite (OpenSSL cipher list format)",
+             "type": str}),
          ("certificate", {
 -            "value": "/etc/ssl/radicale.cert.pem",
-+            "value": "${SYSCONFDIR}/radicale/server.crt",
++            "value": "${SYSCONFDIR}/radicale/radicale.cert.pem",
              "help": "set certificate file",
-             "aliases": ["-c", "--certificate"],
-             "type": str}),
+             "aliases": ("-c", "--certificate",),
+             "type": filepath}),
          ("key", {
 -            "value": "/etc/ssl/radicale.key.pem",
-+            "value": "${SYSCONFDIR}/radicale/private/server.key",
++            "value": "${SYSCONFDIR}/radicale/private/radicale.key.pem",
              "help": "set private key file",
-             "aliases": ["-k", "--key"],
-             "type": str}),
-@@ -133,7 +133,7 @@ INITIAL_CONFIG = OrderedDict([
-             "type": str,
-             "internal": auth.INTERNAL_TYPES}),
+             "aliases": ("-k", "--key",),
+             "type": filepath}),
+@@ -335,7 +335,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
+             "help": "expiration time for caching failed logins in seconds",
+             "type": int}),
          ("htpasswd_filename", {
 -            "value": "/etc/radicale/users",
 +            "value": "${SYSCONFDIR}/radicale/users",
              "help": "htpasswd filename",
-             "type": str}),
+             "type": filepath}),
          ("htpasswd_encryption", {
-@@ -151,7 +151,7 @@ INITIAL_CONFIG = OrderedDict([
-             "type": str,
-             "internal": rights.INTERNAL_TYPES}),
+@@ -352,7 +352,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
+             "type": str_or_callable,
+             "internal": auth.AUTH_SOCKET_FAMILY}),
+         ("dovecot_socket", {
+-            "value": "/var/run/dovecot/auth-client",
++            "value": "${LOCALSTATEDIR}/db/dovecot/auth-client",
+             "help": "dovecot auth AF_UNIX socket",
+             "type": str}),
+         ("dovecot_host", {
+@@ -518,7 +518,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
+             "help": "permit overwrite of a collection",
+             "type": bool}),
          ("file", {
 -            "value": "/etc/radicale/rights",
 +            "value": "${SYSCONFDIR}/radicale/rights",
              "help": "file for rights management from_file",
-             "type": str})])),
+             "type": filepath})])),
      ("storage", OrderedDict([
-@@ -162,7 +162,7 @@ INITIAL_CONFIG = OrderedDict([
+@@ -528,7 +528,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
+             "type": str_or_callable,
              "internal": storage.INTERNAL_TYPES}),
          ("filesystem_folder", {
-             "value": os.path.expanduser(
--                "/var/lib/radicale/collections"),
-+                "${LOCALSTATEDIR}/db/radicale/collections"),
+-            "value": "/var/lib/radicale/collections",
++            "value": "${LOCALSTATEDIR}/db/radicale/collections",
              "help": "path where collections are stored",
-             "type": str}),
-         ("max_sync_token_age", {
+             "type": filepath}),
+         ("filesystem_cache_folder", {

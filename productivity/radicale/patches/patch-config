@@ -10,7 +10,7 @@ Index: config
  # or ~/.config/radicale/config (user)
  #
  # The current values are the default ones
-@@ -36,10 +36,10 @@
+@@ -43,10 +43,10 @@
  #ssl = False
  
  # SSL certificate path
@@ -23,30 +23,30 @@ Index: config
  
  # CA certificate for validating clients. This can be used to secure
  # TCP traffic between Radicale and a reverse proxy
-@@ -74,7 +74,7 @@
- #type = none
+@@ -184,7 +184,7 @@
+ #pam_group_membership =
  
  # Htpasswd filename
 -#htpasswd_filename = /etc/radicale/users
 +#htpasswd_filename = ${SYSCONFDIR}/radicale/users
  
  # Htpasswd encryption method
- # Value: plain | sha1 | ssha | crypt | bcrypt | md5
-@@ -93,7 +93,7 @@
+ # Value: plain | bcrypt | md5 | sha256 | sha512 | argon2 | autodetect
+@@ -234,7 +234,7 @@ type = none
  #type = owner_only
  
  # File for rights management from_file
 -#file = /etc/radicale/rights
 +#file = ${SYSCONFDIR}/radicale/rights
  
- 
- [storage]
-@@ -103,7 +103,7 @@
+ # Permit delete of a collection (global)
+ #permit_delete_collection = True
+@@ -250,7 +250,7 @@ type = none
  #type = multifilesystem
  
  # Folder for storing local collections, created if not present
 -#filesystem_folder = /var/lib/radicale/collections
 +#filesystem_folder = ${LOCALSTATEDIR}/db/radicale/collections
  
- # Lock the storage. Never start multiple instances of Radicale or edit the
- # storage externally while Radicale is running if disabled.
+ # Folder for storing cache of local collections, created if not present
+ # Note: only used in case of use_cache_subfolder_* options are active

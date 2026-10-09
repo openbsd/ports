@@ -2,28 +2,19 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Radicale will run out of the box but with NO SECURITY.
-
-There are two things you should do to enable security:
-enable passwords and enable encryption.
-
 Authentication
 ==============
 To enable simple passwords, edit ${SYSCONFDIR}/radicale/config and change
-"type = None" (i.e. passwords are not requested or checked) to
+"#type = denyall" to
 "type = htpasswd".
-
-User password(s) may be created with htpasswd(1); e.g.
-"htpasswd ${SYSCONFDIR}/radicale/users username". This uses bcrypt
-which matches Radicale's default.
 
 By default calendars may only be accessed by their owner. To adjust
 the rights for calendars please refer to the
 ${SYSCONFDIR}/radicale/rights file and the upstream documentation on
-"Rights Management".
+"Authentication and Rights".
 
 For further authentication options, consult Radicale's documentation.
-Previous users of Radicale 1.x with more complex authentication setup
+Previous users of Radicale with more complex authentication setup
 should be aware that only none/htpasswd are provided as standard;
 plugins are required for others.
 
@@ -36,13 +27,28 @@ readable by the _radicale user, so the common location in /etc/ssl/private
 won't work). Alternatively run HTTP on localhost and proxy from alternative
 web server software.
 
-Upgrading from Radicale 1 to 2
+Upgrading from Radicale 2 to 3
 ==============================
-Storage must be exported from Radicale 1.x before upgrading. This README
-file is supplied with Radicale 2, so if you are reading it on an installed
-system, start by uninstalling and reinstalling radicale 1.x, then export:
+There are many changes from Radicale 2.x to 3.x, see the following upgrade
+checklist from CHANGELOG.md.  Refer to the documentation for more details.
 
-# doas -u _radicale ${PREFIX}/bin/radicale --export-storage ${LOCALSTATEDIR}/db/radicale/collections
+    Config
+        Some settings were removed
+        The default of auth.htpasswd_encryption changed to md5
+        The setting server.realm moved to auth.realm
+        The setting logging.debug was replaced by logging.level
+        The format of the rights.file configuration file changed:
+            Permission r replaced by Rr
+            Permission w replaced by Ww
+            New permission i added as subset of r
+            Replaced variable %(login)s by {user}
+            Removed variable %(path)s
+            { must be escaped as {{ and } as }} in regexes
+    File system storage
+        The storage format is compatible with Radicale 2.x.x
+        Run radicale --verify-storage to check for errors
+    Custom plugins:
+        auth and web plugins require minor adjustments
+        rights plugins must be adapted to the new permission model
+        storage plugins require major changes
 
-Then install radicale 2.x which can use the exported storage directly.
-For more information, refer to https://radicale.org/1to2/
