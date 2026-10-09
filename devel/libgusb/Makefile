@@ -27,9 +27,8 @@ CONFIGURE_ARGS=		-Dumockdev=disabled
 
 CONFIGURE_ARGS +=	-Dusb_ids=${LOCALBASE}/share/hwdata/usb.ids
 RUN_DEPENDS +=		misc/hwdata
-# contrib/generate-version-script.py requires pkg_resources (part of
-# setuptools)
-BUILD_DEPENDS +=	devel/py-setuptools
+# for contrib/generate-version-script.py
+BUILD_DEPENDS +=	sysutils/py-standard-pkg-resources
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

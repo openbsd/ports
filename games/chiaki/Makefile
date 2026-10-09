@@ -32,7 +32,8 @@ MODULES =		devel/cmake \
 CONFIGURE_ARGS +=	-DCHIAKI_ENABLE_SETSU=no
 BUILD_DEPENDS =		devel/protobuf-c \
 			devel/py-protobuf \
-			devel/py-setuptools
+			devel/py-setuptools \
+			sysutils/py-standard-pkg-resources
 LIB_DEPENDS =		devel/sdl2 \
 			audio/opus \
 			graphics/ffmpeg \

@@ -1,0 +1,12 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -39,7 +39,7 @@ packages = find:
+ setup_requires =
+     jinja2>=2.9.3
+ install_requires =
+-    setuptools>=30.3,<81
++    setuptools>=30.3
+     jinja2>=2.9.3
+     multipart; python_version>='3.13'
+ 

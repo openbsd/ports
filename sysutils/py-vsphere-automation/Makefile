@@ -7,7 +7,7 @@ GH_PROJECT =		vsphere-automation-sdk-python
 GH_TAGNAME =		v${V}
 
 PKGNAME =		py-vsphere-automation-${V}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS =		devel/py-pip \
 			security/py-openssl \
 			textproc/py-lxml
 RUN_DEPENDS =		devel/py-pip \
-			devel/py-setuptools \
+			sysutils/py-standard-pkg-resources \
 			sysutils/py-vmomi \
 			security/py-openssl \
 			textproc/py-lxml

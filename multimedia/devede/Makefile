@@ -1,9 +1,9 @@
 COMMENT=		video DVDs and CDs creation tool
 
-MODPY_DISTV=	4.17.0
+MODPY_DISTV=		4.17.0
 DISTNAME=		devedeng-${MODPY_DISTV}
 PKGNAME=		devede-${MODPY_DISTV}
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		multimedia x11
 
@@ -21,6 +21,7 @@ BUILD_DEPENDS=		devel/gettext,-tools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-gobject3 \
+			sysutils/py-standard-pkg-resources \
 			x11/gtk+4,-guic
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)

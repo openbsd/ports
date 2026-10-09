@@ -1,6 +1,7 @@
 COMMENT =		module for interacting with various Steam features
 
 PKGNAME =		py-steam-1.5.3
+REVISION =		0
 DIST_TUPLE +=		github CFTools-Software-GmbH ValvePython-steam \
 			8905cffe6dae849e920bddc48de38f5807033446 .
 CATEGORIES =		games
@@ -20,6 +21,7 @@ RUN_DEPENDS =		archivers/py-zstd \
 			devel/py-six \
 			net/py-wsproto \
 			security/py-cryptodomex \
+			sysutils/py-standard-pkg-resources \
 			www/py-requests
 
 # tests not included in pypi tarball

@@ -5,7 +5,7 @@ PORTROACH=	limitw:1,even
 #DISTNAME=	Trac-${MODPY_DISTV:S/post/.post/}
 #PKGNAME=	trac-${MODPY_DISTV:S/post/pl/}
 DISTNAME=	trac-1.6pl17925
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -22,12 +22,12 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 
 COMMON_DEPS=	devel/py-babel \
+		sysutils/py-standard-pkg-resources \
 		textproc/py-MarkupSafe \
 		www/py-jinja2
 
 RUN_DEPENDS=	${COMMON_DEPS} \
 		devel/subversion,-python \
-		devel/py-setuptools \
 		security/py-passlib \
 		textproc/py-docutils \
 		textproc/py-pygments \

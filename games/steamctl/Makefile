@@ -1,10 +1,10 @@
 COMMENT =		take control of Steam from your terminal
 
-MODPY_DISTV =	0.9.5
+MODPY_DISTV =		0.9.5
 DISTNAME =		steamctl-${MODPY_DISTV}
 CATEGORIES =		games
 HOMEPAGE =		https://github.com/ValvePython/steamctl
-REVISION =		4
+REVISION =		5
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -16,11 +16,11 @@ MODPY_PYBUILD =		setuptools
 RUN_DEPENDS =		devel/py-appdirs \
 			devel/py-argcomplete \
 			devel/py-arrow \
-			devel/py-setuptools \
 			devel/py-tqdm \
 			games/py-steam \
 			archivers/py-vpk \
 			graphics/py-pyqrcode \
+			sysutils/py-standard-pkg-resources \
 			www/py-beautifulsoup4
 
 # tests not included in pypi tarball

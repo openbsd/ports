@@ -1,5 +1,6 @@
 COMMENT =		synchronize calendars and contacts
 
+# py-standard-pkg-resources BDEP goes away with 0.21.0
 MODPY_DISTV =		0.20.0
 DISTNAME =		vdirsyncer-${MODPY_DISTV}
 
@@ -17,7 +18,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-BUILD_DEPENDS =		textproc/py-sphinx \
+BUILD_DEPENDS =		sysutils/py-standard-pkg-resources \
+			textproc/py-sphinx \
 			${RUN_DEPENDS}
 
 RUN_DEPENDS =		www/py-aiohttp \

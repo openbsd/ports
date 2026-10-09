@@ -19,6 +19,6 @@ MODPY_PYBUILD=	setuptools
 RUN_DEPENDS=	devel/py-wrapt<3
 
 # for pkg_resources
-TEST_DEPENDS=	devel/py-setuptools
+TEST_DEPENDS=	sysutils/py-standard-pkg-resources
 
 .include <bsd.port.mk>

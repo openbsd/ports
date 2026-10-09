@@ -14,7 +14,8 @@ COMPILER =	base-clang ports-gcc
 BUILD_DEPENDS =	devel/angr/py-pyvex>=${MODPY_DISTV} \
 		devel/py-bitstring \
 		devel/py-cffi \
-		devel/py-future
+		devel/py-future \
+		sysutils/py-standard-pkg-resources
 
 # AngrServer could use (unported) rpyc
 RUN_DEPENDS =	devel/angr/py-ailment>=${MODPY_DISTV} \

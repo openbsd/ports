@@ -2,7 +2,7 @@ COMMENT =		bittorrent client
 
 DISTNAME =		deluge-${MODPY_DISTV}
 MODPY_DISTV =		2.1.1
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		net
 
@@ -30,6 +30,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-xdg \
 			graphics/py-Pillow \
 			net/libtorrent-rasterbar \
+			sysutils/py-standard-pkg-resources \
 			textproc/py-chardet \
 			www/py-mako \
 			x11/gtk+3 \

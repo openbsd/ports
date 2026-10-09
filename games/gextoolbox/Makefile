@@ -4,7 +4,7 @@ MODPY_DISTV =	0.1.7
 
 DISTNAME =		game-extraction-toolbox-${MODPY_DISTV}
 PKGNAME =		gextoolbox-${MODPY_DISTV}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		games sysutils
 
@@ -26,6 +26,7 @@ RUN_DEPENDS =		archivers/py-lz4 \
 			graphics/py-Pillow \
 			sysutils/py-fsspec \
 			sysutils/py-psutil \
+			sysutils/py-standard-pkg-resources \
 			textproc/py-texttable
 
 .include <bsd.port.mk>

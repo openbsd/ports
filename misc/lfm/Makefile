@@ -1,8 +1,8 @@
 COMMENT =		powerful curses interface python file manager
 
-MODPY_DISTV =	3.1
+MODPY_DISTV =		3.1
 DISTNAME =		lfm-${MODPY_DISTV}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		misc
 
@@ -16,8 +16,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-# for pkg_resources
-RUN_DEPENDS =		devel/py-setuptools
+RUN_DEPENDS =		sysutils/py-standard-pkg-resources
 
 NO_TEST =		Yes
 

@@ -21,8 +21,10 @@ BUILD_DEPENDS+=	devel/bison \
 		devel/dtc \
 		devel/swig
 
-# for pkg_resources used in tools/binman/control.py
+# used in scripts/dtc/pylibfdt
 BUILD_DEPENDS+=	devel/py-setuptools
+# used in tools/binman/control.py
+BUILD_DEPENDS+=	sysutils/py-standard-pkg-resources
 # dpb junking can break the build
 BUILD_DEPENDS+= lang/pythran
 

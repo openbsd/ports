@@ -15,4 +15,6 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
+BUILD_DEPENDS=	sysutils/py-standard-pkg-resources
+
 .include <bsd.port.mk>

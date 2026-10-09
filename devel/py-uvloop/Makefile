@@ -1,5 +1,6 @@
 COMMENT =		fast, drop-in replacement for asyncio event loop
 
+# py-standard-pkg-resources BDEP goes away with 0.23
 MODPY_DISTV =		0.22.1
 DISTNAME =		uvloop-${MODPY_DISTV}
 PKGNAME =		py-uvloop-${MODPY_DISTV}
@@ -29,7 +30,8 @@ LDFLAGS =		-L${LOCALBASE}/lib
 # don't override opt level in CFLAGS
 MAKE_ENV =		UVLOOP_OPT_CFLAGS=
 
-BUILD_DEPENDS =		lang/cython
+BUILD_DEPENDS =		lang/cython \
+			sysutils/py-standard-pkg-resources
 
 LIB_DEPENDS =		devel/libuv
 

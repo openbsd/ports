@@ -15,6 +15,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
+BUILD_DEPENDS=	sysutils/py-standard-pkg-resources
 RUN_DEPENDS=	devel/cflow \
 		graphics/py-dot \
 		math/py-networkx

@@ -1,8 +1,8 @@
 COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
-MODPY_DISTV =	0.3.8.1
+MODPY_DISTV =		0.3.8.1
 DISTNAME =		tootstream-${MODPY_DISTV}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		www
 
@@ -20,6 +20,7 @@ MODPY_PI =		Yes
 RUN_DEPENDS =		www/py-mastodon.py \
 			devel/py-click \
 			devel/py-dateutil \
+			sysutils/py-standard-pkg-resources \
 			textproc/py-colored>=2.0 \
 			textproc/py-emoji \
 			textproc/py-humanize

@@ -18,6 +18,7 @@ MODSCONS_FLAGS += --use-system-zstd
 MODSCONS_FLAGS += --use-system-pcre
 
 ALL_TARGET =	install-core
+BUILD_DEPENDS =	sysutils/py-standard-pkg-resources
 LIB_DEPENDS =	archivers/zstd \
 		devel/pcre
 

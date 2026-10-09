@@ -16,6 +16,7 @@ MODULES=		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
+BUILD_DEPENDS =		sysutils/py-standard-pkg-resources
 RUN_DEPENDS =		devel/py-six \
 			textproc/py-webencodings
 TEST_DEPENDS =		devel/py-mock \

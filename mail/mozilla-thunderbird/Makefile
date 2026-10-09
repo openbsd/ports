@@ -47,7 +47,7 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt>=22.1.5p1 \
 			lang/wasi-sdk/libcxx>=21.1.5p1 \
 			lang/wasi-libc>=0.20251114p1
 # mach uses pkg_resources
-BUILD_DEPENDS +=	devel/py-setuptools
+BUILD_DEPENDS +=	sysutils/py-standard-pkg-resources
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//:C/esr//}
 
