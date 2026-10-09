@@ -4,7 +4,7 @@ MODPY_DISTV=	1.1.1
 GH_ACCOUNT=	chaudum
 GH_PROJECT=	rgain3
 GH_COMMIT=	4fbc941f895465245359f5d7412c977282eec363
-PORTROACH=	https://github.com/chaudum/rgain3/tags/
+PORTROACH=	site:https://github.com/chaudum/rgain3/tags/
 DISTNAME=	rgain3-${MODPY_DISTV}pl20260331
 EPOCH=		0
 
