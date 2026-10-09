@@ -64,6 +64,7 @@ include/libical/icaltypes.h
 include/libical/icalvalue.h
 include/libical/icalvalue_cxx.hpp
 include/libical/icalvcal.h
+include/libical/icalversion.h
 include/libical/icptrholder_cxx.hpp
 include/libical/libical_deprecated.h
 include/libical/libical_ical_export.h

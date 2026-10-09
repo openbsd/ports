@@ -3,7 +3,7 @@ base gcc does not understand -Wwrite-strings and errors out.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -768,7 +768,7 @@ if(CMAKE_C_COMPILER_IS_GCC OR CMAKE_C_COMPILER_IS_CLAN
+@@ -772,7 +772,7 @@ if(CMAKE_C_COMPILER_IS_GCC OR CMAKE_C_COMPILER_IS_CLAN
        -O2 \
        -fvisibility=hidden \
        -Wno-deprecated -Wall -Wunknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero \
@@ -12,7 +12,7 @@ Index: CMakeLists.txt
        -Wold-style-definition -Wstrict-prototypes"
    )
    if(LIBICAL_DEVMODE)
-@@ -805,7 +805,7 @@ if(CMAKE_CXX_COMPILER_IS_GCC OR CMAKE_CXX_COMPILER_IS_
+@@ -809,7 +809,7 @@ if(CMAKE_CXX_COMPILER_IS_GCC OR CMAKE_CXX_COMPILER_IS_
        -O2 \
        -fvisibility=hidden \
        -Weffc++ -Wno-deprecated -Wall -Wextra -Woverloaded-virtual -Winit-self -Wunused \

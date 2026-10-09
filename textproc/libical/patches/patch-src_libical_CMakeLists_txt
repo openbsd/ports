@@ -1,0 +1,21 @@
+CMake Error at src/libical/CMakeLists.txt:298 (target_link_libraries):
+  The plain signature for target_link_libraries has already been used with
+  the target "ical".  All uses of target_link_libraries with a target must be
+  either all-keyword or all-plain.
+
+  The uses of the plain signature are here:
+
+   * src/libical/CMakeLists.txt:295 (target_link_libraries)
+
+Index: src/libical/CMakeLists.txt
+--- src/libical/CMakeLists.txt.orig
++++ src/libical/CMakeLists.txt
+@@ -292,7 +292,7 @@ add_dependencies(ical ical-header)
+ target_include_directories(ical INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}>")
+ 
+ if(DEFINED CMAKE_THREAD_LIBS_INIT)
+-  target_link_libraries(ical ${CMAKE_THREAD_LIBS_INIT})
++  target_link_libraries(ical PRIVATE ${SOMETHING_LIBRARIES})
+ endif()
+ if(ICU_FOUND)
+   target_link_libraries(ical PRIVATE ${ICU_LIBRARIES})
