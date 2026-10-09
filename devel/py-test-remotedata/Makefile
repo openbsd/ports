@@ -1,27 +1,24 @@
-COMMENT =	pytest plugin for controlling remote data access
+COMMENT=	pytest plugin for controlling remote data access
 
-MODPY_DISTV =	0.4.1
+MODPY_DISTV=	0.4.2
+DISTNAME=	pytest_remotedata-${MODPY_DISTV}
+PKGNAME=	py-test-remotedata-${MODPY_DISTV}
 
-DISTNAME =	pytest-remotedata-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	1
+CATEGORIES=	devel
 
-CATEGORIES =	devel
-
-HOMEPAGE =	https://github.com/astropy/pytest-remotedata
+HOMEPAGE=	https://github.com/astropy/pytest-remotedata
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
-MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools_scm
-
-RUN_DEPENDS =	devel/py-test \
+RUN_DEPENDS=	devel/py-test \
 		sysutils/py-packaging
 
 # so that pytest can find this plugin; some tests need network access
-TEST_DEPENDS =	${BUILD_PKGPATH}
+TEST_DEPENDS=	${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
