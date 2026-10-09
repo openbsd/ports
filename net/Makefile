@@ -630,6 +630,7 @@
      SUBDIR += py-paho-mqtt
      SUBDIR += py-pcapy
      SUBDIR += py-pf
+     SUBDIR += py-pika
      SUBDIR += py-portend
      SUBDIR += py-publicsuffix2
      SUBDIR += py-python-lsp-jsonrpc
