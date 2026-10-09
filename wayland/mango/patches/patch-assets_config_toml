@@ -1,0 +1,12 @@
+Index: assets/config.toml
+--- assets/config.toml.orig
++++ assets/config.toml
+@@ -162,7 +162,7 @@ overlay_color = 0x14a57cff
+ "SUPER+r" = "reload_config"
+ 
+ # menu and terminal
+-"Alt+space" = "spawn,rofi -show drun"
++"Alt+space" = "spawn,fuzzel"
+ "Alt+Return" = "spawn,foot"
+ 
+ # exit

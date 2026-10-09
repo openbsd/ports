@@ -1,5 +1,7 @@
 @bin bin/mango
+@bin bin/mangonag
 @bin bin/mmsg
+@man man/man1/mangonag.1
 @man man/man1/mmsg.1
 share/doc/mango/
 share/doc/mango/bindings/
@@ -10,6 +12,7 @@ share/doc/mango/configuration/basics.md
 share/doc/mango/configuration/input.md
 share/doc/mango/configuration/miscellaneous.md
 share/doc/mango/configuration/monitors.md
+share/doc/mango/configuration/toml.md
 share/doc/mango/configuration/xdg-portals.md
 share/doc/mango/faq.md
 share/doc/mango/ipc.md
@@ -29,6 +32,8 @@ share/examples/mango/
 @sample ${SYSCONFDIR}/mango/
 share/examples/mango/config.conf
 @sample ${SYSCONFDIR}/mango/config.conf
+share/examples/mango/config.toml
+@sample ${SYSCONFDIR}/mango/config.toml
 share/wayland-sessions/
 share/wayland-sessions/mango.desktop
 share/xdg-desktop-portal/
