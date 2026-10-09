@@ -1,7 +1,7 @@
 Index: gcc/config/rs6000/openbsd.h
 --- gcc/config/rs6000/openbsd.h.orig
 +++ gcc/config/rs6000/openbsd.h
-@@ -0,0 +1,132 @@
+@@ -0,0 +1,137 @@
 +/* Configuration file for an rs6000 OpenBSD target.
 +   Copyright (C) 1999 Free Software Foundation, Inc.
 +
@@ -134,3 +134,8 @@ Index: gcc/config/rs6000/openbsd.h
 +#undef TRAMPOLINE_SIZE
 +#define TRAMPOLINE_SIZE 40
 +
++/* We don't need to generate entries in .fixup, except when
++   -mrelocatable or -mrelocatable-lib is given.  */
++#undef RELOCATABLE_NEEDS_FIXUP
++#define RELOCATABLE_NEEDS_FIXUP \
++  (rs6000_isa_flags & rs6000_isa_flags_explicit & OPTION_MASK_RELOCATABLE)
