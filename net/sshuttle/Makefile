@@ -2,13 +2,11 @@ COMMENT=		VPN over an SSH tunnel
 
 MODPY_DISTV=		1.3.2
 DISTNAME=		sshuttle-${MODPY_DISTV}
-REVISION=		0
+REVISION=		1
 
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES=		net security
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE=		Yes
