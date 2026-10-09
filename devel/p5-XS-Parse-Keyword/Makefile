@@ -1,6 +1,6 @@
 COMMENT =	XS functions to assist in parsing keyword syntax
 
-DISTNAME =	XS-Parse-Keyword-0.50
+DISTNAME =	XS-Parse-Keyword-0.51
 CPAN_AUTHOR =	PEVANS
 
 CATEGORIES =	devel
@@ -14,8 +14,9 @@ WANTLIB =		c perl
 
 MODULES =		cpan
 
-BUILD_DEPENDS =		devel/p5-ExtUtils-CChecker>=0.11
-RUN_DEPENDS =		devel/p5-File-ShareDir>=1.00
+BUILD_DEPENDS =		devel/p5-ExtUtils-CChecker>=0.11 \
+			devel/p5-Module-Build>=0.4004
+RUN_DEPENDS =		devel/p5-File-ShareDir>=1.0
 
 CONFIGURE_STYLE =	modbuild
 
