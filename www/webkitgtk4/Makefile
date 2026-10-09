@@ -12,12 +12,10 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.54.0
+V =			2.54.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
-
-REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API

@@ -10,7 +10,7 @@ when that is the case.
 Index: Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp
 --- Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp.orig
 +++ Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp
-@@ -181,21 +181,27 @@ Vector<RendererBufferFormat> AcceleratedBackingStore::
+@@ -184,21 +184,27 @@ Vector<RendererBufferFormat> AcceleratedBackingStore::
      const auto& glDisplayFormats = display.glDisplay()->bufferFormats();
      Vector<RendererBufferFormat::Format> formats;
  #if GTK_CHECK_VERSION(4, 13, 4)
@@ -50,7 +50,7 @@ Index: Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp
  
      RendererBufferFormat format;
      format.usage = RendererBufferFormat::Usage::Rendering;
-@@ -735,9 +741,12 @@ void AcceleratedBackingStore::didCreateDMABufBuffer(ui
+@@ -738,9 +744,12 @@ void AcceleratedBackingStore::didCreateDMABufBuffer(ui
  #endif
  
  #if GTK_CHECK_VERSION(4, 13, 4)
