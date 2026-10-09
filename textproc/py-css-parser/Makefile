@@ -1,11 +1,14 @@
-COMMENT=	python package for parsing and building CSS
+COMMENT=	Python package for parsing and building CSS
 
 CATEGORIES=	textproc
 
-MODPY_DISTV=	1.0.10
-DISTNAME=	css-parser-${MODPY_DISTV}
+MODPY_DISTV=	1.1.1
+DISTNAME=	css_parser-${MODPY_DISTV}
 PKGNAME=	py-css-parser-${MODPY_DISTV}
-REVISION=	3
+
+# https://github.com/ebook-utils/css-parser
+# https://cssutils.readthedocs.io/en/latest/history.html
+HOMEPAGE=	https://cssutils.readthedocs.io/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
