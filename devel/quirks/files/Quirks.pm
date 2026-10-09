@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1837 2026/10/08 18:47:44 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.1838 2026/10/09 11:24:03 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -642,6 +642,7 @@ setup_obsolete_reason(
 	0 => 'py3-axolotl-curve25519',
 	0 => 'py3-straight.plugin',
 	3 => 'bupstash',
+	6 => 'py3-py',
 );
 # beware, if ports with an RDEP on Python 3 are removed, they need to be listed
 # as @conflict/pkgpath in lang/python/3 and not here, otherwise an update from a

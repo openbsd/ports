@@ -1685,7 +1685,6 @@
      SUBDIR += py-ptyprocess
      SUBDIR += py-pure_eval
      SUBDIR += py-puremagic
-     SUBDIR += py-py
      SUBDIR += py-pybind11
      SUBDIR += py-pydantic
      SUBDIR += py-pydantic-compat
