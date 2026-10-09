@@ -1,0 +1,49 @@
+#1, #2 from PR https://github.com/uclouvain/openjpeg/pull/1657
+
+From 5267c2a22fdb0f1334683fd69a9df118ae7ceace Mon Sep 17 00:00:00 2001
+From: Nico Weber <thakis@chromium.org>
+Date: Fri, 10 Jul 2026 18:24:49 +0200
+Subject: [PATCH] Fix data loss / assert when encoding tiles with empty
+ resolution levels
+
+
+#3 from PR https://github.com/uclouvain/openjpeg/pull/1674
+
+From 843b78e2712edab13bbda30662465d443a062716 Mon Sep 17 00:00:00 2001
+From: agenthandler <25877731+agenthandler@users.noreply.github.com>
+Date: Sun, 27 Sep 2026 16:38:05 +0100
+Subject: [PATCH] opj_dwt: do not transform a resolution level with no rows
+
+
+Index: src/lib/openjp2/dwt.c
+--- src/lib/openjp2/dwt.c.orig
++++ src/lib/openjp2/dwt.c
+@@ -1348,7 +1348,7 @@ void opj_dwt_encode_and_deinterleave_h_one_row(void* r
+     } else {
+         if (width == 1) {
+             row[0] *= 2;
+-        } else {
++        } else if (width > 1) {
+             OPJ_INT32 i;
+             tmp[sn + 0] = row[0] - row[1];
+             for (i = 1; i < sn; i++) {
+@@ -1380,7 +1380,7 @@ void opj_dwt_encode_and_deinterleave_h_one_row_real(vo
+     OPJ_FLOAT32* OPJ_RESTRICT tmp = (OPJ_FLOAT32*)tmpIn;
+     const OPJ_INT32 sn = (OPJ_INT32)((width + (even ? 1 : 0)) >> 1);
+     const OPJ_INT32 dn = (OPJ_INT32)(width - (OPJ_UINT32)sn);
+-    if (width == 1) {
++    if (width <= 1) {
+         return;
+     }
+     memcpy(tmp, row, width * sizeof(OPJ_FLOAT32));
+@@ -1559,6 +1559,10 @@ static void opj_dwt_encode_and_deinterleave_v(
+     OPJ_INT32* OPJ_RESTRICT tmp = (OPJ_INT32 * OPJ_RESTRICT)tmpIn;
+     const OPJ_UINT32 sn = (height + (even ? 1 : 0)) >> 1;
+     const OPJ_UINT32 dn = height - sn;
++
++    if (height == 0) {
++        return;
++    }
+ 
+     opj_dwt_fetch_cols_vertical_pass(arrayIn, tmpIn, height, stride_width, cols);
+ 
