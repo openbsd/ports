@@ -1,0 +1,10 @@
+Index: case-uco/java/Makefile.am
+--- case-uco/java/Makefile.am.orig
++++ case-uco/java/Makefile.am
+@@ -1,5 +1,5 @@
+ tsk_caseuco_jar = $(top_builddir)/case-uco/java/dist/sleuthkit-caseuco-$(PACKAGE_VERSION).jar
+-jardir = $(prefix)/share/java
++jardir = ${MODJAVA_SHARE_DIR}classes
+ jar_DATA = $(tsk_caseuco_jar)
+ 
+ if OFFLINE

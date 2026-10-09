@@ -1,11 +1,8 @@
-@conflict ja-jvim-*
 @conflict freeze-*
 @bin bin/blkcalc
 @bin bin/blkcat
 @bin bin/blkls
 @bin bin/blkstat
-@comment bin/disk_sreset
-@comment bin/disk_stat
 @bin bin/fcat
 @bin bin/ffind
 @bin bin/fiwalk
@@ -136,6 +133,8 @@ lib/pkgconfig/tsk.pc
 @man man/man1/tsk_loaddb.1
 @man man/man1/tsk_recover.1
 @man man/man1/usnjls.1
+share/java/classes/sleuthkit-caseuco.jar
+share/java/classes/sleuthkit.jar
 share/tsk/
 share/tsk/sorter/
 share/tsk/sorter/default.sort

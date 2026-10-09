@@ -1,0 +1,36 @@
+Index: bindings/java/src/org/sleuthkit/datamodel/LibraryUtils.java
+--- bindings/java/src/org/sleuthkit/datamodel/LibraryUtils.java.orig
++++ bindings/java/src/org/sleuthkit/datamodel/LibraryUtils.java
+@@ -94,11 +94,12 @@ public class LibraryUtils {
+ 			os = "win"; //NON-NLS
+ 		} else if (LibraryUtils.isMac()) {
+ 			os = "mac"; //NON-NLS
+-		} else if (LibraryUtils.isLinux()) {
+-			os = "linux"; //NON-NLS
++		} else if (LibraryUtils.isOpenbsd()) {
++			os = "openbsd"; //NON-NLS
+ 		}
+ 		// os.arch represents the architecture of the JVM, not the os
+ 		String arch = System.getProperty("os.arch");
++		System.out.println("os/arch: " + os + "/" + arch); //NON-NLS
+ 		return arch.toLowerCase() + "/" + os.toLowerCase();
+ 	}
+ 
+@@ -127,6 +128,17 @@ public class LibraryUtils {
+ 	 */
+ 	private static boolean isLinux() {
+ 		return System.getProperty("os.name").equals("Linux"); //NON-NLS
++	}
++
++	/**
++	 * Is the platform OpenBSD?
++	 *
++	 * @return
++	 */
++	private static boolean isOpenbsd() {
++		String osName = System.getProperty("os.name");
++		System.out.println("Checking OS Name: " + osName); //NON-NLS
++		return System.getProperty("os.name").equals("OpenBSD"); //NON-NLS
+ 	}
+ 
+ 	/**

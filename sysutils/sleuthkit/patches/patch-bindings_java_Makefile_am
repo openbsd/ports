@@ -1,0 +1,12 @@
+Index: bindings/java/Makefile.am
+--- bindings/java/Makefile.am.orig
++++ bindings/java/Makefile.am
+@@ -2,7 +2,7 @@
+ SUBDIRS = jni
+ 
+ tsk_jar = $(top_builddir)/bindings/java/dist/sleuthkit-$(PACKAGE_VERSION).jar
+-jardir = $(prefix)/share/java
++jardir = ${MODJAVA_SHARE_DIR}classes
+ jar_DATA = $(tsk_jar)
+ 
+ if OFFLINE

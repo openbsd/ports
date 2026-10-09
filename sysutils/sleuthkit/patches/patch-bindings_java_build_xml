@@ -1,0 +1,42 @@
+Index: bindings/java/build.xml
+--- bindings/java/build.xml.orig
++++ bindings/java/build.xml
+@@ -14,7 +14,7 @@
+ <property name="VERSION" value="4.15.0"/>
+ 
+ 	<!-- set global properties for this build -->
+-	<property name="default-jar-location" location="/usr/share/java"/>
++	<property name="default-jar-location" location="/usr/local/share/java/classes"/>
+ 	<property name="src" location="src/org/sleuthkit/datamodel"/>
+ 	<property name="sample" location="src/org/sleuthkit/datamodel/Examples"/>
+ 	<property name="build" location="build/"/>
+@@ -46,23 +46,23 @@
+ 		<mkdir dir="${amd64}"/>
+ 		<mkdir dir="${amd64}/win"/>
+ 		<mkdir dir="${amd64}/mac"/>
+-		<mkdir dir="${amd64}/linux"/>
++		<mkdir dir="${amd64}/openbsd"/>
+ 		<mkdir dir="${x86}"/>
+ 		<mkdir dir="${x86}/win"/>
+-		<mkdir dir="${x86}/linux"/>
++		<mkdir dir="${x86}/openbsd"/>
+ 		<mkdir dir="${x86_64}"/>
+ 		<mkdir dir="${x86_64}/win"/>
+ 		<mkdir dir="${x86_64}/mac"/>
+-		<mkdir dir="${x86_64}/linux"/>
++		<mkdir dir="${x86_64}/openbsd"/>
+ 		<mkdir dir="${i386}"/>
+ 		<mkdir dir="${i386}/win"/>
+-		<mkdir dir="${i386}/linux"/>
++		<mkdir dir="${i386}/openbsd"/>
+ 		<mkdir dir="${i586}"/>
+ 		<mkdir dir="${i586}/win"/>
+-		<mkdir dir="${i586}/linux"/>
++		<mkdir dir="${i586}/openbsd"/>
+ 		<mkdir dir="${i686}"/>
+ 		<mkdir dir="${i686}/win"/>
+-		<mkdir dir="${i686}/linux"/>
++		<mkdir dir="${i686}/openbsd"/>
+ 	</target>
+ 
+ 	<!-- set classpath for dependencies-->
