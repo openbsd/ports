@@ -19,7 +19,5 @@ RUN_DEPENDS=	devel/py-cparser
 
 # Tests use ffi.callback() requiring write+execute
 # see https://cffi.readthedocs.io/en/latest/using.html#callbacks
-TEST_DEPENDS=	devel/py-py \
-		devel/py-test
 
 .include <bsd.port.mk>
