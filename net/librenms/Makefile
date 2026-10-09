@@ -5,7 +5,7 @@ COMMENT-doc=	documentation for LibreNMS
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	26.9.1.1
-REVISION=	0
+REVISION=	1
 
 # strip off last component, don't normally rebuild vendor file for minor
 DISTFILES.dep=	librenms-${GH_TAGNAME:R:R}-vendor.tar.xz
