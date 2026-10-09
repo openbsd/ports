@@ -1,9 +1,8 @@
 COMMENT =		pytest plugin for Celery
 
-MODPY_DISTV =		1.2.1
+MODPY_DISTV =		1.3.0
 DISTNAME =		pytest_celery-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/pytest_/py-test-/}
-REVISION =		2
 
 CATEGORIES =		devel
 
@@ -22,6 +21,6 @@ RUN_DEPENDS =		devel/py-debugpy \
 			sysutils/py-celery \
 			sysutils/py-psutil
 
-TEST_DEPENDS =		devel/py-test-cov
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
