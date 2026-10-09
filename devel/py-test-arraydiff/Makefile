@@ -1,10 +1,8 @@
 COMMENT=	pytest plugin to generate/compare data arrays
 
-MODPY_DISTV=	0.6.1
-
-DISTNAME=	pytest-arraydiff-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	3
+MODPY_DISTV=	0.7.0
+DISTNAME=	pytest_arraydiff-${MODPY_DISTV}
+PKGNAME=	py-test-arraydiff-${MODPY_DISTV}
 
 CATEGORIES=	devel
 
@@ -14,9 +12,8 @@ HOMEPAGE=	https://github.com/astropy/pytest-arraydiff
 PERMIT_PACKAGE= Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-test \
 		math/py-numpy
