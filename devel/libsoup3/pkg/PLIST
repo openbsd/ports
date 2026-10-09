@@ -6,6 +6,7 @@ include/libsoup-${API_VERSION}/libsoup/soup-auth-domain.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-manager.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth.h
 include/libsoup-${API_VERSION}/libsoup/soup-cache.h
+include/libsoup-${API_VERSION}/libsoup/soup-compression-dictionary-request.h
 include/libsoup-${API_VERSION}/libsoup/soup-content-decoder.h
 include/libsoup-${API_VERSION}/libsoup/soup-content-sniffer.h
 include/libsoup-${API_VERSION}/libsoup/soup-cookie-jar-db.h
@@ -97,6 +98,7 @@ share/doc/libsoup-${API_VERSION}/class.AuthManager.html
 share/doc/libsoup-${API_VERSION}/class.AuthNTLM.html
 share/doc/libsoup-${API_VERSION}/class.AuthNegotiate.html
 share/doc/libsoup-${API_VERSION}/class.Cache.html
+share/doc/libsoup-${API_VERSION}/class.CompressionDictionaryRequest.html
 share/doc/libsoup-${API_VERSION}/class.ContentDecoder.html
 share/doc/libsoup-${API_VERSION}/class.ContentSniffer.html
 share/doc/libsoup-${API_VERSION}/class.CookieJar.html
@@ -139,6 +141,7 @@ share/doc/libsoup-${API_VERSION}/ctor.ContentSniffer.new.html
 share/doc/libsoup-${API_VERSION}/ctor.Cookie.new.html
 share/doc/libsoup-${API_VERSION}/ctor.CookieJar.new.html
 share/doc/libsoup-${API_VERSION}/ctor.CookieJarDB.new.html
+share/doc/libsoup-${API_VERSION}/ctor.CookieJarDB.new_with_error.html
 share/doc/libsoup-${API_VERSION}/ctor.CookieJarText.new.html
 share/doc/libsoup-${API_VERSION}/ctor.HSTSEnforcer.new.html
 share/doc/libsoup-${API_VERSION}/ctor.HSTSEnforcerDB.new.html
@@ -177,6 +180,7 @@ share/doc/libsoup-${API_VERSION}/enum.WebsocketCloseCode.html
 share/doc/libsoup-${API_VERSION}/enum.WebsocketConnectionType.html
 share/doc/libsoup-${API_VERSION}/enum.WebsocketDataType.html
 share/doc/libsoup-${API_VERSION}/enum.WebsocketState.html
+share/doc/libsoup-${API_VERSION}/error.CookieJarError.html
 share/doc/libsoup-${API_VERSION}/error.SessionError.html
 share/doc/libsoup-${API_VERSION}/error.TLDError.html
 share/doc/libsoup-${API_VERSION}/error.WebsocketError.html
@@ -196,6 +200,7 @@ share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_0_FOR.html
 share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_2_FOR.html
 share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_4_FOR.html
 share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_6_FOR.html
+share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_8_FOR.html
 share/doc/libsoup-${API_VERSION}/func.UNAVAILABLE.html
 share/doc/libsoup-${API_VERSION}/func.check_version.html
 share/doc/libsoup-${API_VERSION}/func.cookies_free.html
@@ -216,6 +221,7 @@ share/doc/libsoup-${API_VERSION}/func.get_major_version.html
 share/doc/libsoup-${API_VERSION}/func.get_micro_version.html
 share/doc/libsoup-${API_VERSION}/func.get_minor_version.html
 share/doc/libsoup-${API_VERSION}/func.header_contains.html
+share/doc/libsoup-${API_VERSION}/func.header_contains_case_sensitive.html
 share/doc/libsoup-${API_VERSION}/func.header_free_list.html
 share/doc/libsoup-${API_VERSION}/func.header_free_param_list.html
 share/doc/libsoup-${API_VERSION}/func.header_g_string_append_param.html
@@ -280,6 +286,8 @@ share/doc/libsoup-${API_VERSION}/method.Cache.flush.html
 share/doc/libsoup-${API_VERSION}/method.Cache.get_max_size.html
 share/doc/libsoup-${API_VERSION}/method.Cache.load.html
 share/doc/libsoup-${API_VERSION}/method.Cache.set_max_size.html
+share/doc/libsoup-${API_VERSION}/method.CompressionDictionaryRequest.cancel.html
+share/doc/libsoup-${API_VERSION}/method.CompressionDictionaryRequest.set_dictionary.html
 share/doc/libsoup-${API_VERSION}/method.ContentSniffer.sniff.html
 share/doc/libsoup-${API_VERSION}/method.Cookie.applies_to_uri.html
 share/doc/libsoup-${API_VERSION}/method.Cookie.copy.html
@@ -318,6 +326,8 @@ share/doc/libsoup-${API_VERSION}/method.CookieJar.is_persistent.html
 share/doc/libsoup-${API_VERSION}/method.CookieJar.set_accept_policy.html
 share/doc/libsoup-${API_VERSION}/method.CookieJar.set_cookie.html
 share/doc/libsoup-${API_VERSION}/method.CookieJar.set_cookie_with_first_party.html
+share/doc/libsoup-${API_VERSION}/method.CookieJarDB.get_max_size.html
+share/doc/libsoup-${API_VERSION}/method.CookieJarDB.set_max_size.html
 share/doc/libsoup-${API_VERSION}/method.HSTSEnforcer.get_domains.html
 share/doc/libsoup-${API_VERSION}/method.HSTSEnforcer.get_policies.html
 share/doc/libsoup-${API_VERSION}/method.HSTSEnforcer.has_valid_policy.html
@@ -342,6 +352,8 @@ share/doc/libsoup-${API_VERSION}/method.Message.add_flags.html
 share/doc/libsoup-${API_VERSION}/method.Message.add_header_handler.html
 share/doc/libsoup-${API_VERSION}/method.Message.add_status_code_handler.html
 share/doc/libsoup-${API_VERSION}/method.Message.disable_feature.html
+share/doc/libsoup-${API_VERSION}/method.Message.get_compression_dictionary_hash.html
+share/doc/libsoup-${API_VERSION}/method.Message.get_compression_dictionary_id.html
 share/doc/libsoup-${API_VERSION}/method.Message.get_connection_id.html
 share/doc/libsoup-${API_VERSION}/method.Message.get_first_party.html
 share/doc/libsoup-${API_VERSION}/method.Message.get_flags.html
@@ -367,6 +379,8 @@ share/doc/libsoup-${API_VERSION}/method.Message.is_feature_disabled.html
 share/doc/libsoup-${API_VERSION}/method.Message.is_keepalive.html
 share/doc/libsoup-${API_VERSION}/method.Message.query_flags.html
 share/doc/libsoup-${API_VERSION}/method.Message.remove_flags.html
+share/doc/libsoup-${API_VERSION}/method.Message.set_compression_dictionary_hash.html
+share/doc/libsoup-${API_VERSION}/method.Message.set_compression_dictionary_id.html
 share/doc/libsoup-${API_VERSION}/method.Message.set_first_party.html
 share/doc/libsoup-${API_VERSION}/method.Message.set_flags.html
 share/doc/libsoup-${API_VERSION}/method.Message.set_force_http1.html
@@ -549,6 +563,7 @@ share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_io_stream.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_keepalive_interval.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_keepalive_pong_timeout.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_max_incoming_payload_size.html
+share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_max_total_message_size.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_origin.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_protocol.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_state.html
@@ -559,10 +574,12 @@ share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.send_text.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.set_keepalive_interval.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.set_keepalive_pong_timeout.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.set_max_incoming_payload_size.html
+share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.set_max_total_message_size.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketExtension.configure.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketExtension.get_request_params.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketExtension.get_response_params.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketExtension.process_incoming_message.html
+share/doc/libsoup-${API_VERSION}/method.WebsocketExtension.process_incoming_message_with_limit.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketExtension.process_outgoing_message.html
 share/doc/libsoup-${API_VERSION}/migrating-from-libsoup-2.html
 share/doc/libsoup-${API_VERSION}/opensearch.xml
@@ -584,9 +601,12 @@ share/doc/libsoup-${API_VERSION}/property.AuthDomainDigest.auth-callback.html
 share/doc/libsoup-${API_VERSION}/property.AuthDomainDigest.auth-data.html
 share/doc/libsoup-${API_VERSION}/property.Cache.cache-dir.html
 share/doc/libsoup-${API_VERSION}/property.Cache.cache-type.html
+share/doc/libsoup-${API_VERSION}/property.CompressionDictionaryRequest.cancelled.html
+share/doc/libsoup-${API_VERSION}/property.CompressionDictionaryRequest.dictionary.html
 share/doc/libsoup-${API_VERSION}/property.CookieJar.accept-policy.html
 share/doc/libsoup-${API_VERSION}/property.CookieJar.read-only.html
 share/doc/libsoup-${API_VERSION}/property.CookieJarDB.filename.html
+share/doc/libsoup-${API_VERSION}/property.CookieJarDB.max-size.html
 share/doc/libsoup-${API_VERSION}/property.CookieJarText.filename.html
 share/doc/libsoup-${API_VERSION}/property.HSTSEnforcerDB.filename.html
 share/doc/libsoup-${API_VERSION}/property.Logger.level.html
@@ -635,6 +655,7 @@ share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.io-stream.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.keepalive-interval.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.keepalive-pong-timeout.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.max-incoming-payload-size.html
+share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.max-total-message-size.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.origin.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.protocol.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.state.html
@@ -655,6 +676,7 @@ share/doc/libsoup-${API_VERSION}/signal.Message.hsts-enforced.html
 share/doc/libsoup-${API_VERSION}/signal.Message.network-event.html
 share/doc/libsoup-${API_VERSION}/signal.Message.request-certificate-password.html
 share/doc/libsoup-${API_VERSION}/signal.Message.request-certificate.html
+share/doc/libsoup-${API_VERSION}/signal.Message.request-compression-dictionary.html
 share/doc/libsoup-${API_VERSION}/signal.Message.restarted.html
 share/doc/libsoup-${API_VERSION}/signal.Message.starting.html
 share/doc/libsoup-${API_VERSION}/signal.Message.wrote-body-data.html
@@ -697,6 +719,7 @@ share/doc/libsoup-${API_VERSION}/style.css
 share/doc/libsoup-${API_VERSION}/type_func.AuthDomainDigest.encode_password.html
 share/doc/libsoup-${API_VERSION}/type_func.AuthNegotiate.supported.html
 share/doc/libsoup-${API_VERSION}/type_func.Cookie.parse.html
+share/doc/libsoup-${API_VERSION}/type_func.CookieJarError.quark.html
 share/doc/libsoup-${API_VERSION}/type_func.MessageHeadersIter.init.html
 share/doc/libsoup-${API_VERSION}/type_func.MessageHeadersIter.next.html
 share/doc/libsoup-${API_VERSION}/type_func.SessionError.quark.html
@@ -731,6 +754,7 @@ share/doc/libsoup-${API_VERSION}/vfunc.WebsocketExtension.configure.html
 share/doc/libsoup-${API_VERSION}/vfunc.WebsocketExtension.get_request_params.html
 share/doc/libsoup-${API_VERSION}/vfunc.WebsocketExtension.get_response_params.html
 share/doc/libsoup-${API_VERSION}/vfunc.WebsocketExtension.process_incoming_message.html
+share/doc/libsoup-${API_VERSION}/vfunc.WebsocketExtension.process_incoming_message_with_limit.html
 share/doc/libsoup-${API_VERSION}/vfunc.WebsocketExtension.process_outgoing_message.html
 share/gir-1.0/Soup-${API_VERSION}.gir
 share/locale/ab/LC_MESSAGES/libsoup-${API_VERSION}.mo

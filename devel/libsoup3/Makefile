@@ -1,10 +1,10 @@
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		3.6.6
+GNOME_VERSION =		3.8.0
 PKGNAME=		libsoup3-${GNOME_VERSION}
 
-SHARED_LIBS += soup-3.0                  0.4 # 0.7.4
+SHARED_LIBS += soup-3.0                  0.5 # 0.8.0
 
 API_VERSION =		3.0
 SUBST_VARS =		API_VERSION
@@ -17,7 +17,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += brotlidec gio-2.0 glib-2.0 gobject-2.0 intl nghttp2
-WANTLIB += psl sqlite3 z
+WANTLIB += psl sqlite3 z zstd
 
 MODULES =		devel/meson \
 			x11/gnome
