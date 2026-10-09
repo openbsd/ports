@@ -1,10 +1,10 @@
 COMMENT=	pytest plugin for managing processes across test runs
 
 MODPY_DISTV=	1.0.2
-
+REVISION=	2
+#DISTNAME=	pytest_xprocess-${MODPY_DISTV}
 DISTNAME=	pytest-xprocess-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	1
+PKGNAME=	py-test-xprocess-${MODPY_DISTV}
 
 CATEGORIES=	devel
 
@@ -14,12 +14,10 @@ HOMEPAGE=	https://github.com/pytest-dev/pytest-xprocess/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
-RUN_DEPENDS=	devel/py-py \
-		devel/py-test \
+RUN_DEPENDS=	devel/py-test \
 		sysutils/py-psutil
 
 # process spawned in test_interruption_clean_up.py doesn't find self
