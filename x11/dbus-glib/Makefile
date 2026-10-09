@@ -1,9 +1,9 @@
 COMMENT=		glib bindings for dbus message system
 
-DISTNAME=		dbus-glib-0.114
+DISTNAME=		dbus-glib-0.116
 EPOCH=			0
 
-SHARED_LIBS +=  dbus-glib-1          5.0      # 5.6
+SHARED_LIBS +=  dbus-glib-1          5.0      # 5.7
 
 CATEGORIES=		x11
 

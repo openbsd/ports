@@ -8,13 +8,7 @@ include/dbus-1.0/dbus/dbus-gvalue-parse-variant.h
 lib/libdbus-glib-1.la
 @lib lib/libdbus-glib-1.so.${LIBdbus-glib-1_VERSION}
 lib/pkgconfig/dbus-glib-1.pc
-@bin libexec/dbus-bash-completion-helper
 @man man/man1/dbus-binding-tool.1
-share/examples/dbus-glib/
-share/examples/dbus-glib/bash_completion.d/
-@sample ${SYSCONFDIR}/bash_completion.d/
-share/examples/dbus-glib/bash_completion.d/dbus-bash-completion.sh
-@sample ${SYSCONFDIR}/bash_completion.d/dbus-bash-completion.sh
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/dbus-glib/
