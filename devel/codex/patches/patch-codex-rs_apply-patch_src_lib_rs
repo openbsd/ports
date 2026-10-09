@@ -1,7 +1,7 @@
 Index: codex-rs/apply-patch/src/lib.rs
 --- codex-rs/apply-patch/src/lib.rs.orig
 +++ codex-rs/apply-patch/src/lib.rs
-@@ -438,7 +438,7 @@ async fn apply_hunks_with_options(
+@@ -406,7 +406,7 @@ async fn apply_hunks_with_options(
              Ok(delta)
          }
          Err(error) => {
