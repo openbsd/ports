@@ -3,7 +3,7 @@ COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 GH_TAGNAME =	v3.10.11.0
 GH_ACCOUNT =	gnuradio
 GH_PROJECT =	gnuradio
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  gnuradio-analog           1.0 # 3.7
 SHARED_LIBS +=  gnuradio-audio            1.0 # 3.7
@@ -49,7 +49,6 @@ MODULES =	devel/cmake \
 BUILD_DEPENDS =	devel/cppunit \
 		devel/py-cheetah \
 		devel/py-click \
-		devel/py-click-plugins \
 		devel/py-gobject3 \
 		devel/py-jsonschema \
 		devel/py-pybind11 \
