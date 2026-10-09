@@ -10,7 +10,7 @@ PKGNAME=	py-css-parser-${MODPY_DISTV}
 # https://cssutils.readthedocs.io/en/latest/history.html
 HOMEPAGE=	https://cssutils.readthedocs.io/
 
-# GPLv3
+# LGPLv3
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
