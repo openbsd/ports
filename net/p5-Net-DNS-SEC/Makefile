@@ -1,6 +1,6 @@
 COMMENT =	extends the Net::DNS module with DNSSEC functionality
 
-DISTNAME =	Net-DNS-SEC-1.27
+DISTNAME =	Net-DNS-SEC-1.28
 SUPDISTFILES =	${DISTFILES}.asc
 
 CATEGORIES =	net security
@@ -17,6 +17,7 @@ WANTLIB =		c crypto perl
 SITES =			http://www.net-dns.org/download/
 
 MODULES =		cpan
+
 RUN_DEPENDS =		net/p5-Net-DNS>=1.08
 TEST_DEPENDS =		devel/p5-Test-Pod>=1.45
 

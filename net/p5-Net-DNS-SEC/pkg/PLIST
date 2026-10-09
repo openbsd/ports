@@ -9,6 +9,7 @@ ${P5ARCH}/Net/DNS/SEC/Digest.pm
 ${P5ARCH}/Net/DNS/SEC/ECDSA.pm
 ${P5ARCH}/Net/DNS/SEC/EdDSA.pm
 ${P5ARCH}/Net/DNS/SEC/Keyset.pm
+${P5ARCH}/Net/DNS/SEC/MLDSA.pm
 ${P5ARCH}/Net/DNS/SEC/Private.pm
 ${P5ARCH}/Net/DNS/SEC/RSA.pm
 ${P5ARCH}/Net/DNS/SEC/libcrypto.pod
@@ -23,6 +24,7 @@ ${P5ARCH}/auto/Net/DNS/SEC/
 @man man/man3p/Net::DNS::SEC::ECDSA.3p
 @man man/man3p/Net::DNS::SEC::EdDSA.3p
 @man man/man3p/Net::DNS::SEC::Keyset.3p
+@man man/man3p/Net::DNS::SEC::MLDSA.3p
 @man man/man3p/Net::DNS::SEC::Private.3p
 @man man/man3p/Net::DNS::SEC::RSA.3p
 @man man/man3p/Net::DNS::SEC::libcrypto.3p
