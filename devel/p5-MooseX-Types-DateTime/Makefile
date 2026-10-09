@@ -1,25 +1,29 @@
-COMMENT=		DateTime related constraints and coercions for Moose
+COMMENT =	DateTime related constraints and coercions for Moose
 
-MODULES=		cpan
-PKG_ARCH=		*
-DISTNAME=		MooseX-Types-DateTime-0.13
-CATEGORIES=		devel
+DISTNAME =	MooseX-Types-DateTime-0.14
+CPAN_AUTHOR =	ETHER
+FIX_EXTRACT_PERMISSIONS =	Yes
 
-FIX_EXTRACT_PERMISSIONS=	Yes
+CATEGORIES =	devel
 
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS=		devel/p5-DateTime>=0.4302 \
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-DateTime>=0.4302 \
 			devel/p5-DateTime-Locale>=0.4001 \
 			devel/p5-DateTime-TimeZone>=0.95 \
 			devel/p5-Moose>=0.41 \
 			devel/p5-MooseX-Types>=0.30 \
 			devel/p5-namespace-clean>=0.19
-BUILD_DEPENDS=		${RUN_DEPENDS}
-TEST_DEPENDS=		devel/p5-Moose \
+TEST_DEPENDS =		devel/p5-Moose \
 			devel/p5-Test-Fatal
+
+CONFIGURE_STYLE =	modbuild tiny
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
