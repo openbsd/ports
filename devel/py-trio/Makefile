@@ -1,6 +1,6 @@
 COMMENT=	library for async concurrency and I/O
 
-MODPY_DISTV=	0.33.0
+MODPY_DISTV=	0.34.0
 DISTNAME=	trio-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -27,14 +27,13 @@ PORTHOME=	${WRKDIR}
 MODPY_PYTEST_ARGS= -v \
 		-k 'not test_ki_in_repl and not test_run_with_broken_pipe and not test_pipe_fully'
 
-# some tests want the python module for ruff (not just the binary which is
-# all that devel/ruff currently provides)
 TEST_DEPENDS=	devel/py-astor \
 		devel/py-isort \
 		devel/py-jedi \
 		devel/py-mypy \
 		devel/py-test-trio \
 		devel/pylint \
+		devel/ruff \
 		security/py-trustme \
 		textproc/py-black
 
