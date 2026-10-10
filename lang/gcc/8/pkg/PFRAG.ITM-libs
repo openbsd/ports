@@ -1,2 +1,0 @@
-lib/libitm.la
-@lib lib/libitm.so.${LIBitm_VERSION}
