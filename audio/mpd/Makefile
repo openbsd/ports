@@ -1,6 +1,7 @@
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
 VER =			0.24.15
+REVISION =		0
 DISTNAME =		mpd-${VER}
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
@@ -21,14 +22,12 @@ WANTLIB =		FLAC audiofile avcodec avfilter avformat avutil \
 
 SITES =			https://www.musicpd.org/download/mpd/${VER:R}/
 
-# needs libcxx update ?
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		devel/boost
 BUILD_DEPENDS +=	textproc/py-sphinx
 BUILD_DEPENDS +=	textproc/nlohmann-json
 
-LIB_DEPENDS =		audio/faad>=2.6.1p0 \
+LIB_DEPENDS =		audio/faad \
 			audio/flac \
 			audio/lame \
 			audio/libcdio \
