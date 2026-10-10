@@ -1,11 +1,10 @@
 COMMENT=	tool to automatically build BGP route server configurations
 
+MODPY_DISTV=	1.27.0
 # pypi sdist doesn't include tests
 GH_ACCOUNT=	pierky
 GH_PROJECT=	arouteserver
 GH_TAGNAME=	v${MODPY_DISTV}
-
-MODPY_DISTV=	1.25.0
 DISTNAME=	arouteserver-${MODPY_DISTV}
 
 CATEGORIES=	net
