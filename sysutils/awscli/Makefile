@@ -1,12 +1,10 @@
 COMMENT =		universal command line environment for AWS
 
-MODPY_DISTV =		2.34.29
+MODPY_DISTV =		2.36.49
 GH_ACCOUNT =		aws
 GH_PROJECT =		aws-cli
 GH_TAGNAME =		${MODPY_DISTV}
 DISTNAME =		awscli-${MODPY_DISTV}
-
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -20,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		flit_core
 
-BUILD_DEPENDS=		devel/py-awscrt>=0.31.2 \
+BUILD_DEPENDS=		devel/py-awscrt=0.36.4 \
 			devel/py-colorama \
 			devel/py-dateutil \
 			textproc/py-docutils \
