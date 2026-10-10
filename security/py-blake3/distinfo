@@ -1,4 +1,4 @@
-SHA256 (blake3-1.0.10.tar.gz) = 5vLNt6yUma3aauwGSlYbndgI0kPU9jmkdhzRnepT4BU=
+SHA256 (blake3-1.0.11.tar.gz) = 1zwKhzBNQQRfZ1OpIhE77eOrCe2i0gNxVmpbvjV8Pes=
 SHA256 (cargo/arrayvec-0.7.7.tar.gz) = 8CiCiE0+G8Uk+xLHnxB/atDhz9SYxTb/tJQwF0CZXf4=
 SHA256 (cargo/blake3-1.8.7.tar.gz) = bZ5FT8Efdpd9yAOJOv9jBO0z1qJu+uhpZXO+p0uqJ64=
 SHA256 (cargo/cc-1.2.65.tar.gz) = 4ijuyb58F8y2QLWbNqXNgF6ipWSkxeFiwvZZ/qMNO5Y=
@@ -29,7 +29,7 @@ SHA256 (cargo/shlex-2.0.1.tar.gz) = +PrdWchV7yCA3s3vj/Fh62ZhuGkzydguW6KdxgKlWro=
 SHA256 (cargo/syn-2.0.118.tar.gz) = G5rlf5BCE+u2Sc5olbimbGbwIDuTGXGPaaVhKgZbFCI=
 SHA256 (cargo/target-lexicon-0.13.5.tar.gz) = rbaTWm9cIBcO7OsaODWknhLhnXkvbdNEzMdqmFylpso=
 SHA256 (cargo/unicode-ident-1.0.24.tar.gz) = 5uQxPNX809rVyvoXlwLiskT3YJkfRTl9FNTr84JH2nU=
-SIZE (blake3-1.0.10.tar.gz) = 117129
+SIZE (blake3-1.0.11.tar.gz) = 117377
 SIZE (cargo/arrayvec-0.7.7.tar.gz) = 33192
 SIZE (cargo/blake3-1.8.7.tar.gz) = 209726
 SIZE (cargo/cc-1.2.65.tar.gz) = 95435
