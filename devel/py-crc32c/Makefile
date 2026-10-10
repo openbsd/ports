@@ -1,8 +1,8 @@
 COMMENT=	implemention of the crc32c algorithm in hardware
 
-MODPY_DISTV =	2.8
+MODPY_DISTV=	2.9.post0
 DISTNAME=	crc32c-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME:S/.post/pl/}
 
 CATEGORIES=	devel
 
