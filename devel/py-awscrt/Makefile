@@ -1,6 +1,6 @@
 COMMENT =		Python bindings for the AWS Common Runtime
 
-MODPY_DISTV =		0.31.2
+MODPY_DISTV =		0.36.4
 PKGNAME =		py-awscrt-${MODPY_DISTV}
 DISTNAME =		awscrt-${MODPY_DISTV}
 

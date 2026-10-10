@@ -16,6 +16,8 @@ lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}_test.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}aws_iot_metrics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}aws_iot_metrics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}cbor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}cbor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}checksums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}http.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}io.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}io.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}mqtt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}mqtt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}mqtt5.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,6 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/awscrt/aio/${MODPY_PYCACHE}http.${MODPY
 lib/python${MODPY_VERSION}/site-packages/awscrt/aio/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/aio/http.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/auth.py
+lib/python${MODPY_VERSION}/site-packages/awscrt/aws_iot_metrics.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/cbor.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/checksums.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/common.py
@@ -65,6 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/awscrt/eventstream/rpc.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/http.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/io.py
+lib/python${MODPY_VERSION}/site-packages/awscrt/logging.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/mqtt.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/mqtt5.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/mqtt_request_response.py
