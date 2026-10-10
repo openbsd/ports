@@ -10,7 +10,7 @@ Index: src/ggml-cpu/simd-gemm.h
  
  // TODO: untested on avx512
  // These are in units of GGML_F32_EPR
-@@ -109,7 +109,7 @@ static void simd_gemm(
+@@ -149,7 +149,7 @@ static void simd_gemm(
          C += N;
      }
  }

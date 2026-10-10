@@ -64,7 +64,7 @@ Index: src/ggml-cpu/vec.h
      #if defined(__riscv_zvfh)
          const ggml_fp16_t s = GGML_CPU_FP32_TO_FP16(v);
          const _Float16 scale = *(const _Float16*)(&s);
-@@ -1315,7 +1315,7 @@ inline static __m128 ggml_v_silu(__m128 x) {
+@@ -1334,7 +1334,7 @@ inline static __m128 ggml_v_silu(__m128 x) {
      return _mm_div_ps(x, one_plus_exp_neg_x);
  }
  
@@ -73,7 +73,7 @@ Index: src/ggml-cpu/vec.h
  
  // adapted from arm limited optimized routine
  // the maximum error is 1.45358 plus 0.5 ulps
-@@ -1367,7 +1367,7 @@ inline static vfloat32m2_t ggml_v_silu_m2(vfloat32m2_t
+@@ -1386,7 +1386,7 @@ inline static vfloat32m2_t ggml_v_silu_m2(vfloat32m2_t
      return __riscv_vfdiv_vv_f32m2(x, one_plus_exp_neg_x, vl);
  }
  
