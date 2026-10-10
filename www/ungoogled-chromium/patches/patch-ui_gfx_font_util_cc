@@ -16,6 +16,6 @@ Index: ui/gfx/font_util.cc
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // Early initialize FontConfig.
-   InitializeGlobalFontConfigAsync();
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+   // Ensures the config is created on this thread. It's generally safe to send
+   // concurrent match requests to fontconfig, but it's unsafe to send match
+   // requests concurrently to fontconfig initialization.

@@ -10,7 +10,7 @@ Index: gpu/command_buffer/client/test_shared_image_interface.cc
  #include <linux/memfd.h>
  #include <sys/mman.h>
  #include <unistd.h>
-@@ -434,7 +434,7 @@ TestSharedImageInterface::CreateSharedImageWithAsyncMa
+@@ -431,7 +431,7 @@ TestSharedImageInterface::CreateSharedImageWithAsyncMa
    return image;
  }
  

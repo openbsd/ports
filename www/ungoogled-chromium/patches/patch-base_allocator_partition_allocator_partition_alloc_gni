@@ -16,6 +16,6 @@ Index: base/allocator/partition_allocator/partition_alloc.gni
  is_pkeys_available =
 -    (is_linux || is_chromeos) && current_cpu == "x64" && !is_cronet_build
 +    !is_bsd && (is_linux || is_chromeos) && current_cpu == "x64" && !is_cronet_build
+ 
  declare_args() {
    enable_pkeys = is_pkeys_available
- }

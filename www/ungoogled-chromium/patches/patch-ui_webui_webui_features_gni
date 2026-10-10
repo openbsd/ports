@@ -9,5 +9,5 @@ Index: ui/webui/webui_features.gni
 +        target_os == "chromeos" || is_desktop_android || target_os == "openbsd" ||
 +        target_os == "freebsd"
    }
+ 
    declare_args() {
-     # Enable WebUI Contextual Tasks Composebox.

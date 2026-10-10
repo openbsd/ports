@@ -21,7 +21,7 @@ Index: content/browser/service_host/utility_sandbox_delegate.cc
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
        sandbox_type_ == sandbox::mojom::Sandbox::kShapeDetection ||
- #if BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
+ #if BUILDFLAG(ENABLE_OOP_VIDEO_DECODER)
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
 @@ -93,11 +93,11 @@ UtilitySandboxedProcessLauncherDelegate::
        sandbox_type_ == sandbox::mojom::Sandbox::kNearby ||
@@ -37,7 +37,7 @@ Index: content/browser/service_host/utility_sandbox_delegate.cc
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceTranslation ||
  #endif
        sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||
-@@ -154,15 +154,15 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
+@@ -156,15 +156,15 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
        sandbox_type_ == sandbox::mojom::Sandbox::kNearby ||
  #endif  // BUILDFLAG(IS_CHROMEOS)
        sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||

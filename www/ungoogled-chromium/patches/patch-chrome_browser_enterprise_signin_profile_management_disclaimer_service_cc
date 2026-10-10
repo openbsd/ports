@@ -1,0 +1,19 @@
+Index: chrome/browser/enterprise/signin/profile_management_disclaimer_service.cc
+--- chrome/browser/enterprise/signin/profile_management_disclaimer_service.cc.orig
++++ chrome/browser/enterprise/signin/profile_management_disclaimer_service.cc
+@@ -512,6 +512,7 @@ void ProfileManagementDisclaimerService::OnRegisteredF
+     return;
+   }
+ 
++#if 0
+   if (profile_separation_policies_for_testing_.has_value() ||
+       user_choice_for_testing_.has_value()) {
+     CHECK_IS_TEST();
+@@ -527,6 +528,7 @@ void ProfileManagementDisclaimerService::OnRegisteredF
+             user_choice_for_testing_);
+     return;
+   }
++#endif
+ 
+   state_->user_cloud_signin_restriction_policy_fetcher =
+       std::make_unique<policy::UserCloudSigninRestrictionPolicyFetcher>(

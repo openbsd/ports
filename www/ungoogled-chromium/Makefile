@@ -13,7 +13,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			154.0.8037.92
+V=			155.0.8059.39
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -26,9 +26,9 @@ DISTFILES.b=		${CHROMIUM_DISTFILES.b}
 
 DISTFILES.a+=		${CHROMIUM_DISTFILES.a}
 
-#CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
-CHROMIUM_DISTFILES.a+=	chromium-${V}-linux${EXTRACT_SUFX}
-#REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
+CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
+#CHROMIUM_DISTFILES.a+=	chromium-${V}-linux${EXTRACT_SUFX}
+REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 
 TS_VERSION=		7.0.2
 
@@ -206,6 +206,8 @@ GN_ARGS=	is_official_build=true \
 		moc_qt5_path=\"${MODQT5_MOC}\" \
 		moc_qt6_path=\"${MODQT6_MOC}\" \
 		v8_enable_cet_ibt=true \
+		v8_metagen_libclang_so=\"${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/libclang.so.0.0\" \
+		v8_metagen_libclang_bindings_dir=\"${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/python${MODPY_VERSION}/site-packages\" \
 		use_typescript_go=false
 
 # rust
@@ -326,6 +328,7 @@ post-patch:
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni \
+		${WRKSRC}/v8/BUILD.gn \
 		${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
@@ -357,6 +360,7 @@ do-configure:
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
 		--no-clean -s --skip-generate-buildfiles
+	@ln -sf ${WRKSRC}/out/${BUILDTYPE}/gn ${WRKSRC}/buildtools/linux64/gn
 	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/${BUILDTYPE}/gn \
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 

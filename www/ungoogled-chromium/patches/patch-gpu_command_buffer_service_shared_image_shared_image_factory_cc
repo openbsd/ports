@@ -2,7 +2,7 @@ Index: gpu/command_buffer/service/shared_image/shared_image_factory.cc
 --- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig
 +++ gpu/command_buffer/service/shared_image/shared_image_factory.cc
 @@ -56,7 +56,7 @@
- #include "gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.h"
+ #include "gpu/command_buffer/service/vulkan_context_provider.h"
  #include "gpu/vulkan/vulkan_device_queue.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_WIN)
@@ -28,7 +28,7 @@ Index: gpu/command_buffer/service/shared_image/shared_image_factory.cc
    return gfx::GpuMemoryBufferType::NATIVE_PIXMAP;
  #elif BUILDFLAG(IS_WIN)
    return gfx::GpuMemoryBufferType::DXGI_SHARED_HANDLE;
-@@ -332,7 +332,7 @@ SharedImageFactory::SharedImageFactory(
+@@ -329,7 +329,7 @@ SharedImageFactory::SharedImageFactory(
      factories_.push_back(std::move(ozone_factory));
    }
  
@@ -37,7 +37,7 @@ Index: gpu/command_buffer/service/shared_image/shared_image_factory.cc
    if (gr_context_type_ == GrContextType::kVulkan
  #if BUILDFLAG(USE_WEBGPU_ON_VULKAN_VIA_GL_INTEROP)
        /* We support GL context for WebGPU gl-vulkan interop (on linux).*/
-@@ -1062,7 +1062,7 @@ void SharedImageFactory::LogGetFactoryFailed(gpu::Shar
+@@ -1049,7 +1049,7 @@ void SharedImageFactory::LogGetFactoryFailed(gpu::Shar
    }
  #endif  // BUILDFLAG(IS_ANDROID)
  

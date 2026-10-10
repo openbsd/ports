@@ -61,7 +61,7 @@ Index: BUILD.gn
        deps += [
          "//third_party/crashpad/crashpad:crashpad_tests",
          "//third_party/crashpad/crashpad/tools:crashpad_database_util",
-@@ -1105,7 +1113,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1107,7 +1115,7 @@ if (use_blink && !is_cronet_build) {
        "//third_party/blink/public:all_blink",
      ]
  
@@ -70,7 +70,7 @@ Index: BUILD.gn
        deps += [
          ":chrome_wpt_tests",
          ":headless_shell_wpt",
-@@ -1257,7 +1265,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1259,7 +1267,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -79,7 +79,7 @@ Index: BUILD.gn
        # Using the default toolchain for this tool, as it's run during tests not
        # during the build. This places a symlink in the root_build_dir for scrips
        # to use.
-@@ -1271,7 +1279,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1273,7 +1281,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//third_party/breakpad:dump_syms" ]
      }
  
@@ -88,7 +88,7 @@ Index: BUILD.gn
        # Using the default toolchain for this tool, as it's run during tests not
        # during the build. This places a symlink in the root_build_dir for scrips
        # to use.
-@@ -1551,7 +1559,7 @@ group("chromium_builder_perf") {
+@@ -1553,7 +1561,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

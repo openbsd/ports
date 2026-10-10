@@ -1,7 +1,7 @@
 Index: third_party/pdfium/BUILD.gn
 --- third_party/pdfium/BUILD.gn.orig
 +++ third_party/pdfium/BUILD.gn
-@@ -172,7 +172,7 @@ config("pdfium_core_config") {
+@@ -168,7 +168,7 @@ config("pdfium_core_config") {
      "//build/config/compiler:noshadowing",
    ]
    defines = []

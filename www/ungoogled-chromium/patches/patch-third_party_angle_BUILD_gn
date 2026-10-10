@@ -18,7 +18,7 @@ Index: third_party/angle/BUILD.gn
        libs = [ "dl" ]
      }
  
-@@ -748,6 +747,9 @@ angle_static_library("angle_gpu_info_util") {
+@@ -750,6 +749,9 @@ angle_static_library("angle_gpu_info_util") {
          "Xi",
          "Xext",
        ]
