@@ -1,10 +1,9 @@
 COMMENT=	subprocess interface: call any program like a function
 
-MODPY_DISTV=	2.2.4
+MODPY_DISTV=	2.4.0
 DISTNAME=	sh-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://github.com/amoffat/sh
 
@@ -12,7 +11,7 @@ HOMEPAGE=	https://github.com/amoffat/sh
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	poetry-core
+MODPY_PYBUILD=	hatchling
 MODPY_PI=	Yes
 
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
