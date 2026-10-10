@@ -18,17 +18,20 @@ Index: config/goaccess.conf
  ######################################
  # Date Format Options (required)
  ######################################
-@@ -771,23 +781,11 @@ static-file .zst
+@@ -767,27 +777,14 @@ static-file .zst
+ #std-geoip false
+ 
+ # === GeoIP2
+-# For GeoIP2 databases, you can use DB-IP Lite databases.
++# For GeoIP2 databases, you can use DB-IP Lite databases (available in
++# packages: pkg_add dbip-asn-lite, dbip-city-lite, dbip-country-lite),
++# or register with MaxMind for their commercial or free databases.
  # DB-IP is licensed under a Creative Commons Attribution 4.0 International License.
  # https://db-ip.com/db/lite.php
- 
+-
 -# Or you can download them from MaxMind
 -# https://dev.maxmind.com/geoip/geoip2/geolite2/
-+# Free GeoLite2 databases are available in the geolite2-{asn,city,country} packages.
-+#geoip-database /var/db/GeoIP/GeoLite2-ASN.mmdb
-+#geoip-database /var/db/GeoIP/GeoLite2-City.mmdb
-+#geoip-database /var/db/GeoIP/GeoLite2-Country.mmdb
- 
+-
 -# For GeoIP2 City database:
 -# Download the GeoLite2-City.mmdb.gz
 -# gunzip GeoLite2-City.mmdb.gz
@@ -43,6 +46,9 @@ Index: config/goaccess.conf
 -#
 -#geoip-database /usr/local/share/GeoIP/GeoLite2-City.mmdb
 -#geoip-database /usr/local/share/GeoIP/GeoLite2-ASN.mmdb
++#geoip-database /var/db/dbip/dbip-asn-lite.mmdb
++#geoip-database /var/db/dbip/dbip-city-lite.mmdb
++#geoip-database /var/db/dbip/dbip-country-lite.mmdb
  
  # Exclude requests whose client address resolves to an ASN. This option can be
  # repeated and accepts either 8075 or AS8075. It requires a GeoIP2 ASN database
