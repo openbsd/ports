@@ -13,7 +13,7 @@ Index: lld/ELF/SyntheticSections.h
  
    /// Computes the addend of the dynamic relocation. Note that this is not the
    /// same as the #addend member variable as it may also include the symbol
-@@ -659,6 +664,7 @@ class SymbolTableBaseSection : public SyntheticSection
+@@ -663,6 +668,7 @@ class SymbolTableBaseSection : public SyntheticSection
    void finalizeContents() override;
    size_t getSize() const override { return getNumSymbols() * entsize; }
    void addSymbol(Symbol *sym);
@@ -21,7 +21,7 @@ Index: lld/ELF/SyntheticSections.h
    unsigned getNumSymbols() const { return symbols.size() + 1; }
    size_t getSymbolIndex(const Symbol &sym);
    ArrayRef<SymbolTableEntry> getSymbols() const { return symbols; }
-@@ -668,6 +674,7 @@ class SymbolTableBaseSection : public SyntheticSection
+@@ -672,6 +678,7 @@ class SymbolTableBaseSection : public SyntheticSection
  
    // A vector of symbols and their string table offsets.
    SmallVector<SymbolTableEntry, 0> symbols;
@@ -29,7 +29,7 @@ Index: lld/ELF/SyntheticSections.h
  
    StringTableSection &strTabSec;
  
-@@ -1325,7 +1332,11 @@ void addVerneed(Ctx &, Symbol &ss);
+@@ -1329,7 +1336,11 @@ void addVerneed(Ctx &, Symbol &ss);
  // placed in it.
  struct PhdrEntry {
    PhdrEntry(Ctx &ctx, unsigned type, unsigned flags)
