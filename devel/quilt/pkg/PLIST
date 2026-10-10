@@ -67,6 +67,8 @@ share/quilt/scripts/utilfns
 share/quilt/series
 share/quilt/setup
 share/quilt/snapshot
+share/quilt/spec-filters/
+share/quilt/spec-filters/obs
 share/quilt/top
 share/quilt/unapplied
 share/quilt/upgrade

@@ -1,10 +1,10 @@
 COMMENT=		manage large numbers of patches
 
-DISTNAME=		quilt-0.66
+DISTNAME=		quilt-0.69
 CATEGORIES=		devel
 
-HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
-MAINTAINER=		Kent R. Spillner <kspillner@openbsd.org>
+HOMEPAGE=		https://savannah.nongnu.org/projects/quilt/
+MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -43,8 +43,5 @@ CONFIGURE_ARGS=		--with-date=${LOCALBASE}/bin/gdate \
 
 FAKE_FLAGS=		BUILD_ROOT=${WRKINST} \
 			etcdir=${PREFIX}/share/examples/quilt
-
-post-configure:
-	${SUBST_CMD} ${WRKSRC}/test/delete.test
 
 .include <bsd.port.mk>
