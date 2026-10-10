@@ -307,6 +307,15 @@ _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 		echo ) >> ${WRKDIR}/.modpy-warn; \
 	fi
 .  endif
+.  if ! ${MODPY_PYBUILD:Mhatch-vcs} && ! ${BUILD_DEPENDS:Mdevel/py-hatch-vcs}
+_MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
+	(grep -A8 '^requires' ${WRKSRC}/pyproject.toml | \
+	grep -q 'hatch[-_]vcs'); then \
+	    (echo; echo '*** Port may need MODPY_PYBUILD=hatch-vcs'; \
+	        grep -H -e ^build-backend -e '^requires.*hatch.vcs' \
+		${WRKSRC}/pyproject.toml; echo ) >> ${WRKDIR}/.modpy-warn; \
+	fi
+.  endif
 .  if ! ${MODPY_PYBUILD:Msetuptools_scm} && ! ${BUILD_DEPENDS:Mdevel/py-setuptools_scm}
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 	(grep -A8 '^requires' ${WRKSRC}/pyproject.toml | \
