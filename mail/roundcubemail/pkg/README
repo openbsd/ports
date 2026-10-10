@@ -4,7 +4,7 @@
 
 Standard Roundcube installation/upgrade
 =======================================
-See ${INSTDIR}/INSTALL and ${INSTDIR}/UPGRADING
+See ${INSTDIR}/docs/INSTALL.md and ${INSTDIR}/docs/UPGRADING.md
 for more information.
 
 Database access is done via PDO. If you are using MySQL or PostgreSQL,
