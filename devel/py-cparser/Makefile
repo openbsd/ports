@@ -1,6 +1,6 @@
 COMMENT=	C parser in pure Python
 
-MODPY_DISTV=	3.0
+MODPY_DISTV=	3.11
 DISTNAME=	pycparser-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel textproc
