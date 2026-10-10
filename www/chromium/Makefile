@@ -94,6 +94,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/esbuild \
 		devel/esbuild:patch \
 		devel/gperf \
+		devel/llvm/${MODCLANG_VERSION},-python \
 		devel/rust-bindgen \
 		graphics/vulkan-headers \
 		lang/go \
