@@ -1,6 +1,6 @@
 COMMENT =		unit testing framework
 
-V =			2.0.0
+V =			2.0.1
 DISTNAME =		cpptest-${V}
 
 SHARED_LIBS +=  cpptest                   1.0 # 0.7
