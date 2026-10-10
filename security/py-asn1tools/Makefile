@@ -2,9 +2,12 @@ COMMENT=	python package for ASN.1 parsing, encoding and decoding
 
 CATEGORIES=	security
 
-MODPY_DISTV=	0.167.0
+MODPY_DISTV=	0.169.0
 DISTNAME=	asn1tools-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+
+# https://github.com/eerimoq/asn1tools
+HOMEPAGE=	https://asn1tools.readthedocs.io/en/latest/
 
 # MIT
 PERMIT_PACKAGE=	Yes
