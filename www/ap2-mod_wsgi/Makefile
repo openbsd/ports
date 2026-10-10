@@ -1,13 +1,14 @@
 COMMENT=	Python WSGI compliant interface module for Apache2
 
-CATEGORIES=	www
-
-V=		6.0.6
-DISTNAME=	mod_wsgi-$V
+DISTNAME=	mod_wsgi-6.1.0
 PKGNAME=	ap2-${DISTNAME}
 
-SITES=		https://github.com/GrahamDumpleton/mod_wsgi/releases/download/${DISTNAME}/
+CATEGORIES=	www
+
+# https://modwsgi.readthedocs.io/en/latest/release-notes.html
 HOMEPAGE=	https://modwsgi.readthedocs.io/
+
+SITES=		https://github.com/GrahamDumpleton/mod_wsgi/releases/download/${DISTNAME}/
 
 # Apache License 2.0
 PERMIT_PACKAGE=	Yes
