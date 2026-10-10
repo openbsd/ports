@@ -350,6 +350,7 @@
      SUBDIR += py-parallel-ssh
      SUBDIR += py-pipx
      SUBDIR += py-platformdirs
+     SUBDIR += py-prefetch-parser
      SUBDIR += py-prometheus_client
      SUBDIR += py-proxmoxer
      SUBDIR += py-psutil
