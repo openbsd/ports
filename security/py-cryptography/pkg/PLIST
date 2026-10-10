@@ -15,12 +15,15 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}__about__.
 lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}cobblestone.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}cobblestone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}fernet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}fernet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/cobblestone.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/fernet.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/
@@ -62,6 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/_openssl.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/asn1.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/cobblestone.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/declarative_asn1.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/exceptions.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/ocsp.pyi
@@ -80,6 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/open
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/hpke.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/kdf.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/keys.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/keywrap.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/mldsa.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/mlkem.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/poly1305.pyi

@@ -1,10 +1,9 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_DISTV=	49.0.0
+MODPY_DISTV=	50.0.2
 DISTNAME=	cryptography-${MODPY_DISTV}
 DISTFILES=	cryptography-${MODPY_DISTV}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	security devel
 
