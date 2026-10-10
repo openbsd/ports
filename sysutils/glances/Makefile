@@ -1,7 +1,6 @@
 COMMENT =		cross-platform curses-based monitoring tool
 
-MODPY_DISTV =		4.5.1
-REVISION =		0
+MODPY_DISTV =		4.5.7
 DISTNAME =		glances-${MODPY_DISTV}
 
 EPOCH =			0
@@ -25,7 +24,8 @@ MODPY_PYTEST_ARGS =	tests/test_core.py
 
 RUN_DEPENDS =		sysutils/py-psutil \
 			sysutils/py-packaging \
-			textproc/py-defusedxml
+			textproc/py-defusedxml \
+			www/py-jinja2
 
 pre-configure:
 	sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/glances/config.py

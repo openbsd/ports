@@ -1,7 +1,7 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -113,18 +113,8 @@ wifi = ["wifi"]
+@@ -115,18 +115,8 @@ wifi = ["wifi"]
  glances = "glances:main"
  
  [tool.setuptools.data-files]
