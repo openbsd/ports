@@ -1,6 +1,6 @@
 COMMENT=	handy routines for dealing with text
 
-MODPY_DISTV=	4.2.0
+MODPY_DISTV=	4.3.0
 DISTNAME=	jaraco_text-${MODPY_DISTV}
 PKGNAME=	py-jaraco.text-${MODPY_DISTV}
 
