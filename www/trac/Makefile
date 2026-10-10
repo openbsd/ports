@@ -4,8 +4,7 @@ MODPY_DISTV=	1.6.1.dev0
 PORTROACH=	limitw:1,even
 #DISTNAME=	Trac-${MODPY_DISTV:S/post/.post/}
 #PKGNAME=	trac-${MODPY_DISTV:S/post/pl/}
-DISTNAME=	trac-1.6pl17925
-REVISION=	1
+DISTNAME=	trac-1.6pl17978
 CATEGORIES=	www devel
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -22,9 +21,11 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 
 COMMON_DEPS=	devel/py-babel \
-		sysutils/py-standard-pkg-resources \
 		textproc/py-MarkupSafe \
 		www/py-jinja2
+
+# removal targeted for 1.6.2: https://trac.edgewall.org/ticket/13606
+COMMON_DEPS+=	sysutils/py-standard-pkg-resources
 
 RUN_DEPENDS=	${COMMON_DEPS} \
 		devel/subversion,-python \
