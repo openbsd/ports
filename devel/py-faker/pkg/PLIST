@@ -744,6 +744,11 @@ lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_AR/__init__.py
 lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_AR/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_AR/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_AR/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_CO/
+lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_CO/__init__.py
+lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_CO/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_CO/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_CO/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_ES/
 lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_ES/__init__.py
 lib/python${MODPY_VERSION}/site-packages/faker/providers/bank/es_ES/${MODPY_PYCACHE}/
@@ -1942,6 +1947,11 @@ lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_CL/__init__
 lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_CL/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_CL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_CL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_CO/
+lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_CO/__init__.py
+lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_CO/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_CO/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_CO/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_ES/
 lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_ES/__init__.py
 lib/python${MODPY_VERSION}/site-packages/faker/providers/internet/es_ES/${MODPY_PYCACHE}/

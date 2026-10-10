@@ -1,6 +1,6 @@
 COMMENT =		generate fake data (name, address, job title, email, etc)
 
-MODPY_DISTV =		40.38.0
+MODPY_DISTV =		40.43.0
 
 DISTNAME =		faker-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
