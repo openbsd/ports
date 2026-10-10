@@ -1,10 +1,10 @@
 COMMENT=	tool to measure maximum achievable bandwidth on IP networks
 
-V=		3.20
+V=		3.22
 DISTNAME=	iperf-${V}
 PKGNAME=	iperf3-${V}
 
-SHARED_LIBS +=	iperf                6.0      # 0.0
+SHARED_LIBS +=	iperf                7.0      # unknown
 
 CATEGORIES=	net
 
@@ -23,6 +23,7 @@ SITES=		https://downloads.es.net/pub/iperf/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 --with-openssl=no
+FAKE_FLAGS=	LDCONFIG=:
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
