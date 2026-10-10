@@ -17,7 +17,6 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis-${MODPY_DISTV}.dist-info/WHE
 lib/python${MODPY_VERSION}/site-packages/hypothesis-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/hypothesis-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/hypothesis-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/hypothesis-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/hypothesis/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hypothesis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -46,6 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis/${MODPY_PYCACHE}statistics.$
 lib/python${MODPY_VERSION}/site-packages/hypothesis/${MODPY_PYCACHE}statistics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hypothesis/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/hypothesis/_native.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/hypothesis/_settings.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/configuration.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/control.py
@@ -123,8 +123,6 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}__i
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}cathetus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}cathetus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}charmap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}charmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -155,10 +153,11 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}ref
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}reflection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}scrutineer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}scrutineer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}statistics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}statistics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}validation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/${MODPY_PYCACHE}validation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/cache.py
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/cathetus.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/charmap.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/compat.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/
@@ -193,14 +192,6 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/choice.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/data.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/datatree.py
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/dfa/
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/dfa/__init__.py
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/dfa/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/dfa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/dfa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/dfa/${MODPY_PYCACHE}lstar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/dfa/${MODPY_PYCACHE}lstar.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/dfa/lstar.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/engine.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/floats.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/conjecture/junkdrawer.py
@@ -252,6 +243,7 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/lambda_sources.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/observability.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/reflection.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/scrutineer.py
+lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/statistics.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/internal/validation.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/provisional.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/py.typed
@@ -335,6 +327,8 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}conventions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}conventions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}deprecation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}deprecation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}dynamicvariables.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}dynamicvariables.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}terminal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -342,6 +336,7 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}termin
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}threading.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/${MODPY_PYCACHE}threading.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/conventions.py
+lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/deprecation.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/dynamicvariables.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/terminal.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/utils/threading.py
@@ -352,6 +347,7 @@ lib/python${MODPY_VERSION}/site-packages/hypothesis/vendor/${MODPY_PYCACHE}__ini
 lib/python${MODPY_VERSION}/site-packages/hypothesis/vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hypothesis/vendor/${MODPY_PYCACHE}pretty.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hypothesis/vendor/${MODPY_PYCACHE}pretty.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hypothesis/vendor/leap-seconds.txt
 lib/python${MODPY_VERSION}/site-packages/hypothesis/vendor/pretty.py
 lib/python${MODPY_VERSION}/site-packages/hypothesis/vendor/tlds-alpha-by-domain.txt
 lib/python${MODPY_VERSION}/site-packages/hypothesis/version.py
