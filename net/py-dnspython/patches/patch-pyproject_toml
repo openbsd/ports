@@ -1,0 +1,22 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+-requires = ["uv_build>=0.9.21,<0.13.0"]
+-build-backend = "uv_build"
++requires = ["hatchling>=1.21.0"]
++build-backend = "hatchling.build"
+ 
+ [project]
+ name = "dnspython"
+@@ -61,6 +61,9 @@ homepage = "https://www.dnspython.org"
+ repository = "https://github.com/rthalley/dnspython.git"
+ documentation = "https://dnspython.readthedocs.io/en/stable/"
+ issues = "https://github.com/rthalley/dnspython/issues"
++
++[tool.hatch.build.targets.wheel]
++include = ["dns/*.py", "dns/**/*.py", "dns/py.typed"]
+ 
+ [tool.uv.build-backend]
+ module-name = "dns"
