@@ -1,6 +1,6 @@
 COMMENT=	manage your versions by vcs metadata
 
-MODPY_DISTV=	2.5.0
+MODPY_DISTV=	2.6.0
 DISTNAME=	vcs_versioning-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 CATEGORIES=	devel
