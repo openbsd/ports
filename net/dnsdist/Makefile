@@ -1,6 +1,7 @@
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
 DISTNAME=		dnsdist-2.1.2
+REVISION=		0
 EXTRACT_SUFX=		.tar.xz
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
@@ -44,9 +45,10 @@ CONFIGURE_ARGS+=	-Dlua=luajit
 LIB_DEPENDS+=		lang/luajit
 WANTLIB+=		luajit-5.1
 .else
-CONFIGURE_ARGS+=	-Dlua=lua
 MODULES+=		lang/lua
+MODLUA_SA=		Yes
 MODLUA_VERSION=		5.3
+CONFIGURE_ARGS+=	-Dlua=lua${MODLUA_VERSION}
 LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS}
 WANTLIB+=		${MODLUA_WANTLIB}
 .endif
@@ -72,19 +74,14 @@ CONFIGURE_ARGS+=	-Dcdb=enabled \
 
 BUILD_DEPENDS=		devel/boost \
 			textproc/py-yaml
-LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
-			databases/lmdb \
+LIB_DEPENDS+=		databases/lmdb \
 			databases/tinycdb \
 			net/libfstrm \
 			security/libsodium \
 			textproc/re2 \
 			www/nghttp2
 
-
 .if ${FLAVOR:L:Mh3}
-
-# Lua module overrides FULLPKGNAME
-FULLPKGNAME=		${PKGNAME}-${FLAVOR}
 CONFIGURE_ARGS+=	-Dtls-libssl-dir="${LOCALBASE}/eboringssl" \
 			-Dlibcrypto-path="${LOCALBASE}/eboringssl" \
 			-Dcpp_args=-DDISABLE_OCSP_STAPLING \
