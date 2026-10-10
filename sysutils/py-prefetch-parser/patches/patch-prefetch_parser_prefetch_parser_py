@@ -1,0 +1,17 @@
+Index: prefetch_parser/prefetch_parser.py
+--- prefetch_parser/prefetch_parser.py.orig
++++ prefetch_parser/prefetch_parser.py
+@@ -43,10 +43,12 @@ def prefetch2json(filepath: str) -> dict:
+     p.close()
+ 
+     return result
+-    
+ 
+ 
+ if __name__ == '__main__':
++    entry_point()
++
++def entry_point():
+     parser = argparse.ArgumentParser()
+     parser.add_argument("-f", "--prefetchfile", type=Path, help="Windows Prefetch file.", required=True)
+     parser.add_argument("-o", "--jsonfile", type=Path, help="Output json file path. '-' will print command output on terminal.")
