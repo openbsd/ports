@@ -15,6 +15,8 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	hatchling
 
+BUILD_DEPENDS =	devel/py-hatch-vcs
+
 TEST_DEPENDS =	devel/py-test-xdist \
 		devel/py-coverage
 
