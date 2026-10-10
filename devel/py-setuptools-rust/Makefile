@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS=	${RUST_ARCHS}
 
 COMMENT=	setuptools Rust extension plugin
 
-MODPY_DISTV=	1.12.1
+MODPY_DISTV=	1.13.0
 DISTNAME=	setuptools_rust-${MODPY_DISTV}
 PKGNAME=	py-setuptools-rust-${MODPY_DISTV}
 
