@@ -8,7 +8,6 @@
      SUBDIR += aide
      SUBDIR += aircrack-ng
      SUBDIR += amap
-     SUBDIR += angrop
      SUBDIR += apg
      SUBDIR += argon2
      SUBDIR += arirang

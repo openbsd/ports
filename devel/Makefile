@@ -9,7 +9,6 @@
      SUBDIR += ald
      SUBDIR += alex
      SUBDIR += aml
-     SUBDIR += angr
      SUBDIR += apache-ant
      SUBDIR += apktool
      SUBDIR += appstream
