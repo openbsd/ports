@@ -82,14 +82,20 @@ lib/python${MODPY_VERSION}/site-packages/greenlet/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_c_stack_refs_suspended_gc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_c_stack_refs_suspended_gc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_clearing_run_switches.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_clearing_run_switches.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_cpp_exception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_cpp_exception.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_initialstub_already_started.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_initialstub_already_started.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_issue_515_freethread_gc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_issue_515_freethread_gc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_slp_switch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_slp_switch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_critical_section.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_critical_section.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_three_greenlets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_three_greenlets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_three_greenlets2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -132,10 +138,13 @@ lib/python${MODPY_VERSION}/site-packages/greenlet/tests/_test_extension.c
 @so lib/python${MODPY_VERSION}/site-packages/greenlet/tests/_test_extension.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/_test_extension_cpp.cpp
 @so lib/python${MODPY_VERSION}/site-packages/greenlet/tests/_test_extension_cpp.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_c_stack_refs_suspended_gc.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_clearing_run_switches.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_cpp_exception.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_initialstub_already_started.py
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_issue_515_freethread_gc.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_slp_switch.py
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_switch_critical_section.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_switch_three_greenlets.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_switch_three_greenlets2.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_switch_two_greenlets.py
