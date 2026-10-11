@@ -1,0 +1,2 @@
+Simple, modern and high performance file watching and code reload in python.
+Underlying file system notifications are handled by the Notify rust library.
