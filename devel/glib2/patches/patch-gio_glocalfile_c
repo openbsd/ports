@@ -6,7 +6,7 @@ Subject: [PATCH] glocalfile: Honour x-gvfs-trash/x-gvfs-notrash from fstab mount
 Index: gio/glocalfile.c
 --- gio/glocalfile.c.orig
 +++ gio/glocalfile.c
-@@ -1847,33 +1847,66 @@ try_make_relative (const char *path, 
+@@ -1902,33 +1902,66 @@ try_make_relative (const char *path, 
  static gboolean
  ignore_trash_mount (GUnixMountEntry *mount)
  {
