@@ -3,7 +3,7 @@ COMMENT=	simple RADIUS client library
 SHARED_LIBS +=	radcli               3.1      # 10.2.0
 SHARED_LIBS +=	radcli2              0.0      # 1.0.0
 
-V=		2.0.0
+V=		2.0.1
 DISTNAME=	radcli-$V
 EXTRACT_SUFX=	.tar.xz
 
