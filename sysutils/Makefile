@@ -368,6 +368,7 @@
      SUBDIR += py-vmomi
      SUBDIR += py-vsphere-automation
      SUBDIR += py-watchdog
+     SUBDIR += py-watchfiles
      SUBDIR += py-xxhash
      SUBDIR += py-zabbix-api
      SUBDIR += radiusreport
