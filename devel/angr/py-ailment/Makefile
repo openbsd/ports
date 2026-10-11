@@ -9,4 +9,6 @@ ANGR_PYTHON_MODULE =	ailment
 # dependency; so skip it here.
 RUN_DEPENDS =		devel/angr/py-pyvex>=${MODPY_DISTV}
 
+TEST_DEPENDS =		devel/angr/py-archinfo
+
 .include <bsd.port.mk>
