@@ -1,3 +1,5 @@
+BROKEN=		needs fixing for pytest 8.1+
+
 COMMENT=	py.test plugin to check FLAKE8 requirements
 
 DISTNAME=	pytest_flake8-${MODPY_DISTV}
