@@ -1,10 +1,14 @@
 COMMENT =	python svg graph plotting library
 
 MODPY_DISTV =	3.1.3
+REVISION =	0
 DISTNAME =	pygal-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	graphics
+
+# https://github.com/Kozea/pygal
+HOMEPAGE =	https://www.pygal.org/
 
 # LGPLv3+
 PERMIT_PACKAGE=	Yes
@@ -15,7 +19,8 @@ MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS +=	devel/py-test-runner
 
-RUN_DEPENDS +=		textproc/py-lxml
+RUN_DEPENDS +=		devel/py-importlib-metadata \
+			textproc/py-lxml
 
 TEST_DEPENDS +=		www/py-flask \
 			textproc/py-lxml \
