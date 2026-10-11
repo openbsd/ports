@@ -1,11 +1,11 @@
 COMMENT=		low-footprint RDF triple store with SPARQL 1.1 interface
 
 GNOME_PROJECT=		tinysparql
-GNOME_VERSION=		3.11.1
+GNOME_VERSION=		3.12.0
 
-SHARED_LIBS += tinysparql-3.0            1.1 # 0.1101.0
+SHARED_LIBS += tinysparql-3.0            1.1 # 0.1200.0
 # symlink to tinysparql-3.0.so
-SHARED_LIBS += tracker-sparql-3.0        1.1 # 0.1101.0
+SHARED_LIBS += tracker-sparql-3.0        1.1 # 0.1200.0
 
 # LGPLv2.1+ - GPLv2+ - BSD-3-clause
 PERMIT_PACKAGE=		Yes
