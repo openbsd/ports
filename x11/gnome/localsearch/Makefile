@@ -1,7 +1,7 @@
 COMMENT=		collection of data extractors for Tracker/Nepomuk
 
 GNOME_PROJECT=		localsearch
-GNOME_VERSION=		3.11.2
+GNOME_VERSION=		3.12.0
 
 # LGPLv2.1+ - GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -10,11 +10,11 @@ PERMIT_PACKAGE=		Yes
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
-WANTLIB += avformat c cue exempi gexiv2-0.16 gif gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gsf-1 gstreamer-1.0 gsttag-1.0 gupnp-dlna-2.0
-WANTLIB += gxps icui18n intl jpeg kvm m osinfo-1.0 png poppler-glib
-WANTLIB += tiff tinysparql-3.0 totem-plparser upower-glib webpdemux
-WANTLIB += xml2 zip
+WANTLIB += ${COMPILER_LIBCXX} c cue exempi gexiv2-0.16 gif gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 gstreamer-1.0
+WANTLIB += gsttag-1.0 gupnp-dlna-2.0 gxps icui18n intl jpeg m
+WANTLIB += mediainfo osinfo-1.0 png poppler-glib tiff tinysparql-3.0
+WANTLIB += totem-plparser upower-glib webpdemux xml2 zip
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -30,12 +30,12 @@ BUILD_DEPENDS +=	sysutils/coreutils
 LIB_DEPENDS=		archivers/libzip \
 			audio/libcue \
 			devel/libgsf \
-			graphics/ffmpeg \
 			graphics/giflib \
 			graphics/gexiv2 \
 			graphics/libgxps \
 			graphics/libwebp \
 			misc/osinfo/libosinfo \
+			multimedia/libmediainfo \
 			net/gupnp/dlna \
 			print/poppler \
 			sysutils/upower \
