@@ -1,0 +1,14 @@
+Index: scripts/install.sh
+--- scripts/install.sh.orig
++++ scripts/install.sh
+@@ -125,8 +125,8 @@ trap - EXIT
+ 
+ # man page
+ if [ -f "$REPO_ROOT/man/bear.1" ]; then
+-    mkdir -p "$DESTDIR$PREFIX/share/man/man1"
+-    install -m 644 "$REPO_ROOT/man/bear.1" "$DESTDIR$PREFIX/share/man/man1/bear.1"
++    mkdir -p "$DESTDIR$PREFIX/man/man1"
++    install -m 644 "$REPO_ROOT/man/bear.1" "$DESTDIR$PREFIX/man/man1/bear.1"
+ fi
+ 
+ # documentation
