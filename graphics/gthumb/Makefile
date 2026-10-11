@@ -1,3 +1,6 @@
+# needs newer librsvg
+ONLY_FOR_ARCHS=	${RUST_ARCHS}
+
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
