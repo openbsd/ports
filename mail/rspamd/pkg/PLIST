@@ -321,6 +321,7 @@ share/rspamd/lualib/lua_content/pptx.lua
 share/rspamd/lualib/lua_content/svg.lua
 share/rspamd/lualib/lua_content/vcard.lua
 share/rspamd/lualib/lua_content/xlsx.lua
+share/rspamd/lualib/lua_crypto_addresses.lua
 share/rspamd/lualib/lua_cta.lua
 share/rspamd/lualib/lua_dkim_tools.lua
 share/rspamd/lualib/lua_extras.lua
@@ -395,6 +396,7 @@ share/rspamd/lualib/lua_verdict.lua
 share/rspamd/lualib/lupa.lua
 share/rspamd/lualib/plugins/
 share/rspamd/lualib/plugins/dmarc.lua
+share/rspamd/lualib/plugins/metadata_exporter.lua
 share/rspamd/lualib/plugins/neural/
 share/rspamd/lualib/plugins/neural.lua
 share/rspamd/lualib/plugins/neural/providers/
@@ -511,7 +513,6 @@ share/rspamd/plugins/url_suspect.lua
 share/rspamd/plugins/whitelist.lua
 share/rspamd/rules/
 share/rspamd/rules/archives.lua
-share/rspamd/rules/bitcoin.lua
 share/rspamd/rules/bounce.lua
 share/rspamd/rules/content.lua
 share/rspamd/rules/controller/
@@ -520,6 +521,7 @@ share/rspamd/rules/controller/init.lua
 share/rspamd/rules/controller/maps.lua
 share/rspamd/rules/controller/neural.lua
 share/rspamd/rules/controller/selectors.lua
+share/rspamd/rules/crypto.lua
 share/rspamd/rules/forwarding.lua
 share/rspamd/rules/fuzzy_html_phishing.lua
 share/rspamd/rules/headers_checks.lua
