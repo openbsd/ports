@@ -1,9 +1,8 @@
 COMMENT=	high speed universal character encoding detector
 
-MODPY_DISTV=	2.1.7
+MODPY_DISTV=	2.4.0
 DISTNAME=	cchardet-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	5
 
 CATEGORIES=	textproc
 
@@ -21,6 +20,9 @@ COMPILER_LANGS=	c c++
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
+# needs chardet.evaluation (currently holding chardet at 5.x)
+MODPY_PYTEST_IGNORE= tests/test_accuracy.py
+# some tests in tests/test_1.py need txt files not in sdist
 
 BUILD_DEPENDS=	lang/cython
 
