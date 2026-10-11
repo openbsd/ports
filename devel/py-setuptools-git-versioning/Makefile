@@ -1,6 +1,6 @@
 COMMENT=	use git repo data to build a version number
 
-MODPY_DISTV=	3.0.1
+MODPY_DISTV=	3.2.0
 DISTNAME=	setuptools_git_versioning-${MODPY_DISTV}
 PKGNAME=	py-setuptools-git-versioning-${MODPY_DISTV}
 
