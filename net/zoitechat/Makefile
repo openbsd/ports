@@ -1,6 +1,6 @@
 COMMENT =		GTK+ IRC Client
-PSL_COMMIT =		d91e55ea128af6218897d3b3723b28af7138c3d6
-DIST_TUPLE +=		github ZoiteChat zoitechat v2.19.0 .
+PSL_COMMIT =		3955e3ec29b94c3cca7bd4509c5f14a7c0959e26
+DIST_TUPLE +=		github ZoiteChat zoitechat v2.19.1 .
 DIST_TUPLE +=		github publicsuffix list ${PSL_COMMIT} \
 			src/common/publicsuffix
 CATEGORIES =		net x11

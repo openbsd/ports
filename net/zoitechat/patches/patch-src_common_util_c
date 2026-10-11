@@ -1,0 +1,24 @@
+warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+ 1463 |         digest = HMAC (EVP_sha256 (), keyhash, strlen (keyhash), (unsigned char *) challenge, strlen (challenge), NULL, NULL);
+
+Index: src/common/util.c
+--- src/common/util.c.orig
++++ src/common/util.c
+@@ -1444,7 +1444,7 @@ challengeauth_response (const char *username, const ch
+ 	char *passhash;
+ 	char *key;
+ 	char *keyhash;
+-	unsigned char *digest;
++	unsigned char digest[SHA256_DIGEST_LENGTH];
+ 	GString *buf = g_string_new_len (NULL, SHA256_DIGEST_LENGTH * 2);
+ 
+ 	user = rfc_strlower (username); /* convert username to lowercase as per the RFC */
+@@ -1460,7 +1460,7 @@ challengeauth_response (const char *username, const ch
+ 	keyhash = str_sha256hash (key);
+ 	g_free (key);
+ 
+-	digest = HMAC (EVP_sha256 (), keyhash, strlen (keyhash), (unsigned char *) challenge, strlen (challenge), NULL, NULL);
++	HMAC (EVP_sha256 (), keyhash, strlen (keyhash), (unsigned char *) challenge, strlen (challenge), digest, NULL);
+ 	g_free (keyhash);
+ 
+ 	for (i = 0; i < SHA256_DIGEST_LENGTH; i++)
