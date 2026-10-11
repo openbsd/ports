@@ -18,8 +18,6 @@ lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}__main
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}csv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}csv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}fixture.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +41,6 @@ lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}timers
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/cli.py
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/compat.py
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/csv.py
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/fixture.py
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/histogram.py

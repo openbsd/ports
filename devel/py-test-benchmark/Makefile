@@ -1,11 +1,12 @@
 COMMENT=	pytest fixture for benchmarking code
 
-MODPY_DISTV=	5.2.3
+MODPY_DISTV=	5.3.0
 DISTNAME=	pytest_benchmark-${MODPY_DISTV}
 PKGNAME=	py-test-benchmark-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	0
 
+# https://github.com/ionelmc/pytest-benchmark
+# https://pytest-benchmark.readthedocs.io/en/stable/changelog.html
 HOMEPAGE=	https://pytest-benchmark.readthedocs.io/en/stable/
 
 # BSD
