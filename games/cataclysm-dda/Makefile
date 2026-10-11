@@ -2,9 +2,8 @@ COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
 
 V=			0.I
-DIST_TUPLE+=		github CleverRaven Cataclysm-DDA ${V} .
-PKGNAME=		cataclysm-dda-${V:S/-RELEASE//}
-REVISION=		0
+DIST_TUPLE+=		github CleverRaven Cataclysm-DDA ${V}-1 .
+PKGNAME=		cataclysm-dda-${V:S/-RELEASE//}.1
 
 HOMEPAGE=		https://cataclysmdda.org
 MAINTAINER=		Kirill Bychkov <kirby@openbsd.org>
