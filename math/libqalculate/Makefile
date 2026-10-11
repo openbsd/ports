@@ -1,11 +1,10 @@
 COMMENT =	applied math library and CLI calculator
 CATEGORIES =	math devel
-REVISION =	1
 
-V =		5.8.0
+V =		5.13.1
 DISTNAME =	libqalculate-$V
 
-SHARED_LIBS +=  qalculate            10.0
+SHARED_LIBS +=  qalculate            11.0
 
 SITES =		https://github.com/Qalculate/libqalculate/releases/download/v$V/
 HOMEPAGE =	https://qalculate.github.io/
@@ -29,7 +28,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		textproc/libxml
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.72
+AUTOCONF_VERSION =	2.73
 USE_GMAKE =		Yes
 PORTHOME =		${WRKDIR}
 
