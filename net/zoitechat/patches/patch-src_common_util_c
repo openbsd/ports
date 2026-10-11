@@ -1,6 +1,8 @@
 warning: null passed to a callee that requires a non-null argument [-Wnonnull]
  1463 |         digest = HMAC (EVP_sha256 (), keyhash, strlen (keyhash), (unsigned char *) challenge, strlen (challenge), NULL, NULL);
 
+https://github.com/ZoiteChat/zoitechat/pull/417
+
 Index: src/common/util.c
 --- src/common/util.c.orig
 +++ src/common/util.c
