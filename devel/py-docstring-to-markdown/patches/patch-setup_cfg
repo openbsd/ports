@@ -1,0 +1,13 @@
+disable pytest-flake8, fails with pytest 8.1
+
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -50,7 +50,6 @@ addopts = 
+ 	--cov-fail-under=100
+ 	--cov-report term-missing:skip-covered
+ 	-p no:warnings
+-	--flake8
+ 	-vv
+ 
+ [coverage:report]
