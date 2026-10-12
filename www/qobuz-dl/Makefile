@@ -1,6 +1,6 @@
 COMMENT =		music downloader for Qobuz
 
-MODPY_DISTV =		2.5.0
+MODPY_DISTV =		2.5.9
 
 DISTNAME =		qobuz_dl_ultimate-${MODPY_DISTV}
 PKGNAME=		qobuz-dl-${MODPY_DISTV}
@@ -27,6 +27,7 @@ RUN_DEPENDS =		audio/py-mutagen \
 			graphics/ffmpeg \
 			security/py-cryptography \
 			security/py-keyring \
+			textproc/py-defusedxml \
 			www/py-beautifulsoup4 \
 			www/py-requests
 
