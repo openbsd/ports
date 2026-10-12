@@ -1,6 +1,6 @@
 COMMENT =		Lua code formatter
 
-V =			2.5.2
+V =			2.6.0
 DIST_TUPLE +=		github JohnnyMorganz StyLua v${V} .
 DISTNAME =		stylua-${V}
 
