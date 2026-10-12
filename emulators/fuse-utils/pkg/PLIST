@@ -2,6 +2,7 @@
 @bin bin/createhdf
 @bin bin/fmfconv
 @bin bin/listbasic
+@bin bin/mdrlist
 @bin bin/profile2map
 @bin bin/raw2hdf
 @bin bin/rzxcheck
@@ -20,6 +21,7 @@
 @man man/man1/fmfconv.1
 @man man/man1/fuse-utils.1
 @man man/man1/listbasic.1
+@man man/man1/mdrlist.1
 @man man/man1/profile2map.1
 @man man/man1/raw2hdf.1
 @man man/man1/rzxcheck.1
