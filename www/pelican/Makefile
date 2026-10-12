@@ -1,42 +1,42 @@
 COMMENT =		static site generator written in Python
 
-MODPY_DISTV =	${GH_TAGNAME}
-DISTNAME =		pelican-${MODPY_DISTV}
-REVISION =		4
-
+MODPY_DISTV =		4.12.0
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican
-GH_TAGNAME =		4.7.2
+GH_TAGNAME =		${MODPY_DISTV}
 
 CATEGORIES =		www
 
+# https://github.com/getpelican/pelican
 HOMEPAGE =		https://blog.getpelican.com/
+
 MAINTAINER =		David Demelier <markand@malikania.fr>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		pdm
 
 RUN_DEPENDS =		devel/py-blinker \
+			textproc/py-docutils \
+			www/py-feedgenerator \
+			www/py-jinja2 \
+			devel/py-ordered-set \
+			textproc/py-pygments \
 			devel/py-dateutil \
 			devel/py-rich \
-			devel/py-tz \
-			textproc/py-markdown \
-			textproc/py-docutils \
-			textproc/py-pygments \
 			textproc/py-unidecode \
-			www/py-feedgenerator \
-			www/py-jinja2
-
-# Else setuptools skips filenames containing UTF8 chars
-MAKE_ENV +=		LC_CTYPE=en_US.UTF-8
+			sysutils/py-watchfiles
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/git
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/pelican/tests/test_pelican.py
+			devel/git \
+			devel/py-test-cov \
+			devel/py-test-xdist \
+			textproc/py-markdown \
+			www/py-beautifulsoup4 \
+			textproc/py-lxml \
+			textproc/py-typogrify
 
 .include <bsd.port.mk>
+
