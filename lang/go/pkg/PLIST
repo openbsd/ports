@@ -821,6 +821,13 @@ go/src/cmd/cgo/internal/testplugin/testdata/issue67976/plugin.go
 go/src/cmd/cgo/internal/testplugin/testdata/issue75102/
 go/src/cmd/cgo/internal/testplugin/testdata/issue75102/main.go
 go/src/cmd/cgo/internal/testplugin/testdata/issue75102/plugin.go
+go/src/cmd/cgo/internal/testplugin/testdata/issue81303/
+go/src/cmd/cgo/internal/testplugin/testdata/issue81303/main.go
+go/src/cmd/cgo/internal/testplugin/testdata/issue81303/p/
+go/src/cmd/cgo/internal/testplugin/testdata/issue81303/p/p.go
+go/src/cmd/cgo/internal/testplugin/testdata/issue81303/plugin1.go
+go/src/cmd/cgo/internal/testplugin/testdata/issue81303/plugin2.go
+go/src/cmd/cgo/internal/testplugin/testdata/issue81303/plugin3.go
 go/src/cmd/cgo/internal/testplugin/testdata/mangle/
 go/src/cmd/cgo/internal/testplugin/testdata/mangle/plugin.go
 go/src/cmd/cgo/internal/testplugin/testdata/method/
@@ -1654,6 +1661,7 @@ go/src/cmd/compile/internal/test/issue53888_test.go
 go/src/cmd/compile/internal/test/issue57434_test.go
 go/src/cmd/compile/internal/test/issue62407_test.go
 go/src/cmd/compile/internal/test/issue71943_test.go
+go/src/cmd/compile/internal/test/issue_81478_test.go
 go/src/cmd/compile/internal/test/lang_test.go
 go/src/cmd/compile/internal/test/locals_test.go
 go/src/cmd/compile/internal/test/logic_test.go
@@ -2212,6 +2220,7 @@ go/src/cmd/go/internal/modfetch/codehost/vcs.go
 go/src/cmd/go/internal/modfetch/coderepo.go
 go/src/cmd/go/internal/modfetch/coderepo_test.go
 go/src/cmd/go/internal/modfetch/fetch.go
+go/src/cmd/go/internal/modfetch/fetch_test.go
 go/src/cmd/go/internal/modfetch/key.go
 go/src/cmd/go/internal/modfetch/proxy.go
 go/src/cmd/go/internal/modfetch/repo.go
@@ -2842,6 +2851,7 @@ go/src/cmd/go/testdata/script/env_write.txt
 go/src/cmd/go/testdata/script/fileline.txt
 go/src/cmd/go/testdata/script/fips.txt
 go/src/cmd/go/testdata/script/fipssnap.txt
+go/src/cmd/go/testdata/script/fipssnap_modcache.txt
 go/src/cmd/go/testdata/script/fix_diff_exitcode.txt
 go/src/cmd/go/testdata/script/fix_suite.txt
 go/src/cmd/go/testdata/script/fix_vendor.txt
@@ -2894,6 +2904,7 @@ go/src/cmd/go/testdata/script/gotoolchain_loop.txt
 go/src/cmd/go/testdata/script/gotoolchain_modcmds.txt
 go/src/cmd/go/testdata/script/gotoolchain_net.txt
 go/src/cmd/go/testdata/script/gotoolchain_path.txt
+go/src/cmd/go/testdata/script/gotoolchain_switch_gosum.txt
 go/src/cmd/go/testdata/script/gotoolchain_version.txt
 go/src/cmd/go/testdata/script/gotoolchain_work_issue76728.txt
 go/src/cmd/go/testdata/script/govcs.txt
@@ -3038,6 +3049,7 @@ go/src/cmd/go/testdata/script/mod_download_private_vcs.txt
 go/src/cmd/go/testdata/script/mod_download_replace_file.txt
 go/src/cmd/go/testdata/script/mod_download_svn.txt
 go/src/cmd/go/testdata/script/mod_download_too_many_redirects.txt
+go/src/cmd/go/testdata/script/mod_download_toolchain_gosum.txt
 go/src/cmd/go/testdata/script/mod_e.txt
 go/src/cmd/go/testdata/script/mod_edit.txt
 go/src/cmd/go/testdata/script/mod_edit_go.txt
@@ -3403,6 +3415,7 @@ go/src/cmd/go/testdata/script/test_buildinfo_godebug_issue68053.txt
 go/src/cmd/go/testdata/script/test_buildvcs.txt
 go/src/cmd/go/testdata/script/test_cache_coverpkg_bug.txt
 go/src/cmd/go/testdata/script/test_cache_coverpkg_no_profile.txt
+go/src/cmd/go/testdata/script/test_chatty_ascii.txt
 go/src/cmd/go/testdata/script/test_chatty_fail.txt
 go/src/cmd/go/testdata/script/test_chatty_parallel_fail.txt
 go/src/cmd/go/testdata/script/test_chatty_parallel_success.txt
@@ -6023,6 +6036,7 @@ go/src/crypto/internal/fips140/mldsa/mldsa_test.go
 go/src/crypto/internal/fips140/mldsa/semiexpanded.go
 go/src/crypto/internal/fips140/mlkem/
 go/src/crypto/internal/fips140/mlkem/cast.go
+go/src/crypto/internal/fips140/mlkem/cast_test.go
 go/src/crypto/internal/fips140/mlkem/field.go
 go/src/crypto/internal/fips140/mlkem/field_test.go
 go/src/crypto/internal/fips140/mlkem/generate1024.go
@@ -10393,6 +10407,7 @@ go/src/net/http/header.go
 go/src/net/http/header_test.go
 go/src/net/http/http.go
 go/src/net/http/http1_server_test.go
+go/src/net/http/http1_transport_test.go
 go/src/net/http/http2.go
 go/src/net/http/http_test.go
 go/src/net/http/httptest/
@@ -16361,12 +16376,17 @@ go/test/fixedbugs/issue8074.go
 go/test/fixedbugs/issue8076.go
 go/test/fixedbugs/issue8079.go
 go/test/fixedbugs/issue80976.go
+go/test/fixedbugs/issue81089.go
 go/test/fixedbugs/issue81165.go
+go/test/fixedbugs/issue81240.go
+go/test/fixedbugs/issue81242.go
 go/test/fixedbugs/issue8132.go
 go/test/fixedbugs/issue8139.go
 go/test/fixedbugs/issue8154.go
 go/test/fixedbugs/issue8155.go
 go/test/fixedbugs/issue8158.go
+go/test/fixedbugs/issue81612.go
+go/test/fixedbugs/issue81687.go
 go/test/fixedbugs/issue8183.go
 go/test/fixedbugs/issue8280.dir/
 go/test/fixedbugs/issue8280.dir/a.go
