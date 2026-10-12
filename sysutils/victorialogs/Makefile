@@ -1,8 +1,8 @@
 COMMENT =		fast and easy-to-use, open source logs solution
 
-V =			1.23.3
+V =			1.53.0
 
-DIST_TUPLE +=		github VictoriaMetrics VictoriaMetrics v${V}-victorialogs . # Apache License 2.0
+DIST_TUPLE +=		github VictoriaMetrics VictoriaLogs v${V} . # Apache License 2.0
 
 PKGNAME =		victorialogs-${V}
 
@@ -32,10 +32,11 @@ MAKE_ENV +=		BUILDINFO_TAG=tags-v${V} \
 ALL_TARGET =		github.com/VictoriaMetrics/VictoriaMetrics
 
 do-build:
-	cd ${WRKSRC} && GOOS=openbsd ${MAKE_ENV} ${MAKE_PROGRAM} victoria-logs-pure vlogscli-pure
+	cd ${WRKSRC} && GOOS=openbsd ${MAKE_ENV} ${MAKE_PROGRAM} victoria-logs-pure vlogscli-pure vlagent-pure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/victoria-logs-pure ${PREFIX}/bin/victoria-logs
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/vlogscli-pure ${PREFIX}/bin/vlogscli
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/vlagent-pure ${PREFIX}/bin/vlagent
 
 .include <bsd.port.mk>
