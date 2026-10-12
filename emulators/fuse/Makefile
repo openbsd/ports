@@ -1,5 +1,5 @@
 COMMENT=		Free Unix Spectrum Emulator
-DISTNAME=		fuse-1.9.1
+DISTNAME=		fuse-1.10.0
 CATEGORIES=		emulators
 HOMEPAGE=		https://fuse-emulator.sourceforge.net/
 
