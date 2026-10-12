@@ -6,13 +6,11 @@ COMMENT =		interactive and automated theorem prover
 GH_ACCOUNT =		leanprover-community
 GH_PROJECT =		lean
 GH_TAGNAME =		v3.48.0
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		math lang
 
 HOMEPAGE =		https://leanprover-community.github.io
-
-MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
