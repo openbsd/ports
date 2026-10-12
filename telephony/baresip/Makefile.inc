@@ -5,7 +5,7 @@ CATEGORIES =		telephony
 PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT ?=	baresip
-GH_TAGNAME ?=	v4.11.0
+GH_TAGNAME ?=	v4.12.0
 
 # C11
 COMPILER ?=		base-clang ports-gcc
