@@ -5,7 +5,7 @@ COMMENT =	static site generator
 
 GH_ACCOUNT =	getzola
 GH_PROJECT =	zola
-GH_TAGNAME =	v0.22.1
+GH_TAGNAME =	v0.23.6
 
 HOMEPAGE =	https://www.getzola.org
 
@@ -14,9 +14,10 @@ CATEGORIES =	www
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${MODCARGO_WANTLIB} m onig
+WANTLIB +=	${MODCARGO_WANTLIB} m onig zstd
 
-LIB_DEPENDS +=	textproc/oniguruma
+LIB_DEPENDS +=	archivers/zstd \
+		textproc/oniguruma
 
 MODULES =	devel/cargo
 
