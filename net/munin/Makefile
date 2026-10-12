@@ -5,11 +5,10 @@ COMMENT-server =flexible network host monitoring, server
 
 GH_ACCOUNT =	munin-monitoring
 GH_PROJECT =	munin
-GH_TAGNAME =	2.0.76
+GH_TAGNAME =	2.0.78
 PKGNAME-main =	munin-node-${GH_TAGNAME}
 PKGNAME-server =munin-server-${GH_TAGNAME}
 CATEGORIES =	net
-REVISION =	3
 
 HOMEPAGE =	https://munin-monitoring.org/
 
