@@ -261,7 +261,7 @@ SHA256 (go_modules/modernc.org/strutil/@v/v1.2.1.mod) = hXcXRceFHU6hakG/ae6hVRzs
 SHA256 (go_modules/modernc.org/strutil/@v/v1.2.1.zip) = W4+mHKQUHF/YIYP61Lx6Ra+CN7b7HfymXOeWCgPEg8Q=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.mod) = evOzXO1S6tSw7Q4iEB2VvABh0g4T3Q2aoHFhZKj12xw=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.zip) = Pvqknp+xBWnangnnhfojDNXA9Q/PYF87VDnfzWFXfFg=
-SHA256 (soju-v0.11.0.zip) = CVC1GBqr78Ao7cSkDj0jP1S3hwsuxh+ots4PWgh/yg0=
+SHA256 (soju-v0.11.1.zip) = KGXH5Slo2lMi6HYZWV7jFuKEXrIwYkKduptBQ7K9mzQ=
 SIZE (go_modules/codeberg.org/emersion/go-scfg/@v/v0.1.0.mod) = 89
 SIZE (go_modules/codeberg.org/emersion/go-scfg/@v/v0.1.0.zip) = 12308
 SIZE (go_modules/codeberg.org/emersion/go-sqlite3-fts5/@v/v0.0.0-20260220133449-ece3e19d8830.mod) = 100
@@ -525,4 +525,4 @@ SIZE (go_modules/modernc.org/strutil/@v/v1.2.1.mod) = 162
 SIZE (go_modules/modernc.org/strutil/@v/v1.2.1.zip) = 11900
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.mod) = 25
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.zip) = 6860
-SIZE (soju-v0.11.0.zip) = 234001
+SIZE (soju-v0.11.1.zip) = 234206
