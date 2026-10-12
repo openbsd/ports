@@ -1,6 +1,6 @@
 COMMENT =		forensic toolkit based on TCT
 
-REVISION =		0
+REVISION =		1
 VERSION =		4.15.0
 DISTNAME =		sleuthkit-${VERSION}
 
@@ -99,6 +99,8 @@ CONFIGURE_ARGS += 	--mandir='${PREFIX}/man' \
 CONFIGURE_ENV =		ac_cv_path_CPPUNIT_CONFIG=no \
 			ac_cv_header_postgresql_libpq_fe_h=no
 
+MAKE_ENV +=	ANT_OPTS="-Duser.home=${WRKDIR}"
+
 NO_TEST =		Yes
 SUBST_VARS +=		VERSION
 
@@ -124,6 +126,7 @@ pre-build:
 .for jar in ${DISTFILES.uco}
 	cp ${DISTDIR}/${jar:C/\{.*\}//} ${WRKBUILD}/case-uco/java/lib/
 .endfor
+	mkdir -p ${WRKDIR}/.ant/lib
 
 
 post-install:
