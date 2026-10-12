@@ -8,7 +8,7 @@ STATIC_PLIST =	No
 
 COMMENT=	special helper port to build snappy-java-X.jar for unifi
 
-SNAPPYJ_V=	1.1.10.5
+SNAPPYJ_V=	1.1.10.8
 SNAPPY_V=	1.1.10
 BITSHUFFLE_V=	0.3.4
 
@@ -33,7 +33,7 @@ DISTFILES.mvn=	snappy-java-${SNAPPYJ_V}.jar
 EXTRACT_ONLY=	${ALL_DISTFILES:N*jar}
 
 MODULES=	java
-MODJAVA_VER=	17+
+MODJAVA_VER=	25+
 
 # not MODULES; it is run from a Makefile
 BUILD_DEPENDS=	devel/cmake/core
@@ -42,7 +42,7 @@ USE_GMAKE=	Yes
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
 MAKE_FLAGS=	CXX="${CXX}" CC="${CC}" LINKFLAGS="-shared" \
 		HOME=${WRKDIR} \
-		PATH="${PATH}:${LOCALBASE}/jdk-11/bin"
+		PATH="${PATH}:${JAVA_HOME}/bin"
 ALL_TARGET=	native
 NO_TEST=	Yes
 

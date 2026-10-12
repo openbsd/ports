@@ -2,11 +2,11 @@ SHA256 (google-benchmark-d572f4777349d43653b21d6c2fc63020ab326db2.tar.gz) = VGfK
 SHA256 (google-googletest-b796f7d44681514f58a683a3a71ff17c94edb0c1.tar.gz) = JoHejAkwsGENxSomAvrUHQ2vo9f/EDDaZXXVb8H0ykY=
 SHA256 (google-snappy-1.1.10.tar.gz) = Sdgxv/zF89AUgjQP5a9ZhSyi/nbD4F3w5nID674PHZA=
 SHA256 (kiyo-masui-bitshuffle-0.3.4.tar.gz) = J1pfMpueui5OelQOikIR8BqRmlnytCgpnaaAx/ChXD4=
-SHA256 (snappy-java-1.1.10.5.jar) = Dz8YV+0zEWWD9IC031wCGINsR7+8nGIhwNc/NW3s83s=
-SHA256 (xerial-snappy-java-v1.1.10.5.tar.gz) = 3Ox4yA6rTNKEHLcPkkyxuTRNlEgehMRa27XLjPwcNy8=
+SHA256 (snappy-java-1.1.10.8.jar) = UEhdBgN/6j1uQMloOG/uymM4zJhy4lVJWT/z6zUs78w=
+SHA256 (xerial-snappy-java-v1.1.10.8.tar.gz) = i9UHL9mEmDpXCajqSy6KRFfE8WoTTT2RJ4nTAH9/Fkk=
 SIZE (google-benchmark-d572f4777349d43653b21d6c2fc63020ab326db2.tar.gz) = 196637
 SIZE (google-googletest-b796f7d44681514f58a683a3a71ff17c94edb0c1.tar.gz) = 864010
 SIZE (google-snappy-1.1.10.tar.gz) = 1105312
 SIZE (kiyo-masui-bitshuffle-0.3.4.tar.gz) = 110150
-SIZE (snappy-java-1.1.10.5.jar) = 2299797
-SIZE (xerial-snappy-java-v1.1.10.5.tar.gz) = 3917442
+SIZE (snappy-java-1.1.10.8.jar) = 2445419
+SIZE (xerial-snappy-java-v1.1.10.8.tar.gz) = 4063792
