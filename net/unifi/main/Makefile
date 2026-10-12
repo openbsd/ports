@@ -1,9 +1,8 @@
-# sticking at 10.0; 10.1 adds nags to move to unifi OS, and removes
-# backups from standalone unifi network.
-V=		10.0.162
-REVISION=	0
-SNAPPY_V=	1.1.10.5
-SNAPPY_S=	-jdk17-libc++.12.0
+V=		10.6.106
+SNAPPY_V=	1.1.10.8
+SNAPPY_S=	-jdk25-libc++.13.0
 #BUILD_V=	
+
+MODJAVA_VER=	25
 
 .include <bsd.port.mk>

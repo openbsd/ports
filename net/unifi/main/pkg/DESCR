@@ -1,7 +1,2 @@
 This package contains controller software for Ubiquiti UniFi access
 points, switches, gateways and phones.
-
-This package provides the last 10.0 version before backup functionality
-was removed from the "standalone" version (Ubiquiti are now pushing their
-container-based "unifi os" instead). Updating is not planned unless that
-is restored.
