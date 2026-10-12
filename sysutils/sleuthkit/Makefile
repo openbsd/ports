@@ -1,6 +1,6 @@
 COMMENT =		forensic toolkit based on TCT
 
-REVISION =		1
+REVISION =		2
 VERSION =		4.15.0
 DISTNAME =		sleuthkit-${VERSION}
 
@@ -76,7 +76,8 @@ AUTOMAKE_VERSION =	1.15
 CONFIGURE_STYLE =	autoreconf
 USE_GMAKE =		Yes
 
-BUILD_DEPENDS +=        devel/apache-ant
+BUILD_DEPENDS +=        devel/apache-ant \
+			databases/sqlite-jdbc
 LIB_DEPENDS =	databases/sqlite3 \
 			devel/libbfio \
 			sysutils/afflib3 \
