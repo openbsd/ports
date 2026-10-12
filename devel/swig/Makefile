@@ -1,8 +1,8 @@
 COMMENT =	simplified wrapper and interface generator
 
-SUBST_VARS =	VERSION
+# 4.5 drops the Python 2 API, which causes issues with at least py-pivy 0.6.11
+# (https://github.com/coin3d/pivy/issues/150)
 VERSION =	4.4.1
-
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
 
@@ -17,6 +17,11 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 SITES =		${SITE_SOURCEFORGE:=swig/}
 
+CONFIGURE_STYLE = gnu
+MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/Tools/config
+ALL_TARGET =	swig
+USE_GMAKE =	Yes
+
 MODULES =	lang/python \
 		lang/tcl
 
@@ -28,16 +33,6 @@ BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 
 LIB_DEPENDS =	devel/pcre2
 
-# don't run update-plist after make test
-TEST_DEPENDS =	devel/boost
-
-TEST_FLAGS =	TCLSH=${MODTCL_BIN}
-
-# https://github.com/swig/swig/issues/3296
-TEST_FLAGS +=	ENGINE=_
-
-USE_GMAKE =	Yes
-CONFIGURE_STYLE = gnu
 # We can't configure --with-ruby because of a dependency circle,
 # swig -> ruby (yjit) -> rust -> llvm -> swig.
 CONFIGURE_ARGS += --with-tclincl=${MODTCL_INCDIR} \
@@ -58,16 +53,18 @@ CONFIGURE_ARGS += --with-tclincl=${MODTCL_INCDIR} \
 		 --without-ruby \
 		 --without-scilab
 
-MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/Tools/config
+SUBST_VARS =	VERSION
 
-ALL_TARGET =	swig
-
-SWIG_DOCS =	${PREFIX}/share/doc/swig
-
+# some tests fail in guile_cpp aborting the test run
+TEST_DEPENDS =	devel/boost
+TEST_FLAGS =	TCLSH=${MODTCL_BIN}
 PORTHOME =	${WRKDIR}
 
 post-install:
-	${INSTALL_DATA_DIR} ${SWIG_DOCS}
-	cp -R ${WRKSRC}/Doc/* ${SWIG_DOCS}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/swig
+	cp -R ${WRKSRC}/Doc/* ${PREFIX}/share/doc/swig
+
+post-test:
+	@echo "*** don't run update-plist after make test"
 
 .include <bsd.port.mk>
