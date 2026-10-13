@@ -32,6 +32,8 @@
 #include <login_cap.h>
 #include <bsd_auth.h>
 
+mode_t _permit_setugid = S_ISGID;
+
 static void sighandler(int sig)
 {
 	if (sig > 0)
@@ -62,7 +64,6 @@ int
 main (int argc, const char *argv[]) {
 	char pass[8192];
 	int res, fd;
-	mode_t _permit_setugid = S_ISGID;
 
 	/* Make sure standard file descriptors are connected */
 	while ((fd = open("/dev/null", O_RDWR)) <= 2);
