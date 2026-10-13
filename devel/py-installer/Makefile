@@ -1,11 +1,12 @@
 COMMENT=	low-level library to install Python wheel distributions
 
-MODPY_DISTV=	1.0.1
+MODPY_DISTV=	1.1.0
 DISTNAME=	installer-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	devel
 
+# https://github.com/pypa/installer
 HOMEPAGE=	https://installer.readthedocs.io/en/stable/
 
 # BSD
