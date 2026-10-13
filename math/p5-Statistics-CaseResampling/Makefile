@@ -1,6 +1,7 @@
 COMMENT =	efficient resampling and calculation of medians
 
-DISTNAME =	Statistics-CaseResampling-0.17
+DISTNAME =	Statistics-CaseResampling-0.18
+CPAN_AUTHOR =	SMUELLER
 
 CATEGORIES =	math
 
