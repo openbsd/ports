@@ -10,7 +10,22 @@ Index: bindings/java/build.xml
  	<property name="src" location="src/org/sleuthkit/datamodel"/>
  	<property name="sample" location="src/org/sleuthkit/datamodel/Examples"/>
  	<property name="build" location="build/"/>
-@@ -46,23 +46,23 @@
+@@ -27,6 +27,7 @@
+ 	<property name="test-input" location="${test}/input"/>
+ 	<property name="test-types" location="test/org/sleuthkit/datamodel"/>
+ 	<property name="native-libs" location="${build}/NATIVELIBS"/>
++	<property name="aarch64" location="${build}/NATIVELIBS/aarch64"/>
+ 	<property name="amd64" location="${build}/NATIVELIBS/amd64"/>
+ 	<property name="x86" location="${build}/NATIVELIBS/x86"/>
+ 	<property name="x86_64" location="${build}/NATIVELIBS/x86_64"/>
+@@ -43,26 +44,30 @@
+ 		<mkdir dir="${test-standards}"/>
+ 		<mkdir dir="${test-results}"/>
+ 		<mkdir dir="${native-libs}"/>
++		<mkdir dir="${aarch64}"/>
++		<mkdir dir="${aarch64}/win"/>
++		<mkdir dir="${aarch64}/mac"/>
++		<mkdir dir="${aarch64}/openbsd"/>
  		<mkdir dir="${amd64}"/>
  		<mkdir dir="${amd64}/win"/>
  		<mkdir dir="${amd64}/mac"/>

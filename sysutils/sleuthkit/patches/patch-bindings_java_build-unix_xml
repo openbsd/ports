@@ -1,21 +1,24 @@
 Index: bindings/java/build-unix.xml
 --- bindings/java/build-unix.xml.orig
 +++ bindings/java/build-unix.xml
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,8 @@
  	</target>
  
  	<target name="check-native-build-unix" depends="testTSKLibs" if="tsk_so.present">
 -		<uptodate property="native-up-to-date" srcfile="${jni.build.dir}/.libs/libtsk_jni.so" targetfile="${amd64}/linux/libtsk_jni.so"/>
 +		<uptodate property="native-up-to-date" srcfile="${jni.build.dir}/.libs/libtsk_jni.so" targetfile="${amd64}/unix/libtsk_jni.so"/>
++		<uptodate property="native-up-to-date" srcfile="${jni.build.dir}/.libs/libtsk_jni.so" targetfile="${aarch64}/unix/libtsk_jni.so"/>
  	</target>
  
  	<target name="testTSKLibs">
-@@ -84,17 +84,17 @@
+@@ -84,17 +85,19 @@
  		<property name="zlib.so" location="${lib.z.path}/libz.so"/>
  		<property name="libewf.so" location="${lib.ewf.path}/libewf.so"/>
  		<!-- x86_64 -->
 -		<copy file="${jni.so}" tofile="${x86_64}/linux/libtsk_jni.so" overwrite="true"/>
 +		<copy file="${jni.so}" tofile="${x86_64}/openbsd/libtsk_jni.so" overwrite="true"/>
++		<!-- aarch64 -->
++		<copy file="${jni.so}" tofile="${aarch64}/openbsd/libtsk_jni.so" overwrite="true"/>
  		<!-- amd64 -->
 -		<copy file="${jni.so}" tofile="${amd64}/linux/libtsk_jni.so" overwrite="true"/>
 +		<copy file="${jni.so}" tofile="${amd64}/openbsd/libtsk_jni.so" overwrite="true"/>
