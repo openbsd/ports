@@ -30,10 +30,11 @@ Index: pyproject.toml
      "awscrt==0.36.4",
 -    "python-dateutil>=2.1,<=2.9.0",
 -    "jmespath>=0.7.1,<1.1.0",
+-    "urllib3>=1.25.4,<=2.6.3",
+-    "wcwidth<0.3.0",
 +    "python-dateutil",
 +    "jmespath",
-     "urllib3>=1.25.4,<=2.6.3",
--    "wcwidth<0.3.0",
++    "urllib3>=1.25.4,<3",
 +    "wcwidth",
  ]
  dynamic = ["version"]

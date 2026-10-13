@@ -1,6 +1,7 @@
 COMMENT =		universal command line environment for AWS
 
 MODPY_DISTV =		2.36.49
+REVISION =		0
 GH_ACCOUNT =		aws
 GH_PROJECT =		aws-cli
 GH_TAGNAME =		${MODPY_DISTV}
