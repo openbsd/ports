@@ -6,7 +6,7 @@ don't hide compiler command lines during build
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -200,14 +200,19 @@ class awscrt_build_ext(setuptools.command.build_ext.bu
+@@ -393,14 +393,19 @@ class awscrt_build_ext(setuptools.command.build_ext.bu
              if osx_arch:
                  cmake_args.append(f'-DCMAKE_OSX_ARCHITECTURES={osx_arch}')
  
