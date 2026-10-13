@@ -1,9 +1,8 @@
 COMMENT=	HTTP library for Python
 
-MODPY_DISTV=	1.26.20
+MODPY_DISTV=	2.8.0
 DISTNAME=	urllib3-${MODPY_DISTV}
 PKGNAME=	py-urllib3-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	www
 
@@ -11,15 +10,17 @@ CATEGORIES=	www
 PERMIT_PACKAGE= Yes
 
 MODULES=	lang/python
-
+MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
 
-TEST_DEPENDS=	devel/py-dateutil \
-		devel/py-mock \
+# also needs pytest-socket, hypercorn, quart, quart-trio
+NO_TEST=	Yes
+TEST_DEPENDS=	net/py-anyio \
+		devel/py-trio \
+		www/py-h2 \
+		www/py-httpx \
 		net/py-socks \
-		sysutils/py-psutil \
-		security/py-trustme \
-		www/py-tornado
+		devel/py-test-timeout \
+		security/py-trustme
 
 .include <bsd.port.mk>

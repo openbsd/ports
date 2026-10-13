@@ -1,0 +1,19 @@
+Index: src/urllib3/__init__.py
+--- src/urllib3/__init__.py.orig
++++ src/urllib3/__init__.py
+@@ -31,14 +31,7 @@ try:
+ except ImportError:
+     pass
+ else:
+-    if not ssl.OPENSSL_VERSION.startswith("OpenSSL "):  # Defensive:
+-        warnings.warn(
+-            "urllib3 v2 only supports OpenSSL 1.1.1+, currently "
+-            f"the 'ssl' module is compiled with {ssl.OPENSSL_VERSION!r}. "
+-            "See: https://github.com/urllib3/urllib3/issues/3020",
+-            exceptions.NotOpenSSLWarning,
+-        )
+-    elif ssl.OPENSSL_VERSION_INFO < (1, 1, 1):  # Defensive:
++    if ssl.OPENSSL_VERSION_INFO < (1, 1, 1):  # Defensive:
+         raise ImportError(
+             "urllib3 v2 only supports OpenSSL 1.1.1+, currently "
+             f"the 'ssl' module is compiled with {ssl.OPENSSL_VERSION!r}. "
