@@ -27,6 +27,7 @@
 #include <unistd.h>
 #include <pwd.h>
 #include <sys/types.h>
+#include <sys/stat.h>
 
 #include <login_cap.h>
 #include <bsd_auth.h>
@@ -61,6 +62,7 @@ int
 main (int argc, const char *argv[]) {
 	char pass[8192];
 	int res, fd;
+	mode_t _permit_setugid = S_ISGID;
 
 	/* Make sure standard file descriptors are connected */
 	while ((fd = open("/dev/null", O_RDWR)) <= 2);
