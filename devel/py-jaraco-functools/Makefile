@@ -1,9 +1,8 @@
 COMMENT=	functools like those found in stdlib
 
-MODPY_DISTV=	4.4.0
+MODPY_DISTV=	4.6.0
 DISTNAME=	jaraco_functools-${MODPY_DISTV}
 PKGNAME=	py-jaraco-functools-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	devel
 
