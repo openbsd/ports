@@ -493,7 +493,7 @@ SHA256 (cargo/zip-8.6.0.tar.gz) = LQSmtTgVAqpgh8lMZpSZ6xYC65xegZjlNN5XH3FUgJs=
 SHA256 (cargo/zlib-rs-0.6.7.tar.gz) = NLMdGI2daFpPnHtG1uNmMbBwWNLP4ZAmetzlTcIwvxI=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
 SHA256 (cargo/zopfli-0.8.3.tar.gz) = 8FzYeX1jhlQl/4m1xKSIBPNboM6NElgAAnrWAX0rUkk=
-SHA256 (gleam-lang-gleam-v1.19.1.tar.gz) = WnF7QBPVWZ1zqZs6Gku5Fo5iv8GK//L1u6tDJE+GDfA=
+SHA256 (gleam-lang-gleam-v1.19.2.tar.gz) = 2HljJdrQKALczJFWipCgDkMkfK0dh929l3mpnTxDXWE=
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
@@ -989,4 +989,4 @@ SIZE (cargo/zip-8.6.0.tar.gz) = 149622
 SIZE (cargo/zlib-rs-0.6.7.tar.gz) = 215740
 SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
 SIZE (cargo/zopfli-0.8.3.tar.gz) = 51589
-SIZE (gleam-lang-gleam-v1.19.1.tar.gz) = 2311203
+SIZE (gleam-lang-gleam-v1.19.2.tar.gz) = 2311661
