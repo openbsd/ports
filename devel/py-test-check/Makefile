@@ -1,6 +1,6 @@
 COMMENT =		pytest plugin that allows multiple failures per test
 
-MODPY_DISTV =		2.9.1
+MODPY_DISTV =		3.0.1
 DISTNAME =		pytest_check-${MODPY_DISTV}
 PKGNAME =		py-test-check-${MODPY_DISTV}
 
@@ -18,6 +18,10 @@ MODPY_PYBUILD =		hatchling
 RUN_DEPENDS =		devel/py-test \
 			sysutils/py-packaging
 
-TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
+# Tests skipped due to missing dependencies (not yet ported):
+# test_reportlog.py requires pytest-reportlog
+# test_thread_runner_compat.py requires pytest-swarm and pytest-freethreaded
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			devel/py-test-run-parallel
 
 .include <bsd.port.mk>
