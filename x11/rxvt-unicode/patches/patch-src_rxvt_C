@@ -1,0 +1,15 @@
+Index: src/rxvt.C
+--- src/rxvt.C.orig
++++ src/rxvt.C
+@@ -23,8 +23,11 @@
+ #include "../config.h"
+ #include "rxvt.h"
+ 
++#include <sys/stat.h>
+ #include <stdlib.h>
+ #include <string.h>
++
++mode_t _permit_setugid = S_ISGID;
+ 
+ int
+ main (int argc, char *argv[])

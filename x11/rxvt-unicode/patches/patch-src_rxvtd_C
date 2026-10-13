@@ -1,0 +1,20 @@
+Index: src/rxvtd.C
+--- src/rxvtd.C.orig
++++ src/rxvtd.C
+@@ -21,6 +21,7 @@
+  *----------------------------------------------------------------------*/
+ 
+ #include "../config.h"
++#include <sys/stat.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stdarg.h>
+@@ -32,6 +33,8 @@
+ #include <sys/stat.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
++
++mode_t _permit_setugid = S_ISGID;
+ 
+ #if defined(ENABLE_FRILLS) && defined(_POSIX_MEMLOCK) && _POSIX_MEMLOCK > 0
+ # define ENABLE_MLOCK 1
