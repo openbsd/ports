@@ -5,7 +5,7 @@ See https://github.com/FreeCAD/FreeCAD/pull/28985
 Index: src/Mod/TechDraw/Gui/CommandCreateDims.cpp
 --- src/Mod/TechDraw/Gui/CommandCreateDims.cpp.orig
 +++ src/Mod/TechDraw/Gui/CommandCreateDims.cpp
-@@ -1097,7 +1097,7 @@ class TDHandlerDimension : public TechDrawHandler, (pr
+@@ -1103,7 +1103,7 @@ class TDHandlerDimension : public TechDrawHandler, (pr
              TechDraw::pointPair pp = dim->getLinearPoints();
              float dx = pp.first().x - pp.second().x;
              float dy = pp.first().y - pp.second().y;

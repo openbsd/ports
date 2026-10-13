@@ -803,6 +803,7 @@ lib/freecad/Mod/BIM/bimtests/TestArchStructure.py
 lib/freecad/Mod/BIM/bimtests/TestArchTruss.py
 lib/freecad/Mod/BIM/bimtests/TestArchWall.py
 lib/freecad/Mod/BIM/bimtests/TestArchWindow.py
+lib/freecad/Mod/BIM/bimtests/TestArchWindowGui.py
 lib/freecad/Mod/BIM/bimtests/TestWebGLExport.py
 lib/freecad/Mod/BIM/bimtests/TestWebGLExportGui.py
 lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}/
@@ -864,12 +865,15 @@ lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}TestArchWall.${MODPY_PYC_MAGIC_TAG}
 lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}TestArchWall.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}TestArchWindow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}TestArchWindow.${MODPY_PYC_MAGIC_TAG}pyc
+lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}TestArchWindowGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}TestArchWindowGui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}TestWebGLExport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}TestWebGLExport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}TestWebGLExportGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/BIM/bimtests/${MODPY_PYCACHE}TestWebGLExportGui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/BIM/bimtests/fixtures/
 lib/freecad/Mod/BIM/bimtests/fixtures/FC_site_simple-102.FCStd
+lib/freecad/Mod/BIM/bimtests/test_roof_subtraction.brep
 lib/freecad/Mod/BIM/importers/
 lib/freecad/Mod/BIM/importers/Sample.sh3d
 lib/freecad/Mod/BIM/importers/__init__.py
@@ -3962,6 +3966,8 @@ lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}test_open.${MODPY_PYC_MAGIC_TAG}
 lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}test_open.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}test_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}test_result.${MODPY_PYC_MAGIC_TAG}pyc
+lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}test_security.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}test_security.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}test_solver_elmer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}test_solver_elmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}test_solver_mystran.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3977,6 +3983,7 @@ lib/freecad/Mod/Fem/femtest/app/test_mesh.py
 lib/freecad/Mod/Fem/femtest/app/test_object.py
 lib/freecad/Mod/Fem/femtest/app/test_open.py
 lib/freecad/Mod/Fem/femtest/app/test_result.py
+lib/freecad/Mod/Fem/femtest/app/test_security.py
 lib/freecad/Mod/Fem/femtest/app/test_solver_elmer.py
 lib/freecad/Mod/Fem/femtest/app/test_solver_mystran.py
 lib/freecad/Mod/Fem/femtest/app/test_solver_z88.py
@@ -4989,6 +4996,8 @@ lib/freecad/Mod/Sketcher/Profiles.py
 lib/freecad/Mod/Sketcher/SketcherExample.py
 lib/freecad/Mod/Sketcher/SketcherTests/
 lib/freecad/Mod/Sketcher/SketcherTests/TestPlacementUpdate.py
+lib/freecad/Mod/Sketcher/SketcherTests/TestSketchCarbonCopyReverseMapping.FCStd
+lib/freecad/Mod/Sketcher/SketcherTests/TestSketchCarbonCopyReverseMapping.py
 lib/freecad/Mod/Sketcher/SketcherTests/TestSketchExpression.py
 lib/freecad/Mod/Sketcher/SketcherTests/TestSketchFillet.py
 lib/freecad/Mod/Sketcher/SketcherTests/TestSketchValidateCoincidents.py
@@ -4997,6 +5006,8 @@ lib/freecad/Mod/Sketcher/SketcherTests/__init__.py
 lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}/
 lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}TestPlacementUpdate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}TestPlacementUpdate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}TestSketchCarbonCopyReverseMapping.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}TestSketchCarbonCopyReverseMapping.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}TestSketchExpression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}TestSketchExpression.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}TestSketchFillet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -5198,6 +5209,7 @@ lib/freecad/Mod/Test/TestData/content_items.xml
 lib/freecad/Mod/Test/TestGui.py
 lib/freecad/Mod/Test/TestPerf.py
 lib/freecad/Mod/Test/TestPythonSyntax.py
+lib/freecad/Mod/Test/TestTreeSelection.py
 lib/freecad/Mod/Test/UnicodeTests.py
 lib/freecad/Mod/Test/UnitTests.py
 lib/freecad/Mod/Test/Workbench.py
@@ -5227,6 +5239,8 @@ lib/freecad/Mod/Test/${MODPY_PYCACHE}TestPerf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOE
 lib/freecad/Mod/Test/${MODPY_PYCACHE}TestPerf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Test/${MODPY_PYCACHE}TestPythonSyntax.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Test/${MODPY_PYCACHE}TestPythonSyntax.${MODPY_PYC_MAGIC_TAG}pyc
+lib/freecad/Mod/Test/${MODPY_PYCACHE}TestTreeSelection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/freecad/Mod/Test/${MODPY_PYCACHE}TestTreeSelection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Test/${MODPY_PYCACHE}UnicodeTests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Test/${MODPY_PYCACHE}UnicodeTests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Test/${MODPY_PYCACHE}UnitTests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

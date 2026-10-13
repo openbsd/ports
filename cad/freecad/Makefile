@@ -4,10 +4,9 @@ DPB_PROPERTIES =	parallel parallel2
 
 COMMENT =		general purpose parametric 3D CAD modeler
 
-V =			1.1.0
+V =			1.1.4
 DISTNAME =		freecad_source_${V}
 PKGNAME =		freecad-${V}
-REVISION =		1
 
 SHARED_LIBS +=		OndselSolver              2.0 # 0.0
 SHARED_LIBS +=		E57Format                 0.0 # 0.0
@@ -19,13 +18,13 @@ MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Coin GL GLU Qt6Concurrent Qt6Core
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6PrintSupport
-WANTLIB += Qt6Svg Qt6SvgWidgets Qt6UiTools Qt6Widgets Qt6Xml TKBO
-WANTLIB += TKBRep TKBin TKBinL TKBool TKCAF TKCDF TKDE TKDEGLTF
-WANTLIB += TKDEIGES TKDESTEP TKDESTL TKExpress TKFeat TKFillet
-WANTLIB += TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKLCAF TKMath
-WANTLIB += TKMesh TKMeshVS TKOffset TKPrim TKRWMesh TKService
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} Coin GL GLU Qt6Concurrent
+WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += Qt6PrintSupport Qt6Svg Qt6SvgWidgets Qt6UiTools Qt6Widgets
+WANTLIB += Qt6Xml TKBO TKBRep TKBin TKBinL TKBool TKCAF TKCDF
+WANTLIB += TKDE TKDEGLTF TKDEIGES TKDESTEP TKDESTL TKExpress TKFeat
+WANTLIB += TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKLCAF
+WANTLIB += TKMath TKMesh TKMeshVS TKOffset TKPrim TKRWMesh TKService
 WANTLIB += TKShHealing TKTopAlgo TKV3d TKVCAF TKXCAF TKXSBase
 WANTLIB += TKernel boost_atomic-mt boost_chrono-mt boost_container-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
@@ -34,22 +33,20 @@ WANTLIB += boost_serialization-mt boost_thread-mt c execinfo fmt
 WANTLIB += freetype hdf5 hdf5_hl icui18n icuuc m med medC pcl_common
 WANTLIB += pcl_features pcl_filters pcl_kdtree pcl_ml pcl_octree
 WANTLIB += pcl_sample_consensus pcl_search pcl_segmentation pcl_surface
-WANTLIB += pyside6.abi3 ${MODPY_WANTLIB} scn shiboken6.abi3 vtkCommonCore
-WANTLIB += vtkCommonDataModel vtkCommonExecutionModel vtkCommonMath
-WANTLIB += vtkCommonMisc vtkCommonTransforms vtkFiltersCellGrid
-WANTLIB += vtkFiltersCore vtkFiltersExtraction vtkFiltersGeneral
-WANTLIB += vtkFiltersGeometry vtkFiltersSources vtkFiltersVerdict
-WANTLIB += vtkIOCellGrid vtkIOCore vtkIOImage vtkIOLegacy vtkIOXML
-WANTLIB += vtkIOXMLParser vtkImagingCore vtkInteractionStyle vtkRenderingCore
-WANTLIB += vtkRenderingFreeType vtkRenderingHyperTreeGrid vtkRenderingOpenGL2
+WANTLIB += pyside6.abi3 scn shiboken6.abi3 vtkCommonCore vtkCommonDataModel
+WANTLIB += vtkCommonExecutionModel vtkCommonMath vtkCommonMisc
+WANTLIB += vtkCommonTransforms vtkFiltersCellGrid vtkFiltersCore
+WANTLIB += vtkFiltersExtraction vtkFiltersGeneral vtkFiltersGeometry
+WANTLIB += vtkFiltersSources vtkFiltersVerdict vtkIOCellGrid vtkIOCore
+WANTLIB += vtkIOImage vtkIOLegacy vtkIOXML vtkIOXMLParser vtkImagingCore
+WANTLIB += vtkInteractionStyle vtkRenderingCore vtkRenderingFreeType
+WANTLIB += vtkRenderingHyperTreeGrid vtkRenderingLabel vtkRenderingOpenGL2
 WANTLIB += vtkRenderingUI vtkglad vtkkissfft vtksys vtktoken vtkx11
 WANTLIB += xerces-c yaml-cpp z
 
 SITES =			https://github.com/FreeCAD/FreeCAD/releases/download/${V}/
 
-FIX_CRLF_FILES =	src/Gui/View3DInventor.cpp \
-			src/Gui/ViewProvider.h \
-			src/Mod/Sketcher/App/GeoEnum.h
+FIX_CRLF_FILES =	src/Mod/Sketcher/App/GeoEnum.h
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
@@ -109,12 +106,11 @@ LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 # SMESH: part of salome suite and difficult to package
 #	https://forum.freecad.org/viewtopic.php?p=715795#p715795
 # Onsdel: Constraints solver specifically made for FreeCAD
-# PyCXX: modified by FreeCAD (no switch needed)
-#	https://github.com/FreeCAD/FreeCAD/commit/a16eec8
 # orocos-kdl: modified by FreeCAD
 #	https://github.com/FreeCAD/FreeCAD/blob/main/src/Mod/Robot/App/CMakeLists.txt#L77
 CONFIGURE_ARGS +=	-DFREECAD_USE_EXTERNAL_FMT=ON \
 			-DFREECAD_USE_EXTERNAL_PIVY=ON \
+			-DFREECAD_USE_EXTERNAL_PYCXX=OFF \
 			-DFREECAD_USE_EXTERNAL_GTEST=ON \
 			-DFREECAD_USE_EXTERNAL_KDL=OFF \
 			-DFREECAD_USE_EXTERNAL_ZIPIOS=OFF \

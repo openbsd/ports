@@ -1,7 +1,7 @@
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt
-@@ -157,6 +157,7 @@ foreach (exe ${TestExecutables})
+@@ -160,6 +160,7 @@ foreach (exe ${TestExecutables})
          endif()
      else()
          set_target_properties(${exe} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tests)
