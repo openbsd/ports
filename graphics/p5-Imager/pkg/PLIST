@@ -76,6 +76,7 @@ ${P5ARCH}/Imager/include/imextdef.h
 ${P5ARCH}/Imager/include/imextpl.h
 ${P5ARCH}/Imager/include/imextpltypes.h
 ${P5ARCH}/Imager/include/imexttypes.h
+${P5ARCH}/Imager/include/iminline.h
 ${P5ARCH}/Imager/include/imio.h
 ${P5ARCH}/Imager/include/immacros.h
 ${P5ARCH}/Imager/include/imperl.h
