@@ -11,7 +11,7 @@ Index: src/aioquic/asyncio/client.py
 +from typing import AsyncGenerator, Callable, Optional, Tuple, Union, cast
  
  from ..quic.configuration import QuicConfiguration
- from ..quic.connection import QuicConnection, QuicTokenHandler
+ from ..quic.connection import NetworkAddress, QuicConnection, QuicTokenHandler
 @@ -23,6 +23,7 @@ async def connect(
      token_handler: Optional[QuicTokenHandler] = None,
      wait_connected: bool = True,

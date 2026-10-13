@@ -11,6 +11,8 @@ lib/python${MODPY_VERSION}/site-packages/aioquic/__init__.py
 lib/python${MODPY_VERSION}/site-packages/aioquic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aioquic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aioquic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aioquic/${MODPY_PYCACHE}_crypto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aioquic/${MODPY_PYCACHE}_crypto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aioquic/${MODPY_PYCACHE}buffer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aioquic/${MODPY_PYCACHE}buffer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aioquic/${MODPY_PYCACHE}tls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -18,9 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/aioquic/${MODPY_PYCACHE}tls.${MODPY_PYC
 @so lib/python${MODPY_VERSION}/site-packages/aioquic/_buffer${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/aioquic/_buffer.c
 lib/python${MODPY_VERSION}/site-packages/aioquic/_buffer.pyi
-@so lib/python${MODPY_VERSION}/site-packages/aioquic/_crypto${MODPY_ABI3SO}.so
-lib/python${MODPY_VERSION}/site-packages/aioquic/_crypto.c
-lib/python${MODPY_VERSION}/site-packages/aioquic/_crypto.pyi
+lib/python${MODPY_VERSION}/site-packages/aioquic/_crypto.py
 lib/python${MODPY_VERSION}/site-packages/aioquic/asyncio/
 lib/python${MODPY_VERSION}/site-packages/aioquic/asyncio/__init__.py
 lib/python${MODPY_VERSION}/site-packages/aioquic/asyncio/${MODPY_PYCACHE}/

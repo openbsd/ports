@@ -1,7 +1,7 @@
 Index: tests/test_asyncio.py
 --- tests/test_asyncio.py.orig
 +++ tests/test_asyncio.py
-@@ -193,6 +193,7 @@ class HighLevelTest(TestCase):
+@@ -199,6 +199,7 @@ class HighLevelTest(TestCase):
              )
          )
  
