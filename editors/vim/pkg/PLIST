@@ -1013,6 +1013,7 @@ share/vim/${P}/ftplugin/http.vim
 share/vim/${P}/ftplugin/hurl.vim
 share/vim/${P}/ftplugin/hyprlang.vim
 share/vim/${P}/ftplugin/i3config.vim
+share/vim/${P}/ftplugin/icalendar.vim
 share/vim/${P}/ftplugin/icon.vim
 share/vim/${P}/ftplugin/idris2.vim
 share/vim/${P}/ftplugin/indent.vim
@@ -2362,6 +2363,7 @@ share/vim/${P}/syntax/hyprlang.vim
 share/vim/${P}/syntax/i3config.vim
 share/vim/${P}/syntax/ia64.vim
 share/vim/${P}/syntax/ibasic.vim
+share/vim/${P}/syntax/icalendar.vim
 share/vim/${P}/syntax/icemenu.vim
 share/vim/${P}/syntax/icon.vim
 share/vim/${P}/syntax/idl.vim
