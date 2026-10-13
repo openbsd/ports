@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -59,7 +59,7 @@ data_files = [
+@@ -65,7 +65,7 @@ data_files: "list[tuple[str, Sequence[str]]]" = [  # r
      # man page:
      #  requires the pre-built man page file via sphinx ("docs" dependency group)
      #  `make --directory=docs clean man`

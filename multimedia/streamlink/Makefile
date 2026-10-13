@@ -1,6 +1,4 @@
-# newer versions require the urllib3 2.x can of worms
-MODPY_DISTV =	7.6.0
-REVISION =	0
+MODPY_DISTV =	8.6.2
 COMMENT =	pipe video streams into a video player
 DISTNAME =	streamlink-${MODPY_DISTV}
 CATEGORIES =	multimedia net
@@ -17,15 +15,15 @@ MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	devel/py-certifi \
 		devel/py-isodate \
-		textproc/py-lxml<7 \
+		textproc/py-lxml<8 \
 		devel/py-country \
 		security/py-cryptodome<4 \
 		net/py-socks \
 		www/py-requests<3 \
 		devel/py-trio<1 \
 		net/py-trio-websocket<1 \
-		devel/py-typing-extensions \
 		www/py-urllib3<3 \
+		archivers/py-brotli \
 		net/py-websocket-client<2
 RUN_DEPENDS +=	graphics/ffmpeg
 
