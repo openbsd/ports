@@ -1,0 +1,11 @@
+Index: 33/pkg/MESSAGE
+===================================================================
+RCS file: 33/pkg/MESSAGE
+diff -N 33/pkg/MESSAGE
+--- 33/pkg/MESSAGE	6 Aug 2026 14:44:17 -0000	1.1
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,4 +0,0 @@
+-This is an old major version of Nextcloud. Update to the newest available
+-in packages before updating to the next OpenBSD release.
+-
+-See ${LOCALBASE}/share/doc/pkg-readmes/nextcloud for more information.
