@@ -1,6 +1,6 @@
 COMMENT=	automatic audio files tagger using the MusicBrainz database
 
-MODPY_DISTV=	3.0.1
+MODPY_DISTV=	3.0.2
 DISTNAME=	picard-${MODPY_DISTV}
 
 CATEGORIES=	audio

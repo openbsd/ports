@@ -1719,7 +1719,6 @@ share/icons/hicolor/256x256/apps/org.musicbrainz.Picard.png
 share/icons/hicolor/32x32/apps/org.musicbrainz.Picard.png
 share/icons/hicolor/48x48/apps/org.musicbrainz.Picard.png
 share/icons/hicolor/scalable/apps/org.musicbrainz.Picard.svg
-share/metainfo/
 share/metainfo/org.musicbrainz.Picard.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
