@@ -1,6 +1,6 @@
 COMMENT=	HTTP client/server for asyncio
 
-MODPY_DISTV=	3.14.3
+MODPY_DISTV=	3.14.5
 DISTNAME=	aiohttp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
