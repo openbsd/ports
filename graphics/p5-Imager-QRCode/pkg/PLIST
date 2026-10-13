@@ -1,6 +1,6 @@
 ${P5ARCH}/Imager/QRCode.pm
 ${P5ARCH}/auto/Imager/QRCode/
-${P5ARCH}/auto/Imager/QRCode/QRCode.so
+@so ${P5ARCH}/auto/Imager/QRCode/QRCode.so
 @man man/man3p/Imager::QRCode.3p
 share/examples/p5-Imager-QRCode/
 share/examples/p5-Imager-QRCode/generate.pl

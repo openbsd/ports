@@ -1,19 +1,20 @@
-COMMENT=		generate QR Code with Imager using libqrencode
+COMMENT =	generate QR Code with Imager using libqrencode
 
-DISTNAME=		Imager-QRCode-0.035
-CATEGORIES=		graphics
-REVISION=		0
+DISTNAME =	Imager-QRCode-0.035
+REVISION =	1
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	graphics
 
-WANTLIB += c perl
+# Perl
+PERMIT_PACKAGE =	Yes
 
-MODULES=		cpan
+WANTLIB =		c perl
 
-BUILD_DEPENDS=		graphics/p5-Imager
-RUN_DEPENDS=		graphics/p5-Imager
+MODULES =		cpan
 
-MODCPAN_EXAMPLES=	Yes
+BUILD_DEPENDS =		graphics/p5-Imager
+RUN_DEPENDS =		graphics/p5-Imager
+
+MODCPAN_EXAMPLES =	Yes
 
 .include <bsd.port.mk>
