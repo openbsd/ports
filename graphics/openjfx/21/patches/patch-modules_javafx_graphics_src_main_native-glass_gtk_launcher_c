@@ -1,0 +1,33 @@
+last hunk to fix null pointer dereference
+Index: modules/javafx.graphics/src/main/native-glass/gtk/launcher.c
+--- modules/javafx.graphics/src/main/native-glass/gtk/launcher.c.orig
++++ modules/javafx.graphics/src/main/native-glass/gtk/launcher.c
+@@ -25,7 +25,9 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#if defined(__Linux__)
+ #include <linux/fb.h>
++#endif
+ #include <fcntl.h>
+ #ifndef __USE_GNU       // required for dladdr() & Dl_info
+ #define __USE_GNU
+@@ -45,7 +47,7 @@
+ 
+ #include <com_sun_glass_ui_gtk_GtkApplication.h>
+ 
+-static jboolean gtk_versionDebug = JNI_FALSE;
++static jboolean gtk_versionDebug = JNI_TRUE;
+ 
+ static const char * gtk3_chain[] = {
+    "libglassgtk3.so", 0
+@@ -168,8 +170,8 @@ static int sniffLibs(int wantVersion) {
+      }
+ 
+     if (found) {
++        i--;
+         if (gtk_versionDebug) {
+-            i--;
+             printf("using GTK library version %s set %s\n",
+                  use_chain[i][0],
+                  use_chain[i][1]);

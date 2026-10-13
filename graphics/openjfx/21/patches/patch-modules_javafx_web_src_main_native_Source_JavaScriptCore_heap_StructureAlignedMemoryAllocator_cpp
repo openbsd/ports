@@ -1,0 +1,12 @@
+Index: modules/javafx.web/src/main/native/Source/JavaScriptCore/heap/StructureAlignedMemoryAllocator.cpp
+--- modules/javafx.web/src/main/native/Source/JavaScriptCore/heap/StructureAlignedMemoryAllocator.cpp.orig
++++ modules/javafx.web/src/main/native/Source/JavaScriptCore/heap/StructureAlignedMemoryAllocator.cpp
+@@ -35,7 +35,7 @@
+ #include <wtf/NeverDestroyed.h>
+ WTF_ALLOW_UNSAFE_BUFFER_USAGE_BEGIN
+ #if !USE(SYSTEM_MALLOC)
+-#include <bmalloc/bmalloc.h>
++#include <bmalloc/XXXXXXXXXbmalloc.h>
+ #include <bmalloc/bmalloc_heap.h>
+ #include <bmalloc/bmalloc_heap_config.h>
+ #include <bmalloc/bmalloc_heap_inlines.h>

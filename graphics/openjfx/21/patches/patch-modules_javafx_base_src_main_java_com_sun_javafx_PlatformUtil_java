@@ -1,0 +1,26 @@
+Index: modules/javafx.base/src/main/java/com/sun/javafx/PlatformUtil.java
+--- modules/javafx.base/src/main/java/com/sun/javafx/PlatformUtil.java.orig
++++ modules/javafx.base/src/main/java/com/sun/javafx/PlatformUtil.java
+@@ -85,6 +85,7 @@ public class PlatformUtil {
+     private static final boolean WINDOWS_7_OR_LATER = WINDOWS && versionNumberGreaterThanOrEqualTo(6.1f);
+     private static final boolean MAC = os.startsWith("Mac");
+     private static final boolean LINUX = os.startsWith("Linux") && !ANDROID;
++    private static final boolean OPENBSD = os.startsWith("OpenBSD");
+     private static final boolean SOLARIS = os.startsWith("SunOS");
+     private static final boolean IOS = os.startsWith("iOS");
+     private static final boolean STATIC_BUILD = "Substrate VM".equals(System.getProperty("java.vm.name"));
+@@ -140,6 +141,14 @@ public class PlatformUtil {
+     public static boolean isLinux(){
+         return LINUX;
+     }
++
++    /**
++     * Returns true if the operating system is a form of OpenBSD.
++     */
++    public static boolean isOpenBSD(){
++        return OPENBSD;
++    }
++
+ 
+     public static boolean useEGL() {
+         return useEGL;

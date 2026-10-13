@@ -1,0 +1,55 @@
+for debugging purposes, print stacktrace when fonts cannot be loaded/initialized
+Index: modules/javafx.graphics/src/main/java/com/sun/javafx/font/PrismFontFactory.java
+--- modules/javafx.graphics/src/main/java/com/sun/javafx/font/PrismFontFactory.java.orig
++++ modules/javafx.graphics/src/main/java/com/sun/javafx/font/PrismFontFactory.java
+@@ -52,6 +52,7 @@ public abstract class PrismFontFactory implements Font
+     public static final boolean isWindows;
+     public static final boolean isLinux;
+     public static final boolean isMacOSX;
++    public static final boolean isOpenBSD;
+     public static final boolean isIOS;
+     public static final boolean isAndroid;
+     public static final boolean isEmbedded;
+@@ -86,6 +87,7 @@ public abstract class PrismFontFactory implements Font
+         isWindows = PlatformUtil.isWindows();
+         isMacOSX  = PlatformUtil.isMac();
+         isLinux   = PlatformUtil.isLinux();
++        isOpenBSD = PlatformUtil.isOpenBSD();
+         isIOS     = PlatformUtil.isIOS();
+         isAndroid = PlatformUtil.isAndroid();
+         isEmbedded = PlatformUtil.isEmbedded();
+@@ -164,7 +166,7 @@ public abstract class PrismFontFactory implements Font
+     private static String getNativeFactoryName() {
+         if (isWindows) return DW_FACTORY;
+         if (isMacOSX || isIOS) return CT_FACTORY;
+-        if (isLinux || isAndroid) return FT_FACTORY;
++        if (isLinux || isAndroid || isOpenBSD) return FT_FACTORY;
+         return null;
+     }
+ 
+@@ -209,6 +211,7 @@ public abstract class PrismFontFactory implements Font
+         } catch (Throwable t) {
+             if (debugFonts) {
+                 System.err.println("Loading font factory failed "+ factoryClass);
++                t.printStackTrace();
+             }
+         }
+         return null;
+@@ -884,7 +887,7 @@ public abstract class PrismFontFactory implements Font
+                         break;
+                     }
+                 }
+-                if (fontResource == null && isLinux) {
++                if (fontResource == null && (isLinux || isOpenBSD)) {
+                     String path = FontConfigManager.getDefaultFontPath();
+                     if (path != null) {
+                         fontResource = createFontResource(jreDefaultFontLC,
+@@ -1724,7 +1727,7 @@ public abstract class PrismFontFactory implements Font
+                                 fontToFamilyNameMap,
+                                 familyToFontListMap);
+                 }
+-            } else if (isLinux) {
++            } else if (isLinux || isOpenBSD) {
+                 FontConfigManager.populateMaps(tmpFontToFileMap,
+                                                fontToFamilyNameMap,
+                                                familyToFontListMap,

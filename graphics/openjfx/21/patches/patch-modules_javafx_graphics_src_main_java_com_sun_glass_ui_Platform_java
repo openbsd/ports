@@ -1,0 +1,21 @@
+Index: modules/javafx.graphics/src/main/java/com/sun/glass/ui/Platform.java
+--- modules/javafx.graphics/src/main/java/com/sun/glass/ui/Platform.java.orig
++++ modules/javafx.graphics/src/main/java/com/sun/glass/ui/Platform.java
+@@ -55,6 +55,8 @@ final class Platform {
+                    type = WINDOWS;
+                 else if (userPlatform.equals("linux"))
+                    type = GTK;
++                else if (userPlatform.equals("openbsd"))
++                   type = GTK;
+                 else if (userPlatform.equals("gtk"))
+                    type = GTK;
+                 else if (userPlatform.equals("ios"))
+@@ -69,6 +71,8 @@ final class Platform {
+             } else if (PlatformUtil.isWindows()) {
+                 type = WINDOWS;
+             } else if (PlatformUtil.isLinux()) {
++                type = GTK;
++            } else if (PlatformUtil.isOpenBSD()) {
+                 type = GTK;
+             } else if (PlatformUtil.isIOS()) {
+                 type = IOS;

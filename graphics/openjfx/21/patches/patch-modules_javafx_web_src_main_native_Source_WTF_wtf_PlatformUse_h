@@ -1,0 +1,15 @@
+Index: modules/javafx.web/src/main/native/Source/WTF/wtf/PlatformUse.h
+--- modules/javafx.web/src/main/native/Source/WTF/wtf/PlatformUse.h.orig
++++ modules/javafx.web/src/main/native/Source/WTF/wtf/PlatformUse.h
+@@ -173,8 +173,10 @@
+ #define USE_METAL 1
+ #endif
+ 
+-#if PLATFORM(GTK) || PLATFORM(WPE) || PLATFORM(JAVA) && OS(LINUX)
++#if PLATFORM(GTK) || PLATFORM(WPE) || PLATFORM(JAVA) && (OS(LINUX) || OS(OPENBSD))
+ #define USE_UNIX_DOMAIN_SOCKETS 1
++#undef USE_SYSTEM_MALLOC
++#define USE_SYSTEM_MALLOC 1
+ #endif
+ 
+ #if !defined(USE_IMLANG_FONT_LINK2)

@@ -1,0 +1,12 @@
+Index: modules/javafx.web/src/main/native/Source/WTF/wtf/MemoryPressureHandler.cpp
+--- modules/javafx.web/src/main/native/Source/WTF/wtf/MemoryPressureHandler.cpp.orig
++++ modules/javafx.web/src/main/native/Source/WTF/wtf/MemoryPressureHandler.cpp
+@@ -68,7 +68,7 @@ static MemoryPressureHandler* memoryPressureHandlerIfE
+ }
+ 
+ MemoryPressureHandler::MemoryPressureHandler()
+-#if OS(LINUX) || OS(FREEBSD) || OS(HAIKU) || OS(QNX)
++#if OS(LINUX) || OS(FREEBSD) || OS(HAIKU) || OS(QNX) || OS(OPENBSD)
+     : m_holdOffTimer(RunLoop::mainSingleton(), "MemoryPressureHandler::HoldOffTimer"_s, this, &MemoryPressureHandler::holdOffTimerFired)
+ #elif OS(WINDOWS)
+     : m_windowsMeasurementTimer(RunLoop::mainSingleton(), "MemoryPressureHandler::WindowsMeasurementTimer"_s, this, &MemoryPressureHandler::windowsMeasurementTimerFired)

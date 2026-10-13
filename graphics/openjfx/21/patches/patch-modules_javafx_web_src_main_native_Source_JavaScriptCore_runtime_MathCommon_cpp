@@ -1,0 +1,14 @@
+Fix build error on i386
+
+Index: modules/javafx.web/src/main/native/Source/JavaScriptCore/runtime/MathCommon.cpp
+--- modules/javafx.web/src/main/native/Source/JavaScriptCore/runtime/MathCommon.cpp.orig
++++ modules/javafx.web/src/main/native/Source/JavaScriptCore/runtime/MathCommon.cpp
+@@ -607,7 +607,7 @@ JSC_DEFINE_NOEXCEPT_JIT_OPERATION(f64_nearest, double,
+     return std::nearbyint(operand);
+ }
+ 
+-#if (OS(LINUX) && !defined(__GLIBC__)) || OS(HAIKU)
++#if (OS(LINUX) && !defined(__GLIBC__)) || OS(HAIKU) || OS(OPENBSD)
+ static inline float roundevenf(float operand)
+ {
+     float rounded = roundf(operand);

@@ -1,0 +1,14 @@
+Index: modules/javafx.web/src/main/native/Source/WebCore/platform/network/DNS.h
+--- modules/javafx.web/src/main/native/Source/WebCore/platform/network/DNS.h.orig
++++ modules/javafx.web/src/main/native/Source/WebCore/platform/network/DNS.h
+@@ -34,6 +34,10 @@
+ #include <winsock2.h>
+ #include <ws2tcpip.h>
+ #else
++#if OS(OPENBSD)
++#include <sys/types.h>
++#include <sys/socket.h>
++#endif
+ #include <netinet/in.h>
+ #endif
+ 

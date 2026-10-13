@@ -1,0 +1,31 @@
+Index: modules/javafx.graphics/src/main/java/com/sun/glass/utils/NativeLibLoader.java
+--- modules/javafx.graphics/src/main/java/com/sun/glass/utils/NativeLibLoader.java.orig
++++ modules/javafx.graphics/src/main/java/com/sun/glass/utils/NativeLibLoader.java
+@@ -361,6 +361,8 @@ public class NativeLibLoader {
+             relativeDir = "lib";
+         } else if (PlatformUtil.isLinux()) {
+             relativeDir = "lib";
++        } else if (PlatformUtil.isOpenBSD()) {
++            relativeDir = "lib";
+         }
+ 
+         // Location of native libraries relative to java.home
+@@ -381,6 +383,8 @@ public class NativeLibLoader {
+             relativeDir = ".";
+         } else if (PlatformUtil.isLinux()) {
+             relativeDir = ".";
++        } else if (PlatformUtil.isOpenBSD()) {
++            relativeDir = ".";
+         }
+ 
+         // Location of native libraries relative to jar file
+@@ -417,6 +421,9 @@ public class NativeLibLoader {
+                     libPrefix = "lib";
+                     libSuffix = ".dylib";
+                 } else if (PlatformUtil.isLinux()) {
++                    libPrefix = "lib";
++                    libSuffix = ".so";
++                } else if (PlatformUtil.isOpenBSD()) {
+                     libPrefix = "lib";
+                     libSuffix = ".so";
+                 }

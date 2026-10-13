@@ -1,0 +1,36 @@
+Index: modules/javafx.web/src/main/native/Source/WTF/wtf/PlatformJava.cmake
+--- modules/javafx.web/src/main/native/Source/WTF/wtf/PlatformJava.cmake.orig
++++ modules/javafx.web/src/main/native/Source/WTF/wtf/PlatformJava.cmake
+@@ -86,7 +86,7 @@ if (APPLE)
+         ${COREFOUNDATION_LIBRARY}
+         ${COCOA_LIBRARY}
+     )
+-elseif (UNIX)
++elseif (CMAKE_SYSTEM_NAME MATCHES "Linux")
+     list(APPEND WTF_SOURCES
+         generic/RunLoopGeneric.cpp
+         generic/WorkQueueGeneric.cpp
+@@ -97,6 +97,23 @@ elseif (UNIX)
+         linux/RealTimeThreads.cpp
+     )
+     list(APPEND WTF_LIBRARIES rt)
++elseif (CMAKE_SYSTEM_NAME MATCHES "OpenBSD" OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR CMAKE_SYSTEM_NAME MATCHES "NetBSD")
++    list(APPEND WTF_SOURCES
++        generic/RunLoopGeneric.cpp
++        generic/WorkQueueGeneric.cpp
++        generic/MemoryFootprintGeneric.cpp
++        unix/LanguageUnix.cpp
++        unix/MemoryPressureHandlerUnix.cpp
++    )
++elseif (UNIX)
++    # Generic fallback for any other Unix-like OS
++    list(APPEND WTF_SOURCES
++        generic/RunLoopGeneric.cpp
++        generic/WorkQueueGeneric.cpp
++        generic/MemoryFootprintGeneric.cpp
++        unix/LanguageUnix.cpp
++        generic/MemoryPressureHandlerGeneric.cpp
++    )
+ elseif (WIN32)
+     list(APPEND WTF_SOURCES
+         generic/WorkQueueGeneric.cpp

@@ -1,0 +1,23 @@
+Flush cache the same as Linux
+
+Index: modules/javafx.web/src/main/native/Source/JavaScriptCore/assembler/ARM64Assembler.h
+--- modules/javafx.web/src/main/native/Source/JavaScriptCore/assembler/ARM64Assembler.h.orig
++++ modules/javafx.web/src/main/native/Source/JavaScriptCore/assembler/ARM64Assembler.h
+@@ -3747,7 +3747,7 @@ class ARM64Assembler { (public)
+ 
+     unsigned debugOffset() { return m_buffer.debugOffset(); }
+ 
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+     static inline void linuxPageFlush(uintptr_t begin, uintptr_t end)
+     {
+         __builtin___clear_cache(reinterpret_cast<char*>(begin), reinterpret_cast<char*>(end));
+@@ -3760,7 +3760,7 @@ class ARM64Assembler { (public)
+         sys_icache_invalidate(code, size);
+ #elif OS(FUCHSIA)
+         zx_cache_flush(code, size, ZX_CACHE_FLUSH_INSN);
+-#elif OS(LINUX)
++#elif OS(LINUX) || OS(OPENBSD)
+         size_t page = pageSize();
+         uintptr_t current = reinterpret_cast<uintptr_t>(code);
+         uintptr_t end = current + size;

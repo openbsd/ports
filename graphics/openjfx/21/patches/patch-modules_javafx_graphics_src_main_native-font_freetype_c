@@ -1,0 +1,59 @@
+Index: modules/javafx.graphics/src/main/native-font/freetype.c
+--- modules/javafx.graphics/src/main/native-font/freetype.c.orig
++++ modules/javafx.graphics/src/main/native-font/freetype.c
+@@ -23,7 +23,7 @@
+  * questions.
+  */
+ 
+-#if defined __linux__ || ANDROID_NDK
++#if defined __linux__ || ANDROID_NDK || __OpenBSD__
+ #if defined _ENABLE_PANGO || _ENABLE_HARFBUZZ
+ 
+ #include <jni.h>
+@@ -508,20 +508,32 @@ static PathData* checkSize(void* user, int coordCount)
+     PathData* info = (PathData *)user;
+ 
+     if (info->numTypes == info->lenTypes) {
+-        if (info->lenTypes > SIZE_MAX - DEFAULT_LEN_TYPES) goto fail;
++        if (info->lenTypes > SIZE_MAX - DEFAULT_LEN_TYPES)
++            goto fail;
++
+         info->lenTypes += DEFAULT_LEN_TYPES;
+ 
+-        jbyte* newPointTypes = (jbyte*)realloc(info->pointTypes, info->lenTypes * sizeof(jbyte));
+-        if (newPointTypes == NULL) goto fail;
++        jbyte *newPointTypes =
++            realloc(info->pointTypes,
++                    info->lenTypes * sizeof(*info->pointTypes));
++        if (newPointTypes == NULL)
++            goto fail;
++
+         info->pointTypes = newPointTypes;
+     }
+ 
+     if (info->numCoords + (coordCount * 2) > info->lenCoords) {
+-        if (info->lenCoords > SIZE_MAX - DEFAULT_LEN_COORDS) goto fail;
++        if (info->lenCoords > SIZE_MAX - DEFAULT_LEN_COORDS)
++            goto fail;
++
+         info->lenCoords += DEFAULT_LEN_COORDS;
+ 
+-        jbyte* newPointCoords = (jfloat*)realloc(info->pointCoords, info->lenCoords * sizeof(jfloat));
+-        if (newPointCoords == NULL) goto fail;
++        jfloat *newPointCoords =
++            realloc(info->pointCoords,
++                    info->lenCoords * sizeof(*info->pointCoords));
++        if (newPointCoords == NULL)
++            goto fail;
++
+         info->pointCoords = newPointCoords;
+     }
+ 
+@@ -532,7 +544,6 @@ fail:
+     SAFE_FREE(info->pointCoords);
+     return NULL;
+ }
+-
+ static int JFX_Outline_MoveToFunc(const FT_Vector*   to,
+                                   void*              user)
+ {

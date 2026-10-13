@@ -1,0 +1,15 @@
+Index: modules/javafx.web/src/main/native/Source/JavaScriptCore/heap/BlockDirectory.cpp
+--- modules/javafx.web/src/main/native/Source/JavaScriptCore/heap/BlockDirectory.cpp.orig
++++ modules/javafx.web/src/main/native/Source/JavaScriptCore/heap/BlockDirectory.cpp
+@@ -66,9 +66,9 @@ void BlockDirectory::setSubspace(Subspace* subspace)
+ void BlockDirectory::updatePercentageOfPagedOutPages(SimpleStats& stats)
+ {
+     // FIXME: We should figure out a solution for Windows and PlayStation.
+-    // QNX doesn't have mincore(), though the information can be had. But since all mapped
++    // QNX and OpenBSD don't have mincore(), though the information can be had. But since all mapped
+     // pages are resident, does it matter?
+-#if OS(UNIX) && !PLATFORM(PLAYSTATION) && !OS(QNX) && !OS(HAIKU)
++#if OS(UNIX) && !PLATFORM(PLAYSTATION) && !OS(QNX) && !OS(HAIKU) && !OS(OPENBSD)
+     size_t pageSize = WTF::pageSize();
+     ASSERT(!(MarkedBlock::blockSize % pageSize));
+     auto numberOfPagesInMarkedBlock = MarkedBlock::blockSize / pageSize;

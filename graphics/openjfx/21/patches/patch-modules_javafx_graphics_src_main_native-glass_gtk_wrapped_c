@@ -1,0 +1,13 @@
+Index: modules/javafx.graphics/src/main/native-glass/gtk/wrapped.c
+--- modules/javafx.graphics/src/main/native-glass/gtk/wrapped.c.orig
++++ modules/javafx.graphics/src/main/native-glass/gtk/wrapped.c
+@@ -24,7 +24,9 @@
+  */
+ 
+ #include <stdio.h>
++#if defined(__Linux__)
+ #include <linux/fb.h>
++#endif
+ #include <fcntl.h>
+ #ifndef __USE_GNU       // required for dladdr() & Dl_info
+ #define __USE_GNU

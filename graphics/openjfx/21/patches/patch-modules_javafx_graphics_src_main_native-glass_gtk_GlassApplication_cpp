@@ -1,0 +1,33 @@
+Gemini says, tdk_threads_init/enter/leave is deprecated since 3.6 and 
+shall not be used due to double unlocks etc. what I see here and resulting abort()
+
+Index: modules/javafx.graphics/src/main/native-glass/gtk/GlassApplication.cpp
+--- modules/javafx.graphics/src/main/native-glass/gtk/GlassApplication.cpp.orig
++++ modules/javafx.graphics/src/main/native-glass/gtk/GlassApplication.cpp
+@@ -86,7 +86,7 @@ static void init_threads() {
+             g_thread_init(NULL);
+         }
+     }
+-    gdk_threads_init();
++    // gdk_threads_init();
+ }
+ #pragma GCC diagnostic pop
+ 
+@@ -109,7 +109,7 @@ JNIEXPORT void JNICALL Java_com_sun_glass_ui_gtk_GtkAp
+     env->ExceptionClear();
+     init_threads();
+ 
+-    gdk_threads_enter();
++    //gdk_threads_enter();
+     gtk_init(NULL, NULL);
+ 
+     // Major version is checked before loading
+@@ -233,7 +233,7 @@ JNIEXPORT void JNICALL Java_com_sun_glass_ui_gtk_GtkAp
+     //     }
+     // #endif
+ 
+-    gdk_threads_leave();
++    //gdk_threads_leave();
+ 
+ }
+ 

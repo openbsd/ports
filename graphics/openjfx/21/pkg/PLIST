@@ -1,0 +1,17 @@
+share/java/
+share/java/classes/
+share/java/classes/21/
+share/java/classes/21/javafx-base-openbsd.jar
+share/java/classes/21/javafx-base.jar
+share/java/classes/21/javafx-controls-openbsd.jar
+share/java/classes/21/javafx-controls.jar
+share/java/classes/21/javafx-fxml-openbsd.jar
+share/java/classes/21/javafx-fxml.jar
+share/java/classes/21/javafx-graphics-openbsd.jar
+share/java/classes/21/javafx-graphics.jar
+share/java/classes/21/javafx-media-openbsd.jar
+share/java/classes/21/javafx-media.jar
+share/java/classes/21/javafx-swing-openbsd.jar
+share/java/classes/21/javafx-swing.jar
+share/java/classes/21/javafx-web-openbsd.jar
+share/java/classes/21/javafx-web.jar

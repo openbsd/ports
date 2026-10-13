@@ -1,0 +1,268 @@
+Index: build.gradle
+--- build.gradle.orig
++++ build.gradle
+@@ -359,6 +359,7 @@ ext.IS_RISCV64 = OS_ARCH.toLowerCase().contains("riscv
+ ext.IS_MAC = OS_NAME.contains("mac") || OS_NAME.contains("darwin")
+ ext.IS_WINDOWS = OS_NAME.contains("windows")
+ ext.IS_LINUX = OS_NAME.contains("linux")
++ext.IS_OPENBSD = OS_NAME.contains("openbsd")
+ 
+ ext.MAVEN_GROUP_ID = "org.openjfx"
+ 
+@@ -366,13 +367,15 @@ ext.MAVEN_GROUP_ID = "org.openjfx"
+ // at present building on PI is not supported, but we would only need to make
+ // some changes on assumptions on what should be built (like SWT / Swing) and
+ // such and we could probably make it work.
+-if (!IS_MAC && !IS_WINDOWS && !IS_LINUX) fail("Unsupported build OS ${OS_NAME}")
++if (!IS_MAC && !IS_WINDOWS && !IS_LINUX && !IS_OPENBSD) fail("Unsupported build OS ${OS_NAME}")
+ if (IS_WINDOWS && OS_ARCH != "x86" && OS_ARCH != "amd64") {
+     fail("Unknown and unsupported build architecture: $OS_ARCH")
+ } else if (IS_MAC && OS_ARCH != "x86_64" && OS_ARCH != "aarch64") {
+     fail("Unknown and unsupported build architecture: $OS_ARCH")
+ } else if (IS_LINUX && OS_ARCH != "i386" && OS_ARCH != "amd64" && !IS_AARCH64 && !IS_LOONGARCH64 && !IS_RISCV64) {
+     fail("Unknown and unsupported build architecture: $OS_ARCH")
++} else if (IS_OPENBSD && OS_ARCH != "i386" && OS_ARCH != "amd64" && !IS_AARCH64 && !IS_LOONGARCH64 && !IS_RISCV64) {
++    fail("Unknown and unsupported build architecture: $OS_ARCH")
+ }
+ 
+ if (IS_64) {
+@@ -451,7 +454,7 @@ defineProperty("JFX_DEPS_URL", "")
+ defineProperty("JDK_DOCS_LINK", "")
+ 
+ // COMPILE_WEBKIT specifies whether to build all of webkit.
+-defineProperty("COMPILE_WEBKIT", "false")
++defineProperty("COMPILE_WEBKIT", "true")
+ ext.IS_COMPILE_WEBKIT = Boolean.parseBoolean(COMPILE_WEBKIT)
+ 
+ // COMPILE_MEDIA specifies whether to build all of media.
+@@ -468,7 +471,7 @@ defineProperty("BUILD_WORKING_LIBAV", "false")
+ ext.IS_BUILD_WORKING_LIBAV = IS_LINUX ? Boolean.parseBoolean(BUILD_WORKING_LIBAV) : false
+ 
+ // COMPILE_PANGO specifies whether to build javafx_font_pango.
+-defineProperty("COMPILE_PANGO", "${IS_LINUX}")
++defineProperty("COMPILE_PANGO", "${IS_LINUX || IS_OPENBSD}")
+ ext.IS_COMPILE_PANGO = Boolean.parseBoolean(COMPILE_PANGO)
+ 
+ // COMPILE_HARFBUZZ specifies whether to use Harfbuzz.
+@@ -661,7 +664,7 @@ defineProperty("MAVEN_VERSION", IS_MAVEN_PUBLISH ? (IS
+ // Check whether the COMPILE_TARGETS property has been specified (if so, it was done by
+ // the user and not by this script). If it has not been defined then default
+ // to building the normal desktop build for this machine
+-project.ext.set("defaultHostTarget", IS_MAC ? "mac" : IS_WINDOWS ? "win" : IS_LINUX ? "linux" : "");
++project.ext.set("defaultHostTarget", IS_MAC ? "mac" : IS_WINDOWS ? "win" : IS_LINUX ? "linux" : IS_OPENBSD ? "openbsd" : "" );
+ defineProperty("COMPILE_TARGETS", "$defaultHostTarget")
+ 
+ // Flag indicating whether to import cross compile tools
+@@ -1303,7 +1306,7 @@ compileTargets { t ->
+     if (!targetProperties.containsKey('includeMonocle')) targetProperties.includeMonocle = false
+     if (!targetProperties.containsKey('includeEGL')) targetProperties.includeEGL = false
+ 
+-    if (!targetProperties.containsKey('includeGTK')) targetProperties.includeGTK = IS_LINUX
++    if (!targetProperties.containsKey('includeGTK')) targetProperties.includeGTK = IS_LINUX || IS_OPENBSD
+ 
+     if (!targetProperties.containsKey('modLibDest')) targetProperties.modLibDest = targetProperties.libDest
+ 
+@@ -1435,7 +1438,7 @@ logger.quiet("minimum jdk version: ${jfxBuildJdkVersio
+ logger.quiet("minimum jdk build number: ${jfxBuildJdkBuildnumMin}")
+ logger.quiet("Java target version: ${JAVA_TARGET_VERSION}")
+ 
+-if (IS_LINUX) {
++if (IS_LINUX || IS_OPENBSD) {
+     logger.quiet("GCC version: ${jfxBuildLinuxGccVersion}")
+ } else if (IS_WINDOWS) {
+     logger.quiet("MSVC version: ${jfxBuildWindowsMsvcVersion}")
+@@ -2811,8 +2814,12 @@ project(":swt") {
+ 
+     commonModuleSetup(project, [ 'base', 'graphics' ])
+ 
+-    dependencies {
+-        implementation name: SWT_FILE_NAME
++println "COMPILE_SWT=${COMPILE_SWT}"
++println "SWT_FILE_NAME='${SWT_FILE_NAME}'"
++    if (COMPILE_SWT) {
++        dependencies {
++            implementation name: SWT_FILE_NAME
++        }
+     }
+ 
+     classes {
+@@ -3083,7 +3090,7 @@ project(":media") {
+ 
+             buildNative.dependsOn buildPlugins
+ 
+-            if (t.name == "linux") {
++            if (t.name == "linux" || t.name == "openbsd" ) {
+                 // Pre-defined command line arguments
+                 def cfgCMDArgs = ["sh", "configure"]
+                 def commonCfgArgs = ["--enable-shared", "--disable-debug", "--disable-static", "--disable-asm", "--disable-doc", "--disable-programs", "--disable-everything"]
+@@ -3150,7 +3157,11 @@ project(":media") {
+ 
+                     doLast {
+                         project.ext.libav = [:]
+-                        project.ext.libav.basedir = "${buildDir}/native/linux/libav"
++                        if (t.name == linux ) {
++                          project.ext.libav.basedir = "${buildDir}/native/linux/libav"
++                        } else {
++                          project.ext.libav.basedir = "${buildDir}/native/openbsd/libav"
++                        }
+                         project.ext.libav.versions = [ "9.14", "11.4", "12.1" ]
+                         project.ext.libav.versionmap = [ "9.14" : "54", "11.4" : "56", "12.1" : "57" ]
+ 
+@@ -3211,7 +3222,11 @@ project(":media") {
+ 
+                     doLast {
+                         project.ext.libav = [:]
+-                        project.ext.libav.basedir = "${buildDir}/native/linux/libavffmpeg"
++			if (t.name == "linux" ) {
++                          project.ext.libav.basedir = "${buildDir}/native/linux/libavffmpeg"
++			} else {
++                          project.ext.libav.basedir = "${buildDir}/native/openbsd/libavffmpeg"
++                        }
+                         project.ext.libav.versions = [ "11.4" ]
+                         project.ext.libav.versionmap = [ "11.4" : "56" ]
+ 
+@@ -3289,7 +3304,11 @@ project(":media") {
+ 
+                     doLast {
+                         project.ext.libav = [:]
+-                        project.ext.libav.basedir = "${buildDir}/native/linux/ffmpeg"
++			if (t.name == "linux" ) {
++                          project.ext.libav.basedir = "${buildDir}/native/linux/ffmpeg"
++			} else {
++                          project.ext.libav.basedir = "${buildDir}/native/openbsd/ffmpeg"
++			}
+                         project.ext.libav.versions = [ "3.3.3", "4.0.2", "5.1.2", "6.0" ]
+                         project.ext.libav.versionmap = [ "3.3.3" : "57", "4.0.2" : "58", "5.1.2" : "59", "6.0" : "60" ]
+ 
+@@ -3364,21 +3383,36 @@ project(":media") {
+                     doLast {
+                         if (IS_BUILD_LIBAV_STUBS) {
+                             project.ext.libav = [:]
+-                            project.ext.libav.basedir = "${buildDir}/native/linux/libav/libav"
++			    if (t.name == "linux" ) {
++                              project.ext.libav.basedir = "${buildDir}/native/linux/libav/libav"
++			    } else {
++                              project.ext.libav.basedir = "${buildDir}/native/openbsd/libav/libav"
++			    }
+                             project.ext.libav.versions = [ "53", "54", "55", "56", "57" ]
+                             project.ext.libav.libavffmpeg = [:]
+-                            project.ext.libav.libavffmpeg.basedir = "${buildDir}/native/linux/libavffmpeg/libav"
++			    if (t.name == "linux" ) {
++                              project.ext.libav.libavffmpeg.basedir = "${buildDir}/native/linux/libavffmpeg/libav"
++			    } else {
++                              project.ext.libav.libavffmpeg.basedir = "${buildDir}/native/openbsd/libavffmpeg/libav"
++			    }
+                             project.ext.libav.libavffmpeg.versions = [ "56" ]
+                             project.ext.libav.ffmpeg = [:]
+-                            project.ext.libav.ffmpeg.basedir = "${buildDir}/native/linux/ffmpeg/ffmpeg"
++			    if (t.name == "linux" ) {
++                              project.ext.libav.ffmpeg.basedir = "${buildDir}/native/linux/ffmpeg/ffmpeg"
++			    } else {
++                              project.ext.libav.ffmpeg.basedir = "${buildDir}/native/openbsd/ffmpeg/ffmpeg"
++			    }
+                             project.ext.libav.ffmpeg.versions = [ "57", "58", "59", "60" ]
+-
+                             project.ext.libav.versions.each { version ->
+                                 def libavDir = "${project.ext.libav.basedir}-${version}"
+                                 File dir = file(libavDir)
+                                 if (dir.exists()) {
+                                     exec {
+-                                        commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++					if ( t.name == "linux" ) {
++                                          commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++					} else {
++                                          commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/openbsd/avplugin")
++					}
+                                         args("CC=${mediaProperties.compiler}", "LINKER=${mediaProperties.linker}",
+                                              "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}",
+                                              "BASE_NAME=avplugin", "VERSION=${version}", "LIBAV_DIR=${libavDir}",
+@@ -3393,7 +3427,11 @@ project(":media") {
+                                 File dir = file(libavDir)
+                                 if (dir.exists()) {
+                                     exec {
+-                                        commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++					if ( t.name == "linux" ) {
++                                          commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++					} else {
++                                          commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/openbsd/avplugin")
++					}
+                                         args("CC=${mediaProperties.compiler}", "LINKER=${mediaProperties.linker}",
+                                              "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}",
+                                              "BASE_NAME=avplugin", "VERSION=${version}", "LIBAV_DIR=${libavDir}",
+@@ -3408,7 +3446,11 @@ project(":media") {
+                                 File dir = file(libavDir)
+                                 if (dir.exists()) {
+                                     exec {
+-                                        commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++					if ( t.name == "linux" ) {
++                                          commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++					} else {
++                                          commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/openbsd/avplugin")
++					}
+                                         args("CC=${mediaProperties.compiler}", "LINKER=${mediaProperties.linker}",
+                                              "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}",
+                                              "BASE_NAME=avplugin", "VERSION=${version}", "LIBAV_DIR=${libavDir}",
+@@ -3420,7 +3462,11 @@ project(":media") {
+                         } else {
+                             // Building fxavcodec plugin (libav plugin)
+                             exec {
+-                                commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++				if ( t.name == "linux" ) {
++                                  commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++				} else {
++                                  commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/openbsd/avplugin")
++				}
+                                 args("CC=${mediaProperties.compiler}", "LINKER=${mediaProperties.linker}",
+                                      "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}",
+                                      "BASE_NAME=avplugin", "ARCH=${ARCH_NAME}")
+@@ -3656,7 +3702,7 @@ project(":web") {
+ 
+                 exec {
+                     workingDir("$webkitOutputDir")
+-                    def cmakeArgs = "-DENABLE_TOOLS=1"
++                    def cmakeArgs = "-DENABLE_TOOLS=0"
+                     def makeArgs = "-j $NUM_COMPILE_THREADS"
+                     if (IS_STATIC_BUILD) {
+                         cmakeArgs = " $cmakeArgs -DSTATIC_BUILD=1 -DUSE_THIN_ARCHIVES=OFF";
+@@ -3690,8 +3736,12 @@ project(":web") {
+ 
+                     } else if (t.name == "mac") {
+                         cmakeArgs = " $cmakeArgs -DCMAKE_OSX_DEPLOYMENT_TARGET=$MACOSX_MIN_VERSION -DCMAKE_OSX_SYSROOT=$MACOSX_SDK_PATH"
+-                    } else if (t.name == "linux") {
+-                        cmakeArgs = " $cmakeArgs -DCMAKE_SYSTEM_NAME=Linux"
++                    } else if (t.name == "linux" || t.name == "openbsd") {
++			if (t.name == "linux") {
++                          cmakeArgs = " $cmakeArgs -DCMAKE_SYSTEM_NAME=Linux"
++			} else {
++                          cmakeArgs = " $cmakeArgs -DCMAKE_SYSTEM_NAME=OpenBSD"
++			}
+                         if (IS_64) {
+                             if (IS_AARCH64) {
+                                 cmakeArgs = "$cmakeArgs -DCMAKE_SYSTEM_PROCESSOR=aarch64"
+@@ -4656,7 +4706,7 @@ configurations {
+ }
+ 
+ if (IS_STUB_RUNTIME_OPENJFX) {
+-    def String platform = IS_MAC ? "mac" : IS_WINDOWS ? "win" : IS_LINUX ? "linux" : ""
++    def String platform = IS_MAC ? "mac" : IS_WINDOWS ? "win" : IS_LINUX ? "linux" : IS_OPENBSD ? "openbsd" : ""
+     dependencies {
+         openjfxStubs "org.openjfx:javafx-media:$STUB_RUNTIME_OPENJFX:$platform@jar"
+         openjfxStubs "org.openjfx:javafx-web:$STUB_RUNTIME_OPENJFX:$platform@jar"
+@@ -5344,7 +5394,7 @@ compileTargets { t ->
+                     // OSX media natives
+                     [ "jfxmedia_qtkit", "jfxmedia_avf", "glib-lite" ].each { name ->
+                         from ("${mediaProject.buildDir}/native/${t.name}/${mediaBuildType}/${library(name)}") }
+-                } else if (t.name == "linux") {
++                } else if (t.name == "linux" || t.name == "openbsd" ) {
+                     from("${mediaProject.buildDir}/native/${t.name}/${mediaBuildType}") { include "libavplugin*.so" }
+                 } else from ("${mediaProject.buildDir}/native/${t.name}/${mediaBuildType}/${library("glib-lite")}")
+             } else {
+@@ -5357,7 +5407,7 @@ compileTargets { t ->
+                     // copy libjfxmedia_{avf,qtkit}.dylib if they exist
+                     [ "jfxmedia_qtkit", "jfxmedia_avf", "glib-lite" ].each { name ->
+                         from ("$MEDIA_STUB/${library(name)}") }
+-                } else if (t.name == "linux") {
++                } else if (t.name == "linux" || t.name == "openbsd" ) {
+                     from(MEDIA_STUB) { include "libavplugin*.so" }
+                 }
+                 else if (t.name != "android"  && t.name != "dalvik" ) {

@@ -1,0 +1,14 @@
+Index: modules/javafx.graphics/src/main/native-glass/gtk/glass_evloop.cpp
+--- modules/javafx.graphics/src/main/native-glass/gtk/glass_evloop.cpp.orig
++++ modules/javafx.graphics/src/main/native-glass/gtk/glass_evloop.cpp
+@@ -25,7 +25,10 @@
+ #include "glass_evloop.h"
+ 
+ #include <glib.h>
++#if defined(__Linux__)
+ #include <malloc.h>
++#endif
++#include <stdlib.h>
+ 
+ static GSList * evloopHookList;
+ 
