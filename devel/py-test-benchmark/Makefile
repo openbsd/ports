@@ -28,7 +28,6 @@ RUN_DEPENDS=	devel/py-test \
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
 		devel/py-freezegun \
 		devel/mercurial \
-		graphics/py-pygal \
-		textproc/py-elasticsearch
+		graphics/py-pygal
 
 .include <bsd.port.mk>
