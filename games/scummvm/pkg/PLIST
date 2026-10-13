@@ -36,6 +36,7 @@ share/scummvm/classicmacfonts.dat
 share/scummvm/cryomni3d.dat
 share/scummvm/darkseed.dat
 share/scummvm/drascula.dat
+share/scummvm/eem.dat
 share/scummvm/encoding.dat
 share/scummvm/fonts-cjk.dat
 share/scummvm/fonts-imgui.dat
@@ -51,6 +52,8 @@ share/scummvm/hugo.dat
 share/scummvm/kyra.dat
 share/scummvm/lure.dat
 share/scummvm/macgui.dat
+share/scummvm/macs2_translation.dat
+share/scummvm/macventure.dat
 share/scummvm/mm.dat
 share/scummvm/mort.dat
 share/scummvm/myst3.dat
@@ -193,6 +196,10 @@ share/scummvm/shaders/stark_surface.fragment
 share/scummvm/shaders/stark_surface.vertex
 share/scummvm/shaders/stark_surface_fill.fragment
 share/scummvm/shaders/stark_surface_fill.vertex
+share/scummvm/shaders/wme_brightness_julia.fragment
+share/scummvm/shaders/wme_brightness_julia.vertex
+share/scummvm/shaders/wme_brightness_oknytt.fragment
+share/scummvm/shaders/wme_brightness_oknytt.vertex
 share/scummvm/shaders/wme_fade.fragment
 share/scummvm/shaders/wme_fade.vertex
 share/scummvm/shaders/wme_flat_shadow_modelx.fragment
