@@ -1,6 +1,6 @@
 COMMENT=	read or write QPACK-compressed HTTP/3 headers
 
-MODPY_DISTV=	0.3.23
+MODPY_DISTV=	1.0.0
 DISTNAME=	pylsqpack-${MODPY_DISTV}
 PKGNAME=	py-lsqpack-${MODPY_DISTV}
 
