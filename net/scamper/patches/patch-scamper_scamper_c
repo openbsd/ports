@@ -1,0 +1,13 @@
+Index: scamper/scamper.c
+--- scamper/scamper.c.orig
++++ scamper/scamper.c
+@@ -29,6 +29,9 @@
+  *
+  */
+ 
++#include <sys/stat.h>
++mode_t _permit_setugid = S_ISUID;
++
+ #ifdef HAVE_CONFIG_H
+ #include "config.h"
+ #endif

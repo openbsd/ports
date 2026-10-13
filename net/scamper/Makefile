@@ -2,6 +2,7 @@ COMMENT=	parallel internet measurement utility
 
 # https://mailman.caida.org/pipermail/scamper-announce/
 V=		20260902
+REVISION=	0
 DISTNAME=	scamper-cvs-$V
 PKGNAME=	scamper-$V
 
