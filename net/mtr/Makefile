@@ -3,7 +3,7 @@ COMMENT=	network diagnostic tool, similar to ping and traceroute
 GH_ACCOUNT=	traviscross
 GH_PROJECT=	mtr
 GH_TAGNAME=	v0.96
-EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -11,6 +11,8 @@ HOMEPAGE=	https://www.bitwizard.nl/mtr/
 
 # GPLv2+
 PERMIT_PACKAGE=	yes
+
+EPOCH=		0
 
 # diff for pledge(), not yet enabled
 WANTLIB += c m curses jansson
