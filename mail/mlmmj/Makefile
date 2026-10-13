@@ -1,13 +1,13 @@
 COMMENT=	mailing list manager
 
-V=		2.2.0
-REVISION=	0
+V=		2.2.2
 
 DISTNAME=	mlmmj-${V}
 
 CATEGORIES=	mail
 
 HOMEPAGE=	https://mlmmj.org/
+MAINTAINER =	Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes
