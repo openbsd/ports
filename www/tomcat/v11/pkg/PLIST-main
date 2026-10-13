@@ -93,9 +93,9 @@ tomcat/lib/catalina-ssi.jar
 tomcat/lib/catalina-storeconfig.jar
 tomcat/lib/catalina-tribes.jar
 tomcat/lib/catalina.jar
-tomcat/lib/ecj-4.40.jar
+tomcat/lib/ecj-4.41.jar
 tomcat/lib/el-api.jar
-tomcat/lib/jakartaee-migration-1.0.12-shaded.jar
+tomcat/lib/jakartaee-migration-1.0.13-shaded.jar
 tomcat/lib/jasper-el.jar
 tomcat/lib/jasper.jar
 tomcat/lib/jaspic-api.jar

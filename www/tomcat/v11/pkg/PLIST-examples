@@ -685,6 +685,7 @@ webapps/docs/api/org/apache/catalina/storeconfig/WatchedResourceSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/WebResourceRootSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/WrapperLifecycleSF.html
 webapps/docs/api/org/apache/catalina/storeconfig/WrapperListenerSF.html
+webapps/docs/api/org/apache/catalina/storeconfig/XMLFormatPreserver.html
 webapps/docs/api/org/apache/catalina/storeconfig/package-summary.html
 webapps/docs/api/org/apache/catalina/storeconfig/package-tree.html
 webapps/docs/api/org/apache/catalina/tribes/
@@ -1244,6 +1245,7 @@ webapps/docs/api/org/apache/jasper/compiler/Node.JspText.html
 webapps/docs/api/org/apache/jasper/compiler/Node.NamedAttribute.html
 webapps/docs/api/org/apache/jasper/compiler/Node.Nodes.html
 webapps/docs/api/org/apache/jasper/compiler/Node.PageDirective.html
+webapps/docs/api/org/apache/jasper/compiler/Node.PageTerminationGenerator.html
 webapps/docs/api/org/apache/jasper/compiler/Node.ParamAction.html
 webapps/docs/api/org/apache/jasper/compiler/Node.Root.html
 webapps/docs/api/org/apache/jasper/compiler/Node.ScriptingElement.html
@@ -1913,6 +1915,7 @@ webapps/docs/api/org/apache/tomcat/util/http/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/
 webapps/docs/api/org/apache/tomcat/util/http/parser/AcceptEncoding.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/AcceptLanguage.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/AcceptLanguage2.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Authorization.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/ChunkExtension.State.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/ChunkExtension.html
