@@ -1,4 +1,4 @@
-	SUBDIR =
-	SUBDIR += 21
+SUBDIR =
+SUBDIR += 21
 
 .include <bsd.port.subdir.mk>
