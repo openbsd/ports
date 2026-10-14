@@ -11,6 +11,7 @@
      SUBDIR += apg
      SUBDIR += argon2
      SUBDIR += arirang
+     SUBDIR += autopsy
      SUBDIR += b3sum
      SUBDIR += badkeys
      SUBDIR += bandit
