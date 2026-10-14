@@ -5,7 +5,7 @@ GH_ACCOUNT=	ReimuHakurei
 GH_PROJECT=	phpPgAdmin
 GH_TAGNAME=	v$V-mod
 PKGNAME=	phpPgAdmin-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www databases
 

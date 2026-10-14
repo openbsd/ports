@@ -4,6 +4,7 @@ GH_ACCOUNT=		phpvirtualbox
 GH_PROJECT=		phpvirtualbox
 GH_TAGNAME=		7.2-3
 PKGNAME=		phpvirtualbox-${GH_TAGNAME:S/-/./}
+REVISION=		0
 
 CATEGORIES=		www sysutils
 

@@ -4,6 +4,7 @@ DISTNAME =	davical_1.1.13.orig
 PKGNAME =	davical-1.1.13
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	productivity net
+REVISION =	0
 
 HOMEPAGE =	https://www.davical.org/
 SITES =		https://www.davical.org/downloads/

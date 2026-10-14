@@ -5,6 +5,7 @@ PKGNAME =	php-awl-0.65
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	www
 PKG_ARCH =	*
+REVISION =	0
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

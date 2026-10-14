@@ -2,7 +2,7 @@ COMMENT=	rss reader, live stream, mashup, aggregation webapp
 
 V=		2.19
 DISTNAME=	selfoss-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

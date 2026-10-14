@@ -7,7 +7,7 @@ PKGNAME =	monica-${VERSION}
 
 SITES =	https://github.com/monicahq/monica/releases/download/v${VERSION}/
 DISTNAME =	monica-v${VERSION}
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 

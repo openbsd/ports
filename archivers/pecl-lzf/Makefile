@@ -1,7 +1,7 @@
 COMMENT =		PHP support for LZF de/compression
 
 DISTNAME =		LZF-1.7.0
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		archivers
 

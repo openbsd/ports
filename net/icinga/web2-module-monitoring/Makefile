@@ -1,4 +1,5 @@
 COMMENT=	Icinga monitoring module
+REVISION=	0
 
 MODULE_NAME=	monitoring
 MODULE_VERSION=	v2.12.6

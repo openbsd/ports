@@ -4,7 +4,7 @@ COMMENT=	web frontend to symon
 #GH_PROJECT=	syweb
 #GH_TAGNAME=	0.67
 DIST_TUPLE=	github dijkstrw syweb 0.67 .
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	www sysutils
 

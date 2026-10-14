@@ -7,6 +7,7 @@ COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
 V=		8.6.6
+REVISION-php=	0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	mapserver-${V:S/-//}
 PKGNAME-utils=	mapserver-utils-${V:S/-//}
