@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	video editor
 
-V =		26.8.1
+V =		26.9.27
 
 DIST_TUPLE =	github mltframework shotcut v${V} .
 PKGNAME =	shotcut-${V}
