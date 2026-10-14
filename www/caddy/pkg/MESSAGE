@@ -1,0 +1,2 @@
+If you have issues with Caddy not binding to IPv6, you may need to specify
+the address family on binds, e.g. "default_bind tcp4/0.0.0.0 tcp6/[::]"
