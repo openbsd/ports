@@ -1,0 +1,13 @@
+Index: src/postdrop/postdrop.c
+--- src/postdrop/postdrop.c.orig
++++ src/postdrop/postdrop.c
+@@ -179,6 +179,9 @@
+   * and so on.
+   */
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++
+  /*
+   * Local mail submission access list.
+   */

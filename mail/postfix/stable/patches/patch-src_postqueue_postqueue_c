@@ -1,0 +1,13 @@
+Index: src/postqueue/postqueue.c
+--- src/postqueue/postqueue.c.orig
++++ src/postqueue/postqueue.c
+@@ -309,6 +309,9 @@
+   * and so on.
+   */
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++
+  /*
+   * Modes of operation.
+   * 
