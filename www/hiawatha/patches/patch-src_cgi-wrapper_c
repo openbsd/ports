@@ -1,0 +1,13 @@
+Index: src/cgi-wrapper.c
+--- src/cgi-wrapper.c.orig
++++ src/cgi-wrapper.c
+@@ -28,6 +28,9 @@
+ #include "libfs.h"
+ #include "userconfig.h"
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
++
+ #define DELIMITER ';'
+ 
+ typedef struct type_wrap {
