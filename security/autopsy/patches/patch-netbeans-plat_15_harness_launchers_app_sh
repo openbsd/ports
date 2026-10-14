@@ -1,0 +1,23 @@
+Index: netbeans-plat/15/harness/launchers/app.sh
+--- netbeans-plat/15/harness/launchers/app.sh.orig
++++ netbeans-plat/15/harness/launchers/app.sh
+@@ -52,8 +52,8 @@ case "`uname`" in
+         ;;
+ esac
+ 
+-if [ -f "$progdir/../etc/$APPNAME".conf ] ; then
+-    . "$progdir/../etc/$APPNAME".conf
++if [ -f "${SYSCONFDIR}/autopsy/$APPNAME".conf ] ; then
++    . "${SYSCONFDIR}/autopsy/$APPNAME".conf
+ fi
+ 
+ # XXX does not correctly deal with spaces in non-userdir params
+@@ -115,7 +115,7 @@ absolutize_paths() {
+     done
+ }
+ 
+-clusters=`(cat "$progdir/../etc/$APPNAME".clusters; echo) | readClusters | absolutize_paths | tr '\012' ':'`
++clusters=`(cat "${SYSCONFDIR}/autopsy/$APPNAME".clusters; echo) | readClusters | absolutize_paths | tr '\012' ':'`
+ 
+ if [ ! -z "$extra_clusters" ] ; then
+     clusters="$clusters:$extra_clusters"

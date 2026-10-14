@@ -1,0 +1,49 @@
+Make yara module work on OpenBSD
+Index: Core/src/org/sleuthkit/autopsy/modules/yara/YaraIngestModule.java
+--- Core/src/org/sleuthkit/autopsy/modules/yara/YaraIngestModule.java.orig
++++ Core/src/org/sleuthkit/autopsy/modules/yara/YaraIngestModule.java
+@@ -78,14 +78,14 @@ public class YaraIngestModule extends FileIngestModule
+     }
+ 
+     @Messages({
+-        "YaraIngestModule_windows_error_msg=The YARA ingest module is only available on 64bit Windows.",})
++        "YaraIngestModule_windows_error_msg=The YARA ingest module is only available on 64bit Windows or OpenBSD.",})
+ 
+     @Override
+     public void startUp(IngestJobContext context) throws IngestModuleException {
+         this.context = context;
+         this.jobId = context.getJobId();
+ 
+-        if (!PlatformUtil.isWindowsOS() || !PlatformUtil.is64BitOS()) {
++        if (!PlatformUtil.isOpenBSDOS() || (!PlatformUtil.isWindowsOS() && !PlatformUtil.is64BitOS())) {
+             throw new IngestModule.IngestModuleException(Bundle.YaraIngestModule_windows_error_msg());
+         }
+ 
+@@ -125,8 +125,25 @@ public class YaraIngestModule extends FileIngestModule
+         }
+         
+         if (settings.onlyExecutableFiles()) {
+-            String extension = file.getNameExtension();
+-            if (!extension.equals("exe")) {
++            boolean isExecutable = false;
++
++            // 1. Check Unix / POSIX permission bits (User, Group, or Other execution bit)
++            boolean hasUnixExecBit = file.isModeSet(TskData.TSK_FS_META_MODE_ENUM.TSK_FS_META_MODE_IXUSR) ||
++                        file.isModeSet(TskData.TSK_FS_META_MODE_ENUM.TSK_FS_META_MODE_IXGRP) ||
++                        file.isModeSet(TskData.TSK_FS_META_MODE_ENUM.TSK_FS_META_MODE_IXOTH);
++
++            // 2. Check File Extension (expand beyond just .exe)
++            String ext = file.getNameExtension().toLowerCase();
++            boolean isExecExtension = ext.equals("exe") || ext.equals("dll") || ext.equals("sys") 
++                           || ext.equals("com") || ext.equals("bat") || ext.equals("ps1") 
++                           || ext.equals("elf") || ext.equals("bin") || ext.equals("sh");
++
++            // Combine checks
++            if (hasUnixExecBit || isExecExtension) {
++                isExecutable = true;
++            }
++
++            if (!isExecutable) {
+                 return ProcessResult.OK;
+             }
+         }

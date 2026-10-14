@@ -1,0 +1,14 @@
+Index: Tika/nbproject/project.xml
+--- Tika/nbproject/project.xml.orig
++++ Tika/nbproject/project.xml
+@@ -668,8 +668,8 @@
+                 <binary-origin>release/modules/ext/SparseBitSet-1.3.jar</binary-origin>
+             </class-path-extension>
+             <class-path-extension>
+-                <runtime-relative-path>ext/sqlite-jdbc-3.46.1.3.jar</runtime-relative-path>
+-                <binary-origin>release/modules/ext/sqlite-jdbc-3.46.1.3.jar</binary-origin>
++                <runtime-relative-path>ext/sqlite-jdbc-${SQLITE_V}.jar</runtime-relative-path>
++                <binary-origin>release/modules/ext/sqlite-jdbc-${SQLITE_V}.jar</binary-origin>
+             </class-path-extension>
+             <class-path-extension>
+                 <runtime-relative-path>ext/tagsoup-1.2.1.jar</runtime-relative-path>

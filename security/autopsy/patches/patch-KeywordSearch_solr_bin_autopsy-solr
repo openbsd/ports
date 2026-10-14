@@ -1,0 +1,28 @@
+Allow solr to create logs and pid file, as well as let the script 
+figure out if solr successfully started
+
+
+Index: KeywordSearch/solr/bin/autopsy-solr
+--- KeywordSearch/solr/bin/autopsy-solr.orig
++++ KeywordSearch/solr/bin/autopsy-solr
+@@ -49,6 +49,9 @@ SOLR_SCRIPT="$0"
+ verbose=false
+ THIS_OS=`uname -s`
+ 
++SOLR_PID_DIR=${HOME}/.solr/
++SOLR_LOGS_DIR=${HOME}/.solr/logs/
++
+ # What version of Java is required to run this version of Solr.
+ JAVA_VER_REQ="8"
+ 
+@@ -2279,8 +2282,8 @@ function start_solr() {
+       spinner $!
+     else
+       echo -e "NOTE: Please install lsof as this script needs it to determine if Solr is listening on port $SOLR_PORT."
+-      sleep 10
+-      SOLR_PID=`ps auxww | grep start\.jar | grep -w "\-Djetty\.port=$SOLR_PORT" | grep -v grep | awk '{print $2}' | sort -r`
++      sleep 1
++      SOLR_PID=`ps auxww | grep start\.jar | grep -w "Djetty\.port=$SOLR_PORT" | grep -v grep | awk '{print $2}' | sort -r`
+       echo -e "\nStarted Solr server on port $SOLR_PORT (pid=$SOLR_PID). Happy searching!\n"
+       return;
+     fi

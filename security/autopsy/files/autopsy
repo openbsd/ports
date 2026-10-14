@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/local/autopsy/bin/autopsy --jdkhome ${JAVA_HOME} "$@"

@@ -1,0 +1,12 @@
+Index: Core/src/org/sleuthkit/autopsy/timeline/PromptDialogManager.java
+--- Core/src/org/sleuthkit/autopsy/timeline/PromptDialogManager.java.orig
++++ Core/src/org/sleuthkit/autopsy/timeline/PromptDialogManager.java
+@@ -63,7 +63,7 @@ public final class PromptDialogManager {
+         Image tempImg = null;
+         try {
+             tempImg = new Image(new URL("nbresloc:/org/netbeans/core/startup/frame.gif").openStream()); //NON-NLS
+-        } catch (IOException ex) {
++        } catch (Throwable ex) {
+             logger.log(Level.WARNING, "Failed to load branded icon for progress dialog.", ex); //NON-NLS
+         }
+         AUTOPSY_ICON = tempImg;

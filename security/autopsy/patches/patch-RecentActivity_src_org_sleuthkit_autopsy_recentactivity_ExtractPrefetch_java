@@ -1,0 +1,484 @@
+Make prefetch-parser work on OpenBSD
+
+Index: RecentActivity/src/org/sleuthkit/autopsy/recentactivity/ExtractPrefetch.java
+--- RecentActivity/src/org/sleuthkit/autopsy/recentactivity/ExtractPrefetch.java.orig
++++ RecentActivity/src/org/sleuthkit/autopsy/recentactivity/ExtractPrefetch.java
+@@ -19,9 +19,16 @@
+  */
+ package org.sleuthkit.autopsy.recentactivity;
+ 
++import java.io.BufferedReader;
++import java.io.BufferedWriter;
+ import java.io.File;
++import java.io.FileReader;
+ import java.io.FileNotFoundException;
++import java.io.InputStreamReader;
+ import java.io.IOException;
++import java.nio.charset.StandardCharsets;
++import java.nio.file.Files;
++import java.nio.file.StandardOpenOption;
+ import java.nio.file.Path;
+ import java.nio.file.Paths;
+ import java.sql.ResultSet;
+@@ -30,12 +37,18 @@ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Collection;
+ import java.util.HashSet;
++import java.util.Map;
++import java.util.HashMap;
+ import java.util.List;
+ import java.util.Set;
+ import java.util.logging.Level;
+ import java.util.regex.Matcher;
+ import java.util.regex.Pattern;
+ import org.apache.commons.io.FilenameUtils;
++import com.google.gson.JsonArray;
++import com.google.gson.JsonElement;
++import com.google.gson.JsonObject;
++import com.google.gson.JsonParser;
+ import org.openide.modules.InstalledFileLocator;
+ import org.openide.util.NbBundle.Messages;
+ import org.sleuthkit.autopsy.casemodule.Case;
+@@ -55,7 +68,12 @@ import org.sleuthkit.datamodel.BlackboardArtifact;
+ import org.sleuthkit.datamodel.BlackboardAttribute;
+ import org.sleuthkit.datamodel.Content;
+ import org.sleuthkit.datamodel.TskCoreException;
++import java.util.Collections;
++import org.sleuthkit.datamodel.Blackboard;
++import org.sleuthkit.datamodel.Score;
++import org.sleuthkit.datamodel.SleuthkitCase;
+ 
++
+ /**
+  * Extract the Prefetch Files and process them thru an External program. The
+  * data will then be added to the TSK_PROG_RUN artifact. Associated artifacts
+@@ -74,9 +92,11 @@ final class ExtractPrefetch extends Extract {
+     private static final String PREFETCH_TOOL_NAME_X64_MACOS = "mm_artifact_parser_x64_macos"; //NON-NLS
+     private static final String PREFETCH_TOOL_NAME_AARCH64_LINUX = "mm_artifact_parser_aarch64_linux"; //NON-NLS
+     private static final String PREFETCH_TOOL_NAME_AARCH64_MACOS = "mm_artifact_parser_aarch64_macos"; //NON-NLS
++    private static final String PREFETCH_TOOL_NAME_OPENBSD = "prefetch-parser"; //NON-NLS
+     private static final String PREFETCH_OUTPUT_FILE_NAME = "Output.txt"; //NON-NLS
+     private static final String PREFETCH_ERROR_FILE_NAME = "Error.txt"; //NON-NLS
+     private static final String PREFETCH_PARSER_DB_FILE = "Autopsy_PF_DB.db3"; //NON-NLS
++    private static final String PREFETCH_PARSER_JSON_FILE = "Autopsy_PF_JSONL.jsonl"; //NON-NLS
+     private static final String PREFETCH_DIR_NAME = "prefetch"; //NON-NLS
+ 
+     @Messages({
+@@ -97,7 +117,11 @@ final class ExtractPrefetch extends Extract {
+      * @return The folder name
+      */
+     private String getPrefetchTempFolder(Content dataSource) {
+-        return dataSource.getId() + "-" + PREFETCH_PARSER_DB_FILE;
++        if (PlatformUtil.isOpenBSDOS()) {
++            return dataSource.getId() + "-" + PREFETCH_PARSER_JSON_FILE;
++        } else {
++            return dataSource.getId() + "-" + PREFETCH_PARSER_DB_FILE;
++        }
+     }
+ 
+     @Override
+@@ -115,11 +139,14 @@ final class ExtractPrefetch extends Extract {
+             }
+         }
+ 
+-        extractPrefetchFiles(dataSource, ingestJobId);
++        // Return a map of: TempFileName (e.g. "IEXPLORE.EXE-3A2B1C0D_12345.pf") -> AbstractFile
++        Map<String, AbstractFile> pfAbstractFileMap = extractPrefetchFiles(dataSource, ingestJobId);
+ 
+         final String prefetchDumper = getPathForPrefetchDumper();
++        System.out.println("ExtractPrefetch: prefetchDumper: " + prefetchDumper);
+         if (prefetchDumper == null) {
+             logger.log(Level.SEVERE, "Error finding parse_prefetch program"); //NON-NLS
++            System.out.println("ExtractPrefetch: couldn't find prefetchDumper: " + prefetchDumper);
+             return; //If we cannot find the parse_prefetch program we cannot proceed
+         }
+ 
+@@ -128,41 +155,63 @@ final class ExtractPrefetch extends Extract {
+         }
+ 
+         String modOutFile = modOutPath + File.separator + getPrefetchTempFolder(dataSource);
++        System.out.println("ExtractPrefetch: modOutFile: " + modOutFile);
+         try {
+             String tempDirPath = RAImageIngestModule.getRATempPath(Case.getCurrentCase(), getPrefetchTempFolder(dataSource), ingestJobId);
+             parsePrefetchFiles(prefetchDumper, tempDirPath, modOutFile, modOutPath);
+-            File prefetchDatabase = new File(modOutFile);
+-            if (prefetchDatabase.exists()) {
+-                createAppExecArtifacts(modOutFile, dataSource);
++            System.out.println("ExtractPrefetch: finished parsePrefetchFiles");
++
++            if (false == PlatformUtil.isOpenBSDOS()) {
++                // Non-OpenBSD platform: process SQLite DB output
++                System.out.println("ExtractPrefetch: in non-OpenBSD branch going to createAppExecArtifacts");
++                File prefetchDatabase = new File(modOutFile);
++                if (prefetchDatabase.exists()) {
++                    createAppExecArtifacts(modOutFile, dataSource);
++                }
++            } else {
++                // OpenBSD platform: process .jsonl output
++                String jsonlPath = modOutFile; 
++                System.out.println("ExtractPrefetch: in OpenBSD branch going to processPrefetchOpenBSD from: " + jsonlPath);
++                File prefetchJsonL = new File(jsonlPath);
++                if (prefetchJsonL.exists()) {
++                    // Pass the pfAbstractFileMap to reliably map JSON records back to prefetch AbstractFiles
++                    processPrefetchOpenBSD(pfAbstractFileMap, jsonlPath, Case.getCurrentCase(), RecentActivityExtracterModuleFactory.getModuleName());
++                } else {
++                    System.out.println("ExtractPrefetch: can't find jsonl tmp output file: " + prefetchJsonL);
++                }
+             }
+         } catch (IOException ex) {
+-            logger.log(Level.SEVERE, "Error parsing prefetch files", ex); //NON-NLS 
++            logger.log(Level.SEVERE, "Error parsing prefetch files", ex);
++            System.out.println("ExtractPrefetch: Error parsing prefetch files: " + ex);
+             addErrorMessage(Bundle.ExtractPrefetch_errMsg_prefetchParsingFailed(Bundle.ExtractPrefetch_module_name()));
+         }
+     }
+ 
+     /**
+      * Extract prefetch file to temp directory to process. Checks to make sure
+-     * that the prefetch files only come from the /Windows/Prefetch directory
++     * that the prefetch files only come from the /Windows/Prefetch directory.
+      *
+      * @param dataSource - datasource to search for prefetch files
++     * @param ingestJobId - current ingest job ID
++     * @return Map of written temp file name -> original AbstractFile
+      */
+-    void extractPrefetchFiles(Content dataSource, long ingestJobId) {
++    Map<String, AbstractFile> extractPrefetchFiles(Content dataSource, long ingestJobId) {
++        Map<String, AbstractFile> pfAbstractFileMap = new HashMap<>();
+         List<AbstractFile> pFiles;
+ 
+         FileManager fileManager = Case.getCurrentCase().getServices().getFileManager();
+ 
+         try {
+-            pFiles = fileManager.findFiles(dataSource, "%.pf"); //NON-NLS            
++            pFiles = fileManager.findFiles(dataSource, "%.pf"); //NON-NLS
+         } catch (TskCoreException ex) {
+             logger.log(Level.WARNING, "Unable to find prefetch files.", ex); //NON-NLS
+-            return;  // No need to continue
++            return pfAbstractFileMap; // Return empty map
+         }
+ 
+         for (AbstractFile pFile : pFiles) {
+ 
+             if (context.dataSourceIngestIsCancelled()) {
+-                return;
++                return pfAbstractFileMap;
+             }
+ 
+             if (pFile.getParentPath().toLowerCase().contains(PREFETCH_FILE_LOCATION.toLowerCase()) && pFile.getSize() > 0) {
+@@ -174,11 +223,18 @@ final class ExtractPrefetch extends Extract {
+                 String prefetchFile = Paths.get(baseRaTempPath, fileName).toString();
+                 try {
+                     ContentUtils.writeToFile(pFile, new File(prefetchFile));
++                    
++                    // Store both full file name (e.g., IEXPLORE.EXE-3A2B1C0D_12345.pf) 
++                    // and base file name without extension to ensure lookup matching succeed
++                    pfAbstractFileMap.put(fileName, pFile);
++                    pfAbstractFileMap.put(FilenameUtils.getBaseName(fileName), pFile);
+                 } catch (IOException ex) {
+                     logger.log(Level.WARNING, String.format("Unable to write %s to temp directory. File name: %s", pFile.getName(), prefetchFile), ex); //NON-NLS
+                 }
+             }
+         }
++        
++        return pfAbstractFileMap;
+     }
+ 
+     /**
+@@ -197,14 +253,19 @@ final class ExtractPrefetch extends Extract {
+         final Path outputFilePath = Paths.get(tempOutPath, PREFETCH_OUTPUT_FILE_NAME);
+         final Path errFilePath = Paths.get(tempOutPath, PREFETCH_ERROR_FILE_NAME);
+ 
++        if (PlatformUtil.isOpenBSDOS()) {
++            parsePrefetchFilesOpenBSD(prefetchExePath, prefetchDir, tempOutFile, errFilePath);
++            return;
++        }
++
+         List<String> commandLine = new ArrayList<>();
+         commandLine.add(prefetchExePath);
+-        commandLine.add("-a");
+-        commandLine.add("prefetch");
+-        commandLine.add("-f");
+-        commandLine.add(prefetchDir);  //NON-NLS
+-        commandLine.add("-db");
+-        commandLine.add(tempOutFile);
++        commandLine.add("-a"); //NON-NLS
++        commandLine.add("prefetch"); //NON-NLS
++        commandLine.add("-f"); //NON-NLS
++        commandLine.add(prefetchDir); //NON-NLS
++        commandLine.add("-db"); //NON-NLS
++        commandLine.add(tempOutFile); //NON-NLS
+ 
+         ProcessBuilder processBuilder = new ProcessBuilder(commandLine);
+         processBuilder.redirectOutput(outputFilePath.toFile());
+@@ -213,6 +274,76 @@ final class ExtractPrefetch extends Extract {
+         ExecUtil.execute(processBuilder, new DataSourceIngestModuleProcessTerminator(context, true));
+     }
+ 
++    private void parsePrefetchFilesOpenBSD(String prefetchExePath, String prefetchDir, String tempOutFile, Path errFilePath) throws IOException {
++        File dir = new File(prefetchDir);
++        System.out.println("ExtractPrefetch checking dir: " + dir);
++        File[] pfFiles = dir.listFiles((d, name) -> name.toLowerCase().endsWith(".pf"));
++
++        if (pfFiles == null || pfFiles.length == 0) {
++            System.out.println("ExtractPrefetch no .pf files in dir");
++            return;
++        }
++
++        com.google.gson.Gson compactGson = new com.google.gson.Gson();
++
++        Path targetPath = Paths.get(tempOutFile);
++        System.out.println("ExtractPrefetch tempOutFile: " + targetPath);
++        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(tempOutFile),
++                StandardOpenOption.CREATE, StandardOpenOption.APPEND)) {
++
++            System.out.println("ExtractPrefetch writer: " + writer);
++            for (File pfFile : pfFiles) {
++                List<String> commandLine = Arrays.asList(prefetchExePath, "-f", pfFile.getAbsolutePath());
++                System.out.println("ExtractPrefetch parsing: " + pfFile.getAbsolutePath());
++                ProcessBuilder pb = new ProcessBuilder(commandLine);
++                pb.redirectError(ProcessBuilder.Redirect.appendTo(errFilePath.toFile()));
++
++                Process process = pb.start();
++
++                try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8))) {
++                    StringBuilder jsonBuffer = new StringBuilder();
++                    String line;
++
++                    while ((line = reader.readLine()) != null) {
++                        if (line.startsWith("******** Converting")) {
++                            System.out.println("ExtractPrefetch dropping **** line: " + line);
++                            continue;
++                        }
++                        jsonBuffer.append(line).append("\n");
++                    }
++
++                    String jsonText = jsonBuffer.toString().trim();
++                    if (!jsonText.isEmpty()) {
++                        com.google.gson.JsonElement parsedElement = com.google.gson.JsonParser.parseString(jsonText);
++                        
++                        // Inject source_file into the JsonObject
++                        if (parsedElement.isJsonObject()) {
++                            com.google.gson.JsonObject jsonObject = parsedElement.getAsJsonObject();
++                            // pfFile.getName() is the full temp filename (e.g. VWPT.EXE-1ADC751C_12345.pf)
++                            jsonObject.addProperty("source_file", pfFile.getName());
++                        }
++
++                        String singleLineJson = compactGson.toJson(parsedElement);
++                        System.out.println("ExtractPrefetch got JSON: " + singleLineJson);
++
++                        writer.write(singleLineJson);
++                        writer.newLine();
++                        System.out.println("ExtractPrefetch tempOutFile: " + targetPath);
++                    }
++                }
++
++                try {
++                    process.waitFor();
++                } catch (InterruptedException e) {
++                    Thread.currentThread().interrupt();
++                    break;
++                }
++                System.out.println("ExtractPrefetch tempOutFile: " + tempOutFile);
++            }
++        }
++    }
++
++
+     /**
+      * Get the path and executable for the parse_prefetch program. Checks for
+      * specific version of OS to get proper executable.
+@@ -237,6 +368,18 @@ final class ExtractPrefetch extends Extract {
+                 path = Paths.get(PREFETCH_TOOL_FOLDER, PREFETCH_TOOL_NAME_X64_MACOS);                
+             }
+             
++        } else if (PlatformUtil.isOpenBSDOS()) {
++            String pathEnv = System.getenv("PATH");
++            if (pathEnv != null) {
++                for (String dir : pathEnv.split(File.pathSeparator)) {
++                    File candidate = new File(dir, PREFETCH_TOOL_NAME_OPENBSD);
++                    if (candidate.isFile() && candidate.canExecute()) {
++			System.out.println("ExtractPrefetch: using prefetch parser: " + candidate.getAbsolutePath());
++                        return candidate.getAbsolutePath();
++                    }
++                }
++            }
++            return null;
+         }
+         File prefetchToolFile = InstalledFileLocator.getDefault().locate(path.toString(),
+                 ExtractPrefetch.class.getPackage().getName(), false);
+@@ -247,6 +390,174 @@ final class ExtractPrefetch extends Extract {
+         return null;
+ 
+     }
++
++    /**
++     * Processes prefetch files extracted by OpenBSD prefetch-parser tool.
++     * 
++     * @param pfAbstractFileMap A map of Temp File Name -> AbstractFile (populated during extractPrefetchFiles)
++     * @param jsonPath Path to the output JSON/JSONL file produced by the openBSD tool
++     * @param currentCase Current Autopsy case
++     * @param moduleName Ingest module name for reporting
++     */
++    private void processPrefetchOpenBSD(Map<String, AbstractFile> pfAbstractFileMap, String jsonPath, Case currentCase, String moduleName) {
++        System.out.println("processPrefetchOpenBSD: Entering method with jsonPath = " + jsonPath + ", mapSize = " + (pfAbstractFileMap != null ? pfAbstractFileMap.size() : "null"));
++
++        File jsonFile = new File(jsonPath);
++        if (!jsonFile.exists()) {
++            System.out.println("processPrefetchOpenBSD: ERROR - Prefetch parser output JSON file not found: " + jsonPath);
++            logger.log(Level.WARNING, "processPrefetchOpenBSD: Prefetch parser output JSON file not found: {0}", jsonPath);
++            return;
++        }
++
++        // Accumulate created artifacts for batch posting at the end
++        List<BlackboardArtifact> blkBrdArtList = new ArrayList<>();
++
++        try (BufferedReader reader = new BufferedReader(new FileReader(jsonFile))) {
++            String line;
++            int lineNum = 0;
++
++            while ((line = reader.readLine()) != null) {
++                lineNum++;
++                System.out.println("\n--- Processing Line #" + lineNum + " ---");
++
++                if (line.trim().isEmpty()) {
++                    System.out.println("processPrefetchOpenBSD: Line #" + lineNum + " is empty, skipping");
++                    continue;
++                }
++
++                if (context.dataSourceIngestIsCancelled()) {
++                    logger.log(Level.INFO, "Cancelled Prefetch Artifact Creation.");
++                    return;
++                }
++
++                System.out.println("processPrefetchOpenBSD: Raw line content = " + line);
++                JsonObject jsonObject = JsonParser.parseString(line).getAsJsonObject();
++                System.out.println("processPrefetchOpenBSD: Parsed JsonObject = " + jsonObject);
++
++                // 1. Get the source_file injected during the CLI conversion step
++                String sourceFileName = jsonObject.has("source_file") ? jsonObject.get("source_file").getAsString() : "";
++                System.out.println("processPrefetchOpenBSD: Injected sourceFileName = '" + sourceFileName + "'");
++
++                // Direct map lookup (e.g., "VWPT.EXE-1ADC751C_12345.pf")
++                AbstractFile pfAbstractFile = pfAbstractFileMap.get(sourceFileName);
++                System.out.println("processPrefetchOpenBSD: Direct lookup result = " + pfAbstractFile);
++
++                // Fallback: Check if map entry was saved without extension
++                if (pfAbstractFile == null && !sourceFileName.isEmpty()) {
++                    String baseName = FilenameUtils.getBaseName(sourceFileName);
++                    System.out.println("processPrefetchOpenBSD: Direct lookup failed. Trying baseName fallback = '" + baseName + "'");
++                    pfAbstractFile = pfAbstractFileMap.get(baseName);
++                    System.out.println("processPrefetchOpenBSD: Fallback lookup result = " + pfAbstractFile);
++                }
++
++                // 2. Skip if we couldn't resolve the prefetch AbstractFile
++                if (pfAbstractFile == null) {
++                    System.out.println("processPrefetchOpenBSD: ERROR - Could not map prefetch record back to AbstractFile for source: " + sourceFileName);
++                    logger.log(Level.WARNING, "Could not map prefetch record back to an AbstractFile. Source file: {0}", sourceFileName);
++                    continue;
++                }
++
++                System.out.println("processPrefetchOpenBSD: Successfully matched AbstractFile ID = " + pfAbstractFile.getId() + ", Name = " + pfAbstractFile.getName());
++
++                // 3. Extract data fields from JSON
++                String executableName = jsonObject.has("name") ? jsonObject.get("name").getAsString() : "UNKNOWN";
++                int runCount = jsonObject.has("exec_count") ? jsonObject.get("exec_count").getAsInt() : 0;
++                String filePath = jsonObject.has("path") ? jsonObject.get("path").getAsString() : "";
++                System.out.println("processPrefetchOpenBSD: Extracted executableName = " + executableName + ", runCount = " + runCount);
++
++                // Build attributes list
++                List<BlackboardAttribute> attributes = new ArrayList<>();
++                attributes.add(new BlackboardAttribute(
++                        BlackboardAttribute.ATTRIBUTE_TYPE.TSK_PROG_NAME,
++                        getDisplayName(),
++                        executableName
++                ));
++                attributes.add(new BlackboardAttribute(
++                        BlackboardAttribute.ATTRIBUTE_TYPE.TSK_PATH,
++                        getDisplayName(),
++                        filePath
++                ));
++                attributes.add(new BlackboardAttribute(
++                        BlackboardAttribute.ATTRIBUTE_TYPE.TSK_COUNT,
++                        getDisplayName(),
++                        runCount
++                ));
++                attributes.add(new BlackboardAttribute(
++                        BlackboardAttribute.ATTRIBUTE_TYPE.TSK_COMMENT,
++                        getDisplayName(),
++                        PREFETCH_TSK_COMMENT
++                ));
++
++                // Add execution timestamp if present
++                if (jsonObject.has("last_exec_time")) {
++                    String lastRunStr = jsonObject.get("last_exec_time").getAsString();
++                    System.out.println("processPrefetchOpenBSD: Found last_exec_time string = '" + lastRunStr + "'");
++                    try {
++                        java.time.LocalDateTime ldt = java.time.LocalDateTime.parse(
++                                lastRunStr.replace(" ", "T")
++                        );
++                        long epochSeconds = ldt.toEpochSecond(java.time.ZoneOffset.UTC);
++                        System.out.println("processPrefetchOpenBSD: Successfully parsed timestamp to epoch seconds = " + epochSeconds);
++
++                        attributes.add(new BlackboardAttribute(
++                                BlackboardAttribute.ATTRIBUTE_TYPE.TSK_DATETIME,
++                                getDisplayName(),
++                                epochSeconds
++                        ));
++                    } catch (Exception ex) {
++                        System.out.println("processPrefetchOpenBSD: WARNING - Failed to parse date string: " + lastRunStr + " | Error: " + ex.getMessage());
++                        logger.log(Level.FINE, "Could not parse last_exec_time: " + lastRunStr, ex);
++                    }
++                } else {
++                    System.out.println("processPrefetchOpenBSD: No last_exec_time present in JSON");
++                }
++
++                System.out.println("processPrefetchOpenBSD: Prepared " + attributes.size() + " attributes for artifact creation");
++
++                // 4. Create Artifact using Autopsy's helper method
++                try {
++                    BlackboardArtifact blkBrdArt = createArtifactWithAttributes(
++                            BlackboardArtifact.Type.TSK_PROG_RUN,
++                            pfAbstractFile,
++                            attributes
++                    );
++                    blkBrdArtList.add(blkBrdArt);
++
++                    // Create associated artifact linking to the OS Account/Execution track
++                    Content dataSource = pfAbstractFile.getDataSource();
++                    BlackboardArtifact associatedBbArtifact = createAssociatedArtifact(
++                            executableName.toLowerCase(),
++                            filePath,
++                            blkBrdArt,
++                            dataSource
++                    );
++                    if (associatedBbArtifact != null) {
++                        blkBrdArtList.add(associatedBbArtifact);
++                    }
++
++                    System.out.println("processPrefetchOpenBSD: Successfully created artifact and added to batch list.");
++                } catch (TskCoreException ex) {
++                    System.out.println("processPrefetchOpenBSD: EXCEPTION creating artifact for " + pfAbstractFile.getName());
++                    logger.log(Level.SEVERE, "Exception Adding Artifact.", ex);
++                }
++            }
++
++            System.out.println("\nprocessPrefetchOpenBSD: Completed processing all lines in file.");
++
++        } catch (Exception e) {
++            System.out.println("processPrefetchOpenBSD: FATAL EXCEPTION during JSON file processing!");
++            e.printStackTrace(System.out);
++            logger.log(Level.SEVERE, "Error processing prefetch OpenBSD output", e);
++        }
++
++        // 5. Post all artifacts to the blackboard in a single batch
++        if (!blkBrdArtList.isEmpty() && !context.dataSourceIngestIsCancelled()) {
++            System.out.println("processPrefetchOpenBSD: Posting " + blkBrdArtList.size() + " artifacts to blackboard via postArtifacts()...");
++            postArtifacts(blkBrdArtList);
++            System.out.println("processPrefetchOpenBSD: Artifact batch successfully posted!");
++        }
++    }
++
+ 
+     /**
+      * Create the artifacts from external run of the parse_prefetch program

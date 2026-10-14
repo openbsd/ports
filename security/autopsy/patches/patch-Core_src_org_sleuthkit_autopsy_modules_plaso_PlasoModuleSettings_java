@@ -1,0 +1,38 @@
+Index: Core/src/org/sleuthkit/autopsy/modules/plaso/PlasoModuleSettings.java
+--- Core/src/org/sleuthkit/autopsy/modules/plaso/PlasoModuleSettings.java.orig
++++ Core/src/org/sleuthkit/autopsy/modules/plaso/PlasoModuleSettings.java
+@@ -22,6 +22,7 @@ import com.google.common.collect.ImmutableMap;
+ import java.util.HashMap;
+ import java.util.Map;
+ import org.sleuthkit.autopsy.ingest.IngestModuleIngestJobSettings;
++import org.sleuthkit.autopsy.coreutils.PlatformUtil;
+ 
+ /**
+  * Settings for the Plaso Ingest Module.
+@@ -55,13 +56,24 @@ public class PlasoModuleSettings implements IngestModu
+         parsers.put("chrome_cache", false);
+         parsers.put("chrome_27_history", false);
+         parsers.put("chrome_8_history", false);
+-        parsers.put("chrome_cookies", false);
++        if (PlatformUtil.isWindowsOS()) { 
++            parsers.put("chrome_cookies", false);
++        } else {
++            parsers.put("chrome_17_cookies", false);
++            parsers.put("chrome_66_cookies", false);
++
++        }
+         parsers.put("chrome_extension_activity", false);
+ 
+         //firefox
+         parsers.put("firefox_cache", false);
+         parsers.put("firefox_cache2", false);
+-        parsers.put("firefox_cookies", false);
++        if (PlatformUtil.isWindowsOS()) { 
++            parsers.put("firefox_cookies", false);
++        } else {
++            parsers.put("firefox_2_cookies", false);
++            parsers.put("firefox_10_cookies", false);
++        }
+         parsers.put("firefox_downloads", false);
+         parsers.put("firefox_history", false);
+ 

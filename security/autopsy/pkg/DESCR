@@ -1,0 +1,4 @@
+Autopsy is a graphical interface to The Sleuth Kit and other open source
+digital forensics tools. Autopsy 3 was a complete rewrite from Autopsy
+2 to make it Java-based. Autopsy 4 improves on Autopsy 3 by supporting
+collaboration on a single case by multiple users.

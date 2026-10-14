@@ -1,0 +1,31 @@
+To make playing videos and audio from within Autopsy work,
+otherwise it would throw exception and prevent it from working.
+
+Index: Core/src/org/sleuthkit/autopsy/coreutils/ImageUtils.java
+--- Core/src/org/sleuthkit/autopsy/coreutils/ImageUtils.java.orig
++++ Core/src/org/sleuthkit/autopsy/coreutils/ImageUtils.java
+@@ -125,12 +125,20 @@ public class ImageUtils {
+         boolean tempFfmpegLoaded = false;
+         if (OpenCvLoader.openCvIsLoaded()) {
+             try {
+-                if (System.getProperty("os.arch").equals("amd64") || System.getProperty("os.arch").equals("x86_64")) { //NON-NLS
+-                    System.loadLibrary("opencv_ffmpeg2413_64"); //NON-NLS
++                String osName = System.getProperty("os.name", "").toLowerCase();
++                
++                if (osName.contains("bsd")) {
++                    // On BSD platforms, FFmpeg decoding is compiled directly into 
++                    // libopencv_java. No extra Windows DLLs (opencv_ffmpeg) are required.
++                    tempFfmpegLoaded = true;
+                 } else {
+-                    System.loadLibrary("opencv_ffmpeg2413"); //NON-NLS
++                    if (System.getProperty("os.arch").equals("amd64") || System.getProperty("os.arch").equals("x86_64")) { //NON-NLS
++                        System.loadLibrary("opencv_ffmpeg2413_64"); //NON-NLS
++                    } else {
++                        System.loadLibrary("opencv_ffmpeg2413"); //NON-NLS
++                    }
++                    tempFfmpegLoaded = true;
+                 }
+-                tempFfmpegLoaded = true;
+             } catch (UnsatisfiedLinkError e) {
+                 tempFfmpegLoaded = false;
+                 LOGGER.log(Level.SEVERE, Bundle.ImageUtils_ffmpegLoadedError_msg(), e); //NON-NLS

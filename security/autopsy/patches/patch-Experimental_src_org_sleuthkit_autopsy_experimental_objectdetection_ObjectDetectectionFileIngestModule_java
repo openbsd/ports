@@ -1,0 +1,64 @@
+Adapt to opencv4
+
+Index: Experimental/src/org/sleuthkit/autopsy/experimental/objectdetection/ObjectDetectectionFileIngestModule.java
+--- Experimental/src/org/sleuthkit/autopsy/experimental/objectdetection/ObjectDetectectionFileIngestModule.java.orig
++++ Experimental/src/org/sleuthkit/autopsy/experimental/objectdetection/ObjectDetectectionFileIngestModule.java
+@@ -25,11 +25,12 @@ import java.util.List;
+ import java.util.Map;
+ import java.util.logging.Level;
+ import org.apache.commons.io.FilenameUtils;
++import org.opencv.core.Core;
+ import org.opencv.core.CvException;
+ import org.opencv.core.Mat;
+ import org.opencv.core.MatOfByte;
+ import org.opencv.core.MatOfRect;
+-import org.opencv.highgui.Highgui;
++import org.opencv.imgcodecs.Imgcodecs;
+ import org.opencv.objdetect.CascadeClassifier;
+ import org.openide.util.NbBundle.Messages;
+ import org.sleuthkit.autopsy.casemodule.Case;
+@@ -50,6 +51,7 @@ import org.sleuthkit.datamodel.BlackboardArtifact;
+ import org.sleuthkit.datamodel.BlackboardAttribute;
+ import org.sleuthkit.datamodel.Score;
+ import org.sleuthkit.datamodel.TskCoreException;
++import org.sleuthkit.autopsy.corelibs.OpenCvLoader;
+ 
+ /**
+  * Data source module to detect objects in images.
+@@ -76,7 +78,7 @@ public class ObjectDetectectionFileIngestModule extend
+         File classifierDir = new File(PlatformUtil.getObjectDetectionClassifierPath());
+         classifiers = new HashMap<>();
+         
+-        if(!PlatformUtil.isWindowsOS()) {
++        if(!PlatformUtil.isWindowsOS() && !PlatformUtil.isOpenBSDOS()) {
+             //Pop-up that catches IngestModuleException will automatically indicate 
+             //the name of the module before the message.
+             String errorMsg = Bundle.ObjectDetectionFileIngestModule_notWindowsError();
+@@ -92,9 +94,17 @@ public class ObjectDetectectionFileIngestModule extend
+         
+         //Load all classifiers found in PlatformUtil.getObjectDetectionClassifierPath()
+         if (classifierDir.exists() && classifierDir.isDirectory()) {
++            if (!OpenCvLoader.openCvIsLoaded()) {
++                throw new IngestModule.IngestModuleException(
++                "OpenCV native library not loaded");
++            }
+             for (File classifier : classifierDir.listFiles()) {
+                 if (classifier.isFile() && FilenameUtils.getExtension(classifier.getName()).equalsIgnoreCase("xml")) {
+-                    classifiers.put(classifier.getName(), new CascadeClassifier(classifier.getAbsolutePath()));
++
++                    CascadeClassifier cc = new CascadeClassifier();
++                    boolean loaded = cc.load(classifier.getAbsolutePath());
++
++                    classifiers.put(classifier.getName(), cc);
+                 }
+             }
+         } else {
+@@ -136,7 +146,7 @@ public class ObjectDetectectionFileIngestModule extend
+ 
+             Mat originalImage;
+             try {
+-                originalImage = Highgui.imdecode(new MatOfByte(imageInMemory), Highgui.IMREAD_GRAYSCALE);
++                originalImage = Imgcodecs.imdecode(new MatOfByte(imageInMemory), Imgcodecs.IMREAD_GRAYSCALE);
+             } catch (CvException ex) {
+                 //The image was something which could not be decoded by OpenCv, our isImageThumbnailSupported(file) check above failed us
+                 logger.log(Level.WARNING, "Unable to decode image from byte array to perform object detection on " + file.getParentPath() + file.getName() + " with object id of " + file.getId(), ex); //NON-NLS

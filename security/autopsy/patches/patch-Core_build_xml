@@ -1,0 +1,16 @@
+To prevent the download while building
+Index: Core/build.xml
+--- Core/build.xml.orig
++++ Core/build.xml
+@@ -147,9 +147,8 @@
+     </target>
+ 
+     <target name="download-binlist">
+-        <get src="https://raw.githubusercontent.com/binlist/data/master/ranges.csv" 
+-             dest="src\org\sleuthkit\autopsy\datamodel" 
+-             ignoreerrors="true"
++        <copy file="${FULLDISTDIR}/ranges.csv" 
++             todir="src\org\sleuthkit\autopsy\datamodel" 
+              verbose="true"/>
+     </target>
+ 

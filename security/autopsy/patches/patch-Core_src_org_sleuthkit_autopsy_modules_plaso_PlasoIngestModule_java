@@ -1,0 +1,528 @@
+Make Plaso log2timeline ingest module work 
+Index: Core/src/org/sleuthkit/autopsy/modules/plaso/PlasoIngestModule.java
+--- Core/src/org/sleuthkit/autopsy/modules/plaso/PlasoIngestModule.java.orig
++++ Core/src/org/sleuthkit/autopsy/modules/plaso/PlasoIngestModule.java
+@@ -21,6 +21,7 @@ package org.sleuthkit.autopsy.modules.plaso;
+ import java.io.BufferedReader;
+ import java.io.BufferedWriter;
+ import java.io.File;
++import java.io.FileReader;
+ import java.io.FileNotFoundException;
+ import java.io.IOException;
+ import java.io.InputStreamReader;
+@@ -67,6 +68,9 @@ import org.sleuthkit.datamodel.Content;
+ import org.sleuthkit.datamodel.Image;
+ import org.sleuthkit.datamodel.TskCoreException;
+ import org.sleuthkit.datamodel.TimelineEventType;
++import com.google.gson.JsonObject;
++import com.google.gson.JsonParser;
++import com.google.gson.JsonSyntaxException;
+ 
+ /**
+  * Data source ingest module that runs Plaso against the image.
+@@ -81,6 +85,8 @@ public class PlasoIngestModule implements DataSourceIn
+     private static final String PLASO32 = "plaso-20180818-win32";//NON-NLS
+     private static final String LOG2TIMELINE_EXECUTABLE = "Log2timeline.exe";//NON-NLS
+     private static final String PSORT_EXECUTABLE = "psort.exe";//NON-NLS
++    private static final String LOG2TIMELINE_EXECUTABLE_UNIX = "log2timeline";//NON-NLS
++    private static final String PSORT_EXECUTABLE_UNIX = "psort";//NON-NLS
+     private static final String COOKIE = "cookie";//NON-NLS
+     private static final int LOG2TIMELINE_WORKERS = 2;
+     private static final long TERMINATION_CHECK_INTERVAL = 5;
+@@ -108,16 +114,26 @@ public class PlasoIngestModule implements DataSourceIn
+     public void startUp(IngestJobContext context) throws IngestModuleException {
+         this.context = context;
+ 
+-        if (false == PlatformUtil.isWindowsOS()) {
++        if (false == PlatformUtil.isWindowsOS() && false == PlatformUtil.isOpenBSDOS()) {
+             throw new IngestModuleException(Bundle.PlasoIngestModule_requires_windows());
+         }
+ 
+-        try {
+-            log2TimeLineExecutable = locateExecutable(LOG2TIMELINE_EXECUTABLE);
+-            psortExecutable = locateExecutable(PSORT_EXECUTABLE);
+-        } catch (FileNotFoundException exception) {
+-            logger.log(Level.WARNING, "Plaso executable not found.", exception); //NON-NLS
+-            throw new IngestModuleException(Bundle.PlasoIngestModule_executable_not_found(), exception);
++        if (PlatformUtil.isWindowsOS()) {
++            try {
++                log2TimeLineExecutable = locateExecutable(LOG2TIMELINE_EXECUTABLE);
++                psortExecutable = locateExecutable(PSORT_EXECUTABLE);
++            } catch (FileNotFoundException exception) {
++                logger.log(Level.WARNING, "Plaso executable not found.", exception); //NON-NLS
++                throw new IngestModuleException(Bundle.PlasoIngestModule_executable_not_found(), exception);
++            }
++        } else {
++            try {
++                log2TimeLineExecutable = locateExecutable(LOG2TIMELINE_EXECUTABLE_UNIX);
++                psortExecutable = locateExecutable(PSORT_EXECUTABLE_UNIX);
++            } catch (FileNotFoundException exception) {
++                logger.log(Level.WARNING, "Plaso executables not found.", exception); //NON-NLS
++                throw new IngestModuleException(Bundle.PlasoIngestModule_executable_not_found(), exception);
++            }
+         }
+ 
+     }
+@@ -170,7 +186,11 @@ public class PlasoIngestModule implements DataSourceIn
+                 try (BufferedReader log2TimeLineOutpout = new BufferedReader(new InputStreamReader(log2TimeLineProcess.getInputStream()))) {
+                     L2TStatusProcessor statusReader = new L2TStatusProcessor(log2TimeLineOutpout, statusHelper, moduleOutputPath);
+                     new Thread(statusReader, "log2timeline status reader").start();  //NON-NLS
+-                    ExecUtil.waitForTermination(LOG2TIMELINE_EXECUTABLE, log2TimeLineProcess, TERMINATION_CHECK_INTERVAL, TERMINATION_CHECK_INTERVAL_UNITS, new DataSourceIngestModuleProcessTerminator(context));
++                    if (PlatformUtil.isWindowsOS()) {
++                        ExecUtil.waitForTermination(LOG2TIMELINE_EXECUTABLE, log2TimeLineProcess, TERMINATION_CHECK_INTERVAL, TERMINATION_CHECK_INTERVAL_UNITS, new DataSourceIngestModuleProcessTerminator(context));
++                    } else {
++                        ExecUtil.waitForTermination(LOG2TIMELINE_EXECUTABLE_UNIX, log2TimeLineProcess, TERMINATION_CHECK_INTERVAL, TERMINATION_CHECK_INTERVAL_UNITS, new DataSourceIngestModuleProcessTerminator(context));
++                    }
+                     statusReader.cancel();
+                 }
+ 
+@@ -178,9 +198,16 @@ public class PlasoIngestModule implements DataSourceIn
+                     logger.log(Level.INFO, "Log2timeline run was canceled"); //NON-NLS
+                     return ProcessResult.OK;
+                 }
+-                if (Files.notExists(moduleOutputPath.resolve(PLASO))) {
+-                    logger.log(Level.WARNING, "Error running log2timeline: there was no storage file."); //NON-NLS
+-                    return ProcessResult.ERROR;
++                if (PlatformUtil.isWindowsOS()) {
++                    if (Files.notExists(moduleOutputPath.resolve(PLASO))) {
++                        logger.log(Level.WARNING, "Error running log2timeline: there was no storage file."); //NON-NLS
++                        return ProcessResult.ERROR;
++                    }
++                } else {
++                    if (Files.notExists(moduleOutputPath.resolve("plaso.plaso"))) {
++                        logger.log(Level.WARNING, "Error running log2timeline: there was no storage file."); //NON-NLS
++                        return ProcessResult.ERROR;
++                    }
+                 }
+ 
+                 // sort the output
+@@ -197,12 +224,22 @@ public class PlasoIngestModule implements DataSourceIn
+                     logger.log(Level.INFO, "psort run was canceled"); //NON-NLS
+                     return ProcessResult.OK;
+                 }
+-                Path plasoFile = moduleOutputPath.resolve("plasodb.db3");  //NON-NLS
+-                if (Files.notExists(plasoFile)) {
+-                    logger.log(Level.SEVERE, "Error running Psort: there was no sqlite db file."); //NON-NLS
+-                    return ProcessResult.ERROR;
++                Path plasoFile = null;
++                if (PlatformUtil.isWindowsOS()) {
++                    plasoFile = moduleOutputPath.resolve("plasodb.db3");  //NON-NLS
++                    if (Files.notExists(plasoFile)) {
++                        logger.log(Level.SEVERE, "Error running Psort: there was no sqlite db file."); //NON-NLS
++                        return ProcessResult.ERROR;
++                    }
++                } else {
++                    plasoFile = moduleOutputPath.resolve("plasodb.jsonl");  //NON-NLS
++                    if (Files.notExists(plasoFile)) {
++                        logger.log(Level.SEVERE, "Error running Psort: there was no jsonl db file."); //NON-NLS
++                        return ProcessResult.ERROR;
++                    }
+                 }
+ 
++
+                 // parse the output and make artifacts
+                 createPlasoArtifacts(plasoFile.toString(), statusHelper);
+ 
+@@ -221,12 +258,14 @@ public class PlasoIngestModule implements DataSourceIn
+ 
+     private ProcessBuilder buildLog2TimeLineCommand(Path moduleOutputPath, Image image) {
+         //make a csv list of disabled parsers.
+-        String parsersString = settings.getParsers().entrySet().stream()
++        ProcessBuilder processBuilder = null;
++	if (PlatformUtil.isWindowsOS()) {
++            String parsersString = settings.getParsers().entrySet().stream()
+                 .filter(entry -> entry.getValue() == false)
+                 .map(entry -> "!" + entry.getKey()) // '!' prepended to parsername disables it. //NON-NLS
+                 .collect(Collectors.joining(","));//NON-NLS
+ 
+-        ProcessBuilder processBuilder = buildProcessWithRunAsInvoker(
++            processBuilder = buildProcessWithRunAsInvoker(
+                 "\"" + log2TimeLineExecutable + "\"", //NON-NLS
+                 "--vss-stores", "all", //NON-NLS
+                 "-z", image.getTimeZone(), //NON-NLS
+@@ -238,7 +277,23 @@ public class PlasoIngestModule implements DataSourceIn
+                 "--workers", String.valueOf(LOG2TIMELINE_WORKERS),//NON-NLS
+                 moduleOutputPath.resolve(PLASO).toString(),
+                 image.getPaths()[0]
+-        );
++            );
++        } else {
++            // OpenBSD and POSIX / Unix platforms
++            processBuilder = buildProcessWithRunAsInvoker(
++                log2TimeLineExecutable.getAbsolutePath(),
++                "--vss-stores", "all", //NON-NLS
++                "-z", image.getTimeZone(), //NON-NLS
++                "--partitions", "all", //NON-NLS
++                "--hasher_file_size_limit", "1", //NON-NLS
++                "--hashers", "none", //NON-NLS
++                "--no_dependencies_check", //NON-NLS
++                "--workers", String.valueOf(LOG2TIMELINE_WORKERS), //NON-NLS
++                "--log-file", moduleOutputPath.resolve("log2timeline.log").toString(), //NON-NLS
++                "--storage-file", moduleOutputPath.resolve("plaso.plaso").toString(), //NON-NLS
++                image.getPaths()[0]
++            );
++        }
+         processBuilder.redirectError(moduleOutputPath.resolve("log2timeline_err.txt").toFile());  //NON-NLS
+         return processBuilder;
+     }
+@@ -254,12 +309,25 @@ public class PlasoIngestModule implements DataSourceIn
+     }
+ 
+     private ProcessBuilder buildPsortCommand(Path moduleOutputPath) {
+-        ProcessBuilder processBuilder = buildProcessWithRunAsInvoker(
+-                "\"" + psortExecutable + "\"", //NON-NLS
++        ProcessBuilder processBuilder;
++
++        if (PlatformUtil.isWindowsOS()) {
++            // Windows legacy workflow outputting SQLite database (4n6time_sqlite)
++            processBuilder = buildProcessWithRunAsInvoker(
++                psortExecutable.getAbsolutePath(),
+                 "-o", "4n6time_sqlite", //NON-NLS
+                 "-w", moduleOutputPath.resolve("plasodb.db3").toString(), //NON-NLS
+                 moduleOutputPath.resolve(PLASO).toString()
+-        );
++            );
++        } else {
++            // OpenBSD and POSIX / Unix platforms outputting JSON Lines format (json_line)
++            processBuilder = buildProcessWithRunAsInvoker(
++                psortExecutable.getAbsolutePath(),
++                "-o", "json_line", //NON-NLS
++                "-w", moduleOutputPath.resolve("plasodb.jsonl").toString(), //NON-NLS
++                moduleOutputPath.resolve("plaso.plaso").toString()
++            );
++        }
+ 
+         processBuilder.redirectOutput(moduleOutputPath.resolve("psort_output.txt").toFile()); //NON-NLS
+         processBuilder.redirectError(moduleOutputPath.resolve("psort_err.txt").toFile());  //NON-NLS
+@@ -267,12 +335,24 @@ public class PlasoIngestModule implements DataSourceIn
+     }
+ 
+     private static File locateExecutable(String executableName) throws FileNotFoundException {
+-        String architectureFolder = PlatformUtil.is64BitOS() ? PLASO64 : PLASO32;
+-        String executableToFindName = Paths.get(PLASO, architectureFolder, executableName).toString();
++        File exeFile = null;
++        if (PlatformUtil.isWindowsOS()) {
++            String architectureFolder = PlatformUtil.is64BitOS() ? PLASO64 : PLASO32;
++            String executableToFindName = Paths.get(PLASO, architectureFolder, executableName).toString();
+ 
+-        File exeFile = InstalledFileLocator.getDefault().locate(executableToFindName, PlasoIngestModule.class.getPackage().getName(), false);
+-        if (null == exeFile || exeFile.canExecute() == false) {
+-            throw new FileNotFoundException(executableName + " executable not found.");
++            exeFile = InstalledFileLocator.getDefault().locate(executableToFindName, PlasoIngestModule.class.getPackage().getName(), false);
++        } else {
++            String pathEnv = System.getenv("PATH");
++            if (pathEnv != null) {
++                String[] pathDirs = pathEnv.split(File.pathSeparator);
++                for (String dir : pathDirs) {
++                    File candidate = new File(dir, executableName);
++                    if (candidate.exists() && candidate.canExecute()) {
++                        exeFile = candidate;
++                        break;
++                    }
++                }
++            }
+         }
+         return exeFile;
+     }
+@@ -284,23 +364,30 @@ public class PlasoIngestModule implements DataSourceIn
+         "PlasoIngestModule.create.artifacts.cancelled=Cancelled Plaso Artifact Creation ",
+         "# {0} - file that events are from",
+         "PlasoIngestModule.artifact.progress=Adding events to case: {0}",
+-        "PlasoIngestModule.info.empty.database=Plaso database was empty.",})
+-    private void createPlasoArtifacts(String plasoDb, DataSourceIngestModuleProgress statusHelper) {
+-        Blackboard blackboard = currentCase.getSleuthkitCase().getBlackboard();
++        "PlasoIngestModule.info.empty.database=Plaso database was empty."})
++    private void createPlasoArtifacts(String plasoOutputFile, DataSourceIngestModuleProgress statusHelper) {
++        if (PlatformUtil.isWindowsOS()) {
++            createPlasoArtifactsFromSqlite(plasoOutputFile, statusHelper);
++        } else {
++            createPlasoArtifactsFromJsonL(plasoOutputFile, statusHelper);
++        }
++    }
+ 
+-        String sqlStatement = "SELECT substr(filename,1) AS  filename, "
+-                + "   strftime('%s', datetime) AS epoch_date, "
+-                + "   description, "
+-                + "   source, "
+-                + "   type, "
+-                + "   sourcetype "
++    /**
++     * Reads events from the SQLite database format (4n6time_sqlite output / plasodb.db3) and converts them to artifacts.
++     */
++    private void createPlasoArtifactsFromSqlite(String plasoDb, DataSourceIngestModuleProgress statusHelper) {
++        String sqlStatement = "SELECT substr(filename,1) AS filename, "
++                + " strftime('%s', datetime) AS epoch_date, "
++                + " description, "
++                + " source, "
++                + " type, "
++                + " sourcetype "
+                 + " FROM log2timeline "
+-                + " WHERE source NOT IN ('FILE', "
+-                + "                       'WEBHIST') " // bad dates and duplicates with what we have.
+-                + "   AND sourcetype NOT IN ('UNKNOWN', "
+-                + "                          'PE Import Time');"; // lots of bad dates //NON-NLS
++                + " WHERE source NOT IN ('FILE', 'WEBHIST') " // bad dates and duplicates
++                + " AND sourcetype NOT IN ('UNKNOWN', 'PE Import Time');"; //NON-NLS
+ 
+-        try (SQLiteDBConnect tempdbconnect = new SQLiteDBConnect("org.sqlite.JDBC", "jdbc:sqlite:" + plasoDb); //NON-NLS
++        try (SQLiteDBConnect tempdbconnect = new SQLiteDBConnect("org.sqlite.JDBC", "jdbc:sqlite:" + plasoDb);
+                 ResultSet resultSet = tempdbconnect.executeQry(sqlStatement)) {
+ 
+             boolean dbHasData = false;
+@@ -313,76 +400,207 @@ public class PlasoIngestModule implements DataSourceIn
+                     return;
+                 }
+ 
+-                String currentFileName = resultSet.getString("filename"); //NON-NLS
+-                statusHelper.progress(Bundle.PlasoIngestModule_artifact_progress(currentFileName), 66);
+-                Content resolvedFile = getAbstractFile(currentFileName);
+-                if (resolvedFile == null) {
+-                    logger.log(Level.INFO, "File {0} from Plaso output not found in case.  Associating it with the data source instead.", currentFileName);//NON-NLS
+-                    resolvedFile = image;
++                String currentFileName = resultSet.getString("filename");
++                String description = resultSet.getString("description");
++                long epochDate = resultSet.getLong("epoch_date");
++                TimelineEventType eventType = findEventSubtype(currentFileName, resultSet.getString("source"), resultSet.getString("type"), resultSet.getString("sourcetype"));
++
++                addPlasoEventArtifact(currentFileName, description, epochDate, eventType, statusHelper);
++            }
++
++            if (!dbHasData) {
++                logger.log(Level.INFO, String.format("PlasoDB was empty: %s", plasoDb));
++                MessageNotifyUtil.Notify.info(MODULE_NAME, Bundle.PlasoIngestModule_info_empty_database());
++            }
++        } catch (SQLException ex) {
++            logger.log(Level.SEVERE, "Error while trying to read into a sqlite db.", ex);
++        }
++    }
++
++    /**
++     * Reads events from the JSON Lines format (json_line output / plasodb.jsonl) and converts them to artifacts.
++     */
++    private void createPlasoArtifactsFromJsonL(String plasoOutputFile, DataSourceIngestModuleProgress statusHelper) {
++        File jsonlFile = new File(plasoOutputFile);
++        if (!jsonlFile.exists()) {
++            logger.log(Level.SEVERE, String.format("Plaso JSONL file does not exist: %s", plasoOutputFile));
++            return;
++        }
++
++        boolean fileHasData = false;
++
++        try (BufferedReader reader = new BufferedReader(new FileReader(jsonlFile))) {
++            String line;
++            while ((line = reader.readLine()) != null) {
++                if (line.trim().isEmpty()) {
++                    continue;
+                 }
+ 
+-                String description = resultSet.getString("description");
+-                TimelineEventType eventType = findEventSubtype(currentFileName, resultSet);
++                if (context.dataSourceIngestIsCancelled()) {
++                    logger.log(Level.INFO, "Cancelled Plaso Artifact Creation.");
++                    return;
++                }
+ 
+-                // If the description is empty use the event type display name
+-                // as the description.
+-                if (description == null || description.isEmpty()) {
+-                    if (eventType != TimelineEventType.STANDARD_ARTIFACT_CATCH_ALL) {
+-                        description = eventType.getDisplayName();
++                try {
++                    JsonObject jsonObject = JsonParser.parseString(line).getAsJsonObject();
++                    // Handle both wrapped {"event": {...}} and flat {"__container_type__": "event", ...} formats
++                    JsonObject event;
++                    if (jsonObject.has("event") && jsonObject.get("event").isJsonObject()) {
++                        event = jsonObject.getAsJsonObject("event");
++                    } else if (jsonObject.has("__container_type__") && "event".equalsIgnoreCase(jsonObject.get("__container_type__").getAsString())) {
++                        event = jsonObject;
+                     } else {
++                        // Skip lines that are metadata or non-event headers
+                         continue;
+                     }
+-                }
+ 
+-                Collection<BlackboardAttribute> bbattributes = Arrays.asList(
+-                        new BlackboardAttribute(
+-                                TSK_DATETIME, MODULE_NAME,
+-                                resultSet.getLong("epoch_date")), //NON-NLS
+-                        new BlackboardAttribute(
+-                                TSK_DESCRIPTION, MODULE_NAME,
+-                                description),//NON-NLS
+-                        new BlackboardAttribute(
+-                                TSK_TL_EVENT_TYPE, MODULE_NAME,
+-                                eventType.getTypeID()));
++                    fileHasData = true;
+ 
+-                try {
+-                    BlackboardArtifact bbart = resolvedFile.newDataArtifact(new BlackboardArtifact.Type(TSK_TL_EVENT), bbattributes);
+-                    try {
+-                        /*
+-                         * Post the artifact which will index the artifact for
+-                         * keyword search, and fire an event to notify UI of
+-                         * this new artifact
+-                         */
+-                        blackboard.postArtifact(bbart, MODULE_NAME, context.getJobId());
+-                    } catch (BlackboardException ex) {
+-                        logger.log(Level.SEVERE, "Error Posting Artifact.", ex);//NON-NLS
++                    // Extract attributes
++                    String currentFileName = "";
++                    if (event.has("filename") && !event.get("filename").isJsonNull()) {
++                        currentFileName = event.get("filename").getAsString();
++                    } else if (event.has("display_name") && !event.get("display_name").isJsonNull()) {
++                        currentFileName = event.get("display_name").getAsString();
+                     }
+-                } catch (TskCoreException ex) {
+-                    logger.log(Level.SEVERE, "Exception Adding Artifact.", ex);//NON-NLS
++
++                    String description = event.has("message") && !event.get("message").isJsonNull()
++                            ? event.get("message").getAsString()
++                            : (event.has("description") && !event.get("description").isJsonNull() ? event.get("description").getAsString() : "");
++
++                    // Extract timestamp (converting microseconds to epoch seconds)
++                    long timestampMicroseconds = event.has("timestamp") ? event.get("timestamp").getAsLong() : 0L;
++                    long epochDate = timestampMicroseconds / 1_000_000L;
++
++                    String dataType = event.has("data_type") && !event.get("data_type").isJsonNull() ? event.get("data_type").getAsString() : "";
++                    String parser = event.has("parser") && !event.get("parser").isJsonNull() ? event.get("parser").getAsString() : "";
++
++                    TimelineEventType eventType = findEventSubtypeFromDataType(dataType, parser);
++
++                    addPlasoEventArtifact(currentFileName, description, epochDate, eventType, statusHelper);
++
++                } catch (JsonSyntaxException ex) {
++                    logger.log(Level.WARNING, "Failed to parse JSON line from psort output.", ex);
+                 }
+             }
+ 
+-            // Check if there is data the db
+-            if (!dbHasData) {
+-                logger.log(Level.INFO, String.format("PlasoDB was empty: %s", plasoDb));
++            if (!fileHasData) {
++                logger.log(Level.INFO, String.format("Plaso JSONL output was empty: %s", plasoOutputFile));
+                 MessageNotifyUtil.Notify.info(MODULE_NAME, Bundle.PlasoIngestModule_info_empty_database());
+             }
+-        } catch (SQLException ex) {
+-            logger.log(Level.SEVERE, "Error while trying to read into a sqlite db.", ex);//NON-NLS
++
++        } catch (IOException ex) {
++            logger.log(Level.SEVERE, "Error reading Plaso JSONL file.", ex);
+         }
+     }
+ 
++    /**
++     * Shared method to create and post a Blackboard timeline event artifact.
++     */
++    private void addPlasoEventArtifact(String currentFileName, String description, long epochDate, TimelineEventType eventType, DataSourceIngestModuleProgress statusHelper) {
++        Blackboard blackboard = currentCase.getSleuthkitCase().getBlackboard();
++
++        statusHelper.progress(Bundle.PlasoIngestModule_artifact_progress(currentFileName), 66);
++        Content resolvedFile = getAbstractFile(currentFileName);
++        if (resolvedFile == null) {
++            logger.log(Level.INFO, "File {0} from Plaso output not found in case. Associating it with the data source instead.", currentFileName);
++            resolvedFile = image;
++        }
++
++        // Fallback description fix: ensure a non-empty string is assigned
++        if (description == null || description.trim().isEmpty()) {
++            if (eventType != null && eventType != TimelineEventType.STANDARD_ARTIFACT_CATCH_ALL) {
++                description = eventType.getDisplayName();
++            } else {
++                description = "Plaso Event: " + (currentFileName.isEmpty() ? "Unknown Source" : currentFileName);
++            }
++        }
++
++        Collection<BlackboardAttribute> bbattributes = Arrays.asList(
++            new BlackboardAttribute(TSK_DATETIME, MODULE_NAME, epochDate),
++            new BlackboardAttribute(TSK_DESCRIPTION, MODULE_NAME, description),
++            new BlackboardAttribute(TSK_TL_EVENT_TYPE, MODULE_NAME, 
++                eventType != null ? eventType.getTypeID() : TimelineEventType.STANDARD_ARTIFACT_CATCH_ALL.getTypeID())
++        );
++
++        try {
++            BlackboardArtifact bbart = resolvedFile.newDataArtifact(new BlackboardArtifact.Type(TSK_TL_EVENT), bbattributes);
++            try {
++                blackboard.postArtifact(bbart, MODULE_NAME, context.getJobId());
++            } catch (BlackboardException ex) {
++                logger.log(Level.SEVERE, "Error Posting Artifact.", ex);
++            }
++        } catch (TskCoreException ex) {
++            logger.log(Level.SEVERE, "Exception Adding Artifact.", ex);
++        }
++    }
++
++    /**
++     * Determine event subtype for SQLite table entries.
++     */
++    private TimelineEventType findEventSubtype(String fileName, String source, String type, String sourceType) {
++        if ("WEBHIST".equalsIgnoreCase(source)) {
++            if (fileName.toLowerCase().contains(COOKIE) || (type != null && type.toLowerCase().contains(COOKIE))) {
++                return TimelineEventType.WEB_COOKIE;
++            } else {
++                return TimelineEventType.WEB_HISTORY;
++            }
++        } else if ("EVT".equalsIgnoreCase(source) || "LOG".equalsIgnoreCase(source)) {
++            return TimelineEventType.LOG_ENTRY;
++        } else if ("REG".equalsIgnoreCase(source)) {
++            if (sourceType != null && (sourceType.equalsIgnoreCase("unknown : usb entries") || sourceType.equalsIgnoreCase("unknown : usbstor entries"))) {
++                return TimelineEventType.DEVICES_ATTACHED;
++            }
++            return TimelineEventType.REGISTRY;
++        }
++        return TimelineEventType.STANDARD_ARTIFACT_CATCH_ALL;
++    }
++
++    /**
++     * Determine event subtype for JSON Lines entries using data_type or parser fields.
++     */
++    private TimelineEventType findEventSubtypeFromDataType(String dataType, String parser) {
++        String dt = dataType.toLowerCase();
++        String p = parser.toLowerCase();
++
++        if (dt.contains("cookie") || p.contains("cookie")) {
++            return TimelineEventType.WEB_COOKIE;
++        } else if (dt.contains("browser") || dt.contains("history") || p.contains("webhist")) {
++            return TimelineEventType.WEB_HISTORY;
++        } else if (dt.contains("syslog") || dt.contains("log") || p.contains("syslog") || p.contains("utmp")) {
++            return TimelineEventType.LOG_ENTRY;
++        } else if (dt.contains("usb") || dt.contains("device")) {
++            return TimelineEventType.DEVICES_ATTACHED;
++        } else if (dt.contains("registry") || dt.contains("regf")) {
++            return TimelineEventType.REGISTRY;
++        }
++
++        return TimelineEventType.STANDARD_ARTIFACT_CATCH_ALL;
++    }
++
+     private AbstractFile getAbstractFile(String file) {
++        if (file == null || file.trim().isEmpty()) {
++            return null;
++        }
+ 
+-        Path path = Paths.get(file);
+-        String fileName = path.getFileName().toString();
+-        String filePath = path.getParent().toString().replaceAll("\\\\", "/");//NON-NLS
+-        if (filePath.endsWith("/") == false) {//NON-NLS
+-            filePath += "/";//NON-NLS
++        // Strip volume indicators like "NTFS:\" or "OS:\" if present from display_name
++        String cleanPath = file.replaceAll("^[A-Za-z0-9_]+:", "");
++
++        // Normalize backslashes to forward slashes for cross-platform compatibility
++        cleanPath = cleanPath.replaceAll("\\\\", "/");
++        if (!cleanPath.startsWith("/")) {
++            cleanPath = "/" + cleanPath;
+         }
+ 
+-        // check the cached file
+-        //TODO: would we reduce 'cache misses' if we retrieved the events sorted by file?  Is that overhead worth it?
++        int lastSlashIdx = cleanPath.lastIndexOf('/');
++        String fileName = cleanPath.substring(lastSlashIdx + 1);
++        String filePath = cleanPath.substring(0, lastSlashIdx + 1);
++
++        if (fileName.isEmpty()) {
++            return null;
++        }
++
++        // Check cached file
+         if (previousFile != null
+                 && previousFile.getName().equalsIgnoreCase(fileName)
+                 && previousFile.getParentPath().equalsIgnoreCase(filePath)) {

@@ -1,0 +1,10 @@
+Index: CoreLibs/ivysettings.xml
+--- CoreLibs/ivysettings.xml.orig
++++ CoreLibs/ivysettings.xml
+@@ -1,5 +1,5 @@
+ <ivysettings>
+-    <property name="javafx.version" value="17.0.14-ea+2"/>
++    <property name="javafx.version" value="${JAVAFX_V}"/>
+     <property name="jackson.version" value="2.18.2"/>
+     <property name="jfxtras.version" value="17-r1"/>
+     <property name="twelvemonkeys.version" value="3.12.0"/>

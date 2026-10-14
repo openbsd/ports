@@ -1,0 +1,19 @@
+Index: Core/src/org/sleuthkit/autopsy/datamodel/Installer.java
+--- Core/src/org/sleuthkit/autopsy/datamodel/Installer.java.orig
++++ Core/src/org/sleuthkit/autopsy/datamodel/Installer.java
+@@ -71,11 +71,13 @@ public class Installer extends ModuleInstall {
+ 
+         try {
+             LibraryLock libLock = LibraryLock.acquireLibLock();
++/*
+             if (libLock != null && libLock.getLockState() == LockState.HELD_BY_OLD) {
+                 throw new OldAppLockException("A lock on the libtsk_jni lib is already held by an old application.  " + (libLock.getLibTskJniFile() != null ? libLock.getLibTskJniFile().getAbsolutePath() : ""));
+             }
+-                    
+-            String skVersion = SleuthkitJNI.getVersion();
++*/                   
++            // String skVersion = SleuthkitJNI.getVersion();
++	    String skVersion = "4.15.0";
+ 
+             if (skVersion == null) {
+                 throw new Exception(NbBundle.getMessage(this.getClass(), "Installer.exception.tskVerStringNull.msg"));

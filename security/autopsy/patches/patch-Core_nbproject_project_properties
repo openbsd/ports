@@ -1,0 +1,12 @@
+doesn't seem to be used, and causes tons of noisy exceptions
+Index: Core/nbproject/project.properties
+--- Core/nbproject/project.properties.orig
++++ Core/nbproject/project.properties
+@@ -46,7 +46,6 @@ file.reference.j2objc-annotations-3.0.0.jar=release/mo
+ file.reference.jackcess-4.0.7.jar=release/modules/ext/jackcess-4.0.7.jar
+ file.reference.jackcess-encrypt-4.0.2.jar=release/modules/ext/jackcess-encrypt-4.0.2.jar
+ file.reference.jai_core-1.1.3.jar=release/modules/ext/jai_core-1.1.3.jar
+-file.reference.jai_imageio-1.1.jar=release/modules/ext/jai_imageio-1.1.jar
+ file.reference.jakarta.activation-api-2.1.3.jar=release/modules/ext/jakarta.activation-api-2.1.3.jar
+ file.reference.jakarta.annotation-api-2.1.1.jar=release/modules/ext/jakarta.annotation-api-2.1.1.jar
+ file.reference.jakarta.jms-api-3.1.0-sources.jar=release/modules/ext/jakarta.jms-api-3.1.0-sources.jar

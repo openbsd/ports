@@ -1,0 +1,19 @@
+Index: Core/src/org/sleuthkit/autopsy/coreutils/PlatformUtil.java
+--- Core/src/org/sleuthkit/autopsy/coreutils/PlatformUtil.java.orig
++++ Core/src/org/sleuthkit/autopsy/coreutils/PlatformUtil.java
+@@ -357,6 +357,15 @@ public class PlatformUtil {
+     }
+ 
+     /**
++     * Check if running on OpenBSD OS
++     *
++     * @return true if running on OpenBSD OS
++     */
++    public static boolean isOpenBSDOS() {
++        return PlatformUtil.getOSName().toLowerCase().contains("openbsd"); //NON-NLS
++    }
++
++    /**
+      * Convert file path (quote) for OS specific
+      *
+      * @param origFilePath
