@@ -9,11 +9,12 @@ Index: src/rxvtd.C
  #include <stdio.h>
  #include <stdlib.h>
  #include <stdarg.h>
-@@ -32,6 +33,8 @@
+@@ -32,6 +33,9 @@
  #include <sys/stat.h>
  #include <sys/socket.h>
  #include <sys/un.h>
 +
++/* OpenBSD: set[ug]id binary MUST say so in this var */
 +mode_t _permit_setugid = S_ISGID;
  
  #if defined(ENABLE_FRILLS) && defined(_POSIX_MEMLOCK) && _POSIX_MEMLOCK > 0

@@ -1,7 +1,7 @@
 Index: src/rxvt.C
 --- src/rxvt.C.orig
 +++ src/rxvt.C
-@@ -23,8 +23,11 @@
+@@ -23,8 +23,12 @@
  #include "../config.h"
  #include "rxvt.h"
  
@@ -9,6 +9,7 @@ Index: src/rxvt.C
  #include <stdlib.h>
  #include <string.h>
 +
++/* OpenBSD: set[ug]id binary MUST say so in this var */
 +mode_t _permit_setugid = S_ISGID;
  
  int
