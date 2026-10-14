@@ -5,10 +5,9 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	3D creation software
 
-VERSION =	4.5.3
+VERSION =	4.5.14
 V =		${VERSION:R}
 DISTNAME =	blender-${VERSION}
-REVISION =	9
 
 CATEGORIES =	graphics
 
