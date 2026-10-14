@@ -1,9 +1,8 @@
 COMMENT =		Jupyter event system library
 
-MODPY_DISTV =		0.12.0
+MODPY_DISTV =		0.12.1
 DISTNAME =		jupyter_events-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
