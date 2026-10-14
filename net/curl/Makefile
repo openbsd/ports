@@ -1,6 +1,6 @@
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-8.22.0
+DISTNAME=	curl-8.23.0
 SHARED_LIBS=	curl                 26.37    # 12.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
@@ -32,8 +32,6 @@ CONFIGURE_ARGS=	--disable-ldap \
 		--without-zstd \
 		--with-zsh-functions-dir \
 		--with-fish-functions-dir
-# disabled by default, enable in -stable
-#CONFIGURE_ARGS+=--enable-ntlm --enable-smb
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
