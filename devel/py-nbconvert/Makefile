@@ -1,9 +1,8 @@
 COMMENT =		convert Jupyter notebooks (.ipynb) to other formats
 
-MODPY_DISTV =		7.17.1
+MODPY_DISTV =		7.17.2
 DISTNAME =		nbconvert-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
