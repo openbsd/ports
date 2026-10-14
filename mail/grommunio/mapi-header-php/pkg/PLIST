@@ -15,9 +15,11 @@ grommunio-mapi-header-php/class.recurrence.php
 grommunio-mapi-header-php/class.recurrenceexception.php
 grommunio-mapi-header-php/class.taskrecurrence.php
 grommunio-mapi-header-php/class.taskrequest.php
+grommunio-mapi-header-php/class.timezoneutil.php
 grommunio-mapi-header-php/class.token.php
 grommunio-mapi-header-php/dev/
 grommunio-mapi-header-php/dev/generate_php-mapi-stub.php
+grommunio-mapi-header-php/dev/generate_windowszones.php
 grommunio-mapi-header-php/dev/php-mapi-stub.php
 grommunio-mapi-header-php/doc/
 grommunio-mapi-header-php/doc/API.rst
@@ -37,7 +39,13 @@ grommunio-mapi-header-php/tests/ExtendedTokenTest.php
 grommunio-mapi-header-php/tests/FreeBusyTest.php
 grommunio-mapi-header-php/tests/KeyCloakTest.php
 grommunio-mapi-header-php/tests/MAPIExceptionTest.php
+grommunio-mapi-header-php/tests/MeetingRequestTest.php
 grommunio-mapi-header-php/tests/README.md
+grommunio-mapi-header-php/tests/RecurrenceExceptionDateTest.php
+grommunio-mapi-header-php/tests/RecurrenceExpansionTest.php
+grommunio-mapi-header-php/tests/RecurrenceStandaloneTest.php
+grommunio-mapi-header-php/tests/TaskRecurrenceRegenerationTest.php
+grommunio-mapi-header-php/tests/TimezoneUtilTest.php
 grommunio-mapi-header-php/tests/TokenTest.php
 grommunio-mapi-header-php/tests/UtilityFunctionsTest.php
 grommunio-mapi-header-php/tests/bootstrap.php
