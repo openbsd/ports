@@ -3,6 +3,7 @@
 @conflict php-zip-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-zip
 @pkgpath lang/php/8.1,-zip
+@pkgpath lang/php/8.2,-zip
 @so lib/php-${PV}/modules/zip.so
 share/examples/php-${PV}/zip.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/zip.ini

@@ -3,6 +3,7 @@
 @conflict php-sqlite3-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-sqlite3
 @pkgpath lang/php/8.1,-sqlite3
+@pkgpath lang/php/8.2,-sqlite3
 @so lib/php-${PV}/modules/sqlite3.so
 share/examples/php-${PV}/sqlite3.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/sqlite3.ini

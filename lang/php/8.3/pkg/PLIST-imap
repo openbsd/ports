@@ -3,6 +3,7 @@
 @conflict php-imap-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-imap
 @pkgpath lang/php/8.1,-imap
+@pkgpath lang/php/8.2,-imap
 @so lib/php-${PV}/modules/imap.so
 share/examples/php-${PV}/imap.ini
 @comment etc/master.passwd

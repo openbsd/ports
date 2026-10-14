@@ -3,6 +3,7 @@
 @conflict php-curl-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-curl
 @pkgpath lang/php/8.1,-curl
+@pkgpath lang/php/8.2,-curl
 @so lib/php-${PV}/modules/curl.so
 share/examples/php-${PV}/curl.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/curl.ini

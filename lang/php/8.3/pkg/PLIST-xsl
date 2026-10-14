@@ -3,6 +3,7 @@
 @conflict php-xsl-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-xsl
 @pkgpath lang/php/8.1,-xsl
+@pkgpath lang/php/8.2,-xsl
 @so lib/php-${PV}/modules/xsl.so
 share/examples/php-${PV}/xsl.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/xsl.ini

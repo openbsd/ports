@@ -3,6 +3,7 @@
 @conflict php-gmp-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-gmp
 @pkgpath lang/php/8.1,-gmp
+@pkgpath lang/php/8.2,-gmp
 @so lib/php-${PV}/modules/gmp.so
 share/examples/php-${PV}/gmp.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/gmp.ini

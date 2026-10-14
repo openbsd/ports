@@ -3,6 +3,7 @@
 @conflict php-pcntl-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-pcntl
 @pkgpath lang/php/8.1,-pcntl
+@pkgpath lang/php/8.2,-pcntl
 @so lib/php-${PV}/modules/pcntl.so
 share/examples/php-${PV}/pcntl.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/pcntl.ini

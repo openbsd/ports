@@ -3,6 +3,7 @@
 @conflict php-pspell-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-pspell
 @pkgpath lang/php/8.1,-pspell
+@pkgpath lang/php/8.2,-pspell
 @so lib/php-${PV}/modules/pspell.so
 share/examples/php-${PV}/pspell.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/pspell.ini

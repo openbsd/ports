@@ -3,6 +3,7 @@
 @conflict php-apache-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-apache
 @pkgpath lang/php/8.1,-apache
+@pkgpath lang/php/8.2,-apache
 ${APACHE_DIR}/
 @so ${APACHE_DIR}/libphp.so
 @sample ${MODPHP_CONFIG_PATH}/modules.sample/

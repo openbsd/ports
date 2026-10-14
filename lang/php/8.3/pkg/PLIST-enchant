@@ -3,6 +3,7 @@
 @conflict php-enchant-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-enchant
 @pkgpath lang/php/8.1,-enchant
+@pkgpath lang/php/8.2,-enchant
 @so lib/php-${PV}/modules/enchant.so
 share/examples/php-${PV}/enchant.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/enchant.ini

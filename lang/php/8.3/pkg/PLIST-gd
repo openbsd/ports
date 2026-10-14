@@ -3,6 +3,7 @@
 @conflict php-gd-${PHP_PKGSPEC}
 @pkgpath lang/php/8.0,-gd
 @pkgpath lang/php/8.1,-gd
+@pkgpath lang/php/8.2,-gd
 @so lib/php-${PV}/modules/gd.so
 share/examples/php-${PV}/gd.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/gd.ini
