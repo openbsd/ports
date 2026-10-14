@@ -1,7 +1,7 @@
 Index: kstars/indi/servermanager.cpp
 --- kstars/indi/servermanager.cpp.orig
 +++ kstars/indi/servermanager.cpp
-@@ -549,17 +549,17 @@ void ServerManager::processStandardError()
+@@ -558,17 +558,17 @@ void ServerManager::processStandardError()
      qWarning() << "INDI server is currently not supported on Windows.";
      return;
  #else
