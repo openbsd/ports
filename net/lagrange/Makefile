@@ -1,6 +1,6 @@
 COMMENT =	SDL multi protocol (gemini, gopher) navigator
 
-VERSION =	1.20.9
+VERSION =	1.21.2
 DISTNAME =	lagrange-${VERSION}
 
 CATEGORIES =	net x11
@@ -41,6 +41,7 @@ LIB_DEPENDS =	audio/mpg123 \
 		graphics/libwebp
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
+			-DENABLE_IDLE_SLEEP=TRUE \
 			-DENABLE_GAMEPAD=TRUE \
 			-DENABLE_GUI=TRUE \
 			-DENABLE_TUI=TRUE
