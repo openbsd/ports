@@ -1,18 +1,19 @@
 COMMENT =		remove metadata from media files
 
-MODPY_DISTV =		0.13.4
+MODPY_DISTV =		0.15.0
+GH_ACCOUNT =		jvoisin
+GH_PROJECT =		mat2
+GH_TAGNAME =		${MODPY_DISTV}
 DISTNAME =		mat2-${MODPY_DISTV}
-REVISION =		2
 
 CATEGORIES =		multimedia
 
-HOMEPAGE =		https://0xacab.org/jvoisin/mat2
+HOMEPAGE =		https://github.com/jvoisin/mat2
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		audio/py-mutagen \
@@ -23,8 +24,5 @@ RUN_DEPENDS =		audio/py-mutagen \
 			graphics/p5-Image-ExifTool \
 			print/poppler \
 			x11/gnome/librsvg
-
-# Test files aren't available in PyPI
-NO_TEST =		Yes
 
 .include <bsd.port.mk>

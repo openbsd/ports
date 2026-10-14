@@ -10,8 +10,6 @@ lib/python${MODPY_VERSION}/site-packages/libmat2/${MODPY_PYCACHE}archive.${MODPY
 lib/python${MODPY_VERSION}/site-packages/libmat2/${MODPY_PYCACHE}archive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libmat2/${MODPY_PYCACHE}audio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libmat2/${MODPY_PYCACHE}audio.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/libmat2/${MODPY_PYCACHE}bubblewrap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/libmat2/${MODPY_PYCACHE}bubblewrap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libmat2/${MODPY_PYCACHE}epub.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libmat2/${MODPY_PYCACHE}epub.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libmat2/${MODPY_PYCACHE}exiftool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +33,6 @@ lib/python${MODPY_VERSION}/site-packages/libmat2/${MODPY_PYCACHE}web.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/libmat2/abstract.py
 lib/python${MODPY_VERSION}/site-packages/libmat2/archive.py
 lib/python${MODPY_VERSION}/site-packages/libmat2/audio.py
-lib/python${MODPY_VERSION}/site-packages/libmat2/bubblewrap.py
 lib/python${MODPY_VERSION}/site-packages/libmat2/epub.py
 lib/python${MODPY_VERSION}/site-packages/libmat2/exiftool.py
 lib/python${MODPY_VERSION}/site-packages/libmat2/harmless.py
