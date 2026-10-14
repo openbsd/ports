@@ -1,0 +1,11 @@
+The release archive has no git metadata from which to derive its version.
+
+Index: VERSION
+--- VERSION.orig
++++ VERSION
+@@ -1,4 +1,4 @@
+-innoextract dev
++innoextract ${V}
+ 
+ Known working Inno Setup versions:
+ Inno Setup 1.2.10 to 7.1.0

@@ -1,7 +1,7 @@
 COMMENT=	unpack Inno Setup installers
 
-DISTNAME=	innoextract-1.9
-REVISION=	3
+V=		1.13.0
+DIST_TUPLE=	github crazy-max innoextract v${V} .
 CATEGORIES=	archivers
 HOMEPAGE=	https://constexpr.org/innoextract/
 MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
@@ -13,18 +13,16 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
 WANTLIB+=	c iconv lzma m ${COMPILER_LIBCXX}
 
-SITES =		${HOMEPAGE}files/
-
 # C++17
 COMPILER=	base-clang ports-gcc
+
+MODULES=	devel/cmake
+
+RUN_DEPENDS=	archivers/unrar
 
 LIB_DEPENDS=	archivers/xz \
 		converters/libiconv \
 		devel/boost
-
-RUN_DEPENDS=	archivers/unrar
-
-MODULES=	devel/cmake
 
 SEPARATE_BUILD=	Yes
 
@@ -33,9 +31,9 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DCMAKE_INSTALL_MANDIR="man" \
 		-DDOXYGEN_EXECUTABLE="false"
 
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
-
 NO_TEST=	Yes
+
+SUBST_VARS+=	V
 
 .include <bsd.port.arch.mk>
 
@@ -47,6 +45,9 @@ NO_TEST=	Yes
 .if ${PROPERTIES:Mclang} && !${PROPERTIES:Mlld}
 CONFIGURE_ARGS+=	-DSET_OPTIMIZATION_FLAGS=OFF
 .endif
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/VERSION
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/innoextract ${PREFIX}/bin
