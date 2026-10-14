@@ -1,11 +1,11 @@
 COMMENT=	web user interface for grommunio
 
-V=		5.1
+V=		5.2
 DISTNAME=	grommunio-web-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-web
-GH_COMMIT=	185b48058e987bcdab4dd13961f2b3828da9555d
+GH_COMMIT=	dd9029d93cecec1ba868ed0d8d976bb3f185a328
 
 SITES=		https://nerd.hu/distfiles/
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	lang/node \
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
 		mail/grommunio/gromox,-mapi \
-		mail/grommunio/mapi-header-php>=2.2
+		mail/grommunio/mapi-header-php>=2.4
 
 USE_GMAKE=	Yes
 
