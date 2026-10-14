@@ -137,4 +137,3 @@ lib/python${MODPY_VERSION}/site-packages/legendary_gl-${MODPY_DISTV}.dist-info/W
 lib/python${MODPY_VERSION}/site-packages/legendary_gl-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/legendary_gl-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/legendary_gl-${MODPY_DISTV}.dist-info/licenses/LICENSE
-lib/python${MODPY_VERSION}/site-packages/legendary_gl-${MODPY_DISTV}.dist-info/top_level.txt
