@@ -16,9 +16,6 @@ libexec/nagios/check_file_age
 libexec/nagios/check_flexlm
 libexec/nagios/check_ftp
 @bin libexec/nagios/check_http
-@mode 4555
-@bin libexec/nagios/check_icmp
-@mode
 libexec/nagios/check_imap
 libexec/nagios/check_ircd
 libexec/nagios/check_jabber

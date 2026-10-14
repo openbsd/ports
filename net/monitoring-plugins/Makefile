@@ -1,6 +1,7 @@
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
 COMMENT-fping=	fping monitoring plugin
+COMMENT-icmp=	ICMP monitoring plugin (setuid)
 COMMENT-game=	gameserver monitoring plugin
 COMMENT-ldap=	ldap monitoring plugin
 COMMENT-mysql=	mysql monitoring plugin
@@ -9,20 +10,10 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		3.0.3
+REVISION-main=	0
 SITES=		https://www.monitoring-plugins.org/download/
 
 DISTNAME=	monitoring-plugins-${V:S/rc/-rc/:S/pl0//}
-PKGNAME-main=	monitoring-plugins-$V
-PKGNAME-dbi=	monitoring-plugins-dbi-$V
-PKGNAME-fping=	monitoring-plugins-fping-$V
-PKGNAME-game=	monitoring-plugins-game-$V
-PKGNAME-ldap=	monitoring-plugins-ldap-$V
-PKGNAME-mysql=	monitoring-plugins-mysql-$V
-PKGNAME-pgsql=	monitoring-plugins-pgsql-$V
-PKGNAME-snmp=	monitoring-plugins-snmp-$V
-PKGNAME-radius=	monitoring-plugins-radius-$V
-
-EPOCH=		0
 
 CATEGORIES=	net
 
@@ -35,6 +26,8 @@ PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB=	c crypto pthread
+
+EPOCH=		0
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -67,7 +60,7 @@ CONFIGURE_ARGS+= \
 PSEUDO_FLAVORS=	no_db
 FLAVOR?=
 
-MULTI_PACKAGES= -main -fping -game -snmp -dbi -ldap -mysql -pgsql -radius
+MULTI_PACKAGES= -main -fping -game -snmp -dbi -ldap -mysql -pgsql -radius -icmp
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # many broken tests, but...

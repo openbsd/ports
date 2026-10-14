@@ -1,0 +1,5 @@
+check_http is deprecated, and will be removed later. It's recommended to
+switch to check_curl.
+
+The setuid-root check_icmp has moved to "monitoring-plugins-icmp", if you
+need it. Otherwise use check_fping or check_ping.

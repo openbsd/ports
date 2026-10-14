@@ -1,0 +1,3 @@
+@conflict monitoring-plugins-<3.0.3p0v0
+@mode 4555
+@bin libexec/nagios/check_icmp

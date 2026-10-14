@@ -1,0 +1,7 @@
+monitoring-plugins subpackage to do ICMP host checks.
+
+This is one of three different ways that monitoring-plugins provides
+for this, using a setuid root binary to run the check directly.
+Alternatively use check_fping (in monitoring-plugins-fping) which
+uses the fping binary from packages, or check_ping (in the main
+monitoring-plugins package) which uses ping(1).

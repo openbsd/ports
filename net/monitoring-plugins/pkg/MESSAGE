@@ -1,2 +1,0 @@
-check_http is deprecated, and will be removed later. It's recommended to
-switch to check_curl.
