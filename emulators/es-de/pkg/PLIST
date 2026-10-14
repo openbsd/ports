@@ -238,6 +238,9 @@ share/es-de/resources/locale/bs_BA/LC_MESSAGES/bs_BA.mo
 share/es-de/resources/locale/ca_ES/
 share/es-de/resources/locale/ca_ES/LC_MESSAGES/
 share/es-de/resources/locale/ca_ES/LC_MESSAGES/ca_ES.mo
+share/es-de/resources/locale/cs_CZ/
+share/es-de/resources/locale/cs_CZ/LC_MESSAGES/
+share/es-de/resources/locale/cs_CZ/LC_MESSAGES/cs_CZ.mo
 share/es-de/resources/locale/de_DE/
 share/es-de/resources/locale/de_DE/LC_MESSAGES/
 share/es-de/resources/locale/de_DE/LC_MESSAGES/de_DE.mo
@@ -326,6 +329,7 @@ share/es-de/resources/systems/android/
 share/es-de/resources/systems/android/es_find_rules.xml
 share/es-de/resources/systems/android/es_import_rules.xml
 share/es-de/resources/systems/android/es_systems.xml
+share/es-de/resources/systems/android/es_systems_saf.xml
 share/es-de/resources/systems/haiku/
 share/es-de/resources/systems/haiku/es_find_rules.xml
 share/es-de/resources/systems/haiku/es_import_rules.xml
