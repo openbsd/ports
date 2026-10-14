@@ -1,6 +1,7 @@
 COMMENT=	Python library adding a json log formatter
 
 MODPY_DISTV=	4.2.0
+REVISION=	0
 DISTNAME=	python_json_logger-${MODPY_DISTV}
 PKGNAME=	py-python-json-logger-${MODPY_DISTV}
 
