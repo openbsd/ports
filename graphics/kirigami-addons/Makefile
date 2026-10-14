@@ -1,8 +1,8 @@
 COMMENT =	add-ons for the kirigami frameworks
 
-DISTNAME =	kirigami-addons-1.14.1
+DISTNAME =	kirigami-addons-1.15.0
 
-SHARED_LIBS +=	KirigamiAddonsStatefulApp 0.1 # 0.0
+SHARED_LIBS +=	KirigamiAddonsStatefulApp 1.0 # 0.0
 SHARED_LIBS +=	KirigamiApp               0.1 # 0.0
 SHARED_LIBS +=	KirigamiAddonsComponents  0.0 # 0.0
 

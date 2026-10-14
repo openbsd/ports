@@ -119,6 +119,7 @@ lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormPlaceholderMessageDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormRadioDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormRadioSelectorDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormSectionText.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormSliderDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormSpinBoxDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormSwitchDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormTextAreaDelegate.qml
@@ -128,11 +129,14 @@ lib/qt6/qml/org/kde/kirigamiaddons/formcard/formcardplugin.qmltypes
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigamiaddons/formcard/libformcardplugin.so
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/ContentItemLoader.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormCardBackground.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormCardUnits.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormChoiceDelegateLayout.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormDelegateLayout.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormInfoGrid.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormInlineMessage.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormPathCompletion.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/qmldir
 lib/qt6/qml/org/kde/kirigamiaddons/labs/
 lib/qt6/qml/org/kde/kirigamiaddons/labs/components/
