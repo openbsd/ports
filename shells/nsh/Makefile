@@ -3,7 +3,7 @@ COMMENT =	network switch style shell
 CATEGORIES =	shells net
 HOMEPAGE =	https://www.nmedia.net/nsh/
 V =		1.2.3
-REVISION =	0
+REVISION =	1
 DISTNAME =	nsh-${V}
 SITES =		https://github.com/yellowman/nsh/releases/download/v${V}/
 
@@ -36,6 +36,10 @@ ALL_TARGET =	static
 .endif
 
 NO_TEST=	Yes
+
+pre-build:
+	@if ! grep -q _permit_setugid /usr/share/mk/bsd.prog.mk; then \
+		echo build machine has old bsd.prog.mk: please update; exit 1; fi
 
 post-install:
 .for i in save-ro.sh save-rw.sh
