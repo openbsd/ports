@@ -1,17 +1,18 @@
 Index: packet/packet.c
 --- packet/packet.c.orig
 +++ packet/packet.c
-@@ -16,6 +16,9 @@
+@@ -16,6 +16,10 @@
      51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
  
 +#include <sys/stat.h>
++/* OpenBSD: set[ug]id binary MUST say so in this var */
 +mode_t _permit_setugid = S_ISUID;
 +
  #include "config.h"
  
  #include <errno.h>
-@@ -28,6 +31,7 @@
+@@ -28,6 +32,7 @@
  #include <stdlib.h>
  #include <string.h>
  #include <unistd.h>
@@ -19,7 +20,7 @@ Index: packet/packet.c
  
  #ifdef HAVE_LIBCAP
  #include <sys/capability.h>
-@@ -97,6 +101,14 @@ void drop_excess_capabilities() {
+@@ -97,6 +102,14 @@ void drop_excess_capabilities() {
          }
      }
  
@@ -34,7 +35,7 @@ Index: packet/packet.c
      // Update the process's capabilities to match 'wanted_cap'
      if(cap_set_proc(wanted_cap)) {
          goto pcap_error;
-@@ -121,10 +133,19 @@ static
+@@ -121,10 +134,19 @@ static
  int drop_elevated_permissions(
      void)
  {

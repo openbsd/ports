@@ -10,11 +10,12 @@ Index: dumpcap.c
  #include <config.h>
  #define WS_LOG_DOMAIN LOG_DOMAIN_CAPCHILD
  
-@@ -85,6 +87,8 @@
+@@ -85,6 +87,9 @@
  #include "capture/ws80211_utils.h"
  
  #include "extcap.h"
 +
++/* OpenBSD: set[ug]id binary MUST say so in this var */
 +WS_DLL_PUBLIC_DEF mode_t _permit_setugid = S_ISUID;
  
  /*

@@ -9,16 +9,17 @@ Index: src/fping.c
  #include <errno.h>
  #include <inttypes.h>
  #include <limits.h>
-@@ -50,6 +51,8 @@ extern "C" {
+@@ -50,6 +51,9 @@ extern "C" {
  
  #include "seqmap.h"
  
++/* OpenBSD: set[ug]id binary MUST say so in this var */
 +mode_t _permit_setugid = S_ISUID;
 +
  #ifdef HAVE_UNISTD_H
  #include <unistd.h>
  #endif /* HAVE_UNISTD_H */
-@@ -623,6 +626,10 @@ int main(int argc, char **argv)
+@@ -623,6 +627,10 @@ int main(int argc, char **argv)
      }
  
      optparse_init(&optparse_state, argv);
@@ -29,7 +30,7 @@ Index: src/fping.c
      ident4 = ident6 = htons(getpid() & 0xFFFF);
      verbose_flag = 1;
      backoff_flag = 1;
-@@ -712,11 +719,13 @@ int main(int argc, char **argv)
+@@ -712,11 +720,13 @@ int main(int argc, char **argv)
                  ping_data_size = ICMP_TIMESTAMP_DATA_SIZE;
              } else if (strstr(optparse_state.optlongname, "print-tos") != NULL) {
                  print_tos_flag = 1;
@@ -43,7 +44,7 @@ Index: src/fping.c
  #if defined(IPV6) && defined(IPV6_RECVTCLASS)
                  if (socket6 >= 0) {
                      if (setsockopt(socket6, IPPROTO_IPV6, IPV6_RECVTCLASS, &sock_opt_on, sizeof(sock_opt_on))) {
-@@ -1060,6 +1069,11 @@ int main(int argc, char **argv)
+@@ -1060,6 +1070,11 @@ int main(int argc, char **argv)
          exit(4);
      }
  
@@ -55,7 +56,7 @@ Index: src/fping.c
      /* validate various option settings */
  
  #ifndef IPV6
-@@ -1402,6 +1416,10 @@ int main(int argc, char **argv)
+@@ -1402,6 +1417,10 @@ int main(int argc, char **argv)
      if (!num_hosts) {
          exit(num_noaddress ? 2 : 1);
      }

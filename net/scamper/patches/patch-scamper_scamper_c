@@ -1,11 +1,12 @@
 Index: scamper/scamper.c
 --- scamper/scamper.c.orig
 +++ scamper/scamper.c
-@@ -29,6 +29,9 @@
+@@ -29,6 +29,10 @@
   *
   */
  
 +#include <sys/stat.h>
++/* OpenBSD: set[ug]id binary MUST say so in this var */
 +mode_t _permit_setugid = S_ISUID;
 +
  #ifdef HAVE_CONFIG_H
