@@ -1,0 +1,12 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -52,7 +52,7 @@ find_package(RT REQUIRED)
+ find_package(DL REQUIRED)
+ find_package(Atomic REQUIRED)
+ 
+-set(STDLIB Threads::Threads Math::Math RT::RT DL::DL Atomic::Atomic)
++set(STDLIB Threads::Threads Math::Math RT::RT DL::DL ${LIBATOMIC})
+ 
+ if (CMAKE_COLOR_MAKEFILE)
+ 	include(CMakeColor)

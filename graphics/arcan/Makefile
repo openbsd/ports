@@ -8,6 +8,7 @@ SHARED_LIBS +=  arcan_shmif_server        0.0 # 0.15
 SHARED_LIBS +=  arcan_tui                 0.0 # 0.15
 
 DIST_TUPLE =	codeberg letoram arcan 0.7.1 .
+REVISION =	0
 WRKDIST =	${WRKDIR}/arcan
 WRKSRC =	${WRKDIST}/src
 
@@ -59,4 +60,15 @@ CONFIGURE_ARGS =	-DVIDEO_PLATFORM=egl-dri \
 
 MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
+SUBST_VARS =		LIBATOMIC
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == ports-gcc
+LIBATOMIC =		Atomic::Atomic
+.else
+LIBATOMIC =
+.endif
