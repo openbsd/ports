@@ -1,7 +1,7 @@
 Index: agent/ssm/service.go
 --- agent/ssm/service.go.orig
 +++ agent/ssm/service.go
-@@ -295,7 +295,7 @@ func (svc *sdkService) UpdateInstanceInformation(
+@@ -291,7 +291,7 @@ func (svc *sdkService) UpdateInstanceInformation(
  	switch goOS {
  	case "windows":
  		params.PlatformType = aws.String(string(ssmtypes.PlatformTypeWindows))
@@ -10,7 +10,7 @@ Index: agent/ssm/service.go
  		params.PlatformType = aws.String(string(ssmtypes.PlatformTypeLinux))
  	case "darwin":
  		params.PlatformType = aws.String(string(ssmtypes.PlatformTypeMacos))
-@@ -359,7 +359,7 @@ func (svc *sdkService) UpdateEmptyInstanceInformation(
+@@ -355,7 +355,7 @@ func (svc *sdkService) UpdateEmptyInstanceInformation(
  	switch goOS {
  	case "windows":
  		params.PlatformType = aws.String(string(ssmtypes.PlatformTypeWindows))
