@@ -279,7 +279,6 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +		pinctrl-0 = <&edp_reg_en>;
 +		pinctrl-names = "default";
 +
-+		regulator-always-on;
 +		regulator-boot-on;
 +	};
 +
@@ -972,13 +971,12 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +
 +	aux-bus {
 +		panel {
-+			compatible = "edp-panel";
-+			//compatible = "samsung,atna45af01", "samsung,atna33xc20";
-+			//enable-gpios = <&pmc8380_3_gpios 4 GPIO_ACTIVE_HIGH>;
++			compatible = "edo,edo1455";
++			enable-gpios = <&pmc8380_3_gpios 4 GPIO_ACTIVE_HIGH>;
 +			power-supply = <&vreg_edp_3p3>;
 +
-+			//pinctrl-0 = <&edp_bl_en>;
-+			//pinctrl-names = "default";
++			pinctrl-0 = <&edp_bl_en>;
++			pinctrl-names = "default";
 +
 +			port {
 +				edp_panel_in: endpoint {
@@ -1361,6 +1359,8 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +
 +	vccq-supply = <&vreg_l2i_1p2>;
 +	vccq-max-microamp = <600000>;
++
++	dma-coherent;
 +};
 +
 +&ufs_mem_phy {
