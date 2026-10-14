@@ -1,6 +1,6 @@
 COMMENT =	Kirigami application components
 
-DISTNAME =	kirigami-app-components-1.0.2
+DISTNAME =	kirigami-app-components-1.1.1
 
 CATEGORIES =	graphics
 
@@ -8,7 +8,7 @@ HOMEPAGE =	https://invent.kde.org/libraries/kirigami-app-components
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=	KirigamiActionCollection  0.0 # 0.0
+SHARED_LIBS +=	KirigamiActionCollection  0.1 # 0.0
 
 # FSFAP, BSD and CC0-1.0
 PERMIT_PACKAGE=	Yes
@@ -22,7 +22,8 @@ EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/kf6
 
-BUILD_DEPENDS =		devel/kf6/kirigami
+BUILD_DEPENDS =		devel/kf6/kirigami \
+			devel/gettext,-tools
 
 RUN_DEPENDS =		devel/kf6/kirigami
 
