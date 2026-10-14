@@ -13,7 +13,6 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-# asks for urllib3 2.5.0+, but seems to work with earlier.
 RUN_DEPENDS=	devel/py-dateutil \
 		www/py-requests \
 		www/py-urllib3 \
