@@ -7,7 +7,7 @@ CATEGORIES=	security
 
 PKGNAME-main=	sudo-${V:S/p/./}
 PKGNAME-python=	sudo-python-${V:S/p/./}
-REVISION-main=	1
+REVISION-main=	2
 REVISION-python=1
 
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>

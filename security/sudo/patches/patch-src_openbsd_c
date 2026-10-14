@@ -1,0 +1,12 @@
+Index: src/openbsd.c
+--- src/openbsd.c.orig
++++ src/openbsd.c
+@@ -25,6 +25,8 @@
+ 
+ #include <sudo.h>
+ 
++sudo_dso_public mode_t _permit_setugid = S_ISUID;
++
+ int
+ os_init(int argc, char *argv[], char *envp[])
+ {
