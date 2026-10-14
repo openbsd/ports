@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1652 2026/09/19 23:17:29 bentley Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1653 2026/10/14 11:11:29 jca Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -637,6 +637,9 @@ _DEPENDENCY_STACK ?=
 
 .if ${MULTI_PACKAGES} == "-"
 .  if !empty(REVISION)
+.    if ${REVISION} != ${REVISION:C/[^0-9]//}
+ERRORS += "Fatal: REVISION should only be digits, got '${REVISION}' instead."
+.    endif
 # XXX simplest way is to alter FULLPKGNAME in place, even though := is evil...
 FULLPKGNAME := ${FULLPKGNAME:C/-([0-9][^-]*)/-\1p${REVISION}/}
 .  endif
@@ -668,6 +671,9 @@ FULLPKGNAME${_s} = ${PKGNAME${_s}}${FLAVOR_EXT}
 .    endif
 # XXX see comments above for !MULTI_PACKAGES case
 .    if !empty(REVISION${_s})
+.      if ${REVISION${_s}} != ${REVISION${_s}:C/[^0-9]//}
+ERRORS += "Fatal: REVISION${_s} should only be digits, got '${REVISION${_s}}' instead."
+.      endif
 FULLPKGNAME${_s} := ${FULLPKGNAME${_s}:C/-([0-9][^-]*)/-\1p${REVISION${_s}}/}
 .    endif
 .    if !empty(EPOCH${_s})
