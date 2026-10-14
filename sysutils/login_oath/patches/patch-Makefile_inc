@@ -8,3 +8,13 @@ Index: Makefile.inc
  
  MAN=		${PROG}.8
  DPADD=		${LIBUTIL}
+@@ -8,8 +8,7 @@ LDADD+=		-lutil
+ 
+ BINOWN=		root
+ BINGRP=		auth
+-#BINMODE=	4555
+-BINMODE=	555
++BINMODE=	4555
+ BINDIR=		$(LOCALBASE)/libexec/auth
+ 
+ CLEANFILES+=    *.cat[0-9]
