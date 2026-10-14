@@ -5,6 +5,7 @@ COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES = parallel
 V =		4.6.9
+REVISION-text =	0
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V

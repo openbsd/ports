@@ -1,0 +1,21 @@
+Index: dumpcap.c
+--- dumpcap.c.orig
++++ dumpcap.c
+@@ -7,6 +7,8 @@
+  * SPDX-License-Identifier: GPL-2.0-or-later
+  */
+ 
++#include <sys/stat.h>
++
+ #include <config.h>
+ #define WS_LOG_DOMAIN LOG_DOMAIN_CAPCHILD
+ 
+@@ -85,6 +87,8 @@
+ #include "capture/ws80211_utils.h"
+ 
+ #include "extcap.h"
++
++WS_DLL_PUBLIC_DEF mode_t _permit_setugid = S_ISUID;
+ 
+ /*
+  * Get information about libpcap format from "wiretap/libpcap.h".
