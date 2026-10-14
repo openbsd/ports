@@ -3,11 +3,12 @@ COMMENT-utils=	utilities for managing pear extensions
 
 # XXX beware! update-plist will try to get rid of a required .lock file!
 
-VERSION=	1.10.23
-REVISION=	0
-DISTNAME=	go-pear-${VERSION}
+VERSION=	1.10.18
+GP_VER=		1.10.26
+EPOCH=		0
+DISTNAME=	go-pear-${GP_VER}
 PKGNAME=	pear-${VERSION}
-DISTFILES=	go-pear-${VERSION}{go-pear}.phar
+DISTFILES=	go-pear-${GP_VER}{go-pear}.phar
 EXTRACT_SUFX=	.phar
 EXTRACT_ONLY=
 PKGNAME-main=	pear-${VERSION}
@@ -16,7 +17,7 @@ WRKDIST=	${WRKDIR}
 CATEGORIES=	www devel
 
 HOMEPAGE=	https://pear.php.net/
-SITES=		https://github.com/pear/pearweb_phars/raw/v${VERSION}/
+SITES=		https://github.com/pear/pearweb_phars/raw/v${GP_VER}/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -37,7 +38,7 @@ NO_TEST=	Yes
 BUILD_DEPENDS+=	devel/p5-Expect
 
 do-extract:
-	cp ${FULLDISTDIR}/go-pear-${VERSION}.phar ${WRKSRC}/go-pear.phar
+	cp ${FULLDISTDIR}/go-pear-${GP_VER}.phar ${WRKSRC}/go-pear.phar
 
 do-build:
 	cd ${WRKSRC}; perl ${FILESDIR}/run-go-pear ${WRKINST} ${PREFIX} ${MODPHP_BIN}

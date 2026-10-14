@@ -169,7 +169,6 @@ pear/tests/Console_Getopt/tests/bug13140.phpt
 pear/tests/Structures_Graph/
 pear/tests/Structures_Graph/tests/
 pear/tests/Structures_Graph/tests/AcyclicTestTest.php
-pear/tests/Structures_Graph/tests/AllTests.php
 pear/tests/Structures_Graph/tests/BasicGraphTest.php
 pear/tests/Structures_Graph/tests/TopologicalSorterTest.php
 pear/tests/Structures_Graph/tests/helper.inc
