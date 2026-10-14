@@ -1,0 +1,25 @@
+Index: codex-rs/app-server-daemon/src/lib.rs
+--- codex-rs/app-server-daemon/src/lib.rs.orig
++++ codex-rs/app-server-daemon/src/lib.rs
+@@ -328,7 +328,7 @@ impl Daemon {
+             .as_path()
+             .to_path_buf();
+         let state_dir = codex_home.as_path().join(STATE_DIR_NAME);
+-        let managed_codex_bin = managed_codex_bin(codex_home.as_path());
++        let managed_codex_bin = std::env::current_exe()?;
+         // Old CLIs must not mistake a daemon-owned installation for their backend.
+         let (pid_file, update_pid_file) =
+             if managed_codex_bin.starts_with(codex_home.as_path().join("packages/standalone")) {
+@@ -941,6 +941,12 @@ impl Daemon {
+         ))
+     }
+ 
++    #[cfg(target_os = "openbsd")]
++    fn current_managed_codex_bin(&self) -> Result<PathBuf> {
++        Ok(self.managed_codex_bin.clone())
++    }
++
++    #[cfg(not(target_os = "openbsd"))]
+     fn current_managed_codex_bin(&self) -> Result<PathBuf> {
+         // An installer can move a legacy binary into bin/ while this updater runs.
+         let home = self
