@@ -41,7 +41,7 @@ OPENBSD.library = { name -> return (IS_STATIC_BUILD ? "lib${name}.a" : "lib${nam
 
 // A set of common parameters to use for both compiling and linking
 def commonFlags = [
-        "-g", "-O0", "-fno-strict-aliasing", "-fPIC", "-fno-omit-frame-pointer", // optimization flags
+        "-fno-strict-aliasing", "-fPIC", "-fno-omit-frame-pointer", // optimization flags
         "-fstack-protector",
         "-Wextra", "-Wall", "-Wformat-security", "-Wno-unused", "-Wno-parentheses"] // warning flags
 

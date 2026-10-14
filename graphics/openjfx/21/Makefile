@@ -1,3 +1,5 @@
+ONLY_FOR_ARCHS =	aarch64 amd64
+
 COMMENT =		JavaFX/OpenJFX client toolkit
 
 BASE_V =		21.0.11
@@ -7,6 +9,7 @@ GH_ACCOUNT =		openjdk
 GH_PROJECT =		jfx21u
 GH_TAGNAME =		${BASE_V}+${BASE_REV}
 PKGNAME =		openjfx-${V}
+REVISION =		0
 
 DISTFILES =		jfx-${V}.tar.gz
 
@@ -107,6 +110,13 @@ LIB_DEPENDS =		\
 			audio/pulseaudio \
 			x11/gtk+3 \
 
+# Ingnore extra; these are from the shared libs embeded in the jars
+WANTLIB =		${COMPILER_LIBCXX} GL X11 Xtst Xxf86vm atk-1.0 c
+WANTLIB +=		cairo-gobject cairo fontconfig freetype gdk-3
+WANTLIB +=		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
+WANTLIB +=		gtk-3 harfbuzz intl m pango-1.0 pangocairo-1.0
+WANTLIB +=		pangoft2-1.0
+
 # OpenJFX uses Gradle internally
 USE_GMAKE =		Yes
 
@@ -122,10 +132,6 @@ GRADLE_ARGS =		--no-daemon \
 			--offline \
 			--init-script=${WRKDIR}/init.gradle \
 			--info
-
-.if ${MACHINE_ARCH} == "i386"
-GRADLE_ARGS +=		-PNUM_COMPILE_THREADS=1
-.endif
 
 post-extract:
 	cp ${FILESDIR}/openbsd.gradle \
