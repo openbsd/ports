@@ -1,7 +1,15 @@
 Index: x11.c
 --- x11.c.orig
 +++ x11.c
-@@ -52,8 +52,8 @@
+@@ -33,6 +33,7 @@
+ 
+ #ifdef USE_X11
+ 
++#include <sys/stat.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <X11/Xos.h>
+@@ -52,8 +53,8 @@
  #ifdef __unix
  
  #define MAXSCORES 10		/* number of entries in high score table */
@@ -12,7 +20,17 @@ Index: x11.c
  
  #if defined(__unix) && !defined PATH_RMAIL
  #define PATH_RMAIL "rmail"	/* rely on the $PATH */
-@@ -336,6 +336,8 @@ XonixEventHandler(Widget w,      /* canvas */
+@@ -114,6 +115,9 @@
+ 
+ #include "xonix.h"
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++
+ #define ApplicationClassName "Xonix"
+ 
+ #define trans_table \
+@@ -336,6 +340,8 @@ XonixEventHandler(Widget w,      /* canvas */
        if(y0 < 0) y0 = 0;
        x1 = ((exp->x + exp->width + EATER_SIZE - 1) / EATER_SIZE) | 1;
        y1 = ((exp->y + exp->height + EATER_SIZE - 1) / EATER_SIZE) | 1;

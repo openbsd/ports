@@ -1,7 +1,7 @@
 COMMENT=	win land without colliding with 'flyers' and 'eaters'
 
 DISTNAME=	xonix-1.4
-REVISION=	11
+REVISION=	12
 CATEGORIES=	games
 
 SITES=		ftp://ftp.interface-business.de/pub/outgoing/ \
