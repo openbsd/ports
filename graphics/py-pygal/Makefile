@@ -17,14 +17,11 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-BUILD_DEPENDS +=	devel/py-test-runner
-
 RUN_DEPENDS +=		devel/py-importlib-metadata \
 			textproc/py-lxml
 
 TEST_DEPENDS +=		www/py-flask \
 			textproc/py-lxml \
-			devel/py-test-runner \
 			devel/py-test-cov
 
 # missing TEST_DEPENDS:
