@@ -29,8 +29,7 @@ RUN_DEPENDS =	archivers/py-zstandard \
 # tests to run
 TEST_DEPENDS =	archivers/py-lz4 \
 		devel/py-test-timeout \
-		devel/py-mock \
-		devel/py-test-runner
+		devel/py-mock
 
 # some cloud-related deps are not ported (esp for google/azure); pytest's
 # collection of tests errors out if some of these are not ignored, and avoid
