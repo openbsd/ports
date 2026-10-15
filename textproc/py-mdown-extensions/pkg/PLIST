@@ -21,10 +21,14 @@ lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}b64.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}b64.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}betterem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}betterem.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}bracketspan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}bracketspan.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}caret.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}caret.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}critic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}critic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}delimiterprocessor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}delimiterprocessor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}details.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}details.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}emoji.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -109,8 +113,10 @@ lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/definition.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/details.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/html.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/tab.py
+lib/python${MODPY_VERSION}/site-packages/pymdownx/bracketspan.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/caret.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/critic.py
+lib/python${MODPY_VERSION}/site-packages/pymdownx/delimiterprocessor.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/details.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/emoji.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/emoji1_db.py

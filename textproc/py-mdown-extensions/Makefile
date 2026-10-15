@@ -1,6 +1,6 @@
 COMMENT=	extensions for python-markdown
 
-MODPY_DISTV =	11.0.1
+MODPY_DISTV =	12.3
 DISTNAME=	pymdown_extensions-${MODPY_DISTV}
 PKGNAME=	py-mdown-extensions-${MODPY_DISTV}
 
