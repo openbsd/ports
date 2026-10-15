@@ -4,6 +4,7 @@ GH_PROJECT=	jna
 GH_ACCOUNT=	java-native-access
 GH_TAGNAME=	5.18.1
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://github.com/java-native-access/jna
 
@@ -26,6 +27,9 @@ LIB_DEPENDS=	devel/libffi
 # clojure needs to have the jna.jar installed
 TEST_DEPENDS=	${BASE_PKGPATH} \
 		lang/clojure
+
+# Ignore extra, lib inside jar file needs this
+WANTLIB=	ffi
 
 MAKE_ENV=	CC="${CC}" \
 		PORTS_CFLAGS="${CFLAGS}"
