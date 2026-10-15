@@ -1,7 +1,7 @@
 COMMENT=	IMAP4 webmail client
 
 V=		1.7.4
-REVISION=	1
+REVISION=	2
 DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-//}
 EXTRACT_SUFX=	-complete.tar.gz
@@ -31,9 +31,9 @@ SUBST_VARS=	INSTDIR TINSTDIR
 MODULES=	lang/php
 
 RUN_DEPENDS=	${MODPHP_PDO_DEPENDS} \
+		textproc/pecl-pspell${MODPHP_FLAVOR} \
 		lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-intl \
-		lang/php/${MODPHP_VERSION},-pspell \
 		lang/php/${MODPHP_VERSION},-zip
 
 do-configure:
