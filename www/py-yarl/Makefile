@@ -31,7 +31,6 @@ TEST_DEPENDS=	devel/py-hypothesis \
 		devel/py-pydantic \
 		devel/py-covdefaults \
 		devel/py-test-cov \
-		devel/py-test-runner \
 		devel/py-test-xdist
 
 .include <bsd.port.mk>
