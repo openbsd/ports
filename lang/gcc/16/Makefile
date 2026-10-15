@@ -43,7 +43,7 @@ SHARED_LIBS =	estdc++		22.1 \
 		gphobos		2.1 \
 		gdruntime	2.1
 
-PSEUDO_FLAVORS = no_ada full
+PSEUDO_FLAVORS = full
 FLAVOR ?=
 
 MULTI_PACKAGES = -main -libs -f95 -objc -c++ -ada -dlang -bootstrap
