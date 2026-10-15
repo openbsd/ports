@@ -4883,8 +4883,8 @@ icinga-php/vendor/vendor/thecodingmachine/safe/generated/8.2/rnp.php
 icinga-php/vendor/vendor/thecodingmachine/safe/generated/8.2/sodium.php
 icinga-php/vendor/vendor/thecodingmachine/safe/generated/8.2/ssh2.php
 icinga-php/vendor/vendor/thecodingmachine/safe/generated/8.2/stream.php
-icinga-php/vendor/vendor/thecodingmachine/safe/generated/${MODPHP_VERSION}/
-icinga-php/vendor/vendor/thecodingmachine/safe/generated/${MODPHP_VERSION}/rector-migrate.php
+icinga-php/vendor/vendor/thecodingmachine/safe/generated/8.3/
+icinga-php/vendor/vendor/thecodingmachine/safe/generated/8.3/rector-migrate.php
 icinga-php/vendor/vendor/thecodingmachine/safe/generated/8.4/
 icinga-php/vendor/vendor/thecodingmachine/safe/generated/8.4/apache.php
 icinga-php/vendor/vendor/thecodingmachine/safe/generated/8.4/array.php

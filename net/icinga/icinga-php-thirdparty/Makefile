@@ -6,4 +6,6 @@ REVISION=	0
 
 MODULE_DEST=	${PREFIX}/icinga-php/vendor
 
+UPDATE_PLIST_ARGS= -i MODPHP_VERSION
+
 .include <bsd.port.mk>
