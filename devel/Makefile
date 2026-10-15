@@ -1601,7 +1601,6 @@
      SUBDIR += py-lazy-object-proxy
      SUBDIR += py-libcst
      SUBDIR += py-liblarch
-     SUBDIR += py-litellm
      SUBDIR += py-littleutils
      SUBDIR += py-llvmlite
      SUBDIR += py-logfury
@@ -2044,7 +2043,6 @@
      SUBDIR += stylua
      SUBDIR += subversion
      SUBDIR += swig
-     SUBDIR += swival
      SUBDIR += t1lib
      SUBDIR += tbb
      SUBDIR += tclap
