@@ -2,15 +2,18 @@ COMMENT=	image processing tools
 
 GH_ACCOUNT=	ImageMagick
 GH_PROJECT=	ImageMagick6
-GH_TAGNAME=	6.9.13-57
+GH_TAGNAME=	6.9.13-59
+# move to ${GH_TAGNAME:S/-/pl/} with 6.9.14+?
 PKGNAME=	ImageMagick-${GH_TAGNAME:S/-/./}
 
-SHARED_LIBS +=	MagickCore-6.Q16     8.3      # 7.1
+SHARED_LIBS +=	MagickCore-6.Q16     8.4      # 7.1
 SHARED_LIBS +=	MagickWand-6.Q16     4.2      # 7.1
 SHARED_LIBS +=	Magick++-6.Q16       5.2      # 9.0
 
 CATEGORIES=	graphics
 
+# https://legacy.imagemagick.org/changelog/
+# https://github.com/ImageMagick/ImageMagick6
 HOMEPAGE=	https://legacy.imagemagick.org/
 
 # https://legacy.imagemagick.org/script/license.php
