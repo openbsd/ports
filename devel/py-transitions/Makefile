@@ -17,7 +17,6 @@ MODPY_PI=	Yes
 RUN_DEPENDS=	devel/py-six
 TEST_DEPENDS=	devel/py-codestyle \
 		devel/py-test-cov \
-		devel/py-test-runner \
 		devel/py-test-xdist \
 		devel/py-mock \
 		devel/py-dill \
