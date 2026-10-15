@@ -1,7 +1,7 @@
 COMMENT =		python wrapper for the Mastodon API
 
 MODPY_DISTV =		1.5.1
-# new versions are named mastodon_py-${MODPY_DISTV}
+# new versions are named mastodon_py-${MODPY_DISTV} (e.g. 2.2.2)
 DISTNAME =		Mastodon.py-${MODPY_DISTV}
 PKGNAME =		py-mastodon.py-${MODPY_DISTV}
 REVISION =		6
@@ -19,8 +19,6 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-BUILD_DEPENDS =		devel/py-test-runner
-
 RUN_DEPENDS =		devel/py-dateutil \
 			devel/py-decorator \
 			devel/py-magic \
@@ -33,7 +31,6 @@ RUN_DEPENDS =		devel/py-dateutil \
 
 TEST_DEPENDS =		devel/py-test-cov \
 			devel/py-test-mock \
-			devel/py-test-runner \
 			devel/py-test-vcr \
 			www/py-requests-mock \
 			www/py-vcrpy
