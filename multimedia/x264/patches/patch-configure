@@ -1,3 +1,5 @@
+- configure: Fix building with Clang on PowerPC64
+
 Index: configure
 --- configure.orig
 +++ configure
@@ -7,7 +9,19 @@ Index: configure
  
  if test x"$1" = x"-h" -o x"$1" = x"--help" ; then
  cat <<EOF
-@@ -1414,10 +1414,6 @@ if [ "$pic" = "yes" ] ; then
+@@ -824,7 +824,10 @@ case $host_cpu in
+             if [ $SYS = MACOSX ] ; then
+                 CFLAGS="$CFLAGS -faltivec -fastf -mcpu=G4"
+             else
+-                CFLAGS="$CFLAGS -maltivec -mabi=altivec"
++                CFLAGS="$CFLAGS -maltivec"
++                if cc_check '' "-mabi=altivec"; then
++                    CFLAGS="$CFLAGS -mabi=altivec"
++                fi
+                 define HAVE_ALTIVEC_H
+             fi
+             if [ "$vsx" != "no" ] ; then
+@@ -1414,10 +1417,6 @@ if [ "$pic" = "yes" ] ; then
      [ $SYS = SunOS -a "$ARCH" = "X86" ] && SOFLAGS="$SOFLAGS -mimpure-text"
  fi
  
@@ -18,7 +32,7 @@ Index: configure
  if [ "$strip" = "yes" ]; then
      LDFLAGS="$LDFLAGS -s"
  fi
-@@ -1426,11 +1422,11 @@ if [ "$debug" = "yes" ]; then
+@@ -1426,11 +1425,11 @@ if [ "$debug" = "yes" ]; then
      CFLAGS="-O1 -g $CFLAGS"
      RCFLAGS="$RCFLAGS -DDEBUG"
  else
@@ -32,7 +46,7 @@ Index: configure
      fi
  fi
  [ "$lto" = "auto" ] && lto="no"
-@@ -1663,7 +1659,6 @@ if [ "$cli" = "yes" ]; then
+@@ -1663,7 +1662,6 @@ if [ "$cli" = "yes" ]; then
  fi
  
  if [ "$shared" = "yes" ]; then
