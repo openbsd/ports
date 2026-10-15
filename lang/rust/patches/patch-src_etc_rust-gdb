@@ -3,12 +3,12 @@ use egdb (gdb from ports)
 Index: src/etc/rust-gdb
 --- src/etc/rust-gdb.orig
 +++ src/etc/rust-gdb
-@@ -19,7 +19,7 @@ RUSTC_COMMIT_HASH="$("$RUSTC" -vV | sed -n 's/commit-h
- # Run GDB with the additional arguments that load the pretty printers
+@@ -18,7 +18,7 @@ RUSTC_COMMIT_HASH="$("$RUSTC" -vV | sed -n 's/commit-h
+ 
  # Set the environment variable `RUST_GDB` to overwrite the call to a
  # different/specific command (defaults to `gdb`).
 -RUST_GDB="${RUST_GDB:-gdb}"
 +RUST_GDB="${RUST_GDB:-egdb}"
- PYTHONPATH="$PYTHONPATH:$GDB_PYTHON_MODULE_DIRECTORY" exec ${RUST_GDB} \
-   --directory="$GDB_PYTHON_MODULE_DIRECTORY" \
-   -iex "add-auto-load-safe-path $GDB_PYTHON_MODULE_DIRECTORY" \
+ 
+ # Run GDB with the additional arguments that load the pretty printers
+ # Prepend base GDB flags ahead of any arguments passed by the user

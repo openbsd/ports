@@ -4,7 +4,7 @@ try to reduce memory usage on aarch64:
 Index: src/bootstrap/src/bin/rustc.rs
 --- src/bootstrap/src/bin/rustc.rs.orig
 +++ src/bootstrap/src/bin/rustc.rs
-@@ -164,6 +164,13 @@ fn main() {
+@@ -157,6 +157,13 @@ fn main() {
          {
              cmd.arg("-Ztls-model=initial-exec");
          }

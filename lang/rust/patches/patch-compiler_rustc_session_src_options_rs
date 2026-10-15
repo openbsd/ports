@@ -4,7 +4,7 @@ aarch64: make -Z branch-protection=bti,pac-ret the default
 Index: compiler/rustc_session/src/options.rs
 --- compiler/rustc_session/src/options.rs.orig
 +++ compiler/rustc_session/src/options.rs
-@@ -2107,6 +2107,26 @@ pub mod parse {
+@@ -2194,6 +2194,26 @@ pub mod parse {
      }
  }
  
@@ -31,10 +31,10 @@ Index: compiler/rustc_session/src/options.rs
  options! {
      CodegenOptions, CodegenOptionsTargetModifiers, CG_OPTIONS, cgopts, "C", "codegen",
  
-@@ -2304,13 +2324,13 @@ options! {
-         (default: no)"),
+@@ -2395,13 +2415,13 @@ options! {
      box_noalias: bool = (true, parse_bool, [TRACKED],
          "emit noalias metadata for box (default: yes)"),
+     #[rustc_lint_opt_deny_field_access("use `Session::branch_protection` instead of this field")]
 -    branch_protection: Option<BranchProtection> = (None, parse_branch_protection, [TRACKED] { TARGET_MODIFIER: BranchProtection },
 +    branch_protection: Option<BranchProtection> = (DEFAULT_BRANCH_PROTECTION, parse_branch_protection, [TRACKED] { TARGET_MODIFIER: BranchProtection },
          "set options for branch target identification and pointer authentication on AArch64"),
