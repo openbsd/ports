@@ -1,3 +1,5 @@
+ONLY_FOR_ARCHS =	${LE_ARCHS}
+
 COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
