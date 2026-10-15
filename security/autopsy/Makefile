@@ -1,5 +1,6 @@
 COMMENT=		GUI for The Sleuth Kit and other digital forensics tools
 
+REVISION=		0
 VERSION=		4.23.1
 GH_ACCOUNT=		sleuthkit
 GH_PROJECT=		autopsy
@@ -129,6 +130,14 @@ pre-build:
 	cp ${DISTDIR}/${jar:C/\{.*\}//} ${WRKSRC}/CoreLibs/release/modules/ext/
 	cp ${DISTDIR}/${jar:C/\{.*\}//} ${WRKSRC}/Core/release/modules/ext/
 .endfor
+	cp ${TRUEPREFIX}/share/java/classes/jna.jar \
+		${WRKSRC}/CoreLibs/release/modules/ext/jna-${JNA_V}.jar
+	cp ${TRUEPREFIX}/share/java/classes/jna.jar \
+		${WRKSRC}/Core/release/modules/ext/jna-${JNA_V}.jar
+	cp ${TRUEPREFIX}/share/java/classes/jna-platform.jar \
+		${WRKSRC}/CoreLibs/release/modules/ext/jna-platform-${JNA_V}.jar
+	cp ${TRUEPREFIX}/share/java/classes/jna-platform.jar \
+		${WRKSRC}/Core/release/modules/ext/jna-platform-${JNA_V}.jar
 	cp ${DISTDIR}/ivy-${IVY_V}.jar ${WRKDIR}/.ant/lib/ivy.jar
 
 	mkdir -p ${WRKSRC}/Core/src/org/sleuthkit/autopsy/datamodel/
