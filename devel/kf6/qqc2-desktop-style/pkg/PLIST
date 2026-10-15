@@ -17,6 +17,7 @@ lib/qt6/qml/org/kde/desktop/DelayButton.qml
 lib/qt6/qml/org/kde/desktop/Dial.qml
 lib/qt6/qml/org/kde/desktop/Dialog.qml
 lib/qt6/qml/org/kde/desktop/DialogButtonBox.qml
+lib/qt6/qml/org/kde/desktop/DoubleSpinBox.qml
 lib/qt6/qml/org/kde/desktop/Drawer.qml
 lib/qt6/qml/org/kde/desktop/Frame.qml
 lib/qt6/qml/org/kde/desktop/GroupBox.qml

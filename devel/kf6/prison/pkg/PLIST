@@ -25,6 +25,11 @@ lib/cmake/KF6Prison/KF6PrisonConfig.cmake
 lib/cmake/KF6Prison/KF6PrisonConfigVersion.cmake
 lib/cmake/KF6Prison/KF6PrisonTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6Prison/KF6PrisonTargets.cmake
+lib/cmake/KF6PrisonScanner/
+lib/cmake/KF6PrisonScanner/KF6PrisonScannerConfig.cmake
+lib/cmake/KF6PrisonScanner/KF6PrisonScannerConfigVersion.cmake
+lib/cmake/KF6PrisonScanner/KF6PrisonScannerTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6PrisonScanner/KF6PrisonScannerTargets.cmake
 @lib lib/libKF6Prison.so.${LIBKF6Prison_VERSION}
 @lib lib/libKF6PrisonScanner.so.${LIBKF6PrisonScanner_VERSION}
 lib/qt6/qml/org/
