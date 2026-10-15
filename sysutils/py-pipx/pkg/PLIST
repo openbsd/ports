@@ -23,6 +23,8 @@ lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}constants.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}emojis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}emojis.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}fanout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}fanout.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}interpreter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}interpreter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -147,6 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/pipx/commands/uninstall.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/upgrade.py
 lib/python${MODPY_VERSION}/site-packages/pipx/constants.py
 lib/python${MODPY_VERSION}/site-packages/pipx/emojis.py
+lib/python${MODPY_VERSION}/site-packages/pipx/fanout.py
 lib/python${MODPY_VERSION}/site-packages/pipx/interpreter.py
 lib/python${MODPY_VERSION}/site-packages/pipx/main.py
 lib/python${MODPY_VERSION}/site-packages/pipx/package_specifier.py

@@ -1,6 +1,6 @@
 COMMENT=	install and run Python applications in isolated environments
 
-MODPY_DISTV=	1.17.8
+MODPY_DISTV=	1.18.1
 DISTNAME=	pipx-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
@@ -12,9 +12,8 @@ HOMEPAGE=	https://pypa.github.io/pipx/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
+MODPY_PI=	Yes
 
 BUILD_DEPENDS=	textproc/py-docutils
 
