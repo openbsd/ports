@@ -88,7 +88,7 @@ GDC = ${WRKDIR}/bin/egdc
 # make sure we link the right libestdc++.a in stage1 when using a bootstrap
 CONFIGURE_ARGS += --with-stage1-ldflags="-L${WRKDIR}/bootstrap/lib"
 .elif ${PROPERTIES:Mgcc4}
-# We now require C++11.
+# We now require C++14.
 BUILD_DEPENDS += lang/bootgcc
 CC = ${LOCALBASE}/bootstrap-gcc/bin/gcc
 CXX = ${LOCALBASE}/bootstrap-gcc/bin/g++
