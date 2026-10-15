@@ -1,9 +1,8 @@
 COMMENT=	text-to-HTML conversion tool
 
-MODPY_DISTV=	3.10.3
+MODPY_DISTV=	3.11.1
 DISTNAME=	markdown-${MODPY_DISTV}
 PKGNAME=	py-markdown-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	textproc
 
