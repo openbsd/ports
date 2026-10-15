@@ -1,6 +1,6 @@
 COMMENT=	dynamic versioning library and CLI
 
-MODPY_DISTV=	1.26.1
+MODPY_DISTV=	1.26.3
 DISTNAME=	dunamai-${MODPY_DISTV}
 PKGNAME=	py-dunamai-${MODPY_DISTV}
 
