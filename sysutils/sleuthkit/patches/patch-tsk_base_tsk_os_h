@@ -1,0 +1,23 @@
+https://patch-diff.githubusercontent.com/raw/sleuthkit/sleuthkit/pull/3556.patch
+
+Index: tsk/base/tsk_os.h
+--- tsk/base/tsk_os.h.orig
++++ tsk/base/tsk_os.h
+@@ -148,7 +148,7 @@ typedef WCHAR TSK_TCHAR;        ///< Character data ty
+ #define TATOI	_wtoi
+ #define TFPRINTF fwprintf
+ #define TSNPRINTF _snwprintf
+-#define TPUTENV	_wputenv
++#define TSETENV(name, value) _wputenv_s(name, value)
+ #define TZSET	_tzset
+ #define TZNAME _tzname
+ #if defined(_MSC_VER)
+@@ -198,7 +198,7 @@ typedef char TSK_TCHAR;         ///< Character data ty
+ #define TATOI	atoi
+ #define TFPRINTF fprintf
+ #define TSNPRINTF snprintf
+-#define TPUTENV	putenv
++#define TSETENV(name, value) setenv(name, value, 1)
+ #define TZSET	tzset
+ #define TZNAME	tzname
+ 

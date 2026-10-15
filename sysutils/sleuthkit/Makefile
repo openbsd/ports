@@ -1,6 +1,6 @@
 COMMENT =		forensic toolkit based on TCT
 
-REVISION =		3
+REVISION =		4
 VERSION =		4.15.0
 DISTNAME =		sleuthkit-${VERSION}
 
