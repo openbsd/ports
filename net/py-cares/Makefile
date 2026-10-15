@@ -1,6 +1,6 @@
 COMMENT=	Python interface to c-ares
 
-MODPY_DISTV=	5.0.1
+MODPY_DISTV=	5.2.0
 DISTNAME=	pycares-${MODPY_DISTV}
 PKGNAME=	py-cares-${MODPY_DISTV}
 CATEGORIES=	net
@@ -15,7 +15,6 @@ WANTLIB += cares
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
-# some tests need network
 
 USE_GMAKE=	Yes
 
@@ -24,5 +23,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	net/libcares
 MAKE_ENV=	PYCARES_USE_SYSTEM_LIB=1 \
 		CPPFLAGS="-I${LOCALBASE}/include"
+
+# some tests need network
 
 .include <bsd.port.mk>
