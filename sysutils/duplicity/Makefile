@@ -39,12 +39,9 @@ TEST_DEPENDS =		archivers/gtar \
 			devel/pylint \
 			devel/py-test \
 			devel/py-test-cov \
-			devel/py-test-runner \
 			sysutils/py-psutil \
 			textproc/py-sphinx
 
 MAKE_ENV =		LIBRSYNC_DIR=${LOCALBASE}
-
-#MODPY_ADJ_FILES =	bin/duplicity
 
 .include <bsd.port.mk>
