@@ -1,9 +1,9 @@
 COMMENT =	Z3 theorem prover
 
-DIST_TUPLE =	github Z3Prover z3 z3-5.0.0 .
+DIST_TUPLE =	github Z3Prover z3 z3-5.3.0 .
 PKGNAME =	${DISTNAME:S/z3-//}
 
-SHARED_LIBS =	z3	5.0
+SHARED_LIBS =	z3	5.1
 
 CATEGORIES =	math
 
@@ -30,9 +30,6 @@ CONFIGURE_ARGS =	-DZ3_BUILD_PYTHON_BINDINGS=ON \
 			-DZ3_USE_LIB_GMP=OFF
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/scripts/mk_util.py
 
 post-test:
 	cd ${WRKBUILD} && \

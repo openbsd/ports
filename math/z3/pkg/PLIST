@@ -16,10 +16,10 @@ include/z3_v1.h
 include/z3_version.h
 lib/cmake/
 lib/cmake/z3/
+lib/cmake/z3/Z3-shared-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/z3/Z3-shared-targets.cmake
 lib/cmake/z3/Z3Config.cmake
 lib/cmake/z3/Z3ConfigVersion.cmake
-lib/cmake/z3/Z3Targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/z3/Z3Targets.cmake
 @lib lib/libz3.so.${LIBz3_VERSION}
 lib/pkgconfig/z3.pc
 lib/python${MODPY_VERSION}/
