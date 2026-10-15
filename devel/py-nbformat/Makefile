@@ -1,13 +1,12 @@
 COMMENT =		Jupyter notebook format
 
-MODPY_DISTV =		5.10.4
+MODPY_DISTV =		5.11.1
 DISTNAME =		nbformat-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://jupyter.org
+HOMEPAGE =		https://jupyter.org/
 
 # BSD
 PERMIT_PACKAGE =	Yes
