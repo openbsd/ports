@@ -9,6 +9,7 @@ GH_ACCOUNT =	NationalSecurityAgency
 GH_PROJECT =	ghidra
 GH_TAGNAME =	Ghidra_${VERSION}_build
 DISTNAME =	ghidra-${VERSION}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -19,7 +20,8 @@ HOMEPAGE =	https://www.ghidra-sre.org/
 # Apache v2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c m ${COMPILER_LIBCXX}
+# Ignore extra on ffi which is needed for lib inside a jar file
+WANTLIB +=		c ffi m ${COMPILER_LIBCXX}
 
 SITES.a =		https://www.intricatesoftware.com/distfiles/
 
