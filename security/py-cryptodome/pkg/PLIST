@@ -3,35 +3,22 @@
 lib/python${MODPY_VERSION}/site-packages/Crypto/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/AES.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/AES.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/ARC2.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/ARC2.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/ARC4.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/ARC4.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/Blowfish.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/Blowfish.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/CAST.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/CAST.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/ChaCha20.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/ChaCha20.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/ChaCha20_Poly1305.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/ChaCha20_Poly1305.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/DES.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/DES.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/DES3.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/DES3.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/PKCS1_OAEP.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/PKCS1_OAEP.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/PKCS1_v1_5.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/PKCS1_v1_5.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/Salsa20.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/Salsa20.pyi
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_ARC4${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_EKSBlowfish.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_EKSBlowfish.pyi
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_Salsa20${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_Salsa20_avx2_bmi2${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}AES.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}AES.${MODPY_PYC_MAGIC_TAG}pyc
@@ -89,31 +76,25 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_siv
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_siv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_pkcs1_oaep_decode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_pkcs1_oaep_decode.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_state_machine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_state_machine.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}oaep.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}oaep.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_chacha20${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_chacha20_avx2_bmi2${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_cbc.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_cbc.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ccm.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ccm.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_cfb.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_cfb.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ctr.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ctr.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_eax.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_eax.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ecb.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ecb.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_gcm.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_gcm.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_kw.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_kwp.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ocb.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ocb.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ofb.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ofb.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_openpgp.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_openpgp.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_siv.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_siv.pyi
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_pkcs1_decode${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_pkcs1_oaep_decode.py
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_aes${MODPY_ABI3SO}.so
@@ -129,65 +110,38 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_pkcs1_oaep_decode.py
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_eksblowfish${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_ocb${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_ofb${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_state_machine.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/oaep.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/BLAKE2b.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/BLAKE2b.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/BLAKE2s.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/BLAKE2s.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/CMAC.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/CMAC.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/HMAC.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/HMAC.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KMAC128.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KMAC128.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KMAC256.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KMAC256.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KangarooTwelve.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KangarooTwelve.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/MD2.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/MD2.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/MD4.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/MD4.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/MD5.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/MD5.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/Poly1305.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/Poly1305.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/RIPEMD.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/RIPEMD.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/RIPEMD160.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/RIPEMD160.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA1.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA1.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA224.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA224.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA256.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA256.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA384.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA384.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA3_224.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA3_224.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA3_256.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA3_256.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA3_384.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA3_384.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA3_512.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA3_512.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA512.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA512.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHAKE128.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHAKE128.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHAKE256.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHAKE256.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TupleHash128.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TupleHash128.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TupleHash256.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TupleHash256.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TurboSHAKE128.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TurboSHAKE128.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TurboSHAKE256.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TurboSHAKE256.pyi
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_BLAKE2b${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_BLAKE2s${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_MD2${MODPY_ABI3SO}.so
@@ -196,11 +150,12 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TurboSHAKE256.pyi
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_RIPEMD160${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA1${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA224${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA224_shani${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA256${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA256_shani${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA384${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA512${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}BLAKE2b.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}BLAKE2b.${MODPY_PYC_MAGIC_TAG}pyc
@@ -269,21 +224,18 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}cSHAKE256.$
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}keccak.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}keccak.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_ghash_portable${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_k12${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_k12_avx2_bmi2${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_keccak${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_keccak_avx2_bmi2${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_poly1305${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/cSHAKE128.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/cSHAKE128.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/cSHAKE256.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/cSHAKE256.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/keccak.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/keccak.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/IO/
 lib/python${MODPY_VERSION}/site-packages/Crypto/IO/PEM.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/IO/PEM.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/IO/PKCS8.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/IO/PKCS8.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/IO/_PBES.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/IO/_PBES.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/IO/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/IO/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/IO/${MODPY_PYCACHE}PEM.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -296,17 +248,10 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/IO/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/Crypto/IO/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/Numbers.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/Numbers.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/Primality.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/Primality.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_IntegerBase.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_IntegerBase.pyi
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_IntegerCustom.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_IntegerCustom.pyi
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_IntegerGMP.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_IntegerGMP.pyi
+lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_IntegerNat.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_IntegerNative.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_IntegerNative.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}Numbers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -315,25 +260,20 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}Primality.$
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}Primality.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}_IntegerBase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}_IntegerBase.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}_IntegerCustom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}_IntegerCustom.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}_IntegerGMP.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}_IntegerGMP.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}_IntegerNat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}_IntegerNat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}_IntegerNative.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}_IntegerNative.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Math/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_modexp${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_nat${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Math/_nat_bmi2_adx${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/DH.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/DH.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/HPKE.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/KDF.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/KDF.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/SecretSharing.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/SecretSharing.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/${MODPY_PYCACHE}DH.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/${MODPY_PYCACHE}DH.${MODPY_PYC_MAGIC_TAG}pyc
@@ -348,15 +288,10 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/${MODPY_PYCACHE}__init_
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/_scrypt${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/DSA.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/DSA.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/ECC.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/ECC.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/ElGamal.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/ElGamal.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/RSA.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/RSA.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}DSA.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}DSA.${MODPY_PYC_MAGIC_TAG}pyc
@@ -370,6 +305,8 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_curve.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_curve.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_ec_lib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_ec_lib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_edwards.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_edwards.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_montgomery.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -382,27 +319,23 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_point
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_point.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_curve.py
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_curve25519${MODPY_ABI3SO}.so
-@so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_curve448${MODPY_ABI3SO}.so
-@so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_ec_ws${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_ec_lib.py
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_ec_nat${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_ec_nat_bmi2_adx${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_ed25519${MODPY_ABI3SO}.so
-@so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_ed448${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_edwards.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_montgomery.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_nist_ecc.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_openssh.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_openssh.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_point.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_point.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Random/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/${MODPY_PYCACHE}random.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/${MODPY_PYCACHE}random.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/random.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Random/random.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/__init__.py
@@ -453,10 +386,14 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_SIV.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_Salsa20.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_Salsa20.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_message_too_long.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_message_too_long.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_pkcs1_15.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_pkcs1_15.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_pkcs1_oaep.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_pkcs1_oaep.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_shared_objects.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_shared_objects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/common.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_AES.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_ARC2.py
@@ -479,8 +416,10 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_OFB.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_OpenPGP.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_SIV.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_Salsa20.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_message_too_long.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_pkcs1_15.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_pkcs1_oaep.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_shared_objects.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}/
@@ -536,6 +475,8 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_cSHAKE.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_keccak.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_keccak.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_shared_objects.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_shared_objects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/common.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_BLAKE2.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_CMAC.py
@@ -561,6 +502,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_TupleHash.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_TurboSHAKE.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_cSHAKE.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_keccak.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_shared_objects.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/IO/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/IO/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/IO/${MODPY_PYCACHE}/
@@ -581,14 +523,11 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/${MODPY_PYCACHE}test_Numbers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/${MODPY_PYCACHE}test_Primality.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/${MODPY_PYCACHE}test_Primality.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/${MODPY_PYCACHE}test_modexp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/${MODPY_PYCACHE}test_modexp.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/${MODPY_PYCACHE}test_modmult.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/${MODPY_PYCACHE}test_modmult.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/${MODPY_PYCACHE}test_nat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/${MODPY_PYCACHE}test_nat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/test_Numbers.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/test_Primality.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/test_modexp.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/test_modmult.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Math/test_nat.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/${MODPY_PYCACHE}/
@@ -640,6 +579,8 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_import_ECC.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_import_RSA.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_import_RSA.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_import_passphrase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_import_passphrase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_DSA.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC_Curve25519.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC_Curve448.py
@@ -653,6 +594,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_import_C
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_import_DSA.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_import_ECC.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_import_RSA.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_import_passphrase.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Random/${MODPY_PYCACHE}/
@@ -691,16 +633,22 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_asn1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_number.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_number.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_raw_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_raw_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_rfc1751.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_rfc1751.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_strxor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_strxor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_threads.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_threads.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_Counter.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_Padding.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_asn1.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_number.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_raw_api.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_rfc1751.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_strxor.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_threads.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/__main__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/${MODPY_PYCACHE}/
@@ -710,17 +658,17 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/${MODPY_PYCACHE}__main_
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/${MODPY_PYCACHE}st_common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/${MODPY_PYCACHE}st_common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/loader.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/plugin.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/st_common.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/DSS.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/DSS.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/PKCS1_PSS.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/PKCS1_PSS.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/PKCS1_v1_5.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/PKCS1_v1_5.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}DSS.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -738,18 +686,12 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}pkcs1_
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}pss.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}pss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/eddsa.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/eddsa.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/pkcs1_15.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/pkcs1_15.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/pss.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/pss.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/Counter.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/Counter.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/Padding.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/Padding.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/RFC1751.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/RFC1751.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}Counter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -760,38 +702,33 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}RFC1751.${M
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}RFC1751.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}_bytes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}_bytes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}_cpu_features.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}_cpu_features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}_file_system.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}_file_system.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}_raw_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}_raw_api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}_threads.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}_threads.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}asn1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}asn1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}number.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}number.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}strxor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/${MODPY_PYCACHE}strxor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/_bytes.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/_cpu_features.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/_cpu_features.pyi
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Util/_cpuid_c${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/_file_system.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/_file_system.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/_raw_api.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/_raw_api.pyi
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Util/_strxor${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/_threads.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/asn1.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/asn1.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/number.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/number.pyi
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/py3compat.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/py3compat.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/strxor.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/strxor.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -801,6 +738,5 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome-${MODPY_DISTV}.dist-info/M
 lib/python${MODPY_VERSION}/site-packages/pycryptodome-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pycryptodome-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pycryptodome-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/pycryptodome-${MODPY_DISTV}.dist-info/licenses/AUTHORS.rst
 lib/python${MODPY_VERSION}/site-packages/pycryptodome-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/pycryptodome-${MODPY_DISTV}.dist-info/top_level.txt
