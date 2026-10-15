@@ -29,6 +29,5 @@ RUN_DEPENDS =		devel/py-attrs \
 
 # tests need network access to download streams
 PORTHOME =		${WRKDIR}
-TEST_DEPENDS =		devel/py-test-runner
 
 .include <bsd.port.mk>
