@@ -1,0 +1,20 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -10,8 +10,6 @@ with open('README.md') as readme_file:
+ 
+ requirements = []
+ 
+-setup_requirements = ['pytest-runner', ]
+-
+ test_requirements = ['pytest>=3', ]
+ 
+ setup(
+@@ -40,7 +38,6 @@ setup(
+     keywords='rfc3986 validator',
+     name='rfc3986_validator',
+     py_modules=['rfc3986_validator'],
+-    setup_requires=setup_requirements,
+     test_suite='tests',
+     tests_require=test_requirements,
+     url='https://github.com/naimetti/rfc3986-validator',
