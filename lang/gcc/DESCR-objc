@@ -9,4 +9,4 @@ developers, to ensure that GCC and the GNU system work on multiple
 architectures and diverse environments, and to more thoroughly test and
 extend the features of GCC.
 
-This package contains the obj C compiler.
+This package contains the obj C and C++ compilers.

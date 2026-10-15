@@ -16,6 +16,7 @@ USE_NOEXECONLY = Yes
 # - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
 #   into simple warnings.
 V = 16.2.0
+REVISION = 0
 GCC_PKGSPEC = >=16,<17
 
 # aarch64, powerpc64 and sparc64 bootstrap contain only gdc
@@ -78,7 +79,7 @@ TEST_DEPENDS += devel/dejagnu \
 		devel/autogen \
 		${BUILD_PKGPATH},-libs>=16,<17
 
-LANGS = c,c++,fortran,objc
+LANGS = c,c++,fortran,objc,obj-c++
 .if ${BUILD_PACKAGES:M-ada} || ${BUILD_PACKAGES:M-dlang}
 DISTFILES.strap += ${BOOTSTRAP-${MACHINE_ARCH}}
 EXTRACT_ONLY += ${BOOTSTRAP-${MACHINE_ARCH}}
