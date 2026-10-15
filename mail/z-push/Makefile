@@ -4,6 +4,14 @@ V=		2.6.2
 DISTNAME=	z-push-${V}
 REVISION=	7
 
+# XXX php-imap is removed in 8.4; a pecl extension is available instead
+# but it's not really recommended, and doesn't build with our version
+# of c-client from alpine (missing mm_login_method symbol).
+#
+# z-push are looking at alternatives;
+# https://github.com/Z-Hub/Z-Push/issues/169
+MODPHP_VERSION=	8.3
+
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://z-push.org/
