@@ -67,8 +67,7 @@ BUILD_DEPENDS += 	textproc/txt2man \
 			math/ensmallen \
 			devel/py-setuptools \
 			math/py-pandas \
-			devel/py-distutils-extra \
-			devel/py-test-runner
+			devel/py-distutils-extra
 
 LIB_DEPENDS-main =	math/armadillo \
 			devel/boost
