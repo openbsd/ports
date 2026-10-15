@@ -634,6 +634,7 @@
      SUBDIR += py-portend
      SUBDIR += py-publicsuffix2
      SUBDIR += py-python-lsp-jsonrpc
+     SUBDIR += py-python-socks
      SUBDIR += py-ripe.atlas.cousteau
      SUBDIR += py-ripe.atlas.sagan
      SUBDIR += py-ripe.atlas.tools
@@ -653,6 +654,7 @@
      SUBDIR += py-standard-telnetlib
      SUBDIR += py-stem
      SUBDIR += py-telegram
+     SUBDIR += py-tiny-proxy
      SUBDIR += py-tinytuya
      SUBDIR += py-tld
      SUBDIR += py-tlslite-ng
