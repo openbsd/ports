@@ -18,7 +18,6 @@ MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =   security/py-cryptography>=3.4.0
 
-TEST_DEPENDS =	devel/py-test-cov \
-		devel/py-test-runner
+TEST_DEPENDS =	devel/py-test-cov
 
 .include <bsd.port.mk>
