@@ -1795,7 +1795,6 @@
      SUBDIR += py-test-remotedata
      SUBDIR += py-test-rerunfailures
      SUBDIR += py-test-run-parallel
-     SUBDIR += py-test-runner
      SUBDIR += py-test-subtesthack
      SUBDIR += py-test-subtests
      SUBDIR += py-test-timeout
