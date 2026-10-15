@@ -1613,7 +1613,6 @@
      SUBDIR += py-marshmallow
      SUBDIR += py-matrix-common
      SUBDIR += py-mccabe
-     SUBDIR += py-mcp
      SUBDIR += py-minidump
      SUBDIR += py-minimock
      SUBDIR += py-mock
