@@ -1,6 +1,5 @@
-@bin bin/pokerth_client
 !%%legacy%%
-share/applications/pokerth.desktop
+%%legacy%%
 share/pixmaps/
 share/pixmaps/pokerth.png
 share/pokerth/
