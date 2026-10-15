@@ -537,7 +537,6 @@
      SUBDIR += py-webpy
      SUBDIR += py-webtest
      SUBDIR += py-werkzeug
-     SUBDIR += py-wstools
      SUBDIR += py-wtforms
      SUBDIR += py-yarl
      SUBDIR += py-yt-dlp-ejs

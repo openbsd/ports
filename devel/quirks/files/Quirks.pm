@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1840 2026/10/15 11:21:41 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1841 2026/10/15 13:11:57 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -646,10 +646,14 @@ setup_obsolete_reason(
 	7 => 'swival',
 	7 => 'py3-litellm',
 	7 => 'py3-mcp',
+	0 => 'py3-wstools',
 );
-# beware, if ports with an RDEP on Python 3 are removed, they need to be listed
-# as @conflict/pkgpath in lang/python/3 and not here, otherwise an update from a
-# release with an old python version to one with a newer version will fail
+# beware, if ports with an RDEP on Python 3 are removed in a release where
+# the Python major version has changed (e.g. 3.13->3.14 between 7.9 and 8.0)
+# they need to be listed as @conflict/pkgpath in lang/python/3 and not here,
+# otherwise an update from a release with an old python version to one with
+# a newer version will fail to merge updates. (this is not currently planned
+# for 8.0->8.1)
 
 # these should be pkgnames, there was some hope that pkg_add might later
 # be able to act on these directly.
