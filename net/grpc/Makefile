@@ -3,11 +3,12 @@
 
 COMMENT =	HTTP/2-based RPC framework
 
-V =		1.82.1
-REVISION =	0
+V =		1.84.0
 DISTNAME =	grpc-${V}
 
 DIST_TUPLE +=	github grpc grpc v${V} .
+DIST_TUPLE +=	github grpc grpc-proto ec30f589e2519d595688b9a42f88a91bdd6b733f third_party/grpc-proto
+DIST_TUPLE +=	github googleapis googleapis 2193a2bfcecb92b92aad7a4d81baa428cafd7dfd third_party/googleapis
 
 SHARED_LIBS +=	address_sorting           0.0 # 0.0
 SHARED_LIBS +=	gpr                       6.0 # 0.0
@@ -16,11 +17,11 @@ SHARED_LIBS +=	grpc++_alts               2.0 # 0.0
 SHARED_LIBS +=	grpc++_error_details      0.0 # 0.0
 SHARED_LIBS +=	grpc++_reflection         4.0 # 0.0
 SHARED_LIBS +=	grpc++_unsecure           4.0 # 0.0
-SHARED_LIBS +=	grpc                      11.0 # 0.0
-SHARED_LIBS +=	grpc_authorization_provider 11.0 # 0.0
-SHARED_LIBS +=	grpc_plugin_support       5.0 # 0.0
-SHARED_LIBS +=	grpc_unsecure             11.0 # 0.0
-SHARED_LIBS +=	grpcpp_channelz           9.0 # 0.0
+SHARED_LIBS +=	grpc                      12.0 # 0.0
+SHARED_LIBS +=	grpc_authorization_provider 12.0 # 0.0
+SHARED_LIBS +=	grpc_plugin_support       6.0 # 0.0
+SHARED_LIBS +=	grpc_unsecure             12.0 # 0.0
+SHARED_LIBS +=	grpcpp_channelz           10.0 # 0.0
 SHARED_LIBS +=	upb_base_lib              0.0 # 0.0
 SHARED_LIBS +=	upb_json_lib              1.0 # 0.0
 SHARED_LIBS +=	upb_mem_lib               0.1 # 0.0
@@ -94,6 +95,7 @@ CONFIGURE_ARGS =	-DgRPC_ABSL_PROVIDER=package \
 			-DgRPC_ZLIB_PROVIDER=package
 
 CONFIGURE_ARGS +=	-DCMAKE_CXX_EXTENSIONS=OFF \
+			-DgRPC_USE_SYSTEMD=OFF \
 			-DgRPC_BUILD_GRPCPP_OTEL_PLUGIN=OFF \
 			-DgRPC_BUILD_TESTS=OFF \
 			-DgRPC_DOWNLOAD_ARCHIVES=OFF
