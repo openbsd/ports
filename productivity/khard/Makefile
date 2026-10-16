@@ -1,6 +1,7 @@
 COMMENT=	console vCard address book
 
 MODPY_DISTV=	0.21.1.dev4+g214becc0e
+MODPY_PI_DIR=	k/khard
 #DISTNAME=	khard-${MODPY_DISTV}
 DISTNAME=	khard-0.22.0
 
