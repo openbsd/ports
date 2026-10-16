@@ -468,6 +468,7 @@
      SUBDIR += py-http_ece
      SUBDIR += py-httpbin
      SUBDIR += py-httpcore
+     SUBDIR += py-httpcore2
      SUBDIR += py-httpie
      SUBDIR += py-httplib2
      SUBDIR += py-httpretty
@@ -475,6 +476,7 @@
      SUBDIR += py-httpx
      SUBDIR += py-httpx-ntlm
      SUBDIR += py-httpx-sse
+     SUBDIR += py-httpx2
      SUBDIR += py-hyperframe
      SUBDIR += py-hyperlink
      SUBDIR += py-itsdangerous
