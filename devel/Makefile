@@ -1407,7 +1407,6 @@
      SUBDIR += py-async-timeout
      SUBDIR += py-asyncore
      SUBDIR += py-asynctest
-     SUBDIR += py-atomicwrites
      SUBDIR += py-attrs
      SUBDIR += py-autocommand
      SUBDIR += py-automat

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1842 2026/10/15 13:30:38 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1843 2026/10/16 06:30:35 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -648,6 +648,7 @@ setup_obsolete_reason(
 	7 => 'py3-mcp',
 	0 => 'py3-wstools',
 	6 => 'py3-test-runner',
+	6 => 'py3-atomicerites',
 );
 # beware, if ports with an RDEP on Python 3 are removed in a release where
 # the Python major version has changed (e.g. 3.13->3.14 between 7.9 and 8.0)
