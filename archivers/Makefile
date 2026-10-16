@@ -25,6 +25,7 @@
      SUBDIR += innoextract
      SUBDIR += kapsul
      SUBDIR += laszip
+     SUBDIR += leangz
      SUBDIR += lha
      SUBDIR += lhasa
      SUBDIR += libaec
