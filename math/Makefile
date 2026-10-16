@@ -7,6 +7,7 @@
      SUBDIR += bc-gh
      SUBDIR += bcal
      SUBDIR += bitwise
+     SUBDIR += cadical
      SUBDIR += calc
      SUBDIR += calcoo
      SUBDIR += cddlib
