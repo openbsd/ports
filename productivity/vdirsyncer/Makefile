@@ -1,7 +1,6 @@
 COMMENT =		synchronize calendars and contacts
 
-# py-standard-pkg-resources BDEP goes away with 0.21.0
-MODPY_DISTV =		0.20.0
+MODPY_DISTV =		0.21.0
 DISTNAME =		vdirsyncer-${MODPY_DISTV}
 
 CATEGORIES =		productivity
@@ -18,8 +17,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-BUILD_DEPENDS =		sysutils/py-standard-pkg-resources \
-			textproc/py-sphinx \
+BUILD_DEPENDS =		textproc/py-sphinx \
 			${RUN_DEPENDS}
 
 RUN_DEPENDS =		www/py-aiohttp \
@@ -27,7 +25,8 @@ RUN_DEPENDS =		www/py-aiohttp \
 			devel/py-aiostream \
 			devel/py-click-log>=0.3.0 \
 			devel/py-click-threading \
-			www/py-requests
+			www/py-requests \
+			devel/py-tenacity
 
 TEST_DEPENDS =		devel/py-hypothesis \
 			devel/py-test-cov \
