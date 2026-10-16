@@ -598,7 +598,6 @@
      SUBDIR += py-dnspython
      SUBDIR += py-dpkt
      SUBDIR += py-eapi
-     SUBDIR += py-engineio
      SUBDIR += py-ephemeral_port_reserve
      SUBDIR += py-fqdn
      SUBDIR += py-ftpdlib
@@ -646,8 +645,6 @@
      SUBDIR += py-slixmpp
      SUBDIR += py-smbc
      SUBDIR += py-snmp
-     SUBDIR += py-socketio
-     SUBDIR += py-socketio-client
      SUBDIR += py-socks
      SUBDIR += py-solaredge-interface
      SUBDIR += py-solaredge-modbus
