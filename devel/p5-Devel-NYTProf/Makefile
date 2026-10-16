@@ -1,6 +1,6 @@
 COMMENT =	powerful feature-rich perl source code profiler
 
-DISTNAME =	Devel-NYTProf-6.15
+DISTNAME =	Devel-NYTProf-6.16
 CPAN_AUTHOR =	JKEENAN
 
 CATEGORIES =	devel
