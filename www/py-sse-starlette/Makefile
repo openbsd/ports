@@ -1,21 +1,25 @@
-COMMENT =		SSE plugin for Starlette
+COMMENT=	Server-Sent Events (SSE) for Starlette and FastAPI
 
-MODPY_DISTV =		1.6.1
+MODPY_DISTV=	3.5.0
+GH_ACCOUNT=	sysid
+GH_PROJECT=	sse-starlette
+GH_TAGNAME=	v${MODPY_DISTV}
+PKGNAME=	py-sse-starlette-${MODPY_DISTV}
 
-DISTNAME =		sse-starlette-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+CATEGORIES=	www
 
-CATEGORIES =		www
+HOMEPAGE=	https://github.com/sysid/sse-starlette
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+RUN_DEPENDS=	www/py-starlette \
+		net/py-anyio
 
-RUN_DEPENDS =		www/py-starlette
+# needs asgi_lifespan
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
