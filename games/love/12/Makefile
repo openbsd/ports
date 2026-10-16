@@ -6,11 +6,14 @@ USE_WXNEEDED =		Yes
 
 VERSION =		12.0
 PKGSPEC =		love->=${VERSION},<13
+H =			b7daef0f7c1dc5888090f5d5b22d4eaf4ffd1d87
 
 SITES =
 DISTNAME =
-PKGNAME =		love-${VERSION}alpha0
-DIST_TUPLE =		github love2d love 4e167072ae558e114cacec28ad5abb2ec2cdf05c .
+PKGNAME =		love-${VERSION}alpha1
+DIST_TUPLE =		github love2d love ${H} .
+
+MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 
 SHARED_LIBS =		love-${VERSION}	0.0
 
@@ -36,7 +39,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 PORTROACH =
 
-WRKDIST =		${_DT_WRKDIST}
+WRKDIST =		${WRKDIR}/love-${H}
 
 # disable some defaults for pre-12.0 love
 CONFIGURE_STYLE =

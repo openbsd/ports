@@ -7,7 +7,7 @@ CATEGORIES +=	games
 
 HOMEPAGE =	https://love2d.org/
 
-MAINTAINER =	Omar Polo <op@openbsd.org>
+MAINTAINER ?=	Omar Polo <op@openbsd.org>
 
 # zlib
 PERMIT_PACKAGE =	Yes
