@@ -1,12 +1,11 @@
 COMMENT=		GUI for The Sleuth Kit and other digital forensics tools
 
-REVISION=		0
+REVISION=		1
 VERSION=		4.23.1
 GH_ACCOUNT=		sleuthkit
 GH_PROJECT=		autopsy
 GH_TAGNAME=		autopsy-${VERSION}
 DISTNAME=		autopsy-${VERSION}
-
 
 # versions of some dependencies in ports
 SLEUTHKIT_V =	4.15.0
@@ -58,27 +57,33 @@ MODJAVA_BUILD_TARGET_NAME =	build-zip
 
 BUILD_DEPENDS =		archivers/zip \
 			archivers/unzip \
-			java/jna
-# C/C++ Forensic & Database Libraries
-LIB_DEPENDS =		archivers/sevenzipjbinding \
+			archivers/sevenzipjbinding \
 			databases/sqlite-jdbc \
 			graphics/opencv,-java \
 			graphics/openjfx/21 \
-			multimedia/libde265 \
-			multimedia/libheif \
-			databases/postgresql,-main \
-			sysutils/afflib3 \
+			java/jna
+
+# C/C++ Forensic & Database Libraries
+LIB_DEPENDS =		sysutils/afflib3 \
 			security/libewf \
 			sysutils/libvhdi \
 			sysutils/libvmdk \
 			sysutils/libvslvm \
 			sysutils/sleuthkit
 
+# Ignore extra, these are from libs inside jar files
+WANTLIB =	${COMPILER_LIBCXX} GL X11 Xtst Xxf86vm afflib aio_compat
+WANTLIB +=	atk-1.0 bfio c cairo cairo-gobject crypto curl ewf expat
+WANTLIB +=	fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB +=	glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz intl m
+WANTLIB +=	nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl pango-1.0
+WANTLIB +=	pangocairo-1.0 pangoft2-1.0 readline sqlite3 ssl tsk
+WANTLIB +=	vhdi vmdk vslvm z
+
 # Runtime applications and GStreamer pipelines
 RUN_DEPENDS =		security/yara/python \
 			sysutils/py-prefetch-parser \
 			sysutils/testdisk \
-			java/jna \
 			multimedia/gstreamer1/plugins-base \
 			multimedia/gstreamer1/plugins-good \
 			multimedia/gstreamer1/plugins-bad \
