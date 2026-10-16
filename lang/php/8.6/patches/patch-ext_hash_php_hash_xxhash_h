@@ -1,0 +1,12 @@
+Index: ext/hash/php_hash_xxhash.h
+--- ext/hash/php_hash_xxhash.h.orig
++++ ext/hash/php_hash_xxhash.h
+@@ -16,7 +16,7 @@
+ #define PHP_HASH_XXHASH_H
+ 
+ #define XXH_INLINE_ALL 1
+-#include "xxhash/xxhash.h"
++#include "xxhash.h"
+ 
+ typedef struct {
+ 	XXH32_state_t s;

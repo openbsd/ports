@@ -1,0 +1,28 @@
+libressl doesn't yet have sk_new_reserve.
+correctly check for sk_X509_push failure.
+
+Index: ext/openssl/openssl_backend_common.c
+--- ext/openssl/openssl_backend_common.c.orig
++++ ext/openssl/openssl_backend_common.c
+@@ -714,7 +714,7 @@ STACK_OF(X509) *php_openssl_load_all_certs_from_file(
+ 		goto end;
+ 	}
+ 
+-	if(!(stack = sk_X509_new_reserve(NULL, sk_X509_INFO_num(sk)))) {
++	if(!(stack = sk_X509_new_null())) {
+ 		php_openssl_store_errors();
+ 		goto end;
+ 	}
+@@ -723,7 +723,11 @@ STACK_OF(X509) *php_openssl_load_all_certs_from_file(
+ 	while (sk_X509_INFO_num(sk)) {
+ 		xi=sk_X509_INFO_shift(sk);
+ 		if (xi->x509 != NULL) {
+-			sk_X509_push(stack,xi->x509);
++			if(sk_X509_push(stack,xi->x509) == 0) {
++				php_error_docref(NULL, E_ERROR, "Memory allocation failure");
++				sk_X509_pop_free(stack,X509_free);
++				goto end;
++			}
+ 			xi->x509=NULL;
+ 		}
+ 		X509_INFO_free(xi);
