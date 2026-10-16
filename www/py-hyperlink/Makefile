@@ -1,21 +1,24 @@
-COMMENT =		pure-Python implementation of immutable URLs
+COMMENT=	pure-Python implementation of immutable URLs
 
-MODPY_DISTV =	21.0.0
+MODPY_DISTV=	21.0.0
+DISTNAME=	hyperlink-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+REVISION=	6
 
-DISTNAME =		hyperlink-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		5
+# https://github.com/python-hyper/hyperlink
+HOMEPAGE=	https://hyperlink.readthedocs.io/
 
-CATEGORIES =		www
+
+CATEGORIES=	www
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	lib/hyperlink/test
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-TEST_DEPENDS =		net/py-idna
+TEST_DEPENDS=	devel/py-hypothesis \
+		net/py-idna
 
 .include <bsd.port.mk>
