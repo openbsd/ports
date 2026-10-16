@@ -1,6 +1,6 @@
 COMMENT=	Python library for recurrence of iCal events
 
-MODPY_DISTV=	3.8.1
+MODPY_DISTV=	3.8.2
 DISTNAME=	recurring_ical_events-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/g}
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	devel/py-icalendar \
 		productivity/py-x-wr-timezone
 
 # test_readme.py is unnecessary and adds a dependency
-MODPY_PYTEST_ARGS=	--ignore 'recurring_ical_events/test/test_readme.py'
+MODPY_PYTEST_IGNORE= recurring_ical_events/test/test_readme.py
 
 post-install:
 	rm -rf ${WRKINST}${MODPY_SITEPKG}/recurring_ical_events/test/
