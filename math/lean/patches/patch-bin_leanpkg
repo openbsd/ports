@@ -1,9 +1,0 @@
-Index: bin/leanpkg
---- bin/leanpkg.orig
-+++ bin/leanpkg
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/bin/ksh
- 
- unamestr=`uname`
- if [[ "$unamestr" == 'Darwin' ]]; then
