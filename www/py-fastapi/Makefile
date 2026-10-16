@@ -1,31 +1,33 @@
 COMMENT =		high-performance web framework for building APIs with Python
 
-MODPY_DISTV =		0.139.0
+# newer versions need opentelemetry-api
+MODPY_DISTV =		0.141.1
 DISTNAME =		fastapi-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		www
 
+# https://github.com/fastapi/fastapi
+# https://fastapi.tiangolo.com/release-notes/
 HOMEPAGE =		https://fastapi.tiangolo.com/
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		pdm
-# XXX: needs various new ports
-MODPY_PYTEST_ARGS =	--ignore tests/test_tutorial/test_sql_databases \
-			--ignore tests/test_tutorial/test_graphql \
-			--ignore tests/test_tutorial/test_wsgi
+MODPY_PI =		Yes
 
-RUN_DEPENDS =		devel/py-annotated_doc \
+# needs various new ports
+MODPY_PYTEST_IGNORE =	tests/test_tutorial/test_sql_databases \
+			tests/test_tutorial/test_graphql \
+			tests/test_tutorial/test_wsgi
+
+RUN_DEPENDS =		www/py-starlette>=0.46.0 \
 			devel/py-pydantic \
 			devel/py-typing-extensions \
 			devel/py-typing-inspection \
-			www/py-starlette>=0.46.0
+			devel/py-annotated_doc
 
 TEST_DEPENDS =		devel/py-dirty-equals \
 			devel/py-inline-snapshot \
