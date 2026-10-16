@@ -1,6 +1,6 @@
 COMMENT=	composable class support for attrs and dataclasses
 
-MODPY_DISTV=	26.1.0
+MODPY_DISTV=	26.2.1
 DISTNAME=	cattrs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -16,12 +16,12 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
 
-RUN_DEPENDS =	devel/py-attrs \
+RUN_DEPENDS=	devel/py-attrs \
 		devel/py-typing-extensions
 
 # needs immutables
-MODPY_PYTEST_ARGS= --ignore tests/test_cols.py \
-		   --ignore tests/test_unstructure_collections.py
+MODPY_PYTEST_IGNORE= tests/test_cols.py \
+		tests/test_unstructure_collections.py
 
 TEST_DEPENDS=	devel/py-coverage \
 		devel/py-hypothesis \
