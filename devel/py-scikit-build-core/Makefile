@@ -1,7 +1,6 @@
 COMMENT=	Scikit's PEP517 build backend
 
-MODPY_DISTV=	0.12.2
-REVISION=	0
+MODPY_DISTV=	1.1.1
 DISTNAME=	scikit_build_core-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/g}
 
