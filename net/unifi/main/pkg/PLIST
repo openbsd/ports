@@ -138,8 +138,7 @@ share/unifi/lib/local/relaxngDatatype-20020414.jar
 share/unifi/lib/local/resource-loader-2.0.2.jar
 share/unifi/lib/local/slf4j-api-2.0.17.jar
 share/unifi/lib/local/snakeyaml-2.4.jar
-share/unifi/lib/local/snappy-java-${SNAPPY_V}${SNAPPY_S}.jar
-share/unifi/lib/local/snappy-java-${SNAPPY_V}.jar
+share/unifi/lib/local/snappy-java-${SNAPPYJ_V}.jar
 share/unifi/lib/local/spring-aop-6.2.18.jar
 share/unifi/lib/local/spring-beans-6.2.18.jar
 share/unifi/lib/local/spring-boot-3.5.14.jar

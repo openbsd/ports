@@ -1,3 +1,5 @@
+MAINTAINER ?=	Stuart Henderson <stu.ports@spacehopper.org>
+
 .if defined(V)
 COMMENT =	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -14,27 +16,15 @@ DISTFILES.snmp = UBNT-MIB UBNT-UniFi-MIB
 EXTRACT_ONLY =	unifi-$V.zip
 PKGNAME =	unifi-$V
 
-# unifi requires the native library component of snappy-java,
-# upstream doesn't include an openbsd version; use a locally built
-# one to replace.
-#
-# typical symptom of failure: APs stuck in "adopting".
-SNAPPY_S ?=	-libc++.9.0
-DISTFILES.sh +=	snappy-java-${SNAPPY_V}${SNAPPY_S}.jar
-
 CATEGORIES =	net
-
-MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # at least the firmware files are restricted, if not more
 PERMIT_PACKAGE =   https://www.ui.com/eula/
 PERMIT_DISTFILES = https://www.ui.com/eula/
 
 MODULES =	java
-MODJAVA_VER ?=	21
 
-# mongodb is amd64-only (and even if that weren't the case,
-# building snappy-java for i386 is even more of a pain than for amd64)
+# mongodb is amd64-only
 ONLY_FOR_ARCHS =	amd64
 
 RUN_DEPENDS =	java/javaPathHelper
@@ -57,7 +47,8 @@ NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/UniFi
 INSTDIR =	${PREFIX}/share/unifi/
 VERSION ?=	$V.0
-SUBST_VARS +=	VERSION SNAPPY_S SNAPPY_V
+SUBST_VARS +=	VERSION SNAPPYJ_V
+RUN_DEPENDS =	net/unifi/snappy-java
 
 pre-extract:
 .if ${FETCH_PACKAGES:L} == no
@@ -74,14 +65,16 @@ pre-extract:
 post-extract:
 	@cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api
 
+# unifi requires the native library component of snappy-java,
+# upstream doesn't include an openbsd version; use a locally built
+# one to replace.
+#
+# typical symptom of failure: APs stuck in "adopting".
 do-configure:
-	@cd ${WRKSRC}/lib/local; if ! [ -r snappy-java-${SNAPPY_V}.jar ]; then \
-	       echo snappy-java-*.jar does not match ${SNAPPY_V}; exit 1; fi
-	@cd ${WRKSRC}/lib/local; \
-	cp ${FULLDISTDIR}/snappy-java-${SNAPPY_V}${SNAPPY_S}.jar ./; \
-	ln -fs snappy-java-${SNAPPY_V}${SNAPPY_S}.jar \
-		snappy-java-${SNAPPY_V}.jar; \
-	ls -l snappy-java*; echo
+	@if ! [ -r ${WRKSRC}/lib/local/snappy-java-${SNAPPYJ_V}.jar ]; then \
+		echo snappy-java-*.jar does not match ${SNAPPYJ_V}; exit 1; fi
+	ln -fs ${LOCALBASE}/share/java/classes/snappy-java.jar \
+		${WRKSRC}/lib/local/snappy-java-${SNAPPYJ_V}.jar
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}{,/backup,/data,/run,/work}

@@ -1,5 +1,7 @@
 V=		9.0.118
-SNAPPY_V=	1.1.10.5
-SNAPPY_S=	-jdk17-libc++.12.0
+SNAPPYJ_V=	1.1.10.5
+REVISION=	0
+
+MODJAVA_VER=	21
 
 .include <bsd.port.mk>

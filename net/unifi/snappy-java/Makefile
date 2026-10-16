@@ -1,25 +1,24 @@
-# This is not a normal port, and does not produce a package.
-# It is a maintainer helper to provide a way to build snappy-java.jar
-# with the native module so that it can be rebuilt more easily when
-# libc++ is updated.
-UNLINKED =	snappy-java-bootstrap
-PORTROACH =	ignore:1
-STATIC_PLIST =	No
+COMMENT=	JNI-based wrapper of "snappy" C++ compression library
 
-COMMENT=	special helper port to build snappy-java-X.jar for unifi
-
-SNAPPYJ_V=	1.1.10.8
-SNAPPY_V=	1.1.10
-BITSHUFFLE_V=	0.3.4
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 HOMEPAGE=	https://github.com/xerial/snappy-java
 
+SNAPPYJ_V=      1.1.10.8
+SNAPPY_V=       1.1.10
+BITSHUFFLE_V=   0.3.4
+MODJAVA_VER=    17+
+
 DISTNAME=	snappy-java-${SNAPPYJ_V}
 
-CATEGORIES=	net/unifi
+CATEGORIES=	net/unifi archivers
 
 # Apache 2.0
-PERMIT_PACKAGE=	helper port only
+PERMIT_PACKAGE=	Yes
+
+# extra; native code built into .jar
+WANTLIB=	${COMPILER_LIBCXX} m
+COMPILER=	base-clang
 
 DIST_TUPLE=	github xerial snappy-java v${SNAPPYJ_V} . \
 		github google snappy ${SNAPPY_V} target/snappy-${SNAPPY_V} \
@@ -33,7 +32,6 @@ DISTFILES.mvn=	snappy-java-${SNAPPYJ_V}.jar
 EXTRACT_ONLY=	${ALL_DISTFILES:N*jar}
 
 MODULES=	java
-MODJAVA_VER=	25+
 
 # not MODULES; it is run from a Makefile
 BUILD_DEPENDS=	devel/cmake/core
@@ -59,8 +57,8 @@ post-build:
 	    org/xerial/snappy/native/OpenBSD/*/libsnappyjava.so
 
 do-install:
-	@echo; echo this is not a normal port and does not produce a package.
-	@echo it produces the following file used to replace one from unifi:
-	@echo; ls -l ${WRKDIR}/snappy-java-${SNAPPYJ_V}.jar; echo
+	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes
+	${INSTALL_DATA} ${WRKDIR}/snappy-java-${SNAPPYJ_V}.jar \
+		${PREFIX}/share/java/classes/snappy-java.jar
 
 .include <bsd.port.mk>
