@@ -1,0 +1,135 @@
+@comment @lib bin/libstlink.so.${LIBstlink_VERSION}
+@bin bin/st-flash
+@bin bin/st-info
+@bin bin/st-server
+@bin bin/st-trace
+@bin bin/st-util
+@bin bin/stlink-gui
+include/stlink/
+include/stlink/calculate.h
+include/stlink/chipid.h
+include/stlink/common_flash.h
+include/stlink/flash_loader.h
+include/stlink/helper.h
+include/stlink/lib_md5.h
+include/stlink/libusb_settings.h
+include/stlink/logging.h
+include/stlink/logging_spdlog_wr.h
+include/stlink/map_file.h
+include/stlink/md5.h
+include/stlink/option_bytes.h
+include/stlink/read_write.h
+include/stlink/remote.h
+include/stlink/sg_legacy.h
+include/stlink/stlink.h
+include/stlink/stlink_backend.h
+include/stlink/stlink_cmd.h
+include/stlink/stlink_fs.h
+include/stlink/stlink_threads.h
+include/stlink/stm32.h
+include/stlink/stm32_flash.h
+include/stlink/stm32_register.h
+include/stlink/usb.h
+include/stlink/version.h
+@static-lib lib/libstlink.a
+@lib lib/libstlink.so.${LIBstlink_VERSION}
+share/applications/
+share/applications/stlink-gui.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/stlink-gui.svg
+@mandir share/man/
+share/man/man1/
+@man share/man/man1/st-flash.1
+@man share/man/man1/st-info.1
+@man share/man/man1/st-server.1
+@man share/man/man1/st-util.1
+share/stlink/
+share/stlink/config/
+share/stlink/config/chips/
+share/stlink/config/chips/C011xx.chip
+share/stlink/config/chips/C031xx.chip
+share/stlink/config/chips/C051xx.chip
+share/stlink/config/chips/C071xx.chip
+share/stlink/config/chips/C091xx.chip
+share/stlink/config/chips/C53x_C54x.chip
+share/stlink/config/chips/C55x_C56x.chip
+share/stlink/config/chips/C59x_C5Ax.chip
+share/stlink/config/chips/F03x.chip
+share/stlink/config/chips/F04x.chip
+share/stlink/config/chips/F05x.chip
+share/stlink/config/chips/F07x.chip
+share/stlink/config/chips/F09x.chip
+share/stlink/config/chips/F1xx_CL.chip
+share/stlink/config/chips/F1xx_HD.chip
+share/stlink/config/chips/F1xx_LD.chip
+share/stlink/config/chips/F1xx_MD.chip
+share/stlink/config/chips/F1xx_VL_HD.chip
+share/stlink/config/chips/F1xx_VL_MD_LD.chip
+share/stlink/config/chips/F1xx_XLD.chip
+share/stlink/config/chips/F2xx.chip
+share/stlink/config/chips/F301_F302_F318.chip
+share/stlink/config/chips/F302_F303_F358.chip
+share/stlink/config/chips/F302_F303_F398_HD.chip
+share/stlink/config/chips/F303_F328_F334.chip
+share/stlink/config/chips/F37x.chip
+share/stlink/config/chips/F401xB_xC.chip
+share/stlink/config/chips/F401xD_xE.chip
+share/stlink/config/chips/F410.chip
+share/stlink/config/chips/F411xC_xE.chip
+share/stlink/config/chips/F412.chip
+share/stlink/config/chips/F413_F423.chip
+share/stlink/config/chips/F42x_F43x.chip
+share/stlink/config/chips/F446.chip
+share/stlink/config/chips/F46x_F47x.chip
+share/stlink/config/chips/F4x5_F4x7.chip
+share/stlink/config/chips/F72x_F73x.chip
+share/stlink/config/chips/F74x_F75x.chip
+share/stlink/config/chips/F76x_F77x.chip
+share/stlink/config/chips/G03x_G04x.chip
+share/stlink/config/chips/G05x_G06x.chip
+share/stlink/config/chips/G07x_G08x.chip
+share/stlink/config/chips/G0Bx_G0Cx.chip
+share/stlink/config/chips/G43x_G44x.chip
+share/stlink/config/chips/G47x_G48x.chip
+share/stlink/config/chips/G49x_G4Ax.chip
+share/stlink/config/chips/H52_H53xx.chip
+share/stlink/config/chips/H5xx.chip
+share/stlink/config/chips/H72x_H73x.chip
+share/stlink/config/chips/H74x_H75x.chip
+share/stlink/config/chips/H7Ax_H7Bx.chip
+share/stlink/config/chips/L0xxx_Cat_1.chip
+share/stlink/config/chips/L0xxx_Cat_2.chip
+share/stlink/config/chips/L0xxx_Cat_3.chip
+share/stlink/config/chips/L0xxx_Cat_5.chip
+share/stlink/config/chips/L1xx_Cat_1.chip
+share/stlink/config/chips/L1xx_Cat_2.chip
+share/stlink/config/chips/L1xx_Cat_3.chip
+share/stlink/config/chips/L1xx_Cat_4.chip
+share/stlink/config/chips/L1xx_Cat_5.chip
+share/stlink/config/chips/L41x_L42x.chip
+share/stlink/config/chips/L43x_L44x.chip
+share/stlink/config/chips/L45x_L46x.chip
+share/stlink/config/chips/L47x_L48x.chip
+share/stlink/config/chips/L496x_L4A6x.chip
+share/stlink/config/chips/L4Px_L4Qx.chip
+share/stlink/config/chips/L4Rx.chip
+share/stlink/config/chips/L5x2xx.chip
+share/stlink/config/chips/U031xx.chip
+share/stlink/config/chips/U073xx_083xx.chip
+share/stlink/config/chips/U535_U545.chip
+share/stlink/config/chips/U575_U585.chip
+share/stlink/config/chips/U59x_U5Ax.chip
+share/stlink/config/chips/U5Fx_U5Gx.chip
+share/stlink/config/chips/WB05.chip
+share/stlink/config/chips/WB06_WB07.chip
+share/stlink/config/chips/WB09.chip
+share/stlink/config/chips/WBx0_WBx5.chip
+share/stlink/config/chips/WL3x.chip
+share/stlink/config/chips/WLEx.chip
+share/stlink/config/chips/unknown_device.chip
+share/stlink/stlink-gui.ui
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

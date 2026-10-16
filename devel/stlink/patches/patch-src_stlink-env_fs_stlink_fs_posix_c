@@ -1,0 +1,13 @@
+Index: src/stlink-env/fs/stlink_fs_posix.c
+--- src/stlink-env/fs/stlink_fs_posix.c.orig
++++ src/stlink-env/fs/stlink_fs_posix.c
+@@ -32,6 +32,9 @@ bool stlink_exe_dir(char *buf, size_t len) {
+   uint32_t n = (uint32_t)len;
+ 
+   if(_NSGetExecutablePath(buf, &n) != 0) { return (false); }
++#elif defined(__OpenBSD__)
++  if (getexecpath(buf, len) == 0)
++          return (false);
+ #else
+   ssize_t n = readlink("/proc/self/exe", buf, len - 1);
+ 
