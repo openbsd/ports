@@ -28,8 +28,6 @@ lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}a
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}base_py3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}base_py3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}gevent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +40,6 @@ lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}t
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/${MODPY_PYCACHE}twisted.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/asyncio.py
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/base.py
-lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/base_py3.py
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/debug.py
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/gevent.py
 lib/python${MODPY_VERSION}/site-packages/apscheduler/executors/pool.py
@@ -56,6 +53,8 @@ lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}_
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}etcd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}etcd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}memory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}memory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}mongodb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -69,6 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}s
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}zookeeper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/${MODPY_PYCACHE}zookeeper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/base.py
+lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/etcd.py
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/memory.py
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/mongodb.py
 lib/python${MODPY_VERSION}/site-packages/apscheduler/jobstores/redis.py
@@ -111,6 +111,8 @@ lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}calendarinterval.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}calendarinterval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}combining.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}combining.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}date.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -118,6 +120,7 @@ lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}da
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}interval.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/${MODPY_PYCACHE}interval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/base.py
+lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/calendarinterval.py
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/combining.py
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/cron/
 lib/python${MODPY_VERSION}/site-packages/apscheduler/triggers/cron/__init__.py

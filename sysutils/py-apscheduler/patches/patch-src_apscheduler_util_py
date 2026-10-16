@@ -1,0 +1,21 @@
+From 00c880b81d1cf37ce1cc89c8f4b70143c3c8b758 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Alex=20Gr=C3=B6nholm?= <alex.gronholm@nextday.fi>
+Date: Sat, 26 Sep 2026 00:28:27 +0300
+Subject: [PATCH] Fixed compatibility with pytz 2026.4
+
+Index: src/apscheduler/util.py
+--- src/apscheduler/util.py.orig
++++ src/apscheduler/util.py
+@@ -115,7 +115,11 @@ def astimezone(obj):
+             if obj.zone:
+                 return ZoneInfo(obj.zone)
+ 
+-            return timezone(obj._offset)
++            try:
++                return timezone(obj._utcoffset)
++            except AttributeError:  # pragma: no cover
++                # pytz 2626.3 and earlier
++                return timezone(obj._offset)
+ 
+         return obj
+ 
