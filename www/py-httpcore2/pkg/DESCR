@@ -1,0 +1,16 @@
+The HTTPCore 2 package provides a low-level HTTP client; its only
+function is to send HTTP requests, primarily as a back-end for HTTPX2.
+Features:
+
+- Sending HTTP requests.
+- Thread-safe / task-safe connection pooling.
+- HTTP(S) proxy & SOCKS proxy support.
+- Supports HTTP/1.1 and HTTP/2.
+- Provides both sync and async interfaces.
+- Async backend support for asyncio and trio.
+
+It does not provide any high level model abstractions over the API,
+does not handle redirects, multipart uploads, building authentication
+headers, transparent HTTP caching, URL parsing, session cookie
+handling, content or charset decoding, handling JSON, environment
+based configuration defaults, or any of that Jazz.
