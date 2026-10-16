@@ -1,7 +1,9 @@
 COMMENT=	modern and intuitive terminal-based text editor
 
 MODGO_MODNAME=	github.com/zyedidia/micro/v2
-MODGO_VERSION=	v2.0.15
+V=		2.0.15
+REVISION=	0
+MODGO_VERSION=	v$V
 
 DISTNAME=	micro-${MODGO_VERSION}
 CATEGORIES=	editors
@@ -15,7 +17,7 @@ WANTLIB += c pthread
 MODULES=	lang/go
 MODGO_TYPE=	bin
 
-MODGO_LDFLAGS=	-X github.com/zyedidia/micro/v2/internal/util.Version=${MODGO_VERSION}
+MODGO_LDFLAGS=	-X github.com/zyedidia/micro/v2/internal/util.Version=$V
 
 NO_TEST=	Yes
 
