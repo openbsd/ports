@@ -1,6 +1,6 @@
 COMMENT=	compatibility API between asyncio/Twisted/Trollius
 
-MODPY_DISTV=	25.12.2
+MODPY_DISTV=	26.6.1
 DISTNAME=	txaio-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
