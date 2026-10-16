@@ -1,6 +1,6 @@
 COMMENT =		tools to inspect type annotations at runtime
 
-MODPY_DISTV =		0.4.2
+MODPY_DISTV =		0.4.4
 DISTNAME =		typing_inspection-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -20,8 +20,5 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
 RUN_DEPENDS =		devel/py-typing-extensions
-
-# no tests in pypi distfile
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
