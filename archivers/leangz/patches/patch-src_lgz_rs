@@ -1,0 +1,30 @@
+https://github.com/digama0/leangz/pull/11
+
+Index: src/lgz.rs
+--- src/lgz.rs.orig
++++ src/lgz.rs
+@@ -460,7 +460,7 @@ fn on_subobjs(cfg: Config, buf: &[u8], pos0: usize, mu
+     tag::RESERVED => panic!("reserved"),
+     _ctor => {
+       let len_except_sfields = 8 + 8 * header.num_fields as usize;
+-      assert!(len_except_sfields <= header.cs_sz.get() as usize && header.cs_sz.get() & 7 == 0);
++      assert!(len_except_sfields <= header.cs_sz.get() as usize); // Lean >= 4.33 uses non-8-byte-aligned ctor sizes
+       on_array_subobjs(buf, header.num_fields.into(), pos, f);
+       pos0 + header.cs_sz.get() as usize
+     }
+@@ -1351,9 +1351,13 @@ impl<W: Write> LgzWriter<'_, W> {
+       }
+       tag::CLOSURE | tag::STRUCT_ARRAY | tag::EXTERNAL | tag::RESERVED => unreachable!(),
+       ctor => {
+-        let sfields = (header.cs_sz.get() >> 3) - 1 - (header.num_fields as u16);
++        // Lean >= 4.33 uses non-8-byte-aligned scalar fields; use legacy formula for exprish
++        // path (Lean AST types always have 8-byte-aligned scalars), and round up for general path.
++        let sfields_legacy = (header.cs_sz.get() >> 3).saturating_sub(header.num_fields as u16 + 1);
++        let scalar_bytes = (header.cs_sz.get() as usize).saturating_sub(8 + 8 * header.num_fields as usize);
++        let sfields = ((scalar_bytes + 7) / 8) as u16;
+         if !ENABLE_EXPRISH
+-          || self.try_write_exprish_ctor(pos, mode, ctor, header.num_fields, sfields).is_none()
++          || self.try_write_exprish_ctor(pos, mode, ctor, header.num_fields, sfields_legacy).is_none()
+         {
+           if let Some(packed) = pack_ctor(ctor, header.num_fields, sfields) {
+             self.write_op(mode, LgzMode::Normal, packed);
