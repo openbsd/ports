@@ -1,6 +1,6 @@
 COMMENT =		backported type hints for python >= 3.5
 
-MODPY_DISTV =		4.15.0
+MODPY_DISTV =		4.16.0
 DISTNAME =		typing_extensions-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
