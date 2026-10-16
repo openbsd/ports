@@ -3,6 +3,7 @@ COMMENT =	open-source STM32 MCU programming toolset
 GH_ACCOUNT =	stlink-org
 GH_PROJECT =	stlink
 GH_TAGNAME =	v1.9.0
+REVISION =	0
 
 SHARED_LIBS +=  stlink                    0.0 # 0.0
 
