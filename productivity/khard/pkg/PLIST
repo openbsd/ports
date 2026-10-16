@@ -19,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}actions.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}address_book.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}address_book.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}argparse_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}argparse_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,6 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}version.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/actions.py
 lib/python${MODPY_VERSION}/site-packages/khard/address_book.py
+lib/python${MODPY_VERSION}/site-packages/khard/argparse_helper.py
 lib/python${MODPY_VERSION}/site-packages/khard/cli.py
 lib/python${MODPY_VERSION}/site-packages/khard/config.py
 lib/python${MODPY_VERSION}/site-packages/khard/contacts.py

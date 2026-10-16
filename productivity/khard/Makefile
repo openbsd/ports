@@ -1,7 +1,8 @@
 COMMENT=	console vCard address book
 
-MODPY_DISTV=	0.20.1
-DISTNAME=	khard-${MODPY_DISTV}
+MODPY_DISTV=	0.21.1.dev4+g214becc0e
+#DISTNAME=	khard-${MODPY_DISTV}
+DISTNAME=	khard-0.22.0
 
 CATEGORIES=	productivity
 
