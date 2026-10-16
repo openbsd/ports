@@ -1,9 +1,8 @@
 COMMENT =		data validation using Python type hints
 
-MODPY_DISTV =		2.41.5
+MODPY_DISTV =		2.46.5
 DISTNAME =		pydantic_core-${MODPY_DISTV}
 PKGNAME =		py-pydantic-core-${MODPY_DISTV}
-REVISION =		1
 
 CATEGORIES =		devel
 
