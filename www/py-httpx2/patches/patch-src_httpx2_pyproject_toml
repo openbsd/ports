@@ -1,0 +1,12 @@
+Index: src/httpx2/pyproject.toml
+--- src/httpx2/pyproject.toml.orig
++++ src/httpx2/pyproject.toml
+@@ -9,7 +9,7 @@ source = "uv-dynamic-versioning"
+ vcs = "git"
+ style = "pep440"
+ bump = true
+-fallback-version = "0.0.0"
++fallback-version = "${MODPY_DISTV}"
+ 
+ [project]
+ name = "httpx2"
