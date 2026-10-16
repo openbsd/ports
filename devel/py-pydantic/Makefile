@@ -1,9 +1,8 @@
 COMMENT =		data validation using Python type hints
 
-MODPY_DISTV =		2.12.5
+MODPY_DISTV =		2.13.5
 DISTNAME =		pydantic-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -19,7 +18,7 @@ MODPY_PYBUILD =		hatchling
 BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme
 RUN_DEPENDS =		devel/py-typing-extensions \
 			devel/py-typing-inspection \
-			devel/py-pydantic-core=2.41.5 \
+			devel/py-pydantic-core=2.46.5 \
 			devel/py-annotated_types
 
 TEST_DEPENDS =		devel/py-test-mock \
