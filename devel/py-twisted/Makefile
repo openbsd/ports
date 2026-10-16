@@ -1,6 +1,6 @@
 COMMENT =		asynchronous networking Python framework
 
-MODPY_DISTV =		24.11.0
+MODPY_DISTV =		26.4.0
 
 DISTNAME =		twisted-${MODPY_DISTV}
 PKGNAME =		py-twisted-${MODPY_DISTV}
@@ -22,29 +22,36 @@ MODPY_PYBUILD =		hatchling
 BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme \
 			devel/py-incremental
 
-RUN_DEPENDS =		devel/py-attrs \
-			devel/py-automat \
+# required
+RUN_DEPENDS =		devel/py-zopeinterface \
 			devel/py-constantly \
-			devel/py-hamcrest \
 			devel/py-incremental \
-			devel/py-typing-extensions \
-			devel/py-zopeinterface \
-			net/py-idna \
-			security/py-bcrypt \
-			security/py-cryptography \
-			security/py-openssl \
+			devel/py-automat \
+			www/py-hyperlink \
+			devel/py-attrs \
+			devel/py-typing-extensions
+
+# tls
+RUN_DEPENDS +=		security/py-openssl \
 			security/py-service_identity \
-			www/py-hyperlink
+			net/py-idna
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
-			devel/py-appdirs \
 			devel/py-gobject3 \
-			devel/py-hypothesis
+			devel/py-hypothesis \
+			devel/py-constantly \
+			devel/py-hamcrest \
+			security/py-cryptography \
+			devel/py-appdirs \
+			security/py-bcrypt
 TEST_ENV =		LC_ALL=en_US.UTF-8
 TESTDIR =		${WRKSRC}/regress
 
+# gireactor test crashes the test runner with PORTS_PRIVSEP
 do-test:
 	mkdir -p ${TESTDIR}
-	cd ${TESTDIR} && ${LOCALBASE}/bin/trial twisted
+	cd ${TESTDIR}; ${LOCALBASE}/bin/trial -j ${MAKE_JOBS} \
+	    --without-module=twisted.internet.test.test_gireactor \
+	    twisted
 
 .include <bsd.port.mk>
