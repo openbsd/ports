@@ -2036,6 +2036,7 @@
      SUBDIR += srecord
      SUBDIR += startup-notification
      SUBDIR += stfl
+     SUBDIR += stlink
      SUBDIR += stp
      SUBDIR += stylua
      SUBDIR += subversion
