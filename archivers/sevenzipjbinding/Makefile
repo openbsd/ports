@@ -4,6 +4,7 @@ GH_ACCOUNT =	sleuthkit
 GH_PROJECT =	sevenzipjbinding
 GH_COMMIT =	fcdbb86ef565a60577a3120942e71df05ac3e87f
 DISTNAME =	sevenzipjbinding-16.02.2.01.0
+REVISION =	0
 
 CATEGORIES =	archivers
 
@@ -12,7 +13,8 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} m
+# Ingore extra, needed by lib inside jar file
+WANTLIB +=	${COMPILER_LIBCXX} c m
 
 MODULES =	devel/cmake \
 		java
