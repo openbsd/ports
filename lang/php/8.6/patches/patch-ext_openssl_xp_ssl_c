@@ -1,0 +1,23 @@
+Index: ext/openssl/xp_ssl.c
+--- ext/openssl/xp_ssl.c.orig
++++ ext/openssl/xp_ssl.c
+@@ -76,7 +76,7 @@
+ #define HAVE_TLS12 1
+ #endif
+ 
+-#ifndef OPENSSL_NO_TLS1_3
++#ifndef OPENSSL_NO_TLS1_3 && !defined(LIBRESSL_VERSION_NUMBER)
+ #define HAVE_TLS13 1
+ #endif
+ 
+@@ -87,10 +87,8 @@
+ #ifndef OPENSSL_NO_TLSEXT
+ #define HAVE_TLS_SNI 1
+ #define HAVE_TLS_ALPN 1
+ #endif
+ 
+-#ifndef LIBRESSL_VERSION_NUMBER
+ #define HAVE_SEC_LEVEL 1
+-#endif
+ 
+ #if OPENSSL_VERSION_NUMBER < 0x40000000L && !defined(OPENSSL_NO_SSL3)

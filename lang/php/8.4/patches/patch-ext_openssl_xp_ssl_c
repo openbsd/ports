@@ -1,0 +1,15 @@
+libressl added this in 3.6.0
+
+Index: ext/openssl/xp_ssl.c
+--- ext/openssl/xp_ssl.c.orig
++++ ext/openssl/xp_ssl.c
+@@ -89,9 +89,7 @@
+ #define HAVE_TLS_ALPN 1
+ #endif
+ 
+-#ifndef LIBRESSL_VERSION_NUMBER
+ #define HAVE_SEC_LEVEL 1
+-#endif
+ 
+ #ifndef OPENSSL_NO_SSL3
+ #define HAVE_SSL3 1
