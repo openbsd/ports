@@ -1,0 +1,4 @@
+@bin bin/cadical
+@bin bin/mobical
+include/cadical.hpp
+@lib lib/libcadical.so.${LIBcadical_VERSION}

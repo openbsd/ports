@@ -1,0 +1,19 @@
+Index: src/mobical.cpp
+--- src/mobical.cpp.orig
++++ src/mobical.cpp
+@@ -3595,6 +3595,7 @@ int Trace::fork_and_execute () {
+       }
+     }
+ 
++#ifdef RLIMIT_AS
+     if (!mobical.donot.fork && mobical.space_limit) {
+       struct rlimit rlim;
+       if (!getrlimit (RLIMIT_AS, &rlim)) {
+@@ -3602,6 +3603,7 @@ int Trace::fork_and_execute () {
+         setrlimit (RLIMIT_AS, &rlim);
+       }
+     }
++#endif
+ 
+     init_child_signal_handlers ();
+     dup2 (1, 3);
