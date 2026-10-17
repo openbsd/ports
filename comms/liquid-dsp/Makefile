@@ -1,7 +1,6 @@
 COMMENT =	Software-Defined Radio Digital Signal Processing library
 
-V =		1.8.2
-REVISION =	0
+V =		1.8.3
 GH_ACCOUNT =	jgaeddert
 GH_PROJECT =	liquid-dsp
 GH_TAGNAME =	v${V}
