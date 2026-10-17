@@ -1,6 +1,6 @@
 COMMENT=	Python last.fm library
 
-MODPY_DISTV=	7.0.2
+MODPY_DISTV=	7.2.0
 DISTNAME=	pylast-${MODPY_DISTV}
 PKGNAME=	py-last-${MODPY_DISTV}
 CATEGORIES=	audio net
@@ -15,7 +15,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
 
-RUN_DEPENDS=	www/py-httpx
+RUN_DEPENDS=	www/py-httpx2
 
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/py-flaky \
