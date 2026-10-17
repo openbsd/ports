@@ -37,6 +37,7 @@ dnl (START)TLS
 APPENDDEF(`confENVDEF', `-DSTARTTLS')dnl
 APPENDDEF(`confENVDEF', `-D_FFR_TLS_EC')dnl
 APPENDDEF(`confENVDEF', `-D_FFR_TLS_SE_OPTS')dnl
+APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_TLS_USE_CERTIFICATE_CHAIN_FILE')dnl
 APPENDDEF(`confLIBS', `-lssl -lcrypto')dnl
 dnl Flavors
 dnl =======

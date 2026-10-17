@@ -8,7 +8,7 @@ PKGNAME-libmilter =	libmilter-${V}
 FULLPKGNAME-libmilter =	libmilter-${V}
 FULLPKGPATH-libmilter =	mail/sendmail,-libmilter
 
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		milter	4.0
 
