@@ -1,6 +1,7 @@
 COMMENT =	subdomain scanner
 
 MODPY_DISTV =	8.0.0
+REVISION =	0
 DISTNAME =	knockpy-${MODPY_DISTV}
 
 GH_ACCOUNT =	guelfoweb
@@ -23,7 +24,7 @@ RUN_DEPENDS =	devel/py-tqdm \
 		security/py-openssl \
 		sysutils/py-dotenv \
 		www/py-beautifulsoup4 \
-		www/py-httpx \
+		www/py-httpx2 \
 		www/py-requests
 
 .include <bsd.port.mk>
