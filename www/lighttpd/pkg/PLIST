@@ -104,7 +104,7 @@ share/examples/lighttpd/conf.d/scgi.conf
 share/examples/lighttpd/conf.d/simple_vhost.conf
 @sample ${SYSCONFDIR}/lighttpd/conf.d/simple_vhost.conf
 share/examples/lighttpd/conf.d/ssi.conf
-@sample ${SYSCONFDIR}/lighttpd/conf.d/ssl.conf
+@sample ${SYSCONFDIR}/lighttpd/conf.d/ssi.conf
 share/examples/lighttpd/conf.d/status.conf
 @sample ${SYSCONFDIR}/lighttpd/conf.d/status.conf
 share/examples/lighttpd/conf.d/tls.conf

@@ -5,6 +5,8 @@ CATEGORIES=	www net
 SITES=		https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
 
+REVISION=	0
+
 HOMEPAGE=	https://www.lighttpd.net/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
