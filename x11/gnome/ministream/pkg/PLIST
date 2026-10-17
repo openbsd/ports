@@ -1,0 +1,9 @@
+include/ministream/
+include/ministream/ministream-version.h
+include/ministream/ministream.h
+lib/girepository-1.0/
+lib/girepository-1.0/Ministream-1.typelib
+@lib lib/libministream.so.${LIBministream_VERSION}
+lib/pkgconfig/ministream.pc
+share/gir-1.0/
+share/gir-1.0/Ministream-1.gir

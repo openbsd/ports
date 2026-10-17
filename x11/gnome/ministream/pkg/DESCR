@@ -1,0 +1,4 @@
+Ministream is a small subset of libappstream, intended to be used by libadwaita
+to automatically populate its AboutDialog with data contained in the
+applications AppStream manifest. Unlike libappstream, this library only depends
+on GLib.
