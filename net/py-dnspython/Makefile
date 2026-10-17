@@ -20,11 +20,13 @@ MODPY_PI=	Yes
 # https://github.com/rthalley/dnspython/commit/78792389627cf9bbd41022b92f600be38626d355
 MODPY_PYBUILD=	hatchling
 
-# also www/py-httpx2 www/py-httpcore2 when ported (+py-h2)
 TEST_DEPENDS=	devel/py-trio>=0.34.0 \
 		net/py-idna>=3.20 \
 		security/py-cryptography \
 		security/py-ecdsa \
-		www/py-aioquic
+		www/py-aioquic \
+		www/py-h2 \
+		www/py-httpcore2 \
+		www/py-httpx2
 
 .include <bsd.port.mk>
