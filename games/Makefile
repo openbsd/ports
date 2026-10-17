@@ -41,6 +41,7 @@
      SUBDIR += bugdom
      SUBDIR += bugdom2
      SUBDIR += burgerspace
+     SUBDIR += butterscotch
      SUBDIR += bzflag
      SUBDIR += candycrisis
      SUBDIR += capitan-sevilla
