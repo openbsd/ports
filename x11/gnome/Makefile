@@ -68,6 +68,7 @@
      SUBDIR += manuals
      SUBDIR += maps
      SUBDIR += menus
+     SUBDIR += ministream
      SUBDIR += msgraph
      SUBDIR += music
      SUBDIR += mutter
