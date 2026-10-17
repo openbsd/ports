@@ -2,7 +2,7 @@ MODGO_MODULES =	\
 	bitbucket.org/creachadair/shell								 v0.0.8 \
 	cel.dev/expr										 v0.25.2 \
 	charm.land/bubbles/v2									 v2.2.1 \
-	charm.land/bubbletea/v2									 v2.0.9 \
+	charm.land/bubbletea/v2									 v2.0.10 \
 	charm.land/huh/v2									 v2.0.3 \
 	charm.land/lipgloss/v2									 v2.0.6 \
 	cloud.google.com/go									 v0.123.0 \
@@ -264,7 +264,7 @@ MODGO_MODULES =	\
 	github.com/jonboulle/clockwork								 v0.5.0 \
 	github.com/kballard/go-shellquote							 v0.0.0-20180428030007-95032a82bc51 \
 	github.com/keybase/go-keychain								 v0.0.1 \
-	github.com/klauspost/compress								 v1.20.0 \
+	github.com/klauspost/compress								 v1.20.1 \
 	github.com/klauspost/pgzip								 v1.2.6 \
 	github.com/kr/pretty									 v0.3.1 \
 	github.com/kr/text									 v0.2.0 \
