@@ -1,40 +1,40 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -19872,7 +19872,7 @@ distclean-local:
+@@ -20855,7 +20855,7 @@ distclean-local:
  # above.
  libarchive/test/list.h: $(libarchive_test_SOURCES)
- 	$(MKDIR_P) libarchive/test
--	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
-+	grep -h '^DEFINE_TEST(' $(libarchive_test_SOURCES) | LC_COLLATE=C sort > $@
+ 	@$(MKDIR_P) libarchive/test
+-	$(AM_V_GEN)grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
++	$(AM_V_GEN)grep -h '^DEFINE_TEST(' $(libarchive_test_SOURCES) | LC_COLLATE=C sort > $@
  
  # Embed an application manifest marking bsdtar as long-path aware.
  @INC_WINDOWS_FILES_TRUE@tar/bsdtar_rc.$(OBJEXT): $(top_srcdir)/tar/bsdtar.rc $(top_srcdir)/tar/bsdtar.exe.manifest
-@@ -19880,15 +19880,15 @@ libarchive/test/list.h: $(libarchive_test_SOURCES)
+@@ -20863,15 +20863,15 @@ libarchive/test/list.h: $(libarchive_test_SOURCES)
  
  tar/test/list.h: $(bsdtar_test_SOURCES)
- 	$(MKDIR_P) tar/test
--	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
-+	grep -h '^DEFINE_TEST(' $(bsdtar_test_SOURCES) | LC_COLLATE=C sort > $@
+ 	@$(MKDIR_P) tar/test
+-	$(AM_V_GEN)grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
++	$(AM_V_GEN)grep -h '^DEFINE_TEST(' $(bsdtar_test_SOURCES) | LC_COLLATE=C sort > $@
  
  cpio/test/list.h: $(bsdcpio_test_SOURCES)
- 	$(MKDIR_P) cpio/test
--	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
-+	grep -h '^DEFINE_TEST(' $(bsdcpio_test_SOURCES) | LC_COLLATE=C sort > $@
+ 	@$(MKDIR_P) cpio/test
+-	$(AM_V_GEN)grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
++	$(AM_V_GEN)grep -h '^DEFINE_TEST(' $(bsdcpio_test_SOURCES) | LC_COLLATE=C sort > $@
  
  cat/test/list.h: $(bsdcat_test_SOURCES)
- 	$(MKDIR_P) cat/test
--	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
-+	grep -h '^DEFINE_TEST(' $(bsdcat_test_SOURCES) | LC_COLLATE=C sort > $@
+ 	@$(MKDIR_P) cat/test
+-	$(AM_V_GEN)grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
++	$(AM_V_GEN)grep -h '^DEFINE_TEST(' $(bsdcat_test_SOURCES) | LC_COLLATE=C sort > $@
  
  # Embed an application manifest marking bsdunzip as long-path aware.
  @INC_WINDOWS_FILES_TRUE@unzip/bsdunzip_rc.$(OBJEXT): $(top_srcdir)/unzip/bsdunzip.rc $(top_srcdir)/unzip/bsdunzip.exe.manifest
-@@ -19896,7 +19896,7 @@ cat/test/list.h: $(bsdcat_test_SOURCES)
+@@ -20879,7 +20879,7 @@ cat/test/list.h: $(bsdcat_test_SOURCES)
  
  unzip/test/list.h: $(bsdunzip_test_SOURCES)
- 	$(MKDIR_P) unzip/test
--	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
-+	grep -h '^DEFINE_TEST(' $(bsdunzip_test_SOURCES) | LC_COLLATE=C sort > $@
+ 	@$(MKDIR_P) unzip/test
+-	$(AM_V_GEN)grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
++	$(AM_V_GEN)grep -h '^DEFINE_TEST(' $(bsdunzip_test_SOURCES) | LC_COLLATE=C sort > $@
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
