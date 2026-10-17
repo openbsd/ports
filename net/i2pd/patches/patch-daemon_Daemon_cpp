@@ -1,0 +1,14 @@
+neuter broken pledge/unveil
+
+Index: daemon/Daemon.cpp
+--- daemon/Daemon.cpp.orig
++++ daemon/Daemon.cpp
+@@ -107,7 +107,7 @@ namespace util
+ 		i2p::config::ParseConfig(config);
+ 		i2p::config::Finalize();
+ 
+-#ifdef __OpenBSD__
++#if 0
+ 		auto init_pledge = []() {
+ 			std::string pledge_file; i2p::config::GetOption("openbsd.pledge_file", pledge_file);
+ 			if (pledge_file == "")

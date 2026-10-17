@@ -2,7 +2,7 @@ COMMENT =	client for the I2P anonymous network
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	2.59.0
+GH_TAGNAME =	2.61.0
 
 CATEGORIES =	net
 HOMEPAGE =	https://i2pd.website
@@ -13,8 +13,8 @@ MAINTAINER =	SystemFailure <openbsd@systemfailure.net>
 PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += boost_filesystem-mt boost_program_options-mt
-WANTLIB += boost_atomic-mt c crypto m miniupnpc ssl z
+WANTLIB += boost_atomic-mt boost_container-mt boost_filesystem-mt
+WANTLIB += boost_program_options-mt c crypto m miniupnpc ssl z
 
 COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake
@@ -29,15 +29,16 @@ CONFIGURE_ARGS =	-DWITH_UPNP=ON
 WRKSRC =	${WRKDIST}/build
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/i2pd
+	${INSTALL_DATA_DIR} ${PREFIX}/include/i2pd \
+		${PREFIX}/share/examples/i2pd
 	${INSTALL_DATA} ${WRKDIST}/libi2pd{,_client}/*.h \
 		 ${PREFIX}/include/i2pd
 .for dir in family reseed
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i2pd/certificates/${dir}
+	${INSTALL_DATA_DIR} ${WRKINST}/var/i2pd/certificates/${dir}
 	${INSTALL_DATA} ${WRKDIST}/contrib/certificates/${dir}/* \
-		${PREFIX}/share/examples/i2pd/certificates/${dir}
+		${WRKINST}/var/i2pd/certificates/${dir}
 .endfor
-	${INSTALL_DATA} ${WRKDIST}/contrib/i2pd.conf \
+	${SUBST_DATA} ${WRKDIST}/contrib/i2pd.conf \
 		${PREFIX}/share/examples/i2pd/i2pd.conf
 	${INSTALL_DATA} ${WRKDIST}/contrib/tunnels.conf \
 		${PREFIX}/share/examples/i2pd/tunnels.conf

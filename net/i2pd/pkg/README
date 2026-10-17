@@ -2,10 +2,52 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
+Important: upgrading from i2pd < 2.61.0
+=======================================
+
+A major change in this package starting with version 2.61.0 requires
+an intervention from all upgrading users: the running directory of i2pd,
+which is also the $HOME directory of the _i2pd user, moves from
+/var/lib/i2pd to /var/i2pd.
+
+If you installed a version of this package older than 2.61.0, you'll
+change the _i2pd user's home directory and move all files under
+/var/lib/i2pd to /var/i2pd.
+
+Unless you installed or configured i2pd in a non-standard way, here's
+how most users should proceed:
+
+- terminate gracefully the i2pd process (see below)
+- stop the service:
+	rcctl stop i2pd
+- remove the old package:
+	pkg_delete i2pd
+- delete the _i2pd user and group:
+	userdel _i2pd
+	groupdel _i2pd
+- move /var/lib/i2pd to /var/i2pd:
+	mv /var/lib/i2pd /var/i2pd
+- install the new package:
+	pkg_add i2pd
+- edit /etc/i2pd/i2pd.conf (you can take inspiration from
+  /usr/local/share/examples/i2pd/i2pd.conf)
+- restart the i2pd process:
+	rcctl restart i2pd
+
+At this point, the /var/lib directory should be empty and safe to
+remove.
+
+If you edited /etc/newsyslog.conf to rotate i2pd log files
+automatically, you should also adjust the path in it (see below).
+
+However, if you're installing this package for the first time with a
+version equal or greather than 2.61.0, you have nothing special to do.
+
+
 Resource Limits: File Descriptors
 =================================
 
-${PKGSTEM} needs to open a lot of file descriptors.
+i2pd needs to open a lot of file descriptors.
 
 For a regular node, you should raise the system-wide maxfiles limit to
 8192:
@@ -14,7 +56,7 @@ For a regular node, you should raise the system-wide maxfiles limit to
 	# echo "kern.maxfiles=8192" >> /etc/sysctl.conf
 
 If you intend to run a floodfill, you should raise this limit even more:
- 
+
 	# sysctl kern.maxfiles=16000
 	# echo "kern.maxfiles=16000" >> /etc/sysctl.conf
 
@@ -24,3 +66,56 @@ and also edit /etc/login.conf.d/i2pd:
 		:openfiles-cur=8192:\
 		:openfiles-max=8192:\
 		:tc=daemon:
+
+
+The HTTP interface
+==================
+
+On OpenBSD, i2pd's HTTP interface is disabled by default, because it
+allows any user on the system to perform actions on the daemon, such
+as shutting it down, or access private data, such as the router
+identity and the tunnels' B32 addresses.
+
+If you want to use this interface anyway, you can reenable it in
+${SYSCONFDIR}/i2pd/i2pd.conf under the [http] section.
+
+
+Graceful shutdown
+=================
+
+It is good practice to shutdown the i2pd daemon gracefully, to avoid
+immediately severing all connections, which would disconnect all
+your peers and affect the overall operation of the I2P network.
+
+You can initiate a graceful shutdown without the HTTP interface by
+sending a signal to the i2pd daemon like this:
+
+	kill -INT $(cat /var/i2pd/i2pd.pid)
+
+When it shuts down gracefully, the i2pd daemon waits for all transit
+tunnels to expire, which usually takes 10 minutes.
+
+
+Logging
+=======
+
+By default, this package sends its log messages to syslogd(8), which
+writes them to the /var/log/daemon file.
+
+The default log level of i2pd ("warn") can be very verbose. You may
+want to reduce this log verbosity by changing the "loglevel"
+parameter in ${SYSCONFDIR}/i2pd/i2pd.conf.
+
+If you want log messages to be written to another file, e.g.
+/var/i2pd/i2pd.log, you can change the "log" and "logfile"
+parameters in ${SYSCONFDIR}/i2pd/i2pd.conf. To have this log file
+rotated automatically, you can add an entry to /etc/newsyslog.conf
+using the i2pd pid file so that newsyslog(8) can send SIGHUP to the
+daemon after rotation.
+
+For example:
+
+	/var/i2pd/i2pd.log  _i2pd:_i2pd  644  6  *  $D13  Z /var/i2pd/i2pd.pid
+
+Sending SIGHUP is enough for log rotation, and also makes i2pd reload
+its tunnel configuration and rotate transient keys.

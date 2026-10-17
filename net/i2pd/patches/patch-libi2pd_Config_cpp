@@ -1,0 +1,23 @@
+neuter broken pledge/unveil
+
+Index: libi2pd/Config.cpp
+--- libi2pd/Config.cpp.orig
++++ libi2pd/Config.cpp
+@@ -396,7 +396,7 @@ namespace config {
+ 		;
+ #endif
+ 
+-#ifdef __OpenBSD__
++#if 0
+ 		options_description openbsd_specific("OpenBSD specific options");
+ 		openbsd_specific.add_options()
+ 			("openbsd.pledge_file", value<std::string>()->default_value(""), "OpenbSD file with pledge rules")
+@@ -433,7 +433,7 @@ namespace config {
+ #ifdef __linux__
+ 			.add(unix_specific)
+ #endif
+-#ifdef __OpenBSD__
++#if 0
+ 			.add(openbsd_specific)
+ #endif
+ 		;

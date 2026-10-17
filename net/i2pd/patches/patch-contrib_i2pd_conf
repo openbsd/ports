@@ -1,0 +1,41 @@
+Index: contrib/i2pd.conf
+--- contrib/i2pd.conf.orig
++++ contrib/i2pd.conf
+@@ -8,16 +8,16 @@
+ 
+ ## Tunnels config file
+ ## Default: ~/.i2pd/tunnels.conf or /var/lib/i2pd/tunnels.conf
+-# tunconf = /var/lib/i2pd/tunnels.conf
++tunconf = ${SYSCONFDIR}/i2pd/tunnels.conf
+ 
+ ## Tunnels config files path
+ ## Use that path to store separated tunnels in different config files.
+ ## Default: ~/.i2pd/tunnels.d or /var/lib/i2pd/tunnels.d
+-# tunnelsdir = /var/lib/i2pd/tunnels.d
++tunnelsdir = ${SYSCONFDIR}/i2pd/tunnels.d
+ 
+ ## Path to certificates used for verifying .su3, families
+ ## Default: ~/.i2pd/certificates or /var/lib/i2pd/certificates
+-# certsdir = /var/lib/i2pd/certificates
++certsdir = ${SYSCONFDIR}/i2pd/certificates
+ 
+ ## Where to write pidfile (default: /run/i2pd.pid, not used in Windows)
+ # pidfile = /run/i2pd.pid
+@@ -30,7 +30,7 @@
+ ##  * stdout - print log entries to stdout
+ ##  * file - log entries to a file
+ ##  * syslog - use syslog, see man 3 syslog
+-# log = file
++log = syslog
+ ## Path to logfile (default: autodetect)
+ # logfile = /var/log/i2pd/i2pd.log
+ ## Log messages above this level (debug, info, *warn, error, critical, none)
+@@ -122,7 +122,7 @@ ipv6 = false
+ [http]
+ ## Web Console settings
+ ## Enable the Web Console (default: true)
+-# enabled = true
++enabled = false
+ ## Address and port service will listen on (default: 127.0.0.1:7070)
+ # address = 127.0.0.1
+ # port = 7070
