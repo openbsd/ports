@@ -1,6 +1,7 @@
---- enemyshot.c.orig	Wed Oct 19 21:37:42 2005
-+++ enemyshot.c	Wed Oct 19 21:39:01 2005
-@@ -11,6 +11,7 @@
+Index: enemyshot.c
+--- enemyshot.c.orig
++++ enemyshot.c
+@@ -14,6 +14,7 @@
  #include <X11/xpm.h>
  */
  

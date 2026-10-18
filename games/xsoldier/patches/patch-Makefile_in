@@ -1,6 +1,7 @@
---- Makefile.in.orig	Sun May 26 10:37:48 2002
-+++ Makefile.in	Sat Oct 22 17:58:52 2005
-@@ -451,9 +451,9 @@ maintainer-clean-generic clean mostlycle
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -778,9 +778,9 @@ uninstall-man: uninstall-man6
  
  install-exec-local:
  # install pixmap

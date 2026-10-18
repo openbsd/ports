@@ -1,10 +1,16 @@
---- main.c.orig	Sun May  5 13:10:33 2002
-+++ main.c	Wed Oct 19 21:26:04 2005
-@@ -33,7 +33,6 @@
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -33,9 +33,11 @@
  /* DeleteAllStar */
  #include "star.h"
  #include "score.h"
 -#include "wait.h"
  #include "graphic.h"
  #include "input.h"
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
  
+ /* define all "extern" here */
+ #define EXTERN_DEF
