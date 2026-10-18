@@ -1,0 +1,22 @@
+Index: bus/activation-helper-bin.c
+--- bus/activation-helper-bin.c.orig
++++ bus/activation-helper-bin.c
+@@ -24,6 +24,8 @@
+  *
+  */
+ 
++#include <sys/stat.h>
++
+ #include <config.h>
+ 
+ #include "utils.h"
+@@ -33,6 +35,9 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++DBUS_PRIVATE_EXPORT mode_t _permit_setugid = S_ISUID;
+ 
+ static int
+ convert_error_to_exit_code (DBusError *error)

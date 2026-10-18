@@ -10,6 +10,7 @@ EXTRACT_SUFX=		.tar.xz
 EPOCH-main=		0
 
 REVISION-main=		1
+REVISION-suid=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-suid=		dbus-daemon-launch-helper-${V}
