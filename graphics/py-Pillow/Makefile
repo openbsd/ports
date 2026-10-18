@@ -1,6 +1,6 @@
 COMMENT=	Python Imaging Library (friendly fork of PIL)
 
-MODPY_DISTV=	12.3.0
+MODPY_DISTV=	13.0.0
 DISTNAME=	pillow-${MODPY_DISTV}
 PKGNAME=	py-Pillow-${MODPY_DISTV}
 CATEGORIES=	graphics
@@ -10,7 +10,7 @@ HOMEPAGE=	https://python-pillow.github.io/
 # MIT-CMU
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += freetype imagequant jpeg lcms2 openjp2 tiff
+WANTLIB += freetype imagequant jpeg lcms2 m openjp2 tiff
 WANTLIB += webp webpdemux webpmux xcb z
 
 MODULES=	lang/python
