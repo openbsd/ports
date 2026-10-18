@@ -12,4 +12,4 @@ Index: examples/sshguard.conf.sample
 +FILES=/var/log/authlog
  
  # Shell command that provides logs on standard output. (optional, no default)
- # Example 1: ssh and sendmail from systemd journal:
+ # Example 1: ssh and sendmail from systemd journal

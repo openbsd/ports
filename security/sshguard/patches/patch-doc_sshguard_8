@@ -1,7 +1,7 @@
 Index: doc/sshguard.8
 --- doc/sshguard.8.orig
 +++ doc/sshguard.8
-@@ -134,8 +134,8 @@ and override this environment variable.
+@@ -141,8 +141,8 @@ and override this environment variable.
  .SH FILES
  .INDENT 0.0
  .TP

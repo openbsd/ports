@@ -1,7 +1,7 @@
 Index: src/blocker/blocker.c
 --- src/blocker/blocker.c.orig
 +++ src/blocker/blocker.c
-@@ -99,7 +99,8 @@ int main(int argc, char *argv[]) {
+@@ -114,7 +114,8 @@ int main(int argc, char *argv[]) {
  
      /* termination signals */
      signal(SIGTERM, sigfin_handler);
@@ -9,5 +9,5 @@ Index: src/blocker/blocker.c
 +    /* Don't install handler for HUP */
 +    /* signal(SIGHUP, sigfin_handler); */
      signal(SIGINT, sigfin_handler);
-     atexit(finishup);
  
+     // On BSD, signal handlers installed with signal() are restartable by
