@@ -1,30 +1,40 @@
-using mlock(2) to try avoiding pushing pages to swap is not what the syscall
-was intended for and relying on this for security purproses is nonsense especially
-that OpenBSD has an encrypted swap
- 
+Skip mlock(2) on OpenBSD: swap is already encrypted.
+Map the pages with MAP_CONCEAL to keep them out of core dumps.
+(patch matching x11/gnome/gcr, x11/gnome/gcr4, x11/gnome/libsecret)
+
 Index: egg/egg-secure-memory.c
 --- egg/egg-secure-memory.c.orig
 +++ egg/egg-secure-memory.c
-@@ -863,7 +863,6 @@ sec_acquire_pages (size_t *sz,
+@@ -854,6 +854,7 @@ sec_acquire_pages (size_t *sz,
+ {
+ 	void *pages;
+ 	unsigned long pgsize;
++	int flags = MAP_PRIVATE | MAP_ANON;
+ 
+ 	ASSERT (sz);
+ 	ASSERT (*sz);
+@@ -863,8 +864,10 @@ sec_acquire_pages (size_t *sz,
  	pgsize = getpagesize ();
  	*sz = (*sz + pgsize -1) & ~(pgsize - 1);
  
 -#if defined(HAVE_MLOCK)
- 	pages = mmap (0, *sz, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, -1, 0);
+-	pages = mmap (0, *sz, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, -1, 0);
++#if defined(MAP_CONCEAL)
++	flags |= MAP_CONCEAL;
++#endif
++	pages = mmap (0, *sz, PROT_READ | PROT_WRITE, flags, -1, 0);
  	if (pages == MAP_FAILED) {
  		if (show_warning && egg_secure_warnings)
-@@ -873,8 +872,9 @@ sec_acquire_pages (size_t *sz,
+ 			fprintf (stderr, "couldn't map %lu bytes of memory (%s): %s\n",
+@@ -873,6 +876,7 @@ sec_acquire_pages (size_t *sz,
  		return NULL;
  	}
  
 +#if defined(HAVE_MLOCK) && !defined(__OpenBSD__)
  	if (mlock (pages, *sz) < 0) {
--		if (show_warning && egg_secure_warnings && errno != EPERM) {
-+		if (show_warning && egg_secure_warnings && errno != EPERM && errno != EAGAIN) {
+ 		if (show_warning && egg_secure_warnings && errno != EPERM) {
  			fprintf (stderr, "couldn't lock %lu bytes of memory (%s): %s\n",
- 			         (unsigned long)*sz, during_tag, strerror (errno));
- 			show_warning = 0;
-@@ -882,6 +882,7 @@ sec_acquire_pages (size_t *sz,
+@@ -882,6 +886,7 @@ sec_acquire_pages (size_t *sz,
  		munmap (pages, *sz);
  		return NULL;
  	}
@@ -32,7 +42,7 @@ Index: egg/egg-secure-memory.c
  
  	DEBUG_ALLOC ("gkr-secure-memory: new block ", *sz);
  
-@@ -900,14 +901,6 @@ sec_acquire_pages (size_t *sz,
+@@ -900,14 +905,6 @@ sec_acquire_pages (size_t *sz,
  
  	show_warning = 1;
  	return pages;
@@ -47,7 +57,7 @@ Index: egg/egg-secure-memory.c
  }
  
  static void
-@@ -916,18 +909,15 @@ sec_release_pages (void *pages, size_t sz)
+@@ -916,18 +913,15 @@ sec_release_pages (void *pages, size_t sz)
  	ASSERT (pages);
  	ASSERT (sz % getpagesize () == 0);
  
