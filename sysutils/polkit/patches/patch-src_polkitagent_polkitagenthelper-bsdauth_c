@@ -1,0 +1,20 @@
+Index: src/polkitagent/polkitagenthelper-bsdauth.c
+--- src/polkitagent/polkitagenthelper-bsdauth.c.orig
++++ src/polkitagent/polkitagenthelper-bsdauth.c
+@@ -30,12 +30,16 @@
+ #include <string.h>
+ #include <unistd.h>
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #include <syslog.h>
+ #include <pwd.h>
+ #include <login_cap.h>
+ #include <bsd_auth.h>
+ 
+ #include <polkit/polkit.h>
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
+ 
+ static gboolean bsdauth_authenticate (const char *user_to_auth);
+ 

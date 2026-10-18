@@ -1,0 +1,13 @@
+Index: src/programs/pkexec.c
+--- src/programs/pkexec.c.orig
++++ src/programs/pkexec.c
+@@ -52,6 +52,9 @@
+ #define POLKIT_AGENT_I_KNOW_API_IS_SUBJECT_TO_CHANGE
+ #include <polkitagent/polkitagent.h>
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
++
+ static gchar *original_user_name = NULL;
+ static gchar *original_cwd;
+ static gchar *command_line = NULL;
