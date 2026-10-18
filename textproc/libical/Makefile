@@ -7,6 +7,9 @@ DISTNAME=		libical-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-glib=		libical-glib-${V}
 
+REVISION-main=		0
+REVISION-glib=		0
+
 SHARED_LIBS +=  ical                 5.0
 SHARED_LIBS +=  icalss               5.0
 SHARED_LIBS +=  icalvcal             4.0
