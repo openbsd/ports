@@ -1,21 +1,26 @@
 Add back bsd-auth support, removed in 04143fd68dbc
+Add _permit_setugid marker
 
 Index: slock.c
 --- slock.c.orig
 +++ slock.c
-@@ -19,6 +19,11 @@
+@@ -19,6 +19,15 @@
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
  
 +#if HAVE_BSD_AUTH
 +#include <login_cap.h>
 +#include <bsd_auth.h>
++#include <sys/stat.h>
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
 +#endif
 +
  #include "arg.h"
  #include "util.h"
  
-@@ -83,6 +88,7 @@ dontkillme(void)
+@@ -83,6 +92,7 @@ dontkillme(void)
  }
  #endif
  
@@ -23,7 +28,7 @@ Index: slock.c
  static const char *
  gethash(void)
  {
-@@ -123,13 +129,21 @@ gethash(void)
+@@ -123,13 +133,21 @@ gethash(void)
  
  	return hash;
  }
@@ -46,7 +51,7 @@ Index: slock.c
  	int num, screen, running, failure, oldc;
  	unsigned int len, color;
  	KeySym ksym;
-@@ -160,10 +174,14 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **
+@@ -160,10 +178,14 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **
  			case XK_Return:
  				passwd[len] = '\0';
  				errno = 0;
@@ -61,7 +66,7 @@ Index: slock.c
  				if (running) {
  					XBell(dpy, 100);
  					failure = 1;
-@@ -311,7 +329,9 @@ main(int argc, char **argv) {
+@@ -311,7 +333,9 @@ main(int argc, char **argv) {
  	struct group *grp;
  	uid_t duid;
  	gid_t dgid;
@@ -71,7 +76,7 @@ Index: slock.c
  	Display *dpy;
  	int s, nlocks, nscreens;
  
-@@ -339,14 +359,23 @@ main(int argc, char **argv) {
+@@ -339,14 +363,23 @@ main(int argc, char **argv) {
  	dontkillme();
  #endif
  
@@ -95,7 +100,7 @@ Index: slock.c
  	/* drop privileges */
  	if (setgroups(0, NULL) < 0)
  		die("slock: setgroups: %s\n", strerror(errno));
-@@ -354,6 +383,7 @@ main(int argc, char **argv) {
+@@ -354,6 +387,7 @@ main(int argc, char **argv) {
  		die("slock: setgid: %s\n", strerror(errno));
  	if (setuid(duid) < 0)
  		die("slock: setuid: %s\n", strerror(errno));
@@ -103,7 +108,7 @@ Index: slock.c
  
  	/* check for Xrandr support */
  	rr.active = XRRQueryExtension(dpy, &rr.evbase, &rr.errbase);
-@@ -389,7 +419,11 @@ main(int argc, char **argv) {
+@@ -389,7 +423,11 @@ main(int argc, char **argv) {
  	}
  
  	/* everything is now blank. Wait for the correct password */
