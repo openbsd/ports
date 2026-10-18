@@ -1,0 +1,13 @@
+Index: programs/dtterm/DtTermMain.c
+--- programs/dtterm/DtTermMain.c.orig
++++ programs/dtterm/DtTermMain.c
+@@ -95,6 +95,9 @@
+ #include <Dt/Session.h>
+ #endif  /* HPVUE */ 
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
++
+ /* From Xm/BaseClassI.h */
+ extern XmWidgetExtData _XmGetWidgetExtData( 
+                         Widget widget,

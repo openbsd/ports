@@ -12,7 +12,7 @@ Index: configure.ac
  
  # pam currently only works on netbsd (9.2 tested) and linux
  supports_pam=no
-@@ -577,8 +577,8 @@ dnl shouldn't be modified.  It suggests that you creat
+@@ -600,8 +600,8 @@ dnl shouldn't be modified.  It suggests that you creat
  dnl variable and presumably add those to your Makefile.am files.  We
  dnl have 192 of these currently, so... The user will just have to
  dnl deal, or modify them here directly.

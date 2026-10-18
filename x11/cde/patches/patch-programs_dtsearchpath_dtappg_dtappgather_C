@@ -1,0 +1,16 @@
+Index: programs/dtsearchpath/dtappg/dtappgather.C
+--- programs/dtsearchpath/dtappg/dtappgather.C.orig
++++ programs/dtsearchpath/dtappg/dtappgather.C
+@@ -76,6 +76,12 @@
+ #include "DirIterator.h"
+ #include <stdlib.h>
+ #include <iostream>
++#include <sys/stat.h>
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++extern "C" {
++mode_t _permit_setugid = S_ISUID;
++}
+ 
+ Options * options;
+ 

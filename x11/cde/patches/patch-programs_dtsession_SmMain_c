@@ -1,0 +1,21 @@
+Index: programs/dtsession/SmMain.c
+--- programs/dtsession/SmMain.c.orig
++++ programs/dtsession/SmMain.c
+@@ -53,6 +53,7 @@
+  *****************************************************************************
+  *************************************<+>*************************************/
+ 
++#include <sys/stat.h>
+ #include <stdio.h>
+ #include <locale.h>
+ #include <X11/Intrinsic.h>
+@@ -79,6 +80,9 @@
+ #include "SrvPalette.h"
+ #include "SmProtocol.h"
+ #include "SmXSMP.h"
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
+ 
+ /*
+  * Internal Functions
