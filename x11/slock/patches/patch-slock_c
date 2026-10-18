@@ -61,7 +61,7 @@ Index: slock.c
  				if (running) {
  					XBell(dpy, 100);
  					failure = 1;
-@@ -303,7 +321,9 @@ main(int argc, char **argv) {
+@@ -311,7 +329,9 @@ main(int argc, char **argv) {
  	struct group *grp;
  	uid_t duid;
  	gid_t dgid;
@@ -71,7 +71,7 @@ Index: slock.c
  	Display *dpy;
  	int s, nlocks, nscreens;
  
-@@ -331,14 +351,23 @@ main(int argc, char **argv) {
+@@ -339,14 +359,23 @@ main(int argc, char **argv) {
  	dontkillme();
  #endif
  
@@ -95,7 +95,7 @@ Index: slock.c
  	/* drop privileges */
  	if (setgroups(0, NULL) < 0)
  		die("slock: setgroups: %s\n", strerror(errno));
-@@ -346,6 +375,7 @@ main(int argc, char **argv) {
+@@ -354,6 +383,7 @@ main(int argc, char **argv) {
  		die("slock: setgid: %s\n", strerror(errno));
  	if (setuid(duid) < 0)
  		die("slock: setuid: %s\n", strerror(errno));
@@ -103,7 +103,7 @@ Index: slock.c
  
  	/* check for Xrandr support */
  	rr.active = XRRQueryExtension(dpy, &rr.evbase, &rr.errbase);
-@@ -381,7 +411,11 @@ main(int argc, char **argv) {
+@@ -389,7 +419,11 @@ main(int argc, char **argv) {
  	}
  
  	/* everything is now blank. Wait for the correct password */
