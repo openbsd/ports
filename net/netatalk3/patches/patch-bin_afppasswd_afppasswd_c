@@ -1,0 +1,13 @@
+Index: bin/afppasswd/afppasswd.c
+--- bin/afppasswd/afppasswd.c.orig
++++ bin/afppasswd/afppasswd.c
+@@ -46,6 +46,9 @@
+ 
+ #include "afppasswd_migrate.h"
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
++
+ #ifndef DES_KEY_SZ
+ #define DES_KEY_SZ 8
+ #endif
