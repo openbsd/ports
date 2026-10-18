@@ -458,6 +458,8 @@ libexec/evolution-data-server/csv2vcard
 @bin libexec/evolution-data-server/list-sources
 @bin libexec/evolution-source-registry
 @bin libexec/evolution-user-prompter
+share/GConf/
+share/GConf/gsettings/
 share/GConf/gsettings/evolution-data-server.convert
 share/applications/org.gnome.Evolution-alarm-notify.desktop
 share/applications/org.gnome.evolution-data-server.OAuth2-handler.desktop

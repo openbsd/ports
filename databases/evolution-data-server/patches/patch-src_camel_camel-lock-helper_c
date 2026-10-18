@@ -1,0 +1,12 @@
+--- src/camel/camel-lock-helper.c.orig
++++ src/camel/camel-lock-helper.c
+@@ -40,6 +40,9 @@
+ #include "camel-lock-helper.h"
+ #include "camel-lock.h"
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
++
+ #define d(x)
+ 
+ /* keeps track of open locks */
