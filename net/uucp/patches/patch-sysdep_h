@@ -1,0 +1,17 @@
+Index: sysdep.h
+--- sysdep.h.orig
++++ sysdep.h
+@@ -245,6 +245,13 @@ typedef struct termios sterminal;
+ 
+ /* Get definitions for the file permission bits.  */
+ 
++#ifndef S_ISUID
++#define S_ISUID 04000
++#endif
++#ifndef S_ISGID
++#define S_ISGID 02000
++#endif
++
+ #ifndef S_IRWXU
+ #define S_IRWXU 0700
+ #endif

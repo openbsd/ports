@@ -1,0 +1,14 @@
+Index: uuxqt.c
+--- uuxqt.c.orig
++++ uuxqt.c
+@@ -36,6 +36,10 @@ const char uuxqt_rcsid[] = "$Id: uuxqt.c,v 1.92 2002/0
+ #include "uudefs.h"
+ #include "uuconf.h"
+ #include "system.h"
++#include "sysdep.h"
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
+ 
+ /* Static variables used to unlock things if we get a fatal error.  */
+ static int iQlock_seq = -1;

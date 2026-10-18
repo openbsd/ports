@@ -1,0 +1,14 @@
+Index: uucp.c
+--- uucp.c.orig
++++ uucp.c
+@@ -36,6 +36,10 @@ const char uucp_rcsid[] = "$Id: uucp.c,v 1.76 2002/03/
+ #include "uudefs.h"
+ #include "uuconf.h"
+ #include "system.h"
++#include "sysdep.h"
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
+ 
+ /* Local functions.  */
+ 

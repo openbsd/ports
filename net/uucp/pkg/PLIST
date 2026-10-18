@@ -1,44 +1,44 @@
 @newgroup _uucp:785
 @newuser _uucp:785:_uucp::UNIX-to-UNIX Copy:/var/spool/uucppublic:${PREFIX}/libexec/uucp/uucico
-bin/cu
-@owner _uucp
+@bin bin/cu
 @mode 4555
-bin/uucp
-@owner
-@mode
-bin/uulog
 @owner _uucp
-@mode 4555
-bin/uuname
-@owner
+@bin bin/uucp
 @mode
-bin/uupick
+@owner
+@bin bin/uulog
+@mode 4555
+@owner _uucp
+@bin bin/uuname
+@mode
+@owner
+@bin bin/uupick
 bin/uusched
-@owner _uucp
 @mode 4555
-bin/uustat
-@owner
+@owner _uucp
+@bin bin/uustat
 @mode
+@owner
 bin/uuto
-@owner _uucp
 @mode 4555
-bin/uux
-@owner
+@owner _uucp
+@bin bin/uux
 @mode
+@owner
 @info info/uucp.info
 libexec/uucp/
-libexec/uucp/uuchk
-@owner _uucp
+@bin libexec/uucp/uuchk
 @mode 4555
-libexec/uucp/uucico
-@owner
-@mode
-libexec/uucp/uuconv
 @owner _uucp
-@mode 4555
-libexec/uucp/uuxqt
-@owner
+@bin libexec/uucp/uucico
 @mode
+@owner
+@bin libexec/uucp/uuconv
+@mode 4555
+@owner _uucp
+@bin libexec/uucp/uuxqt
+@mode
+@owner
 @man man/man1/cu.1
 @man man/man1/uucp.1
 @man man/man1/uustat.1

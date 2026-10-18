@@ -1,0 +1,14 @@
+Index: uuname.c
+--- uuname.c.orig
++++ uuname.c
+@@ -33,6 +33,10 @@ const char uuname_rcsid[] = "$Id: uuname.c,v 1.24 2002
+ #include "uudefs.h"
+ #include "uuconf.h"
+ #include "system.h"
++#include "sysdep.h"
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
+ 
+ /* Local functions.  */
+ 

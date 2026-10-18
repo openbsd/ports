@@ -1,0 +1,13 @@
+Index: uux.c
+--- uux.c.orig
++++ uux.c
+@@ -76,6 +76,9 @@ const char uux_rcsid[] = "$Id: uux.c,v 1.89 2002/03/05
+ #ifndef EX_CONFIG
+ #define EX_CONFIG (78)
+ #endif
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
+ 
+ /* These character lists should, perhaps, be in sysdep.h.  */
+ 

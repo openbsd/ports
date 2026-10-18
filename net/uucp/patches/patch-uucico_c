@@ -1,0 +1,14 @@
+Index: uucico.c
+--- uucico.c.orig
++++ uucico.c
+@@ -44,6 +44,10 @@ const char uucico_rcsid[] = "$Id: uucico.c,v 1.204 200
+ #include "prot.h"
+ #include "trans.h"
+ #include "system.h"
++#include "sysdep.h"
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
+ 
+ #if HAVE_ENCRYPTED_PASSWORDS
+ #ifndef crypt

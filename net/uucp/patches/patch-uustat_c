@@ -1,0 +1,14 @@
+Index: uustat.c
+--- uustat.c.orig
++++ uustat.c
+@@ -42,6 +42,10 @@ const char uustat_rcsid[] = "$Id: uustat.c,v 1.61 2002
+ #include "uudefs.h"
+ #include "uuconf.h"
+ #include "system.h"
++#include "sysdep.h"
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
+ 
+ /* The uustat program permits various listings and manipulations of
+    files in the spool directory.  This implementation supports the
