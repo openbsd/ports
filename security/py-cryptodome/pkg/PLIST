@@ -632,6 +632,8 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_Padding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_asn1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_asn1.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_cpu_features.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_cpu_features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_number.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_number.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}test_raw_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -645,6 +647,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_Counter.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_Padding.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_asn1.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_cpu_features.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_number.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_raw_api.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/test_rfc1751.py

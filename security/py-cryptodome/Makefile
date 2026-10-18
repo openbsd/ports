@@ -4,7 +4,7 @@ COMMENT=	self-contained cryptographic library for Python
 # amd64 (builds aesni/shani, avx2/bmi files)
 # i386 (no avx2/bmi)
 # aarch64 (none)
-MODPY_DISTV=	4.0.0
+MODPY_DISTV=	4.0.1
 DISTNAME=	pycryptodome-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
 
