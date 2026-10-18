@@ -429,9 +429,6 @@ lib/kitty/kitty/${MODPY_PYCACHE}search_query_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
-lib/kitty/kitty/${MODPY_PYCACHE}shaders.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/kitty/kitty/${MODPY_PYCACHE}shaders.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
-lib/kitty/kitty/${MODPY_PYCACHE}shaders.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/${MODPY_PYCACHE}shell_integration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/${MODPY_PYCACHE}shell_integration.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/${MODPY_PYCACHE}shell_integration.${MODPY_PYC_MAGIC_TAG}pyc
@@ -478,20 +475,9 @@ lib/kitty/kitty/${MODPY_PYCACHE}xdg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/${MODPY_PYCACHE}xdg.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/${MODPY_PYCACHE}xdg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/actions.py
-lib/kitty/kitty/alpha_blend.glsl
 lib/kitty/kitty/bash.py
-lib/kitty/kitty/bgimage_fragment.glsl
-lib/kitty/kitty/bgimage_vertex.glsl
-lib/kitty/kitty/blit_common.glsl
-lib/kitty/kitty/blit_fragment.glsl
-lib/kitty/kitty/blit_vertex.glsl
-lib/kitty/kitty/border_fragment.glsl
-lib/kitty/kitty/border_vertex.glsl
 lib/kitty/kitty/borders.py
 lib/kitty/kitty/boss.py
-lib/kitty/kitty/cell_defines.glsl
-lib/kitty/kitty/cell_fragment.glsl
-lib/kitty/kitty/cell_vertex.glsl
 lib/kitty/kitty/child.py
 lib/kitty/kitty/choose_entry.py
 lib/kitty/kitty/cli.py
@@ -554,10 +540,7 @@ lib/kitty/kitty/fonts/fontconfig.py
 lib/kitty/kitty/fonts/list.py
 lib/kitty/kitty/fonts/render.py
 @so lib/kitty/kitty/glfw-x11.so
-lib/kitty/kitty/graphics_fragment.glsl
-lib/kitty/kitty/graphics_vertex.glsl
 lib/kitty/kitty/guess_mime_type.py
-lib/kitty/kitty/hsluv.glsl
 lib/kitty/kitty/key_encoding.py
 lib/kitty/kitty/key_names.py
 lib/kitty/kitty/keys.py
@@ -598,7 +581,6 @@ lib/kitty/kitty/layout/splits.py
 lib/kitty/kitty/layout/stack.py
 lib/kitty/kitty/layout/tall.py
 lib/kitty/kitty/layout/vertical.py
-lib/kitty/kitty/linear2srgb.glsl
 lib/kitty/kitty/machine_id.py
 lib/kitty/kitty/main.py
 lib/kitty/kitty/marks.py
@@ -707,6 +689,9 @@ lib/kitty/kitty/rc/${MODPY_PYCACHE}resize_window.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/rc/${MODPY_PYCACHE}run.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/rc/${MODPY_PYCACHE}run.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/rc/${MODPY_PYCACHE}run.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kitty/rc/${MODPY_PYCACHE}screenshot.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kitty/rc/${MODPY_PYCACHE}screenshot.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kitty/rc/${MODPY_PYCACHE}screenshot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/rc/${MODPY_PYCACHE}scroll_window.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/rc/${MODPY_PYCACHE}scroll_window.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/rc/${MODPY_PYCACHE}scroll_window.${MODPY_PYC_MAGIC_TAG}pyc
@@ -734,6 +719,9 @@ lib/kitty/kitty/rc/${MODPY_PYCACHE}set_enabled_layouts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/rc/${MODPY_PYCACHE}set_font_size.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/rc/${MODPY_PYCACHE}set_font_size.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/rc/${MODPY_PYCACHE}set_font_size.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kitty/rc/${MODPY_PYCACHE}set_os_window_title.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kitty/rc/${MODPY_PYCACHE}set_os_window_title.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kitty/rc/${MODPY_PYCACHE}set_os_window_title.${MODPY_PYC_MAGIC_TAG}pyc
 lib/kitty/kitty/rc/${MODPY_PYCACHE}set_spacing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/kitty/kitty/rc/${MODPY_PYCACHE}set_spacing.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/kitty/kitty/rc/${MODPY_PYCACHE}set_spacing.${MODPY_PYC_MAGIC_TAG}pyc
@@ -779,6 +767,7 @@ lib/kitty/kitty/rc/remove_marker.py
 lib/kitty/kitty/rc/resize_os_window.py
 lib/kitty/kitty/rc/resize_window.py
 lib/kitty/kitty/rc/run.py
+lib/kitty/kitty/rc/screenshot.py
 lib/kitty/kitty/rc/scroll_window.py
 lib/kitty/kitty/rc/select_window.py
 lib/kitty/kitty/rc/send_key.py
@@ -788,6 +777,7 @@ lib/kitty/kitty/rc/set_background_opacity.py
 lib/kitty/kitty/rc/set_colors.py
 lib/kitty/kitty/rc/set_enabled_layouts.py
 lib/kitty/kitty/rc/set_font_size.py
+lib/kitty/kitty/rc/set_os_window_title.py
 lib/kitty/kitty/rc/set_spacing.py
 lib/kitty/kitty/rc/set_tab_color.py
 lib/kitty/kitty/rc/set_tab_title.py
@@ -798,13 +788,83 @@ lib/kitty/kitty/rc/signal_child.py
 lib/kitty/kitty/remote_control.py
 lib/kitty/kitty/render_cache.py
 lib/kitty/kitty/rgb.py
-lib/kitty/kitty/rounded_rect_fragment.glsl
-lib/kitty/kitty/rounded_rect_vertex.glsl
-lib/kitty/kitty/screenshot_fragment.glsl
-lib/kitty/kitty/screenshot_vertex.glsl
 lib/kitty/kitty/search_query_parser.py
 lib/kitty/kitty/session.py
-lib/kitty/kitty/shaders.py
+lib/kitty/kitty/shaders/
+lib/kitty/kitty/shaders/__init__.py
+lib/kitty/kitty/shaders/${MODPY_PYCACHE}/
+lib/kitty/kitty/shaders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kitty/shaders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kitty/shaders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kitty/shaders/${MODPY_PYCACHE}slang.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kitty/shaders/${MODPY_PYCACHE}slang.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kitty/shaders/${MODPY_PYCACHE}slang.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kitty/shaders/${MODPY_PYCACHE}validate_shaders.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kitty/shaders/${MODPY_PYCACHE}validate_shaders.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kitty/shaders/${MODPY_PYCACHE}validate_shaders.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kitty/shaders/alpha-blend.slang
+lib/kitty/kitty/shaders/background.slang
+lib/kitty/kitty/shaders/bgimage.slang
+lib/kitty/kitty/shaders/blit-common.slang
+lib/kitty/kitty/shaders/blit.slang
+lib/kitty/kitty/shaders/border.slang
+lib/kitty/kitty/shaders/cell.slang
+lib/kitty/kitty/shaders/custom/
+lib/kitty/kitty/shaders/custom/__init__.py
+lib/kitty/kitty/shaders/custom/${MODPY_PYCACHE}/
+lib/kitty/kitty/shaders/custom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kitty/shaders/custom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kitty/shaders/custom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kitty/shaders/custom/${MODPY_PYCACHE}demo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/kitty/kitty/shaders/custom/${MODPY_PYCACHE}demo.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/kitty/kitty/shaders/custom/${MODPY_PYCACHE}demo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/kitty/kitty/shaders/custom/bloom.slang
+lib/kitty/kitty/shaders/custom/crt-blue.pipeline
+lib/kitty/kitty/shaders/custom/crt.slang
+lib/kitty/kitty/shaders/custom/cursor-trail-blaze.pipeline
+lib/kitty/kitty/shaders/custom/cursor-trail-blaze.slang
+lib/kitty/kitty/shaders/custom/cursor-trail-default.pipeline
+lib/kitty/kitty/shaders/custom/cursor-trail-default.slang
+lib/kitty/kitty/shaders/custom/cursor-trail-lightning.pipeline
+lib/kitty/kitty/shaders/custom/cursor-trail-lightning.slang
+lib/kitty/kitty/shaders/custom/cursor-trail-motion-blur.pipeline
+lib/kitty/kitty/shaders/custom/cursor-trail-motion-blur.slang
+lib/kitty/kitty/shaders/custom/demo.py
+lib/kitty/kitty/shaders/custom/dim-inactive-windows.pipeline
+lib/kitty/kitty/shaders/custom/fireworks-rockets.pipeline
+lib/kitty/kitty/shaders/custom/fireworks-rockets.slang
+lib/kitty/kitty/shaders/custom/fireworks.pipeline
+lib/kitty/kitty/shaders/custom/fireworks.slang
+lib/kitty/kitty/shaders/custom/focus-highlight.pipeline
+lib/kitty/kitty/shaders/custom/focus-highlight.slang
+lib/kitty/kitty/shaders/custom/inside-the-matrix.pipeline
+lib/kitty/kitty/shaders/custom/inside-the-matrix.slang
+lib/kitty/kitty/shaders/custom/negative.slang
+lib/kitty/kitty/shaders/custom/northern-lights.pipeline
+lib/kitty/kitty/shaders/custom/northern-lights.slang
+lib/kitty/kitty/shaders/custom/pipeline.slang
+lib/kitty/kitty/shaders/custom/pond-ripple.pipeline
+lib/kitty/kitty/shaders/custom/pond-ripple.slang
+lib/kitty/kitty/shaders/custom/sample.slang
+lib/kitty/kitty/shaders/custom/spotlight.pipeline
+lib/kitty/kitty/shaders/custom/spotlight.slang
+lib/kitty/kitty/shaders/custom/tab-change.pipeline
+lib/kitty/kitty/shaders/custom/tab-change.slang
+lib/kitty/kitty/shaders/custom/tft.slang
+lib/kitty/kitty/shaders/custom/types.slang
+lib/kitty/kitty/shaders/custom/underwater.slang
+lib/kitty/kitty/shaders/custom/water.slang
+lib/kitty/kitty/shaders/graphics.slang
+lib/kitty/kitty/shaders/hsluv.slang
+lib/kitty/kitty/shaders/linear2srgb.slang
+lib/kitty/kitty/shaders/padding.slang
+lib/kitty/kitty/shaders/rounded_rect.slang
+lib/kitty/kitty/shaders/screenshot.slang
+lib/kitty/kitty/shaders/slang.py
+lib/kitty/kitty/shaders/tint.slang
+lib/kitty/kitty/shaders/trail.slang
+lib/kitty/kitty/shaders/utils.slang
+lib/kitty/kitty/shaders/validate_shaders.py
 lib/kitty/kitty/shell_integration.py
 lib/kitty/kitty/shm.py
 lib/kitty/kitty/short_uuid.py
@@ -812,14 +872,9 @@ lib/kitty/kitty/simple_cli_definitions.py
 lib/kitty/kitty/tab_bar.py
 lib/kitty/kitty/tabs.py
 lib/kitty/kitty/terminfo.py
-lib/kitty/kitty/tint_fragment.glsl
-lib/kitty/kitty/tint_vertex.glsl
-lib/kitty/kitty/trail_fragment.glsl
-lib/kitty/kitty/trail_vertex.glsl
 lib/kitty/kitty/types.py
 lib/kitty/kitty/typing_compat.py
 lib/kitty/kitty/update_check.py
-lib/kitty/kitty/utils.glsl
 lib/kitty/kitty/utils.py
 lib/kitty/kitty/window.py
 lib/kitty/kitty/window_list.py
@@ -830,6 +885,165 @@ lib/kitty/logo/beam-cursor.png
 lib/kitty/logo/beam-cursor@2x.png
 lib/kitty/logo/kitty-128.png
 lib/kitty/logo/kitty.png
+lib/kitty/shaders/
+lib/kitty/shaders/bgimage.frag.glsl
+lib/kitty/shaders/bgimage.glsl.json
+lib/kitty/shaders/bgimage.json
+lib/kitty/shaders/bgimage.spv
+lib/kitty/shaders/bgimage.spv.json
+lib/kitty/shaders/bgimage.vert.glsl
+lib/kitty/shaders/blit.frag.glsl
+lib/kitty/shaders/blit.glsl.json
+lib/kitty/shaders/blit.json
+lib/kitty/shaders/blit.spv
+lib/kitty/shaders/blit.spv.json
+lib/kitty/shaders/blit.vert.glsl
+lib/kitty/shaders/border.frag.glsl
+lib/kitty/shaders/border.glsl.json
+lib/kitty/shaders/border.json
+lib/kitty/shaders/border.spv
+lib/kitty/shaders/border.spv.json
+lib/kitty/shaders/border.vert.glsl
+lib/kitty/shaders/cell.06299.frag.glsl
+lib/kitty/shaders/cell.06299.glsl.json
+lib/kitty/shaders/cell.06299.spv
+lib/kitty/shaders/cell.06299.spv.json
+lib/kitty/shaders/cell.06299.vert.glsl
+lib/kitty/shaders/cell.2ced3.frag.glsl
+lib/kitty/shaders/cell.2ced3.glsl.json
+lib/kitty/shaders/cell.2ced3.spv
+lib/kitty/shaders/cell.2ced3.spv.json
+lib/kitty/shaders/cell.2ced3.vert.glsl
+lib/kitty/shaders/cell.337b6.frag.glsl
+lib/kitty/shaders/cell.337b6.glsl.json
+lib/kitty/shaders/cell.337b6.spv
+lib/kitty/shaders/cell.337b6.spv.json
+lib/kitty/shaders/cell.337b6.vert.glsl
+lib/kitty/shaders/cell.37c22.frag.glsl
+lib/kitty/shaders/cell.37c22.glsl.json
+lib/kitty/shaders/cell.37c22.spv
+lib/kitty/shaders/cell.37c22.spv.json
+lib/kitty/shaders/cell.37c22.vert.glsl
+lib/kitty/shaders/cell.3a52d.frag.glsl
+lib/kitty/shaders/cell.3a52d.glsl.json
+lib/kitty/shaders/cell.3a52d.spv
+lib/kitty/shaders/cell.3a52d.spv.json
+lib/kitty/shaders/cell.3a52d.vert.glsl
+lib/kitty/shaders/cell.3e8c7.frag.glsl
+lib/kitty/shaders/cell.3e8c7.glsl.json
+lib/kitty/shaders/cell.3e8c7.spv
+lib/kitty/shaders/cell.3e8c7.spv.json
+lib/kitty/shaders/cell.3e8c7.vert.glsl
+lib/kitty/shaders/cell.4307f.frag.glsl
+lib/kitty/shaders/cell.4307f.glsl.json
+lib/kitty/shaders/cell.4307f.spv
+lib/kitty/shaders/cell.4307f.spv.json
+lib/kitty/shaders/cell.4307f.vert.glsl
+lib/kitty/shaders/cell.45d75.frag.glsl
+lib/kitty/shaders/cell.45d75.glsl.json
+lib/kitty/shaders/cell.45d75.spv
+lib/kitty/shaders/cell.45d75.spv.json
+lib/kitty/shaders/cell.45d75.vert.glsl
+lib/kitty/shaders/cell.53df3.frag.glsl
+lib/kitty/shaders/cell.53df3.glsl.json
+lib/kitty/shaders/cell.53df3.spv
+lib/kitty/shaders/cell.53df3.spv.json
+lib/kitty/shaders/cell.53df3.vert.glsl
+lib/kitty/shaders/cell.696dd.frag.glsl
+lib/kitty/shaders/cell.696dd.glsl.json
+lib/kitty/shaders/cell.696dd.spv
+lib/kitty/shaders/cell.696dd.spv.json
+lib/kitty/shaders/cell.696dd.vert.glsl
+lib/kitty/shaders/cell.7c802.frag.glsl
+lib/kitty/shaders/cell.7c802.glsl.json
+lib/kitty/shaders/cell.7c802.spv
+lib/kitty/shaders/cell.7c802.spv.json
+lib/kitty/shaders/cell.7c802.vert.glsl
+lib/kitty/shaders/cell.8795d.frag.glsl
+lib/kitty/shaders/cell.8795d.glsl.json
+lib/kitty/shaders/cell.8795d.spv
+lib/kitty/shaders/cell.8795d.spv.json
+lib/kitty/shaders/cell.8795d.vert.glsl
+lib/kitty/shaders/cell.97519.frag.glsl
+lib/kitty/shaders/cell.97519.glsl.json
+lib/kitty/shaders/cell.97519.spv
+lib/kitty/shaders/cell.97519.spv.json
+lib/kitty/shaders/cell.97519.vert.glsl
+lib/kitty/shaders/cell.a0507.frag.glsl
+lib/kitty/shaders/cell.a0507.glsl.json
+lib/kitty/shaders/cell.a0507.spv
+lib/kitty/shaders/cell.a0507.spv.json
+lib/kitty/shaders/cell.a0507.vert.glsl
+lib/kitty/shaders/cell.a07b1.frag.glsl
+lib/kitty/shaders/cell.a07b1.glsl.json
+lib/kitty/shaders/cell.a07b1.spv
+lib/kitty/shaders/cell.a07b1.spv.json
+lib/kitty/shaders/cell.a07b1.vert.glsl
+lib/kitty/shaders/cell.ce584.frag.glsl
+lib/kitty/shaders/cell.ce584.glsl.json
+lib/kitty/shaders/cell.ce584.spv
+lib/kitty/shaders/cell.ce584.spv.json
+lib/kitty/shaders/cell.ce584.vert.glsl
+lib/kitty/shaders/cell.d5dd6.frag.glsl
+lib/kitty/shaders/cell.d5dd6.glsl.json
+lib/kitty/shaders/cell.d5dd6.spv
+lib/kitty/shaders/cell.d5dd6.spv.json
+lib/kitty/shaders/cell.d5dd6.vert.glsl
+lib/kitty/shaders/cell.frag.glsl
+lib/kitty/shaders/cell.glsl.json
+lib/kitty/shaders/cell.json
+lib/kitty/shaders/cell.spv
+lib/kitty/shaders/cell.spv.json
+lib/kitty/shaders/cell.vert.glsl
+lib/kitty/shaders/glsl-uniforms.json
+lib/kitty/shaders/graphics.alpha_mask.frag.glsl
+lib/kitty/shaders/graphics.alpha_mask.glsl.json
+lib/kitty/shaders/graphics.alpha_mask.spv
+lib/kitty/shaders/graphics.alpha_mask.spv.json
+lib/kitty/shaders/graphics.alpha_mask.vert.glsl
+lib/kitty/shaders/graphics.frag.glsl
+lib/kitty/shaders/graphics.glsl.json
+lib/kitty/shaders/graphics.json
+lib/kitty/shaders/graphics.premult.frag.glsl
+lib/kitty/shaders/graphics.premult.glsl.json
+lib/kitty/shaders/graphics.premult.spv
+lib/kitty/shaders/graphics.premult.spv.json
+lib/kitty/shaders/graphics.premult.vert.glsl
+lib/kitty/shaders/graphics.spv
+lib/kitty/shaders/graphics.spv.json
+lib/kitty/shaders/graphics.vert.glsl
+lib/kitty/shaders/padding.frag.glsl
+lib/kitty/shaders/padding.glsl.json
+lib/kitty/shaders/padding.json
+lib/kitty/shaders/padding.spv
+lib/kitty/shaders/padding.spv.json
+lib/kitty/shaders/padding.vert.glsl
+lib/kitty/shaders/rounded_rect.frag.glsl
+lib/kitty/shaders/rounded_rect.glsl.json
+lib/kitty/shaders/rounded_rect.json
+lib/kitty/shaders/rounded_rect.spv
+lib/kitty/shaders/rounded_rect.spv.json
+lib/kitty/shaders/rounded_rect.vert.glsl
+lib/kitty/shaders/screenshot.frag.glsl
+lib/kitty/shaders/screenshot.glsl.json
+lib/kitty/shaders/screenshot.json
+lib/kitty/shaders/screenshot.spv
+lib/kitty/shaders/screenshot.spv.json
+lib/kitty/shaders/screenshot.vert.glsl
+lib/kitty/shaders/slangc.version
+lib/kitty/shaders/slangpy.version
+lib/kitty/shaders/tint.frag.glsl
+lib/kitty/shaders/tint.glsl.json
+lib/kitty/shaders/tint.json
+lib/kitty/shaders/tint.spv
+lib/kitty/shaders/tint.spv.json
+lib/kitty/shaders/tint.vert.glsl
+lib/kitty/shaders/trail.frag.glsl
+lib/kitty/shaders/trail.glsl.json
+lib/kitty/shaders/trail.json
+lib/kitty/shaders/trail.spv
+lib/kitty/shaders/trail.spv.json
+lib/kitty/shaders/trail.vert.glsl
 lib/kitty/shell-integration/
 lib/kitty/shell-integration/bash/
 lib/kitty/shell-integration/bash/kitty.bash
@@ -880,6 +1094,7 @@ lib/kitty/terminfo/x/xterm-kitty
 @man man/man1/kitten-@-resize-os-window.1
 @man man/man1/kitten-@-resize-window.1
 @man man/man1/kitten-@-run.1
+@man man/man1/kitten-@-screenshot.1
 @man man/man1/kitten-@-scroll-window.1
 @man man/man1/kitten-@-select-window.1
 @man man/man1/kitten-@-send-key.1
@@ -889,6 +1104,7 @@ lib/kitty/terminfo/x/xterm-kitty
 @man man/man1/kitten-@-set-colors.1
 @man man/man1/kitten-@-set-enabled-layouts.1
 @man man/man1/kitten-@-set-font-size.1
+@man man/man1/kitten-@-set-os-window-title.1
 @man man/man1/kitten-@-set-spacing.1
 @man man/man1/kitten-@-set-tab-color.1
 @man man/man1/kitten-@-set-tab-title.1
@@ -916,6 +1132,7 @@ lib/kitty/terminfo/x/xterm-kitty
 @man man/man1/kitten-query-terminal.1
 @man man/man1/kitten-quick-access-terminal.1
 @man man/man1/kitten-remote-file.1
+@man man/man1/kitten-resize-window.1
 @man man/man1/kitten-run-shell.1
 @man man/man1/kitten-show-key.1
 @man man/man1/kitten-ssh.1
@@ -927,6 +1144,7 @@ lib/kitty/terminfo/x/xterm-kitty
 @man man/man1/kitty.1
 share/applications/kitty-open.desktop
 share/applications/kitty.desktop
+share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/256x256/apps/kitty.png
 share/icons/hicolor/scalable/apps/kitty.svg
 share/terminfo/

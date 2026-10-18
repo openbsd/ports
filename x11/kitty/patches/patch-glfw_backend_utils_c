@@ -3,16 +3,16 @@ We don't have posix_fallocate.
 Index: glfw/backend_utils.c
 --- glfw/backend_utils.c.orig
 +++ glfw/backend_utils.c
-@@ -397,7 +397,7 @@ GLFWAPI char* utf_8_strndup(const char* source, size_t
-  * receive SIGBUS on accessing mmap()'ed file contents instead.
+@@ -422,7 +422,7 @@ utf_8_strndup(const char *source, size_t max_length) {
   */
- int createAnonymousFile(off_t size) {
+ int
+ createAnonymousFile(off_t size) {
 -    int ret, fd = -1, shm_anon = 0;
 +    int ret, fd = -1;
  #ifdef HAS_MEMFD_CREATE
      fd = glfw_memfd_create("glfw-shared", MFD_CLOEXEC | MFD_ALLOW_SEALING);
      if (fd < 0) return -1;
-@@ -407,10 +407,6 @@ int createAnonymousFile(off_t size) {
+@@ -432,10 +432,6 @@ createAnonymousFile(off_t size) {
      // There is also no need to check for the return value, we couldn’t do
      // anything with it anyway.
      fcntl(fd, F_ADD_SEALS, F_SEAL_SHRINK | F_SEAL_SEAL);
@@ -22,14 +22,14 @@ Index: glfw/backend_utils.c
 -    shm_anon = 1;
  #else
      static const char template[] = "/glfw-shared-XXXXXX";
-     const char* path;
-@@ -434,8 +430,7 @@ int createAnonymousFile(off_t size) {
-     if (fd < 0)
-         return -1;
+     const char *path;
+@@ -457,8 +453,7 @@ createAnonymousFile(off_t size) {
+ 
+     if (fd < 0) return -1;
  #endif
 -    // posix_fallocate does not work on SHM descriptors
 -    ret = shm_anon ? ftruncate(fd, size) : posix_fallocate(fd, 0, size);
 +    ret = ftruncate(fd, size);
-     if (ret != 0)
-     {
+     if (ret != 0) {
          close(fd);
+         errno = ret;

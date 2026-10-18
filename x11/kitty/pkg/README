@@ -1,0 +1,10 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Custom shaders
+==============
+
+The built-in shaders are precompiled, but custom shaders (see the "Custom
+shaders" page in the kitty documentation) need the Slang shader compiler
+(slangc), which is not available in OpenBSD ports.
