@@ -1,0 +1,17 @@
+Index: src/daemon/server.c
+--- src/daemon/server.c.orig
++++ src/daemon/server.c
+@@ -29,9 +29,13 @@
+ #include <glibtop/machine.h>
+ 
+ #include <sys/utsname.h>
++#include <sys/stat.h>
+ 
+ #include <fcntl.h>
+ #include <locale.h>
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
+ 
+ int
+ main(int argc, char *argv[])
