@@ -1,0 +1,15 @@
+Index: sendmail/main.c
+--- sendmail/main.c.orig
++++ sendmail/main.c
+@@ -47,6 +47,11 @@ SM_RCSID("@(#)$Id: main.c,v 8.988 2013-11-23 02:52:37 
+ #include <sendmail/pathnames.h>
+ #include <ratectrl.h>
+ 
++#include <sys/stat.h>
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++
+ static SM_DEBUG_T
+ DebugNoPRestart = SM_DEBUG_INITIALIZER("no_persistent_restart",
+ 	"@(#)$Debug: no_persistent_restart - don't restart, log only $");
