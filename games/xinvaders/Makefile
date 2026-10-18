@@ -1,7 +1,7 @@
 COMMENT=	shoot them nasty little bugs
 
 DISTNAME=	xinvaders-2.1.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	games
 
 PERMIT_PACKAGE=	Yes

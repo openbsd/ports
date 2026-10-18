@@ -1,7 +1,7 @@
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -26,7 +26,6 @@ Wed May  8 1991
+@@ -26,65 +26,68 @@ Wed May  8 1991
  #include <X11/IntrinsicP.h>
  #include <X11/Label.h>
  #endif
@@ -9,7 +9,17 @@ Index: main.c
  
  #ifdef XFILESEARCHPATH
  static void AddPathToSearchPath();
-@@ -40,51 +39,51 @@ static XrmOptionDescRec table[] = {
+ #endif
+ 
+ #include <locale.h>
++#include <sys/stat.h>
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++
+ static XrmOptionDescRec table[] = {
+     {"-debug",	"*debug",	XrmoptionNoArg,	NULL},
+ };
  
  static XtResource resources[] = {
      {XtNwidth, XtCWidth, XtRInt, sizeof(int),
@@ -84,7 +94,7 @@ Index: main.c
  };
  
  
-@@ -141,7 +140,7 @@ caddr_t data;
+@@ -141,7 +144,7 @@ caddr_t data;
    return w;
  }
  
@@ -93,7 +103,7 @@ Index: main.c
  {
    static Arg args[10];
    int n;
-@@ -161,25 +160,25 @@ int main(Cardinal argc, char **argv)
+@@ -161,25 +164,25 @@ int main(Cardinal argc, char **argv)
  			  &argc, argv);
    dpy = XtDisplay(toplevel);
    XtAddConverter(XtRString, XtRFloat, CvtStringToFloat, NULL, 0);
@@ -133,7 +143,7 @@ Index: main.c
  
    form = XtCreateManagedWidget ("form", formWidgetClass,
  				toplevel, NULL, 0);
-@@ -189,10 +188,10 @@ int main(Cardinal argc, char **argv)
+@@ -189,10 +192,10 @@ int main(Cardinal argc, char **argv)
    XtSetArg (args[n], XtNright, XtChainLeft); n++;
    XtSetArg (args[n], XtNtop, XtChainTop); n++;
    XtSetArg (args[n], XtNbottom, XtChainTop); n++;
@@ -147,7 +157,7 @@ Index: main.c
      XtCreateManagedWidget("field", vadersWidgetClass, form, args, n);
    
    XtSetKeyboardFocus (form, (Widget) gamewidget);
-@@ -204,29 +203,29 @@ int main(Cardinal argc, char **argv)
+@@ -204,29 +207,29 @@ int main(Cardinal argc, char **argv)
    XtSetArg (args[n], XtNbottom, XtChainTop); n++;
    XtSetArg (args[n], XtNfromHoriz, gamewidget); n++;
    XtSetArg (args[n], XtNhorizDistance, 5); n++;
@@ -189,7 +199,7 @@ Index: main.c
    XtSetValues(infobutton, args, 4);
  
    XtRealizeWidget(toplevel);
-@@ -280,7 +279,7 @@ char *path;
+@@ -280,7 +283,7 @@ char *path;
  }
  #endif
  
