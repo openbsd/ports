@@ -4,6 +4,8 @@ VERSION ?=		${MODKF5_VERSION}
 MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 HOMEPAGE ?=		https://projects.kde.org/projects/frameworks/${DISTNAME:C/-[0-9].*//}
 
+PORTROACH ?=		ignore:1
+
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+
 PERMIT_PACKAGE =	Yes
