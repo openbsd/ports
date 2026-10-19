@@ -439,7 +439,7 @@ SHA256 (cargo/zerovec-0.11.4.tar.gz) = 56or1VCG8atSZpPsvkRCBdpX4l9EiYedqAY1pG2Q5
 SHA256 (cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5GsvPv8eu5dvfvIyHS9Y8=
 SHA256 (cargo/zlib-rs-0.6.7.tar.gz) = NLMdGI2daFpPnHtG1uNmMbBwWNLP4ZAmetzlTcIwvxI=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
-SHA256 (zizmor-1.31.0.tar.gz) = vcD4nGZ/WZz5bnbhAWrAS3UET8OpM4fuwZsvhBQnH+s=
+SHA256 (zizmor-1.31.1.tar.gz) = npdsyYG7mwvKrnZqbd7kUXOIIcCibEo8Jm3aGJGuINU=
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -881,4 +881,4 @@ SIZE (cargo/zerovec-0.11.4.tar.gz) = 125080
 SIZE (cargo/zerovec-derive-0.11.1.tar.gz) = 21294
 SIZE (cargo/zlib-rs-0.6.7.tar.gz) = 215740
 SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
-SIZE (zizmor-1.31.0.tar.gz) = 798001
+SIZE (zizmor-1.31.1.tar.gz) = 798351
