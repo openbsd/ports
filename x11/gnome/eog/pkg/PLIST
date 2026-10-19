@@ -37,6 +37,8 @@ lib/eog/plugins/fullscreen.plugin
 lib/eog/plugins/reload.plugin
 lib/eog/plugins/statusbar-date.plugin
 lib/pkgconfig/eog.pc
+share/GConf/
+share/GConf/gsettings/
 share/GConf/gsettings/eog.convert
 share/applications/org.gnome.eog.desktop
 share/eog/
