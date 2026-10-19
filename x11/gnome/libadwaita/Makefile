@@ -1,16 +1,16 @@
 COMMENT=		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT=		libadwaita
-GNOME_VERSION=		1.9.4
+GNOME_VERSION=		1.10.0
 EPOCH=			0
 
-SHARED_LIBS += adwaita-1                 2.0 # 0
+SHARED_LIBS += adwaita-1                 2.1 # 0
 
 # LGPLv2.1+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += appstream c fribidi gio-2.0 glib-2.0 gobject-2.0 graphene-1.0
-WANTLIB += gtk-4 intl m pango-1.0
+WANTLIB += c fribidi gio-2.0 glib-2.0 gobject-2.0 graphene-1.0
+WANTLIB += gtk-4 intl m ministream pango-1.0
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
@@ -23,7 +23,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala \
 
 BUILD_DEPENDS=		www/sassc
 
-LIB_DEPENDS=		devel/appstream \
+LIB_DEPENDS=		x11/gnome/ministream \
 			x11/gtk+4
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}

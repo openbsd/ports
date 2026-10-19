@@ -25,6 +25,7 @@ include/libadwaita-1/adw-clamp-layout.h
 include/libadwaita-1/adw-clamp-scrollable.h
 include/libadwaita-1/adw-clamp.h
 include/libadwaita-1/adw-combo-row.h
+include/libadwaita-1/adw-css-class-binding.h
 include/libadwaita-1/adw-dialog.h
 include/libadwaita-1/adw-easing.h
 include/libadwaita-1/adw-entry-row.h
@@ -101,6 +102,7 @@ share/icons/hicolor/symbolic/apps/org.gnome.Adwaita1.Demo-symbolic.svg
 share/locale/ab/LC_MESSAGES/libadwaita.mo
 share/locale/be/LC_MESSAGES/libadwaita.mo
 share/locale/bg/LC_MESSAGES/libadwaita.mo
+share/locale/bs/LC_MESSAGES/libadwaita.mo
 share/locale/ca/LC_MESSAGES/libadwaita.mo
 share/locale/cs/LC_MESSAGES/libadwaita.mo
 share/locale/da/LC_MESSAGES/libadwaita.mo
@@ -128,6 +130,7 @@ share/locale/ka/LC_MESSAGES/libadwaita.mo
 share/locale/kab/LC_MESSAGES/libadwaita.mo
 share/locale/kk/LC_MESSAGES/libadwaita.mo
 share/locale/ko/LC_MESSAGES/libadwaita.mo
+share/locale/kw/LC_MESSAGES/libadwaita.mo
 share/locale/lt/LC_MESSAGES/libadwaita.mo
 share/locale/lv/LC_MESSAGES/libadwaita.mo
 share/locale/nb/LC_MESSAGES/libadwaita.mo
@@ -154,6 +157,7 @@ share/locale/uz/LC_MESSAGES/libadwaita.mo
 share/locale/vi/LC_MESSAGES/libadwaita.mo
 share/locale/zh_CN/LC_MESSAGES/libadwaita.mo
 share/locale/zh_TW/LC_MESSAGES/libadwaita.mo
+share/metainfo/
 share/metainfo/org.gnome.Adwaita1.Demo.metainfo.xml
 share/vala/vapi/libadwaita-1.deps
 share/vala/vapi/libadwaita-1.vapi
