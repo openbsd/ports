@@ -46,6 +46,10 @@ share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/glib-networking.mo
 share/locale/kn/LC_MESSAGES/glib-networking.mo
 share/locale/ko/LC_MESSAGES/glib-networking.mo
+share/locale/kw/
+share/locale/kw/LC_MESSAGES/
+share/locale/kw/LC_MESSAGES/glib-networking.mo
+share/locale/lo/LC_MESSAGES/glib-networking.mo
 share/locale/lt/LC_MESSAGES/glib-networking.mo
 share/locale/lv/LC_MESSAGES/glib-networking.mo
 share/locale/ml/LC_MESSAGES/glib-networking.mo
@@ -74,6 +78,7 @@ share/locale/th/LC_MESSAGES/glib-networking.mo
 share/locale/tr/LC_MESSAGES/glib-networking.mo
 share/locale/ug/LC_MESSAGES/glib-networking.mo
 share/locale/uk/LC_MESSAGES/glib-networking.mo
+share/locale/uz/LC_MESSAGES/glib-networking.mo
 share/locale/vi/LC_MESSAGES/glib-networking.mo
 share/locale/zh_CN/LC_MESSAGES/glib-networking.mo
 share/locale/zh_HK/LC_MESSAGES/glib-networking.mo
