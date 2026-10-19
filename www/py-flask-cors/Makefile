@@ -1,6 +1,6 @@
 COMMENT=	CORS handling for flask
 
-MODPY_DISTV=	6.0.2
+MODPY_DISTV=	6.0.5
 GH_ACCOUNT=	corydolphin
 GH_PROJECT=	flask-cors
 GH_TAGNAME=	${MODPY_DISTV}
@@ -14,7 +14,7 @@ HOMEPAGE=	https://github.com/corydolphin/flask-cors
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 
 RUN_DEPENDS=	www/py-flask
 

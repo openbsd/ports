@@ -1,10 +1,10 @@
 @pkgpath www/py-flask-cors,python3
 lib/python${MODPY_VERSION}/site-packages/flask_cors/
-lib/python${MODPY_VERSION}/site-packages/flask_cors-0.0.1.dist-info/
-lib/python${MODPY_VERSION}/site-packages/flask_cors-0.0.1.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/flask_cors-0.0.1.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/flask_cors-0.0.1.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/flask_cors-0.0.1.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/flask_cors-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/flask_cors-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/flask_cors-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/flask_cors-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/flask_cors-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/flask_cors/__init__.py
 lib/python${MODPY_VERSION}/site-packages/flask_cors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flask_cors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -15,9 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/flask_cors/${MODPY_PYCACHE}decorator.${
 lib/python${MODPY_VERSION}/site-packages/flask_cors/${MODPY_PYCACHE}decorator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_cors/${MODPY_PYCACHE}extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_cors/${MODPY_PYCACHE}extension.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flask_cors/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/flask_cors/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_cors/core.py
 lib/python${MODPY_VERSION}/site-packages/flask_cors/decorator.py
 lib/python${MODPY_VERSION}/site-packages/flask_cors/extension.py
-lib/python${MODPY_VERSION}/site-packages/flask_cors/version.py
+lib/python${MODPY_VERSION}/site-packages/flask_cors/py.typed
