@@ -7,6 +7,6 @@ Index: Makefile.in
  top_srcdir = @top_srcdir@
 -AM_CFLAGS = -O -Wall
 +AM_CFLAGS = -Wall
- EXTRA_DIST = $(TESTS) $(TESTS:.res=) test/test \
+ EXTRA_DIST = COPYRIGHT $(TESTS) $(TESTS:.res=) test/test \
  	build-aux/git-version-gen
  pgpdump_SOURCES = \

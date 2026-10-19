@@ -1,6 +1,6 @@
 COMMENT=	PGP packet visualizer
 
-DISTNAME=	pgpdump-0.37
+DISTNAME=	pgpdump-0.38
 CATEGORIES=	security
 
 # https://github.com/kazu-yamamoto/pgpdump
