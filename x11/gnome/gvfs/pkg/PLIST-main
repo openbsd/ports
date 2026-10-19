@@ -7,9 +7,6 @@ lib/gvfs/
 @so lib/gvfs/libgvfscommon.so
 @so lib/gvfs/libgvfsdaemon.so
 @bin libexec/gvfsd
-@bin libexec/gvfsd-afp
-@bin libexec/gvfsd-afp-browse
-@bin libexec/gvfsd-archive
 @comment @bin libexec/gvfsd-burn
 @bin libexec/gvfsd-computer
 @bin libexec/gvfsd-dav
@@ -27,6 +24,8 @@ lib/gvfs/
 @man man/man1/gvfsd-metadata.1
 @man man/man1/gvfsd.1
 @man man/man7/gvfs.7
+share/GConf/
+share/GConf/gsettings/
 share/GConf/gsettings/gvfs-dns-sd.convert
 share/dbus-1/services/org.gtk.vfs.Daemon.service
 share/dbus-1/services/org.gtk.vfs.Metadata.service
@@ -35,9 +34,6 @@ share/glib-2.0/schemas/org.gnome.system.gvfs.enums.xml
 share/glib-2.0/schemas/org.gnome.system.wsdd.gschema.xml
 share/gvfs/
 share/gvfs/mounts/
-share/gvfs/mounts/afp-browse.mount
-share/gvfs/mounts/afp.mount
-share/gvfs/mounts/archive.mount
 @comment share/gvfs/mounts/burn.mount
 share/gvfs/mounts/computer.mount
 share/gvfs/mounts/dav+sd.mount
