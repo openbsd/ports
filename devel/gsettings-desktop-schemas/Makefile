@@ -1,7 +1,7 @@
 COMMENT=	GSettings Desktop Schemas
 
 GNOME_PROJECT=	gsettings-desktop-schemas
-GNOME_VERSION=	50.1
+GNOME_VERSION=	51.0
 
 CATEGORIES=	devel
 

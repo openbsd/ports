@@ -1,10 +1,6 @@
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/GDesktopEnums-3.0.typelib
-share/GConf/
-share/GConf/gsettings/
-share/GConf/gsettings/gsettings-desktop-schemas.convert
-share/GConf/gsettings/wm-schemas.convert
 share/gir-1.0/GDesktopEnums-3.0.gir
 share/glib-2.0/schemas/10_org.gnome.desktop.lockdown.gschema.override
 share/glib-2.0/schemas/10_org.gnome.desktop.media-handling.gschema.override
@@ -76,6 +72,9 @@ share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ka/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/kab/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/kk/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/lo/
+share/locale/lo/LC_MESSAGES/
+share/locale/lo/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lt/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lv/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ml/LC_MESSAGES/gsettings-desktop-schemas.mo
@@ -91,12 +90,14 @@ share/locale/pt/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pt_BR/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ro/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ru/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/sat/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sk/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sl/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sr/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sr@latin/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sv/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/tg/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/th/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/tr/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ug/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/uk/LC_MESSAGES/gsettings-desktop-schemas.mo
