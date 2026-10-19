@@ -1,7 +1,7 @@
 COMMENT=	dropping jewels game for X11
 
 DISTNAME=	xjewel-1.6
-REVISION =	7
+REVISION =	8
 CATEGORIES=	games
 FIX_EXTRACT_PERMISSIONS=Yes
 
