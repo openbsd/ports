@@ -1,24 +1,21 @@
 COMMENT=	compress Flask app responses
 
-# XXX: superset (not yet imported) needs < 2
-MODPY_DISTV =	1.23
+MODPY_DISTV=	1.25
 DISTNAME=	flask_compress-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	2
 
 CATEGORIES=	www
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
-MODPY_PI=		Yes
-MODPY_PYBUILD=		setuptools_scm
+RUN_DEPENDS=	archivers/py-brotli \
+		www/py-flask
 
-RUN_DEPENDS=		archivers/py-brotli \
-			www/py-flask
-
-TEST_DEPENDS =		www/py-flask-caching
+TEST_DEPENDS =	www/py-flask-caching
 
 .include <bsd.port.mk>

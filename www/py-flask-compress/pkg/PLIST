@@ -19,3 +19,4 @@ lib/python${MODPY_VERSION}/site-packages/flask_compress/${MODPY_PYCACHE}flask_co
 lib/python${MODPY_VERSION}/site-packages/flask_compress/_version.py
 lib/python${MODPY_VERSION}/site-packages/flask_compress/compat.py
 lib/python${MODPY_VERSION}/site-packages/flask_compress/flask_compress.py
+lib/python${MODPY_VERSION}/site-packages/flask_compress/py.typed
