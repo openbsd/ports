@@ -5,7 +5,7 @@ COMMENT-demos=		gtk+4 demo programs
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.22.5
+GNOME_VERSION=		4.24.1
 
 # gtk+4 wants librsvg 2.48+ (rust-only), but if not available it is prepared
 # to fallback to 2.40.23. there's no actual release of 2.40.23 yet, so use
@@ -20,7 +20,7 @@ PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     5.6 # 1.2200.5
+SHARED_LIBS += gtk-4                     5.7 # 1.2400.1
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -87,14 +87,8 @@ WANTLIB-main += wayland-egl xkbcommon
 LIB_DEPENDS-demos=	${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-demos=	${RUN_DEPENDS}
 
-WANTLIB-demos += X11 Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB-demos += c cairo cairo-gobject cairo-script-interpreter cups
-WANTLIB-demos += epoxy fontconfig fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-demos += gmodule-2.0 gobject-2.0 graphene-1.0 gstallocators-1.0
-WANTLIB-demos += gstgl-1.0 gstplay-1.0 gstreamer-1.0 gstvideo-1.0 gtk-4
-WANTLIB-demos += harfbuzz harfbuzz-subset intl jpeg m pango-1.0 pangocairo-1.0
-WANTLIB-demos += pangoft2-1.0 png tiff vulkan wayland-client wayland-egl
-WANTLIB-demos += xkbcommon
+WANTLIB-demos += c cairo epoxy gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB-demos += graphene-1.0 gtk-4 harfbuzz intl m pango-1.0 pangocairo-1.0
 
 LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
 RUN_DEPENDS-guic=	x11/hicolor-icon-theme

@@ -5,7 +5,6 @@
 @pkgpath x11/gtk+4,-cups
 @pkgpath x11/gtk+4,-media
 @bin bin/gtk4-builder-tool
-@bin bin/gtk4-encode-symbolic-svg
 @bin bin/gtk4-image-tool
 @bin bin/gtk4-launch
 @bin bin/gtk4-path-tool
@@ -141,6 +140,7 @@ include/gtk-4.0/gsk/gskpathbuilder.h
 include/gtk-4.0/gsk/gskpathmeasure.h
 include/gtk-4.0/gsk/gskpathpoint.h
 include/gtk-4.0/gsk/gskradialgradientnode.h
+include/gtk-4.0/gsk/gskrectsnap.h
 include/gtk-4.0/gsk/gskrenderer.h
 include/gtk-4.0/gsk/gskrendernode.h
 include/gtk-4.0/gsk/gskrenderreplay.h
@@ -291,6 +291,7 @@ include/gtk-4.0/gtk/gtkeditablelabel.h
 include/gtk-4.0/gtk/gtkemojichooser.h
 include/gtk-4.0/gtk/gtkentry.h
 include/gtk-4.0/gtk/gtkentrybuffer.h
+include/gtk-4.0/gtk/gtkenumlist.h
 include/gtk-4.0/gtk/gtkenums.h
 include/gtk-4.0/gtk/gtkeventcontroller.h
 include/gtk-4.0/gtk/gtkeventcontrollerfocus.h
@@ -415,7 +416,7 @@ include/gtk-4.0/gtk/gtkstringfilter.h
 include/gtk-4.0/gtk/gtkstringlist.h
 include/gtk-4.0/gtk/gtkstringsorter.h
 include/gtk-4.0/gtk/gtkstyleprovider.h
-include/gtk-4.0/gtk/gtksvg.h
+include/gtk-4.0/gtk/gtksvgwidget.h
 include/gtk-4.0/gtk/gtkswitch.h
 include/gtk-4.0/gtk/gtksymbolicpaintable.h
 include/gtk-4.0/gtk/gtktestatcontext.h
@@ -452,6 +453,9 @@ include/gtk-4.0/gtk/print/gtkprintcontext.h
 include/gtk-4.0/gtk/print/gtkprintoperation.h
 include/gtk-4.0/gtk/print/gtkprintoperationpreview.h
 include/gtk-4.0/gtk/print/gtkprintsettings.h
+include/gtk-4.0/gtk/svg/
+include/gtk-4.0/gtk/svg/gtksvg.h
+include/gtk-4.0/gtk/svg/gtksvgenumtypes.h
 include/gtk-4.0/unix-print/
 include/gtk-4.0/unix-print/gtk/
 include/gtk-4.0/unix-print/gtk/gtkunixprint.h
@@ -473,7 +477,6 @@ lib/pkgconfig/gtk4-x11.pc
 lib/pkgconfig/gtk4.pc
 @man man/man1/gtk4-broadwayd.1
 @man man/man1/gtk4-builder-tool.1
-@man man/man1/gtk4-encode-symbolic-svg.1
 @man man/man1/gtk4-image-tool.1
 @man man/man1/gtk4-launch.1
 @man man/man1/gtk4-path-tool.1
