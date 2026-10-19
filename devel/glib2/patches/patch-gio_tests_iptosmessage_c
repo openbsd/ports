@@ -33,4 +33,4 @@ Index: gio/tests/iptosmessage.c
 +  g_test_skip ("IP_RECVTOS not supported on OpenBSD");
  #elif defined(__GNU__)
    g_test_skip ("IP_RECVTOS not supported on Hurd");
- #else
+ #elif defined(_AIX)

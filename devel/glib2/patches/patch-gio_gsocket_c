@@ -4,7 +4,7 @@ XXX upstream
 Index: gio/gsocket.c
 --- gio/gsocket.c.orig
 +++ gio/gsocket.c
-@@ -767,7 +767,8 @@ g_socket_constructed (GObject *object)
+@@ -791,7 +791,8 @@ g_socket_constructed (GObject *object)
        /* See note about SIGPIPE below. */
        g_socket_set_option (socket, SOL_SOCKET, SO_NOSIGPIPE, TRUE, NULL);
  #endif
