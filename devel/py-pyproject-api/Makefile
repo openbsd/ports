@@ -1,6 +1,6 @@
 COMMENT=	API to interact with pyproject.toml-based projects
 
-MODPY_DISTV=	1.11.7
+MODPY_DISTV=	1.12.0
 DISTNAME=	pyproject_api-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
