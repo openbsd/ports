@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1845 2026/10/19 07:27:38 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1846 2026/10/19 10:17:04 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -653,6 +653,14 @@ setup_obsolete_reason(
 	6 => 'py3-socketio',
 	6 => 'py3-socketio-client',
 	3 => 'libgda',
+	8 => 'py3-ailment',
+	8 => 'py3-angr',
+	8 => 'py3-archinfo',
+	8 => 'py3-claripy',
+	8 => 'py3-cle',
+	8 => 'py3-pyvex',
+	8 => 'py3-z3-solver',
+	8 => 'angr-vex',
 );
 # beware, if ports with an RDEP on Python 3 are removed in a release where
 # the Python major version has changed (e.g. 3.13->3.14 between 7.9 and 8.0)
@@ -701,6 +709,7 @@ my $obsolete_message = {
 	5 => "outdated and/or no longer required by other ports",
 	6 => "no longer useful",
 	7 => "removed in favor of using the language's package manager",
+	8 => "outdated port, needs someone interested enough to update it",
 	9 => "not working correctly",
 	10 => "other OS suggested, or see https://docs.gotosocial.org/en/latest/advanced/builds/nowasm/",
 	11 => "no longer packageable",
