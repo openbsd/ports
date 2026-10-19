@@ -1,10 +1,10 @@
 COMMENT=	backport of pathlib-compatible object wrapper for zip files
 
-MODPY_DISTV=	3.23.1
+MODPY_DISTV=	4.1.1
 DISTNAME=	zipp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
-CATEGORIES=	devel
+CATEGORIES=	devel archivers
 
 HOMEPAGE=	https://github.com/jaraco/zipp
 
