@@ -1,0 +1,53 @@
+This is a header file for server side of sig handling
+This is mostly created to keep SIG+GS changes portable and easy to move from
+wine release to wine release.
+
+Index: server/sig_openbsd.h
+--- server/sig_openbsd.h.orig
++++ server/sig_openbsd.h
+@@ -0,0 +1,45 @@
++/*
++ * Server-side thread signals on OpenBSD
++ *
++ * Copyright 2026 Andrii Yukhymchak
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#ifndef __WINE_SERVER_SIG_OPENBSD_H
++#define __WINE_SERVER_SIG_OPENBSD_H
++
++#ifdef __OpenBSD__
++
++/* In OpenBSD you cannot signal a selected thread of another process, so the client (on a receiving process)
++ * needs information what was the target thread so a random thread that caught this signal can re-emit it
++ * This is server side implementation. Client side is in ntdll
++ */
++
++struct process;
++struct thread;
++
++/* init process thread target array */
++extern void init_process_signal_targets( struct process *process );
++/* clean up signals on finish process tracing */
++extern void finish_process_signal_targets( struct process *process );
++
++/* Publish a target and signal; return zero if the request was dropped. */
++extern int set_signal_target( struct thread *thread, int sig );
++
++
++#endif /* __OpenBSD__ */
++
++#endif /* __WINE_SERVER_SIG_OPENBSD_H */

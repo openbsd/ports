@@ -1,0 +1,166 @@
+OpenBSD specific client-server setup:
+
+Cross-process memory access. In upstream Wine server can read/write another
+process's memory with ptrace. On OpenBSD you can only ptrace your decendants.
+Wine Processes are not descendants of WineServer so new APC_COPY_MEMORY memory
+has the target process do the copy itself between its own memory and a shared
+with the caller memory section.
+
+The local NtReadVirtualMemory call handles both copy directions and faults:
+view to address for writes, address to view for reads.
+
+Added thread tid so server can name the target thread.
+
+Leave SIGUSR2 deliverable during server calls so waiting threads can
+still relay notifications; block it until the table and handlers are ready.
+
+For new threads, libpthread owns the native stack separately from Wine's
+signal-stack mapping. pthread_stackseg_np() returns the upper end; subtract
+the size to record the base used for Unix calls.
+
+Index: dlls/ntdll/unix/server.c
+--- dlls/ntdll/unix/server.c.orig
++++ dlls/ntdll/unix/server.c
+@@ -705,6 +705,40 @@ static void invoke_system_apc( const union apc_call *c
+         if (!self) NtClose( wine_server_ptr_handle(call->dup_handle.dst_process) );
+         break;
+     }
++#ifdef __OpenBSD__
++    case APC_COPY_MEMORY:
++    {
++        HANDLE section = wine_server_ptr_handle( call->copy_memory.handle );
++        SIZE_T view_size = 0;
++        SIZE_T copied = 0;
++        void *view = NULL;
++
++        result->type = call->type;
++        size = call->copy_memory.size;
++
++        addr = wine_server_get_ptr( call->copy_memory.addr );
++        if ((ULONG_PTR)addr == call->copy_memory.addr && size == call->copy_memory.size )
++        {
++            result->copy_memory.status = NtMapViewOfSection( section, NtCurrentProcess(), &view,
++                                                             0, 0, NULL,
++                                                             &view_size, ViewShare, 0, PAGE_READWRITE );
++            if (!result->copy_memory.status)
++            {
++                /* each stores a local copy that will keep page protections and fault if needed */
++                /* direction? */
++                result->copy_memory.status = NtReadVirtualMemory( NtCurrentProcess(),
++                                     call->copy_memory.write ? view : addr,
++                                     call->copy_memory.write ? addr : view,
++                                     size, &copied );
++                NtUnmapViewOfSection( NtCurrentProcess(), view );
++            }
++        }
++        else result->copy_memory.status = STATUS_INVALID_PARAMETER;
++        result->copy_memory.size = copied;
++        if (!self) NtClose( section );
++        break;
++    }
++#endif
+     default:
+         server_protocol_error( "get_apc_request: bad type %d\n", call->type );
+         break;
+@@ -1546,6 +1580,8 @@ static int get_unix_tid(void)
+     ret = lwpid;
+ #elif defined(__DragonFly__)
+     ret = lwp_gettid();
++#elif defined(__OpenBSD__)
++    ret = getthrid();
+ #endif
+     return ret;
+ }
+@@ -1641,9 +1677,18 @@ void server_init_process( struct thread_data *data )
+     sigaddset( &server_block_set, SIGHUP );
+     sigaddset( &server_block_set, SIGQUIT );
+     sigaddset( &server_block_set, SIGUSR1 );
+-    sigaddset( &server_block_set, SIGUSR2 );
+     sigaddset( &server_block_set, SIGCHLD );
++#ifdef __OpenBSD__
++    /* Block the relay during setup, leave it out of the server call mask. */
++    {
++        sigset_t sigset = server_block_set;
++        sigaddset( &sigset, SIGUSR2 );
++        pthread_sigmask( SIG_BLOCK, &sigset, NULL );
++    }
++#else
++    sigaddset( &server_block_set, SIGUSR2 );
+     pthread_sigmask( SIG_BLOCK, &server_block_set, NULL );
++#endif
+ 
+     /* receive the first thread request fd on the main socket */
+     data->request_fd = wine_server_receive_fd( &version );
+@@ -1680,6 +1725,9 @@ void server_init_process( struct thread_data *data )
+     {
+         req->unix_pid    = getpid();
+         req->unix_tid    = get_unix_tid();
++#ifdef __OpenBSD__
++        add_signal_tid( req->unix_tid );
++#endif
+         req->reply_fd    = reply_pipe;
+         req->wait_fd     = data->wait_fd[1];
+         req->debug_level = (TRACE_ON(server) != 0);
+@@ -1706,6 +1754,18 @@ void server_init_process( struct thread_data *data )
+ 
+     if (ret) server_protocol_error( "init_first_thread failed with status %x\n", ret );
+ 
++#ifdef __OpenBSD__
++    /* with an inherited connection server_dir is not set yet */
++    const char *dir = server_dir;
++    char *alloc_dir = NULL;
++    struct stat st;
++
++    if (!dir && stat( config_dir, &st ) != -1)
++        dir = alloc_dir = (char *)init_server_dir( st.st_dev, st.st_ino );
++    init_signal_targets( dir, pid );
++    free( alloc_dir );
++#endif
++
+     if (!supported_machines_count)
+         fatal_error( "'%s' is a 64-bit installation, it cannot be used with a 32-bit wineserver.\n",
+                      config_dir );
+@@ -1757,6 +1817,16 @@ void server_init_process_done(void)
+     signal_init_process( data->teb );
+     init_teb_data( data );
+ 
++#ifdef __OpenBSD__
++    /* Enable the relay after setting up shared array and signal handlers. */
++    {
++        sigset_t sigset;
++        sigemptyset( &sigset );
++        sigaddset( &sigset, SIGUSR2 );
++        pthread_sigmask( SIG_UNBLOCK, &sigset, NULL );
++    }
++#endif
++
+     /* Signal the parent process to continue */
+     SERVER_START_REQ( init_process_done )
+     {
+@@ -1781,14 +1851,26 @@ void server_init_thread( struct thread_data *data )
+ {
+     int reply_pipe;
+     TEB64 *teb64 = get_teb64( data->teb );
++#ifdef __OpenBSD__
++    stack_t stack;
++#endif
+ 
+     data->pthread_id = pthread_self();
+     pthread_setspecific( thread_data_key, data );
+ 
++#ifdef __OpenBSD__
++    if (pthread_stackseg_np( data->pthread_id, &stack ))
++        fatal_error( "cannot get the native thread stack\n" );
++    data->kernel_stack = (char *)stack.ss_sp - stack.ss_size;
++#endif
++
+     reply_pipe = init_thread_pipe( data );
+     SERVER_START_REQ( init_thread )
+     {
+         req->unix_tid  = get_unix_tid();
++#ifdef __OpenBSD__
++        add_signal_tid( req->unix_tid );
++#endif
+         req->teb       = wine_server_client_ptr( teb64 ? (void *)teb64 : (void *)data->teb );
+         req->reply_fd  = reply_pipe;
+         req->wait_fd   = data->wait_fd[1];

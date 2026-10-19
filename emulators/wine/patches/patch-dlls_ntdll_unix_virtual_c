@@ -1,0 +1,566 @@
+OpenBSD specific memory handling:
+(1 MAP_TRYFIXED is defined as 0, so we need to use MAP_FIXED|__MAP_NOREPLACE.
+ mmap() will ignore address hints.
+(2 OpenBSD will kill a process that has %rsp outside of a MAP_STACK mapping.
+ We need to remap thread stacks with MAP_STACK.
+(3 Code patch generation for %gs stubs. Page under edit will be RW, so another
+ thread that tries to execute the stub (by hitting code mid patch) will fault
+ and retry. Stub slots are allocated rel32 away from the faulting code.
+(4 Process cannot ptrace other processes, so NTRead/WriteVirtualMemory has to
+ create a section, map it, and then send APC_COPY_MEMORY. Target process maps
+ same section and copies it. Server only passes the APC.
+
+Index: dlls/ntdll/unix/virtual.c
+--- dlls/ntdll/unix/virtual.c.orig
++++ dlls/ntdll/unix/virtual.c
+@@ -55,6 +55,9 @@
+ #ifdef HAVE_SYS_USER_H
+ # include <sys/user.h>
+ #endif
++#ifdef __OpenBSD__
++# include <machine/vmparam.h>
++#endif
+ #ifdef HAVE_LIBPROCSTAT_H
+ # include <libprocstat.h>
+ #endif
+@@ -596,6 +599,9 @@ static void *anon_mmap_tryfixed( void *start, size_t s
+ 
+ #ifdef MAP_FIXED_NOREPLACE
+     ptr = mmap( start, size, prot, MAP_FIXED_NOREPLACE | MAP_PRIVATE | MAP_ANON | flags, -1, 0 );
++#elif defined(__OpenBSD__) /* OpenBSD defines MAP_TRYFIXED as 0, so be careful if you want to move it down */
++    ptr = mmap( start, size, prot, MAP_FIXED | __MAP_NOREPLACE | MAP_PRIVATE | MAP_ANON | flags, -1, 0 );
++    if (ptr == MAP_FAILED && errno == ENOMEM) errno = EEXIST;
+ #elif defined(MAP_TRYFIXED)
+     ptr = mmap( start, size, prot, MAP_TRYFIXED | MAP_PRIVATE | MAP_ANON | flags, -1, 0 );
+ #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+@@ -2763,6 +2769,9 @@ static void *get_host_addr_space_limit(void)
+ #ifdef __APPLE__
+     /* See MACH_VM_MAX_ADDRESS_RAW in xnu osfmk/mach/arm/vm_param.h */
+     return (void *)0x7ffffe000000;
++#elif defined(__OpenBSD__)
++    /* mmap() will ingore address hints, so the probing below doesn't work */
++    return (void *)(VM_MAXUSER_ADDRESS & ~(UINT_PTR)granularity_mask);
+ #else
+     unsigned int flags = MAP_PRIVATE | MAP_ANON;
+     UINT_PTR addr = (UINT_PTR)1 << 63;
+@@ -3711,7 +3720,12 @@ void virtual_init(void)
+     view_block_start = anon_mmap_alloc( view_block_size, PROT_READ | PROT_WRITE );
+     view_block_end = view_block_start + view_block_size / sizeof(*view_block_start);
+     free_ranges = anon_mmap_alloc( view_block_size, PROT_READ | PROT_WRITE );
++#if defined(__OpenBSD__)
++    pages_vprot = anon_mmap_alloc( ROUND_SIZE( 0, pages_vprot_size * sizeof(*pages_vprot), host_page_mask ),
++        PROT_READ | PROT_WRITE );
++#else
+     pages_vprot = anon_mmap_alloc( pages_vprot_size * sizeof(*pages_vprot), PROT_READ | PROT_WRITE );
++#endif
+ #else
+     /* try to find space in a reserved area for the views and pages protection table */
+     view_block_start = alloc_virtual_heap( 2 * view_block_size + (1U << (32 - page_shift)) );
+@@ -4105,8 +4119,41 @@ static void set_large_address_space(void)
+     user_space_limit = working_set_limit = address_space_limit;
+ }
+ 
++/***********************************************************************
++ *           set_stack_mapping
++ * OpenBSD will kill any process that has a stack pointer outside a
++ * MAP_STACK mapping whenever we have a syscall or page fault.
++ * This means that every stack we hand out must have that flag
++ */
++static void set_stack_mapping( void *start, SIZE_T size)
++{
++#ifdef __OpenBSD__
++    if (mmap( start, size, PROT_READ | PROT_WRITE,
++        MAP_FIXED | MAP_PRIVATE | MAP_ANON | MAP_STACK, -1, 0 ) != start)
++        ERR( "failed to map stack %p-%p: %s\n", start, (char *)start + size, strerror(errno) );
++#endif
++}
+ 
++#ifdef __OpenBSD__
+ /***********************************************************************
++ *           virtual_set_stack_mapping
++ * Make a reserved range usabled as a stack.
++ * This is for stacks created with RtlCreateUserStack()
++ */
++void virtual_set_stack_mapping( void *start, SIZE_T size )
++{
++    sigset_t sigset;
++
++    server_enter_uninterrupted_section( &virtual_mutex, &sigset );
++    set_stack_mapping( start, size );
++    mprotect_range( start, size, 0, 0 );
++    server_leave_uninterrupted_section( &virtual_mutex, &sigset );
++}
++
++#endif
++
++
++/***********************************************************************
+  *           virtual_alloc_first_thread_data
+  */
+ struct thread_data *virtual_alloc_first_thread_data(void)
+@@ -4126,7 +4173,11 @@ struct thread_data *virtual_alloc_first_thread_data(vo
+     status = map_view( &view, NULL, signal_stack_mask + 1 + kernel_stack_size, MEM_TOP_DOWN,
+                        VPROT_READ | VPROT_WRITE | VPROT_COMMITTED, 4 * limit_4g, 0, 0 );
+     assert( !status );
++    set_stack_mapping( view->base, view->size );
+     thread_data = init_thread_data( view->base );
++#ifdef __OpenBSD__
++    thread_data->kernel_stack = thread_data->signal_stack + signal_stack_size;
++#endif
+     pthread_setspecific( thread_data_key, thread_data );
+     return thread_data;
+ }
+@@ -4238,12 +4289,17 @@ struct thread_data *virtual_alloc_thread_data(void)
+     sigset_t sigset;
+     struct file_view *view;
+     struct thread_data *data = NULL;
++#ifdef __OpenBSD__
++    SIZE_T size = signal_stack_mask + 1;
++#else
+     SIZE_T size = signal_stack_mask + 1 + kernel_stack_size;
++#endif
+ 
+     server_enter_uninterrupted_section( &virtual_mutex, &sigset );
+     status = map_view( &view, NULL, size, 0, VPROT_READ | VPROT_WRITE | VPROT_COMMITTED, limit_4g, 0, 0 );
+     if (!status)
+     {
++        set_stack_mapping( view->base, view->size );
+         data = init_thread_data( view->base );
+         VIRTUAL_DEBUG_DUMP_VIEW( view );
+     }
+@@ -4508,6 +4564,7 @@ NTSTATUS virtual_alloc_thread_stack( INITIAL_TEB *stac
+     status = map_view( &view, NULL, size, 0, VPROT_READ | VPROT_WRITE | VPROT_COMMITTED,
+                        limit_low, limit_high, 0 );
+     if (status != STATUS_SUCCESS) goto done;
++    set_stack_mapping( view->base, view->size );
+ 
+ #ifdef VALGRIND_STACK_REGISTER
+     VALGRIND_STACK_REGISTER( view->base, (char *)view->base + view->size );
+@@ -4683,8 +4740,288 @@ static NTSTATUS grow_thread_stack( struct thread_data 
+     return ret;
+ }
+ 
++#ifdef __OpenBSD__
++/* Code patching tooling to handle %gs patches and general OpenBSD-isms */
+ 
++/* We want to block pages on execution while we are writing stubs to them
++ * These tools are required to flip code pages we are about to write our stubs to
++ */
++#define FLIPPED_CODE_PAGES 16 /* A patch touches at most two pages, so 16 should be plenty even if we have multiple in work */
++#define FLIPPED_CODE_PAGE_RETRIES 64 /* How many times process will try to execute same code that is being actively stubbed */
++
++static struct
++{
++    char                *page;      /* page that we made RW (~E) for a moment */
++    unsigned int        retries;    /* how many times someone retried on it already */
++} flipped_code_pages[FLIPPED_CODE_PAGES];
++static unsigned int flipped_code_pos; /* Ring. Next position is to be allocated */
++
+ /***********************************************************************
++ *           is_flipped_code_page
++ * Has this page reached retry limit.
++ * Do we even need to retry it (not a page we are actively flipping so error came from somewhere else)
++ * virtual_mutex must be held by caller.
++ */
++static BOOL is_flipped_code_page( const char *page )
++{
++    unsigned int i;
++
++    for (i = 0; i< FLIPPED_CODE_PAGES; i++)
++    {
++        if (flipped_code_pages[i].page != page) continue;
++        if (flipped_code_pages[i].retries >= FLIPPED_CODE_PAGE_RETRIES) return FALSE; /* retried too many times */
++        flipped_code_pages[i].retries++;
++        return TRUE; /* still has retry chances */
++    }
++    return FALSE; /* not a flipped page, so it is a different issue */
++}
++
++/***********************************************************************
++ *           make_code_page_writable
++ * Lock code page from being executable. It should be ready to write to
++ * virtual_mutex must be held by caller.
++ */
++static BOOL make_code_page_writable( char *page, SIZE_T range )
++{
++    return !mprotect( page, range, PROT_READ | PROT_WRITE );
++}
++
++/***********************************************************************
++ *           restore_code_page_protection
++ * give code page back its old protection and remember them
++ * virtual_mutex must be held by caller.
++ */
++static void restore_code_page_protection( char *page, SIZE_T range )
++{
++    SIZE_T i;
++
++    for (i = 0; i < range; i+= host_page_size)
++    {
++        flipped_code_pages[flipped_code_pos].page = page + i;
++        flipped_code_pages[flipped_code_pos].retries = 0;
++        flipped_code_pos = (flipped_code_pos + 1) % FLIPPED_CODE_PAGES;
++    }
++    mprotect_range( page, range, 0, 0 ); /* re-applies the protection in vprot */
++}
++
++/* Exported methods that are used in %gs mapping */
++
++/***********************************************************************
++ *           virtual_is_readable_page
++ * Whether the page is mapped readable - used in signal handlers to classify faults
++ */
++BOOL virtual_is_readable_page( const void *addr )
++{
++    return !!(get_unix_prot( get_host_page_vprot( addr ) ) & PROT_READ);
++}
++
++/***********************************************************************
++ *           virtual_patch_code
++ * Replace bytes of code at addr to new_bytes.
++ * Returns PATCH_DONE if patch is successful
++ * Returns PATCH_CHANGED if bytes at addr were not equal to old_bytes
++ *      means some other process changed them
++ * Returns PATCH_FAILED if this code can't be patched
++ */
++enum patch_result virtual_patch_code( void *addr, const void *old_bytes, const void *new_bytes, SIZE_T size)
++{
++    struct file_view *view;
++    sigset_t sigset;
++    SIZE_T i;
++
++    char *page = ROUND_ADDR( addr, host_page_mask );
++    SIZE_T range = ROUND_SIZE( addr, size, host_page_mask );
++    enum patch_result ret = PATCH_FAILED;
++
++    server_enter_uninterrupted_section( &virtual_mutex, &sigset );
++    /* not managed by wine - shouldn't be touched */
++    if (!(view = find_view( addr, size )))
++        goto done;
++    /* not a system view */
++    if (view->protect & VPROT_SYSTEM)
++        goto done;
++    /* should be anonymous memory or PE image */
++    if ((view->protect & SEC_FILE) && !(view->protect & SEC_IMAGE))
++        goto done;
++
++    /* should be a plain RX code, a RWX (JIT for example) would lose PROT_WRITE, anything else is not code */
++    for (i = 0; i < range; i += host_page_size)
++    {
++        BYTE vprot = get_host_page_vprot( page + i );
++        int uprot = get_unix_prot( vprot );
++        if((uprot & (PROT_READ | PROT_WRITE | PROT_EXEC)) != (PROT_READ | PROT_EXEC))
++            goto done;
++    }
++
++    /* check if another thread was faster */
++    if (memcmp( addr, old_bytes, size )) ret = PATCH_CHANGED;
++    else if (make_code_page_writable( page, range ))
++    {
++        memcpy( addr, new_bytes, size );
++        restore_code_page_protection( page, range );
++        ret = PATCH_DONE;
++    }
++done:
++    server_leave_uninterrupted_section( &virtual_mutex, &sigset );
++    return ret;
++}
++
++/***********************************************************************
++ * Code Stub creation/handling.
++ * This logic is used purely by %gs handler
++ *
++ * They live in blocks of RX memory, cut into fixed size slots
++ *
++ * block (64 KiB, RX)
++ * | slot 0 | slot 1 | slot 2 | ... | free | ... | slot 512 |
++ *
++ * Fixes slot size make it cheap to go from any address inside of a stub back to its start
++ * Patched instruction reaches its stub with a jump rel32 which has range of +-2GiB.
++ */
++
++#define CODE_STUB_BLOCK_SIZE    0x10000     /* 64 KiB, 512 slots */
++#define CODE_STUB_REACH         0x7ff00000  /* rel32 reach (0x80000000) minus 1MiB margin */
++#define CODE_STUB_MAX_BLOCKS    256         /* 16MiB of stubs. Usually games/apps will take about 2-3k slots on a bad day. With this we have more than enough. */
++#define INT3_TRAPCODE           0xcc        /* int3 that helps us catch stray jumps */
++
++static struct
++{
++    char *base; /* start of the stub block */
++    char *pos;  /* next free slot, everything below is used. */
++} code_stub_blocks[CODE_STUB_MAX_BLOCKS];
++static unsigned int code_stub_block_count;
++
++static BOOL is_within_reach( const char *a, const char *b )
++{
++    return (a > b ? a - b : b - a) < CODE_STUB_REACH;
++}
++
++/***********************************************************************
++ *           virtual_alloc_code_stub
++ * Copy a stub of size at most CODE_STUB_SLOT_SIZE into a free slot within rel32 reach of near.
++ * Returns the slot or NULL.
++ */
++void *virtual_alloc_code_stub( const void *near, const void *stub, SIZE_T size )
++{
++    char *page;
++    unsigned int b, count;
++    struct file_view *view;
++    SIZE_T range;
++    sigset_t sigset;
++    char *retslot = NULL;
++
++    if (size > CODE_STUB_SLOT_SIZE)
++    {
++        WARN( "tried to create code stub of unsupported size %d\n", size);
++        return NULL;
++    }
++
++    server_enter_uninterrupted_section( &virtual_mutex, &sigset );
++    count = code_stub_block_count;
++
++    /* first try to find a block within reach */
++    for ( b = 0; b < count; b++)
++    {
++        char *base = code_stub_blocks[b].base;
++        /* full stub block? */
++        if (code_stub_blocks[b].pos >= base + CODE_STUB_BLOCK_SIZE)
++            continue;
++        /* start within reach? */
++        if (!is_within_reach( base, near ))
++            continue;
++        /* end within reach? */
++        if (!is_within_reach( base + CODE_STUB_BLOCK_SIZE, near))
++            continue;
++        /* found it! */
++        break;
++    }
++
++    if (b == count) /* not found it */
++    {
++        /* make new block within reach of near */
++        ULONG_PTR low = (ULONG_PTR)near > CODE_STUB_REACH ? (ULONG_PTR)near - CODE_STUB_REACH + CODE_STUB_BLOCK_SIZE : 0;
++        ULONG_PTR high = (ULONG_PTR)near + CODE_STUB_REACH - CODE_STUB_BLOCK_SIZE;
++
++        if ( b == CODE_STUB_MAX_BLOCKS )
++        {
++            WARN( "all code stubs exhausted, max stub count %d\n", CODE_STUB_MAX_BLOCKS);
++            goto done; /* out of stub slots, shouldn't happen */
++        }
++        if (map_view( &view, NULL, CODE_STUB_BLOCK_SIZE, 0, VPROT_READ | VPROT_WRITE | VPROT_COMMITTED,
++            low, high, 0 ))
++        {
++            WARN( "no space for code stub near %p\n", near );
++            goto done; /* everything around here is tightly packed */
++        }
++        memset( view->base, INT3_TRAPCODE, CODE_STUB_BLOCK_SIZE ); /* fill everything with INT3 to trap any stray jumps into our codeblock */
++        if (!set_vprot( view, view->base, CODE_STUB_BLOCK_SIZE, VPROT_READ | VPROT_EXEC | VPROT_COMMITTED ))
++        {
++            delete_view( view );
++            goto done;
++        }
++        code_stub_blocks[b].base = code_stub_blocks[b].pos = view->base;
++        /* now that it is defined and set and ready we finally can publish it */
++        __atomic_store_n( &code_stub_block_count, count+1, __ATOMIC_RELEASE );
++        TRACE( "new code stub block %p added for %p\n", view->base, near );
++    }
++
++    /* other threads may be running earlier stubs in these pages, we need to flip them */
++    page = ROUND_ADDR( code_stub_blocks[b].pos, host_page_mask );
++    range = ROUND_SIZE( code_stub_blocks[b].pos, CODE_STUB_SLOT_SIZE, host_page_mask );
++    if (!make_code_page_writable( page, range )) goto done;
++    retslot = code_stub_blocks[b].pos;
++    memset( retslot, INT3_TRAPCODE, CODE_STUB_SLOT_SIZE ); /* if slot contained a previous stub, and in general to catch any stray jumps */
++    memcpy( retslot, stub, size );
++    code_stub_blocks[b].pos += CODE_STUB_SLOT_SIZE;
++    restore_code_page_protection( page, range );
++done:
++    server_leave_uninterrupted_section( &virtual_mutex, &sigset );
++    return retslot;
++}
++
++/***********************************************************************
++ *           virtual_free_code_stub
++ * Gives back a slot that was just allocated. This is used if two threads decided to create same stub and one of them won.
++ * Only last one can be given back.
++ */
++void virtual_free_code_stub( void *slot )
++{
++    unsigned int b;
++    sigset_t sigset;
++    unsigned int count = __atomic_load_n( &code_stub_block_count, __ATOMIC_ACQUIRE );
++
++    server_enter_uninterrupted_section( &virtual_mutex, &sigset );
++    for (b = 0; b < count; b++)
++        if (code_stub_blocks[b].pos == (char *)slot + CODE_STUB_SLOT_SIZE)
++            code_stub_blocks[b].pos = slot;
++    server_leave_uninterrupted_section( &virtual_mutex, &sigset );
++}
++
++/***********************************************************************
++ *           virtual_code_stub_slot
++ * Returns the slot that contains addr. If it isn't in any stub - returns NULL
++ * No lock needed.
++ * Called from signal handlers for every fault.
++ */
++void *virtual_code_stub_slot( const void *addr )
++{
++    unsigned int b;
++    unsigned int count = __atomic_load_n( &code_stub_block_count, __ATOMIC_ACQUIRE );
++
++    for (b = 0; b < count; b++)
++    {
++        char *base = code_stub_blocks[b].base;
++        const char *caddr = (const char*)addr;
++        if (caddr >= base && caddr < base + CODE_STUB_BLOCK_SIZE)
++            return base + ((caddr - base) & ~(CODE_STUB_SLOT_SIZE - 1));
++    }
++    return NULL;
++}
++
++#endif /* __OpenBSD__ */
++
++
++/***********************************************************************
+  *           virtual_handle_fault
+  */
+ NTSTATUS virtual_handle_fault( struct thread_data *data, EXCEPTION_RECORD *rec, void *stack )
+@@ -4741,6 +5078,14 @@ NTSTATUS virtual_handle_fault( struct thread_data *dat
+                 ret = STATUS_SUCCESS;
+         }
+     }
++#ifdef __OpenBSD__
++    /* code stub page that we just locked? retry */
++    else if (err == EXCEPTION_EXECUTE_FAULT)
++    {
++        if ((get_unix_prot( vprot ) & PROT_EXEC) && is_flipped_code_page( page ))
++            ret = STATUS_SUCCESS;
++    }
++#endif
+     mutex_unlock( &virtual_mutex );
+     rec->ExceptionCode = ret;
+     return ret;
+@@ -4857,8 +5202,13 @@ ssize_t virtual_locked_read( int fd, void *addr, size_
+     BOOL has_write_watch = FALSE;
+     int err = EFAULT;
+ 
++    /* OpenBSD read(2) can consume data on EFAULT; check write access first. */
++#ifdef __OpenBSD__
++    ssize_t ret = -1;
++#else
+     ssize_t ret = read( fd, addr, size );
+     if (ret != -1 || use_kernel_writewatch || errno != EFAULT) return ret;
++#endif
+ 
+     server_enter_uninterrupted_section( &virtual_mutex, &sigset );
+     if (!check_write_access( addr, size, &has_write_watch ))
+@@ -4908,8 +5258,13 @@ ssize_t virtual_locked_recvmsg( int fd, struct msghdr 
+     BOOL has_write_watch = FALSE;
+     int err = EFAULT;
+ 
++    /* OpenBSD recvmsg(2) can consume data on EFAULT; check write access first. */
++#ifdef __OpenBSD__
++    ssize_t ret = -1;
++#else
+     ssize_t ret = recvmsg( fd, hdr, flags );
+     if (ret != -1 || use_kernel_writewatch || errno != EFAULT) return ret;
++#endif
+ 
+     server_enter_uninterrupted_section( &virtual_mutex, &sigset );
+     for (i = 0; i < hdr->msg_iovlen; i++)
+@@ -6426,7 +6781,59 @@ NTSTATUS WINAPI NtMapViewOfSection( HANDLE handle, HAN
+                                 offset_ptr, size_ptr, alloc_type, protect, 0 );
+ }
+ 
++#ifdef __OpenBSD__
+ /***********************************************************************
++ *             copy_process_memory
++ * On OpenBSD process can't ptrace non descendants (unless you set kern.global_ptrace=1)
++ * This means target process does the copy thru a section mapped in both processes.
++ * OpenBSD only
++ */
++static unsigned int copy_process_memory( HANDLE process, void *addr, void *buffer,
++                                         SIZE_T size, BOOL write, SIZE_T *copied )
++{
++    union apc_call call;
++    union apc_result result;
++    HANDLE section;
++    unsigned int status;
++    SIZE_T view_size = 0;
++    void *view = NULL;
++    LARGE_INTEGER section_size = { .QuadPart = size };
++
++    *copied = 0;
++
++    /* zero bytes? might as well be success */
++    if (!size) return STATUS_SUCCESS;
++    if ((status = NtCreateSection( &section, SECTION_MAP_READ | SECTION_MAP_WRITE, NULL,
++                                   &section_size, PAGE_READWRITE, SEC_COMMIT, 0 )))
++        return status;
++
++    if (!(status = NtMapViewOfSection( section, NtCurrentProcess(), &view,
++                                       0, 0, NULL,
++                                       &view_size, ViewShare, 0, PAGE_READWRITE )))
++    {
++        if (write) memcpy( view, buffer, size );
++
++        memset( &call, 0, sizeof(call) );
++        call.copy_memory.type          = APC_COPY_MEMORY;
++        call.copy_memory.handle        = wine_server_obj_handle( section );
++        call.copy_memory.addr          = wine_server_client_ptr( addr );
++        call.copy_memory.size          = size;
++        call.copy_memory.write         = write;
++
++        if (!(status = server_queue_process_apc( process, &call, &result )))
++        {
++             status = result.copy_memory.status;
++            *copied = result.copy_memory.size;
++            if (!write) memcpy( buffer, view, *copied );
++        }
++        NtUnmapViewOfSection( NtCurrentProcess(), view );
++    }
++    NtClose( section );
++    return status;
++}
++
++#endif
++/***********************************************************************
+  *             NtMapViewOfSectionEx   (NTDLL.@)
+  *             ZwMapViewOfSectionEx   (NTDLL.@)
+  */
+@@ -6854,6 +7261,9 @@ NTSTATUS WINAPI NtReadVirtualMemory( HANDLE process, c
+     }
+     else
+     {
++#ifdef __OpenBSD__
++        status = copy_process_memory( process, (void *)addr, buffer, size, FALSE, &size );
++#else
+         SERVER_START_REQ( read_process_memory )
+         {
+             req->handle = wine_server_obj_handle( process );
+@@ -6862,6 +7272,7 @@ NTSTATUS WINAPI NtReadVirtualMemory( HANDLE process, c
+             if ((status = wine_server_call( req ))) size = 0;
+         }
+         SERVER_END_REQ;
++#endif
+     }
+     if (bytes_read) *bytes_read = size;
+     return status;
+@@ -6879,6 +7290,9 @@ NTSTATUS WINAPI NtWriteVirtualMemory( HANDLE process, 
+ 
+     if (virtual_check_buffer_for_read( buffer, size ))
+     {
++#ifdef __OpenBSD__
++        status = copy_process_memory( process, (void *)addr, buffer, size, TRUE, &size );
++#else
+         SERVER_START_REQ( write_process_memory )
+         {
+             req->handle     = wine_server_obj_handle( process );
+@@ -6888,6 +7302,7 @@ NTSTATUS WINAPI NtWriteVirtualMemory( HANDLE process, 
+             size = reply->written;
+         }
+         SERVER_END_REQ;
++#endif
+     }
+     else
+     {

@@ -1,0 +1,14 @@
+nl_langinfo(CODESET) returns US-ASCII in the C locale. Wine strips punctuation
+before looking name up, so we need to add it manually as USASCII
+
+Index: dlls/ntdll/unix/env.c
+--- dlls/ntdll/unix/env.c.orig
++++ dlls/ntdll/unix/env.c
+@@ -274,6 +274,7 @@ static const struct { const char *name; UINT cp; } cha
+     { "SHIFTJIS", 932 },
+     { "SJIS", 932 },
+     { "TIS620", 28601 },
++    { "USASCII", 20127 },
+     { "UTF8", CP_UTF8 }
+ };
+ 

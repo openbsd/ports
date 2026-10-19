@@ -1,0 +1,20 @@
+Index: dlls/nsiproxy.sys/tcp.c
+--- dlls/nsiproxy.sys/tcp.c.orig
++++ dlls/nsiproxy.sys/tcp.c
+@@ -52,7 +52,16 @@
+ #endif
+ 
+ #ifdef HAVE_NETINET_TCP_VAR_H
++#ifdef __OpenBSD__
++#include <netinet/tcp.h>
++#include <netinet/tcp_timer.h>
++#endif
+ #include <netinet/tcp_var.h>
++#endif
++
++#if defined(__OpenBSD__) && !defined(TCP_TIME)
++/* tcp_timer.h uses TCP_TIME, but tcp_var.h defines it only for the kernel. */
++#define TCP_TIME(sec) ((sec) * 1000)
+ #endif
+ 
+ #ifdef HAVE_SYS_SYSCTL_H

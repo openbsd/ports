@@ -1,0 +1,16 @@
+OpenBSD will kill any process that has %rsp outside of a MAP_STACK at syscall
+or page fault. Upstream Wine doesn't mark its stacks.
+
+Index: dlls/ntdll/unix/process.c
+--- dlls/ntdll/unix/process.c.orig
++++ dlls/ntdll/unix/process.c
+@@ -1816,6 +1816,9 @@ NTSTATUS WINAPI NtSetInformationProcess( HANDLE handle
+                                        MEM_RESERVE, PAGE_READWRITE );
+         if (!ret)
+         {
++#ifdef __OpenBSD__
++            virtual_set_stack_mapping( addr, reserve );
++#endif
+ #ifdef VALGRIND_STACK_REGISTER
+             VALGRIND_STACK_REGISTER( addr, (char *)addr + reserve );
+ #endif

@@ -1,0 +1,21 @@
+Index: server/process.h
+--- server/process.h.orig
++++ server/process.h
+@@ -21,6 +21,7 @@
+ #ifndef __WINE_SERVER_PROCESS_H
+ #define __WINE_SERVER_PROCESS_H
+ 
++#include <stdint.h>
+ #include "object.h"
+ 
+ struct atom_table;
+@@ -90,6 +91,9 @@ struct process
+     struct list          rawinput_entry;  /* entry in the rawinput process list */
+     struct list          kernel_object;   /* list of kernel object pointers */
+     struct pe_image_info image_info;      /* main exe image info */
++#ifdef __OpenBSD__
++    uint64_t            *signal_targets;  /* pending (signal, Unix tid) pairs */
++#endif
+ };
+ 
+ /* process functions */

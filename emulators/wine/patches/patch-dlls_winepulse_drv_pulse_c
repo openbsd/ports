@@ -1,0 +1,76 @@
+Fixes pulseaudio stutted due to coarse OpenBSD kernel timer.
+
+Index: dlls/winepulse.drv/pulse.c
+--- dlls/winepulse.drv/pulse.c.orig
++++ dlls/winepulse.drv/pulse.c
+@@ -169,6 +169,7 @@ static void free_phys_device_lists(void)
+             free(dev->name);
+             free(dev);
+         }
++        list_init(*list);
+     } while (*(++list));
+ }
+ 
+@@ -244,7 +245,11 @@ static NTSTATUS pulse_process_attach(void *args)
+ 
+     pthread_mutexattr_init(&attr);
+     pthread_mutexattr_setprotocol(&attr, PTHREAD_PRIO_INHERIT);
++
++#ifdef PTHREAD_MUTEX_ROBUST
++    /* OpenBSD has no PTHREAD_MUTEX_ROBUST */
+     pthread_mutexattr_setrobust(&attr, PTHREAD_MUTEX_ROBUST);
++#endif
+ 
+     if (pthread_mutex_init(&pulse_mutex, &attr) != 0)
+         pthread_mutex_init(&pulse_mutex, NULL);
+@@ -1081,7 +1086,12 @@ static HRESULT pulse_stream_connect(struct pulse_strea
+     /* PulseAudio will fill in correct values */
+     attr.minreq = attr.fragsize = period_bytes;
+     attr.tlength = period_bytes * 3;
++#ifdef __OpenBSD__
++    /* Let PulseAudio sndio queue more than the app buffer. This is because OpenBSD's sndio pulls data in large bursts.*/
++    attr.maxlength = -1;
++#else
+     attr.maxlength = stream->bufsize_frames * pa_frame_size(&stream->ss);
++#endif
+     attr.prebuf = pa_frame_size(&stream->ss);
+     dump_attr(&attr);
+ 
+@@ -1630,11 +1640,22 @@ static void pulse_timer_loop(void *args)
+                     INT32 adjust = last_time + stream->mmdev_period_usec - now;
+ 
+                     adv_usec = now - last_time;
+-
++#ifdef __OpenBSD__
++                    /* Just the else clause changed
++                     * With OpenBSD's 100HZ clock the sleeps get rounded up to 10ms ticks.
++                     * Letting them adjust down to -period will allow zero delay.
++                     * This will let a late wakeup catch up period by period
++                     */
+                     if(adjust > ((INT32)(stream->mmdev_period_usec / 2)))
+                         adjust = stream->mmdev_period_usec / 2;
++                    else if(adjust < -((INT32)(stream->mmdev_period_usec)))
++                        adjust = -1 * stream->mmdev_period_usec;
++#else
++                    if(adjust > ((INT32)(stream->mmdev_period_usec / 2)))
++                        adjust = stream->mmdev_period_usec / 2;
+                     else if(adjust < -((INT32)(stream->mmdev_period_usec / 2)))
+                         adjust = -1 * stream->mmdev_period_usec / 2;
++#endif
+ 
+                     delay.QuadPart = -(stream->mmdev_period_usec + adjust) * 10;
+ 
+@@ -1658,7 +1679,13 @@ static void pulse_timer_loop(void *args)
+             }
+             else
+             {
++#ifdef __OpenBSD__
++                /* Since we now allowed 0 above, we now need to keep the time we owe while the app refills */
++                if (!stream->started)
++                    last_time = now;
++#else
+                 last_time = now;
++#endif
+                 delay.QuadPart = -stream->mmdev_period_usec * 10;
+             }
+         }

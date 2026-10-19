@@ -1,0 +1,53 @@
+This is an h file for gs patcher. It is here to incapsulate gs logic into
+a separate file that is easy to port from wine release to wine release.
+
+Index: dlls/ntdll/unix/gs_openbsd.h
+--- dlls/ntdll/unix/gs_openbsd.h.orig
++++ dlls/ntdll/unix/gs_openbsd.h
+@@ -0,0 +1,46 @@
++/*
++ * OpenBSD patcher for %gs calls
++ *
++ * Copyright (C) 2026 Andrii Yukhymchak
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#ifndef __WINE_NTDLL_UNIX_GS_OPENBSD_H
++#define __WINE_NTDLL_UNIX_GS_OPENBSD_H
++
++#if defined(__OpenBSD__)
++
++/* OpenBSD has no way to set %gs in userland so there is no way to point at TEB without switching away from %gs */
++
++/* offset of the TEB pointer's TLS slot from %fs base. Need to get it every time we init, but it doesn't change after that. */
++extern long teb_tls_offset;
++
++/* this assembly command lets us patch accesses to %gs that we control. Has to be two steps because offset has to be calculated */
++#define LOAD_TEB(reg)   "movq " __ASM_NAME("teb_tls_offset") "(%rip)," reg "\n\t" \
++                        "movq %fs:(" reg ")," reg "\n\t"
++
++/* find the TLS slot */
++extern void gs_init_process(void);
++/* store the TEB pointer */
++extern void gs_set_thread_teb( TEB *teb );
++/* handle gs page fault */
++extern BOOL gs_handle_fault( ucontext_t *ucontext, ULONG_PTR fault_addr );
++/* leave stub if thread has stopped in it during fault. TRUE if it was in a gs stub */
++extern BOOL gs_leave_stub( ucontext_t *ucontext );
++
++
++#endif /* #if defined(__OpenBSD__) */
++#endif /* __WINE_NTDLL_UNIX_GS_OPENBSD_H */

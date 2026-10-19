@@ -1,0 +1,59 @@
+These methods in headerfile help us create location in memory for stubs and
+also protect it for Write while removing Execution, so if something tries to
+execute while we are writing, it has to retry.
+
+Index: dlls/ntdll/unix/unix_private.h
+--- dlls/ntdll/unix/unix_private.h.orig
++++ dlls/ntdll/unix/unix_private.h
+@@ -122,6 +122,9 @@ struct thread_data
+     BOOL         suspend;           /* suspend on startup */
+     BOOL         filesys_redir;     /* WOW64_TLS_FILESYSREDIR before the TEB is created */
+     pthread_t    pthread_id;        /* pthread thread id */
++#ifdef __OpenBSD__
++    void        *kernel_stack;
++#endif
+     void        *jmp_buf;           /* setjmp buffer for exception handling */
+     void        *start;             /* thread entry point */
+     void        *param;             /* thread entry point parameter */
+@@ -268,6 +271,7 @@ extern void process_exit_wrapper( int status ) DECLSPE
+ extern void server_init_process( struct thread_data *data );
+ extern void server_init_process_done(void);
+ extern void server_init_thread( struct thread_data *data );
++extern void virtual_set_stack_mapping( void *start, SIZE_T size );
+ extern int server_pipe( int fd[2] );
+ 
+ extern void fpux_to_fpu( I386_FLOATING_SAVE_AREA *fpu, const XSAVE_FORMAT *fpux );
+@@ -345,6 +349,21 @@ extern void *get_builtin_so_handle( void *module );
+ extern NTSTATUS set_builtin_unixlib_name( void *module, const char *name );
+ extern BOOL is_emulated_code( ULONG_PTR ptr );
+ 
++#ifdef __OpenBSD__
++/* code patching for OpenBSD cases */
++enum patch_result
++{
++    PATCH_DONE,         /* the code has now new bytes */
++    PATCH_CHANGED,      /* the code wasn't the expected old byte, another thread already updated it */
++    PATCH_FAILED        /* this code cannot be patched */
++};
++#define CODE_STUB_SLOT_SIZE 128 /* bytes per stub we generate for %gs patching, has to be power of 2 */
++extern enum patch_result virtual_patch_code( void *addr, const void *old_bytes, const void *new_bytes, SIZE_T size );
++extern void *virtual_alloc_code_stub( const void *near, const void *stub, SIZE_T size );
++extern void virtual_free_code_stub( void *slot );
++extern void *virtual_code_stub_slot( const void *addr );
++#endif
++
+ extern NTSTATUS get_thread_ldt_entry( HANDLE handle, THREAD_DESCRIPTOR_INFORMATION *info, ULONG len );
+ extern void *get_native_context( CONTEXT *context );
+ extern void *get_wow_context( CONTEXT *context );
+@@ -455,7 +474,11 @@ static inline void ascii_to_unicode( WCHAR *dst, const
+ 
+ static inline void *get_kernel_stack( struct thread_data *data )
+ {
++#ifdef __OpenBSD__
++    return data->kernel_stack;
++#else
+     return data->signal_stack + signal_stack_size;
++#endif
+ }
+ 
+ static inline struct teb_data *get_teb_data( struct thread_data *data )

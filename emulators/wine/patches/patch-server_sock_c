@@ -1,0 +1,42 @@
+Index: server/sock.c
+--- server/sock.c.orig
++++ server/sock.c
+@@ -1400,7 +1400,23 @@ static void sock_poll_event( struct fd *fd, int event 
+ 
+     if (event & (POLLERR | POLLHUP))
+         error = sock_error( sock, &event );
++#ifdef __OpenBSD__
++    else if (sock->state == SOCK_CONNECTING && (event & POLLOUT))
++    {
++        socklen_t len = sizeof(error);
+ 
++        /* connect(2): check SO_ERROR on write readiness; kqueue(2) can
++         * report socket errors without EV_EOF. A successful retry may
++         * still have a cached error from the previous attempt. */
++        getsockopt( get_unix_fd(fd), SOL_SOCKET, SO_ERROR, &error, &len );
++        if (error)
++        {
++            sock->errors[AFD_POLL_BIT_CONNECT_ERR] = error;
++            event |= POLLERR;
++        }
++    }
++#endif
++
+     switch (sock->state)
+     {
+     case SOCK_UNCONNECTED:
+@@ -4052,7 +4068,13 @@ DECL_HANDLER(send_socket)
+          * asyncs will not consume all available space; if there's no space
+          * available, the current request won't be immediately satiable.
+          */
+-        if ((!force_async && sock->nonblocking) || check_fd_events( sock->fd, POLLOUT ))
++        if ((!force_async && sock->nonblocking) ||
++#ifdef __OpenBSD__
++            /* poll(2) does not report unconnected TCP sockets as writable.
++             * Let sendmsg() return ENOTCONN instead of waiting forever. */
++            sock->state == SOCK_UNCONNECTED ||
++#endif
++            check_fd_events( sock->fd, POLLOUT ))
+         {
+             /* Give the client opportunity to complete synchronously.
+              * If it turns out that the I/O request is not actually immediately satiable,

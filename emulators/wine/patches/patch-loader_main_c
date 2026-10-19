@@ -1,0 +1,56 @@
+Add a 32 byte TLS slot to the loader. It is located just below %fs thread
+pointer and holds TEB pointer plus two scratch slots for registers
+that are used in %gs patching.
+The slot has to be in the loader since ld.so refuses static TLS in
+dlopen() libraries like ntdll.so.
+
+Index: loader/main.c
+--- loader/main.c.orig
++++ loader/main.c
+@@ -126,6 +126,12 @@ static const char *get_self_exe(void)
+ {
+ #if defined(__linux__) || defined(__FreeBSD_kernel__) || defined(__NetBSD__)
+     return "/proc/self/exe";
++#elif defined(__OpenBSD__)
++    size_t path_size = PATH_MAX;
++    char *path = malloc( path_size );
++    if (getexecpath(path, path_size) == 0)
++        return path;
++    free( path );
+ #elif defined (__FreeBSD__) || defined(__DragonFly__)
+     static int pathname[] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
+     size_t path_size = PATH_MAX;
+@@ -163,6 +169,33 @@ static void *try_dlopen( const char *argv0 )
+     return handle;
+ }
+ 
++#if defined(__OpenBSD__)
++
++/* OpenBSD can't use %gs, so %gs cannot point at the TEB.
++ * ntdll keeps pointer to the TEB here instead as a static TLS variable.
++ * All threads should have TEB pointer at the same offset. Static TLS with fixed offset only exists for the main executable.
++ * This is because ld.so refuses it in libraries loaded by dlopen, like ntdll.so - so variable lives in the loader
++ * It is defined in asm because clang uses emulated TLS on OpenBSD
++ */
++__asm__(    ".pushsection .tbss,\"awT\",@nobits\n\t"        /* .tbss: TLS, zero-init in every thread */
++            ".p2align 4\n"                                  /* 16-byte aligned */
++            "wine_teb_tls_slot:\n\t"
++            ".zero 32 \n\t"                                 /* four words - TEB pointer of the current thread,
++                                                                and space for %gs stub to save a register
++                                                                and now a second one*/
++            ".type wine_teb_tls_slot,@tls_object\n\t"
++            ".size wine_teb_tls_slot,32\n\t"
++            ".popsection" );
++
++/* offset of the slot from the %fs base. The value should be negative, because TLS blocks of the executable are just below the thread pointer */
++__attribute((visibility("default"))) long __wine_teb_tls_offset(void)
++{
++    long ret;
++    __asm__( "movq $wine_teb_tls_slot@tpoff,%0" : "=r" (ret) ); /* @tpoff - offset fixed at link time */
++    return ret;
++}
++
++#endif
+ 
+ /**********************************************************************
+  *           main

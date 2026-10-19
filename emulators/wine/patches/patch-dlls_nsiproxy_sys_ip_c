@@ -1,0 +1,21 @@
+OpenBSD does not have ip6s_exthdrtoolong in ip6stat
+
+Index: dlls/nsiproxy.sys/ip.c
+--- dlls/nsiproxy.sys/ip.c.orig
++++ dlls/nsiproxy.sys/ip.c
+@@ -786,8 +786,15 @@ static NTSTATUS ipv6_ipstats_get_all_parameters( const
+         if (sysctl( mib, ARRAY_SIZE(mib), &ip_stat, &needed, NULL, 0 ) == -1) return STATUS_NOT_SUPPORTED;
+ 
+         dyn.in_recv = ip_stat.ip6s_total;
++#if defined(__OpenBSD__)
++        /* OpenBSD's ip6stat has no ip6s_exthdrtoolong */
+         dyn.in_hdr_errs = ip_stat.ip6s_tooshort + ip_stat.ip6s_toosmall + ip_stat.ip6s_badvers +
++            ip_stat.ip6s_badoptions + ip_stat.ip6s_toomanyhdr;
++#else
++        dyn.in_hdr_errs = ip_stat.ip6s_tooshort + ip_stat.ip6s_toosmall + ip_stat.ip6s_badvers +
+             ip_stat.ip6s_badoptions + ip_stat.ip6s_exthdrtoolong + ip_stat.ip6s_toomanyhdr;
++#endif
++
+         dyn.in_addr_errs = ip_stat.ip6s_cantforward + ip_stat.ip6s_badscope + ip_stat.ip6s_notmember;
+         dyn.fwd_dgrams = ip_stat.ip6s_forward;
+         dyn.in_discards = ip_stat.ip6s_fragdropped;

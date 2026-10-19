@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec ${LOCALBASE}/bin/clang-${MODCLANG_VERSION} \
+    -resource-dir "${CLANG_PE_RESOURCE}" "$@"

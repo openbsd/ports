@@ -1,0 +1,49 @@
+This is an h file for signal on ntdll. This file and c file is here to simplify
+portability and migrations with upstream.
+
+Index: dlls/ntdll/unix/sig_openbsd.h
+--- dlls/ntdll/unix/sig_openbsd.h.orig
++++ dlls/ntdll/unix/sig_openbsd.h
+@@ -0,0 +1,42 @@
++/*
++ * OpenBSD cross process thread signals
++ *
++ * Copyright (C) 2026 Andrii Yukhymchak
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#ifndef __WINE_NTDLL_UNIX_SIG_OPENBSD_H
++#define __WINE_NTDLL_UNIX_SIG_OPENBSD_H
++
++#ifdef __OpenBSD__
++
++/* OpenBSD can't signal one thread of another process, so a signal from the server
++ * arrives to an arbitrary thread of this process. We catch it and re-emit.
++ */
++
++/* the threads a forwarded signal can be passed to */
++extern void add_signal_tid( int tid );
++extern void remove_signal_tid(void);
++extern BOOL is_signal_thread(void);
++
++/* On SIGUSR2, drain server requests and relay SIGINT, SIGUSR1 or SIGQUIT to registered threads. */
++extern void forward_thread_signal(void);
++
++/* map the array the server leaves the targets in. server_dir - its directory */
++extern void init_signal_targets( const char *server_dir, unsigned int process_id );
++
++#endif /* __OpenBSD__ */
++#endif /* __WINE_NTDLL_UNIX_SIG_OPENBSD_H */

@@ -1,0 +1,78 @@
+OpenBSD X server uses XFREE86 set, not evdev, and Wine only has evdev defined.
+We define XFREE86 keycodes and map them to scancodes.
+
+Index: dlls/winex11.drv/keyboard.c
+--- dlls/winex11.drv/keyboard.c.orig
++++ dlls/winex11.drv/keyboard.c
+@@ -227,6 +227,71 @@ static WORD keyc2scan( unsigned int keycode, unsigned 
+         if (state & ControlMask) return 0x0146; /* X46 / VK_CANCEL */
+         return 0x021d; /* Y1D / VK_PAUSE */
+     }
++#elif __OpenBSD__
++    #define KEY_XFREE86_SYRQ    92
++    #define KEY_XFREE86_LSGT    94
++    #define KEY_XFREE86_FK11    95
++    #define KEY_XFREE86_FK12    96
++    #define KEY_XFREE86_HOME    97
++    #define KEY_XFREE86_UP      98
++    #define KEY_XFREE86_PGUP    99
++    #define KEY_XFREE86_LEFT    100
++    #define KEY_XFREE86_RGHT    102
++    #define KEY_XFREE86_END     103
++    #define KEY_XFREE86_DOWN    104
++    #define KEY_XFREE86_PGDN    105
++    #define KEY_XFREE86_INS     106
++    #define KEY_XFREE86_DELE    107
++    #define KEY_XFREE86_KPEN    108
++    #define KEY_XFREE86_RCTL    109
++    #define KEY_XFREE86_PAUS    110
++    #define KEY_XFREE86_PRSC    111
++    #define KEY_XFREE86_KPDV    112
++    #define KEY_XFREE86_RALT    113
++    #define KEY_XFREE86_BRK     114
++    #define KEY_XFREE86_LWIN    115
++    #define KEY_XFREE86_RWIN    116
++    #define KEY_XFREE86_MENU    117
++    #define KEY_XFREE86_FK13    118
++    #define KEY_XFREE86_FK14    119
++    #define KEY_XFREE86_FK15    120
++    #define KEY_XFREE86_FK16    121
++    #define KEY_XFREE86_FK17    122
++
++    switch (keycode)
++    {
++    case KEY_XFREE86_SYRQ: return 0x0054; /* T54 / VK_SNAPSHOT */
++    case KEY_XFREE86_LSGT: return 0x0056; /* T56 / VK_OEM_102 */
++    case KEY_XFREE86_FK11: return 0x0057; /* T57 / VK_F11 */
++    case KEY_XFREE86_FK12: return 0x0058; /* T58 / VK_F12 */
++    case KEY_XFREE86_HOME: return 0x0147; /* X47 / VK_HOME */
++    case KEY_XFREE86_UP  : return 0x0148; /* X48 / VK_UP */
++    case KEY_XFREE86_PGUP: return 0x0149; /* X49 / VK_PRIOR */
++    case KEY_XFREE86_LEFT: return 0x014b; /* X4B / VK_LEFT */
++    case KEY_XFREE86_RGHT: return 0x014d; /* X4D / VK_RIGHT */
++    case KEY_XFREE86_END : return 0x014f; /* X4F / VK_END */
++    case KEY_XFREE86_DOWN: return 0x0150; /* X50 / VK_DOWN */
++    case KEY_XFREE86_PGDN: return 0x0151; /* X51 / VK_NEXT */
++    case KEY_XFREE86_INS : return 0x0152; /* X52 / VK_INSERT */
++    case KEY_XFREE86_DELE: return 0x0153; /* X53 / VK_DELETE */
++    case KEY_XFREE86_KPEN: return 0x011c; /* X1C / VK_RETURN */
++    case KEY_XFREE86_RCTL: return 0x011d; /* X1D / VK_RCONTROL */
++    case KEY_XFREE86_PRSC: return 0x0137; /* X37 / VK_SNAPSHOT */
++    case KEY_XFREE86_KPDV: return 0x0135; /* X35 / VK_DIVIDE */
++    case KEY_XFREE86_RALT: return 0x0138; /* X38 / VK_RMENU */
++    case KEY_XFREE86_BRK : return 0x0146; /* X46 / VK_CANCEL */
++    case KEY_XFREE86_LWIN: return 0x015b; /* X5B / VK_LWIN */
++    case KEY_XFREE86_RWIN: return 0x015c; /* X5C / VK_RWIN */
++    case KEY_XFREE86_MENU: return 0x015d; /* X5D / VK_APPS */
++    case KEY_XFREE86_FK13: return 0x0064; /* T64 / VK_F13 */
++    case KEY_XFREE86_FK14: return 0x0065; /* T65 / VK_F14 */
++    case KEY_XFREE86_FK15: return 0x0066; /* T66 / VK_F15 */
++    case KEY_XFREE86_FK16 : return 0x0067; /* T67 / VK_F16 */
++    case KEY_XFREE86_FK17: return 0x0068; /* T68 / VK_F17 */
++    case KEY_XFREE86_PAUS:
++        if (state & ControlMask) return 0x0146; /* X46 / VK_CANCEL */
++        return 0x021d; /* Y1D / VK_PAUSE */
++    }
+ #else
+     FIXME( "evdev keycodes not available, scancode mapping is going to be broken\n" );
+ #endif

@@ -1,0 +1,22 @@
+OpenBSD dnsapi can't always report DNS servers. It may return 
+DNS_ERROR_NO_DNS_SERVERS or ERROR_NOT_SUPPORTED (no unix lib or no server list)
+We report the adapter without DNS servers instead of failing.
+This is mostly for Chromium/Electron.
+
+Index: dlls/iphlpapi/iphlpapi_main.c
+--- dlls/iphlpapi/iphlpapi_main.c.orig
++++ dlls/iphlpapi/iphlpapi_main.c
+@@ -1222,7 +1222,13 @@ static DWORD dns_info_alloc( IP_ADAPTER_ADDRESSES *aa,
+                 }
+             }
+             if (servers != (DNS_ADDR_ARRAY *)buf) free( servers );
++#ifdef __OpenBSD__
++            /* no DNS configuration available: report the adapter without DNS servers */
++            if (err && err != DNS_ERROR_NO_DNS_SERVERS && err != ERROR_NOT_SUPPORTED) return err;
++#else
+             if (err) return err;
++#endif
++
+         }
+ 
+         aa->DnsSuffix = HeapAlloc( GetProcessHeap(), 0, MAX_DNS_SUFFIX_STRING_LENGTH * sizeof(WCHAR) );

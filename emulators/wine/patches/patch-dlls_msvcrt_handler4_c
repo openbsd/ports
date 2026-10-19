@@ -1,0 +1,92 @@
+Work around premature exception-object cleanup during a GOG Galaxy C++ rethrow.
+
+The core showed a NULL dereference in ucrtbase's __CxxUnregisterExceptionObject,
+inside the inlined _FindAndUnlinkFrame. The frame being unlinked had already
+been removed from the frame-info list.
+
+Tracing showed that unwinding to the inner __EXCEPT handler ran the outer
+__FINALLY cleanup before ctx.rethrow was set, then cleaned up the same frame
+again. Move the inner handler into a non-inlined function so it has a separate
+unwind frame.
+
+This is a workaround for the observed nested-handler unwinding behaviour,
+not a fix for its underlying cause.
+
+Index: dlls/msvcrt/handler4.c
+--- dlls/msvcrt/handler4.c.orig
++++ dlls/msvcrt/handler4.c
+@@ -398,9 +398,42 @@ static void CALLBACK cxx_catch_cleanup(BOOL normal, vo
+     FlsSetValue(fls_index, (void*)(DWORD_PTR)ctx->unwind_state);
+ }
+ 
+-static void* WINAPI call_catch_block4(EXCEPTION_RECORD *rec)
++/* Keep the rethrow target in a separate frame so unwinding to its handler
++ * cannot run the caller's exception-object cleanup prematurely. */
++static DECLSPEC_NOINLINE void *call_catch_handler4(EXCEPTION_RECORD *rec, cxx_catch_ctx *ctx)
+ {
+     EXCEPTION_RECORD *untrans_rec = (void*)rec->ExceptionInformation[4];
++    EXCEPTION_RECORD *prev_rec = ctx->prev_rec;
++    void *ret_addr = NULL;
++
++    __TRY
++    {
++        ret_addr = call_catch_handler( rec );
++    }
++    __EXCEPT_CTX(cxx_rethrow_filter, ctx)
++    {
++        TRACE("detect rethrow: exception code: %lx\n", prev_rec->ExceptionCode);
++        ctx->rethrow = TRUE;
++        FlsSetValue(fls_index, (void*)(DWORD_PTR)ctx->search_state);
++
++        if (untrans_rec)
++        {
++            __DestructExceptionObject(prev_rec);
++            RaiseException(untrans_rec->ExceptionCode, untrans_rec->ExceptionFlags,
++                    untrans_rec->NumberParameters, untrans_rec->ExceptionInformation);
++        }
++        else
++        {
++            RaiseException(prev_rec->ExceptionCode, prev_rec->ExceptionFlags,
++                    prev_rec->NumberParameters, prev_rec->ExceptionInformation);
++        }
++    }
++    __ENDTRY
++    return ret_addr;
++}
++
++static void* WINAPI call_catch_block4(EXCEPTION_RECORD *rec)
++{
+     EXCEPTION_RECORD *prev_rec = (void*)rec->ExceptionInformation[6];
+     CONTEXT *context = (void*)rec->ExceptionInformation[7];
+     EXCEPTION_POINTERS ep = { prev_rec, context };
+@@ -415,29 +448,7 @@ static void* WINAPI call_catch_block4(EXCEPTION_RECORD
+     (*__processing_throw())--;
+     __TRY
+     {
+-        __TRY
+-        {
+-            ret_addr = call_catch_handler( rec );
+-        }
+-        __EXCEPT_CTX(cxx_rethrow_filter, &ctx)
+-        {
+-            TRACE("detect rethrow: exception code: %lx\n", prev_rec->ExceptionCode);
+-            ctx.rethrow = TRUE;
+-            FlsSetValue(fls_index, (void*)(DWORD_PTR)ctx.search_state);
+-
+-            if (untrans_rec)
+-            {
+-                __DestructExceptionObject(prev_rec);
+-                RaiseException(untrans_rec->ExceptionCode, untrans_rec->ExceptionFlags,
+-                        untrans_rec->NumberParameters, untrans_rec->ExceptionInformation);
+-            }
+-            else
+-            {
+-                RaiseException(prev_rec->ExceptionCode, prev_rec->ExceptionFlags,
+-                        prev_rec->NumberParameters, prev_rec->ExceptionInformation);
+-            }
+-        }
+-        __ENDTRY
++        ret_addr = call_catch_handler4(rec, &ctx);
+     }
+     __FINALLY_CTX(cxx_catch_cleanup, &ctx)
+ 

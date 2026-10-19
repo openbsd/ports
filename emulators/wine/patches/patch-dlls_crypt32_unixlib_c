@@ -1,0 +1,13 @@
+OpenBSD uses cert.pem for SSL, wine needs to know about it
+
+Index: dlls/crypt32/unixlib.c
+--- dlls/crypt32/unixlib.c.orig
++++ dlls/crypt32/unixlib.c
+@@ -952,6 +952,7 @@ static const char * const CRYPT_knownLocations[] = {
+  "/usr/local/share/certs/",
+  "/etc/sfw/openssl/certs",
+  "/etc/security/cacerts",  /* Android */
++ "/etc/ssl/cert.pem",      /* OpenBSD */
+ };
+ 
+ static void load_root_certs(void)

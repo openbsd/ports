@@ -1,0 +1,49 @@
+Index: include/wine/server_protocol.h
+--- include/wine/server_protocol.h.orig
++++ include/wine/server_protocol.h
+@@ -498,7 +498,8 @@ enum apc_type
+     APC_MAP_VIEW_EX,
+     APC_UNMAP_VIEW,
+     APC_CREATE_THREAD,
+-    APC_DUP_HANDLE
++    APC_DUP_HANDLE,
++    APC_COPY_MEMORY
+ };
+ 
+ struct user_apc
+@@ -636,6 +637,14 @@ union apc_call
+         unsigned int     attributes;
+         unsigned int     options;
+     } dup_handle;
++    struct
++    {
++        enum apc_type    type;
++        obj_handle_t     handle;
++        client_ptr_t     addr;
++        mem_size_t       size;
++        int              write;
++    } copy_memory;
+ };
+ 
+ union apc_result
+@@ -748,6 +757,12 @@ union apc_result
+         enum apc_type    type;
+         unsigned int     status;
+     } break_process;
++    struct
++    {
++        enum apc_type    type;
++        unsigned int     status;
++        mem_size_t       size;
++    } copy_memory;
+ };
+ 
+ enum irp_type
+@@ -7184,6 +7199,6 @@ union generic_reply
+     struct alpc_create_port_reply alpc_create_port_reply;
+ };
+ 
+-#define SERVER_PROTOCOL_VERSION 962
++#define SERVER_PROTOCOL_VERSION 964
+ 
+ #endif /* __WINE_WINE_SERVER_PROTOCOL_H */

@@ -1,0 +1,28 @@
+Index: dlls/ntdll/Makefile.in
+--- dlls/ntdll/Makefile.in.orig
++++ dlls/ntdll/Makefile.in
+@@ -5,7 +5,7 @@ IMPORTLIB = ntdll
+ IMPORTS   = $(SYMCRYPT_PE_LIBS) $(ZLIB_PE_LIBS) $(MUSL_PE_LIBS)
+ EXTRAINCL = $(SYMCRYPT_PE_CFLAGS) $(ZLIB_PE_CFLAGS)
+ UNIX_CFLAGS  = $(HWLOC_CFLAGS)
+-UNIX_LIBS    = $(IOKIT_LIBS) $(COREFOUNDATION_LIBS) $(CORESERVICES_LIBS) $(RT_LIBS) $(PTHREAD_LIBS) $(I386_LIBS) $(PROCSTAT_LIBS) $(HWLOC_LIBS)
++UNIX_LIBS    = $(IOKIT_LIBS) $(COREFOUNDATION_LIBS) $(CORESERVICES_LIBS) $(RT_LIBS) $(PTHREAD_LIBS) $(I386_LIBS) $(PROCSTAT_LIBS) $(HWLOC_LIBS) $(UNWIND_LIBS)
+ 
+ EXTRADLLFLAGS = -nodefaultlibs
+ i386_EXTRADLLFLAGS = -Wl,--image-base,0x7bc00000
+@@ -54,6 +54,7 @@ SOURCES = \
+ 	unix/debug.c \
+ 	unix/env.c \
+ 	unix/file.c \
++	unix/gs_openbsd.c \
+ 	unix/loader.c \
+ 	unix/loadorder.c \
+ 	unix/process.c \
+@@ -61,6 +62,7 @@ SOURCES = \
+ 	unix/security.c \
+ 	unix/serial.c \
+ 	unix/server.c \
++	unix/sig_openbsd.c \
+ 	unix/signal_arm.c \
+ 	unix/signal_arm64.c \
+ 	unix/signal_i386.c \

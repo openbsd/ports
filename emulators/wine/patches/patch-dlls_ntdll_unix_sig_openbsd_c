@@ -1,0 +1,155 @@
+Signals from wineserver to a client thread will always cross process boundary.
+On OpenBSD you can't signal one thread from another process. thrkill()
+works only inside one process.
+To go around it we kill() the whole process with SIGUSR2 and then kernel
+delivers it to an active thread. That thread uses thrkill() to send each queued
+signal to its target thread.
+Chromium/Electron is using this actively for sampling profiler and hang watcher
+
+Any changes here have to be reflected in the server's sig_openbsd.
+
+Index: dlls/ntdll/unix/sig_openbsd.c
+--- dlls/ntdll/unix/sig_openbsd.c.orig
++++ dlls/ntdll/unix/sig_openbsd.c
+@@ -0,0 +1,141 @@
++/*
++ * OpenBSD cross process thread signals
++ *
++ * Copyright (C) 2026 Andrii Yukhymchak
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
++ */
++
++#if 0
++#pragma makedep unix
++#endif
++
++#include "config.h"
++
++#ifdef __OpenBSD__
++
++#include <fcntl.h>
++#include <errno.h>
++#include <signal.h>
++#include <stdint.h>
++#include <stdarg.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
++#include <sys/mman.h>
++#include <sys/types.h>
++
++#include "ntstatus.h"
++#include "windef.h"
++#include "winternl.h"
++#include "unix_private.h"
++#include "sig_openbsd.h"
++#include "wine/debug.h"
++
++WINE_DEFAULT_DEBUG_CHANNEL(server);
++
++/* every thread Wine created for this process */
++#define MAX_SIGNAL_TIDS 4096
++static int signal_tids[MAX_SIGNAL_TIDS];
++
++/* the array shared with the server. Has to match server */
++#define SIGNAL_TARGETS_COUNT 64
++#define SIGNAL_TARGETS_SIZE (SIGNAL_TARGETS_COUNT * sizeof(uint64_t))
++static uint64_t *signal_targets;
++
++/* Requests are shared across processes and accessed from a signal handler; atomics must be lock-free. */
++C_ASSERT( __atomic_always_lock_free( sizeof(uint64_t), 0 ) );
++
++void add_signal_tid( int tid )
++{
++    unsigned int i;
++
++    for (i = 0; i < MAX_SIGNAL_TIDS; i++)
++    {
++        int expected = 0;
++        if (__atomic_compare_exchange_n( &signal_tids[i], &expected, tid, FALSE, __ATOMIC_SEQ_CST, __ATOMIC_SEQ_CST))
++            return;
++    }
++    WARN( "too many threads, signals will fail to reach thread %d\n", tid );
++}
++
++void remove_signal_tid(void)
++{
++    unsigned int i;
++    int tid = getthrid();
++
++    for (i = 0; i< MAX_SIGNAL_TIDS; i++)
++        if (__atomic_load_n( &signal_tids[i], __ATOMIC_SEQ_CST ) == tid)
++            __atomic_store_n( &signal_tids[i], 0, __ATOMIC_SEQ_CST );
++}
++
++BOOL is_signal_thread(void)
++{
++    unsigned int i;
++    int self = getthrid();
++
++    for (i = 0; i < MAX_SIGNAL_TIDS; i++)
++        if (__atomic_load_n( &signal_tids[i], __ATOMIC_SEQ_CST ) == self) return TRUE;
++    return FALSE;
++}
++
++void forward_thread_signal(void)
++{
++    /* SIGUSR2 interrupts arbitrary code: thrkill() must
++     * not replace the interrupted thread's errno, even when no target exists. */
++    int saved_errno = errno;
++    unsigned int i, j;
++
++    if (signal_targets)
++    {
++        for (i = 0; i < SIGNAL_TARGETS_COUNT; i++)
++        {
++            uint64_t request = __atomic_exchange_n( &signal_targets[i], 0, __ATOMIC_SEQ_CST );
++            int tid = (uint32_t)request;
++            unsigned int sig = request >> 32;
++
++            if (!request) continue;
++            if (sig != SIGINT && sig != SIGUSR1 && sig != SIGQUIT) continue;
++            for (j = 0; j < MAX_SIGNAL_TIDS; j++)
++                if (tid > 0 && __atomic_load_n( &signal_tids[j], __ATOMIC_SEQ_CST ) == tid) break;
++            if (j == MAX_SIGNAL_TIDS) continue;
++
++            /* Relayed signals are masked in the SIGUSR2 handler. A self-directed
++             * request is delivered after the entire array has been drained. */
++            thrkill( tid, sig, NULL );
++        }
++    }
++    errno = saved_errno;
++}
++
++void init_signal_targets( const char *server_dir, unsigned int process_id )
++{
++    void *ptr;
++    int fd;
++    char *path = NULL;
++
++    if (!server_dir) return;
++    if (asprintf( &path, "%s/sig-%04x", server_dir, process_id ) == -1 ) return;
++
++    fd = open( path, O_RDWR | O_CLOEXEC );
++    free( path );
++    if (fd == -1) return; /* update server? */
++    ptr = mmap( NULL, SIGNAL_TARGETS_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0 );
++    close( fd );
++    if (ptr != MAP_FAILED) signal_targets = ptr;
++}
++
++#endif /* __OpenBSD__ */

@@ -1,0 +1,102 @@
+OpenBSD lacks xattrs; read symlink reparse data from regular files with
+Wine's '?' suffix, matching server/fd.c.
+
+Index: dlls/ntdll/unix/file.c
+--- dlls/ntdll/unix/file.c.orig
++++ dlls/ntdll/unix/file.c
+@@ -1672,7 +1672,24 @@ static BOOL fd_is_mount_point( int fd, const struct st
+ 
+ static unsigned int server_get_unix_name( HANDLE handle, char **unix_name );
+ 
++#ifdef __OpenBSD__
++static int read_symlink_reparse( int fd, void *buffer, size_t size )
++{
++    struct stat st;
++    ssize_t ret;
+ 
++    if (fstat( fd, &st ) == -1) return -1;
++    if (!S_ISREG(st.st_mode) || st.st_size < 0 || st.st_size > size) goto invalid;
++    do ret = pread( fd, buffer, size, 0 ); while (ret == -1 && errno == EINTR);
++    if (ret == -1) return -1;
++    if (ret == st.st_size) return ret;
++invalid:
++    errno = EINVAL;
++    return -1;
++}
++#endif
++
++
+ /* get the stat info and file attributes for a file (by file descriptor) */
+ static int fd_get_file_info( HANDLE handle, int fd, unsigned int options,
+                              struct stat *st, ULONG *attr, ULONG *reparse_tag )
+@@ -1696,7 +1713,23 @@ static int fd_get_file_info( HANDLE handle, int fd, un
+         }
+     }
+ 
++#ifdef __OpenBSD__
++    attr_len = -1;
++    if (S_ISREG(st->st_mode) && st->st_size > 0 && st->st_size <= sizeof(buffer))
++    {
++        char *name;
++        size_t len;
++
++        if (!server_get_unix_name( handle, &name ))
++        {
++            len = strlen( name );
++            if (len && name[len - 1] == '?') attr_len = read_symlink_reparse( fd, buffer, sizeof(buffer) );
++            free( name );
++        }
++    }
++#else
+     attr_len = xattr_fget( fd, XATTR_REPARSE, buffer, sizeof(buffer) );
++#endif
+     if (attr_len >= 0 && attr_len >= sizeof(ULONG))
+     {
+         *attr |= FILE_ATTRIBUTE_REPARSE_POINT;
+@@ -1813,7 +1846,20 @@ static int get_file_info( const char *path, struct sta
+     }
+     *attr |= get_file_attributes( st );
+ 
++#ifdef __OpenBSD__
++    attr_len = -1;
++    if (len && path[len - 1] == '?' && S_ISREG(st->st_mode))
++    {
++        int fd = open( path, O_RDONLY | O_NOFOLLOW | O_NONBLOCK );
++        if (fd != -1)
++        {
++            attr_len = read_symlink_reparse( fd, buffer, sizeof(buffer) );
++            close( fd );
++        }
++    }
++#else
+     attr_len = xattr_get( path, XATTR_REPARSE, buffer, sizeof(buffer) );
++#endif
+     if (attr_len >= 0 && attr_len >= sizeof(ULONG))
+     {
+         *attr |= FILE_ATTRIBUTE_REPARSE_POINT;
+@@ -3851,6 +3897,7 @@ static NTSTATUS nt_to_unix_file_name( OBJECT_ATTRIBUTE
+     unix_len = name_len * 3 + MAX_DIR_ENTRY_LEN + 3;
+     if (!(unix_name = malloc( unix_len ))) return STATUS_NO_MEMORY;
+     unix_name[0] = '.';
++    unix_name[1] = 0;
+ 
+     if (!(status = server_get_unix_fd( attr->RootDirectory, 0, &root_fd, &needs_close, &type, NULL )))
+     {
+@@ -4107,10 +4154,17 @@ static NTSTATUS resolve_reparse_point( int fd, int roo
+ 
+     if (!(data = malloc( MAXIMUM_REPARSE_DATA_BUFFER_SIZE ))) return STATUS_NO_MEMORY;
+ 
++#ifdef __OpenBSD__
++    if ((size = read_symlink_reparse( fd, data, MAXIMUM_REPARSE_DATA_BUFFER_SIZE )) < 0)
++#else
+     if ((size = xattr_fget( fd, XATTR_REPARSE, data, MAXIMUM_REPARSE_DATA_BUFFER_SIZE )) < 0)
++#endif
+     {
+         ERR( "failed to read: %s\n", strerror(errno) );
+         free( data );
++#ifdef __OpenBSD__
++        if (errno == EINVAL) return STATUS_IO_REPARSE_DATA_INVALID;
++#endif
+         return errno_to_status( errno );
+     }
+ 

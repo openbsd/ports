@@ -1,0 +1,130 @@
+Disable OpenBSD Clang's return protection for PE modules: the added
+instrumentation is not suitable for Wine's Windows code and breaks startup.
+
+Include netinet/tcp_timer.h when checking BSD network headers on OpenBSD,
+so missing prerequisite declarations do not make configure reject them.
+
+Build the OpenBSD loader as PIE and mark it wxneeded so Windows code can
+request writable and executable memory.
+
+Adapt the resolver probe to OpenBSD's headers and C_IN constant. Do not
+require ns_initparse(), which is unavailable there, to detect res_query().
+
+Suppress the out-of-tree gettext notice for the port's separate build.
+This removes the configure diagnostic; it does not change po build rules.
+
+Detect OpenBSD's SDL2 soname without the libSDL2-2.0 naming restriction
+used on other systems.
+
+Find _Unwind_Find_FDE in libc++abi when it is not available without an
+extra library, and pass UNWIND_LIBS to ntdll's Unix library build.
+
+Include sys/socket.h and netinet/tcp_timer.h in the tcpstat member probe
+so the OpenBSD header prerequisites are satisfied.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -610,6 +610,9 @@ Please install mingw-w64, clang/llvm-dlltool/lld, or l
+     WINE_TRY_PE_CFLAGS([-ffunction-sections])
+     WINE_TRY_PE_CFLAGS([-ffp-exception-behavior=maytrap])
+ 
++    dnl OpenBSD's clang adds return protection, and Wine's own modules will fail on startup if return protection is added
++    WINE_TRY_PE_CFLAGS([-fno-ret-protector])
++
+     dnl clang had broken -fms-hotpatch support before version 18 (https://github.com/llvm/llvm-project/pull/77245)
+     WINE_TRY_PE_CFLAGS([-fms-hotpatch -DMIN_CLANG_VERSION=18],
+                        [AS_VAR_APPEND([${wine_arch}_EXTRACFLAGS],[" -fms-hotpatch"])
+@@ -880,6 +883,9 @@ AC_CHECK_HEADERS([netinet/udp_var.h netinet/icmp_var.h
+      #endif
+      #ifdef HAVE_NETINET_TCP_H
+      # include <netinet/tcp.h>
++     #endif
++     #ifdef __OpenBSD__
++     # include <netinet/tcp_timer.h>
+      #endif])
+ 
+ AC_CHECK_HEADERS([linux/ipx.h linux/irda.h linux/rtnetlink.h],,,
+@@ -1092,6 +1098,12 @@ case $host_os in
+             ;;
+         esac
+         ;;
++      openbsd*)
++        AS_VAR_APPEND([WINELOADER_LDFLAGS],[" -pie"])
++        dnl We can only support x64 arch for OpenBSD
++        dnl W^X: Windows code will almost definitely need W|X so we need to set wxneeded
++        WINE_TRY_CFLAGS([-Wl,-z,wxneeded],[AS_VAR_APPEND([WINELOADER_LDFLAGS],[" -Wl,-z,wxneeded"])])
++        ;;
+       *)
+         case $HOST_ARCH in
+           i386|arm)
+@@ -1638,7 +1650,18 @@ then
+          AC_LINK_IFELSE([AC_LANG_PROGRAM([[#ifdef HAVE_NETINET_IN_H
+ #include <netinet/in.h>
+ #endif
+-#include <resolv.h>]],[[if (!(_res.options & RES_INIT)) res_init(); res_query("foo",ns_c_in,0,0,0); ns_initparse(0,0,0)]])],
++#ifdef HAVE_ARPA_NAMESER_H
++#include <arpa/nameser.h>
++#endif
++#include <resolv.h>
++#ifdef __OpenBSD__
++#define ns_c_in C_IN
++#endif]],[[if (!(_res.options & RES_INIT)) res_init();
++res_query("foo",ns_c_in,0,0,0);
++#ifndef __OpenBSD__
++ns_initparse(0,0,0);
++#endif
++]])],
+            [ac_cv_have_resolv=${lib:-"none required"}],[ac_cv_have_resolv="not found"])
+          test "x$ac_cv_have_resolv" = "xnot found" || break
+        done
+@@ -1703,8 +1726,6 @@ then
+     fi
+     WINE_NOTICE_WITH(gettextpo,[test "x$GETTEXTPO_LIBS" = "x"],
+       [GetText ${notice_platform}development files not found (or too old), po files can't be rebuilt.])
+-    WINE_NOTICE_WITH(gettextpo,[test "$srcdir" != .],
+-      [Rebuilding po files is not supported for out of tree builds.])
+ fi
+ 
+ dnl **** Check for PulseAudio ****
+@@ -1808,7 +1829,9 @@ if test "x$with_sdl" != "xno"
+ then
+     WINE_PACKAGE_FLAGS(SDL2,[sdl2],[-lSDL2],,,
+         [AC_CHECK_HEADERS([SDL.h],
+-            [WINE_CHECK_SONAME(SDL2,SDL_Init,,,,[[libSDL2-2.0*]])])])
++            [AS_CASE([$host_os],
++                [openbsd*], [WINE_CHECK_SONAME(SDL2,SDL_Init)],
++                [WINE_CHECK_SONAME(SDL2,SDL_Init,,,,[[libSDL2-2.0*]])])])])
+ fi
+ WINE_NOTICE_WITH(sdl,[test "x$ac_cv_lib_soname_SDL2" = "x"],
+                  [libSDL2 ${notice_platform}development files not found, SDL2 won't be supported.])
+@@ -1902,7 +1925,11 @@ fi
+ WINE_NOTICE_WITH(netapi,[test "x$ac_cv_lib_soname_netapi" = "x"],
+                  [libnetapi not found, Samba NetAPI won't be supported.])
+ 
++dnl **** Check for _Unwind_Find_FDE (in libc++abi on OpenBSD) ****
++AC_CHECK_FUNC(_Unwind_Find_FDE,,
++            [AC_CHECK_LIB(c++abi,_Unwind_Find_FDE,[AC_SUBST(UNWIND_LIBS,"-lc++abi")],,[$PTHREAD_LIBS])])
+ 
++
+ dnl **** Check for any sound system ****
+ if test "x$enable_winealsa_drv$enable_winecoreaudio_drv$enable_winepulse_drv$enable_wineoss_drv$enable_wineandroid_drv" = xnonononono -a \
+         "x$with_alsa$with_coreaudio$with_oss$with_pulse" != xnononono
+@@ -2284,6 +2311,7 @@ AC_CHECK_MEMBERS([struct icmp6stat.icp6s_error],,,
+ dnl Check for struct tcpstat
+ AC_CHECK_MEMBERS([struct tcpstat.tcps_connattempt],,,
+ [#include <sys/types.h>
++#include <sys/socket.h>
+ #ifdef HAVE_SYS_SOCKETVAR_H
+ #include <sys/socketvar.h>
+ #endif
+@@ -2292,6 +2320,9 @@ AC_CHECK_MEMBERS([struct tcpstat.tcps_connattempt],,,
+ #endif
+ #ifdef HAVE_NETINET_TCP_H
+ #include <netinet/tcp.h>
++#endif
++#ifdef __OpenBSD__
++#include <netinet/tcp_timer.h>
+ #endif
+ #ifdef HAVE_NETINET_TCP_VAR_H
+ #include <netinet/tcp_var.h>

@@ -1,0 +1,11 @@
+Index: server/Makefile.in
+--- server/Makefile.in.orig
++++ server/Makefile.in
+@@ -36,6 +36,7 @@ SOURCES = \
+ 	security.h \
+ 	semaphore.c \
+ 	serial.c \
++	sig_openbsd.c \
+ 	signal.c \
+ 	sock.c \
+ 	symlink.c \

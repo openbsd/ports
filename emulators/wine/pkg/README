@@ -1,0 +1,53 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+This port runs 64-bit Windows applications on OpenBSD/amd64. It does not
+provide 32-bit Windows support. You can identify 32-bit binaries with
+file(1) or when seeing syswow64 error like this:
+
+wine: failed to load L"\\??\\C:\\windows\\syswow64\\ntdll.dll" error[...]
+
+In that case, the program *can't* run.
+
+Common Problems
+===============
+
+The first step if an application doesn't run should be to check
+
+	https://appdb.winehq.org/
+
+for an entry. Also make sure, no 32-bit binary or library is involved (see
+above).
+
+Many games need higher than default datasize (and potentially other)
+limits, see ksh(1) for ulimit.
+
+In case of audio issues, make sure to consult the pulseaudio(1) man page.
+
+Many games expect that the executable is run from its directory and not
+a different location. So for path/to/program.exe, make sure to:
+
+	$ cd path/to/
+	$ wine program.exe
+
+Direct3D Translation Layers
+===========================
+
+${PKGSTEM}'s default Direct3D graphics support (Damawand) uses OpenGL.
+If Vulkan is installed and supported by your hardware, you can try
+alternative (faster) translation layers. DXVK for D3D8, 9, 10, and 11:
+
+	https://github.com/doitsujin/dxvk
+
+and/or VKD3D-Proton for D3D12:
+
+	https://github.com/HansKristian-Work/vkd3d-proton
+
+Both come with installation instructions and/or install scripts that
+install the dll's into the wine prefix and update winecfg.
+
+Debugging
+=========
+
+See WINEDEBUG in wine(1).

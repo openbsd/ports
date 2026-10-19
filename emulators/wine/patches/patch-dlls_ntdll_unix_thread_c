@@ -1,0 +1,50 @@
+Index: dlls/ntdll/unix/thread.c
+--- dlls/ntdll/unix/thread.c.orig
++++ dlls/ntdll/unix/thread.c
+@@ -1121,6 +1121,9 @@ static DECLSPEC_NORETURN void pthread_exit_wrapper( in
+     close( data->wait_fd[1] );
+     close( data->reply_fd );
+     close( data->request_fd );
++#ifdef __OpenBSD__
++    remove_signal_tid();
++#endif
+     pthread_exit( UIntToPtr(status) );
+ }
+ 
+@@ -1314,7 +1317,12 @@ static NTSTATUS spawn_thread( struct thread_data *data
+ 
+     pthread_sigmask( SIG_BLOCK, &server_block_set, &sigset );
+     pthread_attr_init( &attr );
++#ifdef __OpenBSD__
++    /* Let libpthread allocate and reclaim the native stack. */
++    pthread_attr_setstacksize( &attr, kernel_stack_size );
++#else
+     pthread_attr_setstack( &attr, get_kernel_stack( data ), kernel_stack_size );
++#endif
+     pthread_attr_setguardsize( &attr, 0 );
+     pthread_attr_setscope( &attr, PTHREAD_SCOPE_SYSTEM ); /* force creating a kernel thread */
+     InterlockedIncrement( &nb_threads );
+@@ -2115,7 +2123,7 @@ static void set_native_thread_name( HANDLE handle, con
+     len = ntdll_wcstoumbs( name->Buffer, name->Length / sizeof(WCHAR), nameA, sizeof(nameA) - 1, FALSE );
+     nameA[len] = '\0';
+     pthread_setname_np( nameA );
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+     unsigned int status;
+     char nameA[64];
+     int unix_pid, unix_tid, len;
+@@ -2142,9 +2150,13 @@ static void set_native_thread_name( HANDLE handle, con
+         return;
+     }
+ 
+-    len = ntdll_wcstoumbs( name->Buffer, name->Length / sizeof(WCHAR), nameA, sizeof(nameA), FALSE );
++    len = ntdll_wcstoumbs( name->Buffer, name->Length / sizeof(WCHAR), nameA, sizeof(nameA) - 1, FALSE );
+     nameA[len] = '\0';
++#ifdef __OpenBSD__
++    setthrname( unix_tid, nameA );
++#else
+     thr_set_name( unix_tid, nameA );
++#endif
+ #else
+     static int once;
+     if (!once++) FIXME("not implemented on this platform\n");

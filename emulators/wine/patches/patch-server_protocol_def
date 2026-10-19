@@ -1,0 +1,41 @@
+Index: server/protocol.def
+--- server/protocol.def.orig
++++ server/protocol.def
+@@ -514,7 +514,8 @@ enum apc_type
+     APC_MAP_VIEW_EX,
+     APC_UNMAP_VIEW,
+     APC_CREATE_THREAD,
+-    APC_DUP_HANDLE
++    APC_DUP_HANDLE,
++    APC_COPY_MEMORY /* OpenBSD only, don't upstream */
+ };
+ 
+ struct user_apc
+@@ -652,6 +653,14 @@ union apc_call
+         unsigned int     attributes;   /* object attributes */
+         unsigned int     options;      /* duplicate options */
+     } dup_handle;
++    struct
++    {
++        enum apc_type    type;         /* APC_COPY_MEMORY */
++        obj_handle_t     handle;       /* data handle */
++        client_ptr_t     addr;         /* requested address */
++        mem_size_t       size;         /* allocation size */
++        int              write;        /* TRUE - copy from handle to addr, FALSE - from addr to handle*/
++    } copy_memory; /* OpenBSD only, don't upstream */
+ };
+ 
+ union apc_result
+@@ -764,6 +773,12 @@ union apc_result
+         enum apc_type    type;      /* APC_BREAK_PROCESS */
+         unsigned int     status;    /* status returned by call */
+     } break_process;
++    struct
++    {
++        enum apc_type    type;      /* APC_COPY_MEMORY */
++        unsigned int     status;    /* status returned by call */
++        mem_size_t       size;      /* resulting size */
++    } copy_memory; /* OpenBSD only, don't upstream */
+ };
+ 
+ enum irp_type
