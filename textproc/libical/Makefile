@@ -1,14 +1,11 @@
 COMMENT-main=		implementation of the iCalendar protocols and data units
 COMMENT-glib=		GObject wrapper for libical library
 
-V=			4.0.6
+V=			4.0.7
 DISTNAME=		libical-${V}
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-glib=		libical-glib-${V}
-
-REVISION-main=		0
-REVISION-glib=		0
 
 SHARED_LIBS +=  ical                 5.0
 SHARED_LIBS +=  icalss               5.0
@@ -30,7 +27,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB-main += ${COMPILER_LIBCXX} icui18n icudata icuuc m
 WANTLIB-main += lib/db4/db lib/db4/db_cxx
 
-WANTLIB-glib += c ical icalvcard glib-2.0 gobject-2.0 intl xml2
+WANTLIB-glib += c ical icalvcard glib-2.0 gobject-2.0 intl pthread
+WANTLIB-glib += xml2
 
 SITES=			https://github.com/libical/libical/releases/download/v${V}/
 
