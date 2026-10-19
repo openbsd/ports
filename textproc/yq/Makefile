@@ -1,6 +1,6 @@
 COMMENT=	jq wrapper for YAML/XML documents
 
-MODPY_DISTV=	4.4.0
+MODPY_DISTV=	4.4.5
 DISTNAME=	yq-${MODPY_DISTV}
 
 CATEGORIES=	textproc
