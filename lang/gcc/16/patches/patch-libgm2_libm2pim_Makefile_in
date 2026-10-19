@@ -1,0 +1,13 @@
+Index: libgm2/libm2pim/Makefile.in
+--- libgm2/libm2pim/Makefile.in.orig
++++ libgm2/libm2pim/Makefile.in
+@@ -581,7 +581,8 @@ FLAGS_TO_PASS = $(AM_MAKEFLAGS)
+ @BUILD_PIMLIB_TRUE@@TARGET_DARWIN_FALSE@	$(am__append_1)
+ @BUILD_PIMLIB_TRUE@@TARGET_DARWIN_TRUE@libm2pim_la_link_flags = -Wl,-undefined,dynamic_lookup \
+ @BUILD_PIMLIB_TRUE@@TARGET_DARWIN_TRUE@	$(am__append_1)
+-@BUILD_PIMLIB_TRUE@libm2pim_la_LINK = $(LINK) -version-info $(libtool_VERSION) $(libm2pim_la_link_flags) -lm
++include $(top_srcdir)/../libversions
++@BUILD_PIMLIB_TRUE@libm2pim_la_LINK = $(LINK) $(LIBm2pim_VERSION) $(libm2pim_la_link_flags) -lm
+ @BUILD_PIMLIB_TRUE@BUILT_SOURCES = SYSTEM.def
+ @BUILD_PIMLIB_TRUE@CLEANFILES = SYSTEM.def
+ @BUILD_PIMLIB_TRUE@M2LIBDIR = /m2/m2pim/

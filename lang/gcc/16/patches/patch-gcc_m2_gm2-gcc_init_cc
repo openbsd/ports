@@ -1,0 +1,14 @@
+Index: gcc/m2/gm2-gcc/init.cc
+--- gcc/m2/gm2-gcc/init.cc.orig
++++ gcc/m2/gm2-gcc/init.cc
+@@ -210,3 +210,10 @@ init_PerCompilationInit (const char *filename)
+   _M2_P3Build_init (0, NULL, NULL);
+   M2Comp_compile (filename);
+ }
++
++EXTERN const char *
++fname_as_string(int pretty_p __attribute__((__unused__)))
++{
++	return NULL;
++}
++

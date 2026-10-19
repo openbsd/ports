@@ -1,0 +1,13 @@
+Index: libgm2/libm2iso/Makefile.in
+--- libgm2/libm2iso/Makefile.in.orig
++++ libgm2/libm2iso/Makefile.in
+@@ -604,7 +604,8 @@ FLAGS_TO_PASS = $(AM_MAKEFLAGS)
+ @BUILD_ISOLIB_TRUE@@TARGET_DARWIN_FALSE@	$(am__append_1)
+ @BUILD_ISOLIB_TRUE@@TARGET_DARWIN_TRUE@libm2iso_la_link_flags = -Wl,-undefined,dynamic_lookup \
+ @BUILD_ISOLIB_TRUE@@TARGET_DARWIN_TRUE@	$(am__append_1)
+-@BUILD_ISOLIB_TRUE@libm2iso_la_LINK = $(LINK) -version-info $(libtool_VERSION) $(libm2iso_la_link_flags) -lm
++include $(top_srcdir)/../libversions
++@BUILD_ISOLIB_TRUE@libm2iso_la_LINK = $(LINK) $(LIBm2iso_VERSION) $(libm2iso_la_link_flags) -lm
+ @BUILD_ISOLIB_TRUE@CLEANFILES = SYSTEM.def
+ @BUILD_ISOLIB_TRUE@BUILT_SOURCES = SYSTEM.def
+ @BUILD_ISOLIB_TRUE@M2LIBDIR = /m2/m2iso/

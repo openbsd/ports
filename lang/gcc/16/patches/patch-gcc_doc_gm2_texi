@@ -1,0 +1,14 @@
+https://github.com/gcc-mirror/gcc/commit/3ba687c78ac7e26cf2f26c01f4ab8439e439269f
+
+Index: gcc/doc/gm2.texi
+--- gcc/doc/gm2.texi.orig
++++ gcc/doc/gm2.texi
+@@ -1493,7 +1493,7 @@ the following pairs of options:
+ The option @samp{-fsources} will show the source module, path and
+ pathname for each module parsed.
+ 
+-@node Exceptions, Semantic checking, Dialect, Using
++@node Exceptions, Semantic checking, Module Search Path, Using
+ @section Exception implementation
+ 
+ This section describes how exceptions are implemented in GNU Modula-2

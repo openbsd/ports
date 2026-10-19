@@ -1,0 +1,13 @@
+Index: libgm2/libm2min/Makefile.in
+--- libgm2/libm2min/Makefile.in.orig
++++ libgm2/libm2min/Makefile.in
+@@ -459,7 +459,8 @@ libm2min_la_M2FLAGS = \
+ @TARGET_DARWIN_TRUE@libm2min_la_link_flags =  \
+ @TARGET_DARWIN_TRUE@	-Wl,-undefined,dynamic_lookup \
+ @TARGET_DARWIN_TRUE@	$(am__append_1)
+-libm2min_la_LINK = $(LINK) -version-info $(libtool_VERSION) $(libm2min_la_link_flags)
++include $(top_srcdir)/../libversions
++libm2min_la_LINK = $(LINK) $(LIBm2min_VERSION) $(libm2min_la_link_flags)
+ BUILT_SOURCES = SYSTEM.def
+ CLEANFILES = SYSTEM.def
+ M2LIBDIR = /m2/m2min/

@@ -1,0 +1,12 @@
+Index: gcc/m2/gm2spec.cc
+--- gcc/m2/gm2spec.cc.orig
++++ gcc/m2/gm2spec.cc
+@@ -69,7 +69,7 @@ along with GNU Modula-2; see the file COPYING3.  If no
+ #endif
+ 
+ #ifndef LIBSTDCXX
+-#define LIBSTDCXX "stdc++"
++#define LIBSTDCXX "estdc++"
+ #endif
+ #ifndef LIBSTDCXX_PROFILE
+ #define LIBSTDCXX_PROFILE LIBSTDCXX

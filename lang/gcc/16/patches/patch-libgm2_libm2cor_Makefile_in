@@ -1,0 +1,13 @@
+Index: libgm2/libm2cor/Makefile.in
+--- libgm2/libm2cor/Makefile.in.orig
++++ libgm2/libm2cor/Makefile.in
+@@ -489,7 +489,8 @@ FLAGS_TO_PASS = $(AM_MAKEFLAGS)
+ @BUILD_CORLIB_TRUE@@TARGET_DARWIN_FALSE@	$(am__append_1)
+ @BUILD_CORLIB_TRUE@@TARGET_DARWIN_TRUE@libm2cor_la_link_flags = -Wl,-undefined,dynamic_lookup \
+ @BUILD_CORLIB_TRUE@@TARGET_DARWIN_TRUE@	$(am__append_1)
+-@BUILD_CORLIB_TRUE@libm2cor_la_LINK = $(LINK) -version-info $(libtool_VERSION) $(libm2cor_la_link_flags)
++include $(top_srcdir)/../libversions
++@BUILD_CORLIB_TRUE@libm2cor_la_LINK = $(LINK) $(LIBm2cor_LTVERSION) $(libm2cor_la_link_flags)
+ @BUILD_CORLIB_TRUE@BUILT_SOURCES = SYSTEM.def
+ @BUILD_CORLIB_TRUE@CLEANFILES = SYSTEM.def
+ @BUILD_CORLIB_TRUE@M2LIBDIR = /m2/m2cor/
