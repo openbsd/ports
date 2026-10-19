@@ -12,6 +12,8 @@ PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME:S/-//}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME:S/-//}
 
+REVISION =		0
+
 SHARED_LIBS +=  ibus-1.0             4.5      # 5.534
 
 CATEGORIES =		inputmethods chinese japanese korean
