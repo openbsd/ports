@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1844 2026/10/16 08:34:19 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1845 2026/10/19 07:27:38 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -652,6 +652,7 @@ setup_obsolete_reason(
 	6 => 'py3-engineio',
 	6 => 'py3-socketio',
 	6 => 'py3-socketio-client',
+	3 => 'libgda',
 );
 # beware, if ports with an RDEP on Python 3 are removed in a release where
 # the Python major version has changed (e.g. 3.13->3.14 between 7.9 and 8.0)

@@ -52,7 +52,6 @@
      SUBDIR += libcloudproviders
      SUBDIR += libdex
      SUBDIR += libdmapsharing4
-     SUBDIR += libgda
      SUBDIR += libgepub
      SUBDIR += libgnomecanvas
      SUBDIR += libgweather4
