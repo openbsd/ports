@@ -1,0 +1,7 @@
+Wine is a compatibility layer for running Windows applications on Unix.
+It translates Windows API calls into native system calls.
+
+This port includes experimental OpenBSD amd64 from
+https://github.com/NethIafin/wine/tree/openbsd-master.
+
+Only 64-bit Windows applications are supported.
