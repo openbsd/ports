@@ -1,6 +1,8 @@
 COMMENT =		everyday-use client-side map-aware mirror ranking tool
 
-DIST_TUPLE +=		github westandskif rate-mirrors v0.33.0 .
+GH_ACCOUNT =		westandskif
+GH_PROJECT =		rate-mirrors
+GH_TAGNAME =		v0.34.0
 
 CATEGORIES =		net
 

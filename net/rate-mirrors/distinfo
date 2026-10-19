@@ -276,7 +276,7 @@ SHA256 (cargo/zerofrom-derive-0.1.6.tar.gz) = 1x5dbgarCQxnteRJk+wWty3LqrxSbbiDo2
 SHA256 (cargo/zeroize-1.8.1.tar.gz) = ztNniih5swMG0yP0VCYmaXpGSpfAoHya6/frymXNTd4=
 SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8Hk=
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
-SHA256 (westandskif-rate-mirrors-v0.33.0.tar.gz) = YZE3M8qS7Wh0yL2CHr3byEXqOQSeUi9R/ztdO4LEONA=
+SHA256 (rate-mirrors-0.34.0.tar.gz) = uYQ0rPjHi4bw/GteIOXy9EyOwWQ/D5FTWhnGZ5HO9c4=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/ahash-0.7.8.tar.gz) = 38550
@@ -555,4 +555,4 @@ SIZE (cargo/zerofrom-derive-0.1.6.tar.gz) = 8305
 SIZE (cargo/zeroize-1.8.1.tar.gz) = 20029
 SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
-SIZE (westandskif-rate-mirrors-v0.33.0.tar.gz) = 218245
+SIZE (rate-mirrors-0.34.0.tar.gz) = 224742
