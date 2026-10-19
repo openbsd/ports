@@ -4,11 +4,7 @@
 @newuser _gkrellmd:607:_gkrellmd::GKrellM Daemon:/var/empty:/sbin/nologin
 include/gkrellm2/gkrellmd.h
 @man man/man1/gkrellmd.1
-@mode 2755
-@group kmem
 @bin sbin/gkrellmd
-@mode
-@group
 share/examples/gkrellm-server/
 share/examples/gkrellm-server/gkrellmd.conf
 @sample ${SYSCONFDIR}/gkrellmd.conf
