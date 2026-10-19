@@ -1,0 +1,12 @@
+Index: src/normal.c
+--- src/normal.c.orig
++++ src/normal.c
+@@ -18,7 +18,7 @@
+  */
+ 
+ #include <ctype.h>
+-#include <gdk/gdkkeysyms.h>
++#include <gdk/gdk.h>
+ #include <string.h>
+ 
+ #include "ascii.h"
