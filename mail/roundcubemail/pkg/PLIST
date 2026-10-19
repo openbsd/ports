@@ -170,6 +170,7 @@ roundcubemail/index.php
 roundcubemail/installer/
 roundcubemail/installer/check.php
 roundcubemail/installer/client.js
+roundcubemail/installer/close.php
 roundcubemail/installer/config.php
 roundcubemail/installer/images/
 roundcubemail/installer/images/add.png
@@ -2911,6 +2912,7 @@ roundcubemail/vendor/guzzlehttp/promises/src/PromiseInterface.php
 roundcubemail/vendor/guzzlehttp/promises/src/PromisorInterface.php
 roundcubemail/vendor/guzzlehttp/promises/src/RejectedPromise.php
 roundcubemail/vendor/guzzlehttp/promises/src/RejectionException.php
+roundcubemail/vendor/guzzlehttp/promises/src/State.php
 roundcubemail/vendor/guzzlehttp/promises/src/TaskQueue.php
 roundcubemail/vendor/guzzlehttp/promises/src/TaskQueueInterface.php
 roundcubemail/vendor/guzzlehttp/promises/src/Utils.php

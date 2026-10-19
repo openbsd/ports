@@ -1,10 +1,12 @@
 COMMENT=	IMAP4 webmail client
 
-V=		1.7.4
-REVISION=	2
+V=		1.7.5
 DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-//}
 EXTRACT_SUFX=	-complete.tar.gz
+
+# keep above 8.0-stable: default php -> 8.4, php-pspell -> pecl-pspell
+REVISION=	0
 
 FIX_EXTRACT_PERMISSIONS= Yes
 
