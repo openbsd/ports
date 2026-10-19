@@ -1,0 +1,12 @@
+Index: src/stlink-gui/gui.c
+--- src/stlink-gui/gui.c.orig
++++ src/stlink-gui/gui.c
+@@ -340,7 +340,7 @@ static gpointer stlink_gui_populate_filemem_view(gpoin
+             goto out_input;
+         }
+ 
+-        gui->file_mem.size   = file_size;
++        gui->file_mem.size   = (gsize)file_size;
+         gui->file_mem.memory = g_malloc(gui->file_mem.size);
+ 
+         for(off = 0; off < (gint)gui->file_mem.size; off += MEM_READ_SIZE) {

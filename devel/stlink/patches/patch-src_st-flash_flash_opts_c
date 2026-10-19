@@ -1,0 +1,12 @@
+Index: src/st-flash/flash_opts.c
+--- src/st-flash/flash_opts.c.orig
++++ src/st-flash/flash_opts.c
+@@ -16,7 +16,7 @@
+ 
+ 
+ static bool starts_with(const char * str, const char * prefix) {
+-    uint64_t n = strlen(prefix);
++    size_t n = strlen(prefix);
+ 
+     if(strlen(str) < n) { return (false); }
+ 
