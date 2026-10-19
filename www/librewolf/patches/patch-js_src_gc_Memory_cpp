@@ -3,7 +3,7 @@ https://hg.mozilla.org/mozilla-central/rev/b3a14f8efa23
 Index: js/src/gc/Memory.cpp
 --- js/src/gc/Memory.cpp.orig
 +++ js/src/gc/Memory.cpp
-@@ -532,6 +532,30 @@ void MapStack(size_t stackSize) {
+@@ -534,6 +534,30 @@ void MapStack(size_t stackSize) {
  #endif
  }
  
