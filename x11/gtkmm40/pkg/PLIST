@@ -37,6 +37,8 @@ include/gtkmm-4.0/gdkmm/gltexturebuilder.h
 include/gtkmm-4.0/gdkmm/graphene_point.h
 include/gtkmm-4.0/gdkmm/graphene_rect.h
 include/gtkmm-4.0/gdkmm/graphene_size.h
+include/gtkmm-4.0/gdkmm/graphene_vec2.h
+include/gtkmm-4.0/gdkmm/keymapkey.h
 include/gtkmm-4.0/gdkmm/memorytexture.h
 include/gtkmm-4.0/gdkmm/memorytexturebuilder.h
 include/gtkmm-4.0/gdkmm/monitor.h
@@ -82,6 +84,8 @@ include/gtkmm-4.0/gdkmm/private/gltexturebuilder_p.h
 include/gtkmm-4.0/gdkmm/private/graphene_point_p.h
 include/gtkmm-4.0/gdkmm/private/graphene_rect_p.h
 include/gtkmm-4.0/gdkmm/private/graphene_size_p.h
+include/gtkmm-4.0/gdkmm/private/graphene_vec2_p.h
+include/gtkmm-4.0/gdkmm/private/keymapkey_p.h
 include/gtkmm-4.0/gdkmm/private/memorytexture_p.h
 include/gtkmm-4.0/gdkmm/private/memorytexturebuilder_p.h
 include/gtkmm-4.0/gdkmm/private/monitor_p.h
@@ -122,11 +126,21 @@ include/gtkmm-4.0/gdkmm/wrap_init.h
 include/gtkmm-4.0/gskmm/
 include/gtkmm-4.0/gskmm.h
 include/gtkmm-4.0/gskmm/enums.h
+include/gtkmm-4.0/gskmm/path.h
+include/gtkmm-4.0/gskmm/pathbuilder.h
+include/gtkmm-4.0/gskmm/pathmeasure.h
+include/gtkmm-4.0/gskmm/pathpoint.h
 include/gtkmm-4.0/gskmm/private/
 include/gtkmm-4.0/gskmm/private/enums_p.h
+include/gtkmm-4.0/gskmm/private/path_p.h
+include/gtkmm-4.0/gskmm/private/pathbuilder_p.h
+include/gtkmm-4.0/gskmm/private/pathmeasure_p.h
+include/gtkmm-4.0/gskmm/private/pathpoint_p.h
 include/gtkmm-4.0/gskmm/private/roundedrect_p.h
+include/gtkmm-4.0/gskmm/private/stroke_p.h
 include/gtkmm-4.0/gskmm/private/transform_p.h
 include/gtkmm-4.0/gskmm/roundedrect.h
+include/gtkmm-4.0/gskmm/stroke.h
 include/gtkmm-4.0/gskmm/transform.h
 include/gtkmm-4.0/gskmm/wrap_init.h
 include/gtkmm-4.0/gtkmm/
@@ -218,6 +232,8 @@ include/gtkmm-4.0/gtkmm/emojichooser.h
 include/gtkmm-4.0/gtkmm/entry.h
 include/gtkmm-4.0/gtkmm/entrybuffer.h
 include/gtkmm-4.0/gtkmm/entrycompletion.h
+include/gtkmm-4.0/gtkmm/enumlist.h
+include/gtkmm-4.0/gtkmm/enumlistitem.h
 include/gtkmm-4.0/gtkmm/enums.h
 include/gtkmm-4.0/gtkmm/error.h
 include/gtkmm-4.0/gtkmm/eventcontroller.h
@@ -412,6 +428,8 @@ include/gtkmm-4.0/gtkmm/private/emojichooser_p.h
 include/gtkmm-4.0/gtkmm/private/entry_p.h
 include/gtkmm-4.0/gtkmm/private/entrybuffer_p.h
 include/gtkmm-4.0/gtkmm/private/entrycompletion_p.h
+include/gtkmm-4.0/gtkmm/private/enumlist_p.h
+include/gtkmm-4.0/gtkmm/private/enumlistitem_p.h
 include/gtkmm-4.0/gtkmm/private/enums_p.h
 include/gtkmm-4.0/gtkmm/private/error_p.h
 include/gtkmm-4.0/gtkmm/private/eventcontroller_p.h
@@ -572,6 +590,7 @@ include/gtkmm-4.0/gtkmm/private/stringsorter_p.h
 include/gtkmm-4.0/gtkmm/private/stylecontext_p.h
 include/gtkmm-4.0/gtkmm/private/styleprovider_p.h
 include/gtkmm-4.0/gtkmm/private/svg_p.h
+include/gtkmm-4.0/gtkmm/private/svgwidget_p.h
 include/gtkmm-4.0/gtkmm/private/switch_p.h
 include/gtkmm-4.0/gtkmm/private/symbolicpaintable_p.h
 include/gtkmm-4.0/gtkmm/private/text_p.h
@@ -663,6 +682,7 @@ include/gtkmm-4.0/gtkmm/stringsorter.h
 include/gtkmm-4.0/gtkmm/stylecontext.h
 include/gtkmm-4.0/gtkmm/styleprovider.h
 include/gtkmm-4.0/gtkmm/svg.h
+include/gtkmm-4.0/gtkmm/svgwidget.h
 include/gtkmm-4.0/gtkmm/switch.h
 include/gtkmm-4.0/gtkmm/symbolicpaintable.h
 include/gtkmm-4.0/gtkmm/text.h
@@ -713,7 +733,6 @@ lib/gtkmm-4.0/include/gtkmmconfig.h
 lib/gtkmm-4.0/proc/
 lib/gtkmm-4.0/proc/m4/
 lib/gtkmm-4.0/proc/m4/class_gtkobject.m4
-lib/gtkmm-4.0/proc/m4/class_shared.m4
 lib/gtkmm-4.0/proc/m4/convert.m4
 lib/gtkmm-4.0/proc/m4/convert_gdk.m4
 lib/gtkmm-4.0/proc/m4/convert_gsk.m4
