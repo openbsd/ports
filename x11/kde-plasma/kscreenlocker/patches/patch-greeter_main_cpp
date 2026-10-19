@@ -1,17 +1,17 @@
 Index: greeter/main.cpp
 --- greeter/main.cpp.orig
 +++ greeter/main.cpp
-@@ -27,6 +27,13 @@ SPDX-License-Identifier: GPL-2.0-or-later
- #include <unistd.h>
- #endif
+@@ -30,6 +30,13 @@ SPDX-License-Identifier: GPL-2.0-or-later
+ #include <KSignalHandler>
+ #include <LayerShellQt/Shell>
  
 +#if defined(Q_OS_OPENBSD)
 +#include <sys/stat.h>
 +
 +/* OpenBSD: set[ug]id binary MUST say so in this var */
-+mode_t _permit_setugid = S_ISGID;
++Q_DECL_EXPORT mode_t _permit_setugid = S_ISGID;
 +#endif
 +
- #include <KSignalHandler>
- #include <LayerShellQt/Shell>
- 
+ static void signalHandler(int signum)
+ {
+     qCDebug(KSCREENLOCKER_GREET) << "Greeter received signal" << signum;
