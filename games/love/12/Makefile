@@ -12,8 +12,7 @@ SITES =
 DISTNAME =
 PKGNAME =		love-${VERSION}alpha1
 DIST_TUPLE =		github love2d love ${H} .
-
-MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
+REVISION =		0
 
 SHARED_LIBS =		love-${VERSION}	0.0
 

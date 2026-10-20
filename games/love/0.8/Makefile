@@ -1,6 +1,6 @@
 VERSION =		0.8.0
 USE_LUAJIT =		No
-REVISION =		20
+REVISION =		21
 PKGSPEC =		love->=${VERSION},<0.9
 
 WANTLIB += ${COMPILER_LIBCXX} GL IL Iex-3_5 IlmThread-3_5 Imath-3_2
