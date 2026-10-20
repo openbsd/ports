@@ -1,6 +1,6 @@
 COMMENT=	Yosys Open SYnthesis Suite
 CATEGORIES=	cad
-V=		0.69
+V=		0.70
 DISTNAME=	yosys-${V}
 
 GH_ACCOUNT=	YosysHQ
@@ -8,13 +8,13 @@ GH_PROJECT=	yosys
 GH_TAGNAME=	v${V}
 
 
-DIST_TUPLE+=	github YosysHQ   	abc    		v0.69   	abc/			# MIT license
+DIST_TUPLE+=	github YosysHQ   	abc    		v0.70   	abc/			# MIT license
 DIST_TUPLE+=	github jarro2783 	cxxopts		v3.3.1  	libs/cxxopts/		# MIT license
 DIST_TUPLE+=	github fmtlib		fmt		12.2.0		libs/fmt/		# MIT license
 DIST_TUPLE+=	github marzer		tomlplusplus	v3.4.0		libs/tomlplusplus/	# MIT license
 DIST_TUPLE+=	github MikePopoloski	regex		boost-1.91.0	libs/boost_regex/	# Boost Software License Version 1.0
-DIST_TUPLE+=	github MikePopoloski	slang		v11.0		libs/slang/		# MIT license
-DIST_TUPLE+=	github povik		sv-elab		2026-09-08	frontends/slang/lib/	# ISC license
+DIST_TUPLE+=	github MikePopoloski	slang		v12.0		libs/slang/		# MIT license
+DIST_TUPLE+=	github povik		sv-elab		2026-10-13	frontends/slang/lib/	# ISC license
 DIST_TUPLE+=	github YosysHQ		symfpu		5d5e50867437fe5cabd6ab5aad3b3808ec86701f libs/symfpu # Dual License: 3-BSD and GPL 3.0
 
 

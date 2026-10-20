@@ -59,6 +59,8 @@ share/yosys/efinix/brams_map.v
 share/yosys/efinix/cells_map.v
 share/yosys/efinix/cells_sim.v
 share/yosys/efinix/gbuf_map.v
+share/yosys/fabulous/
+share/yosys/fabulous/cells_bb.v
 share/yosys/gate2lut.v
 share/yosys/gatemate/
 share/yosys/gatemate/arith_map.v
@@ -122,7 +124,6 @@ share/yosys/include/frontends/
 share/yosys/include/frontends/blif/
 share/yosys/include/frontends/blif/blifparse.h
 share/yosys/include/kernel/
-share/yosys/include/kernel/binding.h
 share/yosys/include/kernel/bitpattern.h
 share/yosys/include/kernel/cellaigs.h
 share/yosys/include/kernel/celledges.h
