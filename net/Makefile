@@ -116,7 +116,6 @@
      SUBDIR += fmirror
      SUBDIR += fort
      SUBDIR += fpdns
-     SUBDIR += fping
      SUBDIR += freeradius
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame
