@@ -1,0 +1,14 @@
+Index: src/greentest/3.14/test_socket.py
+--- src/greentest/3.14/test_socket.py.orig
++++ src/greentest/3.14/test_socket.py
+@@ -245,9 +245,7 @@ HAVE_SOCKET_QIPCRTR = _have_socket_qipcrtr()
+ HAVE_SOCKET_VSOCK = _have_socket_vsock()
+ 
+ # Older Android versions block UDPLITE with SELinux.
+-HAVE_SOCKET_UDPLITE = (
+-    hasattr(socket, "IPPROTO_UDPLITE")
+-    and not (support.is_android and platform.android_ver().api_level < 29))
++HAVE_SOCKET_UDPLITE = false
+ 
+ HAVE_SOCKET_BLUETOOTH = _have_socket_bluetooth()
+ 

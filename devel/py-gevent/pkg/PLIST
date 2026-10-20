@@ -6,9 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/licenses/LICENSE
-lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/licenses/NOTICE
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gevent/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}/
@@ -493,6 +491,8 @@ lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__issu
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__issue1686.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__issue1864.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__issue1864.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__issue2013.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__issue2013.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__issue230.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__issue230.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__issue330.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -529,6 +529,10 @@ lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monk
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_builtins_future.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_builtins_future.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_fork_atomic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_fork_atomic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_futures_thread_fork.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_futures_thread_fork.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_hub_in_thread.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_hub_in_thread.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -549,6 +553,8 @@ lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monk
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_sigchld_2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_sigchld_3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_sigchld_3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_sigchld_wakeup_fd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_sigchld_wakeup_fd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_ssl_warning.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_ssl_warning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__monkey_ssl_warning2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -639,6 +645,8 @@ lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__thre
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__threading_no_monkey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__threading_patched_local.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__threading_patched_local.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__threading_shutdown_atexit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__threading_shutdown_atexit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__threading_vs_settrace.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__threading_vs_settrace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}test__threadpool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -745,6 +753,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__import_wait.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__issue112.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__issue1686.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__issue1864.py
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__issue2013.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__issue230.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__issue330.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__issue467.py
@@ -763,6 +772,8 @@ lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__makefile_ref.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__memleak.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_builtins_future.py
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_fork_atomic.py
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_futures_thread_fork.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_hub_in_thread.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_logging.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_module_run.py
@@ -773,6 +784,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_selectors.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_sigchld.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_sigchld_2.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_sigchld_3.py
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_sigchld_wakeup_fd.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_ssl_warning.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_ssl_warning2.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__monkey_ssl_warning3.py
@@ -818,6 +830,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__threading_monkey_in_
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__threading_native_before_monkey.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__threading_no_monkey.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__threading_patched_local.py
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__threading_shutdown_atexit.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__threading_vs_settrace.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__threadpool.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/test__threadpool_executor_patched.py
