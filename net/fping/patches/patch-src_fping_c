@@ -1,0 +1,69 @@
+Index: src/fping.c
+--- src/fping.c.orig
++++ src/fping.c
+@@ -39,6 +39,7 @@ extern "C" {
+ #include "options.h"
+ #include "optparse.h"
+ 
++#include <sys/stat.h>
+ #include <errno.h>
+ #include <inttypes.h>
+ #include <limits.h>
+@@ -50,6 +51,9 @@ extern "C" {
+ 
+ #include "seqmap.h"
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
++
+ #ifdef HAVE_UNISTD_H
+ #include <unistd.h>
+ #endif /* HAVE_UNISTD_H */
+@@ -623,6 +627,10 @@ int main(int argc, char **argv)
+     }
+ 
+     optparse_init(&optparse_state, argv);
++
++    if (pledge("stdio inet rpath dns id", NULL) == -1)
++        perror("pledge");
++
+     ident4 = ident6 = htons(getpid() & 0xFFFF);
+     verbose_flag = 1;
+     backoff_flag = 1;
+@@ -712,11 +720,13 @@ int main(int argc, char **argv)
+                 ping_data_size = ICMP_TIMESTAMP_DATA_SIZE;
+             } else if (strstr(optparse_state.optlongname, "print-tos") != NULL) {
+                 print_tos_flag = 1;
++#if defined(IP_RECVTTOS)
+                 if (socket4 >= 0 && (socktype4 == SOCK_DGRAM)) {
+                     if (setsockopt(socket4, IPPROTO_IP, IP_RECVTOS, &sock_opt_on, sizeof(sock_opt_on))) {
+                         perror("setsockopt IP_RECVTOS");
+                     }
+                 }
++#endif
+ #if defined(IPV6) && defined(IPV6_RECVTCLASS)
+                 if (socket6 >= 0) {
+                     if (setsockopt(socket6, IPPROTO_IPV6, IPV6_RECVTCLASS, &sock_opt_on, sizeof(sock_opt_on))) {
+@@ -1060,6 +1070,11 @@ int main(int argc, char **argv)
+         exit(4);
+     }
+ 
++    if (!filename) { /* drop rpath if not reading addrs from file */
++        if (pledge("stdio inet dns", NULL) == -1)
++            perror("pledge");
++    }
++
+     /* validate various option settings */
+ 
+ #ifndef IPV6
+@@ -1402,6 +1417,10 @@ int main(int argc, char **argv)
+     if (!num_hosts) {
+         exit(num_noaddress ? 2 : 1);
+     }
++
++    /* finished with file and dns/rdns lookups */
++    if (pledge("stdio inet", NULL) == -1)
++        perror("pledge");
+ 
+     if (socket4 >= 0 && (src_addr_set || socktype4 == SOCK_DGRAM)) {
+         socket_set_src_addr_ipv4(socket4, &src_addr, (socktype4 == SOCK_DGRAM) ? &ident4 : NULL);

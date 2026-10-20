@@ -1,0 +1,11 @@
+fping quickly pings multiple hosts, specified on the command-line or
+in a file, to determine their reachability without flooding the network.
+Instead of trying one host until it times out or replies, fping will
+send out a ping packet and move on to the next host in a round-robin
+fashion. If a host replies, it is noted and removed from the list of
+hosts to check. If a host does not respond within a certain time limit
+and/or retry limit it will be considered unreachable. 
+
+fping is meant to be used in scripts and its output is easy to parse.
+
+N.B. The binaries installed by this package are setuid root.
