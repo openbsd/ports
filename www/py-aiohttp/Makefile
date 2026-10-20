@@ -1,6 +1,7 @@
 COMMENT=	HTTP client/server for asyncio
 
 MODPY_DISTV=	3.14.5
+REVISION=	0
 DISTNAME=	aiohttp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -21,7 +22,7 @@ RUN_DEPENDS=	www/py-aiohappyeyeballs \
 		devel/py-aiosignal \
 		devel/py-attrs \
 		devel/py-frozenlist \
-		www/py-multidict<7 \
+		www/py-multidict<8 \
 		devel/py-propcache \
 		www/py-yarl<2
 
