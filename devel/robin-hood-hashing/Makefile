@@ -3,10 +3,9 @@ COMMENT =	fast, memory-efficient, header-only hashtable
 GH_ACCOUNT =	martinus
 GH_PROJECT =	robin-hood-hashing
 GH_TAGNAME =	3.11.5
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
