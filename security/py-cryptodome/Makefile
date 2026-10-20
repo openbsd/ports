@@ -4,7 +4,7 @@ COMMENT=	self-contained cryptographic library for Python
 # amd64 (builds aesni/shani, avx2/bmi files)
 # i386 (no avx2/bmi)
 # aarch64 (none)
-MODPY_DISTV=	4.0.1
+MODPY_DISTV=	4.1.0
 DISTNAME=	pycryptodome-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
 
@@ -38,5 +38,17 @@ AESNI?=		"@comment "
 AVX2?=		"@comment "
 
 SUBST_VARS=	AESNI AVX2
+
+fix-plist:
+	@cp pkg/PLIST pkg/PLIST.old
+.for sfx pfx in \
+	avx2 AVX2 \
+	bmi2 AVX2 \
+	aesni AESNI \
+	shani AESNI \
+	clmul AESNI
+	sed -i 's,^\(@so .*_${sfx}.*\),$${${pfx}}\1,' pkg/PLIST
+.endfor
+	@diff -u0 pkg/PLIST.old pkg/PLIST || true
 
 .include <bsd.port.mk>
