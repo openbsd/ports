@@ -1,7 +1,7 @@
 COMMENT=	game where you deal drugs on the streets of NY
 
 DISTNAME=	dopewars-1.6.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	games
 SITES=		${SITE_SOURCEFORGE:=dopewars/}
 

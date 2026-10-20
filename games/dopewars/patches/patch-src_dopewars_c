@@ -1,7 +1,19 @@
 Index: src/dopewars.c
 --- src/dopewars.c.orig
 +++ src/dopewars.c
-@@ -2425,7 +2425,7 @@ static void SetupParameters(GSList *extraconfigs, gboo
+@@ -67,6 +67,11 @@
+ #include "gtkport/gtkport.h"
+ #endif
+ 
++#include <sys/stat.h>
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++
+ int ClientSock, ListenSock;
+ gboolean Network, Client, Server, WantAntique = FALSE, UseSounds = TRUE;
+ 
+@@ -2425,7 +2430,7 @@ static void SetupParameters(GSList *extraconfigs, gboo
    AssignName(&ServerName, "localhost");
    AssignName(&ServerMOTD, "");
    AssignName(&BindAddress, "");
