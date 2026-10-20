@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_DISTV}.dist-info/WHEE
 lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/multidict/__init__.pxd
 lib/python${MODPY_VERSION}/site-packages/multidict/__init__.py
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,4 +22,8 @@ lib/python${MODPY_VERSION}/site-packages/multidict/_abc.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_compat.py
 @so lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/multidict/_multidict_py.py
+@so lib/python${MODPY_VERSION}/site-packages/multidict/_testcapi.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/multidict/_testcyapi.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/multidict/multidict_capi.h
+lib/python${MODPY_VERSION}/site-packages/multidict/multidict_capi_struct.h
 lib/python${MODPY_VERSION}/site-packages/multidict/py.typed

@@ -1,6 +1,6 @@
 COMMENT=	dict-like collection, but with multiple values for a key
 
-MODPY_DISTV=	6.9.1
+MODPY_DISTV=	7.1.0
 DISTNAME=	multidict-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www devel
