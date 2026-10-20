@@ -34,16 +34,8 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 # to parallel build
 #DPB_PROPERTIES=	parallel
 
-# Asterisk requires either nested functions (gcc extension), or -fblocks (clang).
-
-# Keep telephony/asterisk-g729 in sync.
-COMPILER=		base-clang ports-gcc
-# XXX bsd.port.arch.mk is included below, before compiler.port.mk can set
-# ONLY_FOR_ARCHS
-ONLY_FOR_ARCHS=		${CLANG_ARCHS} ${GCC49_ARCHS}
-
-SHARED_LIBS+=		asteriskssl ${SHLIB_V}
-SHARED_LIBS+=		asteriskpj ${SHLIB_V}
+SHARED_LIBS +=		asteriskssl ${SHLIB_V}
+SHARED_LIBS +=		asteriskpj ${SHLIB_V}
 
 MULTI_PACKAGES=		-main -calendar -fax -http_post -kqueue \
 			-ldap -lua -odbc -pgsql -snmp -speex -tds \
