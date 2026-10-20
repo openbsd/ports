@@ -6,7 +6,7 @@ DISTNAME=		amavis-v${V}
 PKGNAME-main=		amavisd-new-${V}
 PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
-REVISION-main=		1
+REVISION=		1
 
 HOMEPAGE=		https://www.amavis.org/
 
