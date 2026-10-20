@@ -9,7 +9,7 @@ COMMENT-editor=	2D and 3D game engine (with the editor)
 VERSION =	4.7.2
 PKGNAME =	godot-${VERSION}
 DIST_TUPLE +=	codeberg godotsteam godotsteam v4.5.4 godotsteam
-REVISION =	0
+REVISION =	1
 
 MULTI_PACKAGES =	-main -editor
 PKGSPEC-main =	godot->=4.5

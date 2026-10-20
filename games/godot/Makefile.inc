@@ -6,8 +6,7 @@ CATEGORIES +=		games
 
 HOMEPAGE =		https://godotengine.org/
 
-MAINTAINER =		Omar Polo <op@openbsd.org> \
-			Thomas Frohwein <thfr@openbsd.org>
+MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE ?=	Yes

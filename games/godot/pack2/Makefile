@@ -7,7 +7,7 @@ COMMENT =	2D and 3D game engine
 
 VERSION =	4.4.1
 PKGNAME =	godot44-${VERSION}
-REVISION =	1
+REVISION =	2
 DIST_TUPLE +=	codeberg godotsteam godotsteam v4.3 godotsteam
 
 WANTLIB += ${COMPILER_LIBCXX} SDL3 SPIRV X11 Xcursor Xext Xi Xinerama
