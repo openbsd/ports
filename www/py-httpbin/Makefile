@@ -1,9 +1,8 @@
 COMMENT=	HTTP request and response service
 
-MODPY_DISTV=	0.10.2
+MODPY_DISTV=	0.10.4
 DISTNAME=	httpbin-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	www
 
@@ -13,22 +12,19 @@ HOMEPAGE=	https://github.com/psf/httpbin
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-RUN_DEPENDS=	archivers/py-brotli \
+RUN_DEPENDS=	archivers/py-brotlicffi \
 		devel/py-decorator \
-		devel/py-gevent \
-		devel/py-six \
-		textproc/py-MarkupSafe \
-		www/py-flasgger \
 		www/py-flask \
-		www/py-itsdangerous \
-		www/py-jinja2 \
+		devel/py-greenlet \
+		devel/py-six \
 		www/py-werkzeug
-# also wanted "raven" but it's only used for sending app errors to a
-# web service, and does nothing unless SENTRY_DSN is set in the environment,
-# so that is patched away for now
+
+# [mainapp]
+RUN_DEPENDS +=	www/py-flasgger \
+		www/py-gunicorn \
+		devel/py-gevent
 
 .include <bsd.port.mk>
