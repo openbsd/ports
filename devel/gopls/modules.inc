@@ -15,32 +15,33 @@ MODGO_MODULES =	\
 	github.com/jba/templatecheck			 v0.7.1 \
 	github.com/kr/pretty				 v0.3.1 \
 	github.com/kr/text				 v0.2.0 \
-	github.com/modelcontextprotocol/go-sdk		 v1.6.0 \
-	github.com/rogpeppe/go-internal			 v1.14.1 \
+	github.com/modelcontextprotocol/go-sdk		 v1.8.0 \
+	github.com/rogpeppe/go-internal			 v1.16.0 \
 	github.com/segmentio/asm			 v1.2.1 \
 	github.com/segmentio/encoding			 v0.5.4 \
 	github.com/yosida95/uritemplate/v3		 v3.0.2 \
 	github.com/yuin/goldmark			 v1.4.13 \
-	golang.org/x/crypto				 v0.53.0 \
+	golang.org/x/crypto				 v0.57.0 \
 	golang.org/x/exp				 v0.0.0-20231110203233-9a3e6036ecaa \
-	golang.org/x/exp/typeparams			 v0.0.0-20260611194520-c48552f49976 \
-	golang.org/x/mod				 v0.37.0 \
-	golang.org/x/net				 v0.56.0 \
-	golang.org/x/oauth2				 v0.36.0 \
-	golang.org/x/sync				 v0.21.0 \
-	golang.org/x/sys				 v0.46.0 \
-	golang.org/x/telemetry				 v0.0.0-20260625142307-59b4966ccb57 \
-	golang.org/x/term				 v0.44.0 \
-	golang.org/x/text				 v0.38.0 \
-	golang.org/x/tools				 v0.47.1-0.20260707181000-a299dadba899 \
+	golang.org/x/exp/typeparams			 v0.0.0-20260908205506-85c1c2202aba \
+	golang.org/x/mod				 v0.41.0 \
+	golang.org/x/net				 v0.59.0 \
+	golang.org/x/oauth2				 v0.37.0 \
+	golang.org/x/sync				 v0.23.0 \
+	golang.org/x/sys				 v0.48.0 \
+	golang.org/x/telemetry				 v0.0.0-20260924152758-ed294f943157 \
+	golang.org/x/term				 v0.46.0 \
+	golang.org/x/text				 v0.42.0 \
+	golang.org/x/time				 v0.16.0 \
+	golang.org/x/tools				 v0.51.1-0.20261014163302-24a65270771e \
 	golang.org/x/tools/go/expect			 v0.1.1-deprecated \
 	golang.org/x/tools/go/packages/packagestest	 v0.1.1-deprecated \
-	golang.org/x/vuln				 v1.4.0 \
+	golang.org/x/vuln				 v1.8.0 \
 	golang.org/x/xerrors				 v0.0.0-20190717185122-a985d3407aa7 \
 	gopkg.in/check.v1				 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/yaml.v3				 v3.0.1 \
-	honnef.co/go/tools				 v0.8.0-rc.1 \
-	mvdan.cc/gofumpt				 v0.10.0 \
+	honnef.co/go/tools				 v0.8.1 \
+	mvdan.cc/gofumpt				 v0.12.0 \
 	mvdan.cc/xurls/v2				 v2.6.0
 
 MODGO_MODFILES =	\
@@ -62,7 +63,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod		 v0.19.0 \
 	golang.org/x/mod		 v0.22.0 \
 	golang.org/x/mod		 v0.35.0 \
-	golang.org/x/mod		 v0.36.0 \
+	golang.org/x/mod		 v0.40.0 \
 	golang.org/x/mod		 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod		 v0.8.0 \
 	golang.org/x/net		 v0.0.0-20190620200207-3b0461eec859 \
@@ -80,6 +81,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sync		 v0.1.0 \
 	golang.org/x/sync		 v0.10.0 \
 	golang.org/x/sync		 v0.20.0 \
+	golang.org/x/sync		 v0.22.0 \
 	golang.org/x/sync		 v0.3.0 \
 	golang.org/x/sync		 v0.6.0 \
 	golang.org/x/sync		 v0.7.0 \
@@ -97,12 +99,12 @@ MODGO_MODFILES =	\
 	golang.org/x/sys		 v0.22.0 \
 	golang.org/x/sys		 v0.28.0 \
 	golang.org/x/sys		 v0.41.0 \
-	golang.org/x/sys		 v0.43.0 \
+	golang.org/x/sys		 v0.47.0 \
 	golang.org/x/sys		 v0.5.0 \
 	golang.org/x/sys		 v0.8.0 \
 	golang.org/x/telemetry		 v0.0.0-20240228155512-f48c80bd79b2 \
 	golang.org/x/telemetry		 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/telemetry		 v0.0.0-20260611141451-d61e87d5f4a3 \
+	golang.org/x/telemetry		 v0.0.0-20260908163034-4bcc4b2ee518 \
 	golang.org/x/term		 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term		 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term		 v0.12.0 \
@@ -120,6 +122,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text		 v0.3.7 \
 	golang.org/x/text		 v0.7.0 \
 	golang.org/x/text		 v0.9.0 \
+	golang.org/x/time		 v0.15.0 \
 	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools		 v0.0.0-20191119224855-298f0cb1881e \
 	golang.org/x/tools		 v0.1.12 \
@@ -128,10 +131,9 @@ MODGO_MODFILES =	\
 	golang.org/x/tools		 v0.23.0 \
 	golang.org/x/tools		 v0.28.0 \
 	golang.org/x/tools		 v0.42.0 \
-	golang.org/x/tools		 v0.44.0 \
 	golang.org/x/tools		 v0.44.1-0.20260420230617-19499e7caabc \
-	golang.org/x/tools		 v0.45.0 \
-	golang.org/x/tools		 v0.46.0 \
+	golang.org/x/tools		 v0.49.0 \
+	golang.org/x/tools		 v0.50.0 \
 	golang.org/x/tools		 v0.6.0 \
 	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405
 

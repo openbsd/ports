@@ -11,6 +11,7 @@ share/doc/gopls/daemon.md
 share/doc/gopls/design/
 share/doc/gopls/design/design.md
 share/doc/gopls/design/implementation.md
+share/doc/gopls/design/integrating-interactive-refactoring.md
 share/doc/gopls/design/integrating.md
 share/doc/gopls/editor/
 share/doc/gopls/editor/emacs.md
