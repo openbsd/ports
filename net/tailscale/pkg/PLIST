@@ -1,5 +1,6 @@
 @rcscript ${RCDIR}/tailscaled
 @comment bin/addlicense
+@comment bin/build
 @comment bin/build-webclient
 @comment bin/checkmetrics
 @comment bin/cigocacher
