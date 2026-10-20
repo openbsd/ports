@@ -1,6 +1,6 @@
 COMMENT=	interactive build tool, primarily for Scala/Java
 
-V=		2.0.10
+V=		2.0.11
 DISTNAME=	sbt-$V
 CATEGORIES=	devel
 
