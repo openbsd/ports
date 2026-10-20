@@ -1,7 +1,7 @@
 Index: Project/GNU/Library/Makefile.am
 --- Project/GNU/Library/Makefile.am.orig
 +++ Project/GNU/Library/Makefile.am
-@@ -313,6 +313,8 @@ pkgconfig_DATA = libmediainfo.pc
+@@ -316,6 +316,8 @@ pkgconfig_DATA = libmediainfo.pc
  
  AM_CXXFLAGS = -std=c++11
  AM_CPPFLAGS = -I../../../Source -I../../../../ZenLib/Source

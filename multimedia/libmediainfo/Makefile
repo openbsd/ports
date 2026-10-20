@@ -1,6 +1,6 @@
 COMMENT=	read metadata from media files
 
-VERSION=	26.05
+VERSION=	26.10
 PKGNAME=	libmediainfo-${VERSION}
 SHARED_LIBS=	mediainfo	23.0 # 0.0
 CATEGORIES=	multimedia
