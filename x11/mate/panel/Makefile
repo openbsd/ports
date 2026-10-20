@@ -6,6 +6,8 @@ MATE_PROJECT=		mate-panel
 MATE_VERSION=		1.28.6
 MATE_GITHUB=		Yes
 
+REVISION=		0
+
 CATEGORIES=		x11
 
 # GPLv2/LGPLv2/GFDLv1.1
@@ -41,6 +43,6 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-wayland --enable-debug=yes
+CONFIGURE_ARGS+=	--disable-wayland
 
 .include <bsd.port.mk>

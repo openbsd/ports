@@ -1,0 +1,234 @@
+Index: applets/clock/system-timezone.c
+--- applets/clock/system-timezone.c.orig
++++ applets/clock/system-timezone.c
+@@ -48,29 +48,49 @@
+ #include <string.h>
+ #include <unistd.h>
+ 
++#if defined(__OpenBSD__)
++#include <sys/types.h>
++#include <sys/event.h>
++#include <sys/stat.h>
++#include <fcntl.h>
++#include <time.h>
++#endif
++
+ #include <glib.h>
+ #include <glib/gstdio.h>
+ #include <gio/gio.h>
++#if defined(__OpenBSD__)
++#include <glib-unix.h>
++#endif
+ 
+ #include "system-timezone.h"
+ 
+ /* Files that we look at and that should be monitored */
++#if defined(__OpenBSD__)
++#define CHECK_NB 1
++#else
+ #define CHECK_NB 5
++#endif
+ #define ETC_TIMEZONE        "/etc/timezone"
+ #define ETC_TIMEZONE_MAJ    "/etc/TIMEZONE"
+ #define ETC_RC_CONF         "/etc/rc.conf"
+ #define ETC_SYSCONFIG_CLOCK "/etc/sysconfig/clock"
+ #define ETC_CONF_D_CLOCK    "/etc/conf.d/clock"
+ #define ETC_LOCALTIME       "/etc/localtime"
++#if defined(__OpenBSD__)
++#define ETC_DIR             "/etc"
++#endif
+ 
+ /* The first 4 characters in a timezone file, from tzfile.h */
+ #define TZ_MAGIC "TZif"
+ 
+ static char *files_to_check[CHECK_NB] = {
++#if !defined(__OpenBSD__)
+         ETC_TIMEZONE,
+         ETC_TIMEZONE_MAJ,
+         ETC_SYSCONFIG_CLOCK,
+         ETC_CONF_D_CLOCK,
++#endif
+         ETC_LOCALTIME
+ };
+ 
+@@ -80,6 +100,16 @@ typedef struct {
+         char *tz;
+         char *env_tz;
+         GFileMonitor *monitors[CHECK_NB];
++#if defined(__OpenBSD__)
++        /* kqueue watch for /etc and saved state of /etc/localtime */
++        int              etc_kq;
++        int              etc_fd;
++        guint            etc_watch_id;
++        gboolean         localtime_exists;
++        ino_t            localtime_ino;
++        struct timespec  localtime_mtime;
++        char            *localtime_target;
++#endif
+ } SystemTimezonePrivate;
+ 
+ enum {
+@@ -102,6 +132,10 @@ static void system_timezone_monitor_changed (GFileMoni
+                                              GFileMonitorEvent event,
+                                              gpointer user_data);
+ static char *system_timezone_find (void);
++#if defined(__OpenBSD__)
++static void system_timezone_etc_watch_start (SystemTimezone *systz);
++static void system_timezone_etc_watch_stop (SystemTimezone *systz);
++#endif
+ 
+ SystemTimezone *
+ system_timezone_new (void)
+@@ -160,6 +194,13 @@ system_timezone_init (SystemTimezone *systz)
+         priv->env_tz = NULL;
+         for (i = 0; i < CHECK_NB; i++)
+                 priv->monitors[i] = NULL;
++#if defined(__OpenBSD__)
++        priv->etc_kq = -1;
++        priv->etc_fd = -1;
++        priv->etc_watch_id = 0;
++        priv->localtime_exists = FALSE;
++        priv->localtime_target = NULL;
++#endif
+ }
+ 
+ static GObject *
+@@ -218,6 +259,10 @@ system_timezone_constructor (GType                  ty
+                                           obj);
+         }
+ 
++#if defined(__OpenBSD__)
++        system_timezone_etc_watch_start (systz);
++#endif
++
+         systz_singleton = obj;
+ 
+         return systz_singleton;
+@@ -240,6 +285,10 @@ system_timezone_finalize (GObject *obj)
+                 g_clear_object (&priv->monitors[i]);
+         }
+ 
++#if defined(__OpenBSD__)
++        system_timezone_etc_watch_stop (systz);
++#endif
++
+         G_OBJECT_CLASS (system_timezone_parent_class)->finalize (obj);
+ 
+         g_assert (obj == systz_singleton);
+@@ -279,6 +328,116 @@ system_timezone_monitor_changed (GFileMonitor *handle,
+         }
+         g_free (new_tz);
+ }
++
++#if defined(__OpenBSD__)
++/* compare with the saved state of /etc/localtime in case /etc has a change */
++static gboolean
++system_timezone_localtime_update (SystemTimezonePrivate *priv)
++{
++        struct stat  st;
++        gboolean     exists;
++        char        *target = NULL;
++        gboolean     changed;
++
++        exists = g_lstat (ETC_LOCALTIME, &st) == 0;
++        if (exists && S_ISLNK (st.st_mode))
++                target = g_file_read_link (ETC_LOCALTIME, NULL);
++
++        changed = exists != priv->localtime_exists ||
++                  g_strcmp0 (target, priv->localtime_target) != 0;
++        if (exists && !changed)
++                changed = st.st_ino != priv->localtime_ino ||
++                          st.st_mtim.tv_sec != priv->localtime_mtime.tv_sec ||
++                          st.st_mtim.tv_nsec != priv->localtime_mtime.tv_nsec;
++
++        priv->localtime_exists = exists;
++        g_free (priv->localtime_target);
++        priv->localtime_target = target;
++        if (exists) {
++                priv->localtime_ino = st.st_ino;
++                priv->localtime_mtime = st.st_mtim;
++        }
++
++        return changed;
++}
++
++static gboolean
++system_timezone_etc_changed (gint         fd,
++                             GIOCondition condition,
++                             gpointer     user_data)
++{
++        SystemTimezone        *systz = SYSTEM_TIMEZONE (user_data);
++        SystemTimezonePrivate *priv;
++        struct kevent          ev;
++        struct timespec        ts = { 0, 0 };
++
++        priv = system_timezone_get_instance_private (systz);
++
++        while (kevent (fd, NULL, 0, &ev, 1, &ts) > 0)
++                ;
++
++        if (system_timezone_localtime_update (priv))
++                system_timezone_monitor_changed (NULL, NULL, NULL,
++                                                 G_FILE_MONITOR_EVENT_CHANGED,
++                                                 systz);
++
++        return G_SOURCE_CONTINUE;
++}
++
++static void
++system_timezone_etc_watch_start (SystemTimezone *systz)
++{
++        SystemTimezonePrivate *priv;
++        struct kevent          ev;
++
++        priv = system_timezone_get_instance_private (systz);
++
++        priv->etc_fd = open (ETC_DIR, O_RDONLY | O_DIRECTORY | O_CLOEXEC);
++        if (priv->etc_fd == -1)
++                return;
++
++        priv->etc_kq = kqueue ();
++        if (priv->etc_kq == -1) {
++                system_timezone_etc_watch_stop (systz);
++                return;
++        }
++
++        EV_SET (&ev, priv->etc_fd, EVFILT_VNODE, EV_ADD | EV_CLEAR,
++                NOTE_WRITE | NOTE_EXTEND, 0, NULL);
++        if (kevent (priv->etc_kq, &ev, 1, NULL, 0, NULL) == -1) {
++                system_timezone_etc_watch_stop (systz);
++                return;
++        }
++
++        system_timezone_localtime_update (priv);
++
++        priv->etc_watch_id = g_unix_fd_add (priv->etc_kq, G_IO_IN,
++                                            system_timezone_etc_changed,
++                                            systz);
++}
++
++static void
++system_timezone_etc_watch_stop (SystemTimezone *systz)
++{
++        SystemTimezonePrivate *priv;
++
++        priv = system_timezone_get_instance_private (systz);
++
++        if (priv->etc_watch_id != 0) {
++                g_source_remove (priv->etc_watch_id);
++                priv->etc_watch_id = 0;
++        }
++        if (priv->etc_kq != -1) {
++                close (priv->etc_kq);
++                priv->etc_kq = -1;
++        }
++        if (priv->etc_fd != -1) {
++                close (priv->etc_fd);
++                priv->etc_fd = -1;
++        }
++        g_clear_pointer (&priv->localtime_target, g_free);
++}
++#endif
+ 
+ /*
+  * Code to deal with the system timezone on all distros.
