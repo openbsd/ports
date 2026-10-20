@@ -3,4 +3,6 @@ life is to route traffic to the best server, delivering top performance
 to legitimate users while shunting or blocking abusive traffic.
 
 Flavours:
-        h3: build with libquiche/boringssl, providing incoming HTTP/3 and QUIC support
+        h3: build with libquiche/boringssl, providing incoming HTTP/3
+            and QUIC support. this also enables the YAML configuration,
+            as all of these features depend on rust.
