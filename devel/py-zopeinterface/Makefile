@@ -1,6 +1,6 @@
 COMMENT=	object interface infrastructure from Zope
 
-MODPY_DISTV=	8.6
+MODPY_DISTV=	8.7
 DISTNAME=	zope_interface-${MODPY_DISTV}
 PKGNAME=	py-zopeinterface-${MODPY_DISTV}
 CATEGORIES=	devel
