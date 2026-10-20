@@ -180,6 +180,9 @@ ALL_TARGET = bootstrap2
 
 MAKE_FLAGS += libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
 
+# build optimized stage1 compiler without debug info
+MAKE_FLAGS += STAGE1_CFLAGS=-O2
+
 .for _a in ${ONLY_FOR_ARCHS}
 PKG_ARGS += -D${_a}=0
 .endfor
