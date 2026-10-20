@@ -4,6 +4,24 @@ Wine's '?' suffix, matching server/fd.c.
 Index: dlls/ntdll/unix/file.c
 --- dlls/ntdll/unix/file.c.orig
 +++ dlls/ntdll/unix/file.c
+@@ -813,7 +813,7 @@ static char *parse_mount_entries( FILE *f, dev_t dev, 
+ }
+ #endif
+ 
+-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__) || defined(__OpenBSD__)
+ #include <fstab.h>
+ static char *parse_mount_entries( FILE *f, dev_t dev, ino_t ino )
+ {
+@@ -918,7 +918,7 @@ static char *get_default_drive_device( const char *roo
+     if (device) ret = strdup( device );
+     mutex_unlock( &mnt_mutex );
+ 
+-#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__ ) || defined(__DragonFly__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__ ) || defined(__DragonFly__) || defined(__OpenBSD__)
+     char *device = NULL;
+     int fd, res = -1;
+     struct stat st;
 @@ -1672,7 +1672,24 @@ static BOOL fd_is_mount_point( int fd, const struct st
  
  static unsigned int server_get_unix_name( HANDLE handle, char **unix_name );
