@@ -1,0 +1,35 @@
+Index: plugins/datetime/system-timezone.c
+--- plugins/datetime/system-timezone.c.orig
++++ plugins/datetime/system-timezone.c
+@@ -792,6 +792,7 @@ static GetSystemTimezone get_system_timezone_methods[]
+         /* cheap and "more correct" than data from a config file */
+         system_timezone_read_etc_localtime_softlink,
+         /* reading various config files */
++#if !defined(__OpenBSD__)
+         system_timezone_read_etc_timezone,
+         system_timezone_read_etc_sysconfig_clock,
+         system_timezone_read_etc_sysconfig_clock_alt,
+@@ -799,6 +800,7 @@ static GetSystemTimezone get_system_timezone_methods[]
+         system_timezone_read_etc_rc_conf,
+         /* reading deprecated config files */
+         system_timezone_read_etc_conf_d_clock,
++#endif
+         /* reading /etc/timezone directly. Expensive since we have to stat
+          * many files */
+         system_timezone_read_etc_localtime_hardlink,
+@@ -960,6 +962,7 @@ typedef gboolean (*SetSystemTimezone) (const char  *tz
+  * since the process will be stopped and the last methods won't be called.
+  * So we use the same order as in get_system_timezone_methods */
+ static SetSystemTimezone set_system_timezone_methods[] = {
++#if !defined(__OpenBSD__)
+         /* writing various config files if they exist and have the
+          * setting already present */
+         system_timezone_write_etc_timezone,
+@@ -970,6 +973,7 @@ static SetSystemTimezone set_system_timezone_methods[]
+         /* writing deprecated config files if they exist and have the
+          * setting already present */
+         system_timezone_write_etc_conf_d_clock,
++#endif
+         NULL
+ };
+ 
