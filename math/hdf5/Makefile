@@ -1,5 +1,3 @@
-ONLY_FOR_ARCHS =	${GCC49_ARCHS}
-
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
 GH_ACCOUNT =		HDFGroup
