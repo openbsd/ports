@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.120 2026/09/23 13:45:41 tb Exp $
+# $OpenBSD: arch-defines.mk,v 1.121 2026/10/20 19:38:12 kirill Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -40,13 +40,13 @@ LLD_ARCHS = aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 # as well as available for PROPERTIES checks.
 LLVM_ARCHS = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64 sparc64
 # arches where ports-gcc >4.9 exists.  To be used again for modules
-GCC49_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc powerpc64 riscv64 sparc64
+PORTSGCC_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc powerpc64 riscv64 sparc64
 
 # arches where there is a C++11 compiler, either clang in base or ports-gcc
-CXX11_ARCHS = ${CLANG_ARCHS} ${GCC49_ARCHS}
+CXX11_ARCHS = ${CLANG_ARCHS} ${PORTSGCC_ARCHS}
 DEBUGINFO_ARCHS = aarch64 amd64
 
-.for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC49 MONO LLVM LUAJIT \
+.for PROP in ALL APM BE LE LP64 CLANG GCC4 PORTSGCC MONO LLVM LUAJIT \
                      CXX11 OCAML_NATIVE OCAML_NATIVE_DYNLINK GO \
                      LLD RUST DEBUGINFO
 .  for A B in ${MACHINE_ARCH} ${ARCH}

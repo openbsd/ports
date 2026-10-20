@@ -1,6 +1,6 @@
 # When updating/switching to a new version, remember to adapt: devel/meson
 
-ONLY_FOR_ARCHS = ${GCC49_ARCHS}
+ONLY_FOR_ARCHS = ${PORTSGCC_ARCHS}
 
 ONLY_FOR_ARCHS-ada = amd64 mips64 i386 powerpc
 ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 mips64 powerpc powerpc64 \

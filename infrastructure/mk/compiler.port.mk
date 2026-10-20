@@ -1,4 +1,4 @@
-# $OpenBSD: compiler.port.mk,v 1.6 2025/10/24 14:25:34 rsadowski Exp $
+# $OpenBSD: compiler.port.mk,v 1.7 2026/10/20 19:38:12 kirill Exp $
 #
 #  Copyright (c) 2017 Marc Espie
 # 
@@ -36,7 +36,7 @@ _COMPILER_ARCHS += ${CLANG_ARCHS}
 CHOSEN_COMPILER ?= base-clang
 .    endif
 .  elif "$c" == "ports-gcc"
-MODGCC4_ARCHS ?=	${GCC49_ARCHS}
+MODGCC4_ARCHS ?=	${PORTSGCC_ARCHS}
 _MODGCC4_ARCH_USES = 	No
 _COMPILER_ARCHS += ${MODGCC4_ARCHS}
 .    for _i in ${MODGCC4_ARCHS}
