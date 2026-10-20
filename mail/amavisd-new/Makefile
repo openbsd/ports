@@ -6,7 +6,7 @@ DISTNAME=		amavis-v${V}
 PKGNAME-main=		amavisd-new-${V}
 PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
-REVISION-main=		0
+REVISION-main=		1
 
 HOMEPAGE=		https://www.amavis.org/
 
@@ -37,7 +37,6 @@ RUN_DEPENDS=		archivers/7zip,-rar \
 			net/net-snmp \
 			net/p5-IO-Socket-INET6 \
 			net/p5-Net-LibIDN \
-			security/clamav \
 			security/p5-IO-Socket-SSL \
 			sysutils/p5-Unix-Syslog
 
@@ -48,9 +47,12 @@ RUN_DEPENDS-utils=	devel/p5-ZMQ \
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-PKG_ARCH=		*
-
 MULTI_PACKAGES=		-main -utils
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mrust}
+RUN_DEPENDS +=		security/clamav
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/bin/amavis-mc
