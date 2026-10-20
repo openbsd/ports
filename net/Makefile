@@ -24,7 +24,6 @@
      SUBDIR += bgpq3
      SUBDIR += bgpq4
      SUBDIR += bindgraph
-     SUBDIR += bing
      SUBDIR += bird
      SUBDIR += bitcoin
      SUBDIR += bitcoin,no_x11

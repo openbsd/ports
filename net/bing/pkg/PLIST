@@ -1,6 +1,0 @@
-@man man/man8/bing.8
-@mode u+s
-@bin sbin/bing
-@mode
-share/doc/bing/
-share/doc/bing/README
