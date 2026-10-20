@@ -22,7 +22,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-TEST_DEPENDS=	security/py-cryptodome-test-vectors
+TEST_DEPENDS=	security/py-cryptodome-test-vectors>=1.0.24
 
 .if ${MACHINE_ARCH:Mamd64}
 AESNI=
