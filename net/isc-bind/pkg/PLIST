@@ -224,7 +224,6 @@ include/isc/tid.h
 include/isc/time.h
 include/isc/timer.h
 include/isc/tls.h
-include/isc/tm.h
 include/isc/types.h
 include/isc/urcu.h
 include/isc/url.h

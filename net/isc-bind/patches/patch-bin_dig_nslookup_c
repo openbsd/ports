@@ -4,7 +4,7 @@ locale is needed for idn2.
 Index: bin/dig/nslookup.c
 --- bin/dig/nslookup.c.orig
 +++ bin/dig/nslookup.c
-@@ -954,6 +954,16 @@ main(int argc, char **argv) {
+@@ -958,6 +958,16 @@ main(int argc, char **argv) {
  	dighost_shutdown = start_next_command;
  
  	setup_libs();
@@ -21,7 +21,7 @@ Index: bin/dig/nslookup.c
  	progname = argv[0];
  
  	setup_system(false, false);
-@@ -963,6 +973,21 @@ main(int argc, char **argv) {
+@@ -967,6 +977,21 @@ main(int argc, char **argv) {
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}

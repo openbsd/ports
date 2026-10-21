@@ -12,7 +12,7 @@ Index: bin/dig/host.c
  
  #include <isc/attributes.h>
  #include <isc/commandline.h>
-@@ -914,12 +915,36 @@ main(int argc, char **argv) {
+@@ -915,12 +916,36 @@ main(int argc, char **argv) {
  	progname = argv[0];
  	pre_parse_args(argc, argv);
  	setup_libs();
