@@ -1,9 +1,24 @@
 See also https://github.com/octo/liboping/issues/72
 
+1st chunk: declare that its setgid
+
 Index: src/oping.c
 --- src/oping.c.orig
 +++ src/oping.c
-@@ -1125,7 +1125,7 @@ static int update_graph_prettyping (ping_context_t *ct
+@@ -77,6 +77,12 @@
+ #include <locale.h>
+ #include <langinfo.h>
+ 
++#if defined(__OpenBSD__)
++#include <sys/stat.h>
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++__attribute__((visibility("default"))) mode_t _permit_setugid = S_ISUID;
++#endif
++
+ #if USE_NCURSES
+ # define NCURSES_OPAQUE 1
+ /* http://newsgroups.derkeiler.com/Archive/Rec/rec.games.roguelike.development/2010-09/msg00050.html */
+@@ -1125,7 +1131,7 @@ static int update_graph_prettyping (ping_context_t *ct
  			wattron (ctx->window, COLOR_PAIR(color));
  
  		if (has_utf8())
@@ -12,7 +27,7 @@ Index: src/oping.c
  		else
  			mvwaddch (ctx->window, /* y = */ 3, /* x = */ x + 2, symbolc);
  
-@@ -1222,7 +1222,7 @@ static int update_graph_histogram (ping_context_t *ctx
+@@ -1222,7 +1228,7 @@ static int update_graph_histogram (ping_context_t *ctx
  		if (counters[x] == 0)
  			mvwaddch (ctx->window, /* y = */ 3, /* x = */ x + 2, ' ');
  		else if (has_utf8 ())
@@ -21,7 +36,7 @@ Index: src/oping.c
  					hist_symbols_utf8[index]);
  		else
  			mvwaddch (ctx->window, /* y = */ 3, /* x = */ x + 2,
-@@ -1598,7 +1598,7 @@ static void update_host_hook (pingobj_iter_t *iter, /*
+@@ -1598,7 +1604,7 @@ static void update_host_hook (pingobj_iter_t *iter, /*
  			else
  				color = OPING_RED;
  
