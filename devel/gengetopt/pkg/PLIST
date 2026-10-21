@@ -1,5 +1,6 @@
 @bin bin/gengetopt
 @info info/gengetopt.info
+@comment @info info/index.info
 @man man/man1/gengetopt.1
 share/doc/gengetopt/
 share/doc/gengetopt/COPYING
