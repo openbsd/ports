@@ -1,9 +1,8 @@
 COMMENT=	Python client for Elasticsearch
 
-MODPY_DISTV=7.17.0
+MODPY_DISTV=	7.17.13
 DISTNAME=	elasticsearch-${MODPY_DISTV}
 PKGNAME=	py-elasticsearch-${MODPY_DISTV}
-REVISION=	4
 
 CATEGORIES=	textproc
 
@@ -13,9 +12,6 @@ MAINTAINER=	Pavel Korovin <pvk@openbsd.org>
 
 # Apache 2
 PERMIT_PACKAGE=	Yes
-
-# prevent fetching a file with the same DISTNAME as textproc/elasticsearch
-DIST_SUBDIR=	py-elasticsearch
 
 MODPY_PI=	Yes
 
