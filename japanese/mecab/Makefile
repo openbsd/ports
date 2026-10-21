@@ -32,7 +32,7 @@ SITES =		https://distfiles.sigtrap.nl/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${PKGNAME-ipadic}-${IPADIC_VER}.tar.gz
 
-LIB_DEPENDS-main = converters/libiconv ${MODGCC4_CPPLIBDEP}
+LIB_DEPENDS-main = converters/libiconv ${MODGCC_CPPLIBDEP}
 RUN_DEPENDS-main = mecab-ipadic-*:japanese/mecab,-ipadic
 RUN_DEPENDS-ipadic =
 

@@ -31,7 +31,7 @@ COMPILER_LANGS =	c
 BUILD_DEPENDS =	devel/libffi
 
 RUN_DEPENDS =	devel/libffi \
-		lang/gcc/${MODGCC4_VERSION},-main
+		lang/gcc/${MODGCC_VERSION},-main
 
 USE_GMAKE =	Yes
 MAKE_FILE =	makefile

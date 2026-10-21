@@ -57,7 +57,7 @@ LIB_DEPENDS-main= \
 		telephony/bcg729
 
 # needed for gcc archs, it's not inherited by subpackages
-LIB_DEPENDS-main += ${MODGCC4_CPPLIBDEP}
+LIB_DEPENDS-main += ${MODGCC_CPPLIBDEP}
 
 LIB_DEPENDS-pjsua= telephony/pjsua,-main \
 		audio/portaudio-svn

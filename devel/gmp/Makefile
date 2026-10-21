@@ -26,7 +26,7 @@ WANTLIB-main=	# empty
 WANTLIB-cxx=	gmp m ${COMPILER_LIBCXX}
 
 LIB_DEPENDS-cxx=${FULLPKGNAME-main}:${BASE_PKGPATH},-main \
-		${MODGCC4_CPPLIBDEP}
+		${MODGCC_CPPLIBDEP}
 
 PSEUDO_FLAVORS=	no_cxx bootstrap
 FLAVOR?=

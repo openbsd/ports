@@ -199,7 +199,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES+=	lang/python
 
 LIB_DEPENDS-main= \
-		${MODGCC4_CPPLIBDEP} \
+		${MODGCC_CPPLIBDEP} \
 		archivers/zstd \
 		databases/mariadb \
 		databases/openldap \
@@ -263,7 +263,7 @@ WANTLIB-kde +=	lib/libreoffice/program/uno_cppu \
 		lib/libreoffice/program/uno_salhelpergcc3
 
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
-			${MODGCC4_CPPLIBDEP} \
+			${MODGCC_CPPLIBDEP} \
 			devel/kf6/kcoreaddons \
 			devel/kf6/kio \
 			devel/harfbuzz,-icu \
@@ -276,7 +276,7 @@ LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 MODULES+=		java
 MODJAVA_VER=		17+
 .endif
-LIB_DEPENDS-java=	${MODGCC4_CPPLIBDEP} \
+LIB_DEPENDS-java=	${MODGCC_CPPLIBDEP} \
 			editors/libreoffice
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			databases/db/v4,-java \

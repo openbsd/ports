@@ -84,12 +84,12 @@ LIB_DEPENDS-main +=	devel/gettext,-runtime
 LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main \
 			databases/mariadb
 
-LIB_DEPENDS-mysql +=	${MODGCC4_CPPLIBDEP}
+LIB_DEPENDS-mysql +=	${MODGCC_CPPLIBDEP}
 
 LIB_DEPENDS-psql =	${BASE_PKGPATH},-main \
 			databases/postgresql
 
-LIB_DEPENDS-psql +=	${MODGCC4_CPPLIBDEP}
+LIB_DEPENDS-psql +=	${MODGCC_CPPLIBDEP}
 
 BUILD_DEPENDS =		graphics/vulkan-headers \
 			wayland/wayland-protocols \

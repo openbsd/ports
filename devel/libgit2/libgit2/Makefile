@@ -16,7 +16,7 @@ MODPY_RUNDEP=		No
 COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS=		c
 # for atomic builtins
-MODGCC4_ARCHS=		hppa
+MODGCC_ARCHS=		hppa
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

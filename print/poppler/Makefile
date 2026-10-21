@@ -62,7 +62,7 @@ RUN_DEPENDS-main= \
 		print/poppler-data>=0.4.7 \
 		devel/boost
 
-LIB_DEPENDS-main=${MODGCC4_CPPLIBDEP} \
+LIB_DEPENDS-main=${MODGCC_CPPLIBDEP} \
 		converters/libiconv \
 		devel/gettext,-runtime \
 		devel/glib2 \
@@ -74,14 +74,14 @@ LIB_DEPENDS-main=${MODGCC4_CPPLIBDEP} \
 		graphics/tiff
 
 LIB_DEPENDS-qt5=${MODQT5_LIB_DEPENDS} \
-		${MODGCC4_CPPLIBDEP} \
+		${MODGCC_CPPLIBDEP} \
 		print/poppler
 
 LIB_DEPENDS-qt6=${MODQT6_LIB_DEPENDS} \
-		${MODGCC4_CPPLIBDEP} \
+		${MODGCC_CPPLIBDEP} \
 		print/poppler
 
-LIB_DEPENDS-utils=${MODGCC4_CPPLIBDEP} \
+LIB_DEPENDS-utils=${MODGCC_CPPLIBDEP} \
 		print/poppler
 
 WANTLIB-main=	${COMPILER_LIBCXX} \

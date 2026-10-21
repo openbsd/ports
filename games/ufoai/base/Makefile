@@ -41,14 +41,14 @@ LIB_DEPENDS-main =	devel/sdl-mixer \
 			multimedia/xvidcore \
 			net/curl \
 			textproc/mxml \
-			${MODGCC4_CPPLIBDEP}
+			${MODGCC_CPPLIBDEP}
 
 LIB_DEPENDS-editor = 	audio/libvorbis \
 			audio/openal \
 			devel/sdl \
 			x11/gtkglext \
 			x11/gtksourceview \
-			${MODGCC4_CPPLIBDEP}
+			${MODGCC_CPPLIBDEP}
 
 USE_GMAKE =		Yes
 MAKE_ENV += 		${CONFIGURE_ENV}

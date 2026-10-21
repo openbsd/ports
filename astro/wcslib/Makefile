@@ -18,10 +18,10 @@ COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 
 MODULES =	gcc4
-MODGCC4_LANGS =	fortran
+MODGCC_LANGS =	fortran
 
 LIB_DEPENDS =	math/cfitsio
-TEST_DEPENDS =	lang/gcc/${MODGCC4_VERSION},-f95
+TEST_DEPENDS =	lang/gcc/${MODGCC_VERSION},-f95
 # failure in Fortran tunits test; some strings are not printed
 # as expected, instead replaced by NULs.
 # diff -a Fortran/test/tunits.out Fortran/tunits.out | cat -v

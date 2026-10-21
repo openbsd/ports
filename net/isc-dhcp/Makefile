@@ -45,7 +45,7 @@ MAKE_ENV +=	CC='${CC}'
 # Fix "undefined reference to `__atomic_store_8'"
 .if ${MACHINE_ARCH:Mhppa}
 WANTLIB +=	atomic
-LIB_DEPENDS +=	lang/gcc/${MODGCC4_VERSION},-libs
+LIB_DEPENDS +=	${MODGCC_CPPLIBDEP}
 MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"
 .endif
 

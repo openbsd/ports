@@ -32,7 +32,7 @@ MODPY_TESTDEP =		Yes
 SEPARATE_BUILD =	No
 
 BUILD_DEPENDS =		graphics/png
-LIB_DEPENDS =		${MODGCC4_CPPLIBDEP} \
+LIB_DEPENDS =		${MODGCC_CPPLIBDEP} \
 			archivers/minizip \
 			devel/sdl
 

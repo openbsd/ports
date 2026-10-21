@@ -51,7 +51,7 @@ TEST_DEPENDS=		${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 
 LIB_DEPENDS-main =	devel/libusb1 \
 			x11/dbus \
-			${MODGCC4_CPPLIBDEP}
+			${MODGCC_CPPLIBDEP}
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			devel/py-serial
 

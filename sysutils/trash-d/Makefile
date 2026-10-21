@@ -13,11 +13,11 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c m pthread
 
 MODULES =		gcc4
-MODGCC4_LANGS =		d
+MODGCC_LANGS =		d
 
 BUILD_DEPENDS +=	textproc/scdoc
 
-TEST_DEPENDS =		${MODGCC4_DLANGDEP}
+TEST_DEPENDS =		${MODGCC_DLANGDEP}
 
 do-build:
 	cd ${WRKSRC} && egdc -O -frelease -finline-functions -Isource -J. \

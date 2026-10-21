@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.43 2026/06/23 09:41:36 sthen Exp $
+# $OpenBSD: mk.conf.template,v 1.44 2026/10/21 09:09:47 kirill Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -32,6 +32,8 @@
 .poison LIB_DEPEMDS
 .poison LIB_DEPEND
 .poison MODGCC4_ARCHES
+.poison MODGCC4_ARCHS
+.poison MODGCC_ARCHES
 .poison MODGNOME_DESKTOP_FILE
 .poison MODGNOME_ICON_CACHE
 .poison MODGNOME_MIME_FILE

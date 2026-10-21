@@ -25,7 +25,7 @@ WANTLIB =		${COMPILER_LIBCXX} m pthread
 COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		devel/autoconf-archive
-LIB_DEPENDS =		${MODGCC4_CPPLIBDEP}
+LIB_DEPENDS =		${MODGCC_CPPLIBDEP}
 
 MAKE_FLAGS =		CC="${CC}" \
 			CXX="${CXX}" \

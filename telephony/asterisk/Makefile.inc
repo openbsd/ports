@@ -49,9 +49,9 @@ FLAVOR?=
 FLAVOR+=        no_vm_odbc
 .endif
 
-# MODGCC4_CPPLIBDEP is empty on a clang build.
+# MODGCC_CPPLIBDEP is empty on a clang build.
 # leave it here, don't try to conditionalize it below, dpb doesn't like that.
-LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
+LIB_DEPENDS-main=	${MODGCC_CPPLIBDEP} \
 			audio/gsm \
 			audio/libogg \
 			audio/libvorbis \
@@ -161,7 +161,7 @@ BLOCKSLIBDEP =		devel/libdispatch
 BLOCKSWANTLIB =		BlocksRuntime
 .else
 CFLAGS +=		-ftrampolines
-WANTLIB-main +=		${MODGCC4_CPPWANTLIB}
+WANTLIB-main +=		${MODGCC_CPPWANTLIB}
 .endif
 
 # calendar

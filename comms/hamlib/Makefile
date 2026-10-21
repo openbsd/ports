@@ -35,7 +35,7 @@ WANTLIB-tcl=		${cWANTLIB} hamlib ${MODTCL_WANTLIB} z
 
 LIB_DEPENDS-main=	textproc/libxml \
 			devel/libusb1 \
-			${MODGCC4_CPPLIBDEP}
+			${MODGCC_CPPLIBDEP}
 LIB_DEPENDS-python=	${BUILD_PKGPATH} \
 			${MODPY_LIB_DEPENDS}
 LIB_DEPENDS-tcl=	${BUILD_PKGPATH} \

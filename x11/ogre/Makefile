@@ -34,7 +34,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ICE SM X11 Xaw Xext Xt $(MODGCC4_ATOMICWANTLIB)
+WANTLIB += ICE SM X11 Xaw Xext Xt $(MODGCC_ATOMICWANTLIB)
 WANTLIB += boost_atomic-mt boost_date_time-mt
 WANTLIB += boost_chrono-mt boost_thread-mt c
 WANTLIB += freeimage freetype m pthread z zzip

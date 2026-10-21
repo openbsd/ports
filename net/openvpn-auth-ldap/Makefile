@@ -24,7 +24,7 @@ BUILD_DEPENDS =		${RUN_DEPENDS} \
 # not actually using c++ but leave COMPILER_LANGS as default (c c++);
 # easier to pull in gcc-libs this way
 COMPILER =		ports-gcc
-BUILD_DEPENDS +=	${MODGCC4_CPPLIBDEP:S/-libs/-objc/}
+BUILD_DEPENDS +=	${MODGCC_CPPLIBDEP:S/-libs/-objc/}
 
 SEPARATE_BUILD =	Yes
 

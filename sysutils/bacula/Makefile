@@ -109,16 +109,16 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			bacula-pgsql-*|bacula-mysql-*|bacula-sqlite3-*:sysutils/bacula,-pgsql
 
 WANTLIB-pgsql += pq m ${COMPILER_LIBCXX}
-LIB_DEPENDS-pgsql +=	${MODGCC4_CPPLIBDEP} \
+LIB_DEPENDS-pgsql +=	${MODGCC_CPPLIBDEP} \
 			databases/postgresql
 RUN_DEPENDS-pgsql +=	databases/postgresql,-contrib
 
 WANTLIB-mysql += m mariadb ${COMPILER_LIBCXX}
-LIB_DEPENDS-mysql +=	${MODGCC4_CPPLIBDEP} \
+LIB_DEPENDS-mysql +=	${MODGCC_CPPLIBDEP} \
 			databases/mariadb
 
 WANTLIB-sqlite3 += sqlite3 m pthread ${COMPILER_LIBCXX}
-LIB_DEPENDS-sqlite3=	${MODGCC4_CPPLIBDEP} \
+LIB_DEPENDS-sqlite3=	${MODGCC_CPPLIBDEP} \
 			databases/sqlite3
 
 MODULES +=		x11/qt6

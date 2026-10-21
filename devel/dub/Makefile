@@ -27,11 +27,11 @@ DMD =	${LOCALBASE}/bin/dmd
 WANTLIB += c m pthread
 
 MODULES =	gcc4
-MODGCC4_LANGS =	d
+MODGCC_LANGS =	d
 
 BUILD_DEPENDS =	lang/gdmd
 
-RUN_DEPENDS =	${MODGCC4_DLANGDEP}
+RUN_DEPENDS =	${MODGCC_DLANGDEP}
 
 DC =	${LOCALBASE}/bin/egdc
 DMD =	${LOCALBASE}/bin/gdmd

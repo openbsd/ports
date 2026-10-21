@@ -17,7 +17,7 @@ SITES=			${SITE_SOURCEFORGE:=libmtp/}
 COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS=		c
 # avoid "libmtp.so.7.0: undefined reference to `.L2085'"
-MODGCC4_ARCHS=		mips64 mips64el
+MODGCC_ARCHS=		mips64 mips64el
 
 USE_GMAKE=		Yes
 

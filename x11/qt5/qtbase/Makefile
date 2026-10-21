@@ -82,15 +82,15 @@ LIB_DEPENDS-main +=	devel/gettext,-runtime
 LIB_DEPENDS-global =
 
 LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
-			${MODGCC4_CPPLIBDEP} \
+			${MODGCC_CPPLIBDEP} \
 			databases/mariadb
 
 LIB_DEPENDS-psql =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
-			${MODGCC4_CPPLIBDEP} \
+			${MODGCC_CPPLIBDEP} \
 			databases/postgresql
 
 LIB_DEPENDS-tds =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
-			${MODGCC4_CPPLIBDEP} \
+			${MODGCC_CPPLIBDEP} \
 			databases/freetds
 
 # The atspi is checked at configure time and used via D-Bus.

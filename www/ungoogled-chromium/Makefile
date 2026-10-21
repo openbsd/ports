@@ -114,7 +114,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/py-xcbgen \
 		${MODQT5_LIB_DEPENDS} \
 		${MODQT6_LIB_DEPENDS} \
-		${MODGCC4_CPPDEP} \
+		${MODGCC_CPPDEP} \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	audio/opus \
 		devel/pango \
@@ -127,7 +127,7 @@ LIB_DEPENDS=	audio/opus \
 		x11/gnome/at-spi2-core \
 		x11/xkbcommon \
 		print/cups,-libs \
-		${MODGCC4_CPPLIBDEP}
+		${MODGCC_CPPLIBDEP}
 
 USE_GMAKE=	Yes
 
