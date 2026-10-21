@@ -118,6 +118,8 @@ EXTRA_ENV += ac_cv_header_magic_h=no
 EXTRA_ENV += lt_cv_path_SED=/usr/bin/sed
 EXTRA_ENV += STRIP=/usr/bin/strip
 EXTRA_ENV += GDC=${GDC}
+EXTRA_ENV += SHELL=/bin/sh
+EXTRA_ENV += CONFIG_SHELL=/bin/sh
 MAKE_FLAGS +=	 ac_cv_path_mkdir=/bin/mkdir
 
 CONFIGURE_ENV += ${EXTRA_ENV}
