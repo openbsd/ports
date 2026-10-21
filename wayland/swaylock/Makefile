@@ -1,6 +1,7 @@
 COMMENT =	screen locker for Wayland
 
 V =		1.8.5
+REVISION =	0
 DISTNAME =	swaylock-${V}
 SITES =		https://github.com/swaywm/swaylock/releases/download/v${V}/
 

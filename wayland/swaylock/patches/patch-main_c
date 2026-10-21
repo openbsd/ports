@@ -11,7 +11,25 @@ Index: main.c
  #include "background-image.h"
  #include "cairo.h"
  #include "comm.h"
-@@ -322,23 +321,6 @@ static cairo_surface_t *select_image(struct swaylock_s
+@@ -26,6 +25,17 @@
+ #include "swaylock.h"
+ #include "ext-session-lock-v1-client-protocol.h"
+ 
++#if defined(__OpenBSD__)
++#include <sys/stat.h>
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++__attribute__((visibility("default"))) mode_t _permit_setugid = S_ISGID;
++#endif
++
++/*!
++ * Params sent by the peer.
++ */
++
+ static uint32_t parse_color(const char *color) {
+ 	if (color[0] == '#') {
+ 		++color;
+@@ -322,23 +332,6 @@ static cairo_surface_t *select_image(struct swaylock_s
  	return default_image;
  }
  
@@ -35,7 +53,7 @@ Index: main.c
  static void load_image(char *arg, struct swaylock_state *state) {
  	// [[<output>]:]<path>
  	struct swaylock_image *image = calloc(1, sizeof(struct swaylock_image));
-@@ -372,21 +354,12 @@ static void load_image(char *arg, struct swaylock_stat
+@@ -372,21 +365,12 @@ static void load_image(char *arg, struct swaylock_stat
  		}
  	}
  
@@ -57,7 +75,7 @@ Index: main.c
  
  	// Load the actual image
  	image->cairo_surface = load_background_image(image->path);
-@@ -956,32 +929,57 @@ static bool file_exists(const char *path) {
+@@ -956,32 +940,57 @@ static bool file_exists(const char *path) {
  	return path && access(path, R_OK) != -1;
  }
  
