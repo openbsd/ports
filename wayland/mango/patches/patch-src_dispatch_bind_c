@@ -1,7 +1,7 @@
 Index: src/dispatch/bind.c
 --- src/dispatch/bind.c.orig
 +++ src/dispatch/bind.c
-@@ -33,7 +33,12 @@
+@@ -35,7 +35,12 @@
  #include <wlr/types/wlr_keyboard_group.h>
  #include <wlr/types/wlr_output.h>
  #include <wlr/types/wlr_seat.h>
@@ -14,7 +14,7 @@ Index: src/dispatch/bind.c
  
  int32_t bind_to_view(const Arg *arg) {
  	if (!server.selected_monitor)
-@@ -1304,6 +1309,7 @@ int32_t spawn(const Arg *arg) {
+@@ -1341,6 +1346,7 @@ int32_t spawn(const Arg *arg) {
  		dup2(STDERR_FILENO, STDOUT_FILENO);
  		setsid();
  
@@ -22,7 +22,7 @@ Index: src/dispatch/bind.c
  		wordexp_t p;
  		if (wordexp(arg->v, &p, 0) != 0) {
  			mango_error(true, WLR_DEBUG, "mango: wordexp failed for '%s'\n",
-@@ -1316,6 +1322,35 @@ int32_t spawn(const Arg *arg) {
+@@ -1353,6 +1359,35 @@ int32_t spawn(const Arg *arg) {
  		mango_error(true, WLR_DEBUG, "mango: execvp '%s' failed: %s\n",
  					p.we_wordv[0], strerror(errno));
  		wordfree(&p);
