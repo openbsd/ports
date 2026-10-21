@@ -1,3 +1,5 @@
+Use the bundled dependencies when building the compiler and tools.
+
 Index: koch.nim
 --- koch.nim.orig
 +++ koch.nim
@@ -24,3 +26,20 @@ Index: koch.nim
    # installer.ini expects it under $nim/bin
    nimCompile("dist/atlas/src/atlas.nim",
               options = "-d:release --noNimblePath -d:nimAtlasBootstrap " & args)
+@@ -181,7 +172,6 @@ proc bundleChecksums(latest: bool) =
+   cloneDependency(distDir, "https://github.com/nim-lang/checksums.git", commit, allowBundled = true)
+ 
+ proc bundleNimsuggest(args: string) =
+-  bundleChecksums(false)
+   nimCompileFold("Compile nimsuggest", "nimsuggest/nimsuggest.nim",
+                  options = "-d:danger " & args)
+ 
+@@ -344,8 +334,6 @@ proc boot(args: string, skipIntegrityCheck: bool) =
+   let useCpp = doUseCpp()
+   let smartNimcache = (if "release" in args or "danger" in args: "nimcache/r_" else: "nimcache/d_") &
+                       hostOS & "_" & hostCPU
+-
+-  bundleChecksums(false)
+ 
+   let usingLibFFI = "nimHasLibFFI" in args
+   if usingLibFFI and not dirExists("dist/libffi"):

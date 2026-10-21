@@ -1,0 +1,35 @@
+Match BearSSL's size_t output parameters instead of Nim's native uint.
+
+Index: dist/nimble/vendor/bearssl/bearssl/abi/bearssl_ssl.nim
+--- dist/nimble/vendor/bearssl/bearssl/abi/bearssl_ssl.nim.orig
++++ dist/nimble/vendor/bearssl/bearssl/abi/bearssl_ssl.nim
+@@ -823,25 +823,25 @@ proc sslEngineLastError*(cc: var SslEngineContext): ci
+   return cc.err
+ 
+ 
+-proc sslEngineSendappBuf*(cc: var SslEngineContext; len: var uint): ptr byte {.
++proc sslEngineSendappBuf*(cc: var SslEngineContext; len: var csize_t): ptr byte {.
+     importcFunc, importc: "br_ssl_engine_sendapp_buf", header: "bearssl_ssl.h".}
+ 
+ proc sslEngineSendappAck*(cc: var SslEngineContext; len: csize_t) {.importcFunc,
+     importc: "br_ssl_engine_sendapp_ack", header: "bearssl_ssl.h".}
+ 
+-proc sslEngineRecvappBuf*(cc: var SslEngineContext; len: var uint): ptr byte {.
++proc sslEngineRecvappBuf*(cc: var SslEngineContext; len: var csize_t): ptr byte {.
+     importcFunc, importc: "br_ssl_engine_recvapp_buf", header: "bearssl_ssl.h".}
+ 
+ proc sslEngineRecvappAck*(cc: var SslEngineContext; len: csize_t) {.importcFunc,
+     importc: "br_ssl_engine_recvapp_ack", header: "bearssl_ssl.h".}
+ 
+-proc sslEngineSendrecBuf*(cc: var SslEngineContext; len: var uint): ptr byte {.
++proc sslEngineSendrecBuf*(cc: var SslEngineContext; len: var csize_t): ptr byte {.
+     importcFunc, importc: "br_ssl_engine_sendrec_buf", header: "bearssl_ssl.h".}
+ 
+ proc sslEngineSendrecAck*(cc: var SslEngineContext; len: csize_t) {.importcFunc,
+     importc: "br_ssl_engine_sendrec_ack", header: "bearssl_ssl.h".}
+ 
+-proc sslEngineRecvrecBuf*(cc: var SslEngineContext; len: var uint): ptr byte {.
++proc sslEngineRecvrecBuf*(cc: var SslEngineContext; len: var csize_t): ptr byte {.
+     importcFunc, importc: "br_ssl_engine_recvrec_buf", header: "bearssl_ssl.h".}
+ 
+ proc sslEngineRecvrecAck*(cc: var SslEngineContext; len: csize_t) {.importcFunc,

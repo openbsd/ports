@@ -1,0 +1,60 @@
+Keep BearSSL buffer lengths in C size_t storage, including async captures.
+Nim's uint and C size_t have different underlying types on OpenBSD/amd64.
+
+Index: dist/nimble/vendor/chronos/chronos/streams/tlsstream.nim
+--- dist/nimble/vendor/chronos/chronos/streams/tlsstream.nim.orig
++++ dist/nimble/vendor/chronos/chronos/streams/tlsstream.nim
+@@ -112,7 +112,7 @@ type
+     alpnProtosC: seq[cstring]
+     readFut: Future[int].Raising([CancelledError, AsyncStreamError])
+     writeFut: Future[void].Raising([CancelledError, AsyncStreamError])
+-    wlength: uint
++    wlength: csize_t
+     error: ref AsyncStreamError
+ 
+   SomeTLSStreamType* = TLSStreamReader|TLSStreamWriter|TLSAsyncStream
+@@ -276,7 +276,7 @@ proc runUntil(rws: TLSAsyncStream, target: cuint): Fut
+           await cancelAndWait(move(rws.writeFut))
+         break
+ 
+-      sslEngineRecvrecAck(engine[], uint(fut.value))
++      sslEngineRecvrecAck(engine[], csize_t(fut.value))
+       continue # re-read state / last error
+ 
+     if ((state and target) == target):
+@@ -290,7 +290,7 @@ proc runUntil(rws: TLSAsyncStream, target: cuint): Fut
+       if rws.eof: # We've already read EOF from the underlying stream
+         break
+ 
+-      var length = 0'u
++      var length: csize_t = 0
+       var buf = sslEngineRecvrecBuf(engine[], length)
+       rws.readFut = rws.rsource.readOnce(buf, int(length))
+ 
+@@ -342,9 +342,9 @@ proc readOnce(
+     if (state and SSL_RECVAPP) == SSL_RECVAPP:
+       # Unencrypted data is available from the engine - copy as much as possible
+       # to the user buffer
+-      var length = 0'u
++      var length: csize_t = 0
+       var buf = sslEngineRecvappBuf(engine[], length)
+-      let n = min(nbytes.uint, length)
++      let n = min(nbytes.csize_t, length)
+       copyMem(pbytes, buf, n)
+       sslEngineRecvappAck(engine[], n)
+       return n.int
+@@ -387,12 +387,12 @@ proc write(
+ 
+     if (state and SSL_SENDAPP) == SSL_SENDAPP:
+       # Application data can be queued for encryption
+-      var length = 0'u
++      var length: csize_t = 0
+       var buf = sslEngineSendappBuf(engine[], length)
+       let toWrite = min(int(length), nbytes - offset)
+       copyMem(buf, pbytes.offset(offset), toWrite)
+       offset += toWrite
+-      sslEngineSendappAck(engine[], uint(toWrite))
++      sslEngineSendappAck(engine[], csize_t(toWrite))
+ 
+       if offset == nbytes:
+         # Flushing is necessary for writes that only partially fill an SSL

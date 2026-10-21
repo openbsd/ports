@@ -9,7 +9,7 @@ Index: compiler/options.nim
    hasTinyCBackend* = defined(tinyc)
    useEffectSystem* = true
    useWriteTracking* = false
-@@ -576,7 +577,7 @@ proc newConfigRef*(): ConfigRef =
+@@ -584,7 +585,7 @@ proc newConfigRef*(): ConfigRef =
      outFile: RelativeFile"",
      outDir: AbsoluteDir"",
      prefixDir: AbsoluteDir"",

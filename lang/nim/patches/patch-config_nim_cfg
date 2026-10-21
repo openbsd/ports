@@ -24,7 +24,7 @@ Index: config/nim.cfg
    @elif haiku:
      gcc.options.linker = "-Wl,--as-needed -lnetwork"
      gcc.cpp.options.linker = "-Wl,--as-needed -lnetwork"
-@@ -223,21 +223,27 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
+@@ -236,21 +236,27 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
  
  # Options for FreeBSD, OpenBSD, NetBSD linker to add locations for searching
  # shared libraries.
@@ -58,7 +58,7 @@ Index: config/nim.cfg
  @elif netbsd:
    cincludes: "/usr/pkg/include"
    clibdir: "/usr/pkg/lib"
-@@ -262,15 +268,15 @@ gcc.options.always %= "${gcc.options.always} -fno-stri
+@@ -275,15 +281,15 @@ gcc.options.always %= "${gcc.options.always} -fno-stri
  # -fno-math-errno is default in OSX, iOS, BSD, Musl, Libm, LLVM, Clang, ICC.
  # See https://itnext.io/why-standard-c-math-functions-are-slow-d10d02554e33
  # and https://gcc.gnu.org/onlinedocs/gcc-12.2.0/gcc/Optimize-Options.html#Optimize-Options
@@ -78,7 +78,7 @@ Index: config/nim.cfg
  gcc.cpp.options.debug = "-g3 -Og"
  #passl = "-pg"
  
-@@ -284,8 +290,8 @@ llvm_gcc.options.size = "-Os"
+@@ -297,8 +303,8 @@ llvm_gcc.options.size = "-Os"
  clang.options.debug = "-g"
  clang.cpp.options.debug = "-g"
  clang.options.always = "-w -ferror-limit=3 -fno-strict-aliasing"
