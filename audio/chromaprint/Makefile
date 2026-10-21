@@ -1,6 +1,6 @@
 COMMENT =		audio fingerprint extraction library
 
-V =			1.6.1
+V =			1.6.2
 DISTNAME =		chromaprint-$V
 
 SHARED_LIBS =		chromaprint               3.1
@@ -24,18 +24,12 @@ BUILD_DEPENDS =		audio/taglib
 
 LIB_DEPENDS =		graphics/ffmpeg
 
-# XXX bundled gtest ends up using now too new system new gtest headers,
-# try reenabling tests with >1.6.1
 CONFIGURE_ARGS =	-DBUILD_TOOLS=ON \
-			-DBUILD_TESTS=OFF \
+			-DBUILD_TESTS=ON \
 			-DFFT_LIB=avtx
 
-CXXFLAGS +=		-I${LOCALBASE}/include
+# needs to come after internal copy of older gtest, which uses isystem
+CXXFLAGS +=		-isystem ${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
-
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
-
-do-test:
-	${WRKBUILD}/tests/all_tests
 
 .include <bsd.port.mk>
