@@ -1,6 +1,6 @@
 COMMENT=	asynchronous resolver library
 
-V=		1.34.8
+V=		1.34.9
 DISTNAME=	c-ares-${V}
 PKGNAME=	libcares-${V}
 CATEGORIES=	net devel
