@@ -1,0 +1,17 @@
+Index: src/kdesu_stub.c
+--- src/kdesu_stub.c.orig
++++ src/kdesu_stub.c
+@@ -51,6 +51,13 @@
+ #include <sched.h>
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <sys/stat.h>
++
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++__attribute__((visibility("default"))) mode_t _permit_setugid = S_ISGID;
++#endif
++
+ /*!
+  * Params sent by the peer.
+  */

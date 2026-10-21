@@ -20,7 +20,11 @@ lib/cmake/KF6Su/KF6SuConfigVersion.cmake
 lib/cmake/KF6Su/KF6SuTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6Su/KF6SuTargets.cmake
 @lib lib/libKF6Su.so.${LIBKF6Su_VERSION}
+@mode g+s
+@group auth
 @bin libexec/kf6/kdesu_stub
+@mode
+@group
 @bin libexec/kf6/kdesud
 share/locale/ar/LC_MESSAGES/kdesud6.mo
 share/locale/ast/LC_MESSAGES/kdesud6.mo
