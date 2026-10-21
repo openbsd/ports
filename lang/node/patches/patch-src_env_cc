@@ -1,7 +1,7 @@
 Index: src/env.cc
 --- src/env.cc.orig
 +++ src/env.cc
-@@ -810,19 +810,6 @@ std::string Environment::GetExecPath(const std::vector
+@@ -910,19 +910,6 @@ std::string Environment::GetExecPath(const std::vector
      exec_path = argv[0];
    }
  

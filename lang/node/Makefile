@@ -5,10 +5,10 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v24.21.0
+NODE_VERSION =		v24.22.1
 DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
-DIST_TUPLE =		github qbit node-pledge 1.1.3 \
+DIST_TUPLE =		codeberg qbit node-pledge 1.1.4 \
 			deps/npm/node_modules/node-pledge
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
@@ -26,9 +26,8 @@ SITES =			${HOMEPAGE}dist/${NODE_VERSION}/
 
 MODULES =		lang/python
 
-WANTLIB += c execinfo m pthread ${COMPILER_LIBCXX}
-WANTLIB += z brotlienc brotlidec
-WANTLIB += icudata icui18n icuuc cares nghttp2 nghttp3 uv simdutf
+WANTLIB += ${COMPILER_LIBCXX} c cares execinfo icudata icui18n
+WANTLIB += icuuc m nghttp2 nghttp3 simdutf uv z
 WANTLIB += lib/${EOPENSSL_VSN}/ssl lib/${EOPENSSL_VSN}/crypto
 
 COMPILER =		base-clang ports-gcc
@@ -45,7 +44,6 @@ CONFIGURE_SCRIPT =	configure
 
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--with-intl=system-icu \
-			--shared-brotli \
 			--shared-cares \
 			--shared-libuv \
 			--shared-nghttp2 \
@@ -64,7 +62,7 @@ SUBST_VARS +=		NODE_VERSION
 SUBST_VARS +=		EOPENSSL_LIB
 
 # uses a wide range of OpenSSL API and only really supports boring/openssl
-LIB_DEPENDS +=		archivers/brotli \
+LIB_DEPENDS +=		\
 			devel/libuv>=1.51.0p0 \
 			net/libcares \
 			security/openssl/${OPENSSL_VSN} \
