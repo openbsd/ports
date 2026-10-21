@@ -18,6 +18,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
+BUILD_DEPENDS=	lang/cython
 MODPY_TEST_LINK_SO= Yes
 TEST_DEPENDS=	devel/py-test-codspeed \
 		devel/py-test-cov \
