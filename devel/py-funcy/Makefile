@@ -1,9 +1,8 @@
 COMMENT=	fancy and practical functional tools
 
-MODPY_DISTV=	2.0
+MODPY_DISTV=	2.1
 DISTNAME=	funcy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	devel
 
