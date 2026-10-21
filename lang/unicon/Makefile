@@ -7,6 +7,7 @@ GH_ACCOUNT =	uniconproject
 DISTNAME =	unicon-13.3beta2
 GH_COMMIT =	788a535d0909e4487e797cc8c9218d7470ba2ae7
 GH_PROJECT =	unicon
+REVISION =	0
 
 HOMEPAGE=	https://unicon.sourceforge.net/
 
@@ -16,7 +17,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 c crypto ssl pthread m GL GLU X11
-WANTLIB += 	SDL iodbc jpeg ogg openal png vorbis vorbisfile
+WANTLIB += 	SDL iodbc jpeg ogg openal png ssh vorbis vorbisfile
 WANTLIB +=	${COMPILER_LIBCXX} Xft freetype alut ftgl sqlite3
 
 LIB_DEPENDS +=	audio/freealut
@@ -30,6 +31,7 @@ LIB_DEPENDS +=	devel/sdl
 LIB_DEPENDS +=	graphics/ftgl
 LIB_DEPENDS +=	graphics/jpeg
 LIB_DEPENDS +=	graphics/png
+LIB_DEPENDS +=	security/libssh
 
 USE_GMAKE =	Yes
 
