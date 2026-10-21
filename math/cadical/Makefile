@@ -3,6 +3,7 @@ COMMENT =		CaDiCaL SAT Solver
 GH_ACCOUNT =		arminbiere
 GH_PROJECT =		cadical
 GH_TAGNAME =		rel-3.0.1
+REVISION =		0
 
 SHARED_LIBS =		cadical	0.0
 
@@ -21,7 +22,7 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	simple
 
-CONFIGURE_ARGS =	-shared
+CONFIGURE_ARGS =	-shared -fPIC
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/build/cadical ${PREFIX}/bin
