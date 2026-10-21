@@ -1,0 +1,14 @@
+Make the system cert store the default
+
+Index: cli/lib/args.rs
+--- cli/lib/args.rs.orig
++++ cli/lib/args.rs
+@@ -144,7 +144,7 @@ pub fn get_root_cert_store(
+           .collect(),
+       )
+     })
+-    .unwrap_or_else(|| vec!["mozilla".to_string()]);
++    .unwrap_or_else(|| vec!["system".to_string()]);
+ 
+   for store in ca_stores.iter() {
+     match store.as_str() {

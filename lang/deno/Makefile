@@ -9,7 +9,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		runtime for JavaScript and TypeScript
 
-V =			2.9.7
+V =			2.9.8
 DIST_TUPLE =		github denoland deno v${V} .
 
 HOMEPAGE =		https://deno.com
