@@ -161,8 +161,7 @@ CXXFLAGS-powerpc =	-fno-ret-protector
 CXXFLAGS-mips64 +=	-mxgot
 CXXFLAGS-mips64el +=	-mxgot
 
-CXXFLAGS +=		${CXXFLAGS-${MACHINE_ARCH}} \
-			-D_LIBCPP_USE_LOWER_DEQUE_BLOCK_SIZE
+CXXFLAGS +=		${CXXFLAGS-${MACHINE_ARCH}}
 
 ALL_TARGET =		all docs-llvm-man docs-clang-man
 
