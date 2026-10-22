@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1849 2026/10/20 01:01:49 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1850 2026/10/22 00:50:43 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -662,6 +662,7 @@ setup_obsolete_reason(
 	8 => 'py3-z3-solver',
 	8 => 'angr-vex',
 	18 => 'bing',
+	18 => 'icmpinfo',
 );
 # beware, if ports with an RDEP on Python 3 are removed in a release where
 # the Python major version has changed (e.g. 3.13->3.14 between 7.9 and 8.0)
@@ -720,7 +721,7 @@ my $obsolete_message = {
 	15 => "use rspamd's internal milter support instead",
 	16 => "dependencies for recent versions can't be met",
 	17 => "outdated port, security problems in the last ported version",
-	18 => "outdated, broken setuid-root port",
+	18 => "outdated, broken or dangerous setuid-root port",
 	45 => "doesn't handle OpenBSD's bpf_timeval properly",
 	46 => "setuid-root software with a track record of security issues",
 	47 => "DNS network daemon running as root and not using random source ports. use DNS64 support in unbound or isc-bind",

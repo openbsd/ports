@@ -1,8 +1,0 @@
-icmpinfo is a tool for observing ICMP messages in a manner similar
-to tcpdump(8).
-
-It is implemented as a heavily modified version of BSD ping.
-
-icmpinfo will only report weird packets by default, but it can also
-dump all ICMP traffic. It is capable of running as a daemon and
-reporting all traffic to the syslog.

@@ -163,7 +163,6 @@
      SUBDIR += ices
      SUBDIR += ices2
      SUBDIR += icinga
-     SUBDIR += icmpinfo
      SUBDIR += ifstat
      SUBDIR += ifstat,snmp
      SUBDIR += iftop
