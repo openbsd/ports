@@ -179,6 +179,7 @@ share/icons/Adwaita/scalable/places/folder-download.svg
 share/icons/Adwaita/scalable/places/folder-drag-accept.svg
 share/icons/Adwaita/scalable/places/folder-music.svg
 share/icons/Adwaita/scalable/places/folder-pictures.svg
+share/icons/Adwaita/scalable/places/folder-projects.svg
 share/icons/Adwaita/scalable/places/folder-publicshare.svg
 share/icons/Adwaita/scalable/places/folder-remote.svg
 share/icons/Adwaita/scalable/places/folder-templates.svg
@@ -574,6 +575,7 @@ share/icons/Adwaita/symbolic/places/folder-download-symbolic.svg
 share/icons/Adwaita/symbolic/places/folder-drag-accept-symbolic.svg
 share/icons/Adwaita/symbolic/places/folder-music-symbolic.svg
 share/icons/Adwaita/symbolic/places/folder-pictures-symbolic.svg
+share/icons/Adwaita/symbolic/places/folder-projects-symbolic.svg
 share/icons/Adwaita/symbolic/places/folder-publicshare-symbolic.svg
 share/icons/Adwaita/symbolic/places/folder-remote-symbolic.svg
 share/icons/Adwaita/symbolic/places/folder-saved-search-symbolic.svg
