@@ -10,6 +10,8 @@ share/backgrounds/gnome/blendpills-d.jxl
 share/backgrounds/gnome/blendpills-l.jxl
 share/backgrounds/gnome/blobs-d.svg
 share/backgrounds/gnome/blobs-l.svg
+share/backgrounds/gnome/curvaturingster-d.jxl
+share/backgrounds/gnome/curvaturingster-l.jxl
 share/backgrounds/gnome/curvy-d.jxl
 share/backgrounds/gnome/curvy-l.jxl
 share/backgrounds/gnome/dithered-sun-d.jxl
@@ -20,6 +22,8 @@ share/backgrounds/gnome/fold-d.jxl
 share/backgrounds/gnome/fold-l.jxl
 share/backgrounds/gnome/glass-chip-d.jxl
 share/backgrounds/gnome/glass-chip-l.jxl
+share/backgrounds/gnome/glass-stripes-d.jxl
+share/backgrounds/gnome/glass-stripes-l.jxl
 share/backgrounds/gnome/lcd-rainbow-d.jxl
 share/backgrounds/gnome/lcd-rainbow-l.jxl
 share/backgrounds/gnome/map-d.svg
@@ -52,11 +56,13 @@ share/gnome-background-properties/amber.xml
 share/gnome-background-properties/balls.xml
 share/gnome-background-properties/blendpills.xml
 share/gnome-background-properties/blobs.xml
+share/gnome-background-properties/curvaturingster.xml
 share/gnome-background-properties/curvy.xml
 share/gnome-background-properties/dithered-sun.xml
 share/gnome-background-properties/drool.xml
 share/gnome-background-properties/fold.xml
 share/gnome-background-properties/glass-chip.xml
+share/gnome-background-properties/glass-stripes.xml
 share/gnome-background-properties/lcd-rainbow.xml
 share/gnome-background-properties/map.xml
 share/gnome-background-properties/morphogenesis.xml

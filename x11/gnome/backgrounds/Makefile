@@ -1,7 +1,7 @@
 COMMENT=		wallpapers for GNOME
 
 GNOME_PROJECT=		gnome-backgrounds
-GNOME_VERSION=		50.0
+GNOME_VERSION=		51.0.1
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
