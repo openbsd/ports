@@ -442,6 +442,7 @@ include/evolution/mail/e-mail-account-tree-view.h
 include/evolution/mail/e-mail-autoconfig.h
 include/evolution/mail/e-mail-backend.h
 include/evolution/mail/e-mail-browser.h
+include/evolution/mail/e-mail-composer-mode-override.h
 include/evolution/mail/e-mail-config-activity-page.h
 include/evolution/mail/e-mail-config-assistant.h
 include/evolution/mail/e-mail-config-auth-check.h
@@ -1641,7 +1642,6 @@ share/evolution/ui/evolution-mail-viewer.eui
 share/evolution/ui/evolution-mail.eui
 share/evolution/ui/evolution-memos.eui
 share/evolution/ui/evolution-shell.eui
-share/evolution/ui/evolution-shortcuts.ui
 share/evolution/ui/evolution-tasks.eui
 share/evolution/ui/filter.ui
 share/evolution/ui/fullname.ui
