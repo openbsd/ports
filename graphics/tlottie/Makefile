@@ -1,8 +1,9 @@
-COMMENT = 		library for drawing lottie animations
+COMMENT =		library for drawing lottie animations
 
 GH_ACCOUNT =		dkaraush
 GH_PROJECT =		tlottie
 GH_TAGNAME =		v1.0.6
+REVISION =		0
 
 CATEGORIES =		graphics
 
