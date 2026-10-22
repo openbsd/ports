@@ -4,10 +4,9 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		visualization toolkit
 
-V =			9.7.0
+V =			9.7.1
 DISTNAME =		VTK-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
 
 .for LIB in vtkChartsCore vtkCommonCache vtkCommonColor \
 	vtkCommonComputationalGeometry vtkCommonCore vtkCommonDataModel \
@@ -45,7 +44,7 @@ REVISION =		0
 	vtkRenderingVolumeOpenGL2 vtkRenderingVtkJS vtkTestingCore \
 	vtkTestingRendering vtkViewsContext2D vtkViewsCore vtkViewsInfovis \
 	vtkexodusII vtkglad vtkioss vtkkissfft vtkmetaio vtksys vtktoken vtkx11
-SHARED_LIBS += ${LIB} 6.0 # 0.0
+SHARED_LIBS += ${LIB} 7.0 # 0.0
 .endfor
 
 CATEGORIES =		graphics
