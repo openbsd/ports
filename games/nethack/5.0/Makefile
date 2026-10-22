@@ -7,6 +7,7 @@ PKGNAME =	${DISTNAME}
 CATEGORIES =	games
 SITES =		https://www.nethack.org/download/$V/
 DISTFILES =	nethack-${V:S/.//g}-src.tgz
+REVISION =	0
 
 HOMEPAGE =	http://nethack.org/
 

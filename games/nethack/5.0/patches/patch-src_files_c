@@ -1,7 +1,20 @@
 Index: src/files.c
 --- src/files.c.orig
 +++ src/files.c
-@@ -1691,8 +1691,10 @@ docompress_file(const char *filename, boolean uncomp)
+@@ -194,6 +194,12 @@ staticfn FILE *fopen_sym_file(void);
+ staticfn NHFILE *viable_nhfile(NHFILE *);
+ #endif /* !SFCTOOL */
+ 
++#ifdef __OpenBSD__
++#include <sys/stat.h>
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++#endif
++
+ /* return a file's name without its path and optionally trailing 'type' */
+ const char *
+ nh_basename(const char *fname, boolean keep_suffix)
+@@ -1691,8 +1697,10 @@ docompress_file(const char *filename, boolean uncomp)
              redirect(filename, RDBMODE, stdin, uncomp);
              redirect(cfn, WRBMODE, stdout, uncomp);
          }
