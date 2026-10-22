@@ -491,7 +491,6 @@
      SUBDIR += tmuxinator
      SUBDIR += toad
      SUBDIR += torture
-     SUBDIR += tpb
      SUBDIR += tphdisk
      SUBDIR += trash-d
      SUBDIR += tray-app
