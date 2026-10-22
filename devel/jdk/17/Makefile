@@ -13,7 +13,7 @@ PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-17
 EPOCH=		0
 
-REVISION=	0
+REVISION=	1
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -138,6 +138,7 @@ JVMARCH=	${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/}
 BUILDDIR=	${WRKDIST}/build/bsd-${JVMARCH}-server-release
 IMAGEDIR=	${BUILDDIR}/images/jdk
 WRKTMP=		${WRKDIR}/tmp
+JDKFILESDIR=	${.CURDIR}/../files
 
 post-extract:
 	sed -i "s|#!/bin/bash|#!\${LOCALBASE}/bin/bash|" ${WRKDIST}/configure
@@ -158,6 +159,8 @@ post-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${PKGSTEM}
 	cd ${IMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${PKGSTEM} -xf -
+	${INSTALL_DATA} ${JDKFILESDIR}/blocked.certs \
+		${PREFIX}/${PKGSTEM}/lib/security/
 
 # The bootjdk is the jdk image with some parts deleted
 # and a copy of the system shared libs needed to run it.
