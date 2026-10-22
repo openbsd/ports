@@ -1,0 +1,7 @@
+retex is a TeX engine written in Rust 'from scratch'. It is a
+clean-room reimplementation of lualatex: it reads the same LaTeX
+packages and fonts from an installed TeX Live tree and produces the
+same PDF. On the documents we test, the pages are pixel-identical to
+lualatex's at 300 dpi. It is faster, runs as many passes as a document
+needs on its own, and reports errors in a form that says what is wrong
+and how to fix it.
