@@ -1,3 +1,8 @@
+revert:
+commit 2d1b52dcb805813b2ed39c9799fdfcd6ed7506e8
+Author: wmedrano <wmedrano@chromium.org>
+Date:   Tue Sep 15 12:20:43 2026 -0700
+
 Index: third_party/blink/renderer/platform/BUILD.gn
 --- third_party/blink/renderer/platform/BUILD.gn.orig
 +++ third_party/blink/renderer/platform/BUILD.gn
@@ -21,7 +26,15 @@ Index: third_party/blink/renderer/platform/BUILD.gn
  rust_static_library("rustfft_ffi") {
    allow_unsafe = true  # Needed for FFI that underpins the `cxx` crate.
    crate_root = "audio/rustfft_ffi.rs"
-@@ -712,8 +725,6 @@ component("platform") {
+@@ -253,7 +266,6 @@ group("blink_platform_public_deps") {
+     "//third_party/boringssl",
+     "//third_party/libwebp",
+     "//third_party/ots",
+-    "//third_party/woff2:woff2_dec",
+     "//ui/gfx/animation/keyframe",
+     "//url",
+     "//v8",
+@@ -713,8 +725,6 @@ component("platform") {
      "fonts/generic_font_family_settings.cc",
      "fonts/generic_font_family_settings.h",
      "fonts/glyph_metrics_map.h",
@@ -30,7 +43,7 @@ Index: third_party/blink/renderer/platform/BUILD.gn
      "fonts/opentype/color_table_lookup.cc",
      "fonts/opentype/color_table_lookup.h",
      "fonts/opentype/font_format_check.cc",
-@@ -1792,7 +1803,6 @@ component("platform") {
+@@ -1795,7 +1805,6 @@ component("platform") {
      ":allow_discouraged_type",
      ":blink_platform_public_deps",
      ":platform_export",
@@ -38,7 +51,7 @@ Index: third_party/blink/renderer/platform/BUILD.gn
      "//components/language_detection/core",
      "//gpu/command_buffer/client:raster_interface",
      "//media/capture:capture_lib",
-@@ -1819,9 +1829,8 @@ component("platform") {
+@@ -1822,9 +1831,8 @@ component("platform") {
      "//ui/native_theme/features",
    ]
    deps = [
@@ -49,7 +62,7 @@ Index: third_party/blink/renderer/platform/BUILD.gn
      "//base:base_static",
      "//base/allocator:buildflags",
      "//build:chromecast_buildflags",
-@@ -2240,7 +2249,6 @@ source_set("blink_platform_unittests_sources") {
+@@ -2245,7 +2253,6 @@ source_set("blink_platform_unittests_sources") {
      "fonts/font_test.cc",
      "fonts/font_test_utilities.cc",
      "fonts/generic_font_family_settings_test.cc",

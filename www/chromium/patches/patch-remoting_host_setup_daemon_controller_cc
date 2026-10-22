@@ -1,7 +1,7 @@
 Index: remoting/host/setup/daemon_controller.cc
 --- remoting/host/setup/daemon_controller.cc.orig
 +++ remoting/host/setup/daemon_controller.cc
-@@ -63,7 +63,7 @@ bool DaemonController::is_privileged() const {
+@@ -53,7 +53,7 @@ bool DaemonController::is_privileged() const {
    return delegate_->is_privileged();
  }
  

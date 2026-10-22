@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/toasts/toast_service.cc
 --- chrome/browser/ui/toasts/toast_service.cc.orig
 +++ chrome/browser/ui/toasts/toast_service.cc
-@@ -152,7 +152,7 @@ void ToastService::RegisterToasts(
+@@ -144,7 +144,7 @@ void ToastService::RegisterToasts(
                                    IDS_CLEAR_BROWSING_DATA_TOAST_BODY)
            .Build());
  

@@ -1,7 +1,7 @@
 Index: .gn
 --- .gn.orig
 +++ .gn
-@@ -9,7 +9,7 @@ import("//third_party/angle/dotfile_settings.gni")
+@@ -11,7 +11,7 @@ import("//third_party/angle/dotfile_settings.gni")
  buildconfig = "//build/config/BUILDCONFIG.gn"
  
  # The hermetic Python interpreter to use by default.

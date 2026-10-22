@@ -1,7 +1,7 @@
 Index: chrome/browser/private_verification_tokens/private_verification_tokens_url_loader_throttle.cc
 --- chrome/browser/private_verification_tokens/private_verification_tokens_url_loader_throttle.cc.orig
 +++ chrome/browser/private_verification_tokens/private_verification_tokens_url_loader_throttle.cc
-@@ -54,6 +54,10 @@ void PrivateVerificationTokensURLLoaderThrottle::WillS
+@@ -57,6 +57,10 @@ void PrivateVerificationTokensURLLoaderThrottle::WillS
      return;
    }
  
@@ -12,7 +12,7 @@ Index: chrome/browser/private_verification_tokens/private_verification_tokens_ur
    // Token header should not already exist, remove it if it does.
    request->headers.RemoveHeader(
        net::HttpRequestHeaders::kSecPrivateVerificationToken);
-@@ -88,6 +92,7 @@ void PrivateVerificationTokensURLLoaderThrottle::WillS
+@@ -110,6 +114,7 @@ void PrivateVerificationTokensURLLoaderThrottle::WillS
            token_info->second);
      }
    }
@@ -20,7 +20,7 @@ Index: chrome/browser/private_verification_tokens/private_verification_tokens_ur
  }
  
  void PrivateVerificationTokensURLLoaderThrottle::WillRedirectRequest(
-@@ -95,6 +100,10 @@ void PrivateVerificationTokensURLLoaderThrottle::WillR
+@@ -117,6 +122,10 @@ void PrivateVerificationTokensURLLoaderThrottle::WillR
      const network::mojom::URLResponseHead& response_head,
      bool* defer,
      network::HttpRequestHeadersUpdateParams* headers_update_params) {
@@ -31,7 +31,7 @@ Index: chrome/browser/private_verification_tokens/private_verification_tokens_ur
    if (headers_update_params) {
      headers_update_params->removed_headers.push_back(
          net::HttpRequestHeaders::kSecPrivateVerificationToken);
-@@ -109,12 +118,17 @@ void PrivateVerificationTokensURLLoaderThrottle::WillR
+@@ -131,12 +140,17 @@ void PrivateVerificationTokensURLLoaderThrottle::WillR
      token_id_.reset();
      redeemer_origin_.reset();
    }
@@ -49,7 +49,7 @@ Index: chrome/browser/private_verification_tokens/private_verification_tokens_ur
    if (token_id_.has_value()) {
      if (pvt_service_ && response_head &&
          !response_head->pvt_token_removed_due_to_cookies) {
-@@ -126,4 +140,5 @@ void PrivateVerificationTokensURLLoaderThrottle::WillP
+@@ -148,4 +162,5 @@ void PrivateVerificationTokensURLLoaderThrottle::WillP
      token_id_.reset();
      redeemer_origin_.reset();
    }

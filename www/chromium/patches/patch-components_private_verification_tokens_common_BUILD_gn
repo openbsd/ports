@@ -1,7 +1,7 @@
 Index: components/private_verification_tokens/common/BUILD.gn
 --- components/private_verification_tokens/common/BUILD.gn.orig
 +++ components/private_verification_tokens/common/BUILD.gn
-@@ -188,13 +188,13 @@ source_set("test_support") {
+@@ -194,13 +194,13 @@ source_set("test_support") {
    sources = [ "private_verification_tokens_test_util.h" ]
    public_deps = [
      "//base",

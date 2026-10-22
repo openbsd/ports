@@ -1,9 +1,9 @@
 Index: chrome/browser/themes/theme_helper.cc
 --- chrome/browser/themes/theme_helper.cc.orig
 +++ chrome/browser/themes/theme_helper.cc
-@@ -18,7 +18,7 @@
- #include "ui/gfx/image/image.h"
- #include "ui/native_theme/native_theme.h"
+@@ -29,7 +29,7 @@
+ #include "chrome/browser/themes/browser_theme_pack.h"
+ #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

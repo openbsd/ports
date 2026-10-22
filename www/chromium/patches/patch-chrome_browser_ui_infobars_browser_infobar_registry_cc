@@ -10,7 +10,7 @@ Index: chrome/browser/ui/infobars/browser_infobar_registry.cc
  #include "chrome/browser/ui/views/session_restore_infobar/session_restore_infobar_manager.h"
  #endif
  
-@@ -310,7 +310,7 @@ void RegisterInfoBars() {
+@@ -323,7 +323,7 @@ void RegisterInfoBars() {
    }
  #endif
  

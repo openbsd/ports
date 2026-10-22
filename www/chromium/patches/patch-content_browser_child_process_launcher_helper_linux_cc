@@ -109,8 +109,8 @@ Index: content/browser/child_process_launcher_helper_linux.cc
 +#endif
  }
  
- void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
-@@ -183,11 +203,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
+ // static
+@@ -184,11 +204,13 @@ void ChildProcessLauncherHelper::ApplyProcessPriorityO
    }
  }
  

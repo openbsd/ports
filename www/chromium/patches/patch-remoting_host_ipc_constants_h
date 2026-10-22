@@ -1,7 +1,7 @@
 Index: remoting/host/ipc_constants.h
 --- remoting/host/ipc_constants.h.orig
 +++ remoting/host/ipc_constants.h
-@@ -31,7 +31,7 @@ bool GetInstalledBinaryPath(const base::FilePath::Stri
+@@ -38,7 +38,7 @@ bool GetInstalledBinaryPath(const base::FilePath::Stri
  const mojo::NamedPlatformChannel::ServerName&
  GetChromotingHostServicesServerName();
  
@@ -10,7 +10,7 @@ Index: remoting/host/ipc_constants.h
  // Returns the server name for the legacy single-process Linux host.
  const mojo::NamedPlatformChannel::ServerName&
  GetLegacyChromotingHostServicesServerName();
-@@ -45,7 +45,7 @@ extern const char kAgentProcessBrokerMessagePipeId[];
+@@ -52,7 +52,7 @@ extern const char kAgentProcessBrokerMessagePipeId[];
  const mojo::NamedPlatformChannel::ServerName& GetAgentProcessBrokerServerName();
  #endif
  
