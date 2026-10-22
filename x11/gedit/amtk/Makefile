@@ -1,8 +1,8 @@
 COMMENT=		The Good Morning Toolkit
 
-DIST_TUPLE=		gnome World/gedit libgedit-amtk 5.10.0 .
+DIST_TUPLE=		gnome World/gedit libgedit-amtk 5.11.0 .
 
-SHARED_LIBS += gedit-amtk-5              0.1 # 0
+SHARED_LIBS += gedit-amtk-5              0.2 # 0
 
 CATEGORIES=		devel
 

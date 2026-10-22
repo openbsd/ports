@@ -43,6 +43,7 @@ share/gtk-doc/html/libgedit-amtk-5/api-index-3-0.html
 share/gtk-doc/html/libgedit-amtk-5/api-index-4-0.html
 share/gtk-doc/html/libgedit-amtk-5/api-index-5-0.html
 share/gtk-doc/html/libgedit-amtk-5/api-index-5-10.html
+share/gtk-doc/html/libgedit-amtk-5/api-index-5-11.html
 share/gtk-doc/html/libgedit-amtk-5/api-index-5-6.html
 share/gtk-doc/html/libgedit-amtk-5/api-index-full.html
 share/gtk-doc/html/libgedit-amtk-5/api-reference-actions-menus-toolbars.html
@@ -92,6 +93,7 @@ share/locale/kw/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/lt/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/ms/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/nl/LC_MESSAGES/libgedit-amtk-5.mo
+share/locale/nn/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/pl/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/pt/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/pt_BR/LC_MESSAGES/libgedit-amtk-5.mo
