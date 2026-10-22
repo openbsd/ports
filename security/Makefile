@@ -71,7 +71,6 @@
      SUBDIR += gpa
      SUBDIR += gpgme
      SUBDIR += gpgmepp
-     SUBDIR += gringotts
      SUBDIR += hashdeep
      SUBDIR += hashid
      SUBDIR += hcxtools
