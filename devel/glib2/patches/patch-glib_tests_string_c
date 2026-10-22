@@ -1,0 +1,16 @@
+Fix build on archs where char is unsigned:
+
+error: implicit conversion changes signedness: 'int' to 'gchar' (aka 'char') [-Werror,-Wsign-conversion]
+
+Index: glib/tests/string.c
+--- glib/tests/string.c.orig
++++ glib/tests/string.c
+@@ -348,7 +348,7 @@ test_string_prepend_c (void)
+   string = g_string_new ("hi pete!");
+ 
+   for (i = 0; i < 10000; i++)
+-    g_string_prepend_c (string, 'a'+(i%26));
++    g_string_prepend_c (string, (char)('a'+(i%26)));
+ 
+   g_assert((strlen("hi pete!") + 10000) == string->len);
+   g_assert((strlen("hi pete!") + 10000) == strlen(string->str));
