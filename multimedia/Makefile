@@ -9,6 +9,7 @@
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
      SUBDIR += dvdstyler
+     SUBDIR += ferrofin
      SUBDIR += frei0r-plugins
      SUBDIR += gaupol
      SUBDIR += get_flash_videos
