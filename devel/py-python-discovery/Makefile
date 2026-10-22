@@ -1,6 +1,6 @@
 COMMENT =		library for discovering Python interpreters
 
-MODPY_DISTV =		1.5.0
+MODPY_DISTV =		1.6.4
 DISTNAME =		python_discovery-${MODPY_DISTV}
 PKGNAME =		py-python-discovery-${MODPY_DISTV}
 CATEGORIES =		devel
@@ -22,5 +22,8 @@ RUN_DEPENDS =		sysutils/py-filelock \
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/py-test-mock
+
+# needs vermin
+MODPY_PYTEST_IGNORE =	tests/test_py_info_collect.py
 
 .include <bsd.port.mk>
