@@ -2,12 +2,12 @@ COMMENT = 		Erlang build tool
 
 GH_ACCOUNT =		erlang
 GH_PROJECT =		rebar3
-GH_TAGNAME =		3.27.3
+GH_TAGNAME =		3.28.0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://www.rebar3.org
-MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
+MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 
 # APLv2
 PERMIT_PACKAGE =	Yes
