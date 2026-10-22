@@ -97,9 +97,19 @@ COMPILER =	base-clang ports-gcc
 
 MODULES +=	devel/cmake
 
+# internal use for emulators/wine; reduce extraction size
+FLAVORS=	headerextract
+FLAVOR?=
+
+.if ${FLAVOR} == headerextract
+PATCH_LIST=
+EXTRACT_CASES += llvm*.tar.xz) \
+    xz -T${MAKE_JOBS} -d <${FULLDISTDIR}/$$archive | ${TAR} -xf - -- */clang/lib/Headers;;
+.else
 BUILD_DEPENDS +=	devel/swig \
 			textproc/py-sphinx \
 			textproc/py-recommonmark
+.endif
 
 CONFIGURE_STYLE +=	cmake
 CONFIGURE_ARGS +=	\
@@ -151,7 +161,8 @@ CXXFLAGS-powerpc =	-fno-ret-protector
 CXXFLAGS-mips64 +=	-mxgot
 CXXFLAGS-mips64el +=	-mxgot
 
-CXXFLAGS +=		${CXXFLAGS-${MACHINE_ARCH}}
+CXXFLAGS +=		${CXXFLAGS-${MACHINE_ARCH}} \
+			-D_LIBCPP_USE_LOWER_DEQUE_BLOCK_SIZE
 
 ALL_TARGET =		all docs-llvm-man docs-clang-man
 
@@ -179,6 +190,10 @@ OPENBSD_LD_IS_LLD =	FALSE
 SUBST_VARS +=		OPENBSD_LD_IS_LLD
 
 pre-configure:
+.if ${FLAVOR} == headerextract
+	@echo "the headerextract flavour is only for internal use by emulators/wine."
+	@exit 1
+.endif
 	${SUBST_CMD} ${WRKDIST}/clang/tools/clang-shlib/CMakeLists.txt \
 		${WRKDIST}/clang/tools/clang-format/clang-format-sublime.py \
 		${WRKDIST}/clang/tools/clang-format/clang-format.py \
