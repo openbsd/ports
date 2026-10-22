@@ -2,6 +2,8 @@ COMMENT-main =		create ISO-9660 filesystem and burn CD/DVD/BD media
 COMMENT-xorriso =	ISO 9660 Rock Ridge Filesystem Manipulator
 COMMENT-tcltk =		frontend for xorriso
 
+REVISION-tcltk =	0
+
 V =			1.5.6
 
 DISTNAME =		libisoburn-${V}
@@ -30,6 +32,7 @@ LIB_DEPENDS-xorriso =	${BASE_PKGPATH},-main
 WANTLIB-xorriso =	${WANTLIB-main} c isoburn
 
 RUN_DEPENDS-tcltk =	${MODTK_RUN_DEPENDS} \
+			x11/bwidget \
 			sysutils/libisoburn,-xorriso
 
 SEPARATE_BUILD =	Yes
