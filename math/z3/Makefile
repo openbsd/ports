@@ -1,7 +1,11 @@
 COMMENT =	Z3 theorem prover
 
-DIST_TUPLE =	github Z3Prover z3 z3-5.3.0 .
-PKGNAME =	${DISTNAME:S/z3-//}
+V =		5.3.1
+GH_ACCOUNT =	Z3Prover
+GH_PROJECT =	z3
+GH_TAGNAME =	z3-${V}
+
+DISTNAME =	z3-${V}
 
 SHARED_LIBS =	z3	5.1
 
