@@ -1,6 +1,6 @@
 COMMENT =		interactive intercepting HTTP proxy
 
-MODPY_DISTV =		12.2.3
+MODPY_DISTV =		12.3.0
 
 DISTNAME =		mitmproxy-${MODPY_DISTV}
 
@@ -32,7 +32,6 @@ RUN_DEPENDS =		www/py-aioquic \
 			devel/py-kaitaistruct \
 			databases/py-ldap3 \
 			security/py-mitmproxy_rs \
-			net/py-msgpack \
 			security/py-passlib \
 			security/py-openssl \
 			devel/py-parsing \
@@ -43,8 +42,7 @@ RUN_DEPENDS =		www/py-aioquic \
 			devel/py-typing-extensions \
 			devel/py-urwid \
 			net/py-wsproto \
-			net/py-publicsuffix2 \
-			archivers/py-zstandard
+			net/py-publicsuffix2
 
 NO_TEST =		Yes
 
