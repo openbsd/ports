@@ -69,6 +69,7 @@
      SUBDIR += py-relatorio
      SUBDIR += py-reportlab
      SUBDIR += qpdf
+     SUBDIR += retex
      SUBDIR += scribus
      SUBDIR += sile
      SUBDIR += splix
