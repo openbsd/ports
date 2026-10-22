@@ -1,0 +1,18 @@
+From 588b3a0f8f6a8bcf2a959cae882d5b2703e86737 Mon Sep 17 00:00:00 2001
+From: Vinay Kumar <vkslog69@gmail.com>
+Date: Thu, 18 Jun 2026 12:22:12 +0530
+Subject: [PATCH] Fix fallback uint128 bitwise not (#4813)
+
+Index: libs/fmt/include/fmt/format.h
+--- libs/fmt/include/fmt/format.h.orig
++++ libs/fmt/include/fmt/format.h
+@@ -326,6 +326,9 @@ class uint128 {
+       -> uint128 {
+     return {lhs.hi_ & rhs.hi_, lhs.lo_ & rhs.lo_};
+   }
++  friend constexpr auto operator~(const uint128& n) -> uint128 {
++    return {~n.hi_, ~n.lo_};
++  }
+   friend FMT_CONSTEXPR auto operator+(const uint128& lhs, const uint128& rhs)
+       -> uint128 {
+     auto result = uint128(lhs);
