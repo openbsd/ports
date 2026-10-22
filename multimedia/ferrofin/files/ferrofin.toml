@@ -1,0 +1,3 @@
+bind_addr = "::"
+data_dir  = "${DATA_DIR}"
+web_dir   = "${TRUEPREFIX}/${WEB_PATH}"

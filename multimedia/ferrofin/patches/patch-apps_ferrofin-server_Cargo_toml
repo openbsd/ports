@@ -1,0 +1,14 @@
+disable jemalloc, avoids ABRT on starup
+
+Index: apps/ferrofin-server/Cargo.toml
+--- apps/ferrofin-server/Cargo.toml.orig
++++ apps/ferrofin-server/Cargo.toml
+@@ -85,7 +85,7 @@ tracing-opentelemetry.workspace = true
+ 
+ # jemalloc's configure script cannot build under MSVC; main.rs cfg-gates the
+ # allocator the same way, so Windows falls back to the system allocator.
+-[target.'cfg(not(target_env = "msvc"))'.dependencies]
++[target.'cfg(not(target_os = "openbsd"))'.dependencies]
+ tikv-jemallocator.workspace = true
+ 
+ # ── Debian package (cargo-nfpm, also used by the release workflow) ──

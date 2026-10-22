@@ -1,0 +1,53 @@
+hardcode/neuter TCP keep* socket options OpenBSD does not have
+
+Index: modcargo-crates/wasmtime-wasi-49.0.0/src/sockets/tcp.rs
+--- modcargo-crates/wasmtime-wasi-49.0.0/src/sockets/tcp.rs.orig
++++ modcargo-crates/wasmtime-wasi-49.0.0/src/sockets/tcp.rs
+@@ -441,7 +441,7 @@ impl TcpSocket {
+ 
+     pub(crate) fn keep_alive_idle_time(&self) -> Result<u64, ErrorCode> {
+         let fd = self.as_fd()?;
+-        let v = sockopt::tcp_keepidle(fd)?;
++        let v = Duration::from_secs(7200);
+         Ok(v.as_nanos().try_into().unwrap_or(u64::MAX))
+     }
+ 
+@@ -452,14 +452,13 @@ impl TcpSocket {
+         }
+         let fd = self.as_fd()?;
+         let value = clamp_keep_alive_time(value);
+-        sockopt::set_tcp_keepidle(fd, Duration::from_nanos(value))?;
+         self.listener_options.set_keep_alive_idle_time(value);
+         Ok(())
+     }
+ 
+     pub(crate) fn keep_alive_interval(&self) -> Result<u64, ErrorCode> {
+         let fd = self.as_fd()?;
+-        let v = sockopt::tcp_keepintvl(fd)?;
++        let v = Duration::from_secs(75);
+         Ok(v.as_nanos().try_into().unwrap_or(u64::MAX))
+     }
+ 
+@@ -470,13 +469,12 @@ impl TcpSocket {
+         }
+         let fd = self.as_fd()?;
+         let value = clamp_keep_alive_time(value);
+-        sockopt::set_tcp_keepintvl(fd, Duration::from_nanos(value))?;
+         Ok(())
+     }
+ 
+     pub(crate) fn keep_alive_count(&self) -> Result<u32, ErrorCode> {
+         let fd = self.as_fd()?;
+-        let v = sockopt::tcp_keepcnt(fd)?;
++        let v = 8;
+         Ok(v)
+     }
+ 
+@@ -487,7 +485,6 @@ impl TcpSocket {
+         }
+         let value = clamp_keep_alive_count(value);
+         let fd = self.as_fd()?;
+-        sockopt::set_tcp_keepcnt(fd, value)?;
+         Ok(())
+     }
+ 

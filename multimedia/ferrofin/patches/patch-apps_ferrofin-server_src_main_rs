@@ -1,0 +1,14 @@
+disable jemalloc, avoids ABRT on starup
+
+Index: apps/ferrofin-server/src/main.rs
+--- apps/ferrofin-server/src/main.rs.orig
++++ apps/ferrofin-server/src/main.rs
+@@ -19,7 +19,7 @@
+ // memory fell by 0.2-0.7 MiB (0.1-0.2%) without the background thread and by
+ // 69-309 MiB (31-88%) with it. That ratchet is why a long-lived server's peak
+ // RSS drifts far above its working set. Runtime `MALLOC_CONF` still overrides.
+-#[cfg(not(target_env = "msvc"))]
++#[cfg(not(target_os = "openbsd"))]
+ #[global_allocator]
+ static GLOBAL: tikv_jemallocator::Jemalloc = tikv_jemallocator::Jemalloc;
+ 
