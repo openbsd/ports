@@ -232,7 +232,6 @@
      SUBDIR += stalwart-cli
      SUBDIR += swaks
      SUBDIR += sylpheed
-     SUBDIR += sympa
      SUBDIR += t-prot
      SUBDIR += thunderbird-i18n
      SUBDIR += tnef

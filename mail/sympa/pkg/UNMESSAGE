@@ -1,2 +1,0 @@
-To completely deinstall sympa don't forget to remove the mail aliases
-from your MTA config.
