@@ -14,7 +14,6 @@ include/libgedit-gtksourceview-300/gtksourceview/gtksourcecompletioninfo.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcecompletionitem.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcecompletionproposal.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcecompletionprovider.h
-include/libgedit-gtksourceview-300/gtksourceview/gtksourceencoding.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcefile.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcefileloader.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcefilesaver.h
@@ -54,7 +53,6 @@ share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceCompletionItem.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceCompletionProposal.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceCompletionProvider.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceCompletionWords.html
-share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceEncoding.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceFile.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceFileLoader.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceFileSaver.html
@@ -89,6 +87,7 @@ share/gtk-doc/html/libgedit-gtksourceview-300/api-index-299-0.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-299-2.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-299-6.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-299-7.html
+share/gtk-doc/html/libgedit-gtksourceview-300/api-index-299-8.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-0.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-10.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-12.html

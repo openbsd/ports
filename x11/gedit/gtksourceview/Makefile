@@ -1,8 +1,8 @@
 COMMENT=		source code editing widget
 
-DIST_TUPLE=		gnome World/gedit libgedit-gtksourceview 299.7.1 .
+DIST_TUPLE=		gnome World/gedit libgedit-gtksourceview 299.8.0 .
 
-SHARED_LIBS += gedit-gtksourceview-300   2.0 # 5
+SHARED_LIBS += gedit-gtksourceview-300   2.0 # 6
 
 CATEGORIES=		devel
 
