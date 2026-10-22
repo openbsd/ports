@@ -28,19 +28,14 @@ WANTLIB += lib/inotify/inotify lib/libpcap/pcap
 # loaded with dlopen()
 WANTLIB += SDL2 cups dbus-1 gnutls netapi vulkan xkbregistry
 
-# keep this in sync with MODCLANG_VERSION
-# source for updates/new releases: https://thfr.gothub.org/wine-clang-pe-headers
-CLANG_PE_HEADERS =		22.1.8
-DISTFILES.clang-pe-headers =	wine-clang-pe-headers-${CLANG_PE_HEADERS}.tar.gz
-SITES.clang-pe-headers =	https://thfr.info/distfiles/
-
 SITES =			https://dl.winehq.org/wine/source/11.x/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		lang/clang
 
 BUILD_DEPENDS =		devel/bison \
-			devel/nasm
+			devel/nasm \
+			${_MODCLANG_BUILD_DEPENDS},headerextract:patch
 RUN_DEPENDS =		multimedia/gstreamer1/libav \
 			multimedia/gstreamer1/plugins-bad \
 			multimedia/gstreamer1/plugins-good \
@@ -157,9 +152,9 @@ SUBST_VARS+=		CLANG_PE_RESOURCE MODCLANG_VERSION
 
 pre-configure:
 	${INSTALL_DATA_DIR} ${CLANG_PE_RESOURCE}/include
-	cp -R ${CLANG_RESOURCE}/include/. ${CLANG_PE_RESOURCE}/include/
-	cp ${WRKDIR}/wine-clang-pe-headers-${CLANG_PE_HEADERS}/*.h \
+	cp ${WRKDIR}/devel/llvm/*/*/clang/lib/Headers/*.h \
 		${CLANG_PE_RESOURCE}/include/
+	cp -R ${CLANG_RESOURCE}/include/. ${CLANG_PE_RESOURCE}/include/
 	ln -sfh ${CLANG_RESOURCE}/lib ${CLANG_PE_RESOURCE}/lib
 	${SUBST_PROGRAM} ${FILESDIR}/clang-pe ${WRKDIR}/bin/clang-pe
 
