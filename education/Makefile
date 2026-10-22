@@ -1,6 +1,5 @@
      SUBDIR =
      SUBDIR += algotutor
-     SUBDIR += anki
      SUBDIR += drgeo
      SUBDIR += drgeo-doc
      SUBDIR += dvorak7min
