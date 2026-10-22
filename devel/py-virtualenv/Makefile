@@ -1,6 +1,6 @@
 COMMENT=	virtual Python environment builder
 
-MODPY_DISTV=	21.14.5
+MODPY_DISTV=	21.14.12
 DISTNAME=	virtualenv-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -18,14 +18,14 @@ MODPY_PYBUILD=	hatch-vcs
 # messes up naming of packaged wheels
 UPDATE_PLIST_ARGS=	-i MODPY_PY_PREFIX
 
-RUN_DEPENDS=	devel/py-python-discovery \
-		sysutils/py-distlib \
-		sysutils/py-filelock \
-		sysutils/py-platformdirs
+RUN_DEPENDS=	devel/py-python-discovery>=1.6.1 \
+		sysutils/py-distlib<1 \
+		sysutils/py-filelock<5 \
+		sysutils/py-packaging \
+		sysutils/py-platformdirs<5
 TEST_DEPENDS=	${BUILD_PKGPATH} \
 		devel/py-coverage \
 		devel/py-flaky \
-		sysutils/py-packaging \
 		devel/py-test-mock \
 		devel/py-test-timeout
 
