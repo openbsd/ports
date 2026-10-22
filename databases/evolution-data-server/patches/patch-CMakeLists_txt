@@ -12,7 +12,7 @@ Index: CMakeLists.txt
  
  # Optional Packages
  set(goa_minimum_version 3.8)
-@@ -423,7 +422,7 @@ endif(ENABLE_GTK4)
+@@ -435,7 +434,7 @@ endif(ENABLE_GTK4)
  # **************************************************************
  
  pkg_check_modules(JSON_GLIB REQUIRED json-glib-1.0>=${json_glib_minimum_version})

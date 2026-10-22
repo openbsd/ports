@@ -1,21 +1,20 @@
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.60.2
-REVISION=		0
+GNOME_VERSION=		3.62.1
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            41.15
-SHARED_LIBS +=  edataserver-1.2      22.15
-SHARED_LIBS +=  ebackend-1.2         8.15
-SHARED_LIBS +=  edataserverui-1.2    4.15
-SHARED_LIBS +=	edataserverui4-1.0   0.7
-SHARED_LIBS +=  ebook-contacts-1.2   5.16
-SHARED_LIBS +=  edata-book-1.2       20.13
-SHARED_LIBS +=  ebook-1.2            23.13
-SHARED_LIBS +=  ecal-2.0             0.13
-SHARED_LIBS +=  edata-cal-2.0        0.13
+SHARED_LIBS +=  camel-1.2            41.16
+SHARED_LIBS +=  edataserver-1.2      22.16
+SHARED_LIBS +=  ebackend-1.2         8.16
+SHARED_LIBS +=  edataserverui-1.2    4.16
+SHARED_LIBS +=	edataserverui4-1.0   0.8
+SHARED_LIBS +=  ebook-contacts-1.2   5.17
+SHARED_LIBS +=  edata-book-1.2       20.14
+SHARED_LIBS +=  ebook-1.2            23.14
+SHARED_LIBS +=  ecal-2.0             0.14
+SHARED_LIBS +=  edata-cal-2.0        0.14
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

@@ -4,7 +4,7 @@ src/camel/camel-debug.c:1078:3: error: expected expression
 Index: src/camel/camel-debug.c
 --- src/camel/camel-debug.c.orig
 +++ src/camel/camel-debug.c
-@@ -1073,8 +1073,8 @@ backtrace_matches (const Backtrace *match_bt,
+@@ -1063,8 +1063,8 @@ backtrace_matches (const Backtrace *match_bt,
  	flink = find_bt->lines;
  	mlink = NULL;
  	lt = lines_tolerance;

@@ -1,6 +1,7 @@
+Index: src/camel/camel-lock-helper.c
 --- src/camel/camel-lock-helper.c.orig
 +++ src/camel/camel-lock-helper.c
-@@ -40,6 +40,9 @@
+@@ -27,6 +27,9 @@
  #include "camel-lock-helper.h"
  #include "camel-lock.h"
  
