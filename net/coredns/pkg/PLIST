@@ -17,6 +17,7 @@
 @man man/man7/coredns-dns64.7
 @man man/man7/coredns-dnssec.7
 @man man/man7/coredns-dnstap.7
+@man man/man7/coredns-dynupdate.7
 @man man/man7/coredns-erratic.7
 @man man/man7/coredns-errors.7
 @man man/man7/coredns-etcd.7
@@ -54,6 +55,7 @@
 @man man/man7/coredns-secondary.7
 @man man/man7/coredns-shed.7
 @man man/man7/coredns-sign.7
+@man man/man7/coredns-siit.7
 @man man/man7/coredns-template.7
 @man man/man7/coredns-timeouts.7
 @man man/man7/coredns-tls.7
