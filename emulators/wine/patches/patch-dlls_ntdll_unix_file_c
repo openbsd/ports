@@ -4,25 +4,7 @@ Wine's '?' suffix, matching server/fd.c.
 Index: dlls/ntdll/unix/file.c
 --- dlls/ntdll/unix/file.c.orig
 +++ dlls/ntdll/unix/file.c
-@@ -813,7 +813,7 @@ static char *parse_mount_entries( FILE *f, dev_t dev, 
- }
- #endif
- 
--#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
-+#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__) || defined(__OpenBSD__)
- #include <fstab.h>
- static char *parse_mount_entries( FILE *f, dev_t dev, ino_t ino )
- {
-@@ -918,7 +918,7 @@ static char *get_default_drive_device( const char *roo
-     if (device) ret = strdup( device );
-     mutex_unlock( &mnt_mutex );
- 
--#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__ ) || defined(__DragonFly__)
-+#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__ ) || defined(__DragonFly__) || defined(__OpenBSD__)
-     char *device = NULL;
-     int fd, res = -1;
-     struct stat st;
-@@ -1672,7 +1672,24 @@ static BOOL fd_is_mount_point( int fd, const struct st
+@@ -1372,7 +1372,24 @@ static BOOL fd_is_mount_point( int fd, const struct st
  
  static unsigned int server_get_unix_name( HANDLE handle, char **unix_name );
  
@@ -47,7 +29,7 @@ Index: dlls/ntdll/unix/file.c
  /* get the stat info and file attributes for a file (by file descriptor) */
  static int fd_get_file_info( HANDLE handle, int fd, unsigned int options,
                               struct stat *st, ULONG *attr, ULONG *reparse_tag )
-@@ -1696,7 +1713,23 @@ static int fd_get_file_info( HANDLE handle, int fd, un
+@@ -1396,7 +1413,23 @@ static int fd_get_file_info( HANDLE handle, int fd, un
          }
      }
  
@@ -71,7 +53,7 @@ Index: dlls/ntdll/unix/file.c
      if (attr_len >= 0 && attr_len >= sizeof(ULONG))
      {
          *attr |= FILE_ATTRIBUTE_REPARSE_POINT;
-@@ -1813,7 +1846,20 @@ static int get_file_info( const char *path, struct sta
+@@ -1513,7 +1546,20 @@ static int get_file_info( const char *path, struct sta
      }
      *attr |= get_file_attributes( st );
  
@@ -92,7 +74,7 @@ Index: dlls/ntdll/unix/file.c
      if (attr_len >= 0 && attr_len >= sizeof(ULONG))
      {
          *attr |= FILE_ATTRIBUTE_REPARSE_POINT;
-@@ -3851,6 +3897,7 @@ static NTSTATUS nt_to_unix_file_name( OBJECT_ATTRIBUTE
+@@ -3541,6 +3587,7 @@ static NTSTATUS nt_to_unix_file_name( OBJECT_ATTRIBUTE
      unix_len = name_len * 3 + MAX_DIR_ENTRY_LEN + 3;
      if (!(unix_name = malloc( unix_len ))) return STATUS_NO_MEMORY;
      unix_name[0] = '.';
@@ -100,7 +82,7 @@ Index: dlls/ntdll/unix/file.c
  
      if (!(status = server_get_unix_fd( attr->RootDirectory, 0, &root_fd, &needs_close, &type, NULL )))
      {
-@@ -4107,10 +4154,17 @@ static NTSTATUS resolve_reparse_point( int fd, int roo
+@@ -3797,10 +3844,17 @@ static NTSTATUS resolve_reparse_point( int fd, int roo
  
      if (!(data = malloc( MAXIMUM_REPARSE_DATA_BUFFER_SIZE ))) return STATUS_NO_MEMORY;
  

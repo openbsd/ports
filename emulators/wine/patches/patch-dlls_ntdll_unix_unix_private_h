@@ -45,7 +45,7 @@ Index: dlls/ntdll/unix/unix_private.h
  extern NTSTATUS get_thread_ldt_entry( HANDLE handle, THREAD_DESCRIPTOR_INFORMATION *info, ULONG len );
  extern void *get_native_context( CONTEXT *context );
  extern void *get_wow_context( CONTEXT *context );
-@@ -455,7 +474,11 @@ static inline void ascii_to_unicode( WCHAR *dst, const
+@@ -452,7 +471,11 @@ static inline void ascii_to_unicode( WCHAR *dst, const
  
  static inline void *get_kernel_stack( struct thread_data *data )
  {

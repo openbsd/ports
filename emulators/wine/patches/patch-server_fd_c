@@ -21,7 +21,7 @@ Index: server/fd.c
  
      if (events == -1)  /* stop waiting on this fd completely */
      {
-@@ -2361,6 +2369,7 @@ static void unmount_device( struct fd *device_fd )
+@@ -2341,6 +2349,7 @@ static void unmount_device( dev_t dev )
  
  #define XATTR_REPARSE XATTR_USER_PREFIX "WINEREPARSE"
  
@@ -29,7 +29,7 @@ Index: server/fd.c
  static int xattr_fset( int filedes, const char *name, const void *value, size_t size )
  {
  #ifdef HAVE_SYS_XATTR_H
-@@ -2410,12 +2419,18 @@ static int xattr_fremove( int filedes, const char *nam
+@@ -2390,12 +2399,18 @@ static int xattr_fremove( int filedes, const char *nam
      return -1;
  #endif
  }
@@ -48,7 +48,7 @@ Index: server/fd.c
  
      if (!fd->unix_name)
      {
-@@ -2435,7 +2450,39 @@ static void set_reparse_point( struct fd *fd, struct a
+@@ -2415,7 +2430,39 @@ static void set_reparse_point( struct fd *fd, struct a
          return;
      }
  
@@ -88,7 +88,7 @@ Index: server/fd.c
      {
          file_set_error();
          return;
-@@ -2467,6 +2514,9 @@ static void get_reparse_point( struct fd *fd, struct a
+@@ -2447,6 +2494,9 @@ static void get_reparse_point( struct fd *fd, struct a
       * Linux won't return any data if the size is too small */
      char buffer[MAXIMUM_REPARSE_DATA_BUFFER_SIZE];
      int ret;
@@ -98,7 +98,7 @@ Index: server/fd.c
  
      if (!fd->unix_name)
      {
-@@ -2492,7 +2542,31 @@ static void get_reparse_point( struct fd *fd, struct a
+@@ -2472,7 +2522,31 @@ static void get_reparse_point( struct fd *fd, struct a
          return;
      }
  
@@ -130,7 +130,7 @@ Index: server/fd.c
      if (ret >= 0)
      {
          if (ret > get_reply_max_size())
-@@ -2547,6 +2621,20 @@ static void delete_reparse_point( struct fd *fd, struc
+@@ -2527,6 +2601,20 @@ static void delete_reparse_point( struct fd *fd, struc
      memcpy( base_name, fd->unix_name, len - 1 );
      base_name[len - 1] = 0;
  
@@ -151,7 +151,7 @@ Index: server/fd.c
      if (rename( fd->unix_name, base_name ) < 0)
      {
          file_set_error();
-@@ -2557,7 +2645,9 @@ static void delete_reparse_point( struct fd *fd, struc
+@@ -2537,7 +2625,9 @@ static void delete_reparse_point( struct fd *fd, struc
      free( fd->unix_name );
      fd->closed->unix_name = fd->unix_name = base_name;
  

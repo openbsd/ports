@@ -23,7 +23,7 @@ Index: dlls/ntdll/unix/virtual.c
  #ifdef HAVE_LIBPROCSTAT_H
  # include <libprocstat.h>
  #endif
-@@ -596,6 +599,9 @@ static void *anon_mmap_tryfixed( void *start, size_t s
+@@ -555,6 +558,9 @@ static void *anon_mmap_tryfixed( void *start, size_t s
  
  #ifdef MAP_FIXED_NOREPLACE
      ptr = mmap( start, size, prot, MAP_FIXED_NOREPLACE | MAP_PRIVATE | MAP_ANON | flags, -1, 0 );
@@ -33,30 +33,19 @@ Index: dlls/ntdll/unix/virtual.c
  #elif defined(MAP_TRYFIXED)
      ptr = mmap( start, size, prot, MAP_TRYFIXED | MAP_PRIVATE | MAP_ANON | flags, -1, 0 );
  #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-@@ -2763,6 +2769,9 @@ static void *get_host_addr_space_limit(void)
+@@ -2366,6 +2372,11 @@ static void *get_host_addr_space_limit(void)
  #ifdef __APPLE__
      /* See MACH_VM_MAX_ADDRESS_RAW in xnu osfmk/mach/arm/vm_param.h */
      return (void *)0x7ffffe000000;
++
 +#elif defined(__OpenBSD__)
 +    /* mmap() will ingore address hints, so the probing below doesn't work */
 +    return (void *)(VM_MAXUSER_ADDRESS & ~(UINT_PTR)granularity_mask);
- #else
-     unsigned int flags = MAP_PRIVATE | MAP_ANON;
++
+ #elif defined _WIN64
      UINT_PTR addr = (UINT_PTR)1 << 63;
-@@ -3711,7 +3720,12 @@ void virtual_init(void)
-     view_block_start = anon_mmap_alloc( view_block_size, PROT_READ | PROT_WRITE );
-     view_block_end = view_block_start + view_block_size / sizeof(*view_block_start);
-     free_ranges = anon_mmap_alloc( view_block_size, PROT_READ | PROT_WRITE );
-+#if defined(__OpenBSD__)
-+    pages_vprot = anon_mmap_alloc( ROUND_SIZE( 0, pages_vprot_size * sizeof(*pages_vprot), host_page_mask ),
-+        PROT_READ | PROT_WRITE );
-+#else
-     pages_vprot = anon_mmap_alloc( pages_vprot_size * sizeof(*pages_vprot), PROT_READ | PROT_WRITE );
-+#endif
- #else
-     /* try to find space in a reserved area for the views and pages protection table */
-     view_block_start = alloc_virtual_heap( 2 * view_block_size + (1U << (32 - page_shift)) );
-@@ -4105,8 +4119,41 @@ static void set_large_address_space(void)
+ 
+@@ -3680,8 +3691,41 @@ static void set_large_address_space(void)
      user_space_limit = working_set_limit = address_space_limit;
  }
  
@@ -98,7 +87,7 @@ Index: dlls/ntdll/unix/virtual.c
   *           virtual_alloc_first_thread_data
   */
  struct thread_data *virtual_alloc_first_thread_data(void)
-@@ -4126,7 +4173,11 @@ struct thread_data *virtual_alloc_first_thread_data(vo
+@@ -3701,7 +3745,11 @@ struct thread_data *virtual_alloc_first_thread_data(vo
      status = map_view( &view, NULL, signal_stack_mask + 1 + kernel_stack_size, MEM_TOP_DOWN,
                         VPROT_READ | VPROT_WRITE | VPROT_COMMITTED, 4 * limit_4g, 0, 0 );
      assert( !status );
@@ -110,7 +99,7 @@ Index: dlls/ntdll/unix/virtual.c
      pthread_setspecific( thread_data_key, thread_data );
      return thread_data;
  }
-@@ -4238,12 +4289,17 @@ struct thread_data *virtual_alloc_thread_data(void)
+@@ -3813,12 +3861,17 @@ struct thread_data *virtual_alloc_thread_data(void)
      sigset_t sigset;
      struct file_view *view;
      struct thread_data *data = NULL;
@@ -128,7 +117,7 @@ Index: dlls/ntdll/unix/virtual.c
          data = init_thread_data( view->base );
          VIRTUAL_DEBUG_DUMP_VIEW( view );
      }
-@@ -4508,6 +4564,7 @@ NTSTATUS virtual_alloc_thread_stack( INITIAL_TEB *stac
+@@ -4083,6 +4136,7 @@ NTSTATUS virtual_alloc_thread_stack( INITIAL_TEB *stac
      status = map_view( &view, NULL, size, 0, VPROT_READ | VPROT_WRITE | VPROT_COMMITTED,
                         limit_low, limit_high, 0 );
      if (status != STATUS_SUCCESS) goto done;
@@ -136,7 +125,7 @@ Index: dlls/ntdll/unix/virtual.c
  
  #ifdef VALGRIND_STACK_REGISTER
      VALGRIND_STACK_REGISTER( view->base, (char *)view->base + view->size );
-@@ -4683,8 +4740,288 @@ static NTSTATUS grow_thread_stack( struct thread_data 
+@@ -4258,8 +4312,288 @@ static NTSTATUS grow_thread_stack( struct thread_data 
      return ret;
  }
  
@@ -425,7 +414,7 @@ Index: dlls/ntdll/unix/virtual.c
   *           virtual_handle_fault
   */
  NTSTATUS virtual_handle_fault( struct thread_data *data, EXCEPTION_RECORD *rec, void *stack )
-@@ -4741,6 +5078,14 @@ NTSTATUS virtual_handle_fault( struct thread_data *dat
+@@ -4316,6 +4650,14 @@ NTSTATUS virtual_handle_fault( struct thread_data *dat
                  ret = STATUS_SUCCESS;
          }
      }
@@ -440,7 +429,7 @@ Index: dlls/ntdll/unix/virtual.c
      mutex_unlock( &virtual_mutex );
      rec->ExceptionCode = ret;
      return ret;
-@@ -4857,8 +5202,13 @@ ssize_t virtual_locked_read( int fd, void *addr, size_
+@@ -4432,8 +4774,13 @@ ssize_t virtual_locked_read( int fd, void *addr, size_
      BOOL has_write_watch = FALSE;
      int err = EFAULT;
  
@@ -454,7 +443,7 @@ Index: dlls/ntdll/unix/virtual.c
  
      server_enter_uninterrupted_section( &virtual_mutex, &sigset );
      if (!check_write_access( addr, size, &has_write_watch ))
-@@ -4908,8 +5258,13 @@ ssize_t virtual_locked_recvmsg( int fd, struct msghdr 
+@@ -4483,8 +4830,13 @@ ssize_t virtual_locked_recvmsg( int fd, struct msghdr 
      BOOL has_write_watch = FALSE;
      int err = EFAULT;
  
@@ -468,7 +457,7 @@ Index: dlls/ntdll/unix/virtual.c
  
      server_enter_uninterrupted_section( &virtual_mutex, &sigset );
      for (i = 0; i < hdr->msg_iovlen; i++)
-@@ -6426,7 +6781,59 @@ NTSTATUS WINAPI NtMapViewOfSection( HANDLE handle, HAN
+@@ -5974,7 +6326,59 @@ NTSTATUS WINAPI NtMapViewOfSection( HANDLE handle, HAN
                                  offset_ptr, size_ptr, alloc_type, protect, 0 );
  }
  
@@ -528,7 +517,7 @@ Index: dlls/ntdll/unix/virtual.c
   *             NtMapViewOfSectionEx   (NTDLL.@)
   *             ZwMapViewOfSectionEx   (NTDLL.@)
   */
-@@ -6854,6 +7261,9 @@ NTSTATUS WINAPI NtReadVirtualMemory( HANDLE process, c
+@@ -6402,6 +6806,9 @@ NTSTATUS WINAPI NtReadVirtualMemory( HANDLE process, c
      }
      else
      {
@@ -538,7 +527,7 @@ Index: dlls/ntdll/unix/virtual.c
          SERVER_START_REQ( read_process_memory )
          {
              req->handle = wine_server_obj_handle( process );
-@@ -6862,6 +7272,7 @@ NTSTATUS WINAPI NtReadVirtualMemory( HANDLE process, c
+@@ -6410,6 +6817,7 @@ NTSTATUS WINAPI NtReadVirtualMemory( HANDLE process, c
              if ((status = wine_server_call( req ))) size = 0;
          }
          SERVER_END_REQ;
@@ -546,7 +535,7 @@ Index: dlls/ntdll/unix/virtual.c
      }
      if (bytes_read) *bytes_read = size;
      return status;
-@@ -6879,6 +7290,9 @@ NTSTATUS WINAPI NtWriteVirtualMemory( HANDLE process, 
+@@ -6427,6 +6835,9 @@ NTSTATUS WINAPI NtWriteVirtualMemory( HANDLE process, 
  
      if (virtual_check_buffer_for_read( buffer, size ))
      {
@@ -556,7 +545,7 @@ Index: dlls/ntdll/unix/virtual.c
          SERVER_START_REQ( write_process_memory )
          {
              req->handle     = wine_server_obj_handle( process );
-@@ -6888,6 +7302,7 @@ NTSTATUS WINAPI NtWriteVirtualMemory( HANDLE process, 
+@@ -6436,6 +6847,7 @@ NTSTATUS WINAPI NtWriteVirtualMemory( HANDLE process, 
              size = reply->written;
          }
          SERVER_END_REQ;

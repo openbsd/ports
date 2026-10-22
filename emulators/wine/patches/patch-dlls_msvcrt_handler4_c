@@ -15,8 +15,8 @@ not a fix for its underlying cause.
 Index: dlls/msvcrt/handler4.c
 --- dlls/msvcrt/handler4.c.orig
 +++ dlls/msvcrt/handler4.c
-@@ -398,9 +398,42 @@ static void CALLBACK cxx_catch_cleanup(BOOL normal, vo
-     FlsSetValue(fls_index, (void*)(DWORD_PTR)ctx->unwind_state);
+@@ -408,9 +408,42 @@ static void CALLBACK cxx_catch_cleanup(BOOL normal, vo
+     thread_set_trylevel(ctx->unwind_state);
  }
  
 -static void* WINAPI call_catch_block4(EXCEPTION_RECORD *rec)
@@ -59,7 +59,7 @@ Index: dlls/msvcrt/handler4.c
      EXCEPTION_RECORD *prev_rec = (void*)rec->ExceptionInformation[6];
      CONTEXT *context = (void*)rec->ExceptionInformation[7];
      EXCEPTION_POINTERS ep = { prev_rec, context };
-@@ -415,29 +448,7 @@ static void* WINAPI call_catch_block4(EXCEPTION_RECORD
+@@ -425,29 +458,7 @@ static void* WINAPI call_catch_block4(EXCEPTION_RECORD
      (*__processing_throw())--;
      __TRY
      {
@@ -71,7 +71,7 @@ Index: dlls/msvcrt/handler4.c
 -        {
 -            TRACE("detect rethrow: exception code: %lx\n", prev_rec->ExceptionCode);
 -            ctx.rethrow = TRUE;
--            FlsSetValue(fls_index, (void*)(DWORD_PTR)ctx.search_state);
+-            thread_set_trylevel(ctx.search_state);
 -
 -            if (untrans_rec)
 -            {

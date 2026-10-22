@@ -1,0 +1,45 @@
+work around missing VBlank support by polling raster status
+(https://github.com/NethIafin/wine/pull/26)
+
+Index: dlls/dxgi/output.c
+--- dlls/dxgi/output.c.orig
++++ dlls/dxgi/output.c
+@@ -363,14 +363,32 @@ static HRESULT STDMETHODCALLTYPE dxgi_output_FindClose
+ 
+ static HRESULT STDMETHODCALLTYPE dxgi_output_WaitForVBlank(IDXGIOutput6 *iface)
+ {
+-    static BOOL once = FALSE;
++    struct dxgi_output *output = impl_from_IDXGIOutput6(iface);
++    struct wined3d_raster_status raster_status;
++    int prev_scanline = 0;
++    HRESULT hr;
+ 
+-    if (!once++)
+-        FIXME("iface %p stub!\n", iface);
+-    else
+-        TRACE("iface %p stub!\n", iface);
++    TRACE("iface %p\n", iface);
+ 
+-    return E_NOTIMPL;
++    for (;;)
++    {
++        wined3d_mutex_lock();
++        hr = wined3d_output_get_raster_status(output->wined3d_output, &raster_status);
++        wined3d_mutex_unlock();
++        if (FAILED(hr))
++        {
++            WARN("Failed to get raster status, hr %#lx.\n", hr);
++            return hr;
++        }
++        if (raster_status.in_vblank && prev_scanline > raster_status.scan_line)
++            break;
++
++        prev_scanline = raster_status.scan_line;
++
++        Sleep(0);
++    }
++
++    return S_OK;
+ }
+ 
+ static HRESULT STDMETHODCALLTYPE dxgi_output_TakeOwnership(IDXGIOutput6 *iface, IUnknown *device, BOOL exclusive)

@@ -1,7 +1,7 @@
 Index: dlls/dnsapi/libresolv.c
 --- dlls/dnsapi/libresolv.c.orig
 +++ dlls/dnsapi/libresolv.c
-@@ -43,6 +43,9 @@
+@@ -44,6 +44,9 @@
  #ifdef HAVE_NETDB_H
  # include <netdb.h>
  #endif

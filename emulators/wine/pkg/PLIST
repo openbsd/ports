@@ -949,6 +949,8 @@ include/wine/windows/netlistmgr.h
 include/wine/windows/netlistmgr.idl
 include/wine/windows/newdev.h
 include/wine/windows/nldef.h
+include/wine/windows/notificationactivationcallback.h
+include/wine/windows/notificationactivationcallback.idl
 include/wine/windows/npapi.h
 include/wine/windows/nserror.h
 include/wine/windows/nspapi.h
@@ -1948,7 +1950,15 @@ lib/wine/x86_64-windows/l3codecx.ax
 @static-lib lib/wine/x86_64-windows/libd3d12.a
 @static-lib lib/wine/x86_64-windows/libd3d9.a
 @static-lib lib/wine/x86_64-windows/libd3dcompiler.a
+@static-lib lib/wine/x86_64-windows/libd3dcompiler_33.a
+@static-lib lib/wine/x86_64-windows/libd3dcompiler_34.a
+@static-lib lib/wine/x86_64-windows/libd3dcompiler_35.a
+@static-lib lib/wine/x86_64-windows/libd3dcompiler_36.a
+@static-lib lib/wine/x86_64-windows/libd3dcompiler_37.a
+@static-lib lib/wine/x86_64-windows/libd3dcompiler_38.a
 @static-lib lib/wine/x86_64-windows/libd3dcompiler_39.a
+@static-lib lib/wine/x86_64-windows/libd3dcompiler_40.a
+@static-lib lib/wine/x86_64-windows/libd3dcompiler_41.a
 @static-lib lib/wine/x86_64-windows/libd3dcompiler_42.a
 @static-lib lib/wine/x86_64-windows/libd3dcompiler_43.a
 @static-lib lib/wine/x86_64-windows/libd3dcompiler_46.a
@@ -2101,10 +2111,8 @@ lib/wine/x86_64-windows/l3codecx.ax
 @static-lib lib/wine/x86_64-windows/libt2embed.a
 @static-lib lib/wine/x86_64-windows/libtapi32.a
 @static-lib lib/wine/x86_64-windows/libtdh.a
-@static-lib lib/wine/x86_64-windows/libtwaindsm.a
 @static-lib lib/wine/x86_64-windows/libucrtbase.a
 @static-lib lib/wine/x86_64-windows/libuiautomationcore.a
-@static-lib lib/wine/x86_64-windows/libunicows.a
 @static-lib lib/wine/x86_64-windows/liburl.a
 @static-lib lib/wine/x86_64-windows/liburlmon.a
 @static-lib lib/wine/x86_64-windows/libusbd.a
@@ -2440,7 +2448,6 @@ lib/wine/x86_64-windows/ucrtbase.dll
 lib/wine/x86_64-windows/uianimation.dll
 lib/wine/x86_64-windows/uiautomationcore.dll
 lib/wine/x86_64-windows/uiribbon.dll
-lib/wine/x86_64-windows/unicows.dll
 lib/wine/x86_64-windows/uninstaller.exe
 lib/wine/x86_64-windows/unlodctr.exe
 lib/wine/x86_64-windows/updspapi.dll
@@ -2580,6 +2587,7 @@ lib/wine/x86_64-windows/wow64cpu.dll
 lib/wine/x86_64-windows/wow64win.dll
 lib/wine/x86_64-windows/wpc.dll
 lib/wine/x86_64-windows/wpcap.dll
+lib/wine/x86_64-windows/wpnapps.dll
 lib/wine/x86_64-windows/write.exe
 lib/wine/x86_64-windows/ws2_32.dll
 lib/wine/x86_64-windows/wscript.exe
