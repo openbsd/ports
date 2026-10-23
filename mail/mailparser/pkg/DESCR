@@ -1,3 +1,5 @@
-mail-parser is not only a wrapper for 'email' in the Python Standard
-Library. It gives you an easy way to pass raw mail to a Python object
-that you can use in your code.
+mail-parser is a production-grade, RFC-compliant email parsing library
+that goes far beyond a simple wrapper for Python's email module. It
+transforms raw email messages into richly structured Python objects with
+unparalleled precision, making complex email processing accessible and
+reliable.

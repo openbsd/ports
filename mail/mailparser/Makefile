@@ -1,6 +1,6 @@
-COMMENT=	wrapper for 'email' in Python's standard library
+COMMENT=	transform raw emails into Python objects
 
-MODPY_DISTV=	4.3.0
+MODPY_DISTV=	4.8.0
 DISTNAME=	mail_parser-${MODPY_DISTV}
 PKGNAME=	mailparser-${MODPY_DISTV}
 
