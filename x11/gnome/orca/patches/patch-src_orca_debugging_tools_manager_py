@@ -1,12 +1,13 @@
 Index: src/orca/debugging_tools_manager.py
 --- src/orca/debugging_tools_manager.py.orig
 +++ src/orca/debugging_tools_manager.py
-@@ -169,7 +169,7 @@ class DebuggingToolsManager:
+@@ -137,8 +137,7 @@ class DebuggingToolsManager(Extension):
              else:
                  name = AXObject.get_name(app) or "[DEAD]"
              try:
--                cmdline = subprocess.getoutput(f"cat /proc/{pid}/cmdline")
+-                with open(f"/proc/{pid}/cmdline", encoding="utf-8") as f:
+-                    cmdline = f.read().replace("\x00", " ")
 +                cmdline = subprocess.getoutput(f"ps -o args -p %s | sed 1d' % {pid}")
-             except subprocess.SubprocessError as error:
+             except OSError as error:
                  cmdline = f"EXCEPTION: {error}"
-             else:
+             if is_command_line:

@@ -1,15 +1,21 @@
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		50.3
+GNOME_VERSION=		51.0
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
+
+WANTLIB += ${MODCARGO_WANTLIB} m
 
 MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
+
+# needed for mathcat-py
+MODULES +=		devel/cargo
+MODCARGO_CARGOTOML=	${WRKSRC}/subprojects/mathcat-py/Cargo.toml
 
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp
@@ -31,5 +37,7 @@ RUN_DEPENDS +=		x11/gtk+3
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/orca/
 	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/orca/
+
+.include "crates.inc"
 
 .include <bsd.port.mk>
