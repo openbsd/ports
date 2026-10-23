@@ -2,6 +2,7 @@ COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
 MODGO_VERSION=	v1.2.0
+REVISION=	0
 DISTNAME=	terragrunt-${MODGO_VERSION}
 
 # for patches
@@ -20,7 +21,7 @@ MODULES=	lang/go
 
 MODGO_LDFLAGS=	-X main.VERSION=${MODGO_VERSION}
 
-RUN_DEPENDS=	terraform-*|opentofu-*:sysutils/terraform
+RUN_DEPENDS=	sysutils/opentofu
 
 .include "modules.inc"
 
