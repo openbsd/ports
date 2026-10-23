@@ -79,7 +79,6 @@
      SUBDIR += metamail
      SUBDIR += mew
      SUBDIR += milter-checkrcpt
-     SUBDIR += milter-greylist
      SUBDIR += milter-regex
      SUBDIR += milter-spamd
      SUBDIR += mimedefang

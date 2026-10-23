@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1856 2026/10/23 09:09:30 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1857 2026/10/23 10:52:57 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -669,6 +669,7 @@ setup_obsolete_reason(
 	6 => 'tpb',
 	9 => 'anki',
 	18 => 'gringotts',
+	8 => 'milter-greylist',
 );
 # beware, if ports with an RDEP on Python 3 are removed in a release where
 # the Python major version has changed (e.g. 3.13->3.14 between 7.9 and 8.0)
