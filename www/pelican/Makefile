@@ -1,6 +1,7 @@
 COMMENT =		static site generator written in Python
 
 MODPY_DISTV =		4.12.0
+REVISION =		0
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican
 GH_TAGNAME =		${MODPY_DISTV}
@@ -9,8 +10,6 @@ CATEGORIES =		www
 
 # https://github.com/getpelican/pelican
 HOMEPAGE =		https://blog.getpelican.com/
-
-MAINTAINER =		David Demelier <markand@malikania.fr>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
