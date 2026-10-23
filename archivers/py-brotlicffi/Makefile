@@ -1,28 +1,27 @@
 COMMENT=	Python bindings to the Brotli compression library
 
-MODPY_DISTV=	1.2.0.2
+MODPY_DISTV=	1.2.1.0
 DISTNAME=	brotlicffi-${MODPY_DISTV}
 PKGNAME=	py-brotlicffi-${MODPY_DISTV}
 CATEGORIES=	archivers
 
-DISTFILES.td=	brotli-testdata-1.2.0.tar.xz{testdata.txz}
-SITES.td=	https://github.com/google/brotli/releases/download/v1.2.0/
+DISTFILES.td=	brotli-testdata-${MODPY_DISTV:R}.tar.xz{testdata.txz}
+SITES.td=	https://github.com/google/brotli/releases/download/v${MODPY_DISTV:R}/
 
 # MIT
 PERMIT_PACKAGE=Yes
 
-WANTLIB += ${COMPILER_LIBCXX} brotlidec brotlienc pthread
+#WANTLIB += ${COMPILER_LIBCXX} brotlidec brotlienc pthread
 
 COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MAKE_ENV=	USE_SHARED_BROTLI=1
+#MAKE_ENV=	USE_SHARED_BROTLI=1
+#LIB_DEPENDS=	archivers/brotli
 
-LIB_DEPENDS=	archivers/brotli
 RUN_DEPENDS=	devel/py-cffi
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
