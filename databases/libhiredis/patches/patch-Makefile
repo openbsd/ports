@@ -16,7 +16,7 @@ Index: Makefile
  
  # Installation related variables and target
  PREFIX?=/usr/local
-@@ -294,7 +294,7 @@ $(PKGCONFNAME): hiredis.h
+@@ -299,7 +299,7 @@ $(PKGCONFNAME): hiredis.h
  	@echo >> $@
  	@echo Name: hiredis >> $@
  	@echo Description: Minimalistic C client library for Redis. >> $@
