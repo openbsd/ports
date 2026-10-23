@@ -1,6 +1,6 @@
 COMMENT=	official command-line client for RIPE Atlas
 
-MODPY_DISTV=	3.4.0
+MODPY_DISTV=	3.4.1
 DISTNAME=	ripe_atlas_tools-${MODPY_DISTV}
 PKGNAME=	ripe.atlas.tools-${MODPY_DISTV}
 
@@ -21,7 +21,8 @@ RUN_DEPENDS=	devel/py-dateutil \
 		devel/py-tzlocal \
 		textproc/py-yaml \
 		security/py-openssl \
-		devel/py-typing-extensions
+		devel/py-typing-extensions \
+		devel/py-certifi
 
 # some network tests
 PORTHOME=	${WRKDIST}
