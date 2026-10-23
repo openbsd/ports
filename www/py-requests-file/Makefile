@@ -1,9 +1,8 @@
 COMMENT=	file transport adapter for requests
 
-MODPY_DISTV=	2.1.0
+MODPY_DISTV=	3.0.1
 DISTNAME=	requests_file-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	0
 
 CATEGORIES=	www
 
