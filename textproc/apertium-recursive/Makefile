@@ -2,6 +2,7 @@ COMMENT =	recursive structural transfer module for apertium
 
 DISTNAME =	apertium-recursive-$V
 V =		1.2.1
+REVISION =	0
 
 CATEGORIES =	textproc
 

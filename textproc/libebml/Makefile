@@ -4,6 +4,7 @@ DISTNAME=	libebml-1.4.7
 CATEGORIES=	textproc
 SITES=		https://dl.matroska.org/downloads/libebml/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS=	ebml	4.0
 

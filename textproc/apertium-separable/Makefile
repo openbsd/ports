@@ -2,6 +2,7 @@ COMMENT =		reorder separable/discontinuous multiwords
 
 V =			0.7.1
 DISTNAME =		apertium-separable-$V
+REVISION =		0
 
 CATEGORIES =		textproc
 
