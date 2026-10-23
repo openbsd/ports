@@ -1,6 +1,6 @@
 COMMENT=	Python library for building WebSocket servers and clients
 
-MODPY_DISTV=	17.2
+MODPY_DISTV=	17.3
 GH_ACCOUNT=	python-websockets
 GH_PROJECT=	websockets
 GH_TAGNAME=	${MODPY_DISTV}
