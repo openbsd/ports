@@ -539,9 +539,9 @@ lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/data/sites/
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/data/sites/astropy/
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/data/sites/astropy/download/
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/data/sites/astropy/download/url/
-lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/data/sites/astropy/download/url/2a464ec894e62c3f19c6aa05f3df3fdc/
-lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/data/sites/astropy/download/url/2a464ec894e62c3f19c6aa05f3df3fdc/contents
-lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/data/sites/astropy/download/url/2a464ec894e62c3f19c6aa05f3df3fdc/url
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/data/sites/astropy/download/url/e0b0a015ce4cf06dd43a7004c20f2fb7/
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/data/sites/astropy/download/url/e0b0a015ce4cf06dd43a7004c20f2fb7/contents
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/data/sites/astropy/download/url/e0b0a015ce4cf06dd43a7004c20f2fb7/url
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/helper.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_angle_generators.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_angles.py

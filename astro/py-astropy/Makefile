@@ -1,9 +1,8 @@
 COMMENT=	community-developed Python astronomy tools
 
-MODPY_DISTV=	8.0.1
+MODPY_DISTV=	8.0.2
 DISTNAME=	astropy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	astro
 
@@ -13,9 +12,8 @@ HOMEPAGE=	https://astropy.org
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 MODPY_PYTEST_ARGS=  astropy
 MODPY_TEST_LINK_SO= Yes
