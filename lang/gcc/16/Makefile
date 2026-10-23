@@ -63,6 +63,9 @@ SUPDISTFILES.strap += ${BOOTSTRAP-${_arch}}
 .endfor
 EXTRACT_ONLY =	${DISTFILES}
 
+# m2 uses bash
+BUILD_DEPENDS +=	shells/bash
+
 BUILD_DEPENDS +=	devel/bison
 
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
