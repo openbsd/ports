@@ -104,7 +104,6 @@
      SUBDIR += libfprint
      SUBDIR += libgcrypt
      SUBDIR += libgpg-error
-     SUBDIR += libgringotts
      SUBDIR += libgsasl
      SUBDIR += libident
      SUBDIR += libksba

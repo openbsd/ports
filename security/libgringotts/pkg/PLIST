@@ -1,7 +1,0 @@
-include/libgringotts.h
-lib/libgringotts.a
-lib/libgringotts.la
-@lib lib/libgringotts.so.${LIBgringotts_VERSION}
-lib/pkgconfig/libgringotts.pc
-share/doc/libgringotts/
-share/doc/libgringotts/manual.htm
