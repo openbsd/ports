@@ -1,6 +1,4 @@
-Fix build on archs where char is unsigned:
-
-error: implicit conversion changes signedness: 'int' to 'gchar' (aka 'char') [-Werror,-Wsign-conversion]
+https://gitlab.gnome.org/GNOME/glib/-/work_items/4091
 
 Index: glib/tests/string.c
 --- glib/tests/string.c.orig
