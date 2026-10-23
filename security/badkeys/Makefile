@@ -1,8 +1,7 @@
 COMMENT=	check cryptographic keys for known weaknesses
 
-MODPY_DISTV=	0.0.20
+MODPY_DISTV=	0.0.21
 DISTNAME=	badkeys-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	security
 
@@ -20,6 +19,7 @@ PORTHOME=	${WRKDIR}
 RUN_DEPENDS=	math/py-gmpy2 \
 		net/py-dnspython \
 		security/py-cryptography \
+		security/py-openssl \
 		security/py-paramiko
 
 # uncomment to enable online tests (there are offline ones too)
