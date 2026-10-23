@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -11110,8 +11110,8 @@ if test "$enable_default_db" = "yes"; then
+@@ -11119,8 +11119,8 @@ if test "$enable_default_db" = "yes"; then
  
  if test "x$sysconfdir" != x'${prefix}/etc'; then
  	evalled_sysconfdir=`eval echo "$sysconfdir"`

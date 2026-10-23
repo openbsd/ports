@@ -1,6 +1,6 @@
 COMMENT=	Advanced Intrusion Detection Environment (file mod checker)
 
-V=		0.19.4
+V=		0.19.5
 DISTNAME=	aide-${V}
 
 CATEGORIES=	security
