@@ -15,7 +15,7 @@ USE_NOEXECONLY = Yes
 # - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
 #   into simple warnings.
 V = 16.2.0
-REVISION = 1
+REVISION = 2
 GCC_PKGSPEC = >=16,<17
 
 # aarch64, powerpc64 and sparc64 bootstrap contain only gdc
