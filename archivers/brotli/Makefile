@@ -2,7 +2,7 @@ COMMENT =		generic lossless compressor
 
 GH_ACCOUNT =		google
 GH_PROJECT =		brotli
-GH_TAGNAME =		v1.2.0
+GH_TAGNAME =		v1.2.1
 
 # upstream version from BROTLI_ABI_* in c/common/version.h
 SHARED_LIBS +=  brotlicommon              2.0 # 3.0
