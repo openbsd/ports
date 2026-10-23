@@ -243,6 +243,18 @@ share/help/pl/gnome-text-editor/legal.xml
 share/help/pl/gnome-text-editor/media/
 share/help/pl/gnome-text-editor/media/org.gnome.TextEditor.svg
 share/help/pl/gnome-text-editor/media/search-recent.png
+share/help/pt/
+share/help/pt/gnome-text-editor/
+share/help/pt/gnome-text-editor/basics-create-new-file.page
+share/help/pt/gnome-text-editor/basics-draft-folder.page
+share/help/pt/gnome-text-editor/basics-open-file.page
+share/help/pt/gnome-text-editor/edit-search-and-replace.page
+share/help/pt/gnome-text-editor/edit-undo-redo.page
+share/help/pt/gnome-text-editor/index.page
+share/help/pt/gnome-text-editor/legal.xml
+share/help/pt/gnome-text-editor/media/
+share/help/pt/gnome-text-editor/media/org.gnome.TextEditor.svg
+share/help/pt/gnome-text-editor/media/search-recent.png
 share/help/pt_BR/
 share/help/pt_BR/gnome-text-editor/
 share/help/pt_BR/gnome-text-editor/basics-create-new-file.page
@@ -362,6 +374,8 @@ share/locale/kk/LC_MESSAGES/gnome-text-editor.mo
 share/locale/ko/LC_MESSAGES/gnome-text-editor.mo
 share/locale/lt/LC_MESSAGES/gnome-text-editor.mo
 share/locale/lv/LC_MESSAGES/gnome-text-editor.mo
+share/locale/mi/LC_MESSAGES/gnome-text-editor.mo
+share/locale/mjw/LC_MESSAGES/gnome-text-editor.mo
 share/locale/nb/LC_MESSAGES/gnome-text-editor.mo
 share/locale/ne/LC_MESSAGES/gnome-text-editor.mo
 share/locale/nl/LC_MESSAGES/gnome-text-editor.mo
