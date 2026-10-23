@@ -3,7 +3,7 @@ COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 COMMENT-ldap=		LDAP database access module for PowerDNS
 
-V=			5.1.4
+V=			5.1.5
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
@@ -11,7 +11,7 @@ PKGSPEC-main=		powerdns-=${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
 PKGNAME-ldap=		powerdns-ldap-${V}
-REVISION-main=		0
+#REVISION-main=		0
 #REVISION-mysql=		0
 #REVISION-pgsql=		0
 #REVISION-ldap=		0
@@ -122,9 +122,10 @@ WANTLIB-ldap+=          heimdal/lib/heimsqlite heimdal/lib/hx509 heimdal/lib/krb
 WANTLIB-ldap+=          heimdal/lib/roken heimdal/lib/wind
 
 EXAMPLE_DIR=		${PREFIX}/share/examples/pdns/
+FAKE_FLAGS=		sysconfdir=${EXAMPLE_DIR}
 
 post-install:
-	rm -f ${PREFIX}/lib/pdns/*.la
+	rm -f ${PREFIX}/lib/pdns/*.{a,la}
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
 	cat ${FILESDIR}/pdns.conf ${WRKSRC}/pdns/pdns.conf-dist > \
 	    ${WRKSRC}/pdns.conf # concatenate local and upstream sample configs
