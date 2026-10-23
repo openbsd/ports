@@ -9,27 +9,27 @@ Index: components/cbor/BUILD.gn
 +  flags = [ "USE_CBOR_RUST=false" ]
  }
  
- component("cbor") {
-@@ -35,12 +35,12 @@ component("cbor") {
+ source_set("cbor_headers") {
+@@ -48,12 +48,12 @@ source_set("cbor_rust_impl") {
      "//base",
    ]
  
 -  if (!is_cronet_build) {
--    public_deps = [
+-    deps += [
 -      "//build/rust/crubit",
 -      "//components/cbor/rust:cbor_rust_bindings",
 -    ]
 -  }
 +#  if (!is_cronet_build) {
-+#    public_deps = [
++#    deps += [
 +#      "//build/rust/crubit",
 +#      "//components/cbor/rust:cbor_rust_bindings",
 +#    ]
 +#  }
  }
  
- source_set("unit_tests") {
-@@ -62,12 +62,12 @@ source_set("unit_tests") {
+ component("cbor") {
+@@ -91,12 +91,12 @@ source_set("unit_tests") {
      "//testing/gtest",
      "//third_party/fuzztest",
    ]

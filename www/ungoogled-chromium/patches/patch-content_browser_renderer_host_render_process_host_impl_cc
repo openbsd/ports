@@ -28,7 +28,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
    child_thread_type_switcher_.SetPid(child_pid);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  }
-@@ -3838,7 +3838,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -3852,7 +3852,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
    command_line->AppendSwitchASCII(switches::kRendererClientId,
                                    base::NumberToString(GetID().value()));
  
@@ -37,7 +37,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3897,6 +3897,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3911,6 +3911,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
        switches::kDisableSkiaRuntimeOpts,
        switches::kDisableSpeechAPI,
        switches::kDisableThreadedCompositing,
@@ -45,7 +45,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
        switches::kDisableV8IdleTasks,
        switches::kDisableVideoCaptureUseGpuMemoryBuffer,
        switches::kDomAutomationController,
-@@ -5925,7 +5926,7 @@ uint64_t RenderProcessHostImpl::GetPrivateMemoryFootpr
+@@ -5931,7 +5932,7 @@ uint64_t RenderProcessHostImpl::GetPrivateMemoryFootpr
    // - Win: https://crbug.com/707022 .
    uint64_t total_size = 0;
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

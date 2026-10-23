@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/webui/management/management_ui_handler.cc
 --- chrome/browser/ui/webui/management/management_ui_handler.cc.orig
 +++ chrome/browser/ui/webui/management/management_ui_handler.cc
-@@ -80,7 +80,7 @@
+@@ -81,7 +81,7 @@
  #include "chrome/browser/ui/managed_ui.h"  // nogncheck crbug.com/40147906
  #endif
  
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/webui/management/management_ui_handler.cc
  #include "chrome/browser/enterprise/signals/user_permission_service_factory.h"
  #include "components/device_signals/core/browser/user_permission_service.h"  // nogncheck
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -204,7 +204,7 @@ void AddThreatProtectionPermission(const char* title,
+@@ -205,7 +205,7 @@ void AddThreatProtectionPermission(const char* title,
  }
  
  bool IsSaasReportingEnabled(content::WebUI* web_ui) {
@@ -19,7 +19,7 @@ Index: chrome/browser/ui/webui/management/management_ui_handler.cc
    return !Profile::FromWebUI(web_ui)
                ->GetPrefs()
                ->GetList(enterprise_reporting::kSaasUsageDomainUrlsForProfile)
-@@ -408,7 +408,7 @@ void ManagementUIHandler::AddBrowserReportingInfo(
+@@ -409,7 +409,7 @@ void ManagementUIHandler::AddBrowserReportingInfo(
      report_sources->Append(std::move(data));
    }
  
@@ -28,7 +28,7 @@ Index: chrome/browser/ui/webui/management/management_ui_handler.cc
    auto device_signal_data = GetDeviceSignalGrantedMessage();
    if (!device_signal_data.empty()) {
      report_sources->Append(std::move(device_signal_data));
-@@ -443,7 +443,7 @@ void ManagementUIHandler::AddProfileReportingInfo(
+@@ -444,7 +444,7 @@ void ManagementUIHandler::AddProfileReportingInfo(
      report_sources->Append(std::move(data));
    }
  
@@ -37,7 +37,7 @@ Index: chrome/browser/ui/webui/management/management_ui_handler.cc
    auto device_signal_data = GetDeviceSignalGrantedMessage();
    if (!device_signal_data.empty()) {
      report_sources->Append(std::move(device_signal_data));
-@@ -631,7 +631,7 @@ policy::PolicyService* ManagementUIHandler::GetPolicyS
+@@ -636,7 +636,7 @@ policy::PolicyService* ManagementUIHandler::GetPolicyS
        ->policy_service();
  }
  

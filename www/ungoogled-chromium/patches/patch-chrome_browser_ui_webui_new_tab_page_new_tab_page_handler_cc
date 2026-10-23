@@ -10,7 +10,7 @@ Index: chrome/browser/ui/webui/new_tab_page/new_tab_page_handler.cc
  #include "chrome/browser/ui/views/scheduled_restart/scheduled_restart_bubble_controller.h"
  #endif
  #include "chrome/browser/ui/webui/new_tab_footer/new_tab_footer_helper.h"
-@@ -562,7 +562,7 @@ NewTabPageHandler::NewTabPageHandler(
+@@ -544,7 +544,7 @@ NewTabPageHandler::NewTabPageHandler(
    }
  #endif  // !BUILDFLAG(IS_ANDROID)
  

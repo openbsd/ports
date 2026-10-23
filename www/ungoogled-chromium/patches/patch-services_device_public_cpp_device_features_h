@@ -1,7 +1,7 @@
 Index: services/device/public/cpp/device_features.h
 --- services/device/public/cpp/device_features.h.orig
 +++ services/device/public/cpp/device_features.h
-@@ -68,11 +68,11 @@ DEVICE_FEATURES_EXPORT bool IsOsLevelGeolocationPermis
+@@ -69,11 +69,11 @@ DEVICE_FEATURES_EXPORT bool IsOsLevelGeolocationPermis
  DEVICE_FEATURES_EXPORT device::mojom::LocationProviderManagerMode
  GetLocationProviderManagerMode();
  

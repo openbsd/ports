@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_cache.cc
 --- third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_cache.cc.orig
 +++ third_party/blink/renderer/platform/graphics/gpu/webgpu_shared_image_cache.cc
-@@ -323,7 +323,7 @@ WebGpuSharedImageCache::LeaseSharedImage(viz::SharedIm
+@@ -147,7 +147,7 @@ WebGpuSharedImageCache::LeaseSharedImage(viz::SharedIm
        return nullptr;
      }
  

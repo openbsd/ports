@@ -13,7 +13,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			155.0.8059.84
+V=			156.0.8078.47
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -106,7 +106,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		lang/rust,-rustfmt \
 		lang/node \
 		lang/rust \
-		lang/typescript \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \

@@ -1,7 +1,7 @@
 Index: chrome/browser/BUILD.gn
 --- chrome/browser/BUILD.gn.orig
 +++ chrome/browser/BUILD.gn
-@@ -1975,8 +1975,13 @@ source_set("core") {
+@@ -2004,6 +2004,10 @@ source_set("core") {
  
    if (is_chrome_for_testing) {
      deps += [ "//chrome/browser/chrome_for_testing:browser" ]
@@ -11,11 +11,8 @@ Index: chrome/browser/BUILD.gn
 +    deps += [ "//third_party/hyphenation-patterns:bundle_hyphen_data" ]
    }
  
-+
    if (safe_browsing_mode == 1) {
-     deps += [ "//chrome/browser/ui/webui/reset_password" ]
-   }
-@@ -3248,10 +3253,6 @@ source_set("browser") {
+@@ -3278,10 +3282,6 @@ source_set("browser") {
        # ... get modularized.
        "//chrome/browser/ui/extensions:impl",
      ]

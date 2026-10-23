@@ -1,6 +1,6 @@
-Index: media/video/mappable_shared_image_video_frame_pool.cc
---- media/video/mappable_shared_image_video_frame_pool.cc.orig
-+++ media/video/mappable_shared_image_video_frame_pool.cc
+Index: media/gfx/mappable_shared_image_video_frame_pool.cc
+--- media/gfx/mappable_shared_image_video_frame_pool.cc.orig
++++ media/gfx/mappable_shared_image_video_frame_pool.cc
 @@ -684,7 +684,7 @@ void MappableSharedImageVideoFramePool::PoolImpl::Crea
    }
  

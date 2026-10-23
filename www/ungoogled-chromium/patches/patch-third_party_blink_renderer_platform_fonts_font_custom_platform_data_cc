@@ -1,0 +1,18 @@
+revert:
+commit 2d1b52dcb805813b2ed39c9799fdfcd6ed7506e8
+Author: wmedrano <wmedrano@chromium.org>
+Date:   Tue Sep 15 12:20:43 2026 -0700
+
+Index: third_party/blink/renderer/platform/fonts/font_custom_platform_data.cc
+--- third_party/blink/renderer/platform/fonts/font_custom_platform_data.cc.orig
++++ third_party/blink/renderer/platform/fonts/font_custom_platform_data.cc
+@@ -328,7 +328,8 @@ FontCustomPlatformData* FontCustomPlatformData::Create
+     SharedBuffer* buffer,
+     String& ots_parse_message) {
+   DCHECK(buffer);
+-  base::expected<DecodedWebFont, String> decode_result = DecodeWebFont(buffer);
++  base::expected<DecodedWebFont, String> decode_result =
++      DecodedWebFont::Create(buffer);
+   if (!decode_result.has_value()) {
+     ots_parse_message = std::move(decode_result).error();
+     return nullptr;
