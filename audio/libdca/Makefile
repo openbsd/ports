@@ -1,8 +1,7 @@
 COMMENT=		free DTS Coherent Acoustics decoder
 
-V=			0.0.6
+V=			0.0.7
 DISTNAME=		libdca-${V}
-REVISION=		2
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		audio
 SITES=			https://download.videolan.org/pub/videolan/libdca/${V}/
@@ -16,9 +15,11 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m sndio
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoreconf
+AUTOMAKE_VERSION=	1.16
+AUTOCONF_VERSION=	2.72
 CONFIGURE_ARGS=		--disable-oss
+FAKE_FLAGS=		bin_SCRIPTS=
 
 post-extract:
 	cp ${FILESDIR}/audio_out_sndio.c ${WRKSRC}/libao

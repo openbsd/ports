@@ -9,4 +9,6 @@ lib/libdts.a
 lib/pkgconfig/libdca.pc
 lib/pkgconfig/libdts.pc
 @man man/man1/dcadec.1
+@comment @man man/man1/dtsdec.1
 @man man/man1/extract_dca.1
+@comment @man man/man1/extract_dts.1
