@@ -68,6 +68,10 @@ lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_ht
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_large_payloads.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_large_payloads.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_logging_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_logging_helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_reconnect_bad_fd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_reconnect_bad_fd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_socket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_socket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_socket_bugs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -94,6 +98,8 @@ lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_dispatcher.py
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_handshake_large_response.py
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_http.py
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_large_payloads.py
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_logging_helpers.py
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_reconnect_bad_fd.py
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_socket.py
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_socket_bugs.py
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_ssl_compat.py

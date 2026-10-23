@@ -1,9 +1,8 @@
 COMMENT=	WebSocket client for Python
 
-MODPY_DISTV=	1.9.0
+MODPY_DISTV=	1.9.2
 DISTNAME=	websocket_client-${MODPY_DISTV}
 PKGNAME=	py-websocket-client-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	net
 
@@ -13,8 +12,8 @@ HOMEPAGE=	https://github.com/websocket-client/websocket-client/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 # optional (also optional: wsaccel, not ported)
 RUN_DEPENDS=	net/py-socks
