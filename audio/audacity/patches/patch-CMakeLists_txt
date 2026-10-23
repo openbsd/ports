@@ -1,0 +1,26 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -142,8 +142,8 @@ set(MUSE_MODULE_TOAST ON)
+ set(MUSE_MODULE_UI ON)
+ set(MUSE_MODULE_UI_TESTS OFF)
+ set(MUSE_MODULE_WORKSPACE ON)
+-set(MUSE_MODULE_VST ON)
+-set(MUSE_MODULE_VST_QML ON)
++set(MUSE_MODULE_VST ${AU_MODULE_EFFECTS_VST})
++set(MUSE_MODULE_VST_QML ${AU_MODULE_EFFECTS_VST})
+ 
+ # Skip TestFlow in release builds
+ if (AU4_BUILD_MODE STREQUAL "release")
+@@ -221,9 +221,9 @@ endif()
+ ###########################################
+ # Setup Packaging
+ ###########################################
+-if (OS_IS_LIN)
++if (OS_IS_LIN OR OS_IS_FBSD)
+     include(${CMAKE_CURRENT_LIST_DIR}/buildscripts/packaging/Linux+BSD/SetupAppImagePackaging.cmake)
+-endif(OS_IS_LIN)
++endif(OS_IS_LIN OR OS_IS_FBSD)
+ 
+ if (OS_IS_WIN)
+     include(${CMAKE_CURRENT_LIST_DIR}/buildscripts/packaging/Windows/SetupWindowsPackaging.cmake)

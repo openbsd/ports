@@ -1,0 +1,14 @@
+Index: src/au3wrap/CMakeLists.txt
+--- src/au3wrap/CMakeLists.txt.orig
++++ src/au3wrap/CMakeLists.txt
+@@ -65,7 +65,9 @@ include(${CMAKE_CURRENT_LIST_DIR}/au3wrapDefs.cmake)
+ 
+ # Third-party libraries (not part of au3/libraries)
+ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/thirdparty/pffft au3-pffft)
+-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/thirdparty/portmixer au3-portmixer)
++if (AU_USE_PORTMIXER)
++    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/thirdparty/portmixer au3-portmixer)
++endif()
+ tft_add_to_build()
+ list(APPEND AU3_LINK twolame)
+ 

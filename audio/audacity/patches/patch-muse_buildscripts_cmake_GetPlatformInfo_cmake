@@ -1,0 +1,12 @@
+Index: muse/buildscripts/cmake/GetPlatformInfo.cmake
+--- muse/buildscripts/cmake/GetPlatformInfo.cmake.orig
++++ muse/buildscripts/cmake/GetPlatformInfo.cmake
+@@ -30,6 +30,8 @@ elseif(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux")
+     set(OS_IS_LIN 1)
+ elseif(${CMAKE_HOST_SYSTEM_NAME} MATCHES "FreeBSD")
+     set(OS_IS_FBSD 1)
++elseif(${CMAKE_HOST_SYSTEM_NAME} MATCHES "OpenBSD")
++    set(OS_IS_FBSD 1)
+ elseif(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Darwin")
+     set(OS_IS_MAC 1)
+ else()

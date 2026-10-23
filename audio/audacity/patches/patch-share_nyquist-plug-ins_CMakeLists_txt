@@ -1,0 +1,12 @@
+Index: share/nyquist-plug-ins/CMakeLists.txt
+--- share/nyquist-plug-ins/CMakeLists.txt.orig
++++ share/nyquist-plug-ins/CMakeLists.txt
+@@ -46,7 +46,7 @@ if(OS_IS_MAC)
+    # This matches what PluginManager.cpp expects (see lines 229-238)
+    set(PLUGINS_INSTALL_DEST "${AU4_SHARE_NAME}Contents/nyquist-plug-ins")
+    set(PLUGINS_BUILD_DEST "${CMAKE_BINARY_DIR}/src/app/${AU4_SHARE_NAME}Contents/nyquist-plug-ins")
+-elseif(OS_IS_LIN)
++elseif(OS_IS_LIN OR OS_IS_FBSD)
+    # On Linux, files go in share/audacity/nyquist-plug-ins which PathList.cpp expects
+    set(PLUGINS_INSTALL_DEST "${CMAKE_INSTALL_PREFIX}/share/audacity/nyquist-plug-ins")
+    set(PLUGINS_BUILD_DEST "${CMAKE_BINARY_DIR}/share/audacity/nyquist-plug-ins")

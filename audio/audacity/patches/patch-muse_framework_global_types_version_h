@@ -1,0 +1,20 @@
+Index: muse/framework/global/types/version.h
+--- muse/framework/global/types/version.h.orig
++++ muse/framework/global/types/version.h
+@@ -26,6 +26,16 @@
+ 
+ #include "types/string.h"
+ 
++// BSD <sys/types.h> defines major()/minor() as macros; pull it in first so a
++// later include cannot redefine them, then drop them.
++#include <sys/types.h>
++#ifdef major
++#undef major
++#endif
++#ifdef minor
++#undef minor
++#endif
++
+ namespace muse {
+ class Version
+ {

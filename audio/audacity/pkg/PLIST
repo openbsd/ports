@@ -1,252 +1,172 @@
 @bin bin/audacity
-lib/audacity/
-@so lib/audacity/lib-audacity-application-logic.so
-@so lib/audacity/lib-audio-devices.so
-@so lib/audacity/lib-audio-graph.so
-@so lib/audacity/lib-audio-io.so
-@so lib/audacity/lib-basic-ui.so
-@so lib/audacity/lib-builtin-effects.so
-@so lib/audacity/lib-channel.so
-@so lib/audacity/lib-command-parameters.so
-@so lib/audacity/lib-components.so
-@so lib/audacity/lib-concurrency.so
-@so lib/audacity/lib-crypto.so
-@so lib/audacity/lib-dynamic-range-processor.so
-@so lib/audacity/lib-effects.so
-@so lib/audacity/lib-exceptions.so
-@so lib/audacity/lib-export-ui.so
-@so lib/audacity/lib-ffmpeg-support.so
-@so lib/audacity/lib-fft.so
-@so lib/audacity/lib-file-formats.so
-@so lib/audacity/lib-files.so
-@so lib/audacity/lib-graphics.so
-@so lib/audacity/lib-import-export.so
-@so lib/audacity/lib-ipc.so
-@so lib/audacity/lib-label-track.so
-@so lib/audacity/lib-lv2.so
-@so lib/audacity/lib-math.so
-@so lib/audacity/lib-menus.so
-@so lib/audacity/lib-mixer.so
-@so lib/audacity/lib-module-manager.so
-@so lib/audacity/lib-music-information-retrieval.so
-@so lib/audacity/lib-note-track.so
-@so lib/audacity/lib-numeric-formats.so
-@so lib/audacity/lib-nyquist-effects.so
-@so lib/audacity/lib-playable-track.so
-@so lib/audacity/lib-preference-pages.so
-@so lib/audacity/lib-preferences.so
-@so lib/audacity/lib-project-file-io.so
-@so lib/audacity/lib-project-history.so
-@so lib/audacity/lib-project-rate.so
-@so lib/audacity/lib-project.so
-@so lib/audacity/lib-realtime-effects.so
-@so lib/audacity/lib-registries.so
-@so lib/audacity/lib-sample-track.so
-@so lib/audacity/lib-screen-geometry.so
-@so lib/audacity/lib-shuttlegui.so
-@so lib/audacity/lib-snapping.so
-@so lib/audacity/lib-sqlite-helpers.so
-@so lib/audacity/lib-stretching-sequence.so
-@so lib/audacity/lib-string-utils.so
-@so lib/audacity/lib-strings.so
-@so lib/audacity/lib-tags.so
-@so lib/audacity/lib-theme-resources.so
-@so lib/audacity/lib-theme.so
-@so lib/audacity/lib-time-and-pitch.so
-@so lib/audacity/lib-time-frequency-selection.so
-@so lib/audacity/lib-time-track.so
-@so lib/audacity/lib-track-selection.so
-@so lib/audacity/lib-track.so
-@so lib/audacity/lib-transactions.so
-@so lib/audacity/lib-utility.so
-@so lib/audacity/lib-uuid.so
-@so lib/audacity/lib-viewport.so
-@so lib/audacity/lib-vst.so
-@so lib/audacity/lib-wave-track-fft.so
-@so lib/audacity/lib-wave-track-paint.so
-@so lib/audacity/lib-wave-track-settings.so
-@so lib/audacity/lib-wave-track.so
-@so lib/audacity/lib-wx-init.so
-@so lib/audacity/lib-wx-wrappers.so
-@so lib/audacity/lib-xml.so
-lib/audacity/modules/
-@so lib/audacity/modules/mod-aup.so
-@so lib/audacity/modules/mod-cl.so
-@so lib/audacity/modules/mod-ffmpeg.so
-@so lib/audacity/modules/mod-flac.so
-@so lib/audacity/modules/mod-lof.so
-@so lib/audacity/modules/mod-midi-import-export.so
-@so lib/audacity/modules/mod-mp3.so
-@so lib/audacity/modules/mod-mpg123.so
-@so lib/audacity/modules/mod-ogg.so
-@so lib/audacity/modules/mod-opus.so
-@so lib/audacity/modules/mod-pcm.so
-@so lib/audacity/modules/mod-script-pipe.so
-@so lib/audacity/modules/mod-wavpack.so
-@man man/man1/audacity.1
-share/applications/audacity.desktop
+share/applications/org.audacityteam.Audacity.desktop
 share/audacity/
-share/audacity/EffectsMenuDefaults.xml
-share/audacity/nyquist/
-share/audacity/nyquist/aud-do-support.lsp
-share/audacity/nyquist/dspprims.lsp
-share/audacity/nyquist/envelopes.lsp
-share/audacity/nyquist/equalizer.lsp
-share/audacity/nyquist/evalenv.lsp
-share/audacity/nyquist/fileio.lsp
-share/audacity/nyquist/init.lsp
-share/audacity/nyquist/misc.lsp
-share/audacity/nyquist/nyinit-dbg.lsp
-share/audacity/nyquist/nyinit.lsp
-share/audacity/nyquist/nyqmisc.lsp
-share/audacity/nyquist/nyquist-plot.txt
-share/audacity/nyquist/nyquist.lsp
-share/audacity/nyquist/printrec.lsp
-share/audacity/nyquist/profile.lsp
-share/audacity/nyquist/rawwaves/
-share/audacity/nyquist/rawwaves/mand1.raw
-share/audacity/nyquist/rawwaves/mand10.raw
-share/audacity/nyquist/rawwaves/mand11.raw
-share/audacity/nyquist/rawwaves/mand12.raw
-share/audacity/nyquist/rawwaves/mand2.raw
-share/audacity/nyquist/rawwaves/mand3.raw
-share/audacity/nyquist/rawwaves/mand4.raw
-share/audacity/nyquist/rawwaves/mand5.raw
-share/audacity/nyquist/rawwaves/mand6.raw
-share/audacity/nyquist/rawwaves/mand7.raw
-share/audacity/nyquist/rawwaves/mand8.raw
-share/audacity/nyquist/rawwaves/mand9.raw
-share/audacity/nyquist/rawwaves/mandpluk.raw
-share/audacity/nyquist/rawwaves/marmstk1.raw
-share/audacity/nyquist/rawwaves/sinewave.raw
-share/audacity/nyquist/sal-parse.lsp
-share/audacity/nyquist/sal.lsp
-share/audacity/nyquist/seq.lsp
-share/audacity/nyquist/seqfnint.lsp
-share/audacity/nyquist/seqmidi.lsp
-share/audacity/nyquist/sliders.lsp
-share/audacity/nyquist/sndfnint.lsp
-share/audacity/nyquist/spec-plot.lsp
-share/audacity/nyquist/spectral-analysis.lsp
-share/audacity/nyquist/stk.lsp
-share/audacity/nyquist/system.lsp
-share/audacity/nyquist/test.lsp
-share/audacity/nyquist/velocity.lsp
-share/audacity/nyquist/xlinit.lsp
-share/audacity/nyquist/xm.lsp
-share/audacity/plug-ins/
-share/audacity/plug-ins/ShelfFilter.ny
-share/audacity/plug-ins/SpectralEditMulti.ny
-share/audacity/plug-ins/SpectralEditParametricEQ.ny
-share/audacity/plug-ins/SpectralEditShelves.ny
-share/audacity/plug-ins/StudioFadeOut.ny
-share/audacity/plug-ins/adjustable-fade.ny
-share/audacity/plug-ins/beat.ny
-share/audacity/plug-ins/clipfix.ny
-share/audacity/plug-ins/crossfadeclips.ny
-share/audacity/plug-ins/crossfadetracks.ny
-share/audacity/plug-ins/delay.ny
-share/audacity/plug-ins/equalabel.ny
-share/audacity/plug-ins/highpass.ny
-share/audacity/plug-ins/label-sounds.ny
-share/audacity/plug-ins/legacy-limiter.ny
-share/audacity/plug-ins/lowpass.ny
-share/audacity/plug-ins/noisegate.ny
-share/audacity/plug-ins/notch.ny
-share/audacity/plug-ins/nyquist-plug-in-installer.ny
-share/audacity/plug-ins/pluck.ny
-share/audacity/plug-ins/rhythmtrack.ny
-share/audacity/plug-ins/rissetdrum.ny
-share/audacity/plug-ins/rms.ny
-share/audacity/plug-ins/sample-data-export.ny
-share/audacity/plug-ins/sample-data-import.ny
-share/audacity/plug-ins/spectral-delete.ny
-share/audacity/plug-ins/tremolo.ny
-share/audacity/plug-ins/vocoder.ny
-share/doc/audacity/
-share/doc/audacity/LICENSE.txt
-share/doc/audacity/README.md
+share/audacity-4.0/
+share/audacity-4.0/locale/
+share/audacity-4.0/locale/audacity_af.qm
+share/audacity-4.0/locale/audacity_am_ET.qm
+share/audacity-4.0/locale/audacity_ar.qm
+share/audacity-4.0/locale/audacity_be.qm
+share/audacity-4.0/locale/audacity_bg.qm
+share/audacity-4.0/locale/audacity_bn.qm
+share/audacity-4.0/locale/audacity_bs.qm
+share/audacity-4.0/locale/audacity_ca.qm
+share/audacity-4.0/locale/audacity_ca@valencia.qm
+share/audacity-4.0/locale/audacity_co.qm
+share/audacity-4.0/locale/audacity_cs.qm
+share/audacity-4.0/locale/audacity_cy.qm
+share/audacity-4.0/locale/audacity_da.qm
+share/audacity-4.0/locale/audacity_de.qm
+share/audacity-4.0/locale/audacity_el.qm
+share/audacity-4.0/locale/audacity_en.qm
+share/audacity-4.0/locale/audacity_en_GB.qm
+share/audacity-4.0/locale/audacity_es.qm
+share/audacity-4.0/locale/audacity_et.qm
+share/audacity-4.0/locale/audacity_eu.qm
+share/audacity-4.0/locale/audacity_fa.qm
+share/audacity-4.0/locale/audacity_fi.qm
+share/audacity-4.0/locale/audacity_fil.qm
+share/audacity-4.0/locale/audacity_fr.qm
+share/audacity-4.0/locale/audacity_ga.qm
+share/audacity-4.0/locale/audacity_gl.qm
+share/audacity-4.0/locale/audacity_he.qm
+share/audacity-4.0/locale/audacity_hi.qm
+share/audacity-4.0/locale/audacity_hr.qm
+share/audacity-4.0/locale/audacity_hu.qm
+share/audacity-4.0/locale/audacity_hy.qm
+share/audacity-4.0/locale/audacity_id.qm
+share/audacity-4.0/locale/audacity_is.qm
+share/audacity-4.0/locale/audacity_it.qm
+share/audacity-4.0/locale/audacity_ja.qm
+share/audacity-4.0/locale/audacity_ka.qm
+share/audacity-4.0/locale/audacity_km.qm
+share/audacity-4.0/locale/audacity_ko.qm
+share/audacity-4.0/locale/audacity_lt.qm
+share/audacity-4.0/locale/audacity_mk.qm
+share/audacity-4.0/locale/audacity_mr.qm
+share/audacity-4.0/locale/audacity_ms.qm
+share/audacity-4.0/locale/audacity_my.qm
+share/audacity-4.0/locale/audacity_nb.qm
+share/audacity-4.0/locale/audacity_nl.qm
+share/audacity-4.0/locale/audacity_nn.qm
+share/audacity-4.0/locale/audacity_oc.qm
+share/audacity-4.0/locale/audacity_pl.qm
+share/audacity-4.0/locale/audacity_pt_BR.qm
+share/audacity-4.0/locale/audacity_pt_PT.qm
+share/audacity-4.0/locale/audacity_ro.qm
+share/audacity-4.0/locale/audacity_ru.qm
+share/audacity-4.0/locale/audacity_sk.qm
+share/audacity-4.0/locale/audacity_sl.qm
+share/audacity-4.0/locale/audacity_sq.qm
+share/audacity-4.0/locale/audacity_sr.qm
+share/audacity-4.0/locale/audacity_sr_RS.qm
+share/audacity-4.0/locale/audacity_sv.qm
+share/audacity-4.0/locale/audacity_ta.qm
+share/audacity-4.0/locale/audacity_te.qm
+share/audacity-4.0/locale/audacity_tg.qm
+share/audacity-4.0/locale/audacity_th.qm
+share/audacity-4.0/locale/audacity_tl.qm
+share/audacity-4.0/locale/audacity_tr.qm
+share/audacity-4.0/locale/audacity_uk.qm
+share/audacity-4.0/locale/audacity_vi.qm
+share/audacity-4.0/locale/audacity_yi.qm
+share/audacity-4.0/locale/audacity_yo.qm
+share/audacity-4.0/locale/audacity_zh_CN.qm
+share/audacity-4.0/locale/audacity_zh_TW.qm
+share/audacity-4.0/locale/languages.json
+share/audacity-4.0/workspaces/
+share/audacity-4.0/workspaces/Classic.mws
+share/audacity-4.0/workspaces/Modern.mws
+share/audacity-4.0/workspaces/Music.mws
+share/audacity/nyquist-plug-ins/
+share/audacity/nyquist-plug-ins/ShelfFilter.ny
+share/audacity/nyquist-plug-ins/SpectralEditMulti.ny
+share/audacity/nyquist-plug-ins/SpectralEditParametricEQ.ny
+share/audacity/nyquist-plug-ins/SpectralEditShelves.ny
+share/audacity/nyquist-plug-ins/StudioFadeOut.ny
+share/audacity/nyquist-plug-ins/adjustable-fade.ny
+share/audacity/nyquist-plug-ins/beat.ny
+share/audacity/nyquist-plug-ins/clipfix.ny
+share/audacity/nyquist-plug-ins/crossfadeclips.ny
+share/audacity/nyquist-plug-ins/crossfadetracks.ny
+share/audacity/nyquist-plug-ins/delay.ny
+share/audacity/nyquist-plug-ins/equalabel.ny
+share/audacity/nyquist-plug-ins/highpass.ny
+share/audacity/nyquist-plug-ins/label-sounds.ny
+share/audacity/nyquist-plug-ins/legacy-limiter.ny
+share/audacity/nyquist-plug-ins/lowpass.ny
+share/audacity/nyquist-plug-ins/noisegate.ny
+share/audacity/nyquist-plug-ins/notch.ny
+share/audacity/nyquist-plug-ins/nyquist-plug-in-installer.ny
+share/audacity/nyquist-plug-ins/pluck.ny
+share/audacity/nyquist-plug-ins/rhythmtrack.ny
+share/audacity/nyquist-plug-ins/rissetdrum.ny
+share/audacity/nyquist-plug-ins/rms.ny
+share/audacity/nyquist-plug-ins/sample-data-export.ny
+share/audacity/nyquist-plug-ins/sample-data-import.ny
+share/audacity/nyquist-plug-ins/spectral-delete.ny
+share/audacity/nyquist-plug-ins/tremolo.ny
+share/audacity/nyquist-plug-ins/vocoder.ny
+share/audacity/nyquist-runtime/
+share/audacity/nyquist-runtime/aud-do-support.lsp
+share/audacity/nyquist-runtime/dspprims.lsp
+share/audacity/nyquist-runtime/envelopes.lsp
+share/audacity/nyquist-runtime/equalizer.lsp
+share/audacity/nyquist-runtime/evalenv.lsp
+share/audacity/nyquist-runtime/fileio.lsp
+share/audacity/nyquist-runtime/init.lsp
+share/audacity/nyquist-runtime/misc.lsp
+share/audacity/nyquist-runtime/nyinit-dbg.lsp
+share/audacity/nyquist-runtime/nyinit.lsp
+share/audacity/nyquist-runtime/nyqmisc.lsp
+share/audacity/nyquist-runtime/nyquist-plot.txt
+share/audacity/nyquist-runtime/nyquist.lsp
+share/audacity/nyquist-runtime/printrec.lsp
+share/audacity/nyquist-runtime/profile.lsp
+share/audacity/nyquist-runtime/rawwaves/
+share/audacity/nyquist-runtime/rawwaves/mand1.raw
+share/audacity/nyquist-runtime/rawwaves/mand10.raw
+share/audacity/nyquist-runtime/rawwaves/mand11.raw
+share/audacity/nyquist-runtime/rawwaves/mand12.raw
+share/audacity/nyquist-runtime/rawwaves/mand2.raw
+share/audacity/nyquist-runtime/rawwaves/mand3.raw
+share/audacity/nyquist-runtime/rawwaves/mand4.raw
+share/audacity/nyquist-runtime/rawwaves/mand5.raw
+share/audacity/nyquist-runtime/rawwaves/mand6.raw
+share/audacity/nyquist-runtime/rawwaves/mand7.raw
+share/audacity/nyquist-runtime/rawwaves/mand8.raw
+share/audacity/nyquist-runtime/rawwaves/mand9.raw
+share/audacity/nyquist-runtime/rawwaves/mandpluk.raw
+share/audacity/nyquist-runtime/rawwaves/marmstk1.raw
+share/audacity/nyquist-runtime/rawwaves/sinewave.raw
+share/audacity/nyquist-runtime/sal-parse.lsp
+share/audacity/nyquist-runtime/sal.lsp
+share/audacity/nyquist-runtime/seq.lsp
+share/audacity/nyquist-runtime/seqfnint.lsp
+share/audacity/nyquist-runtime/seqmidi.lsp
+share/audacity/nyquist-runtime/sliders.lsp
+share/audacity/nyquist-runtime/sndfnint.lsp
+share/audacity/nyquist-runtime/spec-plot.lsp
+share/audacity/nyquist-runtime/spectral-analysis.lsp
+share/audacity/nyquist-runtime/stk.lsp
+share/audacity/nyquist-runtime/system.lsp
+share/audacity/nyquist-runtime/test.lsp
+share/audacity/nyquist-runtime/velocity.lsp
+share/audacity/nyquist-runtime/xlinit.lsp
+share/audacity/nyquist-runtime/xm.lsp
+share/icons/hicolor/128x128/apps/audacity.png
 share/icons/hicolor/16x16/apps/audacity.png
-share/icons/hicolor/22x22/apps/audacity.png
 share/icons/hicolor/24x24/apps/audacity.png
 share/icons/hicolor/32x32/apps/audacity.png
-share/icons/hicolor/48x48/audacity.png
-share/icons/hicolor/scalable/apps/audacity.svg
-share/locale/af/LC_MESSAGES/audacity.mo
-share/locale/ar/LC_MESSAGES/audacity.mo
-share/locale/be/LC_MESSAGES/audacity.mo
-share/locale/bg/LC_MESSAGES/audacity.mo
-share/locale/bn/LC_MESSAGES/audacity.mo
-share/locale/bs/LC_MESSAGES/audacity.mo
-share/locale/ca/LC_MESSAGES/audacity.mo
-share/locale/ca_ES@valencia/
-share/locale/ca_ES@valencia/LC_MESSAGES/
-share/locale/ca_ES@valencia/LC_MESSAGES/audacity.mo
-share/locale/co/LC_MESSAGES/audacity.mo
-share/locale/cs/LC_MESSAGES/audacity.mo
-share/locale/cy/LC_MESSAGES/audacity.mo
-share/locale/da/LC_MESSAGES/audacity.mo
-share/locale/de/LC_MESSAGES/audacity.mo
-share/locale/el/LC_MESSAGES/audacity.mo
-share/locale/es/LC_MESSAGES/audacity.mo
-share/locale/eu/LC_MESSAGES/audacity.mo
-share/locale/eu_ES/
-share/locale/eu_ES/LC_MESSAGES/
-share/locale/eu_ES/LC_MESSAGES/audacity.mo
-share/locale/fa/LC_MESSAGES/audacity.mo
-share/locale/fi/LC_MESSAGES/audacity.mo
-share/locale/fr/LC_MESSAGES/audacity.mo
-share/locale/ga/LC_MESSAGES/audacity.mo
-share/locale/gl/LC_MESSAGES/audacity.mo
-share/locale/he/LC_MESSAGES/audacity.mo
-share/locale/hi/LC_MESSAGES/audacity.mo
-share/locale/hr/LC_MESSAGES/audacity.mo
-share/locale/hu/LC_MESSAGES/audacity.mo
-share/locale/hy/LC_MESSAGES/audacity.mo
-share/locale/id/LC_MESSAGES/audacity.mo
-share/locale/it/LC_MESSAGES/audacity.mo
-share/locale/ja/LC_MESSAGES/audacity.mo
-share/locale/ka/LC_MESSAGES/audacity.mo
-share/locale/km/LC_MESSAGES/audacity.mo
-share/locale/ko/LC_MESSAGES/audacity.mo
-share/locale/lt/LC_MESSAGES/audacity.mo
-share/locale/mk/LC_MESSAGES/audacity.mo
-share/locale/mr/LC_MESSAGES/audacity.mo
-share/locale/my/LC_MESSAGES/audacity.mo
-share/locale/nb/LC_MESSAGES/audacity.mo
-share/locale/nl/LC_MESSAGES/audacity.mo
-share/locale/oc/LC_MESSAGES/audacity.mo
-share/locale/pl/LC_MESSAGES/audacity.mo
-share/locale/pt_BR/LC_MESSAGES/audacity.mo
-share/locale/pt_PT/
-share/locale/pt_PT/LC_MESSAGES/
-share/locale/pt_PT/LC_MESSAGES/audacity.mo
-share/locale/ro/LC_MESSAGES/audacity.mo
-share/locale/ru/LC_MESSAGES/audacity.mo
-share/locale/sk/LC_MESSAGES/audacity.mo
-share/locale/sl/LC_MESSAGES/audacity.mo
-share/locale/sr_RS/
-share/locale/sr_RS/LC_MESSAGES/
-share/locale/sr_RS/LC_MESSAGES/audacity.mo
-share/locale/sr_RS@latin/
-share/locale/sr_RS@latin/LC_MESSAGES/
-share/locale/sr_RS@latin/LC_MESSAGES/audacity.mo
-share/locale/sv/LC_MESSAGES/audacity.mo
-share/locale/ta/LC_MESSAGES/audacity.mo
-share/locale/tg/LC_MESSAGES/audacity.mo
-share/locale/tr/LC_MESSAGES/audacity.mo
-share/locale/uk/LC_MESSAGES/audacity.mo
-share/locale/vi/LC_MESSAGES/audacity.mo
-share/locale/zh_CN/LC_MESSAGES/audacity.mo
-share/locale/zh_TW/LC_MESSAGES/audacity.mo
+share/icons/hicolor/48x48/apps/audacity.png
+share/icons/hicolor/512x512/apps/audacity.png
+share/icons/hicolor/512x512/mimetypes/application-x-audacity.png
+share/icons/hicolor/64x64/apps/audacity.png
+share/icons/hicolor/96x96/apps/audacity.png
+share/icons/hicolor/scalable/mimetypes/application-x-audacity.svg
 share/metainfo/
-share/metainfo/audacity.appdata.xml
+share/metainfo/org.audacityteam.Audacity.appdata.xml
 share/mime/packages/audacity.xml
-share/pixmaps/
-share/pixmaps/audacity.xpm
 @tag update-mime-database
 @tag update-desktop-database
-share/pixmaps/audacity16.xpm
-share/pixmaps/audacity32.xpm
-share/pixmaps/gnome-mime-application-x-audacity-project.xpm
 @tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -3,9 +3,12 @@ NOT_FOR_ARCHS=	${BE_ARCHS}
 
 COMMENT=	free audio editor
 
-V=		3.7.9
+V=		4.0.1
 DISTNAME=	audacity-sources-${V}
+EXTRACT_SUFX=	.tar.xz
 PKGNAME=	audacity-${V}
+
+WRKDIST=	${WRKDIR}/audacity-${V}
 
 CATEGORIES=	audio
 
@@ -13,115 +16,99 @@ HOMEPAGE=	https://www.audacityteam.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2
+# GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ SoundTouch atk-1.0 c
-WANTLIB += cairo cairo-gobject expat gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz id3tag intl lilv-0
-WANTLIB += m mp3lame mpg123 ogg opus opusfile pango-1.0 pangocairo-1.0
-WANTLIB += portaudio portmidi serd-0 sndfile sord-0 soxr sqlite3
-WANTLIB += sratom-0 suil-0 uuid vamp-hostsdk vorbis vorbisenc
-WANTLIB += vorbisfile wavpack wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
-WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2
-WANTLIB += z
-# dlopened
-WANTLIB += avcodec avformat avutil
+WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ GL Qt6Concurrent Qt6Core
+WANTLIB += Qt6Core5Compat Qt6Gui Qt6Network Qt6NetworkAuth Qt6OpenGL
+WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Svg Qt6Widgets
+WANTLIB += SoundTouch c expat freetype harfbuzz m mp3lame mpg123
+WANTLIB += ogg opus opusfile portaudio pugixml sndfile soxr sqlite3
+WANTLIB += twolame vorbis vorbisenc vorbisfile wavpack wx_baseu-3.2
+WANTLIB += xkbcommon z
+# dlopened; muse/framework/media/internal/ffmpegutils.cpp
+WANTLIB += avcodec avformat avutil swresample swscale
 
 SITES=		https://github.com/audacity/audacity/releases/download/Audacity-${V}/
 
 COMPILER=	base-clang ports-gcc
 
 MODULES=	devel/cmake \
-		lang/python
+		lang/python \
+		x11/qt6
 
-MODCMAKE_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/audacity
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gettext,-tools \
-		textproc/rapidjson
-
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS +=	devel/nasm
-.endif
+		devel/utfcpp \
+		textproc/rapidjson \
+		x11/qt6/qtshadertools
 
 LIB_DEPENDS=	audio/flac \
 		audio/lame \
-		audio/libid3tag \
-		audio/lilv \
 		audio/libsndfile \
 		audio/libsoxr \
 		audio/libvorbis \
 		audio/opusfile \
 		audio/portaudio-svn \
-		audio/portmidi \
 		audio/soundtouch \
-		audio/suil \
-		audio/vamp-plugin-sdk \
+		audio/twolame \
 		audio/wavpack \
 		graphics/ffmpeg \
-		sysutils/e2fsprogs \
+		textproc/pugixml \
+		x11/qt6/qt5compat \
+		x11/qt6/qtnetworkauth \
 		x11/wxWidgets
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic
 
-CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
-		-Daudacity_has_crashreports:STRING=off \
-		-Daudacity_has_networking:STRING=off \
-		-Daudacity_has_sentry_reporting:STRING=off \
-		-Daudacity_lib_preference:STRING=system \
-		-Daudacity_use_expat:STRING=system \
-		-Daudacity_use_ffmpeg:STRING=loaded \
-		-Daudacity_use_ladspa:STRING=off \
-		-Daudacity_use_lame:STRING=system \
-		-Daudacity_use_libflac:STRING=system \
-		-Daudacity_use_libid3tag:STRING=system \
-		-Daudacity_use_libogg:STRING=system \
-		-Daudacity_use_libsndfile:STRING=system \
-		-Daudacity_use_libvorbis:STRING=system \
-		-Daudacity_use_lv2:STRING=system \
-		-Daudacity_use_midi:STRING=system \
-		-Daudacity_use_pch:STRING=off \
-		-Daudacity_use_portaudio:STRING=system \
-		-Daudacity_use_portsmf:STRING=local \
-		-Daudacity_use_sbsms:STRING=local \
-		-Daudacity_use_soundtouch:STRING=system \
-		-Daudacity_use_soxr:STRING=system \
-		-Daudacity_use_twolame:STRING=off \
-		-Daudacity_use_vamp:STRING=system \
-		-Daudacity_has_vst3:STRING=off \
-		-Daudacity_use_wxwidgets:STRING=system
-
-# don't use conan (no port available)
-CONFIGURE_ARGS +=	-Daudacity_conan_enabled:BOOL=OFF
+CONFIGURE_ARGS=	-DEXTDEPS_OVERRIDE_ALL=SYSTEM \
+		-DEXTDEPS_CACHE=${MUSE_DEPS_CACHE} \
+		-DAU_MODULE_EFFECTS_VST=OFF \
+		-DAU4_BUILD_MODE=release \
+		-DMUSE_ENABLE_UNIT_TESTS=OFF \
+		-DMUSE_COMPILE_USE_CCACHE=OFF
 
 # disable portmixer that requires Pa_GetStreamHostApiType which our
 # audio/portaudio does not provide
-CONFIGURE_ARGS +=	-Daudacity_use_portmixer:STRING=off
+CONFIGURE_ARGS +=	-DAU_USE_PORTMIXER=OFF
 
-# prevent picking up ccache:
-# ccache: error: Failed to create directory /audacity-2.4.2_writes_to_HOME/.cache/ccache/tmp: Permission denied
-CONFIGURE_ARGS +=	-DCCACHE_PROGRAM:BOOL=OFF
+### external sources ###########################################################
+MUSE_DEPS_TAG=		deps-20260817-100754
+SITES.deps=		https://github.com/musescore/muse_deps/releases/download/${MUSE_DEPS_TAG}/
+DISTFILES.deps=		nyquist-r331-src.zip \
+			pffft-0979688-src.tar.gz \
+			picojson-111c9be-src.tar.gz \
+			sbsms-2.2.0-src.tar.gz \
+			tft-0.5-src.tar.gz
 
-.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
-CONFIGURE_ARGS +=	-DHAVE_MMX:BOOL=OFF
-CONFIGURE_ARGS +=	-DHAVE_SSE:BOOL=OFF
-CONFIGURE_ARGS +=	-DHAVE_SSE2:BOOL=OFF
-.endif
+SITES.lte=		https://github.com/saintmatthieu/loop-tempo-estimator/releases/download/v0.0.5/
+DISTFILES.lte=		loop-tempo-estimator-v0.0.5.tar.gz
 
-.if ${MACHINE_ARCH} == "i386"
-CFLAGS += -msse2
-.endif
+MUSE_DEPS_CACHE=	${WRKDIR}/extdeps-cache
+MUSE_DEPS_MAP=		loop-tempo-estimator-v0.0.5.tar.gz:loop-tempo-estimator/loop-tempo-estimator-v0.0.5.tar.gz \
+			nyquist-r331-src.zip:nyquist/nyquist-code-r331-trunk.zip \
+			pffft-0979688-src.tar.gz:pffft/09796885cd5b.tar.gz \
+			picojson-111c9be-src.tar.gz:picojson/111c9be5188f7350c2eac9ddaedd8cca3d7bf394.tar.gz \
+			sbsms-2.2.0-src.tar.gz:sbsms/2.2.0.tar.gz \
+			tft-0.5-src.tar.gz:tft/1d96301673ebc05fa09a7bd505eacd82ee0fea33.tar.gz
 
-NO_TEST=	Yes
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+# git apply (patches)
+BUILD_DEPENDS +=	devel/git
+
+post-extract:
+.for m in ${MUSE_DEPS_MAP}
+	${INSTALL_DATA_DIR} ${MUSE_DEPS_CACHE}/downloads/${m:C/^[^:]*://:H}
+	ln -sf ${FULLDISTDIR}/${m:C/:.*//} \
+		${MUSE_DEPS_CACHE}/downloads/${m:C/^[^:]*://}
+.endfor
+################################################################################
 
 post-install:
-.for i in 16 22 24 32
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${i}x${i}/apps
-	mv ${PREFIX}/share/icons/hicolor/${i}x${i}/audacity.png \
-		${PREFIX}/share/icons/hicolor/${i}x${i}/apps/
-.endfor
+# no need for more copies of GPLv2 and GPLv3
+	rm -r ${PREFIX}/licenses
 
 .include <bsd.port.mk>

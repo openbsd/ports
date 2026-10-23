@@ -1,0 +1,9 @@
+Index: muse_deps/recipes/sbsms/build.cmake
+--- muse_deps/recipes/sbsms/build.cmake.orig
++++ muse_deps/recipes/sbsms/build.cmake
+@@ -1,4 +1,4 @@
+-if(BD_OS STREQUAL "windows")
++if(BD_OS STREQUAL "windows" OR DEP_STATIC)
+     set(LIBTYPE STATIC)
+ else()
+     set(LIBTYPE SHARED)

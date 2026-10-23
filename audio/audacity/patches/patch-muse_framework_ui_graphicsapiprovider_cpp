@@ -1,0 +1,12 @@
+Index: muse/framework/ui/graphicsapiprovider.cpp
+--- muse/framework/ui/graphicsapiprovider.cpp.orig
++++ muse/framework/ui/graphicsapiprovider.cpp
+@@ -56,7 +56,7 @@ static const std::vector<GraphicsApi > ALLOWED_APIS = 
+ };
+ #endif
+ 
+-#ifdef Q_OS_FREEBSD
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+ static const std::vector<GraphicsApi > ALLOWED_APIS = {
+     GraphicsApi::OpenGL,
+     GraphicsApi::Software

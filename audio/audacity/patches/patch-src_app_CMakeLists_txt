@@ -1,0 +1,28 @@
+Index: src/app/CMakeLists.txt
+--- src/app/CMakeLists.txt.orig
++++ src/app/CMakeLists.txt
+@@ -48,7 +48,7 @@ if (OS_IS_WIN)
+         set(WINDOWS_VERSION_RC ${WINDOWS_VERSION_RC_OBJ})
+     endif()
+ 
+-elseif(OS_IS_LIN)
++elseif(OS_IS_LIN OR OS_IS_FBSD)
+ 
+     if (MUSE_APP_INSTALL_SUFFIX)
+         set(APP_OUTPUT_NAME "${EXECUTABLE_NAME}${MUSE_APP_INSTALL_SUFFIX}")
+@@ -380,14 +380,9 @@ if (OS_IS_WIN)
+ ###########################################
+ # Linux
+ ###########################################
+-elseif(OS_IS_LIN)
++elseif(OS_IS_LIN OR OS_IS_FBSD)
+ 
+     install(TARGETS ${EXECUTABLE_NAME} RUNTIME DESTINATION bin)
+-
+-elseif(OS_IS_FBSD)
+-###########################################
+-# FreeBSD
+-###########################################
+ 
+ 
+ ###########################################

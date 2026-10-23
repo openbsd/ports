@@ -1,0 +1,10 @@
+Index: buildscripts/cmake/DependencyManifest.cmake
+--- buildscripts/cmake/DependencyManifest.cmake.orig
++++ buildscripts/cmake/DependencyManifest.cmake
+@@ -52,5 +52,5 @@ if (AU_USE_SOUNDTOUCH)
+ endif()
+ 
+ if (AU_USE_SBSMS)
+-    require_dep(sbsms)
++    require_dep(sbsms STATIC)
+ endif()

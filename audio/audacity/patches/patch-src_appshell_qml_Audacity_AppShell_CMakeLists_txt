@@ -1,0 +1,12 @@
+Index: src/appshell/qml/Audacity/AppShell/CMakeLists.txt
+--- src/appshell/qml/Audacity/AppShell/CMakeLists.txt.orig
++++ src/appshell/qml/Audacity/AppShell/CMakeLists.txt
+@@ -125,7 +125,7 @@ elseif(OS_IS_WIN)
+             platform/win/AppTitleBar.qml
+             platform/win/Main.qml
+     )
+-elseif(OS_IS_LIN OR OS_IS_FREEBSD)
++elseif(OS_IS_LIN OR OS_IS_FBSD)
+     qt_target_qml_sources(appshell_qml
+         QML_FILES
+             platform/linux/Main.qml
