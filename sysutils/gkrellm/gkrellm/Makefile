@@ -5,8 +5,7 @@ V=		2.3.10
 DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
-REVISION=	5
-REVISION-main=	6
+REVISION=	6
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://gkrellm.srcbox.net/

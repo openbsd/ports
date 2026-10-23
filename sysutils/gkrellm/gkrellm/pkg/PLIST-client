@@ -1,8 +1,4 @@
-@mode 2755
-@group kmem
 @bin bin/gkrellm
-@mode
-@group
 include/gkrellm2/
 include/gkrellm2/gkrellm-public-proto.h
 include/gkrellm2/gkrellm.h
