@@ -11,3 +11,12 @@ Index: libgm2/libm2min/Makefile.in
  BUILT_SOURCES = SYSTEM.def
  CLEANFILES = SYSTEM.def
  M2LIBDIR = /m2/m2min/
+@@ -770,7 +771,7 @@ libc.o: $(GM2_SRC)/gm2-libs-min/libc.c
+ 
+ SYSTEM.def: Makefile
+ 	echo "CC = $(CC_FOR_BUILD)  CC_FOR_TARGET = $(CC_FOR_TARGET)  GM2 = $(GM2)  GM2_FOR_TARGET = $(GM2_FOR_TARGET) GM2_FOR_BUILD = $(GM2_FOR_BUILD)"
+-	bash $(GM2_SRC)/tools-src/makeSystem -fpim \
++	$(SHELL) $(GM2_SRC)/tools-src/makeSystem -fpim \
+              $(GM2_SRC)/gm2-libs-min/SYSTEM.def \
+              $(GM2_SRC)/gm2-libs-min/SYSTEM.mod \
+              -I$(GM2_SRC)/gm2-libs-min -I$(GM2_SRC)/gm2-libs \

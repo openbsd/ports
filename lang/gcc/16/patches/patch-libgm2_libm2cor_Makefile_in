@@ -11,3 +11,12 @@ Index: libgm2/libm2cor/Makefile.in
  @BUILD_CORLIB_TRUE@BUILT_SOURCES = SYSTEM.def
  @BUILD_CORLIB_TRUE@CLEANFILES = SYSTEM.def
  @BUILD_CORLIB_TRUE@M2LIBDIR = /m2/m2cor/
+@@ -815,7 +816,7 @@ uninstall-am: uninstall-toolexeclibLTLIBRARIES
+ 
+ 
+ @BUILD_CORLIB_TRUE@SYSTEM.def: Makefile
+-@BUILD_CORLIB_TRUE@	bash $(GM2_SRC)/tools-src/makeSystem -fpim \
++@BUILD_CORLIB_TRUE@	$(SHELL) $(GM2_SRC)/tools-src/makeSystem -fpim \
+ @BUILD_CORLIB_TRUE@             $(GM2_SRC)/gm2-libs-coroutines/SYSTEM.def \
+ @BUILD_CORLIB_TRUE@             $(GM2_SRC)/gm2-libs-coroutines/SYSTEM.mod \
+ @BUILD_CORLIB_TRUE@             -I$(GM2_SRC)/gm2-libs-coroutines -I$(GM2_SRC)/gm2-libs -I$(GM2_SRC)/gm2-libs-iso \

@@ -11,3 +11,12 @@ Index: libgm2/libm2pim/Makefile.in
  @BUILD_PIMLIB_TRUE@BUILT_SOURCES = SYSTEM.def
  @BUILD_PIMLIB_TRUE@CLEANFILES = SYSTEM.def
  @BUILD_PIMLIB_TRUE@M2LIBDIR = /m2/m2pim/
+@@ -917,7 +918,7 @@ uninstall-am: uninstall-toolexeclibLTLIBRARIES
+ 
+ 
+ @BUILD_PIMLIB_TRUE@SYSTEM.def: Makefile
+-@BUILD_PIMLIB_TRUE@	bash $(GM2_SRC)/tools-src/makeSystem -fpim \
++@BUILD_PIMLIB_TRUE@	$(SHELL) $(GM2_SRC)/tools-src/makeSystem -fpim \
+ @BUILD_PIMLIB_TRUE@             $(GM2_SRC)/gm2-libs/SYSTEM.def \
+ @BUILD_PIMLIB_TRUE@             $(GM2_SRC)/gm2-libs/SYSTEM.mod \
+ @BUILD_PIMLIB_TRUE@             -I$(GM2_SRC)/gm2-libs \
