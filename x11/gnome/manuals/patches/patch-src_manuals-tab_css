@@ -1,0 +1,21 @@
+From c9b345b1970f2d4b1c85a5c0d68a440b4a45c220 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <christian@sourceandstack.com>
+Date: Mon, 6 Jul 2026 15:44:40 +0200
+Subject: [PATCH] tab: fix stylesheet color tracking
+
+Index: src/manuals-tab.css
+--- src/manuals-tab.css.orig
++++ src/manuals-tab.css
+@@ -4,12 +4,6 @@
+ 
+ .toc { background: transparent !important; }
+ 
+-:root { --body-bg: #ffffff !important; }
+-
+-@media (prefers-color-scheme: dark) {
+-  :root { --body-bg: #1d1d20 !important; }
+-}
+-
+ /* https://github.com/workbenchdev/Biblioteca/blob/022ede135351cbff519e456ab38b6624e3938e0b/src/WebView.js#L95 */
+ .overshoot-overlay-bottom {
+   height: 100%;

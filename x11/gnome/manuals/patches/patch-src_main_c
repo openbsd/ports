@@ -1,0 +1,17 @@
+From e516710da9e9d586a0b3fa08cf82d7f2e02afb78 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <christian@sourceandstack.com>
+Date: Tue, 23 Jun 2026 15:07:38 +0200
+Subject: [PATCH] main: call dex_init() at startup
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -38,6 +38,8 @@ main (int   argc,
+ 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+ 	textdomain (GETTEXT_PACKAGE);
+ 
++  dex_init ();
++
+   dex_future_disown (foundry_init ());
+ 
+   panel_init ();

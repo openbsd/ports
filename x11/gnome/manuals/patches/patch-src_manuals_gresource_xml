@@ -1,0 +1,16 @@
+From b7e4aa470d3667657ebd0a713d2ee1fe0ba1d07a Mon Sep 17 00:00:00 2001
+From: Roi824 <orion82480@gmail.com>
+Date: Sat, 19 Sep 2026 05:28:56 +0930
+Subject: [PATCH] icons: properly display builder app icons in AdwAboutDialog
+
+Index: src/manuals.gresource.xml
+--- src/manuals.gresource.xml.orig
++++ src/manuals.gresource.xml
+@@ -13,4 +13,7 @@
+     <file preprocess="xml-stripblanks">manuals-window.ui</file>
+     <file>style.css</file>
+   </gresource>
++  <gresource prefix="/org/gnome/builder">
++    <file preprocess="xml-stripblanks">icons/scalable/apps/org.gnome.Builder.svg</file>
++  </gresource>
+ </gresources>

@@ -1,0 +1,16 @@
+From b7e4aa470d3667657ebd0a713d2ee1fe0ba1d07a Mon Sep 17 00:00:00 2001
+From: Roi824 <orion82480@gmail.com>
+Date: Sat, 19 Sep 2026 05:28:56 +0930
+Subject: [PATCH] icons: properly display builder app icons in AdwAboutDialog
+
+Index: src/manuals-application.c
+--- src/manuals-application.c.orig
++++ src/manuals-application.c
+@@ -140,6 +140,7 @@ manuals_application_startup (GApplication *app)
+   icon_theme = gtk_icon_theme_get_for_display (display);
+ 
+   gtk_icon_theme_add_resource_path (icon_theme, "/org/gnome/foundry/icons");
++  gtk_icon_theme_add_resource_path (icon_theme, "/org/gnome/builder/icons");
+ }
+ 
+ static void

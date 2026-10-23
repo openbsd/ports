@@ -1,0 +1,124 @@
+From c9b345b1970f2d4b1c85a5c0d68a440b4a45c220 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <christian@sourceandstack.com>
+Date: Mon, 6 Jul 2026 15:44:40 +0200
+Subject: [PATCH] tab: fix stylesheet color tracking
+
+Index: src/manuals-tab.c
+--- src/manuals-tab.c.orig
++++ src/manuals-tab.c
+@@ -43,6 +43,7 @@ struct _ManualsTab
+   FoundryDocumentation *navigatable;
+ 
+   WebKitWebView        *web_view;
++  WebKitUserStyleSheet *colors_style_sheet;
+   ManualsSearchEntry   *search_entry;
+   GtkRevealer          *search_revealer;
+ 
+@@ -532,18 +533,71 @@ zoom_one_action (GtkWidget  *widget,
+ }
+ 
+ static void
+-manuals_tab_update_background_color (ManualsTab *self)
++manuals_tab_update_colors (ManualsTab *self)
+ {
++  WebKitUserContentManager *ucm;
++  GtkStyleContext *context;
++  g_autofree char *background_str = NULL;
++  g_autofree char *foreground_str = NULL;
++  g_autofree char *css = NULL;
++  gboolean found_background;
++  gboolean found_foreground;
+   GdkRGBA background;
++  GdkRGBA foreground;
+ 
+   g_assert (MANUALS_IS_TAB (self));
+ 
+-  if (adw_style_manager_get_dark (adw_style_manager_get_default ()))
+-    gdk_rgba_parse (&background, "#1d1d20");
+-  else
+-    gdk_rgba_parse (&background, "#ffffff");
++  context = gtk_widget_get_style_context (GTK_WIDGET (self));
++  found_background = gtk_style_context_lookup_color (context, "view_bg_color", &background);
++  found_foreground = gtk_style_context_lookup_color (context, "view_fg_color", &foreground);
+ 
++  if (!found_background || !found_foreground)
++    {
++      if (adw_style_manager_get_dark (adw_style_manager_get_default ()))
++        {
++          if (!found_background)
++            gdk_rgba_parse (&background, "#1d1d20");
++          if (!found_foreground)
++            gdk_rgba_parse (&foreground, "#ffffff");
++        }
++      else
++        {
++          if (!found_background)
++            gdk_rgba_parse (&background, "#ffffff");
++          if (!found_foreground)
++            gdk_rgba_parse (&foreground, "rgba(0, 0, 6, 0.8)");
++        }
++    }
++
+   webkit_web_view_set_background_color (self->web_view, &background);
++
++  ucm = webkit_web_view_get_user_content_manager (self->web_view);
++
++  if (self->colors_style_sheet != NULL)
++    {
++      webkit_user_content_manager_remove_style_sheet (ucm, self->colors_style_sheet);
++      g_clear_pointer (&self->colors_style_sheet, webkit_user_style_sheet_unref);
++    }
++
++  background_str = gdk_rgba_to_string (&background);
++  foreground_str = gdk_rgba_to_string (&foreground);
++  css = g_strdup_printf (":root {"
++                         " --body-bg: %s !important;"
++                         " --text-color: %s !important;"
++                         " --box-text-color: %s !important;"
++                         "}"
++                         "html, body { color: %s !important; }",
++                         background_str,
++                         foreground_str,
++                         foreground_str,
++                         foreground_str);
++
++  self->colors_style_sheet = webkit_user_style_sheet_new (css,
++                                                          WEBKIT_USER_CONTENT_INJECT_ALL_FRAMES,
++                                                          WEBKIT_USER_STYLE_LEVEL_USER,
++                                                          NULL,
++                                                          NULL);
++  webkit_user_content_manager_add_style_sheet (ucm, self->colors_style_sheet);
+ }
+ 
+ static void
+@@ -605,7 +659,7 @@ manuals_tab_constructed (GObject *object)
+                            self,
+                            G_CONNECT_SWAPPED);
+ 
+-  manuals_tab_update_background_color (self);
++  manuals_tab_update_colors (self);
+ 
+   webkit_web_view_set_zoom_level (self->web_view,
+                                   (double) self->zoom_level_x10 / 10.0);
+@@ -616,7 +670,7 @@ static void
+ manuals_tab_css_changed (GtkWidget         *widget,
+                          GtkCssStyleChange *change)
+ {
+-  manuals_tab_update_background_color (MANUALS_TAB (widget));
++  manuals_tab_update_colors (MANUALS_TAB (widget));
+ }
+ 
+ static void
+@@ -630,6 +684,7 @@ manuals_tab_dispose (GObject *object)
+   while ((child = gtk_widget_get_first_child (GTK_WIDGET (self))))
+     gtk_widget_unparent (child);
+ 
++  g_clear_pointer (&self->colors_style_sheet, webkit_user_style_sheet_unref);
+   g_clear_object (&self->navigatable);
+ 
+   G_OBJECT_CLASS (manuals_tab_parent_class)->dispose (object);
+@@ -1006,4 +1061,3 @@ manuals_tab_set_zoom_level (ManualsTab *self,
+       manuals_tab_apply_zoom_level (self);
+     }
+ }
+-
