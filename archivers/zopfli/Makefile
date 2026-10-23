@@ -5,8 +5,11 @@ COMMENT =		deflate-compatible compression format
 
 GH_ACCOUNT =		google
 GH_PROJECT =		zopfli
-GH_TAGNAME =		zopfli-1.0.3
-DISTNAME =		${GH_TAGNAME}
+#GH_TAGNAME =		zopfli-1.0.3
+#DISTNAME =		${GH_TAGNAME}
+GH_COMMIT =		df1517dd8518113a245e4d203a04b8a0e02ab493
+DISTNAME =		zopfli-1.0.3pl20260930
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 CATEGORIES =		archivers
 
@@ -18,7 +21,6 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc base-gcc
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=yes
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 NO_TEST =		Yes
 
 .include <bsd.port.mk>

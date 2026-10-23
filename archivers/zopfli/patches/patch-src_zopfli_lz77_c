@@ -1,24 +1,46 @@
-Unbreak on architectures with strict alignement requirements.
+From cd7f13b12a2c1a50f94ffe9ca5909854bdef8d93 Mon Sep 17 00:00:00 2001
+From: Cosimo Lupo <cosimo@anthrotype.com>
+Date: Fri, 13 Feb 2026 11:57:17 +0000
+Subject: [PATCH] Fix SIGBUS on strict-alignment architectures (SPARC, MIPS)
 
 Index: src/zopfli/lz77.c
 --- src/zopfli/lz77.c.orig
 +++ src/zopfli/lz77.c
-@@ -299,6 +299,7 @@ static const unsigned char* GetMatch(const unsigned ch
-                                      const unsigned char* end,
+@@ -24,6 +24,7 @@ Author: jyrki.alakuijala@gmail.com (Jyrki Alakuijala)
+ #include <assert.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ void ZopfliInitLZ77Store(const unsigned char* data, ZopfliLZ77Store* store) {
+   store->size = 0;
+@@ -300,15 +301,25 @@ static const unsigned char* GetMatch(const unsigned ch
                                       const unsigned char* safe_end) {
  
-+#ifndef __STRICT_ALIGNMENT
    if (sizeof(size_t) == 8) {
-     /* 8 checks at once per array bounds check (size_t is 64-bit). */
-     while (scan < safe_end && *((size_t*)scan) == *((size_t*)match)) {
-@@ -312,7 +313,9 @@ static const unsigned char* GetMatch(const unsigned ch
+-    /* 8 checks at once per array bounds check (size_t is 64-bit). */
+-    while (scan < safe_end && *((size_t*)scan) == *((size_t*)match)) {
++    /* 8 checks at once per array bounds check (size_t is 64-bit).
++       Use memcpy to avoid unaligned access (causes SIGBUS on strict-alignment
++       architectures like SPARC and MIPS). The compiler will optimize memcpy of
++       a known size into a single load where the architecture supports it. */
++    size_t sv, mv;
++    while (scan < safe_end) {
++      memcpy(&sv, scan, sizeof(sv));
++      memcpy(&mv, match, sizeof(mv));
++      if (sv != mv) break;
+       scan += 8;
+       match += 8;
+     }
+   } else if (sizeof(unsigned int) == 4) {
+     /* 4 checks at once per array bounds check (unsigned int is 32-bit). */
+-    while (scan < safe_end
+-        && *((unsigned int*)scan) == *((unsigned int*)match)) {
++    unsigned int sv, mv;
++    while (scan < safe_end) {
++      memcpy(&sv, scan, sizeof(sv));
++      memcpy(&mv, match, sizeof(mv));
++      if (sv != mv) break;
        scan += 4;
        match += 4;
      }
--  } else {
-+  } else
-+#endif /* ! __STRICT_ALIGNMENT */
-+  {
-     /* do 8 checks at once per array bounds check. */
-     while (scan < safe_end && *scan == *match && *++scan == *++match
-           && *++scan == *++match && *++scan == *++match
