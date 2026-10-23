@@ -1,0 +1,12 @@
+Index: include/joedog/getopt.h
+--- include/joedog/getopt.h.orig
++++ include/joedog/getopt.h
+@@ -135,7 +135,7 @@ struct option
+    errors, only prototype getopt for the GNU C library.  */
+ extern int getopt (int __argc, char *const *__argv, const char *__shortopts);
+ # else /* not __GNU_LIBRARY__ */
+-extern int getopt ();
++extern int getopt(int, char * const *, const char *);
+ # endif /* __GNU_LIBRARY__ */
+ 
+ # ifndef __need_getopt

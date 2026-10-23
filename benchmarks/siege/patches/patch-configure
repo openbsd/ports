@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -23110,9 +23110,9 @@ See \`config.log' for more details" "$LINENO" 5; }
+@@ -17012,9 +17012,9 @@ ltmain=$ac_aux_dir/ltmain.sh
  #define  JOEDOG_PATH_H
  
  #define SIEGE_HOME     "$prefix"

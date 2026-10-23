@@ -8,7 +8,7 @@ Index: src/ssl.c
    if( my.debug == 4 ){
      fprintf(
 -      stderr,"thread=%4d mode=%s lock=%s %s:%d\n", (int)CRYPTO_thread_id(),
-+      stderr,"thread=%4d mode=%s lock=%s %s:%d\n", (int)pthread_self(),
++      stderr,"thread=%4llu mode=%s lock=%s %s:%d\n", (long long)pthread_self(),
        (mode&CRYPTO_LOCK)?"l":"u", (type&CRYPTO_READ)?"r":"w",file,line
      );
    }

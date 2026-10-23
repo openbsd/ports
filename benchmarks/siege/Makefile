@@ -1,7 +1,6 @@
 COMMENT =		multi-threaded HTTP benchmark and regression tester
 
-DISTNAME =		siege-4.1.7
-REVISION =		0
+DISTNAME =		siege-4.2.0
 
 CATEGORIES =		benchmarks www
 
@@ -20,8 +19,8 @@ CFLAGS +=		-DHAVE_STRCASECMP -DHAVE_STRNCASECMP
 LOCALSTATEDIR =		${BASELOCALSTATEDIR}/log/siege
 
 CONFIGURE_STYLE =	gnu
-
 FIX_CRLF_FILES =	src/ssl.c
+CONFIGURE_ARGS =	--without-uuid
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/siege
