@@ -1,6 +1,6 @@
 COMMENT=	create MusicBrainz DiscIDs from audio CDs
 
-DISTNAME=	libdiscid-0.6.5
+DISTNAME=	libdiscid-0.7.0
 
 CATEGORIES=	audio
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += util
 
-SITES=		http://ftp.musicbrainz.org/pub/musicbrainz/libdiscid/
+SITES=		https://ftp.musicbrainz.org/pub/musicbrainz/libdiscid/
 
 SEPARATE_BUILD=	Yes
 
