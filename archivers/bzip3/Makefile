@@ -1,6 +1,6 @@
 COMMENT=	compress and decompress bzip3 files
 
-V=		1.5.3
+V=		1.5.5
 DISTNAME=	bzip3-${V}
 
 SHARED_LIBS +=  bzip3                1.0      # 0.0
