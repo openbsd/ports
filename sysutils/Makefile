@@ -482,7 +482,6 @@
      SUBDIR += tenshi
      SUBDIR += tentakel
      SUBDIR += termdown
-     SUBDIR += terraform
      SUBDIR += terragrunt
      SUBDIR += testdisk
      SUBDIR += tflint
