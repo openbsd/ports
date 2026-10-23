@@ -1,6 +1,6 @@
 COMMENT=	HTTP/1.x and HTTP/2 client for Python
 
-MODPY_DISTV=	2.13.1
+MODPY_DISTV=	2.16.0
 GH_ACCOUNT=	pydantic
 GH_PROJECT=	httpx2
 GH_TAGNAME=	v${MODPY_DISTV}
