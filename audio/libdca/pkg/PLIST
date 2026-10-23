@@ -5,9 +5,9 @@ include/dts.h
 @static-lib lib/libdca.a
 lib/libdca.la
 @lib lib/libdca.so.${LIBdca_VERSION}
-lib/libdts.a
+@comment lib/libdts.a
 lib/pkgconfig/libdca.pc
-lib/pkgconfig/libdts.pc
+@comment lib/pkgconfig/libdts.pc
 @man man/man1/dcadec.1
 @comment @man man/man1/dtsdec.1
 @man man/man1/extract_dca.1
