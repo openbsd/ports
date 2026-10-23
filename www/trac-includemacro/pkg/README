@@ -1,0 +1,10 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Trac plugins that are installed globally must be specifically enabled in your
+project's trac.ini file:
+
+[components]
+macros.* = enabled
+includemacro.* = enabled
