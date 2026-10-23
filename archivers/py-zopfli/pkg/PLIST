@@ -24,4 +24,4 @@ lib/python${MODPY_VERSION}/site-packages/zopfli/_version.py
 lib/python${MODPY_VERSION}/site-packages/zopfli/gzip.py
 lib/python${MODPY_VERSION}/site-packages/zopfli/png.py
 lib/python${MODPY_VERSION}/site-packages/zopfli/zlib.py
-@so lib/python${MODPY_VERSION}/site-packages/zopfli/zopfli.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/zopfli/zopfli${MODPY_ABI3SO}.so

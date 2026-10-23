@@ -1,10 +1,10 @@
 COMMENT=	cPython bindings for the zopfli compression library
 
-MODPY_DISTV=	0.2.3
+MODPY_DISTV=	0.4.3
 DISTNAME=	zopfli-${MODPY_DISTV}
 PKGNAME=	py-zopfli-${MODPY_DISTV}
-EXTRACT_SUFX=	.zip
-REVISION=	3
+
+HOMEPAGE=	https://github.com/fonttools/py-zopfli
 
 CATEGORIES=	archivers
 
