@@ -205,6 +205,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/KAS_ECC_CDH_PrimitiveTest.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/KDF_SP800_108_COUNTER.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/HPKE-PQ-test-vectors.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/HPKE-test-vectors.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/README.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp224r1_ecpoint_test.json
@@ -226,6 +227,18 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wych
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/hkdf_sha256_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/hkdf_sha384_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/hkdf_sha512_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_1024_encaps_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_1024_keygen_seed_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_1024_semi_expanded_decaps_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_1024_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_512_encaps_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_512_keygen_seed_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_512_semi_expanded_decaps_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_512_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_768_encaps_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_768_keygen_seed_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_768_semi_expanded_decaps_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/mlkem_768_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/x25519_asn_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/x25519_jwk_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/x25519_pem_test.json
@@ -429,6 +442,9 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/point-at-infinity.org-P256.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/point-at-infinity.org-P384.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/point-at-infinity.org-P521.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/Hybrid/
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/Hybrid/README.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/Hybrid/test-vectors.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/MLDSA/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/MLDSA/ML-DSA-keyGen-FIPS204.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/MLDSA/ML-DSA-sigGen-FIPS204-preHash.json
