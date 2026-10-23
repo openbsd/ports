@@ -1,6 +1,6 @@
 COMMENT=	rate-limiting for the requests library
 
-MODPY_DISTV=	0.9.2
+MODPY_DISTV=	0.10.0
 DISTNAME=	requests_ratelimiter-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
