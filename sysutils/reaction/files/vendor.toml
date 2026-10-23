@@ -1,0 +1,12 @@
+[source."git+https://github.com/deltarocks/jrsonnet?branch=master"]
+git = "https://github.com/deltarocks/jrsonnet"
+branch = "master"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/ppom0/ipset?branch=fix-ipv6-32cidr"]
+git = "https://github.com/ppom0/ipset"
+branch = "fix-ipv6-32cidr"
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "${WRKSRC}/vendor"

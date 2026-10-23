@@ -1,5 +1,6 @@
 @rcscript ${RCDIR}/reaction
 @bin bin/reaction
+@bin bin/reaction-plugin-httpban
 @bin bin/reaction-plugin-virtual
 @man man/man1/reaction-flush.1
 @man man/man1/reaction-rotate.1

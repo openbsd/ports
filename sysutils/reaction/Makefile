@@ -1,29 +1,50 @@
 COMMENT =	scan logs and take action, alternative to fail2ban
 
-V =	v2.5.1
+V =	v2.6.0
 DISTNAME =	reaction-${V}
 PKGNAME =	${DISTNAME:S/-v/-/}
 
 SITES =	https://framagit.org/ppom/reaction/-/archive/${V}/
 
+SITES.vendor =		https://arcfour.nl/mirror/
+DISTFILES.vendor =	reaction-vendor-${V}.tgz
+
 CATEGORIES =	sysutils security
 HOMEPAGE =	https://reaction.ppom.me/
+
+MAINTAINER =	Lydia Sobot <chilledfrogs@disroot.org>
 
 # AGPL-3.0
 PERMIT_PACKAGE =	yes
 
-WANTLIB += ${MODCARGO_WANTLIB} m
+WANTLIB += ${MODCARGO_WANTLIB} m zstd
 
 MODULES =		devel/cargo
-CONFIGURE_STYLE =	cargo
+MODCARGO_BUILD_ARGS +=	--package reaction \
+			--package reaction-plugin-httpban \
+			--package reaction-plugin-virtual
+MODCARGO_TEST_ARGS +=	--package reaction \
+			--package reaction-plugin-httpban \
+			--package reaction-plugin-virtual
+MODCARGO_RUSTFLAGS +=	-L${PREFIX}/lib
 
-MODCARGO_BUILD_ARGS +=	--package reaction --package reaction-plugin-virtual
-MODCARGO_TEST_ARGS +=	--package reaction --package reaction-plugin-virtual
+LIB_DEPENDS =		archivers/zstd
+
+CONFIGURE_STYLE =	cargo
 
 .include "crates.inc"
 
+SUBST_VARS =	WRKSRC
+
+post-configure:
+	mv ${WRKDIR}/vendor ${WRKSRC}
+	${SUBST_CMD} -m 644 -c ${FILESDIR}/vendor.toml ${WRKDIR}/vendor.toml
+	cat ${WRKDIR}/vendor.toml >> ${WRKDIR}/.cargo/config.toml
+
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/reaction ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/reaction-plugin-httpban \
+		${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/reaction-plugin-virtual \
 		${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/reaction
