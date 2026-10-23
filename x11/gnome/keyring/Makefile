@@ -6,7 +6,7 @@
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		50.0
+GNOME_VERSION=		51.1
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -53,13 +53,11 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-keyring
 	mv ${WRKINST}/etc/xdg ${PREFIX}/share/examples/gnome-keyring
 
-# regression tests call 'env python'
+# tests
 MODULES +=		lang/python
-TEST_DEPENDS +=		${MODPY_RUN_DEPENDS}
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP=		No
 MODPY_ADJ_FILES=	build/tap-driver
-# couldn't connect to dbus session bus: Cannot autolaunch D-Bus without X11 $DISPLAY
-TEST_IS_INTERACTIVE=	x11
+TEST_IS_INTERACTIVE=	x11 # Cannot autolaunch D-Bus without X11 $DISPLAY
 
 .include <bsd.port.mk>

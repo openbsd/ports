@@ -11,7 +11,6 @@ lib/gnome-keyring/devel/
 @man man/man1/gnome-keyring-3.1
 @man man/man1/gnome-keyring-daemon.1
 @man man/man1/gnome-keyring.1
-share/GConf/gsettings/org.gnome.crypto.cache.convert
 share/dbus-1/services/org.freedesktop.impl.portal.Secret.service
 share/dbus-1/services/org.freedesktop.secrets.service
 share/dbus-1/services/org.gnome.keyring.service
@@ -76,6 +75,7 @@ share/locale/km/LC_MESSAGES/gnome-keyring.mo
 share/locale/kn/LC_MESSAGES/gnome-keyring.mo
 share/locale/ko/LC_MESSAGES/gnome-keyring.mo
 share/locale/kw/LC_MESSAGES/gnome-keyring.mo
+share/locale/lo/LC_MESSAGES/gnome-keyring.mo
 share/locale/lt/LC_MESSAGES/gnome-keyring.mo
 share/locale/lv/LC_MESSAGES/gnome-keyring.mo
 share/locale/mai/LC_MESSAGES/gnome-keyring.mo
