@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1854 2026/10/22 19:27:50 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1855 2026/10/23 00:35:19 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -608,6 +608,7 @@ setup_obsolete_reason(
 	46 => 'exim-eximon',
 	3 => 'kf6-libkcompactdisc',
 # 8.0
+	3 => qr{^ruby33-},
 	5 => 'XawMu',
 	3 => 'facette',
 	5 => 'telepathy-logger',
