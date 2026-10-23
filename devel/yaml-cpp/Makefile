@@ -2,9 +2,10 @@ COMMENT =		YAML parser and emitter in C++
 
 GH_ACCOUNT=		jbeder
 GH_PROJECT=		yaml-cpp
-GH_TAGNAME=		0.8.0
+GH_TAGNAME=		yaml-cpp-0.9.0
+DISTNAME=		${GH_TAGNAME}
 
-SHARED_LIBS =		yaml-cpp	5.0 # 0.5
+SHARED_LIBS =		yaml-cpp	6.0 # 0.5
 
 CATEGORIES =		devel
 
@@ -19,8 +20,9 @@ MODULES =		devel/cmake
 
 CONFIGURE_ARGS =	-DYAML_BUILD_SHARED_LIBS=ON \
 			-DYAML_CPP_BUILD_TOOLS=OFF \
-			-DYAML_CPP_BUILD_TESTS=OFF
+			-DYAML_CPP_BUILD_TESTS=ON
 
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+# has a bundled copy, but uses system gtest if available
+BUILD_DEPENDS =		devel/gtest
 
 .include <bsd.port.mk>
