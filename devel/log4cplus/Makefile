@@ -1,6 +1,6 @@
 COMMENT=	logging API for C++
 
-V=		2_2_0_1
+V=		2_2_1
 DISTNAME=	log4cplus-${V:S/_/./g}
 
 SITES=		https://github.com/log4cplus/log4cplus/releases/download/REL_$V/
