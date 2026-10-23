@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	${RUST_ARCHS}
 COMMENT =		mahjongg game for GNOME
 
 GNOME_PROJECT =		gnome-mahjongg
-GNOME_VERSION =		49.2
+GNOME_VERSION =		51.1
 
 CATEGORIES =		games
 
