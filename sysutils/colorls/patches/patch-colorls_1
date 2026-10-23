@@ -29,7 +29,7 @@ Index: colorls.1
  .It Fl g
  List in long format as in
  .Fl l ,
-@@ -425,7 +431,7 @@ user append-only
+@@ -424,7 +430,7 @@ user append-only
  user immutable
  .El
  .Sh ENVIRONMENT
@@ -38,7 +38,7 @@ Index: colorls.1
  .It Ev BLOCKSIZE
  If the environment variable
  .Ev BLOCKSIZE
-@@ -435,6 +441,40 @@ option is not specified, the block counts
+@@ -434,6 +440,40 @@ option is not specified, the block counts
  (see
  .Fl s )
  will be displayed in units of that size block.
@@ -79,7 +79,7 @@ Index: colorls.1
  .It Ev COLUMNS
  If set to a positive integer,
  output is formatted to the given width in columns.
-@@ -450,6 +490,99 @@ If unset or set to
+@@ -449,6 +489,99 @@ If unset or set to
  .Qq C ,
  .Qq POSIX ,
  or an unsupported value, non-ASCII bytes are replaced by question marks.
@@ -179,7 +179,7 @@ Index: colorls.1
  .It Ev TZ
  The time zone to use when displaying dates.
  See
-@@ -457,33 +590,34 @@ See
+@@ -456,33 +589,34 @@ See
  for more information.
  .El
  .Sh EXIT STATUS
@@ -219,7 +219,7 @@ Index: colorls.1
  utility is compliant with the
  .St -p1003.1-2008
  specification,
-@@ -492,10 +626,10 @@ except behaviour for the
+@@ -491,10 +625,10 @@ except behaviour for the
  flag differs.
  .Pp
  The flags
@@ -232,7 +232,7 @@ Index: colorls.1
  are extensions to that specification.
  .Pp
  The flags
-@@ -515,6 +649,6 @@ flag has been changed in order to be compatible with t
+@@ -514,6 +648,6 @@ flag has been changed in order to be compatible with t
  specification.
  .Sh HISTORY
  An
