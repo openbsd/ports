@@ -1,6 +1,6 @@
 COMMENT=	minimal low-level HTTP client
 
-MODPY_DISTV=	2.13.1
+MODPY_DISTV=	2.16.0
 GH_ACCOUNT=	pydantic
 # this is a monorepo, containing both httpcore2 and httpx2
 GH_PROJECT=	httpx2
