@@ -1,6 +1,6 @@
 COMMENT=	Python tzinfo object for the local timezone
 
-MODPY_DISTV=	5.4.4
+MODPY_DISTV=	5.4.5
 DISTNAME=	tzlocal-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
