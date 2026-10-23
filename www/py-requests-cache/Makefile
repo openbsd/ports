@@ -1,6 +1,6 @@
 COMMENT=	transparent persistent cache for the py-requests library
 
-MODPY_DISTV=	1.3.2
+MODPY_DISTV=	1.3.3
 DISTNAME=	requests_cache-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
@@ -44,7 +44,7 @@ TEST_ENV=	HTTPBIN_URL=http://localhost:6823/ \
 		USE_PYTEST_HTTPBIN=true
 
 # backends need setup (and boto3, for dynamodb)
-MODPY_PYTEST_ARGS= \
+MODPY_PYTEST_ARGS= -v \
 		--ignore tests/integration/test_dynamodb.py \
 		--ignore tests/integration/test_mongodb.py \
 		--ignore tests/integration/test_redis.py
