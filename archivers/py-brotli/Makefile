@@ -1,11 +1,14 @@
 COMMENT=	Python bindings for the Brotli compression library
 
-MODPY_DISTV=	1.2.0
+MODPY_DISTV=	1.2.1
+GH_ACCOUNT=	google
+GH_PROJECT=	brotli
+GH_TAGNAME=	v${MODPY_DISTV}
 DISTNAME=	brotli-${MODPY_DISTV}
 PKGNAME=	py-brotli-${MODPY_DISTV}
 
 # rename to avoid conflict with archivers/brotli
-DISTFILES=	pypi-{}brotli-${MODPY_DISTV}.tar.gz
+#DISTFILES=	pypi-{}brotli-${MODPY_DISTV}.tar.gz
 
 CATEGORIES=	archivers
 
@@ -18,8 +21,6 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= python/
 BUILD_DEPENDS=	devel/py-pkgconfig
