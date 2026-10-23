@@ -617,6 +617,7 @@
      SUBDIR += tootstream
      SUBDIR += tor-browser
      SUBDIR += trac
+     SUBDIR += trac-includemacro
      SUBDIR += ttyd
      SUBDIR += tuba
      SUBDIR += tuir
