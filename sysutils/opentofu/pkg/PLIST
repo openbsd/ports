@@ -1,2 +1,4 @@
+@conflict terraform-*
+@pkgpath sysutils/terraform
 @bin bin/tofu
 share/doc/pkg-readmes/${PKGSTEM}

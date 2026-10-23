@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1855 2026/10/23 00:35:19 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.1856 2026/10/23 09:09:30 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -274,6 +274,7 @@ my $stem_extensions = {
 	'p7zip-rar' => '7zip-rar',
 	'kyua-cli' => 'kyua',
 	'kyua-testers' => 'kyua',
+	'terraform' => 'opentofu',
 
 };
 
