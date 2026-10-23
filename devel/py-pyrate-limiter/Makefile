@@ -1,7 +1,7 @@
 COMMENT =		Python rate-limiter using Leaky-Bucket
 
 # check compat with www/py-requests-ratelimiter
-MODPY_DISTV =		4.0.2
+MODPY_DISTV =		4.5.1
 DISTNAME =		pyrate_limiter-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
 
