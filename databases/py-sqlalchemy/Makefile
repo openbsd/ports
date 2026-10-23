@@ -1,6 +1,9 @@
 COMMENT=	database toolkit for Python
 
-MODPY_DISTV=	2.0.54
+MODPY_DISTV=	2.0.55
+# 2.1 may break compat in some places; check dependent ports if updating
+# https://docs.sqlalchemy.org/en/21/changelog/migration_21.html
+PORTROACH=	limit:^2\.0
 DISTNAME=	sqlalchemy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
