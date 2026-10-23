@@ -11,7 +11,7 @@ Index: libfoundry/foundry-init.c
  
  #include <json-glib/json-glib.h>
  
-@@ -188,9 +190,11 @@ foundry_trace_function (const gchar *func,
+@@ -195,9 +197,11 @@ foundry_trace_function (const gchar *func,
                          gint64       begin_time_usec,
                          gint64       end_time_usec)
  {
