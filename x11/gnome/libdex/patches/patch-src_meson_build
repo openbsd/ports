@@ -1,7 +1,7 @@
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -89,7 +89,7 @@ if have_gdbus_codegen
+@@ -105,7 +105,7 @@ if have_gdbus_codegen
    )
  endif
  
