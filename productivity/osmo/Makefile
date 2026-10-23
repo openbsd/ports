@@ -2,13 +2,11 @@ COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.4.4
 CATEGORIES=	productivity
-REVISION=	7
+REVISION=	8
 
 HOMEPAGE=	https://clayo.org/osmo/
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
-
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += archive atk-1.0 c cairo cairo-gobject enchant-2 gdk-3

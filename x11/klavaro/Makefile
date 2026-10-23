@@ -1,13 +1,11 @@
 COMMENT =	touch typing tutor program
 
 DISTNAME =	klavaro-3.14
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	x11
 
 HOMEPAGE =	https://klavaro.sourceforge.net/
-
-MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

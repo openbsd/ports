@@ -5,9 +5,7 @@ PKG_ARCH =	*
 
 DISTNAME =	DBIx-DWIW-0.50
 CATEGORIES =	databases
-REVISION =	0
-
-MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE =		Yes

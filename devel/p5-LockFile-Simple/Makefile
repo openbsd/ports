@@ -4,11 +4,9 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		LockFile-Simple-0.208
 CATEGORIES =		devel
-REVISION =		0
-
-MAINTAINER =		Pierre-Emmanuel Andre <pea@openbsd.org>
+REVISION =		1
 
 # Perl / GPLv2
 PERMIT_PACKAGE =	Yes
 
-.include <bsd.port.mk>	
+.include <bsd.port.mk>

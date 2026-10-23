@@ -1,14 +1,12 @@
 COMMENT =	reverse differential backup tool, over a network or locally
 
 MODPY_DISTV =	2.2.6
-REVISION =	0
+REVISION =	1
 DISTNAME =	rdiff-backup-${MODPY_DISTV}
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://rdiff-backup.net/
-
-MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -1,19 +1,17 @@
 COMMENT=	rrdtool frontend for Bind installation
 
 DISTNAME=	bindgraph-0.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net www
 
 HOMEPAGE=	http://www.linux.it/~md/software/
 
-SITES= 		${HOMEPAGE}
-
-MAINTAINER=     Pierre-Emmanuel Andre <pea@openbsd.org>
+SITES=		${HOMEPAGE}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-EXTRACT_SUFX= 	.tgz
+EXTRACT_SUFX=	.tgz
 
 RUN_DEPENDS=	net/rrdtool \
 		devel/p5-File-Tail

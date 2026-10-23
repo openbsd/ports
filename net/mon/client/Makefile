@@ -1,14 +1,14 @@
 COMMENT =	perl module for mon
 
-DISTNAME = 	mon-client-${V}
+DISTNAME =	mon-client-${V}
 
-PKGNAME = 	p5-Mon-${V}
-REVISION =	4
+PKGNAME =	p5-Mon-${V}
+REVISION =	5
 
-MODULES = 	cpan
-PKG_ARCH = 	*
+MODULES =	cpan
+PKG_ARCH =	*
 
-DISTFILES = 	mon-client-${V}.tar.gz \
+DISTFILES =	mon-client-${V}.tar.gz \
 		mon-${V}.tar.gz
 
 post-install:

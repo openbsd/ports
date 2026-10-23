@@ -2,12 +2,11 @@ GH_ACCOUNT=	imapsync
 GH_PROJECT=	imapsync
 GH_TAGNAME=	imapsync-1.945
 DISTNAME=	${GH_TAGNAME}
+REVISION=	0
 
 COMMENT=	IMAP synchronization tool
 
 CATEGORIES=	mail
-
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # "NO LIMIT PUBLIC LICENSE"; see ./LICENSE
 PERMIT_PACKAGE=	Yes

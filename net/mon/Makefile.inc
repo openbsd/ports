@@ -1,12 +1,10 @@
-V = 	1.2.0
+V =	1.2.0
 
 CATEGORIES = net
 
-HOMEPAGE =      http://mon.wiki.kernel.org
-
-MAINTAINER =    Pierre-Emmanuel Andre <pea@openbsd.org>
+HOMEPAGE =      https://sourceforge.net/projects/mon/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-SITES =  	ftp://ftp.kernel.org/pub/software/admin/mon/
+SITES =		${SITE_SOURCEFORGE:=mon/}

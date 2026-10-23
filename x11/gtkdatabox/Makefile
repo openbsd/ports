@@ -1,14 +1,13 @@
 COMMENT =	GTK+3 widget to display large amounts of numerical data
 
 DISTNAME =	gtkdatabox-1.0.0
+REVISION =	0
 
 SHARED_LIBS =	gtkdatabox 1.0
 
 CATEGORIES =	x11
 
 HOMEPAGE =	https://gtkdatabox.sourceforge.io/
-
-MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

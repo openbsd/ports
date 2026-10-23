@@ -5,11 +5,10 @@ GH_ACCOUNT=	ReimuHakurei
 GH_PROJECT=	phpPgAdmin
 GH_TAGNAME=	v$V-mod
 PKGNAME=	phpPgAdmin-$V
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www databases
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 

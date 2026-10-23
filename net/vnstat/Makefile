@@ -6,14 +6,13 @@ EPOCH =			0
 DISTNAME =		vnstat-${V}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-vnstati =	vnstati-${V}
+REVISION =		0
 
 CATEGORIES =	net sysutils
 
 HOMEPAGE =	https://humdi.net/vnstat/
 
 SITES =		${HOMEPAGE}
-
-MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

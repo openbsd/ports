@@ -5,9 +5,7 @@ DISTNAME =	dokuwiki-${VERSION}
 PKGNAME =	dokuwiki-${VERSION:S/-/./g:S/a//}
 CATEGORIES =	www
 HOMEPAGE =	https://www.dokuwiki.org/dokuwiki
-REVISION =	1
-
-MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
+REVISION =	2
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

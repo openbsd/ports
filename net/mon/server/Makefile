@@ -1,15 +1,15 @@
 COMMENT =	service monitoring daemon
 
-DISTNAME = 	mon-${V}
-REVISION =	13
+DISTNAME =	mon-${V}
+REVISION =	14
 
-WANTLIB = 	c
+WANTLIB =	c
 
 RUN_DEPENDS =	devel/p5-Time-Period
 
-NO_TEST = 	Yes
+NO_TEST =	Yes
 
-EG_DIR = 	${PREFIX}/share/examples/mon/
+EG_DIR =	${PREFIX}/share/examples/mon/
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/example.cf ${WRKSRC}/etc/very-simple.cf \

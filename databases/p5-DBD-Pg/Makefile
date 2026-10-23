@@ -3,6 +3,12 @@ COMMENT=	access to PostgreSQL databases through the DBI
 MODULES=	cpan databases/postgresql
 DISTNAME=	DBD-Pg-3.17.0
 CATEGORIES=	databases
+REVISION=	0
+
+# Perl
+PERMIT_PACKAGE=	Yes
+
+WANTLIB+=	c m perl pq>=2
 
 LIB_DEPENDS=	databases/postgresql
 RUN_DEPENDS=	databases/p5-DBI>=1.614
@@ -14,12 +20,6 @@ TEST_FLAGS=	DBI_DSN="dbi:Pg:dbname=${MODPOSTGRESQL_TEST_DBNAME}"\
 		DBI_PASS="" \
 		DBI_USER=`id -nu`
 # XXX if DBI_USER is empty tests try to roll their own initdb + createdb
-
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
-
-PERMIT_PACKAGE=	Yes
-
-WANTLIB+=	c m perl pq>=2
 
 CONFIGURE_ENV+=	POSTGRES_HOME="${LOCALBASE}" \
 		POSTGRES_LIB="${LOCALBASE}/lib" \

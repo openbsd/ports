@@ -3,9 +3,7 @@ COMMENT=	programs to aid the PostgreSQL administrator
 V=		3
 DISTNAME=	pg-toolbox-$V
 CATEGORIES=	databases sysutils
-REVISION=	1
-
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
+REVISION=	2
 
 # BSD / Zlib
 PERMIT_PACKAGE=	Yes

@@ -1,13 +1,11 @@
 COMMENT =		small memory footprint dynamic dns updater
 
 DISTNAME =		inadyn-1.98.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net
 
 HOMEPAGE =		http://vmlinux.org/jocke/inadyn.shtml
-
-MAINTAINER =		Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -19,8 +17,8 @@ EXTRACT_SUFX =		.tar.bz2
 
 MAKE_FLAGS =		EXTRA_CFLAGS="${CFLAGS}"
 
-USE_GMAKE = 		Yes
-NO_TEST = 		Yes
+USE_GMAKE =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/inadyn/
