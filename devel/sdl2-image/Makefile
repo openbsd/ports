@@ -1,4 +1,4 @@
-V =		2.8.10
+V =		2.8.12
 COMMENT =	SDL2 image library
 DISTNAME =	SDL2_image-${V}
 PKGNAME =	sdl2-image-${V}
