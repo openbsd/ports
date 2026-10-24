@@ -3,11 +3,17 @@ Drop libmanette dependency which requires libevdev/libinput
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -24,7 +24,6 @@ libadwaita_dependency = dependency('libadwaita-1', ver
+@@ -24,7 +24,12 @@ libadwaita_dependency = dependency('libadwaita-1', ver
  libgnome_games_support = subproject ('libgnome-games-support',
  	    		             default_options: [ 'superproject_name=quadrapassel', 'sounds=true' ])
  libgnome_games_support_dependency = libgnome_games_support.get_variable ('lggs_dependency')
 -manette_dependency = dependency('manette-0.2', version: '>= 0.2.10')
- pango_dependency = dependency('pango')
- pango_cairo_dependency = dependency('pangocairo')
- posix_dependency = meson.get_compiler('vala').find_library('posix')
++if build_machine.system() == 'openbsd'
++  manette_dependency = []
++else
++  manette_dependency = dependency('manette-0.2', version: '>= 0.2.10')
++endif
++
+ libm_dependency = cc.find_library('m', required : true)
+ 
+ localedir = join_paths(get_option('prefix'), get_option('localedir'))

@@ -3,7 +3,7 @@ Drop libmanette dependency which requires libevdev/libinput
 Index: src/quadrapassel.vala
 --- src/quadrapassel.vala.orig
 +++ src/quadrapassel.vala
-@@ -70,26 +70,6 @@ public class Quadrapassel : Adw.Application
+@@ -71,26 +71,6 @@ public class Quadrapassel : Adw.Application
      private Gtk.Button pause_play_button;
      private Gtk.Button new_game_button;
  
@@ -29,8 +29,8 @@ Index: src/quadrapassel.vala
 -    };
      private HashTable<uint16, bool> buttons_state = new HashTable<uint16, bool> (direct_hash, direct_equal);
  
-     private bool pause_requested = false;
-@@ -305,16 +285,6 @@ public class Quadrapassel : Adw.Application
+     private const uint[] KEYS = {
+@@ -297,16 +277,6 @@ public class Quadrapassel : Adw.Application
                                              -1,
                                              new Games.Scores.HistoryFileImporter (parse_old_score));
  
@@ -44,10 +44,10 @@ Index: src/quadrapassel.vala
 -        while (manette_iterator.next (out manette_device))
 -            manette_device_connected_cb (manette_device);
 -
-         uint[] keys = {
-             Gdk.Key.Return,
-             Gdk.Key.Pause,
-@@ -590,149 +560,6 @@ public class Quadrapassel : Adw.Application
+         foreach (unowned var key in KEYS)
+             keys_state[key] = false;
+ 
+@@ -605,149 +575,6 @@ public class Quadrapassel : Adw.Application
              window.close ();
  
          base.quit ();
