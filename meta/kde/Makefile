@@ -31,6 +31,8 @@ PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 
 REVISION-plasma =	0
+REVISION-main=		0
+REVISION-development =	0
 
 MULTI_PACKAGES +=	-main \
 			-games \
@@ -263,7 +265,6 @@ RUN_DEPENDS-utils += \
 	x11/kde-applications/keepsecret
 
 KDE_SDK = \
-	x11/kde-applications/cervisia \
 	x11/kde-applications/kapptemplate \
 	x11/kde-applications/kcachegrind \
 	x11/kde-applications/kde-dev-scripts \

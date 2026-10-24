@@ -184,7 +184,6 @@
      SUBDIR += mimetreeparser
 
      # kdesdk
-     SUBDIR += cervisia
      SUBDIR += kapptemplate
      SUBDIR += kcachegrind
      SUBDIR += kde-dev-scripts
