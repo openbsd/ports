@@ -1,6 +1,6 @@
 COMMENT =	Vulkan header files
 
-V =		1.4.357.0
+V =		1.4.363.0
 PKGNAME =	vulkan-headers-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake
 
+NO_BUILD =	Yes
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

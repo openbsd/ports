@@ -1,6 +1,6 @@
 COMMENT =	Vulkan ICD loader
 
-V =		1.4.357.0
+V =		1.4.363.0
 PKGNAME =	vulkan-loader-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup

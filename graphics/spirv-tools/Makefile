@@ -1,6 +1,6 @@
 COMMENT =	API and commands for processing SPIR-V
 
-V =		1.4.357.0
+V =		1.4.363.0
 DISTNAME =	spirv-tools-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	SPIRV-Tools
@@ -8,7 +8,7 @@ GH_TAGNAME =	vulkan-sdk-${V}
 EPOCH =		0
 PORTROACH =	limit:^vulkan\-sdk
 
-SHARED_LIBS +=	SPIRV-Tools-shared	2.0	# 1.4.335.0
+SHARED_LIBS +=	SPIRV-Tools-shared	2.1	# 1.4.363.0
 
 CATEGORIES =	devel graphics
 
