@@ -1,8 +1,7 @@
+@pkgpath security/keepassxc,yubikey
 @bin bin/keepassxc
 @bin bin/keepassxc-cli
 %%browser%%
-lib/keepassxc/
-@so lib/keepassxc/libkeepassxc-autotype-xcb.so
 @man man/man1/keepassxc-cli.1
 @man man/man1/keepassxc.1
 share/applications/org.keepassxc.KeePassXC.desktop
@@ -44,12 +43,14 @@ share/keepassxc/translations/keepassxc_fi.qm
 share/keepassxc/translations/keepassxc_fil.qm
 share/keepassxc/translations/keepassxc_fr.qm
 share/keepassxc/translations/keepassxc_fr_CA.qm
+share/keepassxc/translations/keepassxc_gl.qm
 share/keepassxc/translations/keepassxc_he.qm
 share/keepassxc/translations/keepassxc_hr.qm
 share/keepassxc/translations/keepassxc_hu.qm
 share/keepassxc/translations/keepassxc_id.qm
 share/keepassxc/translations/keepassxc_it.qm
 share/keepassxc/translations/keepassxc_ja.qm
+share/keepassxc/translations/keepassxc_kab.qm
 share/keepassxc/translations/keepassxc_km.qm
 share/keepassxc/translations/keepassxc_ko.qm
 share/keepassxc/translations/keepassxc_lt.qm
@@ -75,7 +76,6 @@ share/keepassxc/translations/keepassxc_zh_CN.qm
 share/keepassxc/translations/keepassxc_zh_TW.qm
 share/keepassxc/wordlists/
 share/keepassxc/wordlists/eff_large.wordlist
-share/metainfo/
 share/metainfo/org.keepassxc.KeePassXC.appdata.xml
 share/mime/packages/keepassxc.xml
 @tag update-desktop-database

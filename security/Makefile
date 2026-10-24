@@ -85,8 +85,8 @@
      SUBDIR += kc,yubikey
      SUBDIR += keepassxc
      SUBDIR += keepassxc,browser
-     SUBDIR += keepassxc,browser,yubikey
-     SUBDIR += keepassxc,yubikey
+     SUBDIR += keepassxc,browser,network
+     SUBDIR += keepassxc,network
      SUBDIR += keybase
      SUBDIR += keychain
      SUBDIR += keycloak

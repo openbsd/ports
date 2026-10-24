@@ -1,6 +1,6 @@
 COMMENT =	management tool for passwords and sensitive data
 
-V =		2.7.12
+V =		2.8.0
 DISTNAME =	keepassxc-${V}
 
 CATEGORIES =	security
@@ -12,22 +12,21 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2 or GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Svg Qt5Widgets Qt5X11Extras X11 Xtst
-WANTLIB += argon2 botan-2 c m minizip qrencode readline z
+WANTLIB += ${COMPILER_LIBCXX} Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
+WANTLIB += Qt6Network Qt6Svg Qt6SvgWidgets Qt6Widgets X11 Xtst
+WANTLIB += botan-2 c m minizip pcsclite qrencode readline usb-1.0
+WANTLIB += xkbcommon z
 
 SITES =	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
 EXTRACT_SUFX =	-src.tar.xz
 
-MODULES =	x11/qt5 \
+MODULES =	x11/qt6 \
 		devel/cmake
 
 LIB_DEPENDS =	archivers/minizip \
 		graphics/libqrencode \
-		security/argon2 \
 		security/botan2 \
-		x11/qt5/qtsvg \
-		x11/qt5/qtx11extras  # needed for auto-type
+		x11/qt6/qtsvg
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
@@ -35,42 +34,39 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 BUILD_DEPENDS =	textproc/asciidoctor
 
+# Yubikey
+LIB_DEPENDS +=		devel/libusb1 \
+			security/pcsc-lite
+
 CONFIGURE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" \
 		-DWITH_GUI_TESTS=ON \
-		-DWITH_XC_AUTOTYPE=ON \
-		-DWITH_XC_SSHAGENT=ON \
-		-DWITH_XC_UPDATECHECK=OFF \
-		-DWITH_XC_FDOSECRETS=ON \
-		-DWITH_XC_KEESHARE=ON
+		-DKPXC_FEATURE_SSHAGENT=ON \
+		-DKPXC_FEATURE_UPDATES=OFF \
+		-DKPXC_FEATURE_FDOSECRETS=ON
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=On
 
+CONFIGURE_ARGS += 	-DWITH_CCACHE=OFF
+
 TEST_IS_INTERACTIVE =	X11
 
-FLAVORS =	browser yubikey
+FLAVORS =	browser network
 FLAVOR ?=
-
-# everything (executables, modules, docs) except tests
-ALL_TARGET =	keepassxc keepassxc-cli \
-		keepassxc-autotype-xcb \
-		docs manpages
-
-.if ${FLAVOR:Myubikey}
-WANTLIB += pcsclite usb-1.0
-LIB_DEPENDS +=		devel/libusb1 \
-			security/pcsc-lite
-CONFIGURE_ARGS +=	-DWITH_XC_YUBIKEY=ON
-.endif
 
 .if ${FLAVOR:Mbrowser}
 # Sync with archs that ship Firefox and/or Chromium
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
-CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
-			-DWITH_XC_NETWORKING=ON \
-			-DWITH_XC_BROWSER_PASSKEYS=ON
-# helper executable
-ALL_TARGET +=		keepassxc-proxy
+CONFIGURE_ARGS +=	-DKPXC_FEATURE_BROWSER=ON
+.else
+CONFIGURE_ARGS +=	-DKPXC_FEATURE_BROWSER=OFF
 .endif
+
+.if ${FLAVOR:Mnetwork}
+CONFIGURE_ARGS +=	-DKPXC_FEATURE_NETWORK=ON
+.else
+CONFIGURE_ARGS +=	-DKPXC_FEATURE_NETWORK=OFF
+.endif
+
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
@@ -79,8 +75,9 @@ MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 # - Icons.cpp has a Qt theme/icon issue fix... untested if this effects us.
 post-patch:
 	cd ${WRKSRC}/src/; sed -i -e 's/Q_OS_LINUX/Q_OS_UNIX/g' \
-		gui/MainWindow.cpp \
-		gui/Icons.cpp
+		core/Config.cpp \
+		browser/BrowserSettingsWidget.cpp \
+		gui/DatabaseOpenDialog.cpp
 
 # build whatever is left (ca. 200 GUI test files)
 pre-test:

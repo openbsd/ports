@@ -1,1 +1,2 @@
+@pkgpath security/keepassxc,browser,yubikey
 @bin bin/keepassxc-proxy

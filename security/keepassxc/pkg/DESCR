@@ -24,3 +24,8 @@ Main Features:
 - Password strength meter
 - Database merge functionality
 - Automatic reload when the database was changed externally
+
+Available flavors:
+
+	browser - Browser integration and passkeys support
+	network - Enables online features such as fetching site favicons
