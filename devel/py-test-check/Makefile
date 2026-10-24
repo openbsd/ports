@@ -1,6 +1,6 @@
 COMMENT =		pytest plugin that allows multiple failures per test
 
-MODPY_DISTV =		3.0.1
+MODPY_DISTV =		3.0.3
 DISTNAME =		pytest_check-${MODPY_DISTV}
 PKGNAME =		py-test-check-${MODPY_DISTV}
 
