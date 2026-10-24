@@ -1,16 +1,23 @@
-Synchronize with devel/libggml. This patch isn't really needed,
-because the backend isn't loaded dynamically.
+getexecpath
 
 Index: ggml/src/ggml-backend-reg.cpp
 --- ggml/src/ggml-backend-reg.cpp.orig
 +++ ggml/src/ggml-backend-reg.cpp
-@@ -489,7 +489,9 @@ static ggml_backend_reg_t ggml_backend_load_best(const
-         search_paths.push_back(fs::u8path(GGML_BACKEND_DIR));
+@@ -456,6 +456,17 @@ static fs::path get_executable_path() {
+         base_path = base_path.substr(0, last_slash);
+     }
+     return base_path + L"\\";
++#elif defined(__OpenBSD__)
++    std::vector<char> path(PATH_MAX);
++    if (getexecpath(path.data(), path.size()) != 0)
++	    return {};
++    std::string base_path(path.data(), path.size());
++    // remove executable name
++    auto last_slash = base_path.find_last_of('/');
++    if (last_slash != std::string::npos) {
++        base_path = base_path.substr(0, last_slash);
++    }
++    return base_path + "/";
+ #else
+     return {};
  #endif
-         // default search paths: executable directory, current directory
-+#ifndef __OpenBSD__
-         search_paths.push_back(get_executable_path());
-+#endif
-         search_paths.push_back(fs::current_path());
-     } else {
-         search_paths.push_back(fs::u8path(user_search_path));

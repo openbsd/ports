@@ -6,10 +6,10 @@ COMMENT =		diffusion model inference system
 
 GH_ACCOUNT =		leejet
 GH_PROJECT =		stable-diffusion.cpp
-GH_TAGNAME =		master-899-28b454b
+GH_TAGNAME =		master-990-530fa39
 PKGNAME =		stable-diffusion.cpp-0.0.${GH_TAGNAME:S/master-//:C/-.+//g}
 
-VERSION.ggml =		4bf5f6000653b7881d00963cd6ddb665ccd62a8d
+VERSION.ggml =		c1f80e507db1d0ce49f3bf7f81bc79246d7a2611
 DISTFILES.ggml =	${VERSION.ggml}.tar.gz
 SITES.ggml =		https://github.com/leejet/ggml/archive/
 
@@ -69,5 +69,6 @@ post-install:
 	rm -rf ${PREFIX}/lib/cmake
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/server/api.md ${DOCDIR}
 
 .include <bsd.port.mk>
