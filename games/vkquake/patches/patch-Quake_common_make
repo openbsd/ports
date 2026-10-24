@@ -43,7 +43,7 @@ Index: Quake/common.make
  #CFLAGS += $(call CHECK_GCC,-fno-asynchronous-unwind-tables,)
  CFLAGS += $(call CHECK_GCC,-fno-ident,)
  CMD_STRIP=$(STRIP) $(1)
-@@ -283,7 +280,7 @@ OBJS := strlcat.o \
+@@ -298,7 +295,7 @@ OBJS := strlcat.o \
  	$(SYSOBJ_SYS) $(SYSOBJ_MAIN)
  
  $(BINTOC_EXE): ../Shaders/bintoc.c
