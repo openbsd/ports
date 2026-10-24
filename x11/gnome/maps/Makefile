@@ -1,7 +1,7 @@
 COMMENT=		simple GNOME 3 maps application
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		50.5
+GNOME_VERSION=		51.1
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
 
@@ -11,7 +11,7 @@ HOMEPAGE=		https://apps.gnome.org/Maps/
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += cairo gio-2.0 glib-2.0 gobject-2.0 gtk-4 json-glib-1.0
-WANTLIB += m pango-1.0 pangocairo-1.0 rsvg-2 shumate-1.0 xml2
+WANTLIB += m pango-1.0 pangocairo-1.0 rsvg-2 shumate-1.0 sqlite3 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \

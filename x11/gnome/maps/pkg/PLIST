@@ -48,6 +48,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/copenhagen-m.svg
 share/gnome-maps/icons/hicolor/16x16/apps/cycling-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/dentist-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/doctor-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/document-save-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/dog-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/drinking-fountain-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/drinks-symbolic.svg
@@ -76,7 +77,6 @@ share/gnome-maps/icons/hicolor/16x16/apps/gb-national-rail.svg
 share/gnome-maps/icons/hicolor/16x16/apps/glasgow-s.svg
 share/gnome-maps/icons/hicolor/16x16/apps/golf-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/gondola-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/graveyard-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/headphones-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/helsinki-m.svg
 share/gnome-maps/icons/hicolor/16x16/apps/hockey-symbolic.svg
@@ -85,6 +85,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/horse-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/hospital-sign-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/hospital-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/icecream-cone-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/info-outline-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/italy-m.svg
 share/gnome-maps/icons/hicolor/16x16/apps/key2-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/kiyv-m.svg
@@ -117,7 +118,6 @@ share/gnome-maps/icons/hicolor/16x16/apps/navigate-north-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/newspaper-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/no-toilets-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/no-wheelchair-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/non-religious-cemetary-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/nyc-mta.svg
 share/gnome-maps/icons/hicolor/16x16/apps/open-book-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/oslo-t.svg
@@ -145,6 +145,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/santiago-metro.svg
 share/gnome-maps/icons/hicolor/16x16/apps/school-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/sentiment-satisfied-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/septa.svg
+share/gnome-maps/icons/hicolor/16x16/apps/settings-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/share-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/shop-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/shopping-cart-symbolic.svg
@@ -166,6 +167,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/theater-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/ticket-special-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/ticket-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/toilets-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/tomb-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/town-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/traffic-lights-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/train-symbolic.svg
@@ -177,6 +179,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/unstarred-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/user-trash-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/video-camera-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/walking-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/warning-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/weight2-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/wheelchair-limited-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/wheelchair-symbolic.svg
@@ -215,7 +218,6 @@ share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightright-symbolic.sv
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-u-turn-left-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-u-turn-right-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-mark-location.svg
-share/gnome-maps/maps-service.json
 share/gnome-maps/org.gnome.Maps
 share/gnome-maps/org.gnome.Maps.data.gresource
 share/gnome-maps/org.gnome.Maps.shields.gresource
@@ -270,6 +272,7 @@ share/locale/ms/LC_MESSAGES/gnome-maps.mo
 share/locale/nb/LC_MESSAGES/gnome-maps.mo
 share/locale/ne/LC_MESSAGES/gnome-maps.mo
 share/locale/nl/LC_MESSAGES/gnome-maps.mo
+share/locale/nn/LC_MESSAGES/gnome-maps.mo
 share/locale/oc/LC_MESSAGES/gnome-maps.mo
 share/locale/pa/LC_MESSAGES/gnome-maps.mo
 share/locale/pl/LC_MESSAGES/gnome-maps.mo
