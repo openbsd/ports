@@ -74106,7 +74106,6 @@ google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/${MODPY_P
 google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/${MODPY_PYCACHE}socks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/${MODPY_PYCACHE}socks.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/auth.py
-google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/cacerts.txt
 google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/certs.py
 google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/error.py
 google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/iri2uri.py
@@ -75689,8 +75688,6 @@ google-cloud-sdk/platform/gsutil/third_party/rsa/.travis.yml
 google-cloud-sdk/platform/gsutil/third_party/rsa/CHANGELOG.txt
 google-cloud-sdk/platform/gsutil/third_party/rsa/LICENSE
 google-cloud-sdk/platform/gsutil/third_party/rsa/MANIFEST.in
-google-cloud-sdk/platform/gsutil/third_party/rsa/Pipfile
-google-cloud-sdk/platform/gsutil/third_party/rsa/Pipfile.lock
 google-cloud-sdk/platform/gsutil/third_party/rsa/README.md
 google-cloud-sdk/platform/gsutil/third_party/rsa/${MODPY_PYCACHE}/
 google-cloud-sdk/platform/gsutil/third_party/rsa/${MODPY_PYCACHE}create_timing_table.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
