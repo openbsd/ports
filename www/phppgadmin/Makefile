@@ -1,11 +1,10 @@
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
-V=		7.14.7
+V=		7.14.8
 GH_ACCOUNT=	ReimuHakurei
 GH_PROJECT=	phpPgAdmin
 GH_TAGNAME=	v$V-mod
 PKGNAME=	phpPgAdmin-$V
-REVISION=	2
 
 CATEGORIES=	www databases
 
