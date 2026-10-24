@@ -1,6 +1,6 @@
 COMMENT=	process plaintext documentation into other formats
 
-MODPY_DISTV=	0.22.4
+MODPY_DISTV=	0.23
 DISTNAME=	docutils-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
