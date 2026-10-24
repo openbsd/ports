@@ -1,6 +1,6 @@
 COMMENT =	SDL3 image library
 
-V =		3.4.6
+V =		3.4.8
 DISTNAME =	SDL3_image-${V}
 PKGNAME =	${DISTNAME:L:S/_/-/g}
 
