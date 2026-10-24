@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		8
+REVISION-main=		9
 REVISION-extras=	0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -77,12 +77,10 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon \
 			x11/gnome/shell \
 			x11/gnome/shell-extensions \
+			x11/gnome/sushi \
 			x11/gnome/tecla  \
 			x11/gnome/tour \
 			x11/gnome/user-docs
-
-# XXX needs to be ported from evince to papers
-#RUN_DEPENDS-main +=	x11/gnome/sushi
 
 # XXX don't depend on gnome-initial-setup; it's in the CVS Attic for now.
 # Initial Setup is used to configure / create new users.
