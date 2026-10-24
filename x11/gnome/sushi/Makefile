@@ -1,29 +1,35 @@
-BROKEN=			https://gitlab.gnome.org/GNOME/sushi/-/merge_requests/43
-
 COMMENT=		quick previewer for Nautilus
 
 GNOME_PROJECT=		sushi
-GNOME_VERSION=		46.0
-REVISION=		2
+GNOME_VERSION=		51.2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += # XXX TODO when ported from evince to papers
+WANTLIB += X11 cairo freetype fribidi gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gtk-4 harfbuzz pango-1.0
+WANTLIB += pangocairo-1.0 webkitgtk-6.0
 
 MODULES=		devel/meson \
 			x11/gnome
 
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
-			x11/gnome/papers
+			www/webkitgtk4,webkitgtk60 \
+			x11/gtk+4
 
-BUILD_DEPENDS=		x11/gnome/gjs \
-			x11/gtksourceview4
+BUILD_DEPENDS=		devel/appstream \
+			x11/blueprint-compiler \
+			x11/gnome/gjs \
+			x11/gnome/libadwaita \
+			x11/gnome/papers \
+			x11/gtksourceview5
 
 RUN_DEPENDS=		x11/gnome/gjs \
-			x11/gtksourceview4
+			x11/gnome/libadwaita \
+			x11/gnome/papers \
+			x11/gtksourceview5
 
-# src/ui/main.js
+# src/core/main.js
 RUN_DEPENDS +=		devel/libsoup3
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
