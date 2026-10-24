@@ -1,8 +1,7 @@
 COMMENT=		remote desktop client for GNOME
 
 GNOME_PROJECT=		gnome-connections
-REVISION=		0
-GNOME_VERSION=		50.0
+GNOME_VERSION=		51.0
 
 CATEGORIES=		net
 
