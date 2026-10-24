@@ -3,9 +3,8 @@
 
 COMMENT =	HTTP/2-based RPC framework
 
-V =		1.84.0
+V =		1.84.1
 DISTNAME =	grpc-${V}
-REVISION =	0
 
 DIST_TUPLE +=	github grpc grpc v${V} .
 DIST_TUPLE +=	github grpc grpc-proto ec30f589e2519d595688b9a42f88a91bdd6b733f third_party/grpc-proto
@@ -18,11 +17,11 @@ SHARED_LIBS +=	grpc++_alts               2.0 # 0.0
 SHARED_LIBS +=	grpc++_error_details      0.0 # 0.0
 SHARED_LIBS +=	grpc++_reflection         4.0 # 0.0
 SHARED_LIBS +=	grpc++_unsecure           4.0 # 0.0
-SHARED_LIBS +=	grpc                      12.0 # 0.0
-SHARED_LIBS +=	grpc_authorization_provider 12.0 # 0.0
-SHARED_LIBS +=	grpc_plugin_support       6.0 # 0.0
-SHARED_LIBS +=	grpc_unsecure             12.0 # 0.0
-SHARED_LIBS +=	grpcpp_channelz           10.0 # 0.0
+SHARED_LIBS +=	grpc                      13.0 # 0.0
+SHARED_LIBS +=	grpc_authorization_provider 13.0 # 0.0
+SHARED_LIBS +=	grpc_plugin_support       7.0 # 0.0
+SHARED_LIBS +=	grpc_unsecure             13.0 # 0.0
+SHARED_LIBS +=	grpcpp_channelz           11.0 # 0.0
 SHARED_LIBS +=	upb_base_lib              0.0 # 0.0
 SHARED_LIBS +=	upb_json_lib              1.0 # 0.0
 SHARED_LIBS +=	upb_mem_lib               0.1 # 0.0
