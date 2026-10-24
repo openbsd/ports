@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/bin/wstunnel --no-color true"
+daemon="${TRUEPREFIX}/bin/wstunnel --no-color"
 daemon_user="_wstunnel"
 daemon_logger="daemon.info"
 daemon_flags="server wss://localhost:8080"
