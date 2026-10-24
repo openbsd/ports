@@ -1,7 +1,7 @@
 Index: thirdparty/compoundfilereader/compoundfilereader.h
 --- thirdparty/compoundfilereader/compoundfilereader.h.orig
 +++ thirdparty/compoundfilereader/compoundfilereader.h
-@@ -261,7 +261,7 @@ struct helper
+@@ -262,7 +262,7 @@ struct helper
      }
  };
  
@@ -10,16 +10,16 @@ Index: thirdparty/compoundfilereader/compoundfilereader.h
  typedef std::function<int(const COMPOUND_FILE_ENTRY*, const utf16string& dir, int level)>
      EnumFilesCallback;
  
-@@ -379,7 +379,7 @@ class CompoundFileReader (private)
+@@ -402,7 +402,7 @@ class CompoundFileReader (private)
              utf16string newDir = dir;
              if (dir.length() != 0)
                  newDir.append(1, '\n');
--            newDir.append(entry->name, entry->nameLen / 2);
+-            newDir.append(entry->name, entry->nameLen / 2 - 1);
 +            newDir.append(reinterpret_cast<const char16_t*>(entry->name), entry->nameLen / 2);
-             EnumNodes(GetEntry(entry->childID), currentLevel + 1, maxLevel, newDir, callback);
+             EnumNodes(child, currentLevel + 1, maxLevel, newDir, callback, visited);
          }
  
-@@ -610,4 +610,4 @@ class PropertySetStream (private)
+@@ -636,4 +636,4 @@ class PropertySetStream (private)
      const PROPERTY_SET_STREAM_HDR* m_hdr;
  };
  

@@ -1,7 +1,7 @@
 Index: pagelayout_editor/pl_editor_frame.cpp
 --- pagelayout_editor/pl_editor_frame.cpp.orig
 +++ pagelayout_editor/pl_editor_frame.cpp
-@@ -66,7 +66,7 @@
+@@ -67,7 +67,7 @@
  #include <wx/log.h>
  #include <kiplatform/ui.h>
  
@@ -10,7 +10,7 @@ Index: pagelayout_editor/pl_editor_frame.cpp
  #include <spacenav/spnav_2d_plugin.h>
  #else
  #include <navlib/nl_pl_editor_plugin.h>
-@@ -242,7 +242,7 @@ PL_EDITOR_FRAME::PL_EDITOR_FRAME( KIWAY* aKiway, wxWin
+@@ -243,7 +243,7 @@ PL_EDITOR_FRAME::PL_EDITOR_FRAME( KIWAY* aKiway, wxWin
      {
          if( !m_spaceMouse )
          {

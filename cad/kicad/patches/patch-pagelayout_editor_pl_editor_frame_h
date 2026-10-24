@@ -10,7 +10,7 @@ Index: pagelayout_editor/pl_editor_frame.h
  class SPNAV_2D_PLUGIN;
  #else
  class NL_PL_EDITOR_PLUGIN;
-@@ -276,7 +276,7 @@ class PL_EDITOR_FRAME : public EDA_DRAW_FRAME (private
+@@ -283,7 +283,7 @@ class PL_EDITOR_FRAME : public EDA_DRAW_FRAME (private
                                                // only on page 1, not on page 1
      VECTOR2I          m_grid_origin;
  

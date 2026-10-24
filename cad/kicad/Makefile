@@ -4,10 +4,9 @@ USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel
 
-V =			10.0.6
+V =			10.0.7
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
-REVISION =		0
 EPOCH =			0
 
 SHARED_LIBS +=  kicad_3dsg                2.0 # 2.0

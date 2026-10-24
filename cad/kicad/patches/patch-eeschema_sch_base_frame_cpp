@@ -1,7 +1,7 @@
 Index: eeschema/sch_base_frame.cpp
 --- eeschema/sch_base_frame.cpp.orig
 +++ eeschema/sch_base_frame.cpp
-@@ -72,7 +72,7 @@
+@@ -74,7 +74,7 @@
  #include <wx/msgdlg.h>
  #include <trace_helpers.h>
  
@@ -10,7 +10,7 @@ Index: eeschema/sch_base_frame.cpp
  #include <spacenav/spnav_2d_plugin.h>
  #else
  #include <navlib/nl_schematic_plugin.h>
-@@ -347,7 +347,7 @@ void SCH_BASE_FRAME::ActivateGalCanvas()
+@@ -349,7 +349,7 @@ void SCH_BASE_FRAME::ActivateGalCanvas()
      {
          if( !m_spaceMouse )
          {

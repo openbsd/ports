@@ -1,7 +1,7 @@
 Index: kicad/kicad_cli.cpp
 --- kicad/kicad_cli.cpp.orig
 +++ kicad/kicad_cli.cpp
-@@ -646,7 +646,7 @@ struct APP_KICAD_CLI : public wxAppConsole
+@@ -660,7 +660,7 @@ struct APP_KICAD_CLI : public wxAppConsole
          // of this hazard; kept consistent with the GUI apps for parity.
          int ret = wxAppConsole::OnExit();
  
