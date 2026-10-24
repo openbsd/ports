@@ -1,8 +1,7 @@
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	50.6
-REVISION=	0
+GNOME_VERSION=	51.1
 
 CATEGORIES=	www
 
@@ -16,8 +15,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += adwaita-1 archive c cairo gck-2 gcr-4 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmp gobject-2.0 gstreamer-1.0 gtk-4
 WANTLIB += hogweed intl javascriptcoregtk-6.0 json-glib-1.0 m
-WANTLIB += nettle pango-1.0 portal portal-gtk4 secret-1 soup-3.0
-WANTLIB += sqlite3 webkitgtk-6.0 xml2
+WANTLIB += nettle pango-1.0 portal portal-gtk4 pwquality secret-1
+WANTLIB += soup-3.0 sqlite3 webkitgtk-6.0 xml2
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas \
@@ -28,6 +27,7 @@ RUN_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	archivers/libarchive \
+		security/libpwquality \
 		sysutils/flatpak/libportal,-gtk4 \
 		www/webkitgtk4,webkitgtk60 \
 		x11/gnome/gcr4 \
