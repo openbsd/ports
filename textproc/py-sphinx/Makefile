@@ -1,6 +1,6 @@
 COMMENT=	Python documentation generator
 
-MODPY_DISTV=	9.1.0
+MODPY_DISTV=	9.2.0
 DISTNAME=	sphinx-${MODPY_DISTV}
 PKGNAME=	py-sphinx-${MODPY_DISTV}
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=	textproc/py-sphinxcontrib/applehelp \
 		textproc/py-sphinxcontrib/websupport \
 		www/py-jinja2 \
 		textproc/py-pygments \
-		textproc/py-docutils<0.23v0 \
+		textproc/py-docutils<0.24v0 \
 		textproc/py-snowballstemmer \
 		devel/py-babel \
 		textproc/py-alabaster \
