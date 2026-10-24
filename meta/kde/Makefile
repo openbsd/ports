@@ -161,7 +161,8 @@ RUN_DEPENDS-games = \
 	x11/kde-applications/kubrick \
 	x11/kde-applications/lskat \
 	x11/kde-applications/palapeli \
-	x11/kde-applications/picmi
+	x11/kde-applications/picmi \
+	x11/kde-applications/kdominate
 
 # XXX x11/kde-applications/kajongg
 
@@ -258,7 +259,8 @@ RUN_DEPENDS-utils = \
 	x11/kde-applications/markdownpart
 
 RUN_DEPENDS-utils += \
-	x11/yakuake
+	x11/yakuake \
+	x11/kde-applications/keepsecret
 
 KDE_SDK = \
 	x11/kde-applications/cervisia \

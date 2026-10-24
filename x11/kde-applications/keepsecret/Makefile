@@ -1,7 +1,6 @@
 COMMENT =	KDE password manager
 DISTNAME =	keepsecret-${VERSION}
 CATEGORIES =	x11 security
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/keepsecret/
 
@@ -27,17 +26,18 @@ RUN_DEPENDS =	devel/kf6/ktextwidgets \
 		graphics/kirigami-app-components \
 		x11/dbus,-suid
 
+# XXX
+BUILD_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kiconthemes \
+		devel/kf6/kirigami \
+		devel/kf6/kitemmodels
 
 LIB_DEPENDS =	devel/gettext \
-		devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
 		devel/kf6/ki18n \
-		devel/kf6/kiconthemes \
-		devel/kf6/kirigami \
-		devel/kf6/kitemmodels \
 		graphics/kirigami-app-components \
 		x11/gnome/libsecret \
 		x11/qt6/qtdeclarative \

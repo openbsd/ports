@@ -1,7 +1,6 @@
 COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU Imath-3_2 KF6Archive KF6Attica
 WANTLIB += KF6Bookmarks KF6Codecs KF6ColorScheme KF6Completion
@@ -76,6 +75,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		x11/qt6/qtsvg
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes \
+			-DBUILD_RUN_QMLLINT=OFF \
 			-DFETCH_OTIO=OFF
 
 TEST_IS_INTERACTIVE =	X11

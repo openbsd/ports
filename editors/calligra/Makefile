@@ -3,7 +3,6 @@ COMMENT =	KDE office suite
 HOMEPAGE =	https://www.calligra.org
 
 DISTNAME =	calligra-${MODKDE_GEAR_VERSION}
-REVISION =	0
 
 CATEGORIES =	editors
 
