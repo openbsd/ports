@@ -1,8 +1,7 @@
 COMMENT=		GNOME calendar
 
 GNOME_PROJECT=		gnome-calendar
-GNOME_VERSION=		50.0
-REVISION=		0
+GNOME_VERSION=		51.0
 
 HOMEPAGE=		https://apps.gnome.org/Calendar/
 
@@ -11,7 +10,8 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += adwaita-1 c ecal-2.0 edataserver-1.2 edataserverui4-1.0
 WANTLIB += fribidi geoclue-2 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += graphene-1.0 gtk-4 gweather-4 ical-glib intl m soup-3.0
+WANTLIB += graphene-1.0 gtk-4 gweather-4 ical-glib intl m pango-1.0
+WANTLIB += soup-3.0
 
 COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS=		c

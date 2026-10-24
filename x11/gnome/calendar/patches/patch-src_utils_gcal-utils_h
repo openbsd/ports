@@ -3,7 +3,7 @@ https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/763
 Index: src/utils/gcal-utils.h
 --- src/utils/gcal-utils.h.orig
 +++ src/utils/gcal-utils.h
-@@ -48,7 +48,9 @@ typedef void (*GcalAskRecurrenceCallback) (GcalEvent  
+@@ -51,7 +51,9 @@ typedef void (*GcalAskRecurrenceCallback) (GcalEvent  
                                             GcalRecurrenceModType  modtype,
                                             gpointer               user_data);
  
