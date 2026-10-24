@@ -1,7 +1,7 @@
 COMMENT=	virtual Python environment builder
 
 # check pyproject.toml versions of deps, they are frequently bumped
-MODPY_DISTV=	21.14.12
+MODPY_DISTV=	21.14.13
 DISTNAME=	virtualenv-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
