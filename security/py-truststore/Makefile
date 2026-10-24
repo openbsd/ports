@@ -1,6 +1,6 @@
 COMMENT =		verify certs using OS trust stores
 
-MODPY_DISTV =		0.10.4
+MODPY_DISTV =		0.10.5
 DISTNAME =		truststore-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
