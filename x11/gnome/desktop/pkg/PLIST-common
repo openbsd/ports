@@ -89,6 +89,13 @@ share/help/hu/gpl/
 share/help/hu/gpl/index.docbook
 share/help/hu/lgpl/
 share/help/hu/lgpl/index.docbook
+share/help/kk/
+share/help/kk/fdl/
+share/help/kk/fdl/index.docbook
+share/help/kk/gpl/
+share/help/kk/gpl/index.docbook
+share/help/kk/lgpl/
+share/help/kk/lgpl/index.docbook
 share/help/ko/
 share/help/ko/fdl/
 share/help/ko/fdl/index.docbook
@@ -130,6 +137,8 @@ share/help/sr/fdl/
 share/help/sr/fdl/index.docbook
 share/help/sr/gpl/
 share/help/sr/gpl/index.docbook
+share/help/sr/lgpl/
+share/help/sr/lgpl/index.docbook
 share/help/sr@latin/
 share/help/sr@latin/gpl/
 share/help/sr@latin/gpl/index.docbook
@@ -360,6 +369,9 @@ share/locale/ko/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/kw/
+share/locale/kw/LC_MESSAGES/
+share/locale/kw/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ky/
 share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/gnome-desktop-3.0.mo

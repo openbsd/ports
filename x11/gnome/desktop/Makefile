@@ -3,15 +3,16 @@ COMMENT-gtk4=		common API for various GNOME modules (GTK4)
 COMMENT-common=		common API for various GNOME modules (common files)
 
 GNOME_PROJECT=		gnome-desktop
-GNOME_VERSION=		44.5
+GNOME_VERSION=		51.0
 
 PKGNAME-gtk4=		gnome-desktop4-${GNOME_VERSION}
 PKGNAME-common=		gnome-desktop-common-${GNOME_VERSION}
 
 SHARED_LIBS += gnome-desktop-4           0.0 # 2.1.4
 SHARED_LIBS += gnome-bg-4                0.0 # 2.1.4
-SHARED_LIBS += gnome-rr-4                0.0 # 2.1.4
-SHARED_LIBS += gnome-desktop-3           2.3 # 20.0.0
+SHARED_LIBS += gnome-qr-4                0.0 # 0.0.1
+SHARED_LIBS += gnome-qr-gtk-4            0.0 # 0.0.1
+SHARED_LIBS += gnome-desktop-3           2.3 # 21.0.0
 
 CATEGORIES=		x11
 
@@ -32,7 +33,7 @@ WANTLIB-main += ${WANTLIB}
 WANTLIB-main += gdk-3 gtk-3
 
 WANTLIB-gtk4 += ${WANTLIB}
-WANTLIB-gtk4 += gtk-4
+WANTLIB-gtk4 += graphene-1.0 gtk-4
 
 WANTLIB-common=		# empty
 

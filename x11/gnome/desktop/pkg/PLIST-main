@@ -9,8 +9,6 @@ include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-version.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-idle-monitor.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-languages.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-pnp-ids.h
-include/gnome-desktop-3.0/libgnome-desktop/gnome-rr-config.h
-include/gnome-desktop-3.0/libgnome-desktop/gnome-rr.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-systemd.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-wall-clock.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-xkb-info.h
