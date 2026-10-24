@@ -1,3 +1,4 @@
+@pkgpath x11/kde-applications/libkexiv2
 include/KExiv2Qt6/
 include/KExiv2Qt6/KExiv2/
 include/KExiv2Qt6/KExiv2/KExiv2

@@ -2,6 +2,7 @@ COMMENT =	EXIV2 Library interface for KDE
 
 DISTNAME =	libkexiv2-${VERSION}
 PKGNAME =	kf6-libkexiv2-${VERSION}
+REVISION =	0
 
 CATEGORIES =	graphics devel
 
