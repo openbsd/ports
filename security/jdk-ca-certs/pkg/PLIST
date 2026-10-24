@@ -1,0 +1,3 @@
+share/examples/jdk-cacerts
+@mode 0444
+@sample ${SYSCONFDIR}/ssl/jdk-cacerts

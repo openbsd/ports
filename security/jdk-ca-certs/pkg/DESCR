@@ -1,0 +1,3 @@
+This package provides a common certificate authority certs file for the
+jdk's to use. It is created from a copy of
+/usr/src/lib/libcrypto/cert.pem.
