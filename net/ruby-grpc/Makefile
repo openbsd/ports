@@ -1,6 +1,6 @@
 COMMENT =	RPCs from Ruby using gRPC
 
-VERSION =	1.84.0
+VERSION =	1.84.1
 DISTNAME =	grpc-${VERSION}
 CATEGORIES =	net devel
 
