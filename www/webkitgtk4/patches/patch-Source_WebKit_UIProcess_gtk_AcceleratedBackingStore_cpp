@@ -50,7 +50,7 @@ Index: Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp
  
      RendererBufferFormat format;
      format.usage = RendererBufferFormat::Usage::Rendering;
-@@ -738,9 +744,12 @@ void AcceleratedBackingStore::didCreateDMABufBuffer(ui
+@@ -740,9 +746,12 @@ void AcceleratedBackingStore::didCreateDMABufBuffer(ui
  #endif
  
  #if GTK_CHECK_VERSION(4, 13, 4)
