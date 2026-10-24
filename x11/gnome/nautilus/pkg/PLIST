@@ -103,7 +103,6 @@ share/locale/li/LC_MESSAGES/nautilus.mo
 share/locale/ln/
 share/locale/ln/LC_MESSAGES/
 share/locale/ln/LC_MESSAGES/nautilus.mo
-share/locale/lo/LC_MESSAGES/nautilus.mo
 share/locale/lt/LC_MESSAGES/nautilus.mo
 share/locale/lv/LC_MESSAGES/nautilus.mo
 share/locale/mai/LC_MESSAGES/nautilus.mo
@@ -132,6 +131,7 @@ share/locale/pt_BR/LC_MESSAGES/nautilus.mo
 share/locale/ro/LC_MESSAGES/nautilus.mo
 share/locale/ru/LC_MESSAGES/nautilus.mo
 share/locale/rw/LC_MESSAGES/nautilus.mo
+share/locale/sat/LC_MESSAGES/nautilus.mo
 share/locale/si/LC_MESSAGES/nautilus.mo
 share/locale/sk/LC_MESSAGES/nautilus.mo
 share/locale/sl/LC_MESSAGES/nautilus.mo

@@ -1,7 +1,7 @@
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		50.4
+GNOME_VERSION=		51.1
 
 SHARED_LIBS += nautilus-extension        3.0 # 4
 
@@ -56,8 +56,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_ARGS=		-Dselinux=false \
-			-Dpackagekit=false
+CONFIGURE_ARGS=		-Dselinux=disabled
 
 # XXX test/automated/displayless/meson.build:45:2:
 # ERROR: List item must be one of <class 'str'>, not <class 'list'>
