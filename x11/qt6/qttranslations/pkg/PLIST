@@ -103,6 +103,7 @@ share/qt6/translations/qt_help_hu.qm
 share/qt6/translations/qt_help_it.qm
 share/qt6/translations/qt_help_ja.qm
 share/qt6/translations/qt_help_ka.qm
+share/qt6/translations/qt_help_kk.qm
 share/qt6/translations/qt_help_ko.qm
 share/qt6/translations/qt_help_nl.qm
 share/qt6/translations/qt_help_nn.qm
@@ -121,6 +122,7 @@ share/qt6/translations/qt_hu.qm
 share/qt6/translations/qt_it.qm
 share/qt6/translations/qt_ja.qm
 share/qt6/translations/qt_ka.qm
+share/qt6/translations/qt_kk.qm
 share/qt6/translations/qt_ko.qm
 share/qt6/translations/qt_lg.qm
 share/qt6/translations/qt_lt.qm
@@ -156,6 +158,7 @@ share/qt6/translations/qtbase_hu.qm
 share/qt6/translations/qtbase_it.qm
 share/qt6/translations/qtbase_ja.qm
 share/qt6/translations/qtbase_ka.qm
+share/qt6/translations/qtbase_kk.qm
 share/qt6/translations/qtbase_ko.qm
 share/qt6/translations/qtbase_lg.qm
 share/qt6/translations/qtbase_lv.qm
@@ -179,6 +182,7 @@ share/qt6/translations/qtconnectivity_es.qm
 share/qt6/translations/qtconnectivity_hr.qm
 share/qt6/translations/qtconnectivity_hu.qm
 share/qt6/translations/qtconnectivity_ka.qm
+share/qt6/translations/qtconnectivity_kk.qm
 share/qt6/translations/qtconnectivity_ko.qm
 share/qt6/translations/qtconnectivity_nl.qm
 share/qt6/translations/qtconnectivity_pl.qm
@@ -202,6 +206,7 @@ share/qt6/translations/qtdeclarative_hr.qm
 share/qt6/translations/qtdeclarative_hu.qm
 share/qt6/translations/qtdeclarative_ja.qm
 share/qt6/translations/qtdeclarative_ka.qm
+share/qt6/translations/qtdeclarative_kk.qm
 share/qt6/translations/qtdeclarative_ko.qm
 share/qt6/translations/qtdeclarative_lv.qm
 share/qt6/translations/qtdeclarative_nl.qm
@@ -226,6 +231,7 @@ share/qt6/translations/qtlocation_fr.qm
 share/qt6/translations/qtlocation_hr.qm
 share/qt6/translations/qtlocation_hu.qm
 share/qt6/translations/qtlocation_ka.qm
+share/qt6/translations/qtlocation_kk.qm
 share/qt6/translations/qtlocation_ko.qm
 share/qt6/translations/qtlocation_nl.qm
 share/qt6/translations/qtlocation_pl.qm
@@ -251,6 +257,7 @@ share/qt6/translations/qtmultimedia_hu.qm
 share/qt6/translations/qtmultimedia_it.qm
 share/qt6/translations/qtmultimedia_ja.qm
 share/qt6/translations/qtmultimedia_ka.qm
+share/qt6/translations/qtmultimedia_kk.qm
 share/qt6/translations/qtmultimedia_ko.qm
 share/qt6/translations/qtmultimedia_nl.qm
 share/qt6/translations/qtmultimedia_nn.qm
@@ -268,6 +275,7 @@ share/qt6/translations/qtserialport_en.qm
 share/qt6/translations/qtserialport_es.qm
 share/qt6/translations/qtserialport_ja.qm
 share/qt6/translations/qtserialport_ka.qm
+share/qt6/translations/qtserialport_kk.qm
 share/qt6/translations/qtserialport_ko.qm
 share/qt6/translations/qtserialport_pl.qm
 share/qt6/translations/qtserialport_pt_BR.qm
@@ -281,6 +289,7 @@ share/qt6/translations/qtwebengine_de.qm
 share/qt6/translations/qtwebengine_en.qm
 share/qt6/translations/qtwebengine_es.qm
 share/qt6/translations/qtwebengine_ka.qm
+share/qt6/translations/qtwebengine_kk.qm
 share/qt6/translations/qtwebengine_ko.qm
 share/qt6/translations/qtwebengine_lg.qm
 share/qt6/translations/qtwebengine_pl.qm
@@ -297,6 +306,7 @@ share/qt6/translations/qtwebsockets_es.qm
 share/qt6/translations/qtwebsockets_fr.qm
 share/qt6/translations/qtwebsockets_ja.qm
 share/qt6/translations/qtwebsockets_ka.qm
+share/qt6/translations/qtwebsockets_kk.qm
 share/qt6/translations/qtwebsockets_ko.qm
 share/qt6/translations/qtwebsockets_pl.qm
 share/qt6/translations/qtwebsockets_pt_BR.qm

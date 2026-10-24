@@ -48,6 +48,7 @@ include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dscenerootnode_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dshaderutils_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dskeleton_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dskin_p.h
+include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dskymaterial_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dspecularglossymaterial_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dspotlight_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dtexture_p.h
@@ -147,6 +148,7 @@ include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/lookatnode_
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/planegeometry_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/proceduralmesh_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/proceduralskytexturedata_p.h
+include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/qquick3dquadtextureprovider_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/qquick3drenderoutputprovider_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/qquick3dsimplequadrenderpass_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/qquick3dtexturedatafrontend_p.h
@@ -282,6 +284,8 @@ include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrendershadowmap_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderskeleton_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderskin_p.h
+include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderskymaterial_p.h
+include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderskymaterialmanager_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrendertexturedata_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderuserpass_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrhicontext_p.h

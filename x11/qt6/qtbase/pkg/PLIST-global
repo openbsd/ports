@@ -210,6 +210,7 @@ share/qt6/wayland/protocols/idle-inhibit/idle-inhibit-unstable-v1.xml
 share/qt6/wayland/protocols/linux-dmabuf/
 share/qt6/wayland/protocols/linux-dmabuf/REUSE.toml
 share/qt6/wayland/protocols/linux-dmabuf/linux-dmabuf-unstable-v1.xml
+share/qt6/wayland/protocols/linux-dmabuf/linux-dmabuf-v1.xml
 share/qt6/wayland/protocols/linux-dmabuf/qt_attribution.json
 share/qt6/wayland/protocols/pointer-gestures/
 share/qt6/wayland/protocols/pointer-gestures/REUSE.toml
@@ -230,7 +231,7 @@ share/qt6/wayland/protocols/scaler/scaler.xml
 share/qt6/wayland/protocols/session-management/
 share/qt6/wayland/protocols/session-management/REUSE.toml
 share/qt6/wayland/protocols/session-management/qt_attribution.json
-share/qt6/wayland/protocols/session-management/xx-session-management-v1.xml
+share/qt6/wayland/protocols/session-management/xdg-session-management-v1.xml
 share/qt6/wayland/protocols/tablet/
 share/qt6/wayland/protocols/tablet/REUSE.toml
 share/qt6/wayland/protocols/tablet/qt_attribution.json

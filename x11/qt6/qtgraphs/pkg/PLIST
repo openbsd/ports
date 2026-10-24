@@ -51,6 +51,7 @@ include/X11/qt6/QtGraphs/${VERSION}/QtGraphs/private/qitemmodelscatterdataproxy_
 include/X11/qt6/QtGraphs/${VERSION}/QtGraphs/private/qitemmodelsurfacedataproxy_p.h
 include/X11/qt6/QtGraphs/${VERSION}/QtGraphs/private/qlineseries_p.h
 include/X11/qt6/QtGraphs/${VERSION}/QtGraphs/private/qlogvalue3daxisformatter_p.h
+include/X11/qt6/QtGraphs/${VERSION}/QtGraphs/private/qlogvalueaxis_p.h
 include/X11/qt6/QtGraphs/${VERSION}/QtGraphs/private/qpiemodelmapper_p.h
 include/X11/qt6/QtGraphs/${VERSION}/QtGraphs/private/qpieseries_p.h
 include/X11/qt6/QtGraphs/${VERSION}/QtGraphs/private/qpieslice_p.h
@@ -118,6 +119,7 @@ include/X11/qt6/QtGraphs/QItemModelSurfaceDataProxy
 include/X11/qt6/QtGraphs/QLegendData
 include/X11/qt6/QtGraphs/QLineSeries
 include/X11/qt6/QtGraphs/QLogValue3DAxisFormatter
+include/X11/qt6/QtGraphs/QLogValueAxis
 include/X11/qt6/QtGraphs/QPieModelMapper
 include/X11/qt6/QtGraphs/QPieSeries
 include/X11/qt6/QtGraphs/QPieSlice
@@ -167,6 +169,7 @@ include/X11/qt6/QtGraphs/qitemmodelscatterdataproxy.h
 include/X11/qt6/QtGraphs/qitemmodelsurfacedataproxy.h
 include/X11/qt6/QtGraphs/qlineseries.h
 include/X11/qt6/QtGraphs/qlogvalue3daxisformatter.h
+include/X11/qt6/QtGraphs/qlogvalueaxis.h
 include/X11/qt6/QtGraphs/qpiemodelmapper.h
 include/X11/qt6/QtGraphs/qpieseries.h
 include/X11/qt6/QtGraphs/qpieslice.h
@@ -188,6 +191,12 @@ include/X11/qt6/QtGraphs/qvalue3daxisformatter.h
 include/X11/qt6/QtGraphs/qvalueaxis.h
 include/X11/qt6/QtGraphs/qxymodelmapper.h
 include/X11/qt6/QtGraphs/qxyseries.h
+include/X11/qt6/QtGraphs2DImpl/
+include/X11/qt6/QtGraphs2DImpl/QtGraphs2DImpl
+include/X11/qt6/QtGraphs2DImpl/QtGraphs2DImplDepends
+include/X11/qt6/QtGraphs2DImpl/QtGraphs2DImplVersion
+include/X11/qt6/QtGraphs2DImpl/qtgraphs2dimplexports.h
+include/X11/qt6/QtGraphs2DImpl/qtgraphs2dimplversion.h
 include/X11/qt6/QtGraphsWidgets/
 include/X11/qt6/QtGraphsWidgets/${VERSION}/
 include/X11/qt6/QtGraphsWidgets/${VERSION}/QtGraphsWidgets/
@@ -222,6 +231,17 @@ lib/cmake/Qt6Graphs/Qt6GraphsTargets.cmake
 lib/cmake/Qt6Graphs/Qt6GraphsTargetsPrecheck.cmake
 lib/cmake/Qt6Graphs/Qt6GraphsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Graphs/Qt6GraphsVersionlessTargets.cmake
+lib/cmake/Qt6Graphs2DImpl/
+lib/cmake/Qt6Graphs2DImpl/Qt6Graphs2DImplAdditionalTargetInfo.cmake
+lib/cmake/Qt6Graphs2DImpl/Qt6Graphs2DImplConfig.cmake
+lib/cmake/Qt6Graphs2DImpl/Qt6Graphs2DImplConfigVersion.cmake
+lib/cmake/Qt6Graphs2DImpl/Qt6Graphs2DImplConfigVersionImpl.cmake
+lib/cmake/Qt6Graphs2DImpl/Qt6Graphs2DImplDependencies.cmake
+lib/cmake/Qt6Graphs2DImpl/Qt6Graphs2DImplTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Graphs2DImpl/Qt6Graphs2DImplTargets.cmake
+lib/cmake/Qt6Graphs2DImpl/Qt6Graphs2DImplTargetsPrecheck.cmake
+lib/cmake/Qt6Graphs2DImpl/Qt6Graphs2DImplVersionlessAliasTargets.cmake
+lib/cmake/Qt6Graphs2DImpl/Qt6Graphs2DImplVersionlessTargets.cmake
 lib/cmake/Qt6GraphsPrivate/
 lib/cmake/Qt6GraphsPrivate/Qt6GraphsPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6GraphsPrivate/Qt6GraphsPrivateConfig.cmake
@@ -260,19 +280,32 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargetsPrecheck.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphs2dimplpluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphs2dimplpluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphs2dimplpluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphs2dimplpluginConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphs2dimplpluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphs2dimplpluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphs2dimplpluginTargetsPrecheck.cmake
 lib/libQt6Graphs.prl
 @lib lib/libQt6Graphs.so.${LIBQt6Graphs_VERSION}
+lib/libQt6Graphs2DImpl.prl
+@lib lib/libQt6Graphs2DImpl.so.${LIBQt6Graphs2DImpl_VERSION}
 lib/libQt6GraphsWidgets.prl
 @lib lib/libQt6GraphsWidgets.so.${LIBQt6GraphsWidgets_VERSION}
 lib/pkgconfig/Qt6Graphs.pc
+lib/pkgconfig/Qt6Graphs2DImpl.pc
 lib/pkgconfig/Qt6GraphsWidgets.pc
+lib/qt6/metatypes/qt6graphs2dimpl_metatypes.json
 lib/qt6/metatypes/qt6graphs_metatypes.json
 lib/qt6/metatypes/qt6graphswidgets_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_graphs.pri
+lib/qt6/mkspecs/modules/qt_lib_graphs2dimpl.pri
 lib/qt6/mkspecs/modules/qt_lib_graphs_private.pri
 lib/qt6/mkspecs/modules/qt_lib_graphswidgets.pri
 lib/qt6/mkspecs/modules/qt_lib_graphswidgets_private.pri
 lib/qt6/modules/Graphs.json
+lib/qt6/modules/Graphs2DImpl.json
 lib/qt6/modules/GraphsWidgets.json
 lib/qt6/qml/QtGraphs/
 lib/qt6/qml/QtGraphs/Graphs.qmltypes
@@ -316,3 +349,10 @@ lib/qt6/qml/QtGraphs/designer/qtgraphs.metainfo
 lib/qt6/qml/QtGraphs/designer/qtgraphs2d.metainfo
 @so lib/qt6/qml/QtGraphs/libgraphsplugin.so
 lib/qt6/qml/QtGraphs/qmldir
+lib/qt6/qml/QtGraphs2D/
+lib/qt6/qml/QtGraphs2D/impl/
+lib/qt6/qml/QtGraphs2D/impl/Graphs2DImpl.qmltypes
+lib/qt6/qml/QtGraphs2D/impl/PointMarker.qml
+lib/qt6/qml/QtGraphs2D/impl/ZoomAreaDelegate.qml
+@so lib/qt6/qml/QtGraphs2D/impl/libqtgraphs2dimplplugin.so
+lib/qt6/qml/QtGraphs2D/impl/qmldir

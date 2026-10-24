@@ -1,0 +1,12 @@
+Index: cmake/FindVAAPI.cmake
+--- cmake/FindVAAPI.cmake.orig
++++ cmake/FindVAAPI.cmake
+@@ -31,7 +31,7 @@ function(find_component component prefix header librar
+             endif()
+ 
+             foreach (lib_path ${PC_VAAPI_${upper}_LINK_LIBRARIES})
+-                get_filename_component(lib_name "${lib_path}" NAME_WLE)
++                get_filename_component(lib_name "${lib_path}" NAME_WE)
+                 if (${lib_name} STREQUAL ${prefix})
+                     qt_internal_multimedia_set_va_outputs(${component}
+                         "${PC_VAAPI_${upper}_INCLUDEDIR}" "${lib_path}")

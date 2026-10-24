@@ -43,6 +43,8 @@ include/PySide6/QtHelp/
 include/PySide6/QtHelp/pyside6_qthelp_python.h
 include/PySide6/QtHttpServer/
 include/PySide6/QtHttpServer/pyside6_qthttpserver_python.h
+include/PySide6/QtLabsStyleKit/
+include/PySide6/QtLabsStyleKit/pyside6_qtlabsstylekit_python.h
 include/PySide6/QtLocation/
 include/PySide6/QtLocation/pyside6_qtlocation_python.h
 include/PySide6/QtMultimedia/
@@ -125,19 +127,24 @@ include/PySide6/class_property.h
 include/PySide6/dynamicqmetaobject.h
 include/PySide6/dynamicslot_p.h
 include/PySide6/feature_select.h
+include/PySide6/pyobjectwrapper.h
 include/PySide6/pyside.h
 include/PySide6/pyside6_global.h
 include/PySide6/pyside_numpy.h
 include/PySide6/pyside_p.h
+include/PySide6/pysideautoproperties.h
 include/PySide6/pysidecapsulemethod_p.h
+include/PySide6/pysidechange.h
 include/PySide6/pysideclassdecorator_p.h
 include/PySide6/pysideclassinfo.h
 include/PySide6/pysideclassinfo_p.h
 include/PySide6/pysidecleanup.h
+include/PySide6/pysidecomputed_p.h
 include/PySide6/pysidedynamicclass_p.h
 include/PySide6/pysidedynamiccommon_p.h
 include/PySide6/pysidedynamicenum_p.h
 include/PySide6/pysidedynamicpod_p.h
+include/PySide6/pysideeffect_p.h
 include/PySide6/pysideglobals_p.h
 include/PySide6/pysideinit.h
 include/PySide6/pysidelogging_p.h
@@ -154,6 +161,7 @@ include/PySide6/pysideqhash.h
 include/PySide6/pysideqml.h
 include/PySide6/pysideqmlattached.h
 include/PySide6/pysideqmlattached_p.h
+include/PySide6/pysideqmlcomponent.h
 include/PySide6/pysideqmlextended_p.h
 include/PySide6/pysideqmlforeign_p.h
 include/PySide6/pysideqmllistproperty_p.h
@@ -175,9 +183,11 @@ include/PySide6/pysideslot_p.h
 include/PySide6/pysidestaticstrings.h
 include/PySide6/pysideutils.h
 include/PySide6/pysidevariantutils.h
+include/PySide6/pysidewatch_p.h
 include/PySide6/pysideweakref.h
 include/PySide6/qobjectconnect.h
 include/PySide6/signalmanager.h
+include/PySide6/signalmanager_p.h
 lib/cmake/PySide6/
 lib/cmake/PySide6/PySide6Config${MODPY_ABI3SO}.cmake
 lib/cmake/PySide6/PySide6Config.cmake
@@ -239,6 +249,8 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/QtGui.pyi
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtHelp.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtHttpServer${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtHttpServer.pyi
+@so lib/python${MODPY_VERSION}/site-packages/PySide6/QtLabsStyleKit${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PySide6/QtLabsStyleKit.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtLocation${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtLocation.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtMultimedia${MODPY_ABI3SO}.so
@@ -265,6 +277,8 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/QtPositioning.pyi
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtPrintSupport.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtQml${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtQml.pyi
+@so lib/python${MODPY_VERSION}/site-packages/PySide6/QtQmlFeatures${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PySide6/QtQmlFeatures.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtQuick${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtQuick.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtQuick3D${MODPY_ABI3SO}.so
@@ -332,12 +346,18 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/support/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}auto_property_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}auto_property_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}deprecated.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}deprecated.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}generate_pyi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}generate_pyi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}qml_component_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}qml_component_helper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PySide6/support/auto_property_helper.py
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/deprecated.py
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/generate_pyi.py
+lib/python${MODPY_VERSION}/site-packages/PySide6/support/qml_component_helper.py
 @so lib/qt6/plugins/designer/libPySidePlugin.so
 share/PySide6/
 share/PySide6/doc/
@@ -414,6 +434,7 @@ share/PySide6/typesystems/typesystem_gui_win.xml
 share/PySide6/typesystems/typesystem_gui_x11.xml
 share/PySide6/typesystems/typesystem_help.xml
 share/PySide6/typesystems/typesystem_httpserver.xml
+share/PySide6/typesystems/typesystem_labsstylekit.xml
 share/PySide6/typesystems/typesystem_location.xml
 share/PySide6/typesystems/typesystem_multimedia.xml
 share/PySide6/typesystems/typesystem_multimediawidgets.xml

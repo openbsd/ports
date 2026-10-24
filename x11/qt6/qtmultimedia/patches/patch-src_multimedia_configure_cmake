@@ -1,0 +1,12 @@
+Index: src/multimedia/configure.cmake
+--- src/multimedia/configure.cmake.orig
++++ src/multimedia/configure.cmake
+@@ -353,7 +353,7 @@ qt_configure_add_report_entry(
+ qt_configure_add_report_entry(
+     TYPE WARNING
+     MESSAGE "No media backend found"
+-    CONDITION ((LINUX AND NOT (QT_FEATURE_gstreamer OR QT_FEATURE_ffmpeg)) OR
++    CONDITION ((UNIX AND NOT (QT_FEATURE_gstreamer OR QT_FEATURE_ffmpeg)) OR
+                (ANDROID AND NOT (QT_FEATURE_native_android_backend OR QT_FEATURE_ffmpeg)) OR
+                (WIN32 AND NOT (QT_FEATURE_native_windows_backend OR QT_FEATURE_ffmpeg)) OR
+                (APPLE AND NOT (QT_FEATURE_native_darwin_backend OR QT_FEATURE_ffmpeg)) OR

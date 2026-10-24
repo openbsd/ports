@@ -1,0 +1,12 @@
+Index: sources/shiboken6/libshiboken/helper.cpp
+--- sources/shiboken6/libshiboken/helper.cpp.orig
++++ sources/shiboken6/libshiboken/helper.cpp
+@@ -609,6 +609,8 @@ ThreadId currentThreadId()
+     return GetCurrentThreadId();
+ #elif defined(__APPLE_CC__)
+     return reinterpret_cast<ThreadId>(pthread_self());
++#elif defined(__OpenBSD__)
++    return reinterpret_cast<ThreadId>(pthread_self());
+ #else
+     return pthread_self();
+ #endif

@@ -1,7 +1,7 @@
 COMMENT =		Python binding generator for C++ libraries
 PKGNAME =		shiboken6-${VERSION}
 
-SHARED_LIBS +=		shiboken6.abi3	2.0 # 0.0
+SHARED_LIBS +=		shiboken6.abi3	2.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} m
 WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
@@ -13,7 +13,6 @@ MODCLANG_VERSION =	22
 
 BUILD_DEPENDS =		x11/qt6/qttools \
 			math/py-numpy \
-			textproc/py-sphinx \
 			x11/qt6/pyside6/shiboken_generator
 
 RUN_DEPENDS =		math/py-numpy \

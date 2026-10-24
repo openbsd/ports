@@ -4,7 +4,6 @@ COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
-REVISION-main =		1
 
 PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
 
@@ -17,23 +16,23 @@ PKG_ARCH-global =	*
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt6Concurrent                0.1 # 6.7
-SHARED_LIBS +=  Qt6Core                      9.0 # 6.7
+SHARED_LIBS +=  Qt6Core                      10.0 # 6.7
 SHARED_LIBS +=  Qt6DBus                      3.1 # 6.7
-SHARED_LIBS +=  Qt6Gui                       11.0 # 6.7
-SHARED_LIBS +=  Qt6Network                   7.0 # 6.7
+SHARED_LIBS +=  Qt6Gui                       12.0 # 6.7
+SHARED_LIBS +=  Qt6Network                   8.0 # 6.7
 SHARED_LIBS +=  Qt6OpenGL                    3.0 # 6.7
 SHARED_LIBS +=  Qt6PrintSupport              1.1 # 6.7
 SHARED_LIBS +=  Qt6Sql                       3.1 # 6.7
-SHARED_LIBS +=  Qt6Test                      5.2 # 6.7
-SHARED_LIBS +=  Qt6Widgets                   7.0 # 6.7
+SHARED_LIBS +=  Qt6Test                      5.3 # 6.7
+SHARED_LIBS +=  Qt6Widgets                   8.0 # 6.7
 SHARED_LIBS +=  Qt6Xml                       1.0 # 6.7
 SHARED_LIBS +=  Qt6EglFSDeviceIntegration    2.0 # 6.7
-SHARED_LIBS +=  Qt6EglFsKmsSupport           1.1 # 6.7
+SHARED_LIBS +=  Qt6EglFsKmsSupport           2.0 # 6.7
 SHARED_LIBS +=  Qt6XcbQpa                    5.0 # 6.7
 SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        1.0 # 6.7
 SHARED_LIBS +=  Qt6OpenGLWidgets             1.0 # 6.7
-SHARED_LIBS +=  Qt6WaylandClient             10.1 # 6.7
-SHARED_LIBS +=  Qt6WlShellIntegration        4.2 # 6.7
+SHARED_LIBS +=  Qt6WaylandClient             11.0 # 6.7
+SHARED_LIBS +=  Qt6WlShellIntegration        5.0 # 6.7
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb atk-1.0
 WANTLIB-main += b2 brotlidec c cairo cairo-gobject crypto cups dbus-1

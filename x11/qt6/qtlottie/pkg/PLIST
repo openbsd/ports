@@ -14,11 +14,14 @@ include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottiefilleffect_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottieflatlayers_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottiefreeformshape_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottiegfill_p.h
+include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottiegradientholder_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottiegroup_p.h
+include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottiegstroke_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottieimage_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottielayer_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottiepolystar_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottieprecomplayer_p.h
+include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottieprecomposition_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottieproperty_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottierasterrenderer_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottierect_p.h
@@ -32,7 +35,9 @@ include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottieshapelayer_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottieshapetransform_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottiespatialproperty_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottiestroke_p.h
+include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottietextlayer_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottietrimpath_p.h
+include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qlottievectorimagecontroller_p.h
 include/X11/qt6/QtLottie/${VERSION}/QtLottie/private/qtlottie-config_p.h
 include/X11/qt6/QtLottie/QtLottie
 include/X11/qt6/QtLottie/QtLottieDepends
@@ -40,16 +45,6 @@ include/X11/qt6/QtLottie/QtLottieVersion
 include/X11/qt6/QtLottie/qtlottie-config.h
 include/X11/qt6/QtLottie/qtlottieexports.h
 include/X11/qt6/QtLottie/qtlottieversion.h
-include/X11/qt6/QtLottieVectorImageGenerator/
-include/X11/qt6/QtLottieVectorImageGenerator/${VERSION}/
-include/X11/qt6/QtLottieVectorImageGenerator/${VERSION}/QtLottieVectorImageGenerator/
-include/X11/qt6/QtLottieVectorImageGenerator/${VERSION}/QtLottieVectorImageGenerator/private/
-include/X11/qt6/QtLottieVectorImageGenerator/${VERSION}/QtLottieVectorImageGenerator/private/qlottievisitor_p.h
-include/X11/qt6/QtLottieVectorImageGenerator/QtLottieVectorImageGenerator
-include/X11/qt6/QtLottieVectorImageGenerator/QtLottieVectorImageGeneratorDepends
-include/X11/qt6/QtLottieVectorImageGenerator/QtLottieVectorImageGeneratorVersion
-include/X11/qt6/QtLottieVectorImageGenerator/qtlottievectorimagegeneratorexports.h
-include/X11/qt6/QtLottieVectorImageGenerator/qtlottievectorimagegeneratorversion.h
 include/X11/qt6/QtLottieVectorImageHelpers/
 include/X11/qt6/QtLottieVectorImageHelpers/${VERSION}/
 include/X11/qt6/QtLottieVectorImageHelpers/${VERSION}/QtLottieVectorImageHelpers/
@@ -82,28 +77,6 @@ lib/cmake/Qt6LottiePrivate/Qt6LottiePrivateTargets.cmake
 lib/cmake/Qt6LottiePrivate/Qt6LottiePrivateTargetsPrecheck.cmake
 lib/cmake/Qt6LottiePrivate/Qt6LottiePrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6LottiePrivate/Qt6LottiePrivateVersionlessTargets.cmake
-lib/cmake/Qt6LottieTools/
-lib/cmake/Qt6LottieTools/Qt6LottieToQmlMacros.cmake
-lib/cmake/Qt6LottieTools/Qt6LottieToolsAdditionalTargetInfo.cmake
-lib/cmake/Qt6LottieTools/Qt6LottieToolsConfig.cmake
-lib/cmake/Qt6LottieTools/Qt6LottieToolsConfigVersion.cmake
-lib/cmake/Qt6LottieTools/Qt6LottieToolsConfigVersionImpl.cmake
-lib/cmake/Qt6LottieTools/Qt6LottieToolsDependencies.cmake
-lib/cmake/Qt6LottieTools/Qt6LottieToolsTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6LottieTools/Qt6LottieToolsTargets.cmake
-lib/cmake/Qt6LottieTools/Qt6LottieToolsTargetsPrecheck.cmake
-lib/cmake/Qt6LottieTools/Qt6LottieToolsVersionlessTargets.cmake
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/Qt6LottieVectorImageGeneratorPrivateAdditionalTargetInfo.cmake
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/Qt6LottieVectorImageGeneratorPrivateConfig.cmake
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/Qt6LottieVectorImageGeneratorPrivateConfigVersion.cmake
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/Qt6LottieVectorImageGeneratorPrivateConfigVersionImpl.cmake
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/Qt6LottieVectorImageGeneratorPrivateDependencies.cmake
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/Qt6LottieVectorImageGeneratorPrivateTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/Qt6LottieVectorImageGeneratorPrivateTargets.cmake
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/Qt6LottieVectorImageGeneratorPrivateTargetsPrecheck.cmake
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/Qt6LottieVectorImageGeneratorPrivateVersionlessAliasTargets.cmake
-lib/cmake/Qt6LottieVectorImageGeneratorPrivate/Qt6LottieVectorImageGeneratorPrivateVersionlessTargets.cmake
 lib/cmake/Qt6LottieVectorImageHelpers/
 lib/cmake/Qt6LottieVectorImageHelpers/Qt6LottieVectorImageHelpersAdditionalTargetInfo.cmake
 lib/cmake/Qt6LottieVectorImageHelpers/Qt6LottieVectorImageHelpersConfig.cmake
@@ -139,35 +112,20 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6LottiepluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6LottiepluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6LottiepluginTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6LottiepluginTargetsPrecheck.cmake
-lib/cmake/Qt6Quick/Qt6QLottieVectorImagePluginAdditionalTargetInfo.cmake
-lib/cmake/Qt6Quick/Qt6QLottieVectorImagePluginConfig.cmake
-lib/cmake/Qt6Quick/Qt6QLottieVectorImagePluginConfigVersion.cmake
-lib/cmake/Qt6Quick/Qt6QLottieVectorImagePluginConfigVersionImpl.cmake
-lib/cmake/Qt6Quick/Qt6QLottieVectorImagePluginTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6Quick/Qt6QLottieVectorImagePluginTargets.cmake
-lib/cmake/Qt6Quick/Qt6QLottieVectorImagePluginTargetsPrecheck.cmake
 lib/libQt6Lottie.prl
 @lib lib/libQt6Lottie.so.${LIBQt6Lottie_VERSION}
-lib/libQt6LottieVectorImageGenerator.prl
-@lib lib/libQt6LottieVectorImageGenerator.so.${LIBQt6LottieVectorImageGenerator_VERSION}
 lib/libQt6LottieVectorImageHelpers.prl
 @lib lib/libQt6LottieVectorImageHelpers.so.${LIBQt6LottieVectorImageHelpers_VERSION}
 lib/pkgconfig/Qt6Lottie.pc
 lib/pkgconfig/Qt6LottieVectorImageHelpers.pc
-@bin lib/qt6/bin/lottietoqml
 lib/qt6/metatypes/qt6lottie_metatypes.json
-lib/qt6/metatypes/qt6lottievectorimagegeneratorprivate_metatypes.json
 lib/qt6/metatypes/qt6lottievectorimagehelpers_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_lottie.pri
 lib/qt6/mkspecs/modules/qt_lib_lottie_private.pri
-lib/qt6/mkspecs/modules/qt_lib_lottievectorimagegenerator_private.pri
 lib/qt6/mkspecs/modules/qt_lib_lottievectorimagehelpers.pri
 lib/qt6/mkspecs/modules/qt_lib_lottievectorimagehelpers_private.pri
 lib/qt6/modules/Lottie.json
-lib/qt6/modules/LottieVectorImageGeneratorPrivate.json
 lib/qt6/modules/LottieVectorImageHelpers.json
-lib/qt6/plugins/vectorimageformats/
-@so lib/qt6/plugins/vectorimageformats/libqlottievectorimage.so
 lib/qt6/qml/Qt/labs/lottieqt/
 lib/qt6/qml/Qt/labs/lottieqt/Lottie.qmltypes
 lib/qt6/qml/Qt/labs/lottieqt/VectorImageHelpers/

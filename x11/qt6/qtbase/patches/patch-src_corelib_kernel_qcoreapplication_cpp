@@ -1,9 +1,9 @@
 Index: src/corelib/kernel/qcoreapplication.cpp
 --- src/corelib/kernel/qcoreapplication.cpp.orig
 +++ src/corelib/kernel/qcoreapplication.cpp
-@@ -2435,6 +2435,14 @@ static QString qAppFileName()
- #  elif defined(Q_OS_LINUX)
-     // this includes the Embedded Android builds
+@@ -2470,6 +2470,14 @@ static QString qAppFileName()
+ 
+     // /proc/self/exe is always is an absolute path
      return QFile::decodeName(qt_readlink("/proc/self/exe"));
 +#  elif defined(Q_OS_OPENBSD)
 +    char buffer[PATH_MAX];

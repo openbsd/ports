@@ -2,7 +2,7 @@ QT6NAME =	QtTools
 COMMENT =	Qt6 development tools
 PKGSPEC =	qt6-qttools-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6Designer             5.0 # 6.7
+SHARED_LIBS +=  Qt6Designer             6.0 # 6.7
 SHARED_LIBS +=  Qt6DesignerComponents   2.0 # 6.7
 SHARED_LIBS +=  Qt6Help                 2.0 # 6.7
 SHARED_LIBS +=  Qt6UiTools              2.0 # 6.7

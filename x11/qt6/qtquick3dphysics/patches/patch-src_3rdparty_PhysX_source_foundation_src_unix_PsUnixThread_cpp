@@ -10,7 +10,7 @@ Index: src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
  #include <bits/local_lim.h> // PTHREAD_STACK_MIN
  #endif
  #include <stdio.h>
-@@ -44,7 +44,7 @@
+@@ -49,7 +49,7 @@
  #include <unistd.h>
  #if !PX_PS4
  #include <sys/syscall.h>
@@ -19,7 +19,7 @@ Index: src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
  #include <asm/unistd.h>
  #include <sys/resource.h>
  #endif
-@@ -110,12 +110,13 @@ _ThreadImpl* getThread(ThreadImpl* impl)
+@@ -115,12 +115,13 @@ _ThreadImpl* getThread(ThreadImpl* impl)
  static void setTid(_ThreadImpl& threadImpl)
  {
  // query TID
@@ -37,7 +37,7 @@ Index: src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
  #else
  	threadImpl.tid = syscall(__NR_gettid);
  #endif
-@@ -324,7 +325,7 @@ uint32_t ThreadImpl::setAffinityMask(uint32_t mask)
+@@ -332,7 +333,7 @@ uint32_t ThreadImpl::setAffinityMask(uint32_t mask)
  	{
  #if PX_PS4
  		prevMask = setAffinityMaskPS4(getThread(this)->thread, mask);

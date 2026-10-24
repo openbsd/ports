@@ -1,0 +1,14 @@
+Index: src/gui/platform/unix/qxdgdesktopportalfiletransfer.cpp
+--- src/gui/platform/unix/qxdgdesktopportalfiletransfer.cpp.orig
++++ src/gui/platform/unix/qxdgdesktopportalfiletransfer.cpp
+@@ -17,6 +17,10 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ 
++#if defined(Q_OS_OPENBSD) && !defined(O_PATH)
++#define O_PATH 0
++#endif
++
+ QT_BEGIN_NAMESPACE
+ 
+ using namespace Qt::StringLiterals;

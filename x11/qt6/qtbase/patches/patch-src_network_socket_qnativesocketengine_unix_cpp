@@ -2,7 +2,7 @@ No TCP_KEEPIDLE on OpenBSD
 Index: src/network/socket/qnativesocketengine_unix.cpp
 --- src/network/socket/qnativesocketengine_unix.cpp.orig
 +++ src/network/socket/qnativesocketengine_unix.cpp
-@@ -175,7 +175,9 @@ static void convertToLevelAndOption(QNativeSocketEngin
+@@ -231,7 +231,9 @@ static void convertToLevelAndOption(QNativeSocketEngin
  #ifdef TCP_KEEPALIVE
          n = TCP_KEEPALIVE;
  #else

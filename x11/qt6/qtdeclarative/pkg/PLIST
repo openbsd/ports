@@ -130,9 +130,12 @@ include/X11/qt6/QtLabsStyleKit/${VERSION}/QtLabsStyleKit/private/qqstylekitstyle
 include/X11/qt6/QtLabsStyleKit/${VERSION}/QtLabsStyleKit/private/qqstylekitstyleandthemebase_p.h
 include/X11/qt6/QtLabsStyleKit/${VERSION}/QtLabsStyleKit/private/qqstylekittheme_p.h
 include/X11/qt6/QtLabsStyleKit/${VERSION}/QtLabsStyleKit/private/qqstylekitvariation_p.h
+include/X11/qt6/QtLabsStyleKit/${VERSION}/QtLabsStyleKit/private/qstylekitstyle_p.h
+include/X11/qt6/QtLabsStyleKit/QStyleKitStyle
 include/X11/qt6/QtLabsStyleKit/QtLabsStyleKit
 include/X11/qt6/QtLabsStyleKit/QtLabsStyleKitDepends
 include/X11/qt6/QtLabsStyleKit/QtLabsStyleKitVersion
+include/X11/qt6/QtLabsStyleKit/qstylekitstyle.h
 include/X11/qt6/QtLabsStyleKit/qtlabsstylekitexports.h
 include/X11/qt6/QtLabsStyleKit/qtlabsstylekitversion.h
 include/X11/qt6/QtLabsStyleKitImpl/
@@ -271,7 +274,9 @@ include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlmetaobject_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlmetatype_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlmetatypedata_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlnotifier_p.h
+include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlnotifierendpoint_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlnotifyingblob_p.h
+include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlnotifylist_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlnullablevalue_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlobjectcreator_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlobjectorgadget_p.h
@@ -282,6 +287,7 @@ include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlprofiler_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlprofilerdefinitions_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlproperty_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlpropertybinding_p.h
+include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlpropertybindingbase_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlpropertycache_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlpropertycachecreator_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qqmlpropertycachemethodarguments_p.h
@@ -527,18 +533,14 @@ include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljscompilepass
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljscompiler_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljscompilerstats_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljscompilerstatsreporter_p.h
-include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljscontextproperties_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljscontextualtypes_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsfunctioninitializer_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsimporter_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsimportvisitor_p.h
-include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljslinter_p.h
-include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljslintercodegen_p.h
-include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljslintervisitor_p.h
-include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsliteralbindingcheck_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsloadergenerator_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljslogger_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsloggingutils_p.h
+include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljslookupsignatures_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsmetatypes_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsoptimizations_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsregistercontent_p.h
@@ -552,9 +554,7 @@ include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljstypedescrip
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljstypepropagator_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljstypereader_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljstyperesolver_p.h
-include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsusercontextproperties_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsutils_p.h
-include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsvaluetypefromstringcheck_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmlsa_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmlsasourcelocation_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qresourcerelocater_p.h
@@ -587,7 +587,9 @@ include/X11/qt6/QtQmlDebug/${VERSION}/QtQmlDebug/
 include/X11/qt6/QtQmlDebug/${VERSION}/QtQmlDebug/private/
 include/X11/qt6/QtQmlDebug/${VERSION}/QtQmlDebug/private/qqmldebugclient_p.h
 include/X11/qt6/QtQmlDebug/${VERSION}/QtQmlDebug/private/qqmldebugclient_p_p.h
+include/X11/qt6/QtQmlDebug/${VERSION}/QtQmlDebug/private/qqmldebugcommandlistener_p.h
 include/X11/qt6/QtQmlDebug/${VERSION}/QtQmlDebug/private/qqmldebugconnection_p.h
+include/X11/qt6/QtQmlDebug/${VERSION}/QtQmlDebug/private/qqmldebugconsole_p.h
 include/X11/qt6/QtQmlDebug/${VERSION}/QtQmlDebug/private/qqmldebugmessageclient_p.h
 include/X11/qt6/QtQmlDebug/${VERSION}/QtQmlDebug/private/qqmldebugtranslationclient_p.h
 include/X11/qt6/QtQmlDebug/${VERSION}/QtQmlDebug/private/qqmlenginecontrolclient_p.h
@@ -614,6 +616,26 @@ include/X11/qt6/QtQmlDebug/QtQmlDebug
 include/X11/qt6/QtQmlDebug/QtQmlDebugDepends
 include/X11/qt6/QtQmlDebug/QtQmlDebugVersion
 include/X11/qt6/QtQmlDebug/qtqmldebugversion.h
+include/X11/qt6/QtQmlDesignSupport/
+include/X11/qt6/QtQmlDesignSupport/${VERSION}/
+include/X11/qt6/QtQmlDesignSupport/${VERSION}/QtQmlDesignSupport/
+include/X11/qt6/QtQmlDesignSupport/${VERSION}/QtQmlDesignSupport/private/
+include/X11/qt6/QtQmlDesignSupport/${VERSION}/QtQmlDesignSupport/private/qabstractobjectregistryref_p.h
+include/X11/qt6/QtQmlDesignSupport/${VERSION}/QtQmlDesignSupport/private/qmultiobjectregistryref_p.h
+include/X11/qt6/QtQmlDesignSupport/${VERSION}/QtQmlDesignSupport/private/qobjectregistry_p.h
+include/X11/qt6/QtQmlDesignSupport/${VERSION}/QtQmlDesignSupport/private/qobjectregistryref_p.h
+include/X11/qt6/QtQmlDesignSupport/${VERSION}/QtQmlDesignSupport/private/qobjectregistrysingleton_p.h
+include/X11/qt6/QtQmlDesignSupport/QAbstractObjectRegistryRef
+include/X11/qt6/QtQmlDesignSupport/QMultiObjectRegistryRef
+include/X11/qt6/QtQmlDesignSupport/QObjectRegistryRef
+include/X11/qt6/QtQmlDesignSupport/QtQmlDesignSupport
+include/X11/qt6/QtQmlDesignSupport/QtQmlDesignSupportDepends
+include/X11/qt6/QtQmlDesignSupport/QtQmlDesignSupportVersion
+include/X11/qt6/QtQmlDesignSupport/qabstractobjectregistryref.h
+include/X11/qt6/QtQmlDesignSupport/qmultiobjectregistryref.h
+include/X11/qt6/QtQmlDesignSupport/qobjectregistryref.h
+include/X11/qt6/QtQmlDesignSupport/qtqmldesignsupportexports.h
+include/X11/qt6/QtQmlDesignSupport/qtqmldesignsupportversion.h
 include/X11/qt6/QtQmlDom/
 include/X11/qt6/QtQmlDom/${VERSION}/
 include/X11/qt6/QtQmlDom/${VERSION}/QtQmlDom/
@@ -676,6 +698,7 @@ include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/documentsymbolutils_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qdochtmlparser_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qlanguageserver_p.h
+include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qlanguageserver_p_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qlspcustomtypes_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qmllsmain_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qprocessscheduler_p.h
@@ -694,12 +717,14 @@ include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmlhighlightsupport_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmlhover_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmllanguageserver_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmllintsuggestions_p.h
+include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmllscodeaction_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmllscompletion_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmllscompletionplugin_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmllshelpplugininterface_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmllshelputils_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmllsplugin_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmllsutils_p.h
+include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmlprogresssupport_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmlrangeformatting_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmlrenamesymbolsupport_p.h
 include/X11/qt6/QtQmlLS/${VERSION}/QtQmlLS/private/qqmlsemantictokens_p.h
@@ -712,6 +737,25 @@ include/X11/qt6/QtQmlLS/QtQmlLS
 include/X11/qt6/QtQmlLS/QtQmlLSDepends
 include/X11/qt6/QtQmlLS/QtQmlLSVersion
 include/X11/qt6/QtQmlLS/qtqmllsversion.h
+include/X11/qt6/QtQmlLint/
+include/X11/qt6/QtQmlLint/${VERSION}/
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljscontextproperties_p.h
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljslinter_p.h
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljslintercodegen_p.h
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljslintercontext_p.h
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljslinterpasses_p.h
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljslinterrenamedcomponents_p.h
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljslintertypepropagator_p.h
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljslintervisitor_p.h
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljsliteralbindingcheck_p.h
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljsusercontextproperties_p.h
+include/X11/qt6/QtQmlLint/${VERSION}/QtQmlLint/private/qqmljsvaluetypefromstringcheck_p.h
+include/X11/qt6/QtQmlLint/QtQmlLint
+include/X11/qt6/QtQmlLint/QtQmlLintDepends
+include/X11/qt6/QtQmlLint/QtQmlLintVersion
+include/X11/qt6/QtQmlLint/qtqmllintversion.h
 include/X11/qt6/QtQmlLocalStorage/
 include/X11/qt6/QtQmlLocalStorage/${VERSION}/
 include/X11/qt6/QtQmlLocalStorage/${VERSION}/QtQmlLocalStorage/
@@ -745,7 +789,10 @@ include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlabstractdelegatecomponent_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmladaptormodel_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmladaptormodelenginedata_p.h
+include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlalloffilter_p.h
+include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlanyoffilter_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlchangeset_p.h
+include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlcompositefilterbase_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmldelegatecomponent_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmldelegatemodel_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmldelegatemodel_p_p.h
@@ -766,6 +813,8 @@ include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmllistmodelworkerag
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlmodelindexvaluetype_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlmodelsmodule_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlobjectmodel_p.h
+include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlrangefilter_p.h
+include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlregexpfilter_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlrolefilter_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlrolesorter_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlsorterbase_p.h
@@ -801,6 +850,17 @@ include/X11/qt6/QtQmlNetwork/QtQmlNetworkDepends
 include/X11/qt6/QtQmlNetwork/QtQmlNetworkVersion
 include/X11/qt6/QtQmlNetwork/qtqmlnetworkexports.h
 include/X11/qt6/QtQmlNetwork/qtqmlnetworkversion.h
+include/X11/qt6/QtQmlPreview/
+include/X11/qt6/QtQmlPreview/${VERSION}/
+include/X11/qt6/QtQmlPreview/${VERSION}/QtQmlPreview/
+include/X11/qt6/QtQmlPreview/${VERSION}/QtQmlPreview/private/
+include/X11/qt6/QtQmlPreview/${VERSION}/QtQmlPreview/private/qqmlpreviewbindingpatchcontext_p.h
+include/X11/qt6/QtQmlPreview/${VERSION}/QtQmlPreview/private/qqmlpreviewdiff_p.h
+include/X11/qt6/QtQmlPreview/${VERSION}/QtQmlPreview/private/qqmlpreviewobjectpatch_p.h
+include/X11/qt6/QtQmlPreview/QtQmlPreview
+include/X11/qt6/QtQmlPreview/QtQmlPreviewDepends
+include/X11/qt6/QtQmlPreview/QtQmlPreviewVersion
+include/X11/qt6/QtQmlPreview/qtqmlpreviewversion.h
 include/X11/qt6/QtQmlToolingSettings/
 include/X11/qt6/QtQmlToolingSettings/${VERSION}/
 include/X11/qt6/QtQmlToolingSettings/${VERSION}/QtQmlToolingSettings/
@@ -872,7 +932,9 @@ include/X11/qt6/QtQuick/
 include/X11/qt6/QtQuick/${VERSION}/
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/
+include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qaccessiblequickflickable_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qaccessiblequickitem_p.h
+include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qaccessiblequicklistview_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qaccessiblequicktextedit_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qaccessiblequicktextinput_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qaccessiblequickview_p.h
@@ -895,12 +957,16 @@ include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickanimator_p_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickanimatorcontroller_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickanimatorjob_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickapplication_p.h
+include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickattachedpropertypropagator_p.h
+include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickattachedpropertypropagator_p_p.h
+include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickattachedpropertypropagatortarget_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickbehavior_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickborderimage_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickborderimage_p_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickcanvascontext_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickcanvasitem_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickclipnode_p.h
+include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickcolor_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickcolorgroup_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickcontext2d_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickcontext2dcommandbuffer_p.h
@@ -1017,7 +1083,6 @@ include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickstatechangescript_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickstategroup_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickstateoperations_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquickstyledtext_p.h
-include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquicksvgparser_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquicksystempalette_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquicktableview_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquicktableview_p_p.h
@@ -1057,7 +1122,6 @@ include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qsgabstractrenderer_p_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qsgabstractsoftwarerenderer_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qsgadaptationlayer_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qsgareaallocator_p.h
-include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qsgbasicglyphnode_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qsgbasicinternalimagenode_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qsgbasicinternalrectanglenode_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qsgbatchrenderer_p.h
@@ -1254,6 +1318,16 @@ include/X11/qt6/QtQuickControls2BasicStyleImpl/QtQuickControls2BasicStyleImplDep
 include/X11/qt6/QtQuickControls2BasicStyleImpl/QtQuickControls2BasicStyleImplVersion
 include/X11/qt6/QtQuickControls2BasicStyleImpl/qtquickcontrols2basicstyleimplexports.h
 include/X11/qt6/QtQuickControls2BasicStyleImpl/qtquickcontrols2basicstyleimplversion.h
+include/X11/qt6/QtQuickControls2FluentWinUI3/
+include/X11/qt6/QtQuickControls2FluentWinUI3/${VERSION}/
+include/X11/qt6/QtQuickControls2FluentWinUI3/${VERSION}/QtQuickControls2FluentWinUI3/
+include/X11/qt6/QtQuickControls2FluentWinUI3/${VERSION}/QtQuickControls2FluentWinUI3/private/
+include/X11/qt6/QtQuickControls2FluentWinUI3/${VERSION}/QtQuickControls2FluentWinUI3/private/qquickfluentwinui3theme_p.h
+include/X11/qt6/QtQuickControls2FluentWinUI3/QtQuickControls2FluentWinUI3
+include/X11/qt6/QtQuickControls2FluentWinUI3/QtQuickControls2FluentWinUI3Depends
+include/X11/qt6/QtQuickControls2FluentWinUI3/QtQuickControls2FluentWinUI3Version
+include/X11/qt6/QtQuickControls2FluentWinUI3/qtquickcontrols2fluentwinui3exports.h
+include/X11/qt6/QtQuickControls2FluentWinUI3/qtquickcontrols2fluentwinui3version.h
 include/X11/qt6/QtQuickControls2FluentWinUI3StyleImpl/
 include/X11/qt6/QtQuickControls2FluentWinUI3StyleImpl/${VERSION}/
 include/X11/qt6/QtQuickControls2FluentWinUI3StyleImpl/${VERSION}/QtQuickControls2FluentWinUI3StyleImpl/
@@ -1313,7 +1387,6 @@ include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickanimatednode_p.h
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickchecklabel_p.h
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickclippedtext_p.h
-include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickcolor_p.h
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickcolorimage_p.h
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickiconimage_p.h
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickiconimage_p_p.h
@@ -1321,6 +1394,8 @@ include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qqu
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickiconlabel_p_p.h
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickimageselector_p.h
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickitemgroup_p.h
+include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickmenuitemiconlabel_p.h
+include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickmenuitemiconlabel_p_p.h
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickmnemoniclabel_p.h
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickninepatchimage_p.h
 include/X11/qt6/QtQuickControls2Impl/${VERSION}/QtQuickControls2Impl/private/qquickpaddedrectangle_p.h
@@ -1358,6 +1433,12 @@ include/X11/qt6/QtQuickControls2MaterialStyleImpl/QtQuickControls2MaterialStyleI
 include/X11/qt6/QtQuickControls2MaterialStyleImpl/QtQuickControls2MaterialStyleImplVersion
 include/X11/qt6/QtQuickControls2MaterialStyleImpl/qtquickcontrols2materialstyleimplexports.h
 include/X11/qt6/QtQuickControls2MaterialStyleImpl/qtquickcontrols2materialstyleimplversion.h
+include/X11/qt6/QtQuickControls2Native/
+include/X11/qt6/QtQuickControls2Native/QtQuickControls2Native
+include/X11/qt6/QtQuickControls2Native/QtQuickControls2NativeDepends
+include/X11/qt6/QtQuickControls2Native/QtQuickControls2NativeVersion
+include/X11/qt6/QtQuickControls2Native/qtquickcontrols2nativeexports.h
+include/X11/qt6/QtQuickControls2Native/qtquickcontrols2nativeversion.h
 include/X11/qt6/QtQuickControls2Universal/
 include/X11/qt6/QtQuickControls2Universal/${VERSION}/
 include/X11/qt6/QtQuickControls2Universal/${VERSION}/QtQuickControls2Universal/
@@ -1566,6 +1647,7 @@ include/X11/qt6/QtQuickShapesDesignHelpers/${VERSION}/QtQuickShapesDesignHelpers
 include/X11/qt6/QtQuickShapesDesignHelpers/QtQuickShapesDesignHelpers
 include/X11/qt6/QtQuickShapesDesignHelpers/QtQuickShapesDesignHelpersDepends
 include/X11/qt6/QtQuickShapesDesignHelpers/QtQuickShapesDesignHelpersVersion
+include/X11/qt6/QtQuickShapesDesignHelpers/qquickshapesdesignhelpersglobal.h
 include/X11/qt6/QtQuickShapesDesignHelpers/qtquickshapesdesignhelpersexports.h
 include/X11/qt6/QtQuickShapesDesignHelpers/qtquickshapesdesignhelpersversion.h
 include/X11/qt6/QtQuickTemplates2/
@@ -1577,6 +1659,7 @@ include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qaccessib
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qaccessiblequickpage_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qaccessiblequickpopupitem_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qaccessiblequickscrollbar_p.h
+include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qaccessiblequickslider_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickabstractbutton_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickabstractbutton_p_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickabstractspinbox_p.h
@@ -1695,6 +1778,7 @@ include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquicktoo
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquicktoolbutton_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquicktoolseparator_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquicktooltip_p.h
+include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquicktooltip_p_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquicktreeviewdelegate_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquicktumbler_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquicktumbler_p_p.h
@@ -1748,6 +1832,8 @@ include/X11/qt6/QtQuickVectorImage/${VERSION}/QtQuickVectorImage/
 include/X11/qt6/QtQuickVectorImage/${VERSION}/QtQuickVectorImage/private/
 include/X11/qt6/QtQuickVectorImage/${VERSION}/QtQuickVectorImage/private/qquickvectorimage_p.h
 include/X11/qt6/QtQuickVectorImage/${VERSION}/QtQuickVectorImage/private/qquickvectorimage_p_p.h
+include/X11/qt6/QtQuickVectorImage/${VERSION}/QtQuickVectorImage/private/qquickvectorimageincubator_p.h
+include/X11/qt6/QtQuickVectorImage/${VERSION}/QtQuickVectorImage/private/qquickvectorimageincubator_p_p.h
 include/X11/qt6/QtQuickVectorImage/QtQuickVectorImage
 include/X11/qt6/QtQuickVectorImage/QtQuickVectorImageDepends
 include/X11/qt6/QtQuickVectorImage/QtQuickVectorImageVersion
@@ -2051,6 +2137,13 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsSynchronizerpluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsSynchronizerpluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsSynchronizerpluginTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6LabsSynchronizerpluginTargetsPrecheck.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlDesignSupportpluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlDesignSupportpluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlDesignSupportpluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlDesignSupportpluginConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlDesignSupportpluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlDesignSupportpluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlDesignSupportpluginTargetsPrecheck.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginConfigVersion.cmake
@@ -2268,6 +2361,13 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginConfigVersionI
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargetsPrecheck.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginTargetsPrecheck.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginConfigVersion.cmake
@@ -2450,36 +2550,22 @@ lib/cmake/Qt6Qml/Qt6QmlTargets.cmake
 lib/cmake/Qt6Qml/Qt6QmlTargetsPrecheck.cmake
 lib/cmake/Qt6Qml/Qt6QmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6Qml/Qt6QmlVersionlessTargets.cmake
+lib/cmake/Qt6Qml/Qt6QmllintEmptyJsonTemplate.json
 lib/cmake/Qt6Qml/Qt6QmltcFileMappingTemplate.qrc.in
 lib/cmake/Qt6Qml/Qt6UpdateQmllsIni.cmake
+lib/cmake/Qt6Qml/Qt6WriteQtConfPart.cmake
 lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in
-lib/cmake/Qt6Qml/Qt6qt.conf.in
 lib/cmake/Qt6QmlCompiler/
 lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerAdditionalTargetInfo.cmake
 lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerConfig.cmake
 lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerConfigVersion.cmake
 lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerConfigVersionImpl.cmake
 lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerDependencies.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerPlugins.cmake
 lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerTargets.cmake
 lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerTargetsPrecheck.cmake
 lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerVersionlessAliasTargets.cmake
 lib/cmake/Qt6QmlCompiler/Qt6QmlCompilerVersionlessTargets.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQdsPluginAdditionalTargetInfo.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQdsPluginConfig.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQdsPluginConfigVersion.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQdsPluginConfigVersionImpl.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQdsPluginTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQdsPluginTargets.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQdsPluginTargetsPrecheck.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQuickPluginAdditionalTargetInfo.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQuickPluginConfig.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQuickPluginConfigVersion.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQuickPluginConfigVersionImpl.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQuickPluginTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQuickPluginTargets.cmake
-lib/cmake/Qt6QmlCompiler/Qt6QmlLintQuickPluginTargetsPrecheck.cmake
 lib/cmake/Qt6QmlCompilerPrivate/
 lib/cmake/Qt6QmlCompilerPrivate/Qt6QmlCompilerPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6QmlCompilerPrivate/Qt6QmlCompilerPrivateConfig.cmake
@@ -2522,6 +2608,27 @@ lib/cmake/Qt6QmlDebugPrivate/Qt6QmlDebugPrivateTargets.cmake
 lib/cmake/Qt6QmlDebugPrivate/Qt6QmlDebugPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6QmlDebugPrivate/Qt6QmlDebugPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6QmlDebugPrivate/Qt6QmlDebugPrivateVersionlessTargets.cmake
+lib/cmake/Qt6QmlDesignSupport/
+lib/cmake/Qt6QmlDesignSupport/Qt6QmlDesignSupportAdditionalTargetInfo.cmake
+lib/cmake/Qt6QmlDesignSupport/Qt6QmlDesignSupportConfig.cmake
+lib/cmake/Qt6QmlDesignSupport/Qt6QmlDesignSupportConfigVersion.cmake
+lib/cmake/Qt6QmlDesignSupport/Qt6QmlDesignSupportConfigVersionImpl.cmake
+lib/cmake/Qt6QmlDesignSupport/Qt6QmlDesignSupportDependencies.cmake
+lib/cmake/Qt6QmlDesignSupport/Qt6QmlDesignSupportTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QmlDesignSupport/Qt6QmlDesignSupportTargets.cmake
+lib/cmake/Qt6QmlDesignSupport/Qt6QmlDesignSupportTargetsPrecheck.cmake
+lib/cmake/Qt6QmlDesignSupport/Qt6QmlDesignSupportVersionlessAliasTargets.cmake
+lib/cmake/Qt6QmlDesignSupport/Qt6QmlDesignSupportVersionlessTargets.cmake
+lib/cmake/Qt6QmlDesignSupportPrivate/
+lib/cmake/Qt6QmlDesignSupportPrivate/Qt6QmlDesignSupportPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6QmlDesignSupportPrivate/Qt6QmlDesignSupportPrivateConfig.cmake
+lib/cmake/Qt6QmlDesignSupportPrivate/Qt6QmlDesignSupportPrivateConfigVersion.cmake
+lib/cmake/Qt6QmlDesignSupportPrivate/Qt6QmlDesignSupportPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6QmlDesignSupportPrivate/Qt6QmlDesignSupportPrivateDependencies.cmake
+lib/cmake/Qt6QmlDesignSupportPrivate/Qt6QmlDesignSupportPrivateTargets.cmake
+lib/cmake/Qt6QmlDesignSupportPrivate/Qt6QmlDesignSupportPrivateTargetsPrecheck.cmake
+lib/cmake/Qt6QmlDesignSupportPrivate/Qt6QmlDesignSupportPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6QmlDesignSupportPrivate/Qt6QmlDesignSupportPrivateVersionlessTargets.cmake
 lib/cmake/Qt6QmlDomPrivate/
 lib/cmake/Qt6QmlDomPrivate/Qt6QmlDomPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6QmlDomPrivate/Qt6QmlDomPrivateConfig.cmake
@@ -2577,6 +2684,32 @@ lib/cmake/Qt6QmlLSPrivate/Qt6QmlLSQuickPluginConfigVersionImpl.cmake
 lib/cmake/Qt6QmlLSPrivate/Qt6QmlLSQuickPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6QmlLSPrivate/Qt6QmlLSQuickPluginTargets.cmake
 lib/cmake/Qt6QmlLSPrivate/Qt6QmlLSQuickPluginTargetsPrecheck.cmake
+lib/cmake/Qt6QmlLintPrivate/
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivateConfig.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivateConfigVersion.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivateDependencies.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivatePlugins.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivateTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivateTargets.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivateTargetsPrecheck.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintPrivateVersionlessTargets.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQdsPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQdsPluginConfig.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQdsPluginConfigVersion.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQdsPluginConfigVersionImpl.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQdsPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQdsPluginTargets.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQdsPluginTargetsPrecheck.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQuickPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQuickPluginConfig.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQuickPluginConfigVersion.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQuickPluginConfigVersionImpl.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQuickPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQuickPluginTargets.cmake
+lib/cmake/Qt6QmlLintPrivate/Qt6QmlLintQuickPluginTargetsPrecheck.cmake
 lib/cmake/Qt6QmlLocalStorage/
 lib/cmake/Qt6QmlLocalStorage/Qt6QmlLocalStorageAdditionalTargetInfo.cmake
 lib/cmake/Qt6QmlLocalStorage/Qt6QmlLocalStorageConfig.cmake
@@ -2661,6 +2794,17 @@ lib/cmake/Qt6QmlNetworkPrivate/Qt6QmlNetworkPrivateTargets.cmake
 lib/cmake/Qt6QmlNetworkPrivate/Qt6QmlNetworkPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6QmlNetworkPrivate/Qt6QmlNetworkPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6QmlNetworkPrivate/Qt6QmlNetworkPrivateVersionlessTargets.cmake
+lib/cmake/Qt6QmlPreviewPrivate/
+lib/cmake/Qt6QmlPreviewPrivate/Qt6QmlPreviewPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6QmlPreviewPrivate/Qt6QmlPreviewPrivateConfig.cmake
+lib/cmake/Qt6QmlPreviewPrivate/Qt6QmlPreviewPrivateConfigVersion.cmake
+lib/cmake/Qt6QmlPreviewPrivate/Qt6QmlPreviewPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6QmlPreviewPrivate/Qt6QmlPreviewPrivateDependencies.cmake
+lib/cmake/Qt6QmlPreviewPrivate/Qt6QmlPreviewPrivateTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QmlPreviewPrivate/Qt6QmlPreviewPrivateTargets.cmake
+lib/cmake/Qt6QmlPreviewPrivate/Qt6QmlPreviewPrivateTargetsPrecheck.cmake
+lib/cmake/Qt6QmlPreviewPrivate/Qt6QmlPreviewPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6QmlPreviewPrivate/Qt6QmlPreviewPrivateVersionlessTargets.cmake
 lib/cmake/Qt6QmlPrivate/
 lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6QmlPrivate/Qt6QmlPrivateConfig.cmake
@@ -2821,6 +2965,27 @@ lib/cmake/Qt6QuickControls2BasicStyleImplPrivate/Qt6QuickControls2BasicStyleImpl
 lib/cmake/Qt6QuickControls2BasicStyleImplPrivate/Qt6QuickControls2BasicStyleImplPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6QuickControls2BasicStyleImplPrivate/Qt6QuickControls2BasicStyleImplPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6QuickControls2BasicStyleImplPrivate/Qt6QuickControls2BasicStyleImplPrivateVersionlessTargets.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3/
+lib/cmake/Qt6QuickControls2FluentWinUI3/Qt6QuickControls2FluentWinUI3AdditionalTargetInfo.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3/Qt6QuickControls2FluentWinUI3Config.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3/Qt6QuickControls2FluentWinUI3ConfigVersion.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3/Qt6QuickControls2FluentWinUI3ConfigVersionImpl.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3/Qt6QuickControls2FluentWinUI3Dependencies.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3/Qt6QuickControls2FluentWinUI3Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QuickControls2FluentWinUI3/Qt6QuickControls2FluentWinUI3Targets.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3/Qt6QuickControls2FluentWinUI3TargetsPrecheck.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3/Qt6QuickControls2FluentWinUI3VersionlessAliasTargets.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3/Qt6QuickControls2FluentWinUI3VersionlessTargets.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3Private/
+lib/cmake/Qt6QuickControls2FluentWinUI3Private/Qt6QuickControls2FluentWinUI3PrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3Private/Qt6QuickControls2FluentWinUI3PrivateConfig.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3Private/Qt6QuickControls2FluentWinUI3PrivateConfigVersion.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3Private/Qt6QuickControls2FluentWinUI3PrivateConfigVersionImpl.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3Private/Qt6QuickControls2FluentWinUI3PrivateDependencies.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3Private/Qt6QuickControls2FluentWinUI3PrivateTargets.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3Private/Qt6QuickControls2FluentWinUI3PrivateTargetsPrecheck.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3Private/Qt6QuickControls2FluentWinUI3PrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6QuickControls2FluentWinUI3Private/Qt6QuickControls2FluentWinUI3PrivateVersionlessTargets.cmake
 lib/cmake/Qt6QuickControls2FluentWinUI3StyleImpl/
 lib/cmake/Qt6QuickControls2FluentWinUI3StyleImpl/Qt6QuickControls2FluentWinUI3StyleImplAdditionalTargetInfo.cmake
 lib/cmake/Qt6QuickControls2FluentWinUI3StyleImpl/Qt6QuickControls2FluentWinUI3StyleImplConfig.cmake
@@ -2979,6 +3144,17 @@ lib/cmake/Qt6QuickControls2MaterialStyleImplPrivate/Qt6QuickControls2MaterialSty
 lib/cmake/Qt6QuickControls2MaterialStyleImplPrivate/Qt6QuickControls2MaterialStyleImplPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6QuickControls2MaterialStyleImplPrivate/Qt6QuickControls2MaterialStyleImplPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6QuickControls2MaterialStyleImplPrivate/Qt6QuickControls2MaterialStyleImplPrivateVersionlessTargets.cmake
+lib/cmake/Qt6QuickControls2Native/
+lib/cmake/Qt6QuickControls2Native/Qt6QuickControls2NativeAdditionalTargetInfo.cmake
+lib/cmake/Qt6QuickControls2Native/Qt6QuickControls2NativeConfig.cmake
+lib/cmake/Qt6QuickControls2Native/Qt6QuickControls2NativeConfigVersion.cmake
+lib/cmake/Qt6QuickControls2Native/Qt6QuickControls2NativeConfigVersionImpl.cmake
+lib/cmake/Qt6QuickControls2Native/Qt6QuickControls2NativeDependencies.cmake
+lib/cmake/Qt6QuickControls2Native/Qt6QuickControls2NativeTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QuickControls2Native/Qt6QuickControls2NativeTargets.cmake
+lib/cmake/Qt6QuickControls2Native/Qt6QuickControls2NativeTargetsPrecheck.cmake
+lib/cmake/Qt6QuickControls2Native/Qt6QuickControls2NativeVersionlessAliasTargets.cmake
+lib/cmake/Qt6QuickControls2Native/Qt6QuickControls2NativeVersionlessTargets.cmake
 lib/cmake/Qt6QuickControls2Private/
 lib/cmake/Qt6QuickControls2Private/Qt6QuickControls2PrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6QuickControls2Private/Qt6QuickControls2PrivateConfig.cmake
@@ -3147,13 +3323,23 @@ lib/cmake/Qt6QuickLayoutsPrivate/Qt6QuickLayoutsPrivateTargets.cmake
 lib/cmake/Qt6QuickLayoutsPrivate/Qt6QuickLayoutsPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6QuickLayoutsPrivate/Qt6QuickLayoutsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6QuickLayoutsPrivate/Qt6QuickLayoutsPrivateVersionlessTargets.cmake
+lib/cmake/Qt6QuickParticles/
+lib/cmake/Qt6QuickParticles/Qt6QuickParticlesAdditionalTargetInfo.cmake
+lib/cmake/Qt6QuickParticles/Qt6QuickParticlesConfig.cmake
+lib/cmake/Qt6QuickParticles/Qt6QuickParticlesConfigVersion.cmake
+lib/cmake/Qt6QuickParticles/Qt6QuickParticlesConfigVersionImpl.cmake
+lib/cmake/Qt6QuickParticles/Qt6QuickParticlesDependencies.cmake
+lib/cmake/Qt6QuickParticles/Qt6QuickParticlesTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QuickParticles/Qt6QuickParticlesTargets.cmake
+lib/cmake/Qt6QuickParticles/Qt6QuickParticlesTargetsPrecheck.cmake
+lib/cmake/Qt6QuickParticles/Qt6QuickParticlesVersionlessAliasTargets.cmake
+lib/cmake/Qt6QuickParticles/Qt6QuickParticlesVersionlessTargets.cmake
 lib/cmake/Qt6QuickParticlesPrivate/
 lib/cmake/Qt6QuickParticlesPrivate/Qt6QuickParticlesPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6QuickParticlesPrivate/Qt6QuickParticlesPrivateConfig.cmake
 lib/cmake/Qt6QuickParticlesPrivate/Qt6QuickParticlesPrivateConfigVersion.cmake
 lib/cmake/Qt6QuickParticlesPrivate/Qt6QuickParticlesPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6QuickParticlesPrivate/Qt6QuickParticlesPrivateDependencies.cmake
-lib/cmake/Qt6QuickParticlesPrivate/Qt6QuickParticlesPrivateTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6QuickParticlesPrivate/Qt6QuickParticlesPrivateTargets.cmake
 lib/cmake/Qt6QuickParticlesPrivate/Qt6QuickParticlesPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6QuickParticlesPrivate/Qt6QuickParticlesPrivateVersionlessAliasTargets.cmake
@@ -3179,13 +3365,23 @@ lib/cmake/Qt6QuickShapes/Qt6QuickShapesTargets.cmake
 lib/cmake/Qt6QuickShapes/Qt6QuickShapesTargetsPrecheck.cmake
 lib/cmake/Qt6QuickShapes/Qt6QuickShapesVersionlessAliasTargets.cmake
 lib/cmake/Qt6QuickShapes/Qt6QuickShapesVersionlessTargets.cmake
+lib/cmake/Qt6QuickShapesDesignHelpers/
+lib/cmake/Qt6QuickShapesDesignHelpers/Qt6QuickShapesDesignHelpersAdditionalTargetInfo.cmake
+lib/cmake/Qt6QuickShapesDesignHelpers/Qt6QuickShapesDesignHelpersConfig.cmake
+lib/cmake/Qt6QuickShapesDesignHelpers/Qt6QuickShapesDesignHelpersConfigVersion.cmake
+lib/cmake/Qt6QuickShapesDesignHelpers/Qt6QuickShapesDesignHelpersConfigVersionImpl.cmake
+lib/cmake/Qt6QuickShapesDesignHelpers/Qt6QuickShapesDesignHelpersDependencies.cmake
+lib/cmake/Qt6QuickShapesDesignHelpers/Qt6QuickShapesDesignHelpersTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QuickShapesDesignHelpers/Qt6QuickShapesDesignHelpersTargets.cmake
+lib/cmake/Qt6QuickShapesDesignHelpers/Qt6QuickShapesDesignHelpersTargetsPrecheck.cmake
+lib/cmake/Qt6QuickShapesDesignHelpers/Qt6QuickShapesDesignHelpersVersionlessAliasTargets.cmake
+lib/cmake/Qt6QuickShapesDesignHelpers/Qt6QuickShapesDesignHelpersVersionlessTargets.cmake
 lib/cmake/Qt6QuickShapesDesignHelpersPrivate/
 lib/cmake/Qt6QuickShapesDesignHelpersPrivate/Qt6QuickShapesDesignHelpersPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6QuickShapesDesignHelpersPrivate/Qt6QuickShapesDesignHelpersPrivateConfig.cmake
 lib/cmake/Qt6QuickShapesDesignHelpersPrivate/Qt6QuickShapesDesignHelpersPrivateConfigVersion.cmake
 lib/cmake/Qt6QuickShapesDesignHelpersPrivate/Qt6QuickShapesDesignHelpersPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6QuickShapesDesignHelpersPrivate/Qt6QuickShapesDesignHelpersPrivateDependencies.cmake
-lib/cmake/Qt6QuickShapesDesignHelpersPrivate/Qt6QuickShapesDesignHelpersPrivateTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6QuickShapesDesignHelpersPrivate/Qt6QuickShapesDesignHelpersPrivateTargets.cmake
 lib/cmake/Qt6QuickShapesDesignHelpersPrivate/Qt6QuickShapesDesignHelpersPrivateTargetsPrecheck.cmake
 lib/cmake/Qt6QuickShapesDesignHelpersPrivate/Qt6QuickShapesDesignHelpersPrivateVersionlessAliasTargets.cmake
@@ -3368,12 +3564,16 @@ lib/libQt6QmlCore.prl
 @lib lib/libQt6QmlCore.so.${LIBQt6QmlCore_VERSION}
 @static-lib lib/libQt6QmlDebug.a
 lib/libQt6QmlDebug.prl
+lib/libQt6QmlDesignSupport.prl
+@lib lib/libQt6QmlDesignSupport.so.${LIBQt6QmlDesignSupport_VERSION}
 @static-lib lib/libQt6QmlDom.a
 lib/libQt6QmlDom.prl
 @static-lib lib/libQt6QmlFormat.a
 lib/libQt6QmlFormat.prl
 @static-lib lib/libQt6QmlLS.a
 lib/libQt6QmlLS.prl
+@static-lib lib/libQt6QmlLint.a
+lib/libQt6QmlLint.prl
 lib/libQt6QmlLocalStorage.prl
 @lib lib/libQt6QmlLocalStorage.so.${LIBQt6QmlLocalStorage_VERSION}
 lib/libQt6QmlMeta.prl
@@ -3382,6 +3582,8 @@ lib/libQt6QmlModels.prl
 @lib lib/libQt6QmlModels.so.${LIBQt6QmlModels_VERSION}
 lib/libQt6QmlNetwork.prl
 @lib lib/libQt6QmlNetwork.so.${LIBQt6QmlNetwork_VERSION}
+@static-lib lib/libQt6QmlPreview.a
+lib/libQt6QmlPreview.prl
 @static-lib lib/libQt6QmlToolingSettings.a
 lib/libQt6QmlToolingSettings.prl
 @static-lib lib/libQt6QmlTypeRegistrar.a
@@ -3400,6 +3602,8 @@ lib/libQt6QuickControls2Basic.prl
 @lib lib/libQt6QuickControls2Basic.so.${LIBQt6QuickControls2Basic_VERSION}
 lib/libQt6QuickControls2BasicStyleImpl.prl
 @lib lib/libQt6QuickControls2BasicStyleImpl.so.${LIBQt6QuickControls2BasicStyleImpl_VERSION}
+lib/libQt6QuickControls2FluentWinUI3.prl
+@lib lib/libQt6QuickControls2FluentWinUI3.so.${LIBQt6QuickControls2FluentWinUI3_VERSION}
 lib/libQt6QuickControls2FluentWinUI3StyleImpl.prl
 @lib lib/libQt6QuickControls2FluentWinUI3StyleImpl.so.${LIBQt6QuickControls2FluentWinUI3StyleImpl_VERSION}
 lib/libQt6QuickControls2Fusion.prl
@@ -3416,6 +3620,8 @@ lib/libQt6QuickControls2Material.prl
 @lib lib/libQt6QuickControls2Material.so.${LIBQt6QuickControls2Material_VERSION}
 lib/libQt6QuickControls2MaterialStyleImpl.prl
 @lib lib/libQt6QuickControls2MaterialStyleImpl.so.${LIBQt6QuickControls2MaterialStyleImpl_VERSION}
+lib/libQt6QuickControls2Native.prl
+@lib lib/libQt6QuickControls2Native.so.${LIBQt6QuickControls2Native_VERSION}
 lib/libQt6QuickControls2Universal.prl
 @lib lib/libQt6QuickControls2Universal.so.${LIBQt6QuickControls2Universal_VERSION}
 lib/libQt6QuickControls2UniversalStyleImpl.prl
@@ -3470,6 +3676,7 @@ lib/pkgconfig/Qt6LabsWavefrontMesh.pc
 lib/pkgconfig/Qt6Qml.pc
 lib/pkgconfig/Qt6QmlCompiler.pc
 lib/pkgconfig/Qt6QmlCore.pc
+lib/pkgconfig/Qt6QmlDesignSupport.pc
 lib/pkgconfig/Qt6QmlIntegration.pc
 lib/pkgconfig/Qt6QmlLocalStorage.pc
 lib/pkgconfig/Qt6QmlMeta.pc
@@ -3481,6 +3688,7 @@ lib/pkgconfig/Qt6Quick.pc
 lib/pkgconfig/Qt6QuickControls2.pc
 lib/pkgconfig/Qt6QuickControls2Basic.pc
 lib/pkgconfig/Qt6QuickControls2BasicStyleImpl.pc
+lib/pkgconfig/Qt6QuickControls2FluentWinUI3.pc
 lib/pkgconfig/Qt6QuickControls2FluentWinUI3StyleImpl.pc
 lib/pkgconfig/Qt6QuickControls2Fusion.pc
 lib/pkgconfig/Qt6QuickControls2FusionStyleImpl.pc
@@ -3489,6 +3697,7 @@ lib/pkgconfig/Qt6QuickControls2ImagineStyleImpl.pc
 lib/pkgconfig/Qt6QuickControls2Impl.pc
 lib/pkgconfig/Qt6QuickControls2Material.pc
 lib/pkgconfig/Qt6QuickControls2MaterialStyleImpl.pc
+lib/pkgconfig/Qt6QuickControls2Native.pc
 lib/pkgconfig/Qt6QuickControls2Universal.pc
 lib/pkgconfig/Qt6QuickControls2UniversalStyleImpl.pc
 lib/pkgconfig/Qt6QuickDialogs2.pc
@@ -3496,7 +3705,9 @@ lib/pkgconfig/Qt6QuickDialogs2QuickImpl.pc
 lib/pkgconfig/Qt6QuickDialogs2Utils.pc
 lib/pkgconfig/Qt6QuickEffects.pc
 lib/pkgconfig/Qt6QuickLayouts.pc
+lib/pkgconfig/Qt6QuickParticles.pc
 lib/pkgconfig/Qt6QuickShapes.pc
+lib/pkgconfig/Qt6QuickShapesDesignHelpers.pc
 lib/pkgconfig/Qt6QuickTemplates2.pc
 lib/pkgconfig/Qt6QuickTest.pc
 lib/pkgconfig/Qt6QuickVectorImage.pc
@@ -3537,13 +3748,16 @@ lib/qt6/metatypes/qt6qml_metatypes.json
 lib/qt6/metatypes/qt6qmlcompiler_metatypes.json
 lib/qt6/metatypes/qt6qmlcore_metatypes.json
 lib/qt6/metatypes/qt6qmldebugprivate_metatypes.json
+lib/qt6/metatypes/qt6qmldesignsupport_metatypes.json
 lib/qt6/metatypes/qt6qmldomprivate_metatypes.json
 lib/qt6/metatypes/qt6qmlformatprivate_metatypes.json
+lib/qt6/metatypes/qt6qmllintprivate_metatypes.json
 lib/qt6/metatypes/qt6qmllocalstorage_metatypes.json
 lib/qt6/metatypes/qt6qmllsprivate_metatypes.json
 lib/qt6/metatypes/qt6qmlmeta_metatypes.json
 lib/qt6/metatypes/qt6qmlmodels_metatypes.json
 lib/qt6/metatypes/qt6qmlnetwork_metatypes.json
+lib/qt6/metatypes/qt6qmlpreviewprivate_metatypes.json
 lib/qt6/metatypes/qt6qmltcprivate_metatypes.json
 lib/qt6/metatypes/qt6qmltoolingsettingsprivate_metatypes.json
 lib/qt6/metatypes/qt6qmltyperegistrarprivate_metatypes.json
@@ -3553,6 +3767,7 @@ lib/qt6/metatypes/qt6quick_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2basic_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2basicstyleimpl_metatypes.json
+lib/qt6/metatypes/qt6quickcontrols2fluentwinui3_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2fluentwinui3styleimpl_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2fusion_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2fusionstyleimpl_metatypes.json
@@ -3561,6 +3776,7 @@ lib/qt6/metatypes/qt6quickcontrols2imaginestyleimpl_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2impl_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2material_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2materialstyleimpl_metatypes.json
+lib/qt6/metatypes/qt6quickcontrols2native_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2universal_metatypes.json
 lib/qt6/metatypes/qt6quickcontrols2universalstyleimpl_metatypes.json
 lib/qt6/metatypes/qt6quickcontrolstestutilsprivate_metatypes.json
@@ -3569,9 +3785,9 @@ lib/qt6/metatypes/qt6quickdialogs2quickimpl_metatypes.json
 lib/qt6/metatypes/qt6quickdialogs2utils_metatypes.json
 lib/qt6/metatypes/qt6quickeffects_metatypes.json
 lib/qt6/metatypes/qt6quicklayouts_metatypes.json
-lib/qt6/metatypes/qt6quickparticlesprivate_metatypes.json
+lib/qt6/metatypes/qt6quickparticles_metatypes.json
 lib/qt6/metatypes/qt6quickshapes_metatypes.json
-lib/qt6/metatypes/qt6quickshapesdesignhelpersprivate_metatypes.json
+lib/qt6/metatypes/qt6quickshapesdesignhelpers_metatypes.json
 lib/qt6/metatypes/qt6quicktemplates2_metatypes.json
 lib/qt6/metatypes/qt6quicktest_metatypes.json
 lib/qt6/metatypes/qt6quicktestutilsprivate_metatypes.json
@@ -3610,9 +3826,12 @@ lib/qt6/mkspecs/modules/qt_lib_qmlcompiler_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlcore.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlcore_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmldebug_private.pri
+lib/qt6/mkspecs/modules/qt_lib_qmldesignsupport.pri
+lib/qt6/mkspecs/modules/qt_lib_qmldesignsupport_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmldom_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlformat_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlintegration.pri
+lib/qt6/mkspecs/modules/qt_lib_qmllint_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmllocalstorage.pri
 lib/qt6/mkspecs/modules/qt_lib_qmllocalstorage_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlls_private.pri
@@ -3622,6 +3841,7 @@ lib/qt6/mkspecs/modules/qt_lib_qmlmodels.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlmodels_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlnetwork.pri
 lib/qt6/mkspecs/modules/qt_lib_qmlnetwork_private.pri
+lib/qt6/mkspecs/modules/qt_lib_qmlpreview_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmltc_private.pri
 lib/qt6/mkspecs/modules/qt_lib_qmltest.pri
 lib/qt6/mkspecs/modules/qt_lib_qmltest_private.pri
@@ -3639,6 +3859,8 @@ lib/qt6/mkspecs/modules/qt_lib_quickcontrols2basic.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2basic_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2basicstyleimpl.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2basicstyleimpl_private.pri
+lib/qt6/mkspecs/modules/qt_lib_quickcontrols2fluentwinui3.pri
+lib/qt6/mkspecs/modules/qt_lib_quickcontrols2fluentwinui3_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2fluentwinui3styleimpl.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2fluentwinui3styleimpl_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2fusion.pri
@@ -3654,6 +3876,7 @@ lib/qt6/mkspecs/modules/qt_lib_quickcontrols2material.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2material_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2materialstyleimpl.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2materialstyleimpl_private.pri
+lib/qt6/mkspecs/modules/qt_lib_quickcontrols2native.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2universal.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2universal_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2universalstyleimpl.pri
@@ -3669,9 +3892,11 @@ lib/qt6/mkspecs/modules/qt_lib_quickeffects.pri
 lib/qt6/mkspecs/modules/qt_lib_quickeffects_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quicklayouts.pri
 lib/qt6/mkspecs/modules/qt_lib_quicklayouts_private.pri
+lib/qt6/mkspecs/modules/qt_lib_quickparticles.pri
 lib/qt6/mkspecs/modules/qt_lib_quickparticles_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quickshapes.pri
 lib/qt6/mkspecs/modules/qt_lib_quickshapes_private.pri
+lib/qt6/mkspecs/modules/qt_lib_quickshapesdesignhelpers.pri
 lib/qt6/mkspecs/modules/qt_lib_quickshapesdesignhelpers_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quicktemplates2.pri
 lib/qt6/mkspecs/modules/qt_lib_quicktemplates2_private.pri
@@ -3698,14 +3923,17 @@ lib/qt6/modules/Qml.json
 lib/qt6/modules/QmlCompiler.json
 lib/qt6/modules/QmlCore.json
 lib/qt6/modules/QmlDebugPrivate.json
+lib/qt6/modules/QmlDesignSupport.json
 lib/qt6/modules/QmlDomPrivate.json
 lib/qt6/modules/QmlFormatPrivate.json
 lib/qt6/modules/QmlIntegration.json
 lib/qt6/modules/QmlLSPrivate.json
+lib/qt6/modules/QmlLintPrivate.json
 lib/qt6/modules/QmlLocalStorage.json
 lib/qt6/modules/QmlMeta.json
 lib/qt6/modules/QmlModels.json
 lib/qt6/modules/QmlNetwork.json
+lib/qt6/modules/QmlPreviewPrivate.json
 lib/qt6/modules/QmlToolingSettingsPrivate.json
 lib/qt6/modules/QmlTypeRegistrarPrivate.json
 lib/qt6/modules/QmlWorkerScript.json
@@ -3715,6 +3943,7 @@ lib/qt6/modules/Quick.json
 lib/qt6/modules/QuickControls2.json
 lib/qt6/modules/QuickControls2Basic.json
 lib/qt6/modules/QuickControls2BasicStyleImpl.json
+lib/qt6/modules/QuickControls2FluentWinUI3.json
 lib/qt6/modules/QuickControls2FluentWinUI3StyleImpl.json
 lib/qt6/modules/QuickControls2Fusion.json
 lib/qt6/modules/QuickControls2FusionStyleImpl.json
@@ -3723,6 +3952,7 @@ lib/qt6/modules/QuickControls2ImagineStyleImpl.json
 lib/qt6/modules/QuickControls2Impl.json
 lib/qt6/modules/QuickControls2Material.json
 lib/qt6/modules/QuickControls2MaterialStyleImpl.json
+lib/qt6/modules/QuickControls2Native.json
 lib/qt6/modules/QuickControls2Universal.json
 lib/qt6/modules/QuickControls2UniversalStyleImpl.json
 lib/qt6/modules/QuickControlsTestUtilsPrivate.json
@@ -3731,9 +3961,9 @@ lib/qt6/modules/QuickDialogs2QuickImpl.json
 lib/qt6/modules/QuickDialogs2Utils.json
 lib/qt6/modules/QuickEffects.json
 lib/qt6/modules/QuickLayouts.json
-lib/qt6/modules/QuickParticlesPrivate.json
+lib/qt6/modules/QuickParticles.json
 lib/qt6/modules/QuickShapes.json
-lib/qt6/modules/QuickShapesDesignHelpersPrivate.json
+lib/qt6/modules/QuickShapesDesignHelpers.json
 lib/qt6/modules/QuickTemplates2.json
 lib/qt6/modules/QuickTest.json
 lib/qt6/modules/QuickTestUtilsPrivate.json
@@ -3770,28 +4000,44 @@ lib/qt6/qml/Qt/
 lib/qt6/qml/Qt/labs/
 lib/qt6/qml/Qt/labs/StyleKit/
 lib/qt6/qml/Qt/labs/StyleKit/ApplicationWindow.qml
+lib/qt6/qml/Qt/labs/StyleKit/BusyIndicator.qml
 lib/qt6/qml/Qt/labs/StyleKit/Button.qml
 lib/qt6/qml/Qt/labs/StyleKit/CheckBox.qml
+lib/qt6/qml/Qt/labs/StyleKit/CheckDelegate.qml
 lib/qt6/qml/Qt/labs/StyleKit/ComboBox.qml
+lib/qt6/qml/Qt/labs/StyleKit/DelayButton.qml
+lib/qt6/qml/Qt/labs/StyleKit/Dial.qml
+lib/qt6/qml/Qt/labs/StyleKit/Dialog.qml
+lib/qt6/qml/Qt/labs/StyleKit/DialogButtonBox.qml
 lib/qt6/qml/Qt/labs/StyleKit/Frame.qml
 lib/qt6/qml/Qt/labs/StyleKit/GroupBox.qml
 lib/qt6/qml/Qt/labs/StyleKit/ItemDelegate.qml
 lib/qt6/qml/Qt/labs/StyleKit/Label.qml
+lib/qt6/qml/Qt/labs/StyleKit/Menu.qml
+lib/qt6/qml/Qt/labs/StyleKit/MenuBar.qml
+lib/qt6/qml/Qt/labs/StyleKit/MenuBarItem.qml
+lib/qt6/qml/Qt/labs/StyleKit/MenuItem.qml
+lib/qt6/qml/Qt/labs/StyleKit/MenuSeparator.qml
 lib/qt6/qml/Qt/labs/StyleKit/Page.qml
+lib/qt6/qml/Qt/labs/StyleKit/PageIndicator.qml
 lib/qt6/qml/Qt/labs/StyleKit/Pane.qml
 lib/qt6/qml/Qt/labs/StyleKit/Popup.qml
 lib/qt6/qml/Qt/labs/StyleKit/ProgressBar.qml
 lib/qt6/qml/Qt/labs/StyleKit/RadioButton.qml
+lib/qt6/qml/Qt/labs/StyleKit/RadioDelegate.qml
 lib/qt6/qml/Qt/labs/StyleKit/RangeSlider.qml
+lib/qt6/qml/Qt/labs/StyleKit/RoundButton.qml
 lib/qt6/qml/Qt/labs/StyleKit/ScrollBar.qml
 lib/qt6/qml/Qt/labs/StyleKit/ScrollIndicator.qml
 lib/qt6/qml/Qt/labs/StyleKit/ScrollView.qml
+lib/qt6/qml/Qt/labs/StyleKit/SearchField.qml
 lib/qt6/qml/Qt/labs/StyleKit/Slider.qml
 lib/qt6/qml/Qt/labs/StyleKit/SpinBox.qml
 lib/qt6/qml/Qt/labs/StyleKit/Style.qml
 lib/qt6/qml/Qt/labs/StyleKit/StyleAnimation.qml
-lib/qt6/qml/Qt/labs/StyleKit/StyledItem.qml
+lib/qt6/qml/Qt/labs/StyleKit/SwipeDelegate.qml
 lib/qt6/qml/Qt/labs/StyleKit/Switch.qml
+lib/qt6/qml/Qt/labs/StyleKit/SwitchDelegate.qml
 lib/qt6/qml/Qt/labs/StyleKit/TabBar.qml
 lib/qt6/qml/Qt/labs/StyleKit/TabButton.qml
 lib/qt6/qml/Qt/labs/StyleKit/TextArea.qml
@@ -3802,9 +4048,13 @@ lib/qt6/qml/Qt/labs/StyleKit/ToolSeparator.qml
 lib/qt6/qml/Qt/labs/StyleKit/impl/
 lib/qt6/qml/Qt/labs/StyleKit/impl/BackgroundAndIndicatorDelegate.qml
 lib/qt6/qml/Qt/labs/StyleKit/impl/BackgroundDelegate.qml
+lib/qt6/qml/Qt/labs/StyleKit/impl/BusyIndicatorDelegate.qml
+lib/qt6/qml/Qt/labs/StyleKit/impl/ContentItemIndicator.qml
+lib/qt6/qml/Qt/labs/StyleKit/impl/DialDelegate.qml
 lib/qt6/qml/Qt/labs/StyleKit/impl/FallbackStyle.qml
 lib/qt6/qml/Qt/labs/StyleKit/impl/HandleDelegate.qml
 lib/qt6/qml/Qt/labs/StyleKit/impl/IndicatorDelegate.qml
+lib/qt6/qml/Qt/labs/StyleKit/impl/ProgressDelegate.qml
 lib/qt6/qml/Qt/labs/StyleKit/impl/Shadow.qml
 @so lib/qt6/qml/Qt/labs/StyleKit/impl/liblabsstylekitimplplugin.so
 lib/qt6/qml/Qt/labs/StyleKit/impl/plugins.qmltypes
@@ -3863,6 +4113,10 @@ lib/qt6/qml/QtNetwork/
 lib/qt6/qml/QtNetwork/plugins.qmltypes
 lib/qt6/qml/QtNetwork/qmldir
 lib/qt6/qml/QtQml/
+lib/qt6/qml/QtQml/DesignSupport/
+@so lib/qt6/qml/QtQml/DesignSupport/libqmldesignsupportplugin.so
+lib/qt6/qml/QtQml/DesignSupport/plugins.qmltypes
+lib/qt6/qml/QtQml/DesignSupport/qmldir
 lib/qt6/qml/QtQml/Models/
 @so lib/qt6/qml/QtQml/Models/libmodelsplugin.so
 lib/qt6/qml/QtQml/Models/plugins.qmltypes
@@ -5038,6 +5292,10 @@ lib/qt6/qml/QtQuick/Controls/Material/impl/qmldir
 @so lib/qt6/qml/QtQuick/Controls/Material/libqtquickcontrols2materialstyleplugin.so
 lib/qt6/qml/QtQuick/Controls/Material/plugins.qmltypes
 lib/qt6/qml/QtQuick/Controls/Material/qmldir
+lib/qt6/qml/QtQuick/Controls/Native/
+lib/qt6/qml/QtQuick/Controls/Native/QuickControls2Native.qmltypes
+@so lib/qt6/qml/QtQuick/Controls/Native/libqtquickcontrols2nativestyleplugin.so
+lib/qt6/qml/QtQuick/Controls/Native/qmldir
 lib/qt6/qml/QtQuick/Controls/Universal/
 lib/qt6/qml/QtQuick/Controls/Universal/ApplicationWindow.qml
 lib/qt6/qml/QtQuick/Controls/Universal/BusyIndicator.qml
@@ -5335,6 +5593,7 @@ lib/qt6/qml/QtQuick/Dialogs/quickimpl/qml/SaturationLightnessPicker.qml
 lib/qt6/qml/QtQuick/Dialogs/quickimpl/qml/SideBar.qml
 lib/qt6/qml/QtQuick/Dialogs/quickimpl/qmldir
 lib/qt6/qml/QtQuick/Effects/
+lib/qt6/qml/QtQuick/Effects/BlurItem.qml
 @so lib/qt6/qml/QtQuick/Effects/libeffectsplugin.so
 lib/qt6/qml/QtQuick/Effects/plugins.qmltypes
 lib/qt6/qml/QtQuick/Effects/qmldir

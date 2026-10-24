@@ -6,9 +6,10 @@ WANTLIB += Qt6DesignerComponents Qt6Gui Qt6Help Qt6Network Qt6OpenGL
 WANTLIB += Qt6OpenGLWidgets Qt6PrintSupport Qt6Qml Qt6QmlCompiler
 WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6Quick3DAssetImport Qt6Quick3DIblBaker Qt6Quick3DRuntimeRender
-WANTLIB += Qt6Quick3DUtils Qt6QuickLayouts Qt6QuickVectorImageGenerator
-WANTLIB += Qt6QuickWidgets Qt6ShaderTools Qt6Sql Qt6UiTools Qt6Widgets
-WANTLIB += Qt6Xml c execinfo m xkbcommon zstd
+WANTLIB += Qt6Quick3DUtils Qt6QuickLayouts Qt6QuickVectorImage
+WANTLIB += Qt6QuickVectorImageGenerator Qt6QuickWidgets Qt6ShaderTools
+WANTLIB += Qt6Sql Qt6UiTools Qt6Widgets Qt6Xml c execinfo m xkbcommon
+WANTLIB += zstd
 
 MODULES +=		lang/python
 

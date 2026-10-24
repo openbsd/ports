@@ -1,3 +1,6 @@
+bin/deploy_lib/
+bin/deploy_lib/ios/
+bin/deploy_lib/ios/python_xcframework.py
 bin/pyside6/
 bin/pyside6/android_deploy.py
 @bin bin/pyside6/assistant
@@ -22,12 +25,22 @@ bin/pyside6/deploy_lib/config.py
 bin/pyside6/deploy_lib/default.spec
 bin/pyside6/deploy_lib/dependency_util.py
 bin/pyside6/deploy_lib/deploy_util.py
+bin/pyside6/deploy_lib/ios/
+bin/pyside6/deploy_lib/ios/__init__.py
+bin/pyside6/deploy_lib/ios/info_plist.py
+bin/pyside6/deploy_lib/ios/ios_config.py
+bin/pyside6/deploy_lib/ios/ios_dependency.py
+bin/pyside6/deploy_lib/ios/ios_helper.py
+bin/pyside6/deploy_lib/ios/main_mm.py
+bin/pyside6/deploy_lib/ios/pbxproj.py
 bin/pyside6/deploy_lib/nuitka_helper.py
+bin/pyside6/deploy_lib/pyproject_toml_deploy.py
 bin/pyside6/deploy_lib/pyside_icon.icns
 bin/pyside6/deploy_lib/pyside_icon.ico
 bin/pyside6/deploy_lib/pyside_icon.jpg
 bin/pyside6/deploy_lib/python_helper.py
 @bin bin/pyside6/designer
+bin/pyside6/ios_deploy.py
 @bin bin/pyside6/linguist
 @bin bin/pyside6/lrelease
 @bin bin/pyside6/lupdate
@@ -35,12 +48,14 @@ bin/pyside6/metaobjectdump.py
 bin/pyside6/project.py
 bin/pyside6/project_lib/
 bin/pyside6/project_lib/__init__.py
+bin/pyside6/project_lib/commands.py
 bin/pyside6/project_lib/design_studio_project.py
 bin/pyside6/project_lib/newproject.py
 bin/pyside6/project_lib/project_data.py
 bin/pyside6/project_lib/pyproject_json.py
 bin/pyside6/project_lib/pyproject_parse_result.py
 bin/pyside6/project_lib/pyproject_toml.py
+bin/pyside6/project_lib/qrc.py
 bin/pyside6/project_lib/utils.py
 bin/pyside6/pyside_tool.py
 bin/pyside6/qml.py
@@ -66,5 +81,6 @@ bin/pyside6/qtpy2cpp_lib/tokenizer.py
 bin/pyside6/qtpy2cpp_lib/visitor.py
 @bin bin/pyside6/rcc
 bin/pyside6/requirements-android.txt
+bin/pyside6/requirements-ios.txt
 @bin bin/pyside6/svgtoqml
 @bin bin/pyside6/uic

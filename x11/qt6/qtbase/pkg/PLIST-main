@@ -185,9 +185,14 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtimezonelocale_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtimezoneprivate_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtipccommon_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtools_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtparsecommon_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtparseqttemporalformat_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtparsetemporal_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtparsetimezone_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtrace_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtranslator_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtransposeproxymodel_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qttemporalpattern_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qunicodetables_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qunicodetools_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/quniquehandle_p.h
@@ -626,6 +631,7 @@ include/X11/qt6/QtCore/QtVersion
 include/X11/qt6/QtCore/QtVersionChecks
 include/X11/qt6/QtCore/q17memory.h
 include/X11/qt6/QtCore/q20algorithm.h
+include/X11/qt6/QtCore/q20atomic.h
 include/X11/qt6/QtCore/q20bit.h
 include/X11/qt6/QtCore/q20chrono.h
 include/X11/qt6/QtCore/q20functional.h
@@ -1050,7 +1056,11 @@ include/X11/qt6/QtGui/${VERSION}/
 include/X11/qt6/QtGui/${VERSION}/QtGui/
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/atspiadaptor_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/bus_interface_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/cache_adaptor_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/dbusconnection_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/deviceeventcontroller_adaptor_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/properties_interface_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qabstractfileiconengine_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qabstractfileiconprovider_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qabstractlayoutstyleinfo_p.h
@@ -1139,6 +1149,7 @@ include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgnometheme_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgrayraster_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgridlayoutengine_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qguiapplication_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qguisvg_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qharfbuzzng_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qhexstring_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qhighdpiscaling_p.h
@@ -1253,9 +1264,11 @@ include/X11/qt6/QtGui/${VERSION}/QtGui/private/qvulkaninstance_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qvulkanwindow_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qwindow_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qxbmhandler_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qxdgdesktopportalfiletransfer_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qxdgnotificationproxy_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qxkbcommon_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qxpmhandler_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/socket_interface_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/
 include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/qplatformaccessibility.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/qplatformbackingstore.h
@@ -1332,6 +1345,7 @@ include/X11/qt6/QtGui/QAccessibleTextSelectionEvent
 include/X11/qt6/QtGui/QAccessibleTextUpdateEvent
 include/X11/qt6/QtGui/QAccessibleValueChangeEvent
 include/X11/qt6/QtGui/QAccessibleValueInterface
+include/X11/qt6/QtGui/QAccessibleViewportInterface
 include/X11/qt6/QtGui/QAction
 include/X11/qt6/QtGui/QActionEvent
 include/X11/qt6/QtGui/QActionGroup
@@ -1535,10 +1549,6 @@ include/X11/qt6/QtGui/QtEvents
 include/X11/qt6/QtGui/QtGui
 include/X11/qt6/QtGui/QtGuiDepends
 include/X11/qt6/QtGui/QtGuiVersion
-include/X11/qt6/QtGui/bus_interface.h
-include/X11/qt6/QtGui/cache_adaptor.h
-include/X11/qt6/QtGui/deviceeventcontroller_adaptor.h
-include/X11/qt6/QtGui/properties_interface.h
 include/X11/qt6/QtGui/qabstractfileiconprovider.h
 include/X11/qt6/QtGui/qabstracttextdocumentlayout.h
 include/X11/qt6/QtGui/qaccessibilityhints.h
@@ -1658,7 +1668,6 @@ include/X11/qt6/QtGui/qvulkaninstance.h
 include/X11/qt6/QtGui/qvulkanwindow.h
 include/X11/qt6/QtGui/qwindow.h
 include/X11/qt6/QtGui/qwindowdefs.h
-include/X11/qt6/QtGui/socket_interface.h
 include/X11/qt6/QtKmsSupport/
 include/X11/qt6/QtKmsSupport/${VERSION}/
 include/X11/qt6/QtKmsSupport/${VERSION}/QtKmsSupport/
@@ -1773,6 +1782,8 @@ include/X11/qt6/QtNetwork/QHostInfo
 include/X11/qt6/QtNetwork/QHstsPolicy
 include/X11/qt6/QtNetwork/QHttp1Configuration
 include/X11/qt6/QtNetwork/QHttp2Configuration
+include/X11/qt6/QtNetwork/QHttpHeaderRangeSet
+include/X11/qt6/QtNetwork/QHttpHeaderRangeSpec
 include/X11/qt6/QtNetwork/QHttpHeaders
 include/X11/qt6/QtNetwork/QHttpMultiPart
 include/X11/qt6/QtNetwork/QHttpPart
@@ -1807,6 +1818,7 @@ include/X11/qt6/QtNetwork/QSslDiffieHellmanParameters
 include/X11/qt6/QtNetwork/QSslEllipticCurve
 include/X11/qt6/QtNetwork/QSslError
 include/X11/qt6/QtNetwork/QSslKey
+include/X11/qt6/QtNetwork/QSslKeyingMaterial
 include/X11/qt6/QtNetwork/QSslPreSharedKeyAuthenticator
 include/X11/qt6/QtNetwork/QSslServer
 include/X11/qt6/QtNetwork/QSslSocket
@@ -1855,6 +1867,7 @@ include/X11/qt6/QtNetwork/qssldiffiehellmanparameters.h
 include/X11/qt6/QtNetwork/qsslellipticcurve.h
 include/X11/qt6/QtNetwork/qsslerror.h
 include/X11/qt6/QtNetwork/qsslkey.h
+include/X11/qt6/QtNetwork/qsslkeyingmaterial.h
 include/X11/qt6/QtNetwork/qsslpresharedkeyauthenticator.h
 include/X11/qt6/QtNetwork/qsslserver.h
 include/X11/qt6/QtNetwork/qsslsocket.h
@@ -2101,6 +2114,7 @@ include/X11/qt6/QtTest/${VERSION}/QtTest/private/qcomparisontesthelper_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qcsvbenchmarklogger_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qemulationdetector_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qjunittestlogger_p.h
+include/X11/qt6/QtTest/${VERSION}/QtTest/private/qmeanvarianceaccumulator_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qplaintestlogger_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qpropertytesthelper_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qsignaldumper_p.h
@@ -2189,10 +2203,10 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-wayl
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-wlr-data-control-unstable-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-wp-primary-selection-unstable-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-output-unstable-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-session-management-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-shell.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-system-bell-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-toplevel-drag-v1.h
-include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xx-session-management-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandabstractdecoration_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandappmenu_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandbuffer_p.h
@@ -2225,6 +2239,7 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinput
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandintegration_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandmimehelper_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandnativeinterface_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandpipewritehelper_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandplatformservices_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandpointergestures_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandprimaryselectionv1_p.h
@@ -2272,10 +2287,10 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-wayla
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-wlr-data-control-unstable-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-wp-primary-selection-unstable-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-output-unstable-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-session-management-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-shell-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-system-bell-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-toplevel-drag-v1-client-protocol.h
-include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xx-session-management-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/QWaylandClientExtension
 include/X11/qt6/QtWaylandClient/QWaylandClientExtensionTemplate
 include/X11/qt6/QtWaylandClient/QtWaylandClient
@@ -2750,10 +2765,8 @@ include/X11/qt6/QtWlShellIntegration/
 include/X11/qt6/QtWlShellIntegration/${VERSION}/
 include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/
 include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/private/
-include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/private/qwayland-wayland.h
 include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/private/qwaylandwlshellintegration_p.h
 include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/private/qwaylandwlshellsurface_p.h
-include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/private/wayland-wayland-client-protocol.h
 include/X11/qt6/QtWlShellIntegration/QtWlShellIntegration
 include/X11/qt6/QtWlShellIntegration/QtWlShellIntegrationDepends
 include/X11/qt6/QtWlShellIntegration/QtWlShellIntegrationVersion
@@ -2822,7 +2835,9 @@ lib/cmake/Qt6/FindATSPI2.cmake
 lib/cmake/Qt6/FindBundletool.cmake
 lib/cmake/Qt6/FindDB2.cmake
 lib/cmake/Qt6/FindDirectFB.cmake
+lib/cmake/Qt6/FindEventfd.cmake
 lib/cmake/Qt6/FindGLESv2.cmake
+lib/cmake/Qt6/FindGLESv3.cmake
 lib/cmake/Qt6/FindGSSAPI.cmake
 lib/cmake/Qt6/FindGTK3.cmake
 lib/cmake/Qt6/FindInterbase.cmake
@@ -2835,6 +2850,7 @@ lib/cmake/Qt6/FindLiburing.cmake
 lib/cmake/Qt6/FindMimer.cmake
 lib/cmake/Qt6/FindMtdev.cmake
 lib/cmake/Qt6/FindMySQL.cmake
+lib/cmake/Qt6/FindNodeAddonApi.cmake
 lib/cmake/Qt6/FindOracle.cmake
 lib/cmake/Qt6/FindPPS.cmake
 lib/cmake/Qt6/FindPostgreSQL.cmake
@@ -2851,6 +2867,7 @@ lib/cmake/Qt6/FindWrapBundledLibpngConfigExtra.cmake
 lib/cmake/Qt6/FindWrapBundledPcre2ConfigExtra.cmake
 lib/cmake/Qt6/FindWrapBundledZLIBConfigExtra.cmake
 lib/cmake/Qt6/FindWrapDBus1.cmake
+lib/cmake/Qt6/FindWrapFontconfig.cmake
 lib/cmake/Qt6/FindWrapFreetype.cmake
 lib/cmake/Qt6/FindWrapHarfbuzz.cmake
 lib/cmake/Qt6/FindWrapJpeg.cmake
@@ -2896,6 +2913,7 @@ lib/cmake/Qt6/QtAutoDetectHelpers.cmake
 lib/cmake/Qt6/QtAutogenHelpers.cmake
 lib/cmake/Qt6/QtBaseTopLevelHelpers.cmake
 lib/cmake/Qt6/QtBuild.cmake
+lib/cmake/Qt6/QtBuildCMakeFromSourcesScript.cmake
 lib/cmake/Qt6/QtBuildHelpers.cmake
 lib/cmake/Qt6/QtBuildInformation.cmake
 lib/cmake/Qt6/QtBuildOptionsHelpers.cmake
@@ -2905,6 +2923,7 @@ lib/cmake/Qt6/QtBuildRepoHelpers.cmake
 lib/cmake/Qt6/QtBuildStaticDocToolsScript.cmake
 lib/cmake/Qt6/QtCMakeHelpers.cmake
 lib/cmake/Qt6/QtCMakePackageVersionFile.cmake.in
+lib/cmake/Qt6/QtCMakePackageVersionFileOverride.cmake.in
 lib/cmake/Qt6/QtCMakeVersionHelpers.cmake
 lib/cmake/Qt6/QtCompilerFlags.cmake
 lib/cmake/Qt6/QtCompilerOptimization.cmake
@@ -2930,6 +2949,7 @@ lib/cmake/Qt6/QtGenerateLibHelpers.cmake
 lib/cmake/Qt6/QtGenerateLibPri.cmake
 lib/cmake/Qt6/QtGenerateVersionScript.cmake
 lib/cmake/Qt6/QtGlobalStateHelpers.cmake
+lib/cmake/Qt6/QtHarmonyOSHelpers.cmake
 lib/cmake/Qt6/QtHeadersClean.cmake
 lib/cmake/Qt6/QtInitProject.cmake
 lib/cmake/Qt6/QtInstallHelpers.cmake
@@ -2942,6 +2962,7 @@ lib/cmake/Qt6/QtModuleConfigPrivate.cmake.in
 lib/cmake/Qt6/QtModuleDependencies.cmake.in
 lib/cmake/Qt6/QtModuleHeadersCheck.cmake
 lib/cmake/Qt6/QtModuleHelpers.cmake
+lib/cmake/Qt6/QtModuleMapHelpers.cmake
 lib/cmake/Qt6/QtModuleToolsConfig.cmake.in
 lib/cmake/Qt6/QtModuleToolsDependencies.cmake.in
 lib/cmake/Qt6/QtModuleToolsVersionlessTargets.cmake.in
@@ -2972,6 +2993,7 @@ lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake
 lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake
 lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake
 lib/cmake/Qt6/QtPublicGitHelpers.cmake
+lib/cmake/Qt6/QtPublicHarmonyOSToolchainHelpers.cmake
 lib/cmake/Qt6/QtPublicJsonHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake
@@ -3009,6 +3031,7 @@ lib/cmake/Qt6/QtScopeFinalizerHelpers.cmake
 lib/cmake/Qt6/QtSeparateDebugInfo.Info.plist.in
 lib/cmake/Qt6/QtSeparateDebugInfo.cmake
 lib/cmake/Qt6/QtSetup.cmake
+lib/cmake/Qt6/QtSetupAndroid.cmake
 lib/cmake/Qt6/QtSimdHelpers.cmake
 lib/cmake/Qt6/QtSingleRepoTargetSetBuildHelpers.cmake
 lib/cmake/Qt6/QtStandaloneTestsConfig.cmake.in
@@ -3026,6 +3049,7 @@ lib/cmake/Qt6/QtWasmHelpers.cmake
 lib/cmake/Qt6/QtWindowsHelpers.cmake
 lib/cmake/Qt6/QtWrapperScriptHelpers.cmake
 lib/cmake/Qt6/QtWriteArgsFile.cmake
+lib/cmake/Qt6/android/
 lib/cmake/Qt6/config.tests/
 lib/cmake/Qt6/config.tests/binary_for_strip/
 lib/cmake/Qt6/config.tests/binary_for_strip/CMakeLists.txt
@@ -3824,6 +3848,9 @@ lib/qt6/bin/
 @bin lib/qt6/bin/androiddeployqt
 @bin lib/qt6/bin/androiddeployqt6
 @bin lib/qt6/bin/androidtestrunner
+@bin lib/qt6/bin/harmonydeployqt
+@bin lib/qt6/bin/harmonydeployqt6
+@bin lib/qt6/bin/harmonyostestrunner
 @bin lib/qt6/bin/qdbuscpp2xml
 @bin lib/qt6/bin/qdbusxml2cpp
 @bin lib/qt6/bin/qmake
@@ -4163,6 +4190,9 @@ lib/qt6/mkspecs/features/mac/toolchain.prf
 lib/qt6/mkspecs/features/metatypes.prf
 lib/qt6/mkspecs/features/moc.prf
 lib/qt6/mkspecs/features/no_debug_info.prf
+lib/qt6/mkspecs/features/ohos/
+lib/qt6/mkspecs/features/ohos/ohos.prf
+lib/qt6/mkspecs/features/ohos/resolve_target.prf
 lib/qt6/mkspecs/features/permissions.prf
 lib/qt6/mkspecs/features/plugin_bundle.prf
 lib/qt6/mkspecs/features/precompile_header.prf
@@ -4205,6 +4235,7 @@ lib/qt6/mkspecs/features/uikit/device_destinations.sh
 lib/qt6/mkspecs/features/uikit/devices.py
 lib/qt6/mkspecs/features/uikit/exclusive_builds_post.prf
 lib/qt6/mkspecs/features/uikit/gc_binaries.prf
+lib/qt6/mkspecs/features/uikit/qt.prf
 lib/qt6/mkspecs/features/uikit/resolve_config.prf
 lib/qt6/mkspecs/features/uikit/sdk.prf
 lib/qt6/mkspecs/features/uikit/testcase.prf
@@ -4227,7 +4258,6 @@ lib/qt6/mkspecs/features/unix/x11sm.prf
 lib/qt6/mkspecs/features/unsupported/
 lib/qt6/mkspecs/features/unsupported/testserver.prf
 lib/qt6/mkspecs/features/use_c_linker.prf
-lib/qt6/mkspecs/features/vxworks.prf
 lib/qt6/mkspecs/features/warn_off.prf
 lib/qt6/mkspecs/features/warn_on.prf
 lib/qt6/mkspecs/features/wasm/
@@ -4402,6 +4432,9 @@ lib/qt6/mkspecs/modules/qt_lib_xml_private.pri
 lib/qt6/mkspecs/netbsd-g++/
 lib/qt6/mkspecs/netbsd-g++/qmake.conf
 lib/qt6/mkspecs/netbsd-g++/qplatformdefs.h
+lib/qt6/mkspecs/ohos-clang/
+lib/qt6/mkspecs/ohos-clang/qmake.conf
+lib/qt6/mkspecs/ohos-clang/qplatformdefs.h
 lib/qt6/mkspecs/openbsd-clang/
 lib/qt6/mkspecs/openbsd-clang/qmake.conf
 lib/qt6/mkspecs/openbsd-clang/qplatformdefs.h
@@ -4473,6 +4506,7 @@ lib/qt6/mkspecs/unsupported/vxworks-simpentium-g++/
 lib/qt6/mkspecs/unsupported/vxworks-simpentium-g++/qmake.conf
 lib/qt6/mkspecs/unsupported/vxworks-simpentium-g++/qplatformdefs.h
 lib/qt6/mkspecs/vxworks-clang/
+lib/qt6/mkspecs/vxworks-clang/qmake.conf
 lib/qt6/mkspecs/vxworks-clang/qplatformdefs.h
 lib/qt6/mkspecs/wasm-emscripten/
 lib/qt6/mkspecs/wasm-emscripten-64/
@@ -4483,6 +4517,9 @@ lib/qt6/mkspecs/wasm-emscripten/qplatformdefs.h
 lib/qt6/mkspecs/win32-arm64-msvc/
 lib/qt6/mkspecs/win32-arm64-msvc/qmake.conf
 lib/qt6/mkspecs/win32-arm64-msvc/qplatformdefs.h
+lib/qt6/mkspecs/win32-arm64ec-msvc/
+lib/qt6/mkspecs/win32-arm64ec-msvc/qmake.conf
+lib/qt6/mkspecs/win32-arm64ec-msvc/qplatformdefs.h
 lib/qt6/mkspecs/win32-clang-g++/
 lib/qt6/mkspecs/win32-clang-g++/qmake.conf
 lib/qt6/mkspecs/win32-clang-g++/qplatformdefs.h
