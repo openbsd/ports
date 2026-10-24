@@ -47,7 +47,8 @@ WANTLIB += xerces-c yaml-cpp z
 
 SITES =			https://github.com/FreeCAD/FreeCAD/releases/download/${V}/
 
-FIX_CRLF_FILES =	src/Mod/Sketcher/App/GeoEnum.h
+FIX_CRLF_FILES =	src/Mod/Sketcher/App/GeoEnum.h \
+			src/Gui/PythonWrapper.cpp
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
