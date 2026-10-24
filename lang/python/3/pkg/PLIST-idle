@@ -1,10 +1,6 @@
 @option no-default-conflict
 @option is-branch
 @conflict python-idle->=3,<4
-@pkgpath lang/python/3.8,-idle
-@pkgpath lang/python/3.9,-idle
-@pkgpath lang/python/3.10,-idle
-@pkgpath lang/python/3.11,-idle
 bin/idle3
 bin/idle${VERSION}
 lib/${PY_VERSION}/idlelib/

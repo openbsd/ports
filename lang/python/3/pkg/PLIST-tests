@@ -1,10 +1,6 @@
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3,<4
-@pkgpath lang/python/3.10,-tests
-@pkgpath lang/python/3.11,-tests
-@pkgpath lang/python/3.8,-tests
-@pkgpath lang/python/3.9,-tests
 lib/${PY_VERSION}/test/
 lib/${PY_VERSION}/test/NormalizationTest-3.2.0.txt
 lib/${PY_VERSION}/test/__init__.py
@@ -82,9 +78,6 @@ lib/${PY_VERSION}/test/__pycache__/lock_tests.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/__pycache__/mapping_tests.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/__pycache__/mapping_tests.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/__pycache__/mapping_tests.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/test/__pycache__/memory_watchdog.${PYC_MAGIC_TAG}.opt-1.pyc
-lib/${PY_VERSION}/test/__pycache__/memory_watchdog.${PYC_MAGIC_TAG}.opt-2.pyc
-lib/${PY_VERSION}/test/__pycache__/memory_watchdog.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/__pycache__/mock_socket.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/__pycache__/mock_socket.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/__pycache__/mock_socket.${PYC_MAGIC_TAG}.pyc
@@ -1811,7 +1804,6 @@ lib/${PY_VERSION}/test/mathdata/floating_points.txt
 lib/${PY_VERSION}/test/mathdata/formatfloat_testcases.txt
 lib/${PY_VERSION}/test/mathdata/ieee754.txt
 lib/${PY_VERSION}/test/mathdata/math_testcases.txt
-lib/${PY_VERSION}/test/memory_watchdog.py
 lib/${PY_VERSION}/test/mime.types
 lib/${PY_VERSION}/test/mime.types2
 lib/${PY_VERSION}/test/mock_socket.py
@@ -2237,6 +2229,9 @@ lib/${PY_VERSION}/test/test_capi/__pycache__/check_config.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_abstract.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_abstract.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_abstract.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_capi/__pycache__/test_build.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_capi/__pycache__/test_build.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_capi/__pycache__/test_build.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_bytearray.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_bytearray.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_bytearray.${PYC_MAGIC_TAG}.pyc
@@ -2353,6 +2348,7 @@ lib/${PY_VERSION}/test/test_capi/__pycache__/test_weakref.${PYC_MAGIC_TAG}.opt-2
 lib/${PY_VERSION}/test/test_capi/__pycache__/test_weakref.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_capi/check_config.py
 lib/${PY_VERSION}/test/test_capi/test_abstract.py
+lib/${PY_VERSION}/test/test_capi/test_build.py
 lib/${PY_VERSION}/test/test_capi/test_bytearray.py
 lib/${PY_VERSION}/test/test_capi/test_bytes.py
 lib/${PY_VERSION}/test/test_capi/test_capsule.py
@@ -2397,10 +2393,15 @@ lib/${PY_VERSION}/test/test_cext/__pycache__/
 lib/${PY_VERSION}/test/test_cext/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_cext/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_cext/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_cext/__pycache__/runtests.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_cext/__pycache__/runtests.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_cext/__pycache__/runtests.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_cext/__pycache__/setup.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_cext/__pycache__/setup.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_cext/__pycache__/setup.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_cext/extension.c
+lib/${PY_VERSION}/test/test_cext/extension.cpp
+lib/${PY_VERSION}/test/test_cext/runtests.py
 lib/${PY_VERSION}/test/test_cext/setup.py
 lib/${PY_VERSION}/test/test_charmapcodec.py
 lib/${PY_VERSION}/test/test_class.py
@@ -2491,17 +2492,6 @@ lib/${PY_VERSION}/test/test_contextlib_async.py
 lib/${PY_VERSION}/test/test_copy.py
 lib/${PY_VERSION}/test/test_copyreg.py
 lib/${PY_VERSION}/test/test_coroutines.py
-lib/${PY_VERSION}/test/test_cppext/
-lib/${PY_VERSION}/test/test_cppext/__init__.py
-lib/${PY_VERSION}/test/test_cppext/__pycache__/
-lib/${PY_VERSION}/test/test_cppext/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-1.pyc
-lib/${PY_VERSION}/test/test_cppext/__pycache__/__init__.${PYC_MAGIC_TAG}.opt-2.pyc
-lib/${PY_VERSION}/test/test_cppext/__pycache__/__init__.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/test/test_cppext/__pycache__/setup.${PYC_MAGIC_TAG}.opt-1.pyc
-lib/${PY_VERSION}/test/test_cppext/__pycache__/setup.${PYC_MAGIC_TAG}.opt-2.pyc
-lib/${PY_VERSION}/test/test_cppext/__pycache__/setup.${PYC_MAGIC_TAG}.pyc
-lib/${PY_VERSION}/test/test_cppext/extension.cpp
-lib/${PY_VERSION}/test/test_cppext/setup.py
 lib/${PY_VERSION}/test/test_cprofile.py
 lib/${PY_VERSION}/test/test_crossinterp.py
 lib/${PY_VERSION}/test/test_csv.py
@@ -3030,6 +3020,9 @@ lib/${PY_VERSION}/test/test_free_threading/__pycache__/__init__.${PYC_MAGIC_TAG}
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_bisect.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_bisect.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_bisect.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_bytes_object.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_bytes_object.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_bytes_object.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_capi.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_capi.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_capi.${PYC_MAGIC_TAG}.pyc
@@ -3048,6 +3041,9 @@ lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_cprofile.${PYC_MAGIC
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_csv.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_csv.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_csv.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_datetime.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_datetime.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_datetime.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_dbm_gnu.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_dbm_gnu.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_dbm_gnu.${PYC_MAGIC_TAG}.pyc
@@ -3111,6 +3107,9 @@ lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_mmap.${PYC_MAGIC_TAG
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_monitoring.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_monitoring.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_monitoring.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_os.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_os.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_os.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_pickle.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_pickle.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_pickle.${PYC_MAGIC_TAG}.pyc
@@ -3156,16 +3155,21 @@ lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_types.${PYC_MAGIC_TA
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_uuid.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_uuid.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_uuid.${PYC_MAGIC_TAG}.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_weakref.${PYC_MAGIC_TAG}.opt-1.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_weakref.${PYC_MAGIC_TAG}.opt-2.pyc
+lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_weakref.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_zip.${PYC_MAGIC_TAG}.opt-1.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_zip.${PYC_MAGIC_TAG}.opt-2.pyc
 lib/${PY_VERSION}/test/test_free_threading/__pycache__/test_zip.${PYC_MAGIC_TAG}.pyc
 lib/${PY_VERSION}/test/test_free_threading/test_bisect.py
+lib/${PY_VERSION}/test/test_free_threading/test_bytes_object.py
 lib/${PY_VERSION}/test/test_free_threading/test_capi.py
 lib/${PY_VERSION}/test/test_free_threading/test_code.py
 lib/${PY_VERSION}/test/test_free_threading/test_collections.py
 lib/${PY_VERSION}/test/test_free_threading/test_context.py
 lib/${PY_VERSION}/test/test_free_threading/test_cprofile.py
 lib/${PY_VERSION}/test/test_free_threading/test_csv.py
+lib/${PY_VERSION}/test/test_free_threading/test_datetime.py
 lib/${PY_VERSION}/test/test_free_threading/test_dbm_gnu.py
 lib/${PY_VERSION}/test/test_free_threading/test_dict.py
 lib/${PY_VERSION}/test/test_free_threading/test_dict_watcher.py
@@ -3187,6 +3191,7 @@ lib/${PY_VERSION}/test/test_free_threading/test_list.py
 lib/${PY_VERSION}/test/test_free_threading/test_methodcaller.py
 lib/${PY_VERSION}/test/test_free_threading/test_mmap.py
 lib/${PY_VERSION}/test/test_free_threading/test_monitoring.py
+lib/${PY_VERSION}/test/test_free_threading/test_os.py
 lib/${PY_VERSION}/test/test_free_threading/test_pickle.py
 lib/${PY_VERSION}/test/test_free_threading/test_races.py
 lib/${PY_VERSION}/test/test_free_threading/test_re.py
@@ -3202,6 +3207,7 @@ lib/${PY_VERSION}/test/test_free_threading/test_tokenize.py
 lib/${PY_VERSION}/test/test_free_threading/test_type.py
 lib/${PY_VERSION}/test/test_free_threading/test_types.py
 lib/${PY_VERSION}/test/test_free_threading/test_uuid.py
+lib/${PY_VERSION}/test/test_free_threading/test_weakref.py
 lib/${PY_VERSION}/test/test_free_threading/test_zip.py
 lib/${PY_VERSION}/test/test_frozen.py
 lib/${PY_VERSION}/test/test_fstring.py

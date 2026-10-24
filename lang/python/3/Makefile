@@ -3,10 +3,13 @@
 # requirement of the PSF license, if it constitutes a change to
 # Python itself.
 
-FULL_VERSION =		3.14.8
+FULL_VERSION =		3.14.9
 SHARED_LIBS =		python3.14 0.0
 VERSION_SPEC =		>=3.14
 PORTROACH =		limit:^3\.14
+
+# keep above 8.0-stable, @conflict/@pkgpath changes in PLIST
+REVISION-main =		0
 
 AUTOCONF_VERSION =	2.72
 
@@ -17,7 +20,8 @@ CONFIGURE_ENV +=	ac_cv_working_openssl_hashlib=yes \
 	TCLTK_CFLAGS="-I${MODTCL_INCDIR} -I${MODTK_INCDIR} -I${X11BASE}/include" \
 	TCLTK_LIBS="-L${X11BASE}/lib -l${MODTCL_LIB} -l${MODTK_LIB} -lpthread"
 
-# disable bundled pip in favour of the version from devel/py-pip
+# disable bundled pip executable in favour of the version from devel/py-pip
+# (ensurepip is still included in packages and used e.g. for venv)
 CONFIGURE_ARGS +=      --with-ensurepip=no
 
 .include <bsd.port.mk>

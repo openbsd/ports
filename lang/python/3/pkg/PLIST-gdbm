@@ -1,8 +1,4 @@
 @option no-default-conflict
 @option is-branch
 @conflict python-gdbm->=3,<4
-@pkgpath lang/python/3.8,-gdbm
-@pkgpath lang/python/3.9,-gdbm
-@pkgpath lang/python/3.10,-gdbm
-@pkgpath lang/python/3.11,-gdbm
 @so lib/${PY_VERSION}/lib-dynload/_gdbm.${PYC_MAGIC_TAG}.so
