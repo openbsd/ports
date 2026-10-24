@@ -1,0 +1,20 @@
+Fix a couple of heap overflow vulnerabilities, all "disputed" severity
+https://github.com/godotengine/godot/issues/123608
+CVE-2026-110734
+CVE-2026-110735
+CVE-2026-110736
+
+Index: core/string/optimized_translation.h
+--- core/string/optimized_translation.h.orig
++++ core/string/optimized_translation.h
+@@ -83,6 +83,10 @@ class OptimizedTranslation : public Translation {
+ 		return d;
+ 	}
+ 
++	// Helpers to guard against corrupted resources.
++	const Bucket *_get_bucket(uint32_t p_offset) const;
++	String _get_string(const Bucket::Elem &p_elem) const;
++
+ 	virtual Vector<String> _get_message_list() const override;
+ 
+ protected:

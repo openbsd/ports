@@ -1,0 +1,32 @@
+Backport: Fix a couple of heap overflow vulnerabilities, all "disputed"
+severity
+https://github.com/godotengine/godot/issues/123608
+CVE-2026-110734
+CVE-2026-110735
+CVE-2026-110736
+
+Index: thirdparty/misc/smaz.c
+--- thirdparty/misc/smaz.c.orig
++++ thirdparty/misc/smaz.c
+@@ -172,9 +172,10 @@ int smaz_decompress(const char *in, int inlen, char *o
+     char *_out = out;
+     int _outlen = outlen;
+ 
+-    while(inlen) {
++    while(inlen > 0) {
+         if (*c == 254) {
+             /* Verbatim byte */
++            if (inlen < 2) return _outlen+1;
+             if (outlen < 1) return _outlen+1;
+             *out = *(c+1);
+             out++;
+@@ -183,7 +184,9 @@ int smaz_decompress(const char *in, int inlen, char *o
+             inlen -= 2;
+         } else if (*c == 255) {
+             /* Verbatim string */
++            if (inlen < 2) return _outlen+1;
+             int len = (*(c+1))+1;
++            if (inlen < 2+len) return _outlen+1;
+             if (outlen < len) return _outlen+1;
+             memcpy(out,c+2,len);
+             out += len;

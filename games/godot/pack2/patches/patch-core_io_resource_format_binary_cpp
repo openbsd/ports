@@ -1,0 +1,29 @@
+Backport: Fix a couple of heap overflow vulnerabilities, all "disputed"
+severity
+https://github.com/godotengine/godot/issues/123608
+CVE-2026-110734
+CVE-2026-110735
+CVE-2026-110736
+
+Index: core/io/resource_format_binary.cpp
+--- core/io/resource_format_binary.cpp.orig
++++ core/io/resource_format_binary.cpp
+@@ -915,6 +915,10 @@ static void save_ustring(Ref<FileAccess> f, const Stri
+ 
+ static String get_ustring(Ref<FileAccess> f) {
+ 	int len = f->get_32();
++	ERR_FAIL_COND_V_MSG(len < 0 || (uint64_t)len > f->get_length() - f->get_position(), String(), "Invalid string length, corrupt binary resource.");
++	if (len == 0) {
++		return String();
++	}
+ 	Vector<char> str_buf;
+ 	str_buf.resize(len);
+ 	f->get_buffer((uint8_t *)&str_buf[0], len);
+@@ -925,6 +929,7 @@ static String get_ustring(Ref<FileAccess> f) {
+ 
+ String ResourceLoaderBinary::get_unicode_string() {
+ 	int len = f->get_32();
++	ERR_FAIL_COND_V_MSG(len < 0 || (uint64_t)len > f->get_length() - f->get_position(), String(), "Invalid string length, corrupt binary resource.");
+ 	if (len > str_buf.size()) {
+ 		str_buf.resize(len);
+ 	}
