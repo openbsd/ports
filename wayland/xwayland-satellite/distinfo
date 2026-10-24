@@ -1,4 +1,4 @@
-SHA256 (Supreeeme-xwayland-satellite-a879e5e0896a326adc79c474bf457b8b99011027.tar.gz) = Jkm5FUa6f8rBbQO6ROckZS3/TJc8rpX33TjmDsvWx6c=
+SHA256 (Supreeeme-xwayland-satellite-v0.8.3.tar.gz) = izKHPX10AUPOnvo8+0PBfQF2uJ0uj/qkl9twnxVPxHg=
 SHA256 (cargo/ab_glyph-0.2.32.tar.gz) = AcBFdHLDjqW9HDta2l42gnHLVQvnpMpKC0Y06ZE/bMI=
 SHA256 (cargo/ab_glyph_rasterizer-0.1.10.tar.gz) = Nm/7qkRC9GhNkeLNfF6nxO2K3UGVmjFEcGbieeQythg=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
@@ -45,6 +45,7 @@ SHA256 (cargo/hashbrown-0.16.1.tar.gz) = hB0cyb7X+SNvMh35dwMDc/SkFjrhp9v+GlGiwaU
 SHA256 (cargo/hecs-0.10.5.tar.gz) = 4cvGde6Nl7TSBqmFE3+K1ZZmU49W+QZHT1VEZ6Y8d20=
 SHA256 (cargo/hecs-macros-0.10.0.tar.gz) = BS/CWxLcMmCCYFzSCY63YFCnL6DA6ep/qqP1i1ZfyXA=
 SHA256 (cargo/hermit-abi-0.5.2.tar.gz) = /A/vRW5LqpbalQRVzQLAgcqVOxQSmOQds/x+NrHahJw=
+SHA256 (cargo/hostname-0.4.2.tar.gz) = YXqqNVeu84EKY2nQqZ+siggIkbaL2fmBKh7toMBzDL0=
 SHA256 (cargo/humantime-2.3.0.tar.gz) = E1sSMp5ePOBXqflyM56lK8lU/h6TWO8n+V6JcW+8VCQ=
 SHA256 (cargo/ident_case-1.0.1.tar.gz) = ueA4S2GVhWbpJtxQZgMh0SFZAl52fBjgQ9rya3AQTDk=
 SHA256 (cargo/indexmap-2.12.1.tar.gz) = CtS7K1ZbygZF9NaMXJr5f7oJTpeR2mhb+Dy18850rPI=
@@ -94,6 +95,7 @@ SHA256 (cargo/spin-0.9.8.tar.gz) = aYDo11ESQfis9K6927H/k4317r6YaRQYxEaNC3Kpamc=
 SHA256 (cargo/strict-num-0.1.1.tar.gz) = Zje6t3ItN5yLQbqEkijWgMwS0KRboforSPKjBXegZzE=
 SHA256 (cargo/strsim-0.11.1.tar.gz) = fai1c2hF2fL8uDfqXZ4mKFZLOwQ6cJSKPwt3iDjF+08=
 SHA256 (cargo/syn-2.0.111.tar.gz) = OQzJopSrcb2xqi6Z0Tvpx1PNLXvWVgx3EYWXQQxNLoc=
+SHA256 (cargo/syslog-7.0.0.tar.gz) = AZ8VAKEzebfQUUVd85fHV3DeYxGnoYimmUmVAnBNnxA=
 SHA256 (cargo/termcolor-1.4.1.tar.gz) = BnlPj2xciYsyda6++muKHLJM0sbHk5erFXdIN6C8V1U=
 SHA256 (cargo/thiserror-2.0.17.tar.gz) = 9jWHyg8StyoGALy6HUAIH4MIdgALtG3SM3owUWGPT8g=
 SHA256 (cargo/thiserror-impl-2.0.17.tar.gz) = P/Fcjs1944SdtjLhTRjSVx+gnfxe2TR5vESFx6UXyRM=
@@ -135,7 +137,7 @@ SHA256 (cargo/xkeysym-0.2.1.tar.gz) = ucwAJRViooR1HJlzus52DYbAJ2xHG0vlaf5rBo7pel
 SHA256 (cargo/yeslogic-fontconfig-sys-6.0.0.tar.gz) = UDoGa0wDfEQBadmVuGkEaCfbxxJj9ujzvm131PMinb0=
 SHA256 (cargo/zerocopy-0.8.31.tar.gz) = /XTsmLklCts8pVS93iaa32MVSfUdio+PChC1DxyymMM=
 SHA256 (cargo/zerocopy-derive-0.8.31.tar.gz) = 2KjSCf30XPUTjLtaUG9rUlIqJa/MxTTRR12tjjEQXGo=
-SIZE (Supreeeme-xwayland-satellite-a879e5e0896a326adc79c474bf457b8b99011027.tar.gz) = 214954
+SIZE (Supreeeme-xwayland-satellite-v0.8.3.tar.gz) = 223057
 SIZE (cargo/ab_glyph-0.2.32.tar.gz) = 20967
 SIZE (cargo/ab_glyph_rasterizer-0.1.10.tar.gz) = 11206
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
@@ -182,6 +184,7 @@ SIZE (cargo/hashbrown-0.16.1.tar.gz) = 147785
 SIZE (cargo/hecs-0.10.5.tar.gz) = 82553
 SIZE (cargo/hecs-macros-0.10.0.tar.gz) = 5326
 SIZE (cargo/hermit-abi-0.5.2.tar.gz) = 17435
+SIZE (cargo/hostname-0.4.2.tar.gz) = 12983
 SIZE (cargo/humantime-2.3.0.tar.gz) = 23242
 SIZE (cargo/ident_case-1.0.1.tar.gz) = 3492
 SIZE (cargo/indexmap-2.12.1.tar.gz) = 100184
@@ -231,6 +234,7 @@ SIZE (cargo/spin-0.9.8.tar.gz) = 38958
 SIZE (cargo/strict-num-0.1.1.tar.gz) = 5104
 SIZE (cargo/strsim-0.11.1.tar.gz) = 14266
 SIZE (cargo/syn-2.0.111.tar.gz) = 302117
+SIZE (cargo/syslog-7.0.0.tar.gz) = 12968
 SIZE (cargo/termcolor-1.4.1.tar.gz) = 18773
 SIZE (cargo/thiserror-2.0.17.tar.gz) = 28857
 SIZE (cargo/thiserror-impl-2.0.17.tar.gz) = 21344

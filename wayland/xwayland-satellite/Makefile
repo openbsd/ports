@@ -1,8 +1,6 @@
 COMMENT =	rootless Xwayland integration for any Wayland compositor
 
-XWS_COMMIT =	a879e5e0896a326adc79c474bf457b8b99011027
-DIST_TUPLE = 	github Supreeeme xwayland-satellite ${XWS_COMMIT} .
-PKGNAME =	xwayland-satellite-0.8.1pl20260316
+DIST_TUPLE = 	github Supreeeme xwayland-satellite v0.8.3 .
 
 MODCARGO_NO_DEFAULT_FEATURES = Yes
 MODCARGO_FEATURES =
