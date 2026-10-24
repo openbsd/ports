@@ -1,7 +1,7 @@
 Index: tls/tests/meson.build
 --- tls/tests/meson.build.orig
 +++ tls/tests/meson.build
-@@ -71,7 +71,7 @@ foreach backend: backends
+@@ -89,7 +89,7 @@ foreach backend: backends
        '-D_GNU_SOURCE',
      ]
  
