@@ -1,7 +1,7 @@
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		51.0
+GNOME_VERSION=		51.1
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes

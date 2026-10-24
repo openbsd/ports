@@ -112,7 +112,7 @@ SHA256 (gnome/../cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpn
 SHA256 (gnome/../cargo/zip-8.6.0.tar.gz) = LQSmtTgVAqpgh8lMZpSZ6xYC65xegZjlNN5XH3FUgJs=
 SHA256 (gnome/../cargo/zlib-rs-0.6.4.tar.gz) = l3NH24yqCAQD9ra3wc2pR5qOhpMW9+E6WbGQdqQPlOM=
 SHA256 (gnome/../cargo/zopfli-0.8.3.tar.gz) = 8FzYeX1jhlQl/4m1xKSIBPNboM6NElgAAnrWAX0rUkk=
-SHA256 (gnome/orca-51.0.tar.xz) = i8PkS8W3tm7H4MxcgmlcAHVmGSJ0XSVyT1/ISiVgIQg=
+SHA256 (gnome/orca-51.1.tar.xz) = IoKTlEdOn95/3UawOpjJqY61lRBrIftxr9vi+CQ2B3s=
 SIZE (gnome/../cargo/addr2line-0.25.1.tar.gz) = 43134
 SIZE (gnome/../cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (gnome/../cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -227,4 +227,4 @@ SIZE (gnome/../cargo/yaml-rust-0.4.5.tar.gz) = 47783
 SIZE (gnome/../cargo/zip-8.6.0.tar.gz) = 149622
 SIZE (gnome/../cargo/zlib-rs-0.6.4.tar.gz) = 213728
 SIZE (gnome/../cargo/zopfli-0.8.3.tar.gz) = 51589
-SIZE (gnome/orca-51.0.tar.xz) = 4167792
+SIZE (gnome/orca-51.1.tar.xz) = 4286944
