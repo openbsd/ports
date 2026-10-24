@@ -7,13 +7,7 @@ X11 Startup
 KDE Plasma desktop environment is launched through the 'startplasma-x11'
 executable. Simply add '${LOCALBASE}/bin/startplasma-x11' to your .xinitrc
 or .xsession script if you use startx(1) or xenodm(1), respectively. You can
-find an example below. The 'XDG_RUNTIME_DIR' should be present before calling
-'startplasma-x11'
-
-export XDG_RUNTIME_DIR=/tmp/run/$(id -u)
-if [ ! -d $XDG_RUNTIME_DIR ]; then
-    mkdir -m 700 -p $XDG_RUNTIME_DIR
-fi
+find an example below.
 
 if [ -x /usr/local/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
     eval `dbus-launch --sh-syntax --exit-with-x11`

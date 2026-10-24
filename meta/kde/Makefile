@@ -30,7 +30,7 @@ PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 
-REVISION-plasma =	0
+REVISION-plasma =	1
 REVISION-main=		0
 REVISION-development =	0
 
