@@ -1,3 +1,6 @@
 bin/yc-dyndns
+libexec/yc-dyndns/
+${HOOKS_PATH}/
+${HOOKS_PATH}/auth
 @man man/man1/yc-dyndns.1
 share/doc/pkg-readmes/${PKGSTEM}
