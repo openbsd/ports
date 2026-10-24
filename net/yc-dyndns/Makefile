@@ -1,6 +1,7 @@
 COMMENT =		Dynamic DNS client for Yandex Cloud
 DIST_TUPLE =		codeberg	kn	yc-dyndns	0.5	.
 CATEGORIES =		net
+REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@opensd.org>
 
@@ -26,7 +27,7 @@ SUBST_VARS =		MODPY_SITEPKG \
 
 HOOKS_PATH =		libexec/${PKGSTEM}/certbot-hooks
 HOOKS_DIR =		${PREFIX}/${HOOKS_PATH}
-SUBST_VARS =		HOOKS_PATH
+SUBST_VARS +=		HOOKS_PATH
 
 do-install:
 	${SUBST_PROGRAM}  ${WRKSRC}/${PROG}   ${PREFIX}/bin/${PROG}
