@@ -306,7 +306,6 @@ share/tellico/dbc2tellico.xsl
 share/tellico/dblp2tellico.xsl
 share/tellico/delicious2tellico.xsl
 share/tellico/dvd-logo.png
-share/tellico/dvdfr2tellico.xsl
 share/tellico/entry-templates/
 share/tellico/entry-templates/Album.xsl
 share/tellico/entry-templates/Compact.xsl
