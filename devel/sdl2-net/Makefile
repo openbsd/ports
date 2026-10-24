@@ -1,9 +1,8 @@
-V =		2.2.0
+V =		2.4.0
 COMMENT =	SDL2 cross-platform networking library
 DISTNAME =	SDL2_net-${V}
 PKGNAME =	sdl2-net-${V}
 CATEGORIES =	devel net
-REVISION =	0
 
 SHARED_LIBS +=	SDL2_net		1.0 # 0.0
 
@@ -14,7 +13,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 X11 Xcursor Xext Xfixes Xi Xrandr Xrender Xss
-WANTLIB += m pthread samplerate sndio usbhid xcb
+WANTLIB += iconv m pthread samplerate sndio usbhid xcb
 
 SITES =		https://www.libsdl.org/projects/SDL_net/release/
 
