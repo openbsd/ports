@@ -1,7 +1,7 @@
 COMMENT=		view current processes and monitor system state
 
 GNOME_PROJECT=		gnome-system-monitor
-GNOME_VERSION=		50.0
+GNOME_VERSION=		51.1
 
 CATEGORIES=		sysutils
 
