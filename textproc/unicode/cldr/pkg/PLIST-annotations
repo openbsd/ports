@@ -13,9 +13,7 @@ share/unicode/cldr/common/annotations/ast.xml
 share/unicode/cldr/common/annotations/az.xml
 share/unicode/cldr/common/annotations/ba.xml
 share/unicode/cldr/common/annotations/be.xml
-share/unicode/cldr/common/annotations/bew.xml
 share/unicode/cldr/common/annotations/bg.xml
-share/unicode/cldr/common/annotations/bgn.xml
 share/unicode/cldr/common/annotations/blo.xml
 share/unicode/cldr/common/annotations/bn.xml
 share/unicode/cldr/common/annotations/br.xml
@@ -27,6 +25,7 @@ share/unicode/cldr/common/annotations/ccp.xml
 share/unicode/cldr/common/annotations/ceb.xml
 share/unicode/cldr/common/annotations/chr.xml
 share/unicode/cldr/common/annotations/ckb.xml
+share/unicode/cldr/common/annotations/cop.xml
 share/unicode/cldr/common/annotations/cs.xml
 share/unicode/cldr/common/annotations/cv.xml
 share/unicode/cldr/common/annotations/cy.xml
@@ -56,7 +55,6 @@ share/unicode/cldr/common/annotations/fil.xml
 share/unicode/cldr/common/annotations/fo.xml
 share/unicode/cldr/common/annotations/fr.xml
 share/unicode/cldr/common/annotations/fr_CA.xml
-share/unicode/cldr/common/annotations/frr.xml
 share/unicode/cldr/common/annotations/ga.xml
 share/unicode/cldr/common/annotations/gd.xml
 share/unicode/cldr/common/annotations/gl.xml
@@ -113,7 +111,6 @@ share/unicode/cldr/common/annotations/om.xml
 share/unicode/cldr/common/annotations/or.xml
 share/unicode/cldr/common/annotations/pa.xml
 share/unicode/cldr/common/annotations/pa_Arab.xml
-share/unicode/cldr/common/annotations/pap.xml
 share/unicode/cldr/common/annotations/pcm.xml
 share/unicode/cldr/common/annotations/pl.xml
 share/unicode/cldr/common/annotations/ps.xml
@@ -121,7 +118,6 @@ share/unicode/cldr/common/annotations/pt.xml
 share/unicode/cldr/common/annotations/pt_PT.xml
 share/unicode/cldr/common/annotations/qu.xml
 share/unicode/cldr/common/annotations/quc.xml
-share/unicode/cldr/common/annotations/rhg.xml
 share/unicode/cldr/common/annotations/rm.xml
 share/unicode/cldr/common/annotations/ro.xml
 share/unicode/cldr/common/annotations/root.xml
