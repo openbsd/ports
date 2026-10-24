@@ -1,0 +1,14 @@
+https://patchew.org/QEMU/20261024161240.66707-1-kirill@korins.ky/
+
+Index: hw/hppa/machine.c
+--- hw/hppa/machine.c.orig
++++ hw/hppa/machine.c
+@@ -811,6 +811,8 @@ static void hppa_machine_reset(MachineState *ms, Reset
+ 
+         cpu_set_pc(cs, firmware_entry);
+         cpu[i]->env.psw = PSW_Q;
++        /* Firmware uses FP registers before configuring CCR. */
++        cpu[i]->env.cr[CR_SCRCCR] = 0xc0;
+         cpu[i]->env.gr[5] = CPU_HPA + i * 0x1000;
+     }
+ 

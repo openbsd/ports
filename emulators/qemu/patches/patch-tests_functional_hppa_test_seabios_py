@@ -1,0 +1,18 @@
+https://patchew.org/QEMU/20261024161240.66707-1-kirill@korins.ky/
+
+Index: tests/functional/hppa/test_seabios.py
+--- tests/functional/hppa/test_seabios.py.orig
++++ tests/functional/hppa/test_seabios.py
+@@ -20,8 +20,10 @@ class HppaSeabios(QemuSystemTest):
+         self.vm.add_args('-no-shutdown')
+         self.vm.set_console()
+         self.vm.launch()
+-        wait_for_console_pattern(self, f'SeaBIOS PA-RISC {bits}-bit Firmware')
+-        wait_for_console_pattern(self, f'Emulated machine:     HP {mach} ({bits}-bit')
++        wait_for_console_pattern(self, f'SeaBIOS PA-RISC {bits}-bit Firmware',
++                                 failure_message='SeaBIOS: Detected trap')
++        wait_for_console_pattern(self, f'Emulated machine:     HP {mach} ({bits}-bit',
++                                 failure_message='SeaBIOS: Detected trap')
+ 
+     def test_hppa_32(self):
+         self.set_machine('B160L')

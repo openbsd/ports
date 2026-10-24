@@ -1,0 +1,377 @@
+https://patchew.org/QEMU/20261024161240.66707-1-kirill@korins.ky/
+
+Index: tests/qtest/hppa-fpu-test.c
+--- tests/qtest/hppa-fpu-test.c.orig
++++ tests/qtest/hppa-fpu-test.c
+@@ -0,0 +1,371 @@
++/*
++ * HPPA CCR floating-point enable and lazy context switching tests.
++ *
++ * SPDX-License-Identifier: GPL-2.0-or-later
++ */
++
++#include "qemu/osdep.h"
++#include "libqtest.h"
++
++#define BOOT 0x1000
++#define CODE 0x1100
++#define FP_CODE 0x1300
++#define ASSIST 0x1400
++#define UNEXPECTED 0x1500
++#define HALT 0x1600
++#define DATA 0x1800
++#define RESULT 0x1900
++#define LOG 0x1a00
++
++/* Enable interruption-state collection through IPSW before entering CODE. */
++static const uint32_t bootstrap[] = {
++    0x34010010, /* ldi 8,r1 */
++    0x02c11840, /* mtctl r1,ipsw */
++    0x02201840, /* mtctl r0,iiasq */
++    0x02201840, /* mtctl r0,iiasq */
++    0x34012200, /* ldi 0x1100,r1 */
++    0x02411840, /* mtctl r1,iiaoq */
++    0x34012208, /* ldi 0x1104,r1 */
++    0x02411840, /* mtctl r1,iiaoq */
++    0x00000c00, /* rfi */
++};
++
++/*
++ * r20 counts assists. After the first call, the shared CCR writer is entered
++ * with FP enabled. Alternating its input must reselect the next translation.
++ */
++static const uint32_t fp_guest[] = {
++    0x34011000, /* ldi 0x800,r1 */
++    0x01c11840, /* mtctl r1,iva */
++    0x08000240, /* nop */
++    0x34103000, /* ldi 0x1800,r16 */
++    0x34113200, /* ldi 0x1900,r17 */
++    0x341a3400, /* ldi 0x1a00,r26 */
++    0x34140000, /* ldi 0,r20 */
++    0x34010180, /* ldi 0xc0,r1 */
++    0x01411840, /* mtctl r1,ccr */
++    0x2e00100c, /* fldd 0(r16),fr12 */
++    0x34010000, /* ldi 0,r1 */
++    0x01411840, /* mtctl r1,ccr */
++    0x08142880, /* cmpclr,= r20,r0,r0: nullify the next instruction */
++    0x08000240, /* replaced by the FP instruction under test */
++    0x6a340008, /* stw r20,4(r17) */
++    0x34010180, /* ldi 0xc0,r1 */
++    0xe8400370, /* bl 0x1300,rp */
++    0x08000240, /* nop */
++    0x6a340010, /* stw r20,8(r17) */
++    0x34010000, /* ldi 0,r1 */
++    0xe8400350, /* bl 0x1300,rp */
++    0x08000240, /* nop */
++    0x6a340018, /* stw r20,12(r17) */
++    0x34010180, /* ldi 0xc0,r1 */
++    0xe8400330, /* bl 0x1300,rp */
++    0x08000240, /* nop */
++    0x6a340020, /* stw r20,16(r17) */
++    0x34010000, /* ldi 0,r1 */
++    0xe8400310, /* bl 0x1300,rp */
++    0x08000240, /* nop */
++    0x6a340028, /* stw r20,20(r17) */
++    0x34010180, /* ldi 0xc0,r1 */
++    0xe84002f0, /* bl 0x1300,rp */
++    0x08000240, /* nop */
++    0x6a340030, /* stw r20,24(r17) */
++    0x34010000, /* ldi 0,r1 */
++    0xe84002d0, /* bl 0x1300,rp */
++    0x08000240, /* nop */
++    0x6a340038, /* stw r20,28(r17) */
++    0x34010180, /* ldi 0xc0,r1 */
++    0x01411840, /* mtctl r1,ccr */
++    0x2e10120c, /* fstd fr12,8(r16) */
++    0x36100010, /* ldo 8(r16),r16 */
++    0x2e10120d, /* fstd fr13,8(r16) */
++    0x34010002, /* ldi 1,r1 */
++    0x6a210000, /* stw r1,0(r17): completion */
++    0xe8000882, /* b,n 0x1600 */
++};
++
++static const uint32_t fp_site[] = {
++    0x01411840, /* mtctl r1,ccr */
++    0x08000240, /* replaced by the FP instruction under test */
++    0xe840c002, /* bv,n 0(rp) */
++};
++
++/* r20 and r26 are outside the shadow register set restored by rfir. */
++static const uint32_t assist_handler[] = {
++    0x026008a1, /* mfctl iir,r1 */
++    0x6b410000, /* stw r1,0(r26) */
++    0x024008a1, /* mfctl iiaoq,r1 */
++    0x6b410008, /* stw r1,4(r26) */
++    0x028008a1, /* mfctl isr,r1 */
++    0x6b410010, /* stw r1,8(r26) */
++    0x02a008a1, /* mfctl ior,r1 */
++    0x6b410018, /* stw r1,12(r26) */
++    0x375a0020, /* ldo 16(r26),r26 */
++    0x36940002, /* ldo 1(r20),r20 */
++    0x34010180, /* ldi 0xc0,r1 */
++    0x01411840, /* mtctl r1,ccr */
++    0x00000ca0, /* rfir: retry the faulting instruction */
++};
++
++static const uint32_t unexpected_handler[] = {
++    0x026008a1, /* mfctl iir,r1 */
++    0x6a210008, /* stw r1,4(r17) */
++    0x024008a1, /* mfctl iiaoq,r1 */
++    0x6a210010, /* stw r1,8(r17) */
++    0x028008a1, /* mfctl isr,r1 */
++    0x6a210018, /* stw r1,12(r17) */
++    0x02a008a1, /* mfctl ior,r1 */
++    0x6a210020, /* stw r1,16(r17) */
++    0x6a380000, /* stw r24,0(r17): 0x100 | exception number */
++    0xe80001aa, /* b,n 0x1600 */
++};
++
++/* r18 owns the live FP state; r19 requests the next logical context. */
++static const uint32_t lazy_guest[] = {
++    0x34011000, /* ldi 0x800,r1 */
++    0x01c11840, /* mtctl r1,iva */
++    0x08000240, /* nop */
++    0x34123000, /* ldi 0x1800,r18: owner A */
++    0x34113200, /* ldi 0x1900,r17 */
++    0x34140000, /* ldi 0,r20 */
++    0x34010180, /* ldi 0xc0,r1 */
++    0x01411840, /* mtctl r1,ccr */
++    0x2e40100c, /* fldd 0(r18),fr12 */
++    0x318c0e0c, /* fadd,d fr12,fr12,fr12: A = 2 */
++    0x34173240, /* ldi 0x1920,r23 */
++    0x34133020, /* ldi 0x1810,r19: request B */
++    0xe8400390, /* bl 0x1300,rp */
++    0x08000240, /* nop */
++    0x318c0e0c, /* fadd,d fr12,fr12,fr12: B = 32 */
++    0x36f70010, /* ldo 8(r23),r23 */
++    0x34133000, /* ldi 0x1800,r19: request A */
++    0xe8400368, /* bl 0x1300,rp */
++    0x08000240, /* nop */
++    0x318c0e0c, /* fadd,d fr12,fr12,fr12: A = 4 */
++    0x36f70010, /* ldo 8(r23),r23 */
++    0x34133020, /* ldi 0x1810,r19: request B */
++    0xe8400340, /* bl 0x1300,rp */
++    0x08000240, /* nop */
++    0x318c0e0c, /* fadd,d fr12,fr12,fr12: B = 64 */
++    0x36f70010, /* ldo 8(r23),r23 */
++    0x34133000, /* ldi 0x1800,r19: request A */
++    0xe8400318, /* bl 0x1300,rp */
++    0x08000240, /* nop */
++    0x6a340008, /* stw r20,4(r17) */
++    0x34010002, /* ldi 1,r1 */
++    0x6a210000, /* stw r1,0(r17) */
++    0xe80008f2, /* b,n 0x1600 */
++};
++
++static const uint32_t lazy_site[] = {
++    0x01401840, /* mtctl r0,ccr */
++    0x2ee0120c, /* fstd fr12,0(r23) */
++    0xe840c002, /* bv,n 0(rp) */
++};
++
++static const uint32_t lazy_handler[] = {
++    0x34010180, /* ldi 0xc0,r1 */
++    0x01411840, /* mtctl r1,ccr */
++    0x2e40120c, /* fstd fr12,0(r18): save owner */
++    0x2e60100c, /* fldd 0(r19),fr12: restore requested context */
++    0x08130252, /* copy r19,r18 */
++    0x36940002, /* ldo 1(r20),r20 */
++    0x00000ca0, /* rfir */
++};
++
++static void write_words(QTestState *qts, uint32_t addr,
++                        const uint32_t *words, size_t count)
++{
++    for (size_t i = 0; i < count; i++) {
++        qtest_writel(qts, addr + 4 * i, words[i]);
++    }
++}
++
++static uint32_t branch(uint32_t pc, uint32_t target)
++{
++    uint32_t d = (target - pc - 8) / 4;
++
++    return 0xe8000002 | ((d & 0x10000) >> 16) | ((d & 0xf800) << 5) |
++           ((d & 0x400) >> 8) | ((d & 0x3ff) << 3);
++}
++
++static QTestState *start_guest(bool retry_assist)
++{
++    QTestState *qts = qtest_init("-machine none -cpu pa-7300lc -m 1M "
++                                "-S -accel tcg -no-shutdown "
++                                "-device loader,addr=0x1000,cpu-num=0");
++
++    write_words(qts, BOOT, bootstrap, G_N_ELEMENTS(bootstrap));
++    /* Shutdown may re-enter this TB before the main loop stops the CPU. */
++    qtest_writel(qts, HALT, 0xfffdead0);
++    write_words(qts, UNEXPECTED, unexpected_handler,
++                G_N_ELEMENTS(unexpected_handler));
++    for (unsigned int i = 0; i < 32; i++) {
++        uint32_t pc = 0x800 + i * 32;
++        uint32_t target = retry_assist && i == 22 ? ASSIST : UNEXPECTED;
++
++        qtest_writel(qts, pc, 0x34180000 | ((0x100 | i) << 1));
++        qtest_writel(qts, pc + 4, branch(pc + 4, target));
++    }
++    return qts;
++}
++
++static void run_guest(QTestState *qts, uint32_t expected)
++{
++    uint32_t result;
++
++    qtest_qmp_assert_success(qts, "{'execute':'cont'}");
++    qtest_qmp_eventwait(qts, "SHUTDOWN");
++    result = qtest_readl(qts, RESULT);
++    g_test_message("completion=0x%x, result[1]=0x%x, result[2]=0x%x",
++                   result, qtest_readl(qts, RESULT + 4),
++                   qtest_readl(qts, RESULT + 8));
++    g_assert_cmphex(result, ==, expected);
++}
++
++typedef struct FPTest {
++    const char *name;
++    uint32_t instruction;
++    bool memory;
++    uint64_t fr13;
++} FPTest;
++
++static const FPTest fp_tests[] = {
++    { "fldw", 0x2600100c, true },
++    { "fstw", 0x2600120c, true },
++    { "fldd", 0x2e00100c, true },
++    { "fstd", 0x2e00120c, true },
++    { "fid", 0x30000000 },
++    { "fadd-double", 0x318c0e0d, false, 0x4010000000000000ULL },
++    { "fadd-double-extended", 0x398c0e0d, false, 0x4010000000000000ULL },
++    { "fmpyadd-single", 0x188541e6 }, /* fr20L,fr21L,fr22L,fr23L,fr24L */
++    { "fmpysub-double", 0x988541c6 }, /* fr4,fr5,fr6,fr7,fr8 */
++};
++
++static void test_fp(const void *opaque)
++{
++    const FPTest *test = opaque;
++    static const uint32_t counts[] = { 0, 0, 1, 1, 2, 2, 3 };
++    QTestState *qts = start_guest(true);
++
++    write_words(qts, CODE, fp_guest, G_N_ELEMENTS(fp_guest));
++    write_words(qts, FP_CODE, fp_site, G_N_ELEMENTS(fp_site));
++    write_words(qts, ASSIST, assist_handler, G_N_ELEMENTS(assist_handler));
++    qtest_writel(qts, CODE + 13 * 4, test->instruction);
++    qtest_writel(qts, FP_CODE + 4, test->instruction);
++    qtest_writeq(qts, DATA, 0x4000000000000000ULL); /* double 2 */
++    run_guest(qts, 1);
++    for (size_t i = 0; i < G_N_ELEMENTS(counts); i++) {
++        g_assert_cmpuint(qtest_readl(qts, RESULT + 4 + 4 * i), ==, counts[i]);
++    }
++    for (unsigned int i = 0; i < 3; i++) {
++        g_assert_cmphex(qtest_readl(qts, LOG + 16 * i), ==, test->instruction);
++        g_assert_cmphex(qtest_readl(qts, LOG + 16 * i + 4), ==, FP_CODE + 4);
++        if (test->memory) {
++            g_assert_cmphex(qtest_readl(qts, LOG + 16 * i + 8), ==, 0);
++            g_assert_cmphex(qtest_readl(qts, LOG + 16 * i + 12), ==, DATA);
++        }
++    }
++    g_assert_cmphex(qtest_readq(qts, DATA + 8), ==, 0x4000000000000000ULL);
++    g_assert_cmphex(qtest_readq(qts, DATA + 16), ==, test->fr13);
++    qtest_quit(qts);
++}
++
++static void test_lazy(void)
++{
++    static const uint64_t markers[] = {
++        0x4030000000000000ULL, /* B = 16 */
++        0x4000000000000000ULL, /* A = 2 */
++        0x4040000000000000ULL, /* B = 32 */
++        0x4010000000000000ULL, /* A = 4 */
++    };
++    QTestState *qts = start_guest(true);
++
++    write_words(qts, CODE, lazy_guest, G_N_ELEMENTS(lazy_guest));
++    write_words(qts, FP_CODE, lazy_site, G_N_ELEMENTS(lazy_site));
++    write_words(qts, ASSIST, lazy_handler, G_N_ELEMENTS(lazy_handler));
++    qtest_writeq(qts, DATA, 0x3ff0000000000000ULL); /* A = 1 */
++    qtest_writeq(qts, DATA + 16, markers[0]);
++    run_guest(qts, 1);
++    g_assert_cmpuint(qtest_readl(qts, RESULT + 4), ==, 4);
++    for (size_t i = 0; i < G_N_ELEMENTS(markers); i++) {
++        g_assert_cmphex(qtest_readq(qts, RESULT + 32 + 8 * i), ==, markers[i]);
++    }
++    g_assert_cmphex(qtest_readq(qts, DATA), ==, 0x4010000000000000ULL);
++    g_assert_cmphex(qtest_readq(qts, DATA + 16), ==, 0x4050000000000000ULL);
++    qtest_quit(qts);
++}
++
++static const uint32_t fault_guest[] = {
++    0x34011000, /* ldi 0x800,r1 */
++    0x01c11840, /* mtctl r1,iva */
++    0x34103000, /* ldi 0x1800,r16: replaced for unaligned cases */
++    0x34113200, /* ldi 0x1900,r17 */
++    0x01401840, /* mtctl r0,ccr */
++    0x08000240, /* replaced by ssm 2,r0 for data translation */
++    0x08000240, /* replaced by the FP instruction under test */
++    0x34010002, /* ldi 1,r1 */
++    0x6a210000, /* stw r1,0(r17): unexpectedly completed */
++    0xe80009aa, /* b,n 0x1600 */
++};
++
++typedef struct FaultTest {
++    const char *name;
++    uint32_t instruction;
++    unsigned int exception;
++    uint32_t address;
++    bool dtlb;
++    bool memory;
++} FaultTest;
++
++static const FaultTest fault_tests[] = {
++    { "unaligned-load", 0x2e00100c, 28, DATA + 2, false, true },
++    { "unaligned-store", 0x2e00120c, 28, DATA + 2, false, true },
++    { "dtlb-load", 0x2e00100c, 15, DATA, true, true },
++    { "dtlb-store", 0x2e00120c, 15, DATA, true, true },
++    { "disabled-uid1-arithmetic", 0x30000040, 22, DATA, false, false },
++    { "disabled-uid1-memory", 0x2e00104c, 22, DATA, false, true },
++};
++
++static void test_fault(const void *opaque)
++{
++    const FaultTest *test = opaque;
++    uint32_t addr = test->address;
++    QTestState *qts = start_guest(false);
++
++    write_words(qts, CODE, fault_guest, G_N_ELEMENTS(fault_guest));
++    qtest_writel(qts, CODE + 8, 0x34100000 | (addr << 1));
++    if (test->dtlb) {
++        qtest_writel(qts, CODE + 20, 0x00020d60); /* ssm 2,r0 */
++    }
++    qtest_writel(qts, CODE + 24, test->instruction);
++    run_guest(qts, 0x100 | test->exception);
++    g_assert_cmphex(qtest_readl(qts, RESULT + 4), ==, test->instruction);
++    g_assert_cmphex(qtest_readl(qts, RESULT + 8), ==, CODE + 24);
++    if (test->memory) {
++        g_assert_cmphex(qtest_readl(qts, RESULT + 12), ==, 0);
++        g_assert_cmphex(qtest_readl(qts, RESULT + 16), ==, addr);
++    }
++    qtest_quit(qts);
++}
++
++int main(int argc, char **argv)
++{
++    g_test_init(&argc, &argv, NULL);
++    if (!qtest_has_accel("tcg")) {
++        g_test_skip("TCG accelerator required");
++        return 0;
++    }
++    for (size_t i = 0; i < G_N_ELEMENTS(fp_tests); i++) {
++        g_autofree char *name = g_strdup_printf("fpu/%s", fp_tests[i].name);
++
++        qtest_add_data_func(name, &fp_tests[i], test_fp);
++    }
++    qtest_add_func("fpu/lazy-contexts", test_lazy);
++    for (size_t i = 0; i < G_N_ELEMENTS(fault_tests); i++) {
++        g_autofree char *name = g_strdup_printf("fpu/%s", fault_tests[i].name);
++
++        qtest_add_data_func(name, &fault_tests[i], test_fault);
++    }
++    return g_test_run();
++}

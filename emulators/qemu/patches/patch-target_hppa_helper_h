@@ -1,0 +1,13 @@
+https://patchew.org/QEMU/20261024161240.66707-1-kirill@korins.ky/
+
+Index: target/hppa/helper.h
+--- target/hppa/helper.h.orig
++++ target/hppa/helper.h
+@@ -82,6 +82,7 @@ DEF_HELPER_FLAGS_4(fmpynfadd_d, TCG_CALL_NO_RWG, i64, 
+ DEF_HELPER_FLAGS_0(read_interval_timer, TCG_CALL_NO_RWG, tl)
+ 
+ #ifndef CONFIG_USER_ONLY
++DEF_HELPER_5(fpu_mem, noreturn, env, tl, i32, i32, i32)
+ DEF_HELPER_1(halt, noreturn, env)
+ DEF_HELPER_1(reset, noreturn, env)
+ DEF_HELPER_1(rfi, void, env)
