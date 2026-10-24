@@ -532,7 +532,6 @@
      SUBDIR += xdelta
      SUBDIR += xe
      SUBDIR += xjobs
-     SUBDIR += xps
      SUBDIR += xstatbar
      SUBDIR += xuvmstat
      SUBDIR += xxhash

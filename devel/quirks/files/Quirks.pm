@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1859 2026/10/24 07:50:50 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1860 2026/10/24 10:51:44 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -671,6 +671,7 @@ setup_obsolete_reason(
 	18 => 'gringotts',
 	8 => 'milter-greylist',
 	5 => 'libgringotts',
+	18 => 'xps',
 # 8.1
 	3 => 'cervisia',
 );
