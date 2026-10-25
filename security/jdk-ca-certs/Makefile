@@ -8,22 +8,20 @@ COMMENT=	common certificate authority certs for the jdks
 VER=		1.0
 PKGNAME=	jdk-ca-certs-${VER}
 
+GH_ACCOUNT=	botovq
+GH_PROJECT=	jdk-ca-certs
+GH_TAGNAME=	v0.0.2
+
 CATEGORIES=	security java
 
-# generated file from cert.pem
+# ISC
 PERMIT_PACKAGE=	Yes
 
-BUILD_DEPENDS=	security/openssl/4.0
-
-NO_BUILD =		Yes
 NO_TEST =		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
-	eopenssl40 pkcs12 -export -in ${FILESDIR}/cert.pem \
-		-out ${PREFIX}/share/examples/jdk-cacerts \
-		-jdktrust anyExtendedKeyUsage \
-		-certpbe NONE -nomac -nokeys \
-		-passout pass:
+	${WRKSRC}/jdk-ca-certs ${FILESDIR}/cert.pem \
+		${PREFIX}/share/examples/jdk-cacerts
 
 .include <bsd.port.mk>
