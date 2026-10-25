@@ -41,8 +41,9 @@ RUN_DEPENDS =	x11/qt6/qt3d>=${MODQT6_VERSION} \
 		x11/qt6/qtvirtualkeyboard>=${MODQT6_VERSION} \
 		x11/qt6/qtwayland>=${MODQT6_VERSION} \
 		x11/qt6/qtwebchannel>=${MODQT6_VERSION} \
-		x11/qt6/qtwebengine>=${MODQT6_VERSION} \
 		x11/qt6/qtwebsockets>=${MODQT6_VERSION} \
 		x11/qt6/qtwebview>=${MODQT6_VERSION}
+
+RUN_DEPENDS =	x11/qt6/qtwebengine
 
 .include <bsd.port.mk>
