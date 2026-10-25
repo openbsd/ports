@@ -1,0 +1,25 @@
+Some stream modules use pipe-backed fake descriptors. Query the base file's
+filesystem rather than passing a fake stream descriptor to fstatfs/fstatvfs.
+Ordinary file and directory handles are unchanged by metadata_fsp().
+
+Index: source3/modules/vfs_default.c
+--- source3/modules/vfs_default.c.orig
++++ source3/modules/vfs_default.c
+@@ -126,7 +126,7 @@ static uint64_t vfswrap_disk_free(vfs_handle_struct *h
+ 	struct vfs_statvfs_struct statvfsbuf;
+ 	int fd, ret;
+ 
+-	fd = fsp_get_pathref_fd(fsp);
++	fd = fsp_get_pathref_fd(metadata_fsp(fsp));
+ 
+ 	ret = sys_fstatvfs(fd, &statvfsbuf);
+ 	if (ret != 0) {
+@@ -197,7 +197,7 @@ static int vfswrap_fstatvfs(struct vfs_handle_struct *
+ 
+ 	START_PROFILE_X(SNUM(handle->conn), syscall_fstatvfs);
+ 
+-	fd = fsp_get_pathref_fd(fsp);
++	fd = fsp_get_pathref_fd(metadata_fsp(fsp));
+ 
+ 	ret = sys_fstatvfs(fd, statbuf);
+ 
