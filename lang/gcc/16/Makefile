@@ -2,7 +2,7 @@
 
 ONLY_FOR_ARCHS = ${PORTSGCC_ARCHS}
 
-ONLY_FOR_ARCHS-ada = amd64 mips64 i386 powerpc
+ONLY_FOR_ARCHS-ada = aarch64 amd64 i386 mips64 powerpc
 ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 mips64 powerpc powerpc64 \
 	riscv64 sparc64
 
@@ -15,11 +15,10 @@ USE_NOEXECONLY = Yes
 # - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
 #   into simple warnings.
 V = 16.2.0
-REVISION = 3
+REVISION = 4
 GCC_PKGSPEC = >=16,<17
 
-# aarch64, powerpc64 and sparc64 bootstrap contain only gdc
-BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.1.0-0.tar.xz
+BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.2.0-0.tar.xz
 BOOTSTRAP-amd64 = gcc-bootstrap-amd64-16.1.0-0.tar.xz
 BOOTSTRAP-arm = gcc-bootstrap-arm-16.1.0-0.tar.xz
 BOOTSTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
@@ -199,8 +198,8 @@ PKG_ARGS += -DX86=0
 .endif
 
 # Ada 128bit support
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "mips64" || \
-	${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
+    ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "sparc64"
 PKG_ARGS += -D128BIT=1
 .else
 PKG_ARGS += -D128BIT=0
