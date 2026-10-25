@@ -12,6 +12,7 @@ share/examples/ferrofin/ferrofin.toml
 @sample ${CONF_FILE}
 @mode
 @group
+share/examples/ferrofin/relayd.conf
 share/examples/login.conf.d/ferrofin
 @sample ${SYSCONFDIR}/login.conf.d/ferrofin
 @mode 750

@@ -7,7 +7,7 @@ USE_NOEXECONLY =	Yes
 COMMENT =		API compatible Jellyfin server in Rust
 DIST_TUPLE =		github	mangoleaf	ferrofin	v1.3.2	.
 CATEGORIES =		multimedia net
-REVISION =		0
+REVISION =		1
 
 # https://github.com/jellyfin/jellyfin-web needs 'npm run build:propduction'
 # which requires wxallowed WRKBUILD and fails with cryptic EPIPE on OpenBSD;
@@ -38,6 +38,7 @@ MODCARGO_INSTALL_TARGET_PATHS =	${MODCARGO_CARGOTOML:H}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+BIND_ADDR =		::1
 CONF_FILE =		${SYSCONFDIR}/${PKGSTEM}.toml
 DATA_DIR =		${VARBASE}/${PKGSTEM}
 DOC_DIR =		${PREFIX}/share/doc/${PKGSTEM}
@@ -45,7 +46,8 @@ EXAMPLES_DIR =		${PREFIX}/share/examples/${PKGSTEM}
 WEB_PATH =		share/jellyfin-web
 WEB_DIR =		${PREFIX}/${WEB_PATH}
 
-SUBST_VARS =		CONF_FILE \
+SUBST_VARS =		BIND_ADDR \
+			CONF_FILE \
 			DATA_DIR \
 			WEB_PATH
 
@@ -53,7 +55,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR} ${EXAMPLES_DIR} ${WEB_DIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/CONFIG.md ${DOC_DIR}/
 	cd ${WRKDIR}/usr/share/jellyfin/web/ && pax -rw . ${WEB_DIR}
-	${SUBST_DATA} {${FILESDIR},${EXAMPLES_DIR}}/ferrofin.toml
+.for _EXAMPLE in ferrofin.toml relayd.conf
+	${SUBST_DATA} {${FILESDIR},${EXAMPLES_DIR}}/${_EXAMPLE}
+.endfor
 
 .include "crates.inc"
 .include <bsd.port.mk>
