@@ -1,0 +1,12 @@
+Index: src/multimedia/pipewire/qpipewire_support.cpp
+--- src/multimedia/pipewire/qpipewire_support.cpp.orig
++++ src/multimedia/pipewire/qpipewire_support.cpp
+@@ -79,7 +79,7 @@ void PWThreadedEventLoop::signal(bool waitForAccept)
+ // debug support
+ QDebug operator<<(QDebug dbg, const spa_dict &dict)
+ {
+-    QSpan<const spa_dict_item> items{ dict.items, dict.n_items };
++    QSpan<const spa_dict_item> items{ dict.items, static_cast<qsizetype>(dict.n_items) };
+ 
+     QDebugStateSaver saver(dbg);
+     dbg.nospace();

@@ -1,0 +1,12 @@
+Index: src/multimedia/pipewire/qpipewire_propertydict.cpp
+--- src/multimedia/pipewire/qpipewire_propertydict.cpp.orig
++++ src/multimedia/pipewire/qpipewire_propertydict.cpp
+@@ -31,7 +31,7 @@ PwPropertiesHandle makeProperties(QSpan<const spa_dict
+ 
+ PwPropertyDict toPropertyDict(const spa_dict &dict)
+ {
+-    QSpan<const spa_dict_item> items{ dict.items, dict.n_items };
++    QSpan<const spa_dict_item> items{ dict.items, static_cast<qsizetype>(dict.n_items) };
+ 
+     PwPropertyDict map;
+     for (const spa_dict_item &item : items)
