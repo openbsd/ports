@@ -2,7 +2,7 @@
 PORTROACH =		limit:^A
 
 COMMENT =		UEFI firmware image viewer and editor
-DIST_TUPLE =		github	LongSoft	UEFITool	A75	.
+DIST_TUPLE =		github	LongSoft	UEFITool	A76	.
 PKGNAME =		${DISTNAME:S/A//}
 
 CATEGORIES =		sysutils
