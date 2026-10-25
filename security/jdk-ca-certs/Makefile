@@ -7,10 +7,13 @@ COMMENT=	common certificate authority certs for the jdks
 # to files dir and bump VER
 VER=		1.0
 PKGNAME=	jdk-ca-certs-${VER}
+REVISION=	0
 
 GH_ACCOUNT=	botovq
 GH_PROJECT=	jdk-ca-certs
 GH_TAGNAME=	v0.0.3
+
+HOMEPAGE=
 
 CATEGORIES=	security java
 
