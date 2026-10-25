@@ -1,4 +1,4 @@
-ONLY_FOR_ARCHS = ${GCC4_ARCHS}
+ONLY_FOR_ARCHS = alpha hppa sh
 
 DPB_PROPERTIES = parallel
 
