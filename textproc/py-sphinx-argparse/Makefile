@@ -1,6 +1,6 @@
 COMMENT=	auto-generate docs for argparse commands and options
 
-MODPY_DISTV=	0.5.2
+MODPY_DISTV=	0.6.1
 DISTNAME=	sphinx_argparse-${MODPY_DISTV}
 PKGNAME=	py-sphinx-argparse-${MODPY_DISTV}
 
