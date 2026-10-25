@@ -126,7 +126,7 @@ SHA256 (cargo/zerofrom-0.1.8.tar.gz) = DsBaEYE+qAH/bXURCtCc0IJN26F9/hcSjqDV9o5sU
 SHA256 (cargo/zerofrom-derive-0.1.8.tar.gz) = 91tGg/bH9FJI1NZAVqJCmMYoHgmTNW19G0oali7xDUo=
 SHA256 (cargo/zlib-rs-0.6.8.tar.gz) = smjljnxpPXwnH5P/xLo7OAQSVUIxyFv2HKevkQQqQRI=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
-SHA256 (severin-lemaignan-retex-1.2.0.tar.gz) = 1TnHmd5NOGH8LQmDkotqu9xzTlKSemhY0EepqPA2dIo=
+SHA256 (severin-lemaignan-retex-1.3.0.tar.gz) = ccr+1BHJ3EWPcTrBcNS6BmKJaFIFzbRQBNREMyZ0TFc=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.5.tar.gz) = 184315
 SIZE (cargo/arrayref-0.3.9.tar.gz) = 9186
@@ -255,4 +255,4 @@ SIZE (cargo/zerofrom-0.1.8.tar.gz) = 6156
 SIZE (cargo/zerofrom-derive-0.1.8.tar.gz) = 8834
 SIZE (cargo/zlib-rs-0.6.8.tar.gz) = 215857
 SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
-SIZE (severin-lemaignan-retex-1.2.0.tar.gz) = 12424700
+SIZE (severin-lemaignan-retex-1.3.0.tar.gz) = 12822041
