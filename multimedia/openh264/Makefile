@@ -1,8 +1,8 @@
 COMMENT =		Cisco implementation of H.264 codec
-DIST_TUPLE =		github	cisco	openh264	v2.6.0	.
+DIST_TUPLE =		github	cisco	openh264	v2.7.0	.
 CATEGORIES =		multimedia
 
-SHARED_LIBS =		openh264	1.0
+SHARED_LIBS =		openh264	2.0
 
 HOMEPAGE =		https://www.openh264.org/
 
