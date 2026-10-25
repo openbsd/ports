@@ -1,7 +1,12 @@
+Update OpenBSD-specific configuration on hppa for:
+- PIE support.
+- make __builtin_return_address() not try to read from text sections.
+- put switch() jump tables in .rodata in order not to read from text sections.
+
 Index: gcc/config/pa/pa-openbsd.h
 --- gcc/config/pa/pa-openbsd.h.orig
 +++ gcc/config/pa/pa-openbsd.h
-@@ -138,14 +138,15 @@ along with GCC; see the file COPYING3.  If not see
+@@ -138,17 +138,31 @@ along with GCC; see the file COPYING3.  If not see
     %{shared:-shared} %{R*} \
     %{static:-Bstatic} \
     %{!static:-Bdynamic} \
@@ -21,3 +26,19 @@ Index: gcc/config/pa/pa-openbsd.h
  #undef ENDFILE_SPEC
  #define ENDFILE_SPEC "%{!shared:crtend%O%s} %{shared:crtendS%O%s}"
  
++/* Find the return address associated with the frame given by
++   FRAMEADDR.
++   The default code in pa.h invokes return_addr_rtx(), which attemps to
++   read code at the return pointer in order to check for an export stub.
++   This is not possible under OpenBSD as code is not readable; but such
++   export stubs are not used under OpenBSD anymay.  */
++#undef RETURN_ADDR_RTX
++#define RETURN_ADDR_RTX(COUNT, FRAMEADDR)				 \
++  ((COUNT) == 0 ? get_hard_reg_initial_val (Pmode, 2) : NULL_RTX)
++
+ #define OBSD_HAS_CORRECT_SPECS
+ 
+ #define HAVE_ENABLE_EXECUTE_STACK
++
++#undef JUMP_TABLES_IN_TEXT_SECTION
++#define JUMP_TABLES_IN_TEXT_SECTION 0
