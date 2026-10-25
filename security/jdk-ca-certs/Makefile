@@ -10,7 +10,7 @@ PKGNAME=	jdk-ca-certs-${VER}
 
 GH_ACCOUNT=	botovq
 GH_PROJECT=	jdk-ca-certs
-GH_TAGNAME=	v0.0.2
+GH_TAGNAME=	v0.0.3
 
 CATEGORIES=	security java
 
