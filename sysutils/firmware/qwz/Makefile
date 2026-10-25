@@ -1,6 +1,6 @@
 FW_DRIVER=	qwz
 
-FW_VER=		20260309
+FW_VER=		20261019
 
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
@@ -19,7 +19,7 @@ FW=	WCN7850/hw2.0
 
 do-install:
 	# As referenced by the WHENCE file
-	${INSTALL_DATA} ${WRKSRC}/LICENSE.QualcommAtheros_ath10k \
+	${INSTALL_DATA} ${WRKSRC}/LICENSES/LICENSE.QualcommAtheros_ath10k \
 	    ${PREFIX}/firmware/qwz-license
 .for device in ${FW}
 . for i in amss board-2 m3
