@@ -48,7 +48,7 @@ WRKDIST =	${WRKDIR}/UniFi
 INSTDIR =	${PREFIX}/share/unifi/
 VERSION ?=	$V.0
 SUBST_VARS +=	VERSION SNAPPYJ_V
-RUN_DEPENDS =	net/unifi/snappy-java
+RUN_DEPENDS +=	net/unifi/snappy-java
 
 pre-extract:
 .if ${FETCH_PACKAGES:L} == no
