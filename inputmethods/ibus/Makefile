@@ -12,7 +12,10 @@ PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME:S/-//}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME:S/-//}
 
-REVISION =		0
+REVISION-main =		1
+REVISION-gtk2 =		0
+REVISION-gtk3 =		1
+REVISION-gtk4 =		0
 
 SHARED_LIBS +=  ibus-1.0             4.5      # 5.534
 
@@ -37,7 +40,7 @@ WANTLIB += xcb-shm z jpeg
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += atk-1.0 atk-bridge-2.0 c cairo-gobject dconf epoxy
 WANTLIB-main += gdk-3 gthread-2.0 gtk-3 Xcomposite notify atspi dbus-1
-WANTLIB-main += dbusmenu-glib dbusmenu-gtk3 xkbcommon
+WANTLIB-main += dbusmenu-glib dbusmenu-gtk3 xkbcommon XRes
 WANTLIB-main += epoll-shim wayland-client wayland-cursor wayland-egl
 
 WANTLIB-gtk2 += ${WANTLIB}
@@ -46,7 +49,7 @@ WANTLIB-gtk2 += Xcomposite
 
 WANTLIB-gtk3 += ${WANTLIB}
 WANTLIB-gtk3 += Xcomposite atk-1.0 atk-bridge-2.0 cairo-gobject dbus-1
-WANTLIB-gtk3 += epoxy gdk-3 gtk-3 ibus-1.0 atspi xkbcommon
+WANTLIB-gtk3 += epoxy gdk-3 gtk-3 ibus-1.0 atspi xkbcommon XRes
 WANTLIB-gtk3 += epoll-shim wayland-client wayland-cursor wayland-egl
 
 WANTLIB-gtk4 += ${WANTLIB}
