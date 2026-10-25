@@ -2,8 +2,7 @@ COMMENT =	Qt-based MPD client
 
 GH_ACCOUNT=     nullobsi
 GH_PROJECT=     cantata
-GH_TAGNAME=     v3.4.0
-REVISION=       1
+GH_TAGNAME=     v3.5.0
 
 CATEGORIES =	audio
 
