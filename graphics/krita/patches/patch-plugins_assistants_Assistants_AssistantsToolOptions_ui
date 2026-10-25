@@ -1,0 +1,14 @@
+https://github.com/KDE/krita/commit/3f5b2882017f4e12c9b021de0ea24e6dd2eb26dd
+
+Index: plugins/assistants/Assistants/AssistantsToolOptions.ui
+--- plugins/assistants/Assistants/AssistantsToolOptions.ui.orig
++++ plugins/assistants/Assistants/AssistantsToolOptions.ui
+@@ -284,7 +284,7 @@
+       </layout>
+      </item>
+    <item>
+-    <widget class=" QWidget" name="showDockerOptionsPanel">
++    <widget class="QWidget" name="showDockerOptionsPanel">
+       <property name="visible">
+           <bool>false</bool>
+         </property>
