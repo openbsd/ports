@@ -1,0 +1,12 @@
+Index: sip/QtCore/qcoreevent.sip
+--- sip/QtCore/qcoreevent.sip.orig
++++ sip/QtCore/qcoreevent.sip
+@@ -200,8 +200,6 @@ class QEvent /NoDefaultCtors,Supertype=PyQt6.sip.wrapp
+         PlatformSurface,
+         TabletTrackingChange,
+         GraphicsSceneLeave,
+-        EnterEditFocus,
+-        LeaveEditFocus,
+ %If (Qt_6_6_0 -)
+         DevicePixelRatioChange,
+ %End
