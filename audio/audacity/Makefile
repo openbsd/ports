@@ -75,6 +75,10 @@ CONFIGURE_ARGS=	-DEXTDEPS_OVERRIDE_ALL=SYSTEM \
 # audio/portaudio does not provide
 CONFIGURE_ARGS +=	-DAU_USE_PORTMIXER=OFF
 
+# XXX fix build with qt6 >=6.12; check if still needed at next release;
+# also grep for MUSE_COMPILE_USE_UNITY=OFF in patches/
+CONFIGURE_ARGS +=	-DMUSE_COMPILE_USE_UNITY=OFF
+
 ### external sources ###########################################################
 MUSE_DEPS_TAG=		deps-20260817-100754
 SITES.deps=		https://github.com/musescore/muse_deps/releases/download/${MUSE_DEPS_TAG}/

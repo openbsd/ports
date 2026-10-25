@@ -1,0 +1,13 @@
+XXX -DMUSE_COMPILE_USE_UNITY=OFF
+
+Index: src/appshell/qml/Audacity/AppShell/FirstLaunchSetup/themespagemodel.cpp
+--- src/appshell/qml/Audacity/AppShell/FirstLaunchSetup/themespagemodel.cpp.orig
++++ src/appshell/qml/Audacity/AppShell/FirstLaunchSetup/themespagemodel.cpp
+@@ -20,6 +20,7 @@
+  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  */
+ #include "themespagemodel.h"
++#include "translation.h"
+ 
+ #include "ui/internal/themeconverter.h"
+ 

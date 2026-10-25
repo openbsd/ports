@@ -1,0 +1,13 @@
+XXX -DMUSE_COMPILE_USE_UNITY=OFF
+
+Index: muse/framework/extensions/internal/extensionsession.h
+--- muse/framework/extensions/internal/extensionsession.h.orig
++++ muse/framework/extensions/internal/extensionsession.h
+@@ -19,6 +19,7 @@
+ #pragma once
+ 
+ #include "../iextensionsession.h"
++#include "../extensionstypes.h"
+ #include "scriptengine.h"
+ 
+ namespace muse::extensions {

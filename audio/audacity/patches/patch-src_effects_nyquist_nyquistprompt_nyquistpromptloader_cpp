@@ -1,0 +1,15 @@
+XXX -DMUSE_COMPILE_USE_UNITY=OFF
+
+Index: src/effects/nyquist/nyquistprompt/nyquistpromptloader.cpp
+--- src/effects/nyquist/nyquistprompt/nyquistpromptloader.cpp.orig
++++ src/effects/nyquist/nyquistprompt/nyquistpromptloader.cpp
+@@ -2,6 +2,9 @@
+  * Audacity: A Digital Audio Editor
+  */
+ #include "nyquistpromptloader.h"
++#include "nyquistprompteffect.h"
++#include "nyquistpromptviewmodel.h"
++#include "au3wrap/internal/wxtypes_convert.h"
+ 
+ #include "au3-effects/LoadEffects.h"
+ 
