@@ -1,15 +1,14 @@
 COMMENT =		readthedocs.org theme for Sphinx
 
-MODPY_DISTV =		3.0.2
+MODPY_DISTV =		3.1.0
 GH_ACCOUNT =		readthedocs
 GH_PROJECT =		sphinx_rtd_theme
 GH_TAGNAME =		${MODPY_DISTV}
 
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 SITES.deb =		${SITE_DEBIAN:=main/s/sphinx-rtd-theme/}
-DISTFILES.deb =		sphinx-rtd-theme_${MODPY_DISTV}+dfsg-2.debian.tar.xz
+DISTFILES.deb =		sphinx-rtd-theme_${MODPY_DISTV}+dfsg-4.debian.tar.xz
 
 CATEGORIES =		textproc
 
