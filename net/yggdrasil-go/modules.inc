@@ -1,99 +1,97 @@
 MODGO_MODULES =	\
-	github.com/!arceliar/ironwood		 v0.0.0-20260613025018-d50055b11f5e \
+	filippo.io/edwards25519			 v1.2.0 \
+	github.com/!arceliar/ironwood		 v0.0.0-20261023231900-0712eccbb962 \
 	github.com/!arceliar/phony		 v0.0.0-20220903101357-530938a4b13d \
 	github.com/!vivid!cortex/ewma		 v1.2.0 \
-	github.com/bits-and-blooms/bitset	 v1.24.5 \
+	github.com/bits-and-blooms/bitset	 v1.26.0 \
 	github.com/bits-and-blooms/bloom/v3	 v3.7.1 \
 	github.com/cespare/xxhash/v2		 v2.3.0 \
-	github.com/cheggaaa/pb/v3		 v3.1.7 \
-	github.com/clipperhouse/displaywidth	 v0.10.0 \
-	github.com/clipperhouse/stringish	 v0.1.1 \
+	github.com/cheggaaa/pb/v3		 v3.2.1 \
+	github.com/clipperhouse/displaywidth	 v0.11.0 \
 	github.com/clipperhouse/uax29/v2	 v2.7.0 \
 	github.com/coder/websocket		 v1.8.15 \
-	github.com/davecgh/go-spew		 v1.1.1 \
-	github.com/fatih/color			 v1.18.0 \
+	github.com/fatih/color			 v1.19.0 \
+	github.com/goccy/go-json		 v0.11.2 \
 	github.com/gologme/log			 v1.3.0 \
 	github.com/google/btree			 v1.1.2 \
-	github.com/hashicorp/go-syslog		 v1.0.0 \
-	github.com/hjson/hjson-go/v4		 v4.6.0 \
+	github.com/hashicorp/go-syslog		 v1.0.1 \
+	github.com/hjson/hjson-go/v4		 v4.7.1 \
 	github.com/jordanlewis/gcassert		 v0.0.0-20250430164644-389ef753e22e \
 	github.com/kardianos/minwinsvc		 v1.0.2 \
-	github.com/kr/pretty			 v0.3.1 \
 	github.com/lxn/walk			 v0.0.0-20210112085537-c389da54e794 \
 	github.com/lxn/win			 v0.0.0-20210218163916-a377121e959e \
-	github.com/mattn/go-colorable		 v0.1.14 \
-	github.com/mattn/go-isatty		 v0.0.20 \
-	github.com/mattn/go-runewidth		 v0.0.20 \
+	github.com/mattn/go-colorable		 v0.1.16 \
+	github.com/mattn/go-isatty		 v0.0.24 \
+	github.com/mattn/go-runewidth		 v0.0.31 \
 	github.com/olekukonko/cat		 v0.0.0-20250911104152-50322a0618f6 \
-	github.com/olekukonko/errors		 v1.2.0 \
-	github.com/olekukonko/ll		 v0.1.6 \
-	github.com/olekukonko/tablewriter	 v1.1.3 \
+	github.com/olekukonko/errors		 v1.3.0 \
+	github.com/olekukonko/ll		 v0.1.9 \
+	github.com/olekukonko/tablewriter	 v1.1.5 \
 	github.com/olekukonko/ts		 v0.0.0-20171002115256-78ecb04241c0 \
-	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/quic-go/go-ossfuzz-seeds	 v0.1.0 \
 	github.com/quic-go/qpack		 v0.6.0 \
-	github.com/quic-go/quic-go		 v0.60.0 \
-	github.com/rivo/uniseg			 v0.4.7 \
-	github.com/rogpeppe/go-internal		 v1.10.0 \
-	github.com/stretchr/testify		 v1.11.1 \
+	github.com/quic-go/quic-go		 v0.64.1 \
+	github.com/stretchr/testify		 v1.12.1 \
 	github.com/twmb/murmur3			 v1.1.8 \
 	github.com/vishvananda/netlink		 v1.3.1 \
 	github.com/vishvananda/netns		 v0.0.5 \
 	github.com/wlynxg/anet			 v0.0.5 \
 	go.uber.org/mock			 v0.5.2 \
-	golang.org/x/crypto			 v0.53.0 \
-	golang.org/x/mod			 v0.36.0 \
-	golang.org/x/net			 v0.56.0 \
-	golang.org/x/sync			 v0.21.0 \
-	golang.org/x/sys			 v0.46.0 \
-	golang.org/x/term			 v0.44.0 \
-	golang.org/x/text			 v0.38.0 \
+	go.yaml.in/yaml/v3			 v3.0.5 \
+	golang.org/x/crypto			 v0.58.0 \
+	golang.org/x/mod			 v0.41.0 \
+	golang.org/x/net			 v0.61.0 \
+	golang.org/x/sync			 v0.24.0 \
+	golang.org/x/sys			 v0.49.0 \
+	golang.org/x/term			 v0.47.0 \
+	golang.org/x/text			 v0.43.0 \
 	golang.org/x/time			 v0.7.0 \
-	golang.org/x/tools			 v0.45.0 \
+	golang.org/x/tools			 v0.51.0 \
 	golang.zx2c4.com/wintun			 v0.0.0-20230126152724-0fa3db229ce2 \
-	golang.zx2c4.com/wireguard		 v0.0.0-20260522210424-ecfc5a8d5446 \
-	golang.zx2c4.com/wireguard/windows	 v1.0.1 \
-	gopkg.in/check.v1			 v1.0.0-20201130134442-10cb98267c6c \
-	gopkg.in/yaml.v3			 v3.0.1 \
+	golang.zx2c4.com/wireguard		 v0.0.0-20261006164505-2631ce99a06f \
+	golang.zx2c4.com/wireguard/windows	 v1.1.1 \
 	gvisor.dev/gvisor			 v0.0.0-20250503011706-39ed1f5ac29c \
 	suah.dev/protect			 v1.2.4
 
 MODGO_MODFILES =	\
 	github.com/bits-and-blooms/bitset	 v1.24.2 \
-	github.com/bits-and-blooms/bitset	 v1.24.4 \
-	github.com/clipperhouse/displaywidth	 v0.6.2 \
+	github.com/clipperhouse/displaywidth	 v0.10.0 \
 	github.com/clipperhouse/uax29/v2	 v2.2.0 \
-	github.com/clipperhouse/uax29/v2	 v2.3.0 \
 	github.com/clipperhouse/uax29/v2	 v2.6.0 \
-	github.com/mattn/go-colorable		 v0.1.13 \
-	github.com/mattn/go-runewidth		 v0.0.16 \
+	github.com/fatih/color			 v1.18.0 \
+	github.com/goccy/go-json		 v0.10.5 \
+	github.com/mattn/go-colorable		 v0.1.14 \
+	github.com/mattn/go-colorable		 v0.1.15 \
+	github.com/mattn/go-isatty		 v0.0.20 \
 	github.com/mattn/go-runewidth		 v0.0.19 \
-	github.com/olekukonko/errors		 v1.1.0 \
-	github.com/olekukonko/ll		 v0.1.4-0.20260115111900-9e59c2286df0 \
+	github.com/mattn/go-runewidth		 v0.0.27 \
+	github.com/olekukonko/errors		 v1.2.0 \
+	github.com/olekukonko/ll		 v0.1.6 \
 	golang.org/x/crypto			 v0.37.0 \
 	golang.org/x/crypto			 v0.50.0 \
-	golang.org/x/crypto			 v0.51.0 \
+	golang.org/x/crypto			 v0.54.0 \
 	golang.org/x/mod			 v0.34.0 \
-	golang.org/x/mod			 v0.35.0 \
+	golang.org/x/mod			 v0.37.0 \
 	golang.org/x/net			 v0.39.0 \
 	golang.org/x/net			 v0.53.0 \
-	golang.org/x/net			 v0.55.0 \
+	golang.org/x/net			 v0.56.0 \
+	golang.org/x/net			 v0.60.0 \
 	golang.org/x/sync			 v0.20.0 \
+	golang.org/x/sync			 v0.22.0 \
 	golang.org/x/sys			 v0.0.0-20211103235746-7861aae1554b \
 	golang.org/x/sys			 v0.0.0-20221013171732-95e765b1cc43 \
 	golang.org/x/sys			 v0.10.0 \
 	golang.org/x/sys			 v0.2.0 \
 	golang.org/x/sys			 v0.20.0 \
-	golang.org/x/sys			 v0.25.0 \
+	golang.org/x/sys			 v0.28.0 \
 	golang.org/x/sys			 v0.29.0 \
 	golang.org/x/sys			 v0.30.0 \
 	golang.org/x/sys			 v0.32.0 \
+	golang.org/x/sys			 v0.42.0 \
 	golang.org/x/sys			 v0.43.0 \
-	golang.org/x/sys			 v0.44.0 \
-	golang.org/x/sys			 v0.45.0 \
-	golang.org/x/sys			 v0.6.0 \
+	golang.org/x/sys			 v0.47.0 \
 	golang.org/x/text			 v0.36.0 \
-	golang.org/x/text			 v0.37.0 \
+	golang.org/x/text			 v0.40.0 \
 	golang.org/x/tools			 v0.43.0 \
-	golang.org/x/tools			 v0.44.0
+	golang.org/x/tools			 v0.47.0
 

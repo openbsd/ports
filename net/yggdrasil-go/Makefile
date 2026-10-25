@@ -1,7 +1,7 @@
 COMMENT =	experimental fully end-to-end encrypted IPv6 network
 
 MODGO_MODNAME =	github.com/yggdrasil-network/yggdrasil-go
-MODGO_VERSION =	v0.5.14
+MODGO_VERSION =	v0.5.15
 
 DISTNAME =	yggdrasil-go-${MODGO_VERSION}
 
