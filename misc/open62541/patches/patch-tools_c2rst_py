@@ -1,0 +1,36 @@
+avoid noisy warning during doc generation:
+
+From 67b25bcb2b6865730b737e893c3ada64cb18d34a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Tomasz=20K=C5=82oczko?=
+ <31284574+kloczek@users.noreply.github.com>
+Date: Tue, 4 Jun 2024 12:54:05 +0100
+Subject: [PATCH] refactor(tools): Drop python<=3.7 support (#6525)
+
+Index: tools/c2rst.py
+--- tools/c2rst.py.orig
++++ tools/c2rst.py
+@@ -20,7 +20,7 @@ remove_keyword = [" UA_EXPORT", " UA_FUNC_ATTR_WARN_UN
+                   " UA_FUNC_ATTR_MALLOC", " UA_RESTRICT "]
+ 
+ def clean_comment(line):
+-    m = re.search("^\s*(\* |/\*\* )(.*?)( \*/)?$", line)
++    m = re.search(r"^\s*(\* |/\*\* )(.*?)( \*/)?$", line)
+     if not m:
+         return "\n"
+     return m.group(2) + "\n"
+@@ -31,13 +31,13 @@ def clean_line(line):
+     return line
+ 
+ def comment_start(line):
+-    m = re.search("^\s*/\*\*[ \n]", line)
++    m = re.search("^\\s*/\\*\\*[ \n]", line)
+     if not m:
+         return False
+     return True
+ 
+ def comment_end(line):
+-    m = re.search(" \*/$", line)
++    m = re.search(r" \*/$", line)
+     if not m:
+         return False
+     return True
