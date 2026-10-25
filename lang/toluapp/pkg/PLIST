@@ -1,0 +1,9 @@
+@bin bin/toluapp
+include/tolua++.h
+@lib lib/libtoluapp.so.${LIBtoluapp_VERSION}
+share/doc/luacpp/
+share/doc/luacpp/INSTALL
+share/doc/luacpp/README
+share/doc/luacpp/index.html
+share/doc/luacpp/tolua++.html
+share/doc/luacpp/toluapp.gif

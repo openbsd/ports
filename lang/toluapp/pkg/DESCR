@@ -1,0 +1,2 @@
+tolua++ is an extended version of tolua, a tool to integrate C/C++ code
+with Lua. Note that it is archived upstream, and only supports Lua 5.1.

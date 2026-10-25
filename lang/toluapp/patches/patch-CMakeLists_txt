@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -8,7 +8,7 @@ project ( toluapp C )
+ cmake_minimum_required ( VERSION 2.8 )
+ include ( cmake/dist.cmake )
+ 
+-find_package ( Lua REQUIRED )
++find_package(Lua 5.1 EXACT REQUIRED)
+ include_directories ( include src/lib ${LUA_INCLUDE_DIR} )
+ 
+ # Build lib
