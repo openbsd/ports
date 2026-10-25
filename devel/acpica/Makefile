@@ -1,9 +1,10 @@
 COMMENT =		reference implementation of ACPI tools
-DISTNAME =		acpica-unix2-20251212
-# SITES needs updating; check -unix2 href in
-# https://www.intel.com/content/www/us/en/download/776307/acpi-component-architecture-downloads-unix-format-source-code-and-build-environment-with-a-dual-license.html
-SITES =			https://downloadmirror.intel.com/871490/
-PKGNAME =		${DISTNAME:S/-unix2//}
+
+V =			20260930
+DISTNAME =		acpica-unix-$V
+PKGNAME =		acpica-$V
+
+SITES =			https://github.com/open-acpica/acpica/releases/download/$V/
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 
@@ -11,9 +12,11 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CATEGORIES =		devel
 
+# https://open-acpica.github.io/
+# https://github.com/open-acpica/acpica/releases
 HOMEPAGE =		https://acpica.org/
 
-# BSD-ish (or GPLv2 or Intel's own license: triple-licensed)
+# dual licensed: BSD or GPLv2
 PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc
