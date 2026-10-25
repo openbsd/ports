@@ -4,7 +4,7 @@ COMMENT=	self-contained cryptographic library for Python
 # amd64 (builds aesni/shani, avx2/bmi files)
 # i386 (no avx2/bmi)
 # aarch64 (none)
-MODPY_DISTV=	4.1.0
+MODPY_DISTV=	4.2.0
 DISTNAME=	pycryptodome-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
 
@@ -22,7 +22,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-TEST_DEPENDS=	security/py-cryptodome-test-vectors>=1.0.24
+TEST_DEPENDS=	security/py-cryptodome-test-vectors>=1.0.26
 
 .if ${MACHINE_ARCH:Mamd64}
 AESNI=
