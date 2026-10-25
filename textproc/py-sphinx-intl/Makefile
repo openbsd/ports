@@ -1,9 +1,8 @@
 COMMENT=	internationalization helper for Sphinx
 
-MODPY_DISTV=	2.3.2
+MODPY_DISTV=	2.4.0
 DISTNAME=	sphinx_intl-${MODPY_DISTV}
 PKGNAME=	py-sphinx-intl-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -17,6 +16,8 @@ MODPY_PI=	Yes
 RUN_DEPENDS=	devel/py-babel \
 		devel/py-click \
 		textproc/py-sphinx
-#NO_TEST=	Yes
+# needs transifex cli
+MODPY_PYTEST_IGNORE= tests/test_cmd_transifex.py \
+		tests/test_transifex.py
 
 .include <bsd.port.mk>
