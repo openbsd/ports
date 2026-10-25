@@ -6,6 +6,7 @@ USE_WXNEEDED =		Yes
 COMMENT =		compatibility layer to run Windows applications
 
 DISTNAME =		wine-11.20
+REVISION =		0
 
 CATEGORIES =		emulators
 
@@ -34,6 +35,7 @@ MODULES =		lang/clang
 
 BUILD_DEPENDS =		devel/bison \
 			devel/nasm \
+			wayland/libinput-openbsd \
 			${_MODCLANG_BUILD_DEPENDS},headerextract:patch
 RUN_DEPENDS =		multimedia/gstreamer1/libav \
 			multimedia/gstreamer1/plugins-bad \
