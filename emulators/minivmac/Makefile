@@ -3,13 +3,15 @@ ONLY_FOR_ARCHS =	i386 amd64 powerpc
 COMMENT =		early macintosh emulator
 
 V =			36.04
-REVISION =		4
+REVISION =		5
 
 DISTNAME =		minivmac-${V}
 
 CATEGORIES =		emulators
 
 HOMEPAGE =		https://gryphel.com/c/minivmac/
+
+MAINTAINER =		George Koehler <gkoehler@openbsd.org>
 
 WANTLIB =		X11 c sndio
 
@@ -34,6 +36,8 @@ SETUP_FLAGS-amd64 = 	-t ob64
 SETUP_FLAGS-i386 = 	-t obsd
 SETUP_FLAGS-powerpc = 	-t obsd -cpu ppc
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 FLAVORS = 		ii m128k
 FLAVOR ?=		
 
@@ -49,11 +53,18 @@ SUFFIX =		-${FLAVOR}
 FULLPKGNAME =		minivmac${SUFFIX}-${V}
 SUBST_VARS =		SUFFIX
 
+# -fno-strict-overflow fixes minivmac-ii crashing after the chime on
+# macppc.  Without this flag, pointer wrap around NULL is undefined
+# and regs.pc_p in src/MINEM68K.c went out of bounds.  Guess that a
+# pointer overflow caused Recalc_PC_Block to set regs.pc_p to
+# 0x40000000 less than the correct value.
+CFLAGS +=		-fno-strict-overflow
+
 post-extract:
 	cp ${FILESDIR}/SGLUSNIO.h ${WRKSRC}/src
 
 do-gen:
-	cd ${WRKSRC}; cc setup/tool.c -o setup_t && \
+	cd ${WRKSRC}; ${CC} ${CFLAGS} setup/tool.c -o setup_t && \
 		./setup_t ${SETUP_FLAGS-${MACHINE_ARCH}} ${MODEL} > gen && \
 		sh ./gen
 

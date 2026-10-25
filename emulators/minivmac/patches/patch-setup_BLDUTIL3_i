@@ -1,4 +1,4 @@
-- replace hardcoded gcc with cc
+- replace hardcoded gcc with $(CC)
 
 Index: setup/BLDUTIL3.i
 --- setup/BLDUTIL3.i.orig
@@ -8,7 +8,7 @@ Index: setup/BLDUTIL3.i
  		case gbk_ide_cyg:
  		case gbk_ide_xcd:
 -			WriteCStrToDestFile("gcc");
-+			WriteCStrToDestFile("cc");
++			WriteCStrToDestFile("$(CC)");
  			break;
  		case gbk_ide_snc:
  		case gbk_ide_ccc:

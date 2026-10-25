@@ -1,8 +1,19 @@
+- use CFLAGS
 - add sndio
+- don't run strip
 
 Index: setup/WRBGCFLS.i
 --- setup/WRBGCFLS.i.orig
 +++ setup/WRBGCFLS.i
+@@ -163,7 +163,7 @@ LOCALPROC WriteBgcCOptOptions(void)
+ 		if (gbk_targfam_lnds == gbo_targfam) {
+ 			WriteCStrToDestFile(" -O2");
+ 		} else {
+-			WriteCStrToDestFile(" -Os");
++			WriteCStrToDestFile(" $(CFLAGS)");
+ 		}
+ 	} else {
+ 		WriteCStrToDestFile(" -O0");
 @@ -357,6 +357,8 @@ LOCALPROC WriteBashGccMakeFile(void)
  					{
  						WriteCStrToDestFile(" -lossaudio");
@@ -12,3 +23,12 @@ Index: setup/WRBGCFLS.i
  				}
  #endif
  #if 0
+@@ -384,7 +386,7 @@ LOCALPROC WriteBashGccMakeFile(void)
+ 			WriteBgcCompileLinkCommonOptions();
+ 			WriteEndDestFileLn();
+ 		--DestFileIndent;
+-		if (gbk_dbg_on != gbo_dbg) {
++		if (0 && gbk_dbg_on != gbo_dbg) {
+ 			switch (cur_ide) {
+ 				case gbk_ide_bgc:
+ 					if ((gbk_targfam_minx == gbo_targfam)
