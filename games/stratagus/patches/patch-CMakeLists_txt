@@ -1,15 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -71,6 +71,7 @@ endif()
- # Stratagus sources
- 
- include_directories(
-+	/usr/X11R6/include
- 	src/include
- 	src/guichan/include
- 	src/guichan/include/guichan
-@@ -656,7 +657,7 @@ if(APPLE)
+@@ -656,7 +656,7 @@ if(APPLE)
  	list(APPEND CMAKE_PREFIX_PATH /opt/homebrew/)
  endif()
  
