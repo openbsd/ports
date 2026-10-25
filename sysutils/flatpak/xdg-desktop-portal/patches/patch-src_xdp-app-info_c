@@ -2,10 +2,25 @@ XXX No /proc filesystem, no O_PATH, and no way to get a path back from a
 fd on OpenBSD.  Fail with a GError, as callers (trash.c, wallpaper.c,
 email.c) dereference error->message when this returns NULL.
 
+No PID namespaces on OpenBSD: report pidns 0 so the Realtime and GameMode
+portals use the caller's pids as-is instead of failing without a pidfd.
+
 Index: src/xdp-app-info.c
 --- src/xdp-app-info.c.orig
 +++ src/xdp-app-info.c
-@@ -512,6 +512,11 @@ xdp_app_info_get_path_for_fd (XdpAppInfo   *app_info,
+@@ -541,6 +541,11 @@ xdp_app_info_get_pidns (XdpAppInfo  *app_info,
+ 
+   *pidns_id_out = 0;
+ 
++#ifdef __OpenBSD__
++  /* No PID namespaces: pids are global, nothing to map. */
++  return TRUE;
++#endif
++
+   if (priv->pidns_id != 0)
+     {
+       *pidns_id_out = priv->pidns_id;
+@@ -676,6 +681,11 @@ xdp_app_info_get_path_for_fd (XdpAppInfo   *app_info,
                                gboolean     *writable_out,
                                GError      **error)
  {
@@ -17,7 +32,7 @@ Index: src/xdp-app-info.c
    XdpAppInfoPrivate *priv = xdp_app_info_get_instance_private (app_info);
    g_autofree char *proc_path = NULL;
    int fd_flags;
-@@ -676,6 +681,7 @@ xdp_app_info_get_path_for_fd (XdpAppInfo   *app_info,
+@@ -841,6 +851,7 @@ xdp_app_info_get_path_for_fd (XdpAppInfo   *app_info,
      *writable_out = writable;
  
    return g_steal_pointer (&path);

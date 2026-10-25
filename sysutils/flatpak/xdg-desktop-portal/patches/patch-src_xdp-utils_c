@@ -1,0 +1,48 @@
+No getrandom(2) on OpenBSD: use arc4random_buf(3).
+No pidfd_open(2) on OpenBSD: fail with ENOSYS.
+
+Index: src/xdp-utils.c
+--- src/xdp-utils.c.orig
++++ src/xdp-utils.c
+@@ -29,7 +29,11 @@
+ #include <stdint.h>
+ #include <stdio.h>
+ #include <string.h>
++#ifdef __OpenBSD__
++#include <stdlib.h>
++#else
+ #include <sys/random.h>
++#endif
+ 
+ #include <gio/gio.h>
+ #include <gio/gunixoutputstream.h>
+@@ -54,7 +58,12 @@ static int
+ pidfd_open (pid_t        pid,
+             unsigned int flags)
+ {
++#ifdef __OpenBSD__
++   errno = ENOSYS;
++   return -1;
++#else
+    return syscall (SYS_pidfd_open, pid, flags);
++#endif
+ }
+ #endif
+ 
+@@ -1478,12 +1487,16 @@ xdp_generate_key (GError **error)
+ {
+   uint8_t key[16];
+ 
++#ifdef __OpenBSD__
++  arc4random_buf (key, sizeof (key));
++#else
+   if (getrandom (key, sizeof (key), 0) != sizeof (key))
+     {
+       g_set_error (error, G_IO_ERROR, g_io_error_from_errno (errno),
+                    "Failed to get random data: %s", g_strerror (errno));
+       return NULL;
+     }
++#endif
+ 
+   return encode_base64_for_dbus (key, sizeof (key));
+ }

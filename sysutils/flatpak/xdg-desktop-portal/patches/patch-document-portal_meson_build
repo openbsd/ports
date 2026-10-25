@@ -3,14 +3,14 @@ XXX Disable document portal (needs fuse3).
 Index: document-portal/meson.build
 --- document-portal/meson.build.orig
 +++ document-portal/meson.build
-@@ -59,14 +59,14 @@ xdg_document_portal_sources = [
-   permission_store_built_sources,
+@@ -72,14 +72,14 @@ xdg_document_portal_deps = [
+   db_deps,
  ]
  
 -xdg_document_portal = executable(
 -  'xdg-document-portal',
 -  xdg_document_portal_sources,
--  dependencies: [xdg_desktop_portal_deps, fuse3_dep],
+-  dependencies: xdg_document_portal_deps,
 -  include_directories: incs_xdg_desktop_portal,
 -  install: true,
 -  install_dir: libexecdir,
@@ -18,7 +18,7 @@ Index: document-portal/meson.build
 +#xdg_document_portal = executable(
 +#  'xdg-document-portal',
 +#  xdg_document_portal_sources,
-+#  dependencies: [xdg_desktop_portal_deps, fuse3_dep],
++#  dependencies: xdg_document_portal_deps,
 +#  include_directories: incs_xdg_desktop_portal,
 +#  install: true,
 +#  install_dir: libexecdir,
@@ -26,3 +26,10 @@ Index: document-portal/meson.build
  
  configure_file(
    input: 'xdg-document-portal.service.in',
+@@ -106,4 +106,4 @@ permission_portal_service_file = configure_file(
+   configuration: base_config,
+   install: true,
+   install_dir: dbus_service_dir,
+-)
+\ No newline at end of file
++)

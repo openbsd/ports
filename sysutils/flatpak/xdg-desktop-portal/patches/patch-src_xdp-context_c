@@ -1,0 +1,15 @@
+Trash portal disabled, see patch-src_meson_build.
+
+Index: src/xdp-context.c
+--- src/xdp-context.c.orig
++++ src/xdp-context.c
+@@ -386,7 +386,9 @@ xdp_context_register (XdpContext       *context,
+   init_power_profile_monitor (context);
+   init_network_monitor (context);
+   init_proxy_resolver (context);
++#ifndef __OpenBSD__
+   init_trash (context);
++#endif
+   init_game_mode (context);
+   init_realtime (context);
+   init_settings (context);

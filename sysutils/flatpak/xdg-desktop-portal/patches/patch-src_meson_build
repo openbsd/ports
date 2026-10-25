@@ -1,0 +1,15 @@
+Disable the Trash portal: it relies on Linux-only libglnx APIs (statx,
+O_PATH, open_tree, openat2) and on xdp_app_info_get_path_for_fd(), which
+cannot work on OpenBSD (see patch-src_xdp-app-info_c).
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -110,7 +110,6 @@ xdg_desktop_portal_sources = files(
+   'screenshot.c',
+   'secret.c',
+   'settings.c',
+-  'trash.c',
+   'wallpaper.c',
+   'xdp-app-launch-context.c',
+   'xdp-background-monitor.c',

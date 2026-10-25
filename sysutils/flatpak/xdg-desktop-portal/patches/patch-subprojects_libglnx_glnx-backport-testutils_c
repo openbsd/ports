@@ -1,0 +1,24 @@
+prctl(2) is Linux-only.
+
+Index: subprojects/libglnx/glnx-backport-testutils.c
+--- subprojects/libglnx/glnx-backport-testutils.c.orig
++++ subprojects/libglnx/glnx-backport-testutils.c
+@@ -33,7 +33,9 @@
+ #include "glnx-backport-testutils.h"
+ #include "glnx-backports.h"
+ 
++#ifdef __linux__
+ #include <sys/prctl.h>
++#endif
+ #include <sys/resource.h>
+ 
+ #if !GLIB_CHECK_VERSION (2, 68, 0)
+@@ -157,6 +159,8 @@ _glnx_test_disable_crash_reporting (void)
+ 
+   /* On Linux, RLIMIT_CORE = 0 is ignored if core dumps are
+    * configured to be written to a pipe, but PR_SET_DUMPABLE is not. */
++#ifdef __linux__
+   (void) prctl (PR_SET_DUMPABLE, 0, 0, 0, 0);
++#endif
+ }
+ #endif

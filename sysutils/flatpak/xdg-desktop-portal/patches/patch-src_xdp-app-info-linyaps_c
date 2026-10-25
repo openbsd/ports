@@ -1,0 +1,27 @@
+XXX No /proc on OpenBSD and no support for Linyaps: report WRONG_APP_KIND,
+otherwise xdp_app_info_new() propagates the error and every request fails
+(same as patch-src_xdp-app-info-flatpak_c).
+
+Index: src/xdp-app-info-linyaps.c
+--- src/xdp-app-info-linyaps.c.orig
++++ src/xdp-app-info-linyaps.c
+@@ -114,6 +114,11 @@ static int
+ open_linyaps_info (int      pid,
+                    GError **error)
+ {
++#ifdef __OpenBSD__
++  g_set_error (error, XDP_APP_INFO_ERROR, XDP_APP_INFO_ERROR_WRONG_APP_KIND,
++               "Certainly not a linyaps");
++  return -1;
++#else
+   g_autofree char *root_path = NULL;
+   g_autofd int root_fd = -1;
+   g_autofd int info_fd = -1;
+@@ -156,6 +161,7 @@ open_linyaps_info (int      pid,
+   }
+ 
+   return g_steal_fd (&info_fd);
++#endif
+ }
+ 
+ static void

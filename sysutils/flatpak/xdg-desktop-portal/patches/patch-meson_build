@@ -1,9 +1,28 @@
+Don't build the libglnx subproject: only needed by the Trash portal, which is
+disabled (see patch-src_meson_build).
+
 XXX No fuse3 on OpenBSD.
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -110,7 +110,7 @@ glib_dep = dependency('glib-2.0', version: '>= 2.72')
+@@ -108,15 +108,6 @@ foreach h : [
+   config_h.set10(h[1], cc.has_header(h[0]))
+ endforeach
+ 
+-libglnx = subproject(
+-  'libglnx',
+-  default_options : [
+-    'default_library=static',
+-    'warning_level=1',
+-    'tests=false',
+-  ],
+-)
+-
+ gvdb = subproject(
+   'gvdb',
+   default_options : [
+@@ -130,7 +121,7 @@ glib_dep = dependency('glib-2.0', version: '>= 2.76')
  gio_dep = dependency('gio-2.0')
  gio_unix_dep = dependency('gio-unix-2.0')
  json_glib_dep = dependency('json-glib-1.0')
@@ -12,3 +31,12 @@ Index: meson.build
  gdk_pixbuf_dep = dependency('gdk-pixbuf-2.0')
  gst_pbutils_dep = dependency('gstreamer-pbutils-1.0')
  geoclue_dep = dependency(
+@@ -142,7 +133,7 @@ pipewire_dep = dependency('libpipewire-0.3', version: 
+ libsystemd_dep = dependency('libsystemd', required: get_option('systemd'))
+ gudev_dep = dependency('gudev-1.0', required: get_option('gudev'))
+ umockdev_dep = dependency('umockdev-1.0', required: get_option('tests'))
+-libglnx_dep = dependency('libglnx')
++libglnx_dep = dependency('', required: false)
+ gvdb_dep = dependency('gvdb')
+ 
+ gst_inspect = find_program('gst-inspect-1.0', required: false)
