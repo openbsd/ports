@@ -1,0 +1,11 @@
+Index: codex-rs/mxc-sandbox/Cargo.toml
+--- codex-rs/mxc-sandbox/Cargo.toml.orig
++++ codex-rs/mxc-sandbox/Cargo.toml
+@@ -21,7 +21,6 @@ codex-protocol = { workspace = true }
+ codex-utils-absolute-path = { workspace = true }
+ codex-utils-path-uri = { workspace = true }
+ codex-windows-sandbox = { workspace = true }
+-mxc-sdk = { workspace = true }
+ serde = { workspace = true, features = ["derive"] }
+ serde_json = { workspace = true }
+ thiserror = { workspace = true }

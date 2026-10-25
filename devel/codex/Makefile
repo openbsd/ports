@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.163.0
+V =			0.164.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -25,9 +25,9 @@ DIST_TUPLE += github nornagon crossterm ed1cdab335221515706178d68495bba2aed1924f
 DIST_TUPLE += github openai-oss-forks tokio-tungstenite 0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186 ./tokio-tungstenite
 DIST_TUPLE += github openai-oss-forks tungstenite-rs 4fffad30fe373adbdcffab9545e9e9bf4f2fc19f ./tungstenite
 DIST_TUPLE += github helix-editor nucleo 4253de9faabb4e5c6d81d946a5e35a90f87347ee ./nucleo
-DIST_TUPLE += github modelcontextprotocol rust-sdk 4048ac40e958fb1a7d614617a2ae8d26666ee2fa ./rmcp
+DIST_TUPLE += github modelcontextprotocol rust-sdk 98a54789b80110ad210495c4ad845c89e1980471 ./rmcp
 DIST_TUPLE += github dzbarsky rules_rust b56cbaa8465e74127f1ea216f813cd377295ad81 ./runfiles
-DIST_TUPLE += github microsoft mxc 6cd3d58f05d3447e67109cfb75e042803b843ca4 ./mxc
+DIST_TUPLE += github microsoft mxc b21120168d70befe12356411423266bfef168446 ./mxc
 DIST_TUPLE += github hyperium h3 e07e69412876f7e26f026bd75a48b2704d8c8283 ./h3
 
 MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
@@ -53,6 +53,7 @@ LIB_DEPENDS =		textproc/oniguruma \
 			x11/dbus
 
 RUN_DEPENDS =		lang/python/3 \
+			shells/bash \
 			textproc/ripgrep
 
 MODULES =		devel/cargo
@@ -100,8 +101,8 @@ MAKE_ENV =		${MODCARGO_ENV}
 # test suite expects network access and a configured OpenAI account
 NO_TEST =		Yes
 
-DENO_CORE_ICUDATA_V =	0.77.0
-V8_CARGO_V =		150.4.0
+DENO_CORE_ICUDATA_V =	0.78.0
+V8_CARGO_V =		152.2.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 

@@ -4,7 +4,7 @@ https://github.com/openai/codex/issues/48050
 Index: codex-rs/features/src/lib.rs
 --- codex-rs/features/src/lib.rs.orig
 +++ codex-rs/features/src/lib.rs
-@@ -1029,7 +1029,7 @@ pub const FEATURES: &[FeatureSpec] = &[
+@@ -1055,7 +1055,7 @@ pub const FEATURES: &[FeatureSpec] = &[
          id: Feature::DaemonAutoStart,
          key: "daemon_auto_start",
          stage: Stage::Stable,
@@ -12,4 +12,4 @@ Index: codex-rs/features/src/lib.rs
 +        default_enabled: false,
      },
      FeatureSpec {
-         id: Feature::TranscriptV2,
+         id: Feature::AppServerWebSocketCompression,

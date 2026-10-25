@@ -1,7 +1,7 @@
 Index: codex-rs/app-server-daemon/src/prepare_install.rs
 --- codex-rs/app-server-daemon/src/prepare_install.rs.orig
 +++ codex-rs/app-server-daemon/src/prepare_install.rs
-@@ -24,6 +24,12 @@ pub struct InstallRequest {
+@@ -26,6 +26,12 @@ pub struct InstallRequest {
      pub restart_required: bool,
  }
  

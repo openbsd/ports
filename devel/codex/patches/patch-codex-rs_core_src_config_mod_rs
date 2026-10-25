@@ -1,7 +1,7 @@
 Index: codex-rs/core/src/config/mod.rs
 --- codex-rs/core/src/config/mod.rs.orig
 +++ codex-rs/core/src/config/mod.rs
-@@ -4199,7 +4199,7 @@ impl Config {
+@@ -4239,7 +4239,7 @@ impl Config {
          let compact_prompt = compact_prompt.or(file_compact_prompt);
          let review_model = override_review_model.or(cfg.review_model);
  
