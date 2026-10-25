@@ -1,0 +1,10 @@
+Index: src/widgets/AddressableItemList.h
+--- src/widgets/AddressableItemList.h.orig
++++ src/widgets/AddressableItemList.h
+@@ -110,4 +110,6 @@ class AddressableItemList : public BaseListWidget (pri
+     MainWindow *mainWindow = nullptr;
+ };
+ 
++using AddressableTreeView = AddressableItemList<>;
++
+ #endif // ADDRESSABLE_ITEM_LIST_H

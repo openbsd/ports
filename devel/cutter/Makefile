@@ -4,6 +4,7 @@ V =		2.4.1
 PKGNAME =	cutter-${V}
 DISTNAME =	Cutter-v${V}-src
 WRKDIST =	${WRKDIR}/Cutter-v${V}
+REVISION =	0
 
 SITES =		https://github.com/rizinorg/cutter/releases/download/v${V}/
 
@@ -43,6 +44,18 @@ CONFIGURE_ARGS =-DCUTTER_ENABLE_GRAPHVIZ=ON \
 		-DCUTTER_USE_BUNDLED_RIZIN=OFF
 
 NO_TEST =	Yes
+
+
+# Qt >= 6.12 uic rejects template class names like "AddressableItemList<>"
+pre-configure:
+	cd ${WRKSRC}/src && sed -i 's/AddressableItemList&lt;&gt;/AddressableTreeView/g' \
+		dialogs/XrefsDialog.ui \
+		widgets/SearchWidget.ui \
+		widgets/StringsWidget.ui \
+		widgets/GlobalsWidget.ui \
+		widgets/ListDockWidget.ui \
+		widgets/FlagsWidget.ui \
+		widgets/BreakpointWidget.ui
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/cutter ${PREFIX}/bin/cutter
