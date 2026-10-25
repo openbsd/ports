@@ -1,0 +1,7 @@
+@conflict pinentry-qt5-*
+@conflict pinentry-qt6-*
+@pkgpath security/pinentry,-qt6
+@pkgpath security/pinentry,-qt5
+@bin bin/pinentry-qt
+share/applications/org.gnupg.pinentry-qt.desktop
+@tag update-desktop-database

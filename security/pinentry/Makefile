@@ -1,7 +1,6 @@
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
-COMMENT-qt5 =	PIN or passphrase entry dialog (Qt5 interface)
-COMMENT-qt6 =	PIN or passphrase entry dialog (Qt6 interface)
+COMMENT-qt =	PIN or passphrase entry dialog (Qt6 interface)
 
 VERSION = 	1.3.3
 DISTNAME = 	pinentry-${VERSION}
@@ -35,26 +34,15 @@ WANTLIB-gnome3 += gck-2 gcr-4 p11-kit
 LIB_DEPENDS-gnome3 =	${LIB_DEPENDS} \
 			x11/gnome/gcr4
 
-WANTLIB-qt5 += ${WANTLIB}
-WANTLIB-qt5 += ${COMPILER_LIBCXX} KF5WaylandClient Qt5Core Qt5Gui
-WANTLIB-qt5 += Qt5Widgets Qt5X11Extras X11 m
+WANTLIB-qt += ${WANTLIB}
+WANTLIB-qt += ${COMPILER_LIBCXX} Qt6Core Qt6Gui Qt6Widgets m
+WANTLIB-qt += KF6GuiAddons KF6WindowSystem
 
-LIB_DEPENDS-qt5 =	${LIB_DEPENDS} \
-			devel/kf5/kwayland \
-			x11/qt5/qtbase \
-			x11/qt5/qtx11extras
-RUN_DEPENDS-qt5 =	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
-			devel/desktop-file-utils
-
-WANTLIB-qt6 += ${WANTLIB}
-WANTLIB-qt6 += ${COMPILER_LIBCXX} Qt6Core Qt6Gui Qt6Widgets m
-WANTLIB-qt6 += KF6GuiAddons KF6WindowSystem
-
-LIB_DEPENDS-qt6 =	${LIB_DEPENDS} \
+LIB_DEPENDS-qt =	${LIB_DEPENDS} \
 			devel/kf6/kguiaddons \
 			devel/kf6/kwindowsystem \
 			x11/qt6/qtbase
-RUN_DEPENDS-qt6 =	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
+RUN_DEPENDS-qt =	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 			devel/desktop-file-utils
 
 CONFIGURE_STYLE = 	gnu
@@ -66,14 +54,15 @@ CONFIGURE_ARGS = 	--enable-pinentry-curses \
 			--disable-pinentry-qt4 \
 			--disable-pinentry-emacs \
 			--disable-pinentry-gtk2 \
+			--disable-pinentry-qt5 \
 			--disable-pinentry-efl \
 			--disable-pinentry-tqt \
 			--disable-pinentry-fltk
 
-MULTI_PACKAGES =	-main -gnome3 -qt5 -qt6
+MULTI_PACKAGES =	-main -gnome3 -qt
 
-PSEUDO_FLAVORS =	no_gnome3 no_qt5 no_qt6 bootstrap
-FLAVOR ?=		no_gnome3 no_qt5 no_qt6 bootstrap
+PSEUDO_FLAVORS =	no_gnome3 no_qt bootstrap
+FLAVOR ?=		no_gnome3 no_qt bootstrap
 
 .include <bsd.port.arch.mk>
 
@@ -81,11 +70,8 @@ FLAVOR ?=		no_gnome3 no_qt5 no_qt6 bootstrap
 CONFIGURE_ARGS +=	--disable-pinentry-gnome3
 .endif
 
-.if !${BUILD_PACKAGES:M-qt5}
-CONFIGURE_ARGS +=	--disable-pinentry-qt5
-.endif
 
-.if !${BUILD_PACKAGES:M-qt6}
+.if !${BUILD_PACKAGES:M-qt}
 # XXX could use the followings once we have them available as packages:
 # devel/kf6/kguiaddons
 # devel/kf6/kwindowsystem
@@ -98,7 +84,7 @@ post-install:
 	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 		${FILESDIR}/pinentry-wrapper.in ${PREFIX}/bin/pinentry
 
-# pinentry.png is only installed by the qt5 and qt6 install targets;
+# pinentry.png is only installed by the qt install targets;
 # to prevent juggling with PFRAG and PLIST conflict or to create a dedicated
 # subpackage, just install it unconditionally
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
