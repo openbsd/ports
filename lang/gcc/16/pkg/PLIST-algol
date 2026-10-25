@@ -1,0 +1,12 @@
+@option is-branch
+@bin bin/ega68
+@bin bin/${CONFIG}-ega68
+@info info/ga68-coding-guidelines.info
+@info info/ga68-internals.info
+@info info/ga68.info
+@static-lib lib/libga68.a
+lib/libga68.la
+@lib lib/libga68.so.${LIBga68_VERSION}
+lib/libga68.spec
+@bin libexec/gcc/${CONFIG}/${V}/a681
+@man man/man1/ega68.1

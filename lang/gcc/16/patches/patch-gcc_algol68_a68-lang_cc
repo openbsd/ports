@@ -1,0 +1,16 @@
+Index: gcc/algol68/a68-lang.cc
+--- gcc/algol68/a68-lang.cc.orig
++++ gcc/algol68/a68-lang.cc
+@@ -209,6 +209,12 @@ a68_build_a68_type_nodes (void)
+   a68_long_long_real_type = long_double_type_node;
+ }
+ 
++extern "C" const char *
++fname_as_string(int pretty_p __attribute__((__unused__)))
++{
++	return NULL;
++}
++
+ /* Language hooks data structures.  This is the main interface between
+    the GCC front-end and the GCC middle-end/back-end.  A list of
+    language hooks can be found in langhooks.h.  */
