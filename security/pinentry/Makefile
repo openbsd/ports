@@ -7,6 +7,9 @@ DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
 
+REVISION-main =	0
+REVISION-qt =	0
+
 SITES = 	${SITE_GNUPG:=pinentry/}
 
 HOMEPAGE = 	https://www.gnupg.org/related_software/pinentry/index.en.html
@@ -72,9 +75,6 @@ CONFIGURE_ARGS +=	--disable-pinentry-gnome3
 
 
 .if !${BUILD_PACKAGES:M-qt}
-# XXX could use the followings once we have them available as packages:
-# devel/kf6/kguiaddons
-# devel/kf6/kwindowsystem
 CONFIGURE_ARGS +=	--disable-pinentry-qt
 .endif
 
@@ -83,12 +83,5 @@ post-install:
 	rm ${PREFIX}/bin/pinentry
 	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 		${FILESDIR}/pinentry-wrapper.in ${PREFIX}/bin/pinentry
-
-# pinentry.png is only installed by the qt install targets;
-# to prevent juggling with PFRAG and PLIST conflict or to create a dedicated
-# subpackage, just install it unconditionally
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/qt/icons/pinentry.png \
-		${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
