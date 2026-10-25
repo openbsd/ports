@@ -1,5 +1,7 @@
 COMMENT =		Unicode emoji data files
 
+# /!\ on PLIST changes:
+# uninstall ibus then rebuild+regen PLIST of inputmethods/ibus
 V =			18.0.0
 UNICODE_DATA_NAME =	emoji
 
