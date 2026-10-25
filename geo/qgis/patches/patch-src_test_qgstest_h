@@ -1,0 +1,14 @@
+drop QTEST_DISABLE_KEYPAD_NAVIGATION from tests
+This is removed upstream and breaks build on Qt >= 6.12.0
+https://github.com/qgis/QGIS/commit/47ab0643e3c158476dd01dee13e7dff8eab59274
+Index: src/test/qgstest.h
+--- src/test/qgstest.h.orig
++++ src/test/qgstest.h
+@@ -65,7 +65,6 @@ using namespace Qt::StringLiterals;
+     qputenv( "QGIS_CUSTOM_CONFIG_PATH", settingsDir.path().toUtf8() ); \
+     QgsApplication app( argc, argv, false );                           \
+     app.setAttribute( Qt::AA_Use96Dpi, true );                         \
+-    QTEST_DISABLE_KEYPAD_NAVIGATION                                    \
+     TestObject tc;                                                     \
+     QTEST_SET_MAIN_SOURCE_PATH                                         \
+     return QTest::qExec( &tc, argc, argv );                            \
