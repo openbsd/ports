@@ -13,7 +13,7 @@ PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
 
-REVISION=	3
+REVISION=	4
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -85,6 +85,8 @@ LIB_DEPENDS=	converters/libiconv \
 		graphics/lcms2 \
 		graphics/png \
 		graphics/giflib
+
+RUN_DEPENDS=	security/jdk-ca-certs
 
 USE_GMAKE=	Yes
 GMAKE=		${LOCALBASE}/bin/gmake
@@ -180,6 +182,8 @@ do-install:
 	cd ${IMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${PKGSTEM} -xf -
 	${INSTALL_DATA} ${JDKFILESDIR}/blocked.certs \
 		${PREFIX}/${PKGSTEM}/lib/security/
+	ln -fs ${SYSCONFDIR}/ssl/jdk-cacerts \
+		${PREFIX}/${PKGSTEM}/lib/security/cacerts
 
 # The bootjdk is the jdk image with some parts deleted
 # and a copy of the system shared libs needed to run it.
