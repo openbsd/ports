@@ -1,0 +1,15 @@
+Use OpenBSD numbering for shared library.
+
+Index: src/build-data/os/openbsd.txt
+--- src/build-data/os/openbsd.txt.orig
++++ src/build-data/os/openbsd.txt
+@@ -1,7 +1,7 @@
+ 
+ soname_pattern_base  "lib{libname}.so"
+-soname_pattern_abi   "lib{libname}.so.{abi_rev}.{version_minor}"
+-soname_pattern_patch "lib{libname}.so.{abi_rev}.{version_minor}"
++soname_pattern_abi   "lib{libname}.so.${LIBbotan-3_VERSION}"
++soname_pattern_patch "lib{libname}.so.${LIBbotan-3_VERSION}"
+ 
+ shared_lib_symlinks no
+ 

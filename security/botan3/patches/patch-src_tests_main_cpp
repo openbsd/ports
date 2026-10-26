@@ -1,0 +1,12 @@
+Index: src/tests/main.cpp
+--- src/tests/main.cpp.orig
++++ src/tests/main.cpp
+@@ -96,7 +96,7 @@ int main(int argc, char* argv[]) {
+ 
+       const Botan_Tests::Test_Options opts(parser.get_arg_list("suites"),
+                                            parser.get_arg_list("skip-tests"),
+-                                           parser.get_arg_or("data-dir", "src/tests/data"),
++                                           parser.get_arg_or("data-dir", "${LOCALBASE}/share/botan-3/data"),
+                                            parser.get_arg("pkcs11-lib"),
+                                            parser.get_arg("provider"),
+                                            parser.get_arg("tpm2-tcti-name"),
