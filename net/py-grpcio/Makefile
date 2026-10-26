@@ -1,11 +1,9 @@
 COMMENT =		HTTP/2-based RPC framework
 
-MODPY_DISTV =		1.83.0
+MODPY_DISTV =		1.84.1
 DISTNAME =		grpcio-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-
-REVISION =		0
 
 HOMEPAGE =		https://grpc.io/docs/languages/python/
 
