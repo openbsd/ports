@@ -96,7 +96,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.53.1.tar.gz) = D/oXni0H7uitj1dJNDZWbHzDCs
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/windows_x86_64_msvc-0.53.1.tar.gz) = 1rv/XwqtpCeh5abaXx+YFYGC8mVW80WsngTTbQ6+1lA=
 SHA256 (cargo/zeroize-1.8.2.tar.gz) = uXFU5n4yyFRlgm6LzBxZQpqq8QfB5KnlPI2MzV7/iNA=
-SHA256 (pdns-recursor-5.4.8.tar.xz) = uy+sdVw8MBtuG5iS6UzNxlJ1Lyv4jslw6TWAVpc/6b0=
+SHA256 (pdns-recursor-5.4.9.tar.xz) = Zv6r2G4y1fs45QZk55lC9kut63Iy197FvD2iaLTjgf8=
 SIZE (cargo/anstyle-1.0.13.tar.gz) = 17651
 SIZE (cargo/atomic-waker-1.1.2.tar.gz) = 12422
 SIZE (cargo/base64-0.22.1.tar.gz) = 81597
@@ -195,4 +195,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.53.1.tar.gz) = 787739
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/windows_x86_64_msvc-0.53.1.tar.gz) = 837950
 SIZE (cargo/zeroize-1.8.2.tar.gz) = 20907
-SIZE (pdns-recursor-5.4.8.tar.xz) = 1399720
+SIZE (pdns-recursor-5.4.9.tar.xz) = 1400012
