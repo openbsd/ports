@@ -1,19 +1,15 @@
 COMMENT =	high performance C++ OpenPGP library and tools
 
-GH_ACCOUNT =	rnpgp
-GH_PROJECT =	rnp
-GH_TAGNAME =	v0.18.1
-SHARED_LIBS =	rnp 0.4
+V =		0.18.1
+DISTNAME =	rnp-v$V
+PKGNAME =	rnp-$V
 
-# upstream extracted libsexpp to a separate repo via submodule, need to use released tarball
-SITES =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
-PKGNAME =	${DISTNAME:S/v//}
-WRKSRC =	${WRKDIR}/${DISTNAME}
+SHARED_LIBS =	rnp 0.4
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://www.rnpgp.org/
+SITES =		https://github.com/rnpgp/rnp/releases/download/v$V/
 
 # BSD / Apache v2 ?
 PERMIT_PACKAGE=	Yes
