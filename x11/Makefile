@@ -99,7 +99,6 @@
      SUBDIR += gnustep
      SUBDIR += gob2
      SUBDIR += goggles
-     SUBDIR += grantlee-qt5
      SUBDIR += greybird
      SUBDIR += gromit-mpx
      SUBDIR += gtk+2
