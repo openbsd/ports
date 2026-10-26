@@ -3,7 +3,7 @@ COMMENT =	crypto and TLS for C++20
 DPB_PROPERTIES = parallel
 
 VERSION =	3.13.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan3-${VERSION}
 
