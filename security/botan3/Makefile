@@ -3,7 +3,7 @@ COMMENT =	crypto and TLS for C++20
 DPB_PROPERTIES = parallel
 
 VERSION =	3.13.0
-REVISION =	1
+REVISION =	2
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan3-${VERSION}
 
@@ -40,7 +40,6 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--prefix=${PREFIX} \
 			--distribution-info="OpenBSD" \
 			--disable-static-library \
-			--disable-deprecated-features \
 			--mandir=${PREFIX}/man \
 			--with-external-includedir=${LOCALBASE}/include \
 			--with-external-libdir=${LOCALBASE}/lib \
@@ -49,6 +48,10 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--with-lzma \
 			--with-zlib \
 			--without-sphinx
+
+# md5,dsa needed for security/rnp
+CONFIGURE_ARGS +=	--disable-deprecated-features \
+			--enable-modules=md5,dsa
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
