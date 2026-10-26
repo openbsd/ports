@@ -4,6 +4,8 @@ GH_ACCOUNT=		jcs
 GH_PROJECT=		login_duress
 GH_TAGNAME=		v1.2
 
+REVISION=		0
+
 CATEGORIES=		sysutils security
 
 MAINTAINER=		joshua stein <jcs@jcs.org>
