@@ -20,9 +20,12 @@ MODULES =		devel/cmake
 
 CONFIGURE_ARGS =	-DYAML_BUILD_SHARED_LIBS=ON \
 			-DYAML_CPP_BUILD_TOOLS=OFF \
-			-DYAML_CPP_BUILD_TESTS=OFF
+
+# tests build fails on unsigned char archs
+# https://github.com/jbeder/yaml-cpp/pull/1513
+CONFIGURE_ARGS +=	-DYAML_CPP_BUILD_TESTS=OFF
 
 # has a bundled copy, but uses system gtest if available
-BUILD_DEPENDS =		devel/gtest
+#BUILD_DEPENDS =		devel/gtest
 
 .include <bsd.port.mk>
