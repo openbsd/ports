@@ -3,6 +3,7 @@ COMMENT-mysql=	MySQL/MariaDB support for Kea
 COMMENT-pgsql=	PostgreSQL support for Kea
 
 VERSION=	3.2.1
+REVISION=	0
 PORTROACH=	limitw:1,even
 
 DISTNAME=	kea-${VERSION}
@@ -42,13 +43,14 @@ HOMEPAGE=	https://kea.isc.org/
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto log4cplus m pthread ssl ${COMPILER_LIBCXX}
+WANTLIB += botan-3 c log4cplus m pthread ${COMPILER_LIBCXX}
 
 SITES=		${SITE_ISC:=kea/${VERSION}/}
 
 MODULES=	devel/meson \
 		lang/python
-LIB_DEPENDS=	devel/log4cplus
+LIB_DEPENDS=	devel/log4cplus \
+		security/botan3
 BUILD_DEPENDS=	devel/bison \
 		devel/boost \
 		textproc/py-sphinx
@@ -61,22 +63,22 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 LIB_DEPENDS-mysql=  net/kea,-main \
 		databases/mariadb
-WANTLIB-mysql += ${COMPILER_LIBCXX} crypto kea-asiolink kea-cc kea-database
+WANTLIB-mysql += ${COMPILER_LIBCXX} kea-asiolink kea-cc kea-database
 WANTLIB-mysql += kea-dhcp kea-dhcpsrv kea-exceptions kea-log kea-process
 WANTLIB-mysql += kea-util m mariadb
 
 LIB_DEPENDS-pgsql= net/kea,-main \
 		databases/postgresql
-WANTLIB-pgsql += ${COMPILER_LIBCXX} crypto kea-asiolink kea-cc kea-database
+WANTLIB-pgsql += ${COMPILER_LIBCXX} kea-asiolink kea-cc kea-database
 WANTLIB-pgsql += kea-dhcp kea-dhcpsrv kea-exceptions kea-log kea-process
 WANTLIB-pgsql += kea-util m pq
 
 CONFIGURE_ARGS=	-Dkrb5=disabled \
-		-Dnetconf=disabled
+		-Dnetconf=disabled \
+		-Dcrypto=botan \
+		-Dcpp_std=c++20
 
 COMPILER=	base-clang ports-gcc
-# inherited from the devel/log4cplus dependency
-#CXXFLAGS_base-clang=	-std=c++14
 
 .include <bsd.port.arch.mk>
 
