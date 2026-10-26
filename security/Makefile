@@ -20,6 +20,7 @@
      SUBDIR += boofuzz
      SUBDIR += boringssl
      SUBDIR += botan2
+     SUBDIR += botan3
      SUBDIR += bounix
      SUBDIR += c2sp-testvectors
      SUBDIR += ccid
@@ -258,7 +259,6 @@
      SUBDIR += pdfid
      SUBDIR += pebble
      SUBDIR += pecl-mcrypt,php83
-     #SUBDIR += pecl-mcrypt,php84
      SUBDIR += pgp5
      SUBDIR += pgpdump
      SUBDIR += pidgin-otr
