@@ -7,6 +7,11 @@ include/botan-3/botan/allocator.h
 include/botan-3/botan/api.h
 include/botan-3/botan/argon2.h
 include/botan-3/botan/argon2fmt.h
+include/botan-3/botan/asio_async_ops.h
+include/botan-3/botan/asio_compat.h
+include/botan-3/botan/asio_context.h
+include/botan-3/botan/asio_error.h
+include/botan-3/botan/asio_stream.h
 include/botan-3/botan/asn1_obj.h
 include/botan-3/botan/asn1_print.h
 include/botan-3/botan/asn1_time.h
@@ -35,9 +40,7 @@ include/botan-3/botan/compiler.h
 include/botan-3/botan/compression.h
 include/botan-3/botan/concepts.h
 include/botan-3/botan/credentials_manager.h
-include/botan-3/botan/cryptobox.h
 include/botan-3/botan/curve25519.h
-include/botan-3/botan/curve_gfp.h
 include/botan-3/botan/data_snk.h
 include/botan-3/botan/data_src.h
 include/botan-3/botan/database.h
@@ -45,12 +48,9 @@ include/botan-3/botan/der_enc.h
 include/botan-3/botan/dh.h
 include/botan-3/botan/dilithium.h
 include/botan-3/botan/dl_group.h
-include/botan-3/botan/dlies.h
 include/botan-3/botan/dns_name.h
-include/botan-3/botan/dsa.h
 include/botan-3/botan/ec_apoint.h
 include/botan-3/botan/ec_group.h
-include/botan-3/botan/ec_point.h
 include/botan-3/botan/ec_point_format.h
 include/botan-3/botan/ec_scalar.h
 include/botan-3/botan/ecc_key.h
@@ -72,7 +72,6 @@ include/botan-3/botan/filters.h
 include/botan-3/botan/fpe_fe1.h
 include/botan-3/botan/frodo_mode.h
 include/botan-3/botan/frodokem.h
-include/botan-3/botan/gost_3410.h
 include/botan-3/botan/hash.h
 include/botan-3/botan/hex.h
 include/botan-3/botan/hmac_drbg.h
@@ -83,7 +82,6 @@ include/botan-3/botan/kdf.h
 include/botan-3/botan/kyber.h
 include/botan-3/botan/lzma.h
 include/botan-3/botan/mac.h
-include/botan-3/botan/mceliece.h
 include/botan-3/botan/mem_ops.h
 include/botan-3/botan/ml_dsa.h
 include/botan-3/botan/ml_kem.h
@@ -134,7 +132,6 @@ include/botan-3/botan/scrypt.h
 include/botan-3/botan/secmem.h
 include/botan-3/botan/slh_dsa.h
 include/botan-3/botan/sm2.h
-include/botan-3/botan/sodium.h
 include/botan-3/botan/sp_parameters.h
 include/botan-3/botan/spake2p.h
 include/botan-3/botan/sphincsplus.h

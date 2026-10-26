@@ -28,7 +28,8 @@ MODPY_RUNDEP =		No
 
 # C++20
 COMPILER =		base-clang ports-gcc
-BUILD_DEPENDS =		textproc/py-docutils
+BUILD_DEPENDS =		textproc/py-docutils \
+			devel/boost
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz
 
@@ -39,9 +40,11 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--prefix=${PREFIX} \
 			--distribution-info="OpenBSD" \
 			--disable-static-library \
+			--disable-deprecated-features \
 			--mandir=${PREFIX}/man \
 			--with-external-includedir=${LOCALBASE}/include \
 			--with-external-libdir=${LOCALBASE}/lib \
+			--with-boost \
 			--with-bzip2 \
 			--with-lzma \
 			--with-zlib \
