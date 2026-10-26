@@ -20,11 +20,13 @@ LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 BUILD_DEPENDS=		devel/appstream \
 			x11/blueprint-compiler \
 			x11/gnome/gjs \
+			x11/gnome/glycin \
 			x11/gnome/libadwaita \
 			x11/gnome/papers \
 			x11/gtksourceview5
 
 RUN_DEPENDS=		x11/gnome/gjs \
+			x11/gnome/glycin \
 			x11/gnome/libadwaita \
 			x11/gnome/papers \
 			x11/gtksourceview5
