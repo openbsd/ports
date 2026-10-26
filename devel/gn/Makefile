@@ -5,11 +5,10 @@ DPB_PROPERTIES=	parallel
 
 CATEGORIES =	devel
 
-DATE =		20251214
+DATE =		20261015
 VERSION =	0.0.${DATE}
 DISTNAME =	gn-${DATE}
 PKGNAME =	gn-${VERSION}
-REVISION =	0
 
 # gn.googlesource.com does not provide stable snapshots
 SITES =		https://codeberg.org/vlkrs/gn/archive/
@@ -34,8 +33,10 @@ DOCDIR =	${PREFIX}/share/doc/gn
 WRKDIST =	${WRKDIR}/gn
 WANTLIB += ${COMPILER_LIBCXX} c m
 
+SUBST_VARS +=	DATE
+
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/src/gn/command_format_unittest.cc
+	${SUBST_CMD} ${WRKSRC}/build/gen.py
 
 do-build:
 	${SETENV} ${MAKE_ENV} ninja -C${WRKSRC}/out -j${MAKE_JOBS} -v
