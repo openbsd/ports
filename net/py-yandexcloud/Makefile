@@ -1,5 +1,5 @@
 COMMENT =		offical Yandex Cloud SDK
-MODPY_DISTV =		0.404.0
+MODPY_DISTV =		0.412.0
 DISTNAME =		yandexcloud-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
