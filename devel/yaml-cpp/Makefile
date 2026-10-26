@@ -20,7 +20,7 @@ MODULES =		devel/cmake
 
 CONFIGURE_ARGS =	-DYAML_BUILD_SHARED_LIBS=ON \
 			-DYAML_CPP_BUILD_TOOLS=OFF \
-			-DYAML_CPP_BUILD_TESTS=ON
+			-DYAML_CPP_BUILD_TESTS=OFF
 
 # has a bundled copy, but uses system gtest if available
 BUILD_DEPENDS =		devel/gtest
