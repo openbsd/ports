@@ -1,0 +1,15 @@
+Disable alpha specific code: The compatibility code requires CPU_SET()
+family of functions, which OpenBSD doesn't support.
+Index: libatomic_ops/src/atomic_ops.h
+--- libatomic_ops/src/atomic_ops.h.orig
++++ libatomic_ops/src/atomic_ops.h
+@@ -365,9 +365,6 @@ struct AO_uintptr_t_size_static_assert {
+ # elif defined(__hppa__)
+ #   include "atomic_ops/sysdeps/gcc/hppa.h"
+ #   define AO_CAN_EMUL_CAS
+-# elif defined(__alpha__)
+-#   include "atomic_ops/sysdeps/gcc/alpha.h"
+-#   define AO_GENERALIZE_TWICE
+ # elif defined(__s390__)
+ #   include "atomic_ops/sysdeps/gcc/s390.h"
+ # elif defined(__sparc)
