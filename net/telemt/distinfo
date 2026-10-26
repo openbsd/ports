@@ -389,7 +389,7 @@ SHA256 (cargo/zerotrie-0.2.5.tar.gz) = TqJpw70y8KMsMhkHoq6RK6b0ZJuw/HZKFWJ+macJW
 SHA256 (cargo/zerovec-0.11.8.tar.gz) = uwRk4XgGwdl21cuik5nH8I5RbieeK6ST9jEjtfymfdg=
 SHA256 (cargo/zerovec-derive-0.11.6.tar.gz) = NN9vw529Jt3JwQ5qKYRHbhOsziLmTkSHY270lDaSJdo=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
-SHA256 (telemt-telemt-3.5.7.tar.gz) = kaUNWt/Ipt6PrCzbdZbhJU1yCOLFYJBDXfaRZHx0P6o=
+SHA256 (telemt-telemt-3.5.14.tar.gz) = PpdAHjZwiAtevgrwNi0W5f3V5xJk08FmT0ivCuetV3g=
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (cargo/aes-gcm-0.10.3.tar.gz) = 148991
@@ -781,4 +781,4 @@ SIZE (cargo/zerotrie-0.2.5.tar.gz) = 84204
 SIZE (cargo/zerovec-0.11.8.tar.gz) = 130820
 SIZE (cargo/zerovec-derive-0.11.6.tar.gz) = 23102
 SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
-SIZE (telemt-telemt-3.5.7.tar.gz) = 2898121
+SIZE (telemt-telemt-3.5.14.tar.gz) = 3138327
