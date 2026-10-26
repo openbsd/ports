@@ -3,7 +3,7 @@ COMMENT=		low level core library
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.90.1
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
