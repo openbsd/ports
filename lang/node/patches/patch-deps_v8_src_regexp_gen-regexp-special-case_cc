@@ -1,0 +1,35 @@
+XXX check/remove at next update
+Fix build with ICU >=79 by keeping ICU 78 behaviour
+(without full Unicode 18 semantic);
+adapted from https://github.com/v8/v8/commit/f607706154eabc4a949628a88b38dbe95cd2274c
+
+Index: deps/v8/src/regexp/gen-regexp-special-case.cc
+--- deps/v8/src/regexp/gen-regexp-special-case.cc.orig
++++ deps/v8/src/regexp/gen-regexp-special-case.cc
+@@ -17,6 +17,10 @@ static const base::uc32 kSurrogateStart = 0xd800;
+ static const base::uc32 kSurrogateEnd = 0xdfff;
+ static const base::uc32 kNonBmpStart = 0x10000;
+ 
++static void RemoveSupplementary(icu::UnicodeSet& set) {
++  set.remove(static_cast<UChar32>(kNonBmpStart), 0x10ffff);
++}
++
+ // The following code generates "src/regexp/special-case.cc".
+ void PrintSet(std::ofstream& out, const char* name,
+               const icu::UnicodeSet& set) {
+@@ -63,6 +67,7 @@ void PrintSpecial(std::ofstream& out) {
+     }
+     current.set(i, i);
+     current.closeOver(USET_CASE_INSENSITIVE);
++    RemoveSupplementary(current);
+ 
+     // Check to see if all characters in the case-folding equivalence
+     // class as defined by UnicodeSet::closeOver all map to the same
+@@ -112,6 +117,7 @@ void PrintSpecial(std::ofstream& out) {
+       UChar32 canonical = RegExpCaseFolding::Canonicalize(c);
+       current.set(c, c);
+       current.closeOver(USET_CASE_INSENSITIVE);
++      RemoveSupplementary(current);
+       current.removeAll(ignore);
+       for (int32_t j = 0; j < current.getRangeCount(); j++) {
+         for (UChar32 c2 = current.getRangeStart(j);
