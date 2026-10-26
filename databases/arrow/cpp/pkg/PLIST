@@ -198,24 +198,6 @@ include/arrow/table_builder.h
 include/arrow/tensor/
 include/arrow/tensor.h
 include/arrow/tensor/converter.h
-@comment include/arrow/testing/pch.h
-@comment include/arrow/testing/
-@comment include/arrow/testing/async_test_util.h
-@comment include/arrow/testing/builder.h
-@comment include/arrow/testing/executor_util.h
-@comment include/arrow/testing/extension_type.h
-@comment include/arrow/testing/fixed_width_test_util.h
-@comment include/arrow/testing/future_util.h
-@comment include/arrow/testing/generator.h
-@comment include/arrow/testing/gtest_compat.h
-@comment include/arrow/testing/gtest_util.h
-@comment include/arrow/testing/matchers.h
-include/arrow/testing/math.h
-@comment include/arrow/testing/process.h
-@comment include/arrow/testing/random.h
-@comment include/arrow/testing/uniform_real.h
-@comment include/arrow/testing/util.h
-@comment include/arrow/testing/visibility.h
 include/arrow/type.h
 include/arrow/type_fwd.h
 include/arrow/type_traits.h
@@ -433,12 +415,6 @@ lib/cmake/ArrowDataset/ArrowDatasetConfig.cmake
 lib/cmake/ArrowDataset/ArrowDatasetConfigVersion.cmake
 lib/cmake/ArrowDataset/ArrowDatasetTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/ArrowDataset/ArrowDatasetTargets.cmake
-@comment lib/cmake/ArrowTesting/
-@comment lib/cmake/ArrowTesting/ArrowTestingConfig.cmake
-@comment lib/cmake/ArrowTesting/ArrowTestingConfigVersion.cmake
-@comment lib/cmake/ArrowTesting/ArrowTestingTargets${MODCMAKE_BUILD_SUFFIX}
-@comment lib/cmake/ArrowTesting/ArrowTestingTargets.cmake
-@comment lib/cmake/ArrowTesting/FindGTestAlt.cmake
 lib/cmake/Parquet/
 lib/cmake/Parquet/FindThriftAlt.cmake
 lib/cmake/Parquet/ParquetConfig.cmake

@@ -1,6 +1,7 @@
 COMMENT =	columnar format and toolbox for fast-data interchange
 
 V =		24.0.0
+REVISION =	0
 DISTNAME =	apache-arrow-${V}
 PKGNAME =	arrow-cpp-${V}
 
@@ -73,5 +74,8 @@ WANTLIB +=	${COMPILER_LIBCXX} c crypto m snappy ssl thrift z
 # WANTLIB += boost_filesystem-mt boost_process-mt gmock gtest
 # arrow-utility-test.txt timeouts, and the default is 10000000
 TEST_FLAGS =	--timeout 180
+
+post-install:
+	rm -rf ${PREFIX}/include/arrow/testing ${PREFIX}/lib/cmake/ArrowTesting
 
 .include <bsd.port.mk>
