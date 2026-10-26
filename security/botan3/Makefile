@@ -3,6 +3,7 @@ COMMENT =	crypto and TLS for C++20
 DPB_PROPERTIES = parallel
 
 VERSION =	3.13.0
+REVISION =	0
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan3-${VERSION}
 
@@ -37,6 +38,7 @@ CONFIGURE_SCRIPT =	${WRKSRC}/configure.py
 CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--prefix=${PREFIX} \
 			--distribution-info="OpenBSD" \
+			--disable-static-library \
 			--mandir=${PREFIX}/man \
 			--with-external-includedir=${LOCALBASE}/include \
 			--with-external-libdir=${LOCALBASE}/lib \
@@ -57,7 +59,6 @@ SUBST_VARS =		CXX CXXFLAGS LIBbotan-3_VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/build-data/os/openbsd.txt
-	${SUBST_CMD} ${WRKSRC}/src/tests/main.cpp
 
 do-test:
 	LD_LIBRARY_PATH=${WRKBUILD} ${WRKBUILD}/botan-test \
@@ -68,10 +69,5 @@ post-install:
 	${MODPY_COMPILEALL} \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/botan3.py
 	cd ${PREFIX}/share/doc && mv botan-${VERSION} botan-3
-	${INSTALL_PROGRAM} ${WRKBUILD}/botan-test ${PREFIX}/bin/botan3-test
-	${INSTALL_DATA_DIR} ${PREFIX}/share/botan-3
-	cd ${WRKSRC}/src/tests && find data \
-	    -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/botan-3/{} \; -o \
-	    -type f -exec ${INSTALL_DATA} {} ${PREFIX}/share/botan-3/{} \;
 
 .include <bsd.port.mk>
