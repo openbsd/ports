@@ -6,7 +6,7 @@ USE_WXNEEDED =		Yes
 COMMENT =		compatibility layer to run Windows applications
 
 DISTNAME =		wine-11.20
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		emulators
 
@@ -35,7 +35,6 @@ MODULES =		lang/clang
 
 BUILD_DEPENDS =		devel/bison \
 			devel/nasm \
-			wayland/libinput-openbsd \
 			${_MODCLANG_BUILD_DEPENDS},headerextract:patch
 RUN_DEPENDS =		multimedia/gstreamer1/libav \
 			multimedia/gstreamer1/plugins-bad \
@@ -134,6 +133,9 @@ CONFIGURE_ENV+=		INOTIFY_LIBS="-L${LOCALBASE}/lib/inotify \
 			PCAP_CFLAGS="-I${LOCALBASE}/include/libpcap" \
 			PCAP_LIBS="-L${LOCALBASE}/lib/libpcap \
 			-Wl,-rpath,${LOCALBASE}/lib/libpcap -lpcap"
+
+# prevent linux/input.h detection: evdev keycodes don't match OpenBSD XFree86.
+CONFIGURE_ENV+=		ac_cv_header_linux_input_h=no
 
 AUTOCONF_VERSION =	2.73
 AUTOMAKE_VERSION =	1.18
