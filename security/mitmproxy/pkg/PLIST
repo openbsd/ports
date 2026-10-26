@@ -841,12 +841,15 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}hook-cryptography.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}hook-cryptography.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}hook-mitmproxy.addons.onboardingapp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}hook-mitmproxy.addons.onboardingapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}hook-mitmproxy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}hook-mitmproxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}hook-mitmproxy.tools.web.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}hook-mitmproxy.tools.web.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/hook-cryptography.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/hook-mitmproxy.addons.onboardingapp.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/hook-mitmproxy.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/hook-mitmproxy.tools.web.py

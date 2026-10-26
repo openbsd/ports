@@ -1,6 +1,6 @@
 COMMENT =		interactive intercepting HTTP proxy
 
-MODPY_DISTV =		12.3.0
+MODPY_DISTV =		12.3.1
 
 DISTNAME =		mitmproxy-${MODPY_DISTV}
 

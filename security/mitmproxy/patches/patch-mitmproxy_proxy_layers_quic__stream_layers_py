@@ -1,0 +1,23 @@
+https://github.com/mitmproxy/mitmproxy/pull/8427
+https://github.com/jlaine/aioquic/commit/11ce3169517720b22277b2093931533e1db38802
+
+Index: mitmproxy/proxy/layers/quic/_stream_layers.py
+--- mitmproxy/proxy/layers/quic/_stream_layers.py.orig
++++ mitmproxy/proxy/layers/quic/_stream_layers.py
+@@ -108,15 +108,7 @@ class QuicLayer(tunnel.TunnelLayer):
+                     command.stream_id, command.data, command.end_stream
+                 )
+             elif isinstance(command, ResetQuicStream):
+-                stream = self.quic._get_or_create_stream_for_send(command.stream_id)
+-                existing_reset_error_code = stream.sender._reset_error_code
+-                if existing_reset_error_code is None:
+-                    self.quic.reset_stream(command.stream_id, command.error_code)
+-                elif self.debug:  # pragma: no cover
+-                    yield commands.Log(
+-                        f"{self.debug}[quic] stream {stream.stream_id} already reset ({existing_reset_error_code=}, {command.error_code=})",
+-                        DEBUG,
+-                    )
++                self.quic.reset_stream(command.stream_id, command.error_code)
+             elif isinstance(command, StopSendingQuicStream):
+                 # the stream might have already been closed, check before stopping
+                 if command.stream_id in self.quic._streams:

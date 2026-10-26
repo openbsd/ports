@@ -1,0 +1,29 @@
+https://github.com/mitmproxy/mitmproxy/pull/8427
+https://github.com/jlaine/aioquic/commit/11ce3169517720b22277b2093931533e1db38802
+
+Index: mitmproxy/proxy/layers/quic/_client_hello_parser.py
+--- mitmproxy/proxy/layers/quic/_client_hello_parser.py.orig
++++ mitmproxy/proxy/layers/quic/_client_hello_parser.py
+@@ -69,7 +69,6 @@ def quic_parse_client_hello_from_datagrams(
+         input_buf: QuicBuffer,
+         initial_buf: QuicBuffer,
+         handshake_buf: QuicBuffer,
+-        onertt_buf: QuicBuffer,
+     ) -> None:
+         assert input_buf.pull_uint8() == HandshakeType.CLIENT_HELLO
+         length = 0
+@@ -103,9 +102,12 @@ def quic_parse_client_hello_from_datagrams(
+     for trace in traces:
+         quic_events = trace.get("events")
+         for event in quic_events:
+-            if event["name"] == "transport:packet_dropped":
++            if (
++                event["name"] == "transport:packet_dropped"
++                and event["data"]["trigger"] != "duplicate"
++            ):
+                 raise ValueError(
+                     f"Invalid ClientHello packet: {event['data']['trigger']}"
+                 )
+ 
+-    return None  # pragma: no cover  # FIXME: this should have test coverage
++    return None
