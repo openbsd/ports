@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1653 2026/10/14 11:11:29 jca Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1654 2026/10/26 16:17:46 kirill Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -845,7 +845,7 @@ IGNORE += "Not built because unlinked \(${UNLINKED}\)"
 .endif
 
 # setup locations of compilers from the base system or environment variables.
-# MODULES for compilers (gcc4.port.mk, clang.port.mk) also append to this,
+# MODULES for compilers (gcc.port.mk, clang.port.mk) also append to this,
 # used to write wrappers to WRKDIR/bin which is at the head of the PATH.
 .if ${PROPERTIES:Mclang}
 .  if !${COMPILER_LINKS:Mclang}

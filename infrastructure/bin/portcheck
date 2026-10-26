@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.150 2025/10/24 14:25:34 rsadowski Exp $
+# $OpenBSD: portcheck,v 1.151 2026/10/26 16:17:46 kirill Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1314,18 +1314,18 @@ check_plist() {
 }
 
 # Checks made:
-#   * stdc++ doesn't get into WANTLIB when gcc4.port.mk is used.
+#   * stdc++ doesn't get into WANTLIB when gcc.port.mk is used.
 check_wantlib() {
 	local portref="$1"; shift
 	local modules="$1"; shift
 	local default_compiler="$1"; shift
 
-	local gcc4_module=false
+	local gcc_module=false
 
 	local v
 
 	for v in $modules; do case $v in
-		gcc4)			gcc4_module=true;;
+		gcc)			gcc_module=true;;
 	esac; done
 
 	for v; do case $v in
@@ -1348,8 +1348,8 @@ check_wantlib() {
 			;;
 
 		stdc++?(?('>')=+([0-9])))
-			if $gcc4_module; then
-				err "$portref$v in WANTLIB when gcc4 is" \
+			if $gcc_module; then
+				err "$portref$v in WANTLIB when gcc is" \
 				    "in MODULES; run port-lib-depends-check" \
 				    "and if stdc++ is still there, check" \
 				    "actual build thoroughly, it's broken"

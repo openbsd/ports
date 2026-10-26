@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portbump,v 1.26 2026/10/21 09:09:47 kirill Exp $
+# $OpenBSD: portbump,v 1.27 2026/10/26 16:17:46 kirill Exp $
 #
 # Copyright (c) 2014-2016 Vadim Zhukov <zhuk@openbsd.org>
 #
@@ -784,16 +784,16 @@ sub process_makefile {
 	}
 	$self->{wantlib_start} = $wstart;
 
-	my $gcc4_seen = 0;
+	my $gcc_seen = 0;
 	push(@mod_wantlib_seen, map {
-		$gcc4_seen = 1 if $_ eq "gcc4";
+		$gcc_seen = 1 if $_ eq "gcc";
 		my $v = uc($_);
 		$v =~ s,.*/,,g;
 		$v =~ s,^PYTHON$,PY,g;
 		"MOD${v}_WANTLIB"
 	    } @{$self->{modules}});
 	push(@mod_wantlib_seen, "MODGCC_CPPWANTLIB", "MODGCC_GCJWANTLIB")
-	    if $gcc4_seen;
+	    if $gcc_seen;
 	if (scalar(@mod_wantlib_seen)) {
 	    	for ($self->run_make('show='.join(' ', @mod_wantlib_seen))) {
 			chomp;

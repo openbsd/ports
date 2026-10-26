@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 
-MODULES =		gcc4
+MODULES =		gcc
 MODGCC_LANGS =		d
 
 BUILD_DEPENDS +=	textproc/scdoc

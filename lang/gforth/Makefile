@@ -44,7 +44,7 @@ PATCH_LIST =		patch-* patch_i386-*
 
 # With base-clang on powerpc it either runs out of memory with i386 patches or
 # -O1. Using -O0 makes preforth segfault. Use ports-gcc instead.
-MODULES +=		gcc4
+MODULES +=		gcc
 MODGCC_ARCHS =		powerpc
 MODGCC_LANGS =		c
 

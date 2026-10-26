@@ -204,7 +204,7 @@ CONFIGURE_ARGS+=--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
 		--disable-doxygen-xml \
 		--disable-doxygen-html
 
-# don't link with libssp from the gcc4 port
+# don't link with libssp from the gcc port
 # __guard and __stack_smash_handler are part of libc
 CONFIGURE_ARGS+=--disable-stack-protector
 

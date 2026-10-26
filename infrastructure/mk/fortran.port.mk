@@ -1,4 +1,4 @@
-# $OpenBSD: fortran.port.mk,v 1.22 2026/10/21 09:09:47 kirill Exp $
+# $OpenBSD: fortran.port.mk,v 1.23 2026/10/26 16:17:46 kirill Exp $
 
 MODFORTRAN_COMPILER ?= gfortran
 
@@ -7,7 +7,7 @@ ERRORS += "Fatal: need to specify MODFORTRAN_COMPILER"
 .endif
 
 .if ${MODFORTRAN_COMPILER:L} == "gfortran"
-MODULES += gcc4
+MODULES += gcc
 MODGCC_ARCHS ?= *
 MODGCC_LANGS += fortran
 MODFORTRAN_BUILD_DEPENDS += ${MODGCC_FORTRANDEP}

@@ -17,7 +17,7 @@ EXTRACT_SUFX =	.tar.bz2
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 
-MODULES =	gcc4
+MODULES =	gcc
 MODGCC_LANGS =	fortran
 
 LIB_DEPENDS =	math/cfitsio

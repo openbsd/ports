@@ -26,7 +26,7 @@ DMD =	${LOCALBASE}/bin/dmd
 .else
 WANTLIB += c m pthread
 
-MODULES =	gcc4
+MODULES =	gcc
 MODGCC_LANGS =	d
 
 BUILD_DEPENDS =	lang/gdmd

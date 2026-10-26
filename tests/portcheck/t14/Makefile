@@ -1,4 +1,4 @@
-# Check for both stdc++ in WANTLIB and gcc4 in MODULES
+# Check for both stdc++ in WANTLIB and gcc in MODULES
 
 DISTNAME =		test-14
 
@@ -10,6 +10,6 @@ WANTLIB-foo =		m stdc++ z
 
 MULTI_PACKAGES =	-main -foo
 
-MODULES =		gcc4
+MODULES =		gcc
 
 .include <bsd.port.mk>

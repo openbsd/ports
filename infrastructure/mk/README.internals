@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.20 2025/12/04 18:18:34 tb Exp $
+$OpenBSD: README.internals,v 1.21 2026/10/26 16:17:46 kirill Exp $
 Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -323,8 +323,8 @@ recursion: modules may trigger the inclusion of other modules, thus
 modules.port.mk will re-include itself until the whole list is done.
 
 - COMPILER support is somewhat meshed with modules.port.mk, since it's
-a back&forth with arch-defines, the gcc4 module, and the clang module.
-It's got special treatment, because COMPILER must happen before gcc4
+a back&forth with arch-defines, the gcc module, and the clang module.
+It's got special treatment, because COMPILER must happen before gcc
 and clang, while at the same time some modules (qt mostly) may want to
 set COMPILER.
 

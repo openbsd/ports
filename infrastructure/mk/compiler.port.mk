@@ -1,4 +1,4 @@
-# $OpenBSD: compiler.port.mk,v 1.8 2026/10/21 09:09:47 kirill Exp $
+# $OpenBSD: compiler.port.mk,v 1.9 2026/10/26 16:17:46 kirill Exp $
 #
 #  Copyright (c) 2017 Marc Espie
 # 
@@ -45,7 +45,7 @@ _MODGCC_ARCH_USES = 	Yes
 .      endif
 .    endfor
 .    if ${_MODGCC_ARCH_USES:L} == "yes" && !defined(CHOSEN_COMPILER)
-MODULES +=		gcc4
+MODULES +=		gcc
 MODGCC_LANGS +=	${COMPILER_LANGS}
 CHOSEN_COMPILER = 	ports-gcc
 .    endif
