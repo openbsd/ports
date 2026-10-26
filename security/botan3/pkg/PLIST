@@ -1,7 +1,7 @@
 @bin bin/botan3
-%%x86%%
 include/botan-3/
 include/botan-3/botan/
+%%x86%%
 include/botan-3/botan/aead.h
 include/botan-3/botan/allocator.h
 include/botan-3/botan/api.h
@@ -206,7 +206,7 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}botan3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}botan3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botan3.py
-@man man/man1/botan.1
+@man man/man1/botan3.1
 share/doc/botan-3/
 share/doc/botan-3/authors.txt
 share/doc/botan-3/handbook/

@@ -72,6 +72,7 @@ do-test:
 
 post-install:
 	mv ${PREFIX}/bin/botan ${PREFIX}/bin/botan3
+	mv ${PREFIX}/man/man1/botan.1 ${PREFIX}/man/man1/botan3.1
 	${MODPY_COMPILEALL} \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/botan3.py
 	cd ${PREFIX}/share/doc && mv botan-${VERSION} botan-3
