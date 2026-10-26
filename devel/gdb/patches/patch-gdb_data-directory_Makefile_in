@@ -1,7 +1,7 @@
 Index: gdb/data-directory/Makefile.in
 --- gdb/data-directory/Makefile.in.orig
 +++ gdb/data-directory/Makefile.in
-@@ -232,7 +232,7 @@ stamp-syscalls: Makefile $(SYSCALLS_FILES)
+@@ -233,7 +233,7 @@ stamp-syscalls: Makefile $(SYSCALLS_FILES)
  	for file in $$files ; do \
  	  f=$(SYSCALLS_SRCDIR)/$$file ; \
  	  if test -f $$f ; then \
@@ -10,7 +10,7 @@ Index: gdb/data-directory/Makefile.in
  	  fi ; \
  	done
  	$(SILENCE) touch $@
-@@ -275,8 +275,8 @@ stamp-python: Makefile $(PYTHON_FILES)
+@@ -276,8 +276,8 @@ stamp-python: Makefile $(PYTHON_FILES)
  	if test "x$$files" != x ; then \
  	  for file in $$files ; do \
  	    dir=`echo "$$file" | sed 's,/[^/]*$$,,'` ; \
@@ -21,7 +21,7 @@ Index: gdb/data-directory/Makefile.in
  	  done ; \
  	fi
  	$(SILENCE) touch $@
-@@ -371,7 +371,7 @@ stamp-system-gdbinit: Makefile $(SYSTEM_GDBINIT_FILES)
+@@ -372,7 +372,7 @@ stamp-system-gdbinit: Makefile $(SYSTEM_GDBINIT_FILES)
  	for file in $$files ; do \
  	  f=$(SYSTEM_GDBINIT_SRCDIR)/$$file ; \
  	  if test -f $$f ; then \

@@ -6,9 +6,8 @@ include/gdb/jit-reader.h
 @comment @info info/bfd.info
 @comment @info info/ctf-spec.info
 @info info/gdb.info
-@comment @info info/sframe-spec.info
-@info info/stabs.info
 @comment lib/charset.alias
+@comment @info info/sframe-spec.info
 @man man/man1/egdb-add-index.1
 @man man/man1/egdb.1
 @man man/man1/egdbserver.1
@@ -198,6 +197,7 @@ share/gdb/syscalls/mips-o32-linux.xml
 share/gdb/syscalls/netbsd.xml
 share/gdb/syscalls/ppc-linux.xml
 share/gdb/syscalls/ppc64-linux.xml
+share/gdb/syscalls/riscv-linux.xml
 share/gdb/syscalls/s390-linux.xml
 share/gdb/syscalls/s390x-linux.xml
 share/gdb/syscalls/sparc-linux.xml

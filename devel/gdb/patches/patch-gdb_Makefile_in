@@ -4,21 +4,21 @@ Add native support for arm.
 Index: gdb/Makefile.in
 --- gdb/Makefile.in.orig
 +++ gdb/Makefile.in
-@@ -730,6 +730,7 @@ ALL_64_TARGET_OBS = \
+@@ -723,6 +723,7 @@ ALL_64_TARGET_OBS = \
  	aarch64-fbsd-tdep.o \
  	aarch64-linux-tdep.o \
  	aarch64-newlib-tdep.o \
 +	aarch64-obsd-tdep.o \
  	aarch64-ravenscar-thread.o \
  	aarch64-tdep.o \
- 	alpha-bsd-tdep.o \
-@@ -769,10 +770,12 @@ ALL_64_TARGET_OBS = \
+ 	aarch64-windows-tdep.o \
+@@ -762,10 +763,12 @@ ALL_64_TARGET_OBS = \
  	mips-sde-tdep.o \
  	mips-tdep.o \
  	mips64-obsd-tdep.o \
 +	ppc64-obsd-tdep.o \
- 	riscv-canonicalize-syscall-gen.o \
  	riscv-fbsd-tdep.o \
+ 	riscv-linux-canonicalize-syscall-gen.o \
  	riscv-linux-tdep.o \
  	riscv-none-tdep.o \
 +	riscv-obsd-tdep.o \
@@ -33,7 +33,7 @@ Index: gdb/Makefile.in
  	rs6000-aix-tdep.h \
  	run-on-main-thread.h \
  	rust-exp.h \
-@@ -1783,6 +1787,8 @@ ALLDEPFILES = \
+@@ -1781,6 +1785,8 @@ ALLDEPFILES = \
  	aarch64-linux-nat.c \
  	aarch64-linux-tdep.c \
  	aarch64-newlib-tdep.c \
@@ -41,8 +41,8 @@ Index: gdb/Makefile.in
 +	aarch64-obsd-tdep.c \
  	aarch64-ravenscar-thread.c \
  	aarch64-tdep.c \
- 	aix-thread.c \
-@@ -1822,6 +1828,7 @@ ALLDEPFILES = \
+ 	aarch64-windows-nat.c \
+@@ -1823,6 +1829,7 @@ ALLDEPFILES = \
  	arm-netbsd-nat.c \
  	arm-netbsd-tdep.c \
  	arm-none-tdep.c \
@@ -50,7 +50,7 @@ Index: gdb/Makefile.in
  	arm-obsd-tdep.c \
  	arm-tdep.c \
  	avr-tdep.c \
-@@ -1922,6 +1929,8 @@ ALLDEPFILES = \
+@@ -1924,6 +1931,8 @@ ALLDEPFILES = \
  	ppc-ravenscar-thread.c \
  	ppc-sysv-tdep.c \
  	ppc64-tdep.c \
@@ -59,7 +59,7 @@ Index: gdb/Makefile.in
  	procfs.c \
  	ravenscar-thread.c \
  	remote-sim.c \
-@@ -1932,6 +1941,8 @@ ALLDEPFILES = \
+@@ -1935,6 +1944,8 @@ ALLDEPFILES = \
  	riscv-none-tdep.c \
  	riscv-ravenscar-thread.c \
  	riscv-tdep.c \

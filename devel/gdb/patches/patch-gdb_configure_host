@@ -4,15 +4,15 @@ Use OpenBSD-specific files for arm (TBD).
 Index: gdb/configure.host
 --- gdb/configure.host.orig
 +++ gdb/configure.host
-@@ -81,6 +81,7 @@ case "${host}" in
- 
- aarch64*-*-linux*)	gdb_host=linux ;;
- aarch64*-*-freebsd*)	gdb_host=fbsd ;;
+@@ -85,6 +85,7 @@ aarch64*-*-freebsd*)	gdb_host=fbsd ;;
+ aarch64*-*-mingw*)	gdb_host=mingw64a
+ 			gdb_host_obs=mingw-hdep.o
+ 			;;
 +aarch64*-*-openbsd*)	gdb_host=obsd64 ;;
  
  alpha*-*-linux*)	gdb_host=alpha-linux ;;
  alpha*-*-netbsdaout* | alpha*-*-knetbsdaout*-gnu)
-@@ -93,7 +94,7 @@ arm*-*-freebsd*)	gdb_host=fbsd ;;
+@@ -97,7 +98,7 @@ arm*-*-freebsd*)	gdb_host=fbsd ;;
  arm*-*-linux*)		gdb_host=linux ;;
  arm*-*-netbsd* | arm*-*-knetbsd*-gnu)
  			gdb_host=nbsdelf ;;
@@ -21,7 +21,7 @@ Index: gdb/configure.host
  
  hppa*-*-linux*)		gdb_host=linux ;;
  hppa*-*-netbsd*)	gdb_host=nbsd ;;
-@@ -140,12 +141,14 @@ powerpc*-*-freebsd*)	gdb_host=fbsd ;;
+@@ -146,12 +147,14 @@ powerpc*-*-freebsd*)	gdb_host=fbsd ;;
  powerpc-*-netbsdaout* | powerpc-*-knetbsd*-gnu)
  			gdb_host=nbsd ;;
  powerpc-*-openbsd*)	gdb_host=obsd ;;

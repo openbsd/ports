@@ -1,7 +1,7 @@
 Index: gdb/ppc64-obsd-nat.c
 --- gdb/ppc64-obsd-nat.c.orig
 +++ gdb/ppc64-obsd-nat.c
-@@ -0,0 +1,211 @@
+@@ -0,0 +1,210 @@
 +/* Native-dependent code for OpenBSD/powerpc64.
 +
 +   Copyright (C) 2004-2020 Free Software Foundation, Inc.
@@ -21,7 +21,6 @@ Index: gdb/ppc64-obsd-nat.c
 +   You should have received a copy of the GNU General Public License
 +   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 +
-+#include "defs.h"
 +#include "gdbcore.h"
 +#include "inferior.h"
 +#include "regcache.h"

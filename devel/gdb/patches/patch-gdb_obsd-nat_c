@@ -11,7 +11,7 @@ Index: gdb/obsd-nat.c
  
  /* OpenBSD 5.2 and later include rthreads which uses a thread model
     that maps userland threads directly onto kernel threads in a 1:1
-@@ -42,34 +43,78 @@ obsd_nat_target::pid_to_str (ptid_t ptid)
+@@ -42,34 +43,79 @@ obsd_nat_target::pid_to_str (ptid_t ptid)
    return normal_pid_to_str (ptid);
  }
  
@@ -31,7 +31,7 @@ Index: gdb/obsd-nat.c
 -  pid_t pid = inferior_ptid.pid ();
    struct ptrace_thread_state pts;
  
--  prune_threads ();
+-  prune_threads (this);
 -
    if (ptrace (PT_GET_THREAD_FIRST, pid, (caddr_t)&pts, sizeof pts) == -1)
      perror_with_name (("ptrace"));
@@ -57,7 +57,7 @@ Index: gdb/obsd-nat.c
 +  return false;
  }
  
-+/* Fuction to support executing callback for each alive thread */
++/* Function to support executing callback for each alive thread */
 +
 +static void
 +for_each_thread (pid_t pid, gdb::function_view<void (ptid_t)> callback)
@@ -98,14 +98,15 @@ Index: gdb/obsd-nat.c
 +{
 +  pid_t pid = inferior_ptid.pid ();
 +
-+  prune_threads ();
++  prune_threads (this);
 +  obsd_add_threads (this, pid);
 +}
++
 +
  /* Enable additional event reporting on a new or existing process.  */
  
  static void
-@@ -143,6 +188,7 @@ void
+@@ -143,6 +189,7 @@ void
  obsd_nat_target::post_attach (int pid)
  {
    obsd_enable_proc_events (pid);
@@ -113,7 +114,7 @@ Index: gdb/obsd-nat.c
  }
  
  /* Implement the virtual inf_ptrace_target::post_startup_inferior method.  */
-@@ -183,4 +229,48 @@ int
+@@ -183,4 +230,48 @@ int
  obsd_nat_target::remove_fork_catchpoint (int pid)
  {
    return 0;

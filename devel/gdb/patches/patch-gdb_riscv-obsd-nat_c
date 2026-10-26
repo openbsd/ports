@@ -1,7 +1,7 @@
 Index: gdb/riscv-obsd-nat.c
 --- gdb/riscv-obsd-nat.c.orig
 +++ gdb/riscv-obsd-nat.c
-@@ -0,0 +1,134 @@
+@@ -0,0 +1,133 @@
 +/* Native-dependent code for OpenBSD/riscv64.
 +
 +   Copyright (C) 2018-2021 Free Software Foundation, Inc.
@@ -21,7 +21,6 @@ Index: gdb/riscv-obsd-nat.c
 +   You should have received a copy of the GNU General Public License
 +   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 +
-+#include "defs.h"
 +#include "regcache.h"
 +#include "target.h"
 +

@@ -1,7 +1,7 @@
 Index: gdb/aarch64-obsd-tdep.c
 --- gdb/aarch64-obsd-tdep.c.orig
 +++ gdb/aarch64-obsd-tdep.c
-@@ -0,0 +1,336 @@
+@@ -0,0 +1,335 @@
 +/* Target-dependent code for OpenBSD/aarch64.
 +
 +   Copyright (C) 2006-2017 Free Software Foundation, Inc.
@@ -21,7 +21,6 @@ Index: gdb/aarch64-obsd-tdep.c
 +   You should have received a copy of the GNU General Public License
 +   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 +
-+#include "defs.h"
 +#include "extract-store-integer.h"
 +#include "gdbarch.h"
 +#include "frame-unwind.h"
