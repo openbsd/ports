@@ -1,6 +1,7 @@
 COMMENT =	high performance C++ OpenPGP library and tools
 
 V =		0.18.1
+REVISION =	0
 DISTNAME =	rnp-v$V
 PKGNAME =	rnp-$V
 
@@ -17,11 +18,11 @@ PERMIT_PACKAGE=	Yes
 # C++11
 COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS +=	security/botan2 \
+LIB_DEPENDS +=	security/botan3 \
 		archivers/bzip2 \
 		devel/json-c
 
-WANTLIB +=	${COMPILER_LIBCXX} botan-2 bz2 c json-c m z
+WANTLIB +=	${COMPILER_LIBCXX} botan-3 bz2 c json-c m z
 
 BUILD_DEPENDS =	textproc/asciidoctor \
 		devel/gtest \
@@ -35,6 +36,7 @@ MODPY_RUNDEP =	No
 CONFIGURE_ARGS +=	-DGIT_EXECUTABLE=true \
 			-DBUILD_SHARED_LIBS=on \
 			-DDOWNLOAD_GTEST=Off \
-			-DDOWNLOAD_RUBYRNP=Off
+			-DDOWNLOAD_RUBYRNP=Off \
+			-DCRYPTO_BACKEND=botan3
 
 .include <bsd.port.mk>
