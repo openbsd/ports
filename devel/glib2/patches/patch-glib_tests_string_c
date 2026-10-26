@@ -1,4 +1,7 @@
-https://gitlab.gnome.org/GNOME/glib/-/work_items/4091
+From 29fb84735c9c1ce0c3b72d3fc21bdf9744e37f64 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sun, 25 Oct 2026 19:33:56 +0000
+Subject: [PATCH] -Wsign-conversion warning on arm64 OpenBSD in GString tests
 
 Index: glib/tests/string.c
 --- glib/tests/string.c.orig
