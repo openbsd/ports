@@ -2,7 +2,7 @@
 
 ONLY_FOR_ARCHS = ${PORTSGCC_ARCHS}
 
-ONLY_FOR_ARCHS-ada = aarch64 amd64 i386 mips64 powerpc
+ONLY_FOR_ARCHS-ada = aarch64 amd64 i386 mips64 powerpc sparc64
 ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 mips64 powerpc powerpc64 \
 	riscv64 sparc64
 
@@ -27,7 +27,7 @@ BOOTSTRAP-mips64 = gcc-bootstrap-mips64-16.1.0-1.tar.xz
 BOOTSTRAP-powerpc = gcc-bootstrap-powerpc-16.1.0-1.tar.xz
 BOOTSTRAP-powerpc64 = gcc-bootstrap-powerpc64-16.1.0-0.tar.xz
 BOOTSTRAP-riscv64 = gcc-bootstrap-riscv64-16.1.0-0.tar.xz
-BOOTSTRAP-sparc64 = gcc-bootstrap-sparc64-16.1.0-1.tar.xz
+BOOTSTRAP-sparc64 = gcc-bootstrap-sparc64-16.2.0-0.tar.xz
 
 SHARED_LIBS =	estdc++		22.1 \
 		gfortran	11.1 \
