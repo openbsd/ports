@@ -2,7 +2,7 @@ COMMENT =		everyday-use client-side map-aware mirror ranking tool
 
 GH_ACCOUNT =		westandskif
 GH_PROJECT =		rate-mirrors
-GH_TAGNAME =		v0.34.0
+GH_TAGNAME =		v0.34.1
 
 CATEGORIES =		net
 
