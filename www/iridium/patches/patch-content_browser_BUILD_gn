@@ -3,7 +3,7 @@ iridium ninja build order fix
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -113,6 +113,7 @@ source_set("browser") {
+@@ -130,6 +130,7 @@ source_set("browser") {
    frameworks = []
    ldflags = []
  
@@ -11,15 +11,15 @@ Index: content/browser/BUILD.gn
    deps = [
      ":child_process_security_policy_impl",
      "//base",
-@@ -128,6 +129,7 @@ source_set("browser") {
+@@ -145,6 +146,7 @@ source_set("browser") {
      "//cc/animation",
      "//cc/mojo_embedder",
      "//cc/paint",
 +    "//chrome/common:buildflags",
-     "//components/attribution_reporting:data_host_mojom",
-     "//components/attribution_reporting:mojom",
      "//components/back_forward_cache:enum",
-@@ -159,6 +161,7 @@ source_set("browser") {
+     "//components/browsing_data/core:cookie_or_cache_deletion_choice",
+     "//components/cbor",
+@@ -172,6 +174,7 @@ source_set("browser") {
      "//components/optimization_guide/core",
      "//components/optimization_guide/core:features",
      "//components/optimization_guide/public/mojom",
@@ -27,7 +27,7 @@ Index: content/browser/BUILD.gn
      "//components/payments/content/icon",
      "//components/payments/mojom",
      "//components/performance_manager/scenario_api",
-@@ -2703,6 +2706,14 @@ source_set("browser") {
+@@ -2464,6 +2467,14 @@ source_set("browser") {
      ]
    }
  
@@ -42,8 +42,8 @@ Index: content/browser/BUILD.gn
    if (is_linux || is_chromeos) {
      sources -=
          [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
-@@ -2752,6 +2763,15 @@ source_set("browser") {
-   if (allow_oop_video_decoder) {
+@@ -2513,6 +2524,15 @@ source_set("browser") {
+   if (enable_oop_video_decoder) {
      sources += [ "media/oop_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom" ]
 +  }

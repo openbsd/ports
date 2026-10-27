@@ -1,7 +1,7 @@
 Index: components/regional_capabilities/regional_capabilities_service.cc
 --- components/regional_capabilities/regional_capabilities_service.cc.orig
 +++ components/regional_capabilities/regional_capabilities_service.cc
-@@ -420,7 +420,7 @@ bool RegionalCapabilitiesService::IsInAnySearchEngineC
+@@ -445,7 +445,7 @@ bool RegionalCapabilitiesService::IsInAnySearchEngineC
        .choice_screen_eligibility_config.has_value();
  }
  

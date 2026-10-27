@@ -35,7 +35,7 @@ Index: media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc
    using HardwareVideoDecodingProcessPolicy =
        sandbox::policy::HardwareVideoDecodingProcessPolicy;
    using PolicyType =
-@@ -267,6 +272,7 @@ bool HardwareVideoDecodingPreSandboxHook(
+@@ -287,6 +292,7 @@ bool HardwareVideoDecodingPreSandboxHook(
    // |permissions| is empty?
    sandbox::policy::SandboxLinux::GetInstance()->StartBrokerProcess(
        command_set, permissions, options);

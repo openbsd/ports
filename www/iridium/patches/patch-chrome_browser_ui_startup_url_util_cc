@@ -10,7 +10,7 @@ Index: chrome/browser/ui/startup/url_util.cc
  #include "chrome/browser/headless/headless_mode_util.h"
  #endif
  
-@@ -59,7 +59,7 @@ bool ValidateLaunchUrlWebUnsafe(const GURL& url) {
+@@ -62,7 +62,7 @@ bool ValidateLaunchUrlWebUnsafe(const GURL& url) {
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
    bool url_scheme_is_chrome = false;

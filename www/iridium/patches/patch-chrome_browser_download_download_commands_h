@@ -9,4 +9,4 @@ Index: chrome/browser/download/download_commands.h
 +    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    bool IsDownloadPdf() const;
    bool CanOpenPdfInSystemViewer() const;
-   Browser* GetBrowser() const;
+   BrowserWindowInterface* GetBrowser() const;

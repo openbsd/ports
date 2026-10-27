@@ -9,4 +9,4 @@ Index: chrome/browser/ui/views/hung_renderer_view.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      // A generic |CrashDumpHungChildProcess()| is not implemented for Linux.
      // Instead we send an explicit IPC to crash on the renderer's IO thread.
-     rph->ForceCrash();
+     rph->CrashHungProcess();

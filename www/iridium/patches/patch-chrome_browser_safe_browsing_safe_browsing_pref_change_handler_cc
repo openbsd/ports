@@ -10,7 +10,7 @@ Index: chrome/browser/safe_browsing/safe_browsing_pref_change_handler.cc
  #include "chrome/browser/ui/browser_window/public/browser_window_features.h"
  #include "chrome/browser/ui/browser_window/public/browser_window_interface.h"
  #include "chrome/browser/ui/browser_window/public/profile_browser_collection.h"
-@@ -74,7 +74,7 @@ void SafeBrowsingPrefChangeHandler::
+@@ -75,7 +75,7 @@ void SafeBrowsingPrefChangeHandler::
      MaybeShowEnhancedProtectionSettingChangeNotification(
          content::WebContents* web_contents) {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

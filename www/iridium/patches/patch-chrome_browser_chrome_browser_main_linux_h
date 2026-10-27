@@ -1,7 +1,7 @@
 Index: chrome/browser/chrome_browser_main_linux.h
 --- chrome/browser/chrome_browser_main_linux.h.orig
 +++ chrome/browser/chrome_browser_main_linux.h
-@@ -31,7 +31,7 @@ class ChromeBrowserMainPartsLinux : public ChromeBrows
+@@ -37,7 +37,7 @@ class ChromeBrowserMainPartsLinux : public ChromeBrows
  
    // ChromeBrowserMainPartsPosix overrides.
    void PostCreateMainMessageLoop() override;

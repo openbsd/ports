@@ -1,7 +1,7 @@
 Index: build/config/clang/clang.gni
 --- build/config/clang/clang.gni.orig
 +++ build/config/clang/clang.gni
-@@ -40,6 +40,7 @@ android_supported_cpus = [
+@@ -42,6 +42,7 @@ android_supported_cpus = [
    "x86",
  ]
  clang_modules_platform_supported =

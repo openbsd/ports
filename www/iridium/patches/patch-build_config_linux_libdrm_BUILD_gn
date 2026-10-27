@@ -7,6 +7,6 @@ Index: build/config/linux/libdrm/BUILD.gn
  if (use_system_libdrm) {
 -  assert(!is_linux, "System libdrm is not supported in linux")
 +#  assert(!is_linux, "System libdrm is not supported in linux")
+ 
    pkg_config("libdrm_config") {
      packages = [ "libdrm" ]
-   }

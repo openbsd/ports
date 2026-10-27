@@ -8,5 +8,5 @@ Index: chrome/browser/ui/web_applications/web_app_dialogs.h
 -              BUILDFLAG(IS_CHROMEOS));
 +              BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD));
  
+ class BrowserWindowInterface;
  class GURL;
- class Profile;

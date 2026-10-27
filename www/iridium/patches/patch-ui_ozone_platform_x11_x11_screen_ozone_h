@@ -19,7 +19,7 @@ Index: ui/ozone/platform/x11/x11_screen_ozone.h
      ,
                         public DeviceScaleFactorObserver
  #endif
-@@ -97,7 +97,7 @@ class X11ScreenOzone : public PlatformScreen,
+@@ -106,7 +106,7 @@ class X11ScreenOzone : public PlatformScreen,
    // ui::XDisplayManager::Delegate:
    void OnXDisplayListUpdated() override;
  
@@ -28,7 +28,7 @@ Index: ui/ozone/platform/x11/x11_screen_ozone.h
    // DeviceScaleFactorObserver:
    void OnDeviceScaleFactorChanged() override;
  #endif
-@@ -109,7 +109,7 @@ class X11ScreenOzone : public PlatformScreen,
+@@ -118,7 +118,7 @@ class X11ScreenOzone : public PlatformScreen,
    // Indicates that |this| is initialized.
    bool initialized_ = false;
  

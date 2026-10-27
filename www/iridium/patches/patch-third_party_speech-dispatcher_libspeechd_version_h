@@ -20,7 +20,7 @@ Index: third_party/speech-dispatcher/libspeechd_version.h
 + * You should have received a copy of the GNU Lesser General Public License
 + * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 + *
-+ * $Id: patch-third_party_speech-dispatcher_libspeechd_version_h,v 1.25 2026/08/06 07:50:08 robert Exp $
++ * $Id: patch-third_party_speech-dispatcher_libspeechd_version_h,v 1.26 2026/10/27 12:07:01 robert Exp $
 + */
 +
 +#ifndef _LIBSPEECHD_VERSION_H

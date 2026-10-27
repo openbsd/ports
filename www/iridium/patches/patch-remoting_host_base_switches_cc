@@ -15,5 +15,5 @@ Index: remoting/host/base/switches.cc
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  const char kEnableWtmpdb[] = "enable-wtmpdb";
- #endif
- 
+ const char kCrashpadHandlerSocketFd[] = "crashpad-handler-socket-fd";
+ const char kCrashpadHandlerPid[] = "crashpad-handler-pid";

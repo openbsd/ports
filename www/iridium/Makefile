@@ -11,16 +11,24 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2026.08.151.3
-REVISION=		0
+V=			2026.10.156
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
-DISTFILES+=		${IRIDIUM_DISTFILES}
+DISTFILES+=		${IRIDIUM_DISTFILES} \
+			${VENDOR_DISTFILES.a}
 
 IRIDIUM_DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 
-DIST_TUPLE+=		github rollup rollup v4.60.4 rollup
+TS_VERSION=		7.0.2
+
+DIST_TUPLE+=		github microsoft TypeScript v${TS_VERSION} typescript
+
+# ftp https://github.com/microsoft/TypeScript/archive/refs/tags/v${TS_VERSION}.tar.gz
+# tar xzf v${V}.tar.gz
+# cd TypeScript-${TS_VERSION}/tsc && go mod tidy && go mod vendor
+# cd ../../ && tar czf TypeScript-${TS_VERSION}-vendor.tar.gz TypeScript-${TS_VERSION}-vendor/tsc/vendor
+VENDOR_DISTFILES.a=	TypeScript-${TS_VERSION}-vendor.tar.gz
 
 EXTRACT_ONLY=		${ALL_DISTFILES:N*test*}
 
@@ -40,15 +48,9 @@ FLAVOR?=
 PERMIT_PACKAGE =	Yes
 
 SITES=		https://downloads.iridiumbrowser.de/source/
-SITES.u=	http://nerd.hu/distfiles/
+SITES.a=	http://nerd.hu/distfiles/
 
-MODULES=	devel/cargo lang/clang lang/python x11/qt5 x11/qt6
-
-MODCARGO_CARGOTOML=	${WRKSRC}/rollup/rust/Cargo.toml
-MODCARGO_TARGET_DIR=	${WRKSRC}/rollup/rust/target
-MODCARGO_BUILD=		No
-MODCARGO_INSTALL=	No
-MODCARGO_TEST=		No
+MODULES=	lang/clang lang/python x11/qt5 x11/qt6
 
 MODCLANG_VERSION=	22
 MODQT5_DEPS=		No
@@ -64,7 +66,7 @@ WANTLIB+=	cbor crypto cups dav1d dbus-1 drm epoll-shim execinfo
 WANTLIB+=	expat fido2 fontconfig gbm gio-2.0 glib-2.0
 WANTLIB+=	gmodule-2.0 gobject-2.0 gthread-2.0 harfbuzz 
 WANTLIB+=	harfbuzz-subset icudata icui18n icuuc intl jpeg
-WANTLIB+=	kvm m nspr4 nss3 nssutil3 openh264 opus pango-1.0
+WANTLIB+=	m nspr4 nss3 nssutil3 openh264 opus pango-1.0
 WANTLIB+=	pangocairo-1.0 plc4 plds4 png
 WANTLIB+=	pthread smime3 sndio udev usbhid util xcb
 WANTLIB+=	xkbcommon xml2 xshmfence xslt z
@@ -83,7 +85,9 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/esbuild \
 		devel/esbuild:patch \
 		devel/gperf \
+		devel/llvm/${MODCLANG_VERSION},-python \
 		devel/rust-bindgen \
+		graphics/vulkan-headers \
 		lang/go \
 		lang/rust,-rustfmt \
 		lang/node \
@@ -172,11 +176,14 @@ GN_ARGS=	is_official_build=true \
 		use_custom_libcxx=true \
 		use_custom_libunwind=true \
 		use_udev=true \
+		v8_enable_cet_ibt=true \
+		v8_metagen_libclang_so=\"${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/libclang.so.0.0\" \
+		v8_metagen_libclang_bindings_dir=\"${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/python${MODPY_VERSION}/site-packages\" \
 		use_qt5=true \
 		use_qt6=true \
 		moc_qt5_path=\"${MODQT5_MOC}\" \
 		moc_qt6_path=\"${MODQT6_MOC}\" \
-		v8_enable_cet_ibt=true
+		use_typescript_go=false
 
 # rust
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
@@ -185,6 +192,7 @@ GN_ARGS+=	enable_rust=true \
 
 # go
 MAKE_ENV+=	GOCACHE=${WRKDIST}/go-cache
+PORTHOME=	${WRKDIR}
 
 PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib(aom.*cpudetect.*|vpx.*cpudetect.*)"
 
@@ -192,6 +200,7 @@ PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib
 GN_ARGS+=	use_vaapi=true
 BUILD_DEPENDS+=	multimedia/aom>=3.14:patch \
 		multimedia/libvpx:patch
+
 
 .if ${MACHINE_ARCH} == "aarch64"
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
@@ -256,6 +265,7 @@ pre-patch:
 		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libaom/source/libaom
 	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
 		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx/source/libvpx
+
 	# Hack to avoid wrong update-patches
 	${SUBST_CMD} ${WRKSRC}/third_party/libaom/source/config/linux/arm64-cpu-detect/config/av1_rtcd.h \
 		${WRKSRC}/third_party/libaom/source/config/linux/x64/config/av1_rtcd.h
@@ -272,16 +282,18 @@ post-patch:
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni \
+		${WRKSRC}/v8/BUILD.gn \
 		${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+	patch -d ${WRKSRC}/typescript/tsc/internal/bundled/libs -Ep2 < \
+		${WRKSRC}/third_party/typescript/linux-amd64/3pp/patches/typescript_native_preview.patch
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
-	@${MODCARGO_configure}
 	(cd ${WRKDIR}/devel/esbuild/github.com/evanw/esbuild@*/ && \
 		${LOCALBASE}/bin/node scripts/esbuild.js \
 		/usr/local/bin/esbuild --neutral && \
@@ -302,17 +314,15 @@ do-configure:
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
 		--no-clean -s --skip-generate-buildfiles
+	@ln -sf ${WRKSRC}/out/${BUILDTYPE}/gn ${WRKSRC}/buildtools/linux64/gn
 	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/${BUILDTYPE}/gn \
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
 do-build:
-	@${MODCARGO_BUILD_TARGET}
-	(cd ${WRKSRC}/third_party/devtools-frontend/src/node_modules/@rollup && \
-		mkdir -p rollup-openbsd && \
-		cp ${MODCARGO_TARGET_DIR}/release/libbindings_napi.so \
-			rollup-openbsd/rollup.openbsd.node && \
-		echo '{ "main": "./rollup.openbsd.node" }' \
-			> rollup-openbsd/package.json)
+	cd ${WRKSRC}/typescript/tsc && \
+		${SETENV} ${MAKE_ENV} go build -v -p ${MAKE_JOBS} -mod=vendor ./cmd/tsgo && \
+		ln -sf ${WRKSRC}/typescript/tsc/tsgo \
+		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 
@@ -375,5 +385,4 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/iridium
 .endfor
 
-.include "crates.inc"
 .include <bsd.port.mk>

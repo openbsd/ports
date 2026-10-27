@@ -20,7 +20,7 @@ Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
  #endif  // BUILDFLAG(IS_LINUX)
  
 @@ -83,7 +83,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
-   base::ScopedMemoryConsumerRegistry<remoting::MemoryConsumerRegistry>
+   base::ScopedMemoryConsumerRegistry<base::DummyMemoryConsumerRegistry>
        memory_consumer_registry;
  
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(REMOTING_USE_X11)

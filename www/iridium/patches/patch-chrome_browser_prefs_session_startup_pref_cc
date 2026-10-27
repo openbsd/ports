@@ -1,7 +1,7 @@
 Index: chrome/browser/prefs/session_startup_pref.cc
 --- chrome/browser/prefs/session_startup_pref.cc.orig
 +++ chrome/browser/prefs/session_startup_pref.cc
-@@ -70,7 +70,7 @@ SessionStartupPref::Type SessionStartupPref::GetDefaul
+@@ -66,7 +66,7 @@ SessionStartupPref::Type SessionStartupPref::GetDefaul
  #if BUILDFLAG(IS_CHROMEOS)
    return SessionStartupPref::LAST;
  #else

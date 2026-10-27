@@ -1,0 +1,19 @@
+revert:
+
+commit b2c9d9c61c9fefca5f64e702b330686e44eefb78
+Author: Zgroza Klimek <zgroza@chromium.org>
+Date:   Mon Aug 24 07:31:33 2026 -0700
+
+commit e85da0b2f2dc794473fe83c53cbee97311cf9fe1
+Author: Zgroza Klimek <zgroza@chromium.org>
+Date:   Mon Aug 24 07:17:59 2026 -0700
+
+Index: components/web_package/signed_web_bundles/rust/signed_web_bundles_rust_unittests.rs
+--- components/web_package/signed_web_bundles/rust/signed_web_bundles_rust_unittests.rs.orig
++++ components/web_package/signed_web_bundles/rust/signed_web_bundles_rust_unittests.rs
+@@ -1,5 +0,0 @@
+-// Copyright 2026 The Chromium Authors
+-// Use of this source code is governed by a BSD-style license that can be
+-// found in the LICENSE file.
+-
+-mod integrity_block_unittest;
