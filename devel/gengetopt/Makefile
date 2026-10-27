@@ -15,5 +15,6 @@ COMPILER=	base-clang ports-gcc base-gcc
 SITES=		${SITE_GNU:=gengetopt/}
 
 CONFIGURE_STYLE= gnu
+USE_GMAKE=	Yes
 
 .include <bsd.port.mk>
