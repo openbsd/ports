@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.496 2026/10/27 09:37:52 sthen Exp $
+$OpenBSD: user.list,v 1.497 2026/10/27 15:11:06 stsp Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -171,7 +171,7 @@ id  user		group		port
 660 _srcpd		_srcpd		misc/srcpd
 661 _aox		_aox		mail/archiveopteryx
 662 _transmission	_transmission	net/transmission
-#663 _tproxy		_tproxy		www/transproxy
+663 _teleport		_teleport	net/teleport
 664 _mdnsd		_mdnsd		net/openmdns
 665 _hopm		_hopm		net/hopm
 666 _dovenull		_dovenull	mail/dovecot
