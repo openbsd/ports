@@ -3,6 +3,7 @@ COMMENT =		improved screen locker
 GH_ACCOUNT =		i3
 GH_PROJECT =		i3lock
 GH_TAGNAME =		2.15
+REVISION=		0
 
 CATEGORIES =		x11
 

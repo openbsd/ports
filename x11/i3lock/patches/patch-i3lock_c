@@ -1,0 +1,13 @@
+Index: i3lock.c
+--- i3lock.c.orig
++++ i3lock.c
+@@ -54,6 +54,9 @@
+ #define STOP_TIMER(timer_obj) \
+     timer_obj = stop_timer(timer_obj)
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++
+ typedef void (*ev_callback_t)(EV_P_ ev_timer *w, int revents);
+ static void input_done(void);
+ 
