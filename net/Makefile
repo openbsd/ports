@@ -757,6 +757,7 @@
      SUBDIR += tdlib
      SUBDIR += telemt
      SUBDIR += telepathy
+     SUBDIR += teleport
      SUBDIR += telescope
      SUBDIR += tg
      SUBDIR += tg_owt
