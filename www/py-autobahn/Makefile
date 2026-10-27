@@ -20,7 +20,8 @@ RUN_DEPENDS =	devel/py-txaio \
 		www/py-hyperlink
 
 BUILD_DEPENDS =	devel/py-txaio \
-		devel/py-cffi
+		devel/py-cffi \
+		devel/py-setuptools
 
 # the NVX module uses SSE
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
