@@ -1,3 +1,5 @@
+@newuser _tcptraceroute:765:_tcptraceroute::tcptraceroute privdrop:/nonexistent:/sbin/nologin
+@newgroup _tcptraceroute:765
 @bin bin/tcptraceroute
 @man man/man1/tcptraceroute.1
 share/doc/tcptraceroute/
@@ -7,5 +9,5 @@ share/doc/tcptraceroute/
 @comment share/doc/tcptraceroute/NEWS
 @comment share/doc/tcptraceroute/README
 share/doc/tcptraceroute/examples.txt
-share/doc/tcptraceroute/tcptraceroute.1.html
-share/doc/tcptraceroute/tcptraceroute.lsm
+@comment share/doc/tcptraceroute/tcptraceroute.1.html
+@comment share/doc/tcptraceroute/tcptraceroute.lsm

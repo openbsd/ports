@@ -3,7 +3,7 @@ COMMENT=	traceroute implementation using TCP packets
 GH_ACCOUNT=	mct
 GH_PROJECT=	tcptraceroute
 GH_TAGNAME=	tcptraceroute-1.5beta7
-REVISION=	4
+REVISION=	5
 PKGNAME=	${GH_TAGNAME}
 
 CATEGORIES=	net

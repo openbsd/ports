@@ -1,7 +1,11 @@
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -23,7 +23,7 @@
+@@ -20,10 +20,11 @@
+  * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+  */
+ 
++#include <pwd.h>
  #include "tcptraceroute.h"
  
  /* globals */
@@ -10,7 +14,7 @@ Index: main.c
  u_short src_prt, dst_prt;
  char *device, *name, *dst, *src;
  char dst_name[TEXTSIZE], dst_prt_name[TEXTSIZE], filter[TEXTSIZE];
-@@ -43,7 +43,7 @@ char errbuf [PCAP_ERRBUF_SIZE > LIBNET_ERRBUF_SIZE ?
+@@ -43,7 +44,7 @@ char errbuf [PCAP_ERRBUF_SIZE > LIBNET_ERRBUF_SIZE ?
  void defaults(void)
  {
  	struct servent *serv;
@@ -19,7 +23,15 @@ Index: main.c
  
  	getinterfaces();
  
-@@ -408,8 +408,8 @@ int main(int argc, char **argv)
+@@ -248,6 +249,7 @@ int main(int argc, char **argv)
+ {
+ 	char *optstring, *s;
+ 	int op, i, exitcode;
++	struct passwd *pw;
+ 
+ 	src_ip	= 0;
+ 	src_prt = 0;
+@@ -408,8 +410,8 @@ int main(int argc, char **argv)
  			case 'd':
  				o_debug++;
  				debug("%s %s, %s\n", PACKAGE, VERSION, TARGET);
@@ -30,3 +42,16 @@ Index: main.c
  				break;
  
  			case 'n':
+@@ -535,7 +537,11 @@ int main(int argc, char **argv)
+ 	initlibnet();
+ 	defaults();
+ 	initcapture();
+-	setuid(getuid());
++    pw = getpwnam("_tcptraceroute");
++    if (pw == NULL)
++       fatal("Cannot find user _tcptraceroute");
++    if (setuid(pw->pw_uid))
++       fatal("Cannot set user to _tcptraceroute");
+ 	exitcode = trace();
+ #if (LIBNET_API_VERSION >= 110)
+ 	libnet_destroy(libnet_context);
