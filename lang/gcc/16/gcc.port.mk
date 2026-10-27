@@ -20,8 +20,6 @@ _MODGCC_ARCH_USES = Yes
 .  endif
 .endfor
 
-COMPILER_VERSION ?= gcc2
-
 _MODGCC_LINKS =
 MODGCCSTDCPP = estdc++
 MODGCC_CPPLIBDEP = lang/gcc/16,-libs>=16,<17

@@ -180,8 +180,6 @@ ALL_TARGET = bootstrap
 ALL_TARGET = bootstrap2
 .endif
 
-MAKE_FLAGS += libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
-
 # build optimized stage1 compiler without debug info
 MAKE_FLAGS += STAGE1_CFLAGS=-O2
 
