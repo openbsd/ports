@@ -1,0 +1,12 @@
+Index: capture.h
+--- capture.h.orig
++++ capture.h
+@@ -20,8 +20,6 @@
+  * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+  */
+ 
+-extern char pcap_version[];
+-
+ extern pcap_t *pcap;
+ extern int pcap_fd;
+ 

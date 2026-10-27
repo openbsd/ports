@@ -1,5 +1,6 @@
---- main.c.orig	Sun Apr 29 11:49:51 2007
-+++ main.c	Sun Apr 29 11:49:54 2007
+Index: main.c
+--- main.c.orig
++++ main.c
 @@ -23,7 +23,7 @@
  #include "tcptraceroute.h"
  
@@ -18,3 +19,14 @@
  
  	getinterfaces();
  
+@@ -408,8 +408,8 @@ int main(int argc, char **argv)
+ 			case 'd':
+ 				o_debug++;
+ 				debug("%s %s, %s\n", PACKAGE, VERSION, TARGET);
+-				debug("Compiled with libpcap %s, libnet %s (API %d)\n",
+-					pcap_version, LIBNET_VERSION, LIBNET_API_VERSION);
++				debug("Compiled with libnet %s (API %d)\n",
++					LIBNET_VERSION, LIBNET_API_VERSION);
+ 				break;
+ 
+ 			case 'n':

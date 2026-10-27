@@ -1,28 +1,30 @@
-COMMENT=		traceroute implementation using TCP packets
+COMMENT=	traceroute implementation using TCP packets
 
-DISTNAME=		tcptraceroute-1.5beta7
-REVISION=		2
-CATEGORIES=    		net
+GH_ACCOUNT=	mct
+GH_PROJECT=	tcptraceroute
+GH_TAGNAME=	tcptraceroute-1.5beta7
+REVISION=	3
+PKGNAME=	${GH_TAGNAME}
 
-HOMEPAGE=		http://michael.toren.net/code/tcptraceroute/
+CATEGORIES=	net
 
-# GPL
+HOMEPAGE=	https://github.com/mct/tcptraceroute
+
+# GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c pcap lib/libnet-1.1/net=11
+WANTLIB=	c pcap lib/libnet-1.1/net=11
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-libnet=${PREFIX} \
-			--enable-noselect-default
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--with-libnet=${PREFIX} \
+		--enable-noselect-default
 
-SITES=			http://michael.toren.net/code/tcptraceroute/
+LIB_DEPENDS=	net/libnet/1.1
 
-LIB_DEPENDS=		net/libnet/1.1
+MAKE_FLAGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS}"
 
-MAKE_FLAGS=		CC="${CC}" \
-			CFLAGS="${CFLAGS}"
-
-NO_TEST=		Yes
-USE_GMAKE=		Yes
+NO_TEST=	Yes
+USE_GMAKE=	Yes
 
 .include <bsd.port.mk>
