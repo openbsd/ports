@@ -1,7 +1,5 @@
 @option is-branch
-@pkgpath net/unifi/6.1
-@pkgpath net/unifi/6.2
-@ask-update unifi-<6.1 Older version installed. Beware, newer versions no longer support devices marked as EoL in 6.0. pkg_delete the previous version to proceed.
+@pkgpath net/unifi/v9
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi::unifi user:${PREFIX}/share/unifi:/sbin/nologin
 @rcscript ${RCDIR}/unifi
