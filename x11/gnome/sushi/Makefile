@@ -2,6 +2,7 @@ COMMENT=		quick previewer for Nautilus
 
 GNOME_PROJECT=		sushi
 GNOME_VERSION=		51.2
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
