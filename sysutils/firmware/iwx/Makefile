@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_VER=		20251021
 REVISION=	0
 FW_DRIVER=	iwx

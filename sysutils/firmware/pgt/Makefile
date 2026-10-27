@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	pgt
 FW_VER=		1.2
 DISTNAME=	pgt-firmware-${FW_VER}

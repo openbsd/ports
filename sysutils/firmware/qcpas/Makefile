@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	qcpas
 FW_VER=		20250410
 DISTNAME=	linux-firmware-${FW_VER}

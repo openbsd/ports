@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 COMMENT=	microcode update binaries for Intel CPUs
 FW_DRIVER=	intel
 

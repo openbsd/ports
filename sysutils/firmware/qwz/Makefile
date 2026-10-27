@@ -1,5 +1,6 @@
-FW_DRIVER=	qwz
+# if you update firmware ports, ask sthen to rebuild
 
+FW_DRIVER=	qwz
 FW_VER=		20261019
 
 DISTNAME=	linux-firmware-${FW_VER}

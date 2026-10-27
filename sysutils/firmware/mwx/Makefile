@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	mwx
 FW_VER=		20260309
 DISTNAME=	linux-firmware-${FW_VER}

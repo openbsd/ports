@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	iwi
 FW_VER=		3.1
 DISTNAME=	ipw2200-fw-${FW_VER}

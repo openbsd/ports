@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	ogx
 FW_VER=		20171128
 DISTNAME=	ogx-firmware-${FW_VER}

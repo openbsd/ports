@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	athn
 FW_VER=		1.1
 REVISION=	4

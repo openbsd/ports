@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	mtw
 FW_VER=		20230804
 DISTNAME=	linux-firmware-${FW_VER}

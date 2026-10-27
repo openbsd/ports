@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	arm64-qcom-dtb
 FW_VER=		2.7
 REVISION=	6

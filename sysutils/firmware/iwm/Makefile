@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_VER=		20240410
 FW_DRIVER=	iwm
 DISTNAME=	linux-firmware-${FW_VER}

@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	bwfm
 LINUX_VER=	20200316
 SUP_VER=	1.3

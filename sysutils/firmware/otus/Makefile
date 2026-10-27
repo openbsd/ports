@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	otus
 FW_VER=		1.0
 REVISION=	1

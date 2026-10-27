@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	acx
 FW_VER=		1.4
 DISTNAME=	acx-firmware-${FW_VER}

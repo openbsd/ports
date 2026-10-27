@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 COMMENT=	microcode update binaries for AMD CPUs
 FW_DRIVER=	amd
 FW_VER=		20250708

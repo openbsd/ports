@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	riscv64-spacemit-dtb
 FW_VER=		1.0
 

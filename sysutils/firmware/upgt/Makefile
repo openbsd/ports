@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	upgt
 FW_VER=		1.1
 DISTNAME=	upgt-firmware-${FW_VER}

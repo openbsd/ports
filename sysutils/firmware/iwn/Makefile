@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	iwn
 FW_VER=		5.11
 REVISION=	1

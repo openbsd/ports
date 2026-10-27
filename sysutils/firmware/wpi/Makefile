@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	wpi
 FW_VER=		3.2
 DISTNAME=	iwlwifi-3945-ucode-15.32.2.9

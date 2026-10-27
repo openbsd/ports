@@ -1,3 +1,5 @@
+# we do not distribute this one
+
 FW_DRIVER =	ulpt
 FW_VER =	1.0
 REVISION =	0

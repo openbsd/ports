@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	uath
 FW_VER=		2.0
 REVISION=	1

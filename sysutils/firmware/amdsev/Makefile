@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 COMMENT=	AMD SEV firmware binaries
 FW_DRIVER=	amdsev
 FW_VER=		20260110

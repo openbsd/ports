@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_DRIVER=	ipw
 FW_VER=		1.3
 DISTNAME=	ipw2100-fw-${FW_VER}

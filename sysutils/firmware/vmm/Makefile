@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 ONLY_FOR_ARCHS=	amd64
 DPB_PROPERTIES=	parallel
 

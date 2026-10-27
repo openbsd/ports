@@ -1,3 +1,5 @@
+# if you update firmware ports, ask sthen to rebuild
+
 FW_VER=		20250311
 FW_DRIVER=	ice
 DISTNAME=	linux-firmware-${FW_VER}
