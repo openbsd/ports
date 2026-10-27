@@ -1,7 +1,7 @@
 Index: gcc/ada/Makefile.rtl
 --- gcc/ada/Makefile.rtl.orig
 +++ gcc/ada/Makefile.rtl
-@@ -1827,6 +1827,278 @@ ifeq ($(strip $(filter-out x86_64 pc gnu,$(target_cpu)
+@@ -1827,6 +1827,315 @@ ifeq ($(strip $(filter-out x86_64 pc gnu,$(target_cpu)
  endif
  endif
  
@@ -147,6 +147,43 @@ Index: gcc/ada/Makefile.rtl
 +  MISCLIB = -lutil
 +endif
 +
++# powerpc64 OpenBSD
++ifeq ($(SELECTED_PAIRS),PAIRS_NONE)
++ifeq ($(strip $(filter-out powerpc64 openbsd%,$(target_cpu) $(target_os))),)
++
++  SELECTED_PAIRS=powerpc64-openbsd
++
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<libgnarl/a-intnam__bsd.ads \
++  s-dorepr.adb<libgnat/s-dorepr__fma.adb \
++  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
++  s-intman.adb<libgnarl/s-intman__posix.adb \
++  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
++  s-osinte.adb<libgnarl/s-osinte__openbsd.adb \
++  s-oslock.ads<libgnat/s-oslock__posix.ads \
++  s-osprim.adb<libgnat/s-osprim__posix.adb \
++  s-taprop.adb<libgnarl/s-taprop__posix.adb \
++  s-taspri.ads<libgnarl/s-taspri__posix.ads \
++  s-tpopsp.adb<libgnarl/s-tpopsp__posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(ATOMICS_BUILTINS_TARGET_PAIRS) \
++  $(GNATRTL_128BIT_PAIRS) \
++  system.ads<libgnat/system-openbsd-ppc64.ads
++
++  EXTRA_GNATRTL_NONTASKING_OBJS = $(GNATRTL_128BIT_OBJS)
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++endif
++
 +ifeq ($(strip $(filter-out mips64 openbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-intnam.ads<libgnarl/a-intnam__bsd.ads \
@@ -280,7 +317,7 @@ Index: gcc/ada/Makefile.rtl
  # aarch64 FreeBSD
  ifeq ($(SELECTED_PAIRS),PAIRS_NONE)
  ifeq ($(strip $(filter-out %aarch64 freebsd%,$(target_cpu) $(target_os))),)
-@@ -3209,7 +3481,7 @@ LIBGNAT_OBJS = adadecode.o adaint.o argv.o aux-io.o 		
+@@ -3209,7 +3518,7 @@ LIBGNAT_OBJS = adadecode.o adaint.o argv.o aux-io.o 		
  #  from ADA_INCLUDE_SRCS.
  
  LIBGNAT_SRCS = $(patsubst %.o,%.c,$(LIBGNAT_OBJS))			\
