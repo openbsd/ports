@@ -173,7 +173,6 @@
      SUBDIR += inadyn
      SUBDIR += inetsim
      SUBDIR += iodine
-     SUBDIR += ipaudit
      SUBDIR += ipcad
      SUBDIR += ipcalc
      SUBDIR += iperf

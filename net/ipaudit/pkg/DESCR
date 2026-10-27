@@ -1,5 +1,0 @@
-IPaudit is a software package to record and display network activity. 
-It includes ipaudit, which stores counts of bytes and packets for 
-every combination of host/port pairs and protocol. 
-The utilities total and ipstrings can be used to investigate network 
-traffic records from the command line.
