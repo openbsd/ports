@@ -4,6 +4,7 @@ COMMENT=	vi clone with many additional features
 # if there are new languages for manpages, "make fix-plist" will add the
 # ${GUI_ONLY} markers as needed for gui-only tools.
 V=		9.2.1178
+REVISION=	0
 
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
@@ -123,7 +124,9 @@ WANTLIB += gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
 .if empty(_GUISET)
 _GUISET +=	ok
 CONFIGURE_ARGS += --disable-gui \
+		--without-pixman \
 		--without-x
+CONFIGURE_ENV += disable_cairo_pango=1
 GUI_ONLY=	"@comment "
 NO_X11_PKGPATH=	"@pkgpath editors/vim,no_x11${FLAVOR_EXT:S/-/,/g}"
 .else

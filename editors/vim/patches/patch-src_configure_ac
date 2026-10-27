@@ -27,3 +27,21 @@ Index: src/configure.ac
        fi
      fi
      if test "$enable_luainterp" = "dynamic"; then
+@@ -2475,7 +2475,7 @@ fi
+ 
+ AC_MSG_CHECKING(for cairo)
+ have_cairo="no"
+-if "$PKG_CONFIG" --exists 'cairo-ps'; then
++if [[ -z $disable_cairo_pango ]] && "$PKG_CONFIG" --exists 'cairo-ps'; then
+   if "$PKG_CONFIG" --exists 'cairo-pdf'; then
+     have_cairo="yes"
+     AC_MSG_RESULT([yes])
+@@ -2492,7 +2492,7 @@ fi
+ 
+ AC_MSG_CHECKING(for pango)
+ have_pango="no"
+-if "$PKG_CONFIG" --exists 'pango' && "$PKG_CONFIG" --exists 'pangocairo'; then
++if [[ -z $disable_cairo_pango ]] && "$PKG_CONFIG" --exists 'pango' && "$PKG_CONFIG" --exists 'pangocairo'; then
+ dnl pango_font_metrics_get_height() requires Pango 1.44.
+   if "$PKG_CONFIG" --exists 'pango >= 1.44'; then
+     have_pango="yes"
