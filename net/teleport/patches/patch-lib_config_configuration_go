@@ -1,0 +1,12 @@
+Index: lib/config/configuration.go
+--- lib/config/configuration.go.orig
++++ lib/config/configuration.go
+@@ -1521,7 +1521,7 @@ func applySSHConfig(fc *FileConfig, cfg *servicecfg.Co
+ 	if fc.SSH.PermitUserEnvironment {
+ 		cfg.SSH.PermitUserEnvironment = true
+ 	}
+-	if fc.SSH.DisableCreateHostUser || runtime.GOOS != constants.LinuxOS {
++	if fc.SSH.DisableCreateHostUser {
+ 		cfg.SSH.DisableCreateHostUser = true
+ 		if runtime.GOOS != constants.LinuxOS {
+ 			slog.DebugContext(context.Background(), "Disabling host user creation as this feature is only available on Linux")

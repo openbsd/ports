@@ -1,0 +1,23 @@
+Index: vendor/github.com/charlievieth/strcase/internal/bytealg/indexbyte_go122_amd64.s
+--- vendor/github.com/charlievieth/strcase/internal/bytealg/indexbyte_go122_amd64.s.orig
++++ vendor/github.com/charlievieth/strcase/internal/bytealg/indexbyte_go122_amd64.s
+@@ -175,8 +175,7 @@ endofpage:
+ 
+ avx2:
+ #ifndef hasAVX2
+-	CMPB golang·org∕x∕sys∕cpu·X86+const_offsetX86HasAVX2(SB), $1
+-	JNE  sse
++	JMP  sse
+ 
+ #endif
+ 	// Create a mask in Y4 that converts text to upper case.
+@@ -323,8 +322,7 @@ endofpage:
+ 
+ avx2:
+ #ifndef hasAVX2
+-	CMPB golang·org∕x∕sys∕cpu·X86+const_offsetX86HasAVX2(SB), $1
+-	JNE  sse
++	JMP  sse
+ 
+ #endif
+ 	MOVD         AX, X0

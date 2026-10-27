@@ -1,0 +1,16 @@
+@conflict etsh-*
+@newgroup _teleport:663
+@newuser _teleport:663:_teleport::Teleport Authentication Proxy:/nonexistent:/sbin/nologin
+@sample ${SYSCONFDIR}/teleport/
+@mode 750
+@owner _teleport
+@group _teleport
+@sample /var/lib/teleport/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/teleport
+@bin bin/tctl
+@bin bin/tsh
+@bin sbin/teleport
+share/doc/pkg-readmes/${PKGSTEM}

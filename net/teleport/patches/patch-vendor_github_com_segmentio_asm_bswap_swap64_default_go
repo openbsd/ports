@@ -1,0 +1,11 @@
+Index: vendor/github.com/segmentio/asm/bswap/swap64_default.go
+--- vendor/github.com/segmentio/asm/bswap/swap64_default.go.orig
++++ vendor/github.com/segmentio/asm/bswap/swap64_default.go
+@@ -1,5 +1,5 @@
+-//go:build purego || !amd64
+-// +build purego !amd64
++//go:build purego || !amd64 || openbsd
++// +build purego !amd64 openbsd
+ 
+ package bswap
+ 

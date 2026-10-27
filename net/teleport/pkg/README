@@ -1,0 +1,71 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Official documentation
+======================
+
+See the Teleport documentation at https://goteleport.com/docs/
+
+A quick introduction to Teleport Community Edition is available at:
+
+  https://goteleport.com/docs/get-started/deploy-community/
+
+Keep in mind that the OpenBSD port of ${PKGSTEM} currently lacks the
+following features:
+
+- multi-factor authentication (FIDO2)
+- Windows Remote Desktop Protocol
+
+Usage
+=====
+
+The following programs are installed by the ${PKGSTEM} package.
+
+Read the official documentation and run the built-in 'help' command of
+each tool for further information.
+
+teleport
+--------
+
+The main Teleport binary that runs the Web UI, Auth Service, Proxy
+Service, and Teleport Agent services.
+
+Some Teleport features require files from the Teleport CDN, which are
+distributed under the Teleport Community license:
+
+  https://goteleport.com/blog/teleport-community-license/
+
+To accept this licence and make use of Teleport's CDN, add a login-class
+for teleport to login.conf(5) which sets the TELEPORT_CDN_BASE_URL
+environment variable to the URL of Teleport's CDN:
+
+teleport:\
+        :setenv=TELEPORT_CDN_BASE_URL="https://cdn.teleport.dev":\
+        :tc=daemon:
+
+By default, the Teleport server is run with the _teleport user account.
+The Teleport server might print a message which claims that it requires
+root access because Teleport uses "/var/lib/teleport", which is false.
+Another message might suggest to run "sudo teleport start". which is
+wrong.  Use "rcctl enable teleport && rcctl start teleport" instead.
+
+Running Teleport as root is only needed in certain use cases, such as
+when Teleport will act as an SSH server on the system where Teleport is
+running.  To run Teleport as root, set "teleport_user=root" in
+/etc/rc.conf.local.
+
+tctl
+----
+
+tctl is the administrative command-line interface for managing a
+Teleport cluster. It allows administrators to configure roles, manage
+users, and work with resources such as tokens, trusted clusters, and
+audit logs.
+
+tsh
+---
+
+tsh is the command-line tool used by Teleport users to authenticate,
+connect to infrastructure resources, and manage active sessions.  It
+supports SSH, Kubernetes, databases, and applications.

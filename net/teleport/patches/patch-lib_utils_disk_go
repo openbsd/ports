@@ -1,0 +1,98 @@
+Index: lib/utils/disk.go
+--- lib/utils/disk.go.orig
++++ lib/utils/disk.go
+@@ -27,35 +27,45 @@ import (
+ 	"os/user"
+ 	"path/filepath"
+ 	"strconv"
+-	"syscall"
+ 
+ 	"github.com/gravitational/trace"
+ 
+ 	hostuser "github.com/gravitational/teleport/session/host/user"
+ )
+ 
++import unix "golang.org/x/sys/unix"
++
++const (
++	S_IXOTH                           = 0x1
++	S_IWOTH                           = 0x2
++	S_IXGRP                           = 0x8
++	S_IWGRP                           = 0x10
++	S_IXUSR                           = 0x40
++	S_IWUSR                           = 0x80
++)
++
+ // PercentUsed returns percentage of disk space used. The percentage of disk
+ // space used is calculated from (total blocks - free blocks)/total blocks.
+ // The value is rounded to the nearest whole integer.
+ func PercentUsed(path string) (float64, error) {
+-	var stat syscall.Statfs_t
+-	err := syscall.Statfs(path, &stat)
++	var stat unix.Statfs_t
++	err := unix.Statfs(path, &stat)
+ 	if err != nil {
+ 		return 0, trace.Wrap(err)
+ 	}
+-	ratio := float64(stat.Blocks-stat.Bfree) / float64(stat.Blocks)
++	ratio := float64(stat.F_blocks-stat.F_bfree) / float64(stat.F_blocks)
+ 	return Round(ratio * 100), nil
+ }
+ 
+ // FreeDiskWithReserve returns the available disk space (in bytes) on the disk at dir, minus `reservedFreeDisk`.
+ func FreeDiskWithReserve(dir string, reservedFreeDisk uint64) (uint64, error) {
+-	var stat syscall.Statfs_t
+-	err := syscall.Statfs(dir, &stat)
++	var stat unix.Statfs_t
++	err := unix.Statfs(dir, &stat)
+ 	if err != nil {
+ 		return 0, trace.Wrap(err)
+ 	}
+ 	//nolint:unconvert // The cast is only necessary for linux platform.
+-	avail := uint64(stat.Bavail) * uint64(stat.Bsize)
++	avail := uint64(stat.F_bavail) * uint64(stat.F_bsize)
+ 	if reservedFreeDisk > avail {
+ 		return 0, trace.Errorf("no free space left")
+ 	}
+@@ -88,7 +98,7 @@ func CanUserWriteTo(path string) (bool, error) {
+ 
+ 	var uid int
+ 	var gid int
+-	if stat, ok := fileInfo.Sys().(*syscall.Stat_t); ok {
++	if stat, ok := fileInfo.Sys().(*unix.Stat_t); ok {
+ 		uid = int(stat.Uid)
+ 		gid = int(stat.Gid)
+ 	}
+@@ -111,8 +121,8 @@ func CanUserWriteTo(path string) (bool, error) {
+ 	// file is owned by the user
+ 	if strconv.Itoa(uid) == usr.Uid {
+ 		// file has u+wx permissions
+-		if perm&syscall.S_IWUSR != 0 &&
+-			perm&syscall.S_IXUSR != 0 {
++		if perm&S_IWUSR != 0 &&
++			perm&S_IXUSR != 0 {
+ 			return true, nil
+ 		}
+ 	}
+@@ -125,8 +135,8 @@ func CanUserWriteTo(path string) (bool, error) {
+ 	for _, groupID := range groupIDs {
+ 		if strconv.Itoa(gid) == groupID {
+ 			// file has g+wx permissions
+-			if perm&syscall.S_IWGRP != 0 &&
+-				perm&syscall.S_IXGRP != 0 {
++			if perm&S_IWGRP != 0 &&
++				perm&S_IXGRP != 0 {
+ 				return true, nil
+ 			}
+ 			break
+@@ -134,8 +144,8 @@ func CanUserWriteTo(path string) (bool, error) {
+ 	}
+ 
+ 	// file has o+wx permissions
+-	if perm&syscall.S_IWOTH != 0 &&
+-		perm&syscall.S_IXOTH != 0 {
++	if perm&S_IWOTH != 0 &&
++		perm&S_IXOTH != 0 {
+ 		return true, nil
+ 	}
+ 

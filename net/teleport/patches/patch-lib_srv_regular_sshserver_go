@@ -1,0 +1,20 @@
+Index: lib/srv/regular/sshserver.go
+--- lib/srv/regular/sshserver.go.orig
++++ lib/srv/regular/sshserver.go
+@@ -31,7 +31,6 @@ import (
+ 	"net"
+ 	"os"
+ 	"os/user"
+-	"runtime"
+ 	"strings"
+ 	"sync"
+ 	"time"
+@@ -694,7 +693,7 @@ func SetOnHeartbeat(fn func(error)) ServerOption {
+ // SetCreateHostUser configures host user creation on a server
+ func SetCreateHostUser(createUser bool) ServerOption {
+ 	return func(s *Server) error {
+-		s.createHostUser = createUser && runtime.GOOS == constants.LinuxOS
++		s.createHostUser = createUser
+ 		return nil
+ 	}
+ }

@@ -1,0 +1,24 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/teleport"
+daemon_user=_teleport
+daemon_flags="start --config ${SYSCONFDIR}/teleport/teleport.yaml"
+daemon_logger="daemon.info"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+pexp="${TRUEPREFIX}/sbin/teleport ${daemon_flags}"
+
+rc_configtest() {
+	${daemon} configure --test ${SYSCONFDIR}/teleport/teleport.yaml \
+		> /dev/null
+}
+
+rc_reload() {
+	${control} reload
+}
+
+rc_cmd $1

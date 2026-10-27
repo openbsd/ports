@@ -1,0 +1,9 @@
+Index: lib/srv/usermgmt_other.go
+--- lib/srv/usermgmt_other.go.orig
++++ lib/srv/usermgmt_other.go
+@@ -1,4 +1,4 @@
+-//go:build !linux
++//go:build !linux && !openbsd
+ 
+ /*
+  * Teleport

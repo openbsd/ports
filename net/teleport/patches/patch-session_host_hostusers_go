@@ -1,0 +1,36 @@
+Index: session/host/hostusers.go
+--- session/host/hostusers.go.orig
++++ session/host/hostusers.go
+@@ -114,26 +114,27 @@ func UserAdd(username string, groups []string, opts Us
+ 	}
+ 
+ 	// useradd ---no-create-home (username) (groups)...
+-	args := []string{"--no-create-home", "--home-dir", opts.Home, username}
++	args := []string{"-d", opts.Home}
+ 	if len(groups) != 0 {
+-		args = append(args, "--groups", strings.Join(groups, ","))
++		args = append(args, "-G", strings.Join(groups, ","))
+ 	}
+ 
+ 	if opts.UID != "" {
+-		args = append(args, "--uid", opts.UID)
++		args = append(args, "-u", opts.UID)
+ 	}
+ 
+ 	if opts.GID != "" {
+-		args = append(args, "--gid", opts.GID)
++		args = append(args, "-g", opts.GID)
+ 	}
+ 
+ 	if opts.Shell != "" {
+ 		if shell, err := exec.LookPath(opts.Shell); err != nil {
+ 			slog.WarnContext(context.Background(), "configured shell not found, falling back to host default", "shell", opts.Shell)
+ 		} else {
+-			args = append(args, "--shell", shell)
++			args = append(args, "-s", shell)
+ 		}
+ 	}
++	args = append(args, username)
+ 
+ 	cmd := exec.Command(useraddBin, args...)
+ 	output, err := cmd.CombinedOutput()

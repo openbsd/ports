@@ -1,0 +1,24 @@
+Teleport provides connectivity, authentication, access controls and
+audit for infrastructure.
+
+You might use Teleport to:
+
+* Set up single sign-on (SSO) for all of your cloud and on-prem
+  infrastructure.
+* Protect access to servers, Kubernetes clusters, databases, Windows
+  desktops, web applications, and cloud APIs without long-lived keys or
+  passwords.
+* Establish secure tunnels to reach resources behind NATs and firewalls
+  without VPNs or bastion hosts.
+* Record and audit activity across SSH, Kubernetes, database, RDP, and
+  web sessions.
+* Apply consistent Role-Based and Attribute-Based Access Control 
+  (RBAC/ABAC) across users, machines, workloads, and resource types.
+* Enforce least privilege and Just-in-Time (JIT) access requests for
+  elevated roles or sensitive systems.
+* Maintain a single identity and access layer for both human users and
+  workloads.
+
+Teleport works with SSH, Kubernetes, databases, RDP, cloud consoles,
+internal web services, Git repositories, and Model Context Protocol
+(MCP) servers.
