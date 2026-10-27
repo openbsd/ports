@@ -6,7 +6,7 @@ Index: gcc/config/alpha/alpha.opt
  Emit IEEE-conformant code, without inexact exceptions.
  
 +mno-ieee
-+Target Report RejectNegative InverseMask(IEEE)
++Target RejectNegative InverseMask(IEEE)
 +Emit non-IEEE-conformant code
 +
  mieee-with-inexact
