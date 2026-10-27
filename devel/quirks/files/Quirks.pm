@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1862 2026/10/25 06:56:55 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1863 2026/10/27 10:17:34 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -272,6 +272,7 @@ my $stem_extensions = {
 	'kmime' => 'kf6-kmime',
 	'p7zip' => '7zip',
 	'p7zip-rar' => '7zip-rar',
+# 8.1
 	'kyua-cli' => 'kyua',
 	'kyua-testers' => 'kyua',
 	'terraform' => 'opentofu',
@@ -643,6 +644,7 @@ setup_obsolete_reason(
 	3 => 'awscli-plugin-endpoint',
 	1 => 'gemini-cli',
 	16 => 'secrets',
+# 8.1
 	0 => 'py3-axolotl',
 	0 => 'py3-axolotl-curve25519',
 	0 => 'py3-straight.plugin',
@@ -675,8 +677,8 @@ setup_obsolete_reason(
 	8 => 'milter-greylist',
 	5 => 'libgringotts',
 	18 => 'xps',
-# 8.1
 	3 => 'cervisia',
+	6 => 'ipaudit',
 );
 # beware, if ports with an RDEP on Python 3 are removed in a release where
 # the Python major version has changed (e.g. 3.13->3.14 between 7.9 and 8.0)
@@ -713,6 +715,7 @@ my $obsolete_suggestion = {
 	'usmb' => 'susmb',
 # 8.0
 	'facette' => 'grafana',
+# 8.1
 };
 
 # reasons for obsolete packages
