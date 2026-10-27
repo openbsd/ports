@@ -1,0 +1,13 @@
+Index: driver/xscreensaver-auth.c
+--- driver/xscreensaver-auth.c.orig
++++ driver/xscreensaver-auth.c
+@@ -71,6 +71,9 @@
+ #include "visual.h"
+ #include "auth.h"
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISUID;
++
+ #ifdef __GNUC__
+  __extension__     /* shut up about "string length is greater than the length
+                       ISO C89 compilers are required to support" when including
