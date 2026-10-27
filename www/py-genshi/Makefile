@@ -1,6 +1,6 @@
 COMMENT=	toolkit for generation of output for the web
 
-MODPY_DISTV=	0.7.11
+MODPY_DISTV=	0.7.12
 DISTNAME=	genshi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
