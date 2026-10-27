@@ -1,41 +1,32 @@
 GNU uname aka. guname(1) -o, --operating-system is uname(1) -s.
-Fix a few tests (probably shell quote/file handling messed up).
+Ignore whitespace (some diff'd output has trailing ^M).
 Remove bash-ism.
 
 Index: tests/testrun.sh
 --- tests/testrun.sh.orig
 +++ tests/testrun.sh
 @@ -1,6 +1,6 @@
- #!/bin/sh -x
+ #!/bin/sh
  
 -OS_ARCH=`uname -o 2>/dev/null || echo ""`
 +OS_ARCH=`uname -s 2>/dev/null || echo ""`
- OS_KERNEL=`uname -s`
  
  #
-@@ -913,7 +913,9 @@ execEncTestWithCryptoConfig() {
-                 cat $tmpfile | $outputTransform > $tmpfile.2
-                 mv $tmpfile.2 $tmpfile
-             fi
--            diff $diff_param $full_file.data $tmpfile >> $curlogfile 2>> $curlogfile
-+	    # $outputTransform may be set to "base64" in which case identical
-+	    # strings happen to differ, ignoring trailing spaces fixes that
-+            diff -b $diff_param $full_file.data $tmpfile >> $curlogfile 2>> $curlogfile
-             printRes $expected_res $?
-         else
-             printRes $expected_res $res
-@@ -945,7 +947,9 @@ execEncTestWithCryptoConfig() {
-                 cat $tmpfile.2 | $outputTransform > $tmpfile
-                 mv $tmpfile $tmpfile.2
-             fi
--            diff $diff_param $full_file.data $tmpfile.2 >> $curlogfile 2>> $curlogfile
-+	    # $outputTransform may be set to "base64" in which case identical
-+	    # strings happen to differ, ignoring trailing spaces fixes that
-+            diff -b $diff_param $full_file.data $tmpfile.2 >> $curlogfile 2>> $curlogfile
-             printRes $res_success $?
-         else
-             printRes $res_success $res
-@@ -969,7 +973,7 @@ execEncTestWithCryptoConfig() {
+ # Get command line params
+@@ -413,11 +413,7 @@ if [ -n "$PERF_TEST" ] ; then
+     xmlsec_params="$xmlsec_params --repeat $PERF_TEST"
+ fi
+ 
+-if test "z$OS_ARCH" = "zCygwin" || test "z$OS_ARCH" = "zMsys" ; then
+-    diff_param=-uw
+-else
+-    diff_param=-u
+-fi
++diff_param=-ub
+ 
+ 
+ #
+@@ -520,7 +516,7 @@ extra_message=""
  rm -rf $tmpfile $tmpfile.2 $tmpfile.3
  
  # run tests

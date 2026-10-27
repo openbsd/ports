@@ -1,0 +1,34 @@
+Index: src/openssl/evp.c
+--- src/openssl/evp.c.orig
++++ src/openssl/evp.c
+@@ -447,8 +447,10 @@ xmlSecOpenSSLEvpKeyDataGetKeySize(xmlSecKeyDataPtr dat
+ #ifndef XMLSEC_NO_XDH
+     case EVP_PKEY_X25519:
+         return(253);
++#ifdef EVP_PKEY_X448
+     case EVP_PKEY_X448:
+         return(448);
++#endif
+ #endif /* XMLSEC_NO_XDH */
+ 
+     default:
+@@ -862,7 +864,9 @@ xmlSecOpenSSLEvpKeyGetKeyDataId(EVP_PKEY *pKey) {
+ 
+ #ifndef XMLSEC_NO_XDH
+     case EVP_PKEY_X25519:
++#ifdef EVP_PKEY_X448
+     case EVP_PKEY_X448:
++#endif
+         return (xmlSecOpenSSLKeyDataXdhId);
+ #endif /* XMLSEC_NO_XDH */
+ 
+@@ -4359,7 +4363,9 @@ xmlSecOpenSSLKeyValueXdhCheckKeyType(EVP_PKEY* pKey)
+ 
+     switch(xmlSecOpenSSLEvpKeyGetId(pKey)) {
+     case EVP_PKEY_X25519:
++#ifdef EVP_PKEY_X448
+     case EVP_PKEY_X448:
++#endif
+         return(0);
+     default:
+         return(1);
