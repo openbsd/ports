@@ -1,4 +1,4 @@
-bin/tcptraceroute
+@bin bin/tcptraceroute
 @man man/man1/tcptraceroute.1
 share/doc/tcptraceroute/
 @comment share/doc/tcptraceroute/AUTHORS
