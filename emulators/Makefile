@@ -65,6 +65,7 @@
      SUBDIR += vice
      SUBDIR += virtualjaguar
      SUBDIR += wine
+     SUBDIR += wine-extras
      SUBDIR += x48
      SUBDIR += xhomer
      SUBDIR += xnp2
