@@ -9,10 +9,12 @@
 @man man/man1/upterm-config-view.1
 @man man/man1/upterm-config.1
 @man man/man1/upterm-host.1
+@man man/man1/upterm-join.1
 @man man/man1/upterm-proxy.1
 @man man/man1/upterm-session-current.1
 @man man/man1/upterm-session-info.1
 @man man/man1/upterm-session-list.1
+@man man/man1/upterm-session-set.1
 @man man/man1/upterm-session-stop.1
 @man man/man1/upterm-session-wait.1
 @man man/man1/upterm-session.1
