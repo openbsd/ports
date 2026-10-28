@@ -7,7 +7,7 @@ CATEGORIES=	security
 
 PKGNAME-main=	sudo-${V:S/p/./}
 PKGNAME-python=	sudo-python-${V:S/p/./}
-REVISION-main=	2
+REVISION-main=	3
 REVISION-python=1
 
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>
@@ -26,6 +26,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-insults \
 			--with-env-editor \
 			--with-logfac=authpriv \
+			--with-rundir=/var/run/sudo \
+			--with-vardir=/var/db/sudo \
 			--with-libtool=system \
 			--disable-path-info \
 			--enable-openssl \

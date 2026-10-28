@@ -1,0 +1,100 @@
+Fix for CVE-2026-96512.
+
+Upstream commits: db66916 1820a34 194042b
+Index: src/sudo.c
+--- src/sudo.c.orig
++++ src/sudo.c
+@@ -99,6 +99,7 @@ static void sudo_check_suid(const char *path);
+ static char **get_user_info(struct user_details *);
+ static void command_info_to_details(char * const info[],
+     struct command_details *details);
++static void set_time_zone(void);
+ static void gc_init(void);
+ 
+ /* Policy plugin convenience functions. */
+@@ -132,8 +133,10 @@ static void approval_show_version(int verbose);
+ sudo_dso_public int main(int argc, char *argv[], char *envp[]);
+ 
+ static struct sudo_settings *sudo_settings;
+-static char * const *user_info, * const *submit_argv, * const *submit_envp;
+-static int submit_optind;
++static char * const *user_info;
++static char * const *submit_argv;	/* argv[] from main() */
++static char **submit_envp;		/* shallow copy of envp[] from main() */
++static int submit_optind;		/* optind from after getopt() */
+ 
+ int
+ main(int argc, char *argv[], char *envp[])
+@@ -163,7 +166,8 @@ main(int argc, char *argv[], char *envp[])
+     bindtextdomain(PACKAGE_NAME, LOCALEDIR);
+     textdomain(PACKAGE_NAME);
+ 
+-    (void) tzset();
++    /* Use system time zone, not user-specified. */
++    set_time_zone();
+ 
+     /* Must be done before we do any password lookups */
+ #if defined(HAVE_GETPRPWNAM) && defined(HAVE_SET_AUTH_PARAMETERS)
+@@ -203,9 +207,8 @@ main(int argc, char *argv[], char *envp[])
+     if (sudo_conf_disable_coredump())
+ 	disable_coredump();
+ 
+-    /* Parse command line arguments, preserving the original argv/envp. */
++    /* Parse command line arguments, preserving the original argv. */
+     submit_argv = argv;
+-    submit_envp = envp;
+     sudo_mode = parse_args(argc, argv, user_details.shell, &submit_optind,
+ 	&nargc, &nargv, &sudo_settings, &env_add, &list_user);
+     sudo_debug_printf(SUDO_DEBUG_DEBUG, "sudo_mode 0x%x", sudo_mode);
+@@ -341,13 +344,51 @@ access_denied:
+     return EXIT_FAILURE;
+ }
+ 
++/*
++ * Set the time zone using tzset(3), removing the user's TZ
++ * environment variable.  The original value of TZ may still
++ * be present in the command's environment, depending on sudoers.
++ */
++static void
++set_time_zone(void)
++{
++    /* Use system time zone, not user-specified. */
++    unsetenv("TZ");
++    (void) tzset();
++}
++
++/*
++ * Initialize garbage collection, load symbols for static sudoers,
++ * and make a shallow copy of envp[] for the plugins to use.
++ * Called via os_init().
++ */
+ int
+ os_init_common(int argc, char *argv[], char *envp[])
+ {
++    int envc;
+ #ifdef STATIC_SUDOERS_PLUGIN
+     preload_static_symbols();
+ #endif
+     gc_init();
++
++    /*
++     * Make a shallow copy of envp[] and store in submit_envp[].
++     * This allows us to remove variables from sudo's environment
++     * while still providing the original envp to the plugins.
++     */
++    for (envc = 0; envp[envc] != NULL; envc++)
++	continue;
++    if (envc != 0) {
++	submit_envp = reallocarray(NULL, sizeof(char *), envc + 1);
++	if (submit_envp == NULL || !gc_add(GC_PTR, submit_envp)) {
++	    sudo_fatalx_nodebug(U_("%s: %s"), __func__,
++		U_("unable to allocate memory"));
++	}
++	for (envc = 0; envp[envc] != NULL; envc++)
++	    submit_envp[envc] = envp[envc];
++	submit_envp[envc] = NULL;
++    }
++
+     return 0;
+ }
+ 
