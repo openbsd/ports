@@ -6,7 +6,7 @@ correct command line options for threading: -pthread (Linux),
 Index: src/hugin_base/CMakeLists.txt
 --- src/hugin_base/CMakeLists.txt.orig
 +++ src/hugin_base/CMakeLists.txt
-@@ -152,6 +152,8 @@ vigra_ext/utils.h
+@@ -151,6 +151,8 @@ vigra_ext/utils.h
  vigra_ext/VignettingCorrection.h
  )
  
@@ -14,4 +14,4 @@ Index: src/hugin_base/CMakeLists.txt
 +
  IF (${HUGIN_SHARED_LIBS})
    add_library(huginbase SHARED ${HUGIN_BASE_SRC} ${HUGIN_BASE_HEADER})
-   target_link_libraries(huginbase ${Boost_LIBRARIES} Threads::Threads ${X11_X11_LIB})
+   target_link_libraries(huginbase Threads::Threads ${X11_X11_LIB})

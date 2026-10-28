@@ -3,7 +3,7 @@ BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2025.0.1
-REVISION =	1
+REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -49,13 +49,13 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 RUN_DEPENDS +=		x11/py-wxPython # required for launching python scripts
 
-LIB_DEPENDS =		graphics/exiv2>=0.12 \
+LIB_DEPENDS =		graphics/exiv2 \
 			graphics/lcms2 \
-			graphics/libpano13>=2.9.19 \
+			graphics/libpano13 \
 			graphics/lensfun \
-			graphics/vigra \
+			graphics/vigra>=1.12.4p2 \
 			math/flann \
-			x11/wxWidgets>=3.0.4
+			x11/wxWidgets
 
 MODULES =		devel/cmake lang/python
 
@@ -67,9 +67,6 @@ CONFIGURE_ARGS +=	-DBUILD_HSI=ON \
 			-DBUILD_WITH_EPOXY=ON \
 			-Wno-dev
 NO_TEST =		Yes
-
-# Fix build with OpeEXR>=3 (Imath split)
-CXXFLAGS +=		-I${LOCALBASE}/include/Imath
 
 MODPY_ADJ_FILES =	src/hugin_script_interface/hpi.py \
 			src/hugin_script_interface/plugins/shooting_pattern.py \
