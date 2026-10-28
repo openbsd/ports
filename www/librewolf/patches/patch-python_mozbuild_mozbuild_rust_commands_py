@@ -1,0 +1,16 @@
+use lto=thin to reduce memory pressure when building gkrust
+https://bugzilla.mozilla.org/show_bug.cgi?id=1644409
+https://bugzilla.mozilla.org/show_bug.cgi?id=1640982
+
+Index: python/mozbuild/mozbuild/rust_commands.py
+--- python/mozbuild/mozbuild/rust_commands.py.orig
++++ python/mozbuild/mozbuild/rust_commands.py
+@@ -418,7 +418,7 @@ def _rustc_flags(cmd, substs, invocation):
+         flags += substs.get("MOZ_RUST_LIBRARY_RUSTCFLAGS")
+ 
+     if applies_library_lto(cmd.kind, cmd.lto, substs):
+-        flags.append("-Clto")
++        flags.append("-Clto=thin")
+ 
+     flags += invocation.cargo_rustcflags
+ 
