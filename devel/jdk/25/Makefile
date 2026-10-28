@@ -4,16 +4,14 @@ USE_NOBTCFI=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	25.0.4
-BUILD_VER=	7
+BASE_VER=	25.0.5.0.3
+BUILD_VER=	1
 BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${BUILD_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-25
 EPOCH=		0
-
-REVISION=	2
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -135,7 +133,6 @@ JVMARCH=	${MACHINE_ARCH:S/amd64/x86_64/}
 BUILDDIR=	${WRKDIST}/build/bsd-${JVMARCH}-server-release
 IMAGEDIR=	${BUILDDIR}/images/jdk
 WRKTMP=		${WRKDIR}/tmp
-JDKFILESDIR=	${.CURDIR}/../files
 
 post-extract:
 	sed -i "s|#!/bin/bash|#!\${LOCALBASE}/bin/bash|" ${WRKDIST}/configure
@@ -146,8 +143,6 @@ post-build:
 	cd ${IMAGEDIR}/lib && \
 		find . -name \*.debuginfo -exec \
 		    sh -c 'mv {} `echo {} | sed s/.debuginfo/.so/`' \; && \
-		mv jspawnhelper.so jspawnhelper && \
-		chmod +x jspawnhelper && \
 		cp libjsig.so server/
 	cd ${IMAGEDIR}/bin && \
 		find . -name \*.debuginfo -exec \
@@ -158,8 +153,6 @@ post-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${PKGSTEM}
 	cd ${IMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${PKGSTEM} -xf -
-	${INSTALL_DATA} ${JDKFILESDIR}/blocked.certs \
-		${PREFIX}/${PKGSTEM}/lib/security/
 	ln -fs ${SYSCONFDIR}/ssl/jdk-cacerts \
 		${PREFIX}/${PKGSTEM}/lib/security/cacerts
 
