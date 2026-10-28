@@ -1,11 +1,11 @@
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
-V=		3.2.0
+V=		3.2.1
 DISTNAME=	libjpeg-turbo-${V}
 PKGNAME=	jpeg-${V}
 
 SHARED_LIBS+=	jpeg		72.0
-SHARED_LIBS+=	turbojpeg	2.0
+SHARED_LIBS+=	turbojpeg	3.0
 
 EPOCH=		0
 
