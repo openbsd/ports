@@ -14,7 +14,6 @@ A quick introduction to Teleport Community Edition is available at:
 Keep in mind that the OpenBSD port of ${PKGSTEM} currently lacks the
 following features:
 
-- multi-factor authentication (FIDO2)
 - Windows Remote Desktop Protocol
 
 Usage

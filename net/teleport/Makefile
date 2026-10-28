@@ -1,6 +1,7 @@
 COMMENT =	reverse-proxy with built-in authentication and auditing
 
 V = 18.11.1
+REVISION = 0
 
 DISTNAME = teleport-${V}
 DISTFILES = teleport-vendored-${V}.tar.gz \
@@ -16,7 +17,7 @@ MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
 # AGPLv3 / Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c pthread
+WANTLIB =		c crypto fido2 pthread
 
 # Vendored distfile:
 # ftp -o teleport-${V}.tar.gz https://github.com/gravitational/teleport/archive/refs/tags/v${V}.tar.gz
@@ -41,7 +42,7 @@ SITES =			https://liam.stsp.name/files/distfiles/
 
 MODULES =		lang/go
 
-MAKE_ENV =		FIDO2=no \
+MAKE_ENV =		FIDO2=dynamic \
 			RDPCLIENT_SKIP_BUILD=1 \
 			WEBASSETS_SKIP_BUILD=1 \
 			BUILDFLAGS="${MODGO_FLAGS}"
