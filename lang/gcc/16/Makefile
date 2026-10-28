@@ -16,7 +16,7 @@ USE_NOEXECONLY = Yes
 # - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
 #   into simple warnings.
 V = 16.2.0
-REVISION = 6
+REVISION = 7
 GCC_PKGSPEC = >=16,<17
 
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.2.0-0.tar.xz
@@ -233,6 +233,8 @@ RUN_DEPENDS-bootstrap =
 WANTLIB-main =		${WANTLIB}
 WANTLIB-ada =		${WANTLIB} pthread util
 WANTLIB-libs =		m pthread
+WANTLIB-dlang =		${WANTLIB} pthread
+WANTLIB-modula2 =	${WANTLIB} estdc++
 WANTLIB-bootstrap =
 
 LIB_DEPENDS +=		devel/gmp,no_cxx,bootstrap \
