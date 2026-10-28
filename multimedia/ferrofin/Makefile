@@ -7,7 +7,7 @@ USE_NOEXECONLY =	Yes
 COMMENT =		API compatible Jellyfin server in Rust
 DIST_TUPLE =		github	mangoleaf	ferrofin	v1.3.2	.
 CATEGORIES =		multimedia net
-REVISION =		2
+REVISION =		3
 
 # https://github.com/jellyfin/jellyfin-web needs 'npm run build:propduction'
 # which requires wxallowed WRKBUILD and fails with cryptic EPIPE on OpenBSD;
