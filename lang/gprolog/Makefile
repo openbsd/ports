@@ -4,6 +4,7 @@ BROKEN-i386=		linking problems
 #
 # - without the above, build fails with
 # ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
+BROKEN-sparc64=	Fatal Error: Segmentation Violation (bad address: 0xe0f610a000)
 
 # without, build fails partway through (though some previous gplc calls
 # did work ok):
