@@ -12,7 +12,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			156.0.8078.47
+V=			156.0.8078.73
 
 DISTNAME=		chromium-${V}
 
@@ -347,7 +347,7 @@ do-build:
 	cd ${WRKSRC}/typescript/tsc && \
 		${SETENV} ${MAKE_ENV} go build -v -p ${MAKE_JOBS} -mod=vendor ./cmd/tsgo && \
 		ln -sf ${WRKSRC}/typescript/tsc/tsgo \
-		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc 
+		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 

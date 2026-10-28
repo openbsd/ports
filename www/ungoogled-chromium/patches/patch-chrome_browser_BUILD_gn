@@ -1,7 +1,7 @@
 Index: chrome/browser/BUILD.gn
 --- chrome/browser/BUILD.gn.orig
 +++ chrome/browser/BUILD.gn
-@@ -2004,6 +2004,10 @@ source_set("core") {
+@@ -2005,6 +2005,10 @@ source_set("core") {
  
    if (is_chrome_for_testing) {
      deps += [ "//chrome/browser/chrome_for_testing:browser" ]
@@ -12,7 +12,7 @@ Index: chrome/browser/BUILD.gn
    }
  
    if (safe_browsing_mode == 1) {
-@@ -3278,10 +3282,6 @@ source_set("browser") {
+@@ -3279,10 +3283,6 @@ source_set("browser") {
        # ... get modularized.
        "//chrome/browser/ui/extensions:impl",
      ]

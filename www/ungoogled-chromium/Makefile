@@ -13,7 +13,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			156.0.8078.47
+V=			156.0.8078.73
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
