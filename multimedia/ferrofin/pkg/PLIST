@@ -25,6 +25,7 @@ share/examples/login.conf.d/ferrofin
 ${WEB_PATH}/
 ${WEB_PATH}/10092.5b72cb544b645e273855.chunk.js
 ${WEB_PATH}/10393.ebea4771b8940214f3ad.chunk.js
+${WEB_PATH}/10398.ea89da93f96b286dd4f0.chunk.js
 ${WEB_PATH}/10455.4a668edb0928c7a2844e.chunk.js
 ${WEB_PATH}/1051.cd91accc1b9c1dbfecbd.chunk.js
 ${WEB_PATH}/10540.96422e0d1bb415e26f14.chunk.js
@@ -93,8 +94,8 @@ ${WEB_PATH}/17443.ed534cf0becf543b47a1.chunk.js
 ${WEB_PATH}/17486.c51cdc8d76819a800db5.chunk.js
 ${WEB_PATH}/17864.a35b6783298c185c2a29.chunk.js
 ${WEB_PATH}/18078.7c29ff0db10b0cc6fff5.css
-${WEB_PATH}/1831.2a123582e8d6b068b3cc.chunk.js
 ${WEB_PATH}/1831.444b435456582b81aaf4.css
+${WEB_PATH}/1831.82bde8dbe9b47094cbb7.chunk.js
 ${WEB_PATH}/1836.52f62b4661aa037c33f4.chunk.js
 ${WEB_PATH}/1836.94db4f3644a2ad201efe.css
 ${WEB_PATH}/18395.2c846c324f87760440d8.chunk.js
@@ -357,7 +358,7 @@ ${WEB_PATH}/51239.1f68ff8ec797bab065a2.chunk.js
 ${WEB_PATH}/51664.450bfed9f284319ca990.chunk.js
 ${WEB_PATH}/51797.0a30071e000698aa4cd8.chunk.js
 ${WEB_PATH}/5218.0d99ded8bc6b52ce6ace.chunk.js
-${WEB_PATH}/52197.1e4d80d4425113cab09a.chunk.js
+${WEB_PATH}/52197.81b1a087776448f650cf.chunk.js
 ${WEB_PATH}/52294.ade80ed07e11118cc05a.chunk.js
 ${WEB_PATH}/52361.4b5c69dc7fd52c0fa162.chunk.js
 ${WEB_PATH}/52361.4dc1e171984a8e6fea43.css
@@ -581,8 +582,8 @@ ${WEB_PATH}/78283.42788ce8c3448c848962.chunk.js
 ${WEB_PATH}/78588.862468c18f28186f6ecd.chunk.js
 ${WEB_PATH}/78651.f8258c37a4423198cfa9.chunk.js
 ${WEB_PATH}/78654.8b2a047184ee32c8acb4.chunk.js
-${WEB_PATH}/78701.10911a248782664da343.chunk.js
 ${WEB_PATH}/78701.1521101b7f45094b7ce3.css
+${WEB_PATH}/78701.1ce14a0baef5b694066c.chunk.js
 ${WEB_PATH}/78747.aaf2a79f93bcb2daf57f.chunk.js
 ${WEB_PATH}/78938.8685112d17d0b29b9480.chunk.js
 ${WEB_PATH}/78968.a131722fe82a76f957e4.chunk.js
@@ -639,7 +640,6 @@ ${WEB_PATH}/8444.63d24e37c99e1ce615b9.chunk.js
 ${WEB_PATH}/84499.8cd9a92d2294e863b0f9.chunk.js
 ${WEB_PATH}/84501.873e0a5827ed21e10553.css
 ${WEB_PATH}/84501.c519e2b7c417db2f6bee.chunk.js
-${WEB_PATH}/8463.5024adce4ba13b0c6c59.chunk.js
 ${WEB_PATH}/84903.360aacc55a4698e6a674.chunk.js
 ${WEB_PATH}/85065.bfa6f0fad6b4328d259e.chunk.js
 ${WEB_PATH}/85234.e696e5b5e6b20c3a3e15.chunk.js
@@ -828,7 +828,7 @@ ${WEB_PATH}/cs-json.b38ca5a1ae26d3c78945.chunk.js
 ${WEB_PATH}/cy-json.8471b1404f9db2f06bc2.chunk.js
 ${WEB_PATH}/da-json.8c7096bd37a47ffe76d5.chunk.js
 ${WEB_PATH}/de-json.197d7f9a2769b47d7f9b.chunk.js
-${WEB_PATH}/devices.fa06d3952fc85fe0380e.chunk.js
+${WEB_PATH}/devices.7aca5c6ed44ef6821a5c.chunk.js
 ${WEB_PATH}/dv-json.cf2bc7d5f51cdba65de6.chunk.js
 ${WEB_PATH}/edititemmetadata-html.19712c4a0ca2cd439636.chunk.js
 ${WEB_PATH}/edititemmetadata.b9387387afb5ea222952.chunk.js
@@ -892,7 +892,7 @@ ${WEB_PATH}/hu-json.05f4e4b31a982d066659.chunk.js
 ${WEB_PATH}/hy-json.ec590cba937b6d04b6c7.chunk.js
 ${WEB_PATH}/icon-transparent.baba78f2a106d9baee83.png
 ${WEB_PATH}/id-json.d3cccb38ab9c5417a044.chunk.js
-${WEB_PATH}/index.8b658a56b7ccb4b7eb16.chunk.js
+${WEB_PATH}/index.a6ffc205a93086175ced.chunk.js
 ${WEB_PATH}/index.html
 ${WEB_PATH}/is-is-json.fa6a22a9e4fbacb2f178.chunk.js
 ${WEB_PATH}/it-json.d07d888067b47a984e4b.chunk.js
@@ -919,8 +919,8 @@ ${WEB_PATH}/libraries-display.5130322447969ba9b494.chunk.js
 ${WEB_PATH}/libraries-metadata.55ee271932d9629df9c5.chunk.js
 ${WEB_PATH}/libraries-nfo.79d6f87756126f9db34a.chunk.js
 ${WEB_PATH}/libraries.1b6e01d67fa7276dd291.css
-${WEB_PATH}/libraries.a21cad00322984b29548.chunk.js
-${WEB_PATH}/libraries.a21cad00322984b29548.chunk.js.LICENSE.txt
+${WEB_PATH}/libraries.8c8e5d468a65638f9dae.chunk.js
+${WEB_PATH}/libraries.8c8e5d468a65638f9dae.chunk.js.LICENSE.txt
 ${WEB_PATH}/libraries/default.woff2
 ${WEB_PATH}/libraries/libarchive.wasm
 ${WEB_PATH}/libraries/npo.js
@@ -2363,8 +2363,8 @@ ${WEB_PATH}/user-home.e4ae606b60dda7eefc69.chunk.js
 ${WEB_PATH}/user-home.e4ae606b60dda7eefc69.chunk.js.LICENSE.txt
 ${WEB_PATH}/user-index-html.6a8ee8df81ea0fdb4547.chunk.js
 ${WEB_PATH}/user-playback-index-html.9f68a50740c4a83bbea3.chunk.js
-${WEB_PATH}/user-playback.3bc40e3166f445a60628.chunk.js
 ${WEB_PATH}/user-playback.4dc1e171984a8e6fea43.css
+${WEB_PATH}/user-playback.f77d59eb1782fed20b77.chunk.js
 ${WEB_PATH}/user-settings.5a42b694bca4470e1bbd.chunk.js
 ${WEB_PATH}/user-subtitles-index-html.10383f10c02ff673a650.chunk.js
 ${WEB_PATH}/user-subtitles.649f43bdfa106505fa0a.css

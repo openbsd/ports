@@ -3,7 +3,7 @@ disable jemalloc, avoids ABRT on starup
 Index: apps/ferrofin-server/Cargo.toml
 --- apps/ferrofin-server/Cargo.toml.orig
 +++ apps/ferrofin-server/Cargo.toml
-@@ -85,7 +85,7 @@ tracing-opentelemetry.workspace = true
+@@ -98,7 +98,7 @@ image.workspace = true
  
  # jemalloc's configure script cannot build under MSVC; main.rs cfg-gates the
  # allocator the same way, so Windows falls back to the system allocator.
