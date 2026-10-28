@@ -1,0 +1,33 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Please note that the Steam launcher requires high openfiles limits, see
+login.conf(5). Tested with those set to openfiles=2048.
+
+This package provides Winetricks and a launcher for Steam using the
+64-bit Wine port. (Note that applications requiring 32-bit Windows
+support will fail). Client binaries and Windows components are
+downloaded on demand and remain subject to their respective licenses.
+
+Run this command as your normal desktop user:
+
+    wine-steam
+
+The launcher uses WINEPREFIX, defaulting to $HOME/.wine. To keep
+separate prefixes, use the same setting each time you launch the client,
+like for example:
+
+    WINEPREFIX="$HOME/.wine-steam" wine-steam
+
+Steam is extracted from Valve's update packages after SHA-256
+verification. The  launcher configures Liberation font replacements. It
+also disables the CEF sandbox;
+
+To install components into a client's prefix, close its Windows
+applications and use the same WINEPREFIX with Winetricks, for example:
+
+    WINEPREFIX="$HOME/.wine-steam" winetricks arial
+
+See winetricks(1) for available recipes. The optional Winetricks GUI
+requires Zenity or KDialog, installed separately.

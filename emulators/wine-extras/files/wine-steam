@@ -1,0 +1,91 @@
+#!/bin/ksh
+
+set -e
+
+ulimit -d "$(ulimit -Hd)"
+ulimit -n "$(ulimit -Hn)"
+
+export WINEPREFIX="${WINEPREFIX:-$HOME/.wine}"
+export WINE="${LOCALBASE}/bin/wine"
+
+app_dir="$WINEPREFIX/drive_c/Steam"
+pkg="$app_dir/package"
+pending="$WINEPREFIX/.wine-steam-installing"
+cdn=https://client-update.steamstatic.com
+
+test -x "$WINE"
+
+# Extract the client directly instead of running the Windows installer.
+# Keep the marker until installation completes so interrupted installs retry.
+if [ ! -f "$app_dir/steam.exe" ] || [ -f "$pending" ]; then
+    mkdir -p "$pkg"
+    : > "$pending"
+
+    echo "extract Steam into $app_dir"
+    ftp -o "$pkg/steam_client_win64.manifest" "$cdn/steam_client_win64"
+
+    # Select package entries, excluding nested regional variants.
+    LC_ALL=C awk -F '"' '
+        BEGIN { depth = 0; count = 0 }
+        /^[ \t]*\{/ { depth++; next }
+        /^[ \t]*\}/ {
+            if (depth == 2) {
+                if (file != "") {
+                    if (length(sha) != 64 || sha !~ /^[0-9a-f]+$/) exit 1
+                    print sha, file
+                    count++
+                }
+                file = sha = ""
+            }
+            depth--
+            next
+        }
+        depth == 2 && $2 == "file" { file = $4 }
+        depth == 2 && $2 == "sha2" { sha = $4 }
+        END { if (!count) exit 1 }
+    ' "$pkg/steam_client_win64.manifest" > "$pkg/packages.sha256"
+
+    while read -r expected archive; do
+        case "$archive" in
+            ''|*[!A-Za-z0-9._-]*)
+                printf 'wine-steam: invalid archive name: %s\n' "$archive" >&2
+                exit 1
+                ;;
+        esac
+        if [ ! -f "$pkg/$archive" ] ||
+            [ "$(sha256 -q "$pkg/$archive")" != "$expected" ]; then
+            ftp -o "$pkg/$archive" "$cdn/$archive"
+        fi
+        if [ "$(sha256 -q "$pkg/$archive")" != "$expected" ]; then
+            printf 'wine-steam: SHA-256 mismatch: %s\n' "$archive" >&2
+            exit 1
+        fi
+        # unzip returns 1 for warnings, including DOS path separators.
+        unzip -oq "$pkg/$archive" -d "$app_dir" || {
+            status=$?
+            [ "$status" -eq 1 ] || exit "$status"
+        }
+    done < "$pkg/packages.sha256"
+
+    if [ ! -f "$app_dir/steam.exe" ]; then
+        printf 'wine-steam: steam.exe is missing after extraction\n' >&2
+        exit 1
+    fi
+    rm -f "$pending"
+fi
+
+# Use Liberation as metric-compatible replacements for Windows fonts.
+# https://github.com/liberationfonts/liberation-fonts/wiki
+# Apply to existing prefixes too; Wine prefers real fonts when present.
+font_key='HKCU\Software\Wine\Fonts\Replacements'
+"$WINE" reg.exe add "$font_key" /v Arial /t REG_SZ \
+    /d 'Liberation Sans' /f >/dev/null
+"$WINE" reg.exe add "$font_key" /v 'Times New Roman' /t REG_SZ \
+    /d 'Liberation Serif' /f >/dev/null
+"$WINE" reg.exe add "$font_key" /v 'Courier New' /t REG_SZ \
+    /d 'Liberation Mono' /f >/dev/null
+
+# Disable the CEF sandbox for Wine compatibility.
+echo "run Steam from $app_dir"
+cd "$app_dir"
+exec "$WINE" steam.exe -cef-disable-sandbox "$@"

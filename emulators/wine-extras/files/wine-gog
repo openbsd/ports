@@ -1,0 +1,111 @@
+#!/bin/ksh
+
+set -e
+
+export WINEPREFIX="${WINEPREFIX:-$HOME/.wine}"
+export WINE="${LOCALBASE}/bin/wine"
+export WINESERVER="${LOCALBASE}/bin/wineserver"
+
+app_dir="$WINEPREFIX/drive_c/GOG Galaxy"
+pkg="$WINEPREFIX/package"
+pending="$WINEPREFIX/.wine-gog-installing"
+
+# Update the version and checksum together.
+version=2.1.10.56
+archive="setup_galaxy_${version}.exe"
+url="https://content-system.gog.com/open_link/download?path=/open/galaxy/client/$archive"
+expected=ec1ef3744a6ba365c022d5e114a482b74ff0496e00a91924ebdae401e2c9291b
+
+test -x "$WINE"
+test -x "$WINESERVER"
+
+ulimit -d "$(ulimit -Hd)"
+ulimit -n "$(ulimit -Hn)"
+
+# Initialize Wine before extraction creates directories that winetricks checks.
+if [ ! -f "$WINEPREFIX/system.reg" ]; then
+    WINEDLLOVERRIDES="mscoree,mshtml=d" "$WINE" wineboot.exe -i
+    "$WINESERVER" -w
+fi
+
+# Extract the full installer: even its 64-bit Inno Setup loader requires WoW64.
+# Keep the marker until installation completes so interrupted installs retry.
+if [ ! -f "$app_dir/GalaxyClient.exe" ] || [ -f "$pending" ]; then
+    test -x "${LOCALBASE}/bin/innoextract"
+    mkdir -p "$pkg"
+
+    if [ ! -f "$pkg/$archive" ] ||
+        [ "$(sha256 -q "$pkg/$archive")" != "$expected" ]; then
+        ftp -o "$pkg/$archive.part" "$url"
+        if [ "$(sha256 -q "$pkg/$archive.part")" != "$expected" ]; then
+            printf 'wine-gog: SHA-256 mismatch: %s\n' "$archive" >&2
+            exit 1
+        fi
+        mv -f "$pkg/$archive.part" "$pkg/$archive"
+    fi
+
+    : > "$pending"
+    stage=$(mktemp -d "$pkg/extract.XXXXXXXX")
+    trap 'rm -rf "$stage"' EXIT
+    trap 'exit 1' HUP INT TERM
+
+    echo "extract GOG Galaxy $version into $app_dir"
+    "${LOCALBASE}/bin/innoextract" --extract --test --exclude-temp \
+        --output-dir "$stage" "$pkg/$archive"
+
+    if [ ! -f "$stage/app/GalaxyClient.exe" ]; then
+        printf 'wine-gog: GalaxyClient.exe is missing after extraction\n' >&2
+        exit 1
+    fi
+
+    # Map the installer's destinations into the Wine prefix.
+    mkdir -p "$app_dir" "$WINEPREFIX/drive_c/ProgramData" \
+        "$WINEPREFIX/drive_c/windows/Fonts"
+    cp -R "$stage/app/." "$app_dir/"
+    cp -R "$stage/%ALLUSERSPROFILE/." "$WINEPREFIX/drive_c/ProgramData/"
+    cp -R "$stage/commonfonts/." "$WINEPREFIX/drive_c/windows/Fonts/"
+
+    rm -rf "$stage"
+    trap - EXIT HUP INT TERM
+    rm -f "$pending"
+fi
+
+# Install the native MFC libraries required by Galaxy.
+if [ ! -f "$WINEPREFIX/drive_c/windows/system32/mfc140u.dll" ]; then
+    test -x "${LOCALBASE}/bin/winetricks"
+    "${LOCALBASE}/bin/winetricks" -q mfc140
+    if [ ! -f "$WINEPREFIX/drive_c/windows/system32/mfc140u.dll" ]; then
+        printf 'wine-gog: mfc140u.dll is missing after winetricks mfc140\n' >&2
+        exit 1
+    fi
+fi
+
+# Extract legacy DirectX libraries without running the 32-bit DXSETUP.
+# Galaxy's detection of these dependencies still needs to be tested.
+for component in d3dx9 d3dx10 d3dx11_43 d3dcompiler_43 xinput xact_x64; do
+    if [ ! -f "$WINEPREFIX/winetricks.log" ] ||
+        ! grep -qx "$component" "$WINEPREFIX/winetricks.log"; then
+        test -x "${LOCALBASE}/bin/winetricks"
+        echo "install DirectX component $component with winetricks"
+        "${LOCALBASE}/bin/winetricks" -q "$component"
+    fi
+done
+
+# Use Liberation as metric-compatible replacements for Windows fonts.
+# https://github.com/liberationfonts/liberation-fonts/wiki
+# Apply to existing prefixes too; Wine prefers real fonts when present.
+font_key='HKCU\Software\Wine\Fonts\Replacements'
+"$WINE" reg.exe add "$font_key" /v Arial /t REG_SZ \
+    /d 'Liberation Sans' /f >/dev/null
+"$WINE" reg.exe add "$font_key" /v 'Times New Roman' /t REG_SZ \
+    /d 'Liberation Serif' /f >/dev/null
+"$WINE" reg.exe add "$font_key" /v 'Courier New' /t REG_SZ \
+    /d 'Liberation Mono' /f >/dev/null
+
+# Use OpenGL and disable the WebEngine sandbox for Wine compatibility.
+export QTWEBENGINE_DISABLE_SANDBOX=1
+export QSG_RHI_BACKEND=opengl
+
+echo "run GOG Galaxy from $app_dir"
+cd "$app_dir"
+exec "$WINE" GalaxyClient.exe "$@"

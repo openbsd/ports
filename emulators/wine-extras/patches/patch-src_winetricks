@@ -1,0 +1,37 @@
+Index: src/winetricks
+--- src/winetricks.orig
++++ src/winetricks
+@@ -4,6 +4,9 @@
+ # SC2031: WINE was modified in a subshell. That change might be lost
+ # This has to be right after the shebang, see: https://github.com/koalaman/shellcheck/issues/779
+ 
++# OpenBSD port changes (2026-10-11): use the packaged Wine and GNU tar,
++# and support registry imports in prefixes without 32-bit Windows support.
++
+ # Name of this version of winetricks (YYYYMMDD)
+ # (This doesn't change often, use the sha256sum of the file when reporting problems)
+ WINETRICKS_VERSION=20260125
+@@ -187,6 +190,12 @@ fi
+ 
+ W_TEXT_LINE="------------------------------------------------------"
+ 
++# Some recipes require GNU tar options unavailable in OpenBSD tar.
++tar()
++{
++    "${LOCALBASE}/bin/gtar" "$@"
++}
++
+ #---- Public Functions ----
+ 
+ # Ask permission to continue
+@@ -893,7 +902,9 @@ w_try_regedit()
+     if [ "${W_ARCH}" = "win32" ]; then
+         w_try_regedit32 "$@"
+     elif [ "${W_ARCH}" = "win64" ]; then
+-        w_try_regedit32 "$@"
++        if [ -f "${W_SYSTEM32_DLLS}/regedit.exe" ]; then
++            w_try_regedit32 "$@"
++        fi
+         w_try_regedit64 "$@"
+     fi
+ }

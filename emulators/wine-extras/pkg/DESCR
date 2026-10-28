@@ -1,0 +1,3 @@
+Extra tools for Wine: Winetricks and launcher for the Windows Steam
+client. The launcher downloads the clients on first use; proprietary
+client binaries are not included in this package.
