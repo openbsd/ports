@@ -1,3 +1,4 @@
 bind_addr = "${BIND_ADDR}"
+http_port = ${HTTP_PORT}
 data_dir  = "${DATA_DIR}"
 web_dir   = "${TRUEPREFIX}/${WEB_PATH}"

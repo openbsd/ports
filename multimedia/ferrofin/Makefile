@@ -7,7 +7,7 @@ USE_NOEXECONLY =	Yes
 COMMENT =		API compatible Jellyfin server in Rust
 DIST_TUPLE =		github	mangoleaf	ferrofin	v1.3.2	.
 CATEGORIES =		multimedia net
-REVISION =		1
+REVISION =		2
 
 # https://github.com/jellyfin/jellyfin-web needs 'npm run build:propduction'
 # which requires wxallowed WRKBUILD and fails with cryptic EPIPE on OpenBSD;
@@ -39,6 +39,7 @@ MODCARGO_INSTALL_TARGET_PATHS =	${MODCARGO_CARGOTOML:H}
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BIND_ADDR =		::1
+HTTP_PORT =		8096
 CONF_FILE =		${SYSCONFDIR}/${PKGSTEM}.toml
 DATA_DIR =		${VARBASE}/${PKGSTEM}
 DOC_DIR =		${PREFIX}/share/doc/${PKGSTEM}
@@ -47,6 +48,7 @@ WEB_PATH =		share/jellyfin-web
 WEB_DIR =		${PREFIX}/${WEB_PATH}
 
 SUBST_VARS =		BIND_ADDR \
+			HTTP_PORT \
 			CONF_FILE \
 			DATA_DIR \
 			WEB_PATH
