@@ -4,8 +4,8 @@ CATEGORIES=	www devel
 
 PORTROACH=	site:https://github.com/composer/composer/archive/
 
-V=		2.10.3
-REVISION=	0
+# keep revision above 8.0-stable
+V=		2.11.0
 
 SITES=		https://getcomposer.org/download/$V/
 DISTNAME=	composer-$V
@@ -24,14 +24,8 @@ PERMIT_PACKAGE=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
-PKG_ARCH=	*
-
-do-extract:
-	mkdir ${WRKSRC}; \
-	  cp ${FULLDISTDIR}/composer-$V.phar ${WRKSRC}/composer.phar
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/composer.phar ${PREFIX}/libexec/
-	${SUBST_CMD} -m 555 -c ${FILESDIR}/composer ${PREFIX}/bin/composer
+	${INSTALL_SCRIPT} ${FULLDISTDIR}/composer-$V.phar ${PREFIX}/bin/composer
 
 .include <bsd.port.mk>
