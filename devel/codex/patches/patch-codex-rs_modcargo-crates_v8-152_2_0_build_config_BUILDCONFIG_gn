@@ -34,25 +34,3 @@ Index: codex-rs/modcargo-crates/v8-152.2.0/build/config/BUILDCONFIG.gn
  
  is_apple = is_ios || is_mac || is_watchos
  is_posix = !is_win && !is_fuchsia
-@@ -624,10 +630,6 @@ foreach(_target_type,
-         not_needed([ "strict_deps" ])
-       }
- 
--      if (!defined(generate_modulemap)) {
--        generate_modulemap = default_modulemap_mode
--      }
--
-       if (use_libcxx_modules) {
-         # Add a dependency needed for Clang modules builds.
-         deps += [ "//buildtools/third_party/libc++:all_modules" ]
-@@ -752,10 +754,6 @@ foreach(_target_type,
-         }
-       } else {
-         not_needed([ "strict_deps" ])
--      }
--
--      if (!defined(generate_modulemap)) {
--        generate_modulemap = default_modulemap_mode
-       }
- 
-       if (use_libcxx_modules) {
