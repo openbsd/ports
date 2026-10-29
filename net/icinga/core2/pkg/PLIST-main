@@ -17,9 +17,9 @@
 lib/icinga2/
 lib/icinga2/sbin/
 @bin lib/icinga2/sbin/icinga2
-@bin libexec/nagios/check_nscp_api
 libexec/icinga2-move-dir
 @exec %D/libexec/icinga2-move-dir
+@bin libexec/nagios/check_nscp_api
 @man man/man8/icinga2.8
 sbin/icinga2
 share/doc/icinga2/
