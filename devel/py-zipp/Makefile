@@ -1,6 +1,6 @@
 COMMENT=	backport of pathlib-compatible object wrapper for zip files
 
-MODPY_DISTV=	4.1.1
+MODPY_DISTV=	4.1.2
 DISTNAME=	zipp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
