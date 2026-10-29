@@ -8,13 +8,13 @@ PORTROACH=		ignore:1
 
 COMMENT =		add OpenBSD songs to Asterisk music-on-hold
 
-PKGNAME =		asterisk-openbsd-moh-7.9
+PKGNAME =		asterisk-openbsd-moh-8.0
 REL_LIST =		30 31 32 33 34 35 36 37 38 39 \
 			40 41 42 43 44 45 46 47 48 49 \
 			50 51 52 53 54 55 56 57 \
 			58a 58b 58c 58d 59a 59b \
 			60a 60b 60c 60d 60e 60f 60g 61 62 68 69 \
-			70 73 79
+			70 73 79 80
 .for release in ${REL_LIST}
 DISTFILES += song${release}.mp3
 .endfor
@@ -31,9 +31,9 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 # Copyright held by Theo; ok for non-commercial-redistribution
 PERMIT_PACKAGE =	Yes
 
-SITES =			https://ftp.openbsd.org/pub/OpenBSD/songs/
+SITES =			https://cdn.openbsd.org/pub/OpenBSD/songs/
 
-BUILD_DEPENDS =		audio/madplay
+BUILD_DEPENDS =		audio/sox
 
 DIST_SUBDIR =		openbsd_songs
 
@@ -43,9 +43,9 @@ MOH =			${PREFIX}/share/asterisk/moh
 
 do-build:
 .for release in ${REL_LIST}
-	${PREFIX}/bin/madplay -a -1.5 -Q -z -o raw:- --mono -R 8000 -a -12 \
-		${FULLDISTDIR}/song${release}.mp3 > ${WRKDIR}/song${release}.sln
-.endfor 
+	${PREFIX}/bin/sox -v 0.333 ${FULLDISTDIR}/song${release}.mp3 \
+		-c 1 -L -b 16 -r 8k -t raw ${WRKDIR}/song${release}.sln
+.endfor
 
 do-install:
 	${INSTALL_DATA_DIR} ${MOH}
