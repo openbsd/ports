@@ -32,7 +32,8 @@ MODULES=		lang/lua
 MODLUA_VERSION=5.2
 
 BUILD_DEPENDS=		databases/mariadb \
-			databases/postgresql
+			databases/postgresql \
+			textproc/nlohmann-json
 
 LIB_DEPENDS=		net/curl \
 			net/h323plus \
