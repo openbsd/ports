@@ -1,9 +1,10 @@
+# not dpb-parallel safe
 COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract
-GH_TAGNAME=	5.5.3
+GH_TAGNAME=	5.5.4
 
-SHARED_LIBS +=  tesseract            8.0      # 5.5
+SHARED_LIBS +=  tesseract            9.0      # 5.5
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xau Xdmcp Xext Xrender archive b2 bz2 c cairo crypto
@@ -15,7 +16,7 @@ WANTLIB += openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png ssl tiff webp webpmux xcb xcb-render
 WANTLIB += xcb-shm z zstd
 
-# c++11: needed to build the training tools
+# C++20
 COMPILER=		base-clang ports-gcc
 
 USE_GMAKE=		Yes
