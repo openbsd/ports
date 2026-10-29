@@ -1,6 +1,6 @@
 COMMENT=	API to interact with pyproject.toml-based projects
 
-MODPY_DISTV=	1.12.0
+MODPY_DISTV=	1.12.2
 DISTNAME=	pyproject_api-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -16,6 +16,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
 
+BUILD_DEPENDS=	devel/py-hatch-fancy-pypi-readme
 RUN_DEPENDS=	sysutils/py-packaging
 TEST_DEPENDS=	devel/py-virtualenv \
 		devel/py-test-cov \
