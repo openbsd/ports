@@ -105,7 +105,7 @@ do-install:
 COMPOSER=	${MODPHP_BIN} \
 		-d memory_limit=-1 -d allow_url_fopen=1 \
 		-d suhosin.executor.include.whitelist=phar \
-		/usr/local/libexec/composer.phar
+		/usr/local/bin/composer
 
 # maintainer convenience target
 dist: ${FULLDISTDIR}/${GH_DISTFILE}
