@@ -2,7 +2,7 @@ COMMENT=		portable tools library
 
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		ptlib
-GH_TAGNAME=		v2_10_9_6
+GH_TAGNAME=		v2_10_9_7
 PKGNAME=		${DISTNAME:S/_/./g}
 EPOCH=			0
 
