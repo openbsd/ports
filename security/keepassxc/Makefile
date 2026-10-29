@@ -1,6 +1,7 @@
 COMMENT =	management tool for passwords and sensitive data
 
 V =		2.8.0
+REVISION =	0
 DISTNAME =	keepassxc-${V}
 
 CATEGORIES =	security
@@ -14,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6Svg Qt6SvgWidgets Qt6Widgets X11 Xtst
-WANTLIB += botan-2 c m minizip pcsclite qrencode readline usb-1.0
+WANTLIB += botan-3 c m minizip pcsclite qrencode readline usb-1.0
 WANTLIB += xkbcommon z
 
 SITES =	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
@@ -25,7 +26,7 @@ MODULES =	x11/qt6 \
 
 LIB_DEPENDS =	archivers/minizip \
 		graphics/libqrencode \
-		security/botan2 \
+		security/botan3 \
 		x11/qt6/qtsvg
 
 RUN_DEPENDS =	devel/desktop-file-utils \
