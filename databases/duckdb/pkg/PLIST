@@ -234,6 +234,7 @@ include/duckdb/common/helper.hpp
 include/duckdb/common/hive_partitioning.hpp
 include/duckdb/common/http_util.hpp
 include/duckdb/common/hugeint.hpp
+include/duckdb/common/identifier.hpp
 include/duckdb/common/index_map.hpp
 include/duckdb/common/index_vector.hpp
 include/duckdb/common/insertion_order_preserving_map.hpp
@@ -333,6 +334,7 @@ include/duckdb/common/sorting/sort_projection_column.hpp
 include/duckdb/common/sorting/sort_strategy.hpp
 include/duckdb/common/sorting/sorted_run.hpp
 include/duckdb/common/sorting/sorted_run_merger.hpp
+include/duckdb/common/sql_identifier.hpp
 include/duckdb/common/stack.hpp
 include/duckdb/common/stack_checker.hpp
 include/duckdb/common/stacktrace.hpp
@@ -759,13 +761,6 @@ include/duckdb/main/capi/cast/generic.hpp
 include/duckdb/main/capi/cast/to_decimal.hpp
 include/duckdb/main/capi/cast/utils.hpp
 include/duckdb/main/capi/extension_api.hpp
-include/duckdb/main/capi/header_generation/
-include/duckdb/main/capi/header_generation/apis/
-include/duckdb/main/capi/header_generation/apis/v1/
-include/duckdb/main/capi/header_generation/apis/v1/unstable/
-include/duckdb/main/capi/header_generation/apis/v1/v1.2/
-include/duckdb/main/capi/header_generation/functions/
-include/duckdb/main/capi/header_generation/schemata/
 include/duckdb/main/chunk_scan_state/
 include/duckdb/main/chunk_scan_state.hpp
 include/duckdb/main/chunk_scan_state/batched_data_collection.hpp
@@ -1166,6 +1161,7 @@ include/duckdb/planner/expression_binder/try_operator_binder.hpp
 include/duckdb/planner/expression_binder/update_binder.hpp
 include/duckdb/planner/expression_binder/where_binder.hpp
 include/duckdb/planner/expression_iterator.hpp
+include/duckdb/planner/expression_nullability.hpp
 include/duckdb/planner/extension_callback.hpp
 include/duckdb/planner/filter/
 include/duckdb/planner/filter/bloom_filter.hpp

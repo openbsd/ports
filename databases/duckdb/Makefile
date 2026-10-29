@@ -1,6 +1,6 @@
 COMMENT =	fast in-process analytical database
 
-V =		1.5.5
+V =		1.5.6
 GH_ACCOUNT =	duckdb
 GH_PROJECT =	duckdb
 GH_TAGNAME =	v${V}
