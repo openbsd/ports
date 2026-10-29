@@ -355,9 +355,6 @@ icinga-web2/library/Icinga/Chart/Graph/LineGraph.php
 icinga-web2/library/Icinga/Chart/Graph/StackedGraph.php
 icinga-web2/library/Icinga/Chart/Graph/Tooltip.php
 icinga-web2/library/Icinga/Chart/GridChart.php
-icinga-web2/library/Icinga/Chart/Inline/
-icinga-web2/library/Icinga/Chart/Inline/Inline.php
-icinga-web2/library/Icinga/Chart/Inline/PieChart.php
 icinga-web2/library/Icinga/Chart/Legend.php
 icinga-web2/library/Icinga/Chart/Palette.php
 icinga-web2/library/Icinga/Chart/PieChart.php
