@@ -1,10 +1,9 @@
-Index: util/cracklib-format
---- util/cracklib-format.orig
-+++ util/cracklib-format
-@@ -13,7 +13,7 @@
- LC_ALL=C
- export LC_ALL
- gzip -cdf "$@" |
+--- util/cracklib-format.orig.port	Tue Dec 31 23:17:36 2024
++++ util/cracklib-format	Fri Oct 30 07:00:35 2026
+@@ -33,7 +33,7 @@
+ esac
+ 
+ $CMD $ARGS "$@" |
 -    grep -a -v '^#' |
 +    grep -a -v '^\(#\|$\)' |
      tr '[A-Z]' '[a-z]' |
