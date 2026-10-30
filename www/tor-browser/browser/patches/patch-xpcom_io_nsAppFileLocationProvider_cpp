@@ -3,16 +3,17 @@ Use ~/TorBrowser-Data/Browser as the browser data directory.
 Index: xpcom/io/nsAppFileLocationProvider.cpp
 --- xpcom/io/nsAppFileLocationProvider.cpp.orig
 +++ xpcom/io/nsAppFileLocationProvider.cpp
-@@ -335,6 +335,12 @@ nsresult nsAppFileLocationProvider::GetProductDirector
-   if (NS_FAILED(rv)) {
-     return rv;
+@@ -366,6 +366,13 @@ nsresult nsAppFileLocationProvider::GetProductDirector
+   } else {
+     rv = localDir->AppendNative(DEFAULT_PRODUCT_DIR);
    }
-+# if defined(__OpenBSD__)
++// XXX this is in the !defined(TOR_BROWSER) path, is that right?
++#    if defined(__OpenBSD__)
 +  rv = localDir->AppendNative("TorBrowser-Data"_ns);
 +  NS_ENSURE_SUCCESS(rv, rv);
 +  rv = localDir->AppendNative("Browser"_ns);
 +  NS_ENSURE_SUCCESS(rv, rv);
-+# endif
- #else
- #  error dont_know_how_to_get_product_dir_on_your_platform
- #endif
++#    endif
+ #  else
+   rv = localDir->AppendNative(DEFAULT_PRODUCT_DIR);
+ #  endif

@@ -3,7 +3,7 @@ Font fingerprinting defense
 Index: browser/app/profile/001-base-profile.js
 --- browser/app/profile/001-base-profile.js.orig
 +++ browser/app/profile/001-base-profile.js
-@@ -961,7 +961,7 @@ pref("font.name-list.monospace.x-unicode", "Consolas, 
+@@ -1055,7 +1055,7 @@ pref("font.name-list.monospace.x-unicode", "Consolas, 
  // The rest are not customized, because they are covered only by one font
  #endif
  

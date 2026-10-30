@@ -11,16 +11,16 @@ MOZILLA_CODENAME =	browser
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-140.17.0esr-15.0-1-build7
+DISTNAME =		src-firefox-tor-browser-153.6.0esr-16.0-1-build3
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
 			tor-browser-linux-x86_64-${TB_VERSION}.tar.xz \
 			tor-expert-bundle-linux-x86_64-${TB_VERSION}.tar.gz
 
-SO_VERSION =		11.0
-MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozwayland
-MOZILLA_LIBS +=		freebl3 nss3 nssckbi
+SO_VERSION =		12.0
+MOZILLA_LIBS =		xul lgpllibs mozavcodec mozavutil mozgtk mozwayland
+MOZILLA_LIBS +=		freebl3 nss3
 MOZILLA_LIBS +=		nssutil3 smime3 softokn3 ssl3
 MOZILLA_LIBS +=		mozsqlite3
 MOZILLA_LIBS +=		gkcodecs
@@ -35,20 +35,15 @@ MODULES =		www/mozilla lang/python
 
 MODPY_RUNDEP =		No
 
-SITES.p =      https://bugzilla.mozilla.org/
-PATCHFILES.p=	bug-2038504-backport-bug-D262840-to-esr140.patch{attachment.cgi?id=9585442}
-PATCH_DIST_STRIP =     -p1 -f
-
 COMPILER =		ports-clang
 MODCLANG_VERSION =	22
-USE_LLD =		ports
 
 # tor-browser needs built-in nss
 MOZILLA_USE_BUNDLED_NSS =	Yes
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
+BUILD_DEPENDS +=	devel/cbindgen>=0.29.4
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt>=22.1.5p1 \
 			lang/wasi-sdk/libcxx>=21.1.5p1 \
@@ -59,14 +54,6 @@ BUILD_DEPENDS +=	textproc/jq
 
 # audio/video support
 RUN_DEPENDS =		graphics/ffmpeg
-
-# vendored copy of dav1d needs patching to avoid these (or changing to the ports
-# version, which already has relevant patches).
-USE_NOBTCFI-aarch64 =	Yes
-.if ${MACHINE_ARCH} == aarch64
-USE_NOEXECONLY =	Yes
-.endif
-
 
 # uses pledge()
 # Extra:  Xcomposite.4 Xcursor.5 Xdamage.4 Xfixes.6 Xi.12 Xrender.6
@@ -81,7 +68,21 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
+.if ${MACHINE_ARCH} == aarch64
+# retguard leads to segfault at startup on arm64, cf #1973016
+CONFIGURE_ENV +=       CPPFLAGS="-fno-ret-protector -Wno-backend-plugin"
+.else
+CONFIGURE_ENV +=       CPPFLAGS=-Wno-backend-plugin
+.endif
+NCPU !!=		sysctl -n hw.ncpuonline
+.if ${NCPU} > 4
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=5 --ld-path=${WRKDIR}/bin/ld"
+.else
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
+.endif
+
+# 2026497
+CONFIGURE_ENV +=	MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
 
 # app-name etc. for tor-browser
 CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
@@ -99,6 +100,7 @@ RUN_DEPENDS +=		net/lyrebird \
 			net/snowflake_proxy>=2.4.1 \
 			net/tor>=0.4.9.12
 
+MOZILLA_USE_DBUS =	Yes
 MOZILLA_USE_SYSTEM_AV1	=Yes
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox

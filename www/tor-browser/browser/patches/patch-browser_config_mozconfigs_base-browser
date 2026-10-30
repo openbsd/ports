@@ -1,4 +1,5 @@
-Don't use --disable-zucchini, not a supported flag on OpenBSD.
+Don't use --enable-lto=cross, build fails with:
+  ld.lld: error: Invalid summary version 12. Version should be in the range [1-10].
 
 Remove $WASI_SYSROOT test, it breaks the build for us. Not sure if the test
 is relevant for us. Was added upstream in
@@ -7,15 +8,15 @@ https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41406
 Index: browser/config/mozconfigs/base-browser
 --- browser/config/mozconfigs/base-browser.orig
 +++ browser/config/mozconfigs/base-browser
-@@ -15,14 +15,13 @@ ac_add_options --enable-rust-simd
+@@ -12,7 +12,6 @@ export MOZILLA_OFFICIAL=1
+ 
+ ac_add_options --enable-optimize
+ ac_add_options --enable-rust-simd
+-ac_add_options --enable-lto=cross
  
  ac_add_options --disable-unverified-updates
  ac_add_options --enable-base-browser-update
--# tor-browser#44414: Disable Zucchini until we fix mingw compatibility and work
--# on potential updates for our update pipeline.
--ac_add_options --disable-zucchini
- 
- ac_add_options --enable-bundled-fonts
+@@ -21,6 +20,8 @@ ac_add_options --enable-bundled-fonts
  
  ac_add_options --disable-tests
  ac_add_options --disable-debug
@@ -24,7 +25,7 @@ Index: browser/config/mozconfigs/base-browser
  
  ac_add_options --disable-crashreporter
  # Before removing, please notice that WebRTC does not work on mingw (Bug 1393901)
-@@ -44,7 +43,3 @@ ac_add_options MOZ_TELEMETRY_REPORTING=
+@@ -44,7 +45,3 @@ ac_add_options MOZ_TELEMETRY_REPORTING=
  # Disable the creation of a <something>.default that Firefox by default creates
  # for old version that could not use dedicated profiles. See tor-browser#41542.
  ac_add_options --disable-legacy-profile-creation
