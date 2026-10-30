@@ -4,7 +4,7 @@ Use G_GUINT64_FORMAT so the fix is portable.
 Index: src/tools/wpctl.c
 --- src/tools/wpctl.c.orig
 +++ src/tools/wpctl.c
-@@ -188,7 +188,7 @@ translate_id (WpPlugin *def_nodes_api, guint64 id, gui
+@@ -199,7 +199,7 @@ translate_id (WpPlugin *def_nodes_api, guint64 id, gui
         currently SPA_ID_INVALID == G_MAXUINT32. */
      if ((id <= 0 || id >= G_MAXUINT32) && id != SPA_ID_INVALID) {
        g_set_error (error, wpctl_error_domain_quark(), 0,

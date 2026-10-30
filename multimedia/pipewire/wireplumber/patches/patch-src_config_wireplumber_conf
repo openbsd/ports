@@ -15,7 +15,7 @@ Index: src/config/wireplumber.conf
          # rt.prio      = 88
          # rt.time.soft = -1
          # rt.time.hard = -1
-@@ -210,7 +210,7 @@ wireplumber.components = [
+@@ -211,7 +211,7 @@ wireplumber.components = [
          {
            name = libpipewire-module-rt
            args = {
