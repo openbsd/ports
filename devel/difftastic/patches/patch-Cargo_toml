@@ -1,7 +1,7 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -139,7 +139,7 @@ tree-sitter-zig = "1.1.2"
+@@ -138,7 +138,7 @@ tree-sitter-zig = "1.1.2"
  ts-parser-perl = "1.2.0"
  
  
