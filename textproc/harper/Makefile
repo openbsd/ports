@@ -2,7 +2,7 @@ COMMENT=	offline, privacy-first grammar checker
 
 GH_ACCOUNT=	Automattic
 GH_PROJECT=	harper
-GH_TAGNAME=	v2.13.0
+GH_TAGNAME=	v3.0.0
 
 CATEGORIES=	textproc
 
