@@ -1,0 +1,56 @@
+drop wordexp usage
+
+Index: src/store.c
+--- src/store.c.orig
++++ src/store.c
+@@ -5,7 +5,11 @@
+ #include <errno.h>
+ #include <fnmatch.h>
+ #include <string.h>
++#ifndef __OpenBSD__
+ #include <wordexp.h>
++#else
++#include <glob.h>
++#endif
+ 
+ #include "wdisplays.h"
+ 
+@@ -507,17 +511,23 @@ static bool load_include(struct kanshi_config *config,
+     return false;
+   }
+   const char *pattern = g_ptr_array_index(dir->params, 0);
++#ifndef __OpenBSD__
+   wordexp_t words;
+   int ret = wordexp(pattern, &words, WRDE_NOCMD | WRDE_UNDEF);
+   if (ret != 0) {
+     if (ret == WRDE_NOSPACE) {
+       wordfree(&words);
+     }
++#else
++   glob_t p;
++   if (glob(pattern, GLOB_DOOFFS, NULL, &p) != 0) {
++#endif
+     g_set_error(error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,
+         "%s: cannot expand include %s", dir->file->path, pattern);
+     return false;
+   }
+   bool ok = true;
++#ifndef __OpenBSD__
+   for (size_t i = 0; ok && i < words.we_wordc; i++) {
+     if (!g_path_is_absolute(words.we_wordv[i])) {
+       g_set_error(error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED,
+@@ -529,6 +539,14 @@ static bool load_include(struct kanshi_config *config,
+     }
+   }
+   wordfree(&words);
++#else
++  char **w = p.gl_pathv;
++  size_t i;
++  for (i = 0; i < p.gl_pathc; ++i) {
++    load_file(config, w[i], true, depth + 1, error);
++  }
++  globfree(&p);
++#endif
+   return ok;
+ }
+ 

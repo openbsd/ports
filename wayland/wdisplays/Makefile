@@ -1,6 +1,6 @@
 COMMENT =	configure displays in Wayland compositors
 
-GH_TAGNAME =	1.1.3
+GH_TAGNAME =	1.3.0
 GH_ACCOUNT =	artizirk
 GH_PROJECT =	wdisplays
 
