@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -381,7 +381,6 @@ if(ENABLE_GUI)
+@@ -405,7 +405,6 @@ if(ENABLE_GUI)
          # Everything is built in
      else()
          find_package(OpenGL REQUIRED)

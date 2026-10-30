@@ -1,9 +1,9 @@
 COMMENT =		parametric 2D/3D CAD program
 
-V =			3.2
+V =			3.3
 DISTNAME =		solvespace-${V}
 
-SHARED_LIBS +=		slvs	1.0
+SHARED_LIBS +=		slvs	1.1
 
 CATEGORIES =		cad
 HOMEPAGE =		https://solvespace.com/
