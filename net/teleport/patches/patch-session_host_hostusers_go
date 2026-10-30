@@ -1,7 +1,7 @@
 Index: session/host/hostusers.go
 --- session/host/hostusers.go.orig
 +++ session/host/hostusers.go
-@@ -114,26 +114,27 @@ func UserAdd(username string, groups []string, opts Us
+@@ -116,26 +116,27 @@ func UserAdd(username string, groups []string, opts Us
  	}
  
  	// useradd ---no-create-home (username) (groups)...

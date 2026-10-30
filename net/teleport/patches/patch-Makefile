@@ -1,7 +1,16 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -276,6 +276,7 @@ endif
+@@ -147,6 +147,8 @@ CARGO_TARGET_linux_arm64 := aarch64-unknown-linux-gnu
+ CARGO_TARGET_linux_386 := i686-unknown-linux-gnu
+ CARGO_TARGET_linux_amd64 := x86_64-unknown-linux-gnu
+ CARGO_TARGET_windows_amd64 := x86_64-pc-windows-gnu
++CARGO_TARGET_openbsd_amd64 := x86_64-unknown-openbsd
++CARGO_TARGET_openbsd_arm64 := aarch64-unknown-openbsd
+ 
+ CARGO_TARGET := --target=$(RUST_TARGET_ARCH)
+ CARGO_WASM_TARGET := wasm32-unknown-unknown
+@@ -276,6 +278,7 @@ endif
  BINS_default = teleport tctl tsh tbot fdpass-teleport teleport-update
  BINS_darwin = teleport tctl tsh tbot fdpass-teleport
  BINS_windows = tsh tctl
@@ -9,7 +18,7 @@ Index: Makefile
  BINS = $(or $(BINS_$(OS)),$(BINS_default))
  BINARIES = $(addprefix $(BUILDDIR)/,$(BINS))
  UPDATE_BINARIES = $(addprefix $(BUILDDIR)/,teleport-update)
-@@ -431,7 +432,7 @@ $(BUILDDIR)/tctl:
+@@ -431,7 +434,7 @@ $(BUILDDIR)/tctl:
  	GOOS=$(OS) GOARCH=$(ARCH) $(CGOFLAG) go build -tags "$(PAM_TAG) $(FIPS_TAG) $(LIBFIDO2_BUILD_TAG) $(TOUCHID_TAG) $(PIV_BUILD_TAG) $(KUSTOMIZE_NO_DYNAMIC_PLUGIN)" -o $(BUILDDIR)/tctl $(BUILDFLAGS) $(TOOLS_LDFLAGS) ./tool/tctl
  
  .PHONY: $(BUILDDIR)/teleport
@@ -18,3 +27,21 @@ Index: Makefile
  	GOOS=$(OS) GOARCH=$(ARCH) $(CGOFLAG) go build -tags "webassets_embed $(PAM_TAG) $(FIPS_TAG) $(BPF_TAG) $(SESSIONHELPER_EMBED_TAG) $(WEBASSETS_TAG) $(RDPCLIENT_TAG) $(PIV_BUILD_TAG) $(KUSTOMIZE_NO_DYNAMIC_PLUGIN)" -o $(BUILDDIR)/teleport $(BUILDFLAGS) $(TELEPORT_LDFLAGS) ./tool/teleport
  
  .PHONY: $(BUILDDIR)/sessionhelper
+@@ -559,7 +562,7 @@ rdpclient: rustup-toolchain-warning
+ ifeq ("$(with_rdpclient)", "yes")
+ ifneq ($(RDPCLIENT_SKIP_CARGO),1)
+ 	$(RDPCLIENT_ENV) \
+-		cargo build -p rdp-client $(if $(FIPS),--features=fips) --release --locked $(CARGO_TARGET)
++		cargo build -p rdp-client $(if $(FIPS),--features=fips) --release --offline $(CARGO_TARGET)
+ else
+ 	@echo "Skipping rdp-client cargo build (RDPCLIENT_SKIP_CARGO=1)"
+ endif
+@@ -569,7 +572,7 @@ endif
+ rdpdecoder: rustup-toolchain-warning
+ ifeq ("$(with_rdpclient)", "yes")
+ 	$(RDPCLIENT_ENV) \
+-		cargo build -p rdp-decoder --release --locked $(CARGO_TARGET)
++		cargo build -p rdp-decoder --release --offline $(CARGO_TARGET)
+ endif
+ 
+ define ironrdp_package_json

@@ -1,0 +1,14 @@
+Index: lib/srv/desktop/rdp/rdpclient/client.go
+--- lib/srv/desktop/rdp/rdpclient/client.go.orig
++++ lib/srv/desktop/rdp/rdpclient/client.go
+@@ -65,6 +65,10 @@ package rdpclient
+ #cgo darwin,amd64 LDFLAGS: -L${SRCDIR}/../../../../../target/x86_64-apple-darwin/release
+ #cgo darwin,arm64 LDFLAGS: -L${SRCDIR}/../../../../../target/aarch64-apple-darwin/release
+ #cgo darwin LDFLAGS: -framework CoreFoundation -framework Security -lrdp_client -lpthread -ldl -lm
++#cgo openbsd,amd64 LDFLAGS: -L${SRCDIR}/../../../../../../../../build-amd64/target/x86_64-unknown-openbsd/release/
++#cgo openbsd,arm64 LDFLAGS: -L${SRCDIR}/../../../../../../../../build-aarch64/target/aarch64-unknown-openbsd/release/
++#cgo openbsd LDFLAGS: /usr/lib/libexecinfo.a -lrdp_client -lpthread -lm -lz
++#cgo openbsd pkg-config: libzstd
+ #include <librdpclient.h>
+ */
+ import "C"

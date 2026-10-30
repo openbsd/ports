@@ -9,7 +9,7 @@ Index: lib/srv/regular/sshserver.go
  	"strings"
  	"sync"
  	"time"
-@@ -694,7 +693,7 @@ func SetOnHeartbeat(fn func(error)) ServerOption {
+@@ -695,7 +694,7 @@ func SetOnHeartbeat(fn func(error)) ServerOption {
  // SetCreateHostUser configures host user creation on a server
  func SetCreateHostUser(createUser bool) ServerOption {
  	return func(s *Server) error {

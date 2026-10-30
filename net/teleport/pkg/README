@@ -11,11 +11,6 @@ A quick introduction to Teleport Community Edition is available at:
 
   https://goteleport.com/docs/get-started/deploy-community/
 
-Keep in mind that the OpenBSD port of ${PKGSTEM} currently lacks the
-following features:
-
-- Windows Remote Desktop Protocol
-
 Usage
 =====
 

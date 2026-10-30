@@ -1,0 +1,15 @@
+Index: lib/srv/desktop/rdp/decoder/decoder_standalone.go
+--- lib/srv/desktop/rdp/decoder/decoder_standalone.go.orig
++++ lib/srv/desktop/rdp/decoder/decoder_standalone.go
+@@ -32,6 +32,11 @@ package decoder
+ #cgo darwin,arm64 LDFLAGS: -L${SRCDIR}/../../../../../target/aarch64-apple-darwin/release
+ #cgo darwin LDFLAGS: -lrdp_decoder
+ 
++#cgo openbsd,amd64 LDFLAGS: -L${SRCDIR}/../../../../../../../../build-amd64/target/x86_64-unknown-openbsd/release/
++#cgo openbsd,arm64 LDFLAGS: -L${SRCDIR}/../../../../../../../../build-aarch64/target/aarch64-unknown-openbsd/release/
++#cgo openbsd LDFLAGS: /usr/lib/libexecinfo.a -lrdp_decoder -lpthread -lm
++#cgo openbsd pkg-config: libzstd
++
+ #cgo windows,amd64 LDFLAGS: -L${SRCDIR}/../../../../../target/x86_64-pc-windows-gnu/release
+ // The Windows system libraries below are required by the Rust std library that
+ // gets bundled into librdp_decoder.a. The list comes from:

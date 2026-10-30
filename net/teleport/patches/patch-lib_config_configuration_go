@@ -1,7 +1,7 @@
 Index: lib/config/configuration.go
 --- lib/config/configuration.go.orig
 +++ lib/config/configuration.go
-@@ -1521,7 +1521,7 @@ func applySSHConfig(fc *FileConfig, cfg *servicecfg.Co
+@@ -1527,7 +1527,7 @@ func applySSHConfig(fc *FileConfig, cfg *servicecfg.Co
  	if fc.SSH.PermitUserEnvironment {
  		cfg.SSH.PermitUserEnvironment = true
  	}

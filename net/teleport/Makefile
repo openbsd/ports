@@ -1,12 +1,20 @@
 COMMENT =	reverse-proxy with built-in authentication and auditing
 
+# This port requires architecture-specific patches for cgo linker flags.
+ONLY_FOR_ARCHS = aarch64 amd64
+
+# aws-lc-sys has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+USE_NOEXECONLY =	Yes
+
 V = 18.11.1
-REVISION = 0
+REVISION = 1
 
 DISTNAME = teleport-${V}
 DISTFILES = teleport-vendored-${V}.tar.gz \
 	teleport-webassets-${V}.tar.gz
 WRKSRC = ${WRKDIR}/go/src/${ALL_TARGET}
+MODCARGO_VENDOR_DIR = ${WRKDIR}/modcargo-crates
 
 CATEGORIES =	net security
 
@@ -17,7 +25,9 @@ MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
 # AGPLv3 / Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c crypto fido2 pthread
+WANTLIB =		c crypto fido2 m pthread z zstd
+
+LIB_DEPENDS =		archivers/zstd
 
 # Vendored distfile:
 # ftp -o teleport-${V}.tar.gz https://github.com/gravitational/teleport/archive/refs/tags/v${V}.tar.gz
@@ -40,12 +50,15 @@ WANTLIB =		c crypto fido2 pthread
 # tar -zcvf teleport-webassets-${V}.tar.gz teleport-${V}
 SITES =			https://liam.stsp.name/files/distfiles/
 
-MODULES =		lang/go
+MODULES =		devel/cargo \
+			lang/go
 
 MAKE_ENV =		FIDO2=dynamic \
-			RDPCLIENT_SKIP_BUILD=1 \
+			RDPCLIENT_SKIP_BUILD=0 \
 			WEBASSETS_SKIP_BUILD=1 \
-			BUILDFLAGS="${MODGO_FLAGS}"
+			BUILDFLAGS="${MODGO_FLAGS}" \
+			RDPCLIENT_ENV="${MODCARGO_ENV}"
+
 MODGO_GOPATH =		${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}
 
 USE_GMAKE =		Yes
@@ -58,6 +71,8 @@ pre-configure:
 
 post-configure:
 	ln -sf ${MODGO_WORKSPACE}/src/${ALL_TARGET} ${WRKDIST}
+	${MODCARGO_configure}
+	mv ${WRKDIR}/.cargo ${MODGO_WORKSPACE}/src/${ALL_TARGET}/
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_TARGET}
@@ -70,4 +85,5 @@ do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/build/teleport \
 		${PREFIX}/sbin
 	
+.include "crates.inc"
 .include <bsd.port.mk>
