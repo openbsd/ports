@@ -3,7 +3,7 @@ COMMENT-libs=		low-level multimedia framework - libraries
 COMMENT-gst=		GStreamer elements for PipeWire
 
 PW_PROJECT=		pipewire
-PW_VERSION=		1.6.10
+PW_VERSION=		1.6.11
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 PKGNAME-gst=		gst-plugin-pipewire-${PW_VERSION}
 
