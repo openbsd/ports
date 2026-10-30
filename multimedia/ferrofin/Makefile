@@ -1,3 +1,7 @@
+# https://docs.rs/crate/wasmtime
+# ${MODCARGO_VENDOR_DIR}/wasmtime-*/src/runtime/vm/sys/unix/signals.rs
+ONLY_FOR_ARCHS =	amd64
+
 # aws-lc-sys has constants in .text
 # https://github.com/awslabs/s2n-bignum/pull/242
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "aarch64"
