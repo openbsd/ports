@@ -1,0 +1,21 @@
+XXX mkenums_simple() computes the generated #include relative to meson's cwd
+instead of the build dir, which breaks with a non-default WRKOBJDIR.
+Copy the header into the build tree to get a plain relative include.
+Should be fixed in meson: mkenums_simple() in mesonbuild/modules/gnome.py.
+
+Index: panels/background/meson.build
+--- panels/background/meson.build.orig
++++ panels/background/meson.build
+@@ -22,8 +22,10 @@ common_sources += gnome.mkenums_simple(
+   sources: ['cc-background-item.h', 'cc-background-paintable.h']
+ )
+ 
+-gdesktop_enums_header = files(
+-  gsettings_desktop_dep.get_variable(pkgconfig: 'prefix') + '/include/gsettings-desktop-schemas/gdesktop-enums.h'
++gdesktop_enums_header = configure_file(
++  input: gsettings_desktop_dep.get_variable(pkgconfig: 'prefix') + '/include/gsettings-desktop-schemas/gdesktop-enums.h',
++  output: 'gdesktop-enums.h',
++  copy: true,
+ )
+ 
+ common_sources += gnome.mkenums_simple(

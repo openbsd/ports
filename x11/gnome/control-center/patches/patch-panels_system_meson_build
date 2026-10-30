@@ -1,9 +1,27 @@
-No udisks2 on OpenBSD (XXX add HAVE_UDISKS2 to meson_options.txt)               
+XXX mkenums_simple() computes the generated #include relative to meson's cwd
+instead of the build dir, which breaks with a non-default WRKOBJDIR.
+Copy the header into the build tree to get a plain relative include.
+Should be fixed in meson: mkenums_simple() in mesonbuild/modules/gnome.py.
+
+No udisks2 on OpenBSD (XXX add HAVE_UDISKS2 to meson_options.txt)
 
 Index: panels/system/meson.build
 --- panels/system/meson.build.orig
 +++ panels/system/meson.build
-@@ -90,7 +90,7 @@ sources += gnome.mkenums_simple(
+@@ -76,8 +76,10 @@ sources = files(
+   'users/user-utils.c',
+ )
+ 
+-gdesktop_enums_header = files(
+-  gsettings_desktop_dep.get_variable(pkgconfig: 'prefix') + '/include/gsettings-desktop-schemas/gdesktop-enums.h'
++gdesktop_enums_header = configure_file(
++  input: gsettings_desktop_dep.get_variable(pkgconfig: 'prefix') + '/include/gsettings-desktop-schemas/gdesktop-enums.h',
++  output: 'gdesktop-enums.h',
++  copy: true,
+ )
+ 
+ sources += gnome.mkenums_simple(
+@@ -90,7 +92,7 @@ sources += gnome.mkenums_simple(
  libsecret_dep = dependency('libsecret-1')
  gnutls_dep = dependency('gnutls')
  libgtop2 = dependency('libgtop-2.0')
