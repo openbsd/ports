@@ -41,6 +41,7 @@ include/botan-3/botan/compression.h
 include/botan-3/botan/concepts.h
 include/botan-3/botan/credentials_manager.h
 include/botan-3/botan/curve25519.h
+include/botan-3/botan/curve_gfp.h
 include/botan-3/botan/data_snk.h
 include/botan-3/botan/data_src.h
 include/botan-3/botan/database.h
@@ -49,8 +50,10 @@ include/botan-3/botan/dh.h
 include/botan-3/botan/dilithium.h
 include/botan-3/botan/dl_group.h
 include/botan-3/botan/dns_name.h
+include/botan-3/botan/dsa.h
 include/botan-3/botan/ec_apoint.h
 include/botan-3/botan/ec_group.h
+include/botan-3/botan/ec_point.h
 include/botan-3/botan/ec_point_format.h
 include/botan-3/botan/ec_scalar.h
 include/botan-3/botan/ecc_key.h
@@ -132,6 +135,7 @@ include/botan-3/botan/scrypt.h
 include/botan-3/botan/secmem.h
 include/botan-3/botan/slh_dsa.h
 include/botan-3/botan/sm2.h
+include/botan-3/botan/sodium.h
 include/botan-3/botan/sp_parameters.h
 include/botan-3/botan/spake2p.h
 include/botan-3/botan/sphincsplus.h

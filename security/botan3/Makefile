@@ -3,11 +3,11 @@ COMMENT =	crypto and TLS for C++20
 DPB_PROPERTIES = parallel
 
 VERSION =	3.13.0
-REVISION =	2
+REVISION =	3
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan3-${VERSION}
 
-SHARED_LIBS =	botan-3		0.0
+SHARED_LIBS =	botan-3		0.1
 
 CATEGORIES =	security
 
@@ -49,9 +49,11 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--with-zlib \
 			--without-sphinx
 
-# md5,dsa needed for security/rnp
+# security/rnp: md5,dsa
+# security/keepassxc,browser: siphash (for libsodium compat api),
+#   legacy_ec_point
 CONFIGURE_ARGS +=	--disable-deprecated-features \
-			--enable-modules=md5,dsa
+			--enable-modules=md5,dsa,siphash,legacy_ec_point
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
