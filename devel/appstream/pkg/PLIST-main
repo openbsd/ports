@@ -184,6 +184,7 @@ share/doc/appstream/html/api/enum.ColorKind.html
 share/doc/appstream/html/api/enum.ColorSchemeKind.html
 share/doc/appstream/html/api/enum.ComponentKind.html
 share/doc/appstream/html/api/enum.ComponentScope.html
+share/doc/appstream/html/api/enum.ContentRatingGroup.html
 share/doc/appstream/html/api/enum.ContentRatingSystem.html
 share/doc/appstream/html/api/enum.ContentRatingValue.html
 share/doc/appstream/html/api/enum.ControlKind.html
@@ -595,6 +596,7 @@ share/doc/appstream/html/api/method.Metadata.set_update_existing.html
 share/doc/appstream/html/api/method.Metadata.set_write_header.html
 share/doc/appstream/html/api/method.Pool.add_components.html
 share/doc/appstream/html/api/method.Pool.add_extra_data_location.html
+share/doc/appstream/html/api/method.Pool.add_extra_data_location_full.html
 share/doc/appstream/html/api/method.Pool.add_flags.html
 share/doc/appstream/html/api/method.Pool.build_search_tokens.html
 share/doc/appstream/html/api/method.Pool.clear.html
@@ -897,8 +899,11 @@ share/doc/appstream/html/api/type_func.ComponentScope.from_string.html
 share/doc/appstream/html/api/type_func.ComponentScope.to_string.html
 share/doc/appstream/html/api/type_func.ContentRating.attribute_from_csm_age.html
 share/doc/appstream/html/api/type_func.ContentRating.attribute_get_description.html
+share/doc/appstream/html/api/type_func.ContentRating.attribute_get_group.html
+share/doc/appstream/html/api/type_func.ContentRating.attribute_get_title.html
 share/doc/appstream/html/api/type_func.ContentRating.attribute_to_csm_age.html
 share/doc/appstream/html/api/type_func.ContentRating.get_all_rating_ids.html
+share/doc/appstream/html/api/type_func.ContentRatingGroup.get_title.html
 share/doc/appstream/html/api/type_func.ContentRatingSystem.format_age.html
 share/doc/appstream/html/api/type_func.ContentRatingSystem.from_locale.html
 share/doc/appstream/html/api/type_func.ContentRatingSystem.get_csm_ages.html
@@ -1324,6 +1329,7 @@ share/locale/kw/LC_MESSAGES/appstream.mo
 share/locale/lt/LC_MESSAGES/appstream.mo
 share/locale/nb/LC_MESSAGES/appstream.mo
 share/locale/nl/LC_MESSAGES/appstream.mo
+share/locale/nn/LC_MESSAGES/appstream.mo
 share/locale/oc/LC_MESSAGES/appstream.mo
 share/locale/pl/LC_MESSAGES/appstream.mo
 share/locale/pt/LC_MESSAGES/appstream.mo
