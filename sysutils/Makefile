@@ -252,7 +252,6 @@
      SUBDIR += nnn,nerd
      SUBDIR += node_exporter
      SUBDIR += noice
-     SUBDIR += nomad
      SUBDIR += nq
      SUBDIR += ntfs-3g
      SUBDIR += nut
