@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS = aarch64 amd64
 USE_NOEXECONLY =	Yes
 
 V = 18.11.1
-REVISION = 1
+REVISION = 2
 
 DISTNAME = teleport-${V}
 DISTFILES = teleport-vendored-${V}.tar.gz \

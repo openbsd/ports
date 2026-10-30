@@ -25,6 +25,9 @@ teleport
 The main Teleport binary that runs the Web UI, Auth Service, Proxy
 Service, and Teleport Agent services.
 
+The rc.d(8) script provided with the teleport package assumes the
+configuration file location: /etc/teleport/teleport.yaml
+
 Some Teleport features require files from the Teleport CDN, which are
 distributed under the Teleport Community license:
 
@@ -63,3 +66,95 @@ tsh
 tsh is the command-line tool used by Teleport users to authenticate,
 connect to infrastructure resources, and manage active sessions.  It
 supports SSH, Kubernetes, databases, and applications.
+
+
+Making teleport reachable on port 443
+=====================================
+
+When teleport runs as a non-root user it cannot listen on privileged
+network ports, such as port 443. In this case, pf(4) can be used to
+make teleport reachable on privileged ports.
+
+In the proxy service section of /etc/teleport/teleport.yaml, configure
+an unprivileged port number above 1023 for Teleport to listen on, for
+example port 4443:
+
+proxy_service:
+  enabled: "yes"
+  web_listen_addr: "0.0.0.0:4443"
+  public_addr: teleport.example.com
+
+In /etc/pf.conf, incoming connections to port 443 can be redirected to
+the unprivileged port:
+
+pass in inet proto tcp from any to self port 443 rdr-to 127.0.0.1 port 4443
+
+
+Managing SSL certificates for Teleport
+======================================
+
+Teleport needs a valid TLS certificate to function. It is possible
+to use self-signed certificates but their use is discouraged by
+the official documentation.
+
+Teleport contains a built-in ACME client which can be used, but
+it is also possible to run acme-client(1) and httpd(8) to obtain
+a certificate for Teleport.
+
+In /etc/httpd.conf, use:
+
+server "teleport.example.com" {
+        listen on * port 80
+
+        block
+
+        location "/.well-known/acme-challenge/*" {
+                root "/acme"
+                request strip 2
+                pass
+        }
+}
+
+Enable and start httpd:
+
+  rcctl enable httpd && rcctl start httpd
+
+In /etc/acme-client.conf, use
+
+teleport.example.com {
+        domain key "/etc/ssl/private/teleport.example.com.key"
+        domain full chain certificate "/etc/ssl/teleport.example.com.fullchain.pem"
+        # Test with the staging server to avoid aggressive rate-limiting.
+        #sign with letsencrypt-staging
+        sign with letsencrypt
+}
+
+Run acme-client to obtain a certificate:
+
+  acme-client teleport.example.com
+
+Copy the certificate obtained by acme-client to the /etc/teleport/ directory
+and allow the _teleport user to read the private key:
+
+ cp -p /etc/ssl/teleport.example.com.fullchain.pem /etc/teleport/
+ cp -p /etc/ssl/private/teleport.example.com.key /etc/teleport/
+ chgrp _teleport /etc/teleport/teleport.example.com.key
+ chmod g+r /etc/teleport/teleport.example.com.key
+
+The crontab(5) entry which updates the certificate needs to copy the
+updated certificate to /etc/teleport and restart teleport:
+
+~ * * * * -n -s acme-client teleport.example.com && cp -p /etc/ssl/teleport.example.com.fullchain.pem /etc/teleport/ && rcctl restart teleport
+
+In the proxy service section of /etc/teleport/teleport.yaml, point
+teleport at the TLS certificate and disable the built-in ACME client:
+
+proxy_service:
+  enabled: "yes"
+  web_listen_addr: "0.0.0.0:4443"
+  public_addr: teleport.example.com
+  https_keypairs:
+  - key_file: /etc/teleport/teleport.example.com.key
+    cert_file: /etc/teleport/teleport.example.com.fullchain.pem
+  https_keypairs_reload_interval: 0s
+  acme: {}
