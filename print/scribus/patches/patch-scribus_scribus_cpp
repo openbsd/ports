@@ -1,0 +1,12 @@
+Index: scribus/scribus.cpp
+--- scribus/scribus.cpp.orig
++++ scribus/scribus.cpp
+@@ -275,7 +275,7 @@ for which a new license (GPL+exception) is in place.
+ #include "util.h"
+ #include "util_file.h"
+ #include "util_formats.h"
+-#include "third_party/Qt-Advanced-Docking-System/src/ads_globals.h"
++#include "qtadvanceddocking-qt6/ads_globals.h"
+ #include "third_party/Qt-Advanced-Docking-System/src/DockAreaWidget.h"
+ #include "third_party/Qt-Advanced-Docking-System/src/DockManager.h"
+ #include "third_party/Qt-Advanced-Docking-System/src/IconProvider.h"

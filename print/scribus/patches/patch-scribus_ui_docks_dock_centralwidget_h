@@ -1,0 +1,12 @@
+Index: scribus/ui/docks/dock_centralwidget.h
+--- scribus/ui/docks/dock_centralwidget.h.orig
++++ scribus/ui/docks/dock_centralwidget.h
+@@ -20,7 +20,7 @@
+ #ifndef DOCK_CENTRALWIDGET_H
+ #define DOCK_CENTRALWIDGET_H
+ 
+-#include "third_party/Qt-Advanced-Docking-System/src/DockWidget.h"
++#include "qtadvanceddocking-qt6/DockWidget.h"
+ 
+ class DockCentralWidget : public ads::CDockWidget
+ {

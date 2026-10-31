@@ -3,7 +3,7 @@ use system version ?
 Index: CMakeLists_Dependencies.cmake
 --- CMakeLists_Dependencies.cmake.orig
 +++ CMakeLists_Dependencies.cmake
-@@ -318,5 +318,6 @@ if (HARFBUZZ_SUBSET_FOUND)
+@@ -325,5 +325,6 @@ if (HARFBUZZ_VECTOR_FOUND)
  endif()
  
  #if(WANT_QTADS)

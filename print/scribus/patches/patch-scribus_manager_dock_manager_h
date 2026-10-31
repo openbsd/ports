@@ -1,0 +1,12 @@
+Index: scribus/manager/dock_manager.h
+--- scribus/manager/dock_manager.h.orig
++++ scribus/manager/dock_manager.h
+@@ -28,7 +28,7 @@ to the COPYING file provided with the program.
+ 
+ #include "prefscontext.h"
+ #include "scribusapi.h"
+-#include "third_party/Qt-Advanced-Docking-System/src/DockManager.h"
++#include "qtadvanceddocking-qt6/DockManager.h"
+ 
+ using namespace ads;
+ 

@@ -1,0 +1,12 @@
+Index: scribus/ui/docks/dock_panelbase.h
+--- scribus/ui/docks/dock_panelbase.h.orig
++++ scribus/ui/docks/dock_panelbase.h
+@@ -21,7 +21,7 @@
+ #define DOCK_PANELBASE_H
+ 
+ #include "scribusapi.h"
+-#include "third_party/Qt-Advanced-Docking-System/src/DockWidget.h"
++#include "qtadvanceddocking-qt6/DockWidget.h"
+ using namespace ads;
+ 
+ class PrefsContext;

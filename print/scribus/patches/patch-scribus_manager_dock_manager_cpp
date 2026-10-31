@@ -1,0 +1,12 @@
+Index: scribus/manager/dock_manager.cpp
+--- scribus/manager/dock_manager.cpp.orig
++++ scribus/manager/dock_manager.cpp
+@@ -26,7 +26,7 @@ to the COPYING file provided with the program.
+ #include "dock_manager.h"
+ 
+ #include <QMenu>
+-#include "third_party/Qt-Advanced-Docking-System/src/DockAreaWidget.h"
++#include "qtadvanceddocking-qt6/DockAreaWidget.h"
+ #include "ui/docks/dock_centralwidget.h"
+ 
+ #include "iconmanager.h"
