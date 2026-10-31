@@ -5,6 +5,7 @@ VERSION=	1.3.13
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
+REVISION=	0
 
 CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	8.0 \

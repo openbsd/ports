@@ -1,0 +1,16 @@
+Simplified version of https://github.com/lsh123/xmlsec/pull/1440
+
+Index: src/openssl/openssl_compat.h
+--- src/openssl/openssl_compat.h.orig
++++ src/openssl/openssl_compat.h
+@@ -141,9 +142,9 @@ typedef int xmlSecOpenSSLSizeT;
+ #if defined(LIBRESSL_VERSION_NUMBER)
+ 
+ /* Not implemented by LibreSSL (yet?) */
+-#define XMLSEC_OPENSSL_NO_ASN1_TIME_TO_TM   1
+ #define XMLSEC_OPENSSL_NO_STORE             1
+ #define XMLSEC_OPENSSL_NO_PWD_CALLBACK      1
++#define XMLSEC_OPENSSL_NO_X509_STORE_GET1_OBJECTS 0
+ #define XMLSEC_OPENSSL_NO_DEEP_COPY         1
+ 
+ #ifndef RAND_priv_bytes
