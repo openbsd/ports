@@ -1,0 +1,57 @@
+Support for more extensions through elf_aux_info(AT_HWCAP2) as implemented
+on OpenBSD.
+
+Index: src/hwf-riscv.c
+--- src/hwf-riscv.c.orig
++++ src/hwf-riscv.c
+@@ -169,6 +169,39 @@ detect_riscv_at_hwcap(void)
+   return features;
+ }
+ 
++#if defined(HAVE_ELF_AUX_INFO) && defined(AT_HWCAP2)
++static const struct hwcap_feature_map_s hwcap2_features[] =
++  {
++    { HWCAP2_ISA_ZBB,     HWF_RISCV_ZBB },
++    { HWCAP2_ISA_ZBC,     HWF_RISCV_ZBC },
++ /* { HWCAP2_ISA_ZVKB,    HWF_RISCV_ZVKB }, */
++    { HWCAP2_ISA_ZVKG,    HWF_RISCV_ZVKG },
++    { HWCAP2_ISA_ZVKNED,  HWF_RISCV_ZVKNED },
++    { HWCAP2_ISA_ZVKNHA,  HWF_RISCV_ZVKNHA },
++    { HWCAP2_ISA_ZVKNHB,  HWF_RISCV_ZVKNHB },
++  };
++
++static unsigned int
++detect_riscv_at_hwcap2(void)
++{
++  unsigned long hwcap;
++  unsigned int features = 0;
++  unsigned int i;
++
++  if (elf_aux_info(AT_HWCAP2, &hwcap, sizeof(hwcap)) < 0)
++    return features;
++
++  for (i = 0; i < DIM(hwcap2_features); i++)
++    {
++      unsigned int hwcap_flag = hwcap2_features[i].hwcap_flag;
++      if ((hwcap & hwcap_flag) == hwcap_flag)
++        features |= hwcap2_features[i].hwf_flag;
++    }
++
++  return features;
++}
++#endif /* defined(HAVE_ELF_AUX_INFO) && defined(AT_HWCAP2) */
++
+ #endif /* HAS_SYS_AT_HWCAP */
+ 
+ 
+@@ -390,6 +423,10 @@ _gcry_hwf_detect_riscv (void)
+ 
+ #if defined (HAS_SYS_HWPROBE)
+   features |= detect_riscv_hwprobe ();
++#endif
++
++#if defined(HAVE_ELF_AUX_INFO) && defined(AT_HWCAP2)
++  features |= detect_riscv_at_hwcap2 ();
+ #endif
+ 
+   features |= detect_riscv_hwf_by_toolchain ();

@@ -6,6 +6,7 @@ USE_NOEXECONLY=		Yes
 COMMENT=		crypto library based on code used in GnuPG
 
 DISTNAME=		libgcrypt-1.12.4
+REVISION=		0
 
 CATEGORIES=		security
 
@@ -33,10 +34,5 @@ CONFIGURE_ARGS=		--enable-static \
 			--disable-drng-support
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-.if ${MACHINE_ARCH} == riscv64
-# long vs long long in riscv64-specific code
-CFLAGS +=		-Wno-error=incompatible-pointer-types
-.endif
 
 .include <bsd.port.mk>
