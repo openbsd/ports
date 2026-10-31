@@ -207,6 +207,7 @@ share/examples/pipewire/xdg/autostart/pipewire.desktop
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/pipewire.desktop
+share/glib-2.0/schemas/org.freedesktop.pulseaudio.gschema.xml
 share/locale/af/LC_MESSAGES/pipewire.mo
 share/locale/ar/LC_MESSAGES/pipewire.mo
 share/locale/as/LC_MESSAGES/pipewire.mo
@@ -299,8 +300,10 @@ share/pipewire/pipewire.conf.avail/20-upmix.conf
 share/pipewire/pipewire.conf.avail/50-raop.conf
 share/pipewire/pipewire.conf.d/10-no-rtkit.conf
 share/pipewire/pipewire.conf.d/10-sndio.conf
+share/pipewire/pipewire.conf.d/20-pulse.conf
 @sample ${SYSCONFDIR}/pipewire/
 @sample ${SYSCONFDIR}/pipewire/client.conf.d/
 @sample ${SYSCONFDIR}/pipewire/jack.conf.d/
 @sample ${SYSCONFDIR}/pipewire/pipewire-pulse.conf.d/
 @sample ${SYSCONFDIR}/pipewire/pipewire.conf.d/
+@tag glib-compile-schemas

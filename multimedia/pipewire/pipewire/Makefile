@@ -7,6 +7,8 @@ PW_VERSION=		1.6.11
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 PKGNAME-gst=		gst-plugin-pipewire-${PW_VERSION}
 
+REVISION-main=		0
+
 SHARED_LIBS += pipewire-0.3              1.0 # 0.1610.0
 
 MULTI_PACKAGES=		-main -libs -gst
@@ -25,7 +27,8 @@ WANTLIB-gst += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 m pipewire-0.3
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c c++
 
-MODULES=		devel/meson \
+MODULES=		devel/dconf \
+			devel/meson \
 			lang/python
 
 MODPY_RUNDEP=		No
@@ -50,7 +53,8 @@ LIB_DEPENDS-gst=	${BASE_PKGPATH},-libs \
 			multimedia/gstreamer1/plugins-base
 
 # needs a pipewire-session-manager
-RUN_DEPENDS-main +=	multimedia/pipewire/wireplumber
+RUN_DEPENDS-main +=	${MODDCONF_RUN_DEPENDS} \
+			multimedia/pipewire/wireplumber
 
 RUN_DEPENDS-libs=	# empty
 
@@ -83,6 +87,11 @@ CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
 			-Davahi=disabled \
 			-Donnxruntime=disabled
 
+# module-pulse-tunnel lets PipeWire create a local sink or source that streams
+# audio to or from a remote PulseAudio-protocol server, using libpulse as the
+# client; would require audio/pulseaudio
+CONFIGURE_ARGS +=	-Dlibpulse=disabled
+
 # PAM limits.d file
 CONFIGURE_ARGS +=	-Drlimits-install=false
 
@@ -111,19 +120,16 @@ post-extract:
 	cp ${FILESDIR}/sndio/*.{c,h} ${FILESDIR}/sndio/meson.build \
 		${WRKSRC}/spa/plugins/sndio
 
-# XXX to be revisited; useful to replace the pulseaudio daemon
-# (audio/pulseaudio) but it seems to depend on systemd activation for now
-CONFIGURE_ARGS +=	-Dlibpulse=disabled
-# XXX prevent conflict with audio/pulseaudio that installs the same gschema;
-# add devel/dconf to MODULES once we enable pulse support and
-# RUN_DEPENDS-main +=	${MODDCONF_RUN_DEPENDS}
 post-install:
-	rm -f ${PREFIX}/share/glib-2.0/schemas/org.freedesktop.pulseaudio.gschema.xml
-
 # load the sndio spa plugin and create default sndio nodes
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pipewire/pipewire.conf.d
 	${INSTALL_DATA} ${FILESDIR}/10-sndio.conf \
 		${PREFIX}/share/pipewire/pipewire.conf.d/
+
+# start the PulseAudio server (pipewire-pulse) from pipewire;
+# upstream relies on systemd user socket activation for this
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/20-pulse.conf.in \
+		${PREFIX}/share/pipewire/pipewire.conf.d/20-pulse.conf
 
 # systemd socket activation is not supported on OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pipewire/xdg/autostart

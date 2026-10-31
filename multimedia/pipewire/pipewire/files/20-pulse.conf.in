@@ -1,0 +1,4 @@
+context.exec = [
+    { path = "${TRUEPREFIX}/bin/pipewire-pulse" args = ""
+      condition = [ { exec.pipewire-pulse = !false } ] }
+]
