@@ -1,8 +1,7 @@
 COMMENT =		modular and flexible STUN and TURN Server
 
 GH_PROJECT =		restund
-GH_TAGNAME =	v3.9.0
-REVISION =		0
+GH_TAGNAME =	v4.9.0
 
 WANTLIB =		c crypto m mariadb pthread re ssl z
 LIB_DEPENDS =		telephony/baresip/re \
