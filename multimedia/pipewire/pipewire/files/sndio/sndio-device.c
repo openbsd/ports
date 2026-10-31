@@ -95,6 +95,7 @@ struct impl {
 	struct dir_controls in;
 	struct dev_choice choice[MAX_CHOICES];
 	uint32_t n_choice;
+	bool route_save[2];	/* WirePlumber persistence flag, per direction */
 
 	uint32_t profile;		/* 0 = off, 1 = on */
 	unsigned int emitted_objects:1;
@@ -285,6 +286,7 @@ static struct spa_pod *build_route(struct impl *this, struct spa_pod_builder *b,
 	if (id == SPA_PARAM_Route)
 		spa_pod_builder_add(b,
 			SPA_PARAM_ROUTE_device, SPA_POD_Int(dev),
+			SPA_PARAM_ROUTE_save, SPA_POD_Bool(this->route_save[dev]),
 			0);
 	spa_pod_builder_prop(b, SPA_PARAM_ROUTE_profiles, 0);
 	spa_pod_builder_array(b, sizeof(uint32_t), SPA_TYPE_Int, 1, (uint32_t[]) { 1 });
@@ -302,8 +304,6 @@ static struct spa_pod *build_route(struct impl *this, struct spa_pod_builder *b,
 		spa_pod_builder_array(b, sizeof(float), SPA_TYPE_Float, 2, vols);
 		spa_pod_builder_pop(b, &f[1]);
 	}
-	spa_pod_builder_prop(b, SPA_PARAM_ROUTE_save, 0);
-	spa_pod_builder_bool(b, false);
 	return spa_pod_builder_pop(b, &f[0]);
 }
 
@@ -321,6 +321,31 @@ static struct spa_pod *build_profile(struct impl *this, struct spa_pod_builder *
 		SPA_PARAM_PROFILE_priority, SPA_POD_Int(index == 0 ? 0 : 10),
 		SPA_PARAM_PROFILE_available, SPA_POD_Id(SPA_PARAM_AVAILABILITY_yes),
 		0);
+	if (index == 1) {
+		/* the media classes and their device ids; the session
+		 * manager needs these to know which devices to select
+		 * and restore routes for */
+		static const uint32_t playback[1] = { 0 };
+		static const uint32_t capture[1] = { 1 };
+		struct spa_pod_frame f1;
+
+		spa_pod_builder_prop(b, SPA_PARAM_PROFILE_classes, 0);
+		spa_pod_builder_push_struct(b, &f1);
+		spa_pod_builder_int(b, 2);
+		spa_pod_builder_add_struct(b,
+			SPA_POD_String("Audio/Sink"),
+			SPA_POD_Int(1),
+			SPA_POD_String("card.profile.devices"),
+			SPA_POD_Array(sizeof(uint32_t), SPA_TYPE_Int,
+				1, playback));
+		spa_pod_builder_add_struct(b,
+			SPA_POD_String("Audio/Source"),
+			SPA_POD_Int(1),
+			SPA_POD_String("card.profile.devices"),
+			SPA_POD_Array(sizeof(uint32_t), SPA_TYPE_Int,
+				1, capture));
+		spa_pod_builder_pop(b, &f1);
+	}
 	return spa_pod_builder_pop(b, &f);
 }
 
@@ -823,10 +848,13 @@ static int impl_set_param(void *object,
 		struct spa_pod *props = NULL;
 		struct dir_controls *d;
 
+		bool save = false;
+
 		if ((res = spa_pod_parse_object(param,
 				SPA_TYPE_OBJECT_ParamRoute, NULL,
 				SPA_PARAM_ROUTE_index, SPA_POD_Int(&index),
 				SPA_PARAM_ROUTE_device, SPA_POD_OPT_Int(&device),
+				SPA_PARAM_ROUTE_save, SPA_POD_OPT_Bool(&save),
 				SPA_PARAM_ROUTE_props, SPA_POD_OPT_Pod(&props))) < 0)
 			return res;
 		if (index < n_out) {
@@ -846,6 +874,10 @@ static int impl_set_param(void *object,
 			d = &this->in;
 		} else
 			return -EINVAL;
+		if (save)
+			this->route_save[index < n_out ? 0 : 1] = true;
+		spa_log_debug(this->log, "%p: route set index:%u save:%d props:%d",
+				this, index, save, props != NULL);
 		if (props != NULL) {
 			if (!dir_has_volume(d))
 				return -ENOTSUP;
