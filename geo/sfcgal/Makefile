@@ -1,4 +1,5 @@
 COMMENT =		CGAL wrapper implementing 2D/3D operations on OGC features
+DPB_PROPERTIES =	parallel
 
 V =			v2.3.0
 DISTNAME =		SFCGAL-${V}
