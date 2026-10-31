@@ -7,7 +7,7 @@ PW_VERSION=		1.6.11
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 PKGNAME-gst=		gst-plugin-pipewire-${PW_VERSION}
 
-REVISION-main=		0
+REVISION-main=		3
 
 SHARED_LIBS += pipewire-0.3              1.0 # 0.1610.0
 

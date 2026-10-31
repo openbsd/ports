@@ -9,6 +9,7 @@
 
 extern const struct spa_handle_factory spa_sndio_sink_factory;
 extern const struct spa_handle_factory spa_sndio_source_factory;
+extern const struct spa_handle_factory sndio_device_factory;
 
 SPA_LOG_TOPIC_ENUM_DEFINE_REGISTERED;
 
@@ -24,6 +25,9 @@ int spa_handle_factory_enum(const struct spa_handle_factory **factory, uint32_t 
 		break;
 	case 1:
 		*factory = &spa_sndio_source_factory;
+		break;
+	case 2:
+		*factory = &sndio_device_factory;
 		break;
 	default:
 		return 0;

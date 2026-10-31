@@ -2,7 +2,8 @@ sndio_sources = [
   'plugin.c',
   'sndio.c',
   'sndio-sink.c',
-  'sndio-source.c'
+  'sndio-source.c',
+  'sndio-device.c',
 ]
 
 sndiolib = shared_library('spa-sndio',

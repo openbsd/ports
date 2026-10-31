@@ -141,57 +141,6 @@ static void on_move(void *arg, int delta)
 	state->hw_pos_nsec = SPA_TIMESPEC_TO_NSEC(&ts);
 }
 
-static int do_emit_volume(struct spa_loop *loop, bool async, uint32_t seq,
-		const void *data, size_t size, void *user_data)
-{
-	struct sndio_state *state = user_data;
-
-	state->info.change_mask |= SPA_NODE_CHANGE_MASK_PARAMS;
-	state->params[NODE_Props].user++;
-	spa_node_emit_info(&state->hooks, &state->info);
-	state->info.change_mask = 0;
-	return 0;
-}
-
-static void on_volume(void *arg, unsigned int vol)
-{
-	struct sndio_state *state = arg;
-
-	state->hw_volume = vol;
-	if (vol == state->req_volume)
-		return;
-
-	/* changed behind our back (e.g. sndioctl); reflect it */
-	state->req_volume = vol;
-	if (!state->props.mute || vol != 0)
-		state->props.volume = (float)vol / SIO_MAXVOL;
-	if (state->props.mute && vol != 0)
-		state->props.mute = false;
-	spa_loop_invoke(state->main_loop, do_emit_volume, 0, NULL, 0,
-			false, state);
-}
-
-int spa_sndio_set_volume(struct sndio_state *state, float volume, bool mute)
-{
-	unsigned int vol;
-
-	state->props.volume = SPA_CLAMPF(volume, 0.0f, 1.0f);
-	state->props.mute = mute;
-
-	if (!state->opened || !state->have_volume || state->eof)
-		return 0;
-
-	vol = mute ? 0 : (unsigned int)(state->props.volume * SIO_MAXVOL + 0.5f);
-	if (vol > SIO_MAXVOL)
-		vol = SIO_MAXVOL;
-	state->req_volume = vol;
-	if (!sio_setvol(state->hdl, vol) || sio_eof(state->hdl)) {
-		state->eof = true;
-		return -EIO;
-	}
-	return 0;
-}
-
 uint32_t spa_sndio_playing(struct sndio_state *state)
 {
 	uint64_t frames = state->frame_size ?
@@ -349,12 +298,6 @@ static int spa_sndio_open(struct sndio_state *state, struct spa_audio_info *fmt)
 #endif
 
 	sio_onmove(state->hdl, on_move, state);
-	if (state->direction == SPA_DIRECTION_INPUT) {
-		state->have_volume = sio_onvol(state->hdl, on_volume, state);
-		if (state->have_volume)
-			spa_sndio_set_volume(state,
-					state->props.volume, state->props.mute);
-	}
 
 	state->opened = true;
 
@@ -396,7 +339,6 @@ int spa_sndio_close(struct sndio_state *state)
 	sio_close(state->hdl);
 	state->hdl = NULL;
 	state->opened = false;
-	state->have_volume = false;
 	state->eof = false;
 	free(state->ring);
 	state->ring = NULL;
@@ -438,7 +380,6 @@ int spa_sndio_init(struct sndio_state *state, const struct spa_dict *info,
 	spa_log_topic_init(state->log, &sndio_log_topic);
 	state->data_loop = spa_support_find(support, n_support, SPA_TYPE_INTERFACE_DataLoop);
 	state->data_system = spa_support_find(support, n_support, SPA_TYPE_INTERFACE_DataSystem);
-	state->main_loop = spa_support_find(support, n_support, SPA_TYPE_INTERFACE_Loop);
 
 	if (state->data_loop == NULL) {
 		spa_log_error(state->log, "a data_loop is needed");
@@ -448,15 +389,9 @@ int spa_sndio_init(struct sndio_state *state, const struct spa_dict *info,
 		spa_log_error(state->log, "a data_system is needed");
 		return -EINVAL;
 	}
-	if (state->main_loop == NULL) {
-		spa_log_error(state->log, "a main loop is needed");
-		return -EINVAL;
-	}
 
 	state->quantum_limit = 8192;
 	state->props.buffer_msec = SPA_SNDIO_DEFAULT_BUFFER_MSEC;
-	state->props.volume = 1.0f;
-	state->props.mute = false;
 	spa_scnprintf(state->props.clock_name,
 			sizeof(state->props.clock_name),
 			"%s", "clock.system.monotonic");

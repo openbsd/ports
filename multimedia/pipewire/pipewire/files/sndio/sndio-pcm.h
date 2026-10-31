@@ -56,8 +56,6 @@ struct sndio_props {
 	uint32_t pos[SPA_SNDIO_MAX_CHANNELS];
 	uint32_t buffer_msec;
 	char clock_name[64];
-	float volume;
-	bool mute;
 };
 
 struct sndio_buffer {
@@ -76,7 +74,6 @@ struct sndio_state {
 	struct spa_log *log;
 	struct spa_loop *data_loop;
 	struct spa_system *data_system;
-	struct spa_loop *main_loop;
 
 	/* SPA_DIRECTION_INPUT: sink, SPA_DIRECTION_OUTPUT: source */
 	enum spa_direction direction;
@@ -146,9 +143,6 @@ struct sndio_state {
 	uint32_t ring_head;		/* write index, bytes */
 	uint32_t ring_tail;		/* read index, bytes */
 	uint32_t ring_fill;		/* bytes queued */
-	unsigned int have_volume:1;	/* device has a volume knob */
-	unsigned int hw_volume;		/* last known knob position */
-	unsigned int req_volume;	/* last knob position we requested */
 
 	struct spa_source timer_source;
 	struct itimerspec timerspec;
@@ -168,7 +162,6 @@ int spa_sndio_stop(struct sndio_state *state);
 
 /* only valid from the data loop */
 int spa_sndio_service(struct sndio_state *state);
-int spa_sndio_set_volume(struct sndio_state *state, float volume, bool mute);
 uint32_t spa_sndio_playing(struct sndio_state *state);
 
 #ifdef __cplusplus

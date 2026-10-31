@@ -234,21 +234,6 @@ static int impl_node_enum_params(void *object, int seq,
 				SPA_PROP_INFO_type, SPA_POD_Stringn(this->props.device,
 							sizeof(this->props.device)));
 			break;
-		case 1:
-			param = spa_pod_builder_add_object(&b,
-				SPA_TYPE_OBJECT_PropInfo, id,
-				SPA_PROP_INFO_id,   SPA_POD_Id(SPA_PROP_volume),
-				SPA_PROP_INFO_description, SPA_POD_String("The hardware volume"),
-				SPA_PROP_INFO_type, SPA_POD_CHOICE_RANGE_Float(
-							this->props.volume, 0.0f, 1.0f));
-			break;
-		case 2:
-			param = spa_pod_builder_add_object(&b,
-				SPA_TYPE_OBJECT_PropInfo, id,
-				SPA_PROP_INFO_id,   SPA_POD_Id(SPA_PROP_mute),
-				SPA_PROP_INFO_description, SPA_POD_String("Mute"),
-				SPA_PROP_INFO_type, SPA_POD_Bool(this->props.mute));
-			break;
 		default:
 			return 0;
 		}
@@ -261,9 +246,7 @@ static int impl_node_enum_params(void *object, int seq,
 			param = spa_pod_builder_add_object(&b,
 				SPA_TYPE_OBJECT_Props, id,
 				SPA_PROP_device, SPA_POD_Stringn(this->props.device,
-							sizeof(this->props.device)),
-				SPA_PROP_volume, SPA_POD_Float(this->props.volume),
-				SPA_PROP_mute,   SPA_POD_Bool(this->props.mute));
+							sizeof(this->props.device)));
 			break;
 		default:
 			return 0;
@@ -305,20 +288,6 @@ static int impl_node_enum_params(void *object, int seq,
 	return 0;
 }
 
-struct volume_data {
-	float volume;
-	bool mute;
-};
-
-static int do_set_volume(struct spa_loop *loop, bool async, uint32_t seq,
-		const void *data, size_t size, void *user_data)
-{
-	struct sndio_state *this = user_data;
-	const struct volume_data *v = data;
-	spa_sndio_set_volume(this, v->volume, v->mute);
-	return 0;
-}
-
 static int impl_node_set_param(void *object, uint32_t id, uint32_t flags,
 			       const struct spa_pod *param)
 {
@@ -329,10 +298,6 @@ static int impl_node_set_param(void *object, uint32_t id, uint32_t flags,
 	switch (id) {
 	case SPA_PARAM_Props:
 	{
-		struct volume_data v = {
-			.volume = this->props.volume,
-			.mute = this->props.mute
-		};
 		char device[sizeof(this->props.device)];
 
 		if (param == NULL)
@@ -341,16 +306,11 @@ static int impl_node_set_param(void *object, uint32_t id, uint32_t flags,
 		spa_scnprintf(device, sizeof(device), "%s", this->props.device);
 		spa_pod_parse_object(param,
 			SPA_TYPE_OBJECT_Props, NULL,
-			SPA_PROP_device, SPA_POD_OPT_Stringn(device, sizeof(device)),
-			SPA_PROP_volume, SPA_POD_OPT_Float(&v.volume),
-			SPA_PROP_mute,   SPA_POD_OPT_Bool(&v.mute));
+			SPA_PROP_device, SPA_POD_OPT_Stringn(device, sizeof(device)));
 
 		/* a device change is applied on the next open */
 		spa_scnprintf(this->props.device,
 				sizeof(this->props.device), "%s", device);
-
-		spa_loop_locked(this->data_loop, do_set_volume,
-				0, &v, sizeof(v), this);
 
 		this->info.change_mask |= SPA_NODE_CHANGE_MASK_PARAMS;
 		this->params[NODE_Props].user++;
