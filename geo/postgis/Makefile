@@ -46,6 +46,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		graphics/GraphicsMagick
 TEST_DEPENDS =	devel/cunit
 
+MODPY_RUNDEP=	No
 USE_GMAKE=	Yes
 USE_LIBTOOL =	Yes
 #for iconv.h and https://trac.osgeo.org/postgis/ticket/4573
