@@ -7,7 +7,6 @@ lib/python${MODPY_VERSION}/site-packages/shapely-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/shapely-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/shapely-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/shapely-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/shapely-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/shapely/__init__.py
 lib/python${MODPY_VERSION}/site-packages/shapely/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shapely/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -334,6 +333,18 @@ lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/${MODPY_PYCACHE}threading_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/${MODPY_PYCACHE}threading_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/conftest.py
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/emptypoint_1.8.5.post1.pickle
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/emptypolygon_1.8.5.post1.pickle
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/geometrycollection_1.8.5.post1.pickle
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/linearring_1.8.5.post1.pickle
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/linestring_1.8.5.post1.pickle
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/multilinestring_1.8.5.post1.pickle
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/multipoint_1.8.5.post1.pickle
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/multipolygon_1.8.5.post1.pickle
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/point2d_1.8.5.post1.pickle
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/point3d_1.8.5.post1.pickle
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/data/polygon_1.8.5.post1.pickle
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/test_affinity.py
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/test_box.py
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/test_buffer.py
