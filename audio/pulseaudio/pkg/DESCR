@@ -1,6 +1,7 @@
 PulseAudio is a sound system for POSIX OSes, acting as a proxy between
 sound applications and the audio hardware.
 
-This package only provides the PulseAudio client part.
-The PulseAudio daemon is not included. The server side is provided by
-PipeWire through its PulseAudio compatibility layer (pipewire-pulse).
+This package only provides the PulseAudio client part: the PulseAudio daemon is
+not included.
+The server side is provided by PipeWire through its PulseAudio compatibility
+layer (pipewire-pulse from the 'pipewire' package).

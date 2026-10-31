@@ -3,7 +3,7 @@ COMMENT=		PulseAudio client libraries and utilities
 VERSION=		17.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS += pulse                     7.2 # 0.24.3
 SHARED_LIBS += pulse-simple              1.2 # 0.1.1

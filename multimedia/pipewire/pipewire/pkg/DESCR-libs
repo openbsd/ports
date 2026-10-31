@@ -1,1 +1,4 @@
-Libraries for PipeWire.
+This package provides the core PipeWire client libraries and API. 
+
+To run PipeWire as a daemon/server and multimedia routing, install the
+'pipewire' package.
