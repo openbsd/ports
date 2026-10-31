@@ -1,9 +1,8 @@
 COMMENT =		geocoding toolbox for Python
 
-MODPY_DISTV =		2.4.1
+MODPY_DISTV =		2.5.0
 DISTNAME =		geopy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		geo
 

@@ -13,8 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}__init__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}adapters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}adapters.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}distance.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}distance.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}exc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,7 +30,6 @@ lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}units.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/geopy/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/geopy/adapters.py
-lib/python${MODPY_VERSION}/site-packages/geopy/compat.py
 lib/python${MODPY_VERSION}/site-packages/geopy/distance.py
 lib/python${MODPY_VERSION}/site-packages/geopy/exc.py
 lib/python${MODPY_VERSION}/site-packages/geopy/extra/
