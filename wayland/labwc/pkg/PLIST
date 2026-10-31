@@ -7,6 +7,7 @@ bin/lab-sensible-terminal
 @man man/man5/labwc-config.5
 @man man/man5/labwc-menu.5
 @man man/man5/labwc-theme.5
+@man man/man7/labwc-philosophy.7
 share/doc/labwc/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/labwc/
@@ -40,6 +41,7 @@ share/locale/fi/LC_MESSAGES/labwc.mo
 share/locale/fr/LC_MESSAGES/labwc.mo
 share/locale/gl/LC_MESSAGES/labwc.mo
 share/locale/he/LC_MESSAGES/labwc.mo
+share/locale/hi/LC_MESSAGES/labwc.mo
 share/locale/hr/LC_MESSAGES/labwc.mo
 share/locale/hu/LC_MESSAGES/labwc.mo
 share/locale/id/LC_MESSAGES/labwc.mo
