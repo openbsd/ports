@@ -4,8 +4,11 @@ bin/sfcgal-config
 @comment @bin bin/test-regress-convex_hull
 @comment @bin bin/test-regress-polygon_triangulator
 @comment @bin bin/unit-test-SFCGAL
+@bin bin/sfcgalop
 include/SFCGAL/
 include/SFCGAL/Coordinate.h
+include/SFCGAL/Curve.h
+include/SFCGAL/DereferenceIterator.h
 include/SFCGAL/Envelope.h
 include/SFCGAL/Exception.h
 include/SFCGAL/Geometry.h
@@ -17,6 +20,7 @@ include/SFCGAL/MultiLineString.h
 include/SFCGAL/MultiPoint.h
 include/SFCGAL/MultiPolygon.h
 include/SFCGAL/MultiSolid.h
+include/SFCGAL/NURBSCurve.h
 include/SFCGAL/Point.h
 include/SFCGAL/Polygon.h
 include/SFCGAL/PolyhedralSurface.h
@@ -31,7 +35,9 @@ include/SFCGAL/TriangulatedSurface.h
 include/SFCGAL/Validity.h
 include/SFCGAL/algorithm/
 include/SFCGAL/algorithm/BoundaryVisitor.h
+include/SFCGAL/algorithm/Chamfer.h
 include/SFCGAL/algorithm/ConsistentOrientationBuilder.h
+include/SFCGAL/algorithm/Sweep.h
 include/SFCGAL/algorithm/alphaShapes.h
 include/SFCGAL/algorithm/alphaWrapping3D.h
 include/SFCGAL/algorithm/area.h
@@ -48,16 +54,20 @@ include/SFCGAL/algorithm/difference.h
 include/SFCGAL/algorithm/differencePrimitives.h
 include/SFCGAL/algorithm/distance.h
 include/SFCGAL/algorithm/distance3d.h
+include/SFCGAL/algorithm/equality.h
 include/SFCGAL/algorithm/extrude.h
 include/SFCGAL/algorithm/force2D.h
 include/SFCGAL/algorithm/force3D.h
 include/SFCGAL/algorithm/forceMeasured.h
+include/SFCGAL/algorithm/insertPointsWithinTolerance.h
 include/SFCGAL/algorithm/intersection.h
 include/SFCGAL/algorithm/intersects.h
+include/SFCGAL/algorithm/isClosed.h
 include/SFCGAL/algorithm/isSimple.h
 include/SFCGAL/algorithm/isValid.h
 include/SFCGAL/algorithm/length.h
 include/SFCGAL/algorithm/lineSubstring.h
+include/SFCGAL/algorithm/meshToPolyhedralSurface.h
 include/SFCGAL/algorithm/minkowskiSum.h
 include/SFCGAL/algorithm/minkowskiSum3D.h
 include/SFCGAL/algorithm/normal.h
@@ -65,11 +75,15 @@ include/SFCGAL/algorithm/offset.h
 include/SFCGAL/algorithm/orientation.h
 include/SFCGAL/algorithm/partition_2.h
 include/SFCGAL/algorithm/plane.h
+include/SFCGAL/algorithm/polygonRepair.h
+include/SFCGAL/algorithm/roofGeneration.h
 include/SFCGAL/algorithm/rotate.h
 include/SFCGAL/algorithm/scale.h
 include/SFCGAL/algorithm/simplification.h
+include/SFCGAL/algorithm/split3D.h
 include/SFCGAL/algorithm/straightSkeleton.h
-include/SFCGAL/algorithm/tesselate.h
+include/SFCGAL/algorithm/surfaceSimplification.h
+include/SFCGAL/algorithm/tessellate.h
 include/SFCGAL/algorithm/translate.h
 include/SFCGAL/algorithm/union.h
 include/SFCGAL/algorithm/visibility.h
@@ -90,7 +104,9 @@ include/SFCGAL/detail/TestGeometry.h
 include/SFCGAL/detail/TypeForDimension.h
 include/SFCGAL/detail/algorithm/
 include/SFCGAL/detail/algorithm/coversPoints.h
+include/SFCGAL/detail/algorithm/meshToPolyhedralSurface.h
 include/SFCGAL/detail/algorithm/simplification.h
+include/SFCGAL/detail/algorithm/split3D.h
 include/SFCGAL/detail/generator/
 include/SFCGAL/detail/generator/building.h
 include/SFCGAL/detail/generator/disc.h
@@ -106,6 +122,7 @@ include/SFCGAL/detail/graph/algorithm/isHalfEdge.h
 include/SFCGAL/detail/graph/algorithm/orientation.h
 include/SFCGAL/detail/io/
 include/SFCGAL/detail/io/OsgFactory.h
+include/SFCGAL/detail/io/RecursionGuard.h
 include/SFCGAL/detail/io/Serialization.h
 include/SFCGAL/detail/io/WkbReader.h
 include/SFCGAL/detail/io/WkbWriter.h
@@ -137,6 +154,7 @@ include/SFCGAL/io/GeometryStreams.h
 include/SFCGAL/io/OBJ.h
 include/SFCGAL/io/STL.h
 include/SFCGAL/io/ewkt.h
+include/SFCGAL/io/geojson.h
 include/SFCGAL/io/osg.h
 include/SFCGAL/io/vtk.h
 include/SFCGAL/io/wkb.h
@@ -144,8 +162,13 @@ include/SFCGAL/io/wkt.h
 include/SFCGAL/namespace.h
 include/SFCGAL/numeric.h
 include/SFCGAL/primitive3d/
+include/SFCGAL/primitive3d/Box.h
+include/SFCGAL/primitive3d/Cone.h
+include/SFCGAL/primitive3d/Cube.h
 include/SFCGAL/primitive3d/Cylinder.h
+include/SFCGAL/primitive3d/Primitive.h
 include/SFCGAL/primitive3d/Sphere.h
+include/SFCGAL/primitive3d/Torus.h
 include/SFCGAL/triangulate/
 include/SFCGAL/triangulate/triangulate2DZ.h
 include/SFCGAL/triangulate/triangulatePolygon.h

@@ -1,10 +1,9 @@
 COMMENT =		CGAL wrapper implementing 2D/3D operations on OGC features
 
-V =			v2.2.0
+V =			v2.3.0
 DISTNAME =		SFCGAL-${V}
 PKGNAME =		${DISTNAME:L:S/v//}
-SHARED_LIBS +=	SFCGAL	0.1 # 0.0
-REVISION =		1
+SHARED_LIBS +=	SFCGAL	1.0 # 0.0
 
 CATEGORIES =		geo math
 
@@ -28,12 +27,13 @@ LIB_DEPENDS +=		devel/boost>=1.84.0p8 \
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_container-mt boost_date_time-mt boost_filesystem-mt
+WANTLIB += boost_container-mt boost_date_time-mt
 WANTLIB += boost_program_options-mt boost_serialization-mt boost_thread-mt
-WANTLIB += boost_timer-mt boost_unit_test_framework-mt gmp gmpxx
+WANTLIB += boost_regex-mt boost_unit_test_framework-mt c gmp gmpxx
 WANTLIB += m mpfr
 
 CONFIGURE_ARGS +=	-DSFCGAL_BUILD_TESTS:BOOL=ON \
+			-DSFCGAL_BUILD_CLI:BOOL=ON \
 			-DUSE_CCACHE=OFF
 
 .include <bsd.port.mk>
