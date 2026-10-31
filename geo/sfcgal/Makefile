@@ -17,7 +17,8 @@ SITES =			https://gitlab.com/sfcgal/SFCGAL/-/archive/${V}/
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS +=	math/cgal
+BUILD_DEPENDS +=	math/cgal \
+			textproc/nlohmann-json
 
 LIB_DEPENDS +=		devel/boost>=1.84.0p8 \
 			devel/gmp,-cxx \
