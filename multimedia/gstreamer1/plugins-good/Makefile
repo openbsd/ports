@@ -1,6 +1,7 @@
 COMMENT=		good elements for GStreamer
 
 DISTNAME=		gst-plugins-good-${V}
+REVISION=		0
 
 SITES=			${SITE_GST:=gst-plugins-good/}
 
@@ -14,13 +15,14 @@ WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstnet-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 gstsdp-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gtk-3 intl jpeg m mp3lame nettle
 WANTLIB += opencore-amrnb opencore-amrwb orc-0.4 png shout speex
-WANTLIB += tag twolame v4l2 vpx wavpack xml2 z
+WANTLIB += pulse tag twolame v4l2 vpx wavpack xml2 z
 
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base=${V} \
 			archivers/bzip2 \
 			audio/flac \
 			audio/lame \
 			audio/opencore-amr \
+			audio/pulseaudio \
 			audio/speex \
 			audio/taglib \
 			audio/twolame \
@@ -46,7 +48,6 @@ CONFIGURE_ARGS=		-Daalib=disabled \
 			-Doss4=disabled \
 			-Dosxaudio=disabled \
 			-Dosxvideo=disabled \
-			-Dpulse=disabled \
 			-Dqt5=disabled \
 			-Dqt6=disabled \
 			-Dwaveform=disabled \

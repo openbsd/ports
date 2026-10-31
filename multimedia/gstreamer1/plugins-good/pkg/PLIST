@@ -45,6 +45,7 @@
 @so lib/gstreamer-${API}/libgstmultipart.so
 @so lib/gstreamer-${API}/libgstnavigationtest.so
 @so lib/gstreamer-${API}/libgstpng.so
+@so lib/gstreamer-${API}/libgstpulseaudio.so
 @so lib/gstreamer-${API}/libgstreplaygain.so
 @so lib/gstreamer-${API}/libgstrtp.so
 @so lib/gstreamer-${API}/libgstrtpmanager.so
