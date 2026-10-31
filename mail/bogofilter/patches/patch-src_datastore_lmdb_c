@@ -1,0 +1,23 @@
+mdb_env_get_maxkeysize() returns zero if not called after mdb_env_open()
+
+Index: src/datastore_lmdb.c
+--- src/datastore_lmdb.c.orig
++++ src/datastore_lmdb.c
+@@ -204,8 +204,6 @@ a_bflm_init(bfpath *bfp, bool rdonly){
+         goto jerr1;
+     }
+ 
+-    rv->bflm_maxkeysize = mdb_env_get_maxkeysize(rv->bflm_env);
+-
+     /* To acommodate with bogofilter's db_created() mechanism we cannot use the
+      * unnamed DB which "always exists", but must place data in named ones */
+     e = mdb_env_set_maxdbs(rv->bflm_env, 2);
+@@ -232,6 +230,8 @@ a_bflm_init(bfpath *bfp, bool rdonly){
+         emsg = "mdb_env_open()";
+         goto jerr2;
+     }
++
++    rv->bflm_maxkeysize = mdb_env_get_maxkeysize(rv->bflm_env);
+ 
+     /* Let us fake a "has been created" event :( */
+     if(!(rv->bflm_flags & a_BFLM_RDONLY) &&

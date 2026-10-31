@@ -1,6 +1,7 @@
 COMMENT =	bayesian spam filter
 
 DISTNAME =	bogofilter-1.2.5
+REVISION =	0
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	mail
 
