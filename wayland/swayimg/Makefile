@@ -5,8 +5,7 @@ COMMENT =	image display utility for Wayland
 
 GH_ACCOUNT =	artemsen
 GH_PROJECT =	swayimg
-GH_TAGNAME =	v5.2
-REVISION =	1
+GH_TAGNAME =	v5.7
 
 CATEGORIES =	wayland
 
@@ -27,10 +26,13 @@ WANTLIB += lib/inotify/inotify Iex-3_5
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
+CONFIGURE_ARGS =	-Dkrita=disabled
+
 LIB_DEPENDS =	devel/epoll-shim \
 		devel/libinotify \
 		graphics/cairo \
 		graphics/exiv2 \
+		graphics/ffmpeg \
 		graphics/giflib \
 		graphics/jpeg \
 		graphics/libavif \
@@ -39,6 +41,7 @@ LIB_DEPENDS =	devel/epoll-shim \
 		graphics/libsixel \
 		graphics/libwebp \
 		graphics/openexr \
+		graphics/openjp2 \
 		graphics/png \
 		graphics/tiff \
 		lang/luajit \
