@@ -34,15 +34,20 @@ plugin_init (GstPlugin * plugin)
 {
   GST_DEBUG_CATEGORY_INIT (gst_sndio_debug, "sndio", 0, "sndio plugins");
 
-  /* prefer sndiosrc over pulsesrc (GST_RANK_PRIMARY + 10) */
-  if (!gst_element_register (plugin, "sndiosrc", GST_RANK_PRIMARY + 20,
+  /*
+   * Rank below pulsesrc/pulsesink (GST_RANK_PRIMARY + 10): when
+   * PipeWire is running, its pulse server is preferred so streams
+   * get routing, per-application volumes and resilience to sndiod
+   * restarts; when it is not, the pulse elements fail to open and
+   * autoaudio* falls back to sndio as before.
+   */
+  if (!gst_element_register (plugin, "sndiosrc", GST_RANK_PRIMARY,
           gst_sndiosrc_get_type()))
     return FALSE;
-  /* prefer sndiosink over pulsesink (GST_RANK_PRIMARY + 10) */
-  if (!gst_element_register (plugin, "sndiosink", GST_RANK_PRIMARY + 20,
+  if (!gst_element_register (plugin, "sndiosink", GST_RANK_PRIMARY,
           gst_sndiosink_get_type()))
     return FALSE;
-  if (!gst_device_provider_register (plugin, "sndiodeviceprovider", GST_RANK_PRIMARY + 20,
+  if (!gst_device_provider_register (plugin, "sndiodeviceprovider", GST_RANK_PRIMARY,
           gst_sndio_device_provider_get_type()))
     return FALSE;
   return TRUE;
