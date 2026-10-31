@@ -10,10 +10,9 @@
 #include <unistd.h>
 #include <poll.h>
 #include <time.h>
-#include <sys/types.h>
-#include <sys/socket.h>
 
 #include "sndio-pcm.h"
+#include "sndio-utils.h"
 
 SPA_LOG_TOPIC_DEFINE(sndio_log_topic, "spa.sndio");
 
@@ -170,9 +169,8 @@ uint32_t spa_sndio_playing(struct sndio_state *state)
  * Process pending server messages; data loop only.
  *
  * In non-blocking mode all messages from the server (flow control
- * granting write budget, position updates driving sio_onmove(),
- * volume changes driving sio_onvol()) are only processed by
- * sio_revents(3).  Without this, sio_write() never gets any budget
+ * granting write budget, position updates driving sio_onmove()) are
+ * only processed by sio_revents(3).  Without this, sio_write() never gets any budget
  * and always returns 0 (see sio_aucat_start()/sio_aucat_write()).
  */
 int spa_sndio_service(struct sndio_state *state)
@@ -182,6 +180,7 @@ int spa_sndio_service(struct sndio_state *state)
 
 	if (!state->opened || state->eof)
 		return 0;
+	spa_sndio_block_sigpipe();
 	if (sio_nfds(state->hdl) > (int)SPA_N_ELEMENTS(pfd))
 		return -EIO;
 	nfds = sio_pollfd(state->hdl, pfd, POLLIN | POLLOUT);
@@ -199,7 +198,6 @@ int spa_sndio_service(struct sndio_state *state)
 		}
 		/* not fatal: the node keeps running and the stream
 		 * resumes when the connection can be reopened */
-		return 0;
 	}
 	return 0;
 }
@@ -215,6 +213,7 @@ static int spa_sndio_open(struct sndio_state *state, struct spa_audio_info *fmt)
 	if (state->opened)
 		return 0;
 
+	spa_sndio_block_sigpipe();
 	if ((fi = find_format_info(raw->format)) == NULL) {
 		spa_log_warn(state->log, "%p: unsupported format %d",
 				state, raw->format);
@@ -293,23 +292,6 @@ static int spa_sndio_open(struct sndio_state *state, struct spa_audio_info *fmt)
 		}
 	}
 
-#ifdef SO_NOSIGPIPE
-	/* a sio_write() after sndiod closed the connection
-	 * (e.g. sndiod restart) must fail with EPIPE instead of raising
-	 * SIGPIPE, which would kill the whole process */
-	{
-		struct pollfd pfd[16];
-		int i, nfds, val = 1;
-
-		if (sio_nfds(state->hdl) <= (int)SPA_N_ELEMENTS(pfd)) {
-			nfds = sio_pollfd(state->hdl, pfd, POLLIN | POLLOUT);
-			for (i = 0; i < nfds; i++)
-				(void)setsockopt(pfd[i].fd, SOL_SOCKET,
-						SO_NOSIGPIPE, &val, sizeof(val));
-		}
-	}
-#endif
-
 	sio_onmove(state->hdl, on_move, state);
 
 	state->opened = true;
@@ -350,8 +332,11 @@ int spa_sndio_close(struct sndio_state *state)
 {
 	if (!state->opened)
 		return 0;
+	spa_sndio_block_sigpipe();
 	spa_sndio_stop(state);
-	sio_close(state->hdl);
+	/* no handle while sndiod is away and a reopen is pending */
+	if (state->hdl != NULL)
+		sio_close(state->hdl);
 	state->hdl = NULL;
 	state->opened = false;
 	state->eof = false;
@@ -365,6 +350,7 @@ int spa_sndio_start(struct sndio_state *state)
 {
 	if (!state->opened || state->active)
 		return 0;
+	spa_sndio_block_sigpipe();
 	if (!sio_start(state->hdl))
 		return -EIO;
 	state->active = true;
@@ -375,6 +361,7 @@ int spa_sndio_stop(struct sndio_state *state)
 {
 	if (!state->opened || !state->active)
 		return 0;
+	spa_sndio_block_sigpipe();
 	state->active = false;
 	if (!state->eof && !sio_flush(state->hdl))
 		state->eof = true;
@@ -399,8 +386,7 @@ int spa_sndio_stop(struct sndio_state *state)
  * flow control already slaves the stream to the device, so the
  * remaining job is measurement, not control.
  */
-double spa_sndio_update_rate(struct sndio_state *state, uint32_t duration,
-		uint32_t rate, uint32_t delay)
+double spa_sndio_update_rate(struct sndio_state *state, uint32_t delay)
 {
 	double inst;
 	uint64_t dpos, dns;
@@ -428,29 +414,92 @@ double spa_sndio_update_rate(struct sndio_state *state, uint32_t duration,
 		state->rate_locked = true;
 		return state->rate_ratio;
 	}
-	if (dns < SPA_NSEC_PER_SEC)
+	/* cumulative since the anchor: the position only advances in
+	 * whole rounds, an error that decays as the window grows; wait
+	 * until it is below 0.1% before steering with it, and keep the
+	 * previous estimate (it survives restarts) until then */
+	if (dns < 10 * SPA_NSEC_PER_SEC)
 		return state->rate_ratio;
 
-	/* cumulative since the anchor: onmove batching jitter is
-	 * bounded, so its contribution decays as the window grows */
 	dpos = state->hw_position - state->rate_base_pos;
 	inst = (double)dpos * SPA_NSEC_PER_SEC / ((double)dns * state->par.rate);
 
 	if (inst < 0.99 || inst > 1.01) {
 		/* discontinuity (e.g. server xrun): re-anchor */
+		spa_log_debug(state->log, "%p: rate discontinuity (inst:%f), "
+				"re-anchoring", state, inst);
 		state->rate_base_nsec = state->hw_pos_nsec;
 		state->rate_base_pos = state->hw_position;
 		return state->rate_ratio;
 	}
 	state->rate_ratio += (inst - state->rate_ratio) * 0.25;
-	state->rate_ratio = SPA_CLAMPD(state->rate_ratio, 0.995, 1.005);
+	state->rate_ratio = SPA_CLAMPD(state->rate_ratio, 0.99, 1.01);
 
-	if (state->hw_pos_nsec - state->bw_base_nsec > 3 * SPA_NSEC_PER_SEC) {
-		state->bw_base_nsec = state->hw_pos_nsec;
+	if (state->hw_pos_nsec - state->log_base_nsec > 3 * SPA_NSEC_PER_SEC) {
+		state->log_base_nsec = state->hw_pos_nsec;
 		spa_log_debug(state->log, "%p: rate ratio:%f inst:%f delay:%u",
 				state, state->rate_ratio, inst, delay);
 	}
 	return state->rate_ratio;
+}
+
+/*
+ * Turn the measured rate into the pacing correction.  A gentle
+ * proportional term on the buffer level keeps it bounded whatever
+ * the residual error of the estimate: err is the excess of buffered
+ * frames (positive slows the graph down), pulled back over a few
+ * seconds.  Proportional only, so there is nothing to oscillate.
+ */
+double spa_sndio_pace(double ratio, int64_t err, uint32_t rate)
+{
+	double corr;
+
+	if (rate == 0)
+		return SPA_CLAMPD(ratio, 0.99, 1.01);
+	corr = ratio * (1.0 - (double)err /
+			((double)rate * SPA_SNDIO_PACE_SEC));
+	return SPA_CLAMPD(corr, 0.99, 1.01);
+}
+
+/*
+ * Follower rate matching, as in the ALSA plugin: when another clock
+ * drives the graph, give the adapter's resampler the ratio between
+ * our device and the driver.  There is nothing to match when the
+ * driver is our own device clock, e.g. the sink following the
+ * source of the same sndiod device.
+ */
+void spa_sndio_update_rate_match(struct sndio_state *state, uint32_t delay,
+		int64_t err)
+{
+	double rel, drv;
+	bool matching;
+
+	if (state->rate_match == NULL || state->position == NULL)
+		return;
+
+	matching = state->following && !state->eof &&
+		!spa_streq(state->position->clock.name, state->props.clock_name);
+	if (matching) {
+		drv = state->position->clock.rate_diff;
+		rel = spa_sndio_update_rate(state, delay) /
+			(drv > 0.0 ? drv : 1.0);
+		rel = spa_sndio_pace(rel, err,
+				state->position->clock.rate.denom);
+		/* playback: more output when the device runs faster;
+		 * capture: consume more input when it does */
+		state->rate_match->rate =
+			state->direction == SPA_DIRECTION_INPUT ? rel : 1.0 / rel;
+	} else {
+		state->rate_match->rate = 1.0;
+	}
+	SPA_FLAG_UPDATE(state->rate_match->flags,
+			SPA_IO_RATE_MATCH_FLAG_ACTIVE, matching);
+	if (matching != state->matching) {
+		spa_log_info(state->log, "%p: driver clock:'%s' our clock:'%s' "
+				"matching:%d", state, state->position->clock.name,
+				state->props.clock_name, matching);
+		state->matching = matching;
+	}
 }
 
 /*
@@ -475,6 +524,7 @@ int spa_sndio_check_reopen(struct sndio_state *state, uint32_t duration,
 	}
 	state->reopen_countdown = cycles_per_sec;
 
+	spa_sndio_block_sigpipe();
 	if (state->hdl != NULL)
 		sio_close(state->hdl);
 	state->hdl = NULL;
@@ -485,16 +535,10 @@ int spa_sndio_check_reopen(struct sndio_state *state, uint32_t duration,
 	state->carry_len = 0;
 	state->ring_head = state->ring_tail = state->ring_fill = 0;
 
-	/* reopening "default" while sndiod is away would grab the raw
-	 * hardware and keep sndiod from reclaiming it when it returns;
-	 * insist on the sndiod-backed name instead */
-	if (state->props.device[0] == '\0' ||
-	    spa_streq(state->props.device, "default"))
-		spa_scnprintf(state->reopen_dev, sizeof(state->reopen_dev),
-				"snd/0");
-	else
-		spa_scnprintf(state->reopen_dev, sizeof(state->reopen_dev),
-				"%s", state->props.device);
+	spa_sndio_reconnect_name(state->props.device,
+			state->direction == SPA_DIRECTION_INPUT ?
+			"AUDIOPLAYDEVICE" : "AUDIORECDEVICE",
+			state->reopen_dev, sizeof(state->reopen_dev));
 
 	if ((res = spa_sndio_open(state, &state->stored_fmt)) < 0) {
 		/* still away; stay in the gap */
@@ -534,9 +578,6 @@ int spa_sndio_init(struct sndio_state *state, const struct spa_dict *info,
 
 	state->quantum_limit = 8192;
 	state->props.buffer_msec = SPA_SNDIO_DEFAULT_BUFFER_MSEC;
-	spa_scnprintf(state->props.clock_name,
-			sizeof(state->props.clock_name),
-			"%s", "clock.system.monotonic");
 
 	for (i = 0; info && i < info->n_items; i++) {
 		const char *k = info->items[i].key;
@@ -565,6 +606,14 @@ int spa_sndio_init(struct sndio_state *state, const struct spa_dict *info,
 	}
 	if (state->props.channels > SPA_SNDIO_MAX_CHANNELS)
 		state->props.channels = SPA_SNDIO_MAX_CHANNELS;
+	/* the stream is paced by the device clock: name it after the
+	 * device, so that sink and source of one device are known to
+	 * share it */
+	if (state->props.clock_name[0] == '\0')
+		spa_scnprintf(state->props.clock_name,
+				sizeof(state->props.clock_name), "api.sndio.%s",
+				state->props.device[0] != '\0' ?
+				state->props.device : SIO_DEVANY);
 
 	state->latency[SPA_DIRECTION_INPUT] =
 		SPA_LATENCY_INFO(SPA_DIRECTION_INPUT);

@@ -9,6 +9,7 @@
 #include <unistd.h>
 
 #include "sndio-pcm.h"
+#include "sndio-utils.h"
 
 #define CHECK_PORT(this,d,p)	((d) == SPA_DIRECTION_INPUT && (p) == 0)
 
@@ -29,6 +30,7 @@ static int flush_write(struct sndio_state *this)
 
 	if (!this->active || this->eof)
 		return 0;
+	spa_sndio_block_sigpipe();
 	/* pick up write budget and position updates from the server */
 	if ((res = spa_sndio_service(this)) < 0)
 		return res;
@@ -94,6 +96,19 @@ static void queue_write(struct sndio_state *this, struct spa_buffer *buf)
 		offs += part;
 		size -= part;
 	}
+}
+
+/* frames queued in the ring plus accepted but not yet played */
+static uint32_t sink_delay(struct sndio_state *this)
+{
+	return this->ring_fill / this->frame_size + spa_sndio_playing(this);
+}
+
+/* sndiod is away: discard what the graph produced */
+static void drop_ring(struct sndio_state *this)
+{
+	this->ring_tail = this->ring_head;
+	this->ring_fill = 0;
 }
 
 static void set_timeout(struct sndio_state *this, uint64_t next_time)
@@ -181,43 +196,21 @@ static void on_timeout(struct spa_source *source)
 	if (SPA_UNLIKELY(this->eof)) {
 		/* sndiod went away: keep the graph paced, drop what the
 		 * graph produces, and try to come back */
-		this->ring_tail = this->ring_head;
-		this->ring_fill = 0;
+		drop_ring(this);
 		spa_sndio_check_reopen(this, duration, rate);
 		corr = 1.0;
 	} else {
-		if (SPA_UNLIKELY(this->eof)) {
-		this->ring_tail = this->ring_head;
-		this->ring_fill = 0;
-		if (this->following && this->position != NULL)
-			spa_sndio_check_reopen(this,
-				this->position->clock.duration,
-				this->position->clock.rate.denom);
-	} else {
-		flush_write(this);
-	}
-	if (this->following && this->position != NULL) {
-		double corr = spa_sndio_update_rate(this,
-				this->position->clock.duration,
-				this->position->clock.rate.denom,
-				this->ring_fill / this->frame_size +
-				spa_sndio_playing(this));
-		if (this->rate_match != NULL) {
-			this->rate_match->rate = corr;
-			SPA_FLAG_UPDATE(this->rate_match->flags,
-					SPA_IO_RATE_MATCH_FLAG_ACTIVE,
-					!this->eof);
-		}
-	}
-		corr = spa_sndio_update_rate(this, duration, rate,
-				this->ring_fill / this->frame_size +
-				spa_sndio_playing(this));
-	}
+		uint32_t delay;
 
-	/* pace the timer with the measured device rate; a tight clamp
-	 * keeps degenerate devices from dragging the graph, and the
-	 * flow control absorbs the residual phase error */
-	corr = SPA_CLAMPD(corr, 0.998, 1.002);
+		flush_write(this);
+		/* pace the timer with the measured device rate, pulling
+		 * the buffered amount back to what the flow control keeps
+		 * in the device; the clamp is wider than real-world clock
+		 * miscalibration (several thousand ppm on some machines) */
+		delay = sink_delay(this);
+		corr = spa_sndio_pace(spa_sndio_update_rate(this, delay),
+				(int64_t)delay - this->par.bufsz, rate);
+	}
 	this->next_time = nsec +
 		(uint64_t)(duration / corr * SPA_NSEC_PER_SEC / rate);
 
@@ -229,8 +222,7 @@ static void on_timeout(struct spa_source *source)
 		/* the ring absorbs the round-sized write granularity of the
 		 * device, so ring fill plus accepted-minus-played is a
 		 * jitter-free latency estimate */
-		this->clock->delay = this->ring_fill / this->frame_size +
-			spa_sndio_playing(this);
+		this->clock->delay = sink_delay(this);
 		this->clock->rate_diff = corr;
 		this->clock->next_nsec = this->next_time;
 	}
@@ -817,8 +809,22 @@ static int impl_node_process(void *object)
 		queue_write(this, b->buf);
 		io->status = SPA_STATUS_OK;
 	}
-	if (this->following)
-		flush_write(this);
+	if (this->following) {
+		uint32_t delay;
+
+		if (SPA_UNLIKELY(this->eof)) {
+			drop_ring(this);
+			if (this->position != NULL)
+				spa_sndio_check_reopen(this,
+					this->position->clock.duration,
+					this->position->clock.rate.denom);
+		} else {
+			flush_write(this);
+		}
+		delay = this->eof ? 0 : sink_delay(this);
+		spa_sndio_update_rate_match(this, delay,
+				(int64_t)delay - this->par.bufsz);
+	}
 
 	io->status = SPA_STATUS_NEED_DATA;
 

@@ -47,6 +47,8 @@ extern struct spa_log_topic sndio_log_topic;
 #define SPA_SNDIO_DEFAULT_CHANNELS	2
 /* device buffer target, in milliseconds */
 #define SPA_SNDIO_DEFAULT_BUFFER_MSEC	50
+/* time constant of the buffer level correction, in seconds */
+#define SPA_SNDIO_PACE_SEC		4.0
 
 struct sndio_props {
 	char device[256];
@@ -128,6 +130,7 @@ struct sndio_state {
 	unsigned int eof:1;		/* device error, hdl unusable */
 	unsigned int started:1;		/* node Start command */
 	unsigned int following:1;
+	unsigned int matching:1;	/* resampling against the driver */
 
 	uint64_t bytes_xfer;		/* bytes written/read so far */
 	uint64_t hw_position;		/* device position, from sio_onmove() */
@@ -135,10 +138,10 @@ struct sndio_state {
 	uint64_t rate_base_pos;
 	double rate_ratio;		/* measured device/system clock ratio */
 	bool rate_locked;		/* anchor set after the start burst */
-	uint64_t bw_base_nsec;		/* rate debug log pacing */
+	uint64_t log_base_nsec;		/* rate debug log pacing */
 	struct spa_io_rate_match *rate_match;
 	struct spa_audio_info stored_fmt;	/* for transparent reopen */
-	char reopen_dev[64];		/* sndiod-pinned name for reopens */
+	char reopen_dev[256];		/* sndiod-pinned name for reopens */
 	uint32_t reopen_countdown;	/* cycles until next reopen attempt */
 	uint64_t hw_pos_nsec;		/* monotonic time of the last onmove */
 	/* partial frame remainder between reads */
@@ -172,8 +175,10 @@ int spa_sndio_stop(struct sndio_state *state);
 /* only valid from the data loop */
 int spa_sndio_service(struct sndio_state *state);
 uint32_t spa_sndio_playing(struct sndio_state *state);
-double spa_sndio_update_rate(struct sndio_state *state, uint32_t duration,
-		uint32_t rate, uint32_t delay);
+double spa_sndio_update_rate(struct sndio_state *state, uint32_t delay);
+double spa_sndio_pace(double ratio, int64_t err, uint32_t rate);
+void spa_sndio_update_rate_match(struct sndio_state *state, uint32_t delay,
+		int64_t err);
 int spa_sndio_check_reopen(struct sndio_state *state, uint32_t duration,
 		uint32_t rate);
 

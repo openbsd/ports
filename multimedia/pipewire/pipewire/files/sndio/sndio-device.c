@@ -26,7 +26,8 @@
 #include <spa/param/audio/raw.h>
 #include <spa/monitor/device.h>
 #include <spa/monitor/utils.h>
-#include <spa/debug/log.h>
+
+#include "sndio-utils.h"
 
 #undef SPA_LOG_TOPIC_DEFAULT
 #define SPA_LOG_TOPIC_DEFAULT &log_topic
@@ -82,7 +83,7 @@ struct impl {
 	struct spa_dict_item dev_items[2];
 	struct spa_dict dev_dict;
 
-	char path[64];
+	char path[256];
 	char buffer_msec[16];
 
 	struct sioctl_hdl *hdl;
@@ -375,7 +376,7 @@ static void emit_object_info(struct impl *this, uint32_t id, bool sink)
 	items[n_items++] = SPA_DICT_ITEM_INIT("priority.session", sink ? "1000" : "900");
 	items[n_items++] = SPA_DICT_ITEM_INIT("audio.position", "FL,FR");
 	if (this->path[0] != '\0')
-		items[n_items++] = SPA_DICT_ITEM_INIT("api.sndio.path", this->path);
+		items[n_items++] = SPA_DICT_ITEM_INIT(SPA_KEY_API_SNDIO_PATH, this->path);
 	if (this->buffer_msec[0] != '\0')
 		items[n_items++] = SPA_DICT_ITEM_INIT("api.sndio.buffer-msec",
 				this->buffer_msec);
@@ -528,11 +529,11 @@ static void on_desc(void *arg, struct sioctl_desc *desc, int val)
 static void on_val(void *arg, unsigned int addr, unsigned int val)
 {
 	struct impl *this = arg;
-
-	spa_log_debug(this->log, "%p: control value addr:%u val:%u", this, addr, val);
 	struct dir_controls *dirs[2] = { &this->out, &this->in };
 	uint32_t i, j;
 	bool changed = false;
+
+	spa_log_debug(this->log, "%p: control value addr:%u val:%u", this, addr, val);
 
 	for (i = 0; i < this->n_choice; i++) {
 		if (this->choice[i].addr == addr && this->choice[i].val != val) {
@@ -571,6 +572,7 @@ static void on_ctl_io(void *data, int fd, uint32_t mask)
 	int nfds, revents;
 
 	spa_log_debug(this->log, "%p: control io mask:%08x", this, mask);
+	spa_sndio_block_sigpipe();
 
 	nfds = sioctl_pollfd(this->hdl, &pfd, POLLIN);
 	if (nfds > 0) {
@@ -588,7 +590,7 @@ static void on_ctl_io(void *data, int fd, uint32_t mask)
 	}
 }
 
-static int open_controls(struct impl *this);
+static int open_controls(struct impl *this, bool reconnect);
 
 static void on_retry(void *data, uint64_t expirations)
 {
@@ -619,7 +621,7 @@ static void on_retry(void *data, uint64_t expirations)
 	spa_zero(this->choice);
 	this->n_choice = 0;
 	this->ctls_ready = false;
-	open_controls(this);
+	open_controls(this, true);
 	if (this->hdl == NULL) {
 		/* still down: keep serving the cached state */
 		this->out = save_out;
@@ -664,13 +666,21 @@ static void schedule_retry(struct impl *this)
 	this->retry_sec = SPA_MIN(this->retry_sec * 2, 5u);
 }
 
-static int open_controls(struct impl *this)
+static int open_controls(struct impl *this, bool reconnect)
 {
 	struct pollfd pfd;
+	char name[256];
 	int nfds;
 
-	this->hdl = sioctl_open(this->path[0] != '\0' ? this->path : SIO_DEVANY,
-			SIOCTL_READ | SIOCTL_WRITE, 0);
+	spa_sndio_block_sigpipe();
+	/* the first open may land on the raw mixer when no sndiod runs,
+	 * like the streams; reconnects insist on sndiod */
+	if (reconnect)
+		spa_sndio_reconnect_name(this->path, NULL, name, sizeof(name));
+	else
+		spa_scnprintf(name, sizeof(name), "%s",
+				this->path[0] != '\0' ? this->path : SIO_DEVANY);
+	this->hdl = sioctl_open(name, SIOCTL_READ | SIOCTL_WRITE, 0);
 	if (this->hdl == NULL) {
 		spa_log_debug(this->log, "%p: no sndio control device, "
 				"volume handled in software until one appears", this);
@@ -819,6 +829,7 @@ static int impl_set_param(void *object,
 	int res;
 
 	spa_return_val_if_fail(this != NULL, -EINVAL);
+	spa_sndio_block_sigpipe();
 
 	switch (id) {
 	case SPA_PARAM_Profile:
@@ -958,6 +969,7 @@ static int impl_clear(struct spa_handle *handle)
 {
 	struct impl *this = (struct impl *) handle;
 
+	spa_sndio_block_sigpipe();
 	if (this->retry_timer != NULL)
 		spa_loop_utils_destroy_source(this->loop_utils, this->retry_timer);
 	if (this->source != NULL)
@@ -1006,7 +1018,7 @@ static int impl_init(const struct spa_handle_factory *factory,
 			&impl_device, this);
 	spa_hook_list_init(&this->hooks);
 
-	if (info && (str = spa_dict_lookup(info, "api.sndio.path")) != NULL)
+	if (info && (str = spa_dict_lookup(info, SPA_KEY_API_SNDIO_PATH)) != NULL)
 		snprintf(this->path, sizeof(this->path), "%s", str);
 	if (info && (str = spa_dict_lookup(info, "api.sndio.buffer-msec")) != NULL)
 		snprintf(this->buffer_msec, sizeof(this->buffer_msec), "%s", str);
@@ -1027,7 +1039,7 @@ static int impl_init(const struct spa_handle_factory *factory,
 
 	this->profile = 1;
 
-	open_controls(this);
+	open_controls(this, false);
 
 	spa_log_info(this->log, "%p: initialized", this);
 	return 0;

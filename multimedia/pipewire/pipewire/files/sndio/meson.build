@@ -8,6 +8,6 @@ sndio_sources = [
 
 sndiolib = shared_library('spa-sndio',
   sndio_sources,
-  dependencies : [ spa_dep, sndio_dep, mathlib ],
+  dependencies : [ spa_dep, sndio_dep, mathlib, pthread_lib ],
   install : true,
   install_dir : spa_plugindir / 'sndio')

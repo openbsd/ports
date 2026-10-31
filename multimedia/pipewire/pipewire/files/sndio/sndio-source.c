@@ -34,6 +34,15 @@ static void recycle_buffer(struct sndio_state *this, uint32_t buffer_id)
 	}
 }
 
+/* frames captured by the device and not read yet */
+static uint32_t source_delay(struct sndio_state *this)
+{
+	uint64_t read = this->bytes_xfer / this->frame_size;
+
+	return this->hw_position > read ?
+		(uint32_t)(this->hw_position - read) : 0;
+}
+
 /* read what the device has into a free buffer; data loop only */
 static int read_frames(struct sndio_state *this, uint64_t nsec, uint32_t duration)
 {
@@ -43,10 +52,12 @@ static int read_frames(struct sndio_state *this, uint64_t nsec, uint32_t duratio
 	size_t n;
 	int res;
 
-	if (!this->active || this->eof)
+	/* while sndiod is away, keep producing silence so the graph
+	 * keeps running and recording apps get a gap, not a stall */
+	if (!this->active && !this->eof)
 		return 0;
-	/* process position and volume updates from the server */
-	if ((res = spa_sndio_service(this)) < 0)
+	/* process position updates from the server */
+	if (!this->eof && (res = spa_sndio_service(this)) < 0)
 		return res;
 
 	if (spa_list_is_empty(&this->ready)) {
@@ -210,16 +221,19 @@ static void on_timeout(struct spa_source *source)
 		duration = 1024;
 		rate = SPA_SNDIO_DEFAULT_RATE;
 	}
-	if (SPA_UNLIKELY(this->eof))
+	if (SPA_UNLIKELY(this->eof)) {
 		spa_sndio_check_reopen(this, duration, rate);
-	corr = this->eof ? 1.0 : spa_sndio_update_rate(this, duration, rate,
-			this->hw_position > this->bytes_xfer / this->frame_size ?
-			(uint32_t)(this->hw_position -
-				this->bytes_xfer / this->frame_size) : 0);
-	/* pace the timer with the measured device rate; a tight clamp
-	 * keeps degenerate devices from dragging the graph, and the
-	 * flow control absorbs the residual phase error */
-	corr = SPA_CLAMPD(corr, 0.998, 1.002);
+		corr = 1.0;
+	} else {
+		/* pace the timer with the measured device rate, keeping
+		 * about one cycle captured ahead; the clamp is wider than
+		 * real-world clock miscalibration (several thousand ppm on
+		 * some machines) */
+		uint32_t backlog = source_delay(this);
+		corr = spa_sndio_pace(spa_sndio_update_rate(this, backlog),
+				(int64_t)(duration + this->par.round) - backlog,
+				rate);
+	}
 	this->next_time = nsec +
 		(uint64_t)(duration / corr * SPA_NSEC_PER_SEC / rate);
 
@@ -230,9 +244,7 @@ static void on_timeout(struct spa_source *source)
 		this->clock->rate = this->clock->target_rate;
 		this->clock->position += this->clock->duration;
 		this->clock->duration = duration;
-		this->clock->delay = this->hw_position >
-			this->bytes_xfer / this->frame_size ?
-			this->hw_position - this->bytes_xfer / this->frame_size : 0;
+		this->clock->delay = source_delay(this);
 		this->clock->rate_diff = corr;
 		this->clock->next_nsec = this->next_time;
 	}
@@ -841,27 +853,23 @@ static int impl_node_process(void *object)
 			duration = 1024;
 			nsec = 0;
 		}
+		uint32_t backlog, size = duration;
+
 		if (SPA_UNLIKELY(this->eof))
 			spa_sndio_check_reopen(this, duration,
 				this->position != NULL ?
 				this->position->clock.rate.denom :
 				SPA_SNDIO_DEFAULT_RATE);
-		if (this->rate_match != NULL) {
-			double corr = this->eof ? 1.0 :
-				spa_sndio_update_rate(this, duration,
-					this->position != NULL ?
-					this->position->clock.rate.denom :
-					SPA_SNDIO_DEFAULT_RATE,
-					this->hw_position >
-					this->bytes_xfer / this->frame_size ?
-					(uint32_t)(this->hw_position -
-					this->bytes_xfer / this->frame_size) : 0);
-			this->rate_match->rate = corr != 0.0 ? 1.0 / corr : 1.0;
-			SPA_FLAG_UPDATE(this->rate_match->flags,
-					SPA_IO_RATE_MATCH_FLAG_ACTIVE,
-					!this->eof);
-		}
-		if (read_frames(this, nsec, duration) > 0)
+		backlog = this->eof ? 0 : source_delay(this);
+		spa_sndio_update_rate_match(this, backlog,
+				(int64_t)(duration + this->par.round) - backlog);
+		/* when resampling, read what the resampler asks for */
+		if (this->rate_match != NULL &&
+		    SPA_FLAG_IS_SET(this->rate_match->flags,
+				    SPA_IO_RATE_MATCH_FLAG_ACTIVE) &&
+		    this->rate_match->size > 0)
+			size = this->rate_match->size;
+		if (read_frames(this, nsec, size) > 0)
 			return SPA_STATUS_HAVE_DATA;
 	}
 	return SPA_STATUS_OK;

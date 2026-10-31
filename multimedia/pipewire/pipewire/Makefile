@@ -7,7 +7,7 @@ PW_VERSION=		1.6.11
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 PKGNAME-gst=		gst-plugin-pipewire-${PW_VERSION}
 
-REVISION-main=		6
+REVISION-main=		7
 REVISION-libs=		0
 
 SHARED_LIBS += pipewire-0.3              1.0 # 0.1610.0
@@ -122,7 +122,7 @@ post-extract:
 		${WRKSRC}/spa/plugins/sndio
 
 post-install:
-# load the sndio spa plugin and create default sndio nodes
+# load the sndio spa plugin and create the sndio device
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pipewire/pipewire.conf.d
 	${INSTALL_DATA} ${FILESDIR}/10-sndio.conf \
 		${PREFIX}/share/pipewire/pipewire.conf.d/
