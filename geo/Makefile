@@ -75,6 +75,7 @@
      SUBDIR += py-pygml
      SUBDIR += py-rasterio
      SUBDIR += py-rio-cogeo
+     SUBDIR += py-sfcgal
      SUBDIR += py-shapely
      SUBDIR += py-supermercado
      SUBDIR += py-xyzservices
