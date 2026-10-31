@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.165.0
+V =			0.166.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -39,8 +39,8 @@ HOMEPAGE =		https://github.com/openai/codex
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODCARGO_WANTLIB} bz2 crypto dbus-1 execinfo lzma
-WANTLIB += m onig ssl util
+WANTLIB += ${MODCARGO_WANTLIB} bz2 crypto dbus-1 execinfo m onig
+WANTLIB += ssl util
 
 BUILD_DEPENDS =		devel/cmake/core \
 			devel/git \

@@ -1,7 +1,7 @@
 Index: codex-rs/app-server-daemon/src/lib.rs
 --- codex-rs/app-server-daemon/src/lib.rs.orig
 +++ codex-rs/app-server-daemon/src/lib.rs
-@@ -354,7 +354,7 @@ impl Daemon {
+@@ -355,7 +355,7 @@ impl Daemon {
              .as_path()
              .to_path_buf();
          let state_dir = codex_home.as_path().join(STATE_DIR_NAME);
@@ -10,7 +10,7 @@ Index: codex-rs/app-server-daemon/src/lib.rs
          // Old CLIs must not mistake a daemon-owned installation for their backend.
          let (pid_file, update_pid_file) =
              if managed_codex_bin.starts_with(codex_home.as_path().join("packages/standalone")) {
-@@ -1037,6 +1037,12 @@ impl Daemon {
+@@ -1040,6 +1040,12 @@ impl Daemon {
          ))
      }
  
