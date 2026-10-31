@@ -138,6 +138,7 @@ include/linphone++/chat_params.hh
 include/linphone++/chat_room.hh
 include/linphone++/chat_room_listener.hh
 include/linphone++/chat_room_params.hh
+include/linphone++/composing_participant.hh
 include/linphone++/conference.hh
 include/linphone++/conference_info.hh
 include/linphone++/conference_listener.hh
@@ -242,6 +243,7 @@ include/linphone/api/c-chat-params.h
 include/linphone/api/c-chat-room-cbs.h
 include/linphone/api/c-chat-room-params.h
 include/linphone/api/c-chat-room.h
+include/linphone/api/c-composing-participant.h
 include/linphone/api/c-conference-cbs.h
 include/linphone/api/c-conference-info.h
 include/linphone/api/c-conference-params.h
@@ -326,7 +328,6 @@ include/linphone/player.h
 include/linphone/presence.h
 include/linphone/proxy_config.h
 include/linphone/ringtoneplayer.h
-include/linphone/sipsetup.h
 include/linphone/tunnel.h
 include/linphone/types.h
 include/linphone/utils/
@@ -380,6 +381,7 @@ include/mediastreamer2/msjpegwriter.h
 include/mediastreamer2/msmediaplayer.h
 include/mediastreamer2/msmediarecorder.h
 include/mediastreamer2/msmire.h
+include/mediastreamer2/msnoisesuppressor.h
 include/mediastreamer2/msogl.h
 include/mediastreamer2/msogl_functions.h
 include/mediastreamer2/mspacketrouter.h
@@ -530,11 +532,6 @@ share/belr/grammars/sdp_grammar.belr
 share/belr/grammars/sip_grammar.belr
 share/belr/grammars/vcard3_grammar.belr
 share/belr/grammars/vcard_grammar.belr
-share/doc/ortp-5.4.0/
-share/doc/ortp-5.4.0/AUTHORS.md
-share/doc/ortp-5.4.0/CHANGELOG.md
-share/doc/ortp-5.4.0/LICENSE.txt
-share/doc/ortp-5.4.0/README.md
 share/images/
 share/images/nowebcamCIF.jpg
 share/linphone/

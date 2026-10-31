@@ -3,7 +3,7 @@ we wont build bundled dav1d/openh264, we dont need nasm dependency
 Index: external/linphone-sdk/CMakeLists.txt
 --- external/linphone-sdk/CMakeLists.txt.orig
 +++ external/linphone-sdk/CMakeLists.txt
-@@ -118,9 +118,6 @@ if(LINPHONESDK_BUILD_TYPE STREQUAL "Default" OR LINPHO
+@@ -116,9 +116,6 @@ if(LINPHONESDK_BUILD_TYPE STREQUAL "Default" OR LINPHO
  	endif()
  	# Need to activate ASM and ASM_NASM at the top level and in this order to workaround a bug of CMake
  	enable_language(ASM)

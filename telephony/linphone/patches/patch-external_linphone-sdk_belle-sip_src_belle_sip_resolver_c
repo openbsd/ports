@@ -1,7 +1,7 @@
 Index: external/linphone-sdk/belle-sip/src/belle_sip_resolver.c
 --- external/linphone-sdk/belle-sip/src/belle_sip_resolver.c.orig
 +++ external/linphone-sdk/belle-sip/src/belle_sip_resolver.c
-@@ -420,12 +420,14 @@ static struct dns_resolv_conf *resconf(belle_sip_simpl
+@@ -439,12 +439,14 @@ static struct dns_resolv_conf *resconf(belle_sip_simpl
  			return NULL;
  		}
  
@@ -16,7 +16,7 @@ Index: external/linphone-sdk/belle-sip/src/belle_sip_resolver.c
  	} else {
  		error = dns_resconf_loadpath(ctx->resconf, path);
  		if (error) {
-@@ -703,7 +705,9 @@ static void append_dns_result(belle_sip_simple_resolve
+@@ -756,7 +758,9 @@ static void append_dns_result(belle_sip_simple_resolve
  		belle_sip_error("append_dns_result(): getnameinfo() failed: %s", gai_strerror(gai_err));
  		return;
  	}
@@ -26,7 +26,7 @@ Index: external/linphone-sdk/belle-sip/src/belle_sip_resolver.c
  	*ai_list = ai_list_append(*ai_list, bctbx_ip_address_to_addrinfo(family, SOCK_STREAM, host, ctx->port));
  	belle_sip_message("%s resolved to %s", ctx->name, host);
  }
-@@ -1795,7 +1799,7 @@ belle_sip_resolver_context_t *belle_sip_stack_resolve(
+@@ -1860,7 +1864,7 @@ belle_sip_resolver_context_t *belle_sip_stack_resolve(
  		ctx->name = belle_sip_strdup(name);
  		ctx->port = port;
  		belle_sip_object_set_name((belle_sip_object_t *)ctx, ctx->name);
@@ -35,7 +35,7 @@ Index: external/linphone-sdk/belle-sip/src/belle_sip_resolver.c
  		ctx->family = family;
  		/* Take a ref for the entire duration of the DNS procedure, it will be released when it is finished */
  		belle_sip_object_ref(ctx);
-@@ -1840,7 +1844,7 @@ static belle_sip_resolver_context_t *belle_sip_stack_r
+@@ -1905,7 +1909,7 @@ static belle_sip_resolver_context_t *belle_sip_stack_r
  	belle_sip_object_set_name((belle_sip_object_t *)ctx, ctx->name);
  	/* Take a ref for the entire duration of the DNS procedure, it will be released when it is finished */
  	belle_sip_object_ref(ctx);
@@ -44,7 +44,7 @@ Index: external/linphone-sdk/belle-sip/src/belle_sip_resolver.c
  	ctx->family = family;
  #ifdef HAVE_DNS_SERVICE
  	ctx->dns_service_queue = stack->dns_service_queue;
-@@ -1949,7 +1953,7 @@ belle_sip_resolver_context_t *belle_sip_stack_resolve_
+@@ -2014,7 +2018,7 @@ belle_sip_resolver_context_t *belle_sip_stack_resolve_
  	if (res == NULL) {
  		switch (family) {
  			case AF_UNSPEC:
@@ -53,7 +53,7 @@ Index: external/linphone-sdk/belle-sip/src/belle_sip_resolver.c
  				BCTBX_NO_BREAK; /*intentionally no break*/
  			case AF_INET6:
  				return belle_sip_stack_resolve_dual(stack, name, port, cb, data);
-@@ -2077,7 +2081,7 @@ int belle_sip_get_src_addr_for(
+@@ -2142,7 +2146,7 @@ int belle_sip_get_src_addr_for(
  		/*this is actually required only for windows, who is unable to provide an ipv4 mapped local address if the
  		remote is ipv4 mapped, and unable to provide a correct local address if the remote address is true ipv6 address
  		when in dual stack mode*/

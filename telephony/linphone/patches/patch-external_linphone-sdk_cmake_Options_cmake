@@ -3,7 +3,7 @@ typo ? and we want to enable bcg729 without building the bundled version
 Index: external/linphone-sdk/cmake/Options.cmake
 --- external/linphone-sdk/cmake/Options.cmake.orig
 +++ external/linphone-sdk/cmake/Options.cmake
-@@ -223,9 +223,9 @@ endif()
+@@ -222,9 +222,9 @@ endif()
  set(ENABLE_JSONCPP ON CACHE BOOL "" FORCE)
  
  if(ENABLE_G729 OR ENABLE_G729B_CNG)

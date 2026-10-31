@@ -1,7 +1,7 @@
 Index: external/linphone-sdk/liblinphone/src/CMakeLists.txt
 --- external/linphone-sdk/liblinphone/src/CMakeLists.txt.orig
 +++ external/linphone-sdk/liblinphone/src/CMakeLists.txt
-@@ -50,10 +50,6 @@ if(LibXml2_FOUND)
+@@ -51,10 +51,6 @@ if(LibXml2_FOUND)
  	list(APPEND PUBLIC_LINK_LIBS ${LibXml2_TARGET})
  endif()
  

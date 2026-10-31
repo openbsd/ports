@@ -1,7 +1,7 @@
 Index: external/linphone-sdk/bctoolbox/include/bctoolbox/port.h
 --- external/linphone-sdk/bctoolbox/include/bctoolbox/port.h.orig
 +++ external/linphone-sdk/bctoolbox/include/bctoolbox/port.h
-@@ -906,7 +906,7 @@ BCTBX_PUBLIC void bctbx_set_stack_trace_hooks(bool_t u
+@@ -916,7 +916,7 @@ BCTBX_PUBLIC void bctbx_set_stack_trace_hooks(bool_t u
  #define IN6_IS_ADDR_MULTICAST(i) (((uint8_t *)(i))[0] == 0xff)
  #endif
  

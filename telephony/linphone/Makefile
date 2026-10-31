@@ -1,6 +1,6 @@
 COMMENT =	graphical audio and video SIP phone
 
-V =		6.1.2
+V =		6.2.4
 PKGNAME =	linphone-${V}
 
 CATEGORIES =	telephony
@@ -11,35 +11,21 @@ COMPILER =	base-clang ports-gcc
 
 # AGPLv3
 PERMIT_PACKAGE =	Yes
-SITES.gitlab = https://gitlab.linphone.org/BC/
 
-DIST_TUPLE +=	gitlab public linphone-desktop ${V} .
-DIST_TUPLE +=	gitlab public linphone-sdk b0e882e730a4304d1189028a60364e4e2c237e0b external/linphone-sdk
-DIST_TUPLE +=	gitlab public bctoolbox 7a73e1abfb3442998b4499fea83c5203bda9e00e external/linphone-sdk/bctoolbox
-DIST_TUPLE +=	gitlab public bcunit 6ca58a7ca673d23c2dd4ef2dd107743785d2b7f9 external/linphone-sdk/bcunit
-DIST_TUPLE +=	gitlab public belcard ddff0400c661985532f01cf48b61506304e25ec1 external/linphone-sdk/belcard
-DIST_TUPLE +=	gitlab public belle-sip c5136d33006ebc650732d690020ab9d41d0b7df5 external/linphone-sdk/belle-sip
-DIST_TUPLE +=	gitlab public belr d3bda47101ea0a1a4ef3fb9d083d1e45c03ad531 external/linphone-sdk/belr
-DIST_TUPLE +=	gitlab public bzrtp 640ec1a98911e20d6ddba1a45eb065761e35ef3e external/linphone-sdk/bzrtp
-DIST_TUPLE +=	gitlab public liblinphone b754a36a238340eb9d77e00903d90be5d810e023 external/linphone-sdk/liblinphone
-DIST_TUPLE +=	gitlab public lime a288b7ea80fc49c41949fd8ea2d263a6e1a65e07 external/linphone-sdk/lime #unused
-DIST_TUPLE +=	gitlab public mediastreamer2 93ea36734520cdd63f027f80ee664962387e6435 external/linphone-sdk/mediastreamer2
-DIST_TUPLE +=	gitlab public msopenh264 3bd09feb3ba63bfd2d34e73b1a925e2d14727cec external/linphone-sdk/msopenh264 #msopenh264.so plugin ?
-DIST_TUPLE +=	gitlab public ortp 298490d88d7e531631a69fde96b4856272feb378 external/linphone-sdk/ortp
-
-WRKDIST=	${WRKDIR}/linphone-desktop-${V}-f7bd541d327ec0cd003a855798dd44902b2da203
+DIST_TUPLE +=	github BelledonneCommunications linphone-desktop ${V} .
+DIST_TUPLE +=	github BelledonneCommunications linphone-sdk a6e277005e941b10e283c97cf50feab714acd89e external/linphone-sdk
 
 SHARED_LIBS +=	bctoolbox-tester          1.0 # 0.0
-SHARED_LIBS +=	bctoolbox                 2.0 # 0.0
+SHARED_LIBS +=	bctoolbox                 2.1 # 0.0
 SHARED_LIBS +=	bcunit                    0.0 # 0.0
 SHARED_LIBS +=	belcard                   1.0 # 0.0
-SHARED_LIBS +=	belle-sip                 1.0 # 0.0
+SHARED_LIBS +=	belle-sip                 1.1 # 0.0
 SHARED_LIBS +=	belr                      1.0 # 0.0
 SHARED_LIBS +=	bzrtp                     3.0 # 0.0
-SHARED_LIBS +=	linphone++                5.0 # 0.0
-SHARED_LIBS +=	linphone                  5.0 # 0.0
-SHARED_LIBS +=	mediastreamer2            1.0 # 11.0
-SHARED_LIBS +=	ortp                      4.0 # 0.0
+SHARED_LIBS +=	linphone++                6.0 # 0.0
+SHARED_LIBS +=	linphone                  6.0 # 0.0
+SHARED_LIBS +=	mediastreamer2            2.0 # 11.0
+SHARED_LIBS +=	ortp                      4.1 # 0.0
 
 MODULES +=	x11/qt6
 
@@ -72,8 +58,6 @@ WANTLIB += Qt6Svg Qt6Test Qt6Widgets X11 Xext Xfixes Xinerama
 WANTLIB += Xv ZXing aom bcg729 c dav1d gsm iconv jsoncpp lber ldap m
 WANTLIB += mbedcrypto mbedtls mbedx509 openh264 opus sndio speex speexdsp
 WANTLIB += sqlite3 srtp2 turbojpeg v4l2 v4lconvert vpx xerces-c xml2 z
-
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # -DENABLE_DOC=NO isnt enough to disable the doxygen dep,
 # libphone.hh generation needs doxygen intermediate files
@@ -123,6 +107,7 @@ CONFIGURE_ARGS += \
 		-DBUILD_DECAF=OFF \
 		-DBUILD_FFMPEG=OFF \
 		-DBUILD_GSM=OFF \
+		-DBUILD_HIDAPI=OFF \
 		-DBUILD_JSONCPP=OFF \
 		-DBUILD_LIBJPEGTURBO=OFF \
 		-DBUILD_LIBOQS=OFF \
@@ -136,6 +121,7 @@ CONFIGURE_ARGS += \
 		-DBUILD_OPENCORE_AMR=OFF \
 		-DBUILD_OPENLDAP=OFF \
 		-DBUILD_OPUS=OFF \
+		-DBUILD_RNNOISE=OFF \
 		-DBUILD_SOCI=OFF \
 		-DBUILD_SPEEX=OFF \
 		-DBUILD_SQLITE3=OFF \
@@ -145,7 +131,7 @@ CONFIGURE_ARGS += \
 		-DBUILD_ZXINGCPP=OFF
 
 post-patch:
-	echo "set(LINPHONESDK_VERSION \"5.4.104+1\")\nset(GIT_BRANCH_NAME \"release/6.1\")\nset(LINPHONEAPP_VERSION \"${V}\")" > ${WRKSRC}/Linphone/linphoneqt_version.cmake
+	echo "set(LINPHONESDK_VERSION \"5.5.36+1\")\nset(GIT_BRANCH_NAME \"release/6.2\")\nset(LINPHONEAPP_VERSION \"${V}\")" > ${WRKSRC}/Linphone/linphoneqt_version.cmake
 
 pre-configure:
 	rm -f ${WRKSRC}/external/linphone-sdk/mediastreamer2/cmake/FindBCG729.cmake

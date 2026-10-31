@@ -1,11 +1,10 @@
 Index: cmake/install/install.cmake
 --- cmake/install/install.cmake.orig
 +++ cmake/install/install.cmake
-@@ -25,24 +25,7 @@ cmake_minimum_required(VERSION 3.5)
- set(TARGET_NAME Linphone)
+@@ -26,24 +26,7 @@ set(TARGET_NAME Linphone)
  list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules")
  
--
+ 
 -if (GIT_EXECUTABLE AND NOT(LINPHONEAPP_VERSION))
 -	execute_process(
 -		COMMAND ${GIT_EXECUTABLE} describe --always
@@ -20,7 +19,8 @@ Index: cmake/install/install.cmake
 -endif()
 -
 -if (NOT(LINPHONEAPP_VERSION))
--  set(LINPHONEAPP_VERSION "6.1.1")
+-  message(WARNING "Failed to compute Linphone app version from Git!")
+-  set(LINPHONEAPP_VERSION "6.2.1")
 -endif ()
 -
 +include(${CMAKE_SOURCE_DIR}/Linphone/linphoneqt_version.cmake)

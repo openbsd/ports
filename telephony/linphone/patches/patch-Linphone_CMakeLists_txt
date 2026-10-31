@@ -2,7 +2,7 @@ originally inspired from https://sources.debian.org/patches/linphone-desktop/4.2
 Index: Linphone/CMakeLists.txt
 --- Linphone/CMakeLists.txt.orig
 +++ Linphone/CMakeLists.txt
-@@ -51,9 +51,11 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D
+@@ -72,9 +72,11 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D
  set(CMAKE_INCLUDE_CURRENT_DIR ON)#useful for config.h
  
  
@@ -17,7 +17,7 @@ Index: Linphone/CMakeLists.txt
  
  set(LINPHONE_MAJOR_VERSION)
  set(LINPHONE_MINOR_VERSION)
-@@ -62,22 +64,6 @@ set(LINPHONE_BRANCH_VERSION)
+@@ -83,22 +85,6 @@ set(LINPHONE_BRANCH_VERSION)
  bc_parse_full_version(${LINPHONEAPP_VERSION} LINPHONE_MAJOR_VERSION LINPHONE_MINOR_VERSION LINPHONE_MICRO_VERSION LINPHONE_BRANCH_VERSION)
  
  set(LINPHONEAPP_SHORT_VERSION "${LINPHONE_MAJOR_VERSION}.${LINPHONE_MINOR_VERSION}.${LINPHONE_MICRO_VERSION}")
@@ -40,10 +40,3 @@ Index: Linphone/CMakeLists.txt
  
  include(application_info.cmake)
  string(TIMESTAMP CURRENT_YEAR "%Y")
-@@ -237,4 +223,4 @@ if (WIN32)
- 			install(FILES "$<TARGET_PDB_FILE:${T}>" DESTINATION ${CMAKE_INSTALL_BINDIR})
- 		endforeach ()
- 	endif()
--endif()
-\ No newline at end of file
-+endif()

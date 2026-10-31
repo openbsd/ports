@@ -33,7 +33,7 @@ Index: external/linphone-sdk/bctoolbox/src/utils/port.c
  
  /*
   * SHAME !!! bionic's getaddrinfo does not implement the AI_V4MAPPED flag !
-@@ -1639,7 +1642,7 @@ void bctbx_sockaddr_remove_nat64_mapping(const struct 
+@@ -1639,7 +1642,7 @@ bool_t bctbx_sockaddr_is_nat64(const struct sockaddr *
  		if (htonl(0x0064ff9b) ==
  #ifdef _MSC_VER
  		    ((in6->sin6_addr.u.Word[0] << 16) & in6->sin6_addr.u.Word[1])
