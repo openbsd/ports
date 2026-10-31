@@ -20,7 +20,9 @@ share/lwjgl3/lwjgl-bgfx.jar
 share/lwjgl3/lwjgl-cuda.jar
 share/lwjgl3/lwjgl-egl.jar
 share/lwjgl3/lwjgl-fmod.jar
+share/lwjgl3/lwjgl-freetype-natives-openbsd.jar
 share/lwjgl3/lwjgl-freetype.jar
+share/lwjgl3/lwjgl-glfw-natives-openbsd.jar
 share/lwjgl3/lwjgl-glfw.jar
 share/lwjgl3/lwjgl-harfbuzz.jar
 share/lwjgl3/lwjgl-hwloc.jar
