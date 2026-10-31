@@ -1,4 +1,4 @@
-V =	3.6.4
+V =	3.7.0
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
@@ -20,7 +20,7 @@ WANTLIB += Lerc aom arrow arrow_acero arrow_compute arrow_dataset avif dav1d par
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_container-mt boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_serialization-mt
 WANTLIB += boost_thread-mt boost_timer-mt boost_unit_test_framework-mt
-WANTLIB += icudata icui18n icuuc muparser
+WANTLIB += icudata icui18n icuuc muparser glib-2.0 graphite2 harfbuzz harfbuzz-subset
 
 WANTLIB += SFCGAL gmp gmpxx mpfr aec sz
 
@@ -55,11 +55,6 @@ CONFIGURE_ARGS=	--with-xsldir=${PREFIX}/share/xsl/docbook/ \
 		--libdir=${PREFIX}/lib/postgresql
 
 SUBST_VARS +=	V
-
-# ImageMagick fails policy checks with the convert command used in build.
-# https://trac.osgeo.org/postgis/ticket/5593
-pre-build:
-	ln -s ${LOCALBASE}/bin/gm ${WRKDIR}/bin/convert
 
 post-install:
 	cd ${WRKSRC}/doc && WRKINST=${WRKINST} ${MAKE_PROGRAM} docs-install man-install
