@@ -1,5 +1,4 @@
-Avoid attempting to set TCP_NODELAY on AF_UNIX sockets.
-XXX upstream
+https://gitlab.gnome.org/GNOME/glib/-/merge_requests/5453
 
 Index: gio/gsocket.c
 --- gio/gsocket.c.orig

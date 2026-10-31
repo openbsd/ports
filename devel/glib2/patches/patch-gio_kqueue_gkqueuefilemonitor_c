@@ -1,4 +1,4 @@
-https://gitlab.gnome.org/GNOME/glib/-/work_items/4050
+https://gitlab.gnome.org/GNOME/glib/-/merge_requests/5452
 
 Index: gio/kqueue/gkqueuefilemonitor.c
 --- gio/kqueue/gkqueuefilemonitor.c.orig

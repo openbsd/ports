@@ -1,3 +1,5 @@
+https://gitlab.gnome.org/GNOME/glib/-/merge_requests/5455
+
 Index: glib/glib-unix.c
 --- glib/glib-unix.c.orig
 +++ glib/glib-unix.c

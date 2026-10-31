@@ -1,3 +1,5 @@
+https://gitlab.gnome.org/GNOME/glib/-/merge_requests/5454
+
 Index: gio/tests/iptosmessage.c
 --- gio/tests/iptosmessage.c.orig
 +++ gio/tests/iptosmessage.c
