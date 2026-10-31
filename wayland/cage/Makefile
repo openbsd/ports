@@ -1,6 +1,6 @@
 COMMENT =	Wayland kiosk
 
-V =		0.3.0
+V =		0.3.1
 DISTNAME =	cage-${V}
 CATEGORIES =	wayland
 HOMEPAGE =	https://www.hjdskes.nl/projects/cage/
