@@ -1,10 +1,11 @@
 COMMENT=	universal utility for programming FPGAs
 CATEGORIES=	comms
+V=		1.2.0
+DISTNAME=	openfpgaloader-${V}
 
 GH_ACCOUNT=	trabucayre
 GH_PROJECT=	openFPGALoader
-GH_COMMIT=	c8452092f9a31b1bfe8f2e09beadf2d0cc51e3f2
-DISTNAME=	openfpgaloader-1.1.1pl20260714
+GH_TAGNAME=	v${V}
 
 HOMEPAGE=	https://github.com/trabucayre/openFPGALoader
 MAINTAINER=	Thomas Dettbarn <dettus@dettus.net>
