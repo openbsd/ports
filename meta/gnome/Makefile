@@ -8,8 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		9
-REVISION-extras=	0
+REVISION-main=		10
+REVISION-extras=	1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -76,7 +76,6 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/session \
 			x11/gnome/settings-daemon \
 			x11/gnome/shell \
-			x11/gnome/shell-extensions \
 			x11/gnome/sushi \
 			x11/gnome/tecla  \
 			x11/gnome/tour \
@@ -158,6 +157,7 @@ RUN_DEPENDS-extras +=	mail/evolution \
 			x11/gnome/notes \
 			x11/gnome/polari \
 			x11/gnome/seahorse \
+			x11/gnome/shell-extensions \
 			x11/gnome/tweaks
 
 # depends on -main
