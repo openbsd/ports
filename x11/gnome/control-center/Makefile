@@ -5,7 +5,7 @@ COMMENT=		GNOME settings
 GNOME_PROJECT=		gnome-control-center
 # !!! sync MAJOR_VERSION (from meson.build) with meta/gnome "V" variable
 GNOME_VERSION=		49.9
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -60,6 +60,10 @@ RUN_DEPENDS +=		x11/gnome/color-manager
 # needed for gnome-printers-panel
 RUN_DEPENDS +=		print/cups-pk-helper \
 			print/system-config-printer
+
+# panels/sound/cc-output-test-wheel.c:
+# gsound_context_set_driver (self->context, "pulse", NULL);
+RUN_DEPENDS +=		audio/libcanberra,-pulse
 
 # panels/keyboard/cc-input-list-box.c
 BUILD_DEPENDS +=	x11/gnome/tecla
