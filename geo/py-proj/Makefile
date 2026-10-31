@@ -1,6 +1,6 @@
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
-MODPY_DISTV =		3.7.2
+MODPY_DISTV =		3.8.0
 DISTNAME =		pyproj-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/:S/.post/pl/}
 
