@@ -820,6 +820,7 @@ share/squid/errors/fr-ch
 share/squid/errors/fr-fr
 share/squid/errors/fr-lu
 share/squid/errors/fr-mc
+share/squid/errors/fr-re
 share/squid/errors/fr/ERR_ACCESS_DENIED
 share/squid/errors/fr/ERR_ACL_TIME_QUOTA_EXCEEDED
 share/squid/errors/fr/ERR_AGENT_CONFIGURE
