@@ -1,0 +1,14 @@
+Pipewire is the default pulseaudio server.
+
+Index: src/pulse/client.conf.in
+--- src/pulse/client.conf.in.orig
++++ src/pulse/client.conf.in
+@@ -22,7 +22,7 @@
+ ; default-server =
+ ; default-dbus-server =
+ 
+-; autospawn = yes
++autospawn = no
+ ; daemon-binary = @PA_BINARY@
+ ; extra-arguments = --log-target=syslog
+ 

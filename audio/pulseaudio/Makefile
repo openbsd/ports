@@ -1,11 +1,9 @@
-PORTROACH=		skipv:16.99.1
-
-COMMENT=		cross-platform networked sound server
+COMMENT=		PulseAudio client libraries and utilities
 
 VERSION=		17.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS += pulse                     7.2 # 0.24.3
 SHARED_LIBS += pulse-simple              1.2 # 0.1.1
@@ -22,15 +20,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 X11-xcb Xtst c crypto dbus-1 execinfo gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gstapp-1.0 gstbase-1.0 gstreamer-1.0
-WANTLIB += iconv intl ltdl m pthread sndfile sndio speexdsp tdb
+WANTLIB += c dbus-1 execinfo glib-2.0 iconv intl m pthread sndfile
 WANTLIB += xcb
 
 SITES=			https://freedesktop.org/software/pulseaudio/releases/
 
-MODULES=		devel/meson \
-			devel/dconf
+MODULES=		devel/meson
 
 # C++11; no associated WANTLIB: only checked by configure but never used
 COMPILER=		base-clang ports-gcc
@@ -47,24 +42,15 @@ TEST_FLAGS=		HOME=${WRKDIST}
 
 # speex is a requirement for echo canceller (needs at least one)
 LIB_DEPENDS=		audio/libsndfile \
-			audio/speexdsp \
-			databases/tdb \
 			devel/glib2 \
-			devel/libtool,-ltdl \
-			multimedia/gstreamer1/plugins-base \
 			x11/dbus
-
-# module-console-kit.so
-RUN_DEPENDS +=		sysutils/consolekit
 
 # ERROR: C shared or static library 'intl' not found
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-# We only enable the strict minimum for basic volume control support.
-# sndiod(1) is the default sound server on OpenBSD and pulseaudio is only
-# needed for a couple of use cases (volume control, media-keys)
-CONFIGURE_ARGS=		-Ddoxygen=false \
+CONFIGURE_ARGS=		-Ddaemon=false \
+			-Ddoxygen=false \
 			-Dtests=false \
 			-Dsystem_user=_pulse \
 			-Dsystem_group=_pulse \
@@ -100,9 +86,6 @@ CONFIGURE_ARGS +=	-Dstream-restore-clear-old-devices=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-post-extract:
-	cp ${FILESDIR}/module-sndio*.{c,h} ${WRKSRC}/src/modules/
-
 .include <bsd.port.arch.mk>
 pre-configure:
 	sed -i 's,/bin/bash,/usr/bin/env bash,' \
@@ -114,7 +97,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pulseaudio
-	mv ${WRKINST}${SYSCONFDIR}/{pulse,xdg} ${PREFIX}/share/examples/pulseaudio
+	mv ${WRKINST}${SYSCONFDIR}/pulse ${PREFIX}/share/examples/pulseaudio
 # remove this linux-centric bash script
 	rm ${PREFIX}/bin/pa-info
 
