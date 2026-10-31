@@ -28,7 +28,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 SITES=		http://download.osgeo.org/postgis/source/
 
-MODULES =	databases/postgresql
+MODULES =	databases/postgresql \
+		lang/python
 
 LIB_DEPENDS=	databases/sqlite3 \
 		geo/gdal \
