@@ -9,7 +9,7 @@ COMMENT=		GNOME session
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		49.alpha.1
 PKGNAME=		${DISTNAME:S/.//g}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 

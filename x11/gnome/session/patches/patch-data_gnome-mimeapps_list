@@ -1,27 +1,35 @@
-From c8a6643201ab765397fc20aca232d7e83acd4d1b Mon Sep 17 00:00:00 2001
+Update to this commit:
+From d3c610c1799cf23e36bad2e2860372edaaaa2e44 Mon Sep 17 00:00:00 2001
 From: gnome-build-meta-bot <sysadmin@gnome.org>
-Date: Mon, 4 Aug 2025 10:06:58 +0000
-Subject: [PATCH] Update mimeapps.list
-
-From 20bfc774414fb37f52eb0b3aaacc4c2128711c44 Mon Sep 17 00:00:00 2001
-From: gnome-build-meta-bot <sysadmin@gnome.org>
-Date: Tue, 23 Sep 2025 14:54:45 +0000
+Date: Sun, 20 Sep 2026 21:20:46 +0000
 Subject: [PATCH] Update mimeapps.list
 
 Index: data/gnome-mimeapps.list
 --- data/gnome-mimeapps.list.orig
 +++ data/gnome-mimeapps.list
-@@ -11,8 +11,7 @@ application/gzip=org.gnome.Nautilus.desktop
+@@ -11,20 +11,7 @@ application/gzip=org.gnome.Nautilus.desktop
  application/illustrator=org.gnome.Papers.desktop
  application/javascript=org.gnome.Builder.desktop
  application/json=org.gnome.Builder.desktop
 -application/oxps=org.gnome.Evince.desktop
 -application/pdf=org.gnome.Papers.desktop;org.gnome.Evince.desktop
+-application/pkcs10=gcr-viewer.desktop
+-application/pkcs10+pem=gcr-viewer.desktop
+-application/pkcs12=gcr-viewer.desktop
+-application/pkcs12+pem=gcr-viewer.desktop
+-application/pkcs7-mime=gcr-viewer.desktop
+-application/pkcs7-mime+pem=gcr-viewer.desktop
+-application/pkcs8=gcr-viewer.desktop
+-application/pkcs8+pem=gcr-viewer.desktop
+-application/pkix-cert=gcr-viewer.desktop
+-application/pkix-cert+pem=gcr-viewer.desktop
+-application/pkix-crl=gcr-viewer.desktop
+-application/pkix-crl+pem=gcr-viewer.desktop
 +application/pdf=org.gnome.Papers.desktop
- application/pkcs10=gcr-viewer.desktop
- application/pkcs10+pem=gcr-viewer.desktop
- application/pkcs12=gcr-viewer.desktop
-@@ -32,7 +31,6 @@ application/vnd.geo+json=org.gnome.Maps.desktop
+ application/vnd.flatpak=gnome-software-local-file-flatpak.desktop
+ application/vnd.flatpak.ref=gnome-software-local-file-flatpak.desktop
+ application/vnd.flatpak.repo=gnome-software-local-file-flatpak.desktop
+@@ -32,7 +19,6 @@ application/vnd.geo+json=org.gnome.Maps.desktop
  application/vnd.google-earth.kml+xml=org.gnome.Maps.desktop
  application/vnd.iccprofile=gcm-import.desktop
  application/vnd.ms-cab-compressed=gnome-software-local-file-fwupd.desktop
@@ -29,13 +37,14 @@ Index: data/gnome-mimeapps.list
  application/vnd.rar=org.gnome.Nautilus.desktop
  application/vnd.snap=gnome-software-local-file-snap.desktop
  application/x-7z-compressed=org.gnome.Nautilus.desktop
-@@ -40,20 +38,20 @@ application/x-7z-compressed-tar=org.gnome.Nautilus.des
+@@ -40,20 +26,21 @@ application/x-7z-compressed-tar=org.gnome.Nautilus.des
  application/x-bzip=org.gnome.Nautilus.desktop
  application/x-bzip-compressed-tar=org.gnome.Nautilus.desktop
  application/x-bzip2-compressed-tar=org.gnome.Nautilus.desktop
 -application/x-bzpdf=org.gnome.Papers.desktop;org.gnome.Evince.desktop
+-application/x-cd-image=gnome-disk-image-mounter.desktop;org.gnome.Boxes.desktop
 +application/x-bzpdf=org.gnome.Papers.desktop
- application/x-cd-image=gnome-disk-image-mounter.desktop;org.gnome.Boxes.desktop
++application/x-cd-image=gnome-disk-image-mounter.desktop
  application/x-compress=org.gnome.Nautilus.desktop
  application/x-compressed-tar=org.gnome.Nautilus.desktop
  application/x-cpio=org.gnome.Nautilus.desktop
@@ -46,6 +55,7 @@ Index: data/gnome-mimeapps.list
  application/x-font-pcf=org.gnome.font-viewer.desktop
  application/x-font-ttf=org.gnome.font-viewer.desktop
  application/x-font-type1=org.gnome.font-viewer.desktop
++application/x-freedesktop-appstream-component=gnome-software-local-file-metainfo.desktop
  application/x-gnome-app-info=org.gnome.Builder.desktop
  application/x-gzip=org.gnome.Nautilus.desktop
 -application/x-gzpdf=org.gnome.Papers.desktop;org.gnome.Evince.desktop
@@ -53,7 +63,33 @@ Index: data/gnome-mimeapps.list
  application/x-javascript=org.gnome.Builder.desktop
  application/x-lha=org.gnome.Nautilus.desktop
  application/x-lzip=org.gnome.Nautilus.desktop
-@@ -86,7 +84,7 @@ application/x-xar=org.gnome.Nautilus.desktop
+@@ -62,31 +49,23 @@ application/x-lzma=org.gnome.Nautilus.desktop
+ application/x-lzma-compressed-tar=org.gnome.Nautilus.desktop
+ application/x-m4=org.gnome.Builder.desktop
+ application/x-mimearchive=org.gnome.Epiphany.desktop
+-application/x-pem-file=gcr-viewer.desktop
+-application/x-pem-key=gcr-viewer.desktop
+ application/x-perl=org.gnome.Builder.desktop
+ application/x-php=org.gnome.Builder.desktop
+ application/x-php-source=org.gnome.Builder.desktop
+-application/x-pkcs12=gcr-viewer.desktop
+-application/x-pkcs7-certificates=gcr-viewer.desktop
+ application/x-python=org.gnome.Builder.desktop
+-application/x-raw-disk-image=gnome-disk-image-mounter.desktop
+-application/x-raw-disk-image-xz-compressed=gnome-disk-image-mounter.desktop
++application/x-raw-disk-image=gnome-disk-image-writer.desktop;gnome-disk-image-mounter.desktop
++application/x-raw-disk-image-xz-compressed=gnome-disk-image-writer.desktop;gnome-disk-image-mounter.desktop
+ application/x-ruby=org.gnome.Builder.desktop
+ application/x-shellscript=org.gnome.Builder.desktop
+-application/x-spkac=gcr-viewer.desktop
+-application/x-spkac+base64=gcr-viewer.desktop
+ application/x-sysprof-capture=org.gnome.Sysprof.desktop
+ application/x-tar=org.gnome.Nautilus.desktop
+ application/x-tarz=org.gnome.Nautilus.desktop
+ application/x-vnc=org.gnome.Connections.desktop
+-application/x-x509-ca-cert=gcr-viewer.desktop
+-application/x-x509-user-cert=gcr-viewer.desktop
+ application/x-xar=org.gnome.Nautilus.desktop
  application/x-xpinstall=org.gnome.Epiphany.desktop
  application/x-xz=org.gnome.Nautilus.desktop
  application/x-xz-compressed-tar=org.gnome.Nautilus.desktop
@@ -62,26 +98,48 @@ Index: data/gnome-mimeapps.list
  application/x-yaml=org.gnome.Builder.desktop
  application/x-zerosize=org.gnome.TextEditor.desktop
  application/x-zstd-compressed-tar=org.gnome.Nautilus.desktop
-@@ -127,15 +125,16 @@ image/jpeg=org.gnome.Loupe.desktop
+@@ -116,32 +95,37 @@ audio/x-speex=org.gnome.Decibels.desktop
+ audio/x-vorbis=org.gnome.Decibels.desktop
+ audio/x-vorbis+ogg=org.gnome.Decibels.desktop
+ audio/x-wavpack=org.gnome.Decibels.desktop
++font/collection=org.gnome.font-viewer.desktop
+ font/otf=org.gnome.font-viewer.desktop
+ font/ttf=org.gnome.font-viewer.desktop
+ font/woff=org.gnome.font-viewer.desktop
++image/apng=org.gnome.Loupe.desktop
+ image/avif=org.gnome.Loupe.desktop
+ image/bmp=org.gnome.Loupe.desktop
+ image/gif=org.gnome.Loupe.desktop
+ image/heic=org.gnome.Loupe.desktop
++image/jp2=org.gnome.Loupe.desktop
+ image/jpeg=org.gnome.Loupe.desktop
  image/jxl=org.gnome.Loupe.desktop
  image/png=org.gnome.Loupe.desktop
  image/qoi=org.gnome.Loupe.desktop
--image/svg+xml=org.gnome.Loupe.desktop
-+image/svg+xml=org.gnome.Loupe.desktop;org.gtk.Shaper.desktop
+ image/svg+xml=org.gnome.Loupe.desktop
  image/svg+xml-compressed=org.gnome.Loupe.desktop
 -image/tiff=org.gnome.Loupe.desktop;org.gnome.Papers.desktop;org.gnome.Evince.desktop
+-image/vnd-ms.dds=org.gnome.Loupe.desktop
 +image/tiff=org.gnome.Loupe.desktop;org.gnome.Papers.desktop
- image/vnd-ms.dds=org.gnome.Loupe.desktop
  image/vnd.microsoft.icon=org.gnome.Loupe.desktop
- image/vnd.radiance=org.gnome.Loupe.desktop
+-image/vnd.radiance=org.gnome.Loupe.desktop
  image/webp=org.gnome.Loupe.desktop
  image/x-dds=org.gnome.Loupe.desktop
  image/x-exr=org.gnome.Loupe.desktop
-+image/x-gtk-path-animation=org.gtk.Shaper.desktop
++image/x-jp2-codestream=org.gnome.Loupe.desktop
  image/x-portable-anymap=org.gnome.Loupe.desktop
  image/x-portable-bitmap=org.gnome.Loupe.desktop
  image/x-portable-graymap=org.gnome.Loupe.desktop
-@@ -225,13 +224,13 @@ x-scheme-handler/com.googleusercontent.apps.5904022909
+ image/x-portable-pixmap=org.gnome.Loupe.desktop
+ image/x-qoi=org.gnome.Loupe.desktop
+ image/x-tga=org.gnome.Loupe.desktop
++image/x-win-bitmap=org.gnome.Loupe.desktop
++image/x-xbitmap=org.gnome.Loupe.desktop
++image/x-xpixmap=org.gnome.Loupe.desktop
+ inode/directory=org.gnome.Nautilus.desktop
+ message/rfc822=org.gnome.Epiphany.desktop
+ multipart/related=org.gnome.Epiphany.desktop
+@@ -225,13 +209,13 @@ x-scheme-handler/com.googleusercontent.apps.5904022909
  x-scheme-handler/eds-oauth2=org.gnome.evolution-data-server.OAuth2-handler.desktop
  x-scheme-handler/flatpak+https=org.gnome.Software.desktop
  x-scheme-handler/geo=org.gnome.Maps.desktop
@@ -99,12 +157,13 @@ Index: data/gnome-mimeapps.list
  x-scheme-handler/maps=org.gnome.Maps.desktop
  x-scheme-handler/sip=org.gnome.Calls.desktop
  x-scheme-handler/sips=org.gnome.Calls.desktop
-@@ -239,6 +238,7 @@ x-scheme-handler/snap=org.gnome.Software.desktop
+@@ -239,6 +223,8 @@ x-scheme-handler/snap=org.gnome.Software.desktop
  x-scheme-handler/tel=org.gnome.Calls.desktop
  
  # Tracking data to catch stale overrides:
 -#OVERRIDE image/tiff WAS org.gnome.Evince.desktop org.gnome.Loupe.desktop org.gnome.Papers.desktop
++#OVERRIDE application/x-raw-disk-image WAS gnome-disk-image-mounter.desktop
++#OVERRIDE application/x-raw-disk-image-xz-compressed WAS gnome-disk-image-mounter.desktop
 +#OVERRIDE image/tiff WAS org.gnome.Loupe.desktop org.gnome.Papers.desktop
  #OVERRIDE inode/directory WAS org.gnome.Nautilus.desktop org.gnome.baobab.desktop
  #OVERRIDE text/html WAS org.gnome.Builder.desktop org.gnome.Epiphany.desktop
-+
