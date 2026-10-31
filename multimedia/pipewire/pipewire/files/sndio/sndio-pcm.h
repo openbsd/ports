@@ -131,6 +131,15 @@ struct sndio_state {
 
 	uint64_t bytes_xfer;		/* bytes written/read so far */
 	uint64_t hw_position;		/* device position, from sio_onmove() */
+	uint64_t rate_base_nsec;	/* device rate measurement window */
+	uint64_t rate_base_pos;
+	double rate_ratio;		/* measured device/system clock ratio */
+	bool rate_locked;		/* anchor set after the start burst */
+	uint64_t bw_base_nsec;		/* rate debug log pacing */
+	struct spa_io_rate_match *rate_match;
+	struct spa_audio_info stored_fmt;	/* for transparent reopen */
+	char reopen_dev[64];		/* sndiod-pinned name for reopens */
+	uint32_t reopen_countdown;	/* cycles until next reopen attempt */
 	uint64_t hw_pos_nsec;		/* monotonic time of the last onmove */
 	/* partial frame remainder between reads */
 	uint8_t carry[64];
@@ -163,6 +172,10 @@ int spa_sndio_stop(struct sndio_state *state);
 /* only valid from the data loop */
 int spa_sndio_service(struct sndio_state *state);
 uint32_t spa_sndio_playing(struct sndio_state *state);
+double spa_sndio_update_rate(struct sndio_state *state, uint32_t duration,
+		uint32_t rate, uint32_t delay);
+int spa_sndio_check_reopen(struct sndio_state *state, uint32_t duration,
+		uint32_t rate);
 
 #ifdef __cplusplus
 } /* extern "C" */

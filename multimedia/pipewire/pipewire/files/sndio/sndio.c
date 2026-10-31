@@ -4,6 +4,7 @@
 
 #include <errno.h>
 #include <string.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -190,9 +191,15 @@ int spa_sndio_service(struct sndio_state *state)
 		return -errno;
 	revents = sio_revents(state->hdl, pfd);
 	if (revents & POLLHUP || sio_eof(state->hdl)) {
-		spa_log_error(state->log, "%p: sndio device hangup", state);
-		state->eof = true;
-		return -EPIPE;
+		if (!state->eof) {
+			spa_log_warn(state->log, "%p: sndio connection lost, "
+					"pausing until it returns", state);
+			state->eof = true;
+			state->reopen_countdown = 0;
+		}
+		/* not fatal: the node keeps running and the stream
+		 * resumes when the connection can be reopened */
+		return 0;
 	}
 	return 0;
 }
@@ -216,11 +223,17 @@ static int spa_sndio_open(struct sndio_state *state, struct spa_audio_info *fmt)
 
 	device = state->props.device[0] != '\0' ?
 			state->props.device : SIO_DEVANY;
+	if (state->reopen_dev[0] != '\0')
+		device = state->reopen_dev;
 	mode = state->direction == SPA_DIRECTION_INPUT ? SIO_PLAY : SIO_REC;
 
 	if ((state->hdl = sio_open(device, mode, 1)) == NULL) {
-		spa_log_warn(state->log, "%p: failed to open '%s'",
-				state, device);
+		if (state->reopen_dev[0] != '\0')
+			spa_log_debug(state->log, "%p: reopen of '%s' failed, "
+					"will retry", state, device);
+		else
+			spa_log_warn(state->log, "%p: failed to open '%s'",
+					state, device);
 		return -EIO;
 	}
 
@@ -281,7 +294,7 @@ static int spa_sndio_open(struct sndio_state *state, struct spa_audio_info *fmt)
 	}
 
 #ifdef SO_NOSIGPIPE
-	/* a sio_write()/sio_setvol() after sndiod closed the connection
+	/* a sio_write() after sndiod closed the connection
 	 * (e.g. sndiod restart) must fail with EPIPE instead of raising
 	 * SIGPIPE, which would kill the whole process */
 	{
@@ -320,9 +333,11 @@ int spa_sndio_set_format(struct sndio_state *state, struct spa_audio_info *fmt)
 {
 	int res;
 
+	state->reopen_dev[0] = '\0';
 	spa_sndio_close(state);
 	if ((res = spa_sndio_open(state, fmt)) < 0)
 		return res;
+	state->stored_fmt = *fmt;
 
 	state->latency[state->direction] = SPA_LATENCY_INFO(
 			state->direction,
@@ -367,8 +382,135 @@ int spa_sndio_stop(struct sndio_state *state)
 	state->hw_position = 0;
 	state->hw_pos_nsec = 0;
 	state->carry_len = 0;
+	state->rate_base_nsec = 0;
+	state->rate_locked = false;
 	state->ring_head = state->ring_tail = state->ring_fill = 0;
 	return 0;
+}
+
+/*
+ * Measure the device clock against the system clock.  Every onmove
+ * update timestamps the device position, so the ratio between the
+ * frames the device reports and the frames the elapsed system time
+ * predicts is a direct measurement of the device rate.  A windowed
+ * estimate smoothed by an EMA is reported in rate_diff and used to
+ * pace the graph timer (driver) or the adaptive resampler
+ * (follower).  Unlike ALSA there is no feedback loop here: sndiod's
+ * flow control already slaves the stream to the device, so the
+ * remaining job is measurement, not control.
+ */
+double spa_sndio_update_rate(struct sndio_state *state, uint32_t duration,
+		uint32_t rate, uint32_t delay)
+{
+	double inst;
+	uint64_t dpos, dns;
+
+	if (!state->active || state->eof || state->hw_pos_nsec == 0 ||
+	    state->par.rate == 0)
+		return state->rate_ratio != 0.0 ? state->rate_ratio : 1.0;
+
+	if (state->rate_base_nsec == 0) {
+		state->rate_base_nsec = state->hw_pos_nsec;
+		state->rate_base_pos = state->hw_position;
+		if (state->rate_ratio == 0.0)
+			state->rate_ratio = 1.0;
+		return state->rate_ratio;
+	}
+
+	dns = state->hw_pos_nsec - state->rate_base_nsec;
+	if (!state->rate_locked) {
+		/* the start burst delivers position updates with
+		 * compressed timestamps; anchor after it settles */
+		if (dns < 2 * SPA_NSEC_PER_SEC)
+			return state->rate_ratio;
+		state->rate_base_nsec = state->hw_pos_nsec;
+		state->rate_base_pos = state->hw_position;
+		state->rate_locked = true;
+		return state->rate_ratio;
+	}
+	if (dns < SPA_NSEC_PER_SEC)
+		return state->rate_ratio;
+
+	/* cumulative since the anchor: onmove batching jitter is
+	 * bounded, so its contribution decays as the window grows */
+	dpos = state->hw_position - state->rate_base_pos;
+	inst = (double)dpos * SPA_NSEC_PER_SEC / ((double)dns * state->par.rate);
+
+	if (inst < 0.99 || inst > 1.01) {
+		/* discontinuity (e.g. server xrun): re-anchor */
+		state->rate_base_nsec = state->hw_pos_nsec;
+		state->rate_base_pos = state->hw_position;
+		return state->rate_ratio;
+	}
+	state->rate_ratio += (inst - state->rate_ratio) * 0.25;
+	state->rate_ratio = SPA_CLAMPD(state->rate_ratio, 0.995, 1.005);
+
+	if (state->hw_pos_nsec - state->bw_base_nsec > 3 * SPA_NSEC_PER_SEC) {
+		state->bw_base_nsec = state->hw_pos_nsec;
+		spa_log_debug(state->log, "%p: rate ratio:%f inst:%f delay:%u",
+				state, state->rate_ratio, inst, delay);
+	}
+	return state->rate_ratio;
+}
+
+/*
+ * Transparent reopen: when sndiod went away mid-stream, keep the
+ * graph running (the timer paces it) and try to come back about once
+ * a second; on success the stream resumes with a gap instead of
+ * erroring out.
+ */
+int spa_sndio_check_reopen(struct sndio_state *state, uint32_t duration,
+		uint32_t rate)
+{
+	uint64_t cycles_per_sec;
+	int res;
+
+	if (!state->opened || !state->eof)
+		return 0;
+
+	cycles_per_sec = duration != 0 ? SPA_MAX(1u, rate / duration) : 100;
+	if (state->reopen_countdown > 0) {
+		state->reopen_countdown--;
+		return 0;
+	}
+	state->reopen_countdown = cycles_per_sec;
+
+	if (state->hdl != NULL)
+		sio_close(state->hdl);
+	state->hdl = NULL;
+	state->opened = false;
+	state->eof = false;
+	state->active = false;
+	state->bytes_xfer = 0;
+	state->carry_len = 0;
+	state->ring_head = state->ring_tail = state->ring_fill = 0;
+
+	/* reopening "default" while sndiod is away would grab the raw
+	 * hardware and keep sndiod from reclaiming it when it returns;
+	 * insist on the sndiod-backed name instead */
+	if (state->props.device[0] == '\0' ||
+	    spa_streq(state->props.device, "default"))
+		spa_scnprintf(state->reopen_dev, sizeof(state->reopen_dev),
+				"snd/0");
+	else
+		spa_scnprintf(state->reopen_dev, sizeof(state->reopen_dev),
+				"%s", state->props.device);
+
+	if ((res = spa_sndio_open(state, &state->stored_fmt)) < 0) {
+		/* still away; stay in the gap */
+		state->eof = true;
+		state->opened = true;
+		return res;
+	}
+	if ((res = spa_sndio_start(state)) < 0) {
+		state->eof = true;
+		return res;
+	}
+	state->rate_base_nsec = 0;
+	state->rate_locked = false;
+	spa_log_info(state->log, "%p: sndio device reopened, stream resumed",
+			state);
+	return 1;
 }
 
 int spa_sndio_init(struct sndio_state *state, const struct spa_dict *info,

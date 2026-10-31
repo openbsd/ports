@@ -68,12 +68,24 @@ static int read_frames(struct sndio_state *this, uint64_t nsec, uint32_t duratio
 	}
 
 	while (size < avail) {
+		if (SPA_UNLIKELY(this->eof)) {
+			/* sndiod is away: capture silence */
+			memset(SPA_PTROFF(d[0].data, size, void), 0,
+					avail - size);
+			size = avail;
+			break;
+		}
 		n = sio_read(this->hdl,
 				SPA_PTROFF(d[0].data, size, void), avail - size);
 		if (sio_eof(this->hdl)) {
-			spa_log_error(this->log, "%p: sndio device error", this);
+			spa_log_warn(this->log, "%p: sndio device lost, "
+					"capturing silence until it returns", this);
 			this->eof = true;
-			return -EIO;
+			this->reopen_countdown = 0;
+			memset(SPA_PTROFF(d[0].data, size, void), 0,
+					avail - size);
+			size = avail;
+			break;
 		}
 		if (n == 0)
 			break;
@@ -178,6 +190,7 @@ static void on_timeout(struct spa_source *source)
 	struct sndio_state *this = source->data;
 	uint64_t expirations, nsec, duration;
 	uint32_t rate;
+	double corr;
 	int res;
 
 	if ((res = spa_system_timerfd_read(this->data_system,
@@ -197,7 +210,18 @@ static void on_timeout(struct spa_source *source)
 		duration = 1024;
 		rate = SPA_SNDIO_DEFAULT_RATE;
 	}
-	this->next_time = nsec + duration * SPA_NSEC_PER_SEC / rate;
+	if (SPA_UNLIKELY(this->eof))
+		spa_sndio_check_reopen(this, duration, rate);
+	corr = this->eof ? 1.0 : spa_sndio_update_rate(this, duration, rate,
+			this->hw_position > this->bytes_xfer / this->frame_size ?
+			(uint32_t)(this->hw_position -
+				this->bytes_xfer / this->frame_size) : 0);
+	/* pace the timer with the measured device rate; a tight clamp
+	 * keeps degenerate devices from dragging the graph, and the
+	 * flow control absorbs the residual phase error */
+	corr = SPA_CLAMPD(corr, 0.998, 1.002);
+	this->next_time = nsec +
+		(uint64_t)(duration / corr * SPA_NSEC_PER_SEC / rate);
 
 	res = read_frames(this, nsec, duration);
 
@@ -209,7 +233,7 @@ static void on_timeout(struct spa_source *source)
 		this->clock->delay = this->hw_position >
 			this->bytes_xfer / this->frame_size ?
 			this->hw_position - this->bytes_xfer / this->frame_size : 0;
-		this->clock->rate_diff = 1.0;
+		this->clock->rate_diff = corr;
 		this->clock->next_nsec = this->next_time;
 	}
 
@@ -765,6 +789,9 @@ impl_node_port_set_io(void *object,
 	case SPA_IO_Buffers:
 		this->io = data;
 		break;
+	case SPA_IO_RateMatch:
+		this->rate_match = data;
+		break;
 	default:
 		return -ENOENT;
 	}
@@ -813,6 +840,26 @@ static int impl_node_process(void *object)
 		} else {
 			duration = 1024;
 			nsec = 0;
+		}
+		if (SPA_UNLIKELY(this->eof))
+			spa_sndio_check_reopen(this, duration,
+				this->position != NULL ?
+				this->position->clock.rate.denom :
+				SPA_SNDIO_DEFAULT_RATE);
+		if (this->rate_match != NULL) {
+			double corr = this->eof ? 1.0 :
+				spa_sndio_update_rate(this, duration,
+					this->position != NULL ?
+					this->position->clock.rate.denom :
+					SPA_SNDIO_DEFAULT_RATE,
+					this->hw_position >
+					this->bytes_xfer / this->frame_size ?
+					(uint32_t)(this->hw_position -
+					this->bytes_xfer / this->frame_size) : 0);
+			this->rate_match->rate = corr != 0.0 ? 1.0 / corr : 1.0;
+			SPA_FLAG_UPDATE(this->rate_match->flags,
+					SPA_IO_RATE_MATCH_FLAG_ACTIVE,
+					!this->eof);
 		}
 		if (read_frames(this, nsec, duration) > 0)
 			return SPA_STATUS_HAVE_DATA;
