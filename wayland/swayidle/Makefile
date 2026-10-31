@@ -1,7 +1,7 @@
 COMMENT =	idle management daemon for Wayland
 
-DISTNAME =	swayidle-1.9.0
-SITES =		https://github.com/swaywm/swayidle/releases/download/v1.9.0/
+DISTNAME =	swayidle-1.9.1
+SITES =		https://github.com/swaywm/swayidle/releases/download/v1.9.1/
 
 CATEGORIES =	wayland
 
