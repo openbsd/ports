@@ -1,0 +1,14 @@
+On OpenBSD off_t always is a long long, avoid type mismatch warning.
+
+Index: llong.h
+--- llong.h.orig
++++ llong.h
+@@ -96,7 +96,7 @@ typedef struct {
+ 
+ #endif
+ 
+-#if SIZEOF_MT_OFF_T > SIZEOF_LONG
++#if SIZEOF_MT_OFF_T >= SIZEOF_LONG
+ # define MTOF "%llu"
+ # define SMTOF "%lld"
+ # define XMTOF "%llx"
