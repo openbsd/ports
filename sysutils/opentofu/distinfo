@@ -1530,7 +1530,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v6/@v/v6.3.3.zip) = zHYEZgQ
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SHA256 (opentofu-v1.13.3.zip) = VW+BOZlJnp/4qT51dcXmZ8O4m53LAWYdWCQIXt3f+5U=
+SHA256 (opentofu-v1.13.4.zip) = dACYDX5w0f/+wZWgxix0F2iwQe9ZcSHCGDjFFUkBw/8=
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.25.1.mod) = 96
 SIZE (go_modules/cel.dev/expr/@v/v0.25.2.mod) = 96
@@ -3063,4 +3063,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v6/@v/v6.3.3.zip) = 343799
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = 162
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = 60719
-SIZE (opentofu-v1.13.3.zip) = 8114311
+SIZE (opentofu-v1.13.4.zip) = 8114345
