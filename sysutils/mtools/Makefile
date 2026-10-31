@@ -1,5 +1,5 @@
 COMMENT=	read/write/list/format DOS disks under Unix
-DISTNAME=	mtools-4.0.48
+DISTNAME=	mtools-4.0.50
 
 CATEGORIES=	sysutils
 
