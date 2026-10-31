@@ -1,0 +1,18 @@
+OpenBSD needs input-event-codes.h too
+
+Upstream already has this unreleased
+
+Index: src/wl_window.c
+--- src/wl_window.c.orig
++++ src/wl_window.c
+@@ -42,9 +42,7 @@
+ #include <sys/mman.h>
+ #include <sys/timerfd.h>
+ #include <poll.h>
+-#if defined(__FreeBSD__)
+-    #include <linux/input-event-codes.h>
+-#endif
++#include <linux/input-event-codes.h>
+ 
+ #include "wayland-client-protocol.h"
+ #include "xdg-shell-client-protocol.h"

@@ -3,12 +3,12 @@ Skip making html documenttaion even if Doxygen is installed
 Index: docs/CMakeLists.txt
 --- docs/CMakeLists.txt.orig
 +++ docs/CMakeLists.txt
-@@ -32,7 +32,7 @@ foreach(file IN LISTS source_files)
+@@ -36,7 +36,7 @@ foreach(file IN LISTS source_files)
  endforeach()
  
  set(DOXYGEN_SKIP_DOT TRUE)
--find_package(Doxygen)
-+#find_package(Doxygen)
+-find_package(Doxygen ${MINIMUM_DOXYGEN_VERSION} QUIET)
++#find_package(Doxygen ${MINIMUM_DOXYGEN_VERSION} QUIET)
  
- if (NOT DOXYGEN_FOUND OR DOXYGEN_VERSION VERSION_LESS "1.9.8")
-     message(STATUS "Documentation generation requires Doxygen 1.9.8 or later")
+ if (NOT DOXYGEN_FOUND)
+     message(STATUS "Documentation generation requires Doxygen ${MINIMUM_DOXYGEN_VERSION} or later")

@@ -1,11 +1,10 @@
 COMMENT =	open source, multi-platform library for creating windows
 
-V =		3.4
+V =		3.5.1
 DISTNAME =	glfw-${V}
 CATEGORIES =	graphics x11
-REVISION =	2
 
-SHARED_LIBS +=  glfw                      1.2 # 3.4
+SHARED_LIBS +=  glfw                      1.3 # 3.5.1
 
 HOMEPAGE =	https://www.glfw.org/
 MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
@@ -22,6 +21,8 @@ WANTLIB +=	epoll-shim m pthread
 WANTLIB +=	X11 wayland-client wayland-cursor wayland-egl xkbcommon
 
 SITES =		https://github.com/glfw/glfw/releases/download/${V}/
+SITES.p =	https://kurt.mosiejcz.uk/pub/distfiles/glfw/
+
 EXTRACT_SUFX =	.zip
 
 MODULES =	devel/cmake
@@ -36,6 +37,11 @@ BUILD_DEPENDS =	wayland/libinput-openbsd
 LIB_DEPENDS =	devel/epoll-shim \
 		wayland/wayland \
 		x11/xkbcommon
+
+PATCHFILES.p =	lwjgl-glfw-part1.diff \
+		lwjgl-glfw-part2.diff \
+		lwjgl-glfw-part3.diff \
+		lwjgl-glfw-part4.diff
 
 NO_TEST =	Yes
 
