@@ -1,18 +1,18 @@
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
-DISTNAME=	lyx-2.4.4
-PORTROACH=	skipv:2.4.x
+DISTNAME=	lyx-2.5.3
+EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	print editors
 
 HOMEPAGE=	https://www.lyx.org/
 
-SITES=		https://ftp.lip6.fr/pub/lyx/stable/2.4.x/ \
-		http://ftp.icm.edu.pl/packages/lyx/stable/2.4.x/ \
-		http://mirror.ufs.ac.za/applications/lyx/stable/2.4.x/ \
-		ftp://ftp.lyx.org/pub/lyx/stable/2.4.x/ \
-		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.4.x/ \
-		ftp://ftp.u-aizu.ac.jp/pub/tex/lyx/stable/2.4.x/
+SITES=		https://ftp.lip6.fr/pub/lyx/stable/2.5.x/ \
+		http://ftp.icm.edu.pl/packages/lyx/stable/2.5.x/ \
+		http://mirror.ufs.ac.za/applications/lyx/stable/2.5.x/ \
+		ftp://ftp.lyx.org/pub/lyx/stable/2.5.x/ \
+		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.5.x/ \
+		ftp://ftp.u-aizu.ac.jp/pub/tex/lyx/stable/2.5.x/
 
 WANTLIB+= ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui Qt6Svg
 WANTLIB+= Qt6SvgWidgets Qt6Widgets aspell c enchant-2 execinfo

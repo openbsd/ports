@@ -71,6 +71,7 @@ share/lyx/bind/xemacs.bind
 share/lyx/chkconfig.ltx
 share/lyx/citeengines/
 share/lyx/citeengines/basic.citeengine
+share/lyx/citeengines/biblatex-chicago.citeengine
 share/lyx/citeengines/biblatex-natbib.citeengine
 share/lyx/citeengines/biblatex.citeengine
 share/lyx/citeengines/jurabib.citeengine
@@ -541,6 +542,8 @@ share/lyx/examples/Articles/Astronomy_%26_Astrophysics.lyx
 share/lyx/examples/Articles/Chess/
 share/lyx/examples/Articles/Chess/Game_1.lyx
 share/lyx/examples/Articles/Chess/Game_2.lyx
+share/lyx/examples/Articles/Elsevier_CAS_%28Double_Column%29.lyx
+share/lyx/examples/Articles/Elsevier_CAS_%28Single_Column%29.lyx
 share/lyx/examples/Articles/Springer_Nature_Journals.lyx
 share/lyx/examples/Books/
 share/lyx/examples/Books/American_Mathematical_Society_%28AMS%29.lyx
@@ -569,6 +572,7 @@ share/lyx/examples/External_Material/sheet1.gnumeric
 share/lyx/examples/External_Material/sheet2.ods
 share/lyx/examples/External_Material/sheet3.xls
 share/lyx/examples/Graphics_and_Insets/
+share/lyx/examples/Graphics_and_Insets/Computer_Algebra_Systems.lyx
 share/lyx/examples/Graphics_and_Insets/Feynman_Diagrams.lyx
 share/lyx/examples/Graphics_and_Insets/Instant_Preview.lyx
 share/lyx/examples/Graphics_and_Insets/Itemize_Bullets.lyx
@@ -2205,6 +2209,7 @@ share/lyx/images/math/fallingdotseq.svgz
 share/lyx/images/math/fatbslash.svgz
 share/lyx/images/math/fatsemi.svgz
 share/lyx/images/math/fatslash.svgz
+share/lyx/images/math/fbox.svgz
 share/lyx/images/math/female.svgz
 share/lyx/images/math/fint.svgz
 share/lyx/images/math/fintop.svgz
@@ -2213,6 +2218,7 @@ share/lyx/images/math/font.svgz
 share/lyx/images/math/forall.svgz
 share/lyx/images/math/frac-square.svgz
 share/lyx/images/math/frac.svgz
+share/lyx/images/math/framebox.svgz
 share/lyx/images/math/frown.svgz
 share/lyx/images/math/frownie.svgz
 share/lyx/images/math/fullmoon.svgz
@@ -2271,6 +2277,7 @@ share/lyx/images/math/inplus.svgz
 share/lyx/images/math/int.svgz
 share/lyx/images/math/intercal.svgz
 share/lyx/images/math/interleave.svgz
+share/lyx/images/math/intertext.svgz
 share/lyx/images/math/intop.svgz
 share/lyx/images/math/invdiameter.svgz
 share/lyx/images/math/inve.svgz
@@ -2386,6 +2393,7 @@ share/lyx/images/math/mapsto2.svgz
 share/lyx/images/math/mapstochar.svgz
 share/lyx/images/math/mapstochar2.svgz
 share/lyx/images/math/mars.svgz
+share/lyx/images/math/math-texts.svgz
 share/lyx/images/math/mathbb.svgz
 share/lyx/images/math/mathbb_C.svgz
 share/lyx/images/math/mathbb_H.svgz
@@ -2419,6 +2427,7 @@ share/lyx/images/math/mathsection.svgz
 share/lyx/images/math/mathsf.svgz
 share/lyx/images/math/mathtt.svgz
 share/lyx/images/math/matrix.svgz
+share/lyx/images/math/mbox.svgz
 share/lyx/images/math/measuredangle.svgz
 share/lyx/images/math/mercury.svgz
 share/lyx/images/math/merge.svgz
@@ -2605,6 +2614,7 @@ share/lyx/images/math/searrow.svgz
 share/lyx/images/math/setminus.svgz
 share/lyx/images/math/sharp.svgz
 share/lyx/images/math/shortdownarrow.svgz
+share/lyx/images/math/shortintertext.svgz
 share/lyx/images/math/shortleftarrow.svgz
 share/lyx/images/math/shortmid.svgz
 share/lyx/images/math/shortparallel.svgz
@@ -2685,7 +2695,9 @@ share/lyx/images/math/swarrow.svgz
 share/lyx/images/math/talloblong.svgz
 share/lyx/images/math/tau.svgz
 share/lyx/images/math/taurus.svgz
+share/lyx/images/math/text.svgz
 share/lyx/images/math/textdegree.svgz
+share/lyx/images/math/textnormal.svgz
 share/lyx/images/math/textrm.svgz
 share/lyx/images/math/textrm_AA.svgz
 share/lyx/images/math/textrm_O.svgz
@@ -3146,6 +3158,7 @@ share/lyx/kbd/turkish-f.kmap
 share/lyx/kbd/turkish.kmap
 share/lyx/kbd/ukrainian.kmap
 share/lyx/languages
+share/lyx/latexcolors
 share/lyx/latexfonts
 share/lyx/layouts/
 share/lyx/layouts/AEA.layout
@@ -3193,6 +3206,9 @@ share/lyx/layouts/bxjsarticle.layout
 share/lyx/layouts/bxjsbook.layout
 share/lyx/layouts/bxjsreport.layout
 share/lyx/layouts/bxjsslide.layout
+share/lyx/layouts/cas-common.inc
+share/lyx/layouts/cas-dc.layout
+share/lyx/layouts/cas-sc.layout
 share/lyx/layouts/chess.layout
 share/lyx/layouts/chessboard.module
 share/lyx/layouts/cl2emult.layout
@@ -3212,6 +3228,7 @@ share/lyx/layouts/docbook-chapter.layout
 share/lyx/layouts/docbook-section.layout
 share/lyx/layouts/doublecol-new.layout
 share/lyx/layouts/dtk.layout
+share/lyx/layouts/econsocart.layout
 share/lyx/layouts/ectaart.layout
 share/lyx/layouts/egs.layout
 share/lyx/layouts/elsart.layout
@@ -3240,7 +3257,6 @@ share/lyx/layouts/g-brief2.layout
 share/lyx/layouts/graphicboxes.module
 share/lyx/layouts/hanging.module
 share/lyx/layouts/heb-article.layout
-share/lyx/layouts/heb-letter.layout
 share/lyx/layouts/hollywood.layout
 share/lyx/layouts/hpstatement.module
 share/lyx/layouts/ijmpc.layout
@@ -3471,12 +3487,12 @@ share/lyx/lyx2lyx/${MODPY_PYCACHE}lyx_2_3.${MODPY_PYC_MAGIC_TAG}pyc
 share/lyx/lyx2lyx/${MODPY_PYCACHE}lyx_2_4.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/lyx/lyx2lyx/${MODPY_PYCACHE}lyx_2_4.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/lyx/lyx2lyx/${MODPY_PYCACHE}lyx_2_4.${MODPY_PYC_MAGIC_TAG}pyc
+share/lyx/lyx2lyx/${MODPY_PYCACHE}lyx_2_5.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/lyx/lyx2lyx/${MODPY_PYCACHE}lyx_2_5.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+share/lyx/lyx2lyx/${MODPY_PYCACHE}lyx_2_5.${MODPY_PYC_MAGIC_TAG}pyc
 share/lyx/lyx2lyx/${MODPY_PYCACHE}parser_tools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/lyx/lyx2lyx/${MODPY_PYCACHE}parser_tools.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/lyx/lyx2lyx/${MODPY_PYCACHE}parser_tools.${MODPY_PYC_MAGIC_TAG}pyc
-share/lyx/lyx2lyx/${MODPY_PYCACHE}profiling.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-share/lyx/lyx2lyx/${MODPY_PYCACHE}profiling.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
-share/lyx/lyx2lyx/${MODPY_PYCACHE}profiling.${MODPY_PYC_MAGIC_TAG}pyc
 share/lyx/lyx2lyx/${MODPY_PYCACHE}test_parser_tools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/lyx/lyx2lyx/${MODPY_PYCACHE}test_parser_tools.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/lyx/lyx2lyx/${MODPY_PYCACHE}test_parser_tools.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3507,10 +3523,11 @@ share/lyx/lyx2lyx/lyx_2_1.py
 share/lyx/lyx2lyx/lyx_2_2.py
 share/lyx/lyx2lyx/lyx_2_3.py
 share/lyx/lyx2lyx/lyx_2_4.py
+share/lyx/lyx2lyx/lyx_2_5.py
 share/lyx/lyx2lyx/parser_tools.py
-share/lyx/lyx2lyx/profiling.py
 share/lyx/lyx2lyx/test_parser_tools.py
 share/lyx/lyx2lyx/unicode_symbols.py
+share/lyx/math_conflicts
 share/lyx/scripts/
 share/lyx/scripts/TeXFiles.py
 share/lyx/scripts/${MODPY_PYCACHE}/
@@ -3638,7 +3655,8 @@ share/lyx/templates/Articles/Association_for_Computing_Machinery_%28ACM%29.lyx
 share/lyx/templates/Articles/Astronomy_%26_Astrophysics.lyx
 share/lyx/templates/Articles/Chinese_Article_%28CTeX%29.lyx
 share/lyx/templates/Articles/Copernicus_Publications_Manuscript_Preparation.lyx
-share/lyx/templates/Articles/Econometrica.lyx
+share/lyx/templates/Articles/Econometric_Society_Journals.lyx
+share/lyx/templates/Articles/Econometric_Society_Journals_figure.pdf
 share/lyx/templates/Articles/Elsevier.lyx
 share/lyx/templates/Articles/Figure1.pdf
 share/lyx/templates/Articles/Hebrew_Article_%28KOMA-Script%29.lyx
@@ -3701,6 +3719,7 @@ share/lyx/templates/Obsolete/American_Astronomical_Society_%28AASTeX_v._6%29.lyx
 share/lyx/templates/Obsolete/American_Astronomical_Society_%28AASTeX_v._6.2%29.lyx
 share/lyx/templates/Obsolete/American_Geophysical_Union_%28AGUTeX%29.lyx
 share/lyx/templates/Obsolete/American_Psychological_Association_%28APA%29,_v._6.lyx
+share/lyx/templates/Obsolete/Econometrica.lyx
 share/lyx/templates/Obsolete/G-Brief_%28V._1,_Obsolete%29/
 share/lyx/templates/Obsolete/G-Brief_%28V._1,_Obsolete%29/English.lyx
 share/lyx/templates/Obsolete/G-Brief_%28V._1,_Obsolete%29/German.lyx
@@ -3736,6 +3755,8 @@ share/lyx/templates/ca/
 share/lyx/templates/ca/Letters/
 share/lyx/templates/ca/Letters/Letter_%28Standard_Class%29.lyx
 share/lyx/templates/de/
+share/lyx/templates/de/Letters/
+share/lyx/templates/de/Letters/KOMA-Script_Letter_%28V._2%29.lyx
 share/lyx/templates/de/Presentations/
 share/lyx/templates/de/Presentations/Beamer.lyx
 share/lyx/templates/es/
@@ -3767,11 +3788,16 @@ share/lyx/tex/hollywood.cls
 share/lyx/tex/lyxchess.sty
 share/lyx/tex/lyxskak.sty
 share/lyx/tex/revtex.cls
+share/lyx/themes/
+share/lyx/themes/Default.theme
+share/lyx/themes/Monochrome.theme
+share/lyx/themes/Solarized.theme
 share/lyx/ui/
 share/lyx/ui/default.ui
 share/lyx/ui/stdcontext.inc
 share/lyx/ui/stdmenus.inc
 share/lyx/ui/stdtoolbars.inc
+share/lyx/unicode_alphanum_variants
 share/lyx/unicodesymbols
 share/lyx/xtemplates/
 share/lyx/xtemplates/chess.xtemplate
