@@ -1,6 +1,6 @@
 COMMENT =	mapfile parser
 
-MODPY_DISTV =	1.1.0
+MODPY_DISTV =	1.2.0
 DISTNAME =	mappyfile-${MODPY_DISTV}
 
 CATEGORIES =	geo
@@ -20,6 +20,7 @@ NO_TEST =	Yes
 
 RUN_DEPENDS =	devel/py-jsonschema \
 		textproc/py-lark \
+		textproc/py-yaml \
 		devel/py-click
 
 .include <bsd.port.mk>

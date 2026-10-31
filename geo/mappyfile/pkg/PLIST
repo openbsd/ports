@@ -33,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/mappyfile/${MODPY_PYCACHE}utils.${MODPY
 lib/python${MODPY_VERSION}/site-packages/mappyfile/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mappyfile/${MODPY_PYCACHE}validator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mappyfile/${MODPY_PYCACHE}validator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mappyfile/${MODPY_PYCACHE}yamlutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mappyfile/${MODPY_PYCACHE}yamlutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mappyfile/cli.py
 lib/python${MODPY_VERSION}/site-packages/mappyfile/dictutils.py
 lib/python${MODPY_VERSION}/site-packages/mappyfile/mapfile.lark
@@ -88,3 +90,4 @@ lib/python${MODPY_VERSION}/site-packages/mappyfile/tokens.py
 lib/python${MODPY_VERSION}/site-packages/mappyfile/transformer.py
 lib/python${MODPY_VERSION}/site-packages/mappyfile/utils.py
 lib/python${MODPY_VERSION}/site-packages/mappyfile/validator.py
+lib/python${MODPY_VERSION}/site-packages/mappyfile/yamlutils.py
