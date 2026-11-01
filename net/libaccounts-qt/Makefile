@@ -4,6 +4,7 @@ CATEGORIES =	net
 
 V =		1.17
 DIST_TUPLE =	gitlab accounts-sso libaccounts-qt VERSION_${V} .
+DIST_SUBDIR =	rerolled# remove at update
 PKGNAME=	libaccounts-qt-${V}
 REVISION=	1
 

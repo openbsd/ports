@@ -1,6 +1,7 @@
 COMMENT =	Reference Standard M, implementation of M/MUMPS
 
 DIST_TUPLE +=	gitlab Reference-Standard-M rsm v1.82.4 .
+DIST_SUBDIR =	rerolled# remove at update
 REVISION =	0
 
 CATEGORIES =	lang

@@ -5,6 +5,7 @@ V =		3.5.0
 REVISION =	0
 
 DIST_TUPLE +=	gitlab es-de emulationstation-de v$V .
+DIST_SUBDIR =	rerolled# remove at update
 
 CATEGORIES =	emulators
 

@@ -6,6 +6,7 @@ MODFONT_VERSION =	1.004
 REVISION = 		0
 SITES.gitlab =		https://forge.apps.education.fr/
 DIST_TUPLE +=		gitlab marelle marelle.forge.apps.education.fr v${MODFONT_VERSION} .
+DIST_SUBDIR =	rerolled# remove at update
 
 MULTI_PACKAGES =	-main -web
 

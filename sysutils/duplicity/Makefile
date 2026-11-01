@@ -5,6 +5,7 @@ REVISION =		0
 DISTNAME =		duplicity-${MODPY_DISTV}
 
 DIST_TUPLE =		gitlab duplicity duplicity rel.${MODPY_DISTV} .
+DIST_SUBDIR =	rerolled# remove at update
 
 CATEGORIES =		sysutils
 
