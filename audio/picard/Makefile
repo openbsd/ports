@@ -1,6 +1,6 @@
 COMMENT=	automatic audio files tagger using the MusicBrainz database
 
-MODPY_DISTV=	3.0.2
+MODPY_DISTV=	3.0.4
 DISTNAME=	picard-${MODPY_DISTV}
 
 CATEGORIES=	audio
@@ -31,6 +31,7 @@ RUN_DEPENDS=	audio/py-discid \
 # others
 RUN_DEPENDS +=	audio/chromaprint \
 		devel/desktop-file-utils \
+		multimedia/gstreamer1/plugins-good \
 		x11/gtk+4,-guic
 
 # ??		devel/py-dateutil devel/py-fasteners
