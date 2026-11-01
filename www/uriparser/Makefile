@@ -1,32 +1,30 @@
-COMMENT =		URI parsing library
+COMMENT=	URI parsing library
 
-GH_ACCOUNT =		uriparser
-GH_PROJECT =		uriparser
-GH_TAGNAME =		uriparser-1.0.2
-PKGNAME =		${GH_TAGNAME}
+GH_ACCOUNT=	uriparser
+GH_PROJECT=	uriparser
+GH_TAGNAME=	uriparser-1.0.3
+PKGNAME=	${GH_TAGNAME}
 
 # (ver from CMakeLists.txt URIPARSER_SO_CURRENT and URIPARSER_SO_REVISION)
-SHARED_LIBS +=  uriparser 4.1	# 3.2
+SHARED_LIBS +=  uriparser 4.2	# 3.3
 
-CATEGORIES =		www
+CATEGORIES=	www
 
-HOMEPAGE =		https://uriparser.github.io/
+HOMEPAGE=	https://uriparser.github.io/
 
 # BSD 3-clause
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=Yes
 
 WANTLIB += c
 
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
-MODULES =		devel/cmake
-SUBST_VARS +=		GH_TAGNAME
+MODULES=	devel/cmake
+SUBST_VARS=	GH_TAGNAME
 
-CONFIGURE_ARGS =	-DURIPARSER_BUILD_DOCS=off
-
-# requires googletest
-CONFIGURE_ARGS +=	-DURIPARSER_BUILD_TESTS=off
-NO_TEST =		Yes
+CONFIGURE_ARGS= -DURIPARSER_BUILD_DOCS=off \
+		-DURIPARSER_BUILD_TESTS=on
+#NO_TEST=	Yes
 
 .include <bsd.port.mk>
