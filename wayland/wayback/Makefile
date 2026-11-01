@@ -3,11 +3,11 @@ COMMENT =	X11 compat layer for running full X11 desktop environments
 V =		0.3
 DISTNAME =	wayback-${V}
 CATEGORIES =	wayland
-REVISION =	0
+REVISION =	1
 
-SITES =		${HOMEPAGE}/wayback/-/archive/${V}/
+DIST_TUPLE =	fdo wayback wayback ${V} .
 
-HOMEPAGE =	https://gitlab.freedesktop.org/wayback
+HOMEPAGE =	https://wayback.freedesktop.org/
 
 # MIT
 PERMIT_PACKAGE = Yes
