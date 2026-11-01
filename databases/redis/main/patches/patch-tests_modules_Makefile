@@ -4,7 +4,7 @@ seen on at least i386, sparc64
 Index: tests/modules/Makefile
 --- tests/modules/Makefile.orig
 +++ tests/modules/Makefile
-@@ -101,7 +101,7 @@ all: $(TEST_MODULES)
+@@ -106,7 +106,7 @@ all: $(TEST_MODULES)
  	$(CC) -I../../src $(CFLAGS) $(SHOBJ_CFLAGS) -fPIC -c $< -o $@
  
  %.so: %.xo
