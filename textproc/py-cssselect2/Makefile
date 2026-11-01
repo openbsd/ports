@@ -1,9 +1,8 @@
 COMMENT=	implementation of CSS4 Selectors
 
-MODPY_DISTV=	0.9.0
+MODPY_DISTV=	0.10.1
 DISTNAME=	cssselect2-${MODPY_DISTV}
 PKGNAME=	py-cssselect2-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -18,8 +17,7 @@ BUILD_DEPENDS=	textproc/py-webencodings \
 		textproc/py-tinycss2
 RUN_DEPENDS=	textproc/py-webencodings \
 		textproc/py-tinycss2
-TEST_DEPENDS=	devel/py-test-flake8 \
-		devel/py-test-isort \
+TEST_DEPENDS=	devel/py-test-isort \
 		devel/py-test-xdist
 
 .include <bsd.port.mk>
