@@ -16,7 +16,7 @@ USE_NOEXECONLY = Yes
 # - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
 #   into simple warnings.
 V = 16.2.0
-REVISION = 10
+REVISION = 11
 GCC_PKGSPEC = >=16,<17
 
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.2.0-0.tar.xz
@@ -241,6 +241,12 @@ LIB_DEPENDS +=		devel/gmp,no_cxx,bootstrap \
 			devel/libmpc
 LIB_DEPENDS-libs =
 LIB_DEPENDS-bootstrap =
+
+# Modula2's m2rte.so is dynamically linked against stdc++
+# https://gcc.gnu.org/bugzilla/show_bug.cgi?id=128293
+WANTLIB-modula2 = 	${WANTLIB} estdc++
+LIB_DEPENDS-modula2 =	${LIB_DEPENDS} \
+			${BUILD_PKGPATH},-libs
 
 post-extract:
 .for f in egcc eg++ egdc
