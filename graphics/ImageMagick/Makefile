@@ -2,11 +2,11 @@ COMMENT=	image processing tools
 
 GH_ACCOUNT=	ImageMagick
 GH_PROJECT=	ImageMagick6
-GH_TAGNAME=	6.9.13-59
+GH_TAGNAME=	6.9.13-60
 # move to ${GH_TAGNAME:S/-/pl/} with 6.9.14+?
 PKGNAME=	ImageMagick-${GH_TAGNAME:S/-/./}
 
-SHARED_LIBS +=	MagickCore-6.Q16     8.4      # 7.1
+SHARED_LIBS +=	MagickCore-6.Q16     8.5      # 7.1
 SHARED_LIBS +=	MagickWand-6.Q16     4.2      # 7.1
 SHARED_LIBS +=	Magick++-6.Q16       5.2      # 9.0
 
