@@ -7,6 +7,7 @@
 @man man/man1/reaction-show.1
 @man man/man1/reaction-start.1
 @man man/man1/reaction-test-config.1
+@man man/man1/reaction-test-filter.1
 @man man/man1/reaction-test-regex.1
 @man man/man1/reaction-trigger.1
 @man man/man1/reaction.1

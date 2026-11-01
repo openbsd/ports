@@ -1,6 +1,6 @@
 COMMENT =	scan logs and take action, alternative to fail2ban
 
-V =	v2.6.0
+V =	v2.7.0
 DISTNAME =	reaction-${V}
 PKGNAME =	${DISTNAME:S/-v/-/}
 
@@ -29,6 +29,7 @@ MODCARGO_TEST_ARGS +=	--package reaction \
 MODCARGO_RUSTFLAGS +=	-L${PREFIX}/lib
 
 LIB_DEPENDS =		archivers/zstd
+BUILD_DEPENDS =		devel/cmake/core
 
 CONFIGURE_STYLE =	cargo
 

@@ -1,0 +1,19 @@
+Index: src/concepts/config.rs
+--- src/concepts/config.rs.orig
++++ src/concepts/config.rs
+@@ -86,13 +86,13 @@ pub struct Config {
+ }
+ 
+ fn default_runtime_dir() -> PathBuf {
+-    "/run/reaction/".into()
++    "/var/run/reaction/".into()
+ }
+ fn is_default_runtime_dir(path: &PathBuf) -> bool {
+     path == &default_runtime_dir()
+ }
+ fn default_state_dir() -> PathBuf {
+-    "/var/lib/reaction/".into()
++    "/var/reaction/".into()
+ }
+ fn is_default_state_dir(path: &PathBuf) -> bool {
+     path == &default_state_dir()
