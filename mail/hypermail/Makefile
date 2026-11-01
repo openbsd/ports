@@ -1,14 +1,12 @@
 COMMENT=		generate a cross-referenced HTML mail archive
 
-VERSION=		2.3.0
+VERSION=		2.4.2
 DISTNAME=		hypermail-${VERSION}
 CATEGORIES=		mail www
-REVISION=		1
 
 HOMEPAGE=		https://www.hypermail-project.org/
 
-SITES=			${HOMEPAGE}
-WRKDIST=		${WRKDIR}/hypermail
+SITES=			https://github.com/hypermail-project/hypermail/releases/download/v${VERSION}/
 
 LIB_DEPENDS+=		devel/pcre
 
@@ -23,6 +21,8 @@ CONFIGURE_ARGS=		--with-htmldir=${PREFIX}/share/doc/hypermail \
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -DHAVE_VFSCANF" \
 			INCLUDES="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 ALL_TARGET=		hypermail
 MAKE_FLAGS=		WARNINGS=''

@@ -1,25 +1,21 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -29,10 +29,10 @@ SPLINTFLAGS=-Ipcre 
- #WNOERROR=-Werror
- #WARNINGS=$(WNOERROR) -ansi -pedantic -Wall -Wtraditional -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Dlint
+@@ -74,7 +74,7 @@ fnv/libfnv.a:
+ 	@cd fnv; $(MAKE) libfnv.a CC="$(CC)" CFLAGS="$(CFLAGS)" CPPFLAGS="$(CPPFLAGS)"
  
--CFLAGS=@CFLAGS@ @INCLUDES@ -Ipcre -DTRIO_MINIMAL $(WARNINGS)
-+CFLAGS=@CFLAGS@ @INCLUDES@ -DTRIO_MINIMAL $(WARNINGS)
- YACC=@YACC@
- NETLIBS=@LIBS@
--LDFLAGS=@LDFLAGS@ -Lpcre/.libs
-+LDFLAGS=@LDFLAGS@
- MISC_LIBS= -lm -lpcre
- OPT_LIBS=@EXTRA_LIBS@
+ hypermail$(SUFFIX): $(OBJS) 
+-	$(CC) -o $@ $(CFLAGS) $(LDFLAGS) $(OBJS) $(OPT_LIBS) $(MISC_LIBS)
++	$(CC) -o $@ $(CFLAGS) $(LDFLAGS) $(OBJS) $(OPT_LIBS) $(MISC_LIBS) $(LIBS)
+ 	chmod 0755 $@
  
-@@ -58,7 +58,7 @@ MAILOBJS=	mail.o ../libcgi/libcgi.a
- .c.o:
- 	$(CC) -c $(CFLAGS) $<
+ mail$(SUFFIX):	$(MAILOBJS)
+@@ -82,7 +82,7 @@ mail$(SUFFIX):	$(MAILOBJS)
+ 	chmod 0755 $@
  
--all:    pcre/.libs/libpcre.a @FNV_DEP@ hypermail$(SUFFIX) mail$(SUFFIX) lang$(SUFFIX)
-+all:    @FNV_DEP@ hypermail$(SUFFIX) mail$(SUFFIX) lang$(SUFFIX)
+ lang$(SUFFIX): lang.c lang.h
+-	$(CC) -DLANG_PROG $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $@ lang.c $(MISC_LIBS)
++	$(CC) -DLANG_PROG $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $@ lang.c $(MISC_LIBS) $(LIBS)
  
- pcre/.libs/libpcre.a:
- 	@cd pcre; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" ; rm -f .libs/lib*.so*
+ ../libcgi/libcgi.a:
+ 	@cd ../libcgi; $(MAKE) all CC="$(CC)" CFLAGS="$(CFLAGS)" CPPFLAGS="$(CPPFLAGS)"

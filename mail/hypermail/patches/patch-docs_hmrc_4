@@ -2,7 +2,7 @@ Index: docs/hmrc.4
 --- docs/hmrc.4.orig
 +++ docs/hmrc.4
 @@ -1,4 +1,4 @@
--.TH hmrc 4 "February 04, 2004"
+-.TH hmrc 4 "July 19, 2018"
 +.TH hmrc 5 "February 04, 2004"
  .SH NAME
  hmrc \- Hypermail configuration file 

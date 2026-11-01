@@ -1,12 +1,12 @@
 Index: docs/hmrc.html
 --- docs/hmrc.html.orig
 +++ docs/hmrc.html
-@@ -1373,7 +1373,7 @@ if that is what you use to specify the archive directo
- <blockquote>
- <strong>hypermail(1)</strong>,
- &nbsp;
--<strong>hmrc(4)</strong>,
-+<strong>hmrc(5)</strong>,
- &nbsp;
- <strong><a href="hypermail.html">Hypermail</a></strong> 
- &nbsp;
+@@ -1569,7 +1569,7 @@ that is what you use to specify the archive directory.
+ <hr noshade>
+ <big><strong>See Also</strong></big>
+ <blockquote><strong>hypermail(1)</strong>, &nbsp;
+-<strong>hmrc(4)</strong>, &nbsp; <strong><a href=
++<strong>hmrc(5)</strong>, &nbsp; <strong><a href=
+ "hypermail.html">Hypermail</a></strong> &nbsp; and &nbsp;
+ <strong><a href="customizing.html">Customizing Hypermail
+ Pages</a></strong> and <strong><a href="archive_search.html">Adding
