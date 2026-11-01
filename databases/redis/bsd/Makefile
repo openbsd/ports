@@ -1,7 +1,7 @@
 COMMENT =		persistent key-value database (BSD-licensed version)
 
 PORTROACH =		limit:^7\.2\.
-DISTNAME =		redis-7.2.16
+DISTNAME =		redis-7.2.17
 
 WANTLIB +=		c crypto ssl m pthread
 
