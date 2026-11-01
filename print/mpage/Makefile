@@ -1,6 +1,6 @@
 COMMENT=	print multiple pages per sheet on PostScript printer
 
-DISTNAME=	mpage-2.5.7
+DISTNAME=	mpage-2.5.8
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	print
