@@ -12,8 +12,7 @@ COMMENT =		matrix client for vim addicts
 
 GH_ACCOUNT =		ulyssa
 GH_PROJECT =		iamb
-GH_TAGNAME =		v0.0.12
-REVISION =		0
+GH_TAGNAME =		v0.13.1
 
 HOMEPAGE =		https://iamb.chat
 
