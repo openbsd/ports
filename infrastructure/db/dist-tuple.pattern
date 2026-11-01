@@ -28,7 +28,7 @@ TEMPLATE_DISTFILES.gitlab ?= \
 	<account>-{<account>/<project>/-/archive/<id>/}<project>-<id>${EXTRACT_SUFX.gitlab}
 
 TEMPLATE_DISTFILES.gnome ?= \
-	<account>-<project>-{<account>/<project>/-/archive/<id>/}<project>-<id>${EXTRACT_SUFX.gnome}
+	<account>-{<account>/<project>/-/archive/<id>/}<project>-<id>${EXTRACT_SUFX.gnome}
 
 TEMPLATE_DISTFILES.kde ?= \
 	<account>-<project>-{<account>/<project>/-/archive/<id>/}<id>${EXTRACT_SUFX.kde}
