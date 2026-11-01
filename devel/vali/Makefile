@@ -1,8 +1,8 @@
 COMMENT =	Varlink C implementation and code generator
 
 V =		0.1.1
-COMMIT =	bd4b709430eef9a1252198f9a0ea4a05930eda26
 DIST_TUPLE =	fdo emersion vali v${V} .
+REVISION =	0
 SHARED_LIBS +=  vali	0.0 # 0.0
 
 CATEGORIES =	devel
@@ -20,6 +20,6 @@ MODULES =       devel/meson
 LIB_DEPENDS =	devel/aml \
 		devel/json-c
 
-WRKDIST =       ${WRKDIR}/vali-v${V}-${COMMIT}
+WRKDIST =       ${WRKDIR}/vali-v${V}
 
 .include <bsd.port.mk>

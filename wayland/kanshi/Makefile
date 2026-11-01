@@ -3,8 +3,7 @@ COMMENT =	dynamic display configuration for wayland
 V =		1.9.0
 CATEGORIES =	wayland
 DIST_TUPLE =	fdo emersion kanshi v${V} .
-KANSHI_COMMIT =	424f454329ec48f7f078b9225a6e3c7b7d8185ae
-REVISION =	0
+REVISION =	1
 
 # MIT
 PERMIT_PACKAGE = Yes
@@ -20,7 +19,7 @@ LIB_DEPENDS =	devel/libscfg \
 		devel/vali \
 		wayland/wayland
 
-WRKDIST =	${WRKDIR}/kanshi-v${V}-${KANSHI_COMMIT}
+WRKDIST =	${WRKDIR}/kanshi-v${V}
 
 WANTLIB += c json-c m scfg vali wayland-client
 

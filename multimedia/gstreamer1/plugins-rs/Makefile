@@ -2,8 +2,8 @@ COMMENT=		GStreamer bindings for Rust
 
 V=			0.15.4
 DIST_TUPLE=		fdo gstreamer gst-plugins-rs ${V} .
-WRKDIST=		${WRKDIR}/gst-plugins-rs-${V}-1afff3711855238433862c0ce3bf34918e500386
-REVISION=		0
+WRKDIST=		${WRKDIR}/gst-plugins-rs-${V}
+REVISION=		1
 
 # see patch-Cargo_toml;
 # grep git+https Cargo.lock | sort -u
