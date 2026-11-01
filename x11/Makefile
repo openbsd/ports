@@ -210,6 +210,7 @@
      SUBDIR += ogle_gui
      SUBDIR += ogre
      SUBDIR += openbox
+     SUBDIR += opensddm
      SUBDIR += oroborus
      SUBDIR += osd_clock
      SUBDIR += p5-AnyEvent-I3
