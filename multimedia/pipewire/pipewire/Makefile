@@ -9,6 +9,7 @@ PKGNAME-gst=		gst-plugin-pipewire-${PW_VERSION}
 
 REVISION-main=		7
 REVISION-libs=		0
+REVISION-gst=		0
 
 SHARED_LIBS += pipewire-0.3              1.0 # 0.1610.0
 
@@ -52,6 +53,8 @@ LIB_DEPENDS-libs=	devel/gettext,-runtime
 
 LIB_DEPENDS-gst=	${BASE_PKGPATH},-libs \
 			multimedia/gstreamer1/plugins-base
+
+RUN_DEPENDS-gst=	# empty
 
 # needs a pipewire-session-manager
 RUN_DEPENDS-main +=	${MODDCONF_RUN_DEPENDS} \
