@@ -1,0 +1,245 @@
+@newuser _osddm:730:_x11::Open Simple Desktop Display Manager:/var/db/opensddm:/sbin/nologin
+@extraunexec rm -f /var/db/opensddm/*
+@rcscript ${RCDIR}/opensddm
+@bin bin/opensddm
+@bin bin/opensddm-greeter
+lib/qt6/qml/SddmComponents/
+lib/qt6/qml/SddmComponents/Background.qml
+lib/qt6/qml/SddmComponents/Button.qml
+lib/qt6/qml/SddmComponents/Clock.qml
+lib/qt6/qml/SddmComponents/ComboBox.qml
+lib/qt6/qml/SddmComponents/ImageButton.qml
+lib/qt6/qml/SddmComponents/LayoutBox.qml
+lib/qt6/qml/SddmComponents/Menu.qml
+lib/qt6/qml/SddmComponents/PasswordBox.qml
+lib/qt6/qml/SddmComponents/PictureBox.qml
+lib/qt6/qml/SddmComponents/TextBox.qml
+lib/qt6/qml/SddmComponents/TextConstants.qml
+lib/qt6/qml/SddmComponents/qmldir
+lib/qt6/qml/SddmComponents/warning.png
+@bin libexec/opensddm-helper
+@bin libexec/opensddm-helper-start-wayland
+@bin libexec/opensddm-helper-start-x11user
+@man man/man1/opensddm-greeter.1
+@man man/man1/opensddm.1
+@man man/man5/opensddm-state.conf.5
+@man man/man5/opensddm.conf.5
+share/dbus-1/system.d/org.freedesktop.DisplayManager.conf
+share/examples/login.conf.d/opensddm
+@sample ${SYSCONFDIR}/login.conf.d/opensddm
+share/examples/opensddm/
+share/examples/opensddm/etc/
+share/examples/opensddm/etc/opensddm/
+@sample ${SYSCONFDIR}/opensddm/
+share/examples/opensddm/etc/opensddm/locale.conf
+@sample ${SYSCONFDIR}/opensddm/locale.conf
+share/examples/opensddm/etc/opensddm/opensddm.conf
+@sample ${SYSCONFDIR}/opensddm/opensddm.conf
+@mode 0444
+share/examples/opensddm/etc/pam.d/
+share/examples/opensddm/etc/pam.d/opensddm
+@sample ${SYSCONFDIR}/pam.d/opensddm
+share/examples/opensddm/etc/pam.d/opensddm-autologin
+@sample ${SYSCONFDIR}/pam.d/opensddm-autologin
+share/examples/opensddm/etc/pam.d/opensddm-greeter
+@sample ${SYSCONFDIR}/pam.d/opensddm-greeter
+@mode
+share/opensddm/
+share/opensddm/faces/
+share/opensddm/faces/.face.icon
+share/opensddm/faces/root.face.icon
+share/opensddm/flags/
+share/opensddm/flags/ae.png
+share/opensddm/flags/am.png
+share/opensddm/flags/ar.png
+share/opensddm/flags/at.png
+share/opensddm/flags/az.png
+share/opensddm/flags/bd.png
+share/opensddm/flags/be.png
+share/opensddm/flags/bg.png
+share/opensddm/flags/bh.png
+share/opensddm/flags/br.png
+share/opensddm/flags/by.png
+share/opensddm/flags/ca.png
+share/opensddm/flags/ch.png
+share/opensddm/flags/cu.png
+share/opensddm/flags/cz.png
+share/opensddm/flags/de.png
+share/opensddm/flags/dj.png
+share/opensddm/flags/dk.png
+share/opensddm/flags/dz.png
+share/opensddm/flags/ee.png
+share/opensddm/flags/eg.png
+share/opensddm/flags/es.png
+share/opensddm/flags/eu.png
+share/opensddm/flags/fi.png
+share/opensddm/flags/fr.png
+share/opensddm/flags/gb.png
+share/opensddm/flags/ge.png
+share/opensddm/flags/gr.png
+share/opensddm/flags/hr.png
+share/opensddm/flags/hu.png
+share/opensddm/flags/il.png
+share/opensddm/flags/in.png
+share/opensddm/flags/iq.png
+share/opensddm/flags/is.png
+share/opensddm/flags/it.png
+share/opensddm/flags/jo.png
+share/opensddm/flags/jp.png
+share/opensddm/flags/km.png
+share/opensddm/flags/kr.png
+share/opensddm/flags/kw.png
+share/opensddm/flags/la.png
+share/opensddm/flags/lb.png
+share/opensddm/flags/lt.png
+share/opensddm/flags/lv.png
+share/opensddm/flags/ly.png
+share/opensddm/flags/ma.png
+share/opensddm/flags/mk.png
+share/opensddm/flags/mn.png
+share/opensddm/flags/mx.png
+share/opensddm/flags/nl.png
+share/opensddm/flags/no.png
+share/opensddm/flags/om.png
+share/opensddm/flags/pl.png
+share/opensddm/flags/ps.png
+share/opensddm/flags/pt.png
+share/opensddm/flags/qa.png
+share/opensddm/flags/qc.png
+share/opensddm/flags/ro.png
+share/opensddm/flags/ru.png
+share/opensddm/flags/sa.png
+share/opensddm/flags/sd.png
+share/opensddm/flags/se.png
+share/opensddm/flags/si.png
+share/opensddm/flags/sk.png
+share/opensddm/flags/so.png
+share/opensddm/flags/sr.png
+share/opensddm/flags/sy.png
+share/opensddm/flags/th.png
+share/opensddm/flags/tn.png
+share/opensddm/flags/tr.png
+share/opensddm/flags/ua.png
+share/opensddm/flags/uk.png
+share/opensddm/flags/un.png
+share/opensddm/flags/us.png
+share/opensddm/flags/uy.png
+share/opensddm/flags/vn.png
+share/opensddm/flags/ye.png
+share/opensddm/flags/yu.png
+share/opensddm/flags/zz.png
+share/opensddm/scripts/
+@sample ${SYSCONFDIR}/opensddm/scripts/
+@mode 555
+share/opensddm/scripts/Xsession
+@sample ${SYSCONFDIR}/opensddm/scripts/Xsession
+@mode 555
+share/opensddm/scripts/Xsetup
+@sample ${SYSCONFDIR}/opensddm/scripts/Xsetup
+@mode 555
+share/opensddm/scripts/Xstop
+@sample ${SYSCONFDIR}/opensddm/scripts/Xstop
+@mode 555
+share/opensddm/scripts/wayland-session
+@sample ${SYSCONFDIR}/opensddm/scripts/wayland-session
+@mode
+share/opensddm/themes/
+share/opensddm/themes/elarun/
+share/opensddm/themes/elarun/Main.qml
+share/opensddm/themes/elarun/README
+share/opensddm/themes/elarun/angle-down.png
+share/opensddm/themes/elarun/elarun.jpg
+share/opensddm/themes/elarun/images/
+share/opensddm/themes/elarun/images/background.png
+share/opensddm/themes/elarun/images/lock.png
+share/opensddm/themes/elarun/images/login_active.png
+share/opensddm/themes/elarun/images/login_normal.png
+share/opensddm/themes/elarun/images/rectangle.png
+share/opensddm/themes/elarun/images/rectangle_overlay.png
+share/opensddm/themes/elarun/images/session_normal.png
+share/opensddm/themes/elarun/images/system_hibernate.png
+share/opensddm/themes/elarun/images/system_reboot.png
+share/opensddm/themes/elarun/images/system_shutdown.png
+share/opensddm/themes/elarun/images/system_suspend.png
+share/opensddm/themes/elarun/images/system_switch_user.png
+share/opensddm/themes/elarun/images/user_icon.png
+share/opensddm/themes/elarun/metadata.desktop
+share/opensddm/themes/elarun/theme.conf
+share/opensddm/themes/maldives/
+share/opensddm/themes/maldives/LICENSE
+share/opensddm/themes/maldives/Main.qml
+share/opensddm/themes/maldives/README
+share/opensddm/themes/maldives/angle-down.png
+share/opensddm/themes/maldives/background.jpg
+share/opensddm/themes/maldives/maldives.jpg
+share/opensddm/themes/maldives/metadata.desktop
+share/opensddm/themes/maldives/rectangle.png
+share/opensddm/themes/maldives/theme.conf
+share/opensddm/themes/maya/
+share/opensddm/themes/maya/LICENSE
+share/opensddm/themes/maya/Main.qml
+share/opensddm/themes/maya/README
+share/opensddm/themes/maya/components/
+share/opensddm/themes/maya/components/SpButton.qml
+share/opensddm/themes/maya/components/SpClock.qml
+share/opensddm/themes/maya/fonts/
+share/opensddm/themes/maya/fonts/OpenSans_CondLight.ttf
+share/opensddm/themes/maya/images/
+share/opensddm/themes/maya/images/ic_arrow_drop_down_white_24px.svg
+share/opensddm/themes/maya/images/ic_power_settings_new_white_24px.svg
+share/opensddm/themes/maya/images/ic_refresh_white_24px.svg
+share/opensddm/themes/maya/images/ic_warning_white_24px.svg
+share/opensddm/themes/maya/metadata.desktop
+share/opensddm/themes/maya/screenshots/
+share/opensddm/themes/maya/screenshots/hi_IN.png
+share/opensddm/themes/maya/theme.conf
+share/opensddm/translations-qt6/
+share/opensddm/translations-qt6/ar.qm
+share/opensddm/translations-qt6/bg.qm
+share/opensddm/translations-qt6/bn.qm
+share/opensddm/translations-qt6/ca.qm
+share/opensddm/translations-qt6/cs.qm
+share/opensddm/translations-qt6/da.qm
+share/opensddm/translations-qt6/de.qm
+share/opensddm/translations-qt6/es.qm
+share/opensddm/translations-qt6/et.qm
+share/opensddm/translations-qt6/eu.qm
+share/opensddm/translations-qt6/fa.qm
+share/opensddm/translations-qt6/fi.qm
+share/opensddm/translations-qt6/fr.qm
+share/opensddm/translations-qt6/gl.qm
+share/opensddm/translations-qt6/he.qm
+share/opensddm/translations-qt6/hi_IN.qm
+share/opensddm/translations-qt6/hu.qm
+share/opensddm/translations-qt6/ie.qm
+share/opensddm/translations-qt6/is.qm
+share/opensddm/translations-qt6/it.qm
+share/opensddm/translations-qt6/ja.qm
+share/opensddm/translations-qt6/ka.qm
+share/opensddm/translations-qt6/kk.qm
+share/opensddm/translations-qt6/ko.qm
+share/opensddm/translations-qt6/lt.qm
+share/opensddm/translations-qt6/lv.qm
+share/opensddm/translations-qt6/nb.qm
+share/opensddm/translations-qt6/nl.qm
+share/opensddm/translations-qt6/nn.qm
+share/opensddm/translations-qt6/oc.qm
+share/opensddm/translations-qt6/pl.qm
+share/opensddm/translations-qt6/pt_BR.qm
+share/opensddm/translations-qt6/pt_PT.qm
+share/opensddm/translations-qt6/ro.qm
+share/opensddm/translations-qt6/ru.qm
+share/opensddm/translations-qt6/sk.qm
+share/opensddm/translations-qt6/sr.qm
+share/opensddm/translations-qt6/sr@ijekavian.qm
+share/opensddm/translations-qt6/sr@ijekavianlatin.qm
+share/opensddm/translations-qt6/sr@latin.qm
+share/opensddm/translations-qt6/sv.qm
+share/opensddm/translations-qt6/tr.qm
+share/opensddm/translations-qt6/uk.qm
+share/opensddm/translations-qt6/zh_CN.qm
+share/opensddm/translations-qt6/zh_TW.qm
+@mode 0700
+@owner _osddm
+@group _osddm
+@sample /var/db/opensddm/

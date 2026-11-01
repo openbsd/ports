@@ -1,0 +1,3 @@
+OpenSDDM is an Simple Desktop Display Manager (SDDM) fork for OpenBSD. It is
+the recommended display manager for the KDE Plasma and LXQt desktop
+environments.
