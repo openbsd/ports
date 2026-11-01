@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1654 2026/10/26 16:17:46 kirill Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1655 2026/11/01 13:01:57 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -901,10 +901,10 @@ _WRKDIRS += ${WRKOBJDIR_MFS}/${_WRKDIR_STEM}
 WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^[vV]([0-9])/\1/:S,/,-,g}
 .elif !empty(GH_COMMIT)
 WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_COMMIT}
-.elif defined(DISTNAME)
-WRKDIST ?= ${WRKDIR}/${DISTNAME}
 .elif !empty(_DT_WRKDIST)
 WRKDIST ?= ${_DT_WRKDIST}
+.elif defined(DISTNAME)
+WRKDIST ?= ${WRKDIR}/${DISTNAME}
 .else
 WRKDIST ?= ${WRKDIR}
 .endif
