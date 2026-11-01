@@ -1,18 +1,16 @@
 COMMENT-main =		network traffic monitor
 COMMENT-vnstati =	image output support for vnstat
 
-V =			2.13
-EPOCH =			0
+V =			2.14
 DISTNAME =		vnstat-${V}
-PKGNAME-main =		${DISTNAME}
 PKGNAME-vnstati =	vnstati-${V}
-REVISION =		0
 
 CATEGORIES =	net sysutils
 
 HOMEPAGE =	https://humdi.net/vnstat/
-
 SITES =		${HOMEPAGE}
+
+EPOCH =		0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
