@@ -1,16 +1,22 @@
 - qga: implement 'guest-get-fsinfo' for FreeBSD
   2a454b5391ad4241c8d59d8325d8bacac9af7a8c
 - qga: implement 'guest-get-fsinfo' for NetBSD and OpenBSD
+  6a24fc259da4b1efa8e53dc9a655d89474d270cc
+- qga: implement 'guest-network-get-route' for FreeBSD
+  0ae3840f612ba00330940f26758ae03754f6c6b6
+- qga: implement 'guest-network-get-route' for NetBSD and OpenBSD
+- qga: implement 'guest-get-diskstats' for OpenBSD
 - qga: implement 'guest-get-vcpus' for the BSDs
+- qga: implement 'guest-get-users' for OpenBSD
 
 Index: qga/commands-bsd.c
 --- qga/commands-bsd.c.orig
 +++ qga/commands-bsd.c
-@@ -13,13 +13,13 @@
- #include "qemu/osdep.h"
+@@ -14,12 +14,17 @@
  #include "qga-qapi-commands.h"
  #include "qapi/error.h"
--#include "qemu/queue.h"
+ #include "qemu/queue.h"
++#include "block/block-common.h"
  #include "commands-common.h"
  #include <sys/ioctl.h>
  #include <sys/param.h>
@@ -18,15 +24,24 @@ Index: qga/commands-bsd.c
  #include <sys/mount.h>
  #include <net/if_dl.h>
 +#include <sys/statvfs.h>
++#include <sys/sysctl.h>
++#include <net/route.h>
++#include <net/if.h>
  #if defined(__NetBSD__) || defined(__OpenBSD__)
  #include <net/if_arp.h>
  #include <netinet/if_ether.h>
-@@ -27,12 +27,20 @@
+@@ -27,12 +32,40 @@
  #include <net/ethernet.h>
  #endif
  #include <paths.h>
 +#ifdef __FreeBSD__
 +#include <ufs/ffs/fs.h>
++#endif
++#ifdef __OpenBSD__
++#include <sys/sysctl.h>
++#include <sys/disk.h>
++#include <util.h>
++#include <utmp.h>
 +#endif
  
 -#if defined(CONFIG_FSFREEZE) || defined(CONFIG_FSTRIM)
@@ -34,6 +49,20 @@ Index: qga/commands-bsd.c
 +typedef struct statvfs bsd_fsinfo_t;
 +#else
 +typedef struct statfs bsd_fsinfo_t;
++#endif
++
++#if defined(__OpenBSD__)
++#define RT_FIRST_SA(rtm) \
++    ((struct sockaddr *)((char *)(rtm) + (rtm)->rtm_hdrlen))
++#define RT_SA_SIZE(sa) \
++    ((sa)->sa_len > 0 ? 1 + (((sa)->sa_len - 1) | (sizeof(long) - 1)) \
++                      : sizeof(long))
++#elif defined(__NetBSD__)
++#define RT_FIRST_SA(rtm)  ((struct sockaddr *)((rtm) + 1))
++#define RT_SA_SIZE(sa)    RT_ROUNDUP((sa)->sa_len)
++#else /* FreeBSD, DragonFly */
++#define RT_FIRST_SA(rtm)  ((struct sockaddr *)((rtm) + 1))
++#define RT_SA_SIZE(sa)    SA_SIZE(sa)
 +#endif
 +
  bool build_fs_mount_list(FsMountList *mounts, Error **errp)
@@ -44,7 +73,7 @@ Index: qga/commands-bsd.c
      struct stat statbuf;
      int i, count, ret;
  
-@@ -55,16 +63,18 @@ bool build_fs_mount_list(FsMountList *mounts, Error **
+@@ -55,16 +88,18 @@ bool build_fs_mount_list(FsMountList *mounts, Error **
  
          mount->dirname = g_strdup(mntp->f_mntonname);
          mount->devtype = g_strdup(mntp->f_fstypename);
@@ -65,7 +94,7 @@ Index: qga/commands-bsd.c
  
  #if defined(CONFIG_FSFREEZE)
  static int ufssuspend_fd = -1;
-@@ -178,3 +188,79 @@ bool guest_get_hw_addr(struct ifaddrs *ifa, unsigned c
+@@ -178,3 +213,461 @@ bool guest_get_hw_addr(struct ifaddrs *ifa, unsigned c
      return true;
  }
  #endif /* HAVE_GETIFADDRS */
@@ -144,4 +173,386 @@ Index: qga/commands-bsd.c
 +
 +    free_fs_mount_list(&mounts);
 +    return ret;
++}
++
++#ifdef __OpenBSD__
++static uint64_t timeval_to_msec(const struct timeval *tv)
++{
++    return (uint64_t)tv->tv_sec * 1000ULL + tv->tv_usec / 1000;
++}
++
++static GuestDiskStatsInfo *
++guest_diskstats_info_new(const struct diskstats *ds, int rawpart)
++{
++    GuestDiskStatsInfo *diskstatinfo;
++    GuestDiskStats *diskstat;
++    struct stat st;
++
++    diskstatinfo = g_new0(GuestDiskStatsInfo, 1);
++    diskstatinfo->name = g_strndup(ds->ds_name, sizeof(ds->ds_name));
++
++    /*
++     * The kernel disk statistics carry no device numbers; take them
++     * from the raw partition device node, which covers the whole disk.
++     * If that node is missing (e.g. a minimal /dev), report 0.
++     */
++    if (rawpart >= 0) {
++        g_autofree char *devpath = g_strdup_printf(_PATH_DEV "%s%c",
++                                                   diskstatinfo->name,
++                                                   'a' + rawpart);
++
++        if (stat(devpath, &st) == 0 && S_ISBLK(st.st_mode)) {
++            diskstatinfo->major = major(st.st_rdev);
++            diskstatinfo->minor = minor(st.st_rdev);
++        }
++    }
++
++    /*
++     * OpenBSD tracks transfer counts and bytes per direction, but busy
++     * time only in aggregate, and has no discard, flush or merge
++     * counters.
++     */
++    diskstat = g_new0(GuestDiskStats, 1);
++    diskstat->has_read_ios = true;
++    diskstat->read_ios = ds->ds_rxfer;
++    diskstat->has_read_sectors = true;
++    diskstat->read_sectors = ds->ds_rbytes / BDRV_SECTOR_SIZE;
++
++    diskstat->has_write_ios = true;
++    diskstat->write_ios = ds->ds_wxfer;
++    diskstat->has_write_sectors = true;
++    diskstat->write_sectors = ds->ds_wbytes / BDRV_SECTOR_SIZE;
++
++    if (ds->ds_busy >= 0) {
++        diskstat->has_ios_pgr = true;
++        diskstat->ios_pgr = ds->ds_busy;
++    }
++
++    diskstat->has_total_ticks = true;
++    diskstat->total_ticks = timeval_to_msec(&ds->ds_time);
++
++    diskstatinfo->stats = diskstat;
++    return diskstatinfo;
++}
++
++#define DISKSTATS_MAX_TRIES 5
++
++GuestDiskStatsInfoList *qmp_guest_get_diskstats(Error **errp)
++{
++    GuestDiskStatsInfoList *head = NULL, **tail = &head;
++    int mib[] = { CTL_HW, HW_DISKSTATS };
++    g_autofree struct diskstats *stats = NULL;
++    size_t len, i;
++    int rawpart = getrawpartition();
++    int tries;
++
++    /* Disks may attach or detach between the two sysctl calls; retry. */
++    for (tries = 0; tries < DISKSTATS_MAX_TRIES; tries++) {
++        if (sysctl(mib, ARRAY_SIZE(mib), NULL, &len, NULL, 0) == -1) {
++            error_setg_errno(errp, errno, "cannot get size of hw.diskstats");
++            return NULL;
++        }
++        if (len == 0) {
++            return NULL;
++        }
++        len += 4 * sizeof(struct diskstats);
++        g_free(stats);
++        stats = g_malloc(len);
++        if (sysctl(mib, ARRAY_SIZE(mib), stats, &len, NULL, 0) == 0) {
++            break;
++        }
++        if (errno != ENOMEM) {
++            error_setg_errno(errp, errno, "cannot read hw.diskstats");
++            return NULL;
++        }
++    }
++    if (tries == DISKSTATS_MAX_TRIES) {
++        error_setg(errp, "hw.diskstats keeps changing size");
++        return NULL;
++    }
++
++    for (i = 0; i < len / sizeof(struct diskstats); i++) {
++        QAPI_LIST_APPEND(tail, guest_diskstats_info_new(&stats[i], rawpart));
++    }
++
++    return head;
++}
++
++GuestUserList *qmp_guest_get_users(Error **errp)
++{
++    GHashTable *cache;
++    GuestUserList *head = NULL, **tail = &head;
++    struct utmp ut;
++    FILE *fp = NULL;
++
++    fp = fopen(_PATH_UTMP, "r");
++    if (!fp) {
++        error_setg_errno(errp, errno, "failed to open %s", _PATH_UTMP);
++        return NULL;
++    }
++
++    cache = g_hash_table_new(g_str_hash, g_str_equal);
++
++    while (fread(&ut, sizeof(ut), 1, fp) == 1) {
++        g_autofree char *name = NULL;
++        GuestUser *user;
++        double login_time;
++
++        /* logout(3) clears ut_name; skip empty slots like who(1) does */
++        if (ut.ut_name[0] == '\0' || ut.ut_line[0] == '\0') {
++            continue;
++        }
++
++        /* ut_name is not NUL-terminated if it fills UT_NAMESIZE */
++        name = g_strndup(ut.ut_name, sizeof(ut.ut_name));
++        login_time = (double)ut.ut_time;
++
++        user = g_hash_table_lookup(cache, name);
++        if (user) {
++            /* We're ensuring the earliest login time to be sent */
++            if (login_time < user->login_time) {
++                user->login_time = login_time;
++            }
++            continue;
++        }
++
++        user = g_new0(GuestUser, 1);
++        user->user = g_steal_pointer(&name);
++        user->login_time = login_time;
++
++        g_hash_table_insert(cache, user->user, user);
++        QAPI_LIST_APPEND(tail, user);
++    }
++
++    fclose(fp);
++    g_hash_table_destroy(cache);
++    return head;
++}
++#endif /* __OpenBSD__ */
++
++static void sockaddr_in6_normalize(const struct sockaddr *sa,
++                                   struct sockaddr_in6 *sin6)
++{
++    size_t len = MIN(sa->sa_len, sizeof(*sin6));
++
++    memset(sin6, 0, sizeof(*sin6));
++    memcpy(sin6, sa, len);
++
++    sin6->sin6_len = sizeof(*sin6);
++
++    if (IN6_IS_ADDR_LINKLOCAL(&sin6->sin6_addr) ||
++        (sin6->sin6_addr.s6_addr[0] == 0xff &&
++        ((sin6->sin6_addr.s6_addr[1] & 0x0f) == 1 ||
++        (sin6->sin6_addr.s6_addr[1] & 0x0f) == 2))) {
++        if (sin6->sin6_scope_id == 0) {
++            sin6->sin6_scope_id =
++                (sin6->sin6_addr.s6_addr[2] << 8) |
++                 sin6->sin6_addr.s6_addr[3];
++            sin6->sin6_addr.s6_addr[2] = 0;
++            sin6->sin6_addr.s6_addr[3] = 0;
++        }
++    }
++}
++
++GuestNetworkRouteList *qmp_guest_network_get_route(Error **errp)
++{
++    GuestNetworkRouteList *head = NULL, **tail = &head;
++#ifdef __NetBSD__
++    int mib[] = { CTL_NET, PF_ROUTE, 0, AF_UNSPEC, NET_RT_DUMP, 0 };
++#else
++    int mib[] = { CTL_NET, PF_ROUTE, 0, AF_UNSPEC, NET_RT_DUMP, 0, 0 };
++#endif
++    g_autofree char *buf = NULL;
++    size_t len;
++
++    if (sysctl(mib, ARRAY_SIZE(mib), NULL, &len, NULL, 0) == -1) {
++        error_setg_errno(errp, errno, "sysctl size");
++        return NULL;
++    }
++
++    buf = g_malloc0(len);
++
++    if (sysctl(mib, ARRAY_SIZE(mib), buf, &len, NULL, 0) == -1) {
++        error_setg_errno(errp, errno, "sysctl routes");
++        return NULL;
++    }
++
++    for (char *p = buf, *end = buf + len; p < end; ) {
++        struct rt_msghdr *rtm = (struct rt_msghdr *)p;
++        struct sockaddr *addresses[RTAX_MAX] = { NULL };
++        struct sockaddr *sa;
++        struct sockaddr_in6 sin6;
++        char destination[NI_MAXHOST];
++        char gateway[NI_MAXHOST];
++        char ifname[IFNAMSIZ];
++        const struct sockaddr *dst = NULL;
++        const struct sockaddr *gw = NULL;
++        const struct sockaddr *netmask = NULL;
++        const struct sockaddr *fmt_sa;
++        struct sockaddr_in normalized_mask = { 0 };
++        char netmask_buf[INET_ADDRSTRLEN];
++        socklen_t salen;
++
++        g_autoptr(GuestNetworkRoute) route = g_new0(GuestNetworkRoute, 1);
++
++        if ((size_t)(end - p) < sizeof(*rtm) ||
++            rtm->rtm_msglen < sizeof(*rtm) ||
++            rtm->rtm_msglen > (size_t)(end - p)) {
++            break;
++        }
++
++        p += rtm->rtm_msglen;
++
++        if (rtm->rtm_version != RTM_VERSION) {
++            continue;
++        }
++
++#if defined(RTF_LLINFO)
++        /* OpenBSD: skip ARP/NDP entries */
++        if (rtm->rtm_flags & RTF_LLINFO) {
++            continue;
++        }
++#elif defined(RTF_LLDATA)
++        /* NetBSD: skip ARP/NDP entries */
++        if (rtm->rtm_flags & RTF_LLDATA) {
++            continue;
++        }
++#endif
++
++        sa = RT_FIRST_SA(rtm);
++        for (int i = 0; i < RTAX_MAX; i++) {
++            if (rtm->rtm_addrs & (1U << i)) {
++                addresses[i] = sa;
++                sa = (struct sockaddr *)((char *)sa + RT_SA_SIZE(sa));
++            }
++        }
++
++        if (if_indextoname(rtm->rtm_index, ifname)) {
++            route->iface = g_strdup(ifname);
++        } else {
++            route->iface = g_strdup_printf("if%u", rtm->rtm_index);
++        }
++
++#if defined(HAVE_STRUCT_RT_METRICS_RMX_METRIC)
++        route->metric = rtm->rtm_rmx.rmx_metric;
++#endif
++
++        dst = addresses[RTAX_DST];
++        if (!dst) {
++            continue;
++        }
++
++        if (dst->sa_family == AF_INET) {
++            route->version = 4;
++        } else if (dst->sa_family == AF_INET6) {
++            route->version = 6;
++        } else {
++            continue;
++        }
++
++        fmt_sa = dst;
++        salen = dst->sa_len;
++        if (dst->sa_family == AF_INET6) {
++            sockaddr_in6_normalize(dst, &sin6);
++            fmt_sa = (struct sockaddr *)&sin6;
++            salen = sizeof(sin6);
++        }
++        if (getnameinfo(fmt_sa, salen,
++                        destination, NI_MAXHOST,
++                        NULL, 0, NI_NUMERICHOST) != 0) {
++            continue;
++        }
++        route->destination = g_strdup(destination);
++
++        gw = addresses[RTAX_GATEWAY];
++        if (gw && (gw->sa_family == AF_INET || gw->sa_family == AF_INET6)) {
++            fmt_sa = gw;
++            salen = gw->sa_len;
++            if (gw->sa_family == AF_INET6) {
++                sockaddr_in6_normalize(gw, &sin6);
++                fmt_sa = (struct sockaddr *)&sin6;
++                salen = sizeof(sin6);
++            }
++            if (getnameinfo(fmt_sa, salen, gateway,
++                            NI_MAXHOST, NULL, 0,
++                            NI_NUMERICHOST) != 0) {
++                continue;
++            }
++            if (gw->sa_family == AF_INET) {
++                route->gateway = g_strdup(gateway);
++            } else if (gw->sa_family == AF_INET6) {
++                route->nexthop = g_strdup(gateway);
++            }
++        }
++
++        netmask = addresses[RTAX_NETMASK];
++        if (dst->sa_family == AF_INET) {
++            if (netmask && netmask->sa_len != 0) {
++                memcpy(&normalized_mask, netmask,
++                       MIN(netmask->sa_len, sizeof(normalized_mask)));
++            } else if (rtm->rtm_flags & RTF_HOST) {
++                normalized_mask.sin_addr.s_addr = 0xFFFFFFFF;
++            }
++
++            if (inet_ntop(AF_INET, &normalized_mask.sin_addr,
++                          netmask_buf, sizeof(netmask_buf)) != NULL) {
++                route->mask = g_strdup(netmask_buf);
++            } else {
++                route->mask = NULL;
++            }
++        } else if (dst->sa_family == AF_INET6) {
++            struct sockaddr_in6 normalized_mask6;
++            memset(&normalized_mask6, 0, sizeof(normalized_mask6));
++
++            if (netmask && netmask->sa_len != 0) {
++                int prefix_len = 0;
++                bool valid_mask = true;
++                bool zero_found = false;
++
++                memcpy(&normalized_mask6, netmask,
++                       MIN(netmask->sa_len, sizeof(normalized_mask6)));
++
++                for (int i = 0; i < sizeof(normalized_mask6.sin6_addr); i++) {
++                    uint8_t byte = normalized_mask6.sin6_addr.s6_addr[i];
++                    for (int bit = 7; bit >= 0; bit--) {
++                        if ((byte >> bit) & 1) {
++                            if (zero_found) {
++                                valid_mask = false;
++                                break;
++                            }
++                            prefix_len++;
++                        } else {
++                            zero_found = true;
++                        }
++                    }
++                    if (!valid_mask) {
++                        break;
++                    }
++                }
++
++                if (valid_mask) {
++                    route->desprefixlen = g_strdup_printf("%d", prefix_len);
++                } else {
++                    route->desprefixlen = NULL;
++                }
++            } else if (rtm->rtm_flags & RTF_HOST) {
++                route->desprefixlen = g_strdup("128");
++            } else {
++                route->desprefixlen = g_strdup("0");
++            }
++        }
++
++        if (rtm->rtm_rmx.rmx_mtu) {
++            route->mtu = rtm->rtm_rmx.rmx_mtu;
++            route->has_mtu = true;
++        }
++
++        route->flags = (uint32_t)rtm->rtm_flags;
++        route->has_flags = true;
++
++        QAPI_LIST_APPEND(tail, route);
++        route = NULL;
++    }
++
++    return head;
 +}

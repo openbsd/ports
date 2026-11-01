@@ -1,6 +1,11 @@
 - qga: implement 'guest-get-fsinfo' for FreeBSD
   2a454b5391ad4241c8d59d8325d8bacac9af7a8c
 - qga: implement 'guest-get-fsinfo' for NetBSD and OpenBSD
+  6a24fc259da4b1efa8e53dc9a655d89474d270cc
+- qga: implement 'guest-network-get-route' for FreeBSD
+  0ae3840f612ba00330940f26758ae03754f6c6b6 
+- qga: implement 'guest-network-get-route' for NetBSD and OpenBSD
+- qga: implement 'guest-get-diskstats' for OpenBSD
 - qga: implement 'guest-get-vcpus' for the BSDs
 
 Index: qga/qapi-schema.json
@@ -78,3 +83,122 @@ Index: qga/qapi-schema.json
  
  ##
  # @guest-set-user-password:
+@@ -1407,7 +1407,7 @@
+ ##
+ { 'struct': 'GuestUser',
+   'data': { 'user': 'str', 'login-time': 'number', '*domain': 'str' },
+-  'if': { 'any': ['CONFIG_WIN32', 'HAVE_UTMPX' ] } }
++  'if': { 'any': ['CONFIG_WIN32', 'HAVE_UTMPX', 'CONFIG_OPENBSD' ] } }
+ 
+ ##
+ # @guest-get-users:
+@@ -1420,7 +1420,7 @@
+ ##
+ { 'command': 'guest-get-users',
+   'returns': ['GuestUser'],
+-  'if': { 'any': ['CONFIG_WIN32', 'HAVE_UTMPX' ] } }
++  'if': { 'any': ['CONFIG_WIN32', 'HAVE_UTMPX', 'CONFIG_OPENBSD' ] } }
+ 
+ ##
+ # @GuestTimezone:
+@@ -1714,7 +1714,7 @@
+            '*total-ticks': 'uint64',
+            '*weight-ticks': 'uint64'
+            },
+-  'if': 'CONFIG_LINUX' }
++  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_BSD'] } }
+ 
+ ##
+ # @GuestDiskStatsInfo:
+@@ -1732,7 +1732,7 @@
+            'major': 'uint64',
+            'minor': 'uint64',
+            'stats': 'GuestDiskStats' },
+-  'if': 'CONFIG_LINUX' }
++  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_BSD'] } }
+ 
+ ##
+ # @guest-get-diskstats:
+@@ -1745,7 +1745,7 @@
+ ##
+ { 'command': 'guest-get-diskstats',
+   'returns': ['GuestDiskStatsInfo'],
+-  'if': 'CONFIG_LINUX'
++  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_BSD'] }
+ }
+ 
+ ##
+@@ -1879,8 +1879,8 @@
+ ##
+ # @GuestNetworkRoute:
+ #
+-# Route information.  Supported on Linux (since 9.1) and Windows
+-# (since 11.0).
++#     Route information.  Supported on Linux (since 9.1), Windows
++#     (since 11.0), and BSD (since 11.2).
+ #
+ # @iface: The destination network or host's egress network interface
+ #     in the routing table
+@@ -1894,30 +1894,31 @@
+ #
+ # @mask: Subnet Mask (IPv4 only)
+ #
+-# @irtt: Initial round-trip delay (not for windows, IPv4 only)
++# @irtt: Initial round-trip delay (not for Windows and BSD,
++#     IPv4 only)
+ #
+-# @flags: Route flags (not for windows)
++# @flags: Route flags (not for Windows)
+ #
+-# @refcnt: The route's reference count (not for windows)
++# @refcnt: The route's reference count (not for Windows and BSD)
+ #
+-# @use: Route usage count (not for windows)
++# @use: Route usage count (not for Windows and BSD)
+ #
+-# @window: TCP window size, used for flow control (not for windows,
+-#     IPv4 only)
++# @window: TCP window size, used for flow control (not for Windows
++#     and BSD, IPv4 only)
+ #
+-# @mtu: Data link layer maximum packet size (not for windows)
++# @mtu: Data link layer maximum packet size (not for Windows)
+ #
+ # @desprefixlen: Destination prefix length (for IPv6)
+ #
+-# @source: Source IP address (for IPv6)
++# @source: Source IP address (not for BSD, IPv6 only)
+ #
+-# @srcprefixlen: Source prefix length (for IPv6)
++# @srcprefixlen: Source prefix length (not for BSD, IPv6 only)
+ #
+ # @nexthop: Next hop IP address (for IPv6)
+ #
+ # @version: IP version (4 or 6)
+ #
+-# Since: 9.1 (Linux only); 11.0 (Windows)
++# Since: 9.1 (Linux only); 11.0 (Windows); 11.2 (BSD)
+ ##
+ { 'struct': 'GuestNetworkRoute',
+   'data': {'iface': 'str',
+@@ -1937,7 +1938,7 @@
+            '*nexthop': 'str',
+            'version': 'int'
+            },
+-  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_WIN32'] } }
++  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_WIN32', 'CONFIG_BSD'] } }
+ 
+ ##
+ # @guest-network-get-route:
+@@ -1946,9 +1947,9 @@
+ #
+ # Returns: List of route info of guest.
+ #
+-# Since: 9.1 (Linux only); 11.0 (Windows)
++# Since: 9.1 (Linux only); 11.0 (Windows); 11.2 (BSD)
+ ##
+ { 'command': 'guest-network-get-route',
+   'returns': ['GuestNetworkRoute'],
+-  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_WIN32'] }
++  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_WIN32', 'CONFIG_BSD'] }
+ }

@@ -24,7 +24,7 @@ Index: hw/usb/hcd-xhci.c
  static void xhci_write_event(XHCIState *xhci, XHCIEvent *event, int v);
  static USBEndpoint *xhci_epid_to_usbep(XHCIEPContext *epctx);
  
-@@ -602,6 +608,304 @@ static inline int xhci_running(XHCIState *xhci)
+@@ -608,6 +614,304 @@ static inline int xhci_running(XHCIState *xhci)
      return !(xhci->usbsts & USBSTS_HCH);
  }
  
@@ -329,7 +329,7 @@ Index: hw/usb/hcd-xhci.c
  static void xhci_write_event(XHCIState *xhci, XHCIEvent *event, int v)
  {
      XHCIInterrupter *intr = &xhci->intr[v];
-@@ -636,7 +940,7 @@ static void xhci_write_event(XHCIState *xhci, XHCIEven
+@@ -643,7 +947,7 @@ static void xhci_write_event(XHCIState *xhci, XHCIEven
      }
  }
  
@@ -338,7 +338,7 @@ Index: hw/usb/hcd-xhci.c
  {
      XHCIInterrupter *intr;
      dma_addr_t erdp;
-@@ -649,10 +953,15 @@ static void xhci_event(XHCIState *xhci, XHCIEvent *eve
+@@ -656,10 +960,15 @@ static void xhci_event(XHCIState *xhci, XHCIEvent *eve
  
      if (v >= xhci->numintrs) {
          DPRINTF("intr nr out of range (%d >= %d)\n", v, xhci->numintrs);
@@ -355,7 +355,7 @@ Index: hw/usb/hcd-xhci.c
      erdp = xhci_addr64(intr->erdp_low, intr->erdp_high);
      if (erdp < intr->er_start ||
          erdp >= (intr->er_start + TRB_SIZE*intr->er_size)) {
-@@ -660,25 +969,86 @@ static void xhci_event(XHCIState *xhci, XHCIEvent *eve
+@@ -667,25 +976,86 @@ static void xhci_event(XHCIState *xhci, XHCIEvent *eve
          DPRINTF("xhci: ER[%d] at "DMA_ADDR_FMT" len %d\n",
                  v, intr->er_start, intr->er_size);
          xhci_die(xhci);
@@ -448,7 +448,7 @@ Index: hw/usb/hcd-xhci.c
  static void xhci_ring_init(XHCIState *xhci, XHCIRing *ring,
                             dma_addr_t base)
  {
-@@ -802,6 +1172,7 @@ static void xhci_er_reset(XHCIState *xhci, int v)
+@@ -809,6 +1179,7 @@ static void xhci_er_reset(XHCIState *xhci, int v)
      XHCIInterrupter *intr = &xhci->intr[v];
      XHCIEvRingSeg seg;
      dma_addr_t erstba = xhci_addr64(intr->erstba_low, intr->erstba_high);
@@ -456,7 +456,7 @@ Index: hw/usb/hcd-xhci.c
  
      if (intr->erstsz == 0 || erstba == 0) {
          /* disabled */
-@@ -839,13 +1210,25 @@ static void xhci_er_reset(XHCIState *xhci, int v)
+@@ -846,13 +1217,25 @@ static void xhci_er_reset(XHCIState *xhci, int v)
  
      DPRINTF("xhci: event ring[%d]:" DMA_ADDR_FMT " [%d]\n",
              v, intr->er_start, intr->er_size);
@@ -482,7 +482,7 @@ Index: hw/usb/hcd-xhci.c
  }
  
  static void xhci_stop(XHCIState *xhci)
-@@ -853,6 +1236,7 @@ static void xhci_stop(XHCIState *xhci)
+@@ -860,6 +1243,7 @@ static void xhci_stop(XHCIState *xhci)
      trace_usb_xhci_stop();
      xhci->usbsts |= USBSTS_HCH;
      xhci->crcr_low &= ~CRCR_CRR;
@@ -490,7 +490,7 @@ Index: hw/usb/hcd-xhci.c
  }
  
  static XHCIStreamContext *xhci_alloc_stream_contexts(unsigned count,
-@@ -1287,6 +1671,7 @@ static TRBCCode xhci_disable_ep(XHCIState *xhci, unsig
+@@ -1301,6 +1685,7 @@ static TRBCCode xhci_disable_ep(XHCIState *xhci, unsig
          return CC_SUCCESS;
      }
  
@@ -498,7 +498,7 @@ Index: hw/usb/hcd-xhci.c
      xhci_ep_nuke_xfers(xhci, slotid, epid, 0);
  
      epctx = slot->eps[epid-1];
-@@ -1328,6 +1713,7 @@ static TRBCCode xhci_stop_ep(XHCIState *xhci, unsigned
+@@ -1342,6 +1727,7 @@ static TRBCCode xhci_stop_ep(XHCIState *xhci, unsigned
          return CC_EP_NOT_ENABLED_ERROR;
      }
  
@@ -506,7 +506,7 @@ Index: hw/usb/hcd-xhci.c
      if (xhci_ep_nuke_xfers(xhci, slotid, epid, CC_STOPPED) > 0) {
          DPRINTF("xhci: FIXME: endpoint stopped w/ xfers running, "
                  "data might be lost\n");
-@@ -1373,6 +1759,7 @@ static TRBCCode xhci_reset_ep(XHCIState *xhci, unsigne
+@@ -1387,6 +1773,7 @@ static TRBCCode xhci_reset_ep(XHCIState *xhci, unsigne
          return CC_CONTEXT_STATE_ERROR;
      }
  
@@ -514,7 +514,7 @@ Index: hw/usb/hcd-xhci.c
      if (xhci_ep_nuke_xfers(xhci, slotid, epid, 0) > 0) {
          DPRINTF("xhci: FIXME: endpoint reset w/ xfers running, "
                  "data might be lost\n");
-@@ -1893,6 +2280,11 @@ static void xhci_kick_epctx(XHCIEPContext *epctx, unsi
+@@ -1905,6 +2292,11 @@ static void xhci_kick_epctx(XHCIEPContext *epctx, unsi
      trace_usb_xhci_ep_kick(epctx->slotid, epctx->epid, streamid);
      assert(!epctx->kick_active);
  
@@ -526,7 +526,7 @@ Index: hw/usb/hcd-xhci.c
      /* If the device has been detached, but the guest has not noticed this
         yet the 2 above checks will succeed, but we must NOT continue */
      if (!xhci_slot_ok(xhci, epctx->slotid)) {
-@@ -1943,6 +2335,11 @@ static void xhci_kick_epctx(XHCIEPContext *epctx, unsi
+@@ -1944,6 +2336,11 @@ static void xhci_kick_epctx(XHCIEPContext *epctx, unsi
          epctx->retry = NULL;
      }
  
@@ -538,7 +538,7 @@ Index: hw/usb/hcd-xhci.c
      if (epctx->state == EP_HALTED) {
          DPRINTF("xhci: ep halted, not running schedule\n");
          return;
-@@ -2015,6 +2412,11 @@ static void xhci_kick_epctx(XHCIEPContext *epctx, unsi
+@@ -2016,6 +2413,11 @@ static void xhci_kick_epctx(XHCIEPContext *epctx, unsi
              xfer = NULL;
          }
  
@@ -550,7 +550,7 @@ Index: hw/usb/hcd-xhci.c
          if (epctx->state == EP_HALTED) {
              break;
          }
-@@ -2490,6 +2892,9 @@ static void xhci_process_commands(XHCIState *xhci)
+@@ -2492,6 +2894,9 @@ static void xhci_process_commands(XHCIState *xhci)
      }
  
      xhci->crcr_low |= CRCR_CRR;
@@ -560,7 +560,7 @@ Index: hw/usb/hcd-xhci.c
  
      while ((type = xhci_ring_fetch(xhci, &xhci->cmd_ring, &trb, &addr))) {
          event.ptr = addr;
-@@ -2600,7 +3005,9 @@ static void xhci_process_commands(XHCIState *xhci)
+@@ -2602,7 +3007,9 @@ static void xhci_process_commands(XHCIState *xhci)
              break;
          }
          event.slotid = slotid;
@@ -571,7 +571,7 @@ Index: hw/usb/hcd-xhci.c
  
          if (count++ > COMMAND_LIMIT) {
              trace_usb_xhci_enforced_limit("commands");
-@@ -2716,6 +3123,8 @@ static void xhci_reset(DeviceState *dev)
+@@ -2718,6 +3125,8 @@ static void xhci_reset(DeviceState *dev)
      xhci->dcbaap_low = 0;
      xhci->dcbaap_high = 0;
      xhci->config = 0;
@@ -580,7 +580,7 @@ Index: hw/usb/hcd-xhci.c
  
      for (i = 0; i < xhci->numslots; i++) {
          xhci_disable_slot(xhci, i+1);
-@@ -2736,6 +3145,11 @@ static void xhci_reset(DeviceState *dev)
+@@ -2738,6 +3147,11 @@ static void xhci_reset(DeviceState *dev)
  
          xhci->intr[i].er_ep_idx = 0;
          xhci->intr[i].er_pcs = 1;
@@ -592,7 +592,7 @@ Index: hw/usb/hcd-xhci.c
          xhci->intr[i].ev_buffer_put = 0;
          xhci->intr[i].ev_buffer_get = 0;
      }
-@@ -3139,6 +3553,11 @@ static void xhci_runtime_write(void *ptr, hwaddr reg,
+@@ -3141,6 +3555,11 @@ static void xhci_runtime_write(void *ptr, hwaddr reg,
              intr->erdp_low &= ~ERDP_EHB;
          }
          intr->erdp_low = (val & ~ERDP_EHB) | (intr->erdp_low & ERDP_EHB);
@@ -604,7 +604,7 @@ Index: hw/usb/hcd-xhci.c
          if (val & ERDP_EHB) {
              dma_addr_t erdp = xhci_addr64(intr->erdp_low, intr->erdp_high);
              unsigned int dp_idx = (erdp - intr->er_start) / TRB_SIZE;
-@@ -3151,6 +3570,7 @@ static void xhci_runtime_write(void *ptr, hwaddr reg,
+@@ -3153,6 +3572,7 @@ static void xhci_runtime_write(void *ptr, hwaddr reg,
          break;
      case 0x1c: /* ERDP high */
          intr->erdp_high = val;
@@ -612,7 +612,7 @@ Index: hw/usb/hcd-xhci.c
          break;
      default:
          trace_usb_xhci_unimplemented("oper write", reg);
-@@ -3425,6 +3845,15 @@ static void usb_xhci_realize(DeviceState *dev, Error *
+@@ -3454,6 +3874,15 @@ static void usb_xhci_realize(DeviceState *dev, Error *
      if (xhci->numslots < 1) {
          xhci->numslots = 1;
      }
@@ -628,7 +628,7 @@ Index: hw/usb/hcd-xhci.c
      if (xhci_get_flag(xhci, XHCI_FLAG_ENABLE_STREAMS)) {
          xhci->max_pstreams_mask = 7; /* == 256 primary streams */
      } else {
-@@ -3470,6 +3899,14 @@ static void usb_xhci_unrealize(DeviceState *dev)
+@@ -3499,6 +3928,14 @@ static void usb_xhci_unrealize(DeviceState *dev)
          xhci_disable_slot(xhci, i + 1);
      }
  
@@ -643,7 +643,7 @@ Index: hw/usb/hcd-xhci.c
      if (xhci->mfwrap_timer) {
          timer_free(xhci->mfwrap_timer);
          xhci->mfwrap_timer = NULL;
-@@ -3488,17 +3925,70 @@ static void usb_xhci_unrealize(DeviceState *dev)
+@@ -3517,17 +3954,70 @@ static void usb_xhci_unrealize(DeviceState *dev)
      usb_bus_release(&xhci->bus);
  }
  
@@ -715,7 +715,7 @@ Index: hw/usb/hcd-xhci.c
      dcbaap = xhci_addr64(xhci->dcbaap_low, xhci->dcbaap_high);
  
      for (slotid = 1; slotid <= xhci->numslots; slotid++) {
-@@ -3531,11 +4021,19 @@ static int usb_xhci_post_load(void *opaque, int versio
+@@ -3560,11 +4050,19 @@ static int usb_xhci_post_load(void *opaque, int versio
              xhci_init_epctx(epctx, pctx, ep_ctx);
              epctx->state = state;
              if (state == EP_RUNNING) {
@@ -737,7 +737,7 @@ Index: hw/usb/hcd-xhci.c
      return 0;
  }
  
-@@ -3583,6 +4081,38 @@ static const VMStateDescription vmstate_xhci_event = {
+@@ -3612,6 +4110,38 @@ static const VMStateDescription vmstate_xhci_event = {
      }
  };
  
@@ -776,7 +776,7 @@ Index: hw/usb/hcd-xhci.c
  static bool xhci_er_full(void *opaque, int version_id)
  {
      return false;
-@@ -3617,12 +4147,37 @@ static const VMStateDescription vmstate_xhci_intr = {
+@@ -3646,12 +4176,37 @@ static const VMStateDescription vmstate_xhci_intr = {
                                    vmstate_xhci_event, XHCIEvent),
  
          VMSTATE_END_OF_LIST()
@@ -814,7 +814,7 @@ Index: hw/usb/hcd-xhci.c
      .post_load = usb_xhci_post_load,
      .fields = (const VMStateField[]) {
          VMSTATE_STRUCT_VARRAY_UINT32(ports, XHCIState, numports, 1,
-@@ -3648,6 +4203,10 @@ const VMStateDescription vmstate_xhci = {
+@@ -3677,6 +4232,10 @@ const VMStateDescription vmstate_xhci = {
          VMSTATE_STRUCT(cmd_ring, XHCIState, 1, vmstate_xhci_ring, XHCIRing),
  
          VMSTATE_END_OF_LIST()

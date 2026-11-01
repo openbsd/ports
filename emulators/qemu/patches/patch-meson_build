@@ -1,4 +1,7 @@
 - util/cutils: Use getexecpath() on OpenBSD for qemu_init_exec_dir()
+- qga: implement 'guest-network-get-route' for FreeBSD
+  0ae3840f612ba00330940f26758ae03754f6c6b6
+- qga: implement 'guest-get-users' for OpenBSD
 
 - localstatedir does not belong under prefix
 - remove hardcoding of optimization
@@ -15,7 +18,28 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -3030,6 +3030,14 @@ config_host_data.set('CONFIG_ELF_AUX_INFO', cc.links(o
+@@ -2433,6 +2433,7 @@ config_host_data.set('CONFIG_BDRV_WHITELIST_TOOLS', ge
+ config_host_data.set('CONFIG_BRLAPI', brlapi.found())
+ config_host_data.set('CONFIG_BSD', host_os in bsd_oses)
+ config_host_data.set('CONFIG_FREEBSD', host_os == 'freebsd')
++config_host_data.set('CONFIG_OPENBSD', host_os == 'openbsd')
+ config_host_data.set('CONFIG_CAPSTONE', capstone.found())
+ config_host_data.set('CONFIG_COCOA', cocoa.found())
+ config_host_data.set('CONFIG_DARWIN', host_os == 'darwin')
+@@ -2755,6 +2756,12 @@ config_host_data.set('HAVE_STRUCT_STAT_ST_ATIM',
+ config_host_data.set('HAVE_BLK_ZONE_REP_CAPACITY',
+                      cc.has_member('struct blk_zone', 'capacity',
+                                    prefix: '#include <linux/blkzoned.h>'))
++config_host_data.set('HAVE_STRUCT_RT_METRICS_RMX_METRIC',
++                     cc.has_member('struct rt_metrics', 'rmx_metric',
++                                   prefix: '''
++                                       #include <sys/types.h>
++                                       #include <sys/socket.h>
++                                       #include <net/route.h>'''))
+ 
+ # has_type
+ config_host_data.set('CONFIG_IOVEC',
+@@ -3030,6 +3037,14 @@ config_host_data.set('CONFIG_ELF_AUX_INFO', cc.links(o
      return hwcap;
    }'''))
  
@@ -30,7 +54,7 @@ Index: meson.build
  config_host_data.set('CONFIG_USBFS', have_linux_user and cc.compiles('''
    #include <linux/usbdevice_fs.h>
  
-@@ -4753,9 +4761,6 @@ if have_rust
+@@ -4753,9 +4768,6 @@ if have_rust
    summary_info += {'bindgen version': bindgen.version()}
  endif
  option_cflags = (get_option('debug') ? ['-g'] : [])

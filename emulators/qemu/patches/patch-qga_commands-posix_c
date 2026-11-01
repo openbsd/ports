@@ -1,11 +1,35 @@
 - qga: implement 'guest-get-fsinfo' for FreeBSD
   2a454b5391ad4241c8d59d8325d8bacac9af7a8c
 - qga: implement 'guest-get-fsinfo' for NetBSD and OpenBSD
+  6a24fc259da4b1efa8e53dc9a655d89474d270cc
+- qga: do not run hwclock(8) on non-Linux POSIX OSes
+  e1d00ea443da6f15dc10aea8c3ab4ad7ffeb68cc
 
 Index: qga/commands-posix.c
 --- qga/commands-posix.c.orig
 +++ qga/commands-posix.c
-@@ -718,7 +718,7 @@ void qmp_guest_file_flush(int64_t handle, Error **errp
+@@ -322,6 +322,20 @@ void qmp_guest_set_time(bool has_time, int64_t time_ns
+         }
+     }
+ 
++#if !defined(CONFIG_LINUX)
++    /*
++     * BSDs (FreeBSD, OpenBSD, NetBSD) and illumos do not have the
++     * hwclock(8) tool. These systems update hardware clock when
++     * settimeofday() sets system time, so no additional actions
++     * are needed. Setting system time from RTC is not supported.
++     */
++    if (!has_time) {
++        error_setg(errp, "Setting system time from RTC is not supported");
++    }
++
++    return;
++#endif
++
+     /* Now, if user has passed a time to set and the system time is set, we
+      * just need to synchronize the hardware clock. However, if no time was
+      * passed, user is requesting the opposite: set the system time from the
+@@ -718,7 +732,7 @@ void qmp_guest_file_flush(int64_t handle, Error **errp
      }
  }
  
@@ -14,7 +38,7 @@ Index: qga/commands-posix.c
  void free_fs_mount_list(FsMountList *mounts)
  {
       FsMount *mount, *temp;
-@@ -731,6 +731,9 @@ void free_fs_mount_list(FsMountList *mounts)
+@@ -731,6 +745,9 @@ void free_fs_mount_list(FsMountList *mounts)
           QTAILQ_REMOVE(mounts, mount, next);
           g_free(mount->dirname);
           g_free(mount->devtype);

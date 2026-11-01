@@ -6,9 +6,8 @@ USE_NOBTCFI=	Yes
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	11.1.1
+VERSION=	11.1.3
 DISTNAME=	qemu-${VERSION}
-REVISION=	2
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz

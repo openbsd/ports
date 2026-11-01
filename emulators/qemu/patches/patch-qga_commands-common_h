@@ -1,6 +1,7 @@
 - qga: implement 'guest-get-fsinfo' for FreeBSD
   2a454b5391ad4241c8d59d8325d8bacac9af7a8c
 - qga: implement 'guest-get-fsinfo' for NetBSD and OpenBSD
+  6a24fc259da4b1efa8e53dc9a655d89474d270cc
 
 Index: qga/commands-common.h
 --- qga/commands-common.h.orig
