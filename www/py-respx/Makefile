@@ -1,9 +1,10 @@
 COMMENT=	mock out HTTPX and HTTP Core for tests
 
-MODPY_DISTV=	0.22.0
-DISTNAME=	respx-${MODPY_DISTV}
+MODPY_DISTV=	0.23.1
+GH_ACCOUNT=	lundberg
+GH_PROJECT=	respx
+GH_TAGNAME=	${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	www
 
@@ -15,10 +16,11 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
-MODPY_PI=	Yes
 
 RUN_DEPENDS=	www/py-httpx
-
-NO_TEST=	Yes
+TEST_DEPENDS=	devel/py-test-cov \
+		devel/py-test-asyncio \
+		www/py-starlette \
+		devel/py-trio
 
 .include <bsd.port.mk>
