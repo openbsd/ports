@@ -2,7 +2,7 @@ COMMENT =	emulator frontend
 
 PKGNAME =	es-de-$V
 V =		3.5.0
-REV =		50e4b600ae533d772bae3ff880d11a09b05dbe84
+REVISION =	0
 
 DIST_TUPLE +=	gitlab es-de emulationstation-de v$V .
 
@@ -38,7 +38,7 @@ LIB_DEPENDS =		devel/libgit2/libgit2 \
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-WRKDIST =		${WRKDIR}/emulationstation-de-v$V-${REV}
+WRKDIST =		${WRKDIR}/emulationstation-de-v$V
 
 post-install:
 	gunzip ${PREFIX}/man/man6/es-de.6.gz

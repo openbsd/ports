@@ -1,7 +1,7 @@
 COMMENT =		Rust reimplementation of lualatex
 
 V =			1.3.0
-REV =			47cc2b2987a2952121dc4ac0d531675717006f5e
+REVISION =		0
 DIST_TUPLE =		gitlab severin-lemaignan retex  ${V} .
 DISTNAME =		retex-${V}
 
@@ -17,8 +17,6 @@ WANTLIB =		$(MODCARGO_WANTLIB) m
 MODULES =		devel/cargo
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
-
-WRKDIST =		${WRKDIR}/retex-${V}-${REV}
 
 NO_TEST =
 
