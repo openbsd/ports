@@ -27,7 +27,7 @@ MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # docs: BSD - CC-BY-SA-4.0 - LGPLv2.1 - MIT - OPL
 PERMIT_PACKAGE ?=	Yes
 
-DIST_SUBDIR=		gstreamer
+DIST_SUBDIR?=		gstreamer
 SITE_GST=		https://gstreamer.freedesktop.org/src/
 EXTRACT_SUFX ?=		.tar.xz
 

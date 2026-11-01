@@ -1,6 +1,8 @@
 COMMENT=		GStreamer bindings for Rust
 
-DIST_TUPLE=		fdo gstreamer gst-plugins-rs 0.15.4 .
+V=			0.15.4
+DIST_TUPLE=		fdo gstreamer gst-plugins-rs ${V} .
+DIST_SUBDIR=		rerolled
 REVISION=		1
 
 # see patch-Cargo_toml;
