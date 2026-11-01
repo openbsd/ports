@@ -1,4 +1,4 @@
-UNLINKED=	wip
+#UNLINKED=	wip
 
 PHP_VERSION=	8.6.0RC3
 SITES=		https://github.com/php/php-src/archive/refs/tags/
@@ -12,14 +12,11 @@ AUTOCONF_VERSION= 2.73
 PORTROACH=
 PHP_PKGSPEC=	>=8.6,<8.7
 
-CONFIGURE_ARGS=	--enable-pic
-LIB_DEPENDS=	devel/capstone/main
-WANTLIB=	capstone
-
-# needs unreleased version; use internal for now
-#CONFIGURE_ARGS+=	--with-external-uriparser
-#LIB_DEPENDS+=	www/uriparser
-#WANTLIB+=	uriparser
+CONFIGURE_ARGS=	--enable-pic \
+		--with-external-uriparser
+LIB_DEPENDS=	devel/capstone/main \
+		www/uriparser>=1.0.3
+WANTLIB=	capstone uriparser
 
 WANTLIB-pdo_odbc= iodbcinst
 
