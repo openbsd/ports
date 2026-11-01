@@ -1,0 +1,15 @@
+- qga: implement 'guest-get-diskstats' for OpenBSD
+
+Index: qga/meson.build
+--- qga/meson.build.orig
++++ qga/meson.build
+@@ -93,6 +93,9 @@ qga_ss = qga_ss.apply({})
+ 
+ gen_tlb = []
+ qga_libs = []
++if host_os == 'openbsd'
++  qga_libs += ['-lutil']
++endif
+ if host_os == 'windows'
+   qga_libs += ['-lws2_32', '-lwinmm', '-lpowrprof', '-lwtsapi32', '-lwininet', '-liphlpapi', '-lnetapi32',
+                '-lsetupapi', '-lcfgmgr32', '-luserenv', '-lpdh' ]
