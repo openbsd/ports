@@ -1,6 +1,6 @@
 COMMENT =		library for discovering Python interpreters
 
-MODPY_DISTV =		1.6.4
+MODPY_DISTV =		1.9.0
 DISTNAME =		python_discovery-${MODPY_DISTV}
 PKGNAME =		py-python-discovery-${MODPY_DISTV}
 CATEGORIES =		devel
@@ -16,6 +16,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatch-vcs
+
+BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme
 
 RUN_DEPENDS =		sysutils/py-filelock \
 			sysutils/py-platformdirs
