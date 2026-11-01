@@ -1,6 +1,6 @@
 COMMENT =		PostgreSQL backup & restore tool
 
-V =			2.59.1
+V =			2.60.0
 DISTNAME =		pgbackrest-${V}
 SITES =	https://github.com/pgbackrest/pgbackrest/releases/download/release%2F${V}/
 
