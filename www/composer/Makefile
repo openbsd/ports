@@ -5,7 +5,7 @@ CATEGORIES=	www devel
 PORTROACH=	site:https://github.com/composer/composer/archive/
 
 # keep revision above 8.0-stable
-V=		2.11.0
+V=		2.11.1
 
 SITES=		https://getcomposer.org/download/$V/
 DISTNAME=	composer-$V
