@@ -2,7 +2,7 @@ COMMENT =	dynamic display configuration for wayland
 
 CATEGORIES =	wayland
 DIST_TUPLE =	fdo emersion kanshi v1.9.0 .
-DIST_SUBDIR =	rerolled
+DIST_SUBDIR =	rerolled# remove at update
 REVISION =	1
 
 # MIT
