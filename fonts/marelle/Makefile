@@ -19,8 +19,6 @@ PERMIT_PACKAGE =	Yes
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-WRKDIST =	${WRKDIR}/marelle.forge.apps.education.fr-v${MODFONT_VERSION}
-
 MODFONT_FONTFILES =	fonts/ttf/*.ttf \
 			fonts/otf/*.otf
 

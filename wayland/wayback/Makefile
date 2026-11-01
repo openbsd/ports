@@ -1,11 +1,8 @@
 COMMENT =	X11 compat layer for running full X11 desktop environments
 
-V =		0.3
-DISTNAME =	wayback-${V}
+DIST_TUPLE =	fdo wayback wayback 0.3 .
 CATEGORIES =	wayland
 REVISION =	1
-
-DIST_TUPLE =	fdo wayback wayback ${V} .
 
 HOMEPAGE =	https://wayback.freedesktop.org/
 

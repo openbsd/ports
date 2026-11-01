@@ -1,9 +1,7 @@
 COMMENT =		Rust reimplementation of lualatex
 
-V =			1.3.0
+DIST_TUPLE =		gitlab severin-lemaignan retex  1.3.0 .
 REVISION =		0
-DIST_TUPLE =		gitlab severin-lemaignan retex  ${V} .
-DISTNAME =		retex-${V}
 
 CATEGORIES =		print
 

@@ -1,11 +1,7 @@
 COMMENT=		shared mime database for desktops
 
-V=			2.5.1
-DISTNAME=		shared-mime-info-${V}
-
-DIST_TUPLE=		fdo xdg xdgmime 5b4d3ce009639a7eb031849c04195d9ae80d25fe xdgmime
-XDGMIME_WRKBUILD=	${WRKBUILD}/xdgmime
-XDGMIME_WRKSRC=		${WRKSRC}/xdgmime
+DIST_TUPLE=		fdo xdg shared-mime-info 2.5.1 . \
+			fdo xdg xdgmime 5b4d3ce009639a7eb031849c04195d9ae80d25fe xdgmime
 
 CATEGORIES=		misc
 
@@ -21,8 +17,6 @@ WANTLIB += ${COMPILER_LIBCXX} c glib-2.0 xml2
 
 # C++17
 COMPILER=		base-clang ports-gcc
-
-SITES=			https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/${V}/
 
 MODULES=		devel/meson \
 			lang/python

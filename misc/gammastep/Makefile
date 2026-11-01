@@ -1,8 +1,7 @@
 COMMENT =	adjust color temperature of your screen
 
-V =		2.0.11
-COMMIT =	60f3fe757a9a218379b10e991486f91c10c5a215
-DIST_TUPLE =	gitlab chinstrap gammastep v${V} .
+DIST_TUPLE =	gitlab chinstrap gammastep v2.0.11 .
+DIST_SUBDIR =	rerolled
 
 CATEGORIES =	misc wayland x11
 
@@ -39,8 +38,6 @@ LIB_DEPENDS =		devel/glib2 \
 			wayland/wayland
 
 FAKE_FLAGS =		UPDATE_ICON_CACHE=true
-
-WRKDIST =		${WRKDIR}/gammastep-v${V}-${COMMIT}
 
 pre-configure:
 	cd ${WRKSRC}; intltoolize --force

@@ -1,9 +1,7 @@
 COMMENT =	Reference Standard M, implementation of M/MUMPS
 
-V =		1.82.4
-PKGNAME =	rsm-${V}
+DIST_TUPLE +=	gitlab Reference-Standard-M rsm v1.82.4 .
 REVISION =	0
-DIST_TUPLE +=	gitlab Reference-Standard-M rsm v${V} .
 
 CATEGORIES =	lang
 
@@ -13,8 +11,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c m
 
 NO_TEST =	Yes
-
-WRKDIST =	${WRKDIR}/rsm-v${V}
 
 post-install:
 	${INSTALL_DATA_DIR}	${PREFIX}/share/rsm

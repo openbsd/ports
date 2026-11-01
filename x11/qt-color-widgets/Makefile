@@ -22,6 +22,4 @@ MODULES =		devel/cmake \
 CONFIGURE_ARGS +=	-DQT_VERSION_MAJOR=6 \
 			-DBUILD_SHARED_LIBS=ON
 
-WRKDIST =		${WRKDIR}/Qt-Color-Widgets-8491078434b24cba295b5e41cc0d2a94c7049a5b
-
 .include <bsd.port.mk>

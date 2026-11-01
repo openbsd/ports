@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 DISTNAME =	piglit-20250507
 REVISION =	1
 
-DIST_TUPLE =	fdo mesa piglit 1767af745ed96f77b16c0c205015366d1fbbdb22 ${WRKDIST}/
+DIST_TUPLE =	fdo mesa piglit 1767af745ed96f77b16c0c205015366d1fbbdb22 .
 
 CATEGORIES =	graphics
 
@@ -17,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xrender c drm gbm
 WANTLIB += m wayland-client wayland-egl xcb xcb-dri2 xkbcommon z
 WANTLIB += png waffle-1 vulkan
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python

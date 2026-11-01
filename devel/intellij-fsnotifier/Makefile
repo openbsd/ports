@@ -1,7 +1,7 @@
 COMMENT =		replacement for IntelliJ's fsNotifier
 
-REV =			10581a62678d0251796da3e5fde498e0194dc77b
 DIST_TUPLE +=		gitlab	worthwhileit/bsd fsnotifier 20230112 .
+DIST_SUBDIR =		rerolled
 
 PKGNAME =		intellij-${DISTNAME}
 
@@ -11,8 +11,6 @@ CATEGORIES =		devel
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
-
-WRKDIST =		${WRKDIR}/${DISTNAME}-${REV}
 
 WANTLIB +=		lib/inotify/inotify c pthread
 

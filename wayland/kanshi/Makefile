@@ -21,6 +21,4 @@ LIB_DEPENDS =	devel/libscfg \
 
 WANTLIB += c json-c m scfg vali wayland-client
 
-WRKDIST =	${WRKDIR}/kanshi-v${V}
-
 .include <bsd.port.mk>

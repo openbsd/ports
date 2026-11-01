@@ -38,8 +38,6 @@ LIB_DEPENDS =		devel/libgit2/libgit2 \
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-WRKDIST =		${WRKDIR}/emulationstation-de-v$V
-
 post-install:
 	gunzip ${PREFIX}/man/man6/es-de.6.gz
 

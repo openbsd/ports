@@ -5,7 +5,6 @@ REVISION =		0
 DISTNAME =		duplicity-${MODPY_DISTV}
 
 DIST_TUPLE =		gitlab duplicity duplicity rel.${MODPY_DISTV} .
-WRKDIST =		${WRKDIR}/duplicity-rel.${MODPY_DISTV}
 
 CATEGORIES =		sysutils
 

@@ -23,7 +23,5 @@ LIB_DEPENDS =	net/libaccounts-qt \
 		net/signond-qt6 \
 		x11/qt6/qtdeclarative
 
-WRKDIST =	${WRKDIR}/accounts-qml-module-${COMMIT}
-
 .include <bsd.port.mk>
 
