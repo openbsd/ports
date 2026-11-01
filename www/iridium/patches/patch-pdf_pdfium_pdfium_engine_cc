@@ -10,7 +10,7 @@ Index: pdf/pdfium/pdfium_engine.cc
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -1014,7 +1014,7 @@ void InitializeSDK(bool enable_v8,
+@@ -1010,7 +1010,7 @@ void InitializeSDK(bool enable_v8,
  
    FPDF_InitLibraryWithConfig(&config);
  
