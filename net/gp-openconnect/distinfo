@@ -1,4 +1,4 @@
-SHA256 (GNOME-libxml2-libxml2-f8a8c1f59db355b46962577e7b74f1a1e8149dc6.tar.gz) = Z+wnq0U/6S9JxXQRkZUkLLlMpcshl2LuIrjo+ElQltU=
+SHA256 (GNOME-libxml2-f8a8c1f59db355b46962577e7b74f1a1e8149dc6.tar.gz) = Z+wnq0U/6S9JxXQRkZUkLLlMpcshl2LuIrjo+ElQltU=
 SHA256 (GlobalProtect-openconnect-2.5.3.tar.gz) = oUlI9xtfMujEIjTQzrJvxgJjBJrzKOtitGimyeX6c8Y=
 SHA256 (cargo/Inflector-0.11.4.tar.gz) = /kOMY0WHBuA0eUQnQ7qubIglZJjmQxcI9t/FIKJlFdM=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
@@ -611,7 +611,7 @@ SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXs
 SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhNvVKpLEBVU=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
 SHA256 (openconnect-openconnect-0dcdff87db65daf692dc323732831391d595d98d.tar.gz) = 77SkntmGbJGzfKlarXqJqgkkR+MiyB2FCMBe8SVMAeM=
-SIZE (GNOME-libxml2-libxml2-f8a8c1f59db355b46962577e7b74f1a1e8149dc6.tar.gz) = 5178294
+SIZE (GNOME-libxml2-f8a8c1f59db355b46962577e7b74f1a1e8149dc6.tar.gz) = 5178294
 SIZE (GlobalProtect-openconnect-2.5.3.tar.gz) = 1816976
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
