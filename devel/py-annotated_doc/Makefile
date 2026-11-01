@@ -1,6 +1,6 @@
 COMMENT =		inline docs for params, attrs, returns with Annotated
 
-MODPY_DISTV =		0.0.4
+MODPY_DISTV =		0.0.5
 DISTNAME =		annotated_doc-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
