@@ -1,8 +1,8 @@
 COMMENT =	dynamic display configuration for wayland
 
-V =		1.9.0
 CATEGORIES =	wayland
-DIST_TUPLE =	fdo emersion kanshi v${V} .
+DIST_TUPLE =	fdo emersion kanshi v1.9.0 .
+DIST_SUBDIR =	rerolled
 REVISION =	1
 
 # MIT
@@ -19,8 +19,8 @@ LIB_DEPENDS =	devel/libscfg \
 		devel/vali \
 		wayland/wayland
 
-WRKDIST =	${WRKDIR}/kanshi-v${V}
-
 WANTLIB += c json-c m scfg vali wayland-client
+
+WRKDIST =	${WRKDIR}/kanshi-v${V}
 
 .include <bsd.port.mk>
