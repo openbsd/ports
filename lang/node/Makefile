@@ -10,6 +10,7 @@ DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
 DIST_TUPLE =		codeberg qbit node-pledge 1.1.4 \
 			deps/npm/node_modules/node-pledge
+WRKDIST = ${WRKDIR}/${DISTNAME}
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0

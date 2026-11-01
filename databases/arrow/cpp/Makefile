@@ -13,6 +13,7 @@ SHARED_LIBS +=	parquet		1.0
 
 DIST_TUPLE +=	github apache parquet-testing e74785d85a4ecee829e1e405444d6a1b24b8bc9c cpp/submodules/parquet-testing
 DIST_TUPLE +=	github apache arrow-testing 249079a810caedda6898464003c7ef8a47efeeae testing
+WRKDIST = ${WRKDIR}/${DISTNAME}
 
 CATEGORIES=	databases
 

@@ -8,6 +8,7 @@ FW_VER=		${LINUX_VER}.${SUP_VER}
 DISTNAME=	linux-firmware-${LINUX_VER}
 EXTRACT_SUFX=	.tar.xz
 DIST_TUPLE=	github bsdkurt brcm-supplemental brcm-supplemental-1.3 sup
+WRKDIST = ${WRKDIR}/${DISTNAME}
 
 # broad enough to reduce WRKSRC size but specific enough to match all DISTFILES
 EXTRACT_FILES=	\*/{brcm\*,LICEN\*}

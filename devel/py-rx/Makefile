@@ -6,6 +6,7 @@ PKGNAME=	py-rx-${MODPY_DISTV}
 
 # overlay tests
 DIST_TUPLE=	github ReactiveX RxPY v${MODPY_DISTV} ../rxpy
+WRKDIST = ${WRKDIR}/${DISTNAME}
 
 CATEGORIES=	devel
 

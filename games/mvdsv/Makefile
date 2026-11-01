@@ -8,6 +8,7 @@ DISTFILES =	mvdsv{mvdsv-source-with-submodules}-$V.zip
 EXTRACT_CASES =	*.zip) ${UNZIP} -aq ${FULLDISTDIR}/$$archive -d ${WRKSRC};;
 DIST_TUPLE +=	github id-software Quake \
 			bf4ac424ce754894ac8f1dae6a3981954bc9852d Quake
+WRKDIST = ${WRKDIR}/${DISTNAME}
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
