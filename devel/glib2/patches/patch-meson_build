@@ -3,6 +3,9 @@ Reordering needed to prefer long long because base-gcc doesn't recognize
   #pragma GCC diagnostic error "-Wincompatible-pointer-types"
 and doesn't fail to compile the test case (gint64 should be long long).
 
+IP_RECVTOS check:
+https://gitlab.gnome.org/GNOME/glib/-/merge_requests/5454
+
 XXX don't pick up libatomic from lang/gcc/
 
 Index: meson.build
@@ -48,7 +51,18 @@ Index: meson.build
    else
      error('Cannot detect int64_t typedef')
    endif
-@@ -2308,9 +2308,9 @@ libatomic_test_code = '''
+@@ -2066,6 +2066,10 @@ else
+ endif
+ glib_conf.set('HAVE_IPV6', have_ipv6)
+ 
++# IP_RECVTOS is not available on every platform (e.g. OpenBSD)
++have_ip_recvtos = host_system != 'windows' and cc.has_header_symbol('netinet/in.h', 'IP_RECVTOS')
++glib_conf.set('HAVE_IP_RECVTOS', have_ip_recvtos)
++
+ # We need to decide at configure time if GLib will use real atomic
+ # operations ("lock free") or emulated ones with a mutex.  This is
+ # because we must put this information in glibconfig.h so we know if
+@@ -2308,9 +2312,9 @@ libatomic_test_code = '''
      return 0;
    }'''
  atomic_dep = []
