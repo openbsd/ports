@@ -1,4 +1,4 @@
-SHA256 (broot-1.61.0.tar.gz) = RY8b5deP47BiYY6bHbwyz1MXGwygdps/Mt+uZedTwmQ=
+SHA256 (broot-1.62.0.tar.gz) = fDRFpu70X+Z/4uH04OH53KeWI31jA2FeMbB3mMwXFro=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/aho-corasick-1.1.5.tar.gz) = yYJkL6noYGBWgo7pqFBXNyMBELsQmRU8ee/oZcWdEro=
 SHA256 (cargo/aligned-0.4.3.tar.gz) = 7kUImIxi7fBKvY2SiX/KDCmV2QfOHf6vNp2sNxakBoU=
@@ -81,7 +81,6 @@ SHA256 (cargo/crossterm-0.29.0.tar.gz) = 2Lny5MZ/gztmDNsKNSMGWGn7NVcBdyOYEu1MkFr
 SHA256 (cargo/crossterm_winapi-0.9.1.tar.gz) = rN18YqNmXH9oMKUWNdmsmyPtOFeX9wqDu4uv6cVyqys=
 SHA256 (cargo/crunchy-0.2.4.tar.gz) = Rg++6cLC8zkz1yBjCmoLrDO6cFPbU0T6yFjUuJUtd9U=
 SHA256 (cargo/crypto-common-0.1.7.tar.gz) = eMgpIFXRwd8Mzl0YA5PcjM4KvsCnECrbbHse72AW1go=
-SHA256 (cargo/custom_error-1.9.2.tar.gz) = T4pR3Rl/prpbTcmKmQpDzBNpPCPrAInrsPzB8EFSvKY=
 SHA256 (cargo/dashmap-6.2.1.tar.gz) = 5jYdXAYiYceKF2rduC1MghrkK+1gid4OEmA80l3iBZw=
 SHA256 (cargo/data-url-0.3.2.tar.gz) = vh4Lymw2N/mS/BzHy8UqeMHvbbB22/EFnEMj1qIEg3Y=
 SHA256 (cargo/defmt-0.3.100.tar.gz) = 8JY0Q4FwKbICQTb8TdB6UQfrj5d+rxj80f3rETBrZK0=
@@ -95,6 +94,7 @@ SHA256 (cargo/deser-hjson-2.2.6.tar.gz) = oNSakj7dktwcpYGYIvVA6oPwlKtaxpQOQETgPB
 SHA256 (cargo/digest-0.10.7.tar.gz) = ntmigfe8m3V25hRoumFaZqXIz9/0JCCnCqgnAaOx4pI=
 SHA256 (cargo/directories-4.0.1.tar.gz) = 9RxdTdq9Noht0+FDjLNYzcsNfEmcuZy0rC444YtcshA=
 SHA256 (cargo/dirs-sys-0.3.7.tar.gz) = Gx0dkcky70HA8mY6qLDKA0LURNhCwGkUqgp+NS0LraY=
+SHA256 (cargo/doctest-file-1.1.1.tar.gz) = wtsE508KmpMQO1DpC5YCTJsr3Ki85qYy7HG4hzbT01k=
 SHA256 (cargo/document-features-0.2.12.tar.gz) = 1LiohoVFXtKaIVQqM6vZy2UQtrEpq62r3O8PTFW8j2E=
 SHA256 (cargo/dunce-1.0.5.tar.gz) = knc1BNWMCT9t4kWa9K8z+qUYwTRR648rVpjtPTbnyBM=
 SHA256 (cargo/either-1.18.0.tar.gz) = JSr7muXqpoO6vcagaLP1cm6xngUHDHMfmyojp8Po7TQ=
@@ -209,6 +209,7 @@ SHA256 (cargo/indexmap-2.14.2.tar.gz) = zE4ZD10mynBRZCYp2ixS/AO96FoDGXyZQI3NKRc0
 SHA256 (cargo/inotify-0.11.5.tar.gz) = TMAOqQfKtJVQt9plb4DruXvhuZfZMfvNKNOXNOF85ZI=
 SHA256 (cargo/inotify-sys-0.1.8.tar.gz) = wDP4CywRPN+Rq3oz+qnLwBRybcrZmIDIYJryo3Dt830=
 SHA256 (cargo/interpolate_name-0.2.4.tar.gz) = w0gZBC3D05ccRsIZCDWRTfvgw8E/YUSbKZf06XIt+mA=
+SHA256 (cargo/interprocess-2.4.4.tar.gz) = bLAv+/JejvD0qVv/BU7vdfbRvxaRlHTPLKpjshmXR4o=
 SHA256 (cargo/io-kit-sys-0.5.0.tar.gz) = BtOgSNCfu2WX2/fGn0DRTfSklIfbFIcZFhjIk/w7HCY=
 SHA256 (cargo/is_executable-1.0.6.tar.gz) = gstqn2ddqWjGO2IIxkG53KWPwBM65TN1c2sXZ7DKuL0=
 SHA256 (cargo/is_terminal_polyfill-1.70.2.tar.gz) = pssTi7eaFGwb1GAAViPhQu8BgePQIZy0k+AvfQijVpU=
@@ -333,6 +334,7 @@ SHA256 (cargo/rayon-1.12.0.tar.gz) = +zmxZngfktSCU070tLGyVo9CYTtT5bbBYOJM+/owkm0
 SHA256 (cargo/rayon-core-1.13.0.tar.gz) = IuGLDwBi0w1CMLLoX/d/3+Qyb+sFS5eDo0YNhDXIq5E=
 SHA256 (cargo/read-fonts-0.41.0.tar.gz) = BGp9Z02vRZglsy9QYgVtaILbDS9aR5+9dsz8hwrBhwk=
 SHA256 (cargo/reborrow-0.5.5.tar.gz) = AyURkwAPS9OwQokr6FjuUOizcZ8rCOWDOsQ1NyRjJDA=
+SHA256 (cargo/recvmsg-1.0.0.tar.gz) = 0+3U1dQskvCmWZJkZNTM5WtWJ2Emfs8PRp2Ft944QXU=
 SHA256 (cargo/redox_syscall-0.5.18.tar.gz) = 7SvyVHVRpwU9b9+v2j+TiXlkXESBL7/NoJj6rj8aNi0=
 SHA256 (cargo/redox_users-0.4.6.tar.gz) = ugCf8yTR/BuQC9H9sxVk/r5YqMzIpv27k7VD0zsTykM=
 SHA256 (cargo/ref-cast-1.0.27.tar.gz) = fkQPtOS0FHKVM477dgAaueTvwOWDnfLEf8WsI4HTZcM=
@@ -437,6 +439,7 @@ SHA256 (cargo/wasm-bindgen-shared-0.2.129.tar.gz) = I/DJxSqnzX13dppM/iqa2xszH0ia
 SHA256 (cargo/weezl-0.1.12.tar.gz) = oorJjdyLknTLQbtNnU1cQltgIMUMRvJVWZEZBWELSog=
 SHA256 (cargo/which-4.4.2.tar.gz) = h7okQZogeM0rDy7eJpG2xm2OR4Nto7bbgmXrrUevv8c=
 SHA256 (cargo/wide-1.7.1.tar.gz) = 2SCsmcPI7c4RDLjQfbsyTW0CYBHc6Fsek1W3DwrazE8=
+SHA256 (cargo/widestring-1.2.1.tar.gz) = cgacMROrMqsp5VhNs8bsVdQWiV5gcVQXtbiDo1fD5HE=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-util-0.1.11.tar.gz) = wqexwDyHYSKqQ/MCDmw8PuXAUIHJoAc5+vdQOuuhDSI=
@@ -493,7 +496,7 @@ SHA256 (cargo/zune-core-0.5.3.tar.gz) = 1WN3/UY2iYShcLxarFVn5Syl2odMqmC+o5/Lynj7
 SHA256 (cargo/zune-inflate-0.2.54.tar.gz) = c6szL+L2aABo81grFqJPkK1wltXTm5dNHAr/ASURbwI=
 SHA256 (cargo/zune-jpeg-0.4.21.tar.gz) = Kc4sipOErTI89WS2fahuIdPP3/h5CLwSI+1cmbx5JxM=
 SHA256 (cargo/zune-jpeg-0.5.15.tar.gz) = J7ydW4FbwQPxQqoFT1YdkYfRkWkux8LR4rRzf429cpY=
-SIZE (broot-1.61.0.tar.gz) = 14668798
+SIZE (broot-1.62.0.tar.gz) = 14678375
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.5.tar.gz) = 184315
 SIZE (cargo/aligned-0.4.3.tar.gz) = 10452
@@ -576,7 +579,6 @@ SIZE (cargo/crossterm-0.29.0.tar.gz) = 136635
 SIZE (cargo/crossterm_winapi-0.9.1.tar.gz) = 16027
 SIZE (cargo/crunchy-0.2.4.tar.gz) = 3887
 SIZE (cargo/crypto-common-0.1.7.tar.gz) = 9619
-SIZE (cargo/custom_error-1.9.2.tar.gz) = 10826
 SIZE (cargo/dashmap-6.2.1.tar.gz) = 26885
 SIZE (cargo/data-url-0.3.2.tar.gz) = 23862
 SIZE (cargo/defmt-0.3.100.tar.gz) = 6189
@@ -590,6 +592,7 @@ SIZE (cargo/deser-hjson-2.2.6.tar.gz) = 32806
 SIZE (cargo/digest-0.10.7.tar.gz) = 19557
 SIZE (cargo/directories-4.0.1.tar.gz) = 16040
 SIZE (cargo/dirs-sys-0.3.7.tar.gz) = 10597
+SIZE (cargo/doctest-file-1.1.1.tar.gz) = 14391
 SIZE (cargo/document-features-0.2.12.tar.gz) = 14739
 SIZE (cargo/dunce-1.0.5.tar.gz) = 8244
 SIZE (cargo/either-1.18.0.tar.gz) = 22357
@@ -704,6 +707,7 @@ SIZE (cargo/indexmap-2.14.2.tar.gz) = 103014
 SIZE (cargo/inotify-0.11.5.tar.gz) = 30349
 SIZE (cargo/inotify-sys-0.1.8.tar.gz) = 8411
 SIZE (cargo/interpolate_name-0.2.4.tar.gz) = 4027
+SIZE (cargo/interprocess-2.4.4.tar.gz) = 149182
 SIZE (cargo/io-kit-sys-0.5.0.tar.gz) = 40313
 SIZE (cargo/is_executable-1.0.6.tar.gz) = 9229
 SIZE (cargo/is_terminal_polyfill-1.70.2.tar.gz) = 7548
@@ -828,6 +832,7 @@ SIZE (cargo/rayon-1.12.0.tar.gz) = 183391
 SIZE (cargo/rayon-core-1.13.0.tar.gz) = 73151
 SIZE (cargo/read-fonts-0.41.0.tar.gz) = 567271
 SIZE (cargo/reborrow-0.5.5.tar.gz) = 3789
+SIZE (cargo/recvmsg-1.0.0.tar.gz) = 29694
 SIZE (cargo/redox_syscall-0.5.18.tar.gz) = 30747
 SIZE (cargo/redox_users-0.4.6.tar.gz) = 15585
 SIZE (cargo/ref-cast-1.0.27.tar.gz) = 15335
@@ -932,6 +937,7 @@ SIZE (cargo/wasm-bindgen-shared-0.2.129.tar.gz) = 13023
 SIZE (cargo/weezl-0.1.12.tar.gz) = 46045
 SIZE (cargo/which-4.4.2.tar.gz) = 15953
 SIZE (cargo/wide-1.7.1.tar.gz) = 209737
+SIZE (cargo/widestring-1.2.1.tar.gz) = 90350
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-util-0.1.11.tar.gz) = 13368
