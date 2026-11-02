@@ -1,6 +1,6 @@
 COMMENT =		multicast proxy daemon
 
-DIST_TUPLE =		github bket mcast-proxy 824c8765f2125700630c3781890481dc05b8d963 /
+DIST_TUPLE =		github bket mcast-proxy 824c8765f2125700630c3781890481dc05b8d963 .
 DISTNAME =		mcast-proxy-1.0.20260103
 
 CATEGORIES =		net
