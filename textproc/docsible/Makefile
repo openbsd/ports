@@ -1,8 +1,7 @@
 COMMENT =		documentation generator for Ansible roles/collections
 
-MODPY_DISTV =		0.7.25
+MODPY_DISTV =		0.8.0
 DISTNAME =		docsible-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		textproc
 
