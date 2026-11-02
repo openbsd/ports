@@ -1,25 +1,24 @@
-COMMENT =	library to apply JSON Patches according to RFC 6902
+COMMENT=	library to apply JSON Patches according to RFC 6902
 
-MODPY_DISTV =	1.33
+MODPY_DISTV=	1.39
 
-DISTNAME =	jsonpatch-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME}
-REVISION =	2
+DISTNAME=	jsonpatch-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	textproc
+CATEGORIES=	textproc
 
-HOMEPAGE =	https://github.com/stefankoegl/python-json-patch
+HOMEPAGE=	https://github.com/stefankoegl/python-json-patch
 
 # BSD-3-Clause
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =     tests.py
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+MODPY_PYTEST_ARGS=     tests.py
 
-RUN_DEPENDS =		textproc/py-jsonpointer
-TEST_DEPENDS =		textproc/py-jsonpointer
+RUN_DEPENDS=	textproc/py-jsonpointer
+TEST_DEPENDS=	textproc/py-jsonpointer
 
 .include <bsd.port.mk>
