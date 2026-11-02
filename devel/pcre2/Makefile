@@ -1,6 +1,6 @@
 COMMENT =	perl-compatible regular expression library, version 2
 
-DISTNAME =	pcre2-10.48
+DISTNAME =	pcre2-10.49
 
 SHARED_LIBS +=  pcre2-16                  0.8 # 16.0
 SHARED_LIBS +=  pcre2-32                  0.8 # 16.0
