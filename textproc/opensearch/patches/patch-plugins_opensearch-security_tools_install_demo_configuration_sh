@@ -6,10 +6,10 @@ Index: plugins/opensearch-security/tools/install_demo_configuration.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/bin/env bash
+ # SPDX-License-Identifier: Apache-2.0
  #install_demo_configuration.sh [-y]
  
- UNAME=$(uname -s)
-@@ -9,6 +9,8 @@ elif [ "$UNAME" = "Darwin" ]; then
+@@ -10,6 +10,8 @@ elif [ "$UNAME" = "Darwin" ]; then
  else
    OS="other"
  fi
