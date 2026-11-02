@@ -8,6 +8,7 @@ PKGNAME =	py-tsk-${MODPY_DISTV}
 # tests dir from the pypi sdist (this is simpler than fetching the whole
 # port from github as it needs a submodule + autoconf scripts generating)
 DIST_TUPLE =   github py4n6 pytsk ${MODPY_DISTV} .
+WRKDIST = ${WRKDIR}/${DISTNAME}
 
 CATEGORIES =	sysutils
 
