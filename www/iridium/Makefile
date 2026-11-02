@@ -22,6 +22,7 @@ IRIDIUM_DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 
 TS_VERSION=		7.0.2
 
+WRKDIST = ${WRKDIR}/${DISTNAME}
 DIST_TUPLE+=		github microsoft TypeScript v${TS_VERSION} typescript
 
 # ftp https://github.com/microsoft/TypeScript/archive/refs/tags/v${TS_VERSION}.tar.gz

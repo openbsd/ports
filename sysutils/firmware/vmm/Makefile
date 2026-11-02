@@ -11,6 +11,7 @@ SB_VER=		20180715
 EDK2_VER=	edk2-stable202605
 EDK2_EPOCH=	1778208120
 DISTNAME=	seabios-${FW_VER}
+WRKDIST = ${WRKDIR}/${DISTNAME}
 DIST_TUPLE=	github qemu sgabios 72f39d48bedf044e202fd51fecf3e2218fc2ae66 sgabios \
 		github tianocore edk2 ${EDK2_VER} edk2 \
 		github google brotli e230f474b87134e8c6c85b630084c612057f253e edk2/BaseTools/Source/C/BrotliCompress/brotli \

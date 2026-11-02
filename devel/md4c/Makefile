@@ -1,6 +1,7 @@
 COMMENT=	markdown parser implementation in C
 
 V=		0.5.2
+WRKDIST = ${WRKDIR}/${DISTNAME}
 DIST_TUPLE=	github mity md4c release-${V} .
 DISTNAME=	md4c-release-${V}
 PKGNAME=	md4c-${V}

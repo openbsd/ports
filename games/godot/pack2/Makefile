@@ -9,6 +9,7 @@ VERSION =	4.4.1
 PKGNAME =	godot44-${VERSION}
 REVISION =	3
 DIST_TUPLE +=	codeberg godotsteam godotsteam v4.3 godotsteam
+WRKDIST = ${WRKDIR}/${DISTNAME}
 
 WANTLIB += ${COMPILER_LIBCXX} SDL3 SPIRV X11 Xcursor Xext Xi Xinerama
 WANTLIB += Xrandr Xrender Xss c dbus-1 enet fontconfig freetype glib-2.0

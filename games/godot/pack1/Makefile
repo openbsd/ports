@@ -25,6 +25,7 @@ DISTFILES.sharp =	godot-${SHARPFILES_V}-mono-glue.tar.gz \
 			godot-${SHARPFILES_V}-nuget-packages.tar.xz
 
 DIST_TUPLE +=	codeberg godotsteam godotsteam v3.20 godotsteam # MIT
+WRKDIST = ${WRKDIR}/${DISTNAME}
 
 MODSCONS_FLAGS =	CFLAGS="${CFLAGS}" \
 			builtin_bullet=no \
