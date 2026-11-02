@@ -1,4 +1,4 @@
-#UNLINKED=	wip
+UNLINKED=	wip
 
 PHP_VERSION=	8.6.0RC3
 SITES=		https://github.com/php/php-src/archive/refs/tags/
