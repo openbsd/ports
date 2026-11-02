@@ -26,8 +26,6 @@ lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}sanitizer.${
 lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}sanitizer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}sgml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}sgml.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}sgmllib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}sgmllib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}urls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}urls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -109,6 +107,5 @@ lib/python${MODPY_VERSION}/site-packages/feedparser/parsers/loose.py
 lib/python${MODPY_VERSION}/site-packages/feedparser/parsers/strict.py
 lib/python${MODPY_VERSION}/site-packages/feedparser/sanitizer.py
 lib/python${MODPY_VERSION}/site-packages/feedparser/sgml.py
-lib/python${MODPY_VERSION}/site-packages/feedparser/sgmllib.py
 lib/python${MODPY_VERSION}/site-packages/feedparser/urls.py
 lib/python${MODPY_VERSION}/site-packages/feedparser/util.py

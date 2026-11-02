@@ -1,10 +1,9 @@
 COMMENT=	RSS and Atom feeds parser written in Python
 
-MODPY_DISTV=	6.0.12
+MODPY_DISTV=	6.0.14
 DISTNAME=	feedparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
 
 HOMEPAGE=	https://github.com/kurtmckee/feedparser
 
@@ -15,7 +14,11 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
+RUN_DEPENDS=	textproc/py-feedparser-sgmllib
+
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
+
 do-test:
-	cd ${WRKSRC}; python3 tests/runtests.py
+	cd ${WRKSRC}; python tests/runtests.py
 
 .include <bsd.port.mk>
