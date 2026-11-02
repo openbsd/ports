@@ -1,9 +1,9 @@
 COMMENT =	support for concurrent code execution on multicore hardware
 
 PKGNAME =	libdispatch-$V
-V =		6.4.0
-REVISION =	1
+V =		6.4.2
 
+# https://github.com/swiftlang/swift-corelibs-libdispatch/releases
 GH_ACCOUNT =	apple
 GH_PROJECT =	swift-corelibs-libdispatch
 GH_TAGNAME =	swift-$V-RELEASE
