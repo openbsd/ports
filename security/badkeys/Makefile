@@ -1,6 +1,6 @@
 COMMENT=	check cryptographic keys for known weaknesses
 
-MODPY_DISTV=	0.0.21
+MODPY_DISTV=	0.0.22
 DISTNAME=	badkeys-${MODPY_DISTV}
 
 CATEGORIES=	security
