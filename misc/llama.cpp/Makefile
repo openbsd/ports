@@ -2,12 +2,12 @@ COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggml-org
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		v0.6.0
-BUILD_NUMBER =		11429
+GH_TAGNAME =		v0.8.0
+BUILD_NUMBER =		11960
 
-SHARED_LIBS +=		llama 16.0
-SHARED_LIBS +=		llama-common 17.0
-SHARED_LIBS +=		mtmd 11.0
+SHARED_LIBS +=		llama 17.0
+SHARED_LIBS +=		llama-common 18.0
+SHARED_LIBS +=		mtmd 12.0
 
 CATEGORIES =		misc
 
@@ -39,6 +39,7 @@ TEST_DEPENDS =		www/py-jinja2
 
 CONFIGURE_ARGS +=	-DLLAMA_USE_SYSTEM_GGML=on \
 			-DLLAMA_BUILD_IS_DEV=off \
+			-DLLAMA_BUILD_COMMIT=OpenBSD \
 			-DLLAMA_BUILD_NUMBER=${BUILD_NUMBER}
 CFLAGS +=		-I${LOCALBASE}/include
 CXXFLAGS +=		-I${LOCALBASE}/include
