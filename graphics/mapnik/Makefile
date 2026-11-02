@@ -10,6 +10,9 @@ DIST_TUPLE +=	github mapbox mapnik-vector-tile 5a0cfbb6b909ae945f4a9e40777772a2b
 DIST_TUPLE +=	github mapbox polylabel 1edc1679eb84f9770e41cbf9c9b56736081af510 deps/mapbox/polylabel
 DIST_TUPLE +=	github mapbox protozero 89a55ad2962cca3adbe8383a4b6d9a8411352ef2 deps/mapbox/protozero
 DIST_TUPLE +=	github mapbox variant a2a4858345423a760eca300ec42acad1ad123aa3 deps/mapbox/variant
+
+WRKDIST = ${WRKDIR}/${DISTNAME}
+
 SHARED_LIBS =	mapnik 5.0 #3.0
 CATEGORIES =	graphics geo
 

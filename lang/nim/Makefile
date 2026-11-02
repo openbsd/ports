@@ -17,6 +17,7 @@ NIMBLE_CHRONOS_V =	536169b4ab6b7772f57993284331b7de716b6e99
 DIST_TUPLE =		github nim-lang atlas 0.16.3 .
 DIST_TUPLE +=		github nim-lang nimble v0.26.0 .
 DIST_TUPLE +=		github status-im nim-chronos ${NIMBLE_CHRONOS_V} .
+WRKDIST = ${WRKDIR}/${DISTNAME}
 
 # MIT, BSD, Apache 2.0
 PERMIT_PACKAGE =	Yes

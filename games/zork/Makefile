@@ -5,6 +5,7 @@ DISTNAME =	zork-0
 DIST_TUPLE +=	github historicalsource zork1 97b7b3d68c075dd9af7da499c3e9690ada3471fd zork1
 DIST_TUPLE +=	github historicalsource zork2 3da9661098809788a99cef00f00c865c6c204f96 zork2
 DIST_TUPLE +=	github historicalsource zork3 3ec9ed412b5f3cafe65d83c727d07db1fe4a86a8 zork3
+WRKDIST = ${WRKDIR}/${DISTNAME}
 
 CATEGORIES =	games
 

@@ -43,6 +43,7 @@ PKGNAME-xslt=		nginx-xslt-${VERSION}
 SITES=	https://nginx.org/download/
 SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/
 
+WRKDIST = ${WRKDIR}/${DISTNAME}
 DIST_TUPLE=	\
 	github FRiCKLE ngx_cache_purge 2.3 ngx_cache_purge \
 	github leev ngx_http_geoip2_module 3.4 ngx_http_geoip2_module \
