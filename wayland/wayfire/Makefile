@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 DIST_TUPLE +=	github ${GH_ACCOUNT} wf-utils 329c3ff01724d82947f61c45332f75d3534e8454 subprojects/wf-utils
 DIST_TUPLE +=	github ${GH_ACCOUNT} wf-touch d7ae5e7fa4de9536e2de2af74f168f981eb8a77a subprojects/wf-touch
 DIST_TUPLE +=	github ${GH_ACCOUNT} wf-json 70039e13cdeaebd8ec498ed30bf5ab91c2e313ec subprojects/wf-json
+WRKDIST = ${WRKDIR}/${DISTNAME}
 
 SITES =		https://github.com/WayfireWM/wayfire/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.xz
