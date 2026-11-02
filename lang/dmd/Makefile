@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 # No BT CFI yet.
 USE_NOBTCFI =	Yes
 
-V =		2.113.1
+V =		2.114.0
 COMMENT =	reference compiler for the D programming language
 PKGNAME =	dmd-${V}
 CATEGORIES =	lang

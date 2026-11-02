@@ -1,7 +1,7 @@
 Index: dmd/druntime/Makefile
 --- dmd/druntime/Makefile.orig
 +++ dmd/druntime/Makefile
-@@ -85,11 +85,9 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
+@@ -88,11 +88,9 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
  DDOCFLAGS=-conf= -c -w -o- -Iimport -version=CoreDdoc
  
  # Set CFLAGS
@@ -14,7 +14,7 @@ Index: dmd/druntime/Makefile
  endif
  ifeq (solaris,$(OS))
  	CFLAGS+=-D_REENTRANT  # for thread-safe errno
-@@ -531,7 +529,6 @@ benchmark-compile-only: $(ROOT)/benchmark$(DOTEXE) $(D
+@@ -534,7 +532,6 @@ benchmark-compile-only: $(ROOT)/benchmark$(DOTEXE) $(D
  	DMD=$(DMD) $< --repeat=0 --dflags="$(PHOBOS_DFLAGS) -de"
  
  #################### test for undesired white spaces ##########################

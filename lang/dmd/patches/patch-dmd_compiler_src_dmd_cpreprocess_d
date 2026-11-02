@@ -1,7 +1,7 @@
 Index: dmd/compiler/src/dmd/cpreprocess.d
 --- dmd/compiler/src/dmd/cpreprocess.d.orig
 +++ dmd/compiler/src/dmd/cpreprocess.d
-@@ -131,13 +131,6 @@ private const(char)[] cppCommand()
+@@ -137,13 +137,6 @@ private const(char)[] cppCommand()
          // Perhaps we are cross-compiling.
          return "cpp";
      }
