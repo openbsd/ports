@@ -447,6 +447,7 @@
      SUBDIR += py-et_xmlfile
      SUBDIR += py-fastjsonschema
      SUBDIR += py-feedparser
+     SUBDIR += py-feedparser-sgmllib
      SUBDIR += py-fpdf2
      SUBDIR += py-gTTS
      SUBDIR += py-graphemeu
@@ -537,9 +538,9 @@
      SUBDIR += py-textdistance
      SUBDIR += py-textfsm
      SUBDIR += py-texttable
-     SUBDIR += py-titlecase
      SUBDIR += py-tiktoken
      SUBDIR += py-tinycss2
+     SUBDIR += py-titlecase
      SUBDIR += py-tokenizers
      SUBDIR += py-toml
      SUBDIR += py-tomli
