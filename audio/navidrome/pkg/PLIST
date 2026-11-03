@@ -13,4 +13,6 @@ share/examples/navidrome/navidrome.toml
 @owner
 @group
 @bin bin/navidrome
+share/doc/navidrome/
+share/doc/navidrome/jellyfin.md
 share/doc/pkg-readmes/${PKGSTEM}
