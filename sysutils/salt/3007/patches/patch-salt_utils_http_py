@@ -3,7 +3,7 @@ use requests as default http library because tornado fails silently
 Index: salt/utils/http.py
 --- salt/utils/http.py.orig
 +++ salt/utils/http.py
-@@ -217,7 +217,7 @@ def query(
+@@ -219,7 +219,7 @@ def query(
              opts = {}
  
      if not backend:

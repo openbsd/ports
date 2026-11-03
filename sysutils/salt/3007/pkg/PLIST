@@ -1478,6 +1478,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}netbsdserv
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}netbsdservice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}netmiko_mod.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}netmiko_mod.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}netplan_ip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}netplan_ip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}netscaler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}netscaler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}network.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1498,6 +1500,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}nilrt_ip.$
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}nilrt_ip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}nix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}nix.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}nm_ip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}nm_ip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}nova.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}nova.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/${MODPY_PYCACHE}npm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2274,6 +2278,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/netbox.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/netbsd_sysctl.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/netbsdservice.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/netmiko_mod.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/netplan_ip.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/netscaler.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/network.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/neutron.py
@@ -2284,6 +2289,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/nftables.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/nginx.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/nilrt_ip.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/nix.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/nm_ip.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/nova.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/npm.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/nspawn.py
@@ -4742,6 +4748,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}reactor.${MO
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}reactor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}reclass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}reclass.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}requisite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}requisite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}roster_matcher.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}roster_matcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/${MODPY_PYCACHE}rsax931.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -5040,6 +5048,7 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/pydsl.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/pyobjects.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/reactor.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/reclass.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/requisite.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/roster_matcher.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/rsax931.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/s3.py

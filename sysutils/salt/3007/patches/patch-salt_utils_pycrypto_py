@@ -9,7 +9,7 @@ Index: salt/utils/pycrypto.py
      HAS_RANDOM = False
  
  try:
--    import crypt
+-    import crypt  # pylint: disable=deprecated-module
 +    import hashlib
  
 -    HAS_CRYPT = True

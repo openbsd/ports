@@ -1,8 +1,8 @@
 Index: salt/__init__.py
 --- salt/__init__.py.orig
 +++ salt/__init__.py
-@@ -110,6 +110,11 @@ warnings.filterwarnings(
-     category=DeprecationWarning,
+@@ -188,6 +188,11 @@ warnings.filterwarnings(
+     message=".*TripleDES has been moved.*",
  )
  
 +warnings.filterwarnings(
