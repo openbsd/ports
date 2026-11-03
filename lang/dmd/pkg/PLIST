@@ -2,6 +2,7 @@
 include/dmd/
 include/dmd/druntime/
 include/dmd/druntime/import/
+include/dmd/druntime/import/__builtins_msvc.d
 include/dmd/druntime/import/__importc_builtins.di
 include/dmd/druntime/import/core/
 include/dmd/druntime/import/core/atomic.d
@@ -74,6 +75,7 @@ include/dmd/druntime/import/core/internal/moving.d
 include/dmd/druntime/import/core/internal/newaa.d
 include/dmd/druntime/import/core/internal/parseoptions.d
 include/dmd/druntime/import/core/internal/postblit.d
+include/dmd/druntime/import/core/internal/profile_gc.d
 include/dmd/druntime/import/core/internal/qsort.d
 include/dmd/druntime/import/core/internal/spinlock.d
 include/dmd/druntime/import/core/internal/string.d
@@ -137,6 +139,7 @@ include/dmd/druntime/import/core/sync/config.d
 include/dmd/druntime/import/core/sync/event.d
 include/dmd/druntime/import/core/sync/exception.d
 include/dmd/druntime/import/core/sync/mutex.d
+include/dmd/druntime/import/core/sync/package.d
 include/dmd/druntime/import/core/sync/rwmutex.d
 include/dmd/druntime/import/core/sync/semaphore.d
 include/dmd/druntime/import/core/sys/
@@ -230,6 +233,17 @@ include/dmd/druntime/import/core/sys/freebsd/sys/sysctl.d
 include/dmd/druntime/import/core/sys/freebsd/sys/types.d
 include/dmd/druntime/import/core/sys/freebsd/time.d
 include/dmd/druntime/import/core/sys/freebsd/unistd.d
+include/dmd/druntime/import/core/sys/hurd/
+include/dmd/druntime/import/core/sys/hurd/config.d
+include/dmd/druntime/import/core/sys/hurd/dlfcn.d
+include/dmd/druntime/import/core/sys/hurd/elf.d
+include/dmd/druntime/import/core/sys/hurd/errno.d
+include/dmd/druntime/import/core/sys/hurd/execinfo.d
+include/dmd/druntime/import/core/sys/hurd/link.d
+include/dmd/druntime/import/core/sys/hurd/sys/
+include/dmd/druntime/import/core/sys/hurd/sys/types.d
+include/dmd/druntime/import/core/sys/hurd/time.d
+include/dmd/druntime/import/core/sys/hurd/unistd.d
 include/dmd/druntime/import/core/sys/linux/
 include/dmd/druntime/import/core/sys/linux/config.d
 include/dmd/druntime/import/core/sys/linux/dlfcn.d
@@ -266,6 +280,7 @@ include/dmd/druntime/import/core/sys/linux/sys/socket.d
 include/dmd/druntime/import/core/sys/linux/sys/syscall.d
 include/dmd/druntime/import/core/sys/linux/sys/sysinfo.d
 include/dmd/druntime/import/core/sys/linux/sys/time.d
+include/dmd/druntime/import/core/sys/linux/sys/timerfd.d
 include/dmd/druntime/import/core/sys/linux/sys/xattr.d
 include/dmd/druntime/import/core/sys/linux/syscall.d
 include/dmd/druntime/import/core/sys/linux/termios.d
@@ -466,6 +481,7 @@ include/dmd/druntime/import/core/sys/windows/msacm.d
 include/dmd/druntime/import/core/sys/windows/mshtml.d
 include/dmd/druntime/import/core/sys/windows/mswsock.d
 include/dmd/druntime/import/core/sys/windows/nb30.d
+include/dmd/druntime/import/core/sys/windows/ncrypt.d
 include/dmd/druntime/import/core/sys/windows/nddeapi.d
 include/dmd/druntime/import/core/sys/windows/nspapi.d
 include/dmd/druntime/import/core/sys/windows/ntdef.d
@@ -571,9 +587,11 @@ include/dmd/druntime/import/core/thread/fiber/base.d
 include/dmd/druntime/import/core/thread/fiber/package.d
 include/dmd/druntime/import/core/thread/osthread.d
 include/dmd/druntime/import/core/thread/package.d
+include/dmd/druntime/import/core/thread/posix_impl.d
 include/dmd/druntime/import/core/thread/threadbase.d
 include/dmd/druntime/import/core/thread/threadgroup.d
 include/dmd/druntime/import/core/thread/types.d
+include/dmd/druntime/import/core/thread/windows_impl.d
 include/dmd/druntime/import/core/time.d
 include/dmd/druntime/import/core/vararg.d
 include/dmd/druntime/import/core/volatile.d
@@ -583,6 +601,8 @@ include/dmd/druntime/import/etc/linux/memoryerror.d
 include/dmd/druntime/import/etc/valgrind/
 include/dmd/druntime/import/etc/valgrind/valgrind.d
 include/dmd/druntime/import/importc.h
+include/dmd/druntime/import/include/
+include/dmd/druntime/import/include/importc_msvc_builtins.h
 include/dmd/druntime/import/object.d
 include/dmd/phobos/
 include/dmd/phobos/etc/
@@ -743,6 +763,7 @@ include/dmd/phobos/std/internal/math/biguintx86.d
 include/dmd/phobos/std/internal/math/errorfunction.d
 include/dmd/phobos/std/internal/math/gammafunction.d
 include/dmd/phobos/std/internal/memory.d
+include/dmd/phobos/std/internal/retry.d
 include/dmd/phobos/std/internal/scopebuffer.d
 include/dmd/phobos/std/internal/test/
 include/dmd/phobos/std/internal/test/dummyrange.d

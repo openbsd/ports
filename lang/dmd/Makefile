@@ -5,6 +5,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 USE_NOBTCFI =	Yes
 
 V =		2.114.0
+REVISION =	0
 COMMENT =	reference compiler for the D programming language
 PKGNAME =	dmd-${V}
 CATEGORIES =	lang
