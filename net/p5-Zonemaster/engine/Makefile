@@ -2,11 +2,10 @@ COMMENT=	tool to check the quality of a DNS zone
 
 MODULES=	cpan
 CPAN_AUTHOR=	ZNMSTR
-V=		9.0.0
+V=		9.0.1
 DISTNAME=	Zonemaster-Engine-v$V
 PKGNAME=	p5-Zonemaster-engine-$V
 CATEGORIES=	net
-REVISION=	0
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 

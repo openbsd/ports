@@ -15,6 +15,7 @@ ${P5SITE}/Zonemaster/Engine/Nameserver/Cache/
 ${P5SITE}/Zonemaster/Engine/Nameserver/Cache.pm
 ${P5SITE}/Zonemaster/Engine/Nameserver/Cache/LocalCache.pm
 ${P5SITE}/Zonemaster/Engine/Nameserver/Cache/RedisCache.pm
+${P5SITE}/Zonemaster/Engine/NameserverSet.pm
 ${P5SITE}/Zonemaster/Engine/Normalization/
 ${P5SITE}/Zonemaster/Engine/Normalization.pm
 ${P5SITE}/Zonemaster/Engine/Normalization/Error.pm
@@ -83,6 +84,7 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/profile_additional_properties.json
 @man man/man3p/Zonemaster::Engine::Nameserver::Cache.3p
 @man man/man3p/Zonemaster::Engine::Nameserver::Cache::LocalCache.3p
 @man man/man3p/Zonemaster::Engine::Nameserver::Cache::RedisCache.3p
+@man man/man3p/Zonemaster::Engine::NameserverSet.3p
 @man man/man3p/Zonemaster::Engine::Normalization.3p
 @man man/man3p/Zonemaster::Engine::Normalization::Error.3p
 @man man/man3p/Zonemaster::Engine::Overview.3p
