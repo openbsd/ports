@@ -68,6 +68,9 @@ ${P5SITE}/auto/share/dist/Mail-DMARC/mail-dmarc.ini
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_indexes.mysql
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_indexes.pgsql
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_indexes.sqlite
+${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_rfc9990.mysql
+${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_rfc9990.pgsql
+${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_rfc9990.sqlite
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_schema.mysql
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_schema.pgsql
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_schema.sqlite

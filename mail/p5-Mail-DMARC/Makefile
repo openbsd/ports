@@ -1,6 +1,6 @@
 COMMENT=	Perl implementation of DMARC
 
-DISTNAME=	Mail-DMARC-2.20260827
+DISTNAME=	Mail-DMARC-2.20261030
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 CATEGORIES=	mail
