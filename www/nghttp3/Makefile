@@ -1,9 +1,9 @@
 COMMENT=	implementation of HTTP/3
 
-V=		1.18.0
+V=		1.19.0
 DISTNAME=	nghttp3-$V
 
-SHARED_LIBS +=	nghttp3              3.7     # 18.0
+SHARED_LIBS +=	nghttp3              3.7     # 19.0
 
 CATEGORIES=	www
 
