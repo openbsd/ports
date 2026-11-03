@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1655 2026/11/01 13:01:57 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1656 2026/11/03 17:39:42 jca Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2532,9 +2532,11 @@ _internal-fetch-all:
 	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}${_MASTER}"
 # What FETCH-ALL normally does:
 .  if !empty(MAKESUMFILES)
-	@${_MAKE} ${MAKESUMFILES:S@^@${DISTDIR}/@}
+	@${_MAKE} _real-fetch-all
 .    endif
 # End of FETCH
+
+_real-fetch-all: ${MAKESUMFILES:S@^@${DISTDIR}/@}
 
 .if (!empty(IGNORE${SUBPACKAGE}) || defined(_EXTRA_IGNORE)) && !defined(NO_IGNORE)
 _internal-all _internal-build _internal-checksum _internal-configure \
@@ -2598,10 +2600,11 @@ _internal-fetch:
 	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}${_MASTER}"
 # What FETCH normally does:
 .  if !empty(CHECKSUMFILES)
-	@${_MAKE} ${CHECKSUMFILES:S@^@${DISTDIR}/@}
+	@${_MAKE} _real-fetch
 .  endif
 # End of FETCH
 
+_real-fetch: ${CHECKSUMFILES:S@^@${DISTDIR}/@}
 
 _internal-checksum: _internal-fetch
 	@${_warn_checksum}
@@ -3881,6 +3884,7 @@ _all_phony = ${_recursive_depends_targets} \
 	_internal-subpackage _internal-subupdate \
 	_internal-update _internal-update _internal-update-plist \
 	_internal_install _license-check \
+	_real-fetch _real-fetch-all \
 	print-package-args _print-package-signature-lib \
 	_print-package-signature-run _print-packagename _recurse-all-dir-depends \
 	_recurse-test-dir-depends _recurse-run-dir-depends \
