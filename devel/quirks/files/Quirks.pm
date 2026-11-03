@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1864 2026/10/30 09:24:19 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1865 2026/11/03 15:36:39 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -680,6 +680,8 @@ setup_obsolete_reason(
 	3 => 'cervisia',
 	6 => 'ipaudit',
 	8 => 'nomad',
+	3 => 'blockgame',
+	3 => 'multimc',
 );
 # beware, if ports with an RDEP on Python 3 are removed in a release where
 # the Python major version has changed (e.g. 3.13->3.14 between 7.9 and 8.0)
@@ -717,6 +719,8 @@ my $obsolete_suggestion = {
 # 8.0
 	'facette' => 'grafana',
 # 8.1
+	'multimc' => 'prismlauncher',
+	'blockgame' => 'prismlauncher',
 };
 
 # reasons for obsolete packages
