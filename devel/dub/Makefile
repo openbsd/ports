@@ -4,7 +4,8 @@ CATEGORIES =	devel
 GH_ACCOUNT =	dlang
 GH_PROJECT =	dub
 GH_TAGNAME =	v1.40.0
-REVISION =	0
+REVISION =	1
+
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -37,9 +38,10 @@ DC =	${LOCALBASE}/bin/egdc
 DMD =	${LOCALBASE}/bin/gdmd
 
 .if ${MACHINE_ARCH} == "powerpc"
-# ld: error: relocation refers to a discarded section
-USE_LLD =       No
+# avoid GOT2 overflow
+MAKE_ENV +=	DFLAGS="-fno-stack-protector"
 .endif
+
 .endif
 
 TEST_DEPENDS =	shells/bash
