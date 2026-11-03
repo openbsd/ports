@@ -132,6 +132,7 @@ include/freerdp3/freerdp/locale/locale.h
 include/freerdp3/freerdp/log.h
 include/freerdp3/freerdp/message.h
 include/freerdp3/freerdp/metrics.h
+include/freerdp3/freerdp/multitransport.h
 include/freerdp3/freerdp/peer.h
 include/freerdp3/freerdp/pointer.h
 include/freerdp3/freerdp/primary.h
@@ -226,6 +227,7 @@ include/winpr3/winpr/clipboard.h
 include/winpr3/winpr/cmdline.h
 include/winpr3/winpr/collections.h
 include/winpr3/winpr/comm.h
+include/winpr3/winpr/config-readers.h
 include/winpr3/winpr/config.h
 include/winpr3/winpr/cred.h
 include/winpr3/winpr/crt.h
@@ -238,6 +240,7 @@ include/winpr3/winpr/environment.h
 include/winpr3/winpr/error.h
 include/winpr3/winpr/file.h
 include/winpr3/winpr/handle.h
+include/winpr3/winpr/i18n.h
 include/winpr3/winpr/image.h
 include/winpr3/winpr/ini.h
 include/winpr3/winpr/input.h
@@ -248,6 +251,7 @@ include/winpr3/winpr/json.h
 include/winpr3/winpr/library.h
 include/winpr3/winpr/memory.h
 include/winpr3/winpr/ncrypt.h
+include/winpr3/winpr/ndr.h
 include/winpr3/winpr/nt.h
 include/winpr3/winpr/ntlm.h
 include/winpr3/winpr/pack.h
