@@ -2,7 +2,7 @@ COMMENT =	interactive viewer for Graphviz dot graphs
 
 MODPY_DISTV =	1.2
 DISTNAME =	xdot-${MODPY_DISTV}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	graphics
 
@@ -17,6 +17,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =	math/graphviz \
+		math/py-numpy \
 		devel/py-gobject3 \
 		graphics/cairo
 
