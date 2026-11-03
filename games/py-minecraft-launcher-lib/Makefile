@@ -1,10 +1,9 @@
 COMMENT =		library for creating a custom Minecraft launcher
 
-MODPY_DISTV =	5.3
+MODPY_DISTV =		8.0
 
-DISTNAME =		minecraft-launcher-lib-${MODPY_DISTV}
+DISTNAME =		minecraft_launcher_lib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		games
 

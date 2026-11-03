@@ -1,18 +1,18 @@
 Index: minecraft_launcher_lib/runtime.py
 --- minecraft_launcher_lib/runtime.py.orig
 +++ minecraft_launcher_lib/runtime.py
-@@ -29,6 +29,8 @@ def _get_jvm_platform_string() -> str:
-             return "mac-os-arm64"
-         else:
-             return "mac-os"
-+    elif platform.system() == "OpenBSD":
-+            return "openbsd-" + platform.machine()
-     else:
-         return "gamecore"
+@@ -36,6 +36,8 @@ def _get_jvm_platform_string() -> str:
+                 return "mac-os-arm64"
+             else:
+                 return "mac-os"
++	case "OpenBSD":
++		return "openbsd-" + platform.machine()
+         case _:
+             return "gamecore"
  
-@@ -109,7 +111,13 @@ def get_executable_path(jvm_version: str, minecraft_di
-     """
-     Returns the path to the executable. Returns None if none is found.
+@@ -201,7 +203,13 @@ def get_executable_path(jvm_version: str, minecraft_di
+     :param jvm_version: The Name of the JVM version
+     :param minecraft_directory: The path to your Minecraft directory
      """
 -    java_path = os.path.join(minecraft_directory, "runtime", jvm_version, _get_jvm_platform_string(), jvm_version, "bin", "java")
 +    print( jvm_version )
