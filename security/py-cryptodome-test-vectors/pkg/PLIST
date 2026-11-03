@@ -90,6 +90,8 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/te
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/test-vector-2-nonce104.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/test-vector-2-nonce112.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/test-vector-2-nonce120.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/PKCS1_v1_5/
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/PKCS1_v1_5/implicit_rejection.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/TDES/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/TDES/README.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/TDES/TCBCMMT2.rsp
@@ -131,6 +133,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wychep
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_kwp_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_siv_cmac_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_wrap_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/chacha20_counter_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/chacha20_poly1305_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/rsa_oaep_2048_sha1_mgf1sha1_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/rsa_oaep_2048_sha224_mgf1sha1_test.json
