@@ -1,6 +1,6 @@
 COMMENT =	open-source reimplementation of Impulse Tracker
 
-V =		20260524
+V =		20261102
 DISTNAME =	schismtracker-${V}.source
 PKGNAME =	${DISTNAME:S/.source//}
 
