@@ -4,7 +4,7 @@ COMMENT=	self-contained cryptographic library for Python
 # amd64 (builds aesni/shani, avx2/bmi files)
 # i386 (no avx2/bmi)
 # aarch64 (none)
-MODPY_DISTV=	4.2.0
+MODPY_DISTV=	4.3.0
 DISTNAME=	pycryptodome-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
 
@@ -22,22 +22,22 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-TEST_DEPENDS=	security/py-cryptodome-test-vectors>=1.0.26
+TEST_DEPENDS=	security/py-cryptodome-test-vectors>=1.0.28
 
 .if ${MACHINE_ARCH:Mamd64}
 AESNI=
 AVX2=
 .elif ${MACHINE_ARCH:Mi386}
 AESNI=
+.elif ${MACHINE_ARCH:Maarch64}
+ARMv8=
 .endif
 
-# disable aesni/shani .so files
 AESNI?=		"@comment "
-
-# disable avx2/bmi .so files
 AVX2?=		"@comment "
+ARMv8?=		"@comment "
 
-SUBST_VARS=	AESNI AVX2
+SUBST_VARS=	AESNI AVX2 ARMv8
 
 fix-plist:
 	@cp pkg/PLIST pkg/PLIST.old
@@ -46,7 +46,9 @@ fix-plist:
 	bmi2 AVX2 \
 	aesni AESNI \
 	shani AESNI \
-	clmul AESNI
+	clmul AESNI \
+	armv8 ARMv8 \
+	pmull ARMv8
 	sed -i 's,^\(@so .*_${sfx}.*\),$${${pfx}}\1,' pkg/PLIST
 .endfor
 	@diff -u0 pkg/PLIST.old pkg/PLIST || true

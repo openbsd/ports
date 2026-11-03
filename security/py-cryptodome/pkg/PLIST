@@ -98,6 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_siv.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_pkcs1_oaep_decode.py
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_aes${MODPY_ABI3SO}.so
 ${AESNI}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_aesni${MODPY_ABI3SO}.so
+${ARMv8}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_aes_armv8${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_arc2${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_blowfish${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_cast${MODPY_ABI3SO}.so
@@ -151,10 +152,14 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TurboSHAKE256.py
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA1${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA224${MODPY_ABI3SO}.so
 ${AESNI}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA224_shani${MODPY_ABI3SO}.so
+${ARMv8}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA224_armv8${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA256${MODPY_ABI3SO}.so
 ${AESNI}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA256_shani${MODPY_ABI3SO}.so
+${ARMv8}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA256_armv8${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA384${MODPY_ABI3SO}.so
+${ARMv8}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA384_armv8${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA512${MODPY_ABI3SO}.so
+${ARMv8}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_SHA512_armv8${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}BLAKE2b.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -224,6 +229,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}cSHAKE256.$
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}keccak.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}keccak.${MODPY_PYC_MAGIC_TAG}pyc
 ${AESNI}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_ghash_clmul${MODPY_ABI3SO}.so
+${ARMv8}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_ghash_pmull${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_ghash_portable${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_k12${MODPY_ABI3SO}.so
 ${AVX2}@so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_k12_avx2_bmi2${MODPY_ABI3SO}.so
