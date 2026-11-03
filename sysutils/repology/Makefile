@@ -1,12 +1,10 @@
-# Dlang
-ONLY_FOR_ARCHS =	amd64 i386
 USE_NOBTCFI =	Yes
 
 V =		1.3.0
 COMMENT =	command line interface for Repology.org
 DISTNAME =	repology-${V}
 CATEGORIES =	sysutils
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://github.com/ibara/repology
 
@@ -17,7 +15,9 @@ WANTLIB += c c++abi execinfo m pthread
 
 SITES =	https://github.com/ibara/repology/releases/download/v${V}/
 
-BUILD_DEPENDS =	lang/dmd
+BUILD_DEPENDS =	lang/gdmd
+
+MAKE_ENV =	DMD=${LOCALBASE}/bin/gdmd
 
 FAKE_FLAGS =	DESTDIR=
 
