@@ -1,11 +1,14 @@
 COMMENT =	Symas Lightning Memory-Mapped Database
 
-VERSION =	0.9.33
-
-DISTNAME =	openldap-LMDB_${VERSION}
+VERSION =	1.0.2
+OVERSION =	0.9.36
+DIST_TUPLE =	github LMDB lmdb LMDB_${VERSION} .
+DIST_TUPLE +=	github LMDB lmdb LMDB_${OVERSION} .
 PKGNAME =	lmdb-${VERSION}
 
-SHARED_LIBS +=  lmdb                      0.0 # 0.0
+PORTROACH =	site:https://github.com/LMDB/lmdb/archive/
+
+SHARED_LIBS +=  lmdb                      1.0
 
 CATEGORIES =	databases
 
@@ -18,24 +21,35 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 
-SITES =	https://git.openldap.org/openldap/openldap/-/archive/LMDB_${VERSION}/
-
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 USE_GMAKE =		Yes
 
-MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" \
-			SHARED_VERSION_MAJOR=${LIBlmdb_VERSION:R} \
-			SHARED_VERSION_MINOR=${LIBlmdb_VERSION:E}
+MAKE_FLAGS =		CC="${CC}" OPT="${CFLAGS}" LDL="" \
+			LIBVER=${LIBlmdb_VERSION:R} \
+			ABIVER=${LIBlmdb_VERSION:E} \
+			mandir=${PREFIX}/man
 
-WRKDIST =		${WRKDIR}/openldap-LMDB_${VERSION}/libraries/liblmdb
+WRKDIST =		${WRKDIR}/lmdb-LMDB_${VERSION}/libraries/liblmdb
+OWRKDIST =		${WRKDIST}/lmdb-0.9
 
-SUBST_VARS +=	VERSION
+post-extract:
+	mv ${WRKDIR}/lmdb-LMDB_${OVERSION}/libraries/liblmdb ${OWRKDIST}
 
-# lmdb.pc: https://bugs.openldap.org/show_bug.cgi?id=10203
+post-build:
+	cd ${OWRKDIST}; \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+	    -f ${MAKE_FILE} mdb_dump mtest
+
+post-test:
+	cd ${OWRKDIST}; \
+	    mkdir -p testdb testrestore; \
+	    ./mtest; \
+	    ./mdb_dump -a testdb | ${WRKBUILD}/mdb_load testrestore
+
 post-install:
-	! test -e ${PREFIX}/lib/pkgconfig/lmdb.pc # fail if shipped upstream
-	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
-	    ${FILESDIR}/lmdb.pc.in ${PREFIX}/lib/pkgconfig/lmdb.pc
+	${INSTALL_DATA} ${WRKBUILD}/lmdb.pc ${PREFIX}/lib/pkgconfig/lmdb.pc
+	${INSTALL_PROGRAM} ${OWRKDIST}/mdb_dump ${PREFIX}/bin/mdb_dump-0.9
+	${INSTALL_DATA} ${OWRKDIST}/mdb_dump.1 ${PREFIX}/man/man1/mdb_dump-0.9.1
 
 .include <bsd.port.mk>

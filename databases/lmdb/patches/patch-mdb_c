@@ -1,13 +1,35 @@
-enforce MDB_WRITEMAP, because we have no UBC (Unified Buffer Cache).
+- keep using sem_wait(3) instead of semop(2) for mutexes.
+- enforce MDB_WRITEMAP, because we have no UBC (Unified Buffer Cache).
 
 Index: mdb.c
 --- mdb.c.orig
 +++ mdb.c
-@@ -5055,6 +5055,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
+@@ -184,6 +184,12 @@ typedef SSIZE_T	ssize_t;
+ # if defined(__APPLE__) && !defined(MDB_USE_ROBUST)
+ # define MDB_USE_POSIX_SEM	1
+ # endif
++# if defined(__OpenBSD__)
++/** On OpenBSD the MDB_USE_SYSV_SEM code path is broken.
++ * semop(2) fails with EACCES.
++ */
++# define MDB_USE_POSIX_SEM	1
++# endif
+ # if !(defined(MDB_USE_POSIX_MUTEX) || defined(MDB_USE_POSIX_SEM))
+ # define MDB_USE_SYSV_SEM	1
+ # endif
+@@ -2333,6 +2339,7 @@ mdb_dlist_free(MDB_txn *txn)
+ #if MDB_RPAGE_CACHE
+ #if defined(MDB_VL32) || ((MDB_RPAGE_CACHE) & 2) /* Always remap */
+ #define MDB_REMAPPING(flags)	1
++#error "MDB_REMAPPING is incompatible with MDB_WRITEMAP"
+ #else
+ #define MDB_REMAPPING(flags)	((flags) & MDB_REMAP_CHUNKS)
+ #endif
+@@ -6310,6 +6317,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
  		/* silently ignore WRITEMAP when we're only getting read access */
  		flags &= ~MDB_WRITEMAP;
  	} else {
 +		flags |= MDB_WRITEMAP;
+ 		/* WRITEMAP has a dummy element to match dirty_room = 1 */
+ 		size_t dl_size = (flags & MDB_WRITEMAP) ? 2 : MDB_IDL_UM_SIZE;
  		if (!((env->me_free_pgs = mdb_midl_alloc(MDB_IDL_UM_MAX)) &&
- 			  (env->me_dirty_list = calloc(MDB_IDL_UM_SIZE, sizeof(MDB_ID2)))))
- 			rc = ENOMEM;

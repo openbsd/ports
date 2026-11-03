@@ -1,5 +1,7 @@
 @bin bin/mdb_copy
+@bin bin/mdb_drop
 @bin bin/mdb_dump
+@bin bin/mdb_dump-0.9
 @bin bin/mdb_load
 @bin bin/mdb_stat
 include/lmdb.h
@@ -7,6 +9,8 @@ include/lmdb.h
 @lib lib/liblmdb.so.${LIBlmdb_VERSION}
 lib/pkgconfig/lmdb.pc
 @man man/man1/mdb_copy.1
+@man man/man1/mdb_drop.1
+@man man/man1/mdb_dump-0.9.1
 @man man/man1/mdb_dump.1
 @man man/man1/mdb_load.1
 @man man/man1/mdb_stat.1

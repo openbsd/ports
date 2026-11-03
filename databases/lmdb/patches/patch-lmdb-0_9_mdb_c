@@ -1,0 +1,12 @@
+enforce MDB_WRITEMAP, because we have no UBC (Unified Buffer Cache).
+Index: lmdb-0.9/mdb.c
+--- lmdb-0.9/mdb.c.orig
++++ lmdb-0.9/mdb.c
+@@ -5104,6 +5104,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
+ 		/* silently ignore WRITEMAP when we're only getting read access */
+ 		flags &= ~MDB_WRITEMAP;
+ 	} else {
++		flags |= MDB_WRITEMAP;
+ 		if (!((env->me_free_pgs = mdb_midl_alloc(MDB_IDL_UM_MAX)) &&
+ 			  (env->me_dirty_list = calloc(MDB_IDL_UM_SIZE, sizeof(MDB_ID2)))))
+ 			rc = ENOMEM;

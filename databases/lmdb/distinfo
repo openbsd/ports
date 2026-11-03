@@ -1,2 +1,4 @@
-SHA256 (openldap-LMDB_0.9.33.tar.gz) = R2gB9SOciMfeYcM5BQKl0Tll7O3vgBBbX7D8uDc9HlM=
-SIZE (openldap-LMDB_0.9.33.tar.gz) = 149281
+SHA256 (LMDB-lmdb-LMDB_0.9.36.tar.gz) = fVXDy8HvVfmwB2092xbQ2ZltBbnKp8qInOEEMKxne5A=
+SHA256 (LMDB-lmdb-LMDB_1.0.2.tar.gz) = F+TLjoCHT8zB/299X9ti8CliSWfQAf9AxHwPt6W0LX0=
+SIZE (LMDB-lmdb-LMDB_0.9.36.tar.gz) = 150220
+SIZE (LMDB-lmdb-LMDB_1.0.2.tar.gz) = 179086

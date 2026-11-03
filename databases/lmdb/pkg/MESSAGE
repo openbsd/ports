@@ -1,0 +1,6 @@
+LMDB 1.0 is an incompatible update from LMDB 0.9.  Existing databases
+should be converted from the old to the new format using the
+mdb_dump-0.9(1) [-a] and mdb_load(1) commands provided in this package:
+
+  mdb_dump-0.9 old-db > old-db.txt
+  mdb_load -f old-db.txt new-db
