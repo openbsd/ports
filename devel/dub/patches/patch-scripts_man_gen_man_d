@@ -1,0 +1,11 @@
+Index: scripts/man/gen_man.d
+--- scripts/man/gen_man.d.orig
++++ scripts/man/gen_man.d
+@@ -1,6 +1,7 @@
+ #!/usr/bin/env dub
+ /+dub.sdl:
+ dependency "dub" path="../.."
++dflags "-fall-instantiations" platform="ppc-gdc"
+ +/
+ 
+ import std.algorithm, std.conv, std.format, std.path, std.range;
