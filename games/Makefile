@@ -30,7 +30,6 @@
      SUBDIR += billyfrontier
      SUBDIR += blobby
      SUBDIR += blobwars
-     SUBDIR += blockgame
      SUBDIR += blockrage
      SUBDIR += bluemoon
      SUBDIR += bomberclone
@@ -219,7 +218,6 @@
      SUBDIR += moonlander,no_sound
      SUBDIR += moonlight-qt
      SUBDIR += moria
-     SUBDIR += multimc
      SUBDIR += mvdsv
      SUBDIR += naev
      SUBDIR += nanosaur
