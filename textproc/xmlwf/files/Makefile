@@ -1,5 +1,7 @@
 bindir=	${TRUEPREFIX}/bin
-OBJS=	xmlwf.o	xmlfile.o codepage.o unixfilemap.o
+OBJS=	xcs.o xmlwf.o xmlfile.o codepage.o unixfilemap.o
+
+xcs.o: ../lib/xcs.c
 
 xmlwf: ${OBJS}
 	${CC} ${CFLAGS} -o $@ ${OBJS} -lexpat
