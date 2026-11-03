@@ -1,9 +1,13 @@
 COMMENT=	self-contained cryptographic library for Python
 
-# check packaging on at least these arch for cpu-specific builds:
-# amd64 (builds aesni/shani, avx2/bmi files)
-# i386 (no avx2/bmi)
-# aarch64 (none)
+# check packaging on at least these arch for cpu-specific builds
+# and update commented-out files as necessary, i.e. updating this
+# port requires generating PLIST on multiple archs and adding
+# markers via "make fix-plist":
+#
+# amd64 (AES-NI, SHA-NI, AVX2/BMI)
+# i386 (no cpu-specific code)
+# aarch64 (ARMv8 Cryptography Extensions)
 MODPY_DISTV=	4.3.0
 DISTNAME=	pycryptodome-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
