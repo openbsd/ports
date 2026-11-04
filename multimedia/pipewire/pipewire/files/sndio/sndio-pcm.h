@@ -45,8 +45,10 @@ extern struct spa_log_topic sndio_log_topic;
 
 #define SPA_SNDIO_DEFAULT_RATE		48000
 #define SPA_SNDIO_DEFAULT_CHANNELS	2
-/* device buffer target, in milliseconds */
-#define SPA_SNDIO_DEFAULT_BUFFER_MSEC	50
+/* device buffer target, in milliseconds; sndiod is refilled once per
+ * graph cycle, so this must cover a cycle at the default maximum
+ * quantum (2048 frames, ~43ms) plus a late wakeup or two (HZ=100) */
+#define SPA_SNDIO_DEFAULT_BUFFER_MSEC	100
 /* time constant of the buffer level correction, in seconds */
 #define SPA_SNDIO_PACE_SEC		4.0
 

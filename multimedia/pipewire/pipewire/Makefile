@@ -7,7 +7,7 @@ PW_VERSION=		1.6.11
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 PKGNAME-gst=		gst-plugin-pipewire-${PW_VERSION}
 
-REVISION-main=		8
+REVISION-main=		9
 REVISION-libs=		1
 REVISION-gst=		0
 
