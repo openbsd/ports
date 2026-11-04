@@ -324,7 +324,7 @@ SHA256 (gnome/../cargo/zune-jpeg-0.5.15.tar.gz) = J7ydW4FbwQPxQqoFT1YdkYfRkWkux8
 SHA256 (gnome/../cargo/zvariant-5.13.1.tar.gz) = vuKgvNKpB3hqRW//Raqq9UybpfULca6ewaTt0gDJSRE=
 SHA256 (gnome/../cargo/zvariant_derive-5.13.1.tar.gz) = OKcIIWoYeAeWdwv+P0c5x8g6Po94m3VVNLu8BuTiPhI=
 SHA256 (gnome/../cargo/zvariant_utils-3.5.0.tar.gz) = kMuTg/m0UpBAehJYsgLT+PAdtxnrYLTkBVxjda9Px8c=
-SHA256 (gnome/glycin-2.2.5.tar.xz) = B2bDK4D82FgljP2Mu0J4PvyDXQ6SVv2/pr2tA0uwcX4=
+SHA256 (gnome/glycin-2.2.6.tar.xz) = ahFKoRF+wte9V4yM79I12ZMwTe39GmJXXcMb6aFGt5E=
 SIZE (gnome/../cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (gnome/../cargo/ahash-0.8.12.tar.gz) = 43413
 SIZE (gnome/../cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -651,4 +651,4 @@ SIZE (gnome/../cargo/zune-jpeg-0.5.15.tar.gz) = 88879
 SIZE (gnome/../cargo/zvariant-5.13.1.tar.gz) = 96839
 SIZE (gnome/../cargo/zvariant_derive-5.13.1.tar.gz) = 17734
 SIZE (gnome/../cargo/zvariant_utils-3.5.0.tar.gz) = 16990
-SIZE (gnome/glycin-2.2.5.tar.xz) = 7766788
+SIZE (gnome/glycin-2.2.6.tar.xz) = 7768092
