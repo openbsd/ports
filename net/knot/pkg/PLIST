@@ -9,22 +9,6 @@
 @bin bin/kzonesign
 include/knot/
 include/knot/module.h
-include/libdnssec/
-include/libdnssec/binary.h
-include/libdnssec/crypto.h
-include/libdnssec/digest.h
-include/libdnssec/dnssec.h
-include/libdnssec/error.h
-include/libdnssec/key.h
-include/libdnssec/keyid.h
-include/libdnssec/keystore.h
-include/libdnssec/keytag.h
-include/libdnssec/nsec.h
-include/libdnssec/pem.h
-include/libdnssec/random.h
-include/libdnssec/sign.h
-include/libdnssec/tsig.h
-include/libdnssec/version.h
 include/libknot/
 include/libknot/attribute.h
 include/libknot/codes.h
@@ -38,6 +22,19 @@ include/libknot/db/db_lmdb.h
 include/libknot/db/db_trie.h
 include/libknot/descriptor.h
 include/libknot/dname.h
+include/libknot/dnssec/
+include/libknot/dnssec/binary.h
+include/libknot/dnssec/crypto.h
+include/libknot/dnssec/digest.h
+include/libknot/dnssec/key.h
+include/libknot/dnssec/keyid.h
+include/libknot/dnssec/keystore.h
+include/libknot/dnssec/keytag.h
+include/libknot/dnssec/nsec.h
+include/libknot/dnssec/pem.h
+include/libknot/dnssec/random.h
+include/libknot/dnssec/sign.h
+include/libknot/dnssec/tsig.h
 include/libknot/dynarray.h
 include/libknot/endian.h
 include/libknot/errcode.h
@@ -92,9 +89,6 @@ include/libzscanner/
 include/libzscanner/error.h
 include/libzscanner/scanner.h
 include/libzscanner/version.h
-@static-lib lib/libdnssec.a
-lib/libdnssec.la
-@lib lib/libdnssec.so.${LIBdnssec_VERSION}
 @static-lib lib/libknot.a
 lib/libknot.la
 @lib lib/libknot.so.${LIBknot_VERSION}
@@ -102,7 +96,6 @@ lib/libknot.la
 lib/libzscanner.la
 @lib lib/libzscanner.so.${LIBzscanner_VERSION}
 lib/pkgconfig/knotd.pc
-lib/pkgconfig/libdnssec.pc
 lib/pkgconfig/libknot.pc
 lib/pkgconfig/libzscanner.pc
 @man man/man1/kdig.1
