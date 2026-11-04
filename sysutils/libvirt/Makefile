@@ -1,13 +1,13 @@
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-12.8.0
+DISTNAME=		libvirt-12.9.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.7 # 0.12008.0
-SHARED_LIBS += virt-qemu                 2.3 # 0.12008.0
-SHARED_LIBS += virt-lxc                  2.2 # 0.12008.0
-SHARED_LIBS += virt-admin                2.2 # 0.12008.0
+SHARED_LIBS += virt                      2.7 # 0.12009.0
+SHARED_LIBS += virt-qemu                 2.3 # 0.12009.0
+SHARED_LIBS += virt-lxc                  2.2 # 0.12009.0
+SHARED_LIBS += virt-admin                2.2 # 0.12009.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -75,7 +75,8 @@ DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
 			secdriver_apparmor secdriver_selinux nbdkit driver_ch \
 			login_shell driver_network nss sysctl_config \
 			git_werror libnl apparmor_profiles sanlock firewalld \
-			firewalld_zone nbdkit_config_default
+			firewalld_zone nbdkit_config_default driver_nodedev \
+			driver_nwfilter
 
 # storage
 DISABLED_FEATURES +=	storage_disk storage_fs storage_gluster storage_iscsi \
