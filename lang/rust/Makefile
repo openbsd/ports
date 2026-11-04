@@ -25,7 +25,7 @@ REVISION-bootstrap =	${REVISION-main}
 BV-aarch64 =		1.98.1
 BV-amd64 =		1.99.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.98.1
+BV-riscv64 =		1.98.1-20261023
 BV-sparc64 =		1.98.0
 BV =			${BV-${MACHINE_ARCH}}
 
