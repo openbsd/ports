@@ -10,11 +10,53 @@
 #include <unistd.h>
 #include <poll.h>
 #include <time.h>
+#include <pthread.h>
+#include <signal.h>
 
 #include "sndio-pcm.h"
 #include "sndio-utils.h"
 
 SPA_LOG_TOPIC_DEFINE(sndio_log_topic, "spa.sndio");
+
+/*
+ * Per-thread "SIGPIPE already blocked" marker.  This must not be a
+ * __thread variable: OpenBSD uses emulated TLS, whose pthread key
+ * destructor lives in this plugin, and the data-loop thread exits
+ * after pipewire has dlclose()d us, so the destructor would be called
+ * from unmapped memory.  Use an explicit key without a destructor
+ * instead (the value is only a marker, there is nothing to free), and
+ * delete the key when the plugin is unloaded.
+ */
+static pthread_once_t sigpipe_once = PTHREAD_ONCE_INIT;
+static pthread_key_t sigpipe_key;
+static bool sigpipe_key_valid;
+
+static void sigpipe_key_init(void)
+{
+	sigpipe_key_valid = pthread_key_create(&sigpipe_key, NULL) == 0;
+}
+
+static void __attribute__((destructor)) sigpipe_key_fini(void)
+{
+	if (sigpipe_key_valid)
+		pthread_key_delete(sigpipe_key);
+}
+
+void spa_sndio_block_sigpipe(void)
+{
+	sigset_t set;
+
+	pthread_once(&sigpipe_once, sigpipe_key_init);
+	if (sigpipe_key_valid && pthread_getspecific(sigpipe_key) != NULL)
+		return;
+
+	sigemptyset(&set);
+	sigaddset(&set, SIGPIPE);
+	pthread_sigmask(SIG_BLOCK, &set, NULL);
+
+	if (sigpipe_key_valid)
+		pthread_setspecific(sigpipe_key, (void *)1);
+}
 
 struct format_info {
 	uint32_t spa_format;

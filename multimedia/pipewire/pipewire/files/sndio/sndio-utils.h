@@ -8,9 +8,6 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdlib.h>
-#include <pthread.h>
-#include <signal.h>
-
 #include <sndio.h>
 
 #include <spa/utils/string.h>
@@ -46,19 +43,8 @@ static inline void spa_sndio_reconnect_name(const char *path,
  * on OpenBSD), so keep SIGPIPE blocked in every thread that calls into
  * libsndio: the write then fails with EPIPE, which libsndio reports as
  * end of file.  Done once per thread; nothing in the daemon expects
- * SIGPIPE.
+ * SIGPIPE.  Implemented in sndio.c.
  */
-static inline void spa_sndio_block_sigpipe(void)
-{
-	static __thread bool blocked;
-	sigset_t set;
-
-	if (blocked)
-		return;
-	sigemptyset(&set);
-	sigaddset(&set, SIGPIPE);
-	pthread_sigmask(SIG_BLOCK, &set, NULL);
-	blocked = true;
-}
+void spa_sndio_block_sigpipe(void);
 
 #endif /* SPA_SNDIO_UTILS_H */

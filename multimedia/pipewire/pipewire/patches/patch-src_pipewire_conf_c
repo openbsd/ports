@@ -1,3 +1,7 @@
+Reset the signal mask in context.exec children: it is inherited across
+execve(2) and the daemon blocks SIGINT/SIGTERM (signalfd) and SIGPIPE
+(sndio plugin) before running context.exec.
+
 Index: src/pipewire/conf.c
 --- src/pipewire/conf.c.orig
 +++ src/pipewire/conf.c
@@ -10,3 +14,24 @@ Index: src/pipewire/conf.c
  #ifndef O_PATH
  #define O_PATH 0
  #endif
+@@ -949,6 +949,7 @@ static int do_exec(struct pw_context *context, char *c
+ 		char buf[1024];
+ 		char *const *p;
+ 		struct spa_strbuf s;
++		sigset_t mask;
+ 
+ 		/* Double fork to avoid zombies; we don't want to set SIGCHLD handler */
+ 		pid = fork();
+@@ -963,6 +964,12 @@ static int do_exec(struct pw_context *context, char *c
+ 		spa_strbuf_init(&s, buf, sizeof(buf));
+ 		for (p = argv; *p; ++p)
+ 			spa_strbuf_append(&s, " '%s'", *p);
++
++		/* The signal mask survives execve(2): don't hand the signals
++		 * blocked by the daemon (SIGINT/SIGTERM for signalfd, SIGPIPE
++		 * by the sndio plugin) to the programs we start. */
++		sigemptyset(&mask);
++		sigprocmask(SIG_SETMASK, &mask, NULL);
+ 
+ 		pw_log_info("exec%s", s.buffer);
+ 		res = execvp(argv[0], argv);
