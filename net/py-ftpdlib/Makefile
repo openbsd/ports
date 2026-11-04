@@ -1,9 +1,8 @@
 COMMENT =		FTP server library for Python
 
-MODPY_DISTV =	1.5.7
+MODPY_DISTV =		2.2.0
 DISTNAME =		pyftpdlib-${MODPY_DISTV}
 PKGNAME =		py-ftpdlib-${MODPY_DISTV}
-REVISION =		3
 
 CATEGORIES =		net devel
 
@@ -15,9 +14,13 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES =		lang/python
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+MODPY_PI =		Yes
 
-NO_TEST =		Yes
+RUN_DEPENDS =		net/py-pyasynchat
+TEST_DEPENDS =		devel/py-test-instafail \
+			devel/py-test-xdist \
+			security/py-openssl \
+			sysutils/py-psutil
 
 .include <bsd.port.mk>
