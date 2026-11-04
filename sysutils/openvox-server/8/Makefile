@@ -1,6 +1,6 @@
 COMMENT =	OpenVox server
 
-VERSION =	8.15.2
+VERSION =	8.18.0
 DISTNAME =	openvox-server-${VERSION}
 
 CATEGORIES =	sysutils
