@@ -1,7 +1,7 @@
 COMMENT=	virtual Python environment builder
 
 # check pyproject.toml versions of deps, they are frequently bumped
-MODPY_DISTV=	21.14.13
+MODPY_DISTV=	21.15.4
 DISTNAME=	virtualenv-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -15,6 +15,7 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
+BUILD_DEPENDS=	devel/py-hatch-fancy-pypi-readme
 
 # messes up naming of packaged wheels
 UPDATE_PLIST_ARGS=	-i MODPY_PY_PREFIX
