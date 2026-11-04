@@ -1,6 +1,6 @@
 COMMENT =	GIS WMTS/TMS tile caching server
 
-MODPY_DISTV =	7.0.0
+MODPY_DISTV =	8.0.1
 DISTNAME =		mapproxy-${MODPY_DISTV}
 
 CATEGORIES =	geo www
@@ -23,7 +23,7 @@ RUN_DEPENDS =	geo/py-proj \
 		www/py-werkzeug \
 		textproc/py-yaml \
 		textproc/py-lxml \
-		graphics/py-Pillow
+		graphics/py-Pillow>=13.0.0
 
 TEST_DEPENDS =	${RUN_DEPENDS} \
 		devel/py-nose \
