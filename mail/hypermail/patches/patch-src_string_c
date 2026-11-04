@@ -1,0 +1,11 @@
+Index: src/string.c
+--- src/string.c.orig
++++ src/string.c
+@@ -23,7 +23,6 @@
+ ** All the nasty string functions live here.
+ */
+ 
+-#include <iconv.h>
+ #include <errno.h>
+ #include <ctype.h>
+ #include <sys/stat.h>
