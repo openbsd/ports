@@ -3,6 +3,7 @@ USE_NOBTCFI =		Yes
 
 COMMENT =		next generation GoldenDict
 CATEGORIES =		textproc education x11
+REVISION =		0
 
 DIST_TUPLE =		github	xiaoyifang	goldendict-ng	v26.8.0	.
 
@@ -42,7 +43,8 @@ LIB_DEPENDS =		archivers/bzip2 \
 			x11/qt6/qtsvg \
 			x11/qt6/qtwebengine
 
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils \
+			multimedia/gstreamer1/plugins-good
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
 			-DUSE_ALTERNATIVE_NAME=ON \
