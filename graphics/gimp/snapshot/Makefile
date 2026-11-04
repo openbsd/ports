@@ -3,12 +3,11 @@ COMMENT=	GNU Image Manipulation Program
 # needs newer librsvg
 ONLY_FOR_ARCHS=	${RUST_ARCHS}
 
-V=		3.2.6
+V=		3.2.8
 GIMP_API_V=	3.0
 GIMP_APP_V=	${V:R}
 DISTNAME=	gimp-${V}
 SUBST_VARS +=	GIMP_API_V GIMP_APP_V
-REVISION=	1
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -34,7 +33,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gs gtk-3 harfbuzz
 WANTLIB += heif intl jpeg json-glib-1.0 jxl jxl_threads lcms2
 WANTLIB += lzma m mypaint openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += png poppler-glib rsvg-2 tiff webp webpdemux webpmux
-WANTLIB += wmf-0.2 wmflite-0.2 z
+WANTLIB += wmf-0.2 wmflite-0.2 z fribidi
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -118,18 +117,8 @@ CONFIGURE_ARGS=	-Dmng=disabled \
 		-Dcheck-update=no \
 		-Denable-console-bin=true
 
-# XXX disable; it does not build with newer gi-docgen
-# WARNING: Unknown component in class link for Pango.Font: .Description
-# Returns a [class@Pango.Font.Description] representing @font.
-# ninja: build stopped: subcommand failed.
-#BUILD_DEPENDS +=	textproc/gi-docgen
-CONFIGURE_ARGS +=	-Dgi-docgen=disabled
-
 # needs OpenMP
 CONFIGURE_ARGS +=	-Dopenmp=disabled
-
-# needs libiff
-CONFIGURE_ARGS +=	-Dilbm=disabled
 
 UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX
 

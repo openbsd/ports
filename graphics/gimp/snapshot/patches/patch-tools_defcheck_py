@@ -3,11 +3,11 @@ uses nm options that arent supported by our nm
 Index: tools/defcheck.py
 --- tools/defcheck.py.orig
 +++ tools/defcheck.py
-@@ -47,6 +47,7 @@ def read_def_symbols(filename):
-    return symbols
+@@ -52,6 +52,7 @@ def read_def_symbols(filename):
+    return symbols, data_symbols
  
  have_errors = 0
 +sys.exit (have_errors)
  
  
- #READ LIBRARY SYMBOLS
+ # PROJECT-SPECIFIC CONFIGURATION

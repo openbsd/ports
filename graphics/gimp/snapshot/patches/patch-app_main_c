@@ -11,7 +11,7 @@ Index: app/main.c
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -623,6 +624,7 @@ main (int    argc,
+@@ -684,6 +685,7 @@ main (int    argc,
  #endif
    gint            retval;
    gint            i;
@@ -19,7 +19,7 @@ Index: app/main.c
  #if defined(ENABLE_RELOCATABLE_RESOURCES) && defined(__APPLE__)
    gint            newargc;
  #endif
-@@ -635,6 +637,11 @@ main (int    argc,
+@@ -696,6 +698,11 @@ main (int    argc,
  #if defined(GIMP_UNSTABLE) || !defined(GIMP_RELEASE)
    gimp_attach_console_window ();
  #endif
