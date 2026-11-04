@@ -1,7 +1,7 @@
 COMMENT =	cyber swiss army knife
 
-V =		11.4.0
-HASH =		49d1a5634a67a3b806c6db0fdca7dcecb41a776c
+V =		11.5.0
+HASH =		8cd426dd4f40f1423912d5fad91b578a86a65112
 DISTNAME =	CyberChef_${HASH}
 PKGNAME =	cyberchef-$V
 
