@@ -629,6 +629,8 @@
      SUBDIR += py-pika
      SUBDIR += py-portend
      SUBDIR += py-publicsuffix2
+     SUBDIR += py-pyasynchat
+     SUBDIR += py-pyasyncore
      SUBDIR += py-python-lsp-jsonrpc
      SUBDIR += py-python-socks
      SUBDIR += py-ripe.atlas.cousteau
