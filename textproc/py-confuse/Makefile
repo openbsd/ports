@@ -1,6 +1,6 @@
 COMMENT=	painless YAML configuration
 
-MODPY_DISTV=	2.3.0
+MODPY_DISTV=	2.3.1
 DISTNAME=	confuse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
