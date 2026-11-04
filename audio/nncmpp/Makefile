@@ -1,6 +1,6 @@
 COMMENT=		terminal/X11 MPD client
 
-V=			2.3.2
+V=			2.4.0
 DISTNAME=		nncmpp-${V}
 EXTRACT_SUFX=		.tar.zst
 CATEGORIES=		audio
