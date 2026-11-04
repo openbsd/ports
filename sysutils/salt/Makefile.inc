@@ -31,18 +31,22 @@ MODPY_PYBUILD =		setuptools
 
 MODULES =		lang/python
 
-BUILD_DEPENDS +=	textproc/py-yaml \
+BUILD_DEPENDS +=	devel/py-importlib-metadata \
+			devel/py-looseversion \
+			textproc/py-yaml \
 			www/py-jinja2 \
 			www/py-requests
 
 # requirements/base.txt
 RUN_DEPENDS =		databases/py-mysqlclient \
+			devel/py-importlib-metadata \
 			devel/py-looseversion \
 			devel/py-jmespath \
 			devel/py-setproctitle \
 			devel/py-timelib \
 			net/py-msgpack>=0.6.2v0 \
 			security/py-cryptography \
+			sysutils/py-xxhash \
 			textproc/py-MarkupSafe \
 			textproc/py-yaml \
 			www/py-jinja2 \
