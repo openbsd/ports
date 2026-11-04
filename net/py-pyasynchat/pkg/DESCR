@@ -1,0 +1,6 @@
+This module builds on the asyncore infrastructure, simplifying asynchronous
+clients and servers and making it easier to handle protocols whose elements
+are terminated by arbitrary strings, or are of variable length. It was
+previously included as a standard library in Python before 3.12.
+
+It exists for backwards compatibility only.
