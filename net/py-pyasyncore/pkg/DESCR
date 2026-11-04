@@ -1,0 +1,5 @@
+This module provides basic infrastructure for writing asynchronous
+socket service clients and servers, previously included as a standard
+library in Python before 3.12.
+
+It exists for backwards compatibility only.
