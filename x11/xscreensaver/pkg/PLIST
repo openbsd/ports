@@ -293,6 +293,7 @@ libexec/xscreensaver/webcollage
 @bin libexec/xscreensaver/whirlwindwarp
 @bin libexec/xscreensaver/winduprobot
 @comment SEGV in xft_word_wrap during run @bin libexec/xscreensaver/worldpieces
+@bin libexec/xscreensaver/worldpieces
 @bin libexec/xscreensaver/wormhole
 @bin libexec/xscreensaver/xanalogtv
 @bin libexec/xscreensaver/xflame

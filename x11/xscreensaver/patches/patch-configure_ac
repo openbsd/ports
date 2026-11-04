@@ -11,10 +11,10 @@
 
 - Don't pick up FFmpeg (just used for recanim, but linked into many binaries)
 
-Index: configure
---- configure.orig
-+++ configure
-@@ -2823,11 +2823,6 @@ ac_config_headers="$ac_config_headers config.h"
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -9,11 +9,6 @@ AC_CONFIG_HEADERS([config.h])
  echo "current directory: `pwd`"
  echo "command line was: $0 $@"
  
@@ -26,20 +26,32 @@ Index: configure
  ###############################################################################
  #
  #       Autoheader stuff
-@@ -14468,9 +14463,9 @@ fi
+@@ -2026,9 +2024,9 @@ fi
+ 
+ # Check for the various Gnome help and URL loading programs.
+ #
+-WITH_BROWSER=gnome-open
++WITH_BROWSER=xdg-open
+ if test "$have_wayland" = yes; then
+-  AC_CHECK_PROGS(gnome_open_program,     gnome-open)
++  AC_CHECK_PROGS(gnome_open_program,     xdg-open)
+   AC_CHECK_PROGS(gnome_url_show_program, gnome-url-show)
+ fi
+ 
+@@ -2625,9 +2661,9 @@ fi
  
  # Check for the various Gnome help and URL loading programs.
  #
 -WITH_BROWSER=gnome-open
 +WITH_BROWSER=xdg-open
  if test "$have_gtk" = yes; then
--  for ac_prog in gnome-open
-+  for ac_prog in xdg-open
- do
-   # Extract the first word of "$ac_prog", so it can be a program name with args.
- set dummy $ac_prog; ac_word=$2
-@@ -19990,7 +19985,7 @@ fi
+-  AC_CHECK_PROGS(gnome_open_program,     gnome-open)
++  AC_CHECK_PROGS(gnome_open_program,     xdg-open)
+   AC_CHECK_PROGS(gnome_url_show_program, gnome-url-show)
  fi
+ 
+@@ -3934,7 +3970,7 @@ fi
+ 
  
  have_ffmpeg=no
 -if test "$have_avformat" = yes -a \
@@ -47,7 +59,7 @@ Index: configure
          "$have_avcodec" = yes -a \
          "$have_avutil" = yes -a \
          "$have_swscale" = yes -a \
-@@ -22124,7 +22119,6 @@ else
+@@ -4489,7 +4529,6 @@ else
      warn2 "The errors are:"
      echo ''
      echo "$pkgerr" | sed 's/^/             > /g'
@@ -55,7 +67,7 @@ Index: configure
    fi
  fi
  
-@@ -22417,7 +22411,6 @@ elif test "$have_pam" = no -a "$enable_locking" = yes 
+@@ -4793,7 +4832,6 @@ elif test "$have_pam" = no -a "$enable_locking" = yes 
    if test -d /etc/pam.d -o -f /etc/pam.conf ; then
      warn  "Your system seems to have PAM, but PAM is not being used."
      warn2 "That is probably not going to work out well."

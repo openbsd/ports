@@ -9,7 +9,7 @@ COMMENT=	screen saver and locker for the X Window System
 # Ideally this wants a bsdauth driver to be written, change to being
 # installed setgid auth, and figure out any issues resulting.
 DISTNAME=	xscreensaver-6.15
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 
@@ -57,11 +57,14 @@ RUN_DEPENDS+=	devel/xdg-utils
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS= --with-app-defaults="${PREFIX}/lib/X11/app-defaults" \
 		--without-pam
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.16
 
 FAKE_FLAGS=	install_prefix=${WRKINST}
 
