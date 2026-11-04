@@ -179,7 +179,7 @@ MODGO_MODULES =	\
 	github.com/fzipp/gocyclo							 v0.6.0 \
 	github.com/gaissmai/bart							 v0.28.0 \
 	github.com/ghostiam/protogetter							 v0.3.21 \
-	github.com/go-chi/chi/v5							 v5.3.2 \
+	github.com/go-chi/chi/v5							 v5.4.0 \
 	github.com/go-critic/go-critic							 v0.14.4 \
 	github.com/go-jose/go-jose/v3							 v3.0.5 \
 	github.com/go-jose/go-jose/v4							 v4.1.5 \
@@ -544,11 +544,11 @@ MODGO_MODULES =	\
 	go.yaml.in/yaml/v2								 v2.4.4 \
 	go.yaml.in/yaml/v3								 v3.0.5 \
 	golang.org/x/crypto								 v0.57.0 \
-	golang.org/x/crypto/x509roots/fallback						 v0.0.0-20260929172509-b39ff6d641ec \
+	golang.org/x/crypto/x509roots/fallback						 v0.0.0-20261030153154-30a33513ff6d \
 	golang.org/x/exp								 v0.0.0-20260908205506-85c1c2202aba \
 	golang.org/x/exp/typeparams							 v0.0.0-20260811152304-ee035b5b010f \
 	golang.org/x/mod								 v0.41.0 \
-	golang.org/x/net								 v0.59.0 \
+	golang.org/x/net								 v0.60.0 \
 	golang.org/x/oauth2								 v0.37.0 \
 	golang.org/x/perf								 v0.0.0-20250813145418-2f7363a06fe1 \
 	golang.org/x/sync								 v0.23.0 \
@@ -956,6 +956,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net								 v0.56.0 \
 	golang.org/x/net								 v0.57.0 \
 	golang.org/x/net								 v0.58.0 \
+	golang.org/x/net								 v0.59.0 \
 	golang.org/x/net								 v0.6.0 \
 	golang.org/x/oauth2								 v0.19.0 \
 	golang.org/x/oauth2								 v0.28.0 \
