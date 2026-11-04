@@ -1,0 +1,18 @@
+handle the smtpd filter-protocol version 0.8 too
+
+the only difference is that messages can be prepended with
+"priority tags".  this filter is not logging to stderr though
+so it's effectively a no-op.
+
+Index: filter-spamassassin.go
+--- filter-spamassassin.go.orig
++++ filter-spamassassin.go
+@@ -211,7 +211,7 @@ func run() {
+ 	for in.Scan() {
+ 		f := strings.Split(in.Text(), "|")
+ 		t, ver, ev, sid := f[0], f[1], f[4], f[5]
+-		if (t != "filter" && t != "report") || ver != "0.7" {
++		if (t != "filter" && t != "report") || ver != "0.8" {
+ 			l3.Err(fmt.Sprintln(sid, "protocol", t, ver))
+ 			return
+ 		}

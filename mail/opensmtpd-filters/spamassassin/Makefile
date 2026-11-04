@@ -3,6 +3,7 @@ COMMENT =	Apache SpamAssassin integration to the OpenSMTPD daemon
 V =		0.8
 FILTER_NAME =	spamassassin
 DISTNAME =	filter-spamassassin-${V}
+REVISION =	0
 HOMEPAGE =	https://www.umaxx.net/
 
 CATEGORIES =	mail
