@@ -3,7 +3,7 @@ NOT_FOR_ARCHS=	${BE_ARCHS}
 
 COMMENT=	free audio editor
 
-V=		4.0.1
+V=		4.0.2
 DISTNAME=	audacity-sources-${V}
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	audacity-${V}
@@ -22,10 +22,10 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ GL Qt6Concurrent Qt6Core
 WANTLIB += Qt6Core5Compat Qt6Gui Qt6Network Qt6NetworkAuth Qt6OpenGL
 WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Svg Qt6Widgets
-WANTLIB += SoundTouch c expat freetype harfbuzz m mp3lame mpg123
-WANTLIB += ogg opus opusfile portaudio pugixml sndfile soxr sqlite3
-WANTLIB += twolame vorbis vorbisenc vorbisfile wavpack wx_baseu-3.2
-WANTLIB += xkbcommon z
+WANTLIB += SoundTouch c expat freetype harfbuzz id3tag m mp3lame
+WANTLIB += mpg123 ogg opus opusfile portaudio pugixml sndfile
+WANTLIB += soxr sqlite3 twolame vorbis vorbisenc vorbisfile wavpack
+WANTLIB += wx_baseu-3.2 xkbcommon z
 # dlopened; muse/framework/media/internal/ffmpegutils.cpp
 WANTLIB += avcodec avformat avutil swresample swscale
 
@@ -46,6 +46,7 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 
 LIB_DEPENDS=	audio/flac \
 		audio/lame \
+		audio/libid3tag \
 		audio/libsndfile \
 		audio/libsoxr \
 		audio/libvorbis \
