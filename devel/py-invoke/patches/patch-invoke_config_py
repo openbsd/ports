@@ -5,8 +5,8 @@ Index: invoke/config.py
          # TODO: consider an automatic fallback to /bin/sh for systems lacking
          # /bin/bash; however users may configure run.shell quite easily, so...
          else:
--            shell = "/bin/bash"
-+            shell = "/bin/sh"
+-            shell = "bash"
++            shell = "sh"
  
          return {
              # TODO: we document 'debug' but it's not truly implemented outside
