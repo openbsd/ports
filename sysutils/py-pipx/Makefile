@@ -15,7 +15,8 @@ MODULES=	lang/python
 MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
 
-BUILD_DEPENDS=	textproc/py-docutils
+BUILD_DEPENDS=	textproc/py-docutils \
+		devel/py-hatch-fancy-pypi-readme
 
 # No test suites in pypi tarball. They are in git, but require extra prep
 # (running a script to download wheels before running the tests).
