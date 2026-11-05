@@ -1,0 +1,7 @@
+@bin bin/gamepad-tool
+share/applications/gamepad-tool.desktop
+share/gamepad-tool/
+share/gamepad-tool/gamecontrollerdb.txt
+share/icons/hicolor/256x256/apps/gamepad-tool.png
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
