@@ -2,7 +2,7 @@ COMMENT=		Common Desktop Environment
 
 # 2026-05-17
 DISTNAME=		cde-2.5.4pre0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
