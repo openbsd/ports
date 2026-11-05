@@ -1,6 +1,6 @@
 COMMENT =	Game Boy development system
 
-V =		1.0.3
+V =		1.0.4
 DISTNAME =	rgbds-$V
 DISTFILES =	rgbds-$V{rgbds-source}${EXTRACT_SUFX}
 
