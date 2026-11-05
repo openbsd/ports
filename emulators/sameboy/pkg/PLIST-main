@@ -52,6 +52,7 @@ share/sameboy/Shaders/MonoLCD.fsh
 share/sameboy/Shaders/NearestNeighbor.fsh
 share/sameboy/Shaders/OmniScale.fsh
 share/sameboy/Shaders/OmniScaleLegacy.fsh
+share/sameboy/Shaders/Pixelated.fsh
 share/sameboy/Shaders/Scale2x.fsh
 share/sameboy/Shaders/Scale4x.fsh
 share/sameboy/Shaders/SmoothBilinear.fsh
