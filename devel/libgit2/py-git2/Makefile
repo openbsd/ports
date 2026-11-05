@@ -1,6 +1,6 @@
 COMMENT=		libgit2 bindings in Python
 
-MODPY_DISTV=		1.20.1
+MODPY_DISTV=		1.21.0
 DISTNAME=		pygit2-${MODPY_DISTV}
 PKGNAME=		py-git2-${MODPY_DISTV}
 
