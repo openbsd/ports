@@ -1,0 +1,12 @@
+Index: data/dconf/make-dconf-override-db.sh
+--- data/dconf/make-dconf-override-db.sh.orig
++++ data/dconf/make-dconf-override-db.sh
+@@ -18,7 +18,7 @@ fi
+ # breaks dbus-launch.  There's dbus-run-session which is
+ # better, but not everyone has it yet.
+ export DBUS_FATAL_WARNINGS=0
+-export TMPDIR=$(mktemp -d --tmpdir="$BUILDDIR")
++export TMPDIR=$(mktemp -d -p "$BUILDDIR")
+ export XDG_CONFIG_HOME="$TMPDIR/config"
+ export XDG_CACHE_HOME="$TMPDIR/cache"
+ export GSETTINGS_SCHEMA_DIR="$TMPDIR/schemas"

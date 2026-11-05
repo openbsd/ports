@@ -5,19 +5,14 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.34
+GH_TAGNAME =		1.5.35
 
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME:S/-//}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME:S/-//}
 
-REVISION-main =		1
-REVISION-gtk2 =		0
-REVISION-gtk3 =		1
-REVISION-gtk4 =		0
-
-SHARED_LIBS +=  ibus-1.0             4.5      # 5.534
+SHARED_LIBS +=  ibus-1.0             4.6      # 5.535
 
 CATEGORIES =		inputmethods chinese japanese korean
 
