@@ -292,6 +292,7 @@
      SUBDIR += scummvm-tools
      SUBDIR += sdl-jstest
      SUBDIR += sdl-sopwith
+     SUBDIR += sdl2-gamepad-tool
      SUBDIR += sdlpop
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
