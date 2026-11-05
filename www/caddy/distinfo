@@ -1,4 +1,4 @@
-SHA256 (caddy-v2.11.8.zip) = oeNuln8oHsburXj0Cs5xUg6cU+3F8WydE5iZAMjwjQY=
+SHA256 (caddy-v2.11.9.zip) = /awsCQHj5AZL8doVWPmGDNF17s33F5sXYR2CAAgmjps=
 SHA256 (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.3.0.mod) = sk3x3bP2PBVMSVG84j2pGZskzyKtQGR+RRcV1Rmugi0=
 SHA256 (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.4.0.mod) = ZWOrmOWT1mGqGT5WAL7Rnl3c9M/yPFm/ZPvm0c/YwNU=
 SHA256 (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.4.0.zip) = 5G9xQYv6aP3zv/i+rpWfHgz+tQs2iCBiSU17Du5yaYo=
@@ -466,8 +466,8 @@ SHA256 (go_modules/github.com/go-jose/go-jose/v3/@v/v3.0.5.mod) = ihOMeCWhN17bxs
 SHA256 (go_modules/github.com/go-jose/go-jose/v3/@v/v3.0.5.zip) = Tn5rYFQasDvUAuVz/CwSZCl+ZhcmxfU1KcoUrlhiWic=
 SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.3.mod) = 4GnmAC0pSVuMLcbPDTtWoHXsW+ertsLrGhwIRctmuLM=
 SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.4.mod) = 4GnmAC0pSVuMLcbPDTtWoHXsW+ertsLrGhwIRctmuLM=
-SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.5.mod) = 4GnmAC0pSVuMLcbPDTtWoHXsW+ertsLrGhwIRctmuLM=
-SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.5.zip) = AYet4dTdcx/A3o2XKu3dFW+Pkw5ijx8LrcJS5VedtMg=
+SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.6.mod) = 4GnmAC0pSVuMLcbPDTtWoHXsW+ertsLrGhwIRctmuLM=
+SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.6.zip) = YlBvM2n8EkaCNWu+jrRC+YJCJAHdqZrOIAaU78li2nY=
 SHA256 (go_modules/github.com/go-logr/logr/@v/v1.2.2.mod) = UZsdbaXu72dbShhX1ijwXxEKK4yzxCO3Ff6oDQl1pRg=
 SHA256 (go_modules/github.com/go-logr/logr/@v/v1.4.1.mod) = xJbzDXAPArSaG1C8JIaifC903z3OddnbbS1Dl1s4Fyc=
 SHA256 (go_modules/github.com/go-logr/logr/@v/v1.4.3.mod) = xJbzDXAPArSaG1C8JIaifC903z3OddnbbS1Dl1s4Fyc=
@@ -1705,7 +1705,7 @@ SHA256 (go_modules/sigs.k8s.io/json/@v/v0.0.0-20241010143419-9aa6b5e7a4b3.mod) =
 SHA256 (go_modules/sigs.k8s.io/json/@v/v0.0.0-20241010143419-9aa6b5e7a4b3.zip) = Gy79WuW8PwoBEGCW4jy/F9NqnYYCMs6/tOP9sYL6be4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SIZE (caddy-v2.11.8.zip) = 1696355
+SIZE (caddy-v2.11.9.zip) = 1706491
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.3.0.mod) = 198
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.4.0.mod) = 199
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.4.0.zip) = 7266
@@ -2173,8 +2173,8 @@ SIZE (go_modules/github.com/go-jose/go-jose/v3/@v/v3.0.5.mod) = 157
 SIZE (go_modules/github.com/go-jose/go-jose/v3/@v/v3.0.5.zip) = 352559
 SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.3.mod) = 48
 SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.4.mod) = 48
-SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.5.mod) = 48
-SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.5.zip) = 391286
+SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.6.mod) = 48
+SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.6.zip) = 397543
 SIZE (go_modules/github.com/go-logr/logr/@v/v1.2.2.mod) = 40
 SIZE (go_modules/github.com/go-logr/logr/@v/v1.4.1.mod) = 40
 SIZE (go_modules/github.com/go-logr/logr/@v/v1.4.3.mod) = 40
