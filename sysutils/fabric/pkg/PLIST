@@ -19,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}__main__.${MODPY
 lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,6 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}tunnels.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fabric/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fabric/_version.py
+lib/python${MODPY_VERSION}/site-packages/fabric/auth.py
 lib/python${MODPY_VERSION}/site-packages/fabric/config.py
 lib/python${MODPY_VERSION}/site-packages/fabric/connection.py
 lib/python${MODPY_VERSION}/site-packages/fabric/exceptions.py
