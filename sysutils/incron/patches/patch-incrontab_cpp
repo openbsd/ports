@@ -1,0 +1,16 @@
+Index: incrontab.cpp
+--- incrontab.cpp.orig
++++ incrontab.cpp
+@@ -47,7 +47,12 @@
+  * 
+  */
+ 
++#if defined(__OpenBSD__)
++#include <sys/stat.h>
+ 
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++__attribute__((visibility("default"))) mode_t _permit_setugid = S_ISGID;
++#endif
+ 
+ IncronTabEntry::IncronTabEntry()
+ : m_uMask(0),

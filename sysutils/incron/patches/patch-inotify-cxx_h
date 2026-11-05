@@ -1,5 +1,9 @@
---- inotify-cxx.h.orig	Sat Apr  7 00:19:27 2012
-+++ inotify-cxx.h	Mon Apr 24 03:08:02 2017
+chunk3: silence warning: comparison of array 'pEvt->name' not equal to a null pointer is always true
+
+from https://github.com/ar-/incron/pull/41
+Index: inotify-cxx.h
+--- inotify-cxx.h.orig
++++ inotify-cxx.h
 @@ -27,6 +27,7 @@
  #define _INOTIFYCXX_H_
  
@@ -8,15 +12,28 @@
  #include <string>
  #include <deque>
  #include <map>
-@@ -34,11 +35,6 @@
- // Please ensure that the following headers take the right place
+@@ -35,11 +36,6 @@
  #include <sys/syscall.h>
  #include <sys/inotify.h>
--
+ 
 -// Use this if syscalls not defined
 -#ifndef __NR_inotify_init
 -#include <sys/inotify-syscalls.h>
 -#endif // __NR_inotify_init
- 
+-
  /// Event struct size
  #define INOTIFY_EVENT_SIZE (sizeof(struct inotify_event))
+ 
+@@ -247,11 +243,7 @@ class InotifyEvent (public)
+     if (pEvt != NULL) {
+       m_uMask = (uint32_t) pEvt->mask;
+       m_uCookie = (uint32_t) pEvt->cookie;
+-      if (pEvt->name != NULL) {
+-        m_name = pEvt->len > 0
+-            ? pEvt->name
+-            : "";
+-      }
++      m_name = pEvt->len > 0 ? pEvt->name : "";
+       m_pWatch = pWatch;
+     }
+     else {
