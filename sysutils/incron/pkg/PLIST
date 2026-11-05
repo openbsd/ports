@@ -1,5 +1,4 @@
 @extraunexec rm -rf /var/spool/incron/
-@mode 1730
 @rcscript ${RCDIR}/incrond
 @mode 2555
 @group crontab
