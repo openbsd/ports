@@ -1,5 +1,7 @@
 COMMENT =	Symas Lightning Memory-Mapped Database
 
+# XXX lmdb-1.0.3 may fix our lack of UBC without forcing MDB_WRITEMAP
+# https://git.openldap.org/openldap/openldap/-/commit/af40d26988d30b39479befab18c414112e1b2544
 VERSION =	1.0.2
 OVERSION =	0.9.36
 DIST_TUPLE =	github LMDB lmdb LMDB_${VERSION} .
