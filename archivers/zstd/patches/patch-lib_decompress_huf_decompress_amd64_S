@@ -1,0 +1,12 @@
+Index: lib/decompress/huf_decompress_amd64.S
+--- lib/decompress/huf_decompress_amd64.S.orig
++++ lib/decompress/huf_decompress_amd64.S
+@@ -14,7 +14,7 @@
+ /* Stack marking
+  * ref: https://wiki.gentoo.org/wiki/Hardened/GNU_stack_quickstart
+  */
+-.section .note.GNU-stack,"",%progbits
++	.section .note.GNU-stack,"",%progbits
+ 
+ #if defined(__aarch64__)
+ /* Mark that this assembly supports BTI & PAC, because it is empty for aarch64.
