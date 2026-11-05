@@ -9,7 +9,7 @@ USE_NOEXECONLY =	Yes
 .endif
 
 COMMENT =		API compatible Jellyfin server in Rust
-DIST_TUPLE =		github	mangoleaf	ferrofin	v1.4.0	.
+DIST_TUPLE =		github	mangoleaf	ferrofin	v1.4.1	.
 CATEGORIES =		multimedia net
 
 # https://github.com/jellyfin/jellyfin-web needs 'npm run build:propduction'

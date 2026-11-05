@@ -1,6 +1,10 @@
-Index: modcargo-crates/wasmtime-wasi-49.0.4/src/sockets/tcp.rs
---- modcargo-crates/wasmtime-wasi-49.0.4/src/sockets/tcp.rs.orig
-+++ modcargo-crates/wasmtime-wasi-49.0.4/src/sockets/tcp.rs
+hardcode/neuter TCP keep* socket options OpenBSD does not have
+
+(this patch-* file is unversioned to avoid cvs rm/add on crate updates)
+
+Index: modcargo-crates/wasmtime-wasi-49.0.5/src/sockets/tcp.rs
+--- modcargo-crates/wasmtime-wasi-49.0.5/src/sockets/tcp.rs.orig
++++ modcargo-crates/wasmtime-wasi-49.0.5/src/sockets/tcp.rs
 @@ -441,7 +441,7 @@ impl TcpSocket {
  
      pub(crate) fn keep_alive_idle_time(&self) -> Result<u64, ErrorCode> {
