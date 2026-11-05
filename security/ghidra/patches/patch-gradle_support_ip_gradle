@@ -11,7 +11,7 @@ Execution failed for task ':CabExtract:ip'.
 Index: gradle/support/ip.gradle
 --- gradle/support/ip.gradle.orig
 +++ gradle/support/ip.gradle
-@@ -154,6 +154,8 @@ def Map<String, List<String>> getIpForModule(Project p
+@@ -155,6 +155,8 @@ def Map<String, List<String>> getIpForModule(Project p
  		exclude "**/*.vcxproj.user"
  		exclude '**/__pycache__'
  		exclude '**/*.egg-info'

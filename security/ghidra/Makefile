@@ -2,14 +2,13 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 COMMENT =	software reverse engineering (SRE) framework
 
-VERSION = 	12.1.4
-GHIDRA_DATE =	20260921
+VERSION = 	12.2
+GHIDRA_DATE =	20261016
 
 GH_ACCOUNT =	NationalSecurityAgency
 GH_PROJECT =	ghidra
 GH_TAGNAME =	Ghidra_${VERSION}_build
 DISTNAME =	ghidra-${VERSION}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -34,7 +33,7 @@ PY_PROTOBUF_VER =	7.36.2
 DISTFILES.a +=		ghidra-Ghidra_${VERSION}_build_dependencies${EXTRACT_SUFX}
 
 MODULES =		java lang/python
-MODJAVA_VER =		21+
+MODJAVA_VER =		25+
 
 BUILD_DEPENDS =		archivers/unzip \
 			devel/protobuf>=${PROTOBUF_VER} \
@@ -74,12 +73,6 @@ EXTENSIONS =		BSimElasticPlugin GnuDisassembler Jython Lisa \
 
 post-extract:
 	@rm -rf ${WRKSRC}/Ghidra/Features/PyGhidra
-	@perl -pi -e 's,(application.version)=.*,\1=${VERSION},' \
-		${WRKSRC}/Ghidra/application.properties
-	@mkdir -p ${WRKSRC}/Ghidra/Framework/Pty/src/main/java/ghidra/pty/openbsd
-	@cd ${WRKSRC}/Ghidra/Framework/Pty/src/main/java/ghidra/pty/linux/ && \
-		for f in Linux* ; do \
-			cp $$f ../openbsd/OpenBSD$${f#Linux} ; done
 	@mkdir -p ${WRKSRC}/dependencies/flatRepo
 	@cp ${TRUEPREFIX}/share/java/classes/jna.jar \
 		${WRKSRC}/dependencies/flatRepo/jna-${JNA_VER}.jar
@@ -141,21 +134,27 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java
 	unzip -d ${PREFIX}/share/java \
-		${WRKSRC}/build/dist/ghidra_${VERSION}_DEV_*_${GHIDRA_ARCH}.zip \
+		${WRKSRC}/build/dist/ghidra_${VERSION}_PUBLIC_*.zip \
 		-x *.orig.port
-	mv ${PREFIX}/share/java/ghidra_${VERSION}_DEV ${PREFIX}/share/java/ghidra
+	mv ${PREFIX}/share/java/ghidra_${VERSION}_PUBLIC ${PREFIX}/share/java/ghidra
 	find ${PREFIX}/share/java/ghidra -name *.whl -a -not -name ghidra* \
 	    -delete
 	find ${PREFIX}/share/java/ghidra -name psutil-*.tar.gz -delete
+.if ${MACHINE_ARCH} == "aarch64"
+	cd ${PREFIX}/share/java/ghidra && \
+		rm -rf GPL/DemanglerGnu/os/openbsd_x86_64 \
+			Ghidra/Features/Decompiler/os/openbsd_x86_64 \
+			Ghidra/Features/FileFormats/os/openbsd_x86_64
+.endif
 .for name in ${EXTENSIONS}
 	cd ${PREFIX}/share/java/ghidra/Extensions/Ghidra/ && \
-		mv ghidra_${VERSION}_DEV_*_${name}.zip \
-			ghidra_${VERSION}_DEV_${GHIDRA_DATE}_${name}.zip
+		mv ghidra_${VERSION}_PUBLIC_*_${name}.zip \
+			ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}_${name}.zip
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/Ghidra/RuntimeScripts/Linux/ghidraRun \
+	${INSTALL_SCRIPT} ${WRKSRC}/Ghidra/RuntimeScripts/ghidraRun \
 		${PREFIX}/share/java/ghidra/ghidraRun
 	ln -s ${TRUEPREFIX}/share/java/ghidra/ghidraRun ${PREFIX}/bin/ghidraRun
-	${INSTALL_SCRIPT} ${WRKSRC}/Ghidra/RuntimeScripts/Linux/support/launch.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/Ghidra/RuntimeScripts/support/launch.sh \
 		${PREFIX}/share/java/ghidra/support/launch.sh
 
 .include <bsd.port.mk>

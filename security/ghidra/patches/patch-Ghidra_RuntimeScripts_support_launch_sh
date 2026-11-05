@@ -1,0 +1,23 @@
+Use javaPathHelper
+
+Index: Ghidra/RuntimeScripts/support/launch.sh
+--- Ghidra/RuntimeScripts/support/launch.sh.orig
++++ Ghidra/RuntimeScripts/support/launch.sh
+@@ -125,16 +125,7 @@ else
+ fi
+ 
+ # Identify java command from either JAVA_HOME or PATH, try PATH first
+-JAVA_CMD=
+-if [ -x "$(command -v java)" ] ; then
+-	JAVA_CMD=java
+-elif [ -n "${JAVA_HOME}" ] ; then
+-	JAVA_CMD="${JAVA_HOME}/bin/java"
+-	if [ ! -x "${JAVA_CMD}" ] ; then
+-		echo "WARNING: JAVA_HOME environment variable is set to an invalid directory: ${JAVA_HOME}"
+-		JAVA_CMD=
+-	fi
+-fi
++JAVA_CMD="$(javaPathHelper -c ghidra)"
+ 
+ if [ "${JAVA_CMD}" == "" ]; then
+ 	echo

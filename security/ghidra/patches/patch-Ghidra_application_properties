@@ -1,0 +1,13 @@
+Release name PUBLIC (not DEV)
+
+Index: Ghidra/application.properties
+--- Ghidra/application.properties.orig
++++ Ghidra/application.properties
+@@ -1,6 +1,6 @@
+ application.name=Ghidra
+ application.version=12.2
+-application.release.name=DEV
++application.release.name=PUBLIC
+ application.layout.version=3
+ application.gradle.min=9.1
+ application.gradle.max=
