@@ -67,6 +67,7 @@ BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		misc/shared-mime-info \
 		shells/bash \
 		shells/bash-completion \
+		textproc/gi-docgen \
 		textproc/libxslt
 
 RUN_DEPENDS=	${COMMON_DEPENDS} \
