@@ -3,7 +3,7 @@ link tests with static archive due to undefined symbol
 Index: test/Makefile.in
 --- test/Makefile.in.orig
 +++ test/Makefile.in
-@@ -140,9 +140,7 @@ am_LibTorrent_Test_OBJECTS = $(am__objects_1) \
+@@ -142,9 +142,7 @@ am_LibTorrent_Test_OBJECTS = $(am__objects_1) \
  	protocol/LibTorrent_Test-test_protocol_buffer.$(OBJEXT) \
  	protocol/LibTorrent_Test-test_request_list.$(OBJEXT)
  LibTorrent_Test_OBJECTS = $(am_LibTorrent_Test_OBJECTS)
@@ -14,7 +14,18 @@ Index: test/Makefile.in
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
  am__v_lt_0 = --silent
-@@ -683,9 +681,7 @@ top_srcdir = @top_srcdir@
+@@ -216,9 +214,7 @@ am_LibTorrent_Test_Protocol_OBJECTS = $(am__objects_4)
+ 	../src/utils/LibTorrent_Test_Protocol-fd_close_queue.$(OBJEXT)
+ LibTorrent_Test_Protocol_OBJECTS =  \
+ 	$(am_LibTorrent_Test_Protocol_OBJECTS)
+-LibTorrent_Test_Protocol_DEPENDENCIES = ../src/libtorrent.la \
+-	../src/libtorrent_other.la \
+-	../src/torrent/libtorrent_torrent.la
++LibTorrent_Test_Protocol_DEPENDENCIES = ../src/.libs/libtorrent.a
+ LibTorrent_Test_Protocol_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(LibTorrent_Test_Protocol_CXXFLAGS) $(CXXFLAGS) \
+@@ -748,9 +744,7 @@ top_srcdir = @top_srcdir@
  
  # LibTorrent_Test_LDADD = ../src/libtorrent.la
  LibTorrent_Test_LDADD = \
@@ -25,3 +36,14 @@ Index: test/Makefile.in
  
  LibTorrent_Test_Torrent_Net_LDADD = $(LibTorrent_Test_LDADD)
  LibTorrent_Test_Torrent_Runtime_LDADD = $(LibTorrent_Test_LDADD)
+@@ -797,9 +791,7 @@ LibTorrent_Test_Protocol_SOURCES = $(LibTorrent_Test_C
+ 	../src/utils/fd_close_queue.cc
+ 
+ LibTorrent_Test_Protocol_LDADD = \
+-	../src/libtorrent.la \
+-	../src/libtorrent_other.la \
+-	../src/torrent/libtorrent_torrent.la
++	../src/.libs/libtorrent.a
+ 
+ LibTorrent_Test_Torrent_Net_SOURCES = $(LibTorrent_Test_Common) \
+ 	torrent/net/test_address_info.cc \

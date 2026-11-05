@@ -3,10 +3,10 @@ COMMENT=		BitTorrent library written in C++
 BROKEN-hppa =		undefined references to __sync atomic ops
 BROKEN-sh =		undefined references to __sync atomic ops
 
-V =			0.16.24
+V =			0.16.27
 DISTNAME=		libtorrent-$V
 EPOCH=			0
-SHARED_LIBS +=  	torrent 26.0	# 52.0.0
+SHARED_LIBS +=  	torrent 27.0	# 55.0
 CATEGORIES=		net devel
 
 HOMEPAGE=		https://rakshasa.github.io/rtorrent/

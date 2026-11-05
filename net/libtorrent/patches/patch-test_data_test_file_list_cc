@@ -1,0 +1,23 @@
+duplicate symbol (stub and socket_file.cc)
+
+Index: test/data/test_file_list.cc
+--- test/data/test_file_list.cc.orig
++++ test/data/test_file_list.cc
+@@ -19,17 +19,6 @@ namespace torrent {
+ // in this test binary links those in, and initialize()'s guard throws
+ // before either would ever run, so a link-only stub is enough here.
+ Manager* manager = nullptr;
+-
+-MemoryChunk
+-SocketFile::create_padding_chunk(uint32_t, int, int) {
+-  throw internal_error("stub SocketFile::create_padding_chunk() called");
+-}
+-
+-MemoryChunk
+-SocketFile::create_chunk(uint64_t, uint32_t, int, int) const {
+-  throw internal_error("stub SocketFile::create_chunk() called");
+-}
+-
+ } // namespace torrent
+ 
+ namespace {
