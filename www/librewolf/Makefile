@@ -13,7 +13,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # If upstream adds revision number -x, it will become plx in OpenBSD, e.g.
 # librewolf-149.0.2-2 (upstream) becomes librewolf-149.0.2pl2 (patch level 2)
-MOZILLA_DIST_VERSION =	159.0-1
+MOZILLA_DIST_VERSION =	159.0.1-1
 MOZILLA_VERSION =	${MOZILLA_DIST_VERSION:C/-([0-9]+)$/pl\1/}
 
 MOZILLA_PROJECT =	librewolf
@@ -22,7 +22,7 @@ MAINTAINER =		Leah Rowe <leah@libreboot.org>
 
 # LibreWolf doesn't provide PGO data, but we use the data
 # provided by FireFox releases, re-using the OpenBSD distfile
-MOZILLA_PROFDATA_TASKID =	UKqb36XTQgO0jyxyO2zhcg
+MOZILLA_PROFDATA_TASKID =	SicCS5fzTJiaYOJUEpSAWg
 FFVERSION =			${MOZILLA_DIST_VERSION:C/-([0-9]+)$//}
 FFDIST =			firefox-${FFVERSION}.source
 DISTFILES.profdata = ${FFDIST}-profdata.tar.xz{profdata.tar.xz}
