@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PYBUILD=	hatch-vcs
+BUILD_DEPENDS=	devel/py-hatch-fancy-pypi-readme
 MODPY_PI=	Yes
 
 # disable failing tests with a long timeout
