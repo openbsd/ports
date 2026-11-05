@@ -2,6 +2,7 @@ COMMENT=	CAD drawing program for X11
 
 # keep graphics/xfig and print/transfig in sync
 DISTNAME=	xfig-3.2.9
+REVISION=	0
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	https://mcj.sourceforge.net/
@@ -21,7 +22,7 @@ LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
 		x11/Xaw3d>=1.6
 RUN_DEPENDS=	print/transfig \
-		textproc/xpdf \
+		devel/xdg-utils \
 		devel/desktop-file-utils
 
 CONFIGURE_STYLE= gnu
