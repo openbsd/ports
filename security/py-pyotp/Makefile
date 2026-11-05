@@ -1,10 +1,8 @@
 COMMENT=	Python library for one-time passwords
 
-MODPY_DISTV=	2.9.0
-
+MODPY_DISTV=	2.10.0
 DISTNAME=	pyotp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	security
 
@@ -15,10 +13,9 @@ HOMEPAGE=	https://pyauth.github.io/pyotp/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
+MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
 
-MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= test.py
 
 .include <bsd.port.mk>
