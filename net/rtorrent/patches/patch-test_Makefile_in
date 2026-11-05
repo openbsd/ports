@@ -1,7 +1,7 @@
 Index: test/Makefile.in
 --- test/Makefile.in.orig
 +++ test/Makefile.in
-@@ -743,11 +743,11 @@ rtorrent_Test_Src_SOURCES = $(rtorrent_Test_Common) \
+@@ -779,11 +779,11 @@ rtorrent_Test_Src_SOURCES = $(rtorrent_Test_Common) \
  	src/test_watch_ready_queue.h
  
  rtorrent_Test_Core_CXXFLAGS = $(CPPUNIT_CFLAGS)
