@@ -3,6 +3,7 @@ COMMENT =	utility and library for computing hash sums
 GH_ACCOUNT =	rhash
 GH_PROJECT =	RHash
 GH_TAGNAME =	v1.4.6
+REVISION =	0
 PKGNAME =	${DISTNAME:L}
 
 SHARED_LIBS =	rhash 1.1
@@ -31,6 +32,9 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 FAKE_FLAGS =		SYSCONFDIR=${WRKINST}${PREFIX}/share/examples/rhash
 
 TEST_DEPENDS =		sysutils/ggrep
+
+# PICFLAG is defined in bsd.own.mk
+SUBST_VARS +=		PICFLAG
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/common_func.h \
