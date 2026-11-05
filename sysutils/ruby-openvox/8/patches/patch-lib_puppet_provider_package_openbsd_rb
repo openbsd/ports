@@ -1,0 +1,17 @@
+Also make branches containing special characters, i.e. '.'
+work, alike php-gd%8.4
+
+https://github.com/OpenVoxProject/openvox/pull/774
+
+Index: lib/puppet/provider/package/openbsd.rb
+--- lib/puppet/provider/package/openbsd.rb.orig
++++ lib/puppet/provider/package/openbsd.rb
+@@ -93,7 +93,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+     # done so we can feed pkg_add(1) the full package name to install to
+     # prevent ambiguity.
+ 
+-    name_branch_regex = /^(\S*)(%\w*)$/
++    name_branch_regex = /^([^%]+)(%\S*)?$/
+     match = name_branch_regex.match(@resource[:name])
+     if match
+       use_name = match.captures[0]
