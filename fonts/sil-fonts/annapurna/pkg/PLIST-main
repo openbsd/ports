@@ -8,4 +8,6 @@ share/doc/annapurna/README.txt
 share/fonts/
 @fontdir share/fonts/annapurna/
 share/fonts/annapurna/AnnapurnaSIL-Bold.ttf
+share/fonts/annapurna/AnnapurnaSIL-Medium.ttf
 share/fonts/annapurna/AnnapurnaSIL-Regular.ttf
+share/fonts/annapurna/AnnapurnaSIL-SemiBold.ttf
