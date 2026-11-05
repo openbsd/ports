@@ -10,8 +10,6 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}_winapi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}_winapi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}agent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,8 +32,6 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}compress.${MOD
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}compress.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}dsskey.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}dsskey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ecdsakey.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ecdsakey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ed25519key.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,14 +46,12 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_ecdh_nist.
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_ecdh_nist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_gex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_gex.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_group1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_group1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_group14.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_group14.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_group16.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_group16.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_gss.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_gss.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_mlkem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_mlkem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}packet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -90,8 +84,6 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}sftp_si.${MODP
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}sftp_si.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ssh_exception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ssh_exception.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ssh_gss.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ssh_gss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}transport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}transport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -100,7 +92,6 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}win_openssh.${
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}win_openssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}win_pageant.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}win_pageant.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/paramiko/_version.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/_winapi.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/agent.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/auth_handler.py
@@ -112,7 +103,6 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/client.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/common.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/compress.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/config.py
-lib/python${MODPY_VERSION}/site-packages/paramiko/dsskey.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/ecdsakey.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/ed25519key.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/file.py
@@ -120,10 +110,9 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/hostkeys.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_curve25519.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_ecdh_nist.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_gex.py
-lib/python${MODPY_VERSION}/site-packages/paramiko/kex_group1.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_group14.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_group16.py
-lib/python${MODPY_VERSION}/site-packages/paramiko/kex_gss.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/kex_mlkem.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/message.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/packet.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/pipe.py
@@ -140,7 +129,6 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/sftp_handle.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/sftp_server.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/sftp_si.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/ssh_exception.py
-lib/python${MODPY_VERSION}/site-packages/paramiko/ssh_gss.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/transport.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/util.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/win_openssh.py
@@ -156,7 +144,6 @@ share/doc/py-paramiko/_sources/api/client.rst.txt
 share/doc/py-paramiko/_sources/api/config.rst.txt
 share/doc/py-paramiko/_sources/api/file.rst.txt
 share/doc/py-paramiko/_sources/api/hostkeys.rst.txt
-share/doc/py-paramiko/_sources/api/kex_gss.rst.txt
 share/doc/py-paramiko/_sources/api/keys.rst.txt
 share/doc/py-paramiko/_sources/api/message.rst.txt
 share/doc/py-paramiko/_sources/api/packet.rst.txt
@@ -165,7 +152,6 @@ share/doc/py-paramiko/_sources/api/proxy.rst.txt
 share/doc/py-paramiko/_sources/api/server.rst.txt
 share/doc/py-paramiko/_sources/api/sftp.rst.txt
 share/doc/py-paramiko/_sources/api/ssh_exception.rst.txt
-share/doc/py-paramiko/_sources/api/ssh_gss.rst.txt
 share/doc/py-paramiko/_sources/api/transport.rst.txt
 share/doc/py-paramiko/_sources/index.rst.txt
 share/doc/py-paramiko/_static/
@@ -190,7 +176,6 @@ share/doc/py-paramiko/api/client.html
 share/doc/py-paramiko/api/config.html
 share/doc/py-paramiko/api/file.html
 share/doc/py-paramiko/api/hostkeys.html
-share/doc/py-paramiko/api/kex_gss.html
 share/doc/py-paramiko/api/keys.html
 share/doc/py-paramiko/api/message.html
 share/doc/py-paramiko/api/packet.html
@@ -199,7 +184,6 @@ share/doc/py-paramiko/api/proxy.html
 share/doc/py-paramiko/api/server.html
 share/doc/py-paramiko/api/sftp.html
 share/doc/py-paramiko/api/ssh_exception.html
-share/doc/py-paramiko/api/ssh_gss.html
 share/doc/py-paramiko/api/transport.html
 share/doc/py-paramiko/genindex.html
 share/doc/py-paramiko/index.html
@@ -207,15 +191,3 @@ share/doc/py-paramiko/objects.inv
 share/doc/py-paramiko/py-modindex.html
 share/doc/py-paramiko/search.html
 share/doc/py-paramiko/searchindex.js
-share/examples/py-paramiko/
-share/examples/py-paramiko/demo.py
-share/examples/py-paramiko/demo_keygen.py
-share/examples/py-paramiko/demo_server.py
-share/examples/py-paramiko/demo_sftp.py
-share/examples/py-paramiko/demo_simple.py
-share/examples/py-paramiko/forward.py
-share/examples/py-paramiko/interactive.py
-share/examples/py-paramiko/rforward.py
-share/examples/py-paramiko/test_rsa.key
-share/examples/py-paramiko/user_rsa_key
-share/examples/py-paramiko/user_rsa_key.pub
