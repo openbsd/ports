@@ -1,12 +1,12 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -120,7 +120,7 @@ zipapp = [
- version.source = "vcs"
+@@ -149,7 +149,7 @@ metadata.hooks.fancy-pypi-readme.content-type = "text/
+ metadata.hooks.fancy-pypi-readme.fragments = [ { path = "docs/README.md" } ]
  build.hooks.custom = {}
  build.hooks.vcs.version-file = "src/pipx/version.py"
 -build.targets.wheel.shared-data = { "build/man" = "share/man/man1" }
 +build.targets.wheel.shared-data = { "build/man" = "man/man1" }
  build.targets.sdist.include = [
-   "/*.md",
    "/docs/man",
+   "/hatch_build.py",
