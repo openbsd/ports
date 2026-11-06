@@ -12,9 +12,12 @@ lib/python${MODPY_VERSION}/site-packages/watchdog-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/watchdog-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/watchdog-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/watchdog/__init__.py
+lib/python${MODPY_VERSION}/site-packages/watchdog/__main__.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/watchdog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/watchdog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/watchdog/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/watchdog/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/watchdog/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/watchdog/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/watchdog/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,10 +38,10 @@ lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}fsev
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}fsevents2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}inotify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}inotify.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}inotify_buffer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}inotify_buffer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}inotify_c.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}inotify_c.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}inotify_move_event_grouper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}inotify_move_event_grouper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}kqueue.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}kqueue.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/${MODPY_PYCACHE}polling.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -51,8 +54,8 @@ lib/python${MODPY_VERSION}/site-packages/watchdog/observers/api.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/fsevents.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/fsevents2.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/inotify.py
-lib/python${MODPY_VERSION}/site-packages/watchdog/observers/inotify_buffer.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/inotify_c.py
+lib/python${MODPY_VERSION}/site-packages/watchdog/observers/inotify_move_event_grouper.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/kqueue.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/polling.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/observers/read_directory_changes.py
@@ -68,6 +71,8 @@ lib/python${MODPY_VERSION}/site-packages/watchdog/utils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}backwards_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}backwards_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}bricks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}bricks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}delayed_queue.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,6 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}platform
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}platform.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}process_watcher.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/${MODPY_PYCACHE}process_watcher.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/watchdog/utils/backwards_compat.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/bricks.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/delayed_queue.py
 lib/python${MODPY_VERSION}/site-packages/watchdog/utils/dirsnapshot.py

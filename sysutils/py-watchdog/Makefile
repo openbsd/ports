@@ -1,9 +1,8 @@
 COMMENT=	filesystem event monitoring
 
-MODPY_DISTV=	6.0.0
+MODPY_DISTV=	7.1.0
 DISTNAME=	watchdog-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	sysutils
 
