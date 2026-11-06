@@ -1,4 +1,4 @@
-BROKEN-aarch64 =	third_party/rust/libc/src/lib.rs: error[E0412]: cannot find type 'c_long' in this scope
+BROKEN-aarch64 =	no member named 'initPseudoStackPtr' in 'js::jit::StackMacroAssembler'
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -64,6 +64,7 @@ CONFIGURE_ARGS +=	--enable-linker=lld
 BUILD_DEPENDS +=	devel/cbindgen>=0.6.1
 # autoconf-2.13 isnt a real dependency since a while, but configure still checks for it
 BUILD_DEPENDS +=	devel/autoconf/2.13
+BUILD_DEPENDS +=	devel/m4
 # for distutils; possibly not needed any more
 BUILD_DEPENDS +=	devel/py-setuptools
 
