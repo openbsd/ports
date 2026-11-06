@@ -1,0 +1,21 @@
+Index: slmenu.1
+--- slmenu.1.orig
++++ slmenu.1
+@@ -11,6 +11,7 @@ slmenu \- single line menu
+ .RB [ \-p
+ .IR prompt ]
+ .RB [ \-v ]
++.RB [ \-h ]
+ .SH DESCRIPTION
+ .B slmenu
+ is a dynamic menu for the console, based on the wonderful
+@@ -40,6 +41,9 @@ defines the prompt to be displayed to the left of the 
+ .TP
+ .B \-v
+ prints version information to stdout, then exits.
++.TP
++.B \-h
++prints usage information to stdout, then exits.
+ .SH USAGE
+ slmenu is completely controlled by the keyboard.  Besides standard Unix line
+ editing and item selection (arrow keys, page up/down, home and end), the

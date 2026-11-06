@@ -1,0 +1,2 @@
+slmenu is a dynamic menu for the console, based on the wonderful dmenu(1).
+It also manages huge numbers of user-defined menu items efficiently.

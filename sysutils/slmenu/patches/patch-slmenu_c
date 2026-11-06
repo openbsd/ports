@@ -1,0 +1,71 @@
+https://github.com/joshaw/slmenu/pull/2
+https://github.com/joshaw/slmenu/pull/3
+
+Index: slmenu.c
+--- slmenu.c.orig
++++ slmenu.c
+@@ -48,6 +48,7 @@ static void   resetline(void);
+ static void   setup(void);
+ static size_t textw(const char*);
+ static size_t textwn(const char*, int);
++static void   usage(void);
+ 
+ static char   text[BUFSIZ] = "";
+ static int    barpos = 0;
+@@ -97,7 +98,7 @@ void calcoffsets(void) {
+ 	}
+ }
+ 
+-void cleanup() {
++void cleanup(void) {
+ 	if (barpos==0) {
+ 		fprintf(stderr, "\n");
+ 	} else {
+@@ -282,7 +283,7 @@ size_t nextrune(int inc) {
+ 	return n;
+ }
+ 
+-void readstdin() {
++void readstdin(void) {
+ 	char buf[sizeof text], *p;
+ 	size_t i, str_len, max = 10, size = 0;
+ 
+@@ -632,14 +633,38 @@ size_t textwn(const char *s, int l) {
+ 	return c+2;
+ }
+ 
++void usage(void) {
++	fputs("usage: slmenu [-bhitv] [-l lines] [-p prompt]\n"
++	     "\n"
++	     "  -b         appear at the bottom of the terminal\n"
++	     "  -t         appear at the top of the terminal\n"
++	     "  -i         match menu items case insensitively\n"
++	     "  -l lines   list items vertically, on the given number of lines\n"
++	     "  -p prompt  display prompt to the left of the input field\n"
++	     "  -v         print version information and exit\n"
++	     "  -h         print this help and exit\n", stdout);
++}
++
+ int main(int argc, char **argv) {
+ 	int i;
+ 
++#ifdef __OpenBSD__
++	if (pledge("stdio", NULL) == -1) {
++		perror("pledge");
++		exit(EXIT_SUCCESS);
++	}
++#endif
++
+ 	for (i=0; i<argc; i++) {
+ 		/* single flags */
+ 		if (!strcmp(argv[i], "-v")) {
+ 			/* version */
+ 			puts("slmenu, © 2011 slmenu engineers, see LICENSE for details");
++			exit(EXIT_SUCCESS);
++
++		} else if (!strcmp(argv[i], "-h")) {
++			/* help */
++			usage();
+ 			exit(EXIT_SUCCESS);
+ 
+ 		} else if (!strcmp(argv[i], "-i")) {
