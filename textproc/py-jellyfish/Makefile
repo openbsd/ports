@@ -1,23 +1,21 @@
-COMMENT =		Python library for approximate and phonetic string matching
+COMMENT=	Python library for approximate and phonetic string matching
 
-MODPY_DISTV =		1.2.1
-DISTNAME =		jellyfish-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME:S/_/-/g}
-REVISION =		1
+MODPY_DISTV=	1.3.0
+DISTNAME=	jellyfish-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME:S/_/-/g}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
-HOMEPAGE =		https://jamesturk.github.io/jellyfish/
+HOMEPAGE=	https://jamesturk.github.io/jellyfish/
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODCARGO_WANTLIB}
 
-MODULES =		lang/python
-
-MODPY_PI =		Yes
-MODPY_PYBUILD =		maturin
+MODULES=	lang/python
+MODPY_PYBUILD=	maturin
+MODPY_PI=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/pyproject.toml

@@ -7,5 +7,5 @@ Index: pyproject.toml
  name = "jellyfish"
 +version = "${MODPY_DISTV}"
  dynamic = ["version"]
- requires-python = ">=3.9"
+ requires-python = ">=3.11"
  classifiers = [
