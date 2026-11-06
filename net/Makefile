@@ -722,6 +722,7 @@
      SUBDIR += smcroute
      SUBDIR += smokeping
      SUBDIR += sniproxy
+     SUBDIR += snmpd_extend
      SUBDIR += snmptt
      SUBDIR += snort
      SUBDIR += snowflake_proxy
