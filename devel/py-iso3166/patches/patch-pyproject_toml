@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -45,7 +45,7 @@ test-env = [
+ ]
+ 
+ [build-system]
+-requires = ["uv_build>=0.12.5,<0.13.0"]
++requires = ["uv_build>=0.12.5"]
+ build-backend = "uv_build"
+ 
+ [tool.uv]
