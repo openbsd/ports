@@ -4,19 +4,17 @@ USE_NOBTCFI=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	11.0.32
-BUILD_VER=	9
+BASE_VER=	11.0.33
+BUILD_VER=	10
 BSD_PORT_REL=	1
-VERSION_STR=	${BASE_VER}+${BUILD_VER}-${BSD_PORT_REL}
-PACKAGE_VER=	${BASE_VER}.${BUILD_VER}.${BSD_PORT_REL}
+VERSION_STR=	${BASE_VER}.0.3+${BUILD_VER}-${BSD_PORT_REL}
+PACKAGE_VER=	${BASE_VER}.0.3.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
 
-REVISION=	4
-
 DIST_SUBDIR=	jdk
-DISTNAME=	jdk-${VERSION_STR}
+DISTNAME=	jdk-${BASE_VER}+${BUILD_VER}-${BSD_PORT_REL}
 WRKDIST=	${WRKDIR}/jdk11u-jdk-${BASE_VER}-${BUILD_VER}-${BSD_PORT_REL}
 BOOTJDK_DATE=	20251101
 
@@ -159,7 +157,6 @@ JVMARCH=	${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/:S/sparc64/sparcv9/}
 BUILDDIR=	${WRKDIST}/build/bsd-${JVMARCH}-normal-server-release
 IMAGEDIR=	${BUILDDIR}/images/jdk
 WRKTMP=		${WRKDIR}/tmp
-JDKFILESDIR=	${.CURDIR}/../files
 
 post-extract:
 	sed -i "s|#!/bin/bash|#!\${LOCALBASE}/bin/bash|" ${WRKDIST}/configure
@@ -180,8 +177,6 @@ post-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${PKGSTEM}
 	cd ${IMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${PKGSTEM} -xf -
-	${INSTALL_DATA} ${JDKFILESDIR}/blocked.certs \
-		${PREFIX}/${PKGSTEM}/lib/security/
 	ln -fs ${SYSCONFDIR}/ssl/jdk-cacerts \
 		${PREFIX}/${PKGSTEM}/lib/security/cacerts
 
