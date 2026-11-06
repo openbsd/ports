@@ -465,7 +465,6 @@ chrome/resources/inspector_overlay/inspector_overlay_resources.grd
 chrome/resources/inspector_overlay/main.js
 chrome/snapshot_blob.bin
 %%swiftshader%%
-chrome/v8_context_snapshot.bin
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop
 share/doc/pkg-readmes/${PKGSTEM}

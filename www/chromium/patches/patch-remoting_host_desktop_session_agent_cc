@@ -1,7 +1,7 @@
 Index: remoting/host/desktop_session_agent.cc
 --- remoting/host/desktop_session_agent.cc.orig
 +++ remoting/host/desktop_session_agent.cc
-@@ -679,7 +679,7 @@ void DesktopSessionAgent::OnDesktopEnvironmentCreated(
+@@ -661,7 +661,7 @@ void DesktopSessionAgent::OnDesktopEnvironmentCreated(
    // LocalInputMonitorWin filters out an echo of the injected input before it
    // reaches |remote_input_filter_|.
    remote_input_filter_->SetExpectLocalEcho(false);

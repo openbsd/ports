@@ -1,7 +1,7 @@
 Index: gpu/command_buffer/service/raster_decoder_unittest_context_lost.cc
 --- gpu/command_buffer/service/raster_decoder_unittest_context_lost.cc.orig
 +++ gpu/command_buffer/service/raster_decoder_unittest_context_lost.cc
-@@ -15,6 +15,18 @@ using ::testing::Return;
+@@ -19,6 +19,18 @@ using ::testing::Return;
  using ::testing::SaveArg;
  using ::testing::SetArrayArgument;
  

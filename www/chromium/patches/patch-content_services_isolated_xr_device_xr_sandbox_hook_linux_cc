@@ -1,7 +1,7 @@
 Index: content/services/isolated_xr_device/xr_sandbox_hook_linux.cc
 --- content/services/isolated_xr_device/xr_sandbox_hook_linux.cc.orig
 +++ content/services/isolated_xr_device/xr_sandbox_hook_linux.cc
-@@ -435,6 +435,7 @@ bool XrPreSandboxHook(sandbox::policy::SandboxLinux::O
+@@ -450,6 +450,7 @@ bool XrPreSandboxHook(sandbox::policy::SandboxLinux::O
        manifest ? GetRuntimeLibraryPath(manifest_path, manifest->library_path)
                 : std::string();
  
@@ -9,7 +9,7 @@ Index: content/services/isolated_xr_device/xr_sandbox_hook_linux.cc
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();
    instance->StartBrokerProcess(
        MakeBrokerCommandSet({
-@@ -449,6 +450,7 @@ bool XrPreSandboxHook(sandbox::policy::SandboxLinux::O
+@@ -464,6 +465,7 @@ bool XrPreSandboxHook(sandbox::policy::SandboxLinux::O
            manifest_path, runtime_library_path,
            manifest ? manifest->runtime_id : XrRuntimeId::kOther),
        options);

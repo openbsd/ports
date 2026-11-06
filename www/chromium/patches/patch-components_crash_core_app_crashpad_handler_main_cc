@@ -10,7 +10,7 @@ Index: components/crash/core/app/crashpad_handler_main.cc
  #include "components/stability_report/user_stream_data_source_posix.h"
  #endif
  
-@@ -38,7 +38,7 @@ __attribute__((visibility("default"), used)) int Crash
+@@ -42,7 +42,7 @@ __attribute__((visibility("default"), used)) int Crash
      char* argv[]) {
    crashpad::UserStreamDataSources user_stream_data_sources;
  

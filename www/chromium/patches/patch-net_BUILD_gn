@@ -1,7 +1,7 @@
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
 +++ net/BUILD.gn
-@@ -104,7 +104,7 @@ net_configs = [
+@@ -105,7 +105,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -10,7 +10,16 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1468,6 +1468,19 @@ component("net") {
+@@ -1462,7 +1462,7 @@ component("net") {
+       "proxy_resolution/proxy_config_service_linux.h",
+     ]
+     deps += [ "//build/config/linux/dbus:buildflags" ]
+-    if (use_dbus && !is_cronet_build) {
++    if (use_dbus && !is_cronet_build && !is_bsd) {
+       sources += [ "base/network_change_notifier_linux_portal.cc" ]
+       deps += [
+         "//components/dbus",
+@@ -1493,6 +1493,19 @@ component("net") {
      ]
    }
  
@@ -30,7 +39,7 @@ Index: net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1642,7 +1655,7 @@ component("net") {
+@@ -1667,7 +1680,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -39,7 +48,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2427,7 +2440,7 @@ static_library("test_support") {
+@@ -2452,7 +2465,7 @@ static_library("test_support") {
      ]
    }
  
@@ -48,7 +57,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_test_util.cc",
        "base/address_tracker_linux_test_util.h",
-@@ -3283,14 +3296,14 @@ target(_test_target_type, "net_unittests") {
+@@ -3309,7 +3322,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -56,7 +65,8 @@ Index: net/BUILD.gn
 +  if (is_linux && !is_bsd) {
      sources += [
        "base/network_change_notifier_linux_unittest.cc",
-       "proxy_resolution/proxy_config_service_linux_unittest.cc",
+       "proxy_resolution/linux/linux_system_proxy_resolution_service_unittest.cc",
+@@ -3317,7 +3330,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -65,7 +75,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3424,6 +3437,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3460,6 +3473,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -76,7 +86,7 @@ Index: net/BUILD.gn
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3482,7 +3499,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3518,7 +3535,7 @@ target(_test_target_type, "net_unittests") {
    ]
    data_deps = [ "//testing/buildbot/filters:net_unittests_filters" ]
  
@@ -85,7 +95,7 @@ Index: net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3618,7 +3635,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3654,7 +3671,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

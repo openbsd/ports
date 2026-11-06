@@ -12,7 +12,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			156.0.8078.79
+V=			157.0.8103.38
 
 DISTNAME=		chromium-${V}
 
@@ -20,16 +20,17 @@ DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
 DISTFILES.a=		${REGRESS_DISTFILES.a} \
 			${PROFILE_DISTFILES.a} \
+			${CHROMIUM_DISTFILES.a} \
 			${VENDOR_DISTFILES.a}
 
 CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
+#CHROMIUM_DISTFILES.a+=	chromium-${V}-linux${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 PROFILE_DISTFILES.a=	chromium-${V}-profdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz
 
 TS_VERSION=		7.0.2
 
-WRKDIST = ${WRKDIR}/${DISTNAME}
 DIST_TUPLE+=		github microsoft TypeScript v${TS_VERSION} typescript
 
 # ftp https://github.com/microsoft/TypeScript/archive/refs/tags/v${TS_VERSION}.tar.gz
@@ -37,6 +38,8 @@ DIST_TUPLE+=		github microsoft TypeScript v${TS_VERSION} typescript
 # cd TypeScript-${TS_VERSION}/tsc && go mod tidy && go mod vendor
 # cd ../../ && tar czf TypeScript-${TS_VERSION}-vendor.tar.gz TypeScript-${TS_VERSION}-vendor/tsc/vendor
 VENDOR_DISTFILES.a=	TypeScript-${TS_VERSION}-vendor.tar.gz
+
+VENDOR_DISTFILES.a+=	crubit-20261024.tar.gz
 
 EXTRACT_ONLY=		${ALL_DISTFILES:N*test*}
 
@@ -212,7 +215,9 @@ GN_ARGS=	is_official_build=true \
 # rust
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
-		rust_sysroot_absolute=\"${LOCALBASE}\"
+		rust_sysroot_absolute=\"${LOCALBASE}\" \
+		rust_crubit_root=\"//third_party/rust-toolchain\" \
+		enable_rust_api_from_cpp=true
 
 # go
 MAKE_ENV+=	GOCACHE=${WRKDIST}/go-cache
@@ -297,9 +302,19 @@ pre-patch:
 post-patch:
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin \
-		${WRKSRC}/third_party/rust-toolchain/bin
+		${WRKSRC}/third_party/rust-toolchain/bin \
+		${WRKSRC}/third_party/rust-toolchain/lib \
+		${WRKSRC}/third_party/rust-toolchain/third_party
 	@ln -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
-	@ln -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+	# rust toolchain
+	ln -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+	ln -sf ${LOCALBASE}/bin/rustfmt ${WRKSRC}/third_party/rust-toolchain/bin/rustfmt
+	ln -sf ${WRKDIR}/third_party/rust-toolchain/bin/cc_bindings_from_rs \
+		${WRKSRC}/third_party/rust-toolchain/bin/
+	ln -sf ${WRKDIR}/third_party/rust-toolchain/lib/librustc_driver-a5287fa55d9d1b5f.so \
+		${WRKSRC}/third_party/rust-toolchain/lib/
+	ln -sf ${WRKDIR}/third_party/rust-toolchain/lib/third_party \
+		${WRKSRC}/third_party/rust-toolchain/lib/third_party
 	@ln -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 	@ln -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/third_party/gperf/cipd/bin/gperf
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
@@ -368,7 +383,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DIST_TARGET_DIR}/resources
-.for f in snapshot_blob.bin v8_context_snapshot.bin
+.for f in snapshot_blob.bin
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
 
