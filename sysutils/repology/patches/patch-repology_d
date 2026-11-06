@@ -1,0 +1,29 @@
+Index: repology.d
+--- repology.d.orig
++++ repology.d
+@@ -21,7 +21,10 @@ import std.json;
+ import std.meta;
+ import std.range;
+ import std.net.curl;
++import std.process;
+ 
++extern(C) int isatty(int);
++
+ struct Options
+ {
+     string repo,
+@@ -326,7 +329,13 @@ string[] process(JSONValue json, Options options)
+         default:
+             color = "32";
+         }
+-        string ver = "\033[" ~ color ~ "m" ~ obj["version"].str ~ "\033[0m";
++        string ver;
++        if (stdout.fileno.isatty == 1 && environment.get("NO_COLOR") is null)
++        {
++            ver = "\033[" ~ color ~ "m" ~ obj["version"].str ~ "\033[0m";
++        } else {
++            ver = obj["version"].str;
++        }
+         if (!options.all && hasmaintainer) {
+             string maintainer = "";
+             auto maintainers = obj["maintainers"].array;

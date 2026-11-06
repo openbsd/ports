@@ -1,6 +1,7 @@
 USE_NOBTCFI =	Yes
 
 V =		1.10.0
+REVISION =	0
 COMMENT =	command line interface for Repology.org
 DISTNAME =	repology-${V}
 CATEGORIES =	sysutils
