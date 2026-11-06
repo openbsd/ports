@@ -1,15 +1,15 @@
 COMMENT=	JSON support for Lua
 
 DISTNAME=	lua-cjson-2.1.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.kyne.com.au/~mark/software/lua-cjson.php
+HOMEPAGE=	https://www.kyne.au/~mark/software/lua-cjson.php
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-SITES=		http://www.kyne.com.au/~mark/software/download/
+SITES=		https://www.kyne.au/~mark/software/download/
 
 MODULES=	lang/lua
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
