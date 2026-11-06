@@ -1,0 +1,2 @@
+@bin bin/labwc-menu-generator
+@man man/man1/labwc-menu-generator.1

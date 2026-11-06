@@ -1,0 +1,5 @@
+labwc-menu-generator is a simple, lightweight, easily configurable C
+program that generates a full Labwc/Openbox XML-menu based on the
+information present in .desktop application files.  Scripts that prepend
+and append code to the generated menu are available on
+https://github.com/labwc/labwc-menu-generator
