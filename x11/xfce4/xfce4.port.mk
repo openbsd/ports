@@ -48,7 +48,7 @@ MODXFCE_RUN_DEPENDS+=  x11/gtk+4,-guic
 HOMEPAGE?=	https://docs.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/start
 
 SITES?=		https://archive.xfce.org/src/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/${XFCE_BRANCH}/
-SITES_GIT?=	https://gitlab.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/-/archive/${XFCE_COMMIT}/
+DIST_TUPLE_GIT ?=	gitlab panel-plugins xfce4-${XFCE_PLUGIN}-plugin ${XFCE_COMMIT} .
 DISTNAME?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
 DISTNAME_GIT?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_COMMIT}
 PKGNAME?=	xfce4-${XFCE_PLUGIN}-${XFCE_VERSION}
@@ -61,7 +61,7 @@ HOMEPAGE?=	https://docs.xfce.org/apps/${XFCE_GOODIE}/start
 
 DEBUG_PACKAGES?=	${BUILD_PACKAGES}
 SITES?=	https://archive.xfce.org/src/apps/${XFCE_GOODIE:L}/${XFCE_BRANCH}/
-SITES_GIT?=	https://gitlab.xfce.org/apps/${XFCE_GOODIE:L}/-/archive/${XFCE_COMMIT}/
+DIST_TUPLE_GIT ?=	gitlab apps ${XFCE_GOODIE:L} ${XFCE_COMMIT} .
 DISTNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
 DISTNAME_GIT?=	${XFCE_GOODIE}-${XFCE_COMMIT}
 PKGNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
@@ -82,7 +82,7 @@ HOMEPAGE?=	https://docs.xfce.org/xfce/${XFCE_PROJECT}/start
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 SITES?=	https://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
-SITES_GIT?=	https://gitlab.xfce.org/xfce/${XFCE_PROJECT:L}/-/archive/${XFCE_COMMIT}/
+DIST_TUPLE_GIT ?=	gitlab xfce ${XFCE_PROJECT:L} ${XFCE_COMMIT} .
 DISTNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
 DISTNAME_GIT?=	${XFCE_PROJECT}-${XFCE_COMMIT}
 PKGNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
@@ -90,8 +90,11 @@ PORTROACH+=	limitw:1,even
 .endif
 
 .if defined(XFCE_COMMIT)
-DISTNAME =	${DISTNAME_GIT}
-SITES =	${SITES_GIT}
+DISTNAME ?=	${DISTNAME_GIT}
+DIST_TUPLE ?=	${DIST_TUPLE_GIT}
+WRKDIST ?=	${WRKDIR}/${DISTNAME_GIT}
+SITES =
+SITES.gitlab =	https://gitlab.xfce.org/
 .if ${CONFIGURE_STYLE} != "meson"
 # makes sure some code is generated from .ui files
 CONFIGURE_ARGS +=	--enable-maintainer-mode
