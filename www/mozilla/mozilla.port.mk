@@ -123,8 +123,6 @@ MODMOZ_BUILD_DEPENDS +=	devel/nasm
 MODULES +=		lang/rust
 MODMOZ_WANTLIB +=	${MODRUST_WANTLIB}
 CONFIGURE_ARGS +=	--enable-rust-simd
-#1670807
-MODMOZ_BUILD_DEPENDS +=	devel/m4
 
 MODMOZ_WANTLIB +=	X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi Xrender \
 			atk-1.0 c cairo fontconfig freetype gdk_pixbuf-2.0 \
