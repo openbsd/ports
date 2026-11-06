@@ -1,10 +1,12 @@
-COMMENT=	fast Python json encoder/decoder
+COMMENT=	fast Python json encoder/decoder (maintenance-only)
 
-MODPY_DISTV=	5.13.0
+MODPY_DISTV=	6.1.0
 DISTNAME=	ujson-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	textproc
+
+HOMEPAGE=	https://github.com/ultrajson/ultrajson
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -1,5 +1,12 @@
-UltraJSON is an ultra fast JSON encoder and decoder written in pure
-C with bindings for Python 3.5+.
+UltraJSON is an ultra fast JSON encoder and decoder written in pure C
+with bindings for Python. May be used as a drop in replacement for most
+other JSON parsers for Python.
 
-May be used as a drop in replacement for most other JSON parsers
-for Python.
+UltraJSON's architecture is fundamentally ill-suited to making changes
+without risk of introducing new security vulnerabilities. As a result,
+this library has been put into a maintenance-only mode. Support for new
+Python versions will be added and critical bugs and security issues
+will still be fixed but all other changes will be rejected. Users are
+encouraged to migrate to orjson which is both much faster and less
+likely to introduce a surprise buffer overflow vulnerability in the
+future.
