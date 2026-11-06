@@ -1,5 +1,5 @@
 COMMENT =	RTF document converter
-DISTNAME =	unrtf-0.21.10
+DISTNAME =	unrtf-0.21.13
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://www.gnu.org/software/unrtf/unrtf.html
@@ -13,8 +13,8 @@ SITES =		${SITE_GNU:=unrtf/}
 
 LIB_DEPENDS =	converters/libiconv
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -liconv"
+CONFIGURE_STYLE = gnu
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 .include <bsd.port.mk>
