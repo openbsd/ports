@@ -123,7 +123,7 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
 
 .include <bsd.port.arch.mk>
 
-# Enable LTO where suported, except on riscv64 where it fails with:
+# Enable LTO where supported, except on riscv64 where it fails with:
 # LLVM ERROR: Function Import: link error: linking module flags 'SmallDataLimit': IDs have conflicting values in
 # 'extcap/CMakeFiles/extcap-base.dir/extcap-base.c.o' and 'extcap/CMakeFiles/sshdump.dir/sshdump.c.o
 .if ${PROPERTIES:Mlld} && ${MACHINE_ARCH} != "riscv64"
