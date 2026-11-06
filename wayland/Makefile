@@ -16,6 +16,7 @@
      SUBDIR += havoc
      SUBDIR += kanshi
      SUBDIR += labwc
+     SUBDIR += labwc-menu-generator
      SUBDIR += libei
      SUBDIR += libevdev-openbsd
      SUBDIR += libinput-openbsd
