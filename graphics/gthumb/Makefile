@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=	${RUST_ARCHS}
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	4.0
+GNOME_VERSION=	4.0.1
 
 CATEGORIES=	graphics
 
