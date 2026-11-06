@@ -92,6 +92,7 @@ PORTROACH+=	limitw:1,even
 .if defined(XFCE_COMMIT)
 DISTNAME =	${DISTNAME_GIT}
 SITES =	${SITES_GIT}
+.if ${CONFIGURE_STYLE} != "meson"
 # makes sure some code is generated from .ui files
 CONFIGURE_ARGS +=	--enable-maintainer-mode
 AUTOMAKE_VERSION =	1.14
@@ -106,6 +107,7 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 # maintainer-mode turns on debug
 .ifndef(DEBUG)
 CONFIGURE_ARGS +=	--disable-debug
+.endif
 .endif
 .endif
 
