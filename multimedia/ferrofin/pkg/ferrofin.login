@@ -1,5 +1,5 @@
 ferrofin:\
-        :datasize=8G:\
+        :datasize=6G:\
         :openfiles-cur=1024:\
         :openfiles-max=2048:\
         :tc=daemon:
