@@ -1,7 +1,7 @@
 Index: gcc/config/arm/openbsd1.h
 --- gcc/config/arm/openbsd1.h.orig
 +++ gcc/config/arm/openbsd1.h
-@@ -0,0 +1,26 @@
+@@ -0,0 +1,28 @@
 +/* Definitions of target machine for GNU compiler, OpenBSD/arm ELF version.
 +   Copyright (C) 2002 Free Software Foundation, Inc.
 +   Contributed by Wasabi Systems, Inc.
@@ -28,3 +28,5 @@ Index: gcc/config/arm/openbsd1.h
 +
 +/* use EABI frame unwinding tables.  */
 +#define ARM_UNWIND_INFO 1
++
++#define ARM_TARGET2_DWARF_FORMAT (DW_EH_PE_pcrel | DW_EH_PE_indirect)

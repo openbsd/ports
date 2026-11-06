@@ -16,12 +16,12 @@ USE_NOEXECONLY = Yes
 # - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
 #   into simple warnings.
 V = 16.2.0
-REVISION = 11
+REVISION = 12
 GCC_PKGSPEC = >=16,<17
 
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.2.0-0.tar.xz
 BOOTSTRAP-amd64 = gcc-bootstrap-amd64-16.1.0-0.tar.xz
-BOOTSTRAP-arm = gcc-bootstrap-arm-16.2.0-0.tar.xz
+BOOTSTRAP-arm = gcc-bootstrap-arm-16.2.0-1.tar.xz
 BOOTSTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
 BOOTSTRAP-i386 = gcc-bootstrap-i386-16.1.0-0.tar.xz
 BOOTSTRAP-mips64 = gcc-bootstrap-mips64-16.1.0-1.tar.xz
