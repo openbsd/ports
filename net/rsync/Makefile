@@ -1,6 +1,7 @@
 COMMENT=	mirroring/synchronization over low bandwidth links
 
 DISTNAME=	rsync-3.5.2
+REVISION=	0
 
 CATEGORIES=	net
 HOMEPAGE=	https://rsync.samba.org/
