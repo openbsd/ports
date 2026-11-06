@@ -445,6 +445,7 @@
      SUBDIR += skim
      SUBDIR += slant
      SUBDIR += sleuthkit
+     SUBDIR += slmenu
      SUBDIR += smartmontools
      SUBDIR += smbldap-tools
      SUBDIR += snmp_exporter
