@@ -1,16 +1,15 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -31,9 +31,9 @@ members = [
- ]
+@@ -133,7 +133,7 @@ overflow-checks = false
+ rpath = false
  
  [patch.crates-io]
--hickory-proto = { git = "https://github.com/hickory-dns/hickory-dns", rev = "e645086f7863eaab8d961421a348b06ea613ebd3" }
--hickory-net = { git = "https://github.com/hickory-dns/hickory-dns", rev = "e645086f7863eaab8d961421a348b06ea613ebd3" }
--hickory-resolver = { git = "https://github.com/hickory-dns/hickory-dns", rev = "e645086f7863eaab8d961421a348b06ea613ebd3" }
+-hickory-proto = { git = "https://github.com/stalwartlabs/hickory-dns", branch = "stalwart/0.26" }
+-hickory-net = { git = "https://github.com/stalwartlabs/hickory-dns", branch = "stalwart/0.26" }
+-hickory-resolver = { git = "https://github.com/stalwartlabs/hickory-dns", branch = "stalwart/0.26" }
+-librocksdb-sys = { git = "https://github.com/stalwartlabs/rust-rocksdb", branch = "stalwart/0.25" }
 +hickory-proto = { path = "../hickory-dns/crates/proto" }
 +hickory-net = { path = "../hickory-dns/crates/net" }
 +hickory-resolver = { path = "../hickory-dns/crates/resolver" }
- 
- [profile.dev]
- opt-level = 0
++librocksdb-sys = { path = "../rust-rocksdb/librocksdb-sys" }

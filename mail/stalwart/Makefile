@@ -10,7 +10,7 @@ GH_PROJECT =		stalwart
 CATEGORIES =		mail
 # AGPLv3
 PERMIT_PACKAGE =	Yes
-GH_TAGNAME =		v0.16.18
+GH_TAGNAME =		v1.0.1
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
 
 HOMEPAGE =	https://stalw.art/
@@ -25,11 +25,13 @@ DPB_PROPERTIES =	parallel
 
 .include "crates.inc"
 
-# for https://github.com/open-telemetry/opentelemetry-rust/pull/3457
-DIST_TUPLE += github stalwartlabs opentelemetry-rust 274b4d324794280ce6f4def095a3428197a9e6e3 ../opentelemetry
-# since https://github.com/stalwartlabs/stalwart/commit/1a6c8d009b3c1f73e8d5c9115c6d92b2781c2454
-# for https://github.com/hickory-dns/hickory-dns/commit/e645086f7863eaab8d961421a348b06ea613ebd3
-DIST_TUPLE += github hickory-dns hickory-dns e645086f7863eaab8d961421a348b06ea613ebd3 ../hickory-dns
+# stalwart forks, hash taken from Cargo.lock in source url for the given crates
+DIST_TUPLE += github stalwartlabs rust-rocksdb f6169ca36d74c15637f8c6396c34e82aa73d0d47 ../rust-rocksdb
+DIST_TUPLE += github stalwartlabs hickory-dns f8b92b17fa6c7d09a6959672592106ca1410937b ../hickory-dns
+# librocksdb-sys submodules, taken from https://github.com/stalwartlabs/rust-rocksdb/commit/f6169ca36d74c15637f8c6396c34e82aa73d0d47
+DIST_TUPLE += github stalwartlabs rocksdb d2ea7067099d57c5c85bd076f2cc1ca8fb4c5d04 ../rust-rocksdb/librocksdb-sys/rocksdb
+DIST_TUPLE += github google snappy 23b3286820105438c5dbb9bc22f1bb85c5812c8a ../rust-rocksdb/librocksdb-sys/snappy
+
 # otherwise blows because rocksdb wants to statically links against libz ?
 MODCARGO_CRATES_KEEP +=	libz-sys
 MODCARGO_CRATES_KEEP +=	zstd-sys
@@ -48,16 +50,13 @@ WANTLIB +=	${COMPILER_LIBCXX} bz2 c m
 
 MODCARGO_INSTALL_TARGET_PATHS =	crates/main
 
+# adapt for snappy API change until its updated in the submodule, cf https://github.com/google/snappy/issues/183
+post-patch:
+	sed -i -e '529s/sink/sink, {}/' ${WRKDIR}/rust-rocksdb/librocksdb-sys/rocksdb/util/compression.cc
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${PKGSTEM}
 	${INSTALL_DATA} ${WRKSRC}/UPGRADING/v0_16.md ${PREFIX}/share/doc/${PKGSTEM}/UPGRADING_v0_16.md
 	${INSTALL_DATA} ${WRKSRC}/resources/scripts/migrate_v016.py ${PREFIX}/share/doc/${PKGSTEM}/migrate_v016.py
-
-# only used for tests but MODCARGO_TEST_TARGET doesnt use TEST_ENV
-MAKE_ENV+=	STORE=RocksDb
-# most test suites pass, except the last one:
-# test result: FAILED. 77 passed; 10 failed; 4 ignored; 0 measured; 0 filtered out; finished in 61.55s
-do-test:
-	ulimit -n 1024 && ${MODCARGO_TEST_TARGET}
 
 .include <bsd.port.mk>

@@ -1,12 +1,12 @@
 Index: crates/main/Cargo.toml
 --- crates/main/Cargo.toml.orig
 +++ crates/main/Cargo.toml
-@@ -40,7 +40,7 @@ migration = { path = "../migration" }
- tokio = { version = "1.53", features = ["full"] }
- rustls = { version = "0.23.43", default-features = false, features = ["std", "aws_lc_rs", "tls12"] }
+@@ -43,7 +43,7 @@ rustls = { version = "0.23.46", default-features = fal
+ [target.'cfg(all(target_arch = "x86_64", any(target_os = "linux", target_os = "freebsd")))'.dependencies]
+ libc = "0.2.191"
  
 -[target.'cfg(not(any(target_env = "msvc", target_os = "freebsd")))'.dependencies]
 +[target.'cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))'.dependencies]
  tikv-jemallocator = "0.7"
  
- [features]
+ [target.'cfg(all(target_os = "linux", target_env = "gnu"))'.dependencies]

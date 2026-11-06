@@ -3,7 +3,7 @@ Make bootstrap paths for data directory adhere to OpenBSD folder structure
 Index: crates/jmap/src/registry/mapping/bootstrap.rs
 --- crates/jmap/src/registry/mapping/bootstrap.rs.orig
 +++ crates/jmap/src/registry/mapping/bootstrap.rs
-@@ -653,7 +653,7 @@ fn map_dns_server(dns_server: &DnsServerBootstrap) -> 
+@@ -718,7 +718,7 @@ fn map_dns_server(dns_server: &DnsServerBootstrap) -> 
  
  // FreeBSD keeps variable application data under /var/db (hier(7))
  // rather than FHS /var/lib.

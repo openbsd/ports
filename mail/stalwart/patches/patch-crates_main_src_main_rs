@@ -1,7 +1,7 @@
 Index: crates/main/src/main.rs
 --- crates/main/src/main.rs.orig
 +++ crates/main/src/main.rs
-@@ -23,10 +23,10 @@ use utils::wait_for_shutdown;
+@@ -34,10 +34,10 @@ mod cpu;
  #[cfg(feature = "dev_mode")]
  pub mod test_data;
  
