@@ -1,7 +1,7 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -133,7 +133,7 @@ overflow-checks = false
+@@ -134,7 +134,7 @@ overflow-checks = false
  rpath = false
  
  [patch.crates-io]
