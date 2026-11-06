@@ -17,7 +17,7 @@ libexec/openvpn/dns-updown.resolvd
 share/doc/openvpn/
 share/doc/openvpn/COPYING
 share/doc/openvpn/COPYRIGHT.GPL
-share/doc/openvpn/Changes.rst
+share/doc/openvpn/Changes.md
 share/doc/openvpn/README
 share/doc/openvpn/README.down-root
 share/doc/openvpn/README.mbedtls
