@@ -1,9 +1,8 @@
 COMMENT=	ODBC bindings for Python
 
-MODPY_DISTV=	5.3.0
+MODPY_DISTV=	5.4.0
 DISTNAME=	pyodbc-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	0
 
 CATEGORIES=	databases
 
@@ -17,8 +16,8 @@ WANTLIB += ${COMPILER_LIBCXX} iodbc m pthread
 COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 NO_TEST=	Yes
 
