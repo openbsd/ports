@@ -1,7 +1,7 @@
 Index: res/res_http_websocket.c
 --- res/res_http_websocket.c.orig
 +++ res/res_http_websocket.c
-@@ -2027,9 +2027,11 @@ struct ast_websocket *AST_OPTIONAL_API_NAME(ast_websoc
+@@ -2028,9 +2028,11 @@ struct ast_websocket *AST_OPTIONAL_API_NAME(ast_websoc
  		int enabled = 1;
  
  		setsockopt(sockfd, SOL_SOCKET, SO_KEEPALIVE, &enabled, sizeof(enabled));
