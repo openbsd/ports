@@ -1,0 +1,10 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/snmpd_extend"
+
+. /etc/rc.d/rc.subr
+
+pexp="snmpd_extend:.*"
+rc_reload=NO
+
+rc_cmd $1

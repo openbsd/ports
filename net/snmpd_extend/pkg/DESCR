@@ -1,0 +1,5 @@
+snmpd_extend allows administrators to export output from commands and
+scripts over SNMP/AgentX.
+
+This is based around net-snmp's NET-SNMP-EXTEND-MIB, which is not included
+in this package.

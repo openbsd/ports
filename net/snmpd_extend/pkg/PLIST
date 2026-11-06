@@ -1,0 +1,4 @@
+@rcscript ${RCDIR}/snmpd_extend
+@man man/man5/snmpd_extend.conf.5
+@man man/man8/snmpd_extend.8
+@bin sbin/snmpd_extend
