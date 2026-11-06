@@ -1,0 +1,21 @@
+exit early if not notification daemon was found
+
+will silence annoying notify-send: vfprintf %s NULL in "Using server %s %s, v%s - Supporting Notification Spec %s" messages in logs
+also, one should check for API calls return values..
+Index: tools/notify-send.c
+--- tools/notify-send.c.orig
++++ tools/notify-send.c
+@@ -393,10 +393,11 @@ main (int argc, char *argv[])
+         if (!notify_init ("notify-send"))
+                 exit (1);
+ 
+-        notify_get_server_info (&server_name,
++        if (!notify_get_server_info (&server_name,
+                                 &server_vendor,
+                                 &server_version,
+-                                &server_spec_version);
++                                &server_spec_version))
++                exit (1);
+ 
+         g_debug ("Using server %s %s, v%s - Supporting Notification Spec %s",
+                  server_name, server_vendor, server_version, server_spec_version);
