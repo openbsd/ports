@@ -47,6 +47,21 @@ and/or VKD3D-Proton for D3D12:
 Both come with installation instructions and/or install scripts that
 install the dll's into the wine prefix and update winecfg.
 
+Audio
+=====
+
+${PKGSTEM} uses pulseaudio. This requires pipewire-pulse, which can be
+installed with:
+
+	# pkg_add pipewire
+
+Pipewire doesn't autospawn, so before launching wine, you need to run:
+
+	$ /usr/local/bin/pipewire &
+
+if this isn't taken care of by the desktop manager or in the startup
+scripts like .xsession.
+
 Debugging
 =========
 
