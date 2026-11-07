@@ -32,6 +32,7 @@ REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae5
 TS_VERSION=		7.0.2
 
 DIST_TUPLE+=		github microsoft TypeScript v${TS_VERSION} typescript
+WRKDIST =		${WRKDIR}/${DISTNAME}
 
 # ftp https://github.com/microsoft/TypeScript/archive/refs/tags/v${TS_VERSION}.tar.gz
 # tar xzf v${V}.tar.gz
