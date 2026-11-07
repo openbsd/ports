@@ -1,0 +1,81 @@
+Index: score.C
+--- score.C.orig
++++ score.C
+@@ -29,6 +29,12 @@ extern "C"{
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ #include <pwd.h>
++#include <sys/stat.h>
++#include <fcntl.h>
++#include <string.h>
++#include <errno.h>
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
+ }
+ #include "xkobo.h"
+ #include "score.h"
+@@ -37,6 +43,7 @@ extern "C"{
+ int  _scorefile::highscore       = 0;
+ char _scorefile::save_path[1024];
+ char _scorefile::login_name[64];
++int _scorefile::fd = -1;
+ 
+ class uint_little_endian {
+     unsigned char byte[4];
+@@ -74,22 +81,29 @@ int s_table_cmp(s_table *a, s_table *b)
+     return 0;
+ }
+ 
+-void _scorefile::init(int *highscorep, int *stagep)
++
++void _scorefile::usesetgid()
+ {
+-    s_table tbl;
+-    tbl.score = 0;
+-    tbl.scene = 0;
+-    strcpy(tbl.name, "foo");
+-    int i;
+     struct passwd *pw = getpwuid(getuid());
+     if (pw == NULL){
+         fprintf(stderr, "xkobo : getpwuid() failed\n");
+-        sprintf(login_name, "%u", getuid());
++        snprintf(login_name, sizeof login_name, "%u", getuid());
+     }
+     else {
+-        strcpy(login_name, pw->pw_name);
++        strlcpy(login_name, pw->pw_name, sizeof login_name);
+     }
+-    sprintf(save_path, "%s/%u", XKOBO_SCORE_DIR, getuid());
++    snprintf(save_path, sizeof save_path, "%s/%u", XKOBO_SCORE_DIR, getuid());
++    fd = open(save_path, O_CREAT|O_RDWR, 0644);
++    setgid(getgid());
++}
++
++void _scorefile::init(int *highscorep, int *stagep)
++{
++    s_table tbl;
++    tbl.score = 0;
++    tbl.scene = 0;
++    strcpy(tbl.name, "foo");
++    int i;
+     if ((i=load_block(save_path, &tbl, sizeof(tbl))) < 0){
+         fprintf(stderr, "xkobo : (warning) can't read the score-file\n");
+     }
+@@ -117,10 +131,13 @@ void _scorefile::record(int new_score, int stage)
+         write = 1;
+     }
+     if (write){
+-        if (save_block(save_path, &tbl, sizeof(tbl)) < 0){
+-            fprintf(stderr, "xkobo : (warning) "
+-                            "can't update the score-file\n");
+-        }
++	if (lseek(fd, 0, SEEK_SET) == -1)
++		fprintf(stderr, "SEEK_SET failure %s\n", strerror(errno));
++	if (::write(fd, &tbl, sizeof(tbl)) != sizeof(tbl)) {
++		fprintf(stderr, "xkobo: (warning) "
++			"can't update the score-file %s\n",
++			strerror(errno));
++	}
+     }
+     _scorefile::show_high_scores(0);
+ }

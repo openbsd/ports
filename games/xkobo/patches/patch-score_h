@@ -1,0 +1,16 @@
+Index: score.h
+--- score.h.orig
++++ score.h
+@@ -32,10 +32,12 @@ class _scorefile{
+     static int highscore;
+     static char save_path[1024];
+     static char login_name[64];
++    static int fd;
+   public:
+     static void init(int *highscorep, int *stagep);
+     static void record(int new_score, int stage);
+     static void show_high_scores(int to_stdout);
++    static void usesetgid();
+ };
+ 
+ extern _scorefile scorefile;
