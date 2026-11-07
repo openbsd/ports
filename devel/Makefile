@@ -1453,6 +1453,7 @@
      SUBDIR += py-clint
      SUBDIR += py-cloudpickle
      SUBDIR += py-codestyle
+     SUBDIR += py-cogapp
      SUBDIR += py-colorama
      SUBDIR += py-colorlog
      SUBDIR += py-comm
