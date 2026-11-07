@@ -101,6 +101,7 @@
      SUBDIR += py-memcached
      SUBDIR += py-remind
      SUBDIR += py-yfinance
+     SUBDIR += qman
      SUBDIR += randtype
      SUBDIR += redshift
      SUBDIR += remind
