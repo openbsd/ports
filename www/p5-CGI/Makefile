@@ -1,5 +1,5 @@
 COMMENT =	handle Common Gateway Interface requests and responses
-DISTNAME =	CGI-4.72
+DISTNAME =	CGI-5.02
 CPAN_AUTHOR =	LEEJO
 CATEGORIES =	www
 
