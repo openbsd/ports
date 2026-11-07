@@ -1,7 +1,7 @@
 COMMENT =	wayland login manager daemon
 
 DIST_TUPLE =	srht kennylevinsen greetd 0.10.3 .
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	wayland
 
