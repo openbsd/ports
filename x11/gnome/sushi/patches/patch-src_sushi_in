@@ -1,0 +1,11 @@
+env(1) does not support `-S' in OpenBSD
+
+Index: src/sushi.in
+--- src/sushi.in.orig
++++ src/sushi.in
+@@ -1,4 +1,4 @@
+-#!@ENV@ -S @GJS@ -m
++#!@GJS@ -m
+ 
+ import Gio from 'gi://Gio';
+ import GLib from 'gi://GLib';

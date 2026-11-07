@@ -1,0 +1,11 @@
+env(1) does not support `-S' in OpenBSD
+
+Index: src/org.gnome.NautilusPreviewer.in
+--- src/org.gnome.NautilusPreviewer.in.orig
++++ src/org.gnome.NautilusPreviewer.in
+@@ -1,4 +1,4 @@
+-#!@ENV@ -S @GJS@ -m
++#!@GJS@ -m
+ import {programInvocationName, programArgs} from 'system';
+ 
+ imports.package.init({
