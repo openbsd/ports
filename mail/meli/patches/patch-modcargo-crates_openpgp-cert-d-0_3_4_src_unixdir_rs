@@ -1,0 +1,18 @@
+Index: modcargo-crates/openpgp-cert-d-0.3.4/src/unixdir.rs
+--- modcargo-crates/openpgp-cert-d-0.3.4/src/unixdir.rs.orig
++++ modcargo-crates/openpgp-cert-d-0.3.4/src/unixdir.rs
+@@ -67,14 +67,6 @@ impl Metadata {
+ 
+     /// The modification time as the time since the Unix epoch.
+     pub fn modified(&self) -> std::time::Duration {
+-        // Netbsd-like systems.  See:
+-        // https://github.com/rust-lang/libc/blob/a0f5b4b21391252fe38b2df9310dc65e37b07d9f/src/unix/bsd/mod.rs#L931
+-        #[cfg(any(target_os = "openbsd", target_os = "netbsd"))]
+-        return std::time::Duration::new(
+-            self.0.st_mtime as u64,
+-            self.0.st_mtimensec as u32);
+-
+-        #[cfg(not(any(target_os = "openbsd", target_os = "netbsd")))]
+         return std::time::Duration::new(
+             self.0.st_mtime as u64,
+             self.0.st_mtime_nsec as u32);
