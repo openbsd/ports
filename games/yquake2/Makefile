@@ -1,6 +1,7 @@
 COMMENT=	Yamagi Quake II
 N=		yquake2
 V=		8.70
+REVISION =	0
 PKGNAME=	${N}-${V}
 DISTNAME=	quake2-${V}
 CATEGORIES=	games
@@ -30,6 +31,8 @@ USE_GMAKE=	Yes
 
 MAKE_FLAGS =	config PKG_CONFIG=pkg-config WITH_SYSTEMWIDE=yes \
 		WITH_SYSTEMDIR=${PREFIX}/share/${N}
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${N}

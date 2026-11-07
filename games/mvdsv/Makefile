@@ -3,6 +3,7 @@ COMMENT =	QuakeWorld server
 CATEGORIES =	games
 
 V =		1.11
+REVISION =	0
 DISTNAME =	mvdsv-$V
 DISTFILES =	mvdsv{mvdsv-source-with-submodules}-$V.zip
 EXTRACT_CASES =	*.zip) ${UNZIP} -aq ${FULLDISTDIR}/$$archive -d ${WRKSRC};;
@@ -32,6 +33,8 @@ NO_TEST =	Yes
 FIX_CRLF_FILES =	src/server.h src/sv_ccmds.c
 
 SAMPLES_DIR =	${PREFIX}/share/examples/mvdsv
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mvdsv ${PREFIX}/bin

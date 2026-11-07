@@ -4,6 +4,7 @@ CATEGORIES =	games
 
 N =		ezquake
 V =		3.6.9
+REVISION =	0
 DISTNAME =	${N}-source-${V}
 PKGNAME =	${N}-${V}
 
@@ -35,6 +36,8 @@ NO_TEST =	Yes
 
 GAMEDIR =	${PREFIX}/share/ezquake
 SUBST_VARS +=	GAMEDIR
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}
