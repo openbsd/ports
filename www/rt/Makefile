@@ -1,6 +1,6 @@
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-6.0.3
+DISTNAME=		rt-6.0.4
 CATEGORIES=		www
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -71,6 +71,7 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			security/gnupg \
 			security/p5-Crypt-Eksblowfish \
 			security/p5-Crypt-SSLeay \
+			security/p5-Crypt-URandom \
 			security/p5-Crypt-X509 \
 			security/p5-GnuPG-Interface>=1.00 \
 			security/p5-Mozilla-CA-Fake \

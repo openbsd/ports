@@ -191,6 +191,8 @@ libdata/perl5/site_perl/RT/Lifecycle/Asset.pm
 libdata/perl5/site_perl/RT/Lifecycle/Ticket.pm
 libdata/perl5/site_perl/RT/Link.pm
 libdata/perl5/site_perl/RT/Links.pm
+libdata/perl5/site_perl/RT/MFA/
+libdata/perl5/site_perl/RT/MFA/TOTP.pm
 libdata/perl5/site_perl/RT/Migrate/
 libdata/perl5/site_perl/RT/Migrate.pm
 libdata/perl5/site_perl/RT/Migrate/Importer/
@@ -277,6 +279,7 @@ libdata/perl5/site_perl/RT/REST2/Resource/Record/Hypermedia.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Record/Readable.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Record/WithETag.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Record/Writable.pm
+libdata/perl5/site_perl/RT/REST2/Resource/RecordLifecycle.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Rights.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Role/
 libdata/perl5/site_perl/RT/REST2/Resource/Role/RequestBodyIsJSON.pm
@@ -411,6 +414,8 @@ libdata/perl5/site_perl/RT/URI/fsck_com_rt.pm
 libdata/perl5/site_perl/RT/URI/group.pm
 libdata/perl5/site_perl/RT/URI/savedsearch.pm
 libdata/perl5/site_perl/RT/URI/t.pm
+libdata/perl5/site_perl/RT/URI/transaction.pm
+libdata/perl5/site_perl/RT/URI/txn.pm
 libdata/perl5/site_perl/RT/URI/user.pm
 libdata/perl5/site_perl/RT/User.pm
 libdata/perl5/site_perl/RT/Users.pm
@@ -447,6 +452,7 @@ sbin/rt-validator
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/rt/
 share/doc/rt/GDPR.pod
+share/doc/rt/README.md
 share/doc/rt/UPGRADING-2.0
 share/doc/rt/UPGRADING-3.0
 share/doc/rt/UPGRADING-3.2
@@ -525,6 +531,8 @@ share/doc/rt/images/edit-catalog.png
 share/doc/rt/images/general-owner-chart.png
 share/doc/rt/images/general-owner-lastupdated-chart.png
 share/doc/rt/images/general-status-chart.png
+share/doc/rt/images/getting-started-homepage.png
+share/doc/rt/images/getting-started-new-ticket.png
 share/doc/rt/images/global-lifecycle-group-rights.png
 share/doc/rt/images/lifecycle-choices.png
 share/doc/rt/images/lifecycle-ui-actions.png
@@ -579,6 +587,8 @@ share/doc/rt/ticket_metadata.pod
 share/doc/rt/tracking-rt-configuration.pod
 share/doc/rt/tracking_time.pod
 share/doc/rt/unread_messages.pod
+share/doc/rt/user/
+share/doc/rt/user/getting_started.pod
 share/doc/rt/web_deployment.pod
 share/doc/rt/working_with_rt.pod
 share/doc/rt/writing_extensions.pod
@@ -1289,6 +1299,16 @@ share/examples/rt/upgrade/4.5.8/
 @sample ${SYSCONFDIR}/rt/upgrade/4.5.8/
 share/examples/rt/upgrade/4.5.8/content
 @sample ${SYSCONFDIR}/rt/upgrade/4.5.8/content
+share/examples/rt/upgrade/5.0.11/
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.11/
+share/examples/rt/upgrade/5.0.11/content
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.11/content
+share/examples/rt/upgrade/5.0.11/schema.Oracle
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.11/schema.Oracle
+share/examples/rt/upgrade/5.0.11/schema.Pg
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.11/schema.Pg
+share/examples/rt/upgrade/5.0.11/schema.mysql
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.11/schema.mysql
 share/examples/rt/upgrade/5.0.2/
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.2/
 share/examples/rt/upgrade/5.0.2/content
@@ -1416,6 +1436,12 @@ share/examples/rt/upgrade/6.0.3/schema.Pg
 @sample ${SYSCONFDIR}/rt/upgrade/6.0.3/schema.Pg
 share/examples/rt/upgrade/6.0.3/schema.mysql
 @sample ${SYSCONFDIR}/rt/upgrade/6.0.3/schema.mysql
+share/examples/rt/upgrade/6.0.4/
+@sample ${SYSCONFDIR}/rt/upgrade/6.0.4/
+share/examples/rt/upgrade/6.0.4/content
+@sample ${SYSCONFDIR}/rt/upgrade/6.0.4/content
+share/examples/rt/upgrade/6.0.4/indexes
+@sample ${SYSCONFDIR}/rt/upgrade/6.0.4/indexes
 share/examples/rt/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt/upgrade/generate-rtaddressregexp
 share/examples/rt/upgrade/reset-sequences
@@ -1445,7 +1471,6 @@ share/examples/rt/upgrade/upgrade-sla
 share/examples/rt/upgrade/vulnerable-passwords
 @sample ${SYSCONFDIR}/rt/upgrade/vulnerable-passwords
 share/rt/
-share/rt/fonts/
 share/rt/html/
 share/rt/html/Admin/
 share/rt/html/Admin/Actions/
@@ -1577,10 +1602,12 @@ share/rt/html/Admin/Global/index.html
 share/rt/html/Admin/Groups/
 share/rt/html/Admin/Groups/GroupRights.html
 share/rt/html/Admin/Groups/History.html
+share/rt/html/Admin/Groups/MFAPolicy.html
 share/rt/html/Admin/Groups/Members.html
 share/rt/html/Admin/Groups/Memberships.html
 share/rt/html/Admin/Groups/Modify.html
 share/rt/html/Admin/Groups/ModifyLinks.html
+share/rt/html/Admin/Groups/PasswordPolicy.html
 share/rt/html/Admin/Groups/UserRights.html
 share/rt/html/Admin/Groups/autohandler
 share/rt/html/Admin/Groups/index.html
@@ -1753,6 +1780,7 @@ share/rt/html/Asset/Elements/SelectStatus
 share/rt/html/Asset/Elements/ShowBasics
 share/rt/html/Asset/Elements/ShowCatalog
 share/rt/html/Asset/Elements/ShowDates
+share/rt/html/Asset/Elements/ShowLifecycle
 share/rt/html/Asset/Elements/ShowLinks
 share/rt/html/Asset/Elements/ShowPeople
 share/rt/html/Asset/Elements/ShowRoleMembers
@@ -1777,6 +1805,7 @@ share/rt/html/Asset/Widgets/Display/Basics
 share/rt/html/Asset/Widgets/Display/CustomFieldCustomGroupings
 share/rt/html/Asset/Widgets/Display/Dates
 share/rt/html/Asset/Widgets/Display/History
+share/rt/html/Asset/Widgets/Display/Lifecycle
 share/rt/html/Asset/Widgets/Display/Links
 share/rt/html/Asset/Widgets/Display/People
 share/rt/html/Asset/Widgets/autohandler
@@ -1810,6 +1839,7 @@ share/rt/html/Download/CustomFieldValue/
 share/rt/html/Download/CustomFieldValue/dhandler
 share/rt/html/Elements/
 share/rt/html/Elements/AddLinks
+share/rt/html/Elements/AddLinksRow
 share/rt/html/Elements/AttachmentWarning
 share/rt/html/Elements/AuthToken/
 share/rt/html/Elements/AuthToken/Create
@@ -1831,6 +1861,7 @@ share/rt/html/Elements/CollectionAsTable/Row
 share/rt/html/Elements/CollectionList
 share/rt/html/Elements/CollectionListPaging
 share/rt/html/Elements/ColumnMap
+share/rt/html/Elements/CreateLinkedTicket
 share/rt/html/Elements/CreateTicket
 share/rt/html/Elements/Crypt/
 share/rt/html/Elements/Crypt/KeyIssues
@@ -1839,6 +1870,7 @@ share/rt/html/Elements/Crypt/SelectKeyForSigning
 share/rt/html/Elements/Crypt/SignEncryptWidget
 share/rt/html/Elements/CryptStatus
 share/rt/html/Elements/Dashboards
+share/rt/html/Elements/DeleteCheckBox
 share/rt/html/Elements/DoAuth
 share/rt/html/Elements/DropdownMenu
 share/rt/html/Elements/EditCustomDateRanges
@@ -1884,6 +1916,11 @@ share/rt/html/Elements/Label
 share/rt/html/Elements/LabeledValue
 share/rt/html/Elements/Lifecycle/
 share/rt/html/Elements/Lifecycle/Graph
+share/rt/html/Elements/Lifecycle/Viewer
+share/rt/html/Elements/LinkTreeGuide
+share/rt/html/Elements/LinksFilter
+share/rt/html/Elements/LinksInfoIcon
+share/rt/html/Elements/LinksInfoModal
 share/rt/html/Elements/ListActions
 share/rt/html/Elements/ListMenu
 share/rt/html/Elements/Login
@@ -2006,9 +2043,13 @@ share/rt/html/Elements/ShowCustomFields
 share/rt/html/Elements/ShowHistory
 share/rt/html/Elements/ShowHistoryHeader
 share/rt/html/Elements/ShowHistoryPage
+share/rt/html/Elements/ShowLifecycleWidget
 share/rt/html/Elements/ShowLink
 share/rt/html/Elements/ShowLinks
 share/rt/html/Elements/ShowLinksOfType
+share/rt/html/Elements/ShowLinksSection
+share/rt/html/Elements/ShowLinksTableOfType
+share/rt/html/Elements/ShowLinksTree
 share/rt/html/Elements/ShowMemberships
 share/rt/html/Elements/ShowMessageHeaders
 share/rt/html/Elements/ShowMessageStanza
@@ -2082,6 +2123,7 @@ share/rt/html/Helpers/BuildFormatString
 share/rt/html/Helpers/CalendarEventInfo
 share/rt/html/Helpers/CollectionListRow
 share/rt/html/Helpers/EditTicketDescription
+share/rt/html/Helpers/MergeTicket
 share/rt/html/Helpers/Permalink
 share/rt/html/Helpers/PreviewScrips
 share/rt/html/Helpers/QuickCreate
@@ -2090,11 +2132,11 @@ share/rt/html/Helpers/RightsInspector/Revoke
 share/rt/html/Helpers/RightsInspector/Search
 share/rt/html/Helpers/SavedSearchOptions
 share/rt/html/Helpers/SelectOwnerDropdown
+share/rt/html/Helpers/SetLifecycleConfirmPref
 share/rt/html/Helpers/ShortcutHelp
 share/rt/html/Helpers/ShowSimplifiedRecipients
 share/rt/html/Helpers/SpawnLinkedTicket
 share/rt/html/Helpers/TextDiff
-share/rt/html/Helpers/TicketAttachments
 share/rt/html/Helpers/TicketHistory
 share/rt/html/Helpers/TicketHistoryPage
 share/rt/html/Helpers/TicketTimer
@@ -2123,11 +2165,25 @@ share/rt/html/Install/Sendmail.html
 share/rt/html/Install/autohandler
 share/rt/html/Install/index.html
 share/rt/html/NoAuth/
+share/rt/html/NoAuth/Elements/
+share/rt/html/NoAuth/Elements/Error
 share/rt/html/NoAuth/Helpers/
 share/rt/html/NoAuth/Helpers/CustomLogo/
 share/rt/html/NoAuth/Helpers/CustomLogo/dhandler
 share/rt/html/NoAuth/Login.html
 share/rt/html/NoAuth/Logout.html
+share/rt/html/NoAuth/MFA/
+share/rt/html/NoAuth/MFA/Elements/
+share/rt/html/NoAuth/MFA/Elements/CodeInput
+share/rt/html/NoAuth/MFA/Enroll.html
+share/rt/html/NoAuth/MFA/Reset/
+share/rt/html/NoAuth/MFA/Reset/Request.html
+share/rt/html/NoAuth/MFA/Reset/dhandler
+share/rt/html/NoAuth/MFA/Verify.html
+share/rt/html/NoAuth/ResetPassword/
+share/rt/html/NoAuth/ResetPassword/Request.html
+share/rt/html/NoAuth/ResetPassword/Reset/
+share/rt/html/NoAuth/ResetPassword/Reset/dhandler
 share/rt/html/NoAuth/RichText/
 share/rt/html/NoAuth/RichText/autohandler
 share/rt/html/NoAuth/css/
@@ -2154,7 +2210,9 @@ share/rt/html/Prefs/DashboardsInMenu.html
 share/rt/html/Prefs/Elements/
 share/rt/html/Prefs/Elements/EditAboutMe
 share/rt/html/Prefs/Elements/EditUserPrefSections
+share/rt/html/Prefs/Elements/MFAControls
 share/rt/html/Prefs/Elements/ShowAboutMe
+share/rt/html/Prefs/ExistingPasswordChange.html
 share/rt/html/Prefs/MyRT.html
 share/rt/html/Prefs/Other.html
 share/rt/html/Prefs/QueueList.html
@@ -2280,6 +2338,7 @@ share/rt/html/SelfService/Asset/Widgets/Display/People
 share/rt/html/SelfService/Asset/Widgets/autohandler
 share/rt/html/SelfService/Asset/index.html
 share/rt/html/SelfService/Attachment/
+share/rt/html/SelfService/Attachment/Bulk
 share/rt/html/SelfService/Attachment/dhandler
 share/rt/html/SelfService/Closed.html
 share/rt/html/SelfService/Create.html
@@ -2295,6 +2354,7 @@ share/rt/html/SelfService/Elements/MyGroupRequests
 share/rt/html/SelfService/Elements/MyRequests
 share/rt/html/SelfService/Elements/RequestUpdate
 share/rt/html/SelfService/Elements/SearchArticle
+share/rt/html/SelfService/ExistingPasswordChange.html
 share/rt/html/SelfService/Helpers/
 share/rt/html/SelfService/Helpers/AssetHistoryPage
 share/rt/html/SelfService/Helpers/Autocomplete/
@@ -2346,6 +2406,7 @@ share/rt/html/SelfService/Views/Ticket/dhandler
 share/rt/html/SelfService/index.html
 share/rt/html/Ticket/
 share/rt/html/Ticket/Attachment/
+share/rt/html/Ticket/Attachment/Bulk
 share/rt/html/Ticket/Attachment/WithHeaders/
 share/rt/html/Ticket/Attachment/WithHeaders/dhandler
 share/rt/html/Ticket/Attachment/dhandler
@@ -2383,6 +2444,7 @@ share/rt/html/Ticket/Elements/ShowDates
 share/rt/html/Ticket/Elements/ShowDependencyStatus
 share/rt/html/Ticket/Elements/ShowDescription
 share/rt/html/Ticket/Elements/ShowGroupMembers
+share/rt/html/Ticket/Elements/ShowLifecycle
 share/rt/html/Ticket/Elements/ShowLinkedQueues
 share/rt/html/Ticket/Elements/ShowPeople
 share/rt/html/Ticket/Elements/ShowPriority
@@ -2431,6 +2493,7 @@ share/rt/html/Ticket/Widgets/Display/CustomFieldCustomGroupings
 share/rt/html/Ticket/Widgets/Display/Dates
 share/rt/html/Ticket/Widgets/Display/Description
 share/rt/html/Ticket/Widgets/Display/History
+share/rt/html/Ticket/Widgets/Display/Lifecycle
 share/rt/html/Ticket/Widgets/Display/LinkedQueues
 share/rt/html/Ticket/Widgets/Display/Links
 share/rt/html/Ticket/Widgets/Display/People
@@ -2724,7 +2787,6 @@ share/rt/static/images/close.png
 share/rt/static/images/css/
 share/rt/static/images/css/rolldown-arrow.gif
 share/rt/static/images/css/rollup-arrow.gif
-share/rt/static/images/eyedropper.png
 share/rt/static/images/favicon.png
 share/rt/static/images/funnel-fill.svg
 share/rt/static/images/funnel.svg
@@ -2743,7 +2805,8 @@ share/rt/static/js/bootstrap.min.js
 share/rt/static/js/cascaded.js
 share/rt/static/js/chart.min.js
 share/rt/static/js/chartjs-plugin-colorschemes.min.js
-share/rt/static/js/d3.min.js
+share/rt/static/js/cytoscape-popper.min.js
+share/rt/static/js/cytoscape.min.js
 share/rt/static/js/dropzone.min.js
 share/rt/static/js/event-registration.js
 share/rt/static/js/forms.js
@@ -2757,6 +2820,8 @@ share/rt/static/js/jquery.tablesorter.min.js
 share/rt/static/js/jquery_noconflict.js
 share/rt/static/js/keyboard-shortcuts.js
 share/rt/static/js/lifecycleui-editor.js
+share/rt/static/js/lifecycleui-viewer.js
+share/rt/static/js/lifecycleui.js
 share/rt/static/js/mousetrap.min.js
 share/rt/static/js/pagelayout.js
 share/rt/static/js/popper.min.js
