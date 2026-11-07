@@ -8,4 +8,4 @@ chunked responses, and SSI.  Multiple SSI inclusions within a single page
 can be processed in parallel if they are handled by FastCGI or proxied
 servers.  SSL and TLS SNI are supported.
 
-The debug flavor of nginx is built with debugging code enabled. 
+The debug flavor of nginx is built with debugging code enabled.
