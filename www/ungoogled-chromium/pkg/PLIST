@@ -769,4 +769,3 @@ ungoogled-chromium/resources/inspector_overlay/main.js
 ungoogled-chromium/snapshot_blob.bin
 %%swiftshader%%
 @bin ungoogled-chromium/ungoogled-chromium
-ungoogled-chromium/v8_context_snapshot.bin

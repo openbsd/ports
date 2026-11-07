@@ -10,7 +10,7 @@ Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.h
  class PressureMetricsReporter;
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -133,7 +133,7 @@ class ChromeBrowserMainExtraPartsMetrics : public Chro
+@@ -141,7 +141,7 @@ class ChromeBrowserMainExtraPartsMetrics : public Chro
    std::unique_ptr<web_app::SamplingMetricsProvider> web_app_metrics_provider_;
  #endif  // !BUILDFLAG(IS_ANDROID)
  

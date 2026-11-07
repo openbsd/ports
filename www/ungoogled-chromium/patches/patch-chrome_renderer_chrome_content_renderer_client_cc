@@ -10,7 +10,7 @@ Index: chrome/renderer/chrome_content_renderer_client.cc
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -468,7 +468,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
+@@ -470,7 +470,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
    WebSecurityPolicy::RegisterURLSchemeAsExtension(
        WebString::FromAscii(extensions::kExtensionScheme));
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

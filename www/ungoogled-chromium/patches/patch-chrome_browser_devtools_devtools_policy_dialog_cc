@@ -1,7 +1,7 @@
 Index: chrome/browser/devtools/devtools_policy_dialog.cc
 --- chrome/browser/devtools/devtools_policy_dialog.cc.orig
 +++ chrome/browser/devtools/devtools_policy_dialog.cc
-@@ -33,7 +33,7 @@
+@@ -38,7 +38,7 @@
  
  namespace {
  

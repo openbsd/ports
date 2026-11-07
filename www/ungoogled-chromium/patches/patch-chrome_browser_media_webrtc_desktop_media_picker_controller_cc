@@ -1,7 +1,7 @@
 Index: chrome/browser/media/webrtc/desktop_media_picker_controller.cc
 --- chrome/browser/media/webrtc/desktop_media_picker_controller.cc.orig
 +++ chrome/browser/media/webrtc/desktop_media_picker_controller.cc
-@@ -112,7 +112,7 @@ bool DesktopMediaPickerController::IsSystemAudioCaptur
+@@ -113,7 +113,7 @@ bool DesktopMediaPickerController::IsSystemAudioCaptur
    } else {
      return media::IsMacCatapSystemLoopbackCaptureSupported();
    }
