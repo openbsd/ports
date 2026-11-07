@@ -2,9 +2,8 @@ COMMENT=	simple, high-performance PSGI/Plack HTTP server
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Starlet-0.31
+DISTNAME=	Starlet-0.33
 CATEGORIES=	www
-REVISION=	0
 
 CPAN_AUTHOR=	KAZUHO
 
