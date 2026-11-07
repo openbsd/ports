@@ -1,6 +1,6 @@
 COMMENT=	personal accounting application
 
-DISTNAME=	grisbi-3.90.1
+DISTNAME=	grisbi-3.92.0
 
 EXTRACT_SUFX=	.tar.xz
 SITES=		${SITE_SOURCEFORGE:=grisbi/}
