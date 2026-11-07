@@ -177,6 +177,7 @@ int spa_sndio_stop(struct sndio_state *state);
 /* only valid from the data loop */
 int spa_sndio_service(struct sndio_state *state);
 uint32_t spa_sndio_playing(struct sndio_state *state);
+uint64_t spa_sndio_now(void);
 double spa_sndio_update_rate(struct sndio_state *state, uint32_t delay);
 double spa_sndio_pace(double ratio, int64_t err, uint32_t rate);
 void spa_sndio_update_rate_match(struct sndio_state *state, uint32_t delay,

@@ -183,6 +183,14 @@ static void on_move(void *arg, int delta)
 	state->hw_pos_nsec = SPA_TIMESPEC_TO_NSEC(&ts);
 }
 
+uint64_t spa_sndio_now(void)
+{
+	struct timespec ts;
+
+	clock_gettime(CLOCK_MONOTONIC, &ts);
+	return SPA_TIMESPEC_TO_NSEC(&ts);
+}
+
 uint32_t spa_sndio_playing(struct sndio_state *state)
 {
 	uint64_t frames = state->frame_size ?
@@ -322,16 +330,16 @@ static int spa_sndio_open(struct sndio_state *state, struct spa_audio_info *fmt)
 	state->ring = NULL;
 	state->ring_size = 0;
 	state->ring_head = state->ring_tail = state->ring_fill = 0;
-	if (mode == SIO_PLAY) {
-		/* large enough for the server-granted budget window plus
-		 * one maximum-size graph cycle */
-		state->ring_size = (par.bufsz + par.round +
-				state->quantum_limit) * state->frame_size;
-		state->ring = malloc(state->ring_size);
-		if (state->ring == NULL) {
-			spa_sndio_close(state);
-			return -ENOMEM;
-		}
+	/* large enough for the device buffer plus one maximum-size graph
+	 * cycle: playback queues the graph output here until the server
+	 * grants budget, capture collects what the server delivered
+	 * until there is a whole cycle to hand to the graph */
+	state->ring_size = (par.bufsz + par.round +
+			state->quantum_limit) * state->frame_size;
+	state->ring = malloc(state->ring_size);
+	if (state->ring == NULL) {
+		spa_sndio_close(state);
+		return -ENOMEM;
 	}
 
 	sio_onmove(state->hdl, on_move, state);

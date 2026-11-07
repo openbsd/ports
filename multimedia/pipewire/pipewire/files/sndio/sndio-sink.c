@@ -203,11 +203,22 @@ static void on_timeout(struct spa_source *source)
 		uint32_t delay;
 
 		flush_write(this);
+		delay = sink_delay(this);
+		if (delay > this->par.bufsz + duration) {
+			/* more than the device buffer plus a cycle queued:
+			 * the device started late or we woke up late; let the
+			 * excess play before producing another cycle instead
+			 * of overrunning the ring, like the ALSA plugin */
+			this->next_time = spa_sndio_now() +
+				(uint64_t)(delay - this->par.bufsz) *
+				SPA_NSEC_PER_SEC / rate;
+			set_timeout(this, this->next_time);
+			return;
+		}
 		/* pace the timer with the measured device rate, pulling
 		 * the buffered amount back to what the flow control keeps
 		 * in the device; the clamp is wider than real-world clock
 		 * miscalibration (several thousand ppm on some machines) */
-		delay = sink_delay(this);
 		corr = spa_sndio_pace(spa_sndio_update_rate(this, delay),
 				(int64_t)delay - this->par.bufsz, rate);
 	}

@@ -34,31 +34,74 @@ static void recycle_buffer(struct sndio_state *this, uint32_t buffer_id)
 	}
 }
 
-/* frames captured by the device and not read yet */
+/* frames captured by the device and not handed to the graph yet,
+ * whether still in the server or already in our ring */
 static uint32_t source_delay(struct sndio_state *this)
 {
 	uint64_t read = this->bytes_xfer / this->frame_size;
-
-	return this->hw_position > read ?
+	uint32_t pending = this->hw_position > read ?
 		(uint32_t)(this->hw_position - read) : 0;
+
+	return pending + this->ring_fill / this->frame_size;
 }
 
-/* read what the device has into a free buffer; data loop only */
-static int read_frames(struct sndio_state *this, uint64_t nsec, uint32_t duration)
+/* move everything the server has into the ring; data loop only */
+static int fill_ring(struct sndio_state *this)
 {
-	struct sndio_buffer *b;
-	struct spa_data *d;
-	uint32_t avail, size;
+	uint32_t contig;
 	size_t n;
 	int res;
 
-	/* while sndiod is away, keep producing silence so the graph
-	 * keeps running and recording apps get a gap, not a stall */
+	if ((res = spa_sndio_service(this)) < 0)
+		return res;
+	while (!this->eof && this->ring_fill < this->ring_size) {
+		contig = SPA_MIN(this->ring_size - this->ring_fill,
+				this->ring_size - this->ring_head);
+		n = sio_read(this->hdl,
+				SPA_PTROFF(this->ring, this->ring_head, void), contig);
+		if (sio_eof(this->hdl)) {
+			spa_log_warn(this->log, "%p: sndio device lost, "
+					"capturing silence until it returns", this);
+			this->eof = true;
+			this->reopen_countdown = 0;
+			break;
+		}
+		if (n == 0)
+			break;
+		this->ring_head = (this->ring_head + n) % this->ring_size;
+		this->ring_fill += n;
+		this->bytes_xfer += n;
+	}
+	return 0;
+}
+
+/*
+ * Hand exactly one cycle of audio to the graph, as the graph expects
+ * from its driver: frames are taken from the ring only once a whole
+ * cycle is there.  When there is not enough yet, return 0 so the
+ * driver can wait for the shortfall, unless pad is set (following,
+ * where the cycle cannot wait): then fill the rest with silence.
+ * While sndiod is away, produce silence so the graph keeps running and
+ * recording apps get a gap, not a stall.  Data loop only.
+ */
+static int read_frames(struct sndio_state *this, uint64_t nsec,
+		uint32_t frames, bool pad)
+{
+	struct sndio_buffer *b;
+	struct spa_data *d;
+	uint32_t want, have, first;
+	int res;
+
 	if (!this->active && !this->eof)
 		return 0;
-	/* process position updates from the server */
-	if (!this->eof && (res = spa_sndio_service(this)) < 0)
+	if (!this->eof && (res = fill_ring(this)) < 0)
 		return res;
+
+	want = frames * this->frame_size;
+	have = this->eof ? 0 : SPA_MIN(this->ring_fill, want);
+	have -= have % this->frame_size;
+	if (have < want && !this->eof && !pad)
+		return 0;
 
 	if (spa_list_is_empty(&this->ready)) {
 		spa_log_warn(this->log, "%p: out of buffers", this);
@@ -67,64 +110,37 @@ static int read_frames(struct sndio_state *this, uint64_t nsec, uint32_t duratio
 	b = spa_list_first(&this->ready, struct sndio_buffer, link);
 	d = b->buf->datas;
 
-	avail = SPA_MIN(d[0].maxsize,
-			duration * this->frame_size + this->frame_size);
-	size = 0;
-
-	/* frame remainder from the previous cycle */
-	if (this->carry_len > 0) {
-		memcpy(d[0].data, this->carry, this->carry_len);
-		size = this->carry_len;
-		this->carry_len = 0;
+	if (want > d[0].maxsize) {
+		want = d[0].maxsize - d[0].maxsize % this->frame_size;
+		have = SPA_MIN(have, want);
 	}
 
-	while (size < avail) {
-		if (SPA_UNLIKELY(this->eof)) {
-			/* sndiod is away: capture silence */
-			memset(SPA_PTROFF(d[0].data, size, void), 0,
-					avail - size);
-			size = avail;
-			break;
-		}
-		n = sio_read(this->hdl,
-				SPA_PTROFF(d[0].data, size, void), avail - size);
-		if (sio_eof(this->hdl)) {
-			spa_log_warn(this->log, "%p: sndio device lost, "
-					"capturing silence until it returns", this);
-			this->eof = true;
-			this->reopen_countdown = 0;
-			memset(SPA_PTROFF(d[0].data, size, void), 0,
-					avail - size);
-			size = avail;
-			break;
-		}
-		if (n == 0)
-			break;
-		spa_log_trace(this->log, "%p: read %zu bytes", this, n);
-		size += n;
-		this->bytes_xfer += n;
+	/* copy out of the ring, wrapping around its end */
+	first = SPA_MIN(have, this->ring_size - this->ring_tail);
+	memcpy(d[0].data, SPA_PTROFF(this->ring, this->ring_tail, void), first);
+	if (have > first)
+		memcpy(SPA_PTROFF(d[0].data, first, void), this->ring, have - first);
+	this->ring_tail = (this->ring_tail + have) % this->ring_size;
+	this->ring_fill -= have;
+	if (have < want) {
+		if (!this->eof)
+			spa_log_debug(this->log, "%p: capture underrun, "
+					"padding %u frames", this,
+					(want - have) / this->frame_size);
+		memset(SPA_PTROFF(d[0].data, have, void), 0, want - have);
 	}
-
-	/* only produce whole frames, keep the remainder for next time */
-	this->carry_len = size % this->frame_size;
-	size -= this->carry_len;
-	if (this->carry_len > 0)
-		memcpy(this->carry, SPA_PTROFF(d[0].data, size, void),
-				this->carry_len);
-	if (size == 0)
-		return 0;
 
 	spa_list_remove(&b->link);
 	SPA_FLAG_SET(b->flags, BUFFER_FLAG_QUEUED);
 
 	d[0].chunk->offset = 0;
-	d[0].chunk->size = size;
+	d[0].chunk->size = want;
 	d[0].chunk->stride = this->frame_size;
 
 	if (b->h) {
 		b->h->flags = 0;
 		b->h->offset = 0;
-		b->h->seq = this->bytes_xfer / this->frame_size;
+		b->h->seq = this->clock != NULL ? this->clock->position : 0;
 		b->h->pts = nsec;
 		b->h->dts_offset = 0;
 	}
@@ -234,10 +250,20 @@ static void on_timeout(struct spa_source *source)
 				(int64_t)(duration + this->par.round) - backlog,
 				rate);
 	}
+	res = read_frames(this, nsec, duration, false);
+	if (res == 0 && this->active && !this->eof) {
+		/* not a whole cycle captured yet: come back when the
+		 * missing frames should be there, like the ALSA plugin */
+		uint32_t have = this->ring_fill / this->frame_size;
+		uint32_t missing = duration > have ? duration - have : 1;
+
+		this->next_time = spa_sndio_now() + (uint64_t)missing *
+			SPA_NSEC_PER_SEC / rate + 100000;
+		set_timeout(this, this->next_time);
+		return;
+	}
 	this->next_time = nsec +
 		(uint64_t)(duration / corr * SPA_NSEC_PER_SEC / rate);
-
-	res = read_frames(this, nsec, duration);
 
 	if (SPA_LIKELY(this->clock)) {
 		this->clock->nsec = nsec;
@@ -869,7 +895,7 @@ static int impl_node_process(void *object)
 				    SPA_IO_RATE_MATCH_FLAG_ACTIVE) &&
 		    this->rate_match->size > 0)
 			size = this->rate_match->size;
-		if (read_frames(this, nsec, size) > 0)
+		if (read_frames(this, nsec, size, true) > 0)
 			return SPA_STATUS_HAVE_DATA;
 	}
 	return SPA_STATUS_OK;
