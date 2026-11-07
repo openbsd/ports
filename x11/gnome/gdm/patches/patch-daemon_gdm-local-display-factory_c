@@ -1,7 +1,7 @@
 Index: daemon/gdm-local-display-factory.c
 --- daemon/gdm-local-display-factory.c.orig
 +++ daemon/gdm-local-display-factory.c
-@@ -269,7 +269,7 @@ struct GdmDisplayServerConfiguration {
+@@ -270,7 +270,7 @@ struct GdmDisplayServerConfiguration {
          const char *session_type;
  } display_server_configuration[] = {
  #ifdef ENABLE_WAYLAND_SUPPORT

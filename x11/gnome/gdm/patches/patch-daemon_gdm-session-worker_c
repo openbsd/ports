@@ -1,0 +1,12 @@
+Index: daemon/gdm-session-worker.c
+--- daemon/gdm-session-worker.c.orig
++++ daemon/gdm-session-worker.c
+@@ -2369,7 +2369,7 @@ gdm_session_worker_start_session (GdmSessionWorker  *w
+ #endif
+ 
+ #ifdef HAVE_LOGINCAP
+-                if (setusercontext (NULL, passwd_entry, passwd_entry->pw_uid, LOGIN_SETALL | LOGIN_SETXDGENV) < 0) {
++                if (setusercontext (NULL, passwd_entry, passwd_entry->pw_uid, LOGIN_SETALL | LOGIN_SETXDGENV | LOGIN_SETWSCONSGROUP) < 0) {
+                         g_debug ("GdmSessionWorker: setusercontext() failed for user %s: %s",
+                                  passwd_entry->pw_name, g_strerror (errno));
+                         _exit (EXIT_FAILURE);

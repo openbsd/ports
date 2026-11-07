@@ -1,0 +1,17 @@
+Index: data/PostSession.in
+--- data/PostSession.in.orig
++++ data/PostSession.in
+@@ -1,13 +1,3 @@
+ #!/bin/sh
+ 
+-# /etc/X11/xenodm/TakeConsole, fbtab(5)
+-chown root:wheel /dev/console
+-chmod 600 /dev/console
+-if [ -c /dev/dri/card0 ]; then
+-    /sbin/chown root:wheel /dev/dri/card0
+-fi
+-if [ -c /dev/dri/renderD128 ]; then
+-    /sbin/chown root:wheel /dev/dri/renderD128
+-fi
+-
+ exit 0

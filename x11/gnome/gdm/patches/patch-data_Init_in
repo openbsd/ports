@@ -1,0 +1,18 @@
+Index: data/Init.in
+--- data/Init.in.orig
++++ data/Init.in
+@@ -103,14 +103,6 @@ if [ "x$SETXKBMAP" != "x" ] ; then
+   fi
+ fi
+ 
+-# /etc/X11/xenodm/GiveConsole, fbtab(5)
+-if [ -c /dev/dri/card0 ]; then
+-    /sbin/chown _gdm /dev/dri/card0
+-fi
+-if [ -c /dev/dri/renderD128 ]; then
+-    /sbin/chown _gdm /dev/dri/renderD128
+-fi
+-
+ # XDG_RUNTIME_DIR
+ rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
+ 

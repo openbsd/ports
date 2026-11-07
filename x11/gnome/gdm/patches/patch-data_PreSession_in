@@ -1,0 +1,17 @@
+Index: data/PreSession.in
+--- data/PreSession.in.orig
++++ data/PreSession.in
+@@ -7,13 +7,3 @@
+ # Note that output goes into the .xsession-errors file for easy debugging
+ #
+ PATH="@X_PATH@:$PATH"
+-
+-# /etc/X11/xenodm/GiveConsole, fbtab(5)
+-GROUP=`id -g $USER`
+-chown $USER:$GROUP /dev/console
+-if [ -c /dev/dri/card0 ]; then
+-    /sbin/chown $USER:$GROUP /dev/dri/card0
+-fi
+-if [ -c /dev/dri/renderD128 ]; then
+-    /sbin/chown $USER:$GROUP /dev/dri/renderD128
+-fi

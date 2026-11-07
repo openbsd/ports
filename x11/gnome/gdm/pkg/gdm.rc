@@ -9,17 +9,6 @@ rc_reload=NO
 
 rc_post() {
 	pkill -T "${daemon_rtable}" -f gdm-session-worker
-
-	# /etc/X11/xenodm/TakeConsole, fbtab(5);
-	# needed because stop GDM will not run /etc/gdm/PostSession/Default
-	chown root:wheel /dev/console
-	chmod 600 /dev/console
-	if [[ -c /dev/dri/card0 ]]; then
-		chown root:wheel /dev/dri/card0
-	fi
-	if [[ -c /dev/dri/renderD128 ]]; then
-		chown root:wheel /dev/dri/renderD128
-	fi
 }
 
 rc_cmd $1
