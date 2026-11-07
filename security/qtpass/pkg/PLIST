@@ -1,1 +1,15 @@
 @bin bin/qtpass
+share/applications/
+share/applications/qtpass.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/qtpass-icon.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/qtpass-icon.svg
+share/metainfo/
+share/metainfo/org.qtpass.QtPass.metainfo.xml
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
