@@ -126,6 +126,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/accessanalyzer/2019-11-01
 lib/python${MODPY_VERSION}/site-packages/botocore/data/accessanalyzer/2019-11-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/account/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/account-access/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/account-access-runtime/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/account-access-runtime/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/account-access-runtime/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/account-access-runtime/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/account-access-runtime/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/account-access-runtime/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/account-access/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/account-access/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/account-access/2018-05-10/paginators-1.json
