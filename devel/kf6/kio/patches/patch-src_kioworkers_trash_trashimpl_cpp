@@ -1,0 +1,12 @@
+Index: src/kioworkers/trash/trashimpl.cpp
+--- src/kioworkers/trash/trashimpl.cpp.orig
++++ src/kioworkers/trash/trashimpl.cpp
+@@ -246,7 +246,7 @@ bool TrashImpl::createInfo(const QString &origPath, qu
+         }
+         return false;
+     }
+-    if (::faccessat(AT_FDCWD, origPath_c.constData(), W_OK, AT_SYMLINK_NOFOLLOW) == -1) {
++    if (!S_ISLNK(buff_src.st_mode) && ::faccessat(AT_FDCWD, origPath_c.constData(), W_OK, 0) == -1) {
+         error(KIO::ERR_ACCESS_DENIED, origPath);
+         return false;
+     }
