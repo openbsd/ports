@@ -2,7 +2,7 @@ COMMENT =	multi-way scrolling shoot'em up for X11, addictive
 #'
 
 DISTNAME =	xkobo-1.11
-REVISION =	9
+REVISION =	10
 CATEGORIES =	games
 
 SITES =		${SITE_XCONTRIB:=games/}  \

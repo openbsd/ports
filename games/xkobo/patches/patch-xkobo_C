@@ -1,5 +1,6 @@
---- xkobo.C.orig	Fri Jun 14 19:27:27 1996
-+++ xkobo.C	Sun Oct  6 01:00:38 2002
+Index: xkobo.C
+--- xkobo.C.orig
++++ xkobo.C
 @@ -33,6 +33,7 @@ extern "C"{
  #include "xkobo.h"
  #include "config.h"
@@ -17,7 +18,15 @@
  {
      signal_delivered = 1;
  }
-@@ -228,6 +229,7 @@ int main(int argc, char *argv[])
+@@ -149,6 +150,7 @@ int main(int argc, char *argv[])
+     struct sigaction sig_act;
+     int i;
+     
++    scorefile.usesetgid();
+     scale_log2 = 0;
+     cheat_mode = 0;
+     for (i=1; i<argc; i++){
+@@ -228,6 +230,7 @@ int main(int argc, char *argv[])
      
      rand_num.init();
      manage.init();
