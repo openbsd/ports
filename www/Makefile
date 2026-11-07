@@ -416,6 +416,7 @@
      SUBDIR += phppgadmin
      SUBDIR += phpvirtualbox
      SUBDIR += pipe-viewer
+     SUBDIR += player.html
      SUBDIR += pm2
      SUBDIR += pnp4nagios
      SUBDIR += polipo
