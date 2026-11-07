@@ -23,7 +23,7 @@ Index: src/libcamera/v4l2_device.cpp
  	if (!fd.isValid()) {
  		int ret = -errno;
  		LOG(V4L2, Error) << "Failed to open V4L2 device '"
-@@ -245,6 +250,30 @@ ControlList V4L2Device::getControls(Span<const uint32_
+@@ -245,6 +250,30 @@ ControlList V4L2Device::getControls(std::span<const ui
  		}
  	}
  
@@ -54,7 +54,7 @@ Index: src/libcamera/v4l2_device.cpp
  	struct v4l2_ext_controls v4l2ExtCtrls = {};
  	v4l2ExtCtrls.controls = v4l2Ctrls.data();
  	v4l2ExtCtrls.count = v4l2Ctrls.size();
-@@ -259,6 +288,7 @@ ControlList V4L2Device::getControls(Span<const uint32_
+@@ -259,6 +288,7 @@ ControlList V4L2Device::getControls(std::span<const ui
  	int ret = ioctl(VIDIOC_G_EXT_CTRLS, &v4l2ExtCtrls);
  	if (ret) {
  		unsigned int errorIdx = v4l2ExtCtrls.error_idx;

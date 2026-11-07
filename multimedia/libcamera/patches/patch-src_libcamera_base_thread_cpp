@@ -60,7 +60,7 @@ Index: src/libcamera/base/thread.cpp
  }
 @@ -435,6 +453,11 @@ bool Thread::wait(utils::duration duration)
   */
- int Thread::setThreadAffinity(const Span<const unsigned int> &cpus)
+ int Thread::setThreadAffinity(std::span<const unsigned int> cpus)
  {
 +#ifdef __OpenBSD__
 +	/* Thread affinity is not supported. */
@@ -70,7 +70,7 @@ Index: src/libcamera/base/thread.cpp
  	const unsigned int numCpus = std::thread::hardware_concurrency();
  
  	MutexLocker locker(data_->mutex_);
-@@ -454,15 +477,18 @@ int Thread::setThreadAffinity(const Span<const unsigne
+@@ -454,15 +477,18 @@ int Thread::setThreadAffinity(std::span<const unsigned
  		setThreadAffinityInternal();
  
  	return 0;

@@ -6,10 +6,10 @@ map while it is still being iterated here.
 Index: src/libcamera/pipeline/virtual/virtual.cpp
 --- src/libcamera/pipeline/virtual/virtual.cpp.orig
 +++ src/libcamera/pipeline/virtual/virtual.cpp
-@@ -130,7 +130,13 @@ VirtualCameraData::VirtualCameraData(PipelineHandler *
+@@ -143,7 +143,13 @@ void VirtualCameraData::processRequest(Request *reques
+ 	};
+ 	std::this_thread::sleep_until(targetTime);
  
- void VirtualCameraData::processRequest(Request *request)
- {
 -	for (const auto &[stream, buffer] : request->buffers()) {
 +	/*
 +	 * Iterate over a copy; emitting the last bufferCompleted signal

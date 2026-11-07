@@ -2,18 +2,14 @@ COMMENT-main=	complex camera support library
 COMMENT-tools=	tools for libcamera
 COMMENT-qcam=	qcam test application for libcamera
 
-V=		0.7.2
+V=		0.8.0
 DISTNAME=	libcamera-${V}
 PKGNAME-tools=	libcamera-tools-${V}
 PKGNAME-qcam=	libcamera-qcam-${V}
-WRKDIST=	${WRKDIR}/libcamera-v${V}-191e202178f02430b5942397c70d215cdd2056fa
-
-REVISION-main=	2
-REVISION-tools=	0
-REVISION-qcam=	0
+WRKDIST=	${WRKDIR}/libcamera-v${V}-df8e348d64b4932a0676256ed24f0da3ee9438bc
 
 SHARED_LIBS += camera-base               0.0 # 0.7.2
-SHARED_LIBS += camera                    0.0 # 0.7.2
+SHARED_LIBS += camera                    1.0 # 0.7.2
 
 CATEGORIES=	multimedia devel
 
@@ -37,7 +33,7 @@ WANTLIB-tools += ${COMPILER_LIBCXX} SDL2 c camera camera-base epoll-shim
 WANTLIB-tools += event_core event_pthreads jpeg tiff yaml-0
 
 WANTLIB-qcam += ${COMPILER_LIBCXX} Qt6Core Qt6Gui Qt6OpenGL Qt6OpenGLWidgets
-WANTLIB-qcam += Qt6Widgets c camera camera-base m tiff
+WANTLIB-qcam += Qt6Widgets c camera camera-base tiff
 
 MODULES=	devel/meson
 
@@ -79,7 +75,8 @@ CONFIGURE_ARGS +=	-Dpipelines=virtual,uvcbsd \
 # needs lttng-ust
 CONFIGURE_ARGS +=	-Dtracing=disabled
 
-# display planes are RGB-plus-NV12 while UVC is YUYV/MJPEG-only
+# needs dma-buf import (drmPrimeFDToHandle); also display planes are
+# RGB-plus-NV12 while UVC is YUYV/MJPEG-only
 CONFIGURE_ARGS +=	-Dcam-output-kms=disabled
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}

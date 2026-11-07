@@ -17,6 +17,7 @@
 #include <memory>
 #include <optional>
 #include <set>
+#include <span>
 #include <string>
 #include <sys/stat.h>
 #include <vector>
@@ -86,7 +87,7 @@ public:
 	~PipelineHandlerUVCBSD();
 
 	std::unique_ptr<CameraConfiguration> generateConfiguration(Camera *camera,
-								   Span<const StreamRole> roles) override;
+								   std::span<const StreamRole> roles) override;
 	int configure(Camera *camera, CameraConfiguration *config) override;
 
 	int exportFrameBuffers(Camera *camera, Stream *stream,
@@ -254,7 +255,7 @@ PipelineHandlerUVCBSD::~PipelineHandlerUVCBSD()
 
 std::unique_ptr<CameraConfiguration>
 PipelineHandlerUVCBSD::generateConfiguration(Camera *camera,
-					     Span<const StreamRole> roles)
+					     std::span<const StreamRole> roles)
 {
 	UVCBSDCameraData *data = cameraData(camera);
 	std::unique_ptr<CameraConfiguration> config =
@@ -626,9 +627,9 @@ int UVCBSDCameraData::init(const std::string &deviceNode)
 	 * There is no way to tell internal and external cameras apart;
 	 * consider all cameras external.
 	 */
-	properties_.set(properties::Location, properties::CameraLocationExternal);
+	properties_.set(properties::Location, properties::LocationExternal);
 
-	properties_.set(properties::PixelArraySize, resolution);
+	properties_.set(properties::PixelArrayArea, Rectangle(resolution));
 	properties_.set(properties::PixelArrayActiveAreas, { Rectangle(resolution) });
 
 	/* Initialise the supported controls. */
@@ -785,7 +786,7 @@ void UVCBSDCameraData::addControl(uint32_t cid, const ControlInfo &v4l2Info,
 			return;
 
 		info = ControlInfo{
-			Span<const ControlValue>{ values.data(), count },
+			std::span<const ControlValue>{ values.data(), count },
 			!lcDef ? values.front() : *lcDef,
 		};
 		break;
