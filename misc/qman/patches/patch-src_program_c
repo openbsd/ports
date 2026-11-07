@@ -1,0 +1,13 @@
+Index: src/program.c
+--- src/program.c.orig
++++ src/program.c
+@@ -862,7 +862,8 @@ void init() {
+ void late_init() {
+   // Initialize `aw_all`
+   if (ST_FREEBSD == config.misc.system_type ||
+-      ST_DARWIN == config.misc.system_type)
++      ST_DARWIN == config.misc.system_type ||
++      ST_MANDOC == config.misc.system_type)
+     aw_all_len = aprowhat_exec(&aw_all, AW_APROPOS, L"'.'");
+   else
+     aw_all_len = aprowhat_exec(&aw_all, AW_APROPOS, L"''");

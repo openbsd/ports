@@ -1,0 +1,21 @@
+Index: config/meson.build
+--- config/meson.build.orig
++++ config/meson.build
+@@ -4,7 +4,7 @@
+ if get_option('config').enabled() or get_option('config').auto()
+   install_data(
+     ['qman.conf'],
+-    install_dir: get_option('configdir'),
++    install_dir: get_option('prefix') + '/share/examples/qman',
+     install_tag: 'config'
+   )
+ endif
+@@ -19,7 +19,7 @@ if get_option('config').enabled() or get_option('confi
+       'themes/adwaita-light.conf',
+       'themes/catppuccin_latte.conf'
+     ],
+-    install_dir: get_option('configdir') + '/themes',
++    install_dir: get_option('prefix') + '/share/examples/qman/themes',
+     install_tag: 'config'
+   )
+ endif

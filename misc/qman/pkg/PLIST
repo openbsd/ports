@@ -1,0 +1,30 @@
+@bin bin/qman
+@man man/man1/qman.1
+share/doc/qman/
+share/doc/qman/README.md
+share/doc/qman/config/
+share/doc/qman/config/README.md
+share/doc/qman/doc/
+share/doc/qman/doc/BUILDING.md
+share/doc/qman/doc/CONTRIBUTING.md
+share/doc/qman/doc/DEBUGGING.md
+share/doc/qman/doc/OS_SPECIFIC.md
+share/doc/qman/doc/PACKAGES.md
+share/doc/qman/doc/TESTING.md
+share/doc/qman/doc/TROUBLESHOOTING.md
+share/examples/qman/
+@sample ${SYSCONFDIR}/xdg/qman/
+share/examples/qman/qman.conf
+@sample ${SYSCONFDIR}/xdg/qman/qman.conf
+share/examples/qman/themes/
+@sample ${SYSCONFDIR}/xdg/qman/themes/
+share/examples/qman/themes/adwaita-light.conf
+@sample ${SYSCONFDIR}/xdg/qman/themes/adwaita-light.conf
+share/examples/qman/themes/adwaita.conf
+@sample ${SYSCONFDIR}/xdg/qman/themes/adwaita.conf
+share/examples/qman/themes/catppuccin_latte.conf
+@sample ${SYSCONFDIR}/xdg/qman/themes/catppuccin_latte.conf
+share/examples/qman/themes/modernity-light.conf
+@sample ${SYSCONFDIR}/xdg/qman/themes/modernity-light.conf
+share/examples/qman/themes/modernity.conf
+@sample ${SYSCONFDIR}/xdg/qman/themes/modernity.conf
