@@ -89,6 +89,7 @@ MODULE_PACKAGES =	-cache_purge -geoip2 -headers_more \
 			-securelink -stream -xslt
 
 FLAVOR ?=
+FLAVORS =		debug
 PSEUDO_FLAVORS =	no_lua no_modsecurity no_njs
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -158,6 +159,10 @@ PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	simple
 MODULES+=		perl
+
+.if ${FLAVOR:Mdebug}
+CONFIGURE_ARGS+=	--with-debug
+.endif
 
 .if ${BUILD_PACKAGES:M-lua}
 MODULES+=		lang/lua
