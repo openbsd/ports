@@ -1,3 +1,5 @@
+DPB_PROPERTIES=	parallel
+
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
 
