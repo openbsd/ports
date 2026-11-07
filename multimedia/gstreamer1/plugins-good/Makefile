@@ -1,7 +1,6 @@
 COMMENT=		good elements for GStreamer
 
 DISTNAME=		gst-plugins-good-${V}
-REVISION=		0
 
 SITES=			${SITE_GST:=gst-plugins-good/}
 
