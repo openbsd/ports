@@ -1,0 +1,21 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+To use this with a collection of videos under /var/www/htdocs/videos/,
+two things are needed:
+
+- directory auto indexing turned on in httpd.conf:
+
+        location "/videos/*" {
+                directory auto index
+        }
+
+- player.html or player.min.html symlinked to the desired directory:
+
+    # cd /var/www/player.html && \
+        ln -s player.min.html ../htdocs/videos/player.html
+
+Then, navigate to http://example.com/videos/player.html to view the player.
+Of course, playback is limited to the container/codec formats supported by
+the browser.

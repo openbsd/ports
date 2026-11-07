@@ -1,0 +1,8 @@
+player.html/
+player.html/device-gallery-audio.html
+player.html/device-gallery-video.html
+player.html/player.html
+player.html/player.html.json
+player.html/player.min.html
+@cwd ${LOCALBASE}
+share/doc/pkg-readmes/${PKGSTEM}

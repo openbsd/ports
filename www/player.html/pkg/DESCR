@@ -1,0 +1,8 @@
+player.html is a single-file audio + video player web app for media
+libraries served from basic HTTP directory listings (NGINX/Apache/IIS/etc).
+
+It can be used as:
+
+- A web player for folders of media on a server (NAS/home server/shared
+  hosting).
+- A local media player by installing it as a PWA (where supported).
