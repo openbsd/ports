@@ -11,7 +11,7 @@ one you should add into ~/.codex/config.toml:
 
 	[model_providers.local]
 	name = "llama-server"
-	base_url = "http://127.0.0.1:8080/v1"
+	base_url = "http://127.0.0.1:9931/v1"
 	wire_api = "responses"
 
 ${PKGSTEM} uses a lot of memory, it starts with 256Mb per agent/worker
