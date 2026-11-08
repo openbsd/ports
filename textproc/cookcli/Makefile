@@ -1,6 +1,6 @@
 COMMENT =		command line tool for working with Cooklang recipes
 
-V =			0.39.0
+V =			0.41.0
 DISTNAME =		cook-$V-source
 PKGNAME =		cookcli-$V
 
