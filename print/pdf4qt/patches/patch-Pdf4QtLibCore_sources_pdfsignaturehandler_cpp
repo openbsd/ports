@@ -21,3 +21,12 @@ Index: Pdf4QtLibCore/sources/pdfsignaturehandler.cpp
              TS_VERIFY_CTX_set_data(ts_context, inputBuffer);
              TS_VERIFY_CTX_set_flags(ts_context, TS_VFY_ALL_DATA & ~TS_VFY_POLICY & ~TS_VFY_NONCE & ~TS_VFY_TSA_NAME);
              TS_VERIFY_CTX_set_store(ts_context, store);
+@@ -1145,7 +1142,7 @@ void PDFSignatureHandler_ETSI_base::verifyCertificateC
+                     break;
+                 }
+ 
+-                unsigned long flags = X509_V_FLAG_TRUSTED_FIRST | X509_V_FLAG_CRL_CHECK | X509_V_FLAG_CRL_CHECK_ALL | X509_V_FLAG_EXTENDED_CRL_SUPPORT;
++                unsigned long flags = X509_V_FLAG_TRUSTED_FIRST | X509_V_FLAG_CRL_CHECK | X509_V_FLAG_CRL_CHECK_ALL;
+                 if (m_parameters.ignoreExpirationDate)
+                 {
+                     flags |= X509_V_FLAG_NO_CHECK_TIME;
