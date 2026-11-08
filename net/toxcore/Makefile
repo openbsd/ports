@@ -3,15 +3,13 @@ COMMENT =		Tox client library
 V =			0.2.19
 DISTNAME =		c-toxcore-$V
 PKGNAME =		${DISTNAME:S/c-//}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		toxcore	4.0
 
 CATEGORIES =		net telephony
 
 HOMEPAGE =		https://tox.chat/
-
-MAINTAINER =		Omar Polo <op@openbsd.org>
 
 SITES = 	https://github.com/TokTok/c-toxcore/releases/download/v$V/
 
