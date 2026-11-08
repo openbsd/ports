@@ -10,7 +10,7 @@ Index: services/network/network_service.cc
  #include "services/network/network_change_notifier_passive_factory.h"
  #endif
  
-@@ -1052,7 +1052,7 @@ void NetworkService::SetExplicitlyAllowedPorts(
+@@ -1060,7 +1060,7 @@ void NetworkService::SetExplicitlyAllowedPorts(
    net::SetExplicitlyAllowedPorts(ports);
  }
  
@@ -19,7 +19,7 @@ Index: services/network/network_service.cc
  void NetworkService::SetGssapiLibraryLoadObserver(
      mojo::PendingRemote<mojom::GssapiLibraryLoadObserver>
          gssapi_library_load_observer) {
-@@ -1195,7 +1195,7 @@ NetworkService::CreateHttpAuthHandlerFactory(NetworkCo
+@@ -1203,7 +1203,7 @@ NetworkService::CreateHttpAuthHandlerFactory(NetworkCo
    );
  }
  

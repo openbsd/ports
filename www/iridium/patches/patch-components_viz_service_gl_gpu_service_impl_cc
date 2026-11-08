@@ -1,7 +1,7 @@
 Index: components/viz/service/gl/gpu_service_impl.cc
 --- components/viz/service/gl/gpu_service_impl.cc.orig
 +++ components/viz/service/gl/gpu_service_impl.cc
-@@ -506,7 +506,7 @@ void GpuServiceImpl::InitializeWithHostInternal(
+@@ -505,7 +505,7 @@ void GpuServiceImpl::InitializeWithHostInternal(
  
    mojo::Remote<mojom::GpuHost> gpu_host(std::move(pending_gpu_host));
  

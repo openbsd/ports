@@ -11,7 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2026.10.156.1
+V=			2026.11.157
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -30,6 +30,8 @@ DIST_TUPLE+=		github microsoft TypeScript v${TS_VERSION} typescript
 # cd TypeScript-${TS_VERSION}/tsc && go mod tidy && go mod vendor
 # cd ../../ && tar czf TypeScript-${TS_VERSION}-vendor.tar.gz TypeScript-${TS_VERSION}-vendor/tsc/vendor
 VENDOR_DISTFILES.a=	TypeScript-${TS_VERSION}-vendor.tar.gz
+
+VENDOR_DISTFILES.a+=	crubit-20261024.tar.gz
 
 EXTRACT_ONLY=		${ALL_DISTFILES:N*test*}
 
@@ -51,10 +53,9 @@ PERMIT_PACKAGE =	Yes
 SITES=		https://downloads.iridiumbrowser.de/source/
 SITES.a=	http://nerd.hu/distfiles/
 
-MODULES=	lang/clang lang/python x11/qt5 x11/qt6
+MODULES=	lang/clang lang/python x11/qt6
 
 MODCLANG_VERSION=	22
-MODQT5_DEPS=		No
 MODQT6_DEPS=		No
 MODPY_RUNDEP=		No
 
@@ -98,7 +99,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		devel/ninja \
 		x11/py-xcbgen \
-		${MODQT5_LIB_DEPENDS} \
 		${MODQT6_LIB_DEPENDS} \
 		${MODGCC_CPPDEP} \
 		${RUN_DEPENDS}
@@ -180,16 +180,16 @@ GN_ARGS=	is_official_build=true \
 		v8_enable_cet_ibt=true \
 		v8_metagen_libclang_so=\"${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/libclang.so.0.0\" \
 		v8_metagen_libclang_bindings_dir=\"${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/python${MODPY_VERSION}/site-packages\" \
-		use_qt5=true \
 		use_qt6=true \
-		moc_qt5_path=\"${MODQT5_MOC}\" \
 		moc_qt6_path=\"${MODQT6_MOC}\" \
 		use_typescript_go=false
 
 # rust
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
-		rust_sysroot_absolute=\"${LOCALBASE}\"
+		rust_sysroot_absolute=\"${LOCALBASE}\" \
+		rust_crubit_root=\"//third_party/rust-toolchain\" \
+		enable_rust_api_from_cpp=true
 
 # go
 MAKE_ENV+=	GOCACHE=${WRKDIST}/go-cache
@@ -274,9 +274,19 @@ pre-patch:
 post-patch:
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin \
-		${WRKSRC}/third_party/rust-toolchain/bin
+		${WRKSRC}/third_party/rust-toolchain/bin \
+		${WRKSRC}/third_party/rust-toolchain/lib \
+		${WRKSRC}/third_party/rust-toolchain/third_party
 	@ln -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
-	@ln -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+	# rust toolchain
+	ln -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+	ln -sf ${LOCALBASE}/bin/rustfmt ${WRKSRC}/third_party/rust-toolchain/bin/rustfmt
+	ln -sf ${WRKDIR}/third_party/rust-toolchain/bin/cc_bindings_from_rs \
+		${WRKSRC}/third_party/rust-toolchain/bin/
+	ln -sf ${WRKDIR}/third_party/rust-toolchain/lib/librustc_driver-a5287fa55d9d1b5f.so \
+		${WRKSRC}/third_party/rust-toolchain/lib/
+	ln -sf ${WRKDIR}/third_party/rust-toolchain/lib/third_party \
+		${WRKSRC}/third_party/rust-toolchain/lib/third_party
 	@ln -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 	@ln -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/third_party/gperf/cipd/bin/gperf
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
@@ -342,7 +352,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DIST_TARGET_DIR}/resources
-.for f in snapshot_blob.bin v8_context_snapshot.bin
+.for f in snapshot_blob.bin
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
 

@@ -1,0 +1,22 @@
+commit cc01cc89cb160433cc357f9311bf5a5134a97d1a
+commit 29b453a9add586231dc8c23268018c72c8745743
+commit 497612796be6c3ce53e4b6f0a059199762a3f740
+commit e65a87e428e2e1a2ea3aeab692ab3d7dce396eca
+commit 70061c63342cebf0bba303efcdd32f18118a2dd7
+
+Index: build_overrides/crubit.gni
+--- build_overrides/crubit.gni.orig
++++ build_overrides/crubit.gni
+@@ -2,7 +2,11 @@
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+ 
+-crubit_src_dir = "//third_party/rust-toolchain/lib/third_party/crubit"
++import("//build/config/rust.gni")
++
++assert(rust_crubit_root != "", rust_crubit_root_missing_message)
++
++crubit_src_dir = "${rust_crubit_root}/lib/third_party/crubit"
+ crubit_absl_dep_target = "//third_party/abseil-cpp:absl"
+ crubit_gn_configs_to_remove = [
+   "//build/config/compiler:chromium_code",

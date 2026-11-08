@@ -734,7 +734,6 @@ iridium/resources/inspector_overlay/inspector_overlay_resources.grd
 iridium/resources/inspector_overlay/main.js
 iridium/snapshot_blob.bin
 %%swiftshader%%
-iridium/v8_context_snapshot.bin
 @man man/man1/iridium.1
 share/applications/iridium-browser.desktop
 share/doc/pkg-readmes/${PKGSTEM}

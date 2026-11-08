@@ -8,5 +8,5 @@ Index: remoting/base/passwd_utils.h
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    std::vector<gid_t> supplementary_gids;
- #endif
- };
+   // The login shell. May be empty.
+   base::FilePath shell;

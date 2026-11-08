@@ -1,7 +1,7 @@
 Index: build/rust/allocator/lib.rs
 --- build/rust/allocator/lib.rs.orig
 +++ build/rust/allocator/lib.rs
-@@ -111,6 +111,12 @@ mod both_allocators {
+@@ -115,6 +115,12 @@ mod both_allocators {
          0
      }
  

@@ -19,7 +19,7 @@ Index: chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.
  using Event = ::chrome::cros::reporting::proto::Event;
  #endif
  
-@@ -144,7 +144,7 @@ RealtimeReportingClient::GetReportingSettings() {
+@@ -153,7 +153,7 @@ RealtimeReportingClient::GetReportingSettings() {
  }
  
  
@@ -28,12 +28,12 @@ Index: chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.
  
  
  void AddCrowdstrikeSignalsToEvent(
-@@ -292,7 +292,7 @@ std::string RealtimeReportingClient::GetBrowserClientI
+@@ -301,7 +301,7 @@ std::string RealtimeReportingClient::GetBrowserClientI
    return client_id;
  }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(notyet)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  void RealtimeReportingClient::MaybeCollectDeviceSignalsAndReportEvent(
      Event event,
      policy::CloudPolicyClient* client,
