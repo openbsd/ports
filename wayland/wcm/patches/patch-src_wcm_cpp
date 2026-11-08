@@ -1,15 +1,18 @@
+drop wordexp use
+
+chunk 4: add wf-shell 0.11 metadata dir to searched dirs
 Index: src/wcm.cpp
 --- src/wcm.cpp.orig
 +++ src/wcm.cpp
-@@ -7,7 +7,6 @@
+@@ -9,7 +9,6 @@
  #include <wayfire/config/types.hpp>
  #include <wayfire/config/xml.hpp>
  #include <wayfire/util/duration.hpp>
 -#include <wordexp.h>
+ #include <glibmm/i18n.h>
  
  #define OUTPUT_CONFIG_PROGRAM "wdisplays"
- 
-@@ -1604,15 +1603,6 @@ void WCM::open_page(Plugin *plugin)
+@@ -1635,15 +1634,6 @@ void WCM::open_page(Plugin *plugin)
      current_plugin = plugin;
  }
  
@@ -25,7 +28,7 @@ Index: src/wcm.cpp
  void WCM::load_config_files()
  {
      const char *wf_config_file_override = getenv("WAYFIRE_CONFIG_FILE");
-@@ -1620,7 +1610,7 @@ void WCM::load_config_files()
+@@ -1651,7 +1641,7 @@ void WCM::load_config_files()
  
      if (wf_config_file.empty())
      {
@@ -34,7 +37,17 @@ Index: src/wcm.cpp
      }
  
      std::vector<std::string> wayfire_xmldirs;
-@@ -1643,8 +1633,7 @@ void WCM::load_config_files()
+@@ -1666,6 +1656,9 @@ void WCM::load_config_files()
+     }
+ 
+     wayfire_xmldirs.push_back(WAYFIRE_METADATADIR);
++#if HAVE_WFSHELL
++    wayfire_xmldirs.push_back(WFSHELL_METADATADIR);
++#endif
+ 
+     wf_config_mgr =
+         wf::config::build_configuration(wayfire_xmldirs,
+@@ -1674,8 +1667,7 @@ void WCM::load_config_files()
  
      if (wf_shell_config_file.empty())
      {
