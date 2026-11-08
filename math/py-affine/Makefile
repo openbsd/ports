@@ -1,6 +1,6 @@
 COMMENT =		matrices describing affine transformation of the plane
 
-MODPY_DISTV =		3.0.0
+MODPY_DISTV =		3.0.1
 DISTNAME =		affine-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
