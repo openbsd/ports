@@ -759,7 +759,7 @@ SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
 SHA256 (cargo/zune-core-0.5.3.tar.gz) = 1WN3/UY2iYShcLxarFVn5Syl2odMqmC+o5/Lynj7ZYs=
 SHA256 (cargo/zune-inflate-0.2.54.tar.gz) = c6szL+L2aABo81grFqJPkK1wltXTm5dNHAr/ASURbwI=
 SHA256 (cargo/zune-jpeg-0.5.15.tar.gz) = J7ydW4FbwQPxQqoFT1YdkYfRkWkux8LR4rRzf429cpY=
-SHA256 (spotify-player-0.25.1.tar.gz) = L58o5+p04U6zvpHSZV3UZm8oIcxY907F23ZAWA5qc7s=
+SHA256 (spotify-player-0.25.2.tar.gz) = YMx81g9mcpA5wKSLE02AMsFIF8iCENQgcirQg0CtFcw=
 SIZE (cargo/ab_glyph-0.2.32.tar.gz) = 20967
 SIZE (cargo/ab_glyph_rasterizer-0.1.10.tar.gz) = 11206
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
@@ -1521,4 +1521,4 @@ SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
 SIZE (cargo/zune-core-0.5.3.tar.gz) = 30419
 SIZE (cargo/zune-inflate-0.2.54.tar.gz) = 37973
 SIZE (cargo/zune-jpeg-0.5.15.tar.gz) = 88879
-SIZE (spotify-player-0.25.1.tar.gz) = 215361
+SIZE (spotify-player-0.25.2.tar.gz) = 216095
