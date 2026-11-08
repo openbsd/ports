@@ -1,11 +1,11 @@
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-REVISION=	0
 V=		3.0.24
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
+REVISION=	1
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -199,6 +199,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-opencv \
 		--disable-projectm \
 		--disable-pulse \
+		--disable-qt5 \
 		--disable-samplerate \
 		--disable-schroedinger \
 		--disable-secret \
@@ -226,7 +227,6 @@ CONFIGURE_ARGS+=--disable-alsa \
 CONFIGURE_ENV+=	BUILDCC="${CC}" \
 		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt6/pkgconfig" \
 		QMAKE6="${LOCALBASE}/bin/qmake-qt6" \
 		RCC="${LOCALBASE}/bin/rcc-qt6" \
 		LUAC="${LOCALBASE}/bin/luac${MODLUA_DEP_VERSION}"
