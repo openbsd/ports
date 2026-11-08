@@ -1,0 +1,12 @@
+Index: libwget/ssl_openssl.c
+--- libwget/ssl_openssl.c.orig
++++ libwget/ssl_openssl.c
+@@ -375,7 +375,7 @@ static int openssl_load_crl(X509_STORE *store, const c
+ 
+ 	if (!X509_load_crl_file(lookup, crl_file, X509_FILETYPE_PEM))
+ 		return WGET_E_UNKNOWN;
+-	if (!X509_STORE_set_flags(store, X509_V_FLAG_CRL_CHECK | X509_V_FLAG_CRL_CHECK_ALL | X509_V_FLAG_USE_DELTAS))
++	if (!X509_STORE_set_flags(store, X509_V_FLAG_CRL_CHECK | X509_V_FLAG_CRL_CHECK_ALL))
+ 		return WGET_E_UNKNOWN;
+ 
+ 	return 0;
