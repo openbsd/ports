@@ -1,6 +1,7 @@
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
+REVISION=	0
 V=		3.0.24
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
@@ -26,7 +27,7 @@ WANTLIB-common=	dbus-1 execinfo iconv idn intl m pthread
 
 WANTLIB-main += ${WANTLIB-common} ${MODLUA_WANTLIB}
 
-WANTLIB-main += EGL GL ICE LLVM Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras
+WANTLIB-main += EGL GL ICE LLVM Qt6Core Qt6DBus Qt6Gui Qt6Svg Qt6Widgets
 WANTLIB-main += SDL SDL_image SM SvtAv1Enc X11 X11-xcb XRes Xau Xcomposite
 WANTLIB-main += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xpm Xrandr
 WANTLIB-main += Xrender Xxf86vm absl_base absl_base_cpu_detect absl_city
@@ -92,7 +93,7 @@ AUTOMAKE_VERSION= 1.16
 AUTORECONF=	./bootstrap
 
 MODULES=	lang/lua \
-		x11/qt5
+		x11/qt6
 
 MODLUA_VERSION=	5.2
 MODLUA_SA=	Yes
@@ -103,10 +104,9 @@ COMPILER=	base-clang ports-gcc
 
 WANTLIB-main += ${COMPILER_LIBCXX}
 
-LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
+LIB_DEPENDS-main= ${MODQT6_LIB_DEPENDS} \
 		${MODLUA_LIB_DEPENDS} \
-		x11/qt5/qtsvg,-main \
-		x11/qt5/qtx11extras \
+		x11/qt6/qtsvg \
 		archivers/libarchive \
 		audio/libcddb \
 		audio/libsoxr \
@@ -226,8 +226,9 @@ CONFIGURE_ARGS+=--disable-alsa \
 CONFIGURE_ENV+=	BUILDCC="${CC}" \
 		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt5/pkgconfig" \
-		RCC="${LOCALBASE}/bin/rcc-qt5" \
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt6/pkgconfig" \
+		QMAKE6="${LOCALBASE}/bin/qmake-qt6" \
+		RCC="${LOCALBASE}/bin/rcc-qt6" \
 		LUAC="${LOCALBASE}/bin/luac${MODLUA_DEP_VERSION}"
 
 PSEUDO_FLAVORS=	no_jack
