@@ -4,6 +4,7 @@ DISTNAME =	haproxy-3.4.7
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org
 MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

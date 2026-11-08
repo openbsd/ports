@@ -8,6 +8,10 @@ daemon_flags="-f ${SYSCONFDIR}/haproxy/haproxy.cfg"
 # rc_reload() appends '-sf ...'
 pexp="${daemon}${daemon_flags:+ ${daemon_flags}}.*"
 
+rc_configtest() {
+	${daemon} ${daemon_flags} -c
+}
+
 rc_reload() {
 	${daemon} ${daemon_flags} -sf $(cat /var/run/haproxy.pid)
 }
