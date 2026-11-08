@@ -44,6 +44,7 @@
      SUBDIR += litexl
      SUBDIR += micro
      SUBDIR += moe
+     SUBDIR += msedit
      SUBDIR += nano
      SUBDIR += ne
      SUBDIR += nedit
