@@ -1,3 +1,6 @@
+2nd chunk:
+https://bugs.launchpad.net/hplip/+bug/2169330
+
 Index: scan/sane/http.c
 --- scan/sane/http.c.orig
 +++ scan/sane/http.c
@@ -9,3 +12,11 @@ Index: scan/sane/http.c
  #include <ctype.h>
  #include "hpmud.h"
  #include "http.h"
+@@ -495,7 +496,6 @@ enum HTTP_RESULT __attribute__ ((visibility ("hidden")
+          while(1)
+          {
+             ret = read_line (ps, line, sizeof(line), tmo, &len);
+-            *bytes_read += len;
+             if(ret) //failed to read line 
+ 		    {
+ 		            ps->footer = 0;
