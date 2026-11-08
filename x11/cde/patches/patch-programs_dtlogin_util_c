@@ -1,0 +1,17 @@
+Index: programs/dtlogin/util.c
+--- programs/dtlogin/util.c.orig
++++ programs/dtlogin/util.c
+@@ -342,6 +342,13 @@ CleanUpChild( void )
+  */
+ #if defined (SYSV) || defined (SVR4) || defined(__linux__)
+ 	setpgrp ();
++#elif defined(__OpenBSD__)
++	/*
++	 * Become a session leader so that setlogin(2), done by
++	 * setusercontext(3), does not change the daemon's login name.
++	 */
++	setsid ();
++	sigsetmask (0);
+ #else
+ 	setpgrp (0, getpid ());
+ 	sigsetmask (0);

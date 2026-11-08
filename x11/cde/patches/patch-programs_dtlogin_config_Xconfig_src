@@ -1,0 +1,16 @@
+Export XDG_RUNTIME_DIR (setusercontext(3)) to the session, like xenodm(1).
+
+Index: programs/dtlogin/config/Xconfig.src
+--- programs/dtlogin/config/Xconfig.src.orig
++++ programs/dtlogin/config/Xconfig.src
+@@ -75,7 +75,9 @@ XCOMM Dtlogin.exportList:		ODMDIR NLSPATH TZ ...
+ Dtlogin.exportList:		ODMDIR NLSPATH TZ
+ #endif
+ 
+-#if defined(CSRG_BASED) || defined(__linux__)
++#if defined(__OpenBSD__)
++Dtlogin.exportList:		NLSPATH LANG XDG_RUNTIME_DIR
++#elif defined(CSRG_BASED) || defined(__linux__)
+ Dtlogin.exportList:		NLSPATH LANG
+ #endif
+ 

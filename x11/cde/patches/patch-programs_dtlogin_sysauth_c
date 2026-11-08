@@ -1,0 +1,186 @@
+Add bsd_auth(3) support.
+
+Index: programs/dtlogin/sysauth.c
+--- programs/dtlogin/sysauth.c.orig
++++ programs/dtlogin/sysauth.c
+@@ -113,7 +113,7 @@
+  * Define as generic those without platform specific code.
+  */
+ #if !(defined(_AIX) || defined(sun) || \
+-        defined(HAS_PAM_LIBRARY))
++        defined(HAS_PAM_LIBRARY) || defined(__OpenBSD__))
+ #define generic
+ #endif
+ 
+@@ -859,6 +859,171 @@ tsm_check_login(uid_t uid)
+  ***************************************************************************
+  ***************************************************************************
+  ***************************************************************************/
++
++
++#if defined(__OpenBSD__)
++/***************************************************************************
++ *
++ *  Start authentication routines (OpenBSD, bsd_auth)
++ *
++ ***************************************************************************/
++
++#include	<login_cap.h>
++#include	<bsd_auth.h>
++#include	<string.h>
++#include	<unistd.h>
++
++/***************************************************************************
++ *
++ *  Authenticate (OpenBSD)
++ *
++ *  verify the user with bsd_auth(3), see xenodm(1) Verify() and login(1)
++ *
++ *  return codes indicate authentication results.
++ ***************************************************************************/
++
++int
++Authenticate( struct display *d, char *name, char *passwd, char **msg )
++{
++	struct passwd	*p;
++	login_cap_t	*lc;
++	auth_session_t	*as;
++	char		*style, *s;
++	char		path[MAXPATHLEN];
++	int		authok, lastchance;
++	size_t		passwd_len;
++
++	/*
++	 * Nothing to do if no name provided.
++	 */
++	if (!name || strlen(name) == 0)
++		return(VF_INVALID);
++
++	/*
++	 * No password yet: ask for one.
++	 */
++	if (!passwd)
++		return(VF_CHALLENGE);
++
++	/* User may have specified an authentication style. */
++	if ((style = strchr(name, ':')) != NULL)
++		*style++ = '\0';
++
++	p = getpwnam(name);
++	if (!p || strlen(name) == 0) {
++		Debug("getpwnam() failed.\n");
++		explicit_bzero(passwd, strlen(passwd));
++		return(VF_INVALID);
++	}
++
++	if ((lc = login_getclass(p->pw_class)) == NULL) {
++		Debug("login_getclass() failed.\n");
++		explicit_bzero(passwd, strlen(passwd));
++		return(VF_INVALID);
++	}
++	if ((style = login_getstyle(lc, style, "auth-dtlogin")) == NULL) {
++		Debug("login_getstyle() failed.\n");
++		login_close(lc);
++		explicit_bzero(passwd, strlen(passwd));
++		return(VF_INVALID);
++	}
++	if ((as = auth_open()) == NULL) {
++		Debug("auth_open() failed.\n");
++		login_close(lc);
++		explicit_bzero(passwd, strlen(passwd));
++		return(VF_INVALID);
++	}
++	if (auth_setoption(as, "login", "yes") == -1) {
++		Debug("auth_setoption() failed.\n");
++		auth_close(as);
++		login_close(lc);
++		explicit_bzero(passwd, strlen(passwd));
++		return(VF_INVALID);
++	}
++	lastchance = login_getcaptime(lc, "password-dead", 0, 0) != 0;
++	if (lastchance)
++		auth_setoption(as, "lastchance", "yes");
++	passwd_len = strlen(passwd);
++	/* Set up state for no challenge, just check a response. */
++	auth_setstate(as, 0);
++	auth_setdata(as, "", 1);
++	auth_setdata(as, passwd, passwd_len + 1);
++	/* wipe password now, otherwise it'll be copied fork() in auth_call */
++	explicit_bzero(passwd, passwd_len);
++	/* Build path of the auth script and call it */
++	snprintf(path, sizeof(path), _PATH_AUTHPROG "%s", style);
++	auth_call(as, path, style, "-s", "response", "--", name,
++	    lc->lc_class, (void *)NULL);
++	authok = auth_getstate(as);
++	/*
++	 * If their password expired and it has not been
++	 * too long since then, give the user one last
++	 * chance to change their password
++	 */
++	if ((authok & AUTH_PWEXPIRED) && lastchance) {
++		authok = AUTH_OKAY;
++	} else
++		lastchance = 0;
++
++	if ((authok & AUTH_ALLOW) == 0) {
++		Debug("password verify failed\n");
++		auth_close(as);
++		login_close(lc);
++		return(VF_INVALID);
++	}
++	/* Run the approval script */
++	if (!auth_approval(as, lc, name, "dtlogin")) {
++		Debug("login not approved\n");
++		authok = auth_getstate(as);
++		auth_close(as);
++		login_close(lc);
++		if ((authok & AUTH_EXPIRED) && msg &&
++		    (*msg = strdup("Sorry -- your account has expired.")))
++			return(VF_MESSAGE);
++		return(VF_INVALID);
++	}
++	auth_close(as);
++	login_close(lc);
++	/* Check empty passwords (xenodm(1) allowNullPasswd default) */
++	if (passwd_len == 0) {
++		Debug("empty password not allowed\n");
++		return(VF_INVALID);
++	}
++
++	/*
++	 * Shell must be in /etc/shells
++	 */
++	for (;;) {
++		s = getusershell();
++		if (s == NULL) {
++			/* did not found the shell in /etc/shells
++			   -> failure */
++			Debug("shell not in /etc/shells\n");
++			endusershell();
++			return(VF_INVALID);
++		}
++		if (strcmp(s, p->pw_shell) == 0) {
++			/* found the shell in /etc/shells */
++			endusershell();
++			break;
++		}
++	}
++
++	if (lastchance) {
++		Debug("password expired\n");
++		return(VF_PASSWD_AGED);
++	}
++
++	Debug("verify succeeded\n");
++	return(VF_OK);
++}
++
++/***************************************************************************
++ *
++ *  End authentication routines (OpenBSD, bsd_auth)
++ *
++ ***************************************************************************/
++#endif /* __OpenBSD__ */
+ 
+ 
+ #ifdef generic

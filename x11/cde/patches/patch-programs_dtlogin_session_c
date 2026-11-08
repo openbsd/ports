@@ -1,0 +1,135 @@
+Use setusercontext(3) to set up the user session in dtlogin, like xenodm(1).
+
+Index: programs/dtlogin/session.c
+--- programs/dtlogin/session.c.orig
++++ programs/dtlogin/session.c
+@@ -103,6 +103,12 @@
+ #include <Dt/SvcPam.h>
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <login_cap.h>
++#include <paths.h>
++#include <util.h>
++#endif
++
+ int ApplyFontPathMods(struct display *d, Display *dpy); // fontpath.c
+ 
+ #ifdef SIA
+@@ -350,6 +356,62 @@ ErrorHandler( Display *dpy, XErrorEvent *event )
+ 
+     Display 		*dpy;
+ 
++#if defined(__OpenBSD__)
++static char	*consolePath = NULL;
++
++/*
++ * xenodm(1) SetConsolePath(): console device of the X server, for
++ * login_wscons.
++ */
++static void
++SetConsolePath(Display *dpy)
++{
++	Atom prop;
++	Atom actualtype;
++	int actualformat;
++	unsigned long nitems;
++	unsigned long bytes_after;
++	unsigned char *buf;
++
++	if (dpy == NULL)
++		return;
++
++	prop = XInternAtom(dpy, "Xorg_Console", True);
++	if (prop == None) {
++		LogError((unsigned char *)"no Xorg_Console atom\n");
++		return;
++	}
++	if (XGetWindowProperty(dpy, DefaultRootWindow(dpy), prop, 0,
++		TTY_NAME_MAX << 2,
++		False, AnyPropertyType, &actualtype, &actualformat,
++		&nitems, &bytes_after, &buf)) {
++		LogError((unsigned char *)"no Xorg_Console property\n");
++		return;
++	}
++	if (actualtype != XA_STRING) {
++		LogError((unsigned char *)"type %lx in Xorg_Console property!\n",
++		    actualtype);
++		XFree(buf);
++		return;
++	}
++	if (actualformat != 8) {
++		LogError((unsigned char *)"format %d in Xorg_Console property!\n",
++		    actualformat);
++		XFree(buf);
++		return;
++	}
++	if (strncmp((char *)buf, _PATH_DEV, strlen(_PATH_DEV)) != 0) {
++		LogError((unsigned char *)"bad Xorg_Console property: %s\n", buf);
++		XFree(buf);
++		return;
++	}
++	free(consolePath);
++	consolePath = strdup((char *)buf + strlen(_PATH_DEV));
++	Debug("consolePath: %s\n", consolePath ? consolePath : "(null)");
++	XFree(buf);
++}
++#endif
++
+ void
+ ManageSession( struct display *d )
+ {
+@@ -401,6 +463,10 @@ ManageSession( struct display *d )
+ 	 */
+ 
+ 	dpy = XOpenDisplay(d->name);
++#if defined(__OpenBSD__)
++	if (d->displayType.location == Local)
++	    SetConsolePath(dpy);
++#endif
+ 	for (i = ScreenCount(dpy) - 1; i >= 0; i--)
+ 	{
+ 	    Window	tmproot = RootWindow(dpy, i);
+@@ -1388,7 +1454,41 @@ StartClient( struct verify_info *verify, struct displa
+ #endif /* SUNAUTH */
+ 
+ 
+-#ifndef sun
++#if defined(__OpenBSD__)
++	/*
++	 * Set the user's credentials: uid, gid, groups,
++	 * environment variables, resource limits, and umask.
++	 */
++	{
++	    struct passwd *pwd;
++	    char **exp, *value;
++
++	    if (user == NULL || (pwd = getpwnam(user)) == NULL) {
++		LogError((unsigned char *)"getpwnam for \"%s\" failed: %s\n",
++		    user ? user : "(null)", strerror(errno));
++		exit(1);
++	    }
++	    if (setusercontext(NULL, pwd, pwd->pw_uid,
++		LOGIN_SETALL|LOGIN_SETXDGENV|
++		(consolePath && login_wscons(consolePath) ?
++		LOGIN_SETWSCONSGROUP : 0)) == -1) {
++		LogError((unsigned char *)"setusercontext for \"%s\" failed: %s\n",
++		    user, strerror(errno));
++		exit(1);
++	    }
++	    /*
++	     * setusercontext(3) will update the environment based on
++	     * the login class so update our idea about the environment
++	     * as well; do not override what is already set for the
++	     * session (e.g. LANG from the login screen language menu).
++	     */
++	    for (exp = exportList; exp && *exp; ++exp) {
++		value = getenv(*exp);
++		if (value && getEnv(verify->userEnviron, *exp) == NULL)
++		    verify->userEnviron = setEnv(verify->userEnviron, *exp, value);
++	    }
++	}
++#elif !defined(sun)
+ 
+ #  ifdef __AFS
+ 	if ( IsVerifyName(VN_AFS) ) {

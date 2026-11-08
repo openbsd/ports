@@ -1,4 +1,5 @@
 Use a subset of ${PORTPATH} to prevent reference to build dir in dtlogin.
+login_wscons is in libutil.
 
 Index: programs/dtlogin/Makefile.am
 --- programs/dtlogin/Makefile.am.orig
@@ -14,3 +15,11 @@ Index: programs/dtlogin/Makefile.am
  
  DEF_BM_PATH = $(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B%M.bm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B%M.pm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B%M.bm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B%M.pm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B%M.bm:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B%M.pm:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B%M.bm:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B%M.pm:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B
  DEF_PM_PATH = $(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B%M.pm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B%M.bm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B%M.pm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B%M.bm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B%M.pm:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B%M.bm:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B%M.pm:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B%M.bm:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B
+@@ -72,6 +72,7 @@ if OPENBSD
+ XBINDIR = /usr/X11R6/bin
+ AM_CFLAGS += -DHASDES -DHASXDMAUTH
+ dtlogin_SOURCES += xdmauth.c
++dtlogin_LDADD += -lutil
+ endif
+ 
+ if NETBSD

@@ -1,0 +1,75 @@
+Add bsd_auth(3) support.
+
+Index: programs/dtsession/SmLock.c
+--- programs/dtsession/SmLock.c.orig
++++ programs/dtsession/SmLock.c
+@@ -90,6 +90,14 @@
+ #include <Dt/SvcPam.h>
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <sys/types.h>
++#include <grp.h>
++#include <limits.h>
++#include <login_cap.h>
++#include <bsd_auth.h>
++#endif
++
+ #include "Sm.h"
+ #include "SmGlobals.h"
+ #include "SmUI.h"
+@@ -1625,6 +1633,54 @@ localAuthenticate(
+ 
+     return _DtSvcPamAuthenticate(service + 1, pwent->pw_name, NULL, passwd) ==
+ 	   PAM_SUCCESS;
++}
++#elif defined(__OpenBSD__)
++{
++    struct passwd *pwent;
++    struct group *grent;
++    char pw_name[LOGIN_NAME_MAX];
++    int ok;
++
++    if (!(name && name[0])) name = NULL;
++
++    if (!(pwent = name ? getpwnam(name) : getpwuid(uid)))
++    {
++      endpwent();
++      return False;
++    }
++    if (strlcpy(pw_name, pwent->pw_name, sizeof(pw_name)) >= sizeof(pw_name))
++    {
++      endpwent();
++      return False;
++    }
++    endpwent();
++
++    if (passwd == NULL)
++    {
++     /*
++      * check if it is possible to authenticate: setuid root or setgid auth
++      */
++      if (smGD.unLockUID == 0)
++        return True;
++      grent = getgrnam("auth");
++      ok = (grent != NULL && getegid() == grent->gr_gid);
++      endgrent();
++      return ok ? True : False;
++    }
++
++    if (smGD.secureSystem)
++    {
++      SM_SETEUID(smGD.unLockUID);
++    }
++
++    ok = auth_userokay(pw_name, NULL, "auth-dtsession", passwd);
++
++    if (smGD.secureSystem)
++    {
++      SM_SETEUID(smGD.runningUID);
++    }
++
++    return ok ? True : False;
+ }
+ #elif defined(SIA)
+ 
