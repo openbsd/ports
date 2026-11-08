@@ -772,6 +772,8 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Universal.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/W-SU.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/WET.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Zulu.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/zones.h
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/zones.tab
 lib/GNUstep/OCSTypeModels/
 lib/GNUstep/OCSTypeModels/appointment-oracle.ocs
 lib/GNUstep/OCSTypeModels/appointment.ocs

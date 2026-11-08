@@ -1,7 +1,7 @@
 Index: SoObjects/SOGo/SOGoSession.m
 --- SoObjects/SOGo/SOGoSession.m.orig
 +++ SoObjects/SOGo/SOGoSession.m
-@@ -70,7 +70,7 @@
+@@ -75,7 +75,7 @@
  	  // invoke an action method on SOGo.
  	  [folder writeRecordForEntryWithID: theSessionKey
  		  value: value

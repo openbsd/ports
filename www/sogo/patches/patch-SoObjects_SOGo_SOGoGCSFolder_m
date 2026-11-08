@@ -1,7 +1,7 @@
 Index: SoObjects/SOGo/SOGoGCSFolder.m
 --- SoObjects/SOGo/SOGoGCSFolder.m.orig
 +++ SoObjects/SOGo/SOGoGCSFolder.m
-@@ -976,9 +976,9 @@ static NSArray *childRecordFields = nil;
+@@ -980,9 +980,9 @@ static NSArray *childRecordFields = nil;
      {
        sogoUser = [SOGoUser userWithLogin: theIdentifier roles: nil];
        if (sogoUser)

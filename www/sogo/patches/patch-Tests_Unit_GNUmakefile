@@ -2,8 +2,8 @@ Do not hardcode libobjc library name, ask GNUstep what to use.
 Index: Tests/Unit/GNUmakefile
 --- Tests/Unit/GNUmakefile.orig
 +++ Tests/Unit/GNUmakefile
-@@ -46,8 +46,8 @@ $(TEST_TOOL)_CPPFLAGS += \
- 	-Wall -D_GNU_SOURCE -I../../SOPE/ -I../../SoObjects/ -I../../UI/ -I../../OpenChange
+@@ -48,8 +48,8 @@ $(TEST_TOOL)_CPPFLAGS += \
+ 	-Wall -D_GNU_SOURCE -I../../SOPE/ -I../../SoObjects/ -I../../UI/ -I../../OpenChange `xml2-config --cflags`
  
  ADDITIONAL_LIB_DIRS += \
 -	-L../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -L../../SOPE/NGCards/obj -L../../SOPE/GDLContentStore/obj -lSOGo -lNGMime -lNGCards -lGDLContentStore -lNGExtensions -lSBJson -lobjc \

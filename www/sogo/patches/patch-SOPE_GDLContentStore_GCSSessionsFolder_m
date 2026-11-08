@@ -1,0 +1,12 @@
+Index: SOPE/GDLContentStore/GCSSessionsFolder.m
+--- SOPE/GDLContentStore/GCSSessionsFolder.m.orig
++++ SOPE/GDLContentStore/GCSSessionsFolder.m
+@@ -204,7 +204,7 @@ static NSString *sessionsFolderURLString = nil;
+   NSArray *attrs;
+   NSDictionary *record;
+   EOEntity *entity;
+-  EOQualifier *qualifier;
++  EOSQLQualifier *qualifier;
+ 
+   record = nil;
+ 

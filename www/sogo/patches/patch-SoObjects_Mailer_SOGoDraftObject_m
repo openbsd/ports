@@ -1,7 +1,7 @@
 Index: SoObjects/Mailer/SOGoDraftObject.m
 --- SoObjects/Mailer/SOGoDraftObject.m.orig
 +++ SoObjects/Mailer/SOGoDraftObject.m
-@@ -1980,7 +1980,8 @@ static NSString    *userAgent      = nil;
+@@ -1981,7 +1981,8 @@ static NSString    *userAgent      = nil;
  //
  - (NSData *) mimeMessageForRecipient: (NSString *) theRecipient extractingImages: (BOOL)extractImage
  {
