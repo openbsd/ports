@@ -6,10 +6,11 @@ V =		1.4.3
 GH_ACCOUNT =	viewizard
 GH_PROJECT =	astromenace
 GH_TAGNAME =	v${V}
+REVISION =	0
 
 CATEGORIES =	games
 
-HOMEPAGE =	http://www.viewizard.com/
+HOMEPAGE =	https://viewizard.com/
 
 # code GPLv3+, data a mix of GPLv3+, CC BY-SA 3.0, SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
