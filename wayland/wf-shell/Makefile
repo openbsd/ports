@@ -1,7 +1,8 @@
-COMMENT =	GTK3-based panel for wayfire
+COMMENT =	GTK4-based panel for wayfire
 
-V =		0.10.0
-DISTNAME =	wf-shell-${V}
+GH_ACCOUNT =	WayfireWM
+GH_PROJECT =	wf-shell
+GH_TAGNAME =	v0.11.0
 
 CATEGORIES =	wayland
 
@@ -9,33 +10,36 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://github.com/WayfireWM/wf-shell/releases/download/v${V}/
-EXTRACT_SUFX =	.tar.xz
+DIST_TUPLE +=	github ${GH_ACCOUNT} wf-json 70039e13cdeaebd8ec498ed30bf5ab91c2e313ec subprojects/wf-json
 
 # C++
 COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/meson
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 BUILD_DEPENDS =	wayland/wayfire \
 		wayland/wayland-protocols
 
-RUN_DEPENDS =	x11/gtk+4,-guic
-
-LIB_DEPENDS =	x11/gtk3mm \
+LIB_DEPENDS =	x11/gtkmm40 \
 		x11/libdbusmenu \
 		devel/libinotify \
-		wayland/gtk-layer-shell \
+		devel/yyjson \
+		wayland/gtk4-layer-shell \
 		wayland/wf-config \
 		wayland/wayland
 
-WANTLIB += ${COMPILER_LIBCXX} atkmm-1.6 c cairo cairomm-1.0 dbusmenu-gtk3
-WANTLIB += gdk-3 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4
-WANTLIB += gobject-2.0 gtk-3 gtk-layer-shell gtkmm-3.0 m pangomm-1.4
-WANTLIB += sigc-2.0 wayland-client wf-config
-WANTLIB += lib/inotify/inotify
+WANTLIB += ${COMPILER_LIBCXX} c cairomm-1.16 dbusmenu-glib drm
+WANTLIB += gbm gio-2.0 giomm-2.68 glib-2.0 glibmm-2.68 gobject-2.0
+WANTLIB += gtk-4 gtk4-layer-shell gtkmm-4.0 m sigc-3.0 wayland-client
+WANTLIB += wf-config xkbregistry yyjson
 
-CONFIGURE_ARGS +=	-Dpulse=disabled
+CONFIGURE_ARGS +=	-Dvolume-widget=disabled # needs pulse
+CONFIGURE_ARGS +=	-Dwp-mixer-widget=disabled # needs wireplumber
+CONFIGURE_ARGS +=	-Dddcutil=disabled # needs ddcutil
 CONFIGURE_ARGS +=	-Dwayland-logout=false # needs struct ucred
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/wf-shell.ini.example ${PREFIX}/share/wf-shell/wf-shell.ini.example
 
 .include <bsd.port.mk>

@@ -1,18 +1,20 @@
 Index: src/panel/meson.build
 --- src/panel/meson.build.orig
 +++ src/panel/meson.build
-@@ -17,7 +17,7 @@ widget_sources = ['widgets/battery.cpp',
-                   'widgets/tray/item.cpp',
-                   'widgets/tray/host.cpp']
- 
--deps = [gtkmm, wayland_client, libutil, wf_protos, wfconfig, gtklayershell, dbusmenu_gtk]
-+deps = [gtkmm, wayland_client, libutil, libinotify, wf_protos, wfconfig, gtklayershell, dbusmenu_gtk]
- 
- if libpulse.found()
-   widget_sources += 'widgets/volume.cpp'
-@@ -26,4 +26,5 @@ endif
- 
- executable('wf-panel', ['panel.cpp'] + widget_sources,
-         dependencies: deps,
-+        install_rpath : '/usr/local/lib/inotify',
-         install: true)
+@@ -35,6 +35,7 @@ deps = [
+   gtklayershell,
+   wayland_client,
+   libutil,
++  libinotify,
+   wf_protos,
+   wfconfig,
+   dbusmenu_gtk,
+@@ -91,5 +92,6 @@ executable(
+   'wf-panel',
+   ['panel.cpp'] + widget_sources,
+   dependencies: deps,
++  install_rpath : '/usr/local/lib/inotify',
+   install: true,
+-)
+\ No newline at end of file
++)

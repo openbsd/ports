@@ -1,0 +1,12 @@
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -2,8 +2,6 @@ subdir('util')
+ subdir('panel')
+ subdir('background')
+ subdir('dock')
+-subdir('locker')
+-subdir('locker-pin')
+ subdir('stream-chooser')
+ 
+ pkgconfig = import('pkgconfig')

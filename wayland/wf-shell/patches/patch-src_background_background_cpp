@@ -1,38 +1,212 @@
+resurrect the cairo codepaths that worked with gtk+3, mesa has not wayland support and thus GtkGLArea wont work
+
+drop wordexp usage
 Index: src/background/background.cpp
 --- src/background/background.cpp.orig
 +++ src/background/background.cpp
-@@ -1,4 +1,3 @@
+@@ -1,5 +1,4 @@
+ #include <fcntl.h>
 -#include <wordexp.h>
  #include <glibmm/main.h>
- #include <gtkmm/drawingarea.h>
- #include <gtkmm/window.h>
-@@ -167,24 +166,9 @@ bool WayfireBackground::change_background()
+ #include <gtkmm.h>
+ #include <gdkmm.h>
+@@ -18,9 +17,139 @@
+ #include "background.hpp"
+ #include "background-gl.hpp"
  
- bool WayfireBackground::load_images_from_dir(std::string path)
++/* load pixbuf from path */
++void WayfireBackground::load_from_path(std::string path)
++{
++    Glib::RefPtr<Gdk::Pixbuf> pbuf;
++    Gdk::Rectangle r;
++    this->output->monitor->get_geometry(r);
++    int width  = r.get_width() * scale;
++    int height = r.get_height() * scale;
++
++    std::string background_fill_mode = WfOption<std::string>{"background/fill_mode"};
++    std::string fill_and_crop_string = "fill_and_crop";
++    std::string stretch_string = "stretch";
++
++    if (!stretch_string.compare(background_fill_mode))
++    {
++        try {
++            pbuf =
++                Gdk::Pixbuf::create_from_file(path, width, height,
++                    false);
++        } catch (...)
++        {
++            return;
++        }
++
++        offset_x    = offset_y = 0.0;
++        image_scale = 1.0;
++        drawing_area->show_image(pbuf, offset_x, offset_x, image_scale);
++    }
++
++    try {
++        pbuf =
++            Gdk::Pixbuf::create_from_file(path, width, height,
++                true);
++    } catch (...)
++    {
++        return;
++    }
++
++    if (!fill_and_crop_string.compare(background_fill_mode))
++    {
++        float screen_aspect_ratio = (float)width / height;
++        float image_aspect_ratio  = (float)pbuf->get_width() / pbuf->get_height();
++        bool should_fill_width    = (screen_aspect_ratio > image_aspect_ratio);
++        if (should_fill_width)
++        {
++            image_scale = (double)width / pbuf->get_width();
++            offset_y    = ((height / image_scale) - pbuf->get_height()) * 0.5;
++            offset_x    = 0;
++        } else
++        {
++            image_scale = (double)height / pbuf->get_height();
++            offset_x    = ((width / image_scale) - pbuf->get_width()) * 0.5;
++            offset_y    = 0;
++        }
++    } else
++    {
++        bool eq_width = (width == pbuf->get_width());
++        image_scale = 1.0;
++        offset_x    = eq_width ? 0 : (width - pbuf->get_width()) * 0.5;
++        offset_y    = eq_width ? (height - pbuf->get_height()) * 0.5 : 0;
++    }
++
++    drawing_area->show_image(pbuf, offset_x, offset_x, image_scale);
++}
++/* readd BackgroundDrawingArea funcs from Gtk+3 days */
++void BackgroundDrawingArea::show_image(Glib::RefPtr<Gdk::Pixbuf> pixbuf,
++        double offset_x, double offset_y, double image_scale)
++{
++    if (!pixbuf)
++    {
++        return;
++    }
++
++    from_image = to_image;
++    to_image.source = pixbuf;
++
++    to_image.x     = offset_x / this->get_scale_factor();
++    to_image.y     = offset_y / this->get_scale_factor();
++    to_image.scale = image_scale;
++
++    fade = {
++        fade_duration,
++        wf::animation::smoothing::linear
++    };
++
++    fade.animate(from_image.source ? 0.0 : 1.0, 1.0);
++
++    Glib::signal_idle().connect_once([=] ()
++    {
++        this->queue_draw();
++    });
++}
++
++void BackgroundDrawingArea::on_draw(const Cairo::RefPtr<Cairo::Context>& cr, int width, int height)
++{
++    if (!to_image.source)
++    {
++        return;
++    }
++
++    if (fade.running())
++    {
++        queue_draw();
++    }
++
++    cr->save();
++    cr->scale(to_image.scale, to_image.scale);
++    Gdk::Cairo::set_source_pixbuf(cr, to_image.source, to_image.x, to_image.y);
++    cr->paint_with_alpha(fade);
++    cr->restore();
++    if (!from_image.source)
++    {
++        return;
++    }
++
++    cr->save();
++    cr->scale(from_image.scale, from_image.scale);
++    Gdk::Cairo::set_source_pixbuf(cr, from_image.source, from_image.x, from_image.y);
++    cr->paint_with_alpha(1.0 - fade);
++    cr->restore();
++    return;
++}
++
++BackgroundDrawingArea::BackgroundDrawingArea()
++{
++    set_draw_func(sigc::mem_fun(*this, &BackgroundDrawingArea::on_draw));
++    fade.animate(0, 0);
++}
++
++
+ void WayfireBackground::setup_window()
+ {
+-    gl_area = Glib::RefPtr<BackgroundGLArea>(new BackgroundGLArea());
++    drawing_area = Glib::RefPtr<BackgroundDrawingArea>(new BackgroundDrawingArea());
+     set_decorated(false);
+ 
+     gtk_layer_init_for_window(gobj());
+@@ -35,7 +164,7 @@ void WayfireBackground::setup_window()
+ 
+     gtk_layer_set_exclusive_zone(gobj(), -1);
+ 
+-    set_child(*gl_area);
++    set_child(*drawing_area);
+     present();
+ }
+ 
+@@ -95,7 +224,7 @@ void WayfireBackgroundApp::handle_new_output(WayfireOu
+         new WayfireBackground(output));
+     if (!current_background.empty())
+     {
+-        backgrounds[output]->gl_area->show_image(current_background);
++        backgrounds[output]->load_from_path(current_background);
+     }
+ }
+ 
+@@ -111,35 +240,20 @@ std::string WayfireBackgroundApp::get_application_name
+ 
+ std::vector<std::string> WayfireBackgroundApp::get_background_list(std::string path)
  {
 -    wordexp_t exp;
--
+     LOGD("Looking for background images in ", path);
+ 
 -    /* Expand path */
 -    if (wordexp(path.c_str(), &exp, 0))
 -    {
--        return false;
+-        perror("Error getting list of images: wordexp");
+-        exit(0);
 -    }
 -
 -    if (!exp.we_wordc)
 -    {
--        wordfree(&exp);
--        return false;
+-        perror("Error getting list of images: !exp.we_wordc");
+-        exit(0);
 -    }
 -
+     std::vector<std::string> images;
+     struct stat s;
+     if (stat(path.c_str(), &s) == 0)
+     {
+         if (s.st_mode & S_IFREG || s.st_mode & S_IFLNK)
+         {
+-            wordfree(&exp);
+             images.push_back(path);
+             return images;
+         }
+     }
+ 
 -    auto dir = opendir(exp.we_wordv[0]);
 +    auto dir = opendir(path.c_str());
      if (!dir)
      {
--        wordfree(&exp);
-         return false;
-     }
- 
-@@ -198,7 +182,7 @@ bool WayfireBackground::load_images_from_dir(std::stri
+         perror("Error getting list of images: !dir");
+@@ -156,7 +270,7 @@ std::vector<std::string> WayfireBackgroundApp::get_bac
              continue;
          }
  
@@ -41,12 +215,20 @@ Index: src/background/background.cpp
  
          struct stat next;
          if (stat(fullpath.c_str(), &next) == 0)
-@@ -213,8 +197,6 @@ bool WayfireBackground::load_images_from_dir(std::stri
-             }
+@@ -173,7 +287,6 @@ std::vector<std::string> WayfireBackgroundApp::get_bac
          }
      }
--
--    wordfree(&exp);
  
-     if (background_randomize && images.size())
+-    wordfree(&exp);
+     closedir(dir);
+ 
+     bool background_randomize = WfOption<bool>{"background/randomize"};
+@@ -198,7 +311,7 @@ void WayfireBackgroundApp::change_background()
      {
+         for (auto & it : backgrounds)
+         {
+-            it.second->gl_area->show_image(list[idx]);
++            it.second->load_from_path(list[idx]);
+         }
+ 
+         current_background = list[idx];

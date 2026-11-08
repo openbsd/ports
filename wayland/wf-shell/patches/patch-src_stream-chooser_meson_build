@@ -1,0 +1,18 @@
+Index: src/stream-chooser/meson.build
+--- src/stream-chooser/meson.build.orig
++++ src/stream-chooser/meson.build
+@@ -4,6 +4,7 @@ deps = [
+   gtkmm,
+   wf_protos,
+   wfconfig,
++  libinotify,
+   libutil,
+   gtklayershell,
+ ]
+@@ -18,5 +19,6 @@ executable(
+     'mainlayout.cpp',
+   ],
+   dependencies: deps,
++  install_rpath : '/usr/local/lib/inotify',
+   install: true,
+ )

@@ -1,6 +1,7 @@
 @bin bin/wf-background
 @bin bin/wf-dock
 @bin bin/wf-panel
+@bin bin/wf-stream-chooser
 lib/pkgconfig/wf-shell.pc
 share/icons/hicolor/128x128/apps/wayfire.png
 share/icons/hicolor/160x160/
@@ -14,15 +15,37 @@ share/icons/hicolor/64x64/apps/wayfire.png
 share/icons/hicolor/72x72/apps/wayfire.png
 share/icons/hicolor/96x96/apps/wayfire.png
 share/icons/hicolor/scalable/apps/wayfire.svg
-share/wayfire/
-share/wayfire/css/
-share/wayfire/css/default.css
-share/wayfire/icons/
-share/wayfire/icons/wayfire.png
-share/wayfire/metadata/
-share/wayfire/metadata/wf-shell/
-share/wayfire/metadata/wf-shell/background.xml
-share/wayfire/metadata/wf-shell/dock.xml
-share/wayfire/metadata/wf-shell/panel.xml
-share/wayfire/wallpaper.jpg
+share/wf-shell/
+share/wf-shell/backgrounds/
+share/wf-shell/backgrounds/calm-blue.png
+share/wf-shell/backgrounds/circuits.png
+share/wf-shell/backgrounds/secret-chest.png
+share/wf-shell/backgrounds/simple-2.png
+share/wf-shell/backgrounds/simple.png
+share/wf-shell/backgrounds/snow.png
+share/wf-shell/backgrounds/wallpaper.jpg
+share/wf-shell/css/
+share/wf-shell/css/default.css
+share/wf-shell/css/panel-battery-zoom-hover.css
+share/wf-shell/css/panel-launchers-zoom-hover.css
+share/wf-shell/css/panel-menu-button-small.css
+share/wf-shell/css/panel-menu-zoom-hover.css
+share/wf-shell/css/panel-network-zoom-hover.css
+share/wf-shell/css/panel-selectors.css
+share/wf-shell/css/panel-tray-zoom-hover.css
+share/wf-shell/css/panel-volume-zoom-hover.css
+share/wf-shell/css/panel-window-list-zoom-hover.css
+share/wf-shell/css/user-font.css
+share/wf-shell/icons/
+share/wf-shell/icons/wayfire.png
+share/wf-shell/metadata/
+share/wf-shell/metadata/background.xml
+share/wf-shell/metadata/dock.xml
+share/wf-shell/metadata/locker.xml
+share/wf-shell/metadata/panel.xml
+share/wf-shell/wf-shell.ini.example
+share/wf-shell/xdg-desktop-portal-wlr/
+@sample ${SYSCONFDIR}/xdg/xdg-desktop-portal-wlr/
+share/wf-shell/xdg-desktop-portal-wlr/wayfire
+@sample ${SYSCONFDIR}/xdg/xdg-desktop-portal-wlr/wayfire
 @tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,0 +1,56 @@
+Index: src/background/background.hpp
+--- src/background/background.hpp.orig
++++ src/background/background.hpp
+@@ -10,18 +10,51 @@
+ #include "background-gl.hpp"
+ #include "sigc++/connection.h"
+ 
++class BackgroundImageCairo
++{
++  public:
++    double scale;
++    double x, y;
++    Glib::RefPtr<const Gdk::Pixbuf> source; // Cairo::RefPtr<Cairo::Surface> source;
++};
+ 
++class BackgroundDrawingArea : public Gtk::DrawingArea
++{
++    wf::animation::simple_animation_t fade;
++    WfOption<int> fade_duration{"background/fade_duration"};
++
++    /* These two pixbufs are used for fading one background
++     * image to the next when changing backgrounds or when
++     * automatically cycling through a directory of images.
++     * pbuf is the current image to which we are fading and
++     * pbuf2 is the image from which we are fading. x and y
++     * are used as offsets when preserve aspect is set. */
++    BackgroundImageCairo to_image, from_image;
++
++  public:
++    BackgroundDrawingArea();
++    void show_image(Glib::RefPtr<Gdk::Pixbuf> image,
++        double offset_x, double offset_y, double image_scale);
++
++  protected:
++    void on_draw(const Cairo::RefPtr<Cairo::Context>& cr, int width, int height);
++};
++
+ class WayfireBackground : public Gtk::Window
+ {
+   private:
++    int scale = 1;
++    double offset_x, offset_y;
++    double image_scale = 1.0;
+     void setup_window();
+     WayfireOutput *output;
+ 
+   public:
+     WayfireBackground(WayfireOutput *output);
++    void load_from_path(std::string path);
+ 
+     ~WayfireBackground();
+-    Glib::RefPtr<BackgroundGLArea> gl_area;
++    Glib::RefPtr<BackgroundDrawingArea> drawing_area;
+ };
+ 
+ class WayfireBackgroundApp : public WayfireShellApp
