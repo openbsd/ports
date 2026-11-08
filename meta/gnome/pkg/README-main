@@ -6,7 +6,7 @@
 
 The GNOME desktop is composed of 2 meta-packages:
     * gnome, for a standard GNOME installation
-    * gnome-extras, for a full GNOME installation
+    * gnome-extras, optional utilities that have other alternatives
 
 The "gnome" package is focused on generic usage to give the user the
 choice to install his favorite applications for daily usage (i.e. PIM,
@@ -18,7 +18,7 @@ Running GNOME
 
 DBus
 ----
-GNOME needs a system-wide D-Bus daemon to be running:
+GNOME needs a system-wide D-Bus daemon to be running before anything else:
     # rcctl enable messagebus
     # rcctl order messagebus
 
@@ -58,11 +58,7 @@ microphone source produces silence or a webcam source shows a black or blue
 frame, enable recording with:
     # sysctl kern.audio.record=1
     # sysctl kern.video.record=1
-To persist across reboots, add both lines to /etc/sysctl.conf.
-
-The video(4) device also needs to be accessible by the user:
-    # chown $USER /dev/video0
-To persist across reboots, add the line to /etc/rc.local.
+To persist across reboots, add both variables to /etc/sysctl.conf.
 
 See https://www.openbsd.org/faq/faq13.html for details.
 

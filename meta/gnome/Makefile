@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		10
+REVISION-main=		11
 REVISION-extras=	1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
