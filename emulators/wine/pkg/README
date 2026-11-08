@@ -23,8 +23,6 @@ above).
 Many games need higher than default datasize (and potentially other)
 limits, see ksh(1) for ulimit.
 
-In case of audio issues, make sure to consult the pulseaudio(1) man page.
-
 Many games expect that the executable is run from its directory and not
 a different location. So for path/to/program.exe, make sure to:
 

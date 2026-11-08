@@ -6,7 +6,7 @@ USE_WXNEEDED =		Yes
 COMMENT =		compatibility layer to run Windows applications
 
 DISTNAME =		wine-11.20
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		emulators
 
