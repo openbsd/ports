@@ -9,14 +9,12 @@ ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 mips64 powerpc powerpc64 \
 
 DPB_PROPERTIES = parallel
 
-USE_NOEXECONLY = Yes
-
 # local modifications to gcc to behave more like base-clang include:
 # - default to gnu17 (instead of gnu23)
 # - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
 #   into simple warnings.
 V = 16.2.0
-REVISION = 12
+REVISION = 13
 GCC_PKGSPEC = >=16,<17
 
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.2.0-0.tar.xz
