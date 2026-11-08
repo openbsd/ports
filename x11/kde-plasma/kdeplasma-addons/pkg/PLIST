@@ -74,7 +74,6 @@ lib/qt6/plugins/plasma/weather_ions/
 @so lib/qt6/plugins/plasma/weather_ions/dwd.so
 @so lib/qt6/plugins/plasma/weather_ions/envcan.so
 @so lib/qt6/plugins/plasma/weather_ions/noaa.so
-@so lib/qt6/plugins/plasma/weather_ions/wettercom.so
 lib/qt6/plugins/plasmacalendarplugins/
 lib/qt6/plugins/plasmacalendarplugins/alternatecalendar/
 @so lib/qt6/plugins/plasmacalendarplugins/alternatecalendar.so

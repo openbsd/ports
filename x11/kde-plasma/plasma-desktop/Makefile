@@ -42,7 +42,8 @@ RUN_DEPENDS =	devel/kf6/kirigami \
 		inputmethods/scim \
 		x11/dbus,-suid
 
-LIB_DEPENDS =	devel/kf6/attica \
+LIB_DEPENDS =	devel/gettext,-runtime \
+		devel/kf6/attica \
 		devel/kf6/baloo \
 		devel/kf6/kbookmarks \
 		devel/kf6/kcmutils \
