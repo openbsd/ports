@@ -2,6 +2,7 @@ COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 
 V=		7.8
+REVISION=	0
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 DPB_PROPERTIES=	parallel
@@ -21,7 +22,7 @@ HOMEPAGE=	https://www.squid-cache.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-main=	${COMPILER_LIBCXX} \
-		c crypto execinfo m nettle ssl tdb
+		c crypto execinfo m ssl tdb
 
 SITES=		https://github.com/squid-cache/squid/releases/download/SQUID_${V:S/./_/g}/
 
@@ -40,8 +41,7 @@ EXTERNAL_ACL=	SQL_session file_userip time_quota \
 		unix_group
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		databases/tdb \
-		security/nettle
+		databases/tdb
 
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
@@ -71,6 +71,7 @@ CONFIGURE_ARGS=	--datadir="${PREFIX}/share/squid" \
 		--enable-translation \
 		--with-openssl \
 		--without-gnutls \
+		--without-nettle \
 		--with-default-user="_squid" \
 		--with-filedescriptors=8192 \
 		--with-pidfile="/var/run/squid.pid" \
@@ -125,7 +126,7 @@ EXTERNAL_ACL+=	LDAP_group eDirectory_userip
 .endif
 LIB_DEPENDS-ldap=   databases/openldap
 WANTLIB-ldap=	${COMPILER_LIBCXX} c crypto execinfo lber ldap \
-		m nettle sasl2 ssl
+		m sasl2 ssl
 
 post-install:
 	rmdir ${WRKINST}/var/squid{/run/squid,/run,/logs,/cache,}
