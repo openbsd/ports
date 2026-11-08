@@ -9,8 +9,13 @@ daemon_logger="daemon.info"
 rc_reload=NO
 rc_bg=YES
 
+rc_configtest() {
+	${daemon} test-config
+}
+
 rc_pre() {
 	install -d ${LOCALSTATEDIR}/run/reaction
+	rm -f ${LOCALSTATEDIR}/run/reaction/*
 }
 
 rc_cmd $1
