@@ -4,6 +4,7 @@ GH_ACCOUNT =		ggml-org
 GH_PROJECT =		llama.cpp
 GH_TAGNAME =		v0.8.0
 BUILD_NUMBER =		11960
+REVISION =		0
 
 SHARED_LIBS +=		llama 17.0
 SHARED_LIBS +=		llama-common 18.0
