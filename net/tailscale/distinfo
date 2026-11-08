@@ -3074,7 +3074,7 @@ SHA256 (go_modules/tailscale.com/@v/v1.102.3.mod) = qD6DCntN/6gKbCR4tEdYaV0BwKPj
 SHA256 (go_modules/tailscale.com/@v/v1.103.0-pre.0.20260924185624-d229a06f9a4b.mod) = wX5xNs/CUqFWWFcUEaqX2MtbDWECBl33HRMUlZQpqoI=
 SHA256 (go_modules/tailscale.com/client/tailscale/v2/@v/v2.10.1.mod) = 51wk0RAzCJHq6dnTk+H/QB5QJ8AlXBO6Q/aEb4i7w9A=
 SHA256 (go_modules/tailscale.com/client/tailscale/v2/@v/v2.10.1.zip) = t3uWWqzld2yToLInwM0fowvuv4r+QHOBPRzWO4tfz/k=
-SHA256 (tailscale.com-v1.104.4.zip) = ddtu9DJD76YSUOPL1q0aLJi5TzgfrAE7u/0OqJSZIck=
+SHA256 (tailscale.com-v1.104.5.zip) = id8zUjqrjtqLu2z67rpdFSw4y9M7u3Nf8GPExBHcYks=
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.4.0.mod) = 199
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.4.0.zip) = 7266
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.2.2.mod) = 167
@@ -6151,4 +6151,4 @@ SIZE (go_modules/tailscale.com/@v/v1.102.3.mod) = 26754
 SIZE (go_modules/tailscale.com/@v/v1.103.0-pre.0.20260924185624-d229a06f9a4b.mod) = 28220
 SIZE (go_modules/tailscale.com/client/tailscale/v2/@v/v2.10.1.mod) = 342
 SIZE (go_modules/tailscale.com/client/tailscale/v2/@v/v2.10.1.zip) = 59358
-SIZE (tailscale.com-v1.104.4.zip) = 7531756
+SIZE (tailscale.com-v1.104.5.zip) = 7555044
