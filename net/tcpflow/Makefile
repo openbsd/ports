@@ -1,11 +1,10 @@
 COMMENT=		tool for capturing data from TCP connections
 
-V=			1.6.1
+V=			1.7.0
 DISTNAME=		tcpflow-${V}
 CATEGORIES=		net
-REVISION=		2
 
-SITES=			https://github.com/simsong/tcpflow/releases/download/tcpflow-${V}/
+SITES=			https://github.com/simsong/tcpflow/releases/download/v${V}/
 
 HOMEPAGE=		https://github.com/simsong/tcpflow
 
@@ -21,14 +20,11 @@ COMPILER=		base-clang ports-gcc
 BUILD_DEPENDS=		devel/boost
 LIB_DEPENDS=		databases/sqlite3
 
-CONFIGURE_STYLE=	autoreconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-cairo=false \
 			--without-o3
 # Forcefully disable detection of unwanted optional deps
 CONFIGURE_ENV=		ac_cv_header_tre_tre_h=no \
 			ac_cv_lib_tre_tre_regcomp=no
-
-AUTOCONF_VERSION=	2.71
-AUTOMAKE_VERSION=	1.16
 
 .include <bsd.port.mk>
