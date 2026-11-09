@@ -6,6 +6,7 @@ GH_PROJECT=	lxml
 GH_TAGNAME=	lxml-${MODPY_DISTV}
 DISTNAME=	lxml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc devel
 
@@ -14,7 +15,7 @@ HOMEPAGE=	https://lxml.de/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-COMPILER=	base-clang ports-clang
+COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
 WANTLIB=	exslt m pthread xml2 xslt z
