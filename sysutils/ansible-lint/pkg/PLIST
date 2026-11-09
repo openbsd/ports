@@ -118,6 +118,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}depre
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}deprecated_module.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}empty_string_compare.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}empty_string_compare.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}event_query.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}event_query.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}fqcn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}fqcn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}galaxy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -130,6 +132,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}inlin
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}inline_env_var.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}jinja.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}jinja.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}jinja_template_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}jinja_template_extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}key_order.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}key_order.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}latest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -180,6 +184,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}risky
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}risky_octal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}risky_shell_pipe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}risky_shell_pipe.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}role_argument_spec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}role_argument_spec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}role_name.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}role_name.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}run_once.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -218,6 +224,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/deprecated_module.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/deprecated_module.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/empty_string_compare.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/empty_string_compare.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/event_query.md
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/event_query.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/fqcn.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/fqcn.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/galaxy.md
@@ -230,6 +238,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/inline_env_var.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/inline_env_var.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/jinja.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/jinja.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/jinja_template_extension.md
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/jinja_template_extension.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/key_order.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/key_order.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/latest.md
@@ -280,6 +290,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/risky_octal.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/risky_octal.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/risky_shell_pipe.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/risky_shell_pipe.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/role_argument_spec.md
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/role_argument_spec.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/role_name.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/role_name.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/run_once.md
