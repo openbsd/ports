@@ -1,11 +1,11 @@
 COMMENT=	extensions for python-markdown
 
-MODPY_DISTV =	12.3
+MODPY_DISTV=	13.0
 DISTNAME=	pymdown_extensions-${MODPY_DISTV}
 PKGNAME=	py-mdown-extensions-${MODPY_DISTV}
 
 CATEGORIES=	textproc
-HOMEPAGE =	https://facelessuser.github.io/pymdown-extensions/
+HOMEPAGE=	https://facelessuser.github.io/pymdown-extensions/
 
 # MIT
 PERMIT_PACKAGE=	Yes
