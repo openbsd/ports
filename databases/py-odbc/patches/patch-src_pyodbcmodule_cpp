@@ -3,21 +3,21 @@ unixodbc vs iodbc
 Index: src/pyodbcmodule.cpp
 --- src/pyodbcmodule.cpp.orig
 +++ src/pyodbcmodule.cpp
-@@ -329,7 +329,13 @@ static bool AllocateEnv()
-     if (PyObject_TypeCheck(odbcversion, &PyUnicode_Type)) {
-         if (PyUnicode_CompareWithASCIIString(odbcversion, "3.8") == 0)
-         {
-+#if 0
-             defaultVersion = (SQLPOINTER)SQL_OV_ODBC3_80;
-+#else
-+            Py_DECREF(odbcversion);
-+            PyErr_SetString(PyExc_RuntimeError, "using iODBC - odbcversion cannot be set to 3.8.");
-+            return false;
-+#endif
-         }
-     }
-     Py_DECREF(odbcversion);
-@@ -1184,7 +1190,9 @@ static const ConstantDef aConstants[] = {
+@@ -343,8 +343,11 @@ static bool AllocateEnv()
+     PyObject* odbcversion = PyObject_GetAttrString(pModule, "odbcversion");
+     if (!odbcversion)
+         PyErr_Clear();
+-    else if (PyUnicode_Check(odbcversion) && PyUnicode_CompareWithASCIIString(odbcversion, "3.8") == 0)
+-        defaultVersion = (SQLPOINTER)SQL_OV_ODBC3_80;
++    else if (PyUnicode_Check(odbcversion) && PyUnicode_CompareWithASCIIString(odbcversion, "3.8") == 0) {
++        Py_DECREF(odbcversion);
++        PyErr_SetString(PyExc_RuntimeError, "using iODBC - odbcversion cannot be set to 3.8.");
++        return false;
++    }
+     Py_XDECREF(odbcversion);
+ 
+     if (!SQL_SUCCEEDED(SQLSetEnvAttr(henv, SQL_ATTR_ODBC_VERSION, defaultVersion, sizeof(int))))
+@@ -1208,7 +1211,9 @@ static const ConstantDef aConstants[] = {
      MAKECONST(SQL_CONVERT_DECIMAL),
      MAKECONST(SQL_CONVERT_DOUBLE),
      MAKECONST(SQL_CONVERT_FLOAT),
