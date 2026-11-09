@@ -11,4 +11,6 @@ lib/python${MODPY_VERSION}/site-packages/jsonpointer-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/jsonpointer-${MODPY_DISTV}.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/jsonpointer-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/jsonpointer-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/jsonpointer-stubs/
+lib/python${MODPY_VERSION}/site-packages/jsonpointer-stubs/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/jsonpointer.py

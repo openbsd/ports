@@ -1,6 +1,6 @@
 COMMENT=	library to resolve JSON Pointers according to RFC 6901
 
-MODPY_DISTV=	3.7
+MODPY_DISTV=	3.10
 DISTNAME=	jsonpointer-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -12,9 +12,9 @@ HOMEPAGE=	https://github.com/stefankoegl/python-json-pointer
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-MODPY_PYTEST_ARGS=	tests.py
+MODPY_PI=	Yes
+
+MODPY_PYTEST_ARGS= tests.py
 
 .include <bsd.port.mk>
