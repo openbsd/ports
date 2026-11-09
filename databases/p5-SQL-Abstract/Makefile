@@ -2,7 +2,8 @@ COMMENT =	generate SQL from Perl data structures
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	SQL-Abstract-2.000001
+DISTNAME =	SQL-Abstract-2.000003
+CPAN_AUTHOR =	GETTY
 CATEGORIES =	databases
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -16,7 +17,8 @@ RUN_DEPENDS =	devel/p5-Hash-Merge>=0.12 \
 		devel/p5-Sub-Quote>=2.000001 \
 		devel/p5-Test-Deep>=0.101
 
-TEST_DEPENDS =	devel/p5-Test-Exception>=0.31 \
+TEST_DEPENDS =	devel/p5-Data-Dumper-Concise \
+		devel/p5-Test-Exception>=0.31 \
 		devel/p5-Test-Warn
 
 # Optional depends to avoid skipping tests
