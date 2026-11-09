@@ -82,6 +82,10 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/OF
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/OFBVarTxt192.rsp
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/OFBVarTxt256.rsp
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/README.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/XTSGenAES128.rsp
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/XTSGenAES128_seqno.rsp
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/XTSGenAES256.rsp
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/XTSGenAES256_seqno.rsp
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/gcmDecrypt128.rsp
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/gcmEncryptExtIV128.rsp
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/test-vector-1-nonce104.txt
@@ -129,10 +133,12 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wychep
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aead_aes_siv_cmac_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_ccm_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_eax_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_gcm_siv_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_gcm_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_kwp_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_siv_cmac_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_wrap_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_xts_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/chacha20_counter_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/chacha20_poly1305_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/rsa_oaep_2048_sha1_mgf1sha1_test.json
