@@ -1,28 +1,29 @@
 COMMENT =		color management library
 
-DISTNAME =		lcms2-2.18pl20260420
-COMMIT =		f8425ad6ab6fc4c7c8a52187a700a8b38d92e012
-DIST_TUPLE =		github mm2 Little-CMS ${COMMIT} .
+V =			2.20
+DISTNAME =		lcms2-${V}
 CATEGORIES =		graphics
 
-SHARED_LIBS +=  lcms2                3.0      # 2.19
+SHARED_LIBS +=  	lcms2	3.1	# 2.20
 
 HOMEPAGE =		https://www.littlecms.com/
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  ${COMPILER_LIBCXX} Lerc c jpeg lzma m pthread tiff z zstd
+WANTLIB += c jpeg m pthread tiff z
 
-COMPILER =	base-clang ports-gcc base-gcc
+SITES =	https://github.com/mm2/Little-CMS/releases/download/lcms${V}/
 
-LIB_DEPENDS =	graphics/tiff
+COMPILER =		base-clang ports-gcc
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+COMPILER_LANGS =	c
 
-WRKDIST =		${WRKDIR}/Little-CMS-${COMMIT}
+MODULES =		devel/cmake
+
+LIB_DEPENDS =		\
+			graphics/jpeg \
+			graphics/tiff
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

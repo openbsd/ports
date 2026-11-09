@@ -1,12 +1,17 @@
 @bin bin/jpgicc
 @bin bin/linkicc
 @bin bin/psicc
+@bin bin/tifdiff
 @bin bin/tificc
 @bin bin/transicc
 include/lcms2.h
 include/lcms2_plugin.h
+lib/cmake/lcms2/
+lib/cmake/lcms2/lcms2-config-version.cmake
+lib/cmake/lcms2/lcms2-config.cmake
+lib/cmake/lcms2/lcms2-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/lcms2/lcms2-targets.cmake
 @static-lib lib/liblcms2.a
-lib/liblcms2.la
 @lib lib/liblcms2.so.${LIBlcms2_VERSION}
 lib/pkgconfig/lcms2.pc
 @man man/man1/jpgicc.1
