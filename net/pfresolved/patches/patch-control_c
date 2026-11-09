@@ -1,20 +1,21 @@
 Index: control.c
 --- control.c.orig
 +++ control.c
-@@ -177,7 +177,11 @@ control_accept(int listenfd, short event, void *arg)
+@@ -177,7 +177,12 @@ control_accept(int listenfd, short event, void *arg)
  		return;
  	}
  
 -	imsg_init(&c->iev.ibuf, connfd);
 +	if (imsgbuf_init(&c->iev.ibuf, connfd) == -1) {
 +		log_warn("%s: imsgbuf_init", __func__);
++		free(c);
 +		close(connfd);
 +		return;
 +	}
  	c->iev.handler = control_dispatch_imsg;
  	c->iev.events = EV_READ;
  	c->iev.data = cs;
-@@ -217,7 +221,7 @@ control_close(int fd, struct control_sock *cs)
+@@ -217,7 +222,7 @@ control_close(int fd, struct control_sock *cs)
  		return;
  	}
  
@@ -23,7 +24,7 @@ Index: control.c
  	TAILQ_REMOVE(&ctl_conns, c, entry);
  
  	event_del(&c->iev.ev);
-@@ -247,21 +251,20 @@ control_dispatch_imsg(int fd, short event, void *arg)
+@@ -247,21 +252,20 @@ control_dispatch_imsg(int fd, short event, void *arg)
  	}
  
  	if (event & EV_READ) {
