@@ -2,7 +2,7 @@ COMMENT =		Cooklang CLI tool
 
 GH_ACCOUNT =		Zheoni
 GH_PROJECT =		cooklang-chef
-GH_TAGNAME =		v0.10.3
+GH_TAGNAME =		v0.11.0
 CATEGORIES =		textproc
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
