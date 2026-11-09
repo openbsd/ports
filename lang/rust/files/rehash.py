@@ -7,7 +7,7 @@ RE_splitlib = re.compile(r'lib(.+)-([0-9a-fA-F]+)\.(so|rlib|rmeta)')
 
 oldhashes = {}    # list of old hashes already assigned to new value
 newhashes = {}    # list of libname associated to a (list of) new hashes
-
+bash_hash = "?"
 
 # split a filename in components ("libNAME-HASH.ext")
 def splitlib(filename):
@@ -17,38 +17,21 @@ def splitlib(filename):
     return m[1], m[2]
 
 
-# register newhash inside newhashes
-def register_newhashes(base_hash, args):
-    i = 0
-    for libname in args:
-        newhash = "{:s}{:02x}".format(base_hash, i)
-        i = i + 1
-
-        # add newhash in the list associated to libname
-        newhashes.setdefault(libname, []).append(newhash)
-
+# global counter to keep track of newhash allocated
+newhash_counter = 0
 
 def getnewhash(libname, oldhash):
-    # check if oldhash is already assigned
-    if oldhash in oldhashes:
-        return oldhashes[oldhash]
+    global newhash_counter
 
-    try:
-        # get the new hash (and remove it from the list)
-        newhash = newhashes[libname].pop()
+    if oldhash not in oldhashes:
+        # get the new hash
+        newhash = "{:s}{:03x}".format(base_hash, newhash_counter)
+        newhash_counter += 1
 
         # add it in assigned oldhashes
         oldhashes[oldhash] = newhash
 
-        return newhash
-    except KeyError:
-        raise Exception("unknown libname in newhashes: {:s}".format(
-            libname,
-        ))
-    except IndexError:
-        raise Exception("not enough newhashes for libname: {:s}".format(
-            libname,
-        ))
+    return oldhashes[oldhash]
 
 
 # generic function to walk library directory
@@ -130,15 +113,11 @@ if __name__ == '__main__':
     from sys import argv
 
     if len(argv) < 2:
-        print("usage: rehash.py triple name=hash [...]")
+        print("usage: rehash.py triple hash-prefix")
         sys.exit(1)
 
     triple_arch = argv[1]
     base_hash = argv[2]
-    liblist = argv[3:]
-
-    liblist.sort()
-    register_newhashes(base_hash, liblist)
 
     # list of directories containing files to rehash
     dirlist = [

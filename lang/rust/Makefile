@@ -11,6 +11,7 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
+COMMENT-dev =		Rust dev component
 
 V =			1.99.1
 DISTNAME =		rustc-${V}-src
@@ -36,8 +37,9 @@ PKGNAME-clippy =	rust-clippy-${V}
 PKGNAME-rustfmt =	rust-rustfmt-${V}
 PKGNAME-bootstrap =	rust-bootstrap-${V}
 PKGNAME-src =		rust-src-${V}
+PKGNAME-dev =		rust-dev-${V}
 
-MULTI_PACKAGES =	-main -gdb -clippy -rustfmt -bootstrap -src
+MULTI_PACKAGES =	-main -gdb -clippy -rustfmt -bootstrap -src -dev
 
 CATEGORIES =		lang
 
@@ -100,37 +102,8 @@ LLVMCXXFLAGS =		${LLVMCXXFLAGS-${MACHINE_ARCH}}
 SUBST_VARS +=		TRIPLE_ARCH \
 			V
 
-# list of libraries with a hash in plist
-LIBRUST_REHASH +=	addr2line
-LIBRUST_REHASH +=	adler2
-LIBRUST_REHASH +=	alloc
-LIBRUST_REHASH +=	cfg_if
-LIBRUST_REHASH +=	compiler_builtins
-LIBRUST_REHASH +=	core
-LIBRUST_REHASH +=	getopts
-LIBRUST_REHASH +=	gimli
-LIBRUST_REHASH +=	hashbrown
-LIBRUST_REHASH +=	libc
-LIBRUST_REHASH +=	memchr
-LIBRUST_REHASH +=	miniz_oxide
-LIBRUST_REHASH +=	object
-LIBRUST_REHASH +=	panic_abort
-LIBRUST_REHASH +=	panic_unwind
-LIBRUST_REHASH +=	proc_macro
-LIBRUST_REHASH +=	rustc_demangle
-LIBRUST_REHASH +=	rustc_driver
-LIBRUST_REHASH +=	rustc_literal_escaper
-LIBRUST_REHASH +=	rustc_std_workspace_alloc
-LIBRUST_REHASH +=	rustc_std_workspace_core
-LIBRUST_REHASH +=	rustc_std_workspace_std
-LIBRUST_REHASH +=	std
-LIBRUST_REHASH +=	std_detect
-LIBRUST_REHASH +=	sysroot
-LIBRUST_REHASH +=	test
-LIBRUST_REHASH +=	unwind
-
 # generate a stable hash and pass it to build environment
-LIBRUST_HASH !=	echo '${PKGNAME}:${REVISION}:${TRIPLE_ARCH}' | sha1 | cut -c1-14
+LIBRUST_HASH !=	echo '${PKGNAME}:${REVISION}:${TRIPLE_ARCH}' | sha1 | cut -c1-13
 SUBST_VARS +=	LIBRUST_HASH
 
 # on arches where the base compiler is clang: base-clang or ports-clang should be fine,
@@ -236,7 +209,7 @@ do-configure:
 	echo 'gdb = "${LOCALBASE}/bin/egdb"' >>${WRKBUILD}/config.toml
 	echo 'vendor = true' >>${WRKBUILD}/config.toml
 	echo 'extended = true' >>${WRKBUILD}/config.toml
-	echo 'tools = ["cargo", "clippy", "rustdoc", "rustfmt"]' >>${WRKBUILD}/config.toml
+	echo 'tools = ["cargo", "clippy", "rustdoc", "rustfmt", "rustc-dev"]' >>${WRKBUILD}/config.toml
 	echo 'docs = false' >>${WRKBUILD}/config.toml
 	echo 'verbose = 2' >>${WRKBUILD}/config.toml
 	echo 'host = ["${TRIPLE_ARCH}"]' >>${WRKBUILD}/config.toml
@@ -291,7 +264,8 @@ COMPONENTS =	rustc-${V}-${TRIPLE_ARCH} \
 		cargo-${V}-${TRIPLE_ARCH} \
 		clippy-${V}-${TRIPLE_ARCH} \
 		rustfmt-${V}-${TRIPLE_ARCH} \
-		rust-src-${V}
+		rustc-dev-${V}-${TRIPLE_ARCH} \
+		rust-src-${V} \
 
 do-install:
 	rm -rf ${WRKBUILD}/_extractdist
@@ -344,6 +318,19 @@ do-install:
 
 do-test:
 	${TEST_BIN} test --jobs=${MAKE_JOBS} --no-fail-fast
+
+_regenerate-plist: fake
+.for _c in ${COMPONENTS}
+	tar ztf ${WRKBUILD}/build/dist/${_c}.tar.gz \
+	| sed  -ne 's,^[^/]*/[^/]*/,,p' \
+	| sed -e '/${PATCHORIG}$$/d' \
+	      -e '/^lib\\/rustlib\\/$$/d' \
+	| sort
+.endfor
+
+regenerate-plist:
+	make _regenerate-plist COMPONENTS=rust-src-${V} >pkg/PLIST-src
+	make _regenerate-plist COMPONENTS=rustc-dev-${V}-${TRIPLE_ARCH} >pkg/PLIST-dev
 
 bootstrap: fake
 	tarlz --solid -z \
