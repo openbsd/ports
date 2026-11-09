@@ -1,5 +1,7 @@
 include/dvdread/
+include/dvdread/attributes.h
 include/dvdread/bitreader.h
+include/dvdread/dvd_filesystem.h
 include/dvdread/dvd_reader.h
 include/dvdread/dvd_udf.h
 include/dvdread/ifo_print.h
@@ -10,13 +12,10 @@ include/dvdread/nav_read.h
 include/dvdread/nav_types.h
 include/dvdread/version.h
 @static-lib lib/libdvdread.a
-lib/libdvdread.la
 @lib lib/libdvdread.so.${LIBdvdread_VERSION}
 lib/pkgconfig/dvdread.pc
 share/doc/libdvdread/
 share/doc/libdvdread/AUTHORS
 share/doc/libdvdread/COPYING
-share/doc/libdvdread/ChangeLog
 share/doc/libdvdread/NEWS
 share/doc/libdvdread/README.md
-share/doc/libdvdread/TODO

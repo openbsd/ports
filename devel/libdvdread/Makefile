@@ -1,12 +1,12 @@
 COMMENT =	accessing DVD files
 
-VER =		6.1.3
+VER =		7.1.1
 DISTNAME =	libdvdread-${VER}
 CATEGORIES =	devel
 SITES =		https://download.videolan.org/pub/videolan/libdvdread/${VER}/
-EXTRACT_SUFX =	.tar.bz2
+EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS =	dvdread		9.0
+SHARED_LIBS =	dvdread		9.1
 
 HOMEPAGE =	http://dvdnav.mplayerhq.hu/
 
@@ -20,7 +20,6 @@ WANTLIB =	dvdcss
 # dlopen'd
 LIB_DEPENDS =	converters/libdvdcss>=1.4.3
 
-CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS =--disable-apidoc
+MODULES=	devel/meson
 
 .include <bsd.port.mk>
