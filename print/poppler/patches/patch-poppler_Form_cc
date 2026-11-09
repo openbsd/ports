@@ -1,7 +1,7 @@
 Index: poppler/Form.cc
 --- poppler/Form.cc.orig
 +++ poppler/Form.cc
-@@ -49,6 +49,7 @@
+@@ -50,6 +50,7 @@
  
  #include <array>
  #include <set>
