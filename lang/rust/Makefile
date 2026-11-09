@@ -15,6 +15,7 @@ COMMENT-dev =		Rust dev component
 
 V =			1.99.1
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 # always keep REVISION-bootstrap in sync with REVISION-main (if defined)
 # (setting only REVISION is also properly managed)
