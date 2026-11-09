@@ -1,0 +1,135 @@
+- Implement ioctl_ReadCPRMMediaId() and ioctl_ReadCPRMMKBPack() for OpenBSD
+- Fix ioctl_InvalidateAgid() to use DVD_INVALIDATE_AGID with DVD_AUTH
+
+Index: src/ioctl.c
+--- src/ioctl.c.orig
++++ src/ioctl.c
+@@ -90,6 +90,10 @@
+ #   include <sys/mman.h>
+ #   include <sys/dcmd_cam.h>
+ #endif
++#ifdef HAVE_OPENBSD_DVD_STRUCT
++#   include <stdlib.h>
++#   include <sys/scsiio.h>
++#endif
+ 
+ #include "dvdcss/dvdcss.h"
+ #include "libdvdcpxm.h"
+@@ -113,6 +117,8 @@ static void WinInitSPTD ( SCSI_PASS_THROUGH_DIRECT *, 
+ static void QNXInitCPT ( CAM_PASS_THRU *, int );
+ #elif defined( __OS2__ )
+ static void OS2InitSDC( struct OS2_ExecSCSICmd *, int );
++#elif defined( HAVE_OPENBSD_DVD_STRUCT )
++static void OpenBSDInitSCSIREQ( scsireq_t *, int );
+ #endif
+ 
+ /*****************************************************************************
+@@ -935,7 +941,7 @@ int ioctl_InvalidateAgid( int i_fd, int *pi_agid )
+ #if defined( HAVE_LINUX_DVD_STRUCT )
+     dvd_authinfo auth_info = { 0 };
+ 
+-    auth_info.type = DVDCSS_INVALIDATE_AGID;
++    auth_info.type = DVD_INVALIDATE_AGID;
+     auth_info.lsa.agid = *pi_agid;
+ 
+     i_ret = ioctl( i_fd, DVD_AUTH, &auth_info );
+@@ -1122,6 +1128,24 @@ int ioctl_ReadCPRMMediaId(int i_fd,int *p_agid, uint8_
+     if (i_ret == 0)
+         memcpy(p_data_buffer, p_buffer, CPRM_MEDIA_ID_SIZE);
+ 
++#elif defined( HAVE_OPENBSD_DVD_STRUCT )
++    scsireq_t sr = { 0 };
++    uint8_t p_buffer[ CPRM_MEDIA_ID_SIZE + 4 ];
++
++    sr.databuf = (caddr_t)p_buffer;
++    sr.datalen = sizeof( p_buffer );
++    OpenBSDInitSCSIREQ( &sr, GPCMD_READ_DVD_STRUCTURE );
++
++    sr.cmd[ 7 ]  = CPRM_STRUCT_MEDIA_ID;
++    sr.cmd[ 10 ] = *p_agid << 6;
++
++    i_ret = ioctl( i_fd, SCIOCCOMMAND, &sr );
++    if( i_ret == 0 && sr.retsts != SCCMD_OK )
++        i_ret = -1;
++
++    if( i_ret == 0 )
++        memcpy( p_data_buffer, p_buffer + 4, CPRM_MEDIA_ID_SIZE );
++
+ #else
+ #   error "DVD ioctls are unavailable on this system"
+ 
+@@ -1271,6 +1295,36 @@ int ioctl_ReadCPRMMKBPack(int i_fd, int *p_agid, int m
+         memcpy(p_mkb_pack, p_buffer + 4, CPRM_MKB_PACK_SIZE);
+     }
+ 
++#elif defined( HAVE_OPENBSD_DVD_STRUCT )
++    scsireq_t sr = { 0 };
++    uint8_t *p_buffer = malloc( CPRM_MKB_PACK_SIZE + 4 );
++
++    if( !p_buffer )
++        return -1;
++
++    sr.databuf = (caddr_t)p_buffer;
++    sr.datalen = CPRM_MKB_PACK_SIZE + 4;
++    OpenBSDInitSCSIREQ( &sr, GPCMD_READ_DVD_STRUCTURE );
++
++    sr.cmd[ 2 ]  = (uint8_t)( ( mkb_pack >> 24 ) & 0xff );
++    sr.cmd[ 3 ]  = (uint8_t)( ( mkb_pack >> 16 ) & 0xff );
++    sr.cmd[ 4 ]  = (uint8_t)( ( mkb_pack >>  8 ) & 0xff );
++    sr.cmd[ 5 ]  = (uint8_t)(   mkb_pack         & 0xff );
++    sr.cmd[ 7 ]  = CPRM_STRUCT_MKB;
++    sr.cmd[ 10 ] = *p_agid << 6;
++
++    i_ret = ioctl( i_fd, SCIOCCOMMAND, &sr );
++    if( i_ret == 0 && sr.retsts != SCCMD_OK )
++        i_ret = -1;
++
++    if( i_ret == 0 )
++    {
++        *p_total_packs = p_buffer[ 3 ];
++        memcpy( p_mkb_pack, p_buffer + 4, CPRM_MKB_PACK_SIZE );
++    }
++
++    free( p_buffer );
++
+ #else
+ #   error "DVD ioctls are unavailable on this system"
+ 
+@@ -1858,3 +1912,37 @@ static void OS2InitSDC( struct OS2_ExecSCSICmd *p_sdc,
+     p_sdc->cmd_length   = 12;
+ }
+ #endif /* defined( __OS2__ ) */
++
++#if defined( HAVE_OPENBSD_DVD_STRUCT )
++/*****************************************************************************
++ * OpenBSDInitSCSIREQ: initialize a scsireq structure for SCIOCCOMMAND
++ *****************************************************************************
++ * This function initializes an OpenBSD SCSI request structure for future
++ * use, either a read command or a write command. It is used for the
++ * commands the kernel's DVD_READ_STRUCT/DVD_AUTH ioctls do not cover.
++ * SCIOCCOMMAND is only accepted on the raw partition of the cd(4) device.
++ *****************************************************************************/
++static void OpenBSDInitSCSIREQ( scsireq_t *p_sr, int i_type )
++{
++    memset( p_sr->databuf, 0, p_sr->datalen );
++
++    switch( i_type )
++    {
++        case GPCMD_SEND_KEY:
++            p_sr->flags = SCCMD_WRITE;
++            break;
++
++        case GPCMD_READ_DVD_STRUCTURE:
++        case GPCMD_REPORT_KEY:
++            p_sr->flags = SCCMD_READ;
++            break;
++    }
++
++    p_sr->cmd[ 0 ] = i_type;
++    p_sr->cmd[ 8 ] = (p_sr->datalen >> 8) & 0xff;
++    p_sr->cmd[ 9 ] =  p_sr->datalen       & 0xff;
++    p_sr->cmdlen   = 12;
++    p_sr->senselen = SENSEBUFLEN;
++    p_sr->timeout  = 5000; /* milliseconds */
++}
++#endif /* defined( HAVE_OPENBSD_DVD_STRUCT ) */

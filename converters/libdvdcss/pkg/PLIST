@@ -1,13 +1,12 @@
 include/dvdcss/
+include/dvdcss/dvdcpxm.h
 include/dvdcss/dvdcss.h
 include/dvdcss/version.h
 @static-lib lib/libdvdcss.a
-lib/libdvdcss.la
 @lib lib/libdvdcss.so.${LIBdvdcss_VERSION}
 lib/pkgconfig/libdvdcss.pc
 share/doc/libdvdcss/
 share/doc/libdvdcss/AUTHORS
 share/doc/libdvdcss/COPYING
-share/doc/libdvdcss/ChangeLog
 share/doc/libdvdcss/NEWS
-share/doc/libdvdcss/README
+share/doc/libdvdcss/README.md
