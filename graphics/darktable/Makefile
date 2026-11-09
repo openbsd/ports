@@ -52,12 +52,12 @@ LIB_DEPENDS=	audio/portmidi \
 		devel/gettext,-runtime \
 		devel/json-glib \
 		devel/sdl2 \
-		graphics/exiv2>=0.22 \
+		graphics/exiv2 \
 		graphics/GraphicsMagick \
 		graphics/lcms2 \
 		graphics/lensfun \
 		graphics/libavif \
-		graphics/libgphoto2>=2.5.0 \
+		graphics/libgphoto2 \
 		graphics/libraw \
 		graphics/openexr \
 		graphics/openjp2 \
@@ -91,9 +91,6 @@ NO_TEST=	Yes
 CFLAGS+=	-msse3
 CXXFLAGS=	${CFLAGS}
 .endif
-
-# Fix build with OpenEXR>=3 (Imath split)
-CXXFLAGS +=	-I${LOCALBASE}/include/Imath
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
