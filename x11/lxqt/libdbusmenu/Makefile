@@ -1,7 +1,7 @@
 COMMENT =	information about LXQt and the system its running on
 
 NAME =		libdbusmenu-lxqt
-VERSION =	0.4.0
+VERSION =	0.5.0
 
 SHARED_LIBS +=  dbusmenu-lxqt             0.0 # 0.0
 

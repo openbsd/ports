@@ -3,7 +3,7 @@ link with libutil for login/logout
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -147,7 +147,7 @@ lxqt_translate_ts(QTERMWIDGET_QM
+@@ -148,7 +148,7 @@ lxqt_translate_ts(QTERMWIDGET_QM
  )
  
  add_library(${QTERMWIDGET_LIBRARY_NAME} SHARED ${SRCS} ${MOCS} ${UI_SRCS} ${QTERMWIDGET_QM})

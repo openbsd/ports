@@ -21,7 +21,7 @@ RUN_DEPENDS =	x11/lxqt/qtxdg-tools \
 		devel/xdg-user-dirs \
 		devel/desktop-file-utils \
 		x11/xscreensaver \
-		x11/oxygen-icons
+		devel/kf6/breeze-icons
 
 CONFIGURE_ARGS +=	-DWITH_LIBUDEV=No
 

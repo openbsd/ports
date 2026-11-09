@@ -1,7 +1,7 @@
 COMMENT =	wayland session manager for LXQt
 
 NAME =		lxqt-wayland-session
-VERSION =	0.4.0
+VERSION =	0.5.0
 
 # looks for lxqt-config.cmake & xdg-user-dirs-update
 BUILD_DEPENDS +=	x11/lxqt/liblxqt

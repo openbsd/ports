@@ -1,0 +1,14 @@
+fix path to list of keymaps/layouts
+
+Index: startlxqtwayland.in
+--- startlxqtwayland.in.orig
++++ startlxqtwayland.in
+@@ -83,7 +83,7 @@ done
+ 
+ export XDG_CURRENT_DESKTOP="LXQt:$COMPOSITOR:wlroots"
+ 
+-valid_layouts=$(grep -A98 '! layout' /usr/share/X11/xkb/rules/base.lst | awk '{print $1}' | grep -v '!')
++valid_layouts=$(grep -A98 '! layout' /usr/X11R6/share/X11/xkb/rules/base.lst | awk '{print $1}' | grep -v '!')
+ trylayout=$(echo $LANG | cut -c 1,2)
+ 
+ if  [ -z "$COMPOSITOR" ]; then

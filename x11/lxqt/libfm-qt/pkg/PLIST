@@ -49,6 +49,7 @@ include/libfm-qt6/core/trashjob.h
 include/libfm-qt6/core/untrashjob.h
 include/libfm-qt6/core/userinfocache.h
 include/libfm-qt6/core/vfs/
+include/libfm-qt6/core/vfs/desktop-menu.h
 include/libfm-qt6/core/vfs/fm-file.h
 include/libfm-qt6/core/vfs/fm-xml-file.h
 include/libfm-qt6/core/volumemanager.h
@@ -162,7 +163,9 @@ share/libfm-qt6/translations/libfm-qt_sk.qm
 share/libfm-qt6/translations/libfm-qt_sl.qm
 share/libfm-qt6/translations/libfm-qt_sv.qm
 share/libfm-qt6/translations/libfm-qt_tr.qm
+share/libfm-qt6/translations/libfm-qt_ug.qm
 share/libfm-qt6/translations/libfm-qt_uk.qm
+share/libfm-qt6/translations/libfm-qt_vi.qm
 share/libfm-qt6/translations/libfm-qt_zh_CN.qm
 share/libfm-qt6/translations/libfm-qt_zh_TW.qm
 share/mime/packages/libfm-qt6-mimetypes.xml

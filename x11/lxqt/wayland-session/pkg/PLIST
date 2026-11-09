@@ -1,9 +1,9 @@
 bin/lxqt-qdbus
 bin/startlxqtwayland
+@man man/man1/lxqt-qdbus.1
 @man man/man1/lxqt-wayland-session.1
 @man man/man1/startlxqtwayland.1
 share/doc/pkg-readmes/${PKGSTEM}
-share/examples/lxqt-wayland-session/
 share/lxqt/
 share/lxqt/graphics/
 share/lxqt/graphics/lxqt-labwc.png
@@ -12,6 +12,10 @@ share/lxqt/wallpapers/origami-dark-labwc.png
 share/lxqt/wayland/
 share/lxqt/wayland/firstrun/
 share/lxqt/wayland/firstrun/autostart
+share/lxqt/wayland/firstrun/hypr.lua
+share/lxqt/wayland/firstrun/niri.kdl
+share/lxqt/wayland/firstrun/sway.config
+share/lxqt/wayland/firstrun/wayfire.ini
 share/lxqt/wayland/labwc/
 share/lxqt/wayland/labwc/README
 share/lxqt/wayland/labwc/autostart
@@ -20,7 +24,7 @@ share/lxqt/wayland/labwc/menu.xml
 share/lxqt/wayland/labwc/rc.xml
 share/lxqt/wayland/labwc/themerc
 share/lxqt/wayland/labwc/themerc-override
-share/lxqt/wayland/lxqt-hyprland.conf
+share/lxqt/wayland/lxqt-hyprland.lua
 share/lxqt/wayland/lxqt-niri.kdl
 share/lxqt/wayland/lxqt-niri.kdl.full
 share/lxqt/wayland/lxqt-river-init
@@ -59,5 +63,4 @@ share/themes/Vent/openbox-3/menu.xbm
 share/themes/Vent/openbox-3/shade.xbm
 share/themes/Vent/openbox-3/shade_toggled.xbm
 share/themes/Vent/openbox-3/themerc
-share/wayland-sessions/
 share/wayland-sessions/lxqt-wayland.desktop

@@ -108,7 +108,9 @@ share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_sr_RS.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_sv.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_th_TH.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_tr.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ug.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_uk.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_vi.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_zh_CN.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_zh_TW.qm
 share/polkit-1/actions/org.lxqt.backlight.pkexec.policy

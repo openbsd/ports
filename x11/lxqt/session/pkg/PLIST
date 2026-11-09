@@ -38,6 +38,7 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-confi
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_da.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_de.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_el.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_en_GB.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_eo.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_es.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_es_UY.qm
@@ -77,6 +78,7 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-confi
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_th_TH.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_tr.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_uk.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_vi.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_zh_CN.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_zh_TW.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/
@@ -180,6 +182,7 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_sv.q
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_th_TH.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_tr.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_uk.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_vi.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_zh_CN.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_zh_TW.qm
 share/examples/lxqt-session/xdg/lxqt/waylandwindowmanagers.conf

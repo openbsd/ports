@@ -5,7 +5,7 @@ NAME =		pcmanfm-qt
 
 WANTLIB += ${COMPILER_LIBCXX} GL LayerShellQtInterface Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Widgets c exif fm-qt6 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gthread-2.0 intl m menu-cache xcb xcb-composite
+WANTLIB += gobject-2.0 gthread-2.0 m xcb xcb-composite
 WANTLIB += xcb-cursor xcb-damage xcb-dpms xcb-dri2 xcb-dri3 xcb-ewmh
 WANTLIB += xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-present
 WANTLIB += xcb-randr xcb-record xcb-render xcb-render-util xcb-res
@@ -15,8 +15,7 @@ WANTLIB += xcb-xtest xcb-xv xcb-xvmc
 
 LIB_DEPENDS =	graphics/libexif \
 		x11/kde-plasma/layer-shell-qt \
-		x11/lxqt/libfm-qt \
-		x11/menu-cache
+		x11/lxqt/libfm-qt>=${VERSION}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/oxygen-icons \

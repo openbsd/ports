@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -39,6 +39,8 @@ find_package(lxqt-menu-data ${LXQT_MINIMUM_VERSION} RE
+@@ -40,6 +40,8 @@ find_package(Qt6GuiPrivate ${QT_MINIMUM_VERSION} REQUI
  
  include(LXQtPreventInSourceBuilds)
  include(LXQtCompilerSettings NO_POLICY_SCOPE)

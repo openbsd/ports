@@ -15,10 +15,6 @@ LIB_DEPENDS =	devel/kf6/kwindowsystem \
 		x11/lxqt/libqtxdg \
 		x11/qt6/qtsvg
 
-BUILD_DEPENDS +=	x11/menu-cache
-
-RUN_DEPENDS =	x11/menu-cache
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/${NAME}/

@@ -1,7 +1,7 @@
 Index: lxqt-config-input/keyboardlayoutconfig.h
 --- lxqt-config-input/keyboardlayoutconfig.h.orig
 +++ lxqt-config-input/keyboardlayoutconfig.h
-@@ -25,11 +25,11 @@
+@@ -26,11 +26,11 @@
  #ifdef Q_OS_LINUX
  #define XKBD_BASELIST_PATH "/usr/share/X11/xkb/rules/base.lst"
  #elif defined(Q_OS_FREEBSD)

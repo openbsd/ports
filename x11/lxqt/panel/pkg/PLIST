@@ -113,6 +113,10 @@ share/lxqt/panel/qeyes-types/Tango/config
 share/lxqt/panel/qeyes-types/Tango/tango-eye.png
 share/lxqt/panel/qeyes-types/Tango/tango-pupil.png
 share/lxqt/translations/lxqt-panel/
+share/lxqt/translations/lxqt-panel/backlight/
+share/lxqt/translations/lxqt-panel/backlight/backlight_it.qm
+share/lxqt/translations/lxqt-panel/backlight/backlight_lg.qm
+share/lxqt/translations/lxqt-panel/backlight/backlight_nl.qm
 share/lxqt/translations/lxqt-panel/colorpicker/
 share/lxqt/translations/lxqt-panel/colorpicker/colorpicker_ar.qm
 share/lxqt/translations/lxqt-panel/colorpicker/colorpicker_bg.qm
@@ -145,6 +149,7 @@ share/lxqt/translations/lxqt-panel/colorpicker/colorpicker_sk.qm
 share/lxqt/translations/lxqt-panel/colorpicker/colorpicker_sr.qm
 share/lxqt/translations/lxqt-panel/colorpicker/colorpicker_sv.qm
 share/lxqt/translations/lxqt-panel/colorpicker/colorpicker_tr.qm
+share/lxqt/translations/lxqt-panel/colorpicker/colorpicker_uk.qm
 share/lxqt/translations/lxqt-panel/colorpicker/colorpicker_zh_CN.qm
 share/lxqt/translations/lxqt-panel/colorpicker/colorpicker_zh_TW.qm
 share/lxqt/translations/lxqt-panel/cpuload/
@@ -742,6 +747,7 @@ share/lxqt/translations/lxqt-panel/qeyes/qeyes_sk.qm
 share/lxqt/translations/lxqt-panel/qeyes/qeyes_sr.qm
 share/lxqt/translations/lxqt-panel/qeyes/qeyes_sv.qm
 share/lxqt/translations/lxqt-panel/qeyes/qeyes_tr.qm
+share/lxqt/translations/lxqt-panel/qeyes/qeyes_uk.qm
 share/lxqt/translations/lxqt-panel/qeyes/qeyes_zh_CN.qm
 share/lxqt/translations/lxqt-panel/qeyes/qeyes_zh_TW.qm
 share/lxqt/translations/lxqt-panel/quicklaunch/

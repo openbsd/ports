@@ -2,9 +2,9 @@ COMMENT =	tools to configure LXQt and the underlying operating system
 
 NAME =		lxqt-config
 
-WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6Screen KF6WindowSystem
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Screen KF6WindowSystem
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Svg Qt6SvgWidgets Qt6Widgets
-WANTLIB += Qt6Xdg Qt6XdgIconLoader Qt6Xml SM X11 Xcursor Xext
+WANTLIB += Qt6Xdg Qt6XdgIconLoader Qt6Xml X11 Xcursor Xrender xkbcommon
 WANTLIB += Xfixes c gio-2.0 glib-2.0 gobject-2.0 lxqt m xcb xcb-randr
 WANTLIB += z
 

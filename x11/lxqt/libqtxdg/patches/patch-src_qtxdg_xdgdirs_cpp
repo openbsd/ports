@@ -1,7 +1,7 @@
 Index: src/qtxdg/xdgdirs.cpp
 --- src/qtxdg/xdgdirs.cpp.orig
 +++ src/qtxdg/xdgdirs.cpp
-@@ -285,6 +285,7 @@ QStringList XdgDirs::dataDirs(const QString &postfix)
+@@ -286,6 +286,7 @@ QStringList XdgDirs::dataDirs(const QString &postfix)
  
      if (dirs.isEmpty()) {
          dirs.append("/usr/local/share"_L1);
@@ -9,7 +9,7 @@ Index: src/qtxdg/xdgdirs.cpp
          dirs.append("/usr/share"_L1);
      } else {
          QMutableListIterator<QString> it(dirs);
-@@ -307,7 +308,7 @@ QStringList XdgDirs::configDirs(const QString &postfix
+@@ -308,7 +309,7 @@ QStringList XdgDirs::configDirs(const QString &postfix
      QStringList dirs;
      const QString env = QFile::decodeName(qgetenv("XDG_CONFIG_DIRS"));
      if (env.isEmpty())

@@ -27,6 +27,7 @@ share/pcmanfm-qt/translations/pcmanfm-qt_cs.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_cy.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_da.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_de.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_de_CH.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_el.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_en_GB.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_eo.qm
@@ -68,6 +69,7 @@ share/pcmanfm-qt/translations/pcmanfm-qt_sk_SK.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_sl.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_sv.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_tr.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_ug.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_uk.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_vi.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_zh_CN.qm

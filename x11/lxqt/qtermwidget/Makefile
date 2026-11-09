@@ -2,7 +2,7 @@ COMMENT =	terminal widget for QTerminal
 
 NAME =		qtermwidget
 
-SHARED_LIBS +=  qtermwidget6 0.1
+SHARED_LIBS +=  qtermwidget6 0.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets m util
 
