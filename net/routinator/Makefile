@@ -5,7 +5,7 @@ COMMENT =	RPKI "relying party" software
 
 GH_ACCOUNT =	NLnetLabs
 GH_PROJECT =	routinator
-GH_TAGNAME =	v0.15.3
+GH_TAGNAME =	v0.16.0
 
 CATEGORIES =	net
 
