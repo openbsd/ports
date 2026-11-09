@@ -49,6 +49,8 @@ lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}c
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}const_vs_enum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}contains.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}contains.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}import_benchmark.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}import_benchmark.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}issue232.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}issue232.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}json_schema_test_suite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -67,6 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}v
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}validator_creation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/const_vs_enum.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/contains.py
+lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/import_benchmark.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/issue232/
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/issue232.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/issue232/issue.json
@@ -115,4 +118,12 @@ lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/test_jsonschema_test_s
 lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/test_types.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/test_validators.py
+lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/typing/
+lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/typing/__init__.py
+lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/typing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/typing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/typing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/typing/${MODPY_PYCACHE}test_all_concrete_validators_match_protocol.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/typing/${MODPY_PYCACHE}test_all_concrete_validators_match_protocol.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/typing/test_all_concrete_validators_match_protocol.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/validators.py
