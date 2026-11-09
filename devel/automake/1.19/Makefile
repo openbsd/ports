@@ -2,6 +2,8 @@ VERSION=	1.19
 DISTNAME=	automake-${VERSION}
 PKGSPEC=	automake->=${VERSION},<1.20
 EXTRACT_SUFX=	.tar.xz
+
+# override PORTROACH from ../Makefile.inc (only for the newest version)
 PORTROACH=
 
 AUTOCONF_VERSION=	2.73
