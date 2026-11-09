@@ -588,6 +588,8 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ECC_Ed448.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ECC_NIST.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ECC_NIST.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ECC_secp256k1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ECC_secp256k1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ElGamal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ElGamal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_Hybrid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -620,6 +622,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC_Curv
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC_Ed25519.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC_Ed448.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC_NIST.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC_secp256k1.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ElGamal.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_Hybrid.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_MLDSA.py

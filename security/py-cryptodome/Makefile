@@ -8,7 +8,7 @@ COMMENT=	self-contained cryptographic library for Python
 # amd64 (AES-NI, SHA-NI, AVX2/BMI)
 # i386 (no cpu-specific code)
 # aarch64 (ARMv8 Cryptography Extensions)
-MODPY_DISTV=	4.3.0
+MODPY_DISTV=	4.4.0
 DISTNAME=	pycryptodome-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
 
@@ -26,7 +26,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-TEST_DEPENDS=	security/py-cryptodome-test-vectors>=1.0.28
+TEST_DEPENDS=	security/py-cryptodome-test-vectors>=1.0.32
 
 .if ${MACHINE_ARCH:Mamd64}
 AESNI=
