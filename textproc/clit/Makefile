@@ -1,7 +1,7 @@
 COMMENT =		convert Microsoft Reader files to OEBPS packages
 V =			1.8
 DISTNAME =		clit${V:S/.//}src
-REVISION =		2
+REVISION =		3
 PKGNAME =		clit-1.8
 CATEGORIES =		textproc converters print
 
@@ -10,14 +10,14 @@ HOMEPAGE =		http://www.convertlit.com/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c
+WANTLIB =		c tommath
 
 SITES =			${HOMEPAGE}
 EXTRACT_SUFX =		.zip
 
 WRKDIST =		${WRKDIR}/${DISTNAME:src=}
 
-BUILD_DEPENDS =		math/libtommath
+LIB_DEPENDS =		math/libtommath
 
 post-patch:
 	mv ${WRKDIR}/lib ${WRKDIST}

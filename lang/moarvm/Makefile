@@ -5,6 +5,7 @@ COMMENT =		virtual machine for nqp/rakudo
 V =			2025.11
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
+REVISION =		0
 
 SHARED_LIBS =		moar	16.0
 
@@ -20,15 +21,15 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-WANTLIB =		atomic_ops c ffi kvm m pthread uv zstd
+WANTLIB =		atomic_ops c ffi kvm m pthread tommath uv zstd
 
 SITES =			https://moarvm.org/releases/
 
-BUILD_DEPENDS =		math/libtommath>=1.2.0
-LIB_DEPENDS =		devel/libffi \
+LIB_DEPENDS =		archivers/zstd \
+			devel/libffi \
 			devel/boehm-gc,-atomic \
 			devel/libuv \
-			archivers/zstd
+			math/libtommath>=1.3.0p0
 
 MAKE_FLAGS =		NOISY=1
 

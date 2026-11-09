@@ -2,6 +2,7 @@ COMMENT =		Not Quite Perl
 
 V =			2025.11
 DISTNAME =		nqp-$V
+REVISION =		0
 
 MOAR_VERSION =		$V
 
@@ -28,7 +29,6 @@ DISTFILES =		nqp-$V.tar.gz
 DISTFILES.rakudo = 	rakudo-${RAKUDO_VERSION}.tar.gz
 EXTRACT_ONLY =		${DISTFILES}
 
-BUILD_DEPENDS =		math/libtommath
 LIB_DEPENDS =		lang/moarvm>=${MOAR_VERSION}
 
 CONFIGURE_STYLE =	simple

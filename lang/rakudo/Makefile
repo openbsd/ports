@@ -2,6 +2,7 @@ COMMENT =		Rakudo compiler for the Raku language
 
 V =			2025.11
 DISTNAME =		rakudo-$V
+REVISION =		0
 
 NQP_VERSION =		$V
 
@@ -17,13 +18,13 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-WANTLIB += atomic_ops c ffi kvm m moar pthread uv zstd
+WANTLIB += atomic_ops c ffi kvm m moar pthread tommath uv zstd
 
 SITES =		https://rakudo.org/dl/rakudo/
 
-BUILD_DEPENDS =	lang/nqp>=${NQP_VERSION} \
+BUILD_DEPENDS =	lang/nqp>=${NQP_VERSION}
+LIB_DEPENDS =	lang/moarvm \
 		math/libtommath
-LIB_DEPENDS =	lang/moarvm
 RUN_DEPENDS =	lang/nqp>=${NQP_VERSION}
 
 CONFIGURE_STYLE =	simple

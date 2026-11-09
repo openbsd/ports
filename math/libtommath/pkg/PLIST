@@ -1,3 +1,5 @@
 include/tommath.h
 @static-lib lib/libtommath.a
+lib/libtommath.la
+@lib lib/libtommath.so.${LIBtommath_VERSION}
 lib/pkgconfig/libtommath.pc

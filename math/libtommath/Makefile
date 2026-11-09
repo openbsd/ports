@@ -1,10 +1,13 @@
 COMMENT =		number theoretic multiple-precision integer library
 CATEGORIES =		math
-HOMEPAGE =		http://libtom.net/
+HOMEPAGE =		https://www.libtom.net/
 
 GH_ACCOUNT =		libtom
 GH_PROJECT =		libtommath
 GH_TAGNAME =		v1.3.0
+REVISION =		0
+
+SHARED_LIBS +=  tommath                   0.0 # 4.0
 
 # WTFPL
 PERMIT_PACKAGE =	Yes
@@ -17,12 +20,14 @@ MAKE_FLAGS =		CC="${CC}" \
 FAKE_FLAGS =		DESTDIR=${WRKINST}${PREFIX} \
 			LIBPATH=/lib \
 			INCPATH=/include
+USE_LIBTOOL =		gnu
 USE_GMAKE =		Yes
-MAKE_FILE =		makefile.unix
+MAKE_FILE =		makefile.shared
 
 ALL_TARGET =		default
-TEST_TARGET =		coverage
 
-CFLAGS +=		-fPIC
+# actually run tests
+post-test:
+	cd ${WRKBUILD} && ${SETENV} ${LIBTOOL} --mode=execute ./test
 
 .include <bsd.port.mk>
