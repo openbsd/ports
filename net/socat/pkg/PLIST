@@ -1,7 +1,12 @@
 @bin bin/filan
 @bin bin/procan
-@bin bin/socat
+bin/socat
+bin/socat-broker.sh
+bin/socat-chain.sh
+bin/socat-mux.sh
+@bin bin/socat1
 @man man/man1/socat.1
+@man man/man1/socat1.1
 share/doc/socat/
 share/doc/socat/FAQ
 share/doc/socat/README
@@ -12,17 +17,20 @@ share/doc/socat/socat-multicast.html
 share/doc/socat/socat-openssltunnel.html
 share/doc/socat/socat-tun.html
 share/doc/socat/socat.html
-share/doc/socat/xio.help
 share/examples/socat/
 share/examples/socat/daemon.sh
 share/examples/socat/ftp.sh
-share/examples/socat/gatherinfo.sh
 share/examples/socat/mail.sh
 share/examples/socat/proxy.sh
 share/examples/socat/proxyecho.sh
 share/examples/socat/readline-test.sh
 share/examples/socat/readline.sh
-share/examples/socat/socat_buildscript_for_android.sh
+@comment share/examples/socat/socat-broker.sh
+@comment share/examples/socat/socat-chain.sh
+@comment share/examples/socat/socat-mux.sh
+@comment share/examples/socat/socat_buildscript_for_android.sh
 share/examples/socat/socks4a-echo.sh
 share/examples/socat/socks4echo.sh
-share/examples/socat/test.sh
+share/examples/socat/socks5server-auth.sh
+share/examples/socat/socks5server-echo.sh
+@comment share/examples/socat/test.sh

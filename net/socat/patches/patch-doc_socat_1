@@ -1,32 +1,18 @@
 Index: doc/socat.1
 --- doc/socat.1.orig
 +++ doc/socat.1
-@@ -3639,11 +3635,11 @@ connection, invokes a shell\&. This shell has its stdi
- connected to the TCP socket (nofork)\&.  The shell starts filan and lets it print the socket addresses to
- stderr (your terminal window)\&.
- .IP 
--.IP "\fB\f(CWecho \-e \(dq\&\e0\e14\e0\e0\ec\(dq\& |socat \-u \- file:/usr/bin/squid\&.exe,seek=0x00074420\fP\fP"
-+.IP "\fB\f(CWecho \-e \(dq\&\e0\e14\e0\e0\ec\(dq\& |socat \-u \- file:${LOCALBASE}/bin/squid\&.exe,seek=0x00074420\fP\fP"
- 
- .IP 
- functions as primitive binary editor: it writes the 4 bytes 000 014 000 000 to
--the executable /usr/bin/squid at offset 0x00074420 (this is a real world patch
-+the executable ${LOCALBASE}/bin/squid at offset 0x00074420 (this is a real world patch
- to make the squid executable from Cygwin run under Windows, actual per May 2004)\&.
- .IP 
- .IP "\fB\f(CWsocat \- tcp:www\&.blackhat\&.org:31337,readbytes=1000\fP\fP"
-@@ -3810,11 +3806,11 @@ error\&. 
+@@ -4876,11 +4876,11 @@ error\&. 
  .SH "FILES"
  
  .PP 
 -/usr/bin/socat 
-+${LOCALBASE}/bin/socat
++${LOCALBASE}/bin/socat 
  .br 
 -/usr/bin/filan 
-+${LOCALBASE}/bin/filan
++${LOCALBASE}/bin/filan 
  .br 
 -/usr/bin/procan
 +${LOCALBASE}/bin/procan
  .PP 
- .SH "ENVIRONMENT VARIABLES"
+ .SH "SIGNALS"
  
