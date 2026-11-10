@@ -5,7 +5,7 @@ DISTNAME=	xpdf-${V}
 PKGNAME=	xpdf3-${V}
 CATEGORIES=	textproc x11
 
-SITES=		https://xpdfreader-dl.s3.amazonaws.com/old/
+SITES=		https://dl.xpdfreader.com/old/
 
 HOMEPAGE=	https://www.xpdfreader.com/
 
