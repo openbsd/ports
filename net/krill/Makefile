@@ -11,8 +11,7 @@ COMMENT =	RPKI Certification Authority and Publication Server
 
 GH_ACCOUNT =	NLnetLabs
 GH_PROJECT =	krill
-GH_TAGNAME =	v0.16.0
-REVISION =	0
+GH_TAGNAME =	v0.16.2
 
 HOMEPAGE =	https://nlnetlabs.nl/projects/routing/krill/
 CATEGORIES =	net

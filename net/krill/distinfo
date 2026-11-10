@@ -360,7 +360,7 @@ SHA256 (cargo/wasm-metadata-0.244.0.tar.gz) = uw41PmovvcF2kyu6q0k3YusSVaeQD+D+oa
 SHA256 (cargo/wasmparser-0.244.0.tar.gz) = R7gHxy4brGk4Kzpvs9vo6kwO2H/1YpuGha5rmmEQKP4=
 SHA256 (cargo/web-sys-0.3.85.tar.gz) = MS4y5VHZISkhjqmiRSEg9Kq8A1Ke8D5NDYL7J4BghZg=
 SHA256 (cargo/web-time-1.1.0.tar.gz) = WmWA8wix+tkgdhgIemXATnoQvHfgLI6E6bAN1LEvoLs=
-SHA256 (cargo/webpki-root-certs-1.0.6.tar.gz) = gE8YpKwmdv+06LW1+prjivBt8IFiMU+Wpo0qNj4hqMo=
+SHA256 (cargo/webpki-root-certs-1.0.11.tar.gz) = 5J0OZavADBQuj5Qo2pkdqfGiUMOb6XRZkB6xK5tJ9io=
 SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-util-0.1.11.tar.gz) = wqexwDyHYSKqQ/MCDmw8PuXAUIHJoAc5+vdQOuuhDSI=
@@ -423,7 +423,7 @@ SHA256 (cargo/zerotrie-0.2.3.tar.gz) = KlnBelVi1QfktUlg6FaevuM77okMcKo/57l+han9e
 SHA256 (cargo/zerovec-0.11.5.tar.gz) = bChxkpSClHf1Jb4BhtE++po8YC9+wgLKnjU9MQ+5oAI=
 SHA256 (cargo/zerovec-derive-0.11.2.tar.gz) = 6tzjlTnKXLOYVZAQJnHyVn5ln8qWZlga00EdWSB5UfM=
 SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
-SHA256 (krill-0.16.0.tar.gz) = cXGeClqyCUzMDn9LQIScm/DGathoxgmwy5/2PBrQnCI=
+SHA256 (krill-0.16.2.tar.gz) = uhaHMrmvLlCZ7o09hTRdKaplCxBr8s7eF22i60wgi6k=
 SIZE (cargo/adler32-1.2.0.tar.gz) = 6411
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/allocator-api2-0.2.21.tar.gz) = 63622
@@ -786,7 +786,7 @@ SIZE (cargo/wasm-metadata-0.244.0.tar.gz) = 21500
 SIZE (cargo/wasmparser-0.244.0.tar.gz) = 265607
 SIZE (cargo/web-sys-0.3.85.tar.gz) = 645049
 SIZE (cargo/web-time-1.1.0.tar.gz) = 18026
-SIZE (cargo/webpki-root-certs-1.0.6.tar.gz) = 165537
+SIZE (cargo/webpki-root-certs-1.0.11.tar.gz) = 147247
 SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-util-0.1.11.tar.gz) = 13368
@@ -849,4 +849,4 @@ SIZE (cargo/zerotrie-0.2.3.tar.gz) = 69547
 SIZE (cargo/zerovec-0.11.5.tar.gz) = 119620
 SIZE (cargo/zerovec-derive-0.11.2.tar.gz) = 21421
 SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
-SIZE (krill-0.16.0.tar.gz) = 20285668
+SIZE (krill-0.16.2.tar.gz) = 20286999
