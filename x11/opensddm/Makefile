@@ -1,8 +1,6 @@
 COMMENT =	QML based X11 and Wayland display manager
 
-DIST_TUPLE=	codeberg rsadowski opensddm 98cbdcbdc090f4ffd9e817366300fd91e5c67155 .
-
-DISTNAME =	opensddm-0.21.1
+DISTNAME =	opensddm-0.21.2
 
 CATEGORIES =	x11 wayland
 
@@ -10,6 +8,8 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
+
+SITES =		https://rsadowski.de/pub/distfiles/
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Xau c m pam xcb xcb-xkb

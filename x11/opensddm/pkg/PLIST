@@ -133,13 +133,10 @@ share/opensddm/scripts/
 @mode 555
 share/opensddm/scripts/Xsession
 @sample ${SYSCONFDIR}/opensddm/scripts/Xsession
-@mode 555
 share/opensddm/scripts/Xsetup
 @sample ${SYSCONFDIR}/opensddm/scripts/Xsetup
-@mode 555
 share/opensddm/scripts/Xstop
 @sample ${SYSCONFDIR}/opensddm/scripts/Xstop
-@mode 555
 share/opensddm/scripts/wayland-session
 @sample ${SYSCONFDIR}/opensddm/scripts/wayland-session
 @mode

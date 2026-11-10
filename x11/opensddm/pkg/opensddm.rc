@@ -9,13 +9,6 @@ rc_reload=NO
 
 rc_post() {
 	pkill -T "${daemon_rtable}" -f opensddm-helper
-	# /etc/X11/xenodm/TakeConsole, fbtab(5)
-	if [[ -c /dev/dri/card0 ]]; then
-		chown root /dev/dri/card0
-	fi
-	if [[ -c /dev/dri/renderD128 ]]; then
-		chown root /dev/dri/renderD128
-	fi
 }
 
 rc_cmd $1
