@@ -14,13 +14,12 @@ DPB_PROPERTIES = parallel
 # - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
 #   into simple warnings.
 V = 16.2.0
-REVISION = 13
+REVISION = 14
 GCC_PKGSPEC = >=16,<17
 
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.2.0-0.tar.xz
 BOOTSTRAP-amd64 = gcc-bootstrap-amd64-16.1.0-0.tar.xz
 BOOTSTRAP-arm = gcc-bootstrap-arm-16.2.0-1.tar.xz
-BOOTSTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
 BOOTSTRAP-i386 = gcc-bootstrap-i386-16.1.0-0.tar.xz
 BOOTSTRAP-mips64 = gcc-bootstrap-mips64-16.1.0-1.tar.xz
 BOOTSTRAP-powerpc = gcc-bootstrap-powerpc-16.1.0-1.tar.xz
@@ -65,9 +64,10 @@ EXTRACT_ONLY =	${DISTFILES}
 BUILD_DEPENDS +=	devel/bison
 
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" || \
-    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "powerpc64" || \
-    ${MACHINE_ARCH} == "riscv64" || ${MACHINE_ARCH} == "sparc64"
+    ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "hppa" || \
+    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc" || \
+    ${MACHINE_ARCH} == "powerpc64" || ${MACHINE_ARCH} == "riscv64" || \
+    ${MACHINE_ARCH} == "sparc64"
 BUILD_DEPENDS +=	devel/gas
 RUN_DEPENDS +=		devel/gas
 RUN_DEPENDS-main +=	devel/gas
