@@ -11,7 +11,7 @@ USE_NOEXECONLY =	Yes
 COMMENT =		API compatible Jellyfin server in Rust
 DIST_TUPLE =		github	mangoleaf	ferrofin	v1.4.1	.
 CATEGORIES =		multimedia net
-REVISION =		0
+REVISION =		1
 
 # https://github.com/jellyfin/jellyfin-web needs 'npm run build:propduction'
 # which requires wxallowed WRKBUILD and fails with cryptic EPIPE on OpenBSD;
@@ -32,7 +32,8 @@ MODULES =		devel/cargo
 
 LIB_DEPENDS =		databases/sqlite3
 
-RUN_DEPENDS =		graphics/ffmpeg
+RUN_DEPENDS =		audio/chromaprint \
+			graphics/ffmpeg
 
 CONFIGURE_STYLE =	cargo
 
