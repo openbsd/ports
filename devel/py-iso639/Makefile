@@ -1,7 +1,6 @@
-MODPY_DISTV=	2026.7.23
-
 COMMENT=	ISO 639 language codes, names, etc
 
+MODPY_DISTV=	2026.11.7
 DISTNAME=	python_iso639-${MODPY_DISTV}
 PKGNAME=	py-iso639-${MODPY_DISTV}
 
