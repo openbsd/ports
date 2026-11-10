@@ -1,6 +1,7 @@
 COMMENT =	desktop panel for LXQt
 
 NAME =		lxqt-panel
+VERSION =	2.5.1
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Solid KF6WindowSystem LayerShellQtInterface
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Svg Qt6Widgets
