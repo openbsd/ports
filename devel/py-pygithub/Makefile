@@ -1,9 +1,8 @@
 COMMENT =		Python library for managing github repos
 
-MODPY_DISTV =		2.9.1
+MODPY_DISTV =		2.10.0
 DISTNAME =		pygithub-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -13,9 +12,8 @@ HOMEPAGE =		https://pygithub.readthedocs.io/en/stable/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
+MODPY_PI =		Yes
 
 RUN_DEPENDS =		devel/py-deprecated \
 			devel/py-typing-extensions \
