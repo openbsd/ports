@@ -10,6 +10,7 @@ COMMENT-python3= freeradius python3 rlm addon
 V=		3.2.10
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
+REVISION-main=	0
 
 PKGNAME-main=	freeradius-$V
 PKGNAME-freetds= freeradius-freetds-$V

@@ -82,3 +82,12 @@ Index: src/main/tls.c
  	if (conf->sigalgs_list) {
  		char *list;
  
+@@ -4611,7 +4616,7 @@ post_ca:
+ 		}
+ 		X509_STORE_set_flags(certstore, X509_V_FLAG_CRL_CHECK);
+ 
+-#ifdef X509_V_FLAG_USE_DELTAS
++#if defined(X509_V_FLAG_USE_DELTAS) && !defined(LIBRESSL_VERSION_NUMBER)
+ 		/*
+ 		 *	If set, delta CRLs (if present) are used to
+ 		 *	determine certificate status. If not set
