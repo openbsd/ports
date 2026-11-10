@@ -19,7 +19,39 @@ Index: gcc/configure
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -28864,7 +28864,7 @@ $as_echo "#define HAVE_LD_PPC_GNU_ATTR_LONG_DOUBLE 1" 
+@@ -23635,7 +23635,14 @@ else
+   then gcc_cv_as_comdat_group=yes
+ fi
+   elif test x$gcc_cv_as != x; then
+-    $as_echo '.section .text,"axG",@progbits,.foo,comdat' > conftest.s
++    case "$target" in
++      hppa*-*-openbsd*)
++        $as_echo '	.section .text,"axG",@progbits,.foo,comdat' > conftest.s
++        ;;
++      *)
++        $as_echo '.section .text,"axG",@progbits,.foo,comdat' > conftest.s
++        ;;
++    esac
+     if { ac_try='$gcc_cv_as $gcc_cv_as_flags --fatal-warnings -o conftest.o conftest.s >&5'
+   { { eval echo "\"\$as_me\":${as_lineno-$LINENO}: \"$ac_try\""; } >&5
+   (eval $ac_try) 2>&5
+@@ -23671,7 +23678,14 @@ else
+   then gcc_cv_as_comdat_group_percent=yes
+ fi
+   elif test x$gcc_cv_as != x; then
+-    $as_echo '.section .text,"axG",%progbits,.foo,comdat' > conftest.s
++    case "$target" in
++      hppa*-*-openbsd*)
++        $as_echo '	.section .text,"axG",%progbits,.foo,comdat' > conftest.s
++        ;;
++      *)
++        $as_echo '.section .text,"axG",%progbits,.foo,comdat' > conftest.s
++        ;;
++    esac
+     if { ac_try='$gcc_cv_as $gcc_cv_as_flags --fatal-warnings -o conftest.o conftest.s >&5'
+   { { eval echo "\"\$as_me\":${as_lineno-$LINENO}: \"$ac_try\""; } >&5
+   (eval $ac_try) 2>&5
+@@ -28864,7 +28878,7 @@ $as_echo "#define HAVE_LD_PPC_GNU_ATTR_LONG_DOUBLE 1" 
  esac
  
  case "$target:$tm_file" in
@@ -28,7 +60,7 @@ Index: gcc/configure
    case "$target" in
       *le-*-linux*)
       emul_name="-melf64lppc"
-@@ -28875,6 +28875,10 @@ case "$target:$tm_file" in
+@@ -28875,6 +28889,10 @@ case "$target:$tm_file" in
       *-*-freebsd*)
       emul_name="-melf64ppc_fbsd"
        ;;
@@ -39,7 +71,7 @@ Index: gcc/configure
    esac
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking linker support for omitting dot symbols" >&5
  $as_echo_n "checking linker support for omitting dot symbols... " >&6; }
-@@ -29242,6 +29246,7 @@ else
+@@ -29242,6 +29260,7 @@ else
  fi
  
          ;;
@@ -47,7 +79,7 @@ Index: gcc/configure
         *) gcc_cv_libc_provides_ssp=no ;;
      esac
    fi
-@@ -29262,6 +29267,7 @@ if test "${enable_default_ssp+set}" = set; then :
+@@ -29262,6 +29281,7 @@ if test "${enable_default_ssp+set}" = set; then :
  if test x$gcc_cv_libc_provides_ssp = xyes; then
    case "$target" in
      ia64*-*-*) enable_default_ssp=no ;;

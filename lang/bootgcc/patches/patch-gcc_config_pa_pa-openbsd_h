@@ -6,7 +6,16 @@ Update OpenBSD-specific configuration on hppa for:
 Index: gcc/config/pa/pa-openbsd.h
 --- gcc/config/pa/pa-openbsd.h.orig
 +++ gcc/config/pa/pa-openbsd.h
-@@ -138,17 +138,31 @@ along with GCC; see the file COPYING3.  If not see
+@@ -53,7 +53,7 @@ along with GCC; see the file COPYING3.  If not see
+ 
+ #undef ASM_OUTPUT_ADDR_DIFF_ELT
+ #define ASM_OUTPUT_ADDR_DIFF_ELT(FILE, BODY, VALUE, REL) \
+-  fprintf (FILE, "\t.word .L%d-.L%d\n", VALUE, REL)
++  fprintf (FILE, "\t.word .L%d+(.+8-.L%d)-$PIC_pcrel$0\n", VALUE, REL)
+ 
+ /* Use the default.  */
+ #undef ASM_OUTPUT_LABEL
+@@ -138,17 +138,34 @@ along with GCC; see the file COPYING3.  If not see
     %{shared:-shared} %{R*} \
     %{static:-Bstatic} \
     %{!static:-Bdynamic} \
@@ -42,3 +51,6 @@ Index: gcc/config/pa/pa-openbsd.h
 +
 +#undef JUMP_TABLES_IN_TEXT_SECTION
 +#define JUMP_TABLES_IN_TEXT_SECTION 0
++
++#undef ASM_OUTPUT_ADDR_VEC
++#undef ASM_OUTPUT_ADDR_DIFF_VEC

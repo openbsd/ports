@@ -1,0 +1,49 @@
+Index: gcc/config/pa/pa.md
+--- gcc/config/pa/pa.md.orig
++++ gcc/config/pa/pa.md
+@@ -7001,8 +7001,10 @@
+ 
+   if (TARGET_64BIT)
+     emit_jump_insn (gen_casesi64p (operands[0], operands[3]));
+-  else if (flag_pic)
++  else if (flag_pic && JUMP_TABLES_IN_TEXT_SECTION)
+     emit_jump_insn (gen_casesi32p (operands[0], operands[3]));
++  else if (flag_pic)
++    emit_jump_insn (gen_casesi32p_rodata (operands[0], operands[3]));
+   else
+     emit_jump_insn (gen_casesi32 (operands[0], operands[3]));
+   DONE;
+@@ -7028,7 +7030,7 @@
+ 		       (label_ref (match_operand 1 "" "")))))
+    (clobber (match_scratch:SI 2 "=&r"))
+    (clobber (match_scratch:SI 3 "=&r"))]
+-  "flag_pic"
++  "flag_pic && JUMP_TABLES_IN_TEXT_SECTION"
+   "{bl .+8,%2\;depi 0,31,2,%2|mfia %2}\;ldo {%l1-.|%l1+4-.}(%2),%2\;\
+ {ldwx|ldw},s %0(%2),%3\;{addl|add,l} %2,%3,%3\;bv,n %%r0(%3)"
+   [(set_attr "type" "multi")
+@@ -7036,6 +7038,24 @@
+      (if_then_else (match_test "TARGET_PA_20")
+ 	(const_int 20)
+ 	(const_int 24)))])
++
++(define_insn "casesi32p_rodata"
++  [(set (pc) (mem:SI (plus:SI
++		       (mult:SI (match_operand:SI 0 "register_operand" "r")
++				(const_int 4))
++		       (label_ref (match_operand 1 "" "")))))
++   (clobber (match_scratch:SI 2 "=&a"))
++   (clobber (match_scratch:SI 3 "=&r"))]
++  "flag_pic && !JUMP_TABLES_IN_TEXT_SECTION"
++  "{bl .+8,%2\;depi 0,31,2,%2|mfia %2}\;\
++addil L'%l1-$PIC_pcrel$0+{8|12},%2\;\
++ldo R'%l1-$PIC_pcrel$0+{12|16}(%2),%2\;\
++{ldwx|ldw},s %0(%2),%3\;{addl|add,l} %2,%3,%3\;bv,n %%r0(%3)"
++  [(set_attr "type" "multi")
++   (set (attr "length")
++     (if_then_else (match_test "TARGET_PA_20")
++	(const_int 24)
++	(const_int 28)))])
+ 
+ ;;; 64-bit code, 32-bit relative branch table.
+ (define_insn "casesi64p"
