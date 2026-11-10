@@ -3,7 +3,7 @@
 COMMENT=	microcode update binaries for Intel CPUs
 FW_DRIVER=	intel
 
-FW_VER=		20260925
+FW_VER=		20261110
 EPOCH=		0
 GH_ACCOUNT=	intel
 GH_PROJECT=	Intel-Linux-Processor-Microcode-Data-Files
