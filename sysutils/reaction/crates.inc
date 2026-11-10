@@ -36,6 +36,7 @@ MODCARGO_CRATES +=	base64	0.22.1	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	base64	0.23.1	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	base64ct	1.8.3	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	bindgen	0.70.1	# BSD-3-Clause
+MODCARGO_CRATES +=	bindgen	0.72.1	# BSD-3-Clause
 MODCARGO_CRATES +=	bitflags	1.3.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bitflags	2.13.1	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	blake2	0.10.6	# MIT OR Apache-2.0

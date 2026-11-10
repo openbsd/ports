@@ -1,9 +1,8 @@
 COMMENT =	scan logs and take action, alternative to fail2ban
 
-V =	v2.7.0
+V =	v2.7.1
 DISTNAME =	reaction-${V}
 PKGNAME =	${DISTNAME:S/-v/-/}
-REVISION =	0
 
 SITES =	https://framagit.org/ppom/reaction/-/archive/${V}/
 

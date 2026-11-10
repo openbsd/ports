@@ -15,7 +15,6 @@ rc_configtest() {
 
 rc_pre() {
 	install -d ${LOCALSTATEDIR}/run/reaction
-	rm -f ${LOCALSTATEDIR}/run/reaction/*
 }
 
 rc_cmd $1
