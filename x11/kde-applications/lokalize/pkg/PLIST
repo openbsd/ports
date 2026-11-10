@@ -43,8 +43,16 @@ share/doc/HTML/pt_BR/lokalize/
 share/doc/HTML/pt_BR/lokalize/index.cache.bz2
 share/doc/HTML/pt_BR/lokalize/index.docbook
 share/doc/HTML/ru/lokalize/
+share/doc/HTML/ru/lokalize/configure_shortcuts.png
+share/doc/HTML/ru/lokalize/configure_toolbar.png
+share/doc/HTML/ru/lokalize/default_editor_lokalize.png
+share/doc/HTML/ru/lokalize/glossary.png
 share/doc/HTML/ru/lokalize/index.cache.bz2
 share/doc/HTML/ru/lokalize/index.docbook
+share/doc/HTML/ru/lokalize/original-diff.png
+share/doc/HTML/ru/lokalize/project_overview.png
+share/doc/HTML/ru/lokalize/sync.png
+share/doc/HTML/ru/lokalize/tmview.png
 share/doc/HTML/sr/lokalize/
 share/doc/HTML/sr/lokalize/glossary.png
 share/doc/HTML/sr/lokalize/index.cache.bz2
