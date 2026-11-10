@@ -10,16 +10,15 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
  
    # This switch is used to enable -Wexit-time-destructors by default. This
    # warning serves as a flip switch to allow a gradual migration of targets
-@@ -278,7 +278,7 @@ assert(!(llvm_force_head_revision && use_remoteexec &&
- # Since this is referenced both when passing the file and when deciding which
+@@ -279,6 +279,7 @@ assert(!(llvm_force_head_revision && use_remoteexec &&
  # warnings to enable, store it in a separate variable here.
  use_clang_warning_suppression_file =
--    default_toolchain != "//build/toolchain/cros:target" &&
+     default_toolchain != "//build/toolchain/cros:target" &&
 +    is_bsd && default_toolchain != "//build/toolchain/cros:target" &&
      !llvm_android_mainline && is_clang && clang_warning_suppression_file != "" &&
      !is_qtwebengine
  
-@@ -297,13 +297,16 @@ config("default_include_dirs") {
+@@ -297,13 +298,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -37,7 +36,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -628,6 +631,10 @@ config("compiler") {
+@@ -628,6 +632,10 @@ config("compiler") {
      }
    }
  
@@ -48,16 +47,16 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_gold) {
-@@ -1377,7 +1384,7 @@ config("compiler_cpu_abi") {
+@@ -1377,7 +1385,7 @@ config("compiler_cpu_abi") {
      # CPU architecture. We may or may not be doing a cross compile now, so for
      # simplicity we always explicitly set the architecture.
      if (current_cpu == "x64") {
--      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
+-      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_ohos) {
 +      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_bsd) {
          cflags += [ "--target=x86_64-unknown-linux-gnu" ]
          ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
        } else {
-@@ -1386,7 +1393,7 @@ config("compiler_cpu_abi") {
+@@ -1386,7 +1394,7 @@ config("compiler_cpu_abi") {
        }
        cflags += [ "-msse3" ]
      } else if (current_cpu == "x86") {
@@ -66,7 +65,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
          cflags += [ "--target=i386-unknown-linux-gnu" ]
          ldflags += [ "--target=i386-unknown-linux-gnu" ]
        } else {
-@@ -1398,7 +1405,7 @@ config("compiler_cpu_abi") {
+@@ -1398,7 +1406,7 @@ config("compiler_cpu_abi") {
          "-msse3",
        ]
      } else if (current_cpu == "arm") {
@@ -75,7 +74,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -1413,7 +1420,7 @@ config("compiler_cpu_abi") {
+@@ -1413,7 +1421,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -84,7 +83,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1812,7 +1819,7 @@ config("compiler_deterministic") {
+@@ -1812,7 +1820,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
@@ -93,7 +92,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
        current_os != "zos") {
      _perform_consistency_checks = current_toolchain == default_toolchain
      if (llvm_force_head_revision) {
-@@ -2403,9 +2410,6 @@ config("default_warnings") {
+@@ -2403,9 +2411,6 @@ config("default_warnings") {
  
        # TODO(crbug.com/40284799): Fix and re-enable.
        "-Wno-thread-safety-reference-return",
@@ -103,7 +102,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      ]
  
      cflags += [ "-Wno-deprecated-declarations" ]
-@@ -3201,7 +3205,7 @@ config("afdo_optimize_size") {
+@@ -3201,7 +3206,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -112,12 +111,12 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -3228,7 +3232,7 @@ config("afdo") {
+@@ -3228,7 +3233,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
 -  } else if (auto_profile_path != "" && is_a_target_toolchain) {
-+  }  else if (auto_profile_path != "" && is_a_target_toolchain && !is_bsd) {
++  } else if (auto_profile_path != "" && is_a_target_toolchain && !is_bsd) {
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }

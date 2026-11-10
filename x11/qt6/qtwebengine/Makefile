@@ -9,9 +9,8 @@ DPB_PROPERTIES =	parallel parallel2
 
 QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
-VERSION =	6.11.2
+VERSION =	6.11.3
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
-REVISION =	1
 
 SHARED_LIBS +=  Qt6Pdf                        2.1 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0

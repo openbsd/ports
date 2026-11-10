@@ -10,7 +10,7 @@ Index: cmake/Functions.cmake
           get_gn_arch(cpu ${TEST_architecture_arch})
  
           #QTBUG-145054#
-@@ -613,6 +613,7 @@ function(addSyncTargets module)
+@@ -614,6 +614,7 @@ function(addSyncTargets module)
      add_custom_target(run_${module}_GnReady)
      add_custom_target(run_${module}_GnDone)
      add_custom_target(run_${module}_NinjaReady)
