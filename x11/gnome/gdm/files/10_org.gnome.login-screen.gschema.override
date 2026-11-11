@@ -1,5 +1,4 @@
 # corresponding PAM support is not available on OpenBSD
 [org.gnome.login-screen]
-enable-fingerprint-authentication=false
 enable-smartcard-authentication=false
 logo='${TRUEPREFIX}/share/pixmaps/gdm-puffy.png'
