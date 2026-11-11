@@ -1,0 +1,7 @@
+@bin libexec/xdg-desktop-portal-wlr
+@man man/man5/xdg-desktop-portal-wlr.5
+share/dbus-1/services/org.freedesktop.impl.portal.desktop.wlr.service
+share/xdg-desktop-portal/
+share/xdg-desktop-portal/portals/
+share/xdg-desktop-portal/portals/wlr.portal
+share/xdg-desktop-portal/wlroots-portals.conf
