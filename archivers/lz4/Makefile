@@ -2,7 +2,7 @@ COMMENT=	fast BSD-licensed data compression
 
 GH_ACCOUNT=	lz4
 GH_PROJECT=	lz4
-GH_TAGNAME=	v1.10.0
+GH_TAGNAME=	v1.11.1
 
 SHARED_LIBS=	lz4                       3.3
 
@@ -16,6 +16,8 @@ MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pthread
+
+TEST_DEPENDS=	sysutils/coreutils
 
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -DLZ4_FORCE_MEMORY_ACCESS=1" \
@@ -33,5 +35,11 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 ALL_TARGET=	default
 TEST_TARGET=	check
+
+pre-configure:
+	ln -sf ${LOCALBASE}/bin/gmake ${WRKDIR}/bin/make
+
+pre-test:
+	ln -sf ${LOCALBASE}/bin/ghead ${WRKDIR}/bin/head
 
 .include <bsd.port.mk>

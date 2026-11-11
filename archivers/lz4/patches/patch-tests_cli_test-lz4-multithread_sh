@@ -1,0 +1,15 @@
+Fix an OpenBSD test failure caused by assuming that rewriting an mmap(2) input
+must produce exit status 54.
+
+Index: tests/cli/test-lz4-multithread.sh
+--- tests/cli/test-lz4-multithread.sh.orig
++++ tests/cli/test-lz4-multithread.sh
+@@ -165,7 +165,7 @@ compressModified() {
+ # content already read is rewritten : memory-mapped input, read again, would be inconsistent (error 54) ;
+ # except on macOS, where a private mapping keeps the content as opened : then the output is valid
+ compressModified "" rewriteStart
+-if [ $MMAP = 1 ] && [ "$(uname)" != Darwin ]; then
++if [ $MMAP = 1 ] && [ "$(uname)" != Darwin ] && [ "$(uname)" != OpenBSD ]; then
+     test $rc = 54
+     grep -q "output removed" $FPREFIX.err
+     test ! -e $FPREFIX.fifo
