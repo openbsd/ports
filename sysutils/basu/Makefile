@@ -2,6 +2,7 @@ COMMENT=		sd-bus library extracted from systemd
 
 V=			0.2.1
 DISTNAME=		basu-${V}
+REVISION=		0
 
 SHARED_LIBS +=		basu                      0.0 # 0
 
