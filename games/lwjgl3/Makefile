@@ -4,6 +4,7 @@ ONLY_FOR_ARCHS= amd64 aarch64
 
 V =		3.4.1.0
 DISTNAME =	lwjgl3-${V}
+REVISION =	0
 
 KOTLIN_V =	2.3.0
 MAVEN_V =	20260901
@@ -47,7 +48,6 @@ MODJAVA_VER =	25
 MODJAVA_BUILD =	ant
 
 BUILD_DEPENDS =	archivers/unzip \
-		devel/sdl3 \
 		graphics/vulkan-headers
 LIB_DEPENDS =	archivers/lz4 \
 		archivers/zstd \
@@ -56,6 +56,7 @@ LIB_DEPENDS =	archivers/lz4 \
 		databases/lmdb \
 		devel/harfbuzz \
 		devel/glib2 \
+		devel/sdl3 \
 		graphics/glfw>=3.5.1 \
 		graphics/shaderc \
 		graphics/spirv-cross \
