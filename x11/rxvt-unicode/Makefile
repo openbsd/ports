@@ -1,7 +1,6 @@
 COMMENT=	clone of rxvt with Unicode and Xft support
 
-DISTNAME=	rxvt-unicode-9.31
-REVISION=	3
+DISTNAME=	rxvt-unicode-9.32
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	x11
@@ -27,7 +26,7 @@ COMPILER=	base-clang ports-gcc
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE=  autoconf
-AUTOCONF_VERSION= 2.71
+AUTOCONF_VERSION= 2.72
 
 LIB_DEPENDS=	sysutils/libptytty
 
