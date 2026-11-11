@@ -1,6 +1,6 @@
 COMMENT =		P2P payment system
 
-V =			31.1
+V =			32.1
 
 DISTNAME =		bitcoin-${V}
 
@@ -21,7 +21,6 @@ BUILD_DEPENDS =		devel/boost \
 			devel/capnproto
 
 LIB_DEPENDS =		databases/sqlite3 \
-			devel/libevent2 \
 			net/zeromq
 
 # C++20
@@ -31,8 +30,7 @@ COMPILER =		base-clang ports-clang
 FLAVORS =		no_x11
 FLAVOR ?=
 
-WANTLIB += ${COMPILER_LIBCXX} c event_core event_extra event_pthreads
-WANTLIB += m sqlite3 zmq
+WANTLIB += ${COMPILER_LIBCXX} c m sqlite3 zmq
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
@@ -44,8 +42,7 @@ CONFIGURE_ARGS +=	-DWITH_ZMQ=ON
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS +=	-DBUILD_GUI=OFF
 .else
-WANTLIB += GL Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
-WANTLIB += qrencode
+WANTLIB += GL Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets qrencode
 
 MODULES +=		x11/qt6
 

@@ -26,6 +26,7 @@
 share/bash-completion/completions/bitcoin/
 share/bash-completion/completions/bitcoin/bitcoin-cli.bash
 share/bash-completion/completions/bitcoin/bitcoin-tx.bash
+share/bash-completion/completions/bitcoin/bitcoin.bash
 share/bash-completion/completions/bitcoin/bitcoind.bash
 share/bitcoin/
 share/bitcoin/rpcauth.py
