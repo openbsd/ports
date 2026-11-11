@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -49,6 +49,8 @@ install-conf:
+@@ -53,6 +53,8 @@ install-conf:
  	    			sed -e 's#@@ServerRoot@@#$(prefix)#g' \
  	    				-e 's#@@Port@@#$(PORT)#g' \
  	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
@@ -10,7 +10,7 @@ Index: Makefile.in
  	    				-e '/@@LoadModule@@/d' \
  	    				< $$i; \
  	    		else \
-@@ -56,6 +58,8 @@ install-conf:
+@@ -60,6 +62,8 @@ install-conf:
  	    				-e 's#@@ServerRoot@@#$(prefix)#g' \
  	    				-e 's#@@Port@@#$(PORT)#g' \
  	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
@@ -19,7 +19,7 @@ Index: Makefile.in
  	    				-e 'p' \
  	    				< $$i; \
  	    			if echo " $(DSO_MODULES) "|$(EGREP) " cgi " > /dev/null ; then \
-@@ -106,6 +110,8 @@ install-conf:
+@@ -110,6 +114,8 @@ install-conf:
  	    				-e 's#@@ServerRoot@@#$(prefix)#g' \
  	    				-e 's#@@Port@@#$(PORT)#g' \
  	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
