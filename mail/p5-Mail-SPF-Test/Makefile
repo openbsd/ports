@@ -3,7 +3,7 @@ COMMENT =		perl SPF test-suite class
 DISTNAME =		Mail-SPF-Test-v1.001
 PKGNAME =		p5-${DISTNAME:S/-v/-/}
 CATEGORIES =		mail
-REVISION =		0
+REVISION =		1
 
 # perl
 PERMIT_PACKAGE =	Yes

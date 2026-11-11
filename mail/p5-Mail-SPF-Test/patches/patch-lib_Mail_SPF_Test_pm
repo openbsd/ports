@@ -1,0 +1,12 @@
+Index: lib/Mail/SPF/Test.pm
+--- lib/Mail/SPF/Test.pm.orig
++++ lib/Mail/SPF/Test.pm
+@@ -150,7 +150,7 @@ sub as_yaml {
+     require YAML::Dumper;
+     my $yaml_dumper = YAML::Dumper->new();
+     my @yaml_scenario_structs = map( $_->as_yaml_struct(), @{$self->{scenarios}} );
+-    return $yaml_dumper(@yaml_scenario_structs);
++    return $yaml_dumper->dump(@yaml_scenario_structs);
+ }
+ 
+ =item B<scenarios>: returns I<list> of I<Mail::SPF::Test::Scenario>

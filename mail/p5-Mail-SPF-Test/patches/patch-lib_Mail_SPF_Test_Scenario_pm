@@ -1,0 +1,12 @@
+Index: lib/Mail/SPF/Test/Scenario.pm
+--- lib/Mail/SPF/Test/Scenario.pm.orig
++++ lib/Mail/SPF/Test/Scenario.pm
+@@ -235,7 +235,7 @@ sub as_yaml {
+         tests       => $self->{test_cases},
+         zonedata    => $self->{records_by_domain}
+     };
+-    return $yaml_dumper($raw_yaml_data);
++    return $yaml_dumper->dump($raw_yaml_data);
+ }
+ 
+ =item B<description>: returns I<string>
