@@ -7,7 +7,7 @@ Subject: [PATCH] plugins: Drop .desktop files
 Index: plugins/meson.build
 --- plugins/meson.build.orig
 +++ plugins/meson.build
-@@ -82,15 +82,36 @@ foreach plugin: all_plugins
+@@ -82,11 +82,31 @@ foreach plugin: all_plugins
      plugin_description = plugin[2]
      plugin_dbus_name='org.gnome.SettingsDaemon.@0@'.format(plugin_name_case)
  
@@ -24,8 +24,7 @@ Index: plugins/meson.build
          '-DPLUGIN_NAME="@0@"'.format(plugin_name),
          '-DPLUGIN_DBUS_NAME="@0@"'.format(plugin_dbus_name),
      ] + plugins_cflags
- 
-+    desktop = 'org.gnome.SettingsDaemon.@0@.desktop'.format(plugin[1])
++
 +    desktop_conf = configuration_data()
 +    desktop_conf.set('libexecdir', gsd_libexecdir)
 +    desktop_conf.set('systemd_hidden', enable_systemd ? 'true' : 'false')
@@ -37,12 +36,6 @@ Index: plugins/meson.build
 +        configuration: desktop_conf,
 +        install_dir: gsd_xdg_autostart
 +    )
-+
-     if not disabled_plugins.contains(plugin_name)
--        user_target = 'org.gnome.SettingsDaemon.@0@.target'.format(plugin_name_case)
--        user_service = 'org.gnome.SettingsDaemon.@0@.service'.format(plugin_name_case)
-+        user_target = 'org.gnome.SettingsDaemon.@0@.target'.format(plugin[1])
-+        user_service = 'org.gnome.SettingsDaemon.@0@.service'.format(plugin[1])
  
-         unit_conf = configuration_data()
-         unit_conf.set('plugin_name', plugin_name)
+     if not disabled_plugins.contains(plugin_name)
+         user_target = 'org.gnome.SettingsDaemon.@0@.target'.format(plugin_name_case)

@@ -19,6 +19,8 @@ lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-sound
 @bin libexec/gsd-usb-protection
 @bin libexec/gsd-xsettings
+share/GConf/
+share/GConf/gsettings/
 share/GConf/gsettings/gnome-settings-daemon.convert
 share/examples/gnome-settings-daemon/
 share/examples/gnome-settings-daemon/xdg/
