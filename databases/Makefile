@@ -196,7 +196,6 @@
      SUBDIR += py-sqlalchemy
      SUBDIR += py-sqlalchemy-utils
      SUBDIR += py-sqlobject
-     SUBDIR += py-sqlparse
      SUBDIR += py-whisper
      SUBDIR += qdbm
      SUBDIR += recoll
