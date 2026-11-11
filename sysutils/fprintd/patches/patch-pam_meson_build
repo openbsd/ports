@@ -1,0 +1,14 @@
+Shared objects aren't linked against libc on OpenBSD;
+with --unresolved-symbols=report-all every libc symbol is an error
+
+Index: pam/meson.build
+--- pam/meson.build.orig
++++ pam/meson.build
+@@ -31,7 +31,6 @@ pam_fprintd = shared_module('pam_fprintd',
+     ],
+     link_args: [
+         '-Wl,--version-script,@0@'.format(mapfile_path),
+-        '-Wl,--unresolved-symbols=report-all',
+     ],
+     link_depends: mapfile,
+     install: true,

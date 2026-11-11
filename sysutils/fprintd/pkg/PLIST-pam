@@ -1,0 +1,2 @@
+@so lib/security/pam_fprintd.so
+@man man/man8/pam_fprintd.8

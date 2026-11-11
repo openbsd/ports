@@ -1,8 +1,9 @@
-COMMENT=		fingerprint scanning functionality over D-Bus
+COMMENT-main=		fingerprint scanning functionality over D-Bus
+COMMENT-pam=		PAM module for fprintd
 
-DISTNAME=		fprintd-0.8.1
-EXTRACT_SUFX=		.tar.xz
-REVISION=		3
+V=			1.94.5
+DISTNAME=		fprintd-v${V}
+PKGNAME=		fprintd-${V}
 
 CATEGORIES=    		sysutils
 
@@ -13,26 +14,41 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c dbus-1 dbus-glib-1 execinfo ffi fprint gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pcre2-8 polkit-gobject-1
-WANTLIB += pthread
+SITES=			https://gitlab.freedesktop.org/libfprint/fprintd/-/archive/v${V}/
 
-SITES=			https://gitlab.freedesktop.org/libfprint/fprintd/uploads/bdd9f91909f535368b7c21f72311704a/
+MULTI_PACKAGES=		-main -pam
 
-MODULES=		textproc/intltool
+WANTLIB-main += c fprint-2 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB-main += intl polkit-gobject-1
 
-USE_GMAKE=		Yes
+WANTLIB-pam += basu intl pam
 
-LIB_DEPENDS=		security/libfprint \
-			sysutils/polkit \
-			x11/dbus-glib
+MODULES=		devel/meson
 
-RUN_DEPENDS=		x11/dbus,-suid
+BUILD_DEPENDS=		devel/gettext,-tools
 
-CONFIGURE_STYLE=	gnu
+LIB_DEPENDS-main=	security/libfprint2 \
+			sysutils/polkit
 
-CONFIGURE_ARGS=		--disable-pam
+LIB_DEPENDS-pam=	devel/gettext,-runtime \
+			security/openpam \
+			sysutils/basu
 
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/fprintd
+RUN_DEPENDS-main=	x11/dbus,-suid
+
+RUN_DEPENDS-pam=	${BASE_PKGPATH}
+
+CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include \
+			LDFLAGS=-L${LOCALBASE}/lib
+
+CONFIGURE_ARGS=		-Dsystemd=false \
+			-Dlibsystemd=basu
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fprintd/
+	mv ${WRKINST}${SYSCONFDIR}/fprintd.conf \
+		${PREFIX}/share/examples/fprintd/fprintd.conf
 
 .include <bsd.port.mk>

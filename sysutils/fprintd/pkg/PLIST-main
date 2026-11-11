@@ -1,3 +1,4 @@
+@pkgpath sysutils/fprintd
 @bin bin/fprintd-delete
 @bin bin/fprintd-enroll
 @bin bin/fprintd-list
@@ -8,13 +9,11 @@ share/dbus-1/interfaces/
 share/dbus-1/interfaces/net.reactivated.Fprint.Device.xml
 share/dbus-1/interfaces/net.reactivated.Fprint.Manager.xml
 share/dbus-1/system-services/net.reactivated.Fprint.service
+share/dbus-1/system.d/net.reactivated.Fprint.conf
 share/examples/fprintd/
-share/examples/fprintd/dbus-1/
-share/examples/fprintd/dbus-1/system.d/
-share/examples/fprintd/dbus-1/system.d/net.reactivated.Fprint.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/net.reactivated.Fprint.conf
 share/examples/fprintd/fprintd.conf
 @sample ${SYSCONFDIR}/fprintd.conf
+share/locale/af/LC_MESSAGES/fprintd.mo
 share/locale/ar/LC_MESSAGES/fprintd.mo
 share/locale/as/LC_MESSAGES/fprintd.mo
 share/locale/ast/LC_MESSAGES/fprintd.mo
@@ -58,6 +57,7 @@ share/locale/ka/LC_MESSAGES/fprintd.mo
 share/locale/kk/LC_MESSAGES/fprintd.mo
 share/locale/kn/LC_MESSAGES/fprintd.mo
 share/locale/ko/LC_MESSAGES/fprintd.mo
+share/locale/ky/LC_MESSAGES/fprintd.mo
 share/locale/lt/LC_MESSAGES/fprintd.mo
 share/locale/lv/LC_MESSAGES/fprintd.mo
 share/locale/ml/LC_MESSAGES/fprintd.mo

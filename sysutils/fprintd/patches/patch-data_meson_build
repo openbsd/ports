@@ -1,0 +1,14 @@
+XXX upstream
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -66,7 +66,7 @@ if get_option('man')
+                 '@OUTPUT@',
+             ],
+             install: true,
+-            install_dir: datadir / 'man' / 'man' + man_section.to_string(),
++            install_dir: get_option('mandir') / 'man' + man_section.to_string(),
+         )
+     endforeach
+ endif

@@ -1,0 +1,24 @@
+- OpenPAM's struct pam_message has a non-const msg member
+- enrolled_prints is a size_t: print it with %zu
+
+Index: pam/pam_fprintd.c
+--- pam/pam_fprintd.c.orig
++++ pam/pam_fprintd.c
+@@ -116,7 +116,7 @@ send_msg (pam_handle_t *pamh, const char
+ {
+   const struct pam_message mymsg = {
+     .msg_style = style,
+-    .msg = msg,
++    .msg = (char *) msg,
+   };
+   const struct pam_message *msgp = &mymsg;
+   const struct pam_conv *pc;
+@@ -186,7 +186,7 @@ open_device (pam_handle_t *pamh,
+       size_t enrolled_prints = user_enrolled_prints_num (pamh, bus, s, username);
+ 
+       if (debug)
+-        pam_syslog (pamh, LOG_DEBUG, "%s prints registered: %" PRIu64, s, enrolled_prints);
++        pam_syslog (pamh, LOG_DEBUG, "%s prints registered: %zu", s, enrolled_prints);
+ 
+       if (enrolled_prints > max_prints)
+         {
