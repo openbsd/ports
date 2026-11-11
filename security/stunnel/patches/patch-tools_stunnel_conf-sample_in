@@ -22,7 +22,7 @@ Index: tools/stunnel.conf-sample.in
 -;output = @localstatedir@/log/stunnel.log
 +;output = /stunnel.log
  
- ; Enable FIPS 140-2 mode if needed for compliance
+ ; Enable FIPS 140-3 mode if needed for compliance
  ;fips = yes
 @@ -46,7 +47,7 @@
  ; * Include all configuration file fragments from the specified folder     *

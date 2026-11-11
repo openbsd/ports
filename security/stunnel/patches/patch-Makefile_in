@@ -1,8 +1,8 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -371,7 +371,7 @@ top_srcdir = @top_srcdir@
- with_bashcompdir = @with_bashcompdir@
+@@ -374,7 +374,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  AM_DISTCHECK_CONFIGURE_FLAGS = --with-bashcompdir='$$(datarootdir)/bash-completion/completions'
  ACLOCAL_AMFLAGS = -I m4
 -SUBDIRS = src doc tools tests
