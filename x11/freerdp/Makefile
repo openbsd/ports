@@ -1,6 +1,6 @@
 COMMENT =	client for Microsoft RDP (remote desktop protocol)
 
-DISTNAME =	freerdp-3.33.0
+DISTNAME =	freerdp-3.33.1
 
 CATEGORIES =	x11 net
 
