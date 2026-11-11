@@ -2,20 +2,16 @@ COMMENT-main=	helper library for networking and security applications
 COMMENT-gtk3=	gwenhywfar GTK+3 support library
 COMMENT-qt6=	gwenhywfar Qt6 support library
 
-V=		5.14.1
+V=		5.14.3
 DISTNAME=	gwenhywfar-${V}
 
 PKGNAME-gtk3=	gwenhywfar-gtk3-${V}
 PKGNAME-qt6=	gwenhywfar-qt6-${V}
 
-REVISION-main=	0
-REVISION-gtk3=	0
-REVISION-qt6=	0
-
-SHARED_LIBS +=  gwenhywfar           2.6      # 93.1
-SHARED_LIBS +=  gwengui-cpp          1.1      # 93.1
-SHARED_LIBS +=  gwengui-gtk3         0.1      # 93.1
-SHARED_LIBS +=  gwengui-qt6          0.0      # 93.1
+SHARED_LIBS +=  gwenhywfar           2.6      # 93.3
+SHARED_LIBS +=  gwengui-cpp          1.1      # 93.3
+SHARED_LIBS +=  gwengui-gtk3         0.1      # 93.3
+SHARED_LIBS +=  gwengui-qt6          0.0      # 93.3
 
 CATEGORIES=	devel
 
@@ -64,7 +60,7 @@ WANTLIB-qt6 += Qt6SerialPort
 WANTLIB-qt6 += drm_amdgpu drm_intel
 .endif
 
-SITES=			https://www.aquamaniac.de/rdm/attachments/download/630/
+SITES=			https://www.aquamaniac.de/rdm/attachments/download/662/
 
 MODULES=		x11/qt6
 

@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -26574,8 +26574,8 @@ percent.commands = @echo -n "\$(\$(@))\ "
+@@ -26451,8 +26451,8 @@ percent.commands = @echo -n "\$(\$(@))\ "
  QMAKE_EXTRA_TARGETS += percent
  EOF
      $QMAKE $am_have_qt_pro -o $am_have_qt_makefile
