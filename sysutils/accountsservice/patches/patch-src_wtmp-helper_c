@@ -23,7 +23,7 @@ Index: src/wtmp-helper.c
  static gboolean
  wtmp_helper_start (void)
  {
-@@ -215,10 +215,136 @@ wtmp_helper_get_path_for_monitor (void)
+@@ -215,10 +215,140 @@ wtmp_helper_get_path_for_monitor (void)
  
  #else /* HAVE_UTMPX_H */
  
@@ -42,21 +42,24 @@ Index: src/wtmp-helper.c
 +        GList *l;
 +        FILE *fp;
 +
-+        login_hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
-+        logout_hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
-+
 +        fp = fopen(_PATH_WTMP, "r");
 +        if (fp == NULL)
 +            return;
++
++        login_hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
++        logout_hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
 +
 +        while (fread(&wtmp_entry, sizeof(wtmp_entry), 1, fp) == 1) {
 +                UserAccounting    *accounting;
 +                UserPreviousLogin *previous_login;
 +                gboolean shutdown_or_reboot = FALSE;
++                /* ut_name and ut_line are not NUL-terminated when full */
++                g_autofree gchar *ut_name = g_strndup (wtmp_entry.ut_name, sizeof (wtmp_entry.ut_name));
++                g_autofree gchar *ut_line = g_strndup (wtmp_entry.ut_line, sizeof (wtmp_entry.ut_line));
 +
-+                if (g_str_equal (wtmp_entry.ut_line, "~")) {
-+                        if (g_str_equal (wtmp_entry.ut_name, "shutdown") ||
-+                            g_str_equal (wtmp_entry.ut_name, "reboot")) {
++                if (g_str_equal (ut_line, "~")) {
++                        if (g_str_equal (ut_name, "shutdown") ||
++                            g_str_equal (ut_name, "reboot")) {
 +                                shutdown_or_reboot = TRUE;
 +                        }
 +                }
@@ -74,18 +77,18 @@ Index: src/wtmp-helper.c
 +                        g_hash_table_remove_all (logout_hash);
 +                }
 +
-+                if (wtmp_entry.ut_name[0] == 0) {
++                if (ut_name[0] == '\0') {
 +                        continue;
 +                }
 +
 +                if (!g_hash_table_lookup_extended (login_hash,
-+                                                   wtmp_entry.ut_name,
++                                                   ut_name,
 +                                                   &key, &value)) {
 +                        accounting = g_new (UserAccounting, 1);
 +                        accounting->frequency = 0;
 +                        accounting->previous_logins = NULL;
 +
-+                        g_hash_table_insert (login_hash, g_strdup (wtmp_entry.ut_name), accounting);
++                        g_hash_table_insert (login_hash, g_strdup (ut_name), accounting);
 +                } else {
 +                        accounting = value;
 +                }
@@ -95,13 +98,14 @@ Index: src/wtmp-helper.c
 +
 +                /* Add zero logout time to change it later on logout record */
 +                previous_login = g_new (UserPreviousLogin, 1);
-+                previous_login->id = g_strdup (wtmp_entry.ut_line);
++                previous_login->id = g_strdup (ut_line);
 +                previous_login->login_time = wtmp_entry.ut_time;
 +                previous_login->logout_time = 0;
 +                accounting->previous_logins = g_list_prepend (accounting->previous_logins, previous_login);
 +
-+                g_hash_table_insert (logout_hash, g_strdup (wtmp_entry.ut_line), previous_login);
++                g_hash_table_insert (logout_hash, g_strdup (ut_line), previous_login);
 +        }
++        fclose (fp);
 +
 +        g_hash_table_iter_init (&iter, login_hash);
 +        while (g_hash_table_iter_next (&iter, &key, &value)) {

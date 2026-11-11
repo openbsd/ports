@@ -1,389 +1,121 @@
+- no /etc/shadow: local users are those in /etc/passwd; no tcb either
+- useradd(8) login class for admins, userdel(8) has no -f, remove the
+  user's empty own group (no USERGROUPS_ENAB)
+
 Index: src/daemon.c
 --- src/daemon.c.orig
 +++ src/daemon.c
-@@ -38,6 +38,10 @@
- #include <errno.h>
- #include <sys/types.h>
- 
-+#ifdef __OpenBSD__
-+#include <grp.h> /* getgrnam */
-+#endif
-+
- #include <glib.h>
- #include <glib/gi18n.h>
- #include <glib-object.h>
-@@ -105,11 +109,18 @@ typedef struct
-         GHashTable      *extension_ifaces;
- } DaemonPrivate;
- 
-+#ifdef HAVE_SHADOW_H
- typedef struct passwd * (* EntryGeneratorFunc) (Daemon *,
-                                                 GHashTable *,
-                                                 GHashTable *,
-                                                 gpointer *,
-                                                 struct spwd **shadow_entry);
-+#else
-+typedef struct passwd * (* EntryGeneratorFunc) (Daemon *,
-+                                                GHashTable *,
-+                                                GHashTable *,
-+                                                gpointer *);
-+#endif
- 
- typedef struct
- {
-@@ -215,20 +226,30 @@ remove_cache_files (const gchar *user_name)
+@@ -233,6 +233,7 @@ remove_cache_files (const gchar *user_name)
          g_remove (icon_filename);
  }
  
 +#ifdef HAVE_SHADOW_H
- static struct passwd *
- entry_generator_fgetpwent (Daemon       *daemon,
-                            GHashTable   *users,
-                            GHashTable   *local_users,
-                            gpointer     *state,
-                            struct spwd **spent)
-+#else
-+static struct passwd *
-+entry_generator_fgetpwent (Daemon       *daemon,
-+                           GHashTable   *users,
-+                           GHashTable   *local_users,
-+                           gpointer     *state)
+ static int
+ fgetspent_r_compat (FILE         *fp,
+                     struct spwd  *spbuf,
+@@ -266,6 +267,7 @@ fgetspent_r_compat (FILE         *fp,
+         return fgetspent_r (fp, spbuf, buf, len, entry);
+ #endif
+ }
 +#endif
+ 
+ typedef struct
  {
-         struct passwd *pwent;
- 
-+#if HAVE_SHADOW_H
-         struct
-         {
-                 struct spwd spbuf;
-                 char        buf[1024];
-         } *shadow_entry_buffers;
-+#endif
- 
-         struct
-         {
-@@ -242,10 +263,13 @@ entry_generator_fgetpwent (Daemon       *daemon,
- 
-         /* First iteration */
+@@ -361,16 +363,19 @@ entry_generator_fgetpwent (Daemon         *daemon,
          if (*state == NULL) {
-+#ifdef HAVE_SHADOW_H
                  GHashTable *shadow_users = NULL;
-                 g_autofree char *shadow_path = NULL;
-+#endif
                  g_autofree char *passwd_path = NULL;
-                 FILE *fp;
++                FILE *fp;
 +#ifdef HAVE_SHADOW_H
-                 struct spwd *shadow_entry;
+                 g_autofree char *tcb_path = NULL;
+                 g_autofree char *shadow_tcb_path = NULL;
+-                FILE *fp;
+                 DIR *dir;
+                 struct dirent *ent;
++#endif
  
-                 shadow_path = g_build_filename (get_sysconfdir (), PATH_SHADOW, NULL);
-@@ -281,18 +305,23 @@ entry_generator_fgetpwent (Daemon       *daemon,
-                         g_clear_pointer (&shadow_users, g_hash_table_unref);
-                         return NULL;
+                 shadow_users = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
+ 
+                 build_shadow_users_hash (local_users, shadow_users, PATH_SHADOW);
+ 
++#ifdef HAVE_SHADOW_H
+                 tcb_path = g_build_filename (get_sysconfdir (), PATH_TCB, NULL);
+                 dir = opendir (tcb_path);
+                 if (dir) {
+@@ -386,6 +391,7 @@ entry_generator_fgetpwent (Daemon         *daemon,
+                 } else {
+                         g_warning ("Unable to open %s: %s", tcb_path, g_strerror (errno));
                  }
 +#endif
  
-                 passwd_path = g_build_filename (get_sysconfdir (), PATH_PASSWD, NULL);
-                 fp = fopen (passwd_path, "r");
-                 if (fp == NULL) {
-+#ifdef HAVE_SHADOW_H
+                 if (g_hash_table_size (shadow_users) == 0) {
                          g_clear_pointer (&shadow_users, g_hash_table_unref);
-+#endif
-                         g_warning ("Unable to open %s: %s", passwd_path, g_strerror (errno));
-                         return NULL;
+@@ -400,6 +406,13 @@ entry_generator_fgetpwent (Daemon         *daemon,
+                         return;
                  }
  
++#ifndef HAVE_SHADOW_H
++                /* No /etc/shadow: local users are those in /etc/passwd */
++                while ((*pwent = fgetpwent (fp)) != NULL)
++                        g_hash_table_add (local_users, g_strdup ((*pwent)->pw_name));
++                rewind (fp);
++#endif
++
                  generator_state = g_malloc0 (sizeof(*generator_state));
                  generator_state->fp = fp;
-+#ifdef HAVE_SHADOW_H
                  generator_state->shadow_users = shadow_users;
-+#endif
- 
-                 *state = generator_state;
-         }
-@@ -303,17 +332,23 @@ entry_generator_fgetpwent (Daemon       *daemon,
-         if (g_hash_table_size (users) < MAX_LOCAL_USERS) {
-                 pwent = fgetpwent (generator_state->fp);
-                 if (pwent != NULL) {
-+#ifdef HAVE_SHADOW_H
-                         shadow_entry_buffers = g_hash_table_lookup (generator_state->shadow_users, pwent->pw_name);
- 
-                         if (shadow_entry_buffers != NULL) {
-                                 *spent = &shadow_entry_buffers->spbuf;
-                         }
-+#endif
- 
-                         /* Skip system users... */
-                         if (!user_classify_is_human (pwent->pw_uid, pwent->pw_name, pwent->pw_shell)) {
-                                 g_debug ("skipping user: %s", pwent->pw_name);
- 
-+#ifdef HAVE_SHADOW_H
-                                 return entry_generator_fgetpwent (daemon, users, local_users, state, spent);
-+#else
-+                                return entry_generator_fgetpwent (daemon, users, local_users, state);
-+#endif
-                         }
- 
-                         return pwent;
-@@ -321,19 +356,29 @@ entry_generator_fgetpwent (Daemon       *daemon,
-         }
- 
-         fclose (generator_state->fp);
-+#ifdef HAVE_SHADOW_H
-         g_hash_table_unref (generator_state->shadow_users);
-+#endif
-         g_free (generator_state);
-         *state = NULL;
- 
-         return NULL;
- }
- 
-+#ifdef HAVE_SHADOW_H
- static struct passwd *
- entry_generator_cachedir (Daemon       *daemon,
-                           GHashTable   *users,
-                           GHashTable   *local_users,
-                           gpointer     *state,
-                           struct spwd **shadow_entry)
-+#else
-+static struct passwd *
-+entry_generator_cachedir (Daemon       *daemon,
-+                          GHashTable   *users,
-+                          GHashTable   *local_users,
-+                          gpointer     *state)
-+#endif
- {
-         struct passwd *pwent;
- 
-@@ -376,7 +421,9 @@ entry_generator_cachedir (Daemon       *daemon,
-                         errno = 0;
-                         pwent = getpwnam (name);
-                         if (pwent != NULL) {
-+#ifdef HAVE_SHADOW_H
-                                 *shadow_entry = getspnam (pwent->pw_name);
-+#endif
- 
-                                 return pwent;
-                         } else if (errno == 0) {
-@@ -414,12 +461,20 @@ entry_generator_cachedir (Daemon       *daemon,
-         return NULL;
- }
- 
-+#ifdef HAVE_SHADOW_H
- static struct passwd *
- entry_generator_requested_users (Daemon       *daemon,
-                                  GHashTable   *users,
-                                  GHashTable   *local_users,
-                                  gpointer     *state,
-                                  struct spwd **shadow_entry)
-+#else
-+static struct passwd *
-+entry_generator_requested_users (Daemon       *daemon,
-+                                 GHashTable   *users,
-+                                 GHashTable   *local_users,
-+                                 gpointer     *state)
-+#endif
- {
-         DaemonPrivate *priv = daemon_get_instance_private (daemon);
-         struct passwd *pwent;
-@@ -447,7 +502,9 @@ entry_generator_requested_users (Daemon       *daemon,
-                                 if (pwent == NULL) {
-                                         g_debug ("user '%s' requested previously but not present on system", name);
-                                 } else {
-+#ifdef HAVE_SHADOW_H
-                                         *shadow_entry = getspnam (pwent->pw_name);
-+#endif
- 
-                                         return pwent;
-                                 }
-@@ -471,14 +528,20 @@ load_entries (Daemon            *daemon,
-         DaemonPrivate *priv = daemon_get_instance_private (daemon);
-         gpointer generator_state = NULL;
-         struct passwd *pwent;
-+#ifdef HAVE_SHADOW_H
-         struct spwd *spent = NULL;
-+#endif
+@@ -1830,7 +1843,7 @@ daemon_create_user_backend (Daemon         *daemon,
+         g_autofree char *admin_groups = NULL;
+         GError *inner_error = NULL;
          User *user = NULL;
+-        const gchar *argv[9] = { NULL };
++        const gchar *argv[11] = { NULL };
+         int i = 0;
  
-         g_assert (entry_generator != NULL);
+         argv[i++] = "/usr/sbin/useradd";
+@@ -1843,6 +1856,10 @@ daemon_create_user_backend (Daemon         *daemon,
  
-         for (;;) {
-+#ifdef HAVE_SHADOW_H
-                 spent = NULL;
-                 pwent = entry_generator (daemon, users, local_users, &generator_state, &spent);
-+#else
-+                pwent = entry_generator (daemon, users, local_users, &generator_state);
-+#endif
-                 if (pwent == NULL)
-                         break;
- 
-@@ -499,7 +562,11 @@ load_entries (Daemon            *daemon,
- 
-                         /* freeze & update users not already in the new list */
-                         g_object_freeze_notify (G_OBJECT (user));
-+#ifdef HAVE_SHADOW_H
-                         user_update_from_pwent (user, pwent, spent);
-+#else
-+                        user_update_from_pwent (user, pwent);
-+#endif
- 
-                         g_hash_table_insert (users, g_strdup (user_get_user_name (user)), user);
-                         g_debug ("loaded user: %s", user_get_user_name (user));
-@@ -976,15 +1043,24 @@ throw_error (GDBusMethodInvocation *context,
- }
- 
- static User *
-+#ifdef HAVE_SHADOW_H
- add_new_user_for_pwent (Daemon        *daemon,
-                         struct passwd *pwent,
-                         struct spwd   *spent)
-+#else
-+add_new_user_for_pwent (Daemon        *daemon,
-+                        struct passwd *pwent)
-+#endif
- {
-         DaemonPrivate *priv = daemon_get_instance_private (daemon);
-         User *user;
- 
-         user = user_new (daemon, pwent->pw_uid);
-+#ifdef HAVE_SHADOW_H
-         user_update_from_pwent (user, pwent, spent);
-+#else
-+        user_update_from_pwent (user, pwent);
-+#endif
-         user_register (user);
- 
-         g_hash_table_insert (priv->users,
-@@ -1013,9 +1089,13 @@ daemon_local_find_user_by_id (Daemon *daemon,
-         user = g_hash_table_lookup (priv->users, pwent->pw_name);
- 
-         if (user == NULL) {
-+#ifdef HAVE_SHADOW_H
-                 struct spwd *spent;
-                 spent = getspnam (pwent->pw_name);
-                 user = add_new_user_for_pwent (daemon, pwent, spent);
-+#else
-+                user = add_new_user_for_pwent (daemon, pwent);
-+#endif
- 
-                 priv->explicitly_requested_users = g_list_append (priv->explicitly_requested_users,
-                                                                   g_strdup (pwent->pw_name));
-@@ -1041,9 +1121,13 @@ daemon_local_find_user_by_name (Daemon      *daemon,
-         user = g_hash_table_lookup (priv->users, pwent->pw_name);
- 
-         if (user == NULL) {
-+#ifdef HAVE_SHADOW_H
-                 struct spwd *spent;
-                 spent = getspnam (pwent->pw_name);
-                 user = add_new_user_for_pwent (daemon, pwent, spent);
-+#else
-+                user = add_new_user_for_pwent (daemon, pwent);
-+#endif
- 
-                 priv->explicitly_requested_users = g_list_append (priv->explicitly_requested_users,
-                                                                   g_strdup (pwent->pw_name));
-@@ -1309,7 +1393,11 @@ daemon_create_user_authorized_cb (Daemon              
-         User *user;
- 
-         g_autoptr (GError) error = NULL;
-+#ifndef __OpenBSD__
-         const gchar *argv[9];
-+#else
-+        const gchar *argv[11];
-+#endif
-         g_autofree gchar *admin_groups = NULL;
- 
-         if (getpwnam (cd->user_name) != NULL) {
-@@ -1345,9 +1433,17 @@ daemon_create_user_authorized_cb (Daemon              
- 
-                 argv[4] = "-G";
-                 argv[5] = admin_groups;
+                 argv[i++] = "-G";
+                 argv[i++] = admin_groups;
 +#ifdef __OpenBSD__
-+                argv[6] = "-L";
-+                argv[7] = "staff";
-+                argv[8] = "--";
-+                argv[9] = cd->user_name;
-+                argv[10] = NULL;
-+#else
-                 argv[6] = "--";
-                 argv[7] = cd->user_name;
-                 argv[8] = NULL;
++                argv[i++] = "-L";
++                argv[i++] = "staff";
 +#endif
-         } else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
-                 argv[4] = "--";
-                 argv[5] = cd->user_name;
-@@ -1527,6 +1623,34 @@ daemon_delete_user_authorized_cb (Daemon              
-                 return;
          }
  
-+/*
-+ * Under OpenBSD there is no /etc/login.defs (for USERGROUPS_ENAB), so
-+ * we need to explicitely remove the user's group if it contains no more
-+ * members and matches the username.
-+ */
+         argv[i++] = "--";
+@@ -2068,7 +2085,9 @@ daemon_delete_shadow_user (Daemon                *daem
+         free (resolved_homedir);
+ 
+         argv[i++] = "/usr/sbin/userdel";
++#ifndef __OpenBSD__
+         argv[i++] = "-f";
++#endif
+ 
+         if (rm_files)
+                 argv[i++] = "-r";
+@@ -2077,8 +2096,23 @@ daemon_delete_shadow_user (Daemon                *daem
+         argv[i++] = username;
+         argv[i++] = NULL;
+ 
+-        if (!spawn_sync (argv, &inner_error))
++        if (!spawn_sync (argv, &inner_error)) {
+                 g_propagate_prefixed_error (error, inner_error, "Failed to run userdel: ");
++                return;
++        }
++
 +#ifdef __OpenBSD__
-+        struct group *grp;
-+        GError *grperror;
-+        const gchar *grpargv[3];
++        {
++                /* No USERGROUPS_ENAB in login.defs: remove the user's own
++                 * group if nobody else is a member. */
++                struct group *grp = getgrnam (username);
++                const gchar *grpargv[] = { "/usr/sbin/groupdel", "--", username, NULL };
 +
-+        grp = getgrnam (pwent->pw_name);
-+
-+        if ((grp != NULL) && (*grp->gr_name == *pwent->pw_name) && (*grp->gr_mem == NULL)) {
-+                sys_log (context, "delete group '%d'", pwent->pw_gid);
-+
-+                grpargv[0] = "/usr/sbin/groupdel";
-+                grpargv[1] = pwent->pw_name;
-+                grpargv[2] = NULL;
-+
-+                grperror = NULL;
-+                if (!spawn_sync (grpargv, &grperror)) {
-+                    throw_error (context, ERROR_FAILED, "running '%s' failed: %s", grpargv[0], grperror->message);
-+                    g_error_free (grperror);
-+                    return;
-+                }
++                if (grp != NULL && grp->gr_mem[0] == NULL &&
++                    !spawn_sync (grpargv, &inner_error))
++                        g_propagate_prefixed_error (error, inner_error, "Failed to run groupdel: ");
 +        }
 +#endif
-+
-         sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
- 
-         user = daemon_local_find_user_by_id (daemon, ud->uid);
-@@ -1554,11 +1678,18 @@ daemon_delete_user_authorized_cb (Daemon              
- 
-         argv[0] = "/usr/sbin/userdel";
-         if (ud->remove_files) {
-+#ifdef __OpenBSD__
-+                argv[1] = "-r";
-+                argv[2] = "--";
-+                argv[3] = pwent->pw_name;
-+                argv[4] = NULL;
-+#else
-                 argv[1] = "-f";
-                 argv[2] = "-r";
-                 argv[3] = "--";
-                 argv[4] = pwent->pw_name;
-                 argv[5] = NULL;
-+#endif
-         } else {
-                 argv[1] = "-f";
-                 argv[2] = "--";
-@@ -1803,9 +1934,8 @@ load_autologin (Daemon   *daemon,
-         else if (dm_type == DISPLAY_MANAGER_TYPE_GDM)
-                 return load_autologin_gdm (daemon, name, enabled, error);
- 
--        g_set_error (error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED, _ ("Unsupported Display Manager"));
--
--        return FALSE;
-+        /* Default to GDM for backward compatibility */
-+        return load_autologin_gdm (daemon, name, enabled, error);
  }
  
- static gboolean
-@@ -1885,7 +2015,8 @@ save_autologin (Daemon      *daemon,
-         else if (dm_type == DISPLAY_MANAGER_TYPE_GDM)
-                 return save_autologin_gdm (daemon, name, enabled, error);
- 
--        return FALSE;
-+        /* Default to GDM for backward compatibility */
-+        return save_autologin_gdm (daemon, name, enabled, error);
- }
- 
- gboolean
+ static void

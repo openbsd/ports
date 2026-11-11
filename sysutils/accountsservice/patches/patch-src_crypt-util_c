@@ -1,0 +1,28 @@
+OpenBSD crypt(3) only does bcrypt: use crypt_newhash(3).
+
+Index: src/crypt-util.c
+--- src/crypt-util.c.orig
++++ src/crypt-util.c
+@@ -32,7 +32,21 @@
+ 
+ #include "crypt-util.h"
+ 
+-#ifdef HAVE_LIBXCRYPT
++#if defined(__OpenBSD__)
++#include <pwd.h>
++
++/* crypt(3) only does bcrypt: let crypt_newhash(3) pick the salt */
++gchar *
++hash_password (const gchar *plain)
++{
++        char hashed[_PASSWORD_LEN + 1];
++
++        if (crypt_newhash (plain, "bcrypt,a", hashed, sizeof (hashed)) == -1)
++                return NULL;
++
++        return g_strdup (hashed);
++}
++#elif defined(HAVE_LIBXCRYPT)
+ gchar *
+ hash_password (const gchar *plain)
+ {

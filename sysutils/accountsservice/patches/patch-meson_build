@@ -1,29 +1,19 @@
+No libcrypt on OpenBSD (crypt(3) is in libc); ConsoleKit support.
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -103,7 +103,7 @@ elif cc.has_header_symbol('paths.h', '_PATH_WTMPX')
- 
-   config_h.set('PATH_WTMP', '_PATH_WTMPX')
+@@ -176,7 +176,8 @@ if crypt_dep.found()
+   config_h.set('HAVE_LIBXCRYPT', get_option('libxcrypt'))
+   config_h.set('HAVE_CRYPT_R', true)
  else
--  path_wtmp = '/var/log/utx.log'
-+  path_wtmp = '/var/log/wtmp'
-   assert(run_command('test', '-e', path_wtmp, check: false).returncode() == 0, 'Do not know which filename to watch for wtmp changes')
-   config_h.set_quoted('PATH_WTMP', path_wtmp)
- endif
-@@ -161,7 +161,11 @@ polkit_gobject_dep = dependency('polkit-gobject-1')
- crypt_dep = dependency('libxcrypt', required: false, version: '>= 4')
- config_h.set('HAVE_CRYPT_GENSALT', crypt_dep.found())
- if not crypt_dep.found()
 -  crypt_dep = cc.find_library('crypt')
-+  if host_machine.system() == 'linux'
-+    crypt_dep = cc.find_library('crypt')
-+  else
-+    crypt_dep = []
-+  endif
- endif
- 
- dbus_dep = dependency('dbus-1')
-@@ -215,6 +219,8 @@ config_h.set_quoted('PATH_LIGHTDM_CONF', lightdm_conf_
++  # no libcrypt on OpenBSD, crypt(3) is in libc
++  crypt_dep = cc.find_library('crypt', required: false)
+   config_h.set('HAVE_LIBXCRYPT', false)
+   # Check for reentrant version (crypt_r) of the crypt function.
+   config_h.set('HAVE_CRYPT_R', (
+@@ -240,6 +241,8 @@ config_h.set10('CREATE_HOMED', create_homed)
  
  if get_option('elogind')
    logind_dep = dependency('libelogind', version: '>= 229.4')

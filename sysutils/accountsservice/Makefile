@@ -1,26 +1,27 @@
-# XXX fix change password (gnome-cc run-passwd.c: argv[0]);
-# see patches/patch-src_libaccountsservice_act-user_c
+# XXX fix change password; see:
+# see patches/patch-src_crypt-util_c
+# and patches/patch-panels_system_users_run-passwd_c in x11/gnome/control-center
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
-DISTNAME=	accountsservice-23.13.9
-EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+V=		26.27.3
+DISTNAME=	accountsservice-${V}
 
-SHARED_LIBS += accountsservice           0.1 # 0.0.0
+SHARED_LIBS += accountsservice           1.0 # 1.0.0
 
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://cgit.freedesktop.org/accountsservice/
+HOMEPAGE=	https://www.freedesktop.org/wiki/Software/AccountsService/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c consolekit gio-2.0 glib-2.0 gobject-2.0 intl polkit-gobject-1
+WANTLIB += c consolekit gio-2.0 glib-2.0 gobject-2.0 intl json-c
+WANTLIB += polkit-gobject-1
 
-SITES=		http://www.freedesktop.org/software/accountsservice/
+SITES=		https://gitlab.freedesktop.org/accountsservice/accountsservice/-/archive/${V}/
 
 MODULES=	devel/meson
 
@@ -28,7 +29,8 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/gobject-introspection \
 		lang/vala
 
-LIB_DEPENDS=	sysutils/consolekit>=1.2.4p4 \
+LIB_DEPENDS=	devel/json-c \
+		sysutils/consolekit \
 		sysutils/polkit
 
 # polkit(8) almost always needs to know the "active" session
@@ -40,7 +42,9 @@ RUN_DEPENDS +=	x11/dbus,-suid
 CONFIGURE_ARGS=	-Dsystemdsystemunitdir=no \
 		-Dadmin_group=wheel \
 		-Dminimum_uid=1000 \
-		-Dconsolekit=true
+		-Dconsolekit=true \
+		-Dtests=false \
+		-Dwtmpfile=/var/log/wtmp
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
