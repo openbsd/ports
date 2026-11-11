@@ -1,0 +1,20 @@
+GtkBuilder can only resolve a template type that was never registered by
+looking up <type>_get_type() in the executable. On Linux this works by
+accident: the network panel depends on gmodule-2.0, whose pkg-config flags
+add -Wl,--export-dynamic to the whole binary. The network panel isn't built
+here, so CcEntryFeedback is unknown and building the template fails (crash
+when clicking Password / Add User). Register the type explicitly, as
+cc-enterprise-login-dialog.c already does.
+
+Index: panels/system/users/cc-add-user-dialog.c
+--- panels/system/users/cc-add-user-dialog.c.orig
++++ panels/system/users/cc-add-user-dialog.c
+@@ -478,6 +478,8 @@ cc_add_user_dialog_class_init (CcAddUser
+         object_class->dispose = cc_add_user_dialog_dispose;
+         object_class->finalize = cc_add_user_dialog_finalize;
+ 
++        g_type_ensure (CC_TYPE_ENTRY_FEEDBACK);
++
+         gtk_widget_class_set_template_from_resource (widget_class, "/org/gnome/control-center/system/users/cc-add-user-dialog.ui");
+ 
+         gtk_widget_class_bind_template_child (widget_class, CcAddUserDialog, add_button);

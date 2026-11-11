@@ -1,4 +1,4 @@
-XXX see sysutils/accountsservice/patches/patch-src_libaccountsservice_act-user_c
+See sysutils/accountsservice/patches/patch-src_crypt-util_c
 
 Index: panels/system/users/run-passwd.c
 --- panels/system/users/run-passwd.c.orig
