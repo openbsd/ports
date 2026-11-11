@@ -1,5 +1,8 @@
 COMMENT=		DICOM toolkit
 
+# orthanc needs a matching configuration in WRKSRC/Resources/RunCppCheck-XXX.sh
+# and ../OrthancFramework/Resources/CMake/DcmtkConfiguration.cmake, look for
+# DCMTK_STATIC_VERSION / DCMTK_VERSION_NUMBER / /usr/local/share/dcmtk-3.7.x
 V =			3.7.0
 DISTNAME=		dcmtk-$V
 
