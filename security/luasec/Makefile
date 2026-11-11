@@ -2,8 +2,7 @@ COMMENT=	lua binding to OpenSSL to provide TLS/SSL communication
 
 GH_ACCOUNT=	brunoos
 GH_PROJECT=	luasec
-GH_TAGNAME=	v1.2.0
-REVISION=	0
+GH_TAGNAME=	v1.3.2
 
 CATEGORIES=	security
 

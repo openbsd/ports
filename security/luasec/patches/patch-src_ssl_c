@@ -2,7 +2,7 @@ https://github.com/lunarmodules/luasec/pull/203
 Index: src/ssl.c
 --- src/ssl.c.orig
 +++ src/ssl.c
-@@ -87,7 +87,8 @@ static int meth_destroy(lua_State *L)
+@@ -86,7 +86,8 @@ static int meth_destroy(lua_State *L)
  {
    p_ssl ssl = (p_ssl)luaL_checkudata(L, 1, "SSL:Connection");
    if (ssl->state == LSEC_STATE_CONNECTED) {
@@ -12,7 +12,7 @@ Index: src/ssl.c
      SSL_shutdown(ssl->ssl);
    }
    if (ssl->sock != SOCKET_INVALID) {
-@@ -305,6 +306,7 @@ static int meth_create(lua_State *L)
+@@ -304,6 +305,7 @@ static int meth_create(lua_State *L)
      return luaL_argerror(L, 1, "invalid context");
    }
    ssl->state = LSEC_STATE_NEW;
@@ -20,7 +20,7 @@ Index: src/ssl.c
    SSL_set_fd(ssl->ssl, (int)SOCKET_INVALID);
    SSL_set_mode(ssl->ssl, SSL_MODE_ENABLE_PARTIAL_WRITE | 
      SSL_MODE_ACCEPT_MOVING_WRITE_BUFFER);
-@@ -341,6 +343,56 @@ static int meth_receive(lua_State *L) {
+@@ -340,6 +342,56 @@ static int meth_receive(lua_State *L) {
  }
  
  /**
@@ -77,7 +77,7 @@ Index: src/ssl.c
   * Get the buffer's statistics.
   */
  static int meth_getstats(lua_State *L) {
-@@ -904,6 +956,7 @@ static int meth_tlsa(lua_State *L)
+@@ -990,6 +1042,7 @@ static int meth_tlsa(lua_State *L)
   */
  static luaL_Reg methods[] = {
    {"close",               meth_close},

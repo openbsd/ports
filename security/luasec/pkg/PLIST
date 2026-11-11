@@ -67,6 +67,9 @@ share/examples/${FULLPKGNAME}/multicert/server.lua
 share/examples/${FULLPKGNAME}/oneshot/
 share/examples/${FULLPKGNAME}/oneshot/client.lua
 share/examples/${FULLPKGNAME}/oneshot/server.lua
+share/examples/${FULLPKGNAME}/psk/
+share/examples/${FULLPKGNAME}/psk/client.lua
+share/examples/${FULLPKGNAME}/psk/server.lua
 share/examples/${FULLPKGNAME}/sni/
 share/examples/${FULLPKGNAME}/sni/client.lua
 share/examples/${FULLPKGNAME}/sni/server.lua
