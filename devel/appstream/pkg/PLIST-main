@@ -31,6 +31,7 @@ include/appstream/as-icon.h
 include/appstream/as-image.h
 include/appstream/as-issue.h
 include/appstream/as-launchable.h
+include/appstream/as-locale.h
 include/appstream/as-macros.h
 include/appstream/as-metadata.h
 include/appstream/as-pool.h
