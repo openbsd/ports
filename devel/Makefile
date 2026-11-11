@@ -1719,6 +1719,7 @@
      SUBDIR += py-retry2
      SUBDIR += py-rfc3339-validator
      SUBDIR += py-rfc3986-validator
+     SUBDIR += py-rfc3987-syntax
      SUBDIR += py-rfc6555
      SUBDIR += py-rich
      SUBDIR += py-robotframework
