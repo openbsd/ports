@@ -1,0 +1,17 @@
+nobody is UID 32767 on OpenBSD.
+
+Index: src/basic/user-util.h
+--- src/basic/user-util.h.orig
++++ src/basic/user-util.h
+@@ -17,7 +17,11 @@ char* uid_to_name(uid_t uid);
+ 
+ #define UID_INVALID ((uid_t) -1)
+ 
++#ifdef __OpenBSD__
++#define UID_NOBODY ((uid_t) 32767U)
++#else
+ #define UID_NOBODY ((uid_t) 65534U)
++#endif
+ 
+ bool synthesize_nobody(void);
+ 

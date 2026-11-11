@@ -1,0 +1,12 @@
+ELAST is a range marker for the last errno value, not a real error, so exclude
+it from the list.
+
+Index: src/basic/generate-errno-list.sh
+--- src/basic/generate-errno-list.sh.orig
++++ src/basic/generate-errno-list.sh
+@@ -2,4 +2,4 @@
+ set -eu
+ 
+ $1 -dM -include errno.h - </dev/null | \
+-        awk '/^#define[ \t]+E[^ _]+[ \t]+/ { print $2; }'
++        awk '/^#define[ \t]+E[^ _]+[ \t]+/ && $2 != "ELAST" { print $2; }'

@@ -1,0 +1,16 @@
+No ferror_unlocked(3) in OpenBSD.
+
+Index: src/basic/fileio.c
+--- src/basic/fileio.c.orig
++++ src/basic/fileio.c
+@@ -18,6 +18,10 @@
+ 
+ #define READ_FULL_BYTES_MAX (4U*1024U*1024U)
+ 
++#ifdef __OpenBSD__
++#define ferror_unlocked(f) ferror(f)
++#endif
++
+ int read_one_line_file(const char *fn, char **line) {
+         _cleanup_fclose_ FILE *f = NULL;
+         int r;

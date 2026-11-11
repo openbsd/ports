@@ -1,0 +1,39 @@
+Index: src/libsystemd/sd-bus/bus-socket.c
+--- src/libsystemd/sd-bus/bus-socket.c.orig
++++ src/libsystemd/sd-bus/bus-socket.c
+@@ -119,6 +119,27 @@ bool bus_socket_auth_needs_write(sd_bus *b) {
+ }
+ 
+ static int bus_socket_write_null_byte(sd_bus *b) {
++#if defined(__OpenBSD__)
++        /* There is no way to pass credentials as ancillary data on
++         * OpenBSD: send a bare NUL byte, the peer gets our credentials
++         * with getsockopt(SO_PEERCRED). This is what libdbus does on OpenBSD
++         * (write_credentials_byte() and _dbus_read_credentials_socket()). */
++        struct iovec iov = {
++                .iov_base = (void*) "\0",
++                .iov_len = 1,
++        };
++        struct msghdr mh;
++        zero(mh);
++
++        mh.msg_iov = &iov;
++        mh.msg_iovlen = 1;
++
++        int k = sendmsg(b->output_fd, &mh, MSG_DONTWAIT|MSG_NOSIGNAL);
++        if (k < 0)
++                return errno == EAGAIN ? 0 : -errno;
++        b->send_null_byte = false;
++        return 1;
++#else
+ #if defined(__linux__)
+ #define SOCKET_CRED_OPTION SCM_CREDENTIALS
+         struct ucred creds;
+@@ -162,6 +183,7 @@ static int bus_socket_write_null_byte(sd_bus *b) {
+                 return errno == EAGAIN ? 0 : -errno;
+         b->send_null_byte = false;
+         return 1;
++#endif
+ }
+ 
+ static int bus_socket_write_auth(sd_bus *b) {

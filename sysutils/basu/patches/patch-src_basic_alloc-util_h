@@ -1,0 +1,19 @@
+No mempcpy(3) in OpenBSD.
+
+Index: src/basic/alloc-util.h
+--- src/basic/alloc-util.h.orig
++++ src/basic/alloc-util.h
+@@ -42,6 +42,13 @@ static inline void *mfree(void *memory) {
+ #define mempcpy __builtin_mempcpy
+ #endif
+ 
++#ifdef __OpenBSD__
++static inline void *basu_mempcpy(void *dst, const void *src, size_t n) {
++        return (char *) memcpy(dst, src, n) + n;
++}
++#define mempcpy basu_mempcpy
++#endif
++
+ void* memdup(const void *p, size_t l) _alloc_(2);
+ void* memdup_suffix0(const void *p, size_t l) _alloc_(2);
+ 

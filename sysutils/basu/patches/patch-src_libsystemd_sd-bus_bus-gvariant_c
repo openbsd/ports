@@ -1,0 +1,11 @@
+Index: src/libsystemd/sd-bus/bus-gvariant.c
+--- src/libsystemd/sd-bus/bus-gvariant.c.orig
++++ src/libsystemd/sd-bus/bus-gvariant.c
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: LGPL-2.1+ */
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/endian.h>
+ #endif
+ 

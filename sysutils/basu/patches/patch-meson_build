@@ -1,0 +1,25 @@
+Don't fiddle with PIE/pie on OpenBSD.
+No librt on OpenBSD.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -87,9 +87,6 @@ possible_link_flags = [
+         '-Wl,-z,now',
+ ]
+ 
+-possible_cc_flags += '-fPIE'
+-possible_link_flags += '-pie'
+-
+ if cc.get_id() == 'clang'
+         possible_cc_flags += [
+                 '-Wno-typedef-redefinition',
+@@ -233,7 +230,7 @@ conf.set10('ENABLE_DEBUG_HASHMAP', enable_debug_hashma
+ #####################################################################
+ 
+ threads = dependency('threads')
+-librt = cc.find_library('rt')
++librt = cc.find_library('rt', required : false)
+ libm = cc.find_library('m')
+ 
+ libcap = dependency('libcap', required: get_option('libcap'))

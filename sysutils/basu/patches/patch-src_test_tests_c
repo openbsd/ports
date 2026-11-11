@@ -1,0 +1,12 @@
+Index: src/test/tests.c
+--- src/test/tests.c.orig
++++ src/test/tests.c
+@@ -6,7 +6,7 @@
+ #include "env-util.h"
+ #include "tests.h"
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #define program_invocation_short_name getprogname()
+ #endif
+ 

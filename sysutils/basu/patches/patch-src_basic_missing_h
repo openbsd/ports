@@ -1,0 +1,27 @@
+Index: src/basic/missing.h
+--- src/basic/missing.h.orig
++++ src/basic/missing.h
+@@ -70,10 +70,22 @@
+ #define TASK_COMM_LEN 16
+ #endif
+ 
+-#ifdef __FreeBSD__
++#ifndef ENOMEDIUM
+ #define ENOMEDIUM       (INT_MAX - 1)
++#endif
++
++#ifndef ENOPKG
+ #define ENOPKG          (INT_MAX - 2)
++#endif
++
++#ifndef EUNATCH
+ #define EUNATCH         (INT_MAX - 3)
++#endif
++
++#ifndef ENODATA
+ #define ENODATA         (INT_MAX - 4)
++#endif
++
++#ifndef ELNRNG
+ #define ELNRNG          (INT_MAX - 5)
+ #endif

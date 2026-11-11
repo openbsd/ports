@@ -1,0 +1,14 @@
+No file sealing on OpenBSD.
+
+Index: src/basic/memfd-util.c
+--- src/basic/memfd-util.c.orig
++++ src/basic/memfd-util.c
+@@ -11,6 +11,8 @@
+ int memfd_set_sealed(int fd) {
+ #if defined(__FreeBSD__) && __FreeBSD__ < 13
+         return 0;
++#elif defined(__OpenBSD__)
++        return -EOPNOTSUPP;
+ #else
+         int r;
+ 

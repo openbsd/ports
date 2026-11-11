@@ -1,0 +1,18 @@
+Index: src/basic/random-util.c
+--- src/basic/random-util.c.orig
++++ src/basic/random-util.c
+@@ -9,9 +9,14 @@
+ #include "random-util.h"
+ 
+ int random_bytes(void *p, size_t n) {
++#ifdef __OpenBSD__
++        arc4random_buf(p, n);
++        return 0;
++#else
+         int fd = open("/dev/urandom", O_RDONLY|O_CLOEXEC|O_NOCTTY);
+         if (fd < 0)
+                 return errno == ENOENT ? -ENOSYS : -errno;
+         return loop_read_exact(fd, p, n, true);
++#endif
+ }
+ 

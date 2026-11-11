@@ -1,0 +1,19 @@
+Index: src/basic/socket-util.h
+--- src/basic/socket-util.h.orig
++++ src/basic/socket-util.h
+@@ -31,6 +31,15 @@ struct ucred {
+ };
+ #endif
+ 
++#ifdef __OpenBSD__
++/* same layout as struct sockpeercred */
++struct ucred {
++        uid_t uid;
++        gid_t gid;
++        pid_t pid;
++};
++#endif
++
+ int fd_inc_sndbuf(int fd, size_t n);
+ int fd_inc_rcvbuf(int fd, size_t n);
+ 

@@ -1,0 +1,13 @@
+Index: src/libsystemd/sd-daemon/sd-daemon.c
+--- src/libsystemd/sd-daemon/sd-daemon.c.orig
++++ src/libsystemd/sd-daemon/sd-daemon.c
+@@ -1,7 +1,9 @@
+ /* SPDX-License-Identifier: LGPL-2.1+ */
+ 
+ #include <errno.h>
++#ifndef __OpenBSD__
+ #include <mqueue.h>
++#endif
+ #include <netinet/in.h>
+ #include <sys/stat.h>
+ #include <sys/un.h>

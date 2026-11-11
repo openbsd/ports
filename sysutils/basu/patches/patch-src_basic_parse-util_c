@@ -1,0 +1,17 @@
+No strtod_l(3); LC_NUMERIC is always "C" on OpenBSD.
+
+Index: src/basic/parse-util.c
+--- src/basic/parse-util.c.orig
++++ src/basic/parse-util.c
+@@ -227,7 +227,11 @@ int safe_atod(const char *s, double *ret_d) {
+                 return -errno;
+ 
+         errno = 0;
++#ifdef __OpenBSD__
++        d = strtod(s, &x);
++#else
+         d = strtod_l(s, &x, loc);
++#endif
+         if (errno > 0)
+                 return -errno;
+         if (!x || x == s || *x != 0)

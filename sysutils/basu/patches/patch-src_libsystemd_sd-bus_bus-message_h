@@ -1,0 +1,25 @@
+Index: src/libsystemd/sd-bus/bus-message.h
+--- src/libsystemd/sd-bus/bus-message.h.orig
++++ src/libsystemd/sd-bus/bus-message.h
+@@ -1,7 +1,7 @@
+ /* SPDX-License-Identifier: LGPL-2.1+ */
+ #pragma once
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/endian.h>
+ #else
+ #include <byteswap.h>
+@@ -133,6 +133,12 @@ static inline bool BUS_MESSAGE_NEED_BSWAP(sd_bus_messa
+ #define bswap_16 bswap16
+ #define bswap_32 bswap32
+ #define bswap_64 bswap64
++#endif
++
++#ifdef __OpenBSD__
++#define bswap_16 swap16
++#define bswap_32 swap32
++#define bswap_64 swap64
+ #endif
+ 
+ static inline uint16_t BUS_MESSAGE_BSWAP16(sd_bus_message *m, uint16_t u) {
