@@ -1,6 +1,6 @@
 COMMENT =	DKIM and DomainKeys message-signing implementation
 
-DISTNAME =	Mail-DKIM-1.20240923
+DISTNAME =	Mail-DKIM-1.20261105
 
 CATEGORIES =	mail
 
@@ -8,6 +8,8 @@ CATEGORIES =	mail
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
+CPAN_AUTHOR =		MBRADSHAW
+PKG_ARCH =		*
 
 RUN_DEPENDS =		devel/p5-Getopt-Long-Descriptive \
 			mail/p5-Mail-AuthenticationResults \
