@@ -1,0 +1,14 @@
+Synaptics has storage but can't list it: use the local print instead.
+
+Index: examples/verify.c
+--- examples/verify.c.orig
++++ examples/verify.c
+@@ -262,7 +262,7 @@ start_verification (FpDevice *dev, VerifyData *verify_
+       return;
+     }
+ 
+-  if (fp_device_has_feature (dev, FP_DEVICE_FEATURE_STORAGE))
++  if (fp_device_has_feature (dev, FP_DEVICE_FEATURE_STORAGE_LIST))
+     {
+       g_print ("Creating finger template, using device storage...\n");
+       fp_device_list_prints (dev, NULL,

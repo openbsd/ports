@@ -1,0 +1,20 @@
+Fix GLib abort during enumeration.
+
+Index: libfprint/fpi-device.c
+--- libfprint/fpi-device.c.orig
++++ libfprint/fpi-device.c
+@@ -1869,6 +1869,14 @@ fpi_device_configure_wakeup (FpDevice *device, gboolea
+             g_string_prepend (ports, port_str);
+             g_set_object (&dev, parent);
+           }
++
++        /* no sysfs to build topology */
++        if (ports->len == 0)
++          {
++            g_debug ("Unable to determine USB port path, not configuring wakeup");
++            break;
++          }
++
+         g_string_set_size (ports, ports->len - 1);
+ 
+         sysfs_wakeup = g_strdup_printf ("/sys/bus/usb/devices/%d-%s/power/wakeup", bus, ports->str);

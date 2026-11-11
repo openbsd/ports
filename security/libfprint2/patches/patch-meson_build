@@ -1,0 +1,12 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -237,7 +237,7 @@ foreach i : driver_helpers
+         libfprint_conf.set10('HAVE_PIXMAN', true)
+         optional_deps += imaging_dep
+     elif i == 'openssl'
+-        openssl_dep = dependency('openssl', version: '>= 3.0', required: false)
++        openssl_dep = dependency('openssl', required: false)
+         if not openssl_dep.found()
+             error('OpenSSL is required for @0@ and possibly others'.format(driver))
+         endif

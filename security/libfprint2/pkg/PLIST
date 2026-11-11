@@ -1,0 +1,14 @@
+include/libfprint-2/
+include/libfprint-2/fp-context.h
+include/libfprint-2/fp-device.h
+include/libfprint-2/fp-enums.h
+include/libfprint-2/fp-image-device.h
+include/libfprint-2/fp-image.h
+include/libfprint-2/fp-print.h
+include/libfprint-2/fprint.h
+lib/girepository-1.0/FPrint-2.0.typelib
+@lib lib/libfprint-2.so.${LIBfprint-2_VERSION}
+lib/pkgconfig/libfprint-2.pc
+share/gir-1.0/FPrint-2.0.gir
+share/metainfo/
+share/metainfo/org.freedesktop.libfprint.metainfo.xml

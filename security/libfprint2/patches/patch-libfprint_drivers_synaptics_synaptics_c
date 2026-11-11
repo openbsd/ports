@@ -1,0 +1,71 @@
+- libusb cannot reset a device on OpenBSD; don't fail the probe on that
+- Ignore zero-length interrupt completions
+- Resubmit the interrupt wait with the interrupt cancellable, so that
+  cancel() can still end it.
+
+Index: libfprint/drivers/synaptics/synaptics.c
+--- libfprint/drivers/synaptics/synaptics.c.orig
++++ libfprint/drivers/synaptics/synaptics.c
+@@ -233,11 +233,12 @@ cmd_interrupt_cb (FpiUsbTransfer *transfer,
+                   gpointer        user_data,
+                   GError         *error)
+ {
+-  g_debug ("interrupt transfer done");
+   fpi_device_critical_enter (device);
+ 
+   if (error)
+     {
++      g_debug ("interrupt transfer done");
++
+       if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+         {
+           g_error_free (error);
+@@ -252,6 +253,22 @@ cmd_interrupt_cb (FpiUsbTransfer *transfer,
+       return;
+     }
+ 
++  /* No data: OpenBSD's libusb backend does transfers synchronously and
++   * ugen(4) ends a read without timeout after one tick, returning nothing.
++   * Don't look at a stale buffer, just wait again. */
++  if (transfer->actual_length == 0)
++    {
++      fpi_device_critical_leave (device);
++      fpi_usb_transfer_submit (fpi_usb_transfer_ref (transfer),
++                               0,
++                               FPI_DEVICE_SYNAPTICS (device)->interrupt_cancellable,
++                               cmd_interrupt_cb,
++                               NULL);
++      return;
++    }
++
++  g_debug ("interrupt transfer done");
++
+   if (transfer->buffer[0] & USB_ASYNC_MESSAGE_PENDING)
+     {
+       fpi_ssm_next_state (transfer->ssm);
+@@ -261,7 +278,7 @@ cmd_interrupt_cb (FpiUsbTransfer *transfer,
+       fpi_device_critical_leave (device);
+       fpi_usb_transfer_submit (fpi_usb_transfer_ref (transfer),
+                                0,
+-                               NULL,
++                               FPI_DEVICE_SYNAPTICS (device)->interrupt_cancellable,
+                                cmd_interrupt_cb,
+                                NULL);
+     }
+@@ -1273,8 +1290,14 @@ dev_probe (FpDevice *device)
+ 
+   if (!g_usb_device_reset (usb_dev, &error))
+     {
+-      fp_dbg ("%s g_usb_device_reset failed %s", G_STRFUNC, error->message);
+-      goto err_close;
++      /* Not every platform can reset a USB device (e.g. OpenBSD libusb) */
++      if (!g_error_matches (error, G_USB_DEVICE_ERROR, G_USB_DEVICE_ERROR_NOT_SUPPORTED))
++        {
++          fp_dbg ("%s g_usb_device_reset failed %s", G_STRFUNC, error->message);
++          goto err_close;
++        }
++      fp_dbg ("%s g_usb_device_reset not supported, continuing", G_STRFUNC);
++      g_clear_error (&error);
+     }
+ 
+   if (!g_usb_device_claim_interface (usb_dev, 0, 0, &error))
