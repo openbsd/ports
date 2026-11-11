@@ -5,7 +5,7 @@ DISTNAME =		PrismLauncher-${V}
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		games
 HOMEPAGE =		https://prismlauncher.org/
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Daniil Ryvkin <mail@leinadr.com>
 
@@ -36,7 +36,7 @@ LIB_DEPENDS =		archivers/libarchive \
 			x11/qt6/qtnetworkauth
 
 RUN_DEPENDS =		java/javaPathHelper \
-			games/lwjgl3 \
+			games/lwjgl3>=3.4.1.0 \
 			games/lwjgl
 
 CONFIGURE_ARGS =	-DLauncher_BUILD_PLATFORM=openbsd \

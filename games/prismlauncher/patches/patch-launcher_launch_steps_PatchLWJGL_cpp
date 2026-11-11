@@ -1,7 +1,9 @@
+Patch in needed LWJGL libraries on OpenBSD
+
 Index: launcher/launch/steps/PatchLWJGL.cpp
 --- launcher/launch/steps/PatchLWJGL.cpp.orig
 +++ launcher/launch/steps/PatchLWJGL.cpp
-@@ -0,0 +1,119 @@
+@@ -0,0 +1,138 @@
 +#include "PatchLWJGL.h"
 +#include <QSaveFile>
 +#include <launch/LaunchTask.h>
@@ -39,9 +41,28 @@ Index: launcher/launch/steps/PatchLWJGL.cpp
 +        if (isLwjgl3) {
 +            qDebug() << "Instance uses LWJGL 3, applying appropriate patches.";
 +
-+            QList<QString> libs = { "lwjgl-glfw", "lwjgl-openal", "lwjgl-opengl", "lwjgl-stb", "lwjgl-tinyfd", "lwjgl" };
++            QList<QString> libs = { 	"lwjgl-freetype",
++					"lwjgl-glfw",
++					"lwjgl-openal",
++					"lwjgl-opengl",
++					"lwjgl-sdl",
++					"lwjgl-shaderc",
++					"lwjgl-spvc",
++					"lwjgl-stb",
++					"lwjgl-tinyfd",
++					"lwjgl-vma",
++					"lwjgl-vulkan",
++					"lwjgl" };
 +
-+            QList<QString> nativeLibs = { "lwjgl-opengl", "lwjgl-stb", "lwjgl-tinyfd", "lwjgl" };
++            QList<QString> nativeLibs = {	"lwjgl-freetype",
++						"lwjgl-glfw",
++						"lwjgl-opengl",
++						"lwjgl-shaderc",
++						"lwjgl-spvc",
++						"lwjgl-stb",
++						"lwjgl-tinyfd",
++						"lwjgl-vma",
++						"lwjgl" };
 +
 +            for (auto& libName : libs) {
 +                LibraryPtr lib(new Library());
