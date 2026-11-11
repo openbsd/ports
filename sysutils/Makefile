@@ -23,6 +23,7 @@
      SUBDIR += backblaze-b2
      SUBDIR += backuppc
      SUBDIR += bacula
+     SUBDIR += basu
      SUBDIR += bat
      SUBDIR += bchunk
      SUBDIR += bdfresize
