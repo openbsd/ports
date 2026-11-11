@@ -6,7 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		48.0
-REVISION=		16
+REVISION=		17
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
@@ -40,7 +40,9 @@ MODULES=		devel/dconf \
 BUILD_DEPENDS=		devel/check \
 			devel/iso-codes
 
-RUN_DEPENDS=		devel/iso-codes
+RUN_DEPENDS=		devel/iso-codes \
+			sysutils/fprintd \
+			sysutils/fprintd,-pam
 
 # dbus-run-session(1)
 RUN_DEPENDS +=		x11/dbus

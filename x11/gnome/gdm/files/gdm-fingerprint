@@ -1,0 +1,10 @@
+# gdm-fingerprint settings for pam(3)
+
+auth		required	pam_fprintd.so
+
+account		required	pam_nologin.so
+account		include		system
+
+password	required	pam_deny.so
+
+session		include		system

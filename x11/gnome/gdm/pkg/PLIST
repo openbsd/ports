@@ -66,6 +66,8 @@ share/examples/gdm/etc/pam.d/
 @mode 0444
 share/examples/gdm/etc/pam.d/gdm-autologin
 @sample ${SYSCONFDIR}/pam.d/gdm-autologin
+share/examples/gdm/etc/pam.d/gdm-fingerprint
+@sample ${SYSCONFDIR}/pam.d/gdm-fingerprint
 share/examples/gdm/etc/pam.d/gdm-launch-environment
 @sample ${SYSCONFDIR}/pam.d/gdm-launch-environment
 share/examples/gdm/etc/pam.d/gdm-password
