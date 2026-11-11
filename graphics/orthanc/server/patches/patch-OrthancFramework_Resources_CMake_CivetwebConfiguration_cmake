@@ -1,7 +1,7 @@
 Index: OrthancFramework/Resources/CMake/CivetwebConfiguration.cmake
 --- OrthancFramework/Resources/CMake/CivetwebConfiguration.cmake.orig
 +++ OrthancFramework/Resources/CMake/CivetwebConfiguration.cmake
-@@ -111,32 +111,34 @@ else()
+@@ -114,32 +114,34 @@ else()
  
    cmake_reset_check_state()
    set(CMAKE_REQUIRED_LIBRARIES dl pthread)

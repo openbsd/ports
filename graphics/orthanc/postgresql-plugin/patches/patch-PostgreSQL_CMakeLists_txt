@@ -1,7 +1,7 @@
 Index: PostgreSQL/CMakeLists.txt
 --- PostgreSQL/CMakeLists.txt.orig
 +++ PostgreSQL/CMakeLists.txt
-@@ -101,37 +101,17 @@ add_definitions(
+@@ -160,14 +160,12 @@ add_definitions(
    )
  
  set_target_properties(OrthancPostgreSQLStorage PROPERTIES 
@@ -18,13 +18,15 @@ Index: PostgreSQL/CMakeLists.txt
    COMPILE_FLAGS -DORTHANC_ENABLE_LOGGING_PLUGIN=1
    )
  
+@@ -175,30 +173,12 @@ set_target_properties(OrthancPostgreSQLIndex PROPERTIE
  install(
    TARGETS OrthancPostgreSQLIndex OrthancPostgreSQLStorage
    RUNTIME DESTINATION lib    # Destination for Windows
 -  LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
--  )
--
--
++  LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+   )
+ 
+ 
 -add_executable(UnitTests
 -  Plugins/PostgreSQLIndex.cpp
 -  Plugins/PostgreSQLStorageArea.cpp
@@ -40,5 +42,11 @@ Index: PostgreSQL/CMakeLists.txt
 -target_link_libraries(UnitTests ${GOOGLE_TEST_LIBRARIES})
 -set_target_properties(UnitTests PROPERTIES
 -  COMPILE_FLAGS -DORTHANC_ENABLE_LOGGING_PLUGIN=0
-+  LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
-   )
+-  )
+-
+ if (COMMAND DefineSourceBasenameForTarget)
+   DefineSourceBasenameForTarget(FrameworkForPlugins)
+   DefineSourceBasenameForTarget(OrthancPostgreSQLIndex)
+   DefineSourceBasenameForTarget(OrthancPostgreSQLStorage)
+-  DefineSourceBasenameForTarget(UnitTests)
+ endif()

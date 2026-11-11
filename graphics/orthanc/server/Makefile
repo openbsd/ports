@@ -2,37 +2,35 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
-DISTNAME =		Orthanc-1.12.7
+DISTNAME =		Orthanc-${FRAMEWORK_VERSION}
 PKGNAME =		${DISTNAME:L}
-REVISION =		2
 
 HOMEPAGE =		https://www.orthanc-server.com/
 
 SITES =			https://orthanc.uclouvain.be/downloads/sources/orthanc/
 
-SHARED_LIBS =		MultitenantDicom	0.0
+SHARED_LIBS +=	MultitenantDicom          0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} boost_atomic-mt
+WANTLIB += boost_charconv-mt boost_chrono-mt boost_container-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
-WANTLIB += boost_locale-mt boost_regex-mt boost_thread-mt
-WANTLIB += c civetweb cmr crypto curl dcmdata dcmdsig dcmect dcmfg
-WANTLIB += dcmimage dcmimgle dcmiod dcmjpeg dcmjpls dcmnet dcmpmap
-WANTLIB += dcmpstat dcmqrdb dcmrt dcmseg dcmsr dcmtkcharls dcmtls
-WANTLIB += dcmtract dcmwlm dcmxml i2d iconv ijg12 ijg16 ijg8 jpeg jsoncpp
-WANTLIB += ${MODLUA_WANTLIB} m oficonv oflog ofstd png protobuf pugixml
-WANTLIB += sqlite3 ssl uuid z boost_random-mt
+WANTLIB += boost_locale-mt boost_program_options-mt boost_random-mt
+WANTLIB += boost_regex-mt boost_thread-mt c civetweb cmr crypto
+WANTLIB += curl dcmdata dcmdsig dcmect dcmfg dcmimage dcmimgle
+WANTLIB += dcmiod dcmjpeg dcmjpls dcmnet dcmpmap dcmpstat dcmqrdb
+WANTLIB += dcmrt dcmseg dcmsr dcmtkcharls dcmtls dcmtract dcmwlm
+WANTLIB += dcmxml i2d iconv ijg12 ijg16 ijg8 jpeg jsoncpp m oficonv
+WANTLIB += oflog ofstd png protobuf pugixml sqlite3 ssl uuid z
 
 # c++11
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
-			lang/lua \
-			lang/python
-
-MODPY_RUNDEP =		No
+			lang/lua
 
 BUILD_DEPENDS =		devel/doxygen>=1.10.0 \
-			devel/gtest
+			devel/gtest \
+			lang/python/3
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/boost \

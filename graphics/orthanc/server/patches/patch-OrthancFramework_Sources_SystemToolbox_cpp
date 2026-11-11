@@ -18,7 +18,7 @@ Index: OrthancFramework/Sources/SystemToolbox.cpp
  #  include <limits.h>        // PATH_MAX
  #  include <signal.h>
  #  include <unistd.h>
-@@ -1154,7 +1154,7 @@ namespace Orthanc
+@@ -1277,7 +1277,7 @@ namespace Orthanc
  
        while (!interfaces.IsDone())
        {

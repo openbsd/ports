@@ -1,7 +1,7 @@
 Index: OrthancFramework/Sources/DicomNetworking/Internals/DicomTls.cpp
 --- OrthancFramework/Sources/DicomNetworking/Internals/DicomTls.cpp.orig
 +++ OrthancFramework/Sources/DicomNetworking/Internals/DicomTls.cpp
-@@ -230,6 +230,9 @@ namespace Orthanc
+@@ -232,6 +232,9 @@ namespace Orthanc
          }
  
          DcmTLSTransportLayer::native_handle_type sslNativeHandle = tls->getNativeHandle();

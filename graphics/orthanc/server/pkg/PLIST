@@ -6,6 +6,7 @@ include/orthanc/
 include/orthanc/OrthancCDatabasePlugin.h
 include/orthanc/OrthancCPlugin.h
 include/orthanc/OrthancDatabasePlugin.proto
+include/orthanc/OrthancPluginCodeModel.json
 libexec/orthanc/
 libexec/orthanc/plugins/
 @so libexec/orthanc/plugins/libHousekeeper.so
@@ -24,8 +25,8 @@ share/doc/orthanc/OrthancPlugin/clipboard.js
 share/doc/orthanc/OrthancPlugin/deprecated.html
 share/doc/orthanc/OrthancPlugin/dir_18f315041aaf5f48ef65a9b73e2a1470.html
 share/doc/orthanc/OrthancPlugin/dir_520ad0f1b6d3f851ab5c24f1548bcbe2.html
+share/doc/orthanc/OrthancPlugin/dir_8fa840123f0c19471c88127385e254c7.html
 share/doc/orthanc/OrthancPlugin/dir_bb38096ab39160dc20d44f3ea6b44507.html
-share/doc/orthanc/OrthancPlugin/dir_d7796c6dc8b9430f24e4b13a7b6e5105.html
 share/doc/orthanc/OrthancPlugin/dir_f4d72a64acd8929c0cc9ed96a7a336cc.html
 share/doc/orthanc/OrthancPlugin/doxygen.css
 share/doc/orthanc/OrthancPlugin/doxygen.svg
@@ -36,6 +37,7 @@ share/doc/orthanc/OrthancPlugin/functions.html
 share/doc/orthanc/OrthancPlugin/functions_vars.html
 share/doc/orthanc/OrthancPlugin/group__Callbacks.html
 share/doc/orthanc/OrthancPlugin/group__DicomCallbacks.html
+share/doc/orthanc/OrthancPlugin/group__DicomConnection.html
 share/doc/orthanc/OrthancPlugin/group__DicomInstance.html
 share/doc/orthanc/OrthancPlugin/group__Images.html
 share/doc/orthanc/OrthancPlugin/group__Orthanc.html

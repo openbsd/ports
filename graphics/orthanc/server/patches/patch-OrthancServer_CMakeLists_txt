@@ -1,7 +1,7 @@
 Index: OrthancServer/CMakeLists.txt
 --- OrthancServer/CMakeLists.txt.orig
 +++ OrthancServer/CMakeLists.txt
-@@ -580,14 +580,13 @@ if (ENABLE_PLUGINS AND BUILD_SERVE_FOLDERS)
+@@ -615,14 +615,13 @@ if (ENABLE_PLUGINS AND BUILD_SERVE_FOLDERS)
  
    set_target_properties(
      ServeFolders PROPERTIES 
@@ -18,7 +18,7 @@ Index: OrthancServer/CMakeLists.txt
      )
  endif()
  
-@@ -630,14 +629,13 @@ if (ENABLE_PLUGINS AND BUILD_MODALITY_WORKLISTS)
+@@ -665,14 +664,13 @@ if (ENABLE_PLUGINS AND BUILD_MODALITY_WORKLISTS)
  
    set_target_properties(
      ModalityWorklists PROPERTIES 
@@ -35,7 +35,7 @@ Index: OrthancServer/CMakeLists.txt
      )
  endif()
  
-@@ -701,7 +699,7 @@ if (ENABLE_PLUGINS AND BUILD_CONNECTIVITY_CHECKS)
+@@ -736,7 +734,7 @@ if (ENABLE_PLUGINS AND BUILD_CONNECTIVITY_CHECKS)
    install(
      TARGETS ConnectivityChecks
      RUNTIME DESTINATION lib    # Destination for Windows
@@ -44,7 +44,7 @@ Index: OrthancServer/CMakeLists.txt
      )
  endif()
  
-@@ -755,7 +753,7 @@ if (ENABLE_PLUGINS AND BUILD_DELAYED_DELETION)
+@@ -790,7 +788,7 @@ if (ENABLE_PLUGINS AND BUILD_DELAYED_DELETION)
    install(
      TARGETS DelayedDeletion
      RUNTIME DESTINATION lib    # Destination for Windows
@@ -53,7 +53,7 @@ Index: OrthancServer/CMakeLists.txt
      )
  endif()
  
-@@ -797,14 +795,13 @@ if (ENABLE_PLUGINS AND BUILD_HOUSEKEEPER)
+@@ -832,14 +830,13 @@ if (ENABLE_PLUGINS AND BUILD_HOUSEKEEPER)
    
    set_target_properties(
      Housekeeper PROPERTIES 
@@ -70,7 +70,7 @@ Index: OrthancServer/CMakeLists.txt
      )
  endif()
  
-@@ -872,7 +869,7 @@ if (ENABLE_PLUGINS AND BUILD_MULTITENANT_DICOM)
+@@ -907,7 +904,7 @@ if (ENABLE_PLUGINS AND BUILD_MULTITENANT_DICOM)
    install(
      TARGETS MultitenantDicom
      RUNTIME DESTINATION lib    # Destination for Windows
