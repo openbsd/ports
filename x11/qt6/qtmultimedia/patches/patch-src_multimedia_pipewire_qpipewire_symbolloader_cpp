@@ -1,0 +1,14 @@
+Index: src/multimedia/pipewire/qpipewire_symbolloader.cpp
+--- src/multimedia/pipewire/qpipewire_symbolloader.cpp.orig
++++ src/multimedia/pipewire/qpipewire_symbolloader.cpp
+@@ -18,8 +18,8 @@ int pw_stream_get_time_n(struct pw_stream *stream, str
+ //BEGIN_INIT_FUNCS("pipewire-0.3", "0")
+ BEGIN_INIT_FUNCS("pipewire-" PW_API_VERSION, "0")
+ 
+-INIT_FUNC(pw_init);
+-INIT_FUNC(pw_deinit);
++INIT_FUNC(pipewire_init);
++INIT_FUNC(pipewire_deinit);
+ INIT_OPT_FUNC(pw_check_library_version);
+ INIT_FUNC(pw_context_new);
+ INIT_FUNC(pw_context_destroy);

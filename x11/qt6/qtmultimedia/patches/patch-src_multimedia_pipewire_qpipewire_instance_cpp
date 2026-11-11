@@ -1,0 +1,21 @@
+Index: src/multimedia/pipewire/qpipewire_instance.cpp
+--- src/multimedia/pipewire/qpipewire_instance.cpp.orig
++++ src/multimedia/pipewire/qpipewire_instance.cpp
+@@ -43,7 +43,7 @@ Q_GLOBAL_STATIC(InstanceHolder, s_pipeWireInstance);
+ 
+ QPipewireInitializer::QPipewireInitializer()
+ {
+-    pw_init(nullptr, nullptr);
++    pipewire_init(nullptr, nullptr);
+ 
+     qCDebug(lcPipewire) << "PipeWire initialized: compiled against" << pw_get_headers_version()
+                         << " running " << pw_get_library_version();
+@@ -52,7 +52,7 @@ QPipewireInitializer::QPipewireInitializer()
+ QPipewireInitializer::~QPipewireInitializer()
+ {
+     if (pw_check_library_version(0, 3, 49))
+-        pw_deinit();
++        pipewire_deinit();
+ }
+ 
+ std::shared_ptr<QPipeWireInstance> QPipeWireInstance::instance()
