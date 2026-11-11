@@ -1,0 +1,20 @@
+dispose() can run more than once: only clear the mutex the first time. With the
+pthread GMutex implementation in GLib (non-Linux) a second g_mutex_clear()
+destroys an already freed mutex
+
+Index: gusb/gusb-context.c
+--- gusb/gusb-context.c.orig
++++ gusb/gusb-context.c
+@@ -139,8 +139,10 @@ g_usb_context_dispose(GObject *object)
+ 	g_clear_pointer(&priv->dict_usb_ids, g_hash_table_unref);
+ 	g_clear_pointer(&priv->dict_replug, g_hash_table_unref);
+ 	g_clear_pointer(&priv->ctx, libusb_exit);
+-	g_clear_pointer(&priv->idle_events, g_ptr_array_unref);
+-	g_mutex_clear(&priv->idle_events_mutex);
++	if (priv->idle_events != NULL) {
++		g_clear_pointer(&priv->idle_events, g_ptr_array_unref);
++		g_mutex_clear(&priv->idle_events_mutex);
++	}
+ 
+ 	G_OBJECT_CLASS(g_usb_context_parent_class)->dispose(object);
+ }

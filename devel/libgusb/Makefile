@@ -4,6 +4,8 @@ GH_ACCOUNT=		hughsie
 GH_PROJECT=		libgusb
 GH_TAGNAME=		0.4.9
 
+REVISION=		0
+
 SHARED_LIBS += gusb                      0.4 # 2.0.10
 
 CATEGORIES=		devel
