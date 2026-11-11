@@ -1,0 +1,3 @@
+Helper functions to syntactically validate strings according to
+RFC 3987, the standard for Internationalized Resource Identifiers
+(IRIs).

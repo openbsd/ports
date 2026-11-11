@@ -1,0 +1,20 @@
+@pkgpath devel/py-rfc3986-validator,python3
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/CITATION.cff
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/__init__.py
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/${MODPY_PYCACHE}syntax_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/${MODPY_PYCACHE}syntax_helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/syntax_helpers.py
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/syntax_rfc3987.lark
+lib/python${MODPY_VERSION}/site-packages/rfc3987_syntax/utils.py
