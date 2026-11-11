@@ -104,6 +104,7 @@
      SUBDIR += libdigidocpp
      SUBDIR += libewf
      SUBDIR += libfprint
+     SUBDIR += libfprint2
      SUBDIR += libgcrypt
      SUBDIR += libgpg-error
      SUBDIR += libgsasl
