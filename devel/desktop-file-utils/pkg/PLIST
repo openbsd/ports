@@ -9,7 +9,7 @@ bin/desktop-file-edit
 @man man/man1/desktop-file-install.1
 @man man/man1/desktop-file-validate.1
 @man man/man1/update-desktop-database.1
+share/applications/
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/desktop-entry-mode.el
-@sample share/applications/

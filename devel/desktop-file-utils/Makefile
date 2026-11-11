@@ -1,7 +1,6 @@
 COMMENT=	utilities for dot.desktop entries
 
-DISTNAME=	desktop-file-utils-0.28
-REVISION=	0
+DISTNAME=	desktop-file-utils-0.29
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -31,5 +30,9 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/update-desktop-database.c
+
+post-install:
+# own this directory
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ to be written out to.
 Index: src/update-desktop-database.c
 --- src/update-desktop-database.c.orig
 +++ src/update-desktop-database.c
-@@ -456,7 +456,7 @@ main (int    argc,
+@@ -701,7 +701,7 @@ main (int    argc,
     };
  
  #ifdef HAVE_PLEDGE
@@ -13,26 +13,27 @@ Index: src/update-desktop-database.c
      g_printerr ("pledge\n");
      return 1;
    }
-@@ -487,9 +487,15 @@ main (int    argc,
+@@ -728,9 +728,16 @@ main (int    argc,
  
    print_desktop_dirs (desktop_dirs);
  
 +  if (unveil ("${LOCALBASE}/share/locale/locale.alias", "r") == -1) {
 +    g_printerr ("Can't unveil '${LOCALBASE}/share/locale/locale.alias': %s\n", g_strerror(errno));
 +  }
++
    found_processable_dir = FALSE;
-   for (i = 0; desktop_dirs[i] != NULL; i++)
+   for (size_t i = 0; desktop_dirs[i] != NULL; i++)
      {
 +      if (unveil (desktop_dirs[i], "rwc") == -1) {
 +        g_printerr ("Can't unveil '%s' directory: %s\n", desktop_dirs[i], g_strerror(errno));
 +      }
-       error = NULL;
-       update_database (desktop_dirs[i], &error);
+       g_autoptr(GError) update_error = NULL;
  
-@@ -504,6 +510,10 @@ main (int    argc,
-         found_processable_dir = TRUE;
+       if (!update_databases (desktop_dirs[i], &update_error))
+@@ -742,6 +749,10 @@ main (int    argc,
+ 
+       found_processable_dir = TRUE;
      }
-   g_option_context_free (context);
 +
 +  if (unveil (NULL, NULL) == -1) {
 +    g_printerr ("unveil\n");
