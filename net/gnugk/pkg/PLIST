@@ -17,6 +17,7 @@ share/examples/gnugk/H46023.ini
 share/examples/gnugk/child.ini
 share/examples/gnugk/clirw.ini
 share/examples/gnugk/complete.ini
+share/examples/gnugk/docker.ini
 share/examples/gnugk/enum.ini
 share/examples/gnugk/fileacct.ini
 share/examples/gnugk/gnugk.ini
