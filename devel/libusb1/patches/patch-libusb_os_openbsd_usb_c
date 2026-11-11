@@ -1,0 +1,38 @@
+libusb_close() doesn't release claimed interfaces: close the ugen(4)
+endpoint nodes in obsd_close(), or the next handle gets EBUSY.
+
+Index: libusb/os/openbsd_usb.c
+--- libusb/os/openbsd_usb.c.orig
++++ libusb/os/openbsd_usb.c
+@@ -227,6 +227,9 @@ obsd_open(struct libusb_device_handle *handle)
+ 	struct device_priv *dpriv = usbi_get_device_priv(handle->dev);
+ 	char devnode[16];
+ 
++	/* no endpoint is open until an interface is claimed */
++	obsd_claim_interface(handle, 0);
++
+ 	if (dpriv->devname) {
+ 		int fd;
+ 		/*
+@@ -251,6 +254,9 @@ obsd_close(struct libusb_device_handle *handle)
+ {
+ 	struct device_priv *dpriv = usbi_get_device_priv(handle->dev);
+ 
++	/* libusb_close() doesn't release claimed interfaces */
++	obsd_release_interface(handle, 0);
++
+ 	if (dpriv->devname) {
+ 		usbi_dbg(HANDLE_CTX(handle), "close: fd %d", dpriv->fd);
+ 
+@@ -353,8 +359,10 @@ obsd_release_interface(struct libusb_device_handle *ha
+ 	UNUSED(iface);
+ 
+ 	for (i = 0; i < USB_MAX_ENDPOINTS; i++)
+-		if (hpriv->endpoints[i] >= 0)
++		if (hpriv->endpoints[i] >= 0) {
+ 			close(hpriv->endpoints[i]);
++			hpriv->endpoints[i] = -1;
++		}
+ 
+ 	return LIBUSB_SUCCESS;
+ }
