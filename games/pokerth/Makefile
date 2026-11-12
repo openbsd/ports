@@ -1,6 +1,6 @@
 COMMENT =	texas holdem poker client, local or internet games
 
-V =		2.1.10
+V =		2.1.11
 DIST_TUPLE =	github pokerth pokerth v${V} .
 PKGNAME =	pokerth-${V}
 
@@ -63,6 +63,7 @@ LIB_DEPENDS +=	devel/protobuf
 LIB_DEPENDS +=	x11/qt6/qtmultimedia
 
 RUN_DEPENDS +=	devel/desktop-file-utils
+RUN_DEPENDS +=	multimedia/pipewire/pipewire,-main
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/pokerth.desktop ${WRKSRC}/pokerth_qml.desktop

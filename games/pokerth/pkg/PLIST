@@ -1,5 +1,6 @@
 !%%legacy%%
 %%legacy%%
+share/doc/pkg-readmes/${PKGSTEM}
 share/pixmaps/
 share/pixmaps/pokerth.png
 share/pokerth/

@@ -1,0 +1,16 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Audio
+=====
+
+${PKGSTEM} uses QSoundEffect from qt6-multimedia. This requires
+pipewire, which is installed with ${PKGSTEM} as a run dependency.
+Pipewire doesn't autospawn, so before launching ${PKGSTEM}, you need to
+run:
+
+	$ /usr/local/bin/pipewire &
+
+if this isn't taken care of by your desktop manager or in your startup
+scripts like .xsession.
