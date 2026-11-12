@@ -104,6 +104,7 @@
      SUBDIR += cppcheck
      SUBDIR += cpphs
      SUBDIR += cpptest
+     SUBDIR += cpptrace
      SUBDIR += cppunit
      SUBDIR += cpputest
      SUBDIR += crc32c
