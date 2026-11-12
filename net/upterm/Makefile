@@ -1,7 +1,7 @@
 COMMENT =		instant terminal sharing
 
 MODGO_MODNAME =		github.com/owenthereal/upterm
-MODGO_VERSION =		v0.40.0
+MODGO_VERSION =		v0.41.1
 
 DISTNAME =		upterm-${MODGO_VERSION}
 
