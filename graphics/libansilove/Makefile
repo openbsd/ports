@@ -1,6 +1,6 @@
 COMMENT =	library for converting ANSI, ASCII, and other formats to PNG
 
-V =		1.4.4
+V =		1.4.5
 DISTNAME =	libansilove-${V}
 
 SHARED_LIBS +=	ansilove	0.0 # 1.4
