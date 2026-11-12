@@ -1,7 +1,7 @@
 COMMENT=		GCP Cloud SQL Auth proxy
 
 MODGO_MODNAME=		github.com/GoogleCloudPlatform/cloud-sql-proxy/v2
-MODGO_VERSION=		v2.27.0
+MODGO_VERSION=		v2.28.0
 DISTNAME=		cloud-sql-proxy-${MODGO_VERSION}
 
 CATEGORIES=		sysutils databases net
