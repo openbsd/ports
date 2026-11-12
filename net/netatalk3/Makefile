@@ -2,10 +2,10 @@ COMMENT=		Apple Filing Protocol file server over TCP/IP
 
 V=			4.6.1
 DISTNAME=		netatalk-${V}
-REVISION=		0
 EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
+REVISION=		1
 
 SHARED_LIBS += atalk                     18.0 # 19.0.0
 
@@ -42,9 +42,6 @@ LIB_DEPENDS=		databases/sqlite3 \
 			security/libgcrypt
 
 RUN_DEPENDS=		net/avahi
-
-# afpstats(1)
-RUN_DEPENDS +=		net/p5-Net-DBus
 
 CONFIGURE_ARGS=		-Dwith-acls=false \
 			-Dwith-cnid-backends=sqlite \
