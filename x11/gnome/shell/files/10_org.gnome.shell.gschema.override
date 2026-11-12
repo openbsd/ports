@@ -1,0 +1,3 @@
+# show "Log Out" even on single-user systems
+[org.gnome.shell]
+always-show-log-out=true

@@ -6,7 +6,7 @@ GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
 GNOME_VERSION=		49.10
-REVISION=		2
+REVISION=		3
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -110,5 +110,9 @@ post-extract:
 		${WRKSRC}/data/org.gnome.Shell.Extensions.desktop.in.in
 	mv ${WRKSRC}/data/org.gnome.Shell.PortalHelper.desktop.in \
 		${WRKSRC}/data/org.gnome.Shell.PortalHelper.desktop.in.in
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/10_org.gnome.shell.gschema.override \
+		${PREFIX}/share/glib-2.0/schemas/
 
 .include <bsd.port.mk>
