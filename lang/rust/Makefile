@@ -16,6 +16,7 @@ COMMENT-dev =		Rust dev component
 V =			1.99.1
 DISTNAME =		rustc-${V}-src
 REVISION =		0
+REVISION-dev =		1
 
 # always keep REVISION-bootstrap in sync with REVISION-main (if defined)
 # (setting only REVISION is also properly managed)
@@ -150,6 +151,7 @@ RUN_DEPENDS-gdb +=	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 RUN_DEPENDS-clippy +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 RUN_DEPENDS-rustfmt +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 RUN_DEPENDS-src +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
+RUN_DEPENDS-dev +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 
 PKG_ARCH-src =		*
 
