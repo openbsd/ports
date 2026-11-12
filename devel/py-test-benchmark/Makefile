@@ -1,6 +1,6 @@
 COMMENT=	pytest fixture for benchmarking code
 
-MODPY_DISTV=	5.3.0
+MODPY_DISTV=	5.3.1
 DISTNAME=	pytest_benchmark-${MODPY_DISTV}
 PKGNAME=	py-test-benchmark-${MODPY_DISTV}
 CATEGORIES=	devel
@@ -13,9 +13,8 @@ HOMEPAGE=	https://pytest-benchmark.readthedocs.io/en/stable/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 # disable tests relating to benchmark.weave which needs aspectlib
 # (not yet in ports)
