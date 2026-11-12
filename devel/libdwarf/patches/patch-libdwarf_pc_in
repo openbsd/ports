@@ -1,0 +1,12 @@
+Index: libdwarf.pc.in
+--- libdwarf.pc.in.orig
++++ libdwarf.pc.in
+@@ -2,7 +2,7 @@ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
+-pkgincludedir=@includedir@/libdwarf-@VMAJ@
++pkgincludedir=@includedir@/libdwarf
+ 
+ Name: libdwarf
+ Description: DWARF debug symbols library

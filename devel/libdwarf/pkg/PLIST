@@ -2,5 +2,8 @@
 include/libdwarf/
 include/libdwarf/dwarf.h
 include/libdwarf/libdwarf.h
-lib/libdwarf.a
 @lib lib/libdwarf.so.${LIBdwarf_VERSION}
+lib/pkgconfig/libdwarf.pc
+@man man/man1/dwarfdump.1
+share/dwarfdump/
+share/dwarfdump/dwarfdump.conf

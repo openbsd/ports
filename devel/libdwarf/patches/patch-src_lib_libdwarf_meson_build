@@ -1,0 +1,10 @@
+Index: src/lib/libdwarf/meson.build
+--- src/lib/libdwarf/meson.build.orig
++++ src/lib/libdwarf/meson.build
+@@ -154,5 +154,5 @@ libdwarf = declare_dependency(
+ meson.override_dependency('libdwarf', libdwarf)
+ 
+ install_headers(libdwarf_header_src,
+-  install_dir : dir_pkginclude + '-' + v_maj
++  install_dir : dir_pkginclude
+ )

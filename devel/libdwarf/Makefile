@@ -2,12 +2,11 @@
 
 COMMENT=		library to access the DWARF debugging file format
 
-V=			20161124
-REVISION=		0
+V=			2.3.3
 DISTNAME=		libdwarf-${V}
-WRKDIST=		${WRKDIR}/dwarf-${V}
+EPOCH=			0
 
-SHARED_LIBS=		dwarf 1.1
+SHARED_LIBS=		dwarf 2.0
 
 CATEGORIES=		devel
 
@@ -18,25 +17,16 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c elf>=2 z
+WANTLIB +=		c z zstd
 
 SITES=			https://www.prevanders.net/
+EXTRACT_SUFX=		.tar.xz
+
+MODULES=		devel/meson \
+			lang/python
+
+LIB_DEPENDS=		archivers/zstd
 
 NO_TEST=		Yes
-
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-shared
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/libdwarf/Makefile.in
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/libdwarf
-	${INSTALL_DATA} ${WRKBUILD}/libdwarf/{,lib}dwarf.h \
-		${PREFIX}/include/libdwarf/
-	${INSTALL_DATA} ${WRKBUILD}/libdwarf/libdwarf.{a,so.${LIBdwarf_VERSION}} \
-		${PREFIX}/lib/
-	${INSTALL_PROGRAM} ${WRKBUILD}/dwarfdump/dwarfdump \
-		${PREFIX}/bin/
 
 .include <bsd.port.mk>
