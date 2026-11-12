@@ -1,13 +1,15 @@
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
-COMMENT =		RESTful DICOM server for healthcare and medical research
+COMMENT =	RESTful DICOM server for healthcare and medical research
 
-DISTNAME =		Orthanc-${FRAMEWORK_VERSION}
-PKGNAME =		${DISTNAME:L}
+REVISION =	0
+DISTNAME =	Orthanc-${FRAMEWORK_VERSION}
+PKGNAME =	${DISTNAME:L}
+WRKSRC =	${WRKDIST}/OrthancServer
 
-HOMEPAGE =		https://www.orthanc-server.com/
+HOMEPAGE =	https://www.orthanc-server.com/
 
-SITES =			https://orthanc.uclouvain.be/downloads/sources/orthanc/
+SITES =		https://orthanc.uclouvain.be/downloads/sources/orthanc/
 
 SHARED_LIBS +=	MultitenantDicom          0.0 # 0.0
 
@@ -62,9 +64,6 @@ CONFIGURE_ARGS +=	-DUSE_SYSTEM_BOOST=ON \
 CONFIGURE_ARGS +=	-DBUILD_CONNECTIVITY_CHECKS=OFF \
 			-DBUILD_DELAYED_DELETION=OFF \
 			-DUNIT_TESTS_WITH_HTTP_CONNEXIONS=OFF
-
-
-WRKSRC =		${WRKDIR}/${DISTNAME}/OrthancServer
 
 pre-configure:
 	sed -i 's,share/orthanc/plugins,libexec/orthanc/plugins,g' \
