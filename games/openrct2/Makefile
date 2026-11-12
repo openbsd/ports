@@ -1,7 +1,7 @@
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		0.5.6
+V =		0.5.7
 TITLE_V =	0.5.6
 OBJECTS_V =	1.8.0
 OPENSFX_V =	1.0.6
