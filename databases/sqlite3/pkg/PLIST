@@ -17,6 +17,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/SQLITE_CHANGESET_OMIT.3
 @man man/man3/SQLITE_CHECKPOINT_NOOP.3
 @man man/man3/SQLITE_CONFIG_SINGLETHREAD.3
+@man man/man3/SQLITE_COPY.3
 @man man/man3/SQLITE_CREATE_INDEX.3
 @man man/man3/SQLITE_DBCONFIG_MAINDBNAME.3
 @man man/man3/SQLITE_DBSTATUS_LOOKASIDE_USED.3
@@ -161,6 +162,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_reset.3
 @man man/man3/sqlite3_reset_auto_extension.3
 @man man/man3/sqlite3_result_blob.3
+@man man/man3/sqlite3_result_str.3
 @man man/man3/sqlite3_result_subtype.3
 @man man/man3/sqlite3_serialize.3
 @man man/man3/sqlite3_session.3
