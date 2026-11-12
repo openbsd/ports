@@ -21,8 +21,6 @@ share/examples/gnome-keyring/xdg/autostart/gnome-keyring-pkcs11.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-keyring-pkcs11.desktop
 share/examples/gnome-keyring/xdg/autostart/gnome-keyring-secrets.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-keyring-secrets.desktop
-share/examples/gnome-keyring/xdg/autostart/gnome-keyring-ssh.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-keyring-ssh.desktop
 share/glib-2.0/schemas/org.gnome.crypto.cache.gschema.xml
 share/locale/ab/LC_MESSAGES/gnome-keyring.mo
 share/locale/af/LC_MESSAGES/gnome-keyring.mo

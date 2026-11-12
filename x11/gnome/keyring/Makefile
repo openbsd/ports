@@ -7,6 +7,7 @@ COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		51.1
+REVISION=		0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -22,6 +23,9 @@ MODGNOME_TOOLS=		docbook
 
 LIB_DEPENDS=		x11/gnome/gcr
 
+# SSH agent (convenience dependency: feature was moved out of gnome-keyring)
+RUN_DEPENDS +=		x11/gnome/gcr4
+
 # GnuPG gnome-keyring agent
 RUN_DEPENDS +=		security/pinentry,-gnome3,
 
@@ -36,16 +40,6 @@ CONFIGURE_ARGS=		-Dselinux=disabled \
 # to enter 3 passwords at login:
 # login -> "Defaut" keyring (secret storage) -> "Default" keyring (SSH agent)
 CONFIGURE_ARGS +=	-Dpam=false
-
-# XXX x11/gnome/gcr4 should be used to provide the ssh-agent functionality;
-# however it requires systemctl to export SSH_AUTH_SOCK and activate
-# ssh-agent.service and gcr-ssh-agent.socket
-# https://gitlab.gnome.org/GNOME/gcr/-/commit/b12cc639949c4b548d84625b292a2aff1faaf195
-# https://gitlab.gnome.org/GNOME/gnome-keyring/-/commit/25c5a1982467802fa12c6852b03c57924553ba73
-# https://gitlab.gnome.org/GNOME/gcr/-/issues/55
-# https://gitlab.gnome.org/GNOME/gcr/-/merge_requests/137
-# https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/770
-CONFIGURE_ARGS +=	-Dssh-agent=true
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
