@@ -1,40 +1,17 @@
 COMMENT=		DICOM toolkit
 
-# orthanc needs a matching configuration in WRKSRC/Resources/RunCppCheck-XXX.sh
-# and ../OrthancFramework/Resources/CMake/DcmtkConfiguration.cmake, look for
-# DCMTK_STATIC_VERSION / DCMTK_VERSION_NUMBER / /usr/local/share/dcmtk-3.7.x
-V =			3.7.0
+# orthanc needs to handle the dcmtk version; look for DCMTK_STATIC_VERSION,
+# DCMTK_VERSION_NUMBER, /usr/local/share/dcmtk-3.7.x, e.g. in
+# ../OrthancFramework/Resources/CMake/DcmtkConfiguration.cmake
+V =			3.7.1
 DISTNAME=		dcmtk-$V
 
-SHARED_LIBS +=  cmr                       1.0 # 3.7
-SHARED_LIBS +=  dcmdata                   3.0 # 3.7
-SHARED_LIBS +=  dcmdsig                   1.0 # 3.7
-SHARED_LIBS +=  dcmfg                     3.0 # 3.7
-SHARED_LIBS +=  dcmimage                  1.0 # 3.7
-SHARED_LIBS +=  dcmimgle                  2.1 # 3.7
-SHARED_LIBS +=  dcmiod                    3.0 # 3.7
-SHARED_LIBS +=  dcmjpeg                   3.0 # 3.7
-SHARED_LIBS +=  dcmjpls                   2.0 # 3.7
-SHARED_LIBS +=  dcmnet                    3.0 # 3.7
-SHARED_LIBS +=  dcmpmap                   3.0 # 3.7
-SHARED_LIBS +=  dcmpstat                  2.1 # 3.7
-SHARED_LIBS +=  dcmqrdb                   2.0 # 3.7
-SHARED_LIBS +=  dcmrt                     2.0 # 3.7
-SHARED_LIBS +=  dcmseg                    3.0 # 3.7
-SHARED_LIBS +=  dcmsr                     3.0 # 3.7
-SHARED_LIBS +=  dcmtls                    1.0 # 3.7
-SHARED_LIBS +=  dcmtract                  3.0 # 3.7
-SHARED_LIBS +=  dcmwlm                    1.0 # 3.7
-SHARED_LIBS +=  dcmxml                    0.0 # 3.7
-SHARED_LIBS +=  i2d                       3.0 # 3.7
-SHARED_LIBS +=  ijg12                     1.0 # 3.7
-SHARED_LIBS +=  ijg16                     1.0 # 3.7
-SHARED_LIBS +=  ijg8                      1.0 # 3.7
-SHARED_LIBS +=  oficonv                   0.1 # 3.7
-SHARED_LIBS +=  oflog                     2.0 # 3.7
-SHARED_LIBS +=  ofstd                     2.1 # 3.7
-SHARED_LIBS +=  dcmect                    2.1 # 3.7
-SHARED_LIBS +=  dcmtkcharls               2.0 # 3.7
+.for l in cmr dcmdata dcmdsig dcmfg dcmimage dcmimgle dcmiod dcmjpeg \
+	dcmjpls dcmnet dcmpmap dcmpstat dcmqrdb dcmrt dcmseg dcmsr \
+	dcmtls dcmtract dcmwlm dcmxml i2d ijg12 ijg16 ijg8 oficonv \
+	oflog ofstd dcmect dcmtkcharls
+SHARED_LIBS +=  $l 4.0
+.endfor
 
 CATEGORIES=		graphics
 
@@ -46,12 +23,9 @@ SITES=	https://dicom.offis.de/download/dcmtk/dcmtk${V:S/.//g}/
 # https://dicom.offis.de/download/dcmtk/dcmtk369/COPYRIGHT
 PERMIT_PACKAGE=	Yes
 
-SUBST_VARS += V
+WANTLIB += ${COMPILER_LIBCXX} c crypto jpeg m png ssl tiff xml2 z
 
-WANTLIB += c crypto jpeg m png pthread ssl ${COMPILER_LIBCXX} tiff
-WANTLIB += xml2 z iconv charset
-
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/png \
@@ -62,6 +36,8 @@ RUN_DEPENDS=		graphics/netpbm
 
 MODULES =		devel/cmake
 
+SUBST_VARS +=		V
+
 CONFIGURE_ARGS +=	-DDCMTK_WITH_ICU=OFF \
 			-DDCMTK_WITH_WRAP=OFF \
 			-DDCMTK_WITH_THREADS=OFF \
@@ -69,5 +45,8 @@ CONFIGURE_ARGS +=	-DDCMTK_WITH_ICU=OFF \
 			-DDCMTK_INSTALL_MANDIR=man \
 			-DCMAKE_INSTALL_SYSCONFDIR=share/examples \
 			-DDCMTK_ENABLE_CXX11:BOOL=ON
+
+post-install:
+	rmdir ${PREFIX}/share/doc/dcmtk-${V}/html
 
 .include <bsd.port.mk>

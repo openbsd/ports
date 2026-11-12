@@ -28,7 +28,7 @@ Index: dcmsign/libsrc/sitstamp.cc
          if (!TS_MSG_IMPRINT_set_algo(msg_imprint, algo)) result = SI_EC_OpenSSLFailure;
        }
  
-@@ -482,7 +475,10 @@ OFCondition SiTimeStamp::check_ts_response(
+@@ -472,7 +465,10 @@ OFCondition SiTimeStamp::check_ts_response(
        }
        else
        {
@@ -40,7 +40,7 @@ Index: dcmsign/libsrc/sitstamp.cc
          {
            DCMSIGN_ERROR("timestamp response validation failed: message digest algorithms are different in timestamp query and response");
            result = SI_EC_InvalidTSR;
-@@ -856,9 +852,11 @@ void SiTimeStamp::get_tsinfo_imprint_algorithm_name(OF
+@@ -846,9 +842,11 @@ void SiTimeStamp::get_tsinfo_imprint_algorithm_name(OF
        }
        else
        {

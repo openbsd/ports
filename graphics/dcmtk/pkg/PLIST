@@ -41,6 +41,7 @@
 @bin bin/dcmscale
 @bin bin/dcmsend
 @bin bin/dcmsign
+@bin bin/dcmtk
 @bin bin/dcod2lum
 @bin bin/dconvlum
 @bin bin/drtdump
@@ -1052,6 +1053,8 @@ include/dcmtk/ofstd/diag/asincond.def
 include/dcmtk/ofstd/diag/clangprg.def
 include/dcmtk/ofstd/diag/cnvrsn.def
 include/dcmtk/ofstd/diag/constexp.def
+include/dcmtk/ofstd/diag/deprecat.def
+include/dcmtk/ofstd/diag/formtrnc.def
 include/dcmtk/ofstd/diag/ignrattr.def
 include/dcmtk/ofstd/diag/memacces.def
 include/dcmtk/ofstd/diag/mmtag.def
@@ -1135,6 +1138,7 @@ include/dcmtk/ofstd/oftypes.h
 include/dcmtk/ofstd/ofuoset.h
 include/dcmtk/ofstd/ofutil.h
 include/dcmtk/ofstd/ofuuid.h
+include/dcmtk/ofstd/ofuuidgn.h
 include/dcmtk/ofstd/ofvector.h
 include/dcmtk/ofstd/ofvriant.h
 include/dcmtk/ofstd/ofwhere.h
@@ -1223,6 +1227,7 @@ lib/pkgconfig/dcmtk.pc
 @man man/man1/dcmscale.1
 @man man/man1/dcmsend.1
 @man man/man1/dcmsign.1
+@man man/man1/dcmtk.1
 @man man/man1/dcod2lum.1
 @man man/man1/dconvlum.1
 @man man/man1/drtdump.1
@@ -1421,6 +1426,7 @@ share/doc/dcmtk-${V}/CHANGES.367
 share/doc/dcmtk-${V}/CHANGES.368
 share/doc/dcmtk-${V}/CHANGES.369
 share/doc/dcmtk-${V}/CHANGES.370
+share/doc/dcmtk-${V}/CHANGES.371
 share/doc/dcmtk-${V}/COPYRIGHT
 share/doc/dcmtk-${V}/CREDITS
 share/doc/dcmtk-${V}/FAQ
