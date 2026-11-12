@@ -111,7 +111,6 @@
      SUBDIR += cryptopp
      SUBDIR += cscope
      SUBDIR += csmith
-     SUBDIR += ctftools
      SUBDIR += cudd
      SUBDIR += cunit
      SUBDIR += cutils
