@@ -1,0 +1,14 @@
+Index: sysclean.pl
+--- sysclean.pl.orig
++++ sysclean.pl
+@@ -107,6 +107,10 @@ sub init_ignored($self)
+ 		'/var/www/logs' => 1,
+ 		'/var/www/run' => 1,
+ 		'/var/www/tmp' => 1,
++		# 8.0-stable
++		'/var/dbupdate' => 1,
++		'/usr/sbin/dbupdate' => 1,
++		'/usr/share/man/man8/dbupdate.8' => 1,
+ 	};
+ 
+ 	# additionnal ignored files, using pattern
