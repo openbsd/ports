@@ -1,6 +1,6 @@
 COMMENT=		xdg-desktop-portal backend for wlroots
 
-V=			0.8.5
+V=			0.9.0
 DISTNAME=		xdg-desktop-portal-wlr-${V}
 
 CATEGORIES=		x11
