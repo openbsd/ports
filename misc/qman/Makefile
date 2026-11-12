@@ -14,7 +14,8 @@ WANTLIB += c curses lzma z
 MODULES =	devel/meson
 
 BUILD_DEPENDS =	devel/cunit \
-		devel/py-cogapp
+		devel/py-cogapp \
+		shells/bash
 LIB_DEPENDS =	archivers/xz
 RUN_DEPENDS =	devel/xdg-utils \
 		textproc/groff
