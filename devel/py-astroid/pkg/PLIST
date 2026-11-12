@@ -10,16 +10,17 @@ lib/python${MODPY_VERSION}/site-packages/astroid-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/astroid-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/astroid-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/astroid/__init__.py
+lib/python${MODPY_VERSION}/site-packages/astroid/__main__.py
 lib/python${MODPY_VERSION}/site-packages/astroid/__pkginfo__.py
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__pkginfo__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__pkginfo__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}_ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}_ast.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}_backport_stdlib_names.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}_backport_stdlib_names.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}astroid_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,7 +66,6 @@ lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}typing.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/_ast.py
-lib/python${MODPY_VERSION}/site-packages/astroid/_backport_stdlib_names.py
 lib/python${MODPY_VERSION}/site-packages/astroid/arguments.py
 lib/python${MODPY_VERSION}/site-packages/astroid/astroid_manager.py
 lib/python${MODPY_VERSION}/site-packages/astroid/bases.py
@@ -96,6 +96,8 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_dat
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_datetime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_dateutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_dateutil.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_decimal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_decimal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_functools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_functools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_gi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -114,8 +116,6 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_mul
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_multiprocessing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_namedtuple_enum.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_namedtuple_enum.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_nose.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_nose.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_numpy_core_einsumfunc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_numpy_core_einsumfunc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_numpy_core_fromnumeric.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -164,6 +164,8 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_sql
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_sqlalchemy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_ssl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_ssl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_statistics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_statistics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_subprocess.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_subprocess.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_threading.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -189,6 +191,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_curses.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_dataclasses.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_datetime.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_dateutil.py
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_decimal.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_functools.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_gi.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_hashlib.py
@@ -198,7 +201,6 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_io.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_mechanize.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_multiprocessing.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_namedtuple_enum.py
-lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_nose.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_numpy_core_einsumfunc.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_numpy_core_fromnumeric.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_numpy_core_function_base.py
@@ -223,6 +225,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_signal.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_six.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_sqlalchemy.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_ssl.py
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_statistics.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_subprocess.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_threading.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_type.py
