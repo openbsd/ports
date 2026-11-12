@@ -1,9 +1,8 @@
-COMMENT=	Python utility / library to sort Python imports
+COMMENT=	utility/library to sort Python imports
 
-MODPY_DISTV=	6.1.0
+MODPY_DISTV=	8.0.1
 DISTNAME=	isort-${MODPY_DISTV}
 PKGNAME=	py-isort-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,13 +12,12 @@ HOMEPAGE=	https://github.com/PyCQA/isort
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
+MODPY_PI=	Yes
 
 MODPY_PYTEST_ARGS= \
-		--ignore tests/integration/test_hypothesmith.py \
-		--ignore tests/unit/test_pylama_isort.py
+	--ignore tests/integration/test_hypothesmith.py \
+	--ignore tests/unit/test_pylama_isort.py
 
 TEST_DEPENDS=	${BUILD_PKGPATH} \
 		devel/py-test-benchmark \
