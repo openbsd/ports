@@ -1,0 +1,4 @@
+Cpptrace is a simple and portable C++ stacktrace library supporting
+C++11 and greater. Its goal is to make stack traces simple. In
+addition, cpptrace also provides a mechanism for getting stacktraces
+from thrown exceptions.

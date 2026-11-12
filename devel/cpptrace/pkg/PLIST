@@ -1,0 +1,23 @@
+include/cpptrace/
+include/cpptrace/basic.hpp
+include/cpptrace/cpptrace.hpp
+include/cpptrace/exceptions.hpp
+include/cpptrace/exceptions_macros.hpp
+include/cpptrace/formatting.hpp
+include/cpptrace/forward.hpp
+include/cpptrace/from_current.hpp
+include/cpptrace/from_current_macros.hpp
+include/cpptrace/gdb_jit.hpp
+include/cpptrace/io.hpp
+include/cpptrace/utils.hpp
+include/cpptrace/version.hpp
+include/ctrace/
+include/ctrace/ctrace.h
+lib/cmake/
+lib/cmake/cpptrace/
+lib/cmake/cpptrace/Findzstd.cmake
+lib/cmake/cpptrace/cpptrace-config-version.cmake
+lib/cmake/cpptrace/cpptrace-config.cmake
+lib/cmake/cpptrace/cpptrace-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/cpptrace/cpptrace-targets.cmake
+@lib lib/libcpptrace.so.${LIBcpptrace_VERSION}
