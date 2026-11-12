@@ -1,6 +1,6 @@
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
-DISTNAME=	pure-ftpd-1.0.51
+DISTNAME=	pure-ftpd-1.0.54
 CATEGORIES=	net
 SITES=		https://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -9,7 +9,6 @@ SITES=		https://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.nl.pureftpd.org/pub/pure-ftpd/releases/ \
 		${SITE_SOURCEFORGE:=pureftpd/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
 HOMEPAGE=	https://www.pureftpd.org/project/pure-ftpd/
 
