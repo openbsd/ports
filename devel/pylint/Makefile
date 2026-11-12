@@ -1,35 +1,34 @@
-COMMENT=		lint-like code checker for Python code
+COMMENT=	lint-like code checker for Python code
 
 # py-astroid and pylint usually need keeping in-sync
-# devel/py-python-lsp-server needs < 4
-MODPY_DISTV=	3.3.9
+# devel/py-python-lsp-server has specific version req's
+MODPY_DISTV=	4.1.3
 DISTNAME=	pylint-${MODPY_DISTV}
 PKGNAME=	pylint3-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	devel
 
+# https://github.com/PyCQA/pylint
 HOMEPAGE=	https://www.pylint.org/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-RUN_DEPENDS=	devel/py-dill \
-		sysutils/py-platformdirs \
-		devel/py-astroid>=3.3.8,<3.4.0 \
-		devel/py-isort<7 \
+RUN_DEPENDS=	devel/py-astroid>=4.3.4,<4.4 \
+		devel/py-dill \
+		devel/py-isort<10 \
 		devel/py-mccabe<0.8 \
-		textproc/py-tomlkit \
-		devel/py-typing-extensions
+		sysutils/py-platformdirs \
+		textproc/py-tomlkit
 
-# tests require data files (tests/regrtest_data/* and maybe others)
-# which aren't in the pypi tar
-NO_TEST=	Yes
-#TEST_DEPENDS=	devel/py-test-benchmark
+# needs pytest_remaster
+MODPY_PYTEST_IGNORE= tests/reporters/unittest_junit_reporter.py
+
+TEST_DEPENDS=	devel/py-gitpython \
+		devel/py-test-benchmark
 
 .include <bsd.port.mk>
