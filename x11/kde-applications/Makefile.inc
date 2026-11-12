@@ -23,7 +23,9 @@ PERMIT_PACKAGE ?=	Yes
 
 VERSION ?=		${MODKDE_GEAR_VERSION}
 
+.if !defined(KDE_COMMIT)
 SITES ?=		${SITE_KDE:=stable/release-service/${VERSION}/src/}
+.endif
 EXTRACT_SUFX ?=		.tar.xz
 
 RUN_DEPENDS +=		${MODKDE_RUN_DEPENDS}
