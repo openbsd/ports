@@ -2,7 +2,7 @@ COMMENT =	dungeon explorin', hackin' game, but harder than nethack
 
 DISTNAME =	slash-e8
 PKGNAME =	slash-3.2.2.e8
-REVISION =	9
+REVISION =	10
 CATEGORIES =	games
 
 SITES =		${SITE_SOURCEFORGE:=nethack/}

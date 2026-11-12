@@ -4,6 +4,7 @@ V =		3.6.7
 BASEV =		3.6.0
 DISTNAME =	nethack-$V
 PKGNAME =	${DISTNAME}
+REVISION =	0
 CATEGORIES =	games
 SITES =		https://www.nethack.org/download/$V/
 DISTFILES =	nethack-${V:S/.//g}-src.tgz

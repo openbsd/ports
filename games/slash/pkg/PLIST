@@ -1,6 +1,7 @@
 @unexec rm -rf %D/lib/slashdir/save
 @group games
 bin/slash
+@mode 2555
 @bin bin/srecover
 @mode 0775
 ${GAMEDIR}/

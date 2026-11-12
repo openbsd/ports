@@ -9,3 +9,18 @@ Index: src/files.c
  #ifdef COMPRESS
  STATIC_DCL void FDECL(redirect, (char *,char *,FILE *,BOOLEAN_P));
  STATIC_DCL void FDECL(docompress_file, (char *,BOOLEAN_P));
+@@ -110,6 +111,14 @@ STATIC_DCL void FDECL(adjust_prefix, (char *, int));
+ #ifndef PREFIXES_IN_USE
+ /*ARGSUSED*/
+ #endif
++
++
++#ifdef __OpenBSD__
++#include <sys/stat.h>
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++#endif
++
+ const char *
+ fqname(basename, whichprefix, buffnum)
+ const char *basename;

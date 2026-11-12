@@ -4,6 +4,7 @@
 @comment bin/slashem
 bin/slashem-${V}
 @group games
+@mode 2555
 @bin bin/strecover-${V}
 @mode 0775
 ${GAMEDIR}/

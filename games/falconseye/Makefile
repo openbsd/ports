@@ -3,7 +3,7 @@ COMMENT =	NetHack derivative
 VERSION =	1.9.3
 DISTNAME =	nethack_source_331_jtp_${VERSION:S/.//g}
 PKGNAME =	falconseye-${VERSION}
-REVISION =	12
+REVISION =	13
 CATEGORIES =	games x11
 EXTRACT_SUFX =	.zip
 

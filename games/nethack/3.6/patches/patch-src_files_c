@@ -1,7 +1,20 @@
 Index: src/files.c
 --- src/files.c.orig
 +++ src/files.c
-@@ -1373,6 +1373,7 @@ boolean uncomp;
+@@ -224,6 +224,12 @@ STATIC_DCL int FDECL(open_levelfile_exclusively, (cons
+ static char *config_section_chosen = (char *) 0;
+ static char *config_section_current = (char *) 0;
+ 
++#ifdef __OpenBSD__
++#include <sys/stat.h>
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++#endif
++
+ /*
+  * fname_encode()
+  *
+@@ -1373,6 +1379,7 @@ boolean uncomp;
  #endif
      f = fork();
      if (f == 0) { /* child */
@@ -9,7 +22,7 @@ Index: src/files.c
  #ifdef TTY_GRAPHICS
          /* any error messages from the compression must come out after
           * the first line, because the more() to let the user read
-@@ -1397,8 +1398,10 @@ boolean uncomp;
+@@ -1397,8 +1404,10 @@ boolean uncomp;
              redirect(filename, RDBMODE, stdin, uncomp);
              redirect(cfn, WRBMODE, stdout, uncomp);
          }

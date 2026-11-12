@@ -1,6 +1,7 @@
 @unexec rm -rf ${GAMEDIR}/save/*
 @group games
 bin/falconseye
+@mode 2555
 @bin bin/frecover
 @mode 0775
 ${GAMEDIR}/

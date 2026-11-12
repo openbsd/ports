@@ -1,0 +1,17 @@
+Index: util/recover.c
+--- util/recover.c.orig
++++ util/recover.c
+@@ -39,6 +39,13 @@ void FDECL(copy_bytes, (int,int));
+ #ifdef __BORLANDC__
+ extern unsigned _stklen = STKSIZ;
+ #endif
++
++#ifdef __OpenBSD__
++#include <sys/stat.h>
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++#endif
++
+ char savename[SAVESIZE]; /* holds relative path of save file from playground */
+ 
+ 

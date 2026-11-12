@@ -2,7 +2,7 @@ COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
 DISTNAME =	nethack-$V
 PKGNAME =	${DISTNAME}
-REVISION =	18
+REVISION =	19
 CATEGORIES =	games
 
 SITES =		${SITE_SOURCEFORGE:=nethack/}

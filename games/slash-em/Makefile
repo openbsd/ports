@@ -1,7 +1,7 @@
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
 PKGNAME =	slash-em-3.4.3.7e7f1
-REVISION =	10
+REVISION =	11
 V =		3.4.3.7e7f1
 CATEGORIES =	games
 
