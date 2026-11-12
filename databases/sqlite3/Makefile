@@ -2,6 +2,7 @@ COMMENT=	embedded SQL implementation
 
 DISTNAME=	sqlite-src-3540100
 PKGNAME=	sqlite3-3.54.1
+REVISION=	0
 EXTRACT_SUFX=	.zip
 
 # XXX needs bumps every time :-/
@@ -44,7 +45,8 @@ CONFIGURE_ENV=	CCACHE=None \
 
 CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 		-DSQLITE_ENABLE_DBSTAT_VTAB \
-		-DSQLITE_ENABLE_COLUMN_METADATA
+		-DSQLITE_ENABLE_COLUMN_METADATA \
+		-DSQLITE_NO_COLOR
 
 # base-gcc + ld.bfd don't like "-rpath /usr/local/lib"
 MAKE_FLAGS=	LDFLAGS.rpath="-Wl,-rpath,${PREFIX}/lib"
