@@ -1,5 +1,3 @@
-${P5SITE}/TAP/
-${P5SITE}/TAP/Harness/
 ${P5SITE}/TAP/Harness/Archive/
 ${P5SITE}/TAP/Harness/Archive/MultipleHarnesses.pm
 ${P5SITE}/TAP/Harness/ReportByDescription.pm
