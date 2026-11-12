@@ -1,6 +1,6 @@
 COMMENT=	brain-dead simple config-ini parsing
 
-MODPY_DISTV=	2.3.0
+MODPY_DISTV=	2.3.1
 DISTNAME=	iniconfig-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
