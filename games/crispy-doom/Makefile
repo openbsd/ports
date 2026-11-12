@@ -1,6 +1,6 @@
 COMMENT =		enhanced release of Doom, Heretic, Hexen, and Strife
 
-V =			7.1
+V =			7.2
 DIST_TUPLE =		github fabiangreffrath crispy-doom crispy-doom-${V} .
 PKGNAME =		crispy-doom-${V}
 
@@ -26,7 +26,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 CONFIGURE_STYLE =	autoreconf
 AUTOMAKE_VERSION =	1.16
-AUTOCONF_VERSION =	2.71
+AUTOCONF_VERSION =	2.73
 CONFIGURE_ARGS +=	--mandir="${LOCALBASE}/man"
 
 # python just used for generating manpages
