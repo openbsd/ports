@@ -838,6 +838,9 @@ share/doc/gcr-4/vfunc.SecretExchange.derive_transport_key.html
 share/doc/gcr-4/vfunc.SecretExchange.encrypt_transport_data.html
 share/doc/gcr-4/vfunc.SecretExchange.generate_exchange_key.html
 share/doc/gcr-4/vfunc.SystemPrompter.new_prompt.html
+share/examples/gcr4/
+share/examples/gcr4/gcr-ssh-agent.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gcr-ssh-agent.desktop
 share/gir-1.0/Gck-2.gir
 share/gir-1.0/Gcr-4.gir
 share/locale/ab/LC_MESSAGES/gcr-4.mo

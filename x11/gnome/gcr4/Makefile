@@ -3,7 +3,7 @@ COMMENT=		library for bits of crypto UI and parsing
 GNOME_PROJECT=		gcr
 GNOME_VERSION=		4.4.1
 PKGNAME=		${GNOME_PROJECT}4-${GNOME_VERSION}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += gck-2                     0.3 # 2.4.1
 SHARED_LIBS += gcr-4                     0.3 # 4.4.1
@@ -31,5 +31,11 @@ RUN_DEPENDS=		security/gnupg
 CONFIGURE_ARGS=		-Dsystemd=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+# see patches/patch-gcr_gcr-ssh-agent_c
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gcr4
+	${SUBST_DATA} ${FILESDIR}/gcr-ssh-agent.desktop \
+		${PREFIX}/share/examples/gcr4/gcr-ssh-agent.desktop
 
 .include <bsd.port.mk>

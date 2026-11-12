@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=SSH Key Agent
+Exec=${TRUEPREFIX}/libexec/gcr-ssh-agent --session
+OnlyShowIn=GNOME;Unity;MATE;
+X-GNOME-Autostart-Phase=PreDisplayServer

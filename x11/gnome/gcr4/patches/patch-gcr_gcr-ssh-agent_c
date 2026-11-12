@@ -1,0 +1,137 @@
+Without systemd socket activation: default --base-dir to $XDG_RUNTIME_DIR/gcr
+and create it, add --session to start from XDG autostart (fork, export
+SSH_AUTH_SOCK through org.gnome.SessionManager like gnome-keyring-daemon),
+exit with the session bus and cleanly on signals.
+
+Index: gcr/gcr-ssh-agent.c
+--- gcr/gcr-ssh-agent.c.orig
++++ gcr/gcr-ssh-agent.c
+@@ -20,7 +20,14 @@
+ #include "gcr-ssh-agent-preload.h"
+ #include "gcr-ssh-agent-service.h"
+ 
++#include <glib-unix.h>
++
++#include <errno.h>
++#include <signal.h>
++#include <unistd.h>
++
+ static gchar *base_dir;
++static gboolean session;
+ static gchar **ssh_agent_args = NULL;
+ 
+ /* gcr-ssh-agent --base-dir <base_dir> -- [ssh-agent options]
+@@ -28,6 +35,7 @@ static gchar **ssh_agent_args = NULL;
+ 
+ static GOptionEntry opt_entries[] = {
+         { "base-dir", 'd', 0, G_OPTION_ARG_FILENAME, &base_dir, "Base directory", NULL },
++        { "session", 's', 0, G_OPTION_ARG_NONE, &session, "Start from the desktop session", NULL },
+         { G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_STRING_ARRAY, &ssh_agent_args,
+           "ssh-agent options", NULL },
+         { NULL }
+@@ -50,26 +58,60 @@ parse_arguments (int *argc, char **argv[])
+         g_option_context_free (opt_context);
+ }
+ 
++static gboolean
++on_signal (gpointer loop)
++{
++	g_main_loop_quit (loop);
++	return G_SOURCE_CONTINUE;
++}
++
+ int
+ main (int argc,
+       char **argv)
+ {
+ 	GcrSshAgentPreload *preload;
+ 	GcrSshAgentService *service;
++	GDBusConnection *bus = NULL;
++	GVariant *ret;
+ 	GMainLoop *loop;
++	gchar *path;
++	int fds[2] = { -1, -1 };
++	pid_t pid;
++	char c;
+ 
+         parse_arguments(&argc, &argv);
+ 
+-	if (!base_dir) {
+-		g_printerr ("Usage: gcr-ssh-agent --base-dir <base-dir> --\n");
+-		return EXIT_FAILURE;
+-	}
++	if (!base_dir)
++		base_dir = g_build_filename (g_get_user_runtime_dir (), "gcr", NULL);
+ 
+ 	if (!g_path_is_absolute (base_dir)) {
+ 		g_printerr ("gcr-ssh-agent: base-dir must be specified as an absolute path\n");
+ 		return EXIT_FAILURE;
+ 	}
+ 
++	/* Created by systemd when socket activated */
++	if (g_mkdir_with_parents (base_dir, 0700) < 0) {
++		g_printerr ("gcr-ssh-agent: %s: %s\n", base_dir, g_strerror (errno));
++		return EXIT_FAILURE;
++	}
++
++	/*
++	 * The session manager waits for us to exit before its next startup
++	 * phase: fork, before GLib starts any thread, and exit once the child
++	 * is ready.
++	 */
++	if (session) {
++		if (pipe (fds) < 0 || (pid = fork ()) < 0) {
++			g_printerr ("gcr-ssh-agent: %s\n", g_strerror (errno));
++			return EXIT_FAILURE;
++		}
++		if (pid > 0) {
++			close (fds[1]);
++			return read (fds[0], &c, 1) == 1 ? EXIT_SUCCESS : EXIT_FAILURE;
++		}
++		close (fds[0]);
++	}
++
+ 	preload = gcr_ssh_agent_preload_new ("~/.ssh");
+ 	service = gcr_ssh_agent_service_new (base_dir, ssh_agent_args, preload);
+         g_free (ssh_agent_args);
+@@ -79,8 +121,40 @@ main (int argc,
+ 		return EXIT_FAILURE;
+ 
+ 	loop = g_main_loop_new (NULL, FALSE);
++	g_unix_signal_add (SIGHUP, on_signal, loop);
++	g_unix_signal_add (SIGINT, on_signal, loop);
++	g_unix_signal_add (SIGTERM, on_signal, loop);
++
++	if (session) {
++		/*
++		 * Export SSH_AUTH_SOCK like gnome-keyring-daemon (GNOME, MATE);
++		 * only accepted early, hence X-GNOME-Autostart-Phase. The
++		 * connection raises SIGTERM when the session bus goes away.
++		 */
++		bus = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, NULL);
++		if (bus) {
++			path = g_build_filename (base_dir, "ssh", NULL);
++			ret = g_dbus_connection_call_sync (bus, "org.gnome.SessionManager",
++			                                   "/org/gnome/SessionManager",
++			                                   "org.gnome.SessionManager", "Setenv",
++			                                   g_variant_new ("(ss)", "SSH_AUTH_SOCK", path),
++			                                   NULL, G_DBUS_CALL_FLAGS_NO_AUTO_START,
++			                                   -1, NULL, NULL);
++			g_clear_pointer (&ret, g_variant_unref);
++			g_free (path);
++		}
++		if (write (fds[1], "", 1) != 1)
++			g_warning ("couldn't notify parent: %s", g_strerror (errno));
++		close (fds[1]);
++	}
++
+ 	g_main_loop_run (loop);
+ 	g_main_loop_unref (loop);
++
++	/* Remove our socket and terminate ssh-agent */
++	gcr_ssh_agent_service_stop (service);
++	g_object_unref (service);
++	g_clear_object (&bus);
+ 
+ 	return EXIT_SUCCESS;
+ }
