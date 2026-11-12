@@ -34,14 +34,13 @@ TS_VERSION=		7.0.2
 
 DIST_TUPLE=		github ungoogled-software ungoogled-chromium ${UGV} .
 DIST_TUPLE+=		github microsoft TypeScript v${TS_VERSION} typescript
+DIST_TUPLE+=		github google crubit dcf92a1baf2c8a6561ed0361502cfec20e2f65f5 third_party/rust-toolchain/lib/third_party/crubit
 
 # ftp https://github.com/microsoft/TypeScript/archive/refs/tags/v${TS_VERSION}.tar.gz
 # tar xzf v${V}.tar.gz
 # cd TypeScript-${TS_VERSION}/tsc && go mod tidy && go mod vendor
 # cd ../../ && tar czf TypeScript-${TS_VERSION}-vendor.tar.gz TypeScript-${TS_VERSION}-vendor/tsc/vendor
 VENDOR_DISTFILES.a=	TypeScript-${TS_VERSION}-vendor.tar.gz
-
-VENDOR_DISTFILES.a+=	crubit-20261024.tar.gz
 
 EXTRACT_ONLY=		${ALL_DISTFILES:N*testdata*}
 
@@ -64,7 +63,14 @@ SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
 SITES.a=	http://nerd.hu/distfiles/
 SITES.b=	https://github.com/chromium-linux-tarballs/chromium-tarballs/releases/download/${V}/
 
-MODULES=	lang/clang lang/python x11/qt5 x11/qt6
+MODULES=	devel/cargo lang/clang lang/python x11/qt5 x11/qt6
+
+MODCARGO_CARGOTOML=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/Cargo.toml
+MODCARGO_TARGET_DIR=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/target
+MODCARGO_BUILD=		No
+MODCARGO_INSTALL=	No
+MODCARGO_TEST=		No
+MODCARGO_BUILD_ARGS=	-p cc_bindings_from_rs
 
 MODCLANG_VERSION=	22
 MODQT5_DEPS=		No
@@ -105,6 +111,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/rust-bindgen \
 		graphics/vulkan-headers \
 		lang/go \
+		lang/rust,-dev \
 		lang/rust,-rustfmt \
 		lang/node \
 		lang/rust \
@@ -301,7 +308,8 @@ GN_ARGS+=	chrome_pgo_phase=0 \
 		use_unofficial_version_number=false
 
 pre-patch:
-	perl -pi -e "s#'third_party/typescript/linux-amd64/',##g" \
+	perl -pi -e "s#'third_party/typescript/linux-amd64/',##g; \
+		s#'third_party/rust-toolchain/',##g" \
 		${WRKDIR}/ungoogled-chromium-${UGV}/utils/prune_binaries.py	
 	cd ${WRKDIR}/ungoogled-chromium-${UGV} && \
 		utils/prune_binaries.py ${WRKSRC} pruning.list
@@ -324,18 +332,13 @@ post-patch:
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin \
 		${WRKSRC}/third_party/gperf/cipd/bin \
 		${WRKSRC}/third_party/rust-toolchain/bin \
-		${WRKSRC}/third_party/rust-toolchain/lib \
-		${WRKSRC}/third_party/rust-toolchain/third_party
+		${WRKSRC}/third_party/rust-toolchain/lib/third_party
 	@ln -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	# rust toolchain
 	ln -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
 	ln -sf ${LOCALBASE}/bin/rustfmt ${WRKSRC}/third_party/rust-toolchain/bin/rustfmt
-	ln -sf ${WRKDIR}/third_party/rust-toolchain/bin/cc_bindings_from_rs \
+	ln -sf ${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/target/release/cc_bindings_from_rs \
 		${WRKSRC}/third_party/rust-toolchain/bin/
-	ln -sf ${WRKDIR}/third_party/rust-toolchain/lib/librustc_driver-a5287fa55d9d1b5f.so \
-		${WRKSRC}/third_party/rust-toolchain/lib/
-	ln -sf ${WRKDIR}/third_party/rust-toolchain/lib/third_party \
-		${WRKSRC}/third_party/rust-toolchain/lib/third_party
 	@ln -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 	@ln -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/third_party/gperf/cipd/bin/gperf
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
@@ -354,6 +357,8 @@ post-patch:
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
+	${MODCARGO_configure}
+	${MODCARGO_BUILD_TARGET}
 	(cd ${WRKDIR}/devel/esbuild/github.com/evanw/esbuild@*/ && \
 		${LOCALBASE}/bin/node scripts/esbuild.js \
 		/usr/local/bin/esbuild --neutral && \
@@ -459,4 +464,5 @@ do-test:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${TEST_TARGET}
 
+.include "crates.inc"
 .include <bsd.port.mk>
