@@ -1,0 +1,57 @@
+After a wrong passphrase ssh-add asks again: flag the retry and prompt instead
+of returning the same stored password, which made ssh-add loop forever
+(gnome-keyring fixed this in a0526d1, lost in the gcr port).
+
+On OpenBSD accept(2) inherits O_NONBLOCK from the listening socket: make the
+askpass connection blocking, else askpass_thread() spins on EAGAIN.
+
+Index: gcr/gcr-ssh-askpass.c
+--- gcr/gcr-ssh-askpass.c.orig
++++ gcr/gcr-ssh-askpass.c
+@@ -57,6 +57,7 @@ struct _GcrSshAskpass {
+ 	gint fd;
+ 	GCancellable *cancellable;
+ 	GMainContext *context;
++	gboolean asked;
+ };
+ 
+ G_DEFINE_TYPE (GcrSshAskpass, gcr_ssh_askpass, G_TYPE_OBJECT);
+@@ -158,6 +159,7 @@ read_all_into_string (gint fd)
+ 
+ typedef struct {
+ 	gint fd;
++	gboolean retry;
+ 	GTlsInteraction *interaction;
+ 	GCancellable *cancellable;
+ } AskpassContext;
+@@ -183,7 +185,8 @@ askpass_thread (gpointer data)
+ 
+ 	g_debug ("asking for ssh-askpass password: %s", input->str);
+ 
+-	password = g_tls_password_new (G_TLS_PASSWORD_NONE, input->str);
++	password = g_tls_password_new (ctx->retry ? G_TLS_PASSWORD_RETRY : G_TLS_PASSWORD_NONE,
++	                               input->str);
+ 	res = g_tls_interaction_invoke_ask_password (ctx->interaction, password, ctx->cancellable, &error);
+ 
+ 	g_debug ("ask password returned %d", res);
+@@ -241,10 +244,20 @@ askpass_accept (gint fd,
+ 		return TRUE;
+ 	}
+ 
++	/* BSD: accepted sockets inherit O_NONBLOCK from the listening one */
++	if (!g_unix_set_fd_nonblocking (new_fd, FALSE, NULL)) {
++		g_warning ("couldn't make askpass socket blocking: %s", g_strerror (errno));
++		close (new_fd);
++		return TRUE;
++	}
++
+ 	g_debug ("accepted new connection from " GCR_SSH_ASKPASS_BIN);
+ 
+ 	ctx = g_new0 (AskpassContext, 1);
+ 	ctx->fd = new_fd;
++	/* ssh-add asks again after a wrong passphrase */
++	ctx->retry = self->asked;
++	self->asked = TRUE;
+ 	ctx->interaction = g_object_ref (self->interaction);
+ 	ctx->cancellable = g_object_ref (self->cancellable);
+

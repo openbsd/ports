@@ -1,0 +1,22 @@
+After a wrong passphrase ssh-add asks again: flag the retry and prompt instead
+of returning the same stored password, which made ssh-add loop forever.
+
+Index: gcr/gcr-ssh-agent-interaction.c
+--- gcr/gcr-ssh-agent-interaction.c.orig
++++ gcr/gcr-ssh-agent-interaction.c
+@@ -208,6 +208,15 @@ gcr_ssh_agent_interaction_ask_password_async (GTlsInteraction *interaction,
+ 	task = g_task_new (interaction, cancellable, callback, user_data);
+ 	g_task_set_task_data (task, g_object_ref (password), g_object_unref);
+ 
++	/* The stored password was wrong: ask, instead of looping on it */
++	if (g_tls_password_get_flags (password) & G_TLS_PASSWORD_RETRY) {
++		gcr_system_prompt_open_for_prompter_async (self->prompter_name, 60,
++							   cancellable,
++							   on_prompt_open,
++							   task);
++		return;
++	}
++
+ 	secret_password_lookupv (&schema,
+ 				 self->fields,
+ 				 cancellable,
