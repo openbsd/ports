@@ -1,6 +1,10 @@
-COMMENT=	implementation of the line and word breaking
+COMMENT=	Unicode line and word/grapheme breaking algorithms
 
+# 8.0 removes the incremental line-breaking API (lb_init_break_context,
+# lb_process_next_char) and lb_get_char_class; required by games/naev
+# at least as of 0.13.5
 V=		7.0
+REVISION=	0
 DISTNAME=	libunibreak-${V}
 
 HOMEPAGE=	https://github.com/adah1972/libunibreak/
