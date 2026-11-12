@@ -1,6 +1,6 @@
 COMMENT=	Python interface to MySQL
 
-MODPY_DISTV=	2.3.0
+MODPY_DISTV=	2.3.1
 DISTNAME=	mysqlclient-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
