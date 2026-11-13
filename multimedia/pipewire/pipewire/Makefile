@@ -83,18 +83,16 @@ CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
 			-Dbluez5=disabled \
 			-Droc=disabled \
 			-Decho-cancel-webrtc=disabled \
-			-Draop=disabled \
 			-Dlv2=disabled \
 			-Davb=disabled \
 			-Dlibffado=disabled \
 			-Dlibmysofa=disabled \
-			-Davahi=disabled \
 			-Donnxruntime=disabled
 
-# module-pulse-tunnel lets PipeWire create a local sink or source that streams
-# audio to or from a remote PulseAudio-protocol server, using libpulse as the
-# client; would require audio/pulseaudio
+# XXX to be revisited; AirPlay output and machine-to-machine streaming
 CONFIGURE_ARGS +=	-Dlibpulse=disabled
+CONFIGURE_ARGS +=	-Draop=disabled
+CONFIGURE_ARGS +=	-Davahi=disabled
 
 # PAM limits.d file
 CONFIGURE_ARGS +=	-Drlimits-install=false
@@ -111,10 +109,11 @@ CONFIGURE_ARGS +=	-Dv4l2=disabled
 # XXX needs O_TMPFILE
 CONFIGURE_ARGS +=	-Dpipewire-v4l2=disabled
 
-# XXX to be revisited; useful to replace Jack (audio/jack)
-# Jack2 client
+# plugin that talks to an external JACK server (not useful)
 CONFIGURE_ARGS +=	-Djack=disabled
-# Jack3 server
+
+# XXX to be revisited; useful to replace audio/jack
+# replaces libjack, so that PipeWire acts as the JACK server
 CONFIGURE_ARGS +=	-Dpipewire-jack=disabled
 
 # sndio SPA plugin; XXX to be sent upstream
