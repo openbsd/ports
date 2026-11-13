@@ -1,0 +1,26 @@
+Index: bpfobj.cc
+--- bpfobj.cc.orig
++++ bpfobj.cc
+@@ -193,6 +193,7 @@ p_filter(bpfobject* bpf, PyObject* args)
+   int status;
+   u_char* packet;
+   Py_ssize_t len;
++  struct pcap_pkthdr h;
+ 
+   if (Py_TYPE(bpf) != &BPFProgramType)
+     {
+@@ -210,9 +211,11 @@ p_filter(bpfobject* bpf, PyObject* args)
+   }
+ #endif
+ 
+-  status = bpf_filter(bpf->bpf.bf_insns,
+-		      packet,
+-		      len, len);
++  memset(&h, 0, sizeof(h));
++  h.len = len;
++  h.caplen = len;
++
++  status = pcap_offline_filter(&bpf->bpf, &h, packet);
+ 
+   return Py_BuildValue("i", status);
+ }
