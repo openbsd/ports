@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-V =			0.167.0
+V =			0.169.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -22,8 +22,9 @@ PKGNAME =		codex-${V}
 WRKSRC =		${WRKDIST}/codex-rs
 
 DIST_TUPLE += github nornagon crossterm ed1cdab335221515706178d68495bba2aed1924f ./crossterm
-DIST_TUPLE += github openai-oss-forks tokio-tungstenite 0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186 ./tokio-tungstenite
-DIST_TUPLE += github openai-oss-forks tungstenite-rs 4fffad30fe373adbdcffab9545e9e9bf4f2fc19f ./tungstenite
+DIST_TUPLE += github transact-rs sqlx 10462fa4414c6c7f1ed1d39bb31678e3b726878c ./sqlx
+DIST_TUPLE += github openai-oss-forks tokio-tungstenite 7447c427513cfe685f236e1ac0513c4ea3dd9c0b ./tokio-tungstenite
+DIST_TUPLE += github openai-oss-forks tungstenite-rs bc589d684755a8c02da0fc7e58d0861cbfc306f1 ./tungstenite
 DIST_TUPLE += github helix-editor nucleo 4253de9faabb4e5c6d81d946a5e35a90f87347ee ./nucleo
 DIST_TUPLE += github modelcontextprotocol rust-sdk 98a54789b80110ad210495c4ad845c89e1980471 ./rmcp
 DIST_TUPLE += github dzbarsky rules_rust b56cbaa8465e74127f1ea216f813cd377295ad81 ./runfiles

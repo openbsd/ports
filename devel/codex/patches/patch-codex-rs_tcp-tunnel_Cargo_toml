@@ -1,8 +1,8 @@
 Index: codex-rs/tcp-tunnel/Cargo.toml
 --- codex-rs/tcp-tunnel/Cargo.toml.orig
 +++ codex-rs/tcp-tunnel/Cargo.toml
-@@ -11,8 +11,8 @@ doctest = false
- anyhow = { workspace = true }
+@@ -12,8 +12,8 @@ anyhow = { workspace = true }
+ base64 = { workspace = true }
  bytes = { workspace = true }
  clap = { workspace = true, features = ["derive"] }
 -h3 = { git = "https://github.com/hyperium/h3", rev = "e07e69412876f7e26f026bd75a48b2704d8c8283" }
