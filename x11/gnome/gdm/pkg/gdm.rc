@@ -7,8 +7,4 @@ daemon="${TRUEPREFIX}/sbin/gdm"
 rc_bg=YES
 rc_reload=NO
 
-rc_post() {
-	pkill -T "${daemon_rtable}" -f gdm-session-worker
-}
-
 rc_cmd $1
