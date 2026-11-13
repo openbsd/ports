@@ -1,5 +1,9 @@
---- tcpdump.c.orig	Thu Oct  7 22:07:30 2004
-+++ tcpdump.c	Sun May 22 22:54:01 2011
+2nd hunk: don't use private libpcap function
+https://sources.debian.org/patches/tcptrace/6.6.7-6/bug545595-tcpdump-private-functions/
+
+Index: tcpdump.c
+--- tcpdump.c.orig
++++ tcpdump.c
 @@ -189,6 +189,22 @@ static int callback(
  	memcpy((char*)ip_buf,buf+8,iplen-8);
  	callback_plast = ip_buf+iplen-8-1;
@@ -23,6 +27,15 @@
        case PCAP_DLT_RAW:
  	/* raw IP */
  	offset = 0;
+@@ -248,7 +264,7 @@ pread_tcpdump(
+     int ret;
+ 
+     while (1) {
+-	if ((ret = pcap_offline_read(pcap,1,(pcap_handler)callback,0)) != 1) {
++	if ((ret = pcap_dispatch(pcap,1,(pcap_handler)callback,0)) != 1) {
+ 	    /* prob EOF */
+ 
+ 	    if (ret == -1) {
 @@ -363,6 +379,9 @@ pread_f *is_tcpdump(char *filename)
        case PCAP_DLT_ATM_RFC1483:
  	eth_header.ether_type = htons(ETHERTYPE_IP);

@@ -1,0 +1,26 @@
+Fix format strings on LP64 archs
+
+Index: etherpeek.c
+--- etherpeek.c.orig
++++ etherpeek.c
+@@ -391,14 +391,14 @@ pread_f *is_EP(char *filename)
+       
+ 	fprintf(stderr, "IS_EP says version number %d \n",file_header.version);
+ 	fprintf(stderr, "IS_EP says status number %d\n",file_header.status);
+-	fprintf(stderr, "IS_EP says length number %ld\n",file_header2.length);
+-	fprintf(stderr, "IS_EP says num packets number %ld \n",file_header2.numPackets);
+-	fprintf(stderr, "IS_EP says time date in mac format %lu \n", (tt_uint32)file_header2.timeDate);
+-	fprintf(stderr, "IS_EP says time start  %lu \n",file_header2.timeStart);
+-	fprintf(stderr, "IS_EP says time stop %lu \n",file_header2.timeStop);
++	fprintf(stderr, "IS_EP says length number %u\n",file_header2.length);
++	fprintf(stderr, "IS_EP says num packets number %u \n",file_header2.numPackets);
++	fprintf(stderr, "IS_EP says time date in mac format %u \n", (tt_uint32)file_header2.timeDate);
++	fprintf(stderr, "IS_EP says time start  %u \n",file_header2.timeStart);
++	fprintf(stderr, "IS_EP says time stop %u \n",file_header2.timeStop);
+ 	fprintf(stderr, "future is: ");
+ 	for(i=0;i<7;i++)
+-	    fprintf(stderr, " %ld ",file_header2.futureUse[i]);
++	    fprintf(stderr, " %u ",file_header2.futureUse[i]);
+ 	fprintf(stderr, "\n");
+ 	fprintf(stderr, "RLEN is %d \n",rlen);
+     }

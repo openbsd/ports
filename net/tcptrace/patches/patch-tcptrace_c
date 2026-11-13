@@ -1,11 +1,22 @@
---- tcptrace.c.orig	Fri Oct  1 23:42:34 2004
-+++ tcptrace.c	Wed Jan  7 18:30:33 2009
+Index: tcptrace.c
+--- tcptrace.c.orig
++++ tcptrace.c
 @@ -639,7 +639,7 @@ Dump File Names\n\
  	char buf[256];		/* plenty large, but checked below with strncpy */
  	struct ext_var_op *pvop = &extended_vars[i];
  	strncpy(buf,pvop->var_optname,sizeof(buf)-10);
 -	strcat(buf,"=\"STR\"");
-+	strncat(buf,"=\"STR\"", sizeof(buf));
++	strlcat(buf,"=\"STR\"", sizeof(buf));
  	fprintf(stderr,"  --%-20s %s (default: '%s')\n",
  		buf,
  		pvop->var_descr,
+@@ -740,8 +740,7 @@ main(
+     /* Used with <SP>-separated-values,
+      * prints a '#' before each header line if --csv/--tsv is requested.
+      */
+-   comment = (char *)malloc(sizeof(char *) * 2);
+-   memset(comment, 0, sizeof(comment));
++   comment = (char *)calloc(2, sizeof(char *));
+    if(csv || tsv || (sv != NULL))
+      snprintf(comment, sizeof(comment), "#");
+ 

@@ -1,0 +1,53 @@
+Index: trace.c
+--- trace.c.orig
++++ trace.c
+@@ -875,8 +875,8 @@ FindTTP(
+ 		    printf("b2a.reset_count: %d\n", ptp->b2a.reset_count);
+ 		    printf("dir: %d (%s)\n", dir, dir==A2B?"A2B":"B2A");
+ 		    printf("seq:    %lu \n", (u_long)ntohl(ptcp->th_seq));
+-		    printf("winend: %lu \n", otherdir->windowend);
+-		    printf("syn:    %lu \n", otherdir->syn);
++		    printf("winend: %u \n", otherdir->windowend);
++		    printf("syn:    %u \n", otherdir->syn);
+ 		    printf("SEQ_GREATERTHAN winend: %d\n", 
+ 			   SEQ_GREATERTHAN(ntohl(ptcp->th_seq),otherdir->windowend));
+ 		    printf("SEQ_LESSTHAN init syn: %d\n", 
+@@ -1535,7 +1535,7 @@ dotrace(
+ 	    /* it changed, that shouldn't happen! */
+ 	    if (warn_printbad_syn_fin_seq)
+ 		fprintf(stderr, "\
+-%s->%s: rexmitted SYN had diff. seqnum! (was %lu, now %lu, etime: %d sec)\n",
++%s->%s: rexmitted SYN had diff. seqnum! (was %u, now %lu, etime: %d sec)\n",
+ 			thisdir->host_letter,thisdir->ptwin->host_letter,
+ 			thisdir->syn, start,
+ 			(int)(elapsed(ptp_save->first_time,current_time)/1000000));
+@@ -1554,7 +1554,7 @@ dotrace(
+ 	    /* it changed, that shouldn't happen! */
+ 	    if (warn_printbad_syn_fin_seq)
+ 		fprintf(stderr, "\
+-%s->%s: rexmitted FIN had diff. seqnum! (was %lu, now %lu, etime: %d sec)\n",
++%s->%s: rexmitted FIN had diff. seqnum! (was %u, now %lu, etime: %d sec)\n",
+ 			thisdir->host_letter,thisdir->ptwin->host_letter,
+ 			thisdir->fin, fin,
+ 			(int)(elapsed(ptp_save->first_time,current_time)/1000000));
+@@ -2077,9 +2077,9 @@ dotrace(
+       if(ACK_SET(ptcp)) {
+ 	 memset(&buf2, 0, sizeof(buf2));
+ 	 if(dir == A2B)
+-	   snprintf(buf2, sizeof(buf2), "ack %lu ", (th_ack - b2a_first_seqnum));
++	   snprintf(buf2, sizeof(buf2), "ack %u ", (th_ack - b2a_first_seqnum));
+ 	 else if(dir == B2A)
+-	   snprintf(buf2, sizeof(buf2), "ack %lu ", (th_ack - a2b_first_seqnum));
++	   snprintf(buf2, sizeof(buf2), "ack %u ", (th_ack - a2b_first_seqnum));
+ 	 strncat(buf1, buf2, strlen(buf2));
+       }
+       
+@@ -3152,7 +3152,7 @@ check_hw_dups(
+ 	    /* count it */
+ 	    ++tcb->num_hardware_dups;
+ 	    if (warn_printhwdups) {
+-		printf("%s->%s: saw hardware duplicate of TCP seq %lu, IP ID %u (packet %lu == %lu)\n",
++		printf("%s->%s: saw hardware duplicate of TCP seq %u, IP ID %u (packet %lu == %lu)\n",
+ 		       tcb->host_letter,tcb->ptwin->host_letter,
+ 		       seq, id, pnum,pshd->hwdup_packnum);
+ 	    }

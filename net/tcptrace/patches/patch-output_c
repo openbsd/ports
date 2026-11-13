@@ -1,0 +1,25 @@
+Fix malloc + wrong memset
+
+Index: output.c
+--- output.c.orig
++++ output.c
+@@ -1083,8 +1083,7 @@ PrintSVHeader(
+    /* Set the separator */
+    if(csv || tsv) {
+       /* Initialize the separator buffer */      
+-      sp = (char *)malloc(sizeof(char *) * 2);
+-      memset(sp, 0, sizeof(sp));
++      sp = (char *)calloc(2, sizeof(char *));
+       /* Set it */
+       if(csv)
+ 	snprintf(sp, sizeof(sp), ",");	
+@@ -1101,8 +1100,7 @@ PrintSVHeader(
+ 	 */
+ 	if(strncmp(sv, "\\t", 2) == 0) {
+ 	   /* Initialize the separator buffer and set it */      
+-	   sp = (char *)malloc(sizeof(char *) * 2);
+-	   memset(sp, 0, sizeof(sp));
++	   sp = (char *)calloc(2, sizeof(char *));
+ 	   snprintf(sp, sizeof(sp), "\t");
+ 	}
+ 	else /* Just use the string the user has provided */

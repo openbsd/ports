@@ -1,0 +1,14 @@
+Fix format string on LP64
+
+Index: mod_http.c
+--- mod_http.c.orig
++++ mod_http.c
+@@ -262,7 +262,7 @@ DataOffset(
+ 	off = tcb->syn-seq;
+ 
+     if (debug>1)
+-	fprintf(stderr,"DataOffset: seq is %lu, syn is %lu, offset is %ld\n",
++	fprintf(stderr,"DataOffset: seq is %u, syn is %u, offset is %ld\n",
+ 		seq, tcb->syn, off);
+ 
+     return(off);
