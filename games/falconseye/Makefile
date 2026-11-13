@@ -17,7 +17,7 @@ WANTLIB +=	SDL c curses m pthread
 
 SITES =		${SITE_SOURCEFORGE:=falconseye/}
 
-FIX_CRLF_FILES = util/makedefs.c
+FIX_CRLF_FILES = util/makedefs.c util/recover.c
 
 LIB_DEPENDS =	devel/sdl
 RUN_DEPENDS =	games/hackdata
