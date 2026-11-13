@@ -12,6 +12,8 @@ PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME:S/-//}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME:S/-//}
 
+REVISION-main=		0
+
 SHARED_LIBS +=  ibus-1.0             4.6      # 5.535
 
 CATEGORIES =		inputmethods chinese japanese korean
@@ -128,5 +130,17 @@ do-gen:
 
 post-install:
 	rm ${PREFIX}/lib/gtk-{2,3,4}.0/*/immodules/*.{a,la}
+
+# Upstream's prebuilt simple.xml comes from a newer xkeyboard-config
+# using different language codes than xenocara's older one ("deu" vs
+# "ger"), so gnome-shell asks IBus for engines that don't exist.
+# Regenerate it from our evdev.xml, keeping all languages (no -1).
+	${MODPY_BIN} ${WRKSRC}/engine/gensimple.py \
+		--input ${X11BASE}/share/X11/xkb/rules/evdev.xml \
+		--output ${PREFIX}/share/ibus/component/simple.xml \
+		--version ${GH_TAGNAME} \
+		--exec-path ${TRUEPREFIX}/libexec/ibus-engine-simple \
+		--iso-path ${LOCALBASE}/share/xml/iso-codes/iso_639.xml
+
 
 .include <bsd.port.mk>
